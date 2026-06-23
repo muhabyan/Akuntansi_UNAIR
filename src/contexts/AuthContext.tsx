@@ -49,6 +49,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signOut = async () => {
     await supabase.auth.signOut();
+    localStorage.removeItem('akuntansi-feb-unair:study-progress');
+    window.location.reload();
   };
 
   return (

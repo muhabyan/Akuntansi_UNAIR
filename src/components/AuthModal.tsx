@@ -12,6 +12,16 @@ export default function AuthModal() {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
 
+  React.useEffect(() => {
+    if (showAuthModal) {
+      setEmail('');
+      setPassword('');
+      setError(null);
+      setSuccess(null);
+      setIsLogin(true);
+    }
+  }, [showAuthModal]);
+
   if (!showAuthModal) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -136,6 +146,8 @@ export default function AuthModal() {
                 setIsLogin(!isLogin);
                 setError(null);
                 setSuccess(null);
+                setEmail('');
+                setPassword('');
               }}
               className="text-blue-600 dark:text-blue-400 font-medium hover:underline"
             >
