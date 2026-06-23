@@ -84,7 +84,7 @@ export default function PomodoroTimer() {
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
   return (
-    <div className="fixed top-[60%] left-0 w-0 h-0 z-50 pointer-events-none -translate-y-1/2">
+    <div className={`fixed top-[60%] left-0 w-0 h-0 pointer-events-none -translate-y-1/2 ${isOpen ? 'z-[100]' : 'z-50'}`}>
       {/* Expanded Panel */}
       <div 
         className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
