@@ -154,7 +154,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             <div className="stage9-nav-pill glass-nav-segment hidden items-center gap-1 rounded-2xl p-1 md:flex">
               <NavBtn label="Home" onClick={handleHome} />
 
-              <div className="relative">
+              <div className="relative" id="tour-materi">
                 <NavBtn
                   label="Materi & Soal"
                   isActive={activeMenu === 'materi'}
@@ -179,11 +179,11 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               </div>
             </div>
 
-            <div className="hidden min-w-[260px] lg:block lg:min-w-[310px]">
+            <div className="hidden min-w-[260px] lg:block lg:min-w-[310px]" id="tour-search">
               <SearchBar onSelectCourse={(c, tab) => handleSelect(c, tab ?? 'tm1-7')} />
             </div>
 
-            <div className="flex shrink-0 items-center gap-2">
+            <div className="flex shrink-0 items-center gap-2" id="tour-theme-wrapper">
               <div className="hidden md:flex items-center mr-2">
                 {!loading && (
                   user ? (

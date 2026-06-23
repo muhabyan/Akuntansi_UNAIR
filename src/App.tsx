@@ -11,6 +11,7 @@ import type { Course, CourseTabId, ViewId } from './types';
 import IntroSplash from './components/IntroSplash';
 import AuthModal from './components/AuthModal';
 import PomodoroTimer from './components/PomodoroTimer';
+import OnboardingTour from './components/OnboardingTour';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -183,6 +184,7 @@ export default function App() {
 
   return (
     <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
+      <OnboardingTour />
       <IntroSplash />
       <AuthModal />
       <PomodoroTimer />

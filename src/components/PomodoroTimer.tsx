@@ -155,6 +155,7 @@ export default function PomodoroTimer() {
 
       {/* Floating Button (Visible when panel is closed) */}
       <button
+        id="tour-pomodoro"
         onClick={() => setIsOpen(!isOpen)}
         className={`pointer-events-auto flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
           isOpen 
