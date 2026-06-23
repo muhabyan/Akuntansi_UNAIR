@@ -88,7 +88,7 @@ export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
   if (!isSupported) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2">
+    <div className="fixed bottom-24 right-6 z-40 flex items-center gap-2">
       <div 
         className={`flex items-center gap-2 bg-white dark:bg-slate-900 shadow-xl border border-slate-200 dark:border-slate-800 p-2 rounded-full transition-all duration-300 origin-right ${
           isPlaying || isPaused ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-4 scale-95 pointer-events-none absolute right-full mr-2'
