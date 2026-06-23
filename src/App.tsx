@@ -8,6 +8,7 @@ import HomeView from './components/HomeView';
 import SemesterView from './components/SemesterView';
 import { SEMESTERS, ALL_COURSES } from './data/courseData';
 import type { Course, CourseTabId, ViewId } from './types';
+import IntroSplash from './components/IntroSplash';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -180,6 +181,7 @@ export default function App() {
 
   return (
     <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
+      <IntroSplash />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama
       </a>
