@@ -13,6 +13,7 @@ import AuthModal from './components/AuthModal';
 import PomodoroTimer from './components/PomodoroTimer';
 import OnboardingTour from './components/OnboardingTour';
 import AITutorFloating from './components/AITutorFloating';
+import LiveChatFloating from './components/LiveChatFloating';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -190,6 +191,7 @@ export default function App() {
       <AuthModal />
       <PomodoroTimer />
       <AITutorFloating />
+      <LiveChatFloating />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama
       </a>

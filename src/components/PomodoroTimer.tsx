@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Play, Pause, RotateCcw, Timer, X, Coffee, Brain } from 'lucide-react';
 
 type TimerMode = 'focus' | 'break';

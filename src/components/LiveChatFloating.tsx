@@ -1,0 +1,222 @@
+import { useState, useEffect, useRef, FormEvent } from 'react';
+import { MessageSquare, Send, X, Users, AlertCircle } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+import { useAuth } from '../contexts/AuthContext';
+
+interface ChatMessage {
+  id: string;
+  created_at: string;
+  user_id: string;
+  user_email: string;
+  message: string;
+}
+
+export default function LiveChatFloating() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [inputText, setInputText] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const { user, signIn } = useAuth();
+  
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  // Auto scroll to bottom
+  useEffect(() => {
+    if (messagesEndRef.current && isOpen) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages, isOpen]);
+
+  // Load initial messages and subscribe
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const { data, error } = await supabase
+        .from('global_chat')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(50);
+        
+      if (!error && data) {
+        setMessages(data.reverse());
+      }
+    };
+
+    fetchMessages();
+
+    // Subscribe to new messages
+    const channel = supabase.channel('public:global_chat')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'global_chat' }, (payload) => {
+        const newMessage = payload.new as ChatMessage;
+        setMessages((prev) => [...prev, newMessage]);
+        
+        // Update unread count if panel is closed and message is not from self
+        if (!isOpen && newMessage.user_id !== user?.id) {
+          setUnreadCount((prev) => prev + 1);
+        }
+      })
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, [isOpen, user?.id]);
+
+  // Clear unread when opening
+  useEffect(() => {
+    if (isOpen) {
+      setUnreadCount(0);
+    }
+  }, [isOpen]);
+
+  const handleSendMessage = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!inputText.trim() || !user || isSending) return;
+
+    const msgText = inputText.trim();
+    setInputText('');
+    setIsSending(true);
+    setErrorMsg('');
+
+    const { error } = await supabase.from('global_chat').insert([
+      {
+        user_id: user.id,
+        user_email: user.email,
+        message: msgText,
+      }
+    ]);
+
+    setIsSending(false);
+    
+    if (error) {
+      console.error('Error sending message:', error);
+      setErrorMsg('Gagal mengirim pesan. Pastikan Anda sudah menjalankan SQL di Supabase.');
+      setInputText(msgText); // Restore text
+    }
+  };
+
+  const getDisplayName = (email: string) => {
+    return email.split('@')[0];
+  };
+
+  return (
+    <div className="fixed bottom-24 left-6 md:bottom-[6.5rem] md:left-8 z-50 flex flex-col items-start pointer-events-none">
+      {/* Chat Panel */}
+      <div 
+        className={`mb-4 transition-all duration-300 origin-bottom-left ${
+          isOpen ? 'scale-100 opacity-100 translate-y-0 pointer-events-auto' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
+        }`}
+      >
+        <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+          
+          {/* Header */}
+          <div className="flex items-center justify-between p-4 bg-emerald-600 text-white shrink-0">
+            <div className="flex items-center gap-2 font-bold">
+              <Users size={20} /> Kelas Global (Live)
+            </div>
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="text-emerald-100 hover:text-white hover:bg-emerald-700 p-1 rounded-full transition"
+            >
+              <X size={18} />
+            </button>
+          </div>
+
+          {/* Error Banner */}
+          {errorMsg && (
+            <div className="bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 p-2 text-xs flex gap-2 items-center border-b border-red-200 dark:border-red-800">
+              <AlertCircle size={14} className="shrink-0" />
+              <span>{errorMsg}</span>
+            </div>
+          )}
+
+          {/* Chat Messages */}
+          <div className="flex-1 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 flex flex-col gap-3">
+            {messages.length === 0 ? (
+              <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-10">
+                Belum ada pesan. Jadilah yang pertama menyapa!
+              </div>
+            ) : (
+              messages.map((msg, i) => {
+                const isMe = msg.user_id === user?.id;
+                const showName = i === 0 || messages[i-1].user_id !== msg.user_id;
+
+                return (
+                  <div key={msg.id} className={`flex flex-col ${isMe ? 'items-end' : 'items-start'}`}>
+                    {showName && !isMe && (
+                      <span className="text-[10px] text-gray-500 font-medium ml-1 mb-1">
+                        {getDisplayName(msg.user_email)}
+                      </span>
+                    )}
+                    <div 
+                      className={`max-w-[85%] p-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap shadow-sm ${
+                        isMe 
+                          ? 'bg-emerald-600 text-white rounded-br-sm' 
+                          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
+                      }`}
+                    >
+                      {msg.message}
+                    </div>
+                  </div>
+                );
+              })
+            )}
+            <div ref={messagesEndRef} />
+          </div>
+          
+          {/* Input Area */}
+          <div className="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+            {!user ? (
+              <div className="text-center">
+                <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Anda harus login untuk ikut mengobrol.</p>
+                <button 
+                  onClick={signIn}
+                  className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-sm font-bold transition"
+                >
+                  Login Sekarang
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSendMessage} className="flex items-center gap-2">
+                <input
+                  type="text"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  placeholder="Ketik pesan..."
+                  className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-800 border-none rounded-full text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  maxLength={500}
+                />
+                <button 
+                  type="submit"
+                  disabled={!inputText.trim() || isSending}
+                  className="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 disabled:opacity-50 transition"
+                >
+                  <Send size={16} className="ml-0.5" />
+                </button>
+              </form>
+            )}
+          </div>
+
+        </div>
+      </div>
+
+      {/* Floating Toggle Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`pointer-events-auto relative flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
+          isOpen 
+            ? 'w-0 h-0 opacity-0 overflow-hidden' 
+            : 'w-14 h-14 rounded-full bg-emerald-600 text-white'
+        }`}
+      >
+        <MessageSquare size={24} />
+        {unreadCount > 0 && !isOpen && (
+          <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white dark:ring-gray-900">
+            {unreadCount > 99 ? '99+' : unreadCount}
+          </span>
+        )}
+      </button>
+    </div>
+  );
+}
