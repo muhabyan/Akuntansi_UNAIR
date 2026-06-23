@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.env
+.env.local
+*.local
+.DS_Store
+tsconfig.tsbuildinfo
+vite.config.d.ts
+.vercel/
+vite.config.js
+AKBI/
+AKM I/
+EKPA/
+PTE/
+Pengantar Bisnis/
+Perpajakan/
+Statistik/
+UAS STATIS 2024.pdf

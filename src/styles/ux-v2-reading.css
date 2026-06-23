@@ -1,0 +1,679 @@
+/* UX-1.0D — AKBI reading shell. Every selector is isolated to the AKBI pilot. */
+.ux-v2--akbi .akbi-reading-shell {
+  width: min(100%, 1240px);
+  margin-inline: auto;
+  padding-inline: 20px;
+  color: var(--ux-text-primary);
+}
+
+.ux-v2--akbi .akbi-reading-sticky {
+  position: sticky;
+  top: 7.25rem;
+  z-index: 35;
+  display: grid;
+  min-height: 56px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid var(--ux-divider);
+  background: color-mix(in srgb, var(--ux-canvas) 96%, transparent);
+}
+
+.ux-v2--akbi .akbi-reading-sticky > p {
+  overflow: hidden;
+  margin: 0;
+  color: var(--ux-text-muted);
+  font-size: 13px;
+  font-weight: 650;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ux-v2--akbi .akbi-reading-back,
+.ux-v2--akbi .akbi-reading-sticky__actions button,
+.ux-v2--akbi .akbi-reading-icon-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-radius: var(--ux-radius-control);
+  background: transparent;
+  color: var(--ux-text-secondary);
+  font-size: 13px;
+  font-weight: 720;
+  cursor: pointer;
+}
+
+.ux-v2--akbi .akbi-reading-back:hover,
+.ux-v2--akbi .akbi-reading-sticky__actions button:hover,
+.ux-v2--akbi .akbi-reading-icon-button:hover {
+  color: var(--ux-accent-strong);
+}
+
+.ux-v2--akbi .akbi-reading-sticky__actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ux-v2--akbi .akbi-reading-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+  padding-block: 42px 88px;
+}
+
+.ux-v2--akbi .akbi-reading-left-rail,
+.ux-v2--akbi .akbi-reading-right-rail {
+  display: none;
+}
+
+.ux-v2--akbi .akbi-reading-article {
+  min-width: 0;
+  max-width: 760px;
+}
+
+.ux-v2--akbi .akbi-reading-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: var(--ux-text-muted);
+  font-size: 13px;
+}
+
+.ux-v2--akbi .akbi-reading-breadcrumb button {
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--ux-text-secondary);
+  padding: 0;
+  font-weight: 680;
+  cursor: pointer;
+}
+
+.ux-v2--akbi .akbi-reading-breadcrumb button:hover {
+  color: var(--ux-accent-strong);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.ux-v2--akbi .akbi-reading-intro {
+  padding-block: 20px 44px;
+  border-bottom: 1px solid var(--ux-divider);
+}
+
+.ux-v2--akbi .akbi-reading-intro > p {
+  margin: 0;
+  color: var(--ux-accent-strong);
+  font-size: 12px;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ux-v2--akbi .akbi-reading-intro h1 {
+  max-width: 18ch;
+  margin: 10px 0 0;
+  color: var(--ux-text-primary);
+  font-size: clamp(2.35rem, 6vw, 4.35rem);
+  font-weight: 760;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.ux-v2--akbi .akbi-reading-intro > div {
+  max-width: 58ch;
+  margin-top: 24px;
+  color: var(--ux-text-secondary);
+  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  line-height: 1.78;
+}
+
+.ux-v2--akbi .akbi-reading-content {
+  padding-top: 8px;
+}
+
+.ux-v2--akbi .akbi-reading-block {
+  min-width: 0;
+}
+
+.ux-v2--akbi .akbi-reading-block[data-reading-anchor="true"] {
+  scroll-margin-top: 80px;
+}
+
+.ux-v2--akbi .akbi-reading-block[data-reading-anchor="true"]:focus-visible {
+  outline-offset: 8px;
+}
+
+/* Ordinary prose remains open. */
+.ux-v2--akbi .akbi-reading-block--h2 .course-block-heading {
+  margin: 58px 0 18px;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  padding: 0;
+}
+
+.ux-v2--akbi .akbi-reading-block--h2 .course-block-heading > div:first-child {
+  display: none;
+}
+
+.ux-v2--akbi .akbi-reading-block--h2 .course-block-heading h2 {
+  color: var(--ux-text-primary) !important;
+  font-size: clamp(1.7rem, 4vw, 2.15rem);
+  font-weight: 740;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.ux-v2--akbi .akbi-reading-block--h3 > h3 {
+  margin: 38px 0 12px;
+  border: 0;
+  color: var(--ux-text-primary) !important;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 720;
+}
+
+.ux-v2--akbi .akbi-reading-block--p > p,
+.ux-v2--akbi .akbi-reading-block--p .akbi-prose-paragraph {
+  max-width: 68ch;
+  margin-bottom: 1em;
+  color: var(--ux-text-secondary) !important;
+  font-size: 1.02rem;
+  line-height: 1.86;
+}
+
+.ux-v2--akbi .akbi-reading-block--p .course-prose-card {
+  max-width: 68ch;
+  margin-bottom: 1.1em;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  padding: 0;
+}
+
+.ux-v2--akbi .akbi-reading-block--p .course-prose-card > div:first-child {
+  display: none;
+}
+
+.ux-v2--akbi .akbi-reading-block--ul .course-list-surface,
+.ux-v2--akbi .akbi-reading-block--ol .course-list-surface {
+  max-width: 68ch;
+  margin-block: 18px 26px;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent !important;
+  padding: 0 0 0 24px;
+}
+
+.ux-v2--akbi .akbi-reading-block--ul .course-list-surface li,
+.ux-v2--akbi .akbi-reading-block--ol .course-list-surface li {
+  color: var(--ux-text-secondary) !important;
+}
+
+/* Special surfaces are reserved for academic artifacts. */
+.ux-v2--akbi .akbi-reading-block--callout .course-callout-surface,
+.ux-v2--akbi .akbi-reading-block--formula .course-formula-surface,
+.ux-v2--akbi .akbi-reading-block--formula .course-matrix-card {
+  max-width: 100%;
+  margin-block: 28px 34px;
+  border: 0 !important;
+  border-left: 3px solid var(--ux-accent) !important;
+  border-radius: 0 var(--ux-radius-artifact) var(--ux-radius-artifact) 0;
+  background: var(--ux-accent-soft) !important;
+  box-shadow: none;
+}
+
+.ux-v2--akbi .akbi-reading-block--callout[data-callout-variant="warning"] .course-callout-surface {
+  border-left-color: var(--ux-warning) !important;
+  background: var(--ux-warning-soft) !important;
+}
+
+.ux-v2--akbi .akbi-reading-block--callout .course-callout-surface > div,
+.ux-v2--akbi .akbi-reading-block--formula .course-formula-surface > div,
+.ux-v2--akbi .akbi-reading-block--formula .course-matrix-card > div {
+  border-color: color-mix(in srgb, var(--ux-border-subtle) 70%, transparent) !important;
+}
+
+.ux-v2--akbi .akbi-reading-block--callout .course-callout-surface > div:last-child,
+.ux-v2--akbi .akbi-reading-block--formula .course-formula-surface pre,
+.ux-v2--akbi .akbi-reading-block--formula .course-matrix-card pre {
+  color: var(--ux-text-primary) !important;
+}
+
+.ux-v2--akbi .akbi-reading-block--formula pre {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.ux-v2--akbi .akbi-reading-block--table .course-table-card,
+.ux-v2--akbi .akbi-reading-block--journal .course-journal-card,
+.ux-v2--akbi .akbi-reading-block--figure .course-figure-surface,
+.ux-v2--akbi .akbi-reading-block--example .course-example-surface,
+.ux-v2--akbi .akbi-reading-block--solution-reveal .course-solution-surface {
+  max-width: 100%;
+  margin-block: 30px 38px;
+  border: 1px solid var(--ux-border-subtle) !important;
+  border-radius: var(--ux-radius-artifact);
+  background: var(--ux-surface) !important;
+  box-shadow: none;
+}
+
+.ux-v2--akbi .akbi-reading-block--table .course-solid-head,
+.ux-v2--akbi .akbi-reading-block--journal .course-journal-card > div:first-child,
+.ux-v2--akbi .akbi-reading-block--example .course-example-surface > div:first-child,
+.ux-v2--akbi .akbi-reading-block--solution-reveal .course-solution-surface > div:first-child {
+  background: var(--ux-surface-soft) !important;
+  color: var(--ux-text-secondary) !important;
+}
+
+.ux-v2--akbi .akbi-reading-block .akbi-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-gutter: stable;
+  box-shadow: inset -14px 0 12px -16px color-mix(in srgb, var(--ux-text-primary) 35%, transparent);
+}
+
+.ux-v2--akbi .akbi-reading-block .akbi-table-scroll:focus-visible {
+  outline-offset: -4px;
+}
+
+.ux-v2--akbi .akbi-reading-block table {
+  color: var(--ux-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.ux-v2--akbi .akbi-reading-block th {
+  background: var(--ux-surface-soft) !important;
+  color: var(--ux-text-primary) !important;
+}
+
+.ux-v2--akbi .akbi-reading-block td {
+  border-color: var(--ux-border-subtle) !important;
+  color: var(--ux-text-secondary) !important;
+}
+
+.ux-v2--akbi .akbi-reading-block--statement,
+.ux-v2--akbi .akbi-reading-block--builder,
+.ux-v2--akbi .akbi-reading-block--interactive-match,
+.ux-v2--akbi .akbi-reading-block--table-fill,
+.ux-v2--akbi .akbi-reading-block--journal-builder,
+.ux-v2--akbi .akbi-reading-block--t-account-builder {
+  margin-block: 30px 40px;
+}
+
+.ux-v2--akbi .akbi-reading-completion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  margin-top: 72px;
+  border-top: 1px solid var(--ux-divider);
+  border-bottom: 1px solid var(--ux-divider);
+  padding-block: 22px;
+}
+
+.ux-v2--akbi .akbi-reading-completion p {
+  margin: 0;
+  color: var(--ux-text-muted);
+  font-size: 12px;
+  font-weight: 720;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ux-v2--akbi .akbi-reading-completion h2 {
+  margin: 5px 0 0;
+  color: var(--ux-text-primary);
+  font-size: 1.2rem;
+  font-weight: 720;
+}
+
+.ux-v2--akbi .akbi-reading-completion button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid var(--ux-border-control);
+  border-radius: var(--ux-radius-control);
+  background: var(--ux-surface);
+  color: var(--ux-accent-strong);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 740;
+  cursor: pointer;
+}
+
+.ux-v2--akbi .akbi-reading-completion button.is-done {
+  border-color: var(--ux-success);
+  background: var(--ux-success-soft);
+  color: var(--ux-success);
+}
+
+.ux-v2--akbi .akbi-reading-pagination {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.ux-v2--akbi .akbi-reading-pagination button {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ux-text-primary);
+  padding: 10px 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ux-v2--akbi .akbi-reading-pagination button:last-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.ux-v2--akbi .akbi-reading-pagination button small {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--ux-text-muted);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.ux-v2--akbi .akbi-reading-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.ux-v2--akbi .akbi-reading-rail-label {
+  margin: 0 0 14px;
+  color: var(--ux-text-muted);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.ux-v2--akbi .akbi-reading-toc ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ux-v2--akbi .akbi-reading-toc li + li {
+  margin-top: 5px;
+}
+
+.ux-v2--akbi .akbi-reading-toc a {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 8px;
+  border-left: 2px solid transparent;
+  color: var(--ux-text-muted);
+  padding: 7px 0 7px 10px;
+  font-size: 13px;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.ux-v2--akbi .akbi-reading-toc a > span {
+  color: var(--ux-text-muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+
+.ux-v2--akbi .akbi-reading-toc a:hover,
+.ux-v2--akbi .akbi-reading-toc a[aria-current="location"] {
+  border-left-color: var(--ux-accent);
+  color: var(--ux-accent-strong);
+  font-weight: 740;
+}
+
+.ux-v2--akbi .akbi-reading-utility section + section {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ux-divider);
+}
+
+.ux-v2--akbi .akbi-reading-utility ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ux-text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ux-v2--akbi .akbi-reading-utility li + li {
+  margin-top: 9px;
+}
+
+.ux-v2--akbi .akbi-reading-utility dl {
+  margin: 0;
+}
+
+.ux-v2--akbi .akbi-reading-utility dl > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-block: 8px;
+  border-bottom: 1px solid var(--ux-divider);
+}
+
+.ux-v2--akbi .akbi-reading-utility dt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--ux-text-secondary);
+  font-size: 13px;
+}
+
+.ux-v2--akbi .akbi-reading-utility dd {
+  margin: 0;
+  color: var(--ux-text-primary);
+  font-size: 13px;
+  font-weight: 760;
+}
+
+.ux-v2--akbi .akbi-reading-status,
+.ux-v2--akbi .akbi-reading-utility__empty {
+  margin: 24px 0 0;
+  color: var(--ux-text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.ux-v2--akbi .akbi-reading-status {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.ux-v2--akbi .akbi-reading-status > span {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  margin-top: 5px;
+  border: 1px solid var(--ux-border-control);
+  border-radius: 50%;
+}
+
+.ux-v2--akbi .akbi-reading-status > span.is-done {
+  border-color: var(--ux-success);
+  background: var(--ux-success);
+}
+
+.ux-v2--akbi .akbi-reading-drawer-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+}
+
+.ux-v2--akbi .akbi-reading-drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: rgb(10 16 24 / 0.48);
+  cursor: default;
+}
+
+.ux-v2--akbi .akbi-reading-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(420px, 100%);
+  overflow: hidden;
+  border-left: 1px solid var(--ux-border-subtle);
+  background: var(--ux-surface-raised);
+  box-shadow: var(--ux-shadow-overlay);
+}
+
+.ux-v2--akbi .akbi-reading-drawer__head {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--ux-divider);
+  padding: 10px 18px;
+}
+
+.ux-v2--akbi .akbi-reading-drawer__head h2 {
+  margin: 0;
+  color: var(--ux-text-primary);
+  font-size: 1.1rem;
+  font-weight: 740;
+}
+
+.ux-v2--akbi .akbi-reading-drawer__body {
+  height: calc(100% - 64px);
+  overflow-y: auto;
+  padding: 24px 22px 48px;
+}
+
+@media (min-width: 1280px) {
+  .ux-v2--akbi .akbi-reading-sticky__actions {
+    visibility: hidden;
+  }
+
+  .ux-v2--akbi .akbi-reading-layout {
+    grid-template-columns: 210px minmax(0, 760px) 180px;
+    gap: 40px;
+    justify-content: stretch;
+  }
+
+  .ux-v2--akbi .akbi-reading-left-rail,
+  .ux-v2--akbi .akbi-reading-right-rail {
+    display: block;
+    min-width: 0;
+  }
+
+  .ux-v2--akbi .akbi-reading-toc,
+  .ux-v2--akbi .akbi-reading-utility {
+    position: sticky;
+    top: calc(7.25rem + 80px);
+    max-height: calc(100vh - 10.75rem);
+    overflow-y: auto;
+    padding-bottom: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ux-v2--akbi .akbi-reading-shell {
+    padding-inline: 16px;
+  }
+
+  .ux-v2--akbi .akbi-reading-sticky {
+    top: 7rem;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+  }
+
+  .ux-v2--akbi .akbi-reading-sticky > p {
+    display: none;
+  }
+
+  .ux-v2--akbi .akbi-reading-back span,
+  .ux-v2--akbi .akbi-reading-sticky__actions button {
+    font-size: 12px;
+  }
+
+  .ux-v2--akbi .akbi-reading-sticky__actions {
+    justify-self: end;
+  }
+
+  .ux-v2--akbi .akbi-reading-sticky__actions button {
+    width: 44px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .ux-v2--akbi .akbi-reading-layout {
+    padding-block: 28px 60px;
+  }
+
+  .ux-v2--akbi .akbi-reading-intro {
+    padding-bottom: 34px;
+  }
+
+  .ux-v2--akbi .akbi-reading-intro h1 {
+    font-size: clamp(2.25rem, 12vw, 3.35rem);
+  }
+
+  .ux-v2--akbi .akbi-reading-block--h2 .course-block-heading {
+    margin-top: 46px;
+  }
+
+  .ux-v2--akbi .akbi-reading-completion {
+    grid-template-columns: 1fr;
+  }
+
+  .ux-v2--akbi .akbi-reading-completion button {
+    width: 100%;
+  }
+
+  .ux-v2--akbi .akbi-reading-pagination {
+    gap: 12px;
+  }
+
+  .ux-v2--akbi .akbi-reading-pagination button small {
+    display: none;
+  }
+}
+
+@media (max-height: 639px) {
+  .ux-v2--akbi .akbi-reading-sticky {
+    min-height: 48px;
+  }
+
+  .ux-v2--akbi .akbi-reading-drawer__head {
+    min-height: 56px;
+  }
+
+  .ux-v2--akbi .akbi-reading-drawer__body {
+    height: calc(100% - 56px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ux-v2--akbi .akbi-reading-block,
+  .ux-v2--akbi .akbi-reading-drawer,
+  .ux-v2--akbi .akbi-reading-toc a {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

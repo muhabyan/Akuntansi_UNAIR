@@ -1,0 +1,15 @@
+Kamu bertugas mengintegrasikan materi Pengantar Bisnis ke website kumpulan materi kuliah.
+
+Gunakan sumber utama berikut, sesuai prioritas:
+1. pengbis_data_structured.json atau pengbis_module_data.js untuk rendering berbasis data.
+2. pengbis_master_TM1-14_FULL.md sebagai fallback konten lengkap.
+3. File chunks/*.md jika perlu halaman per TM.
+
+Aturan penting:
+- Jangan mengambil konten dari HTML lama karena bagian accordion/hidden content sering tidak terbaca penuh.
+- Jangan merangkum ulang menjadi 15–20%. Pertahankan semua subbab, tabel, case, contoh, latihan, glossary, dan cheat sheet.
+- Prioritaskan tampilan Pra-UAS TM8–14 di bagian atas, lalu Pra-UTS TM1–7 sebagai fondasi.
+- Buat UI dengan tab/kategori: Pra-UAS, Pra-UTS, Case Bank, Latihan Esai, Glossary, Cheat Sheet.
+- Untuk tiap block, gunakan field: id, title, category, order, priority, body_markdown.
+- Bila halaman terlalu panjang, gunakan accordion di frontend, tetapi data mentah tetap harus dimuat seluruhnya.
+- Jangan menghapus isi hanya karena dianggap repetitif; materi ini memang disiapkan untuk belajar ujian.

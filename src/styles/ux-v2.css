@@ -1,0 +1,502 @@
+/* UX-1.0A — semantic tokens and global canvas for the isolated AKBI pilot.
+   The selector is intentionally rooted at .ux-v2. Legacy courses remain on the
+   existing visual system until their migration phase. */
+
+.ux-v2 {
+  --ux-font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ux-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --ux-canvas: #f7f6f2;
+  --ux-surface: #ffffff;
+  --ux-surface-soft: #eeede8;
+  --ux-surface-raised: #ffffff;
+
+  --ux-text-primary: #171a1f;
+  --ux-text-secondary: #3f4752;
+  --ux-text-muted: #59636f;
+  --ux-text-inverse: #ffffff;
+
+  --ux-border-subtle: #d3d7dc;
+  --ux-border-control: #7e8996;
+  --ux-divider: #d8dbdf;
+
+  --ux-accent: #28528f;
+  --ux-accent-strong: #1f416f;
+  --ux-accent-soft: #e9f0fa;
+  --ux-focus: #28528f;
+
+  --ux-success: #276749;
+  --ux-success-soft: #e6f3ec;
+  --ux-warning: #8a5a12;
+  --ux-warning-soft: #f7efd9;
+  --ux-danger: #a53b3b;
+  --ux-danger-soft: #f8e8e8;
+
+  --ux-space-1: 4px;
+  --ux-space-2: 8px;
+  --ux-space-3: 12px;
+  --ux-space-4: 16px;
+  --ux-space-5: 20px;
+  --ux-space-6: 24px;
+  --ux-space-8: 32px;
+  --ux-space-10: 40px;
+  --ux-space-12: 48px;
+  --ux-space-16: 64px;
+  --ux-space-20: 80px;
+  --ux-space-24: 96px;
+
+  --ux-radius-control: 9px;
+  --ux-radius-surface: 12px;
+  --ux-radius-artifact: 14px;
+  --ux-radius-overlay: 14px;
+  --ux-radius-pill: 999px;
+
+  --ux-shadow-menu: 0 12px 34px rgb(16 24 32 / 0.12);
+  --ux-shadow-overlay: 0 24px 64px rgb(10 16 24 / 0.22);
+
+  --ux-motion-fast: 120ms;
+  --ux-motion-standard: 160ms;
+  --ux-motion-slow: 220ms;
+  --ux-ease-standard: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Temporary bridge for legacy Tailwind utilities inside the AKBI pilot only. */
+  --color-bg-page: 247 246 242;
+  --color-bg-footer: 255 255 255;
+  --color-bg-panel: 255 255 255;
+  --color-bg-card: 255 255 255;
+  --color-bg-accent: 238 237 232;
+  --color-border: 211 215 220;
+  --color-border-hover: 126 137 150;
+  --color-text-title: 23 26 31;
+  --color-text-main: 63 71 82;
+  --color-text-description: 63 71 82;
+  --color-text-muted: 89 99 111;
+  --color-gold: 40 82 143;
+  --color-gold-light: 48 96 163;
+  --color-gold-dark: 31 65 111;
+
+  min-height: 100vh;
+  color-scheme: light;
+  background: var(--ux-canvas);
+  color: var(--ux-text-primary);
+  font-family: var(--ux-font-sans);
+  line-height: 1.5;
+}
+
+.ux-v2[data-theme="dark"] {
+  --ux-canvas: #101317;
+  --ux-surface: #171b21;
+  --ux-surface-soft: #20262d;
+  --ux-surface-raised: #1c2229;
+
+  --ux-text-primary: #f3f1eb;
+  --ux-text-secondary: #c8cdd4;
+  --ux-text-muted: #aab2bc;
+  --ux-text-inverse: #101317;
+
+  --ux-border-subtle: #343c45;
+  --ux-border-control: #626d79;
+  --ux-divider: #303840;
+
+  --ux-accent: #91b9ff;
+  --ux-accent-strong: #b4cdff;
+  --ux-accent-soft: #1c2b3e;
+  --ux-focus: #91b9ff;
+
+  --ux-success: #8fd6ae;
+  --ux-success-soft: #1b3428;
+  --ux-warning: #e8c47c;
+  --ux-warning-soft: #3a2d19;
+  --ux-danger: #f1a1a1;
+  --ux-danger-soft: #3b2325;
+
+  --color-bg-page: 16 19 23;
+  --color-bg-footer: 23 27 33;
+  --color-bg-panel: 23 27 33;
+  --color-bg-card: 28 34 41;
+  --color-bg-accent: 32 38 45;
+  --color-border: 52 60 69;
+  --color-border-hover: 98 109 121;
+  --color-text-title: 243 241 235;
+  --color-text-main: 200 205 212;
+  --color-text-description: 200 205 212;
+  --color-text-muted: 170 178 188;
+  --color-gold: 145 185 255;
+  --color-gold-light: 180 205 255;
+  --color-gold-dark: 116 157 225;
+
+  color-scheme: dark;
+}
+
+.ux-v2,
+.ux-v2 *,
+.ux-v2 *::before,
+.ux-v2 *::after {
+  box-sizing: border-box;
+}
+
+.ux-v2 .font-display,
+.ux-v2 .font-sans {
+  font-family: var(--ux-font-sans) !important;
+}
+
+.ux-v2 .font-black,
+.ux-v2 .font-extrabold {
+  font-weight: 700;
+}
+
+.ux-v2 :focus-visible {
+  outline: 3px solid var(--ux-focus);
+  outline-offset: 3px;
+}
+
+.ux-v2 main,
+.ux-v2 footer {
+  background: var(--ux-canvas);
+}
+
+.ux-v2 footer {
+  border-color: var(--ux-divider);
+  color: var(--ux-text-muted);
+}
+
+.ux-v2 .ux-v2-skip-link {
+  position: fixed;
+  top: var(--ux-space-2);
+  left: var(--ux-space-2);
+  z-index: 100;
+  min-height: 44px;
+  transform: translateY(-160%);
+  border-radius: var(--ux-radius-control);
+  background: var(--ux-accent);
+  color: var(--ux-text-inverse);
+  padding: 10px 14px;
+  font-weight: 700;
+  transition: transform var(--ux-motion-fast) var(--ux-ease-standard);
+}
+
+.ux-v2 .ux-v2-skip-link:focus {
+  transform: translateY(0);
+}
+
+.ux-v2 .ux-v2-theme-toggle {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--ux-border-control);
+  border-radius: var(--ux-radius-control);
+  background: var(--ux-surface);
+  color: var(--ux-text-primary);
+  cursor: pointer;
+  transition:
+    background-color var(--ux-motion-fast) var(--ux-ease-standard),
+    border-color var(--ux-motion-fast) var(--ux-ease-standard),
+    color var(--ux-motion-fast) var(--ux-ease-standard);
+}
+
+.ux-v2 .ux-v2-theme-toggle:hover {
+  border-color: var(--ux-accent);
+  color: var(--ux-accent);
+}
+
+/* Global pilot canvas: remove ambient glow/grid and glass from the inherited shell. */
+.ux-v2 .course-shell::before,
+.ux-v2 .course-dashboard-panel::before,
+.ux-v2 .course-reading-header::before {
+  display: none;
+}
+
+.ux-v2 .glass-nav-shell,
+.ux-v2 .glass-nav-segment,
+.ux-v2 .course-main-panel,
+.ux-v2 .course-dashboard-panel,
+.ux-v2 .course-sidebar-panel,
+.ux-v2 .course-tabs-panel,
+.ux-v2 .course-reading-panel,
+.ux-v2 .course-reading-header,
+.ux-v2 .course-reference-panel,
+.ux-v2 .course-list-card,
+.ux-v2 .course-progress-panel,
+.ux-v2 .course-card-glass,
+.ux-v2 .course-feature-card,
+.ux-v2 .course-mini-panel,
+.ux-v2 .course-review-card,
+.ux-v2 .course-material-card,
+.ux-v2 .course-objective-card,
+.ux-v2 .course-prose-card,
+.ux-v2 .course-list-surface,
+.ux-v2 .course-callout-surface,
+.ux-v2 .course-example-surface,
+.ux-v2 .course-solution-surface,
+.ux-v2 .course-formula-surface,
+.ux-v2 .course-figure-surface {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.ux-v2 .glass-overlay-panel,
+.ux-v2 .glass-search-panel,
+.ux-v2 .glass-command-panel,
+.ux-v2 .akbi-report-menu-panel {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface-raised);
+  box-shadow: var(--ux-shadow-menu);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.ux-v2 .course-search-shell,
+.ux-v2 input,
+.ux-v2 select,
+.ux-v2 textarea {
+  border-color: var(--ux-border-control);
+  background: var(--ux-surface);
+  color: var(--ux-text-primary);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.ux-v2 .course-search-shell:focus-within {
+  border-color: var(--ux-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ux-focus) 18%, transparent);
+}
+
+.ux-v2 .course-progress-track {
+  background: var(--ux-border-subtle);
+  box-shadow: none;
+}
+
+
+.ux-v2 .course-progress-fill {
+  background: var(--ux-accent);
+}
+
+/* UX-1.0A.1 — effective-cascade closure.
+   These declarations intentionally override legacy glass, glow, and gradient
+   primitives only inside the AKBI pilot subtree. */
+.ux-v2 .ux-v2-brand-mark {
+  border: 1px solid var(--ux-accent);
+  background: var(--ux-accent) !important;
+  background-image: none !important;
+  color: var(--ux-text-inverse) !important;
+  box-shadow: none !important;
+}
+
+.ux-v2 .btn-primary,
+.ux-v2 .glass-primary-action {
+  border: 1px solid var(--ux-accent-strong);
+  background: var(--ux-accent) !important;
+  background-image: none !important;
+  color: var(--ux-text-inverse) !important;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  filter: none;
+}
+
+.ux-v2 .btn-primary:hover,
+.ux-v2 .glass-primary-action:hover {
+  border-color: var(--ux-accent-strong);
+  background: var(--ux-accent-strong) !important;
+  color: var(--ux-text-inverse) !important;
+  box-shadow: none;
+  filter: none;
+  transform: translateY(-1px);
+}
+
+.ux-v2 .btn-secondary,
+.ux-v2 .glass-secondary-action {
+  border: 1px solid var(--ux-border-control);
+  background: var(--ux-surface) !important;
+  background-image: none !important;
+  color: var(--ux-text-primary) !important;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.ux-v2 .btn-secondary:hover,
+.ux-v2 .glass-secondary-action:hover {
+  border-color: var(--ux-accent);
+  background: var(--ux-accent-soft) !important;
+  color: var(--ux-accent-strong) !important;
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+.ux-v2 .btn-primary::before,
+.ux-v2 .btn-secondary::before,
+.ux-v2 .glass-primary-action::before,
+.ux-v2 .glass-secondary-action::before,
+.ux-v2 .grainient-panel::before,
+.ux-v2 .grainient-panel::after,
+.ux-v2 .glass-overlay-panel::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  background-image: none !important;
+  opacity: 0 !important;
+  animation: none !important;
+}
+
+.ux-v2 .glass-panel,
+.ux-v2 .soft-card,
+.ux-v2 .learning-surface,
+.ux-v2 .learning-card,
+.ux-v2 .quiz-question-card,
+.ux-v2 .practice-builder-card,
+.ux-v2 .essay-question-card,
+.ux-v2 .flashcard-study-card,
+.ux-v2 .glass-sticky-action,
+.ux-v2 .glass-input-shell,
+.ux-v2 .glass-search-panel,
+.ux-v2 .glass-menu-section {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface) !important;
+  background-image: none !important;
+  box-shadow: none;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.ux-v2 .glass-sticky-action,
+.ux-v2 .glass-search-panel {
+  background: var(--ux-surface-raised) !important;
+  box-shadow: var(--ux-shadow-menu);
+}
+
+.ux-v2 .akbi-prose-card,
+.ux-v2 .course-block-heading,
+.ux-v2 .course-economic-checklist,
+.ux-v2 .course-pte-toolkit {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface-soft) !important;
+  background-image: none !important;
+  box-shadow: none;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.ux-v2 table,
+.ux-v2 thead,
+.ux-v2 thead tr,
+.ux-v2 th {
+  background: var(--ux-surface) !important;
+  background-image: none !important;
+}
+
+.ux-v2 .glass-input-shell:focus-within {
+  border-color: var(--ux-focus);
+  background: var(--ux-surface) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ux-focus) 18%, transparent);
+}
+
+.ux-v2 .glass-menu-item,
+.ux-v2 .glass-menu-action,
+.ux-v2 .glass-search-result,
+.ux-v2 .glass-nav-btn,
+.ux-v2 .glass-nav-segment {
+  background-image: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.ux-v2 .glass-menu-item:not(:disabled):hover,
+.ux-v2 .glass-menu-item.is-active,
+.ux-v2 .glass-search-result:hover,
+.ux-v2 .glass-nav-btn:hover,
+.ux-v2 .glass-nav-btn.is-active {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface-soft) !important;
+  background-image: none !important;
+  box-shadow: none;
+}
+
+.ux-v2 .bg-calm-aurora,
+.ux-v2 [class*="bg-gradient-to-"] {
+  background: var(--ux-surface-soft) !important;
+  background-image: none !important;
+}
+
+.ux-v2 [class*="backdrop-blur"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.ux-v2 .blur-xl,
+.ux-v2 .blur-2xl,
+.ux-v2 .blur-3xl,
+.ux-v2 .blur-\[90px\] {
+  display: none !important;
+  filter: none !important;
+}
+
+/* The legacy light-mode rule for nested .bg-gold actions is more specific and
+   uses !important. The pilot provenance attribute deliberately raises the
+   scoped selector specificity without changing any non-pilot course. */
+.ux-v2[data-ux-pilot="AKM201"] .quiz-question-card .bg-gold,
+.ux-v2[data-ux-pilot="AKM201"] .practice-builder-card .bg-gold,
+.ux-v2[data-ux-pilot="AKM201"] .essay-question-card .bg-gold,
+.ux-v2[data-ux-pilot="AKM201"] .learning-surface .bg-gold,
+.ux-v2[data-ux-pilot="AKM201"] .flashcard-study-card .bg-gold,
+.ux-v2[data-ux-pilot="AKM201"] .flashcard-gacha-stage .bg-gold {
+  color: var(--ux-text-inverse) !important;
+}
+
+.ux-v2 .course-progress-ring {
+  border: 8px solid var(--ux-accent);
+  background: var(--ux-surface-soft) !important;
+  background-image: none !important;
+  padding: 0;
+}
+
+.ux-v2 .course-progress-ring > div {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface) !important;
+  color: var(--ux-accent-strong) !important;
+}
+
+.ux-v2 .glass-nav-btn,
+.ux-v2 .course-action-chip,
+.ux-v2 .course-nav-btn,
+.ux-v2 .course-open-btn,
+.ux-v2 .course-toggle-btn,
+.ux-v2 .course-tab-btn,
+.ux-v2 .course-feature-card,
+.ux-v2 .course-material-card,
+.ux-v2 .course-review-card,
+.ux-v2 .course-mini-panel {
+  transition-duration: var(--ux-motion-standard);
+  transition-timing-function: var(--ux-ease-standard);
+}
+
+.ux-v2 .glass-nav-btn:hover,
+.ux-v2 .course-action-chip:hover,
+.ux-v2 .course-nav-btn:not(:disabled):hover,
+.ux-v2 .course-open-btn:hover,
+.ux-v2 .course-toggle-btn:hover,
+.ux-v2 .course-tab-btn:hover,
+.ux-v2 .course-feature-card:hover,
+.ux-v2 .course-material-card:hover,
+.ux-v2 .course-review-card:hover,
+.ux-v2 .course-mini-panel:hover {
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ux-v2,
+  .ux-v2 *,
+  .ux-v2 *::before,
+  .ux-v2 *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}

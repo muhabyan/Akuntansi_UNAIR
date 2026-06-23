@@ -1,0 +1,147 @@
+[
+  {
+    "file": "PROMPT_IMPORT_KE_WEBSITE.txt",
+    "bytes": 1092,
+    "sha256": "378e83468b920df6a10e07cb0cfcce5b56ebefeee674c9de135bdda288c8723c"
+  },
+  {
+    "file": "README_IMPORT.md",
+    "bytes": 1840,
+    "sha256": "012f078149199e7e0372a6239b1fee53c0a881651314b580b46a7c5d5dca772b"
+  },
+  {
+    "file": "chunks/00_Cara_Pakai.md",
+    "bytes": 591,
+    "sha256": "5016845da206294c8f97fa1672ce1b881ee75b564e95baac9b6f829fc5fe6c9d"
+  },
+  {
+    "file": "chunks/01_Audit_RPS.md",
+    "bytes": 2053,
+    "sha256": "c015f6e220cf3723932ef8ceca9472a3c4b6f2c0ff8ec516c44f4ba01be5e24e"
+  },
+  {
+    "file": "chunks/90_Case_Bank.md",
+    "bytes": 2767,
+    "sha256": "1e9666ba4a8094829adf5e7a6be6759dbac7db24d00ffe43e9e99d6ba929e758"
+  },
+  {
+    "file": "chunks/91_Latihan_Esai_Model_Jawaban.md",
+    "bytes": 6831,
+    "sha256": "5ccbdfdab142c7a0e745576cd55c046b76cc4e6e7fe21038a81549d33761bd88"
+  },
+  {
+    "file": "chunks/92_Glossary.md",
+    "bytes": 2527,
+    "sha256": "ff856525b32cf2be19a8f3bb48275776087cd7674f8109477fb4a0c2789d8f56"
+  },
+  {
+    "file": "chunks/93_Cheat_Sheet.md",
+    "bytes": 1305,
+    "sha256": "dec45c98c3c42a1b707587b3c9a2d9f73cd7bfd46fb422aa64a3841b4b63a4f5"
+  },
+  {
+    "file": "chunks/TM01_Business_Economic_Environment.md",
+    "bytes": 4444,
+    "sha256": "55bb7602ca472f793b884f72c20b98c519a23a05faf254957b9ef6b091ccad1c"
+  },
+  {
+    "file": "chunks/TM02_Ethics_CSR_Environment.md",
+    "bytes": 3446,
+    "sha256": "34b46a5604c781fffeaf33519d329a889f271980f23ff3f945d123400b6eb693"
+  },
+  {
+    "file": "chunks/TM03_Global_Business.md",
+    "bytes": 2686,
+    "sha256": "0d20b93f1badacce0f1f6b87e19a7f0fc56e70cebf472ea32b10891854f3b77e"
+  },
+  {
+    "file": "chunks/TM04_Ownership_Entrepreneurship_Franchise.md",
+    "bytes": 2869,
+    "sha256": "729e11ad64dc14efd454a265c96f164e34a6f8d3b18cea6963282a623ded9c55"
+  },
+  {
+    "file": "chunks/TM05_Management_Process.md",
+    "bytes": 2146,
+    "sha256": "5393e260b18375950617ea02f11f895b99689f9601128ded3bd18c63932e339f"
+  },
+  {
+    "file": "chunks/TM06_Flexible_Organization.md",
+    "bytes": 2193,
+    "sha256": "0ecc44fe143ebe79ae2a2aa3b2d80848fa149790ff4c1e61f24d67eace6c2972"
+  },
+  {
+    "file": "chunks/TM07_Operations_Quality.md",
+    "bytes": 2481,
+    "sha256": "bf33df0f893c7f3c27ebc26e36d26dfa2c2f4b0e83e02485cac15138c153261a"
+  },
+  {
+    "file": "chunks/TM08_HRM_Motivasi_Tim.md",
+    "bytes": 11088,
+    "sha256": "f622f03f4357c76d09bef8c8ff382bae4ec60be4a30facdc6f359a4395f3c45c"
+  },
+  {
+    "file": "chunks/TM09_Marketing_CRM_Buyer_Behavior.md",
+    "bytes": 7563,
+    "sha256": "b926b391f43b599776a7143852e04e4d431483d772907c671ef9800a614de5f1"
+  },
+  {
+    "file": "chunks/TM10_Product_Brand_Pricing.md",
+    "bytes": 9365,
+    "sha256": "842eea31740a473d5afa0f5397613ae8f9e364747d9df65efb8d13e5df24fd08"
+  },
+  {
+    "file": "chunks/TM11_Distribution_Supply_Chain_Promotion.md",
+    "bytes": 6962,
+    "sha256": "2bbe2e982e413134621d2504279b1b83c9c5135621aa7eaeacebb427a9164d25"
+  },
+  {
+    "file": "chunks/TM12_Social_Media_EBusiness_IT_Security.md",
+    "bytes": 6555,
+    "sha256": "24b5780c701d281dea9580ae07f2cb177309862fa42b099d37b4cb06d6818fb5"
+  },
+  {
+    "file": "chunks/TM13_MIS_Accounting_Financial_Statements.md",
+    "bytes": 7792,
+    "sha256": "071f71bf47371991226281610978a93e01e89c89d7d34a190187ab5ae1ac73ad"
+  },
+  {
+    "file": "chunks/TM14_Financial_Management.md",
+    "bytes": 7207,
+    "sha256": "6e6da7f368dfeeee68380f20aa549cb795f0de89d8b55ba2f338f9b1377e186a"
+  },
+  {
+    "file": "pengbis_CASE_DAN_LATIHAN.md",
+    "bytes": 9505,
+    "sha256": "9ebd74c256525eb0cc9b4defcf037f11002d8b82aabb850d07b6fea9fa694008"
+  },
+  {
+    "file": "pengbis_GLOSSARY_CHEATSHEET.md",
+    "bytes": 3739,
+    "sha256": "d6d510a06d9d23762deff4cee94a379297fdb86a2aa39f5ce1598efb7710066b"
+  },
+  {
+    "file": "pengbis_PRA_UAS_TM8-14_PRIORITAS.md",
+    "bytes": 55734,
+    "sha256": "adcec7c6d70123dd7c78e17f026edbef49dc0c7d82ef015bd316c55f14f4dd0d"
+  },
+  {
+    "file": "pengbis_PRA_UTS_TM1-7_FONDASI.md",
+    "bytes": 19628,
+    "sha256": "6a116f4cb30e6b6a197a0f726c19c09c53fee1d8ac9508a5da5c4c20a4be481d"
+  },
+  {
+    "file": "pengbis_data_structured.json",
+    "bytes": 184191,
+    "sha256": "7b51e1a8b7d1b8ee2d9430c050d7c8903496c54348882cb4c979a492c0fdb2f9"
+  },
+  {
+    "file": "pengbis_master_TM1-14_FULL.md",
+    "bytes": 92313,
+    "sha256": "9fc70cac3b5c0a9e03d93718f37497f9c86fde8d38a3b8db5c04c8803e91a436"
+  },
+  {
+    "file": "pengbis_module_data.js",
+    "bytes": 184249,
+    "sha256": "079d5fbc282cf5b7798aada8f665b1ee4ca8ad6b175f6ee4f2671077d0c46055"
+  }
+]

@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Coursera-like Clean Professional Palette */
+    --color-bg-page: 255 255 255;
+    --color-bg-footer: 249 250 251;
+    --color-bg-panel: 255 255 255;
+    --color-bg-card: 255 255 255;
+    --color-bg-accent: 243 244 246;
+    
+    --color-border: 229 231 235;
+    --color-border-hover: 209 213 219;
+
+    --color-text-title: 17 24 39;
+    --color-text-main: 55 65 81;
+    --color-text-description: 75 85 99;
+    --color-text-muted: 107 114 128;
+
+    /* Primary Blue */
+    --color-gold: 37 99 235; /* blue-600 */
+    --color-gold-light: 59 130 246; /* blue-500 */
+    --color-gold-dark: 29 78 216; /* blue-700 */
+  }
+
+  html.dark {
+    /* Clean Dark Mode (No Heavy Blue/Navy Tints) */
+    --color-bg-page: 17 24 39;
+    --color-bg-footer: 31 41 55;
+    --color-bg-panel: 31 41 55;
+    --color-bg-card: 31 41 55;
+    --color-bg-accent: 55 65 81;
+    
+    --color-border: 55 65 81;
+    --color-border-hover: 75 85 99;
+
+    --color-text-title: 249 250 251;
+    --color-text-main: 229 231 235;
+    --color-text-description: 209 213 219;
+    --color-text-muted: 156 163 175;
+
+    /* Primary Blue for dark mode */
+    --color-gold: 96 165 250; /* blue-400 */
+    --color-gold-light: 147 197 253; /* blue-300 */
+    --color-gold-dark: 59 130 246; /* blue-500 */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-slate-800 font-sans antialiased;
+    min-height: 100vh;
+    background-color: rgb(var(--color-bg-page));
+  }
+  
+  html.dark body {
+    @apply text-slate-200;
+  }
+
+  /* Reset some basic elements */
+  ::selection {
+    @apply bg-blue-100 text-blue-900;
+  }
+
+  html.dark ::selection {
+    @apply bg-blue-900 text-blue-100;
+  }
+}
+
+@layer components {
+  /* Replace glass-panel with a clean card */
+  .glass-panel, .soft-card, .akbi-report-menu-panel {
+    @apply bg-white border border-gray-200 shadow-sm rounded-xl;
+  }
+  
+  html.dark .glass-panel, html.dark .soft-card, html.dark .akbi-report-menu-panel {
+    @apply bg-gray-800 border-gray-700 shadow-md;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-widest text-blue-600;
+  }
+  
+  html.dark .eyebrow {
+    @apply text-blue-400;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 font-medium text-white shadow-sm hover:bg-blue-700 transition-colors;
+  }
+  
+  html.dark .btn-primary {
+    @apply bg-blue-500 hover:bg-blue-600;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-2.5 font-medium text-gray-700 hover:bg-gray-50 transition-colors;
+  }
+  
+  html.dark .btn-secondary {
+    @apply border-gray-600 bg-gray-800 text-gray-200 hover:bg-gray-700;
+  }
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .transform-style-3d {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  .rotate-y-180 {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+/* --- Theme Switcher styles (simplified) --- */
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+.theme-switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.theme-switch-slider {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  border-radius: 999px;
+  background-color: #e5e7eb;
+  transition: .3s;
+}
+.theme-switch:hover .theme-switch-slider {
+  background-color: #d1d5db;
+}
+.theme-switch-input:checked + .theme-switch-slider {
+  background-color: #4b5563;
+}
+.theme-switch-orb {
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  transition: .3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.theme-switch-input:checked + .theme-switch-slider .theme-switch-orb {
+  transform: translateX(24px);
+}

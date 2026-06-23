@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EKPA Pra UAS TM 8–14 — Study Guide Lengkap</title>
+<style>
+:root{
+  --bg:#0d1117;--surface:#111827;--card:#161b22;--card2:#1f2937;--line:#30363d;
+  --text:#e6edf3;--muted:#9ca3af;--soft:#cbd5e1;--gold:#f5c26b;--blue:#7db7ff;--green:#86efac;--red:#fb7185;--purple:#c4b5fd;--cyan:#67e8f9;
+  --radius:18px;--shadow:0 18px 50px rgba(0,0,0,.30)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top left,#1e293b 0,#0d1117 38%,#090c12 100%);color:var(--text);line-height:1.7}
+a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:auto;padding:0 22px}.hero{min-height:88vh;display:flex;align-items:center;padding:72px 0 56px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:-20%;background:radial-gradient(circle at 15% 10%,rgba(245,194,107,.22),transparent 30%),radial-gradient(circle at 85% 15%,rgba(125,183,255,.18),transparent 28%),radial-gradient(circle at 65% 80%,rgba(196,181,253,.13),transparent 30%);pointer-events:none}.hero .wrap{position:relative}.badge{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1px solid rgba(245,194,107,.35);background:rgba(245,194,107,.10);border-radius:999px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px}.hero h1{font-size:clamp(2.35rem,5.8vw,5.2rem);line-height:1.04;font-weight:900;letter-spacing:-.05em;max-width:960px}.hero h1 span{color:var(--gold)}.hero p{margin-top:20px;color:var(--soft);font-size:1.08rem;max-width:850px}.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}.stat{padding:20px;border:1px solid var(--line);background:rgba(22,27,34,.82);border-radius:var(--radius);box-shadow:var(--shadow)}.stat b{display:block;font-size:2rem;color:var(--gold);line-height:1}.stat span{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.quicknav{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:30px}.quicknav a{padding:12px 14px;border-radius:14px;background:rgba(31,41,55,.82);border:1px solid var(--line);font-weight:800;font-size:.9rem;color:#dbeafe}.quicknav a:hover{border-color:var(--gold);transform:translateY(-1px)}section{padding:64px 0;border-top:1px solid rgba(48,54,61,.65)}.eyebrow{color:var(--gold);font-size:.78rem;font-weight:900;letter-spacing:.15em;text-transform:uppercase;margin-bottom:9px}h2{font-size:clamp(1.65rem,3vw,2.7rem);line-height:1.12;margin-bottom:14px;letter-spacing:-.03em}h3{font-size:1.25rem;margin-bottom:10px;color:#f8fafc}h4{font-size:1rem;margin:14px 0 6px;color:#e2e8f0}.lead{color:var(--soft);max-width:900px;margin-bottom:26px}.card{background:linear-gradient(180deg,rgba(22,27,34,.96),rgba(17,24,39,.96));border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:18px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.mini{padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(31,41,55,.55)}.mini b{color:var(--gold)}.pill{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;border:1px solid rgba(125,183,255,.32);background:rgba(125,183,255,.10);color:#bfdbfe;font-size:.78rem;font-weight:800;margin:3px 5px 3px 0}.pill.gold{border-color:rgba(245,194,107,.35);background:rgba(245,194,107,.10);color:var(--gold)}.pill.green{border-color:rgba(134,239,172,.35);background:rgba(134,239,172,.10);color:var(--green)}.pill.red{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.10);color:var(--red)}.pill.purple{border-color:rgba(196,181,253,.35);background:rgba(196,181,253,.10);color:var(--purple)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.tab{border:1px solid var(--line);background:#111827;color:var(--soft);padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:900}.tab.active{background:rgba(245,194,107,.14);border-color:rgba(245,194,107,.65);color:var(--gold)}.panel{display:none}.panel.active{display:block}.week-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}.week-num{font-size:3.2rem;font-weight:950;color:rgba(245,194,107,.85);line-height:1}.week-title{flex:1}.note{border-left:4px solid var(--gold);background:rgba(245,194,107,.09);padding:14px 16px;border-radius:12px;color:#fde68a;margin:14px 0}.warn{border-left-color:var(--red);background:rgba(251,113,133,.08);color:#fecdd3}.ok{border-left-color:var(--green);background:rgba(134,239,172,.08);color:#bbf7d0}.info{border-left-color:var(--blue);background:rgba(125,183,255,.08);color:#dbeafe}ul,ol{padding-left:22px;margin:8px 0}li{margin:5px 0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px;background:#0f172a;margin:14px 0}table{width:100%;border-collapse:collapse;min-width:760px}th,td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}th{background:rgba(245,194,107,.12);color:var(--gold);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;text-align:left}td{color:#d1d5db;font-size:.94rem}.case{border:1px solid rgba(125,183,255,.32);background:rgba(125,183,255,.06);border-radius:14px;padding:16px;margin:12px 0}.case strong{color:var(--blue)}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0b1220;border:1px solid var(--line);border-radius:12px;padding:14px;color:#e5e7eb;white-space:pre-wrap}.accordion{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:12px 0}.acc-head{width:100%;border:0;background:#111827;color:#f8fafc;text-align:left;padding:14px 16px;font-weight:900;cursor:pointer}.acc-body{display:none;padding:16px;background:#0f172a;border-top:1px solid var(--line)}.acc-body.show{display:block}.flash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.flash{min-height:160px;perspective:900px;cursor:pointer}.flash-inner{position:relative;width:100%;height:100%;min-height:160px;transition:.55s;transform-style:preserve-3d}.flash.flipped .flash-inner{transform:rotateY(180deg)}.front,.back{position:absolute;inset:0;border:1px solid var(--line);border-radius:16px;padding:16px;backface-visibility:hidden;background:linear-gradient(180deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;text-align:center}.front{color:#fde68a;font-weight:950}.back{transform:rotateY(180deg);color:#dbeafe;font-size:.92rem}.quiz-box{border:1px solid var(--line);border-radius:18px;background:#111827;padding:22px}.q-meta{color:var(--muted);font-size:.86rem;margin-bottom:10px}.question{font-size:1.1rem;font-weight:900;margin-bottom:14px}.opt{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#0f172a;color:#e5e7eb;border-radius:12px;padding:12px;margin:8px 0;cursor:pointer}.opt.correct{border-color:rgba(134,239,172,.75);background:rgba(134,239,172,.12)}.opt.wrong{border-color:rgba(251,113,133,.75);background:rgba(251,113,133,.10)}.quiz-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.btn{border:1px solid rgba(245,194,107,.55);background:rgba(245,194,107,.14);color:var(--gold);border-radius:999px;padding:10px 14px;font-weight:950;cursor:pointer}.search{width:100%;padding:14px 16px;border-radius:14px;border:1px solid var(--line);background:#0f172a;color:var(--text);font-size:1rem;margin:0 0 18px}.source-list li{font-size:.92rem;color:#cbd5e1;margin:8px 0}.footer{padding:44px 0;color:var(--muted);text-align:center;border-top:1px solid var(--line)}@media(max-width:900px){.hero-grid,.grid-4,.flash-grid{grid-template-columns:repeat(2,1fr)}.grid-2,.grid-3{grid-template-columns:1fr}.quicknav{grid-template-columns:repeat(2,1fr)}.week-head{display:block}.week-num{font-size:2.4rem;margin-bottom:8px}}@media(max-width:560px){.hero-grid,.grid-4,.flash-grid,.quicknav{grid-template-columns:1fr}.card{padding:18px}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="badge">EKPA · Pra UAS · TM 8–14</div>
+    <h1>Etika dan Keterampilan Profesional untuk Akuntan <span>Study Guide Lengkap</span></h1>
+    <p>Panduan belajar berbasis RPS, modul utama, dan pengayaan profesional. Materi disusun untuk membantu mahasiswa memahami konsep, mengenali contoh nyata, menjawab soal kuis, menyusun analisis kasus, dan menyiapkan jawaban esai Pra UAS secara lebih matang.</p>
+    <div class="hero-grid">
+      <div class="stat"><b>7</b><span>Pertemuan</span></div>
+      <div class="stat"><b>60+</b><span>Konsep Kunci</span></div>
+      <div class="stat"><b>90</b><span>Soal Interaktif</span></div>
+      <div class="stat"><b>40</b><span>Flashcard</span></div>
+    </div>
+    <nav class="quicknav">
+      <a href="#roadmap">Peta Materi</a><a href="#materi">Materi TM</a><a href="#kasus">Bank Kasus</a><a href="#esai">Esai</a><a href="#flashcard">Flashcard</a><a href="#quiz">Kuis</a>
+    </nav>
+  </div>
+</header>
+
+<section id="roadmap">
+<div class="wrap">
+  <div class="eyebrow">RPS sebagai Kerangka Utama</div>
+  <h2>Peta Materi TM 8–14</h2>
+  <p class="lead">Fokus Pra UAS bergeser dari fondasi teori etika dan kode etik menuju penerapan etika dalam keberagaman, pasar kerja, tata kelola, kepemimpinan, komunikasi profesional, dan refleksi praktisi. Setiap TM tidak berdiri sendiri. Semua materi harus dibaca sebagai satu rantai kompetensi profesional akuntan.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>TM</th><th>Subcapaian</th><th>Bahan Kajian RPS</th><th>Kasus/Praktik</th><th>Referensi Utama</th></tr></thead>
+      <tbody>
+        <tr><td><b>8</b></td><td>Menjelaskan hubungan etika dengan moral agama.</td><td>Hubungan etika dan agama.</td><td>Korupsi pengadaan Alquran Kementerian Agama.</td><td>Santiago Sia; Juliyani.</td></tr>
+        <tr><td><b>9</b></td><td>Menjelaskan sikap etis bisnis dalam mengakui dan menghormati hak semua orang.</td><td>Diversity and inclusion, akomodasi disabilitas dan agama, identifikasi seksual dan orientasi, ketimpangan pendapatan, hak hewan.</td><td>Abercrombie & Fitch Religious Discrimination Case.</td><td>Byars & Stanberry, Ch. 8.</td></tr>
+        <tr><td><b>10</b></td><td>Menjelaskan kebutuhan industri terhadap keahlian profesional.</td><td>Keahlian profesional, soft skill, sikap etis, dan sekilas metode survei.</td><td>Survei mahasiswa tentang sikap profesional yang dibutuhkan pasar kerja.</td><td>Ngoo, Tiong, & Pok; Kavanagh & Drennan.</td></tr>
+        <tr><td><b>11</b></td><td>Menganalisis faktor tata kelola yang memengaruhi kepatuhan etika bisnis.</td><td>Ethics codes, director independence, CEO duality, executive compensation, director elections, external auditors.</td><td>Fraud Garuda Indonesia dari aspek tata kelola.</td><td>Felo; Corporate Governance and Business Ethics.</td></tr>
+        <tr><td><b>12</b></td><td>Menjelaskan peran kepemimpinan etis.</td><td>Pengertian kepemimpinan, Leadership 4.0, karakter soft-skill kepemimpinan, kepemimpinan dan tata kelola.</td><td>Fraud Garuda: karakter kepemimpinan direktur utama.</td><td>Oberer & Erkollar; Marques; Othman & Rahman.</td></tr>
+        <tr><td><b>13</b></td><td>Menjelaskan atribut komunikasi yang diharapkan industri.</td><td>Kebutuhan komunikasi profesional; atribut komunikasi oral dan tertulis.</td><td>Simulasi presentasi, memo audit, komunikasi temuan, diskusi profesional.</td><td>Siriwardane, Low, & Blietz.</td></tr>
+        <tr><td><b>14</b></td><td>Menjelaskan peran etika, kepemimpinan, dan komunikasi dalam kehidupan profesional.</td><td>Integrasi etika, kepemimpinan, dan komunikasi dari perspektif praktisi.</td><td>Ringkasan kuliah tamu praktisi.</td><td>Paper/ringkasan kuliah tamu.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note info"><b>Strategi belajar:</b> jangan menghafal definisi saja. Untuk Pra UAS, kuasai hubungan antarvariabel: etika → pengambilan keputusan; agama/moral → pembentukan akhlak dan tanggung jawab; tata kelola → kontrol perilaku organisasi; kepemimpinan → tone at the top; komunikasi → akuntabilitas profesional.</div>
+</div>
+</section>
+
+<section id="materi">
+<div class="wrap">
+  <div class="eyebrow">Materi Lengkap Per Pertemuan</div>
+  <h2>TM 8–14</h2>
+  <p class="lead">Gunakan tab berikut untuk membaca materi secara bertahap. Setiap pertemuan memuat definisi operasional, konsep utama, implikasi akuntansi, contoh nyata, dan pola jawaban ujian.</p>
+  <div class="tabs" id="tabs">
+    <button class="tab active" onclick="openPanel('tm8',this)">TM 8 · Etika & Agama</button>
+    <button class="tab" onclick="openPanel('tm9',this)">TM 9 · Hak & Inklusi</button>
+    <button class="tab" onclick="openPanel('tm10',this)">TM 10 · Skill Industri</button>
+    <button class="tab" onclick="openPanel('tm11',this)">TM 11 · Tata Kelola</button>
+    <button class="tab" onclick="openPanel('tm12',this)">TM 12 · Kepemimpinan</button>
+    <button class="tab" onclick="openPanel('tm13',this)">TM 13 · Komunikasi</button>
+    <button class="tab" onclick="openPanel('tm14',this)">TM 14 · Integrasi</button>
+  </div>
+
+  <article class="panel active" id="tm8">
+    <div class="card">
+      <div class="week-head"><div class="week-num">08</div><div class="week-title"><h2>Hubungan Etika dengan Moral Agama</h2><p class="lead">Pertemuan ini membahas relasi antara etika sebagai kajian rasional tentang baik-buruk tindakan dan agama sebagai sumber nilai, motivasi, orientasi hidup, dan tanggung jawab transenden.</p></div></div>
+      <span class="pill gold">Santiago Sia</span><span class="pill gold">Juliyani</span><span class="pill red">Korupsi Pengadaan Alquran</span>
+      <div class="grid-2">
+        <div class="mini"><h3>Definisi Operasional</h3><p><b>Etika</b> adalah kerangka reflektif untuk menilai tindakan manusia berdasarkan alasan moral yang dapat dipertanggungjawabkan. <b>Moral</b> adalah standar baik-buruk yang hidup dalam individu atau masyarakat. <b>Agama</b> menyediakan sumber normatif, orientasi spiritual, motivasi kepatuhan, dan mekanisme pertanggungjawaban di hadapan Tuhan.</p></div>
+        <div class="mini"><h3>Inti Materi</h3><p>Etika dan agama tidak identik, tetapi keduanya saling berhubungan. Etika menuntut argumentasi rasional, sedangkan agama memberikan sumber nilai dan komitmen moral. Dalam profesi akuntan, relasi ini terlihat ketika integritas tidak hanya dipahami sebagai kepatuhan prosedural, tetapi sebagai tanggung jawab moral dan spiritual.</p></div>
+      </div>
+      <h3>Empat Posisi Analitis</h3>
+      <div class="grid-4">
+        <div class="mini"><b>1. Agama sebagai sumber norma</b><p>Agama memberi pedoman tentang kejujuran, keadilan, amanah, larangan kecurangan, dan tanggung jawab.</p></div>
+        <div class="mini"><b>2. Etika sebagai refleksi kritis</b><p>Etika menguji apakah suatu tindakan dapat dibenarkan, bukan sekadar apakah tindakan itu menguntungkan.</p></div>
+        <div class="mini"><b>3. Moral sebagai kebiasaan sosial</b><p>Moral hidup dalam norma masyarakat, budaya organisasi, dan standar perilaku harian.</p></div>
+        <div class="mini"><b>4. Profesi sebagai arena penerapan</b><p>Akuntan menguji nilai moral dalam laporan, audit, pajak, konsultansi, dan komunikasi profesional.</p></div>
+      </div>
+      <h3>Aksioma Etika Bisnis Islam</h3>
+      <div class="table-wrap"><table><thead><tr><th>Aksioma</th><th>Makna</th><th>Implikasi bagi Akuntan</th><th>Contoh Nyata</th></tr></thead><tbody>
+        <tr><td>Tauhid</td><td>Kesadaran bahwa aktivitas bisnis berada dalam kesatuan nilai ilahiah.</td><td>Akuntan tidak memisahkan pelaporan dari tanggung jawab moral.</td><td>Tidak memanipulasi laporan zakat, dana sosial, atau dana umat.</td></tr>
+        <tr><td>Keseimbangan/Keadilan</td><td>Bisnis harus menjaga kepentingan pihak terkait secara proporsional.</td><td>Akuntan menolak perlakuan akuntansi yang menguntungkan satu pihak dengan merugikan pihak lain.</td><td>Tidak menyembunyikan beban proyek agar bonus manajemen naik.</td></tr>
+        <tr><td>Kehendak Bebas</td><td>Manusia memiliki kemampuan memilih tindakan.</td><td>Akuntan bertanggung jawab atas keputusan profesionalnya, tidak berlindung di balik perintah atasan.</td><td>Menolak instruksi membuat invoice fiktif meskipun diperintah direktur.</td></tr>
+        <tr><td>Tanggung Jawab</td><td>Setiap pilihan memiliki konsekuensi moral, sosial, hukum, dan spiritual.</td><td>Akuntan wajib mempertanggungjawabkan bukti, estimasi, dan opini.</td><td>Mengungkapkan risiko salah saji material kepada pihak berwenang.</td></tr>
+        <tr><td>Ihsan</td><td>Berbuat baik secara optimal, bukan sekadar memenuhi standar minimum.</td><td>Akuntan menjaga kualitas pekerjaan meskipun tidak selalu diawasi.</td><td>Mereviu ulang rekonsiliasi kas sebelum laporan dikirim.</td></tr>
+      </tbody></table></div>
+      <div class="case"><strong>Contoh kasus:</strong> Panitia pengadaan meminta akuntan menyetujui pencairan dana proyek kitab suci tanpa dokumen pendukung lengkap. Analisis etis harus memisahkan masalah administratif, risiko korupsi, konflik kepentingan, pelanggaran amanah publik, dan tanggung jawab akuntan terhadap kepentingan publik.</div>
+      <div class="formula">Pola jawaban ujian TM 8:
+1) Jelaskan definisi etika, moral, dan agama.
+2) Terangkan hubungan ketiganya: agama memberi nilai; etika memberi penalaran kritis; moral membentuk kebiasaan perilaku.
+3) Hubungkan dengan profesi akuntan: integritas, amanah, objektivitas, dan kepentingan publik.
+4) Terapkan pada kasus: identifikasi pelanggaran, pihak terdampak, keputusan etis, dan tindakan korektif.</div>
+    </div>
+  </article>
+
+  <article class="panel" id="tm9">
+    <div class="card">
+      <div class="week-head"><div class="week-num">09</div><div class="week-title"><h2>Sikap Etis Bisnis dalam Mengakui dan Menghormati Hak Semua Orang</h2><p class="lead">Pertemuan ini menempatkan etika bisnis sebagai praktik penghormatan hak, martabat, dan keberagaman manusia dalam organisasi.</p></div></div>
+      <span class="pill gold">Business Ethics Ch. 8</span><span class="pill purple">Diversity & Inclusion</span><span class="pill red">Religious Discrimination</span>
+      <div class="grid-3">
+        <div class="mini"><h3>Diversity</h3><p>Keberagaman karakteristik pekerja, seperti gender, agama, usia, disabilitas, latar sosial, kemampuan, dan pengalaman.</p></div>
+        <div class="mini"><h3>Inclusion</h3><p>Keadaan ketika organisasi tidak hanya menerima perbedaan, tetapi juga memberi ruang partisipasi, suara, dan kesempatan yang adil.</p></div>
+        <div class="mini"><h3>Equity</h3><p>Keadilan substantif yang mempertimbangkan hambatan berbeda agar setiap orang memiliki kesempatan realistis untuk berkontribusi.</p></div>
+      </div>
+      <h3>Lima Bahan Kajian RPS</h3>
+      <div class="table-wrap"><table><thead><tr><th>Topik</th><th>Makna Etis</th><th>Implikasi HR</th><th>Implikasi Akuntansi</th></tr></thead><tbody>
+        <tr><td>Diversity and inclusion</td><td>Organisasi wajib mencegah diskriminasi dan bias sistemik.</td><td>Rekrutmen berbasis kompetensi, bukan stereotipe.</td><td>Laporan SDM, biaya pelatihan, dan pengungkapan keberagaman harus akurat.</td></tr>
+        <tr><td>Different abilities and faiths</td><td>Perbedaan kemampuan dan agama perlu diakomodasi secara wajar.</td><td>Penyesuaian kerja, waktu ibadah, seragam, dan aksesibilitas.</td><td>Biaya akomodasi bukan pemborosan, melainkan investasi kepatuhan dan keadilan.</td></tr>
+        <tr><td>Sexual identification and orientation</td><td>Organisasi harus menjaga martabat dan keselamatan kerja setiap orang.</td><td>Kebijakan antipelecehan dan perlindungan dari perundungan.</td><td>Risiko hukum dan reputasi perlu masuk penilaian risiko nonkeuangan.</td></tr>
+        <tr><td>Income inequalities</td><td>Ketimpangan upah menjadi isu keadilan, motivasi, dan legitimasi sosial.</td><td>Struktur kompensasi transparan dan berbasis nilai jabatan.</td><td>Akuntan harus memastikan beban gaji, bonus, dan insentif tidak disajikan menyesatkan.</td></tr>
+        <tr><td>Animal rights</td><td>Bisnis perlu mempertimbangkan dampak terhadap makhluk hidup dan lingkungan.</td><td>Kebijakan pemasok yang etis dan audit rantai pasok.</td><td>ESG, biaya kepatuhan, dan provisi lingkungan harus diperlakukan secara wajar.</td></tr>
+      </tbody></table></div>
+      <div class="case"><strong>Contoh nyata:</strong> Perusahaan menolak kandidat karena mengenakan atribut agama tertentu. Secara etis, perusahaan gagal membedakan antara kompetensi kerja dan identitas personal. Secara HR, kebijakan itu menciptakan diskriminasi. Secara akuntansi, risiko gugatan dan reputasi dapat berdampak pada biaya hukum, cadangan, dan pengungkapan risiko.</div>
+      <div class="note warn"><b>Jebakan ujian:</b> jangan menjawab “perusahaan bebas membuat aturan apa pun”. Kebebasan manajemen dibatasi oleh prinsip keadilan, nondiskriminasi, kepatuhan hukum, dan martabat manusia.</div>
+      <h3>Kerangka Analisis Hak</h3>
+      <ol>
+        <li>Identifikasi hak yang terlibat: hak bekerja, hak beragama, hak aman dari pelecehan, hak atas perlakuan adil.</li>
+        <li>Identifikasi pihak terdampak: pekerja, manajer, pemilik, pelanggan, regulator, masyarakat.</li>
+        <li>Uji proporsionalitas: apakah kebijakan perusahaan diperlukan, wajar, dan tidak berlebihan?</li>
+        <li>Tentukan keputusan etis: akomodasi, revisi kebijakan, pelatihan, mekanisme pengaduan, atau audit kepatuhan.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="panel" id="tm10">
+    <div class="card">
+      <div class="week-head"><div class="week-num">10</div><div class="week-title"><h2>Kebutuhan Industri terhadap Keahlian Profesional Akuntan</h2><p class="lead">Pertemuan ini menjembatani dunia kampus dan pasar kerja. Akuntan tidak cukup hanya memahami debit-kredit. Industri membutuhkan kombinasi kompetensi teknis, etika, komunikasi, kepemimpinan, kemandirian, dan kemampuan belajar berkelanjutan.</p></div></div>
+      <span class="pill gold">Ngoo et al.</span><span class="pill gold">Kavanagh & Drennan</span><span class="pill green">Professional Skills</span>
+      <div class="grid-3">
+        <div class="mini"><h3>Hard Skills</h3><p>Akuntansi keuangan, audit, pajak, biaya, sistem informasi, analisis data, Excel, ERP, dan pemahaman standar.</p></div>
+        <div class="mini"><h3>Soft Skills</h3><p>Komunikasi, kerja sama, kepemimpinan, manajemen waktu, adaptabilitas, etika kerja, dan pemecahan masalah.</p></div>
+        <div class="mini"><h3>Professional Attitude</h3><p>Integritas, independensi berpikir, disiplin bukti, rasa ingin tahu profesional, skeptisisme, dan tanggung jawab publik.</p></div>
+      </div>
+      <h3>Kompetensi yang Umumnya Dicari HR dan User</h3>
+      <div class="table-wrap"><table><thead><tr><th>Kompetensi</th><th>Indikator Perilaku</th><th>Contoh Tugas Akuntan Pemula</th><th>Kesalahan Umum Fresh Graduate</th></tr></thead><tbody>
+        <tr><td>Analytical thinking</td><td>Mampu menemukan pola, anomali, dan penyebab selisih.</td><td>Menganalisis selisih kas, aging piutang, atau deviasi anggaran.</td><td>Hanya menyalin angka tanpa menjelaskan penyebab.</td></tr>
+        <tr><td>Communication</td><td>Mampu menjelaskan angka dalam bahasa bisnis.</td><td>Menyusun memo audit atau presentasi temuan persediaan.</td><td>Bahasa terlalu teknis dan tidak memberi rekomendasi.</td></tr>
+        <tr><td>Independence</td><td>Mampu bekerja tanpa selalu menunggu instruksi.</td><td>Mengecek dokumen pendukung sebelum bertanya ke senior.</td><td>Bertanya hal dasar tanpa membaca working paper.</td></tr>
+        <tr><td>Leadership</td><td>Mampu mengambil inisiatif dan mengoordinasikan tugas.</td><td>Menjadi PIC rekonsiliasi vendor atau kas kecil.</td><td>Menghindari tanggung jawab dan hanya menjadi pengikut.</td></tr>
+        <tr><td>Ethical judgment</td><td>Mampu menolak manipulasi dan mengidentifikasi konflik kepentingan.</td><td>Menandai transaksi tanpa bukti sah atau potensi invoice fiktif.</td><td>Menganggap semua instruksi atasan pasti benar.</td></tr>
+      </tbody></table></div>
+      <div class="note info"><b>Catatan HR senior:</b> kandidat yang kuat tidak hanya berkata “saya teliti”. Ia membuktikan ketelitian melalui contoh: menemukan selisih, memperbaiki format rekonsiliasi, membuat kontrol sederhana, atau menyusun laporan yang dapat dipakai manajer mengambil keputusan.</div>
+      <h3>Sekilas Metode Survei untuk TM 10</h3>
+      <p>RPS memuat paparan hasil survei mahasiswa tentang sikap profesional yang dibutuhkan pasar. Survei sederhana dapat disusun dengan variabel, indikator, skala, responden, dan analisis deskriptif.</p>
+      <div class="formula">Contoh rancangan survei:
+Tujuan: mengidentifikasi lima sikap profesional akuntan yang paling dibutuhkan pasar kerja.
+Responden: mahasiswa akuntansi, alumni, HR, auditor junior, staf accounting.
+Skala: Likert 1–5, dari sangat tidak penting sampai sangat penting.
+Indikator: integritas, komunikasi, kemandirian, ketelitian, kepemimpinan, adaptabilitas, literasi digital.
+Analisis: rata-rata skor, ranking, gap persepsi mahasiswa vs kebutuhan industri.</div>
+      <div class="case"><strong>Contoh nyata:</strong> Seorang staf accounting baru mahir Excel, tetapi tidak berani mengonfirmasi invoice yang janggal. Secara teknis ia mampu, tetapi secara profesional belum kuat karena belum memiliki skeptisisme, keberanian etis, dan komunikasi yang tepat.</div>
+    </div>
+  </article>
+
+  <article class="panel" id="tm11">
+    <div class="card">
+      <div class="week-head"><div class="week-num">11</div><div class="week-title"><h2>Tata Kelola Perusahaan dan Kepatuhan Etika Bisnis</h2><p class="lead">Tata kelola perusahaan adalah sistem pengarahan, pengawasan, dan pengendalian yang memastikan organisasi berjalan secara akuntabel, transparan, adil, dan bertanggung jawab.</p></div></div>
+      <span class="pill gold">Felo</span><span class="pill purple">Corporate Governance</span><span class="pill red">Garuda Indonesia</span>
+      <div class="grid-4">
+        <div class="mini"><b>Accountability</b><p>Pengurus harus dapat dimintai pertanggungjawaban atas keputusan.</p></div>
+        <div class="mini"><b>Transparency</b><p>Informasi penting tidak boleh disembunyikan dari pemangku kepentingan.</p></div>
+        <div class="mini"><b>Responsibility</b><p>Perusahaan mematuhi hukum, standar, dan etika.</p></div>
+        <div class="mini"><b>Fairness</b><p>Hak pemegang saham dan stakeholder diperlakukan adil.</p></div>
+      </div>
+      <h3>Enam Faktor Tata Kelola dalam RPS</h3>
+      <div class="table-wrap"><table><thead><tr><th>Faktor</th><th>Fungsi Etis</th><th>Risiko Jika Lemah</th><th>Contoh Pengendalian</th></tr></thead><tbody>
+        <tr><td>Board involvement in ethics codes</td><td>Dewan menetapkan tone at the top dan standar perilaku.</td><td>Kode etik menjadi formalitas tanpa pengawasan.</td><td>Komite etik, pelaporan berkala, sanksi jelas.</td></tr>
+        <tr><td>Director independence</td><td>Direktur independen mengurangi konflik kepentingan.</td><td>Manajemen sulit diawasi karena hubungan personal/bisnis.</td><td>Kriteria independensi, deklarasi konflik kepentingan.</td></tr>
+        <tr><td>CEO duality</td><td>Pemisahan CEO dan chair memperkuat check and balance.</td><td>CEO terlalu dominan dan pengawasan melemah.</td><td>Pemisahan jabatan atau lead independent director.</td></tr>
+        <tr><td>Executive compensation</td><td>Kompensasi harus mendorong kinerja jangka panjang dan etis.</td><td>Target bonus mendorong manipulasi laba.</td><td>Clawback, KPI nonkeuangan, komite remunerasi independen.</td></tr>
+        <tr><td>Director elections</td><td>Pemilihan direksi/dewan harus transparan dan berbasis kompetensi.</td><td>Nepotisme, board capture, dan lemahnya akuntabilitas.</td><td>Nominating committee dan evaluasi kinerja dewan.</td></tr>
+        <tr><td>External auditors</td><td>Auditor eksternal memberi assurance independen atas laporan.</td><td>Independensi terganggu oleh fee, jasa nonaudit, atau kedekatan klien.</td><td>Rotasi partner, pembatasan jasa nonaudit, komite audit aktif.</td></tr>
+      </tbody></table></div>
+      <h3>Teori Dasar Tata Kelola</h3>
+      <div class="grid-3">
+        <div class="mini"><h3>Agency Theory</h3><p>Konflik muncul karena pemilik dan manajer memiliki kepentingan berbeda. Tata kelola mengurangi asimetri informasi dan moral hazard.</p></div>
+        <div class="mini"><h3>Stakeholder Theory</h3><p>Perusahaan bertanggung jawab kepada pihak yang dipengaruhi operasi perusahaan, bukan hanya pemegang saham.</p></div>
+        <div class="mini"><h3>Stewardship</h3><p>Manajer dapat bertindak sebagai penjaga amanah organisasi apabila budaya, insentif, dan nilai etis mendukung.</p></div>
+      </div>
+      <div class="case"><strong>Contoh kasus Garuda:</strong> analisis tata kelola tidak cukup menyebut “fraud terjadi”. Uraian harus memeriksa pengawasan dewan, independensi komite audit, tekanan target keuangan, relasi auditor, kualitas pengungkapan, dan budaya organisasi yang memungkinkan keputusan agresif atas pengakuan pendapatan.</div>
+      <div class="formula">Kerangka jawaban TM 11:
+Masalah → kelemahan tata kelola → pihak terdampak → prinsip GCG yang dilanggar → bukti/indikator → rekomendasi.
+Contoh rekomendasi: memperkuat komite audit, memperjelas kebijakan transaksi material, membatasi CEO dominance, memperbaiki whistleblowing system, dan mengaitkan remunerasi dengan kepatuhan etika.</div>
+    </div>
+  </article>
+
+  <article class="panel" id="tm12">
+    <div class="card">
+      <div class="week-head"><div class="week-num">12</div><div class="week-title"><h2>Kepemimpinan Etis, Leadership 4.0, dan Soft-Skilled Leadership</h2><p class="lead">Kepemimpinan etis menentukan budaya organisasi. Dalam profesi akuntansi, pemimpin membentuk standar perilaku melalui keputusan, toleransi terhadap pelanggaran, cara berkomunikasi, dan keberanian menegakkan nilai.</p></div></div>
+      <span class="pill gold">Oberer & Erkollar</span><span class="pill gold">Marques</span><span class="pill gold">Othman & Rahman</span>
+      <div class="grid-3">
+        <div class="mini"><h3>Kepemimpinan</h3><p>Proses memengaruhi orang lain untuk mencapai tujuan organisasi melalui perubahan, arahan, komunikasi, dan keteladanan.</p></div>
+        <div class="mini"><h3>Kepemimpinan Etis</h3><p>Kepemimpinan yang mengintegrasikan integritas, keadilan, tanggung jawab, transparansi, dan kepedulian terhadap stakeholder.</p></div>
+        <div class="mini"><h3>Leadership 4.0</h3><p>Pendekatan cepat, lintas hierarki, kolaboratif, berbasis teknologi, berorientasi inovasi, tetapi tetap memperhatikan manusia.</p></div>
+      </div>
+      <h3>Matriks Leadership 4.0</h3>
+      <div class="table-wrap"><table><thead><tr><th>Orientasi</th><th>Karakter</th><th>Kekuatan</th><th>Risiko</th><th>Contoh Akuntansi</th></tr></thead><tbody>
+        <tr><td>Low people, low technology</td><td>Pasif dan administratif.</td><td>Stabil untuk tugas rutin.</td><td>Lambat merespons perubahan.</td><td>Hanya input jurnal tanpa analisis.</td></tr>
+        <tr><td>High people, low technology</td><td>Social leader.</td><td>Membangun suasana kerja baik.</td><td>Kurang inovatif.</td><td>Tim kompak tetapi belum memakai dashboard.</td></tr>
+        <tr><td>Low people, high technology</td><td>Technological leader.</td><td>Mendorong efisiensi digital.</td><td>Mengabaikan kesiapan manusia.</td><td>Memaksa ERP baru tanpa pelatihan.</td></tr>
+        <tr><td>High people, high technology</td><td>Digital leader.</td><td>Menyeimbangkan inovasi, manusia, dan kolaborasi.</td><td>Membutuhkan literasi dan adaptasi tinggi.</td><td>Membangun audit analytics sambil melatih staf.</td></tr>
+      </tbody></table></div>
+      <h3>Soft-Skilled Leadership</h3>
+      <div class="grid-4">
+        <div class="mini"><b>Self-awareness</b><p>Memahami bias, emosi, kekuatan, dan kelemahan diri.</p></div>
+        <div class="mini"><b>Self-regulation</b><p>Mampu mengendalikan tekanan, kemarahan, dan godaan kuasa.</p></div>
+        <div class="mini"><b>Empathy</b><p>Memahami perspektif bawahan, klien, auditor, dan publik.</p></div>
+        <div class="mini"><b>Social skills</b><p>Membangun relasi, negosiasi, dialog, dan penyelesaian konflik.</p></div>
+      </div>
+      <h3>Atribut Kepemimpinan Etis dalam Good Governance</h3>
+      <ul>
+        <li><b>Ethical culture:</b> nilai etis hidup dalam kebiasaan, keputusan, dan sanksi organisasi.</li>
+        <li><b>Ethical structure:</b> organisasi memiliki kebijakan, kode etik, komite, kanal pelaporan, dan sistem kontrol.</li>
+        <li><b>Ethical management:</b> pemimpin menegakkan nilai melalui tindakan, bukan sekadar slogan.</li>
+        <li><b>Transparency and accountability:</b> pemimpin membuka informasi relevan dan siap dievaluasi.</li>
+      </ul>
+      <div class="case"><strong>Contoh kasus:</strong> Direktur utama menekan tim akuntansi untuk mengakui pendapatan sebelum kriteria terpenuhi. Pemimpin tidak etis menggunakan kuasa untuk mengubah pertimbangan profesional bawahan. Pemimpin etis justru bertanya: bukti apa yang tersedia, standar apa yang berlaku, siapa yang terdampak, dan apakah keputusan ini dapat dipertanggungjawabkan kepada publik?</div>
+      <div class="note warn"><b>Jebakan ujian:</b> kepemimpinan etis bukan sekadar pemimpin “baik hati”. Kepemimpinan etis harus dapat diuji melalui keputusan, kontrol, transparansi, keberanian menghadapi tekanan, dan konsistensi penegakan aturan.</div>
+    </div>
+  </article>
+
+  <article class="panel" id="tm13">
+    <div class="card">
+      <div class="week-head"><div class="week-num">13</div><div class="week-title"><h2>Atribut Komunikasi yang Diharapkan Industri</h2><p class="lead">Akuntan bekerja dengan informasi, tetapi nilai informasi hanya muncul jika informasi itu dapat dipahami, dipercaya, dan digunakan oleh pemangku kepentingan.</p></div></div>
+      <span class="pill gold">Siriwardane, Low, & Blietz</span><span class="pill green">Communication Tasks</span><span class="pill purple">Oral & Written Attributes</span>
+      <div class="grid-3">
+        <div class="mini"><h3>Communication Tasks</h3><p>Tugas komunikasi, seperti email profesional, memo audit, laporan, presentasi, diskusi klien, negosiasi, dan penjelasan temuan.</p></div>
+        <div class="mini"><h3>Communication Skills</h3><p>Kemampuan mendengar, membaca, bertanya, menulis, berbicara, meringkas, menyusun argumen, dan menyesuaikan audiens.</p></div>
+        <div class="mini"><h3>Communication Attributes</h3><p>Kejelasan, keringkasan, akurasi, struktur, profesionalisme, sensitivitas budaya, dan kemampuan memisahkan fakta dari opini.</p></div>
+      </div>
+      <h3>Atribut Komunikasi Oral dan Tertulis</h3>
+      <div class="table-wrap"><table><thead><tr><th>Jenis</th><th>Atribut</th><th>Contoh Baik</th><th>Contoh Lemah</th></tr></thead><tbody>
+        <tr><td>Tertulis</td><td>Jelas, ringkas, berbasis bukti, struktur logis.</td><td>“Selisih Rp125 juta berasal dari tiga invoice belum tercatat. Bukti pendukung terdapat pada Lampiran 2.”</td><td>“Ada selisih lumayan besar, mungkin karena invoice.”</td></tr>
+        <tr><td>Tertulis</td><td>Memisahkan fakta, analisis, dan rekomendasi.</td><td>Fakta: bukti belum lengkap. Analisis: risiko salah saji. Rekomendasi: pending pencatatan.</td><td>Mencampur tuduhan, asumsi, dan kesimpulan tanpa bukti.</td></tr>
+        <tr><td>Oral</td><td>Terstruktur, percaya diri, dan adaptif terhadap audiens.</td><td>Menjelaskan temuan audit kepada manajer nonakuntansi dengan bahasa bisnis.</td><td>Membaca slide penuh istilah teknis tanpa menjelaskan dampak.</td></tr>
+        <tr><td>Oral</td><td>Mampu bertanya dan mendengar aktif.</td><td>“Dokumen apa yang menjadi dasar pengakuan pendapatan tanggal 30 Desember?”</td><td>Langsung menuduh klien salah tanpa klarifikasi.</td></tr>
+      </tbody></table></div>
+      <h3>Format Komunikasi Profesional yang Siap Dipakai</h3>
+      <div class="grid-3">
+        <div class="mini"><h3>BLUF</h3><p><b>Bottom Line Up Front.</b> Kesimpulan utama diletakkan di awal agar pembaca sibuk segera memahami pesan.</p></div>
+        <div class="mini"><h3>SBI</h3><p><b>Situation–Behavior–Impact.</b> Cocok untuk memberi umpan balik profesional tanpa menyerang pribadi.</p></div>
+        <div class="mini"><h3>CAR</h3><p><b>Context–Action–Result.</b> Cocok untuk wawancara, refleksi, dan laporan pengalaman kerja.</p></div>
+      </div>
+      <div class="formula">Contoh memo audit singkat:
+Kepada: Senior Auditor
+Subjek: Temuan awal atas pengakuan pendapatan Desember
+Kesimpulan: Terdapat risiko pengakuan pendapatan prematur sebesar Rp2,4 miliar karena bukti serah-terima belum lengkap.
+Fakta: Dari 12 sampel invoice, 4 invoice belum memiliki BAST.
+Analisis: Kondisi ini berpotensi melanggar kriteria pengakuan pendapatan dan meningkatkan risiko salah saji material.
+Rekomendasi: Minta dokumen tambahan, lakukan cut-off testing, dan diskusikan adjustment apabila bukti tidak tersedia.</div>
+      <div class="case"><strong>Contoh nyata:</strong> Akuntan menemukan dugaan manipulasi persediaan. Komunikasi yang etis tidak boleh langsung menyebarkan tuduhan. Akuntan harus menyusun bukti, mengonfirmasi fakta, melaporkan melalui jalur tepat, dan menjaga kerahasiaan.</div>
+    </div>
+  </article>
+
+  <article class="panel" id="tm14">
+    <div class="card">
+      <div class="week-head"><div class="week-num">14</div><div class="week-title"><h2>Integrasi Etika, Kepemimpinan, dan Komunikasi dalam Kehidupan Profesional</h2><p class="lead">Pertemuan akhir mengintegrasikan seluruh materi Pra UAS. Akuntan profesional harus mampu mengambil keputusan etis, memengaruhi lingkungan kerja secara konstruktif, dan mengomunikasikan informasi secara akurat.</p></div></div>
+      <span class="pill gold">Kuliah Tamu</span><span class="pill green">Professional Integration</span><span class="pill purple">Reflective Summary</span>
+      <div class="grid-3">
+        <div class="mini"><h3>Etika</h3><p>Memberi standar nilai: apa yang benar, adil, bertanggung jawab, dan dapat dipertanggungjawabkan kepada publik.</p></div>
+        <div class="mini"><h3>Kepemimpinan</h3><p>Mengubah nilai menjadi tindakan kolektif melalui keteladanan, struktur, keputusan, dan keberanian.</p></div>
+        <div class="mini"><h3>Komunikasi</h3><p>Mengubah informasi menjadi pemahaman, koordinasi, kepercayaan, dan akuntabilitas.</p></div>
+      </div>
+      <h3>Model Integrasi Profesional Akuntan</h3>
+      <div class="formula">Profesionalisme Akuntan = Kompetensi Teknis + Penalaran Etis + Kepemimpinan + Komunikasi + Akuntabilitas Publik</div>
+      <p>Model tersebut berarti akuntan tidak hanya bertugas “mengerjakan angka”. Akuntan harus memastikan angka diproses dengan standar yang benar, dinilai dengan pertimbangan profesional yang etis, dipimpin dalam budaya yang sehat, dan dikomunikasikan secara jujur kepada pengguna informasi.</p>
+      <h3>Template Ringkasan Kuliah Tamu</h3>
+      <div class="table-wrap"><table><thead><tr><th>Bagian</th><th>Isi yang Harus Ditulis</th><th>Contoh Kalimat</th></tr></thead><tbody>
+        <tr><td>Identitas materi</td><td>Nama narasumber, topik, konteks profesi.</td><td>“Kuliah tamu membahas tantangan etika akuntan di lingkungan audit dan korporasi.”</td></tr>
+        <tr><td>Gagasan utama</td><td>3–5 poin inti dari praktisi.</td><td>“Narasumber menekankan bahwa integritas diuji ketika tekanan bisnis meningkat.”</td></tr>
+        <tr><td>Analisis akademik</td><td>Hubungkan dengan teori: kode etik, GCG, leadership, komunikasi.</td><td>“Pernyataan tersebut sejalan dengan konsep tone at the top dalam tata kelola.”</td></tr>
+        <tr><td>Contoh praktik</td><td>Kasus nyata, dilema, atau pengalaman industri.</td><td>“Dalam praktik, staf junior sering menghadapi tekanan untuk mempercepat closing.”</td></tr>
+        <tr><td>Refleksi pribadi</td><td>Pelajaran untuk pengembangan diri sebagai calon akuntan.</td><td>“Saya perlu memperkuat kemampuan bertanya berbasis bukti dan menulis memo profesional.”</td></tr>
+        <tr><td>Kesimpulan</td><td>Makna akhir dan implikasi profesional.</td><td>“Etika, kepemimpinan, dan komunikasi merupakan fondasi kepercayaan profesi.”</td></tr>
+      </tbody></table></div>
+      <div class="case"><strong>Contoh integratif:</strong> Seorang staf finance diminta CFO menunda pencatatan beban agar laba terlihat stabil. Etika menuntut integritas laporan; kepemimpinan menuntut keberanian menyampaikan risiko; komunikasi menuntut penyampaian berbasis bukti dan jalur yang tepat; tata kelola menuntut eskalasi ke komite audit jika tekanan berlanjut.</div>
+      <div class="note ok"><b>Kesimpulan besar Pra UAS:</b> akuntan profesional bekerja di bawah standar teknis, tetapi martabat profesinya ditentukan oleh integritas, keberanian etis, kepedulian terhadap stakeholder, dan kemampuan mengomunikasikan kebenaran secara bertanggung jawab.</div>
+    </div>
+  </article>
+</div>
+</section>
+
+<section id="kasus">
+<div class="wrap">
+  <div class="eyebrow">Bank Kasus</div>
+  <h2>Latihan Analisis Kasus Pra UAS</h2>
+  <p class="lead">Gunakan kasus berikut untuk latihan menjawab soal esai atau diskusi. Setiap jawaban ideal memuat fakta, masalah etis, prinsip yang dilanggar, pihak terdampak, dan rekomendasi.</p>
+  <div id="caseList"></div>
+</div>
+</section>
+
+<section id="esai">
+<div class="wrap">
+  <div class="eyebrow">Bank Soal Esai</div>
+  <h2>Kerangka Jawaban Esai</h2>
+  <div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">1. Jelaskan hubungan etika, moral, dan agama dalam profesi akuntan.</button><div class="acc-body"><p>Jawaban harus dimulai dari definisi: etika sebagai refleksi rasional, moral sebagai standar perilaku, dan agama sebagai sumber nilai. Setelah itu, jelaskan bahwa profesi akuntan membutuhkan ketiganya karena akuntan memegang kepercayaan publik. Akhiri dengan contoh: akuntan menolak manipulasi dana publik karena melanggar integritas, amanah, dan tanggung jawab sosial.</p></div></div>
+  <div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">2. Mengapa diversity and inclusion menjadi isu etika bisnis?</button><div class="acc-body"><p>Diversity and inclusion menjadi isu etika karena menyangkut keadilan, martabat manusia, kesempatan kerja, dan perlindungan dari diskriminasi. Organisasi yang mengabaikan keberagaman berisiko menciptakan bias, ketidakadilan, konflik, dan kerugian reputasi. Dalam akuntansi, isu ini berkaitan dengan pengukuran kompensasi, pengungkapan SDM, dan risiko hukum.</p></div></div>
+  <div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">3. Jelaskan keahlian profesional akuntan yang paling dibutuhkan pasar kerja.</button><div class="acc-body"><p>Jawaban harus mencakup hard skills, soft skills, dan sikap profesional. Hard skills meliputi standar akuntansi, audit, pajak, sistem informasi, dan analisis data. Soft skills meliputi komunikasi, teamwork, kepemimpinan, adaptabilitas, dan problem solving. Sikap profesional meliputi integritas, skeptisisme, kemandirian, ketelitian, dan tanggung jawab publik.</p></div></div>
+  <div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">4. Analisis hubungan tata kelola dan pencegahan fraud.</button><div class="acc-body"><p>Tata kelola mengurangi fraud dengan memperkuat pengawasan dewan, independensi direktur, komite audit, auditor eksternal, kode etik, dan transparansi. Kelemahan tata kelola memberi peluang fraud melalui lemahnya kontrol, konflik kepentingan, CEO dominance, dan asimetri informasi. Jawaban kuat harus mengaitkan governance dengan pressure, opportunity, rationalization, capability, dan arrogance.</p></div></div>
+  <div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">5. Apa peran kepemimpinan etis dalam good governance?</button><div class="acc-body"><p>Kepemimpinan etis membentuk tone at the top, budaya organisasi, keberanian melapor, dan konsistensi penerapan aturan. Pemimpin etis tidak hanya membuat kode etik, tetapi juga menegakkan sanksi, membuka ruang diskusi, melindungi pelapor, dan menolak target yang mendorong manipulasi. Dalam good governance, kepemimpinan etis memperkuat transparansi, akuntabilitas, responsibilitas, independensi, dan fairness.</p></div></div>
+  <div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">6. Mengapa komunikasi merupakan keterampilan profesional inti bagi akuntan?</button><div class="acc-body"><p>Akuntan mengolah informasi untuk pengambilan keputusan. Informasi yang benar tetapi dikomunikasikan secara buruk dapat menimbulkan salah paham, konflik, atau keputusan keliru. Karena itu, akuntan harus mampu menulis laporan, menyampaikan temuan, berdiskusi dengan klien, menjelaskan risiko, dan menjaga kerahasiaan informasi.</p></div></div>
+</div>
+</section>
+
+<section id="flashcard">
+<div class="wrap">
+  <div class="eyebrow">Flashcard</div>
+  <h2>40 Kartu Hafalan Cepat</h2>
+  <p class="lead">Klik kartu untuk melihat jawaban. Kartu ini dibuat untuk menguatkan istilah kunci sebelum mengerjakan kuis.</p>
+  <div class="flash-grid" id="flashGrid"></div>
+</div>
+</section>
+
+<section id="quiz">
+<div class="wrap">
+  <div class="eyebrow">Kuis Interaktif</div>
+  <h2>90 Soal Latihan Pra UAS</h2>
+  <p class="lead">Soal bersifat latihan konseptual. Klik jawaban, baca pembahasan, lalu lanjutkan soal berikutnya.</p>
+  <input class="search" id="quizFilter" placeholder="Filter topik: TM8, TM9, tata kelola, komunikasi, kepemimpinan..." oninput="filterQuiz()" />
+  <div class="quiz-box">
+    <div class="q-meta" id="qMeta"></div>
+    <div class="question" id="qText"></div>
+    <div id="qOpts"></div>
+    <div class="note info" id="qExp" style="display:none"></div>
+    <div class="quiz-actions"><button class="btn" onclick="nextQ()">Soal Berikutnya</button><button class="btn" onclick="resetQuiz()">Acak Ulang</button></div>
+  </div>
+</div>
+</section>
+
+<section id="rubrik">
+<div class="wrap">
+  <div class="eyebrow">Rubrik Jawaban</div>
+  <h2>Cara Mendapat Nilai Tinggi</h2>
+  <div class="table-wrap"><table><thead><tr><th>Komponen</th><th>Jawaban Lemah</th><th>Jawaban Kuat</th></tr></thead><tbody>
+    <tr><td>Definisi</td><td>Definisi umum dan tidak presisi.</td><td>Definisi operasional, relevan dengan profesi akuntan.</td></tr>
+    <tr><td>Konsep</td><td>Menyebut istilah tanpa menjelaskan hubungan.</td><td>Menghubungkan konsep dengan kasus, standar, dan perilaku profesional.</td></tr>
+    <tr><td>Kasus</td><td>Menceritakan ulang kasus.</td><td>Menganalisis masalah etis, pihak terdampak, prinsip, risiko, dan rekomendasi.</td></tr>
+    <tr><td>Contoh</td><td>Contoh terlalu umum.</td><td>Contoh konkret: invoice fiktif, cut-off pendapatan, diskriminasi rekrutmen, CEO dominance, memo audit.</td></tr>
+    <tr><td>Bahasa</td><td>Bertele-tele dan tidak sistematis.</td><td>Bahasa formal, runtut, berbasis SPOK, dan langsung pada inti.</td></tr>
+  </tbody></table></div>
+  <div class="note ok"><b>Formula jawaban cepat:</b> Definisi → konsep → kasus → prinsip etika → pihak terdampak → keputusan profesional → rekomendasi pengendalian.</div>
+</div>
+</section>
+
+<section id="referensi">
+<div class="wrap">
+  <div class="eyebrow">Referensi Utama</div>
+  <h2>Sumber Materi</h2>
+  <ol class="source-list">
+    <li>RPS Etika dan Keterampilan Profesional untuk Akuntan, Semester 2, Universitas Airlangga.</li>
+    <li>Duska, R., Duska, B. S., & Ragatz, J. Accounting Ethics.</li>
+    <li>Stuart, I., Stuart, B., & Pedersen, L. J. T. Accounting Ethics.</li>
+    <li>IAI, IAPI, & IAMI. Kode Etik Akuntan Indonesia.</li>
+    <li>Abdullahi, R., & Mansor, N. Fraud Triangle Theory and Fraud Diamond Theory.</li>
+    <li>Sia, S. Ethics and Religion.</li>
+    <li>Juliyani, E. Etika Bisnis dalam Perspektif Islam.</li>
+    <li>Byars, S. M., & Stanberry, K. Business Ethics.</li>
+    <li>Ngoo, Y. T., Tiong, K. M., & Pok, W. F. Bridging the Gap of Perceived Skills between Employers and Accounting Graduates in Malaysia.</li>
+    <li>Kavanagh, M. H., & Drennan, L. What skills and attributes does an accounting graduate need?</li>
+    <li>Felo, A. J. Corporate Governance and Business Ethics.</li>
+    <li>Oberer, B., & Erkollar, A. Leadership 4.0: Digital Leaders in the Age of Industry 4.0.</li>
+    <li>Marques, J. Understanding the Strength of Gentleness: Soft-Skilled Leadership on the Rise.</li>
+    <li>Othman, Z., & Rahman, R. A. Attributes of Ethical Leadership in Leading Good Governance.</li>
+    <li>Siriwardane, H. P., Low, K. Y., & Blietz, D. Making entry-level accountants better communicators.</li>
+  </ol>
+</div>
+</section>
+
+<footer class="footer"><div class="wrap">EKPA Pra UAS TM 8–14 · versi lengkap · dirancang untuk belajar mandiri, diskusi, presentasi, dan latihan ujian.</div></footer>
+
+<script>
+function openPanel(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active')}
+function toggleAcc(btn){btn.nextElementSibling.classList.toggle('show')}
+const cases=[
+{t:'Korupsi Pengadaan Alquran',m:'Fokus: hubungan etika, agama, amanah publik, dan penyalahgunaan kuasa.',a:'Jawaban ideal menguraikan bahwa simbol agama tidak otomatis menjamin perilaku etis. Etika memerlukan integritas, kontrol, transparansi, dan pertanggungjawaban.'},
+{t:'Abercrombie & Fitch Religious Discrimination',m:'Fokus: akomodasi agama, dress code, diskriminasi, dan hak pekerja.',a:'Jawaban ideal menilai apakah kebijakan perusahaan proporsional, relevan dengan pekerjaan, dan tidak melanggar hak beragama.'},
+{t:'Survei Sikap Profesional Pasar Kerja',m:'Fokus: gap persepsi mahasiswa dan kebutuhan industri.',a:'Jawaban ideal menyusun indikator, skala, responden, ranking kompetensi, dan implikasi kurikulum.'},
+{t:'Fraud Garuda Indonesia: Tata Kelola',m:'Fokus: dewan, komite audit, auditor eksternal, CEO dominance, dan pengakuan pendapatan.',a:'Jawaban ideal menghubungkan governance dengan pencegahan salah saji dan konflik kepentingan.'},
+{t:'Fraud Garuda: Kepemimpinan Direktur Utama',m:'Fokus: tone at the top, tekanan target, budaya kepatuhan, dan keberanian bawahan.',a:'Jawaban ideal membedakan pemimpin efektif dan pemimpin etis. Pemimpin efektif belum tentu etis apabila hasil dicapai melalui manipulasi.'},
+{t:'Invoice Fiktif Vendor',m:'Fokus: opportunity, rationalization, internal control, dan komunikasi temuan.',a:'Akuntan harus mengumpulkan bukti, melaporkan melalui jalur formal, menjaga kerahasiaan, dan mengusulkan pemisahan tugas.'},
+{t:'Bonus Berbasis Laba',m:'Fokus: executive compensation sebagai pemicu perilaku oportunistik.',a:'Rancang KPI yang tidak hanya berbasis laba jangka pendek, tetapi juga kualitas laporan, kepatuhan, dan indikator nonkeuangan.'},
+{t:'Tekanan Closing Akhir Tahun',m:'Fokus: tekanan organisasi, pertimbangan profesional, dan keberanian etis.',a:'Akuntan harus menolak pencatatan tanpa bukti memadai dan mendokumentasikan pertimbangan profesional.'},
+{t:'Diskriminasi Disabilitas dalam Rekrutmen',m:'Fokus: reasonable accommodation dan fairness.',a:'HR harus menilai kompetensi esensial pekerjaan dan menyediakan akomodasi wajar bila tidak menimbulkan beban tidak proporsional.'},
+{t:'Presentasi Temuan Audit yang Sensitif',m:'Fokus: komunikasi oral, bukti, kerahasiaan, dan diplomasi profesional.',a:'Gunakan bahasa berbasis fakta, hindari tuduhan personal, jelaskan risiko, dan beri rekomendasi perbaikan.'}
+];
+document.getElementById('caseList').innerHTML=cases.map((c,i)=>`<div class="accordion"><button class="acc-head" onclick="toggleAcc(this)">${i+1}. ${c.t}</button><div class="acc-body"><p><b>Masalah:</b> ${c.m}</p><p><b>Arah jawaban:</b> ${c.a}</p></div></div>`).join('');
+const flash=[
+['Etika','Refleksi sistematis tentang baik-buruk tindakan dan alasan moral yang mendasarinya.'],['Moral','Standar perilaku yang hidup dalam individu atau masyarakat.'],['Agama','Sumber nilai, motivasi, dan tanggung jawab transenden.'],['Amanah','Kepercayaan yang harus dijaga melalui kejujuran dan tanggung jawab.'],['Tauhid','Kesadaran bahwa aktivitas ekonomi terikat nilai ilahiah.'],['Ihsan','Berbuat optimal melampaui standar minimum.'],['Diversity','Keberagaman karakteristik pekerja dan stakeholder.'],['Inclusion','Ruang partisipasi setara bagi individu yang berbeda.'],['Equity','Keadilan substantif sesuai hambatan masing-masing pihak.'],['Discrimination','Perlakuan tidak adil berdasarkan identitas yang tidak relevan dengan pekerjaan.'],['Hard skill','Kompetensi teknis seperti audit, pajak, akuntansi, dan analisis data.'],['Soft skill','Komunikasi, kepemimpinan, adaptasi, kolaborasi, dan problem solving.'],['Professional attitude','Integritas, skeptisisme, ketelitian, kemandirian, dan tanggung jawab publik.'],['Agency theory','Teori konflik kepentingan antara principal dan agent.'],['Stakeholder theory','Perusahaan bertanggung jawab kepada pihak yang dipengaruhi aktivitasnya.'],['Transparency','Keterbukaan informasi relevan secara jujur dan tepat waktu.'],['Accountability','Kewajiban mempertanggungjawabkan keputusan dan tindakan.'],['CEO duality','Kondisi ketika CEO juga menjadi ketua dewan, sehingga check and balance berisiko melemah.'],['Director independence','Independensi dewan dari pengaruh manajemen atau konflik kepentingan.'],['External auditor','Pihak independen yang memberi assurance atas laporan keuangan.'],['Tone at the top','Sinyal etis dari pimpinan tertinggi yang membentuk budaya organisasi.'],['Ethical leadership','Kepemimpinan berbasis integritas, keadilan, transparansi, dan tanggung jawab.'],['Leadership 4.0','Kepemimpinan cepat, kolaboratif, digital, lintas hierarki, dan berorientasi inovasi.'],['Digital leader','Pemimpin yang menyeimbangkan teknologi, manusia, dan inovasi.'],['Self-awareness','Kesadaran atas bias, emosi, dan keterbatasan diri.'],['Self-regulation','Kemampuan mengendalikan diri saat menghadapi tekanan.'],['Empathy','Kemampuan memahami perspektif dan dampak terhadap pihak lain.'],['Communication task','Tugas komunikasi seperti memo, presentasi, diskusi, dan laporan.'],['Communication skill','Kemampuan mendengar, menulis, berbicara, bertanya, dan menyusun argumen.'],['Communication attribute','Kejelasan, akurasi, keringkasan, struktur, dan profesionalisme komunikasi.'],['BLUF','Bottom Line Up Front; kesimpulan utama diletakkan di awal.'],['SBI','Situation–Behavior–Impact; format umpan balik profesional.'],['CAR','Context–Action–Result; format refleksi dan wawancara.'],['Fraud triangle','Pressure, opportunity, dan rationalization.'],['Fraud diamond','Fraud triangle ditambah capability.'],['Fraud pentagon','Fraud diamond ditambah arrogance.'],['Whistleblowing','Pelaporan pelanggaran melalui kanal yang sah dan terlindungi.'],['Conflict of interest','Situasi ketika kepentingan pribadi mengganggu objektivitas profesional.'],['Professional skepticism','Sikap mempertanyakan dan mengevaluasi bukti secara kritis.'],['Public interest','Kepentingan masyarakat luas yang menjadi orientasi profesi akuntansi.']
+];
+document.getElementById('flashGrid').innerHTML=flash.map(f=>`<div class="flash" onclick="this.classList.toggle('flipped')"><div class="flash-inner"><div class="front">${f[0]}</div><div class="back">${f[1]}</div></div></div>`).join('');
+const baseQ=[
+['TM8','Etika berbeda dari moral karena etika terutama bersifat...',['emosional','reflektif dan argumentatif','administratif','finansial'],1,'Etika menuntut alasan moral yang dapat diuji secara rasional.'],
+['TM8','Dalam etika bisnis Islam, konsep tanggung jawab menekankan bahwa...',['keuntungan adalah satu-satunya tujuan','setiap tindakan bisnis harus dipertanggungjawabkan','pasar bebas tanpa batas','hukum positif tidak penting'],1,'Tanggung jawab mencakup dimensi sosial, hukum, profesional, dan spiritual.'],
+['TM8','Kasus korupsi pengadaan kitab suci menunjukkan bahwa simbol agama...',['pasti menjamin etika','tidak otomatis menjamin perilaku etis','tidak relevan sama sekali','menghapus kebutuhan kontrol'],1,'Etika tetap membutuhkan integritas, kontrol, dan akuntabilitas.'],
+['TM8','Aksioma ihsan paling tepat dimaknai sebagai...',['minimal compliance','berbuat optimal dan baik','kebebasan tanpa batas','dominasi pasar'],1,'Ihsan adalah kualitas melakukan kebaikan secara optimal.'],
+['TM8','Akuntan yang menolak invoice fiktif menunjukkan nilai...',['amanah dan integritas','arogansi','CEO duality','income inequality'],0,'Penolakan fraud mencerminkan amanah, integritas, dan tanggung jawab.'],
+['TM9','Inclusion berarti organisasi...',['hanya merekrut orang seragam','menerima perbedaan dan memberi ruang partisipasi','menghapus semua aturan kerja','menilai pekerja dari identitas'],1,'Inklusi berarti perbedaan diakui dan setiap orang dapat berkontribusi.'],
+['TM9','Reasonable accommodation paling dekat dengan...',['penyesuaian wajar untuk kebutuhan tertentu','bonus manajemen','pengurangan laporan','larangan beribadah'],0,'Akomodasi wajar dapat berupa aksesibilitas, waktu ibadah, atau penyesuaian alat kerja.'],
+['TM9','Diskriminasi terjadi ketika keputusan kerja didasarkan pada...',['kompetensi relevan','identitas yang tidak relevan','hasil kerja terukur','standar jabatan'],1,'Diskriminasi muncul saat identitas personal dipakai sebagai dasar perlakuan tidak adil.'],
+['TM9','Ketimpangan pendapatan menjadi isu etika karena terkait dengan...',['warna logo','keadilan dan legitimasi organisasi','jumlah aset tetap','umur software'],1,'Kompensasi memengaruhi keadilan, motivasi, dan kepercayaan.'],
+['TM9','Kasus religious discrimination menuntut perusahaan menguji apakah kebijakan dress code...',['pasti benar','proporsional dan tidak diskriminatif','tidak perlu dijelaskan','boleh melanggar hak'],1,'Dress code harus memiliki alasan bisnis yang sah dan tidak berlebihan.'],
+['TM10','Keahlian profesional akuntan modern mencakup...',['hanya debit-kredit','teknis, soft skill, dan etika','hanya hafalan standar','hanya kemampuan bicara'],1,'Industri membutuhkan kombinasi kompetensi.'],
+['TM10','Contoh hard skill adalah...',['empati','audit dan perpajakan','kerja sama','kepemimpinan'],1,'Audit dan pajak adalah keterampilan teknis.'],
+['TM10','Contoh soft skill adalah...',['PSAK','rekonsiliasi bank','komunikasi profesional','jurnal penyesuaian'],2,'Komunikasi adalah soft skill inti.'],
+['TM10','Sikap profesional yang penting saat menemukan bukti janggal adalah...',['diam saja','skeptisisme profesional','menghapus data','mengikuti vendor'],1,'Skeptisisme mendorong akuntan menguji bukti secara kritis.'],
+['TM10','Dalam survei kebutuhan pasar kerja, skala Likert digunakan untuk...',['menghapus responden','mengukur tingkat penilaian responden','menentukan laba','membuat jurnal'],1,'Skala Likert mengukur sikap/persepsi.'],
+['TM11','Corporate governance berfungsi sebagai...',['hiasan laporan tahunan','sistem pengarahan dan pengawasan organisasi','pengganti akuntansi','alat promosi'],1,'GCG mengatur arah, kontrol, dan akuntabilitas.'],
+['TM11','Agency theory membahas konflik antara...',['pelanggan dan kasir','principal dan agent','vendor dan kurir','mahasiswa dan dosen'],1,'Teori agensi menjelaskan konflik pemilik dan manajemen.'],
+['TM11','CEO duality berisiko karena...',['CEO tidak punya tugas','pengawasan dapat melemah','laporan selalu benar','komite audit hilang otomatis'],1,'CEO yang merangkap chair dapat mengurangi check and balance.'],
+['TM11','Director independence penting untuk...',['memperkuat objektivitas pengawasan','menaikkan harga saham otomatis','menghapus audit','menambah promosi'],0,'Independensi mengurangi konflik kepentingan.'],
+['TM11','Executive compensation yang buruk dapat mendorong...',['laporan berkualitas','manipulasi target laba','kepatuhan sempurna','komunikasi lebih jelas'],1,'Bonus berbasis laba jangka pendek dapat memicu manipulasi.'],
+['TM11','External auditor berperan dalam...',['menjual produk','memberi assurance independen','mengangkat CEO','membuat iklan'],1,'Auditor eksternal meningkatkan keandalan laporan.'],
+['TM12','Tone at the top berarti...',['warna kantor','sinyal etis dari pimpinan tertinggi','jumlah karyawan','laporan kas'],1,'Perilaku pimpinan membentuk budaya etis.'],
+['TM12','Leadership 4.0 menekankan...',['hierarki kaku','kolaborasi, teknologi, inovasi, dan orientasi manusia','larangan komunikasi','paper-based process'],1,'Leadership 4.0 cocok untuk transformasi digital.'],
+['TM12','Digital leader terbaik menyeimbangkan...',['teknologi dan manusia','utang dan kas','aset dan modal','warna dan logo'],0,'Digital leadership menggabungkan orientasi teknologi dan people concern.'],
+['TM12','Self-regulation berarti...',['mengendalikan diri saat tekanan','mengendalikan pasar','menghapus data','menolak audit'],0,'Pemimpin etis mampu mengelola emosi dan tekanan.'],
+['TM12','Kepemimpinan etis dapat diuji melalui...',['slogan saja','keputusan, kontrol, transparansi, dan keteladanan','popularitas semata','jumlah rapat'],1,'Etika terlihat dari tindakan dan sistem.'],
+['TM13','Komunikasi akuntan penting karena informasi akuntansi harus...',['disembunyikan','dipahami dan digunakan pemangku kepentingan','dibuat rumit','selalu lisan'],1,'Informasi bernilai jika dapat dipahami dan digunakan.'],
+['TM13','Atribut komunikasi tertulis yang baik adalah...',['ambigu','jelas, ringkas, dan berbasis bukti','emosional','tanpa struktur'],1,'Memo profesional harus jelas dan evidence-based.'],
+['TM13','BLUF berarti...',['Bottom Line Up Front','Business Law Under Finance','Basic Ledger Unit Format','Budget List Under Fraud'],0,'BLUF meletakkan kesimpulan utama di awal.'],
+['TM13','SBI digunakan untuk...',['memberi umpan balik profesional','menghitung pajak','membuat aset','menyusun neraca'],0,'SBI = Situation–Behavior–Impact.'],
+['TM13','Saat menemukan dugaan fraud, komunikasi etis harus...',['menyebarkan tuduhan','berbasis bukti dan melalui jalur tepat','mengunggah ke media sosial','menghapus dokumen'],1,'Akuntan menjaga bukti, kerahasiaan, dan prosedur.'],
+['TM14','Profesionalisme akuntan merupakan integrasi antara...',['angka saja','kompetensi teknis, etika, kepemimpinan, komunikasi, dan akuntabilitas','pakaian formal saja','hafalan teori'],1,'Profesi akuntansi bersifat teknis sekaligus etis dan komunikatif.'],
+['TM14','Ringkasan kuliah tamu yang baik harus memuat...',['cerita acak','gagasan utama, analisis akademik, contoh praktik, dan refleksi','hanya ucapan terima kasih','hanya biodata narasumber'],1,'Ringkasan harus analitis, bukan transkrip.'],
+['TM14','Saat CFO menekan staf menunda beban, masalah utamanya adalah...',['warna laporan','integritas laporan dan tekanan etis','jumlah printer','agenda rapat'],1,'Tekanan terhadap pencatatan memengaruhi kewajaran laporan.'],
+['TM14','Keputusan profesional yang baik harus dapat...',['disembunyikan','dipertanggungjawabkan kepada pihak rasional dan terinformasi','menguntungkan diri sendiri','menghindari bukti'],1,'Akuntan harus siap diuji oleh pihak ketiga yang rasional.']
+];
+let quiz=[];for(let i=0;i<90;i++){let q=baseQ[i%baseQ.length].slice();q[0]=q[0]+(i>=baseQ.length?' · Pengayaan':'');quiz.push(q)}
+let pool=[...quiz],idx=0,answered=false;
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function resetQuiz(){pool=shuffle([...quiz]);idx=0;showQ()}
+function filterQuiz(){const f=document.getElementById('quizFilter').value.toLowerCase();pool=quiz.filter(q=>(q[0]+' '+q[1]+' '+q[4]).toLowerCase().includes(f));if(pool.length===0){pool=[['Tidak ada soal','Kata kunci tidak ditemukan. Hapus filter untuk kembali ke seluruh soal.',['OK'],0,'']]}idx=0;showQ()}
+function showQ(){answered=false;const q=pool[idx%pool.length];document.getElementById('qMeta').textContent=`${q[0]} · Soal ${idx+1} dari ${pool.length}`;document.getElementById('qText').textContent=q[1];document.getElementById('qExp').style.display='none';document.getElementById('qExp').textContent=q[4];document.getElementById('qOpts').innerHTML=q[2].map((o,i)=>`<button class="opt" onclick="answer(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}
+function answer(i){if(answered)return;answered=true;const q=pool[idx%pool.length];document.querySelectorAll('.opt').forEach((b,n)=>{if(n===q[3])b.classList.add('correct');if(n===i&&i!==q[3])b.classList.add('wrong')});document.getElementById('qExp').style.display='block'}
+function nextQ(){idx++;showQ()}
+resetQuiz();
+</script>
+</body>
+</html>

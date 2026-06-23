@@ -1,0 +1,8 @@
+import type { BankSoal } from '../../types';
+export const MAS122_BANK: BankSoal[] = [
+  { type: 'calculation', question: 'Data: 4, 6, 6, 8, 100. Hitung mean & median, lalu tentukan ukuran pemusatan mana yang lebih tepat dan mengapa.', answerGuide: 'Mean = 124÷5 = 24,8; median = 6. Karena ada outlier (100), data miring kanan; median lebih representatif daripada mean.' },
+  { type: 'calculation', question: 'Sampel n=100, x̄=50, s=10. Bentuk confidence interval 95% untuk rata-rata populasi (Z=1,96).', answerGuide: 'CI = x̄ ± Z·(s/√n) = 50 ± 1,96·(10/10) = 50 ± 1,96 → (48,04 ; 51,96). Artinya 95% yakin μ berada di interval tersebut.' },
+  { type: 'essay', question: 'Sebutkan lima langkah uji hipotesis dan jelaskan perbedaan error tipe I dan tipe II.', answerGuide: 'Langkah: rumuskan H₀ & H₁; tetapkan α; hitung statistik uji; bandingkan/p-value; putuskan (tolak H₀ bila p<α). Error tipe I (α) = menolak H₀ yang benar; tipe II (β) = gagal menolak H₀ yang salah. Power = 1 − β.' },
+  { type: 'concept-check', question: 'Kapan memakai ANOVA dan kapan memakai uji-t? Mengapa tidak melakukan banyak uji-t saja?', answerGuide: 'Uji-t untuk membandingkan ≤2 rata-rata; ANOVA untuk ≥3 kelompok. Melakukan banyak uji-t menaikkan peluang error tipe I secara kumulatif; ANOVA mengujinya sekaligus dengan α terkendali.' },
+  { type: 'calculation', question: 'Model regresi biaya: Ŷ = 5.000.000 + 2.000·X dengan R² = 0,85. Interpretasikan intercept, slope, dan R².', answerGuide: 'Intercept 5.000.000 = biaya tetap (saat X=0). Slope 2.000 = biaya variabel per unit. R²=0,85 berarti 85% variasi biaya dijelaskan oleh volume (X); sisanya faktor lain.' },
+];

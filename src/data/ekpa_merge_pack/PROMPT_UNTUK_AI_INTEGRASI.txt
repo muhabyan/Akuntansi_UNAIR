@@ -1,0 +1,10 @@
+Tugas Anda adalah menggabungkan materi EKPA Pra UAS TM 8–14 ke dalam website kumpulan materi mata kuliah saya. Gunakan file EKPA_TM8-14_GABUNGAN_FULLCONTENT.md atau ekpa_tm8_14_data.json sebagai sumber utama.
+
+Instruksi wajib:
+1. Jangan meringkas, jangan menghapus, dan jangan mengambil 15–20% saja dari materi.
+2. Pertahankan seluruh struktur: Peta Materi, TM 8, TM 9, TM 10, TM 11, TM 12, TM 13, TM 14, Bank Kasus, Kerangka Esai, 40 Flashcard, 90 Soal Latihan, Rubrik, dan Referensi.
+3. Pecah konten menjadi komponen/subhalaman agar tidak ada materi yang terpotong.
+4. Untuk website React/Vite, gunakan file ekpa_tm8_14_data.js sebagai data source, lalu render modules, cases, flashcards, quiz, dan references secara terpisah.
+5. Untuk website HTML biasa, gunakan EKPA_TM8-14_GABUNGAN_FRAGMENT.html karena file itu sudah content-only tanpa CSS dan tanpa JavaScript.
+6. Jangan mengubah substansi akademik kecuali hanya memperbaiki tata letak, navigasi, dan responsivitas.
+7. Setelah integrasi, cek jumlah akhir: harus ada 7 TM, 10 kasus, 40 flashcard, 90 soal latihan, dan daftar referensi.

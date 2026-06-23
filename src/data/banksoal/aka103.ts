@@ -1,0 +1,14 @@
+// Bank soal esai/kasus diekstrak dari guide mahasiswa.
+import type { BankSoal } from '../../types';
+export const AKA103_BANK: BankSoal[] = [
+  {"type": "case", "question": "Korupsi Pengadaan Alquran — Fokus: hubungan etika, agama, amanah publik, dan penyalahgunaan kuasa.", "answerGuide": "Jawaban ideal menguraikan bahwa simbol agama tidak otomatis menjamin perilaku etis. Etika memerlukan integritas, kontrol, transparansi, dan pertanggungjawaban."},
+  {"type": "case", "question": "Abercrombie & Fitch Religious Discrimination — Fokus: akomodasi agama, dress code, diskriminasi, dan hak pekerja.", "answerGuide": "Jawaban ideal menilai apakah kebijakan perusahaan proporsional, relevan dengan pekerjaan, dan tidak melanggar hak beragama."},
+  {"type": "case", "question": "Survei Sikap Profesional Pasar Kerja — Fokus: gap persepsi mahasiswa dan kebutuhan industri.", "answerGuide": "Jawaban ideal menyusun indikator, skala, responden, ranking kompetensi, dan implikasi kurikulum."},
+  {"type": "case", "question": "Fraud Garuda Indonesia: Tata Kelola — Fokus: dewan, komite audit, auditor eksternal, CEO dominance, dan pengakuan pendapatan.", "answerGuide": "Jawaban ideal menghubungkan governance dengan pencegahan salah saji dan konflik kepentingan."},
+  {"type": "case", "question": "Fraud Garuda: Kepemimpinan Direktur Utama — Fokus: tone at the top, tekanan target, budaya kepatuhan, dan keberanian bawahan.", "answerGuide": "Jawaban ideal membedakan pemimpin efektif dan pemimpin etis. Pemimpin efektif belum tentu etis apabila hasil dicapai melalui manipulasi."},
+  {"type": "case", "question": "Invoice Fiktif Vendor — Fokus: opportunity, rationalization, internal control, dan komunikasi temuan.", "answerGuide": "Akuntan harus mengumpulkan bukti, melaporkan melalui jalur formal, menjaga kerahasiaan, dan mengusulkan pemisahan tugas."},
+  {"type": "case", "question": "Bonus Berbasis Laba — Fokus: executive compensation sebagai pemicu perilaku oportunistik.", "answerGuide": "Rancang KPI yang tidak hanya berbasis laba jangka pendek, tetapi juga kualitas laporan, kepatuhan, dan indikator nonkeuangan."},
+  {"type": "case", "question": "Tekanan Closing Akhir Tahun — Fokus: tekanan organisasi, pertimbangan profesional, dan keberanian etis.", "answerGuide": "Akuntan harus menolak pencatatan tanpa bukti memadai dan mendokumentasikan pertimbangan profesional."},
+  {"type": "case", "question": "Diskriminasi Disabilitas dalam Rekrutmen — Fokus: reasonable accommodation dan fairness.", "answerGuide": "HR harus menilai kompetensi esensial pekerjaan dan menyediakan akomodasi wajar bila tidak menimbulkan beban tidak proporsional."},
+  {"type": "case", "question": "Presentasi Temuan Audit yang Sensitif — Fokus: komunikasi oral, bukti, kerahasiaan, dan diplomasi profesional.", "answerGuide": "Gunakan bahasa berbasis fakta, hindari tuduhan personal, jelaskan risiko, dan beri rekomendasi perbaikan."}
+];

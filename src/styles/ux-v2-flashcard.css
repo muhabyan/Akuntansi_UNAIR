@@ -1,0 +1,230 @@
+.ux-v2--akbi .akbi-flashcard-workspace {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+  border: 1px solid rgb(var(--color-border) / 0.78);
+  border-radius: 1.5rem;
+  background: rgb(var(--surface-card) / 0.78);
+  padding: clamp(1.15rem, 2.5vw, 1.75rem);
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__kicker {
+  margin: 0 0 0.55rem;
+  color: rgb(var(--color-gold));
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__identity h2 {
+  margin: 0;
+  color: rgb(var(--color-text-title));
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.25rem);
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__identity > div > p:last-child {
+  max-width: 52rem;
+  margin: 0.8rem 0 0;
+  color: rgb(var(--color-text-muted));
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(5.75rem, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__metrics > div {
+  min-width: 0;
+  border: 1px solid rgb(var(--color-border) / 0.72);
+  border-radius: 1rem;
+  background: rgb(var(--surface-muted) / 0.58);
+  padding: 0.8rem;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__metrics dt {
+  color: rgb(var(--color-text-muted));
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__metrics dd {
+  margin: 0.25rem 0 0;
+  color: rgb(var(--color-text-title));
+  font-size: 0.92rem;
+  font-weight: 900;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__steps li {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 0.65rem;
+  border: 1px solid rgb(var(--color-border) / 0.65);
+  border-radius: 1rem;
+  background: rgb(var(--surface-soft) / 0.52);
+  padding: 0.85rem;
+  color: rgb(var(--color-text-muted));
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__steps svg {
+  flex: 0 0 auto;
+  color: rgb(var(--color-gold));
+}
+
+.ux-v2--akbi .akbi-flashcard-workspace__steps strong {
+  display: block;
+  color: rgb(var(--color-text-title));
+  font-size: 0.82rem;
+}
+
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-session-bar {
+  overflow: hidden;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: rgb(var(--color-border) / 0.62);
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-session-bar > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: rgb(var(--color-gold));
+  transition: width 180ms ease;
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__copy p {
+  margin: 0.5rem 0 0;
+  color: rgb(var(--color-text-muted));
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions button {
+  min-height: 44px;
+  border: 1px solid rgb(var(--color-border) / 0.82);
+  border-radius: 0.85rem;
+  background: rgb(var(--surface-card) / 0.88);
+  padding: 0.65rem 0.85rem;
+  color: rgb(var(--color-text-main));
+  font-size: 0.76rem;
+  font-weight: 850;
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions button:hover,
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions button:focus-visible {
+  border-color: rgb(var(--color-gold) / 0.72);
+  color: rgb(var(--color-gold));
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions button[aria-pressed="true"] {
+  border-color: rgb(var(--color-gold) / 0.88);
+  background: rgb(var(--color-gold) / 0.14);
+  color: rgb(var(--color-gold));
+}
+
+.ux-v2--akbi .akbi-flashcard-deck .flashcard-gacha-card:focus-visible {
+  outline: 3px solid rgb(var(--color-gold) / 0.68);
+  outline-offset: 5px;
+}
+
+@media (max-width: 1023px) {
+  .ux-v2--akbi .akbi-flashcard-workspace__identity {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-workspace__metrics {
+    width: 100%;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-workspace__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .ux-v2--akbi .akbi-flashcard-workspace__identity {
+    border-radius: 1.15rem;
+    padding: 1rem;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-workspace__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-workspace__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-deck .flashcard-gacha-card-shell[aria-hidden="true"] {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-deck .flashcard-gacha-stage {
+    border-radius: 1.25rem;
+    padding-inline: 0.25rem;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery {
+    grid-template-columns: 1fr;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions {
+    justify-content: stretch;
+  }
+
+  .ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-mastery__actions button {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ux-v2--akbi .akbi-flashcard-deck .akbi-flashcard-session-bar > span,
+  .ux-v2--akbi .akbi-flashcard-deck .flashcard-gacha-card-shell,
+  .ux-v2--akbi .akbi-flashcard-deck .flashcard-gacha-card {
+    transition-duration: 0.01ms !important;
+  }
+}

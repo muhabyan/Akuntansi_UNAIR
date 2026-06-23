@@ -1,0 +1,1039 @@
+/* Stage 1–6 — Landing + Semester Experience.
+   Scope: HomeView only. This stylesheet deliberately avoids card-heavy dashboard patterns. */
+
+.uiux-final-shell .semester-experience {
+  --journey-ink: var(--ux-text-primary, rgb(var(--color-text-title)));
+  --journey-muted: var(--ux-text-muted, rgb(var(--color-text-muted)));
+  --journey-copy: var(--ux-text-secondary, rgb(var(--color-text-description)));
+  --journey-line: var(--ux-divider, rgb(var(--color-border) / 0.5));
+  --journey-accent: #d6a21e;
+  min-height: 100vh;
+  color: var(--journey-copy);
+  background:
+    radial-gradient(circle at 8% 8%, color-mix(in srgb, var(--journey-accent) 11%, transparent), transparent 32rem),
+    radial-gradient(circle at 94% 14%, color-mix(in srgb, var(--ux-accent, #91b9ff) 9%, transparent), transparent 34rem),
+    linear-gradient(180deg, var(--ux-canvas), var(--ux-canvas));
+}
+
+.uiux-final-shell[data-theme="light"] .semester-experience {
+  --journey-accent: #a87300;
+  background:
+    radial-gradient(circle at 8% 8%, rgb(205 154 42 / 0.18), transparent 32rem),
+    radial-gradient(circle at 94% 14%, rgb(40 82 143 / 0.10), transparent 34rem),
+    linear-gradient(180deg, #f7f4ec, #f7f6f2 48%, #eeede8);
+}
+
+.uiux-final-shell .semester-experience__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.26;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(180deg, black, transparent 84%);
+}
+
+.uiux-final-shell[data-theme="light"] .semester-experience__grain {
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgb(15 23 42 / 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(15 23 42 / 0.035) 1px, transparent 1px);
+}
+
+.uiux-final-shell .semester-experience__light {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.28;
+}
+
+.uiux-final-shell .semester-experience__light--gold {
+  width: 22rem;
+  height: 22rem;
+  left: -10rem;
+  top: 5rem;
+  background: color-mix(in srgb, var(--journey-accent) 36%, transparent);
+}
+
+.uiux-final-shell .semester-experience__light--blue {
+  width: 28rem;
+  height: 28rem;
+  right: -14rem;
+  top: 24rem;
+  background: color-mix(in srgb, var(--ux-accent, #91b9ff) 23%, transparent);
+}
+
+.uiux-final-shell .semester-kicker {
+  color: var(--journey-muted) !important;
+  font-size: 0.76rem;
+  font-weight: 850;
+  letter-spacing: 0.24em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-title,
+.uiux-final-shell .semester-volume__title {
+  color: var(--journey-ink) !important;
+  text-wrap: balance;
+}
+
+.uiux-final-shell .semester-title span {
+  color: var(--journey-accent) !important;
+}
+
+.uiux-final-shell .semester-lede {
+  color: var(--journey-copy) !important;
+  text-wrap: balance;
+}
+
+.uiux-final-shell .semester-landing__side {
+  border-left: 1px solid var(--journey-line);
+  padding-left: 2rem;
+}
+
+.uiux-final-shell .semester-cta {
+  min-height: 46px;
+  border-bottom: 1px solid currentColor;
+  color: var(--journey-ink) !important;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  transition: color 180ms ease, gap 180ms ease;
+}
+
+.uiux-final-shell .semester-cta:hover {
+  gap: 1rem;
+  color: var(--journey-accent) !important;
+}
+
+.uiux-final-shell .semester-volume-list {
+  border-top: 1px solid var(--journey-line);
+}
+
+.uiux-final-shell .semester-volume {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(5.8rem, 0.28fr) minmax(0, 1fr) minmax(9rem, 0.34fr);
+  gap: clamp(1.25rem, 4vw, 4.5rem);
+  align-items: center;
+  border-bottom: 1px solid var(--journey-line);
+  padding: clamp(1.65rem, 4.5vw, 4rem) 0;
+  text-align: left;
+  color: inherit;
+  transition: background 180ms ease, padding-inline 180ms ease, opacity 180ms ease;
+}
+
+.uiux-final-shell .semester-volume:not(:disabled):hover,
+.uiux-final-shell .semester-volume:not(:disabled):focus-visible {
+  background: color-mix(in srgb, var(--journey-accent) 6%, transparent);
+  padding-left: clamp(0.4rem, 1vw, 1rem);
+  padding-right: clamp(0.4rem, 1vw, 1rem);
+}
+
+.uiux-final-shell .semester-volume:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ux-focus, var(--journey-accent)) 42%, transparent);
+  outline-offset: 4px;
+}
+
+.uiux-final-shell .semester-volume--locked {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.uiux-final-shell .semester-volume__index {
+  color: var(--journey-accent) !important;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.8rem, 4.8vw, 4.9rem);
+  font-weight: 950;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+  white-space: nowrap;
+}
+
+.uiux-final-shell .semester-volume__main {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.uiux-final-shell .semester-volume__eyebrow {
+  color: var(--journey-muted) !important;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-volume__title {
+  display: block;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(2.15rem, 5vw, 6.2rem);
+  font-weight: 950;
+  letter-spacing: -0.075em;
+  line-height: 0.9;
+}
+
+.uiux-final-shell .semester-volume__desc {
+  display: block;
+  max-width: 42rem;
+  color: var(--journey-copy) !important;
+  font-size: clamp(0.95rem, 1.2vw, 1.08rem);
+  line-height: 1.8;
+}
+
+.uiux-final-shell .semester-volume__meta {
+  display: grid;
+  justify-items: end;
+  gap: 1.15rem;
+  color: var(--journey-muted) !important;
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.uiux-final-shell .semester-volume__enter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--journey-ink) !important;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.uiux-final-shell .semester-volume:not(:disabled):hover .semester-volume__enter,
+.uiux-final-shell .semester-volume:not(:disabled):focus-visible .semester-volume__enter {
+  color: var(--journey-accent) !important;
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .semester-landing__side {
+    border-left: 0;
+    border-top: 1px solid var(--journey-line);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
+  .uiux-final-shell .semester-volume {
+    grid-template-columns: 1fr;
+    gap: 1.1rem;
+    padding-block: 2.35rem;
+  }
+
+  .uiux-final-shell .semester-volume__meta {
+    justify-items: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uiux-final-shell .semester-experience *,
+  .uiux-final-shell .semester-experience *::before,
+  .uiux-final-shell .semester-experience *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Stage 2 — editorial rhythm and non-card curriculum index. */
+.uiux-final-shell .semester-arc {
+  position: relative;
+}
+
+.uiux-final-shell .semester-arc__intro {
+  display: grid;
+  gap: 1.4rem;
+  max-width: 56rem;
+}
+
+.uiux-final-shell .semester-arc__text {
+  max-width: 52rem;
+  color: var(--journey-ink) !important;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.85rem, 4vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.uiux-final-shell .semester-arc__list {
+  display: grid;
+  gap: 0;
+  margin-top: clamp(2.6rem, 6vw, 5rem);
+  border-top: 1px solid var(--journey-line);
+}
+
+.uiux-final-shell .semester-arc__item {
+  display: grid;
+  grid-template-columns: minmax(3rem, 0.18fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 3.2rem);
+  align-items: baseline;
+  border-bottom: 1px solid var(--journey-line);
+  padding: clamp(1.05rem, 2vw, 1.7rem) 0;
+  color: var(--journey-copy) !important;
+}
+
+.uiux-final-shell .semester-arc__count {
+  color: var(--journey-accent) !important;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.1rem, 2.5vw, 2rem);
+  font-weight: 950;
+  letter-spacing: -0.05em;
+}
+
+.uiux-final-shell .semester-arc__item strong {
+  display: inline;
+  margin-right: 0.8rem;
+  color: var(--journey-ink) !important;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.uiux-final-shell .semester-arc__item span:last-child {
+  color: var(--journey-copy) !important;
+  line-height: 1.85;
+}
+
+.uiux-final-shell .semester-volume-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  color: var(--journey-muted) !important;
+  font-size: 0.73rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-volume-rail span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.uiux-final-shell .semester-volume-rail span:not(:last-child)::after {
+  content: '/';
+  color: color-mix(in srgb, var(--journey-muted) 54%, transparent);
+}
+
+.uiux-final-shell .semester-volume__movement {
+  display: block;
+  max-width: 38rem;
+  color: var(--journey-muted) !important;
+  font-size: clamp(0.86rem, 1vw, 0.98rem);
+  font-style: italic;
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .semester-arc__item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+/* Stage 3 — entrance continuity without adding card containers. */
+.uiux-final-shell .semester-landing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+  align-items: center;
+}
+
+.uiux-final-shell .semester-cta--subtle {
+  color: var(--journey-muted) !important;
+}
+
+.uiux-final-shell .semester-cta--subtle:hover,
+.uiux-final-shell .semester-cta--subtle:focus-visible {
+  color: var(--journey-accent) !important;
+}
+
+.uiux-final-shell .semester-landing__open {
+  color: var(--journey-muted) !important;
+}
+
+.uiux-final-shell .semester-volume--open .semester-volume__index::after {
+  content: '';
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-left: 0.55rem;
+  vertical-align: middle;
+  background: currentColor;
+}
+
+.uiux-final-shell .semester-continuity {
+  display: grid;
+  gap: clamp(1.2rem, 3vw, 2.25rem);
+  margin-top: clamp(3rem, 7vw, 6rem);
+  border-top: 1px solid var(--journey-line);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.uiux-final-shell .semester-continuity__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.uiux-final-shell .semester-continuity__body > p {
+  max-width: 44rem;
+  color: var(--journey-copy) !important;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.9;
+}
+
+.uiux-final-shell .semester-continuity__links {
+  display: grid;
+  gap: 0.85rem;
+  min-width: min(18rem, 100%);
+}
+
+.uiux-final-shell .semester-continuity__links button {
+  display: grid;
+  gap: 0.25rem;
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 0.85rem;
+  text-align: left;
+  color: var(--journey-ink) !important;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  transition: color 180ms ease, padding-left 180ms ease;
+}
+
+.uiux-final-shell .semester-continuity__links button span {
+  color: var(--journey-muted) !important;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-continuity__links button:hover,
+.uiux-final-shell .semester-continuity__links button:focus-visible {
+  padding-left: 0.45rem;
+  color: var(--journey-accent) !important;
+}
+
+.uiux-final-shell .semester-continuity__links button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ux-focus, var(--journey-accent)) 42%, transparent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .semester-landing__actions,
+  .uiux-final-shell .semester-continuity__body {
+    grid-template-columns: 1fr;
+  }
+
+  .uiux-final-shell .semester-continuity__body {
+    gap: 1.8rem;
+  }
+}
+
+/* Stage 4 — entrance pathway clarity without card containers. */
+.uiux-final-shell .semester-pathway {
+  position: relative;
+}
+
+.uiux-final-shell .semester-pathway__header {
+  display: grid;
+  gap: 1.3rem;
+  max-width: 58rem;
+}
+
+.uiux-final-shell .semester-pathway__header > p:last-child {
+  color: var(--journey-ink) !important;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(2.2rem, 5vw, 5.8rem);
+  font-weight: 950;
+  letter-spacing: -0.078em;
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+.uiux-final-shell .semester-pathway__list {
+  display: grid;
+  margin-top: clamp(2.2rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--journey-line);
+}
+
+.uiux-final-shell .semester-pathway__item {
+  display: grid;
+  grid-template-columns: minmax(2.8rem, 0.16fr) minmax(8rem, 0.28fr) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 3.6rem);
+  align-items: baseline;
+  border-bottom: 1px solid var(--journey-line);
+  padding: clamp(1.1rem, 2vw, 1.8rem) 0;
+}
+
+.uiux-final-shell .semester-pathway__item > span {
+  color: var(--journey-accent) !important;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.15rem, 2.3vw, 2.1rem);
+  font-weight: 950;
+  letter-spacing: -0.055em;
+}
+
+.uiux-final-shell .semester-pathway__item > strong {
+  color: var(--journey-ink) !important;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.uiux-final-shell .semester-pathway__item > p {
+  max-width: 42rem;
+  color: var(--journey-copy) !important;
+  font-size: clamp(0.94rem, 1.08vw, 1.05rem);
+  line-height: 1.85;
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .semester-pathway__item {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+}
+
+
+/* Stage 5 — volume locator clarity without adding panel containers. */
+.uiux-final-shell .semester-volume-locator {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 45rem;
+  border-top: 1px solid var(--journey-line);
+  padding-top: 1.1rem;
+}
+
+.uiux-final-shell .semester-volume-locator > span {
+  color: var(--journey-muted) !important;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-volume-locator__jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.15rem;
+  align-items: center;
+}
+
+.uiux-final-shell .semester-volume-locator__jumps button {
+  border-bottom: 1px solid currentColor;
+  padding: 0 0 0.28rem;
+  color: var(--journey-ink) !important;
+  font-family: var(--font-display, inherit);
+  font-size: 0.92rem;
+  font-weight: 950;
+  letter-spacing: -0.025em;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.uiux-final-shell .semester-volume-locator__jumps button[data-volume-state="preview"] {
+  color: var(--journey-muted) !important;
+}
+
+.uiux-final-shell .semester-volume-locator__jumps button:hover,
+.uiux-final-shell .semester-volume-locator__jumps button:focus-visible {
+  color: var(--journey-accent) !important;
+  transform: translateY(-1px);
+}
+
+.uiux-final-shell .semester-volume-locator__jumps button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ux-focus, var(--journey-accent)) 42%, transparent);
+  outline-offset: 4px;
+}
+
+
+/* Stage 6 — final visual consolidation without adding card containers. */
+.uiux-final-shell .semester-experience--final .semester-landing {
+  padding-top: clamp(2rem, 4vw, 4.5rem);
+}
+
+.uiux-final-shell .semester-experience--final .semester-arc,
+.uiux-final-shell .semester-experience--final .semester-pathway {
+  padding-bottom: clamp(3.2rem, 7vw, 6.2rem);
+}
+
+.uiux-final-shell .semester-experience--final .semester-volume-section {
+  padding-top: clamp(3.4rem, 8vw, 7rem);
+}
+
+.uiux-final-shell .semester-reading-order {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: clamp(1.7rem, 4vw, 2.4rem);
+  border-top: 1px solid var(--journey-line);
+  padding-top: 1.2rem;
+}
+
+.uiux-final-shell .semester-reading-order > span {
+  color: var(--journey-muted) !important;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-reading-order ol {
+  display: grid;
+  gap: 0.68rem;
+}
+
+.uiux-final-shell .semester-reading-order li {
+  display: grid;
+  grid-template-columns: minmax(5.6rem, auto) minmax(0, 1fr);
+  gap: 0.8rem;
+  align-items: baseline;
+  color: var(--journey-copy) !important;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.uiux-final-shell .semester-reading-order strong {
+  color: var(--journey-ink) !important;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.uiux-final-shell .semester-experience--final .semester-volume-locator,
+.uiux-final-shell .semester-experience--final .semester-continuity {
+  scroll-margin-top: 5rem;
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .semester-reading-order li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
+/* Stage 8 — Visual polish and motion refinement.
+   Fixes validated against manual browser feedback: restrained hero scale,
+   unified navbar treatment, background continuity, and subtle scroll progress. */
+html {
+  scroll-behavior: smooth;
+}
+
+.uiux-final-shell:has(.semester-experience--polished) {
+  background: var(--ux-canvas) !important;
+}
+
+.uiux-final-shell .stage8-navbar {
+  pointer-events: none;
+}
+
+.uiux-final-shell .stage8-navbar > div,
+.uiux-final-shell .stage8-navbar .stage8-nav-shell,
+.uiux-final-shell .stage8-navbar .nav-menu-container {
+  pointer-events: auto;
+}
+
+.uiux-final-shell .stage8-nav-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem !important;
+  border-color: color-mix(in srgb, var(--ux-border-subtle) 78%, transparent) !important;
+  background: color-mix(in srgb, var(--ux-surface-raised) 86%, transparent) !important;
+  box-shadow: 0 16px 44px color-mix(in srgb, var(--ux-text-primary) 10%, transparent) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(130%);
+  backdrop-filter: blur(22px) saturate(130%);
+  transition: border-radius 260ms var(--ux-ease-standard), background-color 260ms var(--ux-ease-standard), box-shadow 260ms var(--ux-ease-standard);
+}
+
+.uiux-final-shell .stage8-navbar.is-scrolled .stage8-nav-shell {
+  border-radius: 1rem !important;
+  background: color-mix(in srgb, var(--ux-surface-raised) 92%, transparent) !important;
+  box-shadow: 0 12px 34px color-mix(in srgb, var(--ux-text-primary) 12%, transparent) !important;
+}
+
+.uiux-final-shell .stage8-brand-mark {
+  border-color: color-mix(in srgb, var(--ux-accent) 58%, var(--ux-border-subtle)) !important;
+  background: color-mix(in srgb, var(--ux-surface) 78%, var(--ux-accent) 12%) !important;
+  color: var(--ux-accent-strong) !important;
+  box-shadow: none !important;
+}
+
+.uiux-final-shell .stage8-brand-title {
+  color: var(--ux-text-primary) !important;
+}
+
+.uiux-final-shell .stage8-brand-subtitle {
+  color: var(--ux-text-muted) !important;
+}
+
+.uiux-final-shell .glass-nav-segment {
+  border-radius: 1rem !important;
+  background: color-mix(in srgb, var(--ux-surface-soft) 84%, transparent) !important;
+}
+
+.uiux-final-shell .glass-nav-btn {
+  border-radius: 0.85rem !important;
+  color: var(--ux-text-muted) !important;
+  min-height: 40px !important;
+}
+
+.uiux-final-shell .glass-nav-btn:hover,
+.uiux-final-shell .glass-nav-btn.is-active {
+  background: color-mix(in srgb, var(--ux-surface-raised) 76%, var(--ux-accent) 8%) !important;
+  color: var(--ux-text-primary) !important;
+  border-color: color-mix(in srgb, var(--ux-border-subtle) 74%, var(--ux-accent) 18%) !important;
+  box-shadow: none !important;
+}
+
+.uiux-final-shell .glass-input-shell {
+  border-radius: 1rem !important;
+  background: color-mix(in srgb, var(--ux-surface-soft) 82%, transparent) !important;
+  box-shadow: none !important;
+}
+
+.uiux-final-shell .glass-input-shell input {
+  color: var(--ux-text-primary) !important;
+}
+
+.uiux-final-shell .glass-input-shell input::placeholder {
+  color: var(--ux-text-muted) !important;
+}
+
+.uiux-final-shell .ux-v2-theme-toggle {
+  border-radius: 1rem !important;
+  background: color-mix(in srgb, var(--ux-surface) 86%, transparent) !important;
+}
+
+.uiux-final-shell .stage8-scroll-progress {
+  position: absolute;
+  left: max(1rem, env(safe-area-inset-left));
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: -0.4rem;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0.72;
+  transform: translateY(100%);
+}
+
+.uiux-final-shell .stage8-scroll-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  background: var(--ux-accent);
+  transition: transform 80ms linear;
+}
+
+.uiux-final-shell .semester-experience--polished {
+  background:
+    radial-gradient(circle at 12% 6%, color-mix(in srgb, var(--journey-accent) 9%, transparent), transparent 28rem),
+    radial-gradient(circle at 88% 18%, color-mix(in srgb, var(--ux-accent, #91b9ff) 8%, transparent), transparent 30rem),
+    linear-gradient(180deg, var(--ux-canvas), var(--ux-canvas)) !important;
+}
+
+.uiux-final-shell[data-theme="light"] .semester-experience--polished {
+  background:
+    radial-gradient(circle at 12% 6%, rgb(205 154 42 / 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 18%, rgb(40 82 143 / 0.07), transparent 30rem),
+    linear-gradient(180deg, #f7f4ec 0%, #f7f4ec 36%, #f2efe7 100%) !important;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-landing {
+  min-height: min(760px, calc(100svh - 1rem));
+  padding-top: clamp(7.5rem, 14svh, 10.5rem) !important;
+  padding-bottom: clamp(4rem, 9svh, 7rem) !important;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-title {
+  font-size: clamp(3.6rem, 9.2vw, 8.4rem);
+  line-height: 0.88;
+  letter-spacing: -0.078em;
+  max-width: 58rem;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-landing__side {
+  max-width: 21rem;
+  border-left-color: color-mix(in srgb, var(--journey-line) 78%, transparent);
+}
+
+.uiux-final-shell .semester-experience--polished .semester-landing__actions {
+  margin-top: 0;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-landing__open {
+  letter-spacing: 0.16em;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-arc__text,
+.uiux-final-shell .semester-experience--polished .semester-pathway__header > p:last-child {
+  max-width: 46rem;
+  font-size: clamp(1.55rem, 3.1vw, 3.4rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+  font-weight: 850;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-arc__list,
+.uiux-final-shell .semester-experience--polished .semester-pathway__list,
+.uiux-final-shell .semester-experience--polished .semester-volume-list {
+  border-top-color: color-mix(in srgb, var(--journey-line) 72%, transparent);
+}
+
+.uiux-final-shell .semester-experience--polished .semester-arc__item,
+.uiux-final-shell .semester-experience--polished .semester-pathway__item,
+.uiux-final-shell .semester-experience--polished .semester-volume {
+  border-bottom-color: color-mix(in srgb, var(--journey-line) 72%, transparent);
+}
+
+.uiux-final-shell .semester-experience--polished .semester-volume__title {
+  font-size: clamp(1.9rem, 4vw, 4.9rem);
+  letter-spacing: -0.065em;
+}
+
+.uiux-final-shell .semester-experience--polished .semester-volume__index {
+  font-size: clamp(1.6rem, 3.9vw, 3.8rem);
+}
+
+.uiux-final-shell .semester-experience--polished .semester-volume:not(:disabled):hover,
+.uiux-final-shell .semester-experience--polished .semester-volume:not(:disabled):focus-visible {
+  background: color-mix(in srgb, var(--journey-accent) 4%, transparent);
+}
+
+.uiux-final-shell .semester-experience--polished :where(.semester-arc, .semester-pathway, .semester-volume-section) {
+  animation: semester-subtle-reveal 520ms var(--ux-ease-standard) both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 24%;
+}
+
+@keyframes semester-subtle-reveal {
+  from {
+    opacity: 0.68;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .semester-experience--polished .semester-landing {
+    padding-top: 7.25rem !important;
+  }
+
+  .uiux-final-shell .semester-experience--polished .semester-title {
+    font-size: clamp(3.4rem, 18vw, 5.8rem);
+    letter-spacing: -0.072em;
+  }
+
+  .uiux-final-shell .semester-experience--polished .semester-landing__side {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .uiux-final-shell .semester-experience--polished :where(.semester-arc, .semester-pathway, .semester-volume-section) {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .uiux-final-shell .stage8-scroll-progress span {
+    transition: none !important;
+  }
+}
+
+/* Stage 9 — Navbar interaction + viewport scroll reveal fix.
+   Browser feedback target: visibly redesigned navbar, safe dropdown layering,
+   and section elements revealed when they enter the user viewport. */
+.uiux-final-shell .stage9-navbar {
+  pointer-events: auto !important;
+  isolation: isolate;
+  z-index: 90 !important;
+}
+
+.uiux-final-shell .stage9-navbar .stage9-nav-shell {
+  overflow: visible !important;
+  border-radius: 999px !important;
+  border: 1px solid color-mix(in srgb, var(--ux-border-subtle) 72%, transparent) !important;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ux-surface-raised) 90%, transparent), color-mix(in srgb, var(--ux-surface) 72%, transparent)) !important;
+  box-shadow:
+    0 18px 44px color-mix(in srgb, var(--ux-text-primary) 10%, transparent),
+    inset 0 1px 0 color-mix(in srgb, white 16%, transparent) !important;
+  transform-origin: top center;
+}
+
+.uiux-final-shell .stage9-navbar.is-scrolled .stage9-nav-shell {
+  border-radius: 1.35rem !important;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--ux-surface-raised) 96%, transparent), color-mix(in srgb, var(--ux-surface) 84%, transparent)) !important;
+}
+
+.uiux-final-shell[data-theme="light"] .stage9-navbar .stage9-nav-shell {
+  background:
+    linear-gradient(135deg, rgb(255 253 248 / 0.92), rgb(246 241 230 / 0.84)) !important;
+  box-shadow:
+    0 18px 44px rgb(44 33 12 / 0.10),
+    inset 0 1px 0 rgb(255 255 255 / 0.75) !important;
+}
+
+.uiux-final-shell .stage9-brand-mark {
+  border: 1px solid color-mix(in srgb, var(--ux-accent) 62%, var(--ux-border-subtle)) !important;
+  background:
+    radial-gradient(circle at 38% 28%, color-mix(in srgb, var(--ux-accent) 30%, white 14%), transparent 54%),
+    color-mix(in srgb, var(--ux-surface-raised) 82%, var(--ux-accent) 13%) !important;
+  color: var(--ux-accent-strong) !important;
+}
+
+.uiux-final-shell .stage9-brand-title {
+  color: var(--ux-text-primary) !important;
+  letter-spacing: -0.045em;
+}
+
+.uiux-final-shell .stage9-brand-subtitle {
+  color: var(--ux-text-muted) !important;
+}
+
+.uiux-final-shell .stage9-nav-pill {
+  border-radius: 999px !important;
+  border-color: color-mix(in srgb, var(--ux-border-subtle) 62%, transparent) !important;
+  background: color-mix(in srgb, var(--ux-surface-soft) 64%, transparent) !important;
+  box-shadow: none !important;
+}
+
+.uiux-final-shell .stage9-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px !important;
+  border-radius: 999px !important;
+  color: var(--ux-text-muted) !important;
+  letter-spacing: -0.02em;
+  box-shadow: none !important;
+}
+
+.uiux-final-shell .stage9-nav-link:hover,
+.uiux-final-shell .stage9-nav-link.is-active,
+.uiux-final-shell .stage9-nav-link[aria-expanded="true"] {
+  border-color: color-mix(in srgb, var(--ux-accent) 32%, var(--ux-border-subtle)) !important;
+  background: color-mix(in srgb, var(--ux-accent) 12%, var(--ux-surface-raised) 76%) !important;
+  color: var(--ux-text-primary) !important;
+}
+
+.uiux-final-shell .stage9-mobile-toggle {
+  display: inline-grid;
+  min-height: 40px;
+  min-width: 40px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--ux-border-subtle) 76%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ux-surface-soft) 76%, transparent);
+  color: var(--ux-text-primary);
+}
+
+.uiux-final-shell .stage9-mobile-panel {
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--ux-border-subtle) 70%, transparent);
+  border-radius: 1.4rem;
+  padding: 0.55rem;
+  background: color-mix(in srgb, var(--ux-surface-raised) 94%, transparent);
+  box-shadow: 0 18px 46px color-mix(in srgb, var(--ux-text-primary) 12%, transparent);
+}
+
+.uiux-final-shell .stage9-navbar .glass-overlay-panel,
+.uiux-final-shell .stage9-navbar .glass-command-panel {
+  z-index: 120 !important;
+}
+
+.uiux-final-shell .stage9-scroll-progress {
+  left: 2rem !important;
+  right: 2rem !important;
+  bottom: -0.55rem !important;
+  height: 2px !important;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ux-border-subtle) 44%, transparent);
+  pointer-events: none !important;
+}
+
+.uiux-final-shell .stage9-scroll-progress span {
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ux-accent), color-mix(in srgb, var(--ux-accent) 42%, white 24%)) !important;
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] :where(.semester-arc, .semester-pathway, .semester-volume-section) {
+  animation: none !important;
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] [data-scroll-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] [data-scroll-reveal].is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-landing[data-scroll-reveal] {
+  transform: translate3d(0, 16px, 0);
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-landing[data-scroll-reveal].is-visible {
+  transform: translate3d(0, 0, 0);
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-arc__item[data-scroll-reveal],
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-pathway__item[data-scroll-reveal],
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-volume[data-scroll-reveal] {
+  transform: translate3d(0, 22px, 0);
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-volume[data-scroll-reveal]:nth-child(2n) {
+  transition-delay: 80ms;
+}
+
+.uiux-final-shell .semester-experience[data-experience-stage="stage-9"] .semester-volume[data-scroll-reveal]:nth-child(3n) {
+  transition-delay: 130ms;
+}
+
+@media (max-width: 900px) {
+  .uiux-final-shell .stage9-navbar .stage9-nav-shell {
+    border-radius: 1.35rem !important;
+  }
+
+  .uiux-final-shell .stage9-wordmark .stage9-brand-subtitle {
+    letter-spacing: 0.2em;
+  }
+
+  .uiux-final-shell .stage9-scroll-progress {
+    left: 1.25rem !important;
+    right: 1.25rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uiux-final-shell .semester-experience[data-experience-stage="stage-9"] [data-scroll-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .uiux-final-shell .stage9-nav-shell,
+  .uiux-final-shell .stage9-nav-link,
+  .uiux-final-shell .stage9-scroll-progress span {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,321 @@
+/* UI/UX Final Completion — global rollout after the AKBI pilot.
+   Scope: app chrome, global course surfaces, homepage, catalog, overlays, and accessibility.
+   No academic dataset, scoring, timer, quiz answer, report object, or route mapping is changed. */
+
+.uiux-final-shell {
+  min-height: 100vh;
+  background: var(--ux-canvas);
+  color: var(--ux-text-secondary);
+}
+
+.uiux-final-shell[data-theme="light"] {
+  --ux-canvas: #f7f6f2;
+  --ux-surface: #ffffff;
+  --ux-surface-soft: #eeede8;
+  --ux-surface-raised: #ffffff;
+  --ux-text-primary: #171a1f;
+  --ux-text-secondary: #3f4752;
+  --ux-text-muted: #59636f;
+  --ux-text-inverse: #ffffff;
+  --ux-border-subtle: #d3d7dc;
+  --ux-border-control: #7e8996;
+  --ux-divider: #d8dbdf;
+  --ux-accent: #28528f;
+  --ux-accent-strong: #1f416f;
+  --ux-accent-soft: #e9f0fa;
+  --ux-focus: #28528f;
+  --ux-shadow-card: 0 12px 28px rgb(16 24 32 / 0.08);
+  --ux-shadow-float: 0 20px 54px rgb(16 24 32 / 0.12);
+}
+
+.uiux-final-shell[data-theme="dark"] {
+  --ux-canvas: #101317;
+  --ux-surface: #171b21;
+  --ux-surface-soft: #20262d;
+  --ux-surface-raised: #1c2229;
+  --ux-text-primary: #f3f1eb;
+  --ux-text-secondary: #c8cdd4;
+  --ux-text-muted: #aab2bc;
+  --ux-text-inverse: #101317;
+  --ux-border-subtle: #343c45;
+  --ux-border-control: #626d79;
+  --ux-divider: #303840;
+  --ux-accent: #91b9ff;
+  --ux-accent-strong: #b4cdff;
+  --ux-accent-soft: #1c2b3e;
+  --ux-focus: #91b9ff;
+  --ux-shadow-card: 0 14px 32px rgb(0 0 0 / 0.22);
+  --ux-shadow-float: 0 22px 58px rgb(0 0 0 / 0.34);
+}
+
+.uiux-final-shell main {
+  min-height: calc(100vh - 13.5rem);
+  background:
+    radial-gradient(circle at 10% 0%, color-mix(in srgb, var(--ux-accent) 10%, transparent), transparent 30rem),
+    linear-gradient(180deg, var(--ux-canvas), var(--ux-canvas));
+}
+
+.uiux-final-shell main:focus {
+  outline: none;
+}
+
+.uiux-final-shell .ux-v2-skip-link {
+  box-shadow: var(--ux-shadow-float);
+}
+
+.uiux-final-shell .glass-nav-shell,
+.uiux-final-shell .glass-overlay-panel,
+.uiux-final-shell .glass-search-panel,
+.uiux-final-shell .glass-command-panel,
+.uiux-final-shell .akbi-report-menu-panel {
+  border-color: var(--ux-border-subtle);
+  background: color-mix(in srgb, var(--ux-surface-raised) 94%, transparent) !important;
+  box-shadow: var(--ux-shadow-float);
+}
+
+.uiux-final-shell .glass-nav-segment,
+.uiux-final-shell .glass-menu-section,
+.uiux-final-shell .glass-input-shell,
+.uiux-final-shell .course-search-shell {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface-soft) !important;
+  box-shadow: none;
+}
+
+.uiux-final-shell .glass-nav-btn,
+.uiux-final-shell .glass-menu-item,
+.uiux-final-shell .glass-search-result,
+.uiux-final-shell .course-tab-btn,
+.uiux-final-shell .course-nav-btn,
+.uiux-final-shell .course-open-btn,
+.uiux-final-shell .course-toggle-btn,
+.uiux-final-shell .course-action-chip {
+  min-height: 44px;
+}
+
+.uiux-final-shell .glass-nav-btn:hover,
+.uiux-final-shell .glass-nav-btn.is-active,
+.uiux-final-shell .glass-menu-item:not(:disabled):hover,
+.uiux-final-shell .glass-menu-item.is-active,
+.uiux-final-shell .glass-search-result:hover,
+.uiux-final-shell .course-tab-btn:hover,
+.uiux-final-shell .course-tab-btn.is-active,
+.uiux-final-shell .course-nav-btn:not(:disabled):hover,
+.uiux-final-shell .course-open-btn:hover,
+.uiux-final-shell .course-toggle-btn:hover,
+.uiux-final-shell .course-action-chip:hover {
+  border-color: var(--ux-accent);
+  background: var(--ux-accent-soft) !important;
+  color: var(--ux-accent-strong) !important;
+  box-shadow: none;
+}
+
+.uiux-final-shell .ux-v2-theme-toggle {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface) !important;
+  color: var(--ux-text-primary);
+}
+
+.uiux-final-shell .home-hero-panel,
+.uiux-final-shell .home-stat-card,
+.uiux-final-shell .home-feature-card,
+.uiux-final-shell .home-dashboard-card,
+.uiux-final-shell .home-mini-stat,
+.uiux-final-shell .home-course-row,
+.uiux-final-shell .home-semester-card,
+.uiux-final-shell .home-note-panel,
+.uiux-final-shell .course-main-panel,
+.uiux-final-shell .course-dashboard-panel,
+.uiux-final-shell .course-sidebar-panel,
+.uiux-final-shell .course-tabs-panel,
+.uiux-final-shell .course-reading-panel,
+.uiux-final-shell .course-reading-header,
+.uiux-final-shell .course-reference-panel,
+.uiux-final-shell .course-list-card,
+.uiux-final-shell .course-progress-panel,
+.uiux-final-shell .course-card-glass,
+.uiux-final-shell .course-feature-card,
+.uiux-final-shell .course-mini-panel,
+.uiux-final-shell .course-review-card,
+.uiux-final-shell .course-material-card,
+.uiux-final-shell .course-objective-card,
+.uiux-final-shell .learning-surface,
+.uiux-final-shell .learning-card,
+.uiux-final-shell .glass-panel,
+.uiux-final-shell .soft-card,
+.uiux-final-shell .quiz-question-card,
+.uiux-final-shell .practice-builder-card,
+.uiux-final-shell .essay-question-card,
+.uiux-final-shell .flashcard-study-card {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface) !important;
+  color: var(--ux-text-secondary);
+  box-shadow: var(--ux-shadow-card);
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.uiux-final-shell .course-dashboard-panel,
+.uiux-final-shell .course-reading-header,
+.uiux-final-shell .home-hero-panel {
+  border-top: 4px solid var(--ux-accent);
+}
+
+.uiux-final-shell .course-feature-card:hover,
+.uiux-final-shell .course-material-card:hover,
+.uiux-final-shell .course-review-card:hover,
+.uiux-final-shell .course-mini-panel:hover,
+.uiux-final-shell .home-semester-card:not(.is-locked):hover,
+.uiux-final-shell .home-feature-card:hover,
+.uiux-final-shell .learning-card-hover:hover {
+  border-color: var(--ux-accent);
+  box-shadow: var(--ux-shadow-float);
+  transform: translateY(-1px);
+}
+
+.uiux-final-shell .course-block-heading,
+.uiux-final-shell .course-prose-card,
+.uiux-final-shell .course-list-surface,
+.uiux-final-shell .course-callout-surface,
+.uiux-final-shell .course-example-surface,
+.uiux-final-shell .course-solution-surface,
+.uiux-final-shell .course-formula-surface,
+.uiux-final-shell .course-figure-surface,
+.uiux-final-shell .course-economic-checklist,
+.uiux-final-shell .course-pte-toolkit {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface-soft) !important;
+  color: var(--ux-text-secondary);
+  box-shadow: none;
+}
+
+.uiux-final-shell .course-table-card,
+.uiux-final-shell .course-journal-card,
+.uiux-final-shell .course-matrix-card,
+.uiux-final-shell .academic-solid-surface,
+.uiux-final-shell .akbi-reading-flow table,
+.uiux-final-shell .practice-builder-card table,
+.uiux-final-shell .quiz-question-card table,
+.uiux-final-shell .essay-question-card table,
+.uiux-final-shell .report-paper,
+.uiux-final-shell .report-table {
+  border-color: var(--ux-border-subtle);
+  background: var(--ux-surface) !important;
+  color: var(--ux-text-primary);
+  box-shadow: none;
+}
+
+.uiux-final-shell .course-progress-track,
+.uiux-final-shell .home-progress-track,
+.uiux-final-shell .semester2-course__track {
+  background: var(--ux-border-subtle) !important;
+}
+
+.uiux-final-shell .course-progress-fill,
+.uiux-final-shell .home-progress-fill,
+.uiux-final-shell .semester2-course__fill,
+.uiux-final-shell .akbi-flashcard-session-bar > span {
+  background: var(--ux-accent) !important;
+}
+
+.uiux-final-shell h1,
+.uiux-final-shell h2,
+.uiux-final-shell h3,
+.uiux-final-shell h4,
+.uiux-final-shell .text-slate-100,
+.uiux-final-shell .text-slate-200 {
+  color: var(--ux-text-primary) !important;
+}
+
+.uiux-final-shell .text-slate-300,
+.uiux-final-shell .text-slate-400,
+.uiux-final-shell .text-slate-500,
+.uiux-final-shell p,
+.uiux-final-shell li {
+  color: var(--ux-text-secondary);
+}
+
+.uiux-final-shell .text-gold,
+.uiux-final-shell .text-gold\/80,
+.uiux-final-shell .eyebrow {
+  color: var(--ux-accent-strong) !important;
+}
+
+.uiux-final-shell .bg-gold,
+.uiux-final-shell .btn-primary,
+.uiux-final-shell .glass-primary-action {
+  border-color: var(--ux-accent-strong) !important;
+  background: var(--ux-accent) !important;
+  color: var(--ux-text-inverse) !important;
+}
+
+.uiux-final-shell .border-gold,
+.uiux-final-shell .border-gold\/30,
+.uiux-final-shell .border-gold\/40,
+.uiux-final-shell .border-gold\/50 {
+  border-color: color-mix(in srgb, var(--ux-accent) 55%, var(--ux-border-subtle)) !important;
+}
+
+.uiux-final-shell input,
+.uiux-final-shell select,
+.uiux-final-shell textarea,
+.uiux-final-shell .report-input,
+.uiux-final-shell .course-solid-input {
+  border-color: var(--ux-border-control) !important;
+  background: var(--ux-surface) !important;
+  color: var(--ux-text-primary) !important;
+}
+
+.uiux-final-shell input:focus,
+.uiux-final-shell select:focus,
+.uiux-final-shell textarea:focus,
+.uiux-final-shell .report-input:focus,
+.uiux-final-shell .course-solid-input:focus {
+  border-color: var(--ux-focus) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ux-focus) 18%, transparent) !important;
+}
+
+.uiux-final-shell footer {
+  border-color: var(--ux-divider) !important;
+  background: var(--ux-surface-raised) !important;
+  color: var(--ux-text-muted) !important;
+}
+
+.uiux-final-shell[data-theme="dark"] .bg-gold,
+.uiux-final-shell[data-theme="dark"] .btn-primary,
+.uiux-final-shell[data-theme="dark"] .glass-primary-action {
+  color: #101317 !important;
+}
+
+@media (max-width: 767px) {
+  .uiux-final-shell .glass-nav-shell {
+    border-radius: 1.15rem;
+  }
+
+  .uiux-final-shell .home-hero-panel,
+  .uiux-final-shell .course-main-panel,
+  .uiux-final-shell .course-dashboard-panel,
+  .uiux-final-shell .course-reading-panel {
+    border-radius: 1.15rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uiux-final-shell *,
+  .uiux-final-shell *::before,
+  .uiux-final-shell *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .uiux-final-shell .course-feature-card:hover,
+  .uiux-final-shell .course-material-card:hover,
+  .uiux-final-shell .course-review-card:hover,
+  .uiux-final-shell .course-mini-panel:hover,
+  .uiux-final-shell .home-semester-card:not(.is-locked):hover,
+  .uiux-final-shell .home-feature-card:hover,
+  .uiux-final-shell .learning-card-hover:hover {
+    transform: none;
+  }
+}
