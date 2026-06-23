@@ -66,11 +66,11 @@ export default function PomodoroTimer() {
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start pointer-events-none">
       {/* Expanded Panel */}
       <div 
         className={`mb-4 overflow-hidden transition-all duration-300 origin-bottom-left ${
-          isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
+          isOpen ? 'scale-100 opacity-100 translate-y-0 pointer-events-auto' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
         }`}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
@@ -136,7 +136,7 @@ export default function PomodoroTimer() {
           <div className="flex justify-center gap-4">
             <button
               onClick={toggleTimer}
-              className={`w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105 active:scale-95 ${
+              className={`pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105 active:scale-95 ${
                 mode === 'focus' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-emerald-600 hover:bg-emerald-700'
               }`}
             >
@@ -144,7 +144,7 @@ export default function PomodoroTimer() {
             </button>
             <button
               onClick={resetTimer}
-              className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-transform hover:scale-105 active:scale-95"
+              className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-transform hover:scale-105 active:scale-95"
               title="Reset Timer"
             >
               <RotateCcw size={18} />
