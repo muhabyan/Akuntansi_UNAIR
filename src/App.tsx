@@ -12,6 +12,7 @@ import IntroSplash from './components/IntroSplash';
 import AuthModal from './components/AuthModal';
 import PomodoroTimer from './components/PomodoroTimer';
 import OnboardingTour from './components/OnboardingTour';
+import AITutorFloating from './components/AITutorFloating';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -188,6 +189,7 @@ export default function App() {
       <IntroSplash />
       <AuthModal />
       <PomodoroTimer />
+      <AITutorFloating />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama
       </a>

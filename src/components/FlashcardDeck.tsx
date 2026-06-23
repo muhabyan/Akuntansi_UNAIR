@@ -6,7 +6,8 @@
 // Isi akademik tetap berasal dari data flashcard.
 // =============================================================
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { CheckCircle2, ChevronLeft, ChevronRight, Dices, Eye, Layers3, RotateCcw, SkipForward, Sparkles, Star } from 'lucide-react';
+import { CheckCircle2, ChevronLeft, ChevronRight, Dices, Eye, Layers3, RotateCcw, SkipForward, Sparkles, Star, CalendarClock, Brain, Frown, Smile, ThumbsUp } from 'lucide-react';
+import { calculateNextReview, type SRSData, type SRSGrade } from '../lib/srsAlgo';
 import type { StudyCard } from '../types';
 import { buildFlashcardSpinSequence, pickRandomFlashcardTarget } from './flashcardRandom';
 import {
@@ -37,6 +38,15 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
   const [isSpinning, setIsSpinning] = useState(false);
   const [studySeed, setStudySeed] = useState(0);
   const [liveAnnouncement, setLiveAnnouncement] = useState('');
+  const [srsCards, setSrsCards] = useState<Record<string, SRSData>>(() => {
+    if (!courseCode) return {};
+    try {
+      const stored = localStorage.getItem(`flashcard-srs-${courseCode}`);
+      return stored ? JSON.parse(stored) : {};
+    } catch {
+      return {};
+    }
+  });
   const [starredCards, setStarredCards] = useState<Record<string, boolean>>(() => {
     if (!courseCode) return {};
     try {
@@ -87,6 +97,30 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
   const nextUnmasteredLabel = nextUnmasteredIndex !== undefined
     ? 'Berikutnya belum dikuasai'
     : (currentMastered ? 'Semua konsep dikuasai' : 'Konsep ini satu-satunya tersisa');
+
+  const handleSRSGrade = useCallback((grade: SRSGrade) => {
+    if (!currentCard || !currentCard.id || !courseCode || isSpinning) return;
+    
+    setSrsCards((prev) => {
+      const currentData = prev[currentCard.id!];
+      const newData = calculateNextReview(grade, currentData);
+      const next = { ...prev, [currentCard.id!]: newData };
+      
+      try {
+        localStorage.setItem(`flashcard-srs-${courseCode}`, JSON.stringify(next));
+      } catch {}
+      
+      return next;
+    });
+
+    const labels = { 1: 'Lupa', 2: 'Sulit', 3: 'Baik', 4: 'Mudah' };
+    setLiveAnnouncement(`Kartu ditandai: ${labels[grade as keyof typeof labels]}. Akan diulang sesuai jadwal SRS.`);
+    
+    setTimeout(() => {
+      const nextIndex = (activeIndex + 1) % totalCards;
+      setActiveIndex(nextIndex);
+    }, 400);
+  }, [activeIndex, courseCode, currentCard, isSpinning, totalCards]);
 
   const markSeen = useCallback((index: number) => {
     if (!isAkbiWorkspace) return;
@@ -595,19 +629,54 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
               </div>
             </div>
           ) : (
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <div className="eyebrow mb-2">Pratinjau Kartu Aktif</div>
-                <h4 className="font-display text-xl font-black text-[rgb(var(--color-text-title))]">{currentCard.front}</h4>
-                <p className="mt-2 max-w-3xl text-sm leading-7 text-[rgb(var(--color-text-muted))]">Gunakan pratinjau ini saat mengulang cepat tanpa harus membalik kartu.</p>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-start justify-between gap-4">
+                <div className="w-full">
+                  <div className="eyebrow mb-2 flex items-center gap-2">
+                    <CalendarClock size={14} /> 
+                    {currentCard.id && srsCards[currentCard.id] ? 
+                      `Review Berikutnya: ${new Date(srsCards[currentCard.id].nextReviewDate).toLocaleDateString()}` : 
+                      'Kartu Baru (Belum Direview)'}
+                  </div>
+                  <h4 className="font-display text-lg font-bold text-[rgb(var(--color-text-title))]">{currentCard.front}</h4>
+                </div>
               </div>
-              <button
-                onClick={() => toggleFlip(activeIndex)}
-                disabled={isSpinning}
-                className="btn-secondary px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                {flippedCards[activeIndex] ? 'Tutup Jawaban' : 'Buka Jawaban'}
-              </button>
+
+              {flippedCards[activeIndex] ? (
+                <div className="mt-4 pt-4 border-t border-[rgb(var(--color-border)/0.5)]">
+                  <p className="text-sm text-[rgb(var(--color-text-muted))] mb-3 font-semibold text-center">Seberapa sulit Anda mengingat jawaban ini?</p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <button onClick={() => handleSRSGrade(1)} className="flex flex-col items-center gap-1.5 p-3 rounded-xl border border-red-200 bg-red-50 text-red-700 hover:bg-red-100 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400 transition-colors">
+                      <Frown size={20} />
+                      <span className="text-xs font-bold uppercase tracking-wider">Lupa</span>
+                      <span className="text-[10px] opacity-70">&lt; 1 Menit</span>
+                    </button>
+                    <button onClick={() => handleSRSGrade(2)} className="flex flex-col items-center gap-1.5 p-3 rounded-xl border border-orange-200 bg-orange-50 text-orange-700 hover:bg-orange-100 dark:bg-orange-900/20 dark:border-orange-800 dark:text-orange-400 transition-colors">
+                      <Brain size={20} />
+                      <span className="text-xs font-bold uppercase tracking-wider">Sulit</span>
+                      <span className="text-[10px] opacity-70">10 Menit</span>
+                    </button>
+                    <button onClick={() => handleSRSGrade(3)} className="flex flex-col items-center gap-1.5 p-3 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 dark:bg-emerald-900/20 dark:border-emerald-800 dark:text-emerald-400 transition-colors">
+                      <Smile size={20} />
+                      <span className="text-xs font-bold uppercase tracking-wider">Baik</span>
+                      <span className="text-[10px] opacity-70">1 Hari</span>
+                    </button>
+                    <button onClick={() => handleSRSGrade(4)} className="flex flex-col items-center gap-1.5 p-3 rounded-xl border border-blue-200 bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:border-blue-800 dark:text-blue-400 transition-colors">
+                      <ThumbsUp size={20} />
+                      <span className="text-xs font-bold uppercase tracking-wider">Mudah</span>
+                      <span className="text-[10px] opacity-70">4 Hari</span>
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  onClick={() => toggleFlip(activeIndex)}
+                  disabled={isSpinning}
+                  className="w-full mt-4 rounded-xl bg-blue-600 text-white font-bold py-3 hover:bg-blue-700 transition shadow-sm disabled:opacity-50"
+                >
+                  Tampilkan Jawaban & Evaluasi
+                </button>
+              )}
             </div>
           )}
         </section>
