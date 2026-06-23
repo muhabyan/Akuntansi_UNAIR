@@ -48,9 +48,9 @@ export default function IntroSplash() {
           />
         </div>
         
-        <h1 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-br from-slate-100 via-slate-200 to-slate-400 tracking-tight text-center leading-tight">
+        <h1 className="text-4xl md:text-6xl font-black text-white drop-shadow-md tracking-tight text-center leading-tight">
           Akuntansi<br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600">UNAIR</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-600 drop-shadow-none">UNAIR</span>
         </h1>
         
         <p className={`mt-6 font-bold tracking-[0.25em] text-blue-400/90 uppercase text-[10px] md:text-xs transition-all duration-1000 delay-300 ${stage === 'glowing' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
