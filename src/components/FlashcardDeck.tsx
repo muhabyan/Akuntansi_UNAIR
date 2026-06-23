@@ -388,6 +388,7 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
               <div
                 key={`${studySeed}-${index}-${card.front}`}
                 aria-hidden={!isCenter}
+                onClick={() => { if (isCenter && !isSpinning) toggleFlip(index); }}
                 className="flashcard-gacha-card-shell absolute left-1/2 top-1/2 h-[385px] w-[290px] origin-center transition-all duration-500 ease-out md:h-[420px] md:w-[330px]"
                 style={{
                   transform: `translate(-50%, -50%) translateX(${translateX}px) scale(${scale}) rotateY(${rotateY}deg)`,
@@ -403,7 +404,7 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
                   tabIndex={isCenter ? 0 : -1}
                   aria-pressed={isFlipped}
                   aria-describedby={`${instructionId} ${instructionId}-${index}`}
-                  className={`flashcard-gacha-card group relative h-full w-full cursor-pointer transform-style-3d rounded-[1.7rem] text-left transition-transform duration-700 ease-in-out focus:outline-none ${isFlipped ? 'rotate-y-180' : ''} ${isCenter && !isSpinning ? 'hover:-translate-y-2' : ''}`}
+                  className={`flashcard-gacha-card group relative h-full w-full cursor-pointer transform-style-3d rounded-[1.7rem] text-left transition-transform duration-700 ease-in-out focus:outline-none ${isFlipped ? 'rotate-y-180' : ''} ${isCenter && !isSpinning ? 'md:hover:-translate-y-2' : ''}`}
                   aria-label={getFlashcardAccessibleLabel(card, index, totalCards, isFlipped)}
                 >
                   <span id={`${instructionId}-${index}`} className="sr-only">
