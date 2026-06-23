@@ -257,9 +257,33 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
     return () => mediaQuery.removeEventListener?.('change', syncPreference);
   }, [isAkbiWorkspace]);
 
+  const touchStartRef = useRef<number | null>(null);
+  const touchEndRef = useRef<number | null>(null);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartRef.current = e.targetTouches[0].clientX;
+    touchEndRef.current = null;
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndRef.current = e.targetTouches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    if (touchStartRef.current === null || touchEndRef.current === null) return;
+    const distance = touchStartRef.current - touchEndRef.current;
+    const minSwipeDistance = 50;
+    if (distance > minSwipeDistance) handleNext();
+    else if (distance < -minSwipeDistance) handlePrev();
+    touchStartRef.current = null;
+    touchEndRef.current = null;
+  }, [handleNext, handlePrev]);
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (isFlashcardInteractiveTarget(event.target)) return;
+      const target = event.target as HTMLElement;
+      const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable;
+      if (isInput) return;
 
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
@@ -269,7 +293,7 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
         event.preventDefault();
         handleNext();
       }
-      if (event.key === 'Enter' || event.key === ' ') {
+      if ((event.key === 'Enter' || event.key === ' ') && !isFlashcardInteractiveTarget(target)) {
         event.preventDefault();
         toggleFlip(activeIndex);
       }
@@ -355,12 +379,17 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
           </div>
 
           <div className="inline-flex items-center gap-2 rounded-full border border-navy-500/70 bg-navy-850/60 px-3 py-2 text-xs font-bold text-slate-400">
-            <Layers3 size={14} className="text-gold" /> Gunakan panah kiri/kanan, Enter, atau Space
+            <Layers3 size={14} className="text-gold" /> Geser kartu, gunakan panah, atau ketuk
           </div>
         </div>
       </section>
 
-      <section className="flashcard-gacha-stage relative isolate overflow-hidden rounded-[2rem] border border-[rgb(var(--color-border)/0.78)] bg-[rgb(var(--surface-soft)/0.62)] px-2 py-8 shadow-calm-soft md:px-6 md:py-10">
+      <section 
+        className="flashcard-gacha-stage relative isolate overflow-hidden rounded-[2rem] border border-[rgb(var(--color-border)/0.78)] bg-[rgb(var(--surface-soft)/0.62)] px-2 py-8 shadow-calm-soft md:px-6 md:py-10"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[90px]" />
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-gold/10 to-transparent" />
 
