@@ -25,6 +25,35 @@ digenerate **Video Overview** (slide + narasi audio AI) per TM.
    `00_Flashcards.md` (84 kartu).
 7. Setelah source ter-index → **Studio** → **Video Overview** → Generate.
 
+---
+
+## 🎬 DUA WORKFLOW: pilih yang sesuai gaya belajarmu
+
+### Workflow A — VIDEO KOMPREHENSIF (Recommended untuk review pra-ujian)
+
+> **2 video per matkul** (1 untuk Pra-UTS TM 1–7, 1 untuk Pra-UAS TM 8–14).
+> Cocok kalau ingin video panjang yang nyambungin antar-TM jadi cerita utuh.
+
+**Langkah:**
+1. Buka NotebookLM → **New notebook**. Beri nama: `Statistik — Pra-UTS Komprehensif`.
+2. **Add source** → upload `00_Pra_UTS_TM1-7_Gabungan.md` saja (sudah berisi seluruh TM 1–7).
+3. Buka **Studio → Video Overview → Customize** → paste prompt **"Video Komprehensif Pra-UTS"** dari `_PROMPT_VideoOverview_per_TM.md`.
+4. Generate. Durasi video ~18–35 menit (tergantung matkul).
+5. Ulangi untuk Pra-UAS: upload `00_Pra_UAS_TM8-14_Gabungan.md`, pakai prompt **"Video Komprehensif Pra-UAS"**.
+
+**Hasil:** 2 video komprehensif. Hemat waktu setup tapi durasi video lebih panjang.
+
+### Workflow B — VIDEO PER TM (workflow lama)
+
+> **14 video per matkul** (1 per TM). Cocok kalau ingin video pendek yang fokus 1 topik dan mudah dicari ulang.
+
+Drag folder `TMxx_*` ke notebook → pakai prompt **per TM** dari `_PROMPT_VideoOverview_per_TM.md`. Durasi 5–12 menit per video.
+
+**Hasil:** 14 video pendek. Lebih banyak setup tapi gampang scan saat butuh review topik tertentu.
+
+> 💡 **Saran:** mulai dengan Workflow A untuk video Pra-UTS dulu. Kalau hasilnya kurang fokus per topik, fallback ke Workflow B untuk topik kritis.
+
+
 ## Struktur konten per TM
 
 ### Pra-UTS (TM 1–7) — Statistik Inferensial Dasar
@@ -107,26 +136,4 @@ Materi sudah memuat semua notasi matematika persis:
 2. **TM 8–14 lebih kaya** dari TM 1–7. Video durasi:
    - TM 1–7: 5–8 menit cukup
    - TM 8–14: 8–12 menit (banyak SPSS output + glossary)
-3. Untuk **TM 8 (ANOVA), TM 10 (Regresi 2), TM 12 (Non-parametrik)**: durasi
-   maksimal supaya AI bisa bahas semua asumsi + interpretasi SPSS.
-4. **Notebook khusus latihan**: upload `00_Bank_Soal.md` + `00_Formula_Sheet.md`,
-   minta "pembahasan 10 soal langkah-demi-langkah dengan rumus persis".
-5. **Notebook review menyeluruh**: upload `00_Tabel_Komparasi.md` + `00_Formula_Sheet.md`
-   + `00_Exam_Map_Prediksi_UAS.md`, minta "video review 15 menit semua uji statistik:
-   kapan pakai apa, rumus, asumsi, jebakan".
-6. **Notebook drill flashcard**: upload `00_Flashcards.md`, minta "audio
-   overview format Q&A — bacakan front, jeda 3 detik, lalu bacakan back".
-7. Pakai **Audio Overview** dulu (~3 menit) untuk uji prompt, baru naikin ke Video.
-
-## File sumber asli (tidak diubah)
-
-- `C:\cek\src\data\statistik\statistikData.ts` (TM 1-14 reading inti, 332 baris)
-- `C:\cek\src\data\statistik\statistikPraUasSupplement.ts` (supplement TM 8-14 dari HTML modul terpadu, 487 baris)
-- `C:\cek\src\data\quizzes\mas122.ts` (34 quiz UTS+UAS, 148 baris)
-- `C:\cek\src\data\flashcards\mas122.ts` (84 flashcards, 760 baris)
-- `C:\cek\src\data\banksoal\mas122.ts` (5 case/essay)
-- Sumber HTML asli: `C:\cek\Statistik\Statistik pra UAS\statistik_akuntan_integrasi\statistik-akuntan-week-8-14-full.html`
-- Buku referensi: Lind 17e (DA), Anderson For Dummies (AA), Silabus 2024
-
-Semua file di folder ini hanya **hasil ekstrak otomatis** dari sumber TypeScript.
-Aman untuk dihapus kalau sudah selesai diupload ke NotebookLM.
+3. Untuk **TM

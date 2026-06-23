@@ -14,6 +14,35 @@ digenerate **Video Overview** (slide + narasi audio AI) per TM.
 5. Setelah source ter-index → panel kanan klik **Studio** → **Video Overview** → Generate.
 6. NotebookLM akan render slide-style video dengan **narasi suara AI** otomatis.
 
+---
+
+## 🎬 DUA WORKFLOW: pilih yang sesuai gaya belajarmu
+
+### Workflow A — VIDEO KOMPREHENSIF (Recommended untuk review pra-ujian)
+
+> **2 video per matkul** (1 untuk Pra-UTS TM 1–7, 1 untuk Pra-UAS TM 8–14).
+> Cocok kalau ingin video panjang yang nyambungin antar-TM jadi cerita utuh.
+
+**Langkah:**
+1. Buka NotebookLM → **New notebook**. Beri nama: `Perpajakan I — Pra-UTS Komprehensif`.
+2. **Add source** → upload `00_Pra_UTS_TM1-7_Gabungan.md` saja (sudah berisi seluruh TM 1–7).
+3. Buka **Studio → Video Overview → Customize** → paste prompt **"Video Komprehensif Pra-UTS"** dari `_PROMPT_VideoOverview_per_TM.md`.
+4. Generate. Durasi video ~18–35 menit (tergantung matkul).
+5. Ulangi untuk Pra-UAS: upload `00_Pra_UAS_TM8-14_Gabungan.md`, pakai prompt **"Video Komprehensif Pra-UAS"**.
+
+**Hasil:** 2 video komprehensif. Hemat waktu setup tapi durasi video lebih panjang.
+
+### Workflow B — VIDEO PER TM (workflow lama)
+
+> **14 video per matkul** (1 per TM). Cocok kalau ingin video pendek yang fokus 1 topik dan mudah dicari ulang.
+
+Drag folder `TMxx_*` ke notebook → pakai prompt **per TM** dari `_PROMPT_VideoOverview_per_TM.md`. Durasi 5–12 menit per video.
+
+**Hasil:** 14 video pendek. Lebih banyak setup tapi gampang scan saat butuh review topik tertentu.
+
+> 💡 **Saran:** mulai dengan Workflow A untuk video Pra-UTS dulu. Kalau hasilnya kurang fokus per topik, fallback ke Workflow B untuk topik kritis.
+
+
 ## Struktur
 
 ### Pra-UTS (TM 1–7) — sumber: `perpajakanPraUTS.ts`

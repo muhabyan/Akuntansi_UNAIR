@@ -65,7 +65,7 @@ export default function AITutorFloating() {
   };
 
   return (
-    <div className="fixed top-1/2 right-0 z-50 pointer-events-none -translate-y-1/2">
+    <div className="fixed top-1/2 right-0 w-0 h-0 z-50 pointer-events-none -translate-y-1/2">
       {/* Expanded Panel */}
       <div 
         className={`absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-right ${

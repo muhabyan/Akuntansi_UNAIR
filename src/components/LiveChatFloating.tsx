@@ -120,7 +120,7 @@ export default function LiveChatFloating() {
   };
 
   return (
-    <div className="fixed top-[45%] left-0 z-50 pointer-events-none -translate-y-1/2">
+    <div className="fixed top-[45%] left-0 w-0 h-0 z-50 pointer-events-none -translate-y-1/2">
       {/* Chat Panel */}
       <div 
         className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
