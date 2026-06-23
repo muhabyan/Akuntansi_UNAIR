@@ -231,7 +231,8 @@ export default function App() {
 
       <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 px-4 py-9 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
         <p>© {new Date().getFullYear()} E-Learning S1 Akuntansi FEB Universitas Airlangga. Arsip pribadi.</p>
-        <p className="mt-2 font-bold tracking-widest text-blue-600/80 dark:text-blue-400/80 uppercase">Excellence with Morality</p>
+        <p className="mt-1">Developed by <span className="font-semibold text-blue-500 dark:text-blue-400">Muhammad Abyan Hafizh</span></p>
+        <p className="mt-3 font-bold tracking-widest text-blue-600/80 dark:text-blue-400/80 uppercase text-[10px] md:text-xs">Excellence with Morality</p>
       </footer>
     </div>
   );
