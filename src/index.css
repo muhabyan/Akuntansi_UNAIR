@@ -172,3 +172,10 @@
 .theme-switch-input:checked + .theme-switch-slider .theme-switch-orb {
   transform: translateX(24px);
 }
+  
+/* Zen Mode Styles */  
+.zen-mode-active nav,  
+.zen-mode-active footer,  
+.zen-mode-active .pomodoro-timer,  
+.zen-mode-active #course-sidebar { display: none !important; }  
+.zen-mode-active main { padding-top: 1.5rem !important; } 

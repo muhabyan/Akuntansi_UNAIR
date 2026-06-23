@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import {
   ArrowLeft, ChevronLeft, ChevronRight, Check, Target,
   Info, Lightbulb, AlertTriangle, KeyRound, BookOpen, ListChecks, PenTool, ClipboardCheck, Sigma, Table2, ScrollText,
+  Maximize, Minimize
 } from 'lucide-react';
 import { loadCourseContent, type LoadedCourseContent } from '../data/courses/courseRegistry';
 import { useStudyProgress, materialKey } from '../hooks/useStudyProgress';
@@ -227,6 +228,16 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
 export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingViewProps) {
   const [courseContent, setCourseContent] = useState<LoadedCourseContent | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [zenMode, setZenMode] = useState(false);
+
+  useEffect(() => {
+    if (zenMode) {
+      document.body.classList.add('zen-mode-active');
+    } else {
+      document.body.classList.remove('zen-mode-active');
+    }
+    return () => document.body.classList.remove('zen-mode-active');
+  }, [zenMode]);
 
   useEffect(() => {
     let isActive = true;
@@ -269,10 +280,21 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
   }
 
   return (
-    <article className="max-w-3xl mx-auto px-4 md:px-8 pb-20">
-      <button onClick={onBack} className="flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:hover:text-white mb-8 text-sm font-medium transition-colors">
-        <ArrowLeft size={16} /> Kembali ke {course.name}
-      </button>
+    <>
+      <article className="max-w-3xl mx-auto px-4 md:px-8 pb-20 relative">
+        <div className="flex items-center justify-between mb-8">
+          <button onClick={onBack} className="flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-colors">
+            <ArrowLeft size={16} /> Kembali ke {course.name}
+          </button>
+          <button 
+            onClick={() => setZenMode(!zenMode)} 
+            className="flex items-center gap-2 text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 text-sm font-bold transition-colors bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-full"
+            title={zenMode ? "Keluar dari Zen Mode" : "Masuk ke Zen Mode (Fokus Membaca)"}
+          >
+            {zenMode ? <Minimize size={14} /> : <Maximize size={14} />}
+            <span className="hidden sm:inline">Zen Mode</span>
+          </button>
+        </div>
 
       <header className="mb-10">
         <div className="flex items-center gap-2 text-xs font-semibold mb-3">
@@ -334,5 +356,15 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
         </nav>
       </div>
     </article>
+      
+      {zenMode && (
+        <button
+          onClick={() => setZenMode(false)}
+          className="fixed bottom-6 right-6 z-[100] flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-full shadow-2xl font-bold transition-transform hover:-translate-y-1 active:translate-y-0"
+        >
+          <Minimize size={18} /> Keluar Zen Mode
+        </button>
+      )}
+    </>
   );
 }

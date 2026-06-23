@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react';
-import { BookOpenCheck, Filter, Layers3 } from 'lucide-react';
+import { useMemo, useState, useEffect } from 'react';
+import { BookOpenCheck, Filter, Layers3, Star } from 'lucide-react';
 import FlashcardDeck from './FlashcardDeck';
 import type { Course, FlashcardPhase, FlashcardCategory, AdvancedStudyCard } from '../types';
 
@@ -13,6 +13,18 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
   const [phase, setPhase] = useState<'all' | FlashcardPhase>('all');
   const [tm, setTm] = useState<'all' | number>('all');
   const [category, setCategory] = useState<'all' | FlashcardCategory>('all');
+  const [showStarredOnly, setShowStarredOnly] = useState(false);
+  const [starredIds, setStarredIds] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem(`flashcard-stars-${course.code}`);
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        setStarredIds(new Set(Object.keys(parsed).filter(k => parsed[k])));
+      }
+    } catch {}
+  }, [course.code, showStarredOnly]);
 
   const CATEGORY_OPTIONS: Array<'all' | FlashcardCategory> = useMemo(() => {
     const cats = new Set(cards.map(c => c.category));
@@ -31,8 +43,9 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
       (phase === 'all' || card.phase === phase)
       && (tm === 'all' || card.tm === tm)
       && (category === 'all' || card.category === category)
+      && (!showStarredOnly || starredIds.has(card.id))
     )),
-    [cards, category, phase, tm],
+    [cards, category, phase, tm, showStarredOnly, starredIds],
   );
 
   const phaseCounts = useMemo(() => ({
@@ -131,21 +144,36 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
               <Layers3 size={16} className="text-blue-500" />
               Deck aktif: <strong className="text-gray-900 dark:text-white">{filteredCards.length} kartu</strong>
             </div>
-            <button
-              type="button"
-              onClick={() => { setPhase('all'); setTm('all'); setCategory('all'); }}
-              className="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1.5 text-xs font-bold text-gray-600 dark:text-gray-300 transition hover:bg-gray-50 dark:hover:bg-gray-700"
-            >
-              Reset filter
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setShowStarredOnly(!showStarredOnly)}
+                className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-bold transition ${
+                  showStarredOnly
+                    ? 'border-gold bg-gold/10 text-gold-700 dark:text-gold'
+                    : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                }`}
+              >
+                <Star size={14} fill={showStarredOnly ? 'currentColor' : 'none'} className={showStarredOnly ? 'text-gold' : ''} />
+                Hanya Bintang (Sulit)
+              </button>
+              <button
+                type="button"
+                onClick={() => { setPhase('all'); setTm('all'); setCategory('all'); setShowStarredOnly(false); }}
+                className="rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-1.5 text-xs font-bold text-gray-600 dark:text-gray-300 transition hover:bg-gray-50 dark:hover:bg-gray-700"
+              >
+                Reset filter
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       {filteredCards.length > 0 ? (
         <FlashcardDeck
-          key={`${phase}-${tm}-${category}`}
-          cards={filteredCards.map(({ front, back }) => ({ front, back }))}
+          key={`${phase}-${tm}-${category}-${showStarredOnly}`}
+          courseCode={course.code}
+          cards={filteredCards.map(({ id, front, back }) => ({ id, front, back }))}
         />
       ) : (
         <section className="rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 p-6 text-center shadow-sm">

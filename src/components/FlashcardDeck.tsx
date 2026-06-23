@@ -6,7 +6,7 @@
 // Isi akademik tetap berasal dari data flashcard.
 // =============================================================
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { CheckCircle2, ChevronLeft, ChevronRight, Dices, Eye, Layers3, RotateCcw, SkipForward, Sparkles } from 'lucide-react';
+import { CheckCircle2, ChevronLeft, ChevronRight, Dices, Eye, Layers3, RotateCcw, SkipForward, Sparkles, Star } from 'lucide-react';
 import type { StudyCard } from '../types';
 import { buildFlashcardSpinSequence, pickRandomFlashcardTarget } from './flashcardRandom';
 import {
@@ -19,6 +19,7 @@ import {
 import { createFlashcardTimerRegistry } from './flashcardTimers';
 
 interface FlashcardDeckProps {
+  courseCode?: string;
   cards: StudyCard[];
   variant?: 'default' | 'akbi';
 }
@@ -30,12 +31,21 @@ export function shouldUseAkbiReducedMotion(
   return isAkbiWorkspace && prefersReducedMotion;
 }
 
-export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardDeckProps) {
+export default function FlashcardDeck({ cards, courseCode, variant = 'default' }: FlashcardDeckProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [flippedCards, setFlippedCards] = useState<Record<number, boolean>>({});
   const [isSpinning, setIsSpinning] = useState(false);
   const [studySeed, setStudySeed] = useState(0);
   const [liveAnnouncement, setLiveAnnouncement] = useState('');
+  const [starredCards, setStarredCards] = useState<Record<string, boolean>>(() => {
+    if (!courseCode) return {};
+    try {
+      const stored = localStorage.getItem(`flashcard-stars-${courseCode}`);
+      return stored ? JSON.parse(stored) : {};
+    } catch {
+      return {};
+    }
+  });
   const isAkbiWorkspace = variant === 'akbi';
   const [seenCards, setSeenCards] = useState<Record<number, boolean>>(() => (isAkbiWorkspace && cards.length > 0 ? { 0: true } : ({} as Record<number, boolean>)));
   const [masteredCards, setMasteredCards] = useState<Record<number, boolean>>({});
@@ -211,6 +221,23 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
       nextMastered ? 'Konsep ditandai dikuasai.' : 'Tanda penguasaan dibatalkan.',
     ));
   }, [activeIndex, currentCard, currentMastered, flippedCards, isAkbiWorkspace, isSpinning, totalCards]);
+
+  const toggleStar = useCallback((e: React.MouseEvent, id?: string) => {
+    e.stopPropagation();
+    if (!id || !courseCode) return;
+    setStarredCards((prev) => {
+      const next = { ...prev };
+      if (next[id]) {
+        delete next[id];
+      } else {
+        next[id] = true;
+      }
+      try {
+        localStorage.setItem(`flashcard-stars-${courseCode}`, JSON.stringify(next));
+      } catch {}
+      return next;
+    });
+  }, [courseCode]);
 
   const goToNextUnmastered = useCallback(() => {
     if (!isAkbiWorkspace || isSpinning || totalCards === 0) return;
@@ -445,7 +472,23 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
                     <div className="relative flex h-full flex-col">
                       <div className="mb-5 flex items-center justify-between gap-3">
                         <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-gold">Pertanyaan</span>
-                        <span className="rounded-full border border-[rgb(var(--color-border)/0.85)] bg-[rgb(var(--surface-muted)/0.65)] px-2.5 py-1 text-xs font-black text-[rgb(var(--color-text-muted))]">#{index + 1}</span>
+                        <div className="flex items-center gap-2">
+                          {courseCode && card.id && (
+                            <button
+                              type="button"
+                              onClick={(e) => toggleStar(e, card.id)}
+                              className={`rounded-full p-1.5 transition-colors ${
+                                starredCards[card.id]
+                                  ? 'text-gold bg-gold/10 hover:bg-gold/20'
+                                  : 'text-slate-400 hover:text-gold hover:bg-gold/10'
+                              }`}
+                              title="Tandai kartu sulit"
+                            >
+                              <Star size={16} fill={starredCards[card.id] ? 'currentColor' : 'none'} />
+                            </button>
+                          )}
+                          <span className="rounded-full border border-[rgb(var(--color-border)/0.85)] bg-[rgb(var(--surface-muted)/0.65)] px-2.5 py-1 text-xs font-black text-[rgb(var(--color-text-muted))]">#{index + 1}</span>
+                        </div>
                       </div>
 
                       <div className="flex flex-1 items-center justify-center text-center">
@@ -466,7 +509,23 @@ export default function FlashcardDeck({ cards, variant = 'default' }: FlashcardD
                     <div className="relative flex h-full flex-col">
                       <div className="mb-5 flex items-center justify-between gap-3">
                         <span className="rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-sky-200">Jawaban</span>
-                        <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-black text-slate-400">#{index + 1}</span>
+                        <div className="flex items-center gap-2">
+                          {courseCode && card.id && (
+                            <button
+                              type="button"
+                              onClick={(e) => toggleStar(e, card.id)}
+                              className={`rounded-full p-1.5 transition-colors ${
+                                starredCards[card.id]
+                                  ? 'text-gold bg-gold/10 hover:bg-gold/20'
+                                  : 'text-slate-400 hover:text-gold hover:bg-gold/10'
+                              }`}
+                              title="Tandai kartu sulit"
+                            >
+                              <Star size={16} fill={starredCards[card.id] ? 'currentColor' : 'none'} />
+                            </button>
+                          )}
+                          <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-black text-slate-400">#{index + 1}</span>
+                        </div>
                       </div>
 
                       <div className="flex flex-1 items-center justify-center text-center">
