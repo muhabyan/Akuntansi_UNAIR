@@ -6,8 +6,6 @@
 //
 // =============================================================
 import type { Semester, Material, Flashcard } from '../types';
-import { PJK201_FC } from './flashcards/pjk201';
-import { AKM201_FC } from './flashcards/akm201';
 
 /** Bangun array Material dari daftar [judul, ref]. */
 function materi(items: Array<[string, string?]>, startTm = 1): Material[] {
@@ -213,14 +211,6 @@ const AKK106_FLASHCARDS: Flashcard[] = [
   { title: 'Jurnal Penyesuaian', back: 'Jurnal akhir periode untuk mengakui pendapatan/beban pada periode yang tepat (basis akrual).' },
   { title: 'Trial Balance', back: 'Daftar saldo seluruh akun buku besar untuk menguji kesamaan total debit dan kredit.' },
 ];
-const PJK201_FLASHCARDS: Flashcard[] = PJK201_FC.map((f) => ({
-  title: f.front,
-  back: f.back,
-}));
-const AKM201_FLASHCARDS: Flashcard[] = AKM201_FC.map((card) => ({
-  title: card.front,
-  back: card.back,
-}));
 
 // =====================================================================
 // STRUKTUR KURIKULUM (Semester 1 & 2 dibuka; 3–8 terkunci/placeholder)
@@ -275,17 +265,17 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'AKK201', newCode: 'FEB25603010', name: 'Akuntansi Keuangan Menengah I', sks: 3, iconKey: 'calculator', prasyarat: 'AKK106 (L)',
             references: AKK201_REF,
-            materiTM1_7: AKK201_TM1_7, materiTM8_14: AKK201_TM8_14, flashcardCount: 104, featureBadge: 'Flashcard + Bank Soal + Simulator',
+            materiTM1_7: AKK201_TM1_7, materiTM8_14: AKK201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Simulator',
           },
           {
             code: 'AKM201', newCode: 'FEB25603007', name: 'Akuntansi Biaya', sks: 3, iconKey: 'chart', prasyarat: 'AKK106 (L)',
             references: AKM201_REF,
-            materiTM1_7: AKM201_TM1_7, materiTM8_14: AKM201_TM8_14, flashcards: AKM201_FLASHCARDS, featureBadge: 'Flashcard + Bank Soal + Simulator',
+            materiTM1_7: AKM201_TM1_7, materiTM8_14: AKM201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Simulator',
           },
           {
             code: 'PJK201', newCode: 'FEB25603006', name: 'Perpajakan I', sks: 3, iconKey: 'file',
             references: PJK201_REF,
-            materiTM1_7: PJK201_TM1_7, materiTM8_14: PJK201_TM8_14, flashcards: PJK201_FLASHCARDS, featureBadge: 'Flashcard + Bank Soal + Simulator',
+            materiTM1_7: PJK201_TM1_7, materiTM8_14: PJK201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Simulator',
           },
           {
             code: 'AKA103', newCode: 'FEB25603009', name: 'Etika & Keterampilan Profesional untuk Akuntan', sks: 2, iconKey: 'award',
@@ -312,6 +302,7 @@ export const SEMESTERS: Semester[] = [
               ['Atribut Komunikasi yang Diharapkan Industri', 'RPS 13'],
               ['Integrasi Etika, Kepemimpinan & Komunikasi + Review', 'RPS 14'],
             ], 8),
+            flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
         ],
       },
@@ -322,6 +313,7 @@ export const SEMESTERS: Semester[] = [
             code: 'MNU101', newCode: 'FEB25603004', name: 'Pengantar Bisnis', sks: 3, iconKey: 'briefcase',
             references: MNU101_REF,
             materiTM1_7: MNU101_TM1_7, materiTM8_14: MNU101_TM8_14,
+            flashcardCount: 88, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'EKT109', newCode: 'FEB25603005', name: 'Pengantar Teori Ekonomi', sks: 3, iconKey: 'chart',
@@ -333,6 +325,7 @@ export const SEMESTERS: Semester[] = [
             code: 'MAS122', newCode: 'FEB25603008', name: 'Statistik untuk Akuntan', sks: 3, iconKey: 'chart', prasyarat: 'AKK106 (L)',
             references: MAS122_REF,
             materiTM1_7: MAS122_TM1_7, materiTM8_14: MAS122_TM8_14,
+            flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
         ],
       },

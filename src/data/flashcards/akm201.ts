@@ -1,133 +1,760 @@
-import type { StudyCard } from '../../types';
+import type { AdvancedStudyCard } from '../../types';
 
-export const AKM201_FC: StudyCard[] = [
-  { front: 'Tiga unsur biaya produksi?', back: 'Bahan Baku Langsung, Tenaga Kerja Langsung, dan Overhead Pabrik.' },
-  { front: 'Biaya langsung vs tidak langsung?', back: 'Biaya langsung mudah ditelusuri ke objek biaya. Biaya tidak langsung tidak mudah ditelusuri dan biasanya dialokasikan.' },
-  { front: 'Prime cost vs conversion cost?', back: 'Prime Cost = Bahan Baku Langsung + Tenaga Kerja Langsung. Conversion Cost = Tenaga Kerja Langsung + Overhead Pabrik.' },
-  { front: 'Product cost vs period cost?', back: 'Product cost melekat pada persediaan sampai produk dijual. Period cost langsung dibebankan pada periode terjadinya.' },
-  { front: 'Biaya tetap, variabel, dan campuran?', back: 'Biaya tetap total relatif konstan, biaya variabel total berubah mengikuti volume, sedangkan biaya campuran memiliki unsur tetap dan variabel.' },
-  { front: 'Persamaan biaya umum?', back: 'Total Cost = Fixed Cost + Variable Cost per unit × Activity Level. Dalam notasi: Y = a + bX.' },
-  { front: 'Tiga persediaan manufaktur?', back: 'Persediaan Bahan Baku, Persediaan Barang Dalam Proses, dan Persediaan Barang Jadi.' },
-  { front: 'Rumus Harga Pokok Produksi?', back: 'BDP awal + Bahan Baku Langsung digunakan + TKL + FOH − BDP akhir = Harga Pokok Produksi.' },
-  { front: 'Rumus HPP manufaktur?', back: 'Barang Jadi awal + Harga Pokok Produksi − Barang Jadi akhir = Harga Pokok Penjualan.' },
-  { front: 'Ciri job order costing?', back: 'Digunakan untuk produk/pesanan yang berbeda-beda. Biaya dikumpulkan per job melalui kartu biaya pesanan.' },
-  { front: 'Jurnal pemakaian bahan langsung?', back: 'Debit Barang Dalam Proses dan kredit Persediaan Bahan Baku. Bahan tidak langsung biasanya didebit ke FOH Control.' },
-  { front: 'Apa itu overhead dibebankan?', back: 'Overhead yang dialokasikan ke produk memakai tarif overhead ditentukan di muka, bukan berdasarkan overhead aktual saat itu.' },
-  { front: 'Actual costing vs normal costing?', back: 'Actual costing memakai biaya aktual untuk semua unsur. Normal costing memakai bahan dan tenaga kerja aktual, tetapi overhead dibebankan memakai tarif.' },
-  { front: 'Ciri process costing?', back: 'Digunakan untuk produksi massal/homogen. Biaya dikumpulkan per departemen atau proses, lalu dirata-ratakan ke unit.' },
-  { front: 'Bagian laporan biaya produksi?', back: 'Skedul kuantitas, unit ekuivalen, biaya yang dipertanggungjawabkan, biaya per unit ekuivalen, dan pertanggungjawaban biaya.' },
-  { front: 'Unit ekuivalen metode rata-rata?', back: 'Unit selesai dan ditransfer + unit BDP akhir × tingkat penyelesaian. BDP awal digabung dengan biaya periode berjalan.' },
-  { front: 'Unit ekuivalen metode FIFO?', back: 'FIFO memisahkan pekerjaan BDP awal, unit dimulai dan selesai, serta BDP akhir. Biaya BDP awal tidak dicampur dengan biaya periode berjalan.' },
-  { front: 'Biaya per unit ekuivalen?', back: 'Total biaya yang diperhitungkan dibagi total unit ekuivalen untuk unsur biaya terkait, misalnya bahan atau konversi.' },
-  { front: 'Empat kategori biaya kualitas?', back: 'Prevention cost, appraisal cost, internal failure cost, dan external failure cost.' },
-  { front: 'Kerugian produksi normal vs abnormal?', back: 'Kerugian normal dipandang wajar dalam proses. Kerugian abnormal tidak wajar dan biasanya diakui terpisah sebagai kerugian periode.' },
-  { front: 'Joint product vs by-product?', back: 'Joint product memiliki nilai jual relatif material. By-product memiliki nilai jual relatif kecil dibanding produk utama.' },
-  { front: 'Apa itu split-off point?', back: 'Titik saat produk dari proses bersama dapat dipisahkan identitasnya dan dapat diukur atau diproses lebih lanjut.' },
-  { front: 'Metode nilai jual relatif?', back: 'Joint cost dialokasikan berdasarkan proporsi nilai jual masing-masing produk terhadap total nilai jual seluruh produk bersama.' },
-  { front: 'Metode NRV/harga jual hipotetis?', back: 'Dipakai jika produk masih perlu proses lanjutan. Nilai dasar alokasi = harga jual akhir − biaya proses lanjutan setelah split-off.' },
-  { front: 'Empat perlakuan pendapatan produk sampingan?', back: 'Sebagai pendapatan penjualan, pendapatan lain-lain, pengurang HPP produk utama, atau pengurang biaya produksi produk utama.' },
-  { front: 'Tujuan pengendalian bahan baku?', back: 'Menjamin bahan tersedia saat dibutuhkan, mencegah kelebihan persediaan, menekan biaya, dan menjaga kelancaran produksi.' },
-  { front: 'Apa saja kos pemerolehan bahan?', back: 'Harga faktur, freight-in, inspeksi, penerimaan, pembongkaran, penyimpanan, asuransi, dan biaya akuisisi lain sampai bahan siap dipakai.' },
-  { front: 'Metode penilaian bahan?', back: 'Identifikasi khusus, FIFO, LIFO, rata-rata tertimbang, dan rata-rata bergerak.' },
-  { front: 'Rumus EOQ/KPE?', back: 'EOQ = √((2 × kebutuhan periode × biaya pesan) ÷ biaya simpan per unit).' },
-  { front: 'Titik pemesanan kembali?', back: 'Reorder Point menunjukkan kapan bahan harus dipesan kembali agar tidak terjadi stockout selama lead time.' },
-  { front: 'Apa itu safety stock?', back: 'Persediaan pengaman untuk menghadapi ketidakpastian permintaan, keterlambatan pemasok, atau gangguan produksi.' },
-  { front: 'Inti JIT dan backflush costing?', back: 'JIT menekan persediaan dan waktu siklus. Backflush mencatat biaya secara ringkas pada titik akhir tertentu, bukan setiap tahap detail.' },
-  { front: 'Klasifikasi tenaga kerja?', back: 'Direct labor masuk biaya tenaga kerja langsung. Indirect labor masuk FOH. Marketing dan administrasi masuk operating expenses.' },
-  { front: 'Basic pay dan fringe benefit?', back: 'Basic pay adalah upah dasar. Fringe benefit mencakup holiday pay, vacation pay, overtime premium, asuransi, pensiun, dan manfaat lain.' },
-  { front: 'Tiga tahap akuntansi labor?', back: 'Saat terjadinya gaji, saat distribusi/pembebanan ke produksi atau beban, dan saat pembayaran kewajiban gaji.' },
-  { front: 'Premi lembur masuk ke mana?', back: 'Jika lembur karena kebutuhan umum produksi, premi lembur biasanya dibebankan ke FOH. Jika khusus pesanan tertentu, dapat dibebankan ke job terkait.' },
-  { front: 'Hourly-rate plan?', back: 'Rencana upah berdasarkan tarif per jam dikalikan jumlah jam kerja.' },
-  { front: 'Piece-rate plan?', back: 'Rencana upah berdasarkan tarif per unit dikalikan jumlah unit yang dihasilkan.' },
-  { front: 'Straight piecework plan?', back: 'Pekerja dibayar berdasarkan jumlah unit yang dihasilkan, biasanya dengan guaranteed hourly rate sebagai upah minimum.' },
-  { front: 'One-hundred-percent bonus plan?', back: 'Bonus berbasis efisiensi terhadap standar waktu. Jika efisiensi melebihi 100%, pekerja memperoleh bonus proporsional.' },
-  { front: 'Group bonus plan?', back: 'Bonus diberikan kepada kelompok ketika waktu aktual lebih hemat dari standar, lalu dibagi kepada anggota secara proporsional.' },
-  { front: 'Overapplied vs underapplied FOH?', back: 'Overapplied terjadi saat FOH dibebankan lebih besar dari aktual. Underapplied terjadi saat FOH dibebankan lebih kecil dari aktual.' },
-  { front: 'Tarif overhead ditentukan di muka?', back: 'Predetermined FOH Rate = Estimated FOH ÷ Estimated activity base, misalnya jam tenaga kerja langsung atau jam mesin.' },
-  { front: 'Direct method departementalisasi?', back: 'Biaya departemen jasa dialokasikan langsung ke departemen produksi dan mengabaikan jasa antar departemen jasa.' },
-  { front: 'Sequential method departementalisasi?', back: 'Biaya departemen jasa dialokasikan berurutan, sehingga sebagian jasa antar departemen jasa diakui sesuai urutan alokasi.' },
-  { front: 'Inti Activity Based Costing?', back: 'ABC menelusuri overhead ke aktivitas, lalu membebankannya ke produk berdasarkan cost driver yang mencerminkan konsumsi aktivitas.' },
-  { front: 'Level aktivitas dalam ABC?', back: 'Unit-level, batch-level, product-level, dan facility-sustaining activity.' },
-  { front: 'Cost pool dan cost driver?', back: 'Cost pool adalah kelompok biaya aktivitas. Cost driver adalah dasar yang menjelaskan konsumsi aktivitas oleh produk atau objek biaya.' },
-  { front: 'ABC lebih cocok kapan?', back: 'Saat produk beragam, overhead besar, proses kompleks, dan satu tarif overhead tunggal berisiko mendistorsi biaya produk.' },
-  { front: 'Angka kunci Bangtan ABC?', back: 'Tarif setup Rp12.800, design Rp15.800, lighting Rp825. Kos/unit Boneka Rp75.093,33 dan Bantal Rp77.860.' },
-  { front: 'Job cost sheet mencatat apa?', back: 'Job cost sheet mencatat direct materials, direct labor, applied factory overhead, total job cost, cost per unit, dan status job.' },
-  { front: 'Materials requisition dipakai untuk apa?', back: 'Untuk menelusuri bahan yang diminta dari gudang. Direct materials masuk WIP; indirect materials masuk Factory Overhead Control.' },
-  { front: 'Labor time ticket dipakai untuk apa?', back: 'Untuk menelusuri jam kerja karyawan ke job tertentu. Direct labor masuk WIP; indirect labor masuk Factory Overhead Control.' },
-  { front: 'Applied FOH dalam job order costing?', back: 'Applied FOH = predetermined overhead rate × dasar pembebanan aktual yang dipakai job.' },
-  { front: 'Job selesai belum terjual dicatat ke mana?', back: 'Debit Finished Goods dan kredit Work in Process. COGS baru dicatat saat job dijual.' },
-  { front: 'Underapplied overhead artinya apa?', back: 'FOH aktual lebih besar daripada FOH dibebankan, sehingga biaya overhead kurang dibebankan ke produksi.' },
-  { front: 'Overapplied overhead artinya apa?', back: 'FOH dibebankan lebih besar daripada FOH aktual, sehingga biaya overhead terlalu besar dibebankan ke produksi.' },
-
-  { front: 'Weighted-average process costing memperlakukan BDP awal bagaimana?', back: 'Biaya dan unit BDP awal digabung dengan biaya dan unit periode berjalan untuk menghitung cost per equivalent unit.' },
-  { front: 'Rumus EUP weighted-average?', back: 'EUP weighted-average = unit selesai ditransfer + unit BDP akhir × persentase penyelesaian untuk elemen biaya terkait.' },
-  { front: 'Rumus cost per EUP weighted-average?', back: 'Cost per EUP = (biaya BDP awal + biaya periode berjalan) ÷ EUP weighted-average.' },
-  { front: 'FIFO process costing memperlakukan BDP awal bagaimana?', back: 'FIFO memisahkan biaya dan pekerjaan periode sebelumnya. EUP hanya mencakup pekerjaan periode berjalan.' },
-  { front: 'Rumus unit started and completed FIFO?', back: 'Unit started and completed = unit selesai ditransfer − unit BDP awal.' },
-  { front: 'Komponen EUP FIFO?', back: 'Pekerjaan sisa BDP awal + unit started and completed + pekerjaan BDP akhir.' },
-  { front: 'Rumus cost per EUP FIFO?', back: 'Cost per EUP FIFO = current cost added during the period ÷ EUP FIFO.' },
-  { front: 'Cost reconciliation process costing?', back: 'Total costs to account for harus sama dengan transferred-out cost + ending WIP cost.' },
-  { front: 'Cost of conformance?', back: 'Cost of conformance = prevention cost + appraisal cost. Biaya ini dikeluarkan agar produk memenuhi spesifikasi.' },
-  { front: 'Cost of nonconformance?', back: 'Cost of nonconformance = internal failure cost + external failure cost. Biaya ini muncul karena produk gagal memenuhi spesifikasi.' },
-  { front: 'Internal vs external failure?', back: 'Internal failure terjadi sebelum produk sampai ke pelanggan, seperti scrap dan rework. External failure terjadi setelah produk sampai ke pelanggan, seperti garansi dan retur.' },
-  { front: 'Net scrap effect?', back: 'Net scrap effect = gross scrap cost − scrap sales value. Jika scrap dijual dan dikreditkan ke FOH, FOH aktual bersih berkurang.' },
-  { front: 'Spoilage normal dalam process costing?', back: 'Spoilage normal adalah kerusakan wajar dalam batas normal proses. Biayanya biasanya diserap oleh unit baik atau diperlakukan sesuai instruksi soal.' },
-  { front: 'Spoilage abnormal dalam process costing?', back: 'Spoilage abnormal adalah kerusakan di luar batas normal. Biayanya dipisahkan ke loss account agar inefisiensi tidak dibebankan ke unit baik.' },
-  { front: 'Rework pelanggan vs rework umum?', back: 'Rework karena permintaan pelanggan dibebankan ke job pelanggan. Rework normal umum biasanya dibebankan ke Factory Overhead Control.' },
-  { front: 'Trap utama biaya kualitas?', back: 'Jangan mencampur external failure dengan internal failure. Cek kapan kegagalan ditemukan: sebelum atau setelah produk sampai ke pelanggan.' },
-
-  { front: 'Joint cost vs separable cost?', back: 'Joint cost terjadi sebelum split-off point dan dialokasikan ke joint products. Separable cost terjadi setelah split-off dan ditelusuri ke produk tertentu.' },
-  { front: 'Metode unit produksi joint cost?', back: 'Alokasi joint cost berdasarkan proporsi unit fisik tiap produk terhadap total unit fisik seluruh joint product.' },
-  { front: 'Biaya rata-rata per unit joint cost?', back: 'Total joint cost dibagi total unit produksi. Hasil biaya per unit dikalikan unit tiap produk.' },
-  { front: 'NRV dalam joint cost?', back: 'NRV = nilai jual akhir produk − separable cost setelah split-off. Proporsi NRV dipakai untuk mengalokasikan joint cost.' },
-  { front: 'Weighted average joint cost?', back: 'Unit tertimbang = unit × bobot. Alokasi = unit tertimbang produk ÷ total unit tertimbang × joint cost.' },
-  { front: 'By-product menerima joint cost?', back: 'Umumnya tidak, jika nilainya relatif kecil. Pendapatan by-product dapat disajikan sebagai penjualan, pendapatan lain-lain, pengurang HPP, atau pengurang biaya produksi.' },
-  { front: 'Keputusan proses lanjut memakai joint cost?', back: 'Tidak. Joint cost sudah terjadi sebelum split-off. Keputusan memakai incremental revenue dan separable processing cost.' },
-  { front: 'Trap utama TM 8 Joint Cost?', back: 'Jangan mencampur separable cost ke joint cost, jangan mengalokasikan joint cost ke by-product kecil, dan jangan memakai joint cost untuk keputusan proses lanjut.' },
-  { front: 'Pembelian bersih bahan baku?', back: 'Pembelian bersih = pembelian bahan + freight-in - retur pembelian - diskon pembelian. Hasil ini ditambahkan ke persediaan awal bahan.' },
-  { front: 'Bahan baku langsung dipakai?', back: 'Total bahan dipakai dikurangi bahan tidak langsung. Direct materials masuk Work in Process, sedangkan indirect materials masuk Factory Overhead Control.' },
-  { front: 'Purchase requisition vs purchase order?', back: 'Purchase requisition adalah permintaan internal untuk membeli bahan. Purchase order adalah pesanan resmi kepada pemasok.' },
-  { front: 'Receiving report dipakai untuk apa?', back: 'Receiving report mencatat kuantitas dan kualitas bahan yang diterima, serta menjadi bukti penerimaan sebelum pencatatan dan pembayaran.' },
-  { front: 'Material requisition dipakai untuk apa?', back: 'Material requisition menjadi dasar pengeluaran bahan dari gudang ke job, proses, atau departemen produksi.' },
-  { front: 'Weighted-average periodic vs moving average?', back: 'Weighted-average periodic dihitung sekali dari total unit dan kos tersedia. Moving average diperbarui setiap terjadi pembelian dalam sistem perpetual.' },
-  { front: 'EOQ/KPE menjawab apa?', back: 'EOQ/KPE menjawab berapa unit yang paling ekonomis dipesan setiap kali order agar biaya pesan dan biaya simpan seimbang.' },
-  { front: 'Reorder point/TPK menjawab apa?', back: 'Reorder point menunjukkan kapan harus memesan kembali: kebutuhan selama lead time ditambah safety stock.' },
-
-  { front: 'Clock card vs labor time ticket?', back: 'Clock card mencatat jam hadir. Labor time ticket menelusuri jam kerja ke job, aktivitas, atau departemen sehingga menjadi dasar pembebanan direct labor.' },
-  { front: 'Gross payroll vs net payroll?', back: 'Gross payroll adalah total gaji sebelum potongan. Net payroll adalah gaji bersih setelah pajak, iuran, asuransi, atau potongan lain.' },
-  { front: 'Bagian tarif reguler dari jam lembur masuk ke mana?', back: 'Jika pekerja langsung mengerjakan produk, bagian tarif reguler dari jam lembur tetap masuk direct labor atau WIP. Yang dipisahkan adalah overtime premium.' },
-  { front: 'Overtime premium khusus job?', back: 'Jika lembur terjadi karena permintaan pesanan tertentu, overtime premium dapat dibebankan ke job tersebut sebagai bagian WIP.' },
-  { front: 'Overtime premium umum?', back: 'Jika lembur terjadi karena jadwal umum produksi, overtime premium biasanya dibebankan ke Factory Overhead Control.' },
-  { front: 'Idle time normal?', back: 'Idle time normal adalah waktu menganggur wajar dalam operasi pabrik dan biasanya masuk Factory Overhead Control.' },
-  { front: 'Labor cost distribution?', back: 'Distribusi biaya tenaga kerja ke Work in Process, Factory Overhead Control, Marketing Expense, dan Administrative Expense sesuai fungsi pekerja.' },
-  { front: 'Trap utama labor cost?', back: 'Jangan menganggap semua pekerja pabrik sebagai direct labor, jangan menyamakan clock card dengan labor time ticket, dan jangan mencampur gross payroll dengan net payroll.' },
-
-  { front: 'Planned FOH?', back: 'Planned FOH adalah overhead yang dianggarkan sebelum periode berjalan dan menjadi dasar menghitung predetermined overhead rate.' },
-  { front: 'Actual FOH?', back: 'Actual FOH adalah overhead yang benar-benar terjadi, misalnya bahan tidak langsung, tenaga kerja tidak langsung, depresiasi, utilitas, asuransi, dan reparasi pabrik.' },
-  { front: 'Applied FOH?', back: 'Applied FOH adalah overhead yang dibebankan ke produk dengan rumus predetermined overhead rate × dasar pembebanan aktual.' },
-  { front: 'Predetermined FOH rate?', back: 'Predetermined FOH rate = estimated factory overhead ÷ estimated allocation base. Tarif dihitung sebelum periode berjalan.' },
-  { front: 'Underapplied FOH?', back: 'Underapplied terjadi ketika actual FOH lebih besar daripada applied FOH. Jika ditutup ke COGS, COGS didebit.' },
-  { front: 'Overapplied FOH?', back: 'Overapplied terjadi ketika applied FOH lebih besar daripada actual FOH. Jika ditutup ke COGS, COGS dikredit.' },
-  { front: 'Dasar pembebanan overhead?', back: 'Dasar pembebanan dapat berupa unit, biaya bahan baku langsung, biaya tenaga kerja langsung, jam tenaga kerja langsung, jam mesin, atau activity driver yang relevan.' },
-  { front: 'Trap utama TM 11 FOH?', back: 'Jangan menghitung tarif overhead memakai actual FOH. Tarif memakai estimated FOH; actual FOH dipakai untuk menentukan selisih pada akhir periode.' },
-
-  { front: 'Producing department?', back: 'Departemen yang mengerjakan produk secara langsung, misalnya Fabrication, Assembly, atau Finishing. Setelah alokasi jasa selesai, departemen ini membebankan overhead ke produk.' },
-  { front: 'Service department?', back: 'Departemen yang mendukung produksi tetapi tidak mengerjakan produk secara langsung, misalnya Maintenance, Power, Inspection, atau Materials Handling.' },
-  { front: 'Direct departmental cost?', back: 'Biaya yang dapat ditelusuri langsung ke departemen tertentu, seperti gaji supervisor departemen atau depresiasi mesin departemen tertentu.' },
-  { front: 'Indirect departmental cost?', back: 'Biaya yang memberi manfaat ke lebih dari satu departemen dan harus dialokasikan, seperti sewa gedung, asuransi pabrik, atau utilitas umum.' },
-  { front: 'Direct method service department?', back: 'Mengalokasikan biaya service department langsung ke producing department dan mengabaikan jasa antar service department.' },
-  { front: 'Step/sequential method?', back: 'Mengalokasikan service department secara berurutan. Departemen yang sudah dialokasikan ditutup dan tidak menerima alokasi kembali.' },
-  { front: 'Simultaneous/algebraic method?', back: 'Metode yang mengakui hubungan timbal balik antar service department secara penuh dengan persamaan aljabar.' },
-  { front: 'Trap utama departementalisasi FOH?', back: 'Jangan menghitung tarif overhead departemen sebelum biaya service department selesai dialokasikan ke producing department.' },
-
-
-  { front: 'Plantwide rate vs ABC?', back: 'Plantwide rate memakai satu dasar volume untuk seluruh overhead. ABC memakai beberapa activity cost pool dan activity driver agar konsumsi aktivitas tiap produk lebih terlihat.' },
-  { front: 'Activity rate?', back: 'Activity rate = total biaya activity cost pool ÷ total activity driver. Tarif ini dipakai untuk membebankan biaya aktivitas ke produk.' },
-  { front: 'Resource driver vs activity driver?', back: 'Resource driver menelusuri biaya sumber daya ke aktivitas. Activity driver membebankan biaya aktivitas ke produk atau objek biaya akhir.' },
-  { front: 'Product cost distortion?', back: 'Distorsi biaya terjadi ketika sistem biaya membuat produk tertentu overcosted atau undercosted karena dasar alokasi tidak mencerminkan konsumsi aktivitas.' },
-  { front: 'Produk volume rendah dalam ABC?', back: 'Produk volume rendah sering undercosted dalam sistem tradisional jika produk itu memakai banyak setup, inspeksi, desain, atau aktivitas batch/product-level.' },
-  { front: 'Overcosted dan undercosted?', back: 'Overcosted berarti kos tradisional lebih tinggi daripada kos ABC. Undercosted berarti kos tradisional lebih rendah daripada kos ABC.' },
-  { front: 'Facility-level cost dalam ABC?', back: 'Facility-level cost mendukung fasilitas secara umum, seperti keamanan dan penerangan gedung. Biaya ini tetap paling sulit ditelusuri secara akurat ke produk.' },
-  { front: 'ABM memakai ABC untuk apa?', back: 'Activity Based Management memakai informasi ABC untuk mengurangi aktivitas tidak bernilai tambah, memperbaiki proses, menetapkan harga, dan mengevaluasi lini produk.' },
-
+export const AKM201_FC: AdvancedStudyCard[] = [
+  {
+    id: "akm201-tm01-00",
+    phase: "pra-uts",
+    tm: 1,
+    topic: "Sistem Informasi Akuntansi (SIA)",
+    category: "Definisi",
+    front: "Sistem Informasi Akuntansi (SIA)",
+    back: "Sistem yang mengumpulkan, mencatat, menyimpan, dan memproses data untuk menghasilkan informasi bagi pengambil keputusan."
+  },
+  {
+    id: "akm201-tm01-01",
+    phase: "pra-uts",
+    tm: 1,
+    topic: "Data vs Informasi",
+    category: "Konsep",
+    front: "Data vs Informasi",
+    back: "Data adalah fakta mentah (angka, tanggal). Informasi adalah data yang telah diorganisasi dan diproses sehingga memiliki makna dan berguna."
+  },
+  {
+    id: "akm201-tm01-02",
+    phase: "pra-uts",
+    tm: 1,
+    topic: "Karakteristik Informasi Berguna",
+    category: "Standar",
+    front: "Karakteristik Informasi Berguna",
+    back: "Relevan, Andal (Reliable), Lengkap (Complete), Tepat Waktu (Timely), Dapat Dipahami (Understandable), Dapat Diverifikasi (Verifiable), Mudah Diakses."
+  },
+  {
+    id: "akm201-tm01-03",
+    phase: "pra-uts",
+    tm: 1,
+    topic: "Peran Akuntan dalam SIA",
+    category: "Konsep",
+    front: "Peran Akuntan dalam SIA",
+    back: "Sebagai pengguna (user), perancang (designer), dan auditor (evaluator) dari sistem informasi."
+  },
+  {
+    id: "akm201-tm01-04",
+    phase: "pra-uts",
+    tm: 1,
+    topic: "Value Chain (Rantai Nilai)",
+    category: "Definisi",
+    front: "Value Chain (Rantai Nilai)",
+    back: "Serangkaian aktivitas utama dan pendukung yang menambah nilai pada produk/jasa perusahaan, dari inbound logistics hingga customer service."
+  },
+  {
+    id: "akm201-tm01-05",
+    phase: "pra-uts",
+    tm: 1,
+    topic: "SIA Menambah Nilai",
+    category: "Mekanisme",
+    front: "SIA Menambah Nilai",
+    back: "SIA menambah nilai dengan meningkatkan kualitas/mengurangi biaya produk, efisiensi rantai pasokan, struktur kontrol internal, dan pengambilan keputusan."
+  },
+  {
+    id: "akm201-tm02-06",
+    phase: "pra-uts",
+    tm: 2,
+    topic: "Sistem Informasi Manajemen (SIM)",
+    category: "Definisi",
+    front: "Sistem Informasi Manajemen (SIM)",
+    back: "Sistem terpadu yang menyediakan informasi bagi manajer untuk mengelola operasi harian perusahaan dan mendukung pengambilan keputusan."
+  },
+  {
+    id: "akm201-tm02-07",
+    phase: "pra-uts",
+    tm: 2,
+    topic: "Strategi Porter",
+    category: "Konsep",
+    front: "Strategi Porter",
+    back: "Low-cost (biaya rendah), Differentiation (diferensiasi unik), dan Niche (fokus segmen sempit). SIA harus diselaraskan dengan strategi perusahaan."
+  },
+  {
+    id: "akm201-tm02-08",
+    phase: "pra-uts",
+    tm: 2,
+    topic: "Strategic Information System",
+    category: "Definisi",
+    front: "Strategic Information System",
+    back: "Sistem yang dirancang untuk mengubah sasaran bisnis, operasi, produk, atau relasi lingkungan untuk membantu perusahaan meraih keunggulan kompetitif."
+  },
+  {
+    id: "akm201-tm02-09",
+    phase: "pra-uts",
+    tm: 2,
+    topic: "Data Information Knowledge Wisdom (DIKW)",
+    category: "Konsep",
+    front: "Data Information Knowledge Wisdom (DIKW)",
+    back: "Hierarki yang berawal dari data mentah, diolah jadi informasi, diinternalisasi jadi knowledge, dan diterapkan dengan wisdom."
+  },
+  {
+    id: "akm201-tm02-10",
+    phase: "pra-uts",
+    tm: 2,
+    topic: "SIA dalam Pengambilan Keputusan",
+    category: "Mekanisme",
+    front: "SIA dalam Pengambilan Keputusan",
+    back: "Mengurangi ketidakpastian, memberikan feedback atas keputusan lampau, dan mengidentifikasi situasi yang membutuhkan tindakan."
+  },
+  {
+    id: "akm201-tm02-11",
+    phase: "pra-uts",
+    tm: 2,
+    topic: "Business Process",
+    category: "Konsep",
+    front: "Business Process",
+    back: "Serangkaian aktivitas terstruktur, terhubung yang menghasilkan layanan/produk untuk pelanggan (misal: order-to-cash)."
+  },
+  {
+    id: "akm201-tm03-12",
+    phase: "pra-uts",
+    tm: 3,
+    topic: "Data Flow Diagram (DFD)",
+    category: "Definisi",
+    front: "Data Flow Diagram (DFD)",
+    back: "Representasi grafis dari aliran data dalam suatu organisasi, meliputi sumber data, tujuan, aliran data, proses transformasi, dan penyimpanan data."
+  },
+  {
+    id: "akm201-tm03-13",
+    phase: "pra-uts",
+    tm: 3,
+    topic: "Flowchart (Bagan Alir)",
+    category: "Definisi",
+    front: "Flowchart (Bagan Alir)",
+    back: "Teknik analisis grafis (memakai berbagai simbol standar) untuk menjelaskan aliran dokumen, proses komputer, dan operasi secara berurutan."
+  },
+  {
+    id: "akm201-tm03-14",
+    phase: "pra-uts",
+    tm: 3,
+    topic: "DFD vs Flowchart",
+    category: "Perbandingan",
+    front: "DFD vs Flowchart",
+    back: "DFD lebih berfokus pada ALIRAN data logis antar proses. Flowchart berfokus pada URUTAN fisik jalannya dokumen atau operasi sistem."
+  },
+  {
+    id: "akm201-tm03-15",
+    phase: "pra-uts",
+    tm: 3,
+    topic: "Simbol Proses di DFD",
+    category: "Konsep",
+    front: "Simbol Proses di DFD",
+    back: "Lingkaran atau persegi panjang membulat yang menggambarkan tindakan atau proses yang mengubah data."
+  },
+  {
+    id: "akm201-tm03-16",
+    phase: "pra-uts",
+    tm: 3,
+    topic: "Context Diagram",
+    category: "Konsep",
+    front: "Context Diagram",
+    back: "Level tertinggi dari DFD yang memberikan ringkasan sistem secara keseluruhan dengan satu lingkaran proses tunggal."
+  },
+  {
+    id: "akm201-tm03-17",
+    phase: "pra-uts",
+    tm: 3,
+    topic: "Business Process Diagram (BPD)",
+    category: "Definisi",
+    front: "Business Process Diagram (BPD)",
+    back: "Cara visual untuk mendeskripsikan berbagai langkah atau aktivitas dalam proses bisnis dengan menggunakan swimlanes untuk memisahkan fungsi departemen."
+  },
+  {
+    id: "akm201-tm04-18",
+    phase: "pra-uts",
+    tm: 4,
+    topic: "Pengendalian Internal",
+    category: "Definisi",
+    front: "Pengendalian Internal",
+    back: "Proses yang dirancang untuk memberikan keyakinan memadai terkait pencapaian efektivitas operasi, keandalan pelaporan keuangan, dan kepatuhan hukum."
+  },
+  {
+    id: "akm201-tm04-19",
+    phase: "pra-uts",
+    tm: 4,
+    topic: "COSO Framework",
+    category: "Konsep",
+    front: "COSO Framework",
+    back: "Kerangka kontrol internal yang terdiri dari: Control Environment, Risk Assessment, Control Activities, Information & Communication, dan Monitoring."
+  },
+  {
+    id: "akm201-tm04-20",
+    phase: "pra-uts",
+    tm: 4,
+    topic: "Segregation of Duties (Pemisahan Tugas)",
+    category: "Konsep",
+    front: "Segregation of Duties (Pemisahan Tugas)",
+    back: "Pemisahan wewenang atas 3 fungsi utama: Otorisasi transaksi, Pencatatan transaksi, dan Penyimpanan aset (Custody) untuk mencegah fraud."
+  },
+  {
+    id: "akm201-tm04-21",
+    phase: "pra-uts",
+    tm: 4,
+    topic: "Preventive, Detective, Corrective Controls",
+    category: "Perbandingan",
+    front: "Preventive, Detective, Corrective Controls",
+    back: "Preventive: mencegah masalah (misal password). Detective: menemukan masalah (misal rekonsiliasi bank). Corrective: memperbaiki setelah masalah terdeteksi (misal backup restore)."
+  },
+  {
+    id: "akm201-tm04-22",
+    phase: "pra-uts",
+    tm: 4,
+    topic: "General Controls vs Application Controls",
+    category: "Standar",
+    front: "General Controls vs Application Controls",
+    back: "General: memastikan lingkungan IT stabil (misal keamanan jaringan). Application: kontrol di dalam program/transaksi (misal input validation)."
+  },
+  {
+    id: "akm201-tm04-23",
+    phase: "pra-uts",
+    tm: 4,
+    topic: "Audit Trail",
+    category: "Definisi",
+    front: "Audit Trail",
+    back: "Jejak logis yang memungkinkan transaksi ditelusuri dari dokumen sumber ke buku besar, atau sebaliknya."
+  },
+  {
+    id: "akm201-tm05-24",
+    phase: "pra-uts",
+    tm: 5,
+    topic: "Siklus Pendapatan (Revenue Cycle)",
+    category: "Definisi",
+    front: "Siklus Pendapatan (Revenue Cycle)",
+    back: "Aktivitas bisnis pertukaran barang/jasa dengan pelanggan demi menerima uang tunai (Order to Cash)."
+  },
+  {
+    id: "akm201-tm05-25",
+    phase: "pra-uts",
+    tm: 5,
+    topic: "Empat Aktivitas Utama Siklus Pendapatan",
+    category: "Konsep",
+    front: "Empat Aktivitas Utama Siklus Pendapatan",
+    back: "1. Sales Order Entry, 2. Shipping (Pengiriman), 3. Billing (Penagihan), 4. Cash Collections (Penerimaan Kas)."
+  },
+  {
+    id: "akm201-tm05-26",
+    phase: "pra-uts",
+    tm: 5,
+    topic: "Sales Order",
+    category: "Dokumen",
+    front: "Sales Order",
+    back: "Dokumen elektronik/kertas yang mencatat item pesanan, kuantitas, harga, serta rincian persetujuan pesanan pelanggan."
+  },
+  {
+    id: "akm201-tm05-27",
+    phase: "pra-uts",
+    tm: 5,
+    topic: "Packing Slip & Bill of Lading",
+    category: "Dokumen",
+    front: "Packing Slip & Bill of Lading",
+    back: "Packing slip: daftar barang dalam kiriman. Bill of Lading: kontrak hukum yang mendefinisikan tanggung jawab atas barang transit antara pengirim dan kurir."
+  },
+  {
+    id: "akm201-tm05-28",
+    phase: "pra-uts",
+    tm: 5,
+    topic: "Remittance Advice",
+    category: "Dokumen",
+    front: "Remittance Advice",
+    back: "Bagian dari tagihan pelanggan yang dikembalikan bersama dengan pembayarannya, berfungsi sebagai panduan mencatat penerimaan kas."
+  },
+  {
+    id: "akm201-tm05-29",
+    phase: "pra-uts",
+    tm: 5,
+    topic: "Mencegah Piutang Tak Tertagih",
+    category: "Pengendalian",
+    front: "Mencegah Piutang Tak Tertagih",
+    back: "Melakukan pengecekan batas kredit (credit limit) oleh departemen kredit secara independen sebelum pesanan pelanggan disetujui."
+  },
+  {
+    id: "akm201-tm06-30",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Siklus Pengeluaran (Expenditure Cycle)",
+    category: "Definisi",
+    front: "Siklus Pengeluaran (Expenditure Cycle)",
+    back: "Aktivitas memperoleh barang, jasa, dan bahan baku dari pemasok dan membayar mereka (Procure to Pay)."
+  },
+  {
+    id: "akm201-tm06-31",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Tiga Aktivitas Utama Siklus Pengeluaran",
+    category: "Konsep",
+    front: "Tiga Aktivitas Utama Siklus Pengeluaran",
+    back: "1. Ordering (Pemesanan), 2. Receiving (Penerimaan Barang), 3. Cash Disbursements (Pengeluaran Kas)."
+  },
+  {
+    id: "akm201-tm06-32",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Purchase Requisition",
+    category: "Dokumen",
+    front: "Purchase Requisition",
+    back: "Dokumen internal di mana suatu departemen meminta departemen pembelian untuk membeli sejumlah barang atau jasa tertentu."
+  },
+  {
+    id: "akm201-tm06-33",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Purchase Order (PO)",
+    category: "Dokumen",
+    front: "Purchase Order (PO)",
+    back: "Dokumen eksternal yang secara formal meminta pemasok menjual dan mengirim produk spesifik pada harga yang ditetapkan."
+  },
+  {
+    id: "akm201-tm06-34",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Receiving Report",
+    category: "Dokumen",
+    front: "Receiving Report",
+    back: "Laporan yang mendokumentasikan rincian setiap pengiriman (jumlah, kondisi) yang diterima dan diperiksa."
+  },
+  {
+    id: "akm201-tm06-35",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Three-way Match",
+    category: "Mekanisme",
+    front: "Three-way Match",
+    back: "Sistem pembayaran faktur pemasok yang membandingkan/mencocokkan: Purchase Order, Receiving Report, dan Vendor Invoice."
+  },
+  {
+    id: "akm201-tm07-36",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Siklus Produksi",
+    category: "Definisi",
+    front: "Siklus Produksi",
+    back: "Serangkaian aktivitas bisnis berulang untuk mengubah bahan baku menjadi produk jadi."
+  },
+  {
+    id: "akm201-tm07-37",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Bill of Materials",
+    category: "Konsep",
+    front: "Bill of Materials",
+    back: "Dokumen daftar komponen, bahan baku, dan bagian-bagian beserta kuantitasnya yang dibutuhkan untuk membuat satu unit produk."
+  },
+  {
+    id: "akm201-tm07-38",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Production Order",
+    category: "Dokumen",
+    front: "Production Order",
+    back: "Dokumen otorisasi dari departemen perencanaan untuk memproduksi sejumlah produk tertentu."
+  },
+  {
+    id: "akm201-tm07-39",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Siklus SDM/Penggajian",
+    category: "Definisi",
+    front: "Siklus SDM/Penggajian",
+    back: "Aktivitas mempekerjakan, melatih, mengkompensasi, mengevaluasi, hingga mempromosikan atau memberhentikan pegawai."
+  },
+  {
+    id: "akm201-tm07-40",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Time Card (Kartu Waktu)",
+    category: "Dokumen",
+    front: "Time Card (Kartu Waktu)",
+    back: "Mencatat waktu kedatangan dan kepulangan pegawai (jam kerja), dasar perhitungan upah untuk pegawai per jam."
+  },
+  {
+    id: "akm201-tm07-41",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Ghost Employees",
+    category: "Pengendalian",
+    front: "Ghost Employees",
+    back: "Pegawai fiktif yang gajinya dicairkan oleh pelaku fraud. Dicegah dengan mencocokkan data absensi otentik dengan master data HR secara berkala."
+  },
+  {
+    id: "akm201-tm08-42",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Database",
+    category: "Definisi",
+    front: "Database",
+    back: "Kumpulan data terkoordinasi secara terpusat yang melayani berbagai aplikasi secara efisien (menggantikan file-oriented systems yang usang)."
+  },
+  {
+    id: "akm201-tm08-43",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Keuntungan Database",
+    category: "Konsep",
+    front: "Keuntungan Database",
+    back: "Integrasi data, Data sharing, Minimalisasi redundansi & inkonsistensi data, Independensi data, Cross-functional analysis."
+  },
+  {
+    id: "akm201-tm08-44",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Relational Database Model",
+    category: "Definisi",
+    front: "Relational Database Model",
+    back: "Model data dua dimensi yang menggunakan tabel (relations) terpisah tetapi saling terhubung untuk menyimpan data."
+  },
+  {
+    id: "akm201-tm08-45",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Primary Key (PK)",
+    category: "Konsep",
+    front: "Primary Key (PK)",
+    back: "Atribut atau kombinasi atribut database yang secara unik mengidentifikasi suatu baris tertentu (record) di sebuah tabel."
+  },
+  {
+    id: "akm201-tm08-46",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Foreign Key (FK)",
+    category: "Konsep",
+    front: "Foreign Key (FK)",
+    back: "Atribut di sebuah tabel yang merupakan Primary Key di tabel lain; berfungsi untuk menghubungkan kedua tabel secara logis."
+  },
+  {
+    id: "akm201-tm08-47",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Entity Integrity & Referential Integrity Rule",
+    category: "Konsep",
+    front: "Entity Integrity & Referential Integrity Rule",
+    back: "Entity: PK tidak boleh bernilai null. Referential: Jika FK bernilai ada, nilainya harus sesuai dengan nilai PK yang ada di tabel referensi (menjamin link tak terputus)."
+  },
+  {
+    id: "akm201-tm09-48",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Entity-Relationship (E-R) Diagram",
+    category: "Definisi",
+    front: "Entity-Relationship (E-R) Diagram",
+    back: "Teknik grafis yang memodelkan entitas-entitas dalam suatu sistem dan hubungan antara entitas-entitas tersebut."
+  },
+  {
+    id: "akm201-tm09-49",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "REA Data Model",
+    category: "Konsep",
+    front: "REA Data Model",
+    back: "Model database SIA yang berfokus pada bisnis, yang mengkategorikan entitas menjadi Resources (sumber daya), Events (kejadian), dan Agents (pelaku)."
+  },
+  {
+    id: "akm201-tm09-50",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Resources",
+    category: "Mekanisme",
+    front: "Resources",
+    back: "Barang berharga yang dimiliki/dikendalikan organisasi (misal: Kas, Persediaan)."
+  },
+  {
+    id: "akm201-tm09-51",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Events",
+    category: "Mekanisme",
+    front: "Events",
+    back: "Aktivitas bisnis di mana manajemen ingin mengumpulkan informasi terkait dengannya untuk evaluasi (misal: Penjualan, Pembelian, Terima Kas)."
+  },
+  {
+    id: "akm201-tm09-52",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Agents",
+    category: "Mekanisme",
+    front: "Agents",
+    back: "Orang atau organisasi yang berpartisipasi dalam event bisnis (misal: Pelanggan, Pemasok, Karyawan)."
+  },
+  {
+    id: "akm201-tm09-53",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Cardinalities",
+    category: "Konsep",
+    front: "Cardinalities",
+    back: "Sifat hubungan (1:1, 1:N, M:N) yang menentukan bagaimana tabel-tabel dihubungkan, menunjukkan jumlah maksimum dan minimum event yang terkait dengan entitas lain."
+  },
+  {
+    id: "akm201-tm10-54",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "SQL (Structured Query Language)",
+    category: "Definisi",
+    front: "SQL (Structured Query Language)",
+    back: "Bahasa standar pemrograman untuk mengakses, memanipulasi, dan mencari data dalam relational database (misal MySQL, PostgreSQL)."
+  },
+  {
+    id: "akm201-tm10-55",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "SELECT Statement",
+    category: "Konsep",
+    front: "SELECT Statement",
+    back: "Perintah SQL utama untuk menarik/membaca (query) data dari satu atau beberapa tabel."
+  },
+  {
+    id: "akm201-tm10-56",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "JOIN Clause",
+    category: "Mekanisme",
+    front: "JOIN Clause",
+    back: "Perintah SQL yang digunakan untuk menggabungkan kolom/data dari dua tabel atau lebih berdasarkan foreign key."
+  },
+  {
+    id: "akm201-tm10-57",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "DML vs DDL",
+    category: "Perbandingan",
+    front: "DML vs DDL",
+    back: "DML (Data Manipulation Language): perintah menambah/mengubah isi data (INSERT, UPDATE, DELETE). DDL (Data Definition Language): perintah membuat/mengubah struktur tabel (CREATE, ALTER)."
+  },
+  {
+    id: "akm201-tm10-58",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "WHERE Clause",
+    category: "Mekanisme",
+    front: "WHERE Clause",
+    back: "Bagian dari SQL untuk memfilter record yang memenuhi kondisi tertentu, menghemat pemrosesan data oleh sistem."
+  },
+  {
+    id: "akm201-tm10-59",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "GROUP BY & Aggregate Functions",
+    category: "Konsep",
+    front: "GROUP BY & Aggregate Functions",
+    back: "Digunakan bersama COUNT(), SUM(), AVG(), MIN(), MAX() untuk meringkas data finansial, misal total penjualan bulanan per departemen."
+  },
+  {
+    id: "akm201-tm11-60",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "ERP (Enterprise Resource Planning)",
+    category: "Definisi",
+    front: "ERP (Enterprise Resource Planning)",
+    back: "Sistem terpusat yang mengintegrasikan semua aspek operasi perusahaan (Akuntansi, HR, Manufaktur, Sales) ke dalam satu sistem database terpadu."
+  },
+  {
+    id: "akm201-tm11-61",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Keuntungan ERP",
+    category: "Konsep",
+    front: "Keuntungan ERP",
+    back: "Visibilitas data enterprise tunggal, aliran informasi mulus (single source of truth), prosedur kerja standar, perbaikan kualitas laporan/kontrol."
+  },
+  {
+    id: "akm201-tm11-62",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Kelemahan ERP",
+    category: "Konsep",
+    front: "Kelemahan ERP",
+    back: "Biaya implementasi sangat mahal, memakan waktu lama, kompleksitas tinggi, resistensi karyawan untuk berubah."
+  },
+  {
+    id: "akm201-tm11-63",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "SIA Tradisional vs ERP",
+    category: "Perbandingan",
+    front: "SIA Tradisional vs ERP",
+    back: "SIA tradisional bisa terisolasi (siloed) dari operasional pabrik. ERP menyatukan SIA finansial dengan SIM operasional pabrik secara real-time."
+  },
+  {
+    id: "akm201-tm11-64",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Modul Utama ERP",
+    category: "Konsep",
+    front: "Modul Utama ERP",
+    back: "Financials, Human Resources, Supply Chain Management (SCM), Customer Relationship Management (CRM), Manufacturing."
+  },
+  {
+    id: "akm201-tm11-65",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Konfigurasi (Configuration) vs Kustomisasi (Customization)",
+    category: "Mekanisme",
+    front: "Konfigurasi (Configuration) vs Kustomisasi (Customization)",
+    back: "Konfigurasi: menyetel ERP menggunakan fitur bawaan. Kustomisasi: menulis kode program baru untuk ERP (sangat berisiko saat upgrade)."
+  },
+  {
+    id: "akm201-tm12-66",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Big Data",
+    category: "Definisi",
+    front: "Big Data",
+    back: "Kumpulan data yang sangat besar dan kompleks yang melebihi kapasitas software pemrosesan data tradisional untuk diolah."
+  },
+  {
+    id: "akm201-tm12-67",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "The 4 V’s of Big Data",
+    category: "Konsep",
+    front: "The 4 V’s of Big Data",
+    back: "Volume (ukuran data besar), Velocity (kecepatan penciptaan/aliran data), Variety (berbagai format data teks/video/sensor), Veracity (tingkat akurasi/kepastian)."
+  },
+  {
+    id: "akm201-tm12-68",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Data Analytics (Analitik Data)",
+    category: "Definisi",
+    front: "Data Analytics (Analitik Data)",
+    back: "Proses mengevaluasi data untuk menemukan pola, korelasi, dan insight yang berguna untuk pengambilan keputusan."
+  },
+  {
+    id: "akm201-tm12-69",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Descriptive vs Predictive Analytics",
+    category: "Perbandingan",
+    front: "Descriptive vs Predictive Analytics",
+    back: "Descriptive: apa yang sudah terjadi? (misal: laporan laba rugi). Predictive: apa yang mungkin terjadi? (misal: peramalan kegagalan kredit)."
+  },
+  {
+    id: "akm201-tm12-70",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Prescriptive Analytics",
+    category: "Konsep",
+    front: "Prescriptive Analytics",
+    back: "Tingkatan analitik tertinggi: menggunakan data dan model matematika untuk merekomendasikan keputusan/tindakan (apa yang harus kita lakukan?)."
+  },
+  {
+    id: "akm201-tm12-71",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Audit Analytics",
+    category: "Mekanisme",
+    front: "Audit Analytics",
+    back: "Pemanfaatan data mining di seluruh populasi transaksi (100%) untuk mendeteksi anomali, outlier, atau indikasi fraud (sebagai pengganti sampling manual)."
+  },
+  {
+    id: "akm201-tm13-72",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Cloud Computing",
+    category: "Definisi",
+    front: "Cloud Computing",
+    back: "Penyediaan sumber daya komputasi (server, storage, database, software) melalui internet (\"the cloud\") dengan model pay-as-you-go."
+  },
+  {
+    id: "akm201-tm13-73",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "SaaS, PaaS, IaaS",
+    category: "Perbandingan",
+    front: "SaaS, PaaS, IaaS",
+    back: "SaaS (Software: misal Google Workspace). PaaS (Platform: lingkungan untuk deploy apps). IaaS (Infrastructure: sewa virtual machine murni, misal AWS EC2)."
+  },
+  {
+    id: "akm201-tm13-74",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Blockchain",
+    category: "Definisi",
+    front: "Blockchain",
+    back: "Sistem buku besar (ledger) terdistribusi dan terenkripsi yang mustahil untuk diubah diam-diam (immutable). Semua node memverifikasi transaksi via konsensus."
+  },
+  {
+    id: "akm201-tm13-75",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Smart Contract",
+    category: "Konsep",
+    front: "Smart Contract",
+    back: "Program kode di dalam blockchain yang secara otomatis mengeksekusi perjanjian jika prasyarat tertentu dipenuhi (misal pembayaran otomatis usai barang terkirim)."
+  },
+  {
+    id: "akm201-tm13-76",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Artificial Intelligence & RPA",
+    category: "Definisi",
+    front: "Artificial Intelligence & RPA",
+    back: "RPA (Robotic Process Automation) mereplikasi klik dan input data klerikal rutin. AI bisa membuat keputusan (machine learning) seperti menganalisis risiko fraud."
+  },
+  {
+    id: "akm201-tm13-77",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Blockchain Akan Menghilangkan Profesi Akuntan",
+    category: "Miskonsepsi",
+    front: "Blockchain Akan Menghilangkan Profesi Akuntan",
+    back: "Salah. Blockchain mempermudah rekonsiliasi transaksi, namun peran akuntan bergeser dari pencatat menjadi auditor validasi sistem, pengambil keputusan strategis, dan perancang AI."
+  },
+  {
+    id: "akm201-tm14-78",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "IT Audit (Audit Sistem Informasi)",
+    category: "Definisi",
+    front: "IT Audit (Audit Sistem Informasi)",
+    back: "Tinjauan atas kontrol keamanan teknologi informasi untuk mengevaluasi apakah sistem melindungi aset, memelihara integritas data, dan mencapai tujuan efektif."
+  },
+  {
+    id: "akm201-tm14-79",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Information Systems Audit and Control Association (ISACA)",
+    category: "Konsep",
+    front: "Information Systems Audit and Control Association (ISACA)",
+    back: "Organisasi profesional global terkemuka untuk auditor IT (penerbit sertifikasi CISA dan kerangka COBIT)."
+  },
+  {
+    id: "akm201-tm14-80",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "COBIT Framework",
+    category: "Konsep",
+    front: "COBIT Framework",
+    back: "Kerangka tata kelola IT yang membantu manajemen menjembatani celah antara risiko bisnis, kebutuhan kontrol, dan masalah teknis IT."
+  },
+  {
+    id: "akm201-tm14-81",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "CAATs (Computer-Assisted Audit Techniques)",
+    category: "Mekanisme",
+    front: "CAATs (Computer-Assisted Audit Techniques)",
+    back: "Perangkat lunak audit umum (seperti ACL atau IDEA) yang memudahkan auditor membaca, memfilter, menguji populasi transaksi digital besar secara independen."
+  },
+  {
+    id: "akm201-tm14-82",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "IT General Controls (ITGC) Audit",
+    category: "Pengendalian",
+    front: "IT General Controls (ITGC) Audit",
+    back: "Menguji kontrol akses logis (password), kontrol perubahan program (Change Management), dan manajemen operasi IT (Backup/Disaster Recovery)."
+  },
+  {
+    id: "akm201-tm14-83",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Penetration Testing (Ethical Hacking)",
+    category: "Mekanisme",
+    front: "Penetration Testing (Ethical Hacking)",
+    back: "Praktik di mana auditor keamanan siber menyimulasikan serangan hacker yang diotorisasi perusahaan untuk mendeteksi kerentanan jaringan sebelum diserang peretas asli."
+  }
 ];

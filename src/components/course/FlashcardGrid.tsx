@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import type { Course } from '../../types';
 
 const FlashcardTab = lazy(() => import('../FlashcardTab'));
-const PteFlashcardTab = lazy(() => import('../PteFlashcardTab'));
 
 interface FlashcardGridProps {
   course: Course;
@@ -19,7 +18,7 @@ export default function FlashcardGrid({ course }: FlashcardGridProps) {
           </div>
         }
       >
-        {course.code === 'EKT109' ? <PteFlashcardTab /> : <FlashcardTab course={course} />}
+        <FlashcardTab course={course} />
       </Suspense>
     </div>
   );

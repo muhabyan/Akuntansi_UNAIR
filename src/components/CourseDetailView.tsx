@@ -8,7 +8,6 @@ import type { Course, CourseTabId } from '../types';
 
 const QuizView = lazy(() => import('./QuizView'));
 const FlashcardTab = lazy(() => import('./FlashcardTab'));
-const PteFlashcardTab = lazy(() => import('./PteFlashcardTab'));
 const BankSoalTab = lazy(() => import('./BankSoalTab'));
 const ArsipViewerTab = lazy(() => import('./ArsipViewerTab'));
 import { getArsipFiles } from '../data/arsipRegistry';
@@ -123,7 +122,7 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
       <section className="pb-10">
         {activeTab === 'flashcard' ? (
           <Suspense fallback={<TabLoader />}>
-            {course.code === 'EKT109' ? <PteFlashcardTab /> : <FlashcardTab course={course} />}
+            <FlashcardTab course={course} />
           </Suspense>
         ) : activeTab === 'tm1-7' || activeTab === 'tm8-14' ? (
           <MateriList course={course} range={activeTab} onOpenReading={onOpenReading} />

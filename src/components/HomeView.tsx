@@ -16,7 +16,7 @@ export default function HomeView({ onSelectSemester }: HomeViewProps) {
     <div className="w-full">
       {/* Hero Section */}
       <section className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <div className="mx-auto max-w-7xl px-5 py-20 md:px-10 lg:px-14 lg:py-28">
+        <div className="mx-auto max-w-7xl px-5 pt-36 pb-20 md:px-10 lg:px-14 lg:pt-44 lg:pb-28">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
               Tingkatkan Pemahaman <span className="text-blue-600 dark:text-blue-400">Akuntansi</span> Anda.

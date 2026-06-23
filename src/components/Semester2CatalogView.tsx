@@ -48,23 +48,23 @@ const EXPECTED_COURSE_CODES = SEMESTER_2_GROUPS.flatMap((group) => group.courseC
 
 const SEMESTER_2_COURSES: Readonly<Record<string, CatalogCourseContract>> = {
   AKK201: {
-    description: 'Materi TM1–14, 104 flashcard, 33 bank soal, latihan, dan simulator UTS/UAS.',
+    description: 'Materi TM1–14, 84 flashcard, 33 bank soal, latihan, dan simulator UTS/UAS.',
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Latihan & Simulasi', 'Referensi'],
   },
   AKM201: {
-    description: 'Materi TM1–14, 121 flashcard, 51 bank soal, bank rumus, dan simulator UTS/UAS.',
+    description: 'Materi TM1–14, 84 flashcard, 51 bank soal, bank rumus, dan simulator UTS/UAS.',
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Simulasi', 'Referensi'],
   },
   PJK201: {
-    description: 'Materi TM1–14, 73 flashcard, 80 bank soal, regulasi, dan simulator UTS/UAS.',
+    description: 'Materi TM1–14, 84 flashcard, 80 bank soal, regulasi, dan simulator UTS/UAS.',
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Simulasi', 'Referensi'],
   },
   AKA103: {
-    description: 'Materi TM1–14, 60 flashcard, 10 bank soal, latihan kasus etika, dan referensi.',
+    description: 'Materi TM1–14, 84 flashcard, 10 bank soal, latihan kasus etika, dan referensi.',
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Latihan', 'Referensi'],
   },
   MNU101: {
-    description: 'Materi TM1–14, 24 flashcard, 11 bank soal, latihan kasus bisnis, dan glosarium.',
+    description: 'Materi TM1–14, 88 flashcard, 11 bank soal, latihan kasus bisnis, dan glosarium.',
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Latihan', 'Referensi'],
   },
   EKT109: {
@@ -72,7 +72,7 @@ const SEMESTER_2_COURSES: Readonly<Record<string, CatalogCourseContract>> = {
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Simulasi', 'Referensi'],
   },
   MAS122: {
-    description: 'Materi TM1–14, 40 flashcard, 5 bank soal, latihan, formula, dan notasi statistik.',
+    description: 'Materi TM1–14, 84 flashcard, 5 bank soal, latihan, formula, dan notasi statistik.',
     capabilities: ['Materi', 'Flashcard', 'Bank Soal', 'Latihan', 'Referensi'],
   },
 };

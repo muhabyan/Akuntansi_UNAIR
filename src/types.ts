@@ -355,6 +355,17 @@ export interface OrderingQuizQuestion extends QuizQuestionMeta {
 
 // ---- Flashcard (front/back) & Bank Soal esai untuk fitur belajar ----
 export interface StudyCard { front: string; back: string; }
+
+export type FlashcardPhase = 'pra-uts' | 'pra-uas';
+export type FlashcardCategory = 'Definisi' | 'Rumus' | 'Grafik' | 'Mekanisme' | 'Asumsi' | 'Perbandingan' | 'Miskonsepsi' | 'Jurnal' | 'Standar' | 'Konsep' | 'Lainnya' | 'Contoh' | 'Dokumen' | 'Pengendalian' | 'Tarif' | 'Objek';
+
+export interface AdvancedStudyCard extends StudyCard {
+  id: string;
+  phase: FlashcardPhase;
+  tm: number;
+  topic: string;
+  category: FlashcardCategory;
+}
 export interface BankSoal {
   /** Jenis tampilan/rumpun soal, mis. report, journal, case, calculation. */
   type: string;
