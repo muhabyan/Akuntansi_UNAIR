@@ -1,4 +1,5 @@
-import { ArrowLeft, BookOpen, Target } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowLeft, BookOpen, Target, Maximize, Minimize } from 'lucide-react';
 import type { Reading } from '../../types';
 import { renderText } from './MarkdownContent';
 
@@ -10,17 +11,36 @@ interface CourseHeaderProps {
 export default function CourseHeader({ reading, onBack }: CourseHeaderProps) {
   const isReview = reading.tm === 0 || reading.tm === 15;
   const badgeLabel = reading.tm === 0 ? 'Simulasi UTS' : reading.tm === 15 ? 'Simulasi UAS' : `TM ${reading.tm}`;
+  const [zenMode, setZenMode] = useState(false);
+
+  useEffect(() => {
+    if (zenMode) {
+      document.body.classList.add('zen-mode-active');
+    } else {
+      document.body.classList.remove('zen-mode-active');
+    }
+    return () => document.body.classList.remove('zen-mode-active');
+  }, [zenMode]);
 
   return (
-    <header className="course-reading-header mb-8 overflow-hidden rounded-[2rem]">
-      <div className="relative border-b border-navy-500/45 px-5 py-4 md:px-7">
-        <button
-          onClick={onBack}
-          className="course-nav-btn inline-flex items-center gap-2 rounded-2xl border border-navy-500/70 bg-navy-950/35 px-3 py-2 text-sm font-bold text-slate-400 hover:border-gold/50 hover:text-gold"
-        >
-          <ArrowLeft size={16} /> Kembali ke Daftar Materi
-        </button>
-      </div>
+    <>
+      <header className="course-reading-header mb-8 overflow-hidden rounded-[2rem]">
+        <div className="relative border-b border-navy-500/45 px-5 py-4 md:px-7 flex justify-between items-center">
+          <button
+            onClick={onBack}
+            className="course-nav-btn inline-flex items-center gap-2 rounded-2xl border border-navy-500/70 bg-navy-950/35 px-3 py-2 text-sm font-bold text-slate-400 hover:border-gold/50 hover:text-gold"
+          >
+            <ArrowLeft size={16} /> Kembali ke Daftar Materi
+          </button>
+          <button 
+            onClick={() => setZenMode(!zenMode)} 
+            className="course-nav-btn inline-flex items-center gap-2 rounded-2xl border border-navy-500/70 bg-navy-950/35 px-3 py-2 text-sm font-bold text-slate-400 hover:border-gold/50 hover:text-gold"
+            title={zenMode ? "Keluar dari Zen Mode" : "Masuk ke Zen Mode (Fokus Membaca)"}
+          >
+            {zenMode ? <Minimize size={14} /> : <Maximize size={14} />}
+            <span className="hidden sm:inline">Zen Mode</span>
+          </button>
+        </div>
 
       <div className="relative px-5 py-6 md:px-7 md:py-8">
         <div className="pointer-events-none absolute right-[-4rem] top-[-4rem] h-44 w-44 rounded-full bg-gold/12 blur-3xl" />
@@ -74,5 +94,15 @@ export default function CourseHeader({ reading, onBack }: CourseHeaderProps) {
         )}
       </div>
     </header>
+
+    {zenMode && (
+        <button
+          onClick={() => setZenMode(false)}
+          className="fixed bottom-6 right-6 z-[100] flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-full shadow-2xl font-bold transition-transform hover:-translate-y-1 active:translate-y-0"
+        >
+          <Minimize size={18} /> Keluar Zen Mode
+        </button>
+      )}
+    </>
   );
 }
