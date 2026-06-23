@@ -234,7 +234,9 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
       }
       try {
         localStorage.setItem(`flashcard-stars-${courseCode}`, JSON.stringify(next));
-      } catch {}
+      } catch {
+        /* localStorage quota / disabled - abaikan */
+      }
       return next;
     });
   }, [courseCode]);

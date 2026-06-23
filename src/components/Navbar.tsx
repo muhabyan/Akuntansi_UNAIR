@@ -7,13 +7,12 @@
 // - keeps subtle scroll progress without blocking pointer events.
 // =============================================================
 import { useEffect, useState } from 'react';
-import { GraduationCap, Menu, X } from 'lucide-react';
+import { GraduationCap, LogOut, Menu, UserCircle2, X } from 'lucide-react';
 import { MegaMenu, QuizMegaMenu, LaporanMegaMenu } from './MegaMenu';
 import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
 import type { Course, CourseTabId } from '../types';
 import { useAuth } from '../contexts/AuthContext';
-import { UserCircle2, LogOut } from 'lucide-react';
 
 type NavMenu = 'materi' | 'quiz' | 'laporan' | null;
 

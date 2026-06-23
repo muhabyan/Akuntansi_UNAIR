@@ -26,7 +26,6 @@ export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
-    console.log("TTSPlayer mounted! isSupported:", 'speechSynthesis' in window);
     if (!('speechSynthesis' in window)) {
       return;
     }

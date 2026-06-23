@@ -38,7 +38,9 @@ export default function PteFlashcardTab() {
         const parsed = JSON.parse(stored);
         setStarredIds(new Set(Object.keys(parsed).filter(k => parsed[k])));
       }
-    } catch {}
+    } catch {
+      /* localStorage tidak tersedia / corrupt - abaikan */
+    }
   }, [showStarredOnly]);
 
   const availableTms = useMemo(() => {

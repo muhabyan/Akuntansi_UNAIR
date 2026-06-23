@@ -24,7 +24,7 @@ export function readStoredExamSession(key: string, datasetFingerprint: string): 
     const session = JSON.parse(raw) as StoredExamSession;
     if (session.datasetFingerprint !== datasetFingerprint) return null;
     return session;
-  } catch (e) {
+  } catch {
     return null;
   }
 }
@@ -32,7 +32,9 @@ export function readStoredExamSession(key: string, datasetFingerprint: string): 
 export function saveStoredExamSession(key: string, session: StoredExamSession): void {
   try {
     localStorage.setItem(key, JSON.stringify(session));
-  } catch (e) {}
+  } catch {
+    /* localStorage quota / disabled - fail silently */
+  }
 }
 
 export function clearLegacyExamSessions(_courseCode: string, _currentSetId: string, _durationSeconds: number): void {

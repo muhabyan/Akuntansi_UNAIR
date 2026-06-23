@@ -552,54 +552,59 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     }
     case 'MNU101': {
       const module = await import('../pengbis/pengbisData');
-      // @ts-ignore
+      // @ts-expect-error Vite menangani query string ?raw untuk markdown saat build.
       const mdModule = await import('../pengbis/Pengantar_Bisnis_Pra_UAS.md?raw');
-      
+
+      // Mulai dari registry TM1-7 lama sebagai fallback (kalau MD tidak meng-cover satu TM).
       const readings: Record<number, Reading> = { ...module.MNU101_TM1_7_READINGS };
       const rawText = mdModule.default;
-      
+
       const chunks = rawText.split(/(?=### TM\d{1,2}\b)/i);
       chunks.forEach((chunk: string) => {
         const match = chunk.match(/^### TM(\d{1,2})\s*(?:—|-)\s*([^\n]+)/i);
         if (!match) return;
         const tm = parseInt(match[1], 10);
-        
-        // Sesuai plan: gunakan markdown HANYA untuk TM8 hingga TM14
-        if (tm < 8 || tm > 14) return;
-        
+
+        // Markdown sekarang dipakai untuk SELURUH TM1-14 (sumber lebih kaya dari registry lama TM1-7).
+        if (tm < 1 || tm > 14) return;
+
         const title = match[2].trim();
         let ref = '';
         const refMatch = chunk.match(/\n_([^\n]+)_\n/);
         if (refMatch) ref = refMatch[1].trim();
-        
+
         const blocks = parseMarkdownToBlocks(chunk);
-        
-        // Buang heading pertama (karena sudah jadi title) dan teks referensi
+
+        // Buang heading pertama (karena sudah jadi title) dan teks referensi miring.
         if (blocks[0]?.kind === 'h3' && blocks[0].text.includes(`TM${tm}`)) blocks.shift();
         if (blocks[0]?.kind === 'p' && blocks[0].text.startsWith('_') && blocks[0].text.endsWith('_')) blocks.shift();
-        
-        let intro = `Modul Komprehensif Pengantar Bisnis Tatap Muka ${tm}`;
-        // Jika blok pertama adalah blockquote, jadikan sebagai intro
+
+        // Preserve intro & objectives dari MNU101_TM1_7_READINGS bila tersedia.
+        const existing = module.MNU101_TM1_7_READINGS[tm];
+        let intro = existing?.intro ?? `Modul Komprehensif Pengantar Bisnis Tatap Muka ${tm}`;
+        const objectives = existing?.objectives ?? [];
+
+        // Kalau MD punya blockquote pembuka, pakai sebagai intro override.
         if (blocks[0]?.kind === 'callout' && blocks[0].text.includes('Materi ini')) {
           intro = blocks[0].text;
           blocks.shift();
         }
-        
+
         readings[tm] = {
           tm,
-          title,
-          ref: ref || 'Materi Pengantar Bisnis Pra-UAS',
+          title: title || existing?.title || `Pengantar Bisnis TM ${tm}`,
+          ref: ref || existing?.ref || 'Materi Pengantar Bisnis (RPS, Pride, Nickels)',
           intro,
-          objectives: [],
-          blocks
+          objectives,
+          blocks,
         };
       });
-      
+
       return { readings, reviews: {} };
     }
     case 'AKA103': {
       const module = await import('../ekpa/ekpaReadings');
-      return { readings: module.AKA103_READINGS, reviews: {} };
+      return { readings: module.AKA103_READINGS, reviews: module.AKA103_REVIEW_READINGS };
     }
     case 'MAS122': {
       const module = await import('../statistik/statistikData');
@@ -610,11 +615,14 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       return { readings: buildAkk106Readings(module.akdasPraUTS as AkdasSource), reviews: {} };
     }
     case 'PJK201': {
-      const [praUts, praUas] = await Promise.all([
+      const [praUts, praUas, pjkReview] = await Promise.all([
         import('../perpajakan/perpajakanPraUTS'),
-        import('../perpajakan/perpajakanPraUAS')
+        import('../perpajakan/perpajakanPraUAS'),
+        import('../perpajakan/pjkReviewReadings')
       ]);
-      return buildPjkContent(praUts.perpajakanPraUTS as PerpajakanUtsSource, perpajakanPraUASCheck(praUas.perpajakanPraUAS));
+      const content = buildPjkContent(praUts.perpajakanPraUTS as PerpajakanUtsSource, perpajakanPraUASCheck(praUas.perpajakanPraUAS));
+      content.reviews = pjkReview.PJK201_REVIEW_READINGS;
+      return content;
     }
     default:
       return { readings: {}, reviews: {} };

@@ -23,7 +23,9 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
         const parsed = JSON.parse(stored);
         setStarredIds(new Set(Object.keys(parsed).filter(k => parsed[k])));
       }
-    } catch {}
+    } catch {
+      /* localStorage tidak tersedia / corrupt - abaikan */
+    }
   }, [course.code, showStarredOnly]);
 
   const CATEGORY_OPTIONS: Array<'all' | FlashcardCategory> = useMemo(() => {

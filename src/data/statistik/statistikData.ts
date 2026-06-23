@@ -3,6 +3,14 @@
 // TM1–7 (pra-UTS) & TM8–14 (pra-UAS). Sumber: Lind (DA), Anderson (AA) + RPS.
 // =============================================================
 import type { Reading } from '../../types';
+import { MAS122_TM8_14_SUPPLEMENT } from './statistikPraUasSupplement';
+
+/** Gabungkan blocks reading existing dengan suplemen Pra-UAS bila ada untuk TM tersebut. */
+function withSupplement(reading: Reading): Reading {
+  const extra = MAS122_TM8_14_SUPPLEMENT[reading.tm];
+  if (!extra || extra.length === 0) return reading;
+  return { ...reading, blocks: [...reading.blocks, ...extra] };
+}
 
 const tm1: Reading = {
   tm: 1, title: 'Pengenalan Statistik dalam Akuntansi & Bisnis', ref: 'DA 1 · AA 1',
@@ -314,5 +322,11 @@ const tm14: Reading = {
 
 export const MAS122_READINGS: Record<number, Reading> = {
   1: tm1, 2: tm2, 3: tm3, 4: tm4, 5: tm5, 6: tm6, 7: tm7,
-  8: tm8, 9: tm9, 10: tm10, 11: tm11, 12: tm12, 13: tm13, 14: tm14,
+  8: withSupplement(tm8),
+  9: withSupplement(tm9),
+  10: withSupplement(tm10),
+  11: withSupplement(tm11),
+  12: withSupplement(tm12),
+  13: withSupplement(tm13),
+  14: withSupplement(tm14),
 };

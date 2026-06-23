@@ -364,3 +364,125 @@ export const AKA103_READINGS: Record<number, Reading> = {
   1: tm1, 2: tm2, 3: tm3, 4: tm4, 5: tm5, 6: tm6, 7: tm7,
   8: tm8, 9: tm9, 10: tm10, 11: tm11, 12: tm12, 13: tm13, 14: tm14,
 };
+
+// =============================================================
+// SIMULASI UTS & UAS (Review Reading)
+// Disusun mandiri dari TM 1–7 dan TM 8–14 yang sudah ada di file ini.
+// Tidak mengimpor ekpaData.ts agar tetap tidak menambah konsumen baru.
+// =============================================================
+
+const AKA103_REVIEW_UTS_READING: Reading = {
+  tm: 0,
+  title: 'Simulasi UTS',
+  ref: 'Rangkuman TM 1–7 + Studi Kasus + Jebakan Ujian',
+  intro:
+    'Review akhir Pra-UTS: rangkuman konsep inti TM 1–6, kerangka jawab kasus, jebakan ujian, dan kotak refleksi sebelum hari-H.',
+  objectives: [
+    'Meringkas tema utama TM 1–6 dalam satu kerangka jawaban etis.',
+    'Mengenali jebakan ujian yang sering muncul pada esai dan kasus.',
+    'Berlatih menjawab kasus dengan pola: prinsip → fakta → analisis → keputusan → tindakan korektif.',
+  ],
+  blocks: [
+    { kind: 'h2', text: 'A. Peta Konsep TM 1–6' },
+    { kind: 'table', headers: ['TM', 'Tema utama', 'Konsep yang harus hafal'], rows: [
+      ['1', 'Hakikat Akuntansi & True Disclosure', 'Cooking the books, fungsi informasi, kepercayaan publik'],
+      ['2', 'Pengukuran & Pelaporan', 'Nilai aset, COGS, batas estimasi vs manipulasi'],
+      ['3', 'Pengantar Etika', 'Definisi etika, moral, dimensi & tingkatan etika'],
+      ['4', 'Kode Etik AICPA', 'Integritas, objektivitas, kompetensi, kerahasiaan, perilaku profesional'],
+      ['5', 'Teori Moral', 'Egoisme, utilitarianisme, deontologi — kapan dipakai'],
+      ['6', 'Etika Pengungkapan', 'True disclosure pada profesi akuntan, whistleblowing'],
+    ] },
+    { kind: 'h2', text: 'B. Pola Jawaban Esai/Kasus (5 langkah)' },
+    { kind: 'ol', items: [
+      'Identifikasi **prinsip etika** yang relevan (AICPA / teori moral).',
+      'Uraikan **fakta material** dari kasus tanpa penilaian.',
+      'Lakukan **analisis** menggunakan teori yang dipilih + konteks profesi akuntan.',
+      'Tarik **keputusan etis** yang konsisten dengan prinsip.',
+      'Sebutkan **tindakan korektif & pencegahan** (kontrol, kebijakan, pelaporan).',
+    ] },
+    { kind: 'callout', variant: 'warning', title: 'Jebakan ujian Pra-UTS', text: 'Jangan menjawab kasus hanya dengan "harus jujur" tanpa menyebut prinsip AICPA / teori moral. Jangan rancukan etika dan hukum: tindakan legal belum tentu etis. Jangan abaikan stakeholder lain (kreditor, masyarakat, regulator) ketika menjawab "kepada siapa akuntan loyal".' },
+    { kind: 'h2', text: 'C. Bank Studi Kasus Singkat' },
+    { kind: 'example', title: 'Kasus 1 — Enron Cooking the Books', blocks: [
+      { kind: 'p', text: '**Inti:** manajemen menggunakan SPE untuk menyembunyikan utang dan mengakui pendapatan fiktif.' },
+      { kind: 'p', text: '**Pertanyaan ujian:** prinsip AICPA mana yang dilanggar, dan apa peran auditor eksternal?' },
+      { kind: 'p', text: '**Kerangka jawab:** Integritas dan objektivitas dilanggar; auditor harus skeptis profesional, bukan kepanjangan tangan klien. Lihat juga teori deontologi: kebenaran sebagai kewajiban.' },
+    ] },
+    { kind: 'example', title: 'Kasus 2 — Tekanan Manajemen di Akhir Periode', blocks: [
+      { kind: 'p', text: '**Inti:** atasan minta akuntan mengakui pendapatan sebelum kontrak ditandatangani agar target tahun ini tercapai.' },
+      { kind: 'p', text: '**Pertanyaan ujian:** evaluasi tindakan tersebut dengan utilitarianisme vs deontologi.' },
+      { kind: 'p', text: '**Kerangka jawab:** Utilitarianisme — jangka pendek manajer untung tetapi investor dan kreditor menanggung kerugian → net negatif. Deontologi — kewajiban menyajikan kebenaran tidak boleh dilanggar terlepas dari konsekuensi. Tindakan: tolak, eskalasi melalui jalur formal, dokumentasikan.' },
+    ] },
+    { kind: 'h2', text: 'D. Cek Diri Sebelum Ujian' },
+    { kind: 'ol', items: [
+      'Bisa membedakan etika, moral, hukum, dan agama dalam satu kalimat?',
+      'Bisa menyebut 5 prinsip AICPA tanpa lihat?',
+      'Bisa membandingkan utilitarianisme, deontologi, dan etika kebajikan dalam satu paragraf?',
+      'Bisa membuat kerangka 5 langkah untuk satu kasus kontemporer (mis. greenwashing, manipulasi laporan ESG)?',
+    ] },
+    { kind: 'callout', variant: 'key', title: 'Mindset hari-H', text: 'Jawaban yang dinilai baik bukan yang terpanjang, melainkan yang **runtut**: prinsip → fakta → analisis → keputusan → tindakan.' },
+  ],
+};
+
+const AKA103_REVIEW_UAS_READING: Reading = {
+  tm: 15,
+  title: 'Simulasi UAS',
+  ref: 'Rangkuman TM 8–14 + Studi Kasus + Jebakan Ujian',
+  intro:
+    'Review akhir Pra-UAS: rangkuman tema-tema TM 8–14 (etika & agama, DEI, kompetensi industri, tata kelola, kepemimpinan, komunikasi, integrasi), jebakan ujian, dan kasus latihan.',
+  objectives: [
+    'Meringkas tema utama TM 8–14 dalam satu kerangka jawaban.',
+    'Menghubungkan etika, kepemimpinan, dan komunikasi dengan praktik profesi akuntan.',
+    'Berlatih menjawab kasus dengan kerangka stakeholder + governance.',
+  ],
+  blocks: [
+    { kind: 'h2', text: 'A. Peta Konsep TM 8–14' },
+    { kind: 'table', headers: ['TM', 'Tema utama', 'Konsep yang harus hafal'], rows: [
+      ['8', 'Etika, Moral & Agama (termasuk Islam)', 'Empat posisi etika-agama, aksioma etika bisnis Islam (Tauhid, Adil, Free will, Tanggung jawab, Ihsan)'],
+      ['9', 'Sikap Etis: DEI & Hak', 'Diversity, Inclusion, Equity; akomodasi agama & disabilitas; kerangka analisis hak'],
+      ['10', 'Kebutuhan Industri', 'Hard skills, soft skills, professional attitude; ranking kompetensi yang dicari'],
+      ['11', 'Tata Kelola & Etika Bisnis', 'Agency, stakeholder, stewardship; peran dewan & komite audit'],
+      ['12', 'Kepemimpinan Etis', 'Effective vs ethical leader; Leadership 4.0; tone at the top'],
+      ['13', 'Komunikasi Profesional', 'Komunikasi tertulis, oral, bukti, diplomasi profesional'],
+      ['14', 'Integrasi Etika-Kepemimpinan-Komunikasi', 'Kerangka holistik akuntan profesional'],
+    ] },
+    { kind: 'h2', text: 'B. Pola Jawaban Esai/Kasus (5 langkah)' },
+    { kind: 'ol', items: [
+      'Identifikasi **prinsip / teori** (etika bisnis Islam, DEI, governance, kepemimpinan etis).',
+      'Uraikan **fakta material** + pihak yang terdampak (stakeholder map).',
+      'Lakukan **analisis** — hubungkan ke teori + konteks akuntan/auditor.',
+      'Tarik **keputusan etis** yang dapat dipertanggungjawabkan.',
+      'Sebutkan **tindakan korektif & pencegahan sistemik** (kontrol, kebijakan, komunikasi).',
+    ] },
+    { kind: 'callout', variant: 'warning', title: 'Jebakan ujian Pra-UAS', text: 'Jangan menjawab "perusahaan bebas membuat aturan apa pun" pada kasus DEI — kebebasan manajemen dibatasi prinsip nondiskriminasi. Jangan campur etika dan kepatuhan: pemimpin efektif belum tentu etis. Jangan lupakan **stakeholder publik** (regulator, masyarakat) saat menjawab tata kelola.' },
+    { kind: 'h2', text: 'C. Bank Studi Kasus Singkat' },
+    { kind: 'example', title: 'Kasus 1 — Fraud Garuda Indonesia', blocks: [
+      { kind: 'p', text: '**Inti:** pengakuan pendapatan piutang dari Mahata diakui penuh meski belum cair; opini auditor menjadi sorotan.' },
+      { kind: 'p', text: '**Pertanyaan ujian:** evaluasi peran dewan, komite audit, dan auditor eksternal dari sudut tata kelola.' },
+      { kind: 'p', text: '**Kerangka jawab:** Dewan komisaris gagal melakukan oversight; komite audit tidak independen; auditor seharusnya skeptis terhadap pengakuan pendapatan tanpa arus kas. Hubungkan agency theory dan tone at the top.' },
+    ] },
+    { kind: 'example', title: 'Kasus 2 — Diskriminasi Agama dalam Rekrutmen', blocks: [
+      { kind: 'p', text: '**Inti:** kandidat ditolak karena mengenakan atribut agama tertentu.' },
+      { kind: 'p', text: '**Pertanyaan ujian:** evaluasi dari prinsip DEI dan hak pekerja.' },
+      { kind: 'p', text: '**Kerangka jawab:** Perusahaan gagal membedakan kompetensi dan identitas; kebijakan tidak proporsional terhadap tujuan operasional; bertentangan dengan prinsip equity. Implikasi: risiko hukum, biaya gugatan, reputasi.' },
+    ] },
+    { kind: 'example', title: 'Kasus 3 — Presentasi Temuan Audit Sensitif', blocks: [
+      { kind: 'p', text: '**Inti:** auditor menemukan invoice fiktif vendor; harus disampaikan ke direksi.' },
+      { kind: 'p', text: '**Pertanyaan ujian:** susun pendekatan komunikasi profesional.' },
+      { kind: 'p', text: '**Kerangka jawab:** Bahasa berbasis fakta + bukti; hindari tuduhan personal; jelaskan risiko hukum/reputasi; usulkan kontrol baru (pemisahan tugas, vendor master); jaga kerahasiaan + jalur eskalasi formal.' },
+    ] },
+    { kind: 'h2', text: 'D. Cek Diri Sebelum Ujian' },
+    { kind: 'ol', items: [
+      'Bisa menjelaskan 5 aksioma etika bisnis Islam dengan contoh praktik akuntan?',
+      'Bisa membedakan diversity, inclusion, dan equity dalam satu paragraf?',
+      'Bisa menyebut perbedaan agency, stakeholder, stewardship dalam tata kelola?',
+      'Bisa membandingkan pemimpin efektif vs etis dalam satu kalimat?',
+      'Bisa menyusun memo audit 1 paragraf yang faktual, sopan, dan menutup dengan rekomendasi?',
+    ] },
+    { kind: 'callout', variant: 'key', title: 'Mindset hari-H', text: 'Hubungkan **etika → kepemimpinan → komunikasi** — tiga pilar yang menjadi tema akhir TM 14. Jawaban yang terintegrasi lebih bernilai daripada jawaban yang menjawab satu pilar saja.' },
+  ],
+};
+
+export const AKA103_REVIEW_READINGS: Partial<Record<'uts' | 'uas', Reading>> = {
+  uts: AKA103_REVIEW_UTS_READING,
+  uas: AKA103_REVIEW_UAS_READING,
+};
