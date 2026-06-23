@@ -264,6 +264,26 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
 
   useEffect(() => { window.scrollTo(0, 0); }, [tm]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName) || target.isContentEditable) {
+        return;
+      }
+      
+      if (e.key === 'ArrowLeft' && prevTm) {
+        e.preventDefault();
+        onSelectTm(prevTm);
+      } else if (e.key === 'ArrowRight' && nextTm) {
+        e.preventDefault();
+        onSelectTm(nextTm);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [prevTm, nextTm, onSelectTm]);
+
   if (isLoading) {
     return <div className="py-28 text-center text-sm font-semibold text-gray-500">Memuat materi…</div>;
   }
