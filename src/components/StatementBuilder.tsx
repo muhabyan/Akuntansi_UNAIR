@@ -54,9 +54,10 @@ function rowClass(line: StatementLine, isComputed = false): string {
 }
 
 function inputStatusClass(ok: boolean | undefined, bad: boolean | undefined): string {
-  if (ok) return 'is-correct';
-  if (bad) return 'is-wrong';
-  return '';
+  const base = "w-full min-w-[100px] max-w-[180px] ml-auto rounded-lg border px-3 py-1.5 text-right font-mono text-sm tabular-nums shadow-inner outline-none transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500";
+  if (ok) return `${base} border-emerald-500/50 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500`;
+  if (bad) return `${base} border-rose-500/50 bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-400 focus:border-rose-500 focus:ring-1 focus:ring-rose-500`;
+  return `${base} border-navy-500/30 bg-white dark:bg-navy-900/50 text-slate-900 dark:text-slate-100 focus:border-gold-500 focus:bg-white dark:focus:bg-navy-950 focus:ring-1 focus:ring-gold-500`;
 }
 
 export function StatementFull({ spec }: { spec: StatementSpec }) {
