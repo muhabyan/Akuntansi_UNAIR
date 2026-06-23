@@ -66,10 +66,10 @@ export default function PomodoroTimer() {
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start">
       {/* Expanded Panel */}
       <div 
-        className={`mb-4 overflow-hidden transition-all duration-300 origin-bottom-right ${
+        className={`mb-4 overflow-hidden transition-all duration-300 origin-bottom-left ${
           isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
         }`}
       >
