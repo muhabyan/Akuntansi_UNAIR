@@ -23,8 +23,7 @@ export async function chatWithGemini(
   const payload: any = {
     contents,
     generationConfig: {
-      temperature: 0.7,
-      maxOutputTokens: 1000,
+      temperature: 0.7
     }
   };
 
@@ -49,7 +48,10 @@ export async function chatWithGemini(
     }
 
     const data = await response.json();
-    return data.candidates[0].content.parts[0].text;
+    if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+      return data.candidates[0].content.parts.map((p: any) => p.text).join('');
+    }
+    return 'Respon kosong atau format tidak dikenali.';
   } catch (error: any) {
     throw new Error(error.message || 'Gagal terhubung ke AI Tutor.');
   }

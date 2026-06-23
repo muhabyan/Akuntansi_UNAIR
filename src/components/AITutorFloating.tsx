@@ -124,7 +124,7 @@ export default function AITutorFloating() {
                 {messages.map((msg, i) => (
                   <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div 
-                      className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed ${
+                      className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
                         msg.role === 'user' 
                           ? 'bg-blue-600 text-white rounded-br-sm' 
                           : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 rounded-bl-sm shadow-sm'
