@@ -14,12 +14,30 @@ export default function PomodoroTimer() {
   const [timeLeft, setTimeLeft] = useState(MODES.focus.minutes * 60);
   const [isRunning, setIsRunning] = useState(false);
   
-  // Audio ref for notification sound
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  useEffect(() => {
-    audioRef.current = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
-  }, []);
+  const playBell = () => {
+    try {
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContext) return;
+      const ctx = new AudioContext();
+      const playTone = (freq: number, startTime: number, duration: number) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(0, startTime);
+        gain.gain.linearRampToValueAtTime(0.5, startTime + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.01, startTime + duration);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(startTime);
+        osc.stop(startTime + duration);
+      };
+      playTone(880, ctx.currentTime, 1);       // A5
+      playTone(1108.73, ctx.currentTime + 0.15, 1.5); // C#6
+    } catch (e) {
+      console.log('Audio error', e);
+    }
+  };
 
   useEffect(() => {
     let interval: number | undefined;
@@ -30,7 +48,7 @@ export default function PomodoroTimer() {
       }, 1000);
     } else if (timeLeft === 0 && isRunning) {
       setIsRunning(false);
-      audioRef.current?.play().catch(() => {});
+      playBell();
       
       // Auto switch mode
       if (mode === 'focus') {
