@@ -13,6 +13,53 @@ Tujuan: AI fokus ke ruang lingkup TM, tidak kabur ke materi lain.
 
 ---
 
+---
+
+## 🎬 PROMPT UNTUK VIDEO KOMPREHENSIF (1 video per fase)
+
+> Pakai prompt ini kalau ingin **1 video untuk seluruh Pra-UTS (TM 1-7)** atau **1 video untuk seluruh Pra-UAS (TM 8-14)**.  
+> Upload **hanya** `00_Pra_UTS_TM1-7_Gabungan.md` atau `00_Pra_UAS_TM8-14_Gabungan.md` sebagai source.
+
+### Video Komprehensif Pra-UTS (TM 1–7)
+
+```
+Bahasa Indonesia, durasi **18–25 menit**, gaya dosen S1 Akuntansi UNAIR mengantar mahasiswa Pra-UTS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UTS_TM1-7_Gabungan.md`), jangan menambah materi dari luar.
+
+**Struktur video (7 segmen TM):**
+1. **TM 1 — Kebijakan Fiskal & Pengertian Pajak** (definisi, fungsi budgetair vs regulerend, sejarah, kebijakan fiskal vs moneter)
+2. **TM 2 — Teori, Jenis, Tarif & Utang Pajak** (teori pemungutan, jenis pajak, official/self/with-holding assessment, tarif progresif/proporsional/regresif, timbul-hapusnya utang)
+3. **TM 3 — Hukum Pajak Internasional** (asas domisili/sumber/kewarganegaraan, double taxation, P3B, BEPS)
+4. **TM 4 — KUP, NPWP/NPPKP** (UU KUP 6/1983 → 6/2023, NIK sebagai NPWP, subjek DN vs LN, objek pajak)
+5. **TM 5 — Pembayaran, Pelaporan & SPT** (SPT Masa vs Tahunan, pembetulan Pasal 8 UU KUP, sanksi, Coretax 2025+)
+6. **TM 6 — Kepatuhan & Tax Digitalization** (kepatuhan formal vs material, Coretax, e-Faktur, tax ratio)
+7. **TM 7 — Pembukuan & Pencatatan** (Pasal 28 UU KUP, omzet ≤ 4,8M boleh pencatatan + NPPN, sanksi Pasal 39)
+
+**Tone:** Sebut pasal/UU **persis** seperti tertulis di source. Tabel dijadikan slide visual. Tutup dengan **3 jebakan UTS** yang sering muncul. Per TM beri intro 30 detik dan punchline 30 detik supaya mahasiswa tidak ngantuk.
+```
+
+### Video Komprehensif Pra-UAS (TM 8–14)
+
+```
+Bahasa Indonesia, durasi **22–30 menit**, gaya dosen S1 Akuntansi UNAIR mengantar mahasiswa Pra-UAS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UAS_TM8-14_Gabungan.md`).
+
+**Struktur video (7 segmen TM, fokus dasar hukum):**
+1. **TM 8 — Penelitian, Pemeriksaan, Bukper, Penyidikan** (beda 4 tahap, Pasal 38/39/39A/43/44A/44B UU KUP, PMK 15/2025, PMK 177/2022, PMK 17/2025)
+2. **TM 9 — Penetapan, Ketetapan & Restitusi** (SKPKB/SKPKBT/SKPLB/SKPN/STP, alur restitusi Pasal 17B)
+3. **TM 10 — Keberatan, Banding, Gugatan, PK** (tenggat masing-masing, UU 14/2002, Putusan MK 26/PUU-XXI/2023)
+4. **TM 11 — Penagihan, Surat Paksa, Pidana Fiskal** (UU PPSP, hak mendahulu DJP, PMK 61/2023, pidana Pasal 38–43A)
+5. **TM 12 — Bea Meterai** (UU 10/2020, PMK 78/2024, tarif Rp10.000, objek/non-objek, pemeteraian kemudian)
+6. **TM 13 — Pajak Daerah Provinsi** (UU 1/2022 HKPD, PKB, BBNKB, PAB, Pajak Rokok, opsen)
+7. **TM 14 — PBB-P2, BPHTB & Pajak Kab/Kota** (NJOP, NJOPTKP, BPHTB NPOPTKP Rp80jt/Rp300jt, PBJT)
+
+**Tone:** Sebut **pasal/ayat/huruf/angka** persis. Tabel jadi slide visual. Per TM sebut **1 jebakan UAS** dari source. Tutup dengan **strategi terstruktur 5-langkah** untuk jawab kasus pajak: (1) identifikasi tahap, (2) tarik dasar hukum, (3) hitung jangka waktu/sanksi, (4) putuskan upaya hukum, (5) susun argumentasi.
+```
+
+---
+
+## 🎯 PROMPT PER TM (workflow lama: 14 video per matkul)
+
+Bagian di bawah ini untuk workflow lama (1 video = 1 TM). Pakai kalau ingin video pendek per topik.
+
 ## TM 01 — Kebijakan Fiskal, Sejarah & Pengertian Pajak
 > Fokus ke: definisi pajak menurut Soemitro & UU KUP, **fungsi pajak (budgetair vs regulerend)**,
 > perbedaan **kebijakan fiskal vs kebijakan moneter**, sejarah singkat pajak di Indonesia,

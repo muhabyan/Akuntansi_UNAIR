@@ -13,6 +13,53 @@ Saat klik **Studio → Video Overview → Customize**, paste prompt yang sesuai 
 
 ---
 
+---
+
+## 🎬 PROMPT UNTUK VIDEO KOMPREHENSIF (1 video per fase)
+
+> Pakai prompt ini kalau ingin **1 video untuk seluruh Pra-UTS (TM 1-7)** atau **1 video untuk seluruh Pra-UAS (TM 8-14)**.  
+> Upload **hanya** `00_Pra_UTS_TM1-7_Gabungan.md` atau `00_Pra_UAS_TM8-14_Gabungan.md` sebagai source.
+
+### Video Komprehensif Pra-UTS (TM 1–7)
+
+```
+Bahasa Indonesia, durasi **18–25 menit**, gaya dosen S1 Akuntansi UNAIR Pra-UTS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UTS_TM1-7_Gabungan.md`).
+
+**Struktur video (7 segmen TM):**
+1. **TM 1 — Business & Economic Environment** (definisi bisnis, needs vs wants, sistem ekonomi capitalism/command/mixed, business cycle 4 fase, jenis persaingan pasar)
+2. **TM 2 — Ethics, CSR & Environmental Concerns** (CSR pyramid, stakeholder approach, sustainability, kode etik & whistleblowing)
+3. **TM 3 — Global Business** (comparative vs absolute advantage, mode entry, hambatan dagang, WTO/ASEAN)
+4. **TM 4 — Ownership, Entrepreneurship & Franchise** (sole/partnership/corporation/S-corp/LLC, UMKM, franchisor vs franchisee)
+5. **TM 5 — The Management Process** (POAC, 3 tingkat manajemen, decision making, strategi level)
+6. **TM 6 — Flexible Organization** (departementalisasi 5 jenis, chain of command, centralization vs decentralization, flat structure)
+7. **TM 7 — Producing Quality Goods & Services** (OM, forecasting, capacity planning, TQM/Six Sigma/Kaizen, ISO 9000, JIT)
+
+**Tone:** Pakai istilah **Pride/Nickels** persis. Tabel komparasi jadikan slide utama. Sebut **case Chobani, Dunkin, Domino, FedEx, Zappos** kalau ada di source.
+```
+
+### Video Komprehensif Pra-UAS (TM 8–14)
+
+```
+Bahasa Indonesia, durasi **22–30 menit**, gaya dosen Pra-UAS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UAS_TM8-14_Gabungan.md`).
+
+**Struktur video (7 segmen TM):**
+1. **TM 8 — HRM & Employee-Team Motivation** (HR planning, recruitment-selection, kompensasi, teori motivasi Maslow/Herzberg/McGregor/Equity/Expectancy, team motivation, diversity)
+2. **TM 9 — CRM & Buyer Behavior** (CLV, evolution marketing concept, STP, B2B vs B2C, 5-step buyer decision)
+3. **TM 10 — Product, Brand, PLC & Pricing** (product classification, product mix, brand equity, NPD 8 stages, PLC 4 fase, pricing strategy skimming/penetration, break-even)
+4. **TM 11 — Distribution, SCM & Promotion** (channel level 0-2, 6 utilities, intensity intensive/selective/exclusive, retailing, promotion mix, AIDA, push vs pull)
+5. **TM 12 — Social Media, E-Business, IT & Security** (social media plan, KPI, e-business B2B/B2C/C2C, cybersecurity firewall/phishing/social engineering, future trends AI/IoT/blockchain)
+6. **TM 13 — MIS, Accounting & Financial Statements** (data → information → knowledge, MIS components, persamaan akuntansi, 3 laporan keuangan, rasio liquidity/profitability/leverage)
+7. **TM 14 — Financial Management** (CFO role, cash budget, working capital, pendanaan jangka pendek vs panjang, debt vs equity, cost of capital, dividend policy)
+
+**Tone:** Pakai istilah Pride/Nickels persis. Tabel komparasi jadikan slide. Sebut case study yang ada di source per TM.
+```
+
+---
+
+## 🎯 PROMPT PER TM (workflow lama: 14 video per matkul)
+
+Bagian di bawah ini untuk workflow lama (1 video = 1 TM). Pakai kalau ingin video pendek per topik.
+
 ## TM 01 — Business, Economic Environment, Business Cycle & Competition
 > Fokus ke: definisi bisnis & **needs vs wants**, **sistem ekonomi** (capitalism,
 > command, mixed), **business cycle** (expansion, peak, contraction, trough)

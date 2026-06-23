@@ -15,6 +15,57 @@ Saat klik **Studio → Video Overview → Customize**, paste prompt yang sesuai 
 
 ---
 
+---
+
+## 🎬 PROMPT UNTUK VIDEO KOMPREHENSIF (1 video per fase)
+
+> Pakai prompt ini kalau ingin **1 video untuk seluruh Pra-UTS (TM 1-7)** atau **1 video untuk seluruh Pra-UAS (TM 8-14)**.  
+> Upload **hanya** `00_Pra_UTS_TM1-7_Gabungan.md` atau `00_Pra_UAS_TM8-14_Gabungan.md` sebagai source.
+
+### Video Komprehensif Pra-UTS (TM 1–7)
+
+```
+Bahasa Indonesia, durasi **18–25 menit**, gaya dosen Pra-UTS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UTS_TM1-7_Gabungan.md`). 
+
+⚠️ **WAJIB:** Sebut **rumus dengan notasi matematika persis** (μ, σ, x̄, s, p̂, β, ρ, χ²) — jangan ganti simbol Yunani jadi huruf Latin.
+
+**Struktur video (7 segmen TM dasar inferensial):**
+1. **TM 1 — Pengenalan Statistik** (2 cabang deskriptif vs inferensial, populasi vs sampel, parameter vs statistik, skala NOIR)
+2. **TM 2 — Tendensi Sentral** (mean `x̄ = Σx ÷ n`, median, modus, weighted mean, kapan pakai apa)
+3. **TM 3 — Dispersi** (range, IQR, **varians `s² = Σ(x − x̄)² ÷ (n − 1)`**, **std dev `s = √s²`**, CV, aturan empiris 68-95-99,7%, skewness)
+4. **TM 4 — Probabilitas & Distribusi** (3 aturan, binomial `P(X=x) = C(n,x)·pˣ·(1−p)ⁿ⁻ˣ`, normal, standardisasi `Z = (x − μ) ÷ σ`, CLT)
+5. **TM 5 — Estimasi** (titik vs interval, **3 rumus CI**: σ diketahui, σ tidak diketahui (t, df=n-1), proporsi `p̂ ± Z·√[p̂(1−p̂)/n]`, margin of error)
+6. **TM 6 — Uji Hipotesis 1** (5 langkah uji, H₀ vs H₁ one/two-tailed, p-value vs α, error tipe I (α) vs II (β))
+7. **TM 7 — Uji Hipotesis 2** (uji-t 1 sampel `t = (x̄ − μ₀) ÷ (s/√n)`, 2 sampel independen, paired t-test, power = 1−β)
+
+**Tone:** Setiap rumus disebut **notasinya persis**. Tabel "kapan pakai uji apa" jadikan slide utama. Tutup dengan **5 jebakan ujian UTS** (mean vs median pada outlier, df salah, CI vs PI, salah tail).
+```
+
+### Video Komprehensif Pra-UAS (TM 8–14)
+
+```
+Bahasa Indonesia, durasi **22–30 menit**, gaya dosen Pra-UAS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UAS_TM8-14_Gabungan.md`). 
+
+⚠️ **WAJIB:** Sebut **rumus dengan notasi persis** + **bahas setiap istilah SPSS** (Descriptives, Levene, ANOVA table, Post Hoc, Coefficients, Model Summary, Durbin-Watson, VIF, dll) dengan **interpretasi praktis**, bukan hanya definisi.
+
+**Struktur video (7 segmen TM analisis multivariat):**
+1. **TM 8 — ANOVA** (`F = Var antar ÷ Var dalam`, kapan pakai (≥3 grup), kenapa bukan banyak uji-t, **SPSS output**: Descriptives/Levene/ANOVA/Post Hoc Tukey, asumsi normalitas+homogenitas, alternatif Kruskal-Wallis, glossary Factor/Level/Between/Within/F-statistic/Eta squared)
+2. **TM 9 — Regresi & Korelasi 1** (Pearson r dari −1 sampai +1, korelasi ≠ kausalitas, regresi `Ŷ = a + bX`, kuadrat terkecil, interpretasi intercept-slope-R², **SPSS: Correlation table, Coefficients**)
+3. **TM 10 — Regresi 2** (berganda `Ŷ = b₀ + b₁X₁ + ... + bₖXₖ`, Adjusted R², **5 asumsi**: linearitas/independensi residual (Durbin-Watson)/homoskedastisitas/normalitas residual (P-P Plot)/multikolinearitas (VIF<10), heteroskedastisitas sebagai jebakan, **SPSS: Model Summary, ANOVA regression, Coefficients+VIF, Residual stats**)
+4. **TM 11 — Time Series** (trend/seasonal/cyclical/irregular, moving average, exponential smoothing, peramalan, MAD/MAPE)
+5. **TM 12 — Non-Parametrik** (Mann-Whitney (vs t 2-sample indep), Wilcoxon (vs paired t), Kruskal-Wallis (vs ANOVA), **Chi-square `χ² = Σ((O−E)² ÷ E)`** independensi & goodness-of-fit)
+6. **TM 13 — Software & Persiapan Proyek** (SPSS workflow Variable→Data→Analyze, JASP/R alternative, workflow proyek akademik, etika data)
+7. **TM 14 — Presentasi Proyek** (5 bagian laporan: latar→data&metode→hasil→interpretasi→kesimpulan, prinsip visualisasi, etika sajikan apa adanya)
+
+**Tone:** Setiap uji disertai **asumsi** dan **jebakan**. Setiap istilah SPSS diinterpretasi (contoh: "Levene p=0.07 → varians homogen → asumsi ANOVA terpenuhi"; "VIF>10 → multikolinearitas serius"). Tutup dengan **strategi memilih uji 4-langkah**: (1) berapa kelompok? (2) skala data? (3) berpasangan/independen? (4) asumsi terpenuhi? → pilih uji.
+```
+
+---
+
+## 🎯 PROMPT PER TM (workflow lama: 14 video per matkul)
+
+Bagian di bawah ini untuk workflow lama (1 video = 1 TM). Pakai kalau ingin video pendek per topik.
+
 ## TM 01 — Pengenalan Statistik
 > Fokus ke: **2 cabang statistik** (deskriptif vs inferensial), **populasi vs
 > sampel** (parameter vs statistik), **jenis data** (kualitatif vs kuantitatif,

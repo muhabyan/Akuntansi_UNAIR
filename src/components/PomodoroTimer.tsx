@@ -87,8 +87,8 @@ export default function PomodoroTimer() {
     <div className="fixed top-[60%] left-0 z-50 pointer-events-none -translate-y-1/2">
       {/* Expanded Panel */}
       <div 
-        className={`pointer-events-auto absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
-          isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'
+        className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
+          isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">

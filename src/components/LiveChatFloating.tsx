@@ -123,8 +123,8 @@ export default function LiveChatFloating() {
     <div className="fixed top-[45%] left-0 z-50 pointer-events-none -translate-y-1/2">
       {/* Chat Panel */}
       <div 
-        className={`pointer-events-auto absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
-          isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'
+        className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
+          isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
       >
         <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">

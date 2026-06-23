@@ -14,6 +14,57 @@ Saat klik **Studio → Video Overview → Customize**, paste prompt yang sesuai 
 
 ---
 
+---
+
+## 🎬 PROMPT UNTUK VIDEO KOMPREHENSIF (1 video per fase)
+
+> Pakai prompt ini kalau ingin **1 video untuk seluruh Pra-UTS (TM 1-7)** atau **1 video untuk seluruh Pra-UAS (TM 8-14)**.  
+> Upload **hanya** `00_Pra_UTS_TM1-7_Gabungan.md` atau `00_Pra_UAS_TM8-14_Gabungan.md` sebagai source.
+
+### Video Komprehensif Pra-UTS (TM 1–7)
+
+```
+Bahasa Indonesia, durasi **20–28 menit**, gaya dosen Pra-UTS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UTS_TM1-7_Gabungan.md`). 
+
+⚠️ **WAJIB:** Bahas **setiap grafik SVG** di source dengan deskripsi dari elemen `<title>` dan `<desc>`-nya. Sebut **rumus dengan notasi persis** (μ, σ, Δ, dll) — jangan ganti simbol Yunani jadi huruf Latin.
+
+**Struktur video (7 segmen TM mikro):**
+1. **TM 1 — Kelangkaan, Pilihan & PPF** (opportunity cost, 10 prinsip Mankiw, bahas **SVG PPF** dengan titik A/C/D)
+2. **TM 2 — Sistem Ekonomi & Peran Pemerintah** (3 pertanyaan fundamental, sistem pasar/komando/campuran, invisible hand Smith, 4 kegagalan pasar)
+3. **TM 3 — Permintaan & Penawaran** (hukum demand/supply, **SVG kurva S-D** dengan titik E, movement along vs shift of)
+4. **TM 4 — Perilaku Konsumen** (utility total/marginal, diminishing marginal utility, budget constraint, kondisi MUx/Px = MUy/Py)
+5. **TM 5 — Elastisitas** (PED/YED/XED/PES klasifikasi, rumus elastisitas titik & busur, incidence pajak)
+6. **TM 6 — Kebijakan Pemerintah** (price ceiling → shortage, price floor → surplus, pajak/subsidi, deadweight loss)
+7. **TM 7 — Produsen, Konsumen & Efisiensi Pasar** (fungsi produksi, biaya FC/VC/TC/AC/MC, 4 struktur pasar, efisiensi alokatif vs produktif)
+
+**Tone:** Setiap rumus disebut dengan **notasi matematika persis**. Setiap grafik dideskripsikan visualnya.
+```
+
+### Video Komprehensif Pra-UAS (TM 8–14)
+
+```
+Bahasa Indonesia, durasi **25–35 menit**, gaya dosen Pra-UAS. **Hanya gunakan isi source yang aku upload** (`00_Pra_UAS_TM8-14_Gabungan.md`). 
+
+⚠️ **WAJIB:** Bahas **setiap grafik SVG** di source (ada 14+ grafik) dengan deskripsi `<title>` & `<desc>`. Sebut **34+ rumus** dengan notasi persis (Σ, μ, σ, β, dll).
+
+**Struktur video (7 segmen TM makro):**
+1. **TM 8 — Pendapatan Nasional** (GDP/GNP/NDP/NI/PI/DI dengan rumus hubungannya, 3 pendekatan, GDP nominal vs riil, deflator vs CPI, identitas Y=C+I+G+NX, **3 SVG**)
+2. **TM 9 — Perekonomian Tertutup 1** (Y=C+I+G, fungsi konsumsi C=a+bYd dengan MPC, fungsi tabungan, pasar dana pinjaman, crowding out, **SVG pasar dana pinjaman**)
+3. **TM 10 — Perekonomian Tertutup 2** (AE=C+I+G, Keynesian cross 45°, spending multiplier k=1/(1-MPC), tax multiplier, balanced budget multiplier, kebijakan fiskal, **3 SVG**)
+4. **TM 11 — Uang & Sistem Keuangan** (3 fungsi uang, M1/M2/M3, MS-MD, persamaan kuantitas MV=PY, money multiplier 1/RR, **2 SVG**, **6 rumus**)
+5. **TM 12 — Perekonomian Terbuka** (NX, balance of payments, exchange rate fixed vs floating, kebijakan fiskal/moneter terbuka, **2 SVG**, **5 rumus**)
+6. **TM 13 — Inflasi & Pengangguran** (demand-pull vs cost-push, frictional/structural/cyclical, **SVG Phillips short-run & long-run**, Okun's law, stagflasi, **3 SVG**)
+7. **TM 14 — Pertumbuhan Ekonomi** (Solow model, Y=F(K,L), capital accumulation Δk=sf(k)-δk, steady state, golden rule, technology shock, **2 SVG Solow diagram**)
+
+**Tone:** Setiap grafik dibahas, setiap rumus disebut notasinya. Tutup dengan **strategi jawab kasus makro 5-langkah**: (1) identifikasi sektor, (2) tulis identitas yang relevan, (3) gambar/jelaskan shock, (4) hitung dampak (multiplier kalau perlu), (5) tarik kesimpulan kebijakan.
+```
+
+---
+
+## 🎯 PROMPT PER TM (workflow lama: 14 video per matkul)
+
+Bagian di bawah ini untuk workflow lama (1 video = 1 TM). Pakai kalau ingin video pendek per topik.
+
 ## TM 01 — Kelangkaan, Pilihan, PPF
 > Fokus ke: definisi **kelangkaan, opportunity cost, marginal thinking**, **10
 > prinsip Mankiw** (3 individu + 3 interaksi + 4 ekonomi keseluruhan), dan
