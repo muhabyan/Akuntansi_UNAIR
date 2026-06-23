@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Volume2, Square, Pause, Play } from 'lucide-react';
+import { Square, Pause, Play } from 'lucide-react';
 
 interface TTSPlayerProps {
   title: string;
@@ -22,14 +22,12 @@ function extractText(blocks: any[]): string {
 export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isSupported, setIsSupported] = useState(true);
   
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
     console.log("TTSPlayer mounted! isSupported:", 'speechSynthesis' in window);
     if (!('speechSynthesis' in window)) {
-      setIsSupported(false);
       return;
     }
 

@@ -23,7 +23,6 @@ import ArsipViewerTab from '../ArsipViewerTab';
 import CourseSidebar from './CourseSidebar';
 import CourseHeader from './CourseHeader';
 import CourseBlockCard from './CourseBlockCard';
-import TTSPlayer from '../TTSPlayer';
 import { renderText } from './MarkdownContent';
 import ProgressCheckbox from './ProgressCheckbox';
 import QuizCard from './QuizCard';
@@ -123,7 +122,7 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
 }
 
 // ----------------- DETAIL BACAAN TATAP MUKA -----------------
-function MeetingDetail({
+function ReadingPanel({
   reading,
   onBack,
   onPrev,
@@ -131,6 +130,8 @@ function MeetingDetail({
   courseCode,
   isFirst,
   isLast,
+  isDone,
+  toggle,
 }: {
   reading: Reading;
   onBack: () => void;
@@ -139,8 +140,9 @@ function MeetingDetail({
   courseCode: string;
   isFirst: boolean;
   isLast: boolean;
+  isDone: (key: string) => boolean;
+  toggle: (key: string) => void;
 }) {
-  const { isDone, toggle } = useStudyProgress();
   const key = materialKey(courseCode, reading.tm);
   const done = isDone(key);
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
@@ -165,7 +167,7 @@ function MeetingDetail({
             <CourseBlockCard key={i} block={b} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} />
           ))}
         </div>
-        <TTSPlayer title={reading.title} intro={''} blocks={reading.blocks} />
+        {/* <TTSPlayer title={reading.title} intro={''} blocks={reading.blocks} /> */}
       </div>
 
       <button
@@ -541,7 +543,8 @@ function MaterialCard({
 }
 
 // ----------------- CONTAINER SHELL UTAMA -----------------
-export default function CourseLayout({ course, initialTab, onBack }: CourseLayoutProps) {
+export default function CourseLayout({ course, initialTab = 'tm1-7', onBack }: CourseLayoutProps) {
+  const { isDone, toggle } = useStudyProgress();
   const [activeTab, setActiveTab] = useState<TabType>(() => mapInitialTab(initialTab));
   const [searchQuery, setSearchQuery] = useState('');
   const [isSortedAsc, setIsSortedAsc] = useState(true);
@@ -581,7 +584,6 @@ export default function CourseLayout({ course, initialTab, onBack }: CourseLayou
     return () => { isActive = false; };
   }, [course.code]);
 
-  const { isDone, toggle } = useStudyProgress();
   const isPteCourse = course.code === 'EKT109';
 
   const availableTms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
@@ -769,15 +771,17 @@ export default function CourseLayout({ course, initialTab, onBack }: CourseLayou
 
         <main className="relative min-w-0 flex-1 pb-10">
           {currentReading ? (
-            <MeetingDetail
+            <ReadingPanel
               reading={currentReading}
               courseCode={course.code}
               onBack={() => {
                 setSelectedMeetingTm(null);
                 setSelectedReviewKey(null);
               }}
-              isFirst={selectedReviewKey !== null || currentIdx <= 0}
-              isLast={selectedReviewKey !== null || currentIdx < 0 || currentIdx >= availableTms.length - 1}
+              isFirst={selectedReviewKey !== null || currentIdx === 0}
+              isLast={selectedReviewKey !== null || currentIdx === availableTms.length - 1}
+              isDone={isDone}
+              toggle={toggle}
               onPrev={() => {
                 if (currentIdx > 0) navigateToMeeting(availableTms[currentIdx - 1]);
               }}
