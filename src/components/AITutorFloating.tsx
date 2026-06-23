@@ -69,10 +69,10 @@ export default function AITutorFloating() {
       {/* Chat Panel */}
       <div 
         className={`mb-4 transition-all duration-300 origin-bottom-right ${
-          isOpen ? 'scale-100 opacity-100 translate-y-0 pointer-events-auto' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
+          isOpen ? 'scale-100 opacity-100 trangray-y-0 pointer-events-auto' : 'scale-90 opacity-0 trangray-y-8 pointer-events-none'
         }`}
       >
-        <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+        <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
           {/* Header */}
           <div className="flex items-center justify-between p-4 bg-blue-600 text-white shrink-0">
@@ -93,8 +93,8 @@ export default function AITutorFloating() {
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <Key size={24} />
               </div>
-              <h3 className="text-center font-bold text-lg mb-2 text-slate-800 dark:text-slate-100">Setup AI Tutor</h3>
-              <p className="text-sm text-center text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">
+              <h3 className="text-center font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Setup AI Tutor</h3>
+              <p className="text-sm text-center text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
                 Fitur ini 100% gratis, tapi Anda butuh <b>Google Gemini API Key</b> milik Anda sendiri karena aplikasi ini berjalan secara lokal.
               </p>
               
@@ -118,12 +118,12 @@ export default function AITutorFloating() {
                   placeholder="Paste API Key (AIzaSy...)"
                   value={inputKey}
                   onChange={(e) => setInputKey(e.target.value)}
-                  className="w-full px-3 py-2 border rounded-lg text-sm bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-3 py-2 border rounded-lg text-sm bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
                 <button 
                   type="submit"
-                  className="w-full py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg text-sm font-bold shadow-sm hover:opacity-90 transition"
+                  className="w-full py-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg text-sm font-bold shadow-sm hover:opacity-90 transition"
                 >
                   Simpan & Mulai Belajar
                 </button>
@@ -132,14 +132,14 @@ export default function AITutorFloating() {
           ) : (
             /* Chat Interface */
             <>
-              <div className="flex-1 p-4 overflow-y-auto bg-slate-50 dark:bg-slate-900/50 space-y-4">
+              <div className="flex-1 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 space-y-4">
                 {messages.map((msg, i) => (
                   <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div 
                       className={`max-w-[85%] p-3 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
                         msg.role === 'user' 
                           ? 'bg-blue-600 text-white rounded-br-sm' 
-                          : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 rounded-bl-sm shadow-sm'
+                          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm shadow-sm'
                       }`}
                     >
                       {formatMessage(msg.content)}
@@ -148,7 +148,7 @@ export default function AITutorFloating() {
                 ))}
                 {isLoading && (
                   <div className="flex justify-start">
-                    <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-3 rounded-2xl rounded-bl-sm shadow-sm flex gap-1.5 items-center">
+                    <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-3 rounded-2xl rounded-bl-sm shadow-sm flex gap-1.5 items-center">
                       <div className="w-2 h-2 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: '0ms' }} />
                       <div className="w-2 h-2 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: '150ms' }} />
                       <div className="w-2 h-2 rounded-full bg-blue-400 animate-bounce" style={{ animationDelay: '300ms' }} />
@@ -158,14 +158,14 @@ export default function AITutorFloating() {
                 <div ref={messagesEndRef} />
               </div>
               
-              <div className="p-3 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+              <div className="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
                 <form onSubmit={handleSendMessage} className="flex items-center gap-2">
                   <input
                     type="text"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     placeholder="Tanya soal pajak, etika, dll..."
-                    className="flex-1 px-3 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-800 border-none rounded-full text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <button 
                     type="submit"
@@ -175,7 +175,7 @@ export default function AITutorFloating() {
                     <Send size={16} className="ml-0.5" />
                   </button>
                 </form>
-                <div className="text-[10px] text-center text-slate-400 mt-2 flex items-center justify-center gap-2">
+                <div className="text-[10px] text-center text-gray-400 mt-2 flex items-center justify-center gap-2">
                   <span>Powered by Gemini</span>
                   <span>•</span>
                   <button onClick={removeApiKey} className="hover:text-red-500 hover:underline">Hapus Kunci API</button>
