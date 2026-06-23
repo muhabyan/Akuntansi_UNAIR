@@ -18,11 +18,16 @@ export default function ArsipViewerTab({ files }: { files: ArsipFile[] }) {
 
     if (selectedFile.type === 'pdf') {
       return (
-        <iframe
-          src={selectedFile.url}
-          className="w-full h-[600px] border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-100 dark:bg-gray-900"
-          title={selectedFile.name}
-        />
+        <div className="flex flex-col h-[600px] border rounded-lg bg-gray-50 dark:bg-gray-900 dark:border-gray-700 overflow-hidden">
+           <div className="bg-yellow-50 dark:bg-yellow-900/30 p-3 text-sm text-yellow-800 dark:text-yellow-200 border-b border-yellow-200 dark:border-yellow-800">
+              <span className="font-semibold">⚠️ Info HP/Mode Aplikasi:</span> Browser HP seringkali memblokir tampilan PDF langsung. Jika kotak di bawah ini kosong/putih, silakan klik tombol <b className="text-blue-600">Unduh File</b> di kanan atas untuk membukanya.
+           </div>
+           <iframe
+             src={selectedFile.url}
+             className="w-full flex-1 border-0 bg-white"
+             title={selectedFile.name}
+           />
+        </div>
       );
     } else {
       // DOCX, PPTX, XLSX viewer using Office web viewer
