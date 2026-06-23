@@ -10,6 +10,7 @@ import { SEMESTERS, ALL_COURSES } from './data/courseData';
 import type { Course, CourseTabId, ViewId } from './types';
 import IntroSplash from './components/IntroSplash';
 import AuthModal from './components/AuthModal';
+import PomodoroTimer from './components/PomodoroTimer';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -184,6 +185,7 @@ export default function App() {
     <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
       <IntroSplash />
       <AuthModal />
+      <PomodoroTimer />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama
       </a>

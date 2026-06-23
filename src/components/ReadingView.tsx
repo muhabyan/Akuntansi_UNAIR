@@ -8,6 +8,7 @@ import { useStudyProgress, materialKey } from '../hooks/useStudyProgress';
 import { StatementFull, StatementBuilder } from './StatementBuilder';
 import { InteractiveMatchBuilder, JournalBuilder as InteractiveJournalBuilder, TableFillBuilder, TAccountBuilder } from './InteractivePracticeBuilders';
 import type { Course, ContentBlock, CalloutVariant } from '../types';
+import TTSPlayer from './TTSPlayer';
 
 interface ReadingViewProps {
   course: Course;
@@ -279,7 +280,8 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
           {reading.ref && <span className="px-2 py-1 rounded bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400">{reading.ref}</span>}
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">{reading.title}</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{renderText(reading.intro)}</p>
+        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{renderText(reading.intro)}</p>
+        <TTSPlayer title={reading.title} intro={reading.intro} blocks={reading.blocks} />
       </header>
 
       {reading.objectives.length > 0 && (
