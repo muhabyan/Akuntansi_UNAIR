@@ -7,7 +7,7 @@
 // - keeps subtle scroll progress without blocking pointer events.
 // =============================================================
 import { useEffect, useState } from 'react';
-import { GraduationCap, LogOut, Menu, UserCircle2, X } from 'lucide-react';
+import { GraduationCap, LogOut, Menu, UserCircle2, X, Download } from 'lucide-react';
 import { MegaMenu, QuizMegaMenu, LaporanMegaMenu } from './MegaMenu';
 import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
@@ -56,7 +56,27 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<NavMenu>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const { user, loading, signIn, signOut } = useAuth();
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        setDeferredPrompt(null);
+      }
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -179,6 +199,16 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
                   )
                 )}
               </div>
+              {deferredPrompt && (
+                <button
+                  onClick={handleInstallClick}
+                  className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-full transition shadow-sm mr-2"
+                  title="Install Aplikasi (Offline)"
+                >
+                  <Download size={14} />
+                  <span>Install</span>
+                </button>
+              )}
               <ThemeSwitch theme={theme} onToggleTheme={onToggleTheme} variant={isQuietThemeControl ? 'quiet' : 'legacy'} />
               <button
                 type="button"
@@ -202,6 +232,9 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
 
         {mobileOpen && (
           <div className="stage9-mobile-panel md:hidden">
+            {deferredPrompt && (
+              <NavBtn label="📱 Install Aplikasi (Offline)" onClick={handleInstallClick} compact />
+            )}
             <NavBtn label="Home" onClick={handleHome} compact />
             <NavBtn label="Materi & Soal" isActive={activeMenu === 'materi'} onClick={() => toggleMenu('materi')} compact />
             <NavBtn label="Kuis" isActive={activeMenu === 'quiz'} onClick={() => toggleMenu('quiz')} compact />
