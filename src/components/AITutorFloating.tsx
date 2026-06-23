@@ -3,6 +3,18 @@ import { Bot, Send, X, Key, Info } from 'lucide-react';
 import { useGeminiSettings } from '../hooks/useGeminiSettings';
 import { chatWithGemini, type GeminiMessage } from '../lib/geminiClient';
 
+const formatMessage = (text: string) => {
+  // Split by **bold** text
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-bold">{part.slice(2, -2)}</strong>;
+    }
+    // Also handle * for simple italics if needed, but let's stick to simple text for now
+    return <span key={i}>{part}</span>;
+  });
+};
+
 export default function AITutorFloating() {
   const [isOpen, setIsOpen] = useState(false);
   const { apiKey, saveApiKey, removeApiKey, hasKey } = useGeminiSettings();
@@ -130,7 +142,7 @@ export default function AITutorFloating() {
                           : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-100 rounded-bl-sm shadow-sm'
                       }`}
                     >
-                      {msg.content}
+                      {formatMessage(msg.content)}
                     </div>
                   </div>
                 ))}
@@ -153,7 +165,7 @@ export default function AITutorFloating() {
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                     placeholder="Tanya soal pajak, etika, dll..."
-                    className="flex-1 px-3 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex-1 px-3 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <button 
                     type="submit"
