@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, FormEvent } from 'react';
-import { MessageSquare, Send, X, Users, AlertCircle } from 'lucide-react';
+import { MessageSquare, Send, X, Users, AlertCircle, Trash2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -56,6 +56,9 @@ export default function LiveChatFloating() {
           setUnreadCount((prev) => prev + 1);
         }
       })
+      .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'global_chat' }, (payload) => {
+        setMessages((prev) => prev.filter(m => m.id !== payload.old.id));
+      })
       .subscribe();
 
     return () => {
@@ -93,6 +96,22 @@ export default function LiveChatFloating() {
       console.error('Error sending message:', error);
       setErrorMsg('Gagal mengirim pesan. Pastikan Anda sudah menjalankan SQL di Supabase.');
       setInputText(msgText); // Restore text
+    }
+  };
+
+  const handleDeleteMessage = async (msgId: string) => {
+    if (!window.confirm('Hapus pesan ini?')) return;
+    
+    // Optimistic UI update
+    const previousMessages = [...messages];
+    setMessages(prev => prev.filter(m => m.id !== msgId));
+    
+    const { error } = await supabase.from('global_chat').delete().eq('id', msgId).eq('user_id', user?.id || '');
+    
+    if (error) {
+      console.error('Error deleting message:', error);
+      setErrorMsg('Gagal menghapus pesan. Anda belum menambahkan SQL Policy untuk DELETE.');
+      setMessages(previousMessages); // Revert
     }
   };
 
@@ -141,22 +160,38 @@ export default function LiveChatFloating() {
               messages.map((msg, i) => {
                 const isMe = msg.user_id === user?.id;
                 const showName = i === 0 || messages[i-1].user_id !== msg.user_id;
+                
+                const msgDate = new Date(msg.created_at);
+                const hoursDiff = (new Date().getTime() - msgDate.getTime()) / (1000 * 60 * 60);
+                const canDelete = isMe && hoursDiff <= 3;
 
                 return (
-                  <div key={msg.id} className={`flex flex-col ${isMe ? 'items-end' : 'items-start'}`}>
+                  <div key={msg.id} className={`flex flex-col group ${isMe ? 'items-end' : 'items-start'}`}>
                     {showName && !isMe && (
                       <span className="text-[10px] text-gray-500 font-medium ml-1 mb-1">
                         {getDisplayName(msg.user_email)}
                       </span>
                     )}
-                    <div 
-                      className={`max-w-[85%] p-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap shadow-sm ${
-                        isMe 
-                          ? 'bg-emerald-600 text-white rounded-br-sm' 
-                          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
-                      }`}
-                    >
-                      {msg.message}
+                    <div className={`flex items-center gap-2 max-w-[85%] ${isMe ? 'flex-row-reverse' : 'flex-row'}`}>
+                      <div 
+                        className={`p-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap shadow-sm ${
+                          isMe 
+                            ? 'bg-emerald-600 text-white rounded-br-sm' 
+                            : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
+                        }`}
+                      >
+                        {msg.message}
+                      </div>
+                      
+                      {canDelete && (
+                        <button 
+                          onClick={() => handleDeleteMessage(msg.id)}
+                          className="opacity-0 group-hover:opacity-100 p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-full transition-all shrink-0"
+                          title="Hapus pesan"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      )}
                     </div>
                   </div>
                 );
