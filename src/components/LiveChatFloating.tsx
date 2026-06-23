@@ -101,11 +101,11 @@ export default function LiveChatFloating() {
   };
 
   return (
-    <div className="fixed bottom-24 left-6 md:bottom-[6.5rem] md:left-8 z-50 flex flex-col items-start pointer-events-none">
+    <div className="fixed top-[45%] left-0 z-50 pointer-events-none -translate-y-1/2">
       {/* Chat Panel */}
       <div 
-        className={`mb-4 transition-all duration-300 origin-bottom-left ${
-          isOpen ? 'scale-100 opacity-100 translate-y-0 pointer-events-auto' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
+        className={`pointer-events-auto absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
+          isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'
         }`}
       >
         <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
@@ -204,13 +204,13 @@ export default function LiveChatFloating() {
       {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto relative flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
+        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg transition-all duration-300 hover:pl-2 active:scale-95 ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-14 h-14 rounded-full bg-emerald-600 text-white'
+            : 'w-10 h-16 rounded-r-2xl bg-emerald-600 text-white'
         }`}
       >
-        <MessageSquare size={24} />
+        <MessageSquare size={20} />
         {unreadCount > 0 && !isOpen && (
           <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white dark:ring-gray-900">
             {unreadCount > 99 ? '99+' : unreadCount}

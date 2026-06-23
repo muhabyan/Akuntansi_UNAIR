@@ -65,14 +65,14 @@ export default function AITutorFloating() {
   };
 
   return (
-    <div className="fixed bottom-24 right-6 md:bottom-[6.5rem] md:right-8 z-50 flex flex-col items-end pointer-events-none">
-      {/* Chat Panel */}
+    <div className="fixed top-1/2 right-0 z-50 pointer-events-none -translate-y-1/2">
+      {/* Expanded Panel */}
       <div 
-        className={`mb-4 transition-all duration-300 origin-bottom-right ${
-          isOpen ? 'scale-100 opacity-100 trangray-y-0 pointer-events-auto' : 'scale-90 opacity-0 trangray-y-8 pointer-events-none'
+        className={`pointer-events-auto absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-right ${
+          isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'
         }`}
       >
-        <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
           {/* Header */}
           <div className="flex items-center justify-between p-4 bg-blue-600 text-white shrink-0">
@@ -190,13 +190,13 @@ export default function AITutorFloating() {
       {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
+        className={`pointer-events-auto absolute right-0 top-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg transition-all duration-300 hover:pr-2 active:scale-95 ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-14 h-14 rounded-full bg-blue-600 text-white'
+            : 'w-10 h-16 rounded-l-2xl bg-blue-600 text-white'
         }`}
       >
-        <Bot size={26} />
+        <Bot size={22} />
       </button>
     </div>
   );

@@ -84,11 +84,11 @@ export default function PomodoroTimer() {
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start pointer-events-none">
+    <div className="fixed top-[60%] left-0 z-50 pointer-events-none -translate-y-1/2">
       {/* Expanded Panel */}
       <div 
-        className={`mb-4 overflow-hidden transition-all duration-300 origin-bottom-left ${
-          isOpen ? 'scale-100 opacity-100 translate-y-0 pointer-events-auto' : 'scale-90 opacity-0 translate-y-8 pointer-events-none'
+        className={`pointer-events-auto absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
+          isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0 pointer-events-none'
         }`}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
@@ -171,25 +171,16 @@ export default function PomodoroTimer() {
         </div>
       </div>
 
-      {/* Floating Button (Visible when panel is closed) */}
+      {/* Floating Toggle Button */}
       <button
-        id="tour-pomodoro"
         onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 ${
+        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg transition-all duration-300 hover:pl-2 active:scale-95 ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-14 h-14 rounded-full bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-900'
+            : 'w-10 h-16 rounded-r-2xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-y border-r border-slate-200 dark:border-slate-700'
         }`}
       >
-        <div className="relative">
-          <Timer size={24} />
-          {isRunning && (
-            <span className="absolute -top-1 -right-1 flex h-3 w-3">
-              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${mode === 'focus' ? 'bg-blue-400' : 'bg-emerald-400'}`}></span>
-              <span className={`relative inline-flex rounded-full h-3 w-3 ${mode === 'focus' ? 'bg-blue-500' : 'bg-emerald-500'}`}></span>
-            </span>
-          )}
-        </div>
+        <Timer size={20} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />
       </button>
     </div>
   );
