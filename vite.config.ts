@@ -34,8 +34,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'E-Learning S1 Akuntansi — FEB UNAIR',
-        short_name: 'Akuntansi UNAIR',
+        name: 'AKS1 — Akuntansi S1 UNAIR',
+        short_name: 'AKS1',
         description: 'Interactive E-Learning Platform untuk Akuntansi FEB UNAIR',
         theme_color: '#ffffff',
         background_color: '#ffffff',

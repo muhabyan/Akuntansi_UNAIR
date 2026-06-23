@@ -142,7 +142,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             </div>
             <div>
               <h1 className="font-display text-base font-bold tracking-tight text-gray-900 dark:text-white md:text-lg">
-                AKUNTANSI<span className="text-blue-600 dark:text-blue-400">.</span>
+                AKS1<span className="text-blue-600 dark:text-blue-400">.</span>
               </h1>
               <p className="hidden text-[10px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 sm:block">
                 FEB UNAIR
