@@ -75,8 +75,8 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
       </div>
 
       {open && query.trim().length >= 2 && (
-        <div className="glass-command-panel glass-enter absolute left-0 top-full z-50 mt-3 w-[24rem] max-w-[92vw] overflow-hidden rounded-3xl py-2">
-          <div className="glass-command-header px-4 pb-2 pt-1">
+        <div className="glass-command-panel glass-enter absolute left-0 top-full z-50 mt-3 w-[24rem] max-w-[92vw] overflow-hidden rounded-3xl py-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border border-gray-200 dark:border-gray-800">
+          <div className="glass-command-header px-4 pb-2 pt-1 border-b border-gray-100 dark:border-gray-800/50">
             <p className="eyebrow">Pencarian</p>
             <p className="mt-1 text-xs text-slate-500">{results.length} hasil untuk “{query}”</p>
           </div>
@@ -93,13 +93,13 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
                     setOpen(false);
                     setQuery('');
                   }}
-                  className="glass-search-result group flex w-full items-center gap-3 px-4 py-3 text-left"
+                  className="glass-search-result group flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-gold/20 bg-gold/10 text-gold">
                     <CourseIcon iconKey={r.course.iconKey} size={17} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-extrabold text-slate-200 group-hover:text-gold">
+                    <span className="block truncate text-sm font-extrabold text-gray-900 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-gold transition-colors">
                       {r.course.name}
                     </span>
                     <span className="mt-0.5 block truncate text-xs text-slate-500">
