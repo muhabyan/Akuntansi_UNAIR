@@ -27,6 +27,7 @@ export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
+    console.log("TTSPlayer mounted! isSupported:", 'speechSynthesis' in window);
     if (!('speechSynthesis' in window)) {
       setIsSupported(false);
       return;
@@ -60,7 +61,7 @@ export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
   }, [title, intro, blocks]);
 
   const togglePlay = () => {
-    if (!isSupported || !utteranceRef.current) return;
+    if (!utteranceRef.current) return;
 
     if (isPlaying) {
       if (isPaused) {
@@ -85,10 +86,8 @@ export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
     setIsPaused(false);
   };
 
-  if (!isSupported) return null;
-
   return (
-    <div className="fixed bottom-24 right-6 z-40 flex items-center gap-2">
+    <div className="fixed top-32 right-6 z-[9999] flex items-center gap-2">
       <div 
         className={`flex items-center gap-2 bg-white dark:bg-slate-900 shadow-xl border border-slate-200 dark:border-slate-800 p-2 rounded-full transition-all duration-300 origin-right ${
           isPlaying || isPaused ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-4 scale-95 pointer-events-none absolute right-full mr-2'
@@ -116,7 +115,7 @@ export default function TTSPlayer({ title, intro, blocks }: TTSPlayerProps) {
             ? 'bg-blue-600 text-white'
             : isPaused 
               ? 'bg-amber-500 text-white'
-              : 'bg-slate-800 dark:bg-slate-100 text-white dark:text-slate-900'
+              : 'bg-indigo-600 text-white' // Changed idle color to indigo to be very visible
         }`}
         title={isPlaying && !isPaused ? "Pause" : "Play Bacakan"}
       >
