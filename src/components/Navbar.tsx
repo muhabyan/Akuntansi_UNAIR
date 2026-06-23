@@ -12,6 +12,8 @@ import { MegaMenu, QuizMegaMenu, LaporanMegaMenu } from './MegaMenu';
 import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
 import type { Course, CourseTabId } from '../types';
+import { useAuth } from '../contexts/AuthContext';
+import { UserCircle2, LogOut } from 'lucide-react';
 
 type NavMenu = 'materi' | 'quiz' | 'laporan' | null;
 
@@ -55,6 +57,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<NavMenu>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user, loading, signIn, signOut } = useAuth();
 
   useEffect(() => {
     const onScroll = () => {
@@ -162,6 +165,21 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             </div>
 
             <div className="flex shrink-0 items-center gap-2">
+              <div className="hidden md:flex items-center mr-2">
+                {!loading && (
+                  user ? (
+                    <button onClick={signOut} className="text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Keluar">
+                      <UserCircle2 size={16} />
+                      <span className="truncate max-w-[100px]">{user.email?.split('@')[0]}</span>
+                      <LogOut size={14} className="ml-1 opacity-70" />
+                    </button>
+                  ) : (
+                    <button onClick={signIn} className="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded-full transition shadow-sm">
+                      Masuk
+                    </button>
+                  )
+                )}
+              </div>
               <ThemeSwitch theme={theme} onToggleTheme={onToggleTheme} variant={isQuietThemeControl ? 'quiet' : 'legacy'} />
               <button
                 type="button"
@@ -189,6 +207,22 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             <NavBtn label="Materi & Soal" isActive={activeMenu === 'materi'} onClick={() => toggleMenu('materi')} compact />
             <NavBtn label="Kuis" isActive={activeMenu === 'quiz'} onClick={() => toggleMenu('quiz')} compact />
             <NavBtn label="Laporan" isActive={activeMenu === 'laporan'} onClick={() => toggleMenu('laporan')} compact />
+            
+            <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+              {!loading && (
+                user ? (
+                  <button onClick={signOut} className="w-full text-left text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2 py-2 px-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
+                    <UserCircle2 size={18} />
+                    <span className="truncate">{user.email}</span>
+                    <LogOut size={16} className="ml-auto opacity-70" />
+                  </button>
+                ) : (
+                  <button onClick={() => { signIn(); setMobileOpen(false); }} className="w-full text-center text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition shadow-sm">
+                    Masuk / Daftar
+                  </button>
+                )
+              )}
+            </div>
           </div>
         )}
 
