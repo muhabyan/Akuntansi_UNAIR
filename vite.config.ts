@@ -1,5 +1,6 @@
 import { defineConfig, type Connect, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
 function malformedUriGuard(): Plugin {
   const guard: Connect.NextHandleFunction = (req, res, next) => {
@@ -25,9 +26,31 @@ function malformedUriGuard(): Plugin {
 }
 
 export default defineConfig({
-  // Batch 11F.1: gunakan root-relative assets agar direct URL /course/AKK201 tidak mencari /course/assets/*.js.
   base: '/',
-  plugins: [malformedUriGuard(), react()],
+  plugins: [
+    malformedUriGuard(),
+    react(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg'],
+      manifest: {
+        name: 'E-Learning S1 Akuntansi — FEB UNAIR',
+        short_name: 'Akuntansi UNAIR',
+        description: 'Interactive E-Learning Platform untuk Akuntansi FEB UNAIR',
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        display: 'standalone',
+        icons: [
+          {
+            src: 'favicon.svg',
+            sizes: '192x192 512x512',
+            type: 'image/svg+xml',
+            purpose: 'any maskable'
+          }
+        ]
+      }
+    })
+  ],
   build: {
     chunkSizeWarningLimit: 700,
     rollupOptions: {
