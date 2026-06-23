@@ -23,6 +23,7 @@ import ArsipViewerTab from '../ArsipViewerTab';
 import CourseSidebar from './CourseSidebar';
 import CourseHeader from './CourseHeader';
 import CourseBlockCard from './CourseBlockCard';
+import TTSPlayer from '../TTSPlayer';
 import { renderText } from './MarkdownContent';
 import ProgressCheckbox from './ProgressCheckbox';
 import QuizCard from './QuizCard';
@@ -164,6 +165,7 @@ function MeetingDetail({
             <CourseBlockCard key={i} block={b} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} />
           ))}
         </div>
+        <TTSPlayer title={reading.title} intro={''} blocks={reading.blocks} />
       </div>
 
       <button
