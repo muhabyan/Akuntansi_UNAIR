@@ -39,7 +39,7 @@ export default function CourseHeader({ reading, onBack }: CourseHeaderProps) {
     setZenMode(nextZen);
     
     if (nextZen) {
-      if (window.innerWidth >= 1024 && document.documentElement.requestFullscreen && !document.fullscreenElement) {
+      if (document.documentElement.requestFullscreen && !document.fullscreenElement) {
         document.documentElement.requestFullscreen().catch(() => {});
       }
     } else {
