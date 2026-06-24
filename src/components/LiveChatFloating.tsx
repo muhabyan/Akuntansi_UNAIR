@@ -239,16 +239,20 @@ export default function LiveChatFloating() {
       {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg transition-all duration-300 hover:pl-2 active:scale-95 ${
+        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center shadow-md transition-all duration-300 active:scale-95 ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-10 h-16 rounded-r-2xl bg-emerald-600 text-white'
+            : 'w-2 md:w-10 h-14 md:h-16 rounded-r-md md:rounded-r-2xl bg-emerald-600 text-white'
         }`}
       >
-        <MessageSquare size={20} />
+        <div className="absolute inset-y-0 -right-6 w-8 bg-transparent md:hidden" /> {/* Mobile touch target */}
+        <div className="absolute left-2.5 hidden md:flex">
+          <MessageSquare size={20} />
+        </div>
         {unreadCount > 0 && !isOpen && (
-          <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-sm ring-2 ring-white dark:ring-gray-900">
-            {unreadCount > 99 ? '99+' : unreadCount}
+          <span className="absolute -top-1 -right-1 md:-right-1 flex h-3 w-3 md:h-5 md:w-5 items-center justify-center rounded-full bg-red-500 text-[8px] md:text-[10px] font-bold text-white shadow-sm ring-2 ring-white dark:ring-gray-900">
+            <span className="md:hidden"></span>
+            <span className="hidden md:inline">{unreadCount > 99 ? '99+' : unreadCount}</span>
           </span>
         )}
       </button>

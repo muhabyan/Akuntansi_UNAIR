@@ -190,13 +190,16 @@ export default function AITutorFloating() {
       {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto absolute right-0 top-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg transition-all duration-300 hover:pr-2 active:scale-95 ${
+        className={`pointer-events-auto absolute right-0 top-1/2 -translate-y-1/2 flex items-center shadow-md transition-all duration-300 active:scale-95 ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-10 h-16 rounded-l-2xl bg-blue-600 text-white'
+            : 'w-2 md:w-10 h-14 md:h-16 rounded-l-md md:rounded-l-2xl bg-blue-600 text-white'
         }`}
       >
-        <Bot size={22} />
+        <div className="absolute inset-y-0 -left-6 w-8 bg-transparent md:hidden" /> {/* Mobile touch target */}
+        <div className="absolute right-2.5 hidden md:flex">
+          <Bot size={20} />
+        </div>
       </button>
     </div>
   );

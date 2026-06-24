@@ -174,13 +174,16 @@ export default function PomodoroTimer() {
       {/* Floating Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center justify-center shadow-lg transition-all duration-300 hover:pl-2 active:scale-95 ${
+        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center shadow-md transition-all duration-300 active:scale-95 ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-10 h-16 rounded-r-2xl bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-y border-r border-slate-200 dark:border-slate-700'
+            : 'w-2 md:w-10 h-14 md:h-16 rounded-r-md md:rounded-r-2xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
         }`}
       >
-        <Timer size={20} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />
+        <div className="absolute inset-y-0 -right-6 w-8 bg-transparent md:hidden" /> {/* Mobile touch target */}
+        <div className="absolute left-2.5 hidden md:flex">
+          <Timer size={20} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />
+        </div>
       </button>
     </div>
   );
