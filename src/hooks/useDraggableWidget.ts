@@ -141,22 +141,20 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       const isDesktopCurrent = window.innerWidth >= 768;
 
       if (!isDesktopCurrent) {
-        // Mobile: Always snap
         if (finalX + w / 2 < window.innerWidth / 2) {
-          finalX = MARGIN; 
+          finalX = 0; 
         } else {
-          finalX = window.innerWidth - w - MARGIN;
+          finalX = window.innerWidth - w;
         }
       } else {
-        // Desktop: Snap only if within 40px of edge
         if (finalX < 40) {
-          finalX = MARGIN;
+          finalX = 0;
         } else if (finalX > window.innerWidth - w - 40) {
-          finalX = window.innerWidth - w - MARGIN;
+          finalX = window.innerWidth - w;
         }
       }
 
-      finalY = Math.max(MARGIN, Math.min(finalY, window.innerHeight - h - MARGIN));
+      finalY = Math.max(0, Math.min(finalY, window.innerHeight - h));
 
       const newPos = { x: finalX, y: finalY };
       setPosition(newPos);

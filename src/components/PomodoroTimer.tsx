@@ -89,16 +89,25 @@ export default function PomodoroTimer() {
 
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
+  const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < window.innerWidth / 2 : false;
+  const isTopHalf = typeof window !== 'undefined' ? draggable.position.y < window.innerHeight / 2 : false;
+
   return (
     <>
       {/* Expanded Panel */}
       <div 
-        className={`fixed z-[100] transition-all duration-300 origin-bottom-left ${
+        className={`fixed z-[100] transition-all duration-300 ${
+          isTopHalf ? 'origin-top' : 'origin-bottom'
+        }-${isLeftHalf ? 'left' : 'right'} ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
         style={{
-          bottom: Math.max(16, window.innerHeight - draggable.position.y + 16),
-          left: Math.max(16, draggable.position.x)
+          ...(isLeftHalf 
+            ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 288px - 16px))` } 
+            : { right: `clamp(16px, ${typeof window !== 'undefined' ? window.innerWidth - draggable.position.x + 16 : 16}px, calc(100vw - 288px - 16px))` }),
+          ...(isTopHalf 
+            ? { top: `clamp(16px, ${draggable.position.y}px, calc(100vh - 350px - 16px))` } 
+            : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 350px - 16px))` })
         }}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
@@ -206,7 +215,7 @@ export default function PomodoroTimer() {
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
-                if (!draggable.isDesktop || draggable.edgeState === 'left') {
+                if (draggable.edgeState === 'left') {
                   return 'w-10 md:w-14 h-14 md:h-16 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
                 } else if (draggable.edgeState === 'right') {
                   return 'w-10 md:w-14 h-14 md:h-16 rounded-l-xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';

@@ -138,17 +138,25 @@ ${pageText}
     }
   };
 
+  const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < window.innerWidth / 2 : false;
+  const isTopHalf = typeof window !== 'undefined' ? draggable.position.y < window.innerHeight / 2 : false;
+
   return (
     <>
       {/* Expanded Panel */}
       <div 
-        className={`fixed z-[100] transition-all duration-300 origin-bottom-right ${
+        className={`fixed z-[100] transition-all duration-300 ${
+          isTopHalf ? 'origin-top' : 'origin-bottom'
+        }-${isLeftHalf ? 'left' : 'right'} ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
         style={{
-          // Position panel relative to the floating button
-          bottom: Math.max(16, window.innerHeight - draggable.position.y + 16),
-          right: Math.max(16, window.innerWidth - draggable.position.x - 48)
+          ...(isLeftHalf 
+            ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 340px - 16px))` } 
+            : { right: `clamp(16px, ${typeof window !== 'undefined' ? window.innerWidth - draggable.position.x + 16 : 16}px, calc(100vw - 340px - 16px))` }),
+          ...(isTopHalf 
+            ? { top: `clamp(16px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
+            : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 550px - 16px))` })
         }}
       >
         <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
@@ -351,7 +359,7 @@ ${pageText}
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
-                if (!draggable.isDesktop || draggable.edgeState === 'right') {
+                if (draggable.edgeState === 'right') {
                   return 'w-10 md:w-14 h-14 md:h-16 rounded-l-xl bg-blue-600 text-white';
                 } else if (draggable.edgeState === 'left') {
                   return 'w-10 md:w-14 h-14 md:h-16 rounded-r-xl bg-blue-600 text-white';
