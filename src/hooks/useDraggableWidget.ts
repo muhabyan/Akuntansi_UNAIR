@@ -38,13 +38,14 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     isMoved: false,
   });
 
-  // Calculate if we are currently snapped to an edge
   const w = widgetRef.current?.getBoundingClientRect().width || 56;
   let edgeState: 'left' | 'right' | false = false;
   const MARGIN = 16;
+  const clientWidth = typeof document !== 'undefined' ? document.documentElement.clientWidth : (typeof window !== 'undefined' ? window.innerWidth : 1024);
+  
   if (position.x <= MARGIN + 5) {
     edgeState = 'left';
-  } else if (position.x >= window.innerWidth - w - MARGIN - 5) {
+  } else if (position.x >= clientWidth - w - MARGIN - 5) {
     edgeState = 'right';
   }
 
@@ -56,11 +57,12 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       const w = rect?.width || 56;
       const h = rect?.height || 56;
       
+      const clientWidth = document.documentElement.clientWidth;
       setPosition(prev => {
         let newX = prev.x;
         let newY = prev.y;
-        if (newX > window.innerWidth - w) newX = Math.max(16, window.innerWidth - w - 16);
-        if (newY > window.innerHeight - h) newY = Math.max(16, window.innerHeight - h - 16);
+        if (newX > clientWidth - w) newX = Math.max(0, clientWidth - w);
+        if (newY > window.innerHeight - h) newY = Math.max(0, window.innerHeight - h);
         return { x: newX, y: newY };
       });
     };
@@ -110,8 +112,9 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       const rect = widgetRef.current?.getBoundingClientRect();
       const w = rect?.width || 56;
       const h = rect?.height || 56;
+      const clientWidth = document.documentElement.clientWidth;
       
-      newX = Math.max(0, Math.min(newX, window.innerWidth - w));
+      newX = Math.max(0, Math.min(newX, clientWidth - w));
       newY = Math.max(0, Math.min(newY, window.innerHeight - h));
 
       setPosition({ x: newX, y: newY });
@@ -139,18 +142,19 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       let finalY = position.y;
       
       const isDesktopCurrent = window.innerWidth >= 768;
+      const clientWidth = document.documentElement.clientWidth;
 
       if (!isDesktopCurrent) {
-        if (finalX + w / 2 < window.innerWidth / 2) {
+        if (finalX + w / 2 < clientWidth / 2) {
           finalX = 0; 
         } else {
-          finalX = window.innerWidth - w;
+          finalX = clientWidth - w;
         }
       } else {
         if (finalX < 40) {
           finalX = 0;
-        } else if (finalX > window.innerWidth - w - 40) {
-          finalX = window.innerWidth - w;
+        } else if (finalX > clientWidth - w - 40) {
+          finalX = clientWidth - w;
         }
       }
 

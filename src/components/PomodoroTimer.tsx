@@ -89,7 +89,7 @@ export default function PomodoroTimer() {
 
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
-  const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < window.innerWidth / 2 : false;
+  const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < (document.documentElement.clientWidth || window.innerWidth) / 2 : false;
   const isTopHalf = typeof window !== 'undefined' ? draggable.position.y < window.innerHeight / 2 : false;
 
   return (
@@ -104,7 +104,7 @@ export default function PomodoroTimer() {
         style={{
           ...(isLeftHalf 
             ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 288px - 16px))` } 
-            : { right: `clamp(16px, ${typeof window !== 'undefined' ? window.innerWidth - draggable.position.x + 16 : 16}px, calc(100vw - 288px - 16px))` }),
+            : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 288px - 16px))` }),
           ...(isTopHalf 
             ? { top: `clamp(16px, ${draggable.position.y}px, calc(100vh - 350px - 16px))` } 
             : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 350px - 16px))` })
