@@ -200,9 +200,22 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
                 <Bot className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">AI Tutor Cerdas</h2>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                 Buntu saat mengerjakan soal? Tanya langsung ke AI Tutor yang didukung oleh API Groq atau Google Gemini. AI ini mengetahui konteks spesifik akuntansi dan memberikan penjelasan langkah-demi-langkah, bukan sekadar jawaban akhir.
               </p>
+              
+              <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl p-4 mb-6">
+                <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-2 flex items-center gap-2 text-sm">
+                  <Bot className="w-4 h-4" /> Cara Memasang API Key:
+                </h3>
+                <ol className="text-xs text-purple-700 dark:text-purple-400 space-y-1 list-decimal list-inside">
+                  <li>Dapatkan API Key gratis dari <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer" className="underline font-medium hover:text-purple-900 dark:hover:text-purple-200">Groq Console</a> atau Google AI Studio.</li>
+                  <li>Buka panel Chatbot AI di pojok kanan bawah layar.</li>
+                  <li>Klik ikon <strong>Pengaturan (Settings)</strong> ⚙️ di pojok kanan atas panel.</li>
+                  <li>Paste API Key kamu dan simpan. AI Tutor siap digunakan!</li>
+                </ol>
+              </div>
+
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
                   <Zap className="w-5 h-5 text-purple-500" /> Respons Secepat Kilat (Groq)
@@ -247,9 +260,16 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
                 </div>
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Pomodoro & Zen Mode</h2>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
                 Fokus adalah kunci. Gunakan fitur Pomodoro Timer bawaan untuk mengatur sesi belajarmu (25 menit fokus, 5 menit istirahat). Butuh konsentrasi penuh? Aktifkan Zen Mode untuk menyembunyikan elemen UI yang mengganggu.
               </p>
+              
+              <div className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-xl p-4 mb-6">
+                <p className="text-xs text-sky-700 dark:text-sky-400 font-medium">
+                  <strong>Lokasi Zen Mode:</strong> Saat kamu membuka halaman materi bacaan (*Reading View*), perhatikan ikon mata (👁️) di **pojok kanan atas** layar. Klik ikon tersebut untuk masuk ke Zen Mode layar penuh!
+                </p>
+              </div>
+
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
                   <Shield className="w-5 h-5 text-teal-500" /> Bebas Distraksi
