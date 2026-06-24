@@ -189,8 +189,8 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               <div className="hidden md:flex items-center mr-2">
                 {!loading && (
                   user ? (
-                    <button onClick={() => setProfileModalOpen(true)} className="text-sm font-medium text-slate-700 dark:text-slate-100 flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Profil & Nickname">
-                      <UserCircle2 size={16} />
+                    <button onClick={() => setProfileModalOpen(true)} className="text-sm font-semibold text-gray-800 dark:text-white flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition shadow-sm" title="Profil & Nickname">
+                      <UserCircle2 size={16} className="text-blue-600 dark:text-blue-400" />
                       <span className="truncate max-w-[100px]">{user.user_metadata?.nickname || user.email?.split('@')[0]}</span>
                     </button>
                   ) : (
