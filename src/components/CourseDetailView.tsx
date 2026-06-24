@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense, useState, useEffect } from 'react';
 import {
   ArrowLeft, Layers, Target, FileQuestion,
   BookMarked, Lightbulb, LayoutDashboard, ExternalLink,
@@ -26,6 +26,7 @@ interface CourseDetailViewProps {
   activeTab: CourseTabId;
   setActiveTab: (tab: CourseTabId) => void;
   onOpenReading: (tm: number) => void;
+  activeQuizSetId?: string | null;
 }
 
 const TABS: { id: CourseTabId; label: string; icon: React.ReactNode }[] = [
@@ -37,8 +38,14 @@ const TABS: { id: CourseTabId; label: string; icon: React.ReactNode }[] = [
   { id: 'referensi', label: 'Referensi', icon: <BookMarked size={16} /> },
 ];
 
-export default function CourseDetailView({ course, onBack, activeTab, setActiveTab, onOpenReading }: CourseDetailViewProps) {
+export default function CourseDetailView({ course, onBack, activeTab, setActiveTab, onOpenReading, activeQuizSetId }: CourseDetailViewProps) {
   const [showInfo, setShowInfo] = useState(true);
+  const [localQuizSetId, setLocalQuizSetId] = useState<string | undefined>(activeQuizSetId || undefined);
+
+  useEffect(() => {
+    if (activeQuizSetId) setLocalQuizSetId(activeQuizSetId);
+  }, [activeQuizSetId]);
+
   const arsipFiles = getArsipFiles(course.code);
 
   const visibleTabs = [...TABS];
@@ -127,7 +134,7 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
         ) : activeTab === 'tm1-7' || activeTab === 'tm8-14' ? (
           <MateriList course={course} range={activeTab} onOpenReading={onOpenReading} />
         ) : activeTab === 'quiz' ? (
-          <Suspense fallback={<TabLoader />}><QuizView course={course} mode="exam" /></Suspense>
+          <Suspense fallback={<TabLoader />}><QuizView course={course} mode="exam" selectedSetId={localQuizSetId} onSelectedSetIdChange={setLocalQuizSetId} /></Suspense>
         ) : activeTab === 'bank-soal' ? (
           <Suspense fallback={<TabLoader />}><BankSoalTab course={course} /></Suspense>
         ) : activeTab === 'arsip' && arsipFiles.length > 0 ? (

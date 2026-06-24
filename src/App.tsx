@@ -102,6 +102,7 @@ export default function App() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(initialRoute.course);
   const [routeNotFound, setRouteNotFound] = useState(initialRoute.notFound);
   const [activeTab, setActiveTab] = useState<CourseTabId>('tm1-7');
+  const [activeQuizSetId, setActiveQuizSetId] = useState<string | null>(null);
   const [readingTm, setReadingTm] = useState<number | null>(null);
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme);
   const [selectedReportId, setSelectedReportId] = useState<string | null>(null);
@@ -174,6 +175,7 @@ export default function App() {
       
       let targetTab: CourseTabId = 'tm1-7';
       let targetTm: number | null = null;
+      let targetQuizSetId: string | null = null;
 
       if (activityId.startsWith('tm-')) {
         const tm = parseInt(activityId.split('-')[1], 10);
@@ -181,6 +183,8 @@ export default function App() {
         targetTm = tm;
       } else if (activityId.includes('quiz') || activityId.includes('kuis')) {
         targetTab = 'quiz';
+        if (activityId.includes('uts')) targetQuizSetId = 'uts';
+        else if (activityId.includes('uas')) targetQuizSetId = 'uas';
       } else if (activityId.includes('bank-soal')) {
         targetTab = 'bank-soal';
       } else if (activityId.includes('flashcard')) {
@@ -189,6 +193,7 @@ export default function App() {
 
       setActiveTab(targetTab);
       setReadingTm(targetTm);
+      setActiveQuizSetId(targetQuizSetId);
       setSelectedReportId(null);
       window.scrollTo(0, 0);
     }
@@ -290,6 +295,7 @@ export default function App() {
               activeTab={activeTab}
               setActiveTab={setActiveTab}
               onOpenReading={(tm) => setReadingTm(tm)}
+              activeQuizSetId={activeQuizSetId}
             />
           ) : activeView === 'home' || !activeSemester ? (
             <HomeView onSelectSemester={openSemester} onOpenCourseDirectly={handleOpenCourseDirectly} onOpenGuide={openGuide} />

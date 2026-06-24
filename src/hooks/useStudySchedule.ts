@@ -47,6 +47,9 @@ export function useStudySchedule() {
     };
 
     fetchSchedules();
+
+    window.addEventListener('schedule-updated', fetchSchedules);
+    return () => window.removeEventListener('schedule-updated', fetchSchedules);
   }, [user]);
 
   const addSchedules = async (newSchedules: Omit<StudySchedule, 'id' | 'user_id' | 'created_at' | 'is_done'>[]) => {
@@ -75,6 +78,7 @@ export function useStudySchedule() {
           });
         });
       }
+      window.dispatchEvent(new Event('schedule-updated'));
       return true;
     } catch (err: any) {
       console.error('Error adding schedule:', err);
@@ -96,6 +100,7 @@ export function useStudySchedule() {
         .eq('user_id', user.id);
 
       if (error) throw error;
+      window.dispatchEvent(new Event('schedule-updated'));
     } catch (err: any) {
       console.error('Error marking schedule done:', err);
       // Revert if failed
@@ -117,6 +122,7 @@ export function useStudySchedule() {
         .eq('user_id', user.id);
 
       if (error) throw error;
+      window.dispatchEvent(new Event('schedule-updated'));
     } catch (err: any) {
       console.error('Error deleting schedule:', err);
       // We'd ideally revert here by re-fetching or keeping a backup
