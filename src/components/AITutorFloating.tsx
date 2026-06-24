@@ -118,7 +118,8 @@ ATURAN BALASAN (WAJIB DIPATUHI):
 2. Langsung eksekusi tindakan dengan mengeluarkan blok <COMMAND>... </COMMAND> setelah 1-2 kalimat pengantar. JANGAN menunda atau berkata "saya akan melakukan ini sekarang" berulang kali.
 3. Setelah menuliskan </COMMAND>, SEGERA BERHENTI MENULIS. Jangan tambahkan kata-kata apapun lagi setelahnya.
 
-Tanggal hari ini: ${new Date().toISOString().split('T')[0]}.
+Waktu lokal pengguna saat ini: ${new Date().toLocaleDateString('id-ID', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+Gunakan format YYYY-MM-DD (tanggal lokal pengguna: ${new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split('T')[0]}) untuk mengisi parameter date.
 
 ATURAN PENTING PENJADWALAN & NAVIGASI:
 1. Kapasitas jadwal: User saat ini memiliki ${validSchedules.length} jadwal aktif dari maksimal 8. Jika jumlah ini sudah genap mencapai angka 8, BARULAH kamu tolak permintaan tambah jadwal. Jika masih di bawah 8 (misal 0 sampai 7), kamu BOLEH dan BISA membuat jadwal baru tanpa perlu mengeluh soal kapasitas!
