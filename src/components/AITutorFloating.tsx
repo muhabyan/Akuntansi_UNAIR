@@ -258,7 +258,22 @@ ${pageText}
                 <div ref={messagesEndRef} />
               </div>
               
-              <div className="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+              <div className="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 relative">
+                {inputText === '/' && (
+                  <div className="absolute bottom-full left-3 mb-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg overflow-hidden w-64 z-10 animate-in fade-in slide-in-from-bottom-2">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setInputText('/help');
+                        // Ideally submit it immediately, but for simplicity we just set the text and focus
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                    >
+                      <strong className="block text-blue-600 dark:text-blue-400">/help</strong>
+                      <span className="text-xs text-gray-500">Tampilkan semua fitur & perintah AI</span>
+                    </button>
+                  </div>
+                )}
                 <form onSubmit={handleSendMessage} className="flex items-center gap-2">
                   <textarea
                     value={inputText}
@@ -271,7 +286,7 @@ ${pageText}
                         }
                       }
                     }}
-                    placeholder="Tanya soal pajak, etika, dll... (Shift+Enter untuk baris baru)"
+                    placeholder="Tanya materi... atau ketik /help"
                     className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 border-none rounded-2xl text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none min-h-[40px] max-h-32 overflow-y-auto"
                     rows={1}
                   />
