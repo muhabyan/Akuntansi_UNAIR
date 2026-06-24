@@ -4,11 +4,14 @@ import { useEffect } from 'react';
 import MotionBackground from './MotionBackground';
 import Typewriter from './Typewriter';
 
+import StudyScheduleWidget from './StudyScheduleWidget';
+
 interface HomeViewProps {
   onSelectSemester: (semesterId: string) => void;
+  onOpenCourseDirectly?: (courseCode: string, activityId: string) => void;
 }
 
-export default function HomeView({ onSelectSemester }: HomeViewProps) {
+export default function HomeView({ onSelectSemester, onOpenCourseDirectly }: HomeViewProps) {
   const activeSemesters = SEMESTERS.filter(s => !s.locked);
 
   const scrollToCatalog = () => {
@@ -72,6 +75,8 @@ export default function HomeView({ onSelectSemester }: HomeViewProps) {
 
       {/* Course Catalog */}
       <section id="course-catalog" className="relative z-10 mx-auto max-w-7xl px-5 py-16 md:px-10 lg:px-14 lg:py-20">
+        {onOpenCourseDirectly && <StudyScheduleWidget onOpenCourseDirectly={onOpenCourseDirectly} />}
+
         <div className="mb-10">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-3">Katalog Program</h2>
           <p className="text-gray-600 dark:text-gray-400">Pilih semester untuk memulai atau melanjutkan pembelajaran Anda.</p>

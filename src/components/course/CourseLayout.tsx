@@ -34,6 +34,7 @@ import { type TabType } from './CourseTabs';
 interface CourseLayoutProps {
   course: Course;
   initialTab?: CourseTabId;
+  initialTm?: number | null;
   onBack: () => void;
 }
 
@@ -587,12 +588,12 @@ function MaterialCard({
 }
 
 // ----------------- CONTAINER SHELL UTAMA -----------------
-export default function CourseLayout({ course, initialTab = 'tm1-7', onBack }: CourseLayoutProps) {
+export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm = null, onBack }: CourseLayoutProps) {
   const { isDone, toggle } = useStudyProgress();
   const [activeTab, setActiveTab] = useState<TabType>(() => mapInitialTab(initialTab));
   const [searchQuery, setSearchQuery] = useState('');
   const [isSortedAsc, setIsSortedAsc] = useState(true);
-  const [selectedMeetingTm, setSelectedMeetingTm] = useState<number | null>(null);
+  const [selectedMeetingTm, setSelectedMeetingTm] = useState<number | null>(initialTm);
   const [selectedReviewKey, setSelectedReviewKey] = useState<ReviewReadingKey | null>(null);
   const [courseContent, setCourseContent] = useState<LoadedCourseContent | null>(null);
   const [isLoadingContent, setIsLoadingContent] = useState(true);
@@ -601,16 +602,16 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', onBack }: C
   useEffect(() => {
     setActiveTab(mapInitialTab(initialTab));
     setSearchQuery('');
-    setSelectedMeetingTm(null);
+    setSelectedMeetingTm(initialTm);
     setSelectedReviewKey(null);
-  }, [course.code, initialTab]);
+  }, [course.code, initialTab, initialTm]);
 
   useEffect(() => {
     let isActive = true;
     setIsLoadingContent(true);
     setContentError(null);
     setCourseContent(null);
-    setSelectedMeetingTm(null);
+    setSelectedMeetingTm(initialTm);
     setSelectedReviewKey(null);
 
     loadCourseContent(course.code)

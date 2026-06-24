@@ -152,6 +152,35 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
+  const handleOpenCourseDirectly = (courseCode: string, activityId: string) => {
+    const courseObj = ALL_COURSES.find(c => c.course.code === courseCode)?.course;
+    if (courseObj) {
+      pushUrl(`/course/${courseCode}`);
+      setSelectedCourse(courseObj);
+      setRouteNotFound(false);
+      
+      let targetTab: CourseTabId = 'tm1-7';
+      let targetTm: number | null = null;
+
+      if (activityId.startsWith('tm-')) {
+        const tm = parseInt(activityId.split('-')[1], 10);
+        targetTab = tm <= 7 ? 'tm1-7' : 'tm8-14';
+        targetTm = tm;
+      } else if (activityId === 'quiz' || activityId === 'quiz-uts' || activityId === 'quiz-uas') {
+        targetTab = 'quiz';
+      } else if (activityId === 'bank-soal') {
+        targetTab = 'bank-soal';
+      } else if (activityId === 'flashcard') {
+        targetTab = 'flashcard';
+      }
+
+      setActiveTab(targetTab);
+      setReadingTm(targetTm);
+      setSelectedReportId(null);
+      window.scrollTo(0, 0);
+    }
+  };
+
   const openSemester = (semesterId: string) => {
     pushUrl('/');
     setActiveView(semesterId);
@@ -217,7 +246,7 @@ export default function App() {
           ) : routeNotFound ? (
             <NotFoundView onHome={goHome} />
           ) : selectedCourse && UNIVERSAL_COURSES.includes(selectedCourse.code) ? (
-            <CourseLayout course={selectedCourse} initialTab={activeTab} onBack={closeCourse} />
+            <CourseLayout course={selectedCourse} initialTab={activeTab} initialTm={readingTm} onBack={closeCourse} />
           ) : selectedCourse && readingTm !== null ? (
             <ReadingView
               course={selectedCourse}
@@ -234,7 +263,7 @@ export default function App() {
               onOpenReading={(tm) => setReadingTm(tm)}
             />
           ) : activeView === 'home' || !activeSemester ? (
-            <HomeView onSelectSemester={openSemester} />
+            <HomeView onSelectSemester={openSemester} onOpenCourseDirectly={handleOpenCourseDirectly} />
           ) : (
             <SemesterView semester={activeSemester} onBack={goHome} onCourseClick={openCourse} />
           )}
