@@ -26,7 +26,6 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
 
   const [isDragging, setIsDragging] = useState(false);
   const [isLongPressing, setIsLongPressing] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
   
   const widgetRef = useRef<any>(null);
   const dragInfo = useRef({
@@ -171,9 +170,9 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     position,
     isDragging,
     isLongPressing,
-    isMoved: dragInfo.current.isMoved,
+    get isMoved() { return dragInfo.current.isMoved; },
     edgeState,
-    isDesktop,
+    isDesktop: typeof window !== 'undefined' ? window.innerWidth >= 768 : true,
     handlers: {
       onPointerDown: handlePointerDown,
       onPointerMove: handlePointerMove,
