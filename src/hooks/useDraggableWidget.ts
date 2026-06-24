@@ -17,6 +17,7 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       try {
         const parsed = JSON.parse(saved);
         if (typeof parsed.x === 'number' && typeof parsed.y === 'number') {
+          parsed.y = Math.max(85, parsed.y);
           return parsed;
         }
       } catch (e) {}
@@ -60,7 +61,8 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
         let newX = prev.x;
         let newY = prev.y;
         if (newX > clientWidth - w) newX = Math.max(0, clientWidth - w);
-        if (newY > window.innerHeight - h) newY = Math.max(0, window.innerHeight - h);
+        if (newY > window.innerHeight - h) newY = Math.max(85, window.innerHeight - h);
+        if (newY < 85) newY = 85;
         return { x: newX, y: newY };
       });
     };
@@ -114,7 +116,7 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       const clientWidth = document.documentElement.clientWidth;
       
       newX = Math.max(0, Math.min(newX, clientWidth - w));
-      newY = Math.max(0, Math.min(newY, window.innerHeight - h));
+      newY = Math.max(85, Math.min(newY, window.innerHeight - h));
 
       setPosition({ x: newX, y: newY });
     }
@@ -157,7 +159,7 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
         }
       }
 
-      finalY = Math.max(0, Math.min(finalY, window.innerHeight - h));
+      finalY = Math.max(85, Math.min(finalY, window.innerHeight - h));
 
       const newPos = { x: finalX, y: finalY };
       setPosition(newPos);
