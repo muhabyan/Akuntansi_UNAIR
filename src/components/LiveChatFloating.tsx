@@ -139,7 +139,7 @@ export default function LiveChatFloating() {
     <>
       {/* Expanded Panel */}
       <div 
-        className={`fixed z-[100] transition-all duration-300 ${
+        className={`zen-hideable fixed z-[100] transition-all duration-300 ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
@@ -289,7 +289,7 @@ export default function LiveChatFloating() {
           top: draggable.position.y,
           zIndex: 60
         }}
-        className={`group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
+        className={`zen-hideable group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
           draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-indigo-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
         } ${
           isOpen 

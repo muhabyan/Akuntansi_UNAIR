@@ -288,7 +288,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Pomodoro & Zen Mode</h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                Fokus adalah kunci. Gunakan fitur Pomodoro Timer bawaan untuk mengatur sesi belajarmu (25 menit fokus, 5 menit istirahat). Butuh konsentrasi penuh? Aktifkan Zen Mode untuk menyembunyikan elemen UI yang mengganggu.
+                Fokus adalah kunci. Gunakan fitur Pomodoro Timer bawaan untuk mengatur sesi belajarmu. Butuh konsentrasi penuh? Aktifkan Zen Mode untuk pengalaman belajar imersif bak menonton film! Di PC, Zen Mode akan mengaktifkan <strong>Fullscreen</strong> secara otomatis, sementara seluruh elemen UI yang mengganggu (seperti AI Tutor dan Chat Global) akan <strong>disembunyikan sepenuhnya</strong>.
               </p>
               
               <div className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-xl p-4 mb-6">

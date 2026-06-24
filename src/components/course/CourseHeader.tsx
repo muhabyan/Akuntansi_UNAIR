@@ -14,13 +14,40 @@ export default function CourseHeader({ reading, onBack }: CourseHeaderProps) {
   const [zenMode, setZenMode] = useState(false);
 
   useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (!document.fullscreenElement && zenMode) {
+        setZenMode(false);
+      }
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  }, [zenMode]);
+
+  useEffect(() => {
     if (zenMode) {
       document.body.classList.add('zen-mode-active');
     } else {
       document.body.classList.remove('zen-mode-active');
     }
-    return () => document.body.classList.remove('zen-mode-active');
+    return () => {
+      document.body.classList.remove('zen-mode-active');
+    };
   }, [zenMode]);
+
+  const toggleZenMode = () => {
+    const nextZen = !zenMode;
+    setZenMode(nextZen);
+    
+    if (nextZen) {
+      if (window.innerWidth >= 1024 && document.documentElement.requestFullscreen && !document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      }
+    } else {
+      if (document.fullscreenElement && document.exitFullscreen) {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+  };
 
   return (
     <>
@@ -33,7 +60,7 @@ export default function CourseHeader({ reading, onBack }: CourseHeaderProps) {
             <ArrowLeft size={16} /> Kembali ke Daftar Materi
           </button>
           <button 
-            onClick={() => setZenMode(!zenMode)} 
+            onClick={toggleZenMode} 
             className="course-nav-btn inline-flex items-center gap-2 rounded-2xl border border-navy-500/70 bg-navy-950/35 px-3 py-2 text-sm font-bold text-slate-400 hover:border-gold/50 hover:text-gold"
             title={zenMode ? "Keluar dari Zen Mode" : "Masuk ke Zen Mode (Fokus Membaca)"}
           >
@@ -97,7 +124,7 @@ export default function CourseHeader({ reading, onBack }: CourseHeaderProps) {
 
     {zenMode && (
         <button
-          onClick={() => setZenMode(false)}
+          onClick={toggleZenMode}
           className="fixed bottom-6 right-6 z-[100] flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-full shadow-2xl font-bold transition-transform hover:-translate-y-1 active:translate-y-0"
         >
           <Minimize size={18} /> Keluar Zen Mode
