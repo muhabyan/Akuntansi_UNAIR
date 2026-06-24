@@ -285,7 +285,15 @@ export default function LiveChatFloating() {
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-indigo-600 text-white'
+            : (() => {
+                if (!draggable.isDesktop || draggable.edgeState === 'left') {
+                  return 'w-10 md:w-14 h-14 md:h-16 rounded-r-xl bg-indigo-600 text-white';
+                } else if (draggable.edgeState === 'right') {
+                  return 'w-10 md:w-14 h-14 md:h-16 rounded-l-xl bg-indigo-600 text-white';
+                } else {
+                  return 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-indigo-600 text-white opacity-50 hover:opacity-100 transition-opacity';
+                }
+              })()
         }`}
       >
         {!isOpen && (

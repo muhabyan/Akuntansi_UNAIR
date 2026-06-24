@@ -5,12 +5,9 @@ type Position = { x: number; y: number };
 interface UseDraggableWidgetProps {
   id: string;
   defaultPosition: {
-    // We use percentages or specific pixel values relative to screen
-    // For simplicity, we just use absolute pixel positions from top-left (0,0)
     x: number; 
     y: number;
   };
-  snapThreshold?: number; // Distance to edge to snap
 }
 
 export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetProps) {
@@ -29,6 +26,7 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
 
   const [isDragging, setIsDragging] = useState(false);
   const [isLongPressing, setIsLongPressing] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
   
   const widgetRef = useRef<any>(null);
   const dragInfo = useRef({
@@ -40,11 +38,38 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     isMoved: false,
   });
 
+  // Calculate if we are currently snapped to an edge
+  const w = widgetRef.current?.getBoundingClientRect().width || 56;
+  let edgeState: 'left' | 'right' | false = false;
+  const MARGIN = 16;
+  if (position.x <= MARGIN + 5) {
+    edgeState = 'left';
+  } else if (position.x >= window.innerWidth - w - MARGIN - 5) {
+    edgeState = 'right';
+  }
+
+  // Handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+      const rect = widgetRef.current?.getBoundingClientRect();
+      const w = rect?.width || 56;
+      const h = rect?.height || 56;
+      
+      setPosition(prev => {
+        let newX = prev.x;
+        let newY = prev.y;
+        if (newX > window.innerWidth - w) newX = Math.max(16, window.innerWidth - w - 16);
+        if (newY > window.innerHeight - h) newY = Math.max(16, window.innerHeight - h - 16);
+        return { x: newX, y: newY };
+      });
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
-    // Only left click or touch
     if (e.pointerType === 'mouse' && e.button !== 0) return;
-    
-    // Prevent default touch actions like scrolling while interacting with widget
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
 
     dragInfo.current.startX = e.clientX;
@@ -53,15 +78,13 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     dragInfo.current.startPosY = position.y;
     dragInfo.current.isMoved = false;
 
-    // Start long press timer
     dragInfo.current.timer = setTimeout(() => {
       setIsLongPressing(true);
       setIsDragging(true);
-      // Vibrate if supported to indicate long press success
       if (typeof navigator !== 'undefined' && navigator.vibrate) {
         navigator.vibrate(50);
       }
-    }, 400); // 400ms long press
+    }, 400); 
   }, [position.x, position.y]);
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
@@ -70,7 +93,6 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     const dx = e.clientX - dragInfo.current.startX;
     const dy = e.clientY - dragInfo.current.startY;
 
-    // If moved more than 5px before timer triggers, cancel long press
     if (!isDragging && Math.abs(dx) + Math.abs(dy) > 5) {
       if (dragInfo.current.timer) {
         clearTimeout(dragInfo.current.timer);
@@ -85,7 +107,6 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       let newX = dragInfo.current.startPosX + dx;
       let newY = dragInfo.current.startPosY + dy;
 
-      // Ensure it doesn't go completely off-screen during drag
       const rect = widgetRef.current?.getBoundingClientRect();
       const w = rect?.width || 56;
       const h = rect?.height || 56;
@@ -110,24 +131,31 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     if (isDragging) {
       setIsDragging(false);
       
-      // Snap to edge logic
       const rect = widgetRef.current?.getBoundingClientRect();
       const w = rect?.width || 56;
       const h = rect?.height || 56;
 
       let finalX = position.x;
       let finalY = position.y;
-
-      const MARGIN = 16;
       
-      // Horizontal snap: Left or Right half
-      if (finalX + w / 2 < window.innerWidth / 2) {
-        finalX = MARGIN; // Snap to left
+      const isDesktopCurrent = window.innerWidth >= 768;
+
+      if (!isDesktopCurrent) {
+        // Mobile: Always snap
+        if (finalX + w / 2 < window.innerWidth / 2) {
+          finalX = MARGIN; 
+        } else {
+          finalX = window.innerWidth - w - MARGIN;
+        }
       } else {
-        finalX = window.innerWidth - w - MARGIN; // Snap to right
+        // Desktop: Snap only if within 40px of edge
+        if (finalX < 40) {
+          finalX = MARGIN;
+        } else if (finalX > window.innerWidth - w - 40) {
+          finalX = window.innerWidth - w - MARGIN;
+        }
       }
 
-      // Vertical constraints (don't go off screen)
       finalY = Math.max(MARGIN, Math.min(finalY, window.innerHeight - h - MARGIN));
 
       const newPos = { x: finalX, y: finalY };
@@ -136,37 +164,19 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     }
   }, [isDragging, position.x, position.y, id]);
 
-  // Handle window resize
-  useEffect(() => {
-    const handleResize = () => {
-      const rect = widgetRef.current?.getBoundingClientRect();
-      const w = rect?.width || 56;
-      const h = rect?.height || 56;
-      
-      setPosition(prev => {
-        let newX = prev.x;
-        let newY = prev.y;
-        if (newX > window.innerWidth - w) newX = Math.max(16, window.innerWidth - w - 16);
-        if (newY > window.innerHeight - h) newY = Math.max(16, window.innerHeight - h - 16);
-        return { x: newX, y: newY };
-      });
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   return {
     ref: widgetRef,
     position,
     isDragging,
     isLongPressing,
     isMoved: dragInfo.current.isMoved,
+    edgeState,
+    isDesktop,
     handlers: {
       onPointerDown: handlePointerDown,
       onPointerMove: handlePointerMove,
       onPointerUp: handlePointerUp,
       onPointerCancel: handlePointerUp,
-      // Stop default touch action so drag works on mobile
       style: { touchAction: 'none' } as React.CSSProperties
     }
   };

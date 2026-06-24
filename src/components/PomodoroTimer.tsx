@@ -205,7 +205,15 @@ export default function PomodoroTimer() {
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
+            : (() => {
+                if (!draggable.isDesktop || draggable.edgeState === 'left') {
+                  return 'w-10 md:w-14 h-14 md:h-16 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                } else if (draggable.edgeState === 'right') {
+                  return 'w-10 md:w-14 h-14 md:h-16 rounded-l-xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                } else {
+                  return 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100 transition-opacity';
+                }
+              })()
         }`}
       >
         {!isOpen && <Timer size={24} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />}
