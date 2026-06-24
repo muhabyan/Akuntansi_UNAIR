@@ -265,8 +265,8 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               </p>
               
               <div className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-xl p-4 mb-6">
-                <p className="text-xs text-sky-700 dark:text-sky-400 font-medium">
-                  <strong>Lokasi Zen Mode:</strong> Saat kamu membuka halaman materi bacaan (*Reading View*), perhatikan ikon mata (👁️) di **pojok kanan atas** layar. Klik ikon tersebut untuk masuk ke Zen Mode layar penuh!
+                <p className="text-xs text-sky-700 dark:text-sky-400 font-medium leading-relaxed">
+                  <strong className="block mb-1">Lokasi Zen Mode:</strong> Saat kamu membuka halaman materi bacaan (Reading View), perhatikan tombol bertuliskan <strong>"Zen Mode"</strong> dengan ikon perbesar layar di <strong>pojok kanan atas</strong>. Klik tombol tersebut untuk masuk ke tampilan layar penuh bebas hambatan!
                 </p>
               </div>
 
