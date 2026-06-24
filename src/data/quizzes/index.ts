@@ -7,6 +7,7 @@ import { AKK201_QUIZ_UAS_SIMULATOR } from './akk201UasSimulator';
 import { AKK201_QUIZ_UTS_SIMULATOR } from './akk201UtsSimulator';
 import { AKM201_QUIZ, AKM201_QUIZ_UTS, AKM201_QUIZ_UAS } from './akm201';
 import { EKT109_QUIZ } from './ekt109';
+import { EKT109_UAS_SIMULATOR } from './ekt109UasSimulator';
 import { MNU101_QUIZ } from './mnu101';
 import { AKA103_QUIZ_UTS_SIMULATOR } from './aka103UtsSimulator';
 import { AKA103_QUIZ_UAS_SIMULATOR } from './aka103UasSimulator';
@@ -17,7 +18,7 @@ import { PJK201_QUIZ_UTS_SIMULATOR } from './pjk201UtsSimulator';
 const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK201: [...AKK201_QUIZ, ...AKK201_QUIZ_UTS_SIMULATOR, ...AKK201_QUIZ_UAS_SIMULATOR],
   AKM201: AKM201_QUIZ,
-  EKT109: EKT109_QUIZ,
+  EKT109: [...EKT109_QUIZ, ...EKT109_UAS_SIMULATOR],
   MNU101: MNU101_QUIZ,
   AKA103: [...AKA103_QUIZ_UTS_SIMULATOR, ...AKA103_QUIZ_UAS_SIMULATOR],
   MAS122: MAS122_QUIZ_ALL,
@@ -58,6 +59,12 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
     return [
       { id: 'uts', label: `Simulasi UTS Etika Profesi (TM 1-7 · ${AKA103_QUIZ_UTS_SIMULATOR.length} Soal)`, items: AKA103_QUIZ_UTS_SIMULATOR },
       { id: 'uas', label: `Simulasi UAS Etika Profesi (TM 8-14 · ${AKA103_QUIZ_UAS_SIMULATOR.length} Soal)`, items: AKA103_QUIZ_UAS_SIMULATOR },
+    ];
+  }
+  if (courseCode === 'EKT109') {
+    return [
+      { id: 'quiz', label: `Kuis Interaktif Lengkap PTE`, items: EKT109_QUIZ },
+      { id: 'uas', label: `Simulasi UAS Pengantar Teori Ekonomi (TM 8-14 · ${EKT109_UAS_SIMULATOR.length} Soal)`, items: EKT109_UAS_SIMULATOR },
     ];
   }
   const items = getQuiz(courseCode);

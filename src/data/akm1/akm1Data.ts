@@ -31,6 +31,7 @@ import {
   WERTH_INVENTORY_OWNERSHIP_CASE,
   WILSON_RECEIVABLES_AGING_CASE,
 } from "./akm1PracticeCases";
+import { AKM1_TUTOR_BLOCKS } from "./akm1Tutor";
 
 // ---------- Diagram (SVG) ----------
 const SVG_FRAMEWORK = `
@@ -6420,6 +6421,7 @@ const tm14: Reading = {
     "Menyiapkan transisi langsung ke Simulasi UAS yang memakai pola data dan requirements yang sama.",
   ],
   blocks: [
+    ...AKM1_TUTOR_BLOCKS,
     ...TM14_LEARNING_FLOW,
     { kind: "h2", text: "A. Peta Kompetensi UAS" },
     {

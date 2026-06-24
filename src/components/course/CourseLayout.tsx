@@ -147,13 +147,57 @@ function ReadingPanel({
   const done = isDone(key);
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe && !isLast) {
+      onNext();
+    } else if (isRightSwipe && !isFirst) {
+      onPrev();
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowLeft' && !isFirst) {
+        onPrev();
+      } else if (e.key === 'ArrowRight' && !isLast) {
+        onNext();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFirst, isLast, onPrev, onNext]);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [reading.tm]);
 
   return (
     <>
-      <article className="animate-fade-in-up">
+      <article 
+        className="animate-fade-in-up"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
       <CourseHeader reading={reading} onBack={onBack} />
 
       <div className="akbi-reading-flow course-reading-panel mb-8 overflow-hidden rounded-[1.85rem] p-4 md:p-6 xl:p-7">

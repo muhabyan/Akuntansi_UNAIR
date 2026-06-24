@@ -485,12 +485,15 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
       blocks = parseMarkdownToBlocks(module.body_markdown, { enableLegal: true });
     } else if (module.pages) {
       module.pages.forEach((page) => {
-        page.blocks.forEach((pageBlock) => {
-          if (pageBlock.k === 'h') blocks.push({ kind: 'h2', text: pageBlock.text || '' });
-          else if (pageBlock.k === 'p') blocks.push({ kind: 'p', text: pageBlock.text || '' });
-          else if (pageBlock.k === 'list') blocks.push({ kind: 'ul', items: pageBlock.items || [] });
-          else if (pageBlock.k === 'pre') blocks.push({ kind: 'formula', text: pageBlock.text || '' });
-        });
+          page.blocks.forEach((pageBlock: any) => {
+            if (pageBlock.k === 'h') blocks.push({ kind: 'h2', text: pageBlock.text || '' });
+            else if (pageBlock.k === 'p') blocks.push({ kind: 'p', text: pageBlock.text || '' });
+            else if (pageBlock.k === 'list') blocks.push({ kind: 'ul', items: pageBlock.items || [] });
+            else if (pageBlock.k === 'pre') blocks.push({ kind: 'formula', text: pageBlock.text || '' });
+            else if (pageBlock.k === 'callout') blocks.push({ kind: 'callout', variant: pageBlock.variant || 'info', title: pageBlock.title || '', text: pageBlock.text || '' });
+            else if (pageBlock.k === 'figure') blocks.push({ kind: 'figure', svg: pageBlock.svg, caption: pageBlock.caption || '', title: pageBlock.title });
+            else if (pageBlock.k === 'table') blocks.push({ kind: 'table', headers: pageBlock.headers || [], rows: pageBlock.rows || [], caption: pageBlock.caption });
+          });
       });
     }
 

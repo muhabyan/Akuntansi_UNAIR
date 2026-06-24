@@ -6,7 +6,13 @@
 // =============================================================
 
 export interface PjkBlock {
-  k: 'h' | 'p' | 'list' | 'pre';
+  k: 'h' | 'p' | 'list' | 'pre' | 'callout' | 'figure' | 'table';
+  variant?: string;
+  title?: string;
+  svg?: string;
+  caption?: string;
+  headers?: string[];
+  rows?: string[][];
   text?: string;
   items?: string[];
 }
@@ -58,6 +64,12 @@ export const perpajakanPraUAS: PjkData = {
             {
               "k": "h",
               "text": "TM 8 — Penelitian, Pemeriksaan, dan Penyidikan Pajak"
+            },
+            {
+              "k": "callout",
+              "variant": "info",
+              "title": "Kamus Istilah: Pemeriksaan vs Penyidikan",
+              "text": "**Pemeriksaan:** Tahap administratif untuk menguji kepatuhan atau tujuan lain (seperti pencabutan NPWP). Produk akhirnya SKP (Surat Ketetapan Pajak).\\n\\n**Penyidikan:** Tahap *pro justitia* (pidana) ketika ada bukti kuat (Bukper) Wajib Pajak melakukan tindak pidana perpajakan."
             },
             {
               "k": "p",
@@ -438,6 +450,12 @@ export const perpajakanPraUAS: PjkData = {
             {
               "k": "h",
               "text": "TM 9 — Penetapan & Ketetapan Pajak, Restitusi Pajak"
+            },
+            {
+              "k": "callout",
+              "variant": "warning",
+              "title": "Kamus Istilah: Jenis SKP",
+              "text": "**SKPKB (Kurang Bayar):** Pajak terutang > Kredit pajak. WP harus bayar kekurangan + sanksi.\\n**SKPN (Nihil):** Pajak terutang = Kredit pajak.\\n**SKPLB (Lebih Bayar):** Pajak terutang < Kredit pajak. WP berhak restitusi."
             },
             {
               "k": "p",
@@ -865,6 +883,18 @@ export const perpajakanPraUAS: PjkData = {
               "text": "TM 10 — Penyelesaian Sengketa Pajak: Keberatan, Banding, Gugatan & Peninjauan Kembali"
             },
             {
+              "k": "figure",
+              "title": "Alur Eskalasi Sengketa Pajak",
+              "svg": "<svg viewBox=\"0 0 500 200\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:100%; height:auto;\">\n  <rect x=\"10\" y=\"80\" width=\"100\" height=\"40\" rx=\"5\" fill=\"#f87171\" />\n  <text x=\"60\" y=\"105\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-family=\"sans-serif\">SKPKB</text>\n  <path d=\"M 110 100 L 140 100\" stroke=\"#9ca3af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n  <rect x=\"150\" y=\"80\" width=\"100\" height=\"40\" rx=\"5\" fill=\"#facc15\" />\n  <text x=\"200\" y=\"105\" text-anchor=\"middle\" fill=\"black\" font-weight=\"bold\" font-family=\"sans-serif\">Keberatan</text>\n  <path d=\"M 250 100 L 280 100\" stroke=\"#9ca3af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n  <rect x=\"290\" y=\"80\" width=\"100\" height=\"40\" rx=\"5\" fill=\"#60a5fa\" />\n  <text x=\"340\" y=\"105\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-family=\"sans-serif\">Banding</text>\n  <path d=\"M 390 100 L 420 100\" stroke=\"#9ca3af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n  <rect x=\"430\" y=\"80\" width=\"60\" height=\"40\" rx=\"5\" fill=\"#34d399\" />\n  <text x=\"460\" y=\"105\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-family=\"sans-serif\">PK</text>\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L0,6 L9,3 z\" fill=\"#9ca3af\" />\n    </marker>\n  </defs>\n</svg>",
+              "caption": "Sengketa pajak berjenjang dari Dirjen Pajak (Keberatan), ke Pengadilan Pajak (Banding/Gugatan), hingga ke Mahkamah Agung (Peninjauan Kembali)."
+            },
+            {
+              "k": "callout",
+              "variant": "info",
+              "title": "Syarat Keberatan (Jebakan UAS)",
+              "text": "Untuk mengajukan keberatan, Wajib Pajak **wajib** melunasi pajak minimal sejumlah yang telah *disetujui* dalam pembahasan akhir pemeriksaan. Jika tidak setuju sama sekali, bayar Rp0 pun tetap valid untuk maju keberatan."
+            },
+            {
               "k": "p",
               "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · UU No. 14/2002 (Pengadilan Pajak) · PP No. 50/2022 · Putusan MK No. 26/PUU-XXI/2023 · SEMA No. 2/2024\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
@@ -1250,6 +1280,18 @@ export const perpajakanPraUAS: PjkData = {
               "text": "TM 11 — Penagihan Pajak, Surat Paksa, Hak Mendahulu & Tindak Pidana Fiskal"
             },
             {
+              "k": "figure",
+              "title": "Alur Penagihan Aktif",
+              "svg": "<svg viewBox=\"0 0 600 150\" xmlns=\"http://www.w3.org/2000/svg\" style=\"max-width:100%; height:auto;\">\n  <rect x=\"10\" y=\"50\" width=\"120\" height=\"50\" rx=\"5\" fill=\"#cbd5e1\" />\n  <text x=\"70\" y=\"75\" text-anchor=\"middle\" fill=\"black\" font-weight=\"bold\" font-family=\"sans-serif\" font-size=\"12\">Surat Teguran</text>\n  <text x=\"70\" y=\"90\" text-anchor=\"middle\" fill=\"#475569\" font-family=\"sans-serif\" font-size=\"10\">(7 hari)</text>\n  <path d=\"M 130 75 L 160 75\" stroke=\"#9ca3af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n  <rect x=\"170\" y=\"50\" width=\"120\" height=\"50\" rx=\"5\" fill=\"#fcd34d\" />\n  <text x=\"230\" y=\"75\" text-anchor=\"middle\" fill=\"black\" font-weight=\"bold\" font-family=\"sans-serif\" font-size=\"12\">Surat Paksa</text>\n  <text x=\"230\" y=\"90\" text-anchor=\"middle\" fill=\"#475569\" font-family=\"sans-serif\" font-size=\"10\">(21 hari)</text>\n  <path d=\"M 290 75 L 320 75\" stroke=\"#9ca3af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n  <rect x=\"330\" y=\"50\" width=\"120\" height=\"50\" rx=\"5\" fill=\"#fb923c\" />\n  <text x=\"390\" y=\"75\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-family=\"sans-serif\" font-size=\"12\">Surat Sita</text>\n  <text x=\"390\" y=\"90\" text-anchor=\"middle\" fill=\"white\" font-family=\"sans-serif\" font-size=\"10\">(2x24 jam)</text>\n  <path d=\"M 450 75 L 480 75\" stroke=\"#9ca3af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" />\n  <rect x=\"490\" y=\"50\" width=\"100\" height=\"50\" rx=\"5\" fill=\"#ef4444\" />\n  <text x=\"540\" y=\"75\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-family=\"sans-serif\" font-size=\"12\">Lelang</text>\n  <text x=\"540\" y=\"90\" text-anchor=\"middle\" fill=\"white\" font-family=\"sans-serif\" font-size=\"10\">(14 hari)</text>\n</svg>",
+              "caption": "Timeframe sangat penting untuk UAS: Teguran (7 hari) -> Paksa (21 hari) -> Sita (2x24 jam) -> Lelang (14 hari)."
+            },
+            {
+              "k": "callout",
+              "variant": "warning",
+              "title": "Hak Mendahulu (Droit de Preference)",
+              "text": "Negara punya hak istimewa. Jika WP bangkrut/dilikuidasi, utang pajak **harus dibayar lebih dulu** dibanding utang kepada kreditur lain, kecuali untuk biaya perkara pengadilan dan upah pegawai."
+            },
+            {
               "k": "p",
               "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · UU PPSP (UU No. 19/1997 jo. UU No. 19/2000) · PMK No. 61/2023 · PMK No. 81/2024 sebagaimana diubah terakhir dengan PMK No. 1/2026 (Coretax)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
@@ -1535,6 +1577,12 @@ export const perpajakanPraUAS: PjkData = {
               "text": "TM 12 — Bea Meterai"
             },
             {
+              "k": "callout",
+              "variant": "info",
+              "title": "Kamus Pola: Bea Meterai",
+              "text": "Bea Meterai adalah pajak atas **dokumen**, bukan atas transaksinya. Dokumen internal (seperti tanda terima gaji) BUKAN objek, sedangkan dokumen perdata (surat perjanjian, kuitansi > Rp5 juta) ADALAH objek."
+            },
+            {
               "k": "p",
               "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No. 10 Tahun 2020 tentang Bea Meterai · PMK No. 78 Tahun 2024 · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
@@ -1765,6 +1813,12 @@ export const perpajakanPraUAS: PjkData = {
             {
               "k": "h",
               "text": "TM 13 — Pajak Daerah & Retribusi Daerah (1): Pajak Daerah Provinsi"
+            },
+            {
+              "k": "callout",
+              "variant": "info",
+              "title": "Kamus Istilah: PKB vs PBB",
+              "text": "**Pajak Provinsi:** Identik dengan kendaraan bermotor (PKB, BBNKB), bahan bakar, dan air permukaan.\\n**Pajak Kabupaten/Kota:** PBB-P2, BPHTB, Pajak Hotel, Restoran, Hiburan (sekarang digabung jadi PBJT)."
             },
             {
               "k": "p",

@@ -39,6 +39,8 @@ export const ARSIP_REGISTRY: Record<string, ArsipFile[]> = {
   'EKT109': [ // PTE
     { name: 'UAS_PTE_SAKURA-Copy.pdf', url: '/arsip-uas/PTE/UAS_PTE_SAKURA-Copy.pdf', type: 'pdf' },
     { name: 'UAS_PTE_SAKURA.pdf', url: '/arsip-uas/PTE/UAS_PTE_SAKURA.pdf', type: 'pdf' },
+    { name: 'SOAL LATIHAN UTS.pdf', url: '/arsip-uas/PTE/SOAL LATIHAN UTS.pdf', type: 'pdf' },
+    { name: 'LATIHAN SOAL UAS.pdf', url: '/arsip-uas/PTE/LATIHAN SOAL UAS.pdf', type: 'pdf' },
   ],
   'MAS122': [ // STATIS
     { name: 'UAS STATIS 2024.pdf', url: '/arsip-uas/STATIS/UAS STATIS 2024.pdf', type: 'pdf' },
