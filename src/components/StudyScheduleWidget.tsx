@@ -145,7 +145,7 @@ export default function StudyScheduleWidget({ onOpenCourseDirectly }: StudySched
           <div 
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex overflow-x-auto hide-scrollbar gap-4 pb-4 -mx-1 px-1"
+            className="flex overflow-x-auto hide-scrollbar gap-4 pt-4 pb-6 -mx-4 px-4"
           >
             {displaySchedules.map((schedule, index) => {
               const courseName = ALL_COURSES.find(c => c.course.code === schedule.course_code)?.course.name || schedule.course_code;
