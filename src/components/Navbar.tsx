@@ -13,6 +13,7 @@ import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
 import type { Course, CourseTabId } from '../types';
 import { useAuth } from '../contexts/AuthContext';
+import ProfileModal from './ProfileModal';
 
 type NavMenu = 'materi' | 'quiz' | 'laporan' | null;
 
@@ -56,6 +57,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<NavMenu>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const { user, loading, signIn, signOut } = useAuth();
 
@@ -187,10 +189,9 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               <div className="hidden md:flex items-center mr-2">
                 {!loading && (
                   user ? (
-                    <button onClick={signOut} className="text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Keluar">
+                    <button onClick={() => setProfileModalOpen(true)} className="text-sm font-medium text-slate-700 dark:text-slate-100 flex items-center gap-2 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Profil & Nickname">
                       <UserCircle2 size={16} />
-                      <span className="truncate max-w-[100px]">{user.email?.split('@')[0]}</span>
-                      <LogOut size={14} className="ml-1 opacity-70" />
+                      <span className="truncate max-w-[100px]">{user.user_metadata?.nickname || user.email?.split('@')[0]}</span>
                     </button>
                   ) : (
                     <button onClick={signIn} className="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded-full transition shadow-sm">
@@ -269,6 +270,8 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
           />
         )}
       </div>
+      
+      <ProfileModal isOpen={profileModalOpen} onClose={() => setProfileModalOpen(false)} />
     </nav>
   );
 }
