@@ -148,7 +148,21 @@ export default function StudyScheduleWidget({ onOpenCourseDirectly }: StudySched
             className="flex overflow-x-auto hide-scrollbar gap-4 pt-4 pb-6 -mx-4 px-4"
           >
             {displaySchedules.map((schedule, index) => {
-              const courseName = ALL_COURSES.find(c => c.course.code === schedule.course_code)?.course.name || schedule.course_code;
+              const normalizeCourseCode = (code: string) => {
+                const c = code.toLowerCase();
+                if (c === 'akm1' || c === 'akm 1') return 'AKK201';
+                if (c === 'akbi' || c === 'biaya') return 'AKM201';
+                if (c === 'pajak' || c === 'pjk') return 'PJK201';
+                if (c === 'pengbis' || c === 'bisnis') return 'MNU101';
+                if (c === 'pte' || c === 'ekonomi') return 'EKT109';
+                if (c === 'stat' || c === 'statistik') return 'MAS122';
+                if (c === 'etika') return 'AKA103';
+                if (c === 'akd' || c === 'dasar') return 'AKK106';
+                return code.toUpperCase();
+              };
+              
+              const normalizedCode = normalizeCourseCode(schedule.course_code);
+              const courseName = ALL_COURSES.find(c => c.course.code === normalizedCode)?.course.name || normalizedCode;
               const status = getStatus(schedule.date, schedule.time);
 
               return (
@@ -156,7 +170,7 @@ export default function StudyScheduleWidget({ onOpenCourseDirectly }: StudySched
                   key={schedule.id}
                   className={`schedule-card opacity-0 translate-x-10 transition-all duration-700 ease-out group relative flex flex-col p-5 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm hover:shadow-md cursor-pointer min-w-[280px] md:min-w-[320px] max-w-[320px] flex-shrink-0 hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-500`}
                   style={{ transitionDelay: `${index * 50}ms` }}
-                  onClick={() => onOpenCourseDirectly(schedule.course_code, schedule.activity_id)}
+                  onClick={() => onOpenCourseDirectly(normalizedCode, schedule.activity_id)}
                 >
                   {/* Header Card */}
                   <div className="flex items-start justify-between mb-3">

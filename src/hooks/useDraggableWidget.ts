@@ -51,7 +51,6 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
       const rect = widgetRef.current?.getBoundingClientRect();
       const w = rect?.width || 56;
       const h = rect?.height || 56;

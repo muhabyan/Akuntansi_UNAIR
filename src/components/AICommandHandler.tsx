@@ -17,28 +17,58 @@ export default function AICommandHandler() {
       const detail = event.detail;
 
       try {
+        const normalizeCourseCode = (code: string) => {
+          const c = code.toLowerCase();
+          if (c === 'akm1' || c === 'akm 1') return 'AKK201';
+          if (c === 'akbi' || c === 'biaya') return 'AKM201';
+          if (c === 'pajak' || c === 'pjk') return 'PJK201';
+          if (c === 'pengbis' || c === 'bisnis') return 'MNU101';
+          if (c === 'pte' || c === 'ekonomi') return 'EKT109';
+          if (c === 'stat' || c === 'statistik') return 'MAS122';
+          if (c === 'etika') return 'AKA103';
+          if (c === 'akd' || c === 'dasar') return 'AKK106';
+          return code.toUpperCase();
+        };
+
+        const normalizedCode = normalizeCourseCode(detail.courseCode);
+
         if (detail.action === 'schedule_add') {
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          
+          const validSchedules = schedules.filter(s => {
+            if (s.is_done) return false; 
+            const sDate = new Date(s.date);
+            sDate.setHours(0, 0, 0, 0);
+            const diffTime = today.getTime() - sDate.getTime();
+            const diffDays = diffTime / (1000 * 3600 * 24);
+            return diffDays <= 3;
+          });
+
+          if (validSchedules.length >= 8) {
+            alert('AI Tutor mencoba menambahkan jadwal baru, tetapi kamu sudah mencapai batas maksimal 8 jadwal aktif! Tuntaskan atau hapus jadwal yang ada terlebih dahulu.');
+            return;
+          }
+
           await addSchedules([
             {
-              course_code: detail.courseCode,
+              course_code: normalizedCode,
               activity_id: detail.activityId,
               date: detail.date,
               time: detail.time
             }
           ]);
         } else if (detail.action === 'schedule_delete') {
-          // Find the schedule by courseCode and activityId
           const toDelete = schedules.find(s => 
-            s.course_code.toLowerCase() === detail.courseCode.toLowerCase() && 
+            normalizeCourseCode(s.course_code) === normalizedCode && 
             s.activity_id === detail.activityId
           );
           if (toDelete) {
             await deleteSchedule(toDelete.id);
           }
         } else if (detail.action === 'schedule_finish') {
-          // Find the schedule by courseCode and activityId
           const toFinish = schedules.find(s => 
-            s.course_code.toLowerCase() === detail.courseCode.toLowerCase() && 
+            normalizeCourseCode(s.course_code) === normalizedCode && 
             s.activity_id === detail.activityId &&
             !s.is_done
           );
