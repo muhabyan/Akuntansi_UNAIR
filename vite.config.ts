@@ -33,6 +33,9 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
+      workbox: {
+        navigateFallbackDenylist: [/^\/arsip-uas/],
+      },
       manifest: {
         name: 'AKS1 — Akuntansi S1 UNAIR',
         short_name: 'AKS1',
