@@ -111,13 +111,16 @@ export default function PomodoroTimer() {
         }}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2">
+          <div 
+            {...draggable.handlers}
+            className="flex items-center justify-between mb-4 cursor-move touch-none"
+          >
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pointer-events-none">
               <Timer size={18} className="text-blue-500" /> Pomodoro
             </h3>
             <button 
               onClick={() => setIsOpen(false)}
-              className="text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-full transition"
+              className="text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-full transition relative z-10"
             >
               <X size={16} />
             </button>

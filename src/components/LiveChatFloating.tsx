@@ -156,13 +156,20 @@ export default function LiveChatFloating() {
         <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
           {/* Header */}
-          <div className="flex items-center justify-between p-4 bg-emerald-600 text-white shrink-0">
-            <div className="flex items-center gap-2 font-bold">
-              <Users size={20} /> Kelas Global (Live)
+          <div 
+            {...draggable.handlers}
+            className="flex items-center justify-between p-4 bg-indigo-600 text-white shrink-0 cursor-move touch-none"
+          >
+            <div className="flex items-center gap-2 font-bold pointer-events-none">
+              <MessageSquare size={20} /> Chat Global
+              <div className="flex items-center gap-1.5 px-2 py-0.5 bg-indigo-500/50 rounded-full text-[10px]">
+                <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                <span className="opacity-90">{users.length} Online</span>
+              </div>
             </div>
             <button 
               onClick={() => setIsOpen(false)}
-              className="text-emerald-100 hover:text-white hover:bg-emerald-700 p-1 rounded-full transition"
+              className="text-indigo-100 hover:text-white hover:bg-indigo-700 p-1 rounded-full transition relative z-10"
             >
               <X size={18} />
             </button>
