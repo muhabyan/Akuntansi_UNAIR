@@ -3,6 +3,7 @@ import {
   BookOpen, Calendar, Target, BrainCircuit, Bot, MessageSquare, 
   Clock, Coffee, GraduationCap, Sparkles, Zap, Shield, ArrowRight
 } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 
 // Reusable Intersection Observer Wrapper
 function GuideSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
@@ -32,6 +33,23 @@ function GuideSection({ children, className = '' }: { children: React.ReactNode;
 }
 
 export default function GuideView({ onHome }: { onHome: () => void }) {
+  const { user, signIn } = useAuth();
+
+  const handleStartLearning = () => {
+    onHome();
+    setTimeout(() => {
+      document.getElementById('course-catalog')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleJoinCommunity = () => {
+    if (!user) {
+      signIn();
+    } else {
+      window.dispatchEvent(new CustomEvent('open-global-chat'));
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden selection:bg-blue-200 dark:selection:bg-blue-900/50 pt-16">
       
@@ -52,7 +70,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
             Aplikasi ini bukan sekadar gudang PDF. Ini adalah ruang belajar interaktif dengan asisten AI, flashcard, kuis langsung, dan manajemen waktu yang cerdas.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button onClick={onHome} className="btn-primary px-8 py-3 rounded-xl shadow-lg shadow-blue-500/25 flex items-center gap-2 hover:scale-105 transition-transform">
+            <button onClick={handleStartLearning} className="btn-primary px-8 py-3 rounded-xl shadow-lg shadow-blue-500/25 flex items-center gap-2 hover:scale-105 transition-transform">
               <GraduationCap className="w-5 h-5" /> Mulai Belajar Sekarang
             </button>
           </div>
@@ -253,8 +271,8 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               <p className="text-blue-100 text-lg mb-8 leading-relaxed">
                 Kamu tidak belajar sendirian. Tanyakan materi yang sulit, diskusikan tugas, atau sekadar menyapa mahasiswa lain di Global Chat interaktif yang selalu aktif 24/7.
               </p>
-              <button onClick={onHome} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-50 transition-colors">
-                Gabung ke Komunitas
+              <button onClick={handleJoinCommunity} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-50 transition-colors">
+                {user ? "Mulai Diskusi Sekarang" : "Login untuk Gabung Komunitas"}
               </button>
             </div>
           </div>

@@ -29,6 +29,13 @@ export default function LiveChatFloating() {
     }
   }, [messages, isOpen]);
 
+  // Listen to open-global-chat custom event
+  useEffect(() => {
+    const handleOpenChat = () => setIsOpen(true);
+    window.addEventListener('open-global-chat', handleOpenChat);
+    return () => window.removeEventListener('open-global-chat', handleOpenChat);
+  }, []);
+
   // Load initial messages and subscribe
   useEffect(() => {
     const fetchMessages = async () => {
