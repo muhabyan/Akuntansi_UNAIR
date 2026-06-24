@@ -180,7 +180,6 @@ ${pageText}
                               h2: ({node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
                               h3: ({node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
                               code: ({node, inline, className, children, ...props}: any) => {
-                                const match = /language-(\w+)/.exec(className || '');
                                 return !inline ? (
                                   <pre className="bg-gray-100 dark:bg-gray-700 rounded p-2 overflow-x-auto text-xs my-2">
                                     <code className={className} {...props}>
