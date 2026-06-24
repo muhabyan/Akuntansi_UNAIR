@@ -160,12 +160,20 @@ export default function AITutorFloating() {
               
               <div className="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
                 <form onSubmit={handleSendMessage} className="flex items-center gap-2">
-                  <input
-                    type="text"
+                  <textarea
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
-                    placeholder="Tanya soal pajak, etika, dll..."
-                    className="flex-1 px-3 py-2 bg-gray-100 dark:bg-gray-800 border-none rounded-full text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        if (inputText.trim() && !isLoading) {
+                          handleSendMessage(e as any);
+                        }
+                      }
+                    }}
+                    placeholder="Tanya soal pajak, etika, dll... (Shift+Enter untuk baris baru)"
+                    className="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 border-none rounded-2xl text-sm text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none min-h-[40px] max-h-32 overflow-y-auto"
+                    rows={1}
                   />
                   <button 
                     type="submit"
