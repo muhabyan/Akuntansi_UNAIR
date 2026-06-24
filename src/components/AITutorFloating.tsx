@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Bot, Send, X, Key, Info } from 'lucide-react';
 import { useGeminiSettings } from '../hooks/useGeminiSettings';
-import { chatWithGemini, type GeminiMessage } from '../lib/geminiClient';
+import { chatWithAI, type AIMessage } from '../lib/aiClient';
 
 const formatMessage = (text: string) => {
   // Split by **bold** text
@@ -20,7 +20,7 @@ export default function AITutorFloating() {
   const { apiKey, saveApiKey, removeApiKey, hasKey } = useGeminiSettings();
   const [inputKey, setInputKey] = useState('');
   
-  const [messages, setMessages] = useState<GeminiMessage[]>([
+  const [messages, setMessages] = useState<AIMessage[]>([
     { role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }
   ]);
   const [inputText, setInputText] = useState('');
@@ -48,14 +48,14 @@ export default function AITutorFloating() {
     const userMsg = inputText.trim();
     setInputText('');
     
-    const newMessages: GeminiMessage[] = [...messages, { role: 'user', content: userMsg }];
+    const newMessages: AIMessage[] = [...messages, { role: 'user', content: userMsg }];
     setMessages(newMessages);
     setIsLoading(true);
 
     try {
       const systemPrompt = "Kamu adalah AI Tutor pintar yang bertugas mendampingi mahasiswa S1 Akuntansi Fakultas Ekonomi dan Bisnis Universitas Airlangga (FEB UNAIR). Gunakan bahasa Indonesia yang ramah, asik, semi-formal, dan suportif. Jelaskan konsep akuntansi, pajak, dan etika profesi dengan analogi sederhana yang mudah dipahami mahasiswa.";
       
-      const reply = await chatWithGemini(newMessages, apiKey, systemPrompt);
+      const reply = await chatWithAI(newMessages, apiKey, systemPrompt);
       setMessages(prev => [...prev, { role: 'model', content: reply }]);
     } catch (error: any) {
       setMessages(prev => [...prev, { role: 'model', content: `[ERROR]: ${error.message}` }]);
@@ -95,7 +95,7 @@ export default function AITutorFloating() {
               </div>
               <h3 className="text-center font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Setup AI Tutor</h3>
               <p className="text-sm text-center text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-                Fitur ini 100% gratis, tapi Anda butuh <b>Google Gemini API Key</b> milik Anda sendiri karena aplikasi ini berjalan secara lokal.
+                Fitur ini 100% gratis, tapi Anda butuh <b>API Key (Gemini atau Groq)</b> milik Anda sendiri karena aplikasi ini berjalan secara lokal.
               </p>
               
               <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-3 text-xs text-yellow-800 dark:text-yellow-200 mb-4 flex gap-2">
