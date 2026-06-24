@@ -202,7 +202,7 @@ export default function AITutorFloating() {
                   </button>
                 </form>
                 <div className="text-[10px] text-center text-gray-400 mt-2 flex items-center justify-center gap-2">
-                  <span>Powered by {apiKey?.startsWith('gsk_') ? 'Groq (Llama 3.1)' : 'Gemini'}</span>
+                  <span>Powered by {apiKey?.startsWith('gsk_') ? 'Groq (Llama 70B)' : 'Gemini'}</span>
                   <span>•</span>
                   <button onClick={removeApiKey} className="hover:text-red-500 hover:underline">
                     Hapus Kunci API

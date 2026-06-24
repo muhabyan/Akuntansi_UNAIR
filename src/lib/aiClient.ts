@@ -30,9 +30,9 @@ export async function chatWithAI(
     });
 
     const payload = {
-      model: 'llama-3.1-8b-instant',
+      model: 'llama-3.1-70b-versatile',
       messages: formattedMessages,
-      temperature: 0.7
+      temperature: 0.1 // Lowered temperature for more factual answers
     };
 
     try {
