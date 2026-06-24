@@ -215,17 +215,19 @@ export default function PomodoroTimer() {
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
-                if (draggable.edgeState === 'left') {
-                  return 'w-10 md:w-14 h-14 md:h-16 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
-                } else if (draggable.edgeState === 'right') {
-                  return 'w-10 md:w-14 h-14 md:h-16 rounded-l-xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                if (!draggable.isDesktop) {
+                  if (draggable.edgeState === 'left') return 'w-8 h-12 rounded-r-lg bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  if (draggable.edgeState === 'right') return 'w-8 h-12 rounded-l-lg bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  return 'w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50';
                 } else {
-                  return 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100 transition-opacity';
+                  if (draggable.edgeState === 'left') return 'w-14 h-16 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  if (draggable.edgeState === 'right') return 'w-14 h-16 rounded-l-xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  return 'w-14 h-14 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100 transition-opacity';
                 }
               })()
         }`}
       >
-        {!isOpen && <Timer size={24} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />}
+        {!isOpen && <Timer size={draggable.isDesktop ? 24 : 16} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />}
       </button>
     </>
   );

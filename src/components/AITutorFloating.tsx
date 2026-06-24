@@ -385,17 +385,19 @@ ${pageText}
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
-                if (draggable.edgeState === 'right') {
-                  return 'w-10 md:w-14 h-14 md:h-16 rounded-l-xl bg-blue-600 text-white';
-                } else if (draggable.edgeState === 'left') {
-                  return 'w-10 md:w-14 h-14 md:h-16 rounded-r-xl bg-blue-600 text-white';
+                if (!draggable.isDesktop) {
+                  if (draggable.edgeState === 'right') return 'w-8 h-12 rounded-l-lg bg-blue-600 text-white';
+                  if (draggable.edgeState === 'left') return 'w-8 h-12 rounded-r-lg bg-blue-600 text-white';
+                  return 'w-10 h-10 rounded-full bg-blue-600 text-white opacity-50';
                 } else {
-                  return 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-600 text-white opacity-50 hover:opacity-100 transition-opacity';
+                  if (draggable.edgeState === 'right') return 'w-14 h-16 rounded-l-xl bg-blue-600 text-white';
+                  if (draggable.edgeState === 'left') return 'w-14 h-16 rounded-r-xl bg-blue-600 text-white';
+                  return 'w-14 h-14 rounded-full bg-blue-600 text-white opacity-50 hover:opacity-100 transition-opacity';
                 }
               })()
         }`}
       >
-        {!isOpen && <Bot size={24} />}
+        {!isOpen && <Bot size={draggable.isDesktop ? 24 : 16} />}
       </button>
     </>
   );
