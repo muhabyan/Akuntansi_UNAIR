@@ -3,12 +3,14 @@ import { Bot, Send, X, Key, Info } from 'lucide-react';
 import { useGeminiSettings } from '../hooks/useGeminiSettings';
 import { chatWithAI, type AIMessage } from '../lib/aiClient';
 import { useDraggableWidget } from '../hooks/useDraggableWidget';
+import { useStudySchedule } from '../hooks/useStudySchedule';
 import ReactMarkdown from 'react-markdown';
 
 export default function AITutorFloating() {
   const [isOpen, setIsOpen] = useState(false);
   const { apiKey, saveApiKey, removeApiKey, hasKey } = useGeminiSettings();
   const [inputKey, setInputKey] = useState('');
+  const { schedules } = useStudySchedule();
   
   const draggable = useDraggableWidget({
     id: 'ai-tutor',
@@ -88,6 +90,18 @@ export default function AITutorFloating() {
         pageText = pageText.substring(0, 15000) + '... (terpotong)';
       }
 
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const validSchedules = schedules.filter(s => {
+        if (s.is_done) return false; 
+        const sDate = new Date(s.date);
+        sDate.setHours(0, 0, 0, 0);
+        const diffTime = today.getTime() - sDate.getTime();
+        return (diffTime / (1000 * 3600 * 24)) <= 3;
+      });
+
+      const scheduleContextList = validSchedules.map(s => `- ${s.course_code} ${s.activity_id} pada ${s.date} ${s.time}`).join('\\n');
+
       const systemPrompt = `Kamu adalah AI Tutor pintar yang bertugas mendampingi mahasiswa S1 Akuntansi Fakultas Ekonomi dan Bisnis Universitas Airlangga (FEB UNAIR). Gunakan bahasa Indonesia yang ramah, asik, semi-formal, dan suportif. Jelaskan konsep akuntansi, pajak, dan etika profesi dengan analogi sederhana yang mudah dipahami mahasiswa.
 
 Kamu memiliki kemampuan "Agentic Actions". Kamu bisa mengarahkan halaman atau mengatur jadwal studi mahasiswa. 
@@ -101,6 +115,13 @@ Aksi yang tersedia:
 
 Jika kamu mengeluarkan command, sertakan juga kalimat pemberitahuan santai sebelum blok <COMMAND>. 
 Tanggal hari ini: ${new Date().toISOString().split('T')[0]}.
+
+ATURAN PENTING PENJADWALAN & NAVIGASI:
+1. Kapasitas jadwal: User saat ini memiliki ${validSchedules.length}/8 jadwal aktif. Jika user meminta tambah jadwal namun kapasitas sudah 8, TOLAK permintaan tersebut dengan halus dan minta user menyelesaikan/menghapus jadwal lama terlebih dahulu. JANGAN keluarkan perintah schedule_add jika kapasitas sudah 8!
+2. Bentrok jadwal: Berikut daftar jadwal user yang sudah terisi saat ini:
+${scheduleContextList || 'Belum ada jadwal.'}
+Jadwal baru yang diminta tidak boleh memiliki selisih waktu KURANG DARI 5 MENIT dengan jadwal yang sudah ada (tidak boleh bentrok). Jika bentrok, tolak pembuatan jadwal dan sarankan waktu lain!
+3. Mencegah duplikasi navigasi: URL user saat ini adalah "${window.location.pathname}". Jika user meminta pindah ke halaman materi/kuis yang sedang ia buka saat ini, beritahu bahwa ia sudah berada di halaman tersebut dan JANGAN keluarkan perintah navigate.
 
 PENTING: Berikut adalah teks dari halaman web aplikasi belajar yang SEDANG DIBACA oleh mahasiswa saat ini sebagai konteks tambahan.
 <MATERI_YANG_SEDANG_DIBACA>
