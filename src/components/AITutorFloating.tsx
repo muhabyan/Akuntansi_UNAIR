@@ -10,9 +10,19 @@ export default function AITutorFloating() {
   const { apiKey, saveApiKey, removeApiKey, hasKey } = useGeminiSettings();
   const [inputKey, setInputKey] = useState('');
   
-  const [messages, setMessages] = useState<AIMessage[]>([
-    { role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }
-  ]);
+  const [messages, setMessages] = useState<AIMessage[]>(() => {
+    const saved = localStorage.getItem('aiTutorChatHistory');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch (e) {
+        console.error('Failed to parse chat history');
+      }
+    }
+    return [
+      { role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }
+    ];
+  });
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   
@@ -22,7 +32,16 @@ export default function AITutorFloating() {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
+    localStorage.setItem('aiTutorChatHistory', JSON.stringify(messages));
   }, [messages]);
+
+  const handleClearChat = () => {
+    if (confirm('Apakah Anda yakin ingin menghapus seluruh riwayat obrolan?')) {
+      const initialMessage: AIMessage[] = [{ role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }];
+      setMessages(initialMessage);
+      localStorage.setItem('aiTutorChatHistory', JSON.stringify(initialMessage));
+    }
+  };
 
   const handleSaveKey = (e: React.FormEvent) => {
     e.preventDefault();
@@ -203,6 +222,9 @@ export default function AITutorFloating() {
                 </form>
                 <div className="text-[10px] text-center text-gray-400 mt-2 flex items-center justify-center gap-2">
                   <span>Powered by {apiKey?.startsWith('gsk_') ? 'Groq (Llama 70B)' : 'Gemini'}</span>
+                  <button onClick={handleClearChat} className="hover:text-red-500 hover:underline">
+                    Bersihkan Obrolan
+                  </button>
                   <span>•</span>
                   <button onClick={removeApiKey} className="hover:text-red-500 hover:underline">
                     Hapus Kunci API
