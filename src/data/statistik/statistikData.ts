@@ -330,3 +330,35 @@ export const MAS122_READINGS: Record<number, Reading> = {
   13: withSupplement(tm13),
   14: withSupplement(tm14),
 };
+
+const MAS122_REVIEW_UAS_READING: Reading = {
+  tm: 15,
+  title: 'Bocoran Pola Ujian UAS Statistik (MAS122)',
+  ref: 'UAS STATIS 2024.pdf',
+  intro: 'Rekap pola penyelesaian dan rumus yang diujikan dalam UAS Statistik berdasarkan arsip soal nyata.',
+  objectives: ['Menghitung Moving Average dan Seasonal Index', 'Membedakan jenis-jenis ANOVA', 'Menganalisis hasil Regresi Sederhana', 'Membedakan uji parametrik vs non-parametrik'],
+  blocks: [
+    { kind: 'h2', text: 'A. Time Series & Peramalan' },
+    { kind: 'formula', text: 'Moving Average: MA(n) = Total data dalam n periode / n', note: 'Contoh: Jika data 2005=2, 2006=6, 2007=4. MA3 untuk 2006 = (2+6+4)/3 = 4' },
+    { kind: 'formula', text: 'Indeks Musiman (Seasonal Index) = (Rata-rata Musim / Rata-rata Keseluruhan) x 100', note: 'Contoh: Jika rata musim semi 81.46 dan keseluruhan 97.41, indeks = (81.46 / 97.41) x 100 = 83.6 (atau 16.4% lebih rendah)' },
+    { kind: 'formula', text: 'Faktor Koreksi = Jumlah Periode Musim / (Jumlah Indeks Musiman / 100)', note: 'Contoh: Jika total kuartal 4, dan jumlah indeks 401.4, Faktor Koreksi = 4 / 4.014 = 0.9968' },
+    { kind: 'h2', text: 'B. Analisis Varians (ANOVA)' },
+    { kind: 'table', headers: ['Metode', 'Kondisi Penggunaan'], rows: [
+      ['One-way ANOVA', 'Membandingkan rata-rata LEBIH dari 2 kelompok.'],
+      ['Two-way ANOVA without interaction', '2 faktor bebas, asumsi keduanya independen dan tidak saling memengaruhi.'],
+      ['Two-way ANOVA with interaction', 'Menguji interaksi 2 faktor. Misalnya kinerja berdasarkan pegawai DAN lokasi, di mana lokasi mungkin memengaruhi kinerja pegawai secara spesifik.'],
+      ['Repeated Measures ANOVA', 'Subjek yang SAMA diukur berkali-kali (contoh: sebelum dan sesudah intervensi/pengaruh waktu). Data Time Series jangka panjang tidak cocok pakai One-way biasa.']
+    ] },
+    { kind: 'callout', variant: 'key', title: 'Syarat ANOVA', text: 'Data minimal skala interval, distribusi normal, dan homogenitas varians.' },
+    { kind: 'h2', text: 'C. Korelasi dan Regresi' },
+    { kind: 'ul', items: [
+      '**Korelasi Pearson vs Spearman:** Spearman digunakan untuk data ordinal (ranking) atau tidak normal. Nilai korelasi berada di range -1 sampai 1. Ingat: Korelasi TIDAK BISA membuktikan sebab-akibat!',
+      '**Persamaan Regresi (Y = a + bX):** Intercept (a) adalah nilai tetap/fixed cost (saat X = 0). Contoh: C = 3000 + 2Q. Jika Q = 0, biaya $3000.',
+      '**Confidence vs Prediction Interval:** Ada rumus yang diujikan untuk membuat selang (interval) penjualan masa depan (Prediction Interval) berdasarkan tabel t-stat dan standar error regresi.'
+    ]}
+  ]
+};
+
+export const MAS122_REVIEW_READINGS: Partial<Record<'uts' | 'uas', Reading>> = {
+  uas: MAS122_REVIEW_UAS_READING
+};

@@ -264,3 +264,41 @@ const tm7: Reading = {
 export const MNU101_TM1_7_READINGS: Record<number, Reading> = {
   1: tm1, 2: tm2, 3: tm3, 4: tm4, 5: tm5, 6: tm6, 7: tm7,
 };
+
+const MNU101_REVIEW_UAS_READING: Reading = {
+  tm: 15,
+  title: 'Bocoran UAS Pengantar Bisnis',
+  ref: 'UAS 2024 / Pra-UAS TM 8-14',
+  intro: 'Bocoran poin-poin utama ujian TM8-14 beserta kesalahan umum mahasiswa dan analisis real case dari ujian sebelumnya.',
+  objectives: ['Menganalisis case Chobani, Dunkin Donuts, Dominos, FedEx, Zappos', 'Mampu menghindari jebakan job description vs job specification', 'Menerapkan bauran pemasaran (4P) dalam menjawab esai'],
+  blocks: [
+    { kind: 'h2', text: 'A. Jebakan Umum / Kesalahan Esai' },
+    { kind: 'callout', variant: 'warning', title: 'Job Description vs Job Specification', text: 'Banyak mahasiswa tertukar. **Job Description** berisi tentang *pekerjaan* (tugas, tanggung jawab, target). Sedangkan **Job Specification** berisi tentang *orangnya* (pendidikan, keahlian, karakter).' },
+    { kind: 'callout', variant: 'warning', title: 'Pricing Strategy', text: 'Harga tidak berdiri sendiri. Saat menjawab esai pricing, harus dikaitkan dengan target market, tahapan Product Life Cycle, dan positioning. Jangan menjawab "hanya ikut harga pasar".' },
+    { kind: 'h2', text: 'B. Analisis Kasus Esai (High Probability)' },
+    { kind: 'example', title: 'HRM - Kasus Chobani', blocks: [
+      { kind: 'p', text: '**Fokus:** Menarik, mempertahankan, dan memotivasi karyawan sambil menjaga growth bisnis.' },
+      { kind: 'p', text: '**Kerangka Jawaban:** Gaji saja tidak cukup (itu hygiene factor). Perusahaan perlu career path, pengakuan, empowermen, dan budaya inklusif.' }
+    ]},
+    { kind: 'example', title: 'Marketing - Kasus Dunkin Donuts', blocks: [
+      { kind: 'p', text: '**Fokus:** Mempertahankan relevansi di pasar F&B.' },
+      { kind: 'p', text: '**Kerangka Jawaban:** Harus bahas STP (Segmentation, Targeting, Positioning). Value proposition Dunkin: cepat, affordable, mudah diakses. Hubungkan dengan CRM dan CLV (Customer Lifetime Value).' }
+    ]},
+    { kind: 'example', title: 'Product & Pricing - Kasus Dominos', blocks: [
+      { kind: 'p', text: '**Fokus:** Penciptaan produk dan strategi harga.' },
+      { kind: 'p', text: '**Kerangka Jawaban:** Hubungkan bauran produk (Product Mix) dan tahapan PLC (Product Life Cycle). Jika di tahap maturity, terapkan discount selektif dan diferensiasi.' }
+    ]},
+    { kind: 'example', title: 'Distribution - Kasus FedEx', blocks: [
+      { kind: 'p', text: '**Fokus:** Saluran distribusi (Place) dan SCM.' },
+      { kind: 'p', text: '**Kerangka Jawaban:** Bahas enam utilities dan intermediasi. Rantai pasok (Supply Chain) yang tangguh jadi kunci nilai lebih ke pelanggan.' }
+    ]},
+    { kind: 'example', title: 'E-Business - Kasus Zappos', blocks: [
+      { kind: 'p', text: '**Fokus:** E-commerce dan kepuasan pelanggan.' },
+      { kind: 'p', text: '**Kerangka Jawaban:** Strategi sosial media, CRM yang berbasis pada teknologi, dan layanan after-sales untuk memenangkan loyalitas pelanggan di dunia online.' }
+    ]}
+  ]
+};
+
+export const MNU101_REVIEW_READINGS: Partial<Record<'uts' | 'uas', Reading>> = {
+  uas: MNU101_REVIEW_UAS_READING
+};

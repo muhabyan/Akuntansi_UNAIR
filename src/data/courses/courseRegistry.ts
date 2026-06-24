@@ -603,7 +603,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         };
       });
 
-      return { readings, reviews: {} };
+      return { readings, reviews: module.MNU101_REVIEW_READINGS };
     }
     case 'AKA103': {
       const module = await import('../ekpa/ekpaReadings');
@@ -611,7 +611,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     }
     case 'MAS122': {
       const module = await import('../statistik/statistikData');
-      return { readings: module.MAS122_READINGS, reviews: {} };
+      return { readings: module.MAS122_READINGS, reviews: module.MAS122_REVIEW_READINGS };
     }
     case 'AKK106': {
       const module = await import('../akdas/akdasPraUTS');
