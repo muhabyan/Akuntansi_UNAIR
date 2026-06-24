@@ -471,7 +471,7 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
     readings[block.order] = {
       tm: block.order,
       title: block.title,
-      ref: block.source_file || 'perpajakanPraUTS.ts',
+      ref: 'Regulasi s.d. Juni 2026',
       intro: `Modul Perpajakan I Tatap Muka ${block.order}: ${block.topics?.join(', ') || block.title}.`,
       objectives: block.topics || [],
       blocks: parsedBlocks

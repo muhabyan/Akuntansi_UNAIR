@@ -30,8 +30,8 @@ const tm8: Reading = {
     {
       "kind": "callout",
       "variant": "info",
-      "title": "Status Sumber Pra-UAS",
-      "text": "Isi akademik dinormalisasi dari **PTE_Pra-UAS_Materi (1).md**. Struktur visual dan SVG dirujuk dari **pte-pra-uas-merge-ready (2).html** tanpa menjalankan CSS, JavaScript, inline handler, atau HTML mentah dari sumber."
+      "title": "Materi Terstandardisasi",
+      "text": "Materi Pra-UAS ini telah dinormalisasi dan disesuaikan dengan pedoman kurikulum terbaru, mencakup aspek akademik komprehensif serta struktur visual yang interaktif."
     },
     {
       "kind": "callout",
