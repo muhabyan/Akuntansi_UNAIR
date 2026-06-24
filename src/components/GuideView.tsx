@@ -1,7 +1,7 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { 
   BookOpen, Calendar, Target, BrainCircuit, Bot, MessageSquare, 
-  Clock, Coffee, GraduationCap, Sparkles, Zap, Shield, ArrowRight
+  Clock, Coffee, GraduationCap, Sparkles, Zap, Shield, ArrowRight, ArrowUp, Maximize
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -34,6 +34,23 @@ function GuideSection({ children, className = '' }: { children: React.ReactNode;
 
 export default function GuideView({ onHome }: { onHome: () => void }) {
   const { user, signIn } = useAuth();
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const handleStartLearning = () => {
     onHome();
@@ -51,8 +68,19 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden selection:bg-blue-200 dark:selection:bg-blue-900/50 pt-16">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden selection:bg-blue-200 dark:selection:bg-blue-900/50 pt-16 relative">
       
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30 transition-all duration-300 ${
+          showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
+        }`}
+        aria-label="Kembali ke Atas"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
+
       {/* 1. Hero Section */}
       <section className="relative pt-24 pb-20 px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 bg-blue-600/5 dark:bg-blue-500/5 -skew-y-3 origin-top-left -z-10" />
@@ -266,8 +294,12 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               
               <div className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-xl p-4 mb-6">
                 <p className="text-xs text-sky-700 dark:text-sky-400 font-medium leading-relaxed">
-                  <strong className="block mb-1">Lokasi Zen Mode:</strong> Saat kamu membuka halaman materi bacaan (Reading View), perhatikan tombol bertuliskan <strong>"Zen Mode"</strong> dengan ikon perbesar layar di <strong>pojok kanan atas</strong>. Klik tombol tersebut untuk masuk ke tampilan layar penuh bebas hambatan!
+                  <strong className="block mb-2 text-sm">Lokasi Zen Mode:</strong> Saat kamu membuka halaman materi bacaan (Reading View), perhatikan tombol bertuliskan <strong>"Zen Mode"</strong> di <strong>pojok kanan atas</strong>.
                 </p>
+                <div className="mt-3 bg-slate-900 dark:bg-slate-800/80 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-400/30">
+                  <Maximize className="w-4 h-4 text-blue-400" />
+                  <span className="text-blue-400 font-bold text-sm">Zen Mode</span>
+                </div>
               </div>
 
               <ul className="space-y-3">
