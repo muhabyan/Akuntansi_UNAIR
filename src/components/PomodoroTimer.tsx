@@ -209,15 +209,15 @@ export default function PomodoroTimer() {
           top: draggable.position.y,
           zIndex: 60
         }}
-        className={`flex items-center justify-center shadow-md transition-all duration-300 active:scale-95 touch-none ${
-          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-slate-400/50 cursor-grabbing' : 'cursor-pointer'
+        className={`group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
+          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-slate-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
                 if (!draggable.isDesktop) {
-                  if (draggable.edgeState === 'left') return 'w-8 h-12 rounded-r-lg bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
-                  if (draggable.edgeState === 'right') return 'w-8 h-12 rounded-l-lg bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  if (draggable.edgeState === 'left') return draggable.isLongPressing ? 'w-12 h-12 rounded-r-2xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' : 'w-1.5 h-10 rounded-r-md bg-white/60 dark:bg-slate-900/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-white active:dark:bg-slate-900 border-y border-r border-slate-200/50 dark:border-slate-700/50 text-slate-800 dark:text-slate-200';
+                  if (draggable.edgeState === 'right') return draggable.isLongPressing ? 'w-12 h-12 rounded-l-2xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' : 'w-1.5 h-10 rounded-l-md bg-white/60 dark:bg-slate-900/60 active:w-12 active:h-12 active:rounded-l-2xl active:bg-white active:dark:bg-slate-900 border-y border-l border-slate-200/50 dark:border-slate-700/50 text-slate-800 dark:text-slate-200';
                   return 'w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50';
                 } else {
                   if (draggable.edgeState === 'left') return 'w-14 h-16 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
@@ -227,7 +227,7 @@ export default function PomodoroTimer() {
               })()
         }`}
       >
-        {!isOpen && <Timer size={draggable.isDesktop ? 24 : 16} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />}
+        {!isOpen && <Timer size={draggable.isDesktop ? 24 : 20} className={`${isRunning ? 'text-blue-500 animate-pulse' : ''} ${!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''}`} />}
       </button>
     </>
   );

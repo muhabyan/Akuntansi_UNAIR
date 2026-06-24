@@ -289,15 +289,15 @@ export default function LiveChatFloating() {
           top: draggable.position.y,
           zIndex: 60
         }}
-        className={`flex items-center justify-center shadow-md transition-all duration-300 active:scale-95 touch-none ${
-          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-indigo-400/50 cursor-grabbing' : 'cursor-pointer'
+        className={`group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
+          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-indigo-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
                 if (!draggable.isDesktop) {
-                  if (draggable.edgeState === 'left') return 'w-8 h-12 rounded-r-lg bg-indigo-600 text-white';
-                  if (draggable.edgeState === 'right') return 'w-8 h-12 rounded-l-lg bg-indigo-600 text-white';
+                  if (draggable.edgeState === 'left') return draggable.isLongPressing ? 'w-12 h-12 rounded-r-2xl bg-indigo-600 text-white' : 'w-1.5 h-10 rounded-r-md bg-indigo-500/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-indigo-600 text-white';
+                  if (draggable.edgeState === 'right') return draggable.isLongPressing ? 'w-12 h-12 rounded-l-2xl bg-indigo-600 text-white' : 'w-1.5 h-10 rounded-l-md bg-indigo-500/60 active:w-12 active:h-12 active:rounded-l-2xl active:bg-indigo-600 text-white';
                   return 'w-10 h-10 rounded-full bg-indigo-600 text-white opacity-50';
                 } else {
                   if (draggable.edgeState === 'left') return 'w-14 h-16 rounded-r-xl bg-indigo-600 text-white';
@@ -309,9 +309,9 @@ export default function LiveChatFloating() {
       >
         {!isOpen && (
           <div className="relative flex items-center justify-center">
-            <MessageSquare size={draggable.isDesktop ? 24 : 16} />
+            <MessageSquare size={draggable.isDesktop ? 24 : 20} className={!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''} />
             {unreadCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center border border-indigo-600">
+              <span className={`absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center border border-indigo-600 ${!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''}`}>
                 {unreadCount > 99 ? '99+' : unreadCount}
               </span>
             )}

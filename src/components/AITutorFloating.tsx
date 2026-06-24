@@ -379,15 +379,15 @@ ${pageText}
           top: draggable.position.y,
           zIndex: 60
         }}
-        className={`flex items-center justify-center shadow-md transition-all duration-300 active:scale-95 touch-none ${
-          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-blue-400/50 cursor-grabbing' : 'cursor-pointer'
+        className={`group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
+          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-blue-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
             : (() => {
                 if (!draggable.isDesktop) {
-                  if (draggable.edgeState === 'right') return 'w-8 h-12 rounded-l-lg bg-blue-600 text-white';
-                  if (draggable.edgeState === 'left') return 'w-8 h-12 rounded-r-lg bg-blue-600 text-white';
+                  if (draggable.edgeState === 'right') return draggable.isLongPressing ? 'w-12 h-12 rounded-l-2xl bg-blue-600 text-white' : 'w-1.5 h-10 rounded-l-md bg-blue-500/60 active:w-12 active:h-12 active:rounded-l-2xl active:bg-blue-600 text-white';
+                  if (draggable.edgeState === 'left') return draggable.isLongPressing ? 'w-12 h-12 rounded-r-2xl bg-blue-600 text-white' : 'w-1.5 h-10 rounded-r-md bg-blue-500/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-blue-600 text-white';
                   return 'w-10 h-10 rounded-full bg-blue-600 text-white opacity-50';
                 } else {
                   if (draggable.edgeState === 'right') return 'w-14 h-16 rounded-l-xl bg-blue-600 text-white';
@@ -397,7 +397,7 @@ ${pageText}
               })()
         }`}
       >
-        {!isOpen && <Bot size={draggable.isDesktop ? 24 : 16} />}
+        {!isOpen && <Bot size={draggable.isDesktop ? 24 : 20} className={!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''} />}
       </button>
     </>
   );
