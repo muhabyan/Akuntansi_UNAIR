@@ -187,10 +187,9 @@ ${pageText}
       >
         <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
-          {/* Header */}
           <div 
             {...draggable.handlers}
-            className={`flex items-center justify-between p-4 text-white shrink-0 touch-none transition-colors ${
+            className={`flex items-center justify-between p-4 text-white shrink-0 touch-none select-none transition-colors ${
               draggable.isLongPressing ? 'bg-blue-700 cursor-grabbing' : 'bg-blue-600 cursor-grab'
             }`}
           >

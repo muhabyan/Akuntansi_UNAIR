@@ -113,7 +113,7 @@ export default function PomodoroTimer() {
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
           <div 
             {...draggable.handlers}
-            className={`flex items-center justify-between mb-4 touch-none p-2 -m-2 rounded-lg transition-colors ${
+            className={`flex items-center justify-between mb-4 touch-none select-none p-2 -m-2 rounded-lg transition-colors ${
               draggable.isLongPressing ? 'bg-slate-100 dark:bg-slate-800 cursor-grabbing' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-grab'
             }`}
           >
