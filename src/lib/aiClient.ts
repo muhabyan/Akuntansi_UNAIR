@@ -32,7 +32,7 @@ export async function chatWithAI(
     const payload = {
       model: 'llama-3.3-70b-versatile',
       messages: formattedMessages,
-      temperature: 0.1 // Lowered temperature for more factual answers
+      temperature: 0.7 // Increased temperature to prevent repetition loops
     };
 
     try {

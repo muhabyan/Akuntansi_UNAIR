@@ -100,7 +100,7 @@ export default function AITutorFloating() {
         return (diffTime / (1000 * 3600 * 24)) <= 3;
       });
 
-      const scheduleContextList = validSchedules.map(s => `- ${s.course_code} ${s.activity_id} pada ${s.date} ${s.time}`).join('\\n');
+      const scheduleContextList = validSchedules.map(s => `- ${s.course_code} ${s.activity_id} pada ${s.date} ${s.time}`).join('\n');
 
       const systemPrompt = `Kamu adalah AI Tutor pintar yang bertugas mendampingi mahasiswa S1 Akuntansi Fakultas Ekonomi dan Bisnis Universitas Airlangga (FEB UNAIR). Gunakan bahasa Indonesia yang ramah, asik, semi-formal, dan suportif. Jelaskan konsep akuntansi, pajak, dan etika profesi dengan analogi sederhana yang mudah dipahami mahasiswa.
 
