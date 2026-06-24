@@ -99,7 +99,7 @@ export default function PomodoroTimer() {
         className={`fixed z-[100] transition-all duration-300 ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
-          isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
+          !isOpen ? 'scale-90 opacity-0 pointer-events-none' : draggable.isLongPressing ? 'scale-[1.02] opacity-100 pointer-events-auto' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
         style={{
           ...(isLeftHalf 
@@ -113,7 +113,9 @@ export default function PomodoroTimer() {
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
           <div 
             {...draggable.handlers}
-            className="flex items-center justify-between mb-4 cursor-move touch-none"
+            className={`flex items-center justify-between mb-4 touch-none p-2 -m-2 rounded-lg transition-colors ${
+              draggable.isLongPressing ? 'bg-slate-100 dark:bg-slate-800 cursor-grabbing' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-grab'
+            }`}
           >
             <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pointer-events-none">
               <Timer size={18} className="text-blue-500" /> Pomodoro

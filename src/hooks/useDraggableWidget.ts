@@ -98,7 +98,8 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
         clearTimeout(dragInfo.current.timer);
         dragInfo.current.timer = null;
       }
-      return;
+      setIsDragging(true);
+      setIsLongPressing(true);
     }
 
     if (isDragging) {

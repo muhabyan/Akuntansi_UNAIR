@@ -142,7 +142,7 @@ export default function LiveChatFloating() {
         className={`zen-hideable fixed z-[100] transition-all duration-300 ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
-          isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
+          !isOpen ? 'scale-90 opacity-0 pointer-events-none' : draggable.isLongPressing ? 'scale-[1.02] opacity-100 pointer-events-auto' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
         style={{
           ...(isLeftHalf 
@@ -158,7 +158,9 @@ export default function LiveChatFloating() {
           {/* Header */}
           <div 
             {...draggable.handlers}
-            className="flex items-center justify-between p-4 bg-indigo-600 text-white shrink-0 cursor-move touch-none"
+            className={`flex items-center justify-between p-4 text-white shrink-0 touch-none transition-colors ${
+              draggable.isLongPressing ? 'bg-indigo-700 cursor-grabbing' : 'bg-indigo-600 cursor-grab'
+            }`}
           >
             <div className="flex items-center gap-2 font-bold pointer-events-none">
               <Users size={20} /> Kelas Global (Live)
