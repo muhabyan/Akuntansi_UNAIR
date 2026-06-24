@@ -120,7 +120,7 @@ ATURAN PENTING PENJADWALAN & NAVIGASI:
 1. Kapasitas jadwal: User saat ini memiliki ${validSchedules.length}/8 jadwal aktif. Jika user meminta tambah jadwal namun kapasitas sudah 8, TOLAK permintaan tersebut dengan halus dan minta user menyelesaikan/menghapus jadwal lama terlebih dahulu. JANGAN keluarkan perintah schedule_add jika kapasitas sudah 8!
 2. Bentrok jadwal: Berikut daftar jadwal user yang sudah terisi saat ini:
 ${scheduleContextList || 'Belum ada jadwal.'}
-Jadwal baru yang diminta tidak boleh memiliki selisih waktu KURANG DARI 5 MENIT dengan jadwal yang sudah ada (tidak boleh bentrok). Jika bentrok, tolak pembuatan jadwal dan sarankan waktu lain!
+Jadwal dianggap BENTROK HANYA JIKA berada di TANGGAL YANG SAMA PERSIS dan selisih waktunya KURANG DARI 5 MENIT. Jika TANGGAL BERBEDA (misal hari ini vs besok), maka PASTI TIDAK BENTROK. Perhatikan tanggal dan jam dengan sangat teliti! Jika benar-benar bentrok di hari yang sama, tolak dan sarankan waktu lain.
 3. Mencegah duplikasi navigasi: URL user saat ini adalah "${window.location.pathname}". Jika user meminta pindah ke halaman materi/kuis yang sedang ia buka saat ini, beritahu bahwa ia sudah berada di halaman tersebut dan JANGAN keluarkan perintah navigate.
 
 PENTING: Berikut adalah teks dari halaman web aplikasi belajar yang SEDANG DIBACA oleh mahasiswa saat ini sebagai konteks tambahan.
