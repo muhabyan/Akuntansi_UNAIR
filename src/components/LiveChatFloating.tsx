@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, FormEvent } from 'react';
 import { MessageSquare, Send, X, Users, AlertCircle, Trash2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
+import { useDraggableWidget } from '../hooks/useDraggableWidget';
 
 interface ChatMessage {
   id: string;
@@ -19,6 +20,11 @@ export default function LiveChatFloating() {
   const [errorMsg, setErrorMsg] = useState('');
   const { user, signIn } = useAuth();
   
+  const draggable = useDraggableWidget({
+    id: 'live-chat',
+    defaultPosition: { x: window.innerWidth - 72, y: window.innerHeight / 2 - 80 }
+  });
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [unreadCount, setUnreadCount] = useState(0);
 
@@ -127,14 +133,18 @@ export default function LiveChatFloating() {
   };
 
   return (
-    <div className={`fixed top-[45%] left-0 w-0 h-0 pointer-events-none -translate-y-1/2 ${isOpen ? 'z-[100]' : 'z-50'}`}>
-      {/* Chat Panel */}
+    <>
+      {/* Expanded Panel */}
       <div 
-        className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
+        className={`fixed z-[100] transition-all duration-300 origin-bottom-right ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
+        style={{
+          bottom: Math.max(16, window.innerHeight - draggable.position.y + 16),
+          right: Math.max(16, window.innerWidth - draggable.position.x - 48)
+        }}
       >
-        <div className="w-[340px] md:w-[380px] h-[500px] max-h-[70vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
           {/* Header */}
           <div className="flex items-center justify-between p-4 bg-emerald-600 text-white shrink-0">
@@ -253,24 +263,42 @@ export default function LiveChatFloating() {
 
       {/* Floating Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center shadow-md transition-all duration-300 active:scale-95 ${
+        ref={draggable.ref}
+        {...draggable.handlers}
+        onClick={(e) => {
+          if (draggable.isMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          setIsOpen(!isOpen);
+        }}
+        style={{
+          ...draggable.handlers.style,
+          position: 'fixed',
+          left: draggable.position.x,
+          top: draggable.position.y,
+          zIndex: 60
+        }}
+        className={`flex items-center justify-center shadow-md transition-all duration-300 active:scale-95 touch-none ${
+          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-indigo-400/50 cursor-grabbing' : 'cursor-pointer'
+        } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-2 md:w-10 h-14 md:h-16 rounded-r-md md:rounded-r-2xl bg-emerald-600 text-white'
+            : 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-indigo-600 text-white'
         }`}
       >
-        <div className="absolute inset-y-0 -right-6 w-8 bg-transparent md:hidden" /> {/* Mobile touch target */}
-        <div className="absolute left-2.5 hidden md:flex">
-          <MessageSquare size={20} />
-        </div>
-        {unreadCount > 0 && !isOpen && (
-          <span className="absolute -top-1 -right-1 md:-right-1 flex h-3 w-3 md:h-5 md:w-5 items-center justify-center rounded-full bg-red-500 text-[8px] md:text-[10px] font-bold text-white shadow-sm ring-2 ring-white dark:ring-gray-900">
-            <span className="md:hidden"></span>
-            <span className="hidden md:inline">{unreadCount > 99 ? '99+' : unreadCount}</span>
-          </span>
+        {!isOpen && (
+          <div className="relative flex items-center justify-center">
+            <MessageSquare size={24} />
+            {unreadCount > 0 && (
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center border border-indigo-600">
+                {unreadCount > 99 ? '99+' : unreadCount}
+              </span>
+            )}
+          </div>
         )}
       </button>
-    </div>
+    </>
   );
 }

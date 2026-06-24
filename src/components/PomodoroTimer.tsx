@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Play, Pause, RotateCcw, Timer, X, Coffee, Brain } from 'lucide-react';
+import { useDraggableWidget } from '../hooks/useDraggableWidget';
 
 type TimerMode = 'focus' | 'break';
 
@@ -13,6 +14,11 @@ export default function PomodoroTimer() {
   const [mode, setMode] = useState<TimerMode>('focus');
   const [timeLeft, setTimeLeft] = useState(MODES.focus.minutes * 60);
   const [isRunning, setIsRunning] = useState(false);
+  
+  const draggable = useDraggableWidget({
+    id: 'pomodoro-timer',
+    defaultPosition: { x: 16, y: window.innerHeight / 2 - 28 }
+  });
   
   const playBell = () => {
     try {
@@ -84,12 +90,16 @@ export default function PomodoroTimer() {
   const progress = 100 - (timeLeft / (MODES[mode].minutes * 60)) * 100;
 
   return (
-    <div className={`fixed top-[60%] left-0 w-0 h-0 pointer-events-none -translate-y-1/2 ${isOpen ? 'z-[100]' : 'z-50'}`}>
+    <>
       {/* Expanded Panel */}
       <div 
-        className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-left ${
+        className={`fixed z-[100] transition-all duration-300 origin-bottom-left ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
+        style={{
+          bottom: Math.max(16, window.innerHeight - draggable.position.y + 16),
+          left: Math.max(16, draggable.position.x)
+        }}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
           <div className="flex items-center justify-between mb-4">
@@ -173,18 +183,33 @@ export default function PomodoroTimer() {
 
       {/* Floating Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto absolute left-0 top-1/2 -translate-y-1/2 flex items-center shadow-md transition-all duration-300 active:scale-95 ${
+        ref={draggable.ref}
+        {...draggable.handlers}
+        onClick={(e) => {
+          if (draggable.isMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          setIsOpen(!isOpen);
+        }}
+        style={{
+          ...draggable.handlers.style,
+          position: 'fixed',
+          left: draggable.position.x,
+          top: draggable.position.y,
+          zIndex: 60
+        }}
+        className={`flex items-center justify-center shadow-md transition-all duration-300 active:scale-95 touch-none ${
+          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-slate-400/50 cursor-grabbing' : 'cursor-pointer'
+        } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-2 md:w-10 h-14 md:h-16 rounded-r-md md:rounded-r-2xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
+            : 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200'
         }`}
       >
-        <div className="absolute inset-y-0 -right-6 w-8 bg-transparent md:hidden" /> {/* Mobile touch target */}
-        <div className="absolute left-2.5 hidden md:flex">
-          <Timer size={20} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />
-        </div>
+        {!isOpen && <Timer size={24} className={isRunning ? 'text-blue-500 animate-pulse' : ''} />}
       </button>
-    </div>
+    </>
   );
 }

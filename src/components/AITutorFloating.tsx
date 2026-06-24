@@ -2,13 +2,18 @@ import { useState, useRef, useEffect } from 'react';
 import { Bot, Send, X, Key, Info } from 'lucide-react';
 import { useGeminiSettings } from '../hooks/useGeminiSettings';
 import { chatWithAI, type AIMessage } from '../lib/aiClient';
-
+import { useDraggableWidget } from '../hooks/useDraggableWidget';
 import ReactMarkdown from 'react-markdown';
 
 export default function AITutorFloating() {
   const [isOpen, setIsOpen] = useState(false);
   const { apiKey, saveApiKey, removeApiKey, hasKey } = useGeminiSettings();
   const [inputKey, setInputKey] = useState('');
+  
+  const draggable = useDraggableWidget({
+    id: 'ai-tutor',
+    defaultPosition: { x: window.innerWidth - 72, y: window.innerHeight / 2 }
+  });
   
   const [messages, setMessages] = useState<AIMessage[]>(() => {
     const saved = localStorage.getItem('aiTutorChatHistory');
@@ -134,12 +139,17 @@ ${pageText}
   };
 
   return (
-    <div className={`fixed top-1/2 right-0 w-0 h-0 pointer-events-none -translate-y-1/2 ${isOpen ? 'z-[100]' : 'z-50'}`}>
+    <>
       {/* Expanded Panel */}
       <div 
-        className={`absolute right-4 top-1/2 -translate-y-1/2 transition-all duration-300 origin-right ${
+        className={`fixed z-[100] transition-all duration-300 origin-bottom-right ${
           isOpen ? 'scale-100 opacity-100 pointer-events-auto' : 'scale-90 opacity-0 pointer-events-none'
         }`}
+        style={{
+          // Position panel relative to the floating button
+          bottom: Math.max(16, window.innerHeight - draggable.position.y + 16),
+          right: Math.max(16, window.innerWidth - draggable.position.x - 48)
+        }}
       >
         <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
@@ -317,18 +327,34 @@ ${pageText}
 
       {/* Floating Toggle Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`pointer-events-auto absolute right-0 top-1/2 -translate-y-1/2 flex items-center shadow-md transition-all duration-300 active:scale-95 ${
+        ref={draggable.ref}
+        {...draggable.handlers}
+        onClick={(e) => {
+          // If we dragged, don't trigger click
+          if (draggable.isMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+            return;
+          }
+          setIsOpen(!isOpen);
+        }}
+        style={{
+          ...draggable.handlers.style,
+          position: 'fixed',
+          left: draggable.position.x,
+          top: draggable.position.y,
+          zIndex: 60
+        }}
+        className={`flex items-center justify-center shadow-md transition-all duration-300 active:scale-95 touch-none ${
+          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-blue-400/50 cursor-grabbing' : 'cursor-pointer'
+        } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
-            : 'w-2 md:w-10 h-14 md:h-16 rounded-l-md md:rounded-l-2xl bg-blue-600 text-white'
+            : 'w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-600 text-white'
         }`}
       >
-        <div className="absolute inset-y-0 -left-6 w-8 bg-transparent md:hidden" /> {/* Mobile touch target */}
-        <div className="absolute right-2.5 hidden md:flex">
-          <Bot size={20} />
-        </div>
+        {!isOpen && <Bot size={24} />}
       </button>
-    </div>
+    </>
   );
 }
