@@ -9,9 +9,10 @@ import StudyScheduleWidget from './StudyScheduleWidget';
 interface HomeViewProps {
   onSelectSemester: (semesterId: string) => void;
   onOpenCourseDirectly?: (courseCode: string, activityId: string) => void;
+  onOpenGuide?: () => void;
 }
 
-export default function HomeView({ onSelectSemester, onOpenCourseDirectly }: HomeViewProps) {
+export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpenGuide }: HomeViewProps) {
   const activeSemesters = SEMESTERS.filter(s => !s.locked);
 
   const scrollToCatalog = () => {
@@ -64,6 +65,14 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly }: Hom
               >
                 Mulai Belajar <ArrowRight size={18} />
               </button>
+              {onOpenGuide && (
+                <button 
+                  onClick={onOpenGuide}
+                  className="px-6 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm text-gray-700 dark:text-gray-200 font-bold flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+                >
+                  Lihat Panduan <BookOpen size={18} />
+                </button>
+              )}
             </div>
             
             <div className="mt-10 flex items-center gap-6 text-sm font-medium text-gray-500 dark:text-gray-400">

@@ -23,6 +23,7 @@ interface NavbarProps {
   theme: 'light' | 'dark';
   onToggleTheme: () => void;
   onSelectReport: (reportId: string) => void;
+  onSelectGuide?: () => void;
   isQuietThemeControl?: boolean;
 }
 
@@ -53,7 +54,7 @@ function NavBtn({
   );
 }
 
-export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, onSelectReport, isQuietThemeControl = false }: NavbarProps) {
+export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, onSelectReport, onSelectGuide, isQuietThemeControl = false }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<NavMenu>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -179,6 +180,15 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
                   onClick={() => toggleMenu('laporan')}
                 />
               </div>
+
+              {onSelectGuide && (
+                <div className="relative">
+                  <NavBtn
+                    label="Panduan"
+                    onClick={() => { closeMenus(); onSelectGuide(); }}
+                  />
+                </div>
+              )}
             </div>
 
             <div className="hidden min-w-[260px] lg:block lg:min-w-[310px]" id="tour-search">

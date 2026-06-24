@@ -20,6 +20,7 @@ const ReadingView = lazy(() => import('./components/ReadingView'));
 const CourseLayout = lazy(() => import('./components/course/CourseLayout'));
 const AkbiManagementReportsView = lazy(() => import('./components/AkbiManagementReportsView'));
 const Akm1FinancialReportsView = lazy(() => import('./components/Akm1FinancialReportsView'));
+const GuideView = lazy(() => import('./components/GuideView'));
 
 const UNIVERSAL_COURSES = ['AKK201', 'AKK106', 'PJK201', 'MNU101', 'AKA103', 'EKT109', 'MAS122', 'AKM201'];
 
@@ -44,7 +45,8 @@ function resolveCourseFromPath(pathname: string): CourseRouteResolution {
   }
 }
 
-function getRouteState(pathname: string): { course: Course | null; notFound: boolean } {
+function getRouteState(pathname: string): { course: Course | null; notFound: boolean; isGuide?: boolean } {
+  if (pathname === '/guide') return { course: null, notFound: false, isGuide: true };
   if (pathname === '/' || pathname === '') return { course: null, notFound: false };
   const resolved = resolveCourseFromPath(pathname);
   return {
@@ -95,7 +97,7 @@ function NotFoundView({ onHome }: { onHome: () => void }) {
 
 export default function App() {
   const [initialRoute] = useState(() => getRouteState(window.location.pathname));
-  const [activeView, setActiveView] = useState<ViewId>('home');
+  const [activeView, setActiveView] = useState<ViewId>(initialRoute.isGuide ? 'guide' : 'home');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(initialRoute.course);
   const [routeNotFound, setRouteNotFound] = useState(initialRoute.notFound);
   const [activeTab, setActiveTab] = useState<CourseTabId>('tm1-7');
@@ -113,7 +115,7 @@ export default function App() {
       const routeState = getRouteState(window.location.pathname);
       setSelectedCourse(routeState.course);
       setRouteNotFound(routeState.notFound);
-      setActiveView('home');
+      setActiveView(routeState.isGuide ? 'guide' : 'home');
       setActiveTab('tm1-7');
       setReadingTm(null);
       setSelectedReportId(null);
@@ -135,6 +137,16 @@ export default function App() {
   const goHome = () => {
     pushUrl('/');
     setActiveView('home');
+    setSelectedCourse(null);
+    setRouteNotFound(false);
+    setReadingTm(null);
+    setSelectedReportId(null);
+    window.scrollTo(0, 0);
+  };
+
+  const openGuide = () => {
+    pushUrl('/guide');
+    setActiveView('guide');
     setSelectedCourse(null);
     setRouteNotFound(false);
     setReadingTm(null);
@@ -212,6 +224,7 @@ export default function App() {
 
   const activeSemester = SEMESTERS.find((s) => s.id === activeView);
   const isHomeLanding = activeView === 'home' && selectedCourse === null && !routeNotFound;
+  const isGuideView = activeView === 'guide';
 
   return (
     <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
@@ -230,16 +243,19 @@ export default function App() {
         theme={theme}
         onToggleTheme={toggleTheme}
         onSelectReport={openReport}
+        onSelectGuide={openGuide}
         isQuietThemeControl={true}
       />
 
       <main
         id="main-content"
         tabIndex={-1}
-        className={`${isHomeLanding ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-28' : 'pt-[10.25rem] md:pt-[10.75rem] lg:pt-32'} pb-20`}
+        className={`${isHomeLanding || isGuideView ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-28' : 'pt-[10.25rem] md:pt-[10.75rem] lg:pt-32'} pb-20`}
       >
         <Suspense fallback={<ViewLoader />}>
-          {activeView === 'akbi-management-report' ? (
+          {activeView === 'guide' ? (
+            <GuideView onHome={goHome} />
+          ) : activeView === 'akbi-management-report' ? (
             <AkbiManagementReportsView reportId={selectedReportId} onBack={goHome} />
           ) : activeView === 'akm1-financial-report' ? (
             <Akm1FinancialReportsView reportId={selectedReportId} onBack={goHome} />
@@ -263,7 +279,7 @@ export default function App() {
               onOpenReading={(tm) => setReadingTm(tm)}
             />
           ) : activeView === 'home' || !activeSemester ? (
-            <HomeView onSelectSemester={openSemester} onOpenCourseDirectly={handleOpenCourseDirectly} />
+            <HomeView onSelectSemester={openSemester} onOpenCourseDirectly={handleOpenCourseDirectly} onOpenGuide={openGuide} />
           ) : (
             <SemesterView semester={activeSemester} onBack={goHome} onCourseClick={openCourse} />
           )}
