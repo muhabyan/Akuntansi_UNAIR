@@ -179,11 +179,11 @@ export default function App() {
         const tm = parseInt(activityId.split('-')[1], 10);
         targetTab = tm <= 7 ? 'tm1-7' : 'tm8-14';
         targetTm = tm;
-      } else if (activityId === 'quiz' || activityId === 'quiz-uts' || activityId === 'quiz-uas') {
+      } else if (activityId.includes('quiz') || activityId.includes('kuis')) {
         targetTab = 'quiz';
-      } else if (activityId === 'bank-soal') {
+      } else if (activityId.includes('bank-soal')) {
         targetTab = 'bank-soal';
-      } else if (activityId === 'flashcard') {
+      } else if (activityId.includes('flashcard')) {
         targetTab = 'flashcard';
       }
 

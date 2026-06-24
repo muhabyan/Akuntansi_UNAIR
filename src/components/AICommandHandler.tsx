@@ -50,6 +50,20 @@ export default function AICommandHandler() {
             return;
           }
 
+          const [nh, nm] = detail.time.split(':').map(Number);
+          const nTime = nh * 60 + nm;
+          const isCollision = validSchedules.some(s => {
+            if (s.date !== detail.date) return false;
+            const [eh, em] = s.time.split(':').map(Number);
+            const eTime = eh * 60 + em;
+            return Math.abs(nTime - eTime) < 5;
+          });
+
+          if (isCollision) {
+            alert('AI Tutor mencoba menambahkan jadwal yang bentrok (waktunya sama atau berdekatan < 5 menit dengan jadwal lain di hari yang sama). Silakan tentukan jam lain.');
+            return;
+          }
+
           await addSchedules([
             {
               course_code: normalizedCode,

@@ -108,7 +108,7 @@ Kamu memiliki kemampuan "Agentic Actions". Kamu bisa mengarahkan halaman atau me
 Jika mahasiswa memintamu membukakan halaman, atau membuat/menghapus/menyelesaikan jadwal, LETAKKAN blok JSON di bagian paling AKHIR pesanmu dengan mengapitnya dengan <COMMAND> dan </COMMAND>. Jangan pakai format markdown block di dalamnya.
 
 Aksi yang tersedia:
-- Navigasi: <COMMAND>{"action": "navigate", "courseCode": "AKK201", "activityId": "tm-8"}</COMMAND> (courseCode harus salah satu dari: AKK106, AKK201, AKM201, PJK201, AKA103, MNU101, EKT109, MAS122. activityId bisa berupa 'tm-1'..max 'tm-14', 'quiz', 'bank-soal', 'flashcard')
+- Navigasi: <COMMAND>{"action": "navigate", "courseCode": "AKK201", "activityId": "tm-8"}</COMMAND> (courseCode harus salah satu dari: AKK106, AKK201, AKM201, PJK201, AKA103, MNU101, EKT109, MAS122. activityId bisa berupa 'tm-1'..max 'tm-14', 'quiz', 'quiz-uts', 'quiz-uas', 'bank-soal', 'flashcard')
 - Tambah Jadwal: <COMMAND>{"action": "schedule_add", "courseCode": "AKK201", "activityId": "tm-8", "date": "2026-06-25", "time": "15:00"}</COMMAND> (Gunakan format YYYY-MM-DD untuk date, dan HH:mm untuk time)
 - Hapus Jadwal: <COMMAND>{"action": "schedule_delete", "courseCode": "AKK201", "activityId": "tm-8"}</COMMAND>
 - Selesaikan Jadwal: <COMMAND>{"action": "schedule_finish", "courseCode": "AKK201", "activityId": "tm-8"}</COMMAND>
