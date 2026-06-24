@@ -227,21 +227,20 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-6">
                 <Bot className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
-              <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">AI Tutor Cerdas</h2>
+              <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">AI Tutor Cerdas & Navigasi Suara</h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                Buntu saat mengerjakan soal? Tanya langsung ke AI Tutor yang didukung oleh API Groq atau Google Gemini. AI ini mengetahui konteks spesifik akuntansi dan memberikan penjelasan langkah-demi-langkah, bukan sekadar jawaban akhir.
+                Buntu saat mengerjakan soal? Tanya langsung ke AI Tutor. Hebatnya lagi, AI ini memiliki kapabilitas <strong>Agentic Actions</strong>! Kamu bisa memerintahkannya untuk membuka halaman materi, menambahkan jadwal belajar, atau menandai jadwal selesai.
               </p>
               
               <div className="bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 rounded-xl p-4 mb-6">
                 <h3 className="font-semibold text-purple-800 dark:text-purple-300 mb-2 flex items-center gap-2 text-sm">
-                  <Bot className="w-4 h-4" /> Cara Memasang API Key:
+                  <Bot className="w-4 h-4" /> Cobain Perintah Ini (Ketik <strong>/help</strong>):
                 </h3>
-                <ol className="text-xs text-purple-700 dark:text-purple-400 space-y-1 list-decimal list-inside">
-                  <li>Dapatkan API Key gratis dari <a href="https://console.groq.com/keys" target="_blank" rel="noreferrer" className="underline font-medium hover:text-purple-900 dark:hover:text-purple-200">Groq Console</a> atau Google AI Studio.</li>
-                  <li>Buka panel Chatbot AI di pojok kanan bawah layar.</li>
-                  <li>Klik ikon <strong>Pengaturan (Settings)</strong> ⚙️ di pojok kanan atas panel.</li>
-                  <li>Paste API Key kamu dan simpan. AI Tutor siap digunakan!</li>
-                </ol>
+                <ul className="text-xs text-purple-700 dark:text-purple-400 space-y-2 list-disc list-inside">
+                  <li><em>"Tolong bukakan materi Akuntansi Biaya TM 8 dong"</em></li>
+                  <li><em>"Jadwalin aku belajar AKM 1 besok jam 3 sore"</em></li>
+                  <li><em>"Hapus jadwal Pajak TM 1"</em> atau <em>"Tandai selesai jadwalnya"</em></li>
+                </ul>
               </div>
 
               <ul className="space-y-3">

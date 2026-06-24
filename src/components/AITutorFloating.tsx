@@ -56,6 +56,19 @@ export default function AITutorFloating() {
 
     const userMsg = inputText.trim();
     setInputText('');
+
+    if (userMsg.toLowerCase() === '/help' || userMsg.toLowerCase() === '/info') {
+      const helpMsg: AIMessage = {
+        role: 'model',
+        content: `**Daftar Perintah & Fitur AI Tutor:**
+1. **Tanya Materi:** Tanyakan apa saja seputar Akuntansi, Pajak, dll.
+2. **Navigasi Halaman:** Ketik *“Tolong bukakan materi Akuntansi Biaya TM 8”* atau *“Pindah ke Kuis Pajak”*, dan saya akan otomatis membukakannya untukmu.
+3. **Atur Jadwal:** Ketik *“Jadwalin aku belajar AKM 1 TM 2 besok jam 15:00”* atau *“Tandai selesai jadwal Pajak TM 1”* dan jadwalmu akan terupdate secara ajaib! ✨
+4. **Hapus Jadwal:** Ketik *“Hapus jadwal AKBI TM 8”* jika kamu batal mengerjakannya.`
+      };
+      setMessages(prev => [...prev, { role: 'user', content: userMsg }, helpMsg]);
+      return;
+    }
     
     const newMessages: AIMessage[] = [...messages, { role: 'user', content: userMsg }];
     setMessages(newMessages);
@@ -72,14 +85,47 @@ export default function AITutorFloating() {
 
       const systemPrompt = `Kamu adalah AI Tutor pintar yang bertugas mendampingi mahasiswa S1 Akuntansi Fakultas Ekonomi dan Bisnis Universitas Airlangga (FEB UNAIR). Gunakan bahasa Indonesia yang ramah, asik, semi-formal, dan suportif. Jelaskan konsep akuntansi, pajak, dan etika profesi dengan analogi sederhana yang mudah dipahami mahasiswa.
 
-PENTING: Berikut adalah teks dari halaman web aplikasi belajar yang SEDANG DIBACA oleh mahasiswa saat ini. Jadikan teks ini sebagai KONTEKS UTAMA untuk menjawab pertanyaan mereka jika relevan dengan materi yang ditanyakan. Jika pertanyaan berada di luar konteks materi ini, gunakan pengetahuanmu sendiri secara bebas.
+Kamu memiliki kemampuan "Agentic Actions". Kamu bisa mengarahkan halaman atau mengatur jadwal studi mahasiswa. 
+Jika mahasiswa memintamu membukakan halaman, atau membuat/menghapus/menyelesaikan jadwal, LETAKKAN blok JSON di bagian paling AKHIR pesanmu dengan mengapitnya dengan <COMMAND> dan </COMMAND>. Jangan pakai format markdown block di dalamnya.
 
+Aksi yang tersedia:
+- Navigasi: <COMMAND>{"action": "navigate", "courseCode": "akbi", "activityId": "tm-8"}</COMMAND> (courseCode harus berupa kode mapel yang valid seperti 'akbi', 'akm1', 'pajak', dll. activityId bisa berupa 'tm-1'..max 'tm-14', 'quiz', 'bank-soal', 'flashcard')
+- Tambah Jadwal: <COMMAND>{"action": "schedule_add", "courseCode": "akbi", "activityId": "tm-8", "date": "2026-06-25", "time": "15:00"}</COMMAND> (Gunakan format YYYY-MM-DD untuk date, dan HH:mm untuk time)
+- Hapus Jadwal: <COMMAND>{"action": "schedule_delete", "courseCode": "akbi", "activityId": "tm-8"}</COMMAND>
+- Selesaikan Jadwal: <COMMAND>{"action": "schedule_finish", "courseCode": "akbi", "activityId": "tm-8"}</COMMAND>
+
+Jika kamu mengeluarkan command, sertakan juga kalimat pemberitahuan santai sebelum blok <COMMAND>. 
+Tanggal hari ini: ${new Date().toISOString().split('T')[0]}.
+
+PENTING: Berikut adalah teks dari halaman web aplikasi belajar yang SEDANG DIBACA oleh mahasiswa saat ini sebagai konteks tambahan.
 <MATERI_YANG_SEDANG_DIBACA>
 ${pageText}
 </MATERI_YANG_SEDANG_DIBACA>`;
       
       const reply = await chatWithAI(newMessages, apiKey, systemPrompt);
-      setMessages(prev => [...prev, { role: 'model', content: reply }]);
+      
+      let displayContent = reply;
+      
+      // Parse Command Block
+      const cmdStart = reply.indexOf('<COMMAND>');
+      const cmdEnd = reply.indexOf('</COMMAND>');
+      
+      if (cmdStart !== -1 && cmdEnd !== -1 && cmdEnd > cmdStart) {
+        displayContent = reply.substring(0, cmdStart).trim();
+        const jsonStr = reply.substring(cmdStart + 9, cmdEnd).trim();
+        try {
+          const cmd = JSON.parse(jsonStr);
+          if (cmd.action === 'navigate') {
+            window.dispatchEvent(new CustomEvent('ai-navigate', { detail: cmd }));
+          } else if (cmd.action.startsWith('schedule_')) {
+            window.dispatchEvent(new CustomEvent('ai-schedule', { detail: cmd }));
+          }
+        } catch (e) {
+          console.error("Gagal parsing JSON COMMAND dari AI", e);
+        }
+      }
+
+      setMessages(prev => [...prev, { role: 'model', content: displayContent }]);
     } catch (error: any) {
       setMessages(prev => [...prev, { role: 'model', content: `[ERROR]: ${error.message}` }]);
     } finally {

@@ -14,6 +14,7 @@ import PomodoroTimer from './components/PomodoroTimer';
 import OnboardingTour from './components/OnboardingTour';
 import AITutorFloating from './components/AITutorFloating';
 import LiveChatFloating from './components/LiveChatFloating';
+import AICommandHandler from './components/AICommandHandler';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -222,6 +223,17 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
+  useEffect(() => {
+    const handleAiNavigate = (e: Event) => {
+      const event = e as CustomEvent;
+      if (event.detail && event.detail.courseCode && event.detail.activityId) {
+        handleOpenCourseDirectly(event.detail.courseCode, event.detail.activityId);
+      }
+    };
+    window.addEventListener('ai-navigate', handleAiNavigate);
+    return () => window.removeEventListener('ai-navigate', handleAiNavigate);
+  }, []);
+
   const activeSemester = SEMESTERS.find((s) => s.id === activeView);
   const isHomeLanding = activeView === 'home' && selectedCourse === null && !routeNotFound;
   const isGuideView = activeView === 'guide';
@@ -234,6 +246,7 @@ export default function App() {
       <PomodoroTimer />
       <AITutorFloating />
       <LiveChatFloating />
+      <AICommandHandler />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama
       </a>
