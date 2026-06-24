@@ -220,14 +220,14 @@ export default function PomodoroTimer() {
                   if (draggable.edgeState === 'right') return draggable.isLongPressing ? 'w-12 h-12 rounded-l-2xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200' : 'w-1.5 h-10 rounded-l-md bg-white/60 dark:bg-slate-900/60 active:w-12 active:h-12 active:rounded-l-2xl active:bg-white active:dark:bg-slate-900 border-y border-l border-slate-200/50 dark:border-slate-700/50 text-slate-800 dark:text-slate-200';
                   return 'w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50';
                 } else {
-                  if (draggable.edgeState === 'left') return 'w-14 h-16 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
-                  if (draggable.edgeState === 'right') return 'w-14 h-16 rounded-l-xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
-                  return 'w-14 h-14 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100 transition-opacity';
+                  if (draggable.edgeState === 'left') return 'w-10 h-12 rounded-r-xl bg-white dark:bg-slate-900 border-y border-r border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  if (draggable.edgeState === 'right') return 'w-10 h-12 rounded-l-xl bg-white dark:bg-slate-900 border-y border-l border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200';
+                  return 'w-10 h-10 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 opacity-50 hover:opacity-100 transition-opacity';
                 }
               })()
         }`}
       >
-        {!isOpen && <Timer size={draggable.isDesktop ? 24 : 20} className={`${isRunning ? 'text-blue-500 animate-pulse' : ''} ${!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''}`} />}
+        {!isOpen && <Timer size={20} className={`${isRunning ? 'text-blue-500 animate-pulse' : ''} ${!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''}`} />}
       </button>
     </>
   );
