@@ -161,11 +161,7 @@ export default function LiveChatFloating() {
             className="flex items-center justify-between p-4 bg-indigo-600 text-white shrink-0 cursor-move touch-none"
           >
             <div className="flex items-center gap-2 font-bold pointer-events-none">
-              <MessageSquare size={20} /> Chat Global
-              <div className="flex items-center gap-1.5 px-2 py-0.5 bg-indigo-500/50 rounded-full text-[10px]">
-                <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                <span className="opacity-90">{users.length} Online</span>
-              </div>
+              <Users size={20} /> Kelas Global (Live)
             </div>
             <button 
               onClick={() => setIsOpen(false)}
