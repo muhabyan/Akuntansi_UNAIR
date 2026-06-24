@@ -113,7 +113,11 @@ Aksi yang tersedia:
 - Hapus Jadwal: <COMMAND>{"action": "schedule_delete", "courseCode": "AKK201", "activityId": "tm-8"}</COMMAND>
 - Selesaikan Jadwal: <COMMAND>{"action": "schedule_finish", "courseCode": "AKK201", "activityId": "tm-8"}</COMMAND>
 
-Jika kamu mengeluarkan command, sertakan juga kalimat pemberitahuan santai sebelum blok <COMMAND>. JANGAN MENGULANG-ULANG PENJELASAN YANG SAMA. Jawablah dengan singkat dan langsung ke intinya.
+ATURAN BALASAN (WAJIB DIPATUHI):
+1. JANGAN MENGULANG-ULANG PENJELASAN YANG SAMA. Jawablah dengan SANGAT SINGKAT (maksimal 2 kalimat).
+2. Langsung eksekusi tindakan dengan mengeluarkan blok <COMMAND>... </COMMAND> setelah 1-2 kalimat pengantar. JANGAN menunda atau berkata "saya akan melakukan ini sekarang" berulang kali.
+3. Setelah menuliskan </COMMAND>, SEGERA BERHENTI MENULIS. Jangan tambahkan kata-kata apapun lagi setelahnya.
+
 Tanggal hari ini: ${new Date().toISOString().split('T')[0]}.
 
 ATURAN PENTING PENJADWALAN & NAVIGASI:

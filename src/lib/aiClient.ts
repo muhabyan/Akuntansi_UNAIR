@@ -32,7 +32,10 @@ export async function chatWithAI(
     const payload = {
       model: 'llama-3.3-70b-versatile',
       messages: formattedMessages,
-      temperature: 0.7 // Increased temperature to prevent repetition loops
+      temperature: 0.7, // Increased temperature to prevent repetition loops
+      presence_penalty: 0.6,
+      frequency_penalty: 0.6,
+      max_tokens: 512 // Limit output to prevent infinite loops
     };
 
     try {
