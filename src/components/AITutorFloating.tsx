@@ -62,7 +62,21 @@ export default function AITutorFloating() {
     setIsLoading(true);
 
     try {
-      const systemPrompt = "Kamu adalah AI Tutor pintar yang bertugas mendampingi mahasiswa S1 Akuntansi Fakultas Ekonomi dan Bisnis Universitas Airlangga (FEB UNAIR). Gunakan bahasa Indonesia yang ramah, asik, semi-formal, dan suportif. Jelaskan konsep akuntansi, pajak, dan etika profesi dengan analogi sederhana yang mudah dipahami mahasiswa.";
+      // Dapatkan teks dari halaman web saat ini untuk RAG (Retrieval-Augmented Generation) on-the-fly
+      const contentNode = document.querySelector('main') || document.getElementById('root') || document.body;
+      let pageText = contentNode.innerText || '';
+      // Potong jadi max 15.000 karakter agar tidak melebihi batas token API
+      if (pageText.length > 15000) {
+        pageText = pageText.substring(0, 15000) + '... (terpotong)';
+      }
+
+      const systemPrompt = `Kamu adalah AI Tutor pintar yang bertugas mendampingi mahasiswa S1 Akuntansi Fakultas Ekonomi dan Bisnis Universitas Airlangga (FEB UNAIR). Gunakan bahasa Indonesia yang ramah, asik, semi-formal, dan suportif. Jelaskan konsep akuntansi, pajak, dan etika profesi dengan analogi sederhana yang mudah dipahami mahasiswa.
+
+PENTING: Berikut adalah teks dari halaman web aplikasi belajar yang SEDANG DIBACA oleh mahasiswa saat ini. Jadikan teks ini sebagai KONTEKS UTAMA untuk menjawab pertanyaan mereka jika relevan dengan materi yang ditanyakan. Jika pertanyaan berada di luar konteks materi ini, gunakan pengetahuanmu sendiri secara bebas.
+
+<MATERI_YANG_SEDANG_DIBACA>
+${pageText}
+</MATERI_YANG_SEDANG_DIBACA>`;
       
       const reply = await chatWithAI(newMessages, apiKey, systemPrompt);
       setMessages(prev => [...prev, { role: 'model', content: reply }]);
