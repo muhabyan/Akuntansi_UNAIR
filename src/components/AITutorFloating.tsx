@@ -381,7 +381,7 @@ ${pageText}
           position: 'fixed',
           left: draggable.position.x,
           top: draggable.position.y,
-          zIndex: 60
+          zIndex: 100
         }}
         className={`zen-hideable group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
           draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-blue-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
