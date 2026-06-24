@@ -144,43 +144,47 @@ export default function AITutorFloating() {
               <div className="flex-1 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 space-y-4">
                 {messages.map((msg, i) => (
                   <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                    <div 
-                      className={`p-3 rounded-2xl text-[13px] leading-relaxed shadow-sm ${
-                        msg.role === 'user' 
-                          ? 'bg-blue-600 text-white rounded-br-sm' 
-                          : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
-                      }`}
-                    >
-                      <ReactMarkdown
-                        components={{
-                          p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
-                          strong: ({node, ...props}) => <strong className="font-bold" {...props} />,
-                          em: ({node, ...props}) => <em className="italic" {...props} />,
-                          ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
-                          ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
-                          li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                          h1: ({node, ...props}) => <h1 className="font-bold text-lg mb-2" {...props} />,
-                          h2: ({node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
-                          h3: ({node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
-                          code: ({node, inline, className, children, ...props}: any) => {
-                            const match = /language-(\w+)/.exec(className || '');
-                            return !inline ? (
-                              <pre className="bg-gray-100 dark:bg-gray-700 rounded p-2 overflow-x-auto text-xs my-2">
-                                <code className={className} {...props}>
-                                  {children}
-                                </code>
-                              </pre>
-                            ) : (
-                              <code className="bg-gray-100 dark:bg-gray-700 rounded px-1 py-0.5 font-mono text-[11px]" {...props}>
-                                {children}
-                              </code>
-                            )
-                          }
-                        }}
+                      <div 
+                        className={`p-3 rounded-2xl text-[13px] leading-relaxed shadow-sm ${
+                          msg.role === 'user' 
+                            ? 'bg-blue-600 text-white rounded-br-sm whitespace-pre-wrap' 
+                            : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
+                        }`}
                       >
-                        {msg.content}
-                      </ReactMarkdown>
-                    </div>
+                        {msg.role === 'user' ? (
+                          msg.content
+                        ) : (
+                          <ReactMarkdown
+                            components={{
+                              p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                              strong: ({node, ...props}) => <strong className="font-bold" {...props} />,
+                              em: ({node, ...props}) => <em className="italic" {...props} />,
+                              ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
+                              ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
+                              li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                              h1: ({node, ...props}) => <h1 className="font-bold text-lg mb-2" {...props} />,
+                              h2: ({node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
+                              h3: ({node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
+                              code: ({node, inline, className, children, ...props}: any) => {
+                                const match = /language-(\w+)/.exec(className || '');
+                                return !inline ? (
+                                  <pre className="bg-gray-100 dark:bg-gray-700 rounded p-2 overflow-x-auto text-xs my-2">
+                                    <code className={className} {...props}>
+                                      {children}
+                                    </code>
+                                  </pre>
+                                ) : (
+                                  <code className="bg-gray-100 dark:bg-gray-700 rounded px-1 py-0.5 font-mono text-[11px]" {...props}>
+                                    {children}
+                                  </code>
+                                )
+                              }
+                            }}
+                          >
+                            {msg.content}
+                          </ReactMarkdown>
+                        )}
+                      </div>
                   </div>
                 ))}
                 {isLoading && (
