@@ -59,11 +59,27 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
     }, 100);
   };
 
+  useEffect(() => {
+    if (user && sessionStorage.getItem('post_login_intent') === 'open-chat-and-home') {
+      sessionStorage.removeItem('post_login_intent');
+      onHome();
+      setTimeout(() => {
+        document.getElementById('course-catalog')?.scrollIntoView({ behavior: 'smooth' });
+        window.dispatchEvent(new CustomEvent('open-global-chat'));
+      }, 100);
+    }
+  }, [user, onHome]);
+
   const handleJoinCommunity = () => {
     if (!user) {
+      sessionStorage.setItem('post_login_intent', 'open-chat-and-home');
       signIn();
     } else {
-      window.dispatchEvent(new CustomEvent('open-global-chat'));
+      onHome();
+      setTimeout(() => {
+        document.getElementById('course-catalog')?.scrollIntoView({ behavior: 'smooth' });
+        window.dispatchEvent(new CustomEvent('open-global-chat'));
+      }, 100);
     }
   };
 
