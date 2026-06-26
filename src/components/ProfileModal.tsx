@@ -57,6 +57,15 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
     }
 
     setIsLoading(true);
+
+    // Ensure session exists
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
+      setErrorMsg('Sesi login tidak valid atau sudah kedaluwarsa. Silakan Logout dan Login kembali.');
+      setIsLoading(false);
+      return;
+    }
+
     const { error } = await supabase.auth.updateUser({
       data: { nickname: trimmed }
     });
