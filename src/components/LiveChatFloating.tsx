@@ -3,6 +3,7 @@ import { MessageSquare, Send, X, Users, AlertCircle, Trash2 } from 'lucide-react
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import { useDraggableWidget } from '../hooks/useDraggableWidget';
+import { useNotification } from '../contexts/NotificationContext';
 
 interface ChatMessage {
   id: string;
@@ -19,6 +20,7 @@ export default function LiveChatFloating() {
   const [isSending, setIsSending] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const { user, signIn } = useAuth();
+  const { addNotification } = useNotification();
   
   const draggable = useDraggableWidget({
     id: 'live-chat',
@@ -67,6 +69,11 @@ export default function LiveChatFloating() {
         // Update unread count if panel is closed and message is not from self
         if (!isOpen && newMessage.user_id !== user?.id) {
           setUnreadCount((prev) => prev + 1);
+          addNotification({
+            type: 'chat',
+            title: `Global Chat: ${newMessage.user_email.split('@')[0]}`,
+            message: newMessage.message,
+          });
         }
       })
       .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'global_chat' }, (payload) => {
@@ -203,14 +210,19 @@ export default function LiveChatFloating() {
                       </span>
                     )}
                     <div className={`flex items-center gap-2 max-w-[85%] ${isMe ? 'flex-row-reverse' : 'flex-row'}`}>
-                      <div 
-                        className={`p-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap shadow-sm ${
-                          isMe 
-                            ? 'bg-emerald-600 text-white rounded-br-sm' 
-                            : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
-                        }`}
-                      >
-                        {msg.message}
+                      <div className={`flex flex-col ${isMe ? 'items-end' : 'items-start'}`}>
+                        <div 
+                          className={`p-2.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap shadow-sm ${
+                            isMe 
+                              ? 'bg-emerald-600 text-white rounded-br-sm' 
+                              : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
+                          }`}
+                        >
+                          {msg.message}
+                        </div>
+                        <span className={`text-[10px] text-gray-400 mt-1 px-1 ${isMe ? 'text-right' : 'text-left'}`}>
+                          {msgDate.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })}
+                        </span>
                       </div>
                       
                       {canDelete && (

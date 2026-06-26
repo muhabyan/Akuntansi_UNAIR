@@ -81,6 +81,13 @@ export function NotificationProvider({ children }: { children: React.ReactNode }
     }
   }, [notifications, mounted]);
 
+  // Request native notification permission on mount
+  useEffect(() => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
+  }, []);
+
   const unreadCount = notifications.filter(n => !n.isRead).length;
 
   const addNotification = (notif: Omit<AppNotification, 'id' | 'timestamp' | 'isRead'>) => {
@@ -91,6 +98,16 @@ export function NotificationProvider({ children }: { children: React.ReactNode }
       isRead: false,
     };
     setNotifications(prev => [newNotif, ...prev]);
+
+    // Show native OS notification if allowed and page is hidden or not focused
+    if ('Notification' in window && Notification.permission === 'granted') {
+      if (document.hidden || notif.type === 'schedule') {
+        new Notification(notif.title, {
+          body: notif.message,
+          icon: '/vite.svg', // can be replaced with app icon
+        });
+      }
+    }
   };
 
   const markAsRead = (id: string) => {

@@ -4,6 +4,7 @@ import { useGeminiSettings } from '../hooks/useGeminiSettings';
 import { chatWithAI, type AIMessage } from '../lib/aiClient';
 import { useDraggableWidget } from '../hooks/useDraggableWidget';
 import { useStudySchedule } from '../hooks/useStudySchedule';
+import { useNotification } from '../contexts/NotificationContext';
 import ReactMarkdown from 'react-markdown';
 
 export default function AITutorFloating() {
@@ -11,6 +12,8 @@ export default function AITutorFloating() {
   const { apiKey, saveApiKey, removeApiKey, hasKey } = useGeminiSettings();
   const [inputKey, setInputKey] = useState('');
   const { schedules } = useStudySchedule();
+  const { addNotification } = useNotification();
+  const [unreadCount, setUnreadCount] = useState(0);
   
   const draggable = useDraggableWidget({
     id: 'ai-tutor',
@@ -27,11 +30,18 @@ export default function AITutorFloating() {
       }
     }
     return [
-      { role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }
+      { role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!', timestamp: Date.now() }
     ];
   });
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+
+  // Reset unread count when opened
+  useEffect(() => {
+    if (isOpen) {
+      setUnreadCount(0);
+    }
+  }, [isOpen]);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -71,13 +81,14 @@ export default function AITutorFloating() {
 1. **Tanya Materi:** Tanyakan apa saja seputar Akuntansi, Pajak, dll.
 2. **Navigasi Halaman:** Ketik *“Tolong bukakan materi Akuntansi Biaya TM 8”* atau *“Pindah ke Kuis Pajak”*, dan saya akan otomatis membukakannya untukmu.
 3. **Atur Jadwal:** Ketik *“Jadwalin aku belajar AKM 1 TM 2 besok jam 15:00”* atau *“Tandai selesai jadwal Pajak TM 1”* dan jadwalmu akan terupdate secara ajaib! ✨
-4. **Hapus Jadwal:** Ketik *“Hapus jadwal AKBI TM 8”* jika kamu batal mengerjakannya.`
+4. **Hapus Jadwal:** Ketik *“Hapus jadwal AKBI TM 8”* jika kamu batal mengerjakannya.`,
+        timestamp: Date.now()
       };
-      setMessages(prev => [...prev, { role: 'user', content: userMsg }, helpMsg]);
+      setMessages(prev => [...prev, { role: 'user', content: userMsg, timestamp: Date.now() }, helpMsg]);
       return;
     }
     
-    const newMessages: AIMessage[] = [...messages, { role: 'user', content: userMsg }];
+    const newMessages: AIMessage[] = [...messages, { role: 'user', content: userMsg, timestamp: Date.now() }];
     setMessages(newMessages);
     setIsLoading(true);
 
@@ -156,12 +167,26 @@ ${pageText}
         }
       }
 
-      setMessages(prev => [...prev, { role: 'model', content: displayContent }]);
+      setMessages(prev => [...prev, { role: 'model', content: displayContent, timestamp: Date.now() }]);
+      if (!isOpen) {
+        setUnreadCount(prev => prev + 1);
+        addNotification({
+          type: 'chat',
+          title: 'AI Tutor',
+          message: displayContent,
+        });
+      }
     } catch (error: any) {
-      setMessages(prev => [...prev, { role: 'model', content: `[ERROR]: ${error.message}` }]);
+      setMessages(prev => [...prev, { role: 'model', content: `[ERROR]: ${error.message}`, timestamp: Date.now() }]);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const formatTime = (ts?: number) => {
+    if (!ts) return '';
+    const d = new Date(ts);
+    return d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
   };
 
   const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < (document.documentElement.clientWidth || window.innerWidth) / 2 : false;
@@ -251,7 +276,7 @@ ${pageText}
             <>
               <div className="flex-1 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 space-y-4">
                 {messages.map((msg, i) => (
-                  <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                  <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
                       <div 
                         className={`p-3 rounded-2xl text-[13px] leading-relaxed shadow-sm ${
                           msg.role === 'user' 
@@ -260,7 +285,9 @@ ${pageText}
                         }`}
                       >
                         {msg.role === 'user' ? (
-                          msg.content
+                          <div className="flex flex-col">
+                            <span>{msg.content}</span>
+                          </div>
                         ) : (
                           <ReactMarkdown
                             components={{
@@ -292,6 +319,11 @@ ${pageText}
                           </ReactMarkdown>
                         )}
                       </div>
+                      {msg.timestamp && (
+                        <span className={`text-[10px] text-gray-400 mt-1 px-1 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
+                          {formatTime(msg.timestamp)}
+                        </span>
+                      )}
                   </div>
                 ))}
                 {isLoading && (
@@ -403,6 +435,21 @@ ${pageText}
       >
         {!isOpen && <Bot size={20} className={!draggable.isDesktop && draggable.edgeState && !draggable.isLongPressing ? 'opacity-0 group-active:opacity-100 transition-opacity duration-200' : ''} />}
       </button>
+      
+      {/* Unread Badge outside button */}
+      {!isOpen && unreadCount > 0 && (
+        <div 
+          className="fixed z-[100] flex items-center justify-center pointer-events-none"
+          style={{
+            left: `clamp(0px, ${draggable.position.x + (draggable.isDesktop ? 30 : 25)}px, calc(100vw - 16px))`,
+            top: `clamp(70px, ${draggable.position.y - 10}px, calc(100vh - 48px))`
+          }}
+        >
+          <div className="bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white dark:border-gray-900 shadow-sm animate-bounce">
+            {unreadCount}
+          </div>
+        </div>
+      )}
     </>
   );
 }

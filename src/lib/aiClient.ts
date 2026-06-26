@@ -1,6 +1,7 @@
 export interface AIMessage {
   role: 'user' | 'model';
   content: string;
+  timestamp?: number;
 }
 
 export async function chatWithAI(
