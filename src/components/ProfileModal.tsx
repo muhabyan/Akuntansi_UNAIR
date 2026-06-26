@@ -60,6 +60,12 @@ export default function ProfileModal({ isOpen, onClose }: ProfileModalProps) {
     const { error } = await supabase.auth.updateUser({
       data: { nickname: trimmed }
     });
+
+    // Update nickname on all past chat messages in global_chat
+    if (!error) {
+      await supabase.from('global_chat').update({ user_nickname: trimmed }).eq('user_id', user.id);
+    }
+
     setIsLoading(false);
 
     if (error) {
