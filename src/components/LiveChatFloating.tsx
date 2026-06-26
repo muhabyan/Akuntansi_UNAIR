@@ -142,6 +142,21 @@ export default function LiveChatFloating() {
   const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < (document.documentElement.clientWidth || window.innerWidth) / 2 : false;
   const isTopHalf = typeof window !== 'undefined' ? draggable.position.y < window.innerHeight / 2 : false;
 
+  const formatDatePill = (dateStr: string | number) => {
+    const d = new Date(dateStr);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (d.getDate() === today.getDate() && d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear()) {
+      return 'Hari ini';
+    } else if (d.getDate() === yesterday.getDate() && d.getMonth() === yesterday.getMonth() && d.getFullYear() === yesterday.getFullYear()) {
+      return 'Kemarin';
+    } else {
+      return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+  };
+
   return (
     <>
       {/* Expanded Panel */}
@@ -202,13 +217,31 @@ export default function LiveChatFloating() {
                 const hoursDiff = (new Date().getTime() - msgDate.getTime()) / (1000 * 60 * 60);
                 const canDelete = isMe && hoursDiff <= 3;
 
+                let showDatePill = false;
+                if (i === 0) {
+                  showDatePill = true;
+                } else {
+                  const prevDate = new Date(messages[i-1].created_at);
+                  if (msgDate.getDate() !== prevDate.getDate() || msgDate.getMonth() !== prevDate.getMonth() || msgDate.getFullYear() !== prevDate.getFullYear()) {
+                    showDatePill = true;
+                  }
+                }
+
                 return (
-                  <div key={msg.id} className={`flex flex-col group ${isMe ? 'items-end' : 'items-start'}`}>
-                    {showName && !isMe && (
-                      <span className="text-[10px] text-gray-500 font-medium ml-1 mb-1">
-                        {getDisplayName(msg.user_email)}
-                      </span>
+                  <div key={msg.id} className="flex flex-col">
+                    {showDatePill && (
+                      <div className="flex justify-center my-3">
+                        <span className="bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+                          {formatDatePill(msg.created_at)}
+                        </span>
+                      </div>
                     )}
+                    <div className={`flex flex-col group ${isMe ? 'items-end' : 'items-start'} mb-1`}>
+                      {showName && !isMe && (
+                        <span className="text-[10px] text-gray-500 font-medium ml-1 mb-1">
+                          {getDisplayName(msg.user_email)}
+                        </span>
+                      )}
                     <div className={`flex items-center gap-2 max-w-[85%] ${isMe ? 'flex-row-reverse' : 'flex-row'}`}>
                       <div className={`flex flex-col ${isMe ? 'items-end' : 'items-start'}`}>
                         <div 
@@ -234,6 +267,7 @@ export default function LiveChatFloating() {
                           <Trash2 size={14} />
                         </button>
                       )}
+                    </div>
                     </div>
                   </div>
                 );

@@ -192,6 +192,22 @@ ${pageText}
   const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < (document.documentElement.clientWidth || window.innerWidth) / 2 : false;
   const isTopHalf = typeof window !== 'undefined' ? draggable.position.y < window.innerHeight / 2 : false;
 
+  const formatDatePill = (dateStr?: number) => {
+    if (!dateStr) return '';
+    const d = new Date(dateStr);
+    const today = new Date();
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (d.getDate() === today.getDate() && d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear()) {
+      return 'Hari ini';
+    } else if (d.getDate() === yesterday.getDate() && d.getMonth() === yesterday.getMonth() && d.getFullYear() === yesterday.getFullYear()) {
+      return 'Kemarin';
+    } else {
+      return d.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+  };
+
   return (
     <>
       {/* Expanded Panel */}
@@ -275,15 +291,42 @@ ${pageText}
             /* Chat Interface */
             <>
               <div className="flex-1 p-4 overflow-y-auto bg-gray-50 dark:bg-gray-900/50 space-y-4">
-                {messages.map((msg, i) => (
-                  <div key={i} className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'}`}>
-                      <div 
-                        className={`p-3 rounded-2xl text-[13px] leading-relaxed shadow-sm ${
-                          msg.role === 'user' 
-                            ? 'bg-blue-600 text-white rounded-br-sm whitespace-pre-wrap' 
-                            : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
-                        }`}
-                      >
+                {messages.map((msg, i) => {
+                  let showDatePill = false;
+                  if (msg.timestamp) {
+                    if (i === 0) {
+                      showDatePill = true;
+                    } else {
+                      const prevMsg = messages[i-1];
+                      if (!prevMsg.timestamp) {
+                        showDatePill = true;
+                      } else {
+                        const msgDate = new Date(msg.timestamp);
+                        const prevDate = new Date(prevMsg.timestamp);
+                        if (msgDate.getDate() !== prevDate.getDate() || msgDate.getMonth() !== prevDate.getMonth() || msgDate.getFullYear() !== prevDate.getFullYear()) {
+                          showDatePill = true;
+                        }
+                      }
+                    }
+                  }
+
+                  return (
+                    <div key={i} className="flex flex-col">
+                      {showDatePill && (
+                        <div className="flex justify-center my-3">
+                          <span className="bg-gray-200 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">
+                            {formatDatePill(msg.timestamp)}
+                          </span>
+                        </div>
+                      )}
+                      <div className={`flex flex-col ${msg.role === 'user' ? 'items-end' : 'items-start'} mb-1`}>
+                        <div 
+                          className={`p-3 rounded-2xl text-[13px] leading-relaxed shadow-sm ${
+                            msg.role === 'user' 
+                              ? 'bg-blue-600 text-white rounded-br-sm whitespace-pre-wrap' 
+                              : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-100 rounded-bl-sm'
+                          }`}
+                        >
                         {msg.role === 'user' ? (
                           <div className="flex flex-col">
                             <span>{msg.content}</span>
@@ -324,8 +367,10 @@ ${pageText}
                           {formatTime(msg.timestamp)}
                         </span>
                       )}
-                  </div>
-                ))}
+                      </div>
+                    </div>
+                  );
+                })}
                 {isLoading && (
                   <div className="flex justify-start">
                     <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-3 rounded-2xl rounded-bl-sm shadow-sm flex gap-1.5 items-center">
