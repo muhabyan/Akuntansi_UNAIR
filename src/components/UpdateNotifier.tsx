@@ -4,7 +4,7 @@ import { X, Sparkles, CheckCircle2 } from 'lucide-react';
 
 // --- KONFIGURASI PATCH UPDATE ---
 // Ubah versi ini setiap kali ada pembaruan fitur.
-const CURRENT_PATCH_VERSION = 'v1.1.0';
+const CURRENT_PATCH_VERSION = 'v1.1.1';
 
 // Tuliskan detail pembaruan di sini, bisa berupa array of strings.
 const PATCH_NOTES = [
