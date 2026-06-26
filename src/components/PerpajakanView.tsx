@@ -5,7 +5,7 @@
 // Fitur: nav TM, search, filter cepat (Dasar Hukum/Jebakan UAS/Contoh Kasus),
 // checklist localStorage, audit kelengkapan chunk. Isi materi TIDAK diringkas.
 // =============================================================
-import { useMemo, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
   ArrowLeft, Scale, Search, Check, ChevronLeft, ChevronRight,
   FileText, AlertTriangle, BookOpen, Gavel, ListChecks,
@@ -20,8 +20,40 @@ const DATA = perpajakanPraUAS;
 // Sorot rujukan hukum (UU/PP/PMK/PER, "Pasal N", "ayat (n)") agar "Dasar Hukum" menonjol.
 const LAW_RE = /(UU\s*KUP|UU\s*HPP|UU\s*PDRD|UU\s*\d+\/\d+|PP\s*\d+\/\d+|PMK\s*\d+\/\d+|PMK\s*\d+\/PMK[.\d]*\/\d+|PER[-\s]?\d+\/PJ\/\d+|SE[-\s]?\d+\/PJ\/\d+|Pasal\s*\d+\w?|ayat\s*\(\d+\w?\)|huruf\s*[a-z]\b|angka\s*\d+)/gi;
 
+function renderMarkdown(str: string, ql: string) {
+  if (!str) return null;
+  
+  // Pisahkan berdasarkan newline terlebih dahulu agar di-render sebagai <br/>
+  const lines = str.split('\n');
+  
+  return lines.map((line, lineIdx) => {
+    // Memecah teks berdasarkan markdown bold (**teks**)
+    const boldParts = line.split(/(\*\*.*?\*\*)/g);
+    const renderedLine = boldParts.map((part, idx) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        const inner = part.slice(2, -2);
+        const hit = ql && inner.toLowerCase().includes(ql);
+        return (
+          <strong key={`bold-${idx}`} className="font-bold text-white">
+            {hit ? <mark className="bg-gold/30 text-slate-100 rounded px-0.5">{inner}</mark> : inner}
+          </strong>
+        );
+      }
+      const hit = ql && part.toLowerCase().includes(ql);
+      return hit ? <mark key={`text-${idx}`} className="bg-gold/30 text-slate-100 rounded px-0.5">{part}</mark> : part;
+    });
+
+    return (
+      <React.Fragment key={`line-${lineIdx}`}>
+        {renderedLine}
+        {lineIdx < lines.length - 1 && <br />}
+      </React.Fragment>
+    );
+  });
+}
+
 function HL({ text, q }: { text: string; q: string }) {
-  // gabung penyorotan hukum + pencarian
+  // gabung penyorotan hukum + pencarian + markdown bold
   const parts: { t: string; law?: boolean; hit?: boolean }[] = [];
   let last = 0; let m: RegExpExecArray | null;
   const re = new RegExp(LAW_RE);
@@ -32,23 +64,25 @@ function HL({ text, q }: { text: string; q: string }) {
   }
   if (last < text.length) parts.push({ t: text.slice(last) });
   const ql = q.trim().toLowerCase();
+  
   return (
     <>
-      {parts.map((p, i) => {
-        const hit = ql && p.t.toLowerCase().includes(ql);
-        return (
-          <span key={i} className={p.law ? 'text-gold font-medium' : undefined}>
-            {hit ? <mark className="bg-gold/30 text-slate-100 rounded px-0.5">{p.t}</mark> : p.t}
-          </span>
-        );
-      })}
+      {parts.map((p, i) => (
+        <span key={i} className={p.law ? 'text-gold font-medium' : undefined}>
+          {p.law ? (
+            (ql && p.t.toLowerCase().includes(ql)) ? <mark className="bg-gold/30 text-slate-100 rounded px-0.5">{p.t}</mark> : p.t
+          ) : (
+            renderMarkdown(p.t, ql)
+          )}
+        </span>
+      ))}
     </>
   );
 }
 
 function Block({ b, q }: { b: PjkBlock; q: string }) {
   if (b.k === 'h') return <h3 className="text-lg font-display font-bold text-gold mt-6 mb-2">{b.text}</h3>;
-  if (b.k === 'p') return <p className="text-slate-300 leading-relaxed mb-3 text-[15px]"><HL text={b.text || ''} q={q} /></p>;
+  if (b.k === 'p') return <p className="text-slate-300 leading-relaxed mb-3 text-[15px] whitespace-pre-line"><HL text={b.text || ''} q={q} /></p>;
   if (b.k === 'list') return (
     <ul className="space-y-1.5 mb-3">
       {(b.items || []).map((it, i) => (
@@ -56,9 +90,13 @@ function Block({ b, q }: { b: PjkBlock; q: string }) {
       ))}
     </ul>
   );
-  // pre (tabel / teks rata kolom) — dipertahankan utuh, bisa geser horizontal
-  return (
-    <div className="mb-3 overflow-x-auto rounded-lg border border-navy-600 bg-navy-900">
+  if (b.k === 'pre') return (
+    <div 
+      className="mb-3 overflow-x-auto rounded-lg border border-navy-600 bg-navy-900"
+      onTouchStart={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
+      onTouchEnd={(e) => e.stopPropagation()}
+    >
       <pre className="text-[12.5px] leading-relaxed text-slate-300 p-3 whitespace-pre font-mono">{b.text}</pre>
     </div>
   );

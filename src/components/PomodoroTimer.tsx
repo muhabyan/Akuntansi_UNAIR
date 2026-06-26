@@ -106,7 +106,7 @@ export default function PomodoroTimer() {
             ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 288px - 16px))` } 
             : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 288px - 16px))` }),
           ...(isTopHalf 
-            ? { top: `clamp(16px, ${draggable.position.y}px, calc(100vh - 350px - 16px))` } 
+            ? { top: `clamp(80px, ${draggable.position.y}px, calc(100vh - 350px - 16px))` } 
             : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 350px - 16px))` })
         }}
       >
@@ -114,7 +114,7 @@ export default function PomodoroTimer() {
           <div 
             {...draggable.handlers}
             className={`flex items-center justify-between mb-4 touch-none select-none p-2 -m-2 rounded-lg transition-colors ${
-              draggable.isLongPressing ? 'bg-slate-100 dark:bg-slate-800 cursor-grabbing' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-grab'
+              draggable.isLongPressing ? 'bg-slate-100 dark:bg-slate-800 cursor-grabbing' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-grab hover:animate-pulse'
             }`}
           >
             <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pointer-events-none">
@@ -210,8 +210,8 @@ export default function PomodoroTimer() {
         style={{
           ...draggable.handlers.style,
           position: 'fixed',
-          left: draggable.position.x,
-          top: draggable.position.y,
+          left: `clamp(0px, ${draggable.position.x}px, calc(100vw - 48px))`,
+          top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 100
         }}
         className={`group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${

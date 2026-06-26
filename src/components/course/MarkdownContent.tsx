@@ -47,7 +47,21 @@ export function renderText(text: string): React.ReactNode[] {
       );
     }
 
-    return <span key={index}>{part}</span>;
+    const subParts = part.split('\n');
+    if (subParts.length === 1) {
+      return <span key={index}>{part}</span>;
+    }
+
+    return (
+      <span key={index}>
+        {subParts.map((sub, subIdx) => (
+          <React.Fragment key={subIdx}>
+            {sub}
+            {subIdx < subParts.length - 1 && <br />}
+          </React.Fragment>
+        ))}
+      </span>
+    );
   });
 }
 

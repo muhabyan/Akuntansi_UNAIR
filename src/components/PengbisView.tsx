@@ -76,7 +76,13 @@ function parseMarkdownToJSX(markdown: string) {
   const flushTable = (key: string | number) => {
     if (inTable) {
       jsxElements.push(
-        <div key={`table-wrapper-${key}`} className="mb-5 overflow-x-auto rounded-xl border border-navy-600 bg-navy-900/50 shadow-inner">
+        <div 
+          key={`table-wrapper-${key}`} 
+          className="mb-5 overflow-x-auto rounded-xl border border-navy-600 bg-navy-900/50 shadow-inner"
+          onTouchStart={(e) => e.stopPropagation()}
+          onTouchMove={(e) => e.stopPropagation()}
+          onTouchEnd={(e) => e.stopPropagation()}
+        >
           <table className="w-full text-sm border-collapse">
             <thead>
               <tr className="bg-navy-950/80">

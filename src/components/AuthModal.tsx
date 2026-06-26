@@ -35,10 +35,22 @@ export default function AuthModal() {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         setShowAuthModal(false);
+        window.history.pushState(null, '', '/');
+        window.dispatchEvent(new Event('popstate'));
+        setTimeout(() => {
+          document.getElementById('course-catalog')?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
       } else {
         const { error } = await supabase.auth.signUp({ email, password });
         if (error) throw error;
         setSuccess('Pendaftaran berhasil! Silakan cek email Anda untuk verifikasi.');
+        // After successful signup (if no email confirmation is strictly blocking login)
+        // Note: Supabase auto login on signup depends on settings. We can still try to redirect.
+        window.history.pushState(null, '', '/');
+        window.dispatchEvent(new Event('popstate'));
+        setTimeout(() => {
+          document.getElementById('course-catalog')?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
       }
     } catch (err: any) {
       setError(err.message || 'Terjadi kesalahan. Silakan coba lagi.');

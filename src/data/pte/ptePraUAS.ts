@@ -86,22 +86,34 @@ const tm8: Reading = {
     },
     {
       "kind": "table",
+      "caption": "Perbandingan Konsep PDB (GDP) dan PNB (GNP)",
+      "headers": ["Konsep", "Definisi", "Contoh & Analogi"],
+      "rows": [
+        [
+          "GDP/PDB",
+          "Produksi berdasarkan wilayah domestik, siapa pun pemilik faktor produksinya.",
+          "Perusahaan asing yang produksi di Indonesia masuk PDB Indonesia.\n💡 **Analogi:** Seperti menghitung semua kue yang dipanggang di 'Dapur Indonesia', tak peduli siapa chef-nya (orang lokal atau asing)."
+        ],
+        [
+          "GNP/PNB atau GNI",
+          "Produksi/pendapatan berdasarkan kewarganegaraan atau kepemilikan faktor produksi.",
+          "Pendapatan WNI dari luar negeri masuk GNP Indonesia, bukan PDB Indonesia.\n💡 **Analogi:** Seperti menghitung kue yang dipanggang oleh 'Chef Indonesia', tak peduli dia manggangnya di Dapur Indonesia atau Dapur Luar Negeri."
+        ],
+        [
+          "NNP",
+          "GNP dikurangi penyusutan (depresiasi).",
+          "Mengukur produksi bersih setelah mengganti mesin yang rusak."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
       "headers": [
         "Konsep",
         "Makna",
         "Hal yang sering ditanyakan"
       ],
       "rows": [
-        [
-          "GDP/PDB",
-          "Produksi berdasarkan wilayah domestik, siapa pun pemilik faktor produksinya.",
-          "Perusahaan asing yang produksi di Indonesia masuk PDB Indonesia."
-        ],
-        [
-          "GNP/PNB atau GNI",
-          "Produksi/pendapatan berdasarkan kewarganegaraan atau kepemilikan faktor produksi.",
-          "Pendapatan WNI dari luar negeri masuk GNP Indonesia, bukan PDB Indonesia."
-        ],
         [
           "NDP/PDB Neto",
           "GDP dikurangi depresiasi/penyusutan modal.",
@@ -157,24 +169,24 @@ const tm8: Reading = {
       ],
       "rows": [
         [
-          "C",
+          "C\n(Konsumsi)",
           "Belanja konsumsi rumah tangga atas barang tahan lama, tidak tahan lama, dan jasa.",
-          "Pembelian rumah baru, karena masuk investasi residensial."
+          "Pembelian rumah baru, karena masuk investasi residensial.\n💡 **Analogi:** Seperti kamu beli sembako, jajan boba, atau bayar langganan Netflix. Uang keluar dari dompetmu untuk dinikmati langsung."
         ],
         [
-          "I",
+          "I\n(Investasi)",
           "Investasi bisnis, perubahan persediaan, pembelian rumah baru.",
-          "Pembelian saham lama; itu pertukaran aset finansial."
+          "Pembelian saham lama; itu pertukaran aset finansial.\n💡 **Analogi:** Seperti pengusaha pabrik beli mesin jahit baru untuk nambah produksi baju, atau kamu ngebangun rumah baru. Ini uang keluar untuk bikin 'mesin pencetak uang' masa depan."
         ],
         [
-          "G",
+          "G\n(Pengeluaran Pemerintah)",
           "Belanja pemerintah atas barang/jasa final.",
-          "Transfer seperti bantuan sosial, karena tidak membeli output baru secara langsung."
+          "Transfer seperti bantuan sosial, karena tidak membeli output baru secara langsung.\n💡 **Analogi:** Seperti Pemkot bayar gaji guru, beli aspal untuk jalan raya, atau bangun rumah sakit."
         ],
         [
-          "NX",
+          "NX\n(Ekspor Neto)",
           "Ekspor dikurangi impor.",
-          "Impor dikurangkan karena sudah masuk C/I/G tetapi diproduksi luar negeri."
+          "Impor dikurangkan karena sudah masuk C/I/G tetapi diproduksi luar negeri.\n💡 **Analogi:** 'Kue' yang kita jual ke luar negeri dikurangi 'kue' yang kita beli dari luar negeri. Kalau positif, kita menang dagang."
         ]
       ]
     },

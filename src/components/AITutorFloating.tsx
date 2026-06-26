@@ -181,7 +181,7 @@ ${pageText}
             ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 340px - 16px))` } 
             : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 340px - 16px))` }),
           ...(isTopHalf 
-            ? { top: `clamp(16px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
+            ? { top: `clamp(80px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
             : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 550px - 16px))` })
         }}
       >
@@ -190,7 +190,7 @@ ${pageText}
           <div 
             {...draggable.handlers}
             className={`flex items-center justify-between p-4 text-white shrink-0 touch-none select-none transition-colors ${
-              draggable.isLongPressing ? 'bg-blue-700 cursor-grabbing' : 'bg-blue-600 cursor-grab'
+              draggable.isLongPressing ? 'bg-blue-700 cursor-grabbing' : 'bg-blue-600 cursor-grab hover:animate-pulse'
             }`}
           >
             <div className="flex items-center gap-2 font-bold pointer-events-none">
@@ -379,9 +379,9 @@ ${pageText}
         style={{
           ...draggable.handlers.style,
           position: 'fixed',
-          left: draggable.position.x,
-          top: draggable.position.y,
-          zIndex: 100
+          left: `clamp(0px, ${draggable.position.x}px, calc(100vw - 48px))`,
+          top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
+          zIndex: 99
         }}
         className={`zen-hideable group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
           draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-blue-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'

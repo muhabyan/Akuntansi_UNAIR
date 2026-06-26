@@ -163,7 +163,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       );
     case 'h3':
       return (
-        <h3 className="mt-6 mb-2 flex items-center gap-3 border-l-4 border-gold-500 dark:border-gold/70 pl-4 font-display text-lg font-bold leading-snug text-gold-700 dark:text-gold">
+        <h3 className="mt-6 mb-2 border-l-4 border-gold-500 dark:border-gold/70 pl-4 font-display text-lg font-bold leading-snug text-gold-700 dark:text-gold">
           {renderText(block.text)}
         </h3>
       );
@@ -279,7 +279,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 <Table2 size={14} /> Tabel Data Khusus
               </div>
             </div>
-            <div className="akbi-table-scroll w-full overflow-x-auto" role={enableEditorialReading ? 'region' : undefined} aria-label={enableEditorialReading ? `${tableLabel}. Geser horizontal untuk membaca seluruh kolom.` : undefined} tabIndex={enableEditorialReading ? 0 : undefined}>
+            <div 
+              className="akbi-table-scroll w-full overflow-x-auto" 
+              role={enableEditorialReading ? 'region' : undefined} 
+              aria-label={enableEditorialReading ? `${tableLabel}. Geser horizontal untuk membaca seluruh kolom.` : undefined} 
+              tabIndex={enableEditorialReading ? 0 : undefined}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
+            >
               <table className="w-full border-collapse text-sm">
                 <thead>
                   <tr className="course-table-head">
@@ -342,7 +350,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               <span className="block md:hidden">geser untuk kolom lain</span>
             </div>
           </div>
-          <div className="akbi-table-scroll w-full overflow-x-auto" role="region" aria-label={`${tableLabel}. Geser horizontal untuk membaca seluruh kolom.`} tabIndex={0}>
+          <div 
+            className="akbi-table-scroll w-full overflow-x-auto" 
+            role="region" 
+            aria-label={`${tableLabel}. Geser horizontal untuk membaca seluruh kolom.`} 
+            tabIndex={0}
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}
+          >
             <table className="w-full border-collapse text-sm">
               <caption className="sr-only">{block.caption ?? tableLabel}</caption>
               <thead>
@@ -388,7 +404,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           <div className="flex items-center gap-2 border-b border-emerald-500/20 dark:border-emerald-500/15 bg-emerald-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800 dark:text-emerald-300">
             <FileText size={15} /> Jurnal Akuntansi
           </div>
-          <div className="akbi-table-scroll w-full overflow-x-auto" role={enableEditorialReading ? 'region' : undefined} aria-label={enableEditorialReading ? 'Jurnal akuntansi. Geser horizontal untuk membaca seluruh kolom.' : undefined} tabIndex={enableEditorialReading ? 0 : undefined}>
+          <div 
+            className="akbi-table-scroll w-full overflow-x-auto" 
+            role={enableEditorialReading ? 'region' : undefined} 
+            aria-label={enableEditorialReading ? 'Jurnal akuntansi. Geser horizontal untuk membaca seluruh kolom.' : undefined} 
+            tabIndex={enableEditorialReading ? 0 : undefined}
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}
+          >
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-slate-50 dark:bg-navy-800/70 text-[11px] uppercase tracking-wider text-slate-700 dark:text-slate-400">
@@ -441,7 +465,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <div className="flex items-center gap-2 border-b border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
               <Table2 size={15} /> Format Teks Terstruktur
             </div>
-            <div className="akbi-table-scroll w-full overflow-x-auto px-5 py-4" role={enableEditorialReading ? 'region' : undefined} aria-label={enableEditorialReading ? 'Format teks terstruktur. Geser horizontal bila diperlukan.' : undefined} tabIndex={enableEditorialReading ? 0 : undefined}>
+            <div 
+              className="akbi-table-scroll w-full overflow-x-auto px-5 py-4" 
+              role={enableEditorialReading ? 'region' : undefined} 
+              aria-label={enableEditorialReading ? 'Format teks terstruktur. Geser horizontal bila diperlukan.' : undefined} 
+              tabIndex={enableEditorialReading ? 0 : undefined}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
+            >
               <pre className="w-full whitespace-pre-wrap font-sans text-xs leading-[1.75] tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">{block.text}</pre>
             </div>
             {block.note && <p className="border-t border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs text-slate-600 dark:text-slate-400">{renderText(block.note)}</p>}
@@ -454,7 +486,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           <div className={`flex items-center gap-2 border-b px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-gold-700 dark:text-gold'}`}>
             {warning ? <AlertTriangle size={15} /> : <Sigma size={15} />} {economicFormula.title ? `Formula Ekonomi · ${economicFormula.title}` : 'Rumus / Formula'}
           </div>
-          <div className="akbi-table-scroll overflow-x-auto px-5 py-4" role={enableEditorialReading ? 'region' : undefined} aria-label={enableEditorialReading ? 'Rumus atau formula. Geser horizontal bila diperlukan.' : undefined} tabIndex={enableEditorialReading ? 0 : undefined}>
+          <div 
+            className="akbi-table-scroll overflow-x-auto px-5 py-4" 
+            role={enableEditorialReading ? 'region' : undefined} 
+            aria-label={enableEditorialReading ? 'Rumus atau formula. Geser horizontal bila diperlukan.' : undefined} 
+            tabIndex={enableEditorialReading ? 0 : undefined}
+            onTouchStart={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
+            onTouchEnd={(e) => e.stopPropagation()}
+          >
             <pre className="whitespace-pre-wrap font-mono text-sm leading-[1.75] tracking-wide text-slate-900 dark:text-slate-200" aria-label={economicFormula.title ? `Rumus ${economicFormula.title}` : undefined}>{economicFormula.body}</pre>
           </div>
           {block.note && <p className={`border-t px-5 py-3 text-xs leading-relaxed ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-slate-700 dark:text-slate-400'}`}>{renderText(block.note)}</p>}

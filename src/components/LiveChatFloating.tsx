@@ -149,7 +149,7 @@ export default function LiveChatFloating() {
             ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 340px - 16px))` } 
             : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 340px - 16px))` }),
           ...(isTopHalf 
-            ? { top: `clamp(16px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
+            ? { top: `clamp(80px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
             : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 550px - 16px))` })
         }}
       >

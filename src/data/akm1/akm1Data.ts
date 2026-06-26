@@ -487,7 +487,7 @@ const AKM1_TM6_FLOW_BLOCKS: ContentBlock[] = [
   },
   {
     kind: "p",
-    text: "Metode tidak langsung dimulai dari net income lalu menyesuaikan item non-kas dan perubahan working capital. Depreciation ditambahkan kembali bukan karena menghasilkan kas, tetapi karena beban tersebut mengurangi laba tanpa mengurangi kas periode berjalan.",
+    text: "Metode tidak langsung dimulai dari net income lalu menyesuaikan item non-kas dan perubahan working capital. Depreciation ditambahkan kembali bukan karena menghasilkan kas, tetapi karena beban tersebut mengurangi laba tanpa mengurangi kas periode berjalan.\n\n💡 **Analogi:** Bayangkan kamu punya jatah uang jajan Rp100 ribu. Kamu belikan mesin cuci mini Rp50 ribu yang awet 5 tahun. Hari ini uangmu berkurang Rp50 ribu secara kas, tetapi secara akuntansi kamu 'mencicil' biayanya (depresiasi) Rp10 ribu/tahun. Ketika di akhir tahun kamu menghitung labamu dan melihat ada 'beban depresiasi Rp10 ribu', padahal tahun ini kamu *tidak keluar uang Rp10 ribu untuk itu*, maka kamu harus **menambahkan kembali** Rp10 ribu itu ke labamu untuk tahu berapa uang kas asli yang tersisa di dompetmu.",
   },
   {
     kind: "callout",
@@ -542,7 +542,7 @@ const AKM1_TM7_FLOW_BLOCKS: ContentBlock[] = [
   },
   {
     kind: "p",
-    text: "Time value of money menyatakan bahwa kas hari ini tidak setara dengan kas masa depan karena kas hari ini dapat diinvestasikan dan menghasilkan return. Dalam akuntansi, konsep ini dipakai untuk mengukur transaksi yang kasnya diterima atau dibayar di masa depan.",
+    text: "Time value of money menyatakan bahwa kas hari ini tidak setara dengan kas masa depan karena kas hari ini dapat diinvestasikan dan menghasilkan return. Dalam akuntansi, konsep ini dipakai untuk mengukur transaksi yang kasnya diterima atau dibayar di masa depan.\n\n💡 **Analogi TVM:** Bayangkan kamu punya uang Rp1.000.000 hari ini. Kalau kamu taruh di bank (deposito) dengan bunga 5% per tahun, tahun depan uangmu jadi Rp1.050.000. Jadi, kalau ada teman pinjam uangmu dan baru janji bayar Rp1.000.000 tahun depan, kamu sebenarnya *rugi* Rp50.000 (karena kehilangan kesempatan dapat bunga bank). Itulah mengapa Rp1 Juta hari ini *lebih berharga* daripada Rp1 Juta tahun depan.",
   },
   {
     kind: "p",
@@ -580,7 +580,7 @@ const tm1: Reading = {
     { kind: "h2", text: "A. Lingkungan Pelaporan Keuangan" },
     {
       kind: "p",
-      text: 'Akuntansi keuangan berujung pada **laporan keuangan bertujuan umum** (general-purpose financial statements) bagi pihak eksternal. Karena pengguna tidak bisa "memesan" laporan khusus, dibutuhkan **standar** yang seragam. Standar global adalah **IFRS** yang diterbitkan oleh **IASB**. Di Indonesia dikonvergensi menjadi **SAK** (DSAK-IAI).',
+      text: 'Akuntansi keuangan berujung pada **laporan keuangan bertujuan umum** (general-purpose financial statements) bagi pihak eksternal. Karena pengguna tidak bisa "memesan" laporan khusus, dibutuhkan **standar** yang seragam. Standar global adalah **IFRS** yang diterbitkan oleh **IASB**. Di Indonesia dikonvergensi menjadi **SAK** (DSAK-IAI).\n\n💡 **Analogi Standar Akuntansi:** Bayangkan kalau bahasa Indonesia tidak punya standar EYD/KBBI. Orang Jawa akan nulis laporan pakai bahasa Jawa, orang Sunda pakai bahasa Sunda. Investor asing yang mau baca laporannya pasti bingung! Nah, IFRS/SAK itu ibarat "Kamus Besar Akuntansi" agar semua perusahaan di dunia ngomong pakai *bahasa bisnis yang sama*, sehingga gampang dibandingkan.',
     },
     {
       kind: "ul",
