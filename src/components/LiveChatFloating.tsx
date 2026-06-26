@@ -10,6 +10,7 @@ interface ChatMessage {
   created_at: string;
   user_id: string;
   user_email: string;
+  user_nickname?: string;
   message: string;
 }
 
@@ -106,6 +107,7 @@ export default function LiveChatFloating() {
       {
         user_id: user.id,
         user_email: user.email,
+        user_nickname: user.user_metadata?.nickname || user.email?.split('@')[0] || '',
         message: msgText,
       }
     ]);
@@ -114,7 +116,7 @@ export default function LiveChatFloating() {
     
     if (error) {
       console.error('Error sending message:', error);
-      setErrorMsg('Gagal mengirim pesan. Pastikan Anda sudah menjalankan SQL di Supabase.');
+      setErrorMsg('Gagal mengirim pesan. Pastikan Anda sudah menambahkan kolom "user_nickname" berjenis text di tabel global_chat Supabase.');
       setInputText(msgText); // Restore text
     }
   };
@@ -135,8 +137,8 @@ export default function LiveChatFloating() {
     }
   };
 
-  const getDisplayName = (email: string) => {
-    return email.split('@')[0];
+  const getDisplayName = (msg: ChatMessage) => {
+    return msg.user_nickname || msg.user_email.split('@')[0];
   };
 
   const isLeftHalf = typeof window !== 'undefined' ? draggable.position.x < (document.documentElement.clientWidth || window.innerWidth) / 2 : false;
@@ -211,7 +213,8 @@ export default function LiveChatFloating() {
             ) : (
               messages.map((msg, i) => {
                 const isMe = msg.user_id === user?.id;
-                const showName = i === 0 || messages[i-1].user_id !== msg.user_id;
+                // Selalu tampilkan nama untuk setiap pesan, kecuali pesan dari diri sendiri
+                const showName = !isMe;
                 
                 const msgDate = new Date(msg.created_at);
                 const hoursDiff = (new Date().getTime() - msgDate.getTime()) / (1000 * 60 * 60);
@@ -237,9 +240,9 @@ export default function LiveChatFloating() {
                       </div>
                     )}
                     <div className={`flex flex-col group ${isMe ? 'items-end' : 'items-start'} mb-1`}>
-                      {showName && !isMe && (
-                        <span className="text-[10px] text-gray-500 font-medium ml-1 mb-1">
-                          {getDisplayName(msg.user_email)}
+                      {showName && (
+                        <span className="text-[10px] text-gray-500 font-medium ml-1 mb-0.5">
+                          {getDisplayName(msg)}
                         </span>
                       )}
                     <div className={`flex items-center gap-2 max-w-[85%] ${isMe ? 'flex-row-reverse' : 'flex-row'}`}>

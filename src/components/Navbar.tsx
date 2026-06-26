@@ -7,7 +7,7 @@
 // - keeps subtle scroll progress without blocking pointer events.
 // =============================================================
 import { useEffect, useState } from 'react';
-import { GraduationCap, LogOut, Menu, UserCircle2, X, Download } from 'lucide-react';
+import { GraduationCap, Menu, UserCircle2, X, Download } from 'lucide-react';
 import { MegaMenu, QuizMegaMenu, LaporanMegaMenu } from './MegaMenu';
 import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
@@ -61,7 +61,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
   const [mobileOpen, setMobileOpen] = useState(false);
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
-  const { user, loading, signIn, signOut } = useAuth();
+  const { user, loading, signIn } = useAuth();
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -256,10 +256,9 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800">
               {!loading && (
                 user ? (
-                  <button onClick={signOut} className="w-full text-left text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2 py-2 px-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
+                  <button onClick={() => { setProfileModalOpen(true); setMobileOpen(false); }} className="w-full text-left text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2 py-2 px-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">
                     <UserCircle2 size={18} />
-                    <span className="truncate">{user.email}</span>
-                    <LogOut size={16} className="ml-auto opacity-70" />
+                    <span className="truncate">{user.user_metadata?.nickname || user.email}</span>
                   </button>
                 ) : (
                   <button onClick={() => { signIn(); setMobileOpen(false); }} className="w-full text-center text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition shadow-sm">
