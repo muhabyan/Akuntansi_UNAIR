@@ -17,6 +17,7 @@ import LiveChatFloating from './components/LiveChatFloating';
 import AICommandHandler from './components/AICommandHandler';
 import { NotificationProvider } from './contexts/NotificationContext';
 import ScheduleNotifier from './components/ScheduleNotifier';
+import UpdateNotifier from './components/UpdateNotifier';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -247,6 +248,7 @@ export default function App() {
 
   return (
     <NotificationProvider>
+      <UpdateNotifier />
       <ScheduleNotifier />
       <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
         <OnboardingTour />
