@@ -14,6 +14,7 @@ import ThemeSwitch from './ThemeSwitch';
 import type { Course, CourseTabId } from '../types';
 import { useAuth } from '../contexts/AuthContext';
 import ProfileModal from './ProfileModal';
+import NotificationBell from './NotificationBell';
 
 type NavMenu = 'materi' | 'quiz' | 'laporan' | null;
 
@@ -220,6 +221,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
                   <span>Install</span>
                 </button>
               )}
+              <NotificationBell />
               <ThemeSwitch theme={theme} onToggleTheme={onToggleTheme} variant={isQuietThemeControl ? 'quiet' : 'legacy'} />
               <button
                 type="button"

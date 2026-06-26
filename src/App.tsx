@@ -15,6 +15,7 @@ import OnboardingTour from './components/OnboardingTour';
 import AITutorFloating from './components/AITutorFloating';
 import LiveChatFloating from './components/LiveChatFloating';
 import AICommandHandler from './components/AICommandHandler';
+import { NotificationProvider } from './contexts/NotificationContext';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -244,8 +245,9 @@ export default function App() {
   const isGuideView = activeView === 'guide';
 
   return (
-    <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
-      <OnboardingTour />
+    <NotificationProvider>
+      <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
+        <OnboardingTour />
       <IntroSplash />
       <AuthModal />
       <PomodoroTimer />
@@ -311,5 +313,6 @@ export default function App() {
         <p className="mt-3 font-bold tracking-widest text-blue-600/80 dark:text-blue-400/80 uppercase text-[10px] md:text-xs">Excellence with Morality</p>
       </footer>
     </div>
+    </NotificationProvider>
   );
 }
