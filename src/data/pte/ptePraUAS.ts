@@ -477,6 +477,12 @@ const tm9: Reading = {
       "note": "Filosofi S = I: Tabungan (S) adalah uang yang 'BOCOR' keluar dari perputaran belanja. Sedangkan Investasi (I) adalah uang segar dari pinjaman bank yang 'DISUNTIKKAN' kembali ke ekonomi. Output akan stabil sempurna jika nilai Suntikan persis menambal nilai Bocoran."
     },
     {
+      "kind": "figure",
+      "title": "Keynesian Cross: Perekonomian Dua Sektor",
+      "svg": "<svg font-family=\"DM Sans, sans-serif\" style=\"max-width:100%;height:auto;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" xmlns=\"http://www.w3.org/2000/svg\">\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"350\" y1=\"230\" y2=\"230\"></line>\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"230\" y2=\"30\"></line>\n  <text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"20\" y=\"35\">AE</text>\n  <text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"335\" y=\"245\">Y</text>\n  <line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"50\" x2=\"250\" y1=\"230\" y2=\"30\"></line>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"190\" y=\"40\">Y = AE (45°)</text>\n  <line stroke=\"#4f9cf9\" stroke-width=\"2.5\" x1=\"50\" x2=\"280\" y1=\"150\" y2=\"50\"></line>\n  <text fill=\"#4f9cf9\" font-size=\"11\" font-weight=\"bold\" x=\"285\" y=\"55\">AE = C + I</text>\n  <line stroke=\"#22d3a0\" stroke-width=\"1.5\" stroke-dasharray=\"4,4\" x1=\"50\" x2=\"280\" y1=\"180\" y2=\"80\"></line>\n  <text fill=\"#22d3a0\" font-size=\"11\" font-weight=\"bold\" x=\"285\" y=\"85\">C = C₀ + bY</text>\n  <line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1.5\" x1=\"165\" x2=\"165\" y1=\"100\" y2=\"230\"></line>\n  <line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1.5\" x1=\"50\" x2=\"165\" y1=\"100\" y2=\"100\"></line>\n  <circle cx=\"165\" cy=\"100\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#f9a825\" font-size=\"11\" x=\"155\" y=\"245\">Y*</text>\n  <text fill=\"#f9a825\" font-size=\"11\" x=\"155\" y=\"90\">Ekuilibrium</text>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"10\" y=\"154\">C₀+I</text>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"25\" y=\"184\">C₀</text>\n</svg>",
+      "caption": "Kurva Aggregate Expenditure (AE = C + I) bermula dari (C₀ + I). Ekuilibrium terjadi di perpotongan kurva AE dengan garis 45 derajat (Y = AE) pada titik Y*."
+    },
+    {
       "kind": "callout",
       "variant": "info",
       "title": "Soal Ujian: Hitung Y Keseimbangan",
@@ -501,6 +507,12 @@ const tm9: Reading = {
       "kind": "formula",
       "text": "Investment Multiplier Coefficient (k):\nk = 1 / (1 - MPC)  atau  k = 1 / MPS\n\nΔY = k × ΔI",
       "note": "Contoh: Jika MPC = 2/3 (artinya MPS = 1/3), maka k = 1 / (1/3) = 3. Jika ada pengusaha berinvestasi Rp 1.000 Triliun, maka Total GDP akan meledak sebanyak: 3 × 1.000 = Rp 3.000 Triliun!"
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Bedah Soal / Kisi-Kisi UAS",
+      "text": "**Tanya:** *\"Apakah Multiplier di Perekonomian Tertutup lebih besar atau lebih kecil daripada di Perekonomian Terbuka?\"*\n\n**Jawab (Level Profesor):** Multiplier dalam **Perekonomian Tertutup LEBIH BESAR** daripada perekonomian terbuka. Di ekonomi tertutup, satu-satunya bocoran (leakage) dari efek domino di atas hanyalah Tabungan (MPS). \n\nNamun, di Ekonomi Terbuka, uang kuli bangunan yang berputar tadi sebagian akan **bocor lagi ke luar negeri** karena dipakai membeli barang Impor (contoh: beli HP China atau motor Jepang). Keinginan membeli barang impor ini diukur dengan MPM *(Marginal Propensity to Import)*. Karena uangnya lari ke luar negeri, putaran ekonomi domestik jadi lebih cepat melempem. (Rumus multiplier ekonomi terbuka: `k = 1 / (MPS + MPM)`)."
     }
   ]
 };
