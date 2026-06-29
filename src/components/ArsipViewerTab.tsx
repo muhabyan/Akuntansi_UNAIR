@@ -29,6 +29,16 @@ export default function ArsipViewerTab({ files }: { files: ArsipFile[] }) {
            />
         </div>
       );
+    } else if (selectedFile.type === 'html') {
+      return (
+        <div className="flex flex-col h-[600px] border rounded-lg bg-white dark:bg-gray-900 dark:border-gray-700 overflow-hidden">
+           <iframe
+             src={selectedFile.url}
+             className="w-full flex-1 border-0 bg-white"
+             title={selectedFile.name}
+           />
+        </div>
+      );
     } else {
       // DOCX, PPTX, XLSX viewer using Office web viewer
       const hostUrl = typeof window !== 'undefined' ? window.location.origin : '';

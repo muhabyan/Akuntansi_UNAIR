@@ -1,7 +1,7 @@
 export interface ArsipFile {
   name: string;
   url: string;
-  type: 'pdf' | 'docx' | 'pptx' | 'xlsx' | 'other';
+  type: 'pdf' | 'docx' | 'pptx' | 'xlsx' | 'html' | 'other';
 }
 
 export const ARSIP_REGISTRY: Record<string, ArsipFile[]> = {
@@ -37,6 +37,7 @@ export const ARSIP_REGISTRY: Record<string, ArsipFile[]> = {
     { name: 'UAS PENGBIS.docx', url: '/arsip-uas/PENGBIS/UAS PENGBIS.docx', type: 'docx' },
   ],
   'EKT109': [ // PTE
+    { name: 'Modul Final UAS PTE Makro PJMK.pdf', url: '/arsip-uas/PTE/Modul_Final_UAS_PTE_Makro_PJMK.pdf', type: 'pdf' },
     { name: 'UAS_PTE_SAKURA-Copy.pdf', url: '/arsip-uas/PTE/UAS_PTE_SAKURA-Copy.pdf', type: 'pdf' },
     { name: 'UAS_PTE_SAKURA.pdf', url: '/arsip-uas/PTE/UAS_PTE_SAKURA.pdf', type: 'pdf' },
     { name: 'SOAL LATIHAN UTS.pdf', url: '/arsip-uas/PTE/SOAL LATIHAN UTS.pdf', type: 'pdf' },
