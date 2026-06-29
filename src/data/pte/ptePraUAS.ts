@@ -50,7 +50,7 @@ const tm8: Reading = {
     {
       "kind": "illustration",
       "type": "circular-flow",
-      "caption": "Aliran luar (kuning) menunjukkan arus uang: rumah tangga belanja → perusahaan terima pendapatan → perusahaan bayar faktor produksi → rumah tangga terima penghasilan. Aliran dalam (biru) menunjukkan arus barang dan faktor produksi yang bergerak berlawanan arah."
+      "caption": "Aliran luar (hijau) menunjukkan arus uang: rumah tangga belanja → perusahaan terima pendapatan → perusahaan bayar faktor produksi → rumah tangga terima penghasilan. Aliran dalam (oranye) menunjukkan arus barang dan faktor produksi yang bergerak berlawanan arah."
     },
     {
       "kind": "callout",
@@ -147,11 +147,6 @@ const tm8: Reading = {
       ]
     },
     {
-      "kind": "illustration",
-      "type": "gdp-waterfall",
-      "caption": "Setiap langkah mengurangi satu komponen dari GDP hingga menjadi pendapatan yang benar-benar bisa dibelanjakan rumah tangga (Disposable Income). DI hanya punya dua tujuan: dikonsumsi (C) atau ditabung (S)."
-    },
-    {
       "kind": "chart-guide",
       "title": "Panduan Membaca Diagram GDP ke DI",
       "points": [
@@ -161,6 +156,11 @@ const tm8: Reading = {
         "**Personal Income (PI):** Dari NI dikurangi laba ditahan, pajak perusahaan, iuran jaminan sosial, dan ditambah **Transfer Payment**.",
         "**Disposable Income (DI):** Dari PI dikurangi **Pajak Langsung** (contoh: PPh). Ini adalah uang tunai murni yang siap dibelanjakan atau ditabung."
       ]
+    },
+    {
+      "kind": "illustration",
+      "type": "gdp-waterfall",
+      "caption": "Setiap langkah mengurangi satu komponen dari GDP hingga menjadi pendapatan yang benar-benar bisa dibelanjakan rumah tangga (Disposable Income). DI hanya punya dua tujuan: dikonsumsi (C) atau ditabung (S)."
     },
     {
       "kind": "h2",
@@ -228,7 +228,8 @@ const tm8: Reading = {
     },
     {
       "kind": "formula",
-      "text": "Identitas Pengeluaran Nasional\n\nY = C + I + G + NX\n\nNX = X − M\n\nDalam perekonomian tertutup: NX = 0, sehingga Y = C + I + G"
+      "text": "Identitas Pengeluaran Nasional\n\nY = C + I + G + NX\n\nNX = X − M\n\nDalam perekonomian tertutup: NX = 0, sehingga Y = C + I + G",
+      "note": "Keterangan Simbol:\nY = Pendapatan Nasional (GDP)\nC = Konsumsi Rumah Tangga\nI = Investasi\nG = Pengeluaran Pemerintah\nNX = Ekspor Neto\nX = Ekspor\nM = Impor"
     },
     {
       "kind": "table",
@@ -424,7 +425,8 @@ const tm8: Reading = {
     },
     {
       "kind": "formula",
-      "text": "Rumus Penting\n\nNominal GDP = Σ(P_t × Q_t)\n\nReal GDP = Σ(P_base × Q_t)\n\nGDP Deflator = (Nominal GDP / Real GDP) × 100\n\nInflation rate = [(Price Index_t − Price Index_{t−1}) / Price Index_{t−1}] × 100%"
+      "text": "Rumus Penting\n\nNominal GDP = Σ(P_t × Q_t)\n\nReal GDP = Σ(P_base × Q_t)\n\nGDP Deflator = (Nominal GDP / Real GDP) × 100\n\nInflation rate = [(Price Index_t − Price Index_{t−1}) / Price Index_{t−1}] × 100%",
+      "note": "Keterangan Simbol:\nP_t = Harga pada tahun berjalan (current year)\nQ_t = Kuantitas pada tahun berjalan\nP_base = Harga pada tahun dasar (base year)\nPrice Index = Indeks Harga (dapat berupa GDP Deflator atau CPI)"
     },
     {
       "kind": "table",
