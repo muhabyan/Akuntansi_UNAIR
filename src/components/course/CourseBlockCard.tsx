@@ -4,6 +4,7 @@ import type { ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
+import EconDiagram from './EconDiagrams';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -570,6 +571,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       return <JournalBuilder spec={block.spec} />;
     case 't-account-builder':
       return <TAccountBuilder spec={block.spec} />;
+    case 'illustration':
+      return (
+        <figure className="course-figure-surface mb-7 overflow-hidden rounded-2xl border border-navy-500/10 dark:border-navy-500/20">
+          <div className="p-3 md:p-5">
+            <EconDiagram type={block.type} />
+          </div>
+          {block.caption && <p className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
+        </figure>
+      );
     default:
       return null;
   }

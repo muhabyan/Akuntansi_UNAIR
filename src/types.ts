@@ -124,7 +124,8 @@ export type ContentBlock =
   | { kind: 'interactive-match'; spec: InteractiveMatchSpec }
   | { kind: 'table-fill'; spec: TableFillSpec }
   | { kind: 'journal-builder'; spec: JournalBuilderSpec }
-  | { kind: 't-account-builder'; spec: TAccountBuilderSpec };
+  | { kind: 't-account-builder'; spec: TAccountBuilderSpec }
+  | { kind: 'illustration'; type: string; caption?: string };
 
 // ---- Laporan keuangan terstruktur (contoh penuh & isian interaktif) ----
 
