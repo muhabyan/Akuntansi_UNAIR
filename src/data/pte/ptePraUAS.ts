@@ -388,308 +388,118 @@ const tm8: Reading = {
 
 const tm9: Reading = {
   "tm": 9,
-  "title": "Perekonomian Tertutup: Model Dua Sektor (Konsumsi & Investasi)",
+  "title": "Perekonomian Tertutup (Bagian 1): Identitas, Konsumsi, Tabungan & Dana Pinjaman",
   "ref": "Kontrak: 1(20), 2(23,24) · Substansi: Samuelson Ch.21–22; Mankiw Ch.26, Ch.33–34",
-  "intro": "Membedah struktur ekonomi paling murni tanpa campur tangan pemerintah, membongkar anatomi konsumsi rumah tangga, fungsi tabungan, dan tabel perhitungan MPC & MPS secara presisi.",
+  "intro": "Membangun identitas ekonomi tertutup, fungsi konsumsi-tabungan, hubungan S = I, dan mekanisme pasar dana pinjaman.",
   "objectives": [
-    "Memahami anatomi ekonomi dua sektor: Konsumsi dan Tabungan.",
-    "Menyusun fungsi Konsumsi (C) dan fungsi Tabungan (S) dari tabel data absolut.",
-    "Membaca dan menginterpretasikan grafik Fungsi Konsumsi, Break-Even Point, dan Fungsi Tabungan.",
-    "Menghitung secara presisi Marginal Propensity to Consume (MPC) dan Marginal Propensity to Save (MPS)."
+    "Menurunkan identitas tabungan nasional, tabungan privat, dan tabungan publik.",
+    "Menggunakan fungsi konsumsi dan tabungan serta MPC dan MPS.",
+    "Menjelaskan mengapa S = I dalam ekonomi tertutup.",
+    "Menganalisis suku bunga riil dan crowding out melalui pasar dana pinjaman."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Pengantar: Anatomi Ekonomi Dua Sektor"
+      "text": "Identitas Ekonomi Tertutup"
     },
     {
       "kind": "p",
-      "text": "Perekonomian tertutup dua sektor adalah model paling mendasar untuk memahami mesin penggerak ekonomi. Di sini, ruang isolasi diberlakukan: kita **hanya** memiliki dua aktor utama, yakni **Rumah Tangga (Households)** dan **Perusahaan (Firms)**. Model ini melarang adanya campur tangan Pemerintah (tanpa pajak T atau belanja G) dan tidak ada perdagangan internasional (tanpa ekspor X atau impor M)."
-    },
-    {
-      "kind": "h2",
-      "text": "Mesin Pertama: Consumption (Konsumsi)"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Definisi Absolut:** Konsumsi adalah aktivitas yang menghancurkan nilai guna (utility) dari barang dan jasa.",
-        "**Personal Consumption Expenditure:** Pengeluaran oleh rumah tangga untuk membeli barang tidak tahan lama (non-durable), barang tahan lama (durable) *kecuali* perumahan baru, dan jasa.",
-        "**Fungsi Konsumsi Linear:** Bentuk persamaan mutlaknya adalah **C = C₀ + bY**."
-      ]
+      "text": "Perekonomian tertutup adalah perekonomian yang tidak melakukan transaksi barang, jasa, dan aset finansial dengan luar negeri. Dalam model ini, ekspor dan impor dianggap nol, sehingga analisis berfokus pada interaksi rumah tangga, perusahaan, dan pemerintah di dalam negeri."
     },
     {
       "kind": "formula",
-      "text": "C = C₀ + bY",
-      "note": "Di mana:\nC₀ = Autonomous Consumption (Konsumsi Otonom: konsumsi minimum untuk bertahan hidup saat pendapatan nol).\nb = Marginal Propensity to Consume (MPC), nilainya di antara 0 dan 1 (0 < b < 1).\nY = Disposable Income (Pendapatan Siap Pakai)."
+      "text": "Identitas Dasar\n\nY = C + I + G\n\nJika tanpa pemerintah: Y = C + I\n\nJika ekonomi tertutup: NX = 0"
     },
     {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Bedah Kritis: Mengapa C₀ Tidak Pernah Nol?",
-      "text": "**Interpretasi Ekstrem:** Bayangkan sebuah negara dilanda krisis total hingga Pendapatan (Y) = $0. Apakah konsumsi (C) menjadi nol? **TIDAK.** Manusia tetap harus makan untuk bertahan hidup. Mereka akan mencairkan tabungan masa lalu, menjual aset, atau berutang. Inilah makna absolut dari C₀ (Autonomous Consumption). Nilai C₀ memastikan kurva konsumsi tidak pernah bermula dari titik (0,0) di grafik."
-    },
-    {
-      "kind": "h2",
-      "text": "Mesin Kedua: Saving (Tabungan)"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Definisi Absolut:** Personal saving adalah bagian dari disposable income (pendapatan) yang **TIDAK** dikonsumsi.",
-        "**Penurunan Rumus Tabungan:** Karena setiap uang hanya bisa dikonsumsi atau ditabung, maka persamaannya diturunkan langsung dari fungsi konsumsi."
-      ]
+      "kind": "p",
+      "text": "Identitas ini bukan teori perilaku, melainkan persamaan akuntansi. Teori muncul ketika kita menjelaskan bagaimana C, I, dan G ditentukan, serta bagaimana perubahan salah satu komponen memengaruhi output ekuilibrium."
     },
     {
       "kind": "formula",
-      "text": "S = Y - C\nS = Y - (C₀ + bY)\nS = -C₀ + (1 - b)Y",
-      "note": "Di mana:\n-C₀ = Dissaving (Tabungan Negatif / Ngutang untuk makan saat pendapatan nol).\n(1 - b) = Marginal Propensity to Save (MPS), nilainya di antara 0 dan 1 (0 < b < 1)."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Pembuktian Matematis Absolut: MPC + MPS = 1",
-      "text": "Mengapa kedua angka ini jika dijumlahkan pasti 1? Secara logika matematis, setiap tambahan 1 keping koin yang kamu terima (ΔY) HANYA memiliki dua jalur pelarian: dikonsumsi (ΔC) atau ditabung (ΔS).\n\n**Pembuktian Absolut:**\n1. Secara kodrat: **ΔY = ΔC + ΔS**\n2. Bagi semua sisi dengan ΔY:\n   **(ΔY / ΔY) = (ΔC / ΔY) + (ΔS / ΔY)**\n3. **1 = MPC + MPS** *(Terbukti!)*\n\n**Kemungkinan Ekstrem & Hubungannya:** \n- Jika sebuah masyarakat sangat pelit (MPS = 1), maka uang berhenti mengalir karena MPC = 0. Tidak ada pabrik yang bisa berjualan, ekonomi mati membeku.\n- Sebaliknya, jika masyarakat sangat boros (MPC = 1), maka tabungan nol (MPS = 0). Dampaknya? Bank tidak punya pasokan uang untuk dipinjamkan ke pengusaha, investasi mati total!"
-    },
-    {
-      "kind": "h2",
-      "text": "Tabel 1: Hubungan Income, Consumption, dan Saving"
-    },
-    {
-      "kind": "p",
-      "text": "Mari kita bedah angka absolut pembentuk kurva makroekonomi (lihat tabel di bawah). Jika Pendapatan (Y) adalah kolom 1, dan Konsumsi (C) adalah kolom 2, maka Tabungan (S) adalah sisa dari Kolom 1 dikurangi Kolom 2."
-    },
-    {
-      "kind": "table",
-      "headers": ["Titik", "Disposable Income (1)", "Consumption (2)", "Saving (3) = (1) - (2)"],
-      "rows": [
-        ["A", "$24.000", "$24.200", "-$200 (Dissaving)"],
-        ["B", "$25.000", "$25.000", "$0 (Break-even)"],
-        ["C", "$26.000", "$25.800", "$200 (Saving)"],
-        ["D", "$27.000", "$26.600", "$400 (Saving)"],
-        ["E", "$28.000", "$27.400", "$600 (Saving)"],
-        ["F", "$29.000", "$28.200", "$800 (Saving)"],
-        ["G", "$30.000", "$29.000", "$1.000 (Saving)"]
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Grafik 1: Kurva Fungsi Konsumsi & Titik Impas"
-    },
-    {
-      "kind": "figure",
-      "title": "Plot Fungsi Konsumsi (Titik A hingga G)",
-      "svg": "<svg font-family=\"DM Sans, sans-serif\" style=\"max-width:100%;height:auto;margin:0 auto;display:block\" viewBox=\"0 0 450 350\" xmlns=\"http://www.w3.org/2000/svg\">\n  <!-- Sumbu Utama -->\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"300\" y2=\"300\"></line>\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"300\" y2=\"30\"></line>\n  <!-- Label Sumbu -->\n  <text fill=\"#9aa4b7\" font-size=\"11\" font-weight=\"bold\" transform=\"rotate(-90 20 180)\" x=\"20\" y=\"180\">Consumption (dollars)</text>\n  <text fill=\"#9aa4b7\" font-size=\"11\" font-weight=\"bold\" x=\"180\" y=\"335\">Disposable income (dollars)</text>\n  <text fill=\"#9aa4b7\" font-size=\"11\" font-weight=\"bold\" x=\"410\" y=\"305\">DI</text>\n  <text fill=\"#9aa4b7\" font-size=\"11\" font-weight=\"bold\" x=\"45\" y=\"20\">C</text>\n  <!-- Garis 45 Derajat -->\n  <line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"50\" x2=\"300\" y1=\"300\" y2=\"50\"></line>\n  <text fill=\"#d81b60\" font-size=\"10\" x=\"75\" y=\"290\">45°</text>\n  <!-- Kurva Konsumsi -->\n  <line stroke=\"#4f9cf9\" stroke-width=\"2\" x1=\"160\" x2=\"370\" y1=\"200\" y2=\"50\"></line>\n  <text fill=\"#4f9cf9\" font-size=\"10\" font-weight=\"bold\" x=\"365\" y=\"75\">Consumption</text>\n  <text fill=\"#4f9cf9\" font-size=\"10\" font-weight=\"bold\" x=\"375\" y=\"88\">function</text>\n  <!-- Titik Data -->\n  <circle cx=\"200\" cy=\"171\" fill=\"#f9a825\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"190\" y=\"165\">A</text>\n  <circle cx=\"220\" cy=\"157\" fill=\"#d81b60\" r=\"4\"></circle>\n  <text fill=\"#d81b60\" font-size=\"10\" font-weight=\"bold\" x=\"195\" y=\"145\">B</text>\n  <text fill=\"#d81b60\" font-size=\"10\" x=\"105\" y=\"145\">Break-even point</text>\n  <line stroke=\"#d81b60\" stroke-width=\"1\" x1=\"190\" x2=\"215\" y1=\"145\" y2=\"155\"></line>\n  <circle cx=\"240\" cy=\"143\" fill=\"#f9a825\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"230\" y=\"137\">C</text>\n  <circle cx=\"260\" cy=\"129\" fill=\"#f9a825\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"250\" y=\"123\">D</text>\n  <circle cx=\"280\" cy=\"114\" fill=\"#f9a825\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"290\" y=\"117\">E</text>\n  <circle cx=\"300\" cy=\"100\" fill=\"#f9a825\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"310\" y=\"103\">F</text>\n  <circle cx=\"320\" cy=\"86\" fill=\"#f9a825\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"330\" y=\"89\">G</text>\n  <!-- Garis Saving -->\n  <line stroke=\"#d81b60\" stroke-dasharray=\"3,3\" stroke-width=\"1.5\" x1=\"280\" x2=\"280\" y1=\"114\" y2=\"70\"></line>\n  <text fill=\"#d81b60\" font-size=\"10\" font-weight=\"bold\" transform=\"rotate(-35 340 60)\" x=\"340\" y=\"60\">Saving</text>\n  <circle cx=\"280\" cy=\"70\" fill=\"#d81b60\" r=\"3\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"265\" y=\"65\">E''</text>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"285\" y=\"315\">28,000</text>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"210\" y=\"315\">25,000</text>\n</svg>",
-      "caption": "Figure 21-2. A Plot of the Consumption Function. Kurva Konsumsi (biru) memotong garis 45 derajat pada titik B. Di sebelah kanan B, jarak vertikal antara kurva biru dan garis 45 derajat adalah Saving (Tabungan)."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Interpretasi Anatomi: Kurva Fungsi Konsumsi",
-      "text": "**Titik A:** Keluarga berada di posisi miskin absolut. Pendapatan hanya $24.000, tapi biaya hidup mendesak $24.200. Akibatnya keluarga ini **berutang $200 (Dissaving)**. Secara grafis, kurva biru *berada di atas* garis 45 derajat.\n\n**Titik B (Break-Even Point):** Titik keramat di mana Pendapatan ($25.000) tepat ludes digunakan untuk Konsumsi ($25.000). Tidak ada yang ditabung, tidak ada utang (S=0). Di grafik, ini adalah **titik perpotongan** Kurva Konsumsi dengan Garis Kesempurnaan 45 derajat.\n\n**Titik E (dan C,D,F,G):** Ekonomi membaik. Pendapatan naik ke $28.000. Keluarga hanya membelanjakan $27.400, dan menabung $600. Di area ini, kurva Konsumsi *berada di bawah* garis 45 derajat. **Jarak vertikal** antara kurva Konsumsi (titik E) merentang naik ke garis 45 derajat (titik E'') adalah representasi visual mutlak dari Saving."
-    },
-    {
-      "kind": "h2",
-      "text": "Grafik 2: Kurva Fungsi Tabungan (Saving)"
-    },
-    {
-      "kind": "figure",
-      "title": "Fungsi Tabungan adalah Cerminan Fungsi Konsumsi",
-      "svg": "<svg font-family=\"DM Sans, sans-serif\" style=\"max-width:100%;height:auto;margin:0 auto;display:block\" viewBox=\"0 0 450 300\" xmlns=\"http://www.w3.org/2000/svg\">\n  <!-- Sumbu Utama -->\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"220\" y2=\"220\"></line>\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"280\" y2=\"30\"></line>\n  <line stroke=\"#657084\" stroke-width=\"1\" x1=\"45\" x2=\"55\" y1=\"250\" y2=\"250\"></line>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"20\" y=\"255\">-200</text>\n  <line stroke=\"#657084\" stroke-width=\"1\" x1=\"45\" x2=\"55\" y1=\"220\" y2=\"220\"></line>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"30\" y=\"225\">0</text>\n  <!-- Label Sumbu -->\n  <text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" transform=\"rotate(-90 15 150)\" x=\"15\" y=\"150\">Net saving (dollars)</text>\n  <text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" x=\"190\" y=\"285\">Disposable income (dollars)</text>\n  <text fill=\"#9aa4b7\" font-size=\"11\" font-weight=\"bold\" x=\"410\" y=\"225\">DI</text>\n  <text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" x=\"45\" y=\"20\">S</text>\n  <!-- Kurva Saving -->\n  <line stroke=\"#d81b60\" stroke-width=\"2.5\" x1=\"160\" x2=\"370\" y1=\"270\" y2=\"50\"></line>\n  <text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" x=\"310\" y=\"150\">Saving</text>\n  <!-- Titik Data -->\n  <circle cx=\"190\" cy=\"240\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"180\" y=\"235\">A</text>\n  <circle cx=\"210\" cy=\"220\" fill=\"#d81b60\" r=\"5\"></circle>\n  <text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" x=\"200\" y=\"210\">B</text>\n  <circle cx=\"230\" cy=\"198\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"220\" y=\"190\">C</text>\n  <circle cx=\"250\" cy=\"177\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"240\" y=\"170\">D</text>\n  <circle cx=\"270\" cy=\"156\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"260\" y=\"149\">E</text>\n  <circle cx=\"290\" cy=\"135\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"280\" y=\"128\">F</text>\n  <circle cx=\"310\" cy=\"114\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#9aa4b7\" font-size=\"11\" x=\"300\" y=\"107\">G</text>\n  <!-- Garis Jarak E -->\n  <line stroke=\"#d81b60\" stroke-dasharray=\"3,3\" stroke-width=\"1.5\" x1=\"270\" x2=\"270\" y1=\"220\" y2=\"156\"></line>\n  <line stroke=\"#657084\" stroke-width=\"1\" x1=\"270\" x2=\"270\" y1=\"220\" y2=\"225\"></line>\n  <text fill=\"#9aa4b7\" font-size=\"10\" x=\"255\" y=\"240\">28,000</text>\n</svg>",
-      "caption": "Figure 21-3. The Saving Function Is the Mirror Image of the Consumption Function. Kurva menembus garis nol (0) tepat di titik break-even B."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Interpretasi Anatomi: Cermin Tabungan",
-      "text": "Jika di grafik pertama, kurva biru berpotongan dengan garis 45 derajat di titik B... maka di grafik kedua ini, kurva merah jambu (Saving) **memotong tepat di angka NOL pada sumbu horizontal** pada titik B yang sama ($25.000). \n\nArea di bawah garis horizontal (seperti Titik A) melambangkan **Utang (Dissaving)**, dan area di atas garis horizontal (mulai Titik C ke atas) melambangkan tumpukan kekayaan riil (Saving positif)."
-    },
-    {
-      "kind": "h2",
-      "text": "Mengukur Percepatan: Marginal Propensity to Consume & Save (MPC & MPS)"
-    },
-    {
-      "kind": "p",
-      "text": "Jika kamu mendapat rejeki tambahan $1, berapakah porsi receh yang akan kamu bakar untuk konsumsi? Angka inilah yang disebut dengan **MPC**."
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**MPC (Marginal Propensity to Consume):** Secara matematis adalah **Kemiringan (Slope)** dari fungsi konsumsi. Mengukur tambahan konsumsi akibat tambahan 1 dollar disposable income.",
-        "**MPS (Marginal Propensity to Save):** Adalah kemiringan dari fungsi tabungan. Mengukur porsi dari tambahan 1 dollar yang masuk ke celengan.",
-        "**Hubungan Besi:** Keduanya harus bernilai mutlak 1, karena setiap tambahan koin HANYA bisa dikonsumsi atau ditabung. (MPC + MPS = 1)"
-      ]
-    },
-    {
-      "kind": "formula",
-      "text": "MPC = ΔC / ΔY  atau  MPC = (C₂ - C₁) / (Y₂ - Y₁)\n\nMPS = ΔS / ΔY  atau  MPS = (S₂ - S₁) / (Y₂ - Y₁)",
-      "note": "Δ (Delta) melambangkan selisih atau 'perubahan'. Selisih data baris bawah dikurangi data baris atasnya."
-    },
-    {
-      "kind": "h2",
-      "text": "Tabel 2: Eksekusi Perhitungan MPC dan MPS"
-    },
-    {
-      "kind": "p",
-      "text": "Mari kita hitung transisi dari Titik A ke Titik B berdasarkan data Tabel 1 sebelumnya:\n- **ΔY (Perubahan Income):** Pendapatan naik dari $24.000 ke $25.000. Selisih = $1.000.\n- **ΔC (Perubahan Konsumsi):** Belanja naik dari $24.200 ke $25.000. Selisih = $800.\n- **ΔS (Perubahan Tabungan):** Tabungan berubah dari -$200 menjadi 0. Selisih = +$200."
-    },
-    {
-      "kind": "table",
-      "headers": ["Transisi", "Δ Income (ΔY)", "Δ Consump. (ΔC)", "MPC (ΔC / ΔY)", "Δ Saving (ΔS)", "MPS (ΔS / ΔY)"],
-      "rows": [
-        ["A ke B", "$1.000", "$800", "800/1000 = **0.80**", "$200", "200/1000 = **0.20**"],
-        ["B ke C", "$1.000", "$800", "800/1000 = **0.80**", "$200", "200/1000 = **0.20**"],
-        ["C ke D", "$1.000", "$800", "800/1000 = **0.80**", "$200", "200/1000 = **0.20**"],
-        ["D ke E", "$1.000", "$800", "800/1000 = **0.80**", "$200", "200/1000 = **0.20**"]
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Interpretasi Kunci",
-      "text": "Perhatikan bahwa angka MPC terus menerus **0.80** dan MPS selalu **0.20** di sepanjang tabel. Hal ini membuktikan bahwa Fungsi Konsumsi dan Tabungan di kasus ini berbentuk **Linear (Garis Lurus)** dengan kemiringan (slope) konstan. Jika fungsinya melengkung (non-linear), maka angka MPC akan berubah di tiap tingkatan."
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "🚨 PANDUAN UJIAN: Cara Mengekstrak Rumus dari Tabel Data",
-      "text": "Dalam ujian Pengantar Teori Ekonomi, soal sering kali disajikan dalam bentuk tabel yang hanya berisi angka Pendapatan (Y) dan Konsumsi (C). Mahasiswa dituntut untuk merumuskan sendiri persamaan matematis C = a + bY. Kuasai langkah-langkah di bawah ini untuk memecahkan soal kuis dan UAS dosen!"
-    },
-    {
-      "kind": "h2",
-      "text": "Contoh Soal Ujian: Ekstraksi Rumus & Titik Impas"
-    },
-    {
-      "kind": "p",
-      "text": "Misalkan di lembar ujianmu hanya diberikan tabel buta seperti ini:"
-    },
-    {
-      "kind": "table",
-      "headers": ["Titik", "Pendapatan / Y (Miliar Rp)", "Konsumsi / C (Miliar Rp)"],
-      "rows": [
-        ["A", "0", "150"],
-        ["B", "1.000", "900"],
-        ["C", "2.000", "1.650"]
-      ]
-    },
-    {
-      "kind": "p",
-      "text": "**Pertanyaan Ujian:** Tentukan Fungsi Konsumsi, Fungsi Tabungan, dan Titik Keseimbangan (Break-Even Point) beserta maknanya!"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Langkah 1 (Cari MPC / b):** Kita ambil data titik B dan C. ΔC = 1.650 - 900 = 750. ΔY = 2.000 - 1.000 = 1.000. Maka MPC = 750 / 1000 = **0.75**.",
-        "**Langkah 2 (Cari Konsumsi Otonom / a):** Karena di tabel sudah ada saat Y = 0 (Titik A), maka nilai a otomatis **150**. *Jika Titik A disembunyikan dosen*, kita masukkan titik B (1.000, 900) ke kerangka C = a + bY ➔ 900 = a + (0.75 × 1.000) ➔ 900 = a + 750 ➔ a = **150**.",
-        "**Langkah 3 (Menyusun Fungsi):** Maka Fungsi Konsumsi utuhnya adalah **C = 150 + 0.75Y**. Dan karena MPS = 1 - MPC (1 - 0.75 = 0.25), maka Fungsi Tabungannya adalah **S = -150 + 0.25Y**."
-      ]
-    },
-    {
-      "kind": "formula",
-      "text": "Mencari Titik Impas (Y = C):\nY = 150 + 0.75Y\nY - 0.75Y = 150\n0.25Y = 150\nY = 600",
-      "note": "Perhitungan aljabar pembuktian ekuilibrium Break-Even Point."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Interpretasi Hasil Analisis",
-      "text": "**Titik Impas (Break-Even) terjadi pada angka Pendapatan 600 Miliar Rupiah.**\n\n- **Makna 1:** Ketika Pendapatan Nasional mencapai 600 Miliar, seluruh uang tersebut LUDES dikonsumsi oleh rumah tangga. Tidak ada yang ditabung (S = 0), dan tidak ada yang harus mengutang.\n- **Makna 2:** Fungsi Konsumsi (C = 150 + 0.75Y) membuktikan bahwa masyarakat negara ini menggunakan 75% (0.75) dari SETIAP TAMBAHAN pendapatan mereka untuk belanja, dan menabung sisanya 25% (0.25).\n- **Pembuktian Absolut:** Mari kita cek ke Fungsi Tabungan di titik tersebut: S = -150 + 0.25(600) ➔ S = -150 + 150 = 0. Terbukti valid dan sesuai dengan teori dasar makroekonomi!"
-    },
-    {
-      "kind": "h2",
-      "text": "Grafik 3: Keterkaitan Absolut Konsumsi dan Tabungan"
-    },
-    {
-      "kind": "figure",
-      "title": "Titik Temu Break-Even (Y_E)",
-      "svg": "<svg font-family=\"DM Sans, sans-serif\" style=\"max-width:100%;height:auto;margin:0 auto;display:block\" viewBox=\"0 0 450 350\" xmlns=\"http://www.w3.org/2000/svg\"><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"200\" y2=\"200\"></line><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"100\" x2=\"100\" y1=\"300\" y2=\"50\"></line><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"80\" y=\"60\">C,S</text><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"410\" y=\"205\">Y</text><line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"100\" x2=\"300\" y1=\"200\" y2=\"0\"></line><text fill=\"#9aa4b7\" font-size=\"11\" transform=\"rotate(-45 250 50)\" x=\"250\" y=\"50\">C = Y</text><line stroke=\"#4f9cf9\" stroke-width=\"2\" x1=\"50\" x2=\"380\" y1=\"160\" y2=\"60\"></line><text fill=\"#4f9cf9\" font-size=\"11\" font-weight=\"bold\" transform=\"rotate(-15 300 80)\" x=\"300\" y=\"80\">C = a + bY</text><line stroke=\"#d81b60\" stroke-width=\"2\" x1=\"50\" x2=\"380\" y1=\"240\" y2=\"140\"></line><text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" transform=\"rotate(-15 300 160)\" x=\"280\" y=\"160\">S = -a + (1 - b)Y</text><circle cx=\"231.5\" cy=\"105\" fill=\"#f9a825\" r=\"4\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"240\" y=\"110\">E</text><circle cx=\"231.5\" cy=\"200\" fill=\"#f9a825\" r=\"4\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"225\" y=\"215\">Y_E</text><line stroke=\"#f9a825\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"231.5\" x2=\"231.5\" y1=\"200\" y2=\"105\"></line><circle cx=\"100\" cy=\"145\" fill=\"#9aa4b7\" r=\"3\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" x=\"85\" y=\"145\">a</text><circle cx=\"100\" cy=\"225\" fill=\"#9aa4b7\" r=\"3\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" x=\"75\" y=\"230\">-a</text></svg>",
-      "caption": "Grafik gabungan Fungsi Konsumsi (C = a + bY) dan Fungsi Tabungan (S = -a + (1-b)Y). Jarak dari 0 ke 'a' sama persis dengan jarak dari 0 ke '-a'."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Interpretasi Keterkaitan: Ekuilibrium & Break-Even",
-      "text": "Grafik di atas merangkum hubungan matematis mutlak antara Konsumsi dan Tabungan:\n\n- Pada sumbu vertikal (C, S), titik **a** melambangkan Konsumsi Otonom (C₀). Karena konsumsi ini harus dibayar meski tak punya pendapatan, ia menghasilkan utang yang digambarkan sebagai titik **-a** (Dissaving) pada fungsi tabungan.\n- Titik E adalah **Break-Even Point**. Di sini, Kurva Konsumsi berpotongan dengan Garis 45 Derajat (C=Y). Seluruh pendapatan habis dikonsumsi.\n- Tepat pada tingkat pendapatan yang sama, yakni pada titik Y (Ekuilibrium), **Kurva Tabungan memotong sumbu horizontal**. Artinya, Tabungan (S) persis bernilai Nol (0). Garis putus-putus membuktikan bahwa perpotongan E dan titik S=0 selalu sejajar vertikal!"
-    },
-    {
-      "kind": "h2",
-      "text": "Mesin Kedua: Investasi (Perspektif Makro & BPS)"
-    },
-    {
-      "kind": "p",
-      "text": "Awas jebakan teori makro! Banyak orang awam menyebut \"berinvestasi\" saat mereka membeli tanah, membeli saham, atau menaruh uang di rekening tabungan. Dalam ekonomi makro, transaksi tersebut hanyalah **transaksi finansial (financial investments)**, karena efek nettonya hanyalah berpindah tangan (Zero-Sum Game)."
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Investasi Makroekonomi (Real Investment):** Harus berarti **penambahan stok aset produktif atau barang modal baru**. Contoh: Amazon membangun gudang baru, atau Tuan Smith membangun rumah baru.",
-        "**Klasifikasi BPS (Badan Pusat Statistik):** Investasi di Indonesia dibagi menjadi dua kategori mutlak:\n1. **Pembentukan Modal Tetap Bruto (PMTB / GFCF):** Pengeluaran barang modal dengan umur > 1 tahun (bukan barang konsumsi). Mencakup: bangunan tempat tinggal/bukan tempat tinggal, jalan, bandara, mesin & peralatan. (Catatan: Senjata militer dihitung sebagai konsumsi pemerintah, bukan PMTB).\n2. **Perubahan Stok (Inventory Investment):** Barang yang akan dipakai, sedang dikerjakan, atau sudah jadi tapi belum terjual. Dihitung dari selisih stok akhir tahun dikurangi stok awal tahun."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Kategori Kapital & Aset"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Tangible Assets (Aset Berwujud):** Aset fisik yang meningkatkan produktivitas. Dibagi 3:\n  - *Structures* (Pabrik, rumah)\n  - *Equipment* (Mesin, mobil, truk)\n  - *Inventories* (Stok mobil di dealer)\n- **Intangible Assets / e-Capital:** Aset tak berwujud yang saat ini makin krusial (Software komputer, paten, merek dagang).\n- **Financial Assets (Aset Finansial):** Hanya berupa secarik kertas atau catatan elektronik berupa klaim moneter pihak satu terhadap pihak lain (contoh: KPR/Mortgage, di mana rumah fisiknya menjadi jaminan/collateral)."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Rate of Return vs Interest Rate"
-    },
-    {
-      "kind": "p",
-      "text": "Apa fungsi Aset Finansial jika ia bukan 'investasi riil'? Fungsinya sangat vital: **Menjembatani ketidakcocokan (mismatch) antara orang yang punya tabungan (saver) dengan pengusaha yang butuh modal (investors).**"
-    },
-    {
-      "kind": "formula",
-      "text": "Rate of Return on Investment (RoR)\nRoR = (Net Revenue / Modal Diinvestasikan) × 100%",
-      "note": "Contoh: Perusahaan rental 'KARTIKA' beli mobil bekas seharga $20.000. Laba bersih setahun $2.400. Maka RoR = (2.400 / 20.000) = 12%."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Perbedaan Mendasar",
-      "text": "- **Rate of Return on Investment:** Dihitung berdasarkan imbal hasil dari **Aset Riil / Tangible** (seperti mobil rental tadi, mesin pabrik, dll).\n- **Interest Rate (Suku Bunga):** Dihitung berdasarkan imbal hasil dari **Aset Finansial** (seperti bunga deposito di bank, bunga obligasi, dll)."
-    },
-    {
-      "kind": "h2",
-      "text": "Present Value (Nilai Sekarang) dan Harga Aset"
-    },
-    {
-      "kind": "formula",
-      "text": "Nilai Sekarang (Present Value):\nV = [ N₁ / (1+i) ] + [ N₂ / (1+i)² ] + ... + [ N_t / (1+i)^t ]",
-      "note": "Di mana V = Nilai sekarang aset, N = Penerimaan bersih (net receipts) di masa depan, dan i = Suku Bunga (Interest rate)."
-    },
-    {
-      "kind": "p",
-      "text": "Present value dari sebuah aset adalah nilai uang hari ini dari aliran pendapatan (stream of future income) yang akan dihasilkan aset tersebut di masa depan."
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Hukum Inverse: Suku Bunga vs Harga Aset",
-      "text": "Terdapat hukum mutlak dalam aset finansial: **Harga aset cenderung bergerak berlawanan (inversely) dengan suku bunga.** Mengapa? Karena berdasarkan rumus di atas, jika angka penyebut yakni suku bunga (i) membesar, maka hasil pembagiannya alias nilai sekarang (Present Value) otomatis menyusut secara matematis.\n\nOleh karena itu, **Harga saham, obligasi, real estat, dan banyak aset berumur panjang lainnya akan TURUN seiring dengan kenaikan suku bunga.**"
-    },
-    {
-      "kind": "h2",
-      "text": "Suku Bunga Riil vs Nominal"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Nominal Interest Rate (Suku Bunga Nominal):** Suku bunga yang tertera di atas kertas (misal, bunga deposito 5% di bank). Suku bunga ini belum memperhitungkan kejamnya inflasi.",
-        "**Real Interest Rate (Suku Bunga Riil):** Adalah Suku Bunga Nominal yang **telah dikoreksi/dikurangi dengan tingkat Inflasi**. Ini menunjukkan daya beli sesungguhnya dari imbal hasilmu."
-      ]
+      "text": "Tabungan dan Investasi dalam Ekonomi Tertutup\n\nNational saving: S = Y − C − G\n\nPrivate saving: S_private = Y − T − C\n\nPublic saving: S_public = T − G\n\nS = S_private + S_public\n\nDalam ekonomi tertutup: S = I"
     },
     {
       "kind": "callout",
       "variant": "key",
-      "title": "Eksekusi Angka: Persamaan Fisher (Fisher Equation)",
-      "text": "Hubungan antara Suku Bunga Nominal (i), Suku Bunga Riil (r), dan Inflasi (π) dirumuskan oleh Irving Fisher secara matematis:\n\n**r = i - π**\n\n**Studi Kasus Kritis:**\nKamu melihat Bank X menawarkan bunga deposito tinggi sebesar **10%** (Nominal i). Kamu tergiur dan menaruh uang $1.000 (berharap jadi $1.100 tahun depan). Namun, ternyata tahun itu negara dilanda hiperinflasi sebesar **15%** (π).\n\n**Hasil & Interpretasi:**\nr = 10% - 15% = **-5%**\n\nSecara riil, suku bungamu **negatif 5%**. Artinya, meski uang di rekeningmu bertambah secara angka, daya beli sesungguhnya justru **merosot 5%**. Kamu bukannya makin kaya, melainkan makin miskin karena digerogoti inflasi! Inilah hasil nyata dari ilusi uang (money illusion) yang sangat ditakuti para ekonom."
+      "title": "Makna S = I",
+      "text": "dana yang tidak dikonsumsi oleh rumah tangga/pemerintah menjadi sumber pembiayaan investasi domestik. Jika defisit pemerintah naik, tabungan publik turun dan bisa menekan dana investasi swasta melalui crowding out."
+    },
+    {
+      "kind": "h2",
+      "text": "Konsumsi, Tabungan, dan Investasi"
+    },
+    {
+      "kind": "p",
+      "text": "Konsumsi biasanya menjadi komponen terbesar pengeluaran agregat. Model sederhana Keynesian menempatkan konsumsi sebagai fungsi dari pendapatan disposabel. Semakin besar pendapatan disposabel, konsumsi naik, tetapi biasanya tidak sebesar kenaikan pendapatan karena sebagian ditabung. Di Indonesia, konsumsi rumah tangga adalah komponen pengeluaran terbesar, sekitar 53,9% PDB pada 2025 (BPS, rilis 5 Feb 2026)."
+    },
+    {
+      "kind": "formula",
+      "text": "Fungsi Konsumsi dan Tabungan\n\nC = a + bY_d\n\nS = Y_d − C = −a + (1−b)Y_d\n\nMPC = ΔC/ΔY_d = b\n\nMPS = ΔS/ΔY_d = 1−b\n\nMPC + MPS = 1"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Istilah",
+        "Makna",
+        "Implikasi"
+      ],
+      "rows": [
+        [
+          "Autonomous consumption (a)",
+          "Konsumsi minimum saat pendapatan nol.",
+          "Dibiayai dari tabungan lama, utang, atau transfer."
+        ],
+        [
+          "MPC",
+          "Tambahan konsumsi dari tambahan pendapatan.",
+          "Semakin tinggi MPC, semakin besar multiplier."
+        ],
+        [
+          "MPS",
+          "Tambahan tabungan dari tambahan pendapatan.",
+          "Semakin tinggi MPS, semakin kecil multiplier."
+        ],
+        [
+          "Investasi",
+          "Pengeluaran untuk menambah modal, persediaan, atau bangunan.",
+          "Dipengaruhi suku bunga, ekspektasi laba, teknologi, kapasitas, dan stabilitas ekonomi."
+        ]
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Pasar Dana Pinjaman (Loanable Funds)"
+    },
+    {
+      "kind": "p",
+      "text": "Keynesian Cross menjelaskan output jangka pendek ketika harga cenderung kaku. Pasar dana pinjaman melihatnya dari sisi klasik: bagaimana tabungan dan investasi dipertemukan oleh suku bunga riil. Bayangkan satu pasar tempat seluruh tabungan ditawarkan dan seluruh kebutuhan dana untuk investasi diminta."
+    },
+    {
+      "kind": "formula",
+      "text": "Inti Pasar Dana Pinjaman (Mankiw Ch. 26)\n\nPenawaran dana = tabungan nasional (S)\n\nPermintaan dana = investasi (I)\n\nHarga = suku bunga riil (r)\n\nEkuilibrium: S = I pada r*"
+    },
+    {
+      "kind": "p",
+      "text": "Penawaran dana datang dari tabungan. Suku bunga yang lebih tinggi membuat menabung lebih menarik, jadi kurva penawaran menanjak. Permintaan dana datang dari investasi. Suku bunga yang lebih tinggi membuat pinjaman lebih mahal, jadi kurva permintaan menurun. Suku bunga riil menyesuaikan sampai dana yang ditabung sama dengan dana yang dipinjam untuk investasi."
+    },
+    {
+      "kind": "figure",
+      "title": "Pasar Dana Pinjaman: ekuilibrium & dampak defisit",
+      "svg": "<svg data-graph-id=\"PTE-GRAPH-02\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Pasar Dana Pinjaman: ekuilibrium &amp; dampak defisit</title><desc>Grafik pasar dana pinjaman dengan kuantitas dana pada sumbu horizontal dan suku bunga riil pada sumbu vertikal. Penawaran dana bergeser ke kiri akibat defisit, sehingga suku bunga naik dan kuantitas investasi turun.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"14\" y=\"26\">r</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"342\" y=\"251\">Q</text><line stroke=\"#22d3a0\" stroke-width=\"2.3\" x1=\"100\" x2=\"325\" y1=\"205\" y2=\"50\"></line><text fill=\"#22d3a0\" font-size=\"10\" x=\"328\" y=\"52\">S₁</text><line stroke=\"#f4516c\" stroke-dasharray=\"5,4\" stroke-width=\"2\" x1=\"55\" x2=\"280\" y1=\"205\" y2=\"50\"></line><text fill=\"#f4516c\" font-size=\"10\" x=\"236\" y=\"42\">S₂ (defisit↑)</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"100\" x2=\"325\" y1=\"60\" y2=\"205\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"328\" y=\"207\">D = I</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"209\" x2=\"209\" y1=\"130\" y2=\"235\"></line><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"209\" y1=\"130\" y2=\"130\"></line><circle cx=\"209\" cy=\"130\" fill=\"#f9a825\" r=\"3.6\"></circle><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"186\" x2=\"186\" y1=\"115\" y2=\"235\"></line><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"55\" x2=\"186\" y1=\"115\" y2=\"115\"></line><circle cx=\"186\" cy=\"115\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"134\">r₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"112\">r₂</text><text fill=\"#f9a825\" font-size=\"10\" x=\"201\" y=\"249\">Q₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"166\" y=\"249\">Q₂</text></svg>",
+      "caption": "Defisit menurunkan tabungan nasional sehingga kurva penawaran dana bergeser ke kiri dari S1 ke S2. Suku bunga riil naik dari r1 ke r2 dan dana investasi turun dari Q1 ke Q2.",
+      "altText": "Grafik pasar dana pinjaman dengan kuantitas dana pada sumbu horizontal dan suku bunga riil pada sumbu vertikal. Penawaran dana bergeser ke kiri akibat defisit, sehingga suku bunga naik dan kuantitas investasi turun."
+    },
+    {
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Defisit dan crowding out",
+      "text": "ketika pemerintah defisit, tabungan publik negatif sehingga tabungan nasional turun. Kurva penawaran dana bergeser ke kiri, suku bunga riil naik dari r₁ ke r₂, dan investasi swasta yang terdanai turun dari Q₁ ke Q₂. Inilah crowding out yang disinggung pada bagian kebijakan fiskal."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Hati-hati",
+      "text": "tabungan dan investasi di sini adalah konsep makro agregat, bukan \"uang yang disimpan di rumah\". Tabungan mengalir menjadi dana investasi lewat sistem keuangan, bukan dana yang menganggur."
     }
   ]
 };
@@ -698,349 +508,493 @@ const tm10: Reading = {
   "tm": 10,
   "title": "Perekonomian Tertutup (Bagian 2): Keseimbangan, Multiplier & Kebijakan Fiskal",
   "ref": "Kontrak: 1(20), 2(23,24) · Substansi: Samuelson Ch.21-22; Mankiw Ch.26, Ch.33-34",
-  "intro": "Membedah peran investasi, mencetak rumus sakti Multiplier, dan membongkar cara kerja Kebijakan Fiskal (Pajak & Belanja Negara) secara matematis absolut.",
+  "intro": "Menentukan output ekuilibrium melalui Keynesian Cross, menghitung multiplier, menilai dampak kebijakan fiskal, output gap, dan membedah peran investasi serta tabungan nasional secara ekstensif.",
   "objectives": [
-    "Memahami anatomi Investasi (determinan dan kurva permintaannya).",
-    "Menentukan titik keseimbangan Y = C + I dan S = I secara grafis dan matematis.",
+    "Menentukan keseimbangan Y = AE dan membaca Keynesian Cross.",
+    "Memahami anatomi Investasi (Capital, Suku Bunga, Present Value, dan Kurva Permintaannya).",
     "Membuktikan secara aljabar rumus sakti Multiplier Investasi, Belanja (G), dan Pajak (T).",
-    "Mengekstrak fungsi dan keseimbangan 3-Sektor dalam skenario pajak absolut (T0) dan pajak proporsional (tY)."
+    "Mengekstrak fungsi dan keseimbangan 3-Sektor dalam skenario pajak absolut (T0) dan pajak proporsional (tY).",
+    "Membedah Identitas Tabungan Nasional (Private + Public Saving = Investment)."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Peran dan Determinan Investasi"
+      "text": "Aggregate Expenditure & Keynesian Cross"
     },
     {
       "kind": "p",
-      "text": "Investasi memiliki peran ganda yang sangat mematikan dalam makroekonomi: secara jangka pendek ia mendongkrak **Aggregate Demand (Permintaan Agregat)**, dan secara jangka panjang ia merangsang **akumulasi modal** yang memperbesar kapasitas produksi negara. Apa yang menentukan orang mau berinvestasi?"
+      "text": "Dalam model Keynesian sederhana, output ekuilibrium tercapai ketika produksi aktual sama dengan pengeluaran agregat yang direncanakan. Jika perusahaan memproduksi lebih banyak daripada permintaan, persediaan naik dan produksi akan dikurangi. Jika permintaan lebih tinggi daripada output, persediaan turun dan produksi akan dinaikkan."
+    },
+    {
+      "kind": "formula",
+      "text": "Pengeluaran Agregat Terencana\n\nAE = C + I + G\n\nAE = a + b(Y−T) + I + G\n\nEkuilibrium barang: Y = AE"
+    },
+    {
+      "kind": "figure",
+      "title": "Keynesian Cross: penentuan output ekuilibrium",
+      "svg": "<svg data-graph-id=\"PTE-GRAPH-01\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Keynesian Cross: penentuan output ekuilibrium</title><desc>Grafik Keynesian Cross dengan output Y pada sumbu horizontal dan pengeluaran agregat AE pada sumbu vertikal. Garis 45 derajat berpotongan dengan garis AE sama dengan C tambah I tambah G pada output keseimbangan Y bintang.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"18\" y=\"26\">AE</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"340\" y=\"251\">Y</text><line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"55\" x2=\"270\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"10\" x=\"226\" y=\"32\">Y = AE (45°)</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"55\" x2=\"270\" y1=\"170\" y2=\"60\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"272\" y=\"62\">AE = C+I+G</text><circle cx=\"55\" cy=\"170\" fill=\"#4f9cf9\" r=\"3\"></circle><text fill=\"#4f9cf9\" font-size=\"10\" x=\"34\" y=\"166\">A</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"188\" x2=\"188\" y1=\"102\" y2=\"235\"></line><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"188\" y1=\"102\" y2=\"102\"></line><circle cx=\"188\" cy=\"102\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"11\" x=\"181\" y=\"250\">Y*</text></svg>",
+      "caption": "Titik Y* adalah perpotongan garis pengeluaran agregat dengan garis 45°. Di titik ini, output sama dengan pengeluaran agregat yang direncanakan.",
+      "altText": "Grafik Keynesian Cross dengan output Y pada sumbu horizontal dan pengeluaran agregat AE pada sumbu vertikal. Garis 45 derajat berpotongan dengan garis AE sama dengan C tambah I tambah G pada output keseimbangan Y bintang."
+    },
+    {
+      "kind": "h2",
+      "text": "Investasi, Capital, dan Suku Bunga"
+    },
+    {
+      "kind": "p",
+      "text": "Makroekonomi membedakan investasi riil (pembelian mesin, pabrik, rumah baru) dengan investasi finansial (membeli saham, tanah, menabung). Hanya investasi riil (pembentukan modal tetap bruto) yang dihitung masuk ke dalam PDB."
     },
     {
       "kind": "ul",
       "items": [
-        "**Revenue (Pendapatan):** Apakah investasi ini akan meningkatkan output / PDB yang menghasilkan uang?",
-        "**Cost (Biaya):** Sangat dipengaruhi oleh **Suku Bunga (Interest Rate)** dan Pajak.",
-        "**Expectation (Ekspektasi):** Kepercayaan diri pebisnis terhadap masa depan ekonomi negara."
-      ]
-    },
-    {
-      "kind": "figure",
-      "title": "Investment Demand Curve (Kurva Permintaan Investasi)",
-      "svg": "<svg viewBox=\"0 0 450 300\" xmlns=\"http://www.w3.org/2000/svg\"><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"250\" y2=\"250\"></line><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"250\" y2=\"30\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"10\" y=\"20\">r (%)</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"410\" y=\"255\">I</text><text fill=\"#9aa4b7\" font-size=\"11\" transform=\"rotate(-90 20 150)\" x=\"20\" y=\"150\">Interest Rate / Suku Bunga</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"180\" y=\"280\">Investment (Triliun Rp)</text><line stroke=\"#4f9cf9\" stroke-width=\"2.5\" x1=\"80\" x2=\"350\" y1=\"50\" y2=\"220\"></line><text fill=\"#4f9cf9\" font-size=\"12\" font-weight=\"bold\" x=\"360\" y=\"225\">ID (Investment Demand)</text></svg>",
-      "caption": "Kurva miring ke bawah secara mutlak: Semakin tinggi suku bunga (biaya meminjam), semakin merosot jumlah investasi yang dilakukan pengusaha."
-    },
-    {
-      "kind": "h2",
-      "text": "Keseimbangan 2-Sektor: Keynesian Cross & Titik Impas"
-    },
-    {
-      "kind": "p",
-      "text": "Jika di TM 9 kita membahas ekuilibrium saat C = Y (Break-Even keluarga), kini kita memasukkan Perusahaan (I). Perekonomian mencapai **Keseimbangan (Ekuilibrium)** saat total produksi persis sama dengan total permintaan."
-    },
-    {
-      "kind": "figure",
-      "title": "Pendekatan 1: Pengeluaran Agregat (Y = C + I)",
-      "svg": "<svg viewBox=\"0 0 450 350\" xmlns=\"http://www.w3.org/2000/svg\"><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"300\" y2=\"300\"></line><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"300\" y2=\"30\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"20\" y=\"20\">AE</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"410\" y=\"305\">Y</text><line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"50\" x2=\"320\" y1=\"300\" y2=\"30\"></line><text fill=\"#9aa4b7\" font-size=\"11\" transform=\"rotate(-45 280 60)\" x=\"280\" y=\"60\">Y = AE (45°)</text><line stroke=\"#d81b60\" stroke-width=\"2\" x1=\"50\" x2=\"350\" y1=\"200\" y2=\"100\"></line><text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" x=\"360\" y=\"105\">C</text><line stroke=\"#4f9cf9\" stroke-width=\"2.5\" x1=\"50\" x2=\"350\" y1=\"150\" y2=\"50\"></line><text fill=\"#4f9cf9\" font-size=\"11\" font-weight=\"bold\" x=\"360\" y=\"55\">AE = C + I</text><line stroke=\"#f9a825\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"200\" x2=\"200\" y1=\"300\" y2=\"150\"></line><circle cx=\"200\" cy=\"150\" fill=\"#f9a825\" r=\"5\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"190\" y=\"320\">Y*</text><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"210\" y=\"145\">E</text></svg>",
-      "caption": "Kurva Konsumsi (C) didorong ke atas sebesar I (Investasi). Titik potong E adalah Y Ekuilibrium (Y*)."
-    },
-    {
-      "kind": "figure",
-      "title": "Pendekatan 2: Injeksi vs Kebocoran (S = I)",
-      "svg": "<svg viewBox=\"0 0 450 250\" xmlns=\"http://www.w3.org/2000/svg\"><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"150\" y2=\"150\"></line><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"220\" y2=\"30\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"20\" y=\"20\">S, I</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"410\" y=\"155\">Y</text><line stroke=\"#4f9cf9\" stroke-width=\"2.5\" x1=\"50\" x2=\"380\" y1=\"80\" y2=\"80\"></line><text fill=\"#4f9cf9\" font-size=\"11\" font-weight=\"bold\" x=\"390\" y=\"85\">I (Investasi)</text><line stroke=\"#d81b60\" stroke-width=\"2\" x1=\"100\" x2=\"350\" y1=\"200\" y2=\"50\"></line><text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" x=\"360\" y=\"55\">S (Tabungan)</text><line stroke=\"#f9a825\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"300\" x2=\"300\" y1=\"150\" y2=\"80\"></line><circle cx=\"300\" cy=\"80\" fill=\"#f9a825\" r=\"5\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"290\" y=\"170\">Y*</text><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"280\" y=\"70\">E (S=I)</text></svg>",
-      "caption": "Ekuilibrium absolut juga tercapai saat Kebocoran (Tabungan / S) persis sama besarnya dengan Injeksi (Investasi / I)."
-    },
-    {
-      "kind": "h2",
-      "text": "Model Multiplier (Efek Pengganda)"
-    },
-    {
-      "kind": "p",
-      "text": "Konsep radikal Keynes: Setiap 1 Rupiah injeksi dari luar (Investasi/Belanja) tidak hanya menaikkan PDB sebesar 1 Rupiah, melainkan berlipat ganda! Mengapa? Karena pengeluaran perusahaan akan menjadi gaji pekerja, lalu pekerja membelanjakan gajinya (sesuai MPC), yang menjadi gaji orang lain lagi, dan seterusnya."
-    },
-    {
-      "kind": "formula",
-      "text": "Rumus Sakti Multiplier\n\nK_I = 1 / (1 - MPC) = 1 / MPS\n\nPerubahan PDB = K_I × Perubahan Investasi",
-      "note": "K_I adalah Koefisien Multiplier Investasi."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Pembuktian Deret Matematika Absolut",
-      "text": "Misalkan Pabrik Z berinvestasi 1.000 Miliar dan MPC masyarakat adalah 2/3 (0.67).\n1. Putaran pertama: Pekerja pabrik dapat 1.000 Miliar.\n2. Putaran kedua: Pekerja belanja 2/3 dari gajinya = 667 Miliar.\n3. Putaran ketiga: Uang 667 Miliar jadi gaji orang lain, dibelanjakan lagi 2/3-nya = 444 Miliar.\n\nSecara aljabar tak terhingga: 1000 × (1 + 2/3 + (2/3)² + (2/3)³ + ...)\nDeret geometri ini disederhanakan menjadi: **1 / (1 - 2/3) × 1000 = 3 × 1000 = 3.000 Miliar.** PDB meledak 3x lipat!"
-    },
-    {
-      "kind": "h2",
-      "text": "Keseimbangan 3-Sektor: Kebijakan Fiskal (Pajak Independen)"
-    },
-    {
-      "kind": "p",
-      "text": "Pemerintah masuk membawa instrumen **Kebijakan Fiskal**: Belanja Negara (G) dan Pajak (T). Jika diasumsikan Pajak adalah beban tetap (Lump-sum) terlepas dari seberapa besar gaji rakyat, maka rumusnya adalah T = T0."
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Belanja Negara (G):** Berfungsi sebagai INJEKSI langsung ke nadi ekonomi (Sama dengan Investasi).",
-        "**Pajak (T):** Berfungsi sebagai KEBOCORAN karena menghisap daya beli masyarakat dari fungsi Konsumsi."
-      ]
-    },
-    {
-      "kind": "formula",
-      "text": "Penyelesaian Aljabar Keseimbangan (Y = C + I + G)\n\nY = C₀ + b(Y - T₀) + I + G\nY = C₀ + bY - bT₀ + I + G\nY - bY = C₀ - bT₀ + I + G\nY(1 - b) = C₀ - bT₀ + I + G\n\nY = (1 / (1 - b)) × (C₀ - bT₀ + I + G)",
-      "note": "Perhatikan bahwa Pajak (T0) berdampak negatif terhadap GDP, namun dikalikan dengan (b) karena uang pajak yang hilang seharusnya sebagian ditabung, sebagian dikonsumsi."
-    },
-    {
-      "kind": "example",
-      "title": "Studi Kasus 1: Perhitungan Pajak Konstan (Lump-sum)",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Diketahui: C = 300 + 0.75Yd, I = 400, G = 200, T = 200.\nTentukan Y Keseimbangan, Multiplier G, dan Multiplier T!"
-        },
-        {
-          "kind": "ul",
-          "items": [
-            "**Y Keseimbangan:** Masukkan ke rumus jadi Y = [1 / (1 - 0.75)] × (300 - (0.75×200) + 400 + 200) ➔ Y = 4 × (300 - 150 + 400 + 200) ➔ Y = 4 × 750 = **3.000**.",
-            "**Multiplier Belanja Negara (K_G):** Rumusnya 1 / (1 - b) ➔ 1 / 0.25 = **4**. Artinya, setiap pemerintah menambah belanja G sebesar 50, PDB (Y) akan meledak naik sebesar 4 × 50 = 200.",
-            "**Multiplier Pajak (K_T):** Rumusnya -b / (1 - b) ➔ -0.75 / 0.25 = **-3**. Artinya, setiap pemerintah menaikkan pajak T sebesar 50, PDB (Y) akan merosot sebesar -3 × 50 = -150."
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Jebakan Kritis UAS",
-      "text": "Kenapa Multiplier Pajak lebih kecil secara absolut (3) dibandingkan Multiplier Belanja Negara (4)? Karena saat pemerintah membelanjakan uang (G), 100% uang itu langsung berputar di pasar. Tapi saat rakyat dipajaki (T), uang yang hilang itu sebenarnya terdiri dari jatah konsumsi DAN jatah menabung. Jadi daya pukul pajak ke roda ekonomi sedikit lebih lemah daripada daya dorong belanja negara!"
-    },
-    {
-      "kind": "h2",
-      "text": "Keseimbangan dengan Pajak Proporsional (T = T0 + tY)"
-    },
-    {
-      "kind": "p",
-      "text": "Dunia nyata tidak menggunakan pajak lump-sum. Semakin kaya kamu, pajaknya makin besar. Ini disebut Pajak Proporsional (dengan tarif t). Fungsi pajaknya menjadi: **T = T₀ + tY**."
-    },
-    {
-      "kind": "example",
-      "title": "Studi Kasus 2: Pajak Proporsional",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Diketahui: C = 300 + 0.75Yd, I = 400, G = 200, **T = 200 + 0.15Y**.\nTentukan Y Keseimbangan baru!"
-        },
-        {
-          "kind": "ul",
-          "items": [
-            "**Perombakan Multiplier:** Karena ada t, pembagi multiplier berubah jadi 1 / (1 - b + bt).",
-            "**Penyebut Baru:** 1 - 0.75 + (0.75 × 0.15) = 0.25 + 0.1125 = **0.3625**.",
-            "**Y Keseimbangan:** Y = [1 / 0.3625] × (300 - (0.75×200) + 400 + 200) ➔ Y = 2.7586 × 750 = **2.068,96**."
-          ]
-        }
+        "**Tangible Capital:** Struktur (pabrik, rumah), Peralatan (mobil, mesin), Inventori (barang belum terjual).",
+        "**Intangible Capital:** E-capital (software, paten, merek dagang)."
       ]
     },
     {
       "kind": "callout",
       "variant": "info",
-      "title": "Automatic Stabilizer",
-      "text": "Adanya (t) membuat nilai penyebut multiplier semakin besar (dari 0.25 jadi 0.3625). Hasilnya, rasio multiplier hancur mengecil dari 4 menjadi 2.75! Inilah kekuatan rahasia dari **Pajak Proporsional (Automatic Stabilizer)**. Pajak ini otomatis meredam siklus bom-dan-kehancuran ekonomi agar negara tidak terlalu overheating saat *boom* dan tidak terlalu hancur saat resesi."
+      "title": "Rate of Return vs Interest Rate",
+      "text": "Rate of Return (RoR) adalah imbal hasil bersih tahunan dari aset modal. Contoh (Perusahaan KARTIKA): Beli mobil rental $20.000, laba bersih setahun $2.400. RoR = 2.400 / 20.000 = **12%**.\nSedangkan **Suku Bunga (Interest Rate)** adalah tingkat imbal hasil atas aset finansial."
+    },
+    {
+      "kind": "formula",
+      "text": "Present Value (Nilai Sekarang)\n\nPV = N / (1 + i)^t\n\nN = Net receipts, i = Interest rate, t = Tahun",
+      "note": "Hubungan Terbalik: Harga aset akan **turun** ketika suku bunga **naik** (karena PV dari arus kas masa depan mengecil saat pembaginya, yaitu (1+i), membesar)."
+    },
+    {
+      "kind": "h2",
+      "text": "Determinan Investasi & Kurva Permintaan"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Revenue (Pendapatan):** Tingkat output keseluruhan atau GDP.",
+        "**Cost (Biaya):** Harga barang modal, suku bunga, dan pajak.",
+        "**Expectation (Ekspektasi):** Kepercayaan bisnis dan ekspektasi laba masa depan."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Kurva Permintaan Investasi (Investment Demand Curve) memiliki lereng negatif. Semakin **tinggi** suku bunga, semakin **mahal** biaya meminjam, sehingga jumlah investasi yang diminta akan **turun**."
+    },
+    {
+      "kind": "h2",
+      "text": "Keseimbangan Ekonomi 2 Sektor"
+    },
+    {
+      "kind": "p",
+      "text": "Dua pendekatan untuk mencari Keseimbangan (Equilibrium Output):"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Pendekatan Pengeluaran (Y = C + I):** Output Y = 1/(1-b) × (C0 + I)",
+        "**Pendekatan Suntikan-Bocoran (S = I):** Tabungan (S) adalah bocoran, Investasi (I) adalah suntikan. Jika S = -C0 + (1-b)Y disamakan dengan I, hasilnya sama persis: Y = 1/(1-b) × (C0 + I)."
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Multiplier Model"
+    },
+    {
+      "kind": "p",
+      "text": "Model Multiplier menjelaskan bahwa setiap perubahan '1 Dolar' pada pengeluaran eksogen (seperti Investasi) akan menghasilkan efek lipat ganda pada GDP. Hal ini disebabkan karena pengeluaran satu pihak menjadi pendapatan pihak lain, yang membelanjakannya lagi (efek domino)."
+    },
+    {
+      "kind": "formula",
+      "text": "Multiplier Coefficient (k)\n\nk = 1 / (1 - MPC)   atau   k = 1 / MPS",
+      "note": "Contoh: Misal MPC = 2/3 (maka MPS = 1/3). Nilai k = 1 / (1/3) = 3.\nJika investasi naik sebesar **1.000**, maka GDP (Y) akan melonjak sebesar 3 × 1.000 = **3.000**!"
+    },
+    {
+      "kind": "h2",
+      "text": "Kebijakan Fiskal dalam Model Multiplier"
+    },
+    {
+      "kind": "p",
+      "text": "Peran fiskal: Alokatif, Distributif, dan Stabilisator. Instrumen utamanya: Belanja Pemerintah (G) dan Pajak (T)."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Benefit Principle:** Pajak ditarik proporsional dengan manfaat layanan pemerintah yang diterima masyarakat.",
+        "**Ability-to-pay Principle:** Pajak ditarik berdasarkan kemampuan bayar seseorang (yang kaya bayar lebih).",
+        "**Horizontal Equity:** Individu dengan kondisi setara diperlakukan sama.",
+        "**Vertical Equity:** Orang yang lebih mampu harus membayar pajak lebih tinggi."
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Pragmatic Compromise (Jenis Pajak)",
+      "text": "**Progresif:** Persentase pajak naik jika pendapatan naik. **Regresif:** Persentase pajak turun jika pendapatan naik. **Proporsional:** Persentase pajak tetap (misal PPN 11%). Pajak juga dibagi menjadi Pajak Langsung (PPh) dan Tidak Langsung (Cukai)."
+    },
+    {
+      "kind": "h2",
+      "text": "Keseimbangan Ekonomi 3 Sektor"
+    },
+    {
+      "kind": "p",
+      "text": "Ketika Pemerintah (G dan T) masuk, rumusnya menjadi Y = C + I + G. Keseimbangan Suntikan-Bocoran menjadi I + G = S + T."
+    },
+    {
+      "kind": "formula",
+      "text": "Skenario 1: Pajak Konstan (Absolut) / T = T0\n\nY = 1/(1-b) × [C0 - bT0 + I + G]\nMultiplier Belanja (G) = 1/(1-b)\nMultiplier Pajak (T) = -b/(1-b)"
+    },
+    {
+      "kind": "example",
+      "title": "Kasus Pajak Konstan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "C = 300 + 0,75Yd ; I = 400 ; G = T = 200.\nMPC (b) = 0,75.\nY = [1 / (1 - 0,75)] × (300 - (0,75×200) + 400 + 200)\nY = 4 × (300 - 150 + 400 + 200) = 4 × 750 = **3.000**.\nMultiplier G = 4. Jika G naik 50, Y naik 200.\nMultiplier T = -3. Jika T naik 50, Y turun 150."
+        }
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "Skenario 2: Pajak Proporsional / T = T0 + tY\n\nY = 1/(1-b+bt) × [C0 - bT0 + I + G]\nMultiplier Belanja = 1/(1-b+bt)\nMultiplier Pajak (absolut) = -b/(1-b+bt)\nMultiplier Tarif Pajak = -b / (1-b+bt) × Y"
+    },
+    {
+      "kind": "example",
+      "title": "Kasus Pajak Proporsional (Automatic Stabilizer)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "C = 300 + 0,75Yd ; I = 400 ; G = 200 ; T = 200 + 0,15Y.\nDi sini b = 0,75 dan t = 0,15.\nPenyebut = (1 - 0,75 + 0,75×0,15) = 0,25 + 0,1125 = 0,3625.\nMultiplier Belanja = 1 / 0,3625 = **2,758**.\nY = 2,758 × (300 - 150 + 400 + 200) = 2,758 × 750 = **2.068,96**.\nPerhatikan: Dengan adanya tarif pajak (t=15%), angka multiplier HANCUR drastis dari 4 menjadi 2,758! Pajak meredam ledakan ekonomi."
+        }
+      ]
     },
     {
       "kind": "h2",
       "text": "Identitas Makroekonomi & Tabungan Nasional"
     },
     {
-      "kind": "p",
-      "text": "Mari kita mainkan trik aljabar dari persamaan absolut keseimbangan untuk membongkar misteri tabungan."
+      "kind": "formula",
+      "text": "Y = C + I + G   =>   Y - C - G = I\nManipulasi aljabar (tambah kurangi T):\n(Y - T - C) + (T - G) = I\n\nPrivate Saving + Public Saving = National Saving = Investment"
     },
     {
-      "kind": "formula",
-      "text": "Y = C + I + G\nY - C - G = I\n\nModifikasi (Tambah dan kurangi dengan T):\n(Y - T - C) + (T - G) = I\n\nPrivate Saving + Public Saving = National Saving = Investment",
-      "note": "(Y-T-C) adalah sisa gaji rakyat. (T-G) adalah sisa anggaran APBN (Defisit/Surplus)."
+      "kind": "ul",
+      "items": [
+        "Semakin besar Konsumsi (C), semakin kecil Tabungan Swasta (Private Saving), sehingga Tabungan Nasional turun.",
+        "Ketika pemerintah mengalami **Defisit Anggaran** (belanja G lebih besar dari pajak T), Public Saving menjadi negatif. Hal ini menyedot Tabungan Nasional (National Saving turun)."
+      ]
     },
     {
       "kind": "example",
-      "title": "Studi Kasus 3: Membedah Urat Nadi Tabungan",
+      "title": "Menghitung Tabungan dan Investasi",
       "blocks": [
         {
           "kind": "p",
-          "text": "Diketahui GDP (Y) = 8 Triliun, Pajak (T) = 1.5 Triliun, Tabungan Swasta (Private Saving) = 0.5 Triliun, dan Tabungan Publik (Public Saving) = 0.2 Triliun."
+          "text": "Diketahui: GDP (Y) = 8 Triliun, T = 1,5 Triliun, Private Saving = 0,5 Triliun, Public Saving = 0,2 Triliun."
         },
         {
           "kind": "ul",
           "items": [
-            "**Berapa Konsumsi Rakyat (C)?** Private = Y - T - C ➔ 0.5 = 8 - 1.5 - C ➔ C = 8 - 1.5 - 0.5 = **6 Triliun**.",
-            "**Berapa Belanja Pemerintah (G)?** Public = T - G ➔ 0.2 = 1.5 - G ➔ G = 1.5 - 0.2 = **1.3 Triliun**.",
-            "**Berapa Total Investasi Negara (I)?** Investment = Private + Public ➔ I = 0.5 + 0.2 = **0.7 Triliun**. (Terbukti juga dari 8 - 6 - 1.3 = 0.7)."
+            "**Konsumsi (C):** Private Saving = Y - T - C  =>  0,5 = 8 - 1,5 - C  =>  C = 8 - 1,5 - 0,5 = **6 Triliun**.",
+            "**Belanja (G):** Public Saving = T - G  =>  0,2 = 1,5 - G  =>  G = 1,5 - 0,2 = **1,3 Triliun**.",
+            "**Tabungan Nasional (National Saving):** 0,5 + 0,2 = **0,7 Triliun**.",
+            "**Investasi (I):** Karena National Saving = Investment, maka I = **0,7 Triliun**."
           ]
         }
       ]
+    },
+    {
+      "kind": "h2",
+      "text": "Output Gap & Paradox of Thrift"
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Output gap",
+      "text": "adalah selisih antara output aktual dan output potensial. Recessionary gap terjadi ketika Y aktual lebih rendah dari Y potensial; inflationary gap terjadi ketika Y aktual melebihi kapasitas berkelanjutan."
+    },
+    {
+      "kind": "figure",
+      "title": "Recessionary Gap vs Inflationary Gap",
+      "svg": "<svg data-graph-id=\"PTE-GRAPH-08\" viewBox=\"0 0 920 330\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<title>Recessionary gap dan inflationary gap</title><desc>Dua panel menunjukkan output keseimbangan dibandingkan output potensial. Recessionary gap terjadi saat output aktual di kiri output potensial. Inflationary gap terjadi saat output aktual di kanan output potensial.</desc>\n<text x=\"230\" y=\"25\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"16\" font-weight=\"700\">Recessionary gap</text><text x=\"690\" y=\"25\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"16\" font-weight=\"700\">Inflationary gap</text>\n<g transform=\"translate(25,35)\"><line x1=\"45\" y1=\"240\" x2=\"405\" y2=\"240\" stroke=\"#64748b\"/><line x1=\"45\" y1=\"240\" x2=\"45\" y2=\"20\" stroke=\"#64748b\"/><text x=\"392\" y=\"263\" fill=\"#94a3b8\">Y</text><text x=\"18\" y=\"25\" fill=\"#94a3b8\">P</text><line x1=\"85\" y1=\"65\" x2=\"350\" y2=\"215\" stroke=\"#4f9cf9\" stroke-width=\"2.5\"/><line x1=\"90\" y1=\"210\" x2=\"345\" y2=\"55\" stroke=\"#22d3a0\" stroke-width=\"2.5\"/><line x1=\"305\" y1=\"35\" x2=\"305\" y2=\"240\" stroke=\"#f4516c\" stroke-width=\"2.3\" stroke-dasharray=\"7 4\"/><text x=\"292\" y=\"31\" fill=\"#f4516c\">LRAS / Yp</text><circle cx=\"220\" cy=\"142\" r=\"4\" fill=\"#f9a825\"/><line x1=\"220\" y1=\"142\" x2=\"220\" y2=\"240\" stroke=\"#f9a825\" stroke-dasharray=\"4 3\"/><text x=\"208\" y=\"258\" fill=\"#f9a825\">Y*</text><path d=\"M220 278 H305\" stroke=\"#f9a825\" stroke-width=\"3\"/><text x=\"262\" y=\"300\" text-anchor=\"middle\" fill=\"#cbd5e1\">Y* &lt; Yp</text></g>\n<g transform=\"translate(485,35)\"><line x1=\"45\" y1=\"240\" x2=\"405\" y2=\"240\" stroke=\"#64748b\"/><line x1=\"45\" y1=\"240\" x2=\"45\" y2=\"20\" stroke=\"#64748b\"/><text x=\"392\" y=\"263\" fill=\"#94a3b8\">Y</text><text x=\"18\" y=\"25\" fill=\"#94a3b8\">P</text><line x1=\"110\" y1=\"55\" x2=\"375\" y2=\"205\" stroke=\"#4f9cf9\" stroke-width=\"2.5\"/><line x1=\"90\" y1=\"210\" x2=\"345\" y2=\"55\" stroke=\"#22d3a0\" stroke-width=\"2.5\"/><line x1=\"220\" y1=\"35\" x2=\"220\" y2=\"240\" stroke=\"#f4516c\" stroke-width=\"2.3\" stroke-dasharray=\"7 4\"/><text x=\"207\" y=\"31\" fill=\"#f4516c\">LRAS / Yp</text><circle cx=\"278\" cy=\"150\" r=\"4\" fill=\"#f9a825\"/><line x1=\"278\" y1=\"150\" x2=\"278\" y2=\"240\" stroke=\"#f9a825\" stroke-dasharray=\"4 3\"/><text x=\"268\" y=\"258\" fill=\"#f9a825\">Y*</text><path d=\"M220 278 H278\" stroke=\"#f9a825\" stroke-width=\"3\"/><text x=\"249\" y=\"300\" text-anchor=\"middle\" fill=\"#cbd5e1\">Y* &gt; Yp</text></g></svg>",
+      "caption": "Recessionary gap berarti output aktual di bawah output potensial. Inflationary gap berarti permintaan mendorong output melewati kapasitas berkelanjutan dan meningkatkan tekanan harga.",
+      "altText": "Dua grafik AS-AD. Grafik kiri menunjukkan output keseimbangan lebih rendah dari output potensial. Grafik kanan menunjukkan output keseimbangan lebih tinggi dari output potensial."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Recessionary Gap:** Permintaan agregat kurang. Kebijakan ekspansif dapat menaikkan output dan menurunkan pengangguran siklis.",
+        "**Inflationary Gap:** Permintaan terlalu kuat. Kebijakan kontraktif dapat menekan inflasi tetapi berisiko menurunkan output."
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Paradox of thrift",
+      "text": "jika semua orang serentak menaikkan tabungan dengan mengurangi konsumsi, pengeluaran agregat turun, output turun, dan tabungan aktual secara agregat belum tentu meningkat."
     }
   ]
 };
 
 const tm11: Reading = {
   "tm": 11,
-  "title": "Uang, Sistem Keuangan, dan Pasar Dana Pinjaman",
-  "ref": "Mankiw Ch. 29 (Monetary System), Ch. 26 (Saving, Investment, and the Financial System)",
-  "intro": "Memahami apa itu uang, bagaimana bank menciptakan uang melalui sistem cadangan fraksional, instrumen kebijakan moneter, dan interaksi tabungan-investasi di pasar dana pinjaman.",
+  "title": "Uang dan Sistem Keuangan",
+  "ref": "Kontrak: 1(21), 2(31,32) · Substansi: Samuelson Ch.23–24; Mankiw Ch.29–30",
+  "intro": "Membahas fungsi uang, intermediasi keuangan, penciptaan uang oleh bank, permintaan uang, kebijakan moneter, teori kuantitas, dan suku bunga riil.",
   "objectives": [
-    "Menjelaskan fungsi dan jenis-jenis uang.",
-    "Mengukur jumlah uang beredar (M1 dan M2).",
-    "Menganalisis penciptaan uang oleh bank (Money Multiplier).",
-    "Menjelaskan alat kebijakan moneter bank sentral.",
-    "Menganalisis pasar dana pinjaman dan dampak kebijakan pemerintah."
+    "Menjelaskan fungsi uang dan peran sistem keuangan.",
+    "Menghitung money multiplier sederhana dan memahami keterbatasannya.",
+    "Menganalisis pasar uang serta transmisi kebijakan moneter.",
+    "Menggunakan quantity equation dan persamaan Fisher."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Makna dan Fungsi Uang"
+      "text": "Definisi & Fungsi Uang"
     },
     {
       "kind": "p",
-      "text": "Uang adalah aset dalam ekonomi yang secara rutin digunakan oleh orang-orang untuk membeli barang dan jasa dari orang lain. Bagi seorang ekonom, uang bukan sekadar kekayaan, melainkan hanya beberapa jenis kekayaan yang diterima secara umum oleh penjual."
+      "text": "Uang adalah aset yang diterima secara umum untuk pembayaran barang, jasa, dan kewajiban. Uang bukan kekayaan dalam arti luas, karena kekayaan mencakup saham, obligasi, tanah, bangunan, dan aset produktif lain. Uang adalah bagian dari kekayaan yang paling likuid."
     },
     {
       "kind": "ul",
       "items": [
-        "**Medium of exchange (Alat tukar):** Barang yang diberikan pembeli kepada penjual ketika mereka ingin membeli barang dan jasa.",
-        "**Unit of account (Satuan hitung):** Tolok ukur yang digunakan orang untuk memasang harga dan mencatat utang.",
-        "**Store of value (Penyimpan nilai):** Aset yang dapat digunakan orang untuk memindahkan daya beli dari masa sekarang ke masa depan."
+        "**Medium of Exchange:** Uang mempermudah pertukaran tanpa barter dan tanpa double coincidence of wants.",
+        "**Unit of Account:** Uang menjadi satuan hitung untuk menyatakan harga dan mencatat nilai transaksi.",
+        "**Store of Value:** Uang menyimpan daya beli, meski nilainya bisa tergerus inflasi.",
+        "**Standard of Deferred Payment:** Uang menjadi dasar pembayaran utang pada masa depan."
       ]
-    },
-    {
-      "kind": "p",
-      "text": "Uang dibedakan menjadi **Commodity money** (uang barang yang memiliki nilai intrinsik seperti emas atau perak) dan **Fiat money** (uang fiat yang digunakan sebagai uang karena dekrit/hukum pemerintah, seperti uang kertas dan koin saat ini)."
-    },
-    {
-      "kind": "h2",
-      "text": "Jumlah Uang Beredar (Money Supply) dan Permintaan Uang"
-    },
-    {
-      "kind": "p",
-      "text": "Kuantitas uang yang tersedia dalam ekonomi disebut *money supply*. Pengukurannya umumnya dibagi dua:"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**M1:** Uang logam dan mata uang kertas yang beredar di luar bank ditambah simpanan yang dapat dicek (giro).",
-        "**M2:** M1 ditambah dengan aset lain yang sangat likuid seperti rekening tabungan dan deposito jangka pendek."
-      ]
-    },
-    {
-      "kind": "p",
-      "text": "Permintaan uang (*money demand*) muncul karena dua alasan utama:"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Transaksi (Transactions Demand):** Untuk membeli barang. Permintaan ini meningkat jika pendapatan atau harga naik.",
-        "**Aset (Asset Demand):** Menyimpan uang sebagai aset, biasanya terjadi ketika suku bunga investasi sangat rendah (mendekati nol). Biaya peluang (*opportunity cost*) dari memegang uang adalah bunga yang hilang karena tidak diinvestasikan."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Sistem Keuangan: Perantara dan Pasar"
-    },
-    {
-      "kind": "p",
-      "text": "Sistem keuangan terdiri dari lembaga-lembaga yang membantu mempertemukan tabungan satu pihak dengan investasi pihak lain. Sistem ini memiliki dua jalur:"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Perantara Keuangan (Financial Intermediaries):** Lembaga tempat penabung secara *tidak langsung* menyediakan dana bagi peminjam. Contoh: Bank komersial dan reksa dana.",
-        "**Pasar Keuangan (Financial Markets):** Lembaga tempat penabung secara *langsung* menyediakan dana bagi peminjam. Contoh: Pasar saham dan pasar obligasi."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Bank dan Penciptaan Uang (Money Multiplier)"
-    },
-    {
-      "kind": "p",
-      "text": "Ketika kita menyimpan uang di bank, bank tidak menyimpannya 100% di brankas. Dalam sistem **Fractional-Reserve Banking**, bank hanya menahan sebagian dana sebagai cadangan (*reserves*) dan meminjamkan sisanya. Rasio dari total deposito yang harus ditahan bank disebut *reserve ratio* (R)."
-    },
-    {
-      "kind": "callout",
-      "variant": "key",
-      "title": "Money Multiplier",
-      "text": "Money multiplier (pengganda uang) adalah jumlah uang yang dihasilkan sistem perbankan untuk setiap dolar cadangan. Rumusnya adalah **M = 1 / R**."
-    },
-    {
-      "kind": "example",
-      "title": "Contoh Penciptaan Uang",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Misalkan *reserve ratio* (R) adalah 10% (0.1). Jika Bank Sentral menyuntikkan uang $1000 ke dalam ekonomi:"
-        },
-        {
-          "kind": "ul",
-          "items": [
-            "Bank Pertama menerima deposit $1000. Menyimpan $100 (10%) sebagai cadangan, meminjamkan $900.",
-            "Peminjam membelanjakan $900, dan uang itu masuk ke Bank Kedua. Bank Kedua menyimpan $90 (10%) dan meminjamkan $810.",
-            "Total uang beredar pada tahap ini: $1000 + $900 + $810 + ... = $10.000."
-          ]
-        },
-        {
-          "kind": "p",
-          "text": "Pengganda uang = 1 / 0.1 = 10. Uang $1000 berubah menjadi **$10.000** dalam sistem perbankan."
-        }
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Kebijakan Moneter"
-    },
-    {
-      "kind": "p",
-      "text": "Bank Sentral mengendalikan *money supply* melalui tiga instrumen utama:"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Open-Market Operations (Operasi Pasar Terbuka):** Membeli obligasi pemerintah untuk *menambah* uang beredar, atau menjual obligasi untuk *mengurangi* uang beredar.",
-        "**Reserve Requirements (Giro Wajib Minimum):** Mengubah rasio cadangan minimum. *Menurunkan* rasio berarti bank bisa meminjamkan lebih banyak uang (uang beredar bertambah). *Menaikkan* rasio akan mengurangi uang beredar.",
-        "**Discount Rate (Suku Bunga Diskonto):** Suku bunga pinjaman yang diberikan Bank Sentral kepada bank komersial. *Menurunkan* suku bunga ini mendorong bank untuk meminjam lebih banyak cadangan (uang beredar bertambah)."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Pasar Dana Pinjaman (Market for Loanable Funds)"
-    },
-    {
-      "kind": "p",
-      "text": "Di pasar dana pinjaman, mereka yang memiliki sisa pendapatan menawarkannya sebagai tabungan, dan mereka yang butuh modal memintanya untuk investasi. Keseimbangan antara Supply (Tabungan) dan Demand (Investasi) menentukan **suku bunga riil (real interest rate)**."
     },
     {
       "kind": "table",
       "headers": [
-        "Kebijakan",
-        "Dampak Terhadap Pasar",
-        "Hasil"
+        "Jenis Uang",
+        "Ciri",
+        "Contoh"
       ],
       "rows": [
         [
-          "Insentif Pajak Tabungan (Penurunan pajak bunga)",
-          "Meningkatkan Supply dana pinjaman (kurva Supply bergeser ke kanan).",
-          "Suku bunga **turun**, kuantitas dana/investasi **naik**."
+          "Commodity money",
+          "Memiliki nilai intrinsik.",
+          "Emas, perak, garam dalam sejarah."
         ],
         [
-          "Kredit Pajak Investasi (Insentif perusahaan)",
-          "Meningkatkan Demand dana pinjaman (kurva Demand bergeser ke kanan).",
-          "Suku bunga **naik**, kuantitas dana/investasi **naik**."
+          "Fiat money",
+          "Bernilai karena ditetapkan dan diterima sebagai alat pembayaran.",
+          "Rupiah, dolar AS, euro."
         ],
         [
-          "Defisit Anggaran Pemerintah (G > T)",
-          "Mengurangi Public Saving. Supply dana pinjaman agregat menurun (bergeser ke kiri).",
-          "Suku bunga **naik**, investasi swasta **turun** (*Crowding Out*)."
+          "Bank money",
+          "Uang giral/demand deposits yang muncul dari sistem perbankan.",
+          "Saldo rekening giro dan tabungan transaksi."
+        ],
+        [
+          "Digital/e-money",
+          "Representasi elektronik dari nilai uang untuk pembayaran.",
+          "Saldo uang elektronik; tetap terkait sistem pembayaran resmi."
         ]
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Sistem Keuangan"
+    },
+    {
+      "kind": "p",
+      "text": "Sistem keuangan menghubungkan pihak surplus dana dengan pihak defisit dana. Tanpa sistem keuangan, tabungan rumah tangga sulit berubah menjadi investasi produktif. Lembaga dan pasar keuangan mempertemukan dana, mengelola risiko, menyediakan likuiditas, dan mendukung sistem pembayaran."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Financial Markets:** Mempertemukan pemilik dana dan peminjam secara langsung melalui saham, obligasi, dan instrumen pasar uang.",
+        "**Financial Intermediaries:** Mengumpulkan dana dari masyarakat lalu menyalurkan ke peminjam, misalnya bank, perusahaan asuransi, dana pensiun, dan reksa dana.",
+        "**Alokasi modal:** dana diarahkan ke proyek yang dianggap paling produktif.",
+        "**Risk sharing:** risiko dibagi melalui diversifikasi, asuransi, dan instrumen keuangan.",
+        "**Maturity transformation:** dana jangka pendek dapat disalurkan menjadi kredit jangka lebih panjang.",
+        "**Liquidity provision:** aset keuangan tertentu mudah ditukar menjadi uang.",
+        "**Payment system:** memfasilitasi transaksi barang, jasa, dan aset."
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Bank dan Money Multiplier"
+    },
+    {
+      "kind": "p",
+      "text": "Bank menciptakan uang giral melalui fractional-reserve banking. Ketika bank menerima deposito, sebagian disimpan sebagai cadangan dan sisanya dipinjamkan. Pinjaman ini kemudian menjadi deposito baru di bank lain, sehingga jumlah uang beredar dapat bertambah."
+    },
+    {
+      "kind": "formula",
+      "text": "Fractional Reserve dan Multiplier\n\nReserve ratio = reserves/deposits\n\nSimple money multiplier = 1/rr\n\nMaximum deposit creation = initial reserves × (1/rr)"
+    },
+    {
+      "kind": "example",
+      "title": "Contoh bank multiplier",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jika cadangan awal 100 dan reserve ratio 10%, multiplier sederhana = 1/0,10 = 10. Potensi maksimum deposito = 100 × 10 = 1.000. Dalam kenyataan, hasilnya bisa lebih kecil karena ada uang tunai yang bocor ke masyarakat, cadangan berlebih, kredit macet, dan kehati-hatian bank."
+        }
       ]
     },
     {
       "kind": "callout",
       "variant": "warning",
-      "title": "Crowding Out",
-      "text": "Ketika pemerintah mengalami defisit anggaran, pemerintah harus meminjam dari pasar dana pinjaman. Hal ini mengurangi pasokan dana yang tersedia bagi sektor swasta, menyebabkan suku bunga naik dan investasi perusahaan menurun. Fenomena investasi swasta yang 'tergusur' oleh defisit pemerintah ini disebut *crowding out*."
+      "title": "Jangan terlalu mekanis",
+      "text": "multiplier 1/rr adalah model sederhana. Dalam praktik, penciptaan kredit juga dipengaruhi permintaan kredit, modal bank, risiko, regulasi, dan kondisi makro."
+    },
+    {
+      "kind": "h2",
+      "text": "Bank Sentral & Kebijakan Moneter"
+    },
+    {
+      "kind": "p",
+      "text": "Bank sentral bertanggung jawab menjaga stabilitas moneter dan sistem keuangan. Fungsi umumnya mencakup pengendalian jumlah uang beredar, kebijakan suku bunga, lender of last resort, pengaturan sistem pembayaran, dan pengawasan stabilitas keuangan sesuai mandat masing-masing negara."
+    },
+    {
+      "kind": "figure",
+      "title": "Alur Transmisi Kebijakan Moneter",
+      "svg": "<svg data-graph-id=\"PTE-FLOW-05\" viewBox=\"0 0 920 235\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Transmisi kebijakan moneter</title><desc>Policy rate berubah menuju Suku bunga pasar dan kredit berubah menuju C dan I bereaksi menuju AD, output, dan kesempatan kerja berubah menuju Inflasi dan kurs menyesuaikan. Transmisi juga melalui ekspektasi, harga aset, likuiditas bank, dan nilai tukar; dampaknya memiliki jeda waktu.</desc><defs><marker id=\"arrow-PTE-FLOW-05\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"#94a3b8\"/></marker></defs><rect x=\"31.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"106.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"106.0\" dy=\"0\">Policy rate berubah</tspan></text><line x1=\"185.0\" y1=\"97.0\" x2=\"203.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Suku bunga pasar dan</tspan><tspan x=\"283.0\" dy=\"18\">kredit berubah</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">C dan I bereaksi</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"79.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">AD, output, dan</tspan><tspan x=\"637.0\" dy=\"18\">kesempatan kerja</tspan><tspan x=\"637.0\" dy=\"18\">berubah</tspan></text><line x1=\"716.0\" y1=\"97.0\" x2=\"734.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"739.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"814.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"814.0\" dy=\"0\">Inflasi dan kurs</tspan><tspan x=\"814.0\" dy=\"18\">menyesuaikan</tspan></text><rect x=\"110\" y=\"165\" width=\"700\" height=\"45\" rx=\"12\" fill=\"#0b1220\" stroke=\"#64748b\" stroke-dasharray=\"5 4\"/><text x=\"460\" y=\"193\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"13\" font-family=\"system-ui, sans-serif\">Transmisi juga melalui ekspektasi, harga aset, likuiditas bank, dan nilai tukar; dampaknya memiliki jeda waktu.</text></svg>",
+      "caption": "Kenaikan policy rate umumnya menekan C dan I serta AD. Penurunan rate bekerja sebaliknya, selama intermediasi dan permintaan kredit berfungsi.",
+      "altText": "Diagram alur perubahan suku bunga kebijakan menuju suku bunga pasar dan kredit, konsumsi dan investasi, permintaan agregat, output, kesempatan kerja, inflasi, dan nilai tukar."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Instrumen",
+        "Cara Kerja",
+        "Dampak Umum"
+      ],
+      "rows": [
+        [
+          "Open market operation",
+          "Bank sentral membeli/menjual surat berharga.",
+          "Pembelian menambah cadangan dan likuiditas; penjualan menyerap likuiditas."
+        ],
+        [
+          "Policy rate",
+          "Suku bunga acuan memengaruhi suku bunga pasar.",
+          "Rate turun mendorong kredit dan AD; rate naik menahan inflasi."
+        ],
+        [
+          "Reserve requirement",
+          "Mengatur cadangan minimum bank.",
+          "RR naik menekan kemampuan kredit; RR turun melonggarkan kredit."
+        ],
+        [
+          "Discount/lending facility",
+          "Bank sentral menyediakan pinjaman likuiditas ke bank.",
+          "Menjaga stabilitas ketika pasar uang terganggu."
+        ],
+        [
+          "Komunikasi/kredibilitas",
+          "Forward guidance dan sinyal kebijakan.",
+          "Membentuk ekspektasi inflasi dan suku bunga."
+        ]
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "Transmisi Moneter\n\nPolicy rate → suku bunga pasar → konsumsi tahan lama & investasi → AD → output dan harga\n\nPolicy rate → nilai tukar → ekspor neto & harga impor → AD dan inflasi\n\nPolicy stance → ekspektasi → keputusan konsumsi, investasi, dan penetapan upah/harga"
+    },
+    {
+      "kind": "h2",
+      "text": "Permintaan Uang"
+    },
+    {
+      "kind": "p",
+      "text": "Permintaan uang dipengaruhi oleh kebutuhan transaksi, motif berjaga-jaga, dan motif spekulasi/portofolio. Masyarakat memegang uang karena uang likuid, tetapi memegang uang juga memiliki biaya kesempatan berupa bunga yang hilang dari aset lain."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Transaction motive:** Semakin tinggi pendapatan dan transaksi, semakin tinggi kebutuhan uang.",
+        "**Precautionary motive:** Uang dipegang untuk kebutuhan tak terduga dan ketidakpastian.",
+        "**Speculative/portfolio motive:** Uang dibandingkan dengan aset berbunga. Suku bunga tinggi membuat memegang uang lebih mahal."
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "Hubungan Intuitif\n\nMoney demand naik ketika Y naik\n\nMoney demand turun ketika interest rate naik"
+    },
+    {
+      "kind": "h2",
+      "text": "Pasar Uang dan Liquidity Preference"
+    },
+    {
+      "kind": "p",
+      "text": "Teori liquidity preference dari Keynes menjelaskan bagaimana suku bunga nominal terbentuk dalam jangka pendek. Suku bunga adalah biaya memegang uang: makin tinggi suku bunga, makin besar bunga yang dikorbankan ketika memegang uang tunai, sehingga jumlah uang yang diminta turun. Suku bunga bergerak sampai jumlah uang yang diminta sama dengan jumlah uang yang ditawarkan bank sentral."
+    },
+    {
+      "kind": "formula",
+      "text": "Pasar Uang (Liquidity Preference, Mankiw Ch. 34)\n\nPenawaran uang (MS): ditetapkan bank sentral, tidak tergantung suku bunga (kurva tegak)\n\nPermintaan uang (MD): turun saat suku bunga naik, naik saat pendapatan Y naik\n\nEkuilibrium: MD = MS menentukan suku bunga i*"
+    },
+    {
+      "kind": "figure",
+      "title": "Pasar Uang: penambahan likuiditas menurunkan suku bunga",
+      "svg": "<svg data-graph-id=\"PTE-GRAPH-03\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Pasar Uang: penambahan likuiditas menurunkan suku bunga</title><desc>Grafik pasar uang dengan jumlah uang M pada sumbu horizontal dan suku bunga nominal i pada sumbu vertikal. Penawaran uang vertikal bergeser ke kanan dan menurunkan suku bunga keseimbangan.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"16\" y=\"26\">i</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"340\" y=\"251\">M</text><line stroke=\"#22d3a0\" stroke-width=\"2.3\" x1=\"180\" x2=\"180\" y1=\"40\" y2=\"235\"></line><text fill=\"#22d3a0\" font-size=\"10\" x=\"158\" y=\"34\">MS₁</text><line stroke=\"#f4516c\" stroke-dasharray=\"5,4\" stroke-width=\"2\" x1=\"250\" x2=\"250\" y1=\"40\" y2=\"235\"></line><text fill=\"#f4516c\" font-size=\"10\" x=\"236\" y=\"34\">MS₂</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"80\" x2=\"330\" y1=\"55\" y2=\"210\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"332\" y=\"212\">MD</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"180\" y1=\"117\" y2=\"117\"></line><circle cx=\"180\" cy=\"117\" fill=\"#f9a825\" r=\"3.6\"></circle><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"55\" x2=\"250\" y1=\"160\" y2=\"160\"></line><circle cx=\"250\" cy=\"160\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"120\">i₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"163\">i₂</text></svg>",
+      "caption": "Ketika penawaran uang bergeser ke kanan dari MS1 ke MS2, suku bunga keseimbangan turun dari i1 ke i2 sepanjang kurva permintaan uang.",
+      "altText": "Grafik pasar uang dengan jumlah uang M pada sumbu horizontal dan suku bunga nominal i pada sumbu vertikal. Penawaran uang vertikal bergeser ke kanan dan menurunkan suku bunga keseimbangan."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Jalur kebijakan moneter",
+      "text": "ketika bank sentral menambah jumlah uang, kurva MS bergeser ke kanan dan suku bunga turun dari i₁ ke i₂. Suku bunga yang lebih rendah mendorong investasi dan konsumsi tahan lama, sehingga permintaan agregat naik. Untuk menahan inflasi, bank sentral menempuh arah sebaliknya: menyerap likuiditas agar suku bunga naik."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Jangan tertukar dengan loanable funds",
+      "text": "pasar uang menjelaskan suku bunga nominal jangka pendek lewat keseimbangan uang. Pasar dana pinjaman (TM 9–10) menjelaskan suku bunga riil jangka panjang lewat keseimbangan tabungan dan investasi. Keduanya benar pada konteks masing-masing."
+    },
+    {
+      "kind": "h2",
+      "text": "Quantity Theory & Inflasi"
+    },
+    {
+      "kind": "p",
+      "text": "Teori kuantitas uang menekankan hubungan antara jumlah uang beredar dan tingkat harga dalam jangka panjang. Jika velocity relatif stabil dan output riil ditentukan oleh faktor riil, pertumbuhan uang yang terlalu cepat akan terutama tercermin pada inflasi."
+    },
+    {
+      "kind": "formula",
+      "text": "Quantity Equation\n\nM × V = P × Y\n\nDalam laju pertumbuhan: g_M + g_V = π + g_Y\n\nJika V stabil: π ≈ g_M − g_Y"
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Netralitas uang jangka panjang",
+      "text": "perubahan jumlah uang memengaruhi variabel nominal seperti harga dan inflasi, sedangkan output riil jangka panjang terutama ditentukan oleh modal, tenaga kerja, teknologi, dan institusi."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Catatan kritis",
+      "text": "teori kuantitas tidak berarti setiap kenaikan uang langsung menaikkan harga pada periode yang sama. Transmisi bergantung pada velocity, kapasitas menganggur, ekspektasi, struktur perbankan, dan respons kebijakan."
+    },
+    {
+      "kind": "h2",
+      "text": "Suku Bunga Nominal vs Riil (Fisher Effect)"
+    },
+    {
+      "kind": "p",
+      "text": "Suku bunga nominal adalah suku bunga yang diumumkan bank dan pasar. Suku bunga riil adalah suku bunga nominal setelah dikurangi inflasi, yaitu daya beli sebenarnya dari bunga yang diterima penabung atau dibayar peminjam."
+    },
+    {
+      "kind": "formula",
+      "text": "Persamaan Fisher (Mankiw Ch. 30)\n\nSuku bunga riil = suku bunga nominal − inflasi\n\nr ≈ i − π\n\ni ≈ r + π^e\n\nFisher effect: dalam jangka panjang, kenaikan 1% pertumbuhan uang menaikkan inflasi 1% dan suku bunga nominal 1%"
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Data Riil: Suku Bunga dan Inflasi Indonesia 2026",
+      "text": "Pada 9 Juni 2026, Bank Indonesia menaikkan BI-Rate menjadi 5,50% untuk memperkuat stabilisasi rupiah. Pada 18 Juni 2026, BI kembali menaikkan BI-Rate sebesar 25 bps menjadi 5,75%. Inflasi Mei 2026 tercatat 3,08% (yoy), masih dalam sasaran 2,5±1%. Dengan pendekatan ex-post sederhana, suku bunga riil berdasarkan posisi 18 Juni kira-kira 5,75% − 3,08% = 2,67%. Angka ini hanya ilustrasi karena persamaan Fisher yang berorientasi ke depan menggunakan inflasi ekspektasian, bukan semata-mata inflasi aktual bulan sebelumnya."
+    },
+    {
+      "kind": "p",
+      "text": "Sumber: Bank Indonesia (RDG 9 dan 17–18 Juni 2026); BPS (rilis inflasi 2 Juni 2026)."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Kaitan ke inflation tax",
+      "text": "jika inflasi ternyata lebih tinggi daripada yang diperkirakan saat kontrak dibuat, penabung dirugikan karena suku bunga riil yang diterima menjadi lebih kecil, sedangkan peminjam diuntungkan. Inilah salah satu alasan inflasi yang tidak terduga mengganggu keadilan kontrak."
     }
   ]
 };
@@ -1076,20 +1030,6 @@ const tm12: Reading = {
         "**Impor:** Barang/jasa asing yang dibeli domestik. Impor dikurangkan dari GDP karena bukan produksi domestik.",
         "**Trade balance:** NX positif = surplus dagang; NX negatif = defisit dagang."
       ]
-    },
-    {
-      "kind": "formula",
-      "text": "The Degree of Openness (Indikator Keterbukaan)\n\nTrade Dependence Index (TDI) = (Ekspor + Impor) / GDP\n\nSemakin tinggi rasio ini, semakin terbuka dan bergantung suatu negara pada perdagangan internasional."
-    },
-    {
-      "kind": "figure",
-      "title": "Output Determination with Foreign Trade",
-      "caption": "Keseimbangan Output (Equilibrium GDP) tercapai ketika kurva pengeluaran agregat (C+I+G+NX) memotong garis 45 derajat (titik E). Penambahan Ekspor Neto (NX) mengubah kemiringan kurva. Karena ada kecenderungan mengimpor (MPM), kurva C+I+G+NX lebih landai dari C+I+G. Jarak vertikal antara C+I+G dan C+I+G+NX pada keseimbangan menunjukkan defisit atau surplus ekspor neto.",
-      "svg": "<svg viewBox=\"0 0 600 400\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Output Determination with Foreign Trade</title><desc>Grafik Keynesian Cross. Garis C+I+G lebih curam, sedangkan C+I+G+NX lebih landai karena ada kecenderungan mengimpor (marginal propensity to import). Jarak antara keduanya mencerminkan defisit/surplus ekspor neto.</desc><defs><marker id=\"arrow1\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs><line x1=\"60\" y1=\"340\" x2=\"550\" y2=\"340\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow1)\"/><line x1=\"60\" y1=\"340\" x2=\"60\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow1)\"/><text x=\"540\" y=\"360\" fill=\"currentColor\" font-size=\"12\">GDP (Y)</text><text x=\"20\" y=\"45\" fill=\"currentColor\" font-size=\"12\" transform=\"rotate(-90, 20, 45)\">Total Spending</text><line x1=\"60\" y1=\"340\" x2=\"350\" y2=\"50\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"4\"/><text x=\"80\" y=\"325\" fill=\"currentColor\" font-size=\"12\">45°</text><line x1=\"100\" y1=\"230\" x2=\"480\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"490\" y=\"65\" fill=\"#64748b\" font-size=\"13\" font-weight=\"bold\">C + I + G</text><line x1=\"100\" y1=\"230\" x2=\"480\" y2=\"100\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/><text x=\"490\" y=\"105\" fill=\"#f43f5e\" font-size=\"13\" font-weight=\"bold\">C + I + G + NX</text><circle cx=\"212\" cy=\"188\" r=\"4\" fill=\"#64748b\"/><circle cx=\"340\" cy=\"148\" r=\"4\" fill=\"#f43f5e\"/><text x=\"195\" y=\"180\" fill=\"#64748b\" font-size=\"12\">F (Closed)</text><text x=\"345\" y=\"165\" fill=\"#f43f5e\" font-size=\"12\">E (Open)</text><line x1=\"340\" y1=\"122\" x2=\"340\" y2=\"148\" stroke=\"#f43f5e\" stroke-width=\"1.5\"/><polygon points=\"337,126 343,126 340,122\" fill=\"#f43f5e\"/><polygon points=\"337,144 343,144 340,148\" fill=\"#f43f5e\"/><text x=\"330\" y=\"115\" fill=\"#f43f5e\" font-size=\"11\" text-anchor=\"end\">Net-export deficit</text><line x1=\"212\" y1=\"188\" x2=\"212\" y2=\"340\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3\"/><line x1=\"340\" y1=\"148\" x2=\"340\" y2=\"340\" stroke=\"#f43f5e\" stroke-width=\"1\" stroke-dasharray=\"3\"/></svg>"
-    },
-    {
-      "kind": "ul",
-      "items": []
     },
     {
       "kind": "h2",
@@ -1206,7 +1146,7 @@ const tm12: Reading = {
     {
       "kind": "figure",
       "title": "Peta Identitas S, I, NX, dan NCO",
-      "svg": "<svg data-graph-id=\"PTE-FLOW-06\" viewBox=\"0 0 920 190\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Identitas ekonomi terbuka</title><desc>Tabungan nasional S menuju Dikurangi investasi domestik I menuju Sisa menjadi NX menuju Selisih yang sama adalah NCO menuju NX sama dengan NCO</desc><defs><marker id=\"arrow-PTE-FLOW-06\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs><rect x=\"31.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"106.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"106.0\" dy=\"0\">Tabungan nasional S</tspan></text><line x1=\"185.0\" y1=\"97.0\" x2=\"203.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Dikurangi investasi</tspan><tspan x=\"283.0\" dy=\"18\">domestik I</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">Sisa menjadi NX</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">Selisih yang sama</tspan><tspan x=\"637.0\" dy=\"18\">adalah NCO</tspan></text><line x1=\"716.0\" y1=\"97.0\" x2=\"734.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"739.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"814.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"814.0\" dy=\"0\">NX sama dengan NCO</tspan></text></svg>",
+      "svg": "<svg data-graph-id=\"PTE-FLOW-06\" viewBox=\"0 0 920 190\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Identitas ekonomi terbuka</title><desc>Tabungan nasional S menuju Dikurangi investasi domestik I menuju Sisa menjadi NX menuju Selisih yang sama adalah NCO menuju NX sama dengan NCO</desc><defs><marker id=\"arrow-PTE-FLOW-06\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"#94a3b8\"/></marker></defs><rect x=\"31.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"106.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"106.0\" dy=\"0\">Tabungan nasional S</tspan></text><line x1=\"185.0\" y1=\"97.0\" x2=\"203.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Dikurangi investasi</tspan><tspan x=\"283.0\" dy=\"18\">domestik I</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">Sisa menjadi NX</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">Selisih yang sama</tspan><tspan x=\"637.0\" dy=\"18\">adalah NCO</tspan></text><line x1=\"716.0\" y1=\"97.0\" x2=\"734.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-06)\"/><rect x=\"739.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f9a825\" stroke-width=\"1.5\"/><text x=\"814.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"814.0\" dy=\"0\">NX sama dengan NCO</tspan></text></svg>",
       "caption": "Jika S > I, negara memiliki NX dan NCO positif. Jika S < I, investasi domestik dibiayai arus modal masuk dan NX negatif.",
       "altText": "Diagram identitas ekonomi terbuka: tabungan nasional dikurangi investasi domestik sama dengan ekspor neto dan net capital outflow, sehingga NX sama dengan NCO."
     },
@@ -1331,33 +1271,6 @@ const tm12: Reading = {
     },
     {
       "kind": "h2",
-      "text": "Keseimbangan Dua Pasar: Loanable Funds & Valuta Asing"
-    },
-    {
-      "kind": "p",
-      "text": "Dalam ekonomi terbuka versi Mankiw, terdapat dua pasar utama yang saling terhubung erat oleh Net Capital Outflow (NCO):"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**1. Pasar Dana Pinjaman (Market for Loanable Funds):** Di sini, penawaran dana berasal dari Tabungan Nasional ($S$). Permintaan dana berasal dari Investasi Domestik ($I$) dan Net Capital Outflow ($NCO$). Pada tingkat suku bunga riil keseimbangan, jumlah uang yang ingin ditabung masyarakat akan sama persis dengan jumlah investasi domestik dan investasi asing bersih (NCO).",
-        "**2. Pasar Valuta Asing (Market for Foreign-Currency Exchange):** Di pasar ini, penawaran mata uang domestik berasal dari $NCO$ (orang yang menjual mata uang domestik untuk membeli aset luar negeri). Permintaannya berasal dari Ekspor Neto / $NX$ (orang asing yang butuh mata uang kita untuk membeli ekspor kita). Keseimbangan Nilai Tukar Riil ($\\epsilon$) memastikan demand untuk $NX$ persis sama dengan supply dari $NCO$."
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "NCO sebagai Jembatan",
-      "text": "NCO menghubungkan kedua pasar ini secara mekanis. Kurva NCO memiliki kemiringan negatif terhadap Suku Bunga Riil ($r$). Mengapa? Karena suku bunga domestik yang lebih tinggi membuat aset domestik (seperti obligasi) lebih menarik bagi investor. Hal ini mengurangi arus modal keluar (NCO turun). Catatan penting: NCO bisa bernilai negatif; nilai NCO negatif berarti perekonomian sedang mengalami aliran masuk modal bersih (Net Capital Inflow)."
-    },
-    {
-      "kind": "figure",
-      "title": "Keseimbangan Dua Pasar Ekonomi Terbuka Mankiw",
-      "caption": "Model Mankiw: Suku bunga riil ditentukan di pasar dana pinjaman. Suku bunga tersebut menentukan tingkat NCO. Kemudian, NCO menentukan penawaran mata uang domestik di pasar valas, yang bersilangan dengan permintaan ekspor neto (NX) untuk menentukan nilai tukar riil.",
-      "svg": "<svg viewBox=\"0 0 1000 600\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>The Real Equilibrium in an Open Economy</title><desc>Tiga panel pasar terbuka Mankiw. Panel A: Pasar Loanable Funds. Panel B: NCO. Panel C: Pasar Valas.</desc><defs><marker id=\"arrow2\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs><!-- Panel A --><text x=\"250\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(a) The Market for Loanable Funds</text><line x1=\"80\" y1=\"280\" x2=\"420\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow2)\"/><line x1=\"80\" y1=\"280\" x2=\"80\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow2)\"/><text x=\"250\" y=\"310\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Quantity of Loanable Funds</text><text x=\"70\" y=\"100\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"end\">Real Interest Rate</text><line x1=\"130\" y1=\"260\" x2=\"350\" y2=\"90\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><text x=\"355\" y=\"85\" fill=\"#3b82f6\" font-size=\"12\">Supply (S)</text><line x1=\"130\" y1=\"90\" x2=\"350\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><text x=\"355\" y=\"265\" fill=\"#3b82f6\" font-size=\"12\">Demand (I+NCO)</text><circle cx=\"240\" cy=\"175\" r=\"4\" fill=\"currentColor\"/><line x1=\"80\" y1=\"175\" x2=\"480\" y2=\"175\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/><text x=\"65\" y=\"180\" fill=\"currentColor\" font-size=\"12\">r₁</text><!-- Panel B --><text x=\"700\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(b) Net Capital Outflow</text><line x1=\"530\" y1=\"280\" x2=\"870\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow2)\"/><line x1=\"530\" y1=\"280\" x2=\"530\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow2)\"/><line x1=\"680\" y1=\"280\" x2=\"680\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3\"/><text x=\"850\" y=\"300\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Net Capital Outflow (NCO)</text><line x1=\"600\" y1=\"90\" x2=\"780\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><circle cx=\"690\" cy=\"175\" r=\"4\" fill=\"currentColor\"/><line x1=\"690\" y1=\"175\" x2=\"690\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/><text x=\"680\" y=\"295\" fill=\"currentColor\" font-size=\"12\">0</text><!-- Panel C --><text x=\"700\" y=\"580\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(c) The Market for Foreign-Currency Exchange</text><line x1=\"530\" y1=\"520\" x2=\"870\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow2)\"/><line x1=\"530\" y1=\"520\" x2=\"530\" y2=\"350\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow2)\"/><text x=\"850\" y=\"540\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"middle\">Quantity of Dollars</text><text x=\"520\" y=\"390\" fill=\"currentColor\" font-size=\"12\" text-anchor=\"end\">Real Exchange Rate</text><line x1=\"690\" y1=\"360\" x2=\"690\" y2=\"520\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><text x=\"700\" y=\"370\" fill=\"#3b82f6\" font-size=\"12\">Supply (NCO)</text><line x1=\"580\" y1=\"380\" x2=\"800\" y2=\"490\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><text x=\"810\" y=\"495\" fill=\"#3b82f6\" font-size=\"12\">Demand (NX)</text><circle cx=\"690\" cy=\"435\" r=\"4\" fill=\"currentColor\"/><line x1=\"530\" y1=\"435\" x2=\"690\" y2=\"435\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/><text x=\"510\" y=\"440\" fill=\"currentColor\" font-size=\"12\">E₁</text></svg>"
-    },
-    {
-      "kind": "h2",
       "text": "Kebijakan dan Shock dalam Ekonomi Terbuka"
     },
     {
@@ -1367,39 +1280,44 @@ const tm12: Reading = {
     {
       "kind": "figure",
       "title": "Shock Nilai Tukar dan Respons Ekonomi Terbuka",
-      "svg": "<svg data-graph-id=\"PTE-FLOW-03B\" viewBox=\"0 0 920 235\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Shock nilai tukar</title><desc>Modal keluar atau sentimen memburuk menuju Kurs domestik melemah menuju Harga impor dan beban valas naik menuju Inflasi naik dan permintaan domestik melemah menuju Ekspor dapat membaik setelah jeda. Kebijakan perlu menimbang stabilitas kurs, inflasi, pertumbuhan, cadangan devisa, dan risiko sektor berutang valas.</desc><defs><marker id=\"arrow-PTE-FLOW-03B\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs><rect x=\"31.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"106.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"106.0\" dy=\"0\">Modal keluar atau</tspan><tspan x=\"106.0\" dy=\"18\">sentimen memburuk</tspan></text><line x1=\"185.0\" y1=\"97.0\" x2=\"203.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Kurs domestik melemah</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">Harga impor dan beban</tspan><tspan x=\"460.0\" dy=\"18\">valas naik</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"79.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">Inflasi naik dan</tspan><tspan x=\"637.0\" dy=\"18\">permintaan domestik</tspan><tspan x=\"637.0\" dy=\"18\">melemah</tspan></text><line x1=\"716.0\" y1=\"97.0\" x2=\"734.0\" y2=\"97.0\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"739.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"814.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#f8fafc\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"814.0\" dy=\"0\">Ekspor dapat membaik</tspan><tspan x=\"814.0\" dy=\"18\">setelah jeda</tspan></text><rect x=\"110\" y=\"165\" width=\"700\" height=\"45\" rx=\"12\" fill=\"#0b1220\" stroke=\"currentColor\" stroke-dasharray=\"5 4\"/><text x=\"460\" y=\"193\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"13\" font-family=\"system-ui, sans-serif\">Kebijakan perlu menimbang stabilitas kurs, inflasi, pertumbuhan, cadangan devisa, dan risiko sektor berutang valas.</text></svg>",
+      "svg": "<svg data-graph-id=\"PTE-FLOW-03B\" viewBox=\"0 0 920 235\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Shock nilai tukar</title><desc>Modal keluar atau sentimen memburuk menuju Kurs domestik melemah menuju Harga impor dan beban valas naik menuju Inflasi naik dan permintaan domestik melemah menuju Ekspor dapat membaik setelah jeda. Kebijakan perlu menimbang stabilitas kurs, inflasi, pertumbuhan, cadangan devisa, dan risiko sektor berutang valas.</desc><defs><marker id=\"arrow-PTE-FLOW-03B\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"#94a3b8\"/></marker></defs><rect x=\"31.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"106.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"106.0\" dy=\"0\">Modal keluar atau</tspan><tspan x=\"106.0\" dy=\"18\">sentimen memburuk</tspan></text><line x1=\"185.0\" y1=\"97.0\" x2=\"203.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Kurs domestik melemah</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">Harga impor dan beban</tspan><tspan x=\"460.0\" dy=\"18\">valas naik</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"79.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">Inflasi naik dan</tspan><tspan x=\"637.0\" dy=\"18\">permintaan domestik</tspan><tspan x=\"637.0\" dy=\"18\">melemah</tspan></text><line x1=\"716.0\" y1=\"97.0\" x2=\"734.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-03B)\"/><rect x=\"739.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#f4516c\" stroke-width=\"1.5\"/><text x=\"814.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"814.0\" dy=\"0\">Ekspor dapat membaik</tspan><tspan x=\"814.0\" dy=\"18\">setelah jeda</tspan></text><rect x=\"110\" y=\"165\" width=\"700\" height=\"45\" rx=\"12\" fill=\"#0b1220\" stroke=\"#64748b\" stroke-dasharray=\"5 4\"/><text x=\"460\" y=\"193\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"13\" font-family=\"system-ui, sans-serif\">Kebijakan perlu menimbang stabilitas kurs, inflasi, pertumbuhan, cadangan devisa, dan risiko sektor berutang valas.</text></svg>",
       "caption": "Shock kurs memengaruhi perekonomian melalui harga impor, neraca perusahaan, arus modal, ekspor, dan ekspektasi.",
       "altText": "Diagram alur modal keluar menuju pelemahan kurs, kenaikan harga impor dan beban valuta asing, kenaikan inflasi dan pelemahan permintaan domestik, serta kemungkinan perbaikan ekspor setelah jeda."
     },
     {
-      "kind": "p",
-      "text": "Mari kita lihat bagaimana berbagai shock memengaruhi keseimbangan tersebut:"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**1. Defisit Anggaran Pemerintah (Budget Deficit)**\nDefisit menyebabkan Tabungan Nasional ($S$) turun $\\rightarrow$ Supply dana pinjaman turun $\\rightarrow$ **Suku bunga riil naik**. Karena bunga naik, investor asing masuk dan NCO turun. Akibatnya, Supply mata uang domestik di pasar valas turun $\\rightarrow$ **Nilai tukar riil apresiasi** $\\rightarrow$ Ekspor Neto (NX) turun. Fenomena ini memicu *Twin Deficits* (Defisit Anggaran & Defisit Perdagangan).",
-        "**2. Kebijakan Perdagangan (Kuota Impor / Tarif)**\nSangat penting dicatat: **Kebijakan ini TIDAK mengubah Trade Balance ($NX$)!** Mengapa? Kuota impor menurunkan impor, sehingga Demand untuk mata uang domestik (untuk beli ekspor neto kita) seolah naik $\\rightarrow$ **Nilai tukar riil apresiasi**. Karena apresiasi, barang ekspor kita jadi mahal, sehingga Ekspor turun. Penurunan ekspor ini membatalkan efek penurunan impor awal. $NX$ tetap sama selama $S$ dan $I$ tidak berubah.",
-        "**3. Ketidakstabilan Politik & Capital Flight (Pelarian Modal)**\n*Capital flight* adalah penurunan besar dan tiba-tiba dalam permintaan aset yang berlokasi di suatu negara. Hal ini memiliki dampak terbesar pada negara yang ditinggalkan oleh modal tersebut, namun juga memengaruhi negara lain.\n*   Jika investor mulai khawatir tentang keamanan investasi mereka (misal karena instabilitas politik), modal dapat dengan cepat keluar dari suatu perekonomian.\n*   Hal ini memicu suku bunga naik dan mata uang domestik mengalami depresiasi tajam.\n\n**Studi Kasus: Krisis Meksiko 1994**\nKetika investor di seluruh dunia mengamati masalah politik di Meksiko tahun 1994, mereka menjual sebagian aset Meksiko yang mereka miliki dan menggunakan hasilnya untuk membeli aset di negara lain.\n*   Hal ini meningkatkan *Net Capital Outflow* (NCO) Meksiko secara drastis.\n*   Meningkatnya NCO berarti **permintaan (*demand*) di pasar dana pinjaman (*loanable funds*) ikut meningkat**, yang pada akhirnya **meningkatkan suku bunga** di Meksiko.\n*   Secara bersamaan, tingginya NCO berarti investor menukarkan peso mereka ke mata uang asing. Hal ini **meningkatkan penawaran (*supply*) peso di pasar valuta asing**, sehingga nilai peso jatuh (depresiasi)."
+      "kind": "table",
+      "headers": [
+        "Kebijakan/Shock",
+        "Efek utama",
+        "Catatan analitis"
+      ],
+      "rows": [
+        [
+          "Defisit fiskal naik",
+          "Tabungan nasional turun; S−I turun; NX cenderung turun.",
+          "Bisa menimbulkan twin deficits jika defisit anggaran beriringan dengan defisit transaksi berjalan."
+        ],
+        [
+          "Tarif/impor dibatasi",
+          "Impor turun langsung, tetapi nilai tukar riil dapat menyesuaikan.",
+          "Proteksi tidak otomatis memperbaiki neraca dagang jangka panjang."
+        ],
+        [
+          "Capital inflow besar",
+          "Mata uang menguat, pembiayaan investasi meningkat.",
+          "Risiko sudden stop jika arus modal berbalik."
+        ],
+        [
+          "Depresiasi kurs",
+          "Ekspor lebih murah, impor lebih mahal.",
+          "Dapat memperbaiki NX jika elastisitas ekspor-impor cukup tinggi, tetapi menaikkan inflasi impor."
+        ],
+        [
+          "Resesi global",
+          "Permintaan ekspor turun.",
+          "Negara terbuka lebih rentan terhadap shock eksternal."
+        ]
       ]
-    },
-    {
-      "kind": "figure",
-      "title": "Efek Defisit Anggaran terhadap Ekonomi Terbuka (Twin Deficits)",
-      "caption": "Garis merah menunjukkan kondisi setelah shock defisit anggaran. Penurunan S memicu kenaikan bunga, jatuhnya NCO, dan apresiasi nilai tukar yang merugikan ekspor neto.",
-      "svg": "<svg viewBox=\"0 0 1000 600\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>The Effects of Government Budget Deficit</title><desc>Defisit fiskal menggeser kurva supply dana pinjaman ke kiri, menaikkan suku bunga. Akibatnya NCO turun. Penurunan NCO menggeser kurva supply valas ke kiri, sehingga nilai tukar terapresiasi.</desc><defs><marker id=\"arrow3\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs><!-- Panel A --><text x=\"250\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(a) The Market for Loanable Funds</text><line x1=\"80\" y1=\"280\" x2=\"420\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow3)\"/><line x1=\"80\" y1=\"280\" x2=\"80\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow3)\"/><line x1=\"150\" y1=\"260\" x2=\"350\" y2=\"90\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><line x1=\"100\" y1=\"260\" x2=\"300\" y2=\"90\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/><text x=\"355\" y=\"85\" fill=\"#3b82f6\" font-size=\"12\">S₁</text><text x=\"305\" y=\"85\" fill=\"#f43f5e\" font-size=\"12\">S₂</text><path d=\"M 280 120 L 230 120\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrow3)\"/><line x1=\"110\" y1=\"90\" x2=\"350\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><circle cx=\"250\" cy=\"175\" r=\"4\" fill=\"currentColor\"/><circle cx=\"205\" cy=\"138\" r=\"4\" fill=\"#f43f5e\"/><line x1=\"80\" y1=\"175\" x2=\"550\" y2=\"175\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/><line x1=\"80\" y1=\"138\" x2=\"450\" y2=\"138\" stroke=\"#f43f5e\" stroke-width=\"1\" stroke-dasharray=\"4\"/><text x=\"65\" y=\"180\" fill=\"currentColor\" font-size=\"12\">r₁</text><text x=\"65\" y=\"143\" fill=\"#f43f5e\" font-size=\"12\">r₂</text><!-- Panel B --><text x=\"700\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(b) Net Capital Outflow</text><line x1=\"530\" y1=\"280\" x2=\"870\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow3)\"/><line x1=\"530\" y1=\"280\" x2=\"530\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow3)\"/><line x1=\"600\" y1=\"90\" x2=\"780\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><circle cx=\"690\" cy=\"175\" r=\"4\" fill=\"currentColor\"/><circle cx=\"650\" cy=\"138\" r=\"4\" fill=\"#f43f5e\"/><line x1=\"690\" y1=\"175\" x2=\"690\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/><line x1=\"650\" y1=\"138\" x2=\"650\" y2=\"520\" stroke=\"#f43f5e\" stroke-width=\"1\" stroke-dasharray=\"4\"/><path d=\"M 690 220 L 665 220\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrow3)\"/><!-- Panel C --><text x=\"700\" y=\"580\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(c) The Market for Foreign-Currency Exchange</text><line x1=\"530\" y1=\"520\" x2=\"870\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow3)\"/><line x1=\"530\" y1=\"520\" x2=\"530\" y2=\"350\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrow3)\"/><line x1=\"690\" y1=\"360\" x2=\"690\" y2=\"520\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><line x1=\"650\" y1=\"360\" x2=\"650\" y2=\"520\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/><text x=\"700\" y=\"370\" fill=\"#3b82f6\" font-size=\"12\">S₁</text><text x=\"625\" y=\"370\" fill=\"#f43f5e\" font-size=\"12\">S₂</text><path d=\"M 690 400 L 665 400\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrow3)\"/><line x1=\"580\" y1=\"380\" x2=\"800\" y2=\"490\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/><circle cx=\"690\" cy=\"435\" r=\"4\" fill=\"currentColor\"/><circle cx=\"650\" cy=\"415\" r=\"4\" fill=\"#f43f5e\"/><line x1=\"530\" y1=\"435\" x2=\"690\" y2=\"435\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/><line x1=\"530\" y1=\"415\" x2=\"650\" y2=\"415\" stroke=\"#f43f5e\" stroke-width=\"1\" stroke-dasharray=\"4\"/><text x=\"510\" y=\"440\" fill=\"currentColor\" font-size=\"12\">E₁</text><text x=\"510\" y=\"420\" fill=\"#f43f5e\" font-size=\"12\">E₂</text><rect x=\"30\" y=\"320\" width=\"210\" height=\"70\" fill=\"#1e293b\" rx=\"4\"/><text x=\"40\" y=\"340\" fill=\"#f8fafc\" font-size=\"11\">1. Defisit menggeser S ke kiri,</text><text x=\"40\" y=\"355\" fill=\"#f8fafc\" font-size=\"11\">sehingga r naik.</text><text x=\"40\" y=\"375\" fill=\"#f8fafc\" font-size=\"11\">2. NCO merespons r naik (turun).</text><rect x=\"740\" y=\"330\" width=\"200\" height=\"70\" fill=\"#1e293b\" rx=\"4\"/><text x=\"750\" y=\"350\" fill=\"#f8fafc\" font-size=\"11\">3. NCO turun = Supply valas turun.</text><text x=\"750\" y=\"365\" fill=\"#f8fafc\" font-size=\"11\">4. E naik (Apresiasi).</text></svg>"
-    },
-    {
-      "kind": "figure",
-      "title": "Efek Kebijakan Perdagangan (Import Quota)",
-      "caption": "Kuota impor menggeser kurva Demand valas ke kanan, menaikkan nilai tukar riil. Karena NCO (S dan I) tidak berubah, ekspor neto secara total tetap sama.",
-      "svg": "<svg viewBox=\"0 0 1000 600\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<title>The Effects of an Import Quota</title>\n<desc>Kuota impor mengurangi impor, sehingga demand valas naik. E naik, NX tetap.</desc>\n<defs><marker id=\"arrowQ\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs>\n<!-- Panel A -->\n<text x=\"250\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(a) The Market for Loanable Funds</text>\n<line x1=\"80\" y1=\"280\" x2=\"420\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowQ)\"/>\n<line x1=\"80\" y1=\"280\" x2=\"80\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowQ)\"/>\n<line x1=\"130\" y1=\"260\" x2=\"350\" y2=\"90\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"130\" y1=\"90\" x2=\"350\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<text x=\"355\" y=\"85\" fill=\"#3b82f6\" font-size=\"12\">Supply</text>\n<text x=\"355\" y=\"265\" fill=\"#3b82f6\" font-size=\"12\">Demand</text>\n<circle cx=\"240\" cy=\"175\" r=\"4\" fill=\"currentColor\"/>\n<line x1=\"80\" y1=\"175\" x2=\"480\" y2=\"175\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<text x=\"65\" y=\"180\" fill=\"currentColor\" font-size=\"12\">r₁</text>\n<!-- Panel B -->\n<text x=\"700\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(b) Net Capital Outflow</text>\n<line x1=\"530\" y1=\"280\" x2=\"870\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowQ)\"/>\n<line x1=\"530\" y1=\"280\" x2=\"530\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowQ)\"/>\n<line x1=\"600\" y1=\"90\" x2=\"780\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<circle cx=\"690\" cy=\"175\" r=\"4\" fill=\"currentColor\"/>\n<line x1=\"690\" y1=\"175\" x2=\"690\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<text x=\"790\" y=\"265\" fill=\"#3b82f6\" font-size=\"12\">NCO</text>\n<!-- Panel C -->\n<text x=\"700\" y=\"580\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(c) The Market for Foreign-Currency Exchange</text>\n<line x1=\"530\" y1=\"520\" x2=\"870\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowQ)\"/>\n<line x1=\"530\" y1=\"520\" x2=\"530\" y2=\"350\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowQ)\"/>\n<line x1=\"690\" y1=\"360\" x2=\"690\" y2=\"520\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"580\" y1=\"380\" x2=\"800\" y2=\"490\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"580\" y1=\"350\" x2=\"800\" y2=\"460\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/>\n<text x=\"700\" y=\"370\" fill=\"#3b82f6\" font-size=\"12\">Supply</text>\n<text x=\"810\" y=\"495\" fill=\"#3b82f6\" font-size=\"12\">D₁</text>\n<text x=\"810\" y=\"465\" fill=\"#f43f5e\" font-size=\"12\">D₂</text>\n<path d=\"M 750 465 L 750 435\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrowQ)\"/>\n<circle cx=\"690\" cy=\"435\" r=\"4\" fill=\"currentColor\"/>\n<circle cx=\"690\" cy=\"405\" r=\"4\" fill=\"currentColor\"/>\n<line x1=\"530\" y1=\"435\" x2=\"690\" y2=\"435\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<line x1=\"530\" y1=\"405\" x2=\"690\" y2=\"405\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<text x=\"510\" y=\"440\" fill=\"currentColor\" font-size=\"12\">E₁</text>\n<text x=\"510\" y=\"410\" fill=\"currentColor\" font-size=\"12\">E₂</text>\n\n<rect x=\"540\" y=\"200\" width=\"160\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"550\" y=\"215\" fill=\"#f8fafc\" font-size=\"11\">3. Net exports,</text>\n<text x=\"550\" y=\"230\" fill=\"#f8fafc\" font-size=\"11\">however, remain the same.</text>\n\n<rect x=\"730\" y=\"360\" width=\"175\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"740\" y=\"375\" fill=\"#f8fafc\" font-size=\"11\">1. An import quota</text>\n<text x=\"740\" y=\"390\" fill=\"#f8fafc\" font-size=\"11\">increases demand for dollars</text>\n\n<rect x=\"400\" y=\"450\" width=\"170\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"410\" y=\"465\" fill=\"#f8fafc\" font-size=\"11\">2. ... and causes real</text>\n<text x=\"410\" y=\"480\" fill=\"#f8fafc\" font-size=\"11\">exchange rate to appreciate.</text>\n</svg>"
-    },
-    {
-      "kind": "figure",
-      "title": "Efek Ketidakstabilan Ekonomi (Capital Flight)",
-      "caption": "Capital flight membuat arus modal keluar (NCO) melonjak. Permintaan dana pinjaman naik, memicu suku bunga naik. Lonjakan NCO membanjiri pasar dengan mata uang domestik, sehingga nilai tukarnya terdepresiasi parah.",
-      "svg": "<svg viewBox=\"0 0 1000 600\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<title>The Effects of Capital Flight</title>\n<desc>Capital flight meningkatkan NCO dan Demand for Loanable Funds. Suku bunga naik, E turun.</desc>\n<defs><marker id=\"arrowF\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"currentColor\"/></marker></defs>\n<!-- Panel A -->\n<text x=\"250\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(a) The Market for Loanable Funds</text>\n<line x1=\"80\" y1=\"280\" x2=\"420\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"80\" y1=\"280\" x2=\"80\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"130\" y1=\"260\" x2=\"350\" y2=\"90\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"130\" y1=\"90\" x2=\"350\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"170\" y1=\"90\" x2=\"390\" y2=\"260\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/>\n<text x=\"355\" y=\"85\" fill=\"#3b82f6\" font-size=\"12\">Supply</text>\n<text x=\"355\" y=\"265\" fill=\"#3b82f6\" font-size=\"12\">D₁</text>\n<text x=\"395\" y=\"265\" fill=\"#f43f5e\" font-size=\"12\">D₂</text>\n<path d=\"M 280 205 L 320 205\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrowF)\"/>\n<circle cx=\"240\" cy=\"175\" r=\"4\" fill=\"currentColor\"/>\n<circle cx=\"260\" cy=\"160\" r=\"4\" fill=\"currentColor\"/>\n<line x1=\"80\" y1=\"175\" x2=\"690\" y2=\"175\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<line x1=\"80\" y1=\"160\" x2=\"730\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<text x=\"65\" y=\"180\" fill=\"currentColor\" font-size=\"12\">r₁</text>\n<text x=\"65\" y=\"165\" fill=\"currentColor\" font-size=\"12\">r₂</text>\n\n<!-- Panel B -->\n<text x=\"700\" y=\"30\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(b) Net Capital Outflow</text>\n<line x1=\"530\" y1=\"280\" x2=\"870\" y2=\"280\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"530\" y1=\"280\" x2=\"530\" y2=\"60\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"600\" y1=\"90\" x2=\"780\" y2=\"260\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"650\" y1=\"90\" x2=\"830\" y2=\"260\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/>\n<text x=\"790\" y=\"265\" fill=\"#3b82f6\" font-size=\"12\">NCO₁</text>\n<text x=\"840\" y=\"265\" fill=\"#f43f5e\" font-size=\"12\">NCO₂</text>\n<path d=\"M 660 130 L 700 130\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrowF)\"/>\n<circle cx=\"690\" cy=\"175\" r=\"4\" fill=\"currentColor\"/>\n<circle cx=\"730\" cy=\"160\" r=\"4\" fill=\"currentColor\"/>\n<line x1=\"690\" y1=\"175\" x2=\"690\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<line x1=\"730\" y1=\"160\" x2=\"730\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n\n<!-- Panel C -->\n<text x=\"700\" y=\"580\" fill=\"currentColor\" font-size=\"14\" font-weight=\"bold\" text-anchor=\"middle\">(c) The Market for Foreign-Currency Exchange</text>\n<line x1=\"530\" y1=\"520\" x2=\"870\" y2=\"520\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"530\" y1=\"520\" x2=\"530\" y2=\"350\" stroke=\"currentColor\" stroke-width=\"1.5\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"690\" y1=\"360\" x2=\"690\" y2=\"520\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<line x1=\"730\" y1=\"360\" x2=\"730\" y2=\"520\" stroke=\"#f43f5e\" stroke-width=\"2.5\"/>\n<text x=\"700\" y=\"370\" fill=\"#3b82f6\" font-size=\"12\">S₁</text>\n<text x=\"740\" y=\"370\" fill=\"#f43f5e\" font-size=\"12\">S₂</text>\n<path d=\"M 690 390 L 730 390\" stroke=\"#f43f5e\" stroke-width=\"2\" marker-end=\"url(#arrowF)\"/>\n<line x1=\"580\" y1=\"380\" x2=\"800\" y2=\"490\" stroke=\"#3b82f6\" stroke-width=\"2.5\"/>\n<text x=\"810\" y=\"495\" fill=\"#3b82f6\" font-size=\"12\">Demand</text>\n<circle cx=\"690\" cy=\"435\" r=\"4\" fill=\"currentColor\"/>\n<circle cx=\"730\" cy=\"455\" r=\"4\" fill=\"currentColor\"/>\n<line x1=\"530\" y1=\"435\" x2=\"690\" y2=\"435\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<line x1=\"530\" y1=\"455\" x2=\"730\" y2=\"455\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"4\"/>\n<text x=\"510\" y=\"440\" fill=\"currentColor\" font-size=\"12\">E₁</text>\n<text x=\"510\" y=\"460\" fill=\"currentColor\" font-size=\"12\">E₂</text>\n\n<rect x=\"740\" y=\"90\" width=\"150\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"750\" y=\"105\" fill=\"#f8fafc\" font-size=\"11\">1. Increase in NCO...</text>\n\n<rect x=\"80\" y=\"400\" width=\"130\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"90\" y=\"415\" fill=\"#f8fafc\" font-size=\"11\">2. ...increases demand</text>\n<text x=\"90\" y=\"430\" fill=\"#f8fafc\" font-size=\"11\">for loanable funds...</text>\n\n<rect x=\"20\" y=\"190\" width=\"100\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"40\" y=\"205\" fill=\"#f8fafc\" font-size=\"11\">3. ...which</text>\n<text x=\"40\" y=\"220\" fill=\"#f8fafc\" font-size=\"11\">increases r.</text>\n\n<rect x=\"735\" y=\"380\" width=\"170\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"750\" y=\"395\" fill=\"#f8fafc\" font-size=\"11\">4. Increase in NCO</text>\n<text x=\"750\" y=\"410\" fill=\"#f8fafc\" font-size=\"11\">increases supply of pesos</text>\n\n<rect x=\"410\" y=\"470\" width=\"115\" height=\"40\" fill=\"#1e293b\" rx=\"4\"/>\n<text x=\"420\" y=\"485\" fill=\"#f8fafc\" font-size=\"11\">5. ...which causes</text>\n<text x=\"420\" y=\"500\" fill=\"#f8fafc\" font-size=\"11\">peso to depreciate.</text>\n</svg>"
     },
     {
       "kind": "formula",
