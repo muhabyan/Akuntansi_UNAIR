@@ -553,7 +553,47 @@ const tm9: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "🚨 PANDUAN UJIAN: Cara Mengekstrak Rumus dari Tabel Data",
-      "text": "Dalam ujian Pengantar Teori Ekonomi, soal sering kali disajikan dalam bentuk tabel yang hanya berisi angka Pendapatan (Y) dan Konsumsi (C). Mahasiswa dituntut untuk merumuskan sendiri persamaan matematis C = a + bY.\n\n**Langkah Sistematis Menyelesaikan Soal Tabel:**\n1. **Mencari Angka MPC (b):** Ambil dua baris sembarang di tabel. Hitung selisih Konsumsi (ΔC) lalu bagi dengan selisih Pendapatan (ΔY). Hasil pembagian ini adalah nilai b (slope).\n2. **Mencari Konsumsi Otonom (a):** Jika tabel tidak memiliki baris awal di mana Y = 0, ambil salah satu baris data (misalnya baris Y = 1.000 dan C = 900). Masukkan ke kerangka fungsi: 900 = a + (MPC × 1000). Nilai 'a' akan didapatkan secara aljabar.\n3. **Mencari Break-Even Point (Y = C):** Setelah persamaan utuh C = a + bY terbentuk, titik ekuilibrium dicari dengan menyamakan fungsi tersebut menjadi Y = C. Persamaan menjadi: Y = a + bY. Selesaikan secara matematis dengan memindahkan variabel Y ke satu sisi.\n\n*(Menguasai ketiga langkah ini krusial untuk memecahkan sebagian besar soal hitungan keseimbangan makroekonomi.)*"
+      "text": "Dalam ujian Pengantar Teori Ekonomi, soal sering kali disajikan dalam bentuk tabel yang hanya berisi angka Pendapatan (Y) dan Konsumsi (C). Mahasiswa dituntut untuk merumuskan sendiri persamaan matematis C = a + bY. Kuasai langkah-langkah di bawah ini untuk memecahkan soal kuis dan UAS dosen!"
+    },
+    {
+      "kind": "h2",
+      "text": "Contoh Soal Ujian: Ekstraksi Rumus & Titik Impas"
+    },
+    {
+      "kind": "p",
+      "text": "Misalkan di lembar ujianmu hanya diberikan tabel buta seperti ini:"
+    },
+    {
+      "kind": "table",
+      "headers": ["Titik", "Pendapatan / Y (Miliar Rp)", "Konsumsi / C (Miliar Rp)"],
+      "rows": [
+        ["A", "0", "150"],
+        ["B", "1.000", "900"],
+        ["C", "2.000", "1.650"]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "**Pertanyaan Ujian:** Tentukan Fungsi Konsumsi, Fungsi Tabungan, dan Titik Keseimbangan (Break-Even Point) beserta maknanya!"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Langkah 1 (Cari MPC / b):** Kita ambil data titik B dan C. ΔC = 1.650 - 900 = 750. ΔY = 2.000 - 1.000 = 1.000. Maka MPC = 750 / 1000 = **0.75**.",
+        "**Langkah 2 (Cari Konsumsi Otonom / a):** Karena di tabel sudah ada saat Y = 0 (Titik A), maka nilai a otomatis **150**. *Jika Titik A disembunyikan dosen*, kita masukkan titik B (1.000, 900) ke kerangka C = a + bY ➔ 900 = a + (0.75 × 1.000) ➔ 900 = a + 750 ➔ a = **150**.",
+        "**Langkah 3 (Menyusun Fungsi):** Maka Fungsi Konsumsi utuhnya adalah **C = 150 + 0.75Y**. Dan karena MPS = 1 - MPC (1 - 0.75 = 0.25), maka Fungsi Tabungannya adalah **S = -150 + 0.25Y**."
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "Mencari Titik Impas (Y = C):\nY = 150 + 0.75Y\nY - 0.75Y = 150\n0.25Y = 150\nY = 600",
+      "note": "Perhitungan aljabar pembuktian ekuilibrium Break-Even Point."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Interpretasi Hasil Analisis",
+      "text": "**Titik Impas (Break-Even) terjadi pada angka Pendapatan 600 Miliar Rupiah.**\n\n- **Makna 1:** Ketika Pendapatan Nasional mencapai 600 Miliar, seluruh uang tersebut LUDES dikonsumsi oleh rumah tangga. Tidak ada yang ditabung (S = 0), dan tidak ada yang harus mengutang.\n- **Makna 2:** Fungsi Konsumsi (C = 150 + 0.75Y) membuktikan bahwa masyarakat negara ini menggunakan 75% (0.75) dari SETIAP TAMBAHAN pendapatan mereka untuk belanja, dan menabung sisanya 25% (0.25).\n- **Pembuktian Absolut:** Mari kita cek ke Fungsi Tabungan di titik tersebut: S = -150 + 0.25(600) ➔ S = -150 + 150 = 0. Terbukti valid dan sesuai dengan teori dasar makroekonomi!"
     },
     {
       "kind": "h2",
