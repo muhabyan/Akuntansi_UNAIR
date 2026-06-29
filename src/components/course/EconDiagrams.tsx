@@ -1,15 +1,21 @@
 import React from 'react';
 
 export const CircularFlowDiagram: React.FC = () => (
-  <div className="w-full max-w-4xl mx-auto overflow-x-auto bg-slate-50 dark:bg-slate-900 rounded-xl p-4 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-inner">
-    <svg viewBox="0 0 1000 650" className="w-full h-auto drop-shadow-sm font-sans" xmlns="http://www.w3.org/2000/svg">
+  <div className="w-full max-w-5xl mx-auto overflow-x-auto bg-slate-50 dark:bg-slate-900 rounded-xl p-4 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-inner">
+    <svg viewBox="0 0 1200 800" className="w-full h-auto drop-shadow-sm font-sans" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        {/* Markers for Arrows */}
-        <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+        {/* Markers for Arrows - fixed size using userSpaceOnUse */}
+        <marker id="arrow-green" markerWidth="24" markerHeight="24" refX="20" refY="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+          <path d="M 0 0 L 24 12 L 0 24 z" fill="#10b981" />
         </marker>
-        <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
-          <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
+        <marker id="arrow-orange" markerWidth="24" markerHeight="24" refX="20" refY="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+          <path d="M 0 0 L 24 12 L 0 24 z" fill="#f59e0b" />
+        </marker>
+        <marker id="arrow-green-legend" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+          <path d="M 0 0 L 16 8 L 0 16 z" fill="#10b981" />
+        </marker>
+        <marker id="arrow-orange-legend" markerWidth="16" markerHeight="16" refX="14" refY="8" orient="auto-start-reverse" markerUnits="userSpaceOnUse">
+          <path d="M 0 0 L 16 8 L 0 16 z" fill="#f59e0b" />
         </marker>
         {/* Gradients */}
         <linearGradient id="firm-grad" x1="0" y1="0" x2="0" y2="1">
@@ -23,75 +29,66 @@ export const CircularFlowDiagram: React.FC = () => (
       </defs>
 
       {/* Outer Loop (Green) - Flow of Dollars */}
-      {/* Top Left: Revenue (Market to Firm) */}
-      <path d="M 320 80 H 170 Q 130 80 130 120 V 220" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
-      <text x="180" y="70" fill="#047857" fontSize="18" fontWeight="bold">Revenue (Pendapatan)</text>
+      <path d="M 380 120 H 120 Q 90 120 90 150 V 300" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="230" y="105" textAnchor="middle" fill="#047857" fontSize="18" fontWeight="bold">Revenue (Pendapatan)</text>
 
-      {/* Top Right: Spending (HH to Market) */}
-      <path d="M 870 220 V 120 Q 870 80 830 80 H 680" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
-      <text x="730" y="70" fill="#047857" fontSize="18" fontWeight="bold">Spending (Belanja)</text>
+      <path d="M 120 500 V 650 Q 120 680 150 680 H 380" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="230" y="710" textAnchor="middle" fill="#047857" fontSize="18" fontWeight="bold">Wages, rent, and profit</text>
 
-      {/* Bottom Right: Income (Market to HH) */}
-      <path d="M 680 570 H 830 Q 870 570 870 530 V 430" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
-      <text x="730" y="590" fill="#047857" fontSize="18" fontWeight="bold">Income (Pendapatan)</text>
+      <path d="M 820 680 H 1050 Q 1080 680 1080 650 V 500" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="970" y="710" textAnchor="middle" fill="#047857" fontSize="18" fontWeight="bold">Income (Pendapatan)</text>
 
-      {/* Bottom Left: Wages/Rent/Profit (Firm to Market) */}
-      <path d="M 130 430 V 530 Q 130 570 170 570 H 320" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
-      <text x="180" y="590" fill="#047857" fontSize="18" fontWeight="bold">Wages, rent, and profit</text>
-
+      <path d="M 1080 300 V 150 Q 1080 120 1050 120 H 820" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="970" y="105" textAnchor="middle" fill="#047857" fontSize="18" fontWeight="bold">Spending (Belanja)</text>
 
       {/* Inner Loop (Orange) - Flow of Real Goods/Inputs */}
-      {/* Top Left: Goods Sold (Firm to Market) */}
-      <path d="M 230 220 V 170 Q 230 150 250 150 H 320" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
-      <text x="255" y="135" fill="#b45309" fontSize="16" fontWeight="bold">Goods sold</text>
+      <path d="M 200 300 V 210 Q 200 180 230 180 H 380" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="290" y="170" textAnchor="middle" fill="#b45309" fontSize="16" fontWeight="bold">Goods sold</text>
 
-      {/* Top Right: Goods Bought (Market to HH) */}
-      <path d="M 680 150 H 750 Q 770 150 770 170 V 220" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
-      <text x="635" y="135" fill="#b45309" fontSize="16" fontWeight="bold">Goods bought</text>
+      <path d="M 820 180 H 970 Q 1000 180 1000 210 V 300" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="910" y="170" textAnchor="middle" fill="#b45309" fontSize="16" fontWeight="bold">Goods bought</text>
 
-      {/* Bottom Right: Factors (HH to Market) */}
-      <path d="M 770 430 V 480 Q 770 500 750 500 H 680" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
-      <text x="615" y="525" fill="#b45309" fontSize="16" fontWeight="bold">Labor, land, capital</text>
+      <path d="M 1000 500 V 590 Q 1000 620 970 620 H 820" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="910" y="645" textAnchor="middle" fill="#b45309" fontSize="16" fontWeight="bold">Labor, land, capital</text>
 
-      {/* Bottom Left: Factors used (Market to Firm) */}
-      <path d="M 320 500 H 250 Q 230 500 230 480 V 430" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
-      <text x="185" y="525" fill="#b45309" fontSize="16" fontWeight="bold">Factors of production</text>
+      <path d="M 380 620 H 230 Q 200 620 200 590 V 500" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="290" y="645" textAnchor="middle" fill="#b45309" fontSize="16" fontWeight="bold">Factors of production</text>
 
       {/* Top Market */}
-      <ellipse cx="500" cy="115" rx="180" ry="80" fill="url(#market-grad)" stroke="#ca8a04" strokeWidth="4" />
-      <text x="500" y="100" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">MARKETS FOR</text>
-      <text x="500" y="125" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">GOODS AND SERVICES</text>
-      <text x="500" y="155" textAnchor="middle" fill="#854d0e" fontSize="16" fontWeight="600">• Firms sell  • Households buy</text>
+      <ellipse cx="600" cy="150" rx="220" ry="80" fill="url(#market-grad)" stroke="#ca8a04" strokeWidth="4" />
+      <text x="600" y="135" textAnchor="middle" fill="#713f12" fontSize="24" fontWeight="bold">MARKETS FOR</text>
+      <text x="600" y="165" textAnchor="middle" fill="#713f12" fontSize="24" fontWeight="bold">GOODS AND SERVICES</text>
+      <text x="600" y="195" textAnchor="middle" fill="#854d0e" fontSize="16" fontWeight="600">• Firms sell  • Households buy</text>
 
       {/* Bottom Market */}
-      <ellipse cx="500" cy="535" rx="180" ry="80" fill="url(#market-grad)" stroke="#ca8a04" strokeWidth="4" />
-      <text x="500" y="520" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">MARKETS FOR</text>
-      <text x="500" y="545" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">FACTORS OF PRODUCTION</text>
-      <text x="500" y="575" textAnchor="middle" fill="#854d0e" fontSize="16" fontWeight="600">• Households sell  • Firms buy</text>
+      <ellipse cx="600" cy="650" rx="220" ry="80" fill="url(#market-grad)" stroke="#ca8a04" strokeWidth="4" />
+      <text x="600" y="635" textAnchor="middle" fill="#713f12" fontSize="24" fontWeight="bold">MARKETS FOR</text>
+      <text x="600" y="665" textAnchor="middle" fill="#713f12" fontSize="24" fontWeight="bold">FACTORS OF PRODUCTION</text>
+      <text x="600" y="695" textAnchor="middle" fill="#854d0e" fontSize="16" fontWeight="600">• Households sell  • Firms buy</text>
 
       {/* Firms Box */}
-      <rect x="50" y="220" width="220" height="210" rx="16" fill="url(#firm-grad)" stroke="#3b82f6" strokeWidth="4" />
-      <text x="160" y="265" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="bold">FIRMS</text>
-      <text x="160" y="300" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Produce and sell</text>
-      <text x="160" y="320" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">goods and services</text>
-      <text x="160" y="350" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Hire and use factors</text>
-      <text x="160" y="370" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
+      <rect x="40" y="300" width="240" height="200" rx="16" fill="url(#firm-grad)" stroke="#3b82f6" strokeWidth="4" />
+      <text x="160" y="345" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="bold">FIRMS</text>
+      <text x="160" y="380" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Produce and sell</text>
+      <text x="160" y="400" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">goods and services</text>
+      <text x="160" y="430" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Hire and use factors</text>
+      <text x="160" y="450" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
 
       {/* Households Box */}
-      <rect x="730" y="220" width="220" height="210" rx="16" fill="url(#firm-grad)" stroke="#3b82f6" strokeWidth="4" />
-      <text x="840" y="265" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="bold">HOUSEHOLDS</text>
-      <text x="840" y="300" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Buy and consume</text>
-      <text x="840" y="320" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">goods and services</text>
-      <text x="840" y="350" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Own and sell factors</text>
-      <text x="840" y="370" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
+      <rect x="920" y="300" width="240" height="200" rx="16" fill="url(#firm-grad)" stroke="#3b82f6" strokeWidth="4" />
+      <text x="1040" y="345" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="bold">HOUSEHOLDS</text>
+      <text x="1040" y="380" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Buy and consume</text>
+      <text x="1040" y="400" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">goods and services</text>
+      <text x="1040" y="430" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Own and sell factors</text>
+      <text x="1040" y="450" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
 
       {/* Legend */}
-      <rect x="380" y="280" width="240" height="90" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
-      <path d="M 400 310 L 440 310" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
-      <text x="460" y="315" fill="#334155" fontSize="16" fontWeight="600">= Flow of dollars</text>
+      <rect x="480" y="350" width="240" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
+      <path d="M 500 385 L 540 385" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green-legend)" />
+      <text x="560" y="390" fill="#334155" fontSize="16" fontWeight="600">= Flow of dollars</text>
 
-      <path d="M 400 345 L 440 345" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
-      <text x="460" y="350" fill="#334155" fontSize="16" fontWeight="600">= Flow of inputs/outputs</text>
+      <path d="M 500 425 L 540 425" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange-legend)" />
+      <text x="560" y="430" fill="#334155" fontSize="16" fontWeight="600">= Flow of inputs/outputs</text>
     </svg>
   </div>
 );
@@ -175,12 +172,57 @@ export const GDPWaterfallDiagram: React.FC = () => (
   </div>
 );
 
+export const CausalFlow: React.FC<{ steps: string[], note?: string, theme: 'danger' | 'warning' }> = ({ steps, note, theme }) => {
+  const borderClass = theme === 'danger' ? 'border-rose-500/50' : 'border-amber-500/50';
+  const textClass = theme === 'danger' ? 'text-rose-400' : 'text-amber-400';
+  
+  return (
+    <div className="w-full my-6 bg-slate-900 rounded-2xl p-4 sm:p-6 border border-slate-800 shadow-xl">
+      <div className="flex flex-col md:flex-row items-stretch justify-between gap-3 md:gap-2">
+        {steps.map((step, i) => (
+          <React.Fragment key={i}>
+            <div className={`flex-1 flex items-center justify-center text-center p-4 rounded-xl bg-slate-800 border-2 ${borderClass} shadow-md`}>
+              <span className="text-slate-200 font-semibold text-sm leading-snug">{step}</span>
+            </div>
+            {i < steps.length - 1 && (
+              <div className="flex items-center justify-center shrink-0 py-1 md:py-0">
+                <span className={`hidden md:block text-2xl font-bold ${textClass}`}>→</span>
+                <span className={`md:hidden text-2xl font-bold ${textClass}`}>↓</span>
+              </div>
+            )}
+          </React.Fragment>
+        ))}
+      </div>
+      {note && (
+        <div className="mt-6 p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
+          <p className="text-slate-400 text-sm font-medium leading-relaxed">{note}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default function EconDiagram({ type }: { type: string }) {
   switch (type) {
     case 'circular-flow':
       return <CircularFlowDiagram />;
     case 'gdp-waterfall':
       return <GDPWaterfallDiagram />;
+    case 'export-shock-flow':
+      return (
+        <CausalFlow 
+          theme="danger"
+          steps={['Ekspor X turun', 'NX dan AE turun', 'Produksi dan laba turun', 'Pendapatan, C, dan I turun', 'M turun atau G naik menahan efek']}
+        />
+      );
+    case 'depreciation-flow':
+      return (
+        <CausalFlow 
+          theme="warning"
+          steps={['Rupiah melemah', 'Harga impor dan biaya input naik', 'Inflasi impor menekan C dan I', 'Ekspor dapat lebih kompetitif', 'Dampak NX bergantung elastisitas dan lag']}
+          note="Hasil tidak otomatis positif: periksa kandungan impor, kapasitas produksi, elastisitas permintaan, dan J-curve."
+        />
+      );
     default:
       return <div className="p-4 border border-red-500 text-red-500 rounded-lg">Diagram type '{type}' not found.</div>;
   }
