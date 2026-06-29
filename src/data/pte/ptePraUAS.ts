@@ -205,6 +205,23 @@ const tm8: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Interpretasi: Apa Arti Angka GDP dan Inflasi?"
+    },
+    {
+      "kind": "p",
+      "text": "Sering kali kita mendengar di berita: \"Kuartal ini, pertumbuhan GDP meroket tajam\" atau \"Angka inflasi menembus batas\". Tapi apa artinya bagi kehidupan sehari-hari kita? Mari kita terjemahkan:"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**GDP Sedang Tumbuh Tinggi (Bagus):** Artinya mesin pabrik beroperasi penuh, banyak bisnis baru dibuka, dan perusahaan berlomba-lomba merekrut pegawai baru. ==Lapangan kerja melimpah, pengangguran turun, dan masyarakat punya uang lebih banyak untuk belanja.== Inilah kondisi ekonomi yang sehat dan makmur.",
+        "**GDP Sedang Melambat / Rendah (Buruk):** Jika angkanya mengecil (sering disebut *Resesi*), artinya daya beli lesu. Pabrik menumpuk barang yang tak laku, terpaksa mem-PHK karyawan agar tidak bangkrut. ==Pengangguran melonjak, masyarakat mengencangkan ikat pinggang, dan ekonomi terasa sulit.==",
+        "**Inflasi Ringan/Normal (Positif):** Inflasi 2-3% setahun itu normal dan bagus. Artinya ekonomi sedang \"berkeringat\" karena rajin berlari. Orang-orang berlomba membeli barang sehingga harganya pelan-pelan naik, merangsang produsen untuk terus berproduksi.",
+        "**Inflasi Sangat Tinggi (Bahaya):** Disebut *Hiperinflasi*. Uang tiba-tiba menjadi tidak ada nilainya. ==Gaji yang baru kamu terima hari ini mungkin besok sudah tidak cukup untuk beli beras karena harganya naik dua kali lipat dalam semalam.== Nilai tabunganmu hancur lebur."
+      ]
+    },
+    {
+      "kind": "h2",
       "text": "Beragam Ukuran Pendapatan Lain (GNP hingga DI)"
     },
     {
@@ -215,17 +232,17 @@ const tm8: Reading = {
       "kind": "chart-guide",
       "title": "Panduan Alur Menurun (Waterfall): Dari GDP menjadi Uang Siap Belanja (DI)",
       "points": [
-        "**GNP (Gross National Product):** Fokus pada Warga Negara, di manapun lokasinya. ==Pabrik sepatu milik pengusaha lokal Indonesia di Vietnam masuk GNP Indonesia. Sebaliknya, pabrik raksasa milik asing di Bekasi TIDAK masuk GNP Indonesia.== (GNP = GDP + Pendapatan orang kita di Luar - Pendapatan orang luar di negara kita).",
-        "**NNP (Net National Product):** Angka GNP dikurangi depresiasi (biaya penyusutan keausan mesin/pabrik). Kenapa dikurangi? Karena mesin yang rusak/tua adalah kerugian nilai ekonomi.",
-        "**NI (National Income):** Sama persis dengan NNP, namun dikurangi lagi dengan Pajak Tidak Langsung Bisnis (seperti PPN dan cukai).",
-        "**PI (Personal Income):** NI dirombak menjadi pendapatan level rumah tangga. Kita mencabut porsi laba yang ditahan perusahaan (yang tidak dibagikan) dan pajak perusahaan, lalu *menambahkan* komponen pendapatan bunga dan dana Bansos (Transfer Payment) dari pemerintah.",
-        "**DI (Disposable Income):** Langkah terakhir yang paling riil! PI dikurangi Pajak Penghasilan Pribadi. ==Inilah uang tunai bersih paling final di tangan masyarakat yang benar-benar siap mereka pakai untuk Konsumsi (C) maupun Ditabung (S).=="
+        "**GNP (Gross National Product):** Fokus pada Warga Negara, di manapun lokasinya. Rumusnya adalah ==GDP + Pendapatan Neto Luar Negeri (Pendapatan WNI di Luar Negeri – Pendapatan WNA di Dalam Negeri)==. Pabrik sepatu milik pengusaha Indonesia di Vietnam masuk GNP Indonesia. Sebaliknya, pabrik raksasa milik asing di Bekasi TIDAK masuk GNP Indonesia.",
+        "**NNP (Net National Product):** Angka GNP dikurangi **Penyusutan (Depresiasi)**. Kenapa dikurangi? Karena mesin yang sudah aus dipakai produksi adalah kerugian (pengurangan nilai ekonomi yang nyata).",
+        "**NNI (Net National Income):** NNP dikurangi **Pajak Tak Langsung** (seperti PPN / Cukai yang menaikkan harga pasar tapi bukan milik penjual) lalu ditambah **Subsidi** (bantuan pemerintah yang menurunkan harga produksi).",
+        "**PI (Personal Income):** NNI dirombak menjadi pendapatan level individu. Kita harus mengurangkan **Iuran** (seperti asuransi sosial, laba ditahan perusahaan, pajak perseroan) lalu menambahkan **Transfer Payment** (dana Bansos atau tunjangan pensiun dari pemerintah yang dibagikan cuma-cuma).",
+        "**DI (Disposable Income):** Langkah terakhir yang paling riil! PI dikurangi **Pajak Langsung** (seperti Pajak Penghasilan / PPh Pribadi). ==Inilah uang tunai bersih paling final di tangan masyarakat yang benar-benar siap mereka pakai untuk Konsumsi (C) maupun Ditabung (S).=="
       ]
     },
     {
       "kind": "illustration",
       "type": "gdp-waterfall",
-      "caption": "Diagram Waterfall ini meringkas langkah demi langkah panjang deduksi dari nilai GDP hingga perlahan-lahan menyusut menjadi DI (Disposable Income)."
+      "caption": "Sesuai dengan presentasi konsep pendapatan nasional, alur ini berjalan dari Nilai Domestik Bruto (GDP) terus dikerucutkan, dikurangi berbagai pajak dan iuran, hingga menyisakan Disposable Income (DI)."
     },
     {
       "kind": "h2",

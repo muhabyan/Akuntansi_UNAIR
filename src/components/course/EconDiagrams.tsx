@@ -136,15 +136,16 @@ export const GDPWaterfallDiagram: React.FC = () => (
 
       {/* Arrow 3 */}
       <path d="M 440 180 Q 495 160 550 220" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
-      <text x="495" y="150" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Pajak tak langsung</text>
+      <text x="495" y="145" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Pajak tak langsung</text>
+      <text x="495" y="165" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">+ Subsidi</text>
 
-      {/* Bar 4: NI */}
+      {/* Bar 4: NNI */}
       <rect x="510" y="230" width="80" height="270" rx="8" fill="#d946ef" />
-      <text x="550" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">NI</text>
+      <text x="550" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">NNI</text>
 
       {/* Arrow 4 */}
       <path d="M 590 230 Q 645 210 700 270" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
-      <text x="645" y="185" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Laba ditahan, Pajak PT</text>
+      <text x="645" y="185" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Iuran</text>
       <text x="645" y="205" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">+ Transfer payment</text>
 
       {/* Bar 5: PI */}
@@ -153,7 +154,7 @@ export const GDPWaterfallDiagram: React.FC = () => (
 
       {/* Arrow 5 */}
       <path d="M 740 280 Q 795 260 850 320" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
-      <text x="795" y="250" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Pajak personal</text>
+      <text x="795" y="250" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Pajak langsung</text>
 
       {/* Bar 6: DI */}
       <rect x="810" y="330" width="80" height="170" rx="8" fill="#e11d48" />
