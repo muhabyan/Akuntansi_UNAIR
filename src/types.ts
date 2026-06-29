@@ -125,7 +125,10 @@ export type ContentBlock =
   | { kind: 'table-fill'; spec: TableFillSpec }
   | { kind: 'journal-builder'; spec: JournalBuilderSpec }
   | { kind: 't-account-builder'; spec: TAccountBuilderSpec }
-  | { kind: 'illustration'; type: string; caption?: string };
+  | { kind: 'illustration'; type: string; caption?: string }
+  | { kind: 'math-example'; title: string; blocks: ContentBlock[] }
+  | { kind: 'chart-guide'; title?: string; points: string[] }
+  | { kind: 'practice-box'; title?: string; blocks: ContentBlock[]; answerKey: string };
 
 // ---- Laporan keuangan terstruktur (contoh penuh & isian interaktif) ----
 

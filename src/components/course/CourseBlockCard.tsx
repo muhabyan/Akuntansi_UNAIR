@@ -1,5 +1,5 @@
 import { useId, useState } from 'react';
-import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2 } from 'lucide-react';
+import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2, Calculator, PencilLine, LineChart } from 'lucide-react';
 import type { ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
@@ -145,6 +145,71 @@ function SolutionRevealCard({
         </div>
       )}
     </section>
+  );
+}
+
+function PracticeBox({ block, isSimulation, enableLegalStyling, enableEconomicStyling, enableEditorialReading }: any) {
+  const [revealed, setRevealed] = useState(false);
+  return (
+    <div className="mb-8 overflow-hidden rounded-[1.2rem] border border-orange-500/30 bg-orange-50/50 dark:border-orange-500/20 dark:bg-orange-950/10">
+      <div className="flex items-center gap-2 border-b border-orange-500/20 bg-orange-500/10 px-5 py-3 text-sm font-black text-orange-800 dark:text-orange-400">
+        <PencilLine size={18} /> {block.title || "Latihan Soal"}
+      </div>
+      <div className="p-5">
+        <div className="space-y-4">
+          {block.blocks.map((b: any, i: number) => (
+            <CourseBlockCard key={i} block={b} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
+          ))}
+        </div>
+        <div className="mt-5 border-t border-orange-500/20 pt-5">
+          {!revealed ? (
+            <button onClick={() => setRevealed(true)} className="flex items-center gap-2 rounded-xl bg-orange-200/50 px-5 py-2.5 text-sm font-bold text-orange-800 transition-colors hover:bg-orange-200 dark:bg-orange-900/40 dark:text-orange-300 dark:hover:bg-orange-900/60 border border-orange-500/20">
+              <Eye size={16} /> Tampilkan Kunci Jawaban
+            </button>
+          ) : (
+            <div className="animate-in fade-in slide-in-from-top-2 rounded-xl bg-orange-200/40 p-5 text-sm text-orange-900 dark:bg-orange-900/20 dark:text-orange-100 border border-orange-500/20">
+              <div className="mb-2 font-black text-orange-800 dark:text-orange-400">Kunci Jawaban Singkat:</div>
+              <div className="leading-relaxed">{renderText(block.answerKey)}</div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MathExampleBox({ block, isSimulation, enableLegalStyling, enableEconomicStyling, enableEditorialReading }: any) {
+  return (
+    <div className="mb-8 overflow-hidden rounded-[1.2rem] border border-blue-500/30 bg-blue-50/40 dark:border-blue-500/20 dark:bg-blue-950/10 shadow-sm">
+      <div className="flex items-center gap-2 border-b border-blue-500/20 bg-blue-500/10 px-5 py-3 text-sm font-black text-blue-800 dark:text-blue-400">
+        <Calculator size={18} /> {block.title}
+      </div>
+      <div className="p-5 space-y-4">
+        {block.blocks.map((b: any, i: number) => (
+          <CourseBlockCard key={i} block={b} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ChartGuideBox({ block }: any) {
+  return (
+    <div className="mb-8 overflow-hidden rounded-[1.2rem] border border-emerald-500/30 bg-emerald-50/50 dark:border-emerald-500/20 dark:bg-emerald-950/10 shadow-sm">
+      <div className="flex items-center gap-2 border-b border-emerald-500/20 bg-emerald-500/10 px-5 py-3 text-sm font-black text-emerald-800 dark:text-emerald-400">
+        <LineChart size={18} /> {block.title || "Cara Membaca Grafik Ini"}
+      </div>
+      <div className="p-5">
+        <ul className="space-y-4">
+          {block.points.map((pt: string, i: number) => (
+            <li key={i} className="flex gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-200/70 text-[10px] font-black text-emerald-800 dark:bg-emerald-800 dark:text-emerald-200">{i+1}</span>
+              <span>{renderText(pt)}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 
@@ -580,6 +645,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           {block.caption && <p className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
         </figure>
       );
+    case 'math-example':
+      return <MathExampleBox block={block} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />;
+    case 'chart-guide':
+      return <ChartGuideBox block={block} />;
+    case 'practice-box':
+      return <PracticeBox block={block} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />;
     default:
       return null;
   }

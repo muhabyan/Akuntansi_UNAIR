@@ -152,6 +152,17 @@ const tm8: Reading = {
       "caption": "Setiap langkah mengurangi satu komponen dari GDP hingga menjadi pendapatan yang benar-benar bisa dibelanjakan rumah tangga (Disposable Income). DI hanya punya dua tujuan: dikonsumsi (C) atau ditabung (S)."
     },
     {
+      "kind": "chart-guide",
+      "title": "Panduan Membaca Diagram GDP ke DI",
+      "points": [
+        "**Gross National Product (GNP):** Ditambahkan dulu pendapatan faktor WNI dari luar negeri, dan dikurangi pendapatan faktor WNA di dalam negeri.",
+        "**Net National Product (NNP):** Dari GNP dikurangi **Penyusutan (Depresiasi)** mesin/modal.",
+        "**National Income (NI):** Dari NNP dikurangi **Pajak Tidak Langsung** (contoh: PPN).",
+        "**Personal Income (PI):** Dari NI dikurangi laba ditahan, pajak perusahaan, iuran jaminan sosial, dan ditambah **Transfer Payment**.",
+        "**Disposable Income (DI):** Dari PI dikurangi **Pajak Langsung** (contoh: PPh). Ini adalah uang tunai murni yang siap dibelanjakan atau ditabung."
+      ]
+    },
+    {
       "kind": "h2",
       "text": "3 Pendekatan Perhitungan Pendapatan Nasional"
     },
@@ -464,12 +475,46 @@ const tm8: Reading = {
       "text": "Contoh & Jebakan Ujian"
     },
     {
-      "kind": "example",
-      "title": "Contoh hitung GDP pendekatan pengeluaran",
+      "kind": "math-example",
+      "title": "Contoh Perhitungan PDB Riil & GDP Deflator",
       "blocks": [
         {
           "kind": "p",
-          "text": "Misal C = 800, I = 250, G = 300, X = 120, M = 170. Maka Y = C + I + G + NX = 800 + 250 + 300 + (120−170) = 1.180. Jika ekonomi tertutup, X dan M tidak dihitung sehingga Y = C + I + G = 1.350."
+          "text": "Misalkan sebuah negara hanya memproduksi Hot Dog dan Hamburger. Tahun dasar adalah 2013."
+        },
+        {
+          "kind": "table",
+          "headers": ["Tahun", "Harga Hot Dog", "Kuantitas Hot Dog", "Harga Hamburger", "Kuantitas Hamburger"],
+          "rows": [
+            ["2013", "$1", "100", "$2", "50"],
+            ["2014", "$2", "150", "$3", "100"]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Langkah 1: Menghitung Nominal GDP** (menggunakan harga tahun berjalan)\n- 2013: ($1 × 100) + ($2 × 50) = $200\n- 2014: ($2 × 150) + ($3 × 100) = $600"
+        },
+        {
+          "kind": "p",
+          "text": "**Langkah 2: Menghitung Real GDP** (menggunakan harga tahun dasar 2013)\n- 2013: ($1 × 100) + ($2 × 50) = $200\n- 2014: ($1 × 150) + ($2 × 100) = $350"
+        },
+        {
+          "kind": "p",
+          "text": "**Langkah 3: Menghitung GDP Deflator** (Nominal / Real × 100)\n- 2013: ($200 / $200) × 100 = 100\n- 2014: ($600 / $350) × 100 = 171"
+        }
+      ]
+    },
+    {
+      "kind": "math-example",
+      "title": "Contoh Hitung GDP Pendekatan Pengeluaran",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Diketahui data suatu negara: \n- Konsumsi (C) = 800\n- Investasi (I) = 250\n- Pengeluaran Pemerintah (G) = 300\n- Ekspor (X) = 120\n- Impor (M) = 170"
+        },
+        {
+          "kind": "p",
+          "text": "**Langkah Penyelesaian:**\n1. Cari Ekspor Neto (NX) = X - M = 120 - 170 = -50\n2. Masukkan ke rumus Y = C + I + G + NX\n3. Y = 800 + 250 + 300 + (-50) = 1.300"
         }
       ]
     },
@@ -488,6 +533,17 @@ const tm8: Reading = {
     {
       "kind": "p",
       "text": "Sumber: BPS, rilis 5 Februari 2026."
+    },
+    {
+      "kind": "practice-box",
+      "title": "Latihan Soal Ujian (Bab 1: Pendapatan Nasional)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "1. Jika PDB nominal tahun 2024 adalah 1.200 dan PDB riil adalah 800, berapakah GDP Deflator tahun 2024?\n2. Sebuah perusahaan roti membeli tepung senilai Rp50.000, ragi Rp10.000, lalu menjual rotinya seharga Rp100.000. Berapa nilai tambah (value added) dari perusahaan tersebut?\n3. Jelaskan mengapa pembelian rumah baru dimasukkan ke dalam 'Investasi' bukan 'Konsumsi'!"
+        }
+      ],
+      "answerKey": "1. **150.** (Nominal / Riil × 100 = 1200 / 800 × 100 = 150)\n2. **Rp40.000.** (Penjualan dikurangi biaya input antara = 100.000 - 50.000 - 10.000)\n3. Pembelian rumah baru masuk ke dalam investasi perumahan (residential investment) karena rumah merupakan aset jangka panjang (capital good) yang memberikan 'layanan perumahan' (housing services) selama bertahun-tahun, layaknya sebuah mesin pabrik bagi perusahaan."
     }
   ]
 };
