@@ -34,127 +34,135 @@ const tm8: Reading = {
     },
     {
       "kind": "p",
-      "text": "Data ekonomi makro yang digunakan oleh ekonom dan pembuat kebijakan untuk memantau kinerja ekonomi secara keseluruhan (overall economy) disebut sebagai **Gross Domestic Product (GDP)** atau Produk Domestik Bruto (PDB)."
+      "text": "Bayangkan kamu diminta untuk menilai 'seberapa kuat dan sehat' perekonomian suatu negara tahun ini. Data apa yang paling pertama kamu cari? Jawabannya adalah data andalan yang selalu digunakan oleh ekonom dan pemerintah untuk mengukur kinerja ekonomi secara keseluruhan, yaitu **Gross Domestic Product (GDP)** atau Produk Domestik Bruto (PDB)."
     },
     {
       "kind": "h2",
-      "text": "Definisi Gross Domestic Product (GDP)"
+      "text": "Apa Itu GDP?"
     },
     {
       "kind": "callout",
       "variant": "info",
       "title": "Definisi Inti",
-      "text": "GDP adalah **nilai pasar** seluruh **barang dan jasa akhir** yang **diproduksi** di suatu **negara** dalam **jangka waktu tertentu**."
+      "text": "GDP adalah **nilai pasar (market value)** dari **seluruh (all)** barang dan jasa **akhir (final)** yang **diproduksi (produced)** di dalam suatu **negara (within a country)** pada **periode waktu tertentu (given period of time)**."
+    },
+    {
+      "kind": "p",
+      "text": "Setiap kata dalam definisi di atas punya makna spesifik yang ketat. Mari kita bedah satu per satu agar kamu paham logika di baliknya:"
     },
     {
       "kind": "ul",
       "items": [
-        "**\"Market Value...\"**: Output dinilai pada harga pasar.",
-        "**\"... of All ...\"**: Termasuk semua barang/jasa yang diproduksi dan dijual secara legal di pasar.",
-        "**\"... Final ...\"**: Hanya menghitung nilai barang akhir, bukan barang antara (dihitung sekali untuk menghindari penghitungan ganda).",
-        "**\"... Goods and Services ...\"**: Mencakup barang berwujud (makanan, pakaian, mobil) dan jasa tak berwujud (potong rambut, kebersihan rumah, kunjungan dokter).",
-        "**\"... Produced ...\"**: Barang dan jasa yang diproduksi saat ini, tidak termasuk transaksi barang masa lalu (barang bekas).",
-        "**\"... Within a Country ...\"**: Mengukur nilai produksi di dalam batas geografis suatu negara (tidak peduli kewarganegaraan produsennya).",
-        "**\"... In a Given Period of Time.\"**: Diukur dalam rentang waktu spesifik, biasanya satu tahun atau satu kuartal (tiga bulan)."
+        "**\"Market Value...\"**: Kita tidak bisa menjumlahkan 10 mobil dan 100 potong roti menjadi '110 barang'—itu tidak masuk akal. Semua barang harus diuangkan (dinilai dengan harga pasarnya). Jika harga mobil Rp200 juta dan roti Rp10 ribu, kita jumlahkan nilai rupiahnya.",
+        "**\"... of All ...\"**: Mencakup semua barang dan jasa yang diproduksi dan dijual secara *legal* di pasar. *Contoh: Sayuran di swalayan dihitung, tapi sayuran yang kamu tanam sendiri di halaman rumah untuk dimakan sendiri tidak dihitung.*",
+        "**\"... Final ...\"**: Ini sangat penting! GDP hanya menghitung barang *akhir*, bukan barang *antara* (bahan baku). *Contoh: Kalau pabrik kertas menjual kertas ke penerbit buku, yang dihitung dalam GDP hanyalah harga jual BUKUNYA, karena nilai kertas sudah melekat di harga buku.* Tujuannya agar tidak terjadi **double counting** (penghitungan ganda).",
+        "**\"... Goods and Services ...\"**: GDP menghitung benda fisik (seperti baju, mobil, makanan) dan juga jasa tak berwujud (seperti tiket konser, jasa potong rambut, biaya ke dokter).",
+        "**\"... Produced ...\"**: GDP adalah ukuran produksi *tahun berjalan*. *Contoh: Jika kamu membeli mobil bekas keluaran tahun 2020 hari ini, nilai mobil itu TIDAK MASUK ke GDP tahun ini. Mobil itu sudah pernah dihitung pada GDP tahun 2020.*",
+        "**\"... Within a Country ...\"**: Konsepnya adalah *batas wilayah geografis*. *Contoh: Pabrik Honda (milik Jepang) yang ada di Karawang tetap dihitung ke dalam GDP Indonesia karena beroperasi di dalam negeri.*",
+        "**\"... In a Given Period of Time.\"**: Biasanya diukur per tahun (annual) atau per 3 bulan (kuartal). Angka ini menunjukkan kecepatan aliran uang dan barang dalam rentang waktu tersebut."
       ]
     },
     {
       "kind": "callout",
       "variant": "warning",
-      "title": "Yang Tidak Dihitung dalam GDP",
-      "text": "GDP mengecualikan barang/jasa yang diproduksi dan dikonsumsi sendiri di rumah (tidak pernah masuk pasar), serta aktivitas ilegal (seperti narkoba)."
+      "title": "Awas Terjebak!",
+      "text": "Narkoba ilegal, barang selundupan (black market), atau jasa bersih-bersih rumah yang kamu lakukan sendiri tanpa dibayar **TIDAK** masuk ke dalam GDP, karena tidak diperjualbelikan di pasar legal yang tercatat."
     },
     {
       "kind": "h2",
-      "text": "Cara Mengukur GDP"
+      "text": "Bagaimana Cara Mengukur GDP?"
     },
     {
       "kind": "p",
-      "text": "GDP dapat diukur menggunakan dua cara, yaitu:"
+      "text": "Menariknya, GDP bisa dihitung dari dua sisi yang berlawanan, tapi hasilnya akan **selalu persis sama**. Kedua cara tersebut adalah:"
     },
     {
       "kind": "ul",
       "items": [
-        "**Pendekatan Pengeluaran (Expenditure Approach):** Total pengeluaran untuk membeli produk akhir.",
-        "**Pendekatan Pendapatan (Income Approach):** Total pendapatan atau penghasilan faktor produksi."
+        "**1. Pendekatan Pengeluaran (Expenditure Approach):** Menjumlahkan seluruh uang yang *dibelanjakan* masyarakat untuk membeli produk akhir.",
+        "**2. Pendekatan Pendapatan (Income Approach):** Menjumlahkan seluruh *penghasilan* (gaji, laba, sewa) yang diterima masyarakat dari proses memproduksi produk tersebut."
       ]
     },
     {
       "kind": "p",
-      "text": "Kedua pendekatan ini akan selalu menghasilkan nilai GDP yang persis sama. Alasannya sangat logis: setiap transaksi selalu melibatkan pembeli dan penjual. Oleh karena itu, *setiap dolar yang dikeluarkan oleh pembeli merupakan satu dolar pendapatan bagi penjual*."
+      "text": "Kenapa hasilnya selalu identik? Karena di dunia nyata, **setiap transaksi selalu melibatkan dua pihak: pembeli dan penjual**. Uang Rp50.000 yang kamu *keluarkan* (pengeluaran) untuk membeli segelas es kopi susu akan otomatis tercatat sebagai Rp50.000 *pendapatan* bagi sang pemilik kedai kopi."
     },
     {
       "kind": "h2",
-      "text": "Siklus Aliran Melingkar Kegiatan Ekonomi"
+      "text": "Siklus Aliran Melingkar (Circular Flow)"
     },
     {
       "kind": "chart-guide",
-      "title": "Panduan Membaca Circular Flow",
+      "title": "Panduan Membaca Diagram Circular Flow",
       "points": [
-        "**Aliran Luar (Hijau):** Menunjukkan aliran dolar (uang). Uang mengalir dari rumah tangga ke pasar barang (sebagai belanja), lalu ke perusahaan (sebagai pendapatan). Kemudian dari perusahaan ke pasar faktor produksi (sebagai upah/sewa), lalu kembali ke rumah tangga (sebagai pendapatan).",
-        "**Aliran Dalam (Oranye):** Menunjukkan aliran input/barang riil. Tenaga kerja mengalir dari rumah tangga ke perusahaan. Barang dan jasa mengalir dari perusahaan ke rumah tangga."
+        "**Fokus ke Panah Hijau (Uang):** Ini adalah aliran uang. Rumah tangga membelanjakan uangnya (Spending) di Pasar Barang. Uang ini diterima Perusahaan sebagai Pendapatan (Revenue). Perusahaan kemudian menggunakan uang ini untuk menggaji karyawan dan membayar sewa (Wages/Rent/Profit) di Pasar Faktor Produksi. Uang itu pun kembali ke kantong Rumah Tangga sebagai Pendapatan (Income).",
+        "**Fokus ke Panah Oranye (Barang/Jasa/Faktor Riil):** Ini adalah aliran wujud nyatanya. Rumah tangga menyumbangkan tenaga kerja dan modalnya ke Perusahaan. Perusahaan menggunakannya untuk memproduksi barang/jasa sungguhan, lalu menjualnya kembali ke Rumah Tangga untuk dikonsumsi."
       ]
     },
     {
       "kind": "illustration",
       "type": "circular-flow",
-      "caption": "Circular Flow of Economic Activity. Diagram ini merangkum interaksi antara Perusahaan dan Rumah Tangga melalui Pasar Barang dan Pasar Faktor Produksi."
+      "caption": "Diagram ini membuktikan argumen sebelumnya: Total aliran Pengeluaran di bagian atas (Spending/Revenue) selalu bermuara dan sama besarnya dengan Total aliran Pendapatan di bagian bawah (Income/Wages)."
     },
     {
       "kind": "h2",
-      "text": "Masalah Penghitungan Ganda (Double Counting)"
+      "text": "Memahami Masalah Penghitungan Ganda (Double Counting)"
     },
     {
       "kind": "p",
-      "text": "Untuk menghindari penghitungan ganda (double counting), kita hanya memasukkan nilai barang akhir yang dikonsumsi atau diinvestasikan, dan mengeluarkan barang antara (intermediate goods) yang habis dipakai dalam membuat barang akhir tersebut. Caranya adalah dengan menghitung **Nilai Tambah (Value Added)** pada setiap tahap produksi."
+      "text": "Seperti yang dibahas pada syarat 'Final', GDP hanya menghitung barang akhir untuk menghindari penghitungan berlebihan. Kalau Badan Pusat Statistik menghitung total harga gandum, lalu ditambahkan harga tepung, lalu ditambahkan harga roti sekaligus, angkanya akan membengkak tidak masuk akal. Solusi untuk mengatasi ini adalah dengan menjumlahkan **Nilai Tambah (Value Added)** di tiap tahapan."
     },
     {
       "kind": "callout",
       "variant": "key",
-      "title": "Value Added",
-      "text": "Nilai tambah adalah selisih antara nilai penjualan perusahaan dikurangi pembelian bahan baku dan jasa dari perusahaan lain."
+      "title": "Rumus Nilai Tambah",
+      "text": "Nilai Tambah = Harga Jual Produk perusahaan – Biaya Pembelian Input/Bahan Baku dari perusahaan lain."
     },
     {
       "kind": "math-example",
-      "title": "Tabel Nilai Tambah Produksi Roti",
+      "title": "Ilustrasi: Nilai Tambah pada Sepotong Roti",
       "blocks": [
         {
           "kind": "table",
-          "headers": ["Tahap Produksi", "Nilai Penjualan", "Dikurangi: Biaya Input Antara", "Nilai Tambah (Upah, Laba, dll)"],
+          "headers": ["Tahap Produksi", "Nilai Penjualan", "Dikurangi: Biaya Input Antara", "Nilai Tambah"],
           "rows": [
-            ["Gandum (Wheat)", "23", "0", "23"],
-            ["Tepung (Flour)", "53", "23", "30"],
-            ["Adonan (Baked dough)", "110", "53", "57"],
-            ["Produk akhir: Roti", "190", "110", "80"],
-            ["**Total**", "**376**", "**186**", "**190**"]
+            ["Petani Gandum", "23", "0", "23"],
+            ["Pabrik Tepung", "53", "23", "30"],
+            ["Pabrik Adonan", "110", "53", "57"],
+            ["Toko Roti (Produk Akhir)", "190", "110", "80"],
+            ["**Total Keseluruhan**", "**376 (Total ini Salah!)**", "**186**", "**190 (Total Benar!)**"]
           ]
         },
         {
           "kind": "p",
-          "text": "Penjualan akhir roti (190) = Total penghasilan = Total nilai tambah pada seluruh tahapan (190). Oleh karena itu, jika kita menjumlahkan semua penjualan (376), kita melakukan *double counting*."
+          "text": "Perhatikan bahwa **total dari seluruh nilai tambah tahapan produksi (190)** nilainya ternyata persis sama dengan **harga jual akhir produk roti (190)**. Inilah angka tunggal yang benar-benar dicatat dalam GDP. Jika kita gegabah menotal semua penjualannya (menjadi 376), itu berarti harga petani gandum dihitung berulang kali di tiap pabrik!"
         }
       ]
     },
     {
       "kind": "h2",
-      "text": "Rincian Komponen GDP: Pengeluaran vs Pendapatan"
+      "text": "Rincian Komponen GDP"
     },
     {
       "kind": "h3",
       "text": "1. Pendekatan Pengeluaran (Expenditure Approach)"
     },
     {
+      "kind": "p",
+      "text": "Ini adalah pendekatan yang paling sering digunakan dan ditanyakan dalam ujian. Rumusnya legendaris:"
+    },
+    {
       "kind": "formula",
       "text": "Y = C + I + G + NX",
-      "note": "Keterangan Simbol:\nY = GDP (Total Pengeluaran Nasional)\nC = Konsumsi (Consumption)\nI = Investasi (Investment)\nG = Belanja Pemerintah (Government Purchases)\nNX = Ekspor Neto (Net Exports, yaitu Ekspor dikurangi Impor)"
+      "note": "Keterangan Simbol:\nY = GDP (Total Pengeluaran Nasional)\nC = Konsumsi (Consumption)\nI = Investasi (Investment)\nG = Belanja Pemerintah (Government Purchases)\nNX = Ekspor Neto (Ekspor dikurangi Impor)"
     },
     {
       "kind": "ul",
       "items": [
-        "**Consumption (C):** Pengeluaran rumah tangga untuk barang dan jasa, kecuali pembelian rumah baru.",
-        "**Investment (I):** Pengeluaran untuk peralatan modal (mesin), persediaan (inventory), dan struktur bangunan, termasuk perumahan baru.",
-        "**Government Purchases (G):** Pengeluaran barang dan jasa oleh pemerintah (lokal dan pusat). Ini **tidak termasuk** transfer payment (seperti bansos) karena tidak ada barang/jasa baru yang dipertukarkan.",
-        "**Net Exports (NX):** Nilai ekspor (barang yang dijual ke luar negeri) dikurangi impor (barang yang dibeli dari luar negeri)."
+        "**Consumption (C):** Pengeluaran masyarakat rumah tangga untuk barang (baju, makanan, gadget) dan jasa (pendidikan, dokter). *Catatan: Pembelian rumah baru TIDAK masuk C, melainkan I.*",
+        "**Investment (I):** Belanja perusahaan untuk barang modal (mesin pabrik, komputer kantor), penambahan persediaan (inventory) yang belum terjual, dan pembelian rumah baru oleh rumah tangga. Ingat, 'Investasi' di makroekonomi berarti pembelian barang fisik baru untuk produksi, BUKAN investasi nabung saham di bursa!",
+        "**Government Purchases (G):** Belanja pemerintah pusat/daerah untuk barang dan jasa (contoh: membeli kendaraan operasional, menggaji PNS, aspal jalan). *Hati-hati: Bantuan Sosial (Bansos) atau uang pensiun disebut Transfer Payment dan TIDAK masuk dalam G, karena pemerintah membagikan uang secara cuma-cuma tanpa mendapat barang/jasa sebagai gantinya.*",
+        "**Net Exports (NX):** Ekspor (X) dikurangi Impor (M). Kenapa porsi impor harus dikurangi? Karena saat kamu membeli HP rakitan China, nilai HP itu sudah terlanjur dicatat masuk ke komponen Konsumsi (C). Kalau impornya tidak dikurangkan sebagai penyeimbang, seolah-olah HP itu hasil produksi dalam negeri Indonesia."
       ]
     },
     {
@@ -163,89 +171,99 @@ const tm8: Reading = {
     },
     {
       "kind": "p",
-      "text": "Pendekatan ini menjumlahkan komponen-komponen penghasilan berikut:"
+      "text": "Sebaliknya, jika dihitung dari sisi penghasilan, GDP merupakan penjumlahan dari seluruh komponen kompensasi berikut:"
     },
     {
       "kind": "ul",
       "items": [
-        "Upah, gaji, dan pendapatan tenaga kerja lainnya.",
-        "Bunga (Interest).",
-        "Pendapatan Sewa (Rental income).",
-        "Pajak bisnis tidak langsung (Indirect business taxes).",
-        "Penyusutan / Depresiasi (Depreciation).",
-        "Pendapatan usaha perorangan (Unincorporated enterprises).",
-        "Laba perusahaan sebelum pajak (Corporate profits before taxes), yang terdiri dari pajak laba, dividen, dan laba ditahan."
+        "**Upah/Gaji (Wages):** Penghasilan dari keringat tenaga kerja.",
+        "**Sewa (Rent):** Penghasilan dari aset tanah atau properti komersial.",
+        "**Bunga (Interest):** Pendapatan para kreditur/pemilik modal.",
+        "**Laba Perusahaan (Corporate Profit):** Keuntungan bersih pengusaha, termasuk pajak laba dan dividen pemegang saham.",
+        "Ditambah beberapa penyesuaian khusus teknis seperti *Pajak Bisnis Tidak Langsung* dan *Penyusutan (Depreciation)* pabrik."
       ]
     },
     {
       "kind": "h2",
-      "text": "Real versus Nominal GDP"
+      "text": "Real GDP vs Nominal GDP"
+    },
+    {
+      "kind": "p",
+      "text": "Misalnya dilaporkan GDP tahun ini meroket 10% dibanding tahun lalu. Apakah itu karena **produksi** barang kita benar-benar bertambah 10%, atau murni cuma karena harganya pada **naik (inflasi)**? Untuk memecahkan kebingungan ini, ekonom membagi GDP jadi dua dimensi:"
     },
     {
       "kind": "ul",
       "items": [
-        "**Nominal GDP**: Menilai produksi barang dan jasa menggunakan harga saat ini (current prices).",
-        "**Real GDP**: Menilai produksi barang dan jasa menggunakan harga konstan (tahun dasar). Real GDP menghilangkan distorsi akibat kenaikan harga/inflasi, sehingga menunjukkan murni perubahan kuantitas produksi."
+        "**Nominal GDP**: Menghitung nilai produksi pakai **harga yang berlaku tahun ini**. Kalau harga sembako tiba-tiba naik 2 kali lipat karena langka, GDP Nominal akan ikut-ikutan naik 2 kali lipat meskipun realitanya kita tidak memproduksi lebih banyak sembako.",
+        "**Real GDP**: Menghitung nilai produksi pakai **harga konstan** (dipatok mati pada patokan harga tahun dasar tertentu). Karena fluktuasi harganya dikunci rapat, maka setiap kenaikan Real GDP murni mencerminkan naiknya jumlah kuantitas barang/jasa yang diproduksi. Inilah tolok ukur kinerja ekonomi yang paling jujur."
       ]
     },
     {
       "kind": "formula",
       "text": "GDP Deflator = (Nominal GDP / Real GDP) × 100",
-      "note": "Keterangan: GDP Deflator adalah ukuran tingkat harga. Ia mengukur seberapa besar kenaikan GDP nominal yang disebabkan oleh kenaikan harga, bukan karena bertambahnya kuantitas barang yang diproduksi."
+      "note": "Indeks ini khusus dirancang untuk mengukur tingkat harga. Ia memberi tahu kita porsi kenaikan nominal yang murni disebabkan oleh faktor inflasi harga, alih-alih peningkatan kuantitas output."
     },
     {
       "kind": "h2",
-      "text": "Ukuran-Ukuran Pendapatan Lainnya"
+      "text": "Beragam Ukuran Pendapatan Lain (GNP hingga DI)"
+    },
+    {
+      "kind": "p",
+      "text": "Selain berpatokan pada 'wilayah geografis' (GDP Domestik), ada ukuran lain yang merombaknya menjadi berpatokan pada 'siapa warga negaranya' (Nasional). Ukuran itu terus dikerucutkan dan dipangkas pajaknya sampai menjadi uang tunai di dompet."
     },
     {
       "kind": "chart-guide",
-      "title": "Panduan Alur Pengurangan (GDP hingga DI)",
+      "title": "Panduan Alur Menurun (Waterfall): Dari GDP menjadi Uang Siap Belanja (DI)",
       "points": [
-        "**GNP (Gross National Product):** Mengukur pendapatan seluruh warga negara. GNP = GDP + (Pendapatan faktor dari luar negeri - Pendapatan faktor ke luar negeri).",
-        "**NNP (Net National Product):** Mengukur produksi bersih setelah memperhitungkan depresiasi (keausan mesin/peralatan). NNP = GNP - Depresiasi.",
-        "**NI (National Income):** Sama dengan NNP, namun dikurangi pajak tidak langsung bisnis (seperti PPN).",
-        "**PI (Personal Income):** Pendapatan yang diterima rumah tangga. PI mengecualikan laba ditahan, pajak perusahaan, dan jaminan sosial, tetapi *memasukkan* pendapatan bunga dan transfer payment.",
-        "**DI (Disposable Income):** Pendapatan yang benar-benar siap dibelanjakan (setelah dipotong pajak penghasilan/pajak personal). Inilah uang tunai bersih rumah tangga. Sebagian besar dikonsumsi (C), sisanya ditabung (S)."
+        "**GNP (Gross National Product):** Fokus pada Warga Negara, di manapun lokasinya. Pabrik sepatu milik pengusaha lokal Indonesia di Vietnam masuk GNP Indonesia. Sebaliknya, pabrik raksasa milik asing di Bekasi TIDAK masuk GNP Indonesia. (GNP = GDP + Pendapatan orang kita di Luar - Pendapatan orang luar di negara kita).",
+        "**NNP (Net National Product):** Angka GNP dikurangi depresiasi (biaya penyusutan keausan mesin/pabrik). Kenapa dikurangi? Karena mesin yang rusak/tua adalah kerugian nilai ekonomi.",
+        "**NI (National Income):** Sama persis dengan NNP, namun dikurangi lagi dengan Pajak Tidak Langsung Bisnis (seperti PPN dan cukai).",
+        "**PI (Personal Income):** NI dirombak menjadi pendapatan level rumah tangga. Kita mencabut porsi laba yang ditahan perusahaan (yang tidak dibagikan) dan pajak perusahaan, lalu *menambahkan* komponen pendapatan bunga dan dana Bansos (Transfer Payment) dari pemerintah.",
+        "**DI (Disposable Income):** Langkah terakhir yang paling riil! PI dikurangi Pajak Penghasilan Pribadi. Inilah uang tunai bersih paling final di tangan masyarakat yang benar-benar siap mereka pakai untuk **Konsumsi (C)** maupun **Ditabung (S)**."
       ]
     },
     {
       "kind": "illustration",
       "type": "gdp-waterfall",
-      "caption": "Langkah-langkah deduksi dari GDP hingga menjadi Disposable Income (DI)."
+      "caption": "Diagram Waterfall ini meringkas langkah demi langkah panjang deduksi dari nilai GDP hingga perlahan-lahan menyusut menjadi DI (Disposable Income)."
     },
     {
       "kind": "h2",
-      "text": "GDP dan Kesejahteraan Ekonomi"
+      "text": "GDP dan Kesejahteraan: Apakah Angka Tinggi = Rakyat Bahagia?"
     },
     {
       "kind": "p",
-      "text": "GDP adalah alat ukur tunggal terbaik untuk melihat kesejahteraan ekonomi masyarakat. GDP per kapita (GDP dibagi jumlah penduduk) mengukur rata-rata pendapatan dan pengeluaran seseorang dalam perekonomian. Secara umum, negara dengan GDP lebih tinggi memiliki standar hidup, harapan hidup, dan tingkat melek huruf yang lebih baik."
+      "text": "GDP per kapita (GDP dibagi rata ke seluruh jumlah penduduk) secara luas diakui sebagai indikator tunggal terbaik untuk menerka kesejahteraan ekonomi suatu peradaban. Realitanya memang terbukti kok: negara dengan GDP tinggi umumnya mampu menyediakan fasilitas pendidikan kelas dunia, infrastruktur rumah sakit yang lebih canggih, dan tingkat literasi yang merata."
     },
     {
       "kind": "callout",
       "variant": "warning",
-      "title": "Kelemahan GDP",
-      "text": "Namun, GDP **bukanlah ukuran sempurna** untuk kebahagiaan atau kualitas hidup."
+      "title": "Kelemahan Fatal GDP",
+      "text": "Namun, sadari batasannya: GDP sama sekali BUKAN alat ukur yang sempurna. Ia memiliki kelemahan yang sangat fundamental karena sama sekali buta terhadap sisi 'kemanusiaan'."
+    },
+    {
+      "kind": "p",
+      "text": "Beberapa pilar penting yang membuat hidup rakyat menjadi berkualitas tinggi justru **sengaja tidak dicatat** dalam laporan GDP:"
     },
     {
       "kind": "ul",
       "items": [
-        "**Nilai waktu luang (leisure)** tidak masuk dalam GDP.",
-        "**Lingkungan yang bersih** tidak menambah nilai GDP.",
-        "**Aktivitas non-pasar (di luar pasar)** tidak dihitung, seperti nilai waktu merawat anak sendiri di rumah atau kerja sukarela.",
-        "**Underground economy (ekonomi bawah tanah)**, yaitu banyak transaksi riil yang tidak tercatat oleh pemerintah karena informal atau dihindarkan dari pajak."
+        "**Waktu Luang (Leisure):** Bayangkan jika pemerintah membuat aturan: tidak ada hari libur, semua orang harus lembur setiap hari. Angka GDP pasti meroket drastis karena produksi naik berlipat. Tapi apakah rakyatnya bahagia?",
+        "**Kualitas Lingkungan:** Sebuah pabrik tekstil besar bebas membuang limbah beracun ke sungai, menghasilkan baju senilai triliunan (menaikkan nilai GDP), tapi angka GDP sama sekali tidak dikurangi oleh 'kerusakan sungai' atau 'biaya sakit kulit warga sekitar'.",
+        "**Aktivitas Non-Pasar yang Penuh Kasih Sayang:** Kebaikan luar biasa seorang ibu yang merawat anaknya sendiri 24 jam sehari di rumah tidak dihitung sepeser pun oleh sistem (karena dilakukan gratis). Namun jika sang ibu menyewa *babysitter* berbayar, bayarannya tiba-tiba dihitung dan GDP negara melonjak naik.",
+        "**Ekonomi Bawah Tanah (Underground Economy):** Terdapat miliaran uang berputar setiap hari di transaksi informal pedagang kaki lima tanpa kuitansi atau sengaja disembunyikan agar lolos dari kewajiban pajak. Uang riilnya ada, tapi angkanya gaib di mata pemerintah."
       ]
     },
     {
       "kind": "practice-box",
-      "title": "Latihan Cepat Mengingat Konsep",
+      "title": "Cek Ombak: Latihan Evaluasi",
       "blocks": [
         {
           "kind": "p",
-          "text": "1. Apa kepanjangan dari C, I, G, dan NX dalam pendekatan pengeluaran?\n2. Mengapa mobil bekas yang kamu beli di dealer tahun ini tidak dihitung masuk ke dalam GDP tahun ini?\n3. Mengapa pembelian roti (barang akhir) tidak boleh ditambahkan dengan pembelian tepungnya (barang antara) saat menghitung GDP?"
+          "text": "1. Jika kamu membeli mobil bekas dari tetanggamu hari ini seharga Rp100 juta, apakah transaksi Rp100 juta itu dimasukkan ke dalam GDP tahun ini?\n2. Bulan depan, pemerintah membagikan BLT (Bantuan Langsung Tunai) miliaran rupiah ke rakyat miskin. Apakah total dana kucuran BLT tersebut mendongkrak komponen Belanja Pemerintah (G)?\n3. Mengapa angka harga jual tepung gandum dan angka harga akhir roti tidak dijumlahkan menjadi satu kesatuan utuh saat menjumlah total GDP nasional?"
         }
       ],
-      "answerKey": "1. **C**onsumption (Konsumsi), **I**nvestment (Investasi), **G**overnment Purchases (Belanja Pemerintah), **N**et e**X**ports (Ekspor Neto).\n2. Karena syarat GDP adalah barang/jasa yang **diproduksi pada periode berjalan (saat ini)**. Mobil bekas adalah produksi masa lalu yang nilainya sudah dihitung pada GDP di tahun mobil tersebut pertama kali diproduksi.\n3. Karena nilai tepung sudah dimasukkan (terkandung) di dalam harga akhir roti. Menjumlahkan keduanya akan menyebabkan **Double Counting** (penghitungan ganda)."
+      "answerKey": "1. **TIDAK MASUK.** Syarat mutlak GDP adalah barang *\"Produced\"* (diproduksi pada periode tahun yang sama). Mobil bekas secara fundamental sudah pernah dihitung saat ia dilahirkan pabriknya beberapa tahun lalu (misal masuk GDP tahun 2021). Menghitungnya lagi berarti double counting lintas waktu.\n2. **BUKAN KOMPONEN G.** Program uang BLT / BPJS masuk ke kategori *Transfer Payment* (dana berpindah ke dompet rakyat tanpa pemerintah mendapatkan produk/jasa imbalan baru). Dana itu baru akan meledakkan angka GDP nanti ketika rakyat miskin membelanjakan BLT-nya untuk membeli mie instan (tercatat di komponen Konsumsi C).\n3. Tujuannya menghindari momok **Double Counting** (penghitungan terdobel). Nilai jual final sebuah roti sudah secara otomatis mencakup dan menghitung biaya bahan baku tepung yang diserap toko roti tersebut."
     }
   ]
 };
