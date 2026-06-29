@@ -1,0 +1,416 @@
+MONEY AND THE 
+FINANCIAL SYSTEM
+Week-11
+outline
+⦿ The Meaning of Money and its functions
+⦿ The Money Supply and the demand for 
+money
+⦿ The Financial system
+⚫Financial intermediaries and the money 
+supply
+⚫Financial markets and the market for 
+loanable funds
+THE MEANING OF MONEY
+⦿Money is the set of assets in an economy 
+that people regularly use to buy goods and 
+services from other people.
+⦿Money is anything that serves as a 
+commonly accepted medium of exchange
+⚫According to the economist’s definition, 
+money include only few types of wealth 
+that regularly accepted by seller in 
+exchange for goods and services
+The Functions of Money
+1. Medium of exchange is an item that 
+buyers give to sellers when they want 
+to purchase goods and services.
+2. Unit of account is the yardstick people 
+use to post prices and record debts.
+3. Store of value is an item that people 
+can use to transfer purchasing power 
+from the present to the future.
+Types of Money
+⦿Commodity money takes the form of a 
+commodity with intrinsic value.
+⚫Examples: Gold, silver, cigarettes.
+⦿Fiat money is used as money because 
+of government decree.
+⚫It does not have intrinsic value.
+⚫Examples: Coins, currency, check deposits.
+THE MONEY SUPPLY
+⦿The quantity of money available in the 
+economy called money supply
+⦿Two measures of the money supply
+⚫M1, that is the sum of coins and paper 
+currency in circulation outside the banks 
+plus checkable deposits.
+⚫M2 includes assets such as savings 
+accounts in addition to coins, paper 
+currency and checkable deposits (or 
+demand deposits)
+THE MONEY SUPPLY
+⦿The quantity of money available in the 
+economy called money supply
+⦿Two measures of the money supply
+⚫M1, yaitu jumlah uang logam dan mata 
+uang kertas yang beredar di luar bank 
+ditambah simpanan yang dapat dicek.
+⚫M2 mencakup aset seperti rekening 
+tabungan selain koin, mata uang kertas, 
+dan deposito yang dapat dicek (atau giro)
+8
+THE DEMAND FOR MONEY
+⦿ The opportunity cost of holding money is the sacrifice in 
+interest that we must incur by holding money rather than a 
+riskier; less liquid asset or investment.
+⦿ Two sources of money demand
+⚫ The transactions demand for money
+○ It double if all prices and income doubles
+⚫ Asset Demand
+○ Money is used as a store of value? Yes , but not 
+often.
+○ People hold money as an asset when interest rates 
+are close to zero
+○ Today, people prefer to keep their nontransaction 
+assets in save “interest bearing assets”
+transaksi, berjaga jaga → nabung , spekulasi → investasi
+THE FINANCIAL SYSTEM 
+⦿ The financial system consists of the group of 
+institutions in the economy that help to match one 
+person’s saving with another person’s investment.
+⦿ Financial institutions can be grouped into :
+⚫Financial intermediaries are financial 
+institutions through which savers can indirectly 
+provide funds to borrowers (banks and other 
+financial institutions)
+⚫Financial markets are the institutions through 
+which savers can directly provide funds to 
+borrowers (stock market, bond market)
+THE FINANCIAL SYSTEM 
+⦿ The function of financial system
+⚫Transfer resources across time
+⚫Manages risks for the economy
+⚫Pools and subdivides funds
+⚫Facilitates transaction between payers/ 
+purchasers and payees/ sellers
+THE FINANCIAL 
+SYSTEM 
+
+FINANCIAL 
+INTERMEDIARIES AND THE 
+MONEY SUPPLY
+• Financial intermediaries accept checking 
+deposits from households and firms, and 
+then lend these funds out to other 
+households and business for a variety of 
+purposes.
+• Bank money and many other financial 
+services are today provided by financial 
+intermediaries (commercial banks and 
+other financial institutions)
+BANKS AND THE MONEY 
+SUPPLY
+• Whenever a person deposits some money, 
+the bank keeps the money in its vault until 
+the depositor comes to withdraw it or writes 
+a check against his or her balance.
+• Deposits that banks received but have not 
+loaned out are called reserves
+BANKS AND THE MONEY 
+SUPPLY
+⦿ Reserves are deposits that banks have 
+received but have not loaned out.
+⚫Bank reserves are assets bank hold in the 
+form of cash on hand or of funds deposited 
+by the bank with the central bank.
+⚫Bank reserves are kept above the prudent 
+commercial level because of legal reserve 
+requirements.
+⚫The main function of legal reserve 
+requirements is to enable the central bank to 
+control money supply.
+BANKS AND THE MONEY 
+SUPPLY
+⦿ In a fractional-reserve banking system, 
+banks hold a fraction of the money 
+deposited as reserves and lend out the 
+rest.
+⦿ The fraction of deposits that banks hold 
+as reserves is called the reserve ratio
+Money Creation with Fractional-
+Reserve Banking
+⦿ When a bank makes a loan from its 
+reserves, the money supply increases.
+⦿ The money supply is affected by the 
+amount deposited in banks and the amount 
+that banks loan.
+⚫Deposits into a bank are recorded as both 
+assets and liabilities.
+⚫The fraction of total deposits that a bank has to 
+keep as reserves is called the reserve ratio.
+⚫Loans become an asset to the bank.
+Money Creation with Fractional-
+Reserve Banking
+⦿ This T-Account shows a bank that…
+⚫accepts deposits,
+⚫keeps a portion 
+as reserves, 
+⚫and lends out 
+the rest.  
+⚫It assumes a 
+reserve ratio 
+of 10%.
+Assets Liabilities
+First National Bank
+Reserves
+$100.00
+Loans
+$900.00
+Deposits
+$1000.00
+Total Assets
+$1000.00
+Total Liabilities
+$1000.00
+Money Creation with Fractional-
+Reserve Banking
+⦿ When one bank loans money, that 
+money is generally deposited into 
+another bank.
+⦿ This creates more deposits and more 
+reserves to be lent out. 
+⦿ When a bank makes a loan from its 
+reserves, the money supply increases.
+Money Creation with Fractional-
+Reserve Banking
+Assets Liabilities
+First National Bank
+Reserves
+$100.00
+Loans
+$900.00
+Deposits
+$1000.00
+Total Assets
+$100.00
+Total Liabilities
+$1000.00
+Assets Liabilities
+Second National Bank
+Reserves
+$90.00
+Loans
+$810.00
+Deposits
+$900.00
+Total Assets
+$900.00
+Total Liabilities
+$900.00
+Money Supply = $1,900.00!
+The Money Multiplier
+⦿ How much money is eventually created 
+in this economy?
+The Money Multiplier
+
+The Money Multiplier
+⦿ The algebraic solution can be shown as 
+follows:
+1000 + 900 + 810 + ….
+= 1000 x [1 + 9/10 + (9/10)2 + …]
+= 1000 x 1/(1-9/10)
+= 1000 x 1/0.1 = 10000
+Money supply multiplier
+= 1/required reserve ratio
+The Money Multiplier
+⦿ The money multiplier is the amount of 
+money the banking system generates 
+with each dollar of reserves.
+⦿ The money multiplier is the reciprocal of 
+the reserve ratio:
+M = 1/R
+⦿ With a reserve requirement, R = 10% or
+1/10,
+⦿ The multiplier is 10.
+The Money Multiplier
+⦿ What would happen if some money leaked into 
+circulation or if some banks had excess reserves?
+⚫If $ 100 were to leak into circulation outside 
+the banks and only $ 900 of new reserves were 
+to remain in the banking system, the new 
+checking deposits created would be $9000.
+⚫If the bank decided to keep rather than lend 
+the new reserves, then the whole process of 
+multiple deposit creation would stop dead with 
+no expansion of deposit at all.
+MONETARY POLICY
+⦿ The objectives of the central bank in 
+exercising its control over money, 
+interest rates, and credit conditions.
+⦿ The instrument of monetary policy are 
+primarily open-market operations, 
+reserve requirements, and the discount 
+rate.
+MONETARY POLICY
+⦿ Open-Market Operations
+⚫The Central Bank conducts open-market 
+operations when it buys government 
+bonds from or sells government bonds to 
+the public:
+○ When the Central Bank buys 
+government bonds, the money supply 
+increases.
+○ The money supply decreases when the 
+Central Bank sells government bonds.
+MONETARY POLICY
+⦿ Reserve Requirements
+⚫The central bank also influences the 
+money supply with reserve 
+requirements.
+⚫Reserve requirements are regulations 
+on the minimum amount of reserves 
+that banks must hold against deposits.
+MONETARY POLICY
+⦿ Changing the Reserve Requirement
+⚫The reserve requirement is the 
+amount (%) of a bank’s total reserves 
+that may not be loaned out.
+○ Increasing the reserve requirement 
+decreases the money supply. 
+○ Decreasing the reserve requirement 
+increases the money supply.
+MONETARY POLICY
+⦿ Changing the Discount Rate
+⚫The discount rate is the interest rate 
+the central bank charges banks for 
+loans.
+○ Increasing the discount rate 
+decreases the money supply. 
+○ Decreasing the discount rate 
+increases the money supply.
+FINANCIAL MARKETS AND THE 
+MARKET FOR LOANABLE FUNDS
+⦿ Financial markets coordinate the 
+economy’s saving and investment in the 
+market for loanable funds
+⦿ The market for loanable funds is the 
+market in which those who want to save 
+supply funds and those who want to borrow 
+to invest demand funds.
+⦿ Loanable funds refers to all income that 
+people have chosen to save and lend out, 
+rather than use for their own consumption.
+Supply and Demand for 
+Loanable Funds
+⦿ The supply of loanable funds comes 
+from people who have extra income they 
+want to save and lend out.
+⦿ The demand for loanable funds comes 
+from households and firms that wish to 
+borrow to make investments.
+⦿ The equilibrium of the supply and 
+demand for loanable funds determines 
+the price of the loans, that is, the real 
+interest rate
+Equilibrium of the market for 
+loanable funds
+Supply
+Demand
+Interest 
+rate
+Loanable funds 
+(in billions of dollars)
+5%
+$1,200
+Recall: Some Important Identities
+⦿ A Closed economy
+Y = C + I + G
+⦿ Now, subtract C and G from both sides of the 
+equation:
+Y – C – G =I
+⦿ The left side of the equation is the total 
+income in the economy after paying for 
+consumption and government purchases and 
+is called national saving, or just saving (S)
+Recall: Some Important Identities
+⦿ Substituting S for Y - C - G, the equation 
+can be written as:
+S = I
+⦿ National saving, or saving, is equal to:
+S = I
+S = Y – C – G 
+S = (Y – T – C) + (T – G)
+Where: Y – T – C is called private saving and 
+T – G is called public saving
+A decrease in tax on interest 
+income
+Supply, S1
+Demand
+Interest 
+rate
+Loanable funds 
+(in billions of dollars)
+5%
+$1,200
+S2
+$1,600
+4%
+1. Tax incentives for
+saving increase the
+supply of loanable
+fund
+2. . . . which
+raises the
+equilibrium
+interest rate . . .
+3. . . . and raises the equilibrium
+quantity of loanable funds.
+A tax incentives for 
+investment
+Supply
+Demand, D1
+Interest 
+rate
+Loanable funds 
+(in billions of dollars)
+5%
+$1,200
+D2
+$1,400
+6%
+1. An investment
+tax credit
+increases the
+demand for 
+loanable funds . . .
+2. . . . which
+raises the
+equilibrium
+interest rate . . .
+3. . . . and raises the equilibrium
+quantity of loanable funds.
+The Effect of a Government 
+Budget Deficit
+Supply, S1
+Demand
+Interest 
+rate
+Loanable funds 
+(in billions of dollars)
+6%
+$800
+S2
+$1,200
+5%
+2. . . . which
+raises the
+equilibrium
+interest rate . . .
+1. A budget deficit
+decreases the
+supply of loanable
+funds . . .
+3. . . . and reduces the equilibrium
+quantity of loanable funds.
+Thank you
+for your attention
