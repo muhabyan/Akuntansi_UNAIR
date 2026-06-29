@@ -19,529 +19,233 @@ const tm8: Reading = {
   "tm": 8,
   "title": "Pendapatan Nasional",
   "ref": "Kontrak: 1(19) · Substansi: Samuelson Ch.19–20; Mankiw Ch.23–24",
-  "intro": "Mengukur aktivitas ekonomi agregat melalui GDP/PDB dan ukuran turunannya, lalu menelusuri hubungan produksi, pendapatan, pengeluaran, harga, dan kesejahteraan.",
+  "intro": "Membahas data yang digunakan oleh ekonom dan pembuat kebijakan untuk memantau kinerja ekonomi secara keseluruhan, yaitu Gross Domestic Product (GDP).",
   "objectives": [
-    "Membedakan GDP, GNP/GNI, NDP, NI, PI, dan disposable income.",
-    "Menghitung pendapatan nasional melalui pendekatan produksi, pendapatan, dan pengeluaran.",
-    "Membedakan GDP nominal, GDP riil, GDP deflator, dan CPI.",
-    "Menganalisis shock pada C, I, G, X, dan M melalui alur sebab-akibat."
+    "Memahami konsep dan komponen-komponen penyusun Gross Domestic Product (GDP).",
+    "Menjelaskan dua pendekatan pengukuran GDP: Pengeluaran dan Pendapatan.",
+    "Menganalisis siklus aliran melingkar kegiatan ekonomi (Circular Flow).",
+    "Membedakan GDP Nominal dan Riil serta menghitung GDP Deflator.",
+    "Mengidentifikasi ukuran pendapatan nasional lain (GNP, NNP, NI, PI, DI) serta batasan GDP terhadap kesejahteraan."
   ],
   "blocks": [
     {
+      "kind": "h2",
+      "text": "Pengantar (Introduction)"
+    },
+    {
+      "kind": "p",
+      "text": "Data ekonomi makro yang digunakan oleh ekonom dan pembuat kebijakan untuk memantau kinerja ekonomi secara keseluruhan (overall economy) disebut sebagai **Gross Domestic Product (GDP)** atau Produk Domestik Bruto (PDB)."
+    },
+    {
+      "kind": "h2",
+      "text": "Definisi Gross Domestic Product (GDP)"
+    },
+    {
       "kind": "callout",
       "variant": "info",
-      "title": "Materi Terstandardisasi",
-      "text": "Materi Pra-UAS ini telah dinormalisasi dan disesuaikan dengan pedoman kurikulum terbaru, mencakup aspek akademik komprehensif serta struktur visual yang interaktif."
+      "title": "Definisi Inti",
+      "text": "GDP adalah **nilai pasar** seluruh **barang dan jasa akhir** yang **diproduksi** di suatu **negara** dalam **jangka waktu tertentu**."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**\"Market Value...\"**: Output dinilai pada harga pasar.",
+        "**\"... of All ...\"**: Termasuk semua barang/jasa yang diproduksi dan dijual secara legal di pasar.",
+        "**\"... Final ...\"**: Hanya menghitung nilai barang akhir, bukan barang antara (dihitung sekali untuk menghindari penghitungan ganda).",
+        "**\"... Goods and Services ...\"**: Mencakup barang berwujud (makanan, pakaian, mobil) dan jasa tak berwujud (potong rambut, kebersihan rumah, kunjungan dokter).",
+        "**\"... Produced ...\"**: Barang dan jasa yang diproduksi saat ini, tidak termasuk transaksi barang masa lalu (barang bekas).",
+        "**\"... Within a Country ...\"**: Mengukur nilai produksi di dalam batas geografis suatu negara (tidak peduli kewarganegaraan produsennya).",
+        "**\"... In a Given Period of Time.\"**: Diukur dalam rentang waktu spesifik, biasanya satu tahun atau satu kuartal (tiga bulan)."
+      ]
     },
     {
       "kind": "callout",
       "variant": "warning",
-      "title": "Snapshot Data Kontekstual",
-      "text": "Angka ekonomi Indonesia 2025–2026 ditampilkan sebagai snapshot historis bertanggal. Setiap kotak data mempertahankan periode dan sumber resminya agar konteks akademik tidak berubah ketika data terbaru diterbitkan."
+      "title": "Yang Tidak Dihitung dalam GDP",
+      "text": "GDP mengecualikan barang/jasa yang diproduksi dan dikonsumsi sendiri di rumah (tidak pernah masuk pasar), serta aktivitas ilegal (seperti narkoba)."
     },
     {
       "kind": "h2",
-      "text": "Inti Makro & Pendapatan Nasional"
+      "text": "Cara Mengukur GDP"
     },
     {
       "kind": "p",
-      "text": "Pendapatan nasional adalah pintu masuk utama ke makroekonomi karena ia menjawab pertanyaan paling dasar: seberapa besar aktivitas ekonomi suatu negara dalam satu periode tertentu. Dalam makroekonomi, perhatian tidak lagi berada pada satu konsumen atau satu perusahaan, melainkan pada agregat seperti output total, tingkat harga umum, pengangguran, konsumsi nasional, investasi nasional, tabungan nasional, pengeluaran pemerintah, ekspor-impor, dan pertumbuhan jangka panjang."
+      "text": "GDP dapat diukur menggunakan dua cara, yaitu:"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Pendekatan Pengeluaran (Expenditure Approach):** Total pengeluaran untuk membeli produk akhir.",
+        "**Pendekatan Pendapatan (Income Approach):** Total pendapatan atau penghasilan faktor produksi."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Kedua pendekatan ini akan selalu menghasilkan nilai GDP yang persis sama. Alasannya sangat logis: setiap transaksi selalu melibatkan pembeli dan penjual. Oleh karena itu, *setiap dolar yang dikeluarkan oleh pembeli merupakan satu dolar pendapatan bagi penjual*."
+    },
+    {
+      "kind": "h2",
+      "text": "Siklus Aliran Melingkar Kegiatan Ekonomi"
+    },
+    {
+      "kind": "chart-guide",
+      "title": "Panduan Membaca Circular Flow",
+      "points": [
+        "**Aliran Luar (Hijau):** Menunjukkan aliran dolar (uang). Uang mengalir dari rumah tangga ke pasar barang (sebagai belanja), lalu ke perusahaan (sebagai pendapatan). Kemudian dari perusahaan ke pasar faktor produksi (sebagai upah/sewa), lalu kembali ke rumah tangga (sebagai pendapatan).",
+        "**Aliran Dalam (Oranye):** Menunjukkan aliran input/barang riil. Tenaga kerja mengalir dari rumah tangga ke perusahaan. Barang dan jasa mengalir dari perusahaan ke rumah tangga."
+      ]
     },
     {
       "kind": "illustration",
       "type": "circular-flow",
-      "caption": "Aliran luar (hijau) menunjukkan arus uang: rumah tangga belanja → perusahaan terima pendapatan → perusahaan bayar faktor produksi → rumah tangga terima penghasilan. Aliran dalam (oranye) menunjukkan arus barang dan faktor produksi yang bergerak berlawanan arah."
+      "caption": "Circular Flow of Economic Activity. Diagram ini merangkum interaksi antara Perusahaan dan Rumah Tangga melalui Pasar Barang dan Pasar Faktor Produksi."
     },
     {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Makroekonomi",
-      "text": "mempelajari perilaku perekonomian secara keseluruhan. Ukuran kuncinya meliputi output nasional, kesempatan kerja, inflasi, pertumbuhan ekonomi, dan hubungan ekonomi internasional."
+      "kind": "h2",
+      "text": "Masalah Penghitungan Ganda (Double Counting)"
     },
     {
-      "kind": "ul",
-      "items": [
-        "**Tujuan Makro:** Output tinggi dan tumbuh, pengangguran rendah, inflasi stabil, neraca eksternal sehat, serta distribusi hasil pembangunan yang lebih layak.",
-        "**Instrumen Makro:** Kebijakan fiskal, kebijakan moneter, kebijakan perdagangan, kebijakan nilai tukar, dan kebijakan sisi penawaran.",
-        "**Logika Dasar:** Produksi menciptakan pendapatan, pendapatan membiayai pengeluaran, dan pengeluaran menjadi permintaan terhadap produksi."
-      ]
+      "kind": "p",
+      "text": "Untuk menghindari penghitungan ganda (double counting), kita hanya memasukkan nilai barang akhir yang dikonsumsi atau diinvestasikan, dan mengeluarkan barang antara (intermediate goods) yang habis dipakai dalam membuat barang akhir tersebut. Caranya adalah dengan menghitung **Nilai Tambah (Value Added)** pada setiap tahap produksi."
     },
     {
       "kind": "callout",
       "variant": "key",
-      "title": "Identitas inti",
-      "text": "nilai produksi agregat = pendapatan agregat = pengeluaran agregat. Perbedaannya biasanya muncul karena cara pencatatan, bukan karena konsep ekonominya berbeda."
+      "title": "Value Added",
+      "text": "Nilai tambah adalah selisih antara nilai penjualan perusahaan dikurangi pembelian bahan baku dan jasa dari perusahaan lain."
+    },
+    {
+      "kind": "math-example",
+      "title": "Tabel Nilai Tambah Produksi Roti",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": ["Tahap Produksi", "Nilai Penjualan", "Dikurangi: Biaya Input Antara", "Nilai Tambah (Upah, Laba, dll)"],
+          "rows": [
+            ["Gandum (Wheat)", "23", "0", "23"],
+            ["Tepung (Flour)", "53", "23", "30"],
+            ["Adonan (Baked dough)", "110", "53", "57"],
+            ["Produk akhir: Roti", "190", "110", "80"],
+            ["**Total**", "**376**", "**186**", "**190**"]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Penjualan akhir roti (190) = Total penghasilan = Total nilai tambah pada seluruh tahapan (190). Oleh karena itu, jika kita menjumlahkan semua penjualan (376), kita melakukan *double counting*."
+        }
+      ]
     },
     {
       "kind": "h2",
-      "text": "GDP, GNP, NDP, NI, PI, dan DI"
+      "text": "Rincian Komponen GDP: Pengeluaran vs Pendapatan"
     },
     {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Gross Domestic Product (GDP/PDB)",
-      "text": "**GDP** adalah nilai pasar seluruh barang dan jasa akhir yang diproduksi di dalam wilayah suatu negara selama periode tertentu."
+      "kind": "h3",
+      "text": "1. Pendekatan Pengeluaran (Expenditure Approach)"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I + G + NX",
+      "note": "Keterangan Simbol:\nY = GDP (Total Pengeluaran Nasional)\nC = Konsumsi (Consumption)\nI = Investasi (Investment)\nG = Belanja Pemerintah (Government Purchases)\nNX = Ekspor Neto (Net Exports, yaitu Ekspor dikurangi Impor)"
     },
     {
       "kind": "ul",
       "items": [
-        "**Market Value:** Dinilai menggunakan harga pasar saat ini.",
-        "**Of All:** Mencakup semua barang/jasa yang diproduksi dan dijual legal di pasar (mengabaikan barang ilegal atau yang diproduksi untuk konsumsi sendiri).",
-        "**Final:** Hanya barang akhir, bukan barang antara (menghindari double counting).",
-        "**Goods and Services:** Mencakup barang berwujud (makanan, baju) dan jasa tak berwujud (potong rambut, kunjungan dokter).",
-        "**Produced:** Hanya barang yang diproduksi pada periode berjalan, bukan transaksi barang bekas.",
-        "**Within a Country:** Mengukur produksi di dalam batas geografis suatu negara, terlepas dari kewarganegaraan produsennya.",
-        "**In a Given Period of Time:** Biasanya diukur per tahun atau per kuartal."
+        "**Consumption (C):** Pengeluaran rumah tangga untuk barang dan jasa, kecuali pembelian rumah baru.",
+        "**Investment (I):** Pengeluaran untuk peralatan modal (mesin), persediaan (inventory), dan struktur bangunan, termasuk perumahan baru.",
+        "**Government Purchases (G):** Pengeluaran barang dan jasa oleh pemerintah (lokal dan pusat). Ini **tidak termasuk** transfer payment (seperti bansos) karena tidak ada barang/jasa baru yang dipertukarkan.",
+        "**Net Exports (NX):** Nilai ekspor (barang yang dijual ke luar negeri) dikurangi impor (barang yang dibeli dari luar negeri)."
       ]
     },
     {
-      "kind": "table",
-      "caption": "Perbandingan Konsep PDB (GDP) dan PNB (GNP)",
-      "headers": ["Konsep", "Definisi", "Contoh & Analogi"],
-      "rows": [
-        [
-          "GDP/PDB",
-          "Produksi berdasarkan wilayah domestik, siapa pun pemilik faktor produksinya.",
-          "Perusahaan asing yang produksi di Indonesia masuk PDB Indonesia.\n💡 **Analogi:** Seperti menghitung semua kue yang dipanggang di 'Dapur Indonesia', tak peduli siapa chef-nya (orang lokal atau asing)."
-        ],
-        [
-          "GNP/PNB atau GNI",
-          "Produksi/pendapatan berdasarkan kewarganegaraan atau kepemilikan faktor produksi.",
-          "Pendapatan WNI dari luar negeri masuk GNP Indonesia, bukan PDB Indonesia.\n💡 **Analogi:** Seperti menghitung kue yang dipanggang oleh 'Chef Indonesia', tak peduli dia manggangnya di Dapur Indonesia atau Dapur Luar Negeri."
-        ],
-        [
-          "NNP",
-          "GNP dikurangi penyusutan (depresiasi).",
-          "Mengukur produksi bersih setelah mengganti mesin yang rusak."
-        ]
+      "kind": "h3",
+      "text": "2. Pendekatan Pendapatan (Income Approach)"
+    },
+    {
+      "kind": "p",
+      "text": "Pendekatan ini menjumlahkan komponen-komponen penghasilan berikut:"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Upah, gaji, dan pendapatan tenaga kerja lainnya.",
+        "Bunga (Interest).",
+        "Pendapatan Sewa (Rental income).",
+        "Pajak bisnis tidak langsung (Indirect business taxes).",
+        "Penyusutan / Depresiasi (Depreciation).",
+        "Pendapatan usaha perorangan (Unincorporated enterprises).",
+        "Laba perusahaan sebelum pajak (Corporate profits before taxes), yang terdiri dari pajak laba, dividen, dan laba ditahan."
       ]
     },
     {
-      "kind": "table",
-      "headers": [
-        "Konsep",
-        "Makna",
-        "Hal yang sering ditanyakan"
-      ],
-      "rows": [
-        [
-          "NDP/PDB Neto",
-          "GDP dikurangi depresiasi/penyusutan modal.",
-          "Lebih dekat dengan tambahan output bersih setelah modal aus."
-        ],
-        [
-          "National Income (NI)",
-          "Pendapatan yang diterima faktor produksi: upah, sewa, bunga, laba.",
-          "Fokus pada sisi pendapatan faktor produksi."
-        ],
-        [
-          "Personal Income (PI)",
-          "Pendapatan yang benar-benar diterima rumah tangga sebelum pajak personal.",
-          "Tidak sama dengan NI karena ada laba ditahan, pajak perusahaan, transfer, dan kontribusi jaminan sosial."
-        ],
-        [
-          "Disposable Income (DI)",
-          "Pendapatan siap pakai setelah pajak personal.",
-          "DI = konsumsi + tabungan rumah tangga."
-        ]
+      "kind": "h2",
+      "text": "Real versus Nominal GDP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Nominal GDP**: Menilai produksi barang dan jasa menggunakan harga saat ini (current prices).",
+        "**Real GDP**: Menilai produksi barang dan jasa menggunakan harga konstan (tahun dasar). Real GDP menghilangkan distorsi akibat kenaikan harga/inflasi, sehingga menunjukkan murni perubahan kuantitas produksi."
       ]
+    },
+    {
+      "kind": "formula",
+      "text": "GDP Deflator = (Nominal GDP / Real GDP) × 100",
+      "note": "Keterangan: GDP Deflator adalah ukuran tingkat harga. Ia mengukur seberapa besar kenaikan GDP nominal yang disebabkan oleh kenaikan harga, bukan karena bertambahnya kuantitas barang yang diproduksi."
+    },
+    {
+      "kind": "h2",
+      "text": "Ukuran-Ukuran Pendapatan Lainnya"
     },
     {
       "kind": "chart-guide",
-      "title": "Panduan Membaca Diagram GDP ke DI",
+      "title": "Panduan Alur Pengurangan (GDP hingga DI)",
       "points": [
-        "**Gross National Product (GNP):** Ditambahkan dulu pendapatan faktor WNI dari luar negeri, dan dikurangi pendapatan faktor WNA di dalam negeri.",
-        "**Net National Product (NNP):** Dari GNP dikurangi **Penyusutan (Depresiasi)** mesin/modal.",
-        "**National Income (NI):** Dari NNP dikurangi **Pajak Tidak Langsung** (contoh: PPN).",
-        "**Personal Income (PI):** Dari NI dikurangi laba ditahan, pajak perusahaan, iuran jaminan sosial, dan ditambah **Transfer Payment**.",
-        "**Disposable Income (DI):** Dari PI dikurangi **Pajak Langsung** (contoh: PPh). Ini adalah uang tunai murni yang siap dibelanjakan atau ditabung."
+        "**GNP (Gross National Product):** Mengukur pendapatan seluruh warga negara. GNP = GDP + (Pendapatan faktor dari luar negeri - Pendapatan faktor ke luar negeri).",
+        "**NNP (Net National Product):** Mengukur produksi bersih setelah memperhitungkan depresiasi (keausan mesin/peralatan). NNP = GNP - Depresiasi.",
+        "**NI (National Income):** Sama dengan NNP, namun dikurangi pajak tidak langsung bisnis (seperti PPN).",
+        "**PI (Personal Income):** Pendapatan yang diterima rumah tangga. PI mengecualikan laba ditahan, pajak perusahaan, dan jaminan sosial, tetapi *memasukkan* pendapatan bunga dan transfer payment.",
+        "**DI (Disposable Income):** Pendapatan yang benar-benar siap dibelanjakan (setelah dipotong pajak penghasilan/pajak personal). Inilah uang tunai bersih rumah tangga. Sebagian besar dikonsumsi (C), sisanya ditabung (S)."
       ]
     },
     {
       "kind": "illustration",
       "type": "gdp-waterfall",
-      "caption": "Setiap langkah mengurangi satu komponen dari GDP hingga menjadi pendapatan yang benar-benar bisa dibelanjakan rumah tangga (Disposable Income). DI hanya punya dua tujuan: dikonsumsi (C) atau ditabung (S)."
+      "caption": "Langkah-langkah deduksi dari GDP hingga menjadi Disposable Income (DI)."
     },
     {
       "kind": "h2",
-      "text": "3 Pendekatan Perhitungan Pendapatan Nasional"
+      "text": "GDP dan Kesejahteraan Ekonomi"
     },
     {
       "kind": "p",
-      "text": "Dalam ujian, kesalahan paling umum adalah mencampur barang antara, barang akhir, transfer payment, dan transaksi finansial. GDP hanya menghitung produksi barang/jasa akhir yang baru diproduksi pada periode berjalan."
+      "text": "GDP adalah alat ukur tunggal terbaik untuk melihat kesejahteraan ekonomi masyarakat. GDP per kapita (GDP dibagi jumlah penduduk) mengukur rata-rata pendapatan dan pengeluaran seseorang dalam perekonomian. Secara umum, negara dengan GDP lebih tinggi memiliki standar hidup, harapan hidup, dan tingkat melek huruf yang lebih baik."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Kelemahan GDP",
+      "text": "Namun, GDP **bukanlah ukuran sempurna** untuk kebahagiaan atau kualitas hidup."
     },
     {
       "kind": "ul",
       "items": [
-        "**1. Pendekatan Produksi (Value Added):** Menjumlahkan nilai tambah pada setiap tahap produksi untuk menghindari penghitungan ganda (double counting). Nilai tambah = Penjualan − Biaya bahan baku/input antara.",
-        "**2. Pendekatan Pendapatan:** Menjumlahkan seluruh pendapatan: Wages/Salaries (upah), Interest (bunga), Rent (sewa), Laba Perusahaan, Pendapatan Usaha Bukan Badan Hukum, Pajak Bisnis Tak Langsung, dan Depresiasi.",
-        "**3. Pendekatan Pengeluaran:** Menjumlahkan pengeluaran akhir (C + I + G + NX)."
+        "**Nilai waktu luang (leisure)** tidak masuk dalam GDP.",
+        "**Lingkungan yang bersih** tidak menambah nilai GDP.",
+        "**Aktivitas non-pasar (di luar pasar)** tidak dihitung, seperti nilai waktu merawat anak sendiri di rumah atau kerja sukarela.",
+        "**Underground economy (ekonomi bawah tanah)**, yaitu banyak transaksi riil yang tidak tercatat oleh pemerintah karena informal atau dihindarkan dari pajak."
       ]
-    },
-    {
-      "kind": "table",
-      "caption": "Contoh Perhitungan Nilai Tambah (Menghindari Double Counting) - Tahapan Produksi Roti",
-      "headers": [
-        "Tahap Produksi",
-        "Nilai Penjualan",
-        "Biaya Input Antara",
-        "Nilai Tambah"
-      ],
-      "rows": [
-        [
-          "Gandum (Wheat)",
-          "23",
-          "0",
-          "23"
-        ],
-        [
-          "Tepung (Flour)",
-          "53",
-          "23",
-          "30"
-        ],
-        [
-          "Adonan (Dough)",
-          "110",
-          "53",
-          "57"
-        ],
-        [
-          "Roti (Final Product)",
-          "190",
-          "110",
-          "80"
-        ],
-        [
-          "**Total**",
-          "**376**",
-          "**186**",
-          "**190**"
-        ]
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "key",
-      "title": "Double Counting",
-      "text": "Jika kita menjumlahkan semua penjualan (376), kita menghitung barang berulang kali. GDP hanya mencatat **nilai penjualan produk akhir** (190), yang secara matematis selalu sama dengan **total seluruh nilai tambah** (190)."
-    },
-    {
-      "kind": "formula",
-      "text": "Identitas Pengeluaran Nasional\n\nY = C + I + G + NX\n\nNX = X − M\n\nDalam perekonomian tertutup: NX = 0, sehingga Y = C + I + G",
-      "note": "Keterangan Simbol:\nY = Pendapatan Nasional (GDP)\nC = Konsumsi Rumah Tangga\nI = Investasi\nG = Pengeluaran Pemerintah\nNX = Ekspor Neto\nX = Ekspor\nM = Impor"
-    },
-    {
-      "kind": "table",
-      "headers": [
-        "Komponen",
-        "Isi",
-        "Bukan termasuk"
-      ],
-      "rows": [
-        [
-          "C\n(Konsumsi)",
-          "Belanja konsumsi rumah tangga atas barang tahan lama, tidak tahan lama, dan jasa.",
-          "Pembelian rumah baru, karena masuk investasi residensial.\n💡 **Analogi:** Seperti kamu beli sembako, jajan boba, atau bayar langganan Netflix. Uang keluar dari dompetmu untuk dinikmati langsung."
-        ],
-        [
-          "I\n(Investasi)",
-          "Investasi bisnis, perubahan persediaan, pembelian rumah baru.",
-          "Pembelian saham lama; itu pertukaran aset finansial.\n💡 **Analogi:** Seperti pengusaha pabrik beli mesin jahit baru untuk nambah produksi baju, atau kamu ngebangun rumah baru. Ini uang keluar untuk bikin 'mesin pencetak uang' masa depan."
-        ],
-        [
-          "G\n(Pengeluaran Pemerintah)",
-          "Belanja pemerintah atas barang/jasa final.",
-          "Transfer seperti bantuan sosial, karena tidak membeli output baru secara langsung.\n💡 **Analogi:** Seperti Pemkot bayar gaji guru, beli aspal untuk jalan raya, atau bangun rumah sakit."
-        ],
-        [
-          "NX\n(Ekspor Neto)",
-          "Ekspor dikurangi impor.",
-          "Impor dikurangkan karena sudah masuk C/I/G tetapi diproduksi luar negeri.\n💡 **Analogi:** 'Kue' yang kita jual ke luar negeri dikurangi 'kue' yang kita beli dari luar negeri. Kalau positif, kita menang dagang."
-        ]
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Logika Interaktif Y = C + I + G + (X − M)"
-    },
-    {
-      "kind": "p",
-      "text": "Bagian ini penting untuk menjawab soal analisis. Identitas **Y = C + I + G + (X − M)** bukan sekadar rumus hafalan, tetapi peta hubungan antarbagian ekonomi. Ketika satu komponen berubah, dampaknya dapat menyebar ke komponen lain melalui pendapatan, ekspektasi, suku bunga, nilai tukar, inflasi, pajak, dan kebijakan pemerintah. Titik kritisnya: perubahan satu komponen tidak selalu otomatis membuat semua komponen lain berubah ke arah yang sama. Harus dilihat saluran transmisinya."
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Prinsip ujian",
-      "text": "bedakan efek langsung dan efek lanjutan. Jika X turun, yang turun langsung adalah ekspor dan NX, bukan C. C biasanya turun setelah pendapatan pekerja/perusahaan eksportir menurun. I bisa turun lebih cepat daripada C jika dunia usaha langsung merevisi ekspektasi permintaan."
-    },
-    {
-      "kind": "formula",
-      "text": "Identitas dan Alur Inti\n\nY = C + I + G + (X − M)\n\nJika C/I/G/X naik → AE naik → Y naik, selama kapasitas belum penuh.\n\nJika M naik → NX turun → kebocoran permintaan ke luar negeri naik → Y domestik cenderung turun.\n\nEfek total = efek langsung + multiplier + respons kebijakan + respons nilai tukar."
-    },
-    {
-      "kind": "h3",
-      "text": "Penggerak utama tiap komponen"
-    },
-    {
-      "kind": "table",
-      "headers": [
-        "Komponen",
-        "Naik jika...",
-        "Turun jika...",
-        "Catatan logika"
-      ],
-      "rows": [
-        [
-          "C\nConsumption",
-          "Pendapatan disposabel naik, keyakinan konsumen membaik, bunga kredit turun, inflasi terkendali.",
-          "Pendapatan riil turun, PHK naik, inflasi naik, cicilan/kredit mahal, ekspektasi krisis.",
-          "C relatif besar dan stabil, tetapi sensitif terhadap pendapatan riil serta ekspektasi rumah tangga."
-        ],
-        [
-          "I\nInvestment",
-          "Ekspektasi permintaan naik, suku bunga turun, kapasitas produksi hampir penuh, kredit lancar, stabilitas membaik.",
-          "Suku bunga naik, permintaan melemah, ketidakpastian naik, kurs melemah menaikkan biaya mesin/input impor.",
-          "I biasanya paling volatil. Dalam krisis, I sering turun lebih cepat karena pengusaha menunda ekspansi."
-        ],
-        [
-          "G\nGovernment spending",
-          "Pemerintah melakukan stimulus, belanja infrastruktur naik, transfer atau belanja barang/jasa diperbesar.",
-          "Konsolidasi fiskal, pemotongan anggaran, disiplin defisit, penerimaan negara melemah.",
-          "G sering menjadi penstabil karena dapat dinaikkan saat C/I/X melemah. Pajak dan bantuan sosial juga bekerja sebagai automatic stabilizer."
-        ],
-        [
-          "X\nExports",
-          "Pendapatan luar negeri naik, kurs domestik melemah secara riil, harga komoditas ekspor naik, daya saing membaik.",
-          "Resesi global, permintaan negara mitra turun, kurs domestik menguat secara riil, hambatan dagang naik.",
-          "X bergantung pada kondisi luar negeri. Negara kecil dan terbuka rentan jika mitra dagang utama melemah."
-        ],
-        [
-          "M\nImports",
-          "Pendapatan domestik naik, C dan I naik, kurs domestik menguat, barang impor relatif murah.",
-          "Pendapatan domestik turun, kurs domestik melemah, pembatasan impor, substitusi domestik meningkat.",
-          "M bukan selalu buruk. Impor barang modal bisa memperkuat kapasitas produksi, tetapi dalam identitas GDP ia dikurangkan karena bukan output domestik."
-        ]
-      ]
-    },
-    {
-      "kind": "h3",
-      "text": "Logika shock yang sering keluar di ujian"
-    },
-    {
-      "kind": "table",
-      "headers": [
-        "Skenario",
-        "Yang bergerak pertama",
-        "Rantai dampak yang masuk akal",
-        "Penstabil/penyeimbang"
-      ],
-      "rows": [
-        [
-          "Ekspor turun karena krisis global",
-          "X turun → NX turun → AE/Y turun.",
-          "Perusahaan eksportir kehilangan penjualan → laba dan produksi turun → I sektor terkait turun karena ekspektasi permintaan melemah → tenaga kerja/jam kerja turun → pendapatan rumah tangga turun → C turun. Karena Y turun, M juga bisa turun sehingga sebagian penurunan NX tertahan.",
-          "Depresiasi kurs dapat membantu ekspor menjadi lebih kompetitif, tetapi efeknya tidak instan. Pemerintah dapat menaikkan G, memberi insentif sektor terdampak, atau mencari pasar ekspor baru. Bank sentral dapat melonggarkan moneter jika inflasi terkendali."
-        ],
-        [
-          "Rupiah melemah terhadap USD",
-          "Harga impor naik; beban utang/input USD naik; daya saing ekspor bisa membaik.",
-          "M cenderung turun karena impor mahal, tetapi biaya produksi naik jika industri memakai input impor. Inflasi impor menekan daya beli sehingga C riil bisa turun. I bisa turun jika mesin, bahan baku, dan utang valas menjadi mahal. X bisa naik jika permintaan luar negeri elastis dan perusahaan mampu menambah produksi.",
-          "Bank sentral dapat menaikkan suku bunga, intervensi valas, atau menjaga ekspektasi inflasi. Pemerintah dapat menjaga pasokan bahan pokok, memberi dukungan terbatas untuk sektor strategis, dan mendorong substitusi impor. Dampak ke NX tidak pasti dalam jangka pendek karena ada kemungkinan J-curve."
-        ],
-        [
-          "Konsumsi rumah tangga naik",
-          "C naik → AE/Y naik.",
-          "Penjualan perusahaan naik → persediaan turun → produksi dinaikkan → tenaga kerja dan pendapatan naik → C bisa naik lagi melalui multiplier. I dapat ikut naik jika perusahaan melihat permintaan akan bertahan. M juga cenderung naik karena sebagian konsumsi memakai barang impor. Jika kapasitas penuh, inflasi bisa naik.",
-          "Pajak otomatis naik ketika pendapatan naik sehingga menahan overheating. Bank sentral bisa menaikkan suku bunga jika kenaikan C menekan inflasi. Peningkatan produksi domestik dapat menahan kenaikan impor."
-        ],
-        [
-          "Investasi turun karena suku bunga naik",
-          "I turun → AE/Y turun.",
-          "Proyek ekspansi ditunda → permintaan mesin, konstruksi, dan tenaga kerja turun → pendapatan turun → C turun. M barang modal juga turun. Dalam jangka panjang, kapasitas produksi masa depan bisa ikut melemah jika penurunan I berlangsung lama.",
-          "Jika tujuan kenaikan bunga adalah menurunkan inflasi, stabilisasi harga dapat memulihkan kepercayaan. Pemerintah dapat mengarahkan G ke proyek produktif, tetapi harus hati-hati terhadap defisit dan crowding out."
-        ],
-        [
-          "Belanja pemerintah naik",
-          "G naik → AE/Y naik.",
-          "Pendapatan kontraktor/pekerja/pemasok naik → C naik. I bisa naik jika dunia usaha melihat permintaan meningkat atau kapasitas mulai penuh. M dapat naik karena sebagian belanja dan konsumsi tambahan memakai impor. Jika ekonomi sudah dekat kapasitas penuh, inflasi dan suku bunga bisa naik.",
-          "Automatic stabilizer, desain belanja produktif, dan koordinasi fiskal-moneter. G lebih efektif jika diarahkan ke sektor dengan multiplier tinggi dan kebocoran impor rendah."
-        ],
-        [
-          "Impor naik",
-          "M naik → NX turun secara akuntansi.",
-          "Jika impor naik karena C barang impor meningkat, permintaan bocor ke luar negeri dan output domestik bisa tertekan. Jika impor naik karena barang modal untuk investasi produktif, efek jangka pendek NX turun, tetapi I dan kapasitas produksi masa depan bisa naik.",
-          "Substitusi impor yang efisien, peningkatan produktivitas domestik, dan kebijakan industri yang tidak sekadar proteksionis. Jangan langsung menyimpulkan impor naik pasti buruk."
-        ],
-        [
-          "Krisis kepercayaan/financial shock",
-          "I turun lebih dulu; C barang tahan lama juga turun.",
-          "Ketidakpastian membuat perusahaan menahan investasi dan rumah tangga menunda konsumsi besar. Kredit mengetat → I turun → produksi turun → PHK naik → C turun. Jika modal asing keluar, kurs melemah dan inflasi impor dapat memperburuk daya beli.",
-          "Penjaminan likuiditas, penurunan suku bunga jika memungkinkan, stimulus fiskal terarah, perlindungan sosial, dan komunikasi kebijakan untuk memulihkan ekspektasi."
-        ]
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Urutan jawaban yang aman",
-      "text": "mulai dari komponen yang terkena shock langsung, lalu jelaskan dampaknya ke AE/Y, pendapatan, C, I, M, inflasi, kurs, dan respons kebijakan. Jangan menjawab “semua turun” atau “semua naik” tanpa mekanisme."
-    },
-    {
-      "kind": "h3",
-      "text": "Mini-peta timbal balik"
-    },
-    {
-      "kind": "p",
-      "text": "X↓  permintaan luar turun  →  NX↓ & Y↓  efek langsung  →  Profit/kerja↓  pendapatan turun  →  C↓ dan I↓  efek lanjutan  →  M↓ / G↑  penahan sebagian"
-    },
-    {
-      "kind": "diagram",
-      "type": "export-shock-flow",
-      "caption": "Efek langsung terjadi pada X dan NX. Konsumsi serta investasi turun melalui pendapatan dan ekspektasi, bukan secara otomatis pada saat yang sama."
-    },
-    {
-      "kind": "diagram",
-      "type": "depreciation-flow",
-      "caption": "Depresiasi dapat memperbaiki daya saing ekspor tetapi sekaligus menaikkan biaya impor dan inflasi. Efek bersihnya harus dianalisis dengan syarat yang jelas."
-    },
-    {
-      "kind": "p",
-      "text": "Rupiah melemah  USD lebih mahal  →  M mahal & inflasi impor↑  →  C riil↓ / I biaya↑  →  X bisa↑  jika elastis  →  NX tidak pasti  lihat elastisitas & lag"
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Catatan kurs",
-      "text": "dalam pembahasan Indonesia, “rupiah turun terhadap USD” biasanya berarti rupiah melemah/depresiasi dan USD makin mahal. Jangan tertukar dengan “kurs USD/IDR turun”, yang justru sering berarti rupiah menguat jika angka rupiah per dolar menurun."
-    },
-    {
-      "kind": "h2",
-      "text": "Nominal, Riil, Deflator, dan CPI"
-    },
-    {
-      "kind": "p",
-      "text": "GDP nominal menghitung output dengan harga tahun berjalan, sedangkan GDP riil menggunakan harga tahun dasar. Karena itu, GDP nominal bisa naik hanya karena harga naik, walaupun jumlah barang tidak berubah. GDP riil lebih tepat untuk melihat perubahan volume produksi."
-    },
-    {
-      "kind": "formula",
-      "text": "Rumus Penting\n\nNominal GDP = Σ(P_t × Q_t)\n\nReal GDP = Σ(P_base × Q_t)\n\nGDP Deflator = (Nominal GDP / Real GDP) × 100\n\nInflation rate = [(Price Index_t − Price Index_{t−1}) / Price Index_{t−1}] × 100%",
-      "note": "Keterangan Simbol:\nP_t = Harga pada tahun berjalan (current year)\nQ_t = Kuantitas pada tahun berjalan\nP_base = Harga pada tahun dasar (base year)\nPrice Index = Indeks Harga (dapat berupa GDP Deflator atau CPI)"
-    },
-    {
-      "kind": "table",
-      "headers": [
-        "GDP Deflator",
-        "CPI/IHK"
-      ],
-      "rows": [
-        [
-          "Mengukur harga semua barang/jasa final yang diproduksi domestik.",
-          "Mengukur harga keranjang konsumsi rumah tangga."
-        ],
-        [
-          "Keranjang berubah mengikuti output tahun berjalan.",
-          "Keranjang relatif tetap dalam periode tertentu."
-        ],
-        [
-          "Tidak langsung memasukkan barang impor jika tidak diproduksi domestik.",
-          "Barang impor yang dikonsumsi rumah tangga bisa masuk keranjang CPI."
-        ]
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Keterbatasan GDP sebagai Ukuran Kesejahteraan"
-    },
-    {
-      "kind": "p",
-      "text": "GDP penting, tetapi tidak boleh disamakan begitu saja dengan kesejahteraan. GDP tinggi sering berkorelasi dengan standar hidup yang lebih baik, tetapi GDP tidak mengukur seluruh aspek kualitas hidup."
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Kegiatan nonpasar** seperti pekerjaan rumah tangga dan perawatan keluarga tidak selalu tercatat.",
-        "**Ekonomi informal dan underground economy** dapat membuat produksi aktual lebih besar daripada data resmi.",
-        "**Distribusi pendapatan** tidak terlihat; GDP per kapita tinggi bisa tetap diikuti ketimpangan besar.",
-        "**Kualitas lingkungan** tidak otomatis tercermin; produksi yang merusak lingkungan tetap menaikkan GDP.",
-        "**Leisure, keamanan, kesehatan mental, dan kualitas institusi** tidak tercatat langsung.",
-        "**Perubahan kualitas barang** sulit diukur sempurna, terutama pada teknologi digital."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Contoh & Jebakan Ujian"
-    },
-    {
-      "kind": "math-example",
-      "title": "Contoh Perhitungan PDB Riil & GDP Deflator",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Misalkan sebuah negara hanya memproduksi Hot Dog dan Hamburger. Tahun dasar adalah 2013."
-        },
-        {
-          "kind": "table",
-          "headers": ["Tahun", "Harga Hot Dog", "Kuantitas Hot Dog", "Harga Hamburger", "Kuantitas Hamburger"],
-          "rows": [
-            ["2013", "$1", "100", "$2", "50"],
-            ["2014", "$2", "150", "$3", "100"]
-          ]
-        },
-        {
-          "kind": "p",
-          "text": "**Langkah 1: Menghitung Nominal GDP** (menggunakan harga tahun berjalan)\n- 2013: ($1 × 100) + ($2 × 50) = $200\n- 2014: ($2 × 150) + ($3 × 100) = $600"
-        },
-        {
-          "kind": "p",
-          "text": "**Langkah 2: Menghitung Real GDP** (menggunakan harga tahun dasar 2013)\n- 2013: ($1 × 100) + ($2 × 50) = $200\n- 2014: ($1 × 150) + ($2 × 100) = $350"
-        },
-        {
-          "kind": "p",
-          "text": "**Langkah 3: Menghitung GDP Deflator** (Nominal / Real × 100)\n- 2013: ($200 / $200) × 100 = 100\n- 2014: ($600 / $350) × 100 = 171"
-        }
-      ]
-    },
-    {
-      "kind": "math-example",
-      "title": "Contoh Hitung GDP Pendekatan Pengeluaran",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Diketahui data suatu negara: \n- Konsumsi (C) = 800\n- Investasi (I) = 250\n- Pengeluaran Pemerintah (G) = 300\n- Ekspor (X) = 120\n- Impor (M) = 170"
-        },
-        {
-          "kind": "p",
-          "text": "**Langkah Penyelesaian:**\n1. Cari Ekspor Neto (NX) = X - M = 120 - 170 = -50\n2. Masukkan ke rumus Y = C + I + G + NX\n3. Y = 800 + 250 + 300 + (-50) = 1.300"
-        }
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Jebakan",
-      "text": "transfer pemerintah, pembelian obligasi, pembelian saham, dan barang bekas bukan produksi final baru. Jangan masukkan ke GDP kecuali ada jasa baru yang muncul, misalnya komisi broker."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Data Riil: Ekonomi Indonesia 2025",
-      "text": "PDB Indonesia 2025 atas dasar harga berlaku (nilai nominal) mencapai Rp23.821,1 triliun, sedangkan atas dasar harga konstan tahun dasar 2010 (nilai riil) sebesar Rp13.580,5 triliun. Selisih keduanya mencerminkan peran perubahan harga sejak tahun dasar. Ekonomi tumbuh 5,11% pada 2025, naik dari 5,03% pada 2024. PDB per kapita, yaitu PDB dibagi jumlah penduduk sebagai ukuran kasar output rata-rata per orang, mencapai Rp83,7 juta atau sekitar USD 5.083. Dari sisi pengeluaran, konsumsi rumah tangga tetap menjadi komponen terbesar, sekitar 53,9% PDB.\n\n*Snapshot resmi: BPS, rilis 5 Februari 2026; periode data tahun 2025.*"
-    },
-    {
-      "kind": "p",
-      "text": "Sumber: BPS, rilis 5 Februari 2026."
     },
     {
       "kind": "practice-box",
-      "title": "Latihan Soal Ujian (Bab 1: Pendapatan Nasional)",
+      "title": "Latihan Cepat Mengingat Konsep",
       "blocks": [
         {
           "kind": "p",
-          "text": "1. Jika PDB nominal tahun 2024 adalah 1.200 dan PDB riil adalah 800, berapakah GDP Deflator tahun 2024?\n2. Sebuah perusahaan roti membeli tepung senilai Rp50.000, ragi Rp10.000, lalu menjual rotinya seharga Rp100.000. Berapa nilai tambah (value added) dari perusahaan tersebut?\n3. Jelaskan mengapa pembelian rumah baru dimasukkan ke dalam 'Investasi' bukan 'Konsumsi'!"
+          "text": "1. Apa kepanjangan dari C, I, G, dan NX dalam pendekatan pengeluaran?\n2. Mengapa mobil bekas yang kamu beli di dealer tahun ini tidak dihitung masuk ke dalam GDP tahun ini?\n3. Mengapa pembelian roti (barang akhir) tidak boleh ditambahkan dengan pembelian tepungnya (barang antara) saat menghitung GDP?"
         }
       ],
-      "answerKey": "1. **150.** (Nominal / Riil × 100 = 1200 / 800 × 100 = 150)\n2. **Rp40.000.** (Penjualan dikurangi biaya input antara = 100.000 - 50.000 - 10.000)\n3. Pembelian rumah baru masuk ke dalam investasi perumahan (residential investment) karena rumah merupakan aset jangka panjang (capital good) yang memberikan 'layanan perumahan' (housing services) selama bertahun-tahun, layaknya sebuah mesin pabrik bagi perusahaan."
+      "answerKey": "1. **C**onsumption (Konsumsi), **I**nvestment (Investasi), **G**overnment Purchases (Belanja Pemerintah), **N**et e**X**ports (Ekspor Neto).\n2. Karena syarat GDP adalah barang/jasa yang **diproduksi pada periode berjalan (saat ini)**. Mobil bekas adalah produksi masa lalu yang nilainya sudah dihitung pada GDP di tahun mobil tersebut pertama kali diproduksi.\n3. Karena nilai tepung sudah dimasukkan (terkandung) di dalam harga akhir roti. Menjumlahkan keduanya akan menyebabkan **Double Counting** (penghitungan ganda)."
     }
   ]
 };

@@ -1,0 +1,330 @@
+MEASURING 
+NATION’S INCOME
+Week08
+INTRODUCTION
+⦿ In this week, we will discuss the data 
+that economists and policymakers use 
+to monitor the performance of the overall 
+economy. This data is gross domestic 
+product (GDP).
+GROSS DOMESTIC 
+PRODUCT
+⦿GDP is the market value of all final 
+goods and services produced within a 
+country in a given period of time.
+⦿PDB adalah nilai pasar seluruh 
+barang dan jasa akhir yang diproduksi 
+di suatu negara dalam jangka waktu 
+tertentu.
+GROSS DOMESTIC 
+PRODUCT
+⦿ “GDP is the Market Value . . .”
+⚫Output is valued at market prices.
+⦿ “. . . of All . . .”
+⚫It includes all items produced in the economy and 
+sold legally in markets.
+⦿ “. . . Final . . .”
+⚫It records only the value of final goods, not 
+intermediate goods (the value is counted only 
+once).
+⦿ “. . . Goods and Services . . . “
+⚫It includes both tangible goods (food, clothing, 
+cars) and intangible services (haircuts, 
+housecleaning, doctor visits). 
+GROSS DOMESTIC 
+PRODUCT
+⦿ “. . . Produced . . .”
+⚫It includes goods and services currently 
+produced, not transactions involving goods 
+produced in the past.
+⦿ “ . . . Within a Country . . .”
+⚫It measures the value of production within 
+the geographic confines of a country.
+GROSS DOMESTIC 
+PRODUCT
+⦿ “. . . In a Given Period of Time.”
+⚫It measures the value of production that 
+takes place within a specific interval of time, 
+usually a year or a quarter (three months) 
+GROSS DOMESTIC 
+PRODUCT
+⦿ GDP includes all items produced in the 
+economy and sold legally in markets.
+⦿ GDP excludes most items that are:
+⚫produced and consumed at home and 
+that never enter the marketplace,
+⚫produced and sold illicitly, such as illegal 
+drugs.
+How to measure GDP?
+⦿ GDP can be measured as ….
+1. a sum of spending (or expenditure) on final 
+products, or
+2. a sum of income or earnings
+Both approach yield exactly the same 
+measure of GDP, because
+⚫every transaction has a buyer and a seller.
+⚫every dollar of spending by some buyer is a 
+dollar of income for some seller
+CIRCULAR FLOW OF ECONOMIC 
+ACTIVITY
+Spending
+Goods and
+services
+bought
+Revenue
+Goods
+and services
+sold
+Labor, land,
+and capital
+Income
+= Flow of inputs 
+and outputs
+= Flow of dollars
+Factors of
+production
+Wages, rent,
+and profit
+FIRMS
+• Produce and sell
+goods and services
+• Hire and use factors
+of production
+• Buy and consume
+goods and services
+• Own and sell factors
+of production
+HOUSEHOLDS
+• Households sell
+• Firms buy
+MARKETS
+FOR
+FACTORS OF PRODUCTION
+• Firms sell
+• Households buy
+MARKETS
+FOR
+GOODS AND SERVICES
+THE PROBLEM OF DOUBLE 
+COUNTING
+⦿ How to avoid double counting?
+⚫We have to include only final goods that are 
+produced and sold for consumption or investment, 
+and exclude the intermediate goods that are used 
+up in making the final goods.
+⚫We have to calculate value added at each stage of 
+production.
+○ The value added can be defined as the difference 
+between a firm’s sales and its purchases of materials 
+and services from other firms.
+GDP Sums up Value Added at 
+Each Production Stage
+Stage of 
+Production
+Sales 
+receipts
+Less: Cost of 
+intermediate 
+products
+Value added 
+(wages, 
+profits, etc.)
+(1) (2) (3) = (1) – (2)
+Wheat 23 0 23
+Flour 53 23 30
+Baked dough 110 53 57
+Final product: 
+bread 190 110 80
+Total 376 186 190
+Note: final sales of bread = total earnings = total value added = 190
+Expenditure Approach
+1 Personal consumption expenditures
+Durable goods
+Nondurable goods
+Services
+2 Gross private domestic investment
+Fixed investment (both residential and nonresidential) 
+Change in private inventories
+3 Government consumption expenditure and gross investment
+(both state and local government)
+4 Net export of goods and services
+Export
+Import
+Gross Domestic Product (GDP) = 1 + 2 + 3 + 4
+Income Approach
+1 Wages, salaries, and other labor incomes
+2 Interest
+3 Rental income of person
+4 Indirect business taxes
+5 Depreciation
+6 Income of unincorporated enterprises
+7 Corporate profits before taxes
+Corporate profit taxes
+Dividend
+Undistributed profit
+Gross Domestic Product (GDP) = sum of 1 to 7
+DETAIL OF THE COMPONENTS 
+OF GDP
+⦿ GDP (Y) is the sum of the following:
+⚫Consumption (C)
+⚫ Investment (I)
+⚫ Government Purchases (G)
+⚫ Net Exports (NX)
+GDP: Y = C + I + G + NX
+This equation is an identity equation
+DETAIL OF THE COMPONENTS 
+OF GDP
+⦿ Consumption (C)
+⚫The spending by households on goods and 
+services, with the exception of purchases of new 
+housing.
+⚫Pengeluaran rumah tangga untuk barang dan jasa, 
+kecuali pembelian rumah baru.
+⦿ Investment (I)
+⚫The spending on capital equipment, inventories, 
+and structures, including new housing.
+⚫Pengeluaran untuk peralatan modal, persediaan, 
+dan struktur, termasuk perumahan baru.
+DETAIL OF THE COMPONENTS 
+OF GDP
+⦿ Government Purchases (G)
+⚫The spending on goods and services by local, state, and 
+federal governments.
+⚫Does not include transfer payments because they are not 
+made in exchange for currently produced goods or 
+services.
+⚫Pengeluaran barang dan jasa oleh pemerintah lokal, 
+negara bagian, dan federal.
+⚫Tidak termasuk pembayaran transfer karena tidak 
+dilakukan sebagai imbalan atas barang atau jasa yang 
+diproduksi saat ini
+⦿ Net Exports (NX)
+⚫Exports minus imports.
+Distribusi Persentase Produk Domestik Bruto 
+Indonesia Atas Dasar Harga Berlaku Menurut 
+Komponen Pengeluaran, 2015-2019
+
+REAL VERSUS NOMINAL GDP
+⦿Nominal GDP values the production of 
+goods and services at current prices.
+⦿Real GDP values the production of 
+goods and services at constant prices.
+⚫An accurate view of the economy requires 
+adjusting nominal to real GDP by using the 
+GDP deflator.
+REAL VERSUS NOMINAL GDP
+
+Produk Domestik Bruto Indonesia Menurut 
+Komponen Pengeluaran Atas Dasar Harga Berlaku 
+(miliar rupiah), 2015 - 2019
+
+Produk Domestik Bruto Indonesia Menurut 
+Komponen Pengeluaran Atas Dasar Harga Konstan 
+2010 (miliar rupiah), 2015 - 2019
+
+THE GDP DEFLATOR
+⦿ The GDP deflator is a measure of the 
+price level calculated as:
+⦿ It tells us the rise in nominal GDP that is 
+attributable to a rise in prices rather than 
+a rise in the quantities produced. 
+
+Other Measures of Income
+⦿ Gross national product (GNP) is the total 
+income earned by a nation’s permanent 
+residents (called nationals).
+⚫It differs from GDP in that it includes income 
+that our citizens earn abroad and excludes 
+income that foreigners earn here.
+cont’d
+⦿ GNP = GDP + (IR – IP)
+IR = factor income received from abroad
+IP = factor income paid to abroad
+IR – IP = net factor income received from 
+abroad
+Cont’d
+⦿ Net national product (NNP) is the total 
+income of a nation’s residents
+(GNP) minus losses from depreciation.
+⚫Depreciation is the wear and
+tear on the economy’s stock of equipment 
+and structures, such as trucks rusting and 
+old computer models becoming obsolete
+Cont’d
+⦿ National income is the total income 
+earned by a nation’s residents in the 
+production of goods and services.
+⚫It is almost identical to net national product.
+⚫These two measures differ because of the 
+statistical discrepancy that arises from 
+problems in data collection.
+Cont’d
+⦿ Personal income is the income that 
+households and noncorporate businesses 
+receive.
+⚫it excludes retained earnings, which is income that 
+corporations have earned but have not paid out to 
+their owners. 
+⚫It also subtracts indirect business taxes (such as 
+sales taxes), corporate income taxes, and 
+contributions for social insurance (mostly Social 
+Security taxes). → PAJAK TDK LANGSUNG
+⚫It includes the interest income that households 
+receive from their holdings of government debt and 
+the income that households receive from 
+government transfer programs, such as welfare and 
+Social Security.
+Cont’d
+⦿ Disposable personal income is the income that 
+households and noncorporate businesses have 
+left after satisfying all their obligations to the 
+government. It equals personal income minus 
+personal taxes and certain nontax payments.
+FROM GDP TO NATIONAL INCOME 
+(NI) TO DISPOSABLE INCOME (DI)
+⦿ GDP = C + I + G + NX
+⚫Less Depreciation
+⚫Less Indirect Taxes
+⦿ Equal to National Income (NI)
+⚫Minus Direct Taxes
+⚫Minus Net Business Saving
+⚫Plus Transfer payment
+⦿ Equal to Disposable Income (DI)
+
+GDP AND ECONOMIC WELL-
+BEING
+⦿ GDP is the best single measure of the 
+economic well-being of a society. 
+⦿ GDP per person tells us the income and 
+expenditure of the average person in the 
+economy.
+GDP AND ECONOMIC WELL-
+BEING
+⦿ Higher GDP per person indicates a 
+higher standard of living.
+⦿ However, GDP is not a perfect measure 
+of the happiness or quality of life.
+GDP AND ECONOMIC 
+WELL-BEING
+⦿ Some things that contribute to well-being are not 
+included in GDP.
+⚫The value of leisure.
+⚫The value of a clean environment.
+⚫The value of almost all activity that takes place outside of 
+markets, such as the value of the time parents spend with 
+their children and the value of volunteer work.
+⦿ Nilai waktu luang.
+⦿ Nilai lingkungan yang bersih.
+⦿ Nilai dari hampir semua aktivitas yang terjadi di luar 
+pasar, seperti nilai waktu yang dihabiskan orang tua 
+bersama anak-anaknya dan nilai kerja sukarela.
+GDP and Well-being
+
+GDP, Life Expectancy, Literacy and Life 
+Satisfaction
+
+The gross domestic product misses many 
+transactions that take place in the underground 
+economy
+
+Thank you

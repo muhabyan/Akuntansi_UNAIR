@@ -172,57 +172,12 @@ export const GDPWaterfallDiagram: React.FC = () => (
   </div>
 );
 
-export const CausalFlow: React.FC<{ steps: string[], note?: string, theme: 'danger' | 'warning' }> = ({ steps, note, theme }) => {
-  const borderClass = theme === 'danger' ? 'border-rose-500/50' : 'border-amber-500/50';
-  const textClass = theme === 'danger' ? 'text-rose-400' : 'text-amber-400';
-  
-  return (
-    <div className="w-full my-6 bg-slate-900 rounded-2xl p-4 sm:p-6 border border-slate-800 shadow-xl">
-      <div className="flex flex-col md:flex-row items-stretch justify-between gap-3 md:gap-2">
-        {steps.map((step, i) => (
-          <React.Fragment key={i}>
-            <div className={`flex-1 flex items-center justify-center text-center p-4 rounded-xl bg-slate-800 border-2 ${borderClass} shadow-md`}>
-              <span className="text-slate-200 font-semibold text-sm leading-snug">{step}</span>
-            </div>
-            {i < steps.length - 1 && (
-              <div className="flex items-center justify-center shrink-0 py-1 md:py-0">
-                <span className={`hidden md:block text-2xl font-bold ${textClass}`}>→</span>
-                <span className={`md:hidden text-2xl font-bold ${textClass}`}>↓</span>
-              </div>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-      {note && (
-        <div className="mt-6 p-4 rounded-xl bg-slate-950 border border-slate-800 text-center">
-          <p className="text-slate-400 text-sm font-medium leading-relaxed">{note}</p>
-        </div>
-      )}
-    </div>
-  );
-};
-
 export default function EconDiagram({ type }: { type: string }) {
   switch (type) {
     case 'circular-flow':
       return <CircularFlowDiagram />;
     case 'gdp-waterfall':
       return <GDPWaterfallDiagram />;
-    case 'export-shock-flow':
-      return (
-        <CausalFlow 
-          theme="danger"
-          steps={['Ekspor X turun', 'NX dan AE turun', 'Produksi dan laba turun', 'Pendapatan, C, dan I turun', 'M turun atau G naik menahan efek']}
-        />
-      );
-    case 'depreciation-flow':
-      return (
-        <CausalFlow 
-          theme="warning"
-          steps={['Rupiah melemah', 'Harga impor dan biaya input naik', 'Inflasi impor menekan C dan I', 'Ekspor dapat lebih kompetitif', 'Dampak NX bergantung elastisitas dan lag']}
-          note="Hasil tidak otomatis positif: periksa kandungan impor, kapasitas produksi, elastisitas permintaan, dan J-curve."
-        />
-      );
     default:
       return <div className="p-4 border border-red-500 text-red-500 rounded-lg">Diagram type '{type}' not found.</div>;
   }
