@@ -212,6 +212,17 @@ const tm8: Reading = {
     },
     {
       "kind": "formula",
+      "text": "Nominal GDP = Σ (Kuantitas Tahun Ini × Harga Tahun Ini)\nReal GDP = Σ (Kuantitas Tahun Ini × Harga Tahun Dasar)",
+      "note": "Kunci Perbedaan: Nominal GDP memakai harga yang sedang berlaku (sehingga tercampur inflasi), sedangkan Real GDP mengunci/mematok harga pada satu tahun dasar tertentu agar bebas dari efek inflasi."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Contoh Perhitungan & Analisis Kritis: Nominal vs Real",
+      "text": "Misalkan Negara X hanya memproduksi Apel. Tahun Dasar 2020: produksi 100 apel @Rp2.000. Tahun Ini 2024: produksi 100 apel @Rp4.000.\n\n- **Nominal GDP 2024:** 100 apel × Rp4.000 = Rp400.000 (Seolah-olah ekonomi tumbuh 2x lipat!)\n- **Real GDP 2024 (pakai harga 2020):** 100 apel × Rp2.000 = Rp200.000\n\n**Interpretasi Analitis:** Nilai Real GDP 2024 ternyata persis sama dengan tahun 2020 (Rp200.000). Ini membuktikan bahwa **secara riil ekonomi tidak tumbuh sama sekali** karena produksi tetap 100 apel. Kenaikan Nominal GDP menjadi Rp400.000 hanyalah \"pertumbuhan semu\" yang murni merupakan ilusi dari inflasi harga."
+    },
+    {
+      "kind": "formula",
       "text": "GDP Deflator = (Nominal GDP / Real GDP) × 100",
       "note": "Indeks ini khusus dirancang untuk mengukur tingkat harga. Ia memberi tahu kita porsi kenaikan nominal yang murni disebabkan oleh faktor inflasi harga, alih-alih peningkatan kuantitas output."
     },
