@@ -404,7 +404,7 @@ const tm9: Reading = {
     },
     {
       "kind": "p",
-      "text": "Perekonomian tertutup dua sektor adalah model paling mendasar untuk memahami mesin penggerak ekonomi. Di sini, ruang isolasi diberlakukan: kita **hanya** memiliki dua aktor utama, yakni **Rumah Tangga (Households)** dan **Perusahaan (Firms)**. Model ini melarang adanya campur tangan Pemerintah (tanpa pajak $T$ atau belanja $G$) dan tidak ada perdagangan internasional (tanpa ekspor $X$ atau impor $M$)."
+      "text": "Perekonomian tertutup dua sektor adalah model paling mendasar untuk memahami mesin penggerak ekonomi. Di sini, ruang isolasi diberlakukan: kita **hanya** memiliki dua aktor utama, yakni **Rumah Tangga (Households)** dan **Perusahaan (Firms)**. Model ini melarang adanya campur tangan Pemerintah (tanpa pajak T atau belanja G) dan tidak ada perdagangan internasional (tanpa ekspor X atau impor M)."
     },
     {
       "kind": "h2",
@@ -427,7 +427,7 @@ const tm9: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Bedah Kritis: Mengapa C₀ Tidak Pernah Nol?",
-      "text": "**Interpretasi Ekstrem:** Bayangkan sebuah negara dilanda krisis total hingga Pendapatan (Y) = $0. Apakah konsumsi (C) menjadi nol? **TIDAK.** Manusia tetap harus makan untuk bertahan hidup. Mereka akan mencairkan tabungan masa lalu, menjual aset, atau berutang. Inilah makna absolut dari $C_0$ (Autonomous Consumption). Nilai $C_0$ memastikan kurva konsumsi tidak pernah bermula dari titik (0,0) di grafik."
+      "text": "**Interpretasi Ekstrem:** Bayangkan sebuah negara dilanda krisis total hingga Pendapatan (Y) = $0. Apakah konsumsi (C) menjadi nol? **TIDAK.** Manusia tetap harus makan untuk bertahan hidup. Mereka akan mencairkan tabungan masa lalu, menjual aset, atau berutang. Inilah makna absolut dari C₀ (Autonomous Consumption). Nilai C₀ memastikan kurva konsumsi tidak pernah bermula dari titik (0,0) di grafik."
     },
     {
       "kind": "h2",
@@ -569,7 +569,7 @@ const tm9: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Interpretasi Keterkaitan: Ekuilibrium & Break-Even",
-      "text": "Grafik di atas merangkum hubungan matematis mutlak antara Konsumsi dan Tabungan:\n\n- Pada sumbu vertikal (C, S), titik **a** melambangkan Konsumsi Otonom ($C_0$). Karena konsumsi ini harus dibayar meski tak punya pendapatan, ia menghasilkan utang yang digambarkan sebagai titik **-a** (Dissaving) pada fungsi tabungan.\n- Titik E adalah **Break-Even Point**. Di sini, Kurva Konsumsi berpotongan dengan Garis 45 Derajat (C=Y). Seluruh pendapatan habis dikonsumsi.\n- Tepat pada tingkat pendapatan yang sama ($Y_E$), **Kurva Tabungan memotong sumbu horizontal**. Artinya, Tabungan (S) persis bernilai Nol (0). Garis putus-putus membuktikan bahwa perpotongan E dan titik $S=0$ selalu sejajar vertikal!"
+      "text": "Grafik di atas merangkum hubungan matematis mutlak antara Konsumsi dan Tabungan:\n\n- Pada sumbu vertikal (C, S), titik **a** melambangkan Konsumsi Otonom (C₀). Karena konsumsi ini harus dibayar meski tak punya pendapatan, ia menghasilkan utang yang digambarkan sebagai titik **-a** (Dissaving) pada fungsi tabungan.\n- Titik E adalah **Break-Even Point**. Di sini, Kurva Konsumsi berpotongan dengan Garis 45 Derajat (C=Y). Seluruh pendapatan habis dikonsumsi.\n- Tepat pada tingkat pendapatan yang sama, yakni pada titik Y (Ekuilibrium), **Kurva Tabungan memotong sumbu horizontal**. Artinya, Tabungan (S) persis bernilai Nol (0). Garis putus-putus membuktikan bahwa perpotongan E dan titik S=0 selalu sejajar vertikal!"
     },
     {
       "kind": "h2",
