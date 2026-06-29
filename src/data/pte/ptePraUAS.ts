@@ -596,6 +596,36 @@ const tm9: Reading = {
       "variant": "info",
       "title": "Perbedaan Mendasar",
       "text": "- **Rate of Return on Investment:** Dihitung berdasarkan imbal hasil dari **Aset Riil / Tangible** (seperti mobil rental tadi, mesin pabrik, dll).\n- **Interest Rate (Suku Bunga):** Dihitung berdasarkan imbal hasil dari **Aset Finansial** (seperti bunga deposito di bank, bunga obligasi, dll)."
+    },
+    {
+      "kind": "h2",
+      "text": "Present Value (Nilai Sekarang) dan Harga Aset"
+    },
+    {
+      "kind": "formula",
+      "text": "Nilai Sekarang (Present Value):\nV = [ N₁ / (1+i) ] + [ N₂ / (1+i)² ] + ... + [ N_t / (1+i)^t ]",
+      "note": "Di mana V = Nilai sekarang aset, N = Penerimaan bersih (net receipts) di masa depan, dan i = Suku Bunga (Interest rate)."
+    },
+    {
+      "kind": "p",
+      "text": "Present value dari sebuah aset adalah nilai uang hari ini dari aliran pendapatan (stream of future income) yang akan dihasilkan aset tersebut di masa depan."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Hukum Inverse: Suku Bunga vs Harga Aset",
+      "text": "Terdapat hukum mutlak dalam aset finansial: **Harga aset cenderung bergerak berlawanan (inversely) dengan suku bunga.** Mengapa? Karena berdasarkan rumus di atas, jika angka penyebut yakni suku bunga (i) membesar, maka hasil pembagiannya alias nilai sekarang (Present Value) otomatis menyusut secara matematis.\n\nOleh karena itu, **Harga saham, obligasi, real estat, dan banyak aset berumur panjang lainnya akan TURUN seiring dengan kenaikan suku bunga.**"
+    },
+    {
+      "kind": "h2",
+      "text": "Suku Bunga Riil vs Nominal"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Nominal Interest Rate (Suku Bunga Nominal):** Suku bunga yang tertera di atas kertas (misal, bunga deposito 5% di bank). Suku bunga ini belum memperhitungkan kejamnya inflasi.",
+        "**Real Interest Rate (Suku Bunga Riil):** Adalah Suku Bunga Nominal yang **telah dikoreksi/dikurangi dengan tingkat Inflasi**. Ini menunjukkan daya beli sesungguhnya dari imbal hasilmu."
+      ]
     }
   ]
 };
