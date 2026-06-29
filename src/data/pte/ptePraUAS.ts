@@ -536,6 +536,66 @@ const tm9: Reading = {
       "variant": "info",
       "title": "Interpretasi Kunci",
       "text": "Perhatikan bahwa angka MPC terus menerus **0.80** dan MPS selalu **0.20** di sepanjang tabel. Hal ini membuktikan bahwa Fungsi Konsumsi dan Tabungan di kasus ini berbentuk **Linear (Garis Lurus)** dengan kemiringan (slope) konstan. Jika fungsinya melengkung (non-linear), maka angka MPC akan berubah di tiap tingkatan."
+    },
+    {
+      "kind": "h2",
+      "text": "Grafik 3: Keterkaitan Absolut Konsumsi dan Tabungan"
+    },
+    {
+      "kind": "figure",
+      "title": "Titik Temu Break-Even (Y_E)",
+      "svg": "<svg font-family=\"DM Sans, sans-serif\" style=\"max-width:100%;height:auto;margin:0 auto;display:block\" viewBox=\"0 0 450 350\" xmlns=\"http://www.w3.org/2000/svg\"><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"400\" y1=\"200\" y2=\"200\"></line><line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"100\" x2=\"100\" y1=\"300\" y2=\"50\"></line><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"80\" y=\"60\">C,S</text><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"410\" y=\"205\">Y</text><line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"100\" x2=\"300\" y1=\"200\" y2=\"0\"></line><text fill=\"#9aa4b7\" font-size=\"11\" transform=\"rotate(-45 250 50)\" x=\"250\" y=\"50\">C = Y</text><line stroke=\"#4f9cf9\" stroke-width=\"2\" x1=\"50\" x2=\"380\" y1=\"160\" y2=\"60\"></line><text fill=\"#4f9cf9\" font-size=\"11\" font-weight=\"bold\" transform=\"rotate(-15 300 80)\" x=\"300\" y=\"80\">C = a + bY</text><line stroke=\"#d81b60\" stroke-width=\"2\" x1=\"50\" x2=\"380\" y1=\"240\" y2=\"140\"></line><text fill=\"#d81b60\" font-size=\"11\" font-weight=\"bold\" transform=\"rotate(-15 300 160)\" x=\"280\" y=\"160\">S = -a + (1 - b)Y</text><circle cx=\"231.5\" cy=\"105\" fill=\"#f9a825\" r=\"4\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"240\" y=\"110\">E</text><circle cx=\"231.5\" cy=\"200\" fill=\"#f9a825\" r=\"4\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"225\" y=\"215\">Y_E</text><line stroke=\"#f9a825\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"231.5\" x2=\"231.5\" y1=\"200\" y2=\"105\"></line><circle cx=\"100\" cy=\"145\" fill=\"#9aa4b7\" r=\"3\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" x=\"85\" y=\"145\">a</text><circle cx=\"100\" cy=\"225\" fill=\"#9aa4b7\" r=\"3\"></circle><text fill=\"#9aa4b7\" font-size=\"12\" x=\"75\" y=\"230\">-a</text></svg>",
+      "caption": "Grafik gabungan Fungsi Konsumsi (C = a + bY) dan Fungsi Tabungan (S = -a + (1-b)Y). Jarak dari 0 ke 'a' sama persis dengan jarak dari 0 ke '-a'."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Interpretasi Keterkaitan: Ekuilibrium & Break-Even",
+      "text": "Grafik di atas merangkum hubungan matematis mutlak antara Konsumsi dan Tabungan:\n\n- Pada sumbu vertikal (C, S), titik **a** melambangkan Konsumsi Otonom ($C_0$). Karena konsumsi ini harus dibayar meski tak punya pendapatan, ia menghasilkan utang yang digambarkan sebagai titik **-a** (Dissaving) pada fungsi tabungan.\n- Titik E adalah **Break-Even Point**. Di sini, Kurva Konsumsi berpotongan dengan Garis 45 Derajat (C=Y). Seluruh pendapatan habis dikonsumsi.\n- Tepat pada tingkat pendapatan yang sama ($Y_E$), **Kurva Tabungan memotong sumbu horizontal**. Artinya, Tabungan (S) persis bernilai Nol (0). Garis putus-putus membuktikan bahwa perpotongan E dan titik $S=0$ selalu sejajar vertikal!"
+    },
+    {
+      "kind": "h2",
+      "text": "Mesin Kedua: Investasi (Perspektif Makro & BPS)"
+    },
+    {
+      "kind": "p",
+      "text": "Awas jebakan teori makro! Banyak orang awam menyebut \"berinvestasi\" saat mereka membeli tanah, membeli saham, atau menaruh uang di rekening tabungan. Dalam ekonomi makro, transaksi tersebut hanyalah **transaksi finansial (financial investments)**, karena efek nettonya hanyalah berpindah tangan (Zero-Sum Game)."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Investasi Makroekonomi (Real Investment):** Harus berarti **penambahan stok aset produktif atau barang modal baru**. Contoh: Amazon membangun gudang baru, atau Tuan Smith membangun rumah baru.",
+        "**Klasifikasi BPS (Badan Pusat Statistik):** Investasi di Indonesia dibagi menjadi dua kategori mutlak:\n1. **Pembentukan Modal Tetap Bruto (PMTB / GFCF):** Pengeluaran barang modal dengan umur > 1 tahun (bukan barang konsumsi). Mencakup: bangunan tempat tinggal/bukan tempat tinggal, jalan, bandara, mesin & peralatan. (Catatan: Senjata militer dihitung sebagai konsumsi pemerintah, bukan PMTB).\n2. **Perubahan Stok (Inventory Investment):** Barang yang akan dipakai, sedang dikerjakan, atau sudah jadi tapi belum terjual. Dihitung dari selisih stok akhir tahun dikurangi stok awal tahun."
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Kategori Kapital & Aset"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Tangible Assets (Aset Berwujud):** Aset fisik yang meningkatkan produktivitas. Dibagi 3:\n  - *Structures* (Pabrik, rumah)\n  - *Equipment* (Mesin, mobil, truk)\n  - *Inventories* (Stok mobil di dealer)\n- **Intangible Assets / e-Capital:** Aset tak berwujud yang saat ini makin krusial (Software komputer, paten, merek dagang).\n- **Financial Assets (Aset Finansial):** Hanya berupa secarik kertas atau catatan elektronik berupa klaim moneter pihak satu terhadap pihak lain (contoh: KPR/Mortgage, di mana rumah fisiknya menjadi jaminan/collateral)."
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Rate of Return vs Interest Rate"
+    },
+    {
+      "kind": "p",
+      "text": "Apa fungsi Aset Finansial jika ia bukan 'investasi riil'? Fungsinya sangat vital: **Menjembatani ketidakcocokan (mismatch) antara orang yang punya tabungan (saver) dengan pengusaha yang butuh modal (investors).**"
+    },
+    {
+      "kind": "formula",
+      "text": "Rate of Return on Investment (RoR)\nRoR = (Net Revenue / Modal Diinvestasikan) × 100%",
+      "note": "Contoh: Perusahaan rental 'KARTIKA' beli mobil bekas seharga $20.000. Laba bersih setahun $2.400. Maka RoR = (2.400 / 20.000) = 12%."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Perbedaan Mendasar",
+      "text": "- **Rate of Return on Investment:** Dihitung berdasarkan imbal hasil dari **Aset Riil / Tangible** (seperti mobil rental tadi, mesin pabrik, dll).\n- **Interest Rate (Suku Bunga):** Dihitung berdasarkan imbal hasil dari **Aset Finansial** (seperti bunga deposito di bank, bunga obligasi, dll)."
     }
   ]
 };
