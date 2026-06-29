@@ -83,12 +83,12 @@ export const CircularFlowDiagram: React.FC = () => (
       <text x="1040" y="450" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
 
       {/* Legend */}
-      <rect x="480" y="350" width="240" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
-      <path d="M 500 385 L 540 385" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green-legend)" />
-      <text x="560" y="390" fill="#334155" fontSize="16" fontWeight="600">= Flow of dollars</text>
+      <rect x="450" y="350" width="300" height="100" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
+      <path d="M 480 385 L 520 385" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green-legend)" />
+      <text x="540" y="390" fill="#334155" fontSize="16" fontWeight="600">= Flow of dollars</text>
 
-      <path d="M 500 425 L 540 425" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange-legend)" />
-      <text x="560" y="430" fill="#334155" fontSize="16" fontWeight="600">= Flow of inputs/outputs</text>
+      <path d="M 480 425 L 520 425" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange-legend)" />
+      <text x="540" y="430" fill="#334155" fontSize="16" fontWeight="600">= Flow of inputs/outputs</text>
     </svg>
   </div>
 );

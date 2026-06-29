@@ -53,12 +53,12 @@ const tm8: Reading = {
     {
       "kind": "ul",
       "items": [
-        "**\"Market Value...\"**: Kita tidak bisa menjumlahkan 10 mobil dan 100 potong roti menjadi '110 barang'—itu tidak masuk akal. Semua barang harus diuangkan (dinilai dengan harga pasarnya). Jika harga mobil Rp200 juta dan roti Rp10 ribu, kita jumlahkan nilai rupiahnya.",
-        "**\"... of All ...\"**: Mencakup semua barang dan jasa yang diproduksi dan dijual secara *legal* di pasar. *Contoh: Sayuran di swalayan dihitung, tapi sayuran yang kamu tanam sendiri di halaman rumah untuk dimakan sendiri tidak dihitung.*",
-        "**\"... Final ...\"**: Ini sangat penting! GDP hanya menghitung barang *akhir*, bukan barang *antara* (bahan baku). *Contoh: Kalau pabrik kertas menjual kertas ke penerbit buku, yang dihitung dalam GDP hanyalah harga jual BUKUNYA, karena nilai kertas sudah melekat di harga buku.* Tujuannya agar tidak terjadi **double counting** (penghitungan ganda).",
+        "**\"Market Value...\"**: Kita tidak bisa menjumlahkan 10 mobil dan 100 potong roti menjadi '110 barang'—itu tidak masuk akal. Semua barang harus diuangkan (dinilai dengan harga pasarnya). ==Jika harga mobil Rp200 juta dan roti Rp10 ribu, kita jumlahkan nilai rupiahnya.==",
+        "**\"... of All ...\"**: Mencakup semua barang dan jasa yang diproduksi dan dijual secara *legal* di pasar. *Contoh: ==Sayuran di swalayan dihitung, tapi sayuran yang kamu tanam sendiri di halaman rumah untuk dimakan sendiri tidak dihitung.==*",
+        "**\"... Final ...\"**: Ini sangat penting! GDP hanya menghitung barang *akhir*, bukan barang *antara* (bahan baku). *Contoh: ==Kalau pabrik kertas menjual kertas ke penerbit buku, yang dihitung dalam GDP hanyalah harga jual BUKUNYA, karena nilai kertas sudah melekat di harga buku.==* Tujuannya agar tidak terjadi **double counting** (penghitungan ganda).",
         "**\"... Goods and Services ...\"**: GDP menghitung benda fisik (seperti baju, mobil, makanan) dan juga jasa tak berwujud (seperti tiket konser, jasa potong rambut, biaya ke dokter).",
-        "**\"... Produced ...\"**: GDP adalah ukuran produksi *tahun berjalan*. *Contoh: Jika kamu membeli mobil bekas keluaran tahun 2020 hari ini, nilai mobil itu TIDAK MASUK ke GDP tahun ini. Mobil itu sudah pernah dihitung pada GDP tahun 2020.*",
-        "**\"... Within a Country ...\"**: Konsepnya adalah *batas wilayah geografis*. *Contoh: Pabrik Honda (milik Jepang) yang ada di Karawang tetap dihitung ke dalam GDP Indonesia karena beroperasi di dalam negeri.*",
+        "**\"... Produced ...\"**: GDP adalah ukuran produksi *tahun berjalan*. *Contoh: ==Jika kamu membeli mobil bekas keluaran tahun 2020 hari ini, nilai mobil itu TIDAK MASUK ke GDP tahun ini. Mobil itu sudah pernah dihitung pada GDP tahun 2020.==*",
+        "**\"... Within a Country ...\"**: Konsepnya adalah *batas wilayah geografis*. *Contoh: ==Pabrik Honda (milik Jepang) yang ada di Karawang tetap dihitung ke dalam GDP Indonesia karena beroperasi di dalam negeri.==*",
         "**\"... In a Given Period of Time.\"**: Biasanya diukur per tahun (annual) atau per 3 bulan (kuartal). Angka ini menunjukkan kecepatan aliran uang dan barang dalam rentang waktu tersebut."
       ]
     },
@@ -85,7 +85,7 @@ const tm8: Reading = {
     },
     {
       "kind": "p",
-      "text": "Kenapa hasilnya selalu identik? Karena di dunia nyata, **setiap transaksi selalu melibatkan dua pihak: pembeli dan penjual**. Uang Rp50.000 yang kamu *keluarkan* (pengeluaran) untuk membeli segelas es kopi susu akan otomatis tercatat sebagai Rp50.000 *pendapatan* bagi sang pemilik kedai kopi."
+      "text": "Kenapa hasilnya selalu identik? Karena di dunia nyata, **setiap transaksi selalu melibatkan dua pihak: pembeli dan penjual**. ==Uang Rp50.000 yang kamu keluarkan (pengeluaran) untuk membeli segelas es kopi susu akan otomatis tercatat sebagai Rp50.000 pendapatan bagi sang pemilik kedai kopi.=="
     },
     {
       "kind": "h2",
@@ -135,7 +135,7 @@ const tm8: Reading = {
         },
         {
           "kind": "p",
-          "text": "Perhatikan bahwa **total dari seluruh nilai tambah tahapan produksi (190)** nilainya ternyata persis sama dengan **harga jual akhir produk roti (190)**. Inilah angka tunggal yang benar-benar dicatat dalam GDP. Jika kita gegabah menotal semua penjualannya (menjadi 376), itu berarti harga petani gandum dihitung berulang kali di tiap pabrik!"
+          "text": "Perhatikan bahwa **total dari seluruh nilai tambah tahapan produksi (190)** nilainya ternyata ==persis sama dengan harga jual akhir produk roti (190)==. Inilah angka tunggal yang benar-benar dicatat dalam GDP. Jika kita gegabah menotal semua penjualannya (menjadi 376), itu berarti harga petani gandum dihitung berulang kali di tiap pabrik!"
         }
       ]
     },
@@ -159,10 +159,10 @@ const tm8: Reading = {
     {
       "kind": "ul",
       "items": [
-        "**Consumption (C):** Pengeluaran masyarakat rumah tangga untuk barang (baju, makanan, gadget) dan jasa (pendidikan, dokter). *Catatan: Pembelian rumah baru TIDAK masuk C, melainkan I.*",
-        "**Investment (I):** Belanja perusahaan untuk barang modal (mesin pabrik, komputer kantor), penambahan persediaan (inventory) yang belum terjual, dan pembelian rumah baru oleh rumah tangga. Ingat, 'Investasi' di makroekonomi berarti pembelian barang fisik baru untuk produksi, BUKAN investasi nabung saham di bursa!",
-        "**Government Purchases (G):** Belanja pemerintah pusat/daerah untuk barang dan jasa (contoh: membeli kendaraan operasional, menggaji PNS, aspal jalan). *Hati-hati: Bantuan Sosial (Bansos) atau uang pensiun disebut Transfer Payment dan TIDAK masuk dalam G, karena pemerintah membagikan uang secara cuma-cuma tanpa mendapat barang/jasa sebagai gantinya.*",
-        "**Net Exports (NX):** Ekspor (X) dikurangi Impor (M). Kenapa porsi impor harus dikurangi? Karena saat kamu membeli HP rakitan China, nilai HP itu sudah terlanjur dicatat masuk ke komponen Konsumsi (C). Kalau impornya tidak dikurangkan sebagai penyeimbang, seolah-olah HP itu hasil produksi dalam negeri Indonesia."
+        "**Consumption (C):** Pengeluaran masyarakat rumah tangga untuk barang (baju, makanan, gadget) dan jasa (pendidikan, dokter). *Catatan: ==Pembelian rumah baru TIDAK masuk C, melainkan I.==*",
+        "**Investment (I):** Belanja perusahaan untuk barang modal (mesin pabrik, komputer kantor), penambahan persediaan (inventory) yang belum terjual, dan pembelian rumah baru oleh rumah tangga. Ingat, =='Investasi' di makroekonomi berarti pembelian barang fisik baru untuk produksi, BUKAN investasi nabung saham di bursa!==",
+        "**Government Purchases (G):** Belanja pemerintah pusat/daerah untuk barang dan jasa (contoh: membeli kendaraan operasional, menggaji PNS, aspal jalan). *Hati-hati: ==Bantuan Sosial (Bansos) atau uang pensiun disebut Transfer Payment dan TIDAK masuk dalam G, karena pemerintah membagikan uang secara cuma-cuma tanpa mendapat barang/jasa sebagai gantinya.==*",
+        "**Net Exports (NX):** Ekspor (X) dikurangi Impor (M). Kenapa porsi impor harus dikurangi? ==Karena saat kamu membeli HP rakitan China, nilai HP itu sudah terlanjur dicatat masuk ke komponen Konsumsi (C). Kalau impornya tidak dikurangkan sebagai penyeimbang, seolah-olah HP itu hasil produksi dalam negeri Indonesia.=="
       ]
     },
     {
@@ -194,8 +194,8 @@ const tm8: Reading = {
     {
       "kind": "ul",
       "items": [
-        "**Nominal GDP**: Menghitung nilai produksi pakai **harga yang berlaku tahun ini**. Kalau harga sembako tiba-tiba naik 2 kali lipat karena langka, GDP Nominal akan ikut-ikutan naik 2 kali lipat meskipun realitanya kita tidak memproduksi lebih banyak sembako.",
-        "**Real GDP**: Menghitung nilai produksi pakai **harga konstan** (dipatok mati pada patokan harga tahun dasar tertentu). Karena fluktuasi harganya dikunci rapat, maka setiap kenaikan Real GDP murni mencerminkan naiknya jumlah kuantitas barang/jasa yang diproduksi. Inilah tolok ukur kinerja ekonomi yang paling jujur."
+        "**Nominal GDP**: Menghitung nilai produksi pakai **harga yang berlaku tahun ini**. ==Kalau harga sembako tiba-tiba naik 2 kali lipat karena langka, GDP Nominal akan ikut-ikutan naik 2 kali lipat meskipun realitanya kita tidak memproduksi lebih banyak sembako.==",
+        "**Real GDP**: Menghitung nilai produksi pakai **harga konstan** (dipatok mati pada patokan harga tahun dasar tertentu). ==Karena fluktuasi harganya dikunci rapat, maka setiap kenaikan Real GDP murni mencerminkan naiknya jumlah kuantitas barang/jasa yang diproduksi.== Inilah tolok ukur kinerja ekonomi yang paling jujur."
       ]
     },
     {
@@ -215,11 +215,11 @@ const tm8: Reading = {
       "kind": "chart-guide",
       "title": "Panduan Alur Menurun (Waterfall): Dari GDP menjadi Uang Siap Belanja (DI)",
       "points": [
-        "**GNP (Gross National Product):** Fokus pada Warga Negara, di manapun lokasinya. Pabrik sepatu milik pengusaha lokal Indonesia di Vietnam masuk GNP Indonesia. Sebaliknya, pabrik raksasa milik asing di Bekasi TIDAK masuk GNP Indonesia. (GNP = GDP + Pendapatan orang kita di Luar - Pendapatan orang luar di negara kita).",
+        "**GNP (Gross National Product):** Fokus pada Warga Negara, di manapun lokasinya. ==Pabrik sepatu milik pengusaha lokal Indonesia di Vietnam masuk GNP Indonesia. Sebaliknya, pabrik raksasa milik asing di Bekasi TIDAK masuk GNP Indonesia.== (GNP = GDP + Pendapatan orang kita di Luar - Pendapatan orang luar di negara kita).",
         "**NNP (Net National Product):** Angka GNP dikurangi depresiasi (biaya penyusutan keausan mesin/pabrik). Kenapa dikurangi? Karena mesin yang rusak/tua adalah kerugian nilai ekonomi.",
         "**NI (National Income):** Sama persis dengan NNP, namun dikurangi lagi dengan Pajak Tidak Langsung Bisnis (seperti PPN dan cukai).",
         "**PI (Personal Income):** NI dirombak menjadi pendapatan level rumah tangga. Kita mencabut porsi laba yang ditahan perusahaan (yang tidak dibagikan) dan pajak perusahaan, lalu *menambahkan* komponen pendapatan bunga dan dana Bansos (Transfer Payment) dari pemerintah.",
-        "**DI (Disposable Income):** Langkah terakhir yang paling riil! PI dikurangi Pajak Penghasilan Pribadi. Inilah uang tunai bersih paling final di tangan masyarakat yang benar-benar siap mereka pakai untuk **Konsumsi (C)** maupun **Ditabung (S)**."
+        "**DI (Disposable Income):** Langkah terakhir yang paling riil! PI dikurangi Pajak Penghasilan Pribadi. ==Inilah uang tunai bersih paling final di tangan masyarakat yang benar-benar siap mereka pakai untuk Konsumsi (C) maupun Ditabung (S).=="
       ]
     },
     {
@@ -248,9 +248,9 @@ const tm8: Reading = {
     {
       "kind": "ul",
       "items": [
-        "**Waktu Luang (Leisure):** Bayangkan jika pemerintah membuat aturan: tidak ada hari libur, semua orang harus lembur setiap hari. Angka GDP pasti meroket drastis karena produksi naik berlipat. Tapi apakah rakyatnya bahagia?",
+        "**Waktu Luang (Leisure):** ==Bayangkan jika pemerintah membuat aturan: tidak ada hari libur, semua orang harus lembur setiap hari. Angka GDP pasti meroket drastis karena produksi naik berlipat. Tapi apakah rakyatnya bahagia?==",
         "**Kualitas Lingkungan:** Sebuah pabrik tekstil besar bebas membuang limbah beracun ke sungai, menghasilkan baju senilai triliunan (menaikkan nilai GDP), tapi angka GDP sama sekali tidak dikurangi oleh 'kerusakan sungai' atau 'biaya sakit kulit warga sekitar'.",
-        "**Aktivitas Non-Pasar yang Penuh Kasih Sayang:** Kebaikan luar biasa seorang ibu yang merawat anaknya sendiri 24 jam sehari di rumah tidak dihitung sepeser pun oleh sistem (karena dilakukan gratis). Namun jika sang ibu menyewa *babysitter* berbayar, bayarannya tiba-tiba dihitung dan GDP negara melonjak naik.",
+        "**Aktivitas Non-Pasar yang Penuh Kasih Sayang:** ==Kebaikan luar biasa seorang ibu yang merawat anaknya sendiri 24 jam sehari di rumah tidak dihitung sepeser pun oleh sistem (karena dilakukan gratis). Namun jika sang ibu menyewa babysitter berbayar, bayarannya tiba-tiba dihitung dan GDP negara melonjak naik.==",
         "**Ekonomi Bawah Tanah (Underground Economy):** Terdapat miliaran uang berputar setiap hari di transaksi informal pedagang kaki lima tanpa kuitansi atau sengaja disembunyikan agar lolos dari kewajiban pajak. Uang riilnya ada, tapi angkanya gaib di mata pemerintah."
       ]
     },

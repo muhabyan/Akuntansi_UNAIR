@@ -6,11 +6,11 @@ interface MarkdownContentProps {
 
 /**
  * Lightweight inline markdown renderer used by course blocks.
- * Supports bold, italic, inline code, and markdown links without pulling
+ * Supports bold, italic, inline code, markdown links, and ==highlight== without pulling
  * a full markdown runtime into the course data path.
  */
 export function renderText(text: string): React.ReactNode[] {
-  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^\n]*?\*\*|\*[^\n]*?\*|`[^`]+`)/g);
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^\n]*?\*\*|\*[^\n]*?\*|`[^`]+`|==[^\n]*?==)/g);
 
   return parts.map((part, index) => {
     if (!part) return null;
@@ -33,6 +33,10 @@ export function renderText(text: string): React.ReactNode[] {
 
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={index} className="text-gold font-bold">{part.slice(2, -2)}</strong>;
+    }
+    
+    if (part.startsWith('==') && part.endsWith('==')) {
+      return <strong key={index} className="text-blue-600 dark:text-blue-400 font-extrabold">{part.slice(2, -2)}</strong>;
     }
 
     if (part.startsWith('*') && part.endsWith('*')) {
