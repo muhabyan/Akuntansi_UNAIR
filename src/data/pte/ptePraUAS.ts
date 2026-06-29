@@ -550,6 +550,12 @@ const tm9: Reading = {
       "text": "Perhatikan bahwa angka MPC terus menerus **0.80** dan MPS selalu **0.20** di sepanjang tabel. Hal ini membuktikan bahwa Fungsi Konsumsi dan Tabungan di kasus ini berbentuk **Linear (Garis Lurus)** dengan kemiringan (slope) konstan. Jika fungsinya melengkung (non-linear), maka angka MPC akan berubah di tiap tingkatan."
     },
     {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "🚨 HACK SOAL UJIAN (UAS): Cara Mengekstrak Rumus dari Tabel",
+      "text": "Dosen PTE sangat suka memberikan tabel buta di ujian (seperti kuis yang kamu kirim), di mana kamu harus mencari sendiri fungsi C = a + bY nya.\n\n**Langkah Brutal Menaklukkan Tabel Ujian:**\n1. **Cari Angka MPC (b):** Ambil dua baris sembarang di tabel. Hitung selisih Konsumsi (ΔC) lalu bagi dengan selisih Pendapatan (ΔY). Ketemulah nilai b (slope).\n2. **Cari Konsumsi Otonom (a):** Jika tabel tidak memiliki baris awal di mana Y = 0, jangan panik! Ambil salah satu baris data, misalnya baris di mana Y = 1.000 dan C = 900. Masukkan ke kerangka fungsi: 900 = a + (MPC × 1000). Dari situ, nilai 'a' akan ketahuan secara aljabar.\n3. **Cari Break-Even Point (Y = C):** Setelah rumus C = a + bY didapat, untuk mencari titik keseimbangan absolut, samakan fungsinya: Y = C. Jadinya: Y = a + bY. Pindahkan variabel Y ke satu sisi, beres!\n\n*(Kuasai 3 urutan ini, dan 90% soal tabel makro tidak akan bisa menjebakmu!)*"
+    },
+    {
       "kind": "h2",
       "text": "Grafik 3: Keterkaitan Absolut Konsumsi dan Tabungan"
     },
@@ -643,7 +649,7 @@ const tm9: Reading = {
       "kind": "callout",
       "variant": "key",
       "title": "Eksekusi Angka: Persamaan Fisher (Fisher Equation)",
-      "text": "Hubungan antara Suku Bunga Nominal ($i$), Suku Bunga Riil ($r$), dan Inflasi ($\\pi$) dirumuskan oleh Irving Fisher secara matematis:\n\n**r = i - π**\n\n**Studi Kasus Kritis:**\nKamu melihat Bank X menawarkan bunga deposito tinggi sebesar **10%** (Nominal $i$). Kamu tergiur dan menaruh uang $1.000 (berharap jadi $1.100 tahun depan). Namun, ternyata tahun itu negara dilanda hiperinflasi sebesar **15%** ($\\pi$).\n\n**Hasil & Interpretasi:**\n$r = 10\\% - 15\\% = \\mathbf{-5\\%}$\n\nSecara riil, suku bungamu **negatif 5%**. Artinya, meski uang di rekeningmu bertambah secara angka, daya beli sesungguhnya justru **merosot 5%**. Kamu bukannya makin kaya, melainkan makin miskin karena digerogoti inflasi! Inilah hasil nyata dari ilusi uang (money illusion) yang sangat ditakuti para ekonom."
+      "text": "Hubungan antara Suku Bunga Nominal (i), Suku Bunga Riil (r), dan Inflasi (π) dirumuskan oleh Irving Fisher secara matematis:\n\n**r = i - π**\n\n**Studi Kasus Kritis:**\nKamu melihat Bank X menawarkan bunga deposito tinggi sebesar **10%** (Nominal i). Kamu tergiur dan menaruh uang $1.000 (berharap jadi $1.100 tahun depan). Namun, ternyata tahun itu negara dilanda hiperinflasi sebesar **15%** (π).\n\n**Hasil & Interpretasi:**\nr = 10% - 15% = **-5%**\n\nSecara riil, suku bungamu **negatif 5%**. Artinya, meski uang di rekeningmu bertambah secara angka, daya beli sesungguhnya justru **merosot 5%**. Kamu bukannya makin kaya, melainkan makin miskin karena digerogoti inflasi! Inilah hasil nyata dari ilusi uang (money illusion) yang sangat ditakuti para ekonom."
     }
   ]
 };
