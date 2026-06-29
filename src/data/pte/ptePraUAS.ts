@@ -388,118 +388,119 @@ const tm8: Reading = {
 
 const tm9: Reading = {
   "tm": 9,
-  "title": "Perekonomian Tertutup (Bagian 1): Identitas, Konsumsi, Tabungan & Dana Pinjaman",
+  "title": "Perekonomian Tertutup: Model Dua Sektor (Konsumsi & Investasi)",
   "ref": "Kontrak: 1(20), 2(23,24) · Substansi: Samuelson Ch.21–22; Mankiw Ch.26, Ch.33–34",
-  "intro": "Membangun identitas ekonomi tertutup, fungsi konsumsi-tabungan, hubungan S = I, dan mekanisme pasar dana pinjaman.",
+  "intro": "Membedah struktur ekonomi paling murni tanpa pemerintah, membongkar mesin konsumsi rumah tangga, perilaku investasi perusahaan, dan keajaiban efek multiplier.",
   "objectives": [
-    "Menurunkan identitas tabungan nasional, tabungan privat, dan tabungan publik.",
-    "Menggunakan fungsi konsumsi dan tabungan serta MPC dan MPS.",
-    "Menjelaskan mengapa S = I dalam ekonomi tertutup.",
-    "Menganalisis suku bunga riil dan crowding out melalui pasar dana pinjaman."
+    "Memahami anatomi ekonomi dua sektor (Rumah Tangga dan Perusahaan).",
+    "Menjelaskan fungsi konsumsi, fungsi tabungan, serta menghitung MPC dan MPS.",
+    "Membedakan investasi makro riil vs finansial dan memahami efek suku bunga terhadap nilai aset.",
+    "Menghitung keseimbangan output (Y = C + I) dan menerapkan Investment Multiplier."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Identitas Ekonomi Tertutup"
+      "text": "Pengantar: Anatomi Ekonomi Dua Sektor"
     },
     {
       "kind": "p",
-      "text": "Perekonomian tertutup adalah perekonomian yang tidak melakukan transaksi barang, jasa, dan aset finansial dengan luar negeri. Dalam model ini, ekspor dan impor dianggap nol, sehingga analisis berfokus pada interaksi rumah tangga, perusahaan, dan pemerintah di dalam negeri."
-    },
-    {
-      "kind": "formula",
-      "text": "Identitas Dasar\n\nY = C + I + G\n\nJika tanpa pemerintah: Y = C + I\n\nJika ekonomi tertutup: NX = 0"
-    },
-    {
-      "kind": "p",
-      "text": "Identitas ini bukan teori perilaku, melainkan persamaan akuntansi. Teori muncul ketika kita menjelaskan bagaimana C, I, dan G ditentukan, serta bagaimana perubahan salah satu komponen memengaruhi output ekuilibrium."
-    },
-    {
-      "kind": "formula",
-      "text": "Tabungan dan Investasi dalam Ekonomi Tertutup\n\nNational saving: S = Y − C − G\n\nPrivate saving: S_private = Y − T − C\n\nPublic saving: S_public = T − G\n\nS = S_private + S_public\n\nDalam ekonomi tertutup: S = I"
-    },
-    {
-      "kind": "callout",
-      "variant": "key",
-      "title": "Makna S = I",
-      "text": "dana yang tidak dikonsumsi oleh rumah tangga/pemerintah menjadi sumber pembiayaan investasi domestik. Jika defisit pemerintah naik, tabungan publik turun dan bisa menekan dana investasi swasta melalui crowding out."
+      "text": "Perekonomian tertutup dua sektor adalah model paling mendasar untuk memahami mesin penggerak ekonomi. Di sini, ruang isolasi diberlakukan: kita **hanya** memiliki dua aktor, yakni **Rumah Tangga (Consumers)** dan **Perusahaan (Investors)**. Model ini melarang adanya campur tangan Pemerintah (tanpa pajak $T$ atau belanja $G$) dan tidak ada perdagangan internasional (tanpa ekspor $X$ atau impor $M$)."
     },
     {
       "kind": "h2",
-      "text": "Konsumsi, Tabungan, dan Investasi"
+      "text": "Mesin Pertama: Konsumsi & Tabungan (Consumption & Saving)"
     },
     {
       "kind": "p",
-      "text": "Konsumsi biasanya menjadi komponen terbesar pengeluaran agregat. Model sederhana Keynesian menempatkan konsumsi sebagai fungsi dari pendapatan disposabel. Semakin besar pendapatan disposabel, konsumsi naik, tetapi biasanya tidak sebesar kenaikan pendapatan karena sebagian ditabung. Di Indonesia, konsumsi rumah tangga adalah komponen pengeluaran terbesar, sekitar 53,9% PDB pada 2025 (BPS, rilis 5 Feb 2026)."
+      "text": "Dalam dunia dua sektor, setiap keping uang (Disposable Income) yang diterima oleh Rumah Tangga secara matematis hanya memiliki dua takdir: **Dibelanjakan (C)** atau **Ditabung (S)**."
     },
     {
       "kind": "formula",
-      "text": "Fungsi Konsumsi dan Tabungan\n\nC = a + bY_d\n\nS = Y_d − C = −a + (1−b)Y_d\n\nMPC = ΔC/ΔY_d = b\n\nMPS = ΔS/ΔY_d = 1−b\n\nMPC + MPS = 1"
+      "text": "Fungsi Konsumsi: C = C₀ + bY\nFungsi Tabungan: S = Y - C  =>  S = -C₀ + (1-b)Y",
+      "note": "C₀ adalah Konsumsi Otonom (kebutuhan mutlak untuk bertahan hidup meskipun pendapatan nol). Angka 'b' melambangkan hasrat konsumsi (MPC), sedangkan '(1-b)' melambangkan hasrat menabung (MPS)."
     },
     {
-      "kind": "table",
-      "headers": [
-        "Istilah",
-        "Makna",
-        "Implikasi"
-      ],
-      "rows": [
-        [
-          "Autonomous consumption (a)",
-          "Konsumsi minimum saat pendapatan nol.",
-          "Dibiayai dari tabungan lama, utang, atau transfer."
-        ],
-        [
-          "MPC",
-          "Tambahan konsumsi dari tambahan pendapatan.",
-          "Semakin tinggi MPC, semakin besar multiplier."
-        ],
-        [
-          "MPS",
-          "Tambahan tabungan dari tambahan pendapatan.",
-          "Semakin tinggi MPS, semakin kecil multiplier."
-        ],
-        [
-          "Investasi",
-          "Pengeluaran untuk menambah modal, persediaan, atau bangunan.",
-          "Dipengaruhi suku bunga, ekspektasi laba, teknologi, kapasitas, dan stabilitas ekonomi."
-        ]
+      "kind": "ul",
+      "items": [
+        "**MPC (Marginal Propensity to Consume):** Derajat sensitivitas konsumsi. Berapa porsi tambahan konsumsi jika kamu dapat tambahan pendapatan? Jika gajimu naik Rp1.000 dan kamu pakai Rp800 untuk makan, maka MPC = 0,8.",
+        "**MPS (Marginal Propensity to Save):** Derajat sensitivitas menabung. Dari kenaikan Rp1.000 tadi, kamu menyimpan Rp200. Maka MPS = 0,2."
       ]
     },
     {
+      "kind": "formula",
+      "text": "Hukum Besi Proporsi:\nMPC + MPS = 1",
+      "note": "Uang tambahan yang didapat (ΔY) pasti habis dipecah ke dua keranjang: tambahan tabungan (ΔS) dan tambahan konsumsi (ΔC)."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Contoh Perhitungan: Fungsi C dan S",
+      "text": "Diketahui fungsi konsumsi masyarakat adalah **C = 200 + 0,75Y**. Jika total pendapatan nasional (Y) adalah 1.000, berapa uang yang dikonsumsi dan ditabung?\n\n- **Konsumsi (C):** 200 + 0,75(1000) = 200 + 750 = **950**\n- **Tabungan (S):** Y - C = 1000 - 950 = **50**\nAtau pakai fungsi tabungan langsung: **S = -200 + 0,25Y** = -200 + 0,25(1000) = -200 + 250 = **50**."
+    },
+    {
       "kind": "h2",
-      "text": "Pasar Dana Pinjaman (Loanable Funds)"
+      "text": "Mesin Kedua: Investasi (Investment)"
     },
     {
       "kind": "p",
-      "text": "Keynesian Cross menjelaskan output jangka pendek ketika harga cenderung kaku. Pasar dana pinjaman melihatnya dari sisi klasik: bagaimana tabungan dan investasi dipertemukan oleh suku bunga riil. Bayangkan satu pasar tempat seluruh tabungan ditawarkan dan seluruh kebutuhan dana untuk investasi diminta."
+      "text": "Awas jebakan teori makro! Dalam ilmu ekonomi makro, \"investasi\" **bukanlah** membeli saham di bursa efek atau mendepositokan uang di bank (itu hanyalah transaksi *finansial*, di mana uang hanya berpindah tangan). Investasi makro yang sesungguhnya harus menciptakan produk modal baru secara riil."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Investasi Riil (Pembentukan Modal):** Membangun pabrik baru, membeli armada truk logistik, traktor pertanian, atau mengembangkan paten *software* (intangible asset). Ini nyata menambah kapasitas produksi negara.",
+        "**Tiga Determinan Utama Investasi:** \n1. **Revenue (Pendapatan):** Harapan akan tingginya permintaan produk (GDP tumbuh).\n2. **Cost (Biaya):** Sangat bergantung pada **Suku Bunga (Interest Rate)** pinjaman bank.\n3. **Expectations (Ekspektasi):** Kepercayaan terhadap iklim bisnis di masa depan."
+      ]
     },
     {
       "kind": "formula",
-      "text": "Inti Pasar Dana Pinjaman (Mankiw Ch. 26)\n\nPenawaran dana = tabungan nasional (S)\n\nPermintaan dana = investasi (I)\n\nHarga = suku bunga riil (r)\n\nEkuilibrium: S = I pada r*"
-    },
-    {
-      "kind": "p",
-      "text": "Penawaran dana datang dari tabungan. Suku bunga yang lebih tinggi membuat menabung lebih menarik, jadi kurva penawaran menanjak. Permintaan dana datang dari investasi. Suku bunga yang lebih tinggi membuat pinjaman lebih mahal, jadi kurva permintaan menurun. Suku bunga riil menyesuaikan sampai dana yang ditabung sama dengan dana yang dipinjam untuk investasi."
+      "text": "Nilai Sekarang (Present Value):\nPV = Σ [ N / (1+i)^t ]",
+      "note": "Makin tinggi Suku Bunga (i), maka nilai sekarang (PV) dari imbal hasil di masa depan akan semakin kecil. Akibatnya, pengusaha akan menunda investasi. Inilah hukum tak terbantahkan: Harga Aset dan Minat Investasi bergerak BERBALIKAN (Inverse) terhadap Suku Bunga."
     },
     {
       "kind": "figure",
-      "title": "Pasar Dana Pinjaman: ekuilibrium & dampak defisit",
-      "svg": "<svg data-graph-id=\"PTE-GRAPH-02\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Pasar Dana Pinjaman: ekuilibrium &amp; dampak defisit</title><desc>Grafik pasar dana pinjaman dengan kuantitas dana pada sumbu horizontal dan suku bunga riil pada sumbu vertikal. Penawaran dana bergeser ke kiri akibat defisit, sehingga suku bunga naik dan kuantitas investasi turun.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"14\" y=\"26\">r</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"342\" y=\"251\">Q</text><line stroke=\"#22d3a0\" stroke-width=\"2.3\" x1=\"100\" x2=\"325\" y1=\"205\" y2=\"50\"></line><text fill=\"#22d3a0\" font-size=\"10\" x=\"328\" y=\"52\">S₁</text><line stroke=\"#f4516c\" stroke-dasharray=\"5,4\" stroke-width=\"2\" x1=\"55\" x2=\"280\" y1=\"205\" y2=\"50\"></line><text fill=\"#f4516c\" font-size=\"10\" x=\"236\" y=\"42\">S₂ (defisit↑)</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"100\" x2=\"325\" y1=\"60\" y2=\"205\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"328\" y=\"207\">D = I</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"209\" x2=\"209\" y1=\"130\" y2=\"235\"></line><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"209\" y1=\"130\" y2=\"130\"></line><circle cx=\"209\" cy=\"130\" fill=\"#f9a825\" r=\"3.6\"></circle><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"186\" x2=\"186\" y1=\"115\" y2=\"235\"></line><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"55\" x2=\"186\" y1=\"115\" y2=\"115\"></line><circle cx=\"186\" cy=\"115\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"134\">r₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"112\">r₂</text><text fill=\"#f9a825\" font-size=\"10\" x=\"201\" y=\"249\">Q₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"166\" y=\"249\">Q₂</text></svg>",
-      "caption": "Defisit menurunkan tabungan nasional sehingga kurva penawaran dana bergeser ke kiri dari S1 ke S2. Suku bunga riil naik dari r1 ke r2 dan dana investasi turun dari Q1 ke Q2.",
-      "altText": "Grafik pasar dana pinjaman dengan kuantitas dana pada sumbu horizontal dan suku bunga riil pada sumbu vertikal. Penawaran dana bergeser ke kiri akibat defisit, sehingga suku bunga naik dan kuantitas investasi turun."
+      "title": "Kurva Permintaan Investasi (Investment Demand Curve)",
+      "svg": "<svg font-family=\"DM Sans, sans-serif\" style=\"max-width:100%;height:auto;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" xmlns=\"http://www.w3.org/2000/svg\">\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"350\" y1=\"230\" y2=\"230\"></line>\n  <line stroke=\"#657084\" stroke-width=\"1.5\" x1=\"50\" x2=\"50\" y1=\"230\" y2=\"30\"></line>\n  <text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"20\" y=\"35\">i (%)</text>\n  <text fill=\"#9aa4b7\" font-size=\"12\" font-weight=\"bold\" x=\"335\" y=\"245\">I</text>\n  <line stroke=\"#4f9cf9\" stroke-width=\"2.5\" x1=\"80\" x2=\"310\" y1=\"50\" y2=\"200\"></line>\n  <text fill=\"#4f9cf9\" font-size=\"12\" font-weight=\"bold\" x=\"320\" y=\"205\">DI</text>\n  <line stroke=\"#f9a825\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"50\" x2=\"131\" y1=\"83\" y2=\"83\"></line>\n  <line stroke=\"#f9a825\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"131\" x2=\"131\" y1=\"83\" y2=\"230\"></line>\n  <circle cx=\"131\" cy=\"83\" fill=\"#f9a825\" r=\"4\"></circle>\n  <text fill=\"#f9a825\" font-size=\"11\" x=\"25\" y=\"87\">10%</text>\n  <text fill=\"#f9a825\" font-size=\"11\" x=\"120\" y=\"245\">I₁</text>\n  <line stroke=\"#22d3a0\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"50\" x2=\"233\" y1=\"150\" y2=\"150\"></line>\n  <line stroke=\"#22d3a0\" stroke-dasharray=\"4,4\" stroke-width=\"1.5\" x1=\"233\" x2=\"233\" y1=\"150\" y2=\"230\"></line>\n  <circle cx=\"233\" cy=\"150\" fill=\"#22d3a0\" r=\"4\"></circle>\n  <text fill=\"#22d3a0\" font-size=\"11\" x=\"30\" y=\"154\">5%</text>\n  <text fill=\"#22d3a0\" font-size=\"11\" x=\"223\" y=\"245\">I₂</text>\n</svg>",
+      "caption": "Kurva Demand of Investment (DI) memiliki lereng negatif. Saat suku bunga tinggi (10%), biaya utang mahal, sehingga volume investasi rendah (I₁). Saat suku bunga anjlok ke 5%, pengusaha terpacu meminjam uang, sehingga investasi membengkak tajam ke I₂."
+    },
+    {
+      "kind": "h2",
+      "text": "Titik Temu: Keseimbangan Output (Equilibrium)"
+    },
+    {
+      "kind": "p",
+      "text": "Perekonomian dinyatakan \"Seimbang\" (Equilibrium) jika total barang yang diproduksi pabrik tepat habis diserap oleh total belanja rencana masyarakat. Jika produksi kelebihan, barang menumpuk di gudang. Jika belanja membludak, barang di gudang ludes seketika."
+    },
+    {
+      "kind": "formula",
+      "text": "Dua Pendekatan Mencari Keseimbangan:\n\n1. Pendekatan Pengeluaran Agregat: Y = C + I\n2. Pendekatan Suntikan - Bocoran: S = I",
+      "note": "Filosofi S = I: Tabungan (S) adalah uang yang 'BOCOR' keluar dari perputaran belanja. Sedangkan Investasi (I) adalah uang segar dari pinjaman bank yang 'DISUNTIKKAN' kembali ke ekonomi. Output akan stabil sempurna jika nilai Suntikan persis menambal nilai Bocoran."
     },
     {
       "kind": "callout",
-      "variant": "tip",
-      "title": "Defisit dan crowding out",
-      "text": "ketika pemerintah defisit, tabungan publik negatif sehingga tabungan nasional turun. Kurva penawaran dana bergeser ke kiri, suku bunga riil naik dari r₁ ke r₂, dan investasi swasta yang terdanai turun dari Q₁ ke Q₂. Inilah crowding out yang disinggung pada bagian kebijakan fiskal."
+      "variant": "info",
+      "title": "Soal Ujian: Hitung Y Keseimbangan",
+      "text": "Diberikan C = 300 + 0,75Y dan Investasi pengusaha dipatok tetap I = 400.\n\n**Cara Y = C + I**\nY = (300 + 0,75Y) + 400\nY = 700 + 0,75Y\nY - 0,75Y = 700\n0,25Y = 700  =>  **Y = 2.800**\n\n**Cara Bocoran-Suntikan (S = I)**\nFungsi S = -300 + 0,25Y\n-300 + 0,25Y = 400\n0,25Y = 700  =>  **Y = 2.800**\n\nHasil kedua pendekatan wajib membuahkan angka ekuilibrium yang sama persis!"
     },
     {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Hati-hati",
-      "text": "tabungan dan investasi di sini adalah konsep makro agregat, bukan \"uang yang disimpan di rumah\". Tabungan mengalir menjadi dana investasi lewat sistem keuangan, bukan dana yang menganggur."
+      "kind": "h2",
+      "text": "Angka Pengganda Investasi (The Multiplier Effect)"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep multiplier adalah \"Keajaiban Terbesar\" dalam pandangan Keynesian. Jika pengusaha menyuntikkan dana segar Rp1 Miliar untuk membangun pabrik, total pendapatan nasional (GDP) pada akhirnya tidak hanya naik Rp1 Miliar, melainkan bisa melambung hingga Rp4 Miliar atau lebih! Mengapa?"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Efek Domino / Arithmathic Approach:** Uang Rp1 Miliar itu dipakai menggaji kuli bangunan. Kuli bangunan (yang punya MPC 0,8) membelanjakan Rp800 Juta untuk beli beras. Petani beras membelanjakan Rp640 Juta untuk beli motor. Uang itu terus berputar dari tangan ke tangan tanpa henti.",
+        "Semakin boros masyarakatnya (nilai MPC semakin besar), perputaran uangnya semakin lama dan ganas, menghasilkan angka pengganda yang raksasa."
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "Investment Multiplier Coefficient (k):\nk = 1 / (1 - MPC)  atau  k = 1 / MPS\n\nΔY = k × ΔI",
+      "note": "Contoh: Jika MPC = 2/3 (artinya MPS = 1/3), maka k = 1 / (1/3) = 3. Jika ada pengusaha berinvestasi Rp 1.000 Triliun, maka Total GDP akan meledak sebanyak: 3 × 1.000 = Rp 3.000 Triliun!"
     }
   ]
 };
