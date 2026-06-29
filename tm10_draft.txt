@@ -1,0 +1,262 @@
+🞂Effecting short run output through its impact 
+on aggregate demand.
+🞂Influencing long run output growth through 
+the impact of capital accumulation.
+🞂Mempengaruhi output jangka pendek melalui 
+dampaknya terhadap permintaan agregat.
+🞂Mempengaruhi pertumbuhan output jangka 
+panjang melalui dampak akumulasi modal.
+The roles of investment in 
+macroeconomics
+
+🞂Revenue: the overall level of output (or 
+GDP)
+🞂Cost: price of the capital good, 
+interest rate, taxes
+🞂Expectation: profit expectations and 
+business confidence
+pendapatan, kos, ekspektasi
+Determinants of 
+Investment
+
+Investment Demand Curve
+
+Investment Demand Curve
+
+Investment Demand Curve
+
+Equilibrium Output in the two-
+sectors economy
+1. Y = C + I approach
+Mathematically:
+Y = C + I
+Y = C0 + bY + I
+Y = 1/(1-b) (C0 + I)
+
+Equilibrium Output in the two-
+sector economy
+2. S = I approach
+Mathematically
+I = S
+I = - C0 + (1 – b)Y
+Y = 1/(1-b) (C0 + I)
+
+Equilibrium Output in the two-
+sector economy
+
+🞂The multiplier model explain that each 
+‘dollar’ change in exogenous expenditure 
+leads to a multiplied change in GDP.
+🞂Key assumption:
+◦The wages and prices are fixed
+◦There are unemployed resources
+The Multiplier Model
+
+Investment Multiplier
+Suppose that MPC is 2/3. How much GDP will 
+change if investment in the economy 
+increases by 1,000 billion rupiahs?
+
+Investment Multiplier 
+(arithmetic approach)
+
+Investment Multiplier (arithmetic 
+approach)
+Change in GDP
+= (1 + 2/3 + 2/32 + 2/33 + 2/34 + 2/3n) 1000
+= 1/(1 – 2/3) x 1000 = 3000
+The simple multiplier formula is
+Change in GDP = 1/(1 – MPC) x change in investment
+or
+= 1/MPS x change in investment
+
+Investment Multiplier
+Y = C + I
+Y = C0 + bY + I
+Y = 1/(1-b) (C0 + I)
+Y+ ΔY = 1/(1-b) (C0 + I +ΔI)
+ΔY = 1/(1-b) ΔI
+I = S
+I = - C0 + (1 – b)Y
+I+ΔI = - C0 + (1–b) (Y + ΔY)
+I+ΔI = - C0+(1–b)Y+(1–b)ΔY
+ΔY = 1/(1-b) ΔI
+Investment Multiplier 
+Coefficient
+
+🞂The role of fiscal policy in the economy
+◦Allocative
+◦Distributive
+◦Stabilizer
+🞂Instruments of fiscal policy
+◦Government spending
+◦Taxation
+Fiscal Policy in the Multiplier 
+Model
+
+🞂Principles of taxation
+◦Benefit vs. Ability to pay principles
+●The benefit principle of taxation taxes people in 
+proportion to the marginal benefits they receive from a 
+governmentally provided good.
+●The ability-to-pay principle suggests that the fairest 
+tax is one based on your financial ability to support 
+government activities.
+◦Horizontal and vertical equity
+●Vertical equity asserts that people better able to pay 
+higher taxes should do so.
+●Horizontal equity requires that individuals who are 
+equal in all important respects be treated equally.
+Important to note:
+(SAM, ch. 16 p. 312-320)
+
+◦Pragmatic compromise in taxation
+●Progressive 🡪higher incomes are taxed proportionally 
+more than lower incomes
+●regressive 🡪
+the percentage of income paid as taxes 
+falls as income rises.
+●proportional taxes 🡪
+a fixed percentage of income
+🞂Classification of tax
+◦Indirect taxes
+◦Direct taxes
+Important to note:
+
+Equilibrium Output in the three-
+sectors economy
+
+Equilibrium Output in the three-
+sectors economy
+
+🞂Y = C + I + G
+Y = C0 + bYd + I + G
+Y = C0 + b(Y – T0) + I + G
+Y = C0 + bY – bT0 + I + G
+Y = 1/(1-b) (C0 – bT0 + I + G)
+🞂I + G = S + T
+I + G = - C0 + (1 – b)Yd + T0
+I + G = - C0 + (1 – b)(Y – T0) + T0
+I + G = - C0 + (1 – b)Y + bT0
+Y = 1/(1-b) (C0 – bT0 + I + G) 
+Equilibrium Output 
+Assumption: tax is independence to income (T =T0)
+Y = C + S + T
+Yd = Y - T
+
+Fiscal Policy Multiplier 
+Assumption: tax is independence to income (T =T0)
+🞂Government expenditure multiplier
+Y = 1/(1-b) (C0 – bT0 + I + G)
+Y + ΔY = 1/(1-b) (C0 – bT0 + I + G + ΔG)
+ΔY = 1/(1-b) ΔG 
+where: 1/(1-b) is government expenditure 
+multiplier
+🞂Tax multiplier
+Y = 1/(1-b) (C0 – bT0 + I + G)
+Y + ΔY = 1/(1-b) (C0 – bT0 – bΔT0 + I + G)
+ΔY = -b/(1-b) ΔT0
+where: -b/(1-b) is tax multiplier.
+
+🞂Suppose that:
+◦C = 300 + 0.75Yd
+◦I = 400
+◦G = T = 200
+●Then, GDP equilibrium will be
+Y = (1/0.25) (300 – 150 + 400 + 200) = 3,000
+●Government expenditure multiplier is 4. Therefore, an 
+Increase in G by 50 will increase Y by 200
+●Tax multiplier is 3 (negative in value), so an increase in 
+tax by 50 will decrease Y by 150
+Example
+
+
+🞂Y = C + I + G
+Y = C0 + bYd + I + G
+Y = C0 + b(Y – T0 – tY) + I + G
+Y = C0 + bY – bT0 – btY + I + G
+Y = 1/(1-b+bt) (C0 – bT0 + I + G)
+🞂I + G = S + T
+I + G = - C0 + (1 – b)Yd + (T0 + tY)
+I + G = - C0 + (1 – b)(Y – T0 – tY) + (T0 + tY)
+I + G = - C0 + (1 – b)Y – (1 – b)T0 – (1 – b)tY + (T0 + tY)
+I + G = - C0 + (1 – b)Y + bT0 + btY
+Y = 1/(1-b+bt) (C0 – bT0 + I + G)
+Equilibrium Output 
+Assumption: tax is dependence to income (T =T0 + tY)
+
+🞂Government expenditure multiplier
+●ΔY/ΔG = 1/(1-b+bt)
+🞂Tax multiplier
+●ΔY/ΔT0 = -b/(1-b+bt)
+◦Impact of the change in tax rate (t) on 
+the change in GDP
+●ΔY/Δt   = -b/(1-b+bt) Y
+Fiscal Policy Multiplier
+Assumption: tax is dependence to income (T =T0 + tY)
+
+🞂Suppose that:
+◦C = 300 + 0.75Yd
+◦I = 400
+◦G = 200
+◦T = 200 + 0.15Y
+●Then, GDP equilibrium will be
+Y = [1/(0.25+0.1125) (300 – 150 + 400 + 200) = 2,068.96
+●Government expenditure multiplier is 2.758. Thus, an 
+Increase in G by 50 will increase Y by 137.93
+●Tax multiplier is 2.069 (negative in value), so an 
+increase in tax by 50 will decrease Y by 103.45
+Example
+
+🞂National income identity in the closed economy
+Y = C + I + G
+🞂Subtraction C and G form both side of the 
+equation, we obtain:
+Y – C – G = I
+🞂Manipulating this equation to obtain
+(Y – T – C) + (T – G) = I
+Where the left hand side is national saving, which consists of 
+private saving (Y – T – C) and public saving (T – G) 
+Important to note:
+
+🞂The last equation reveals an important fact:
+◦For the economy as a whole, saving must be equal 
+to investment. (the mechanisms lie behind this 
+identity will be discussed in the next topic)
+◦The larger the consumption, the smaller private 
+saving, and the result would be lower national 
+saving
+◦when the government spends more than it receives 
+in tax revenue, the resulting budget deficit lower 
+national saving
+Important to note:
+
+🞂Suppose GDP is Rp 8.00 trillion, taxes are Rp 1.50 
+trillion, private saving is Rp 0.50 trillion, and public 
+saving is Rp 0.20 trillion. Calculate consumption, 
+government purchases, national saving, and 
+investment.
+◦Consumption (C)
+●Private saving = Y – T – C
+0.50 trillion = 8.00 trillion – 1.50 trillion – C
+C = 6.00 trillion 
+Example
+
+◦Government purchases (G)
+●Public saving = T – G
+0.20 trillion = 1.50 trillion – G
+G = 1.30 trillion
+◦National saving = private saving + public saving
+= 0.50 trillion + 0.20 trillion
+= 0.70 trillion
+◦Equilibrium condition require that national saving 
+equal to investment. Thus investment must be 0.70 
+trillion.
+●Alternatively, we can use national income identity (recall: 
+Y = C + I + G) to obtain investment by subtracting GDP (Y) 
+with C and G.
+Example
+
+Thank you
+for your attention
+
