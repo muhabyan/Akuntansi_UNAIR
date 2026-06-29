@@ -424,6 +424,12 @@ const tm9: Reading = {
       "note": "Di mana:\nC₀ = Autonomous Consumption (Konsumsi Otonom: konsumsi minimum untuk bertahan hidup saat pendapatan nol).\nb = Marginal Propensity to Consume (MPC), nilainya di antara 0 dan 1 (0 < b < 1).\nY = Disposable Income (Pendapatan Siap Pakai)."
     },
     {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Bedah Kritis: Mengapa C₀ Tidak Pernah Nol?",
+      "text": "**Interpretasi Ekstrem:** Bayangkan sebuah negara dilanda krisis total hingga Pendapatan (Y) = $0. Apakah konsumsi (C) menjadi nol? **TIDAK.** Manusia tetap harus makan untuk bertahan hidup. Mereka akan mencairkan tabungan masa lalu, menjual aset, atau berutang. Inilah makna absolut dari $C_0$ (Autonomous Consumption). Nilai $C_0$ memastikan kurva konsumsi tidak pernah bermula dari titik (0,0) di grafik."
+    },
+    {
       "kind": "h2",
       "text": "Mesin Kedua: Saving (Tabungan)"
     },
@@ -438,6 +444,12 @@ const tm9: Reading = {
       "kind": "formula",
       "text": "S = Y - C\nS = Y - (C₀ + bY)\nS = -C₀ + (1 - b)Y",
       "note": "Di mana:\n-C₀ = Dissaving (Tabungan Negatif / Ngutang untuk makan saat pendapatan nol).\n(1 - b) = Marginal Propensity to Save (MPS), nilainya di antara 0 dan 1 (0 < b < 1)."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Pembuktian Matematis Absolut: MPC + MPS = 1",
+      "text": "Mengapa kedua angka ini jika dijumlahkan pasti 1? Secara logika matematis, setiap tambahan 1 keping koin yang kamu terima (ΔY) HANYA memiliki dua jalur pelarian: dikonsumsi (ΔC) atau ditabung (ΔS).\n\n**Pembuktian Absolut:**\n1. Secara kodrat: **ΔY = ΔC + ΔS**\n2. Bagi semua sisi dengan ΔY:\n   **(ΔY / ΔY) = (ΔC / ΔY) + (ΔS / ΔY)**\n3. **1 = MPC + MPS** *(Terbukti!)*\n\n**Kemungkinan Ekstrem & Hubungannya:** \n- Jika sebuah masyarakat sangat pelit (MPS = 1), maka uang berhenti mengalir karena MPC = 0. Tidak ada pabrik yang bisa berjualan, ekonomi mati membeku.\n- Sebaliknya, jika masyarakat sangat boros (MPC = 1), maka tabungan nol (MPS = 0). Dampaknya? Bank tidak punya pasokan uang untuk dipinjamkan ke pengusaha, investasi mati total!"
     },
     {
       "kind": "h2",
@@ -626,6 +638,12 @@ const tm9: Reading = {
         "**Nominal Interest Rate (Suku Bunga Nominal):** Suku bunga yang tertera di atas kertas (misal, bunga deposito 5% di bank). Suku bunga ini belum memperhitungkan kejamnya inflasi.",
         "**Real Interest Rate (Suku Bunga Riil):** Adalah Suku Bunga Nominal yang **telah dikoreksi/dikurangi dengan tingkat Inflasi**. Ini menunjukkan daya beli sesungguhnya dari imbal hasilmu."
       ]
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Eksekusi Angka: Persamaan Fisher (Fisher Equation)",
+      "text": "Hubungan antara Suku Bunga Nominal ($i$), Suku Bunga Riil ($r$), dan Inflasi ($\\pi$) dirumuskan oleh Irving Fisher secara matematis:\n\n**r = i - π**\n\n**Studi Kasus Kritis:**\nKamu melihat Bank X menawarkan bunga deposito tinggi sebesar **10%** (Nominal $i$). Kamu tergiur dan menaruh uang $1.000 (berharap jadi $1.100 tahun depan). Namun, ternyata tahun itu negara dilanda hiperinflasi sebesar **15%** ($\\pi$).\n\n**Hasil & Interpretasi:**\n$r = 10\\% - 15\\% = \\mathbf{-5\\%}$\n\nSecara riil, suku bungamu **negatif 5%**. Artinya, meski uang di rekeningmu bertambah secara angka, daya beli sesungguhnya justru **merosot 5%**. Kamu bukannya makin kaya, melainkan makin miskin karena digerogoti inflasi! Inilah hasil nyata dari ilusi uang (money illusion) yang sangat ditakuti para ekonom."
     }
   ]
 };
