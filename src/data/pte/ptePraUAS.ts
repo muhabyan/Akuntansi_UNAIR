@@ -48,6 +48,12 @@ const tm8: Reading = {
       "text": "Pendapatan nasional adalah pintu masuk utama ke makroekonomi karena ia menjawab pertanyaan paling dasar: seberapa besar aktivitas ekonomi suatu negara dalam satu periode tertentu. Dalam makroekonomi, perhatian tidak lagi berada pada satu konsumen atau satu perusahaan, melainkan pada agregat seperti output total, tingkat harga umum, pengangguran, konsumsi nasional, investasi nasional, tabungan nasional, pengeluaran pemerintah, ekspor-impor, dan pertumbuhan jangka panjang."
     },
     {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Circular Flow of Economic Activity",
+      "text": "Siklus aliran kegiatan ekonomi (Circular Flow) menunjukkan bahwa setiap rupiah yang dibelanjakan oleh pembeli akan menjadi pendapatan bagi penjual. Oleh karena itu, GDP dapat dihitung secara setara sebagai **total pengeluaran** untuk barang akhir ATAU **total pendapatan** (upah, sewa, laba) yang diterima oleh pemilik faktor produksi."
+    },
+    {
       "kind": "figure",
       "title": "Alur Identitas Makro: Produksi, Pendapatan, dan Pengeluaran",
       "svg": "<svg data-graph-id=\"PTE-FLOW-01\" viewBox=\"0 0 920 190\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Produksi sama dengan pendapatan sama dengan pengeluaran</title><desc>Produksi barang dan jasa menuju Pendapatan faktor produksi menuju Pengeluaran untuk output akhir</desc><defs><marker id=\"arrow-PTE-FLOW-01\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"#94a3b8\"/></marker></defs><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#4f9cf9\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Produksi barang dan</tspan><tspan x=\"283.0\" dy=\"18\">jasa</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-01)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#4f9cf9\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">Pendapatan faktor</tspan><tspan x=\"460.0\" dy=\"18\">produksi</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-01)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#4f9cf9\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">Pengeluaran untuk</tspan><tspan x=\"637.0\" dy=\"18\">output akhir</tspan></text></svg>",
@@ -82,7 +88,19 @@ const tm8: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Gross Domestic Product (GDP/PDB)",
-      "text": "adalah nilai pasar seluruh barang dan jasa akhir yang diproduksi di dalam wilayah suatu negara selama periode tertentu, biasanya satu tahun atau satu kuartal."
+      "text": "**GDP** adalah nilai pasar seluruh barang dan jasa akhir yang diproduksi di dalam wilayah suatu negara selama periode tertentu."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Market Value:** Dinilai menggunakan harga pasar saat ini.",
+        "**Of All:** Mencakup semua barang/jasa yang diproduksi dan dijual legal di pasar (mengabaikan barang ilegal atau yang diproduksi untuk konsumsi sendiri).",
+        "**Final:** Hanya barang akhir, bukan barang antara (menghindari double counting).",
+        "**Goods and Services:** Mencakup barang berwujud (makanan, baju) dan jasa tak berwujud (potong rambut, kunjungan dokter).",
+        "**Produced:** Hanya barang yang diproduksi pada periode berjalan, bukan transaksi barang bekas.",
+        "**Within a Country:** Mengukur produksi di dalam batas geografis suatu negara, terlepas dari kewarganegaraan produsennya.",
+        "**In a Given Period of Time:** Biasanya diukur per tahun atau per kuartal."
+      ]
     },
     {
       "kind": "table",
@@ -138,7 +156,7 @@ const tm8: Reading = {
     },
     {
       "kind": "formula",
-      "text": "Hubungan Umum\n\nGNP = GDP + pendapatan faktor neto dari luar negeri\n\nNDP = GDP − depresiasi\n\nDI = PI − pajak personal\n\nDI = C + S"
+      "text": "Penurunan dari GDP ke Disposable Income (DI)\n\nGDP = C + I + G + NX\n\nGNP = GDP + Pendapatan faktor neto dari luar negeri (IR - IP)\n\nNet National Product (NNP) = GNP − Depresiasi (Penyusutan)\n\nNational Income (NI) = NNP − Discrepansi Statistik (atau dikurangi Pajak Tak Langsung dalam model sederhana)\n\nPersonal Income (PI) = NI − Laba Ditahan − Pajak Perusahaan − Pajak Tak Langsung + Transfer Payment + Pendapatan Bunga Pemerintah\n\nDisposable Income (DI) = PI − Pajak Personal (Pajak Langsung)\n\nDI = C + S"
     },
     {
       "kind": "h2",
@@ -151,10 +169,58 @@ const tm8: Reading = {
     {
       "kind": "ul",
       "items": [
-        "**1. Pendekatan Produksi/Nilai Tambah:** Menjumlahkan nilai tambah setiap sektor. Nilai tambah = nilai output − nilai input antara.",
-        "**2. Pendekatan Pendapatan:** Menjumlahkan balas jasa faktor produksi: upah + sewa + bunga + laba, disesuaikan dengan pajak tidak langsung dan depresiasi.",
-        "**3. Pendekatan Pengeluaran:** Menjumlahkan pengeluaran akhir: konsumsi rumah tangga, investasi, belanja pemerintah, dan ekspor neto."
+        "**1. Pendekatan Produksi (Value Added):** Menjumlahkan nilai tambah pada setiap tahap produksi untuk menghindari penghitungan ganda (double counting). Nilai tambah = Penjualan − Biaya bahan baku/input antara.",
+        "**2. Pendekatan Pendapatan:** Menjumlahkan seluruh pendapatan: Wages/Salaries (upah), Interest (bunga), Rent (sewa), Laba Perusahaan, Pendapatan Usaha Bukan Badan Hukum, Pajak Bisnis Tak Langsung, dan Depresiasi.",
+        "**3. Pendekatan Pengeluaran:** Menjumlahkan pengeluaran akhir (C + I + G + NX)."
       ]
+    },
+    {
+      "kind": "table",
+      "caption": "Contoh Perhitungan Nilai Tambah (Menghindari Double Counting) - Tahapan Produksi Roti",
+      "headers": [
+        "Tahap Produksi",
+        "Nilai Penjualan",
+        "Biaya Input Antara",
+        "Nilai Tambah"
+      ],
+      "rows": [
+        [
+          "Gandum (Wheat)",
+          "23",
+          "0",
+          "23"
+        ],
+        [
+          "Tepung (Flour)",
+          "53",
+          "23",
+          "30"
+        ],
+        [
+          "Adonan (Dough)",
+          "110",
+          "53",
+          "57"
+        ],
+        [
+          "Roti (Final Product)",
+          "190",
+          "110",
+          "80"
+        ],
+        [
+          "**Total**",
+          "**376**",
+          "**186**",
+          "**190**"
+        ]
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Double Counting",
+      "text": "Jika kita menjumlahkan semua penjualan (376), kita menghitung barang berulang kali. GDP hanya mencatat **nilai penjualan produk akhir** (190), yang secara matematis selalu sama dengan **total seluruh nilai tambah** (190)."
     },
     {
       "kind": "formula",
