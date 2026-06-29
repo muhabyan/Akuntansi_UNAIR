@@ -184,6 +184,12 @@ const tm8: Reading = {
       ]
     },
     {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Contoh Sederhana: Income Approach",
+      "text": "Jika sebuah negara hanya memiliki total gaji pekerja Rp5.000, laba pengusaha Rp2.000, pendapatan sewa tanah Rp1.000, dan pendapatan bunga bersih Rp500, maka dengan pendekatan ini, nilai **GDP = 5000 + 2000 + 1000 + 500 = Rp8.500**."
+    },
+    {
       "kind": "h2",
       "text": "Real GDP vs Nominal GDP"
     },
@@ -202,6 +208,27 @@ const tm8: Reading = {
       "kind": "formula",
       "text": "GDP Deflator = (Nominal GDP / Real GDP) × 100",
       "note": "Indeks ini khusus dirancang untuk mengukur tingkat harga. Ia memberi tahu kita porsi kenaikan nominal yang murni disebabkan oleh faktor inflasi harga, alih-alih peningkatan kuantitas output."
+    },
+    {
+      "kind": "h3",
+      "text": "Mengukur Biaya Hidup: CPI / IHK (Indeks Harga Konsumen)"
+    },
+    {
+      "kind": "p",
+      "text": "Selain GDP Deflator, ada satu lagi indikator inflasi yang sangat terkenal: **CPI (Consumer Price Index)** atau IHK. Apa bedanya?"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**CPI / IHK:** Hanya mengukur perubahan harga sekeranjang barang/jasa yang ==murni dibeli oleh konsumen rumah tangga biasa== (seperti beras, bensin, biaya sewa rumah). Barang modal pabrik tidak masuk.",
+        "**GDP Deflator:** Mengukur perubahan harga ==semua barang/jasa yang diproduksi di dalam negeri== (termasuk mesin berat, traktor pertanian, alat militer)."
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Soal Ujian: Contoh Perbedaan Krusial Deflator vs CPI",
+      "text": "Jika harga **Tank Militer buatan Pindad (dalam negeri)** naik drastis, itu akan langsung membuat **GDP Deflator naik**, tapi CPI diam saja (karena rakyat biasa tidak beli tank). Sebaliknya, jika harga **Mobil Toyota yang diimpor dari Jepang** naik tajam, itu akan membuat **CPI naik**, tapi GDP Deflator diam saja (karena mobil itu tidak diproduksi di dalam negeri)."
     },
     {
       "kind": "h2",
@@ -227,6 +254,21 @@ const tm8: Reading = {
     {
       "kind": "p",
       "text": "Selain berpatokan pada 'wilayah geografis' (GDP Domestik), ada ukuran lain yang merombaknya menjadi berpatokan pada 'siapa warga negaranya' (Nasional). Ukuran itu terus dikerucutkan dan dipangkas pajaknya sampai menjadi uang tunai di dompet."
+    },
+    {
+      "kind": "h3",
+      "text": "Analisis Soal: Jika GDP > GNP, Artinya Apa?"
+    },
+    {
+      "kind": "p",
+      "text": "Dosen sering menjebak dengan pertanyaan ini. Mari selesaikan pakai logika sederhana:"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Jika GDP > GNP:** Artinya nilai produksi di dalam batas wilayah (termasuk milik asing) LEBIH BESAR daripada total penghasilan warga negara itu sendiri. Kesimpulannya: ==Banyak investor/perusahaan asing yang mengeruk untung di negara tersebut dibanding investasi warga lokal di luar negeri.== Ini adalah ciri khas **negara berkembang** (seperti Indonesia).",
+        "**Jika GNP > GDP:** Artinya penghasilan warga negaranya yang berada di luar negeri sangat masif, melampaui produksi di dalam negerinya sendiri. Kesimpulannya: ==Negara tersebut banyak menanamkan modal dan punya bisnis raksasa di negara lain.== Ini ciri khas **negara maju**."
+      ]
     },
     {
       "kind": "formula",
