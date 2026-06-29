@@ -229,6 +229,11 @@ const tm8: Reading = {
       "text": "Selain berpatokan pada 'wilayah geografis' (GDP Domestik), ada ukuran lain yang merombaknya menjadi berpatokan pada 'siapa warga negaranya' (Nasional). Ukuran itu terus dikerucutkan dan dipangkas pajaknya sampai menjadi uang tunai di dompet."
     },
     {
+      "kind": "formula",
+      "text": "GNP = GDP +/- Pendapatan Neto Luar Negeri\nNNP = GNP - Penyusutan\nNNI = NNP - Pajak Tak Langsung + Subsidi\nPI = NNI - Iuran + Transfer Payment\nDI = PI - Pajak Langsung",
+      "note": "Catatan: 'Iuran' pada PI mencakup Laba Ditahan, Pajak Perseroan, dan Iuran Jamsostek. Secara prinsip, setiap turun satu level, kita selalu mencabut beban-beban ekonomi agar angkanya semakin riil untuk dibelanjakan individu."
+    },
+    {
       "kind": "chart-guide",
       "title": "Panduan Alur Menurun (Waterfall): Dari GDP menjadi Uang Siap Belanja (DI)",
       "points": [
