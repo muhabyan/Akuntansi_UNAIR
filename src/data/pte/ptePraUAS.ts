@@ -248,6 +248,11 @@ const tm8: Reading = {
       ]
     },
     {
+      "kind": "formula",
+      "text": "CPI = (Harga Keranjang Konsumen Tahun Ini / Harga Keranjang Konsumen Tahun Dasar) × 100",
+      "note": "Perhatikan bahwa kuantitas barang dalam 'keranjang' dipatok tetap (fixed basket) berdasarkan pola konsumsi pada tahun dasar."
+    },
+    {
       "kind": "callout",
       "variant": "info",
       "title": "Contoh Perhitungan: Indeks Harga Konsumen (CPI / IHK)",
