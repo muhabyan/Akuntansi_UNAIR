@@ -166,6 +166,12 @@ const tm8: Reading = {
       ]
     },
     {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Contoh Perhitungan: Aggregate Expenditure (AE) / Pengeluaran",
+      "text": "Misalkan di suatu negara tercatat data: Konsumsi rumah tangga (C) = Rp10.000, Investasi pabrik (I) = Rp3.000, Belanja Pemerintah (G) = Rp4.000, Ekspor (X) = Rp2.000, dan Impor (M) = Rp1.500. Maka Net Exports (NX) = 2.000 - 1.500 = 500. Total GDP = C + I + G + NX = 10.000 + 3.000 + 4.000 + 500 = **Rp17.500**."
+    },
+    {
       "kind": "h3",
       "text": "2. Pendekatan Pendapatan (Income Approach)"
     },
@@ -210,6 +216,12 @@ const tm8: Reading = {
       "note": "Indeks ini khusus dirancang untuk mengukur tingkat harga. Ia memberi tahu kita porsi kenaikan nominal yang murni disebabkan oleh faktor inflasi harga, alih-alih peningkatan kuantitas output."
     },
     {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Contoh Perhitungan: GDP Deflator",
+      "text": "Jika Nominal GDP tahun 2024 adalah Rp22.000 (dihitung pakai harga 2024) dan Real GDP adalah Rp20.000 (dihitung pakai harga dasar tahun 2020), maka GDP Deflator = (22.000 / 20.000) × 100 = **110**. Artinya, secara umum harga-harga telah naik 10% sejak tahun dasar 2020."
+    },
+    {
       "kind": "h3",
       "text": "Mengukur Biaya Hidup: CPI / IHK (Indeks Harga Konsumen)"
     },
@@ -223,6 +235,12 @@ const tm8: Reading = {
         "**CPI / IHK:** Hanya mengukur perubahan harga sekeranjang barang/jasa yang ==murni dibeli oleh konsumen rumah tangga biasa== (seperti beras, bensin, biaya sewa rumah). Barang modal pabrik tidak masuk.",
         "**GDP Deflator:** Mengukur perubahan harga ==semua barang/jasa yang diproduksi di dalam negeri== (termasuk mesin berat, traktor pertanian, alat militer)."
       ]
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Contoh Perhitungan: Indeks Harga Konsumen (CPI / IHK)",
+      "text": "Misalkan 'keranjang belanja' standar konsumen berisi 10kg beras dan 5 liter bensin. Pada tahun dasar (2020), total harga keranjang ini Rp100.000. Pada tahun ini (2024), karena harga beras naik, total harga keranjang yang persis sama menjadi Rp125.000. Maka CPI tahun 2024 = (Harga Keranjang Tahun Ini / Harga Keranjang Tahun Dasar) × 100 = (125.000 / 100.000) × 100 = **125**."
     },
     {
       "kind": "callout",
@@ -242,9 +260,29 @@ const tm8: Reading = {
       "kind": "ul",
       "items": [
         "**GDP Sedang Tumbuh Tinggi (Bagus):** Artinya mesin pabrik beroperasi penuh, banyak bisnis baru dibuka, dan perusahaan berlomba-lomba merekrut pegawai baru. ==Lapangan kerja melimpah, pengangguran turun, dan masyarakat punya uang lebih banyak untuk belanja.== Inilah kondisi ekonomi yang sehat dan makmur.",
-        "**GDP Sedang Melambat / Rendah (Buruk):** Jika angkanya mengecil (sering disebut *Resesi*), artinya daya beli lesu. Pabrik menumpuk barang yang tak laku, terpaksa mem-PHK karyawan agar tidak bangkrut. ==Pengangguran melonjak, masyarakat mengencangkan ikat pinggang, dan ekonomi terasa sulit.==",
-        "**Inflasi Ringan/Normal (Positif):** Inflasi 2-3% setahun itu normal dan bagus. Artinya ekonomi sedang \"berkeringat\" karena rajin berlari. Orang-orang berlomba membeli barang sehingga harganya pelan-pelan naik, merangsang produsen untuk terus berproduksi.",
-        "**Inflasi Sangat Tinggi (Bahaya):** Disebut *Hiperinflasi*. Uang tiba-tiba menjadi tidak ada nilainya. ==Gaji yang baru kamu terima hari ini mungkin besok sudah tidak cukup untuk beli beras karena harganya naik dua kali lipat dalam semalam.== Nilai tabunganmu hancur lebur."
+        "**GDP Sedang Melambat / Rendah (Buruk):** Jika angkanya mengecil (sering disebut *Resesi*), artinya daya beli lesu. Pabrik menumpuk barang yang tak laku, terpaksa mem-PHK karyawan agar tidak bangkrut. ==Pengangguran melonjak, masyarakat mengencangkan ikat pinggang, dan ekonomi terasa sulit.=="
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "Cara Menghitung Inflasi & Tingkatannya"
+    },
+    {
+      "kind": "formula",
+      "text": "Tingkat Inflasi = ((Indeks Tahun 2 - Indeks Tahun 1) / Indeks Tahun 1) × 100%",
+      "note": "Contoh: Jika CPI tahun lalu 125 dan CPI tahun ini 130, maka laju inflasi = ((130 - 125) / 125) × 100% = 4%. Catatan: Kamu bisa menggunakan baik CPI maupun GDP Deflator ke dalam rumus ini."
+    },
+    {
+      "kind": "p",
+      "text": "Menurut teori ekonomi makro konvensional, besaran persentase inflasi dikelompokkan ke dalam empat level (derajat keparahan):"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Inflasi Ringan (< 10% per tahun):** Ekonomi normal dan stabil. Masyarakat percaya uangnya tetap bernilai dan dunia usaha terpacu berinvestasi. Ibarat mesin ekonomi yang memanas sedikit karena bekerja optimal.",
+        "**Inflasi Sedang (10% - 30% per tahun):** Harga mulai terasa naik signifikan. Pekerja akan menuntut kenaikan gaji rutin agar daya belinya tidak merosot drastis.",
+        "**Inflasi Berat (30% - 100% per tahun):** Orang-orang kehilangan kepercayaan pada uang tunai dan lebih suka menumpuk barang. Perencanaan bisnis jangka panjang menjadi hancur.",
+        "**Hiperinflasi (> 100% per tahun):** Bencana moneter total. Harga-harga berubah setiap jam. ==Uang kertas berakhir menjadi sampah (seperti di Zimbabwe) dan transaksi terpaksa kembali ke sistem barter atau valuta asing.=="
       ]
     },
     {
