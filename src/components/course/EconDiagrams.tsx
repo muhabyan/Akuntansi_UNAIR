@@ -1,205 +1,187 @@
-// =============================================================
-// Econ Diagrams — proper React components for economic illustrations
-// Uses CSS Grid with horizontal text only — no rotated labels.
-// =============================================================
 import React from 'react';
 
-/* ─────────────── Shared arrow component ─────────────── */
-const FlowArrow: React.FC<{ dir: 'up' | 'down'; color: string }> = ({ dir, color }) => (
-  <span style={{ color, fontSize: 14, lineHeight: 1 }}>{dir === 'up' ? '▲' : '▼'}</span>
-);
-
-/* ─────────────── Flow Label ─────────────── */
-const FlowLabel: React.FC<{ dir: 'up' | 'down'; label: string; color: string; sub?: string }> = ({ dir, label, color, sub }) => (
-  <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '3px 0' }}>
-    <FlowArrow dir={dir} color={color} />
-    <div>
-      <div style={{ fontSize: 12, fontWeight: 700, color, lineHeight: 1.3 }}>{label}</div>
-      {sub && <div style={{ fontSize: 10, color: '#94a3b8', lineHeight: 1.2 }}>{sub}</div>}
-    </div>
-  </div>
-);
-
-/* ─────────────── Market Pill ─────────────── */
-const MarketPill: React.FC<{ title: string; sub: string }> = ({ title, sub }) => (
-  <div style={{
-    background: '#1e293b', border: '1.5px dashed #60a5fa', borderRadius: 24,
-    padding: '10px 20px', textAlign: 'center',
-  }}>
-    <div style={{ fontWeight: 700, fontSize: 14, color: '#f1f5f9' }}>{title}</div>
-    <div style={{ fontSize: 10, color: '#94a3b8' }}>{sub}</div>
-  </div>
-);
-
-/* ─────────────── Entity Box ─────────────── */
-const EntityBox: React.FC<{ title: string; sub: string; desc1: string; desc2: string }> = ({ title, sub, desc1, desc2 }) => (
-  <div style={{
-    background: '#1e293b', border: '2px solid #60a5fa', borderRadius: 14,
-    padding: '14px 12px', textAlign: 'center', flex: 1, minWidth: 0,
-  }}>
-    <div style={{ fontWeight: 700, fontSize: 15, color: '#f1f5f9' }}>{title}</div>
-    <div style={{ fontSize: 10, color: '#94a3b8', marginTop: 2 }}>{sub}</div>
-    <div style={{ fontSize: 10, color: '#64748b', marginTop: 6, lineHeight: 1.5 }}>
-      {desc1}<br />{desc2}
-    </div>
-  </div>
-);
-
-/* ─────────────────────── Circular Flow ─────────────────────── */
-
 export const CircularFlowDiagram: React.FC = () => (
-  <div style={{ fontFamily: 'system-ui, -apple-system, sans-serif', color: '#e2e8f0', maxWidth: 580, margin: '0 auto' }}>
+  <div className="w-full max-w-4xl mx-auto overflow-x-auto bg-slate-50 dark:bg-slate-900 rounded-xl p-4 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-inner">
+    <svg viewBox="0 0 1000 650" className="w-full h-auto drop-shadow-sm font-sans" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        {/* Markers for Arrows */}
+        <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981" />
+        </marker>
+        <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#f59e0b" />
+        </marker>
+        {/* Gradients */}
+        <linearGradient id="firm-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#dbeafe" />
+          <stop offset="100%" stopColor="#bfdbfe" />
+        </linearGradient>
+        <linearGradient id="market-grad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#fef9c3" />
+          <stop offset="100%" stopColor="#fef08a" />
+        </linearGradient>
+      </defs>
 
-    {/* 1. Top Market */}
-    <MarketPill title="PASAR BARANG & JASA" sub="(Goods & Services Market)" />
+      {/* Outer Loop (Green) - Flow of Dollars */}
+      {/* Top Left: Revenue (Market to Firm) */}
+      <path d="M 320 80 H 170 Q 130 80 130 120 V 220" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="180" y="70" fill="#047857" fontSize="18" fontWeight="bold">Revenue (Pendapatan)</text>
 
-    {/* 2. Upper Flow Strip */}
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, padding: '8px 12px' }}>
-      {/* Left side: Firms → Market */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, borderRight: '1px solid #334155', paddingRight: 8 }}>
-        <FlowLabel dir="up" label="Revenue (Pendapatan)" color="#f59e0b" sub="Uang dari penjualan barang" />
-        <FlowLabel dir="up" label="Barang dijual" color="#60a5fa" sub="Output ke pasar" />
-      </div>
-      {/* Right side: Market → Households */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, paddingLeft: 8, alignItems: 'flex-end' }}>
-        <FlowLabel dir="up" label="Spending (Belanja)" color="#f59e0b" sub="Uang dari rumah tangga" />
-        <FlowLabel dir="up" label="Barang dibeli" color="#60a5fa" sub="Dikonsumsi rumah tangga" />
-      </div>
-    </div>
+      {/* Top Right: Spending (HH to Market) */}
+      <path d="M 870 220 V 120 Q 870 80 830 80 H 680" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="730" y="70" fill="#047857" fontSize="18" fontWeight="bold">Spending (Belanja)</text>
 
-    {/* 3. Entity Boxes */}
-    <div style={{ display: 'flex', gap: 12, alignItems: 'stretch' }}>
-      <EntityBox title="PERUSAHAAN" sub="(Firms)" desc1="Memproduksi barang/jasa" desc2="Memakai faktor produksi" />
-      <EntityBox title="RUMAH TANGGA" sub="(Households)" desc1="Membeli barang/jasa" desc2="Memiliki faktor produksi" />
-    </div>
+      {/* Bottom Right: Income (Market to HH) */}
+      <path d="M 680 570 H 830 Q 870 570 870 530 V 430" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="730" y="590" fill="#047857" fontSize="18" fontWeight="bold">Income (Pendapatan)</text>
 
-    {/* 4. Lower Flow Strip */}
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, padding: '8px 12px' }}>
-      {/* Left side: Firms → Factor Market */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, borderRight: '1px solid #334155', paddingRight: 8 }}>
-        <FlowLabel dir="down" label="Upah, sewa, bunga, laba" color="#f59e0b" sub="Bayar faktor produksi" />
-        <FlowLabel dir="down" label="Faktor dipakai" color="#60a5fa" sub="Input untuk produksi" />
-      </div>
-      {/* Right side: Households → Factor Market */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 2, paddingLeft: 8, alignItems: 'flex-end' }}>
-        <FlowLabel dir="down" label="Income (Pendapatan)" color="#f59e0b" sub="Diterima rumah tangga" />
-        <FlowLabel dir="down" label="TK, tanah, modal" color="#60a5fa" sub="Dijual ke perusahaan" />
-      </div>
-    </div>
+      {/* Bottom Left: Wages/Rent/Profit (Firm to Market) */}
+      <path d="M 130 430 V 530 Q 130 570 170 570 H 320" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="180" y="590" fill="#047857" fontSize="18" fontWeight="bold">Wages, rent, and profit</text>
 
-    {/* 5. Bottom Market */}
-    <MarketPill title="PASAR FAKTOR PRODUKSI" sub="(Factors of Production Market)" />
 
-    {/* 6. Legend */}
-    <div style={{
-      display: 'flex', justifyContent: 'center', gap: 20, flexWrap: 'wrap',
-      padding: '8px 16px', marginTop: 10, background: '#0f172a', borderRadius: 8, border: '1px solid #334155',
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#cbd5e1' }}>
-        <FlowArrow dir="down" color="#f59e0b" /> Arus uang (Money)
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11, color: '#cbd5e1' }}>
-        <FlowArrow dir="down" color="#60a5fa" /> Arus barang/faktor (Real)
-      </div>
-    </div>
+      {/* Inner Loop (Orange) - Flow of Real Goods/Inputs */}
+      {/* Top Left: Goods Sold (Firm to Market) */}
+      <path d="M 230 220 V 170 Q 230 150 250 150 H 320" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="255" y="135" fill="#b45309" fontSize="16" fontWeight="bold">Goods sold</text>
 
-    {/* 7. Key insight callout */}
-    <div style={{
-      marginTop: 10, padding: '10px 14px', background: '#0f172a', borderRadius: 10,
-      border: '1px solid #334155', fontSize: 11, color: '#94a3b8', lineHeight: 1.6,
-    }}>
-      <strong style={{ color: '#f1f5f9' }}>💡 Identitas Inti:</strong> Produksi = Pendapatan = Pengeluaran.
-      Setiap rupiah yang dibelanjakan menjadi pendapatan bagi orang lain. Itulah mengapa GDP bisa dihitung
-      dari sisi produksi, pendapatan, maupun pengeluaran — hasilnya sama.
-    </div>
+      {/* Top Right: Goods Bought (Market to HH) */}
+      <path d="M 680 150 H 750 Q 770 150 770 170 V 220" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="635" y="135" fill="#b45309" fontSize="16" fontWeight="bold">Goods bought</text>
+
+      {/* Bottom Right: Factors (HH to Market) */}
+      <path d="M 770 430 V 480 Q 770 500 750 500 H 680" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="615" y="525" fill="#b45309" fontSize="16" fontWeight="bold">Labor, land, capital</text>
+
+      {/* Bottom Left: Factors used (Market to Firm) */}
+      <path d="M 320 500 H 250 Q 230 500 230 480 V 430" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="185" y="525" fill="#b45309" fontSize="16" fontWeight="bold">Factors of production</text>
+
+      {/* Top Market */}
+      <ellipse cx="500" cy="115" rx="180" ry="80" fill="url(#market-grad)" stroke="#ca8a04" strokeWidth="4" />
+      <text x="500" y="100" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">MARKETS FOR</text>
+      <text x="500" y="125" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">GOODS AND SERVICES</text>
+      <text x="500" y="155" textAnchor="middle" fill="#854d0e" fontSize="16" fontWeight="600">• Firms sell  • Households buy</text>
+
+      {/* Bottom Market */}
+      <ellipse cx="500" cy="535" rx="180" ry="80" fill="url(#market-grad)" stroke="#ca8a04" strokeWidth="4" />
+      <text x="500" y="520" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">MARKETS FOR</text>
+      <text x="500" y="545" textAnchor="middle" fill="#713f12" fontSize="22" fontWeight="bold">FACTORS OF PRODUCTION</text>
+      <text x="500" y="575" textAnchor="middle" fill="#854d0e" fontSize="16" fontWeight="600">• Households sell  • Firms buy</text>
+
+      {/* Firms Box */}
+      <rect x="50" y="220" width="220" height="210" rx="16" fill="url(#firm-grad)" stroke="#3b82f6" strokeWidth="4" />
+      <text x="160" y="265" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="bold">FIRMS</text>
+      <text x="160" y="300" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Produce and sell</text>
+      <text x="160" y="320" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">goods and services</text>
+      <text x="160" y="350" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Hire and use factors</text>
+      <text x="160" y="370" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
+
+      {/* Households Box */}
+      <rect x="730" y="220" width="220" height="210" rx="16" fill="url(#firm-grad)" stroke="#3b82f6" strokeWidth="4" />
+      <text x="840" y="265" textAnchor="middle" fill="#1e3a8a" fontSize="26" fontWeight="bold">HOUSEHOLDS</text>
+      <text x="840" y="300" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Buy and consume</text>
+      <text x="840" y="320" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">goods and services</text>
+      <text x="840" y="350" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">• Own and sell factors</text>
+      <text x="840" y="370" textAnchor="middle" fill="#1e40af" fontSize="16" fontWeight="600">of production</text>
+
+      {/* Legend */}
+      <rect x="380" y="280" width="240" height="90" rx="12" fill="#ffffff" stroke="#cbd5e1" strokeWidth="2" />
+      <path d="M 400 310 L 440 310" fill="none" stroke="#10b981" strokeWidth="6" markerEnd="url(#arrow-green)" />
+      <text x="460" y="315" fill="#334155" fontSize="16" fontWeight="600">= Flow of dollars</text>
+
+      <path d="M 400 345 L 440 345" fill="none" stroke="#f59e0b" strokeWidth="6" markerEnd="url(#arrow-orange)" />
+      <text x="460" y="350" fill="#334155" fontSize="16" fontWeight="600">= Flow of inputs/outputs</text>
+    </svg>
   </div>
 );
-
-
-/* ─────────────────── GDP to DI Waterfall ─────────────────── */
-
-interface WaterfallStep {
-  abbr: string;
-  full: string;
-  formula: string;
-  color: string;
-}
-
-const steps: WaterfallStep[] = [
-  { abbr: 'GDP', full: 'Gross Domestic Product', formula: 'C + I + G + NX', color: '#3b82f6' },
-  { abbr: 'GNP', full: 'Gross National Product', formula: '+ Pendapatan faktor neto dari LN', color: '#3b82f6' },
-  { abbr: 'NNP', full: 'Net National Product', formula: '− Depresiasi (penyusutan)', color: '#3b82f6' },
-  { abbr: 'NI', full: 'National Income', formula: '− Pajak tidak langsung', color: '#8b5cf6' },
-  { abbr: 'PI', full: 'Personal Income', formula: '− Laba ditahan − Pajak corp + Transfer', color: '#f59e0b' },
-  { abbr: 'DI', full: 'Disposable Income', formula: '− Pajak personal → DI = C + S', color: '#22c55e' },
-];
 
 export const GDPWaterfallDiagram: React.FC = () => (
-  <div style={{ fontFamily: 'system-ui, -apple-system, sans-serif', color: '#e2e8f0', maxWidth: 580, margin: '0 auto' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-      {steps.map((step, i) => (
-        <React.Fragment key={step.abbr}>
-          <div style={{
-            display: 'flex', alignItems: 'center', gap: 12,
-            padding: '12px 16px',
-            background: '#1e293b',
-            borderLeft: `4px solid ${step.color}`,
-            borderRadius: i === 0 ? '12px 12px 0 0' : i === steps.length - 1 ? '0 0 12px 12px' : 0,
-            borderBottom: i < steps.length - 1 ? '1px solid #334155' : 'none',
-          }}>
-            <div style={{
-              minWidth: 44, height: 44, borderRadius: 10,
-              background: step.color + '20', border: `1.5px solid ${step.color}`,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              fontWeight: 800, fontSize: 14, color: step.color,
-              flexShrink: 0,
-            }}>
-              {step.abbr}
-            </div>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontWeight: 700, fontSize: 13, color: '#f1f5f9' }}>{step.full}</div>
-              <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 2 }}>{step.formula}</div>
-            </div>
-            {i < steps.length - 1 && (
-              <div style={{ fontSize: 16, color: '#475569', flexShrink: 0 }}>▼</div>
-            )}
-          </div>
-        </React.Fragment>
-      ))}
-    </div>
+  <div className="w-full max-w-5xl mx-auto overflow-x-auto bg-slate-50 dark:bg-slate-900 rounded-xl p-4 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-inner">
+    <svg viewBox="0 0 1000 650" className="w-full h-auto drop-shadow-sm font-sans" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="waterfall-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b" />
+        </marker>
+        <marker id="branch-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f172a" />
+        </marker>
+      </defs>
 
-    {/* Summary */}
-    <div style={{
-      marginTop: 10, padding: '10px 14px',
-      background: '#0f172a', borderRadius: 10, border: '1px solid #334155',
-    }}>
-      <div style={{ fontSize: 12, fontWeight: 700, color: '#f1f5f9', marginBottom: 6 }}>Ringkasan Alur:</div>
-      <div style={{ fontSize: 11, color: '#94a3b8', fontFamily: 'monospace', lineHeight: 1.8, overflowX: 'auto' }}>
-        GDP →(+NFI)→ GNP →(−Depr.)→ NNP →(−Pjk TL)→ NI<br />
-        NI →(−Laba dthn −Pjk Corp +Transfer)→ PI →(−Pjk Personal)→ <strong style={{ color: '#22c55e' }}>DI = C + S</strong>
-      </div>
-    </div>
+      {/* Grid lines */}
+      <line x1="40" y1="100" x2="960" y2="100" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="5,5" />
+      <line x1="40" y1="200" x2="960" y2="200" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="5,5" />
+      <line x1="40" y1="300" x2="960" y2="300" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="5,5" />
+      <line x1="40" y1="400" x2="960" y2="400" stroke="#cbd5e1" strokeWidth="1" strokeDasharray="5,5" />
+      
+      {/* Ground Line */}
+      <line x1="40" y1="500" x2="960" y2="500" stroke="#475569" strokeWidth="4" strokeLinecap="round" />
+
+      {/* Bar 1: GDP */}
+      <rect x="60" y="100" width="80" height="400" rx="8" fill="#3b82f6" />
+      <text x="100" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">GDP</text>
+      
+      {/* Arrow 1 */}
+      <path d="M 140 100 Q 195 80 250 120" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
+      <text x="195" y="70" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">+/- Pendapatan Neto LN</text>
+
+      {/* Bar 2: GNP */}
+      <rect x="210" y="130" width="80" height="370" rx="8" fill="#6366f1" />
+      <text x="250" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">GNP</text>
+
+      {/* Arrow 2 */}
+      <path d="M 290 130 Q 345 110 400 170" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
+      <text x="345" y="100" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Depresiasi</text>
+
+      {/* Bar 3: NNP */}
+      <rect x="360" y="180" width="80" height="320" rx="8" fill="#8b5cf6" />
+      <text x="400" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">NNP</text>
+
+      {/* Arrow 3 */}
+      <path d="M 440 180 Q 495 160 550 220" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
+      <text x="495" y="150" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Pajak tak langsung</text>
+
+      {/* Bar 4: NI */}
+      <rect x="510" y="230" width="80" height="270" rx="8" fill="#d946ef" />
+      <text x="550" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">NI</text>
+
+      {/* Arrow 4 */}
+      <path d="M 590 230 Q 645 210 700 270" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
+      <text x="645" y="185" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Laba ditahan, Pajak PT</text>
+      <text x="645" y="205" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">+ Transfer payment</text>
+
+      {/* Bar 5: PI */}
+      <rect x="660" y="280" width="80" height="220" rx="8" fill="#f43f5e" />
+      <text x="700" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">PI</text>
+
+      {/* Arrow 5 */}
+      <path d="M 740 280 Q 795 260 850 320" fill="none" stroke="#64748b" strokeWidth="3" markerEnd="url(#waterfall-arrow)" strokeDasharray="4,4" />
+      <text x="795" y="250" fill="#475569" fontSize="14" fontWeight="600" textAnchor="middle">− Pajak personal</text>
+
+      {/* Bar 6: DI */}
+      <rect x="810" y="330" width="80" height="170" rx="8" fill="#e11d48" />
+      <text x="850" y="480" fill="#ffffff" fontSize="20" fontWeight="bold" textAnchor="middle">DI</text>
+
+      {/* Branches from DI */}
+      <path d="M 850 510 L 780 560" fill="none" stroke="#0f172a" strokeWidth="4" markerEnd="url(#branch-arrow)" />
+      <rect x="690" y="560" width="130" height="50" rx="10" fill="#10b981" />
+      <text x="755" y="590" fill="#ffffff" fontSize="18" fontWeight="bold" textAnchor="middle">KONSUMSI</text>
+
+      <path d="M 850 510 L 920 560" fill="none" stroke="#0f172a" strokeWidth="4" markerEnd="url(#branch-arrow)" />
+      <rect x="870" y="560" width="120" height="50" rx="10" fill="#f59e0b" />
+      <text x="930" y="590" fill="#ffffff" fontSize="18" fontWeight="bold" textAnchor="middle">TABUNGAN</text>
+
+    </svg>
   </div>
 );
 
-
-/* ──────────────────── Registry ──────────────────── */
-
-const DIAGRAM_REGISTRY: Record<string, React.FC> = {
-  'circular-flow': CircularFlowDiagram,
-  'gdp-waterfall': GDPWaterfallDiagram,
-};
-
-interface Props {
-  type: string;
-}
-
-const EconDiagram: React.FC<Props> = ({ type }) => {
-  const Component = DIAGRAM_REGISTRY[type];
-  if (!Component) {
-    return <div style={{ color: '#ef4444', padding: 12 }}>Diagram &ldquo;{type}&rdquo; not found</div>;
+export default function EconDiagram({ type }: { type: string }) {
+  switch (type) {
+    case 'circular-flow':
+      return <CircularFlowDiagram />;
+    case 'gdp-waterfall':
+      return <GDPWaterfallDiagram />;
+    default:
+      return <div className="p-4 border border-red-500 text-red-500 rounded-lg">Diagram type '{type}' not found.</div>;
   }
-  return <Component />;
-};
-
-export default EconDiagram;
+}
