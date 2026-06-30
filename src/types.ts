@@ -116,7 +116,7 @@ export type ContentBlock =
   | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string }
   | { kind: 'journal'; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
-  | { kind: 'figure'; title?: string; svg: string; caption?: string; altText?: string }
+  | { kind: 'figure'; title?: string; svg?: string; url?: string; caption?: string; altText?: string }
   | { kind: 'example'; title: string; blocks: ContentBlock[] }
   | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[] }
   | { kind: 'statement'; spec: StatementSpec }

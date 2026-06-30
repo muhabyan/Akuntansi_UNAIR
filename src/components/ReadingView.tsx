@@ -189,7 +189,11 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
       return (
         <figure className="my-8">
           <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-lg p-6 flex justify-center">
-            <div dangerouslySetInnerHTML={{ __html: block.svg }} />
+            {block.svg ? (
+              <div dangerouslySetInnerHTML={{ __html: block.svg }} />
+            ) : block.url ? (
+              <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
+            ) : null}
           </div>
           {(block.title || block.caption) && (
             <figcaption className="mt-3 text-center">

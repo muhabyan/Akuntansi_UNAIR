@@ -577,12 +577,16 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               </figcaption>
             )}
             <div className="p-4 md:p-5">
-              <div
-                className="course-solid-surface rounded-xl p-3 bg-white dark:bg-navy-800/40"
-                role="img"
-                aria-label={block.altText ?? block.title ?? 'Visual materi'}
-                dangerouslySetInnerHTML={{ __html: block.svg }}
-              />
+              {block.svg ? (
+                <div
+                  className="course-solid-surface rounded-xl p-3 bg-white dark:bg-navy-800/40"
+                  role="img"
+                  aria-label={block.altText ?? block.title ?? 'Visual materi'}
+                  dangerouslySetInnerHTML={{ __html: block.svg }}
+                />
+              ) : block.url ? (
+                <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
+              ) : null}
             </div>
             {block.caption && <p className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
           </figure>
@@ -598,13 +602,17 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             </figcaption>
           )}
           <div className="p-3 md:p-5">
-            <div
-              className="course-solid-surface rounded-xl p-2 md:p-3 bg-white dark:bg-navy-800/40"
-              role="img"
-              aria-label={block.altText ?? block.title ?? 'Visual materi'}
-              tabIndex={0}
-              dangerouslySetInnerHTML={{ __html: block.svg }}
-            />
+            {block.svg ? (
+              <div
+                className="course-solid-surface rounded-xl p-2 md:p-3 bg-white dark:bg-navy-800/40"
+                role="img"
+                aria-label={block.altText ?? block.title ?? 'Visual materi'}
+                tabIndex={0}
+                dangerouslySetInnerHTML={{ __html: block.svg }}
+              />
+            ) : block.url ? (
+              <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
+            ) : null}
           </div>
           {block.caption && <p id={`${blockId}-caption`} className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
         </figure>

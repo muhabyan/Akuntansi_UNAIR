@@ -388,346 +388,2740 @@ const tm8: Reading = {
 
 const tm9: Reading = {
   "tm": 9,
-  "title": "Perekonomian Tertutup (Bagian 1): Identitas, Konsumsi, Tabungan & Dana Pinjaman",
-  "ref": "Kontrak: 1(20), 2(23,24) · Substansi: Samuelson Ch.21–22; Mankiw Ch.26, Ch.33–34",
-  "intro": "Membangun identitas ekonomi tertutup, fungsi konsumsi-tabungan, hubungan S = I, dan mekanisme pasar dana pinjaman.",
+  "title": "Closed Economy: Consumption, Saving, and Investment",
+  "ref": "Salinan 9-10. Closed Economy",
+  "intro": "Membahas hubungan konsumsi, tabungan, dan investasi dalam ekonomi tertutup.",
   "objectives": [
-    "Menurunkan identitas tabungan nasional, tabungan privat, dan tabungan publik.",
-    "Menggunakan fungsi konsumsi dan tabungan serta MPC dan MPS.",
-    "Menjelaskan mengapa S = I dalam ekonomi tertutup.",
-    "Menganalisis suku bunga riil dan crowding out melalui pasar dana pinjaman."
+    "Memahami konsep Consumption dan Saving.",
+    "Memahami fungsi konsumsi dan tabungan.",
+    "Memahami konsep Marginal Propensity to Consume (MPC) dan Marginal Propensity to Save (MPS).",
+    "Memahami konsep Investasi."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Identitas Ekonomi Tertutup"
+      "text": "Cover"
     },
     {
       "kind": "p",
-      "text": "Perekonomian tertutup adalah perekonomian yang tidak melakukan transaksi barang, jasa, dan aset finansial dengan luar negeri. Dalam model ini, ekspor dan impor dianggap nol, sehingga analisis berfokus pada interaksi rumah tangga, perusahaan, dan pemerintah di dalam negeri."
-    },
-    {
-      "kind": "formula",
-      "text": "Identitas Dasar\n\nY = C + I + G\n\nJika tanpa pemerintah: Y = C + I\n\nJika ekonomi tertutup: NX = 0"
+      "text": "Judul materi: `Closed Economy`."
     },
     {
       "kind": "p",
-      "text": "Identitas ini bukan teori perilaku, melainkan persamaan akuntansi. Teori muncul ketika kita menjelaskan bagaimana C, I, dan G ditentukan, serta bagaimana perubahan salah satu komponen memengaruhi output ekuilibrium."
+      "text": "Keterangan waktu: `Week 9-10`."
     },
     {
-      "kind": "formula",
-      "text": "Tabungan dan Investasi dalam Ekonomi Tertutup\n\nNational saving: S = Y − C − G\n\nPrivate saving: S_private = Y − T − C\n\nPublic saving: S_public = T − G\n\nS = S_private + S_public\n\nDalam ekonomi tertutup: S = I"
+      "kind": "p",
+      "text": "Inti materi: Modul ini membahas ekonomi tertutup, yaitu ekonomi yang tidak memasukkan transaksi luar negeri. Fokusnya adalah hubungan konsumsi, tabungan, investasi, keseimbangan output nasional, multiplier, dan kebijakan fiskal."
     },
     {
-      "kind": "callout",
-      "variant": "key",
-      "title": "Makna S = I",
-      "text": "dana yang tidak dikonsumsi oleh rumah tangga/pemerintah menjadi sumber pembiayaan investasi domestik. Jika defisit pemerintah naik, tabungan publik turun dan bisa menekan dana investasi swasta melalui crowding out."
+      "kind": "p",
+      "text": "Implementasi website: Jadikan slide ini sebagai hero section TM 9 dan TM 10, tetapi isi TM 9 dimulai dari konsumsi, tabungan, dan investasi."
     },
     {
       "kind": "h2",
-      "text": "Konsumsi, Tabungan, dan Investasi"
+      "text": "Outline"
     },
     {
       "kind": "p",
-      "text": "Konsumsi biasanya menjadi komponen terbesar pengeluaran agregat. Model sederhana Keynesian menempatkan konsumsi sebagai fungsi dari pendapatan disposabel. Semakin besar pendapatan disposabel, konsumsi naik, tetapi biasanya tidak sebesar kenaikan pendapatan karena sebagian ditabung. Di Indonesia, konsumsi rumah tangga adalah komponen pengeluaran terbesar, sekitar 53,9% PDB pada 2025 (BPS, rilis 5 Feb 2026)."
+      "text": "Materi yang tercakup dalam file:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Two-sectors economy.",
+        "Consumption and saving.",
+        "Investment.",
+        "National income equilibrium and multiplier model.",
+        "Three-sectors economy.",
+        "The role of fiscal policy in the multiplier model."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Pembagian modul:"
+    },
+    {
+      "kind": "p",
+      "text": "TM 9 mencakup poin 1 sampai bagian awal investasi, yaitu slide 1-22."
+    },
+    {
+      "kind": "p",
+      "text": "TM 10 mencakup peran investasi, keseimbangan pendapatan nasional, multiplier, tiga sektor, dan kebijakan fiskal, yaitu slide 23-52."
+    },
+    {
+      "kind": "h2",
+      "text": "Consumption"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Consumption adalah aktivitas yang mengurangi atau menghabiskan utility barang dan jasa. Personal consumption expenditure adalah pengeluaran rumah tangga untuk membeli barang tidak tahan lama, barang tahan lama kecuali rumah baru, dan jasa."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus fungsi konsumsi linear:"
     },
     {
       "kind": "formula",
-      "text": "Fungsi Konsumsi dan Tabungan\n\nC = a + bY_d\n\nS = Y_d − C = −a + (1−b)Y_d\n\nMPC = ΔC/ΔY_d = b\n\nMPS = ΔS/ΔY_d = 1−b\n\nMPC + MPS = 1"
+      "text": "C = C_0 + bY"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol:"
+    },
+    {
+      "kind": "p",
+      "text": "`C` adalah konsumsi. `C0` atau `C₀` adalah autonomous consumption. `b` adalah marginal propensity to consume atau MPC. `Y` adalah disposable income pada model sederhana slide ini. Nilai `b` berada pada interval `0 < b < 1`."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Konsumsi terdiri dari dua komponen. Pertama, konsumsi otonom yang tetap ada meskipun pendapatan nol. Kedua, konsumsi yang dipengaruhi pendapatan. Jika `b = 0.8`, tambahan pendapatan 1 unit akan menaikkan konsumsi sebesar 0.8 unit."
+    },
+    {
+      "kind": "p",
+      "text": "Implementasi website: Buat kartu konsep `Autonomous Consumption` dan `Induced Consumption`. Tambahkan formula interaktif agar pengguna bisa mengganti nilai `C0`, `b`, dan `Y`."
+    },
+    {
+      "kind": "h2",
+      "text": "Saving"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Personal saving adalah bagian dari disposable income yang tidak dikonsumsi."
+    },
+    {
+      "kind": "p",
+      "text": "Derivasi fungsi tabungan:"
+    },
+    {
+      "kind": "formula",
+      "text": "S = Y - C"
+    },
+    {
+      "kind": "p",
+      "text": "Karena:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + bY"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "S = Y - (C_0 + bY)"
+    },
+    {
+      "kind": "p",
+      "text": "Sehingga:"
+    },
+    {
+      "kind": "formula",
+      "text": "S = -C_0 + (1-b)Y"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol:"
+    },
+    {
+      "kind": "p",
+      "text": "`S` adalah saving atau tabungan. `-C0` adalah dissaving atau tabungan negatif. `(1-b)` adalah marginal propensity to save atau MPS. `Y` adalah disposable income. Nilai `b` berada antara 0 dan 1, sehingga MPS juga berada antara 0 dan 1."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Tabungan adalah sisa dari pendapatan setelah konsumsi. Jika pendapatan rendah, konsumsi dapat melebihi pendapatan sehingga tabungan negatif. Ketika pendapatan meningkat, tabungan naik mengikuti slope `(1-b)`."
+    },
+    {
+      "kind": "p",
+      "text": "Catatan validasi: Jangan tampilkan bentuk `S = Y - C0 + bY` sebagai bentuk akhir. Bentuk final yang konsisten adalah `S = -C0 + (1-b)Y`."
+    },
+    {
+      "kind": "h2",
+      "text": "Income, Consumption and Saving"
+    },
+    {
+      "kind": "p",
+      "text": "Tabel ini menunjukkan hubungan disposable income, consumption, dan saving. Saving dihitung sebagai disposable income dikurangi consumption."
     },
     {
       "kind": "table",
       "headers": [
-        "Istilah",
-        "Makna",
-        "Implikasi"
+        "Kelompok",
+        "Disposable Income",
+        "Consumption",
+        "Saving = Income - Consumption"
       ],
       "rows": [
         [
-          "Autonomous consumption (a)",
-          "Konsumsi minimum saat pendapatan nol.",
-          "Dibiayai dari tabungan lama, utang, atau transfer."
+          "A",
+          "24,000",
+          "24,200",
+          "-200"
         ],
         [
-          "MPC",
-          "Tambahan konsumsi dari tambahan pendapatan.",
-          "Semakin tinggi MPC, semakin besar multiplier."
+          "B",
+          "25,000",
+          "25,000",
+          "0"
         ],
         [
-          "MPS",
-          "Tambahan tabungan dari tambahan pendapatan.",
-          "Semakin tinggi MPS, semakin kecil multiplier."
+          "C",
+          "26,000",
+          "25,800",
+          "200"
         ],
         [
-          "Investasi",
-          "Pengeluaran untuk menambah modal, persediaan, atau bangunan.",
-          "Dipengaruhi suku bunga, ekspektasi laba, teknologi, kapasitas, dan stabilitas ekonomi."
+          "D",
+          "27,000",
+          "26,600",
+          "400"
+        ],
+        [
+          "E",
+          "28,000",
+          "27,400",
+          "600"
+        ],
+        [
+          "F",
+          "29,000",
+          "28,200",
+          "800"
+        ],
+        [
+          "G",
+          "30,000",
+          "29,000",
+          "1,000"
         ]
       ]
     },
     {
+      "kind": "p",
+      "text": "Makna tabel: Saat disposable income sebesar 24,000, konsumsi sebesar 24,200. Artinya rumah tangga melakukan dissaving sebesar 200. Titik B adalah break-even karena pendapatan sama dengan konsumsi. Setelah pendapatan melewati 25,000, saving menjadi positif."
+    },
+    {
+      "kind": "p",
+      "text": "Catatan koreksi: Pada hasil ekstraksi teks PPT, baris A kadang terbaca `200`. Secara ekonomi dan aritmetika harus `-200`, karena `24,000 - 24,200 = -200`."
+    },
+    {
+      "kind": "p",
+      "text": "Implementasi website: Tabel ini wajib muncul sebagai tabel HTML. Tambahkan highlight pada baris B sebagai `break-even point`."
+    },
+    {
       "kind": "h2",
-      "text": "Pasar Dana Pinjaman (Loanable Funds)"
+      "text": "Income, Consumption and Saving: Grafik Fungsi Konsumsi"
     },
     {
       "kind": "p",
-      "text": "Keynesian Cross menjelaskan output jangka pendek ketika harga cenderung kaku. Pasar dana pinjaman melihatnya dari sisi klasik: bagaimana tabungan dan investasi dipertemukan oleh suku bunga riil. Bayangkan satu pasar tempat seluruh tabungan ditawarkan dan seluruh kebutuhan dana untuk investasi diminta."
-    },
-    {
-      "kind": "formula",
-      "text": "Inti Pasar Dana Pinjaman (Mankiw Ch. 26)\n\nPenawaran dana = tabungan nasional (S)\n\nPermintaan dana = investasi (I)\n\nHarga = suku bunga riil (r)\n\nEkuilibrium: S = I pada r*"
+      "text": "Visual: grafik fungsi konsumsi dengan sumbu horizontal `Disposable income` dan sumbu vertikal `Consumption expenditures`. Titik A-G mengikuti data slide 5. Garis 45 derajat menunjukkan kondisi `Y = C`. Garis konsumsi menunjukkan hubungan aktual antara disposable income dan konsumsi."
     },
     {
       "kind": "p",
-      "text": "Penawaran dana datang dari tabungan. Suku bunga yang lebih tinggi membuat menabung lebih menarik, jadi kurva penawaran menanjak. Permintaan dana datang dari investasi. Suku bunga yang lebih tinggi membuat pinjaman lebih mahal, jadi kurva permintaan menurun. Suku bunga riil menyesuaikan sampai dana yang ditabung sama dengan dana yang dipinjam untuk investasi."
+      "text": "Data grafik:"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Titik",
+        "Disposable Income",
+        "Consumption"
+      ],
+      "rows": [
+        [
+          "A",
+          "24,000",
+          "24,200"
+        ],
+        [
+          "B",
+          "25,000",
+          "25,000"
+        ],
+        [
+          "C",
+          "26,000",
+          "25,800"
+        ],
+        [
+          "D",
+          "27,000",
+          "26,600"
+        ],
+        [
+          "E",
+          "28,000",
+          "27,400"
+        ],
+        [
+          "F",
+          "29,000",
+          "28,200"
+        ],
+        [
+          "G",
+          "30,000",
+          "29,000"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Makna visual: Titik B adalah break-even point. Di kiri titik B, konsumsi lebih besar daripada pendapatan sehingga terjadi dissaving. Di kanan titik B, pendapatan lebih besar daripada konsumsi sehingga terjadi saving. Jarak vertikal antara garis 45 derajat dan fungsi konsumsi menunjukkan besar tabungan atau dissaving."
+    },
+    {
+      "kind": "p",
+      "text": "Instruksi chart: Buat line chart dengan dua garis: `45-degree line: C = Y` dan `Consumption function`. Gunakan label sumbu lengkap. Jangan hanya menulis `DI` dan `C`. Tambahkan anotasi `Break-even point` pada B."
     },
     {
       "kind": "figure",
-      "title": "Pasar Dana Pinjaman: ekuilibrium & dampak defisit",
-      "svg": "<svg data-graph-id=\"PTE-GRAPH-02\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Pasar Dana Pinjaman: ekuilibrium &amp; dampak defisit</title><desc>Grafik pasar dana pinjaman dengan kuantitas dana pada sumbu horizontal dan suku bunga riil pada sumbu vertikal. Penawaran dana bergeser ke kiri akibat defisit, sehingga suku bunga naik dan kuantitas investasi turun.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"14\" y=\"26\">r</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"342\" y=\"251\">Q</text><line stroke=\"#22d3a0\" stroke-width=\"2.3\" x1=\"100\" x2=\"325\" y1=\"205\" y2=\"50\"></line><text fill=\"#22d3a0\" font-size=\"10\" x=\"328\" y=\"52\">S₁</text><line stroke=\"#f4516c\" stroke-dasharray=\"5,4\" stroke-width=\"2\" x1=\"55\" x2=\"280\" y1=\"205\" y2=\"50\"></line><text fill=\"#f4516c\" font-size=\"10\" x=\"236\" y=\"42\">S₂ (defisit↑)</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"100\" x2=\"325\" y1=\"60\" y2=\"205\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"328\" y=\"207\">D = I</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"209\" x2=\"209\" y1=\"130\" y2=\"235\"></line><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"209\" y1=\"130\" y2=\"130\"></line><circle cx=\"209\" cy=\"130\" fill=\"#f9a825\" r=\"3.6\"></circle><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"186\" x2=\"186\" y1=\"115\" y2=\"235\"></line><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"55\" x2=\"186\" y1=\"115\" y2=\"115\"></line><circle cx=\"186\" cy=\"115\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"134\">r₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"112\">r₂</text><text fill=\"#f9a825\" font-size=\"10\" x=\"201\" y=\"249\">Q₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"166\" y=\"249\">Q₂</text></svg>",
-      "caption": "Defisit menurunkan tabungan nasional sehingga kurva penawaran dana bergeser ke kiri dari S1 ke S2. Suku bunga riil naik dari r1 ke r2 dan dana investasi turun dari Q1 ke Q2.",
-      "altText": "Grafik pasar dana pinjaman dengan kuantitas dana pada sumbu horizontal dan suku bunga riil pada sumbu vertikal. Penawaran dana bergeser ke kiri akibat defisit, sehingga suku bunga naik dan kuantitas investasi turun."
+      "url": "/assets/pte/slide06_consumption_function.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
     },
     {
-      "kind": "callout",
-      "variant": "tip",
-      "title": "Defisit dan crowding out",
-      "text": "ketika pemerintah defisit, tabungan publik negatif sehingga tabungan nasional turun. Kurva penawaran dana bergeser ke kiri, suku bunga riil naik dari r₁ ke r₂, dan investasi swasta yang terdanai turun dari Q₁ ke Q₂. Inilah crowding out yang disinggung pada bagian kebijakan fiskal."
+      "kind": "h2",
+      "text": "Income, Consumption and Saving: Grafik Fungsi Tabungan"
     },
     {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Hati-hati",
-      "text": "tabungan dan investasi di sini adalah konsep makro agregat, bukan \"uang yang disimpan di rumah\". Tabungan mengalir menjadi dana investasi lewat sistem keuangan, bukan dana yang menganggur."
+      "kind": "p",
+      "text": "Visual: grafik fungsi tabungan sebagai cerminan dari fungsi konsumsi. Sumbu horizontal adalah `Disposable income`; sumbu vertikal adalah `Net saving`."
+    },
+    {
+      "kind": "p",
+      "text": "Data grafik:"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Titik",
+        "Disposable Income",
+        "Saving"
+      ],
+      "rows": [
+        [
+          "A",
+          "24,000",
+          "-200"
+        ],
+        [
+          "B",
+          "25,000",
+          "0"
+        ],
+        [
+          "C",
+          "26,000",
+          "200"
+        ],
+        [
+          "D",
+          "27,000",
+          "400"
+        ],
+        [
+          "E",
+          "28,000",
+          "600"
+        ],
+        [
+          "F",
+          "29,000",
+          "800"
+        ],
+        [
+          "G",
+          "30,000",
+          "1,000"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Makna visual: Fungsi tabungan memotong sumbu horizontal pada titik B, yaitu saat tabungan sama dengan nol. Di bawah titik B, saving negatif. Di atas titik B, saving positif. Semakin tinggi disposable income, semakin tinggi saving."
+    },
+    {
+      "kind": "p",
+      "text": "Instruksi chart: Buat line chart dengan satu garis `Saving function`. Pastikan area negatif pada saving tetap terlihat agar konsep dissaving tidak hilang."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide07_saving_function.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "MPC and MPS"
+    },
+    {
+      "kind": "p",
+      "text": "Definisi: MPC adalah slope dari fungsi konsumsi. MPC mengukur tambahan konsumsi akibat tambahan satu unit disposable income. MPS adalah slope dari fungsi tabungan. MPS mengukur bagian dari tambahan disposable income yang masuk ke tambahan tabungan."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus hubungan:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPC + MPS = 1"
+    },
+    {
+      "kind": "p",
+      "text": "Rumus operasional:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPC = \\frac{\\Delta C}{\\Delta Y_d}"
+    },
+    {
+      "kind": "formula",
+      "text": "MPS = \\frac{\\Delta S}{\\Delta Y_d}"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol: `ΔC` adalah perubahan konsumsi. `ΔS` adalah perubahan tabungan. `ΔYd` adalah perubahan disposable income."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Karena tambahan pendapatan hanya dapat digunakan untuk konsumsi atau tabungan, jumlah MPC dan MPS selalu sama dengan satu. Jika MPC = 0.8, maka MPS = 0.2."
+    },
+    {
+      "kind": "h2",
+      "text": "MPC and MPS: Tabel Marginal Propensities"
+    },
+    {
+      "kind": "p",
+      "text": "Tabel ini menunjukkan bahwa setiap kenaikan disposable income sebesar 1,000 menaikkan konsumsi sebesar 800 dan saving sebesar 200."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kelompok",
+        "Disposable Income",
+        "Consumption",
+        "MPC",
+        "Net Saving",
+        "MPS"
+      ],
+      "rows": [
+        [
+          "A",
+          "24,000",
+          "24,200",
+          "-",
+          "-200",
+          "-"
+        ],
+        [
+          "B",
+          "25,000",
+          "25,000",
+          "800 / 1,000 = 0.80",
+          "0",
+          "200 / 1,000 = 0.20"
+        ],
+        [
+          "C",
+          "26,000",
+          "25,800",
+          "800 / 1,000 = 0.80",
+          "200",
+          "200 / 1,000 = 0.20"
+        ],
+        [
+          "D",
+          "27,000",
+          "26,600",
+          "800 / 1,000 = 0.80",
+          "400",
+          "200 / 1,000 = 0.20"
+        ],
+        [
+          "E",
+          "28,000",
+          "27,400",
+          "800 / 1,000 = 0.80",
+          "600",
+          "200 / 1,000 = 0.20"
+        ],
+        [
+          "F",
+          "29,000",
+          "28,200",
+          "800 / 1,000 = 0.80",
+          "800",
+          "200 / 1,000 = 0.20"
+        ],
+        [
+          "G",
+          "30,000",
+          "29,000",
+          "800 / 1,000 = 0.80",
+          "1,000",
+          "200 / 1,000 = 0.20"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Makna tabel: Ketika disposable income naik dari 25,000 ke 26,000, consumption naik dari 25,000 ke 25,800. Perubahannya 800, sehingga MPC = 0.80. Pada saat yang sama, saving naik dari 0 ke 200, sehingga MPS = 0.20."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide09_mpc_mps_table.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "MPC and MPS: Slope Consumption Function"
+    },
+    {
+      "kind": "p",
+      "text": "Visual: grafik fungsi konsumsi yang menampilkan perubahan consumption sebesar 800 ketika disposable income naik sebesar 1,000. Hal ini menunjukkan bahwa slope fungsi konsumsi adalah MPC."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPC = \\frac{\\Delta C}{\\Delta Y_d} = \\frac{800}{1000} = 0.8"
+    },
+    {
+      "kind": "p",
+      "text": "Makna visual: Garis konsumsi memiliki slope lebih kecil daripada garis 45 derajat karena tidak semua tambahan pendapatan dikonsumsi. Sebagian pendapatan tambahan masuk ke saving."
+    },
+    {
+      "kind": "p",
+      "text": "Instruksi chart: Gunakan data slide 6. Tambahkan anotasi vertikal `ΔC = 800` dan anotasi horizontal `ΔYd = 1,000` antara titik B dan C."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide10_mpc_slope.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "MPC and MPS: Formula dan Diagram Tambahan"
+    },
+    {
+      "kind": "p",
+      "text": "Slide ini memuat empat visual pendukung."
+    },
+    {
+      "kind": "p",
+      "text": "Pertama, diagram fungsi konsumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + cY_D"
+    },
+    {
+      "kind": "p",
+      "text": "atau jika ada pajak:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + c(Y - T)"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol: `c` pada gambar sama dengan `b` atau MPC. `Y_D` adalah disposable income. `T` adalah pajak."
+    },
+    {
+      "kind": "p",
+      "text": "Kedua, rumus MPC:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPC = \\frac{\\Delta C}{\\Delta Y}"
+    },
+    {
+      "kind": "p",
+      "text": "Contoh dalam gambar:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPC = \\frac{C_2 - C_1}{Y_2 - Y_1} = \\frac{600000 - 400000}{1000000 - 500000} = \\frac{200000}{500000} = 0.4"
+    },
+    {
+      "kind": "p",
+      "text": "Ketiga, rumus konsumsi dengan pajak:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = \\text{Autonomous Consumption} + \\text{Induced Consumption}"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + cY_D"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + c(Y - T)"
+    },
+    {
+      "kind": "p",
+      "text": "Keempat, rumus MPS:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPS = \\frac{\\Delta S}{\\Delta Y_d} = \\frac{S_2 - S_1}{Y_2 - Y_1}"
+    },
+    {
+      "kind": "p",
+      "text": "Makna visual: Slide ini memperjelas bahwa fungsi konsumsi dan tabungan dapat diturunkan dari disposable income. Ketika ada pajak, pendapatan yang relevan untuk konsumsi bukan `Y`, tetapi `Yd = Y - T`."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide11_consumption_curve_diagram.png",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "MPC and MPS: Hubungan Fungsi Konsumsi dan Fungsi Tabungan"
+    },
+    {
+      "kind": "p",
+      "text": "Visual: diagram gabungan fungsi konsumsi dan fungsi tabungan. Garis `C = Y` menunjukkan kondisi pendapatan sama dengan konsumsi. Fungsi konsumsi ditulis sebagai `C = a + bY`. Fungsi tabungan ditulis sebagai `S = -a + (1-b)Y`."
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol: `a` sama dengan autonomous consumption atau `C0`. `b` adalah MPC. `(1-b)` adalah MPS. `YE` adalah tingkat pendapatan pada titik break-even."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Titik E adalah titik ketika konsumsi sama dengan pendapatan. Pada titik ini saving sama dengan nol. Jika pendapatan di bawah `YE`, saving negatif. Jika pendapatan di atas `YE`, saving positif."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide12_consumption_saving_combined.png",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Investment"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Dalam makroekonomi, investment atau real investment berarti penambahan stok aset produktif atau barang modal. Contohnya adalah pembelian kapital baru seperti peralatan dan bangunan."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh: Ketika Amazon membangun gudang baru atau keluarga membangun rumah baru, aktivitas tersebut termasuk investment dalam makroekonomi."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Investasi makroekonomi berbeda dari pemakaian kata investasi sehari-hari. Fokusnya bukan sekadar pembelian aset keuangan, melainkan penciptaan atau penambahan kapital riil yang meningkatkan kapasitas produksi."
+    },
+    {
+      "kind": "h2",
+      "text": "Investment: Real Investment vs Financial Investment"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Banyak orang menyebut pembelian tanah, saham, atau pembukaan rekening tabungan sebagai investasi. Dalam ekonomi, transaksi tersebut lebih tepat disebut financial transaction atau financial investment."
+    },
+    {
+      "kind": "p",
+      "text": "Penjelasan: Jika seseorang membeli saham, orang lain menjual saham tersebut. Efek bersih terhadap stok kapital riil ekonomi bisa nol. Investment dalam makroekonomi baru terjadi ketika real capital diproduksi."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Perbedaan ini penting karena model pendapatan nasional menghitung investasi sebagai penambahan kapasitas produksi, bukan hanya perpindahan kepemilikan aset."
+    },
+    {
+      "kind": "h2",
+      "text": "Istilah BPS: Investasi, PMTB, dan Perubahan Stok"
+    },
+    {
+      "kind": "p",
+      "text": "Menurut istilah BPS dalam slide, investasi mencakup pembentukan modal tetap bruto dan perubahan stok."
+    },
+    {
+      "kind": "p",
+      "text": "Pembentukan Modal Tetap Bruto atau PMTB setara dengan Gross Fixed Capital Formation atau GFCF. PMTB adalah pengeluaran untuk barang modal yang memiliki umur pemakaian lebih dari satu tahun dan bukan barang konsumsi."
+    },
+    {
+      "kind": "p",
+      "text": "Cakupan PMTB meliputi bangunan tempat tinggal, bangunan bukan tempat tinggal, bangunan lain seperti jalan dan bandara, serta mesin dan peralatan."
+    },
+    {
+      "kind": "p",
+      "text": "Catatan: Pengeluaran barang modal untuk keperluan militer tidak dicakup dalam rincian PMTB, tetapi digolongkan sebagai konsumsi pemerintah."
+    },
+    {
+      "kind": "p",
+      "text": "Implementasi website: Buat box khusus `Istilah BPS` agar mahasiswa memahami istilah Indonesia dan padanan Inggrisnya."
+    },
+    {
+      "kind": "h2",
+      "text": "Perubahan Stok"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Stok terdiri atas barang yang akan dipakai, barang dalam proses pengerjaan, dan barang jadi yang belum dijual. Pemegang stok sebagian besar adalah perusahaan, termasuk perusahaan pemerintah dan pemerintah sendiri."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh stok pemerintah: persediaan barang strategis seperti bahan pangan."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus konseptual:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\text{Perubahan stok} = \\text{Stok akhir tahun} - \\text{Stok awal tahun}"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Jika stok akhir lebih besar daripada stok awal, terjadi penambahan stok yang masuk ke komponen investasi. Jika stok akhir lebih kecil, terjadi pengurangan stok."
+    },
+    {
+      "kind": "p",
+      "text": "Catatan slide: Data perubahan stok barang strategis pemerintah belum tersedia."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Capital"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Capital terdiri dari durable produced items yang digunakan sebagai input produktif untuk produksi lebih lanjut."
+    },
+    {
+      "kind": "p",
+      "text": "Kategori tangible capital:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Structures, seperti pabrik dan rumah.",
+        "Equipment, seperti mobil, machine tools, dan truk.",
+        "Inventories, seperti mobil di dealer."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Perkembangan baru: Intangible capital atau e-capital semakin penting. Contohnya adalah software, paten, dan brand names."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Kapital modern tidak hanya berbentuk fisik. Aset tidak berwujud juga dapat meningkatkan produktivitas dan nilai produksi."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Tangible, Intangible, and Financial Assets"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Tangible assets dan intangible assets harus dibedakan dari financial assets."
+    },
+    {
+      "kind": "p",
+      "text": "Financial assets adalah klaim moneter satu pihak terhadap pihak lain. Bentuknya bisa berupa dokumen kertas atau catatan elektronik."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh: Mortgage adalah klaim terhadap pemilik rumah untuk membayar bunga dan pokok pinjaman setiap bulan. Pembayaran tersebut dipakai untuk melunasi pinjaman yang membantu pembelian rumah."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Dalam contoh mortgage, rumah adalah tangible asset, sedangkan mortgage adalah financial asset. Tangible asset dapat menjadi collateral bagi financial asset."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Fungsi Financial Assets"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Tangible assets penting karena meningkatkan produktivitas faktor produksi lain. Namun financial assets juga penting karena menjembatani mismatch antara saver dan investor."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Saver adalah pihak yang memiliki kelebihan dana, sedangkan investor adalah pihak yang membutuhkan dana untuk membiayai investasi riil. Financial assets membantu mengalirkan dana dari saver ke investor."
+    },
+    {
+      "kind": "p",
+      "text": "Implementasi website: Buat ilustrasi alur `Saver -> Financial Market -> Investor -> Real Capital`."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Rate of Return dan Interest Rate"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Rate of return on investment adalah return bersih tahunan per unit modal yang diinvestasikan."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh: Perusahaan rental mobil KARTIKA membeli mobil bekas seharga 20,000 dolar. Setelah mengurangi semua biaya dan mengasumsikan harga mobil tidak berubah, perusahaan memperoleh net rental 2,400 dolar per tahun."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\text{Rate of return} = \\frac{2400}{20000} = 0.12 = 12\\%"
+    },
+    {
+      "kind": "p",
+      "text": "Interest rate adalah tingkat pengembalian aset keuangan yang diukur dalam persen per tahun."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Rate of return mengukur profitabilitas investasi riil. Interest rate mengukur biaya atau imbal hasil finansial. Keputusan investasi sering membandingkan keduanya."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Present Value of Assets"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Present value of assets adalah nilai hari ini dari aliran pendapatan masa depan."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus umum present value:"
+    },
+    {
+      "kind": "formula",
+      "text": "V = \\frac{N_1}{1+i} + \\frac{N_2}{(1+i)^2} + \\cdots + \\frac{N_t}{(1+i)^t}"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol: `V` adalah present value. `N1`, `N2`, sampai `Nt` adalah net receipts pada periode 1, 2, sampai t. `i` adalah interest rate. `t` adalah periode waktu."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Semakin tinggi interest rate, semakin kecil present value dari pendapatan masa depan. Karena itu, kenaikan suku bunga cenderung menurunkan harga aset jangka panjang."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide21_present_value_formula.png",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Interest Rates, Asset Prices, Real and Nominal Interest Rates"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama pertama: Harga aset cenderung bergerak berlawanan arah dengan interest rate. Present value turun ketika interest rate naik."
+    },
+    {
+      "kind": "p",
+      "text": "Implikasi: Harga saham, obligasi, real estate, dan banyak aset jangka panjang akan turun ketika suku bunga meningkat."
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama kedua: Nominal interest rate adalah suku bunga uang dalam satuan uang. Real interest rate adalah nominal interest rate yang sudah dikoreksi oleh inflasi."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus tambahan untuk penjelasan website:"
+    },
+    {
+      "kind": "formula",
+      "text": "r \\approx i - \\pi"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol: `r` adalah real interest rate. `i` adalah nominal interest rate. `π` adalah inflation rate."
+    },
+    {
+      "kind": "p",
+      "text": "Catatan: Rumus `r ≈ i - π` adalah penjelasan tambahan standar untuk memperjelas konsep real interest rate. Slide hanya menyatakan definisi verbal."
+    },
+    {
+      "kind": "p",
+      "text": "---"
     }
   ]
 };
 
 const tm10: Reading = {
   "tm": 10,
-  "title": "Perekonomian Tertutup (Bagian 2): Keseimbangan, Multiplier & Kebijakan Fiskal",
-  "ref": "Kontrak: 1(20), 2(23,24) · Substansi: Samuelson Ch.21-22; Mankiw Ch.26, Ch.33-34",
-  "intro": "Menentukan output ekuilibrium melalui Keynesian Cross, menghitung multiplier, menilai dampak kebijakan fiskal, output gap, dan membedah peran investasi serta tabungan nasional secara ekstensif.",
+  "title": "Closed Economy: Equilibrium Output, Multiplier, and Fiscal Policy",
+  "ref": "Salinan 9-10. Closed Economy",
+  "intro": "Menentukan keseimbangan output nasional, memahami multiplier model, dan peran kebijakan fiskal.",
   "objectives": [
-    "Menentukan keseimbangan Y = AE dan membaca Keynesian Cross.",
-    "Memahami anatomi Investasi (Capital, Suku Bunga, Present Value, dan Kurva Permintaannya).",
-    "Membuktikan secara aljabar rumus sakti Multiplier Investasi, Belanja (G), dan Pajak (T).",
-    "Mengekstrak fungsi dan keseimbangan 3-Sektor dalam skenario pajak absolut (T0) dan pajak proporsional (tY).",
-    "Membedah Identitas Tabungan Nasional (Private + Public Saving = Investment)."
+    "Memahami penentuan output keseimbangan (Equilibrium Output).",
+    "Memahami model Multiplier.",
+    "Menganalisis keseimbangan tiga sektor dengan peran kebijakan fiskal.",
+    "Memahami konsep Output Gap dan Paradox of Thrift."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Aggregate Expenditure & Keynesian Cross"
+      "text": "The Roles of Investment in Macroeconomics"
     },
     {
       "kind": "p",
-      "text": "Dalam model Keynesian sederhana, output ekuilibrium tercapai ketika produksi aktual sama dengan pengeluaran agregat yang direncanakan. Jika perusahaan memproduksi lebih banyak daripada permintaan, persediaan naik dan produksi akan dikurangi. Jika permintaan lebih tinggi daripada output, persediaan turun dan produksi akan dinaikkan."
+      "text": "Konsep utama: Investment memiliki dua peran dalam makroekonomi."
     },
     {
-      "kind": "formula",
-      "text": "Pengeluaran Agregat Terencana\n\nAE = C + I + G\n\nAE = a + b(Y−T) + I + G\n\nEkuilibrium barang: Y = AE"
+      "kind": "p",
+      "text": "Pertama, investment memengaruhi output jangka pendek melalui dampaknya terhadap aggregate demand. Ketika investasi meningkat, pengeluaran agregat naik dan output dapat meningkat."
+    },
+    {
+      "kind": "p",
+      "text": "Kedua, investment memengaruhi pertumbuhan output jangka panjang melalui capital accumulation. Semakin besar akumulasi modal, semakin tinggi kapasitas produksi masa depan."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Investasi bekerja melalui dua kanal. Kanal permintaan bekerja dalam jangka pendek. Kanal akumulasi kapital bekerja dalam jangka panjang."
+    },
+    {
+      "kind": "h2",
+      "text": "Determinants of Investment"
+    },
+    {
+      "kind": "p",
+      "text": "Tiga determinan utama investment:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Revenue, yaitu overall level of output atau GDP.",
+        "Cost, yaitu harga barang modal, interest rate, dan pajak.",
+        "Expectation, yaitu ekspektasi profit dan business confidence."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Investasi meningkat ketika output tinggi, biaya modal rendah, suku bunga rendah, pajak tidak terlalu memberatkan, dan ekspektasi bisnis positif. Sebaliknya, investasi menurun ketika biaya pembiayaan naik atau ekspektasi profit memburuk."
+    },
+    {
+      "kind": "h2",
+      "text": "Investment Demand Curve: Tabel Profitabilitas Investasi"
+    },
+    {
+      "kind": "p",
+      "text": "Tabel ini menunjukkan bahwa profitabilitas investasi bergantung pada interest rate."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Project",
+        "Total Investment ($ million)",
+        "Annual Revenue per $1,000 Invested",
+        "Cost per $1,000 at 10%",
+        "Cost per $1,000 at 5%",
+        "Annual Net Profit at 10%",
+        "Annual Net Profit at 5%"
+      ],
+      "rows": [
+        [
+          "A",
+          "1",
+          "1,500",
+          "100",
+          "50",
+          "1,400",
+          "1,450"
+        ],
+        [
+          "B",
+          "4",
+          "220",
+          "100",
+          "50",
+          "120",
+          "170"
+        ],
+        [
+          "C",
+          "10",
+          "160",
+          "100",
+          "50",
+          "60",
+          "110"
+        ],
+        [
+          "D",
+          "10",
+          "130",
+          "100",
+          "50",
+          "30",
+          "80"
+        ],
+        [
+          "E",
+          "5",
+          "110",
+          "100",
+          "50",
+          "10",
+          "60"
+        ],
+        [
+          "F",
+          "15",
+          "90",
+          "100",
+          "50",
+          "-10",
+          "40"
+        ],
+        [
+          "G",
+          "10",
+          "60",
+          "100",
+          "50",
+          "-40",
+          "10"
+        ],
+        [
+          "H",
+          "20",
+          "40",
+          "100",
+          "50",
+          "-60",
+          "-10"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Makna tabel: Pada interest rate 10 persen, proyek A sampai E masih menghasilkan net profit positif. Pada interest rate 5 persen, proyek A sampai G menghasilkan net profit positif. Penurunan interest rate membuat lebih banyak proyek layak secara finansial."
     },
     {
       "kind": "figure",
-      "title": "Keynesian Cross: penentuan output ekuilibrium",
-      "svg": "<svg data-graph-id=\"PTE-GRAPH-01\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Keynesian Cross: penentuan output ekuilibrium</title><desc>Grafik Keynesian Cross dengan output Y pada sumbu horizontal dan pengeluaran agregat AE pada sumbu vertikal. Garis 45 derajat berpotongan dengan garis AE sama dengan C tambah I tambah G pada output keseimbangan Y bintang.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"18\" y=\"26\">AE</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"340\" y=\"251\">Y</text><line stroke=\"#9aa4b7\" stroke-width=\"1.5\" x1=\"55\" x2=\"270\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"10\" x=\"226\" y=\"32\">Y = AE (45°)</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"55\" x2=\"270\" y1=\"170\" y2=\"60\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"272\" y=\"62\">AE = C+I+G</text><circle cx=\"55\" cy=\"170\" fill=\"#4f9cf9\" r=\"3\"></circle><text fill=\"#4f9cf9\" font-size=\"10\" x=\"34\" y=\"166\">A</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"188\" x2=\"188\" y1=\"102\" y2=\"235\"></line><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"188\" y1=\"102\" y2=\"102\"></line><circle cx=\"188\" cy=\"102\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"11\" x=\"181\" y=\"250\">Y*</text></svg>",
-      "caption": "Titik Y* adalah perpotongan garis pengeluaran agregat dengan garis 45°. Di titik ini, output sama dengan pengeluaran agregat yang direncanakan.",
-      "altText": "Grafik Keynesian Cross dengan output Y pada sumbu horizontal dan pengeluaran agregat AE pada sumbu vertikal. Garis 45 derajat berpotongan dengan garis AE sama dengan C tambah I tambah G pada output keseimbangan Y bintang."
+      "url": "/assets/pte/slide25_investment_profitability_table.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
     },
     {
       "kind": "h2",
-      "text": "Investasi, Capital, dan Suku Bunga"
+      "text": "Investment Demand Curve: Investment Depends upon Interest Rate"
     },
     {
       "kind": "p",
-      "text": "Makroekonomi membedakan investasi riil (pembelian mesin, pabrik, rumah baru) dengan investasi finansial (membeli saham, tanah, menabung). Hanya investasi riil (pembentukan modal tetap bruto) yang dihitung masuk ke dalam PDB."
+      "text": "Visual: kurva demand-for-investment schedule berbentuk tangga. Sumbu vertikal menunjukkan return on investment atau interest rate. Sumbu horizontal menunjukkan investment spending."
     },
     {
-      "kind": "ul",
-      "items": [
-        "**Tangible Capital:** Struktur (pabrik, rumah), Peralatan (mobil, mesin), Inventori (barang belum terjual).",
-        "**Intangible Capital:** E-capital (software, paten, merek dagang)."
-      ]
+      "kind": "p",
+      "text": "Data konseptual yang dapat dipakai dari slide 25:"
     },
     {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Rate of Return vs Interest Rate",
-      "text": "Rate of Return (RoR) adalah imbal hasil bersih tahunan dari aset modal. Contoh (Perusahaan KARTIKA): Beli mobil rental $20.000, laba bersih setahun $2.400. RoR = 2.400 / 20.000 = **12%**.\nSedangkan **Suku Bunga (Interest Rate)** adalah tingkat imbal hasil atas aset finansial."
-    },
-    {
-      "kind": "formula",
-      "text": "Present Value (Nilai Sekarang)\n\nPV = N / (1 + i)^t\n\nN = Net receipts, i = Interest rate, t = Tahun",
-      "note": "Hubungan Terbalik: Harga aset akan **turun** ketika suku bunga **naik** (karena PV dari arus kas masa depan mengecil saat pembaginya, yaitu (1+i), membesar)."
-    },
-    {
-      "kind": "h2",
-      "text": "Determinan Investasi & Kurva Permintaan"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Revenue (Pendapatan):** Tingkat output keseluruhan atau GDP.",
-        "**Cost (Biaya):** Harga barang modal, suku bunga, dan pajak.",
-        "**Expectation (Ekspektasi):** Kepercayaan bisnis dan ekspektasi laba masa depan."
+      "kind": "table",
+      "headers": [
+        "Interest Rate",
+        "Proyek Layak",
+        "Cumulative Investment"
+      ],
+      "rows": [
+        [
+          "20%",
+          "A dan B",
+          "5"
+        ],
+        [
+          "15%",
+          "A, B, dan C",
+          "15"
+        ],
+        [
+          "10%",
+          "A sampai E",
+          "30"
+        ],
+        [
+          "5%",
+          "A sampai G",
+          "55"
+        ]
       ]
     },
     {
       "kind": "p",
-      "text": "Kurva Permintaan Investasi (Investment Demand Curve) memiliki lereng negatif. Semakin **tinggi** suku bunga, semakin **mahal** biaya meminjam, sehingga jumlah investasi yang diminta akan **turun**."
-    },
-    {
-      "kind": "h2",
-      "text": "Keseimbangan Ekonomi 2 Sektor"
+      "text": "Makna visual: Ketika interest rate turun, lebih banyak proyek menjadi menguntungkan. Karena itu investment spending naik. Hubungan antara interest rate dan investment demand bersifat negatif."
     },
     {
       "kind": "p",
-      "text": "Dua pendekatan untuk mencari Keseimbangan (Equilibrium Output):"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Pendekatan Pengeluaran (Y = C + I):** Output Y = 1/(1-b) × (C0 + I)",
-        "**Pendekatan Suntikan-Bocoran (S = I):** Tabungan (S) adalah bocoran, Investasi (I) adalah suntikan. Jika S = -C0 + (1-b)Y disamakan dengan I, hasilnya sama persis: Y = 1/(1-b) × (C0 + I)."
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Multiplier Model"
-    },
-    {
-      "kind": "p",
-      "text": "Model Multiplier menjelaskan bahwa setiap perubahan '1 Dolar' pada pengeluaran eksogen (seperti Investasi) akan menghasilkan efek lipat ganda pada GDP. Hal ini disebabkan karena pengeluaran satu pihak menjadi pendapatan pihak lain, yang membelanjakannya lagi (efek domino)."
-    },
-    {
-      "kind": "formula",
-      "text": "Multiplier Coefficient (k)\n\nk = 1 / (1 - MPC)   atau   k = 1 / MPS",
-      "note": "Contoh: Misal MPC = 2/3 (maka MPS = 1/3). Nilai k = 1 / (1/3) = 3.\nJika investasi naik sebesar **1.000**, maka GDP (Y) akan melonjak sebesar 3 × 1.000 = **3.000**!"
-    },
-    {
-      "kind": "h2",
-      "text": "Kebijakan Fiskal dalam Model Multiplier"
-    },
-    {
-      "kind": "p",
-      "text": "Peran fiskal: Alokatif, Distributif, dan Stabilisator. Instrumen utamanya: Belanja Pemerintah (G) dan Pajak (T)."
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "**Benefit Principle:** Pajak ditarik proporsional dengan manfaat layanan pemerintah yang diterima masyarakat.",
-        "**Ability-to-pay Principle:** Pajak ditarik berdasarkan kemampuan bayar seseorang (yang kaya bayar lebih).",
-        "**Horizontal Equity:** Individu dengan kondisi setara diperlakukan sama.",
-        "**Vertical Equity:** Orang yang lebih mampu harus membayar pajak lebih tinggi."
-      ]
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Pragmatic Compromise (Jenis Pajak)",
-      "text": "**Progresif:** Persentase pajak naik jika pendapatan naik. **Regresif:** Persentase pajak turun jika pendapatan naik. **Proporsional:** Persentase pajak tetap (misal PPN 11%). Pajak juga dibagi menjadi Pajak Langsung (PPh) dan Tidak Langsung (Cukai)."
-    },
-    {
-      "kind": "h2",
-      "text": "Keseimbangan Ekonomi 3 Sektor"
-    },
-    {
-      "kind": "p",
-      "text": "Ketika Pemerintah (G dan T) masuk, rumusnya menjadi Y = C + I + G. Keseimbangan Suntikan-Bocoran menjadi I + G = S + T."
-    },
-    {
-      "kind": "formula",
-      "text": "Skenario 1: Pajak Konstan (Absolut) / T = T0\n\nY = 1/(1-b) × [C0 - bT0 + I + G]\nMultiplier Belanja (G) = 1/(1-b)\nMultiplier Pajak (T) = -b/(1-b)"
-    },
-    {
-      "kind": "example",
-      "title": "Kasus Pajak Konstan",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "C = 300 + 0,75Yd ; I = 400 ; G = T = 200.\nMPC (b) = 0,75.\nY = [1 / (1 - 0,75)] × (300 - (0,75×200) + 400 + 200)\nY = 4 × (300 - 150 + 400 + 200) = 4 × 750 = **3.000**.\nMultiplier G = 4. Jika G naik 50, Y naik 200.\nMultiplier T = -3. Jika T naik 50, Y turun 150."
-        }
-      ]
-    },
-    {
-      "kind": "formula",
-      "text": "Skenario 2: Pajak Proporsional / T = T0 + tY\n\nY = 1/(1-b+bt) × [C0 - bT0 + I + G]\nMultiplier Belanja = 1/(1-b+bt)\nMultiplier Pajak (absolut) = -b/(1-b+bt)\nMultiplier Tarif Pajak = -b / (1-b+bt) × Y"
-    },
-    {
-      "kind": "example",
-      "title": "Kasus Pajak Proporsional (Automatic Stabilizer)",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "C = 300 + 0,75Yd ; I = 400 ; G = 200 ; T = 200 + 0,15Y.\nDi sini b = 0,75 dan t = 0,15.\nPenyebut = (1 - 0,75 + 0,75×0,15) = 0,25 + 0,1125 = 0,3625.\nMultiplier Belanja = 1 / 0,3625 = **2,758**.\nY = 2,758 × (300 - 150 + 400 + 200) = 2,758 × 750 = **2.068,96**.\nPerhatikan: Dengan adanya tarif pajak (t=15%), angka multiplier HANCUR drastis dari 4 menjadi 2,758! Pajak meredam ledakan ekonomi."
-        }
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Identitas Makroekonomi & Tabungan Nasional"
-    },
-    {
-      "kind": "formula",
-      "text": "Y = C + I + G   =>   Y - C - G = I\nManipulasi aljabar (tambah kurangi T):\n(Y - T - C) + (T - G) = I\n\nPrivate Saving + Public Saving = National Saving = Investment"
-    },
-    {
-      "kind": "ul",
-      "items": [
-        "Semakin besar Konsumsi (C), semakin kecil Tabungan Swasta (Private Saving), sehingga Tabungan Nasional turun.",
-        "Ketika pemerintah mengalami **Defisit Anggaran** (belanja G lebih besar dari pajak T), Public Saving menjadi negatif. Hal ini menyedot Tabungan Nasional (National Saving turun)."
-      ]
-    },
-    {
-      "kind": "example",
-      "title": "Menghitung Tabungan dan Investasi",
-      "blocks": [
-        {
-          "kind": "p",
-          "text": "Diketahui: GDP (Y) = 8 Triliun, T = 1,5 Triliun, Private Saving = 0,5 Triliun, Public Saving = 0,2 Triliun."
-        },
-        {
-          "kind": "ul",
-          "items": [
-            "**Konsumsi (C):** Private Saving = Y - T - C  =>  0,5 = 8 - 1,5 - C  =>  C = 8 - 1,5 - 0,5 = **6 Triliun**.",
-            "**Belanja (G):** Public Saving = T - G  =>  0,2 = 1,5 - G  =>  G = 1,5 - 0,2 = **1,3 Triliun**.",
-            "**Tabungan Nasional (National Saving):** 0,5 + 0,2 = **0,7 Triliun**.",
-            "**Investasi (I):** Karena National Saving = Investment, maka I = **0,7 Triliun**."
-          ]
-        }
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Output Gap & Paradox of Thrift"
-    },
-    {
-      "kind": "callout",
-      "variant": "key",
-      "title": "Output gap",
-      "text": "adalah selisih antara output aktual dan output potensial. Recessionary gap terjadi ketika Y aktual lebih rendah dari Y potensial; inflationary gap terjadi ketika Y aktual melebihi kapasitas berkelanjutan."
+      "text": "Instruksi chart: Buat step chart. Titik penting: pada 10 persen investment sekitar 30 juta dolar; pada 5 persen investment sekitar 55 juta dolar."
     },
     {
       "kind": "figure",
-      "title": "Recessionary Gap vs Inflationary Gap",
-      "svg": "<svg data-graph-id=\"PTE-GRAPH-08\" viewBox=\"0 0 920 330\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\">\n<title>Recessionary gap dan inflationary gap</title><desc>Dua panel menunjukkan output keseimbangan dibandingkan output potensial. Recessionary gap terjadi saat output aktual di kiri output potensial. Inflationary gap terjadi saat output aktual di kanan output potensial.</desc>\n<text x=\"230\" y=\"25\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"16\" font-weight=\"700\">Recessionary gap</text><text x=\"690\" y=\"25\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"16\" font-weight=\"700\">Inflationary gap</text>\n<g transform=\"translate(25,35)\"><line x1=\"45\" y1=\"240\" x2=\"405\" y2=\"240\" stroke=\"#64748b\"/><line x1=\"45\" y1=\"240\" x2=\"45\" y2=\"20\" stroke=\"#64748b\"/><text x=\"392\" y=\"263\" fill=\"#94a3b8\">Y</text><text x=\"18\" y=\"25\" fill=\"#94a3b8\">P</text><line x1=\"85\" y1=\"65\" x2=\"350\" y2=\"215\" stroke=\"#4f9cf9\" stroke-width=\"2.5\"/><line x1=\"90\" y1=\"210\" x2=\"345\" y2=\"55\" stroke=\"#22d3a0\" stroke-width=\"2.5\"/><line x1=\"305\" y1=\"35\" x2=\"305\" y2=\"240\" stroke=\"#f4516c\" stroke-width=\"2.3\" stroke-dasharray=\"7 4\"/><text x=\"292\" y=\"31\" fill=\"#f4516c\">LRAS / Yp</text><circle cx=\"220\" cy=\"142\" r=\"4\" fill=\"#f9a825\"/><line x1=\"220\" y1=\"142\" x2=\"220\" y2=\"240\" stroke=\"#f9a825\" stroke-dasharray=\"4 3\"/><text x=\"208\" y=\"258\" fill=\"#f9a825\">Y*</text><path d=\"M220 278 H305\" stroke=\"#f9a825\" stroke-width=\"3\"/><text x=\"262\" y=\"300\" text-anchor=\"middle\" fill=\"#cbd5e1\">Y* &lt; Yp</text></g>\n<g transform=\"translate(485,35)\"><line x1=\"45\" y1=\"240\" x2=\"405\" y2=\"240\" stroke=\"#64748b\"/><line x1=\"45\" y1=\"240\" x2=\"45\" y2=\"20\" stroke=\"#64748b\"/><text x=\"392\" y=\"263\" fill=\"#94a3b8\">Y</text><text x=\"18\" y=\"25\" fill=\"#94a3b8\">P</text><line x1=\"110\" y1=\"55\" x2=\"375\" y2=\"205\" stroke=\"#4f9cf9\" stroke-width=\"2.5\"/><line x1=\"90\" y1=\"210\" x2=\"345\" y2=\"55\" stroke=\"#22d3a0\" stroke-width=\"2.5\"/><line x1=\"220\" y1=\"35\" x2=\"220\" y2=\"240\" stroke=\"#f4516c\" stroke-width=\"2.3\" stroke-dasharray=\"7 4\"/><text x=\"207\" y=\"31\" fill=\"#f4516c\">LRAS / Yp</text><circle cx=\"278\" cy=\"150\" r=\"4\" fill=\"#f9a825\"/><line x1=\"278\" y1=\"150\" x2=\"278\" y2=\"240\" stroke=\"#f9a825\" stroke-dasharray=\"4 3\"/><text x=\"268\" y=\"258\" fill=\"#f9a825\">Y*</text><path d=\"M220 278 H278\" stroke=\"#f9a825\" stroke-width=\"3\"/><text x=\"249\" y=\"300\" text-anchor=\"middle\" fill=\"#cbd5e1\">Y* &gt; Yp</text></g></svg>",
-      "caption": "Recessionary gap berarti output aktual di bawah output potensial. Inflationary gap berarti permintaan mendorong output melewati kapasitas berkelanjutan dan meningkatkan tekanan harga.",
-      "altText": "Dua grafik AS-AD. Grafik kiri menunjukkan output keseimbangan lebih rendah dari output potensial. Grafik kanan menunjukkan output keseimbangan lebih tinggi dari output potensial."
+      "url": "/assets/pte/slide26_investment_demand_schedule.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
     },
     {
-      "kind": "ul",
-      "items": [
-        "**Recessionary Gap:** Permintaan agregat kurang. Kebijakan ekspansif dapat menaikkan output dan menurunkan pengangguran siklis.",
-        "**Inflationary Gap:** Permintaan terlalu kuat. Kebijakan kontraktif dapat menekan inflasi tetapi berisiko menurunkan output."
+      "kind": "h2",
+      "text": "Investment Demand Curve: Shifts in Investment Demand Function"
+    },
+    {
+      "kind": "p",
+      "text": "Visual: tiga panel pergeseran investment demand function."
+    },
+    {
+      "kind": "p",
+      "text": "Panel a, Higher Output: kenaikan output mendorong investment demand bergeser ke kanan. Penyebabnya adalah prospek revenue yang lebih tinggi."
+    },
+    {
+      "kind": "p",
+      "text": "Panel b, Higher Taxes: pajak yang lebih tinggi mengurangi profitabilitas investasi sehingga investment demand bergeser ke kiri."
+    },
+    {
+      "kind": "p",
+      "text": "Panel c, Business Euphoria: optimisme bisnis meningkatkan ekspektasi profit sehingga investment demand bergeser ke kanan."
+    },
+    {
+      "kind": "p",
+      "text": "Makna visual: Perubahan interest rate menyebabkan pergerakan sepanjang kurva investasi. Perubahan output, pajak, dan ekspektasi menyebabkan pergeseran kurva investasi."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide27_investment_demand_shift.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output in the Two-Sectors Economy: Y = C + I Approach"
+    },
+    {
+      "kind": "p",
+      "text": "Model dua sektor terdiri dari rumah tangga dan perusahaan. Dalam model ini belum ada pemerintah dan luar negeri."
+    },
+    {
+      "kind": "p",
+      "text": "Persamaan dasar:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I"
+    },
+    {
+      "kind": "p",
+      "text": "Dengan fungsi konsumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + bY"
+    },
+    {
+      "kind": "p",
+      "text": "Substitusi:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C_0 + bY + I"
+    },
+    {
+      "kind": "p",
+      "text": "Penyelesaian:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y - bY = C_0 + I"
+    },
+    {
+      "kind": "formula",
+      "text": "(1-b)Y = C_0 + I"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b}(C_0 + I)"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol: `Y` adalah equilibrium output. `C0` adalah konsumsi otonom. `b` adalah MPC. `I` adalah planned investment."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Output keseimbangan naik ketika konsumsi otonom atau investasi naik. Besarnya kenaikan diperkuat oleh multiplier `1/(1-b)`."
+    },
+    {
+      "kind": "p",
+      "text": "Asset referensi grafik: `assets/slide28_equilibrium_y_ci_graph_lightmode.jpg`."
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output in the Two-Sector Economy: S = I Approach"
+    },
+    {
+      "kind": "p",
+      "text": "Pendekatan kedua menentukan keseimbangan melalui kesamaan saving dan investment."
+    },
+    {
+      "kind": "p",
+      "text": "Persamaan dasar:"
+    },
+    {
+      "kind": "formula",
+      "text": "I = S"
+    },
+    {
+      "kind": "p",
+      "text": "Dengan fungsi tabungan:"
+    },
+    {
+      "kind": "formula",
+      "text": "S = -C_0 + (1-b)Y"
+    },
+    {
+      "kind": "p",
+      "text": "Substitusi:"
+    },
+    {
+      "kind": "formula",
+      "text": "I = -C_0 + (1-b)Y"
+    },
+    {
+      "kind": "p",
+      "text": "Penyelesaian:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b}(C_0 + I)"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Pendekatan `Y = C + I` dan `S = I` menghasilkan equilibrium output yang sama. Perbedaannya hanya sudut pandang. Pendekatan pertama melihat pengeluaran agregat. Pendekatan kedua melihat kebocoran dan injeksi dalam perekonomian."
+    },
+    {
+      "kind": "p",
+      "text": "Asset referensi grafik: `assets/slide29_equilibrium_si_graph_lightmode.jpg`."
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output in the Two-Sector Economy: Tabel GDP Determination"
+    },
+    {
+      "kind": "p",
+      "text": "Tabel ini menunjukkan output equilibrium ketika total planned spending sama dengan GDP."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "GDP and DI",
+        "Planned Consumption",
+        "Planned Saving",
+        "Planned Investment",
+        "Total Planned Expenditure C + I",
+        "Tendency of Output"
+      ],
+      "rows": [
+        [
+          "4,200",
+          "3,800",
+          "400",
+          "200",
+          "4,000",
+          "Contraction"
+        ],
+        [
+          "3,900",
+          "3,600",
+          "300",
+          "200",
+          "3,800",
+          "Contraction"
+        ],
+        [
+          "3,600",
+          "3,400",
+          "200",
+          "200",
+          "3,600",
+          "Equilibrium"
+        ],
+        [
+          "3,300",
+          "3,200",
+          "100",
+          "200",
+          "3,400",
+          "Expansion"
+        ],
+        [
+          "3,000",
+          "3,000",
+          "0",
+          "200",
+          "3,200",
+          "Expansion"
+        ],
+        [
+          "2,700",
+          "2,800",
+          "-100",
+          "200",
+          "3,000",
+          "Expansion"
+        ]
       ]
     },
     {
-      "kind": "callout",
-      "variant": "key",
-      "title": "Paradox of thrift",
-      "text": "jika semua orang serentak menaikkan tabungan dengan mengurangi konsumsi, pengeluaran agregat turun, output turun, dan tabungan aktual secara agregat belum tentu meningkat."
+      "kind": "p",
+      "text": "Makna tabel: Jika GDP lebih tinggi daripada planned expenditure, output cenderung berkontraksi. Jika planned expenditure lebih tinggi daripada GDP, output cenderung berekspansi. Equilibrium terjadi saat GDP sama dengan total planned expenditure, yaitu pada 3,600."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide30_gdp_determination_table.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "The Multiplier Model"
+    },
+    {
+      "kind": "p",
+      "text": "Konsep utama: Multiplier model menjelaskan bahwa setiap perubahan satu unit pada exogenous expenditure dapat menghasilkan perubahan GDP yang lebih besar daripada perubahan awal."
+    },
+    {
+      "kind": "p",
+      "text": "Asumsi utama:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Wages and prices are fixed.",
+        "There are unemployed resources."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Multiplier bekerja kuat dalam kondisi harga dan upah kaku serta masih ada sumber daya menganggur. Jika ekonomi sudah full employment, tambahan pengeluaran dapat lebih banyak mendorong harga daripada output."
+    },
+    {
+      "kind": "h2",
+      "text": "Investment Multiplier: Pertanyaan Contoh"
+    },
+    {
+      "kind": "p",
+      "text": "Soal: Jika MPC adalah 2/3, berapa perubahan GDP ketika investment dalam ekonomi meningkat sebesar 1,000 miliar rupiah?"
+    },
+    {
+      "kind": "p",
+      "text": "Diketahui:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPC = \\frac{2}{3}"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta I = 1000"
+    },
+    {
+      "kind": "p",
+      "text": "Yang ditanya:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi awal: Karena MPC positif, kenaikan investasi akan menaikkan pendapatan. Kenaikan pendapatan akan memicu konsumsi lanjutan. Proses inilah yang menghasilkan multiplier."
+    },
+    {
+      "kind": "h2",
+      "text": "Investment Multiplier: Arithmetic Approach"
+    },
+    {
+      "kind": "p",
+      "text": "Tabel aritmetik multiplier:"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Putaran",
+        "Tambahan GDP",
+        "Rumus"
+      ],
+      "rows": [
+        [
+          "1",
+          "1,000.00",
+          "`1 × 1000`"
+        ],
+        [
+          "2",
+          "666.67",
+          "`(2/3) × 1000`"
+        ],
+        [
+          "3",
+          "444.44",
+          "`(2/3)^2 × 1000`"
+        ],
+        [
+          "4",
+          "296.30",
+          "`(2/3)^3 × 1000`"
+        ],
+        [
+          "5",
+          "197.53",
+          "`(2/3)^4 × 1000`"
+        ],
+        [
+          "...",
+          "...",
+          "..."
+        ],
+        [
+          "Total",
+          "3,000.00",
+          "`1/(1 - 2/3) × 1000`"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Makna tabel: Dampak awal investasi sebesar 1,000 menciptakan pendapatan baru sebesar 1,000. Karena MPC = 2/3, dua pertiga dari pendapatan tersebut dibelanjakan lagi, menghasilkan pendapatan tambahan 666.67. Proses berulang dengan nilai yang makin kecil sampai totalnya mendekati 3,000."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide33_multiplier_arithmetic_table_lightmode.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Investment Multiplier: Formula"
+    },
+    {
+      "kind": "p",
+      "text": "Rumus perubahan GDP:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = \\left(1 + \\frac{2}{3} + \\left(\\frac{2}{3}\\right)^2 + \\left(\\frac{2}{3}\\right)^3 + \\cdots \\right) \\times 1000"
+    },
+    {
+      "kind": "p",
+      "text": "Karena deret geometri tersebut sama dengan:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{1}{1 - \\frac{2}{3}} = 3"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = 3 \\times 1000 = 3000"
+    },
+    {
+      "kind": "p",
+      "text": "Rumus multiplier sederhana:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta GDP = \\frac{1}{1-MPC} \\times \\Delta I"
+    },
+    {
+      "kind": "p",
+      "text": "Karena:"
+    },
+    {
+      "kind": "formula",
+      "text": "MPS = 1 - MPC"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta GDP = \\frac{1}{MPS} \\times \\Delta I"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Semakin besar MPC, semakin besar multiplier. Semakin besar MPS, semakin kecil multiplier."
+    },
+    {
+      "kind": "h2",
+      "text": "Investment Multiplier Coefficient"
+    },
+    {
+      "kind": "p",
+      "text": "Pendekatan pertama: dari persamaan pengeluaran."
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C_0 + bY + I"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b}(C_0 + I)"
+    },
+    {
+      "kind": "p",
+      "text": "Jika investment berubah:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y + \\Delta Y = \\frac{1}{1-b}(C_0 + I + \\Delta I)"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = \\frac{1}{1-b}\\Delta I"
+    },
+    {
+      "kind": "p",
+      "text": "Pendekatan kedua: dari persamaan saving-investment."
+    },
+    {
+      "kind": "formula",
+      "text": "I = S"
+    },
+    {
+      "kind": "formula",
+      "text": "I = -C_0 + (1-b)Y"
+    },
+    {
+      "kind": "p",
+      "text": "Jika investment berubah:"
+    },
+    {
+      "kind": "formula",
+      "text": "I + \\Delta I = -C_0 + (1-b)(Y + \\Delta Y)"
+    },
+    {
+      "kind": "formula",
+      "text": "I + \\Delta I = -C_0 + (1-b)Y + (1-b)\\Delta Y"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = \\frac{1}{1-b}\\Delta I"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Koefisien multiplier investasi adalah `1/(1-b)`. Jika MPC naik, penyebut mengecil dan multiplier membesar."
+    },
+    {
+      "kind": "h2",
+      "text": "Fiscal Policy in the Multiplier Model"
+    },
+    {
+      "kind": "p",
+      "text": "Peran fiscal policy dalam ekonomi:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Allocative, yaitu mengalokasikan sumber daya.",
+        "Distributive, yaitu memengaruhi distribusi pendapatan.",
+        "Stabilizer, yaitu menstabilkan fluktuasi ekonomi."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Instrumen fiscal policy:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Government spending.",
+        "Taxation."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Dalam multiplier model, belanja pemerintah berperan sebagai injeksi pengeluaran agregat, sedangkan pajak memengaruhi disposable income dan konsumsi."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Principles of Taxation"
+    },
+    {
+      "kind": "p",
+      "text": "Prinsip benefit: Pajak dikenakan kepada orang sesuai marginal benefits yang diterima dari barang atau jasa yang disediakan pemerintah."
+    },
+    {
+      "kind": "p",
+      "text": "Prinsip ability-to-pay: Pajak yang paling adil adalah pajak yang didasarkan pada kemampuan finansial seseorang untuk mendukung aktivitas pemerintah."
+    },
+    {
+      "kind": "p",
+      "text": "Vertical equity: Orang yang lebih mampu membayar pajak lebih tinggi seharusnya membayar lebih tinggi."
+    },
+    {
+      "kind": "p",
+      "text": "Horizontal equity: Individu yang setara dalam aspek penting harus diperlakukan secara setara."
+    },
+    {
+      "kind": "p",
+      "text": "Catatan sumber internal slide: SAM, Chapter 16, halaman 312-320."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Prinsip perpajakan bukan hanya teknis fiskal, tetapi juga menyangkut keadilan distribusi beban pajak."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Classification of Tax"
+    },
+    {
+      "kind": "p",
+      "text": "Pragmatic compromise in taxation:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Progressive tax: pendapatan yang lebih tinggi dikenai pajak secara proporsional lebih besar.",
+        "Regressive tax: persentase pendapatan yang dibayar sebagai pajak turun ketika pendapatan naik.",
+        "Proportional tax: persentase pendapatan yang dibayar sebagai pajak tetap."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Klasifikasi pajak:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Indirect taxes.",
+        "Direct taxes."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Pajak progresif berkaitan dengan ability-to-pay principle. Pajak proporsional lebih sederhana secara administrasi. Pajak regresif sering dikritik karena beban relatifnya lebih berat bagi kelompok berpendapatan rendah."
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output in the Three-Sectors Economy: Grafik C + I + G"
+    },
+    {
+      "kind": "p",
+      "text": "Visual: grafik menunjukkan bahwa government purchases menambah pengeluaran agregat seperti investment. Garis konsumsi `C` bergeser ke atas menjadi `C + I`, lalu bergeser lagi menjadi `C + I + G = TE`."
+    },
+    {
+      "kind": "p",
+      "text": "Makna visual: Equilibrium output ditentukan pada perpotongan antara garis 45 derajat dan total expenditure. Penambahan `G` menggeser total expenditure ke atas dan menaikkan equilibrium GDP."
+    },
+    {
+      "kind": "p",
+      "text": "Instruksi chart: Tampilkan tiga garis: `C`, `C + I`, dan `C + I + G = TE`. Tampilkan garis 45 derajat. Tandai titik equilibrium `E`. Sumbu horizontal: `Gross Domestic Product / GDP`. Sumbu vertikal: `Total Expenditure`."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide39_government_purchases_graph.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output in the Three-Sectors Economy: Tabel Government Spending"
+    },
+    {
+      "kind": "p",
+      "text": "Tabel output determination dengan government spending:"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Initial GDP",
+        "Taxes T",
+        "Disposable Income DI",
+        "Planned Consumption C",
+        "Planned Investment I",
+        "Government Expenditure G",
+        "Total Planned Expenditure C+I+G",
+        "Tendency"
+      ],
+      "rows": [
+        [
+          "4,200",
+          "300",
+          "3,900",
+          "3,600",
+          "200",
+          "200",
+          "4,000",
+          "Contraction"
+        ],
+        [
+          "3,900",
+          "300",
+          "3,600",
+          "3,400",
+          "200",
+          "200",
+          "3,800",
+          "Contraction"
+        ],
+        [
+          "3,600",
+          "300",
+          "3,300",
+          "3,200",
+          "200",
+          "200",
+          "3,600",
+          "Equilibrium"
+        ],
+        [
+          "3,300",
+          "300",
+          "3,000",
+          "3,000",
+          "200",
+          "200",
+          "3,400",
+          "Expansion"
+        ],
+        [
+          "3,000",
+          "300",
+          "2,700",
+          "2,800",
+          "200",
+          "200",
+          "3,200",
+          "Expansion"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Makna tabel: Pajak menurunkan disposable income, sementara government spending menambah total planned expenditure. Equilibrium tetap terjadi ketika GDP sama dengan total planned expenditure."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide40_government_spending_table.jpg",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output: Tax Independent to Income"
+    },
+    {
+      "kind": "p",
+      "text": "Asumsi: pajak tidak bergantung pada pendapatan."
+    },
+    {
+      "kind": "formula",
+      "text": "T = T_0"
+    },
+    {
+      "kind": "p",
+      "text": "Identitas tiga sektor:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I + G"
+    },
+    {
+      "kind": "p",
+      "text": "Fungsi konsumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + bY_d"
+    },
+    {
+      "kind": "p",
+      "text": "Disposable income:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y_d = Y - T"
+    },
+    {
+      "kind": "p",
+      "text": "Karena `T = T0`, maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y_d = Y - T_0"
+    },
+    {
+      "kind": "p",
+      "text": "Substitusi:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C_0 + b(Y - T_0) + I + G"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C_0 + bY - bT_0 + I + G"
+    },
+    {
+      "kind": "p",
+      "text": "Penyelesaian:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b}(C_0 - bT_0 + I + G)"
+    },
+    {
+      "kind": "p",
+      "text": "Pendekatan saving-tax:"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = S + T"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = -C_0 + (1-b)Y_d + T_0"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = -C_0 + (1-b)(Y - T_0) + T_0"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = -C_0 + (1-b)Y + bT_0"
+    },
+    {
+      "kind": "p",
+      "text": "Hasil akhirnya sama:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b}(C_0 - bT_0 + I + G)"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Pajak tetap menurunkan konsumsi melalui disposable income. Namun karena pajak tidak berubah ketika pendapatan berubah, multiplier belanja pemerintah tetap `1/(1-b)`."
+    },
+    {
+      "kind": "p",
+      "text": "Asset formula: `assets/slide41_lump_sum_tax_formula_lightmode.png`."
+    },
+    {
+      "kind": "h2",
+      "text": "Fiscal Policy Multiplier: Tax Independent to Income"
+    },
+    {
+      "kind": "p",
+      "text": "Asumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "T = T_0"
+    },
+    {
+      "kind": "p",
+      "text": "Government expenditure multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b}(C_0 - bT_0 + I + G)"
+    },
+    {
+      "kind": "p",
+      "text": "Jika belanja pemerintah berubah:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y + \\Delta Y = \\frac{1}{1-b}(C_0 - bT_0 + I + G + \\Delta G)"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = \\frac{1}{1-b}\\Delta G"
+    },
+    {
+      "kind": "p",
+      "text": "Koefisien government expenditure multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{1}{1-b}"
+    },
+    {
+      "kind": "p",
+      "text": "Tax multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y + \\Delta Y = \\frac{1}{1-b}(C_0 - bT_0 - b\\Delta T_0 + I + G)"
+    },
+    {
+      "kind": "p",
+      "text": "Maka:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = -\\frac{b}{1-b}\\Delta T_0"
+    },
+    {
+      "kind": "p",
+      "text": "Koefisien tax multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "-\\frac{b}{1-b}"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Belanja pemerintah berdampak langsung pada pengeluaran agregat, sehingga multiplier-nya positif. Pajak berdampak melalui disposable income dan konsumsi, sehingga multiplier pajak bernilai negatif."
+    },
+    {
+      "kind": "h2",
+      "text": "Example: Lump-Sum Tax"
+    },
+    {
+      "kind": "p",
+      "text": "Diketahui:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = 300 + 0.75Y_d"
+    },
+    {
+      "kind": "formula",
+      "text": "I = 400"
+    },
+    {
+      "kind": "formula",
+      "text": "G = T = 200"
+    },
+    {
+      "kind": "p",
+      "text": "Karena `T = 200`, maka `T0 = 200`. Nilai `b = 0.75`, sehingga `1-b = 0.25`."
+    },
+    {
+      "kind": "p",
+      "text": "Equilibrium GDP:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{0.25}(300 - 0.75(200) + 400 + 200)"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = 4(300 - 150 + 400 + 200)"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = 4(750) = 3000"
+    },
+    {
+      "kind": "p",
+      "text": "Government expenditure multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{1}{1-b} = \\frac{1}{0.25} = 4"
+    },
+    {
+      "kind": "p",
+      "text": "Jika `G` naik 50:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = 4 \\times 50 = 200"
+    },
+    {
+      "kind": "p",
+      "text": "Tax multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "-\\frac{b}{1-b} = -\\frac{0.75}{0.25} = -3"
+    },
+    {
+      "kind": "p",
+      "text": "Jika pajak naik 50:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = -3 \\times 50 = -150"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Belanja pemerintah 50 menaikkan GDP 200. Pajak 50 menurunkan GDP 150. Dampak pajak lebih kecil secara absolut daripada dampak belanja pemerintah karena pajak memengaruhi output melalui konsumsi, bukan langsung melalui total expenditure."
+    },
+    {
+      "kind": "p",
+      "text": "Asset formula tambahan: `assets/slide43_multiplier_g_formula_lightmode.png`."
+    },
+    {
+      "kind": "h2",
+      "text": "Visual Example: Tax Rate Case"
+    },
+    {
+      "kind": "p",
+      "text": "Slide ini berupa gambar contoh hitung dengan fungsi pajak proporsional. Jangan biarkan tetap sebagai gambar saja. Ketik ulang menjadi langkah berikut."
+    },
+    {
+      "kind": "p",
+      "text": "Diketahui:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I + G"
+    },
+    {
+      "kind": "formula",
+      "text": "C = 300 + 0.75(Y - T)"
+    },
+    {
+      "kind": "formula",
+      "text": "T = 200 + 0.15Y"
+    },
+    {
+      "kind": "p",
+      "text": "Substitusi pajak ke fungsi konsumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = 300 + 0.75(Y - 200 - 0.15Y)"
+    },
+    {
+      "kind": "p",
+      "text": "Multiplier government spending ketika pajak bergantung pada pendapatan:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{1}{1 - MPC(1-t)}"
+    },
+    {
+      "kind": "p",
+      "text": "Dengan `MPC = 0.75` dan `t = 0.15`:"
+    },
+    {
+      "kind": "formula",
+      "text": "1 - MPC(1-t) = 1 - 0.75(1 - 0.15)"
+    },
+    {
+      "kind": "formula",
+      "text": "= 1 - 0.75(0.85)"
+    },
+    {
+      "kind": "formula",
+      "text": "= 1 - 0.6375 = 0.3625"
+    },
+    {
+      "kind": "formula",
+      "text": "\\text{Multiplier} = \\frac{1}{0.3625} = 2.7586"
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide44_tax_rate_example_image.png",
+      "caption": "Referensi visual dari sumber asli",
+      "altText": "Gambar referensi"
+    },
+    {
+      "kind": "h2",
+      "text": "Equilibrium Output: Tax Dependent to Income"
+    },
+    {
+      "kind": "p",
+      "text": "Asumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "T = T_0 + tY"
+    },
+    {
+      "kind": "p",
+      "text": "Identitas tiga sektor:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I + G"
+    },
+    {
+      "kind": "p",
+      "text": "Fungsi konsumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = C_0 + bY_d"
+    },
+    {
+      "kind": "p",
+      "text": "Disposable income:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y_d = Y - T_0 - tY"
+    },
+    {
+      "kind": "p",
+      "text": "Substitusi:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C_0 + b(Y - T_0 - tY) + I + G"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C_0 + bY - bT_0 - btY + I + G"
+    },
+    {
+      "kind": "p",
+      "text": "Penyelesaian:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b+bt}(C_0 - bT_0 + I + G)"
+    },
+    {
+      "kind": "p",
+      "text": "Pendekatan saving-tax:"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = S + T"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = -C_0 + (1-b)Y_d + (T_0 + tY)"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = -C_0 + (1-b)(Y - T_0 - tY) + (T_0 + tY)"
+    },
+    {
+      "kind": "formula",
+      "text": "I + G = -C_0 + (1-b)Y + bT_0 + btY"
+    },
+    {
+      "kind": "p",
+      "text": "Hasil akhir:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{1-b+bt}(C_0 - bT_0 + I + G)"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Ketika pajak meningkat bersama pendapatan, multiplier menjadi lebih kecil karena sebagian tambahan pendapatan otomatis ditarik sebagai pajak. Pajak proporsional bertindak sebagai automatic stabilizer."
+    },
+    {
+      "kind": "h2",
+      "text": "Fiscal Policy Multiplier: Tax Dependent to Income"
+    },
+    {
+      "kind": "p",
+      "text": "Asumsi:"
+    },
+    {
+      "kind": "formula",
+      "text": "T = T_0 + tY"
+    },
+    {
+      "kind": "p",
+      "text": "Government expenditure multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{\\Delta Y}{\\Delta G} = \\frac{1}{1-b+bt}"
+    },
+    {
+      "kind": "p",
+      "text": "Tax multiplier untuk pajak tetap `T0`:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{\\Delta Y}{\\Delta T_0} = -\\frac{b}{1-b+bt}"
+    },
+    {
+      "kind": "p",
+      "text": "Dampak perubahan tax rate terhadap GDP:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{\\Delta Y}{\\Delta t} = -\\frac{b}{1-b+bt}Y"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Kenaikan `t` menurunkan multiplier karena tambahan pendapatan lebih banyak masuk sebagai pajak. Dampaknya negatif terhadap GDP karena disposable income dan konsumsi turun."
+    },
+    {
+      "kind": "h2",
+      "text": "Example: Income-Dependent Tax"
+    },
+    {
+      "kind": "p",
+      "text": "Diketahui:"
+    },
+    {
+      "kind": "formula",
+      "text": "C = 300 + 0.75Y_d"
+    },
+    {
+      "kind": "formula",
+      "text": "I = 400"
+    },
+    {
+      "kind": "formula",
+      "text": "G = 200"
+    },
+    {
+      "kind": "formula",
+      "text": "T = 200 + 0.15Y"
+    },
+    {
+      "kind": "p",
+      "text": "Parameter:"
+    },
+    {
+      "kind": "formula",
+      "text": "C_0 = 300, \\quad b = 0.75, \\quad T_0 = 200, \\quad t = 0.15"
+    },
+    {
+      "kind": "p",
+      "text": "Penyebut multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "1-b+bt = 1 - 0.75 + (0.75)(0.15)"
+    },
+    {
+      "kind": "formula",
+      "text": "= 0.25 + 0.1125 = 0.3625"
+    },
+    {
+      "kind": "p",
+      "text": "Equilibrium GDP:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = \\frac{1}{0.3625}(300 - 0.75(200) + 400 + 200)"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = 2.7586(300 - 150 + 400 + 200)"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = 2.7586(750) = 2068.96"
+    },
+    {
+      "kind": "p",
+      "text": "Government expenditure multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\frac{1}{0.3625} = 2.7586"
+    },
+    {
+      "kind": "p",
+      "text": "Jika `G` naik 50:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = 2.7586 \\times 50 = 137.93"
+    },
+    {
+      "kind": "p",
+      "text": "Tax multiplier:"
+    },
+    {
+      "kind": "formula",
+      "text": "-\\frac{0.75}{0.3625} = -2.069"
+    },
+    {
+      "kind": "p",
+      "text": "Jika pajak tetap naik 50:"
+    },
+    {
+      "kind": "formula",
+      "text": "\\Delta Y = -2.069 \\times 50 = -103.45"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Multiplier pada pajak proporsional lebih kecil daripada multiplier pada pajak tetap. Pada contoh sebelumnya government expenditure multiplier = 4. Setelah ada tax rate 0.15, multiplier turun menjadi 2.7586."
+    },
+    {
+      "kind": "h2",
+      "text": "National Income Identity in the Closed Economy"
+    },
+    {
+      "kind": "p",
+      "text": "Identitas pendapatan nasional dalam ekonomi tertutup:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I + G"
+    },
+    {
+      "kind": "p",
+      "text": "Kurangi `C` dan `G` dari kedua sisi:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y - C - G = I"
+    },
+    {
+      "kind": "p",
+      "text": "Manipulasi dengan memasukkan pajak `T`:"
+    },
+    {
+      "kind": "formula",
+      "text": "(Y - T - C) + (T - G) = I"
+    },
+    {
+      "kind": "p",
+      "text": "Makna simbol:"
+    },
+    {
+      "kind": "p",
+      "text": "`Y - T - C` adalah private saving. `T - G` adalah public saving. Jumlah keduanya adalah national saving."
+    },
+    {
+      "kind": "p",
+      "text": "Rumus:"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{national} = S_{private} + S_{public}"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{national} = (Y - T - C) + (T - G)"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{national} = I"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Dalam ekonomi tertutup, national saving sama dengan investment."
+    },
+    {
+      "kind": "h2",
+      "text": "Important to Note: Saving Equals Investment"
+    },
+    {
+      "kind": "p",
+      "text": "Fakta utama: Untuk ekonomi secara keseluruhan, saving harus sama dengan investment."
+    },
+    {
+      "kind": "p",
+      "text": "Implikasi pertama: Semakin besar konsumsi, semakin kecil private saving. Akibatnya national saving lebih rendah."
+    },
+    {
+      "kind": "p",
+      "text": "Implikasi kedua: Jika pemerintah membelanjakan lebih banyak daripada penerimaan pajaknya, terjadi budget deficit. Defisit anggaran menurunkan public saving dan akhirnya menurunkan national saving."
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Identitas ini menjelaskan hubungan antara perilaku konsumsi rumah tangga, kebijakan fiskal pemerintah, tabungan nasional, dan kapasitas pembiayaan investasi."
+    },
+    {
+      "kind": "h2",
+      "text": "Example: Closed Economy Identity, Part 1"
+    },
+    {
+      "kind": "p",
+      "text": "Soal: GDP adalah Rp 8.00 triliun, taxes Rp 1.50 triliun, private saving Rp 0.50 triliun, dan public saving Rp 0.20 triliun. Hitung consumption, government purchases, national saving, dan investment."
+    },
+    {
+      "kind": "p",
+      "text": "Diketahui:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = 8.00"
+    },
+    {
+      "kind": "formula",
+      "text": "T = 1.50"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{private} = 0.50"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{public} = 0.20"
+    },
+    {
+      "kind": "p",
+      "text": "Menghitung consumption:"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{private} = Y - T - C"
+    },
+    {
+      "kind": "formula",
+      "text": "0.50 = 8.00 - 1.50 - C"
+    },
+    {
+      "kind": "formula",
+      "text": "C = 6.00"
+    },
+    {
+      "kind": "p",
+      "text": "Jadi consumption adalah Rp 6.00 triliun."
+    },
+    {
+      "kind": "h2",
+      "text": "Example: Closed Economy Identity, Part 2"
+    },
+    {
+      "kind": "p",
+      "text": "Menghitung government purchases:"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{public} = T - G"
+    },
+    {
+      "kind": "formula",
+      "text": "0.20 = 1.50 - G"
+    },
+    {
+      "kind": "formula",
+      "text": "G = 1.30"
+    },
+    {
+      "kind": "p",
+      "text": "Jadi government purchases adalah Rp 1.30 triliun."
+    },
+    {
+      "kind": "p",
+      "text": "Menghitung national saving:"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{national} = S_{private} + S_{public}"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{national} = 0.50 + 0.20 = 0.70"
+    },
+    {
+      "kind": "p",
+      "text": "Karena dalam ekonomi tertutup national saving sama dengan investment:"
+    },
+    {
+      "kind": "formula",
+      "text": "I = S_{national} = 0.70"
+    },
+    {
+      "kind": "p",
+      "text": "Jadi investment adalah Rp 0.70 triliun."
+    },
+    {
+      "kind": "p",
+      "text": "Alternatif memakai identitas nasional:"
+    },
+    {
+      "kind": "formula",
+      "text": "Y = C + I + G"
+    },
+    {
+      "kind": "formula",
+      "text": "I = Y - C - G"
+    },
+    {
+      "kind": "formula",
+      "text": "I = 8.00 - 6.00 - 1.30 = 0.70"
+    },
+    {
+      "kind": "p",
+      "text": "Interpretasi: Kedua pendekatan menghasilkan investment yang sama karena keduanya berasal dari identitas ekonomi tertutup."
+    },
+    {
+      "kind": "h2",
+      "text": "Closing"
+    },
+    {
+      "kind": "p",
+      "text": "Teks penutup: Thank you for your attention."
+    },
+    {
+      "kind": "p",
+      "text": "Implementasi website: Jadikan slide ini sebagai penutup TM 10. Tambahkan ringkasan singkat: ekonomi tertutup menunjukkan hubungan antara konsumsi, tabungan, investasi, belanja pemerintah, pajak, dan output nasional. Model multiplier memperlihatkan bahwa perubahan pengeluaran otonom dapat berdampak lebih besar terhadap GDP, terutama ketika MPC tinggi dan masih ada sumber daya menganggur."
+    },
+    {
+      "kind": "p",
+      "text": "---"
+    },
+    {
+      "kind": "p",
+      "text": "# Data Siap Pakai untuk Chart dan Tabel"
+    },
+    {
+      "kind": "p",
+      "text": "## Dataset Konsumsi-Tabungan"
+    },
+    {
+      "kind": "p",
+      "text": "```json"
+    },
+    {
+      "kind": "p",
+      "text": "["
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"A\",\"disposableIncome\":24000,\"consumption\":24200,\"saving\":-200},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"B\",\"disposableIncome\":25000,\"consumption\":25000,\"saving\":0},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"C\",\"disposableIncome\":26000,\"consumption\":25800,\"saving\":200},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"D\",\"disposableIncome\":27000,\"consumption\":26600,\"saving\":400},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"E\",\"disposableIncome\":28000,\"consumption\":27400,\"saving\":600},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"F\",\"disposableIncome\":29000,\"consumption\":28200,\"saving\":800},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"point\":\"G\",\"disposableIncome\":30000,\"consumption\":29000,\"saving\":1000}"
+    },
+    {
+      "kind": "p",
+      "text": "]"
+    },
+    {
+      "kind": "p",
+      "text": "```"
+    },
+    {
+      "kind": "p",
+      "text": "## Dataset Investment Profitability"
+    },
+    {
+      "kind": "p",
+      "text": "```json"
+    },
+    {
+      "kind": "p",
+      "text": "["
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"A\",\"investment\":1,\"annualRevenue\":1500,\"cost10\":100,\"cost5\":50,\"profit10\":1400,\"profit5\":1450},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"B\",\"investment\":4,\"annualRevenue\":220,\"cost10\":100,\"cost5\":50,\"profit10\":120,\"profit5\":170},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"C\",\"investment\":10,\"annualRevenue\":160,\"cost10\":100,\"cost5\":50,\"profit10\":60,\"profit5\":110},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"D\",\"investment\":10,\"annualRevenue\":130,\"cost10\":100,\"cost5\":50,\"profit10\":30,\"profit5\":80},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"E\",\"investment\":5,\"annualRevenue\":110,\"cost10\":100,\"cost5\":50,\"profit10\":10,\"profit5\":60},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"F\",\"investment\":15,\"annualRevenue\":90,\"cost10\":100,\"cost5\":50,\"profit10\":-10,\"profit5\":40},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"G\",\"investment\":10,\"annualRevenue\":60,\"cost10\":100,\"cost5\":50,\"profit10\":-40,\"profit5\":10},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"project\":\"H\",\"investment\":20,\"annualRevenue\":40,\"cost10\":100,\"cost5\":50,\"profit10\":-60,\"profit5\":-10}"
+    },
+    {
+      "kind": "p",
+      "text": "]"
+    },
+    {
+      "kind": "p",
+      "text": "```"
+    },
+    {
+      "kind": "p",
+      "text": "## Dataset Investment Demand Schedule"
+    },
+    {
+      "kind": "p",
+      "text": "```json"
+    },
+    {
+      "kind": "p",
+      "text": "["
+    },
+    {
+      "kind": "p",
+      "text": "{\"interestRate\":20,\"cumulativeInvestment\":5,\"interpretation\":\"Projects A-B are profitable\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"interestRate\":15,\"cumulativeInvestment\":15,\"interpretation\":\"Projects A-C are profitable\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"interestRate\":10,\"cumulativeInvestment\":30,\"interpretation\":\"Projects A-E are profitable\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"interestRate\":5,\"cumulativeInvestment\":55,\"interpretation\":\"Projects A-G are profitable\"}"
+    },
+    {
+      "kind": "p",
+      "text": "]"
+    },
+    {
+      "kind": "p",
+      "text": "```"
+    },
+    {
+      "kind": "p",
+      "text": "## Dataset GDP Determination Two-Sector"
+    },
+    {
+      "kind": "p",
+      "text": "```json"
+    },
+    {
+      "kind": "p",
+      "text": "["
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":4200,\"consumption\":3800,\"saving\":400,\"investment\":200,\"plannedExpenditure\":4000,\"tendency\":\"Contraction\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3900,\"consumption\":3600,\"saving\":300,\"investment\":200,\"plannedExpenditure\":3800,\"tendency\":\"Contraction\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3600,\"consumption\":3400,\"saving\":200,\"investment\":200,\"plannedExpenditure\":3600,\"tendency\":\"Equilibrium\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3300,\"consumption\":3200,\"saving\":100,\"investment\":200,\"plannedExpenditure\":3400,\"tendency\":\"Expansion\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3000,\"consumption\":3000,\"saving\":0,\"investment\":200,\"plannedExpenditure\":3200,\"tendency\":\"Expansion\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":2700,\"consumption\":2800,\"saving\":-100,\"investment\":200,\"plannedExpenditure\":3000,\"tendency\":\"Expansion\"}"
+    },
+    {
+      "kind": "p",
+      "text": "]"
+    },
+    {
+      "kind": "p",
+      "text": "```"
+    },
+    {
+      "kind": "p",
+      "text": "## Dataset GDP Determination Three-Sector"
+    },
+    {
+      "kind": "p",
+      "text": "```json"
+    },
+    {
+      "kind": "p",
+      "text": "["
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":4200,\"tax\":300,\"disposableIncome\":3900,\"consumption\":3600,\"investment\":200,\"governmentSpending\":200,\"plannedExpenditure\":4000,\"tendency\":\"Contraction\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3900,\"tax\":300,\"disposableIncome\":3600,\"consumption\":3400,\"investment\":200,\"governmentSpending\":200,\"plannedExpenditure\":3800,\"tendency\":\"Contraction\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3600,\"tax\":300,\"disposableIncome\":3300,\"consumption\":3200,\"investment\":200,\"governmentSpending\":200,\"plannedExpenditure\":3600,\"tendency\":\"Equilibrium\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3300,\"tax\":300,\"disposableIncome\":3000,\"consumption\":3000,\"investment\":200,\"governmentSpending\":200,\"plannedExpenditure\":3400,\"tendency\":\"Expansion\"},"
+    },
+    {
+      "kind": "p",
+      "text": "{\"gdp\":3000,\"tax\":300,\"disposableIncome\":2700,\"consumption\":2800,\"investment\":200,\"governmentSpending\":200,\"plannedExpenditure\":3200,\"tendency\":\"Expansion\"}"
+    },
+    {
+      "kind": "p",
+      "text": "]"
+    },
+    {
+      "kind": "p",
+      "text": "```"
+    },
+    {
+      "kind": "p",
+      "text": "---"
+    },
+    {
+      "kind": "p",
+      "text": "# Checklist Final untuk Antigravity"
+    },
+    {
+      "kind": "p",
+      "text": "Sebelum menyatakan pekerjaan selesai, lakukan pengecekan berikut:"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "TM 9 berisi slide 1-22, tidak kurang dan tidak lebih.",
+        "TM 10 berisi slide 23-52, tidak kurang dan tidak lebih.",
+        "Total slide yang terwakili adalah 52.",
+        "Semua rumus dirender dengan MathJax/KaTeX.",
+        "Semua simbol dijelaskan minimal sekali pada modul yang relevan.",
+        "Tabel slide 5, 9, 25, 30, 33, dan 40 diketik ulang, bukan hanya ditempel sebagai gambar.",
+        "Grafik slide 6, 7, 10, 11, 12, 26, 27, 28, 29, dan 39 memiliki interpretasi.",
+        "Formula visual slide 21, 41, 43, dan 44 tidak ditinggalkan sebagai gambar gelap tanpa penjelasan.",
+        "Warna teks dan grafik terbaca pada light mode dan dark mode.",
+        "Tidak ada elemen grafis dengan teks putih transparan di atas background putih.",
+        "Setiap grafik memiliki `alt text`, judul, label sumbu, dan paragraf makna visual.",
+        "Tidak ada halaman tambahan fiktif di luar slide 1-52."
+      ]
     }
   ]
 };
