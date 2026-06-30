@@ -1,0 +1,135 @@
+{
+  "tm": 9,
+  "title": "Closed Economy: Consumption, Saving, and Investment",
+  "ref": "Salinan 9-10. Closed Economy",
+  "intro": "Pernahkah kamu berpikir, saat perekonomian membaik, kenapa orang lebih banyak belanja? Modul ini membedah anatomi pengeluaran agregat dalam ekonomi tertutup, meliputi Konsumsi, Tabungan, dan Investasi.",
+  "objectives": [
+    "Memahami konsep Consumption (Konsumsi) dan Saving (Tabungan).",
+    "Membedah anatomi fungsi Konsumsi dan fungsi Tabungan.",
+    "Mengurai konsep krusial Marginal Propensity to Consume (MPC) dan Marginal Propensity to Save (MPS).",
+    "Menganalisis Investasi dan hubungannya dengan suku bunga."
+  ],
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Pengantar: Anatomi Konsumsi"
+    },
+    {
+      "kind": "p",
+      "text": "Bayangkan kamu baru saja mendapat gaji pertama. Apa yang akan kamu lakukan? Kamu akan menghabiskannya untuk membeli makanan, pakaian, atau hiburan. Inilah yang disebut **Consumption (Konsumsi)**. Secara makro, *Personal Consumption Expenditure* adalah pengeluaran seluruh rumah tangga untuk membeli barang dan jasa."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Fungsi Konsumsi Linear",
+      "text": "Hubungan antara pendapatan dan konsumsi sangatlah erat. Semakin tinggi pendapatanmu, semakin besar konsumsimu. Hubungan ini dirumuskan dalam **Fungsi Konsumsi**."
+    },
+    {
+      "kind": "formula",
+      "text": "C = C₀ + bY",
+      "note": "Keterangan Simbol:\nC = Konsumsi total\nC₀ = Autonomous Consumption (Konsumsi otonom)\nb = Marginal Propensity to Consume (MPC)\nY = Disposable Income (Pendapatan yang siap dibelanjakan)"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Autonomous Consumption (C₀):** Ini adalah batas bertahan hidup! Bahkan jika gajimu Rp 0 (nol), kamu tetap harus makan. Kamu mungkin meminjam uang atau menggunakan tabungan lama. Jadi, C₀ tidak pernah dipengaruhi oleh pendapatan.",
+        "**Induced Consumption (bY):** Ini adalah konsumsi ekstra yang terjadi murni karena kamu punya pendapatan. Semakin besar Y, semakin besar porsi ini."
+      ]
+    },
+    {
+      "kind": "chart-guide",
+      "title": "Panduan Membaca Kurva Konsumsi",
+      "points": [
+        "**Sumbu Horizontal (X):** Mewakili tingkat Pendapatan Disposabel (Y).",
+        "**Sumbu Vertikal (Y):** Mewakili tingkat Konsumsi (C).",
+        "**Garis 45 Derajat:** Garis ini adalah titik impas (Break-Even Point) di mana Konsumsi = Pendapatan (C = Y). Di titik ini, tidak ada yang ditabung (Saving = 0).",
+        "**Kurva Konsumsi (C = C₀ + bY):** Kurva ini bermula dari titik C₀ (di atas sumbu vertikal) yang menunjukkan bahwa saat pendapatan nol, konsumsi tetap positif."
+      ]
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide11_consumption_curve_diagram.png",
+      "caption": "Kurva konsumsi memiliki kemiringan positif. Perpotongannya dengan garis 45 derajat menunjukkan Break-Even Point.",
+      "altText": "Kurva Konsumsi"
+    },
+    {
+      "kind": "h2",
+      "text": "Saving (Tabungan)"
+    },
+    {
+      "kind": "p",
+      "text": "Jika kamu tidak menghabiskan semua gajimu, sisanya akan disimpan. Inilah yang disebut **Saving (Tabungan)**. Secara matematis, tabungan adalah pendapatan dikurangi konsumsi."
+    },
+    {
+      "kind": "formula",
+      "text": "S = Y - C\n\nS = -C₀ + (1 - b)Y",
+      "note": "Keterangan Simbol:\nS = Saving (Tabungan)\n-C₀ = Dissaving (Tabungan negatif saat pendapatan nol)\n(1 - b) = Marginal Propensity to Save (MPS)\nY = Disposable Income"
+    },
+    {
+      "kind": "p",
+      "text": "Ketika pendapatanmu masih sangat rendah, konsumsimu bisa jadi lebih besar dari pendapatanmu (berada di bawah Break-Even Point). Pada fase ini, kamu mengalami **Dissaving** (Tabungan bernilai negatif) karena kamu menguras tabungan lama atau berutang."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide07_saving_function.jpg",
+      "caption": "Kurva tabungan memotong sumbu nol tepat di Break-Even Point. Di bawah nol disebut Dissaving.",
+      "altText": "Kurva Tabungan"
+    },
+    {
+      "kind": "h2",
+      "text": "Mengenal MPC dan MPS"
+    },
+    {
+      "kind": "p",
+      "text": "Setiap kali gajimu naik Rp 100.000, apakah kamu menghabiskan semuanya? Biasanya tidak. Kamu mungkin membelanjakan Rp 80.000 dan menabung Rp 20.000. Rasio inilah yang disebut MPC dan MPS."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Marginal Propensity to Consume (MPC):** Porsi dari *tambahan pendapatan* yang digunakan untuk *tambahan konsumsi*. Dalam fungsi konsumsi, MPC adalah nilai **b** (kemiringan atau *slope* dari kurva konsumsi).",
+        "**Marginal Propensity to Save (MPS):** Porsi dari *tambahan pendapatan* yang digunakan untuk *tambahan tabungan*. Nilainya adalah **(1 - b)**."
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Hukum Absolut MPC + MPS",
+      "text": "Karena setiap tambahan uang hanya bisa dikonsumsi atau ditabung, maka jumlah keduanya SELALU SAMA DENGAN 1. \n\n**MPC + MPS = 1**."
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide09_mpc_mps_table.jpg",
+      "caption": "Ilustrasi tabel perhitungan MPC dan MPS. Perhatikan bahwa di setiap tingkat pendapatan, total MPC dan MPS selalu sama dengan 1.",
+      "altText": "Tabel MPC dan MPS"
+    },
+    {
+      "kind": "h2",
+      "text": "Investasi"
+    },
+    {
+      "kind": "p",
+      "text": "Dalam makroekonomi, kata 'Investasi' bukan berarti membeli saham atau reksa dana. **Investasi** berarti pembelian barang modal riil yang baru (seperti mesin, bangunan pabrik, alat berat) serta penambahan persediaan perusahaan."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Kenapa Perusahaan Berinvestasi?",
+      "text": "Keputusan investasi murni didorong oleh perbandingan antara tingkat pengembalian yang diharapkan (*Expected Rate of Return*) dengan biaya pinjaman uang (*Interest Rate* atau Suku Bunga)."
+    },
+    {
+      "kind": "chart-guide",
+      "title": "Panduan Membaca Kurva Permintaan Investasi",
+      "points": [
+        "**Sumbu Vertikal (Y):** Menunjukkan Suku Bunga (Interest Rate).",
+        "**Sumbu Horizontal (X):** Menunjukkan Total Investasi.",
+        "**Lereng Negatif:** Semakin TINGGI suku bunga, semakin MAHAL biaya meminjam uang, sehingga proyek yang dulunya menguntungkan kini menjadi rugi. Akibatnya, volume investasi akan TURUN."
+      ]
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide26_investment_demand_schedule.jpg",
+      "caption": "Kurva Investment Demand melereng ke bawah (downward sloping). Ada hubungan terbalik yang kuat antara Suku Bunga dan tingkat Investasi.",
+      "altText": "Kurva Permintaan Investasi"
+    }
+  ]
+}

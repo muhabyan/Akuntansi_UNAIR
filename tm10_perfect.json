@@ -1,0 +1,140 @@
+{
+  "tm": 10,
+  "title": "Perekonomian Tertutup (Bagian 2): Keseimbangan, Multiplier & Kebijakan Fiskal",
+  "ref": "Kontrak: 1(20), 2(23,24) · Substansi: Samuelson Ch.21-22; Mankiw Ch.26, Ch.33-34",
+  "intro": "Bagaimana kucuran dana pemerintah bisa memicu reaksi berantai yang menggandakan PDB? Modul ini akan membongkar rahasia Model Multiplier, Keynesian Cross, dan kekuatan intervensi Kebijakan Fiskal.",
+  "objectives": [
+    "Menentukan keseimbangan Y = AE dan membaca Keynesian Cross.",
+    "Membuktikan secara aljabar rumus sakti Multiplier Investasi, Belanja (G), dan Pajak (T).",
+    "Mengekstrak fungsi keseimbangan dalam skenario pajak absolut dan proporsional.",
+    "Membedah Identitas Tabungan Nasional.",
+    "Menganalisis fenomena Output Gap dan Paradox of Thrift."
+  ],
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Keynesian Cross: Titik Temu Output dan Pengeluaran"
+    },
+    {
+      "kind": "p",
+      "text": "Bayangkan sebuah pabrik roti. Jika mereka memanggang roti terlalu banyak tapi sepi pembeli (Output > Pengeluaran), roti akan menumpuk di gudang sebagai persediaan berlebih. Akhirnya, bos pabrik akan mengurangi produksi bulan depan. Sebaliknya, jika pembeli antre panjang tapi stok roti habis (Pengeluaran > Output), bos pabrik akan mempekerjakan lebih banyak orang dan menaikkan produksi."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Prinsip Keseimbangan",
+      "text": "Ekonomi akan mencapai keseimbangan (equilibrium) tepat pada titik di mana **Output (Y)** sama persis dengan **Pengeluaran Agregat Terencana (AE)**. Tidak ada penumpukan maupun kekurangan barang."
+    },
+    {
+      "kind": "chart-guide",
+      "title": "Panduan Membaca Keynesian Cross",
+      "points": [
+        "**Garis 45 Derajat:** Garis panduan matematis di mana nilai sumbu X selalu sama dengan sumbu Y (Y = AE).",
+        "**Kurva AE (C + I + G):** Menunjukkan seberapa besar total rencana belanja masyarakat, perusahaan, dan pemerintah di berbagai tingkat pendapatan.",
+        "**Titik Perpotongan (Ekuilibrium):** Titik di mana kurva AE memotong garis 45 derajat. Inilah titik keseimbangan makroekonomi (Y*)."
+      ]
+    },
+    {
+      "kind": "figure",
+      "url": "/assets/pte/slide28_equilibrium_y_ci_graph_lightmode.jpg",
+      "caption": "Keynesian Cross. Saat kurva pengeluaran (C+I) memotong garis panduan 45°, ekonomi berada pada keseimbangan Y*.",
+      "altText": "Grafik Keynesian Cross"
+    },
+    {
+      "kind": "h2",
+      "text": "Keajaiban Multiplier (Efek Pengganda)"
+    },
+    {
+      "kind": "p",
+      "text": "Model Multiplier adalah salah satu konsep paling magis di ilmu ekonomi! Idenya begini: Jika pemerintah membangun jembatan senilai 1 Triliun rupiah, uang itu akan mengalir menjadi gaji kuli bangunan. Kuli bangunan ini kemudian belanja baju, sehingga pemilik toko baju dapat untung. Pemilik toko baju lalu belanja makanan... Begitu seterusnya!"
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Efek Domino",
+      "text": "Setiap perubahan '1 Dolar' pada pengeluaran independen (Investasi atau Belanja Pemerintah) akan menghasilkan efek lipat ganda pada GDP total. Inilah yang dinamakan **Multiplier Coefficient (k)**."
+    },
+    {
+      "kind": "formula",
+      "text": "Multiplier (k) = 1 / (1 - MPC)\n\natau\n\nMultiplier (k) = 1 / MPS",
+      "note": "Contoh: Misal MPC masyarakat adalah 0.75 (3/4 dari tambahan gaji selalu dibelanjakan). Maka k = 1 / (1 - 0.75) = 4.\nArtinya, suntikan investasi awal sebesar 1 Triliun akan mendongkrak PDB sebesar 4 Triliun!"
+    },
+    {
+      "kind": "h2",
+      "text": "Kebijakan Fiskal dalam Model 3 Sektor"
+    },
+    {
+      "kind": "p",
+      "text": "Ketika Pemerintah ikut campur, ada dua 'senjata' utama yang digunakan: **Belanja Pemerintah (G)** yang bertindak sebagai suntikan ke dalam ekonomi, dan **Pajak (T)** yang bertindak sebagai bocoran yang menyedot uang keluar dari ekonomi."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Multiplier Belanja Pemerintah (G):** Bekerja sama persis seperti multiplier investasi. Bernilai **positif**, artinya jika pemerintah menaikkan belanja, GDP akan naik berkali-kali lipat.",
+        "**Multiplier Pajak (T):** Bernilai **negatif**, artinya jika pemerintah menaikkan pajak, GDP akan hancur dan turun drastis."
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "Multiplier G = 1 / (1 - b)\n\nMultiplier T = -b / (1 - b)",
+      "note": "Perhatikan bahwa sifat Multiplier T selalu lebih kecil (secara absolut) dibanding Multiplier G. Hal ini karena ketika pajak dinaikkan, sebagian uang tersebut seharusnya diambil dari porsi tabungan masyarakat, bukan sepenuhnya dari pemotongan konsumsi."
+    },
+    {
+      "kind": "example",
+      "title": "Skenario Perang Tarik-Tambang (G vs T)",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jika MPC (b) = 0.75. Maka Multiplier G = 4, dan Multiplier T = -3."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Pemerintah butuh uang untuk proyek, sehingga **menaikkan Pajak sebesar 100**. Efeknya: PDB TURUN sebesar 3 × 100 = **300**.",
+            "Uang pajak 100 itu langsung dipakai **Belanja (G) sebesar 100**. Efeknya: PDB NAIK sebesar 4 × 100 = **400**.",
+            "Hasil akhirnya? Meskipun pemerintah hanya menggunakan uang rakyat (PDB turun 300 lalu naik 400), ekonomi tetap mendapat stimulus netto sebesar **+100**. Ini disebut *Balanced Budget Multiplier*!"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Identitas Makroekonomi & Tabungan Nasional"
+    },
+    {
+      "kind": "p",
+      "text": "Dalam ekonomi makro 3 sektor, ada sebuah identitas sakral yang mengikat semua variabel pengeluaran dan tabungan:"
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Hukum Tabungan = Investasi",
+      "text": "Private Saving + Public Saving = National Saving = Investment\n\n(Y - T - C) + (T - G) = I"
+    },
+    {
+      "kind": "p",
+      "text": "Pemerintah bisa mengalami **Defisit Anggaran** ketika Belanja (G) lebih besar dari Pajak (T). Jika ini terjadi, *Public Saving* bernilai negatif (menyedot tabungan). Akibatnya, *National Saving* merosot, dan investasi di negara tersebut ikut anjlok. Fenomena ini disebut *Crowding Out Effect*."
+    },
+    {
+      "kind": "h2",
+      "text": "Output Gap & Paradox of Thrift"
+    },
+    {
+      "kind": "p",
+      "text": "Terkadang keseimbangan ekonomi (titik potong Keynesian Cross) TIDAK berada di posisi ideal (Full-Employment). Di sinilah masalah muncul."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Recessionary Gap:** Ekonomi nyangkut di bawah kapasitas penuhnya (Y aktual < Y potensial). Banyak pengangguran. Solusi: Ekspansi Fiskal (Naikkan G atau Turunkan T).",
+        "**Inflationary Gap:** Ekonomi terlalu 'panas' melewati kapasitasnya (Y aktual > Y potensial). Harga-harga melambung. Solusi: Kontraksi Fiskal (Turunkan G atau Naikkan T)."
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Paradox of Thrift (Paradoks Penghematan)",
+      "text": "Jika seluruh masyarakat panik karena resesi lalu berbondong-bondong menghemat uang dan menaikkan MPS (menabung besar-besaran), apa yang terjadi? Ironisnya, karena semua orang menahan belanja, pengeluaran agregat hancur. Perusahaan bangkrut, pengangguran merajalela. Pada akhirnya, pendapatan merosot begitu tajam sehingga total Tabungan Nasional justru TETAP SAMA ATAU MENURUN! Niat baik menabung malah menghancurkan ekonomi."
+    }
+  ]
+}
