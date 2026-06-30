@@ -485,6 +485,28 @@ const tm9: Reading = {
       "text": "Karena setiap tambahan uang hanya bisa dikonsumsi atau ditabung, maka jumlah keduanya SELALU SAMA DENGAN 1. \n\n**MPC + MPS = 1**."
     },
     {
+      "kind": "example",
+      "title": "Contoh Perhitungan Riil: Si Budi",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Fungsi Konsumsi Budi adalah **C = 500.000 + 0,8Y**. Artinya, Budi butuh Rp 500.000 untuk bertahan hidup (walau nganggur), dan ia menghabiskan 80% (0,8) dari gajinya untuk jajan."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "**Bulan 1 (Nganggur, Y = 0):** Konsumsi (C) = 500.000 + 0 = 500.000. Tabungan (S) = 0 - 500.000 = **-500.000** (Dissaving / Ngutang).",
+            "**Bulan 2 (Gaji Y = 2.500.000):** Konsumsi (C) = 500.000 + (0,8 × 2.500.000) = 500.000 + 2.000.000 = **2.500.000**. Tabungan (S) = 2.500.000 - 2.500.000 = **0** (Break-Even Point!).",
+            "**Bulan 3 (Naik Gaji Y = 5.000.000):** Konsumsi (C) = 500.000 + (0,8 × 5.000.000) = 500.000 + 4.000.000 = **4.500.000**. Tabungan (S) = 5.000.000 - 4.500.000 = **+500.000** (Mulai bisa nabung!)."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Lihat kan? Tambahan gaji Budi dari Bulan 2 ke Bulan 3 adalah Rp 2.500.000. Tambahan konsumsinya adalah Rp 2.000.000. Rasio 2.000.000 / 2.500.000 = **0,8 (Itulah nilai MPC!)**."
+        }
+      ]
+    },
+    {
       "kind": "figure",
       "url": "/assets/pte/slide09_mpc_mps_table.jpg",
       "caption": "Ilustrasi tabel perhitungan MPC dan MPS. Perhatikan bahwa di setiap tingkat pendapatan, total MPC dan MPS selalu sama dengan 1.",
