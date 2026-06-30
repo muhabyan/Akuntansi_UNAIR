@@ -1764,6 +1764,15 @@ export const PTE_PRA_UAS_READINGS: Record<number, Reading> = {
   14: tm14,
 };
 
+Object.values(PTE_PRA_UAS_READINGS).forEach(tm => {
+  tm.blocks.unshift({
+    kind: 'callout',
+    variant: 'warning',
+    title: '⚠️ PENGUMUMAN PENTING: BACA MODUL LENGKAP',
+    text: 'Untuk pemahaman materi Makroekonomi (TM 8 - 14) yang jauh lebih komprehensif, terstruktur, dan terarah untuk persiapan ujian, **sangat disarankan** untuk langsung berpindah ke tab **Bocoran UAS** dan membaca **Modul Lengkap** di sana.'
+  });
+});
+
 export const PTE_PRA_UAS_SUPPLEMENT: { formulaSheet: ContentBlock[]; examMap: ContentBlock[]; references: ContentBlock[] } = {
   "formulaSheet": [
     {
