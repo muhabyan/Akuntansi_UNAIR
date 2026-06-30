@@ -687,267 +687,168 @@ const tm10: Reading = {
 
 const tm11: Reading = {
   "tm": 11,
-  "title": "Uang dan Sistem Keuangan",
-  "ref": "Kontrak: 1(21), 2(31,32) · Substansi: Samuelson Ch.23–24; Mankiw Ch.29–30",
-  "intro": "Membahas fungsi uang, intermediasi keuangan, penciptaan uang oleh bank, permintaan uang, kebijakan moneter, teori kuantitas, dan suku bunga riil.",
+  "title": "Uang, Sistem Keuangan, dan Pasar Dana Pinjaman",
+  "ref": "Mankiw Ch. 29 (Monetary System), Ch. 26 (Saving, Investment, and the Financial System)",
+  "intro": "Memahami apa itu uang, bagaimana bank menciptakan uang melalui sistem cadangan fraksional, instrumen kebijakan moneter, dan interaksi tabungan-investasi di pasar dana pinjaman.",
   "objectives": [
-    "Menjelaskan fungsi uang dan peran sistem keuangan.",
-    "Menghitung money multiplier sederhana dan memahami keterbatasannya.",
-    "Menganalisis pasar uang serta transmisi kebijakan moneter.",
-    "Menggunakan quantity equation dan persamaan Fisher."
+    "Menjelaskan fungsi dan jenis-jenis uang.",
+    "Mengukur jumlah uang beredar (M1 dan M2).",
+    "Menganalisis penciptaan uang oleh bank (Money Multiplier).",
+    "Menjelaskan alat kebijakan moneter bank sentral.",
+    "Menganalisis pasar dana pinjaman dan dampak kebijakan pemerintah."
   ],
   "blocks": [
     {
       "kind": "h2",
-      "text": "Definisi & Fungsi Uang"
+      "text": "Makna dan Fungsi Uang"
     },
     {
       "kind": "p",
-      "text": "Uang adalah aset yang diterima secara umum untuk pembayaran barang, jasa, dan kewajiban. Uang bukan kekayaan dalam arti luas, karena kekayaan mencakup saham, obligasi, tanah, bangunan, dan aset produktif lain. Uang adalah bagian dari kekayaan yang paling likuid."
+      "text": "Uang adalah aset dalam ekonomi yang secara rutin digunakan oleh orang-orang untuk membeli barang dan jasa dari orang lain. Bagi seorang ekonom, uang bukan sekadar kekayaan, melainkan hanya beberapa jenis kekayaan yang diterima secara umum oleh penjual."
     },
     {
       "kind": "ul",
       "items": [
-        "**Medium of Exchange:** Uang mempermudah pertukaran tanpa barter dan tanpa double coincidence of wants.",
-        "**Unit of Account:** Uang menjadi satuan hitung untuk menyatakan harga dan mencatat nilai transaksi.",
-        "**Store of Value:** Uang menyimpan daya beli, meski nilainya bisa tergerus inflasi.",
-        "**Standard of Deferred Payment:** Uang menjadi dasar pembayaran utang pada masa depan."
+        "**Medium of exchange (Alat tukar):** Barang yang diberikan pembeli kepada penjual ketika mereka ingin membeli barang dan jasa.",
+        "**Unit of account (Satuan hitung):** Tolok ukur yang digunakan orang untuk memasang harga dan mencatat utang.",
+        "**Store of value (Penyimpan nilai):** Aset yang dapat digunakan orang untuk memindahkan daya beli dari masa sekarang ke masa depan."
       ]
-    },
-    {
-      "kind": "table",
-      "headers": [
-        "Jenis Uang",
-        "Ciri",
-        "Contoh"
-      ],
-      "rows": [
-        [
-          "Commodity money",
-          "Memiliki nilai intrinsik.",
-          "Emas, perak, garam dalam sejarah."
-        ],
-        [
-          "Fiat money",
-          "Bernilai karena ditetapkan dan diterima sebagai alat pembayaran.",
-          "Rupiah, dolar AS, euro."
-        ],
-        [
-          "Bank money",
-          "Uang giral/demand deposits yang muncul dari sistem perbankan.",
-          "Saldo rekening giro dan tabungan transaksi."
-        ],
-        [
-          "Digital/e-money",
-          "Representasi elektronik dari nilai uang untuk pembayaran.",
-          "Saldo uang elektronik; tetap terkait sistem pembayaran resmi."
-        ]
-      ]
-    },
-    {
-      "kind": "h2",
-      "text": "Sistem Keuangan"
     },
     {
       "kind": "p",
-      "text": "Sistem keuangan menghubungkan pihak surplus dana dengan pihak defisit dana. Tanpa sistem keuangan, tabungan rumah tangga sulit berubah menjadi investasi produktif. Lembaga dan pasar keuangan mempertemukan dana, mengelola risiko, menyediakan likuiditas, dan mendukung sistem pembayaran."
+      "text": "Uang dibedakan menjadi **Commodity money** (uang barang yang memiliki nilai intrinsik seperti emas atau perak) dan **Fiat money** (uang fiat yang digunakan sebagai uang karena dekrit/hukum pemerintah, seperti uang kertas dan koin saat ini)."
+    },
+    {
+      "kind": "h2",
+      "text": "Jumlah Uang Beredar (Money Supply) dan Permintaan Uang"
+    },
+    {
+      "kind": "p",
+      "text": "Kuantitas uang yang tersedia dalam ekonomi disebut *money supply*. Pengukurannya umumnya dibagi dua:"
     },
     {
       "kind": "ul",
       "items": [
-        "**Financial Markets:** Mempertemukan pemilik dana dan peminjam secara langsung melalui saham, obligasi, dan instrumen pasar uang.",
-        "**Financial Intermediaries:** Mengumpulkan dana dari masyarakat lalu menyalurkan ke peminjam, misalnya bank, perusahaan asuransi, dana pensiun, dan reksa dana.",
-        "**Alokasi modal:** dana diarahkan ke proyek yang dianggap paling produktif.",
-        "**Risk sharing:** risiko dibagi melalui diversifikasi, asuransi, dan instrumen keuangan.",
-        "**Maturity transformation:** dana jangka pendek dapat disalurkan menjadi kredit jangka lebih panjang.",
-        "**Liquidity provision:** aset keuangan tertentu mudah ditukar menjadi uang.",
-        "**Payment system:** memfasilitasi transaksi barang, jasa, dan aset."
+        "**M1:** Uang logam dan mata uang kertas yang beredar di luar bank ditambah simpanan yang dapat dicek (giro).",
+        "**M2:** M1 ditambah dengan aset lain yang sangat likuid seperti rekening tabungan dan deposito jangka pendek."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Permintaan uang (*money demand*) muncul karena dua alasan utama:"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Transaksi (Transactions Demand):** Untuk membeli barang. Permintaan ini meningkat jika pendapatan atau harga naik.",
+        "**Aset (Asset Demand):** Menyimpan uang sebagai aset, biasanya terjadi ketika suku bunga investasi sangat rendah (mendekati nol). Biaya peluang (*opportunity cost*) dari memegang uang adalah bunga yang hilang karena tidak diinvestasikan."
       ]
     },
     {
       "kind": "h2",
-      "text": "Bank dan Money Multiplier"
+      "text": "Sistem Keuangan: Perantara dan Pasar"
     },
     {
       "kind": "p",
-      "text": "Bank menciptakan uang giral melalui fractional-reserve banking. Ketika bank menerima deposito, sebagian disimpan sebagai cadangan dan sisanya dipinjamkan. Pinjaman ini kemudian menjadi deposito baru di bank lain, sehingga jumlah uang beredar dapat bertambah."
+      "text": "Sistem keuangan terdiri dari lembaga-lembaga yang membantu mempertemukan tabungan satu pihak dengan investasi pihak lain. Sistem ini memiliki dua jalur:"
     },
     {
-      "kind": "formula",
-      "text": "Fractional Reserve dan Multiplier\n\nReserve ratio = reserves/deposits\n\nSimple money multiplier = 1/rr\n\nMaximum deposit creation = initial reserves × (1/rr)"
+      "kind": "ul",
+      "items": [
+        "**Perantara Keuangan (Financial Intermediaries):** Lembaga tempat penabung secara *tidak langsung* menyediakan dana bagi peminjam. Contoh: Bank komersial dan reksa dana.",
+        "**Pasar Keuangan (Financial Markets):** Lembaga tempat penabung secara *langsung* menyediakan dana bagi peminjam. Contoh: Pasar saham dan pasar obligasi."
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Bank dan Penciptaan Uang (Money Multiplier)"
+    },
+    {
+      "kind": "p",
+      "text": "Ketika kita menyimpan uang di bank, bank tidak menyimpannya 100% di brankas. Dalam sistem **Fractional-Reserve Banking**, bank hanya menahan sebagian dana sebagai cadangan (*reserves*) dan meminjamkan sisanya. Rasio dari total deposito yang harus ditahan bank disebut *reserve ratio* (R)."
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Money Multiplier",
+      "text": "Money multiplier (pengganda uang) adalah jumlah uang yang dihasilkan sistem perbankan untuk setiap dolar cadangan. Rumusnya adalah **M = 1 / R**."
     },
     {
       "kind": "example",
-      "title": "Contoh bank multiplier",
+      "title": "Contoh Penciptaan Uang",
       "blocks": [
         {
           "kind": "p",
-          "text": "Jika cadangan awal 100 dan reserve ratio 10%, multiplier sederhana = 1/0,10 = 10. Potensi maksimum deposito = 100 × 10 = 1.000. Dalam kenyataan, hasilnya bisa lebih kecil karena ada uang tunai yang bocor ke masyarakat, cadangan berlebih, kredit macet, dan kehati-hatian bank."
+          "text": "Misalkan *reserve ratio* (R) adalah 10% (0.1). Jika Bank Sentral menyuntikkan uang $1000 ke dalam ekonomi:"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Bank Pertama menerima deposit $1000. Menyimpan $100 (10%) sebagai cadangan, meminjamkan $900.",
+            "Peminjam membelanjakan $900, dan uang itu masuk ke Bank Kedua. Bank Kedua menyimpan $90 (10%) dan meminjamkan $810.",
+            "Total uang beredar pada tahap ini: $1000 + $900 + $810 + ... = $10.000."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Pengganda uang = 1 / 0.1 = 10. Uang $1000 berubah menjadi **$10.000** dalam sistem perbankan."
         }
       ]
     },
     {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Jangan terlalu mekanis",
-      "text": "multiplier 1/rr adalah model sederhana. Dalam praktik, penciptaan kredit juga dipengaruhi permintaan kredit, modal bank, risiko, regulasi, dan kondisi makro."
-    },
-    {
       "kind": "h2",
-      "text": "Bank Sentral & Kebijakan Moneter"
+      "text": "Kebijakan Moneter"
     },
     {
       "kind": "p",
-      "text": "Bank sentral bertanggung jawab menjaga stabilitas moneter dan sistem keuangan. Fungsi umumnya mencakup pengendalian jumlah uang beredar, kebijakan suku bunga, lender of last resort, pengaturan sistem pembayaran, dan pengawasan stabilitas keuangan sesuai mandat masing-masing negara."
-    },
-    {
-      "kind": "figure",
-      "title": "Alur Transmisi Kebijakan Moneter",
-      "svg": "<svg data-graph-id=\"PTE-FLOW-05\" viewBox=\"0 0 920 235\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\"><title>Transmisi kebijakan moneter</title><desc>Policy rate berubah menuju Suku bunga pasar dan kredit berubah menuju C dan I bereaksi menuju AD, output, dan kesempatan kerja berubah menuju Inflasi dan kurs menyesuaikan. Transmisi juga melalui ekspektasi, harga aset, likuiditas bank, dan nilai tukar; dampaknya memiliki jeda waktu.</desc><defs><marker id=\"arrow-PTE-FLOW-05\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4.5\" orient=\"auto\"><path d=\"M0,0 L9,4.5 L0,9 Z\" fill=\"#94a3b8\"/></marker></defs><rect x=\"31.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"106.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"106.0\" dy=\"0\">Policy rate berubah</tspan></text><line x1=\"185.0\" y1=\"97.0\" x2=\"203.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"208.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"283.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"283.0\" dy=\"0\">Suku bunga pasar dan</tspan><tspan x=\"283.0\" dy=\"18\">kredit berubah</tspan></text><line x1=\"362.0\" y1=\"97.0\" x2=\"380.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"385.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"460.0\" y=\"97.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"460.0\" dy=\"0\">C dan I bereaksi</tspan></text><line x1=\"539.0\" y1=\"97.0\" x2=\"557.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"562.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#172033\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"637.0\" y=\"79.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"637.0\" dy=\"0\">AD, output, dan</tspan><tspan x=\"637.0\" dy=\"18\">kesempatan kerja</tspan><tspan x=\"637.0\" dy=\"18\">berubah</tspan></text><line x1=\"716.0\" y1=\"97.0\" x2=\"734.0\" y2=\"97.0\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow-PTE-FLOW-05)\"/><rect x=\"739.0\" y=\"54\" width=\"150\" height=\"86\" rx=\"14\" fill=\"#111827\" stroke=\"#a78bfa\" stroke-width=\"1.5\"/><text x=\"814.0\" y=\"88.0\" text-anchor=\"middle\" fill=\"#e2e8f0\" font-size=\"13\" font-family=\"system-ui, sans-serif\" font-weight=\"600\"><tspan x=\"814.0\" dy=\"0\">Inflasi dan kurs</tspan><tspan x=\"814.0\" dy=\"18\">menyesuaikan</tspan></text><rect x=\"110\" y=\"165\" width=\"700\" height=\"45\" rx=\"12\" fill=\"#0b1220\" stroke=\"#64748b\" stroke-dasharray=\"5 4\"/><text x=\"460\" y=\"193\" text-anchor=\"middle\" fill=\"#cbd5e1\" font-size=\"13\" font-family=\"system-ui, sans-serif\">Transmisi juga melalui ekspektasi, harga aset, likuiditas bank, dan nilai tukar; dampaknya memiliki jeda waktu.</text></svg>",
-      "caption": "Kenaikan policy rate umumnya menekan C dan I serta AD. Penurunan rate bekerja sebaliknya, selama intermediasi dan permintaan kredit berfungsi.",
-      "altText": "Diagram alur perubahan suku bunga kebijakan menuju suku bunga pasar dan kredit, konsumsi dan investasi, permintaan agregat, output, kesempatan kerja, inflasi, dan nilai tukar."
-    },
-    {
-      "kind": "table",
-      "headers": [
-        "Instrumen",
-        "Cara Kerja",
-        "Dampak Umum"
-      ],
-      "rows": [
-        [
-          "Open market operation",
-          "Bank sentral membeli/menjual surat berharga.",
-          "Pembelian menambah cadangan dan likuiditas; penjualan menyerap likuiditas."
-        ],
-        [
-          "Policy rate",
-          "Suku bunga acuan memengaruhi suku bunga pasar.",
-          "Rate turun mendorong kredit dan AD; rate naik menahan inflasi."
-        ],
-        [
-          "Reserve requirement",
-          "Mengatur cadangan minimum bank.",
-          "RR naik menekan kemampuan kredit; RR turun melonggarkan kredit."
-        ],
-        [
-          "Discount/lending facility",
-          "Bank sentral menyediakan pinjaman likuiditas ke bank.",
-          "Menjaga stabilitas ketika pasar uang terganggu."
-        ],
-        [
-          "Komunikasi/kredibilitas",
-          "Forward guidance dan sinyal kebijakan.",
-          "Membentuk ekspektasi inflasi dan suku bunga."
-        ]
-      ]
-    },
-    {
-      "kind": "formula",
-      "text": "Transmisi Moneter\n\nPolicy rate → suku bunga pasar → konsumsi tahan lama & investasi → AD → output dan harga\n\nPolicy rate → nilai tukar → ekspor neto & harga impor → AD dan inflasi\n\nPolicy stance → ekspektasi → keputusan konsumsi, investasi, dan penetapan upah/harga"
-    },
-    {
-      "kind": "h2",
-      "text": "Permintaan Uang"
-    },
-    {
-      "kind": "p",
-      "text": "Permintaan uang dipengaruhi oleh kebutuhan transaksi, motif berjaga-jaga, dan motif spekulasi/portofolio. Masyarakat memegang uang karena uang likuid, tetapi memegang uang juga memiliki biaya kesempatan berupa bunga yang hilang dari aset lain."
+      "text": "Bank Sentral mengendalikan *money supply* melalui tiga instrumen utama:"
     },
     {
       "kind": "ul",
       "items": [
-        "**Transaction motive:** Semakin tinggi pendapatan dan transaksi, semakin tinggi kebutuhan uang.",
-        "**Precautionary motive:** Uang dipegang untuk kebutuhan tak terduga dan ketidakpastian.",
-        "**Speculative/portfolio motive:** Uang dibandingkan dengan aset berbunga. Suku bunga tinggi membuat memegang uang lebih mahal."
+        "**Open-Market Operations (Operasi Pasar Terbuka):** Membeli obligasi pemerintah untuk *menambah* uang beredar, atau menjual obligasi untuk *mengurangi* uang beredar.",
+        "**Reserve Requirements (Giro Wajib Minimum):** Mengubah rasio cadangan minimum. *Menurunkan* rasio berarti bank bisa meminjamkan lebih banyak uang (uang beredar bertambah). *Menaikkan* rasio akan mengurangi uang beredar.",
+        "**Discount Rate (Suku Bunga Diskonto):** Suku bunga pinjaman yang diberikan Bank Sentral kepada bank komersial. *Menurunkan* suku bunga ini mendorong bank untuk meminjam lebih banyak cadangan (uang beredar bertambah)."
       ]
     },
     {
-      "kind": "formula",
-      "text": "Hubungan Intuitif\n\nMoney demand naik ketika Y naik\n\nMoney demand turun ketika interest rate naik"
-    },
-    {
       "kind": "h2",
-      "text": "Pasar Uang dan Liquidity Preference"
+      "text": "Pasar Dana Pinjaman (Market for Loanable Funds)"
     },
     {
       "kind": "p",
-      "text": "Teori liquidity preference dari Keynes menjelaskan bagaimana suku bunga nominal terbentuk dalam jangka pendek. Suku bunga adalah biaya memegang uang: makin tinggi suku bunga, makin besar bunga yang dikorbankan ketika memegang uang tunai, sehingga jumlah uang yang diminta turun. Suku bunga bergerak sampai jumlah uang yang diminta sama dengan jumlah uang yang ditawarkan bank sentral."
+      "text": "Di pasar dana pinjaman, mereka yang memiliki sisa pendapatan menawarkannya sebagai tabungan, dan mereka yang butuh modal memintanya untuk investasi. Keseimbangan antara Supply (Tabungan) dan Demand (Investasi) menentukan **suku bunga riil (real interest rate)**."
     },
     {
-      "kind": "formula",
-      "text": "Pasar Uang (Liquidity Preference, Mankiw Ch. 34)\n\nPenawaran uang (MS): ditetapkan bank sentral, tidak tergantung suku bunga (kurva tegak)\n\nPermintaan uang (MD): turun saat suku bunga naik, naik saat pendapatan Y naik\n\nEkuilibrium: MD = MS menentukan suku bunga i*"
-    },
-    {
-      "kind": "figure",
-      "title": "Pasar Uang: penambahan likuiditas menurunkan suku bunga",
-      "svg": "<svg data-graph-id=\"PTE-GRAPH-03\" font-family=\"DM Sans, sans-serif\" style=\"max-width:560px;margin:0 auto;display:block\" viewBox=\"0 0 380 270\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\"><title>Pasar Uang: penambahan likuiditas menurunkan suku bunga</title><desc>Grafik pasar uang dengan jumlah uang M pada sumbu horizontal dan suku bunga nominal i pada sumbu vertikal. Penawaran uang vertikal bergeser ke kanan dan menurunkan suku bunga keseimbangan.</desc><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"355\" y1=\"235\" y2=\"235\"></line><line stroke=\"#657084\" stroke-width=\"1.2\" x1=\"55\" x2=\"55\" y1=\"235\" y2=\"20\"></line><text fill=\"#9aa4b7\" font-size=\"11\" x=\"16\" y=\"26\">i</text><text fill=\"#9aa4b7\" font-size=\"11\" x=\"340\" y=\"251\">M</text><line stroke=\"#22d3a0\" stroke-width=\"2.3\" x1=\"180\" x2=\"180\" y1=\"40\" y2=\"235\"></line><text fill=\"#22d3a0\" font-size=\"10\" x=\"158\" y=\"34\">MS₁</text><line stroke=\"#f4516c\" stroke-dasharray=\"5,4\" stroke-width=\"2\" x1=\"250\" x2=\"250\" y1=\"40\" y2=\"235\"></line><text fill=\"#f4516c\" font-size=\"10\" x=\"236\" y=\"34\">MS₂</text><line stroke=\"#4f9cf9\" stroke-width=\"2.3\" x1=\"80\" x2=\"330\" y1=\"55\" y2=\"210\"></line><text fill=\"#4f9cf9\" font-size=\"10\" x=\"332\" y=\"212\">MD</text><line stroke=\"#f9a825\" stroke-dasharray=\"3,3\" stroke-width=\"1\" x1=\"55\" x2=\"180\" y1=\"117\" y2=\"117\"></line><circle cx=\"180\" cy=\"117\" fill=\"#f9a825\" r=\"3.6\"></circle><line opacity=\"0.85\" stroke=\"#f9a825\" stroke-dasharray=\"2,3\" stroke-width=\"0.8\" x1=\"55\" x2=\"250\" y1=\"160\" y2=\"160\"></line><circle cx=\"250\" cy=\"160\" fill=\"#f9a825\" r=\"3.6\"></circle><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"120\">i₁</text><text fill=\"#f9a825\" font-size=\"10\" x=\"38\" y=\"163\">i₂</text></svg>",
-      "caption": "Ketika penawaran uang bergeser ke kanan dari MS1 ke MS2, suku bunga keseimbangan turun dari i1 ke i2 sepanjang kurva permintaan uang.",
-      "altText": "Grafik pasar uang dengan jumlah uang M pada sumbu horizontal dan suku bunga nominal i pada sumbu vertikal. Penawaran uang vertikal bergeser ke kanan dan menurunkan suku bunga keseimbangan."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Jalur kebijakan moneter",
-      "text": "ketika bank sentral menambah jumlah uang, kurva MS bergeser ke kanan dan suku bunga turun dari i₁ ke i₂. Suku bunga yang lebih rendah mendorong investasi dan konsumsi tahan lama, sehingga permintaan agregat naik. Untuk menahan inflasi, bank sentral menempuh arah sebaliknya: menyerap likuiditas agar suku bunga naik."
+      "kind": "table",
+      "headers": [
+        "Kebijakan",
+        "Dampak Terhadap Pasar",
+        "Hasil"
+      ],
+      "rows": [
+        [
+          "Insentif Pajak Tabungan (Penurunan pajak bunga)",
+          "Meningkatkan Supply dana pinjaman (kurva Supply bergeser ke kanan).",
+          "Suku bunga **turun**, kuantitas dana/investasi **naik**."
+        ],
+        [
+          "Kredit Pajak Investasi (Insentif perusahaan)",
+          "Meningkatkan Demand dana pinjaman (kurva Demand bergeser ke kanan).",
+          "Suku bunga **naik**, kuantitas dana/investasi **naik**."
+        ],
+        [
+          "Defisit Anggaran Pemerintah (G > T)",
+          "Mengurangi Public Saving. Supply dana pinjaman agregat menurun (bergeser ke kiri).",
+          "Suku bunga **naik**, investasi swasta **turun** (*Crowding Out*)."
+        ]
+      ]
     },
     {
       "kind": "callout",
       "variant": "warning",
-      "title": "Jangan tertukar dengan loanable funds",
-      "text": "pasar uang menjelaskan suku bunga nominal jangka pendek lewat keseimbangan uang. Pasar dana pinjaman (TM 9–10) menjelaskan suku bunga riil jangka panjang lewat keseimbangan tabungan dan investasi. Keduanya benar pada konteks masing-masing."
-    },
-    {
-      "kind": "h2",
-      "text": "Quantity Theory & Inflasi"
-    },
-    {
-      "kind": "p",
-      "text": "Teori kuantitas uang menekankan hubungan antara jumlah uang beredar dan tingkat harga dalam jangka panjang. Jika velocity relatif stabil dan output riil ditentukan oleh faktor riil, pertumbuhan uang yang terlalu cepat akan terutama tercermin pada inflasi."
-    },
-    {
-      "kind": "formula",
-      "text": "Quantity Equation\n\nM × V = P × Y\n\nDalam laju pertumbuhan: g_M + g_V = π + g_Y\n\nJika V stabil: π ≈ g_M − g_Y"
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Netralitas uang jangka panjang",
-      "text": "perubahan jumlah uang memengaruhi variabel nominal seperti harga dan inflasi, sedangkan output riil jangka panjang terutama ditentukan oleh modal, tenaga kerja, teknologi, dan institusi."
-    },
-    {
-      "kind": "callout",
-      "variant": "warning",
-      "title": "Catatan kritis",
-      "text": "teori kuantitas tidak berarti setiap kenaikan uang langsung menaikkan harga pada periode yang sama. Transmisi bergantung pada velocity, kapasitas menganggur, ekspektasi, struktur perbankan, dan respons kebijakan."
-    },
-    {
-      "kind": "h2",
-      "text": "Suku Bunga Nominal vs Riil (Fisher Effect)"
-    },
-    {
-      "kind": "p",
-      "text": "Suku bunga nominal adalah suku bunga yang diumumkan bank dan pasar. Suku bunga riil adalah suku bunga nominal setelah dikurangi inflasi, yaitu daya beli sebenarnya dari bunga yang diterima penabung atau dibayar peminjam."
-    },
-    {
-      "kind": "formula",
-      "text": "Persamaan Fisher (Mankiw Ch. 30)\n\nSuku bunga riil = suku bunga nominal − inflasi\n\nr ≈ i − π\n\ni ≈ r + π^e\n\nFisher effect: dalam jangka panjang, kenaikan 1% pertumbuhan uang menaikkan inflasi 1% dan suku bunga nominal 1%"
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Data Riil: Suku Bunga dan Inflasi Indonesia 2026",
-      "text": "Pada 9 Juni 2026, Bank Indonesia menaikkan BI-Rate menjadi 5,50% untuk memperkuat stabilisasi rupiah. Pada 18 Juni 2026, BI kembali menaikkan BI-Rate sebesar 25 bps menjadi 5,75%. Inflasi Mei 2026 tercatat 3,08% (yoy), masih dalam sasaran 2,5±1%. Dengan pendekatan ex-post sederhana, suku bunga riil berdasarkan posisi 18 Juni kira-kira 5,75% − 3,08% = 2,67%. Angka ini hanya ilustrasi karena persamaan Fisher yang berorientasi ke depan menggunakan inflasi ekspektasian, bukan semata-mata inflasi aktual bulan sebelumnya."
-    },
-    {
-      "kind": "p",
-      "text": "Sumber: Bank Indonesia (RDG 9 dan 17–18 Juni 2026); BPS (rilis inflasi 2 Juni 2026)."
-    },
-    {
-      "kind": "callout",
-      "variant": "info",
-      "title": "Kaitan ke inflation tax",
-      "text": "jika inflasi ternyata lebih tinggi daripada yang diperkirakan saat kontrak dibuat, penabung dirugikan karena suku bunga riil yang diterima menjadi lebih kecil, sedangkan peminjam diuntungkan. Inilah salah satu alasan inflasi yang tidak terduga mengganggu keadilan kontrak."
+      "title": "Crowding Out",
+      "text": "Ketika pemerintah mengalami defisit anggaran, pemerintah harus meminjam dari pasar dana pinjaman. Hal ini mengurangi pasokan dana yang tersedia bagi sektor swasta, menyebabkan suku bunga naik dan investasi perusahaan menurun. Fenomena investasi swasta yang 'tergusur' oleh defisit pemerintah ini disebut *crowding out*."
     }
   ]
 };
