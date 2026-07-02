@@ -13,7 +13,7 @@ export default function Aks1Logo3D() {
   const layerCount = 5;
 
   return (
-    <div className="absolute inset-0 flex items-center justify-end pr-[5%] pointer-events-none overflow-hidden opacity-[0.18] dark:opacity-[0.30]">
+    <div className="absolute inset-0 flex items-center justify-end pr-[10%] pointer-events-none overflow-hidden opacity-[0.18] dark:opacity-[0.30]">
       <style>{`
         @keyframes logo-spin-y {
           from { transform: rotateY(0deg) rotateX(8deg); }
