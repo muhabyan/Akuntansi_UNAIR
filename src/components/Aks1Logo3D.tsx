@@ -32,7 +32,7 @@ export default function Aks1Logo3D() {
         {Array.from({ length: layerCount }, (_, i) => (
           <img
             key={i}
-            src="/aks1-logo.svg"
+            src="/aks1-logo.png"
             alt=""
             aria-hidden="true"
             draggable={false}
