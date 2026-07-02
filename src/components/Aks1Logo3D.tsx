@@ -33,42 +33,22 @@ export default function Aks1Logo3D() {
             }}
           >
             {/* 
-              The flat top and flat flying arm tips are created by clipping the miter spikes.
-              This exactly matches the HIMA logo where the stripes run exposed into the flat cut.
+              FLAWLESS GEOMETRY RECONSTRUCTION:
+              The HIMA Akuntansi logo is a single continuous ribbon!
+              Path: Starts at inner right intersection, goes to bottom-right, to bottom-left, to top-right tip.
+              Because the left leg is drawn LAST, it cleanly overlays the start of the right leg,
+              creating a perfect branching junction.
+              No crossbar, no miter spikes (miterlimit 2 handles it), perfect perpendicular butt cap at the tip!
             */}
-            <defs>
-              <clipPath id="flat-top">
-                <rect x="0" y="15" width="100" height="85" />
-              </clipPath>
-            </defs>
-
-            {/* 
-              Concentric Stroke Trick:
-              By layering decreasing stroke widths on the exact same centerlines,
-              we mathematically guarantee perfect nested stripes (3 blue, 2 yellow gaps, yellow borders)
-              with flawless branching intersections where the flying arm meets the triangle.
-            */}
-            <g clipPath="url(#flat-top)" strokeLinejoin="miter" strokeLinecap="butt" fill="none">
+            <g strokeLinejoin="miter" strokeMiterlimit="2" strokeLinecap="butt" fill="none">
               {/* Yellow Outer Border */}
-              <g stroke="#FACC15" strokeWidth="28">
-                <path d="M 65 45 L 80 5" />
-                <path d="M 20 85 L 50 5 L 80 85 Z" />
-              </g>
+              <path d="M 55 40 L 80 90 L 30 90 L 70 10" stroke="#FACC15" strokeWidth="28" />
               {/* Blue Outer (Forms Stripe 1 and 3) */}
-              <g stroke="#2563EB" strokeWidth="20">
-                <path d="M 65 45 L 80 5" />
-                <path d="M 20 85 L 50 5 L 80 85 Z" />
-              </g>
+              <path d="M 55 40 L 80 90 L 30 90 L 70 10" stroke="#2563EB" strokeWidth="20" />
               {/* Yellow Middle (Forms the two yellow gaps) */}
-              <g stroke="#FACC15" strokeWidth="12">
-                <path d="M 65 45 L 80 5" />
-                <path d="M 20 85 L 50 5 L 80 85 Z" />
-              </g>
-              {/* Blue Inner (Forms Stripe 2 - the center stripe) */}
-              <g stroke="#2563EB" strokeWidth="4">
-                <path d="M 65 45 L 80 5" />
-                <path d="M 20 85 L 50 5 L 80 85 Z" />
-              </g>
+              <path d="M 55 40 L 80 90 L 30 90 L 70 10" stroke="#FACC15" strokeWidth="12" />
+              {/* Blue Inner (Forms Stripe 2 - the solid center stripe) */}
+              <path d="M 55 40 L 80 90 L 30 90 L 70 10" stroke="#2563EB" strokeWidth="4" />
             </g>
           </svg>
         ))}
