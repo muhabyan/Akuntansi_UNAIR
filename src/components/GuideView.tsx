@@ -129,13 +129,13 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
             <div className="order-2 md:order-1 relative h-80 rounded-2xl bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex items-center justify-center group">
               <div className="absolute inset-0 bg-slate-200/50 dark:bg-slate-700/25 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,black,rgba(0,0,0,0.6))]" />
               {/* Animasi Buku Mockup */}
-              <div className="relative w-48 h-64 bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-slate-100 dark:border-slate-700 p-4 transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-2">
+              <div className="relative w-48 h-64 bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-gray-200 dark:border-slate-700 p-4 transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-2">
                 <div className="w-full h-4 bg-indigo-100 dark:bg-indigo-900/50 rounded mb-3" />
-                <div className="w-3/4 h-3 bg-slate-100 dark:bg-slate-700 rounded mb-6" />
+                <div className="w-3/4 h-3 bg-gray-200 dark:bg-slate-700 rounded mb-6" />
                 <div className="space-y-2">
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded" />
-                  <div className="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded" />
-                  <div className="w-5/6 h-2 bg-slate-100 dark:bg-slate-700 rounded" />
+                  <div className="w-full h-2 bg-gray-200 dark:bg-slate-700 rounded" />
+                  <div className="w-full h-2 bg-gray-200 dark:bg-slate-700 rounded" />
+                  <div className="w-5/6 h-2 bg-gray-200 dark:bg-slate-700 rounded" />
                 </div>
                 <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center animate-bounce">
                   <ArrowRight className="w-4 h-4 text-white" />
@@ -186,10 +186,10 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               {/* Mockup Schedule Cards */}
               <div className="flex gap-4 w-full justify-center transform transition-transform duration-700 group-hover:-translate-x-4">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className={`w-40 h-32 rounded-xl bg-white dark:bg-slate-800 shadow-md border border-slate-100 dark:border-slate-700 p-4 flex flex-col ${i === 3 ? 'opacity-50' : ''} transition-transform hover:-translate-y-2`}>
+                  <div key={i} className={`w-40 h-32 rounded-xl bg-white dark:bg-slate-800 shadow-md border border-gray-200 dark:border-slate-700 p-4 flex flex-col ${i === 3 ? 'opacity-50' : ''} transition-transform hover:-translate-y-2`}>
                     <div className="w-12 h-4 rounded bg-emerald-100 dark:bg-emerald-900/50 mb-3" />
-                    <div className="w-full h-3 rounded bg-slate-200 dark:bg-slate-700 mb-2" />
-                    <div className="w-2/3 h-3 rounded bg-slate-200 dark:bg-slate-700 mt-auto" />
+                    <div className="w-full h-3 rounded bg-gray-200 dark:bg-slate-700 mb-2" />
+                    <div className="w-2/3 h-3 rounded bg-gray-200 dark:bg-slate-700 mt-auto" />
                   </div>
                 ))}
               </div>
