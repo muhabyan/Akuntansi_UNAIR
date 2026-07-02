@@ -1,20 +1,13 @@
 import React from 'react';
 
 export default function Aks1Logo3D() {
-  // Using overlapping thick strokes to create the nested yellow/blue stripes
-  // Outer to inner: Yellow -> Blue -> Yellow -> Blue -> Yellow -> Blue
-  
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[0.15] dark:opacity-[0.25]">
-      {/* 
-        3D Container with spin-y animation 
-        We use an inline style for animation to avoid needing tailwind config changes
-      */}
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden opacity-[0.20] dark:opacity-[0.35]">
       <style>
         {`
           @keyframes logo-spin-y {
-            from { transform: rotateY(0deg) rotateX(10deg); }
-            to { transform: rotateY(360deg) rotateX(10deg); }
+            from { transform: rotateY(0deg) rotateX(8deg); }
+            to { transform: rotateY(360deg) rotateX(8deg); }
           }
           .animate-logo-3d {
             animation: logo-spin-y 20s linear infinite;
@@ -40,29 +33,42 @@ export default function Aks1Logo3D() {
             }}
           >
             {/* 
-              The 'A' Shape - Flat Top
-              We use bevel joints so the corners don't spike up like a spear.
+              The flat top and flat flying arm tips are created by clipping the miter spikes.
+              This exactly matches the HIMA logo where the stripes run exposed into the flat cut.
             */}
-            <g strokeLinejoin="bevel" fill="none">
-              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#EAB308" strokeWidth="18" />
-              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#2563EB" strokeWidth="14" />
-              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#EAB308" strokeWidth="10" />
-              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#2563EB" strokeWidth="7" />
-              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#EAB308" strokeWidth="4" />
-              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#2563EB" strokeWidth="2" />
-            </g>
+            <defs>
+              <clipPath id="flat-top">
+                <rect x="0" y="15" width="100" height="85" />
+              </clipPath>
+            </defs>
 
             {/* 
-              The Crossbar.
-              Clipped slightly or positioned to match the flat top A.
+              Concentric Stroke Trick:
+              By layering decreasing stroke widths on the exact same centerlines,
+              we mathematically guarantee perfect nested stripes (3 blue, 2 yellow gaps, yellow borders)
+              with flawless branching intersections where the flying arm meets the triangle.
             */}
-            <g strokeLinecap="butt" fill="none">
-              <line x1="25" y1="65" x2="75" y2="65" stroke="#EAB308" strokeWidth="18" />
-              <line x1="25" y1="65" x2="75" y2="65" stroke="#2563EB" strokeWidth="14" />
-              <line x1="25" y1="65" x2="75" y2="65" stroke="#EAB308" strokeWidth="10" />
-              <line x1="25" y1="65" x2="75" y2="65" stroke="#2563EB" strokeWidth="7" />
-              <line x1="25" y1="65" x2="75" y2="65" stroke="#EAB308" strokeWidth="4" />
-              <line x1="25" y1="65" x2="75" y2="65" stroke="#2563EB" strokeWidth="2" />
+            <g clipPath="url(#flat-top)" strokeLinejoin="miter" strokeLinecap="butt" fill="none">
+              {/* Yellow Outer Border */}
+              <g stroke="#FACC15" strokeWidth="28">
+                <path d="M 65 45 L 80 5" />
+                <path d="M 20 85 L 50 5 L 80 85 Z" />
+              </g>
+              {/* Blue Outer (Forms Stripe 1 and 3) */}
+              <g stroke="#2563EB" strokeWidth="20">
+                <path d="M 65 45 L 80 5" />
+                <path d="M 20 85 L 50 5 L 80 85 Z" />
+              </g>
+              {/* Yellow Middle (Forms the two yellow gaps) */}
+              <g stroke="#FACC15" strokeWidth="12">
+                <path d="M 65 45 L 80 5" />
+                <path d="M 20 85 L 50 5 L 80 85 Z" />
+              </g>
+              {/* Blue Inner (Forms Stripe 2 - the center stripe) */}
+              <g stroke="#2563EB" strokeWidth="4">
+                <path d="M 65 45 L 80 5" />
+                <path d="M 20 85 L 50 5 L 80 85 Z" />
+              </g>
             </g>
           </svg>
         ))}
