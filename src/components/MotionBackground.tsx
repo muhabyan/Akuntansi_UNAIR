@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import Aks1Logo3D from './Aks1Logo3D';
 
 export default function MotionBackground() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -22,6 +23,9 @@ export default function MotionBackground() {
         className="fixed top-0 left-0 w-96 h-96 bg-blue-500/20 dark:bg-blue-400/10 rounded-full filter blur-[120px] transition-transform duration-150 ease-out"
         style={{ transform: 'translate(-1000px, -1000px)' }}
       ></div>
+
+      {/* 3D Spinning Logo Watermark */}
+      <Aks1Logo3D />
 
       {/* Motion Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
