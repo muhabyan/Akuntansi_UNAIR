@@ -3,6 +3,7 @@ import { SEMESTERS } from '../data/courseData';
 import { useEffect } from 'react';
 import MotionBackground from './MotionBackground';
 import Typewriter from './Typewriter';
+import Aks1Logo3D from './Aks1Logo3D';
 
 import StudyScheduleWidget from './StudyScheduleWidget';
 
@@ -45,7 +46,9 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
     <>
       <MotionBackground />
       {/* Hero Section */}
-      <section className="relative z-10 min-h-[100svh] flex flex-col justify-center bg-transparent">
+      <section className="relative z-10 min-h-[100svh] flex flex-col justify-center bg-transparent overflow-hidden">
+        {/* Logo watermark - positioned right, only in hero */}
+        <Aks1Logo3D />
         <div className="mx-auto w-full max-w-7xl px-5 py-20 md:px-10 lg:px-14">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
