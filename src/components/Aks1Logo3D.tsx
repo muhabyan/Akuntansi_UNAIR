@@ -40,21 +40,21 @@ export default function Aks1Logo3D() {
             }}
           >
             {/* 
-              The 'A' Triangle. 
-              We use miter joints so the corners are sharp.
+              The 'A' Shape - Flat Top
+              We use bevel joints so the corners don't spike up like a spear.
             */}
-            <g strokeLinejoin="miter" fill="none">
-              <path d="M 50 15 L 15 85 L 85 85 Z" stroke="#EAB308" strokeWidth="18" />
-              <path d="M 50 15 L 15 85 L 85 85 Z" stroke="#2563EB" strokeWidth="14" />
-              <path d="M 50 15 L 15 85 L 85 85 Z" stroke="#EAB308" strokeWidth="10" />
-              <path d="M 50 15 L 15 85 L 85 85 Z" stroke="#2563EB" strokeWidth="7" />
-              <path d="M 50 15 L 15 85 L 85 85 Z" stroke="#EAB308" strokeWidth="4" />
-              <path d="M 50 15 L 15 85 L 85 85 Z" stroke="#2563EB" strokeWidth="2" />
+            <g strokeLinejoin="bevel" fill="none">
+              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#EAB308" strokeWidth="18" />
+              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#2563EB" strokeWidth="14" />
+              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#EAB308" strokeWidth="10" />
+              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#2563EB" strokeWidth="7" />
+              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#EAB308" strokeWidth="4" />
+              <path d="M 40 25 L 15 85 L 85 85 L 60 25 Z" stroke="#2563EB" strokeWidth="2" />
             </g>
 
             {/* 
               The Crossbar.
-              Same layered strokes to match the striped pattern.
+              Clipped slightly or positioned to match the flat top A.
             */}
             <g strokeLinecap="butt" fill="none">
               <line x1="25" y1="65" x2="75" y2="65" stroke="#EAB308" strokeWidth="18" />
