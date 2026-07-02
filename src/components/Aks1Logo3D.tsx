@@ -3,18 +3,21 @@ import React from 'react';
 /**
  * AKS1 Logo 3D — HIMA Akuntansi S1 UNAIR
  *
- * The logo is a symmetric triangle (like letter A, no crossbar) whose LEFT leg
- * extends past the apex as a "flying arm" to the upper-right.
+ * The logo is a symmetric triangle (like letter A, no crossbar) whose RIGHT leg
+ * extends past the apex as a "flying arm" to the UPPER-LEFT.
  *
  * Geometry (viewBox 0 0 100 100):
- *   Bottom-left  (12, 92)
- *   Bottom-right  (82, 92)
- *   Intersection  (47, 41)  — where right leg meets left leg line
- *   Tip           (72,  5)  — end of left leg extension
+ *   Bottom-left   (12, 92)
+ *   Bottom-right   (82, 92)
+ *   Intersection   (47, 41)  — where left leg meets the right leg line
+ *   Tip            (22,  5)  — end of right leg extension (upper-left)
  *
- * Drawing order ensures the left leg visually passes OVER the right leg:
- *   1. Closed triangle path (behind)
- *   2. Full left-leg line   (in front, overlaying)
+ * The right leg line runs from (82, 92) through (47, 41) to (22, 5).
+ * The left leg runs from (12, 92) to (47, 41) and stops.
+ *
+ * Drawing order ensures the right leg visually passes OVER the left leg:
+ *   1. Closed triangle path (behind)  — left leg + base + short right leg
+ *   2. Full right-leg line  (in front) — overlays at the intersection
  *
  * Concentric strokes create the striped pattern:
  *   Yellow(24) → Blue(20) → Yellow(16) → Blue(12) → Yellow(8) → Blue(4)
@@ -60,13 +63,15 @@ export default function Aks1Logo3D() {
           >
             {/*
               LAYER 1 — BEHIND
-              Closed triangle: intersection → bottom-right → bottom-left → back to intersection
-              Miter joins create sharp corners at both bottom vertices.
+              Closed triangle: intersection → bottom-left → bottom-right → back
+              Contains the LEFT leg (which stops at intersection), base, and
+              the lower portion of the right leg.
+              Miter joins create sharp pointed corners at both bottom vertices.
             */}
             {stripes.map(([color, width], j) => (
               <path
                 key={`tri-${j}`}
-                d="M 47 41 L 82 92 L 12 92 Z"
+                d="M 47 41 L 12 92 L 82 92 Z"
                 stroke={color}
                 strokeWidth={width}
                 fill="none"
@@ -77,18 +82,17 @@ export default function Aks1Logo3D() {
 
             {/*
               LAYER 2 — IN FRONT
-              Full left leg: bottom-left (12,92) → tip (72,5)
-              This line is collinear with the triangle's left leg (12,92)→(47,41)
-              but continues past the intersection to (72,5).
-              Drawn AFTER the triangle, so its stripes overlay the right leg
-              at the crossing point, creating the correct visual overlap.
+              Full RIGHT leg: bottom-right (82,92) → tip upper-left (22,5)
+              This line passes through (47,41) — the intersection point.
+              Drawn AFTER the triangle, so at the crossing its stripes
+              overlay the left leg, creating the correct visual overlap.
               Butt linecap gives a clean perpendicular cut at the tip.
             */}
             {stripes.map(([color, width], j) => (
               <line
                 key={`leg-${j}`}
-                x1="12" y1="92"
-                x2="72" y2="5"
+                x1="82" y1="92"
+                x2="22" y2="5"
                 stroke={color}
                 strokeWidth={width}
                 strokeLinecap="butt"
