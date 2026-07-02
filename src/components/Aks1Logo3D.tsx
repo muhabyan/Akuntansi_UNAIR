@@ -1,4 +1,3 @@
-import React from 'react';
 
 /**
  * AKS1 Logo 3D — HIMA Akuntansi S1 UNAIR
