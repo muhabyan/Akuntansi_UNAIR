@@ -37,7 +37,7 @@ export default defineConfig({
         navigateFallbackDenylist: [/^\/arsip-uas/],
       },
       manifest: {
-        name: 'AKS1 — Akuntansi S1 UNAIR',
+        name: 'AKS1 | Akuntansi S1 UNAIR',
         short_name: 'AKS1',
         description: 'Interactive E-Learning Platform untuk Akuntansi FEB UNAIR',
         theme_color: '#ffffff',
