@@ -212,10 +212,10 @@ ${pageText}
     <>
       {/* Expanded Panel */}
       <div 
-        className={`zen-hideable fixed z-[100] transition-all duration-300 ${
+        className={`zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
-          !isOpen ? 'scale-90 opacity-0 pointer-events-none' : draggable.isLongPressing ? 'scale-[1.02] opacity-100 pointer-events-auto' : 'scale-100 opacity-100 pointer-events-auto'
+          !isOpen ? 'scale-90 opacity-0 pointer-events-none' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
         style={{
           ...(isLeftHalf 
@@ -228,18 +228,16 @@ ${pageText}
       >
         <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
-          <div 
-            {...draggable.handlers}
-            className={`flex items-center justify-between p-4 text-white shrink-0 touch-none select-none transition-colors ${
-              draggable.isLongPressing ? 'bg-blue-700 cursor-grabbing' : 'bg-blue-600 cursor-grab hover:animate-pulse'
-            }`}
-          >
+          <div className="flex items-center justify-between p-4 text-white shrink-0 select-none bg-blue-600">
             <div className="flex items-center gap-2 font-bold pointer-events-none">
               <Bot size={20} /> AI Tutor
             </div>
             <button 
+              onPointerDown={(e) => e.stopPropagation()}
+              onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
-              className="text-blue-100 hover:text-white hover:bg-blue-700 p-1 rounded-full transition relative z-10"
+              className="text-blue-100 hover:text-white hover:bg-blue-700 p-1 rounded-full transition relative z-10 cursor-pointer"
+              title="Tutup obrolan"
             >
               <X size={18} />
             </button>
@@ -460,8 +458,10 @@ ${pageText}
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 99
         }}
-        className={`zen-hideable group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
-          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-blue-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
+        className={`zen-hideable group flex items-center justify-center shadow-md ${
+          draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
+        } touch-none ${
+          draggable.isLongPressing ? 'shadow-xl ring-4 ring-blue-400/50' : 'cursor-pointer active:scale-95'
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 

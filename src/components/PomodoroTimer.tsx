@@ -96,10 +96,10 @@ export default function PomodoroTimer() {
     <>
       {/* Expanded Panel */}
       <div 
-        className={`fixed z-[100] transition-all duration-300 ${
+        className={`fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
-          !isOpen ? 'scale-90 opacity-0 pointer-events-none' : draggable.isLongPressing ? 'scale-[1.02] opacity-100 pointer-events-auto' : 'scale-100 opacity-100 pointer-events-auto'
+          !isOpen ? 'scale-90 opacity-0 pointer-events-none' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
         style={{
           ...(isLeftHalf 
@@ -111,18 +111,16 @@ export default function PomodoroTimer() {
         }}
       >
         <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
-          <div 
-            {...draggable.handlers}
-            className={`flex items-center justify-between mb-4 touch-none select-none p-2 -m-2 rounded-lg transition-colors ${
-              draggable.isLongPressing ? 'bg-slate-100 dark:bg-slate-800 cursor-grabbing' : 'hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-grab hover:animate-pulse'
-            }`}
-          >
+          <div className="flex items-center justify-between mb-4 select-none p-2 -m-2 rounded-lg bg-slate-50 dark:bg-slate-800/50">
             <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pointer-events-none">
               <Timer size={18} className="text-blue-500" /> Pomodoro
             </h3>
             <button 
+              onPointerDown={(e) => e.stopPropagation()}
+              onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
-              className="text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-full transition relative z-10"
+              className="text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-full transition relative z-10 cursor-pointer"
+              title="Tutup Timer"
             >
               <X size={16} />
             </button>
@@ -214,8 +212,10 @@ export default function PomodoroTimer() {
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 100
         }}
-        className={`group flex items-center justify-center shadow-md transition-all duration-300 touch-none ${
-          draggable.isLongPressing ? 'scale-110 shadow-xl ring-4 ring-slate-400/50 cursor-grabbing' : 'cursor-pointer active:scale-95'
+        className={`group flex items-center justify-center shadow-md ${
+          draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
+        } touch-none ${
+          draggable.isLongPressing ? 'shadow-xl ring-4 ring-slate-400/50' : 'cursor-pointer active:scale-95'
         } ${
           isOpen 
             ? 'w-0 h-0 opacity-0 overflow-hidden' 
