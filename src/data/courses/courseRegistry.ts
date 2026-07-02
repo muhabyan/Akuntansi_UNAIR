@@ -603,7 +603,22 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         };
       });
 
-      return { readings, reviews: module.MNU101_REVIEW_READINGS };
+      // Load suplemen Pra-UAS
+      // @ts-expect-error Vite query string
+      const prioMd = await import('../pengbis/pengbis_PRA_UAS_TM8-14_PRIORITAS.md?raw');
+      // @ts-expect-error Vite query string
+      const caseMd = await import('../pengbis/pengbis_CASE_DAN_LATIHAN.md?raw');
+      // @ts-expect-error Vite query string
+      const glossMd = await import('../pengbis/pengbis_GLOSSARY_CHEATSHEET.md?raw');
+
+      const customReferensi: ContentBlock[] = [
+        { kind: 'callout', variant: 'key', title: 'Suplemen Prioritas & Kasus UAS', text: 'Materi tambahan ini dikompilasi khusus untuk persiapan UAS.' },
+        ...parseMarkdownToBlocks(prioMd.default),
+        ...parseMarkdownToBlocks(caseMd.default),
+        ...parseMarkdownToBlocks(glossMd.default)
+      ];
+
+      return { readings, reviews: module.MNU101_REVIEW_READINGS, customReferensi };
     }
     case 'AKA103': {
       const module = await import('../ekpa/ekpaReadings');

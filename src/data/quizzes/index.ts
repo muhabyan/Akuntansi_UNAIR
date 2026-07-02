@@ -9,6 +9,7 @@ import { AKM201_QUIZ, AKM201_QUIZ_UTS, AKM201_QUIZ_UAS } from './akm201';
 import { EKT109_QUIZ } from './ekt109';
 import { EKT109_UAS_SIMULATOR } from './ekt109UasSimulator';
 import { MNU101_QUIZ } from './mnu101';
+import { MNU101_UAS_SIMULATOR } from './mnu101UasSimulator';
 import { AKA103_QUIZ_UTS_SIMULATOR } from './aka103UtsSimulator';
 import { AKA103_QUIZ_UAS_SIMULATOR } from './aka103UasSimulator';
 import { MAS122_QUIZ_ALL } from './mas122';
@@ -19,7 +20,7 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK201: [...AKK201_QUIZ, ...AKK201_QUIZ_UTS_SIMULATOR, ...AKK201_QUIZ_UAS_SIMULATOR],
   AKM201: AKM201_QUIZ,
   EKT109: [...EKT109_QUIZ, ...EKT109_UAS_SIMULATOR],
-  MNU101: MNU101_QUIZ,
+  MNU101: [...MNU101_QUIZ, ...MNU101_UAS_SIMULATOR],
   AKA103: [...AKA103_QUIZ_UTS_SIMULATOR, ...AKA103_QUIZ_UAS_SIMULATOR],
   MAS122: MAS122_QUIZ_ALL,
   PJK201: [...PJK201_QUIZ_UTS_SIMULATOR, ...PJK201_QUIZ_UAS_SIMULATOR],
@@ -47,6 +48,12 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
     return [
       { id: 'uts', label: 'Simulasi UTS AKBI — Website Mode 90 Menit (70 Soal)', items: AKM201_QUIZ_UTS },
       { id: 'uas', label: 'Simulasi UAS AKBI — Website Mode 90 Menit (80 Soal)', items: AKM201_QUIZ_UAS },
+    ];
+  }
+  if (courseCode === 'MNU101') {
+    return [
+      { id: 'quiz', label: 'Kuis Interaktif Dasar', items: MNU101_QUIZ },
+      { id: 'uas-simulator', label: 'Simulasi Esai & Kasus UAS (Bocoran 2025)', items: MNU101_UAS_SIMULATOR },
     ];
   }
   if (courseCode === 'PJK201') {
