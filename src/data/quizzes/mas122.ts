@@ -142,6 +142,174 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     ],
     answer: 2,
     explanation: 'Indeks musiman = (73.94 / 97.41) × 100 ≈ 75.9. Dalam opsi jawaban kuis, angka pendekatan yang paling rasional dari tabel adalah 74.13.'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Interpretasi Slope Regresi',
+    difficulty: 'basic',
+    q: 'Dalam persamaan regresi Y = 1,500 + 45X (di mana Y adalah penjualan bulanan dalam ribuan rupiah dan X adalah anggaran iklan dalam ribuan rupiah), apa arti dari koefisien 45?',
+    options: [
+      'Setiap kenaikan anggaran iklan sebesar Rp1.000, maka penjualan diprediksi meningkat sebesar Rp45.000',
+      'Setiap kenaikan anggaran iklan sebesar Rp1.000, maka penjualan diprediksi meningkat sebesar Rp45',
+      'Jika tidak ada anggaran iklan (X = 0), maka penjualan adalah Rp45.000',
+      'Rata-rata penjualan bulanan perusahaan adalah Rp45.000'
+    ],
+    answer: 0,
+    explanation: 'Slope b = 45 berarti setiap perubahan 1 unit X (Rp1.000 iklan), Y (penjualan) berubah sebesar 45 unit (45 × Rp1.000 = Rp45.000).'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Menghitung Koefisien Determinasi',
+    difficulty: 'basic',
+    q: 'Jika koefisien korelasi (r) antara jam belajar mahasiswa dan nilai ujian akuntansi adalah 0.80, maka koefisien determinasi (R²) adalah sebesar... dan maknanya adalah...',
+    options: [
+      '0.64; sebesar 64% variasi nilai ujian dapat dijelaskan oleh variasi jam belajar',
+      '0.80; sebesar 80% variasi nilai ujian dapat dijelaskan oleh variasi jam belajar',
+      '0.64; sebesar 64% mahasiswa lulus ujian akuntansi',
+      '0.40; sebesar 40% variasi jam belajar ditentukan oleh nilai ujian'
+    ],
+    answer: 0,
+    explanation: 'R² = (0.80)² = 0.64 atau 64%. Artinya 64% dari variasi/perubahan pada variabel terikat (nilai ujian) mampu dijelaskan oleh variabel bebas (jam belajar).'
+  },
+  {
+    topic: 'Statistik Non-Parametrik',
+    skill: 'Menghitung df Chi-Square Goodness of Fit',
+    difficulty: 'basic',
+    q: 'Seorang auditor internal ingin menguji apakah preferensi metode pembayaran pelanggan terbagi rata ke dalam 5 kategori metode (k = 5) menggunakan uji Chi-Square Goodness-of-Fit. Berapa derajat kebebasan (degrees of freedom / df) untuk uji ini?',
+    options: [
+      '4',
+      '5',
+      '6',
+      'n - 1'
+    ],
+    answer: 0,
+    explanation: 'Untuk uji Chi-Square Goodness-of-Fit, rumus derajat kebebasan adalah df = k - 1, di mana k adalah jumlah kategori/kegiatan. df = 5 - 1 = 4.'
+  },
+  {
+    topic: 'Statistik Non-Parametrik',
+    skill: 'Menghitung df Tabel Kontingensi',
+    difficulty: 'medium',
+    q: 'Dalam uji Chi-Square Test of Independence dengan tabel kontingensi berukuran 3 baris (tingkat pendapatan: rendah, sedang, tinggi) dan 4 kolom (pilihan merek laptop), berapa nilai derajat kebebasannya (df)?',
+    options: [
+      '6',
+      '12',
+      '7',
+      '11'
+    ],
+    answer: 0,
+    explanation: 'Rumus df tabel kontingensi = (baris - 1) × (kolom - 1) = (3 - 1) × (4 - 1) = 2 × 3 = 6.'
+  },
+  {
+    topic: 'Statistik Non-Parametrik',
+    skill: 'Memilih Uji Alternatif Non-Parametrik',
+    difficulty: 'medium',
+    q: 'Jika data yang dimiliki berjenis ordinal (skala peringkat) atau data interval yang TIDAK berdistribusi normal dari dua sampel independen, uji statistik non-parametrik apa yang merupakan alternatif tepat pengganti Independent Two-Sample t-test?',
+    options: [
+      'Wilcoxon Rank-Sum Test / Mann-Whitney U Test',
+      'Wilcoxon Signed-Rank Test',
+      'Kruskal-Wallis Test',
+      'Spearman Rank Correlation'
+    ],
+    answer: 0,
+    explanation: 'Mann-Whitney U Test (atau Wilcoxon Rank-Sum) adalah padanan non-parametrik untuk uji t 2 sampel independen. Kruskal-Wallis adalah padanan untuk One-way ANOVA (3 sampel/lebih).'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Kondisi Penggunaan Korelasi Spearman',
+    difficulty: 'basic',
+    q: 'Kapan seorang peneliti bisnis sebaiknya menggunakan Korelasi Peringkat Spearman (Spearman Rank Correlation) daripada Korelasi Pearson?',
+    options: [
+      'Ketika variabel yang diukur berskala ordinal (peringkat) atau terdapat outlier ekstrem yang melanggar asumsi normalitas',
+      'Ketika kedua variabel berskala rasio dan berdistribusi normal sempurna',
+      'Ketika peneliti ingin membuktikan hubungan sebab-akibat (causality) secara pasti',
+      'Ketika ukuran sampel sangat besar (n > 1000)'
+    ],
+    answer: 0,
+    explanation: 'Korelasi Spearman (r_s) berbasis peringkat (rank), sehingga tahan terhadap outlier ekstrem dan sangat cocok untuk data berskala ordinal atau non-normal.'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Peramalan Tren Linier',
+    difficulty: 'medium',
+    q: 'Diberikan persamaan tren linier tahunan pendapatan PT. ABC: Ŷ = 120 + 15t (dalam miliar rupiah), di mana t = 1 mewakili tahun 2020. Berapa prediksi pendapatan perusahaan pada tahun 2025?',
+    options: [
+      '210 miliar rupiah',
+      '195 miliar rupiah',
+      '135 miliar rupiah',
+      '225 miliar rupiah'
+    ],
+    answer: 0,
+    explanation: 'Tahun 2020 -> t = 1, maka tahun 2025 -> t = 6. Substitusi ke rumus: Ŷ = 120 + 15(6) = 120 + 90 = 210 miliar rupiah.'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Aplikasi Indeks Musiman',
+    difficulty: 'medium',
+    q: 'Sebuah supermarket memiliki Indeks Musiman (Seasonal Index) untuk kuartal ke-4 (Q4 / musim liburan) sebesar 140. Jika rata-rata penjualan per kuartal secara keseluruhan adalah Rp50.000.000, berapa prediksi penjualan untuk Q4?',
+    options: [
+      'Rp70.000.000',
+      'Rp140.000.000',
+      'Rp50.000.000',
+      'Rp60.000.000'
+    ],
+    answer: 0,
+    explanation: 'Indeks 140 (atau 1.40) berarti penjualan Q4 diprediksi 40% di atas rata-rata kuartalan. Prediksi Q4 = Rp50.000.000 × 1.40 = Rp70.000.000.'
+  },
+  {
+    topic: 'ANOVA',
+    skill: 'Konsep Nilai F-statistic',
+    difficulty: 'medium',
+    q: 'Dalam pengujian One-way ANOVA, jika Hipotesis Nol (H₀: μ₁ = μ₂ = μ₃) benar-benar tepat (tidak ada perbedaan rata-rata antar kelompok), maka nilai rasio F hitung diharapkan mendekati angka...',
+    options: [
+      '1 (Satu)',
+      '0 (Nol)',
+      '100',
+      'Tak terhingga'
+    ],
+    answer: 0,
+    explanation: 'F = Treatment Variance (MSTR) / Error Variance (MSE). Jika H₀ benar, varians antar kelompok hanyalah fluktuasi acak yang besarnya kurang lebih sama dengan varians dalam kelompok, sehingga rasio F ≈ 1.'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Uji Signifikansi Slope Regresi',
+    difficulty: 'medium',
+    q: 'Untuk menguji apakah variabel bebas X secara signifikan berpengaruh terhadap variabel terikat Y dalam regresi linier sederhana (menguji hipotesis H₀: β₁ = 0), distribusi statistik apa yang digunakan dan berapa derajat kebebasannya?',
+    options: [
+      'Distribusi t dengan df = n - 2',
+      'Distribusi Z dengan df = n - 1',
+      'Distribusi F dengan df = n - 3',
+      'Distribusi Chi-Square dengan df = k - 1'
+    ],
+    answer: 0,
+    explanation: 'Dalam regresi sederhana, uji signifikansi slope menggunakan t-stat dengan derajat kebebasan df = n - 2 (karena kehilangan 2 df untuk mengestimasi intercept a dan slope b).'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Makna Standard Error of Estimate',
+    difficulty: 'advanced',
+    q: 'Dalam analisis regresi, apa fungsi utama dari Standard Error of Estimate (s_yx)?',
+    options: [
+      'Mengukur rata-rata penyebaran (scatter) atau deviasi titik-titik data aktual di sekitar garis regresi yang diestimasi',
+      'Mengukur persentase variasi variabel terikat yang dijelaskan oleh model',
+      'Mengukur tingkat signifikansi dari koefisien korelasi',
+      'Mengukur probabilitas terjadinya kesalahan tipe I (Type I Error)'
+    ],
+    answer: 0,
+    explanation: 'Standard Error of Estimate (s_yx) mirip dengan standar deviasi, tetapi mengukur seberapa jauh menyebarnya data observasi aktual dari garis prediksi regresi (residual dispersion).'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Komponen Irregular / Random',
+    difficulty: 'basic',
+    q: 'Di antara 4 komponen deret waktu (Trend, Seasonal, Cyclical, Irregular), komponen mana yang mewakili fluktuasi acak yang tidak dapat diprediksi seperti akibat bencana alam, pemogokan buruh, atau perang?',
+    options: [
+      'Irregular / Random Variation',
+      'Cyclical Variation (Siklus)',
+      'Seasonal Variation (Musiman)',
+      'Secular Trend (Tren Jangka Panjang)'
+    ],
+    answer: 0,
+    explanation: 'Irregular variation adalah komponen sisa (residual) yang bersifat acak, tidak berpola, dan disebabkan oleh peristiwa tak terduga dalam jangka pendek.'
   }
 ];
 

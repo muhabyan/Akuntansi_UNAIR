@@ -13,7 +13,7 @@ import { MNU101_UTS_SIMULATOR } from './mnu101UtsSimulator';
 import { MNU101_UAS_SIMULATOR } from './mnu101UasSimulator';
 import { AKA103_QUIZ_UTS_SIMULATOR } from './aka103UtsSimulator';
 import { AKA103_QUIZ_UAS_SIMULATOR } from './aka103UasSimulator';
-import { MAS122_QUIZ_ALL } from './mas122';
+import { MAS122_QUIZ, MAS122_UAS_2024, MAS122_QUIZ_ALL } from './mas122';
 import { PJK201_QUIZ_UAS_SIMULATOR } from './pjk201UasSimulator';
 import { PJK201_QUIZ_UTS_SIMULATOR } from './pjk201UtsSimulator';
 
@@ -74,6 +74,13 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
     return [
       { id: 'quiz', label: `Kuis Interaktif Lengkap PTE`, items: EKT109_QUIZ },
       { id: 'uas', label: `Simulasi UAS Pengantar Teori Ekonomi (TM 8-14 · ${EKT109_UAS_SIMULATOR.length} Soal)`, items: EKT109_UAS_SIMULATOR },
+    ];
+  }
+  if (courseCode === 'MAS122') {
+    return [
+      { id: 'uas', label: `Simulasi UAS Statistik — Website Mode 90 Menit (Fokus Pola UAS Tahun Lalu)`, items: MAS122_UAS_2024 },
+      { id: 'uts', label: `Simulasi UTS Statistik — Website Mode 90 Menit (30 Soal Distribusi & Hipotesis)`, items: MAS122_QUIZ },
+      { id: 'all', label: `Kompilasi Seluruh Soal Statistik (${MAS122_QUIZ_ALL.length} Soal Komprehensif)`, items: MAS122_QUIZ_ALL },
     ];
   }
   const items = getQuiz(courseCode);
