@@ -335,26 +335,61 @@ const MAS122_REVIEW_UAS_READING: Reading = {
   tm: 15,
   title: 'Bocoran Pola Ujian UAS Statistik (MAS122)',
   ref: 'UAS STATIS 2024.pdf',
-  intro: 'Rekap pola penyelesaian dan rumus yang diujikan dalam UAS Statistik berdasarkan arsip soal nyata.',
-  objectives: ['Menghitung Moving Average dan Seasonal Index', 'Membedakan jenis-jenis ANOVA', 'Menganalisis hasil Regresi Sederhana', 'Membedakan uji parametrik vs non-parametrik'],
+  intro: 'Rekap pola penyelesaian, rumus, serta visualisasi grafik yang diujikan dalam UAS Statistik berdasarkan arsip soal nyata.',
+  objectives: [
+    'Membaca grafik 4 komponen Time Series (Trend, Seasonal, Cyclical, Irregular)',
+    'Menavigasi pohon keputusan pemilihan uji statistik (Parametrik vs Non-Parametrik)',
+    'Menghitung Moving Average, Weighted Moving Average, dan Seasonal Index',
+    'Menganalisis hasil Regresi Berganda dan Asumsi Klasik (VIF)'
+  ],
   blocks: [
-    { kind: 'h2', text: 'A. Time Series & Peramalan' },
+    { kind: 'h2', text: 'A. Visualisasi 4 Komponen Time Series & Peramalan' },
+    {
+      kind: 'figure',
+      title: 'Grafik Pergerakan 4 Komponen Deret Waktu (Time Series)',
+      altText: 'Grafik menunjukkan Secular Trend naik mulus, gelombang Seasonal musiman tahunan, gelombang Cyclical siklus ekonomi jangka panjang, dan fluktuasi Irregular acak',
+      svg: `<svg viewBox="0 0 600 250" class="w-full h-auto font-sans"><rect width="600" height="250" rx="12" fill="#0f172a"/><line x1="50" y1="210" x2="550" y2="210" stroke="#475569" stroke-width="2"/><line x1="50" y1="210" x2="50" y2="20" stroke="#475569" stroke-width="2"/><line x1="50" y1="190" x2="550" y2="40" stroke="#10b981" stroke-width="3" stroke-dasharray="6,6"/><text x="360" y="45" fill="#10b981" font-size="11" font-weight="bold">1. Secular Trend (Tren Jangka Panjang)</text><path d="M 50 170 Q 75 140, 100 170 T 150 170 T 200 170 T 250 170 T 300 170 T 350 170 T 400 170 T 450 170 T 500 170 T 550 170" stroke="#38bdf8" stroke-width="2.5" fill="none"/><text x="350" y="135" fill="#38bdf8" font-size="11" font-weight="bold">2. Seasonal Variation (Musiman 1 Thn)</text><path d="M 50 160 C 180 60, 320 240, 550 70" stroke="#c084fc" stroke-width="3" fill="none"/><text x="140" y="80" fill="#c084fc" font-size="11" font-weight="bold">3. Cyclical (Siklus Bisnis > 1 Thn)</text><circle cx="260" cy="170" r="6" fill="#f43f5e"/><line x1="260" y1="170" x2="260" y2="120" stroke="#f43f5e" stroke-width="1.5" stroke-dasharray="3,3"/><text x="180" y="115" fill="#f43f5e" font-size="11" font-weight="bold">4. Irregular (Kejadian Acak/Bencana)</text><text x="270" y="235" fill="#94a3b8" font-size="11">Periode Waktu (Bulan / Tahun)</text></svg>`,
+      caption: 'Visualisasi perbedaan antara garis tren sekular (hijau), fluktuasi musiman yang berulang tiap tahun (biru), siklus ekonomi jangka panjang >1 tahun (ungu), dan kejutan acak (merah).'
+    },
+    {
+      kind: 'chart-guide',
+      title: 'Cara Membedakan 4 Komponen Deret Waktu pada Soal UAS',
+      points: [
+        '**Secular Trend (Garis Hijau Putus-putus):** Arah pergerakan data jangka panjang secara mulus (naik atau turun) selama bertahun-tahun atau berdekade (misal: pertumbuhan populasi, adopsi teknologi QRIS).',
+        '**Seasonal Variation (Gelombang Biru Pendek):** Pola fluktuasi yang berulang secara teratur dalam rentang waktu kurang dari atau sama dengan 1 tahun (misal: puncak penjualan ritel saat Lebaran/Natal atau kuartalan).',
+        '**Cyclical Variation (Gelombang Ungu Panjang):** Fluktuasi ekonomi yang bergerak naik dan turun bergelombang melewati garis tren yang memakan waktu lebih dari 1 tahun (misal: fase resesi, pemulihan, ekspansi bisnis 5-10 tahunan).',
+        '**Irregular / Random Fluctuation (Titik Merah):** Fluktuasi sisa (residual) yang sifatnya acak, mendadak, dan tidak dapat diprediksi seperti akibat bencana alam, pemogokan buruh, pandemi, atau perang.'
+      ]
+    },
     { kind: 'formula', text: 'Moving Average: MA(n) = Total data dalam n periode / n', note: 'Contoh: Jika data 2005=2, 2006=6, 2007=4. MA3 untuk 2006 = (2+6+4)/3 = 4' },
+    { kind: 'formula', text: 'Weighted Moving Average (WMA) = Σ (Bobot × Nilai Periode) / Σ Bobot', note: 'Contoh: Data Jan=10, Feb=12, Mar=15 dengan bobot 3, 2, 1 (terbaru bobot terbesar). Prediksi April = (15×3 + 12×2 + 10×1) / (3+2+1) = 79 / 6 = 13.17' },
     { kind: 'formula', text: 'Indeks Musiman (Seasonal Index) = (Rata-rata Musim / Rata-rata Keseluruhan) x 100', note: 'Contoh: Jika rata musim semi 81.46 dan keseluruhan 97.41, indeks = (81.46 / 97.41) x 100 = 83.6 (atau 16.4% lebih rendah)' },
     { kind: 'formula', text: 'Faktor Koreksi = Jumlah Periode Musim / (Jumlah Indeks Musiman / 100)', note: 'Contoh: Jika total kuartal 4, dan jumlah indeks 401.4, Faktor Koreksi = 4 / 4.014 = 0.9968' },
-    { kind: 'h2', text: 'B. Analisis Varians (ANOVA)' },
-    { kind: 'table', headers: ['Metode', 'Kondisi Penggunaan'], rows: [
-      ['One-way ANOVA', 'Membandingkan rata-rata LEBIH dari 2 kelompok.'],
-      ['Two-way ANOVA without interaction', '2 faktor bebas, asumsi keduanya independen dan tidak saling memengaruhi.'],
-      ['Two-way ANOVA with interaction', 'Menguji interaksi 2 faktor. Misalnya kinerja berdasarkan pegawai DAN lokasi, di mana lokasi mungkin memengaruhi kinerja pegawai secara spesifik.'],
-      ['Repeated Measures ANOVA', 'Subjek yang SAMA diukur berkali-kali (contoh: sebelum dan sesudah intervensi/pengaruh waktu). Data Time Series jangka panjang tidak cocok pakai One-way biasa.']
-    ] },
-    { kind: 'callout', variant: 'key', title: 'Syarat ANOVA', text: 'Data minimal skala interval, distribusi normal, dan homogenitas varians.' },
-    { kind: 'h2', text: 'C. Korelasi dan Regresi' },
+    { kind: 'h2', text: 'B. Pohon Keputusan Pemilihan Uji Statistik (Parametrik vs Non-Parametrik)' },
+    {
+      kind: 'figure',
+      title: 'Diagram Alir Pemilihan Uji Statistik Akuntansi & Bisnis',
+      altText: 'Diagram alur memilih uji statistik berdasarkan jumlah kelompok, keterikatan sampel, dan jenis skala data',
+      svg: `<svg viewBox="0 0 650 310" class="w-full h-auto font-sans"><rect width="650" height="310" rx="12" fill="#0f172a"/><rect x="225" y="15" width="200" height="38" rx="8" fill="#3b82f6"/><text x="325" y="39" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">Tujuan Uji Rata-rata / Peringkat</text><line x1="325" y1="53" x2="160" y2="90" stroke="#64748b" stroke-width="2"/><line x1="325" y1="53" x2="490" y2="90" stroke="#64748b" stroke-width="2"/><rect x="70" y="90" width="180" height="34" rx="6" fill="#475569"/><text x="160" y="112" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">2 Kelompok Sampel</text><rect x="400" y="90" width="180" height="34" rx="6" fill="#475569"/><text x="490" y="112" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">&gt; 2 Kelompok (Banyak)</text><line x1="160" y1="124" x2="80" y2="165" stroke="#64748b" stroke-width="1.5"/><line x1="160" y1="124" x2="240" y2="165" stroke="#64748b" stroke-width="1.5"/><rect x="10" y="165" width="140" height="48" rx="6" fill="#10b981"/><text x="80" y="185" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Independen (Bebas)</text><text x="80" y="203" fill="#ecfdf5" font-size="10" text-anchor="middle">t-test / Mann-Whitney</text><rect x="170" y="165" width="140" height="48" rx="6" fill="#10b981"/><text x="240" y="185" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Berpasangan (Paired)</text><text x="240" y="203" fill="#ecfdf5" font-size="10" text-anchor="middle">Paired t / Wilcoxon</text><line x1="490" y1="124" x2="410" y2="165" stroke="#64748b" stroke-width="1.5"/><line x1="490" y1="124" x2="570" y2="165" stroke="#64748b" stroke-width="1.5"/><rect x="340" y="165" width="140" height="48" rx="6" fill="#f59e0b"/><text x="410" y="185" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Normal / Interval</text><text x="410" y="203" fill="#fef3c7" font-size="10" text-anchor="middle">One-way / Two-way ANOVA</text><rect x="500" y="165" width="140" height="48" rx="6" fill="#ef4444"/><text x="570" y="185" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">Ordinal / Non-Normal</text><text x="570" y="203" fill="#fee2e2" font-size="10" text-anchor="middle">Kruskal-Wallis Test</text><text x="325" y="260" fill="#94a3b8" font-size="11" text-anchor="middle">*Aturan Emas: Jika syarat Normalitas atau Homogenitas Varians (Levene) dilanggar,</text><text x="325" y="278" fill="#f87171" font-size="11" font-weight="bold" text-anchor="middle">selalu gunakan alternatif Statistik Non-Parametrik (Mann-Whitney, Wilcoxon, Kruskal-Wallis)!</text></svg>`,
+      caption: 'Gunakan bagan ini saat membaca soal cerita di UAS: tentukan jumlah kelompoknya terlebih dahulu, lalu cek apakah sampelnya berpasangan atau independen, serta perhatikan skala datanya.'
+    },
+    {
+      kind: 'table',
+      headers: ['Metode Uji', 'Padanan Non-Parametrik', 'Kondisi & Contoh Kasus Bisnis'],
+      rows: [
+        ['Independent 2-Sample t-test', 'Mann-Whitney U Test', 'Membandingkan 2 kelompok bebas (misal: gaji auditor KAP Big 4 vs Non-Big 4). Pakai Mann-Whitney jika data ordinal/tidak normal.'],
+        ['Paired Two-Sample t-test', 'Wilcoxon Signed-Rank Test', 'Membandingkan subjek yang sama sebelum & sesudah (misal: kepatuhan pajak sebelum & sesudah sistem baru). Pakai Wilcoxon jika data peringkat/ordinal.'],
+        ['One-way ANOVA', 'Kruskal-Wallis Test', 'Membandingkan rata-rata >2 kelompok bebas (misal: penjualan 3 metode promosi). Pakai Kruskal-Wallis jika asumsi homogenitas varians/normalitas dilanggar.'],
+        ['Pearson Correlation (r)', 'Spearman Rank Correlation (rs)', 'Mengukur kekuatan hubungan linier 2 variabel. Pakai Spearman jika data berupa peringkat (ranking) atau distribusi tidak normal.']
+      ]
+    },
+    { kind: 'callout', variant: 'key', title: 'Syarat Mutlak ANOVA & Regresi (Parametrik)', text: '1. **Homogenitas Varians (Levene\'s Test):** Nilai Sig. Levene harus > 0.05 agar asumsi varians homogen terpenuhi.\n2. **Normalitas:** Data berdistribusi normal.\n3. **Multikolinearitas (Khusus Regresi Berganda):** Nilai VIF harus < 10 (atau Tolerance > 0.10) agar variabel bebas tidak saling berkorelasi tinggi.' },
+    { kind: 'h2', text: 'C. Korelasi dan Regresi Linier' },
     { kind: 'ul', items: [
-      '**Korelasi Pearson vs Spearman:** Spearman digunakan untuk data ordinal (ranking) atau tidak normal. Nilai korelasi berada di range -1 sampai 1. Ingat: Korelasi TIDAK BISA membuktikan sebab-akibat!',
-      '**Persamaan Regresi (Y = a + bX):** Intercept (a) adalah nilai tetap/fixed cost (saat X = 0). Contoh: C = 3000 + 2Q. Jika Q = 0, biaya $3000.',
-      '**Confidence vs Prediction Interval:** Ada rumus yang diujikan untuk membuat selang (interval) penjualan masa depan (Prediction Interval) berdasarkan tabel t-stat dan standar error regresi.'
+      '**Interpretasi Korelasi (r):** Nilai mendekati +1 (positif kuat/searah), mendekati -1 (negatif kuat/berbanding terbalik seperti -0.85), mendekati 0 (tidak ada hubungan linier). Ingat: Korelasi kuat tidak membuktikan hubungan sebab-akibat (causality)!',
+      '**Persamaan Regresi (Y = a + bX):** Intercept (a) adalah nilai Y ketika X = 0 (sering dimaknai sebagai *Fixed Cost* atau biaya tetap). Slope (b) adalah perubahan Y setiap 1 unit perubahan X.',
+      '**Uji F vs Uji t pada Regresi Berganda:** Uji F menguji kelayakan model secara keseluruhan (seluruh X secara **simultan** mempengaruhi Y). Uji t menguji signifikansi masing-masing variabel X secara **parsial/individu**.',
+      '**Bahaya Ekstrapolasi:** Memprediksi nilai Y menggunakan nilai X yang jauh di luar rentang data observasi masa lalu sangat berbahaya karena pola hubungan linier belum tentu berlaku di luar rentang tersebut.'
     ]}
   ]
 };
