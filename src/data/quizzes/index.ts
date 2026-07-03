@@ -78,7 +78,7 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
   }
   if (courseCode === 'MAS122') {
     return [
-      { id: 'uas', label: `Simulasi UAS Statistik — Website Mode 90 Menit (Fokus Pola UAS Tahun Lalu)`, items: MAS122_UAS_2024 },
+      { id: 'uas', label: `Simulasi UAS Statistik — Website Mode 90 Menit (35 Soal Sesuai Bocoran UAS 2024)`, items: MAS122_UAS_2024 },
       { id: 'uts', label: `Simulasi UTS Statistik — Website Mode 90 Menit (30 Soal Distribusi & Hipotesis)`, items: MAS122_QUIZ },
       { id: 'all', label: `Kompilasi Seluruh Soal Statistik (${MAS122_QUIZ_ALL.length} Soal Komprehensif)`, items: MAS122_QUIZ_ALL },
     ];

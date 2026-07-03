@@ -310,6 +310,216 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     ],
     answer: 0,
     explanation: 'Irregular variation adalah komponen sisa (residual) yang bersifat acak, tidak berpola, dan disebabkan oleh peristiwa tak terduga dalam jangka pendek.'
+  },
+  {
+    topic: 'ANOVA',
+    skill: 'Tujuan Uji Levene (Levene\'s Test)',
+    difficulty: 'basic',
+    q: 'Sebelum melakukan pengujian One-way ANOVA, analis umumnya memeriksa tabel Levene\'s Test pada SPSS. Apa tujuan utama dari uji Levene tersebut?',
+    options: [
+      'Menguji apakah varians antar kelompok relatif sama (homogenitas varians)',
+      'Menguji apakah distribusi data normal sempurna',
+      'Menguji apakah rata-rata antar kelompok sama besar',
+      'Menguji apakah terdapat multikolinearitas antar variabel independen'
+    ],
+    answer: 0,
+    explanation: 'Levene\'s Test menguji homogenitas varians (syarat penting ANOVA). Jika nilai sig. Levene > 0.05, maka asumsi varians homogen terpenuhi.'
+  },
+  {
+    topic: 'ANOVA',
+    skill: 'Kegunaan Post Hoc Test',
+    difficulty: 'medium',
+    q: 'Jika hasil One-way ANOVA menunjukkan rasio F signifikan (Hipotesis Nol H₀ ditolak), mengapa kita masih perlu melakukan uji lanjut (Post Hoc Test seperti Tukey atau Bonferroni)?',
+    options: [
+      'Untuk mengetahui secara spesifik pasangan kelompok mana saja yang rata-ratanya berbeda secara signifikan',
+      'Untuk memastikan apakah data yang diuji berdistribusi normal',
+      'Untuk menghitung nilai R-squared dari model',
+      'Untuk menggabungkan kembali kelompok-kelompok yang variansnya berbeda'
+    ],
+    answer: 0,
+    explanation: 'ANOVA hanya memberi tahu bahwa "ada minimal satu rata-rata kelompok yang berbeda", namun tidak menunjukkan yang mana. Post Hoc Test menguji perbandingan antar semua pasangan kelompok.'
+  },
+  {
+    topic: 'ANOVA',
+    skill: 'Makna Eta Squared (η²)',
+    difficulty: 'medium',
+    q: 'Dalam analisis varians (ANOVA), apa makna statistik dari nilai Eta Squared (η²)?',
+    options: [
+      'Ukuran efek (effect size) yang menunjukkan proporsi variasi variabel terikat (Y) yang mampu dijelaskan oleh perbedaan kelompok (faktor)',
+      'Tingkat signifikansi (alpha) dari pengujian hipotesis F',
+      'Rasio antara kesalahan baku dan rata-rata sampel',
+      'Derajat kebebasan untuk variasi dalam kelompok (within groups)'
+    ],
+    answer: 0,
+    explanation: 'Eta Squared (η² = SS_between / SS_total) adalah ukuran kekuatan hubungan dalam ANOVA, serupa dengan R² pada analisis regresi.'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Kelemahan Simple Moving Average',
+    difficulty: 'basic',
+    q: 'Apa kelemahan utama dari metode Simple Moving Average (rata-rata bergerak sederhana) dalam meramalkan deret waktu bisnis?',
+    options: [
+      'Memberikan bobot yang sama untuk semua data masa lalu dan kehilangan data observasi di awal serta akhir periode peramalan',
+      'Perhitungannya sangat rumit dan memerlukan kalkulus lanjutan',
+      'Hanya dapat digunakan apabila data memiliki tren eksponensial yang sangat tajam',
+      'Tidak mampu menghitung rata-rata dari angka desimal'
+    ],
+    answer: 0,
+    explanation: 'Simple Moving Average memperlakukan data lama dan baru dengan bobot yang sama persis, serta mengorbankan beberapa periode data awal untuk memulai perhitungan.'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Perhitungan Weighted Moving Average',
+    difficulty: 'medium',
+    q: 'Diberikan data penjualan bulanan toko: Januari = 10, Februari = 12, Maret = 15 (dalam jutaan). Jika digunakan Weighted Moving Average 3 periode dengan bobot 3, 2, 1 (di mana periode terbaru mendapat bobot terbesar), berapa prediksi penjualan bulan April?',
+    options: [
+      '13.17 juta',
+      '12.33 juta',
+      '14.50 juta',
+      '15.00 juta'
+    ],
+    answer: 0,
+    explanation: 'Prediksi April = (15×3 + 12×2 + 10×1) / (3+2+1) = (45 + 24 + 10) / 6 = 79 / 6 ≈ 13.17 juta.'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Interpretasi Korelasi Negatif Kuat',
+    difficulty: 'basic',
+    q: 'Jika hasil analisis menunjukkan koefisien korelasi Pearson (r) antara harga produk dan jumlah permintaan adalah -0.85, kesimpulan bisnis apa yang paling tepat?',
+    options: [
+      'Terdapat hubungan negatif yang sangat kuat; ketika harga produk naik, jumlah permintaan cenderung menurun tajam',
+      'Terdapat hubungan positif yang lemah; harga produk tidak terlalu mempengaruhi permintaan',
+      'Harga produk sebesar 85% ditentukan oleh jumlah permintaan pelanggan',
+      'Telah terjadi kesalahan perhitungan karena nilai korelasi tidak boleh bernilai negatif'
+    ],
+    answer: 0,
+    explanation: 'Nilai r = -0.85 berada sangat dekat dengan -1, menunjukkan korelasi negatif yang sangat kuat (berbanding terbalik).'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Identifikasi Variabel Bebas vs Terikat',
+    difficulty: 'basic',
+    q: 'Dalam sebuah penelitian akuntansi manajemen dengan judul: "Pengaruh Anggaran Pemasaran dan Jumlah Armada Kirim terhadap Volume Penjualan E-commerce", manakah yang berkedudukan sebagai variabel bebas (independen)?',
+    options: [
+      'Anggaran Pemasaran dan Jumlah Armada Kirim',
+      'Volume Penjualan E-commerce',
+      'Hanya Anggaran Pemasaran saja',
+      'E-commerce'
+    ],
+    answer: 0,
+    explanation: 'Variabel bebas (X) adalah penyebab atau faktor yang mempengaruhi, yaitu Anggaran Pemasaran dan Jumlah Armada Kirim. Volume Penjualan adalah variabel terikat (Y).'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Perbedaan Uji F dan Uji t pada Regresi Berganda',
+    difficulty: 'medium',
+    q: 'Dalam analisis regresi linier berganda (Multiple Regression), apa perbedaan mendasar antara fungsi Uji F (secara simultan) dan Uji t (secara parsial)?',
+    options: [
+      'Uji F menguji apakah seluruh variabel bebas secara bersama-sama signifikan berpengaruh terhadap Y, sedangkan Uji t menguji signifikansi masing-masing variabel bebas secara individu',
+      'Uji F digunakan untuk sampel kecil (n < 30), sedangkan Uji t untuk sampel besar (n > 30)',
+      'Uji F mengukur koefisien determinasi R², sedangkan Uji t mengukur standar error',
+      'Uji F hanya untuk data ordinal, sedangkan Uji t untuk data interval/rasio'
+    ],
+    answer: 0,
+    explanation: 'Uji F menilai kelayakan model secara keseluruhan (simultan/bersama-sama), sementara Uji t menilai kontribusi masing-masing variabel independen satu per satu.'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Mengenali Komponen Tren Sekular (Secular Trend)',
+    difficulty: 'basic',
+    q: 'Peningkatan berkelanjutan pada penggunaan pembayaran digital (QRIS) di Indonesia selama rentang waktu 15 tahun terakhir merupakan contoh manifestasi dari komponen deret waktu apa?',
+    options: [
+      'Secular Trend (Tren Jangka Panjang)',
+      'Cyclical Variation (Variasi Siklis)',
+      'Seasonal Variation (Variasi Musiman)',
+      'Irregular / Random Fluctuation (Fluktuasi Acak)'
+    ],
+    answer: 0,
+    explanation: 'Secular Trend adalah kecenderungan arah pergerakan data (naik atau turun) secara mulus dalam jangka waktu yang panjang (bertahun-tahun atau berdekade).'
+  },
+  {
+    topic: 'Deret Waktu (Time Series)',
+    skill: 'Mengenali Variasi Siklis (Cyclical Variation)',
+    difficulty: 'medium',
+    q: 'Fluktuasi bisnis atau ekonomi yang bergerak naik dan turun bergelombang melewati garis tren (seperti fase masa resesi, pemulihan, ekspansi, dan puncak) yang durasinya memakan waktu lebih dari satu tahun disebut...',
+    options: [
+      'Cyclical Variation (Variasi Siklis)',
+      'Seasonal Variation (Variasi Musiman)',
+      'Secular Trend (Tren Jangka Panjang)',
+      'Irregular Variation (Variasi Acak)'
+    ],
+    answer: 0,
+    explanation: 'Variasi Siklis berputar naik-turun mengikuti siklus ekonomi jangka menengah/panjang (> 1 tahun), berbeda dengan Musiman yang berulang dalam rentang 1 tahun.'
+  },
+  {
+    topic: 'Statistik Non-Parametrik',
+    skill: 'Alternatif Paired t-test (Wilcoxon Signed-Rank)',
+    difficulty: 'medium',
+    q: 'Jika seorang auditor ingin menguji perbedaan kinerja kepatuhan pajak perusahaan SEBELUM dan SESUDAH penerapan sistem pajak baru (sampel berpasangan), namun data skor kepatuhan tersebut berskala ordinal (peringkat), uji non-parametrik apa yang harus dipilih?',
+    options: [
+      'Wilcoxon Signed-Rank Test (Uji Peringkat Bertanda Wilcoxon)',
+      'Mann-Whitney U Test',
+      'Kruskal-Wallis Test',
+      'Chi-Square Goodness-of-Fit'
+    ],
+    answer: 0,
+    explanation: 'Wilcoxon Signed-Rank Test adalah alternatif non-parametrik yang tepat untuk uji t dua sampel berpasangan / dependen (paired samples).'
+  },
+  {
+    topic: 'Statistik Non-Parametrik',
+    skill: 'Penggunaan Kruskal-Wallis Test',
+    difficulty: 'medium',
+    q: 'Kondisi analitis apa yang mengharuskan seorang peneliti bisnis menggunakan uji Kruskal-Wallis sebagai alternatif pengganti One-way ANOVA?',
+    options: [
+      'Ketika ingin membandingkan rata-rata dari 3 kelompok atau lebih yang independen, namun data berskala ordinal atau varians tidak homogen dan tidak normal',
+      'Ketika ingin menghitung peramalan penjualan bulanan selama 5 tahun ke depan',
+      'Ketika variabel yang diuji hanya terdiri dari 1 kelompok sampel terhadap nilai acuan tetap',
+      'Ketika ingin menguji hubungan sebab-akibat antara 2 variabel rasio berdistribusi normal'
+    ],
+    answer: 0,
+    explanation: 'Kruskal-Wallis adalah uji berbasis peringkat yang merupakan padanan non-parametrik untuk One-way ANOVA (> 2 kelompok independen).'
+  },
+  {
+    topic: 'ANOVA',
+    skill: 'Keuntungan Repeated Measures ANOVA',
+    difficulty: 'advanced',
+    q: 'Mengapa penggunaan Repeated Measures ANOVA (di mana subjek yang sama diuji berulang kali pada beberapa perlakuan) dianggap lebih kuat dan sensitif dibandingkan One-way ANOVA antar kelompok independen?',
+    options: [
+      'Karena mampu mengontrol dan mengeliminasi variasi perbedaan karakteristik antar individu/subjek, sehingga kesalahan baku (error variance) menjadi lebih kecil',
+      'Karena tidak memerlukan asumsi apa pun dan bisa menggunakan data berskala nominal',
+      'Karena perhitungannya dapat dilakukan tanpa menggunakan komputer atau software statistik',
+      'Karena selalu menghasilkan nilai F sama dengan 1'
+    ],
+    answer: 0,
+    explanation: 'Dalam repeated measures, karena orang/subjeknya sama, varians yang disebabkan oleh perbedaan bawaan antar subjek dapat dipisahkan dari error, meningkatkan daya uji (statistical power).'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Deteksi Multikolinearitas (VIF)',
+    difficulty: 'advanced',
+    q: 'Dalam regresi berganda, situasi patologis di mana dua atau lebih variabel bebas memiliki hubungan korelasi yang sangat kuat satu sama lain disebut... dan umumnya dideteksi apabila nilai VIF (Variance Inflation Factor) melebihi angka...',
+    options: [
+      'Multikolinearitas; VIF > 10',
+      'Heteroskedastisitas; VIF > 1',
+      'Autokorelasi; VIF > 100',
+      'Homoskedastisitas; VIF > 5'
+    ],
+    answer: 0,
+    explanation: 'Multikolinearitas terjadi ketika variabel-variabel independen saling berkorelasi tinggi. Aturan umum (rule of thumb) di SPSS adalah VIF > 10 atau Tolerance < 0.10.'
+  },
+  {
+    topic: 'Korelasi & Regresi',
+    skill: 'Bahaya Ekstrapolasi dalam Regresi',
+    difficulty: 'medium',
+    q: 'Mengapa seorang analis bisnis harus menghindari melakukan "ekstrapolasi" (memprediksi nilai Y menggunakan nilai X yang jauh di luar rentang data observasi masa lalu) dalam analisis regresi?',
+    options: [
+      'Karena pola hubungan linier yang terbentuk pada rentang data observasi belum tentu berlaku atau bisa berubah drastis di luar rentang tersebut',
+      'Karena nilai X yang besar selalu menyebabkan koefisien determinasi R² menjadi nol',
+      'Karena software statistik seperti SPSS dan Excel tidak mampu mengalikan angka yang terlalu besar',
+      'Karena ekstrapolasi melanggar hukum undang-undang statistik nasional'
+    ],
+    answer: 0,
+    explanation: 'Hubungan linier hanya terjamin valid di dalam rentang data yang diamati (interpolasi). Di luar rentang itu (ekstrapolasi), kurva bisa mendatar, menurun, atau melonjak liar.'
   }
 ];
 
