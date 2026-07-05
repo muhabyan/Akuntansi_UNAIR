@@ -69,15 +69,15 @@ export const perpajakanPraUAS: PjkData = {
               "k": "callout",
               "variant": "info",
               "title": "Kamus Istilah: Pemeriksaan vs Penyidikan",
-              "text": "**Pemeriksaan:** Tahap administratif untuk menguji kepatuhan atau tujuan lain (seperti pencabutan NPWP). Produk akhirnya SKP (Surat Ketetapan Pajak).\\n\\n**Penyidikan:** Tahap *pro justitia* (pidana) ketika ada bukti kuat (Bukper) Wajib Pajak melakukan tindak pidana perpajakan."
+              "text": "==**Pemeriksaan:** Tahap administratif untuk menguji kepatuhan atau tujuan lain (seperti pencabutan NPWP).== Produk akhirnya SKP (Surat Ketetapan Pajak).\\n\\n**Penyidikan:** Tahap *pro justitia* (pidana) ketika ada bukti kuat (Bukper) Wajib Pajak melakukan tindak pidana perpajakan."
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · PMK 15/2025 (Pemeriksaan) · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026 (Coretax)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No.== 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · PMK 15/2025 (Pemeriksaan) · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026 (Coretax)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             },
             {
               "k": "p",
-              "text": "**Catatan baca:** Materi ini sudah disesuaikan dengan aturan terbaru. Beberapa angka pasal dan jenis pemeriksaan di slide lama (era PMK 17/2013) **sudah tidak berlaku** dan sudah dikoreksi di sini. Lihat bagian *Catatan Koreksi* di akhir."
+              "text": "==**Catatan baca:** Materi ini sudah disesuaikan dengan aturan terbaru.== Beberapa angka pasal dan jenis pemeriksaan di slide lama (era PMK 17/2013) **sudah tidak berlaku** dan sudah dikoreksi di sini. Lihat bagian *Catatan Koreksi* di akhir."
             },
             {
               "k": "p",
@@ -95,7 +95,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Indonesia menganut **self-assessment** (WP menghitung, menyetor, dan melaporkan pajaknya sendiri). Karena itu DJP melakukan pengawasan secara berjenjang, dari yang paling ringan (administratif) sampai yang paling berat (pidana):"
+              "text": "==Indonesia menganut **self-assessment** (WP menghitung, menyetor, dan melaporkan pajaknya sendiri).== Karena itu DJP melakukan pengawasan secara berjenjang, dari yang paling ringan (administratif) sampai yang paling berat (pidana):"
             },
             {
               "k": "pre",
@@ -148,7 +148,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Catatan posisi SP2DK (jangan keliru):** **SP2DK** (Surat Permintaan Penjelasan atas Data dan/atau Keterangan) **bukan** produk dari penelitian SPT, melainkan instrumen **pengawasan kepatuhan** yang berada di tahap paling awal. Awalnya hanya diatur internal lewat **SE-05/PJ/2022**, kini diberi dasar hukum lebih kuat melalui **PMK No. 111 Tahun 2025**, yang menegaskan SP2DK **berbeda** dari pemeriksaan maupun pemeriksaan bukti permulaan. SP2DK adalah sarana klarifikasi sebelum eskalasi ke pemeriksaan."
+              "text": "==**Catatan posisi SP2DK (jangan keliru):** **SP2DK** (Surat Permintaan Penjelasan atas Data dan/atau Keterangan) **bukan** produk dari penelitian SPT, melainkan instrumen **pengawasan kepatuhan** yang berada di tahap paling awal.== Awalnya hanya diatur internal lewat **SE-05/PJ/2022**, kini diberi dasar hukum lebih kuat melalui **PMK No. 111 Tahun 2025**, yang menegaskan SP2DK **berbeda** dari pemeriksaan maupun pemeriksaan bukti permulaan. SP2DK adalah sarana klarifikasi sebelum eskalasi ke pemeriksaan."
             }
           ]
         },
@@ -174,7 +174,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "⚠️ **PENTING (perubahan besar 2025):** Tata cara pemeriksaan kini diatur **PMK No. 15 Tahun 2025**, ditetapkan **10 Februari 2025**, diundangkan dan mulai berlaku **14 Februari 2025**. PMK ini **menyederhanakan dan menggantikan** rezim lama (a.l. PMK 17/2013 dan perubahannya). Materi pemeriksaan yang masih menyebut \"Pemeriksaan Lapangan vs Pemeriksaan Kantor\" sebagai jenis utama **sudah usang**."
+              "text": "==⚠️ **PENTING (perubahan besar 2025):** Tata cara pemeriksaan kini diatur **PMK No.== 15 Tahun 2025**, ditetapkan **10 Februari 2025**, diundangkan dan mulai berlaku **14 Februari 2025**. PMK ini **menyederhanakan dan menggantikan** rezim lama (a.l. PMK 17/2013 dan perubahannya). Materi pemeriksaan yang masih menyebut \"Pemeriksaan Lapangan vs Pemeriksaan Kantor\" sebagai jenis utama **sudah usang**."
             },
             {
               "k": "h",
@@ -212,7 +212,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Aspek | Aturan Lama (PMK 17/2013 dkk) | Aturan Baru (PMK 15/2025) |\n|---|---|---|\n| Jenis pemeriksaan | Pemeriksaan **Lapangan** & **Kantor** | Pemeriksaan **Lengkap, Terfokus, Spesifik** |\n| Dasar pembedaan | Tempat pelaksanaan | Kedalaman & cakupan pos yang diuji |\n| Jangka waktu | Bervariasi (mis. lapangan 6 bln, kantor 4 bln) | 5 / 3 / 1 bulan (+10 hari kerja untuk data konkret) |\n| Batas pemenuhan data WP | Lebih longgar | Tegas: maksimal **1 bulan** |"
+              "text": "==| Aspek | Aturan Lama (PMK 17/2013 dkk) | Aturan Baru (PMK 15/2025) |\n|---|---|---|\n| Jenis pemeriksaan | Pemeriksaan **Lapangan** & **Kantor** | Pemeriksaan **Lengkap, Terfokus, Spesifik** |\n| Dasar pembedaan | Tempat pelaksanaan | Kedalaman & cakupan pos yang diuji |\n| Jangka waktu | Bervariasi (mis.== lapangan 6 bln, kantor 4 bln) | 5 / 3 / 1 bulan (+10 hari kerja untuk data konkret) |\n| Batas pemenuhan data WP | Lebih longgar | Tegas: maksimal **1 bulan** |"
             },
             {
               "k": "h",
@@ -224,15 +224,15 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**a. Standar Umum** (menyangkut pribadi & mutu pemeriksa):\n- Telah mendapat pendidikan/pelatihan teknis cukup dan terampil; menggunakan keterampilannya secara cermat dan seksama;\n- Jujur, bersih dari tindakan tercela, mengutamakan kepentingan negara;\n- Taat pada ketentuan perundang-undangan termasuk batas waktu;\n- Bila perlu, pemeriksaan dapat dibantu **tenaga ahli** dari luar DJP yang ditunjuk DJP (mis. penerjemah, ahli TI, pengacara)."
+              "text": "==**a.== Standar Umum** (menyangkut pribadi & mutu pemeriksa):\n- Telah mendapat pendidikan/pelatihan teknis cukup dan terampil; menggunakan keterampilannya secara cermat dan seksama;\n- Jujur, bersih dari tindakan tercela, mengutamakan kepentingan negara;\n- Taat pada ketentuan perundang-undangan termasuk batas waktu;\n- Bila perlu, pemeriksaan dapat dibantu **tenaga ahli** dari luar DJP yang ditunjuk DJP (mis. penerjemah, ahli TI, pengacara)."
             },
             {
               "k": "p",
-              "text": "**b. Standar Pelaksanaan:**\n- Didahului persiapan yang baik, sesuai tujuan, dengan pengawasan seksama;\n- Luas pemeriksaan (*audit scope*) dikembangkan lewat pencocokan data, pengamatan, permintaan keterangan, konfirmasi, dan teknik sampling;\n- Temuan harus didasarkan pada **bukti kompeten yang cukup**;\n- Dilakukan oleh **tim** (supervisor, ketua tim, anggota); didokumentasikan dalam **Kertas Kerja Pemeriksaan (KKP)**;\n- Dapat dilaksanakan di kantor DJP, tempat usaha/tinggal WP, atau tempat lain; pada jam kerja, dapat dilanjutkan di luar jam kerja."
+              "text": "==**b.== Standar Pelaksanaan:**\n- Didahului persiapan yang baik, sesuai tujuan, dengan pengawasan seksama;\n- Luas pemeriksaan (*audit scope*) dikembangkan lewat pencocokan data, pengamatan, permintaan keterangan, konfirmasi, dan teknik sampling;\n- Temuan harus didasarkan pada **bukti kompeten yang cukup**;\n- Dilakukan oleh **tim** (supervisor, ketua tim, anggota); didokumentasikan dalam **Kertas Kerja Pemeriksaan (KKP)**;\n- Dapat dilaksanakan di kantor DJP, tempat usaha/tinggal WP, atau tempat lain; pada jam kerja, dapat dilanjutkan di luar jam kerja."
             },
             {
               "k": "p",
-              "text": "**c. Standar Pelaporan:**\n- LHP disusun ringkas dan jelas, memuat ruang lingkup sesuai tujuan, kesimpulan yang didukung temuan kuat, dan pengungkapan informasi lain yang terkait;\n- LHP menjadi **dasar penerbitan SKP dan/atau STP** (Pasal 20 PMK 15/2025)."
+              "text": "==**c.== Standar Pelaporan:**\n- LHP disusun ringkas dan jelas, memuat ruang lingkup sesuai tujuan, kesimpulan yang didukung temuan kuat, dan pengungkapan informasi lain yang terkait;\n- LHP menjadi **dasar penerbitan SKP dan/atau STP** (Pasal 20 PMK 15/2025)."
             },
             {
               "k": "h",
@@ -272,7 +272,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Merupakan **jembatan** antara ranah administratif dan ranah pidana.\n- **Bukti Permulaan** = keadaan/perbuatan/bukti (termasuk keterangan, tulisan, benda) yang memberi petunjuk adanya **dugaan kuat** tindak pidana di bidang perpajakan.\n- **Pemeriksaan Bukti Permulaan** = pemeriksaan untuk mendapatkan bukti permulaan tersebut.\n- Bila ditemukan bukti permulaan yang cukup → ditindaklanjuti dengan **Penyidikan**.\n- Sebelum penyidikan dimulai, WP masih dapat memanfaatkan **Pasal 8 ayat (3) jo. Pasal 44A UU KUP** (pengungkapan ketidakbenaran perbuatan) — lihat butir 4.4."
+              "text": "==Merupakan **jembatan** antara ranah administratif dan ranah pidana.\n- **Bukti Permulaan** = keadaan/perbuatan/bukti (termasuk keterangan, tulisan, benda) yang memberi petunjuk adanya **dugaan kuat** tindak pidana di bidang perpajakan.\n- **Pemeriksaan Bukti Permulaan** = pemeriksaan untuk mendapatkan bukti permulaan tersebut.\n- Bila ditemukan bukti permulaan yang cukup → ditindaklanjuti dengan **Penyidikan**.\n- Sebelum penyidikan dimulai, WP masih dapat memanfaatkan **Pasal 8 ayat (3) jo.== Pasal 44A UU KUP** (pengungkapan ketidakbenaran perbuatan) — lihat butir 4.4."
             }
           ]
         },
@@ -323,7 +323,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "WP dapat mengungkapkan ketidakbenaran perbuatannya (Pasal 8 ayat (3)) **sepanjang SPDP belum dikirim ke Kejaksaan**, disertai pelunasan kekurangan pajak + sanksi. Konsekuensi: tidak dilakukan penyidikan."
+              "text": "==WP dapat mengungkapkan ketidakbenaran perbuatannya (Pasal 8 ayat (3)) **sepanjang SPDP belum dikirim ke Kejaksaan**, disertai pelunasan kekurangan pajak + sanksi.== Konsekuensi: tidak dilakukan penyidikan."
             },
             {
               "k": "h",
@@ -347,7 +347,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Aspek | Sebelum UU HPP | Sesudah UU HPP (UU 7/2021) |\n|---|---|---|\n| Besaran denda | **4×** pokok pajak (flat) | **Berjenjang**: 1× (kealpaan) / 3× (sengaja) / 4× (faktur fiktif) |\n| Filosofi | Seragam | Proporsional dengan tingkat kesalahan |\n| Tahap pembayaran | Sampai pelimpahan | Pembayaran pada tahap penyidikan s.d. persidangan tetap diperhitungkan (Pasal 44B ayat (2a)) |"
+              "text": "==| Aspek | Sebelum UU HPP | Sesudah UU HPP (UU 7/2021) |\n|---|---|---|\n| Besaran denda | **4×** pokok pajak (flat) | **Berjenjang**: 1× (kealpaan) / 3× (sengaja) / 4× (faktur fiktif) |\n| Filosofi | Seragam | Proporsional dengan tingkat kesalahan |\n| Tahap pembayaran | Sampai pelimpahan | Pembayaran pada tahap penyidikan s.d.== persidangan tetap diperhitungkan (Pasal 44B ayat (2a)) |"
             },
             {
               "k": "p",
@@ -359,11 +359,11 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Empat unsur tindak pidana** di bidang perpajakan:\n1. **Unsur subjek** — pelaku (WP, wakil, kuasa, pegawai, atau pihak lain — Pasal 43);\n2. **Unsur perbuatan** — tindakan/kelalaian yang dilarang UU;\n3. **Unsur akibat** — menimbulkan kerugian pada pendapatan negara;\n4. **Unsur kesalahan** — kealpaan (Pasal 38) atau kesengajaan (Pasal 39/39A)."
+              "text": "==**Empat unsur tindak pidana** di bidang perpajakan:\n1.== **Unsur subjek** — pelaku (WP, wakil, kuasa, pegawai, atau pihak lain — Pasal 43);\n2. **Unsur perbuatan** — tindakan/kelalaian yang dilarang UU;\n3. **Unsur akibat** — menimbulkan kerugian pada pendapatan negara;\n4. **Unsur kesalahan** — kealpaan (Pasal 38) atau kesengajaan (Pasal 39/39A)."
             },
             {
               "k": "p",
-              "text": "**Ruang lingkup tindak pidana perpajakan** bersumber pada UU KUP dan undang-undang pajak terkait. **PMK 17 Tahun 2025** mengatur tata cara penyidikan tindak pidana di bidang perpajakan, termasuk pelaksanaan kewenangan penyidik dan administrasi penyidikan."
+              "text": "==**Ruang lingkup tindak pidana perpajakan** bersumber pada UU KUP dan undang-undang pajak terkait.== **PMK 17 Tahun 2025** mengatur tata cara penyidikan tindak pidana di bidang perpajakan, termasuk pelaksanaan kewenangan penyidik dan administrasi penyidikan."
             },
             {
               "k": "p",
@@ -375,15 +375,15 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Kasus.** PT Sentosa diperiksa melalui **Pemeriksaan Lengkap** (jangka waktu pengujian 5 bulan, PMK 15/2025). Ditemukan SPT PPh Badan tidak benar yang **diduga disengaja**, dengan potensi kerugian pada pendapatan negara **Rp1.000.000.000**. Sebelum penyidikan dimulai (SPDP belum dikirim ke Penuntut Umum), WP mempertimbangkan dua jalur:"
+              "text": "==**Kasus.** PT Sentosa diperiksa melalui **Pemeriksaan Lengkap** (jangka waktu pengujian 5 bulan, PMK 15/2025).== Ditemukan SPT PPh Badan tidak benar yang **diduga disengaja**, dengan potensi kerugian pada pendapatan negara **Rp1.000.000.000**. Sebelum penyidikan dimulai (SPDP belum dikirim ke Penuntut Umum), WP mempertimbangkan dua jalur:"
             },
             {
               "k": "pre",
-              "text": "| Jalur | Dasar | Yang dibayar | Total beban | Akibat |\n|---|---|---|---|---|\n| **A — Mengungkap lebih awal** | Pasal 8 ayat (3)/(3a) jo. 44A | Pokok Rp1.000.000.000 + **denda 100%** Rp1.000.000.000 | **Rp2.000.000.000** | Tidak dilakukan penyidikan |\n| **B — Lanjut, lalu hentikan di penyidikan** | Pasal 44B (untuk Pasal 39) | Kerugian Rp1.000.000.000 + **denda 3×** Rp3.000.000.000 | **Rp4.000.000.000** | Penyidikan dihentikan demi penerimaan negara |"
+              "text": "==| Jalur | Dasar | Yang dibayar | Total beban | Akibat |\n|---|---|---|---|---|\n| **A — Mengungkap lebih awal** | Pasal 8 ayat (3)/(3a) jo.== 44A | Pokok Rp1.000.000.000 + **denda 100%** Rp1.000.000.000 | **Rp2.000.000.000** | Tidak dilakukan penyidikan |\n| **B — Lanjut, lalu hentikan di penyidikan** | Pasal 44B (untuk Pasal 39) | Kerugian Rp1.000.000.000 + **denda 3×** Rp3.000.000.000 | **Rp4.000.000.000** | Penyidikan dihentikan demi penerimaan negara |"
             },
             {
               "k": "p",
-              "text": "**Pelajaran:** konsisten dengan asas **ultimum remedium** — makin awal WP mengungkap (Jalur A), makin ringan bebannya (Rp2 M vs Rp4 M) dan terhindar dari risiko pidana badan. Bila WP tidak menempuh keduanya dan kasus berlanjut ke pengadilan, ancaman **Pasal 39 ayat (1)** setelah UU No. 1 Tahun 2026: pidana penjara paling lama 6 tahun dan/atau pidana denda paling banyak 4× jumlah pajak terutang yang tidak atau kurang dibayar."
+              "text": "==**Pelajaran:** konsisten dengan asas **ultimum remedium** — makin awal WP mengungkap (Jalur A), makin ringan bebannya (Rp2 M vs Rp4 M) dan terhindar dari risiko pidana badan.== Bila WP tidak menempuh keduanya dan kasus berlanjut ke pengadilan, ancaman **Pasal 39 ayat (1)** setelah UU No. 1 Tahun 2026: pidana penjara paling lama 6 tahun dan/atau pidana denda paling banyak 4× jumlah pajak terutang yang tidak atau kurang dibayar."
             }
           ]
         },
@@ -455,11 +455,11 @@ export const perpajakanPraUAS: PjkData = {
               "k": "callout",
               "variant": "warning",
               "title": "Kamus Istilah: Jenis SKP",
-              "text": "**SKPKB (Kurang Bayar):** Pajak terutang > Kredit pajak. WP harus bayar kekurangan + sanksi.\\n**SKPN (Nihil):** Pajak terutang = Kredit pajak.\\n**SKPLB (Lebih Bayar):** Pajak terutang < Kredit pajak. WP berhak restitusi."
+              "text": "==**SKPKB (Kurang Bayar):** Pajak terutang > Kredit pajak.== WP harus bayar kekurangan + sanksi.\\n**SKPN (Nihil):** Pajak terutang = Kredit pajak.\\n**SKPLB (Lebih Bayar):** Pajak terutang < Kredit pajak. WP berhak restitusi."
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026 (Coretax) · PMK 28/2026 (pengembalian pendahuluan) · KMK tarif bunga (bulanan)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No.== 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026 (Coretax) · PMK 28/2026 (pengembalian pendahuluan) · KMK tarif bunga (bulanan)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
           ]
         },
@@ -480,7 +480,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Indonesia menganut **self-assessment**: pajak terutang pada dasarnya ditetapkan sendiri oleh WP melalui SPT. DJP **baru menerbitkan surat ketetapan** apabila, berdasarkan **penelitian** atau **pemeriksaan**, ditemukan ketidaksesuaian (kurang bayar, lebih bayar, atau nihil). Inilah unsur *official assessment* yang bersifat **korektif**."
+              "text": "==Indonesia menganut **self-assessment**: pajak terutang pada dasarnya ditetapkan sendiri oleh WP melalui SPT.== DJP **baru menerbitkan surat ketetapan** apabila, berdasarkan **penelitian** atau **pemeriksaan**, ditemukan ketidaksesuaian (kurang bayar, lebih bayar, atau nihil). Inilah unsur *official assessment* yang bersifat **korektif**."
             },
             {
               "k": "pre",
@@ -502,7 +502,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Pasal 1 angka 20 UU KUP**: STP adalah surat untuk melakukan tagihan pajak dan/atau sanksi administrasi berupa bunga dan/atau denda. Diatur dalam **Pasal 14 UU KUP**.\nSTP memiliki **kekuatan hukum yang sama dengan SKP**, sehingga penagihannya dapat dilakukan dengan Surat Paksa."
+              "text": "==**Pasal 1 angka 20 UU KUP**: STP adalah surat untuk melakukan tagihan pajak dan/atau sanksi administrasi berupa bunga dan/atau denda.== Diatur dalam **Pasal 14 UU KUP**.\nSTP memiliki **kekuatan hukum yang sama dengan SKP**, sehingga penagihannya dapat dilakukan dengan Surat Paksa."
             },
             {
               "k": "h",
@@ -600,7 +600,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Sebagai wujud *ultimum remedium*, WP yang **karena kealpaan** tidak menyampaikan SPT atau menyampaikan SPT yang isinya tidak benar/tidak lengkap sehingga merugikan pendapatan negara, **untuk pertama kali tidak dikenai sanksi pidana**, melainkan **sanksi administrasi berupa kenaikan 200%** dari jumlah pajak yang kurang dibayar (ditagih melalui SKPKB). Dasar: **Pasal 13A UU KUP**."
+              "text": "==Sebagai wujud *ultimum remedium*, WP yang **karena kealpaan** tidak menyampaikan SPT atau menyampaikan SPT yang isinya tidak benar/tidak lengkap sehingga merugikan pendapatan negara, **untuk pertama kali tidak dikenai sanksi pidana**, melainkan **sanksi administrasi berupa kenaikan 200%** dari jumlah pajak yang kurang dibayar (ditagih melalui SKPKB).== Dasar: **Pasal 13A UU KUP**."
             }
           ]
         },
@@ -633,7 +633,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "⚠️ **Konsep paling sering keliru.** Sanksi bunga **bukan lagi flat 2% per bulan**. Sejak UU Cipta Kerja (2020) dan ditegaskan UU HPP, **tarif bunga bersifat dinamis** dan ditetapkan **Menteri Keuangan via KMK setiap bulan**.\n\n💡 **Analogi Denda vs Bunga:**\n- **Denda** = Hukuman karena kamu melanggar *aturan/kewajiban* (misal: telat lapor SPT, denda Rp100.000). Ibarat ditilang polisi karena lupa bawa SIM.\n- **Bunga** = Biaya kompensasi karena kamu terlambat *membayar* uang yang seharusnya sudah masuk ke kas negara. Ibarat bunga keterlambatan tagihan kartu kredit bulanan."
+              "text": "==⚠️ **Konsep paling sering keliru.** Sanksi bunga **bukan lagi flat 2% per bulan**.== Sejak UU Cipta Kerja (2020) dan ditegaskan UU HPP, **tarif bunga bersifat dinamis** dan ditetapkan **Menteri Keuangan via KMK setiap bulan**.\n\n💡 **Analogi Denda vs Bunga:**\n- **Denda** = Hukuman karena kamu melanggar *aturan/kewajiban* (misal: telat lapor SPT, denda Rp100.000). Ibarat ditilang polisi karena lupa bawa SIM.\n- **Bunga** = Biaya kompensasi karena kamu terlambat *membayar* uang yang seharusnya sudah masuk ke kas negara. Ibarat bunga keterlambatan tagihan kartu kredit bulanan."
             },
             {
               "k": "h",
@@ -661,11 +661,11 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Catatan: untuk pelanggaran Pasal 13(1) huruf b/c/d, selain bunga di atas terdapat pula sanksi **kenaikan 75%** (PPh dipotong/dipungut tak disetor, serta PPN/PPnBM) — bukan dihitung dengan formula uplift. Lihat §2.1."
+              "text": "==Catatan: untuk pelanggaran Pasal 13(1) huruf b/c/d, selain bunga di atas terdapat pula sanksi **kenaikan 75%** (PPh dipotong/dipungut tak disetor, serta PPN/PPnBM) — bukan dihitung dengan formula uplift.== Lihat §2.1."
             },
             {
               "k": "p",
-              "text": "Tarif berubah tiap bulan. **Contoh** (Maret 2025, KMK terkait): Pasal 19 = 0,57%; Pasal 9(2a)/(2b) & 14(3) = 0,99%; Pasal 8(5) = 1,41%; Pasal 13(2)/(2a) = 1,82%; Pasal 13(3b) = 2,24% per bulan. *Selalu cek KMK bulan berjalan untuk angka aktual.*"
+              "text": "Tarif berubah tiap bulan. ==**Contoh** (Maret 2025, KMK terkait): Pasal 19 = 0,57%; Pasal 9(2a)/(2b) & 14(3) = 0,99%; Pasal 8(5) = 1,41%; Pasal 13(2)/(2a) = 1,82%; Pasal 13(3b) = 2,24% per bulan.== *Selalu cek KMK bulan berjalan untuk angka aktual.*"
             },
             {
               "k": "h",
@@ -685,11 +685,11 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Proses Penghitungan:**\n1. Sanksi bunga = 1,82% × 10 bulan × Rp200.000.000 = **Rp36.400.000**\n2. Total yang harus dibayar = Pokok Rp200.000.000 + Bunga Rp36.400.000 = **Rp236.400.000**"
+              "text": "==**Proses Penghitungan:**\n1.== Sanksi bunga = 1,82% × 10 bulan × Rp200.000.000 = **Rp36.400.000**\n2. Total yang harus dibayar = Pokok Rp200.000.000 + Bunga Rp36.400.000 = **Rp236.400.000**"
             },
             {
               "k": "p",
-              "text": "**Kesimpulan:** WP membayar pokok + bunga Rp236.400.000. Andai keterlambatan > 24 bulan, jumlah bulan sanksi tetap **dibatasi maksimal 24 bulan** (argonya mentok di 24 bulan, ibarat argo taksi yang di-cap maksimal).\n**Dasar Hukum:** Pasal 13 ayat (2) UU KUP jo. UU HPP; tarif per KMK bulan berjalan."
+              "text": "==**Kesimpulan:** WP membayar pokok + bunga Rp236.400.000.== Andai keterlambatan > 24 bulan, jumlah bulan sanksi tetap **dibatasi maksimal 24 bulan** (argonya mentok di 24 bulan, ibarat argo taksi yang di-cap maksimal).\n**Dasar Hukum:** Pasal 13 ayat (2) UU KUP jo. UU HPP; tarif per KMK bulan berjalan."
             }
           ]
         },
@@ -707,7 +707,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Restitusi adalah pengembalian kelebihan pembayaran pajak kepada WP karena pajak yang dibayar/kredit pajak **lebih besar** daripada pajak terutang, atau karena pembayaran pajak yang **seharusnya tidak terutang**. Dasar: **Pasal 17, 17 ayat (2), dan 11 UU KUP**."
+              "text": "==Restitusi adalah pengembalian kelebihan pembayaran pajak kepada WP karena pajak yang dibayar/kredit pajak **lebih besar** daripada pajak terutang, atau karena pembayaran pajak yang **seharusnya tidak terutang**.== Dasar: **Pasal 17, 17 ayat (2), dan 11 UU KUP**."
             },
             {
               "k": "h",
@@ -744,7 +744,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Catatan batas nominal terbaru (peraturan pelaksana):**\n- **WP orang pribadi persyaratan tertentu** dengan lebih bayar s.d. **Rp100 juta** → keputusan paling lama **15 hari kerja** berdasarkan PMK 28/2026.\n- **WP badan persyaratan tertentu**: peredaran usaha s.d. Rp50 miliar dan lebih bayar s.d. Rp1 miliar; keputusan paling lama 1 bulan. **PKP persyaratan tertentu**: penyerahan s.d. Rp4,2 miliar dan lebih bayar PPN s.d. Rp1 miliar per Masa Pajak; keputusan paling lama 1 bulan.\n- Sejak 1 Mei 2026, dasar pelaksana pengembalian pendahuluan adalah **PMK 28 Tahun 2026**, yang mencabut PMK 39/2018, PMK 117/2019, PMK 209/2021, dan PMK 119/2024."
+              "text": "==**Catatan batas nominal terbaru (peraturan pelaksana):**\n- **WP orang pribadi persyaratan tertentu** dengan lebih bayar s.d.== **Rp100 juta** → keputusan paling lama **15 hari kerja** berdasarkan PMK 28/2026.\n- **WP badan persyaratan tertentu**: peredaran usaha s.d. Rp50 miliar dan lebih bayar s.d. Rp1 miliar; keputusan paling lama 1 bulan. **PKP persyaratan tertentu**: penyerahan s.d. Rp4,2 miliar dan lebih bayar PPN s.d. Rp1 miliar per Masa Pajak; keputusan paling lama 1 bulan.\n- Sejak 1 Mei 2026, dasar pelaksana pengembalian pendahuluan adalah **PMK 28 Tahun 2026**, yang mencabut PMK 39/2018, PMK 117/2019, PMK 209/2021, dan PMK 119/2024."
             },
             {
               "k": "h",
@@ -752,7 +752,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Aspek | Restitusi Biasa (Pasal 17B) | Pengembalian Pendahuluan (17C/17D/9(4c) PPN) |\n|---|---|---|\n| Mekanisme | **Pemeriksaan** | **Penelitian** |\n| Produk hukum | **SKPLB** | **SKPPKP** |\n| Subjek | Semua WP lebih bayar | WP tertentu (Patuh / Persyaratan Tertentu / PKP Risiko Rendah) |\n| Kecepatan | Maks 12 bulan | 15 hari kerja s.d. 3 bulan |"
+              "text": "==| Aspek | Restitusi Biasa (Pasal 17B) | Pengembalian Pendahuluan (17C/17D/9(4c) PPN) |\n|---|---|---|\n| Mekanisme | **Pemeriksaan** | **Penelitian** |\n| Produk hukum | **SKPLB** | **SKPPKP** |\n| Subjek | Semua WP lebih bayar | WP tertentu (Patuh / Persyaratan Tertentu / PKP Risiko Rendah) |\n| Kecepatan | Maks 12 bulan | 15 hari kerja s.d.== 3 bulan |"
             },
             {
               "k": "h",
@@ -768,15 +768,15 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Karena pendahuluan diberikan **tanpa pemeriksaan**, DJP tetap **berhak memeriksa** kemudian. Bila hasil pemeriksaan menunjukkan kekurangan → terbit **SKPKB**. Besaran sanksinya **berbeda** tergantung jalur — ini sering disalahpahami:"
+              "text": "==Karena pendahuluan diberikan **tanpa pemeriksaan**, DJP tetap **berhak memeriksa** kemudian.== Bila hasil pemeriksaan menunjukkan kekurangan → terbit **SKPKB**. Besaran sanksinya **berbeda** tergantung jalur — ini sering disalahpahami:"
             },
             {
               "k": "pre",
-              "text": "| Jalur pendahuluan | Sanksi atas SKPKB post-audit | Dasar |\n|---|---|---|\n| **PPh — WP Kriteria Tertentu (17C)** | Kenaikan **100%** (Pasal 17C ayat (5)) | Pasal 17C(5) UU KUP |\n| **PPh — WP Persyaratan Tertentu (17D)** | Kenaikan **100%** (Pasal 17D ayat (5)); untuk **WP OP s.d. Rp100 juta** dikurangi (via Pasal 36(1)(a) jo. Per-05/PJ/2023) sehingga **setara bunga Pasal 13(2)** | Pasal 17D(5); Per-05/PJ/2023 |\n| **PPN — PKP Berisiko Rendah (9 ayat 4c)** | **Bunga Pasal 13(2)** — kenaikan 100% **tidak** diterapkan | Pasal 9 ayat (4f) UU PPN jo. UU HPP |"
+              "text": "==| Jalur pendahuluan | Sanksi atas SKPKB post-audit | Dasar |\n|---|---|---|\n| **PPh — WP Kriteria Tertentu (17C)** | Kenaikan **100%** (Pasal 17C ayat (5)) | Pasal 17C(5) UU KUP |\n| **PPh — WP Persyaratan Tertentu (17D)** | Kenaikan **100%** (Pasal 17D ayat (5)); untuk **WP OP s.d.== Rp100 juta** dikurangi (via Pasal 36(1)(a) jo. Per-05/PJ/2023) sehingga **setara bunga Pasal 13(2)** | Pasal 17D(5); Per-05/PJ/2023 |\n| **PPN — PKP Berisiko Rendah (9 ayat 4c)** | **Bunga Pasal 13(2)** — kenaikan 100% **tidak** diterapkan | Pasal 9 ayat (4f) UU PPN jo. UU HPP |"
             },
             {
               "k": "p",
-              "text": "💡 **Inti yang benar:** Kenaikan **100% masih berlaku** untuk jalur PPh (17C/17D) di tingkat undang-undang. Yang murni berubah menjadi **bunga Pasal 13(2)** lewat UU HPP adalah jalur **PPN PKP Berisiko Rendah** (Pasal 9 ayat (4f) UU PPN). Untuk **WP OP kecil (≤ Rp100 juta)**, kenaikan 100% pada Pasal 17D(5) memang ada, tetapi diberi **pengurangan** sehingga efektifnya setara bunga Pasal 13(2)."
+              "text": "==💡 **Inti yang benar:** Kenaikan **100% masih berlaku** untuk jalur PPh (17C/17D) di tingkat undang-undang.== Yang murni berubah menjadi **bunga Pasal 13(2)** lewat UU HPP adalah jalur **PPN PKP Berisiko Rendah** (Pasal 9 ayat (4f) UU PPN). Untuk **WP OP kecil (≤ Rp100 juta)**, kenaikan 100% pada Pasal 17D(5) memang ada, tetapi diberi **pengurangan** sehingga efektifnya setara bunga Pasal 13(2)."
             },
             {
               "k": "h",
@@ -784,7 +784,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Diketahui:** PT Sejahtera (bukan PKP berisiko rendah) melaporkan SPT Masa PPN lebih bayar **Rp300.000.000** dan memilih direstitusi.\n**Proses:**\n1. Permohonan diajukan via Coretax → DJP melakukan **pemeriksaan** (Pasal 17B).\n2. Pemeriksaan harus selesai **maks 12 bulan**; bila lebih bayar terbukti → terbit **SKPLB Rp300.000.000**.\n3. Bila DJP melewati 12 bulan tanpa keputusan → permohonan **dianggap dikabulkan**, SKPLB terbit, dan dapat timbul **imbalan bunga**.\n**Dasar Hukum:** Pasal 17B UU KUP; PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026."
+              "text": "==**Diketahui:** PT Sejahtera (bukan PKP berisiko rendah) melaporkan SPT Masa PPN lebih bayar **Rp300.000.000** dan memilih direstitusi.\n**Proses:**\n1.== Permohonan diajukan via Coretax → DJP melakukan **pemeriksaan** (Pasal 17B).\n2. Pemeriksaan harus selesai **maks 12 bulan**; bila lebih bayar terbukti → terbit **SKPLB Rp300.000.000**.\n3. Bila DJP melewati 12 bulan tanpa keputusan → permohonan **dianggap dikabulkan**, SKPLB terbit, dan dapat timbul **imbalan bunga**.\n**Dasar Hukum:** Pasal 17B UU KUP; PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026."
             }
           ]
         },
@@ -806,7 +806,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Mekanisme | Kapan | Dasar | Sanksi |\n|---|---|---|---|\n| **Pembetulan SPT** (kemauan sendiri) | **Sebelum** pemeriksaan; untuk SPT rugi/lebih bayar maks **2 tahun** sebelum daluwarsa | Pasal 8 ayat (1), (1a), (2) | Bunga (uplift **+5%**, Pasal 8(2)/(2a)) |\n| **Pengungkapan ketidakbenaran PENGISIAN SPT** | Saat **pemeriksaan**, sebelum SPHP | Pasal 8 ayat (4) | Bunga (uplift **+10%**, Pasal 8(5)) |\n| **Pengungkapan ketidakbenaran PERBUATAN** | Saat **pemeriksaan bukti permulaan**, sebelum SPDP ke Penuntut Umum | Pasal 8 ayat (3)/(3a) | **Denda 100%** (turun dari 150%) → tidak dilakukan penyidikan (lih. TM 8 §4.4) |"
+              "text": "==| Mekanisme | Kapan | Dasar | Sanksi |\n|---|---|---|---|\n| **Pembetulan SPT** (kemauan sendiri) | **Sebelum** pemeriksaan; untuk SPT rugi/lebih bayar maks **2 tahun** sebelum daluwarsa | Pasal 8 ayat (1), (1a), (2) | Bunga (uplift **+5%**, Pasal 8(2)/(2a)) |\n| **Pengungkapan ketidakbenaran PENGISIAN SPT** | Saat **pemeriksaan**, sebelum SPHP | Pasal 8 ayat (4) | Bunga (uplift **+10%**, Pasal 8(5)) |\n| **Pengungkapan ketidakbenaran PERBUATAN** | Saat **pemeriksaan bukti permulaan**, sebelum SPDP ke Penuntut Umum | Pasal 8 ayat (3)/(3a) | **Denda 100%** (turun dari 150%) → tidak dilakukan penyidikan (lih.== TM 8 §4.4) |"
             },
             {
               "k": "h",
@@ -814,7 +814,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "WP yang mengalami **kesulitan likuiditas** atau **keadaan di luar kekuasaannya** dapat mengajukan permohonan **mengangsur** atau **menunda** pembayaran pajak.\n- **Dasar:** Pasal 9 ayat (4) UU KUP; administrasi permohonan mengikuti **PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026**.\n- **Jangka waktu:** paling lama **24 bulan** sejak diterbitkan keputusan persetujuan (sebelumnya 12 bulan).\n- **Frekuensi angsuran:** paling banyak **1 (satu) kali dalam 1 bulan**. *(Catatan: pernyataan \"2 kali sebulan\" yang muncul di sebagian soal latihan adalah keliru.)*\n- **Sanksi:** bunga **Pasal 19 ayat (2)** (tarif bunga MK per bulan, **uplift 0%**, maks 24 bulan) untuk pajak selain PBB; untuk PBB (SPPT/SKP PBB/STP PBB) berupa denda **2% per bulan** (Pasal 11(2) UU PBB). Angsuran/penundaan atas **STP tidak dikenai bunga**."
+              "text": "==WP yang mengalami **kesulitan likuiditas** atau **keadaan di luar kekuasaannya** dapat mengajukan permohonan **mengangsur** atau **menunda** pembayaran pajak.\n- **Dasar:** Pasal 9 ayat (4) UU KUP; administrasi permohonan mengikuti **PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026**.\n- **Jangka waktu:** paling lama **24 bulan** sejak diterbitkan keputusan persetujuan (sebelumnya 12 bulan).\n- **Frekuensi angsuran:** paling banyak **1 (satu) kali dalam 1 bulan**.== *(Catatan: pernyataan \"2 kali sebulan\" yang muncul di sebagian soal latihan adalah keliru.)*\n- **Sanksi:** bunga **Pasal 19 ayat (2)** (tarif bunga MK per bulan, **uplift 0%**, maks 24 bulan) untuk pajak selain PBB; untuk PBB (SPPT/SKP PBB/STP PBB) berupa denda **2% per bulan** (Pasal 11(2) UU PBB). Angsuran/penundaan atas **STP tidak dikenai bunga**."
             },
             {
               "k": "h",
@@ -892,11 +892,11 @@ export const perpajakanPraUAS: PjkData = {
               "k": "callout",
               "variant": "info",
               "title": "Syarat Keberatan (Jebakan UAS)",
-              "text": "Untuk mengajukan keberatan, Wajib Pajak **wajib** melunasi pajak minimal sejumlah yang telah *disetujui* dalam pembahasan akhir pemeriksaan. Jika tidak setuju sama sekali, bayar Rp0 pun tetap valid untuk maju keberatan."
+              "text": "==Untuk mengajukan keberatan, Wajib Pajak **wajib** melunasi pajak minimal sejumlah yang telah *disetujui* dalam pembahasan akhir pemeriksaan.== Jika tidak setuju sama sekali, bayar Rp0 pun tetap valid untuk maju keberatan."
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · UU No. 14/2002 (Pengadilan Pajak) · PP No. 50/2022 · Putusan MK No. 26/PUU-XXI/2023 · SEMA No. 2/2024\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No.== 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · UU No. 14/2002 (Pengadilan Pajak) · PP No. 50/2022 · Putusan MK No. 26/PUU-XXI/2023 · SEMA No. 2/2024\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
           ]
         },
@@ -918,7 +918,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Upaya Hukum | Diajukan ke | Sifat | Dasar |\n|---|---|---|---|\n| **Keberatan** | Dirjen Pajak (DJP) | Materi | Pasal 25–26A UU KUP |\n| **Banding** | Pengadilan Pajak | Materi | Pasal 27 UU KUP jo. UU 14/2002 |\n| **Gugatan** | Pengadilan Pajak | Formal/prosedural | Pasal 23 UU KUP jo. UU PPSP |\n| **Peninjauan Kembali** | Mahkamah Agung (via Pengadilan Pajak) | Luar biasa | UU 14/2002 jo. Pasal 27 UU KUP |"
+              "text": "==| Upaya Hukum | Diajukan ke | Sifat | Dasar |\n|---|---|---|---|\n| **Keberatan** | Dirjen Pajak (DJP) | Materi | Pasal 25–26A UU KUP |\n| **Banding** | Pengadilan Pajak | Materi | Pasal 27 UU KUP jo.== UU 14/2002 |\n| **Gugatan** | Pengadilan Pajak | Formal/prosedural | Pasal 23 UU KUP jo. UU PPSP |\n| **Peninjauan Kembali** | Mahkamah Agung (via Pengadilan Pajak) | Luar biasa | UU 14/2002 jo. Pasal 27 UU KUP |"
             }
           ]
         },
@@ -936,7 +936,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Diatur **Pasal 25, 26, 26A UU KUP**, pelaksana **PP 50/2022** dan secara teknis **PMK No. 118 Tahun 2024** (Tata Cara Pembetulan, Keberatan, Pengurangan, Penghapusan, dan Pembatalan di Bidang Perpajakan). WP dapat mengajukan keberatan **hanya kepada Dirjen Pajak** atas:\n- SKPKB, SKPKBT, SKPN, SKPLB; atau\n- Pemotongan/pemungutan pajak oleh pihak ketiga."
+              "text": "==Diatur **Pasal 25, 26, 26A UU KUP**, pelaksana **PP 50/2022** dan secara teknis **PMK No.== 118 Tahun 2024** (Tata Cara Pembetulan, Keberatan, Pengurangan, Penghapusan, dan Pembatalan di Bidang Perpajakan). WP dapat mengajukan keberatan **hanya kepada Dirjen Pajak** atas:\n- SKPKB, SKPKBT, SKPN, SKPLB; atau\n- Pemotongan/pemungutan pajak oleh pihak ketiga."
             },
             {
               "k": "h",
@@ -970,7 +970,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Bila keberatan **ditolak/dikabulkan sebagian** dan WP **tidak mengajukan banding**: denda **30%** dari jumlah pajak dalam SK Keberatan dikurangi pajak yang telah dibayar sebelum keberatan (**Pasal 25 ayat (9)**).\nBila WP **mengajukan banding**, denda 30% **tidak dikenakan** (Pasal 25 ayat (10)).\n\n💡 **Analogi Denda Sengketa (Taruhan):** Kalau kamu nggak setuju sama tagihan pajak, kamu boleh komplain (Keberatan). Selama proses komplain, kamu nggak usah bayar dulu sisa tagihannya. TAPI, kalau ternyata komplainmu ditolak (kamu kalah argumen), kamu bakal kena hukuman denda sebesar 30%. Kalau kamu ngeyel lanjut banding ke pengadilan dan kalah lagi, dendanya naik jadi 60%! Ini tujuannya biar Wajib Pajak nggak asal komplain cuma buat ngulur-ngulur waktu bayar."
+              "text": "==Bila keberatan **ditolak/dikabulkan sebagian** dan WP **tidak mengajukan banding**: denda **30%** dari jumlah pajak dalam SK Keberatan dikurangi pajak yang telah dibayar sebelum keberatan (**Pasal 25 ayat (9)**).\nBila WP **mengajukan banding**, denda 30% **tidak dikenakan** (Pasal 25 ayat (10)).\n\n💡 **Analogi Denda Sengketa (Taruhan):** Kalau kamu nggak setuju sama tagihan pajak, kamu boleh komplain (Keberatan).== Selama proses komplain, kamu nggak usah bayar dulu sisa tagihannya. TAPI, kalau ternyata komplainmu ditolak (kamu kalah argumen), kamu bakal kena hukuman denda sebesar 30%. Kalau kamu ngeyel lanjut banding ke pengadilan dan kalah lagi, dendanya naik jadi 60%! Ini tujuannya biar Wajib Pajak nggak asal komplain cuma buat ngulur-ngulur waktu bayar."
             },
             {
               "k": "pre",
@@ -1008,7 +1008,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Diatur **Pasal 27 UU KUP jo. UU No. 14/2002 tentang Pengadilan Pajak**. Banding diajukan **hanya kepada Pengadilan Pajak** atas **SK Keberatan**. Bersifat **materi**. Putusan Pengadilan Pajak **bukan** Keputusan Tata Usaha Negara, bersifat **final dan mengikat (inkracht)** — **tidak ada upaya kasasi**, langsung ke PK."
+              "text": "==Diatur **Pasal 27 UU KUP jo.== UU No. 14/2002 tentang Pengadilan Pajak**. Banding diajukan **hanya kepada Pengadilan Pajak** atas **SK Keberatan**. Bersifat **materi**. Putusan Pengadilan Pajak **bukan** Keputusan Tata Usaha Negara, bersifat **final dan mengikat (inkracht)** — **tidak ada upaya kasasi**, langsung ke PK."
             },
             {
               "k": "h",
@@ -1037,7 +1037,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Imbalan bunga (Pasal 27B).** Bila **keberatan, banding, atau PK dikabulkan** sebagian/seluruhnya sehingga timbul kelebihan bayar, WP berhak imbalan bunga: tarif `suku bunga acuan ÷ 12` (tanpa uplift), maks 24 bulan. **Catatan penting pasca-UU HPP:** imbalan bunga ini pada dasarnya hanya diberikan atas SPT yang semula menyatakan **lebih bayar**, dan jumlahnya **dibatasi paling banyak sebesar lebih bayar yang disetujui WP** dalam Pembahasan Akhir Hasil Pemeriksaan — jadi tidak otomatis diberikan pada setiap kemenangan sengketa."
+              "text": "==**Imbalan bunga (Pasal 27B).** Bila **keberatan, banding, atau PK dikabulkan** sebagian/seluruhnya sehingga timbul kelebihan bayar, WP berhak imbalan bunga: tarif `suku bunga acuan ÷ 12` (tanpa uplift), maks 24 bulan.== **Catatan penting pasca-UU HPP:** imbalan bunga ini pada dasarnya hanya diberikan atas SPT yang semula menyatakan **lebih bayar**, dan jumlahnya **dibatasi paling banyak sebesar lebih bayar yang disetujui WP** dalam Pembahasan Akhir Hasil Pemeriksaan — jadi tidak otomatis diberikan pada setiap kemenangan sengketa."
             },
             {
               "k": "h",
@@ -1069,7 +1069,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Diatur **Pasal 23 UU KUP jo. Pasal 37 UU PPSP**, diajukan ke **Pengadilan Pajak**. Objek gugatan **bukan** besarnya pajak, melainkan:\n1. Pelaksanaan **Surat Paksa, SPMP (Surat Perintah Melaksanakan Penyitaan), atau Pengumuman Lelang**;\n2. Keputusan **pencegahan** dalam rangka penagihan;\n3. Keputusan yang berkaitan dengan pelaksanaan keputusan perpajakan **selain** yang ditetapkan Pasal 25 ayat (1) & Pasal 26;\n4. Penerbitan SKP atau SK Keberatan yang **prosedur penerbitannya tidak sesuai** ketentuan."
+              "text": "==Diatur **Pasal 23 UU KUP jo.== Pasal 37 UU PPSP**, diajukan ke **Pengadilan Pajak**. Objek gugatan **bukan** besarnya pajak, melainkan:\n1. Pelaksanaan **Surat Paksa, SPMP (Surat Perintah Melaksanakan Penyitaan), atau Pengumuman Lelang**;\n2. Keputusan **pencegahan** dalam rangka penagihan;\n3. Keputusan yang berkaitan dengan pelaksanaan keputusan perpajakan **selain** yang ditetapkan Pasal 25 ayat (1) & Pasal 26;\n4. Penerbitan SKP atau SK Keberatan yang **prosedur penerbitannya tidak sesuai** ketentuan."
             },
             {
               "k": "h",
@@ -1095,7 +1095,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Perkembangan — SEMA No. 2 Tahun 2024:** Mahkamah Agung menegaskan sengketa **materi** harus ditempuh lewat **banding**, bukan gugatan. Gugatan dibatasi pada aspek formal/prosedural agar tidak mengaburkan fungsi keberatan & banding."
+              "text": "==**Perkembangan — SEMA No.== 2 Tahun 2024:** Mahkamah Agung menegaskan sengketa **materi** harus ditempuh lewat **banding**, bukan gugatan. Gugatan dibatasi pada aspek formal/prosedural agar tidak mengaburkan fungsi keberatan & banding."
             }
           ]
         },
@@ -1113,7 +1113,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Upaya hukum **luar biasa** ke **Mahkamah Agung** melalui Pengadilan Pajak. Diatur **UU 14/2002 jo. Pasal 27 UU KUP**. Hanya dapat diajukan **1 (satu) kali**."
+              "text": "==Upaya hukum **luar biasa** ke **Mahkamah Agung** melalui Pengadilan Pajak.== Diatur **UU 14/2002 jo. Pasal 27 UU KUP**. Hanya dapat diajukan **1 (satu) kali**."
             },
             {
               "k": "h",
@@ -1146,7 +1146,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Bila **Putusan PK menyebabkan pajak bertambah**: denda **60%** dari jumlah pajak dalam Putusan PK dikurangi pajak yang dibayar sebelum keberatan (**Pasal 27 ayat (5f)**). STP atas sanksi ini diterbitkan paling lama **2 tahun** sejak Putusan PK diterima DJP (Pasal 27 ayat (5g)).\nBila PK dikabulkan sehingga timbul kelebihan bayar → WP berhak **imbalan bunga** (Pasal 27B), dengan ketentuan & batasan yang sama seperti diuraikan di §2.3."
+              "text": "==Bila **Putusan PK menyebabkan pajak bertambah**: denda **60%** dari jumlah pajak dalam Putusan PK dikurangi pajak yang dibayar sebelum keberatan (**Pasal 27 ayat (5f)**).== STP atas sanksi ini diterbitkan paling lama **2 tahun** sejak Putusan PK diterima DJP (Pasal 27 ayat (5g)).\nBila PK dikabulkan sehingga timbul kelebihan bayar → WP berhak **imbalan bunga** (Pasal 27B), dengan ketentuan & batasan yang sama seperti diuraikan di §2.3."
             }
           ]
         },
@@ -1168,7 +1168,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Permohonan Pasal 36 dapat diajukan **paling banyak 2 kali**. Bila WP sudah menempuh Pasal 36, ia tidak dapat lagi mengajukan keberatan atas objek yang sama."
+              "text": "==Permohonan Pasal 36 dapat diajukan **paling banyak 2 kali**.== Bila WP sudah menempuh Pasal 36, ia tidak dapat lagi mengajukan keberatan atas objek yang sama."
             }
           ]
         },
@@ -1182,7 +1182,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "⚠️ **Penting & terkini.** MK menyatakan **Pasal 5 ayat (2) UU 14/2002** (yang menempatkan pembinaan **organisasi, administrasi, dan keuangan** Pengadilan Pajak di bawah **Kementerian Keuangan**) **bertentangan dengan UUD 1945**. Akibatnya, pembinaan Pengadilan Pajak dialihkan **sepenuhnya ke Mahkamah Agung** (selama ini hanya pembinaan teknis yang di MA). Transisi paling lambat **31 Desember 2026**. Tujuannya memperkuat independensi peradilan pajak dari cabang eksekutif."
+              "text": "==⚠️ **Penting & terkini.** MK menyatakan **Pasal 5 ayat (2) UU 14/2002** (yang menempatkan pembinaan **organisasi, administrasi, dan keuangan** Pengadilan Pajak di bawah **Kementerian Keuangan**) **bertentangan dengan UUD 1945**.== Akibatnya, pembinaan Pengadilan Pajak dialihkan **sepenuhnya ke Mahkamah Agung** (selama ini hanya pembinaan teknis yang di MA). Transisi paling lambat **31 Desember 2026**. Tujuannya memperkuat independensi peradilan pajak dari cabang eksekutif."
             }
           ]
         },
@@ -1289,11 +1289,11 @@ export const perpajakanPraUAS: PjkData = {
               "k": "callout",
               "variant": "warning",
               "title": "Hak Mendahulu (Droit de Preference)",
-              "text": "Negara punya hak istimewa. Jika WP bangkrut/dilikuidasi, utang pajak **harus dibayar lebih dulu** dibanding utang kepada kreditur lain, kecuali untuk biaya perkara pengadilan dan upah pegawai."
+              "text": "Negara punya hak istimewa. ==Jika WP bangkrut/dilikuidasi, utang pajak **harus dibayar lebih dulu** dibanding utang kepada kreditur lain, kecuali untuk biaya perkara pengadilan dan upah pegawai.=="
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · UU PPSP (UU No. 19/1997 jo. UU No. 19/2000) · PMK No. 61/2023 · PMK No. 81/2024 sebagaimana diubah terakhir dengan PMK No. 1/2026 (Coretax)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU KUP (UU No.== 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021) · UU PPSP (UU No. 19/1997 jo. UU No. 19/2000) · PMK No. 61/2023 · PMK No. 81/2024 sebagaimana diubah terakhir dengan PMK No. 1/2026 (Coretax)\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
           ]
         },
@@ -1318,7 +1318,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Dasar pelaksana terbaru:** **PMK No. 61 Tahun 2023** (ditetapkan 9 Juni 2023, diundangkan dan mulai berlaku 12 Juni 2023), menggantikan PMK 189/2020. Pada era Coretax, dokumen penagihan diadministrasikan melalui sistem sesuai **PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026**."
+              "text": "==**Dasar pelaksana terbaru:** **PMK No.== 61 Tahun 2023** (ditetapkan 9 Juni 2023, diundangkan dan mulai berlaku 12 Juni 2023), menggantikan PMK 189/2020. Pada era Coretax, dokumen penagihan diadministrasikan melalui sistem sesuai **PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026**."
             },
             {
               "k": "h",
@@ -1403,11 +1403,11 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Dasar:** Pasal 20 UU KUP jo. Pasal 6 UU PPSP; kondisi dirinci di **Pasal 12 PMK 61/2023**.\nPenagihan oleh Jurusita **tanpa menunggu jatuh tempo**, meliputi **seluruh utang pajak** dari semua jenis/masa/tahun pajak — dan **dapat dilakukan tanpa Surat Teguran maupun Surat Paksa terlebih dahulu** (diterbitkan Surat Perintah Penagihan Seketika dan Sekaligus)."
+              "text": "==**Dasar:** Pasal 20 UU KUP jo.== Pasal 6 UU PPSP; kondisi dirinci di **Pasal 12 PMK 61/2023**.\nPenagihan oleh Jurusita **tanpa menunggu jatuh tempo**, meliputi **seluruh utang pajak** dari semua jenis/masa/tahun pajak — dan **dapat dilakukan tanpa Surat Teguran maupun Surat Paksa terlebih dahulu** (diterbitkan Surat Perintah Penagihan Seketika dan Sekaligus)."
             },
             {
               "k": "p",
-              "text": "**Kondisi (a.l.):**\n1. Penanggung Pajak akan **meninggalkan Indonesia** selama-lamanya / berniat demikian;\n2. **Memindahtangankan** barang untuk menghentikan/mengecilkan kegiatan usaha di Indonesia;\n3. Terdapat tanda-tanda **badan akan dibubarkan**, digabung, dimekarkan, dipindahtangankan, atau diubah bentuknya;\n4. Badan akan dibubarkan oleh negara; atau penyitaan oleh pihak ketiga / tanda kepailitan."
+              "text": "==**Kondisi (a.l.):**\n1.== Penanggung Pajak akan **meninggalkan Indonesia** selama-lamanya / berniat demikian;\n2. **Memindahtangankan** barang untuk menghentikan/mengecilkan kegiatan usaha di Indonesia;\n3. Terdapat tanda-tanda **badan akan dibubarkan**, digabung, dimekarkan, dipindahtangankan, atau diubah bentuknya;\n4. Badan akan dibubarkan oleh negara; atau penyitaan oleh pihak ketiga / tanda kepailitan."
             }
           ]
         },
@@ -1429,7 +1429,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Penyanderaan dapat dilaksanakan terhadap Penanggung Pajak yang **telah/sedang dicegah**. Penanggung Pajak yang disandera tetap berhak dikunjungi keluarga/pengacara/rohaniawan (dengan izin) dan dilepas bila utang + biaya penagihan dilunasi."
+              "text": "==Penyanderaan dapat dilaksanakan terhadap Penanggung Pajak yang **telah/sedang dicegah**.== Penanggung Pajak yang disandera tetap berhak dikunjungi keluarga/pengacara/rohaniawan (dengan izin) dan dilepas bila utang + biaya penagihan dilunasi."
             },
             {
               "k": "p",
@@ -1447,7 +1447,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Negara mempunyai **hak mendahulu** atas utang pajak terhadap barang-barang milik Penanggung Pajak → negara berkedudukan sebagai **kreditur preferen** (didahulukan pelunasannya dibanding kreditur lain saat barang dilelang), sejalan dengan hak istimewa dalam Pasal 1134 KUH Perdata.\n- Hak mendahulu meliputi pokok pajak, sanksi (bunga, denda, kenaikan), dan biaya penagihan.\n- Pengecualian: tidak berlaku atas biaya perkara penjualan barang, biaya penyelamatan barang, dan biaya hukum lelang.\n- **Batas waktu (Pasal 21 ayat (4)):** hak mendahulu **hilang setelah 5 tahun** sejak penerbitan dasar penagihan, kecuali tertangguh (mis. diterbitkan Surat Paksa atau ada penundaan pembayaran)."
+              "text": "==Negara mempunyai **hak mendahulu** atas utang pajak terhadap barang-barang milik Penanggung Pajak → negara berkedudukan sebagai **kreditur preferen** (didahulukan pelunasannya dibanding kreditur lain saat barang dilelang), sejalan dengan hak istimewa dalam Pasal 1134 KUH Perdata.\n- Hak mendahulu meliputi pokok pajak, sanksi (bunga, denda, kenaikan), dan biaya penagihan.\n- Pengecualian: tidak berlaku atas biaya perkara penjualan barang, biaya penyelamatan barang, dan biaya hukum lelang.\n- **Batas waktu (Pasal 21 ayat (4)):** hak mendahulu **hilang setelah 5 tahun** sejak penerbitan dasar penagihan, kecuali tertangguh (mis.== diterbitkan Surat Paksa atau ada penundaan pembayaran)."
             }
           ]
         },
@@ -1478,7 +1478,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Pidana adalah **ultimum remedium**. **Empat unsur tindak pidana** perpajakan: (1) **subjek**, (2) **perbuatan**, (3) **akibat** (kerugian pendapatan negara), dan (4) **kesalahan** (kealpaan/kesengajaan). Subjek \"setiap orang\" diperluas oleh **Pasal 43 UU KUP** mencakup wakil, kuasa, pegawai WP, atau **pihak lain yang menyuruh, turut serta, menganjurkan, atau membantu** tindak pidana."
+              "text": "==Pidana adalah **ultimum remedium**.== **Empat unsur tindak pidana** perpajakan: (1) **subjek**, (2) **perbuatan**, (3) **akibat** (kerugian pendapatan negara), dan (4) **kesalahan** (kealpaan/kesengajaan). Subjek \"setiap orang\" diperluas oleh **Pasal 43 UU KUP** mencakup wakil, kuasa, pegawai WP, atau **pihak lain yang menyuruh, turut serta, menganjurkan, atau membantu** tindak pidana."
             },
             {
               "k": "pre",
@@ -1486,7 +1486,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Pasal 44C UU HPP (baru):** pidana **denda** dalam Pasal 39 & 39A **tidak dapat digantikan dengan pidana kurungan** — harus tetap dibayar. Ini memperkuat orientasi pemulihan kerugian negara."
+              "text": "==**Pasal 44C UU HPP (baru):** pidana **denda** dalam Pasal 39 & 39A **tidak dapat digantikan dengan pidana kurungan** — harus tetap dibayar.== Ini memperkuat orientasi pemulihan kerugian negara."
             },
             {
               "k": "p",
@@ -1521,7 +1521,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Bila perbuatannya berupa **menerbitkan faktur pajak fiktif** senilai pajak Rp500.000.000 (Pasal 39A), ancaman setelah UU No. 1 Tahun 2026 adalah pidana penjara **paling lama 6 tahun dan/atau** pidana denda **paling banyak 6×** jumlah pajak dalam dokumen tersebut → denda maksimum **Rp3.000.000.000**."
+              "text": "==Bila perbuatannya berupa **menerbitkan faktur pajak fiktif** senilai pajak Rp500.000.000 (Pasal 39A), ancaman setelah UU No.== 1 Tahun 2026 adalah pidana penjara **paling lama 6 tahun dan/atau** pidana denda **paling banyak 6×** jumlah pajak dalam dokumen tersebut → denda maksimum **Rp3.000.000.000**."
             },
             {
               "k": "p",
@@ -1580,11 +1580,11 @@ export const perpajakanPraUAS: PjkData = {
               "k": "callout",
               "variant": "info",
               "title": "Kamus Pola: Bea Meterai",
-              "text": "Bea Meterai adalah pajak atas **dokumen**, bukan atas transaksinya. Dokumen internal (seperti tanda terima gaji) BUKAN objek, sedangkan dokumen perdata (surat perjanjian, kuitansi > Rp5 juta) ADALAH objek."
+              "text": "==Bea Meterai adalah pajak atas **dokumen**, bukan atas transaksinya.== Dokumen internal (seperti tanda terima gaji) BUKAN objek, sedangkan dokumen perdata (surat perjanjian, kuitansi > Rp5 juta) ADALAH objek."
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No. 10 Tahun 2020 tentang Bea Meterai · PMK No. 78 Tahun 2024 · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No.== 10 Tahun 2020 tentang Bea Meterai · PMK No. 78 Tahun 2024 · PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
           ]
         },
@@ -1598,7 +1598,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Bea Meterai** adalah **pajak atas dokumen**. Diatur dalam **UU No. 10 Tahun 2020**, disahkan 26 Oktober 2020 dan **berlaku 1 Januari 2021**, menggantikan **UU No. 13 Tahun 1985**."
+              "text": "==**Bea Meterai** adalah **pajak atas dokumen**.== Diatur dalam **UU No. 10 Tahun 2020**, disahkan 26 Oktober 2020 dan **berlaku 1 Januari 2021**, menggantikan **UU No. 13 Tahun 1985**."
             },
             {
               "k": "p",
@@ -1620,7 +1620,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Bea Meterai dikenakan atas **dua kelompok dokumen**:\n1. Dokumen yang dibuat sebagai alat untuk **menerangkan suatu kejadian yang bersifat perdata**; dan\n2. Dokumen yang **digunakan sebagai alat bukti di pengadilan**."
+              "text": "==Bea Meterai dikenakan atas **dua kelompok dokumen**:\n1.== Dokumen yang dibuat sebagai alat untuk **menerangkan suatu kejadian yang bersifat perdata**; dan\n2. Dokumen yang **digunakan sebagai alat bukti di pengadilan**."
             },
             {
               "k": "p",
@@ -1650,7 +1650,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Tarif tetap **Rp10.000** per dokumen. Berdasarkan Pasal 6, tarif ini **dapat dinaikkan/diturunkan** sesuai kondisi perekonomian nasional (lewat PP) — sampai Juni 2026 tetap Rp10.000."
+              "text": "==Tarif tetap **Rp10.000** per dokumen.== Berdasarkan Pasal 6, tarif ini **dapat dinaikkan/diturunkan** sesuai kondisi perekonomian nasional (lewat PP) — sampai Juni 2026 tetap Rp10.000."
             },
             {
               "k": "pre",
@@ -1701,7 +1701,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Mekanisme pelunasan Bea Meterai yang dilakukan **belakangan**, untuk:\n1. Dokumen yang akan **digunakan sebagai alat bukti di pengadilan**;\n2. Dokumen yang Bea Meterainya **tidak/kurang dibayar** sebagaimana mestinya;\n3. Dokumen yang dibuat di luar negeri yang akan digunakan di Indonesia."
+              "text": "==Mekanisme pelunasan Bea Meterai yang dilakukan **belakangan**, untuk:\n1.== Dokumen yang akan **digunakan sebagai alat bukti di pengadilan**;\n2. Dokumen yang Bea Meterainya **tidak/kurang dibayar** sebagaimana mestinya;\n3. Dokumen yang dibuat di luar negeri yang akan digunakan di Indonesia."
             },
             {
               "k": "p",
@@ -1713,7 +1713,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Untuk dokumen tertentu yang diterbitkan dalam jumlah besar, pemungutan dilakukan oleh **Pemungut Bea Meterai** — pihak yang ditetapkan DJP dan wajib **memungut, menyetor, dan melaporkan** Bea Meterai.\n- **Penetapan Pemungut Bea Meterai (PMK 78/2024):** dilakukan oleh DJP terhadap pihak yang menerbitkan atau memfasilitasi dokumen tertentu dengan mempertimbangkan jenis dan jumlah dokumen. Angka **1.000 dokumen bukan threshold universal otomatis** untuk menjadi Pemungut Bea Meterai.\n- **Kewajiban:** setor dan lapor **SPT Masa Bea Meterai** paling lambat **tanggal 15** bulan berikutnya sesuai PMK 78/2024.\n- **Meterai elektronik (e-meterai):** dibubuhkan pada dokumen elektronik; memiliki kode unik & keterangan tertentu sebagai pengaman.\n**PMK 78/2024** merupakan aturan pelaksanaan terkonsolidasi dan mencabut PMK 133/2021, PMK 134/2021, serta PMK 151/2021. Administrasi elektronik mengikuti PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026."
+              "text": "==Untuk dokumen tertentu yang diterbitkan dalam jumlah besar, pemungutan dilakukan oleh **Pemungut Bea Meterai** — pihak yang ditetapkan DJP dan wajib **memungut, menyetor, dan melaporkan** Bea Meterai.\n- **Penetapan Pemungut Bea Meterai (PMK 78/2024):** dilakukan oleh DJP terhadap pihak yang menerbitkan atau memfasilitasi dokumen tertentu dengan mempertimbangkan jenis dan jumlah dokumen.== Angka **1.000 dokumen bukan threshold universal otomatis** untuk menjadi Pemungut Bea Meterai.\n- **Kewajiban:** setor dan lapor **SPT Masa Bea Meterai** paling lambat **tanggal 15** bulan berikutnya sesuai PMK 78/2024.\n- **Meterai elektronik (e-meterai):** dibubuhkan pada dokumen elektronik; memiliki kode unik & keterangan tertentu sebagai pengaman.\n**PMK 78/2024** merupakan aturan pelaksanaan terkonsolidasi dan mencabut PMK 133/2021, PMK 134/2021, serta PMK 151/2021. Administrasi elektronik mengikuti PMK 81/2024 sebagaimana diubah terakhir dengan PMK 1/2026."
             },
             {
               "k": "h",
@@ -1729,7 +1729,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Kasus 2 — pemeteraian kemudian.** Sebuah surat perjanjian yang **belum dibubuhi meterai** akan dijadikan **alat bukti di pengadilan**. WP harus melakukan pemeteraian kemudian:\n- Bea Meterai terutang Rp10.000 + **sanksi administratif 100%** Rp10.000 = **Rp20.000** per dokumen."
+              "text": "==**Kasus 2 — pemeteraian kemudian.** Sebuah surat perjanjian yang **belum dibubuhi meterai** akan dijadikan **alat bukti di pengadilan**.== WP harus melakukan pemeteraian kemudian:\n- Bea Meterai terutang Rp10.000 + **sanksi administratif 100%** Rp10.000 = **Rp20.000** per dokumen."
             }
           ]
         },
@@ -1758,7 +1758,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Setelah UU 1/2026: **Pasal 24 dan Pasal 25** diancam penjara **paling lama 7 tahun dan/atau** denda paling banyak **kategori V (Rp500.000.000)**. **Pasal 26** diancam penjara **paling lama 3 tahun atau** denda paling banyak **kategori III (Rp50.000.000)**."
+              "text": "==Setelah UU 1/2026: **Pasal 24 dan Pasal 25** diancam penjara **paling lama 7 tahun dan/atau** denda paling banyak **kategori V (Rp500.000.000)**.== **Pasal 26** diancam penjara **paling lama 3 tahun atau** denda paling banyak **kategori III (Rp50.000.000)**."
             },
             {
               "k": "h",
@@ -1822,7 +1822,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No. 1 Tahun 2022 tentang Hubungan Keuangan antara Pemerintah Pusat dan Pemerintahan Daerah (UU HKPD) · PP No. 35 Tahun 2023\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No.== 1 Tahun 2022 tentang Hubungan Keuangan antara Pemerintah Pusat dan Pemerintahan Daerah (UU HKPD) · PP No. 35 Tahun 2023\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
           ]
         },
@@ -1836,7 +1836,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "⚠️ **Penting.** Pajak daerah kini diatur **UU No. 1 Tahun 2022 (HKPD)**, disahkan **5 Januari 2022**, yang **mencabut UU No. 28 Tahun 2009 (PDRD)**. UU HKPD merombak struktur pajak daerah: menyederhanakan jenis pajak, menurunkan tarif PKB/BBNKB, memperkenalkan **opsen pajak**, dan menggabungkan beberapa pajak kabupaten/kota menjadi **PBJT**. Pelaksana: **PP No. 35 Tahun 2023**."
+              "text": "==⚠️ **Penting.** Pajak daerah kini diatur **UU No.== 1 Tahun 2022 (HKPD)**, disahkan **5 Januari 2022**, yang **mencabut UU No. 28 Tahun 2009 (PDRD)**. UU HKPD merombak struktur pajak daerah: menyederhanakan jenis pajak, menurunkan tarif PKB/BBNKB, memperkenalkan **opsen pajak**, dan menggabungkan beberapa pajak kabupaten/kota menjadi **PBJT**. Pelaksana: **PP No. 35 Tahun 2023**."
             },
             {
               "k": "h",
@@ -1844,7 +1844,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Pajak Provinsi | Pajak Kabupaten/Kota (TM 14) |\n|---|---|\n| 1. Pajak Kendaraan Bermotor (PKB) | 1. PBB-P2 |\n| 2. Bea Balik Nama Kendaraan Bermotor (BBNKB) | 2. BPHTB |\n| 3. Pajak Alat Berat (PAB) | 3. Pajak Barang dan Jasa Tertentu (PBJT) |\n| 4. Pajak Bahan Bakar Kendaraan Bermotor (PBBKB) | 4. Pajak Reklame |\n| 5. Pajak Air Permukaan (PAP) | 5. Pajak Air Tanah (PAT) |\n| 6. Pajak Rokok | 6. Pajak MBLB |\n| 7. **Opsen** Pajak MBLB | 7. Pajak Sarang Burung Walet |\n| | 8. **Opsen** PKB & 9. **Opsen** BBNKB |"
+              "text": "| Pajak Provinsi | Pajak Kabupaten/Kota (TM 14) |\n|---|---|\n| 1. Pajak Kendaraan Bermotor (PKB) | 1. PBB-P2 |\n| 2. Bea Balik Nama Kendaraan Bermotor (BBNKB) | 2. BPHTB |\n| 3. Pajak Alat Berat (PAB) | 3. Pajak Barang dan Jasa Tertentu (PBJT) |\n| 4. Pajak Bahan Bakar Kendaraan Bermotor (PBBKB) | 4. Pajak Reklame |\n| 5. Pajak Air Permukaan (PAP) | 5. Pajak Air Tanah (PAT) |\n| 6. Pajak Rokok | 6. Pajak MBLB |\n| 7. ==**Opsen** Pajak MBLB | 7.== Pajak Sarang Burung Walet |\n| | 8. **Opsen** PKB & 9. **Opsen** BBNKB |"
             }
           ]
         },
@@ -1941,7 +1941,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Pajak | Dasar Pengenaan (DPP) |\n|---|---|\n| **PKB** | **NJKB × bobot** (koefisien tingkat kerusakan jalan/pencemaran). NJKB = harga pasaran umum |\n| **BBNKB** | Nilai jual kendaraan bermotor (NJKB) |\n| **PAB** | Nilai jual alat berat |\n| **PBBKB** | Nilai jual BBKB **sebelum PPN** |\n| **PAP** | Nilai Perolehan Air Permukaan (volume × harga dasar air) |\n| **Pajak Rokok** | Cukai rokok yang ditetapkan Pemerintah |"
+              "text": "==| Pajak | Dasar Pengenaan (DPP) |\n|---|---|\n| **PKB** | **NJKB × bobot** (koefisien tingkat kerusakan jalan/pencemaran).== NJKB = harga pasaran umum |\n| **BBNKB** | Nilai jual kendaraan bermotor (NJKB) |\n| **PAB** | Nilai jual alat berat |\n| **PBBKB** | Nilai jual BBKB **sebelum PPN** |\n| **PAP** | Nilai Perolehan Air Permukaan (volume × harga dasar air) |\n| **Pajak Rokok** | Cukai rokok yang ditetapkan Pemerintah |"
             },
             {
               "k": "h",
@@ -1949,7 +1949,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Sebagian penerimaan pajak tertentu **wajib dialokasikan** untuk tujuan khusus (Pasal 86 UU HKPD jo. Pasal 25 PP 35/2023):\n- **PKB & Opsen PKB:** paling sedikit **10%** untuk pembangunan/pemeliharaan jalan serta peningkatan moda & sarana transportasi umum;\n- **Pajak Rokok:** paling sedikit **50%** untuk mendanai pelayanan kesehatan masyarakat & penegakan hukum.\n*(Untuk pajak kab/kota — PBJT tenaga listrik & PAT — lihat TM 14.)*"
+              "text": "==Sebagian penerimaan pajak tertentu **wajib dialokasikan** untuk tujuan khusus (Pasal 86 UU HKPD jo.== Pasal 25 PP 35/2023):\n- **PKB & Opsen PKB:** paling sedikit **10%** untuk pembangunan/pemeliharaan jalan serta peningkatan moda & sarana transportasi umum;\n- **Pajak Rokok:** paling sedikit **50%** untuk mendanai pelayanan kesehatan masyarakat & penegakan hukum.\n*(Untuk pajak kab/kota — PBJT tenaga listrik & PAT — lihat TM 14.)*"
             }
           ]
         },
@@ -1963,7 +1963,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Opsen** (Pasal 1 angka 61) = **pungutan tambahan pajak menurut persentase tertentu** (*piggyback tax*). Tujuannya **menggantikan mekanisme bagi hasil** PKB/BBNKB dari provinsi ke kabupaten/kota — kini penerimaan **langsung terbagi** saat dipungut. **Berlaku 5 Januari 2025.**"
+              "text": "==**Opsen** (Pasal 1 angka 61) = **pungutan tambahan pajak menurut persentase tertentu** (*piggyback tax*).== Tujuannya **menggantikan mekanisme bagi hasil** PKB/BBNKB dari provinsi ke kabupaten/kota — kini penerimaan **langsung terbagi** saat dipungut. **Berlaku 5 Januari 2025.**"
             },
             {
               "k": "pre",
@@ -1971,11 +1971,11 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Kunci yang sering disalahpahami:** opsen **bukan beban baru**. Karena tarif dasar PKB/BBNKB **diturunkan** lebih dulu (PKB 2%→1,2%; BBNKB 20%→12%), total beban WP relatif setara dengan rezim lama. Opsen dipungut **bersamaan** dengan pajak induknya."
+              "text": "==**Kunci yang sering disalahpahami:** opsen **bukan beban baru**.== Karena tarif dasar PKB/BBNKB **diturunkan** lebih dulu (PKB 2%→1,2%; BBNKB 20%→12%), total beban WP relatif setara dengan rezim lama. Opsen dipungut **bersamaan** dengan pajak induknya."
             },
             {
               "k": "p",
-              "text": "**DKI Jakarta dikecualikan dari Opsen PKB & BBNKB** karena tidak terbagi dalam kabupaten/kota otonom (status Daerah Khusus, UU No. 2/2024). Itulah sebabnya tarif dasar PKB/BBNKB DKI dipatok lebih tinggi (2% / 20%)."
+              "text": "==**DKI Jakarta dikecualikan dari Opsen PKB & BBNKB** karena tidak terbagi dalam kabupaten/kota otonom (status Daerah Khusus, UU No.== 2/2024). Itulah sebabnya tarif dasar PKB/BBNKB DKI dipatok lebih tinggi (2% / 20%)."
             },
             {
               "k": "h",
@@ -1983,7 +1983,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Sebuah mobil di Provinsi B punya NJKB × bobot menghasilkan dasar Rp200.000.000. Perda provinsi menetapkan tarif PKB kepemilikan pertama 1,1%.\n1. **PKB terutang** (untuk provinsi) = 1,1% × Rp200.000.000 = **Rp2.200.000**\n2. **Opsen PKB** (untuk kab/kota) = 66% × Rp2.200.000 = **Rp1.452.000**\n3. **Total dibayar WP** = Rp2.200.000 + Rp1.452.000 = **Rp3.652.000**"
+              "text": "Sebuah mobil di Provinsi B punya NJKB × bobot menghasilkan dasar Rp200.000.000. Perda provinsi menetapkan tarif PKB kepemilikan pertama 1,1%.\n1. ==**PKB terutang** (untuk provinsi) = 1,1% × Rp200.000.000 = **Rp2.200.000**\n2.== **Opsen PKB** (untuk kab/kota) = 66% × Rp2.200.000 = **Rp1.452.000**\n3. **Total dibayar WP** = Rp2.200.000 + Rp1.452.000 = **Rp3.652.000**"
             },
             {
               "k": "p",
@@ -2001,7 +2001,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Selain pajak, daerah memungut **Retribusi Daerah** = pungutan atas **jasa/izin tertentu** yang disediakan pemerintah daerah (ada kontraprestasi langsung — berbeda dari pajak; definisi Pasal 1 angka 22 UU HKPD). UU HKPD **merasionalisasi** objek retribusi (dipangkas dari **32 menjadi 18 objek**) dan menggolongkannya menjadi **3 jenis**:\n1. **Retribusi Jasa Umum** — pelayanan kesehatan, kebersihan, parkir di tepi jalan umum, pasar, dan pengendalian lalu lintas;\n2. **Retribusi Jasa Usaha** — antara lain penyediaan tempat kegiatan usaha berupa pasar grosir, pertokoan, dan tempat kegiatan usaha lainnya; tempat pelelangan; tempat khusus parkir; penginapan; rumah pemotongan hewan; jasa kepelabuhanan; tempat rekreasi; penyeberangan di air; penjualan hasil produksi usaha Pemerintah Daerah; dan pemanfaatan aset Daerah;\n3. **Retribusi Perizinan Tertentu** — persetujuan bangunan gedung (PBG), penggunaan tenaga kerja asing, dan pengelolaan pertambangan rakyat."
+              "text": "==Selain pajak, daerah memungut **Retribusi Daerah** = pungutan atas **jasa/izin tertentu** yang disediakan pemerintah daerah (ada kontraprestasi langsung — berbeda dari pajak; definisi Pasal 1 angka 22 UU HKPD).== UU HKPD **merasionalisasi** objek retribusi (dipangkas dari **32 menjadi 18 objek**) dan menggolongkannya menjadi **3 jenis**:\n1. **Retribusi Jasa Umum** — pelayanan kesehatan, kebersihan, parkir di tepi jalan umum, pasar, dan pengendalian lalu lintas;\n2. **Retribusi Jasa Usaha** — antara lain penyediaan tempat kegiatan usaha berupa pasar grosir, pertokoan, dan tempat kegiatan usaha lainnya; tempat pelelangan; tempat khusus parkir; penginapan; rumah pemotongan hewan; jasa kepelabuhanan; tempat rekreasi; penyeberangan di air; penjualan hasil produksi usaha Pemerintah Daerah; dan pemanfaatan aset Daerah;\n3. **Retribusi Perizinan Tertentu** — persetujuan bangunan gedung (PBG), penggunaan tenaga kerja asing, dan pengelolaan pertambangan rakyat."
             },
             {
               "k": "p",
@@ -2073,7 +2073,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No. 1 Tahun 2022 (UU HKPD) · PP No. 35 Tahun 2023\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
+              "text": "==**Mata Kuliah:** Perpajakan I\n**Dasar Hukum Utama:** UU No.== 1 Tahun 2022 (UU HKPD) · PP No. 35 Tahun 2023\n**Diperbarui mengikuti regulasi s.d.:** Juni 2026"
             }
           ]
         },
@@ -2134,7 +2134,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Rumah di kota X: NJOP bumi + bangunan = Rp800.000.000. NJOPTKP Rp10.000.000. Perkada: tarif 0,2% dan persentase dasar pengenaan 40%.\n1. NJOP − NJOPTKP = Rp800.000.000 − Rp10.000.000 = Rp790.000.000\n2. Dasar pengenaan terpakai = 40% × Rp790.000.000 = Rp316.000.000\n3. **PBB-P2 = 0,2% × Rp316.000.000 = Rp632.000**"
+              "text": "Rumah di kota X: NJOP bumi + bangunan = Rp800.000.000. NJOPTKP Rp10.000.000. Perkada: tarif 0,2% dan persentase dasar pengenaan 40%.\n1. NJOP − NJOPTKP = Rp800.000.000 − Rp10.000.000 = Rp790.000.000\n2. Dasar pengenaan terpakai = 40% × Rp790.000.000 = Rp316.000.000\n3. ==**PBB-P2 = 0,2% × Rp316.000.000 = Rp632.000**=="
             }
           ]
         },
@@ -2152,7 +2152,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Pajak atas **perolehan hak** atas tanah dan/atau bangunan. **Objek:** perolehan hak karena **pemindahan hak** (jual beli, tukar-menukar, hibah, hibah wasiat, waris, pemasukan ke badan usaha, dll.) dan **pemberian hak baru**."
+              "text": "==Pajak atas **perolehan hak** atas tanah dan/atau bangunan.== **Objek:** perolehan hak karena **pemindahan hak** (jual beli, tukar-menukar, hibah, hibah wasiat, waris, pemasukan ke badan usaha, dll.) dan **pemberian hak baru**."
             },
             {
               "k": "h",
@@ -2176,7 +2176,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "p",
-              "text": "Membeli rumah seharga Rp1.000.000.000 (NPOP). NPOPTKP Rp80.000.000 (Perda). Tarif 5%.\n1. NPOP − NPOPTKP = Rp1.000.000.000 − Rp80.000.000 = Rp920.000.000\n2. **BPHTB = 5% × Rp920.000.000 = Rp46.000.000**"
+              "text": "Membeli rumah seharga Rp1.000.000.000 (NPOP). NPOPTKP Rp80.000.000 (Perda). Tarif 5%.\n1. NPOP − NPOPTKP = Rp1.000.000.000 − Rp80.000.000 = Rp920.000.000\n2. ==**BPHTB = 5% × Rp920.000.000 = Rp46.000.000**=="
             },
             {
               "k": "h",
@@ -2238,7 +2238,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Pajak | Objek | Tarif Maksimal |\n|---|---|---|\n| **Pajak Reklame** | Penyelenggaraan reklame (papan/billboard, kain, melekat, berjalan, udara, dll.) | **25%** |\n| **Pajak Air Tanah (PAT)** | Pengambilan/pemanfaatan air tanah (kecuali keperluan dasar RT, pertanian/perikanan rakyat, keagamaan) | **20%** |\n| **Pajak MBLB** | Pengambilan mineral bukan logam & batuan (mis. pasir, batu, kapur) | **20%** *(provinsi memungut Opsen MBLB 25% atas pokok ini)* |\n| **Pajak Sarang Burung Walet** | Pengambilan/pengusahaan sarang burung walet (subjek Pasal 77, DPP Pasal 78, tarif Pasal 79) | **10%** |"
+              "text": "==| Pajak | Objek | Tarif Maksimal |\n|---|---|---|\n| **Pajak Reklame** | Penyelenggaraan reklame (papan/billboard, kain, melekat, berjalan, udara, dll.) | **25%** |\n| **Pajak Air Tanah (PAT)** | Pengambilan/pemanfaatan air tanah (kecuali keperluan dasar RT, pertanian/perikanan rakyat, keagamaan) | **20%** |\n| **Pajak MBLB** | Pengambilan mineral bukan logam & batuan (mis.== pasir, batu, kapur) | **20%** *(provinsi memungut Opsen MBLB 25% atas pokok ini)* |\n| **Pajak Sarang Burung Walet** | Pengambilan/pengusahaan sarang burung walet (subjek Pasal 77, DPP Pasal 78, tarif Pasal 79) | **10%** |"
             },
             {
               "k": "p",
@@ -2260,7 +2260,7 @@ export const perpajakanPraUAS: PjkData = {
             },
             {
               "k": "pre",
-              "text": "| Pajak | UU PDRD (lama) | UU HKPD (berlaku) |\n|---|---|---|\n| PBB-P2 | maks 0,3% | **maks 0,5%** |\n| BPHTB | maks 5% | **maks 5%** (tetap) |\n| Pajak Hiburan | maks 35% (tertentu s.d. 75%) | **PBJT** maks 10% (hiburan tertentu **40–75%**) |\n| Pajak Reklame | maks 25% | **maks 25%** (tetap) |"
+              "text": "==| Pajak | UU PDRD (lama) | UU HKPD (berlaku) |\n|---|---|---|\n| PBB-P2 | maks 0,3% | **maks 0,5%** |\n| BPHTB | maks 5% | **maks 5%** (tetap) |\n| Pajak Hiburan | maks 35% (tertentu s.d.== 75%) | **PBJT** maks 10% (hiburan tertentu **40–75%**) |\n| Pajak Reklame | maks 25% | **maks 25%** (tetap) |"
             }
           ]
         },

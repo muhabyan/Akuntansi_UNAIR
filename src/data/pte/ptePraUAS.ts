@@ -34,7 +34,7 @@ const tm8: Reading = {
     },
     {
       "kind": "p",
-      "text": "Bayangkan kamu diminta untuk menilai 'seberapa kuat dan sehat' perekonomian suatu negara tahun ini. Data apa yang paling pertama kamu cari? Jawabannya adalah data andalan yang selalu digunakan oleh ekonom dan pemerintah untuk mengukur kinerja ekonomi secara keseluruhan, yaitu **Gross Domestic Product (GDP)** atau Produk Domestik Bruto (PDB)."
+      "text": "Bayangkan kamu diminta untuk menilai 'seberapa kuat dan sehat' perekonomian suatu negara tahun ini. ==Data apa yang paling pertama kamu cari? Jawabannya adalah data andalan yang selalu digunakan oleh ekonom dan pemerintah untuk mengukur kinerja ekonomi secara keseluruhan, yaitu **Gross Domestic Product (GDP)** atau Produk Domestik Bruto (PDB).=="
     },
     {
       "kind": "h2",
@@ -110,7 +110,7 @@ const tm8: Reading = {
     },
     {
       "kind": "p",
-      "text": "Seperti yang dibahas pada syarat 'Final', GDP hanya menghitung barang akhir untuk menghindari penghitungan berlebihan. Kalau Badan Pusat Statistik menghitung total harga gandum, lalu ditambahkan harga tepung, lalu ditambahkan harga roti sekaligus, angkanya akan membengkak tidak masuk akal. Solusi untuk mengatasi ini adalah dengan menjumlahkan **Nilai Tambah (Value Added)** di tiap tahapan."
+      "text": "Seperti yang dibahas pada syarat 'Final', GDP hanya menghitung barang akhir untuk menghindari penghitungan berlebihan. Kalau Badan Pusat Statistik menghitung total harga gandum, lalu ditambahkan harga tepung, lalu ditambahkan harga roti sekaligus, angkanya akan membengkak tidak masuk akal. ==Solusi untuk mengatasi ini adalah dengan menjumlahkan **Nilai Tambah (Value Added)** di tiap tahapan.=="
     },
     {
       "kind": "callout",
@@ -169,7 +169,7 @@ const tm8: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Contoh Perhitungan: Aggregate Expenditure (AE) / Pengeluaran",
-      "text": "Misalkan di suatu negara tercatat data: Konsumsi rumah tangga (C) = Rp10.000, Investasi pabrik (I) = Rp3.000, Belanja Pemerintah (G) = Rp4.000, Ekspor (X) = Rp2.000, dan Impor (M) = Rp1.500. Maka Net Exports (NX) = 2.000 - 1.500 = 500. Total GDP = C + I + G + NX = 10.000 + 3.000 + 4.000 + 500 = **Rp17.500**."
+      "text": "Misalkan di suatu negara tercatat data: Konsumsi rumah tangga (C) = Rp10.000, Investasi pabrik (I) = Rp3.000, Belanja Pemerintah (G) = Rp4.000, Ekspor (X) = Rp2.000, dan Impor (M) = Rp1.500. Maka Net Exports (NX) = 2.000 - 1.500 = 500. ==Total GDP = C + I + G + NX = 10.000 + 3.000 + 4.000 + 500 = **Rp17.500**.=="
     },
     {
       "kind": "h3",
@@ -201,7 +201,7 @@ const tm8: Reading = {
     },
     {
       "kind": "p",
-      "text": "Misalnya dilaporkan GDP tahun ini meroket 10% dibanding tahun lalu. Apakah itu karena **produksi** barang kita benar-benar bertambah 10%, atau murni cuma karena harganya pada **naik (inflasi)**? Untuk memecahkan kebingungan ini, ekonom membagi GDP jadi dua dimensi:"
+      "text": "Misalnya dilaporkan GDP tahun ini meroket 10% dibanding tahun lalu. ==Apakah itu karena **produksi** barang kita benar-benar bertambah 10%, atau murni cuma karena harganya pada **naik (inflasi)**? Untuk memecahkan kebingungan ini, ekonom membagi GDP jadi dua dimensi:=="
     },
     {
       "kind": "ul",
@@ -219,7 +219,7 @@ const tm8: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Contoh Perhitungan & Analisis Kritis: Nominal vs Real",
-      "text": "Misalkan Negara X hanya memproduksi Apel. Tahun Dasar 2020: produksi 100 apel @Rp2.000. Tahun Ini 2024: produksi 100 apel @Rp4.000.\n\n- **Nominal GDP 2024:** 100 apel × Rp4.000 = Rp400.000 (Seolah-olah ekonomi tumbuh 2x lipat!)\n- **Real GDP 2024 (pakai harga 2020):** 100 apel × Rp2.000 = Rp200.000\n\n**Interpretasi Analitis:** Nilai Real GDP 2024 ternyata persis sama dengan tahun 2020 (Rp200.000). Ini membuktikan bahwa **secara riil ekonomi tidak tumbuh sama sekali** karena produksi tetap 100 apel. Kenaikan Nominal GDP menjadi Rp400.000 hanyalah \"pertumbuhan semu\" yang murni merupakan ilusi dari inflasi harga."
+      "text": "Misalkan Negara X hanya memproduksi Apel. Tahun Dasar 2020: produksi 100 apel @Rp2.000. ==Tahun Ini 2024: produksi 100 apel @Rp4.000.\n\n- **Nominal GDP 2024:** 100 apel × Rp4.000 = Rp400.000 (Seolah-olah ekonomi tumbuh 2x lipat!)\n- **Real GDP 2024 (pakai harga 2020):** 100 apel × Rp2.000 = Rp200.000\n\n**Interpretasi Analitis:** Nilai Real GDP 2024 ternyata persis sama dengan tahun 2020 (Rp200.000).== Ini membuktikan bahwa **secara riil ekonomi tidak tumbuh sama sekali** karena produksi tetap 100 apel. Kenaikan Nominal GDP menjadi Rp400.000 hanyalah \"pertumbuhan semu\" yang murni merupakan ilusi dari inflasi harga."
     },
     {
       "kind": "formula",
@@ -230,7 +230,7 @@ const tm8: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Contoh Perhitungan: GDP Deflator",
-      "text": "Jika Nominal GDP tahun 2024 adalah Rp22.000 (dihitung pakai harga 2024) dan Real GDP adalah Rp20.000 (dihitung pakai harga dasar tahun 2020), maka GDP Deflator = (22.000 / 20.000) × 100 = **110**. Artinya, secara umum harga-harga telah naik 10% sejak tahun dasar 2020."
+      "text": "==Jika Nominal GDP tahun 2024 adalah Rp22.000 (dihitung pakai harga 2024) dan Real GDP adalah Rp20.000 (dihitung pakai harga dasar tahun 2020), maka GDP Deflator = (22.000 / 20.000) × 100 = **110**.== Artinya, secara umum harga-harga telah naik 10% sejak tahun dasar 2020."
     },
     {
       "kind": "h3",
@@ -256,13 +256,13 @@ const tm8: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Contoh Perhitungan: Indeks Harga Konsumen (CPI / IHK)",
-      "text": "Misalkan 'keranjang belanja' standar konsumen berisi 10kg beras dan 5 liter bensin. Pada tahun dasar (2020), total harga keranjang ini Rp100.000. Pada tahun ini (2024), karena harga beras naik, total harga keranjang yang persis sama menjadi Rp125.000. Maka CPI tahun 2024 = (Harga Keranjang Tahun Ini / Harga Keranjang Tahun Dasar) × 100 = (125.000 / 100.000) × 100 = **125**."
+      "text": "Misalkan 'keranjang belanja' standar konsumen berisi 10kg beras dan 5 liter bensin. Pada tahun dasar (2020), total harga keranjang ini Rp100.000. Pada tahun ini (2024), karena harga beras naik, total harga keranjang yang persis sama menjadi Rp125.000. ==Maka CPI tahun 2024 = (Harga Keranjang Tahun Ini / Harga Keranjang Tahun Dasar) × 100 = (125.000 / 100.000) × 100 = **125**.=="
     },
     {
       "kind": "callout",
       "variant": "warning",
       "title": "Soal Ujian: Contoh Perbedaan Krusial Deflator vs CPI",
-      "text": "Jika harga **Tank Militer buatan Pindad (dalam negeri)** naik drastis, itu akan langsung membuat **GDP Deflator naik**, tapi CPI diam saja (karena rakyat biasa tidak beli tank). Sebaliknya, jika harga **Mobil Toyota yang diimpor dari Jepang** naik tajam, itu akan membuat **CPI naik**, tapi GDP Deflator diam saja (karena mobil itu tidak diproduksi di dalam negeri)."
+      "text": "==Jika harga **Tank Militer buatan Pindad (dalam negeri)** naik drastis, itu akan langsung membuat **GDP Deflator naik**, tapi CPI diam saja (karena rakyat biasa tidak beli tank).== Sebaliknya, jika harga **Mobil Toyota yang diimpor dari Jepang** naik tajam, itu akan membuat **CPI naik**, tapi GDP Deflator diam saja (karena mobil itu tidak diproduksi di dalam negeri)."
     },
     {
       "kind": "h2",
@@ -404,13 +404,13 @@ const tm9: Reading = {
     },
     {
       "kind": "p",
-      "text": "Bayangkan kamu baru saja mendapat gaji pertama. Apa yang akan kamu lakukan? Kamu akan menghabiskannya untuk membeli makanan, pakaian, atau hiburan. Inilah yang disebut **Consumption (Konsumsi)**. Secara makro, *Personal Consumption Expenditure* adalah pengeluaran seluruh rumah tangga untuk membeli barang dan jasa."
+      "text": "Bayangkan kamu baru saja mendapat gaji pertama. Apa yang akan kamu lakukan? Kamu akan menghabiskannya untuk membeli makanan, pakaian, atau hiburan. ==Inilah yang disebut **Consumption (Konsumsi)**.== Secara makro, *Personal Consumption Expenditure* adalah pengeluaran seluruh rumah tangga untuk membeli barang dan jasa."
     },
     {
       "kind": "callout",
       "variant": "info",
       "title": "Fungsi Konsumsi Linear",
-      "text": "Hubungan antara pendapatan dan konsumsi sangatlah erat. Semakin tinggi pendapatanmu, semakin besar konsumsimu. Hubungan ini dirumuskan dalam **Fungsi Konsumsi**."
+      "text": "Hubungan antara pendapatan dan konsumsi sangatlah erat. Semakin tinggi pendapatanmu, semakin besar konsumsimu. ==Hubungan ini dirumuskan dalam **Fungsi Konsumsi**.=="
     },
     {
       "kind": "formula",
@@ -446,7 +446,7 @@ const tm9: Reading = {
     },
     {
       "kind": "p",
-      "text": "Jika kamu tidak menghabiskan semua gajimu, sisanya akan disimpan. Inilah yang disebut **Saving (Tabungan)**. Secara matematis, tabungan adalah pendapatan dikurangi konsumsi."
+      "text": "Jika kamu tidak menghabiskan semua gajimu, sisanya akan disimpan. ==Inilah yang disebut **Saving (Tabungan)**.== Secara matematis, tabungan adalah pendapatan dikurangi konsumsi."
     },
     {
       "kind": "formula",
@@ -455,7 +455,7 @@ const tm9: Reading = {
     },
     {
       "kind": "p",
-      "text": "Ketika pendapatanmu masih sangat rendah, konsumsimu bisa jadi lebih besar dari pendapatanmu (berada di bawah Break-Even Point). Pada fase ini, kamu mengalami **Dissaving** (Tabungan bernilai negatif) karena kamu menguras tabungan lama atau berutang."
+      "text": "Ketika pendapatanmu masih sangat rendah, konsumsimu bisa jadi lebih besar dari pendapatanmu (berada di bawah Break-Even Point). ==Pada fase ini, kamu mengalami **Dissaving** (Tabungan bernilai negatif) karena kamu menguras tabungan lama atau berutang.=="
     },
     {
       "kind": "figure",
@@ -490,7 +490,7 @@ const tm9: Reading = {
       "blocks": [
         {
           "kind": "p",
-          "text": "Fungsi Konsumsi Budi adalah **C = 500.000 + 0,8Y**. Artinya, Budi butuh Rp 500.000 untuk bertahan hidup (walau nganggur), dan ia menghabiskan 80% (0,8) dari gajinya untuk jajan."
+          "text": "==Fungsi Konsumsi Budi adalah **C = 500.000 + 0,8Y**.== Artinya, Budi butuh Rp 500.000 untuk bertahan hidup (walau nganggur), dan ia menghabiskan 80% (0,8) dari gajinya untuk jajan."
         },
         {
           "kind": "ul",
@@ -502,7 +502,7 @@ const tm9: Reading = {
         },
         {
           "kind": "p",
-          "text": "Lihat kan? Tambahan gaji Budi dari Bulan 2 ke Bulan 3 adalah Rp 2.500.000. Tambahan konsumsinya adalah Rp 2.000.000. Rasio 2.000.000 / 2.500.000 = **0,8 (Itulah nilai MPC!)**."
+          "text": "==Lihat kan? Tambahan gaji Budi dari Bulan 2 ke Bulan 3 adalah Rp 2.500.000.== Tambahan konsumsinya adalah Rp 2.000.000. Rasio 2.000.000 / 2.500.000 = **0,8 (Itulah nilai MPC!)**."
         }
       ]
     },
@@ -518,7 +518,7 @@ const tm9: Reading = {
     },
     {
       "kind": "p",
-      "text": "Dalam makroekonomi, kata 'Investasi' bukan berarti membeli saham atau reksa dana. **Investasi** berarti pembelian barang modal riil yang baru (seperti mesin, bangunan pabrik, alat berat) serta penambahan persediaan perusahaan."
+      "text": "Dalam makroekonomi, kata 'Investasi' bukan berarti membeli saham atau reksa dana. ==**Investasi** berarti pembelian barang modal riil yang baru (seperti mesin, bangunan pabrik, alat berat) serta penambahan persediaan perusahaan.=="
     },
     {
       "kind": "callout",
@@ -569,7 +569,7 @@ const tm10: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Prinsip Keseimbangan",
-      "text": "Ekonomi akan mencapai keseimbangan (equilibrium) tepat pada titik di mana **Output (Y)** sama persis dengan **Pengeluaran Agregat Terencana (AE)**. Tidak ada penumpukan maupun kekurangan barang."
+      "text": "==Ekonomi akan mencapai keseimbangan (equilibrium) tepat pada titik di mana **Output (Y)** sama persis dengan **Pengeluaran Agregat Terencana (AE)**.== Tidak ada penumpukan maupun kekurangan barang."
     },
     {
       "kind": "chart-guide",
@@ -592,13 +592,13 @@ const tm10: Reading = {
     },
     {
       "kind": "p",
-      "text": "Model Multiplier adalah salah satu konsep paling magis di ilmu ekonomi! Idenya begini: Jika pemerintah membangun jembatan senilai 1 Triliun rupiah, uang itu akan mengalir menjadi gaji kuli bangunan. Kuli bangunan ini kemudian belanja baju, sehingga pemilik toko baju dapat untung. Pemilik toko baju lalu belanja makanan... Begitu seterusnya!"
+      "text": "==Model Multiplier adalah salah satu konsep paling magis di ilmu ekonomi! Idenya begini: Jika pemerintah membangun jembatan senilai 1 Triliun rupiah, uang itu akan mengalir menjadi gaji kuli bangunan.== Kuli bangunan ini kemudian belanja baju, sehingga pemilik toko baju dapat untung. Pemilik toko baju lalu belanja makanan... Begitu seterusnya!"
     },
     {
       "kind": "callout",
       "variant": "key",
       "title": "Efek Domino",
-      "text": "Setiap perubahan '1 Dolar' pada pengeluaran independen (Investasi atau Belanja Pemerintah) akan menghasilkan efek lipat ganda pada GDP total. Inilah yang dinamakan **Multiplier Coefficient (k)**."
+      "text": "Setiap perubahan '1 Dolar' pada pengeluaran independen (Investasi atau Belanja Pemerintah) akan menghasilkan efek lipat ganda pada GDP total. ==Inilah yang dinamakan **Multiplier Coefficient (k)**.=="
     },
     {
       "kind": "formula",
@@ -659,7 +659,7 @@ const tm10: Reading = {
     },
     {
       "kind": "p",
-      "text": "Pemerintah bisa mengalami **Defisit Anggaran** ketika Belanja (G) lebih besar dari Pajak (T). Jika ini terjadi, *Public Saving* bernilai negatif (menyedot tabungan). Akibatnya, *National Saving* merosot, dan investasi di negara tersebut ikut anjlok. Fenomena ini disebut *Crowding Out Effect*."
+      "text": "==Pemerintah bisa mengalami **Defisit Anggaran** ketika Belanja (G) lebih besar dari Pajak (T).== Jika ini terjadi, *Public Saving* bernilai negatif (menyedot tabungan). Akibatnya, *National Saving* merosot, dan investasi di negara tersebut ikut anjlok. Fenomena ini disebut *Crowding Out Effect*."
     },
     {
       "kind": "h2",
@@ -704,7 +704,7 @@ const tm11: Reading = {
     },
     {
       "kind": "p",
-      "text": "Uang adalah aset dalam ekonomi yang secara rutin digunakan oleh orang-orang untuk membeli barang dan jasa dari orang lain. Bagi seorang ekonom, uang bukan sekadar kekayaan, melainkan hanya beberapa jenis kekayaan yang diterima secara umum oleh penjual."
+      "text": "==Uang adalah aset dalam ekonomi yang secara rutin digunakan oleh orang-orang untuk membeli barang dan jasa dari orang lain.== Bagi seorang ekonom, uang bukan sekadar kekayaan, melainkan hanya beberapa jenis kekayaan yang diterima secara umum oleh penjual."
     },
     {
       "kind": "ul",
@@ -765,7 +765,7 @@ const tm11: Reading = {
     },
     {
       "kind": "p",
-      "text": "Ketika kita menyimpan uang di bank, bank tidak menyimpannya 100% di brankas. Dalam sistem **Fractional-Reserve Banking**, bank hanya menahan sebagian dana sebagai cadangan (*reserves*) dan meminjamkan sisanya. Rasio dari total deposito yang harus ditahan bank disebut *reserve ratio* (R)."
+      "text": "Ketika kita menyimpan uang di bank, bank tidak menyimpannya 100% di brankas. ==Dalam sistem **Fractional-Reserve Banking**, bank hanya menahan sebagian dana sebagai cadangan (*reserves*) dan meminjamkan sisanya.== Rasio dari total deposito yang harus ditahan bank disebut *reserve ratio* (R)."
     },
     {
       "kind": "callout",
@@ -817,7 +817,7 @@ const tm11: Reading = {
     },
     {
       "kind": "p",
-      "text": "Di pasar dana pinjaman, mereka yang memiliki sisa pendapatan menawarkannya sebagai tabungan, dan mereka yang butuh modal memintanya untuk investasi. Keseimbangan antara Supply (Tabungan) dan Demand (Investasi) menentukan **suku bunga riil (real interest rate)**."
+      "text": "Di pasar dana pinjaman, mereka yang memiliki sisa pendapatan menawarkannya sebagai tabungan, dan mereka yang butuh modal memintanya untuk investasi. ==Keseimbangan antara Supply (Tabungan) dan Demand (Investasi) menentukan **suku bunga riil (real interest rate)**.=="
     },
     {
       "kind": "table",
@@ -848,7 +848,7 @@ const tm11: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Crowding Out",
-      "text": "Ketika pemerintah mengalami defisit anggaran, pemerintah harus meminjam dari pasar dana pinjaman. Hal ini mengurangi pasokan dana yang tersedia bagi sektor swasta, menyebabkan suku bunga naik dan investasi perusahaan menurun. Fenomena investasi swasta yang 'tergusur' oleh defisit pemerintah ini disebut *crowding out*."
+      "text": "==Ketika pemerintah mengalami defisit anggaran, pemerintah harus meminjam dari pasar dana pinjaman.== Hal ini mengurangi pasokan dana yang tersedia bagi sektor swasta, menyebabkan suku bunga naik dan investasi perusahaan menurun. Fenomena investasi swasta yang 'tergusur' oleh defisit pemerintah ini disebut *crowding out*."
     }
   ]
 };
@@ -891,13 +891,13 @@ const tm12: Reading = {
     },
     {
       "kind": "p",
-      "text": "Sebelum membahas neraca pembayaran dan kurs, ada pertanyaan dasar yang perlu dijawab: mengapa negara berdagang? Jawabannya adalah keunggulan komparatif. Ricardo (1817) menunjukkan bahwa perdagangan menguntungkan bukan karena satu negara lebih hebat dalam segala hal, melainkan karena tiap negara berkorban lebih sedikit untuk memproduksi barang tertentu."
+      "text": "==Sebelum membahas neraca pembayaran dan kurs, ada pertanyaan dasar yang perlu dijawab: mengapa negara berdagang? Jawabannya adalah keunggulan komparatif.== Ricardo (1817) menunjukkan bahwa perdagangan menguntungkan bukan karena satu negara lebih hebat dalam segala hal, melainkan karena tiap negara berkorban lebih sedikit untuk memproduksi barang tertentu."
     },
     {
       "kind": "callout",
       "variant": "info",
       "title": "Absolute advantage",
-      "text": "adalah kemampuan memproduksi suatu barang dengan input lebih sedikit. **Comparative advantage** adalah kemampuan memproduksi suatu barang dengan biaya peluang lebih rendah. Dasar perdagangan adalah comparative advantage, bukan absolute advantage."
+      "text": "==adalah kemampuan memproduksi suatu barang dengan input lebih sedikit.== **Comparative advantage** adalah kemampuan memproduksi suatu barang dengan biaya peluang lebih rendah. Dasar perdagangan adalah comparative advantage, bukan absolute advantage."
     },
     {
       "kind": "p",
@@ -931,7 +931,7 @@ const tm12: Reading = {
     },
     {
       "kind": "p",
-      "text": "Negara A lebih efisien pada kedua barang, jadi A punya absolute advantage di beras dan kain. Namun yang menentukan arah perdagangan adalah biaya peluang. Untuk beras, biaya peluang Negara A (0,5 kain) lebih rendah daripada Negara B (1 kain), jadi A punya comparative advantage di beras. Untuk kain, biaya peluang Negara B (1 beras) lebih rendah daripada Negara A (2 beras), jadi B punya comparative advantage di kain."
+      "text": "Negara A lebih efisien pada kedua barang, jadi A punya absolute advantage di beras dan kain. ==Namun yang menentukan arah perdagangan adalah biaya peluang.== Untuk beras, biaya peluang Negara A (0,5 kain) lebih rendah daripada Negara B (1 kain), jadi A punya comparative advantage di beras. Untuk kain, biaya peluang Negara B (1 beras) lebih rendah daripada Negara A (2 beras), jadi B punya comparative advantage di kain."
     },
     {
       "kind": "callout",
@@ -951,7 +951,7 @@ const tm12: Reading = {
     },
     {
       "kind": "p",
-      "text": "Neraca pembayaran mencatat transaksi ekonomi antara penduduk suatu negara dengan penduduk negara lain. Prinsip dasarnya adalah double-entry accounting, sehingga secara akuntansi transaksi internasional selalu memiliki pasangan pencatatan."
+      "text": "Neraca pembayaran mencatat transaksi ekonomi antara penduduk suatu negara dengan penduduk negara lain. ==Prinsip dasarnya adalah double-entry accounting, sehingga secara akuntansi transaksi internasional selalu memiliki pasangan pencatatan.=="
     },
     {
       "kind": "table",
@@ -995,7 +995,7 @@ const tm12: Reading = {
     },
     {
       "kind": "p",
-      "text": "Dalam ekonomi terbuka, tabungan nasional tidak harus sama dengan investasi domestik. Selisihnya mengalir ke luar negeri sebagai net capital outflow atau justru masuk dari luar negeri sebagai pembiayaan defisit."
+      "text": "==Dalam ekonomi terbuka, tabungan nasional tidak harus sama dengan investasi domestik.== Selisihnya mengalir ke luar negeri sebagai net capital outflow atau justru masuk dari luar negeri sebagai pembiayaan defisit."
     },
     {
       "kind": "figure",
@@ -1039,7 +1039,7 @@ const tm12: Reading = {
     },
     {
       "kind": "p",
-      "text": "Nilai tukar nominal adalah harga relatif mata uang. Nilai tukar riil adalah harga relatif barang antarnegara setelah memperhitungkan tingkat harga. Nilai tukar riil lebih relevan untuk daya saing ekspor-impor."
+      "text": "==Nilai tukar nominal adalah harga relatif mata uang.== Nilai tukar riil adalah harga relatif barang antarnegara setelah memperhitungkan tingkat harga. Nilai tukar riil lebih relevan untuk daya saing ekspor-impor."
     },
     {
       "kind": "formula",
@@ -1084,7 +1084,7 @@ const tm12: Reading = {
     },
     {
       "kind": "p",
-      "text": "Purchasing Power Parity (PPP) menyatakan bahwa satu unit mata uang seharusnya memiliki daya beli yang sama di berbagai negara setelah dikonversi dengan nilai tukar. Basisnya adalah law of one price. Dalam jangka panjang, negara dengan inflasi lebih tinggi cenderung mengalami depresiasi mata uang."
+      "text": "Purchasing Power Parity (PPP) menyatakan bahwa satu unit mata uang seharusnya memiliki daya beli yang sama di berbagai negara setelah dikonversi dengan nilai tukar. ==Basisnya adalah law of one price.== Dalam jangka panjang, negara dengan inflasi lebih tinggi cenderung mengalami depresiasi mata uang."
     },
     {
       "kind": "formula",
@@ -1206,7 +1206,7 @@ const tm13: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Inflasi",
-      "text": "adalah kenaikan tingkat harga umum secara berkelanjutan. Kenaikan harga satu atau dua barang bukan inflasi jika tidak mencerminkan kenaikan harga secara umum."
+      "text": "==adalah kenaikan tingkat harga umum secara berkelanjutan.== Kenaikan harga satu atau dua barang bukan inflasi jika tidak mencerminkan kenaikan harga secara umum."
     },
     {
       "kind": "figure",
@@ -1296,7 +1296,7 @@ const tm13: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Pengangguran",
-      "text": "adalah kondisi ketika seseorang termasuk angkatan kerja, tidak bekerja, sedang mencari pekerjaan, dan tersedia untuk bekerja. Tidak semua orang yang tidak bekerja dihitung sebagai penganggur."
+      "text": "==adalah kondisi ketika seseorang termasuk angkatan kerja, tidak bekerja, sedang mencari pekerjaan, dan tersedia untuk bekerja.== Tidak semua orang yang tidak bekerja dihitung sebagai penganggur."
     },
     {
       "kind": "formula",
@@ -1453,7 +1453,7 @@ const tm13: Reading = {
     },
     {
       "kind": "p",
-      "text": "Kebijakan makro harus membedakan penyebab masalah. Pengangguran siklis akibat permintaan lemah dapat ditangani dengan stimulus. Pengangguran struktural tidak cukup diselesaikan dengan stimulus karena masalahnya berada pada keterampilan, teknologi, lokasi, dan struktur pasar kerja. Inflasi demand-pull dapat dikendalikan dengan kebijakan kontraktif, sedangkan inflasi cost-push sering menimbulkan dilema karena menekan inflasi dapat memperburuk output."
+      "text": "==Kebijakan makro harus membedakan penyebab masalah.== Pengangguran siklis akibat permintaan lemah dapat ditangani dengan stimulus. Pengangguran struktural tidak cukup diselesaikan dengan stimulus karena masalahnya berada pada keterampilan, teknologi, lokasi, dan struktur pasar kerja. Inflasi demand-pull dapat dikendalikan dengan kebijakan kontraktif, sedangkan inflasi cost-push sering menimbulkan dilema karena menekan inflasi dapat memperburuk output."
     },
     {
       "kind": "table",
@@ -1523,7 +1523,7 @@ const tm14: Reading = {
     },
     {
       "kind": "p",
-      "text": "Pertumbuhan menjadi penting karena perbedaan kecil pada laju pertumbuhan dapat menghasilkan perbedaan besar dalam standar hidup setelah beberapa dekade. Negara yang tumbuh 2% per tahun dan negara yang tumbuh 6% per tahun akan memiliki lintasan pendapatan yang sangat berbeda dalam satu generasi."
+      "text": "==Pertumbuhan menjadi penting karena perbedaan kecil pada laju pertumbuhan dapat menghasilkan perbedaan besar dalam standar hidup setelah beberapa dekade.== Negara yang tumbuh 2% per tahun dan negara yang tumbuh 6% per tahun akan memiliki lintasan pendapatan yang sangat berbeda dalam satu generasi."
     },
     {
       "kind": "formula",
@@ -1686,7 +1686,7 @@ const tm14: Reading = {
     },
     {
       "kind": "p",
-      "text": "Akumulasi modal penting, tetapi modal memiliki diminishing returns. Tambahan satu mesin akan sangat berguna ketika modal awal sangat rendah, tetapi tambahan mesin berikutnya memberi tambahan output yang semakin kecil jika faktor lain tidak ikut membaik. Karena itu, negara miskin berpotensi tumbuh lebih cepat jika institusi, pendidikan, dan stabilitasnya memungkinkan; inilah catch-up effect."
+      "text": "==Akumulasi modal penting, tetapi modal memiliki diminishing returns.== Tambahan satu mesin akan sangat berguna ketika modal awal sangat rendah, tetapi tambahan mesin berikutnya memberi tambahan output yang semakin kecil jika faktor lain tidak ikut membaik. Karena itu, negara miskin berpotensi tumbuh lebih cepat jika institusi, pendidikan, dan stabilitasnya memungkinkan; inilah catch-up effect."
     },
     {
       "kind": "table",
@@ -1727,7 +1727,7 @@ const tm14: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Koreksi asumsi sederhana",
-      "text": "pertumbuhan tinggi tidak selalu baik jika bersumber dari eksploitasi berlebihan, utang tidak produktif, atau gelembung aset. Yang dicari adalah pertumbuhan produktif dan berkelanjutan."
+      "text": "pertumbuhan tinggi tidak selalu baik jika bersumber dari eksploitasi berlebihan, utang tidak produktif, atau gelembung aset. ==Yang dicari adalah pertumbuhan produktif dan berkelanjutan.=="
     },
     {
       "kind": "h2",

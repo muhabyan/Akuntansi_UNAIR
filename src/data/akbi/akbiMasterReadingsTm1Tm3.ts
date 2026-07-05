@@ -227,7 +227,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Akuntansi biaya adalah proses mengumpulkan, mengukur, mengakumulasi, menganalisis, menyiapkan, menafsirkan, dan mengomunikasikan informasi biaya. Informasi tersebut terutama digunakan oleh pihak internal, yaitu manajemen, untuk menjalankan fungsi perencanaan dan pengendalian. Karena orientasinya internal, akuntansi biaya harus lebih rinci daripada akuntansi keuangan."
+        "text": "==Akuntansi biaya adalah proses mengumpulkan, mengukur, mengakumulasi, menganalisis, menyiapkan, menafsirkan, dan mengomunikasikan informasi biaya.== Informasi tersebut terutama digunakan oleh pihak internal, yaitu manajemen, untuk menjalankan fungsi perencanaan dan pengendalian. Karena orientasinya internal, akuntansi biaya harus lebih rinci daripada akuntansi keuangan."
       },
       {
         "kind": "p",
@@ -317,7 +317,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Dalam organisasi manufaktur, controller adalah pejabat yang bertanggung jawab atas sistem informasi akuntansi, pelaporan internal, penganggaran, analisis kinerja, dan pengendalian biaya. Cost department mendukung controller dengan mengumpulkan data biaya, menyiapkan laporan biaya, mengelola cost records, dan menyediakan informasi yang dapat ditindaklanjuti oleh manajer operasional."
+        "text": "==Dalam organisasi manufaktur, controller adalah pejabat yang bertanggung jawab atas sistem informasi akuntansi, pelaporan internal, penganggaran, analisis kinerja, dan pengendalian biaya.== Cost department mendukung controller dengan mengumpulkan data biaya, menyiapkan laporan biaya, mengelola cost records, dan menyediakan informasi yang dapat ditindaklanjuti oleh manajer operasional."
       },
       {
         "kind": "table",
@@ -355,7 +355,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Cost adalah pengorbanan sumber daya yang diukur dalam satuan moneter untuk memperoleh barang atau jasa yang diharapkan memberi manfaat. Expense adalah cost yang manfaatnya sudah dikonsumsi untuk menghasilkan pendapatan pada periode berjalan. Loss adalah pengorbanan yang tidak menghasilkan manfaat ekonomi normal, sedangkan asset adalah cost yang manfaatnya masih akan diterima pada masa mendatang."
+        "text": "==Cost adalah pengorbanan sumber daya yang diukur dalam satuan moneter untuk memperoleh barang atau jasa yang diharapkan memberi manfaat.== Expense adalah cost yang manfaatnya sudah dikonsumsi untuk menghasilkan pendapatan pada periode berjalan. Loss adalah pengorbanan yang tidak menghasilkan manfaat ekonomi normal, sedangkan asset adalah cost yang manfaatnya masih akan diterima pada masa mendatang."
       },
       {
         "kind": "formula",
@@ -398,7 +398,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Cost object adalah objek yang ingin dihitung biayanya. Objek ini dapat berupa produk, pesanan, departemen, proses, aktivitas, pelanggan, proyek, atau saluran distribusi. Suatu biaya disebut direct cost jika dapat ditelusuri secara langsung dan ekonomis ke cost object tertentu. Biaya disebut indirect cost jika tidak dapat ditelusuri langsung secara ekonomis dan perlu dialokasikan."
+        "text": "==Cost object adalah objek yang ingin dihitung biayanya.== Objek ini dapat berupa produk, pesanan, departemen, proses, aktivitas, pelanggan, proyek, atau saluran distribusi. Suatu biaya disebut direct cost jika dapat ditelusuri secara langsung dan ekonomis ke cost object tertentu. Biaya disebut indirect cost jika tidak dapat ditelusuri langsung secara ekonomis dan perlu dialokasikan."
       },
       {
         "kind": "table",
@@ -447,7 +447,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Dalam perusahaan manufaktur, product cost terdiri dari direct materials, direct labor, dan factory overhead. Direct materials adalah bahan utama yang menjadi bagian produk dan dapat ditelusuri langsung. Direct labor adalah tenaga kerja yang mengubah bahan menjadi produk dan dapat ditelusuri langsung. Factory overhead mencakup semua biaya produksi selain direct materials dan direct labor."
+        "text": "Dalam perusahaan manufaktur, product cost terdiri dari direct materials, direct labor, dan factory overhead. ==Direct materials adalah bahan utama yang menjadi bagian produk dan dapat ditelusuri langsung.== Direct labor adalah tenaga kerja yang mengubah bahan menjadi produk dan dapat ditelusuri langsung. Factory overhead mencakup semua biaya produksi selain direct materials dan direct labor."
       },
       {
         "kind": "table",
@@ -528,7 +528,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Product cost adalah biaya yang melekat pada persediaan sampai produk dijual. Period cost adalah biaya yang langsung dibebankan pada periode terjadinya karena tidak melekat pada proses produksi. Kesalahan mengklasifikasikan biaya pemasaran atau administrasi sebagai product cost akan membuat harga pokok produksi terlalu tinggi dan laba periode menjadi tidak wajar."
+        "text": "==Product cost adalah biaya yang melekat pada persediaan sampai produk dijual.== Period cost adalah biaya yang langsung dibebankan pada periode terjadinya karena tidak melekat pada proses produksi. Kesalahan mengklasifikasikan biaya pemasaran atau administrasi sebagai product cost akan membuat harga pokok produksi terlalu tinggi dan laba periode menjadi tidak wajar."
       },
       {
         "kind": "table",
@@ -662,7 +662,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Informasi biaya dapat memengaruhi harga, bonus, evaluasi kinerja, keputusan produksi, dan laporan laba. Karena itu, akuntan biaya harus menjaga kompetensi, kerahasiaan, integritas, dan objektivitas. Manipulasi alokasi overhead atau penyembunyian variance dapat membuat keputusan manajemen menjadi keliru."
+        "text": "Informasi biaya dapat memengaruhi harga, bonus, evaluasi kinerja, keputusan produksi, dan laporan laba. ==Karena itu, akuntan biaya harus menjaga kompetensi, kerahasiaan, integritas, dan objektivitas.== Manipulasi alokasi overhead atau penyembunyian variance dapat membuat keputusan manajemen menjadi keliru."
       },
       {
         "kind": "table",
@@ -761,7 +761,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "key",
         "title": "Standar soal AKBI Batch 12B",
-        "text": "Setiap latihan numerik atau klasifikasi harus menampilkan data kasus sebelum mahasiswa mengisi jawaban. Urutannya adalah konteks, data diketahui, instruksi, workspace, kunci, dan pembahasan. Pola ini dipakai agar mahasiswa tidak diminta mengisi angka atau kategori tanpa sumber data yang terlihat."
+        "text": "==Setiap latihan numerik atau klasifikasi harus menampilkan data kasus sebelum mahasiswa mengisi jawaban.== Urutannya adalah konteks, data diketahui, instruksi, workspace, kunci, dan pembahasan. Pola ini dipakai agar mahasiswa tidak diminta mengisi angka atau kategori tanpa sumber data yang terlihat."
       },
       {
         "kind": "table",
@@ -887,7 +887,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
         "blocks": [
           {
             "kind": "p",
-            "text": "Logika utama TM 1 adalah menentukan cost object terlebih dahulu. Dalam kasus ini cost object-nya adalah produk kemeja. Item yang dapat ditelusuri langsung ke produk menjadi direct materials atau direct labor. Item produksi yang tidak langsung menjadi factory overhead. Iklan dan administrasi umum tidak masuk persediaan karena merupakan period cost."
+            "text": "==Logika utama TM 1 adalah menentukan cost object terlebih dahulu.== Dalam kasus ini cost object-nya adalah produk kemeja. Item yang dapat ditelusuri langsung ke produk menjadi direct materials atau direct labor. Item produksi yang tidak langsung menjadi factory overhead. Iklan dan administrasi umum tidak masuk persediaan karena merupakan period cost."
           },
           {
             "kind": "table",
@@ -1050,7 +1050,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "key",
         "title": "Inti akademik",
-        "text": "Perilaku biaya tidak boleh dipahami hanya sebagai hafalan fixed, variable, dan mixed cost. Yang lebih penting adalah memahami hubungan antara cost driver, relevant range, struktur biaya, dan estimasi biaya untuk keputusan manajerial."
+        "text": "Perilaku biaya tidak boleh dipahami hanya sebagai hafalan fixed, variable, dan mixed cost. ==Yang lebih penting adalah memahami hubungan antara cost driver, relevant range, struktur biaya, dan estimasi biaya untuk keputusan manajerial.=="
       },
       {
         "kind": "h2",
@@ -1238,7 +1238,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Manajemen membutuhkan prediksi biaya sebelum kegiatan terjadi. Prediksi tersebut hanya masuk akal jika manajemen memahami apakah biaya berubah karena volume, jam mesin, jam tenaga kerja, jumlah batch, jumlah inspeksi, atau faktor lain. Karena itu, perilaku biaya adalah dasar untuk budgeting, pricing, overhead rate, flexible budget, dan analisis keputusan."
+        "text": "Manajemen membutuhkan prediksi biaya sebelum kegiatan terjadi. Prediksi tersebut hanya masuk akal jika manajemen memahami apakah biaya berubah karena volume, jam mesin, jam tenaga kerja, jumlah batch, jumlah inspeksi, atau faktor lain. ==Karena itu, perilaku biaya adalah dasar untuk budgeting, pricing, overhead rate, flexible budget, dan analisis keputusan.=="
       },
       {
         "kind": "table",
@@ -1279,7 +1279,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Cost driver adalah faktor yang menyebabkan biaya berubah. Activity base adalah ukuran aktivitas yang dipakai untuk menjelaskan perubahan biaya. Pemilihan activity base harus rasional. Jika listrik pabrik terutama dipengaruhi penggunaan mesin, jam mesin atau kilowatt-hour lebih relevan daripada jumlah unit."
+        "text": "==Cost driver adalah faktor yang menyebabkan biaya berubah.== Activity base adalah ukuran aktivitas yang dipakai untuk menjelaskan perubahan biaya. Pemilihan activity base harus rasional. Jika listrik pabrik terutama dipengaruhi penggunaan mesin, jam mesin atau kilowatt-hour lebih relevan daripada jumlah unit."
       },
       {
         "kind": "table",
@@ -1322,7 +1322,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Variable cost berubah secara total mengikuti perubahan aktivitas, tetapi biaya per unitnya tetap dalam relevant range. Contoh paling umum adalah direct materials. Jika satu unit produk memerlukan dua kilogram bahan, maka total bahan naik ketika unit produksi naik, tetapi kebutuhan bahan per unit tetap dua kilogram selama spesifikasi produk tidak berubah."
+        "text": "Variable cost berubah secara total mengikuti perubahan aktivitas, tetapi biaya per unitnya tetap dalam relevant range. ==Contoh paling umum adalah direct materials.== Jika satu unit produk memerlukan dua kilogram bahan, maka total bahan naik ketika unit produksi naik, tetapi kebutuhan bahan per unit tetap dua kilogram selama spesifikasi produk tidak berubah."
       },
       {
         "kind": "formula",
@@ -1359,7 +1359,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Fixed cost tetap secara total dalam relevant range meskipun aktivitas berubah. Namun fixed cost per unit akan turun ketika volume meningkat dan naik ketika volume menurun. Karena itu, pernyataan bahwa fixed cost selalu tetap per unit adalah keliru."
+        "text": "Fixed cost tetap secara total dalam relevant range meskipun aktivitas berubah. Namun fixed cost per unit akan turun ketika volume meningkat dan naik ketika volume menurun. ==Karena itu, pernyataan bahwa fixed cost selalu tetap per unit adalah keliru.=="
       },
       {
         "kind": "formula",
@@ -1401,7 +1401,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Mixed cost memiliki komponen tetap dan variabel. Bagian tetap muncul walaupun aktivitas minimum terjadi, sedangkan bagian variabel berubah mengikuti aktivitas. Contoh umum adalah tagihan listrik, biaya telepon, biaya pemeliharaan, dan biaya kendaraan produksi."
+        "text": "Mixed cost memiliki komponen tetap dan variabel. Bagian tetap muncul walaupun aktivitas minimum terjadi, sedangkan bagian variabel berubah mengikuti aktivitas. ==Contoh umum adalah tagihan listrik, biaya telepon, biaya pemeliharaan, dan biaya kendaraan produksi.=="
       },
       {
         "kind": "formula",
@@ -1443,7 +1443,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Relevant range adalah rentang aktivitas di mana asumsi perilaku biaya masih valid. Di luar rentang ini, kapasitas, teknologi, harga input, jumlah supervisor, atau struktur fasilitas dapat berubah sehingga persamaan biaya lama tidak lagi layak dipakai."
+        "text": "==Relevant range adalah rentang aktivitas di mana asumsi perilaku biaya masih valid.== Di luar rentang ini, kapasitas, teknologi, harga input, jumlah supervisor, atau struktur fasilitas dapat berubah sehingga persamaan biaya lama tidak lagi layak dipakai."
       },
       {
         "kind": "callout",
@@ -1849,7 +1849,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "TM 2 menjelaskan bagaimana biaya berubah akibat perubahan aktivitas. Variable cost, fixed cost, mixed cost, relevant range, cost driver, high-low method, scattergraph, dan least squares regression menjadi fondasi untuk budgeting, flexible budget, overhead rate, CVP, dan keputusan manajerial. Estimasi biaya yang baik harus memakai data yang relevan, berada dalam relevant range, dan bebas dari distorsi data historis yang tidak normal."
+        "text": "TM 2 menjelaskan bagaimana biaya berubah akibat perubahan aktivitas. Variable cost, fixed cost, mixed cost, relevant range, cost driver, high-low method, scattergraph, dan least squares regression menjadi fondasi untuk budgeting, flexible budget, overhead rate, CVP, dan keputusan manajerial. ==Estimasi biaya yang baik harus memakai data yang relevan, berada dalam relevant range, dan bebas dari distorsi data historis yang tidak normal.=="
       },
       {
         "kind": "h2",
@@ -2023,7 +2023,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
         "blocks": [
           {
             "kind": "p",
-            "text": "FOH adalah biaya produksi tidak langsung. Karena masih berkaitan dengan barang yang sedang diproduksi, FOH harus melekat ke produk melalui WIP terlebih dahulu. Biaya baru masuk COGS setelah barang selesai, menjadi barang jadi, dan kemudian terjual."
+            "text": "==FOH adalah biaya produksi tidak langsung.== Karena masih berkaitan dengan barang yang sedang diproduksi, FOH harus melekat ke produk melalui WIP terlebih dahulu. Biaya baru masuk COGS setelah barang selesai, menjadi barang jadi, dan kemudian terjual."
           },
           {
             "kind": "callout",
@@ -2143,7 +2143,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "General accounts adalah akun utama yang muncul dalam sistem akuntansi umum dan laporan keuangan. Cost accounts adalah catatan pembantu yang memberi rincian biaya untuk kebutuhan pengendalian internal. Work in Process, misalnya, dapat dirinci menurut job cost sheet dalam job order costing atau menurut cost of production report dalam process costing."
+        "text": "==General accounts adalah akun utama yang muncul dalam sistem akuntansi umum dan laporan keuangan.== Cost accounts adalah catatan pembantu yang memberi rincian biaya untuk kebutuhan pengendalian internal. Work in Process, misalnya, dapat dirinci menurut job cost sheet dalam job order costing atau menurut cost of production report dalam process costing."
       },
       {
         "kind": "table",
@@ -2282,7 +2282,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "info",
         "title": "Catatan istilah",
-        "text": "Beberapa sumber menyebut istilah historical cost system, standard cost system, absorption costing, direct atau variable costing, dan super-full absorption. Untuk website saat ini, istilah utama yang harus dikuasai adalah actual, normal, standard, absorption, dan variable/direct costing."
+        "text": "Beberapa sumber menyebut istilah historical cost system, standard cost system, absorption costing, direct atau variable costing, dan super-full absorption. ==Untuk website saat ini, istilah utama yang harus dikuasai adalah actual, normal, standard, absorption, dan variable/direct costing.=="
       },
       {
         "kind": "h2",
@@ -2885,7 +2885,7 @@ export const AKBI_TM1_TM3_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "TM 3 menjelaskan bahwa biaya manufaktur mengalir dari Materials Inventory ke Work in Process, kemudian Finished Goods, dan akhirnya Cost of Goods Sold. Alur ini didukung dokumen sumber, general accounts, cost accounts, jurnal, dan laporan manufaktur. Mahasiswa harus mampu menyusun Schedule of Raw Materials Used, Cost of Goods Manufactured, Cost of Goods Sold, dan Income Statement manufaktur secara runtut."
+        "text": "TM 3 menjelaskan bahwa biaya manufaktur mengalir dari Materials Inventory ke Work in Process, kemudian Finished Goods, dan akhirnya Cost of Goods Sold. Alur ini didukung dokumen sumber, general accounts, cost accounts, jurnal, dan laporan manufaktur. ==Mahasiswa harus mampu menyusun Schedule of Raw Materials Used, Cost of Goods Manufactured, Cost of Goods Sold, dan Income Statement manufaktur secara runtut.=="
       },
       {
         "kind": "h2",

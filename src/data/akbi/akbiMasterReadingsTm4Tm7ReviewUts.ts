@@ -50,7 +50,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Job order costing adalah sistem akumulasi biaya yang menempatkan setiap pesanan, kontrak, batch khusus, atau proyek sebagai **cost object**. Sistem ini dipakai ketika produk atau jasa bersifat heterogen, sehingga biaya tidak layak dirata-ratakan ke seluruh unit seperti dalam process costing."
+        "text": "==Job order costing adalah sistem akumulasi biaya yang menempatkan setiap pesanan, kontrak, batch khusus, atau proyek sebagai **cost object**.== Sistem ini dipakai ketika produk atau jasa bersifat heterogen, sehingga biaya tidak layak dirata-ratakan ke seluruh unit seperti dalam process costing."
       },
       {
         "kind": "callout",
@@ -172,7 +172,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Job cost sheet adalah dokumen utama dalam job order costing. Dokumen ini berfungsi sebagai buku pembantu Work in Process untuk setiap job. Ketika bahan langsung, tenaga kerja langsung, dan overhead dibebankan ke job, seluruh informasi tersebut diringkas dalam job cost sheet."
+        "text": "==Job cost sheet adalah dokumen utama dalam job order costing.== Dokumen ini berfungsi sebagai buku pembantu Work in Process untuk setiap job. Ketika bahan langsung, tenaga kerja langsung, dan overhead dibebankan ke job, seluruh informasi tersebut diringkas dalam job cost sheet."
       },
       {
         "kind": "table",
@@ -1051,7 +1051,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Cost of Production Report adalah laporan utama process costing. Laporan ini menunjukkan jumlah unit yang dipertanggungjawabkan, unit ekuivalen, biaya yang harus dipertanggungjawabkan, kos per unit ekuivalen, dan alokasi biaya ke produk selesai serta BDP akhir."
+        "text": "==Cost of Production Report adalah laporan utama process costing.== Laporan ini menunjukkan jumlah unit yang dipertanggungjawabkan, unit ekuivalen, biaya yang harus dipertanggungjawabkan, kos per unit ekuivalen, dan alokasi biaya ke produk selesai serta BDP akhir."
       },
       {
         "kind": "table",
@@ -1592,7 +1592,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "key",
         "title": "Rekonsiliasi wajib",
-        "text": "Dalam setiap laporan biaya produksi, total costs to account for harus sama dengan total costs accounted for. Jika tidak sama, biasanya kesalahan ada pada EUP, pembulatan cost per EUP, atau status BDP akhir."
+        "text": "==Dalam setiap laporan biaya produksi, total costs to account for harus sama dengan total costs accounted for.== Jika tidak sama, biasanya kesalahan ada pada EUP, pembulatan cost per EUP, atau status BDP akhir."
       },
       {
         "kind": "h2",
@@ -1653,7 +1653,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "TM 5 membahas process costing dengan average method. Sistem ini digunakan untuk produk homogen yang diproses secara berkelanjutan. Laporan utama yang harus dikuasai adalah Cost of Production Report, yang terdiri dari quantity schedule, equivalent units, costs to account for, cost per EUP, costs accounted for, dan rekonsiliasi biaya. Dalam average method, biaya BDP awal digabung dengan biaya periode berjalan."
+        "text": "TM 5 membahas process costing dengan average method. Sistem ini digunakan untuk produk homogen yang diproses secara berkelanjutan. ==Laporan utama yang harus dikuasai adalah Cost of Production Report, yang terdiri dari quantity schedule, equivalent units, costs to account for, cost per EUP, costs accounted for, dan rekonsiliasi biaya.== Dalam average method, biaya BDP awal digabung dengan biaya periode berjalan."
       },
       {
         "kind": "h2",
@@ -2329,7 +2329,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "warning",
         "title": "Trap FIFO yang paling sering muncul",
-        "text": "Jangan menghitung BDP awal sebagai 100% pada EUP FIFO. Yang dihitung hanya sisa pekerjaan yang belum selesai pada awal periode. Jika BDP awal sudah 100% materials, maka EUP materials untuk menyelesaikan BDP awal adalah nol."
+        "text": "Jangan menghitung BDP awal sebagai 100% pada EUP FIFO. Yang dihitung hanya sisa pekerjaan yang belum selesai pada awal periode. ==Jika BDP awal sudah 100% materials, maka EUP materials untuk menyelesaikan BDP awal adalah nol.=="
       },
       {
         "kind": "h2",
@@ -2476,7 +2476,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "warning",
         "title": "Arah penting TM 7",
-        "text": "Jangan hanya menghafal definisi scrap, spoilage, dan rework. Fokus utama akuntansi biaya adalah siapa yang menanggung biaya kerugian, apakah kerugian normal atau abnormal, dan apakah biaya dibebankan ke job pelanggan, Factory Overhead Control, Cost of Goods Sold, atau loss account."
+        "text": "Jangan hanya menghafal definisi scrap, spoilage, dan rework. ==Fokus utama akuntansi biaya adalah siapa yang menanggung biaya kerugian, apakah kerugian normal atau abnormal, dan apakah biaya dibebankan ke job pelanggan, Factory Overhead Control, Cost of Goods Sold, atau loss account.=="
       },
       {
         "kind": "h2",
@@ -2543,7 +2543,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Biaya kualitas adalah biaya yang terjadi karena perusahaan berusaha menghasilkan produk yang sesuai spesifikasi atau karena produk gagal memenuhi spesifikasi. Secara manajerial, biaya kualitas tidak hanya dilihat sebagai beban, tetapi sebagai informasi untuk memilih apakah perusahaan harus lebih banyak mencegah cacat, meningkatkan inspeksi, atau menanggung failure cost."
+        "text": "==Biaya kualitas adalah biaya yang terjadi karena perusahaan berusaha menghasilkan produk yang sesuai spesifikasi atau karena produk gagal memenuhi spesifikasi.== Secara manajerial, biaya kualitas tidak hanya dilihat sebagai beban, tetapi sebagai informasi untuk memilih apakah perusahaan harus lebih banyak mencegah cacat, meningkatkan inspeksi, atau menanggung failure cost."
       },
       {
         "kind": "table",
@@ -2592,7 +2592,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Total Quality Management atau TQM adalah pendekatan menyeluruh yang menempatkan kualitas sebagai tanggung jawab seluruh organisasi. Kualitas tidak hanya menjadi pekerjaan bagian inspeksi, tetapi menjadi bagian dari desain produk, pembelian bahan, proses produksi, pelatihan karyawan, pemeliharaan mesin, dan pelayanan pelanggan."
+        "text": "==Total Quality Management atau TQM adalah pendekatan menyeluruh yang menempatkan kualitas sebagai tanggung jawab seluruh organisasi.== Kualitas tidak hanya menjadi pekerjaan bagian inspeksi, tetapi menjadi bagian dari desain produk, pembelian bahan, proses produksi, pelatihan karyawan, pemeliharaan mesin, dan pelayanan pelanggan."
       },
       {
         "kind": "ul",
@@ -2723,7 +2723,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
         "kind": "callout",
         "variant": "key",
         "title": "Urutan diagnosis cepat",
-        "text": "Prevention dan appraisal adalah cost of conformance: biaya agar produk sesuai spesifikasi. Internal failure dan external failure adalah cost of nonconformance: biaya karena produk gagal memenuhi spesifikasi. Dalam analisis manajerial, failure cost yang tinggi biasanya menjadi sinyal proses perlu diperbaiki, bukan sekadar biaya yang harus diterima."
+        "text": "==Prevention dan appraisal adalah cost of conformance: biaya agar produk sesuai spesifikasi.== Internal failure dan external failure adalah cost of nonconformance: biaya karena produk gagal memenuhi spesifikasi. Dalam analisis manajerial, failure cost yang tinggi biasanya menjadi sinyal proses perlu diperbaiki, bukan sekadar biaya yang harus diterima."
       },
       {
         "kind": "h2",
@@ -2812,7 +2812,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Scrap adalah sisa bahan, potongan, serbuk, trimming, bagian rusak, atau bahan cacat yang tidak menjadi produk utama tetapi mungkin masih memiliki nilai jual. Scrap dapat muncul karena proses normal atau karena kegagalan internal."
+        "text": "==Scrap adalah sisa bahan, potongan, serbuk, trimming, bagian rusak, atau bahan cacat yang tidak menjadi produk utama tetapi mungkin masih memiliki nilai jual.== Scrap dapat muncul karena proses normal atau karena kegagalan internal."
       },
       {
         "kind": "table",
@@ -2880,7 +2880,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Spoilage adalah unit produk yang cacat sehingga tidak dapat diperbaiki atau tidak ekonomis untuk diperbaiki. Spoiled goods bisa sebagian selesai atau selesai penuh, tetapi tidak memenuhi spesifikasi. Perlakuan akuntansinya bergantung pada penyebab dan status normalitasnya."
+        "text": "==Spoilage adalah unit produk yang cacat sehingga tidak dapat diperbaiki atau tidak ekonomis untuk diperbaiki.== Spoiled goods bisa sebagian selesai atau selesai penuh, tetapi tidak memenuhi spesifikasi. Perlakuan akuntansinya bergantung pada penyebab dan status normalitasnya."
       },
       {
         "kind": "table",
@@ -2963,7 +2963,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Rework adalah produk cacat yang masih dapat diperbaiki secara teknis dan ekonomis. Rework berbeda dari spoilage karena produk masih dapat dikembalikan menjadi produk baik melalui tambahan bahan, tenaga kerja, atau overhead."
+        "text": "==Rework adalah produk cacat yang masih dapat diperbaiki secara teknis dan ekonomis.== Rework berbeda dari spoilage karena produk masih dapat dikembalikan menjadi produk baik melalui tambahan bahan, tenaga kerja, atau overhead."
       },
       {
         "kind": "table",
@@ -3046,7 +3046,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Normal loss adalah kehilangan atau kerusakan yang masih berada dalam batas wajar proses produksi. Abnormal loss adalah kehilangan di luar batas normal yang seharusnya dapat dicegah. Pemisahan ini penting agar biaya abnormal tidak diserap oleh produk baik dan tidak menyembunyikan inefisiensi."
+        "text": "==Normal loss adalah kehilangan atau kerusakan yang masih berada dalam batas wajar proses produksi.== Abnormal loss adalah kehilangan di luar batas normal yang seharusnya dapat dicegah. Pemisahan ini penting agar biaya abnormal tidak diserap oleh produk baik dan tidak menyembunyikan inefisiensi."
       },
       {
         "kind": "table",
@@ -3089,7 +3089,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "p",
-        "text": "Dalam process costing, spoilage harus dimasukkan ke quantity schedule dan equivalent units sesuai titik inspeksi serta tingkat penyelesaian unit cacat. Jika spoilage ditemukan pada akhir proses, unit cacat biasanya dianggap sudah menyerap biaya penuh. Jika spoilage ditemukan di tengah proses, EUP dihitung sesuai tingkat penyelesaian saat cacat terdeteksi."
+        "text": "==Dalam process costing, spoilage harus dimasukkan ke quantity schedule dan equivalent units sesuai titik inspeksi serta tingkat penyelesaian unit cacat.== Jika spoilage ditemukan pada akhir proses, unit cacat biasanya dianggap sudah menyerap biaya penuh. Jika spoilage ditemukan di tengah proses, EUP dihitung sesuai tingkat penyelesaian saat cacat terdeteksi."
       },
       {
         "kind": "table",

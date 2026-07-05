@@ -79,7 +79,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Dalam silabi AKBI, TM 12 ditempatkan pada pokok bahasan **Biaya Overhead Pabrik: Departementalisasi** dengan sumber CU 12 dan IMN 11. Pembahasan ini melanjutkan TM 11 tentang overhead pabrik yang direncanakan, aktual, dan dibebankan."
+        "text": "==Dalam silabi AKBI, TM 12 ditempatkan pada pokok bahasan **Biaya Overhead Pabrik: Departementalisasi** dengan sumber CU 12 dan IMN 11.== Pembahasan ini melanjutkan TM 11 tentang overhead pabrik yang direncanakan, aktual, dan dibebankan."
       },
       {
         "kind": "h3",
@@ -95,7 +95,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Pendekatan ini penting karena setiap departemen memiliki karakter biaya yang berbeda. Departemen yang banyak memakai mesin lebih tepat menggunakan jam mesin sebagai dasar pembebanan. Departemen yang banyak memakai tenaga kerja lebih tepat menggunakan jam tenaga kerja langsung atau biaya tenaga kerja langsung. Dengan begitu, produk yang melewati departemen berbeda akan menerima pembebanan overhead sesuai sumber daya yang digunakan."
+        "text": "==Pendekatan ini penting karena setiap departemen memiliki karakter biaya yang berbeda.== Departemen yang banyak memakai mesin lebih tepat menggunakan jam mesin sebagai dasar pembebanan. Departemen yang banyak memakai tenaga kerja lebih tepat menggunakan jam tenaga kerja langsung atau biaya tenaga kerja langsung. Dengan begitu, produk yang melewati departemen berbeda akan menerima pembebanan overhead sesuai sumber daya yang digunakan."
       },
       {
         "kind": "p",
@@ -143,7 +143,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Biaya overhead pabrik adalah biaya produksi yang tidak dapat ditelusuri langsung ke produk atau pesanan tertentu, tetapi tetap terjadi dalam kegiatan produksi. Dalam materi job order costing, overhead dijelaskan sebagai biaya pabrik yang tidak ditelusuri langsung ke job, tetapi terjadi dalam proses produksi."
+        "text": "==Biaya overhead pabrik adalah biaya produksi yang tidak dapat ditelusuri langsung ke produk atau pesanan tertentu, tetapi tetap terjadi dalam kegiatan produksi.== Dalam materi job order costing, overhead dijelaskan sebagai biaya pabrik yang tidak ditelusuri langsung ke job, tetapi terjadi dalam proses produksi."
       },
       {
         "kind": "p",
@@ -169,7 +169,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Departemen produksi adalah departemen yang melakukan kegiatan langsung terhadap produk. Departemen ini mengubah bentuk, merakit, memotong, mencampur, menyelesaikan, atau memproses bahan menjadi produk."
+        "text": "==Departemen produksi adalah departemen yang melakukan kegiatan langsung terhadap produk.== Departemen ini mengubah bentuk, merakit, memotong, mencampur, menyelesaikan, atau memproses bahan menjadi produk."
       },
       {
         "kind": "p",
@@ -226,7 +226,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Departemen jasa adalah departemen yang tidak mengubah produk secara langsung, tetapi memberi dukungan kepada departemen produksi. Biaya departemen jasa pada akhirnya tetap harus masuk ke kos produk. Karena itu, biaya departemen jasa dialokasikan ke departemen produksi."
+        "text": "==Departemen jasa adalah departemen yang tidak mengubah produk secara langsung, tetapi memberi dukungan kepada departemen produksi.== Biaya departemen jasa pada akhirnya tetap harus masuk ke kos produk. Karena itu, biaya departemen jasa dialokasikan ke departemen produksi."
       },
       {
         "kind": "p",
@@ -291,7 +291,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Jumlah dan jenis departemen produksi harus disesuaikan dengan proses produksi perusahaan. Pemisahan departemen tidak boleh terlalu sedikit, karena perhitungan kos bisa kurang akurat. Pemisahan juga tidak boleh terlalu banyak, karena biaya administrasi dan pencatatan menjadi berat."
+        "text": "==Jumlah dan jenis departemen produksi harus disesuaikan dengan proses produksi perusahaan.== Pemisahan departemen tidak boleh terlalu sedikit, karena perhitungan kos bisa kurang akurat. Pemisahan juga tidak boleh terlalu banyak, karena biaya administrasi dan pencatatan menjadi berat."
       },
       {
         "kind": "p",
@@ -354,7 +354,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Biaya departemen langsung adalah biaya overhead yang dapat ditelusuri langsung ke departemen tertentu. Jika biaya muncul karena aktivitas satu departemen, biaya tersebut dibebankan langsung ke departemen itu."
+        "text": "==Biaya departemen langsung adalah biaya overhead yang dapat ditelusuri langsung ke departemen tertentu.== Jika biaya muncul karena aktivitas satu departemen, biaya tersebut dibebankan langsung ke departemen itu."
       },
       {
         "kind": "p",
@@ -415,7 +415,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Biaya departemen tidak langsung adalah biaya yang memberi manfaat kepada lebih dari satu departemen. Biaya ini tidak dapat ditelusuri langsung ke satu departemen tertentu. Karena itu, biaya harus dialokasikan."
+        "text": "==Biaya departemen tidak langsung adalah biaya yang memberi manfaat kepada lebih dari satu departemen.== Biaya ini tidak dapat ditelusuri langsung ke satu departemen tertentu. Karena itu, biaya harus dialokasikan."
       },
       {
         "kind": "p",
@@ -531,7 +531,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Factory survey membantu perusahaan memilih dasar alokasi yang rasional. Dasar alokasi harus dekat dengan penyebab biaya. Jika biaya listrik banyak dipicu oleh penggunaan mesin, maka kilowatt-hour atau jam mesin lebih tepat daripada luas lantai."
+        "text": "Factory survey membantu perusahaan memilih dasar alokasi yang rasional. ==Dasar alokasi harus dekat dengan penyebab biaya.== Jika biaya listrik banyak dipicu oleh penggunaan mesin, maka kilowatt-hour atau jam mesin lebih tepat daripada luas lantai."
       },
       {
         "kind": "h3",
@@ -572,7 +572,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Direct method adalah metode yang mengalokasikan biaya departemen jasa langsung ke departemen produksi. Jasa yang diberikan antar departemen jasa diabaikan."
+        "text": "==Direct method adalah metode yang mengalokasikan biaya departemen jasa langsung ke departemen produksi.== Jasa yang diberikan antar departemen jasa diabaikan."
       },
       {
         "kind": "p",
@@ -598,7 +598,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Step method adalah metode yang mengalokasikan biaya departemen jasa secara bertahap. Departemen jasa pertama dialokasikan ke departemen lain. Setelah itu, departemen tersebut ditutup dan tidak menerima alokasi kembali."
+        "text": "==Step method adalah metode yang mengalokasikan biaya departemen jasa secara bertahap.== Departemen jasa pertama dialokasikan ke departemen lain. Setelah itu, departemen tersebut ditutup dan tidak menerima alokasi kembali."
       },
       {
         "kind": "p",
@@ -690,7 +690,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Pemilihan dasar pembebanan harus mempertimbangkan hubungan antara biaya overhead dan aktivitas departemen. Jika overhead dipicu oleh mesin, gunakan jam mesin. Jika overhead dipicu oleh tenaga kerja, gunakan jam tenaga kerja langsung atau biaya tenaga kerja langsung."
+        "text": "==Pemilihan dasar pembebanan harus mempertimbangkan hubungan antara biaya overhead dan aktivitas departemen.== Jika overhead dipicu oleh mesin, gunakan jam mesin. Jika overhead dipicu oleh tenaga kerja, gunakan jam tenaga kerja langsung atau biaya tenaga kerja langsung."
       },
       {
         "kind": "h3",
@@ -902,7 +902,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
         "kind": "callout",
         "variant": "warning",
         "title": "[Perlu pemeriksaan manual]",
-        "text": "[Perlu pemeriksaan manual] Format dan angka tabel di atas mengikuti Exhibit 13-1 dari scan Carter. Beberapa bagian scan tidak sepenuhnya tajam, sehingga angka harus dicek kembali sebelum dipakai sebagai bahan final."
+        "text": "[Perlu pemeriksaan manual] Format dan angka tabel di atas mengikuti Exhibit 13-1 dari scan Carter. ==Beberapa bagian scan tidak sepenuhnya tajam, sehingga angka harus dicek kembali sebelum dipakai sebagai bahan final.=="
       },
       {
         "kind": "h3",
@@ -1794,7 +1794,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
                 "kind": "callout",
                 "variant": "info",
                 "title": "Kontrol jawaban",
-                "text": "Total akhir direct method dan sequential method harus tetap sama dengan total anggaran awal seluruh departemen, yaitu Rp2.360.000. Yang berubah adalah distribusi antara Perakitan dan Pengemasan. Pada sequential method, angka disajikan dengan pembulatan per komponen alokasi agar total akhir tetap rekonsiliasi ke Rp2.360.000."
+                "text": "==Total akhir direct method dan sequential method harus tetap sama dengan total anggaran awal seluruh departemen, yaitu Rp2.360.000.== Yang berubah adalah distribusi antara Perakitan dan Pengemasan. Pada sequential method, angka disajikan dengan pembulatan per komponen alokasi agar total akhir tetap rekonsiliasi ke Rp2.360.000."
               }
             ]
           },
@@ -2139,7 +2139,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Dalam modul utama, departementalisasi overhead tidak boleh berhenti pada hafalan direct method, step method, dan simultaneous method. Jawaban yang baik harus menunjukkan urutan kerja lengkap: overhead awal dikumpulkan, biaya tidak langsung departemen dialokasikan, biaya departemen jasa didistribusikan ke departemen produksi, tarif overhead departemen dihitung, lalu overhead dibebankan ke produk atau pesanan. Skedul ini penting karena satu kesalahan pada tahap awal akan terbawa sampai tarif departemen."
+        "text": "Dalam modul utama, departementalisasi overhead tidak boleh berhenti pada hafalan direct method, step method, dan simultaneous method. ==Jawaban yang baik harus menunjukkan urutan kerja lengkap: overhead awal dikumpulkan, biaya tidak langsung departemen dialokasikan, biaya departemen jasa didistribusikan ke departemen produksi, tarif overhead departemen dihitung, lalu overhead dibebankan ke produk atau pesanan.== Skedul ini penting karena satu kesalahan pada tahap awal akan terbawa sampai tarif departemen."
       },
       {
         "kind": "table",
@@ -2342,7 +2342,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
         "kind": "callout",
         "variant": "key",
         "title": "Source alignment Batch 10",
-        "text": "Pendalaman ini mengikuti RPS AKBI TM 12 tentang Biaya Overhead Pabrik: Departementalisasi serta Tutor AKBI TM 13 FOH Departmentalization. Fokusnya adalah pemisahan producing department dan service department, direct departmental cost, indirect departmental cost, direct method, step/sequential method, simultaneous/algebraic method, dan tarif overhead departemen."
+        "text": "Pendalaman ini mengikuti RPS AKBI TM 12 tentang Biaya Overhead Pabrik: Departementalisasi serta Tutor AKBI TM 13 FOH Departmentalization. ==Fokusnya adalah pemisahan producing department dan service department, direct departmental cost, indirect departmental cost, direct method, step/sequential method, simultaneous/algebraic method, dan tarif overhead departemen.=="
       },
       {
         "kind": "h3",
@@ -2811,7 +2811,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Departementalisasi overhead pabrik adalah proses membagi pabrik menjadi beberapa departemen agar biaya overhead dapat dihitung dan dikendalikan secara lebih tepat. Pendekatan ini membuat biaya overhead tidak hanya dikumpulkan dalam satu kelompok besar, tetapi dipisahkan berdasarkan departemen yang menikmati atau menyebabkan biaya tersebut."
+        "text": "==Departementalisasi overhead pabrik adalah proses membagi pabrik menjadi beberapa departemen agar biaya overhead dapat dihitung dan dikendalikan secara lebih tepat.== Pendekatan ini membuat biaya overhead tidak hanya dikumpulkan dalam satu kelompok besar, tetapi dipisahkan berdasarkan departemen yang menikmati atau menyebabkan biaya tersebut."
       },
       {
         "kind": "p",
@@ -2823,15 +2823,15 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Factory survey digunakan untuk mengumpulkan data dasar alokasi. Data ini dapat berupa jumlah karyawan, kilowatt-hour, horsepower-hour, luas lantai, biaya bahan yang diminta, jam mesin, dan jam tenaga kerja langsung. Pemilihan dasar alokasi harus dekat dengan penyebab biaya. Jika dasar alokasi salah, biaya produk menjadi tidak akurat."
+        "text": "Factory survey digunakan untuk mengumpulkan data dasar alokasi. Data ini dapat berupa jumlah karyawan, kilowatt-hour, horsepower-hour, luas lantai, biaya bahan yang diminta, jam mesin, dan jam tenaga kerja langsung. ==Pemilihan dasar alokasi harus dekat dengan penyebab biaya.== Jika dasar alokasi salah, biaya produk menjadi tidak akurat."
       },
       {
         "kind": "p",
-        "text": "Biaya departemen jasa harus dialokasikan ke departemen produksi sebelum tarif overhead dihitung. Direct method mengabaikan jasa antar departemen jasa dan langsung mengalokasikan biaya jasa ke departemen produksi. Step method mengalokasikan biaya departemen jasa secara bertahap dan mengakui sebagian hubungan antar departemen jasa. Simultaneous method mengakui hubungan timbal balik secara penuh dengan persamaan aljabar."
+        "text": "==Biaya departemen jasa harus dialokasikan ke departemen produksi sebelum tarif overhead dihitung.== Direct method mengabaikan jasa antar departemen jasa dan langsung mengalokasikan biaya jasa ke departemen produksi. Step method mengalokasikan biaya departemen jasa secara bertahap dan mengakui sebagian hubungan antar departemen jasa. Simultaneous method mengakui hubungan timbal balik secara penuh dengan persamaan aljabar."
       },
       {
         "kind": "p",
-        "text": "Dalam format soal Pra-UAS, direct method dan sequential method harus disajikan dengan urutan kerja yang jelas: tabel data awal, rasio alokasi, tabel alokasi biaya departemen jasa, dan anggaran setelah alokasi. Total akhir harus tetap sama dengan total anggaran semua departemen sebelum alokasi."
+        "text": "==Dalam format soal Pra-UAS, direct method dan sequential method harus disajikan dengan urutan kerja yang jelas: tabel data awal, rasio alokasi, tabel alokasi biaya departemen jasa, dan anggaran setelah alokasi.== Total akhir harus tetap sama dengan total anggaran semua departemen sebelum alokasi."
       },
       {
         "kind": "p",
@@ -2981,7 +2981,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Dalam silabi AKBI, TM 13 membahas **Perhitungan Biaya Berdasarkan Aktivitas atau Activity Based Costing - ABC** dengan sumber CU 13 dan IMN 12. Pada sumber Carter yang tersedia, topik ini masuk dalam bagian **Activity Accounting: Activity-Based Costing and Activity-Based Management**."
+        "text": "==Dalam silabi AKBI, TM 13 membahas **Perhitungan Biaya Berdasarkan Aktivitas atau Activity Based Costing - ABC** dengan sumber CU 13 dan IMN 12.== Pada sumber Carter yang tersedia, topik ini masuk dalam bagian **Activity Accounting: Activity-Based Costing and Activity-Based Management**."
       },
       {
         "kind": "h3",
@@ -2989,7 +2989,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Activity Based Costing atau ABC adalah sistem penentuan kos yang membebankan biaya overhead berdasarkan aktivitas yang menyebabkan biaya terjadi. ABC tidak hanya melihat produk sebagai penyebab biaya. ABC melihat bahwa banyak biaya tidak muncul karena jumlah unit yang diproduksi saja, tetapi karena aktivitas seperti setup, pemindahan bahan, inspeksi, perubahan desain, pemrosesan pesanan, dan pelayanan pelanggan."
+        "text": "==Activity Based Costing atau ABC adalah sistem penentuan kos yang membebankan biaya overhead berdasarkan aktivitas yang menyebabkan biaya terjadi.== ABC tidak hanya melihat produk sebagai penyebab biaya. ABC melihat bahwa banyak biaya tidak muncul karena jumlah unit yang diproduksi saja, tetapi karena aktivitas seperti setup, pemindahan bahan, inspeksi, perubahan desain, pemrosesan pesanan, dan pelayanan pelanggan."
       },
       {
         "kind": "p",
@@ -3001,7 +3001,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "TM 13 penting karena menghubungkan perhitungan kos dengan keputusan manajerial. ABC tidak hanya dipakai untuk menghitung harga pokok produk. ABC juga membantu manajemen melihat aktivitas yang mahal, aktivitas yang tidak memberi nilai tambah, produk yang terlihat menguntungkan tetapi sebenarnya mahal, dan produk yang terlihat rugi padahal sebenarnya masih kompetitif."
+        "text": "==TM 13 penting karena menghubungkan perhitungan kos dengan keputusan manajerial.== ABC tidak hanya dipakai untuk menghitung harga pokok produk. ABC juga membantu manajemen melihat aktivitas yang mahal, aktivitas yang tidak memberi nilai tambah, produk yang terlihat menguntungkan tetapi sebenarnya mahal, dan produk yang terlihat rugi padahal sebenarnya masih kompetitif."
       },
       {
         "kind": "h3",
@@ -3045,7 +3045,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Activity accounting adalah pendekatan akuntansi biaya yang melihat aktivitas sebagai pusat perhatian. Dalam pendekatan ini, manajemen tidak hanya bertanya “berapa kos produk?”, tetapi juga “aktivitas apa yang menyebabkan biaya tersebut?”."
+        "text": "==Activity accounting adalah pendekatan akuntansi biaya yang melihat aktivitas sebagai pusat perhatian.== Dalam pendekatan ini, manajemen tidak hanya bertanya “berapa kos produk?”, tetapi juga “aktivitas apa yang menyebabkan biaya tersebut?”."
       },
       {
         "kind": "p",
@@ -3233,7 +3233,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Sistem tradisional tidak selalu salah. Sistem tradisional masih dapat memadai jika produk homogen, proses sederhana, overhead kecil, dan aktivitas non-volume tidak material. ABC menjadi lebih penting jika struktur biaya kompleks dan produk yang diproduksi sangat beragam."
+        "text": "Sistem tradisional tidak selalu salah. Sistem tradisional masih dapat memadai jika produk homogen, proses sederhana, overhead kecil, dan aktivitas non-volume tidak material. ==ABC menjadi lebih penting jika struktur biaya kompleks dan produk yang diproduksi sangat beragam.=="
       },
       {
         "kind": "h3",
@@ -3241,7 +3241,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Resource driver adalah dasar untuk membebankan biaya sumber daya ke aktivitas. Resource driver menjawab pertanyaan: sumber daya ini dipakai oleh aktivitas apa?"
+        "text": "==Resource driver adalah dasar untuk membebankan biaya sumber daya ke aktivitas.== Resource driver menjawab pertanyaan: sumber daya ini dipakai oleh aktivitas apa?"
       },
       {
         "kind": "p",
@@ -3292,7 +3292,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Activity driver adalah dasar untuk membebankan biaya aktivitas ke produk atau objek biaya akhir. Activity driver menjawab pertanyaan: produk ini menggunakan aktivitas seberapa banyak?"
+        "text": "==Activity driver adalah dasar untuk membebankan biaya aktivitas ke produk atau objek biaya akhir.== Activity driver menjawab pertanyaan: produk ini menggunakan aktivitas seberapa banyak?"
       },
       {
         "kind": "p",
@@ -3341,7 +3341,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Final cost object adalah objek biaya akhir yang menerima pembebanan biaya. Dalam konteks manufaktur, final cost object biasanya berupa produk, pesanan, pelanggan, atau lini produk."
+        "text": "==Final cost object adalah objek biaya akhir yang menerima pembebanan biaya.== Dalam konteks manufaktur, final cost object biasanya berupa produk, pesanan, pelanggan, atau lini produk."
       },
       {
         "kind": "p",
@@ -3445,7 +3445,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Batch-level cost adalah biaya yang muncul setiap kali perusahaan memproduksi satu batch. Biaya ini tidak bergantung pada jumlah unit dalam batch, tetapi bergantung pada jumlah batch."
+        "text": "==Batch-level cost adalah biaya yang muncul setiap kali perusahaan memproduksi satu batch.== Biaya ini tidak bergantung pada jumlah unit dalam batch, tetapi bergantung pada jumlah batch."
       },
       {
         "kind": "p",
@@ -3496,7 +3496,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Product-level cost adalah biaya yang muncul untuk mendukung keberadaan suatu jenis produk. Biaya ini tidak bergantung langsung pada jumlah unit atau jumlah batch."
+        "text": "==Product-level cost adalah biaya yang muncul untuk mendukung keberadaan suatu jenis produk.== Biaya ini tidak bergantung langsung pada jumlah unit atau jumlah batch."
       },
       {
         "kind": "p",
@@ -3539,7 +3539,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Product-level cost penting dalam perusahaan yang memiliki banyak variasi produk. Produk dengan volume kecil tetapi membutuhkan banyak desain khusus dapat mengonsumsi biaya besar."
+        "text": "==Product-level cost penting dalam perusahaan yang memiliki banyak variasi produk.== Produk dengan volume kecil tetapi membutuhkan banyak desain khusus dapat mengonsumsi biaya besar."
       },
       {
         "kind": "h3",
@@ -4023,7 +4023,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Format ini dipakai ketika soal ABC menyediakan biaya overhead per aktivitas, driver aktivitas, serta data konsumsi driver per produk. Contohnya adalah kasus Bangtan Company pada soal Pra-UAS."
+        "text": "Format ini dipakai ketika soal ABC menyediakan biaya overhead per aktivitas, driver aktivitas, serta data konsumsi driver per produk. ==Contohnya adalah kasus Bangtan Company pada soal Pra-UAS.=="
       },
       {
         "kind": "table",
@@ -4565,11 +4565,11 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
           },
           {
             "kind": "p",
-            "text": "Common adalah produk volume tinggi. Sistem tradisional membebankan overhead terlalu besar ke produk ini karena dasar pembebanan memakai jam tenaga kerja langsung. Common memakai 98% jam tenaga kerja langsung, tetapi tidak memakai 98% aktivitas setup dan desain."
+            "text": "==Common adalah produk volume tinggi.== Sistem tradisional membebankan overhead terlalu besar ke produk ini karena dasar pembebanan memakai jam tenaga kerja langsung. Common memakai 98% jam tenaga kerja langsung, tetapi tidak memakai 98% aktivitas setup dan desain."
           },
           {
             "kind": "p",
-            "text": "Special adalah produk volume rendah. Produk ini hanya memakai sedikit jam tenaga kerja langsung, tetapi memakai aktivitas setup dan desain dalam jumlah besar. Karena itu, sistem tradisional membuat Special terlihat murah. ABC menunjukkan bahwa Special sebenarnya mengonsumsi overhead jauh lebih besar."
+            "text": "==Special adalah produk volume rendah.== Produk ini hanya memakai sedikit jam tenaga kerja langsung, tetapi memakai aktivitas setup dan desain dalam jumlah besar. Karena itu, sistem tradisional membuat Special terlihat murah. ABC menunjukkan bahwa Special sebenarnya mengonsumsi overhead jauh lebih besar."
           },
           {
             "kind": "p",
@@ -4816,7 +4816,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
             "kind": "callout",
             "variant": "info",
             "title": "Kontrol Jawaban",
-            "text": "Total FOH yang dibebankan ke Boneka dan Bantal harus sama dengan total estimasi overhead: Rp8.820.000 + Rp6.430.000 = Rp15.250.000. Jika total ini tidak sama dengan Rp8.000.000 + Rp3.950.000 + Rp3.300.000, berarti ada kesalahan tarif atau konsumsi driver."
+            "text": "==Total FOH yang dibebankan ke Boneka dan Bantal harus sama dengan total estimasi overhead: Rp8.820.000 + Rp6.430.000 = Rp15.250.000.== Jika total ini tidak sama dengan Rp8.000.000 + Rp3.950.000 + Rp3.300.000, berarti ada kesalahan tarif atau konsumsi driver."
           }
         ]
       },
@@ -4889,8 +4889,8 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
         "prompt": "Buka setelah menghitung tarif aktivitas dan kos per unit ABC.",
         "blocks": [
           { "kind": "p", "text": "Tarif aktivitas dihitung dari biaya pool dibagi total driver. Setup rate Rp12.800, design rate Rp15.800, dan lighting rate Rp825." },
-          { "kind": "p", "text": "FOH ABC Boneka adalah Rp4.800.000 + Rp2.370.000 + Rp1.650.000 = Rp8.820.000. FOH ABC Bantal adalah Rp3.200.000 + Rp1.580.000 + Rp1.650.000 = Rp6.430.000." },
-          { "kind": "p", "text": "Kos per unit Boneka adalah Rp56.320.000 ÷ 750 = Rp75.093,33. Kos per unit Bantal adalah Rp38.930.000 ÷ 500 = Rp77.860. Total FOH yang dialokasikan harus sama dengan total cost pool Rp15.250.000." }
+          { "kind": "p", "text": "==FOH ABC Boneka adalah Rp4.800.000 + Rp2.370.000 + Rp1.650.000 = Rp8.820.000.== FOH ABC Bantal adalah Rp3.200.000 + Rp1.580.000 + Rp1.650.000 = Rp6.430.000." },
+          { "kind": "p", "text": "==Kos per unit Boneka adalah Rp56.320.000 ÷ 750 = Rp75.093,33.== Kos per unit Bantal adalah Rp38.930.000 ÷ 500 = Rp77.860. Total FOH yang dialokasikan harus sama dengan total cost pool Rp15.250.000." }
         ]
       },
       {
@@ -4963,7 +4963,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "ABC harus dikerjakan sebagai sistem dua tahap. Tahap pertama menelusuri biaya sumber daya ke activity cost pool, sedangkan tahap kedua membebankan biaya aktivitas ke final cost object. Jika dua tahap ini dicampur, mahasiswa biasanya salah membedakan resource driver dan activity driver."
+        "text": "==ABC harus dikerjakan sebagai sistem dua tahap.== Tahap pertama menelusuri biaya sumber daya ke activity cost pool, sedangkan tahap kedua membebankan biaya aktivitas ke final cost object. Jika dua tahap ini dicampur, mahasiswa biasanya salah membedakan resource driver dan activity driver."
       },
       {
         "kind": "table",
@@ -5370,7 +5370,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Activity Based Costing adalah sistem penentuan kos yang membebankan overhead berdasarkan aktivitas yang dikonsumsi oleh produk. ABC muncul karena sistem biaya tradisional sering terlalu sederhana ketika perusahaan memiliki overhead besar, proses kompleks, dan produk yang beragam. Sistem tradisional biasanya membebankan overhead dengan dasar volume, seperti jam tenaga kerja langsung atau jam mesin. Cara ini dapat menimbulkan distorsi jika banyak biaya sebenarnya dipicu oleh aktivitas non-volume."
+        "text": "==Activity Based Costing adalah sistem penentuan kos yang membebankan overhead berdasarkan aktivitas yang dikonsumsi oleh produk.== ABC muncul karena sistem biaya tradisional sering terlalu sederhana ketika perusahaan memiliki overhead besar, proses kompleks, dan produk yang beragam. Sistem tradisional biasanya membebankan overhead dengan dasar volume, seperti jam tenaga kerja langsung atau jam mesin. Cara ini dapat menimbulkan distorsi jika banyak biaya sebenarnya dipicu oleh aktivitas non-volume."
       },
       {
         "kind": "p",
@@ -5378,7 +5378,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Dalam ABC, biaya dan driver dibagi menjadi beberapa level. Unit-level cost muncul setiap kali unit dibuat. Batch-level cost muncul setiap kali batch diproses. Product-level cost muncul untuk mendukung jenis produk tertentu. Plant-level cost muncul untuk mempertahankan fasilitas pabrik secara umum. Pembagian ini penting karena tidak semua biaya meningkat sejalan dengan jumlah unit."
+        "text": "Dalam ABC, biaya dan driver dibagi menjadi beberapa level. Unit-level cost muncul setiap kali unit dibuat. Batch-level cost muncul setiap kali batch diproses. Product-level cost muncul untuk mendukung jenis produk tertentu. Plant-level cost muncul untuk mempertahankan fasilitas pabrik secara umum. ==Pembagian ini penting karena tidak semua biaya meningkat sejalan dengan jumlah unit.=="
       },
       {
         "kind": "p",
@@ -5400,11 +5400,11 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "ABC tetap memiliki keterbatasan. ABC masih merupakan sistem alokasi. Plant-level cost sering tetap sulit ditelusuri secara akurat ke produk. ABC juga membutuhkan data yang lebih rinci, survei aktivitas, dan perubahan cara berpikir manajer. Karena itu, ABC tidak selalu harus menggantikan sistem tradisional. Perusahaan dapat memakai ABC untuk studi khusus, keputusan harga, analisis produk, dan perbaikan proses."
+        "text": "ABC tetap memiliki keterbatasan. ==ABC masih merupakan sistem alokasi.== Plant-level cost sering tetap sulit ditelusuri secara akurat ke produk. ABC juga membutuhkan data yang lebih rinci, survei aktivitas, dan perubahan cara berpikir manajer. Karena itu, ABC tidak selalu harus menggantikan sistem tradisional. Perusahaan dapat memakai ABC untuk studi khusus, keputusan harga, analisis produk, dan perbaikan proses."
       },
       {
         "kind": "p",
-        "text": "Inti TM 13 adalah memahami bahwa kos produk tidak hanya ditentukan oleh bahan, tenaga kerja, dan volume produksi. Kos juga ditentukan oleh aktivitas yang dikonsumsi produk. Semakin kompleks aktivitas yang dibutuhkan suatu produk, semakin besar kos yang seharusnya dibebankan kepada produk tersebut."
+        "text": "==Inti TM 13 adalah memahami bahwa kos produk tidak hanya ditentukan oleh bahan, tenaga kerja, dan volume produksi.== Kos juga ditentukan oleh aktivitas yang dikonsumsi produk. Semakin kompleks aktivitas yang dibutuhkan suatu produk, semakin besar kos yang seharusnya dibebankan kepada produk tersebut."
       },
 
       {
@@ -5562,7 +5562,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
         "kind": "callout",
         "variant": "warning",
         "title": "Trap UAS Batch 11",
-        "text": "Jangan memakai satu tarif tradisional ketika soal secara eksplisit meminta ABC. Jangan mencampur total driver seluruh pool dengan driver satu produk. Jangan menyebut produk volume rendah selalu mahal; yang menentukan adalah konsumsi aktivitasnya. Jangan membagi total FOH ABC dengan total unit seluruh produk jika yang diminta kos per unit masing-masing produk."
+        "text": "Jangan memakai satu tarif tradisional ketika soal secara eksplisit meminta ABC. Jangan mencampur total driver seluruh pool dengan driver satu produk. ==Jangan menyebut produk volume rendah selalu mahal; yang menentukan adalah konsumsi aktivitasnya.== Jangan membagi total FOH ABC dengan total unit seluruh produk jika yang diminta kos per unit masing-masing produk."
       },
       {
         "kind": "h3",
@@ -5698,7 +5698,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Dalam silabi AKBI, TM 14 secara khusus berisi **Review Materi UAS** setelah TM 8 sampai TM 13. Cakupan UAS sebelumnya memuat produk gabungan dan produk sampingan, bahan baku langsung, tenaga kerja langsung, overhead pabrik, departementalisasi overhead, dan Activity Based Costing."
+        "text": "==Dalam silabi AKBI, TM 14 secara khusus berisi **Review Materi UAS** setelah TM 8 sampai TM 13.== Cakupan UAS sebelumnya memuat produk gabungan dan produk sampingan, bahan baku langsung, tenaga kerja langsung, overhead pabrik, departementalisasi overhead, dan Activity Based Costing."
       },
       {
         "kind": "h3",
@@ -5706,7 +5706,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "TM 14 bukan materi teori baru. TM 14 adalah sesi penguatan untuk menghadapi UAS. Fokus utamanya adalah mengulang konsep, rumus, format perhitungan, dan pola penyelesaian soal dari materi setelah UTS."
+        "text": "TM 14 bukan materi teori baru. ==TM 14 adalah sesi penguatan untuk menghadapi UAS.== Fokus utamanya adalah mengulang konsep, rumus, format perhitungan, dan pola penyelesaian soal dari materi setelah UTS."
       },
       {
         "kind": "p",
@@ -5714,11 +5714,11 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Benang merah seluruh materi UAS adalah **penentuan kos produksi yang lebih akurat**. Mahasiswa tidak hanya diminta menghafal definisi, tetapi juga mampu memilih metode perhitungan yang sesuai. Kesalahan utama biasanya terjadi karena mahasiswa langsung menghitung tanpa membaca karakter soal."
+        "text": "==Benang merah seluruh materi UAS adalah **penentuan kos produksi yang lebih akurat**.== Mahasiswa tidak hanya diminta menghafal definisi, tetapi juga mampu memilih metode perhitungan yang sesuai. Kesalahan utama biasanya terjadi karena mahasiswa langsung menghitung tanpa membaca karakter soal."
       },
       {
         "kind": "p",
-        "text": "Simulasi ini disusun untuk membantu mahasiswa memahami urutan berpikir. Setiap soal UAS perlu dibaca dengan pola yang sama: apa objek biayanya, biaya apa saja yang tersedia, metode apa yang diminta, dasar alokasi apa yang dipakai, dan format laporan apa yang harus dibuat."
+        "text": "Simulasi ini disusun untuk membantu mahasiswa memahami urutan berpikir. ==Setiap soal UAS perlu dibaca dengan pola yang sama: apa objek biayanya, biaya apa saja yang tersedia, metode apa yang diminta, dasar alokasi apa yang dipakai, dan format laporan apa yang harus dibuat.=="
       },
       {
         "kind": "h3",
@@ -6079,7 +6079,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Overhead pabrik adalah semua biaya produksi selain bahan baku langsung dan tenaga kerja langsung. Overhead sulit ditelusuri langsung ke produk, sehingga perlu dibebankan dengan tarif."
+        "text": "==Overhead pabrik adalah semua biaya produksi selain bahan baku langsung dan tenaga kerja langsung.== Overhead sulit ditelusuri langsung ke produk, sehingga perlu dibebankan dengan tarif."
       },
       {
         "kind": "p",
@@ -6186,7 +6186,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Biaya departemen jasa harus dialokasikan ke departemen produksi. Setelah itu, tarif overhead departemen produksi dihitung dan dipakai untuk membebankan overhead ke produk."
+        "text": "==Biaya departemen jasa harus dialokasikan ke departemen produksi.== Setelah itu, tarif overhead departemen produksi dihitung dan dipakai untuk membebankan overhead ke produk."
       },
       {
         "kind": "p",
@@ -7144,7 +7144,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
             "blocks": [
               {
                 "kind": "p",
-                "text": "Seorang karyawan dibayar Rp25.000 per jam untuk 40 jam kerja reguler. Jika jam kerja melebihi 40 jam, tarif lembur adalah Rp30.000 per jam. Karyawan bekerja 45 jam dalam satu minggu."
+                "text": "Seorang karyawan dibayar Rp25.000 per jam untuk 40 jam kerja reguler. ==Jika jam kerja melebihi 40 jam, tarif lembur adalah Rp30.000 per jam.== Karyawan bekerja 45 jam dalam satu minggu."
               },
               {
                 "kind": "h3",
@@ -7174,7 +7174,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
             "blocks": [
               {
                 "kind": "p",
-                "text": "PT Beta mengestimasi overhead pabrik sebesar Rp240.000 dan estimasi jam mesin sebesar 12.000 jam. Pada periode berjalan, jam mesin aktual adalah 10.500 jam. Overhead aktual adalah Rp218.000."
+                "text": "PT Beta mengestimasi overhead pabrik sebesar Rp240.000 dan estimasi jam mesin sebesar 12.000 jam. ==Pada periode berjalan, jam mesin aktual adalah 10.500 jam.== Overhead aktual adalah Rp218.000."
               },
               {
                 "kind": "h3",
@@ -7520,7 +7520,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
             "kind": "callout",
             "variant": "info",
             "title": "Pola Jawaban UAS",
-            "text": "Untuk soal seperti Bangtan, jangan langsung menghitung kos per unit. Urutannya harus: klasifikasi aktivitas → tarif aktivitas → FOH per produk → total kos → kos per unit."
+            "text": "Untuk soal seperti Bangtan, jangan langsung menghitung kos per unit. ==Urutannya harus: klasifikasi aktivitas → tarif aktivitas → FOH per produk → total kos → kos per unit.=="
           }
         ]
       },
@@ -7660,7 +7660,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "Dalam Simulasi UAS, mahasiswa tidak cukup menghafal rumus. Banyak soal meminta format laporan atau skedul kerja. Karena itu, setiap jawaban harus dicek apakah format yang diminta sudah muncul lengkap, bukan hanya hasil akhir angka."
+        "text": "Dalam Simulasi UAS, mahasiswa tidak cukup menghafal rumus. Banyak soal meminta format laporan atau skedul kerja. ==Karena itu, setiap jawaban harus dicek apakah format yang diminta sudah muncul lengkap, bukan hanya hasil akhir angka.=="
       },
       {
         "kind": "table",
@@ -7766,7 +7766,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
         "prompt": "Buka setelah mengisi checkpoint akhir TM14.",
         "blocks": [
           { "kind": "p", "text": "Direct method dan sequential method menggunakan data yang sama, tetapi perlakuan jasa antar departemen jasa berbeda. Karena itu hasil akhir Perakitan dan Pengemasan berbeda, walaupun total akhirnya tetap Rp2.360.000." },
-          { "kind": "p", "text": "ABC Bangtan harus direkonsiliasi ke total cost pool Rp15.250.000. Jika FOH Boneka Rp8.820.000 dan FOH Bantal Rp6.430.000, maka total overhead yang dibebankan sudah lengkap." }
+          { "kind": "p", "text": "==ABC Bangtan harus direkonsiliasi ke total cost pool Rp15.250.000.== Jika FOH Boneka Rp8.820.000 dan FOH Bantal Rp6.430.000, maka total overhead yang dibebankan sudah lengkap." }
         ]
       },
       {
@@ -8091,23 +8091,23 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "TM 14 berfungsi sebagai sesi review untuk menghadapi UAS Akuntansi Biaya. Materi yang direview mencakup TM 8 sampai TM 13. Fokus utamanya adalah menghubungkan teori dengan praktik perhitungan kos. Mahasiswa perlu memahami konsep, rumus, format, dan langkah penyelesaian soal."
+        "text": "TM 14 berfungsi sebagai sesi review untuk menghadapi UAS Akuntansi Biaya. Materi yang direview mencakup TM 8 sampai TM 13. ==Fokus utamanya adalah menghubungkan teori dengan praktik perhitungan kos.== Mahasiswa perlu memahami konsep, rumus, format, dan langkah penyelesaian soal."
       },
       {
         "kind": "p",
-        "text": "TM 8 membahas produk bersama dan produk sampingan. Inti materinya adalah alokasi kos bersama ke beberapa produk yang muncul dari satu proses produksi. Metode utama yang perlu dikuasai adalah nilai jual relatif, harga jual hipotetis, satuan fisik, rata-rata kos per satuan, dan rata-rata tertimbang. Produk sampingan perlu dipahami secara berbeda karena nilai jualnya relatif kecil dibandingkan produk utama."
+        "text": "TM 8 membahas produk bersama dan produk sampingan. ==Inti materinya adalah alokasi kos bersama ke beberapa produk yang muncul dari satu proses produksi.== Metode utama yang perlu dikuasai adalah nilai jual relatif, harga jual hipotetis, satuan fisik, rata-rata kos per satuan, dan rata-rata tertimbang. Produk sampingan perlu dipahami secara berbeda karena nilai jualnya relatif kecil dibandingkan produk utama."
       },
       {
         "kind": "p",
-        "text": "TM 9 membahas bahan baku. Materi ini menuntut pemahaman tentang alur pengadaan bahan, dokumen pembelian, pencatatan bahan, penilaian bahan, dan pengendalian sediaan. Rumus pentingnya adalah kos bahan baku dipakai, pembelian bersih, EOQ, dan reorder point. Mahasiswa juga harus mampu membedakan metode fisik dan perpetual serta memahami FIFO, LIFO, rata-rata bergerak, dan rata-rata tertimbang."
+        "text": "TM 9 membahas bahan baku. Materi ini menuntut pemahaman tentang alur pengadaan bahan, dokumen pembelian, pencatatan bahan, penilaian bahan, dan pengendalian sediaan. ==Rumus pentingnya adalah kos bahan baku dipakai, pembelian bersih, EOQ, dan reorder point.== Mahasiswa juga harus mampu membedakan metode fisik dan perpetual serta memahami FIFO, LIFO, rata-rata bergerak, dan rata-rata tertimbang."
       },
       {
         "kind": "p",
-        "text": "TM 10 membahas tenaga kerja langsung. Materi ini menguji kemampuan mengklasifikasikan tenaga kerja, menghitung upah reguler, lembur, premi lembur, shift premium, bonus, vacation pay, dan holiday pay. Mahasiswa juga perlu memahami jurnal saat gaji terjadi, distribusi gaji, dan pembayaran gaji. Kesalahan yang sering terjadi adalah mencampur tenaga kerja langsung, tenaga kerja tidak langsung, pemasaran, dan administrasi."
+        "text": "TM 10 membahas tenaga kerja langsung. Materi ini menguji kemampuan mengklasifikasikan tenaga kerja, menghitung upah reguler, lembur, premi lembur, shift premium, bonus, vacation pay, dan holiday pay. Mahasiswa juga perlu memahami jurnal saat gaji terjadi, distribusi gaji, dan pembayaran gaji. ==Kesalahan yang sering terjadi adalah mencampur tenaga kerja langsung, tenaga kerja tidak langsung, pemasaran, dan administrasi.=="
       },
       {
         "kind": "p",
-        "text": "TM 11 membahas overhead pabrik yang direncanakan, aktual, dan dibebankan. Inti materinya adalah tarif overhead ditentukan di muka, overhead dibebankan, overhead aktual, dan selisih overhead. Mahasiswa harus mampu menentukan apakah terjadi overhead lebih dibebankan atau kurang dibebankan. Materi ini menjadi dasar untuk memahami departementalisasi overhead dan ABC."
+        "text": "TM 11 membahas overhead pabrik yang direncanakan, aktual, dan dibebankan. ==Inti materinya adalah tarif overhead ditentukan di muka, overhead dibebankan, overhead aktual, dan selisih overhead.== Mahasiswa harus mampu menentukan apakah terjadi overhead lebih dibebankan atau kurang dibebankan. Materi ini menjadi dasar untuk memahami departementalisasi overhead dan ABC."
       },
       {
         "kind": "p",
@@ -8115,15 +8115,15 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "p",
-        "text": "TM 13 membahas Activity Based Costing. ABC membebankan overhead berdasarkan aktivitas, bukan hanya berdasarkan volume. Sistem ini lebih akurat ketika perusahaan memiliki produk yang beragam dan overhead yang besar. Konsep pentingnya adalah activity cost pool, resource driver, activity driver, unit-level cost, batch-level cost, product-level cost, dan plant-level cost. ABC juga berguna untuk Activity Based Management karena membantu manajemen melihat aktivitas yang mahal dan tidak memberi nilai tambah."
+        "text": "TM 13 membahas Activity Based Costing. ABC membebankan overhead berdasarkan aktivitas, bukan hanya berdasarkan volume. Sistem ini lebih akurat ketika perusahaan memiliki produk yang beragam dan overhead yang besar. ==Konsep pentingnya adalah activity cost pool, resource driver, activity driver, unit-level cost, batch-level cost, product-level cost, dan plant-level cost.== ABC juga berguna untuk Activity Based Management karena membantu manajemen melihat aktivitas yang mahal dan tidak memberi nilai tambah."
       },
       {
         "kind": "p",
-        "text": "Secara umum, UAS Akuntansi Biaya tidak cukup dijawab dengan hafalan. Mahasiswa perlu membaca soal dengan cermat, memilih metode yang tepat, membuat tabel, menghitung bertahap, dan memberi kesimpulan. Format jawaban yang rapi sangat penting karena sebagian besar soal UAS bersifat perhitungan dan analisis."
+        "text": "Secara umum, UAS Akuntansi Biaya tidak cukup dijawab dengan hafalan. Mahasiswa perlu membaca soal dengan cermat, memilih metode yang tepat, membuat tabel, menghitung bertahap, dan memberi kesimpulan. ==Format jawaban yang rapi sangat penting karena sebagian besar soal UAS bersifat perhitungan dan analisis.=="
       },
       {
         "kind": "p",
-        "text": "Kunci utama TM 14 adalah memahami hubungan antar materi. Produk bersama dan bahan baku berhubungan dengan penentuan kos produksi. Tenaga kerja dan overhead berhubungan dengan pembebanan biaya produksi. Departementalisasi dan ABC berhubungan dengan peningkatan ketepatan pembebanan overhead. Jika hubungan ini dipahami, soal UAS menjadi lebih mudah dikerjakan secara sistematis."
+        "text": "==Kunci utama TM 14 adalah memahami hubungan antar materi.== Produk bersama dan bahan baku berhubungan dengan penentuan kos produksi. Tenaga kerja dan overhead berhubungan dengan pembebanan biaya produksi. Departementalisasi dan ABC berhubungan dengan peningkatan ketepatan pembebanan overhead. Jika hubungan ini dipahami, soal UAS menjadi lebih mudah dikerjakan secara sistematis."
       },
       {
         "kind": "h2",
@@ -8565,7 +8565,7 @@ export const AKBI_REVIEW_UAS_READING: AkbiReviewReading =
     },
     {
       "kind": "p",
-      "text": "MAMAMIA Manufacturing Company menggunakan sistem JIT yang matang. Akun persediaannya adalah RIP dan Barang Jadi. Biaya konversi dibebankan ke COGS, lalu saldo persediaan disesuaikan pada akhir bulan. Tugas utama bagian ini adalah membuat jurnal, backflush bahan, dan akun T untuk RIP, FOH-Control, Finished Goods, dan COGS."
+      "text": "MAMAMIA Manufacturing Company menggunakan sistem JIT yang matang. ==Akun persediaannya adalah RIP dan Barang Jadi.== Biaya konversi dibebankan ke COGS, lalu saldo persediaan disesuaikan pada akhir bulan. Tugas utama bagian ini adalah membuat jurnal, backflush bahan, dan akun T untuk RIP, FOH-Control, Finished Goods, dan COGS."
     },
     {
       "kind": "table",
@@ -8781,7 +8781,7 @@ export const AKBI_REVIEW_UAS_READING: AkbiReviewReading =
     },
     {
       "kind": "p",
-      "text": "Standar produksi seorang karyawan adalah 35 unit per jam dalam 6 jam sehari. Tarif upah Rp1.500 per jam. Untuk output di atas standar, insentif diberikan sebesar 70% dari tarif upah untuk ekuivalen jam kelebihan produksi."
+      "text": "==Standar produksi seorang karyawan adalah 35 unit per jam dalam 6 jam sehari.== Tarif upah Rp1.500 per jam. Untuk output di atas standar, insentif diberikan sebesar 70% dari tarif upah untuk ekuivalen jam kelebihan produksi."
     },
     {
       "kind": "table",

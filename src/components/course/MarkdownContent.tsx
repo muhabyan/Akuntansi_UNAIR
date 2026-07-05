@@ -36,7 +36,7 @@ export function renderText(text: string): React.ReactNode[] {
     }
     
     if (part.startsWith('==') && part.endsWith('==')) {
-      return <strong key={index} className="text-blue-600 dark:text-blue-400 font-extrabold">{part.slice(2, -2)}</strong>;
+      return <mark key={index} className="bg-yellow-200/80 dark:bg-yellow-400/30 text-yellow-900 dark:text-yellow-200 px-1 py-0.5 rounded-sm font-semibold">{part.slice(2, -2)}</mark>;
     }
 
     if (part.startsWith('*') && part.endsWith('*')) {
