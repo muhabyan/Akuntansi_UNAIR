@@ -444,8 +444,8 @@ export const MNU101_UAS_SIMULATOR: QuizQuestion[] = [
       "Collecting Data -> Storing Data -> Updating Data -> Processing Data -> Presenting Information",
       "Processing Data -> Collecting Data -> Storing Data -> Updating Data -> Presenting Information"
     ],
-    "answer": 0,
-    "explanation": "Urutan MIS yang standar: (1) Mengumpulkan data mentah (Collecting), (2) Memperbarui data terbaru (Updating), (3) Memproses data (Processing), (4) Menyimpan data (Storing), dan (5) Menyajikan informasi kepada pengambil keputusan (Presenting)."
+    "answer": 2,
+    "explanation": "Urutan proses MIS yang standar sesuai materi: (1) Collecting Data — mengumpulkan data mentah dari transaksi, sensor, survei; (2) Storing Data — menyimpan data dalam database yang aman; (3) Updating Data — memastikan data terbaru dan tidak duplikat; (4) Processing Data — mengolah data menjadi informasi bermakna; (5) Presenting Information — menyajikan output kepada pengambil keputusan melalui dashboard atau laporan."
   },
   {
     "q": "Sistem informasi berbasis komputer yang menyediakan laporan rekapitulasi kinerja operasional rutin dan historis bagi manajer tingkat menengah untuk pemantauan harian/bulanan disebut...",
