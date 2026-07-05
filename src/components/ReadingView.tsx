@@ -18,16 +18,7 @@ interface ReadingViewProps {
   onSelectTm: (tm: number) => void;
 }
 
-function renderText(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((p, i) =>
-    p.startsWith('**') && p.endsWith('**') ? (
-      <strong key={i} className="font-semibold text-gray-900 dark:text-gray-100">{p.slice(2, -2)}</strong>
-    ) : (
-      <span key={i}>{p}</span>
-    )
-  );
-}
+import { renderText } from './course/MarkdownContent';
 
 const CALLOUT_STYLE: Record<CalloutVariant, { icon: ReactNode; cls: string; label: string }> = {
   info: { icon: <Info size={18} className="text-blue-600 dark:text-blue-400" />, cls: 'border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/20', label: 'Info' },

@@ -1,0 +1,1008 @@
+Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   
+Tm  8  -  [Produk  Gabungan  dan  Produk  Sampingan]  
+PT  Guardians  memproses  bahan  baku  melalui  satu  proses  produksi  bersama  (joint  process)  
+yang
+ 
+menghasilkan
+ 
+empat
+ 
+produk,
+ 
+yaitu
+ 
+Produk
+ 
+A,
+ 
+B,
+ 
+C,
+ 
+dan
+ 
+D.
+ 
+Setelah
+ 
+mencapai
+ 
+titik
+ 
+pisah
+ 
+(split-off
+ 
+point),
+ 
+masing-masing
+ 
+produk
+ 
+dapat
+ 
+langsung
+ 
+dijual
+ 
+atau
+ 
+diproses
+ 
+lebih
+ 
+lanjut
+ 
+untuk
+ 
+meningkatkan
+ 
+nilai
+ 
+jualnya.
+ 
+ 
+Jumlah  biaya  bersama  (joint  cost)  yang  terjadi  sebelum  split-off  adalah  Rp240.000.000 .  
+Data  produksi  dan  penjualan  selama  periode  berjalan  adalah  sebagai  berikut:  
+ 
+Produk  
+Volume  Produksi  
+Ukuran  Fisik  per  Unit  (kg)  
+Harga  Jual  per  Unit  saat  Split-off  
+Biaya  Proses  Lanjutan  per  Unit  
+Harga  Jual  per  Unit  Setelah  Diproses  
+A  8.000  5  Rp90.000  Rp8.000  Rp105.000  
+B  6.000  4  Rp70.000  Rp6.000  Rp82.000  
+C  4.000  3  Rp50.000  Rp5.000  Rp62.000  
+D  2.000  2  Rp30.000  Rp3.000  Rp40.000  
+ 
+Selain  itu,  perusahaan  menetapkan  bobot  kualitas  sebagai  berikut:  
+ 
+Produk  Bobot  
+A  4  
+B  3  
+C  2  
+D  1  
+ Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Hitunglah  alokasi  joint  cost  masing-masing  produk  dengan  menggunakan  metode  dibawah:  
+1.  metode  harga  pasar  relatif.  
+2.  metode  harga  pasar  hipotesis.  
+3.  metode  unit  rata-rata  
+4.  metode  rata-rata  tertimbang  
+5.  metode  unit  produksi  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Tm  9  +  Tm  10  -  [Perencanaan  dan  Pengendalian  Bahan  Baku  Langsung  +  Backflush]  
+PT  MAJU  JAYA  Manufacturing  Company  memiliki  sistem  produksi  JIT  yang  sudah  matang  
+dengan
+ 
+rata-rata
+ 
+waktu
+ 
+siklus
+ 
+kurang
+ 
+dari
+ 
+1
+ 
+hari.
+ 
+Total
+ 
+waktu
+ 
+yang
+ 
+dibutuhkan
+ 
+dari
+ 
+penerimaan
+ 
+bahan
+ 
+baku
+ 
+sampai
+ 
+penyelesaian
+ 
+barang
+ 
+jadi
+ 
+adalah
+ 
+kurang
+ 
+dari
+ 
+5
+ 
+hari.
+ 
+Perusahaan
+ 
+menggunakan
+ 
+akun
+ 
+Raw
+ 
+and
+ 
+In
+ 
+Process
+ 
+(RIP)
+ 
+dan
+ 
+akun
+ 
+Barang
+ 
+Jadi
+ 
+sebagai
+ 
+akun
+ 
+persediaannya.
+ 
+Terdapat
+ 
+akun
+ 
+terpisah
+ 
+dengan
+ 
+judul
+ 
+Perlengkapan
+ 
+untuk
+ 
+bahan
+ 
+baku
+ 
+tidak
+ 
+langsung.
+ 
+Perusahaan
+ 
+membebankan
+ 
+seluruh
+ 
+biaya
+ 
+konversi
+ 
+ke
+ 
+akun
+ 
+Harga
+ 
+Pokok
+ 
+Produksi.
+ 
+Pada
+ 
+akhir
+ 
+setiap
+ 
+bulan,
+ 
+seluruh
+ 
+biaya
+ 
+konversi
+ 
+diestimasi
+ 
+dan
+ 
+saldo
+ 
+akun
+ 
+persediaan
+ 
+disesuaikan.
+ 
+Biaya
+ 
+bahan
+ 
+baku
+ 
+di-backflush
+ 
+dari
+ 
+RIP
+ 
+ke
+ 
+Barang
+ 
+Jadi
+ 
+dan
+ 
+dari
+ 
+Barang
+ 
+Jadi
+ 
+ke
+ 
+Harga
+ 
+Pokok
+ 
+Penjualan.
+ 
+Informasi
+ 
+berikut
+ 
+merupakan
+ 
+ikhtisar
+ 
+transaksi
+ 
+dan
+ 
+informasi
+ 
+lainnya
+ 
+untuk
+ 
+bulan
+ 
+Juni
+ 
+2025:
+ 
+Saldo  per  31  Mei  2025   
+Akun   Saldo  
+RIP   Rp420.000.000  
+Barang  Jadi   Rp650.000.000  
+Perlengkapan   Rp90.000.00   
+Saldo  RIP  tanggal  31  Mei  2025  terdiri  atas  biaya  bahan  baku  sebesar  Rp315.000.000,  yang  
+hampir
+ 
+seluruhnya
+ 
+belum
+ 
+diproses,
+ 
+ditambah
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+sebesar
+ 
+Rp35.500.000
+ 
+yang
+ 
+dibebankan
+ 
+ke
+ 
+pekerjaan
+ 
+yang
+ 
+telah
+ 
+diproses
+ 
+sebagian.
+ 
+Saldo
+ 
+Barang
+ 
+Jadi
+ 
+terdiri
+ 
+atas
+ 
+biaya
+ 
+bahan
+ 
+baku
+ 
+sebesar
+ 
+Rp410.000.000
+ 
+dan
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+sebesar
+ 
+Rp215.400.000.
+ 
+Saldo  per  30  Juni  2025   
+Akun   Saldo  
+RIP   Rp510.000.000  
+Barang  Jadi   Rp830.600.000  
+Perlengkapan   Rp82.000.00   
+ 
+ Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Saldo  RIP  tanggal  30  Juni  2025  terdiri  atas  biaya  bahan  baku  sebesar  Rp460.000.000,  yang  
+hampir
+ 
+seluruhnya
+ 
+belum
+ 
+diproses,
+ 
+ditambah
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+sebesar
+ 
+Rp50.800.000.
+ 
+Saldo
+ 
+Barang
+ 
+Jadi
+ 
+terdiri
+ 
+atas
+ 
+biaya
+ 
+bahan
+ 
+baku
+ 
+sebesar
+ 
+Rp550.000.000
+ 
+dan
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+sebesar
+ 
+Rp280.600.000.
+ 
+Berikut  ini  transaksi  yang  terjadi:   
+a.  Bahan  baku  yang  diterima  dan  dibeli  secara  kredit  sebesar  Rp1.050.000.000  
+b.  Bahan  baku  tidak  langsung  yang  digunakan  sebesar  Rp3.000.000  
+c.  Beban  gaji  dengan  rincian  berikut  dibebankan  dan  dibayar:  
+●  Tenaga  kerja  langsung  :  Rp720.000.000  
+●  Tenaga  kerja  tidak  langsung  :  Rp180.000.000  
+●  Gaji  bagian  pemasaran  :  Rp210.000.000  
+●  Gaji  bagian  administrasi  :  Rp150.000.000  
+d.  Beban  overhead  pabrik:  
+●  Penyusutan  :  Rp95.000.000  
+●  Asuransi  :  Rp55.000.000  
+●  Lain-lain  :  Rp70.000.000  (Rp50.000.000  dibayar  tunai  dan  Rp20.000.000  
+dibeli
+ 
+secara
+ 
+kredit)
+ 
+e.  Overhead  yang  diakumulasikan  dalam  akun  Pengendali  Overhead  Pabrik  dibebankan  
+ke
+ 
+Harga
+ 
+Pokok
+ 
+Produksi.
+ 
+f.  Komponen  biaya  bahan  baku  atas  pekerjaan  yang  telah  selesai  di-backflush  dari  RIP  
+ke
+ 
+Barang
+ 
+Jadi.
+ 
+g.  Komponen  biaya  bahan  baku  atas  barang  yang  telah  dijual  di-backflush  dari  Barang  
+Jadi
+ 
+ke
+ 
+Harga
+ 
+Pokok
+ 
+Penjualan.
+ 
+h.  Saldo  akhir  dalam  akun  persediaan  ditetapkan  dengan  menyesuaikan  komponen  biaya  
+konversi.
+ 
+DIMINTA  
+1.  Buatlah  ayat  jurnal  berdasarkan  informasi  di  atas!   
+2.  Buat  akun  T  yang  lengkap  untuk  RIP,  Pengendali  Overhead  Pabrik,  Barang  Jadi,  dan  
+Harga
+ 
+Pokok
+ 
+Penjualan
+ 
+ 
+ Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Tm  11  -  [Perencanaan  dan  Pengendalian  Tenaga  Kerja  Langsung]  
+PT.  Zuttomayonakadeiinoni  memiliki  4  buruh  pabrik  dan  satu  supervisor  yang  merupakan  
+satu
+ 
+tim
+ 
+dalam
+ 
+departemen
+ 
+fabrikasi.
+ 
+Supervisor
+ 
+mendapatkan
+ 
+gaji
+ 
+pokok
+ 
+$10/jam
+ 
+sedangkan
+ 
+tiap
+ 
+buruh
+ 
+pabrik
+ 
+mendapatkan
+ 
+gaji
+ 
+pokok
+ 
+$8/jam.
+ 
+Lembur
+ 
+dibayar
+ 
+$12/jam.
+ 
+Dalam  seminggu  terdapat  5  hari  kerja  dan  dalam  1  hari  kerja  terdapat  8  jam  kerja.  Terdapat  3  
+buruh
+ 
+pabrik
+ 
+yang
+ 
+bekerja
+ 
+lebih
+ 
+dari
+ 
+8
+ 
+jam:
+ 
+1.  Buruh  pabrik  bernama  Aca  bekerja  10  jam  pada  hari  senin  dan  kamis  
+2.  Buruh  pabrik  bernama  Pusu  bekerja  11  jam  pada  hari  selasa  dan  jumat  
+3.  Buruh  pabrik  bernama  Yamaguchi  bekerja  12  jam  pada  hari  rabu  
+Dengan  demikian:  
+1.  Hitung  gaji  pokok  supervisor  dan  keempat  buruh  pabrik  dalam  1  minggu  (5  hari  
+kerja)
+ 
+2.  Hitung  premi  lembur  dari  Aca,  Pusu,  dan  Yamaguchi  dalam  1  minggu  (5  hari  kerja)  
+3.  Buatlah  jurnal  entry  untuk  mencatat  transaksi  nomor  1  dan  2.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Tm  12  +  Tm  13  -  [Biaya  Overhead  Pabrik:  Perencanaan,  Dibebankan,  &  Aktual  +  
+Biaya
+ 
+Overhead
+ 
+Pabrik:
+ 
+Departementalisasi]
+ 
+Sebuah  perusahaan  manufaktur  memiliki  dua  departemen  jasa  dan  dua  departemen  produksi.  
+Masing-masing
+ 
+departemen
+ 
+produksi
+ 
+membuat
+ 
+produk
+ 
+yang
+ 
+berbeda.
+ 
+Selama
+ 
+beberapa
+ 
+tahun
+ 
+terakhir,
+ 
+perusahaan
+ 
+membagi
+ 
+(mengalokasikan)
+ 
+biaya
+ 
+dari
+ 
+departemen
+ 
+jasa
+ 
+ke
+ 
+departemen
+ 
+produksi
+ 
+berdasarkan
+ 
+total
+ 
+penjualan
+ 
+tahunan.
+ 
+Namun,
+ 
+setelah
+ 
+dilakukan
+ 
+audit
+ 
+internal,
+ 
+ditemukan
+ 
+bahwa
+ 
+cara
+ 
+pembagian
+ 
+biaya
+ 
+berdasarkan
+ 
+penjualan
+ 
+tahunan
+ 
+tersebut
+ 
+tidak
+ 
+akurat
+ 
+atau
+ 
+asal-asalan.
+ 
+Karena
+ 
+itu,
+ 
+auditor
+ 
+internal
+ 
+menyarankan
+ 
+metode
+ 
+pembagian
+ 
+biaya
+ 
+yang
+ 
+lebih
+ 
+tepat,
+ 
+yaitu
+ 
+menggunakan
+ 
+jumlah
+ 
+jam
+ 
+kerja
+ 
+pemeliharaan
+ 
+untuk
+ 
+departemen
+ 
+pemeliharaan
+ 
+dan
+ 
+jumlah
+ 
+pegawai
+ 
+untuk
+ 
+departemen
+ 
+personalia
+.
+ 
+Sebagai
+ 
+contoh,
+ 
+auditor
+ 
+internal
+ 
+memberikan
+ 
+data
+ 
+berikut:
+ 
+ 
+Keterangan  Departemen  Jasa  Departemen  Produksi  
+Pemeliharaan  Personalia  Perakitan  Pemotongan  
+Anggaran  Biaya  Rp300.000  Rp160.000  Rp800.000  Rp600.000  
+Jam  Kerja  Pemeliharaan  
+-  -  510  340  
+Jumlah  Pegawai  30  15  35  35  
+ 
+Alokasikan  biaya  dari  departemen  jasa  ke  departemen  produksi  (tentukan  anggaran  
+setelah
+ 
+alokasi)
+ 
+menggunakan
+ 
+metode:
+ 
+1.  Direct  Method  
+2.  Sequential  Method  (Asumsi  Departemen  Personalia  mengalokasikan  biaya  ke  
+Departemen
+ 
+Pemeliharaan)
+ 
+ 
+ 
+ 
+ 
+ Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Tm  14  -  [Perhitungan  Biaya  Berdasarkan  Aktivitas  (Activity  Based  Costing  -  ABC)]  
+PT  Maju  Bersama  memproduksi  dua  jenis  produk,  yaitu  Lemari  Kayu  dan  Rak  Buku.  Untuk  
+memperoleh
+ 
+informasi
+ 
+biaya
+ 
+yang
+ 
+lebih
+ 
+akurat,
+ 
+perusahaan
+ 
+menerapkan
+ 
+Activity-Based
+ 
+Costing
+ 
+(ABC)
+ 
+dalam
+ 
+pembebanan
+ 
+biaya
+ 
+overhead
+ 
+pabrik.
+ 
+Berikut
+ 
+adalah
+ 
+data
+ 
+produksi
+ 
+dan
+ 
+biaya
+ 
+selama
+ 
+periode
+ 
+berjalan:
+ 
+ 
+Keterangan  Lemari  Kayu  Rak  Buku  Total  
+Unit  Produksi  600  Unit  400  Unit  1.000  Unit  
+Direct  Material  Cost   Rp36.000.000  Rp16.000.000  Rp52.000.000  
+Direct  Labor  Cost   Rp24.000.000  Rp18.000.000  Rp42.000.000  
+Setup  Hours   300  Jam  200  Jam  500  Jam  
+Design  Change   90  Kali  60  Kali  150  Kali  
+Luas  Area  (m²)   2.400  m
+ 2  
+1.600  m
+ 2  
+4.000  m
+ 2  
+Estimasi  Biaya  Overhead  
+ 
+Aktivitas  Total  Biaya  
+Setup  Cost  Rp7.500.000  
+Design  Cost  Rp4.200.000  
+Factory  Maintenance  Cost  Rp3.200.000  
+Informasi  Cost  Driver  
+❖  Cost  Driver  untuk  Setup  Cost  adalah  Setup  Hours.  
+❖  Cost  Driver  untuk  Design  Cost  adalah  Jumlah  Design  Change.  
+❖  Cost  Driver  untuk  Factory  Maintenance  Cost  adalah  Luas  Area  (m²).  Soal  Kuis  Pra-UAS  Akuntansi  Biaya  2026   Pertanyaan  
+A.  Klasifikasikan  aktivitas  Setup  Cost,  Design  Cost,  dan  Factory  Maintenance  Cost  ke  
+dalam
+ 
+kategori
+ 
+aktivitas
+ 
+overhead
+ 
+yang
+ 
+sesuai,
+ 
+yaitu
+ 
+unit-level
+ 
+activity,
+ 
+batch-level
+ 
+activity,
+ 
+product-level
+ 
+activity,
+ 
+atau
+ 
+facility-sustaining
+ 
+activity.
+ 
+ 
+B.  Hitunglah  tarif  overhead  untuk  masing-masing  aktivitas  berdasarkan  cost  driver  yang  
+telah
+ 
+ditentukan
+ 
+dengan
+ 
+menggunakan
+ 
+pendekatan
+ 
+Activity-Based
+ 
+Costing
+ 
+(ABC).
+ 
+ 
+C.  Hitunglah  kos  produksi  per  unit  untuk  produk  Lemari  Kayu  dan  Rak  Buku  
+menggunakan
+ 
+metode
+ 
+Activity-Based
+ 
+Costing
+ 
+(ABC)
+ 
+dengan
+ 
+menunjukkan
+ 
+rincian
+ 
+biaya
+ 
+bahan
+ 
+baku
+ 
+langsung
+ 
+(DM),
+ 
+biaya
+ 
+tenaga
+ 
+kerja
+ 
+langsung
+ 
+(DL),
+ 
+biaya
+ 
+overhead
+ 
+pabrik
+ 
+(FOH),
+ 
+total
+ 
+biaya
+ 
+produksi,
+ 
+dan
+ 
+biaya
+ 
+per
+ 
+unit
+ 
+masing-masing
+ 
+produk.
+ 
+ 
+D.  Berdasarkan  hasil  perhitungan  pada  poin  (c),  jelaskan  mengapa  biaya  overhead  per  
+unit
+ 
+kedua
+ 
+produk
+ 
+berbeda
+ 
+dan
+ 
+aktivitas
+ 
+mana
+ 
+yang
+ 
+memberikan
+ 
+kontribusi
+ 
+overhead
+ 
+terbesar
+ 
+pada
+ 
+masing-masing
+ 
+produk.
+ 
+ 
+ 
+ 

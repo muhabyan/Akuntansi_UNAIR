@@ -1,0 +1,135 @@
+[
+  {
+    "METODE HARGA PASAR RELATIF": "Jenis Produk",
+    "__EMPTY": "Kuantitas",
+    "__EMPTY_1": "Harga Pasar",
+    "__EMPTY_2": "Nilai Pasar",
+    "__EMPTY_3": "Nilai Pasar Relatif",
+    "__EMPTY_4": "Alokasi Kos Bersama",
+    "__EMPTY_5": "Kos Produksi Produk Bersama"
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "J",
+    "__EMPTY": 6000,
+    "__EMPTY_1": 80000,
+    "__EMPTY_2": 480000000,
+    "__EMPTY_3": 0.48,
+    "__EMPTY_4": 76800000,
+    "__EMPTY_5": 12800
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "K",
+    "__EMPTY": 5000,
+    "__EMPTY_1": 60000,
+    "__EMPTY_2": 300000000,
+    "__EMPTY_3": 0.3,
+    "__EMPTY_4": 48000000,
+    "__EMPTY_5": 9600
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "L",
+    "__EMPTY": 4000,
+    "__EMPTY_1": 40000,
+    "__EMPTY_2": 160000000,
+    "__EMPTY_3": 0.16,
+    "__EMPTY_4": 25600000,
+    "__EMPTY_5": 6400
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "M",
+    "__EMPTY": 3000,
+    "__EMPTY_1": 20000,
+    "__EMPTY_2": 60000000,
+    "__EMPTY_3": 0.06,
+    "__EMPTY_4": 9600000,
+    "__EMPTY_5": 3200
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "Total",
+    "__EMPTY": 18000,
+    "__EMPTY_1": 200000,
+    "__EMPTY_2": 1000000000,
+    "__EMPTY_3": 1,
+    "__EMPTY_4": 160000000
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "METODE HARGA PASAR HIPOTESIS"
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "Jenis Produk",
+    "__EMPTY": "Kuantitas",
+    "__EMPTY_1": "Harga Pasar per Unit",
+    "__EMPTY_2": "Kos Tambahan per Unit",
+    "__EMPTY_3": "Total Harga Pasar",
+    "__EMPTY_4": "Total Kos Tambahan",
+    "__EMPTY_5": "Nilai Pasar Hipotesis",
+    "__EMPTY_6": "Nilai Pasar Hipotesis Relatif",
+    "__EMPTY_7": "Alokasi Kos Bersama",
+    "__EMPTY_8": "Alokasi Kos Total",
+    "__EMPTY_9": "Kos Produksi Produk Bersama"
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "J ",
+    "__EMPTY": 6000,
+    "__EMPTY_1": 90000,
+    "__EMPTY_2": 7500,
+    "__EMPTY_3": 540000000,
+    "__EMPTY_4": 45000000,
+    "__EMPTY_5": 495000000,
+    "__EMPTY_6": 0.4576976421636616,
+    "__EMPTY_7": 73231622.74618585,
+    "__EMPTY_8": 118231622.74618585,
+    "__EMPTY_9": 19705.270457697643
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "K",
+    "__EMPTY": 5000,
+    "__EMPTY_1": 70000,
+    "__EMPTY_2": 6000,
+    "__EMPTY_3": 350000000,
+    "__EMPTY_4": 30000000,
+    "__EMPTY_5": 320000000,
+    "__EMPTY_6": 0.29588534442903375,
+    "__EMPTY_7": 47341655.1086454,
+    "__EMPTY_8": 77341655.10864541,
+    "__EMPTY_9": 15468.331021729082
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "L",
+    "__EMPTY": 4000,
+    "__EMPTY_1": 50000,
+    "__EMPTY_2": 4000,
+    "__EMPTY_3": 200000000,
+    "__EMPTY_4": 16000000,
+    "__EMPTY_5": 184000000,
+    "__EMPTY_6": 0.1701340730466944,
+    "__EMPTY_7": 27221451.687471103,
+    "__EMPTY_8": 43221451.68747111,
+    "__EMPTY_9": 10805.362921867776
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "M",
+    "__EMPTY": 3000,
+    "__EMPTY_1": 30000,
+    "__EMPTY_2": 2500,
+    "__EMPTY_3": 90000000,
+    "__EMPTY_4": 7500000,
+    "__EMPTY_5": 82500000,
+    "__EMPTY_6": 0.07628294036061026,
+    "__EMPTY_7": 12205270.457697641,
+    "__EMPTY_8": 19705270.45769764,
+    "__EMPTY_9": 6568.423485899214
+  },
+  {
+    "METODE HARGA PASAR RELATIF": "Total",
+    "__EMPTY": 18000,
+    "__EMPTY_1": 240000,
+    "__EMPTY_2": 20000,
+    "__EMPTY_3": 1180000000,
+    "__EMPTY_4": 98500000,
+    "__EMPTY_5": 1081500000,
+    "__EMPTY_6": 0.9999999999999999,
+    "__EMPTY_7": 159999999.99999997,
+    "__EMPTY_8": 258500000
+  }
+]

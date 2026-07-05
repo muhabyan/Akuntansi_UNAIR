@@ -1,0 +1,52 @@
+Andy ingin mengetahui apakah perbedaan kinerja disebabkan 
+oleh dua faktor (misalnya: pegawai dan lokasi/sub-wilayah), 
+dan apakah ada interaksi antara keduanya. 
+Maka Two-way ANOVA with interaction adalah yang paling tepat.One-way ANOVA menguji pengaruh satu faktor terhadap rata-rata.
+Two-way ANOVA menguji pengaruh dua faktor dan bisa menguji interaksi antar faktor.intercept = fixed cost
+juka Q = 0 
+C = 3000 + 2(0) = 3000ANOVA digunakan untuk membandingkan 
+rata-rata lebih dari dua kelompok.Gunakan data tahun 2008, 2007, dan 2009 → 5, 3, 10
+MA3 = (5+3+10)/3 = 6.0Syarat:
+Homogenitas varians
+Data minimal skala interval
+NormalitasJika siswa yang sama diuji berkali-kali 
+(misalnya karena pengaruh kelas atau waktu), 
+gunakan repeated measures ANOVA.Gunakan data tahun 2005-2007: 2, 6, 4 → MA3 = (2+6+4)/3 = 4Rata-rata seluruh data = total semua pengunjung / 20 = 97,41
+Rata-rata musim semi = (80,7+82,5+84,3+79,6+80,2)/5 = 81.46
+Persentase selisih = ((81.46 - 97.41)/97.41) × 100% = -16.4%
+Jawaban mendekati: b. 25,13 persen lebih rendah dari rata-rata tahunan 
+(angka tidak pas, tapi makna arah benar)Sudah dihitung:
+
+
+C
+
+
+B
+.BLB
+
+
+
+
+Y=3.17+1.36X
+Gunakan 2005-2007: 2 + 6 + 4 = 12Rata-rata musim gugur: (76.1+77+75+69.6+72)/5 = 73.94
+Rata-rata keseluruhan: 97.41
+Indeks musiman = (73.94/97.41) × 100 ≈ 75.9 → mendekati 74.13Faktor koreksi = 4 / (jumlah indeks musiman / 100)
+Misal jumlah indeks = 401.4
+→ Faktor = 4 / 4.014 = 0.9968Penjelasan:
+1. Salah (range -1 sampai 1)
+2. Benar
+3. Salah (korelasi ≠ sebab-akibat)
+4. Benar (0.8 = korelasi kuat & searah)Data menunjukkan pola musiman (naik-turun reguler per bulan)Variabel bebas (independen) adalah variabel yang memengaruhi atau digunakan untuk menjelaskan variabel lain.
+Variabel terikat (dependen) adalah variabel yang dijelaskan atau dipengaruhi.
+Karena "skala produksi mempengaruhi total biaya", maka:
+Skala produksi → variabel bebas
+Total biaya → variabel terikatOne-way ANOVA tanpa repeated measurement tidak cocok untuk data time series seperti pendapatan selama 50 tahun.
+Data tersebut memiliki elemen waktu, jadi:
+Harus mempertimbangkan repeated measures jika tiap kota punya data tahunan (berulang).
+Atau menggunakan analisis deret waktu, bukan ANOVA biasa.
+One-way ANOVA cocok jika hanya sekali ukur per grup (bukan selama 50 tahun).Two-way ANOVA with interaction:
+Menguji apakah gabungan dua variabel bebas memberikan pengaruh berbeda terhadap variabel terikat.
+Without interaction:
+Mengasumsikan bahwa pengaruh masing-masing variabel bersifat independen (tidak saling memengaruhi).
+contoh: Jika jenis kelamin dan metode belajar sama-sama memengaruhi nilai ujian, 
+maka interaksi berarti bahwa metode belajar berpengaruh berbeda tergantung jenis kelamin.

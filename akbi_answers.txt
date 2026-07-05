@@ -1,0 +1,244 @@
+JAWABAN  KUIS  PRA-UAS  AKUNTANSI  BIAYA  AKBI  -  M  Muhammad  Abyan  Hafizh  143251119  1.  TM  8   (Produk  Gabungan  dan  Produk  Sampingan)  PT  Guardians  →  Joint  Cost  =  Rp240.000.000  
+1)  Metode  Harga  Pasar  Relatif  (Sales  Value  at  Split-off)  
+Produk  Volume  (unit)  
+Harga  Jual  Split-off/unit  
+Total  Nilai  Jual  Split-off  (Rp)  
+Proporsi  Alokasi  Joint  Cost  (Rp)  
+A  8.000  Rp90.000  720.000.000  51,43%  123.428.571  
+B  6.000  Rp70.000  420.000.000  30,00%  72.000.000  
+C  4.000  Rp50.000  200.000.000  14,29%  34.285.714  
+D  2.000  Rp30.000  60.000.000  4,29%  10.285.714  
+Total  20.000   1.400.000.000  
+100%  240.000.000  
+2)  Metode  Harga  Pasar  Hipotesis  (Net  Realizable  Value)  
+Produk  Vol  HJ  Setelah  Proses/unit  
+Biaya  Lanjutan/unit  
+NRV  per  unit  
+Total  NRV(Rp)  
+Proporsi  Alokasi  JC(Rp)  
+A  8.000  105.000  8.000  97.000  776.000.000  50,59%  121.408.083  
+B  6.000  82.000  6.000  76.000  456.000.000  29,73%  71.342.894  
+C  4.000  62.000  5.000  57.000  228.000.000  14,86%  35.671.447  
+D  2.000  40.000  3.000  37.000  74.000.000  4,82%  11.577.575  
+Total  20.000     1.534.000.000  100%  240.000.000  
+ 
+ 
+  
+3)  Metode  Unit  Rata-Rata  (Average  Unit  Cost)  
+Produk  Volume  Produksi  (unit)  
+Biaya  Rata-rata  per  Unit  (Rp)  
+Alokasi  Joint  Cost(Rp)  
+A  8.000  12.000  96.000.000  
+B  6.000  12.000  72.000.000  
+C  4.000  12.000  48.000.000  
+D  2.000  12.000  24.000.000  
+Total  20.000  Rp240jt  /  20.000  240.000.000  
+4)  Metode  Rata-Rata  Tertimbang  (Weighted  Average)  
+Produk  Volume  (unit)  
+Bobot  Kualitas  
+Unit  Tertimbang  (Vol  ×  Bobot)  
+Proporsi  Alokasi  Joint  Cost  (Rp)  
+A  8.000  4  32.000  53,33%  128.000.000  
+B  6.000  3  18.000  30,00%  72.000.000  
+C  4.000  2  8.000  13,33%  32.000.000  
+D  2.000  1  2.000  3,33%  8.000.000  
+Total  20.000   60.000  100%  240.000.000  
+5)  Metode  Unit  Produksi  (Physical  Measure  /  Kg)  
+Produk  Volume  (unit)  
+Ukuran  Fisik  (kg/unit)  
+Total  Kg    (Vol  ×  Kg)  
+Proporsi  Alokasi  Joint  Cost  (Rp)  
+A  8.000  5  40.000  50,00%  120.000.000  
+B  6.000  4  24.000  30,00%  72.000.000  
+C  4.000  3  12.000  15,00%  36.000.000  
+D  2.000  2  4.000  5,00%  12.000.000  
+Total  20.000   80.000  100%  240.000.000  
+ 2.  TM  9  +  TM  10  (Bahan  Baku  Langsung  &  Backflush  Costing)  PT  MAJU  JAYA  →  Sistem  JIT,  Backflush  Costing,  Juni  2025  
+Ikhtisar  Saldo  Persediaan  
+Akun  Komponen  31  Mei  2025  30  Juni  2025  
+RIP  Bahan  Baku  315.000.000  460.000.000  
+ Biaya  Konversi  35.500.000  50.800.000  
+ Total  RIP  350.500.000  510.800.000  
+Barang  Jadi  Bahan  Baku  410.000.000  550.000.000  
+ Biaya  Konversi  215.400.000  280.600.000  
+ Total  Barang  Jadi  625.400.000  830.600.000  
+Perlengkapan   90.000.000  82.000.000  
+Perhitungan  FOH  Aktual  
+Komponen  FOH  Sumber  Jurnal  Jumlah  (Rp)  
+Tenaga  Kerja  Tidak  Langsung  (c)  180.000.000  
+Bahan  Baku  Tidak  Langsung  (b)  8.000.000  
+Penyusutan  (d)  95.000.000  
+Asuransi  (d)  55.000.000  
+Lain-lain  (d)  70.000.000  
+Total  FOH  Aktual   408.000.000  
+Tenaga  Kerja  Langsung  (c)  720.000.000  
+Total  Biaya  Konversi  (TKL  +  FOH)   1.128.000.000  
+Perhitungan  Backflush  &  Penyesuaian  
+Keterangan  Perhitungan  Jumlah  (Rp)  
+Backflush  BB:  RIP  →  BJ  (f)  BB  awal  RIP  +  Pembelian  −  BB  akhir  RIP  
+ 
+ 315.000.000  +  1.050.000.000  −  460.000.000  
+905.000.000  Keterangan  Perhitungan  Jumlah  (Rp)  
+Backflush  BB:  BJ  →  HPP  (g)  BB  awal  BJ  +  BB  masuk  −  BB  akhir  BJ  
+ 
+ 410.000.000  +  905.000.000  −  550.000.000  
+765.000.000  
+Penyesuaian  konversi  RIP  (h)  Konv  akhir  −  Konv  awal  RIP   
+ 50.800.000  −  35.500.000  15.300.000  
+Penyesuaian  konversi  BJ  (h)  Konv  akhir  −  Konv  awal  BJ   
+ 280.600.000  −  215.400.000  65.200.000  
+Konversi  ke  HPP  (i)  Total  konversi  −  Kenaikan  konversi  persediaan  
+ 
+ 1.128.000.000  −  80.500.000  1.047.500.000  
+Total  HPP  Komponen  BB  +  Komponen  Konversi  
+ 
+ 765.000.000  +  1.047.500.000  1.812.500.000  
+1)  Ayat  Jurnal  
+No  Keterangan  Debit  (Rp)  Kredit  (Rp)  
+a  RIP  (Raw  and  In  Process)  1.050.000.000   
+      Utang  Usaha   1.050.000.000  
+b  Pengendali  Overhead  Pabrik  8.000.000   
+      Perlengkapan   8.000.000  
+c  Harga  Pokok  Produksi  (TK  Langsung)  720.000.000   
+ Pengendali  Overhead  Pabrik  (TK  TL)  180.000.000   
+ Beban  Pemasaran  210.000.000   
+ Beban  Administrasi  150.000.000   
+      Utang  Gaji  /  Kas   1.260.000.000  
+d  Pengendali  Overhead  Pabrik  220.000.000   No  Keterangan  Debit  (Rp)  Kredit  (Rp)  
+      Akumulasi  Penyusutan   95.000.000  
+      Asuransi  Dibayar  Dimuka   55.000.000  
+      Kas  (Rp50jt)  /  Utang  Usaha  (Rp20jt)   70.000.000  
+e  Harga  Pokok  Produksi  408.000.000   
+      Pengendali  Overhead  Pabrik   408.000.000  
+f  Barang  Jadi  905.000.000   
+      RIP   905.000.000  
+g  Harga  Pokok  Penjualan  (komponen  BB)  
+765.000.000   
+      Barang  Jadi   765.000.000  
+h  RIP  (penyesuaian  konversi)  15.300.000   
+ Barang  Jadi  (penyesuaian  konversi)  65.200.000   
+      Harga  Pokok  Produksi   80.500.000  
+i  Harga  Pokok  Penjualan  (komponen  konversi)  
+1.047.500.000   
+      Harga  Pokok  Produksi   1.047.500.000  
+2)  Akun  T  
+Raw  and  In  Process  (RIP)  
+Saldo  awal  (31/5)   350.500.000  (f)  Backflush  BB  →  BJ   905.000.000  
+(a)  Pembelian  BB   1.050.000.000   
+(h)  Peny.  konversi   15.300.000   
+  
+Saldo  akhir  (30/6)   510.800.000   
+ 
+ 
+ Pengendali  Overhead  Pabrik  
+(b)  BB  tidak  langsung   8.000.000  (e)  →  HPProduksi   408.000.000  
+(c)  TK  tidak  langsung   180.000.000   
+(d)  Overhead  lainnya   220.000.000   
+  
+Total  debit   408.000.000  Saldo  akhir   0  
+ 
+Barang  Jadi  
+Saldo  awal  (31/5)   625.400.000  (g)  Backflush  BB  →  HPP   765.000.000  
+(f)  BB  dari  RIP   905.000.000   
+(h)  Peny.  konversi   65.200.000   
+  
+Saldo  akhir  (30/6)   830.600.000   
+ 
+Harga  Pokok  Penjualan  (HPP)  
+(g)  Komponen  BB   765.000.000   
+(i)  Komponen  konversi   1.047.500.000   
+  
+Total  HPP   1.812.500.000   
+           3.  TM  11  (Perencanaan  &  Pengendalian  Tenaga  Kerja  Langsung)  PT  Zuttomayonakadeiinoni  →  1  Supervisor  ($10/jam)  +  4  Buruh  ($8/jam).  Lembur  $12/jam.  Hari  kerja:  5  hari  ×  8  jam  =  40  jam  normal/minggu.  
+1)  Gaji  Pokok  Mingguan  
+Karyawan  Jam  Kerja  Tarif/jam  Jumlah  ($)  
+Supervisor  (1  orang)  5  hari  ×  8  jam  =  40  jam  $10  $400  
+Buruh  pabrik  (4  orang)   →  jam  normal  
+4  ×  5  hari  ×  8  jam  =  160  jam  $8  $1.280  
+Buruh  →  jam  lembur  (tarif  normal)  
+14  jam   $8  $112  
+Total  Gaji  Pokok    $1.792  
+2)  Premi  Lembur  Premi  lembur  per  jam  =  Tarif  lembur  −  Tarif  normal  =  $12  −  $8  =  $4/jam  
+Buruh  Hari  Lembur  Jam  Kerja  Jam  Lembur   (>  8  jam)  
+Premi  ($4/jam)  
+Aca  Senin,  Kamis  10  jam/hari  2  hari  ×  2  =  4  jam  $16  
+Pusu  Selasa,  Jumat  11  jam/hari  2  hari  ×  3  =  6  jam  $24  
+Yamaguchi  Rabu  12  jam/hari  1  hari  ×  4  =  4  jam  $16  
+Total    14  jam  $56  
+3)  Jurnal  Entry  
+Akun  Rincian  Debit  ($)  Kredit  ($)  
+Barang  Dalam  Proses  (BDP)  TK  Langsung  (buruh  pabrik)  
+$1.392   
+Pengendali  Overhead  Pabrik  
+Gaji  supervisor  $400  +  Premi  lembur  $56  
+$456   
+     Utang  Gaji  dan  Upah    $1.848  
+   4.  TM  12  +  TM  13  (Departementalisasi  Overhead  Pabrik)  1)  Direct  Method  
+Keterangan  
+Depart.  Jasa  Depart.  Produksi  
+Pemeliharaan  Personalia  Perakitan  Pemotongan  
+Anggaran  awal  Rp300.000  Rp160.000  Rp800.000  Rp600.000  
+Alokasi  Personalia   –  (Rp160.000)  Rp80.000  Rp80.000  
+Alokasi  Pemeliharaan   (Rp300.000)  –  Rp180.000  Rp120.000  
+Total  Setelah  Alokasi  
+0  0  Rp1.060.000  Rp800.000  
+2)  Sequential  Method  (Personalia  dialokasikan  lebih  dulu)  
+Keterangan  Pemeliharaan  Personalia  Perakitan  Pemotongan  
+Anggaran  awal  Rp300.000  Rp160.000  Rp800.000  Rp600.000  
+Step  1:  Alokasi  Personalia  
+    
+  Dasar:  pegawai  30:35:35  (total  100)  
+Rp48.000  (Rp160.000)  Rp56.000  Rp56.000  
+Subtotal  Rp348.000  0  Rp856.000  Rp656.000  
+Step  2:  Alokasi  Pemeliharaan  
+    
+  Dasar:  jam  510:340  (total  850)  
+(Rp348.000)  –  Rp208.800  Rp139.200  
+Total  Setelah  Alokasi  
+0  0  Rp1.064.800  Rp795.200  
+ 5.  TM  14  (Activity-Based  Costing/ABC)  PT  Maju  Bersama  →  Lemari  Kayu  (600  unit)  &  Rak  Buku  (400  unit)  
+1)  Klasifikasi  Tingkat  Aktivitas  Overhead  
+Aktivitas  Cost  Driver  Kategori  Penjelasan  
+Setup  Cost  Setup  Hours  Batch-level  Biaya  dipicu  per  batch  produksi  
+Design  Cost  Design  Change  Product-level  Perubahan  desain  per  lini  produk  
+Factory  Maintenance  
+Luas  Area  (m²)  Facility-sustaining  Pemeliharaan  seluruh  fasilitas  pabrik  
+2)  Perhitungan  Tarif  Overhead  per  Aktivitas  
+Aktivitas  Total  Biaya  (Rp)  Total  Cost  Driver  Tarif  per  Unit  Driver  
+Setup  Cost  7.500.000  500  jam  Rp15.000  /  jam  
+Design  Cost  4.200.000  150  kali  Rp28.000  /  kali  
+Factory  Maintenance  
+3.200.000  4.000  m²  Rp800  /  m²  
+Total  14.900.000    
+3)  Laporan  Kos  Produksi  per  Unit  (Metode  ABC)  
+Komponen  Biaya  Lemari  Kayu  (600  unit)  
+Rak  Buku  (400  unit)  
+Total  Pabrik  (Rp)  
+Direct  Material  (DM)  36.000.000  16.000.000  52.000.000  
+Direct  Labor  (DL)  24.000.000  18.000.000  42.000.000  
+FOH  Setup  (300/200  jam  ×  Rp15.000)  
+4.500.000  3.000.000  7.500.000  
+FOH  Design  (90/60  kali  ×  Rp28.000)  
+2.520.000  1.680.000  4.200.000  
+FOH  Maintenance  (2.400/1.600  m²  ×  Rp800)  
+1.920.000  1.280.000  3.200.000  
+Total  FOH  8.940.000  5.960.000  14.900.000  Komponen  Biaya  Lemari  Kayu  (600  unit)  
+Rak  Buku  (400  unit)  
+Total  Pabrik  (Rp)  
+Total  Biaya  Produksi  68.940.000  39.960.000  108.900.000  
+Kos  per  Unit  Rp114.900  Rp99.900   
+4)  Analisis  Overhead  per  Unit  
+Aktivitas  LK:  FOH  Total  
+LK:  FOH/unit  
+RB:  FOH  Total  
+RB:  FOH/unit  
+%  dari  FOH/unit  
+Setup  Cost  
+4.500.000  7.500  3.000.000  7.500  50,3%  
+Design  Cost  
+2.520.000  4.200  1.680.000  4.200  28,2%  
+Maintenance  
+1.920.000  3.200  1.280.000  3.200  21,5%  
+Total  FOH  
+8.940.000  14.900  5.960.000  14.900  100%  
+FOH  per  unit  sama  (Rp14.900)  karena  rasio  seluruh  cost  driver  =  rasio  volume  produksi  (60:40).  Setup  Cost  menyumbang  overhead  terbesar  (50,3%).  Perbedaan  kos  per  unit  (Rp114.900  dan   Rp99.900)  berasal  dari  prime  cost  (DM+DL):  LK  Rp100.000/unit  vs  RB  Rp85.000/unit.  

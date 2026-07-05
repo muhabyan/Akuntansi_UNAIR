@@ -62,7 +62,7 @@ export const AKBI_TM8_TM11_READINGS: Record<number, AkbiMasterReading> = {
         text:
           'Masalah utama pada produk bersama adalah penentuan proporsi total kos produksi yang harus dibebankan ke setiap produk. Kos tersebut terjadi sejak bahan baku mulai diolah sampai berbagai produk dapat dipisahkan identitasnya. Setelah titik pisah, biaya yang muncul diperlakukan sebagai biaya proses lanjutan masing-masing produk.',
       },
-      { kind: 'h2', text: 'Alur Belajar Cepat Batch 6' },
+      { kind: 'h2', text: 'Alur Belajar Cepat TM 8' },
       {
         kind: 'table',
         headers: ['Langkah', 'Fokus Belajar', 'Output yang Harus Bisa Dibuat'],
@@ -700,7 +700,7 @@ export const AKBI_TM8_TM11_READINGS: Record<number, AkbiMasterReading> = {
         text:
           'Bahan baku harus direncanakan, dikendalikan, dicatat, dan dinilai dengan benar. Kesalahan bahan akan memengaruhi harga pokok produksi. Sistem bahan baku mencakup perencanaan kebutuhan, pembelian, penerimaan, penyimpanan, pemakaian, pencatatan, penilaian, dan pengendalian persediaan.',
       },
-      { kind: 'h2', text: 'Alur Belajar Cepat Batch 7' },
+      { kind: 'h2', text: 'Alur Belajar Cepat TM 9' },
       {
         kind: 'table',
         headers: ['Langkah', 'Fokus Belajar', 'Output yang Harus Bisa Dibuat'],
@@ -1560,7 +1560,7 @@ export const AKBI_TM8_TM11_READINGS: Record<number, AkbiMasterReading> = {
         text:
           'Tenaga kerja langsung mengolah produk secara langsung dan biayanya dapat ditelusuri ke produk. Tenaga kerja tidak langsung mendukung produksi dan masuk factory overhead. Biaya tenaga kerja harus direncanakan, dicatat, didistribusikan, dan dikendalikan agar kos produk tidak salah.',
       },
-      { kind: 'h2', text: 'Alur Belajar Cepat Batch 8' },
+      { kind: 'h2', text: 'Alur Belajar Cepat TM 10' },
       {
         kind: 'table',
         headers: ['Langkah', 'Fokus Belajar', 'Output yang Harus Bisa Dibuat'],
@@ -2488,7 +2488,7 @@ export const AKBI_TM8_TM11_READINGS: Record<number, AkbiMasterReading> = {
         text:
           'Dalam struktur website, materi labor cost ditempatkan pada TM 10 sesuai daftar AKM201 TM8-14. Jika di kelas dosen membahas labor pada pertemuan yang disebut TM 11, gunakan materi TM 10 sebagai rujukan utama labor cost, lalu lanjutkan TM 11 untuk overhead pabrik.',
       },
-      { kind: 'h2', text: 'Alur Belajar Cepat Batch 9' },
+      { kind: 'h2', text: 'Alur Belajar Cepat TM 11' },
       {
         kind: 'table',
         headers: ['Langkah', 'Fokus Belajar', 'Output Praktik'],

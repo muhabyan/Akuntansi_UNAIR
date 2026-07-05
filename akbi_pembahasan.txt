@@ -1,0 +1,753 @@
+SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+TM  8  PT  Naranuansa  mempunyai  data  operasional  selama  bulan  Mei  2025  sebagai  berikut:  Keterangan  Unit  Cost  Persediaan  awal  4,950  Rp  4,500  Jumlah  biaya  produksi  10,750  Rp  4,500  Penjualan  dari  produk  utama  13,350  Rp  4,500  Pendapatan  dari  penjualan  produk  sampingan   Rp  25,000,000  Beban  pemasaran  dan  administrasi   Rp  4,900,000  Persediaan  akhir  2,350  Rp  4,500  Buatlah  laporan  laba  rugi  per  31  Mei  2025  dengan  perlakuan  pendapatan  penjualan  produk  
+sampingan
+ 
+sebagai
+ 
+berikut:
+ a.  Pendapatan  penjualan  b.  Pendapatan  lain-lain  c.  Pengurang  harga  pokok  penjualan  dari  produk  utama  d.  Pengurang  terhadap  jumlah  biaya  produksi  dari  produk  utama   Jawaban:  Keterangan  Unit  Cost  Total  Persediaan  awal  4,950  Rp  4,500  Rp  22,275,000  Jumlah  biaya  produksi  10,750  Rp  4,500  Rp  48,375,000  Penjualan  dari  produk  utama  13,350   Rp  60,075,000  Pendapatan  dari  penjualan  produk  sampingan    Rp  25,000,000  Beban  pemasaran  dan  administrasi    Rp  4,900,000  Persediaan  akhir  2,350  Rp  4,500  Rp  10,575,000  Laporan  laba  rugi  per  31  Mei  2025  dengan  perlakuan  pendapatan  penjualan  produk   sampingan  sebagai  berikut:  a.  Pendapatan  penjualan  PT  Naranuansa  Laporan  Laba  Rugi  31  Mei  2025  Penjualan  produk  utama  Rp  60,075,000  Pendapatan  penjualan  produk  samping  Rp  25,000,000  Penjualan  bersih  Rp  85,075,000  Harga  pokok  penjualan:    Persediaan  awal  Rp  22,275,000    Total  biaya  pokok  produksi  Rp  48,375,000   
+ 
+Persediaan  yang  tersedia  untuk  dijual  Rp  70,650,000   SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+ Persediaan  akhir  Rp  10,575,000  Rp  60,075,000  Laba  kotor  Rp  25,000,000  Beban  pemasaran  dan  administrasi  Rp  4,900,000  Laba  operasi  Rp  20,100,000    b.  Pendapatan  lain-lain  PT  Naranuansa  Laporan  Laba  Rugi  31  Mei  2025  Penjualan  produk  utama  Rp  60,075,000  Harga  pokok  penjualan:   Persediaan  awal  Rp  22,275,000    Total  biaya  pokok  produksi  Rp  48,375,000   
+ 
+Persediaan  yang  tersedia  untuk  dijual  Rp  70,650,000    Persediaan  akhir  Rp  10,575,000  Rp  60,075,000  Laba  kotor  Rp  -  Beban  pemasaran  dan  administrasi  Rp  4,900,000  Laba  operasi  -Rp  4,900,000  Pendapatan  lain-lain    Pendapatan  penjualan  produk  samping  Rp  25,000,000  Laba  sebelum  pajak  Rp  20,100,000    c.  Pengurang  harga  pokok  penjualan  dari  produk  utama  PT  Naranuansa  Laporan  Laba  Rugi  31  Mei  2025  Penjualan  produk  utama  Rp  60,075,000  Harga  pokok  penjualan:   Persediaan  awal  Rp  22,275,000    Total  biaya  pokok  produksi  Rp  48,375,000   
+ 
+Persediaan  yang  tersedia  untuk  dijual  Rp  70,650,000    Persediaan  akhir  Rp  10,575,000    Total  harga  pokok  penjualan  Rp  60,075,000   
+ 
+Pendapatan  penjualan  produk  samping  Rp  25,000,000  Rp  35,075,000  SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+Laba  kotor  Rp  25,000,000  Beban  pemasaran  dan  administrasi  Rp  4,900,000  Laba  operasi  Rp  20,100,000    d.  Pengurang  terhadap  jumlah  biaya  produksi  dari  produk  utama  PT  Naranuansa  Laporan  Laba  Rugi  31  Mei  2025  Penjualan  produk  utama  Rp  60,075,000  Harga  pokok  penjualan:   Persediaan  awal  Rp  22,275,000    Total  biaya  pokok  produksi  Rp  48,375,000   
+ 
+Pendapatan  penjualan  produk  samping  Rp  25,000,000   
+ 
+Persediaan  yang  tersedia  untuk  dijual  Rp  45,650,000    Persediaan  akhir  Rp  10,575,000  Rp  35,075,000  Laba  kotor  Rp  25,000,000  Beban  pemasaran  dan  administrasi  Rp  4,900,000  Laba  operasi  Rp  20,100,000     SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+TM  9&10   
+MAMAMIA  Manufacturing  Company  memiliki  system  produksi  JIT  yang  sudah  matang  dengan  
+rata-rata
+ 
+waktu
+ 
+siklus
+ 
+kurang
+ 
+dari
+ 
+1
+ 
+hari.
+ 
+Total
+ 
+waktu
+ 
+yang
+ 
+dibutuhkan
+ 
+dari
+ 
+penerimaan
+ 
+bahan
+ 
+baku
+ 
+sampai
+ 
+penyelesaian
+ 
+barang
+ 
+jadi
+ 
+adalah
+ 
+kurang
+ 
+dari
+ 
+4
+ 
+hari.
+ 
+Perusahaan
+ 
+menggunakan
+ 
+Akun
+ 
+Barang
+ 
+Jadi
+ 
+dan
+ 
+akun
+ 
+RIP
+ 
+sebagai
+ 
+akun
+ 
+persediaannya.
+ 
+Ada
+ 
+akun
+ 
+terpisah
+ 
+dengan
+ 
+judul
+ 
+Perlengkapan,
+ 
+untuk
+ 
+bahan
+ 
+baku
+ 
+tidak
+ 
+langsung.
+ 
+Perusahaan
+ 
+membebankan
+ 
+semua
+ 
+biaya
+ 
+konversi
+ 
+ke
+ 
+akun
+ 
+harga
+ 
+pokok
+ 
+produksi.
+ 
+Di
+ 
+akhir
+ 
+setiap
+ 
+bulan,
+ 
+semua
+ 
+biaya
+ 
+konversi
+ 
+diestimasi
+ 
+dan
+ 
+saldo
+ 
+akun
+ 
+persediaan
+ 
+disesuaikan.
+ 
+Biaya
+ 
+bahan
+ 
+baku
+ 
+di-
+backflush
+ 
+dari
+ 
+RIP
+ 
+ke
+ 
+Barang
+ 
+Jadi
+ 
+dan
+ 
+Harga
+ 
+Pokok
+ 
+Penjualan.
+ 
+Informasi
+ 
+berikut
+ 
+ini
+ 
+adalah
+ 
+ikhtisar
+ 
+transaksi
+ 
+pilihan
+ 
+dan
+ 
+informasi
+ 
+lainnya
+ 
+untuk
+ 
+bulan
+ 
+Mei
+ 
+2005:
+ 
+Saldo  per-30  April  2005  
+RIP:                Rp  240.300.000  
+Barang  Jadi:           430.600.000  
+Perlengkapan:         94.000.000  
+Saldo  RIP  tanggal  30  April  2005  terdiri  atas  biaya  bahan  baku  sebesar  Rp  215.200.000,  yang  
+hampir
+ 
+seluruhnya
+ 
+belum
+ 
+diproses,
+ 
+plus
+ 
+Rp
+ 
+25.100.000
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+yang
+ 
+dibebankan
+ 
+ke
+ 
+pekerjaan
+ 
+yang
+ 
+telah
+ 
+diproses
+ 
+sebagian.
+ 
+Saldo
+ 
+barang
+ 
+jadi
+ 
+terdiri
+ 
+atas
+ 
+biaya
+ 
+bahan
+ 
+baku
+ 
+sebesar
+ 
+Rp
+ 
+278.000.000
+ 
+dan
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+sebesar
+ 
+Rp
+ 
+152.600.000.
+ 
+Saldo  per-31  Mei  2005  
+RIP:                Rp  445.200.000  
+Barang  Jadi:        788.000.000  
+Perlengkapan:       104.000.000  
+Saldo  RIP  tanggal  31  Mei  2005  terdiri  atas  biaya  bahan  baku  sebesar  Rp  397.000.000,  yang  
+hampir
+ 
+seluruhnya
+ 
+belum
+ 
+diproses,
+ 
+plus
+ 
+Rp
+ 
+48.200.000
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+yang
+ 
+dibebankan
+ 
+ke
+ 
+pekerjaan
+ 
+yang
+ 
+telah
+ 
+diproses
+ 
+sebagian.
+ 
+Saldo
+ 
+barang
+ 
+jadi
+ 
+terdiri
+ 
+atas
+ 
+biaya
+ 
+bahan
+ 
+baku
+ 
+sebesar
+ 
+Rp
+ 
+520.000.000
+ 
+dan
+ 
+estimasi
+ 
+biaya
+ 
+konversi
+ 
+sebesar
+ 
+Rp
+ 
+268.000.000.
+ 
+Berikut  ini  transaksi  yang  terjadi  selama  bulan  April  2005  pada  MAMAMIA  Manufacturing  
+Company.
+ 
+a.  Bahan  baku  yang  diterima  dan  dibeli  secara  kredit  sebesar  Rp  603.240.000  SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+b.  Bahan  baku  tidak  langsung  yang  digunakan  sebesar  Rp  2.000.000  
+c.  Beban  gaji  dengan  rincian  di  bawah  ini  dimasukkan  dalam  proses  produksi/dibebankan  dan  dibayar.  
+  Tenaga  kerja  langsung:         Rp  534.000.000  
+  Tenaga  kerja  tak  langsung:        680.000.000  
+  Gaji  bagian  pemasaran:             580.000.000  
+  Gai  bagian  administrasi:            546.000.000  
+d.  Beban  overhead  pabrik:  
+   Penyusutan:     Rp  76.200.000  
+   Asuransi:                 48.300.000  
+   Lain-lain:                 66.900.000   (  Rp  48.000.000  dibayar  tunai  &  Rp  12.900.000  dibeli  secara  kredit)  
+e.  Overhead  yang  diakumulasikan  di  akun  Pengendali  Overhead  Pabrik  dibebankan  ke  Harga  Pokok  Penjualan.    
+f.  Komponen  biaya  bahan  baku  atas  pekerjaan  yang  telah  selesai,  di-backflush  dari  RIP  
+g.  Komponen  biaya  bahan  baku  atas  pekerjaan  yang  telah  dijual  di-backflush  dari  Barang  Jadi  
+h.  Saldo  akhir  dalam  akun  persediaan  ditetapkan  dengan  menyesuaikan  komponen  biaya  konversi  SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+  
+Instruksi:  
+(1)
+    
+Buatlah  ayat  jurnal  berdasarkan  informasi  di  atas!  
+(2)
+    
+Buat  akun  T  yang  lengkap  untuk  RIP,  Pengendali  Overhead  Pabrik,  Barang  Jadi,  dan  Harga  Pokok  Penjualan  
+Jawaban:  
+1.  Buatlah  ayat  jurnal  berdasarkan  informasi  di  atas!  RIP       603.240.000  Account  payable      603.240.000   FOH-Control      2.000.000   Indirect  material      2.000.000   COGS      534.000.000  FOH-Control      680.000.000  Marketing  expense     580.000.000  Administration  expense    546.000.000   Salaries  and  Wages  expense     2.340.000.000   FOH-Control      185.400.000   Depreciation  expense      76.200.000   Insurance  expense      48.300.000   Cash        48.000.000   Account  payable      12.900.000   COGS      867.400.000   FOH-Control       867.400.000   Beginning  RIP   215.200.000  Add  RIP    603.240.000  Total     818.440.000  Ending  RIP    397.000.000  Total  Backflush   603.240.000  Finished  good     421.440.000   RIP        421.440.000   SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+Beginning  Finished  good  278.000.000  Add  Finished  good   421.440.000  Total     699.440.000  Ending  Finished  good  520.000.000  Total  Backflush   179.440.000  COGS      179.440.000   Finished  good       179.440.000   Beg  RIP-konversi   25.100.000  End  RIP-konversi   48.200.000  Kenaikan  (Dr)   23.100.000  Beg  Finished  goods-konversi  152.600.000  End  Finished  goods-konversi  268.000.000  Kenaikan  (Dr)   115.400.000  RIP       23.100.000  Finished  goods     115.400.000   COGS        138.500.000    (2)   Buat  akun  T  yang  lengkap  untuk  RIP,  Pengendali  Overhead  Pabrik,  Barang  Jadi,  
+dan
+ 
+Harga
+ 
+Pokok
+ 
+Penjualan
+  
+RIP  
+240.300.000  421.440.000  
+603.240.000   
+23.100.000   
+866.640.000  421.440.000  
+445.200.000     
+FOH-Control  
+2.000.000  867.400.000  
+680.000.000   
+185.400.000   SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+867.400.000  867.400.000    
+Finished  goods  
+430.600.000  179.440.000  
+421.440.000   
+115.400.000   
+967.440.000  179.440.000  
+788.000.000     
+COGS  
+534.000.000  138.500.000  
+867.400.000   
+179.440.000   
+1.580.840.000  138.500.000  
+1.442.340.000                SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+TM  11  Standar  produksi  seorang  karyawan  Departemen  Penyempurnaan  adalah  35  unit  per  jam  dalam  6  
+jam
+ 
+sehari.
+ 
+Tarif
+ 
+upah
+ 
+per
+ 
+jam
+ 
+adalah
+ 
+Rp1,500
+ 
+Untuk
+ 
+setiap
+ 
+kelebihan
+ 
+jam
+ 
+kerja
+ 
+diberikan
+ 
+insentif
+ 
+sebesar
+ 
+70%
+ 
+dari
+ 
+tarif
+ 
+upah.
+ 
+Berikut
+ 
+ini
+ 
+adalah
+ 
+hasil
+ 
+kerja
+ 
+seorang
+ 
+karyawan
+ 
+minggu
+ 
+pertama
+ 
+bulan
+ 
+Maret:
+  Hari  Unit  Jam  
+Senin  220  6  
+Selasa  190  6  
+Rabu  210  6  
+Kamis  205  6  
+Jumat  230  6   a.  Buatlah  daftar  gaji  dan  upah  untuk  karyawan  tersebut.  b.  Buatlah  Jurnal  umum  untuk  mencatat  Gaji  dan  Upah.    Jawaban:  a.  Produksi  sesuai  standar  dalam  sehari  =  35  x  6  =  210  unit  Daftar  gaji  dan  upah:  Senin  :  (6  x  1.500)  +  [(220-210)  /  35  x  70%  x  1.500]  =  9.300  Selasa  :  (6  x  1.500)  =  9.000   ->  tidak  mencapai  standar  produksi  Rabu  :   (6  x  1.500)  +  [(210-210)  /  35  x  70%  x  1.500]  =  9.000  Kamis  :  (6  x  1.500)  =  9.000  ->  tidak  mencapai  standar  produksi  Jumat  :  (6  x  1.500)  +  [(230-210)  /  35  x  70%  x  1.500]  =  9.600   Total  gaji  =  9.300  +  9.000  +  9.000  +  9.000  +  9.600  =  45.900   b.  Gaji  dan  upah  langsung   45.000  Premi  lembur  -  FOH  Kontrol    900  Utang  gaji  dan  upah     45.900  SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+TM  12&13  Sebuah  perusahaan  manufaktur  memiliki  dua  departemen  jasa  dan  dua  departemen  produksi.  
+Masing-masing
+ 
+departemen
+ 
+produksi
+ 
+membuat
+ 
+produk
+ 
+yang
+ 
+berbeda.
+ 
+Selama
+ 
+beberapa
+ 
+tahun
+ 
+terakhir,
+ 
+perusahaan
+ 
+membagi
+ 
+(mengalokasikan)
+ 
+biaya
+ 
+dari
+ 
+departemen
+ 
+jasa
+ 
+ke
+ 
+departemen
+ 
+produksi
+ 
+berdasarkan
+ 
+total
+ 
+penjualan
+ 
+tahunan.
+ 
+Namun,
+ 
+setelah
+ 
+dilakukan
+ 
+audit
+ 
+internal,
+ 
+ditemukan
+ 
+bahwa
+ 
+cara
+ 
+pembagian
+ 
+biaya
+ 
+berdasarkan
+ 
+penjualan
+ 
+tahunan
+ 
+tersebut
+ 
+tidak
+ 
+akurat
+ 
+atau
+ 
+asal-asalan.
+ 
+Karena
+ 
+itu,
+ 
+auditor
+ 
+internal
+ 
+menyarankan
+ 
+metode
+ 
+pembagian
+ 
+biaya
+ 
+yang
+ 
+lebih
+ 
+tepat,
+ 
+yaitu
+ 
+menggunakan
+ 
+jumlah
+ 
+jam
+ 
+kerja
+ 
+pemeliharaan
+ 
+untuk
+ 
+departemen
+ 
+pemeliharaan
+ 
+dan
+ 
+jumlah
+ 
+jam
+ 
+kerja
+ 
+teknik
+ 
+untuk
+ 
+departemen
+ 
+teknik
+.
+ 
+Sebagai
+ 
+contoh,
+ 
+auditor
+ 
+internal
+ 
+memberikan
+ 
+data
+ 
+berikut:
+ 
+Keterangan  Departemen  Jasa  Departemen  Produksi  
+Pemeliharaan  Teknik  Perakitan  Pengemasan  
+Anggaran  Biaya  Rp120.000  Rp540.000  Rp800.000  Rp900.000  
+Jam  Kerja  Pemeliharaan  
+-  400  800  200  
+Jam  Kerja  Teknik  
+400  -  800  400  
+ Alokasikan  biaya  dari  departemen  jasa  ke  departemen  produksi  (tentukan  anggaran  
+setelah
+ 
+alokasi)
+ 
+menggunakan
+ 
+metode:
+ 1.  Direct  Method  2.  Sequential  Method  (Asumsi  Departemen  Pemeliharaan  mengalokasikan  biaya  ke  
+Departemen
+ 
+Teknik)
+  Jawaban:  SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+ 
+ 
+SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+ TM  14  -  Activity  Based  Costing   1.  Bangtan  Company  memproduksi  dua  jenis  produk  yaitu  boneka  dan  bantal.  Bangtan  
+Company
+ 
+menggunakan
+ 
+sistem
+ 
+ABC
+ 
+dalam
+ 
+perhitungan
+ 
+biaya
+ 
+overheadnya.
+ 
+Berikut
+ 
+adalah
+ 
+informasi
+ 
+kos
+ 
+terkait
+ 
+dua
+ 
+produk
+ 
+yang
+ 
+dihasilkan
+ 
+Bangtan
+ 
+Company.
+  
+Keterangan  Boneka  Bantal  Total  
+Unit  Produksi  750  500  1250  
+Direct  Material  Cost   22.500.000  (@30.000)  
+12.500.000  (@25.000)  
+35.000.000  
+Direct  Labor  Cost  25.000.000  20.000.000  45.000.000  
+Setup  Hours  375  250  625  
+Design  Change  150  100  250  
+Luas  Area  (m2)  2.000  2.000  4.000  
+Estimasi  Kos  Overhead  
+   
+Setup  Cost    8.000.000  
+Design  Cost    3.950.000  
+Lighting  Cost    3.300.000   Note:  -  Cost  Driver  Setup  Cost  =  Setup  Hours  -  Cost  Driver  Design  Cost  =  Design  Change  -  Cost  Driver  Lighting  Cost  =  Luas  Area   a.  Klasifikasi  aktivitas  overhead  sebagai:  unit  level,  batch  level,  product  level,  atau  
+plant
+ 
+(facility
+ 
+sustaining)
+ 
+level.
+ b.  Berdasarkan  klasifikasi  pada  soal  a,  hitunglah  tarif  overhead  menggunakan  sistem  
+ABC.
+ SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+c.  Hitunglah  kos  per  unit  untuk  setiap  produk.  (Rincikan  setiap  biayanya:  DM,  DL,  
+FOH)
+  JAWABAN:  a.  Setup  Cost  =  Batch  Level  Design  Cost  =  Product  Level  Lighting  Cost  =  Plant  Level   b.   ●  Tarif  Batch  Level  Activity  =  Estimasi  Batch  Level  Cost                                                      Estimasi  Setup  Hours  
+    =  8.000.000                                                     625  
+    =  12.800  ●  Tarif  Product  Level  Activity  =  Estimasi  Product  Level  Cost                                                            Estimasi  Design  Change  
+       =  3.950.000                                                           250  
+       =  15.800  ●  Tarif  Plant  Level  Activity  =  Estimasi  Plant  Level  Cost                                                      Estimasi  Luas  Lantai  
+    =  3.300.000                                                     4.000  
+    =  825   c.   ●  Total  Kos  Boneka   =  DM  +  DL  +  FOH     =  22.500.000  +  25.000.000  +  [(375  X  12.800)  +  (150  X  15.800)  +       (2000  X  825)]  =  22.500.000  +  25.000.000  +  8.820.000  =  56.320.000   Kos  per  Unit  Boneka  =  56.320.000  /  750  =  75.093,33   SOAL  KUIS  PRA-UAS  AKUNTANSI  BIAYA  2025  
+●  Total  Kos  Bantal   =  DM  +  DL  +  FOH     =  12.500.000  +  20.000.000  +  [(250  X  12.800)  +  (100  X  15.800)  +       (2000  X  825)]  =  12.500.000  +  20.000.000  +  6.430.000  =  38.930.000   Kos  per  Unit  Bantal  =  38.930.000  /  500  =  77.860   

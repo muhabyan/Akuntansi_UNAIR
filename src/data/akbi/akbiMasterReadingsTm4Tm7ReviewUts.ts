@@ -2681,7 +2681,7 @@ export const AKBI_TM4_TM7_READINGS: Record<number, AkbiMasterReading> = {
       },
       {
         "kind": "h2",
-        "text": "Batch 5 - Alur Belajar Cepat Biaya Kualitas"
+        "text": "Alur Belajar Cepat TM 5"
       },
       {
         "kind": "table",

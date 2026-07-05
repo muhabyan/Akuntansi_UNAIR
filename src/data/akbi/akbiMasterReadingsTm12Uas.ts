@@ -2346,7 +2346,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "h3",
-        "text": "Alur Belajar Cepat Batch 10"
+        "text": "Alur Belajar Cepat TM 12"
       },
       {
         "kind": "ol",
@@ -5419,7 +5419,7 @@ export const AKBI_TM12_TM14_READINGS: Record<number, AkbiMasterReading> =
       },
       {
         "kind": "h3",
-        "text": "Alur Belajar Cepat Batch 11"
+        "text": "Alur Belajar Cepat TM 13"
       },
       {
         "kind": "ol",
