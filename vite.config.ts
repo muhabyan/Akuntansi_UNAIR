@@ -31,7 +31,7 @@ export default defineConfig({
     malformedUriGuard(),
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['favicon.svg'],
       workbox: {
         navigateFallbackDenylist: [/^\/arsip-uas/],

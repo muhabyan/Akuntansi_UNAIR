@@ -15,6 +15,7 @@ import OnboardingTour from './components/OnboardingTour';
 import AITutorFloating from './components/AITutorFloating';
 import LiveChatFloating from './components/LiveChatFloating';
 import AICommandHandler from './components/AICommandHandler';
+import PWAPrompt from './components/PWAPrompt';
 import { NotificationProvider } from './contexts/NotificationContext';
 import ScheduleNotifier from './components/ScheduleNotifier';
 import UpdateNotifier from './components/UpdateNotifier';
@@ -337,6 +338,7 @@ export default function App() {
         <p className="mt-1">Developed by <span className="font-semibold text-blue-500 dark:text-blue-400">Muhammad Abyan Hafizh</span></p>
         <p className="mt-3 font-bold tracking-widest text-blue-600/80 dark:text-blue-400/80 uppercase text-[10px] md:text-xs">Excellence with Morality</p>
       </footer>
+      <PWAPrompt />
     </div>
     </NotificationProvider>
   );
