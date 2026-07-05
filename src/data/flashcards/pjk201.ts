@@ -1,760 +1,703 @@
+// ============================================================================
+// src/data/flashcards/pjk201.ts
+// Flashcard Komprehensif Perpajakan I (PJK201) — S1 Akuntansi FEB UNAIR
+// Terstruktur dalam 2 Fase: Pra-UTS (TM 1-7: KUP & Dasar Pajak) dan
+// Pra-UAS (TM 8-14: Pemeriksaan, Sengketa, Penagihan, Bea Meterai, Pajak Daerah)
+// ============================================================================
+
 import type { AdvancedStudyCard } from '../../types';
 
 export const PJK201_FC: AdvancedStudyCard[] = [
-  {
-    id: "pjk201-tm01-00",
-    phase: "pra-uts",
-    tm: 1,
-    topic: "Pajak",
-    category: "Definisi",
-    front: "Pajak",
-    back: "Iuran wajib kepada negara yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, tanpa mendapat imbalan secara langsung."
-  },
+  // ==========================================================================
+  // FASE PRA-UTS (TM 1 - TM 7: KUP & DASAR PERPAJAKAN)
+  // ==========================================================================
+
+  // --- TM 1: Kebijakan Fiskal, Sejarah & Pengertian Pajak ---
   {
     id: "pjk201-tm01-01",
     phase: "pra-uts",
     tm: 1,
-    topic: "Fungsi Pajak",
-    category: "Konsep",
-    front: "Fungsi Pajak",
-    back: "Fungsi Budgetair (sumber penerimaan kas negara terbesar) dan Fungsi Regulerend (mengatur kebijakan ekonomi/sosial, misal cukai rokok tinggi)."
+    topic: "Definisi Pajak (UU KUP)",
+    category: "Definisi",
+    front: "Definisi Pajak menurut UU KUP No. 28 Tahun 2007",
+    back: "Kontribusi wajib kepada negara yang terutang oleh orang pribadi atau badan yang bersifat memaksa berdasarkan Undang-Undang, dengan tidak mendapatkan imbalan secara langsung dan digunakan untuk keperluan negara bagi sebesar-besarnya kemakmuran rakyat."
   },
   {
     id: "pjk201-tm01-02",
     phase: "pra-uts",
     tm: 1,
-    topic: "Pajak vs Retribusi",
-    category: "Perbandingan",
-    front: "Pajak vs Retribusi",
-    back: "Pajak tidak memberi imbalan langsung (contoh PPN). Retribusi memberi imbalan pelayanan langsung dari negara (contoh retribusi parkir/sampah)."
+    topic: "Fungsi Budgetair",
+    category: "Konsep",
+    front: "Fungsi Budgetair (Fungsi Finansial)",
+    back: "Fungsi pajak sebagai sumber penerimaan kas negara terbesar untuk membiayai pengeluaran rutin dan pembangunan (menjalankan anggaran pendapatan dan belanja negara/APBN)."
   },
   {
     id: "pjk201-tm01-03",
     phase: "pra-uts",
     tm: 1,
-    topic: "Asas Pemungutan Pajak (Adam Smith)",
-    category: "Standar",
-    front: "Asas Pemungutan Pajak (Adam Smith)",
-    back: "Equality (Keadilan/kemampuan), Certainty (Kepastian hukum), Convenience of Payment (Ketepatan waktu pungut), Economy (Biaya pungut minimum)."
+    topic: "Fungsi Regulerend",
+    category: "Konsep",
+    front: "Fungsi Regulerend (Fungsi Mengatur)",
+    back: "Fungsi pajak sebagai alat untuk mengatur atau melaksanakan kebijakan pemerintah dalam bidang sosial dan ekonomi (contoh: tarif cukai rokok tinggi untuk menekan konsumsi, insentif pajak untuk UMKM)."
   },
   {
     id: "pjk201-tm01-04",
     phase: "pra-uts",
     tm: 1,
-    topic: "Self Assessment System",
+    topic: "Fungsi Alokasi & Distribusi",
     category: "Konsep",
-    front: "Self Assessment System",
-    back: "Sistem di mana Wajib Pajak diberi kepercayaan untuk menghitung, memperhitungkan, membayar, dan melaporkan sendiri pajaknya."
+    front: "Fungsi Alokasi & Fungsi Distribusi Pajak",
+    back: "Fungsi Alokasi: menyediakan barang dan layanan publik (jalan, sekolah, rumah sakit). Fungsi Distribusi: menyeimbangkan dan meratakan pendapatan masyarakat melalui pemerataan pembangunan serta perlindungan sosial."
   },
   {
     id: "pjk201-tm01-05",
     phase: "pra-uts",
     tm: 1,
-    topic: "Withholding System",
-    category: "Konsep",
-    front: "Withholding System",
-    back: "Sistem pemungutan pajak di mana pihak ketiga (bukan WP atau aparat pajak) yang bertugas memotong/memungut pajak (contoh bendahara kantor memotong PPh 21 pegawai)."
+    topic: "Perbedaan Pajak vs Retribusi",
+    category: "Miskonsepsi",
+    front: "Perbedaan Utama Pajak dan Retribusi",
+    back: "Pajak tidak memberikan kontraprestasi (imbalan) langsung kepada pembayarnya dan berlaku umum; sedangkan Retribusi memberikan kontraprestasi langsung yang dapat dirasakan oleh pembayar (misal: retribusi parkir, kebersihan, izin mendirikan bangunan)."
   },
   {
-    id: "pjk201-tm02-06",
+    id: "pjk201-tm01-06",
     phase: "pra-uts",
-    tm: 2,
-    topic: "NPWP (Nomor Pokok Wajib Pajak)",
-    category: "Definisi",
-    front: "NPWP (Nomor Pokok Wajib Pajak)",
-    back: "Nomor identitas yang diberikan kepada WP sebagai sarana dalam administrasi perpajakan. NPWP kini menggunakan NIK (Nomor Induk Kependudukan)."
+    tm: 1,
+    topic: "Reformasi Pajak 1983",
+    category: "Sejarah",
+    front: "Tonggak Reformasi Perpajakan Indonesia Tahun 1983",
+    back: "Perubahan fundamental sistem pemungutan dari Official Assessment System (pajak ditentukan sepenuhnya oleh aparat fiskus pada era kolonial) menjadi Self Assessment System (wajib pajak aktif menghitung, membayar, dan melaporkan pajaknya sendiri)."
   },
+
+  // --- TM 2: Teori, Jenis, Cara Pemungutan, Tarif & Utang Pajak ---
   {
     id: "pjk201-tm02-07",
     phase: "pra-uts",
     tm: 2,
-    topic: "Pengukuhan PKP (Pengusaha Kena Pajak)",
-    category: "Konsep",
-    front: "Pengukuhan PKP (Pengusaha Kena Pajak)",
-    back: "Wajib jika pengusaha melakukan penyerahan BKP/JKP dan omzet setahun di atas Rp 4,8 miliar. Wajib memungut PPN dan membuat Faktur Pajak."
+    topic: "Teori Asuransi & Teori Kepentingan",
+    category: "Teori",
+    front: "Teori Asuransi vs Teori Kepentingan dalam Pemungutan Pajak",
+    back: "Teori Asuransi: negara mengemban tugas melindungi jiwa dan harta warga, sehingga wajar rakyat membayar premi (pajak). Teori Kepentingan: besarnya beban pajak disesuaikan dengan seberapa besar kepentingan seseorang terhadap perlindungan negara."
   },
   {
     id: "pjk201-tm02-08",
     phase: "pra-uts",
     tm: 2,
-    topic: "Batas Waktu Lapor SPT Tahunan",
-    category: "Standar",
-    front: "Batas Waktu Lapor SPT Tahunan",
-    back: "Untuk Wajib Pajak Orang Pribadi maksimal 3 bulan setelah akhir tahun pajak (31 Maret). Wajib Pajak Badan maksimal 4 bulan (30 April)."
+    topic: "Teori Daya Pikul & Teori Bakti",
+    category: "Teori",
+    front: "Teori Daya Pikul vs Teori Bakti (Kewajiban Mutlak)",
+    back: "Teori Daya Pikul: beban pajak harus sama beratnya sesuai kemampuan kemampuan finansial (pendapatan dikurangi pengeluaran pokok). Teori Bakti: hak mutlak negara untuk memungut pajak dan kewajiban mutlak warga untuk berbakti kepada negara."
   },
   {
     id: "pjk201-tm02-09",
     phase: "pra-uts",
     tm: 2,
-    topic: "SSP (Surat Setoran Pajak)",
-    category: "Dokumen",
-    front: "SSP (Surat Setoran Pajak)",
-    back: "Bukti pembayaran pajak ke kas negara menggunakan formulir (kini lebih sering lewat sistem billing/e-billing)."
+    topic: "Pajak Langsung vs Tidak Langsung",
+    category: "Klasifikasi",
+    front: "Pajak Langsung (Direct Tax) vs Pajak Tidak Langsung (Indirect Tax)",
+    back: "Pajak Langsung: beban pajaknya harus dipikul sendiri oleh wajib pajak dan tidak dapat dilimpahkan kepada pihak lain (contoh: PPh, PBB). Pajak Tidak Langsung: bebannya dapat dilimpahkan kepada pihak akhir/konsumen (contoh: PPN, PPnBM, Cukai)."
   },
   {
     id: "pjk201-tm02-10",
     phase: "pra-uts",
     tm: 2,
-    topic: "SKP (Surat Ketetapan Pajak)",
-    category: "Dokumen",
-    front: "SKP (Surat Ketetapan Pajak)",
-    back: "Surat dari Dirjen Pajak yang menetapkan jumlah pajak kurang bayar (SKPKB), lebih bayar (SKPLB), atau nihil (SKPN) setelah dilakukan pemeriksaan."
+    topic: "Pajak Subjektif vs Objektif",
+    category: "Klasifikasi",
+    front: "Pajak Subjektif vs Pajak Objektif",
+    back: "Pajak Subjektif: pengenaannya memperhatikan kondisi pribadi/subjeknya (contoh: PPh melihat status kawin dan jumlah tanggungan/PTKP). Pajak Objektif: pengenaannya hanya memperhatikan objeknya tanpa melihat kondisi pribadi pembayarnya (contoh: PPN, PBB)."
   },
   {
     id: "pjk201-tm02-11",
     phase: "pra-uts",
     tm: 2,
-    topic: "Sanksi Administrasi KUP",
+    topic: "Stelsel Pajak (Nyata, Anggapan, Campuran)",
     category: "Mekanisme",
-    front: "Sanksi Administrasi KUP",
-    back: "Berupa Bunga (keterlambatan bayar), Denda (keterlambatan lapor SPT), atau Kenaikan (karena pengungkapan ketidakbenaran atau fraud pajak)."
+    front: "Stelsel Nyata (Riil), Stelsel Anggapan (Fiktif), dan Stelsel Campuran",
+    back: "Stelsel Nyata: pajak dihitung di akhir tahun berdasarkan penghasilan sesungguhnya. Stelsel Anggapan: pajak dihitung di awal tahun berdasarkan asumsi/penghasilan tahun lalu. Stelsel Campuran: kombinasi keduanya, bayar angsuran awal tahun lalu dikoreksi di akhir tahun."
   },
   {
-    id: "pjk201-tm03-12",
+    id: "pjk201-tm02-12",
     phase: "pra-uts",
-    tm: 3,
-    topic: "Penagihan Pajak Aktif",
-    category: "Definisi",
-    front: "Penagihan Pajak Aktif",
-    back: "Serangkaian tindakan agar Penanggung Pajak melunasi utang pajak dan biaya penagihan, yang diawali dengan Surat Teguran dan Surat Paksa."
+    tm: 2,
+    topic: "Jenis Tarif Pajak",
+    category: "Tarif",
+    front: "4 Jenis Tarif Pajak (Proporsional, Progresif, Regresif, Tetap)",
+    back: "Proporsional: persentase tetap (PPN 11%). Progresif: persentase naik seiring kenaikan dasar pengenaan (PPh OP Pasal 17). Regresif: persentase turun saat dasar pengenaan naik. Tetap: nominal rupiah tetap berapapun nilainya (Bea Meterai Rp 10.000)."
   },
   {
-    id: "pjk201-tm03-13",
+    id: "pjk201-tm02-13",
     phase: "pra-uts",
-    tm: 3,
-    topic: "Surat Teguran (Surat Peringatan)",
-    category: "Dokumen",
-    front: "Surat Teguran (Surat Peringatan)",
-    back: "Diterbitkan 7 hari setelah jatuh tempo pembayaran jika WP belum melunasi pajaknya."
+    tm: 2,
+    topic: "Timbul & Hapusnya Utang Pajak",
+    category: "Hukum",
+    front: "Ajaran Materiil vs Ajaran Formil Timbulnya Utang Pajak",
+    back: "Ajaran Materiil: utang pajak timbul dengan sendirinya karena terpenuhinya tatabestaan/undang-undang (ada subjek dan objek, berlaku di Self Assessment). Ajaran Formil: utang pajak timbul setelah diterbitkannya Surat Ketetapan Pajak (SKP) oleh fiskus (berlaku di Official Assessment)."
   },
+
+  // --- TM 3: Asas Pemungutan & Hukum Pajak Internasional ---
   {
     id: "pjk201-tm03-14",
     phase: "pra-uts",
     tm: 3,
-    topic: "Surat Paksa",
-    category: "Dokumen",
-    front: "Surat Paksa",
-    back: "Surat yang memiliki kekuatan eksekutorial sama dengan putusan pengadilan. Diterbitkan 21 hari setelah Surat Teguran. WP punya waktu 2x24 jam untuk melunasi."
+    topic: "The Four Maxims (Adam Smith)",
+    category: "Prinsip",
+    front: "4 Asas Pemungutan Pajak menurut Adam Smith (The Four Maxims)",
+    back: "1) Equality (keadilan & kesetaraan daya pikul); 2) Certainty (kepastian hukum, objek, dan tarif); 3) Convenience of Payment (kemudahan waktu pembayaran); 4) Economy/Efficiency (biaya pemungutan harus serendah mungkin dibanding hasil pajaknya)."
   },
   {
     id: "pjk201-tm03-15",
     phase: "pra-uts",
     tm: 3,
-    topic: "Penyitaan (Surat Perintah Melaksanakan Penyitaan)",
-    category: "Mekanisme",
-    front: "Penyitaan (Surat Perintah Melaksanakan Penyitaan)",
-    back: "Tindakan jurusita menyita aset WP. Dilakukan setelah lewat waktu 2x24 jam dari pemberitahuan Surat Paksa tanpa pelunasan."
+    topic: "Asas Domisili, Sumber & Kewarganegaraan",
+    category: "Prinsip",
+    front: "Asas Domisili (Tempat Tinggal), Asas Sumber, dan Asas Kewarganegaraan",
+    back: "Asas Domisili: negara memungut pajak atas seluruh penghasilan penduduknya (worldwide income). Asas Sumber: negara memungut pajak atas penghasilan yang bersumber di wilayahnya tanpa melihat domisili subjek. Asas Kewarganegaraan: pajak didasarkan pada status kewarganegaraan (seperti sistem AS)."
   },
   {
     id: "pjk201-tm03-16",
     phase: "pra-uts",
     tm: 3,
-    topic: "Lelang",
-    category: "Mekanisme",
-    front: "Lelang",
-    back: "Penjualan aset sitaan melalui Kantor Lelang Negara jika Wajib Pajak tidak melunasi utang pajak 14 hari setelah pelaksanaan penyitaan."
+    topic: "Pajak Berganda (Double Taxation)",
+    category: "Konsep",
+    front: "Pajak Berganda Yuridis vs Pajak Berganda Ekonomis",
+    back: "Pajak Berganda Yuridis: satu subjek pajak dikenakan pajak oleh dua negara atau lebih atas objek penghasilan yang sama pada periode yang sama. Pajak Berganda Ekonomis: satu objek pajak dikenakan pajak lebih dari satu kali di tangan subjek yang berbeda (misal: laba perseroan dikena PPh Badan, lalu dividennya dikena PPh lagi)."
   },
   {
     id: "pjk201-tm03-17",
     phase: "pra-uts",
     tm: 3,
-    topic: "Pencegahan dan Penyanderaan (Gijzeling)",
-    category: "Konsep",
-    front: "Pencegahan dan Penyanderaan (Gijzeling)",
-    back: "Pencegahan bepergian ke luar negeri dan pengekangan kebebasan WP di Rutan, khusus untuk WP dengan utang pajak ≥ Rp 100 juta dan diragukan iktikad baiknya."
+    topic: "P3B (Tax Treaty)",
+    category: "Definisi",
+    front: "P3B (Perjanjian Penghindaran Pajak Berganda / Tax Treaty)",
+    back: "Perjanjian bilateral antar negara untuk mengeliminasi pajak berganda, mencegah pengelakan pajak internasional (tax evasion), serta mengatur hak pemajakan antar negara sumber dan negara domisili."
   },
+
+  // --- TM 4: KUP — NPWP/NPPKP, Subjek & Objek Pajak Secara Umum ---
   {
     id: "pjk201-tm04-18",
     phase: "pra-uts",
     tm: 4,
-    topic: "Pajak Penghasilan (PPh)",
+    topic: "Definisi NPWP",
     category: "Definisi",
-    front: "Pajak Penghasilan (PPh)",
-    back: "Pajak yang dikenakan terhadap Subjek Pajak atas Penghasilan yang diterima atau diperolehnya dalam suatu tahun pajak."
+    front: "NPWP (Nomor Pokok Wajib Pajak)",
+    back: "Nomor yang diberikan kepada Wajib Pajak sebagai sarana dalam administrasi perpajakan yang dipergunakan sebagai tanda pengenal diri atau identitas Wajib Pajak dalam melaksanakan hak dan kewajiban perpajakannya."
   },
   {
     id: "pjk201-tm04-19",
     phase: "pra-uts",
     tm: 4,
-    topic: "Subjek Pajak Dalam Negeri (SPDN)",
-    category: "Konsep",
-    front: "Subjek Pajak Dalam Negeri (SPDN)",
-    back: "Orang Pribadi yang bertempat tinggal di Indonesia lebih dari 183 hari dalam 12 bulan, atau Badan yang didirikan/bertempat kedudukan di Indonesia."
+    topic: "Fungsi & Kewajiban NPPKP",
+    category: "Definisi",
+    front: "NPPKP (Nomor Pengukuhan Pengusaha Kena Pajak)",
+    back: "Status yang diberikan kepada pengusaha yang melakukan penyerahan BKP/JKP (omzet > Rp 4,8 Miliar per tahun atau memilih dikukuhkan). Berfungsi untuk memungut, menyetor, dan melaporkan PPN serta menerbitkan Faktur Pajak."
   },
   {
     id: "pjk201-tm04-20",
     phase: "pra-uts",
     tm: 4,
-    topic: "Subjek Pajak Luar Negeri (SPLN)",
-    category: "Konsep",
-    front: "Subjek Pajak Luar Negeri (SPLN)",
-    back: "Orang/Badan yang tidak tinggal/berdiri di Indonesia tetapi menerima penghasilan dari Indonesia (baik lewat BUT maupun non-BUT)."
+    topic: "Penghapusan NPWP & Pencabutan NPPKP",
+    category: "Prosedur",
+    front: "Alasan Penghapusan NPWP dan Pencabutan NPPKP",
+    back: "NPWP dihapus jika: WP OP meninggal tanpa warisan, WP meninggalkan Indonesia selamanya, WP Badan bubar, atau warisan selesai dibagi. NPPKP dicabut jika PKP pindah alamat, omzet turun di bawah Rp 4,8 M (kembali jadi pengusaha kecil), atau bubar."
   },
   {
     id: "pjk201-tm04-21",
     phase: "pra-uts",
     tm: 4,
-    topic: "Bentuk Usaha Tetap (BUT)",
-    category: "Definisi",
-    front: "Bentuk Usaha Tetap (BUT)",
-    back: "Cabang, kantor perwakilan, atau agen dari perusahaan asing (SPLN) yang menjalankan bisnis/kegiatan reguler di Indonesia; diperlakukan pajaknya layaknya WP Badan Dalam Negeri."
+    topic: "Wajib Pajak Dalam Negeri vs Luar Negeri",
+    category: "Subjek",
+    front: "Kriteria Wajib Pajak Dalam Negeri (WPDN) vs Luar Negeri (WPLN)",
+    back: "WPDN: bertempat tinggal di Indonesia, atau berada di Indonesia > 183 hari dalam 12 bulan, atau berniat tinggal di Indonesia. WPLN: tidak tinggal/berada di Indonesia < 183 hari yang memperoleh penghasilan dari Indonesia (melalui BUT maupun pemotongan langsung)."
   },
   {
     id: "pjk201-tm04-22",
     phase: "pra-uts",
     tm: 4,
-    topic: "Objek Pajak Penghasilan (Pasal 4 ayat 1)",
-    category: "Standar",
-    front: "Objek Pajak Penghasilan (Pasal 4 ayat 1)",
-    back: "Setiap tambahan kemampuan ekonomis, baik dari dalam maupun luar negeri, yang dapat dipakai konsumsi atau menambah kekayaan (Gaji, Laba Usaha, Bunga, Dividen, Royalti)."
+    topic: "Objek Pajak secara Umum (UU KUP)",
+    category: "Objek",
+    front: "Konsep Objek Pajak dalam KUP",
+    back: "Setiap tambahan kemampuan ekonomis yang diterima atau diperoleh Wajib Pajak, baik yang berasal dari dalam maupun dari luar negeri, yang dapat dipakai untuk konsumsi atau untuk menambah kekayaan Wajib Pajak yang bersangkutan dengan nama dan dalam bentuk apapun."
   },
+
+  // --- TM 5: KUP — Pembayaran, Pelaporan Pajak & SPT ---
   {
-    id: "pjk201-tm04-23",
+    id: "pjk201-tm05-23",
     phase: "pra-uts",
-    tm: 4,
-    topic: "Bukan Objek Pajak (Pasal 4 ayat 3)",
-    category: "Standar",
-    front: "Bukan Objek Pajak (Pasal 4 ayat 3)",
-    back: "Bantuan/sumbangan/zakat resmi, harta hibahan keluarga sedarah linier, warisan, klaim asuransi kesehatan/jiwa, dan beasiswa tertentu."
+    tm: 5,
+    topic: "Definisi SPT",
+    category: "Definisi",
+    front: "SPT (Surat Pemberitahuan)",
+    back: "Surat yang oleh Wajib Pajak digunakan untuk melaporkan penghitungan dan/atau pembayaran pajak, objek pajak dan/atau bukan objek pajak, dan/atau harta dan kewajiban sesuai dengan ketentuan peraturan perundang-undangan perpajakan."
   },
   {
     id: "pjk201-tm05-24",
     phase: "pra-uts",
     tm: 5,
-    topic: "PPh Pasal 21",
-    category: "Definisi",
-    front: "PPh Pasal 21",
-    back: "Pajak pemotongan atas penghasilan berupa gaji, upah, honorarium, tunjangan yang diterima oleh Wajib Pajak Orang Pribadi dalam negeri sehubungan dengan pekerjaan atau jasa."
+    topic: "Batas Waktu Pelaporan SPT",
+    category: "Standar",
+    front: "Batas Waktu Pelaporan SPT Masa dan SPT Tahunan",
+    back: "SPT Masa: paling lambat tanggal 20 bulan berikutnya (untuk PPN akhir bulan berikutnya). SPT Tahunan WP OP: paling lambat 3 bulan setelah akhir tahun pajak (31 Maret). SPT Tahunan WP Badan: paling lambat 4 bulan setelah akhir tahun pajak (30 April)."
   },
   {
     id: "pjk201-tm05-25",
     phase: "pra-uts",
     tm: 5,
-    topic: "PTKP (Penghasilan Tidak Kena Pajak)",
-    category: "Rumus",
-    front: "PTKP (Penghasilan Tidak Kena Pajak)",
-    back: "Pengurang penghasilan bruto bagi WP OP. Standar TK/0 (Tidak Kawin nol tanggungan) adalah Rp 54.000.000 setahun. Tambahan Rp 4.500.000 untuk status kawin dan per tanggungan (maks 3)."
+    topic: "Sanksi Keterlambatan Lapor SPT",
+    category: "Sanksi",
+    front: "Sanksi Denda Keterlambatan Pelaporan SPT (Pasal 7 KUP)",
+    back: "SPT Masa PPN: Rp 500.000. SPT Masa lainnya: Rp 100.000. SPT Tahunan OP: Rp 100.000. SPT Tahunan Badan: Rp 1.000.000."
   },
   {
     id: "pjk201-tm05-26",
     phase: "pra-uts",
     tm: 5,
-    topic: "Tarif Pasal 17 untuk Orang Pribadi",
-    category: "Konsep",
-    front: "Tarif Pasal 17 untuk Orang Pribadi",
-    back: "Tarif progresif: 5% (s.d Rp 60 jt), 15% (60-250 jt), 25% (250-500 jt), 30% (500 jt - 5 M), dan 35% (di atas Rp 5 M)."
+    topic: "e-Billing & SSP",
+    category: "Mekanisme",
+    front: "e-Billing (Surat Setoran Pajak Elektronik)",
+    back: "Metode pembayaran pajak secara elektronik menggunakan Kode Billing (kode identifikasi diterbitkan sistem Ditjen Pajak atas jenis pajak, masa, tahun pajak, dan nominal yang akan dibayar)."
   },
   {
     id: "pjk201-tm05-27",
     phase: "pra-uts",
     tm: 5,
-    topic: "Biaya Jabatan",
-    category: "Rumus",
-    front: "Biaya Jabatan",
-    back: "Pengurang penghasilan bruto khusus bagi pegawai tetap. Ditetapkan 5% dari penghasilan bruto, maksimal Rp 500.000 per bulan (Rp 6.000.000 setahun)."
+    topic: "Pembetulan SPT (Pasal 8 KUP)",
+    category: "Prosedur",
+    front: "Hak Pembetulan SPT oleh Wajib Pajak",
+    back: "WP dapat membetulkan SPT dengan kemauan sendiri dengan menyampaikan pernyataan tertulis, dengan syarat Dirjen Pajak BELUM melakukan tindakan pemeriksaan atau penyidikan."
+  },
+
+  // --- TM 6: Kepatuhan Pajak & Tax Digitalization ---
+  {
+    id: "pjk201-tm06-28",
+    phase: "pra-uts",
+    tm: 6,
+    topic: "Kepatuhan Formal vs Materiil",
+    category: "Konsep",
+    front: "Kepatuhan Formal vs Kepatuhan Materiil",
+    back: "Kepatuhan Formal: memenuhi administrasi ketepatan waktu lapor dan bayar sesuai jadwal hukum. Kepatuhan Materiil: isi pelaporan SPT secara substantif jujur, akurat, dan sesuai dengan ketentuan hukum pajak yang sesungguhnya."
   },
   {
-    id: "pjk201-tm05-28",
+    id: "pjk201-tm06-29",
     phase: "pra-uts",
-    tm: 5,
-    topic: "TER (Tarif Efektif Rata-rata)",
-    category: "Mekanisme",
-    front: "TER (Tarif Efektif Rata-rata)",
-    back: "Aturan baru pemotongan PPh 21 bulanan (selain bulan Desember) yang menggunakan persentase tunggal (TER A/B/C) dikali penghasilan bruto bulanan tanpa repot mengurangi PTKP tiap bulan."
-  },
-  {
-    id: "pjk201-tm05-29",
-    phase: "pra-uts",
-    tm: 5,
-    topic: "Pemotongan Tidak Ber-NPWP",
+    tm: 6,
+    topic: "Tax Evasion vs Tax Avoidance",
     category: "Miskonsepsi",
-    front: "Pemotongan Tidak Ber-NPWP",
-    back: "Jika penerima penghasilan tidak memiliki NPWP, maka tarif pemotongan PPh 21 akan lebih tinggi 20% dari tarif normal (misal tarif 5% menjadi 6%)."
+    front: "Tax Evasion (Pengelakan) vs Tax Avoidance (Penghindaran)",
+    back: "Tax Evasion: tindakan ilegal mengurangi pajak dengan memalsukan data, menyembunyikan omzet, atau tindak pidana. Tax Avoidance: rekayasa legal memanfaatkan celah undang-undang (loopholes) untuk meminimalkan beban pajak tanpa melanggar hukum."
   },
   {
     id: "pjk201-tm06-30",
     phase: "pra-uts",
     tm: 6,
-    topic: "PPh Pasal 22",
+    topic: "PSIAP / CoreTax System",
     category: "Definisi",
-    front: "PPh Pasal 22",
-    back: "Pajak yang dipungut oleh bendaharawan pemerintah terkait pengadaan barang, atau oleh badan tertentu terkait kegiatan impor atau bisnis di bidang tertentu (semen, kertas, baja, otomotif)."
+    front: "PSIAP (Pembaruan Sistem Inti Administrasi Perpajakan / CoreTax)",
+    back: "Proyek transformasi digital komprehensif Ditjen Pajak untuk mengintegrasikan seluruh layanan perpajakan (registrasi, pembayaran, pelaporan, pemeriksaan, penagihan, tax account) dalam satu sistem terpadu berfokus pada pengalaman WP dan otomasi."
   },
   {
     id: "pjk201-tm06-31",
     phase: "pra-uts",
     tm: 6,
-    topic: "Tarif PPh 22 Impor (Punya API)",
-    category: "Rumus",
-    front: "Tarif PPh 22 Impor (Punya API)",
-    back: "Tarif 2,5% dari Nilai Impor untuk barang tertentu (bisa 7,5% atau 10% untuk barang lainnya). API = Angka Pengenal Impor."
+    topic: "e-Filing, e-Form, dan e-Bupot",
+    category: "Dokumen",
+    front: "Layanan Digital DJP (e-Filing, e-Form, e-Bupot)",
+    back: "e-Filing: pelaporan SPT online secara real-time. e-Form: pengisian SPT offline via file form (.pdf/.xfdl) lalu diunggah saat selesai. e-Bupot: aplikasi pembuatan bukti pemotongan/pemungutan PPh secara elektronik."
   },
+
+  // --- TM 7: Pembukuan & Pencatatan ---
   {
-    id: "pjk201-tm06-32",
-    phase: "pra-uts",
-    tm: 6,
-    topic: "Tarif PPh 22 Impor (Tanpa API)",
-    category: "Rumus",
-    front: "Tarif PPh 22 Impor (Tanpa API)",
-    back: "Tarif lebih tinggi yakni 7,5% dari Nilai Impor. Jika barang tidak dikuasai (lelang), juga dikenakan 7,5% dari harga jual lelang."
-  },
-  {
-    id: "pjk201-tm06-33",
-    phase: "pra-uts",
-    tm: 6,
-    topic: "Tarif PPh 22 Bendahara Pemerintah",
-    category: "Rumus",
-    front: "Tarif PPh 22 Bendahara Pemerintah",
-    back: "Pemungutan sebesar 1,5% dari harga pembelian (tidak termasuk PPN) atas belanja barang oleh instansi pemerintah."
-  },
-  {
-    id: "pjk201-tm06-34",
-    phase: "pra-uts",
-    tm: 6,
-    topic: "Pengecualian PPh 22 Bendahara",
-    category: "Konsep",
-    front: "Pengecualian PPh 22 Bendahara",
-    back: "Pembelian barang dengan nilai maksimal Rp 2.000.000, pembelian BBM/listrik/air, atau pembayaran untuk pengadaan beras/gabah Bulog tidak dipungut PPh 22."
-  },
-  {
-    id: "pjk201-tm06-35",
-    phase: "pra-uts",
-    tm: 6,
-    topic: "Sifat PPh 22",
-    category: "Konsep",
-    front: "Sifat PPh 22",
-    back: "Pada umumnya PPh 22 bersifat tidak final (kredit pajak), kecuali PPh 22 atas penjualan BBM kepada penyalur/agen yang bersifat final."
-  },
-  {
-    id: "pjk201-tm07-36",
+    id: "pjk201-tm07-32",
     phase: "pra-uts",
     tm: 7,
-    topic: "PPh Pasal 23",
+    topic: "Pembukuan vs Pencatatan (Pasal 28 KUP)",
     category: "Definisi",
-    front: "PPh Pasal 23",
-    back: "Pajak yang dipotong atas penghasilan modal (dividen, bunga, royalti) dan imbalan jasa yang diterima Wajib Pajak Dalam Negeri (selain yang dipotong PPh 21)."
+    front: "Perbedaan Pembukuan dan Pencatatan",
+    back: "Pembukuan: proses pencatatan teratur mengumpulkan data keuangan (harta, kewajiban, modal, penghasilan, biaya) hingga menyusun laporan keuangan neraca & laba rugi (Wajib bagi WP Badan & WP OP omzet >= Rp 4,8 M). Pencatatan: pengumpulan data peredaran bruto secara sederhana (Boleh untuk WP OP omzet < Rp 4,8 M atau pekerja bebas)."
   },
   {
-    id: "pjk201-tm07-37",
+    id: "pjk201-tm07-33",
     phase: "pra-uts",
     tm: 7,
-    topic: "Tarif 15% (PPh 23)",
-    category: "Tarif",
-    front: "Tarif 15% (PPh 23)",
-    back: "Dikenakan atas: Dividen (untuk WP Badan jika syarat tertentu tidak terpenuhi), Bunga, Royalti, dan Hadiah/Penghargaan (selain PPh 21)."
-  },
-  {
-    id: "pjk201-tm07-38",
-    phase: "pra-uts",
-    tm: 7,
-    topic: "Tarif 2% (PPh 23)",
-    category: "Tarif",
-    front: "Tarif 2% (PPh 23)",
-    back: "Dikenakan atas: Sewa harta (selain tanah/bangunan) dan Imbalan atas Jasa Manajemen, Jasa Teknik, Jasa Konsultan, atau Jasa Lainnya."
-  },
-  {
-    id: "pjk201-tm07-39",
-    phase: "pra-uts",
-    tm: 7,
-    topic: "Bukan Objek PPh 23",
-    category: "Konsep",
-    front: "Bukan Objek PPh 23",
-    back: "Bunga simpanan koperasi yang dibayar ke anggota, dividen antar-BUMN/Badan dengan kepemilikan >25% (dibebaskan), atau sewa sewa guna usaha (leasing) dengan hak opsi."
-  },
-  {
-    id: "pjk201-tm07-40",
-    phase: "pra-uts",
-    tm: 7,
-    topic: "Sanksi Tidak Punya NPWP di PPh 23",
-    category: "Mekanisme",
-    front: "Sanksi Tidak Punya NPWP di PPh 23",
-    back: "Tarif pemotongan akan menjadi 100% lebih tinggi dari tarif standar (contoh: jasa 2% menjadi 4%, dividen 15% menjadi 30%)."
-  },
-  {
-    id: "pjk201-tm07-41",
-    phase: "pra-uts",
-    tm: 7,
-    topic: "Pemotong PPh 23",
-    category: "Miskonsepsi",
-    front: "Pemotong PPh 23",
-    back: "Yang memotong dan menyetor adalah PIHAK YANG MEMBAYAR (Pemberi Penghasilan / Klien yang berstatus WP Badan/ditunjuk), bukan pihak yang menerima penghasilan."
-  },
-  {
-    id: "pjk201-tm08-42",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "PPh Final (Pasal 4 ayat 2)",
-    category: "Definisi",
-    front: "PPh Final (Pasal 4 ayat 2)",
-    back: "Pajak yang pemotongannya dianggap lunas seketika. Penghasilannya tidak digabung di SPT Tahunan, dan pajaknya tidak bisa dikreditkan."
-  },
-  {
-    id: "pjk201-tm08-43",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Bunga Deposito / Tabungan",
-    category: "Tarif",
-    front: "Bunga Deposito / Tabungan",
-    back: "Dikenakan PPh Final 20% atas jumlah bruto bunga. Dipotong langsung oleh pihak Bank."
-  },
-  {
-    id: "pjk201-tm08-44",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Sewa Tanah dan/atau Bangunan",
-    category: "Tarif",
-    front: "Sewa Tanah dan/atau Bangunan",
-    back: "Dikenakan PPh Final 10% dari jumlah bruto nilai persewaan."
-  },
-  {
-    id: "pjk201-tm08-45",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Pengalihan Hak Tanah dan Bangunan",
-    category: "Tarif",
-    front: "Pengalihan Hak Tanah dan Bangunan",
-    back: "Dikenakan PPh Final 2,5% dari nilai pengalihan (harga transaksi atau NJOP, mana yang lebih tinggi)."
-  },
-  {
-    id: "pjk201-tm08-46",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Jasa Konstruksi",
-    category: "Tarif",
-    front: "Jasa Konstruksi",
-    back: "Tarif beragam (1,75%, 2,65%, 4%, 6%) tergantung memiliki kualifikasi usaha (Kecil/Menengah/Besar) dan jenis layanan (Konsultasi/Pelaksanaan/Pengawasan)."
-  },
-  {
-    id: "pjk201-tm08-47",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Dividen untuk Orang Pribadi",
-    category: "Tarif",
-    front: "Dividen untuk Orang Pribadi",
-    back: "Dividen yang diterima Wajib Pajak Orang Pribadi Dalam Negeri dikenakan PPh Final 10%, NAMUN bisa BEBAS PAJAK jika diinvestasikan kembali di instrumen keuangan RI selama 3 tahun."
-  },
-  {
-    id: "pjk201-tm09-48",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "PPh Pasal 24",
-    category: "Definisi",
-    front: "PPh Pasal 24",
-    back: "Fasilitas Kredit Pajak Luar Negeri. Mengatur agar penghasilan WP yang telah dipotong pajak di luar negeri tidak terkena pajak ganda di Indonesia."
-  },
-  {
-    id: "pjk201-tm09-49",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Batas Maksimum Kredit PPh 24",
-    category: "Rumus",
-    front: "Batas Maksimum Kredit PPh 24",
-    back: "(Penghasilan Luar Negeri / Total Penghasilan Kena Pajak) x Total PPh Terutang setahun. Batas kredit adalah yang terkecil antara Pajak riil dibayar di LN atau batas maksimum tersebut."
-  },
-  {
-    id: "pjk201-tm09-50",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "PPh Pasal 25",
-    category: "Definisi",
-    front: "PPh Pasal 25",
-    back: "Angsuran pembayaran pajak penghasilan tiap bulan pada tahun berjalan untuk meringankan beban Wajib Pajak saat membayar SPT Tahunan (Pasal 29)."
-  },
-  {
-    id: "pjk201-tm09-51",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Cara Hitung Angsuran PPh 25",
-    category: "Rumus",
-    front: "Cara Hitung Angsuran PPh 25",
-    back: "(Total PPh Terutang tahun lalu dikurangi Kredit Pajak tahun lalu) dibagi 12 bulan."
-  },
-  {
-    id: "pjk201-tm09-52",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Batas Waktu PPh 25",
-    category: "Mekanisme",
-    front: "Batas Waktu PPh 25",
-    back: "Harus dibayar paling lambat tanggal 15 bulan berikutnya. Keterlambatan dikenakan sanksi bunga."
-  },
-  {
-    id: "pjk201-tm09-53",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Penurunan Angsuran PPh 25",
-    category: "Konsep",
-    front: "Penurunan Angsuran PPh 25",
-    back: "WP boleh mengajukan permohonan pengurangan angsuran PPh 25 jika proyeksi laba tahun berjalan jauh lebih kecil dari tahun lalu (dengan bukti kuat)."
-  },
-  {
-    id: "pjk201-tm10-54",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "PPh Pasal 26",
-    category: "Definisi",
-    front: "PPh Pasal 26",
-    back: "Pajak yang dipotong atas penghasilan yang bersumber dari Indonesia yang diterima atau diperoleh Wajib Pajak Luar Negeri (SPLN) selain BUT."
-  },
-  {
-    id: "pjk201-tm10-55",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Tarif Umum PPh 26",
-    category: "Tarif",
-    front: "Tarif Umum PPh 26",
-    back: "Pemotongan sebesar 20% (final) dari jumlah bruto penghasilan (dividen, bunga, royalti, jasa, sewa, pensiun)."
-  },
-  {
-    id: "pjk201-tm10-56",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Tax Treaty (P3B)",
-    category: "Konsep",
-    front: "Tax Treaty (P3B)",
-    back: "Perjanjian Penghindaran Pajak Berganda antar dua negara. Jika WPLN menunjukkan Surat Keterangan Domisili (DGT Form), tarif PPh 26 bisa lebih rendah dari 20% sesuai kesepakatan Tax Treaty."
-  },
-  {
-    id: "pjk201-tm10-57",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Branch Profit Tax (BPT)",
-    category: "Tarif",
-    front: "Branch Profit Tax (BPT)",
-    back: "Laba bersih setelah pajak dari BUT di Indonesia (Net Income after Tax) dikenakan tambahan PPh 26 sebesar 20%, kecuali laba tersebut ditanamkan kembali (reinvestasi) di Indonesia."
-  },
-  {
-    id: "pjk201-tm10-58",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Sifat PPh 26",
-    category: "Miskonsepsi",
-    front: "Sifat PPh 26",
-    back: "Meskipun secara umum bersifat Final, PPh 26 bisa bersifat tidak final apabila WPLN beralih status menjadi Wajib Pajak Dalam Negeri pada tahun berjalan."
-  },
-  {
-    id: "pjk201-tm10-59",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Premi Asuransi ke Luar Negeri",
-    category: "Objek",
-    front: "Premi Asuransi ke Luar Negeri",
-    back: "Premi yang dibayar langsung ke perusahaan asuransi asing dikenakan PPh 26 sebesar 20% dari Perkiraan Penghasilan Neto (50% dari premi, efektif 10%)."
-  },
-  {
-    id: "pjk201-tm11-60",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "SPT Tahunan OP (1770, 1770S, 1770SS)",
-    category: "Definisi",
-    front: "SPT Tahunan OP (1770, 1770S, 1770SS)",
-    back: "Formulir pelaporan pajak tahunan individu. 1770 untuk pengusaha/pekerja bebas, 1770S untuk pegawai dengan gaji > 60jt/punya lebih dari 1 sumber, 1770SS untuk pegawai gaji < 60jt."
-  },
-  {
-    id: "pjk201-tm11-61",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Penghasilan Suami-Istri",
-    category: "Konsep",
-    front: "Penghasilan Suami-Istri",
-    back: "Sistem perpajakan Indonesia menganggap keluarga sebagai satu kesatuan ekonomi. Penghasilan suami-istri digabung, KECUALI memilih MT (Memilih Terpisah) atau PH (Pisah Harta)."
-  },
-  {
-    id: "pjk201-tm11-62",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "PTKP Suami-Istri Digabung",
-    category: "Rumus",
-    front: "PTKP Suami-Istri Digabung",
-    back: "Jika istri bekerja di >1 pemberi kerja atau usaha, dan pajaknya digabung (status K/I), PTKP adalah = Rp 54jt (suami) + Rp 54jt (istri) + status kawin & tanggungan."
-  },
-  {
-    id: "pjk201-tm11-63",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "NPPN (Norma Penghitungan Penghasilan Neto)",
-    category: "Definisi",
-    front: "NPPN (Norma Penghitungan Penghasilan Neto)",
-    back: "Fasilitas bagi WP OP (omzet < Rp 4,8 M) yang tidak menyelenggarakan pembukuan (hanya pencatatan) untuk menghitung net income dengan mengalikan omzet x persentase tarif Norma kota/profesinya."
-  },
-  {
-    id: "pjk201-tm11-64",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "UMKM PP 55/2022 (Eks PP 23)",
-    category: "Definisi",
-    front: "UMKM PP 55/2022 (Eks PP 23)",
-    back: "Wajib pajak OP dengan omzet < Rp 4,8 M bisa memakai PPh Final 0,5%. OP UMKM omzet pertama s.d Rp 500 juta dalam setahun BEBAS PPh 0,5%."
-  },
-  {
-    id: "pjk201-tm11-65",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Zakat sebagai Pengurang",
-    category: "Mekanisme",
-    front: "Zakat sebagai Pengurang",
-    back: "Zakat atau sumbangan keagamaan wajib yang dibayar melalui lembaga resmi (BAZNAS/LAZ) dapat dikurangkan dari Penghasilan Bruto di SPT."
-  },
-  {
-    id: "pjk201-tm12-66",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Rekonsiliasi Fiskal",
-    category: "Definisi",
-    front: "Rekonsiliasi Fiskal",
-    back: "Proses penyesuaian Laba Komersial (berdasarkan Standar Akuntansi) menjadi Laba Fiskal (berdasarkan UU Pajak) sebagai dasar perhitungan PPh Badan."
-  },
-  {
-    id: "pjk201-tm12-67",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Koreksi Positif",
-    category: "Konsep",
-    front: "Koreksi Positif",
-    back: "Koreksi yang MENAMBAH laba fiskal (sehingga pajak naik). Contoh: Beban yang tak boleh dikurangkan pajak (Non-deductible expenses) seperti sanksi denda pajak atau natura/kenikmatan berlebih."
-  },
-  {
-    id: "pjk201-tm12-68",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Koreksi Negatif",
-    category: "Konsep",
-    front: "Koreksi Negatif",
-    back: "Koreksi yang MENGURANGI laba fiskal (sehingga pajak turun). Contoh: Penghasilan yang bukan objek pajak atau penghasilan yang sudah dipotong PPh Final (karena tidak boleh dikenakan pajak 2x)."
-  },
-  {
-    id: "pjk201-tm12-69",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Beda Tetap (Permanent Difference)",
-    category: "Konsep",
-    front: "Beda Tetap (Permanent Difference)",
-    back: "Perbedaan yang tidak akan terselesaikan seiring waktu, misal Biaya Sumbangan (diakui akuntansi, dilarang selamanya oleh pajak)."
-  },
-  {
-    id: "pjk201-tm12-70",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Beda Waktu (Temporary Difference)",
-    category: "Konsep",
-    front: "Beda Waktu (Temporary Difference)",
-    back: "Perbedaan pengakuan waktu antara akuntansi dan pajak, misal beda metode/umur Depresiasi Aset. Memicu timbulnya Pajak Tangguhan (Deferred Tax)."
-  },
-  {
-    id: "pjk201-tm12-71",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Tarif PPh Badan (Pasal 17)",
-    category: "Tarif",
-    front: "Tarif PPh Badan (Pasal 17)",
-    back: "Mulai tahun 2022, tarif umum PPh Badan turun menjadi 22%. Perusahaan Tbk (memenuhi syarat public float >20%) dapat diskon tarif 3% (menjadi 19%)."
-  },
-  {
-    id: "pjk201-tm13-72",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "PPN (Pajak Pertambahan Nilai)",
-    category: "Definisi",
-    front: "PPN (Pajak Pertambahan Nilai)",
-    back: "Pajak atas konsumsi Barang Kena Pajak (BKP) atau Jasa Kena Pajak (JKP) di dalam Daerah Pabean. Pajak Objektif & Pajak Tidak Langsung."
-  },
-  {
-    id: "pjk201-tm13-73",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Tarif PPN",
-    category: "Tarif",
-    front: "Tarif PPN",
-    back: "Menurut UU HPP, tarif PPN naik menjadi 11% (berlaku mulai 1 April 2022), dan direncakan naik menjadi 12% pada 1 Januari 2025."
-  },
-  {
-    id: "pjk201-tm13-74",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Pajak Keluaran (Output Tax)",
-    category: "Konsep",
-    front: "Pajak Keluaran (Output Tax)",
-    back: "PPN yang dipungut oleh PKP saat ia MENJUAL barang/jasa kepada pembeli (Sifatnya menambah Utang PPN ke negara)."
-  },
-  {
-    id: "pjk201-tm13-75",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Pajak Masukan (Input Tax)",
-    category: "Konsep",
-    front: "Pajak Masukan (Input Tax)",
-    back: "PPN yang dibayar oleh PKP saat ia MEMBELI bahan baku atau aset dari PKP lain (Sifatnya seperti Uang Muka Pajak yang bisa dikreditkan)."
-  },
-  {
-    id: "pjk201-tm13-76",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Pengkreditan PPN",
-    category: "Mekanisme",
-    front: "Pengkreditan PPN",
-    back: "Jika Pajak Keluaran > Pajak Masukan = Kurang Bayar (harus setor ke kas negara). Jika Pajak Masukan > Pajak Keluaran = Lebih Bayar (bisa kompensasi ke bulan depan atau Restitusi)."
-  },
-  {
-    id: "pjk201-tm13-77",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Bukan Objek PPN",
+    topic: "Syarat Sah Pembukuan Fiskal",
     category: "Standar",
-    front: "Bukan Objek PPN",
-    back: "Barang kebutuhan pokok (beras, jagung), jasa medis, jasa keuangan (bank/asuransi), asuransi, jasa keagamaan, dan uang/emas batangan standar (UU Cipta Kerja & HPP)."
+    front: "4 Syarat Penyelenggaraan Pembukuan menurut UU KUP",
+    back: "1) Diselenggarakan dengan iktikad baik dan mencerminkan keadaan sebenarnya; 2) Diselenggarakan di Indonesia dengan huruf Latin, angka Arab, mata uang Rupiah, dan bahasa Indonesia (atau asing izin Menkeu); 3) Asas taat asas (konsisten metode akrual/kas); 4) Buku dan bukti transaksi wajib disimpan selama 10 tahun di Indonesia."
   },
   {
-    id: "pjk201-tm14-78",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Faktur Pajak",
-    category: "Definisi",
-    front: "Faktur Pajak",
-    back: "Bukti pungutan pajak yang dibuat oleh PKP saat melakukan penyerahan BKP/JKP. Wajib dibuat menggunakan e-Faktur."
-  },
-  {
-    id: "pjk201-tm14-79",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Faktur Pajak Cacat/Tidak Sah",
-    category: "Konsep",
-    front: "Faktur Pajak Cacat/Tidak Sah",
-    back: "Faktur pajak yang pengisiannya tidak lengkap, salah, atau tidak sesuai ketentuan. Pajak Masukan dari faktur cacat tidak dapat dikreditkan oleh pembeli."
-  },
-  {
-    id: "pjk201-tm14-80",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "PPnBM (Pajak Penjualan Barang Mewah)",
-    category: "Definisi",
-    front: "PPnBM (Pajak Penjualan Barang Mewah)",
-    back: "Pajak tambahan selain PPN yang dikenakan HANYA 1 KALI pada saat penyerahan oleh produsen pabrikan barang mewah atau pada saat Impor barang mewah."
-  },
-  {
-    id: "pjk201-tm14-81",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Karakteristik PPnBM",
-    category: "Konsep",
-    front: "Karakteristik PPnBM",
-    back: "Tujuannya untuk mengendalikan konsumsi barang mewah, melindungi produsen kecil lokal, dan keadilan pajak. PPnBM TIDAK BISA DIKREDITKAN seperti PPN."
-  },
-  {
-    id: "pjk201-tm14-82",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Tarif PPnBM",
-    category: "Tarif",
-    front: "Tarif PPnBM",
-    back: "Paling rendah 10%, paling tinggi 200%. Untuk Ekspor barang mewah, tarif PPnBM-nya adalah 0%."
-  },
-  {
-    id: "pjk201-tm14-83",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Batas Waktu Setor PPN",
+    id: "pjk201-tm07-34",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "NPPN (Norma Penghitungan Penghasilan Neto)",
     category: "Mekanisme",
-    front: "Batas Waktu Setor PPN",
-    back: "Pembayaran PPN Kurang Bayar dilakukan paling lambat Akhir Bulan berikutnya (sebelum lapor SPT Masa PPN). SPT dilaporkan juga pada akhir bulan berikutnya."
+    front: "NPPN (Norma Penghitungan Penghasilan Neto)",
+    back: "Fasilitas bagi WP OP yang melakukan pencatatan (omzet < Rp 4,8 M) untuk menghitung penghasilan neto dengan mengalikan peredaran bruto dengan persentase norma sesuai wilayah dan jenis usaha/profesi (wajib lapor ke DJP maksimal 3 bulan pertama tahun pajak)."
+  },
+  {
+    id: "pjk201-tm07-35",
+    phase: "pra-uts",
+    tm: 7,
+    topic: "Sanksi Tidak Melakukan Pembukuan",
+    category: "Sanksi",
+    front: "Konsekuensi Tidak Melakukan Pembukuan bagi WP Wajib Pembukuan",
+    back: "Pajak terutang akan ditetapkan secara jabatan oleh fiskus (SKPKB) disertai sanksi kenaikan administrasi, karena fiskus tidak dapat menguji kebenaran penghitungan pajak dari bukti pembukuan."
+  },
+
+  // ==========================================================================
+  // FASE PRA-UAS (TM 8 - TM 14: PEMERIKSAAN, SENGKETA, PENAGIHAN, METERAI & PAJAK DAERAH)
+  // ==========================================================================
+
+  // --- TM 8: Penelitian, Pemeriksaan, dan Penyidikan Pajak ---
+  {
+    id: "pjk201-tm08-36",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Penelitian vs Pemeriksaan vs Penyidikan",
+    category: "Definisi",
+    front: "Perbedaan Penelitian, Pemeriksaan, dan Penyidikan",
+    back: "Penelitian: pengujian kelengkapan formal administrasi dan kebenaran hitung angka di SPT. Pemeriksaan: serangkaian kegiatan mencari dan mengolah data/bukti untuk menguji kepatuhan materiil. Penyidikan: proses projustitia oleh PPNS DJP mencari tersangka atas bukti permulaan tindak pidana perpajakan."
+  },
+  {
+    id: "pjk201-tm08-37",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Tujuan Pemeriksaan Pajak",
+    category: "Konsep",
+    front: "2 Tujuan Utama Pemeriksaan Pajak",
+    back: "1) Menguji kepatuhan pemenuhan kewajiban perpajakan (misal: SPT Lebih Bayar, SPT Rugi, tidak lapor SPT, atau analisis risiko); 2) Tujuan lain dalam rangka melaksanakan ketentuan UU (misal: pemberian/penghapusan NPWP, pencabutan NPPKP, penentuan lokasi BUT)."
+  },
+  {
+    id: "pjk201-tm08-38",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Pemeriksaan Kantor vs Lapangan",
+    category: "Prosedur",
+    front: "Pemeriksaan Kantor vs Pemeriksaan Lapangan",
+    back: "Pemeriksaan Kantor: dilakukan di kantor DJP dengan memanggil WP untuk membawa dokumen pendukung (jangka waktu 4 bulan + perpanjangan 2 bulan). Pemeriksaan Lapangan: dilakukan di tempat usaha/tinggal WP dengan mendatangi langsung (jangka waktu 6 bulan + perpanjangan 2 bulan)."
+  },
+  {
+    id: "pjk201-tm08-39",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Produk Akhir Pemeriksaan (LHP)",
+    category: "Dokumen",
+    front: "Laporan Hasil Pemeriksaan (LHP)",
+    back: "Laporan yang berisi tentang pelaksanaan dan hasil pemeriksaan yang disusun oleh pemeriksa pajak secara ringkas dan jelas, yang menjadi dasar penerbitan Surat Ketetapan Pajak (SKP) atau Surat Tagihan Pajak (STP)."
+  },
+  {
+    id: "pjk201-tm08-40",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Kewajiban WP Saat Diperiksa",
+    category: "Standar",
+    front: "Kewajiban Wajib Pajak saat Dilakukan Pemeriksaan",
+    back: "Wajib memperlihatkan dan meminjamkan buku/catatan/dokumen, memberi kesempatan pemeriksa memasuki tempat usaha/bangunan, dan memberi keterangan lisan maupun tertulis yang diperlukan."
+  },
+
+  // --- TM 9: Penetapan & Ketetapan Pajak, Restitusi ---
+  {
+    id: "pjk201-tm09-41",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
+    category: "Dokumen",
+    front: "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
+    back: "Surat ketetapan yang menentukan besarnya jumlah pokok pajak, kredit pajak, kekurangan bayar pokok pajak, besarnya sanksi administrasi (bunga/kenaikan), dan jumlah pajak yang masih harus dibayar (diterbitkan dalam jangka waktu maksimal 5 tahun)."
+  },
+  {
+    id: "pjk201-tm09-42",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
+    category: "Dokumen",
+    front: "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
+    back: "Surat ketetapan yang menentukan tambahan atas jumlah pajak yang telah ditetapkan sebelumnya (biasanya diterbitkan jika ditemukan data baru/novum setelah pemeriksaan ulang, disertai sanksi kenaikan 100% dari jumlah kurang bayar tambahan)."
+  },
+  {
+    id: "pjk201-tm09-43",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
+    category: "Dokumen",
+    front: "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
+    back: "Surat ketetapan yang menentukan jumlah kelebihan pembayaran pajak karena jumlah kredit pajak lebih besar daripada pajak yang terutang atau tidak seharusnya terutang."
+  },
+  {
+    id: "pjk201-tm09-44",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "SKPN (Surat Ketetapan Pajak Nihil)",
+    category: "Dokumen",
+    front: "SKPN (Surat Ketetapan Pajak Nihil)",
+    back: "Surat ketetapan yang menentukan jumlah pokok pajak sama besarnya dengan jumlah kredit pajak atau pajak tidak terutang dan tidak ada kredit pajak."
+  },
+  {
+    id: "pjk201-tm09-45",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Restitusi Pajak (Pasal 17B KUP)",
+    category: "Mekanisme",
+    front: "Prosedur Restitusi (Pengembalian Kelebihan Pembayaran Pajak)",
+    back: "WP mengajukan permohonan restitusi pada SPT. DJP wajib menerbitkan keputusan setelah melakukan pemeriksaan paling lambat 12 bulan sejak permohonan diterima lengkap. Jika lewat 12 bulan tidak ada keputusan, permohonan dianggap dikabulkan."
+  },
+  {
+    id: "pjk201-tm09-46",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Pengembalian Pendahuluan (Pasal 17C / 17D KUP)",
+    category: "Mekanisme",
+    front: "Pengembalian Pendahuluan Kelebihan Pajak (WP Kriteria Tertentu / Patuh)",
+    back: "Fasilitas pengembalian cepat tanpa pemeriksaan mendalam (hanya penelitian) bagi WP Kriteria Tertentu (Golden Taxpayer) atau WP Persyaratan Tertentu (nominal lebih bayar kecil). Surat Keputusan Pengembalian Pendahuluan (SKPPKP) diterbitkan maksimal 3 bulan untuk PPh dan 1 bulan untuk PPN."
+  },
+
+  // --- TM 10: Penyelesaian Sengketa Pajak ---
+  {
+    id: "pjk201-tm10-47",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Upaya Keberatan (Pasal 25 KUP)",
+    category: "Prosedur",
+    front: "Prosedur Pengajuan Keberatan Pajak",
+    back: "Diajukan tertulis dalam bahasa Indonesia kepada Dirjen Pajak atas suatu SKP (SKPKB, SKPKBT, SKPLB, SKPN) atau pemotongan pihak ketiga. Batas waktu pengajuan adalah 3 bulan sejak surat dikirim/dipotong. Wajib membayar minimal pajak yang disetujui dalam pembahasan akhir sebelum keberatan diajukan."
+  },
+  {
+    id: "pjk201-tm10-48",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Sanksi Denda Keberatan yang Ditolak",
+    category: "Sanksi",
+    front: "Sanksi Denda jika Keberatan Ditolak atau Dikabulkan Sebagian (Pasal 25 ayat 9 KUP)",
+    back: "Dikenakan sanksi denda administrasi sebesar 30% dari jumlah pajak berdasarkan keputusan keberatan dikurangi dengan pajak yang telah dibayar sebelum mengajukan keberatan (Kecuali WP melanjutkan banding ke Pengadilan Pajak)."
+  },
+  {
+    id: "pjk201-tm10-49",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Upaya Banding (Pasal 27 KUP)",
+    category: "Prosedur",
+    front: "Prosedur Pengajuan Banding ke Pengadilan Pajak",
+    back: "Diajukan tertulis dalam bahasa Indonesia kepada Pengadilan Pajak HANYA atas Surat Keputusan Keberatan. Batas waktu pengajuan maksimal 3 bulan sejak keputusan keberatan diterima."
+  },
+  {
+    id: "pjk201-tm10-50",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Sanksi Denda Banding yang Ditolak",
+    category: "Sanksi",
+    front: "Sanksi Denda jika Banding Ditolak atau Dikabulkan Sebagian (Pasal 27 ayat 5d KUP)",
+    back: "Dikenakan sanksi denda administrasi sebesar 60% dari jumlah pajak berdasarkan Putusan Banding dikurangi dengan pembayaran pajak yang telah dibayar sebelum mengajukan keberatan."
+  },
+  {
+    id: "pjk201-tm10-51",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Gugatan & Peninjauan Kembali (PK)",
+    category: "Prosedur",
+    front: "Gugatan ke Pengadilan Pajak & Peninjauan Kembali (PK) ke Mahkamah Agung",
+    back: "Gugatan: diajukan ke Pengadilan Pajak atas sengketa tata cara/prosedur penerbitan surat ketetapan atau pelaksanaan penagihan pajak (batas 14 hari untuk Surat Paksa, 30 hari untuk keputusan lain). Peninjauan Kembali: upaya hukum luar biasa terakhir ke Mahkamah Agung atas putusan Pengadilan Pajak."
+  },
+
+  // --- TM 11: Penagihan Pajak Aktif ---
+  {
+    id: "pjk201-tm11-52",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Dasar Hukum & Definisi Penagihan Aktif",
+    category: "Definisi",
+    front: "Penagihan Pajak Aktif (UU No. 19 Tahun 1997 jo. UU No. 19 Tahun 2000)",
+    back: "Serangkaian tindakan agar Penanggung Pajak melunasi utang pajak dan biaya penagihan pajak dengan menegur atau memperingatkan, melaksanakan penagihan seketika dan sekaligus, memberitahukan Surat Paksa, mengusulkan pencegahan, melaksanakan penyitaan, hingga menyandera dan menjual barang yang disita (lelang)."
+  },
+  {
+    id: "pjk201-tm11-53",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Jadwal Surat Teguran & Surat Paksa",
+    category: "Prosedur",
+    front: "Timeline Surat Teguran dan Surat Paksa",
+    back: "1) Jatuh tempo SKPKB/STP adalah 1 bulan sejak diterbitkan; 2) Jika tidak dibayar, setelah 7 hari jatuh tempo diterbitkan Surat Teguran/Peringatan; 3) Jika dalam 21 hari sejak Surat Teguran belum dilunasi, diterbitkan Surat Paksa."
+  },
+  {
+    id: "pjk201-tm11-54",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Kekuatan Hukum Surat Paksa",
+    category: "Hukum",
+    front: "Kekuatan Eksekutorial Surat Paksa",
+    back: "Surat Paksa mempunyai kekuatan eksekutorial dan kedudukan hukum yang sama dengan putusan pengadilan yang telah mempunyai kekuatan hukum tetap (berketerangan 'Demi Keadilan Berdasarkan Ketuhanan Yang Maha Esa'), langsung diberitahukan oleh Jurusita Pajak."
+  },
+  {
+    id: "pjk201-tm11-55",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Penyitaan (SPMP) & Lelang",
+    category: "Prosedur",
+    front: "Prosedur Penyitaan Aset dan Pelaksanaan Lelang",
+    back: "Jika Surat Paksa tidak dilunasi dalam 2 x 24 jam, Jurusita menerbitkan Surat Perintah Melaksanakan Penyitaan (SPMP) atas barang bergerak/tidak bergerak. Jika dalam 14 hari sejak sita tidak dilunasi, dilakukan pengumuman lelang, dan 14 hari berikutnya dilakukan eksekusi lelang oleh Kantor Lelang Negara."
+  },
+  {
+    id: "pjk201-tm11-56",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Pencegahan & Penyanderaan (Gijzeling)",
+    category: "Sanksi",
+    front: "Pencegahan (ke Luar Negeri) & Penyanderaan (Gijzeling)",
+    back: "Pencegahan: larangan sementara ke luar negeri maksimal 6 bulan (+ perpanjang 6 bulan). Penyanderaan (Gijzeling): pengekangan sementara kebebasan penanggung pajak di rutan (maksimal 6 bulan + perpanjang 6 bulan), khusus utang pajak minimal Rp 100 juta dan diragukan iktikad baiknya."
+  },
+  {
+    id: "pjk201-tm11-57",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Hak Mendahulu (Droit de Preference)",
+    category: "Hukum",
+    front: "Hak Mendahulu Negara (Droit de Preference - Pasal 21 KUP)",
+    back: "Negara mempunyai hak mendahulu untuk tagihan pajak atas barang-barang milik Penanggung Pajak. Dalam likuidasi/keterpurukan usaha, utang pajak harus dilunasi terlebih dahulu sebelum utang kepada kreditur lain (kecuali biaya perkara pengadilan, biaya lelang, dan biaya penyelamatan barang)."
+  },
+
+  // --- TM 12: Bea Meterai ---
+  {
+    id: "pjk201-tm12-58",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Dasar Hukum & Tarif Bea Meterai",
+    category: "Definisi",
+    front: "Bea Meterai UU No. 10 Tahun 2020 (Tarif Tunggal)",
+    back: "Pajak atas dokumen yang bersifat perdata dan dokumen untuk alat bukti di pengadilan. Berlaku tarif tunggal sebesar Rp 10.000,00 (menggantikan tarif lama Rp 3.000 & Rp 6.000 mulai 1 Januari 2021)."
+  },
+  {
+    id: "pjk201-tm12-59",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Dokumen Objek Bea Meterai",
+    category: "Objek",
+    front: "Dokumen Utama Objek Bea Meterai Rp 10.000",
+    back: "1) Surat perjanjian, surat keterangan, surat pernyataan; 2) Akta notaris & akta PPAT beserta salinannya; 3) Surat berharga dengan nama dan dalam bentuk apapun; 4) Dokumen transaksi uang yang menyebutkan nominal di atas Rp 5.000.000,00 yang menyatakan penerimaan uang atau pelunasan utang."
+  },
+  {
+    id: "pjk201-tm12-60",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Bukan Objek Bea Meterai (Pengecualian)",
+    category: "Pengecualian",
+    front: "Dokumen yang Dikecualikan dari Bea Meterai",
+    back: "1) Dokumen pemindahan orang/barang (karcis penumpang, konosemen, resi); 2) Ijazah, tanda lulus, surat keterangan dokter; 3) Tanda terima gaji/pensiun/tunjangan kerja; 4) Tanda bukti penerimaan uang negara dari kas negara/daerah; 5) Dokumen transaksi uang yang nominalnya <= Rp 5.000.000."
+  },
+  {
+    id: "pjk201-tm12-61",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Jenis Meterai & e-Meterai",
+    category: "Mekanisme",
+    front: "3 Cara Pembayaran Bea Meterai",
+    back: "1) Meterai Tempel (perekat fisik bermotif Garuda dan nomor seri unik); 2) Meterai Elektronik / e-Meterai (label elektronik yang mengandung unsur pengaman yang dibubuhkan pada dokumen elektronik via PERURI); 3) Meterai Dalam Bentuk Lain (mesin teraan, komputerisasi/peruri)."
+  },
+  {
+    id: "pjk201-tm12-62",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Pemeteraian Kemudian (Nachzegelen)",
+    category: "Prosedur",
+    front: "Pemeteraian Kemudian (Nachzegelen)",
+    back: "Pelunasan Bea Meterai yang dilakukan oleh pejabat pos atas dokumen yang belum/kurang dibayar bea meterainya, atau dokumen yang dibuat di luar negeri yang akan digunakan di Indonesia sebagai alat bukti di pengadilan (dikenakan sanksi denda 100% jika akibat kelalaian)."
+  },
+
+  // --- TM 13: Pajak Daerah & Retribusi Daerah (1) — Pajak Provinsi ---
+  {
+    id: "pjk201-tm13-63",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Dasar Hukum Pajak Daerah (UU HKPD)",
+    category: "Dasar Hukum",
+    front: "UU HKPD No. 1 Tahun 2022 tentang Hubungan Keuangan Pusat dan Daerah",
+    back: "Undang-undang modern yang mengatur restrukturisasi pajak daerah, simplifikasi jenis pajak, penguatan local taxing power, serta harmonisasi tarif retribusi antara Pemerintah Pusat dan Pemerintah Daerah (Provinsi dan Kabupaten/Kota)."
+  },
+  {
+    id: "pjk201-tm13-64",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "5 Jenis Pajak Daerah Provinsi",
+    category: "Klasifikasi",
+    front: "5 Jenis Pajak yang Dipungut oleh Pemerintah Daerah Provinsi (UU HKPD)",
+    back: "1) Pajak Kendaraan Bermotor (PKB); 2) Bea Balik Nama Kendaraan Bermotor (BBNKB); 3) Pajak Alat Berat (PAB - baru dalam HKPD); 4) Pajak Bahan Bakar Kendaraan Bermotor (PBBKB); 5) Pajak Air Permukaan (PAP); 6) Pajak Rokok (pungutan atas cukai rokok)."
+  },
+  {
+    id: "pjk201-tm13-65",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Pajak Kendaraan Bermotor (PKB)",
+    category: "Tarif",
+    front: "Objek dan Tarif Pajak Kendaraan Bermotor (PKB)",
+    back: "Objek: kepemilikan/penguasaan kendaraan bermotor. Tarif PKB pribadi kepemilikan pertama maksimal 1,2% s.d. 2,4% (ditetapkan Perda). Kepemilikan kedua dan seterusnya dikenakan tarif progresif maksimal 10% (UU HKPD menghapus tarif progresif di beberapa daerah yang menerapkan kebijakan simplifikasi)."
+  },
+  {
+    id: "pjk201-tm13-66",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Bea Balik Nama Kendaraan Bermotor (BBNKB)",
+    category: "Tarif",
+    front: "Ketentuan Bea Balik Nama Kendaraan Bermotor (BBNKB)",
+    back: "Pajak atas penyerahan hak milik kendaraan bermotor sebagai akibat perjanjian dua pihak atau sepihak. Menurut UU HKPD, tarif BBNKB ditetapkan maksimal 12% (banyak provinsi telah membebaskan BBNKB II atau kendaraan bekas untuk merangsang tertib administrasi)."
+  },
+  {
+    id: "pjk201-tm13-67",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Pajak Rokok",
+    category: "Mekanisme",
+    front: "Pajak Rokok sebagai Pajak Provinsi",
+    back: "Pungutan atas cukai rokok yang dipungut oleh Pemerintah Pusat bersamaan dengan pemungutan cukai rokok, lalu dialokasikan/dbagikan ke Provinsi sebesar 10% dari cukai rokok. Minimal 50% dari hasilnya wajib dialokasikan untuk pelayanan kesehatan masyarakat dan penegakan hukum."
+  },
+
+  // --- TM 14: Pajak Daerah & Retribusi Daerah (2) — Pajak Kabupaten/Kota & Retribusi ---
+  {
+    id: "pjk201-tm14-68",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Jenis Pajak Kabupaten/Kota (UU HKPD)",
+    category: "Klasifikasi",
+    front: "Pajak yang Dipungut oleh Pemerintah Kabupaten/Kota",
+    back: "1) PBB-P2 (Pajak Bumi dan Bangunan Perdesaan dan Perkotaan); 2) BPHTB; 3) PBJT (Pajak Barang dan Jasa Tertentu - peleburan pajak hotel, restoran, hiburan, parkir, listrik); 4) Pajak Reklame; 5) Pajak Air Tanah (PAT); 6) Pajak MBLB (Mineral Bukan Logam dan Batuan); 7) Pajak Sarang Burung Walet; 8) Opsen Pajak Provinsi."
+  },
+  {
+    id: "pjk201-tm14-69",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "PBB-P2 & NJOP/NJOPTKP",
+    category: "Rumus",
+    front: "Perhitungan PBB-P2 (Pajak Bumi dan Bangunan Perdesaan dan Perkotaan)",
+    back: "Rumus: Tarif x (NJOP Bumi + NJOP Bangunan - NJOPTKP). NJOPTKP (NJOP Tidak Kena Pajak) ditetapkan paling rendah Rp 10.000.000 untuk setiap Wajib Pajak. Tarif maksimal PBB-P2 menurut UU HKPD adalah 0,5% (khusus lahan produksi pangan/ternak maksimal 0,25%)."
+  },
+  {
+    id: "pjk201-tm14-70",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "BPHTB & NPOPTKP",
+    category: "Rumus",
+    front: "Perhitungan BPHTB (Bea Perolehan Hak atas Tanah dan Bangunan)",
+    back: "Rumus: Tarif maksimal 5% x (NPOP - NPOPTKP). NPOP adalah Nilai Perolehan Objek Pajak (harga transaksi atau NJOP, mana yang lebih tinggi). NPOPTKP (Tidak Kena Pajak) ditetapkan paling rendah Rp 80.000.000 untuk transaksi umum, dan Rp 300.000.000 untuk waris/hibah wasiat dalam keluarga sedarah."
+  },
+  {
+    id: "pjk201-tm14-71",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "PBJT (Pajak Barang dan Jasa Tertentu)",
+    category: "Definisi",
+    front: "PBJT (Pajak Barang dan Jasa Tertentu - Integrasi Baru UU HKPD)",
+    back: "Pajak yang dibayarkan oleh konsumen akhir atas konsumsi barang/jasa tertentu di kabupaten/kota, mencakup: 1) Makanan dan/atau minuman (restoran); 2) Tenaga listrik; 3) Jasa perhotelan; 4) Jasa parkir; 5) Jasa kesenian dan hiburan. Tarif umum PBJT maksimal 10% (khusus hiburan tertentu seperti diskotek, karaoke, spa tarifnya 40% s.d. 75%)."
+  },
+  {
+    id: "pjk201-tm14-72",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Definisi & 3 Golongan Retribusi Daerah",
+    category: "Klasifikasi",
+    front: "Definisi Retribusi Daerah dan 3 Golongannya (UU HKPD)",
+    back: "Pungutan daerah sebagai pembayaran atas jasa atau pemberian izin tertentu yang khusus disediakan dan/atau diberikan oleh Pemda untuk kepentingan orang pribadi atau badan. Dibagi menjadi 3 golongan: 1) Retribusi Jasa Umum (kesehatan, persampahan, pasar); 2) Retribusi Jasa Usaha (sewa aset daerah, terminal); 3) Retribusi Perizinan Tertentu (PBG/IMB, izin trayek)."
+  },
+  {
+    id: "pjk201-tm14-73",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Opsen Pajak dalam UU HKPD",
+    category: "Konsep",
+    front: "Konsep Opsen Pajak antara Provinsi dan Kabupaten/Kota",
+    back: "Pungutan tambahan pajak menurut persentase tertentu yang dikenakan atas pajak terutang dari tingkat pemerintahan daerah yang berbeda. Contoh: Opsen PKB dan Opsen BBNKB dipungut oleh Kabupaten/Kota (66%) bersamaan dengan pajak Provinsi, sehingga mempercepat distribusi bagi hasil dan transparansi daerah."
   }
 ];

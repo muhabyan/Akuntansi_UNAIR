@@ -18,6 +18,7 @@ import AICommandHandler from './components/AICommandHandler';
 import { NotificationProvider } from './contexts/NotificationContext';
 import ScheduleNotifier from './components/ScheduleNotifier';
 import UpdateNotifier from './components/UpdateNotifier';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -276,39 +277,41 @@ export default function App() {
         tabIndex={-1}
         className={`${isHomeLanding || isGuideView ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-28' : 'pt-[10.25rem] md:pt-[10.75rem] lg:pt-32'} pb-20`}
       >
-        <Suspense fallback={<ViewLoader />}>
-          {activeView === 'guide' ? (
-            <GuideView onHome={goHome} />
-          ) : activeView === 'akbi-management-report' ? (
-            <AkbiManagementReportsView reportId={selectedReportId} onBack={goHome} />
-          ) : activeView === 'akm1-financial-report' ? (
-            <Akm1FinancialReportsView reportId={selectedReportId} onBack={goHome} />
-          ) : routeNotFound ? (
-            <NotFoundView onHome={goHome} />
-          ) : selectedCourse && UNIVERSAL_COURSES.includes(selectedCourse.code) ? (
-            <CourseLayout course={selectedCourse} initialTab={activeTab} initialTm={readingTm} onBack={closeCourse} />
-          ) : selectedCourse && readingTm !== null ? (
-            <ReadingView
-              course={selectedCourse}
-              tm={readingTm}
-              onBack={() => setReadingTm(null)}
-              onSelectTm={setReadingTm}
-            />
-          ) : selectedCourse ? (
-            <CourseDetailView
-              course={selectedCourse}
-              onBack={closeCourse}
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              onOpenReading={(tm) => setReadingTm(tm)}
-              activeQuizSetId={activeQuizSetId}
-            />
-          ) : activeView === 'home' || !activeSemester ? (
-            <HomeView onSelectSemester={openSemester} onOpenCourseDirectly={handleOpenCourseDirectly} onOpenGuide={openGuide} />
-          ) : (
-            <SemesterView semester={activeSemester} onBack={goHome} onCourseClick={openCourse} />
-          )}
-        </Suspense>
+        <ErrorBoundary onReset={goHome}>
+          <Suspense fallback={<ViewLoader />}>
+            {activeView === 'guide' ? (
+              <GuideView onHome={goHome} />
+            ) : activeView === 'akbi-management-report' ? (
+              <AkbiManagementReportsView reportId={selectedReportId} onBack={goHome} />
+            ) : activeView === 'akm1-financial-report' ? (
+              <Akm1FinancialReportsView reportId={selectedReportId} onBack={goHome} />
+            ) : routeNotFound ? (
+              <NotFoundView onHome={goHome} />
+            ) : selectedCourse && UNIVERSAL_COURSES.includes(selectedCourse.code) ? (
+              <CourseLayout course={selectedCourse} initialTab={activeTab} initialTm={readingTm} onBack={closeCourse} />
+            ) : selectedCourse && readingTm !== null ? (
+              <ReadingView
+                course={selectedCourse}
+                tm={readingTm}
+                onBack={() => setReadingTm(null)}
+                onSelectTm={setReadingTm}
+              />
+            ) : selectedCourse ? (
+              <CourseDetailView
+                course={selectedCourse}
+                onBack={closeCourse}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+                onOpenReading={(tm) => setReadingTm(tm)}
+                activeQuizSetId={activeQuizSetId}
+              />
+            ) : activeView === 'home' || !activeSemester ? (
+              <HomeView onSelectSemester={openSemester} onOpenCourseDirectly={handleOpenCourseDirectly} onOpenGuide={openGuide} />
+            ) : (
+              <SemesterView semester={activeSemester} onBack={goHome} onCourseClick={openCourse} />
+            )}
+          </Suspense>
+        </ErrorBoundary>
       </main>
 
       <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 px-4 py-9 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">

@@ -82,6 +82,49 @@ function diagnosticAdvice(pct: number): string {
   return 'Perlu remediasi. Baca ulang materi inti, lalu kerjakan bank soal topik ini sebelum simulasi.';
 }
 
+function getQuestionOptionPermutation(q: QuizQuestion, index: number, setId: string): number[] {
+  const options = 'options' in q ? q.options : undefined;
+  if (!options || options.length <= 1) return [];
+  const count = options.length;
+  const indices = Array.from({ length: count }, (_, i) => i);
+  
+  const shufflable: number[] = [];
+  const fixedBottom: number[] = [];
+  
+  indices.forEach((origIdx) => {
+    const text = (options[origIdx] || '').toLowerCase();
+    if (
+      text.includes('semua') ||
+      text.includes('di atas') ||
+      text.includes('tidak ada') ||
+      text.includes('bukan salah satu') ||
+      text.includes('a dan b') ||
+      text.includes('b dan c') ||
+      text.includes('a dan c')
+    ) {
+      fixedBottom.push(origIdx);
+    } else {
+      shufflable.push(origIdx);
+    }
+  });
+
+  let hash = 0;
+  const str = `${setId}-${index}-${q.q?.slice(0, 50) || ''}`;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  let currentSeed = Math.abs(hash) || 12345;
+
+  for (let j = shufflable.length - 1; j > 0; j--) {
+    currentSeed = (currentSeed * 1664525 + 1013904223) % 4294967296;
+    const k = Math.floor((currentSeed / 4294967296) * (j + 1));
+    [shufflable[j], shufflable[k]] = [shufflable[k], shufflable[j]];
+  }
+
+  return [...shufflable, ...fixedBottom];
+}
+
 function QuestionFrame({
   index,
   question,
@@ -207,6 +250,9 @@ export default function QuizView({
 
   const activeSet = quizSets.find((set) => set.id === effectiveSetId) ?? quizSets[0];
   const questions = activeSet?.items ?? [];
+  const optionPermutations = useMemo(() => {
+    return questions.map((q, idx) => getQuestionOptionPermutation(q, idx, effectiveSetId));
+  }, [questions, effectiveSetId]);
   const examDatasetFingerprint = useMemo(
     () => getQuizDatasetFingerprint(activeSet?.items ?? []),
     [activeSet],
@@ -740,21 +786,22 @@ export default function QuizView({
               <QuestionFrame key={`${effectiveSetId}-${i}`} index={i} question={q} status={status} marked={markedForReview[i]} allowMark={supportsReviewMarking && mode === 'exam' && examStarted && !submitted} onToggleMark={() => toggleMarked(i)}>
                 <p className="mb-3 text-xs font-black uppercase tracking-[0.16em] text-gold/90">Pilih semua jawaban yang benar</p>
                 <div className="space-y-2.5">
-                  {q.options.map((option, oi) => {
-                    const isPicked = selected.includes(oi);
-                    const isCorrect = q.answers.includes(oi);
+                  {(optionPermutations[i] || q.options!.map((_, idx) => idx)).map((origIdx, displayIdx) => {
+                    const option = q.options![origIdx];
+                    const isPicked = selected.includes(origIdx);
+                    const isCorrect = q.answers!.includes(origIdx);
                     let cls = 'border-navy-500 bg-navy-850/65 text-slate-300 hover:border-gold/40 hover:bg-navy-800/80';
                     if (show && isCorrect) cls = 'border-emerald-500 bg-emerald-500/10 text-emerald-300';
                     if (show && isPicked && !isCorrect) cls = 'border-red-500 bg-red-500/10 text-red-300';
                     if (!show && isPicked) cls = 'border-gold bg-gold/10 text-gold';
                     return (
                       <button
-                        key={oi}
-                        onClick={() => toggleMulti(i, oi)}
+                        key={origIdx}
+                        onClick={() => toggleMulti(i, origIdx)}
                         disabled={isExamInteractionLocked || (mode === 'practice' && selected.length > 0)}
                         className={`flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-left text-sm leading-6 transition-all ${cls}`}
                       >
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-current/30 text-[11px] font-black">{LETTER[oi]}</span>
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-current/30 text-[11px] font-black">{LETTER[displayIdx]}</span>
                         <span className="flex-1 [&>p]:mb-0">{renderText(option)}</span>
                         {show && isCorrect && <Check size={17} className="shrink-0" />}
                         {show && isPicked && !isCorrect && <X size={17} className="shrink-0" />}
@@ -891,21 +938,22 @@ export default function QuizView({
           return (
             <QuestionFrame key={`${effectiveSetId}-${i}`} index={i} question={q} status={status} marked={markedForReview[i]} allowMark={supportsReviewMarking && mode === 'exam' && examStarted && !submitted} onToggleMark={() => toggleMarked(i)}>
               <div className="space-y-2.5">
-                {q.options.map((option, oi) => {
-                  const isPicked = picked === oi;
-                  const isCorrect = oi === q.answer;
+                {(optionPermutations[i] || q.options!.map((_, idx) => idx)).map((origIdx, displayIdx) => {
+                  const option = q.options![origIdx];
+                  const isPicked = picked === origIdx;
+                  const isCorrect = origIdx === q.answer;
                   let cls = 'border-navy-500 bg-navy-850/65 text-slate-300 hover:border-gold/40 hover:bg-navy-800/80';
                   if (show && isCorrect) cls = 'border-emerald-500 bg-emerald-500/10 text-emerald-300';
                   if (show && isPicked && !isCorrect) cls = 'border-red-500 bg-red-500/10 text-red-300';
                   if (!show && isPicked) cls = 'border-gold bg-gold/10 text-gold';
                   return (
                     <button
-                      key={oi}
-                      onClick={() => choose(i, oi)}
+                      key={origIdx}
+                      onClick={() => choose(i, origIdx)}
                       disabled={isExamInteractionLocked || (mode === 'practice' && picked !== undefined)}
                       className={`flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-left text-sm leading-6 transition-all ${cls}`}
                     >
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-current/30 text-[11px] font-black">{LETTER[oi]}</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-current/30 text-[11px] font-black">{LETTER[displayIdx]}</span>
                       <span className="flex-1">{renderText(option)}</span>
                       {show && isCorrect && <Check size={17} className="shrink-0" />}
                       {show && isPicked && !isCorrect && <X size={17} className="shrink-0" />}

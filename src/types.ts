@@ -361,7 +361,7 @@ export interface OrderingQuizQuestion extends QuizQuestionMeta {
 export interface StudyCard { id?: string; front: string; back: string; }
 
 export type FlashcardPhase = 'pra-uts' | 'pra-uas';
-export type FlashcardCategory = 'Definisi' | 'Rumus' | 'Grafik' | 'Mekanisme' | 'Asumsi' | 'Perbandingan' | 'Miskonsepsi' | 'Jurnal' | 'Standar' | 'Konsep' | 'Lainnya' | 'Contoh' | 'Dokumen' | 'Pengendalian' | 'Tarif' | 'Objek';
+export type FlashcardCategory = 'Definisi' | 'Rumus' | 'Grafik' | 'Mekanisme' | 'Asumsi' | 'Perbandingan' | 'Miskonsepsi' | 'Jurnal' | 'Standar' | 'Konsep' | 'Lainnya' | 'Contoh' | 'Dokumen' | 'Pengendalian' | 'Tarif' | 'Objek' | 'Sejarah' | 'Teori' | 'Klasifikasi' | 'Hukum' | 'Prinsip' | 'Prosedur' | 'Subjek' | 'Sanksi' | 'Dasar Hukum' | 'Pengecualian';
 
 export interface AdvancedStudyCard extends StudyCard {
   id: string;
