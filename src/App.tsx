@@ -50,9 +50,13 @@ function resolveCourseFromPath(pathname: string): CourseRouteResolution {
   }
 }
 
-function getRouteState(pathname: string): { course: Course | null; notFound: boolean; isGuide?: boolean } {
+function getRouteState(pathname: string): { course: Course | null; notFound: boolean; isGuide?: boolean; semesterId?: string } {
   if (pathname === '/guide') return { course: null, notFound: false, isGuide: true };
   if (pathname === '/' || pathname === '') return { course: null, notFound: false };
+  if (pathname.startsWith('/semester/')) {
+    const id = pathname.split('/')[2];
+    return { course: null, notFound: false, semesterId: id };
+  }
   const resolved = resolveCourseFromPath(pathname);
   return {
     course: resolved.course,
@@ -121,7 +125,15 @@ export default function App() {
       const routeState = getRouteState(window.location.pathname);
       setSelectedCourse(routeState.course);
       setRouteNotFound(routeState.notFound);
-      setActiveView(routeState.isGuide ? 'guide' : 'home');
+      
+      if (routeState.isGuide) {
+        setActiveView('guide');
+      } else if (routeState.semesterId) {
+        setActiveView(routeState.semesterId as ViewId);
+      } else {
+        setActiveView('home');
+      }
+      
       setActiveTab('tm1-7');
       setReadingTm(null);
       setSelectedReportId(null);
@@ -224,7 +236,13 @@ export default function App() {
   };
 
   const closeCourse = () => {
-    pushUrl('/');
+    const currentSemester = Object.values(SEMESTERS).find(s => s.id === activeView);
+    if (currentSemester) {
+      pushUrl(`/semester/${currentSemester.id}`);
+    } else {
+      pushUrl('/');
+      setActiveView('home');
+    }
     setSelectedCourse(null);
     setRouteNotFound(false);
     setReadingTm(null);
