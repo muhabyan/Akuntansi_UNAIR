@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-expect-error virtual module might not have types locally
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import { RefreshCw, X } from 'lucide-react';
 
@@ -8,10 +8,10 @@ export default function PWAPrompt() {
     updateServiceWorker,
   } = useRegisterSW({
     onRegistered(r: any) {
-      console.log('SW Registered: ' + r);
+      console.warn('SW Registered: ', r);
     },
     onRegisterError(error: any) {
-      console.log('SW registration error', error);
+      console.error('SW registration error', error);
     },
   });
 
