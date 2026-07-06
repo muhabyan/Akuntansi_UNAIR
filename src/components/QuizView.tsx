@@ -232,6 +232,7 @@ export default function QuizView({
   const [examStarted, setExamStarted] = useState(false);
   const [examDeadlineMs, setExamDeadlineMs] = useState<number | null>(null);
   const [reviewFilter, setReviewFilter] = useState<'all' | 'wrong' | 'correct'>('all');
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const skipNextSessionPersist = useRef(false);
   const examDurationSeconds = getExamDurationSeconds(course.code, effectiveSetId);
   const examDurationLabel = formatExamDurationLabel(examDurationSeconds);
@@ -626,33 +627,60 @@ export default function QuizView({
       )}
 
       {mode === 'exam' && examContentVisible && (
-        <section data-testid="quiz-navigation" className="mb-6 overflow-hidden rounded-[1.25rem] border border-navy-500/70 bg-navy-900/45">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-500/60 px-4 py-3">
-            <p className="flex items-center gap-2 text-sm font-black text-slate-100"><ListChecks size={16} className="text-gold" /> Navigasi Nomor Soal</p>
-            <p className="text-xs font-semibold text-slate-500">{supportsReviewMarking ? 'Emas = dijawab, ungu = ditandai, abu-abu = kosong, hijau/merah muncul setelah submit.' : 'Emas = dijawab, abu-abu = kosong, hijau/merah muncul setelah submit.'}</p>
+        <>
+          {/* Floating Navigation Button */}
+          <button
+            onClick={() => setIsNavOpen(!isNavOpen)}
+            className={`fixed bottom-6 right-4 z-[60] flex h-14 w-14 items-center justify-center rounded-full border border-navy-500/70 shadow-2xl backdrop-blur-md transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 md:bottom-12 md:right-8 ${isNavOpen ? 'bg-gold text-white hover:bg-amber-500' : 'bg-navy-900/90 text-gold hover:bg-navy-800'}`}
+            aria-label="Toggle Navigation"
+            title="Navigasi Soal"
+          >
+            {isNavOpen ? <X size={24} /> : <ListChecks size={24} />}
+            {/* Notification Badge for Unanswered */}
+            {!isNavOpen && answeredCount < questions.length && (
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[9px] font-black text-white shadow-sm ring-2 ring-navy-950">
+                {questions.length - answeredCount}
+              </span>
+            )}
+          </button>
+
+          {/* Floating Navigation Panel */}
+          <div
+            className={`fixed bottom-24 right-4 z-[50] w-[calc(100vw-2rem)] max-w-sm transform transition-all duration-300 ease-in-out md:bottom-32 md:right-8 ${
+              isNavOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none translate-y-8 opacity-0'
+            }`}
+          >
+            <section data-testid="quiz-navigation" className="overflow-hidden rounded-[1.25rem] border border-navy-500/70 bg-navy-900/95 shadow-2xl backdrop-blur-xl">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-500/60 px-4 py-3 bg-white/[0.02]">
+                <p className="flex items-center gap-2 text-sm font-black text-slate-100"><ListChecks size={16} className="text-gold" /> Navigasi Soal</p>
+                <p className="text-[10px] font-semibold text-slate-400">{supportsReviewMarking ? 'Emas=dijawab, ungu=ditandai.' : 'Emas=dijawab, abu=kosong.'}</p>
+              </div>
+              <div className="max-h-[50vh] overflow-y-auto p-4 custom-scrollbar">
+                <div className="grid grid-cols-5 gap-2 sm:grid-cols-6">
+                  {questions.map((q, i) => {
+                    const answered = questionAnswered(q, i);
+                    const correct = submitted && questionCorrect(q, i);
+                    const wrong = submitted && answered && !correct;
+                    const cls = correct
+                      ? 'border-emerald-500 bg-emerald-500/15 text-emerald-300'
+                      : wrong
+                        ? 'border-red-500 bg-red-500/15 text-red-300'
+                        : supportsReviewMarking && markedForReview[i]
+                          ? 'border-violet-400 bg-violet-500/15 text-violet-200'
+                          : answered
+                          ? 'border-gold bg-gold/12 text-gold'
+                          : 'border-navy-500 bg-navy-850/75 text-slate-500 dark:text-slate-400 hover:border-gold/45 hover:text-gold';
+                    return (
+                      <button data-testid={`quiz-nav-${i + 1}`} key={`${effectiveSetId}-nav-${i}`} onClick={() => goToQuestion(i)} className={`relative flex items-center justify-center rounded-xl border py-2 text-xs font-black transition-all ${cls}`}>
+                        {i + 1}{supportsReviewMarking && markedForReview[i] && !submitted && <span aria-hidden="true" className="absolute right-0.5 top-0 text-[8px]">⚑</span>}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
           </div>
-          <div className="grid grid-cols-5 gap-2 p-4 sm:grid-cols-10 md:grid-cols-12">
-            {questions.map((q, i) => {
-              const answered = questionAnswered(q, i);
-              const correct = submitted && questionCorrect(q, i);
-              const wrong = submitted && answered && !correct;
-              const cls = correct
-                ? 'border-emerald-500 bg-emerald-500/15 text-emerald-300'
-                : wrong
-                  ? 'border-red-500 bg-red-500/15 text-red-300'
-                  : supportsReviewMarking && markedForReview[i]
-                    ? 'border-violet-400 bg-violet-500/15 text-violet-200'
-                    : answered
-                    ? 'border-gold bg-gold/12 text-gold'
-                    : 'border-navy-500 bg-navy-850/75 text-slate-500 dark:text-slate-400 hover:border-gold/45 hover:text-gold';
-              return (
-                <button data-testid={`quiz-nav-${i + 1}`} key={`${effectiveSetId}-nav-${i}`} onClick={() => goToQuestion(i)} className={`relative rounded-xl border px-2 py-2 text-xs font-black transition-all ${cls}`}>
-                  {i + 1}{supportsReviewMarking && markedForReview[i] && !submitted && <span aria-hidden="true" className="absolute right-0.5 top-0 text-[8px]">⚑</span>}
-                </button>
-              );
-            })}
-          </div>
-        </section>
+        </>
       )}
 
       {course.code === 'AKM201' && (
