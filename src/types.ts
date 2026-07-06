@@ -290,6 +290,8 @@ export interface QuizQuestionMeta {
   difficulty?: 'basic' | 'medium' | 'advanced';
   /** Grafik SVG opsional untuk soal interpretasi grafik. */
   svg?: string;
+  /** Image URL opsional untuk menampilkan gambar dalam soal. */
+  imageUrl?: string;
   /** Deskripsi tekstual grafik untuk aksesibilitas dan fingerprint. */
   altText?: string;
   /** Referensi sumber akademik yang digunakan untuk menyusun soal. */

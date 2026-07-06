@@ -194,6 +194,12 @@ function QuestionFrame({
         </div>
       </div>
       <div className="p-4 md:p-5">
+        {question.imageUrl && (
+          <figure className="mb-5 rounded-2xl overflow-hidden border border-navy-500/70 bg-white p-3">
+            <img src={question.imageUrl} alt={question.altText ?? 'Question figure'} className="mx-auto max-w-full rounded-xl object-contain h-64" />
+            {question.altText && <figcaption className="mt-2 text-center text-xs leading-5 text-slate-500">{question.altText}</figcaption>}
+          </figure>
+        )}
         {question.svg && (
           <figure data-testid={`quiz-graph-${question.id ?? index + 1}`} className="mb-5 rounded-2xl border border-navy-500/70 bg-white dark:bg-navy-950/70 p-3">
             <div className="mx-auto max-w-2xl overflow-x-auto" dangerouslySetInnerHTML={{ __html: question.svg }} />

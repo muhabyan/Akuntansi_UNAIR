@@ -113,7 +113,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "6"
     ],
     answer: 2,
-    explanation: "Karena data baru dimulai dari tahun 2005, MA3 (Moving Average 3 periode) untuk tahun 2006 hanya bisa dihitung menggunakan metode **Centered Moving Average**. Caranya dengan merata-rata data tahun 2005, 2006, dan 2007.\n\n$MA_3(2006) = \\frac{2005 + 2006 + 2007}{3}$\n\n$MA_3 = \\frac{2 + 6 + 4}{3} = \\frac{12}{3} = 4$"
+    explanation: "Karena data baru dimulai dari tahun 2005, MA3 (Moving Average 3 periode) untuk tahun 2006 hanya bisa dihitung menggunakan metode **Centered Moving Average**. Caranya dengan merata-rata data tahun 2005, 2006, dan 2007.\n\n$MA_3(2006) = \\frac{2005 + 2006 + 2007}{3}$\n\n$MA_3 = \\frac{2 + 6 + 4}{3} = \\frac{12}{3} = 4$\n\n**Catatan: Kapan pakai Trailing vs Centered?**\n- **Trailing/Lagging MA**: Digunakan untuk *Forecasting* (Peramalan masa depan). MA periode 3 tahun dihitung dari data 3 tahun *sebelumnya* untuk meramal tahun berikutnya.\n- **Centered MA**: Digunakan untuk *Smoothing* (Memperhalus kurva tren/menghilangkan fluktuasi acak). MA periode 3 tahun diletakkan tepat di *tengah* dari rentang 3 tahun tersebut.\nKarena di soal ini kita menghitung MA untuk tahun 2006 dan kita memiliki data historis tahun 2005, 2006, dan 2007, maka otomatis yang digunakan adalah Centered MA."
   },
   {
     topic: "Korelasi & Regresi",
@@ -199,20 +199,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     answer: 1,
     explanation: "Dari perhitungan, nilai r = 0.752. Nilai ini mendekati 1, sehingga menunjukkan korelasi yang positif dan tergolong kuat."
   },
-  {
-    topic: "Deret Waktu (Time Series)",
-    skill: "Moving Average",
-    difficulty: "medium",
-    q: "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 (moving average) untuk produksi tahun 2006 adalah:",
-    options: [
-      "4",
-      "6",
-      "5",
-      "7"
-    ],
-    answer: 0,
-    explanation: "Untuk mencari Moving Average 3 periode di sekitar tahun 2006 (Centered MA), kita merata-ratakan 2005, 2006, 2007 = (2 + 6 + 4) / 3 = 12 / 3 = 4."
-  },
+
   {
     topic: "Deret Waktu (Time Series)",
     skill: "Indeks Musiman",
@@ -287,6 +274,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     skill: "Interpretasi Scatterplot",
     difficulty: "basic",
     q: "Kesimpulan sederhana dari gambar scatterplot (Price di sumbu X, Quantity di sumbu Y, tren menyebar turun ke kanan bawah) adalah:",
+    imageUrl: "/scatter.svg",
     options: [
       "Terdapat korelasi negatif yang kuat antara kuantitas dan harga",
       "Terdapat korelasi negatif yang lemah antara kuantitas dan harga",
