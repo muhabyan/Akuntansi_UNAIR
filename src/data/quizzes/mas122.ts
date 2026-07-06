@@ -27,7 +27,7 @@ export const MAS122_QUIZ: QuizQuestion[] = [
   {"q": "Lengkapi tabel: Nominal=? | Ordinal=only for grouping/labeling | Interval=constant distance, no absolute zero | Ratio=order has meaning but distance unknown", "options": ["Nominal: has absolute zero; Ordinal: Competition rank; Interval: Distance to class; Ratio: Temperature", "Nominal: only grouping/labeling; Ordinal: has absolute zero; Interval: Car color; Ratio: Competition rank", "Nominal: only grouping/labeling; Ordinal: Competition rank; Interval: Distance to class; Ratio: Temperature", "Nominal: constant distance; Ordinal: Car color; Interval: Temperature; Ratio: Distance"], "answer": 2, "explanation": "Jawaban: C ✅ • Nominal: Hanya pengelompokan, tidak ada urutan. Contoh: Car color • Ordinal: Ada urutan/peringkat, tapi jarak tidak sama. Contoh: Competition rank • Interval: Jarak konstan, tidak ada nol mutlak. Contoh: Distance to class, suhu Celsius • Ratio: Semua sifat interval + nol"},
   {"q": "\"Drag the text\": Symmetric=Ages, Positively Skewed=Monthly Salaries, Negatively Skewed=Test Scores, Bimodal=Outside Diameter. Apakah semua benar?", "options": ["Semua benar", "Hanya Ages dan Monthly Salaries benar", "Monthly Salaries seharusnya Negatively Skewed", "Test Scores seharusnya Positively Skewed"], "answer": 0, "explanation": "Jawaban: A — Semua benar ✅ • Symmetric → Ages: distribusi usia cenderung simetris • Positively Skewed → Monthly Salaries: banyak gaji menengah, sedikit sangat tinggi (ekor kanan, Mean>Median) • Negatively Skewed → Test Scores: ujian mudah → banyak nilai tinggi (ekor kiri, Mode>Median>Mean) • Bimodal → Outside Diameter: mesin dengan dua ta…"},
   {"q": "Divisi Klaim: t_kritis=2.49, t_hitung=-1.82. Manajer menerima H₀. Pernyataan yang TIDAK SESUAI?", "options": ["Selisih Rp3.6 bisa disebabkan sampling error", "Terdapat cukup bukti bahwa upaya pemotongan biaya telah efektif", "Hasil menyiratkan upaya pemotongan biaya belum efektif", "Secara statistik tidak ada penurunan biaya klaim dari Rp60"], "answer": 1, "explanation": "Jawaban: B — TIDAK SESUAI Menerima H₀ (Fail to Reject) berarti tidak ada cukup bukti bahwa biaya turun. ✅ A: Selisih Rp3.6 bisa sampling error — SESUAI ❌ B: \"Cukup bukti efektif\" — TIDAK SESUAI! Justru sebaliknya! ✅ C: Upaya belum terbukti efektif — SESUAI | ✅ D: Tidak terbukti ada penurunan — SESUAI"},
-  {"q": "Applewood Profits: $200-600(8), $600-1000(11), $1000-1400(23), $1400-1800(38), $1800-2200(45), $2200-2600(32), $2600-3000(19), $3000-3400(4). Total=180. Pernyataan BENAR?", "options": ["I dan II saja benar", "Hanya I yang benar", "I, II, dan IV benar", "Semua benar (I,II,III,IV)"], "answer": 0, "explanation": "Jawaban: A — I dan II saja BENAR ✅ I: Kumulatif"}
+  {"q": "Applewood Profits: $200-600(8), $600-1000(11), $1000-1400(23), $1400-1800(38), $1800-2200(45), $2200-2600(32), $2600-3000(19), $3000-3400(4). Total=180. Pernyataan BENAR?", "options": ["I dan II saja benar", "Hanya I yang benar", "I, II, dan IV benar", "Semua benar (I,II,III,IV)"], "answer": 0, "explanation": "Jawaban: A — I dan II saja BENAR ✅ I dan II merupakan pernyataan yang paling sesuai dengan distribusi frekuensi di atas."}
 ];
 
 export const MAS122_UAS_2024: QuizQuestion[] = [
@@ -140,8 +140,8 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       '74.13',
       '119.18'
     ],
-    answer: 2,
-    explanation: 'Indeks musiman = (73.94 / 97.41) × 100 ≈ 75.9. Dalam opsi jawaban kuis, angka pendekatan yang paling rasional dari tabel adalah 74.13.'
+    answer: 0,
+    explanation: 'Indeks musiman = (Rata-rata musim / Rata-rata keseluruhan) × 100 = (73.94 / 97.41) × 100 = 75.90.'
   },
   {
     topic: 'Korelasi & Regresi',
