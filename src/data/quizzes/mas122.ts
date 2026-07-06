@@ -77,7 +77,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Interpretasi Persamaan Regresi",
     difficulty: "basic",
-    q: "Jika hasil estimasi regresi sederhana antara Total Biaya (C) dan barang yang diproduksi (Q) pada perusahaan DEF adalah sebagai berikut:\nC = 3,000 + 2Q\nMaka mana pernyataan di bawah ini yang benar",
+    q: "Jika hasil estimasi regresi sederhana antara Total Biaya ($C$) dan barang yang diproduksi ($Q$) pada perusahaan DEF adalah sebagai berikut:\n\n$$C = 3,000 + 2Q$$\n\nMaka mana pernyataan di bawah ini yang benar?",
     options: [
       "Jika perusahaan DEF tidak memproduksi barang sama sekali, maka Total Biaya yang dikeluarkan oleh perusahaan tersebut adalah sebesar $0",
       "Jika perusahaan DEF tidak memproduksi barang sama sekali, maka Total Biaya yang dikeluarkan oleh perusahaan tersebut adalah sebesar $3,000",
@@ -119,7 +119,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Signifikansi Korelasi",
     difficulty: "advanced",
-    q: "Dengan menggunakan rumus: t = (r√n-2) / √(1-r²) with n-2 degrees of freedom\nPada data di bawah ini: X=(4,5,3,6,10) Y=(4,6,5,7,7)\nDapat disimpulkan bahwa:",
+    q: "Dengan menggunakan rumus uji t korelasi dengan $n-2$ *degrees of freedom*:\n\n$$t = \\frac{r\\sqrt{n-2}}{\\sqrt{1-r^2}}$$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\nDapat disimpulkan bahwa:",
     options: [
       "Terdapat korelasi positif di populasi yang signifikan pada derajat kesalahan 5%",
       "Terdapat korelasi negatif di populasi yang signifikan pada derajat kesalahan 5%",
@@ -189,7 +189,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Koefisien Korelasi",
     difficulty: "medium",
-    q: "Dengan menggunakan rumus: CORRELATION COEFFICIENT r = Σ(X - X̄)(Y - Ȳ) / (n - 1)SxSy\nPada data di bawah ini: X=(4,5,3,6,10) Y=(4,6,5,7,7)\nDapat disimpulkan bahwa:",
+    q: "Dengan menggunakan rumus koefisien korelasi:\n\n$$r = \\frac{\\sum (X - \\bar{X})(Y - \\bar{Y})}{(n - 1)S_x S_y}$$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\nDapat disimpulkan bahwa:",
     options: [
       "X dan Y tidak memiliki korelasi",
       "X dan Y memiliki korelasi positif dan kuat",
@@ -231,7 +231,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Persamaan Regresi",
     difficulty: "advanced",
-    q: "Dengan rumus-rumus b = r(Sy/Sx) dan a = Ȳ - bX̄\nPada data di bawah ini: X=(4,5,3,6,10) Y=(4,6,5,7,7)\nMaka persamaan regresi yang dihasilkan adalah:",
+    q: "Dengan menggunakan rumus-rumus regresi:\n\n$$b = r\\left(\\frac{S_y}{S_x}\\right) \\quad \\text{dan} \\quad a = \\bar{Y} - b\\bar{X}$$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\nMaka persamaan regresi yang dihasilkan adalah:",
     options: [
       "Y = 3.77 + 0.36 X",
       "Y = 3.17 + 1.36 X",
@@ -314,7 +314,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Sifat Koefisien Korelasi",
     difficulty: "basic",
-    q: "Perhatikan beberapa pernyataan di bawah ini:\n1. Koefisien korelasi bernilai 0 - 100\n2. Koefisien korelasi dapat bernilai negatif atau positif\n3. Koefisien korelasi dapat menunjukkan hubungan sebab akibat dari dua variabel atau lebih.\n4. Jika nilai koefisien korelasi adalah 0.8 maka dapat disimpulkan bahwa dua variabel memiliki hubungan yang kuat dan searah\n\nMaka:",
+    q: "Perhatikan beberapa pernyataan di bawah ini:\n1. Koefisien korelasi bernilai 0 - 100\n2. Koefisien korelasi dapat bernilai negatif atau positif\n3. Koefisien korelasi dapat menunjukkan hubungan sebab akibat dari dua variabel atau lebih.\n4. Jika nilai koefisien korelasi adalah 0.8 maka dapat disimpulkan bahwa dua variabel memiliki hubungan yang kuat dan searah\n\nMaka pernyataan yang benar adalah:",
     options: [
       "1 dan 3 benar",
       "Hanya 4 yang benar",
@@ -328,7 +328,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Prediction Interval",
     difficulty: "advanced",
-    q: "Dengan menggunakan informasi tabel Regresi (Intercept = 2.169, Luas Toko = 1.179). Rata-rata luas toko = 3.24. Ŷ = 6.29. Standar Error = 2.143.\nMaka, buatlah interval prediksi untuk nilai penjualan jika luas toko di Cabang Y adalah sebesar 3.5 (100m2) pada tingkat kepercayaan 95%.",
+    q: "Dengan menggunakan informasi di bawah ini:\n\n**Regression Statistics**\n| Metric | Value |\n|---|---|\n| Multiple R | 0.658 |\n| R Square | 0.433 |\n| Standard Error | 2.143 |\n| Observations | 25 |\n\n**Coefficients**\n| Variabel | Coefficients | Standard Error | t Stat | P-value |\n|---|:---:|:---:|:---:|:---:|\n| Intercept | 2.169 | 1.008 | 2.151 | 0.0422 |\n| Luas Toko | 1.179 | 0.281 | 4.191 | 0.0003 |\n\n**Informasi tambahan:**\n1. Nilai rata-rata luas toko seluruh cabang adalah 3.24 (100 m²)\n2. $\\frac{(X - \\bar{X})^2}{\\sum (X - \\bar{X})^2} = \\frac{(3.5 - 3.24)^2}{58.02}$\n3. $\\hat{Y} = 6.29$\n\nMaka, buatlah interval **prediksi** (Prediction Interval) untuk nilai penjualan jika luas toko di Cabang Y adalah sebesar 3.5 (100m²) pada tingkat kepercayaan 95%.",
     options: [
       "6.29 - 8.39 (jutaan rupiah)",
       "1.68 - 8.39 (jutaan rupiah)",
@@ -356,7 +356,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Interpretasi Slope",
     difficulty: "medium",
-    q: "Suatu perusahaan melakukan estimasi terhadap semua anak cabangnya untuk melihat apakah luas toko (100 m2) mempengaruhi penjualan (jutaan rupiah). Tabel Regresi: Intercept=2.169, Luas Toko=1.179. Kesimpulan dari hasil estimasi di atas adalah:",
+    q: "Suatu perusahaan melakukan estimasi terhadap semua anak cabangnya untuk melihat apakah luas toko (100 m²) mempengaruhi penjualan (jutaan rupiah). Hasil dari estimasi yang dilakukan adalah sebagai berikut:\n\n| Variabel | Coefficients | Standard Error | t Stat | P-value |\n|---|:---:|:---:|:---:|:---:|\n| Intercept | 2.169 | 1.008 | 2.151 | 0.0422 |\n| Luas Toko (100 m²) | 1.179 | 0.281 | 4.191 | 0.0003 |\n\nKesimpulan dari hasil estimasi di atas adalah:",
     options: [
       "Setiap kenaikan 100 m2 dari luas toko akan dapat meningkatkan penjualan sebesar Rp 1.18 juta",
       "Setiap kenaikan 100 m2 dari luas toko akan dapat menurunkan penjualan sebesar Rp 1.18 juta.",
@@ -370,7 +370,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Korelasi & Regresi",
     skill: "Uji Signifikansi (P-value)",
     difficulty: "medium",
-    q: "Dari hasil estimasi antara luas toko dan penjualan (P-value Intercept = 0.0422, P-value Luas Toko = 0.0003):\ni. Koefisien intercept signifikan pada α=1%\nii. Koefisien intercept signifikan pada α=5%\niii. Koefisien luas toko signifikan pada α=1%\niv. Koefisien intercept dan luas toko tidak signifikan\nMaka pernyataan yang benar adalah:",
+    q: "Dari hasil estimasi antara luas toko (100 m²) dan penjualan (jutaan rupiah) di bawah ini:\n\n| Variabel | Coefficients | Standard Error | t Stat | P-value |\n|---|:---:|:---:|:---:|:---:|\n| Intercept | 2.169 | 1.008 | 2.151 | 0.0422 |\n| Luas Toko | 1.179 | 0.281 | 4.191 | 0.0003 |\n\n**Pernyataan:**\ni. Koefisien intercept signifikan pada derajat kesalahan 1%\nii. Koefisien intercept signifikan pada derajat kesalahan 5%\niii. Koefisien luas toko signifikan pada derajat kesalahan 1%\niv. Koefisien intercept dan luas toko tidak signifikan pada derajat kesalahan 1%, 5%, dan 10%\n\nMaka pernyataan yang benar adalah:",
     options: [
       "iv saja",
       "ii dan iii",
@@ -384,7 +384,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Deret Waktu (Time Series)",
     skill: "Variasi Siklis vs Musiman",
     difficulty: "basic",
-    q: "Berikut adalah data produksi sepeda motor merek HINDI secara bulanan sejak Januari 2009-Juli 2010 (19 bulan data, naik turun secara konstan). Data tersebut mengandung variasi:",
+    q: "Berikut adalah data produksi sepeda motor merek HINDI secara bulanan (ribu unit) sejak Januari 2009-Juli 2010. Secara berturut-turut adalah:\n`6, 7, 12, 8, 4, 3, 3, 5, 14, 6, 7, 6, 7, 9, 14, 9, 5, 4, 4`\n\nData tersebut mengandung variasi:",
     options: [
       "Seasonal",
       "Ir-regular",
