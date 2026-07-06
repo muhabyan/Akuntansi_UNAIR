@@ -577,6 +577,20 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     ],
     answer: 0,
     explanation: "Jika standar deviasi asli populasi (σ) tidak diketahui dan hanya bermodal standar deviasi dari sampel (s), maka uji t adalah uji statistik yang harus digunakan."
+  },
+  {
+    topic: "Deret Waktu (Time Series)",
+    skill: "Komponen Data Deret Waktu",
+    difficulty: "basic",
+    q: "Dalam analisis deret waktu (Time Series Analysis), komponen yang menunjukkan pola naik turun yang berulang secara teratur dalam jangka waktu kurang dari satu tahun (misalnya penjualan payung selalu naik di musim hujan tiap tahun) disebut...",
+    options: [
+      "Secular Trend",
+      "Cyclical Variation",
+      "Seasonal Variation",
+      "Irregular Variation"
+    ],
+    answer: 2,
+    explanation: "Pola naik-turun yang teratur dan berulang dalam kurun waktu kurang dari setahun (harian, mingguan, bulanan, atau kuartalan) merupakan variasi musiman (Seasonal Variation). Variasi siklis (Cyclical) mirip dengan musiman tetapi jangka waktunya lebih panjang (lebih dari setahun, seperti siklus ekonomi). Trend adalah pergerakan jangka panjang, sedangkan Irregular adalah kejadian acak atau tak terduga."
   }
 ];
 
