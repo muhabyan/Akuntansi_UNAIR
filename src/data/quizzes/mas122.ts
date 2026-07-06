@@ -217,7 +217,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Deret Waktu (Time Series)",
     skill: "Indeks Musiman",
     difficulty: "advanced",
-    q: "Taman Bermain \"HEPPI\" mengelola kafe, restoran, dan toko souvenir. Berikut adalah jumlah pengunjung (ribu orang) yang ditampilkan dengan (Tahun;Musim;Jumlah Pengunjung). Secara berturut-turut adalah (2006;Dingin;117), (2007;Dingin;118,6), (2008;Dingin;114), (2009;Dingin;120,7), (2010;Dingin;125,2), (2006;Semi;80,7), (2007;Semi;82,5), (2008;Semi;84,3), (2009;Semi;79,6), (2010;Semi;80,2), (2006;Panas;129,6), (2007;Panas;121,4), (2008;Panas;119,9), (2009;Panas;130,7), (2010;Panas;127,6), (2006;Gugur;76,1), (2007;Gugur;77,0), (2008;Gugur;75), (2009;Gugur;69,6), (2010;Gugur;72). Interpretasi yang benar berdasarkan situasi tersebut adalah",
+    q: "Taman Bermain \"HEPPI\" mengelola kafe, restoran, dan toko souvenir. Berikut adalah jumlah pengunjung (ribu orang) per musim:\n\n| Tahun | Dingin | Semi | Panas | Gugur |\n|:---:|:---:|:---:|:---:|:---:|\n| 2006 | 117.0 | 80.7 | 129.6 | 76.1 |\n| 2007 | 118.6 | 82.5 | 121.4 | 77.0 |\n| 2008 | 114.0 | 84.3 | 119.9 | 75.0 |\n| 2009 | 120.7 | 79.6 | 130.7 | 69.6 |\n| 2010 | 125.2 | 80.2 | 127.6 | 72.0 |\n\n Interpretasi yang benar berdasarkan situasi tersebut adalah",
     options: [
       "Pengunjung pada musim semi 25,13 persen lebih tinggi dari rata-rata jumlah pengunjung tahunan.",
       "Pengunjung pada musim semi 25,13 persen lebih rendah dari rata-rata jumlah pengunjung tahunan.",
