@@ -103,17 +103,17 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
   },
   {
     topic: 'Korelasi & Regresi',
-    skill: 'Menghitung koefisien korelasi dari tabel',
-    difficulty: 'medium',
-    q: 'Diberikan data X dan Y secara berturut-turut: X=(4,5,3,6,10), Y=(4,6,5,7,7). Dapat disimpulkan bahwa:',
+    skill: 'Uji Signifikansi Korelasi (t-test)',
+    difficulty: 'advanced',
+    q: 'Dengan menggunakan rumus t = (r√n-2) / √(1-r²) with n-2 degrees of freedom. Pada data X=(4,5,3,6,10) dan Y=(4,6,5,7,7). Dapat disimpulkan bahwa:',
     options: [
-      'X dan Y memiliki korelasi positif dan kuat',
-      'X dan Y tidak memiliki korelasi',
-      'X dan Y memiliki korelasi positif dan lemah',
-      'X dan Y memiliki korelasi negatif dan kuat'
+      'Terdapat korelasi positif di populasi yang signifikan pada derajat kesalahan 5%',
+      'Terdapat korelasi negatif di populasi yang signifikan pada derajat kesalahan 5%',
+      'Tidak terdapat korelasi di populasi yang signifikan pada derajat kesalahan 5%',
+      'Terdapat korelasi positif di populasi yang signifikan pada derajat kesalahan 10%'
     ],
     answer: 0,
-    explanation: 'X dan Y cenderung naik bersamaan (X membesar, Y juga ikut membesar). Secara visual atau perhitungan rumus koefisien korelasi, hasilnya adalah korelasi positif dan kuat.'
+    explanation: 'Jawaban e-learning: A. (Korelasi positif yang signifikan). Namun hitungan aktualnya: r = 0.752. Nilai t-hitung = (0.752 × √3) / √(1 - 0.752²) = 1.977. Nilai t-tabel (df=3, α=5% two-tail) adalah 3.182, dan one-tail adalah 2.353. Karena t-hitung (1.977) < t-tabel (2.353), secara statistik aslinya TIDAK SIGNIFIKAN (harusnya C). Namun ikuti kunci dari kampus (A).'
   },
   {
     topic: 'Deret Waktu (Time Series)',
