@@ -105,7 +105,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Deret Waktu (Time Series)",
     skill: "Moving Average",
     difficulty: "medium",
-    q: "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 untuk produksi tahun 2009 adalah:",
+    q: "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 (moving average) untuk produksi tahun 2006 adalah:",
     options: [
       "7",
       "5",
@@ -113,7 +113,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "6"
     ],
     answer: 2,
-    explanation: "MA3 biasa (lagging) untuk 2009 menggunakan data 3 tahun terakhir (2007, 2008, 2009) = (4+5+3)/3 = 4.0. (Catatan: Jika memakai centered MA untuk 2009: 2008,2009,2010 = 6.0)."
+    explanation: "Karena data baru dimulai dari tahun 2005, MA3 (Moving Average 3 periode) untuk tahun 2006 hanya bisa dihitung menggunakan metode **Centered Moving Average**. Caranya dengan merata-rata data tahun 2005, 2006, dan 2007.\n\n$MA_3(2006) = \\frac{2005 + 2006 + 2007}{3}$\n\n$MA_3 = \\frac{2 + 6 + 4}{3} = \\frac{12}{3} = 4$"
   },
   {
     topic: "Korelasi & Regresi",
