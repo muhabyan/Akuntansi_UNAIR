@@ -126,8 +126,8 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       '5',
       '4'
     ],
-    answer: 0,
-    explanation: 'Gunakan data tahun 2008, 2007, dan 2009 → 5, 3, 10. MA3 = (5+3+10)/3 = 6.0'
+    answer: 3,
+    explanation: 'Gunakan data produksi 3 tahun (2007, 2008, dan 2009) → 4, 5, 3. MA3 = (4 + 5 + 3) / 3 = 4.0'
   },
   {
     topic: 'Deret Waktu (Time Series)',
