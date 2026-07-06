@@ -112,8 +112,8 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       'Tidak terdapat korelasi di populasi yang signifikan pada derajat kesalahan 5%',
       'Terdapat korelasi positif di populasi yang signifikan pada derajat kesalahan 10%'
     ],
-    answer: 0,
-    explanation: 'Jawaban e-learning: A. (Korelasi positif yang signifikan). Namun hitungan aktualnya: r = 0.752. Nilai t-hitung = (0.752 × √3) / √(1 - 0.752²) = 1.977. Nilai t-tabel (df=3, α=5% two-tail) adalah 3.182, dan one-tail adalah 2.353. Karena t-hitung (1.977) < t-tabel (2.353), secara statistik aslinya TIDAK SIGNIFIKAN (harusnya C). Namun ikuti kunci dari kampus (A).'
+    answer: 2,
+    explanation: 'Jawaban yang BENAR secara perhitungan adalah C. Bukti: r = 0.752. Nilai t-hitung = (0.752 × √3) / √(1 - 0.752²) = 1.977. Nilai t-tabel (df=3, α=5%) adalah 2.353 (one-tail) atau 3.182 (two-tail). Karena t-hitung (1.977) < t-tabel (2.353), maka H0 gagal ditolak. Kesimpulan: TIDAK terdapat korelasi yang signifikan pada α = 5%.'
   },
   {
     topic: 'Deret Waktu (Time Series)',
