@@ -10,7 +10,7 @@
     "lint": "eslint src scripts --max-warnings=0 && node scripts/lint-source.mjs",
     "test": "node scripts/test-ci-bounded.mjs",
     "test:e2e": "node scripts/e2e-browser.mjs",
-    "check": "npm run lint && npm run test && npx tsc -b --pretty false && vite build && npm run test:runtime",
+    "check": "npm run lint && npm run test && npx tsc -b --pretty false && vite build && npm run test:runtime && npm run test:e2e",
     "test:runtime": "node scripts/runtime-smoke.mjs",
     "test:flashcard": "node scripts/test-flashcard-behavior.mjs",
     "test:pte-bank": "node scripts/validate-pte-bank.mjs && node scripts/validate-pte-bank-alignment.mjs && node scripts/validate-pte-bank-registry.mjs && node scripts/validate-pte-bank-competencies.mjs && node scripts/test-pte-bank-competency-mutations.mjs && node scripts/validate-pte-bank-graphs.mjs && node scripts/test-pte-bank-graph-mutations.mjs && node scripts/test-pte-bank-graph-renderer-dom.mjs && node scripts/test-pte-bank-graph-renderer-mutations.mjs && node scripts/test-pte-bank-behavior.mjs && node scripts/test-pte-bank-interactions.mjs && node scripts/test-pte-bank-dom-focus.mjs && node scripts/test-pte-bank-focus-mutation.mjs",

@@ -265,15 +265,12 @@ export default function App() {
   const activeSemester = SEMESTERS.find((s) => s.id === activeView);
   const isHomeLanding = activeView === 'home' && selectedCourse === null && !routeNotFound;
   const isGuideView = activeView === 'guide';
-  const isAkbiUxV2Active = selectedCourse?.code === 'AKM201' && !routeNotFound;
-  const isSemester2CatalogPilot = activeSemester?.id === 'sem2' && selectedCourse === null && !routeNotFound;
-  const isUxV2Pilot = false;
 
   return (
     <NotificationProvider>
       <UpdateNotifier />
       <ScheduleNotifier />
-      <div className={`uiux-final-shell ux-v2 relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200${isAkbiUxV2Active ? ' ux-v2--akbi' : ''}${isSemester2CatalogPilot ? ' ux-v2-catalog' : ''}`} data-theme={theme} data-ux-release="UIUX_FINAL_COMPLETE" data-ux-pilot={isUxV2Pilot ? 'AKM201' : undefined}>
+      <div className="relative isolate min-h-screen bg-[rgb(var(--color-bg-page))] text-[rgb(var(--color-text-main))] font-sans transition-colors duration-200">
         <OnboardingTour />
       <IntroSplash />
       <AuthModal />

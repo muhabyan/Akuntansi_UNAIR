@@ -12,20 +12,6 @@ interface HomeViewProps {
   onOpenCourseDirectly?: (courseCode: string, activityId: string) => void;
   onOpenGuide?: () => void;
 }
-/*
-  Eight semesters. One journey.
-  Lihat 8 Volume
-  Preview
-  Enter
-  label: 'Vol. I'
-  label: 'Vol. II'
-  label: 'Vol. III'
-  label: 'Vol. IV'
-  label: 'Vol. V'
-  label: 'Vol. VI'
-  label: 'Vol. VII'
-  label: 'Vol. VIII'
-*/
 
 export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpenGuide }: HomeViewProps) {
   const activeSemesters = SEMESTERS.filter(s => !s.locked);

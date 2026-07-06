@@ -19,6 +19,14 @@ const standardTasks = [
   ['ux10a_cascade', 'scripts/test-ux10a-cascade.mjs'],
   ['ux10b_catalog_source', 'scripts/test-ux10b-catalog-source-contract.mjs'],
   ['stage1_home_experience', 'scripts/test-stage1-home-experience.mjs'],
+  ['stage2_home_refinement', 'scripts/test-stage2-home-refinement.mjs'],
+  ['stage3_home_continuity', 'scripts/test-stage3-home-continuity.mjs'],
+  ['stage4_home_pathway', 'scripts/test-stage4-home-pathway.mjs'],
+  ['stage5_home_locator', 'scripts/test-stage5-home-locator.mjs'],
+  ['stage6_home_consolidation', 'scripts/test-stage6-home-consolidation.mjs'],
+  ['stage7_final_handoff', 'scripts/test-stage7-final-handoff.mjs'],
+  ['stage8_visual_polish', 'scripts/test-stage8-visual-polish.mjs'],
+  ['stage9_navbar_scroll_reveal', 'scripts/test-stage9-navbar-scroll-reveal.mjs'],
 ];
 
 const extendedTasks = [
@@ -41,7 +49,14 @@ const extendedTasks = [
   ['ux10a_cascade', 'scripts/test-ux10a-cascade.mjs'],
   ['ux10b_catalog_source', 'scripts/test-ux10b-catalog-source-contract.mjs'],
   ['stage1_home_experience', 'scripts/test-stage1-home-experience.mjs'],
-
+  ['stage2_home_refinement', 'scripts/test-stage2-home-refinement.mjs'],
+  ['stage3_home_continuity', 'scripts/test-stage3-home-continuity.mjs'],
+  ['stage4_home_pathway', 'scripts/test-stage4-home-pathway.mjs'],
+  ['stage5_home_locator', 'scripts/test-stage5-home-locator.mjs'],
+  ['stage6_home_consolidation', 'scripts/test-stage6-home-consolidation.mjs'],
+  ['stage7_final_handoff', 'scripts/test-stage7-final-handoff.mjs'],
+  ['stage8_visual_polish', 'scripts/test-stage8-visual-polish.mjs'],
+  ['stage9_navbar_scroll_reveal', 'scripts/test-stage9-navbar-scroll-reveal.mjs'],
   ['ux10c1_state_persistence', 'scripts/test-ux10c1-state-persistence.mjs'],
   ['ux10d1_focus', 'scripts/test-ux10d1-focus.mjs'],
   ['ux10d2_focus_stability', 'scripts/test-ux10d2-focus-stability.mjs'],

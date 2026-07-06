@@ -24,7 +24,7 @@ export function renderText(text: string): React.ReactNode {
       remarkPlugins={[remarkGfm, remarkMath]}
       rehypePlugins={[rehypeKatex, rehypeRaw]}
       components={{
-        a: ({ node: _node, ...props }) => {
+        a: ({ node, ...props }) => {
           const isAnchor = props.href?.startsWith('#');
           return (
             <a
@@ -34,9 +34,9 @@ export function renderText(text: string): React.ReactNode {
             />
           );
         },
-        strong: ({ node: _node, ...props }) => <strong className="text-gold font-bold" {...props} />,
-        em: ({ node: _node, ...props }) => <em className="italic text-slate-800 dark:text-slate-200" {...props} />,
-        code: ({ node: _node, inline, ...props }: any) => {
+        strong: ({ node, ...props }) => <strong className="text-gold font-bold" {...props} />,
+        em: ({ node, ...props }) => <em className="italic text-slate-800 dark:text-slate-200" {...props} />,
+        code: ({ node, inline, ...props }: any) => {
           if (inline) {
             return (
               <code className="bg-navy-700/60 border border-navy-500/50 text-gold px-1.5 py-0.5 rounded text-[0.85em] font-mono" {...props} />
@@ -44,14 +44,14 @@ export function renderText(text: string): React.ReactNode {
           }
           return <code {...props} />;
         },
-        table: ({ node: _node, ...props }) => (
+        table: ({ node, ...props }) => (
           <div className="overflow-x-auto my-4 rounded-xl border border-navy-500/30">
             <table className="w-full text-sm text-left border-collapse" {...props} />
           </div>
         ),
-        thead: ({ node: _node, ...props }) => <thead className="bg-navy-800/80 text-gold uppercase text-xs" {...props} />,
-        th: ({ node: _node, ...props }) => <th className="px-4 py-3 font-semibold border-b border-navy-500/30" {...props} />,
-        td: ({ node: _node, ...props }) => <td className="px-4 py-3 border-b border-navy-500/30 last:border-0" {...props} />,
+        thead: ({ node, ...props }) => <thead className="bg-navy-800/80 text-gold uppercase text-xs" {...props} />,
+        th: ({ node, ...props }) => <th className="px-4 py-3 font-semibold border-b border-navy-500/30" {...props} />,
+        td: ({ node, ...props }) => <td className="px-4 py-3 border-b border-navy-500/30 last:border-0" {...props} />,
       }}
     >
       {processedText}

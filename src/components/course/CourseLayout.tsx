@@ -589,7 +589,6 @@ function MaterialCard({
 
 // ----------------- CONTAINER SHELL UTAMA -----------------
 export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm = null, onBack }: CourseLayoutProps) {
-  // course-progress-ring is required by test-ux10a-foundation.mjs
   const { isDone, toggle } = useStudyProgress();
   const [activeTab, setActiveTab] = useState<TabType>(() => mapInitialTab(initialTab));
   const [searchQuery, setSearchQuery] = useState('');
@@ -628,14 +627,9 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
       });
 
     return () => { isActive = false; };
-  }, [course.code, initialTm]);
+  }, [course.code]);
 
   const isPteCourse = course.code === 'EKT109';
-  const isPjkCourse = course.code === 'PJK201';
-  const isFeaturedAccountingCourse = course.code === 'AKM201' || course.code === 'AKK201';
-  const isPjk = isPjkCourse;
-  void isFeaturedAccountingCourse;
-  void isPjk;
 
   const availableTms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
   const utsTms = useMemo(() => availableTms.filter((t) => t >= 1 && t <= 7), [availableTms]);
