@@ -5,6 +5,7 @@
 // agar lebih nyaman dibaca dan dikerjakan tanpa mengubah isi soal.
 // =============================================================
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Award, BarChart3, Check, ClipboardList, Clock, FileText, Lightbulb, Link2, ListChecks, RotateCcw, Target, X } from 'lucide-react';
 import { getQuizSets } from '../data/quizzes';
 import type { Course, QuizQuestion } from '../types';
@@ -988,7 +989,7 @@ export default function QuizView({
       )}
     </div>
 
-    {mode === 'exam' && examContentVisible && (
+    {mode === 'exam' && examContentVisible && typeof document !== 'undefined' && createPortal(
         <>
           {/* Floating Navigation Button */}
           <button
@@ -1042,7 +1043,8 @@ export default function QuizView({
               </div>
             </section>
           </div>
-        </>
+        </>,
+        document.body
       )}
     </>
   );
