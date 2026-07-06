@@ -105,15 +105,15 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
     topic: "Deret Waktu (Time Series)",
     skill: "Moving Average",
     difficulty: "medium",
-    q: "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 (moving average) untuk produksi tahun 2009 adalah:",
+    q: "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 (moving average) untuk produksi tahun 2006 adalah:",
     options: [
       "7",
       "5",
       "4",
       "6"
     ],
-    answer: 3,
-    explanation: "Untuk mencari Moving Average 3 periode (MA3) untuk tahun 2009, kita menggunakan metode **Centered Moving Average** karena nilai dari tahun setelahnya (2010) sudah diketahui. Caranya dengan merata-rata data tahun 2008, 2009, dan 2010.\n\n$MA_3(2009) = \\frac{2008 + 2009 + 2010}{3}$\n\n$MA_3 = \\frac{5 + 3 + 10}{3} = \\frac{18}{3} = 6$\n\n**Catatan: Kapan pakai Trailing vs Centered?**\n- **Trailing/Lagging MA**: Digunakan untuk *Forecasting* (Peramalan masa depan). MA periode 3 tahun dihitung dari data 3 tahun *sebelumnya* untuk meramal tahun berikutnya.\n- **Centered MA**: Digunakan untuk *Smoothing* (Memperhalus kurva tren/menghilangkan fluktuasi acak). MA periode 3 tahun diletakkan tepat di *tengah* dari rentang 3 tahun tersebut.\nKarena di soal ini kita menghitung MA untuk tahun 2009 dan kita memiliki data historis tahun 2008, 2009, dan 2010, maka otomatis yang digunakan adalah Centered MA."
+    answer: 2,
+    explanation: "Berdasarkan gambar screenshot yang diberikan, soal aslinya memang menanyakan tahun **2006** (bukan 2009). Karena data baru dimulai dari tahun 2005, MA3 untuk tahun 2006 **hanya bisa dihitung menggunakan metode Centered Moving Average**. Caranya dengan merata-rata data tahun 2005, 2006, dan 2007.\n\n$MA_3(2006) = \\frac{2005 + 2006 + 2007}{3}$\n\n$MA_3 = \\frac{2 + 6 + 4}{3} = \\frac{12}{3} = 4$\n\n**Kenapa tidak menggunakan Trailing MA?**\nTrailing MA 3 periode untuk tahun 2006 akan membutuhkan data dari tahun 2004, 2005, dan 2006. Karena data tahun 2004 tidak tersedia, Trailing MA tidak dapat dihitung. Karena itu, jawaban matematis yang logis adalah Centered MA, yaitu **4**."
   },
   {
     topic: "Korelasi & Regresi",
