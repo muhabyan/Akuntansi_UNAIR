@@ -753,10 +753,9 @@ export default function QuizView({
       )}
 
       {examContentVisible && (
-        <div className="lg:flex lg:items-start lg:gap-8">
-          <div className="flex-1 min-w-0 space-y-5">
-            {questions.map((q, i) => {
-              const show = revealed(i);
+        <div className="space-y-5">
+          {questions.map((q, i) => {
+            const show = revealed(i);
             if (submitted && supportsReviewFilter && reviewFilter === 'wrong' && questionCorrect(q, i)) return null;
             if (submitted && supportsReviewFilter && reviewFilter === 'correct' && !questionCorrect(q, i)) return null;
           const status = show ? (questionCorrect(q, i) ? 'correct' : 'wrong') : 'neutral';
@@ -947,39 +946,6 @@ export default function QuizView({
             </QuestionFrame>
           );
           })}
-          </div>
-
-          <div className="hidden lg:block lg:w-[320px] lg:shrink-0 lg:sticky lg:top-24">
-            <section data-testid="quiz-navigation-desktop" className="overflow-hidden rounded-[1.25rem] border border-navy-500/70 bg-navy-900/40 shadow-sm">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-500/60 px-4 py-3 bg-white/[0.02]">
-                <p className="flex items-center gap-2 text-sm font-black text-slate-100"><ListChecks size={16} className="text-gold" /> Navigasi</p>
-                <p className="text-[10px] font-semibold text-slate-400">{supportsReviewMarking ? 'Emas=dijawab, ungu=ditandai.' : 'Emas=kosong.'}</p>
-              </div>
-              <div className="max-h-[calc(100vh-14rem)] overflow-y-auto p-4 custom-scrollbar">
-                <div className="grid grid-cols-5 gap-2">
-                  {questions.map((q, i) => {
-                    const answered = questionAnswered(q, i);
-                    const correct = submitted && questionCorrect(q, i);
-                    const wrong = submitted && answered && !correct;
-                    const cls = correct
-                      ? 'border-emerald-500 bg-emerald-500/15 text-emerald-300'
-                      : wrong
-                        ? 'border-red-500 bg-red-500/15 text-red-300'
-                        : supportsReviewMarking && markedForReview[i]
-                          ? 'border-violet-400 bg-violet-500/15 text-violet-200'
-                          : answered
-                          ? 'border-gold bg-gold/12 text-gold'
-                          : 'border-navy-500 bg-navy-850/75 text-slate-500 dark:text-slate-400 hover:border-gold/45 hover:text-gold';
-                    return (
-                      <button data-testid={`quiz-nav-desktop-${i + 1}`} key={`${effectiveSetId}-nav-desk-${i}`} onClick={() => goToQuestion(i)} className={`relative flex items-center justify-center rounded-xl border py-2 text-xs font-black transition-all ${cls}`}>
-                        {i + 1}{supportsReviewMarking && markedForReview[i] && !submitted && <span aria-hidden="true" className="absolute right-0.5 top-0 text-[8px]">⚑</span>}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-          </div>
         </div>
       )}
 
@@ -1023,8 +989,8 @@ export default function QuizView({
       )}
     </div>
 
-    {examContentVisible && typeof document !== 'undefined' && createPortal(
-        <div className="lg:hidden">
+    {mode === 'exam' && examContentVisible && typeof document !== 'undefined' && createPortal(
+        <>
           {/* Floating Navigation Button */}
           <button
             onClick={() => setIsNavOpen(!isNavOpen)}
@@ -1077,7 +1043,7 @@ export default function QuizView({
               </div>
             </section>
           </div>
-        </div>,
+        </>,
         document.body
       )}
     </>

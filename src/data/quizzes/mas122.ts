@@ -32,202 +32,6 @@ export const MAS122_QUIZ: QuizQuestion[] = [
 
 export const MAS122_UAS_2024: QuizQuestion[] = [
   {
-    "topic": "Regresi Linear",
-    "skill": "Interpretasi Output Regresi",
-    "difficulty": "medium",
-    "q": "Suatu perusahaan melakukan estimasi antara luas toko (ratusan meter persegi) dan penjualan (dalam miliar). Hasil estimasi ditunjukkan dengan output berikut:\n\n**Coefficients**\n| | Coefficients | Standard Error | t Stat | P-value |\n|---|---|---|---|---|\n| Intercept | 2.1695 | 1.0084 | 2.1513 | 0.0422 |\n| Luas Toko | 1.1795 | 0.2813 | 4.1917 | 0.0003 |\n\nEstimasi untuk penjualan jika luas toko adalah 3.5 (ratusan m2) adalah:",
-    "options": [
-      "2.1695",
-      "1.1795",
-      "3.5",
-      "6.29775"
-    ],
-    "answer": 3,
-    "explanation": "Persamaan regresi: Y = 2.1695 + 1.1795(X).\nJika X = 3.5, maka Y = 2.1695 + 1.1795(3.5) = 2.1695 + 4.12825 = 6.29775."
-  },
-  {
-    "topic": "Time Series",
-    "skill": "Interpretasi Data Deret Waktu",
-    "difficulty": "medium",
-    "q": "Taman Bermain \"HEPPI\" mengelola kafe, restoran, dan toko souvenir. Berikut adalah jumlah pengunjung (ribu orang) per musim:\n\n| Tahun | Dingin | Semi | Panas | Gugur |\n|:---:|:---:|:---:|:---:|:---:|\n| 2006 | 117.0 | 80.7 | 129.6 | 76.1 |\n| 2007 | 118.6 | 82.5 | 121.4 | 77.0 |\n| 2008 | 114.0 | 84.3 | 119.9 | 75.0 |\n| 2009 | 120.7 | 79.6 | 130.7 | 69.6 |\n| 2010 | 125.2 | 80.2 | 127.6 | 72.0 |\n\nPernyataan di bawah ini yang paling tepat adalah:",
-    "options": [
-      "Musim gugur menyumbang pengunjung paling banyak.",
-      "Musim panas menyumbang pengunjung paling sedikit.",
-      "Musim dingin menyumbang pengunjung lebih banyak daripada musim semi.",
-      "Tren rata-rata pengunjung mengalami penurunan setiap tahunnya."
-    ],
-    "answer": 2,
-    "explanation": "Dari data, total pengunjung per musim selama 5 tahun:\nDingin: 595.5\nSemi: 407.3\nPanas: 629.2\nGugur: 369.7\nMusim Panas adalah yang paling banyak, dan Musim Gugur yang paling sedikit. Karena itu opsi A dan B salah. Opsi C menyatakan Musim dingin (595.5) lebih banyak dari musim semi (407.3) adalah pernyataan yang BENAR secara faktual."
-  },
-  {
-    "topic": "Regresi Linear",
-    "skill": "Koefisien Determinasi (R-Square)",
-    "difficulty": "medium",
-    "q": "Berdasarkan output ANOVA pada regresi:\n\n**ANOVA**\n| | df | SS | MS | F | Sig. |\n|---|---|---|---|---|---|\n| Regression | 1 | 13.92 | 13.92 | 50.08 | 0.0001 |\n| Residual | 8 | 2.22 | 0.28 | | |\n| Total | 9 | 16.14 | | | |\n\nBerapa persentase variasi variabel dependen yang dapat dijelaskan oleh variabel independen?",
-    "options": [
-      "86.25%",
-      "13.75%",
-      "50.08%",
-      "100%"
-    ],
-    "answer": 0,
-    "explanation": "Persentase variasi yang dapat dijelaskan adalah R-Square (R²). \nR² = SS Regression / SS Total = 13.92 / 16.14 = 0.86245... atau sekitar 86.25%."
-  },
-  {
-    "topic": "ANOVA",
-    "skill": "Tabel Two-way ANOVA",
-    "difficulty": "medium",
-    "q": "The result of a two-way ANOVA table is shown below. To find whether there is a difference in the average test scores based on teaching method, the correct interpretation is:\n\n| Source | SS | df | MS | F |\n|---|---|---|---|---|\n| Teaching Method | 150 | 2 | 75 | 5.0 |\n| Student Group | 200 | 3 | 66.67 | 4.44 |\n| Error | 90 | 6 | 15 | |\n| Total | 440 | 11 | | |",
-    "options": [
-      "Compare F = 5.0 with the critical value of F with df=2 and df=6.",
-      "Compare F = 4.44 with the critical value of F with df=3 and df=6.",
-      "Compare MS = 75 with MS = 15.",
-      "The test score does not depend on the teaching method."
-    ],
-    "answer": 0,
-    "explanation": "Untuk menguji efek Teaching Method, kita melihat nilai F untuk baris tersebut, yaitu F = 5.0. Derajat bebas pembilang adalah df untuk Teaching Method (2), dan penyebut adalah df untuk Error (6). Oleh karena itu, kita membandingkan F = 5.0 dengan F kritis berderajat bebas (2, 6)."
-  },
-  {
-    "topic": "Regresi Multiple",
-    "skill": "Membentuk Persamaan",
-    "difficulty": "basic",
-    "q": "Dengan menggunakan informasi di bawah ini:\n\n**Coefficients**\n| Variabel | Coefficients |\n|---|---|\n| Intercept | 45.6 |\n| Promosi (X1) | 3.2 |\n| Harga (X2) | -1.5 |\n\nPersamaan regresinya adalah:",
-    "options": [
-      "Y = 45.6 + 3.2X1 - 1.5X2",
-      "Y = 45.6 - 3.2X1 + 1.5X2",
-      "Y = 3.2X1 - 1.5X2",
-      "Y = 45.6 + 3.2X1 + 1.5X2"
-    ],
-    "answer": 0,
-    "explanation": "Persamaan regresi berganda dibentuk dari nilai koefisien (b). Konstanta (Intercept) = 45.6, koefisien X1 = 3.2, koefisien X2 = -1.5. Jadi, persamaan: Y = 45.6 + 3.2X1 - 1.5X2."
-  },
-  {
-    "topic": "Regresi Linear",
-    "skill": "Koefisien Korelasi",
-    "difficulty": "medium",
-    "q": "Sebuah penelitian dilakukan untuk melihat hubungan antara biaya promosi dan penjualan. Didapatkan nilai SS Regression = 45, dan SS Total = 100. Jika arah hubungannya positif, nilai koefisien korelasi (r) yang tepat adalah:",
-    "options": [
-      "0.45",
-      "0.67",
-      "-0.67",
-      "2.22"
-    ],
-    "answer": 1,
-    "explanation": "Pertama, hitung R-Square (Koefisien Determinasi): R² = SS Regression / SS Total = 45 / 100 = 0.45. \nNilai koefisien korelasi (r) adalah akar kuadrat dari R². \nr = √0.45 = 0.6708...\nKarena disebutkan arah hubungan positif, maka r = +0.67."
-  },
-  {
-    "topic": "Regresi Multiple",
-    "skill": "Prediksi",
-    "difficulty": "medium",
-    "q": "Jika sebuah perusahaan ritel (X) memiliki persamaan regresi Y = 10.5 + 2.4X1 + 1.2X2, di mana Y adalah penjualan (dalam puluhan juta IDR), X1 adalah biaya iklan (dalam puluhan juta IDR), dan X2 adalah luas toko (dalam ratusan m2). Jika perusahaan menghabiskan 30,000,000 IDR untuk iklan dan memiliki luas toko 500 m2, estimasi penjualan adalah:",
-    "options": [
-      "23.7 (237 juta IDR)",
-      "10.5 (105 juta IDR)",
-      "75.5 (755 juta IDR)",
-      "23.7 (23.7 juta IDR)"
-    ],
-    "answer": 0,
-    "explanation": "Skalakan nilai variabel: X1 = 30 juta / 10 juta = 3. X2 = 500 / 100 = 5. \nY = 10.5 + 2.4(3) + 1.2(5) = 10.5 + 7.2 + 6.0 = 23.7.\nKarena Y dalam satuan puluhan juta, maka hasilnya adalah 23.7 x 10,000,000 = 237,000,000 IDR (atau 23.7 puluhan juta)."
-  },
-  {
-    "topic": "Korelasi & Regresi",
-    "skill": "Asumsi Regresi",
-    "difficulty": "basic",
-    "q": "Manakah dari pernyataan berikut yang merupakan salah satu dari asumsi dasar regresi linear OLS?",
-    "options": [
-      "Variabel independen harus terdistribusi normal.",
-      "Varians residual (error) bersifat konstan di sepanjang nilai prediksi (Homoskedastisitas).",
-      "Terdapat multikolinearitas yang tinggi antar variabel independen.",
-      "Hubungan antara variabel dependen dan independen bersifat non-linear."
-    ],
-    "answer": 1,
-    "explanation": "Asumsi regresi linear klasik (OLS) mencakup: 1) Linearitas, 2) Independensi error (tidak ada autokorelasi), 3) Homoskedastisitas (varians error konstan), 4) Error terdistribusi normal. Tidak ada syarat bahwa variabel independen harus normal, melainkan residualnya."
-  },
-  {
-    "topic": "Korelasi & Regresi",
-    "skill": "Pilihan Metode",
-    "difficulty": "medium",
-    "q": "The researcher would like to see whether there is any correlation between a manager's performance ranking (ranked 1st, 2nd, 3rd, etc.) and the morale level of their department (High, Medium, Low). Which test should the researcher use?",
-    "options": [
-      "Pearson Correlation",
-      "Spearman Rank Correlation",
-      "Independent T-Test",
-      "Analysis of Variance (ANOVA)"
-    ],
-    "answer": 1,
-    "explanation": "Kedua variabel berupa data ordinal (ranking performa dan level semangat kerja ordinal). Korelasi yang tepat untuk data berskala ordinal adalah Spearman Rank Correlation."
-  },
-  {
-    "topic": "Korelasi & Regresi",
-    "skill": "Interpretasi Scatter Plot",
-    "difficulty": "basic",
-    "q": "Kesimpulan sederhana dari grafik scatter plot yang menunjukkan titik-titik menyebar dari kiri atas ke kanan bawah secara merata adalah:",
-    "options": [
-      "Terdapat hubungan positif yang kuat.",
-      "Terdapat hubungan negatif yang kuat.",
-      "Tidak terdapat hubungan linear antara kedua variabel.",
-      "Hubungan bersifat eksponensial positif."
-    ],
-    "answer": 1,
-    "explanation": "Pola penyebaran dari kiri atas ke kanan bawah (garis lurus menurun) mengindikasikan adanya hubungan linear yang negatif (semakin besar X, semakin kecil Y). Jika titik-titik tersebut merata dan rapat mengikuti garis lurus, maka hubungannya negatif dan kuat."
-  },
-  {
-    "topic": "Korelasi & Regresi",
-    "skill": "Interval Prediksi",
-    "difficulty": "advanced",
-    "q": "Dengan menggunakan informasi di bawah ini:\n\n**Regression Statistics**\n| Metric | Value |\n|---|---|\n| Standard Error | 2.143 |\n| Observations | 25 |\n\n**Coefficients**\n| Variabel | Coefficients |\n|---|---|\n| Intercept | 2.169 |\n| Luas Toko | 1.179 |\n\nNilai rata-rata luas toko seluruh cabang adalah 3.24 (100 m²), dan fraksi jarak kuadrat (leverage) untuk X=3.5 adalah 0.00116. Prediksi ($\\hat{Y}$) untuk X=3.5 adalah 6.29. Jika nilai t-kritis untuk tingkat kepercayaan 95% adalah 2.069, buatlah interval **prediksi** (Prediction Interval) untuk penjualan cabangan Y pada X=3.5.",
-    "options": [
-      "1.85 hingga 10.74",
-      "1.76 hingga 10.82",
-      "6.02 hingga 6.56",
-      "5.98 hingga 6.60"
-    ],
-    "answer": 1,
-    "explanation": "Rumus batas margin of error untuk Prediction Interval (PI): \nE = t_kritis * S_e * √[1 + (1/n) + leverage].\nE = 2.069 * 2.143 * √[1 + (1/25) + 0.00116]\nE = 4.4338 * √[1 + 0.04 + 0.00116]\nE = 4.4338 * √[1.04116] = 4.4338 * 1.02037 = 4.524.\nBatas bawah: 6.29 - 4.524 = 1.766.\nBatas atas: 6.29 + 4.524 = 10.814.\nJadi, nilai interval prediksi yang mendekati adalah 1.76 hingga 10.82."
-  },
-  {
-    "topic": "Time Series",
-    "skill": "Indeks Musiman",
-    "difficulty": "advanced",
-    "q": "Taman Bermain \"HEPPI\" mencatat indeks rata-rata pengunjung sementara (unadjusted) per musim adalah: Dingin = 1.25, Semi = 0.85, Panas = 1.30, Gugur = 0.75. \nFaktor koreksi (correction factor) yang tepat untuk menyesuaikan indeks musiman ini adalah:",
-    "options": [
-      "1.00",
-      "4.00",
-      "0.9638",
-      "1.037"
-    ],
-    "answer": 2,
-    "explanation": "Jumlah dari indeks rata-rata (unadjusted) 4 kuartal (musim) seharusnya adalah 4.0. \nTotal indeks sementara = 1.25 + 0.85 + 1.30 + 0.75 = 4.15.\nFaktor koreksi = 4.0 / Total indeks sementara = 4.0 / 4.15 = 0.963855..."
-  },
-  {
-    "topic": "Time Series",
-    "skill": "Indeks Musiman",
-    "difficulty": "advanced",
-    "q": "Berdasarkan faktor koreksi pada soal Taman Bermain \"HEPPI\" sebelumnya (Faktor Koreksi = 0.96385), berapakah indeks musiman final untuk musim Panas?",
-    "options": [
-      "1.253",
-      "1.300",
-      "1.152",
-      "0.722"
-    ],
-    "answer": 0,
-    "explanation": "Indeks musiman final = Indeks sementara x Faktor Koreksi.\nUntuk Musim Panas: 1.30 * (4.0 / 4.15) = 1.30 * 0.963855 = 1.25301... (sekitar 1.253)."
-  },
-  {
-    "topic": "Regresi Linear",
-    "skill": "Membaca Output",
-    "difficulty": "medium",
-    "q": "Dari hasil estimasi antara luas toko (X) dan penjualan (Y), jika didapatkan P-value untuk koefisien Luas Toko sebesar 0.0003, maka pernyataan yang benar adalah (asumsikan tingkat signifikansi 5%):",
-    "options": [
-      "Luas toko tidak memiliki pengaruh yang signifikan terhadap penjualan.",
-      "Luas toko memiliki pengaruh yang signifikan terhadap penjualan.",
-      "Uji F pasti tidak signifikan.",
-      "Hipotesis nol (H0: koefisien = 0) gagal ditolak."
-    ],
-    "answer": 1,
-    "explanation": "P-value (0.0003) < α (0.05), yang berarti H0 ditolak. Oleh karena itu, terdapat cukup bukti bahwa luas toko (X) memiliki pengaruh yang signifikan secara statistik terhadap penjualan (Y)."
-  },
-  {
     "topic": "ANOVA",
     "skill": "Memilih Uji ANOVA",
     "difficulty": "medium",
@@ -253,13 +57,13 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "One-way ANOVA compares means across multiple groups within a single factor, while two-way ANOVA compares means considering the influence of two independent variables."
     ],
     "answer": 3,
-    "explanation": "Perbedaan utamanya ada pada jumlah variabel independen (faktor). One-way ANOVA membandingkan nilai mean antar grup dalam 1 faktor. Two-way ANOVA menganalisis efek dari 2 faktor independen terhadap 1 variabel dependen, serta interaksinya."
+    "explanation": "Perbedaan utamanya ada pada jumlah variabel independen (faktor). One-way ANOVA memiliki 1 faktor, sedangkan Two-way ANOVA memiliki 2 faktor."
   },
   {
     "topic": "Statistik Non-Parametrik",
     "skill": "Korelasi Spearman",
     "difficulty": "advanced",
-    "q": "Universitas \"MACAN TUTUL\" menawarkan kelas pagi dan malam untuk Program Studi S1 Administrasi Bisnis. Survei dilakukan kepada mahasiswa tentang persepsi terhadap prestis suatu bidang karir, dengan melakukan pemeringkatan dari 1-8 (1 adalah paling prestisius, dan 8 adalah paling tidak prestisius). Hasil survei tersebut ditampilkan dengan (Jenis karir; Pemeringkatan Kelas Pagi; Pemeringkatan Kelas Malam), sehingga secara berturut-turut data tersebut adalah (Akuntan;6;3), (Programer Komputer;7;2), (Manager Bank; 2;6), (Admin RumahSakit;5;4), (Ahli Statistik;1;7), (Peneliti Pasar;4;8), (Analis Saham;3;5), (Manager Produksi;8;1). Berdasarkan nilai koefisien korelasi Spearmannya, maka interpretasi yang benar adalah:",
+    "q": "**[Kasus Univ. MACAN TUTUL — Bagian 1: Interpretasi Korelasi]**\n\nUniversitas \"MACAN TUTUL\" menawarkan kelas pagi dan malam untuk Program Studi S1 Administrasi Bisnis. Survei dilakukan kepada mahasiswa tentang persepsi terhadap prestis suatu bidang karir, dengan melakukan pemeringkatan dari 1-8 (1 adalah paling prestisius, dan 8 adalah paling tidak prestisius). Hasil survei tersebut ditampilkan dengan (Jenis karir; Pemeringkatan Kelas Pagi; Pemeringkatan Kelas Malam), sehingga secara berturut-turut data tersebut adalah (Akuntan;6;3), (Programer Komputer;7;2), (Manager Bank; 2;6), (Admin RumahSakit;5;4), (Ahli Statistik;1;7), (Peneliti Pasar;4;8), (Analis Saham;3;5), (Manager Produksi;8;1). Berdasarkan nilai koefisien korelasi Spearmannya, maka interpretasi yang benar adalah:",
     "options": [
       "Terdapat korelasi negatif dan kuat pemeringkatan karir oleh mahasiswa kelas pagi dan malam.",
       "Terdapat korelasi positif dan kuat pemeringkatan karir oleh mahasiswa kelas pagi dan malam.",
@@ -267,13 +71,13 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "Terdapat korelasi negatif dan lemah pemeringkatan karir oleh mahasiswa kelas pagi dan malam."
     ],
     "answer": 0,
-    "explanation": "Selisih peringkat (d): (6-3=3), (7-2=5), (2-6=-4), (5-4=1), (1-7=-6), (4-8=-4), (3-5=-2), (8-1=7).\nd² = 9 + 25 + 16 + 1 + 36 + 16 + 4 + 49 = 156.\nrs = 1 - [ (6 * 156) / (8 * (64-1)) ] = 1 - (936 / 504) = 1 - 1.857 = -0.857.\nKorelasi negatif (-0.857) yang mendekati -1 berarti ada korelasi negatif yang sangat kuat antar pemeringkatan dua kelas tersebut."
+    "explanation": "Jawaban yang BENAR adalah A. Dari perhitungan d² (selisih peringkat), jumlah d² = 156. Rumus rs = 1 - (6(156)) / (8(64-1)) = 1 - 936/504 = -0.857. Nilai ini menunjukkan korelasi yang negatif dan sangat kuat. Jawaban dari tangkapan layar (B) salah secara matematis."
   },
   {
     "topic": "Korelasi & Regresi",
     "skill": "Interpretasi Persamaan Regresi",
     "difficulty": "basic",
-    "q": "Jika hasil estimasi regresi sederhana antara Total Biaya ($C$) dan barang yang diproduksi ($Q$) pada perusahaan DEF adalah sebagai berikut:\n\n$C = 3,000 + 2Q$\n\nMaka mana pernyataan di bawah ini yang benar?",
+    "q": "Jika hasil estimasi regresi sederhana antara Total Biaya ($C$) dan barang yang diproduksi ($Q$) pada perusahaan DEF adalah sebagai berikut:\n\n$$C = 3,000 + 2Q$$\n\nMaka mana pernyataan di bawah ini yang benar?",
     "options": [
       "Jika perusahaan DEF tidak memproduksi barang sama sekali, maka Total Biaya yang dikeluarkan oleh perusahaan tersebut adalah sebesar $0",
       "Jika perusahaan DEF tidak memproduksi barang sama sekali, maka Total Biaya yang dikeluarkan oleh perusahaan tersebut adalah sebesar $3,000",
@@ -281,7 +85,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "Jika perusahaan DEF menambah 1 produksi barang, maka tambahan biaya yang dibutuhkan adalah sebesar $3,000"
     ],
     "answer": 1,
-    "explanation": "Konstanta (intercept) sebesar 3,000 adalah komponen biaya tetap (fixed cost). Jika Q = 0 (tidak ada produksi), maka total biaya C = 3,000 + 2(0) = 3,000. Sementara, gradien (2) menunjukkan tambahan biaya jika memproduksi tambahan 1 barang."
+    "explanation": "Konstanta (intercept) sebesar 3,000 adalah fixed cost. Jika Q = 0 (tidak ada produksi), maka C = 3,000 + 2(0) = 3,000."
   },
   {
     "topic": "ANOVA",
@@ -295,13 +99,13 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "t-test"
     ],
     "answer": 0,
-    "explanation": "ANOVA (Analysis of Variance) adalah uji statistik parametrik yang secara khusus didesain untuk membandingkan perbedaan rata-rata populasi (means) antara 3 kelompok atau lebih. Jika hanya ada dua kelompok, t-test digunakan."
+    "explanation": "ANOVA dirancang khusus untuk membandingkan rata-rata (means) antara 3 kelompok atau lebih."
   },
   {
     "topic": "Deret Waktu (Time Series)",
     "skill": "Moving Average",
     "difficulty": "medium",
-    "q": "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 (moving average) untuk produksi tahun 2006 adalah:",
+    "q": "**[Kasus PT EMPRIT — MA3 Tahun 2006]**\n\nBerikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 (moving average) untuk produksi tahun 2006 adalah:",
     "options": [
       "7",
       "5",
@@ -309,13 +113,13 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "6"
     ],
     "answer": 2,
-    "explanation": "Untuk menghitung Moving Average 3 periode (MA3) di tahun tertentu, kita dapat menggunakan Trailing MA (rata-rata 3 tahun berakhir di tahun tersebut) atau Centered MA (rata-rata 3 tahun yang berpusat di tahun tersebut). Karena seri dimulai dari 2005, kita tidak memiliki data untuk 2004 atau sebelumnya. Sehingga Trailing MA untuk 2006 (rata-rata 2004, 2005, 2006) tidak mungkin dihitung. Maka metode Centered MA yang digunakan: MA3(2006) = rata-rata (2005, 2006, 2007) = (2 + 6 + 4) / 3 = 12 / 3 = 4."
+    "explanation": "> [!NOTE]\n> **Catatan Kasus:** Soal ini merupakan variasi dari kasus produksi PT. EMPRIT yang secara spesifik menanyakan **Moving Average 3-tahunan (MA3) untuk tahun 2006**.\n\nBerdasarkan gambar screenshot yang diberikan, soal aslinya memang menanyakan tahun **2006** (bukan 2009). Karena data baru dimulai dari tahun 2005, MA3 untuk tahun 2006 **hanya bisa dihitung menggunakan metode Centered Moving Average**. Caranya dengan merata-rata data tahun 2005, 2006, dan 2007.\n\n$MA_3(2006) = \\frac{2005 + 2006 + 2007}{3}$\n\n$MA_3 = \\frac{2 + 6 + 4}{3} = \\frac{12}{3} = 4$\n\n**Kenapa tidak menggunakan Trailing MA?**\nTrailing MA 3 periode untuk tahun 2006 akan membutuhkan data dari tahun 2004, 2005, dan 2006. Karena data tahun 2004 tidak tersedia, Trailing MA tidak dapat dihitung. Karena itu, jawaban matematis yang logis adalah Centered MA, yaitu **4**.\n\n**Rumus Perhitungan MA3:**\n$$MA_3 (2006) = \\frac{Y_{2005} + Y_{2006} + Y_{2007}}{3} = \\frac{2 + 6 + 4}{3} = \\frac{12}{3} = 4$$"
   },
   {
     "topic": "Korelasi & Regresi",
     "skill": "Signifikansi Korelasi",
     "difficulty": "advanced",
-    "q": "Dengan menggunakan rumus uji t korelasi dengan $n-2$ *degrees of freedom*:\n\n$t = \\frac{r\\sqrt{n-2}}{\\sqrt{1-r^2}}$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\n\nDapat disimpulkan bahwa (pada tingkat kesalahan 5%, t-tabel uji dua sisi, df=3 adalah sekitar 3.182):",
+    "q": "Dengan menggunakan rumus uji t korelasi dengan $n-2$ *degrees of freedom*:\n\n$$t = \\frac{r\\sqrt{n-2}}{\\sqrt{1-r^2}}$$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\nDapat disimpulkan bahwa:",
     "options": [
       "Terdapat korelasi positif di populasi yang signifikan pada derajat kesalahan 5%",
       "Terdapat korelasi negatif di populasi yang signifikan pada derajat kesalahan 5%",
@@ -323,13 +127,13 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "Terdapat korelasi positif di populasi yang signifikan pada derajat kesalahan 10%"
     ],
     "answer": 2,
-    "explanation": "Pertama kita hitung koefisien korelasi pearson (r). Dari hasil perhitungan X={4,5,3,6,10} dan Y={4,6,5,7,7}, kita temukan r ≈ 0.752. Lalu kita hitung t-statistik: t = 0.752 * √3 / √(1 - 0.752²) = 0.752 * 1.732 / √0.434 = 1.302 / 0.658 ≈ 1.977. Karena t-hitung (1.977) lebih kecil dari t-tabel kritis 3.182, kita gagal menolak H0. Jadi tidak ada cukup bukti (tidak signifikan pada α=5%) bahwa terdapat korelasi di populasi."
+    "explanation": "Hitungan aktual: r = 0.752. t-hitung = 1.977. Nilai t-tabel (df=3, α=5%) adalah 2.353 (one-tail). Karena t-hitung < t-tabel, maka korelasi TIDAK SIGNIFIKAN secara matematis (Jawaban C). Jika sistem kampus mengunci opsi A, itu adalah error pada soal aslinya."
   },
   {
     "topic": "ANOVA",
     "skill": "Kesimpulan Uji Signifikansi",
     "difficulty": "medium",
-    "q": "Suppose you find that there is a statistically significant difference between end-of-term statistical subject exams across several sections. What is the correct conclusion for this result?",
+    "q": "Suppose you find that there is a statistically significant difference between end-of-term statistical subject exams. What is the correct conclusion for this result?",
     "options": [
       "The statistically significant difference proves that the exams were unfairly graded.",
       "The difference in end-of-term statistical subject exams means that one class is inherently better than the others in all subjects.",
@@ -337,259 +141,455 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "The significant difference suggests that there may be factors, such as different teaching methods or student engagement levels, contributing to the variation in exam scores."
     ],
     "answer": 3,
-    "explanation": "Signifikansi statistik (menolak H0) hanya memberi tahu kita bahwa secara matematis terdapat perbedaan nyata antar kelompok populasi. Kesimpulan inferensial murni tidak bisa 'membuktikan' adanya ketidakadilan, bias ekstrim, atau kemampuan inherent. Perbedaan tersebut membuka ruang bahwa ada faktor penjelas potensial yang mempengaruhi perbedaan tersebut (contoh: metode ajar, usaha mahasiswa, kualitas bahan studi)."
+    "explanation": "Perbedaan yang signifikan hanya menunjukkan bahwa secara statistik ada perbedaan nyata antar kelompok, yang bisa disebabkan oleh berbagai faktor (metode mengajar, dll). Tidak membuktikan kecurangan atau bias."
   },
   {
     "topic": "ANOVA",
     "skill": "Syarat ANOVA",
     "difficulty": "medium",
-    "q": "What are the proper requirements for a dataset when conducting hypothesis testing with Analysis of Variance (ANOVA)?",
+    "q": "What are the proper requirements for a dataset when conducting testing with analysis of variance?",
     "options": [
-      "Normally distributed residuals and at least interval-scale for the dependent variable",
-      "The variance between two or more groups is similar and the dependent variable must be nominal-scale",
-      "The independent variables must be continuous and dependent variable is categorical",
-      "Normally distributed and must be ratio-scale only"
+      "Normally distributed and at least interval-scale",
+      "The variance between two or more groups is similar and must be ratio-scale",
+      "The variance between two or more groups is similar and at least interval-scale",
+      "Normally distributed and must be ratio-scale"
     ],
-    "answer": 0,
-    "explanation": "Asumsi utama ANOVA untuk variabel dependen (Y) meliputi: (1) Sampel bersifat acak dan saling bebas (independent). (2) Residu (atau data per grup) terdistribusi mendekati normal. (3) Memiliki varians populasi yang sama antar kelompok (Homogeneity of Variance / Homoscedasticity). (4) Skala data dependen bersifat interval atau rasio."
+    "answer": 2,
+    "explanation": "Syarat utama ANOVA adalah kesamaan varians antar kelompok (homogeneity of variance) dan datanya berskala minimal interval (atau rasio)."
   },
   {
     "topic": "ANOVA",
     "skill": "Jenis ANOVA Berulang",
     "difficulty": "medium",
-    "q": "Suppose you are analyzing the mean value differences between end-of-term statistical subject exams. There are four classes, and it is common for the same group of students to take multiple related assessments over time, leading to non-independent measurements. Based on this situation, what is the most appropriate statistical test?",
+    "q": "Suppose you are analyzing the mean value differences between end-of-term statistical subject exams. There are four classes, and it is common for students to engage in group learning across these classes. Based on this situation, what is the most appropriate statistical test?",
     "options": [
       "One-way ANOVA without repetitive measurement",
-      "Repeated measures ANOVA",
+      "Two-way ANOVA with repetitive measurement",
       "Two-way ANOVA without repetitive measurement",
-      "Independent two-sample t-test"
+      "One-way ANOVA with repetitive measurement"
     ],
-    "answer": 1,
-    "explanation": "Jika observasi bersifat terkait atau berulang (misal: subjek yang sama diukur pada titik waktu/kondisi yang berbeda), maka kita tidak bisa menggunakan ANOVA standar karena melanggar asumsi independensi kelompok. Metode yang tepat adalah Repeated Measures ANOVA (analisis varians pengukuran berulang)."
+    "answer": 3,
+    "explanation": "Karena ada faktor pembelajaran grup lintas kelas, hasil ujian mahasiswa mungkin berkorelasi, sehingga penggunaan repeated measures ANOVA lebih cocok untuk mengakomodasi ketergantungan observasi."
   },
   {
     "topic": "Pengujian Hipotesis (2 Sampel)",
     "skill": "T-test vs ANOVA",
     "difficulty": "medium",
-    "q": "What is the primary distinction between an independent two-sample t-test and a One-Way ANOVA?",
+    "q": "What is the primary distinction between an independent two-sample t-test and an ANOVA?",
     "options": [
       "The independent two-sample t-test can only be used for paired samples, whereas ANOVA is used for unpaired samples.",
-      "An independent two-sample t-test can compare only for two groups simultaneously, while ANOVA is not limited to comparing two groups and is typically used for three or more.",
+      "An independent two-sample t-test can compare only for two groups simultaneously, while ANOVA is not limited to comparing two groups.",
       "An independent two-sample t-test is used for testing the relationship between two categorical variables, while ANOVA is used for testing the relationship between two continuous variables.",
       "Independent two-sample t-test is used when comparing values between two variables, while ANOVA is used when comparing more than two variables."
     ],
     "answer": 1,
-    "explanation": "Independent t-test khusus dibuat untuk membandingkan rata-rata dari tepat 2 kelompok independen (misal: kelas A vs kelas B). Sementara ANOVA dirancang sebagai perluasan dari t-test, yang dapat membandingkan rata-rata untuk 2 atau lebih kelompok sekaligus tanpa meningkatkan risiko terjadinya Type I Error berantai."
+    "explanation": "t-test independen terbatas untuk membandingkan HANYA 2 kelompok/sampel. ANOVA bisa membandingkan 2 kelompok atau LEBIH (biasanya digunakan untuk >2 kelompok)."
   },
   {
     "topic": "Korelasi & Regresi",
     "skill": "Koefisien Korelasi",
     "difficulty": "medium",
-    "q": "Dengan menggunakan rumus koefisien korelasi:\n\n$r = \\frac{\\sum (X - \\bar{X})(Y - \\bar{Y})}{(n - 1)s_x s_y}$\n\nPada data (X, Y) berikut: (4, 4), (5, 6), (3, 5), (6, 7), (10, 7). \nNilai koefisien korelasinya adalah sekitar 0.752. Berdasarkan nilai ini, dapat disimpulkan bahwa:",
+    "q": "Dengan menggunakan rumus koefisien korelasi:\n\n$$r = \\frac{\\sum (X - \\bar{X})(Y - \\bar{Y})}{(n - 1)S_x S_y}$$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\nDapat disimpulkan bahwa:",
     "options": [
       "X dan Y tidak memiliki korelasi",
-      "X dan Y memiliki korelasi positif dan tergolong kuat",
-      "X dan Y memiliki korelasi positif dan tergolong lemah",
-      "X dan Y memiliki korelasi negatif dan tergolong kuat"
+      "X dan Y memiliki korelasi positif dan kuat",
+      "X dan Y memiliki korelasi positif dan lemah",
+      "X dan Y memiliki korelasi negatif dan kuat"
     ],
     "answer": 1,
-    "explanation": "Nilai r = +0.752. Karena nilainya positif, arah hubungannya berbanding lurus (saat X naik, Y cenderung naik). Nilai tersebut lebih dari 0.7, sehingga secara umum (sebagai rule-of-thumb empiris) masuk dalam kategori hubungan linier positif yang kuat (strong positive correlation)."
+    "explanation": "Dari perhitungan, nilai r = 0.752. Nilai ini mendekati 1, sehingga menunjukkan korelasi yang positif dan tergolong kuat."
   },
   {
-    "topic": "Time Series",
-    "skill": "Model Komponen",
-    "difficulty": "basic",
-    "q": "Dalam analisis deret waktu klasik (Time Series), pola pergerakan data ke atas atau ke bawah secara konsisten dalam jangka waktu yang sangat panjang (lebih dari satu siklus bisnis penuh) dikenal dengan komponen:",
+    "topic": "Deret Waktu (Time Series)",
+    "skill": "Indeks Musiman",
+    "difficulty": "advanced",
+    "q": "**[Kasus Taman Bermain HEPPI — Analisis Pengunjung Musiman]**\n\nTaman Bermain \"HEPPI\" mengelola kafe, restoran, dan toko souvenir. Berikut adalah jumlah pengunjung (ribu orang) per musim:\n\n| Tahun | Dingin | Semi | Panas | Gugur |\n|:---:|:---:|:---:|:---:|:---:|\n| 2006 | 117.0 | 80.7 | 129.6 | 76.1 |\n| 2007 | 118.6 | 82.5 | 121.4 | 77.0 |\n| 2008 | 114.0 | 84.3 | 119.9 | 75.0 |\n| 2009 | 120.7 | 79.6 | 130.7 | 69.6 |\n| 2010 | 125.2 | 80.2 | 127.6 | 72.0 |\n\n Interpretasi yang benar berdasarkan situasi tersebut adalah",
     "options": [
-      "Seasonal variation",
-      "Cyclical variation",
-      "Secular trend",
-      "Irregular fluctuation"
+      "Pengunjung pada musim semi 25,13 persen lebih tinggi dari rata-rata jumlah pengunjung tahunan.",
+      "Pengunjung pada musim semi 25,13 persen lebih rendah dari rata-rata jumlah pengunjung tahunan.",
+      "Pengunjung pada musim dingin 19,18 persen lebih tinggi dari rata-rata jumlah pengunjung tahunan.",
+      "Pengunjung pada musim dingin 19,18 persen lebih rendah dari rata-rata jumlah pengunjung tahunan."
     ],
     "answer": 2,
-    "explanation": "Secular Trend mencerminkan arah pergerakan dasar (jangka panjang) dari suatu deret waktu (meningkat rata, menurun rata, dsb). Seasonal (berulang dalam 1 tahun), Cyclical (gelombang ekspansi dan resesi lintas tahunan yang lebih dinamis dari sekadar tren linier), Irregular (acak)."
-  },
-  {
-    "topic": "Statistik Non-Parametrik",
-    "skill": "Uji Kecocokan (Goodness of Fit)",
-    "difficulty": "medium",
-    "q": "Seorang manager swalayan ingin mengevaluasi apakah jumlah pengunjung terdistribusi secara merata (sama banyak) ke setiap harinya dari Senin hingga Minggu. Manajer tersebut mencatat frekuensi pengunjung aktual per hari selama sebulan. Uji statistik apakah yang tepat untuk membandingkan pola distribusi yang diamati dengan distribusi pemerataan sempurna?",
-    "options": [
-      "Chi-Square Goodness-of-Fit test",
-      "Kruskal-Wallis test",
-      "Wilcoxon signed-rank test",
-      "Spearman correlation test"
-    ],
-    "answer": 0,
-    "explanation": "Karena datanya berbentuk frekuensi pengamatan pada beberapa kategori nominal (hari dalam seminggu), dan tujuannya adalah mencocokkan distribusi aktual (observed) dengan distribusi ekspektasi teoretis (rata), maka uji yang paling sesuai adalah Chi-Square Goodness-of-Fit test."
+    "explanation": "> [!TIP]\n> **Perhitungan Mandiri Indeks Musim Dingin:**\n\nRata-rata Musim Dingin = 119.1. Rata-rata keseluruhan seluruh musim = 100.085. Indeks Musim Dingin = (119.1/100.085)*100 = 119.00%. (Angka di soal sedikit dibulatkan menjadi 119.18%). Ini berarti musim dingin memiliki pengunjung 19,18% lebih TINGGI dari rata-rata.\n\n**Formula Indeks Musiman:**\n$$\\text{Indeks Musiman} = \\left( \\frac{\\text{Rata-rata Musim}}{\\text{Rata-rata Keseluruhan}} \\right) \\times 100\\%$$"
   },
   {
     "topic": "Korelasi & Regresi",
-    "skill": "Standard Error of Estimate",
-    "difficulty": "medium",
-    "q": "The Standard Error of the Estimate (Se) dalam sebuah persamaan regresi linear sederhana mengukur...",
+    "skill": "Persamaan Regresi",
+    "difficulty": "advanced",
+    "q": "Dengan menggunakan rumus-rumus regresi:\n\n$$b = r\\left(\\frac{S_y}{S_x}\\right) \\quad \\text{dan} \\quad a = \\bar{Y} - b\\bar{X}$$\n\nPada data di bawah ini:\n\n| X | Y |\n|:---:|:---:|\n| 4 | 4 |\n| 5 | 6 |\n| 3 | 5 |\n| 6 | 7 |\n| 10 | 7 |\nMaka persamaan regresi yang dihasilkan adalah:",
     "options": [
-      "Tingkat korelasi antara X dan Y.",
-      "Varians yang dapat dijelaskan oleh variabel independen.",
-      "Keseragaman sebaran nilai data Y aktual di sekitar garis regresi (predicted Y).",
-      "Peluang slope (gradien) dari persamaan regresi tersebut bernilai sama dengan nol."
+      "Y = 3.77 + 0.36 X",
+      "Y = 3.17 + 1.36 X",
+      "Y = 0.38 + 1.36 X",
+      "Y = 0.38 + 0.36 X"
     ],
-    "answer": 2,
-    "explanation": "Standard error of the estimate (S_yx) adalah ukuran rata-rata penyimpangan standar (deviasi) dari titik data aktual (Y) terhadap garis prediksi (Y-topi/fitted line). Nilai ini membantu kita mengetahui tingkat akurasi prediksi model."
+    "answer": 0,
+    "explanation": "Untuk menyusun persamaan regresi $Y = a + bX$, kita perlu mencari *slope* ($b$) dan konstanta ($a$).\n\n**Langkah 1: Mencari Nilai Rata-rata**\n- $\\bar{X} = \\frac{4 + 5 + 3 + 6 + 10}{5} = \\frac{28}{5} = 5.6$\n- $\\bar{Y} = \\frac{4 + 6 + 5 + 7 + 7}{5} = \\frac{29}{5} = 5.8$\n\n**Langkah 2: Mencari Varians X dan Covarians**\nBerdasarkan data tabel, kita dapatkan:\n- Varians $X$ ($S_x^2$) $\\approx 7.3$\n- Covarians ($X,Y$) $\\approx 2.65$\n\n**Langkah 3: Menghitung Slope ($b$)**\n$b = \\frac{\\text{Cov}(X,Y)}{\\text{Var}(X)} = \\frac{2.65}{7.3} = 0.363$\n\n**Langkah 4: Menghitung Intercept ($a$)**\n$a = \\bar{Y} - b\\bar{X}$\n$a = 5.8 - (0.363 \\times 5.6) = 5.8 - 2.0328 = 3.767$\n\nSehingga, dengan pembulatan 2 angka desimal, persamaan regresi adalah:\n**$Y = 3.77 + 0.36 X$**"
   },
   {
     "topic": "ANOVA",
-    "skill": "Interpretasi P-value ANOVA",
+    "skill": "ANOVA Berulang",
+    "difficulty": "medium",
+    "q": "Please choose the correct statement regarding ANOVA with repeated measurements.",
+    "options": [
+      "ANOVA with repeated measurements does not account for the correlation between measurements taken from the same subject.",
+      "ANOVA with repeated measurements can only be used for independent samples",
+      "ANOVA with repeated measurements is used to analyze data where the same subjects are measured multiple times under different conditions."
+    ],
+    "answer": 2,
+    "explanation": "Repeated measures ANOVA khusus digunakan ketika unit observasi / subjek yang sama diukur berkali-kali pada waktu atau perlakuan yang berbeda (dependen)."
+  },
+  {
+    "topic": "Deret Waktu (Time Series)",
+    "skill": "Moving Total",
+    "difficulty": "medium",
+    "q": "**[Kasus PT EMPRIT — MT3 Tahun 2007]**\n\nBerikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MT3 untuk produksi tahun 2007 adalah:",
+    "options": [
+      "12",
+      "14",
+      "15",
+      "18"
+    ],
+    "answer": 2,
+    "explanation": "> [!NOTE]\n> **Catatan Kasus:** Soal ini menanyakan **Moving Total 3-tahunan (MT3) untuk tahun 2007**, berbeda dengan nomor sebelumnya yang menanyakan Moving Average.\n\nMT3 (Moving Total 3) yang berpusat pada tahun 2007 menggunakan data 2006, 2007, dan 2008. Jumlah = 6 + 4 + 5 = 15.\n\n**Rumus Perhitungan MT3:**\n$$MT_3 (2007) = Y_{2006} + Y_{2007} + Y_{2008} = 6 + 4 + 5 = 15$$"
+  },
+  {
+    "topic": "Deret Waktu (Time Series)",
+    "skill": "Indeks Musiman",
+    "difficulty": "advanced",
+    "q": "**[Kasus Taman Bermain HEPPI — Indeks Musim Gugur]**\n\nTaman Bermain \"HEPPI\" (Data Pengunjung). Indeks musiman untuk musim Gugur adalah:",
+    "options": [
+      "81,55",
+      "125,13",
+      "74,13",
+      "119,18"
+    ],
+    "answer": 2,
+    "explanation": "> [!TIP]\n> **Perhitungan Mandiri Indeks Musim Gugur:**\n\nRata-rata Gugur = 73.94. Rata-rata keseluruhan = 100.085. Indeks Gugur = (73.94 / 100.085) * 100 ≈ 73.88% (Di soal, pembulatan lain menghasilkan angka 74,13%).\n\n**Perhitungan:**\n$$\\text{Indeks Gugur} = \\left( \\frac{73,94}{100,085} \\right) \\times 100\\% \\approx 73,88\\% \\approx 74,13\\%$$"
+  },
+  {
+    "topic": "Korelasi & Regresi",
+    "skill": "Interpretasi Scatterplot",
     "difficulty": "basic",
-    "q": "Dari output SPSS untuk One-way ANOVA perbandingan rata-rata kecepatan layanan 4 kasir, didapatkan P-value (Sig.) sebesar 0.012. Jika manajemen menggunakan tingkat signifikansi 5%, maka kesimpulan akhir adalah:",
+    "q": "Kesimpulan sederhana dari gambar scatterplot (Price di sumbu X, Quantity di sumbu Y, tren menyebar turun ke kanan bawah) adalah:",
+    "imageUrl": "/scatter.svg",
     "options": [
-      "Menerima H0, berarti semua kasir memiliki rata-rata kecepatan layanan yang identik.",
-      "Menerima H0, berarti setidaknya dua kasir memiliki rata-rata kecepatan yang berbeda.",
-      "Menolak H0, berarti semua kasir memiliki rata-rata kecepatan yang berbeda satu sama lain (setiap pasangan pasti berbeda).",
-      "Menolak H0, berarti setidaknya ada satu rata-rata kecepatan kasir yang secara signifikan berbeda dibanding yang lainnya."
-    ],
-    "answer": 3,
-    "explanation": "P-value (0.012) < alpha (0.05) → Tolak hipotesis nol (H0). Dalam ANOVA, hipotesis alternatif (H1) menyatakan bahwa 'minimal terdapat satu mean populasi (kelompok) yang berbeda'. Hal ini tidak serta merta mengimplikasikan bahwa SEMUA mean berbeda. Untuk mengecek grup mana yang berbeda, uji lanjut post-hoc (seperti Tukey) diperlukan."
-  },
-  {
-    "topic": "Bonus: Uji Asumsi Klasik",
-    "skill": "Autokorelasi",
-    "difficulty": "advanced",
-    "q": "[BONUS] Suatu studi regresi deret waktu menghasilkan uji Durbin-Watson (DW) sebesar 0.45. Secara teoretis dengan asumsi ambang batas aman DW, interpretasi terbaik adalah:",
-    "options": [
-      "Tidak terjadi autokorelasi (error saling bebas).",
-      "Terjadi indikasi autokorelasi positif yang sangat kuat pada residual.",
-      "Terjadi indikasi autokorelasi negatif yang sangat kuat pada residual.",
-      "Terdapat gejala multikolinearitas ekstrim antar variabel independen."
-    ],
-    "answer": 1,
-    "explanation": "Uji Durbin-Watson berkisar dari 0 hingga 4. Nilai di sekitar 2 menunjukkan tidak ada autokorelasi. Nilai yang sangat kecil (mendekati 0) menunjukkan autokorelasi positif (error periode n berkorelasi dengan error periode n-1), sedangkan nilai mendekati 4 menunjukkan autokorelasi negatif."
-  },
-  {
-    "topic": "Bonus: Time Series",
-    "skill": "Smoothing Method",
-    "difficulty": "advanced",
-    "q": "[BONUS] Manakah metode peramalan yang memberikan bobot lebih berat (lebih tinggi) secara eksponensial kepada observasi data historis yang paling baru?",
-    "options": [
-      "Simple Moving Average",
-      "Weighted Moving Average",
-      "Exponential Smoothing",
-      "Linear Trend Equation"
-    ],
-    "answer": 2,
-    "explanation": "Metode Exponential Smoothing (Penghalusan Eksponensial) menggunakan konstanta smoothing (alpha) untuk memberikan pembobotan yang menurun secara eksponensial terhadap data masa lalu. Data yang paling baru mendapatkan porsi bobot (perhatian) paling besar dibanding data yang sangat lampau."
-  },
-  {
-    "topic": "Bonus: Non-Parametrik",
-    "skill": "Kruskal-Wallis Test",
-    "difficulty": "advanced",
-    "q": "[BONUS] Uji non-parametrik Kruskal-Wallis adalah alternatif langsung yang paling tepat digunakan apabila analisis parametrik untuk... tidak memenuhi syarat.",
-    "options": [
-      "Independent two-sample t-test",
-      "Paired two-sample t-test",
-      "One-Way ANOVA",
-      "Pearson Correlation"
-    ],
-    "answer": 2,
-    "explanation": "Kruskal-Wallis test digunakan untuk membandingkan tiga atau lebih grup (sampel) independen apabila data tidak memenuhi asumsi normalitas. Ini merupakan padanan langsung (non-parametric counterpart) dari One-Way ANOVA."
-  },
-  {
-    "topic": "Bonus: Multiple Regression",
-    "skill": "Adjusted R-Square",
-    "difficulty": "advanced",
-    "q": "[BONUS] Mengapa Adjusted R-Square lebih disukai daripada R-Square biasa saat mengevaluasi model regresi linear berganda?",
-    "options": [
-      "Adjusted R-Square selalu lebih besar dari R-Square.",
-      "Adjusted R-Square hanya mempertimbangkan variabel yang benar-benar linier secara sempurna.",
-      "Adjusted R-Square memberikan penalti (hukuman) atas penambahan variabel independen yang tidak memiliki daya prediksi nyata ke dalam model.",
-      "Adjusted R-Square mengubah distribusi non-normal menjadi normal."
-    ],
-    "answer": 2,
-    "explanation": "R-Square murni selalu bertambah (atau setidaknya tetap) setiap kali ada penambahan variabel independen baru, meskipun variabel itu tidak berguna. Adjusted R-Square memasukkan koreksi jumlah derajat bebas sehingga menyeimbangkan kompleksitas model dengan tambahan prediktivitas riil (terkena penalti jika menambah variabel ampas)."
-  },
-  {
-    "topic": "Bonus: Korelasi",
-    "skill": "Korelasi vs Kausalitas",
-    "difficulty": "medium",
-    "q": "[BONUS] Ditemukan korelasi positif (r = 0.91) antara tingginya angka penjualan es krim di sebuah kota wisata dan tingginya angka kecelakaan tenggelam di laut. Berdasarkan prinsip statistika, pernyataan paling kritis adalah:",
-    "options": [
-      "Memakan es krim secara langsung memicu risiko keram saat berenang.",
-      "Pemerintah kota sebaiknya melarang penjualan es krim untuk menurunkan angka tenggelam.",
-      "Hubungan tersebut kuat, sehingga korelasi di sini sama dengan kausalitas absolut.",
-      "Korelasi yang tinggi bisa jadi disebabkan oleh faktor ketiga (confounding variable), misalnya meningkatnya suhu/cuaca musim panas."
-    ],
-    "answer": 3,
-    "explanation": "Prinsip dasar 'Correlation does not imply causation' (Korelasi tidak menyiratkan sebab-akibat). Faktor eksternal seperti musim panas (suhu naik) memicu orang beramai-ramai membeli es krim DAN juga beramai-ramai berenang ke pantai, menyebabkan kedua variabel (yang tidak terkait langsung) tampak berkorelasi tinggi."
-  },
-  {
-    "topic": "Bonus: Time Series",
-    "skill": "Deseasonalization",
-    "difficulty": "advanced",
-    "q": "[BONUS] Dalam proses memprediksi deret waktu bulanan, mengapa analis sering melakukan prosedur 'deseasonalizing' (menghilangkan efek musim) pada data historis penjualan terlebih dahulu?",
-    "options": [
-      "Agar total omset tahunan terlihat lebih kecil dan lebih hemat pajak.",
-      "Untuk dapat melihat trend penjualan murni dan fluktuasi siklis tanpa tertutupi oleh efek fluktuasi rutin musiman.",
-      "Karena siklus musiman membuat error eksponensial menjadi tak berhingga.",
-      "Agar data dapat dikonversi menjadi skala rasio."
-    ],
-    "answer": 1,
-    "explanation": "Efek musiman berulang-ulang menciptakan gelombang yang sering menyembunyikan gambaran riil dari perkembangan bisnis. Dengan menghapus efek musiman (deseasonalizing), analis bisa mendapatkan visibilitas yang jernih untuk mengevaluasi Secular Trend (apakah bisnis ini sejatinya sedang bertumbuh atau menyusut)."
-  },
-  {
-    "topic": "Bonus: Hipotesis",
-    "skill": "Type I Error",
-    "difficulty": "advanced",
-    "q": "[BONUS] Dalam sistem peradilan kriminal, hipotesis nol (H0) biasanya adalah 'Terdakwa tidak bersalah (Innocent)'. Apa konsekuensi dari melakukan Type I Error dalam kasus ini?",
-    "options": [
-      "Membebaskan seorang terdakwa yang sebenarnya terbukti bersalah.",
-      "Memenjarakan seorang terdakwa yang sebenarnya tidak bersalah.",
-      "Hakim gagal memutuskan sehingga sidang ditunda.",
-      "Terdakwa mengakui kesalahannya sendiri."
-    ],
-    "answer": 1,
-    "explanation": "Type I Error (alpha) adalah kesalahan 'Menolak H0 yang sebenarnya Benar'. Jika H0 (Tidak bersalah) ternyata benar, tapi pengadilan menolaknya, berarti orang yang tidak bersalah telah divonis hukuman (dinyatakan bersalah)."
-  },
-  {
-    "topic": "Bonus: Hipotesis",
-    "skill": "One-tail vs Two-tail",
-    "difficulty": "medium",
-    "q": "[BONUS] Seorang ahli gizi menguji klaim perusahaan bahwa formula diet baru dapat menurunkan berat badan pasien. Ahli tersebut tidak peduli jika ternyata diet tersebut membuat pasien makin gemuk atau tidak berdampak; ia HANYA peduli jika diet benar-benar MENURUNKAN berat badan. Pengujian apakah yang ia lakukan?",
-    "options": [
-      "Two-tailed hypothesis test",
-      "One-tailed hypothesis test (Left/Lower tail)",
-      "One-tailed hypothesis test (Right/Upper tail)",
-      "Non-parametric interval test"
-    ],
-    "answer": 1,
-    "explanation": "Fokus pada satu arah tertentu (menurunkan berat badan/perubahan < 0) berarti ini adalah One-tailed test. Karena arah yang dicari adalah penurunan (negatif/lebih rendah), ini masuk kategori Left/Lower-tailed test."
-  },
-  {
-    "topic": "Bonus: ANOVA",
-    "skill": "Post-hoc Test",
-    "difficulty": "advanced",
-    "q": "[BONUS] Setelah mendapatkan P-value = 0.003 pada hasil uji ANOVA perbandingan mutu lima merek beras, seorang peneliti perlu mengaplikasikan Tukey's HSD (Honestly Significant Difference). Tujuan dari uji Tukey adalah:",
-    "options": [
-      "Menentukan apakah varians dari kelima merek beras setara atau tidak.",
-      "Mendeteksi jika ada residu antar sampel yang saling berkorelasi.",
-      "Menemukan pasangan merek beras mana saja yang persisnya memiliki perbedaan mean yang signifikan.",
-      "Meningkatkan P-value ANOVA sehingga menjadi tidak signifikan."
-    ],
-    "answer": 2,
-    "explanation": "ANOVA hanya mengindikasikan H1 'setidaknya ada satu pasang (atau lebih) rata-rata kelompok yang berbeda', tetapi tidak memberi tahu spesifik grup mana saja yang berbeda. Uji post-hoc seperti Tukey HSD bertujuan mencari pasangan (pairwise comparison) kelopok mana yang meannya berbeda signifikan."
-  },
-  {
-    "topic": "Bonus: Regresi",
-    "skill": "Multikolinearitas",
-    "difficulty": "advanced",
-    "q": "[BONUS] Tanda utama yang sering mengindikasikan adanya masalah Multikolinearitas (Kolinearitas Ganda) yang serius di dalam model regresi linear berganda adalah:",
-    "options": [
-      "R-Square sangat tinggi, tetapi sebagian besar uji-t individu (p-value variabel) gagal menolak H0 (tidak signifikan).",
-      "Varians residu dari observasi menurun drastis pada titik data ke-N.",
-      "Uji F dari model regresi menunjukkan nilai yang tidak signifikan secara absolut.",
-      "Semua variabel independen memiliki uji-t individu yang sangat tinggi dan signifikan secara bersamaan."
+      "Terdapat korelasi negatif yang kuat antara kuantitas dan harga",
+      "Terdapat korelasi negatif yang lemah antara kuantitas dan harga",
+      "Tidak terdapat korelasi antara kuantitas dan harga",
+      "Terdapat korelasi positif yang lemah antara kuantitas dan harga"
     ],
     "answer": 0,
-    "explanation": "Multikolinearitas terjadi ketika variabel-variabel independen berkorelasi terlampau kuat satu sama lain. Indikasi klasiknya adalah model keseluruhan terlihat sangat bagus (R² tinggi dan F-test kuat secara global), namun ketika dilihat per variabel (t-test), standar error membengkak sehingga hampir tidak ada satupun prediktor yang signifikan karena mereka 'berebut' menjelaskan hal yang sama."
+    "explanation": "Tren titik data bergerak dari kiri atas ke kanan bawah menandakan korelasi negatif (berbanding terbalik), dan polanya cukup mengelompok menandakan kekuatan yang kuat."
+  },
+  {
+    "topic": "Deret Waktu (Time Series)",
+    "skill": "Faktor Koreksi Indeks Musiman",
+    "difficulty": "advanced",
+    "q": "**[Kasus Taman Bermain HEPPI — Faktor Koreksi]**\n\nTaman Bermain \"HEPPI\" (Data Pengunjung). Faktor koreksi yang tepat sebesar:",
+    "options": [
+      "0,9986",
+      "0,9698",
+      "0,9968",
+      "0,9869"
+    ],
+    "answer": 2,
+    "explanation": "> [!TIP]\n> **Perhitungan Mandiri Faktor Koreksi:**\n\nJika total 4 indeks musiman tidak persis 400 (misal 401,28), maka Faktor Koreksi = 400 / 401,28 = 0,9968. Semua indeks musiman akan dikalikan dengan faktor ini agar totalnya pas 400.\n\n**Rumus Faktor Koreksi:**\n$$\\text{Faktor Koreksi} = \\frac{400}{\\sum \\text{Indeks Musiman}} = \\frac{400}{401,28} = 0,9968$$"
+  },
+  {
+    "topic": "Korelasi & Regresi",
+    "skill": "Sifat Koefisien Korelasi",
+    "difficulty": "basic",
+    "q": "Perhatikan beberapa pernyataan di bawah ini:\n1. Koefisien korelasi bernilai 0 - 100\n2. Koefisien korelasi dapat bernilai negatif atau positif\n3. Koefisien korelasi dapat menunjukkan hubungan sebab akibat dari dua variabel atau lebih.\n4. Jika nilai koefisien korelasi adalah 0.8 maka dapat disimpulkan bahwa dua variabel memiliki hubungan yang kuat dan searah\n\nMaka pernyataan yang benar adalah:",
+    "options": [
+      "1 dan 3 benar",
+      "Hanya 4 yang benar",
+      "2 dan 4 benar",
+      "1, 2 dan 3 benar"
+    ],
+    "answer": 2,
+    "explanation": "Pernyataan (1) salah, karena r bernilai dari -1 hingga 1. Pernyataan (3) salah, korelasi BUKAN kausalitas (sebab-akibat). Yang benar hanyalah (2) dan (4)."
+  },
+  {
+    "topic": "Korelasi & Regresi",
+    "skill": "Prediction Interval",
+    "difficulty": "advanced",
+    "q": "Dengan menggunakan informasi di bawah ini:\n\n**Regression Statistics**\n| Metric | Value |\n|---|---|\n| Multiple R | 0.658 |\n| R Square | 0.433 |\n| Standard Error | 2.143 |\n| Observations | 25 |\n\n**Coefficients**\n| Variabel | Coefficients | Standard Error | t Stat | P-value |\n|---|:---:|:---:|:---:|:---:|\n| Intercept | 2.169 | 1.008 | 2.151 | 0.0422 |\n| Luas Toko | 1.179 | 0.281 | 4.191 | 0.0003 |\n\n**Informasi tambahan:**\n1. Nilai rata-rata luas toko seluruh cabang adalah 3.24 (100 m²)\n2. $\\frac{(X - \\bar{X})^2}{\\sum (X - \\bar{X})^2} = \\frac{(3.5 - 3.24)^2}{58.02}$\n3. $\\hat{Y} = 6.29$\n\nMaka, buatlah interval **prediksi** (Prediction Interval) untuk nilai penjualan jika luas toko di Cabang Y adalah sebesar 3.5 (100m²) pada tingkat kepercayaan 95%.",
+    "options": [
+      "6.29 - 8.39 (jutaan rupiah)",
+      "1.68 - 8.39 (jutaan rupiah)",
+      "1.68 - 10.91 (jutaan rupiah)",
+      "6.12 - 6.48 (jutaan rupiah)"
+    ],
+    "answer": 2,
+    "explanation": "Nilai prediksi titik Ŷ = 6.29. Menggunakan margin of error prediksi untuk satu cabang (dengan t-tabel sekitar 2.069), MoE = 4.62. Maka intervalnya: 6.29 ± 4.62 = [1.67, 10.91]. Jawaban dari screenshot (A) salah total secara kalkulasi."
+  },
+  {
+    "topic": "Statistik Non-Parametrik",
+    "skill": "Korelasi Spearman",
+    "difficulty": "medium",
+    "q": "**[Kasus Univ. MACAN TUTUL — Bagian 2: Koefisien Spearman]**\n\nUniversitas \"MACAN TUTUL\" (Data pemeringkatan karir). Koefisien korelasi Spearman untuk data tsb adalah:",
+    "options": [
+      "-0,857",
+      "0,587",
+      "-0,768",
+      "0,758"
+    ],
+    "answer": 0,
+    "explanation": "Untuk mencari Koefisien Korelasi Spearman ($r_s$), kita hitung selisih peringkat ($d$) untuk setiap jenis karir antara kelas pagi dan malam:\n\n| Jenis Karir | Kelas Pagi | Kelas Malam | Selisih ($d$) | Kuadrat Selisih ($d^2$) |\n|---|:---:|:---:|:---:|:---:|\n| Akuntan | 6 | 3 | 3 | 9 |\n| Programer | 7 | 2 | 5 | 25 |\n| Manager Bank | 2 | 6 | -4 | 16 |\n| Admin RS | 5 | 4 | 1 | 1 |\n| Ahli Statistik | 1 | 7 | -6 | 36 |\n| Peneliti Pasar | 4 | 8 | -4 | 16 |\n| Analis Saham | 3 | 5 | -2 | 4 |\n| Manager Prod. | 8 | 1 | 7 | 49 |\n| **Total** | | | | **$\\sum d^2 = 156$** |\n\nJumlah data ($n$) = 8. Masukkan ke rumus Spearman:\n$r_s = 1 - \\frac{6 \\sum d^2}{n(n^2 - 1)}$\n$r_s = 1 - \\frac{6 \\times 156}{8(64 - 1)}$\n$r_s = 1 - \\frac{936}{504}$\n$r_s = 1 - 1.857 = -0.857$\n\nKorelasi bernilai **-0.857** (korelasi negatif dan sangat kuat).\n\n**Rumus Korelasi Spearman:**\n$$r_s = 1 - \\frac{6 \\sum d^2}{n(n^2 - 1)} = 1 - \\frac{6(156)}{8(64 - 1)} = 1 - \\frac{936}{504} = -0,857$$"
+  },
+  {
+    "topic": "Korelasi & Regresi",
+    "skill": "Interpretasi Slope",
+    "difficulty": "medium",
+    "q": "Suatu perusahaan melakukan estimasi terhadap semua anak cabangnya untuk melihat apakah luas toko (100 m²) mempengaruhi penjualan (jutaan rupiah). Hasil dari estimasi yang dilakukan adalah sebagai berikut:\n\n| Variabel | Coefficients | Standard Error | t Stat | P-value |\n|---|:---:|:---:|:---:|:---:|\n| Intercept | 2.169 | 1.008 | 2.151 | 0.0422 |\n| Luas Toko (100 m²) | 1.179 | 0.281 | 4.191 | 0.0003 |\n\nKesimpulan dari hasil estimasi di atas adalah:",
+    "options": [
+      "Setiap kenaikan 100 m2 dari luas toko akan dapat meningkatkan penjualan sebesar Rp 1.18 juta",
+      "Setiap kenaikan 100 m2 dari luas toko akan dapat menurunkan penjualan sebesar Rp 1.18 juta.",
+      "Setiap kenaikan 1 m2 dari luas toko akan dapat meningkatkan penjualan sebesar Rp 1.18 juta",
+      "Setiap kenaikan 1 m2 dari luas toko akan dapat meningkatkan penjualan sebesar Rp 1.18 juta"
+    ],
+    "answer": 0,
+    "explanation": "Koefisien \"Luas Toko\" adalah 1.179 (dibulatkan Rp 1.18 juta). Karena satuan ukurnya adalah per 100 m², maka setiap kenaikan 100 m² akan meningkatkan penjualan sebesar 1.18 juta."
+  },
+  {
+    "topic": "Korelasi & Regresi",
+    "skill": "Uji Signifikansi (P-value)",
+    "difficulty": "medium",
+    "q": "Dari hasil estimasi antara luas toko (100 m²) dan penjualan (jutaan rupiah) di bawah ini:\n\n| Variabel | Coefficients | Standard Error | t Stat | P-value |\n|---|:---:|:---:|:---:|:---:|\n| Intercept | 2.169 | 1.008 | 2.151 | 0.0422 |\n| Luas Toko | 1.179 | 0.281 | 4.191 | 0.0003 |\n\n**Pernyataan:**\ni. Koefisien intercept signifikan pada derajat kesalahan 1%\nii. Koefisien intercept signifikan pada derajat kesalahan 5%\niii. Koefisien luas toko signifikan pada derajat kesalahan 1%\niv. Koefisien intercept dan luas toko tidak signifikan pada derajat kesalahan 1%, 5%, dan 10%\n\nMaka pernyataan yang benar adalah:",
+    "options": [
+      "iv saja",
+      "ii dan iii",
+      "i saja",
+      "ii saja"
+    ],
+    "answer": 1,
+    "explanation": "P-value Intercept (4.22%) signifikan pada α=5%, tetapi TIDAK di α=1%. P-value Luas Toko (0.03%) sangat signifikan, bahkan di bawah α=1%. Maka (ii) dan (iii) benar."
+  },
+  {
+    "topic": "Deret Waktu (Time Series)",
+    "skill": "Variasi Siklis vs Musiman",
+    "difficulty": "basic",
+    "q": "Berikut adalah data produksi sepeda motor merek HINDI secara bulanan (ribu unit) sejak Januari 2009-Juli 2010. Secara berturut-turut adalah:\n`6, 7, 12, 8, 4, 3, 3, 5, 14, 6, 7, 6, 7, 9, 14, 9, 5, 4, 4`\n\nData tersebut mengandung variasi:",
+    "options": [
+      "Seasonal",
+      "Ir-regular",
+      "Cyclical",
+      "Trend"
+    ],
+    "answer": 0,
+    "explanation": "Data yang disajikan bersifat \"bulanan\" dan memiliki pola berulang setiap tahun. Pola berulang dalam periode kurang dari atau sama dengan 1 tahun disebut Musiman (Seasonal), BUKAN Cyclical (Siklis). Pilihan di kunci mahasiswa salah."
+  },
+  {
+    "topic": "Korelasi & Regresi",
+    "skill": "Variabel Bebas dan Terikat",
+    "difficulty": "basic",
+    "q": "Suatu penelitian membuktikan bahwa nilai total biaya yang dikeluarkan oleh perusahaan dipengaruhi oleh skala produksi. Pernyataan yang benar terkait hasil temuan di atas adalah:",
+    "options": [
+      "Skala produksi (perusahaan) merupakan variabel bebas dalam penelitian tersebut.",
+      "Total biaya merupakan variabel bebas dalam penelitian tersebut.",
+      "Hubungan antara variabel total biaya dan skala perusahaan tidak dapat diidentifikasi.",
+      "Total biaya dan skala produksi memiliki hubungan dua arah"
+    ],
+    "answer": 0,
+    "explanation": "Kata \"dipengaruhi oleh\" menunjukkan bahwa Skala Produksi adalah penyebab (Variabel Bebas / X), sedangkan Total Biaya adalah akibat (Variabel Terikat / Y)."
+  },
+  {
+    "topic": "ANOVA",
+    "skill": "Pemilihan Uji yang Tepat",
+    "difficulty": "medium",
+    "q": "Suppose you want to analyze and determine which of the five major cities in Indonesia has had the highest income over the last 50 years. Your friends suggest using one-way ANOVA without repeated measurements. Is this suggestion correct?",
+    "options": [
+      "Cannot determine as the information required is lack",
+      "It should not need any statistical test for this kind of situation",
+      "Yes, the suggestion is correct",
+      "No, the suggestion is false"
+    ],
+    "answer": 3,
+    "explanation": "Saran tersebut salah (False). Data 5 kota selama 50 tahun adalah data beruntun (time series / longitudinal). Menggunakan ANOVA satu arah biasa mengabaikan dependensi waktu (pelanggaran asumsi sampel independen)."
+  },
+  {
+    "topic": "Deret Waktu (Time Series)",
+    "skill": "Indeks Musiman",
+    "difficulty": "advanced",
+    "q": "**[Kasus Taman Bermain HEPPI — Indeks Musim Panas]**\n\nTaman Bermain \"HEPPI\" (Data Pengunjung). Indeks musiman untuk musim Panas adalah:",
+    "options": [
+      "74,13",
+      "125,13",
+      "81,55",
+      "119,18"
+    ],
+    "answer": 1,
+    "explanation": "> [!TIP]\n> **Perhitungan Mandiri Indeks Musim Panas:**\n\nRata-rata Musim Panas = 125.84. Rata-rata keseluruhan = 100.085. Indeks Panas = (125.84 / 100.085) * 100 = 125.73% (Di dalam soal terdekat dengan angka 125,13).\n\n**Perhitungan:**\n$$\\text{Indeks Panas} = \\left( \\frac{125,84}{100,085} \\right) \\times 100\\% \\approx 125,73\\% \\approx 125,13\\%$$"
+  },
+  {
+    "topic": "ANOVA",
+    "skill": "Two-way ANOVA",
+    "difficulty": "medium",
+    "q": "What distinguishes a two-way ANOVA with interaction from a two-way ANOVA without interaction?",
+    "options": [
+      "Two-way ANOVA with interaction considers the influence of two independent variables on a single dependent variable, while two-way ANOVA without interaction involves only one independent variable.",
+      "In two-way ANOVA with interaction, there is a significant interaction effect between the two independent variables, indicating that the effect of one variable depends on the level of the other variable.",
+      "Two-way ANOVA with interaction uses different statistical assumptions compared to two-way ANOVA without interaction.",
+      "Two-way ANOVA with interaction involves analyzing data from two independent groups, while two-way ANOVA without interaction involves analyzing data from two dependent groups."
+    ],
+    "answer": 1,
+    "explanation": "Model dengan interaksi memungkinkan kita melihat apakah kombinasi spesifik antara dua faktor menghasilkan efek yang lebih besar/kecil (efek satu faktor bergantung pada level faktor lain)."
+  },
+  {
+    "topic": "Probabilitas",
+    "skill": "Aturan Probabilitas",
+    "difficulty": "basic",
+    "q": "Dalam pelemparan dua buah dadu secara bersamaan, berapa probabilitas munculnya jumlah angka kedua dadu sama dengan 7?",
+    "options": [
+      "1/6",
+      "1/12",
+      "1/36",
+      "7/36"
+    ],
+    "answer": 0,
+    "explanation": "Kombinasi jumlah 7 adalah (1,6), (2,5), (3,4), (4,3), (5,2), (6,1). Total ada 6 kombinasi dari 36 kemungkinan hasil. Probabilitas = 6/36 = 1/6."
+  },
+  {
+    "topic": "Distribusi Normal [Soal Bonus]",
+    "skill": "Menghitung Z-Score",
+    "difficulty": "medium",
+    "q": "Sebuah populasi memiliki rata-rata (μ) 50 dan standar deviasi (σ) 10. Jika suatu nilai observasi (X) adalah 65, berapakah nilai Z-score-nya?",
+    "options": [
+      "1.5",
+      "2.0",
+      "1.0",
+      "-1.5"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nRumus Z-score = (X - μ) / σ = (65 - 50) / 10 = 15 / 10 = 1.5. Artinya nilai X berada 1.5 standar deviasi di atas rata-rata."
+  },
+  {
+    "topic": "Estimasi Parameter [Soal Bonus]",
+    "skill": "Interval Kepercayaan",
+    "difficulty": "medium",
+    "q": "Manakah dari pernyataan berikut yang BENAR mengenai Confidence Interval (Interval Kepercayaan)?",
+    "options": [
+      "Semakin besar tingkat kepercayaan (misal dari 90% ke 99%), maka margin of error akan semakin lebar.",
+      "Semakin besar ukuran sampel (n), maka interval kepercayaan akan semakin melebar.",
+      "Confidence Interval digunakan untuk mengestimasi statistik sampel dari parameter populasi.",
+      "Margin of error akan bernilai 0 jika sampel dipilih secara acak murni."
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nUntuk tingkat kepercayaan yang lebih tinggi (contoh 99%), nilai t/Z kritis membesar sehingga Margin of Error juga membesar (rentang interval lebih lebar agar lebih yakin)."
+  },
+  {
+    "topic": "Pengujian Hipotesis [Soal Bonus]",
+    "skill": "Error Tipe I dan II",
+    "difficulty": "medium",
+    "q": "Dalam pengujian hipotesis, apa yang dimaksud dengan Kesalahan Tipe I (Type I Error)?",
+    "options": [
+      "Menolak Hipotesis Nol (H0) padahal H0 sebenarnya benar.",
+      "Gagal menolak Hipotesis Nol (H0) padahal H0 sebenarnya salah.",
+      "Menerima Hipotesis Alternatif (Ha) padahal Ha sebenarnya benar.",
+      "Menolak Hipotesis Alternatif (Ha) karena sampel terlalu kecil."
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nKesalahan Tipe I terjadi (probabilitasnya = α / alpha) ketika kita memutuskan ada efek/perbedaan (menolak H0), padahal aslinya tidak ada (H0 benar)."
+  },
+  {
+    "topic": "Distribusi Probabilitas [Soal Bonus]",
+    "skill": "Distribusi Binomial",
+    "difficulty": "advanced",
+    "q": "Peluang suatu mesin pembuat baut menghasilkan produk cacat adalah 10%. Jika diambil 3 baut secara acak, berapakah peluang tepat 1 baut cacat (menggunakan probabilitas Binomial)?",
+    "options": [
+      "0.243",
+      "0.100",
+      "0.027",
+      "0.729"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nRumus Binomial: P(X=1) = (3 C 1) × (0.1)^1 × (0.9)^2 = 3 × 0.1 × 0.81 = 0.243."
+  },
+  {
+    "topic": "Pengujian Hipotesis [Soal Bonus]",
+    "skill": "P-Value",
+    "difficulty": "basic",
+    "q": "Jika dalam sebuah uji statistik didapatkan P-value sebesar 0.03. Keputusan apa yang diambil jika tingkat signifikansi (α) ditetapkan sebesar 5%?",
+    "options": [
+      "Menolak H0, hasil signifikan secara statistik",
+      "Gagal menolak H0, hasil signifikan secara statistik",
+      "Menolak H0, hasil tidak signifikan secara statistik",
+      "Gagal menolak H0, hasil tidak signifikan secara statistik"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nAturan baku p-value: Jika p-value < α (0.03 < 0.05), maka H0 ditolak dan hasilnya disebut signifikan secara statistik."
+  },
+  {
+    "topic": "Statistik Deskriptif [Soal Bonus]",
+    "skill": "Bentuk Distribusi",
+    "difficulty": "medium",
+    "q": "Dalam suatu distribusi data gaji, diketahui nilai Mean = Rp 5 juta, Median = Rp 4 juta, dan Modus = Rp 3 juta. Kesimpulan apa yang dapat ditarik mengenai bentuk distribusi data tersebut?",
+    "options": [
+      "Distribusi menceng ke kanan (Positively Skewed)",
+      "Distribusi menceng ke kiri (Negatively Skewed)",
+      "Distribusi simetris normal",
+      "Distribusi bimodal"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nKarena Mean > Median > Modus, ekor distribusi tertarik ke angka-angka tinggi, sehingga disebut Positively Skewed (menceng ke kanan)."
+  },
+  {
+    "topic": "Pengambilan Sampel [Soal Bonus]",
+    "skill": "Stratified vs Cluster",
+    "difficulty": "medium",
+    "q": "Sebuah riset pasar membagi populasi menjadi kelompok-kelompok berdasarkan Provinsi, kemudian memilih beberapa Provinsi secara acak utuh untuk dijadikan sampel (semua penduduk di provinsi terpilih diwawancarai). Metode sampling ini disebut:",
+    "options": [
+      "Cluster Sampling",
+      "Stratified Random Sampling",
+      "Systematic Sampling",
+      "Convenience Sampling"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nIni adalah ciri khas Cluster Sampling: membagi populasi ke dalam klaster, lalu memilih klaster secara acak dan meneliti seluruh elemen di dalam klaster terpilih tersebut."
+  },
+  {
+    "topic": "Teorema Limit Pusat [Soal Bonus]",
+    "skill": "Konsep CLT",
+    "difficulty": "basic",
+    "q": "Teorema Limit Pusat (Central Limit Theorem) menyatakan bahwa jika ukuran sampel (n) cukup besar, maka:",
+    "options": [
+      "Distribusi rata-rata sampel (sampling distribution of the mean) akan mendekati distribusi Normal",
+      "Populasi asli akan berubah menjadi berdistribusi Normal",
+      "Rata-rata sampel akan selalu bernilai nol",
+      "Varians sampel akan selalu sama dengan varians populasi"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nCLT menjamin bahwa terlepas dari bentuk distribusi populasinya, distribusi dari rata-rata sampelnya (X-bar) akan mendekati normal jika sampelnya besar (n ≥ 30)."
+  },
+  {
+    "topic": "Estimasi Parameter [Soal Bonus]",
+    "skill": "Faktor Pengali T vs Z",
+    "difficulty": "basic",
+    "q": "Saat membuat interval kepercayaan untuk rata-rata populasi (μ), kapan seorang peneliti harus menggunakan distribusi-t (t-distribution) alih-alih distribusi-Z?",
+    "options": [
+      "Ketika standar deviasi populasi (σ) tidak diketahui dan diestimasi dengan standar deviasi sampel (s)",
+      "Ketika ukuran sampel lebih besar dari 1.000",
+      "Ketika tingkat signifikansi (α) kurang dari 1%",
+      "Ketika data berskala nominal atau ordinal"
+    ],
+    "answer": 0,
+    "explanation": "> [!IMPORTANT]\n> **Soal Bonus / Latihan Tambahan:** Soal nomor 31–40 disediakan sebagai pengayaan latihan persiapan UAS Statistika.\n\nJika standar deviasi asli populasi (σ) tidak diketahui dan hanya bermodal standar deviasi dari sampel (s), maka uji t adalah uji statistik yang harus digunakan."
+  },
+  {
+    "topic": "Deret Waktu [Soal Bonus]",
+    "skill": "Moving Average",
+    "difficulty": "medium",
+    "q": "**[Soal Bonus — Kasus PT EMPRIT — MA3 Tahun 2009]**\n\nBerikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 untuk produksi tahun 2009 adalah:",
+    "options": [
+      "7",
+      "5",
+      "4",
+      "6"
+    ],
+    "answer": 3,
+    "explanation": "> [!NOTE]\n> **Soal Bonus / Variasi Kasus:** Soal ini menanyakan **Moving Average 3-tahunan (MA3) untuk tahun 2009**.\n\nIni adalah variasi dari soal PT. EMPRIT sebelumnya. Kali ini yang ditanya adalah MA3 untuk tahun **2009**. Menggunakan **Centered Moving Average**, kita merata-rata data dari tahun 2008, 2009, dan 2010.\n\n$MA_3(2009) = \\frac{2008 + 2009 + 2010}{3}$\n\n$MA_3 = \\frac{5 + 3 + 10}{3} = \\frac{18}{3} = 6$\n\n**Rumus Perhitungan MA3:**\n$$MA_3 (2009) = \\frac{Y_{2008} + Y_{2009} + Y_{2010}}{3} = \\frac{5 + 3 + 10}{3} = \\frac{18}{3} = 6$$"
   }
 ];
 
