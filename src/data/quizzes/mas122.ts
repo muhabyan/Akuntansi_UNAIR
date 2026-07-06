@@ -239,7 +239,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "Y = 0.38 + 0.36 X"
     ],
     answer: 0,
-    explanation: "Rata-rata X = 5.6, Y = 5.8. Covarians = 2.65, Varians X = 7.3. Slope b = Cov/VarX = 2.65 / 7.3 = 0.363. Intercept a = 5.8 - (0.363 × 5.6) = 3.767. Maka Y = 3.77 + 0.36X."
+    explanation: `Untuk menyusun persamaan regresi $Y = a + bX$, kita perlu mencari *slope* ($b$) dan konstanta ($a$).\n\n**Langkah 1: Mencari Nilai Rata-rata**\n- $\\bar{X} = \\frac{4 + 5 + 3 + 6 + 10}{5} = \\frac{28}{5} = 5.6$\n- $\\bar{Y} = \\frac{4 + 6 + 5 + 7 + 7}{5} = \\frac{29}{5} = 5.8$\n\n**Langkah 2: Mencari Varians X dan Covarians**\nBerdasarkan data tabel, kita dapatkan:\n- Varians $X$ ($S_x^2$) $\\approx 7.3$\n- Covarians ($X,Y$) $\\approx 2.65$\n\n**Langkah 3: Menghitung Slope ($b$)**\n$b = \\frac{\\text{Cov}(X,Y)}{\\text{Var}(X)} = \\frac{2.65}{7.3} = 0.363$\n\n**Langkah 4: Menghitung Intercept ($a$)**\n$a = \\bar{Y} - b\\bar{X}$\n$a = 5.8 - (0.363 \\times 5.6) = 5.8 - 2.0328 = 3.767$\n\nSehingga, dengan pembulatan 2 angka desimal, persamaan regresi adalah:\n**$Y = 3.77 + 0.36 X$**`
   },
   {
     topic: "ANOVA",
@@ -350,7 +350,7 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
       "0,758"
     ],
     answer: 0,
-    explanation: "Seperti perhitungan di awal, jumlah kuadrat selisih d² = 156, sehingga rs = 1 - 936/504 = -0.857. (Jawaban C pada dokumen PDF salah)."
+    explanation: `Untuk mencari Koefisien Korelasi Spearman ($r_s$), kita hitung selisih peringkat ($d$) untuk setiap jenis karir antara kelas pagi dan malam:\n\n| Jenis Karir | Kelas Pagi | Kelas Malam | Selisih ($d$) | Kuadrat Selisih ($d^2$) |\n|---|:---:|:---:|:---:|:---:|\n| Akuntan | 6 | 3 | 3 | 9 |\n| Programer | 7 | 2 | 5 | 25 |\n| Manager Bank | 2 | 6 | -4 | 16 |\n| Admin RS | 5 | 4 | 1 | 1 |\n| Ahli Statistik | 1 | 7 | -6 | 36 |\n| Peneliti Pasar | 4 | 8 | -4 | 16 |\n| Analis Saham | 3 | 5 | -2 | 4 |\n| Manager Prod. | 8 | 1 | 7 | 49 |\n| **Total** | | | | **$\\sum d^2 = 156$** |\n\nJumlah data ($n$) = 8. Masukkan ke rumus Spearman:\n$r_s = 1 - \\frac{6 \\sum d^2}{n(n^2 - 1)}$\n$r_s = 1 - \\frac{6 \\times 156}{8(64 - 1)}$\n$r_s = 1 - \\frac{936}{504}$\n$r_s = 1 - 1.857 = -0.857$\n\nKorelasi bernilai **-0.857** (korelasi negatif dan sangat kuat).`
   },
   {
     topic: "Korelasi & Regresi",
