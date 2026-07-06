@@ -580,17 +580,17 @@ export const MAS122_UAS_2024: QuizQuestion[] = [
   },
   {
     topic: "Deret Waktu (Time Series)",
-    skill: "Komponen Data Deret Waktu",
-    difficulty: "basic",
-    q: "Dalam analisis deret waktu (Time Series Analysis), komponen yang menunjukkan pola naik turun yang berulang secara teratur dalam jangka waktu kurang dari satu tahun (misalnya penjualan payung selalu naik di musim hujan tiap tahun) disebut...",
+    skill: "Moving Average",
+    difficulty: "medium",
+    q: "Berikut adalah data produksi pesawat tempur (unit) yang dihasilkan oleh PT. EMPRIT sejak tahun 2005-2010, secara berturut-turut 2, 6, 4, 5, 3 dan 10. Nilai MA3 untuk produksi tahun 2009 adalah:",
     options: [
-      "Secular Trend",
-      "Cyclical Variation",
-      "Seasonal Variation",
-      "Irregular Variation"
+      "7",
+      "5",
+      "4",
+      "6"
     ],
-    answer: 2,
-    explanation: "Pola naik-turun yang teratur dan berulang dalam kurun waktu kurang dari setahun (harian, mingguan, bulanan, atau kuartalan) merupakan variasi musiman (Seasonal Variation). Variasi siklis (Cyclical) mirip dengan musiman tetapi jangka waktunya lebih panjang (lebih dari setahun, seperti siklus ekonomi). Trend adalah pergerakan jangka panjang, sedangkan Irregular adalah kejadian acak atau tak terduga."
+    answer: 3,
+    explanation: "Ini adalah variasi dari soal PT. EMPRIT sebelumnya. Kali ini yang ditanya adalah MA3 untuk tahun **2009**. Menggunakan **Centered Moving Average**, kita merata-rata data dari tahun 2008, 2009, dan 2010.\n\n$MA_3(2009) = \\frac{2008 + 2009 + 2010}{3}$\n\n$MA_3 = \\frac{5 + 3 + 10}{3} = \\frac{18}{3} = 6$"
   }
 ];
 
