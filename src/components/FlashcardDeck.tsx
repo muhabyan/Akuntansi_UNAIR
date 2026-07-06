@@ -108,7 +108,9 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
       
       try {
         localStorage.setItem(`flashcard-srs-${courseCode}`, JSON.stringify(next));
-      } catch {}
+      } catch (_err) {
+        // ignore storage errors
+      }
       
       return next;
     });
@@ -344,9 +346,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      const target = event.target as HTMLElement;
-      const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT' || target.isContentEditable;
-      if (isInput) return;
+      if (isFlashcardInteractiveTarget(event.target)) return;
 
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
@@ -356,7 +356,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
         event.preventDefault();
         handleNext();
       }
-      if ((event.key === 'Enter' || event.key === ' ') && !isFlashcardInteractiveTarget(target)) {
+      if ((event.key === 'Enter' || event.key === ' ') && !isFlashcardInteractiveTarget(event.target as Node)) {
         event.preventDefault();
         toggleFlip(activeIndex);
       }

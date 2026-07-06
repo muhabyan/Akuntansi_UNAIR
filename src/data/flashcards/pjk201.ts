@@ -699,5 +699,23 @@ export const PJK201_FC: AdvancedStudyCard[] = [
     category: "Konsep",
     front: "Konsep Opsen Pajak antara Provinsi dan Kabupaten/Kota",
     back: "Pungutan tambahan pajak menurut persentase tertentu yang dikenakan atas pajak terutang dari tingkat pemerintahan daerah yang berbeda. Contoh: Opsen PKB dan Opsen BBNKB dipungut oleh Kabupaten/Kota (66%) bersamaan dengan pajak Provinsi, sehingga mempercepat distribusi bagi hasil dan transparansi daerah."
+  },
+  {
+    id: "pjk201-tm14-add01",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Pajak Daerah Kab/Kota",
+    category: "Konsep",
+    front: "Sebutkan 5 contoh Pajak Daerah tingkat Kabupaten/Kota!",
+    back: "1. Pajak Hotel\n2. Pajak Restoran\n3. Pajak Penerangan Jalan\n4. PBB Perdesaan dan Perkotaan (PBB-P2)\n5. Bea Perolehan Hak atas Tanah dan Bangunan (BPHTB)"
+  },
+  {
+    id: "pjk201-tm14-add02",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "Subjek Pajak Kendaraan",
+    category: "Definisi",
+    front: "Siapa yang menjadi Subjek Pajak Kendaraan Bermotor (PKB)?",
+    back: "Orang pribadi atau Badan yang memiliki dan/atau menguasai Kendaraan Bermotor."
   }
 ];

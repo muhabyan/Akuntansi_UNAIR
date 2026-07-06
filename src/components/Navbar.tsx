@@ -140,7 +140,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
     >
       <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-12 nav-menu-container">
         <div className="flex items-center justify-between gap-4">
-          <button onClick={handleHome} className="group flex shrink-0 cursor-pointer items-center gap-3 text-left" type="button">
+          <button onClick={handleHome} className="ux-v2-brand-mark group flex shrink-0 cursor-pointer items-center gap-3 text-left" type="button">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white transition-all group-hover:bg-blue-700 md:h-11 md:w-11">
               <GraduationCap size={21} aria-hidden="true" />
             </div>

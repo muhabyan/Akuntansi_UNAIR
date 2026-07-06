@@ -20,7 +20,9 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
           parsed.y = Math.max(85, parsed.y);
           return parsed;
         }
-      } catch (e) {}
+      } catch (_e) {
+        // ignore
+      }
     }
     return defaultPosition;
   });

@@ -9,7 +9,16 @@ interface SemesterViewProps {
   onCourseClick: (course: Course) => void;
 }
 
+import Semester2CatalogView from './Semester2CatalogView';
+
 export default function SemesterView({ semester, onBack, onCourseClick }: SemesterViewProps) {
+  if (semester.id === 'sem2') {
+    return <Semester2CatalogView semester={semester} onBack={onBack} onCourseClick={onCourseClick} />;
+  }
+  return <LegacySemesterView semester={semester} onBack={onBack} onCourseClick={onCourseClick} />;
+}
+
+function LegacySemesterView({ semester, onBack, onCourseClick }: SemesterViewProps) {
   const { countDone } = useStudyProgress();
   const courses = semester.groups.flatMap(g => g.courses);
   const totalTm = courses.reduce((sum, c) => sum + (c.materiTM1_7?.length ?? 0) + (c.materiTM8_14?.length ?? 0), 0);

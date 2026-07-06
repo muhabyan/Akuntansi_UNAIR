@@ -41,7 +41,7 @@ export default function PomodoroTimer() {
       playTone(880, ctx.currentTime, 1);       // A5
       playTone(1108.73, ctx.currentTime + 0.15, 1.5); // C#6
     } catch (e) {
-      console.log('Audio error', e);
+      console.warn('Audio error', e);
     }
   };
 

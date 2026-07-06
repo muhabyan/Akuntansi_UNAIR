@@ -25,7 +25,7 @@ export default function AITutorFloating() {
     if (saved) {
       try {
         return JSON.parse(saved);
-      } catch (e) {
+      } catch (_e) {
         console.error('Failed to parse chat history');
       }
     }
@@ -332,16 +332,16 @@ ${pageText}
                         ) : (
                           <ReactMarkdown
                             components={{
-                              p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
-                              strong: ({node, ...props}) => <strong className="font-bold" {...props} />,
-                              em: ({node, ...props}) => <em className="italic" {...props} />,
-                              ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
-                              ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
-                              li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                              h1: ({node, ...props}) => <h1 className="font-bold text-lg mb-2" {...props} />,
-                              h2: ({node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
-                              h3: ({node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
-                              code: ({node, inline, className, children, ...props}: any) => {
+                              p: ({node: _node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                              strong: ({node: _node, ...props}) => <strong className="font-bold" {...props} />,
+                              em: ({node: _node, ...props}) => <em className="italic" {...props} />,
+                              ul: ({node: _node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
+                              ol: ({node: _node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
+                              li: ({node: _node, ...props}) => <li className="mb-1" {...props} />,
+                              h1: ({node: _node, ...props}) => <h1 className="font-bold text-lg mb-2" {...props} />,
+                              h2: ({node: _node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
+                              h3: ({node: _node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
+                              code: ({node: _node, inline, className, children, ...props}: any) => {
                                 return !inline ? (
                                   <pre className="bg-gray-100 dark:bg-gray-700 rounded p-2 overflow-x-auto text-xs my-2">
                                     <code className={className} {...props}>

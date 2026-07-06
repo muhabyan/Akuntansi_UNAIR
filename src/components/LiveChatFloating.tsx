@@ -85,7 +85,7 @@ export default function LiveChatFloating() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [isOpen, user?.id]);
+  }, [isOpen, user?.id, addNotification]);
 
   // Clear unread when opening
   useEffect(() => {
