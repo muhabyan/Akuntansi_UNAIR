@@ -212,6 +212,32 @@ const AKK106_FLASHCARDS: Flashcard[] = [
   { title: 'Trial Balance', back: 'Daftar saldo seluruh akun buku besar untuk menguji kesamaan total debit dan kredit.' },
 ];
 
+// --- MATERI PDB SEMESTER 1 ---
+const AGAMA_TM1_7 = materi([['Konsep Ketuhanan'], ['Hakekat Manusia'], ['Hukum dan HAM dalam Agama'], ['Etika dan Moral'], ['IPTEK dalam Perspektif Agama'], ['Agama dan Sosial Budaya'], ['Review UTS']], 1);
+const AGAMA_TM8_14 = materi([['Kerukunan Antar Umat Beragama'], ['Masyarakat Madani'], ['Ekonomi dan Kesejahteraan Umat'], ['Kebudayaan'], ['Politik dalam Agama'], ['Tantangan Agama di Era Global'], ['Review UAS']], 8);
+
+const PANCA_TM1_7 = materi([['Pengantar Pendidikan Pancasila'], ['Pancasila dalam Arus Sejarah Bangsa'], ['Pancasila sebagai Dasar Negara'], ['Pancasila sebagai Ideologi Negara'], ['Pancasila sebagai Sistem Filsafat'], ['Pancasila sebagai Sistem Etika'], ['Review UTS']], 1);
+const PANCA_TM8_14 = materi([['Pancasila sebagai Dasar Nilai Pengembangan Ilmu'], ['Implementasi Pancasila dalam Kebijakan Negara'], ['Pancasila dan Tantangan Globalisasi'], ['Pancasila dan Hak Asasi Manusia'], ['Pancasila dan Demokrasi'], ['Pancasila dalam Konteks Kekinian'], ['Review UAS']], 8);
+
+const INDO_TM1_7 = materi([['Sejarah dan Kedudukan Bahasa Indonesia'], ['Ejaan Bahasa Indonesia'], ['Diksi dan Pilihan Kata'], ['Kalimat Efektif'], ['Paragraf dan Pengembangannya'], ['Penalaran dalam Karangan'], ['Review UTS']], 1);
+const INDO_TM8_14 = materi([['Penulisan Karya Ilmiah'], ['Kutipan dan Daftar Pustaka'], ['Presentasi Ilmiah'], ['Artikel Ilmiah dan Jurnal'], ['Surat Dinas dan Dokumen Resmi'], ['Bahasa Lisan vs Tulisan'], ['Review UAS']], 8);
+
+const KEWAR_TM1_7 = materi([['Identitas Nasional'], ['Integrasi Nasional'], ['Konstitusi dan UUD 1945'], ['Hak dan Kewajiban Warga Negara'], ['Demokrasi Indonesia'], ['Negara Hukum dan HAM'], ['Review UTS']], 1);
+const KEWAR_TM8_14 = materi([['Wawasan Nusantara'], ['Ketahanan Nasional'], ['Geopolitik Indonesia'], ['Geostrategi Indonesia'], ['Otonomi Daerah'], ['Kewarganegaraan Global'], ['Review UAS']], 8);
+
+const DATA_TM1_7 = materi([['Pengantar Literasi Informasi'], ['Strategi Penelusuran Informasi'], ['Sumber Referensi Akademik'], ['Evaluasi Informasi'], ['Etika Penggunaan Informasi'], ['Pemanfaatan Perpustakaan Digital'], ['Review UTS']], 1);
+const DATA_TM8_14 = materi([['Manajemen Referensi (Mendeley/Zotero)'], ['Plagiarisme dan Cara Menghindarinya'], ['Penyusunan Tinjauan Pustaka (Literature Review)'], ['Publikasi Ilmiah'], ['Open Access dan Repositori'], ['Manajemen Data Penelitian'], ['Review UAS']], 8);
+
+const LOGIKA_TM1_7 = materi([['Pengantar Logika dan Pemikiran Kritis'], ['Bahasa dan Fungsi Bahasa'], ['Kesesatan Berpikir (Fallacy) - Bagian 1'], ['Kesesatan Berpikir (Fallacy) - Bagian 2'], ['Proposisi Kategorik'], ['Silogisme Kategorik'], ['Review UTS']], 1);
+const LOGIKA_TM8_14 = materi([['Logika Induktif'], ['Berpikir Kritis dalam Memecahkan Masalah'], ['Evaluasi Argumen'], ['Konsep Probabilitas'], ['Analisis Kasus'], ['Pemikiran Kreatif'], ['Review UAS']], 8);
+
+const PKK_TM1_7 = materi([['Pengantar Kolaborasi Keilmuan'], ['Konsep Multidisiplin dan Interdisiplin'], ['Problem-Based Learning'], ['Dinamika Kelompok'], ['Komunikasi Interpersonal'], ['Empati dan Kecerdasan Emosional'], ['Review UTS']], 1);
+const PKK_TM8_14 = materi([['Design Thinking - Empathize & Define'], ['Design Thinking - Ideate'], ['Design Thinking - Prototype & Test'], ['Penyelesaian Masalah Kolaboratif'], ['Pembuatan Proyek Akhir'], ['Presentasi Proyek (Bagian 1)'], ['Presentasi Proyek (Bagian 2)']], 8);
+
+const PDK_TM1_7 = materi([['Mindset Wirausaha'], ['Pengenalan Peluang Bisnis'], ['Inovasi dan Kreativitas'], ['Business Model Canvas (BMC)'], ['Validasi Ide Bisnis'], ['Riset Pasar'], ['Review UTS']], 1);
+const PDK_TM8_14 = materi([['Strategi Pemasaran dan Branding'], ['Dasar Manajemen Keuangan Bisnis'], ['Rencana Bisnis (Business Plan)'], ['Hukum dan Etika Bisnis'], ['Manajemen Risiko Bisnis'], ['Pitching Ide Bisnis'], ['Presentasi Rencana Bisnis']], 8);
+
+
 // =====================================================================
 // STRUKTUR KURIKULUM (Semester 1 & 2 dibuka; 3–8 terkunci/placeholder)
 // =====================================================================
@@ -238,14 +264,14 @@ export const SEMESTERS: Semester[] = [
       {
         title: 'Mata Kuliah Wajib Universitas & PDB',
         courses: [
-          { code: 'AGX101', name: 'Agama', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Agama', 1, 7), materiTM8_14: makeMateri('Agama', 8, 14) },
-          { code: 'NOP103', name: 'Pancasila', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Pancasila', 1, 7), materiTM8_14: makeMateri('Pancasila', 8, 14) },
-          { code: 'BAI101', name: 'Bahasa Indonesia', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Bahasa Indonesia', 1, 7), materiTM8_14: makeMateri('Bahasa Indonesia', 8, 14) },
-          { code: 'NOP104', name: 'Kewarganegaraan', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Kewarganegaraan', 1, 7), materiTM8_14: makeMateri('Kewarganegaraan', 8, 14) },
-          { code: 'SIP107', name: 'Data dan Pustaka', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Data dan Pustaka', 1, 7), materiTM8_14: makeMateri('Data dan Pustaka', 8, 14) },
-          { code: 'PHP103', name: 'Logika dan Pemikiran Kritis', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Logika', 1, 7), materiTM8_14: makeMateri('Logika', 8, 14) },
-          { code: 'MNM107', name: 'Pengantar Kolaborasi Keilmuan', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('PKK', 1, 7), materiTM8_14: makeMateri('PKK', 8, 14) },
-          { code: 'MNM106', name: 'Pengembangan Diri Kewirausahaan', sks: 2, iconKey: 'briefcase', materiTM1_7: makeMateri('PDK', 1, 7), materiTM8_14: makeMateri('PDK', 8, 14) },
+          { code: 'AGX101', name: 'Agama', sks: 2, iconKey: 'book', materiTM1_7: AGAMA_TM1_7, materiTM8_14: AGAMA_TM8_14 },
+          { code: 'NOP103', name: 'Pancasila', sks: 2, iconKey: 'book', materiTM1_7: PANCA_TM1_7, materiTM8_14: PANCA_TM8_14 },
+          { code: 'BAI101', name: 'Bahasa Indonesia', sks: 2, iconKey: 'book', materiTM1_7: INDO_TM1_7, materiTM8_14: INDO_TM8_14 },
+          { code: 'NOP104', name: 'Kewarganegaraan', sks: 2, iconKey: 'book', materiTM1_7: KEWAR_TM1_7, materiTM8_14: KEWAR_TM8_14 },
+          { code: 'SIP107', name: 'Data dan Pustaka', sks: 2, iconKey: 'book', materiTM1_7: DATA_TM1_7, materiTM8_14: DATA_TM8_14 },
+          { code: 'PHP103', name: 'Logika dan Pemikiran Kritis', sks: 2, iconKey: 'book', materiTM1_7: LOGIKA_TM1_7, materiTM8_14: LOGIKA_TM8_14 },
+          { code: 'MNM107', name: 'Pengantar Kolaborasi Keilmuan', sks: 2, iconKey: 'book', materiTM1_7: PKK_TM1_7, materiTM8_14: PKK_TM8_14 },
+          { code: 'MNM106', name: 'Pengembangan Diri Kewirausahaan', sks: 2, iconKey: 'briefcase', materiTM1_7: PDK_TM1_7, materiTM8_14: PDK_TM8_14 },
         ],
       },
     ],
