@@ -17,7 +17,25 @@ import { MAS122_QUIZ, MAS122_UAS_2024, MAS122_QUIZ_ALL } from './mas122';
 import { PJK201_QUIZ_UAS_SIMULATOR } from './pjk201UasSimulator';
 import { PJK201_QUIZ_UTS_SIMULATOR } from './pjk201UtsSimulator';
 
+import { AKK106_QUIZ } from './akk106';
+import { AGX101_QUIZ } from './agx101';
+import { NOP103_QUIZ } from './nop103';
+import { BAI101_QUIZ } from './bai101';
+import { NOP104_QUIZ } from './nop104';
+import { SIP107_QUIZ } from './sip107';
+import { PHP103_QUIZ } from './php103';
+import { MNM107_QUIZ } from './mnm107';
+import { MNM106_QUIZ } from './mnm106';
 const REGISTRY: Record<string, QuizQuestion[]> = {
+  AKK106: AKK106_QUIZ,
+  AGX101: AGX101_QUIZ,
+  NOP103: NOP103_QUIZ,
+  BAI101: BAI101_QUIZ,
+  NOP104: NOP104_QUIZ,
+  SIP107: SIP107_QUIZ,
+  PHP103: PHP103_QUIZ,
+  MNM107: MNM107_QUIZ,
+  MNM106: MNM106_QUIZ,
   AKK201: [...AKK201_QUIZ, ...AKK201_QUIZ_UTS_SIMULATOR, ...AKK201_QUIZ_UAS_SIMULATOR],
   AKM201: AKM201_QUIZ,
   EKT109: [...EKT109_QUIZ, ...EKT109_UAS_SIMULATOR],

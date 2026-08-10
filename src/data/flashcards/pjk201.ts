@@ -699,5 +699,105 @@ export const PJK201_FC: AdvancedStudyCard[] = [
     category: "Konsep",
     front: "Konsep Opsen Pajak antara Provinsi dan Kabupaten/Kota",
     back: "Pungutan tambahan pajak menurut persentase tertentu yang dikenakan atas pajak terutang dari tingkat pemerintahan daerah yang berbeda. Contoh: Opsen PKB dan Opsen BBNKB dipungut oleh Kabupaten/Kota (66%) bersamaan dengan pajak Provinsi, sehingga mempercepat distribusi bagi hasil dan transparansi daerah."
+  },
+  // --- Tambahan 11 kartu untuk melengkapi 84 ---
+  {
+    id: "pjk201-tm08-74",
+    phase: "pra-uas",
+    tm: 8,
+    topic: "Pemeriksaan Pajak",
+    category: "Prosedur",
+    front: "Jenis Pemeriksaan Pajak",
+    back: "1) Pemeriksaan Lapangan: dilakukan di tempat WP, maksimal 6 bulan (dapat diperpanjang). 2) Pemeriksaan Kantor: dilakukan di kantor DJP, maksimal 4 bulan (dapat diperpanjang). Tujuan: menguji kepatuhan dan tujuan lain."
+  },
+  {
+    id: "pjk201-tm09-75",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Surat Ketetapan Pajak",
+    category: "Klasifikasi",
+    front: "4 Jenis Surat Ketetapan Pajak",
+    back: "1) SKPKB (Surat Ketetapan Pajak Kurang Bayar), 2) SKPKBT (Kurang Bayar Tambahan), 3) SKPLB (Lebih Bayar), 4) SKPN (Nihil). Masing-masing diterbitkan berdasarkan hasil pemeriksaan."
+  },
+  {
+    id: "pjk201-tm09-76",
+    phase: "pra-uas",
+    tm: 9,
+    topic: "Restitusi Pajak",
+    category: "Prosedur",
+    front: "Mekanisme Restitusi Pajak",
+    back: "WP mengajukan permohonan restitusi → DJP melakukan pemeriksaan → SKPLB diterbitkan paling lambat 12 bulan sejak permohonan diterima lengkap. Jika terlambat, WP mendapat imbalan bunga."
+  },
+  {
+    id: "pjk201-tm10-77",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Keberatan Pajak",
+    category: "Prosedur",
+    front: "Syarat Pengajuan Keberatan",
+    back: "Diajukan tertulis dalam Bahasa Indonesia, dalam jangka waktu 3 bulan sejak tanggal SKP, menyebutkan jumlah pajak terutang menurut WP. DJP wajib memberikan keputusan dalam 12 bulan, jika tidak maka keberatan diterima."
+  },
+  {
+    id: "pjk201-tm10-78",
+    phase: "pra-uas",
+    tm: 10,
+    topic: "Banding ke Pengadilan Pajak",
+    category: "Prosedur",
+    front: "Banding atas Keputusan Keberatan",
+    back: "Diajukan ke Pengadilan Pajak dalam 3 bulan sejak keputusan keberatan diterima. Syarat: membayar 50% pajak terutang. Putusan Pengadilan Pajak bersifat final dan mengikat (kecuali Peninjauan Kembali ke MA)."
+  },
+  {
+    id: "pjk201-tm11-79",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Penagihan Pajak",
+    category: "Prosedur",
+    front: "Tahapan Penagihan Aktif",
+    back: "1) Surat Teguran (7 hari setelah jatuh tempo), 2) Surat Paksa (21 hari setelah teguran), 3) Sita (2×24 jam setelah Surat Paksa), 4) Lelang (14 hari setelah pengumuman). Jurusita pajak negara berwenang melakukan penyitaan."
+  },
+  {
+    id: "pjk201-tm11-80",
+    phase: "pra-uas",
+    tm: 11,
+    topic: "Hak Mendahulu Negara",
+    category: "Hukum",
+    front: "Kedudukan Utang Pajak vs Utang Lainnya",
+    back: "Negara mempunyai hak mendahulu atas barang-barang milik Penanggung Pajak untuk utang pajak. Kedudukan utang pajak lebih tinggi dari kreditor lain, termasuk dalam pailit, kecuali biaya perkara dan upah buruh."
+  },
+  {
+    id: "pjk201-tm12-81",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Bea Meterai",
+    category: "Tarif",
+    front: "Tarif Bea Meterai (UU No. 10/2020)",
+    back: "Tarif tunggal Rp10.000 berlaku untuk dokumen dengan nilai >Rp5.000.000, surat berharga, akta notaris, dan dokumen transaksi efek. Dokumen di bawah Rp5.000.000 tidak dikenakan bea meterai."
+  },
+  {
+    id: "pjk201-tm12-82",
+    phase: "pra-uas",
+    tm: 12,
+    topic: "Pemeteraian Kemudian",
+    category: "Prosedur",
+    front: "Pemeteraian Kemudian",
+    back: "Dilakukan terhadap dokumen yang bea meterainya tidak atau kurang dibayar. WP membayar bea meterai terutang ditambah sanksi administratif 100% dari bea meterai terutang. Dilaksanakan oleh pejabat pos."
+  },
+  {
+    id: "pjk201-tm13-83",
+    phase: "pra-uas",
+    tm: 13,
+    topic: "Pajak Kendaraan Bermotor",
+    category: "Tarif",
+    front: "Tarif PKB (Pajak Kendaraan Bermotor)",
+    back: "Tarif progresif berdasarkan kepemilikan: kendaraan pertama 1,05%, kedua 2%, ketiga 3%, keempat dan seterusnya 3,5% (sesuai UU HKPD). Dasar pengenaan: NJKB × bobot × tarif."
+  },
+  {
+    id: "pjk201-tm14-84",
+    phase: "pra-uas",
+    tm: 14,
+    topic: "PBB-P2",
+    category: "Rumus",
+    front: "Cara Menghitung PBB-P2",
+    back: "NJOP = NJOP Tanah + NJOP Bangunan. NJOP setelah NJOPTKP = NJOP − NJOPTKP (minimal Rp10 juta). PBB-P2 = Tarif × NJOP setelah NJOPTKP. Tarif maksimal 0,5% (ditetapkan Perda)."
   }
 ];

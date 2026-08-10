@@ -5,7 +5,7 @@
 // dan Buku Panduan Sarjana 2025/2026 (Prodi S1 Akuntansi).
 //
 // =============================================================
-import type { Semester, Material, Flashcard } from '../types';
+import type { Semester, Material } from '../types';
 
 /** Bangun array Material dari daftar [judul, ref]. */
 function materi(items: Array<[string, string?]>, startTm = 1): Material[] {
@@ -205,12 +205,7 @@ const EKT109_REF = [
 ];
 
 // ---- Flashcard ------------------------------------------------------
-const AKK106_FLASHCARDS: Flashcard[] = [
-  { title: 'Definisi Aset', back: 'Sumber daya yang dikuasai entitas akibat peristiwa masa lalu, dengan manfaat ekonomi di masa depan.' },
-  { title: 'Persamaan Akuntansi', back: 'Aset = Liabilitas + Ekuitas. Dasar pencatatan berpasangan (double-entry).' },
-  { title: 'Jurnal Penyesuaian', back: 'Jurnal akhir periode untuk mengakui pendapatan/beban pada periode yang tepat (basis akrual).' },
-  { title: 'Trial Balance', back: 'Daftar saldo seluruh akun buku besar untuk menguji kesamaan total debit dan kredit.' },
-];
+// (AKK106_FLASHCARDS removed; moved to src/data/flashcards/akk106.ts)
 
 // --- MATERI PDB SEMESTER 1 ---
 const AGAMA_TM1_7 = materi([['Konsep Ketuhanan'], ['Hakekat Manusia'], ['Hukum dan HAM dalam Agama'], ['Etika dan Moral'], ['IPTEK dalam Perspektif Agama'], ['Agama dan Sosial Budaya'], ['Review UTS']], 1);
@@ -257,21 +252,21 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'AKK106', newCode: 'FEB25603003', name: 'Akuntansi Keuangan Dasar', sks: 3, iconKey: 'calculator',
             references: AKK106_REF,
-            materiTM1_7: AKK106_TM1_7, materiTM8_14: AKK106_TM8_14, flashcards: AKK106_FLASHCARDS,
+            materiTM1_7: AKK106_TM1_7, materiTM8_14: AKK106_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Modul Belajar'
           },
         ],
       },
       {
         title: 'Mata Kuliah Wajib Universitas & PDB',
         courses: [
-          { code: 'AGX101', name: 'Agama', sks: 2, iconKey: 'book', materiTM1_7: AGAMA_TM1_7, materiTM8_14: AGAMA_TM8_14 },
-          { code: 'NOP103', name: 'Pancasila', sks: 2, iconKey: 'book', materiTM1_7: PANCA_TM1_7, materiTM8_14: PANCA_TM8_14 },
-          { code: 'BAI101', name: 'Bahasa Indonesia', sks: 2, iconKey: 'book', materiTM1_7: INDO_TM1_7, materiTM8_14: INDO_TM8_14 },
-          { code: 'NOP104', name: 'Kewarganegaraan', sks: 2, iconKey: 'book', materiTM1_7: KEWAR_TM1_7, materiTM8_14: KEWAR_TM8_14 },
-          { code: 'SIP107', name: 'Data dan Pustaka', sks: 2, iconKey: 'book', materiTM1_7: DATA_TM1_7, materiTM8_14: DATA_TM8_14 },
-          { code: 'PHP103', name: 'Logika dan Pemikiran Kritis', sks: 2, iconKey: 'book', materiTM1_7: LOGIKA_TM1_7, materiTM8_14: LOGIKA_TM8_14 },
-          { code: 'MNM107', name: 'Pengantar Kolaborasi Keilmuan', sks: 2, iconKey: 'book', materiTM1_7: PKK_TM1_7, materiTM8_14: PKK_TM8_14 },
-          { code: 'MNM106', name: 'Pengembangan Diri Kewirausahaan', sks: 2, iconKey: 'briefcase', materiTM1_7: PDK_TM1_7, materiTM8_14: PDK_TM8_14 },
+          { code: 'AGX101', name: 'Agama', sks: 2, iconKey: 'book', materiTM1_7: AGAMA_TM1_7, materiTM8_14: AGAMA_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'NOP103', name: 'Pancasila', sks: 2, iconKey: 'book', materiTM1_7: PANCA_TM1_7, materiTM8_14: PANCA_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'BAI101', name: 'Bahasa Indonesia', sks: 2, iconKey: 'book', materiTM1_7: INDO_TM1_7, materiTM8_14: INDO_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'NOP104', name: 'Kewarganegaraan', sks: 2, iconKey: 'book', materiTM1_7: KEWAR_TM1_7, materiTM8_14: KEWAR_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'SIP107', name: 'Data dan Pustaka', sks: 2, iconKey: 'book', materiTM1_7: DATA_TM1_7, materiTM8_14: DATA_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'PHP103', name: 'Logika dan Pemikiran Kritis', sks: 2, iconKey: 'book', materiTM1_7: LOGIKA_TM1_7, materiTM8_14: LOGIKA_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'MNM107', name: 'Pengantar Kolaborasi Keilmuan', sks: 2, iconKey: 'book', materiTM1_7: PKK_TM1_7, materiTM8_14: PKK_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
+          { code: 'MNM106', name: 'Pengembangan Diri Kewirausahaan', sks: 2, iconKey: 'briefcase', materiTM1_7: PDK_TM1_7, materiTM8_14: PDK_TM8_14 , flashcardCount: 14, featureBadge: 'Flashcard + Kuis' },
         ],
       },
     ],

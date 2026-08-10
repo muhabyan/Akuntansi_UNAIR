@@ -1,0 +1,913 @@
+# Project Context for ChatGPT
+
+Below is the exact data structure and current configuration of my project. I need you to generate more data in the exact same format based on my request.
+
+## File: src/types.ts
+```ts
+// =============================================================
+// src/types.ts — Tipe data terpusat (strict TypeScript)
+// =============================================================
+
+/** Key ikon (string) — supaya file data tetap "data murni", bukan JSX. */
+export type IconKey =
+  | 'calculator'
+  | 'book'
+  | 'chart'
+  | 'file'
+  | 'award'
+  | 'briefcase';
+
+/** Satu item materi tatap muka / dokumen. */
+export interface Material {
+  /** Nomor Tatap Muka (1..14). */
+  tm: number;
+  title: string;
+  /** Rujukan bab buku teks resmi, mis. "WKK Ch. 1" atau "CU 1-2 · IMN 1". */
+  ref?: string;
+  /** Link Google Drive (PDF/slide). Opsional — kalau kosong tombol dinonaktifkan. */
+  driveUrl?: string;
+  /** Link podcast (mis. NotebookLM). Opsional. */
+  podcastUrl?: string;
+  sizeMb?: number;
+}
+
+export interface Flashcard {
+  title: string;
+  back: string;
+}
+
+/** Satu mata kuliah. */
+export interface Course {
+  /** Kode lama, mis. "AKK106". */
+  code: string;
+  /** Kode baru sesuai Buku Panduan 2025/2026, mis. "FEB25603003". */
+  newCode?: string;
+  name: string;
+  sks: number;
+  iconKey: IconKey;
+  /** Prasyarat resmi, mis. "AKK106 (L)". */
+  prasyarat?: string;
+  /** Folder Google Drive seluruh mata kuliah. */
+  driveFolderUrl?: string;
+  /** Daftar referensi/buku teks resmi (dari RPS/silabus). */
+  references?: string[];
+  materiTM1_7?: Material[];
+  materiTM8_14?: Material[];
+  flashcards?: Flashcard[];
+  /** Jumlah kartu dari deck registry baru; mencegah duplikasi konten untuk metrik katalog. */
+  flashcardCount?: number;
+  /** Badge fitur pada kartu katalog, diisi dari metadata course, bukan hardcoded per kode. */
+  featureBadge?: string;
+}
+
+/** Kelompok mata kuliah dalam satu semester (mis. "Keahlian" vs "PDB"). */
+export interface CourseGroup {
+  title: string;
+  /** true = kartu di-highlight (mata kuliah inti akuntansi). */
+  highlight?: boolean;
+  courses: Course[];
+}
+
+/** Satu semester. */
+export interface Semester {
+  /** id internal, mis. "sem1". */
+  id: string;
+  number: number;
+  title: string;
+  desc: string;
+  totalSks: number;
+  /** true = belum dibuka (terkunci). */
+  locked: boolean;
+  groups: CourseGroup[];
+}
+
+/** Tab di halaman detail mata kuliah. */
+export type CourseTabId =
+  | 'tm1-7'
+  | 'uts'
+  | 'tm8-14'
+  | 'uas'
+  | 'bank-soal'
+  | 'quiz'
+  | 'referensi'
+  | 'flashcard'
+  | 'arsip';
+
+/** Tampilan utama aplikasi. */
+export type ViewId = 'home' | string; // 'home' atau id semester ('sem1', ...)
+
+// =============================================================
+// KONTEN BACAAN (fitur "Baca") — rangkuman materi komprehensif
+// =============================================================
+
+export type CalloutVariant = 'info' | 'tip' | 'warning' | 'key';
+
+/** Satu baris jurnal. Baris kredit diberi indentasi otomatis saat render. */
+export interface JournalLine {
+  account: string;
+  debit?: string;
+  credit?: string;
+  /** true untuk baris akun kredit (akan di-indent). */
+  isCredit?: boolean;
+}
+
+/** Blok konten. Discriminated union -> aman & mudah dirender. */
+export type ContentBlock =
+  | { kind: 'h2'; text: string }
+  | { kind: 'h3'; text: string }
+  | { kind: 'p'; text: string } // mendukung **tebal** sederhana
+  | { kind: 'ul'; items: string[] }
+  | { kind: 'ol'; items: string[] }
+  | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string }
+  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string }
+  | { kind: 'journal'; caption?: string; lines: JournalLine[] }
+  | { kind: 'formula'; text: string; note?: string }
+  | { kind: 'figure'; title?: string; svg?: string; url?: string; caption?: string; altText?: string }
+  | { kind: 'example'; title: string; blocks: ContentBlock[] }
+  | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[] }
+  | { kind: 'statement'; spec: StatementSpec }
+  | { kind: 'builder'; spec: StatementSpec; instructions?: string }
+  | { kind: 'interactive-match'; spec: InteractiveMatchSpec }
+  | { kind: 'table-fill'; spec: TableFillSpec }
+  | { kind: 'journal-builder'; spec: JournalBuilderSpec }
+  | { kind: 't-account-builder'; spec: TAccountBuilderSpec }
+  | { kind: 'illustration'; type: string; caption?: string }
+  | { kind: 'math-example'; title: string; blocks: ContentBlock[] }
+  | { kind: 'chart-guide'; title?: string; points: string[] }
+  | { kind: 'practice-box'; title?: string; blocks: ContentBlock[]; answerKey: string };
+
+// ---- Laporan keuangan terstruktur (contoh penuh & isian interaktif) ----
+
+/** Satu baris dalam sebuah laporan. */
+export interface StatementLine {
+  /** id unik dalam satu laporan; dipakai oleh baris 'computed'. */
+  id?: string;
+  label: string;
+  /** Nilai benar (kunci). Untuk laporan penuh = nilai yang ditampilkan;
+   *  untuk builder = jawaban yang dibandingkan. */
+  amount?: number;
+  /** Indentasi 0/1/2. */
+  indent?: number;
+  bold?: boolean;
+  /** Garis atas tunggal (subtotal) / ganda (total akhir). */
+  rule?: 'top' | 'double' | 'none';
+  /** Perilaku di builder:
+   *  - 'header'   : judul bagian, tanpa angka
+   *  - 'given'    : angka sudah diberikan (tidak bisa diedit)
+   *  - 'input'    : kolom isian user
+   *  - 'computed' : dihitung otomatis dari baris lain (lihat compute) */
+  kind?: 'header' | 'given' | 'input' | 'computed';
+  /** Untuk 'computed': daftar id baris yang dijumlah, dengan tanda. */
+  compute?: Array<{ id: string; sign?: 1 | -1 }>;
+  /** Tampilkan nilai dalam tanda kurung (kontra / negatif), mis. (480.000). */
+  bracket?: boolean;
+}
+
+/** Spesifikasi laporan keuangan lengkap dengan header 3 baris. */
+export interface StatementSpec {
+  /** Nama entitas, mis. "PT Surya". */
+  entity: string;
+  /** Judul laporan, mis. "Income Statement". */
+  title: string;
+  /** Keterangan di samping judul, mis. "(Partial)". Kosongkan untuk laporan penuh. */
+  partial?: string;
+  /** Baris periode, mis. "For the Year Ended December 31, 20X1". */
+  period: string;
+  /** Prefiks mata uang, default "Rp". */
+  currency?: string;
+  lines: StatementLine[];
+}
+
+
+// ---- Komponen latihan interaktif tambahan (Batch 8) ----
+export interface InteractiveMatchSpec {
+  title: string;
+  instruction?: string;
+  /** Pesan umum yang ditampilkan setelah pemeriksaan untuk membantu diagnosis jawaban. */
+  feedback?: string;
+  choices: string[];
+  pairs: Array<{
+    id: string;
+    prompt: string;
+    answer: string;
+    /** Pesan spesifik saat jawaban item ini salah. */
+    feedback?: string;
+  }>;
+}
+
+export interface TableFillSpec {
+  title: string;
+  instruction?: string;
+  currency?: string;
+  /** Pesan umum yang ditampilkan setelah pemeriksaan untuk membantu diagnosis jawaban. */
+  feedback?: string;
+  headers: string[];
+  rows: Array<{
+    id: string;
+    label: string;
+    cells: Array<{
+      id: string;
+      readonly?: boolean;
+      display?: string;
+      answer?: number | string;
+      tolerance?: number;
+      placeholder?: string;
+      /** Tipe jawaban khusus, misalnya percent untuk menerima 50%, 50, 0,5, atau 0.5 secara ekuivalen. */
+      answerType?: 'percent' | 'text' | 'number';
+      /** Pesan spesifik saat jawaban sel ini salah. */
+      feedback?: string;
+    }>;
+  }>;
+}
+
+export interface JournalBuilderSpec {
+  title: string;
+  instruction?: string;
+  currency?: string;
+  /** Pesan umum yang ditampilkan setelah pemeriksaan untuk membantu diagnosis jurnal. */
+  feedback?: string;
+  accountChoices?: string[];
+  lines: Array<{
+    id: string;
+    /** Label transaksi/penyesuaian untuk memisahkan kelompok jurnal dalam latihan. */
+    group?: string;
+    account: string;
+    debit?: number;
+    credit?: number;
+    tolerance?: number;
+    /** Pesan spesifik saat baris jurnal ini salah. */
+    feedback?: string;
+  }>;
+}
+
+export type TAccountSide = 'debit' | 'credit';
+
+export interface TAccountBuilderSpec {
+  title: string;
+  instruction?: string;
+  currency?: string;
+  tolerance?: number;
+  accounts: Array<{
+    name: string;
+    rows: Array<{
+      id: string;
+      debitLabel?: string;
+      debitAmount?: number;
+      creditLabel?: string;
+      creditAmount?: number;
+    }>;
+    endingBalance?: {
+      side: TAccountSide;
+      amount: number;
+    };
+  }>;
+}
+
+/** Rangkuman materi satu Tatap Muka. */
+export interface Reading {
+  tm: number;
+  title: string;
+  ref?: string;
+  intro: string;
+  objectives: string[];
+  blocks: ContentBlock[];
+}
+
+// =============================================================
+// KUIS / BANK SOAL
+// =============================================================
+export type QuizQuestion =
+  | MultipleChoiceQuizQuestion
+  | MultiSelectQuizQuestion
+  | ReportFillQuizQuestion
+  | AccountMatchQuizQuestion
+  | OrderingQuizQuestion;
+
+export interface QuizQuestionMeta {
+  /** ID stabil untuk fingerprint, audit, dan navigasi soal. */
+  id?: string;
+  /** Nomor tatap muka sumber materi. */
+  tm?: number;
+  /** Rumpun materi untuk diagnostic scoring, mis. Cash, Receivables, Inventory Cost, atau LCNRV/Retail. */
+  topic?: string;
+  /** Kompetensi spesifik yang diuji; ditampilkan sebagai rekomendasi belajar setelah kuis. */
+  skill?: string;
+  /** Level relatif untuk menyusun paket diagnostik. */
+  difficulty?: 'basic' | 'medium' | 'advanced';
+  /** Grafik SVG opsional untuk soal interpretasi grafik. */
+  svg?: string;
+  /** Image URL opsional untuk menampilkan gambar dalam soal. */
+  imageUrl?: string;
+  /** Deskripsi tekstual grafik untuk aksesibilitas dan fingerprint. */
+  altText?: string;
+  /** Referensi sumber akademik yang digunakan untuk menyusun soal. */
+  sourceRef?: string;
+  /** Anchor atau subbagian materi yang mendasari soal. */
+  sourceAnchors?: string[];
+}
+
+export interface MultipleChoiceQuizQuestion extends QuizQuestionMeta {
+  kind?: 'mcq';
+  q: string;
+  options: string[];
+  /** indeks opsi yang benar (0-based). */
+  answer: number;
+  explanation?: string;
+}
+
+
+export interface MultiSelectQuizQuestion extends QuizQuestionMeta {
+  kind: 'multi-select';
+  q: string;
+  options: string[];
+  /** indeks opsi benar (0-based). Semua harus dipilih agar benar penuh. */
+  answers: number[];
+  explanation?: string;
+}
+
+export interface ReportFillQuizQuestion extends QuizQuestionMeta {
+  kind: 'report-fill';
+  q: string;
+  instruction?: string;
+  /** Data mentah kasus yang ditampilkan sebelum mahasiswa mengisi jawaban. */
+  data?: string[];
+  blanks: Array<{
+    id: string;
+    label: string;
+    answer: number;
+    prefix?: string;
+    suffix?: string;
+    tolerance?: number;
+  }>;
+  explanation?: string;
+}
+
+export interface AccountMatchQuizQuestion extends QuizQuestionMeta {
+  kind: 'account-match';
+  q: string;
+  instruction?: string;
+  choices: string[];
+  pairs: Array<{
+    prompt: string;
+    answer: string;
+  }>;
+  explanation?: string;
+}
+
+export interface OrderingQuizQuestion extends QuizQuestionMeta {
+  kind: 'ordering';
+  q: string;
+  instruction?: string;
+  /** Seluruh langkah yang tersedia sebagai pilihan. */
+  items: string[];
+  /** Urutan yang benar dari langkah pertama hingga terakhir. */
+  correctOrder: string[];
+  explanation?: string;
+}
+
+// ---- Flashcard (front/back) & Bank Soal esai untuk fitur belajar ----
+export interface StudyCard { id?: string; front: string; back: string; }
+
+export type FlashcardPhase = 'pra-uts' | 'pra-uas';
+export type FlashcardCategory = 'Definisi' | 'Rumus' | 'Grafik' | 'Mekanisme' | 'Asumsi' | 'Perbandingan' | 'Miskonsepsi' | 'Jurnal' | 'Standar' | 'Konsep' | 'Lainnya' | 'Contoh' | 'Dokumen' | 'Pengendalian' | 'Tarif' | 'Objek' | 'Sejarah' | 'Teori' | 'Klasifikasi' | 'Hukum' | 'Prinsip' | 'Prosedur' | 'Subjek' | 'Sanksi' | 'Dasar Hukum' | 'Pengecualian';
+
+export interface AdvancedStudyCard extends StudyCard {
+  id: string;
+  phase: FlashcardPhase;
+  tm: number;
+  topic: string;
+  category: FlashcardCategory;
+}
+export interface BankSoal {
+  /** Jenis tampilan/rumpun soal, mis. report, journal, case, calculation. */
+  type: string;
+  /** Rumusan utama soal yang tampil pada header accordion. */
+  question: string;
+  /** Ruang lingkup materi, mis. "TM 1–7" atau "TM 8–14". */
+  scope?: string;
+  /** Level latihan: Dasar, Menengah, Komprehensif, atau sejenisnya. */
+  difficulty?: string;
+  /** Estimasi waktu pengerjaan, mis. "25–35 menit". */
+  estimatedTime?: string;
+  /** Konteks kasus sebelum data angka diberikan. */
+  context?: string;
+  /** Data kasus yang harus digunakan mahasiswa. */
+  data?: string[];
+  /** Instruksi pengerjaan rinci. */
+  instructions?: string[];
+  /** Format keluaran yang wajib ditulis mahasiswa. */
+  outputFormat?: string[];
+  /** Rubrik penilaian ringkas. */
+  rubric?: string[];
+  /** Panduan jawaban/kunci pembanding. */
+  answerGuide: string;
+}
+
+```
+
+## File: src/data/courseData.ts
+```ts
+// =============================================================
+// src/data/courseData.ts
+// Sumber data utama (tanpa database). Materi TM & referensi
+// diambil dari RPS/Silabus resmi Departemen Akuntansi FEB UNAIR
+// dan Buku Panduan Sarjana 2025/2026 (Prodi S1 Akuntansi).
+//
+// =============================================================
+import type { Semester, Material, Flashcard } from '../types';
+
+/** Bangun array Material dari daftar [judul, ref]. */
+function materi(items: Array<[string, string?]>, startTm = 1): Material[] {
+  return items.map(([title, ref], i) => ({
+    tm: startTm + i,
+    title,
+    ref,
+  }));
+}
+
+/** Placeholder cepat untuk mata kuliah yang belum ada silabusnya. */
+function makeMateri(prefix: string, from: number, to: number): Material[] {
+  const out: Material[] = [];
+  for (let tm = from; tm <= to; tm++) {
+    out.push({ tm, title: `${prefix} — Tatap Muka ${tm}` });
+  }
+  return out;
+}
+
+// =====================================================================
+// MATERI RESMI PER MATA KULIAH
+// =====================================================================
+
+// --- AKK106 Akuntansi Keuangan Dasar (Weygandt/Kimmel/Kieso = WKK) ----
+// Silabus Akuntansi Dasar, Departemen Akuntansi FEB UNAIR.
+const AKK106_TM1_7 = materi([
+  ['Accounting in Action', 'WKK Ch. 1'],
+  ['The Recording Process', 'WKK Ch. 2'],
+  ['Adjusting the Accounts', 'WKK Ch. 3'],
+  ['Completing the Accounting Cycle', 'WKK Ch. 4'],
+  ['Accounting for Merchandising Operations', 'WKK Ch. 5'],
+  ['Inventories', 'WKK Ch. 6'],
+  ['Fraud, Internal Control, and Cash', 'WKK Ch. 7'],
+], 1);
+const AKK106_TM8_14 = materi([
+  ['Accounting for Receivables', 'WKK Ch. 8'],
+  ['Plant Assets, Natural Resources, and Intangible Assets', 'WKK Ch. 9'],
+  ['Liabilities', 'WKK Ch. 10'],
+  ['Corporations: Organization, Share Transactions, Dividends & Retained Earnings', 'WKK Ch. 11'],
+  ['Investments', 'WKK Ch. 12'],
+  ['Statement of Cash Flows', 'WKK Ch. 13'],
+  ['Financial Statement Analysis', 'WKK Ch. 14'],
+], 8);
+const AKK106_REF = [
+  'Weygandt, J. J., Kimmel, P. D., & Kieso, D. E. (2019). Financial Accounting: IFRS Edition (3rd ed.). John Wiley & Sons. (WKK)',
+];
+
+// --- AKK201 Akuntansi Keuangan Menengah I (Kieso Intermediate IFRS) ---
+// Pembagian Mengajar AKM 1 Genap 2024-2025.
+const AKK201_TM1_7 = materi([
+  ['The Environment and Conceptual Framework of Financial Reporting', 'Kieso IFRS 5e · Ch. 1'],
+  ['The Accounting Information System', 'Kieso IFRS 5e · Ch. 2'],
+  ['The Accounting Information System (lanjutan)', 'Kieso IFRS 5e · Ch. 2'],
+  ['Income Statement, Related Information, and Revenue Recognition', 'Kieso IFRS 5e · Ch. 3'],
+  ['Statement of Financial Position and Statement of Cash Flows', 'Kieso IFRS 5e · Ch. 4'],
+  ['Statement of Financial Position and Statement of Cash Flows (lanjutan)', 'Kieso IFRS 5e · Ch. 4'],
+  ['Accounting and The Time Value of Money', 'Kieso IFRS 5e · Ch. 5'],
+], 1);
+const AKK201_TM8_14 = materi([
+  ['Cash and Receivables', 'Kieso IFRS 5e · Ch. 6'],
+  ['Cash and Receivables (lanjutan)', 'Kieso IFRS 5e · Ch. 6'],
+  ['Valuation of Inventories: A Cost-Basis Approach', 'Kieso IFRS 5e · Ch. 7'],
+  ['Valuation of Inventories: A Cost-Basis Approach (lanjutan)', 'Kieso IFRS 5e · Ch. 7'],
+  ['Inventories: Additional Valuation Issues', 'Kieso IFRS 5e · Ch. 8'],
+  ['Inventories: Additional Valuation Issues (lanjutan)', 'Kieso IFRS 5e · Ch. 8'],
+  ['Review / Pemantapan UAS', 'Kieso IFRS 5e · Review Ch. 6–8'],
+], 8);
+const AKK201_REF = [
+  'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons.',
+];
+
+// --- AKM201 Akuntansi Biaya (Carter/Usry = CU; Narsa = IMN) -----------
+// SILABI Akuntansi Biaya 2026, Departemen Akuntansi FEB UNAIR.
+const AKM201_TM1_7 = materi([
+  ['Pengantar Akuntansi Biaya, Sistem Akuntansi Biaya & Klasifikasi Biaya', 'CU 1–2 · IMN 1'],
+  ['Analisis Perilaku Biaya', 'CU 3 · IMN 2'],
+  ['Siklus Biaya, Sistem Biaya & Akumulasi Biaya', 'CU 4–5 · IMN 3'],
+  ['Job Order Costing (Biaya Berdasarkan Pesanan)', 'CU 5 · IMN 4'],
+  ['Process Costing — Metode Rata-rata (Average)', 'CU 6 · IMN 5'],
+  ['Process Costing — Metode FIFO', 'CU 6 · IMN 5'],
+  ['Biaya Kualitas & Akuntansi untuk Kerugian Produksi', 'CU 7 · IMN 6'],
+], 1);
+const AKM201_TM8_14 = materi([
+  ['Produk Gabungan & Produk Sampingan', 'CU 8 · IMN 7'],
+  ['Perencanaan & Pengendalian Bahan Baku Langsung', 'CU 9 · IMN 8'],
+  ['Perencanaan & Pengendalian Tenaga Kerja Langsung', 'CU 10 · IMN 9'],
+  ['Biaya Overhead Pabrik: Perencanaan, Dibebankan & Aktual', 'CU 11 · IMN 10'],
+  ['Biaya Overhead Pabrik: Departementalisasi', 'CU 12 · IMN 11'],
+  ['Activity-Based Costing (ABC)', 'CU 13 · IMN 12'],
+  ['Review Materi UAS', '—'],
+], 8);
+const AKM201_REF = [
+  'Carter, W. K., Hwang, & Chou. (2015). Cost Accounting (Asia Edition).',
+  'Carter, W. K., & Usry, M. F. (2002). Cost Accounting (13th/14th ed.). (CU)',
+  'Narsa, I Made. (2011). Akuntansi Kos. Surabaya: Pusat Penerbitan Universitas Airlangga. (IMN)',
+];
+
+// --- PJK201 Perpajakan I (UU KUP, UU PPh, UU HPP) ---------------------
+const PJK201_TM1_7 = materi([
+  ['Pengantar & Dasar-Dasar Perpajakan', 'UU KUP'],
+  ['Ketentuan Umum & Tata Cara Perpajakan (KUP)', 'UU KUP'],
+  ['NPWP, NIK sebagai NPWP & Pengukuhan PKP', 'UU KUP'],
+  ['SPT: Pembayaran, Penyetoran & Pelaporan', 'UU KUP'],
+  ['PPh Pasal 21 — Konsep, Subjek & Objek', 'UU PPh'],
+  ['PPh Pasal 21 — Penghitungan (Skema TER & Tahunan)', 'PP 58/2023'],
+  ['PPh Pasal 22', 'UU PPh'],
+], 1);
+const PJK201_TM8_14 = materi([
+  ['Penelitian, Pemeriksaan, dan Penyidikan Pajak', 'UU KUP · PMK 15/2025 · PMK 81/2024'],
+  ['Penetapan & Ketetapan Pajak, Restitusi Pajak', 'UU KUP · PMK 28/2026 · PMK 81/2024 s.t.d.t.d. PMK 1/2026'],
+  ['Sengketa Pajak: Keberatan, Banding, Gugatan & PK', 'UU KUP · UU 14/2002 · Putusan MK 26/PUU-XXI/2023'],
+  ['Penagihan Pajak, Surat Paksa, Hak Mendahulu & Tindak Pidana Fiskal', 'UU KUP · UU PPSP · PMK 61/2023'],
+  ['Bea Meterai', 'UU 10/2020 · PMK 78/2024'],
+  ['Pajak Daerah & Retribusi Daerah (1): Pajak Provinsi', 'UU 1/2022 HKPD · PP 35/2023'],
+  ['Pajak Daerah & Retribusi Daerah (2): PBB-P2, BPHTB & Pajak Kabupaten/Kota', 'UU 1/2022 HKPD · PP 35/2023'],
+], 8);
+const PJK201_REF = [
+  'Materi_Perpajakan_I_TM8-14_Kompilasi (2).md — kompilasi Perpajakan I TM8-14, diperbarui sampai Juni 2026.',
+  'UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021), UU No. 10/2020 tentang Bea Meterai, dan UU No. 1/2022 tentang HKPD.',
+  'PMK 15/2025, PMK 17/2025, PMK 28/2026, PMK 78/2024, PMK 81/2024 s.t.d.t.d. PMK 1/2026, PMK 61/2023, PMK 118/2024, dan PMK 111/2025 sesuai cakupan materi.',
+];
+
+// --- MAS122 Statistik untuk Akuntan (Lind = DA; Anderson = AA) --------
+// Silabus Statistik untuk Akuntan, Prof. Dr. I Made Narsa.
+const MAS122_TM1_7 = materi([
+  ['Pengenalan Statistik dalam Akuntansi dan Bisnis', 'DA 1 · AA 1'],
+  ['Statistik Deskriptif — Tendensi Sentral (mean, median, modus)', 'DA 2–3 · AA 3'],
+  ['Statistik Deskriptif — Dispersi (rentang, varians, standar deviasi)', 'DA 2–3 · AA 4'],
+  ['Probabilitas & Distribusi (normal, binomial)', 'DA 5–7 · AA 6–9'],
+  ['Estimasi (poin & interval)', 'DA 9 · AA 11'],
+  ['Uji Hipotesis — Bagian 1 (mean & proporsi)', 'DA 10 · AA 12'],
+  ['Uji Hipotesis — Bagian 2 (perbedaan rata-rata; error tipe I & II)', 'DA 11 · AA 12'],
+], 1);
+const MAS122_TM8_14 = materi([
+  ['Analisis Varians (ANOVA)', 'DA 12'],
+  ['Analisis Regresi & Korelasi — Bagian 1', 'DA 13 · AA 15'],
+  ['Analisis Regresi & Korelasi — Bagian 2', 'DA 13 · AA 15'],
+  ['Analisis Seri Waktu (ARIMA)', 'DA 18'],
+  ['Metode Non-parametrik', 'DA 16'],
+  ['Perangkat Lunak Statistik & Persiapan Proyek Akhir', 'AA 16'],
+  ['Presentasi Proyek Akhir', '—'],
+], 8);
+const MAS122_REF = [
+  'Lind, D. A., Marchal, W. G., & Wathen, S. A. (2017). Statistical Techniques in Business & Economics (17th ed.). McGraw-Hill. (DA)',
+  'Anderson, A. (2024). Business Statistics For Dummies (2nd ed.). John Wiley & Sons. (AA)',
+];
+
+// --- MNU101 Pengantar Bisnis (Pride; Nickels) -------------------------
+// RPS Introduction to Business (MNU101), FEB UNAIR.
+const MNU101_TM1_7 = materi([
+  ['Business: A Definition, Business Cycle, Economic Systems & Competition', 'Pride Ch. 1 · Nickels Ch. 2'],
+  ['Business Ethics & Social Responsibility', 'Pride Ch. 2 · Nickels Ch. 3'],
+  ['Global Business', 'Pride Ch. 3 · Nickels Ch. 4'],
+  ['Forms of Business Ownership & Entrepreneurship', 'Pride Ch. 4–5 · Nickels Ch. 5'],
+  ['The Management Process', 'Pride Ch. 6 · Nickels Ch. 7'],
+  ['The Flexible Organization', 'Pride Ch. 7 · Nickels Ch. 8'],
+  ['Producing Quality Goods & Services', 'Pride Ch. 8 · Nickels Ch. 9'],
+], 1);
+const MNU101_TM8_14 = materi([
+  ['Human Resource Management & Motivation', 'Pride Ch. 9–10 · Nickels Ch. 10–11'],
+  ['Customer Relations through Effective Marketing', 'Pride Ch. 11 · Nickels Ch. 13'],
+  ['Product Creation & Pricing', 'Pride Ch. 12 · Nickels Ch. 14'],
+  ['Product Distribution & Promotion', 'Pride Ch. 13 · Nickels Ch. 16'],
+  ['Social Media & E-Business', 'Pride Ch. 14'],
+  ['Managerial & Accounting Information', 'Pride Ch. 15 · Nickels Ch. 17'],
+  ['Financial Management', 'Pride Ch. 16 · Nickels Ch. 18'],
+], 8);
+const MNU101_REF = [
+  'Pride, W. M., Hughes, R. J., & Kapoor, J. R. (2019). Foundations of Business (6th ed.). Cengage.',
+  'Nickels, W., McHugh, J., & McHugh, S. (2022). Understanding Business (13th ed.). McGraw-Hill.',
+  'Gitman, L. J., et al. (2018). Introduction to Business. OpenStax. (pendukung)',
+];
+
+// --- EKT109 Pengantar Teori Ekonomi (Samuelson; Mankiw) ---------------
+// Kontrak Perkuliahan PTE 2025/2026.
+const EKT109_TM1_7 = materi([
+  ['Konsep Dasar Ilmu Ekonomi (bagian 1)', 'Samuelson Ch. 1–2'],
+  ['Konsep Dasar Ilmu Ekonomi (bagian 2)', 'Samuelson Ch. 1–2'],
+  ['Elemen Dasar Permintaan & Penawaran', 'Samuelson Ch. 3 · Mankiw Ch. 4'],
+  ['Permintaan & Perilaku Konsumen', 'Samuelson Ch. 4 · Mankiw Ch. 5'],
+  ['Elastisitas & Penerapannya', 'Samuelson Ch. 6'],
+  ['Kebijakan Pemerintah dalam Kerangka Permintaan & Penawaran', 'Samuelson Ch. 7 · Mankiw Ch. 13'],
+  ['Produsen, Konsumen & Efisiensi Pasar', 'Samuelson Ch. 8–11 · Mankiw Ch. 14–17'],
+], 1);
+const EKT109_TM8_14 = materi([
+  ['Pendapatan Nasional', 'Samuelson Ch. 19–20 · Mankiw Ch. 23–24'],
+  ['Perekonomian Tertutup (bagian 1): Identitas, Konsumsi, Tabungan & Dana Pinjaman', 'Samuelson Ch. 21–22 · Mankiw Ch. 26, 33–34'],
+  ['Perekonomian Tertutup (bagian 2): Keseimbangan, Multiplier & Kebijakan Fiskal', 'Samuelson Ch. 21–22 · Mankiw Ch. 26, 33–34'],
+  ['Uang & Sistem Keuangan', 'Samuelson Ch. 23–24 · Mankiw Ch. 29–30'],
+  ['Perekonomian Terbuka', 'Samuelson Ch. 27–28 · Mankiw Ch. 31–32'],
+  ['Inflasi & Pengangguran', 'Samuelson Ch. 29–30 · Mankiw Ch. 24, 28, 30, 33–35'],
+  ['Pertumbuhan Ekonomi', 'Samuelson Ch. 25 · Mankiw Ch. 25–26'],
+], 8);
+const EKT109_REF = [
+  'Samuelson, P. A., & Nordhaus, W. D. (2010). Economics (19th ed.). McGraw-Hill.',
+  'Mankiw, N. G. (2020). Principles of Economics (9th ed.). Cengage Learning.',
+];
+
+// ---- Flashcard ------------------------------------------------------
+const AKK106_FLASHCARDS: Flashcard[] = [
+  { title: 'Definisi Aset', back: 'Sumber daya yang dikuasai entitas akibat peristiwa masa lalu, dengan manfaat ekonomi di masa depan.' },
+  { title: 'Persamaan Akuntansi', back: 'Aset = Liabilitas + Ekuitas. Dasar pencatatan berpasangan (double-entry).' },
+  { title: 'Jurnal Penyesuaian', back: 'Jurnal akhir periode untuk mengakui pendapatan/beban pada periode yang tepat (basis akrual).' },
+  { title: 'Trial Balance', back: 'Daftar saldo seluruh akun buku besar untuk menguji kesamaan total debit dan kredit.' },
+];
+
+// =====================================================================
+// STRUKTUR KURIKULUM (Semester 1 & 2 dibuka; 3–8 terkunci/placeholder)
+// =====================================================================
+export const SEMESTERS: Semester[] = [
+  {
+    id: 'sem1',
+    number: 1,
+    title: 'Semester 1',
+    desc: 'Fondasi Akademik, PDB & Dasar Akuntansi (19 SKS)',
+    totalSks: 19,
+    locked: false,
+    groups: [
+      {
+        title: 'Mata Kuliah Keahlian (Akuntansi)',
+        highlight: true,
+        courses: [
+          {
+            code: 'AKK106', newCode: 'FEB25603003', name: 'Akuntansi Keuangan Dasar', sks: 3, iconKey: 'calculator',
+            references: AKK106_REF,
+            materiTM1_7: AKK106_TM1_7, materiTM8_14: AKK106_TM8_14, flashcards: AKK106_FLASHCARDS,
+          },
+        ],
+      },
+      {
+        title: 'Mata Kuliah Wajib Universitas & PDB',
+        courses: [
+          { code: 'AGX101', name: 'Agama', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Agama', 1, 7), materiTM8_14: makeMateri('Agama', 8, 14) },
+          { code: 'NOP103', name: 'Pancasila', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Pancasila', 1, 7), materiTM8_14: makeMateri('Pancasila', 8, 14) },
+          { code: 'BAI101', name: 'Bahasa Indonesia', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Bahasa Indonesia', 1, 7), materiTM8_14: makeMateri('Bahasa Indonesia', 8, 14) },
+          { code: 'NOP104', name: 'Kewarganegaraan', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Kewarganegaraan', 1, 7), materiTM8_14: makeMateri('Kewarganegaraan', 8, 14) },
+          { code: 'SIP107', name: 'Data dan Pustaka', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Data dan Pustaka', 1, 7), materiTM8_14: makeMateri('Data dan Pustaka', 8, 14) },
+          { code: 'PHP103', name: 'Logika dan Pemikiran Kritis', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('Logika', 1, 7), materiTM8_14: makeMateri('Logika', 8, 14) },
+          { code: 'MNM107', name: 'Pengantar Kolaborasi Keilmuan', sks: 2, iconKey: 'book', materiTM1_7: makeMateri('PKK', 1, 7), materiTM8_14: makeMateri('PKK', 8, 14) },
+          { code: 'MNM106', name: 'Pengembangan Diri Kewirausahaan', sks: 2, iconKey: 'briefcase', materiTM1_7: makeMateri('PDK', 1, 7), materiTM8_14: makeMateri('PDK', 8, 14) },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'sem2',
+    number: 2,
+    title: 'Semester 2',
+    desc: 'Pendalaman Akuntansi, Perpajakan & Bisnis (20 SKS)',
+    totalSks: 20,
+    locked: false,
+    groups: [
+      {
+        title: 'Mata Kuliah Keahlian (Akuntansi & Pajak)',
+        highlight: true,
+        courses: [
+          {
+            code: 'AKK201', newCode: 'FEB25603010', name: 'Akuntansi Keuangan Menengah I', sks: 3, iconKey: 'calculator', prasyarat: 'AKK106 (L)',
+            references: AKK201_REF,
+            materiTM1_7: AKK201_TM1_7, materiTM8_14: AKK201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Simulator',
+          },
+          {
+            code: 'AKM201', newCode: 'FEB25603007', name: 'Akuntansi Biaya', sks: 3, iconKey: 'chart', prasyarat: 'AKK106 (L)',
+            references: AKM201_REF,
+            materiTM1_7: AKM201_TM1_7, materiTM8_14: AKM201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Simulator',
+          },
+          {
+            code: 'PJK201', newCode: 'FEB25603006', name: 'Perpajakan I', sks: 3, iconKey: 'file',
+            references: PJK201_REF,
+            materiTM1_7: PJK201_TM1_7, materiTM8_14: PJK201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Simulator',
+          },
+          {
+            code: 'AKA103', newCode: 'FEB25603009', name: 'Etika & Keterampilan Profesional untuk Akuntan', sks: 2, iconKey: 'award',
+            references: [
+              'Duska, R., Duska, B. S., & Kury, K. W. Accounting Ethics (3rd ed.).',
+              'AICPA Code of Professional Conduct.',
+              'RPS Etika & Keterampilan Profesional untuk Akuntan, FEB UNAIR.',
+            ],
+            materiTM1_7: materi([
+              ['Hakikat Akuntansi & Kesulitan Etis Utama (True Disclosure)', 'Duska 1'],
+              ['Pengukuran & Pelaporan: Laporan Keuangan, Nilai Aset, COGS', 'Duska 1–2'],
+              ['Pengantar Etika: Definisi, Dimensi & Tingkatan', 'Duska 2'],
+              ['Kode Etik Profesi & Prinsip AICPA', 'AICPA · Duska 3'],
+              ['Teori Moral untuk Akuntan (Egoisme, Utilitarianisme, Deontologi)', 'Duska 3'],
+              ['Etika Pengungkapan & Penerapan pada Profesi Akuntan', 'Duska 4'],
+              ['Review & Studi Kasus UTS', '—'],
+            ], 1),
+            materiTM8_14: materi([
+              ['Hubungan Etika dengan Moral & Agama (termasuk Etika Bisnis Islam)', 'RPS 8'],
+              ['Sikap Etis: Diversity, Inclusion, Equity & Penghormatan Hak', 'RPS 9'],
+              ['Kebutuhan Industri terhadap Keahlian Profesional Akuntan', 'RPS 10'],
+              ['Tata Kelola Perusahaan & Kepatuhan Etika Bisnis', 'RPS 11'],
+              ['Kepemimpinan Etis, Leadership 4.0 & Soft-Skilled Leadership', 'RPS 12'],
+              ['Atribut Komunikasi yang Diharapkan Industri', 'RPS 13'],
+              ['Integrasi Etika, Kepemimpinan & Komunikasi + Review', 'RPS 14'],
+            ], 8),
+            flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+          },
+        ],
+      },
+      {
+        title: 'Mata Kuliah Pendukung (Bisnis & Ekonomi)',
+        courses: [
+          {
+            code: 'MNU101', newCode: 'FEB25603004', name: 'Pengantar Bisnis', sks: 3, iconKey: 'briefcase',
+            references: MNU101_REF,
+            materiTM1_7: MNU101_TM1_7, materiTM8_14: MNU101_TM8_14,
+            flashcardCount: 88, featureBadge: 'Flashcard + Bank Soal + Kuis',
+          },
+          {
+            code: 'EKT109', newCode: 'FEB25603005', name: 'Pengantar Teori Ekonomi', sks: 3, iconKey: 'chart',
+            references: EKT109_REF,
+            materiTM1_7: EKT109_TM1_7, materiTM8_14: EKT109_TM8_14,
+            flashcardCount: 126, featureBadge: 'Flashcard + Bank Soal + Simulator',
+          },
+          {
+            code: 'MAS122', newCode: 'FEB25603008', name: 'Statistik untuk Akuntan', sks: 3, iconKey: 'chart', prasyarat: 'AKK106 (L)',
+            references: MAS122_REF,
+            materiTM1_7: MAS122_TM1_7, materiTM8_14: MAS122_TM8_14,
+            flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'sem3',
+    number: 3,
+    title: 'Semester 3',
+    desc: 'Akuntansi Manajemen, Keuangan & Sektor Publik',
+    totalSks: 18,
+    locked: false,
+    groups: [
+      {
+        title: 'Mata Kuliah Keahlian',
+        highlight: true,
+        courses: [
+          { code: 'AKK202', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', materiTM1_7: makeMateri('AKM II', 1, 7), materiTM8_14: makeMateri('AKM II', 8, 14) },
+          { code: 'AKM202', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', materiTM1_7: makeMateri('Akuntansi Manajemen', 1, 7), materiTM8_14: makeMateri('Akuntansi Manajemen', 8, 14) },
+          { code: 'AKS201', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('ASP', 1, 7), materiTM8_14: makeMateri('ASP', 8, 14) },
+          { code: 'PJK202', name: 'Perpajakan II', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Perpajakan II', 1, 7), materiTM8_14: makeMateri('Perpajakan II', 8, 14) },
+          { code: 'MNK201', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', materiTM1_7: makeMateri('Manajemen Keuangan', 1, 7), materiTM8_14: makeMateri('Manajemen Keuangan', 8, 14) },
+          { code: 'AKA201', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', materiTM1_7: makeMateri('Audit I', 1, 7), materiTM8_14: makeMateri('Audit I', 8, 14) },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'sem4',
+    number: 4,
+    title: 'Semester 4',
+    desc: 'Audit II, Internal Audit, Hukum Bisnis & Lanjutan',
+    totalSks: 18,
+    locked: false,
+    groups: [
+      {
+        title: 'Mata Kuliah Keahlian',
+        highlight: true,
+        courses: [
+          { code: 'AKK203', name: 'Akuntansi Keuangan Menengah III', sks: 3, iconKey: 'calculator', materiTM1_7: makeMateri('AKM III', 1, 7), materiTM8_14: makeMateri('AKM III', 8, 14) },
+          { code: 'AKA202', name: 'Pengauditan Berbasis Risiko II', sks: 3, iconKey: 'award', materiTM1_7: makeMateri('Audit II', 1, 7), materiTM8_14: makeMateri('Audit II', 8, 14) },
+          { code: 'AKA203', name: 'Internal Audit', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Internal Audit', 1, 7), materiTM8_14: makeMateri('Internal Audit', 8, 14) },
+          { code: 'HUK201', name: 'Hukum Bisnis dan Perusahaan', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('Hukum Bisnis', 1, 7), materiTM8_14: makeMateri('Hukum Bisnis', 8, 14) },
+          { code: 'MNK202', name: 'Pengantar Pasar Modal', sks: 3, iconKey: 'chart', materiTM1_7: makeMateri('Pasar Modal', 1, 7), materiTM8_14: makeMateri('Pasar Modal', 8, 14) },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'sem5',
+    number: 5,
+    title: 'Semester 5',
+    desc: 'Sistem Informasi Akuntansi, Metodologi & Pilihan',
+    totalSks: 18,
+    locked: false,
+    groups: [
+      {
+        title: 'Mata Kuliah Keahlian',
+        highlight: true,
+        courses: [
+          { code: 'AKS301', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('SIA', 1, 7), materiTM8_14: makeMateri('SIA', 8, 14) },
+          { code: 'AKP301', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('Metopen', 1, 7), materiTM8_14: makeMateri('Metopen', 8, 14) },
+          { code: 'MNS301', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', materiTM1_7: makeMateri('Manstra', 1, 7), materiTM8_14: makeMateri('Manstra', 8, 14) },
+          { code: 'AKS302', name: 'Akuntansi Syariah', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Akuntansi Syariah', 1, 7), materiTM8_14: makeMateri('Akuntansi Syariah', 8, 14) },
+        ],
+      },
+    ],
+  },
+  { id: 'sem6', number: 6, title: 'Semester 6', desc: 'Analisis Bisnis & Pelaporan', totalSks: 0, locked: true, groups: [] },
+  { id: 'sem7', number: 7, title: 'Semester 7', desc: 'Konsentrasi & Mata Kuliah Pilihan', totalSks: 0, locked: true, groups: [] },
+  { id: 'sem8', number: 8, title: 'Semester 8', desc: 'Skripsi / Tugas Akhir', totalSks: 0, locked: true, groups: [] },
+];
+
+// ---- Siklus laporan (untuk Mega Menu "Laporan") --------------------
+export const LAPORAN_DATA = [
+  {
+    title: 'Akuntansi Keuangan',
+    iconKey: 'file' as const,
+    items: [
+      'Income Statement & Comprehensive Income', 'Statement of Financial Position',
+      'Statement of Cash Flows', 'Bank Reconciliation Worksheet',
+      'Receivables Aging & Allowance Schedule', 'Notes Receivable Amortization Schedule',
+      'Transfer of Receivables Journal Worksheet', 'Corrected Ending Inventory Schedule',
+      'Inventory Cost-Flow Schedule', 'LCNRV & Inventory Loss Recovery Schedule',
+      'Gross Profit Method Worksheet', 'Retail Inventory Method Worksheet',
+      'Inventory Analysis Worksheet',
+    ],
+  },
+  {
+    title: 'Akuntansi Manajemen',
+    iconKey: 'chart' as const,
+    items: [
+      'Laporan Biaya Produksi', 'Harga Pokok Penjualan (HPP)',
+      'Analisis Break Even Point (BEP)', 'Laporan Anggaran (Budget)',
+      'Analisis Varians Biaya', 'Laporan Kinerja Manajerial',
+    ],
+  },
+];
+
+// ---- Util pencarian: ratakan semua mata kuliah jadi satu daftar -----
+export interface FlatCourse {
+  course: import('../types').Course;
+  semesterId: string;
+  semesterTitle: string;
+}
+
+export const ALL_COURSES: FlatCourse[] = SEMESTERS.filter((s) => !s.locked).flatMap((s) =>
+  s.groups.flatMap((g) =>
+    g.courses.map((course) => ({ course, semesterId: s.id, semesterTitle: s.title }))
+  )
+);
+
+```
+
+## File: src/data/quizzes/aka103UtsSimulator.ts
+```ts
+import type { QuizQuestion } from '../../types';
+
+export const AKA103_QUIZ_UTS_SIMULATOR: QuizQuestion[] = [
+  // --- SOAL LAMA (Dari aka103.ts) ---
+  {"q": "Istilah 'etika' secara etimologis berasal dari bahasa Yunani kuno yang berarti...", "options": ["Ilmu pengetahuan", "Ethos (kebiasaan, watak, cara berpikir)", "Kebijaksanaan", "Hukum alam"], "answer": 1, "explanation": "Ethos dalam bahasa Yunani Kuno bermakna luas: kebiasaan, adat istiadat, watak, hingga cara berpikir seseorang."},
+  {"q": "Teori etika yang menilai moralitas suatu tindakan berdasarkan HASIL atau konsekuensinya disebut...", "options": ["Deontologi", "Virtue Ethics", "Utilitarianisme", "Egoisme Psikologis"], "answer": 2, "explanation": "Utilitarianisme adalah teori konsekuensialis yang menilai tindakan berdasarkan hasil akhirnya — 'the greatest good for the greatest number'."},
+  {"q": "Menurut Kant, Formula Pertama Imperatif Kategoris menekankan prinsip...", "options": ["Kasih sayang", "Universalitas", "Kepentingan mayoritas", "Loyalitas"], "answer": 1, "explanation": "Formula Pertama menyatakan: bertindaklah hanya berdasarkan maksim yang dapat dikehendaki untuk menjadi hukum universal."},
+  {"q": "Formula Kedua Kant menegaskan bahwa manusia harus diperlakukan sebagai...", "options": ["Means (alat) demi kepentingan negara", "End-in-itself (tujuan pada dirinya sendiri)", "Pengikut aturan negara", "Pencari keuntungan terbesar"], "answer": 1, "explanation": "Formula Kedua berfokus pada martabat manusia: perlakukan manusia sebagai tujuan pada dirinya sendiri, bukan sekadar alat untuk mencapai tujuan lain."},
+  {"q": "Virtue Ethics yang berakar dari pemikiran Aristoteles berfokus pada...", "options": ["Konsekuensi tindakan", "Ketaatan pada aturan", "Karakter moral pelaku", "Kepentingan kelompok"], "answer": 2, "explanation": "Virtue Ethics berfokus pada karakter moral — pertanyaan mendasarnya adalah 'Saya harus menjadi orang yang seperti apa?' bukan 'Apa yang harus saya lakukan?'"},
+  {"q": "Mengapa egoisme dianggap tidak memadai untuk profesi akuntansi?", "options": ["Terlalu sulit diterapkan", "Kode etik mewajibkan pelayanan kepentingan publik, bukan pribadi", "Hanya berlaku untuk individu kaya", "Tidak ada standar yang menggunakannya"], "answer": 1, "explanation": "Kode etik akuntan mewajibkan pelayanan terhadap kepentingan publik. Selain itu, egoisme tidak bisa menyelesaikan konflik ketika dua pihak menginginkan hal yang sama."},
+  {"q": "Dalam Decision Model Stuart, 'Tahap 1: Defining the Problem' disebut tahap paling krusial karena...", "options": ["Paling mudah dikerjakan", "Jika salah di tahap ini, seluruh proses berikutnya ikut salah", "Paling banyak memakai sumber daya", "Membutuhkan data paling banyak"], "answer": 1, "explanation": "Defining the Problem adalah fondasi dari seluruh pengambilan keputusan. Jika masalah didefinisikan salah, solusi yang dihasilkan juga akan salah."},
+  {"q": "'TV Test' atau Public Principle dalam menemukan masalah etis berarti...", "options": ["Tindakan harus dilaporkan ke media TV", "Akuntan harus hadir di acara TV", "Periksa apakah Anda nyaman menjelaskan keputusan secara publik", "Tindakan harus ditayangkan secara langsung"], "answer": 2, "explanation": "Public Principle: jika Anda tidak nyaman menjelaskan keputusan kepada publik, itu adalah sinyal kuat bahwa ada masalah etis dalam keputusan tersebut."},
+  {"q": "IESBA adalah singkatan dari...", "options": ["International Ethical Standards Board for Accountants", "International Ethics Standards Board for Accountants", "Institute of Ethics Standards for Business Accountants", "International Enterprise Standards Board for Accountants"], "answer": 1, "explanation": "IESBA = International Ethics Standards Board for Accountants — badan penetapan standar etika independen di bawah IFAC."},
+  {"q": "Salah satu dari 5 prinsip dasar etika IESBA adalah 'Faithful Representation' sebagai bagian dari prinsip...", "options": ["Integritas", "Objektivitas", "Kompetensi Profesional", "Kerahasiaan"], "answer": 0, "explanation": "Integritas mencakup kejujuran dan kelugasan — yang berkaitan erat dengan menyajikan informasi secara jujur (faithful representation) kepada klien dan publik."},
+  {"q": "Seorang auditor yang sudah bertahun-tahun mengaudit perusahaan yang sama dan menjadi terlalu simpatik terhadap kliennya menghadapi...", "options": ["Self-Interest Threat", "Self-Review Threat", "Familiarity Threat", "Advocacy Threat"], "answer": 2, "explanation": "Familiarity Threat terjadi ketika hubungan yang terlalu lama atau dekat dengan klien membuat akuntan terlalu simpatik terhadap kepentingan mereka, mengancam objektivitas."},
+  {"q": "Seorang akuntan yang memeriksa kembali pekerjaannya sendiri yang dibuat tahun lalu adalah contoh...", "options": ["Self-Interest Threat", "Self-Review Threat", "Familiarity Threat", "Intimidation Threat"], "answer": 1, "explanation": "Self-Review Threat: ancaman bahwa akuntan tidak akan secara tepat mengevaluasi hasil pertimbangan atau layanan yang sebelumnya dilakukannya sendiri."},
+  {"q": "Perbedaan mendasar antara fraud dan error terletak pada...", "options": ["Jumlah kerugian yang ditimbulkan", "Unsur kesengajaan (intentionality)", "Siapa yang melakukannya", "Jenis laporan keuangan yang terdampak"], "answer": 1, "explanation": "Perbedaan utama: Fraud = sengaja (intentional misstatement). Error = tidak sengaja (unintentional). Keduanya masuk kategori misstatement tapi dengan implikasi yang sangat berbeda."},
+  {"q": "Donald Cressey merumuskan Fraud Triangle dengan 3 elemen. Elemen yang ketiga adalah...", "options": ["Capability (Kemampuan)", "Arrogance (Arogansi)", "Rationalization (Rasionalisasi)", "Intelligence (Kecerdasan)"], "answer": 2, "explanation": "Fraud Triangle (Cressey, 1950): Pressure (Tekanan) + Opportunity (Kesempatan) + Rationalization (Rasionalisasi). Rasionalisasi adalah kemampuan pelaku membenarkan tindakannya secara moral."},
+  {"q": "Elemen apa yang ditambahkan Crowe (2011) dalam Fraud Pentagon yang tidak ada di Fraud Diamond?", "options": ["Pressure", "Capability", "Rationalization", "Arrogance"], "answer": 3, "explanation": "Fraud Pentagon menambahkan elemen Arrogance (Arogansi) — sikap superioritas dan keyakinan bahwa aturan tidak berlaku baginya — ke dalam Fraud Diamond yang sudah ada."},
+  {"q": "Menurut penelitian COSO yang dikutip Crowe (2011), berapa persen kasus fraud melibatkan CEO?", "options": ["50%", "70%", "89%", "95%"], "answer": 2, "explanation": "COSO: 89% kasus fraud melibatkan CEO. Ini yang mendorong Crowe menambahkan elemen Arogansi ke dalam Fraud Pentagon."},
+  {"q": "Prinsip akuntansi yang menyatakan bahwa 'semua transaksi dicatat saat terjadi, bukan saat kas berpindah' disebut...", "options": ["Cash Basis", "Accrual Accounting", "Matching Concept", "Historical Cost"], "answer": 1, "explanation": "Accrual Accounting (Akuntansi Akrual): dampak transaksi dilaporkan pada periode terjadinya, meskipun arus kas terjadi pada periode berbeda. Ini memberikan gambaran kinerja yang lebih akurat namun juga membuka peluang manipulasi."},
+  {"q": "Laporan keuangan yang mengukur KINERJA perusahaan selama satu periode adalah...", "options": ["Statement of Financial Position (Neraca)", "Statement of Profit or Loss (Laporan Laba Rugi)", "Statement of Cash Flows", "Statement of Changes in Equity"], "answer": 1, "explanation": "Statement of Profit or Loss (Laporan Laba Rugi) mengukur kinerja perusahaan selama satu periode dengan elemen: pendapatan, beban, dan laba/rugi bersih."},
+  {"q": "Dua karakteristik FUNDAMENTAL kualitas informasi menurut kerangka konseptual adalah...", "options": ["Comparability dan Verifiability", "Timeliness dan Understandability", "Relevance dan Faithful Representation", "Accuracy dan Completeness"], "answer": 2, "explanation": "Dua karakteristik fundamental: (1) Relevance (Relevansi) — membuat perbedaan dalam keputusan pengguna, dan (2) Faithful Representation — menggambarkan fenomena ekonomi secara akurat."},
+  {"q": "Dalam kasus 24 Karat Caramels, apa pelanggaran akuntansi yang dilakukan Elizabeth?", "options": ["Mencatat terlalu banyak beban", "Mengakui pendapatan atas pesanan yang belum dikirimkan", "Tidak melakukan audit internal", "Melanggar prinsip konsistensi"], "answer": 1, "explanation": "Elizabeth memerintahkan pengakuan pendapatan atas pesanan yang BELUM dikirimkan — ini melanggar prinsip revenue recognition yang mensyaratkan pendapatan diakui saat barang/jasa telah diberikan."},
+  {"q": "Dalam kasus PLTN (Nuclear Power Plant), prinsip apa yang mendasari pentingnya mengakui biaya decommissioning secara bertahap?", "options": ["Prinsip konservatisme", "Matching Concept dan Equal Treatment", "Prinsip going concern", "Prinsip historical cost"], "answer": 1, "explanation": "Matching Concept: beban harus diakui di periode yang sama dengan pendapatan yang dihasilkannya. Equal Treatment: pengguna saat ini yang menikmati manfaat harus menanggung biaya, bukan membebankan semuanya ke generasi mendatang."},
+  {"q": "Mengapa ~95% kasus fraud didorong oleh tekanan finansial menurut Albrecht et al.?", "options": ["Tekanan finansial paling mudah dideteksi", "Pelaku butuh uang untuk memenuhi kebutuhan atau mengatasi masalah keuangan yang non-shareable", "Tekanan finansial paling sering diberikan atasan", "Tekanan finansial mudah dirasionalisasi"], "answer": 1, "explanation": "Tekanan finansial mencakup beban utang, kebutuhan finansial mendesak, atau target keuangan yang tidak realistis. Tekanan ini dianggap non-shareable (tidak bisa dibagikan) sehingga mendorong tindakan fraud."},
+  {"q": "Rotasi auditor secara berkala adalah salah satu bentuk safeguard untuk mencegah...", "options": ["Self-Interest Threat", "Self-Review Threat", "Familiarity Threat dan Advocacy Threat", "Intimidation Threat"], "answer": 2, "explanation": "Rotasi auditor mencegah Familiarity Threat (kedekatan berlebihan dengan klien) dan Advocacy Threat (terlalu mempromosikan posisi klien). Ini adalah safeguard dalam lingkungan kerja."},
+  {"q": "Prinsip IESBA yang mewajibkan akuntan tidak menggunakan informasi klien untuk keuntungan pribadi adalah...", "options": ["Integritas", "Objektivitas", "Kerahasiaan (Confidentiality)", "Perilaku Profesional"], "answer": 2, "explanation": "Confidentiality (Kerahasiaan): akuntan tidak boleh mengungkapkan informasi dari hubungan profesional kepada pihak ketiga tanpa wewenang, dan informasi tersebut TIDAK boleh digunakan untuk keuntungan pribadi."},
+  {"q": "Kapabilitas (Capability) dalam Fraud Diamond terutama penting karena...", "options": ["Memberi tekanan kepada pelaku", "Hanya orang dengan kapabilitas tinggi yang dapat memahami kelemahan sistem pengendalian internal dan memanfaatkannya", "Menciptakan rasionalisasi yang lebih kuat", "Membuka lebih banyak kesempatan"], "answer": 1, "explanation": "Wolfe dan Hermanson (2004): kapabilitas memungkinkan pelaku untuk mengenali pintu terbuka (kesempatan) sebagai peluang dan memanfaatkannya secara berkelanjutan — terutama penting dalam fraud skala besar."},
+  {"q": "Salah satu mekanisme tata kelola perusahaan yang efektif dalam mencegah fraud adalah...", "options": ["Menaikkan gaji seluruh karyawan", "Whistleblowing System yang aman dan dipublikasikan luas", "Mengurangi jumlah auditor eksternal", "Memusatkan kewenangan pada CEO"], "answer": 1, "explanation": "Whistleblowing System yang efektif memberikan mekanisme bagi karyawan untuk melaporkan dugaan fraud tanpa rasa takut — ini menciptakan early warning mechanism yang sangat krusial."},
+  {"q": "Kasus kontroler keuangan yang harus memilih antara manipulasi angka demi menyelamatkan pekerjaan ribuan orang vs. kejujuran profesional merupakan contoh...", "options": ["Ethical Egoism", "Klasik Dilema Etis dalam Akuntansi", "Fraud Triangle dalam praktik", "Pelanggaran AICPA Prinsip 5"], "answer": 1, "explanation": "Kasus ini adalah contoh dilema etis klasik dalam akuntansi — konflik antara tanggung jawab sosial (menyelamatkan banyak pekerjaan) vs. integritas profesional (kejujuran laporan keuangan)."},
+  {"q": "Dalam kasus Ernst & Young Hong Kong, prinsip etika IESBA yang paling jelas dilanggar pertama kali adalah...", "options": ["Kerahasiaan", "Integritas — karena pemalsuan dokumen adalah tindakan tidak jujur", "Objektivitas", "Kompetensi Profesional"], "answer": 1, "explanation": "Pemalsuan dokumen kerja audit adalah pelanggaran langsung terhadap prinsip Integritas — wajib bersikap jujur dan lugas. Ini juga melanggar Due Care, Objectivity, dan Professional Behavior secara bersamaan."},
+  {"q": "Kasus PT Indofarma menggambarkan kegagalan mekanisme apa yang akhirnya mengungkap fraud?", "options": ["Internal audit perusahaan", "Whistleblower karyawan", "Pemeriksaan investigatif BPK (Badan Pemeriksa Keuangan)", "Laporan auditor eksternal tahunan"], "answer": 2, "explanation": "BPK (Badan Pemeriksa Keuangan) yang melakukan pemeriksaan investigatif akhirnya mengungkap fraud — menunjukkan pentingnya mekanisme pengawasan eksternal independen sebagai safeguard terakhir."},
+  {"q": "Dalam penilaian etika, tindakan yang masuk kategori penilaian etis adalah tindakan yang...", "options": ["Dilakukan oleh banyak orang sekaligus", "Dilakukan secara sadar dan sengaja (deliberate actions) dengan dampak signifikan pada kesejahteraan orang lain", "Dilakukan dalam skala besar", "Dilakukan oleh profesional berlisensi"], "answer": 1, "explanation": "Hanya deliberate actions (tindakan sadar dan sengaja) yang masuk kategori penilaian etis. Tindakan memenuhi syarat etis jika dampaknya memberikan manfaat atau membahayakan kesejahteraan orang lain secara signifikan."},
+
+  // --- SOAL BARU (Berdasarkan TM1-7) ---
+  {"q": "Kesulitan etis utama bagi seorang akuntan menurut Duska adalah...", "options": ["Menghitung pajak yang rumit", "Mengumpulkan bukti audit yang cukup", "True disclosure (pengungkapan yang benar dan jujur)", "Mencegah fraud di tingkat manajemen puncak"], "answer": 2, "explanation": "Kesulitan etis utama (chief ethical difficulty) akuntan adalah true disclosure — mengungkapkan kondisi keuangan secara benar, lengkap, dan tidak menyesatkan, terutama saat ada tekanan."},
+  {"q": "Praktik manipulasi laporan keuangan dengan tujuan membuatnya tampak lebih baik dari kenyataan (seperti yang terjadi pada Enron) dikenal dengan istilah...", "options": ["Earning management", "Cooking the books", "Tax avoidance", "Material omission"], "answer": 1, "explanation": "Cooking the books adalah istilah untuk manipulasi catatan keuangan demi menyembunyikan kerugian atau melebih-lebihkan pendapatan."},
+  {"q": "Undang-undang yang disahkan di AS pada tahun 2002 sebagai respons terhadap skandal akuntansi besar seperti Enron dan WorldCom adalah...", "options": ["Dodd-Frank Act", "Sarbanes-Oxley Act", "Foreign Corrupt Practices Act", "Glass-Steagall Act"], "answer": 1, "explanation": "Sarbanes-Oxley Act (SOX) disahkan tahun 2002 untuk memperketat tanggung jawab manajemen, pelaporan keuangan, dan independensi auditor."},
+  {"q": "Duska membagi etika ke dalam dua dimensi utama, yaitu...", "options": ["Dimensi hukum dan dimensi sosial", "Dimensi tindakan dan dimensi karakter", "Dimensi ekonomi dan dimensi lingkungan", "Dimensi personal dan dimensi profesional"], "answer": 1, "explanation": "Duska membagi etika menjadi dua: dimensi tindakan (menilai apakah tindakan itu benar/salah) dan dimensi karakter (menilai watak/virtue seseorang)."},
+  {"q": "Etika merupakan sebuah 'intellectual enterprise'. Apa maksud pernyataan ini?", "options": ["Etika hanya dipelajari oleh akademisi", "Penilaian etika membutuhkan penalaran dan argumen rasional, bukan sekadar perasaan", "Etika didasarkan pada perhitungan matematis", "Etika merupakan sub-bidang dari kecerdasan buatan"], "answer": 1, "explanation": "Etika sebagai intellectual enterprise berarti etika bukan soal emosi/perasaan, melainkan membutuhkan kerangka berpikir rasional dan argumen logis yang dapat dipertanggungjawabkan."},
+  {"q": "Salah satu pertanyaan dari 5 Pertanyaan Pembenar Tindakan adalah: 'Bagaimana perasaanku jika ini diketahui publik?'. Pertanyaan ini berfungsi untuk menguji...", "options": ["Legalitas tindakan", "Transparansi dan prinsip kerahasiaan", "Prinsip public watchdog", "The TV test / Public Principle"], "answer": 3, "explanation": "Pertanyaan ini sering disebut 'The TV Test' atau Public Principle. Jika seseorang merasa malu keputusannya disiarkan di TV, berarti ada indikasi tindakan itu tidak etis."},
+  {"q": "Bagi auditor, independensi sangat krusial. Apa dua bentuk independensi yang wajib dijaga auditor?", "options": ["Independensi politik dan ekonomi", "Independence in fact (fakta) dan Independence in appearance (penampilan)", "Independensi data dan sistem", "Independensi internal dan eksternal"], "answer": 1, "explanation": "Auditor harus independen in fact (bebas dari bias secara mental) dan in appearance (tampak independen di mata publik, misal tidak punya saham di klien)."},
+  {"q": "Prinsip moral yang menyatakan 'tindakan itu baik jika menghasilkan manfaat terbesar bagi jumlah orang terbanyak' adalah inti dari teori...", "options": ["Egoisme Etis", "Deontologi", "Virtue Ethics", "Utilitarianisme"], "answer": 3, "explanation": "Utilitarianisme adalah teori teleologis/konsekuensialis yang digagas Bentham dan Mill: the greatest good for the greatest number."},
+  {"q": "Manakah yang merupakan kelemahan utama dari teori Utilitarianisme ketika diterapkan dalam etika bisnis?", "options": ["Mendahulukan keuntungan perusahaan semata", "Bisa mengorbankan hak minoritas demi 'kebaikan' mayoritas", "Terlalu bergantung pada karakter individu", "Mewajibkan kepatuhan mutlak pada aturan"], "answer": 1, "explanation": "Kelemahan terbesar utilitarianisme adalah ia dapat membenarkan pelanggaran hak individu atau minoritas jika itu terbukti menghasilkan manfaat total yang lebih besar bagi mayoritas."},
+  {"q": "Teori Deontologi dari Immanuel Kant menolak pendekatan Utilitarian karena Deontologi...", "options": ["Menilai moralitas berdasarkan konsekuensi akhir", "Fokus pada kebiasaan budaya", "Menekankan kewajiban mutlak dan aturan moral yang terlepas dari hasilnya", "Menganjurkan tindakan berdasarkan ego individu"], "answer": 2, "explanation": "Deontologi (dari kata deon = kewajiban) berpendapat bahwa tindakan itu benar atau salah secara intrinsik, tanpa peduli konsekuensinya. Berbohong itu salah, meskipun bisa membawa kebaikan jangka pendek."},
+  {"q": "Seorang CFO menolak untuk memanipulasi laporan keuangan karena ia meyakini kejujuran adalah sifat luhur yang mendefinisikan dirinya sebagai seorang profesional yang baik. Pendekatan ini paling mencerminkan teori...", "options": ["Virtue Ethics", "Utilitarianisme", "Egoisme Etis", "Deontologi"], "answer": 0, "explanation": "Virtue Ethics berfokus pada pembangunan karakter dan keutamaan diri (virtue). Fokusnya bukan 'apakah tindakan ini melanggar aturan?' melainkan 'apakah ini mencerminkan orang yang berkarakter baik?'."},
+  {"q": "Prinsip AICPA yang menuntut akuntan untuk kompeten, tekun, dan memberikan layanan sesuai dengan standar teknis profesi adalah prinsip...", "options": ["Integrity", "Due Care", "Public Interest", "Objectivity"], "answer": 1, "explanation": "Due Care mewajibkan akuntan memelihara kompetensi, melakukan pekerjaan secara teliti, tekun, dan cermat sesuai dengan technical standards."},
+  {"q": "Tiga pertanyaan kunci Duska mengenai pengungkapan informasi (disclosure) menanyakan tentang...", "options": ["Biaya, manfaat, dan efisiensi", "Apa yang harus diungkapkan, kepada siapa, dan seberapa banyak/bagaimana caranya", "Siapa kliennya, berapa fee-nya, dan apa risikonya", "Materialitas, objektivitas, dan independensi"], "answer": 1, "explanation": "Duska merumuskan 3 pertanyaan pengungkapan: Apa yang harus diungkapkan? Kepada siapa? Seberapa banyak dan dengan cara apa agar tidak menyesatkan?"},
+  {"q": "Menghilangkan informasi material (material omission) dalam laporan keuangan dianggap...", "options": ["Dapat diterima jika klien meminta", "Kurang etis tapi sah secara hukum", "Sama tidak etisnya dengan menyatakan informasi palsu", "Strategi bisnis yang cerdas"], "answer": 2, "explanation": "Menyembunyikan informasi penting (material omission) sama buruknya dengan berbohong secara aktif, karena sama-sama menyesatkan pembaca laporan."},
+  {"q": "Ketika terjadi benturan antara kewajiban menjaga kerahasiaan klien dengan kewajiban melindungi kepentingan publik, manakah yang seharusnya diutamakan oleh akuntan profesional?", "options": ["Kepentingan klien, karena mereka yang membayar", "Kepentingan pribadi akuntan", "Kepentingan atasan / manajer", "Kepentingan publik dan kebenaran"], "answer": 3, "explanation": "Menurut prinsip etika, tugas akuntan kepada publik adalah supreme (tertinggi). Kepentingan publik mengungguli kepentingan klien apabila klien berniat menipu publik."},
+  {"q": "Berdasarkan sejarah pembentukan standar akuntansi, pihak yang berfungsi sebagai 'Public Watchdog' adalah...", "options": ["Manajemen perusahaan", "Kreditor dan bank", "Auditor independen (CPA)", "Pemegang saham minoritas"], "answer": 2, "explanation": "Mahkamah Agung AS menyatakan bahwa auditor independen memegang tanggung jawab publik sebagai 'public watchdog' yang melampaui loyalitas mereka kepada manajemen klien."},
+  {"q": "Metode penilaian COGS yang menghasilkan laba bersih paling besar di masa inflasi (harga barang naik) adalah...", "options": ["LIFO", "FIFO", "Average", "Specific Identification"], "answer": 1, "explanation": "Dalam kondisi inflasi, FIFO menggunakan harga lama (lebih rendah) sebagai beban COGS, sehingga laba terlihat lebih besar. Pemilihan metode ini harus konsisten dan diungkapkan karena berdampak pada keputusan investor."},
+  {"q": "Skandal Enron adalah salah satu pendorong utama terbentuknya regulasi baru. Apa entitas yang banyak disalahgunakan Enron untuk menyembunyikan utang miliaran dolar?", "options": ["Non-Governmental Organizations (NGO)", "Subsidiaries asing yang tidak terdaftar", "Special Purpose Entities (SPE)", "Offshore bank accounts"], "answer": 2, "explanation": "Enron menciptakan ribuan Special Purpose Entities (SPE) untuk memindahkan utang dan aset berisiko keluar dari neraca utama (off-balance-sheet financing)."},
+  {"q": "Tingkatan penilaian etis bisa berada di level individu, sistem hukum/institusi, atau...", "options": ["Level praktik operasional/aturan perusahaan", "Level mikrobiologi", "Level universalistik", "Level estetika"], "answer": 0, "explanation": "Penilaian etis terjadi di 3 level: (1) Tindakan individu, (2) Praktik / kebijakan / aturan organisasi, (3) Sistem institusi (seperti sistem kapitalisme)."},
+  {"q": "Prinsip pertama dari Kode Etik AICPA, yaitu 'Responsibilities', menuntut anggota untuk...", "options": ["Mendapatkan laba setinggi mungkin bagi firma", "Menggunakan pertimbangan moral dan profesional dalam semua aktivitas", "Mendahulukan klien VIP", "Hanya bertugas jika dibayar sesuai tarif"], "answer": 1, "explanation": "Prinsip Responsibilities berbunyi: anggota harus menerapkan pertimbangan moral dan profesional yang peka dalam semua aktivitas mereka."}
+];
+
+```
+
