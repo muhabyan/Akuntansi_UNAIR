@@ -386,7 +386,7 @@ export const SEMESTERS: Semester[] = [
         title: 'Mata Kuliah Keahlian',
         highlight: true,
         courses: [
-          { code: 'AKS301', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'laptop', materiTM1_7: makeMateri('SIA', 1, 7), materiTM8_14: makeMateri('SIA', 8, 14) },
+          { code: 'AKS301', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('SIA', 1, 7), materiTM8_14: makeMateri('SIA', 8, 14) },
           { code: 'AKP301', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('Metopen', 1, 7), materiTM8_14: makeMateri('Metopen', 8, 14) },
           { code: 'MNS301', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', materiTM1_7: makeMateri('Manstra', 1, 7), materiTM8_14: makeMateri('Manstra', 8, 14) },
           { code: 'AKS302', name: 'Akuntansi Syariah', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Akuntansi Syariah', 1, 7), materiTM8_14: makeMateri('Akuntansi Syariah', 8, 14) },
