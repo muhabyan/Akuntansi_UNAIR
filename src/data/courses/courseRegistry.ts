@@ -642,6 +642,30 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       content.reviews = pjkReview.PJK201_REVIEW_READINGS;
       return content;
     }
+    case 'AGX101':
+    case 'NOP103':
+    case 'BAI101':
+    case 'NOP104':
+    case 'SIP107':
+    case 'PHP103':
+    case 'MNM107':
+    case 'MNM106': {
+      const module = await import('../pdb/pdbReadings');
+      // @ts-ignore dynamic indexing
+      return { readings: module[`${courseCode}_READINGS`], reviews: {} };
+    }
+    case 'AGX101':
+    case 'NOP103':
+    case 'BAI101':
+    case 'NOP104':
+    case 'SIP107':
+    case 'PHP103':
+    case 'MNM107':
+    case 'MNM106': {
+      const module = await import('../pdb/pdbReadings');
+      // @ts-ignore dynamic indexing
+      return { readings: module[`${courseCode}_READINGS`], reviews: {} };
+    }
     default:
       return { readings: {}, reviews: {} };
   }
