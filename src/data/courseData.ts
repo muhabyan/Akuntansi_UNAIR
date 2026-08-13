@@ -367,7 +367,18 @@ export const SEMESTERS: Semester[] = [
           { code: 'AKK202', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', materiTM1_7: makeMateri('AKM II', 1, 7), materiTM8_14: makeMateri('AKM II', 8, 14) },
           { code: 'AKM202', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', materiTM1_7: makeMateri('Akuntansi Manajemen', 1, 7), materiTM8_14: makeMateri('Akuntansi Manajemen', 8, 14) },
           { code: 'AKS201', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('ASP', 1, 7), materiTM8_14: makeMateri('ASP', 8, 14) },
-          { code: 'AKS301', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('SIA', 1, 7), materiTM8_14: makeMateri('SIA', 8, 14) },
+          {
+            code: 'AKS301', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book',
+            references: [
+              'Richardson, V. J., Chang, C. J., \u0026 Smith, R. E. Accounting Information Systems (4th ISE ed.). McGraw-Hill.',
+            ],
+            materiTM1_7: [
+              { tm: 1, title: 'Sistem Informasi Akuntansi \u0026 Nilai Perusahaan', ref: 'Richardson et al. Ch. 1' },
+              ...makeMateri('SIA', 2, 7).slice(1),
+            ],
+            materiTM8_14: makeMateri('SIA', 8, 14),
+            flashcardCount: 15, featureBadge: 'Flashcard + Modul Belajar',
+          },
           { code: 'PJK202', name: 'Perpajakan II', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Perpajakan II', 1, 7), materiTM8_14: makeMateri('Perpajakan II', 8, 14) },
           { code: 'MNK201', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', materiTM1_7: makeMateri('Manajemen Keuangan', 1, 7), materiTM8_14: makeMateri('Manajemen Keuangan', 8, 14) },
           { code: 'AKA201', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', materiTM1_7: makeMateri('Audit I', 1, 7), materiTM8_14: makeMateri('Audit I', 8, 14) },

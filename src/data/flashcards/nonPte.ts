@@ -5,6 +5,7 @@ import { MNU101_FC } from './mnu101';
 import { AKA103_FC } from './aka103';
 import { MAS122_FC } from './mas122';
 import { PJK201_FC } from './pjk201';
+import { AKS301_FC } from './aks301';
 
 import { AGX101_FC } from './agx101';
 import { NOP103_FC } from './nop103';
@@ -29,6 +30,7 @@ const NON_PTE_REGISTRY: Record<string, StudyCard[]> = {
   AKA103: AKA103_FC,
   MAS122: MAS122_FC,
   PJK201: PJK201_FC,
+  AKS301: AKS301_FC,
 };
 
 export function getNonPteFlashcards(code: string): StudyCard[] {
