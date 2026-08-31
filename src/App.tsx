@@ -28,7 +28,16 @@ const AkbiManagementReportsView = lazy(() => import('./components/AkbiManagement
 const Akm1FinancialReportsView = lazy(() => import('./components/Akm1FinancialReportsView'));
 const GuideView = lazy(() => import('./components/GuideView'));
 
-const UNIVERSAL_COURSES = ['AKK201', 'AKK106', 'PJK201', 'MNU101', 'AKA103', 'EKT109', 'MAS122', 'AKM201'];
+const UNIVERSAL_COURSES = [
+  // Semester 1 & 2
+  'AKK201', 'AKK106', 'PJK201', 'MNU101', 'AKA103', 'EKT109', 'MAS122', 'AKM201',
+  // Semester 2 Supporting / PDB
+  'MNM101', 'MNM201', 'AGX101', 'NOP103', 'BAI101', 'NOP104', 'SIP107', 'PHP103', 'MNM107', 'MNM106',
+  // Semester 3 & 4
+  'AKK202', 'AKA201', 'MNK201', 'AKS201', 'PJK202', 'PJK301', 'AKS301',
+  // Semester 5
+  'MNS301', 'MNU307', 'MNM301'
+];
 
 type CourseRouteResolution = {
   isCourseRoute: boolean;
