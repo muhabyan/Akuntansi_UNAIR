@@ -73,7 +73,7 @@ function SolutionRevealBlock({ block }: { block: Extract<ContentBlock, { kind: '
     <div className="mb-6 rounded-lg border border-emerald-200 dark:border-emerald-800 bg-white dark:bg-gray-800">
       <div className="p-4 flex flex-col items-start">
         <h3 className="font-semibold text-gray-900 dark:text-white">{block.title}</h3>
-        {block.prompt && <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{renderText(block.prompt)}</p>}
+        {block.prompt && <div className="mt-2 text-sm text-gray-600 dark:text-gray-300">{renderText(block.prompt)}</div>}
         <button type="button" onClick={() => setIsOpen((open) => !open)} className="mt-3 text-sm font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300">
           {isOpen ? 'Sembunyikan pembahasan' : 'Tampilkan pembahasan'}
         </button>
@@ -103,7 +103,7 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
       );
     }
     case 'p':
-      return <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-[15px]">{renderText(block.text)}</p>;
+      return <div className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 text-[15px]">{renderText(block.text)}</div>;
     case 'ul':
       return (
         <ul className="list-disc pl-6 space-y-2 mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -121,7 +121,7 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
       return (
         <div className={`p-4 my-6 rounded-r-lg ${s.cls}`}>
           <div className="flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100 mb-2">{s.icon} {block.title ?? s.label}</div>
-          <p className="text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">{renderText(block.text)}</p>
+          <div className="text-[15px] leading-relaxed text-gray-700 dark:text-gray-300">{renderText(block.text)}</div>
         </div>
       );
     }
@@ -142,7 +142,7 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
               ))}
             </tbody>
           </table>
-          {block.caption && <p className="mt-2 text-xs text-gray-500 italic">{renderText(block.caption)}</p>}
+          {block.caption && <div className="mt-2 text-xs text-gray-500 italic">{renderText(block.caption)}</div>}
         </div>
       );
     case 'journal':
@@ -166,14 +166,14 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
               ))}
             </tbody>
           </table>
-          {block.caption && <p className="px-4 py-3 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 italic">{renderText(block.caption)}</p>}
+          {block.caption && <div className="px-4 py-3 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 italic">{renderText(block.caption)}</div>}
         </div>
       );
     case 'formula':
       return (
         <div className="my-6 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border-l-4 border-indigo-500">
           <p className="font-mono text-base text-gray-900 dark:text-gray-100">{block.text}</p>
-          {block.note && <p className="text-sm text-gray-500 mt-2">{renderText(block.note)}</p>}
+          {block.note && <div className="text-sm text-gray-500 mt-2">{renderText(block.note)}</div>}
         </div>
       );
     case 'figure':
@@ -317,7 +317,7 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
           {reading.ref && <span className="px-2 py-1 rounded bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400">{reading.ref}</span>}
         </div>
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">{reading.title}</h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{renderText(reading.intro)}</p>
+        <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{renderText(reading.intro)}</div>
         <TTSPlayer title={reading.title} intro={reading.intro} blocks={reading.blocks} />
       </header>
 

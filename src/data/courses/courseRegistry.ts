@@ -1,4 +1,4 @@
-// =============================================================
+﻿// =============================================================
 // src/data/courses/courseRegistry.ts
 // Registri data mata kuliah dengan lazy-loading per mata kuliah.
 // Batch 8: hanya data course yang sedang dibuka yang diunduh/diparse.
@@ -229,7 +229,7 @@ function blockquoteToCallout(section: string, enableLegal = false): ContentBlock
   const parsed = parseBoldTitle(cleaned);
   const body = parsed.body || cleaned;
   const titleSource = parsed.title ?? 'Catatan Penting';
-  const warning = /⚠|PENTING|jangan keliru|tidak berlaku|koreksi|usang|wajib/i.test(cleaned);
+  const warning = /âš |PENTING|jangan keliru|tidak berlaku|koreksi|usang|wajib/i.test(cleaned);
   const variant: CalloutVariant = warning ? 'warning' : (enableLegal && hasLegalSignal(cleaned)) ? 'key' : 'info';
 
   return {
@@ -279,7 +279,7 @@ function parseMarkdownList(section: string): ContentBlock | null {
       if (/^\d+\.\s+/.test(trimmed)) {
         items.push(trimmed.replace(/^\d+\.\s+/, ''));
       } else if (hasNestedBullets && items.length > 0 && /^[-*]\s+/.test(trimmed)) {
-        items[items.length - 1] += `\n• ${trimmed.replace(/^[-*]\s+/, '')}`;
+        items[items.length - 1] += `\nâ€¢ ${trimmed.replace(/^[-*]\s+/, '')}`;
       }
     }
     return { kind: 'ol', items };
@@ -320,7 +320,7 @@ export function parseMarkdownToBlocks(md: string, options: { enableLegal?: boole
 
   for (let i = 0; i < rawSections.length; i += 1) {
     const section = rawSections[i].trim();
-    if (!section || isHorizontalRule(section) || isHtmlAnchor(section) || /^\[↑\s*Kembali/i.test(section)) {
+    if (!section || isHorizontalRule(section) || isHtmlAnchor(section) || /^\[â†‘\s*Kembali/i.test(section)) {
       pendingCalloutEmoji = null;
       continue;
     }
@@ -346,8 +346,8 @@ export function parseMarkdownToBlocks(md: string, options: { enableLegal?: boole
 
     if (pendingCalloutEmoji) {
       let variant: CalloutVariant = 'info';
-      if (['⚠️', '⚠'].includes(pendingCalloutEmoji)) variant = 'warning';
-      else if (['💡', '⭐', '🔑', '📌', '🔍', '🎯'].includes(pendingCalloutEmoji)) variant = 'tip';
+      if (['âš ï¸', 'âš '].includes(pendingCalloutEmoji)) variant = 'warning';
+      else if (['ðŸ’¡', 'â­', 'ðŸ”‘', 'ðŸ“Œ', 'ðŸ”', 'ðŸŽ¯'].includes(pendingCalloutEmoji)) variant = 'tip';
       else if (enableLegal && hasLegalSignal(section)) variant = 'key';
 
       const parsed = parseBoldTitle(section);
@@ -517,7 +517,7 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
       tm: module.tm,
       title: module.title,
       ref: `Regulasi s.d. ${perpajakanPraUAS.dateBasis || 'Juni 2026'}`,
-      intro: `Modul Perpajakan I Tatap Muka ${module.tm} — sinkron dari materi kompilasi TM8-14 berbasis regulasi s.d. ${perpajakanPraUAS.dateBasis || 'Juni 2026'}.`,
+      intro: `Modul Perpajakan I Tatap Muka ${module.tm} â€” sinkron dari materi kompilasi TM8-14 berbasis regulasi s.d. ${perpajakanPraUAS.dateBasis || 'Juni 2026'}.`,
       objectives: [],
       blocks
     };
@@ -533,6 +533,38 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
 
 async function resolveCourseContent(courseCode: string): Promise<LoadedCourseContent> {
   switch (courseCode) {
+    case 'MNS301':
+    case 'MNU307':
+    case 'MNM301': {
+      const module = await import('../manstrat/manstratData');
+      return { readings: module.MANSTRAT_READINGS, reviews: module.MANSTRAT_REVIEW_READINGS };
+    }
+    case 'MNM101':
+    case 'MNM201': {
+      const module = await import('../manajemen/manajemenData');
+      return { readings: module.MANAJEMEN_READINGS, reviews: module.MANAJEMEN_REVIEW_READINGS };
+    }
+    case 'PJK202':
+    case 'PJK301': {
+      const module = await import('../pjk2/pjk2Data');
+      return { readings: module.PJK202_READINGS, reviews: module.PJK202_REVIEW_READINGS };
+    }
+    case 'AKS201': {
+      const module = await import('../asp/aspData');
+      return { readings: module.AKS201_READINGS, reviews: module.AKS201_REVIEW_READINGS };
+    }
+    case 'MNK201': {
+      const module = await import('../mankeu/mankeuData');
+      return { readings: module.MNK201_READINGS, reviews: module.MNK201_REVIEW_READINGS };
+    }
+    case 'AKA201': {
+      const module = await import('../pbri/pbriData');
+      return { readings: module.AKA201_READINGS, reviews: module.AKA201_REVIEW_READINGS };
+    }
+    case 'AKK202': {
+      const module = await import('../akm2/akm2Data');
+      return { readings: module.AKK202_READINGS, reviews: module.AKM2_REVIEW_READINGS };
+    }
     case 'AKK201': {
       const module = await import('../akm1/akm1Data');
       return { readings: module.AKK201_READINGS, reviews: module.AKM1_REVIEW_READINGS };
@@ -564,7 +596,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
 
       const chunks = rawText.split(/(?=### TM\d{1,2}\b)/i);
       chunks.forEach((chunk: string) => {
-        const match = chunk.match(/^### TM(\d{1,2})\s*(?:—|-)\s*([^\n]+)/i);
+        const match = chunk.match(/^### TM(\d{1,2})\s*(?:â€”|-)\s*([^\n]+)/i);
         if (!match) return;
         const tm = parseInt(match[1], 10);
 
@@ -638,7 +670,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         import('../perpajakan/perpajakanPraUAS'),
         import('../perpajakan/pjkReviewReadings')
       ]);
-      const content = buildPjkContent(praUts.perpajakanPraUTS as PerpajakanUtsSource, perpajakanPraUASCheck(praUas.perpajakanPraUAS));
+      const content = buildPjkContent(praUts.perpajakanPraUTS as PerpajakanUtsSource, praUas.perpajakanPraUAS as PerpajakanUasSource);
       content.reviews = pjkReview.PJK201_REVIEW_READINGS;
       return content;
     }

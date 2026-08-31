@@ -1,4 +1,4 @@
-// =============================================================
+﻿// =============================================================
 // src/data/courseData.ts
 // Sumber data utama (tanpa database). Materi TM & referensi
 // diambil dari RPS/Silabus resmi Departemen Akuntansi FEB UNAIR
@@ -20,7 +20,7 @@ function materi(items: Array<[string, string?]>, startTm = 1): Material[] {
 function makeMateri(prefix: string, from: number, to: number): Material[] {
   const out: Material[] = [];
   for (let tm = from; tm <= to; tm++) {
-    out.push({ tm, title: `${prefix} — Tatap Muka ${tm}` });
+    out.push({ tm, title: `${prefix} â€” Tatap Muka ${tm}` });
   }
   return out;
 }
@@ -56,46 +56,234 @@ const AKK106_REF = [
 // --- AKK201 Akuntansi Keuangan Menengah I (Kieso Intermediate IFRS) ---
 // Pembagian Mengajar AKM 1 Genap 2024-2025.
 const AKK201_TM1_7 = materi([
-  ['The Environment and Conceptual Framework of Financial Reporting', 'Kieso IFRS 5e · Ch. 1'],
-  ['The Accounting Information System', 'Kieso IFRS 5e · Ch. 2'],
-  ['The Accounting Information System (lanjutan)', 'Kieso IFRS 5e · Ch. 2'],
-  ['Income Statement, Related Information, and Revenue Recognition', 'Kieso IFRS 5e · Ch. 3'],
-  ['Statement of Financial Position and Statement of Cash Flows', 'Kieso IFRS 5e · Ch. 4'],
-  ['Statement of Financial Position and Statement of Cash Flows (lanjutan)', 'Kieso IFRS 5e · Ch. 4'],
-  ['Accounting and The Time Value of Money', 'Kieso IFRS 5e · Ch. 5'],
+  ['The Environment and Conceptual Framework of Financial Reporting', 'Kieso IFRS 5e Â· Ch. 1'],
+  ['The Accounting Information System', 'Kieso IFRS 5e Â· Ch. 2'],
+  ['The Accounting Information System (lanjutan)', 'Kieso IFRS 5e Â· Ch. 2'],
+  ['Income Statement, Related Information, and Revenue Recognition', 'Kieso IFRS 5e Â· Ch. 3'],
+  ['Statement of Financial Position and Statement of Cash Flows', 'Kieso IFRS 5e Â· Ch. 4'],
+  ['Statement of Financial Position and Statement of Cash Flows (lanjutan)', 'Kieso IFRS 5e Â· Ch. 4'],
+  ['Accounting and The Time Value of Money', 'Kieso IFRS 5e Â· Ch. 5'],
 ], 1);
 const AKK201_TM8_14 = materi([
-  ['Cash and Receivables', 'Kieso IFRS 5e · Ch. 6'],
-  ['Cash and Receivables (lanjutan)', 'Kieso IFRS 5e · Ch. 6'],
-  ['Valuation of Inventories: A Cost-Basis Approach', 'Kieso IFRS 5e · Ch. 7'],
-  ['Valuation of Inventories: A Cost-Basis Approach (lanjutan)', 'Kieso IFRS 5e · Ch. 7'],
-  ['Inventories: Additional Valuation Issues', 'Kieso IFRS 5e · Ch. 8'],
-  ['Inventories: Additional Valuation Issues (lanjutan)', 'Kieso IFRS 5e · Ch. 8'],
-  ['Review / Pemantapan UAS', 'Kieso IFRS 5e · Review Ch. 6–8'],
+  ['Cash and Receivables', 'Kieso IFRS 5e Â· Ch. 6'],
+  ['Cash and Receivables (lanjutan)', 'Kieso IFRS 5e Â· Ch. 6'],
+  ['Valuation of Inventories: A Cost-Basis Approach', 'Kieso IFRS 5e Â· Ch. 7'],
+  ['Valuation of Inventories: A Cost-Basis Approach (lanjutan)', 'Kieso IFRS 5e Â· Ch. 7'],
+  ['Inventories: Additional Valuation Issues', 'Kieso IFRS 5e Â· Ch. 8'],
+  ['Inventories: Additional Valuation Issues (lanjutan)', 'Kieso IFRS 5e Â· Ch. 8'],
+  ['Review / Pemantapan UAS', 'Kieso IFRS 5e Â· Review Ch. 6â€“8'],
 ], 8);
 const AKK201_REF = [
   'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons.',
 ];
 
+// --- MNM101 / MNM201 Pengantar Manajemen (Richard L. Daft & Dorothy Marcic, Understanding Management 12e) ---
+// Sumber: RPP Resmi Pengantar Manajemen, Departemen Manajemen / Akuntansi FEB UNAIR.
+const MNM101_TM1_7 = materi([
+  ['Pengantar Manajemen: Manajer & Organisasi Inovatif', 'Daft Ch. 1'],
+  ['Lingkungan Eksternal & Budaya Organisasi', 'Daft Ch. 2'],
+  ['Manajemen dalam Lingkungan Global', 'Daft Ch. 3'],
+  ['Etika Manajerial & Tanggung Jawab Sosial Perusahaan (CSR)', 'Daft Ch. 4'],
+  ['Perencanaan Manajerial & Penetapan Sasaran SMART/MBO', 'Daft Ch. 5'],
+  ['Perumusan & Eksekusi Strategi (Porter & BCG)', 'Daft Ch. 6'],
+  ['Pengambilan Keputusan Manajerial & Desain Organisasi', 'Daft Ch. 7–8'],
+], 1);
+const MNM101_TM8_14 = materi([
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–8'],
+  ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft Ch. 9'],
+  ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft Ch. 10'],
+  ['Memahami Perilaku Individu, Kepribadian & Sikap Kerja', 'Daft Ch. 11'],
+  ['Kepemimpinan Manajerial (Situational & Grid)', 'Daft Ch. 12'],
+  ['Memotivasi Karyawan (Maslow, Herzberg, Vroom)', 'Daft Ch. 13'],
+  ['Mengelola Tim Kerja & Sistem Pengendalian Kualitas (TQM)', 'Daft Ch. 14–15'],
+], 8);
+const MNM101_REF = [
+  'Daft, R.L. & Marcic, D. (2023). Understanding Management (12th ed.). Cengage Learning.',
+  'Silabus & RPP Resmi Pengantar Manajemen, FEB Universitas Airlangga.',
+];
+
+// --- MNS301 / MNU307 / MNM301 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
+// Sumber: RPP Resmi Manajemen Stratejik, Departemen Akuntansi FEB UNAIR.
+const MNS301_TM1_7 = materi([
+  ['Strategic Management: Creating Competitive Advantages', 'DMEL Ch. 1'],
+  ['Analisis Lingkungan Eksternal (PESTEL, Five Forces, Strategic Groups)', 'DMEL Ch. 2'],
+  ['Analisis Lingkungan Internal, Value Chain, & VRIO Framework', 'DMEL Ch. 3–4'],
+  ['Business-Level Strategy: Keunggulan Bersaing & Siklus Hidup', 'DMEL Ch. 5'],
+  ['Corporate-Level Strategy & International Strategy', 'DMEL Ch. 6–7'],
+  ['Entrepreneurial Strategy, Strategic Control, & Corporate Governance', 'DMEL Ch. 8–9'],
+  ['Organizational Design, Strategic Leadership, & Corporate Entrepreneurship', 'DMEL Ch. 10–12'],
+], 1);
+const MNS301_TM8_14 = materi([
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'DMEL Ch. 1–12'],
+  ['Blue Ocean Strategy: Value Innovation, Strategy Canvas, & ERRC', 'Kim & Mauborgne'],
+  ['Strategy Maps: Mengubah Aset Tak Berwujud Menjadi Hasil Finansial', 'Kaplan & Norton'],
+  ['Studi Kasus I: Platform Business & Digital Ecosystems (Alibaba)', 'Kasus RPP UNAIR'],
+  ['Studi Kasus II: Fast Fashion vs Luxury Strategy (H&M vs LVMH)', 'Kasus RPP UNAIR'],
+  ['Studi Kasus III: Global Aviation & Premium Hub (Emirates Airline)', 'Kasus RPP UNAIR'],
+  ['Studi Kasus IV: Technology Leadership & Multi-Brand (Samsung & P&G)', 'Kasus RPP UNAIR'],
+], 8);
+const MNS301_REF = [
+  'Dess, G., McNamara, G., Eisner, A., & Lee, S.H. (2024). Strategic Management: Text and Cases (11th ed.). McGraw-Hill. (DMEL)',
+  'Kim, W.C. & Mauborgne, R. (2005). Blue Ocean Strategy: How to Create Uncontested Market Space and Make the Competition Irrelevant. Harvard Business School Press.',
+  'Kaplan, R.S. & Norton, D.P. (2004). Strategy Maps: Converting Intangible Assets into Tangible Outcomes. Harvard Business School Press.',
+  'Silabus & RPP Resmi Manajemen Stratejik, FEB Universitas Airlangga.',
+];
+
+// --- PJK202 / PJK301 Perpajakan II (UU HPP, PP 55/2022, PP 58/2023, PMK 168/2023, UU PPN) ---
+// Sumber: RPP Resmi Perpajakan II, Departemen Akuntansi FEB UNAIR.
+const PJK202_TM1_7 = materi([
+  ['Konsep Dasar PPh, Subjek/Objek Pajak, & Biaya 3M', 'UU PPh Pasal 4, 6, 9 jo. UU HPP'],
+  ['Penilaian Harta Pengalihan, Persediaan, & Tarif PPh', 'UU PPh Pasal 10, 17 | PP 55/2022'],
+  ['Hubungan Istimewa & Transfer Pricing (PMK 172/2023)', 'UU PPh Pasal 18 | PMK 172/2023'],
+  ['Penyusutan & Amortisasi Fiskal (PMK 72/2023)', 'UU PPh Pasal 11, 11A | PMK 72/2023'],
+  ['Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%', 'UU PPh Pasal 22, 23, 26 | PP 55/2022'],
+  ['Pemotongan PPh Final Pasal 4(2) & Norma PPh Pasal 15', 'UU PPh Pasal 4(2), 15 | PP 9/2022'],
+  ['Kredit Pajak LN PPh 24, Angsuran PPh 25, & Fasilitas 31E', 'UU PPh Pasal 24, 25, 31E'],
+], 1);
+const PJK202_TM8_14 = materi([
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'UU PPh jo. UU HPP | Kompilasi TM 1-7'],
+  ['Konsep PPh 21/26 Terbaru (TER PP 58/2023 & Natura)', 'PP 58/2023 | PMK 168/2023 | PMK 66/2023'],
+  ['Kalkulasi Komprehensif PPh 21 (Tetap, Lepas, Ahli)', 'PMK 168/2023 | PP 68/2009 Pesangon'],
+  ['Rekonsiliasi Fiskal & SPT Tahunan PPh Badan 1771', 'Formulir 1771 DJP | PSAK 46'],
+  ['Dasar Hukum PPN & PPnBM, PKP, BKP/JKP, & Fasilitas', 'UU PPN jo. UU HPP | PMK 197/2013'],
+  ['Mekanisme e-Faktur Pajak, DPP Nilai Lain, & PM', 'PER-03/PJ/2022 | PMK 71/2022'],
+  ['Restitusi PPN, PPN WAPU, & Pajak Karbon UU HPP', 'UU HPP Bab VI | PMK 59/2022 WAPU'],
+], 8);
+const PJK202_REF = [
+  'Republik Indonesia. UU No. 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah diubah terakhir dengan UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP). (Wajib)',
+  'Republik Indonesia. UU No. 8 Tahun 1983 tentang Pajak Pertambahan Nilai dan PPnBM sebagaimana telah diubah terakhir dengan UU HPP. (Wajib)',
+  'Kementerian Keuangan RI. PP No. 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang PPh.',
+  'Kementerian Keuangan RI. PP No. 58 Tahun 2023 & PMK No. 168 Tahun 2023 tentang Pemotongan PPh Pasal 21 (TER).',
+  'Kementerian Keuangan RI. PMK No. 172 Tahun 2023 tentang Penerapan Prinsip Kewajaran dan Kelaziman Usaha (Transfer Pricing).',
+  'Waluyo. (2020/2022). Perpajakan Indonesia (Edisi Terbaru). Salemba Empat.',
+  'Resmi, Siti. (2022). Perpajakan: Teori dan Kasus (Edisi 12). Salemba Empat.',
+];
+
+// --- AKS201 Akuntansi Sektor Publik (PP 71/2010 SAP Akrual & Permendagri 77/2020) ---
+// Sumber: Kontrak Perkuliahan & Silabus Resmi Akuntansi Sektor Publik, Departemen Akuntansi FEB UNAIR.
+const AKS201_TM1_7 = materi([
+  ['Karakteristik Organisasi Sektor Publik & Peran Akuntansi', 'Mardiasmo Bab 1 | Deddi Nordiawan Bab 1'],
+  ['Regulasi & Standar OSP Non-Pemerintahan (ISAK 35)', 'ISAK 35 | PSAK Nonlaba | UU Yayasan'],
+  ['Regulasi Pengelolaan Keuangan Negara & SAP (PP 71/2010)', 'UU 17/2003, UU 1/2004, UU 15/2004 | SAP'],
+  ['Perencanaan & Anggaran Sektor Publik (Konsep & Fungsi)', 'Mardiasmo Bab 4 | Deddi Nordiawan Bab 4'],
+  ['Pendekatan Sistem Penganggaran (Line-Item vs PB vs ZBB)', 'Mardiasmo Bab 5 | Deddi Nordiawan Bab 5'],
+  ['Teknik & Basis Akuntansi Sektor Publik (Dana & Anggaran)', 'Mardiasmo Bab 9 | Deddi Nordiawan Bab 6'],
+  ['Laporan Keuangan Pemerintah Berbasis Akrual (PP 71/2010)', 'PSAP 01 s.d 12 | PP 71/2010 Lampiran I'],
+], 1);
+const AKS201_TM8_14 = materi([
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'PP 71/2010 | Kompilasi TM 1-7'],
+  ['Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)', 'Permendagri 77/2020 | Permendagri 64/2013'],
+  ['Pengukuran Kinerja Pemerintah & Value for Money (3E)', 'Mardiasmo Bab 8 | SAKIP PermenPAN-RB'],
+  ['Audit Sektor Publik: Pengawasan APIP & Pemeriksaan BPK', 'UU 15/2004 | Standar SPKN BPK'],
+  ['Akuntansi & Pelaporan Keuangan Nirlaba (LSM & Parpol)', 'ISAK 35 | UU 2/2011 Partai Politik'],
+  ['Pengelolaan Keuangan BLU & BLUD (Rumah Sakit)', 'PP 23/2005 | PSAP 13 Pelaporan BLU'],
+  ['Topik Riset Kontemporer & Tren Akuntansi Sektor Publik', 'Jurnal ASP | Isu Keuangan Desa & SPBE'],
+], 8);
+const AKS201_REF = [
+  'Komite Standar Akuntansi Pemerintahan (KSAP). PP No. 71 Tahun 2010 tentang Standar Akuntansi Pemerintahan (Berbasis Akrual). (Wajib)',
+  'Kementerian Dalam Negeri RI. Permendagri No. 77 Tahun 2020 tentang Pedoman Teknis Pengelolaan Keuangan Daerah.',
+  'Ikatan Akuntan Indonesia (IAI). ISAK 35 Penyajian Laporan Keuangan Entitas Berorientasi Nonlaba.',
+  'Mardiasmo. (2018). Akuntansi Sektor Publik (Edisi Terbaru). Andi Offset.',
+  'Nordiawan, D., & Hertianti, A. (2010). Akuntansi Sektor Publik (Edisi 2). Salemba Empat.',
+  'Badan Pemeriksa Keuangan (BPK RI). Peraturan BPK No. 1 Tahun 2017 tentang Standar Pemeriksaan Keuangan Negara (SPKN).',
+];
+
+// --- MNK201 Manajemen Keuangan (Brigham & Houston Fundamentals of Financial Management 15e/16e) ---
+// Sumber: Kontrak Perkuliahan & Silabus Resmi Manajemen Keuangan, Departemen Akuntansi FEB UNAIR.
+const MNK201_TM1_7 = materi([
+  ['An Overview of Financial Management & Corporate Goals', 'Brigham & Houston Ch. 1'],
+  ['Analysis of Financial Statements & The DuPont System', 'Brigham & Houston Ch. 4'],
+  ['Time Value of Money (Nilai Waktu dari Uang)', 'Brigham & Houston Ch. 5'],
+  ['Risk and Rates of Return & Model CAPM', 'Brigham & Houston Ch. 8'],
+  ['The Cost of Capital & Weighted Average Cost of Capital (WACC)', 'Brigham & Houston Ch. 10'],
+  ['The Basics of Capital Budgeting (NPV, IRR, MIRR, Payback)', 'Brigham & Houston Ch. 11'],
+  ['Cash Flow Estimation and Project Risk Analysis', 'Brigham & Houston Ch. 12'],
+], 1);
+const MNK201_TM8_14 = materi([
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Brigham & Houston Ch. 1-12 | Kompilasi TM 1-7'],
+  ['Capital Structure, Leverage, & Modigliani-Miller', 'Brigham & Houston Ch. 14'],
+  ['Distributions to Shareholders: Dividends & Repurchases', 'Brigham & Houston Ch. 15'],
+  ['Working Capital Management - Part I: Cash & Receivables', 'Brigham & Houston Ch. 16'],
+  ['Working Capital Management - Part II: Inventory & Financing', 'Brigham & Houston Ch. 16'],
+  ['Multinational Financial Management & Currency Risk', 'Brigham & Houston Ch. 19'],
+  ['Mergers, Acquisitions, & Corporate Failure Analysis', 'Brigham & Houston Ch. 21 & Artikel'],
+], 8);
+const MNK201_REF = [
+  'Brigham, E. F., & Houston, J. F. (2019/2022). Fundamentals of Financial Management (15th/16th ed.). Cengage Learning. (Wajib)',
+  'Departemen Akuntansi FEB UNAIR. Kontrak Perkuliahan & Silabus Manajemen Keuangan Gasal 2026/2027.',
+];
+
+// --- AKA201 Pengauditan Berbasis Risiko I (Arens Auditing 16e & Standar Audit ISA/IAPI) ---
+// Sumber: RPP Resmi OBE Pengauditan Berbasis Risiko I, Departemen Akuntansi FEB UNAIR.
+const AKA201_TM1_7 = materi([
+  ['Konsep Dasar Audit, Jasa Asurans, & Profesi Akuntan Publik', 'Arens Ch. 1 & 2 | SA 200, ISQM 1'],
+  ['Etika Profesi, Dilema Etis, & Independensi Auditor', 'Arens Ch. 4 | Kode Etik IESBA / IAPI'],
+  ['Tanggung Jawab Audit, Skeptisisme, & Asersi Manajemen', 'Arens Ch. 6 | SA 200, SA 315 Revisi'],
+  ['Laporan Audit Independen, Jenis Opini, & KAM', 'Arens Ch. 3 | SA 700, 701, 705, 706'],
+  ['Konsep Materialitas Audit: Perencanaan & Pelaksanaan', 'Arens Ch. 9 | SA 320, SA 450'],
+  ['Bukti Audit, 8 Prosedur Pengujian, & Kertas Kerja', 'Arens Ch. 7 | SA 500, SA 230'],
+  ['Prosedur Analitis & Analisis Rasio Keuangan', 'Arens Ch. 7, 8 | SA 520'],
+], 1);
+const AKA201_TM8_14 = materi([
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Arens Ch. 1-9 | Kompilasi TM 1-7'],
+  ['Perencanaan Audit Menyeluruh & Pemahaman Bisnis Klien', 'Arens Ch. 8 | SA 300, SA 315'],
+  ['Model Risiko Audit (Audit Risk Model) & Risiko Signifikan', 'Arens Ch. 9 | SA 315 Revisi'],
+  ['Pertimbangan Risiko Kecurangan (Fraud Risk & Triangle)', 'Arens Ch. 11 | SA 240'],
+  ['Pengendalian Internal COSO & General IT Controls (GITC)', 'Arens Ch. 10, 12 | COSO 2013'],
+  ['Pengujian Pengendalian (TOC) & Pengujian Substantif', 'Arens Ch. 13 | SA 330, SA 265'],
+  ['Teknik Audit Berbantuan Komputer (CAATs) & Program Audit', 'Arens Ch. 13 | IAASB Tech Guide'],
+], 8);
+const AKA201_REF = [
+  'Arens, A.A., Elder, R.J., Beasley, M.S., Hogan, C.E., & Jones, J.C. (2024). Auditing: The Art and Science of Assurance Engagements (16th ed.). Pearson. (Wajib)',
+  'Institut Akuntan Publik Indonesia (IAPI). Standar Profesional Akuntan Publik (SPAP) & Standar Audit (SA 200 s.d SA 706).',
+  'IAASB. International Standards on Auditing (ISA) Consolidated Handbook.',
+  'Committee of Sponsoring Organizations of the Treadway Commission (COSO). (2013). Internal Control - Integrated Framework.',
+];
+
+// --- AKK202 Akuntansi Keuangan Menengah II (Kieso Intermediate IFRS 5e) ---
+// RPP OBE Akuntansi Keuangan Menengah II, Departemen Akuntansi FEB UNAIR.
+const AKK202_TM1_7 = materi([
+  ['Akuntansi Aset Tetap, Properti Investasi, dan Tanah', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 13, 26'],
+  ['Kos setelah Akuisisi & Disposisi Aset Tetap', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 58'],
+  ['Depresiasi & Deplesi Sumber Daya Alam', 'Kieso IFRS 5e Ch. 11 | PSAK 16'],
+  ['Penurunan Nilai Aset (Impairment) & Penyajian', 'Kieso IFRS 5e Ch. 11 | PSAK 48'],
+  ['Aset Tidak Berwujud (Intangible Assets)', 'Kieso IFRS 5e Ch. 12 | PSAK 19'],
+  ['Liabilitas Jangka Pendek (Current Liabilities)', 'Kieso IFRS 5e Ch. 13 | PSAK 71'],
+  ['Provisi, Kontinjensi & Peristiwa Pasca Pelaporan', 'Kieso IFRS 5e Ch. 13 | PSAK 57'],
+], 1);
+const AKK202_TM8_14 = materi([
+  ['Liabilitas Jangka Panjang & Penerbitan Obligasi', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
+  ['Amortisasi Bunga Efektif & Pelunasan Dini Obligasi', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
+  ['Ekuitas: Saham Biasa, Preferen & Saham Treasuri', 'Kieso IFRS 5e Ch. 15 | PSAK 50'],
+  ['Kebijakan Dividen & Hibah Pemerintah', 'Kieso IFRS 5e Ch. 15 | UU PT 40/2007'],
+  ['Sekuritas Dilutif & Kompensasi Berbasis Saham', 'Kieso IFRS 5e Ch. 16 | PSAK 50, 71'],
+  ['Laba Per Saham (Basic & Diluted EPS)', 'Kieso IFRS 5e Ch. 16 | PSAK 56'],
+  ['Investasi Efek Utang dan Ekuitas', 'Kieso IFRS 5e Ch. 17 | PSAK 71, 65'],
+], 8);
+const AKK202_REF = [
+  'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. (2024). Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons. (Wajib)',
+  'Ikatan Akuntan Indonesia (IAI). Standar Akuntansi Keuangan (SAK) Indonesia: PSAK 16, 13, 26, 48, 19, 57, 71, 50, 56.',
+];
+
 // --- AKM201 Akuntansi Biaya (Carter/Usry = CU; Narsa = IMN) -----------
 // SILABI Akuntansi Biaya 2026, Departemen Akuntansi FEB UNAIR.
 const AKM201_TM1_7 = materi([
-  ['Pengantar Akuntansi Biaya, Sistem Akuntansi Biaya & Klasifikasi Biaya', 'CU 1–2 · IMN 1'],
-  ['Analisis Perilaku Biaya', 'CU 3 · IMN 2'],
-  ['Siklus Biaya, Sistem Biaya & Akumulasi Biaya', 'CU 4–5 · IMN 3'],
-  ['Job Order Costing (Biaya Berdasarkan Pesanan)', 'CU 5 · IMN 4'],
-  ['Process Costing — Metode Rata-rata (Average)', 'CU 6 · IMN 5'],
-  ['Process Costing — Metode FIFO', 'CU 6 · IMN 5'],
-  ['Biaya Kualitas & Akuntansi untuk Kerugian Produksi', 'CU 7 · IMN 6'],
+  ['Pengantar Akuntansi Biaya, Sistem Akuntansi Biaya & Klasifikasi Biaya', 'CU 1â€“2 Â· IMN 1'],
+  ['Analisis Perilaku Biaya', 'CU 3 Â· IMN 2'],
+  ['Siklus Biaya, Sistem Biaya & Akumulasi Biaya', 'CU 4â€“5 Â· IMN 3'],
+  ['Job Order Costing (Biaya Berdasarkan Pesanan)', 'CU 5 Â· IMN 4'],
+  ['Process Costing â€” Metode Rata-rata (Average)', 'CU 6 Â· IMN 5'],
+  ['Process Costing â€” Metode FIFO', 'CU 6 Â· IMN 5'],
+  ['Biaya Kualitas & Akuntansi untuk Kerugian Produksi', 'CU 7 Â· IMN 6'],
 ], 1);
 const AKM201_TM8_14 = materi([
-  ['Produk Gabungan & Produk Sampingan', 'CU 8 · IMN 7'],
-  ['Perencanaan & Pengendalian Bahan Baku Langsung', 'CU 9 · IMN 8'],
-  ['Perencanaan & Pengendalian Tenaga Kerja Langsung', 'CU 10 · IMN 9'],
-  ['Biaya Overhead Pabrik: Perencanaan, Dibebankan & Aktual', 'CU 11 · IMN 10'],
-  ['Biaya Overhead Pabrik: Departementalisasi', 'CU 12 · IMN 11'],
-  ['Activity-Based Costing (ABC)', 'CU 13 · IMN 12'],
-  ['Review Materi UAS', '—'],
+  ['Produk Gabungan & Produk Sampingan', 'CU 8 Â· IMN 7'],
+  ['Perencanaan & Pengendalian Bahan Baku Langsung', 'CU 9 Â· IMN 8'],
+  ['Perencanaan & Pengendalian Tenaga Kerja Langsung', 'CU 10 Â· IMN 9'],
+  ['Biaya Overhead Pabrik: Perencanaan, Dibebankan & Aktual', 'CU 11 Â· IMN 10'],
+  ['Biaya Overhead Pabrik: Departementalisasi', 'CU 12 Â· IMN 11'],
+  ['Activity-Based Costing (ABC)', 'CU 13 Â· IMN 12'],
+  ['Review Materi UAS', 'â€”'],
 ], 8);
 const AKM201_REF = [
   'Carter, W. K., Hwang, & Chou. (2015). Cost Accounting (Asia Edition).',
@@ -109,21 +297,21 @@ const PJK201_TM1_7 = materi([
   ['Ketentuan Umum & Tata Cara Perpajakan (KUP)', 'UU KUP'],
   ['NPWP, NIK sebagai NPWP & Pengukuhan PKP', 'UU KUP'],
   ['SPT: Pembayaran, Penyetoran & Pelaporan', 'UU KUP'],
-  ['PPh Pasal 21 — Konsep, Subjek & Objek', 'UU PPh'],
-  ['PPh Pasal 21 — Penghitungan (Skema TER & Tahunan)', 'PP 58/2023'],
+  ['PPh Pasal 21 â€” Konsep, Subjek & Objek', 'UU PPh'],
+  ['PPh Pasal 21 â€” Penghitungan (Skema TER & Tahunan)', 'PP 58/2023'],
   ['PPh Pasal 22', 'UU PPh'],
 ], 1);
 const PJK201_TM8_14 = materi([
-  ['Penelitian, Pemeriksaan, dan Penyidikan Pajak', 'UU KUP · PMK 15/2025 · PMK 81/2024'],
-  ['Penetapan & Ketetapan Pajak, Restitusi Pajak', 'UU KUP · PMK 28/2026 · PMK 81/2024 s.t.d.t.d. PMK 1/2026'],
-  ['Sengketa Pajak: Keberatan, Banding, Gugatan & PK', 'UU KUP · UU 14/2002 · Putusan MK 26/PUU-XXI/2023'],
-  ['Penagihan Pajak, Surat Paksa, Hak Mendahulu & Tindak Pidana Fiskal', 'UU KUP · UU PPSP · PMK 61/2023'],
-  ['Bea Meterai', 'UU 10/2020 · PMK 78/2024'],
-  ['Pajak Daerah & Retribusi Daerah (1): Pajak Provinsi', 'UU 1/2022 HKPD · PP 35/2023'],
-  ['Pajak Daerah & Retribusi Daerah (2): PBB-P2, BPHTB & Pajak Kabupaten/Kota', 'UU 1/2022 HKPD · PP 35/2023'],
+  ['Penelitian, Pemeriksaan, dan Penyidikan Pajak', 'UU KUP Â· PMK 15/2025 Â· PMK 81/2024'],
+  ['Penetapan & Ketetapan Pajak, Restitusi Pajak', 'UU KUP Â· PMK 28/2026 Â· PMK 81/2024 s.t.d.t.d. PMK 1/2026'],
+  ['Sengketa Pajak: Keberatan, Banding, Gugatan & PK', 'UU KUP Â· UU 14/2002 Â· Putusan MK 26/PUU-XXI/2023'],
+  ['Penagihan Pajak, Surat Paksa, Hak Mendahulu & Tindak Pidana Fiskal', 'UU KUP Â· UU PPSP Â· PMK 61/2023'],
+  ['Bea Meterai', 'UU 10/2020 Â· PMK 78/2024'],
+  ['Pajak Daerah & Retribusi Daerah (1): Pajak Provinsi', 'UU 1/2022 HKPD Â· PP 35/2023'],
+  ['Pajak Daerah & Retribusi Daerah (2): PBB-P2, BPHTB & Pajak Kabupaten/Kota', 'UU 1/2022 HKPD Â· PP 35/2023'],
 ], 8);
 const PJK201_REF = [
-  'Materi_Perpajakan_I_TM8-14_Kompilasi (2).md — kompilasi Perpajakan I TM8-14, diperbarui sampai Juni 2026.',
+  'Materi_Perpajakan_I_TM8-14_Kompilasi (2).md â€” kompilasi Perpajakan I TM8-14, diperbarui sampai Juni 2026.',
   'UU KUP (UU No. 6/1983 sebagaimana terakhir diubah dengan UU No. 6/2023; perubahan substantif melalui UU HPP No. 7/2021), UU No. 10/2020 tentang Bea Meterai, dan UU No. 1/2022 tentang HKPD.',
   'PMK 15/2025, PMK 17/2025, PMK 28/2026, PMK 78/2024, PMK 81/2024 s.t.d.t.d. PMK 1/2026, PMK 61/2023, PMK 118/2024, dan PMK 111/2025 sesuai cakupan materi.',
 ];
@@ -131,22 +319,22 @@ const PJK201_REF = [
 // --- MAS122 Statistik untuk Akuntan (Lind = DA; Anderson = AA) --------
 // Silabus Statistik untuk Akuntan, Prof. Dr. I Made Narsa.
 const MAS122_TM1_7 = materi([
-  ['Pengenalan Statistik dalam Akuntansi dan Bisnis', 'DA 1 · AA 1'],
-  ['Statistik Deskriptif — Tendensi Sentral (mean, median, modus)', 'DA 2–3 · AA 3'],
-  ['Statistik Deskriptif — Dispersi (rentang, varians, standar deviasi)', 'DA 2–3 · AA 4'],
-  ['Probabilitas & Distribusi (normal, binomial)', 'DA 5–7 · AA 6–9'],
-  ['Estimasi (poin & interval)', 'DA 9 · AA 11'],
-  ['Uji Hipotesis — Bagian 1 (mean & proporsi)', 'DA 10 · AA 12'],
-  ['Uji Hipotesis — Bagian 2 (perbedaan rata-rata; error tipe I & II)', 'DA 11 · AA 12'],
+  ['Pengenalan Statistik dalam Akuntansi dan Bisnis', 'DA 1 Â· AA 1'],
+  ['Statistik Deskriptif â€” Tendensi Sentral (mean, median, modus)', 'DA 2â€“3 Â· AA 3'],
+  ['Statistik Deskriptif â€” Dispersi (rentang, varians, standar deviasi)', 'DA 2â€“3 Â· AA 4'],
+  ['Probabilitas & Distribusi (normal, binomial)', 'DA 5â€“7 Â· AA 6â€“9'],
+  ['Estimasi (poin & interval)', 'DA 9 Â· AA 11'],
+  ['Uji Hipotesis â€” Bagian 1 (mean & proporsi)', 'DA 10 Â· AA 12'],
+  ['Uji Hipotesis â€” Bagian 2 (perbedaan rata-rata; error tipe I & II)', 'DA 11 Â· AA 12'],
 ], 1);
 const MAS122_TM8_14 = materi([
   ['Analisis Varians (ANOVA)', 'DA 12'],
-  ['Analisis Regresi & Korelasi — Bagian 1', 'DA 13 · AA 15'],
-  ['Analisis Regresi & Korelasi — Bagian 2', 'DA 13 · AA 15'],
+  ['Analisis Regresi & Korelasi â€” Bagian 1', 'DA 13 Â· AA 15'],
+  ['Analisis Regresi & Korelasi â€” Bagian 2', 'DA 13 Â· AA 15'],
   ['Analisis Seri Waktu (ARIMA)', 'DA 18'],
   ['Metode Non-parametrik', 'DA 16'],
   ['Perangkat Lunak Statistik & Persiapan Proyek Akhir', 'AA 16'],
-  ['Presentasi Proyek Akhir', '—'],
+  ['Presentasi Proyek Akhir', 'â€”'],
 ], 8);
 const MAS122_REF = [
   'Lind, D. A., Marchal, W. G., & Wathen, S. A. (2017). Statistical Techniques in Business & Economics (17th ed.). McGraw-Hill. (DA)',
@@ -156,22 +344,22 @@ const MAS122_REF = [
 // --- MNU101 Pengantar Bisnis (Pride; Nickels) -------------------------
 // RPS Introduction to Business (MNU101), FEB UNAIR.
 const MNU101_TM1_7 = materi([
-  ['Business: A Definition, Business Cycle, Economic Systems & Competition', 'Pride Ch. 1 · Nickels Ch. 2'],
-  ['Business Ethics & Social Responsibility', 'Pride Ch. 2 · Nickels Ch. 3'],
-  ['Global Business', 'Pride Ch. 3 · Nickels Ch. 4'],
-  ['Forms of Business Ownership & Entrepreneurship', 'Pride Ch. 4–5 · Nickels Ch. 5'],
-  ['The Management Process', 'Pride Ch. 6 · Nickels Ch. 7'],
-  ['The Flexible Organization', 'Pride Ch. 7 · Nickels Ch. 8'],
-  ['Producing Quality Goods & Services', 'Pride Ch. 8 · Nickels Ch. 9'],
+  ['Business: A Definition, Business Cycle, Economic Systems & Competition', 'Pride Ch. 1 Â· Nickels Ch. 2'],
+  ['Business Ethics & Social Responsibility', 'Pride Ch. 2 Â· Nickels Ch. 3'],
+  ['Global Business', 'Pride Ch. 3 Â· Nickels Ch. 4'],
+  ['Forms of Business Ownership & Entrepreneurship', 'Pride Ch. 4â€“5 Â· Nickels Ch. 5'],
+  ['The Management Process', 'Pride Ch. 6 Â· Nickels Ch. 7'],
+  ['The Flexible Organization', 'Pride Ch. 7 Â· Nickels Ch. 8'],
+  ['Producing Quality Goods & Services', 'Pride Ch. 8 Â· Nickels Ch. 9'],
 ], 1);
 const MNU101_TM8_14 = materi([
-  ['Human Resource Management & Motivation', 'Pride Ch. 9–10 · Nickels Ch. 10–11'],
-  ['Customer Relations through Effective Marketing', 'Pride Ch. 11 · Nickels Ch. 13'],
-  ['Product Creation & Pricing', 'Pride Ch. 12 · Nickels Ch. 14'],
-  ['Product Distribution & Promotion', 'Pride Ch. 13 · Nickels Ch. 16'],
+  ['Human Resource Management & Motivation', 'Pride Ch. 9â€“10 Â· Nickels Ch. 10â€“11'],
+  ['Customer Relations through Effective Marketing', 'Pride Ch. 11 Â· Nickels Ch. 13'],
+  ['Product Creation & Pricing', 'Pride Ch. 12 Â· Nickels Ch. 14'],
+  ['Product Distribution & Promotion', 'Pride Ch. 13 Â· Nickels Ch. 16'],
   ['Social Media & E-Business', 'Pride Ch. 14'],
-  ['Managerial & Accounting Information', 'Pride Ch. 15 · Nickels Ch. 17'],
-  ['Financial Management', 'Pride Ch. 16 · Nickels Ch. 18'],
+  ['Managerial & Accounting Information', 'Pride Ch. 15 Â· Nickels Ch. 17'],
+  ['Financial Management', 'Pride Ch. 16 Â· Nickels Ch. 18'],
 ], 8);
 const MNU101_REF = [
   'Pride, W. M., Hughes, R. J., & Kapoor, J. R. (2019). Foundations of Business (6th ed.). Cengage.',
@@ -182,22 +370,22 @@ const MNU101_REF = [
 // --- EKT109 Pengantar Teori Ekonomi (Samuelson; Mankiw) ---------------
 // Kontrak Perkuliahan PTE 2025/2026.
 const EKT109_TM1_7 = materi([
-  ['Konsep Dasar Ilmu Ekonomi (bagian 1)', 'Samuelson Ch. 1–2'],
-  ['Konsep Dasar Ilmu Ekonomi (bagian 2)', 'Samuelson Ch. 1–2'],
-  ['Elemen Dasar Permintaan & Penawaran', 'Samuelson Ch. 3 · Mankiw Ch. 4'],
-  ['Permintaan & Perilaku Konsumen', 'Samuelson Ch. 4 · Mankiw Ch. 5'],
+  ['Konsep Dasar Ilmu Ekonomi (bagian 1)', 'Samuelson Ch. 1â€“2'],
+  ['Konsep Dasar Ilmu Ekonomi (bagian 2)', 'Samuelson Ch. 1â€“2'],
+  ['Elemen Dasar Permintaan & Penawaran', 'Samuelson Ch. 3 Â· Mankiw Ch. 4'],
+  ['Permintaan & Perilaku Konsumen', 'Samuelson Ch. 4 Â· Mankiw Ch. 5'],
   ['Elastisitas & Penerapannya', 'Samuelson Ch. 6'],
-  ['Kebijakan Pemerintah dalam Kerangka Permintaan & Penawaran', 'Samuelson Ch. 7 · Mankiw Ch. 13'],
-  ['Produsen, Konsumen & Efisiensi Pasar', 'Samuelson Ch. 8–11 · Mankiw Ch. 14–17'],
+  ['Kebijakan Pemerintah dalam Kerangka Permintaan & Penawaran', 'Samuelson Ch. 7 Â· Mankiw Ch. 13'],
+  ['Produsen, Konsumen & Efisiensi Pasar', 'Samuelson Ch. 8â€“11 Â· Mankiw Ch. 14â€“17'],
 ], 1);
 const EKT109_TM8_14 = materi([
-  ['Pendapatan Nasional', 'Samuelson Ch. 19–20 · Mankiw Ch. 23–24'],
-  ['Perekonomian Tertutup (bagian 1): Identitas, Konsumsi, Tabungan & Dana Pinjaman', 'Samuelson Ch. 21–22 · Mankiw Ch. 26, 33–34'],
-  ['Perekonomian Tertutup (bagian 2): Keseimbangan, Multiplier & Kebijakan Fiskal', 'Samuelson Ch. 21–22 · Mankiw Ch. 26, 33–34'],
-  ['Uang & Sistem Keuangan', 'Samuelson Ch. 23–24 · Mankiw Ch. 29–30'],
-  ['Perekonomian Terbuka', 'Samuelson Ch. 27–28 · Mankiw Ch. 31–32'],
-  ['Inflasi & Pengangguran', 'Samuelson Ch. 29–30 · Mankiw Ch. 24, 28, 30, 33–35'],
-  ['Pertumbuhan Ekonomi', 'Samuelson Ch. 25 · Mankiw Ch. 25–26'],
+  ['Pendapatan Nasional', 'Samuelson Ch. 19â€“20 Â· Mankiw Ch. 23â€“24'],
+  ['Perekonomian Tertutup (bagian 1): Identitas, Konsumsi, Tabungan & Dana Pinjaman', 'Samuelson Ch. 21â€“22 Â· Mankiw Ch. 26, 33â€“34'],
+  ['Perekonomian Tertutup (bagian 2): Keseimbangan, Multiplier & Kebijakan Fiskal', 'Samuelson Ch. 21â€“22 Â· Mankiw Ch. 26, 33â€“34'],
+  ['Uang & Sistem Keuangan', 'Samuelson Ch. 23â€“24 Â· Mankiw Ch. 29â€“30'],
+  ['Perekonomian Terbuka', 'Samuelson Ch. 27â€“28 Â· Mankiw Ch. 31â€“32'],
+  ['Inflasi & Pengangguran', 'Samuelson Ch. 29â€“30 Â· Mankiw Ch. 24, 28, 30, 33â€“35'],
+  ['Pertumbuhan Ekonomi', 'Samuelson Ch. 25 Â· Mankiw Ch. 25â€“26'],
 ], 8);
 const EKT109_REF = [
   'Samuelson, P. A., & Nordhaus, W. D. (2010). Economics (19th ed.). McGraw-Hill.',
@@ -234,7 +422,7 @@ const PDK_TM8_14 = materi([['Strategi Pemasaran dan Branding'], ['Dasar Manajeme
 
 
 // =====================================================================
-// STRUKTUR KURIKULUM (Semester 1 & 2 dibuka; 3–8 terkunci/placeholder)
+// STRUKTUR KURIKULUM (Semester 1 & 2 dibuka; 3â€“8 terkunci/placeholder)
 // =====================================================================
 export const SEMESTERS: Semester[] = [
   {
@@ -307,12 +495,12 @@ export const SEMESTERS: Semester[] = [
             ],
             materiTM1_7: materi([
               ['Hakikat Akuntansi & Kesulitan Etis Utama (True Disclosure)', 'Duska 1'],
-              ['Pengukuran & Pelaporan: Laporan Keuangan, Nilai Aset, COGS', 'Duska 1–2'],
+              ['Pengukuran & Pelaporan: Laporan Keuangan, Nilai Aset, COGS', 'Duska 1â€“2'],
               ['Pengantar Etika: Definisi, Dimensi & Tingkatan', 'Duska 2'],
-              ['Kode Etik Profesi & Prinsip AICPA', 'AICPA · Duska 3'],
+              ['Kode Etik Profesi & Prinsip AICPA', 'AICPA Â· Duska 3'],
               ['Teori Moral untuk Akuntan (Egoisme, Utilitarianisme, Deontologi)', 'Duska 3'],
               ['Etika Pengungkapan & Penerapan pada Profesi Akuntan', 'Duska 4'],
-              ['Review & Studi Kasus UTS', '—'],
+              ['Review & Studi Kasus UTS', 'â€”'],
             ], 1),
             materiTM8_14: materi([
               ['Hubungan Etika dengan Moral & Agama (termasuk Etika Bisnis Islam)', 'RPS 8'],
@@ -330,6 +518,12 @@ export const SEMESTERS: Semester[] = [
       {
         title: 'Mata Kuliah Pendukung (Bisnis & Ekonomi)',
         courses: [
+          {
+            code: 'MNM101', newCode: 'MNM201', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
+            references: MNM101_REF,
+            materiTM1_7: MNM101_TM1_7, materiTM8_14: MNM101_TM8_14,
+            featureBadge: 'Modul Interaktif + 3 Kasus Keputusan',
+          },
           {
             code: 'MNU101', newCode: 'FEB25603004', name: 'Pengantar Bisnis', sks: 3, iconKey: 'briefcase',
             references: MNU101_REF,
@@ -364,9 +558,17 @@ export const SEMESTERS: Semester[] = [
         title: 'Mata Kuliah Keahlian',
         highlight: true,
         courses: [
-          { code: 'AKK202', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', materiTM1_7: makeMateri('AKM II', 1, 7), materiTM8_14: makeMateri('AKM II', 8, 14) },
+          {
+            code: 'AKK202', newCode: 'FEB25603011', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (L)',
+            references: AKK202_REF,
+            materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, featureBadge: 'Modul Interaktif + Kasus & Jurnal',
+          },
           { code: 'AKM202', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', materiTM1_7: makeMateri('Akuntansi Manajemen', 1, 7), materiTM8_14: makeMateri('Akuntansi Manajemen', 8, 14) },
-          { code: 'AKS201', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('ASP', 1, 7), materiTM8_14: makeMateri('ASP', 8, 14) },
+          {
+            code: 'AKS201', newCode: 'FEB25603013', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
+            references: AKS201_REF,
+            materiTM1_7: AKS201_TM1_7, materiTM8_14: AKS201_TM8_14, featureBadge: 'Modul Interaktif + SAP Akrual & SPKN',
+          },
           {
             code: 'AKS301', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book',
             references: [
@@ -379,9 +581,21 @@ export const SEMESTERS: Semester[] = [
             materiTM8_14: makeMateri('SIA', 8, 14),
             flashcardCount: 15, featureBadge: 'Flashcard + Modul Belajar',
           },
-          { code: 'PJK202', name: 'Perpajakan II', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Perpajakan II', 1, 7), materiTM8_14: makeMateri('Perpajakan II', 8, 14) },
-          { code: 'MNK201', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', materiTM1_7: makeMateri('Manajemen Keuangan', 1, 7), materiTM8_14: makeMateri('Manajemen Keuangan', 8, 14) },
-          { code: 'AKA201', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', materiTM1_7: makeMateri('Audit I', 1, 7), materiTM8_14: makeMateri('Audit I', 8, 14) },
+          {
+            code: 'PJK202', newCode: 'FEB25603015', name: 'Perpajakan II', sks: 3, iconKey: 'file', prasyarat: 'PJK201 (L)',
+            references: PJK202_REF,
+            materiTM1_7: PJK202_TM1_7, materiTM8_14: PJK202_TM8_14, featureBadge: 'Modul Interaktif + TER PPh 21 & UU HPP',
+          },
+          {
+            code: 'MNK201', newCode: 'FEB25603014', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', prasyarat: 'AKK106 (L)',
+            references: MNK201_REF,
+            materiTM1_7: MNK201_TM1_7, materiTM8_14: MNK201_TM8_14, featureBadge: 'Modul Interaktif + Model Finansial',
+          },
+          {
+            code: 'AKA201', newCode: 'FEB25603017', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', prasyarat: 'AKK106 (L)',
+            references: AKA201_REF,
+            materiTM1_7: AKA201_TM1_7, materiTM8_14: AKA201_TM8_14, featureBadge: 'Modul Interaktif + Standar ISA/SPAP',
+          },
         ],
       },
     ],
@@ -422,30 +636,9 @@ export const SEMESTERS: Semester[] = [
           { code: 'AKP301', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('Metopen', 1, 7), materiTM8_14: makeMateri('Metopen', 8, 14) },
           {
             code: 'MNS301', newCode: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
-            references: [
-              'Dess, G., McNamara, G., Eisner, A., & Lee, S.H. (2024). Strategic Management: Text and Cases (11th ed.). McGraw-Hill. (DMEL)',
-              'Kim, W.C. & Mauborgne, R. (2005). Blue Ocean Strategy. Harvard Business School Press. (KM)',
-              'Kaplan, R.S. & Norton, D.P. (2004). Strategy Maps: Converting Intangible Assets into Tangible Outcomes. Harvard Business School Press. (KN)',
-            ],
-            materiTM1_7: materi([
-              ['Strategic Management: Creating Competitive Advantages', 'DMEL Ch. 1'],
-              ['Analisis Lingkungan Eksternal, Internal & Aset Intelektual', 'DMEL Ch. 2–4'],
-              ['Business-Level Strategy: Keunggulan Bersaing', 'DMEL Ch. 5'],
-              ['Corporate-Level Strategy: Diversifikasi & Aliansi', 'DMEL Ch. 6'],
-              ['International Strategy & Entrepreneurial Strategy', 'DMEL Ch. 7–8'],
-              ['Strategic Control, Corporate Governance & Organizational Design', 'DMEL Ch. 9–10'],
-              ['Strategic Leadership, Innovation & Corporate Entrepreneurship', 'DMEL Ch. 11–12'],
-            ], 1),
-            materiTM8_14: materi([
-              ['Blue Ocean Strategy & Strategy Maps', 'KM · KN'],
-              ['Studi Kasus: TheoryBridge.com', 'DMEL Case'],
-              ['Studi Kasus: H&M\'s Dilemma', 'DMEL Case'],
-              ['Studi Kasus: Louis Vuitton', 'DMEL Case'],
-              ['Studi Kasus: Emirates Airline', 'DMEL Case'],
-              ['Studi Kasus: Samsung Electronics & Alibaba Group', 'DMEL Case'],
-              ['Studi Kasus: Procter & Gamble + Review UAS', 'DMEL Case'],
-            ], 8),
-            featureBadge: 'Modul Belajar',
+            references: MNS301_REF,
+            materiTM1_7: MNS301_TM1_7, materiTM8_14: MNS301_TM8_14,
+            featureBadge: 'Modul Interaktif + 7 Kasus Global',
           },
           { code: 'AKS302', name: 'Akuntansi Syariah', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Akuntansi Syariah', 1, 7), materiTM8_14: makeMateri('Akuntansi Syariah', 8, 14) },
         ],
