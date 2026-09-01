@@ -1,92 +1,128 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_PORTER_FIVE_FORCES_GROUPS } from '../manstratPracticeCases';
 
 const SVG_FIVE_FORCES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PORTER'S FIVE FORCES OF INDUSTRY COMPETITION (DESS ET AL. CH. 2)</text>
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="28" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL 5 KEKUATAN BERSAING INDUSTRI (MICHAEL E. PORTER)</text>
   
-  <!-- Top: Threat of New Entrants -->
-  <rect x="240" y="45" width="200" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="340" y="62" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">1. Ancaman Pendatang Baru</text>
-  <text x="340" y="76" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Hambatan Masuk &amp; Skala Ekonomi)</text>
+  <rect x="235" y="42" width="210" height="38" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="340" y="58" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">ANCAMAN PENDATANG BARU</text>
+  <text x="340" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Skala ekonomis, paten, modal masuk</text>
 
-  <!-- Left: Bargaining Power of Suppliers -->
-  <rect x="25" y="95" width="180" height="50" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="115" y="115" fill="#34d399" font-size="10" font-weight="700" text-anchor="middle">2. Daya Tawar Pemasok</text>
-  <text x="115" y="130" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Diferensiasi &amp; Switching Cost)</text>
+  <rect x="25" y="92" width="180" height="42" rx="6" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="115" y="110" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">DAYA TAWAR PEMASOK</text>
+  <text x="115" y="124" fill="#94a3b8" font-size="7.5" text-anchor="middle">Dominasi vendor, biaya beralih</text>
 
-  <!-- Center: Industry Rivalry -->
-  <rect x="230" y="95" width="220" height="50" rx="8" fill="#0f172a" stroke="#f43f5e" stroke-width="2"/>
-  <text x="340" y="116" fill="#f43f5e" font-size="11" font-weight="800" text-anchor="middle">3. PERSAINGAN ANTAR PESAING</text>
-  <text x="340" y="132" fill="#fca5a5" font-size="8.5" text-anchor="middle">(Pertumbuhan Industri &amp; Biaya Tetap)</text>
+  <rect x="225" y="90" width="230" height="46" rx="8" fill="#0f172a" stroke="#f43f5e" stroke-width="2"/>
+  <text x="340" y="109" fill="#f43f5e" font-size="10" font-weight="700" text-anchor="middle">RIVALITAS ANTAR PESAING</text>
+  <text x="340" y="125" fill="#fca5a5" font-size="8" text-anchor="middle">Perang harga, diferensiasi, pertumbuhan pasar</text>
 
-  <!-- Right: Bargaining Power of Buyers -->
-  <rect x="475" y="95" width="180" height="50" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="565" y="115" fill="#f59e0b" font-size="10" font-weight="700" text-anchor="middle">4. Daya Tawar Pembeli</text>
-  <text x="565" y="130" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Volume Pembelian &amp; Substitusi)</text>
+  <rect x="475" y="92" width="180" height="42" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="565" y="110" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">DAYA TAWAR PEMBELI</text>
+  <text x="565" y="124" fill="#94a3b8" font-size="7.5" text-anchor="middle">Volume beli, switching cost rendah</text>
 
-  <!-- Bottom: Threat of Substitute Products -->
-  <rect x="240" y="155" width="200" height="40" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="340" y="172" fill="#a855f7" font-size="10" font-weight="700" text-anchor="middle">5. Ancaman Produk Pengganti</text>
-  <text x="340" y="186" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Rasio Harga-Kinerja Alternatif)</text>
+  <rect x="235" y="148" width="210" height="38" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="340" y="164" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">ANCAMAN PRODUK SUBSTITUSI</text>
+  <text x="340" y="178" fill="#94a3b8" font-size="7.5" text-anchor="middle">Substitusi fungsi, tren harga-kinerja</text>
 </svg>`;
 
 export const TM2_READING: Reading = {
   tm: 2,
-  title: 'Analisis Lingkungan Eksternal: PESTEL, Porter\'s Five Forces, & Kelompok Strategis',
-  ref: 'Dess, McNamara, Eisner, & Lee (11th ed.) Ch. 2',
-  intro: 'Modul Pembelajaran Mendalam Manajemen Strategik TM 2: Menguasai pemindaian lingkungan makro (*Environmental Scanning, Monitoring, Competitive Intelligence, & Forecasting*), 6 segmen analisis PESTEL (Politik, Ekonomi, Sosial-Budaya, Teknologi, Lingkungan Alami / *Ecological*, dan Hukum), Model Lima Kekuatan Bersaing Michael Porter (*Porter\'s Five Forces of Industry Competition*), konsep Produk Komplementer (*Complements / Sixth Force*), serta pemetaan Kelompok Strategis (*Strategic Groups Mapping*).',
+  title: 'Analisis Lingkungan Eksternal: PESTEL, Porters Five Forces, & Kelompok Strategis',
+  ref: 'Dess et al. Bab 2 | Michael Porter Five Competitive Forces That Shape Strategy | Strategic Groups Mapping',
+  intro: 'TM 2 membahas metode pemindaian lingkungan eksternal makro dan industri: kerangka kerja PESTEL (Politik, Ekonomi, Sosial-Budaya, Teknologi, Lingkungan Alami, Hukum), Model 5 Kekuatan Bersaing Michael Porter (Ancaman Pendatang Baru, Kekuatan Tawar Pemasok, Kekuatan Tawar Pembeli, Ancaman Produk Substitusi, dan Rivalitas Pesaing Sejenis), faktor pelengkap Kekuatan ke-6 (Complementors), serta teknik pemetaan Kelompok Strategis (Strategic Groups Map).',
   objectives: [
-    'Menerapkan 4 aktivitas pemindaian lingkungan eksternal: Scanning, Monitoring, Competitive Intelligence, dan Forecasting.',
-    'Menganalisis 6 segmen Lingkungan Makro PESTEL untuk mengidentifikasi peluang dan ancaman bisnis.',
-    'Menganalisis Model Lima Kekuatan Bersaing Michael Porter untuk menilai profitabilitas dan daya tarik industri.',
-    'Menjelaskan dampak Produk Komplementer (Sixth Force) terhadap dinamika nilai pasar.',
-    'Menyusun peta Kelompok Strategis (Strategic Groups) untuk mengidentifikasi pesaing terdekat dan hambatan mobilitas (*Mobility Barriers*).'
+    'Menganalisis pengaruh 6 kekuatan makroeksternal menggunakan kerangka kerja PESTEL.',
+    'Mendiagnosa potensi profitabilitas rata-rata industri menggunakan Model 5 Kekuatan Porter.',
+    'Mengidentifikasi faktor pendorong hambatan masuk (Barriers to Entry) dan biaya beralih (Switching Costs).',
+    'Menyusun Peta Kelompok Strategis (Strategic Groups Map) untuk mengidentifikasi rivalitas antar-kluster.',
+    'Mengevaluasi peran produk komplementer (Complementors) dalam memperluas ukuran pasar industri.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Model Lima Kekuatan Bersaing Industri (Porter\'s Five Forces)',
-      svg: SVG_FIVE_FORCES,
-      caption: 'Gambar 2.1: Analisis struktural penentu profitabilitas dan intensitas persaingan dalam suatu industri.'
+      caption: 'Gambar 2.1: Model 5 Kekuatan Bersaing Michael E. Porter dalam Menentukan Profitabilitas Industri.',
+      svg: SVG_FIVE_FORCES
     },
-
-    { kind: 'h2', text: '1. Enam Dimensi Lingkungan Makro PESTEL' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 2'
+    },
     {
       kind: 'table',
-      headers: ['Segmen PESTEL', 'Faktor-Faktor Kunci', 'Contoh Dampak Strategis Industri'],
+      headers: ['Kekuatan Bersaing Porter', 'Kondisi yang Memperkuat Ancaman', 'Dampak Langsung Terhadap Laba Industri'],
       rows: [
-        ['**Political (Politik)**', 'Kebijakan pemerintah, perpajakan, stabilitas politik, dan tarif perang dagang.', 'Kenaikan tarif impor komponen baterai mobil listrik.'],
-        ['**Economic (Ekonomi)**', 'Tingkat suku bunga BI, inflasi, nilai tukar mata uang, dan pertumbuhan PDB.', 'Pelemahan rupiah menaikkan biaya impor bahan baku farmasi.'],
-        ['**Sociocultural (Sosial-Budaya)**', 'Perubahan demografi usia, gaya hidup sehat, dan urbanisasi.', 'Lonjakan permintaan produk makanan nabati (*plant-based*).'],
-        ['**Technological (Teknologi)**', 'AI generatif, komputasi awan, robotika, dan bioteknologi.', 'Disrupsi kecerdasan buatan terhadap layanan operasional perbankan.'],
-        ['**Ecological / Natural (Lingkungan)**', 'Pemanasan global, target emisi karbon, dan keberlanjutan ESG.', 'Peralihan ke sumber energi baru terbarukan (EBT).'],
-        ['**Legal (Hukum)**', 'Undang-undang perlindungan data pribadi (UU PDP) dan hukum ketenagakerjaan.', 'Kewajiban kepatuhan keamanan data digital konsumen.']
+        ['Ancaman Pendatang Baru', 'Ketiadaan skala ekonomis, kebutuhan modal rendah, akses distribusi bebas.', 'Menekan harga jual dan memaksa peningkatan investasi defensif.'],
+        ['Kekuatan Tawar Pemasok', 'Pemasok terkonsolidasi monopoli, produk unik tanpa substitusi, switching cost tinggi.', 'Pemasok menaikkan harga bahan baku dan menyedot marjin laba industri.'],
+        ['Kekuatan Tawar Pembeli', 'Pembeli terkonsentrasi besar, produk komoditas seragam, biaya beralih nol.', 'Konsumen menuntut diskon harga besar dan penambahan fitur gratis.'],
+        ['Ancaman Produk Substitusi', 'Produk dari industri lain menawarkan trade-off harga-kinerja superior (contoh: Zoom menggantikan tiket pesawat dinas).', 'Menetapkan plafon batas atas harga (price ceiling) yang dapat dipatok industri.'],
+        ['Rivalitas Pesaing Eksisting', 'Pertumbuhan industri lambat, biaya tetap pabrik tinggi, hambatan keluar tinggi.', 'Perang diskon harga brutal dan belanja promosi iklan yang membakar kas.']
       ],
-      caption: 'Tabel 2.1: Enam segmen analisis lingkungan makro PESTEL.'
+      caption: 'Tabel 2.0: Matriks analisis 5 kekuatan bersaing Porter.'
     },
-
-    { kind: 'h2', text: '2. Lima Kekuatan Bersaing Michael Porter (Five Forces Model)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 7 Hambatan Masuk Pasar (Barriers to Entry)'
+    },
     {
       kind: 'table',
-      headers: ['Kekuatan Bersaing Porter', 'Kondisi yang Memperkuat Tekanan Persaingan', 'Dampak terhadap Profitabilitas Industri'],
+      headers: ['Jenis Hambatan Masuk', 'Mekanisme Pertahanan Terhadap Pendatang Baru', 'Contoh Nyata Industri'],
       rows: [
-        ['1. Ancaman Pendatang Baru', 'Hambatan masuk (*barriers to entry*) rendah, skala ekonomi kecil, biaya beralih (*switching costs*) rendah.', 'Menurunkan harga pasar dan memicu perang promosi.'],
-        ['2. Daya Tawar Pemasok', 'Pemasok terkonsentrasi sedikit, produk unik/terdiferensiasi, tidak ada produk pengganti bahan baku.', 'Menaikkan harga pasokan dan menekan marjin laba produsen.'],
-        ['3. Daya Tawar Pembeli', 'Pembeli membeli dalam volume besar, produk standar komoditas, pembeli memiliki ancaman integrasi ke belakang (*backward integration*).', 'Menuntut diskon harga tinggi dan peningkatan kualitas layanan gratis.'],
-        ['4. Ancaman Produk Pengganti', 'Produk dari industri lain menawarkan rasio harga-kinerja yang lebih menarik bagi konsumen.', 'Membatasi batas atas (*price ceiling*) yang dapat dikenakan produsen.'],
-        ['5. Persaingan Antar Pesaing', 'Banyak pesaing berukuran seimbang, pertumbuhan industri lambat, biaya tetap (*fixed costs*) tinggi, hambatan keluar (*exit barriers*) tinggi.', '**Paling Merusak**: Memicu perang harga agresif yang menguras laba seluruh pemain industri.']
+        ['1. Skala Ekonomis Penawaran', 'Biaya per unit lebih murah pada volume produksi raksasa.', 'Pabrik perakitan mobil Toyota vs produsen mobil baru.'],
+        ['2. Keuntungan Sisi Permintaan (Network Effects)', 'Konsumen enggan bergabung ke platform yang sepi pengguna.', 'Efek jaringan jutaan pengguna Tokopedia dan Shopee.'],
+        ['3. Biaya Beralih Konsumen (Switching Costs)', 'Biaya finansial/waktu jika konsumen beralih ke merek pesaing.', 'Biaya migrasi sistem database ERP SAP ke vendor lain.'],
+        ['4. Kebutuhan Modal Awal Masif', 'Tuntutan investasi belanja modal triliunan rupiah di awal.', 'Industri kilang minyak bumi dan telekomunikasi satelit.'],
+        ['5. Akses Saluran Distribusi', 'Pemain petahana telah mengunci rak supermarket terbaik.', 'Produk Indofood menguasai rak minimarket di seluruh nusantara.'],
+        ['6. Keunggulan Biaya Non-Skala', 'Kepemilikan paten formula rahasia dan lokasi geografis prima.', 'Formula rahasia konsentrat Coca-Cola dan tambang Grasberg Freeport.'],
+        ['7. Kebijakan Regulasi Pemerintah', 'Kebutuhan izin lisensi ketat dari kementerian atau OJK.', 'Izin operasional perbankan umum dan spektrum frekuensi seluler.']
       ],
-      caption: 'Tabel 2.2: Matriks evaluasi daya tarik dan kekuatan bersaing industri.'
+      caption: 'Tabel 2.1: Tujuh hambatan masuk industri menurut Michael Porter.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 2' },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Perbedaan Produk Substitusi vs Pesaing Langsung',
+      prompt: 'Apakah maskapai penerbangan Citilink merupakan produk substitusi bagi Garuda Indonesia? Dan apakah kereta api cepat Whoosh Jakarta-Bandung merupakan produk substitusi bagi penerbangan rute Jakarta-Bandung?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Pesaing Langsung (Direct Competitors)**: Citilink dan Garuda beroperasi di industri yang sama (industri penerbangan). Citilink BUKAN produk substitusi, melainkan **Pesaing Langsung** (bahkan dalam satu grup kepemilikan).',
+            '**Produk Substitusi (Substitutes)**: Kereta cepat Whoosh berasal dari **INDUSTRI YANG BERBEDA** (industri transportasi perkeretaapian darat), namun memenuhi kebutuhan fungsi yang sama (mengantarkan penumpang dari Jakarta ke Bandung).',
+            '**Kesimpulan**: Whoosh adalah **Produk Substitusi Sejati** yang mampu mematikan penerbangan pesawat rute Jakarta-Bandung karena waktu tempuh 45 menit yang jauh lebih efisien.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 2'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Analisis PESTEL Makro', 'Evaluasi 6 dimensi lingkungan umum dan tren disruptif.', 'Mampu mengidentifikasi peluang dan ancaman makroekonomi.'],
+        ['2', 'Porter 5 Forces Model', 'Kalkulasi kekuatan tawar pembeli, pemasok, substitusi, dan hambatan masuk.', 'Mampu menentukan daya tarik dan profitabilitas industri.'],
+        ['3', 'Strategic Groups Mapping', 'Plotting kelompok strategis 2 sumbu dimensi kunci.', 'Mampu memetakan posisi bersaing antar-kelompok rival.']
+      ],
+      caption: 'Tabel 2.2: Peta penguasaan submateri TM 2 Manajemen Strategik.'
+    },
+    CASE_PORTER_FIVE_FORCES_GROUPS,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Strategic Groups**: Sekelompok perusahaan dalam satu industri yang mengikuti strategi serupa di sepanjang dimensi strategis yang sama (misal harga vs cakupan geografis).',
-        '**Mobility Barriers**: Faktor-faktor yang menyulitkan perusahaan untuk berpindah dari satu kelompok strategis ke kelompok strategis lain yang lebih menguntungkan.',
-        '**Complements**: Produk atau jasa yang memiliki dampak positif terhadap nilai produk perusahaan kita sendiri (misal aplikasi perangkat lunak yang meningkatkan penjualan smartphone).'
+        '**Industri yang Menarik Adalah yang Kekuatannya Lemah**: Semakin lemah kelima kekuatan bersaing Porter dalam suatu industri, semakin tinggi rata-rata profitabilitas (ROI) yang dapat dinikmati seluruh perusahaan di dalamnya.',
+        '**Substitusi Datang dari Luar Industri**: Waspadai produk substitusi karena sering kali datang dari industri teknologi yang sama sekali berbeda dan luput dari radar pengawasan divisi intelijen pasar konvensional.',
+        '**Mobility Barriers Antar-Kelompok**: Kelompok strategis dipisahkan oleh hambatan mobilitas (*Mobility Barriers*); pemain LCC berbiaya hemat tidak bisa dengan mudah melompat menjadi maskapai mewah bintang lima.'
       ]
     }
   ]

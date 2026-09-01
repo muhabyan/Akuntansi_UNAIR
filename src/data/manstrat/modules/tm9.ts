@@ -1,92 +1,125 @@
-﻿import type { Reading } from '../../../types';
-import { CASE_BLUE_OCEAN_ERRC } from '../manstratPracticeCases';
+import type { Reading } from '../../../types';
+import { CASE_BLUE_OCEAN_ERRC_CANVAS } from '../manstratPracticeCases';
 
-const SVG_BLUE_OCEAN = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">RED OCEAN VS BLUE OCEAN STRATEGY (KIM &amp; MAUBORGNE)</text>
+const SVG_BLUE_OCEAN_ERRC = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KERANGKA KERJA 4 TINDAKAN ERRC: BLUE OCEAN STRATEGY (KIM &amp; MAUBORGNE)</text>
   
-  <!-- Red Ocean Box -->
-  <rect x="30" y="45" width="290" height="155" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="175" y="68" fill="#f43f5e" font-size="12" font-weight="700" text-anchor="middle">RED OCEAN STRATEGY</text>
-  <text x="175" y="84" fill="#cbd5e1" font-size="9" text-anchor="middle">(Bersaing di Ruang Pasar Saat Ini)</text>
-  <line x1="45" y1="94" x2="305" y2="94" stroke="#334155"/>
-  <text x="50" y="112" fill="#cbd5e1" font-size="8.5">• Mengalahkan kompetisi yang ada</text>
-  <text x="50" y="128" fill="#cbd5e1" font-size="8.5">• Mengeksploitasi permintaan yang sudah ada</text>
-  <text x="50" y="144" fill="#cbd5e1" font-size="8.5">• Melakukan trade-off Biaya vs Nilai</text>
-  <text x="50" y="160" fill="#cbd5e1" font-size="8.5">• Menyelaraskan sistem dengan Diferensiasi ATAU Low-Cost</text>
-  <text x="175" y="185" fill="#fca5a5" font-size="9.5" font-weight="700" text-anchor="middle">Persaingan Berdarah Zero-Sum</text>
+  <rect x="35" y="50" width="285" height="70" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+  <text x="177" y="72" fill="#f43f5e" font-size="10.5" font-weight="700" text-anchor="middle">ELIMINATE (HAPUSKAN)</text>
+  <text x="177" y="90" fill="#cbd5e1" font-size="8" text-anchor="middle">Faktor apa yang sudah lama diperebutkan industri</text>
+  <text x="177" y="105" fill="#fca5a5" font-size="8" text-anchor="middle">namun harus DIHAPUSKAN sama sekali? (Memotong Biaya)</text>
 
-  <!-- Blue Ocean Box -->
-  <rect x="360" y="45" width="290" height="155" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="505" y="68" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">BLUE OCEAN STRATEGY</text>
-  <text x="505" y="84" fill="#cbd5e1" font-size="9" text-anchor="middle">(Menciptakan Ruang Pasar Tanpa Pesaing)</text>
-  <line x1="375" y1="94" x2="635" y2="94" stroke="#334155"/>
-  <text x="380" y="112" fill="#cbd5e1" font-size="8.5">• Menjadikan kompetisi tidak relevan</text>
-  <text x="380" y="128" fill="#cbd5e1" font-size="8.5">• Menciptakan dan menangkap permintaan baru</text>
-  <text x="380" y="144" fill="#cbd5e1" font-size="8.5">• Mendobrak trade-off Biaya vs Nilai</text>
-  <text x="380" y="160" fill="#cbd5e1" font-size="8.5">• Mengejar Diferensiasi DAN Low-Cost serentak</text>
-  <text x="505" y="185" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Inovasi Nilai (Value Innovation)</text>
+  <rect x="355" y="50" width="285" height="70" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="497" y="72" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">REDUCE (KURANGI)</text>
+  <text x="497" y="90" fill="#cbd5e1" font-size="8" text-anchor="middle">Faktor apa yang harus DIKURANGI jauh di bawah</text>
+  <text x="497" y="105" fill="#fde047" font-size="8" text-anchor="middle">standar industri konvensional? (Memotong Biaya)</text>
+
+  <rect x="35" y="128" width="285" height="70" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="150" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">RAISE (TINGKATKAN)</text>
+  <text x="177" y="168" fill="#cbd5e1" font-size="8" text-anchor="middle">Faktor apa yang harus DITINGKATKAN jauh melampaui</text>
+  <text x="177" y="183" fill="#7dd3fc" font-size="8" text-anchor="middle">standar rata-rata industri? (Menciptakan Nilai)</text>
+
+  <rect x="355" y="128" width="285" height="70" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="497" y="150" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">CREATE (CIPTAKAN)</text>
+  <text x="497" y="168" fill="#cbd5e1" font-size="8" text-anchor="middle">Faktor apa yang BELUM PERNAH DITAWARKAN industri</text>
+  <text x="497" y="183" fill="#86efac" font-size="8" text-anchor="middle">dan harus DICIPTAKAN baru? (Membuka Pasar Baru)</text>
 </svg>`;
 
 export const TM9_READING: Reading = {
   tm: 9,
   title: 'Blue Ocean Strategy: Value Innovation, Strategy Canvas, & Kerangka Kerja ERRC',
-  ref: 'W. Chan Kim & Renée Mauborgne, Blue Ocean Strategy (Harvard Business School Press)',
-  intro: 'Modul Pembelajaran Mendalam Manajemen Strategik TM 9: Menguasai paradigma Blue Ocean Strategy (BOS), pembedaan fundamental Red Ocean vs Blue Ocean, Inovasi Nilai (*Value Innovation* - mendobrak trade-off antara Diferensiasi dan Biaya Rendah), Kanvas Strategi (*Strategy Canvas & Value Curve*), Kerangka Kerja Empat Tindakan (*Four Actions Framework / ERRC Grid: Eliminate, Reduce, Raise, Create*), Enam Jalur Rekonstruksi Batas Pasar (*Six Paths Framework*), Tiga Tingkatan Non-Konsumen (*Three Tiers of Noncustomers*), serta Pengurutan Strategis yang Tepat (*Strategic Sequence: Buyer Utility, Price, Cost, Adoption*).',
+  ref: 'W. Chan Kim & Renée Mauborgne (Blue Ocean Strategy) | Harvard Business Review | Inovasi Nilai vs Red Ocean',
+  intro: 'TM 9 membahas paradigma revolusioner Blue Ocean Strategy karya W. Chan Kim & Renée Mauborgne: perbandingan Samudra Merah (Red Ocean yang berdarah-darah akibat perang harga di ruang pasar yang sudah padat) vs Samudra Biru (Blue Ocean yang menciptakan ruang pasar baru tanpa pesaing), fondasi Inovasi Nilai (Value Innovation yang mengejar diferensiasi dan biaya rendah secara simultan), alat diagnostik Kanvas Strategi (Strategy Canvas) dan Kurva Nilai (Value Curve), Kerangka Kerja 4 Tindakan (Four Actions Framework: Eliminate, Reduce, Raise, Create / ERRC), serta 6 Jalur Menembus Batas Pasar (Six Paths Framework).',
   objectives: [
-    'Membedakan logika strategis Red Ocean (bersaing memperebutkan pangsa pasar yang ada) vs Blue Ocean (menciptakan ruang pasar baru yang belum terjamah).',
-    'Menjelaskan konsep Inovasi Nilai (Value Innovation) sebagai batu penjuru Blue Ocean Strategy.',
-    'Menyusun Kanvas Strategi (Strategy Canvas) untuk mendiagnosis profil kurva nilai industri saat ini.',
-    'Menerapkan Matriks ERRC Grid (Eliminate, Reduce, Raise, Create) untuk merombak struktur biaya dan nilai pembeli.',
-    'Menganalisis Enam Jalur Penjelajahan Pasar Baru (Six Paths Framework).',
-    'Mengidentifikasi Tiga Tingkatan Non-Konsumen untuk memperluas batas permintaan pasar.'
+    'Membedakan logika strategis Samudra Merah (Red Ocean) vs Samudra Biru (Blue Ocean).',
+    'Menjelaskan konsep Inovasi Nilai (Value Innovation) dalam mematahkan trade-off biaya vs diferensiasi.',
+    'Mendiagnosa kurva nilai perusahaan dan pesaing menggunakan Kanvas Strategi (Strategy Canvas).',
+    'Merancang inovasi ruang pasar baru menggunakan Matriks 4 Tindakan ERRC (Eliminate, Reduce, Raise, Create).',
+    'Menerapkan Kerangka Kerja 6 Jalur (Six Paths Framework) untuk menemukan industri alternatif dan pembeli non-pelanggan.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Perbandingan Paradigma Red Ocean vs Blue Ocean Strategy',
-      svg: SVG_BLUE_OCEAN,
-      caption: 'Gambar 9.1: Pergeseran dari persaingan kompetitif konvensional menuju penciptaan pasar baru yang tidak memiliki pesaing.'
-    },
-
-    { kind: 'h2', text: '1. Inovasi Nilai (Value Innovation): Mendobrak Trade-Off' },
-    {
-      kind: 'p',
-      text: 'Strategi konvensional percaya bahwa perusahaan harus memilih antara menciptakan nilai lebih tinggi dengan biaya lebih mahal (Diferensiasi) ATAU menciptakan nilai standar dengan biaya murah (Low-Cost). **Blue Ocean Strategy mendobrak trade-off ini melalui Value Innovation**:'
+      caption: 'Gambar 9.1: Kerangka Kerja Empat Tindakan ERRC: Menghapuskan, Mengurangi, Menaikkan, dan Menciptakan Faktor Nilai.',
+      svg: SVG_BLUE_OCEAN_ERRC
     },
     {
-      kind: 'ul',
-      items: [
-        '**Pengurangan Biaya (Cost Savings)**: Dicapai dengan **Menghapuskan (*Eliminating*)** dan **Mengurangi (*Reducing*)** faktor-faktor persaingan industri yang selama ini dianggap baku namun tidak lagi dihargai konsumen.',
-        '**Peningkatan Nilai Pembeli (Buyer Value)**: Dicapai dengan **Menaikkan (*Raising*)** dan **Menciptakan (*Creating*)** elemen-elemen baru yang belum pernah ditawarkan oleh industri sebelumnya.'
-      ]
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 9'
     },
-
-    CASE_BLUE_OCEAN_ERRC,
-
-    { kind: 'h2', text: '2. Enam Jalur Menembus Batas Pasar (Six Paths Framework)' },
     {
       kind: 'table',
-      headers: ['Jalur Eksplorasi Pasar', 'Fokus Konvensional Red Ocean', 'Pendekatan Blue Ocean Baru'],
+      headers: ['Dimensi Strategis', 'Strategi Samudra Merah (Red Ocean)', 'Strategi Samudra Biru (Blue Ocean)'],
       rows: [
-        ['**Jalur 1: Industri Alternatif**', 'Fokus hanya pada pesaing di industri yang sama.', 'Melihat industri alternatif yang memecahkan masalah sama (misal Bioskop vs Restoran untuk hiburan malam).'],
-        ['**Jalur 2: Kelompok Strategis**', 'Menerima posisi dalam kelompok strategis saat ini.', 'Melihat antarkelompok strategis (misal mobil sport mewah vs mobil keluarga murah).'],
-        ['**Jalur 3: Rantai Pembeli**', 'Fokus pada target pembeli tradisional (misal dokter yang meresepkan obat).', 'Mengalihkan fokus ke pengguna langsung atau pemengaruh keputusan (misal pasien penderita diabetes).'],
-        ['**Jalur 4: Produk & Jasa Pelengkap**', 'Fokus memaksimalkan nilai produk di dalam batas industri.', 'Melihat apa yang terjadi sebelum, saat, dan sesudah produk digunakan (misal fasilitas parkir dan penitipan anak).'],
-        ['**Jalur 5: Daya Tarik Emosional vs Fungsional**', 'Menerima orientasi fungsional (harga murah) atau emosional industri.', 'Mengubah produk fungsional menjadi emosional (Swatch) atau emosional menjadi fungsional (QB House potong rambut 10 menit).'],
-        ['**Jalur 6: Waktu & Tren Eksternal**', 'Bereaksi pasif terhadap tren saat tren sudah terjadi.', 'Membentuk tren masa depan secara proaktif (misal iTunes mengubah industri musik digital).']
+        ['Ruang Pasar', 'Bersaing dalam ruang pasar yang sudah ada dan padat.', 'Menciptakan ruang pasar baru yang belum tersentuh pesaing.'],
+        ['Dinamika Kompetisi', 'Mengalahkan dan merebut pangsa pasar dari kompetitor.', 'Menjadikan kompetisi tidak relevan sama sekali (*making the competition irrelevant*).'],
+        ['Eksploitasi Permintaan', 'Mengeksploitasi dan berebut kue permintaan pasar yang ada.', 'Menciptakan dan menangkap permintaan pasar baru (*non-customers*).'],
+        ['Trade-off Nilai vs Biaya', 'Memilih trade-off: Biaya Rendah ATAU Diferensiasi (doktrin Porter klasik).', 'Mematahkan trade-off: Mengejar Biaya Rendah DAN Diferensiasi secara bersamaan.'],
+        ['Fokus Penyelarasan Sistem', 'Menyelaraskan seluruh sistem perusahaan dengan pilihan strategis biaya rendah atau diferensiasi.', 'Menyelaraskan seluruh sistem perusahaan dalam mengejar diferensiasi sekaligus biaya rendah.']
       ],
-      caption: 'Tabel 9.1: Enam jalur sistematis menciptakan Blue Ocean.'
+      caption: 'Tabel 9.0: Perbandingan fundamental Red Ocean vs Blue Ocean Strategy.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 9' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 3 Karakteristik Kurva Nilai Unggul (Good Strategy Characteristics)'
+    },
+    {
+      kind: 'table',
+      headers: ['Karakteristik Kurva Nilai', 'Definisi pada Strategy Canvas', 'Tanda Peringatan Jika Hilang'],
+      rows: [
+        ['1. Fokus (Focus)', 'Perusahaan tidak menyebarkan anggarannya secara merata di semua faktor persaingan, melainkan berfokus tajam pada beberapa faktor keunggulan kunci.', 'Jika kurva nilai datar atau mencoba unggul di semua faktor, perusahaan terjebak pemborosan kas tanpa identitas.'],
+        ['2. Divergensi (Divergence)', 'Bentuk kurva nilai perusahaan berbeda secara radikal dari profil rata-rata industri konvensional (berkat eliminasi dan kreasi baru).', 'Jika kurva nilai sejajar dan mirip dengan pesaing ("me-too strategy"), perusahaan berada di tengah samudra merah perang tarif.'],
+        ['3. Tagline yang Memikat (Compelling Tagline)', 'Strategi dapat diringkas dalam satu kalimat slogan iklan yang kuat, jelas, jujur, dan berkesan di benak publik.', 'Jika strategi tidak dapat dijelaskan dalam satu kalimat singkat, berarti proposisi nilai belum jelas bagi konsumen.']
+      ],
+      caption: 'Tabel 9.1: Tiga kriteria kurva nilai strategi samudra biru yang kuat.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Penerapan ERRC pada Kasus Sirkus Cirque du Soleil',
+      prompt: 'Sirkus tradisional (Ringling Bros) mengalami kebangkrutan akibat tingginya biaya pemeliharaan gajah/singa, biaya bintang sirkus mahal, dan protes pecinta hewan. Cirque du Soleil merevolusi industri ini menjadi samudra biru bernilai miliaran dolar. Bagaimana rincian 4 tindakan ERRC yang mereka lakukan?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Eliminate (Hapuskan)**: Menghapuskan pertunjukan binatang sirkus (memangkas biaya makan dan kandang hewan serta menghindari kecaman publik) dan menghapuskan konsep 3 arena terpisah yang membingungkan penonton.',
+            '**Reduce (Kurangi)**: Mengurangi sensasi bahaya fisik ekstrim dan atraksi slapstick badut murahan.',
+            '**Raise (Tingkatkan)**: Meningkatkan kenyamanan tenda megah teater dan estetika artistik kostum panggung.',
+            '**Create (Ciptakan)**: Menciptakan tema cerita dramatis teater musikal Broadway, tarian balet kontemporer, dan musik orkestra orisinal secara langsung, membidik penonton dewasa berduit yang bersedia membayar tiket mahal setara gedung opera.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 9'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Konsep Value Innovation', 'Mekanisme pengejaran diferensiasi dan biaya rendah simultan.', 'Mampu menjelaskan pematahan trade-off biaya vs nilai.'],
+        ['2', 'Strategy Canvas & Kurva Nilai', 'Teknik plotting kanvas strategi dan evaluasi fokus/divergensi.', 'Mampu menggambar dan menginterpretasikan kurva nilai industri.'],
+        ['3', 'Matriks 4 Tindakan ERRC', 'Penerapan Eliminate, Reduce, Raise, Create pada model bisnis baru.', 'Mampu menyusun matriks ERRC untuk memecahkan kebekuan pasar.']
+      ],
+      caption: 'Tabel 9.2: Peta penguasaan submateri TM 9 Manajemen Strategik.'
+    },
+    CASE_BLUE_OCEAN_ERRC_CANVAS,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Strategy Canvas**: Alat diagnostik visual yang menggambarkan faktor-faktor persaingan industri pada sumbu horizontal dan tingkat penawaran pembeli pada sumbu vertikal.',
-        '**Tiga Ciri Kurva Nilai yang Hebat**: Fokus yang tajam (*Focus*), Divergensi/Perbedaan mencolok dari kurva nilai pesaing (*Divergence*), dan Tagline/Slogan yang memikat (*Compelling Tagline*).',
-        '**Three Tiers of Noncustomers**: Tier 1 (Nonkonsumen yang hampir membeli / segera pergi jika ada opsi lain), Tier 2 (Nonkonsumen yang secara sadar menolak industri), Tier 3 (Nonkonsumen yang belum terjamah).'
+        '**Jangan Bersaing dengan Pesaing**: Tujuan tertinggi dari Blue Ocean Strategy bukan untuk memenangkan persaingan, melainkan untuk membuat kompetisi menjadi sama sekali tidak relevan.',
+        '**Eliminasi Memotong Biaya**: Sebagian besar perusahaan hanya memikirkan apa yang harus ditambahkan (*Raise/Create*); inovator Blue Ocean memikirkan apa yang harus berani dihapuskan (*Eliminate*) untuk memangkas biaya.',
+        '**Bidik Non-Pelanggan (Non-Customers)**: Sumber pertumbuhan terbesar tidak berada pada pelanggan yang sudah ada di industri, melainkan pada mereka yang selama ini menolak menggunakan produk karena mahal atau rumit.'
       ]
     }
   ]

@@ -1,90 +1,119 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_AMBIDEXTROUS_ORGANIZATIONAL_DESIGN } from '../manstratPracticeCases';
 
-const SVG_STRATEGIC_LEADERSHIP = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TIGA AKTIVITAS KUNCI KEPEMIMPINAN STRATEGIS (DESS ET AL. CH. 11)</text>
+const SVG_AMBIDEXTROUS_DESIGN = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">DESAIN ORGANISASI AMBIDEXTROUS: EKSPLOITASI VS EKSPLORASI (DESS ET AL.)</text>
   
-  <rect x="30" y="50" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="75" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. Setting Direction</text>
-  <text x="125" y="92" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Menetapkan Arah)</text>
-  <line x1="45" y1="104" x2="205" y2="104" stroke="#334155"/>
-  <text x="125" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Memindai lingkungan</text>
-  <text x="125" y="142" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Merumuskan visi strategis</text>
-  <text x="125" y="160" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Membangun kapabilitas</text>
-  <text x="125" y="180" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Visi Inspiratif</text>
+  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">BISNIS INTI EKSPLOITASI</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Cash Cows / Efisiensi Operasional):</text>
+  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Struktur mekanistik kaku &amp; disiplin</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Inovasi bertahap (Incremental)</text>
+  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kontrol biaya &amp; marjin laba</text>
+  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Sumber Arus Kas Hari Ini</text>
 
-  <rect x="245" y="50" width="190" height="150" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="340" y="75" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">2. Designing Org</text>
-  <text x="340" y="92" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Merancang Organisasi)</text>
-  <line x1="260" y1="104" x2="420" y2="104" stroke="#334155"/>
-  <text x="340" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Menyelaraskan struktur</text>
-  <text x="340" y="142" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Integrasi sistem IT</text>
-  <text x="340" y="160" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Alokasi wewenang</text>
-  <text x="340" y="180" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Arsitektur Eksekusi</text>
-
-  <rect x="460" y="50" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="555" y="75" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">3. Nurturing Culture</text>
-  <text x="555" y="92" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Memelihara Budaya &amp; Etika)</text>
-  <line x1="475" y1="104" x2="635" y2="104" stroke="#334155"/>
-  <text x="555" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Memberi teladan integritas</text>
-  <text x="555" y="142" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Membangun learning org</text>
-  <text x="555" y="160" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Mendorong inovasi</text>
-  <text x="555" y="180" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">Budaya Unggul &amp; Etis</text>
+  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="497" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">UNIT INOVASI EKSPLORASI</text>
+  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Venture Baru / Riset Disruptif):</text>
+  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Struktur organik lincah (Agile Squads)</text>
+  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Eksperimen radikal &amp; berani gagal</text>
+  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Otonomi tinggi dari birokrasi induk</text>
+  <text x="497" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Pertumbuhan Masa Depan</text>
 </svg>`;
 
 export const TM7_READING: Reading = {
   tm: 7,
   title: 'Organizational Design, Strategic Leadership, & Corporate Entrepreneurship',
-  ref: 'Dess, McNamara, Eisner, & Lee (11th ed.) Ch. 10, 11, & 12',
-  intro: 'Modul Pembelajaran Mendalam Manajemen Strategik TM 7: Menguasai desain organisasi tanpa batas (*Boundaryless Organizational Designs: Barrier-Free, Modular, & Virtual Organizations*), Tiga Aktivitas Kunci Kepemimpinan Strategis (Setting Direction, Designing the Organization, Nurturing an Excellent and Ethical Culture), Kecerdasan Emosional Pemimpin, Pembelajaran Organisasi (*Learning Organization*), serta Kewirausahaan Korporat (*Corporate Entrepreneurship / Intrapreneurship: Autonomous vs Induced Strategic Behavior, New-Venture Groups, Incubators, & Corporate Venture Capital*).',
+  ref: 'Dess et al. Bab 10, 11, & 12 | OReilly & Tushman Ambidextrous Organization | Strategic Leadership & Ethics',
+  intro: 'TM 7 membahas penyelarasan desain struktur organisasi dengan kepemimpinan strategis dan kewirausahaan korporasi: arsitektur Desain Organisasi Ambidextrous (Ambidextrous Organizational Design yang memfasilitasi eksploitasi dan eksplorasi secara simultan), 3 aktivitas kunci kepemimpinan strategis (Menetapkan Arah Strategis, Mendesain Organisasi, dan Memupuk Budaya Beretika), mengatasi hambatan perubahan organisasi, serta instrumen Kewirausahaan Korporasi (Corporate Entrepreneurship: Corporate Venture Capital dan Inkubator Bisnis).',
   objectives: [
-    'Menganalisis 3 bentuk desain organisasi tanpa batas (Boundaryless): Organisasi Bebas Hambatan (*Barrier-Free*), Modular, dan Virtual.',
-    'Menjelaskan Tiga Aktivitas Utama Kepemimpinan Strategis menurut Dess et al.',
-    'Menerapkan prinsip Organisasi Pembelajar (Learning Organization: berbagi pengetahuan, pemberdayaan bawahan, dan mempertanyakan status quo).',
-    'Membangun budaya etika organisasi yang kokoh melalui teladan pemimpin dan kode etik formal.',
-    'Membedakan Perilaku Strategis Terpancing (*Induced Strategic Behavior* - Top-Down) vs Otonom (*Autonomous Strategic Behavior* - Bottom-Up).',
-    'Menjelaskan mekanisme Corporate Venture Capital (CVC) dan Inkubator Usaha Baru dalam memupuk inovasi internal.'
+    'Menganalisis arsitektur Organisasi Ambidextrous dalam menyeimbangkan eksploitasi bisnis inti vs eksplorasi ide disruptif.',
+    'Menjelaskan 3 pilar aktivitas kepemimpinan strategis: Menetapkan Arah, Merancang Organisasi, Memupuk Budaya Etis.',
+    'Mengidentifikasi dan mengatasi 5 hambatan kepemimpinan terhadap perubahan strategis (Vested Interest, Political Barriers).',
+    'Menerapkan instrumen Corporate Entrepreneurship: New Venture Groups, Business Incubators, dan Corporate Venture Capital.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Tiga Aktivitas Fundamental Kepemimpinan Strategis',
-      svg: SVG_STRATEGIC_LEADERSHIP,
-      caption: 'Gambar 7.1: Peran interdependen pemimpin puncak dalam menetapkan arah visi, merancang struktur, dan memelihara budaya etis.'
+      caption: 'Gambar 7.1: Desain Organisasi Ambidextrous dalam Menyeimbangkan Eksploitasi Efisiensi dan Eksplorasi Inovasi.',
+      svg: SVG_AMBIDEXTROUS_DESIGN
     },
-
-    { kind: 'h2', text: '1. Desain Organisasi Tanpa Batas (Boundaryless Organizations)' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 7'
+    },
     {
       kind: 'table',
-      headers: ['Desain Tanpa Batas', 'Karakteristik Struktural', 'Manfaat Strategis Utama'],
+      headers: ['Aktivitas Kepemimpinan Strategis', 'Tanggung Jawab Eksekutif Kunci', 'Output Nyata bagi Korporasi', 'Tantangan Terberat'],
       rows: [
-        ['**1. Barrier-Free Organization**', 'Menghilangkan sekat-sekat batas internal (antardepartemen) dan batas eksternal (dengan pelanggan/pemasok) melalui tim lintas fungsi mandiri.', 'Koordinasi sangat cepat, sinergi ide lintas disiplin ilmu meningkat tajam.'],
-        ['**2. Modular Organization**', 'Perusahaan mempertahankan kompetensi inti strategis internal dan mengalihdayakan (*outsource*) modul-modul non-inti ke pemasok terbaik di dunia.', 'Penghematan biaya modal tetap, fokus penuh pada diferensiasi inti.'],
-        ['**3. Virtual Organization**', 'Jaringan kemitraan dinamis yang selalu berubah antarbeberapa perusahaan independen yang saling berbagi keahlian untuk mengeksploitasi peluang pasar sesaat.', 'Sangat lincah memasuki pasar baru global tanpa investasi fisik permanen.']
+        ['1. Menetapkan Arah Strategis (Setting Direction)', 'Merumuskan visi masa depan yang memikat, peta jalan transformasi, dan sasaran jangka panjang.', 'Visi bersama yang menyatukan ribuan karyawan di semua level.', 'Mengatasi pandangan sempit (tunnel vision) para manajer divisi.'],
+        ['2. Merancang Organisasi (Designing Organization)', 'Membangun struktur yang memfasilitasi kolaborasi lintas divisi dan alokasi sumber daya.', 'Struktur ambidextrous yang memisahkan eksplorasi namun tetap terintegrasi.', 'Resistensi dari manajer bisnis lama yang takut kehilangan anggaran modal.'],
+        ['3. Memupuk Budaya Beretika (Nurturing Ethical Culture)', 'Menjadi teladan moral, membuat kode etik tegas, dan melindungi pelapor pelanggaran (whistleblower).', 'Integritas korporasi, kepatuhan tata kelola, dan kepercayaan pemangku kepentingan.', 'Godaan memanipulasi kinerja keuangan jangka pendek demi bonus direksi.']
       ],
-      caption: 'Tabel 7.1: Tiga model struktur organisasi tanpa batas.'
+      caption: 'Tabel 7.0: Tiga pilar aktivitas kepemimpinan strategis Dess et al.'
     },
-
-    { kind: 'h2', text: '2. Kewirausahaan Korporat (Corporate Entrepreneurship / Intrapreneurship)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 5 Hambatan Kepemimpinan Terhadap Perubahan Strategis'
+    },
     {
       kind: 'table',
-      headers: ['Mekanisme Intrapreneurship', 'Definisi Konsep', 'Penerapan Praktis Korporasi'],
+      headers: ['Jenis Hambatan Perubahan', 'Akar Penyebab Hambatan', 'Strategi Kepemimpinan untuk Mengatasi'],
       rows: [
-        ['**Autonomous Strategic Behavior**', 'Inisiatif inovasi akar rumput (*bottom-up*) yang digagas oleh karyawan lini depan di luar ruang lingkup strategi formal saat ini.', 'Karyawan 3M menciptakan Post-it Note dari eksperimen lem yang gagal.'],
-        ['**Induced Strategic Behavior**', 'Inisiatif inovasi terarah (*top-down*) yang selaras langsung dengan strategi korporasi yang sedang berjalan.', 'Samsung mengembangkan lini smartphone lipat untuk mempertahankan kepemimpinan pasar.'],
-        ['**Corporate Venture Capital (CVC)**', 'Dana investasi khusus korporasi untuk mendanai dan mengakuisisi startup teknologi eksternal berpotensi tinggi.', 'Google Ventures (GV) mendanai startup AI dan bioteknologi tahap awal.']
+        ['Vested Interests in the Status Quo', 'Manajer senior merasa nyaman dengan kekuasaan dan gaji dari sistem bisnis lama.', 'Menghubungkan bonus insentif masa depan dengan keberhasilan adopsi strategi baru.'],
+        ['Systemic Barriers', 'Struktur organisasi dan sistem pelaporan yang terlalu birokratis dan kaku.', 'Membentuk tim proyek lintas fungsi mandiri (Agile Squads) di luar rantai komando biasa.'],
+        ['Behavioral Barriers', 'Karyawan terbiasa memandang masalah dari perspektif fungsional sempit (silo mentality).', 'Melakukan rotasi kepemimpinan lintas departemen dan pelatihan holistik.'],
+        ['Political Barriers', 'Perebutan kekuasaan dan persaingan pengaruh antar faksi eksekutif puncak.', 'Membangun koalisi kepemimpinan baru yang berkomitmen pada transformasi korporasi.'],
+        ['Personal Time Constraints', 'Para pemimpin terlalu sibuk memadamkan api masalah operasional harian hingga lupa berpikir strategis.', 'Mendelegasikan wewenang operasional agar pimpinan memiliki waktu memikirkan visi masa depan.']
       ],
-      caption: 'Tabel 7.2: Jalur pengembangan inovasi kewirausahaan di dalam korporasi besar.'
+      caption: 'Tabel 7.1: Hambatan kepemimpinan strategis dalam transformasi.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 7 (Pra-UTS)' },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Dilema Inovasi Disruptif dalam Struktur Konvensional',
+      prompt: 'Sebuah konglomerasi media cetak mencoba mengembangkan divisi media daring digital di dalam departemen koran konvensional yang sama. Para jurnalis senior menolak menulis artikel untuk platform online karena dianggap "berita murahan dan tidak bermutu", sehingga divisi digital mati suri. Bagaimana solusi desain organisasi ambidextrous menurut OReilly & Tushman?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Akar Kegagalan**: Memaksakan unit eksplorasi digital baru berada di bawah hierarki dan budaya bisnis cetak lama yang kaku (*structural entrapment*).',
+            '**Solusi Desain Ambidextrous**: Manajemen harus **memisahkan unit media digital secara struktural**: mendirikan entitas anak perusahaan baru di gedung berbeda, merekrut talenta muda dengan budaya digital lincah, serta menetapkan KPI berbasis *pageviews* dan *engagement*, bukan oplah cetak.',
+            '**Integrasi di Puncak**: Kedua unit bisnis tetap terhubung di tingkat direksi holding korporasi untuk memanfaatkan kekuatan merek dan arsip berita bersama.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 7'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Desain Organisasi Ambidextrous', 'Pemisahan struktural eksploitasi vs eksplorasi dan integrasi kepemimpinan.', 'Mampu mendesain arsitektur organisasi inovatif.'],
+        ['2', '3 Pilar Kepemimpinan Strategis', 'Penetapan arah, perancangan struktur, dan pembentukan budaya beretika.', 'Mampu menguraikan agenda strategis pemimpin transformasi.'],
+        ['3', 'Corporate Entrepreneurship', 'Inkubator bisnis, CVC, dan penanganan hambatan politik perubahan.', 'Mampu merancang ekosistem kewirausahaan di dalam korporasi besar.']
+      ],
+      caption: 'Tabel 7.2: Peta penguasaan submateri TM 7 Manajemen Strategik.'
+    },
+    CASE_AMBIDEXTROUS_ORGANIZATIONAL_DESIGN,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Learning Organization**: Organisasi yang mampu menciptakan, memperoleh, dan mentransfer pengetahuan, serta memodifikasi perilakunya untuk mencerminkan pengetahuan dan wawasan baru.',
-        '**Ambidextrous Leadership**: Pemimpin yang mampu secara seimbang memimpin divisi eksploitasi bisnis inti yang matang sekaligus divisi eksplorasi inovasi radikal masa depan.',
-        '**Strategic Coherence**: Keselarasan total antara visi strategis, desain struktur organisasi, sistem insentif, dan budaya nilai perusahaan.'
+        '**Pemimpin Menolak Status Quo**: Tugas paling penting dari seorang pemimpin strategis bukanlah menjaga kenyamanan operasional yang ada, melainkan terus menggugah organisasi agar tidak terlena oleh kesuksesan masa lalu.',
+        '**Ambidextrous Menghubungkan Dua Dunia**: Perusahaan yang sukses bertahan melintasi abad adalah yang mampu mengoperasikan dua mesin sekaligus: mesin efisiensi hari ini dan mesin penemuan masa depan.',
+        '**Etika Dimulai dari Keteladanan Puncak (Tone at the Top)**: Karyawan memperhatikan apa yang dilakukan para pemimpin di ruang tertutup, bukan apa yang mereka katakan di panggung pidato.'
       ]
     }
   ]

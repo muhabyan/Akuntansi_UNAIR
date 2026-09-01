@@ -1,86 +1,124 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_CORPORATE_DIVERSIFICATION_MA } from '../manstratPracticeCases';
 
 const SVG_GLOBAL_STRATEGIES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">EMPAT STRATEGI INTERNASIONAL (INTERNATIONAL STRATEGIES - DESS CH. 7)</text>
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">4 STRATEGI INTEGRASI GLOBAL (BARTLETT &amp; GHOSHAL / DESS ET AL.)</text>
   
-  <!-- Global Strategy -->
-  <rect x="40" y="50" width="280" height="65" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="180" y="72" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. Global Strategy</text>
-  <text x="180" y="88" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tekanan Biaya Tinggi &amp; Adaptasi Lokal Rendah</text>
-  <text x="180" y="102" fill="#34d399" font-size="8.5" font-weight="600" text-anchor="middle">(Standarisasi Produk Global: Semikonduktor, Pesawat)</text>
+  <rect x="35" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="76" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">GLOBAL STRATEGY</text>
+  <text x="177" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: TINGGI | Responsivitas Lokal: RENDAH</text>
+  <text x="177" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Produk standar dunia, sentralisasi pabrik (Boeing, Intel)</text>
 
-  <!-- Transnational Strategy -->
-  <rect x="360" y="50" width="280" height="65" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="500" y="72" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">2. Transnational Strategy [IDEAL]</text>
-  <text x="500" y="88" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tekanan Biaya Tinggi &amp; Adaptasi Lokal Tinggi</text>
-  <text x="500" y="102" fill="#34d399" font-size="8.5" font-weight="600" text-anchor="middle">(Efisiensi Global + Fleksibilitas Lokal: Unilever, P&amp;G)</text>
+  <rect x="355" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="497" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TRANSNATIONAL STRATEGY</text>
+  <text x="497" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: TINGGI | Responsivitas Lokal: TINGGI</text>
+  <text x="497" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Efisiensi global + adaptasi lokal lincah (Unilever, Toyota)</text>
 
-  <!-- International Strategy -->
-  <rect x="40" y="125" width="280" height="65" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="180" y="147" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">3. International Strategy</text>
-  <text x="180" y="163" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tekanan Biaya Rendah &amp; Adaptasi Lokal Rendah</text>
-  <text x="180" y="177" fill="#fbbf24" font-size="8.5" font-weight="600" text-anchor="middle">(Mengekspor Kompetensi Inti Domestik)</text>
+  <rect x="35" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="177" y="153" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">INTERNATIONAL STRATEGY</text>
+  <text x="177" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: RENDAH | Responsivitas Lokal: RENDAH</text>
+  <text x="177" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Eksploitasi kompetensi inti ke luar negeri (Harley-Davidson)</text>
 
-  <!-- Multidomestic Strategy -->
-  <rect x="360" y="125" width="280" height="65" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="500" y="147" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">4. Multidomestic Strategy</text>
-  <text x="500" y="163" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tekanan Biaya Rendah &amp; Adaptasi Lokal Tinggi</text>
-  <text x="500" y="177" fill="#c084fc" font-size="8.5" font-weight="600" text-anchor="middle">(Desentralisasi Penuh: Makanan &amp; Ritel Lokal)</text>
+  <rect x="355" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="497" y="153" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">MULTIDOMESTIC STRATEGY</text>
+  <text x="497" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: RENDAH | Responsivitas Lokal: TINGGI</text>
+  <text x="497" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Desentralisasi cabang, kustomisasi rasa/budaya (Nestle, Kraft)</text>
 </svg>`;
 
 export const TM5_READING: Reading = {
   tm: 5,
   title: 'Corporate-Level Strategy & International Strategy: Diversifikasi, M&A, & Ekspansi Global',
-  ref: 'Dess, McNamara, Eisner, & Lee (11th ed.) Ch. 6 & 7',
-  intro: 'Modul Pembelajaran Mendalam Manajemen Strategik TM 5: Menguasai formulasi Strategi Tingkat Korporat (*Corporate-Level Strategy*), Diversifikasi Terkait (*Related Diversification*: *Economies of Scope*, Berbagi Aktivitas / *Sharing Activities*, dan Transfer Kompetensi Inti / *Core Competencies*) vs Diversifikasi Tidak Terkait (*Unrelated Diversification*: *Parenting Advantage, Restructuring, & Portfolio Management / BCG Matrix*), Sarana Diversifikasi (Merger & Akuisisi / M&A, Aliansi Strategis, *Joint Ventures*, dan Pengembangan Internal), serta Empat Strategi Internasional (*International, Global, Multidomestic, Transnational Strategy*).',
+  ref: 'Dess et al. Bab 6 & 7 | Bartlett & Ghoshal Managing Across Borders | Michael Porter Diamond of National Advantage',
+  intro: 'TM 5 membahas strategi tingkat korporasi (Corporate-Level Strategy) dan ekspansi internasional: motivasi diversifikasi korporasi, Diversifikasi Terkait (Related Diversification melalui Economies of Scope dan Market Power) vs Diversifikasi Tak Terkait (Unrelated Diversification melalui Restrukturisasi dan Parenting Advantage), sarana diversifikasi (M&A, Aliansi Strategis, dan Internal Development), Model Berlian Keunggulan Nasional Michael Porter (Porters Diamond), serta 4 Strategi Integrasi Global Bartlett & Ghoshal (International, Global, Multidomestic, Transnational).',
   objectives: [
-    'Menjelaskan alasan korporasi melakukan diversifikasi bisnis untuk menciptakan nilai sinergi ($1 + 1 > 2$).',
-    'Menganalisis Diversifikasi Terkait melalui Penciptaan *Economies of Scope* dan Kekuatan Pasar (*Market Power / Pooled Negotiating Power & Vertical Integration*).',
-    'Menganalisis Diversifikasi Tidak Terkait melalui *Parenting Advantage*, Restrukturisasi Perusahaan bermasalah, dan Matriks Portofolio BCG (Stars, Question Marks, Cash Cows, Dogs).',
-    'Mengevaluasi kelebihan dan kelemahan 3 sarana pertumbuhan korporasi: M&A, Aliansi Strategis, dan Pengembangan Internal (*Internal Development*).',
-    'Menganalisis 4 Strategi Internasional berdasarkan trade-off Tekanan Penurunan Biaya vs Tekanan Responsif Lokal (*Local Responsiveness*).'
+    'Menganalisis penciptaan nilai melalui Diversifikasi Terkait (Sharing Activities dan Core Competencies).',
+    'Menjelaskan motivasi finansial Diversifikasi Tak Terkait (Parenting Advantage dan Portfolio Restructuring).',
+    'Mengevaluasi faktor pendorong dan penyebab kegagalan Merger dan Akuisisi (M&A) korporasi.',
+    'Menerapkan 4 pilar Model Berlian Nasional Porter dalam menjelaskan daya saing industri suatu negara.',
+    'Membandingkan 4 strategi ekspansi global Bartlett & Ghoshal berdasarkan tekanan efisiensi biaya vs responsivitas lokal.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Empat Strategi Ekspansi Internasional Perusahaan Multinasional',
-      svg: SVG_GLOBAL_STRATEGIES,
-      caption: 'Gambar 5.1: Matriks pilihan strategi global berdasarkan kebutuhan integrasi global vs responsivitas lokal.'
+      caption: 'Gambar 5.1: Empat Strategi Ekspansi Global Bartlett & Ghoshal Berdasarkan Tekanan Biaya dan Responsivitas.',
+      svg: SVG_GLOBAL_STRATEGIES
     },
-
-    { kind: 'h2', text: '1. Diversifikasi Terkait vs Tidak Terkait' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 5'
+    },
     {
       kind: 'table',
-      headers: ['Jenis Diversifikasi', 'Mekanisme Penciptaan Nilai Sinergi', 'Contoh Kasus Korporasi'],
+      headers: ['Strategi Global', 'Tekanan Efisiensi Biaya', 'Tekanan Responsivitas Lokal', 'Konfigurasi Operasional Kunci'],
       rows: [
-        ['**Diversifikasi Terkait (Related Diversification)**', '• **Leveraging Core Competencies**: Memanfaatkan keahlian R&D mesin mobil untuk memproduksi motor & genset.\n• **Sharing Activities**: Menggabungkan armada distribusi atau tenaga penjual bersama.\n• **Market Power**: Integrasi vertikal ke hulu/hilir.', 'Honda (Mobil, Motor, Mesin Pemotong Rumput); Disney (Film, Taman Hiburan, Merchandise).'],
-        ['**Diversifikasi Tidak Terkait (Unrelated Diversification)**', '• **Parenting Advantage**: Manajemen puncak menyediakan alokasi modal cerdas dan tata kelola disiplin.\n• **Restructuring**: Membeli perusahaan tidak efisien, merombak manajemen, dan menjual kembali dengan laba besar.\n• **Portofolio BCG**.', 'Berkshire Hathaway (Warren Buffett); General Electric (Era Jack Welch).']
+        ['International Strategy', 'Rendah', 'Rendah', 'Operasi inti tetap di negara asal; produk ekspor tidak banyak dimodifikasi.'],
+        ['Global Strategy', 'Tinggi', 'Rendah', 'Operasi sangat tersentralisasi pada lokasi berbiaya termurah; produk distandarisasi secara seragam di seluruh dunia.'],
+        ['Multidomestic Strategy', 'Rendah', 'Tinggi', 'Otonomi penuh didelegasikan kepada anak perusahaan lokal untuk memodifikasi produk sesuai budaya negara tuan rumah.'],
+        ['Transnational Strategy', 'Tinggi', 'Tinggi', 'Rantai nilai terdistribusi secara global namun saling terhubung terkoordinasi erat (*dispersed, interdependent, and specialized*).']
       ],
-      caption: 'Tabel 5.1: Dua jalur strategis diversifikasi korporasi.'
+      caption: 'Tabel 5.0: Matriks strategi ekspansi global organisasi.'
     },
-
-    { kind: 'h2', text: '2. Empat Kuadran Matriks Portofolio BCG (Boston Consulting Group)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 4 Atribut Model Berlian Keunggulan Nasional Michael Porter'
+    },
     {
       kind: 'table',
-      headers: ['Kategori Portofolio BCG', 'Pangsa Pasar Relatif & Pertumbuhan Pasar', 'Tindakan Strategis Korporat'],
+      headers: ['Pilar Model Berlian Porter', 'Definisi Kondisi Nasional', 'Dampak Terhadap Keunggulan Global'],
       rows: [
-        ['**Stars (Bintang)**', 'Pangsa Pasar Tinggi & Pertumbuhan Pasar Tinggi', '**Investasi Agresif**: Mendanai pertumbuhan cepat untuk mempertahankan posisi kepemimpinan masa depan.'],
-        ['**Cash Cows (Sapi Perah)**', 'Pangsa Pasar Tinggi & Pertumbuhan Pasar Rendah', '**Memanen Arus Kas (Milking)**: Menghasilkan laba kas melimpah untuk membiayai Stars dan Question Marks.'],
-        ['**Question Marks (Tanda Tanya)**', 'Pangsa Pasar Rendah & Pertumbuhan Pasar Tinggi', '**Pilihan Selektif**: Berinvestasi besar untuk menjadikannya Star, atau melepaskannya jika kalah bersaing.'],
-        ['**Dogs (Anjing)**', 'Pangsa Pasar Rendah & Pertumbuhan Pasar Rendah', '**Divestasi / Likuidasi**: Menutup unit bisnis atau menjualnya karena menguras sumber daya manajemen.']
+        ['1. Kondisi Faktor (Factor Conditions)', 'Ketersediaan faktor produksi canggih (SDM berketerampilan tinggi, infrastruktur digital, lab riset).', 'Menciptakan spesialisasi keunggulan yang tidak dimiliki negara lain (contoh: Jerman dalam teknik mesin).'],
+        ['2. Kondisi Permintaan (Demand Conditions)', 'Karakter konsumen domestik yang sangat cerdas, kritis, dan menuntut standar tinggi.', 'Memaksa perusahaan terus berinovasi dan menyempurnakan kualitas sebelum bersaing di panggung dunia.'],
+        ['3. Industri Terkait & Pendukung', 'Keberadaan kluster industri pemasok lokal kelas dunia yang saling mendukung.', 'Menghasilkan aliran inovasi cepat dan pasokan komponen murah (contoh: Silicon Valley di AS).'],
+        ['4. Struktur, Strategi, & Rivalitas Perusahaan', 'Kondisi pendirian perusahaan dan intensitas rivalitas kompetisi domestik.', 'Rivalitas sengit di pasar dalam negeri melatih perusahaan menjadi tangguh saat ekspansi ke luar negeri.']
       ],
-      caption: 'Tabel 5.2: Matriks BCG untuk alokasi modal unit bisnis strategis.'
+      caption: 'Tabel 5.1: Model berlian keunggulan kompetitif bangsa Michael Porter.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 5' },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Jebakan Sinergi Semu dalam Akuisisi Konglomerasi',
+      prompt: 'Sebuah konglomerat properti mengakuisisi perusahaan game e-sports dengan harga sangat mahal dengan alasan "menciptakan sinergi". Namun setelah 2 tahun, laba kedua entitas justru anjlok dan utang menumpuk. Jenis diversifikasi apa yang terjadi dan mengapa sinergi yang dijanjikan gagal terwujud?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Jenis Diversifikasi**: Merupakan **Unrelated Diversification (Diversifikasi Tak Terkait)** karena tidak ada kesamaan rantai nilai operasional antara industri properti fisik dengan pengembangan perangkat lunak game.',
+            '**Penyebab Kegagalan Sinergi**: Manajemen puncak properti tidak memiliki kompetensi manajerial (*Corporate Parenting Advantage*) untuk mengelola industri kreatif digital; mereka menerapkan birokrasi kaku properti yang membunuh kreativitas para developer game.',
+            '**Premi Akuisisi Berlebih (Winners Curse)**: Membayar valuasi startup terlalu mahal membuat arus kas operasional game tidak sanggup menutup beban bunga utang akuisisi.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 5'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Diversifikasi Terkait vs Tak Terkait', 'Analisis economies of scope, market power, dan parenting advantage.', 'Mampu mengevaluasi motif strategis diversifikasi korporasi.'],
+        ['2', 'Merger & Akuisisi (M&A)', 'Kelebihan/risiko M&A vs aliansi strategis dan internal venture.', 'Mampu mengidentifikasi penyebab kegagalan integrasi pasca akuisisi.'],
+        ['3', 'Model Berlian Porter & Strategi Global', 'Analisis 4 pilar Diamond dan 4 strategi Bartlett & Ghoshal.', 'Mampu merekomendasikan strategi ekspansi global yang optimal.']
+      ],
+      caption: 'Tabel 5.2: Peta penguasaan submateri TM 5 Manajemen Strategik.'
+    },
+    CASE_CORPORATE_DIVERSIFICATION_MA,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Transnational Strategy**: Pendekatan paling canggih yang mengoptimalkan trade-off: mencapai skala efisiensi biaya global sekaligus menyesuaikan produk dengan preferensi konsumen lokal.',
-        '**Integrasi Vertikal (Vertical Integration)**: Perluasan ke rantai pasok hulu (*Backward* - membeli pemasok bahan baku) atau ke saluran hilir (*Forward* - memiliki gerai ritel sendiri).',
-        '**Aliansi Strategis & JV**: Memungkinkan perusahaan mengakses teknologi baru dan pasar asing tanpa menanggung seluruh risiko modal dan utang M&A.'
+        '**Uji 1 + 1 = 3 untuk Diversifikasi**: Diversifikasi korporasi hanya dibenarkan jika menghasilkan nilai sinergi di mana gabungan dua bisnis menghasilkan laba yang lebih besar daripada penjumlahan masing-masing entitas jika berdiri sendiri.',
+        '**Strategi Transnasional Adalah Idaman**: Mencapai efisiensi skala global sekaligus tetap responsif terhadap selera lokal (*Transnational Strategy*) adalah puncak keunggulan strategis multinasional modern.',
+        '**Aliansi Lebih Fleksibel dari Akuisisi**: Aliansi strategis memungkinkan perusahaan mengakses teknologi baru tanpa harus menanggung risiko finansial dan benturan budaya merger yang mahal.'
       ]
     }
   ]

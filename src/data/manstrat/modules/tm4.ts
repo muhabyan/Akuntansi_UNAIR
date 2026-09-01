@@ -1,87 +1,124 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_GENERIC_STRATEGIES_LIFECYCLE } from '../manstratPracticeCases';
 
 const SVG_GENERIC_STRATEGIES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRATEGI TINGKAT BISNIS GENERIK (BUSINESS-LEVEL STRATEGIES - DESS CH. 5)</text>
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRATEGI BERSAING GENERIK &amp; CAKUPAN PASAR (MICHAEL E. PORTER)</text>
   
-  <!-- Overall Cost Leadership -->
-  <rect x="40" y="50" width="280" height="65" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="180" y="72" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. Overall Cost Leadership</text>
-  <text x="180" y="88" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Keunggulan Biaya Rendah &amp; Target Pasar Luas</text>
-  <text x="180" y="102" fill="#34d399" font-size="8.5" font-weight="600" text-anchor="middle">(Walmart, IKEA, AirAsia)</text>
+  <rect x="35" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="76" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">COST LEADERSHIP (BIAYA RENDAH)</text>
+  <text x="177" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Keunggulan: Biaya Murah | Target: Pasar Luas</text>
+  <text x="177" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Skala raksasa, efisiensi rantai pasok (Walmart, Lion Air)</text>
 
-  <!-- Broad Differentiation -->
-  <rect x="360" y="50" width="280" height="65" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="500" y="72" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. Broad Differentiation</text>
-  <text x="500" y="88" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Keunikan Produk Premium &amp; Target Pasar Luas</text>
-  <text x="500" y="102" fill="#fbbf24" font-size="8.5" font-weight="600" text-anchor="middle">(Apple, BMW, Starbucks)</text>
+  <rect x="355" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="497" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">DIFFERENTIATION (DIFERENSIASI)</text>
+  <text x="497" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Keunggulan: Nilai Unik | Target: Pasar Luas</text>
+  <text x="497" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Brand prestise, inovasi, harga premium (Apple, BMW)</text>
 
-  <!-- Cost Focus -->
-  <rect x="40" y="125" width="280" height="65" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="180" y="147" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">3. Cost Focus (Fokus Biaya)</text>
-  <text x="180" y="163" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Keunggulan Biaya pada Segmen Ceruk Sempit</text>
-  <text x="180" y="177" fill="#7dd3fc" font-size="8.5" font-weight="600" text-anchor="middle">(Aldi di segmen diskon ekstrem lokal)</text>
+  <rect x="35" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="177" y="153" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">FOCUSED COST LEADERSHIP</text>
+  <text x="177" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Keunggulan: Biaya Murah | Target: Ceruk Sempit</text>
+  <text x="177" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Melayani segmen sensitif harga di area khusus</text>
 
-  <!-- Differentiation Focus -->
-  <rect x="360" y="125" width="280" height="65" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="500" y="147" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">4. Differentiation Focus (Fokus Unik)</text>
-  <text x="500" y="163" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Keunikan Produk pada Segmen Ceruk Mewah</text>
-  <text x="500" y="177" fill="#c084fc" font-size="8.5" font-weight="600" text-anchor="middle">(Ferrari, Rolex, Patek Philippe)</text>
+  <rect x="355" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="497" y="153" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">FOCUSED DIFFERENTIATION</text>
+  <text x="497" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Keunggulan: Nilai Unik | Target: Ceruk Sempit</text>
+  <text x="497" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Produk kustom spesifik (Ferrari, Jam Tangan Rolex)</text>
 </svg>`;
 
 export const TM4_READING: Reading = {
   tm: 4,
   title: 'Business-Level Strategy: Keunggulan Bersaing Generik & Siklus Hidup Industri',
-  ref: 'Dess, McNamara, Eisner, & Lee (11th ed.) Ch. 5',
-  intro: 'Modul Pembelajaran Mendalam Manajemen Strategik TM 4: Menguasai formulasi Strategi Tingkat Bisnis (*Business-Level Strategy*), Tiga Strategi Bersaing Generik Michael Porter (*Overall Cost Leadership, Differentiation, Focus*), bahaya terjebak di tengah (*Stuck in the Middle*), Strategi Kombinasi (*Integrated Low-Cost and Differentiation* melalui Kustomisasi Massal / *Mass Customization*), serta Strategi Penyesuaian Tahapan Siklus Hidup Industri (*Introduction, Growth, Maturity, Decline*).',
+  ref: 'Dess et al. Bab 5 | Michael Porter Generic Strategies | Industry Life Cycle Analysis',
+  intro: 'TM 4 membahas strategi tingkat bisnis (Business-Level Strategy) untuk memposisikan unit bisnis dalam persaingan industri: 3 strategi bersaing generik Michael Porter (Overall Cost Leadership, Differentiation, Focus Strategy), strategi terpadu (Integrated Low-Cost and Differentiation), bahaya posisi terjebak di tengah (Stuck in the Middle), serta pergeseran dinamika strategi sepanjang 4 tahap Siklus Hidup Industri (Introduction, Growth, Maturity, Decline).',
   objectives: [
-    'Menganalisis strategi Keunggulan Biaya Menyeluruh (Overall Cost Leadership: skala ekonomi, kurva pengalaman / *experience curve*, pengendalian biaya overhead ketat).',
-    'Menganalisis strategi Diferensiasi (Diferensiasi prestise merek, kualitas desain, inovasi teknologi, dan layanan unggul).',
-    'Membandingkan strategi Fokus Biaya vs Fokus Diferensiasi dalam melayani pasar ceruk (*niche market*).',
-    'Menjelaskan risiko strategis terjebak di tengah (Stuck in the Middle) dan cara mencapainya melalui Integrated Low-Cost and Differentiation.',
-    'Merumuskan strategi bisnis pada 4 Tahap Siklus Hidup Industri: Pengenalan (Diferensiasi R&D), Pertumbuhan (Pembangunan Merek), Kematangan (Efisiensi Biaya), dan Penurunan (Harvesting, Consolidation, Divestment).'
+    'Menganalisis sumber keunggulan bersaing Cost Leadership dan risikonya terhadap perubahan teknologi.',
+    'Mengevaluasi strategi Diferensiasi dalam menciptakan loyalitas pelanggan dan menolak elastisitas harga.',
+    'Menjelaskan taktik strategi Fokus Biaya dan Fokus Diferensiasi pada segmen ceruk pasar (Niche Market).',
+    'Menghubungkan tahap Siklus Hidup Industri (Perkenalan, Pertumbuhan, Kedewasaan, Penurunan) dengan strategi fungsional.',
+    'Menerapkan 4 strategi pada tahap penurunan (Decline Stage): Maintaining, Harvesting, Divesting, Forging Ahead.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Empat Strategi Tingkat Bisnis Generik Michael Porter',
-      svg: SVG_GENERIC_STRATEGIES,
-      caption: 'Gambar 4.1: Matriks basis keunggulan bersaing vs cakupan target pasar yang dilayani.'
+      caption: 'Gambar 4.1: Matriks Strategi Bersaing Generik Michael Porter Berdasarkan Keunggulan dan Cakupan Target.',
+      svg: SVG_GENERIC_STRATEGIES
     },
-
-    { kind: 'h2', text: '1. Komparasi Tiga Strategi Generik Porter' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 4'
+    },
     {
       kind: 'table',
-      headers: ['Strategi Bisnis', 'Keunggulan Utama', 'Persyaratan Rantai Nilai', 'Risiko Utama'],
+      headers: ['Tahap Siklus Hidup Industri', 'Tingkat Pertumbuhan Pasar', 'Tingkat Intensitas Persaingan', 'Fokus Utama Inovasi & Strategi'],
       rows: [
-        ['**1. Overall Cost Leadership**', 'Biaya per unit paling rendah di industri.', 'Fasilitas skala efisien, otomatisasi tinggi, rekayasa proses, pengawasan biaya ketat.', 'Pesaing meniru metode produksi; perang harga mengikis margin; mengabaikan diferensiasi penting.'],
-        ['**2. Differentiation**', 'Presepsi keunikan nilai yang bernilai tinggi bagi pembeli (*Willingness-to-Pay* tinggi).', 'R&D terdepan, pemasaran kreatif, material premium, layanan pelanggan luar biasa.', 'Selisih harga terlalu mahal; pemalsuan/imitasi merek; selera konsumen berubah menjadi komoditas.'],
-        ['**3. Focus (Cost / Differentiation)**', 'Melayani kebutuhan spesifik segmen pasar sempit secara mendalam.', 'Keahlian ceruk mendalam, fleksibilitas kustomisasi tinggi.', 'Pesaing generik memasuki ceruk pasar; perbedaan segmen ceruk dengan pasar massal memudar.']
+        ['1. Perkenalan (Introduction)', 'Rendah (pasar baru lahir)', 'Sangat rendah (sedikit pelopor)', 'Inovasi Produk radikal; mengedukasi konsumen awal dan membangun saluran distribusi.'],
+        ['2. Pertumbuhan (Growth)', 'Sangat Tinggi (lonjakan eksponensial)', 'Meningkat pesat (banyak pendatang baru)', 'Membangun loyalitas merek, memperluas kapasitas pabrik, dan meraih pangsa pasar dominan.'],
+        ['3. Kedewasaan (Maturity)', 'Melambat s/d Nol (pasar jenuh)', 'Sangat Sengit (perang harga)', 'Inovasi Proses; efisiensi biaya manufaktur, diferensiasi layanan, dan rasionalisasi SKU.'],
+        ['4. Penurunan (Decline)', 'Negatif (penyusutan penjualan)', 'Bervariasi (konsolidasi atau eksodus)', 'Strategi panen kas (Harvesting), konsolidasi monopoli ceruk, atau divestasi bisnis.']
       ],
-      caption: 'Tabel 4.1: Keunggulan, syarat, dan risiko strategi bersaing generik.'
+      caption: 'Tabel 4.0: Matriks dinamika 4 tahap siklus hidup industri.'
     },
-
-    { kind: 'h2', text: '2. Strategi Berdasarkan Siklus Hidup Industri (Industry Life Cycle)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 4 Pilihan Strategi pada Tahap Penurunan Industri (Decline Stage)'
+    },
     {
       kind: 'table',
-      headers: ['Tahap Siklus Hidup', 'Karakteristik Pertumbuhan & Pesaing', 'Fokus Strategi Bisnis yang Tepat'],
+      headers: ['Pilihan Strategi Penurunan', 'Tindakan Manajerial Kunci', 'Kapan Paling Tepat Diterapkan'],
       rows: [
-        ['**1. Introduction (Pengenalan)**', 'Pertumbuhan lambat, produk belum terstandardisasi, sedikit pesaing, margin operasi rendah.', '**Diferensiasi Produk**: Edukasi pasar, investasi R&D, dan uji coba fitur awal.'],
-        ['**2. Growth (Pertumbuhan)**', 'Permintaan melonjak cepat, muncul desain standar dominan, banyak pendatang baru.', '**Diferensiasi Merek & Perluasan Distribusi**: Membangun loyalitas konsumen dan mengamankan saluran ritel.'],
-        ['**3. Maturity (Kematangan)**', 'Pertumbuhan pasar melambat/jenuh, persaingan harga meningkat sengit, konsolidasi industri.', '**Efisiensi Biaya & Inovasi Proses**: Mengoptimalkan rantai pasok dan menekan biaya produksi per unit.'],
-        ['**4. Decline (Penurunan)**', 'Penjualan menurun drastis akibat teknologi substitusi baru.', '**Memilih 4 Opsi**: Mempertahankan (*Maintain*), Memanen (*Harvesting*), Menghentikan/Menjual (*Divesting*), atau Konsolidasi akuisisi.']
+        ['1. Maintaining (Mempertahankan)', 'Melanjutkan operasi tanpa investasi baru yang signifikan, berharap pesaing keluar duluan.', 'Ketika kapasitas pasar yang tersisa masih cukup menguntungkan.'],
+        ['2. Harvesting (Memanen Kas)', 'Memotong drastis anggaran promosi dan R&D, memerah arus kas sisa secepat mungkin.', 'Ketika produk masih menghasilkan kas jangka pendek namun masa depannya suram.'],
+        ['3. Divesting (Divestasi / Jual)', 'Menjual seluruh unit bisnis atau aset pabrik kepada pihak lain sedini mungkin.', 'Ketika perusahaan dapat menemukan pembeli yang bersedia membayar harga wajar.'],
+        ['4. Consolidating (Konsolidasi)', 'Membeli pesaing yang sekarat untuk menguasai 100% sisa ceruk pasar monopoli.', 'Ketika pasar ceruk yang tersisa sangat stabil dan loyal (contoh: piringan hitam vinyl).']
       ],
-      caption: 'Tabel 4.2: Evolusi strategi sepanjang siklus hidup industri.'
+      caption: 'Tabel 4.1: Strategi mengatasi penurunan industri menurut Dess et al.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 4' },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Risiko Strategi Diferensiasi yang Berlebihan',
+      prompt: 'Sebuah produsen laptop menambahkan puluhan fitur mewah berteknologi tinggi (layar hologram, casing berlapis emas) sehingga harga laptop melambung menjadi Rp 150 Juta per unit. Penjualannya anjlok drastis. Risiko strategi diferensiasi apa yang dialami perusahaan tersebut?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Identifikasi Risiko**: Mengalami risiko **Perbedaan Harga yang Terlalu Lebar (Excessive Price Differential)**.',
+            '**Mekanisme Kegagalan**: Konsumen memang menghargai diferensiasi unik, namun ada batas ambang toleransi kesediaan membayar (*willingness to pay*). Ketika premi harga melampaui nilai utilitas yang dirasakan konsumen, pelanggan akan beralih ke produk standar yang "cukup baik".',
+            '**Rekomendasi Porter**: Diferensiasi harus selalu memperhatikan efisiensi biaya; jangan menambahkan fitur yang tidak diinginkan konsumen jika fitur tersebut mendongkrak biaya produksi secara tidak proporsional.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 4'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Cost Leadership & Diferensiasi', 'Analisis keunggulan dan kerentanan 3 strategi bersaing generik.', 'Mampu membedah posisi bersaing merek dalam industri.'],
+        ['2', 'Jebakan Stuck in the Middle', 'Penyebab dan bahaya gagal memilih antara biaya rendah vs diferensiasi.', 'Mampu merekomendasikan reposisi merek yang terjebak di tengah.'],
+        ['3', 'Siklus Hidup Industri', 'Dinamika perkenalan, pertumbuhan, kedewasaan, penurunan dan strategi panen.', 'Mampu menyesuaikan strategi fungsional dengan fase umur industri.']
+      ],
+      caption: 'Tabel 4.2: Peta penguasaan submateri TM 4 Manajemen Strategik.'
+    },
+    CASE_GENERIC_STRATEGIES_LIFECYCLE,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Experience Curve (Kurva Pengalaman)**: Biaya produksi unit menurun secara proporsional seiring bertambahnya volume output kumulatif perusahaan berkat pembelajaran operasional.',
-        '**Mass Customization**: Kemampuan memproduksi produk yang dipersonalisasi sesuai pesanan konsumen individual dengan efisiensi biaya skala massal (misal Dell PC atau Nike By You).',
-        '**Platform Businesses**: Model bisnis dua sisi (*Two-Sided Markets*) yang menghubungkan produsen dan konsumen dengan efek jaringan (*Network Effects*, misal Uber, Tokopedia, Airbnb).'
+        '**Biaya Rendah Bukan Berarti Murahan**: Pemimpin biaya (*Cost Leader*) harus menawarkan produk dengan kualitas yang dapat diterima pasar (*acceptable standard*); jika produk terlalu murahan hingga ditolak konsumen, strategi tersebut gagal.',
+        '**Inovasi Produk vs Inovasi Proses**: Inovasi produk mendominasi tahap perkenalan dan pertumbuhan industri; sedangkan inovasi proses (*process innovation*) mendominasi tahap kedewasaan untuk memangkas biaya.',
+        '**Keberanian Melepaskan**: Pada tahap penurunan (*Decline*), manajer terbaik adalah yang berani melakukan divestasi lebih awal saat aset masih bernilai, bukan yang bertahan keras kepala hingga bangkrut.'
       ]
     }
   ]
