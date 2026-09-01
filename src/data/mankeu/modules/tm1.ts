@@ -1,96 +1,122 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_AGENCY_CORPORATE_GOVERNANCE } from '../mankeuPracticeCases';
 
-const SVG_FINANCIAL_GOAL = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TUJUAN UTAMA MANAJEMEN KEUANGAN PERUSAHAAN (BRIGHAM CH. 1)</text>
+const SVG_AGENCY_GOVERNANCE = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TRIANGLE TATA KELOLA KORPORASI &amp; TEORI KEAGENAN (AGENCY THEORY)</text>
   
-  <rect x="40" y="55" width="280" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="180" y="80" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">1. Nilai Intrinsik Saham</text>
-  <text x="180" y="100" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">INTRINSIC VALUE MAXIMIZATION</text>
-  <line x1="60" y1="112" x2="300" y2="112" stroke="#334155"/>
-  <text x="180" y="132" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Fokus jangka panjang fundamental</text>
-  <text x="180" y="150" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Present Value Arus Kas Bebas (FCF)</text>
-  <text x="180" y="168" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Nilai wajar sesungguhnya perusahaan</text>
-  <text x="180" y="188" fill="#7dd3fc" font-size="10" font-weight="700" text-anchor="middle">(Tujuan Utama Manajemen)</text>
+  <rect x="35" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">PEMEGANG SAHAM</text>
+  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Principals / Owners)</text>
+  <text x="125" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tujuan: Maksimalkan</text>
+  <text x="125" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Nilai Intrinsik Saham</text>
+  <text x="125" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Menanggung risiko modal</text>
+  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Hak Residual Nilai</text>
 
-  <rect x="360" y="55" width="280" height="150" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="500" y="80" fill="#f43f5e" font-size="12" font-weight="700" text-anchor="middle">2. Konflik Keagenan (Agency)</text>
-  <text x="500" y="100" fill="#fca5a5" font-size="11" font-weight="700" text-anchor="middle">STOCKHOLDERS VS MANAGERS</text>
-  <line x1="380" y1="112" x2="620" y2="112" stroke="#334155"/>
-  <text x="500" y="132" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Manajer mendahulukan kepentingan diri</text>
-  <text x="500" y="150" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Mitigasi: Opsi saham &amp; kompensasi</text>
-  <text x="500" y="168" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Pengawasan Dewan Komisaris &amp; RUPS</text>
-  <text x="500" y="188" fill="#fca5a5" font-size="10" font-weight="700" text-anchor="middle">• Ancaman Pengambilalihan Paksa</text>
+  <rect x="250" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="340" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">MANAJEMEN EKSEKUTIF</text>
+  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Agents / Decision Makers)</text>
+  <text x="340" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Risiko: Horizon Problem</text>
+  <text x="340" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengejaran bonus kas</text>
+  <text x="340" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Konsumsi perquisites</text>
+  <text x="340" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Konflik Keagenan</text>
+
+  <rect x="465" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="555" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">MITIGASI GOVERNANCE</text>
+  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Corporate Safeguards)</text>
+  <text x="555" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• ESOP / Stock Options</text>
+  <text x="555" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengawasan BoD / Audit</text>
+  <text x="555" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ancaman Takeover</text>
+  <text x="555" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Penyelarasan Insentif</text>
 </svg>`;
 
 export const TM1_READING: Reading = {
   tm: 1,
-  title: 'An Overview of Financial Management & Corporate Goals',
-  ref: 'Brigham & Houston Ch. 1',
-  intro: 'Modul Pembelajaran Mendalam Manajemen Keuangan TM 1: Memahami hakikat manajemen keuangan, tujuan utama pemaksimalan nilai intrinsik saham jangka panjang, perbandingan bentuk entitas bisnis (Proprietorship, Partnership, Corporation), Teori Keagenan (Agency Conflict: Pemegang Saham vs Manajer vs Kreditor), dan etika bisnis keuangan.',
+  title: 'An Overview of Financial Management, Corporate Goals, & Agency Theory',
+  ref: 'Brigham & Ehrhardt (Financial Management 15e/16e Ch. 1) | Teori Keagenan Jensen & Meckling (1976)',
+  intro: 'TM 1 membahas fondasi filosofis manajemen keuangan korporasi: tujuan utama pembentukan nilai pemegang saham (Shareholder Wealth Maximization vs Stakeholder Welfare), pemisahan kepemilikan dan pengendalian (Separation of Ownership and Control), konflik keagenan (Stockholders vs Managers & Stockholders vs Debtholders), serta mekanisme tata kelola korporasi modern.',
   objectives: [
-    'Mendefinisikan ruang lingkup dan fungsi utama Manajemen Keuangan.',
-    'Menjelaskan tujuan normatif perusahaan: Memaksimalkan Nilai Intrinsik Saham (Stockholders\' Wealth Maximization).',
-    'Membedakan Nilai Intrinsik (Fundamental Value) vs Harga Pasar Saham Aktual (Market Price).',
-    'Menganalisis 3 bentuk organisasi bisnis dengan kelebihan dan kelemahannya.',
-    'Mengevaluasi Konflik Keagenan (Agency Problem) antara manajer dan pemegang saham serta mekanisme peredamannya.',
-    'Memahami konflik antara Pemegang Saham dan Pemegang Obligasi (Bondholders).'
+    'Membedakan tujuan Maksimalisasi Nilai Saham Intrinsik jangka panjang vs Maksimalisasi Laba Akuntansi jangka pendek.',
+    'Menganalisis dinamika Teori Keagenan (Agency Theory) dan biaya keagenan (Agency Costs).',
+    'Merancang sistem kompensasi eksekutif (ESOP, Restricted Stock Units) yang menyelaraskan insentif.',
+    'Mengevaluasi peran pasar keuangan, lembaga intermediasi, dan struktur hukum entitas bisnis (PT vs CV/Firma).'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Fokus Nilai Intrinsik vs Manajemen Konflik Keagenan',
-      svg: SVG_FINANCIAL_GOAL,
-      caption: 'Gambar 1.1: Tujuan fundamental manajemen keuangan korporasi modern.'
-    },
-
-    { kind: 'h2', text: '1. Tujuan Utama Manajemen Keuangan' },
-    {
-      kind: 'p',
-      text: 'Tujuan utama manajer keuangan bukanlah semata-mata memaksimalkan laba akuntansi jangka pendek (*short-term profit maximization*), melainkan **memaksimalkan kekayaan pemegang saham jangka panjang**, yang tercermin dari **pemaksimalan Nilai Intrinsik Saham Perusahaan (Intrinsic Stock Value)**.'
+      caption: 'Gambar 1.1: Kerangka Konflik Keagenan dan Mitigasi Tata Kelola Korporasi.',
+      svg: SVG_AGENCY_GOVERNANCE
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Nilai Intrinsik vs Harga Pasar Saham',
-      text: '• **Nilai Intrinsik (Intrinsic Value)**: Estimasi nilai wajar saham yang dihitung oleh analis berdasarkan pemahaman mendalam atas risiko dan arus kas masa depan perusahaan yang sesungguhnya.\n• **Harga Pasar (Market Price)**: Harga saham aktual di bursa efek berdasarkan persepsi investor marjinal.\n• **Ekuilibrium Pasar**: Tercapai ketika Harga Pasar tepat sama dengan Nilai Intrinsik.'
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 1'
     },
-
-    { kind: 'h2', text: '2. Tiga Bentuk Utama Organisasi Bisnis' },
     {
       kind: 'table',
-      headers: ['Bentuk Badan Usaha', 'Kelebihan Utama', 'Kelemahan Utama'],
+      headers: ['Dimensi Keuangan', 'Maksimalisasi Laba Akuntansi', 'Maksimalisasi Kekayaan Pemegang Saham (Nilai Intrinsik)'],
       rows: [
-        ['1. Perusahaan Perseorangan (Sole Proprietorship)', 'Mudah dan murah dibentuk, sedikit regulasi pemerintah, pajak penghasilan individu.', 'Tanggung jawab pribadi tanpa batas (unlimited liability), sulit menghimpun modal besar, umur bisnis terbatas.'],
-        ['2. Persekutuan (Partnership)', 'Mudah dibentuk, modal lebih besar dari perseorangan, pajak individu.', 'Tanggung jawab bersama tanpa batas (unlimited liability), potensi konflik antar sekutu.'],
-        ['3. Perseroan Terbatas / Korporasi (Corporation)', 'Tanggung jawab terbatas (limited liability) sebatas modal disetor, kepemilikan mudah dialihkan lewat saham, akses modal pasar modal sangat besar, kelangsungan hidup abadi (*perpetual*).', 'Pajak berganda (*double taxation*: pajak penghasilan badan dan pajak dividen pemegang saham), regulasi dan biaya pendirian ketat.']
+        ['Fokus Waktu', 'Jangka Pendek (Kuartalan / Tahunan).', 'Jangka Panjang (Sepanjang umur hidup perusahaan).'],
+        ['Pertimbangan Nilai Waktu Uang', 'Mengabaikan Time Value of Money (TVM).', 'Sepenuhnya memperhitungkan diskonto TVM seluruh arus kas masa depan.'],
+        ['Pertimbangan Risiko', 'Mengabaikan profil risiko arus kas.', 'Secara eksplisit memasukkan premi risiko ke dalam biaya modal (WACC).'],
+        ['Pengambilan Keputusan', 'Rentan terhadap manipulasi laba akrual dan penundaan biaya riset.', 'Berbasis pada Arus Kas Bebas (Free Cash Flow / FCF) riil yang dihasilkan.']
       ],
-      caption: 'Tabel 1.1: Komparasi karakteristik tiga bentuk badan usaha komersial.'
-    },
-
-    { kind: 'h2', text: '3. Masalah Keagenan (Agency Problem) & Tata Kelola' },
-    {
-      kind: 'p',
-      text: 'Hubungan keagenan timbul saat prinsipal (pemegang saham) mempekerjakan agen (manajer eksekutif) untuk mengelola perusahaan. Manajer mungkin tergoda untuk mengejar kenyamanan fasilitas pribadi (*perquisites*), memperbesar ukuran perusahaan tanpa nilai tambah (*empire building*), atau menghindari proyek berisiko bernilai tinggi.'
+      caption: 'Tabel 1.0: Perbandingan tujuan laba akuntansi vs maksimalisasi nilai pemegang saham.'
     },
     {
-      kind: 'ul',
-      items: [
-        '**Kompensasi Berbasis Kinerja**: Memberikan opsi saham (*stock options*) atau bonus berbasis laba jangka panjang agar kepentingan manajer selaras dengan pemegang saham.',
-        '**Intervensi Pemegang Saham**: Pemegang saham institusional besar (dana pensiun, reksadana) aktif mengawasi dewan direksi.',
-        '**Ancaman Pemecatan (Threat of Firing)**: Rapat Umum Pemegang Saham (RUPS) memiliki wewenang mengganti direksi yang berkinerja buruk.',
-        '**Ancaman Pengambilalihan Paksa (Hostile Takeover)**: Jika harga saham jatuh akibat inefisiensi, perusahaan lain akan membeli saham di pasar dan memecat manajemen lama.'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Nilai Intrinsik Perusahaan'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Nilai Intrinsik Perusahaan (Corporate Value)} = \\sum_{t=1}^{\\infty} \\frac{\\text{Free Cash Flow}_t (FCF_t)}{(1 + WACC)^t}
+\\text{Free Cash Flow (FCF)} = [EBIT \\times (1 - T)] + \\text{Depresiasi} - [\\Delta \\text{Net Working Capital} + \\text{Capital Expenditures (CapEx)}]`,
+      note: 'Setiap keputusan manajer keuangan (investasi, pendanaan, dan operasional) dinilai baik HANYA jika keputusan tersebut meningkatkan FCF atau menurunkan WACC, sehingga menaikkan Nilai Intrinsik.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Konflik Pemegang Saham vs Pemegang Obligasi (Debtholders)',
+      prompt: 'Mengapa pemegang obligasi (Debtholders) sangat membatasi perusahaan berutang tinggi untuk mengambil proyek investasi yang memiliki variansi risiko luar biasa besar (Asset Substitution Problem)?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Karakteristik Klaim Debtholders**: Pemegang obligasi hanya menerima imbal hasil tetap (Fixed Claims: Kupon & Pokok). Jika proyek sukses besar, seluruh kelebihan laba menjadi hak pemegang saham (Residual Claims).',
+            '**Risiko Gagal Bayar (Default Risk)**: Jika proyek gagal total, perusahaan dapat bangkrut dan pemegang obligasi menanggung kerugian pokok pinjaman.',
+            '**Mitigasi Debtholders**: Pemegang obligasi melindungi diri dengan mencantumkan Klausul Pembatasan (Debt Covenants), seperti batas maksimum rasio Debt-to-Equity dan syarat minimum Interest Coverage Ratio.'
+          ]
+        }
       ]
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 1' },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 1'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Tujuan Manajemen Keuangan', 'Pembedaan nilai intrinsik vs harga pasar dan laba akuntansi.', 'Mampu menganalisis tujuan optimalisasi keputusan korporasi.'],
+        ['2', 'Teori Keagenan & Biaya Keagenan', 'Identifikasi konflik manajer vs pemegang saham vs debtholder.', 'Mampu merancang solusi kontrak dan insentif manajemen.'],
+        ['3', 'Bentuk Badan Usaha & Pasar Modal', 'Karakteristik PT, CV, Pasar Perdana vs Sekunder, Money vs Capital Market.', 'Menguasai struktur hukum perpajakan dan likuiditas modal.']
+      ],
+      caption: 'Tabel 1.2: Peta penguasaan submateri TM 1 Manajemen Keuangan.'
+    },
+    CASE_AGENCY_CORPORATE_GOVERNANCE,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Tujuan Finansial**: Memaksimalkan nilai intrinsik saham jangka panjang.',
-        '**Agency Conflict**: Diminimalisasi melalui kompensasi saham, pengawasan komisaris, dan mekanisme pasar modal.',
-        '**Bondholder vs Stockholder**: Pemegang saham menyukai proyek berisiko tinggi (*high return*), sedangkan pemegang obligasi mengutamakan keamanan pembayaran pokok dan bunga melalui perjanjian utang (*debt covenants*).'
+        '**Maksimalisasi Nilai Saham $\\neq$ Maksimalisasi Laba**: Laba akuntansi dapat dimanipulasi dengan akrual dan mengabaikan risiko serta nilai waktu uang; nilai intrinsik berjangkar pada Free Cash Flow.',
+        '**Agency Costs**: Terdiri dari pengeluaran pemantauan oleh pemegang saham (audit eksternal), pengeluaran ikatan oleh manajemen (bonding costs), dan kerugian residual (residual loss).',
+        '**Efisiensi Pasar Modal**: Harga saham di pasar yang efisien mencerminkan seluruh informasi relevan yang tersedia (Efficient Market Hypothesis / EMH).'
       ]
     }
   ]
