@@ -1,84 +1,116 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_EXPENSE_DEDUCTIBILITY } from '../pjk2PracticeCases';
 
-const SVG_TAX_EXPENSES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">BIAYA FISKAL: DEDUCTIBLE (PASAL 6) VS NON-DEDUCTIBLE (PASAL 9) UU PPH</text>
+const SVG_DEDUCTIBILITY = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SKEMA PENGURANGAN PENGHASILAN BRUTO PPH BADAN (UU HPP NO. 7/2021)</text>
   
-  <rect x="30" y="55" width="290" height="150" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="175" y="80" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">1. Deductible Expenses (Pasal 6)</text>
-  <text x="175" y="98" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">BIAYA UNTUK 3M PENGHASILAN</text>
-  <line x1="50" y1="110" x2="300" y2="110" stroke="#334155"/>
-  <text x="175" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Biaya langsung (bahan, gaji, upah)</text>
-  <text x="175" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Bunga, sewa, royalti, perjalanan dinas</text>
-  <text x="175" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Penyusutan fiskal &amp; kerugian selisih kurs</text>
-  <text x="175" y="186" fill="#34d399" font-size="10" font-weight="700" text-anchor="middle">Mengurangi Penghasilan Kena Pajak</text>
+  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">BIAYA 3M BOLEH DIKURANGKAN</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Deductible Expenses - Pasal 6 UU PPh):</text>
+  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Biaya bahan baku, gaji, &amp; tunjangan</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penyusutan &amp; amortisasi fiskal</text>
+  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sumbangan bencana nasional &amp; litbang</text>
+  <text x="177" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Mengurangi Laba Kena Pajak</text>
 
-  <rect x="360" y="55" width="290" height="150" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="505" y="80" fill="#f43f5e" font-size="12" font-weight="700" text-anchor="middle">2. Non-Deductible Expenses (Pasal 9)</text>
-  <text x="505" y="98" fill="#cbd5e1" font-size="10" font-weight="600" text-anchor="middle">BIAYA YANG DILARANG DIKURANGKAN</text>
-  <line x1="380" y1="110" x2="630" y2="110" stroke="#334155"/>
-  <text x="505" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Pembagian laba (Dividen / Prive)</text>
-  <text x="505" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Kepentingan pribadi pemilik/pemegang saham</text>
-  <text x="505" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Sanksi administrasi denda/bunga pajak</text>
-  <text x="505" y="186" fill="#fca5a5" font-size="10" font-weight="700" text-anchor="middle">Wajib Dikoreksi Fiskal Positif (+)</text>
+  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="497" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">BIAYA TIDAK BOLEH DIKURANGKAN</text>
+  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Non-Deductible - Pasal 9 UU PPh):</text>
+  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pembagian dividen &amp; prive pemilik</text>
+  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sanksi bunga / denda administrasi pajak</text>
+  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Biaya keperluan pribadi pemegang saham</text>
+  <text x="497" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Wajib Koreksi Fiskal Positif</text>
 </svg>`;
 
 export const TM1_READING: Reading = {
   tm: 1,
   title: 'Konsep Dasar PPh, Subjek/Objek Pajak, & Biaya 3M (Deductible vs Non-Deductible)',
-  ref: 'UU PPh jo. UU HPP (UU 7/2021) | PP 55/2022',
-  intro: 'Modul Pembelajaran Mendalam Perpajakan II TM 1: Menguasai asas dasar Pajak Penghasilan (PPh), pembedaan Subjek Pajak Dalam Negeri (SPDN) vs Subjek Pajak Luar Negeri (SPLN), Objek Pajak Umum vs Final vs Bukan Objek Pajak (Pasal 4 ayat 1, 2, 3), prinsip biaya 3M (*Mendapatkan, Menagih, Memelihara Penghasilan* - Pasal 6), biaya yang tidak boleh dibiayakan (*Non-Deductible Expenses* - Pasal 9), serta kompensasi kerugian fiskal 5 tahun.',
+  ref: 'UU No. 7/2021 (UU HPP) | Pasal 4, 6, & 9 UU PPh | PMK No. 02/PMK.03/2010 Daftar Nominatif',
+  intro: 'TM 1 membahas fondasi pemajakan penghasilan di Indonesia: klasifikasi subjek pajak dalam negeri vs luar negeri, pemilahan objek pajak (Objek Pajak Reguler, Objek PPh Final, dan Bukan Objek Pajak), prinsip Biaya 3M (Mendapatkan, Menagih, dan Memelihara penghasilan), serta evaluasi komparatif Deductible Expense (Pasal 6) vs Non-Deductible Expense (Pasal 9) yang memicu koreksi fiskal positif.',
   objectives: [
-    'Mendefinisikan pengertian Penghasilan menurut konsep *Accretion Concept* (Schoanz-Haig-Simons) dalam UU PPh.',
-    'Membedakan Subjek Pajak Dalam Negeri (SPDN) dan Subjek Pajak Luar Negeri (SPLN) berdasarkan kriteria *Time Test* (183 hari).',
-    'Mengklasifikasikan penghasilan ke dalam Objek PPh Tarif Umum, PPh Final Pasal 4(2), dan Bukan Objek Pajak (Pasal 4 ayat 3).',
-    'Menganalisis biaya-biaya yang boleh dikurangkan (*Deductible Expenses* - Pasal 6 UU PPh).',
-    'Mengidentifikasi pos-pos pengeluaran yang dilarang dikurangkan (*Non-Deductible Expenses* - Pasal 9 UU PPh) yang memerlukan koreksi positif.',
-    'Menerapkan kompensasi kerugian fiskal horizontal selama 5 tahun berturut-turut.'
+    'Mengklasifikasikan penghasilan: Objek PPh Umum, Objek PPh Final, dan Bukan Objek Pajak.',
+    'Menganalisis kriteria Biaya 3M yang berhak menjadi pengurang penghasilan bruto (Pasal 6 UU PPh).',
+    'Menguasai daftar biaya yang dilarang dikurangkan secara fiskal menurut Pasal 9 UU PPh.',
+    'Menghitung penyesuaian koreksi fiskal positif atas biaya jamuan, sanksi pajak, dan prive.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Klasifikasi Pengeluaran Biaya Fiskal menurut UU PPh',
-      svg: SVG_TAX_EXPENSES,
-      caption: 'Gambar 1.1: Pemilahan biaya yang dapat dibebankan secara fiskal (Pasal 6) vs biaya non-deductible (Pasal 9).'
+      caption: 'Gambar 1.1: Klasifikasi Beban Fiskal: Deductible Expense (Pasal 6) vs Non-Deductible Expense (Pasal 9).',
+      svg: SVG_DEDUCTIBILITY
     },
-
-    { kind: 'h2', text: '1. Pengertian Penghasilan & Pengelompokan Objek Pajak' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 1'
+    },
     {
       kind: 'table',
-      headers: ['Kelompok Objek Pajak', 'Dasar Hukum UU PPh', 'Karakteristik Perlakuan Perpajakan', 'Contoh Pos Penghasilan'],
+      headers: ['Kelompok Beban Komersial', 'Ketentuan Pasal UU PPh', 'Perlakuan Fiskal', 'Syarat Administratif Wajib'],
       rows: [
-        ['1. Objek Pajak Umum (Tidak Final)', 'Pasal 4 ayat (1)', 'Digabungkan dalam SPT Tahunan, dihitung dengan tarif umum Pasal 17, dan kredit pajak dapat diperhitungkan.', 'Laba usaha dagang/jasa, gaji pegawai, royalti, keuntungan selisih kurs, sewa alat berat.'],
-        ['2. Objek Pajak PPh Final', 'Pasal 4 ayat (2)', 'Pajak dipotong langsung saat transaksi, selesai seketika, dan tidak digabung dalam perhitungan PKP akhir tahun.', 'Bunga deposito/tabungan (20%), sewa tanah/bangunan (10%), jasa konstruksi, PPh UMKM 0,5%.'],
-        ['3. Bukan Objek Pajak (Non-Taxable)', 'Pasal 4 ayat (3)', 'Dikecualikan dari pengenaan pajak penghasilan.', 'Bantuan/sumbangan, hibah keluarga sedarah, warisan, klaim asuransi kesehatan/jiwa, dividen diterima WP Badan dalam negeri (UU HPP).']
+        ['Gaji, Tunjangan, & Bonus Pegawai', 'Pasal 6 ayat (1) huruf a', 'Deductible (Boleh Dikurangkan)', 'Telah dipotong PPh Pasal 21 dan dilaporkan di SPT Masa.'],
+        ['Beban Entertainment / Jamuan Relasi', 'Pasal 6 jo PMK 02/2010', 'Deductible jika ada Daftar Nominatif; Non-Deductible jika tanpa daftar.', 'Wajib melampirkan Daftar Nominatif berisi nama relasi, posisi, dan jumlah.'],
+        ['Sumbangan Bencana Alam / Litbang', 'Pasal 6 ayat (1) huruf i & j', 'Deductible (Boleh Dikurangkan)', 'Disalurkan melalui badan/lembaga yang ditunjuk pemerintah (BNPB/Kemensos).'],
+        ['Pembagian Dividen / Laba', 'Pasal 9 ayat (1) huruf a', 'Non-Deductible (Koreksi Positif)', 'Dividen adalah distribusi laba neto, bukan biaya operasional.'],
+        ['Sanksi Bunga & Denda STP Pajak', 'Pasal 9 ayat (1) huruf k', 'Non-Deductible (Koreksi Positif)', 'Sanksi hukum tidak boleh disubsidi melalui penghematan pajak.']
       ],
-      caption: 'Tabel 1.1: Tiga kategori klasifikasi objek penghasilan.'
+      caption: 'Tabel 1.0: Matriks evaluasi beban fiskal PPh Badan.'
     },
-
-    { kind: 'h2', text: '2. Biaya yang Boleh (Pasal 6) vs Tidak Boleh Dikurangkan (Pasal 9)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Penentuan Penghasilan Kena Pajak (PKP)'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Laba Komersial Bersih Sebelum Pajak} \\pm \\text{Koreksi Fiskal} = \\text{Penghasilan Kena Pajak (PKP)}
+\\text{Koreksi Fiskal Positif} \\implies \\text{Menambah PKP (Beban Komersial } > \\text{ Beban Fiskal atau Pendapatan Kurang Catat)}
+\\text{Koreksi Fiskal Negatif} \\implies \\text{Mengurangi PKP (Pendapatan PPh Final / Bukan Objek atau Beban Fiskal } > \\text{ Komersial)}`,
+      note: 'Penghasilan yang dikenai PPh Final (Pasal 4 ayat 2) dan Bukan Objek Pajak (Pasal 4 ayat 3) wajib dikoreksi negatif dari laba komersial agar tidak dipajaki berganda.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Evaluasi Beban Premi Asuransi Pemegang Saham',
+      prompt: 'Perusahaan membayar premi asuransi jiwa dan kesehatan untuk direktur utama yang juga merupakan pemegang saham pengendali sebesar Rp 50.000.000 per tahun. Premi tersebut tidak dimasukkan sebagai penghasilan di slip gaji direktur. Apakah beban tersebut deductible bagi perusahaan?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Ketentuan Pasal 9 ayat (1) huruf d UU PPh**: Premi asuransi kesehatan, kecelakaan, dan jiwa yang dibayar oleh Wajib Pajak untuk kepentingan pribadi pemegang saham atau keluarganya adalah **Non-Deductible Expense**.',
+            '**Pengecualian**: Premi tersebut HANYA boleh dikurangkan oleh perusahaan jika premi tersebut digabungkan sebagai **tambahan penghasilan bruto** bagi pegawai yang dipotong PPh Pasal 21.',
+            '**Kesimpulan**: Karena tidak dipotong PPh 21 pada slip gaji, perusahaan **WAJIB melakukan Koreksi Fiskal Positif sebesar Rp 50.000.000**.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 1'
+    },
     {
       kind: 'table',
-      headers: ['Pasal 6: Deductible Expenses (Boleh Dibiayakan)', 'Pasal 9: Non-Deductible Expenses (Dilarang Dibiayakan)'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['Biaya pembelian bahan baku & upah operasional.', 'Pembagian laba seperti dividen, pembagian SHU koperasi, atau prive.'],
-        ['Biaya bunga pinjaman modal kerja, sewa kantor, dan royalti.', 'Biaya yang dibebankan untuk kepentingan pribadi pemegang saham atau keluarganya.'],
-        ['Beban penyusutan dan amortisasi fiskal harta berwujud/tak berwujud.', 'Pembentukan atau pemupukan dana cadangan (kecuali bank dan asuransi tertentu).'],
-        ['Iuran pensiun ke dana pensiun yang disahkan Menkeu.', 'Premi asuransi kesehatan/jiwa untuk pemilik/pemegang saham yang dibayar perusahaan.'],
-        ['Kerugian selisih kurs mata uang asing.', 'Pajak Penghasilan (PPh) itu sendiri dan sanksi administrasi denda/bunga/kenaikan pajak.'],
-        ['Zakat atas penghasilan yang dibayarkan ke BAZNAS/LAZ resmi.', 'Biaya promosi/entertainment yang **tidak memiliki Daftar Nominatif** lengkap.']
+        ['1', 'Subjek & Objek PPh', 'Kriteria SPDN vs SPLN dan pemisahan 3 kelompok objek pajak.', 'Mampu mengidentifikasi status pengenaan PPh.'],
+        ['2', 'Prinsip Biaya 3M (Pasal 6)', 'Kriteria keterkaitan langsung beban dengan perolehan omzet.', 'Mampu menentukan pos beban yang berhak dikurangkan.'],
+        ['3', 'Beban Non-Deductible (Pasal 9)', 'Daftar 11 larangan pengurang penghasilan bruto.', 'Mampu menghitung nilai koreksi fiskal positif di SPT 1771.']
       ],
-      caption: 'Tabel 1.2: Komparasi pos biaya Pasal 6 vs Pasal 9 UU PPh.'
+      caption: 'Tabel 1.2: Peta penguasaan submateri TM 1 Perpajakan II.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 1' },
+    CASE_EXPENSE_DEDUCTIBILITY,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Prinsip 3M**: Biaya hanya boleh dikurangkan jika berkaitan langsung dengan kegiatan untuk Mendapatkan, Menagih, dan Memelihara penghasilan yang merupakan objek pajak umum.',
-        '**Dividen Badan DN**: Berdasarkan UU HPP, dividen yang diterima oleh Wajib Pajak Badan Dalam Negeri **BUKAN MERUPAKAN OBJEK PAJAK** (tanpa syarat kepemilikan saham minimum 25%).',
-        '**Kompensasi Kerugian**: Kerugian fiskal dapat dikompensasikan dengan penghasilan neto mulai tahun pajak berikutnya berturut-turut hingga **5 tahun**.'
+        '**Daftar Nominatif adalah Nyawa Biaya Promosi**: Tanpa daftar nominatif resmi sesuai PMK 02/2010, pemeriksa pajak akan mendiskualifikasi 100% biaya entertainment dan promosi menjadi koreksi positif.',
+        '**Dividen Antar-PT Bukan Objek Pajak**: Sejak berlakunya UU Cipta Kerja & UU HPP, dividen yang diterima oleh perseroan terbatas dalam negeri dari perseroan terbatas lain di Indonesia bukan lagi objek PPh (tanpa syarat kepemilikan 25%).',
+        '**Sanksi Bunga STP Bukan Beban Usaha**: Sanksi administrasi pajak tidak pernah diakui sebagai biaya usaha karena negara tidak membiayai kelalaian kepatuhan Wajib Pajak.'
       ]
     }
   ]

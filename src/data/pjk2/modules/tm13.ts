@@ -1,108 +1,116 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_EFAKTUR_INPUT_CREDIT } from '../pjk2PracticeCases';
 
-const SVG_FAKTUR_PAJAK = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MEKANISME E-FAKTUR PAJAK &amp; KODE TRANSAKSI (PER-03/PJ/2022)</text>
+const SVG_INPUT_TAX_RULES = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ATURAN PENGKREDITAN PAJAK MASUKAN: PASAL 9 AYAT (8) UU PPN (UU HPP)</text>
   
-  <rect x="25" y="55" width="145" height="150" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">Kode 01 &amp; 04</text>
-  <text x="97" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Penyerahan Umum</text>
-  <line x1="35" y1="108" x2="160" y2="108" stroke="#334155"/>
-  <text x="97" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 01: Penyerahan BKP</text>
-  <text x="97" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  kepada selain WAPU</text>
-  <text x="97" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 04: Penyerahan DPP</text>
-  <text x="97" y="174" fill="#94a3b8" font-size="8.5" text-anchor="middle">  Nilai Lain</text>
-  <text x="97" y="192" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">(Standar Komersial)</text>
+  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">PAJAK MASUKAN DAPAT DIKREDITKAN</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Memenuhi Syarat Material &amp; Formal):</text>
+  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Terkait langsung kegiatan 3M usaha</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• e-Faktur valid terhubung server DJP</text>
+  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dikreditkan pada masa yang sama / max 3 bln</text>
+  <text x="177" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Mengurangi Setoran PPN</text>
 
-  <rect x="185" y="55" width="145" height="150" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">Kode 02 &amp; 03</text>
-  <text x="257" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Pemungut (WAPU)</text>
-  <line x1="195" y1="108" x2="320" y2="108" stroke="#334155"/>
-  <text x="257" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 02: Instansi Pemerintah</text>
-  <text x="257" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  (Bendahara APBN/D)</text>
-  <text x="257" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 03: Pemungut BUMN /</text>
-  <text x="257" y="174" fill="#94a3b8" font-size="8.5" text-anchor="middle">  Kontraktor Migas</text>
-  <text x="257" y="192" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">(WAPU Menyetor Kas)</text>
-
-  <rect x="345" y="55" width="145" height="150" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#f59e0b" font-size="10.5" font-weight="700" text-anchor="middle">Kode 07 &amp; 08</text>
-  <text x="417" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Fasilitas Khusus</text>
-  <line x1="355" y1="108" x2="480" y2="108" stroke="#334155"/>
-  <text x="417" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 07: Penyerahan BKP</text>
-  <text x="417" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  TIDAK DIPUNGUT</text>
-  <text x="417" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 08: Penyerahan BKP</text>
-  <text x="417" y="174" fill="#94a3b8" font-size="8.5" text-anchor="middle">  DIBEBASKAN</text>
-  <text x="417" y="192" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">(Insentif Pemerintah)</text>
-
-  <rect x="505" y="55" width="150" height="150" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a855f7" font-size="10.5" font-weight="700" text-anchor="middle">Kode 09 &amp; Lainnya</text>
-  <text x="580" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Aktiva 16D &amp; Retur</text>
-  <line x1="515" y1="108" x2="645" y2="108" stroke="#334155"/>
-  <text x="580" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• 09: Penyerahan Aktiva</text>
-  <text x="580" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  Pasal 16D</text>
-  <text x="580" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Nota Retur &amp; Nota</text>
-  <text x="580" y="174" fill="#94a3b8" font-size="8.5" text-anchor="middle">  Pembatalan</text>
-  <text x="580" y="192" fill="#c084fc" font-size="8.5" font-weight="700" text-anchor="middle">(Penyesuaian Mutasi)</text>
+  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="497" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">PAJAK MASUKAN TIDAK DAPAT DIKREDITKAN</text>
+  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Pasal 9 ayat 8 UU PPN):</text>
+  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tidak terkait langsung kegiatan 3M</text>
+  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Faktur cacat / identitas pembeli fiktif</text>
+  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Perolehan BKP penyerahan PPN Dibebaskan</text>
+  <text x="497" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Wajib Dibiayakan Komersial</text>
 </svg>`;
 
 export const TM13_READING: Reading = {
   tm: 13,
   title: 'Mekanisme Faktur Pajak Elektronik (e-Faktur), DPP Nilai Lain, & Pengkreditan Pajak Masukan',
-  ref: 'PER-03/PJ/2022 jo. PER-11/PJ/2022 Faktur Pajak | PMK 71/2022 Besaran Tertentu',
-  intro: 'Modul Pembelajaran Mendalam Perpajakan II TM 13: Menguasai pembuatan Faktur Pajak Elektronik (e-Faktur), saat dan tempat terutang PPN, kode jenis transaksi Faktur Pajak (01 s.d 09), konsep Dasar Pengenaan Pajak (DPP: Harga Jual, Penggantian, Nilai Impor, Nilai Ekspor, dan Nilai Lain), PPN Besaran Tertentu (Deemed PPN), serta 10 kriteria Pajak Masukan yang tidak dapat dikreditkan (Pasal 9 ayat 8 UU PPN).',
+  ref: 'PER-03/PJ/2022 jo PER-11/PJ/2022 e-Faktur | Pasal 9 ayat (8) UU PPN | PMK DPP Nilai Lain',
+  intro: 'TM 13 membahas tata kelola administrasi dan pengkreditan PPN: mekanisme penerbitan Faktur Pajak Elektronik (e-Faktur) menggunakan Nomor Seri Faktur Pajak (NSFP) resmi dari DJP, ketentuan Faktur Pajak Pengganti dan Pembatalan, jenis-jenis Dasar Pengenaan Pajak (DPP Nilai Lain: Pemakaian Sendiri, Pemberian Cuma-cuma, Jasa Ekspedisi/Kargo), serta rincian larangan pengkreditan Pajak Masukan menurut Pasal 9 ayat (8) UU PPN.',
   objectives: [
-    'Menentukan Saat Terutang PPN (saat penyerahan BKP/JKP atau saat pembayaran diterima jika pembayaran mendahului penyerahan).',
-    'Menjelaskan fungsi dan syarat formal/material Faktur Pajak menurut PER-03/PJ/2022.',
-    'Menerapkan 9 Kode Jenis Transaksi pada Nomor Seri Faktur Pajak (NSFP).',
-    'Menghitung PPN dengan DPP Nilai Lain (Pemakaian sendiri, pemberian cuma-cuma = HPP / Harga Pokok; Jasa pengiriman paket / travel = DPP Nilai Lain).',
-    'Menerapkan PPN Besaran Tertentu (PMK 71/2022: Jasa pengiriman paket tarif efektif 1,1%, jasa travel haji/umrah, jasa notaris).',
-    'Menganalisis 10 pos Pajak Masukan (PM) yang dilarang dikreditkan menurut Pasal 9 ayat (8) UU PPN.'
+    'Menerapkan ketentuan formal dan material pembuatan e-Faktur menurut PER-03/PJ/2022.',
+    'Menghitung PPN dengan Dasar Pengenaan Pajak (DPP) Nilai Lain (Pemberian Cuma-cuma & Jasa Pengiriman).',
+    'Menganalisis daftar larangan pengkreditan Pajak Masukan menurut Pasal 9 ayat (8) UU PPN pasca UU HPP.',
+    'Menjelaskan ketentuan batas waktu pengkreditan Pajak Masukan maksimal 3 bulan setelah masa faktur terbit.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Struktur Kode Jenis Transaksi pada e-Faktur Pajak',
-      svg: SVG_FAKTUR_PAJAK,
-      caption: 'Gambar 13.1: Klasifikasi kode transaksi faktur pajak elektronik sesuai PER-03/PJ/2022.'
+      caption: 'Gambar 13.1: Ketentuan Pengkreditan Pajak Masukan menurut Pasal 9 ayat (8) UU PPN.',
+      svg: SVG_INPUT_TAX_RULES
     },
-
-    { kind: 'h2', text: '1. Sepuluh Pajak Masukan (PM) yang TIDAK DAPAT DIKREDITKAN' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 13'
+    },
     {
       kind: 'table',
-      headers: ['Pasal 9 ayat (8) UU PPN', 'Kondisi / Pos Pengeluaran yang Pajak Masukannya Dilarang Dikreditkan'],
+      headers: ['Jenis Transaksi PPN', 'Dasar Pengenaan Pajak (DPP)', 'Formula PPN Terutang', 'Status Pengkreditan Pajak Masukan'],
       rows: [
-        ['Huruf a', 'Perolehan BKP/JKP **sebelum pengusaha dikukuhkan sebagai PKP** (kecuali menggunakan pedoman pengkreditan 80% UU HPP).'],
-        ['Huruf b', 'Perolehan BKP/JKP yang **tidak mempunyai hubungan langsung dengan kegiatan usaha 3M** (misal belanja pribadi direksi).'],
-        ['Huruf c', 'Perolehan dan pemeliharaan kendaraan bermotor berupa sedan dan station wagon (kecuali barang dagangan atau disewakan).'],
-        ['Huruf d', 'Pemanfaatan BKP Tak Berwujud / JKP dari luar daerah pabean sebelum pengusaha dikukuhkan sebagai PKP.'],
-        ['Huruf e', 'Perolehan BKP/JKP yang Faktur Pajaknya **tidak memenuhi ketentuan formal/material** (cacat atau tidak lengkap).'],
-        ['Huruf f', 'Perolehan BKP/JKP yang Pajak Masukannya ditagih dengan penerbitan ketetapan pajak (SKP).'],
-        ['Huruf g', 'Perolehan BKP/JKP yang Pajak Masukannya tidak dilaporkan dalam SPT Masa PPN dan ditemukan saat pemeriksaan.']
+        ['Penyerahan Normal', 'Harga Jual / Penggantian Kas.', '$PPN = 11\\% \\times \\text{Harga Jual}$.', 'Dapat dikreditkan oleh pembeli PKP.'],
+        ['Pemberian Cuma-cuma BKP', 'Harga Jual dikurangi laba kotor (HPP Barang).', '$PPN = 11\\% \\times HPP$.', 'Pajak Masukan pembelian barang awal tetap dapat dikreditkan.'],
+        ['Pemakaian Sendiri (Produktif)', 'Harga Jual dikurangi laba kotor (HPP).', '$PPN = 11\\% \\times HPP$.', 'Tidak terutang PPN jika dipakai untuk kegiatan 3M produktif.'],
+        ['Jasa Pengiriman Paket / Kargo', '10% dari jumlah yang ditagihkan (Nilai Lain).', '$PPN = 11\\% \\times (10\\% \\times \\text{Tagihan}) = 1,1\\%$.', 'Pajak Masukan perusahaan kurir tidak dapat dikreditkan.'],
+        ['Jasa Biro Perjalanan Wisata', '10% dari jumlah tagihan paket wisata.', '$PPN = 1,1\\% \\times \\text{Total Tagihan Paket Tour}$.', 'Pajak Masukan paket wisata tidak dapat dikreditkan.']
       ],
-      caption: 'Tabel 13.1: Larangan pengkreditan Pajak Masukan menurut undang-undang.'
+      caption: 'Tabel 13.0: Matriks penentuan DPP Nilai Lain dan formula PPN efektif.'
     },
-
-    { kind: 'h2', text: '2. PPN Besaran Tertentu (PMK No. 71/PMK.03/2022)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Pengkreditan Pajak Masukan Terlambat'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Batas Waktu Pengkreditan Pajak Masukan (Pasal 9 ayat 9 UU PPN)}:
+\\text{Pajak Masukan dapat dikreditkan pada Masa Pajak yang TIDAK SAMA, paling lambat } \\mathbf{3 \\text{ bulan}}
+\\text{setelah berakhirnya Masa Pajak saat Faktur Pajak dibuat, sepanjang belum dibiayakan.}
+\\text{Contoh}: \\text{Faktur Pajak Masa Maret dapat dikreditkan di Masa Maret, April, Mei, atau Juni.}`
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: PPN atas Pemberian Cuma-cuma Sampel Produk Baru',
+      prompt: 'PT Kosmetik Cantik (PKP) membagikan 1.000 paket kosmetik baru sebagai sampel cuma-cuma kepada pengunjung pameran. Harga jual normal per paket adalah Rp 100.000 (margin laba 25%, sehingga HPP per paket adalah Rp 75.000). Hitung Dasar Pengenaan Pajak (DPP) Nilai Lain dan PPN yang wajib disetor PT Kosmetik Cantik!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Dasar Pengenaan Pajak (DPP) Nilai Lain**: Sesuai PMK No. 75/PMK.03/2010, DPP pemberian cuma-cuma adalah **Harga Pokok Penjualan (HPP)**.\nDPP = 1.000 paket × Rp 75.000 = **Rp 75.000.000**.',
+            '**Perhitungan PPN Terutang (11%)**: PPN Keluaran = 11% × Rp 75.000.000 = **Rp 8.250.000**.',
+            '**Penerbitan e-Faktur**: PT Kosmetik Cantik menerbitkan Faktur Pajak Elektronik dengan kode transaksi **04 (DPP Nilai Lain)** dengan identitas pembeli digunggung atau nama masyarakat penerima sampel.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 13'
+    },
     {
       kind: 'table',
-      headers: ['Jenis Jasa Kena Pajak Tertentu', 'Tarif Efektif PPN (Besaran Tertentu)', 'Keterangan Pengkreditan PM'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['Jasa Pengiriman Paket / Ekspedisi (Kurir)', '**1,1%** (10% × Tarif PPN 11%)', 'Pajak Masukan atas perolehan operasional **TIDAK DAPAT DIKREDITKAN**.'],
-        ['Jasa Biro Perjalanan Wisata / Agen Tur', '**1,1%** (10% × Tarif PPN 11%)', 'Pajak Masukan atas perolehan operasional **TIDAK DAPAT DIKREDITKAN**.'],
-        ['Jasa Pengurusan Transportasi (Freight Forwarding)', '**1,1%** (10% × Tarif PPN 11%)', 'Pajak Masukan atas perolehan operasional **TIDAK DAPAT DIKREDITKAN**.'],
-        ['Penyerahan Kendaraan Bermotor Bekas oleh Pedagang', '**1,1%** (10% × Tarif PPN 11%)', 'Pajak Masukan atas perolehan mobil bekas **TIDAK DAPAT DIKREDITKAN**.']
+        ['1', 'Administrasi e-Faktur', 'Ketentuan kode transaksi 01 s/d 09 dan prosedur faktur pengganti/batal.', 'Mampu mengidentifikasi kode faktur pajak transaksi khusus.'],
+        ['2', 'DPP Nilai Lain', 'Kalkulasi HPP cuma-cuma dan tarif efektif 1,1% jasa kargo/ekspedisi.', 'Mampu menghitung PPN dengan dasar pengenaan nilai lain.'],
+        ['3', 'Larangan Pengkreditan Pasal 9 ayat (8)', 'Pengecualian pengkreditan faktur cacat, sebelum PKP, dan penyerahan bebas.', 'Mampu memutuskan kelayakan pengkreditan Pajak Masukan di SPT 1111.']
       ],
-      caption: 'Tabel 13.2: Skema PPN Besaran Tertentu untuk sektor-sektor khusus.'
+      caption: 'Tabel 13.2: Peta penguasaan submateri TM 13 Perpajakan II.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 13' },
+    CASE_EFAKTUR_INPUT_CREDIT,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Faktur Pajak Gabungan**: Dapat dibuat untuk seluruh penyerahan BKP/JKP kepada pembeli yang sama selama 1 bulan kalender paling lambat akhir bulan penyerahan.',
-        '**Masa Pengkreditan PM**: Faktur Pajak Masukan dapat dikreditkan pada Masa Pajak yang sama atau **paling lambat 3 masa pajak berikutnya** sepanjang belum dibiayakan.',
-        '**Batas Waktu Upload e-Faktur**: Faktur pajak elektronik wajib di-upload dan memperoleh approval DJP paling lambat **tanggal 15 bulan berikutnya**.'
+        '**Mobil Sedan Direksi Kini Boleh Dikreditkan**: Di bawah UU HPP, larangan pengkreditan Pajak Masukan untuk perolehan mobil sedan/station wagon telah dicabut sepanjang kendaraan tersebut digunakan untuk kegiatan operasional perusahaan.',
+        '**Faktur Pajak Masa Lalu**: Pajak Masukan tetap sah dikreditkan hingga 3 bulan setelah masa faktur terbit asalkan belum pernah diperiksa oleh kantor pajak dan belum dibiayakan di laporan laba rugi.',
+        '**Pemberian Cuma-cuma Tetap Terutang PPN**: Membagikan produk secara gratis tetap dianggap sebagai penyerahan kena pajak yang wajib diterbitkan Faktur Pajak PPN (beban PPN ditanggung sendiri oleh produsen).'
       ]
     }
   ]

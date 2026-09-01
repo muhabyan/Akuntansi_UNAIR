@@ -1,65 +1,115 @@
-﻿import type { Reading } from '../../../types';
-import { CASE_PPH24_FOREIGN_CREDIT, CASE_REKONSILIASI_FISKAL_31E } from '../pjk2PracticeCases';
+import type { Reading } from '../../../types';
+import { CASE_PPH24_ARTICLE_31E } from '../pjk2PracticeCases';
+
+const SVG_PPH24_31E = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KREDIT PAJAK LUAR NEGERI (PPH 24) &amp; FASILITAS TARIF PASAL 31E UU PPH</text>
+  
+  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">KREDIT PPH PASAL 24</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Metode Ordinary Credit):</text>
+  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Batas Maksimum = (Penghasilan LN / PKP) × PPh Terutang</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pilih yang TERKECIL antara Pajak LN vs Batas Maks</text>
+  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dihitung per negara (Per Country Limitation)</text>
+  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Pencegahan Pajak Berganda</text>
+
+  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="497" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">FASILITAS PASAL 31E</text>
+  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Diskon Tarif 50% untuk WP Badan):</text>
+  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Omzet s/d 4,8 Miliar: 50% × 22% = 11% (Seluruh PKP)</text>
+  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Omzet 4,8 M s/d 50 M: Fasilitas porsi proporsional 4,8 M</text>
+  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Omzet > 50 Miliar: Tarif normal penuh 22%</text>
+  <text x="497" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Insentif Pajak Badan Menengah</text>
+</svg>`;
 
 export const TM7_READING: Reading = {
   tm: 7,
   title: 'Kredit Pajak Luar Negeri PPh Pasal 24, Angsuran Bulanan PPh 25, & Fasilitas Pasal 31E',
-  ref: 'UU PPh Pasal 24, 25, 31E jo. UU HPP | PMK 192/PMK.03/2018 PPh 24',
-  intro: 'Modul Pembelajaran Mendalam Perpajakan II TM 7: Menguasai mekanisme penghindaran pajak berganda unilateral melalui Kredit Pajak Luar Negeri PPh Pasal 24 (*Ordinary Credit Method dengan Per-Country Limitation*), penentuan besarnya Angsuran Bulanan PPh Pasal 25 tahun berjalan (termasuk Wajib Pajak Orang Pribadi Pengusaha Tertentu / WP OPPT 0,75%), serta fasilitas insentif reduksi tarif 50% untuk Wajib Pajak Badan dengan peredaran bruto s.d Rp 50 Miliar (Pasal 31E UU PPh).',
+  ref: 'UU PPh Pasal 24, 25, 31E | PMK 192/PMK.03/2018 PPh 24 | SE-02/PJ/2015 Fasilitas Pasal 31E',
+  intro: 'TM 7 membahas mekanisme penentuan beban pajak penghasilan akhir tahun bagi Wajib Pajak Badan: penghitungan Kredit Pajak Luar Negeri PPh Pasal 24 menggunakan metode Ordinary Credit dengan pembatasan per negara (Per Country Limitation), perhitungan angsuran bulanan PPh Pasal 25 tahun pajak berikutnya, serta penerapan insentif pengurangan tarif 50% (Pasal 31E UU PPh) bagi perseroan dengan peredaran bruto sampai dengan Rp 50 Miliar.',
   objectives: [
-    'Menerapkan metode pengkreditan pajak luar negeri PPh Pasal 24 dengan batasan per negara (Per-Country Limitation).',
-    'Menghitung Batas Maksimum Kredit Pajak (BMKP) dan menentukan nilai kredit pajak yang boleh dikurangkan.',
-    'Menghitung besarnya Angsuran Bulanan PPh Pasal 25 umum bagi WP Orang Pribadi dan Badan.',
-    'Menghitung angsuran PPh 25 WP Orang Pribadi Pengusaha Tertentu (WP OPPT: 0,75% dari omzet per gerai/toko).',
-    'Menghitung penghematan pajak fasilitas Pasal 31E UU PPh (diskon tarif 50% untuk bagian PKP dari omzet s.d Rp 4,8 Miliar).',
-    'Menjelaskan fasilitas penanaman modal Pasal 31A UU PPh (Tax Allowance).'
+    'Menghitung batas maksimum kredit pajak PPh Pasal 24 per negara (Ordinary Credit Method).',
+    'Menentukan perlakuan atas kelebihan pajak yang dibayarkan di luar negeri (Tax Excess).',
+    'Menghitung porsi PKP fasilitas vs non-fasilitas Pasal 31E untuk omzet antara Rp 4,8 M s/d Rp 50 M.',
+    'Menghitung besaran angsuran bulanan PPh Pasal 25 yang wajib disetor pada tahun berjalan.'
   ],
   blocks: [
-    { kind: 'h2', text: '1. Mekanisme Kredit Pajak Luar Negeri PPh Pasal 24' },
     {
-      kind: 'p',
-      text: 'Untuk menghindari pengenaan pajak berganda atas penghasilan yang diperoleh di luar negeri, Wajib Pajak Dalam Negeri berhak mengkreditkan pajak yang telah dibayar di luar negeri dengan memilih **nilai terendah di antara 3 unsur**:'
+      kind: 'figure',
+      caption: 'Gambar 7.1: Skema Penghitungan Kredit Pajak Luar Negeri PPh Pasal 24 dan Fasilitas Tarif Pasal 31E.',
+      svg: SVG_PPH24_31E
     },
     {
-      kind: 'ol',
-      items: [
-        '**Jumlah Pajak yang Sebenarnya Terutang atau Dibayar di Luar Negeri**.',
-        '**Batas Maksimum Kredit Pajak (BMKP) Per Negara**:\n$$\\text{BMKP} = \\frac{\\text{Penghasilan Luar Negeri per Negara}}{\\text{Total Penghasilan Kena Pajak (PKP)}} \\times \\text{Total PPh Terutang di Indonesia}$$',
-        '**Jumlah Total PPh Terutang Seluruhnya** (apabila PKP lebih kecil dari penghasilan luar negeri karena adanya kompensasi kerugian dalam negeri).'
-      ]
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 7'
     },
-
-    CASE_PPH24_FOREIGN_CREDIT,
-
-    { kind: 'h2', text: '2. Perhitungan Angsuran Bulanan PPh Pasal 25' },
     {
       kind: 'table',
-      headers: ['Kelompok Wajib Pajak', 'Formula Angsuran PPh Pasal 25 Bulanan', 'Jatuh Tempo Pembayaran & Pelaporan'],
+      headers: ['Peredaran Bruto (Omzet Tahunan)', 'Ketentuan Fasilitas Pasal 31E', 'Tarif Efektif yang Dikenakan', 'Formula Penghitungan PPh Terutang'],
       rows: [
-        ['Wajib Pajak Badan / OP Umum', '$\\frac{\\text{PPh Terutang SPT Lalu} - (\\text{Kredit PPh 21, 22, 23, 24})}{12\\ \\text{Bulan}}$', 'Paling lambat tanggal 15 bulan berikutnya.'],
-        ['WP Orang Pribadi Pengusaha Tertentu (WP OPPT)', '**0,75% × Peredaran Bruto Bulanan** dari masing-masing tempat usaha (toko/outlet)', 'Paling lambat tanggal 15 bulan berikutnya (Dapat dikreditkan di SPT 1770).'],
-        ['Wajib Pajak Baru Terdaftar', 'Dihitung berdasarkan SPT masa pertama yang disetahunkan atau nihil (kecuali bank/BUMN).', 'Paling lambat tanggal 15 bulan berikutnya.']
+        ['Omzet s/d Rp 4,8 Miliar', 'Mendapat diskon 50% atas SELURUH Penghasilan Kena Pajak.', '11% (50% × 22%)', '$PPh = 50\\% \\times 22\\% \\times PKP = 11\\% \\times PKP$.'],
+        ['Omzet Rp 4,8 Miliar s/d Rp 50 Miliar', 'Mendapat diskon 50% atas PORSI PKP dari bagian omzet s/d 4,8 M.', 'Campuran (11% pada porsi fasilitas & 22% pada porsi non-fasilitas)', '$PKP_{Fas} = \\frac{4,8 \\text{ M}}{\\text{Omzet}} \\times PKP$; Sisa PKP non-fasilitas dikalikan 22%.'],
+        ['Omzet > Rp 50 Miliar', 'TIDAK berhak atas fasilitas Pasal 31E.', '22% Penuh', '$PPh = 22\\% \\times PKP$.']
       ],
-      caption: 'Tabel 7.1: Formula angsuran pajak bulanan PPh Pasal 25.'
+      caption: 'Tabel 7.0: Matriks pengenaan fasilitas tarif PPh Badan Pasal 31E.'
     },
-
-    { kind: 'h2', text: '3. Fasilitas Pengurangan Tarif PPh Badan (Pasal 31E UU PPh)' },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Fasilitas Reduksi Tarif 50% bagi WP Badan Dalam Negeri',
-      text: 'Wajib Pajak Badan Dalam Negeri dengan peredaran bruto sampai dengan Rp 50.000.000.000 (Rp 50 Miliar) mendapat fasilitas pengurangan tarif sebesar **50% dari tarif normal 22% (menjadi efektif 11%)** yang dikenakan atas **Penghasilan Kena Pajak dari bagian peredaran bruto sampai dengan Rp 4.800.000.000**.'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: PPh 24 & Angsuran PPh 25'
     },
-
-    CASE_REKONSILIASI_FISKAL_31E,
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 7 (Pra-UTS)' },
+    {
+      kind: 'formula',
+      text: `\\text{Batas Maksimum Kredit PPh 24 Negara X} = \\frac{\\text{Penghasilan Neto Negara X}}{\\text{Total Penghasilan Kena Pajak (PKP)}} \\times \\text{Total PPh Badan Terutang}
+\\text{Kredit PPh 24 yang Diakui} = \\min(\\text{Pajak Riil Dibayar di Luar Negeri}, \\text{Batas Maksimum Fiskal})
+\\text{Angsuran Bulanan PPh 25 Tahun Berjalan} = \\frac{\\text{PPh Terutang SPT Lalu} - \\text{Total Kredit Pajak (PPh 21, 22, 23, 24)}}{12 \\text{ Bulan}}`,
+      note: 'Kerugian usaha di luar negeri dilarang digabungkan (loss relief limitation). Jika Wajib Pajak menderita rugi di negara X, penghasilan negara X dianggap nol dalam penghitungan PPh 24.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Angsuran Bulanan PPh Pasal 25 Tahun Pajak Baru',
+      prompt: 'SPT Tahunan PPh Badan PT Sentosa tahun pajak 2025 menunjukkan PPh Terutang sebesar Rp 600.000.000. Kredit pajak tahun berjalan yang dipotong pihak ketiga: PPh 22 = Rp 60 Jt, PPh 23 = Rp 40 Jt, PPh 24 = Rp 20 Jt. Hitung besarnya angsuran bulanan PPh Pasal 25 yang harus dibayar sendiri oleh PT Sentosa per bulan mulai masa Maret 2026!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Total Kredit Pajak**: PPh 22 (60 Jt) + PPh 23 (40 Jt) + PPh 24 (20 Jt) = **Rp 120.000.000**.',
+            '**Dasar Penghitungan Angsuran**: PPh Terutang - Kredit Pajak = Rp 600.000.000 - Rp 120.000.000 = **Rp 480.000.000**.',
+            '**Besaran Angsuran Bulanan PPh Pasal 25**: $\\frac{Rp 480.000.000}{12 \\text{ Bulan}} = \\mathbf{Rp 40.000.000 \\text{ per bulan}}$.',
+            '**Ketentuan Setor**: Angsuran Rp 40 Juta wajib disetor paling lambat tanggal 15 bulan berikutnya.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 7'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Ordinary Credit PPh 24', 'Kalkulasi batas maksimum per negara dan penanganan selisih lebih pajak.', 'Mampu mengkalkulasi kredit pajak luar negeri yang sah.'],
+        ['2', 'Fasilitas Diskon Tarif Pasal 31E', 'Pemisahan PKP fasilitas proporsional dan non-fasilitas.', 'Mampu menghitung PPh Badan terutang Wajib Pajak menengah.'],
+        ['3', 'Penetapan Angsuran PPh 25', 'Perhitungan cicilan bulanan tahun berjalan dan saat berlakunya angsuran baru.', 'Mampu menyusun skedul kepatuhan angsuran PPh 25.']
+      ],
+      caption: 'Tabel 7.2: Peta penguasaan submateri TM 7 Perpajakan II.'
+    },
+    CASE_PPH24_ARTICLE_31E,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**PPh 24 Per-Country**: Penggabungan penghasilan LN dilakukan per negara; jika di Negara X rugi dan Negara Y laba, kerugian di Negara X tidak boleh dikompensasikan ke penghasilan Negara Y.',
-        '**Batas Waktu Setor PPh 25**: Tanggal 15 bulan berikutnya; jika tanggal 15 hari libur, jatuh tempo mundur ke hari kerja berikutnya.',
-        '**Pasal 31E**: Jika omzet badan $\\le$ Rp 4,8 Miliar, maka **100% PKP mendapat fasilitas tarif 11%**.'
+        '**Per Country Limitation**: Batas maksimum kredit PPh 24 wajib dihitung secara individual untuk masing-masing negara sumber penghasilan, tidak boleh digabung secara global.',
+        '**Kelebihan Pajak Luar Negeri Hangus**: Jika tarif pajak di luar negeri lebih tinggi daripada di Indonesia, selisih lebih pajak tersebut tidak dapat direstitusi dan tidak dapat menjadi beban pengurang di Indonesia.',
+        '**Pasal 31E Berlaku Otomatis**: Fasilitas Pasal 31E merupakan ketentuan undang-undang yang berlaku otomatis tanpa mewajibkan permohonan tertulis kepada kantor pajak.'
       ]
     }
   ]

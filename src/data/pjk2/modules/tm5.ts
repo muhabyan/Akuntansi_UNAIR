@@ -1,105 +1,126 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_WITHHOLDING_PPH22_23_UMKM } from '../pjk2PracticeCases';
 
 const SVG_WITHHOLDING_SYSTEM = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SISTEM WITHHOLDING TAX: PPH PASAL 22, PPH PASAL 23/26, &amp; PPH UMKM</text>
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SISTEM PEMUNGUTAN &amp; PEMOTONGAN PAJAK (WITHHOLDING TAX): PPH 22, 23, 26, &amp; UMKM</text>
   
-  <rect x="30" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. PPh Pasal 22</text>
-  <text x="125" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Pemungutan Khusus)</text>
-  <line x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
-  <text x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Impor (API 2,5% / Non 7,5%)</text>
-  <text x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Bendahara APBN (1,5%)</text>
-  <text x="125" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• BUMN &amp; Industri Tertentu</text>
-  <text x="125" y="186" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Kredit Pajak WP Badan</text>
+  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">PPH PASAL 22</text>
+  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Pemungutan Pembelian):</text>
+  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Impor API: 2,5% | Non-API: 7,5%</text>
+  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bendaharawan Negara: 1,5%</text>
+  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Industri Semen 0,25%, Baja 0,3%</text>
+  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Dapat Dikreditkan</text>
 
-  <rect x="245" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="340" y="80" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">2. PPh Pasal 23 / 26</text>
-  <text x="340" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Pemotongan Modal/Jasa)</text>
-  <line x1="260" y1="110" x2="420" y2="110" stroke="#334155"/>
-  <text x="340" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Dividen WP OP (10% Final)</text>
-  <text x="340" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Bunga, Royalti, Hadiah (15%)</text>
-  <text x="340" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Sewa Aset &amp; Jasa Teknik (2%)</text>
-  <text x="340" y="186" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">PPh 26 Luar Negeri (20%/P3B)</text>
+  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">PPH PASAL 23 / 26</text>
+  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Modal &amp; Jasa SPDN/SPLN):</text>
+  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dividen WP OP: Final 10%</text>
+  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Royalti &amp; Bunga: 15%</text>
+  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Jasa Teknik/Manajemen/Sewa: 2%</text>
+  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">PPh 26 Luar Negeri 20%</text>
 
-  <rect x="460" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="555" y="80" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">3. PPh Final UMKM</text>
-  <text x="555" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(PP 55/2022)</text>
-  <line x1="475" y1="110" x2="635" y2="110" stroke="#334155"/>
-  <text x="555" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Tarif Final 0,5% Omzet</text>
-  <text x="555" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Syarat: Omzet &le; Rp 4,8M/thn</text>
-  <text x="555" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• WP OP Bebas Pajak</text>
-  <text x="555" y="186" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">  (Omzet 1st Rp 500jt Free!)</text>
+  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">PPH FINAL UMKM</text>
+  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(PP 55/2022 - Omzet s/d 4,8 M):</text>
+  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tarif 0,5% dari Omzet Bruto</text>
+  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• WP OP: Bebas pajak s/d 500 Juta</text>
+  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Syarat: Surat Keterangan PP 55</text>
+  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Sederhana &amp; Final</text>
 </svg>`;
 
 export const TM5_READING: Reading = {
   tm: 5,
   title: 'Pemungutan PPh Pasal 22, Pemotongan PPh Pasal 23/26, & PPh Final UMKM 0,5%',
-  ref: 'UU PPh Pasal 22, 23, 26 jo. UU HPP | PMK 34/2017 jo. PMK 41/2022 | PP 55/2022',
-  intro: 'Modul Pembelajaran Mendalam Perpajakan II TM 5: Menguasai mekanisme Withholding Tax atas transaksi perdagangan dan modal: Pemungutan PPh Pasal 22 (Impor barang, belanja instansi pemerintah, BUMN, komoditas semen/kertas/baja/otomotif/farmasi, dan barang sangat mewah), Pemotongan PPh Pasal 23 atas dividen, bunga, royalti, sewa selain tanah/bangunan, dan 62 jenis jasa lain (PMK 141/2015), PPh Pasal 26 atas penghasilan SPLN, serta insentif PPh Final UMKM 0,5% dengan fasilitas batas omzet Rp 500 juta bebas pajak untuk Wajib Pajak Orang Pribadi.',
+  ref: 'UU PPh Pasal 22, 23, 26 | PMK 34/2017 jo PMK 41/2022 PPh 22 | PP 55/2022 PPh Final UMKM',
+  intro: 'TM 5 membahas sistem pemotongan dan pemungutan pajak di Indonesia (Withholding Tax System): pemungutan PPh Pasal 22 atas impor barang dan transaksi belanja bendaharawan pemerintah serta industri tertentu, pemotongan PPh Pasal 23 atas dividen, bunga, royalti, sewa selain tanah/bangunan, dan 62 jenis jasa lain (tarif 2%), pemajakan Wajib Pajak Luar Negeri PPh Pasal 26 (tarif 20% atau Tax Treaty), serta skema PPh Final UMKM 0,5% menurut PP No. 55 Tahun 2022.',
   objectives: [
-    'Mengidentifikasi pemungut PPh Pasal 22, objek transaksi, dasar pengenaan pajak (DPP / Nilai Impor), dan tarifnya.',
-    'Menjelaskan pengecualian pemungutan PPh Pasal 22 (pembelian < Rp 2 juta oleh bendahara, impor barang bebas bea masuk).',
-    'Menghitung pemotongan PPh Pasal 23 atas Bunga, Royalti, Hadiah (15%) serta Sewa Aset Bukan Tanah dan Imbalan Jasa Lain (2%).',
-    'Menerapkan pemotongan PPh Pasal 26 sebesar 20% atau tarif sesuai Tax Treaty / P3B yang berlaku.',
-    'Menghitung PPh Final UMKM 0,5% menurut PP No. 55/2022 dan memanfaatkan batas omzet Rp 500 juta tidak kena pajak bagi WP Orang Pribadi.',
-    'Memahami batasan jangka waktu penggunaan PPh Final UMKM (WP OP maks 7 tahun; PT maks 3 tahun; CV/Koperasi maks 4 tahun).'
+    'Menghitung PPh Pasal 22 Impor (ber-API vs non-API) dan PPh 22 Bendaharawan Pemerintah.',
+    'Menerapkan pemotongan PPh Pasal 23 atas bunga, royalti, dan jasa manajemen/teknik (tarif 2%).',
+    'Menjelaskan pemotongan PPh Pasal 26 atas penghasilan yang dibayarkan kepada subjek pajak luar negeri.',
+    'Menerapkan skema PPh Final UMKM 0,5% PP 55/2022 dan pembebasan omzet s/d Rp 500 Juta bagi WP OP.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Peta Sistem Withholding Tax: PPh 22, PPh 23/26, dan PPh Final UMKM',
-      svg: SVG_WITHHOLDING_SYSTEM,
-      caption: 'Gambar 5.1: Arsitektur pemungutan dan pemotongan pajak penghasilan atas transaksi bisnis komersial.'
+      caption: 'Gambar 5.1: Spektrum Pemotongan dan Pemungutan Pajak: PPh Pasal 22, PPh 23/26, dan PPh UMKM.',
+      svg: SVG_WITHHOLDING_SYSTEM
     },
-
-    { kind: 'h2', text: '1. Ringkasan Tarif Pemungutan PPh Pasal 22' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 5'
+    },
     {
       kind: 'table',
-      headers: ['Objek Transaksi PPh Pasal 22', 'Tarif Pemungutan', 'Dasar Pengenaan Pajak (DPP)'],
+      headers: ['Jenis Pajak', 'Objek Transaksi Utama', 'Tarif Normal', 'Sanksi Tidak Punya NPWP'],
       rows: [
-        ['Impor Barang dengan Angka Pengenal Importir (API)', '**2,5%** (Non-API: **7,5%**)', 'Nilai Impor (CIF + Bea Masuk + Pungutan Pabean Lain)'],
-        ['Belanja Barang oleh Bendahara Pemerintah / APBN / APBD', '**1,5%** *(Bebas jika belanja $\\le$ Rp 2.000.000)*', 'Harga Pembelian tidak termasuk PPN'],
-        ['Belanja Barang oleh BUMN Tertentu', '**1,5%** *(Bebas jika belanja $\\le$ Rp 10.000.000)*', 'Harga Pembelian tidak termasuk PPN'],
-        ['Penjualan Semen / Kertas / Baja / Otomotif / Farmasi DN', '**0,25% s.d 0,45%**', 'Dasar Pengenaan Pajak (DPP) PPN'],
-        ['Pembelian Bahan Hasil Kehutanan/Perkebunan/Perikanan oleh Industri', '**0,25%**', 'Harga Pembelian tidak termasuk PPN'],
-        ['Penjualan Barang Sangat Mewah (Rumah > Rp 30M, Kapal Pesiar, Pesawat)', '**1% s.d 5%**', 'Harga Jual tidak termasuk PPN dan PPnBM']
+        ['PPh Pasal 22 Impor', 'Nilai Impor (CIF + Bea Masuk).', '2,5% (Memiliki API) | 7,5% (Tanpa API).', 'Tarif 100% lebih tinggi (dua kali lipat).'],
+        ['PPh Pasal 22 Bendaharawan', 'Pembelian barang oleh instansi pemerintah (> Rp 2 Juta).', '1,5% dari Harga Pembelian tidak termasuk PPN.', 'Tarif 100% lebih tinggi (menjadi 3,0%).'],
+        ['PPh Pasal 23 Pasif (Bunga/Royalti)', 'Pembayaran bunga pinjaman non-bank dan royalti hak cipta.', '15% dari Jumlah Bruto.', 'Tarif 100% lebih tinggi (menjadi 30%).'],
+        ['PPh Pasal 23 Jasa & Sewa', 'Jasa teknik, manajemen, konsultan, dan sewa alat/kendaraan.', '2% dari Jumlah Bruto tidak termasuk PPN.', 'Tarif 100% lebih tinggi (menjadi 4,0%).'],
+        ['PPh Pasal 26 Luar Negeri', 'Penghasilan bersumber dari RI dibayarkan ke Subjek Pajak Luar Negeri.', '20% dari Bruto (atau tarif Tax Treaty/P3B).', 'Wajib melampirkan Certificate of Domicile (Form DGT).'],
+        ['PPh Final UMKM (PP 55/2022)', 'Peredaran bruto usaha s/d Rp 4,8 Miliar per tahun.', '0,5% dari Omzet Bruto Bulanan.', 'Bagi WP OP, omzet s/d Rp 500 Jt setahun tidak kena pajak.']
       ],
-      caption: 'Tabel 5.1: Matriks tarif dan objek pemungutan PPh Pasal 22.'
+      caption: 'Tabel 5.0: Matriks tarif pemotongan dan pemungutan PPh 22, 23, 26, dan UMKM.'
     },
-
-    { kind: 'h2', text: '2. Ringkasan Tarif Pemotongan PPh Pasal 23 & 26' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Nilai Impor & PPh UMKM'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Nilai Impor (DPP PPh 22)} = \\text{Cost} + \\text{Insurance} + \\text{Freight (CIF)} + \\text{Bea Masuk} + \\text{Pungutan Pabean Lainnya}
+\\text{PPh 22 Impor (Memiliki API)} = 2,5\\% \\times \\text{Nilai Impor}
+\\text{PPh Final UMKM WP Orang Pribadi} = 0,5\\% \\times \\max(0, \\text{Omzet Kumulatif} - Rp 500.000.000)
+\\text{PPh Final UMKM WP Badan (PT/CV)} = 0,5\\% \\times \\text{Omzet Bruto Bulanan} \\quad \\text{(Tanpa Fasilitas Rp 500 Juta)}`,
+      note: 'Fasilitas pembebasan omzet tidak kena pajak s/d Rp 500 Juta per tahun HANYA diberikan kepada Wajib Pajak Orang Pribadi, TIDAK berlaku bagi Wajib Pajak Badan (PT/CV/Koperasi).'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: PPh Final UMKM Toko Kelontong Tuan Andi',
+      prompt: 'Tuan Andi (WP OP UMKM) memiliki omzet penjualan toko kelontong tahun 2026: Januari Rp 200 Jt, Februari Rp 250 Jt, Maret Rp 300 Jt. Hitung PPh Final PP 55/2022 yang harus disetor Tuan Andi untuk masing-masing bulan Januari, Februari, dan Maret!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Januari (Omzet Kumulatif Rp 200 Jt)**: Omzet belum melebihi batas PTKP UMKM Rp 500 Juta $\\rightarrow$ **PPh Terutang = Rp 0**.',
+            '**Februari (Omzet Kumulatif Rp 450 Jt)**: Rp 200 Jt + Rp 250 Jt = Rp 450 Jt (masih di bawah Rp 500 Juta) $\\rightarrow$ **PPh Terutang = Rp 0**.',
+            '**Maret (Omzet Rp 300 Jt, Kumulatif Rp 750 Jt)**:\n- Bagian omzet yang bebas pajak = Sisa kuota PTKP = Rp 500 Jt - Rp 450 Jt = Rp 50.000.000.\n- Bagian omzet kena pajak bulan Maret = Rp 300 Jt - Rp 50 Jt = **Rp 250.000.000**.\n- **PPh Final Maret yang Wajib Disetor** = 0,5% × Rp 250.000.000 = **Rp 1.250.000**.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 5'
+    },
     {
       kind: 'table',
-      headers: ['Objek Pemotongan PPh Pasal 23', 'Tarif Ber-NPWP', 'Tarif Tanpa NPWP (Kenaikan 100%)'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['Dividen diterima WP Badan Dalam Negeri', '**BUKAN OBJEK (0%)**', 'Bukan Objek Pajak (UU HPP)'],
-        ['Dividen diterima WP Orang Pribadi Dalam Negeri', '**10% Final** *(Bebas jika direinvestasikan di NKRI)*', '10% Final'],
-        ['Bunga Pinjaman (selain bank) & Royalti Hak Cipta/Paten', '**15%**', '**30%** (Tarif 2x lipat)'],
-        ['Hadiah Penghargaan, Bonus, & Perlombaan (selain PPh 21)', '**15%**', '**30%** (Tarif 2x lipat)'],
-        ['Sewa Aset (Kendaraan, Alat Berat, Mesin - Bukan Tanah/Bangunan)', '**2%**', '**4%** (Tarif 2x lipat)'],
-        ['Imbalan Jasa Teknik, Manajemen, Konsultan, & 62 Jasa Lain (PMK 141)', '**2%**', '**4%** (Tarif 2x lipat)'],
-        ['**PPh Pasal 26**: Seluruh penghasilan yang dibayarkan ke Wajib Pajak Luar Negeri', '**20%** *(atau tarif reduksi P3B)*', '**20%**']
+        ['1', 'Kalkulasi PPh 22 Impor & Instansi', 'Penghitungan Nilai Impor dan pemotongan oleh bendaharawan APBN/APBD.', 'Mampu menghitung PPh 22 terutang dan batas pembebasan Rp 2 Jt.'],
+        ['2', 'Pemotongan PPh 23 Jasa & Sewa', 'Kualifikasi 62 jenis jasa PMK 141/2015 dan sanksi 100% non-NPWP.', 'Mampu menerbitkan bukti potong PPh 23 Unifikasi.'],
+        ['3', 'PPh Final UMKM PP 55/2022', 'Mekanisme pemotongan pihak lain menggunakan Suket dan batas waktu penggunaan PP 55.', 'Mampu mengkalkulasi PPh UMKM dengan batasan PTKP Rp 500 Jt.']
       ],
-      caption: 'Tabel 5.2: Matriks tarif pemotongan PPh Pasal 23 dan PPh Pasal 26.'
+      caption: 'Tabel 5.2: Peta penguasaan submateri TM 5 Perpajakan II.'
     },
-
-    { kind: 'h2', text: '3. Insentif PPh Final UMKM 0,5% (PP 55/2022)' },
+    CASE_WITHHOLDING_PPH22_23_UMKM,
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Fasilitas Omzet Rp 500 Juta Tidak Kena Pajak bagi WP Orang Pribadi',
-      text: 'Berdasarkan UU HPP dan PP No. 55/2022:\n• Wajib Pajak Orang Pribadi UMKM dengan peredaran bruto tidak melebihi Rp 4,8 Miliar setahun **TIDAK DIKENAI PPH ATAS BAGIAN PEREDARAN BRUTO SAMPAI DENGAN Rp 500.000.000 DALAM 1 TAHUN PAJAK**.\n• Pajak 0,5% hanya mulai dihitung pada bulan di mana akumulasi omzet kumulatif telah melampaui Rp 500 juta!'
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 5' },
     {
       kind: 'ul',
       items: [
-        '**Bukti Potong / Pungut Unifikasi**: Pemotong/pemungut wajib menerbitkan Bukti Pemotongan/Pemungutan Unifikasi Elektronik (e-Bupot) melalui DJP Online.',
-        '**Sewa Tanah vs Kendaraan**: Sewa Tanah/Bangunan = **PPh Final Pasal 4(2) tarif 10%**; Sewa Kendaraan/Mesin = **PPh Pasal 23 tarif 2%**.',
-        '**Batas Waktu UMKM**: PT hanya berhak menggunakan tarif 0,5% selama 3 tahun pajak sejak terdaftar.'
+        '**Sanksi Non-NPWP 100% Lebih Tinggi**: Pemotongan PPh 22 dan PPh 23 bagi Wajib Pajak yang tidak memiliki NPWP dikenakan tarif 100% lebih tinggi dibanding tarif normal.',
+        '**Surat Keterangan (Suket) PP 55**: Tanpa menyerahkan fotokopi Suket PP 55 yang tervalidasi di portal DJP, rekanan UMKM akan dipotong PPh 23 jasa (2%), bukan PPh Final 0,5%.',
+        '**Batas Waktu Tarif UMKM**: Penggunaan tarif 0,5% dibatasi: WP OP maksimal 7 tahun, CV/Koperasi 4 tahun, dan PT maksimal 3 tahun, setelah itu wajib kembali ke tarif umum pembukuan.'
       ]
     }
   ]

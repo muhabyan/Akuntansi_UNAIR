@@ -1,65 +1,115 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_INVENTORY_VALUATION_FISCAL } from '../pjk2PracticeCases';
+
+const SVG_INVENTORY_FISCAL = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">METODE PENILAIAN PERSEDIAAN &amp; PENGALIHAN HARTA SECARA FISKAL</text>
+  
+  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">METODE DIIZINKAN FISKAL</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Pasal 10 ayat 6 UU PPh):</text>
+  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 1. Metode Rata-Rata (Average Method)</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 2. Metode Masuk Pertama Keluar Pertama (FIFO)</text>
+  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Asas konsistensi (taat asas) pembukuan</text>
+  <text x="177" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Standar Resmi Fiskal</text>
+
+  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="497" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">METODE DILARANG FISKAL</text>
+  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Dilarang Keras dalam Perpajakan):</text>
+  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Metode LIFO (Last-In, First-Out)</text>
+  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Alasan: Menggelembungkan HPP saat inflasi</text>
+  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mengakibatkan penghasilan kena pajak tertekan</text>
+  <text x="497" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Wajib Koreksi HPP ke FIFO/Average</text>
+</svg>`;
 
 export const TM2_READING: Reading = {
   tm: 2,
-  title: 'Penilaian Harta Pengalihan/Restrukturisasi, Metode Persediaan Fiskal, & Tarif PPh',
-  ref: 'UU PPh Pasal 10, Pasal 17 jo. UU HPP | PP 55/2022',
-  intro: 'Modul Pembelajaran Mendalam Perpajakan II TM 2: Menguasai penilaian harga perolehan/penjualan harta dalam transaksi jual-beli, tukar-menukar, hibah/warisan, dan restrukturisasi korporasi (merger/likuidasi), metode penilaian persediaan fiskal (Hanya diperbolehkan metode FIFO dan Rata-rata / Average), Norma Penghitungan Penghasilan Neto (NPPN), serta struktur tarif PPh Orang Pribadi & Badan terbaru.',
+  title: 'Penilaian Harta Pengalihan/Restrukturisasi, Metode Persediaan Fiskal, & Tarif PPh Badan',
+  ref: 'UU PPh Pasal 10 & Pasal 17 | PMK Penilaian Harta & Nilai Sisa Buku | Tarif PPh Badan 22%',
+  intro: 'TM 2 membahas penilaian harta dalam konteks transaksi khusus perpajakan: pengalihan harta dalam rangka likuidasi, merger, pemekaran, pemecahan, atau pengambilalihan usaha (Nilai Pasar vs Nilai Sisa Buku fiskal), ketentuan kaku penilaian persediaan menurut Pasal 10 ayat (6) UU PPh (Hanya FIFO dan Average), larangan metode LIFO, serta struktur tarif umum PPh Badan (22%) pasca UU HPP.',
   objectives: [
-    'Menentukan harga perolehan atau harga penjualan harta dalam transaksi jual beli pihak independen vs pihak terafiliasi (Harga Pasar Wajar).',
-    'Menjelaskan perlakuan penilaian harta dalam transaksi hibah, bantuan, dan warisan.',
-    'Menerapkan metode penilaian persediaan fiskal menurut Pasal 10 ayat (6) UU PPh (Wajib FIFO atau Rata-rata; metode LIFO dilarang keras).',
-    'Menjelaskan syarat penggunaan Norma Penghitungan Penghasilan Neto (NPPN - Wajib Pajak Orang Pribadi dengan peredaran bruto < Rp 4,8 Miliar).',
-    'Menguasai struktur tarif progresif PPh Orang Pribadi 5 lapis (UU HPP: 5%, 15%, 25%, 30%, 35%) dan tarif tunggal PPh Badan 22%.'
+    'Menerapkan penilaian harta pengalihan: harga pasar vs nilai sisa buku (Pooling of Interest) pada merger usaha.',
+    'Menghitung HPP dan saldo persediaan akhir menggunakan metode FIFO dan Rata-Rata Fiskal.',
+    'Menjelaskan dampak koreksi fiskal jika perusahaan menggunakan metode LIFO komersial.',
+    'Menghitung PPh Badan terutang menggunakan tarif normal 22%.'
   ],
   blocks: [
-    { kind: 'h2', text: '1. Penilaian Harta dalam Transaksi Khusus (Pasal 10 UU PPh)' },
+    {
+      kind: 'figure',
+      caption: 'Gambar 2.1: Ketentuan Penilaian Persediaan Barang Dagangan menurut Ketentuan Fiskal.',
+      svg: SVG_INVENTORY_FISCAL
+    },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 2'
+    },
     {
       kind: 'table',
-      headers: ['Jenis Transaksi Pengalihan Harta', 'Dasar Penilaian bagi Pihak yang Menerima', 'Dasar Penilaian bagi Pihak yang Mengalihkan'],
+      headers: ['Jenis Transaksi Pengalihan Harta', 'Dasar Penilaian Komersial', 'Dasar Penilaian Fiskal UU PPh', 'Perlakuan Keuntungan/Kerugian'],
       rows: [
-        ['1. Jual Beli Biasa (Bebas Hubungan Istimewa)', 'Jumlah yang sesungguhnya dikeluarkan (Harga Beli + Biaya Terkait).', 'Jumlah yang sesungguhnya diterima (Harga Jual Kas).'],
-        ['2. Jual Beli dengan Hubungan Istimewa', '**Jumlah yang seharusnya dikeluarkan (Harga Pasar Wajar)**.', '**Jumlah yang seharusnya diterima (Harga Pasar Wajar)**.'],
-        ['3. Tukar Menukar Harta (Barter)', 'Nilai Pasar Wajar dari harta yang diperoleh.', 'Nilai Pasar Wajar dari harta yang diserahkan.'],
-        ['4. Penggabungan / Peleburan Usaha (Merger)', 'Nilai Pasar Wajar (atau Nilai Buku jika mendapat persetujuan Ditjen Pajak / *Pooling of Interests*).', 'Nilai Pasar Wajar (atau Nilai Sisa Buku).'],
-        ['5. Hibah / Bantuan Bukan Objek Pajak', 'Nilai Sisa Buku dari pihak yang mengalihkan.', 'Tidak diakui keuntungan/kerugian fiskal.']
+        ['Jual Beli Reguler Tanpa Hub. Istimewa', 'Harga transaksi yang disepakati pembeli-penjual.', 'Jumlah yang sesungguhnya dikeluarkan / diterima (Pasal 10 ayat 1).', 'Gain/Loss = Harga Jual Riil - Nilai Sisa Buku Fiskal.'],
+        ['Pengalihan dengan Hubungan Istimewa', 'Harga faktur transfer internal.', 'Jumlah yang seharusnya dikeluarkan / diterima pasar wajar (Pasal 10 ayat 1).', 'Wajib disesuaikan dengan Prinsip Kewajaran (Arms Length Price).'],
+        ['Tukar Menukar Harta (Barter)', 'Nilai wajar aset yang diserahkan/diterima.', 'Jumlah yang seharusnya dikeluarkan berdasarkan nilai pasar (Pasal 10 ayat 2).', 'Diakui keuntungan/kerugian selisih nilai pasar vs nilai buku.'],
+        ['Restrukturisasi Usaha (Merger Buka Izin)', 'Nilai pasar wajar aset penggabungan.', 'Dapat menggunakan Nilai Sisa Buku (Pooling of Interest) dengan izin Menkeu.', 'Tidak ada keuntungan fiskal yang terutang PPh saat merger (Tax-Neutral).']
       ],
-      caption: 'Tabel 2.1: Penilaian fiskal atas berbagai skema pengalihan harta.'
+      caption: 'Tabel 2.0: Matriks penilaian harta pengalihan dan persediaan fiskal.'
     },
-
-    { kind: 'h2', text: '2. Metode Penilaian Persediaan Fiskal' },
     {
-      kind: 'callout',
-      variant: 'warning',
-      title: 'Larangan Metode LIFO dalam Perpajakan Indonesia',
-      text: 'Pasal 10 ayat (6) UU PPh secara tegas hanya membolehkan **dua metode penilaian persediaan** untuk menghitung Harga Pokok Penjualan (HPP):\n1. **Metode Rata-rata (Average Method)**.\n2. **Metode Masuk Pertama Keluar Pertama (FIFO Method)**.\n• **Metode LIFO (Last-In First-Out) DILARANG KERAS** karena pada masa inflasi akan memperbesar HPP dan memperkecil laba kena pajak secara semu.'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: HPP Fiskal & Tarif PPh Badan'
     },
-
-    { kind: 'h2', text: '3. Struktur Lapisan Tarif PPh Orang Pribadi & Badan (UU HPP)' },
+    {
+      kind: 'formula',
+      text: `\\text{Harga Pokok Penjualan (HPP)} = \\text{Persediaan Awal} + \\text{Pembelian Bersih} - \\text{Persediaan Akhir}
+\\text{Metode Persediaan Sah Fiskal}: \\quad \\text{FIFO (First-In, First-Out)} \\quad \\text{atau} \\quad \\text{Rata-Rata Bergerak / Tertimbang (Average)}
+\\text{Tarif PPh Wajib Pajak Badan Dalam Negeri (UU HPP)} = 22\\% \\times \\text{Penghasilan Kena Pajak (PKP)}`,
+      note: 'Penggunaan metode persediaan wajib taat asas (konsisten). Perubahan metode dari Average ke FIFO atau sebaliknya wajib memperoleh persetujuan tertulis dari Direktur Jenderal Pajak.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Penilaian Pengalihan Harta Hibah Antar-Perusahaan',
+      prompt: 'PT Induk menghibahkan sebidang tanah dengan nilai sisa buku Rp 1 Miliar dan nilai pasar Rp 3 Miliar kepada anak usahanya. Apakah pengalihan ini merupakan objek pajak dan bagaimana dasar penilaiannya bagi anak usaha?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Ketentuan Pasal 4 ayat (3) huruf a UU PPh**: Hibah HANYA dikecualikan dari objek pajak jika diberikan kepada keluarga sedarah satu derajat atau badan keagamaan/sosial sepanjang **TIDAK ADA HUBUNGAN USAHA, PEKERJAAN, KEPEMILIKAN, ATAU PENGUASAAN**.',
+            '**Analisis Hubungan Istimewa**: Karena PT Induk memiliki anak usaha, terdapat hubungan kepemilikan/penguasaan. Maka, hibah tanah tersebut **MERUPAKAN OBJEK PPh BAGI PENERIMA**.',
+            '**Dasar Penilaian**: Dinilai berdasarkan **Nilai Pasar Wajar (Rp 3 Miliar)**. PT Induk mengakui keuntungan pengalihan harta sebesar Rp 2 Miliar (Rp 3 M - Rp 1 M), dan anak usaha mencatat tanah sebesar Rp 3 Miliar.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 2'
+    },
     {
       kind: 'table',
-      headers: ['Lapisan Penghasilan Kena Pajak (PKP) Wajib Pajak Orang Pribadi', 'Tarif PPh Pasal 17 UU HPP'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['Sampai dengan Rp 60.000.000', '**5%** (Batas dinaikkan dari sebelumnya Rp 50jt)'],
-        ['Di atas Rp 60.000.000 s.d Rp 250.000.000', '**15%**'],
-        ['Di atas Rp 250.000.000 s.d Rp 500.000.000', '**25%**'],
-        ['Di atas Rp 500.000.000 s.d Rp 5.000.000.000', '**30%**'],
-        ['Di atas Rp 5.000.000.000 (Rp 5 Miliar)', '**35%** (Lapisan Baru Orang Super Kaya / *High Net Worth Individuals*)']
+        ['1', 'Penilaian Pengalihan Harta', 'Penilaian jual beli, barter, likuidasi, dan merger buku vs pasar.', 'Mampu menghitung keuntungan pengalihan harta fiskal.'],
+        ['2', 'Metode Persediaan FIFO & Average', 'Kalkulasi HPP fiskal dan koreksi atas penggunaan metode LIFO.', 'Mampu membuat rekonsiliasi HPP komersial ke fiskal.'],
+        ['3', 'Tarif PPh Badan 22%', 'Perhitungan PPh terutang badan usaha normal tanpa fasilitas.', 'Mampu menghitung kewajiban PPh Badan terutang.']
       ],
-      caption: 'Tabel 2.2: Lapisan tarif progresif PPh Orang Pribadi berdasarkan UU HPP.'
+      caption: 'Tabel 2.2: Peta penguasaan submateri TM 2 Perpajakan II.'
     },
+    CASE_INVENTORY_VALUATION_FISCAL,
     {
-      kind: 'p',
-      text: '**Tarif PPh Wajib Pajak Badan**: Ditetapkan sebesar tarif tunggal proporsional **22%** mulai Tahun Pajak 2022 dan seterusnya.'
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 2' },
     {
       kind: 'ul',
       items: [
-        '**NPPN**: Wajib memberitahukan ke DJP dalam 3 bulan pertama tahun pajak (paling lambat 31 Maret) jika ingin menggunakan Norma Penghitungan Neto.',
-        '**Tarif Tertinggi OP 35%**: Berlaku untuk bagian PKP yang melampaui Rp 5 Miliar setahun.',
-        '**Restrukturisasi Usaha**: Dapat menggunakan nilai sisa buku jika memenuhi syarat *Business Purpose Test* dari DJP.'
+        '**LIFO Dilarang Demi Keadilan Pajak**: Di masa inflasi, LIFO membuat HPP tinggi dan laba rendah secara artifisial, sehingga dilarang oleh DJP dan PSAK/IFRS.',
+        '**Syarat Nilai Buku pada Merger**: Perusahaan yang merger dapat menggunakan nilai buku (bebas PPh keuntungan pengalihan) hanya jika lolos Business Purpose Test dan disetujui DJP.',
+        '**Tarif PPh Badan 22%**: Sesuai UU HPP No. 7 Tahun 2021, tarif PPh Badan ditetapkan tetap 22% (pembatalan penurunan tarif 20% yang semula direncanakan di UU 2/2020).'
       ]
     }
   ]
