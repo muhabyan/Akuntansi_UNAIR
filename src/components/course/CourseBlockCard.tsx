@@ -561,7 +561,21 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             onTouchMove={(e) => e.stopPropagation()}
             onTouchEnd={(e) => e.stopPropagation()}
           >
-            <pre className="whitespace-pre-wrap font-mono text-sm leading-[1.75] tracking-wide text-slate-900 dark:text-slate-200" aria-label={economicFormula.title ? `Rumus ${economicFormula.title}` : undefined}>{economicFormula.body}</pre>
+            {(() => {
+              const body = economicFormula.body;
+              const isLatex = body.includes('\\') || body.includes('$');
+              if (isLatex) {
+                const mathText = !body.includes('$') ? `$$\n${body}\n$$` : body;
+                return (
+                  <div className="text-base text-slate-900 dark:text-slate-100 overflow-x-auto py-1">
+                    {renderText(mathText)}
+                  </div>
+                );
+              }
+              return (
+                <pre className="whitespace-pre-wrap font-mono text-sm leading-[1.75] tracking-wide text-slate-900 dark:text-slate-200" aria-label={economicFormula.title ? `Rumus ${economicFormula.title}` : undefined}>{body}</pre>
+              );
+            })()}
           </div>
           {block.note && <p className={`border-t px-5 py-3 text-xs leading-relaxed ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-slate-700 dark:text-slate-400'}`}>{renderText(block.note)}</p>}
         </div>

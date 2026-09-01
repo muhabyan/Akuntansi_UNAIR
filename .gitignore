@@ -16,3 +16,15 @@ vite.config.js
 /Perpajakan/
 /Statistik/
 UAS STATIS 2024.pdf
+/AKM II/
+/Akuntansi Sektor Publik/
+/Manajemen Keuangan/
+/Manajemen Strategik/
+/PBR I/
+/Pengantar Manajemen/
+/Perpajakan II/
+/SIA/
+extract_*.py
+scripts/*.py
+*.txt
+*.pdf

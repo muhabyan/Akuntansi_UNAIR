@@ -169,13 +169,21 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
           {block.caption && <div className="px-4 py-3 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 italic">{renderText(block.caption)}</div>}
         </div>
       );
-    case 'formula':
+    case 'formula': {
+      const isLatex = block.text.includes('\\') || block.text.includes('$');
+      const mathContent = isLatex && !block.text.includes('$') ? `$$\n${block.text}\n$$` : block.text;
       return (
-        <div className="my-6 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border-l-4 border-indigo-500">
-          <p className="font-mono text-base text-gray-900 dark:text-gray-100">{block.text}</p>
-          {block.note && <div className="text-sm text-gray-500 mt-2">{renderText(block.note)}</div>}
+        <div className="my-6 p-4 rounded-xl bg-slate-900/60 dark:bg-slate-900/80 border border-slate-800 border-l-4 border-l-amber-400 dark:border-l-amber-400 shadow-sm">
+          <div className="text-xs uppercase tracking-wider font-bold text-amber-400 mb-2 flex items-center gap-1.5">
+            <span>∑</span> RUMUS / FORMULA
+          </div>
+          <div className="text-base text-slate-100 overflow-x-auto py-1">
+            {renderText(mathContent)}
+          </div>
+          {block.note && <div className="text-xs text-slate-400 mt-2.5 pt-2 border-t border-slate-800/80">{renderText(block.note)}</div>}
         </div>
       );
+    }
     case 'figure':
       return (
         <figure className="my-8">
