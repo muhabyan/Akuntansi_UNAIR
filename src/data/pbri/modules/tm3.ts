@@ -1,100 +1,119 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_MANAGEMENT_ASSERTIONS } from '../pbriPracticeCases';
 
-const SVG_MANAGEMENT_ASSERTIONS = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ASERSI MANAJEMEN SESUAI SA 315 (REVISI)</text>
+const SVG_ASSERTIONS_DIRECTION = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ARAH PENGUJIAN AUDIT: TRACING (COMPLETENESS) VS VOUCHING (OCCURRENCE)</text>
   
-  <!-- Golongan Transaksi -->
-  <rect x="30" y="55" width="185" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="122" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. Golongan Transaksi</text>
-  <text x="122" y="102" fill="#cbd5e1" font-size="10" text-anchor="middle">• Keterjadian (Occurrence)</text>
-  <text x="122" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">• Kelengkapan (Completeness)</text>
-  <text x="122" y="142" fill="#cbd5e1" font-size="10" text-anchor="middle">• Akurasi (Accuracy)</text>
-  <text x="122" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">• Pisah Batas (Cutoff)</text>
-  <text x="122" y="182" fill="#cbd5e1" font-size="10" text-anchor="middle">• Klasifikasi (Classification)</text>
+  <rect x="30" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="130" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">DOKUMEN SUMBER</text>
+  <text x="130" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Surat Jalan, Faktur,</text>
+  <text x="130" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">Bukti Kas, Slip Gaji,</text>
+  <text x="130" y="134" fill="#94a3b8" font-size="10" text-anchor="middle">Laporan Penerimaan Barang</text>
+  <text x="130" y="165" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">Fakta Riil Terjadi</text>
 
-  <!-- Saldo Akun -->
-  <rect x="245" y="55" width="185" height="150" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="337" y="80" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">2. Saldo Akun Akhir</text>
-  <text x="337" y="102" fill="#cbd5e1" font-size="10" text-anchor="middle">• Keberadaan (Existence)</text>
-  <text x="337" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">• Hak &amp; Kewajiban (R&amp;O)</text>
-  <text x="337" y="142" fill="#cbd5e1" font-size="10" text-anchor="middle">• Kelengkapan (Completeness)</text>
-  <text x="337" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">• Penilaian &amp; Alokasi</text>
-  <text x="337" y="182" fill="#cbd5e1" font-size="10" text-anchor="middle">  (Valuation &amp; Allocation)</text>
+  <rect x="450" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="550" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">JURNAL &amp; BUKU BESAR</text>
+  <text x="550" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Jurnal Penjualan,</text>
+  <text x="550" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">Jurnal Pengeluaran Kas,</text>
+  <text x="550" y="134" fill="#94a3b8" font-size="10" text-anchor="middle">Buku Besar Piutang/Utang</text>
+  <text x="550" y="165" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">Pencatatan Akuntansi</text>
 
-  <!-- Penyajian & Pengungkapan -->
-  <rect x="460" y="55" width="185" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="552" y="80" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">3. Penyajian &amp; Pengungkapan</text>
-  <text x="552" y="102" fill="#cbd5e1" font-size="10" text-anchor="middle">• Keterjadian &amp; Hak</text>
-  <text x="552" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">• Kelengkapan (Completeness)</text>
-  <text x="552" y="142" fill="#cbd5e1" font-size="10" text-anchor="middle">• Klasifikasi &amp; Keterpahaman</text>
-  <text x="552" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">• Akurasi &amp; Penilaian</text>
-  <text x="552" y="182" fill="#cbd5e1" font-size="10" text-anchor="middle">• Ketepatan Deskripsi</text>
+  <text x="340" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TRACING (Maju: Kelengkapan)</text>
+  <text x="340" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">Cek Transaksi Riil yg Hilang</text>
+
+  <text x="340" y="138" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">VOUCHING (Mundur: Keterjadian)</text>
+  <text x="340" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">Cek Transaksi Fiktif/Ganda</text>
 </svg>`;
 
 export const TM3_READING: Reading = {
   tm: 3,
-  title: 'Tanggung Jawab Audit, Skeptisisme Profesional, & Asersi Manajemen',
-  ref: 'Arens Ch. 6 | SA 200, SA 315 Revisi',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 3: Menguasai pembagian tanggung jawab manajemen vs auditor independen (SA 200), sikap skeptisisme profesional dan pertimbangan profesional (*professional judgment*), asersi manajemen atas transaksi, saldo akun, serta pengungkapan (SA 315 Revisi).',
+  title: 'Tanggung Jawab Auditor, Tujuan Audit, & Asersi Manajemen',
+  ref: 'Arens 16e Ch. 6 | SA 200, SA 240, SA 250, SA 315 | Asersi ISA',
+  intro: 'TM 3 membahas pembagian tanggung jawab auditor vs manajemen dalam pencegahan dan pendeteksian salah saji (Error vs Fraud), kepatuhan terhadap regulasi (SA 250), serta pemetaan asersi manajemen ke tujuan audit transaksi, saldo akun, dan penyajian/pengungkapan.',
   objectives: [
-    'Membedakan tanggung jawab manajemen (penyusunan laporan & pengendalian internal) vs tanggung jawab auditor (perumusan opini independen).',
-    'Memahami konsep Skeptisisme Profesional (sikap selalu mempertanyakan dan waspada terhadap bukti yang saling bertentangan).',
-    'Mengidentifikasi keterbatasan bawaan audit (Inherent Limitations of Audit).',
-    'Menguasai asersi manajemen golongan transaksi (Keterjadian, Kelengkapan, Akurasi, Pisah Batas, Klasifikasi).',
-    'Menguasai asersi manajemen saldo akun (Keberadaan, Hak & Kewajiban, Kelengkapan, Penilaian & Alokasi).',
-    'Merumuskan tujuan audit khusus berdasarkan asersi manajemen.'
+    'Membedakan tanggung jawab auditor atas Kekeliruan Tidak Sengaja (Errors) vs Kecurangan yang Disengaja (Fraud).',
+    'Menguasai klasifikasi asersi manajemen: Golongan Transaksi, Saldo Akun Akhir Periode, serta Penyajian & Pengungkapan.',
+    'Menentukan arah pengujian audit (Audit Testing Direction): Tracing vs Vouching.',
+    'Menerapkan skeptisisme profesional dalam mendeteksi indikasi ketidakpatuhan hukum (SA 250).'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Peta Asersi Manajemen menurut SA 315 Revisi',
-      svg: SVG_MANAGEMENT_ASSERTIONS,
-      caption: 'Gambar 3.1: Tiga kelompok asersi implisit dan eksplisit manajemen dalam laporan keuangan.'
+      caption: 'Gambar 3.1: Arah Pengujian Audit Substantif (Tracing vs Vouching).',
+      svg: SVG_ASSERTIONS_DIRECTION
     },
-
-    { kind: 'h2', text: '1. Tanggung Jawab Manajemen vs Tanggung Jawab Auditor (SA 200)' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 3'
+    },
     {
       kind: 'table',
-      headers: ['Pihak yang Bertanggung Jawab', 'Lingkup Tanggung Jawab Utama'],
+      headers: ['Kategori Asersi', 'Asersi Spesifik ISA', 'Pertanyaan Uji Auditor', 'Risiko Utama Salah Saji'],
       rows: [
-        ['Manajemen & TCWG (Those Charged with Governance)', '1. Menyusun laporan keuangan sesuai Standar Akuntansi Keuangan (SAK/IFRS).\n2. Merancang, mengimplementasikan, dan memelihara pengendalian internal yang relevan.\n3. Memberikan akses penuh kepada auditor atas seluruh catatan, data, dan personel entitas.'],
-        ['Auditor Independen', '1. Memperoleh **Keyakinan Memadai (Reasonable Assurance)** bahwa laporan keuangan secara keseluruhan bebas dari kesalahan penyajian material (baik karena kecurangan maupun kekeliruan).\n2. Menerbitkan **Laporan Auditor Independen** yang memuat opini objektif berdasarkan bukti audit yang cukup dan tepat.']
+        ['Golongan Transaksi (Laba Rugi)', 'Keterjadian (Occurrence)', 'Apakah transaksi pendapatan yang dicatat benar-benar terjadi?', 'Overstatement (Pendapatan Fiktif).'],
+        ['Golongan Transaksi (Laba Rugi)', 'Kelengkapan (Completeness)', 'Apakah seluruh beban dan penjualan riil telah dicatat tanpa ada yang tertinggal?', 'Understatement (Beban Sengaja Dihilangkan).'],
+        ['Golongan Transaksi (Laba Rugi)', 'Akurasi & Pisah Batas (Accuracy & Cut-off)', 'Apakah angka dicatat sesuai faktur dan dicatat pada periode yang benar?', 'Salah Saji Aritmatika / Jurnal Prematur.'],
+        ['Saldo Akun (Neraca)', 'Eksistensi (Existence)', 'Apakah persediaan fisik dan kas di bank benar-benar ada per 31 Desember?', 'Overstatement Aset (Aset Siluman).'],
+        ['Saldo Akun (Neraca)', 'Hak & Kewajiban (Rights & Obligations)', 'Apakah aset yang tercatat merupakan hak sah klien dan bukan titipan (konsinyasi)?', 'Aset Pihak Ketiga Diakui Milik Sendiri.'],
+        ['Saldo Akun (Neraca)', 'Penilaian & Alokasi (Valuation & Allocation)', 'Apakah piutang disajikan pada NRV setelah cadangan ECL dan aset tetap disusutkan benar?', 'Overstatement Nilai Tercatat Aset.']
       ],
-      caption: 'Tabel 3.1: Pembagian tanggung jawab menurut SA 200.'
+      caption: 'Tabel 3.0: Matriks pemetaan asersi manajemen terhadap risiko audit.'
     },
-
-    { kind: 'h2', text: '2. Skeptisisme Profesional (Professional Skepticism)' },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Definisi & Penerapan SA 200',
-      text: 'Skeptisisme profesional adalah sikap yang mencakup **pikiran yang selalu mempertanyakan (*questioning mind*)**, waspada terhadap kondisi yang dapat mengindikasikan kemungkinan salah saji karena kecurangan atau kekeliruan, dan **penilaian kritis terhadap bukti audit**.\n\n*Prinsip penting:* Auditor tidak mengasumsikan manajemen tidak jujur, tetapi juga tidak mengasumsikan kejujuran tanpa bukti yang sahih.'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Hubungan Asersi, Arah Uji, & Risiko Salah Saji'
     },
-
-    { kind: 'h2', text: '3. Asersi Manajemen & Pengujian Audit' },
+    {
+      kind: 'formula',
+      text: `\\text{Vouching (Buku Besar } \\rightarrow \\text{ Dokumen)} \\Longrightarrow \\text{Uji Asersi OCCURRENCE / EXISTENCE (Cegah Overstatement)}
+\\text{Tracing (Dokumen } \\rightarrow \\text{ Buku Besar)} \\Longrightarrow \\text{Uji Asersi COMPLETENESS (Cegah Understatement)}`,
+      note: 'Menghafal arah pengujian adalah kunci menjawab 80% soal kasus pengujian substantif siklus akuntansi di UTS.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Identifikasi Asersi & Prosedur Audit',
+      prompt: 'Auditor ingin memastikan bahwa PT Barito tidak mencatat barang konsinyasi milik PT Antara sebagai bagian dari saldo persediaannya sendiri per 31 Desember 2026. Sebutkan asersi yang diuji dan prosedur audit yang harus dilakukan!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Asersi yang Diuji**: Hak dan Kewajiban (Rights & Obligations).',
+            '**Prosedur Audit**: (1) Memeriksa perjanjian konsinyasi fisik dan dokumen penerimaan barang, (2) Meminta konfirmasi tertulis kepada pemilik barang konsinyasi (PT Antara), (3) Menginstruksikan tim stock opname untuk memisahkan dan menandai area barang titipan agar tidak dimasukkan ke dalam daftar inventaris milik klien.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 3'
+    },
     {
       kind: 'table',
-      headers: ['Kategori Asersi', 'Asersi Kunci', 'Makna & Risiko Salah Saji Utama'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['Transaksi Laba Rugi', 'Keterjadian (Occurrence)', 'Transaksi yang dicatat benar-benar terjadi dan berkaitan dengan entitas. *(Risiko: Pencatatan omzet fiktif/overstatement)*.'],
-        ['Transaksi Laba Rugi', 'Kelengkapan (Completeness)', 'Seluruh transaksi yang seharusnya dicatat telah dimasukkan. *(Risiko: Penyembunyian beban/understatement)*.'],
-        ['Transaksi Laba Rugi', 'Pisah Batas (Cutoff)', 'Transaksi dicatat pada periode akuntansi yang tepat (tidak dicatat mendahului atau menunda tanggal faktur).'],
-        ['Saldo Neraca', 'Keberadaan (Existence)', 'Aset, liabilitas, dan ekuitas yang tercatat benar-benar ada secara fisik/legal pada tanggal neraca.'],
-        ['Saldo Neraca', 'Hak & Kewajiban (Rights & Obligations)', 'Entitas memiliki hak legal atas aset yang dicatat dan liabilitas merupakan kewajiban sah entitas.'],
-        ['Saldo Neraca', 'Penilaian & Alokasi (Valuation & Allocation)', 'Aset dan liabilitas dicatat pada jumlah yang tepat (termasuk cadangan kerugian piutang dan depresiasi).']
+        ['1', 'Tanggung Jawab Auditor atas Fraud (SA 240)', 'Pembedaan kecurangan laporan keuangan vs penyalahgunaan aset.', 'Memahami keterbatasan inheren audit dalam mendeteksi kolusi.'],
+        ['2', 'Asersi Manajemen Lengkap', 'Klasifikasi Transaksi, Saldo Akun, dan Pengungkapan.', 'Mampu menghubungkan asersi dengan prosedur audit lapangan.'],
+        ['3', 'Arah Pengujian Substantif', 'Diferensiasi Tracing vs Vouching.', 'Mampu merancang prosedur pengujian overstatement dan understatement.']
       ],
-      caption: 'Tabel 3.2: Hubungan asersi manajemen dengan risiko audit spesifik.'
+      caption: 'Tabel 3.2: Peta penguasaan submateri TM 3 PBR I.'
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 3' },
+    CASE_MANAGEMENT_ASSERTIONS,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Occurrence vs Existence**: Keterjadian untuk transaksi arus kas/laba rugi; Keberadaan untuk saldo akun neraca fisik.',
-        '**Completeness vs Occurrence**: Menguji Kelengkapan bergerak dari dokumen sumber (faktur) ke buku jurnal (Tracer); menguji Keterjadian bergerak dari buku jurnal ke dokumen sumber (Voucher).',
-        '**Cutoff**: Memeriksa transaksi beberapa hari sebelum dan sesudah 31 Desember.'
+        '**Fraud vs Error**: Pembeda utama adalah NIAT (Intent). Fraud melibatkan kesengajaan dan upaya penyembunyian (Concealment).',
+        '**Asersi Transaksi vs Saldo**: Occurrence hanya berlaku untuk transaksi laba rugi; Existence hanya berlaku untuk saldo neraca.',
+        '**Cut-Off**: Pengujian pisah batas menguji apakah transaksi dicatat pada periode akuntansi yang tepat (umumnya 5 hari sebelum & sesudah tanggal neraca).'
       ]
     }
   ]

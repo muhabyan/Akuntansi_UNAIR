@@ -1,115 +1,136 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_AUDIT_RISK_MODEL } from '../pbriPracticeCases';
 
-const SVG_PLANNING_PHASES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">DELAPAN TAHAP PERENCANAAN AUDIT (SA 300 &amp; SA 315)</text>
+const SVG_AUDIT_RISK_MODEL = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL RISIKO AUDIT (AUDIT RISK MODEL - SA 315 &amp; SA 330)</text>
   
-  <rect x="25" y="55" width="145" height="70" rx="6" fill="#1e293b" stroke="#38bdf8"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. Penerimaan Klien</text>
-  <text x="97" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Integritas manajemen</text>
-  <text x="97" y="110" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; Surat Perikatan</text>
+  <rect x="30" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">AAR</text>
+  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Acceptable Audit Risk:</text>
+  <text x="97" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tingkat risiko opini</text>
+  <text x="97" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">WTP terbit pd LK</text>
+  <text x="97" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">salah saji material</text>
+  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">(Target: 1% - 5%)</text>
 
-  <rect x="185" y="55" width="145" height="70" rx="6" fill="#1e293b" stroke="#38bdf8"/>
-  <text x="257" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">2. Pahami Bisnis</text>
-  <text x="257" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Industri, regulasi,</text>
-  <text x="257" y="110" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; lingkungan eksternal</text>
+  <text x="180" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">=</text>
 
-  <rect x="345" y="55" width="145" height="70" rx="6" fill="#1e293b" stroke="#38bdf8"/>
-  <text x="417" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">3. Nilai Risiko Bisnis</text>
-  <text x="417" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Risiko kegagalan</text>
-  <text x="417" y="110" fill="#94a3b8" font-size="8.5" text-anchor="middle">mencapai sasaran klien</text>
+  <rect x="195" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="262" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">INHERENT RISK (IR)</text>
+  <text x="262" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Risiko Bawaan:</text>
+  <text x="262" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Kerentanan akun</text>
+  <text x="262" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">terhadap salah saji</text>
+  <text x="262" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">tanpa kontrol</text>
+  <text x="262" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">(Di luar kendali auditor)</text>
 
-  <rect x="505" y="55" width="145" height="70" rx="6" fill="#1e293b" stroke="#38bdf8"/>
-  <text x="577" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">4. Prosedur Analitis</text>
-  <text x="577" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Pendahuluan (tren</text>
-  <text x="577" y="110" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; rasio anomali)</text>
+  <text x="345" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">×</text>
 
-  <rect x="25" y="135" width="145" height="70" rx="6" fill="#1e293b" stroke="#34d399"/>
-  <text x="97" y="158" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">5. Set Materialitas</text>
-  <text x="97" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Overall Materiality</text>
-  <text x="97" y="190" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; Performance Mat.</text>
+  <rect x="360" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="427" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">CONTROL RISK (CR)</text>
+  <text x="427" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Risiko Pengendalian:</text>
+  <text x="427" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Risiko kontrol klien</text>
+  <text x="427" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">gagal cegah/deteksi</text>
+  <text x="427" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">salah saji material</text>
+  <text x="427" y="175" fill="#fde68a" font-size="9" font-weight="700" text-anchor="middle">(Diuji lewat TOC)</text>
 
-  <rect x="185" y="135" width="145" height="70" rx="6" fill="#1e293b" stroke="#34d399"/>
-  <text x="257" y="158" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">6. Pahami IC</text>
-  <text x="257" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Pengendalian Internal</text>
-  <text x="257" y="190" fill="#94a3b8" font-size="8.5" text-anchor="middle">COSO &amp; Control Risk</text>
+  <text x="510" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">×</text>
 
-  <rect x="345" y="135" width="145" height="70" rx="6" fill="#1e293b" stroke="#34d399"/>
-  <text x="417" y="158" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">7. Nilai Risiko Fraud</text>
-  <text x="417" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Segitiga kecurangan</text>
-  <text x="417" y="190" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; risiko salah saji</text>
-
-  <rect x="505" y="135" width="145" height="70" rx="6" fill="#1e293b" stroke="#34d399"/>
-  <text x="577" y="158" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">8. Susun Rencana</text>
-  <text x="577" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Overall Strategy</text>
-  <text x="577" y="190" fill="#94a3b8" font-size="8.5" text-anchor="middle">&amp; Program Audit</text>
+  <rect x="525" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="592" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">PLANNED PDR</text>
+  <text x="592" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Risiko Deteksi:</text>
+  <text x="592" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Risiko bukti auditor</text>
+  <text x="592" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">gagal deteksi salah saji</text>
+  <text x="592" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">PDR = AAR / (IR × CR)</text>
+  <text x="592" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">(Menentukan Bukti!)</text>
 </svg>`;
 
 export const TM9_READING: Reading = {
   tm: 9,
-  title: 'Perencanaan Audit Menyeluruh & Pemahaman Bisnis Klien',
-  ref: 'Arens Ch. 8 | SA 300, SA 315',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 9: Menguasai 8 tahapan perencanaan audit, prosedur penerimaan dan keberlanjutan perikatan klien (Client Acceptance & Continuance), penyusunan Surat Perikatan Audit (Engagement Letter), pemahaman industri, strategi audit menyeluruh (Overall Audit Strategy), dan rencana audit terperinci (Audit Plan).',
+  title: 'Penilaian Risiko Audit, Risiko Bawaan, & Audit Risk Model (SA 315 & SA 330)',
+  ref: 'Arens 16e Ch. 9 | SA 315 (Revisi 2019), SA 330, SA 200 | Audit Risk Model',
+  intro: 'TM 9 membahas model risiko audit kuantitatif dan kualitatif: Acceptable Audit Risk (AAR), Inherent Risk (IR), Control Risk (CR), dan Planned Detection Risk (PDR). Serta pengaruh tingkat PDR terhadap kuantitas, sifat (nature), saat (timing), dan luas (extent) pengujian substantif auditor.',
   objectives: [
-    'Memahami 8 langkah utama dalam perencanaan audit berbasis risiko.',
-    'Menerapkan prosedur penerimaan klien baru dan komunikasi dengan auditor pendahulu (Predecessor Auditor).',
-    'Menyusun Surat Perikatan Audit (Engagement Letter) sesuai SA 210.',
-    'Memperoleh pemahaman mendalam mengenai industri, regulasi, dan lingkungan eksternal entitas klien.',
-    'Menilai Risiko Bisnis Klien (Client Business Risk) yang berdampak pada salah saji laporan keuangan.',
-    'Menyusun Strategi Audit Menyeluruh (Overall Audit Strategy) dan Rencana Audit (Audit Plan).'
+    'Menghitung Planned Detection Risk (PDR) menggunakan rumus Audit Risk Model.',
+    'Menganalisis hubungan berbanding terbalik (invers) antara PDR dan Jumlah Bukti Substantif yang Diperlukan.',
+    'Mengidentifikasi faktor-faktor penentu Tingkat Risiko Bawaan (Inherent Risk) spesifik akun.',
+    'Menghubungkan Risk of Material Misstatement (RMM = IR × CR) dengan respons auditor sesuai SA 330.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Delapan Tahap Perencanaan Audit Berbasis Risiko',
-      svg: SVG_PLANNING_PHASES,
-      caption: 'Gambar 9.1: Alur sistematis perencanaan audit dari penerimaan perikatan hingga penyusunan program audit.'
-    },
-
-    { kind: 'h2', text: '1. Penerimaan & Keberlanjutan Klien (SA 210 & SA 220)' },
-    {
-      kind: 'p',
-      text: 'Sebelum menerima atau melanjutkan perikatan audit, KAP wajib melakukan evaluasi ketat atas:'
+      caption: 'Gambar 9.1: Hubungan Komponen Model Risiko Audit (SA 315 & SA 330).',
+      svg: SVG_AUDIT_RISK_MODEL
     },
     {
-      kind: 'ul',
-      items: [
-        '**Integritas Manajemen**: Mengevaluasi reputasi pimpinan, ada/tidaknya pembatasan lingkup masa lalu, serta indikasi tindak pidana korupsi/pencucian uang.',
-        '**Kompetensi & Sumber Daya KAP**: Memastikan ketersediaan waktu, personel yang kompeten, dan ahli spesialis industri yang memadai.',
-        '**Kepatuhan Etika & Independensi**: Memastikan tidak ada benturan kepentingan atau ancaman independensi yang tak dapat dimitigasi.',
-        '**Komunikasi dengan Auditor Pendahulu (Predecessor Auditor)**: Wajib meminta izin klien untuk berkomunikasi dengan auditor tahun lalu mengenai alasan pergantian auditor dan integritas manajemen.'
-      ]
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 9'
     },
-
-    { kind: 'h2', text: '2. Surat Perikatan Audit (Audit Engagement Letter - SA 210)' },
-    {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Klausul Wajib dalam Surat Perikatan',
-      text: '1. Tujuan dan lingkup audit laporan keuangan.\n2. Tanggung jawab auditor.\n3. Tanggung jawab manajemen (penyusunan lapkeu & pengendalian internal).\n4. Identifikasi kerangka pelaporan keuangan yang berlaku (SAK/IFRS).\n5. Bentuk dan isi laporan yang diperkirakan akan diterbitkan oleh auditor.\n6. Dasar penetapan imbalan jasa (Audit Fee) dan termin penagihan.'
-    },
-
-    { kind: 'h2', text: '3. Pemahaman Bisnis & Industri Klien (SA 315)' },
     {
       kind: 'table',
-      headers: ['Aspek Pemahaman', 'Sumber Informasi & Prosedur', 'Dampak pada Risiko Audit'],
+      headers: ['Komponen Model Risiko', 'Definisi & Sifat Pengendalian', 'Faktor Penentu Utama', 'Dampak terhadap Bukti Audit'],
       rows: [
-        ['Industri & Regulasi', 'Laporan asosiasi industri, peraturan OJK/BI/Kemenkeu, tren pasar.', 'Mengidentifikasi risiko keusangan teknologi, penurunan pasar, atau risiko ketidakpatuhan hukum.'],
-        ['Operasi & Proses Bisnis', 'Kunjungan pabrik (tour of facilities), bagan organisasi, wawancara direksi.', 'Mendeteksi transaksi dengan pihak berelasi (Related Parties) yang tidak wajar.'],
-        ['Manajemen & Tata Kelola', 'Pedoman tata kelola, piagam Komite Audit, sistem kompensasi eksekutif.', 'Menilai apakah ada tekanan target bonus berlebihan yang memicu manipulasi laba.'],
-        ['Tujuan & Strategi Klien', 'Rencana strategis 5 tahunan, proyeksi anggaran belanja modal.', 'Mengidentifikasi risiko bisnis baru yang dapat berujung pada penurunan nilai aset (impairment).']
+        ['Acceptable Audit Risk (AAR)', 'Tingkat kesediaan auditor menerima kemungkinan laporan keuangan mengandung salah saji material setelah audit selesai.', 'Ketergantungan pengguna eksternal (emiten publik), kesehatan finansial klien, integritas manajemen.', 'AAR Rendah -> Auditor ekstra hati-hati -> Bukti audit BANYAK.'],
+        ['Inherent Risk (IR)', 'Kerentanan asersi terhadap salah saji material dengan asumsi tidak ada pengendalian internal terkait.', 'Sifat bisnis, transaksi pihak berelasi, estimasi akuntansi kompleks, kerentanan aset dicuri (kas/emas).', 'IR Tinggi -> RMM Tinggi -> PDR Rendah -> Bukti audit BANYAK.'],
+        ['Control Risk (CR)', 'Risiko pengendalian internal klien gagal mencegah atau mendeteksi salah saji material secara tepat waktu.', 'Efektivitas desain dan operasi pengendalian internal (diuji melalui Test of Controls).', 'CR Tinggi -> Kontrol klien buruk -> Auditor tidak bisa mengandalkan kontrol -> Bukti substantif BANYAK.'],
+        ['Planned Detection Risk (PDR)', 'Risiko bukti pengujian audit gagal mendeteksi salah saji yang melampaui performance materiality.', 'Dihitung secara matematis: PDR = AAR / (IR × CR).', 'PDR Rendah -> Toleransi risiko deteksi kecil -> Sampel audit BESAR & pengujian RINCI.']
       ],
-      caption: 'Tabel 9.1: Dimensi pemahaman bisnis klien menurut Standar Audit 315.'
+      caption: 'Tabel 9.0: Matriks komponen Audit Risk Model.'
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 9' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Audit Risk Model'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Audit Risk Model}: \\quad AAR = IR \\times CR \\times PDR \\quad \\Longleftrightarrow \\quad PDR = \\frac{AAR}{IR \\times CR}
+\\text{Risk of Material Misstatement (RMM)} = IR \\times CR
+\\text{Hubungan Kunci}: \\quad PDR \\downarrow \\quad \\Longrightarrow \\quad \\text{Jumlah Bukti Substantif (Sample Size)} \\uparrow`,
+      note: 'Auditor tidak dapat mengubah IR dan CR klien (faktor independen klien), namun auditor MENGENDALIKAN PDR dengan mengatur luas bukti substantif yang dikumpulkan.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Perhitungan PDR PT Nusantara Tech',
+      prompt: 'KAP menetapkan AAR = 2% untuk PT Nusantara Tech (klien IPO). Auditor menilai Inherent Risk akun Pendapatan = 80% dan Control Risk = 50%. Hitung Planned Detection Risk (PDR) dan jelaskan dampaknya terhadap pengujian saldo piutang!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Perhitungan PDR**: PDR = 2% / (80% × 50%) = 0,02 / 0,40 = **5,0% (Sangat Rendah)**.',
+            '**Dampak terhadap Pengujian**: PDR yang sangat rendah (5%) mengharuskan auditor mengumpulkan bukti substantif dalam jumlah sangat besar: mengirim konfirmasi positif dengan cakupan >80% total nilai piutang, melakukan uji pisah batas ketat 10 hari sebelum & sesudah tanggal neraca, serta memeriksa bukti penerimaan kas setelah tanggal neraca.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 9'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Rumus Audit Risk Model', 'Kalkulasi matematis PDR, AAR, IR, dan CR.', 'Mampu menghitung PDR dan menganalisis dampak kenaikan/penurunan risiko.'],
+        ['2', 'Faktor Penentu Inherent Risk', 'Identifikasi faktor risiko industri, kompleksitas transaksi, dan estimasi.', 'Mampu menetapkan IR tinggi vs rendah pada akun aset dan liabilitas.'],
+        ['3', 'Hubungan PDR vs Bukti Audit', 'Logika hubungan berbanding terbalik PDR terhadap ukuran sampel pengujian.', 'Mampu menyusun strategi pengujian berbasis risiko sesuai SA 330.']
+      ],
+      caption: 'Tabel 9.2: Peta penguasaan submateri TM 9 PBR I.'
+    },
+    CASE_AUDIT_RISK_MODEL,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Auditor Pendahulu**: Komunikasi sebelum menerima perikatan adalah wajib untuk menilai integritas klien.',
-        '**Engagement Letter**: Kontrak hukum resmi tertulis antara KAP dan klien yang ditandatangani sebelum audit dimulai.',
-        '**Tour of Facilities**: Penting untuk mengamati fisik aset, kondisi pabrik, dan persediaan yang bergerak lambat.'
+        '**Hubungan Invers PDR & Bukti**: PDR berbanding TERBALIK dengan jumlah bukti audit. Semakin rendah PDR, semakin banyak bukti substantif yang wajib dikumpulkan.',
+        '**AAR vs Planned Evidence**: Semakin rendah AAR yang diinginkan (semakin tinggi kehati-hatian auditor), semakin banyak bukti audit yang diperlukan.',
+        '**RMM di Tingkat Asersi**: Penilaian IR dan CR dilakukan pada tingkat asersi spesifik untuk setiap saldo akun material (SA 315).'
       ]
     }
   ]

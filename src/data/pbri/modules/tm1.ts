@@ -1,106 +1,124 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_ASSURANCE_DEMAND } from '../pbriPracticeCases';
 
 const SVG_ASSURANCE_SPECTRUM = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM JASA ASURANS &amp; NON-ASURANS AKUNTAN PUBLIK</text>
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM TINGKAT KEYAKINAN JASA ASURANS &amp; NON-ASURANS</text>
   
-  <!-- Audit: Reasonable -->
-  <rect x="30" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. Audit Laporan Keuangan</text>
-  <text x="125" y="102" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">REASONABLE ASSURANCE</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">(Keyakinan Memadai/Tinggi)</text>
-  <line x1="45" y1="135" x2="205" y2="135" stroke="#334155"/>
-  <text x="125" y="155" fill="#f8fafc" font-size="10" text-anchor="middle">Bentuk Opini Positif:</text>
-  <text x="125" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">"Menyajikan secara wajar</text>
-  <text x="125" y="188" fill="#94a3b8" font-size="9" text-anchor="middle">dalam semua hal material"</text>
+  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="125" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">AUDIT LAPORAN KEUANGAN</text>
+  <text x="125" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Standar: SA / ISA</text>
+  <text x="125" y="118" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">Reasonable Assurance</text>
+  <text x="125" y="136" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Tingkat Keyakinan Tinggi</text>
+  <text x="125" y="154" fill="#fbbf24" font-size="9.5" text-anchor="middle">Opini Positif (Wajar)</text>
+  <text x="125" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">Pengujian Substantif Lengkap</text>
 
-  <!-- Review: Limited -->
-  <rect x="245" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="340" y="80" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">2. Perikatan Reviu (Review)</text>
-  <text x="340" y="102" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">LIMITED ASSURANCE</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">(Keyakinan Terbatas/Moderat)</text>
-  <line x1="260" y1="135" x2="420" y2="135" stroke="#334155"/>
-  <text x="340" y="155" fill="#f8fafc" font-size="10" text-anchor="middle">Bentuk Opini Negatif:</text>
-  <text x="340" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">"Tidak ada hal yang membuat</text>
-  <text x="340" y="188" fill="#94a3b8" font-size="9" text-anchor="middle">kami percaya ada salah saji"</text>
+  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="340" y="78" fill="#818cf8" font-size="11.5" font-weight="700" text-anchor="middle">PERIKATAN REVIU</text>
+  <text x="340" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Standar: SPR / ISRE</text>
+  <text x="340" y="118" fill="#a78bfa" font-size="11" font-weight="700" text-anchor="middle">Limited Assurance</text>
+  <text x="340" y="136" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Tingkat Keyakinan Moderat</text>
+  <text x="340" y="154" fill="#fbbf24" font-size="9.5" text-anchor="middle">Kesimpulan Negatif</text>
+  <text x="340" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">Hanya Inquiry &amp; Analitis</text>
 
-  <!-- Non-Assurance -->
-  <rect x="460" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
-  <text x="555" y="80" fill="#94a3b8" font-size="11.5" font-weight="700" text-anchor="middle">3. Jasa Non-Asurans</text>
-  <text x="555" y="102" fill="#fca5a5" font-size="10.5" font-weight="700" text-anchor="middle">NO ASSURANCE</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">(Tanpa Keyakinan/Opini)</text>
-  <line x1="475" y1="135" x2="635" y2="135" stroke="#334155"/>
-  <text x="555" y="155" fill="#cbd5e1" font-size="10" text-anchor="middle">• Kompilasi Lap Keuangan</text>
-  <text x="555" y="172" fill="#cbd5e1" font-size="10" text-anchor="middle">• Agreed-Upon Procedures (AUP)</text>
-  <text x="555" y="190" fill="#cbd5e1" font-size="10" text-anchor="middle">• Konsultasi Pajak &amp; Sistem</text>
+  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
+  <text x="555" y="78" fill="#f472b6" font-size="11.5" font-weight="700" text-anchor="middle">NON-ASURANS (AUP / KOMPILASI)</text>
+  <text x="555" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Standar: SJTT / ISRS</text>
+  <text x="555" y="118" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">No Assurance</text>
+  <text x="555" y="136" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Tanpa Pemberian Keyakinan</text>
+  <text x="555" y="154" fill="#fbbf24" font-size="9.5" text-anchor="middle">Temuan Faktual Sahaja</text>
+  <text x="555" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">Sesuai Prosedur Tertentu</text>
 </svg>`;
 
 export const TM1_READING: Reading = {
   tm: 1,
-  title: 'Konsep Dasar Audit, Jasa Asurans, & Profesi Akuntan Publik',
-  ref: 'Arens Ch. 1 & 2 | SA 200, ISQM 1',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 1: Memahami esensi pengauditan sebagai pengumpulan dan evaluasi bukti sistematik, landasan teori keagenan (Agency Theory) dan asimetri informasi, spektrum jasa asurans vs non-asurans, struktur profesi KAP, serta Standar Manajemen Mutu (ISQM 1 & 2).',
+  title: 'Permintaan Jasa Asurans, Audit Laporan Keuangan, & Regulasi Profesi',
+  ref: 'Arens 16e Ch. 1 | SA 200 | Kerangka Kerja Asurans IAPI/IAASB',
+  intro: 'TM 1 membahas dasar fundamental profesi pengauditan: teori agensi dan permintaan jasa asurans, perbedaan esensial antara akuntansi vs auditing, spektrum perikatan asurans (Audit, Reviu, dan Non-Asurans AUP/Kompilasi), serta penyebab utama timbulnya risiko informasi bagi pemangku kepentingan.',
   objectives: [
-    'Mendefinisikan pengauditan dan membedakannya secara tegas dari proses akuntansi.',
-    'Menjelaskan permintaan ekonomik atas jasa audit berbasis Teori Keagenan (Agency Theory) dan pengurangan Risiko Informasi.',
-    'Membedakan 3 kategori utama audit: Audit Laporan Keuangan, Audit Kepatuhan, dan Audit Operasional.',
-    'Membandingkan tingkat keyakinan (Assurance Level): Reasonable vs Limited vs No Assurance.',
-    'Memahami kerangka regulasi profesi akuntan publik di Indonesia (UU No. 5/2011, IAPI, IAASB).',
-    'Mengidentifikasi komponen Sistem Manajemen Mutu KAP berdasarkan ISQM 1 dan ISQM 2.'
+    'Membedakan peran, metodologi, dan produk akhir antara Akuntansi vs Pengauditan.',
+    'Menjelaskan 4 penyebab utama timbulnya Risiko Informasi (Information Risk) dalam dunia bisnis modern.',
+    'Mengklasifikasikan spektrum tingkat asurans: Keyakinan Memadai (Audit), Keyakinan Terbatas (Reviu), dan Tanpa Asurans (AUP/Kompilasi).',
+    'Mengidentifikasi 3 pilar profesi akuntan publik di Indonesia: IAPI, P2PK Kemenkeu, dan OJK.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Spektrum Keyakinan Jasa Akuntan Publik (Assurance Spectrum)',
-      svg: SVG_ASSURANCE_SPECTRUM,
-      caption: 'Gambar 1.1: Perbedaan tingkat keyakinan dan bentuk simpulan pada jasa audit, reviu, dan non-asurans.'
+      caption: 'Gambar 1.1: Spektrum Tingkat Keyakinan (Assurance Spectrum) Standar IAPI/IAASB.',
+      svg: SVG_ASSURANCE_SPECTRUM
     },
-
-    { kind: 'h2', text: '1. Hakikat Pengauditan vs Akuntansi' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 1'
+    },
     {
       kind: 'table',
-      headers: ['Dimensi Pembeda', 'Akuntansi (Accounting)', 'Pengauditan (Auditing)'],
+      headers: ['Konsep Inti', 'Definisi & Esensi Teoretis', 'Dasar Standar / Regulasi', 'Jebakan Ujian Terpopuler'],
       rows: [
-        ['Tujuan Utama', 'Mengidentifikasi, mengukur, mencatat, dan mengikhtisarkan transaksi keuangan menjadi laporan keuangan.', 'Mengumpulkan dan mengevaluasi bukti secara independen untuk menentukan apakah laporan keuangan telah sesuai kriteria SAK/IFRS.'],
-        ['Pedoman / Acuan', 'Standar Akuntansi Keuangan (SAK / IFRS).', 'Standar Profesional Akuntan Publik (SPAP / ISA).'],
-        ['Tanggung Jawab', 'Tanggung jawab penuh berada pada **Manajemen Entitas**.', 'Tanggung jawab **Auditor Independen** adalah merumuskan opini atas kewajaran penyajian laporan keuangan.']
+        ['Permintaan Asurans', 'Pemisahan kepemilikan (Prinsipal) dan pengelola (Agen) menciptakan asimetri informasi dan konflik kepentingan.', 'Teori Keagenan (Agency Theory)', 'Mahasiswa sering lupa bahwa audit diminta untuk mereduksi Risiko Informasi, BUKAN Risiko Bisnis.'],
+        ['Akuntansi vs Auditing', 'Akuntansi mengidentifikasi, mengukur, dan mencatat transaksi; Auditing mengumpulkan dan mengevaluasi bukti untuk menilai kesesuaian dengan kriteria (SAK).', 'SA 200 Butir 4', 'Auditor BUKAN pembuat laporan keuangan. Laporan keuangan adalah tanggung jawab penuh Manajemen!'],
+        ['Spektrum Asurans', 'Tingkat keyakinan: Reasonable (Audit/Opini Positif) -> Limited (Reviu/Kesimpulan Negatif) -> None (AUP/Temuan Faktual).', 'Kerangka Asurans IAASB', 'Salah kaprah menganggap Reviu memberikan opini wajar; Reviu hanya menghasilkan kesimpulan negatif.'],
+        ['Penyebab Risiko Informasi', '1. Jarak informasi (Remoteness)\n2. Bias & motif penyedia data\n3. Volume data masif\n4. Transaksi kompleks', 'Arens 16e Ch. 1', 'Cara paling efektif mereduksi risiko informasi bagi investor adalah Audit Independen Tahunan.']
       ],
-      caption: 'Tabel 1.1: Perbandingan esensial antara proses akuntansi dan proses pengauditan.'
-    },
-
-    { kind: 'h2', text: '2. Permintaan Ekonomik atas Jasa Audit' },
-    {
-      kind: 'p',
-      text: 'Dalam korporasi modern, terdapat pemisahan antara pemilik modal (*Principal/Shareholders*) dan pengelola perusahaan (*Agent/Management*). Hal ini menimbulkan **Asimetri Informasi** dan **Konflik Kepentingan (Agency Conflict)**. Audit independen dibutuhkan untuk mereduksi **Risiko Informasi (Information Risk)** — yaitu risiko bahwa laporan keuangan mengandung salah saji material yang menyesatkan keputusan investor dan kreditor.'
+      caption: 'Tabel 1.0: Matriks konsep fundamental TM 1 Pengauditan Berbasis Risiko I.'
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Empat Penyebab Utama Risiko Informasi',
-      text: '1. **Kemungkinan Bias Manajemen (Biases and Motives of Provider)**: Manajemen memiliki insentif pribadi untuk mempercantik kinerja keuangan.\n2. **Kerumitan Transaksi (Voluminous Data)**: Volume transaksi ribuan/jutaan meningkatkan risiko kekeliruan pencatatan.\n3. **Jauhnya Akses Informasi (Remoteness of Information)**: Pemegang saham tidak dapat memeriksa operasional harian secara langsung.\n4. **Kompleksitas Standar Akuntansi (Complex Exchange Transactions)**: Transaksi derivatif, sewa, dan penggabungan usaha membutuhkan pertimbangan estimasi rumit.'
-    },
-
-    { kind: 'h2', text: '3. Sistem Manajemen Mutu KAP (ISQM 1 & ISQM 2)' },
-    {
-      kind: 'p',
-      text: 'Sejak berlakunya *International Standard on Quality Management (ISQM)*, KAP wajib menerapkan pendekatan berbasis risiko untuk mengelola mutu perikatan audit:'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Reduksi Risiko Informasi'
     },
     {
-      kind: 'ul',
-      items: [
-        '**ISQM 1**: Mengatur tanggung jawab tata kelola KAP, kepemimpinan etis, penerimaan klien, pelaksanaan perikatan, dan proses pemantauan internal berkelanjutan.',
-        '**ISQM 2**: Mengatur pengangkatan dan pelaksanaan **Penelaahan Mutu Perikatan (Engagement Quality Review - EQR)** oleh partner independen sebelum laporan audit diterbitkan.'
+      kind: 'formula',
+      text: `\\text{Tingkat Bunga Pinjaman Bank} = \\text{Risk-Free Rate} + \\text{Business Risk Premium} + \\text{Information Risk Premium}
+\\text{Peran Audit Independen} \\rightarrow \\text{Mereduksi } \\text{Information Risk Premium} \\approx 0, \\text{ sehingga Menurunkan Biaya Modal (Cost of Capital)}`,
+      note: 'Audit independen tidak dapat menghapus Risiko Bisnis (kebangkrutan/kondisi ekonomi makro), namun secara langsung menekan Risiko Informasi laporan keuangan.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Evaluasi Perbedaan Akuntansi vs Auditing',
+      prompt: 'Jelaskan perbedaan mendasar antara Akuntansi dan Pengauditan ditinjau dari (1) Tujuan, (2) Tanggung Jawab Akhir, (3) Kriteria Standar yang Digunakan, dan (4) Produk Akhir yang Dihasilkan.',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Tujuan**: Akuntansi menyajikan posisi keuangan dan kinerja ekonomi; Auditing mengevaluasi kewajaran penyajian laporan tersebut terhadap standar baku (SAK).',
+            '**Tanggung Jawab**: Akuntansi adalah tanggung jawab Direksi / Manajemen; Auditing adalah tanggung jawab Kantor Akuntan Publik (Auditor Independen).',
+            '**Kriteria**: Akuntan berpedoman pada SAK/IFRS; Auditor berpedoman pada Standar Audit (SA / ISA).',
+            '**Produk Akhir**: Akuntansi menghasilkan Laporan Keuangan (Posisi Keuangan, Laba Rugi, Perubahan Ekuitas, Arus Kas, CALK); Auditing menghasilkan Laporan Auditor Independen (LAI).'
+          ]
+        }
       ]
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 1' },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 1'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Teori Permintaan Jasa Audit', 'Hubungan prinsipal-agen dan mitigasi risiko asimetri informasi.', 'Mampu menganalisis alasan investor & kreditur mewajibkan audit independen.'],
+        ['2', 'Karakteristik 4 Jasa KAP', 'Perbedaan Audit, Reviu, Kompilasi, dan Agreed-Upon Procedures (AUP).', 'Mampu memilih jenis perikatan yang tepat untuk kebutuhan klien bisnis.'],
+        ['3', 'Regulasi Profesi AP di Indonesia', 'Peran OJK, P2PK Kemenkeu, BPK, dan Institut Akuntan Publik Indonesia (IAPI).', 'Menguasai wewenang dan dasar hukum profesi Akuntan Publik (UU No. 5/2011).']
+      ],
+      caption: 'Tabel 1.2: Peta penguasaan submateri TM 1 PBR I.'
+    },
+    CASE_ASSURANCE_DEMAND,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Audit Laporan Keuangan**: Memberikan *Reasonable Assurance* (bukan jaminan mutlak/absolut karena adanya keterbatasan bawaan audit).',
-        '**Agency Theory**: Auditor bertindak sebagai pihak ketiga independen yang memverifikasi akuntabilitas agen kepada prinsipal.',
-        '**ISQM 1 & 2**: Standar mutu wajib KAP untuk memastikan audit dilakukan sesuai SPAP/ISA.'
+        '**Reasonable Assurance**: Auditor memberikan keyakinan memadai, bukan mutlak (bukan penjamin 100% bebas dari segala fraud kecil).',
+        '**Tanggung Jawab Manajemen**: Penyusunan laporan keuangan dan perancangan pengendalian internal mutlak ada di tangan Manajemen, bukan Auditor.',
+        '**Laporan Reviu**: Menghasilkan Negative Assurance (\"Tidak ada hal yang menyebabkan kami percaya bahwa laporan keuangan tidak wajar...\").',
+        '**Laporan AUP**: Bersifat Factual Findings tanpa kesimpulan opini dan ditujukan khusus bagi pihak yang menandatangani perikatan.'
       ]
     }
   ]

@@ -1,114 +1,114 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_IT_AUDIT_CAATS } from '../pbriPracticeCases';
 
-const SVG_AUDIT_TEST_TYPES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">LIMA JENIS PENGUJIAN AUDIT (TYPES OF AUDIT TESTS - SA 330)</text>
+const SVG_IT_AUDIT_CONTROLS = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR AUDIT TI: GENERAL CONTROLS (ITGC) VS APPLICATION CONTROLS (ITAC)</text>
   
-  <rect x="25" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="82" y="78" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">1. Risk Assess.</text>
-  <text x="82" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Prosedur</text>
-  <text x="82" y="108" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Penilaian Risiko</text>
-  <line x1="35" y1="120" x2="130" y2="120" stroke="#334155"/>
-  <text x="82" y="138" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Pahami bisnis</text>
-  <text x="82" y="154" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Pahami IC</text>
-  <text x="82" y="170" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Brainstorming</text>
-  <text x="82" y="188" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">(Perencanaan)</text>
+  <rect x="30" y="55" width="295" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">IT GENERAL CONTROLS (ITGC)</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Pengendalian Umum Seluruh Sistem:</text>
+  <text x="177" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Access Security (Password, 2FA, Firewall)</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Program Change Management (Testing kode)</text>
+  <text x="177" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Computer Operations &amp; Backup Disasters</text>
+  <text x="177" y="180" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Fondasi Keamanan Sistem TI</text>
 
-  <rect x="155" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">2. TOC</text>
-  <text x="212" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Test of</text>
-  <text x="212" y="108" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Controls</text>
-  <line x1="165" y1="120" x2="260" y2="120" stroke="#334155"/>
-  <text x="212" y="138" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Uji efektivitas</text>
-  <text x="212" y="154" fill="#94a3b8" font-size="8.5" text-anchor="middle">  operasi kontrol</text>
-  <text x="212" y="170" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Reperformance</text>
-  <text x="212" y="188" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">(Kurangi Substantif)</text>
-
-  <rect x="285" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="342" y="78" fill="#f59e0b" font-size="9.5" font-weight="700" text-anchor="middle">3. STOT</text>
-  <text x="342" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Substantive Test</text>
-  <text x="342" y="108" fill="#cbd5e1" font-size="8.5" text-anchor="middle">of Transactions</text>
-  <line x1="295" y1="120" x2="390" y2="120" stroke="#334155"/>
-  <text x="342" y="138" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Uji salah saji</text>
-  <text x="342" y="154" fill="#94a3b8" font-size="8.5" text-anchor="middle">  rupiah transaksi</text>
-  <text x="342" y="170" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Vouching faktur</text>
-  <text x="342" y="188" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">(Moneter Transaksi)</text>
-
-  <rect x="415" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="472" y="78" fill="#a855f7" font-size="9.5" font-weight="700" text-anchor="middle">4. SAP</text>
-  <text x="472" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Substantive</text>
-  <text x="472" y="108" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Analytical Proc.</text>
-  <line x1="425" y1="120" x2="520" y2="120" stroke="#334155"/>
-  <text x="472" y="138" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Perbandingan</text>
-  <text x="472" y="154" fill="#94a3b8" font-size="8.5" text-anchor="middle">  angka &amp; rasio</text>
-  <text x="472" y="170" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Prediksi bunga</text>
-  <text x="472" y="188" fill="#c084fc" font-size="8.5" font-weight="700" text-anchor="middle">(Efisien &amp; Murah)</text>
-
-  <rect x="545" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="602" y="78" fill="#f43f5e" font-size="9.5" font-weight="700" text-anchor="middle">5. TOD</text>
-  <text x="602" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Test of Details</text>
-  <text x="602" y="108" fill="#cbd5e1" font-size="8.5" text-anchor="middle">of Balances</text>
-  <line x1="555" y1="120" x2="650" y2="120" stroke="#334155"/>
-  <text x="602" y="138" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Konfirmasi piutang</text>
-  <text x="602" y="154" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Stok opname fisik</text>
-  <text x="602" y="170" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Uji pisah batas</text>
-  <text x="602" y="188" fill="#fca5a5" font-size="8.5" font-weight="700" text-anchor="middle">(Mahal tapi Kuat)</text>
+  <rect x="355" y="55" width="295" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="502" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">IT APPLICATION CONTROLS (ITAC)</text>
+  <text x="502" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Pengendalian pada Modul Transaksi Spesifik:</text>
+  <text x="502" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Input Controls (Field check, Limit check)</text>
+  <text x="502" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Processing Controls (Matching PO-GR-Inv)</text>
+  <text x="502" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Output Controls (Validasi laporan cetak)</text>
+  <text x="502" y="180" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">Integritas Transaksi Akuntansi</text>
 </svg>`;
 
 export const TM13_READING: Reading = {
   tm: 13,
-  title: 'Pengujian Pengendalian (TOC) & Pengujian Substantif (STOT/TOD)',
-  ref: 'Arens Ch. 13 | SA 330, SA 265',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 13: Menguasai bauran bukti (Evidence Mix) dari 5 jenis pengujian audit, perancangan Pengujian Pengendalian (Test of Controls), Pengujian Substantif atas Transaksi (STOT), Pengujian Rincian Saldo (Test of Details of Balances - TOD), serta komunikasi defisiensi signifikan pengendalian internal (SA 265).',
+  title: 'Audit Lingkungan Sistem Informasi, ITGC vs ITAC, & TABK / CAATs',
+  ref: 'Arens 16e Ch. 12 | SA 315 Lampiran TI | TABK (CAATs) Methodology',
+  intro: 'TM 13 membahas pengauditan dalam lingkungan berbasis teknologi informasi: evaluasi Pengendalian Umum TI (IT General Controls / ITGC), Pengendalian Aplikasi TI (IT Application Controls / ITAC), serta penggunaan Teknik Audit Berbantuan Komputer (TABK / Computer-Assisted Audit Techniques - CAATs) seperti Test Data, Parallel Simulation, dan Embedded Audit Module.',
   objectives: [
-    'Membedakan 5 jenis pengujian audit: Prosedur Penilaian Risiko, TOC, STOT, SAP, dan TOD.',
-    'Menjelaskan konsep Bauran Bukti (Evidence Mix) dan pengorbanan biaya (Cost-Benefit Tradeoff) antarpengujian.',
-    'Merancang Pengujian Pengendalian (Test of Controls) untuk menguji efektivitas otorisasi dan pemisahan tugas.',
-    'Memahami bagaimana hasil TOC mempengaruhi luas pengujian substantif (TOD).',
-    'Mengklasifikasikan defisiensi pengendalian internal: Defisiensi Kontrol vs Defisiensi Signifikan vs Kelemahan Material (Material Weakness) sesuai SA 265.'
+    'Membedakan peran fondasional IT General Controls (ITGC) terhadap keandalan IT Application Controls (ITAC).',
+    'Mengidentifikasi 3 kategori IT Application Controls: Input Controls, Processing Controls, dan Output Controls.',
+    'Menerapkan 3 teknik utama TABK/CAATs (Test Data Approach, Parallel Simulation, Embedded Audit Module).',
+    'Mengevaluasi dampak defisiensi ITGC terhadap strategi pengujian audit substantif.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Peta 5 Jenis Pengujian Audit dalam Merespons Risiko Teridentifikasi',
-      svg: SVG_AUDIT_TEST_TYPES,
-      caption: 'Gambar 13.1: Hierarki dan kombinasi bauran pengujian menurut Standar Audit 330.'
+      caption: 'Gambar 13.1: Hubungan ITGC dan ITAC dalam Arsitektur Pengendalian TI.',
+      svg: SVG_IT_AUDIT_CONTROLS
     },
-
-    { kind: 'h2', text: '1. Lima Jenis Pengujian Audit (SA 330)' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 13'
+    },
     {
       kind: 'table',
-      headers: ['Jenis Pengujian', 'Tujuan Utama Pengujian', 'Tingkat Biaya Relatif'],
+      headers: ['Komponen Audit TI', 'Ruang Lingkup & Contoh Kontrol', 'Metode Pengujian Auditor', 'Dampak Jika Kontrol Gagal'],
       rows: [
-        ['1. Prosedur Penilaian Risiko (Risk Assessment)', 'Memperoleh pemahaman atas entitas, lingkungan bisnis, dan kontrol internal untuk menilai RMM.', 'Rendah'],
-        ['2. Pengujian Pengendalian (Test of Controls - TOC)', 'Menguji efektivitas operasi pengendalian internal dalam mencegah/mendeteksi salah saji.', 'Sedang'],
-        ['3. Pengujian Substantif Transaksi (STOT)', 'Menentukan apakah transaksi individual telah dicatat secara akurat dan lengkap dalam jurnal moneter.', 'Sedang'],
-        ['4. Prosedur Analitis Substantif (SAP)', 'Menilai kewajaran saldo akun melalui perbandingan rasio dan ekspektasi pemodelan.', 'Sangat Rendah'],
-        ['5. Pengujian Rincian Saldo (Test of Details - TOD)', 'Menguji langsung saldo akhir buku besar neraca (misal konfirmasi bank/piutang dan stok opname fisik).', 'Tinggi (Paling Mahal)']
+        ['IT General Controls (ITGC)', 'Keamanan akses database, pengelolaan perubahan program aplikasi, backup data dan disaster recovery.', 'Inspeksi log otorisasi perubahan kode dan uji ketahanan hak akses pengguna.', 'Jika ITGC gagal -> Seluruh aplikasi otomatis TIDAK DAPAT DIANDALKAN!'],
+        ['IT Application Controls (ITAC)', 'Kontrol validasi pada perangkat lunak akuntansi: Limit Check, Check Digit, Sequence Check, Automated Matching.', 'Test Data (menginput angka minus atau huruf pada kolom rupiah) dan observasi sistem.', 'Risiko transaksi ganda, salah input angka, atau pemrosesan pesanan tanpa plafon kredit.'],
+        ['Teknik Test Data (TABK)', 'Auditor memasukkan data uji (dummy) ke sistem klien untuk menguji apakah program menolak data salah.', 'Menginput data transaksi valid dan tidak valid secara terencana.', 'Menguji secara langsung apakah logika program sistem beroperasi benar.'],
+        ['Parallel Simulation (TABK)', 'Auditor menggunakan software independen (ACL/IDEA/Python) untuk memproses ulang data transaksi riil klien.', 'Mencocokkan hasil perhitungan program auditor vs laporan pembukuan klien.', 'Mendeteksi 100% anomali perhitungan amortisasi atau penyusutan aset secara masif.']
       ],
-      caption: 'Tabel 13.1: Karakteristik dan perbandingan biaya 5 jenis pengujian audit.'
+      caption: 'Tabel 13.0: Matriks pengendalian TI dan teknik audit berbantuan komputer.'
     },
-
-    { kind: 'h2', text: '2. Komunikasi Defisiensi Pengendalian Internal (SA 265)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Ketergantungan ITAC pada ITGC'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Prinsip Dasar Ketergantungan TI}:
+\\text{ITGC Efektif (Keamanan & Perubahan Program Terjaga)} \\Longrightarrow \\text{ITAC dapat Diuji & Diandalkan Sepanjang Tahun}
+\\text{ITGC Lemah (Akses Bebas / Tanpa Otorisasi Perubahan)} \\Longrightarrow \\mathbf{\\text{ITAC TIDAK BISA DIANDALKAN (Wajib Uji Substantif 100\\% Manual!)}}`,
+      note: 'Jika programmer dapat langsung mengubah kode di server produksi tanpa persetujuan (ITGC lemah), program otomatis yang tampak sempurna sekalipun tidak boleh diandalkan.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Pemilihan Teknik TABK yang Tepat',
+      prompt: 'Klien bank memiliki 10.000.000 transaksi bunga tabungan nasabah per tahun. Auditor ingin memverifikasi apakah perhitungan beban bunga tabungan pada seluruh rekening nasabah telah akurat. Teknik TABK mana yang paling tepat digunakan?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Teknik yang Tepat**: Parallel Simulation (Simulasi Paralel).',
+            '**Alasan**: Auditor dapat mengekstrak seluruh data saldo harian nasabah, lalu menjalankan formula perhitungan bunga menggunakan software audit independen (seperti ACL atau script Python) dan membandingkan total beban bunga hasil simulasi dengan angka pembukuan bank. Hal ini memungkinkan verifikasi 100% populasi tanpa mengganggu operasional sistem perbankan.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 13'
+    },
     {
       kind: 'table',
-      headers: ['Tingkat Keparahan Defisiensi', 'Definisi Menurut SA 265', 'Kewajiban Pelaporan Auditor'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['1. Defisiensi Kontrol (Control Deficiency)', 'Kontrol tidak dirancang atau tidak dioperasikan dengan baik untuk mencegah salah saji.', 'Cukup disampaikan dalam *Management Letter* ke manajemen operasional.'],
-        ['2. Defisiensi Signifikan (Significant Deficiency)', 'Defisiensi yang cukup penting untuk mendapatkan perhatian pihak yang bertanggung jawab atas tata kelola (TCWG).', '**WAJIB TERTULIS** disampaikan kepada **Komite Audit / Dewan Komisaris (TCWG)**.'],
-        ['3. Kelemahan Material (Material Weakness)', 'Defisiensi yang mengakibatkan kemungkinan wajar bahwa salah saji material laporan keuangan tidak akan dicegah atau terdeteksi tepat waktu.', '**WAJIB TERTULIS** kepada TCWG dan Manajemen Puncak; meningkatkan risiko kontrol ke tingkat maksimum (CR = 100%).']
+        ['1', 'ITGC vs ITAC', 'Hierarki dan perbedaan ruang lingkup pengendalian umum vs aplikasi.', 'Mampu mengidentifikasi kelemahan kontrol pada sistem informasi akuntansi.'],
+        ['2', '3 Kategori ITAC', 'Penerapan Input Controls, Processing Controls, dan Output Controls.', 'Mampu merancang validasi otomatis sistem untuk mencegah kesalahan input.'],
+        ['3', '3 Teknik Utama TABK / CAATs', 'Metodologi Test Data, Parallel Simulation, dan Embedded Audit Module.', 'Mampu memilih teknik audit berbantuan komputer yang paling efisien.']
       ],
-      caption: 'Tabel 13.2: Klasifikasi defisiensi pengendalian internal menurut SA 265.'
+      caption: 'Tabel 13.2: Peta penguasaan submateri TM 13 PBR I.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 13' },
+    CASE_IT_AUDIT_CAATS,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**TOC Efektif**: Memungkinkan auditor menurunkan Control Risk $\\rightarrow$ Mengurangi sampel Test of Details of Balances (menghemat biaya audit).',
-        '**TOC Gagal / Kontrol Lemah**: Auditor menetapkan CR = 100% $\\rightarrow$ Tidak melakukan TOC lebih lanjut $\\rightarrow$ Melakukan pengujian substantif (TOD) ekstensif.',
-        '**Management Letter**: Surat resmi auditor kepada manajemen yang berisi rekomendasi perbaikan atas kelemahan pengendalian internal yang ditemukan.'
+        '**Auditing Around vs Through the Computer**: Auditing Through the Computer (menguji logika program & kontrol TI) wajib diterapkan pada sistem terintegrasi modern, bukan hanya memeriksa dokumen fisik luar (around).',
+        '**Audit Data Analytics (ADA)**: Pemanfaatan CAATs memungkinkan auditor menguji 100% populasi transaksi (Full Population Testing), mengurangi ketergantungan pada sampling tradisional.',
+        '**Pembersihan Test Data**: Pada teknik Test Data, auditor wajib memastikan seluruh data transaksi uji coba dummy dihapus tuntas dari database klien setelah pengujian selesai.'
       ]
     }
   ]

@@ -1,86 +1,54 @@
-﻿import type { Reading } from '../../../types';
-
-const SVG_CAATS_TECHNIQUES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TEKNIK AUDIT BERBANTUAN KOMPUTER (CAATS / TABK)</text>
-  
-  <!-- Test Data Approach -->
-  <rect x="30" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="80" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. Test Data Approach</text>
-  <text x="125" y="102" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Auditor membuat data uji</text>
-  <text x="125" y="118" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(valid &amp; tidak valid)</text>
-  <line x1="45" y1="130" x2="205" y2="130" stroke="#334155"/>
-  <text x="125" y="148" fill="#94a3b8" font-size="9" text-anchor="middle">Diproses melalui program</text>
-  <text x="125" y="164" fill="#94a3b8" font-size="9" text-anchor="middle">komputer milik klien</text>
-  <text x="125" y="185" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Menguji Logic Kontrol</text>
-
-  <!-- Parallel Simulation -->
-  <rect x="245" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="340" y="80" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. Parallel Simulation</text>
-  <text x="340" y="102" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Auditor menulis program</text>
-  <text x="340" y="118" fill="#cbd5e1" font-size="9.5" text-anchor="middle">simulasi independen (GAS)</text>
-  <line x1="260" y1="130" x2="420" y2="130" stroke="#334155"/>
-  <text x="340" y="148" fill="#94a3b8" font-size="9" text-anchor="middle">Memproses data riil klien</text>
-  <text x="340" y="164" fill="#94a3b8" font-size="9" text-anchor="middle">&amp; bandingkan output</text>
-  <text x="340" y="185" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">Menguji 100% Populasi</text>
-
-  <!-- Embedded Audit Module -->
-  <rect x="460" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="555" y="80" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. Embedded Audit Module</text>
-  <text x="555" y="102" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Kode audit disisipkan</text>
-  <text x="555" y="118" fill="#cbd5e1" font-size="9.5" text-anchor="middle">ke dalam sistem live klien</text>
-  <line x1="475" y1="130" x2="635" y2="130" stroke="#334155"/>
-  <text x="555" y="148" fill="#94a3b8" font-size="9" text-anchor="middle">Menangkap transaksi</text>
-  <text x="555" y="164" fill="#94a3b8" font-size="9" text-anchor="middle">anomali secara real-time</text>
-  <text x="555" y="185" fill="#c084fc" font-size="9.5" font-weight="700" text-anchor="middle">Continuous Auditing</text>
-</svg>`;
+import type { Reading } from '../../../types';
+import { CASE_AUDIT_STRATEGY_PROGRAM } from '../pbriPracticeCases';
 
 export const TM14_READING: Reading = {
   tm: 14,
-  title: 'Teknik Audit Berbantuan Komputer (CAATs) & Perancangan Program Audit',
-  ref: 'Arens Ch. 13 | IAASB Technology Support Guide',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 14: Menguasai Teknik Audit Berbantuan Komputer (CAATs / TABK: Test Data Approach, Parallel Simulation, Embedded Audit Module, Generalized Audit Software), Audit Data Analytics (ADA), serta integrasi perancangan Program Audit Berbasis Risiko siklus transaksi.',
+  title: 'Penyusunan Program Audit Komprehensif Berbasis Risiko & Rencana Pengujian Akhir (SA 330)',
+  ref: 'Arens 16e Ch. 13 & 14 | SA 330 (Respons Auditor atas Risiko yang Dinilai) | Audit Program Design',
+  intro: 'TM 14 membahas integrasi akhir seluruh tahapan pengauditan berbasis risiko: perancangan Program Audit Komprehensif (Audit Program Design) untuk siklus penjualan & penerimaan kas, siklus pembelian & pengeluaran kas, serta penentuan ukuran sampel, saat pelaksanaan, dan alokasi staf perikatan.',
   objectives: [
-    'Memahami urgensi CAATs dalam mengaudit lingkungan sistem informasi modern (ERP).',
-    'Membandingkan 3 pendekatan utama CAATs: Pendekatan Data Uji (Test Data Approach), Simulasi Paralel (Parallel Simulation), dan Modul Audit Tersisip (Embedded Audit Module).',
-    'Menerapkan Perangkat Lunak Audit Tergeneralisasi (Generalized Audit Software - GAS seperti ACL/IDEA) untuk pengujian 100% populasi.',
-    'Menjelaskan konsep Audit Data Analytics (ADA) dalam mendeteksi anomali data transaksi.',
-    'Merancang Program Audit Berbasis Risiko terintegrasi untuk siklus pendapatan atau siklus pengeluaran.'
+    'Merancang program audit 4 tahap berbasis risiko sesuai standar SA 330.',
+    'Menyusun prosedur pengujian substantif rinci untuk siklus pendapatan dan siklus pengeluaran.',
+    'Mengintegrasikan hasil penilaian risiko bawaan dan risiko pengendalian ke dalam format program audit siap eksekusi.',
+    'Mencapai kesiapan paripurna menghadapi Ujian Akhir Semester (UAS) PBR I.'
   ],
   blocks: [
     {
-      kind: 'figure',
-      title: 'Tiga Teknik Utama Audit Berbantuan Komputer (CAATs)',
-      svg: SVG_CAATS_TECHNIQUES,
-      caption: 'Gambar 14.1: Perbandingan mekanisme kerja Test Data, Parallel Simulation, dan Embedded Audit Module.'
+      kind: 'h2',
+      text: 'Struktur Program Audit 4 Tahap Berbasis Risiko (SA 330)'
     },
-
-    { kind: 'h2', text: '1. Tiga Pendekatan Teknik Audit Berbantuan Komputer (CAATs)' },
     {
       kind: 'table',
-      headers: ['Pendekatan CAATs', 'Mekanisme Pelaksanaan', 'Kelebihan & Keterbatasan Utama'],
+      headers: ['Tahap Pengujian Program Audit', 'Tujuan Prosedur Audit', 'Contoh Prosedur Siklus Penjualan', 'Contoh Prosedur Siklus Pembelian'],
       rows: [
-        ['1. Pendekatan Data Uji (Test Data Approach)', 'Auditor memasukkan data uji coba (transaksi valid dan tidak valid) ke dalam program komputer klien untuk melihat apakah sistem menolak data yang salah.', '• Kelebihan: Menguji langsung logika kontrol aplikasi klien.\n• Keterbatasan: Hanya menguji program pada titik waktu tertentu; risiko data uji mengotori database riil klien.'],
-        ['2. Simulasi Paralel (Parallel Simulation)', 'Auditor menulis program simulasi independen (menggunakan ACL/IDEA) untuk memproses ulang data riil klien dan mencocokkan outputnya dengan hasil sistem klien.', '• Kelebihan: Mampu memverifikasi 100% populasi data tanpa mengganggu sistem operasional klien.\n• Keterbatasan: Membutuhkan keahlian pemrograman tinggi.'],
-        ['3. Modul Audit Tersisip (Embedded Audit Module - EAM)', 'Auditor menyisipkan kode rutin audit khusus ke dalam program aplikasi live klien untuk mencatat transaksi yang melampaui batas tertentu ke dalam file log audit terpisah.', '• Kelebihan: Memungkinkan audit berkelanjutan (*Continuous Auditing*) secara real-time.\n• Keterbatasan: Memerlukan kerja sama intensif dengan pengembang sistem sejak perancangan awal.']
+        ['Tahap 1: Test of Controls (TOC)', 'Menguji efektivitas operasi pengendalian internal.', 'Periksa paraf otorisasi persetujuan kredit pada pesanan penjualan (Sales Order).', 'Periksa paraf otorisasi pesanan pembelian (PO) dan matching 3-way dokumen.'],
+        ['Tahap 2: Substantive Test of Transactions (STOT)', 'Menguji kebenaran moneter pencatatan transaksi.', 'Vouching jurnal penjualan ke faktur & surat jalan untuk uji Keterjadian (Occurrence).', 'Tracing bukti penerimaan barang ke jurnal pembelian untuk uji Kelengkapan.'],
+        ['Tahap 3: Substantive Analytical Procedures (SAP)', 'Menguji kewajaran saldo akun secara agregat.', 'Bandingkan persentase Gross Margin bulanan dan rasio perputaran piutang (DSO).', 'Bandingkan saldo utang usaha per pemasok tahun berjalan vs tahun lalu.'],
+        ['Tahap 4: Test of Details of Balances (TOD)', 'Menguji salah saji moneter saldo akhir neraca.', 'Kirim surat konfirmasi positif piutang dan uji pisah batas penjualan 5 hari cut-off.', 'Uji pencarian liabilitas yang belum dicatat (Search for Unrecorded Liabilities).']
       ],
-      caption: 'Tabel 14.1: Matriks perbandingan teknik CAATs.'
+      caption: 'Tabel 14.1: Matriks perancangan program audit komprehensif siklus bisnis.'
     },
-
-    { kind: 'h2', text: '2. Audit Data Analytics (ADA) dalam Audit Modern' },
     {
-      kind: 'p',
-      text: 'Audit Data Analytics (ADA) adalah ilmu dan seni menemukan serta menganalisis pola, mengidentifikasi anomali, dan mengekstrak informasi berguna lainnya dalam data yang mendasari atau terkait dengan subjek audit melalui pemodelan visual dan analisis statistik populasi penuh (100% Testing).'
+      kind: 'h2',
+      text: 'Checklist 8 Kunci Sukses Ujian Akhir Semester (UAS) PBR I'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 14 (Pra-UAS)' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Rangkuman Intisari UAS Pengauditan Berbasis Risiko I',
+      text: '1. Audit Risk Model: PDR = AAR / (IR × CR). Jika IR/CR naik, PDR turun, bukti substantif WAJIB DITAMBAH.\n2. Fraud SA 240: Wajib berasumsi ada risiko kecurangan pada pendapatan; wajib laksanakan Journal Entry Testing (JET).\n3. COSO 2013: 5 Komponen (Control Env, Risk Assess, Control Act, Info & Comm, Monitoring) dan Segregasi CARP.\n4. Defisiensi SA 265: Material Weakness wajib dilaporkan tertulis ke Komite Audit / Dewan Komisaris.\n5. Bauran 5 Uji Audit: TOC menguji kontrol; STOT menguji transaksi moneter; SAP menguji hubungan logis data; TOD menguji saldo neraca.\n6. Hubungan TOC & TOD: Jika TOC efektif, sampel TOD dapat diperkecil signifikan.\n7. Audit TI: ITGC adalah fondasi keandalan ITAC; jika ITGC jebol, ITAC tidak dapat diandalkan.\n8. TABK/CAATs: Parallel Simulation memungkinkan pengujian 100% populasi data transaksi masif.'
+    },
+    CASE_AUDIT_STRATEGY_PROGRAM,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Auditing Through the Computer**: Menguji kontrol logika pemrosesan internal komputer (bukan hanya memeriksa input dan output manual).',
-        '**Parallel Simulation**: Teknik paling populer untuk menguji akurasi matematis dan kelengkapan perhitungan kompleks (misal perhitungan bunga dan amortisasi).',
-        '**Program Audit Terintegrasi**: Menggabungkan penilaian risiko, pengujian pengendalian (TOC), dan pengujian substantif (TOD) ke dalam langkah kerja audit yang terstruktur.'
+        '**Program Audit adalah Peta Kerja Tim**: Seluruh anggota tim audit lapangan bekerja berdasarkan instruksi spesifik di dalam Program Audit yang telah disetujui Partner.',
+        '**Fleksibilitas Program Audit**: Program audit dapat dimodifikasi di tengah penugasan jika ditemukan salah saji tak terduga atau kelemahan kontrol internal baru.',
+        '**Search for Unrecorded Liabilities**: Prosedur TOD paling kritis pada siklus pembelian untuk mendeteksi utang yang sengaja disembunyikan per 31 Desember.'
       ]
     }
   ]

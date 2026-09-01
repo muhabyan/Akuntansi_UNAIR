@@ -1,101 +1,127 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_ANALYTICAL_PROCEDURES } from '../pbriPracticeCases';
 
-const SVG_ANALYTICAL_PHASES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TIGA TAHAP PENERAPAN PROSEDUR ANALITIS (SA 520)</text>
+const SVG_ANALYTICAL_FLOW = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">4 TAHAP PROSEDUR ANALITIS SUBSTANTIF (SA 520)</text>
   
-  <!-- Phase 1 -->
-  <rect x="30" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. Tahap Perencanaan</text>
-  <text x="125" y="102" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">WAJIB (MANDATORY)</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">• Memahami bisnis klien</text>
-  <text x="125" y="142" fill="#cbd5e1" font-size="10" text-anchor="middle">• Mengidentifikasi area</text>
-  <text x="125" y="158" fill="#cbd5e1" font-size="10" text-anchor="middle">  berisiko tinggi (anomali)</text>
-  <text x="125" y="180" fill="#94a3b8" font-size="9.5" text-anchor="middle">• Menentukan sifat, waktu,</text>
-  <text x="125" y="195" fill="#94a3b8" font-size="9.5" text-anchor="middle">  dan luas pengujian audit</text>
+  <rect x="30" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. FORMULASI</text>
+  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Bentuk Ekspektasi:</text>
+  <text x="97" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Berdasarkan tren,</text>
+  <text x="97" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">anggaran, industri,</text>
+  <text x="97" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">atau data non-keu.</text>
 
-  <!-- Phase 2 -->
-  <rect x="245" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="340" y="80" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">2. Tahap Pengujian</text>
-  <text x="340" y="102" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">OPSIONAL (SUBSTANTIF)</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">• Memperoleh bukti</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="10" text-anchor="middle">  substantif atas saldo</text>
-  <text x="340" y="158" fill="#cbd5e1" font-size="10" text-anchor="middle">• Efisiensi biaya audit</text>
-  <text x="340" y="180" fill="#94a3b8" font-size="9.5" text-anchor="middle">• Misal: Beban bunga</text>
-  <text x="340" y="195" fill="#94a3b8" font-size="9.5" text-anchor="middle">  = Utang × Tarif Bunga</text>
+  <rect x="185" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="252" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">2. THRESHOLD</text>
+  <text x="252" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Batas Toleransi:</text>
+  <text x="252" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tentukan batas</text>
+  <text x="252" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">selisih yg dapat</text>
+  <text x="252" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">diterima tanpa audit.</text>
 
-  <!-- Phase 3 -->
-  <rect x="460" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="555" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">3. Tahap Penyelesaian</text>
-  <text x="555" y="102" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">WAJIB (MANDATORY)</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="10" text-anchor="middle">• Reviu menyeluruh (Final)</text>
-  <text x="555" y="142" fill="#cbd5e1" font-size="10" text-anchor="middle">• Memastikan simpulan</text>
-  <text x="555" y="158" fill="#cbd5e1" font-size="10" text-anchor="middle">  masuk akal &amp; konsisten</text>
-  <text x="555" y="180" fill="#94a3b8" font-size="9.5" text-anchor="middle">• Mendeteksi adanya risiko</text>
-  <text x="555" y="195" fill="#94a3b8" font-size="9.5" text-anchor="middle">  going concern tersisa</text>
+  <rect x="340" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="412" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">3. BANDINGKAN</text>
+  <text x="412" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Hitung Selisih:</text>
+  <text x="412" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Selisih = Saldo</text>
+  <text x="412" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tercatat Klien</text>
+  <text x="412" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">vs Ekspektasi Auditor.</text>
+
+  <rect x="505" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="577" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">4. INVESTIGASI</text>
+  <text x="577" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Tindak Lanjut:</text>
+  <text x="577" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Wawancara Direksi &amp;</text>
+  <text x="577" y="134" fill="#fca5a5" font-size="8.5" text-anchor="middle">verifikasi bukti</text>
+  <text x="577" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">koraboratif mandatori.</text>
 </svg>`;
 
 export const TM7_READING: Reading = {
   tm: 7,
-  title: 'Prosedur Analitis & Analisis Rasio Keuangan dalam Audit',
-  ref: 'Arens Ch. 7, 8 | SA 520',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 7: Menguasai teknik prosedur analitis (SA 520) dalam 3 tahapan audit (Perencanaan, Pengujian Substantif, dan Reviu Akhir), analisis data keuangan komparatif, analisis tren dan rasio keuangan, penentuan ambang batas selisih yang dapat diterima (*Threshold of Acceptable Difference*), serta investigasi fluktuasi anomali.',
+  title: 'Prosedur Analitis, Analisis Rasio Keuangan, & Uji Kelayakan Total (SA 520)',
+  ref: 'Arens 16e Ch. 8 | SA 520, SA 315 | Rasio Likuiditas, Profitabilitas, Solvabilitas',
+  intro: 'TM 7 membahas penerapan Prosedur Analitis (Analytical Procedures) dalam 3 tahapan audit: tahap perencanaan (wajib/mandatori), tahap pengujian substantif (opsional/SAP), dan tahap penyelesaian akhir (wajib/mandatori). Termasuk teknik analisis tren, analisis rasio komparatif, dan pengujian kelayakan total (Proof in Total).',
   objectives: [
-    'Mendefinisikan prosedur analitis menurut SA 520.',
-    'Menjelaskan fungsi dan sifat kewajiban Prosedur Analitis pada tahap Perencanaan (Wajib), Pengujian Substantif (Opsional), dan Penyelesaian Akhir (Wajib).',
-    'Menguasai 5 jenis pembanding data dalam prosedur analitis (Data Industri, Data Historis Klien, Ekspektasi Klien/Anggaran, Ekspektasi Auditor, dan Data Non-Keuangan).',
-    'Menghitung dan menginterpretasikan rasio keuangan utama: Likuiditas, Aktivitas, Profitabilitas, dan Solvabilitas untuk tujuan audit.',
-    'Merancang prosedur investigasi atas fluktuasi yang tidak lazim atau selisih material.'
+    'Membedakan tujuan dan sifat mandatori Prosedur Analitis pada 3 tahap audit: Perencanaan, Pengujian Substantif, dan Reviu Akhir.',
+    'Menyusun ekspektasi auditor independen menggunakan data historis, anggaran, rata-rata industri, dan data non-keuangan.',
+    'Menerapkan teknik Proof in Total (Uji Kelayakan Total) untuk akun pendapatan kamar hotel, beban bunga, dan beban gaji.',
+    'Melakukan investigasi atas fluktuasi anomali dan selisih yang melampaui batas toleransi (Acceptable Difference).'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Tiga Tahapan Penerapan Prosedur Analitis dalam Audit',
-      svg: SVG_ANALYTICAL_PHASES,
-      caption: 'Gambar 7.1: Status kewajiban dan tujuan prosedur analitis pada setiap tahapan perikatan audit.'
+      caption: 'Gambar 7.1: 4 Tahap Pelaksanaan Prosedur Analitis Substantif (SA 520).',
+      svg: SVG_ANALYTICAL_FLOW
     },
-
-    { kind: 'h2', text: '1. Definisi & Hakikat Prosedur Analitis (SA 520)' },
     {
-      kind: 'p',
-      text: '**Prosedur Analitis** adalah evaluasi atas informasi keuangan yang dilakukan dengan menganalisis hubungan yang masuk akal antara data keuangan dan non-keuangan. Prosedur ini juga mencakup investigasi atas fluktuasi atau hubungan yang teridentifikasi yang tidak konsisten dengan informasi relevan lainnya atau yang berbeda dari nilai yang diharapkan dalam jumlah yang signifikan.'
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 7'
     },
-
-    { kind: 'h2', text: '2. Lima Jenis Pembanding dalam Prosedur Analitis' },
     {
       kind: 'table',
-      headers: ['Jenis Pembanding', 'Metode Analisis', 'Contoh Kasus Audit'],
+      headers: ['Tahap Pelaksanaan Audit', 'Status Kewajiban Standar', 'Tujuan Pokok Pelaksanaan', 'Contoh Prosedur Lapangan'],
       rows: [
-        ['1. Data Industri (Industry Data)', 'Membandingkan rasio klien dengan rata-rata rasio industri acuan.', 'Rasio Marjin Kotor klien 35% sementara rata-rata industri sejenis hanya 15% $\\rightarrow$ Indikasi persediaan dinilai terlalu tinggi atau penjualan fiktif.'],
-        ['2. Data Historis Klien (Prior-Period Data)', 'Analisis tren horizontal antar tahun (tahun berjalan vs tahun lalu).', 'Beban komisi penjualan naik 50% sementara total pendapatan penjualan turun 10%.'],
-        ['3. Ekspektasi Anggaran Klien (Budgets)', 'Membandingkan realisasi aktual dengan anggaran yang disetujui.', 'Realisasi biaya pemeliharaan mesin jauh di bawah anggaran.'],
-        ['4. Ekspektasi Auditor Sendiri', 'Auditor memproyeksikan saldo berdasarkan model independen.', 'Beban bunga diproyeksikan = Saldo Rata-rata Utang Obligasi × Suku Bunga Kontrak.'],
-        ['5. Data Non-Keuangan (Non-Financial Data)', 'Menghubungkan data operasional dengan angka keuangan.', 'Pendapatan kamar hotel dihitung = Jumlah Kamar × Tarif Kamar Rata-rata × Tingkat Hunian (Occupancy Rate).']
+        ['Tahap Perencanaan (Planning)', 'WAJIB (Mandatory SA 315)', 'Memahami bisnis klien dan mengidentifikasi area berisiko tinggi salah saji.', 'Analisis perbandingan saldo neraca tahun lalu vs tahun berjalan.'],
+        ['Tahap Pengujian (Substantive / SAP)', 'OPSIONAL (Substantive Test)', 'Mengumpulkan bukti substantif efisien untuk mendukung asersi saldo akun.', 'Proof in Total beban penyusutan = Tarif % × Rata-rata Aset Tetap.'],
+        ['Tahap Reviu Akhir (Completion)', 'WAJIB (Mandatory SA 520)', 'Menilai kewajaran laporan keuangan secara keseluruhan sebelum opini diterbitkan.', 'Reviu akhir rasio likuiditas dan solvabilitas atas risiko kelangsungan usaha.']
       ],
-      caption: 'Tabel 7.1: Lima sumber data pembanding untuk membangun ekspektasi auditor.'
+      caption: 'Tabel 7.0: Perbandingan prosedur analitis pada 3 tahap audit.'
     },
-
-    { kind: 'h2', text: '3. Rasio Keuangan Kunci dalam Pendeteksian Salah Saji' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Proof in Total & Analisis Rasio'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Proof in Total Pendapatan Kamar Hotel} = \\text{Jumlah Kamar} \\times \\text{Tarif Rata-rata/Malam} \\times \\text{Tingkat Okupansi (Occupancy Rate)} \\times 365 \\text{ Hari}
+\\text{Proof in Total Beban Bunga} = \\text{Rata-rata Saldo Utang Pokok} \\times \\text{Tingkat Suku Bunga Efektif Tahunan}
+\\text{Selisih Tak Terjelaskan (Unexplained Difference)} = |\\text{Saldo Buku Klien} - \\text{Ekspektasi Auditor}|`,
+      note: 'Jika Selisih Tak Terjelaskan melampaui Acceptable Difference, auditor dilarang langsung menerima alasan lisan manajemen tanpa menguji dokumen bukti fisik (Corroborating Evidence).'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Proof in Total Pendapatan Hotel Bintang 4',
+      prompt: 'Hotel Permata memiliki 200 kamar dengan rata-rata tarif Rp 800.000/malam. Rata-rata tingkat okupansi tahun 2026 adalah 70%. Klien mencatat Pendapatan Kamar sebesar Rp 48 Miliar. Hitung ekspektasi auditor dan selisihnya!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Ekspektasi Auditor**: 200 kamar × Rp 800.000 × 70% × 365 hari = **Rp 40.880.000.000**.',
+            '**Saldo Tercatat Klien**: **Rp 48.000.000.000**.',
+            '**Selisih Anomali**: Rp 48.000.000.000 - Rp 40.880.000.000 = **Rp 7.120.000.000 (Overstatement)**.',
+            '**Tindak Lanjut**: Selisih Rp 7,12 Miliar sangat signifikan. Auditor wajib melakukan pengujian substantif rinci ke sistem reservasi dan bukti pembayaran tamu.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 7'
+    },
     {
       kind: 'table',
-      headers: ['Kategori Rasio', 'Rasio Kunci', 'Indikasi Risiko Audit'],
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
-        ['Rasio Likuiditas', 'Current Ratio & Quick Ratio', 'Penurunan tajam mengindikasikan kesulitan likuiditas jangka pendek dan ancaman kelangsungan usaha (*going concern*).'],
-        ['Rasio Perputaran', 'Days Sales in Receivables (DSO)', 'Kenaikan signifikan hari penagihan piutang mengindikasikan piutang macet yang belum dicadangkan (asersi Penilaian & Alokasi).'],
-        ['Rasio Perputaran', 'Days Sales in Inventory (DSI)', 'Kenaikan hari persediaan mengindikasikan barang usang/rusak yang belum diturunkan nilainya (NRV impairment).'],
-        ['Rasio Profitabilitas', 'Gross Profit Margin & Operating Margin', 'Fluktuasi marjin kotor yang tidak wajar mengindikasikan salah saji pisah batas (cutoff) penjualan atau persediaan akhir.']
+        ['1', '3 Tahap Prosedur Analitis', 'Kewajiban SA 315 dan SA 520 pada Perencanaan vs Reviu Akhir.', 'Mampu menjelaskan kapan prosedur analitis wajib dan opsional.'],
+        ['2', 'Teknik Proof in Total', 'Perhitungan estimasi independen akun pendapatan dan beban.', 'Mampu menghitung ekspektasi numerik dan menganalisis selisih.'],
+        ['3', 'Analisis Rasio Finansial', 'Interpretasi Days Sales Outstanding (DSO), Inventory Turnover, Gross Margin.', 'Mampu mendeteksi potensi fraud/error dari pergeseran rasio keuangan.']
       ],
-      caption: 'Tabel 7.2: Hubungan anomali rasio dengan indikator risiko audit.'
+      caption: 'Tabel 7.2: Peta penguasaan submateri TM 7 PBR I.'
     },
-
-    { kind: 'h2', text: '4. Rangkuman & Kunci Penguasaan Ujian TM 7 (Pra-UTS)' },
+    CASE_ANALYTICAL_PROCEDURES,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Status Wajib**: Prosedur Analitis **WAJIB** pada Perencanaan dan Reviu Akhir, tetapi **OPSIONAL** pada pengujian substantif.',
-        '**Langkah Analitis**: (1) Bentuk ekspektasi auditor $\\rightarrow$ (2) Tentukan selisih yang dapat diterima $\\rightarrow$ (3) Bandingkan ekspektasi dengan angka tercatat $\\rightarrow$ (4) Investigasi selisih signifikan.',
-        '**Kombinasi Bukti**: Prosedur analitis substantif yang andal dapat mengurangi jumlah pengujian rincian saldo (Test of Details).'
+        '**Prosedur Analitis Mandatori**: Wajib pada Perencanaan (untuk risk assessment) dan Penyelesaian Audit (untuk overall review).',
+        '**Keandalan Data Dasar**: Keandalan ekspektasi auditor sangat bergantung pada apakah data pendukung berasal dari sumber independen dan sistem TI yang teruji.',
+        '**Bukan Pengganti Bukti Fisik**: Prosedur analitis mengindikasikan AREA BERISIKO, namun pembuktian final salah saji moneter tetap membutuhkan Test of Details.'
       ]
     }
   ]

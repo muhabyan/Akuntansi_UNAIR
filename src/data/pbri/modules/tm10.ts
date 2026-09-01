@@ -1,113 +1,125 @@
-﻿import type { Reading } from '../../../types';
-import { CASE_AUDIT_RISK_MODEL } from '../pbriPracticeCases';
+import type { Reading } from '../../../types';
+import { CASE_FRAUD_RISK_ASSESSMENT } from '../pbriPracticeCases';
 
-const SVG_AUDIT_RISK_FORMULA = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL RISIKO AUDIT (AUDIT RISK MODEL - SA 200 &amp; SA 315)</text>
+const SVG_FRAUD_TRIANGLE = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SEGITIGA KECURANGAN (FRAUD TRIANGLE) &amp; RESPONS AUDIT (SA 240)</text>
   
-  <!-- PDR Box -->
-  <rect x="30" y="55" width="180" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="120" y="80" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">Planned Detection Risk</text>
-  <text x="120" y="102" fill="#f8fafc" font-size="14" font-weight="700" text-anchor="middle">PDR = AAR / RMM</text>
-  <line x1="45" y1="115" x2="195" y2="115" stroke="#334155"/>
-  <text x="120" y="135" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Risiko bahwa prosedur</text>
-  <text x="120" y="150" fill="#cbd5e1" font-size="9.5" text-anchor="middle">substantif auditor gagal</text>
-  <text x="120" y="165" fill="#cbd5e1" font-size="9.5" text-anchor="middle">mendeteksi salah saji</text>
-  <text x="120" y="188" fill="#7dd3fc" font-size="10" font-weight="700" text-anchor="middle">(Dapat Dikendalikan)</text>
+  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="125" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">1. TEKANAN (PRESSURE)</text>
+  <text x="125" y="100" fill="#94a3b8" font-size="9.5" text-anchor="middle">Incentives / Pressures:</text>
+  <text x="125" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Target laba bonus direksi</text>
+  <text x="125" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Ancaman delisting saham</text>
+  <text x="125" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Masalah utang pribadi</text>
+  <text x="125" y="178" fill="#fca5a5" font-size="9" text-anchor="middle">Motivasi Finansial</text>
 
-  <!-- Equal sign -->
-  <text x="225" y="135" fill="#94a3b8" font-size="20" font-weight="700" text-anchor="middle">=</text>
+  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="340" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">2. PELUANG (OPPORTUNITY)</text>
+  <text x="340" y="100" fill="#94a3b8" font-size="9.5" text-anchor="middle">Opportunities:</text>
+  <text x="340" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Kontrol internal lemah</text>
+  <text x="340" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Management Override</text>
+  <text x="340" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Transaksi pihak berelasi</text>
+  <text x="340" y="178" fill="#fde68a" font-size="9" text-anchor="middle">Celah dalam Sistem</text>
 
-  <!-- AAR Box -->
-  <rect x="245" y="55" width="125" height="150" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-  <text x="307" y="80" fill="#10b981" font-size="11.5" font-weight="700" text-anchor="middle">AAR</text>
-  <text x="307" y="98" fill="#cbd5e1" font-size="9" text-anchor="middle">Acceptable</text>
-  <text x="307" y="112" fill="#cbd5e1" font-size="9" text-anchor="middle">Audit Risk</text>
-  <line x1="255" y1="125" x2="360" y2="125" stroke="#334155"/>
-  <text x="307" y="145" fill="#94a3b8" font-size="8.5" text-anchor="middle">Risiko auditor</text>
-  <text x="307" y="160" fill="#94a3b8" font-size="8.5" text-anchor="middle">keliru terbitkan</text>
-  <text x="307" y="175" fill="#94a3b8" font-size="8.5" text-anchor="middle">opini WTP</text>
-  <text x="307" y="192" fill="#34d399" font-size="9" font-weight="700" text-anchor="middle">(Biasanya 1-5%)</text>
-
-  <!-- Division line -->
-  <text x="385" y="135" fill="#94a3b8" font-size="20" font-weight="700" text-anchor="middle">/</text>
-
-  <!-- RMM Box (IR x CR) -->
-  <rect x="405" y="55" width="245" height="150" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="527" y="80" fill="#f43f5e" font-size="11.5" font-weight="700" text-anchor="middle">RMM = Inherent (IR) &times; Control (CR)</text>
-  <text x="527" y="98" fill="#cbd5e1" font-size="9" text-anchor="middle">Risk of Material Misstatement (Risiko Klien)</text>
-  <line x1="420" y1="110" x2="635" y2="110" stroke="#334155"/>
-  
-  <rect x="415" y="120" width="105" height="75" rx="4" fill="#0f172a" stroke="#f43f5e"/>
-  <text x="467" y="140" fill="#fca5a5" font-size="9.5" font-weight="700" text-anchor="middle">Inherent (IR)</text>
-  <text x="467" y="158" fill="#94a3b8" font-size="8" text-anchor="middle">Kerentanan akun</text>
-  <text x="467" y="172" fill="#94a3b8" font-size="8" text-anchor="middle">tanpa kontrol</text>
-
-  <rect x="535" y="120" width="105" height="75" rx="4" fill="#0f172a" stroke="#f59e0b"/>
-  <text x="587" y="140" fill="#fde68a" font-size="9.5" font-weight="700" text-anchor="middle">Control (CR)</text>
-  <text x="587" y="158" fill="#94a3b8" font-size="8" text-anchor="middle">Risiko kontrol gagal</text>
-  <text x="587" y="172" fill="#94a3b8" font-size="8" text-anchor="middle">cegah salah saji</text>
+  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="555" y="78" fill="#a78bfa" font-size="11" font-weight="700" text-anchor="middle">3. RASIONALISASI</text>
+  <text x="555" y="100" fill="#94a3b8" font-size="9.5" text-anchor="middle">Attitudes / Rationalization:</text>
+  <text x="555" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• "Hanya pinjam sementara"</text>
+  <text x="555" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• "Perusahaan berutang budi"</text>
+  <text x="555" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• "Semua orang melakukannya"</text>
+  <text x="555" y="178" fill="#ddd6fe" font-size="9" text-anchor="middle">Pembenaran Moral</text>
 </svg>`;
 
 export const TM10_READING: Reading = {
   tm: 10,
-  title: 'Model Risiko Audit (Audit Risk Model) & Penilaian Risiko Signifikan',
-  ref: 'Arens Ch. 9 | SA 200, SA 315 Revisi',
-  intro: 'Modul Pembelajaran Mendalam PBR I TM 10: Menguasai Model Risiko Audit (Audit Risk Model), hubungan matematis dan konseptual antara Acceptable Audit Risk (AAR), Inherent Risk (IR), Control Risk (CR), dan Planned Detection Risk (PDR), serta perancangan luas bukti substantif.',
+  title: 'Risiko Kecurangan (Fraud Risk), Segitiga Kecurangan, & Journal Entry Testing (SA 240)',
+  ref: 'Arens 16e Ch. 10 | SA 240 | ACFE Fraud Tree | Journal Entry Testing (JET)',
+  intro: 'TM 10 membedah pengauditan atas kecurangan: dua jenis fraud laporan keuangan (Pelaporan Keuangan Curang vs Penyalahgunaan Aset), 3 elemen Segitiga Kecurangan (Tekanan, Peluang, Rasionalisasi), pengabaian pengendalian oleh manajemen (Management Override of Controls), serta prosedur wajib Journal Entry Testing (JET).',
   objectives: [
-    'Mendefinisikan 4 komponen Model Risiko Audit: AAR, IR, CR, dan PDR.',
-    'Menjelaskan konsep Risiko Kesalahan Penyajian Material (Risk of Material Misstatement - RMM = IR × CR).',
-    'Menghitung Planned Detection Risk (PDR) secara kuantitatif dan kualitatif.',
-    'Menganalisis hubungan terbalik antara PDR dengan kuantitas dan kualitas bukti substantif yang harus dikumpulkan.',
-    'Mengidentifikasi faktor-faktor penentu Inherent Risk (sifat bisnis, integritas manajemen, estimasi akuntansi rumit).',
-    'Mengidentifikasi Risiko Signifikan (Significant Risks) yang membutuhkan pertimbangan audit khusus.'
+    'Mendiagnosis 3 unsur Fraud Triangle (Pressure, Opportunity, Rationalization) dalam kasus bisnis riil.',
+    'Menerapkan asumsi risiko kecurangan wajib pada pengakuan pendapatan (Presumption of Revenue Fraud Risk SA 240).',
+    'Merancang prosedur pengujian Journal Entry Testing (JET) untuk mendeteksi jurnal penyesuaian fiktif akhir tahun.',
+    'Mengevaluasi tanda bahaya (Red Flags) kecurangan operasional dan pelaporan finansial.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Struktur dan Hubungan Rumus Model Risiko Audit',
-      svg: SVG_AUDIT_RISK_FORMULA,
-      caption: 'Gambar 10.1: Penentuan Planned Detection Risk berdasarkan AAR dan RMM.'
+      caption: 'Gambar 10.1: 3 Unsur Segitiga Kecurangan (Fraud Triangle SA 240).',
+      svg: SVG_FRAUD_TRIANGLE
     },
-
-    { kind: 'h2', text: '1. Komponen Model Risiko Audit' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 10'
+    },
     {
       kind: 'table',
-      headers: ['Komponen Risiko', 'Definisi Konseptual', 'Pihak yang Mengendalikan'],
+      headers: ['Elemen Fraud SA 240', 'Karakteristik & Indikator', 'Respons Prosedur Wajib Auditor', 'Jebakan Ujian Terpopuler'],
       rows: [
-        ['Acceptable Audit Risk (AAR)', 'Tingkat risiko yang bersedia ditanggung auditor bahwa laporan keuangan mengandung salah saji material setelah opini WTP diterbitkan.', 'Ditetapkan secara independen oleh **Auditor** (biasanya 1% s.d 5%).'],
-        ['Inherent Risk (IR)', 'Kerentanan suatu asersi terhadap salah saji material sebelum mempertimbangkan efektivitas pengendalian internal.', 'Melekat pada karakteristik bisnis **Klien** (Auditor hanya menilai).'],
-        ['Control Risk (CR)', 'Risiko bahwa pengendalian internal klien gagal mencegah atau mendeteksi dan mengoreksi salah saji material secara tepat waktu.', 'Dihasilkan oleh sistem **Klien** (Auditor hanya menguji).'],
-        ['Planned Detection Risk (PDR)', 'Risiko bahwa prosedur audit substantif yang dilaksanakan auditor gagal mendeteksi salah saji yang melebihi ambang materialitas pelaksanaan.', '**Dikendalikan oleh Auditor** melalui jumlah, waktu, dan jenis bukti pengujian substantif.']
+        ['Pelaporan Keuangan Curang', 'Manipulasi sengaja angka laporan keuangan untuk mengelabui investor (overstate laba/aset).', 'Review menyeluruh estimasi akuntansi manajemen dan uji jurnal manual akhir tahun.', 'Sering tertukar dengan kekeliruan; pembeda utama adalah INTENSI (kesengajaan) dan penyembunyian.'],
+        ['Penyalahgunaan Aset', 'Pencurian aset fisik (kas, persediaan, aset tetap) oleh karyawan/manajemen.', 'Pengujian fisik mendadak (surprise count) dan rekonsiliasi kas/bank berkala.', 'Penyalahgunaan aset biasanya dilakukan staf, sedangkan pelaporan curang dilakukan manajemen puncak.'],
+        ['Management Override', 'Kemampuan manajemen memanipulasi catatan akuntansi dan mengesampingkan kontrol yang ada.', 'Wajib lakukan: (1) Journal Entry Testing, (2) Review estimasi bias, (3) Uji transaksi luar biasa.', 'Auditor DILARANG berasumsi manajemen 100% jujur; skeptisisme profesional wajib dijaga!'],
+        ['Presumption of Fraud in Revenue', 'SA 240 mewajibkan auditor selalu berasumsi ada risiko fraud pada pengakuan pendapatan.', 'Pengujian pisah batas penjualan ketat, konfirmasi positif piutang, dan analisis retur Januari.', 'Jika auditor menyimpulkan tidak ada risiko fraud pendapatan, auditor WAJIB mendokumentasikan alasannya di KKP.']
       ],
-      caption: 'Tabel 10.1: Empat komponen pembentuk Model Risiko Audit.'
+      caption: 'Tabel 10.0: Matriks risiko kecurangan dan respons audit SA 240.'
     },
-
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 3 Prosedur Mandatori Mengatasi Management Override'
+    },
     {
       kind: 'formula',
-      text: 'PDR = \\frac{AAR}{IR \\times CR} = \\frac{AAR}{RMM}',
-      note: 'Makin TINGGI risiko klien (IR dan CR tinggi) -> PDR menjadi makin RENDAH -> Kebutuhan BUKTI SUBSTANTIF menjadi makin BANYAK!'
+      text: `\\text{3 Prosedur Wajib SA 240 Menghadapi Management Override}:
+1. \\mathbf{\\text{Journal Entry Testing (JET)}}: \\text{Uji jurnal penyesuaian manual akhir pekan, malam hari, akun tidak lazim, angka bulat.}
+2. \\mathbf{\\text{Review Estimasi Akuntansi}}: \\text{Evaluasi apakah cadangan kerugian/nilai wajar memiliki bias manajemen (Retrospective Review).}
+3. \\mathbf{\\text{Uji Transaksi Luar Biasa}}: \\text{Pemeriksaan substansi bisnis transaksi non-operasional bernilai besar di akhir periode.}`,
+      note: 'Journal Entry Testing (JET) merupakan prosedur wajib yang tidak boleh ditiadakan pada seluruh perikatan audit umum laporan keuangan.'
     },
-
-    CASE_AUDIT_RISK_MODEL,
-
-    { kind: 'h2', text: '2. Risiko Signifikan (Significant Risks - SA 315)' },
     {
-      kind: 'callout',
-      variant: 'warning',
-      title: 'Kriteria Penilaian Risiko Signifikan',
-      text: 'Risiko signifikan adalah risiko kesalahan penyajian material yang teridentifikasi dan dinilai yang, menurut pertimbangan auditor, **memerlukan pertimbangan audit khusus**. Contoh mencakup:\n• Risiko kecurangan (Fraud Risk - otomatis merupakan risiko signifikan sesuai SA 240).\n• Transaksi signifikan dengan pihak berelasi di luar jalur bisnis normal.\n• Estimasi akuntansi yang memiliki ketidakpastian pengukuran sangat tinggi.\n• Transaksi kompleks yang tidak biasa atau bersifat non-rutin.'
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 10' },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Karakteristik Jurnal Anomali (JET)',
+      prompt: 'Sebutkan 4 kriteria jurnal penyesuaian yang dikategorikan sebagai Jurnal Berisiko Tinggi (High-Risk Journal Entries) yang wajib diuji dalam Journal Entry Testing!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Jurnal Dibuat di Luar Jam Kerja**: Diposting pada larut malam, akhir pekan, atau hari libur nasional.',
+            '**Jurnal Berangka Bulat**: Nilai transaksi bulat tidak lazim (contoh: Rp 5.000.000.000,00 pas).',
+            '**Jurnal oleh Pejabat Non-Akuntansi**: Diposting langsung oleh Direktur/Eksekutif tanpa melalui staf akuntansi pembukuan.',
+            '**Jurnal Menggunakan Akun Siluman/Pembersih**: Menghubungkan akun pendapatan langsung ke pos aset tanpa dokumen penyerahan barang.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 10'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Segitiga Kecurangan (Fraud Triangle)', 'Analisis Pressure, Opportunity, dan Rationalization.', 'Mampu mendiagnosis celah risiko fraud pada skenario perikatan.'],
+        ['2', 'Presumsi Risiko Fraud Pendapatan', 'Ketentuan SA 240 paragraf 26 dan perlakuan auditnya.', 'Menguasai prosedur pengujian pendapatan fiktif (Side Agreements/Channel Stuffing).'],
+        ['3', 'Prosedur Journal Entry Testing (JET)', 'Metodologi audit berbasis data analitik untuk menguji jurnal manual.', 'Mampu merancang kriteria seleksi sampel jurnal berisiko tinggi.']
+      ],
+      caption: 'Tabel 10.2: Peta penguasaan submateri TM 10 PBR I.'
+    },
+    CASE_FRAUD_RISK_ASSESSMENT,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**RMM = IR × CR**: Merupakan risiko bawaan dan pengendalian yang sepenuhnya milik klien.',
-        '**PDR Rendah**: Mengharuskan auditor mengumpulkan lebih banyak bukti, memilih staf yang lebih berpengalaman, dan melakukan pengujian mendekati tanggal neraca.',
-        '**Hubungan AAR vs Bukti**: Jika AAR diturunkan (ingin audit lebih aman), bukti audit harus ditambah.',
-        '**Risiko Signifikan**: Auditor TIDAK BOLEH hanya mengandalkan pengujian pengendalian tahun lalu!'
+        '**Skeptisisme Profesional**: Auditor tidak boleh bersikap curiga tanpa dasar, namun tidak boleh pula berasumsi bahwa manajemen pasti jujur.',
+        '**Komunikasi Fraud**: Kecurangan yang melibatkan manajemen puncak (bahkan bernilai kecil) WAJIB dilaporkan langsung kepada Komite Audit / TCWG (SA 240).',
+        '**Channel Stuffing & Bill-and-Hold**: Praktik memaksa pengiriman barang sebelum waktunya atau menjurnal penjualan sebelum barang dikirim merupakan bentuk fraud pendapatan paling sering dijumpai.'
       ]
     }
   ]
