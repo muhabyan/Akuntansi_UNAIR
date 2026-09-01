@@ -1,88 +1,118 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_PUBLIC_AUDIT_BPK_APIP } from '../aspPracticeCases';
 
-const SVG_AUDIT_GOV_TYPES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TIGA JENIS PEMERIKSAAN BPK MENURUT UU NO. 15 TAHUN 2004 &amp; SPKN</text>
+const SVG_AUDIT_SPECTRUM = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ARSITEKTUR PENGAWASAN SEKTOR PUBLIK: PENGAWAS INTERN (APIP) VS PEMERIKSA EKSTERN (BPK)</text>
   
-  <!-- Financial Audit -->
-  <rect x="30" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. Pemeriksaan Keuangan</text>
-  <text x="125" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Audit Lapkeu LKPP/LKPD</text>
-  <line x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
-  <text x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Menguji kesesuaian SAP</text>
-  <text x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Kepatuhan peraturan UU</text>
-  <text x="125" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Efektivitas SPI</text>
-  <text x="125" y="186" fill="#34d399" font-size="10" font-weight="700" text-anchor="middle">Output: Opini WTP / WDP</text>
+  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">PENGAWAS INTERN (APIP)</text>
+  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">BPKP, Inspektorat Jenderal, Inspektorat Daerah:</text>
+  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kedudukan: Di bawah Presiden / Menteri / KDH</text>
+  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fungsi: Early Warning System &amp; Consulting</text>
+  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Output: Reviu Laporan Keuangan &amp; Audit Kepatuhan</text>
+  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Pengawasan Preventif Internal</text>
 
-  <!-- Performance Audit -->
-  <rect x="245" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="340" y="80" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">2. Pemeriksaan Kinerja</text>
-  <text x="340" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Audit Value for Money (3E)</text>
-  <line x1="260" y1="110" x2="420" y2="110" stroke="#334155"/>
-  <text x="340" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Aspek Ekonomi (Hemat)</text>
-  <text x="340" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Aspek Efisiensi (Daya guna)</text>
-  <text x="340" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Aspek Efektivitas (Hasil)</text>
-  <text x="340" y="186" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">Output: Rekomendasi 3E</text>
-
-  <!-- DTT Audit -->
-  <rect x="460" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="555" y="80" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">3. Pemeriksaan DTT</text>
-  <text x="555" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Dengan Tujuan Tertentu</text>
-  <line x1="475" y1="110" x2="635" y2="110" stroke="#334155"/>
-  <text x="555" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Audit Investigatif Tipikor</text>
-  <text x="555" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Penghitungan Kerugian</text>
-  <text x="555" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">  Keuangan Negara (PKKN)</text>
-  <text x="555" y="186" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">Output: Simpulan / Bukti Ahli</text>
+  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="497" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">PEMERIKSA EKSTERN (BPK RI)</text>
+  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Badan Pemeriksa Keuangan Republik Indonesia:</text>
+  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kedudukan: Lembaga Negara Independen (UUD 1945)</text>
+  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fungsi: Audit Keuangan, Kinerja, &amp; ADTT</text>
+  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Output: Opini LKPD &amp; Laporan Hasil Pemeriksaan (LHP)</text>
+  <text x="497" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pertanggungjawaban ke DPR/DPRD</text>
 </svg>`;
 
 export const TM11_READING: Reading = {
   tm: 11,
-  title: 'Audit Sektor Publik: Pengawasan Intern (APIP) & Pemeriksaan Eksternal (BPK)',
-  ref: 'UU 15/2004 | UU 15/2006 | Standar Pemeriksaan Keuangan Negara (SPKN BPK)',
-  intro: 'Modul Pembelajaran Mendalam Akuntansi Sektor Publik TM 11: Menguasai arsitektur audit sektor publik di Indonesia, peran Aparat Pengawasan Intern Pemerintah (APIP: BPKP dan Inspektorat Daerah/Kementerian) vs Badan Pemeriksa Keuangan (BPK RI) sebagai pemeriksa eksternal independen, 3 jenis pemeriksaan menurut UU No. 15/2004 (Pemeriksaan Keuangan, Kinerja, dan DTT), Standar Pemeriksaan Keuangan Negara (SPKN), serta 4 kriteria penentuan opini BPK atas LKPP/LKPD.',
+  title: 'Audit Sektor Publik: Pengawasan Intern (APIP), Pemeriksaan Eksternal (BPK RI), & LHP',
+  ref: 'UU 15/2004 | UU 15/2006 BPK RI | Standar Pemeriksaan Keuangan Negara (SPKN) | Jenis Opini Audit BPK',
+  intro: 'TM 11 membahas ekosistem pemeriksaan dan pengawasan keuangan negara di Indonesia: peran aparat pengawasan intern pemerintah (APIP: BPKP dan Inspektorat) dalam reviu laporan keuangan, kewenangan konstitusional Badan Pemeriksa Keuangan (BPK RI), Standar Pemeriksaan Keuangan Negara (SPKN), 3 jenis pemeriksaan (Audit Keuangan, Audit Kinerja, dan Audit Dengan Tujuan Tertentu / ADTT), 4 opini audit keuangan BPK, serta batas waktu yuridis tindak lanjut temuan LHP.',
   objectives: [
-    'Membedakan peran dan wewenang Pengawas Internal (APIP: BPKP, Itjen, Inspektorat Daerah) vs Pemeriksa Eksternal (BPK RI).',
-    'Menjelaskan 3 jenis pemeriksaan keuangan negara menurut UU No. 15/2004: Pemeriksaan Keuangan, Pemeriksaan Kinerja, dan Pemeriksaan Dengan Tujuan Tertentu (PDTT).',
-    'Menerapkan Standar Pemeriksaan Keuangan Negara (SPKN) yang diterbitkan melalui Peraturan BPK RI No. 1/2017.',
-    'Menganalisis 4 kriteria penetapan Opini BPK atas laporan keuangan pemerintah (Kesesuaian SAP, Kecukupan Pengungkapan, Kepatuhan Peraturan UU, dan Efektivitas SPI).',
-    'Menjelaskan kewajiban entitas terperiksa dalam menindaklanjuti Laporan Hasil Pemeriksaan (LHP) dalam tenggat waktu 60 hari.'
+    'Membedakan peran, fungsi, dan independensi APIP (Internal) vs BPK RI (Eksternal).',
+    'Menguasai 3 jenis pemeriksaan BPK menurut UU No. 15 Tahun 2004.',
+    'Menganalisis kriteria 4 jenis opini audit BPK atas LKPD (WTP, WDP, Tidak Wajar, Tidak Memberikan Pendapat).',
+    'Menjelaskan mekanisme tindak lanjut rekomendasi LHP BPK dalam batas waktu 60 hari.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Tiga Kategori Pemeriksaan BPK RI menurut UU 15/2004 dan SPKN',
-      svg: SVG_AUDIT_GOV_TYPES,
-      caption: 'Gambar 11.1: Ruang lingkup pemeriksaan keuangan, kinerja operasional, dan investigatif negara.'
+      caption: 'Gambar 11.1: Arsitektur Pengawasan Intern (APIP) dan Pemeriksaan Eksternal (BPK RI) di Indonesia.',
+      svg: SVG_AUDIT_SPECTRUM
     },
-
-    { kind: 'h2', text: '1. Komparasi APIP (Internal) vs BPK (Eksternal)' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 11'
+    },
     {
       kind: 'table',
-      headers: ['Dimensi Audit', 'Aparat Pengawasan Intern Pemerintah (APIP)', 'Badan Pemeriksa Keuangan (BPK RI)'],
+      headers: ['Jenis Pemeriksaan BPK', 'Tujuan Pemeriksaan', 'Standar Acuan', 'Bentuk Laporan Hasil'],
       rows: [
-        ['Kedudukan Lembaga', 'Bagian internal eksekutif pemerintah (BPKP bertanggung jawab kepada Presiden; Inspektorat kepada Menteri/Gubernur/Bupati).', 'Lembaga negara independen setingkat Presiden/DPR yang diatur langsung dalam UUD 1945.'],
-        ['Fokus Penugasan', 'Memberikan asurans internal (*assurance*), pendampingan (*consulting*), reviu laporan keuangan sebelum diserahkan ke BPK, dan pengawasan korupsi dini.', 'Melakukan audit pasca-fakta (*post-audit*) independen atas seluruh laporan pertanggungjawaban keuangan negara.'],
-        ['Penerima Laporan', 'Kepala Daerah, Menteri, atau Presiden.', 'DPR, DPD, DPRD, dan Pemerintah (kemudian terbuka untuk akses publik).']
+        ['Pemeriksaan Keuangan', 'Memberikan pernyataan opini atas kewajaran penyajian LKPP / LKPD.', 'Standar Akuntansi Pemerintahan (SAP PP 71/2010).', 'LHP memuat Pernyataan Opini Audit (WTP, WDP, TW, TMP).'],
+        ['Pemeriksaan Kinerja', 'Menilai aspek ekonomi, efisiensi, dan efektivitas (3E) pengelolaan program.', 'Indikator Kinerja & Standar Pelayanan Minimal (SPM).', 'LHP memuat Temuan, Kesimpulan, dan Rekomendasi Perbaikan Manajemen.'],
+        ['Pemeriksaan Dengan Tujuan Tertentu (ADTT)', 'Pemeriksaan investigatif, audit kepatuhan, atau pengadaan barang/jasa.', 'Peraturan Perundang-undangan Teknis & Hukum Pembuktian.', 'LHP memuat Temuan Penyimpangan / Kerugian Negara untuk APH.']
       ],
-      caption: 'Tabel 11.1: Pemisahan fungsi audit internal dan eksternal pemerintahan.'
+      caption: 'Tabel 11.0: Matriks 3 jenis pemeriksaan keuangan negara oleh BPK RI.'
     },
-
-    { kind: 'h2', text: '2. Empat Kriteria Penetapan Opini BPK atas LKPD / LKPP' },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Dasar Pertimbangan Pemberian Opini BPK (Pasal 16 UU 15/2004)',
-      text: '1. **Kesesuaian dengan Standar Akuntansi Pemerintahan (SAP)**: Apakah pos-pos LK disajikan sesuai PP 71/2010.\n2. **Kecukupan Pengungkapan (Adequate Disclosures)**: Apakah CaLK memberikan rincian penjelasan yang transparan dan lengkap.\n3. **Kepatuhan terhadap Peraturan Perundang-undangan**: Apakah tidak terdapat pelanggaran hukum pengadaan barang/jasa atau penyalahgunaan anggaran.\n4. **Efektivitas Sistem Pengendalian Intern (SPI)**: Apakah kontrol internal pemerintah andal dalam mengamankan aset dan data transaksi.'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 4 Kriteria Pemberian Opini WTP oleh BPK RI'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 11' },
+    {
+      kind: 'formula',
+      text: `\\text{Kriteria Opini WTP (Wajar Tanpa Pengecualian) BPK RI}:
+\\begin{cases}
+\\text{1. Kesesuaian dengan SAP} & \\text{(Kepatuhan penuh pada PP 71/2010 Basis Akrual)} \\\\
+\\text{2. Kecukupan Pengungkapan} & \\text{(Full Disclosure memadai pada CaLK)} \\\\
+\\text{3. Kepatuhan Peraturan} & \\text{(Bebas dari kerugian negara dan korupsi material)} \\\\
+\\text{4. Efektivitas SPI} & \\text{(Sistem Pengendalian Intern pemerintah handal)}
+\\end{cases}`,
+      note: 'Opini WTP bukan jaminan 100% bebas korupsi; WTP menyatakan bahwa laporan keuangan disajikan wajar dalam semua hal yang material sesuai standar akuntansi.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Penentuan Opini Audit Kasus Aset Tetap Tak Terdokumentasi',
+      prompt: 'BPK memeriksa LKPD Kabupaten X dan menemukan aset tanah senilai Rp 800 Miliar (15% dari total aset Pemda) tidak memiliki bukti kepemilikan sertifikat, batas fisik tanah tidak jelas, dan tidak ada pencatatan mutasi yang memadai. Manajemen Pemda menolak melakukan koreksi pembukuan. Tentukan opini audit BPK yang paling tepat!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Analisis Materialitas dan Perpasifan**: Nilai Rp 800 Miliar (15% dari total aset) adalah sangat material dan berdampak signifikan terhadap akun Aset Tetap dan Ekuitas di Neraca.',
+            '**Penentuan Opini BPK**:\n- Jika auditor menilai dampak pembatasan bukti ini bersifat **Material tetapi Tidak Pervasif** (hanya terlokalisasi pada pos aset tetap tanah): BPK akan memberikan opini **Wajar Dengan Pengecualian (WDP / Qualified Opinion)**.\n- Jika pembatasan bukti tersebut begitu fundamental sehingga auditor tidak dapat memperoleh bukti yang cukup untuk menilai kewajaran laporan keuangan secara keseluruhan: BPK dapat memberikan opini **Tidak Memberikan Pendapat (Disclaimer / TMP)**.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 11'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Peran APIP vs BPK RI', 'Pembedaan fungsi reviu laporan keuangan oleh Inspektorat vs audit BPK.', 'Mampu menguraikan rantai pengawasan keuangan publik.'],
+        ['2', '3 Jenis Pemeriksaan BPK', 'Audit Keuangan, Audit Kinerja, dan Audit Dengan Tujuan Tertentu (ADTT).', 'Mampu membedakan tujuan dan output masing-masing jenis pemeriksaan.'],
+        ['3', 'Klasifikasi Opini Audit BPK', 'Kriteria WTP, WDP, Tidak Wajar (Adverse), dan Disclaimer (TMP).', 'Mampu menentukan jenis opini berdasarkan skenario kasus pemeriksaan.'],
+        ['4', 'Tindak Lanjut Rekomendasi LHP', 'Kewajiban tindak lanjut 60 hari dan konsekuensi Tuntutan Ganti Rugi (TGR).', 'Menguasai prosedur penyelesaian kerugian negara/daerah.']
+      ],
+      caption: 'Tabel 11.2: Peta penguasaan submateri TM 11 Akuntansi Sektor Publik.'
+    },
+    CASE_PUBLIC_AUDIT_BPK_APIP,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Tindak Lanjut Rekomendasi (TLR)**: Pejabat pemerintah wajib menindaklanjuti rekomendasi dalam LHP BPK selambat-lambatnya **60 hari** setelah laporan diterima.',
-        '**SPKN (Peraturan BPK No. 1/2017)**: Standar etika, standar pelaksanaan, dan standar pelaporan audit bagi seluruh pemeriksa keuangan negara.',
-        '**Reviu APIP**: LKPD wajib di-reviu terlebih dahulu oleh Inspektorat Daerah sebelum diserahkan secara resmi oleh Kepala Daerah kepada BPK paling lambat 3 bulan setelah tahun anggaran berakhir.'
+        '**Reviu APIP Sebelum Audit BPK**: Sebelum LKPD diserahkan kepada BPK RI pada akhir Maret, Inspektorat Daerah wajib melakukan Reviu Laporan Keuangan untuk memberikan keyakinan terbatas atas kepatuhan SAP.',
+        '**Tenggat 60 Hari Mutlak**: Pejabat yang tidak menindaklanjuti rekomendasi BPK dalam waktu 60 hari dapat dikenai sanksi pidana kurungan paling lama 1 tahun 6 bulan atau denda (UU 15/2004).',
+        '**Majelis Tuntutan Perbendaharaan / TGR**: BPK berwenang menetapkan Surat Keputusan Pembebanan Penggantian Kerugian Negara terhadap bendahara yang lalai atau melakukan wanprestasi kas.'
       ]
     }
   ]

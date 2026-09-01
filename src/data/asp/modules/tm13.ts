@@ -1,94 +1,124 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_BLU_BLUD_FLEXIBILITY } from '../aspPracticeCases';
 
-const SVG_BLU_FLEXIBILITY = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">FLEKSIBILITAS PENGELOLAAN KEUANGAN BLU &amp; BLUD (PP 23/2005 &amp; PSAP 13)</text>
+const SVG_BLU_STRUCTURE = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">POLA PENGELOLAAN KEUANGAN BADAN LAYANAN UMUM (PPK - BLU / BLUD)</text>
   
-  <rect x="25" y="55" width="145" height="150" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. Belanja Langsung</text>
-  <text x="97" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Pendapatan Jasa</text>
-  <line x1="35" y1="108" x2="160" y2="108" stroke="#334155"/>
-  <text x="97" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Pendapatan PNBP/</text>
-  <text x="97" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  retribusi layanan</text>
-  <text x="97" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Langsung dipakai</text>
-  <text x="97" y="180" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Tanpa Setor Kasda</text>
+  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. PENDAPATAN LAYANAN</text>
+  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Direct Spending):</text>
+  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tarif medis &amp; UKT Kampus</text>
+  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tidak disetor ke Kasda/BUN</text>
+  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Langsung dipakai operasional</text>
+  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Otonomi Pengeluaran</text>
 
-  <rect x="185" y="55" width="145" height="150" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">2. Ambang Batas</text>
-  <text x="257" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">RBA Fleksibel</text>
-  <line x1="195" y1="108" x2="320" y2="108" stroke="#334155"/>
-  <text x="257" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Rencana Bisnis</text>
-  <text x="257" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  dan Anggaran (RBA)</text>
-  <text x="257" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Fleksibilitas %</text>
-  <text x="257" y="180" fill="#34d399" font-size="9" font-weight="700" text-anchor="middle">Belanja Mengikuti Omzet</text>
+  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">2. MANAJEMEN KAS</text>
+  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Cash &amp; Investment):</text>
+  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Boleh menaruh kas di deposito</text>
+  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bunga bank menjadi hak BLU</text>
+  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Investasi jangka pendek aman</text>
+  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Optimalisasi Kas</text>
 
-  <rect x="345" y="55" width="145" height="150" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#f59e0b" font-size="10.5" font-weight="700" text-anchor="middle">3. Remunerasi</text>
-  <text x="417" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Sistem Insentif</text>
-  <line x1="355" y1="108" x2="480" y2="108" stroke="#334155"/>
-  <text x="417" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Gaji + Insentif</text>
-  <text x="417" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  berbasis kinerja</text>
-  <text x="417" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Profesional Non-PNS</text>
-  <text x="417" y="180" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Motivasi Pelayanan</text>
-
-  <rect x="505" y="55" width="150" height="150" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a855f7" font-size="10.5" font-weight="700" text-anchor="middle">4. PSAP 13</text>
-  <text x="580" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Standar Akuntansi BLU</text>
-  <line x1="515" y1="108" x2="645" y2="108" stroke="#334155"/>
-  <text x="580" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Pembukuan SAK &amp;</text>
-  <text x="580" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">  Konsolidasi SAP</text>
-  <text x="580" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">• Laporan BLU Lengkap</text>
-  <text x="580" y="180" fill="#c084fc" font-size="9" font-weight="700" text-anchor="middle">Kombinasi SAK &amp; SAP</text>
+  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">3. SKEMA REMUNERASI</text>
+  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Performance-Based Pay):</text>
+  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Gaji pokok + Insentif Medis</text>
+  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sistem poin kinerja individu</text>
+  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Standar Dewan Pengawas</text>
+  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Motivasi Profesional</text>
 </svg>`;
 
 export const TM13_READING: Reading = {
   tm: 13,
-  title: 'Pengelolaan Keuangan Badan Layanan Umum (BLU & BLUD: Kasus Rumah Sakit)',
-  ref: 'PP 23/2005 jo. PP 74/2012 | Permendagri 79/2018 | PSAP 13 Penyajian Lapkeu BLU',
-  intro: 'Modul Pembelajaran Mendalam Akuntansi Sektor Publik TM 13: Menguasai pola pengelolaan keuangan Badan Layanan Umum (BLU / BLUD), fleksibilitas operasional bisnis yang sehat (*Pola Pengelolaan Keuangan BLU*), penyusunan Rencana Bisnis dan Anggaran (RBA), sistem tarif dan remunerasi tenaga medis rumah sakit, serta standar akuntansi pelaporan keuangan BLU berdasarkan PSAP 13.',
+  title: 'Pengelolaan Keuangan Badan Layanan Umum (BLU & BLUD: Kasus RSUD & PTN-BH)',
+  ref: 'PP 23/2005 jo PP 74/2012 BLU | Permendagri 79/2018 BLUD | Fleksibilitas Pengelolaan Keuangan',
+  intro: 'TM 13 membahas Pola Pengelolaan Keuangan Badan Layanan Umum (PPK-BLU) di tingkat pusat dan PPK-BLUD di tingkat daerah: landasan pembentukan unit quasi-pemerintah berorientasi layanan, fleksibilitas pendapatan (Direct Spending), fleksibilitas belanja dengan ambang batas (Flexibility Budget), pengelolaan kas dan investasi jangka pendek, penyusunan Rencana Bisnis dan Anggaran (RBA), serta skema remunerasi berbasis kinerja.',
   objectives: [
-    'Mendefinisikan Badan Layanan Umum (BLU / BLUD) sebagai instansi pemerintah penyedia barang/jasa publik yang diberikan fleksibilitas pengelolaan keuangan tanpa mencari keuntungan semata.',
-    'Menganalisis 3 persyaratan penetapan status BLU: Persyaratan Substantif, Teknis, dan Administratif.',
-    'Menjelaskan 5 bentuk fleksibilitas BLU: Penggunaan Pendapatan Langsung, Pengelolaan Kas & Investasi Jangka Pendek, Pengelolaan Utang/Piutang, Pengadaan Barang/Jasa Khusus, dan Sistem Remunerasi Kinerja.',
-    'Menyusun Rencana Bisnis dan Anggaran (RBA) BLU berbasis kinerja pembiayaan.',
-    'Menerapkan ketentuan pelaporan keuangan BLU menurut PSAP 13 (menyusun LK berbasis SAK untuk operasional dan dikonsolidasikan ke LK K/L/Pemda berbasis SAP).'
+    'Menjelaskan tujuan pembentukan BLU/BLUD: efisiensi pelayanan tanpa mengutamakan mencari keuntungan.',
+    'Menganalisis 4 fleksibilitas utama pengelolaan keuangan yang dimiliki instansi BLU/BLUD.',
+    'Menyusun Rencana Bisnis dan Anggaran (RBA) dan memahami mekanisme pengesahan DPA-BLU.',
+    'Menjelaskan fungsi pembinaan Dewan Pengawas BLU dan kewajiban audit laporan keuangan oleh KAP.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Pilar Fleksibilitas Pengelolaan Keuangan BLU/BLUD',
-      svg: SVG_BLU_FLEXIBILITY,
-      caption: 'Gambar 13.1: Fleksibilitas manajerial BLU dalam meningkatkan produktivitas pelayanan publik rumah sakit dan universitas.'
+      caption: 'Gambar 13.1: Pilar Fleksibilitas Pola Pengelolaan Keuangan Badan Layanan Umum (PPK-BLU).',
+      svg: SVG_BLU_STRUCTURE
     },
-
-    { kind: 'h2', text: '1. Karakteristik & Persyaratan Status BLU / BLUD' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 13'
+    },
     {
       kind: 'table',
-      headers: ['Jenis Persyaratan', 'Kriteria Penilaian Penetapan Status BLU / BLUD'],
+      headers: ['Aspek Pengelolaan', 'SKPD Dinas Reguler', 'Badan Layanan Umum (BLU / BLUD)'],
       rows: [
-        ['1. Persyaratan Substantif', 'Menyelenggarakan tugas pokok pelayanan umum: (a) Penyediaan barang/jasa publik (Rumah Sakit, Puskesmas, Perguruan Tinggi Negeri / PTN), (b) Pengelolaan kawasan khusus, atau (c) Pengelolaan dana khusus (LPDP, BPJS).'],
-        ['2. Persyaratan Teknis', 'Kinerja pelayanan layak dikelola secara bisnis sehat; kinerja keuangan berpotensi meningkatkan efisiensi dan PNBP; memiliki pangsa pasar jelas.'],
-        ['3. Persyaratan Administratif', 'Menyerahkan dokumen: Standar Pelayanan Minimal (SPM), Rencana Strategis Bisnis (RSB), Pola Tata Kelola (*Governance*), Laporan Keuangan Pokok, dan Surat Pernyataan Kesanggupan Peningkatan Kinerja.']
+        ['Penyetoran Kas Layanan', 'Wajib disetor 100% ke Kas Umum Daerah (Kasda) hari itu juga.', 'Dapat langsung digunakan (Direct Spending) untuk operasional layanan.'],
+        ['Perubahan Belanja Operasi', 'Kaku; perubahan belanja wajib menunggu Perda Perubahan APBD.', 'Fleksibel dengan sistem ambang batas (Threshold Percentage) belanja RBA.'],
+        ['Pengelolaan Saldo Kas Mengendap', 'Dikelola terpusat oleh BUD; dinas dilarang membuka rekening deposito.', 'Berhak menaruh kas mengendap dalam bentuk deposito berjangka atas nama BLU.'],
+        ['Pengadaan Barang & Jasa', 'Tunduk kaku pada Perpres Pengadaan Barang/Jasa Pemerintah.', 'Dapat memiliki Peraturan Direktur BLU khusus yang lebih adaptif dan cepat.'],
+        ['Pemberian Kompensasi Pegawai', 'Gaji dan tunjangan ASN standar pemerintah yang seragam.', 'Skema Remunerasi berbasis kinerja medis/akademis yang ditetapkan Kemenkeu/KDH.']
       ],
-      caption: 'Tabel 13.1: Tiga persyaratan pembentukan BLU.'
+      caption: 'Tabel 13.0: Matriks perbedaan tata kelola SKPD reguler vs instansi BLU/BLUD.'
     },
-
-    { kind: 'h2', text: '2. Perlakuan Akuntansi BLU menurut PSAP 13' },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: 'Dualisme Pelaporan Keuangan Satker BLU / BLUD',
-      text: '• **Untuk Tujuan Manajerial**: Satker BLU (misal RSUD) menyelenggarakan pembukuan berbasis **Standar Akuntansi Keuangan (SAK)** yang menghasilkan Laporan Posisi Keuangan, Laporan Laba Rugi, Laporan Perubahan Ekuitas, dan Laporan Arus Kas komersial.\n• **Untuk Tujuan Konsolidasi Pemda/Kementerian**: Satker BLU menyusun Laporan Keuangan berbasis **Standar Akuntansi Pemerintahan (PSAP 13)** yang kemudian digabungkan ke dalam LKPD/LK K/L melalui proses pengesahan belanja (*Surat Pengesahan Pendapatan dan Belanja BLU - SP3B / SP2B*).'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Ambang Batas Fleksibilitas RBA'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 13' },
+    {
+      kind: 'formula',
+      text: `\\text{Maksimum Belanja Fleksibel RBA} = \\text{Pagu Anggaran RBA Awal} \\times (1 + \\text{Ambang Batas Fleksibilitas } \\%)
+\\text{Surplus Defisit BLU} = \\text{Pendapatan Layanan PNBP} - \\text{Beban Operasional BLU}
+\\text{Saldo Kas Akhir BLU} = \\text{Kas Awal} + \\text{Surplus Kas} \\quad \\text{(Tidak Ditarik ke Kasda, Melainkan Menjadi Kas Mengendap BLU)}`,
+      note: 'Jika kenaikan realisasi belanja melampaui persentase ambang batas fleksibilitas yang telah disetujui DPRD/Kemenkeu, BLU wajib mengajukan revisi RBA formal.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Kalkulasi Ambang Batas Belanja Obat Rumah Sakit BLUD',
+      prompt: 'RSUD Dr. Soetomo (BLUD Penuh) memiliki pagu belanja pengadaan obat dalam RBA sebesar Rp 50 Miliar dengan persentase ambang batas fleksibilitas belanja sebesar 15%. Jika terjadi lonjakan pasien demam berdarah sehingga kebutuhan obat membengkak menjadi Rp 56 Miliar, apakah Direktur RSUD dapat langsung mengeksekusi pembelian obat tersebut tanpa menunggu Perubahan APBD?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Perhitungan Plafon Ambang Batas Fleksibilitas**:\nPlafon Maksimum = Pagu Awal × (1 + 15%) = Rp 50 Miliar × 1,15 = **Rp 57,5 Miliar**.',
+            '**Evaluasi Kebutuhan Riil**: Kebutuhan belanja obat sebesar Rp 56 Miliar masih berada di bawah batas maksimum fleksibilitas (Rp 56 M < Rp 57,5 M).',
+            '**Keputusan Direktur**: Direktur RSUD **BERWENANG LANGSUNG MEMBELANJAKAN OBAT Rp 56 MILIAR** tanpa harus menunggu Perda Perubahan APBD, dengan catatan pendapatan fungsional layanan rumah sakit mencukupi untuk membiayainya.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 13'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Prinsip PPK-BLU / BLUD', 'Konsep efisiensi bisnis sehat dan non-profit maximization.', 'Mampu menguraikan landasan pendirian rumah sakit dan kampus BLU.'],
+        ['2', 'Mekanisme Fleksibilitas Keuangan', 'Direct spending, threshold belanja, dan pengelolaan kas deposito.', 'Mampu menghitung batas fleksibilitas belanja RBA BLUD.'],
+        ['3', 'Laporan Keuangan BLU', 'Kewajiban dual-reporting: SAP untuk konsolidasi dan SAK untuk audit KAP.', 'Mampu menjelaskan proses konsolidasi laporan BLU ke LKPD/LKPP.']
+      ],
+      caption: 'Tabel 13.2: Peta penguasaan submateri TM 13 Akuntansi Sektor Publik.'
+    },
+    CASE_BLU_BLUD_FLEXIBILITY,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Penggunaan Kas Langsung**: Pendapatan operasional rumah sakit (tarif pasien umum/BPJS) dapat langsung dibelanjakan untuk membeli obat dan bahan medis habis pakai tanpa harus disetor ke Kasda terlebih dahulu.',
-        '**RBA (Rencana Bisnis dan Anggaran)**: Disusun berbasis kinerja dengan menganalisis unit cost pelayanan (*Activity-Based Costing*).',
-        '**Kekayaan BLU**: Merupakan kekayaan negara/daerah yang **TIDAK DIPISAHKAN** (berbeda dengan BUMN/BUMD yang kekayaannya dipisahkan dari APBN/APBD).'
+        '**Dual Reporting BLU**: BLU menyusun laporan keuangan berbasis Standar Akuntansi Keuangan (SAK) untuk diaudit Kantor Akuntan Publik (KAP), dan menyusun laporan berbasis SAP untuk dikonsolidasikan ke dalam LKPD/LKPP.',
+        '**Aset BLU Tetap Milik Negara**: Fleksibilitas pengelolaan keuangan tidak mengubah status kepemilikan aset; seluruh aset tetap rumah sakit/kampus BLU adalah Barang Milik Negara/Daerah (BMN/BMD) yang tidak boleh dipindahtangankan tanpa izin Kemenkeu/DPRD.',
+        '**Dewan Pengawas**: Instansi BLU wajib diawasi oleh Dewan Pengawas independen yang bertugas memantau kepatuhan RBA dan menyetujui usulan remunerasi pejabat pengelola.'
       ]
     }
   ]
