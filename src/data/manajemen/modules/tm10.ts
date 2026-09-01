@@ -1,93 +1,136 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_HR_TALENT_DIVERSITY } from '../manajemenPracticeCases';
 
-const SVG_HRM_PROCESS = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PROSES STRATEGIS MANAJEMEN TALENTA SDM (HRM PROCESS)</text>
+const SVG_HRM_CYCLE = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SIKLUS STRATEGIS MANAJEMEN SUMBER DAYA MANUSIA (STRATEGIC HRM)</text>
   
-  <!-- Step 1 -->
-  <rect x="30" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="80" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. Finding Right People</text>
-  <text x="125" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Perencanaan &amp; Seleksi)</text>
-  <line x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
-  <text x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Analisis &amp; Deskripsi Kerja</text>
-  <text x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Rekrutmen Internal/Eksternal</text>
-  <text x="125" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Wawancara Terstruktur</text>
-  <text x="125" y="186" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Akuisisi Talenta Terbaik</text>
+  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="97" y="78" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">1. ATTRACTION</text>
+  <text x="97" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Menarik Talenta):</text>
+  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Analisis Jabatan (Job Desc)</text>
+  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Rekrutmen Digital &amp; AI</text>
+  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Seleksi &amp; Uji Kompetensi</text>
+  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Talent Acquisition</text>
 
-  <!-- Step 2 -->
-  <rect x="245" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="340" y="80" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">2. Developing Talent</text>
-  <text x="340" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Pengembangan Kompetensi)</text>
-  <line x1="260" y1="110" x2="420" y2="110" stroke="#334155"/>
-  <text x="340" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Orientasi &amp; Onboarding</text>
-  <text x="340" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• On-the-Job Training (OJT)</text>
-  <text x="340" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Mentoring &amp; Coaching</text>
-  <text x="340" y="186" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Peningkatan Kapabilitas</text>
+  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="257" y="78" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">2. DEVELOPMENT</text>
+  <text x="257" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Mengembangkan):</text>
+  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Orientasi &amp; Onboarding</text>
+  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pelatihan &amp; Upskilling</text>
+  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mentoring kepemimpinan</text>
+  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Human Capital Growth</text>
 
-  <!-- Step 3 -->
-  <rect x="460" y="55" width="190" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="555" y="80" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">3. Maintaining Workforce</text>
-  <text x="555" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Retensi &amp; Kesejahteraan)</text>
-  <line x1="475" y1="110" x2="635" y2="110" stroke="#334155"/>
-  <text x="555" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Kompensasi &amp; Benefit</text>
-  <text x="555" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Penilaian Kinerja (360°)</text>
-  <text x="555" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Jalur Karir &amp; Work-Life</text>
-  <text x="555" y="186" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">Retensi &amp; Loyalitas</text>
+  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="417" y="78" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">3. MAINTENANCE</text>
+  <text x="417" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Mempertahankan):</text>
+  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penilaian Kinerja 360</text>
+  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kompensasi &amp; Bonus</text>
+  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Jenjang karier jelas</text>
+  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Employee Retention</text>
+
+  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="580" y="78" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">4. DE&amp;I INTEGRATION</text>
+  <text x="580" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Keberagaman &amp; Inklusi):</text>
+  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keadilan gender &amp; disabilitas</text>
+  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penembusan Glass Ceiling</text>
+  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tim lintas generasi</text>
+  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Inovasi Perspektif</text>
 </svg>`;
 
 export const TM10_READING: Reading = {
   tm: 10,
   title: 'Managing Human Talent and Diversity/Inclusion: Strategi MSDM & Keberagaman',
-  ref: 'Richard L. Daft & Dorothy Marcic Ch. 9',
-  intro: 'Modul Pembelajaran Mendalam Pengantar Manajemen TM 10: Menguasai peran strategis Manajemen Sumber Daya Manusia (Strategic Human Resource Management - HRM), pergeseran kontrak sosial baru (*The New Social Contract* - kemampuan kerja / *employability* vs loyalitas seumur hidup), 3 tahap siklus talenta (Finding, Developing, Maintaining an Effective Workforce), teknik seleksi (Wawancara Terstruktur, Tes Asesmen, Pemeriksaan Latar Belakang), Penilaian Kinerja (Umpan Balik 360 Derajat & *Behaviorally Anchored Rating Scales* / BARS), serta Manajemen Keberagaman & Inklusi (*Diversity, Equity, and Inclusion* / DEI, Bias Bawah Sadar, dan Efek Hambatan Tak Terlihat / *Glass Ceiling*).',
+  ref: 'Richard L. Daft Bab 13 & 14 | Strategic Human Resource Management (SHRM) | 360-Degree Feedback & DE&I',
+  intro: 'TM 10 membahas pengelolaan modal manusia (Human Capital) dan keberagaman tempat kerja sebagai sumber keunggulan kompetitif berkelanjutan: 3 pilar Strategic HRM (Menarik, Mengembangkan, dan Mempertahankan talenta unggul), analisis pekerjaan (Job Description vs Job Specification), teknik seleksi dan Realistic Job Preview (RJP), evaluasi kinerja multi-sumber (360-Degree Feedback) dan mitigasi bias penilai, serta pengelolaan keberagaman dan inklusi (Diversity, Equity, and Inclusion / DE&I) untuk menembus fenomena Glass Ceiling.',
   objectives: [
-    'Menjelaskan peran strategis MSDM dalam menyelaraskan modal manusia dengan strategi keunggulan bersaing organisasi.',
-    'Membedakan Kontrak Sosial Lama (keamanan kerja seumur hidup) vs Kontrak Sosial Baru (pemberdayaan, pembelajaran berkelanjutan, dan nilai pasar talenta).',
-    'Menerapkan tahapan rekrutmen dan seleksi: Analisis Jabatan (*Job Analysis*), Deskripsi Jabatan (*Job Description*), dan Spesifikasi Jabatan (*Job Specification*).',
-    'Menjelaskan metode penilaian kinerja objektif: BARS (Behaviorally Anchored Rating Scales) dan Umpan Balik 360 Derajat (*360-Degree Feedback*).',
-    'Menganalisis manfaat bisnis keberagaman tempat kerja (*Dividends of Workplace Diversity*: peningkatan inovasi, pemahaman pasar konsumen luas, pengurangan turnover).',
-    'Mengidentifikasi bias personal bawah sadar (*Unconscious / Implicit Bias*), stereotip, dan fenomena Glass Ceiling bagi perempuan/minoritas.'
+    'Menjelaskan bagaimana Manajemen SDM Strategis (SHRM) menyelaraskan kebutuhan talenta dengan strategi korporasi.',
+    'Membedakan komponen Deskripsi Pekerjaan (Job Description) vs Spesifikasi Pekerjaan (Job Specification).',
+    'Menganalisis kelebihan dan risiko sistem evaluasi kinerja 360-Degree Performance Feedback.',
+    'Mendeteksi bias persepsi dalam penilaian kinerja: Halo/Horn Effect, Leniency Error, dan Recency Bias.',
+    'Merumuskan strategi Diversity, Equity, and Inclusion (DE&I) untuk meruntuhkan batasan Glass Ceiling bagi wanita dan minoritas.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Tiga Tahap Siklus Strategis Pengelolaan Talenta SDM',
-      svg: SVG_HRM_PROCESS,
-      caption: 'Gambar 10.1: Alur komprehensif akuisisi, pengembangan, dan retensi modal manusia unggul.'
+      caption: 'Gambar 10.1: Siklus Strategis Manajemen Sumber Daya Manusia dan Integrasi Keberagaman Inklusif.',
+      svg: SVG_HRM_CYCLE
     },
-
-    { kind: 'h2', text: '1. Kontrak Sosial Lama vs Kontrak Sosial Baru di Tempat Kerja' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 10'
+    },
     {
       kind: 'table',
-      headers: ['Aspek Kontrak Kerja', 'Kontrak Sosial Tradisional (Lama)', 'Kontrak Sosial Kontemporer (Baru)'],
+      headers: ['Aktivitas Utama MSDM', 'Tujuan Strategis Aktivitas', 'Metode / Instrumen Modern', 'Tantangan Implementasi'],
       rows: [
-        ['Harapan Karyawan', 'Jaminan keamanan kerja seumur hidup, kompensasi stabil, dan loyalitas pasif terhadap perusahaan.', '**Kemampuan kerja (Employability)**, kesempatan belajar keterampilan baru, dan otonomi fleksibilitas kerja.'],
-        ['Harapan Perusahaan', 'Kepatuhan standar operasional dan kehadiran jam kerja fisik yang kaku.', '**Kinerja bernilai tinggi**, kreativitas pemecahan masalah, tanggung jawab pribadi, dan perbaikan terus-menerus.'],
-        ['Pengembangan Karir', 'Kenaikan pangkat vertikal terstruktur menurut senioritas masa kerja.', 'Pengembangan lateral lintas fungsi berbasis kompetensi dan portofolio proyek riil.']
+        ['Talent Acquisition (Rekrutmen & Seleksi)', 'Menjaring kandidat dengan Person-Job Fit dan Person-Organization Fit terbaik.', 'Tes psikometrik daring, wawancara berbasis perilaku (Behavioral Interview), RJP.', 'Persaingan memperebutkan talenta digital langka (War for Talent).'],
+        ['Pelatihan & Pengembangan', 'Meningkatkan kompetensi keahlian teknis dan kepemimpinan karyawan.', 'Rotasi kerja, e-learning mandiri, program mentoring, dan micro-credentialing.', 'Biaya investasi tinggi dan risiko talenta dibajak kompetitor.'],
+        ['Penilaian Kinerja (Performance Appraisal)', 'Mengukur kontribusi riil karyawan dan memberikan umpan balik pertumbuhan.', 'Evaluasi 360 derajat, OKR (Objectives and Key Results), BARS scale.', 'Subjektivitas penilai dan bias kognitif (Halo effect, Leniency).'],
+        ['Kompensasi & Tunjangan (Total Rewards)', 'Mempertahankan karyawan berkinerja tinggi melalui penghargaan adil.', 'Kompensasi berbasis kinerja (Pay-for-Performance), opsi saham karyawan (ESOP).', 'Kesenjangan persepsi keadilan internal vs daya saing pasar eksternal.']
       ],
-      caption: 'Tabel 10.1: Transformasi hubungan kerja perusahaan dan karyawan.'
+      caption: 'Tabel 10.0: Matriks aktivitas siklus manajemen sumber daya manusia.'
     },
-
-    { kind: 'h2', text: '2. Dimensi Keberagaman & Inklusi (Diversity & Inclusion)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 4 Bias Persepsi Penilaian Kinerja Karyawan'
+    },
     {
       kind: 'table',
-      headers: ['Konsep Keberagaman', 'Karakteristik Utama', 'Tantangan & Hambatan Manajerial'],
+      headers: ['Jenis Bias Penilaian', 'Definisi & Pola Kesalahan Atasan', 'Dampak Terhadap Karyawan'],
       rows: [
-        ['**Keberagaman Tradisional**', 'Perbedaan kasat mata: Usia, ras, gender, etnis, kebangsaan, dan disabilitas fisik.', '**Glass Ceiling**: Hambatan tak kasat mata yang menghalangi perempuan dan minoritas mencapai posisi eksekutif puncak.'],
-        ['**Keberagaman Inklusif**', 'Mencakup seluruh dimensi perbedaan: Gaya kepribadian, latar belakang pendidikan, pola pikir, dan pengalaman hidup.', '**Unconscious Bias**: Penilaian diskriminatif otomatis di bawah sadar saat merekrut atau mempromosikan karyawan.'],
-        ['**Inklusi (Inclusion)**', 'Budaya di mana seluruh individu merasa dihargai, dihormati, dan memiliki akses setara untuk berkontribusi penuh.', 'Menghilangkan etnosentrisme organisasi dan menciptakan iklim psikologis aman (*Psychological Safety*).']
+        ['Halo Effect (Efek Halo)', 'Atasan memberikan nilai tinggi di SEMUA dimensi kerja hanya karena terkesan oleh SATU karakteristik positif (contoh: staf sangat rajin menyapa di pagi hari).', 'Karyawan yang tidak kompeten secara teknis memperoleh promosi jabatan.'],
+        ['Horn Effect (Efek Tanduk)', 'Kebalikan Halo: atasan memberi nilai buruk di seluruh aspek hanya karena satu kekeliruan kecil.', 'Menghancurkan moral dan memicu kepergian karyawan berbakat.'],
+        ['Leniency Error (Kebaikan Berlebih)', 'Atasan memberikan nilai tinggi secara seragam kepada semua anak buah untuk menghindari konflik dan disukai.', 'Staf berkinerja luar biasa merasa diperlakukan tidak adil karena nilainya sama dengan staf pemalas.'],
+        ['Recency Bias (Bias Kebaruan)', 'Penilaian tahunan hanya didasarkan pada peristiwa yang terjadi 2-3 minggu terakhir, melupakan performa 11 bulan sebelumnya.', 'Karyawan hanya rajin menjelang musim evaluasi akhir tahun.']
       ],
-      caption: 'Tabel 10.2: Spektrum manajemen keberagaman tempat kerja modern.'
+      caption: 'Tabel 10.1: Bias kognitif dalam evaluasi kinerja karyawan.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 10' },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Realistic Job Preview (RJP) Mengatasi Turnover Karyawan Baru',
+      prompt: 'Sebuah perusahaan logistik mengalami tingkat pengunduran diri 40% pada bulan pertama dari kurir baru yang direkrut, karena mereka kaget dengan beratnya beban kerja fisik mengangkat paket dan macetnya jalanan. Bagaimana teknik Realistic Job Preview (RJP) dapat menekan angka turnover ini?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Konsep Realistic Job Preview (RJP)**: Memberikan informasi yang jujur, seimbang, dan transparan kepada pelamar kerja mengenai sisi positif MAUPUN sisi negatif pekerjaan sebelum kontrak ditandatangani.',
+            '**Penerapan Konkret**: Saat wawancara, pelamar diajak melihat langsung gudang sortir yang berdebu, diperlihatkan video rute macet saat hujan, dan diberi simulasi membawa beban paket berat.',
+            '**Hasil**: Pelamar yang tidak sanggup secara fisik akan mengundurkan diri secara sukarela sejak awal (*self-selection*), sedangkan kandidat yang tetap menerima tawaran telah memiliki kesiapan mental matang, memangkas drastis turnover dini.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 10'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Strategic HRM Cycle', 'Keterkaitan strategi bisnis dengan perencanaan, rekrutmen, dan retensi talenta.', 'Mampu menyusun tahapan pengadaan SDM profesional.'],
+        ['2', 'Penilaian Kinerja & Bias Evaluasi', 'Analisis sistem umpan balik 360-derajat dan eliminasi bias Halo/Leniency.', 'Mampu mengevaluasi instrumen penilaian kinerja karyawan.'],
+        ['3', 'Keberagaman & Glass Ceiling', 'Manfaat kompetitif DE&I dan pembongkaran hambatan karier wanita/minoritas.', 'Mampu merancang kebijakan tempat kerja yang inklusif.']
+      ],
+      caption: 'Tabel 10.2: Peta penguasaan submateri TM 10 Pengantar Manajemen.'
+    },
+    CASE_HR_TALENT_DIVERSITY,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Job Description vs Job Specification**: Job Description memuat ringkasan tugas dan tanggung jawab fisik pekerjaan; Job Specification memuat kualifikasi pengetahuan, keterampilan, dan pendidikan yang wajib dimiliki kandidat.',
-        '**360-Degree Feedback**: Evaluasi kinerja komprehensif yang mengumpulkan umpan balik dari atasan, rekan kerja sejawat, bawahan langsung, dan pelanggan eksternal.',
-        '**BARS**: Metode penilaian kinerja yang mengaitkan skala evaluasi dengan contoh-contoh perilaku kerja nyata yang teramati secara objektif.'
+        '**SDM Adalah Aset Utama Perusahaan**: Di era ekonomi berbasis pengetahuan (*Knowledge Economy*), keunggulan kompetitif tidak lagi terletak pada mesin pabrik fisik, melainkan pada keahlian dan kreativitas modal manusia (Human Capital).',
+        '**Glass Ceiling Harus Dipecahkan**: Batasan tak kasat mata (*Glass Ceiling*) yang menghalangi wanita dan minoritas mencapai posisi direksi bukan hanya tidak adil secara moral, melainkan merugikan korporasi karena kehilangan talenta kepemimpinan terbaik.',
+        '**360 Feedback untuk Pengembangan, Bukan Bonus**: Sistem 360-derajat paling efektif bila digunakan untuk tujuan pengembangan kepemimpinan (*developmental*); jika digunakan langsung untuk menentukan bonus uang, sistem ini rentan dirusak oleh politik saling balas budi.'
       ]
     }
   ]

@@ -1,110 +1,114 @@
-﻿import type { Reading } from '../../../types';
-import { CASE_ETHICAL_DECISION } from '../manajemenPracticeCases';
+import type { Reading } from '../../../types';
+import { CASE_ETHICAL_DECISION_CSR } from '../manajemenPracticeCases';
 
-const SVG_ETHICAL_FRAMEWORKS = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">LIMA PENDEKATAN PENGAMBILAN KEPUTUSAN ETIS (DAFT &amp; MARCIC CH. 4)</text>
+const SVG_CARROLL_CSR = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PIRAMIDA TANGGUNG JAWAB SOSIAL PERUSAHAAN (ARCHIE B. CARROLL)</text>
   
-  <rect x="25" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="82" y="78" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">1. Utilitarian</text>
-  <text x="82" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Manfaat Terbesar</text>
-  <line x1="35" y1="108" x2="130" y2="108" stroke="#334155"/>
-  <text x="82" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kebaikan maksimal</text>
-  <text x="82" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">untuk jumlah orang</text>
-  <text x="82" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">terbanyak</text>
-  <text x="82" y="180" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">(Greatest Good)</text>
+  <polygon points="340,50 430,85 250,85" fill="#a78bfa" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="340" y="74" fill="#ffffff" font-size="8.5" font-weight="700" text-anchor="middle">1. FILANTROPIS (Jadilah Warga Baik)</text>
 
-  <rect x="155" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">2. Individualism</text>
-  <text x="212" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Kepentingan Diri</text>
-  <line x1="165" y1="108" x2="260" y2="108" stroke="#334155"/>
-  <text x="212" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">Tindakan etis jika</text>
-  <text x="212" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">mendorong laba</text>
-  <text x="212" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">jangka panjang</text>
-  <text x="212" y="180" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">(Self-Interest)</text>
+  <polygon points="250,88 430,88 470,123 210,123" fill="#38bdf8" stroke="#7dd3fc" stroke-width="1.5"/>
+  <text x="340" y="109" fill="#0f172a" font-size="9" font-weight="700" text-anchor="middle">2. ETIS (Lakukan Hal yang Benar &amp; Adil)</text>
 
-  <rect x="285" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="342" y="78" fill="#f59e0b" font-size="9.5" font-weight="700" text-anchor="middle">3. Moral-Rights</text>
-  <text x="342" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Hak Asasi Dasar</text>
-  <line x1="295" y1="108" x2="390" y2="108" stroke="#334155"/>
-  <text x="342" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">Menghormati hak</text>
-  <text x="342" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">hidup, privasi, &amp;</text>
-  <text x="342" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">kebebasan bicara</text>
-  <text x="342" y="180" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">(Human Rights)</text>
+  <polygon points="210,126 470,126 510,161 170,161" fill="#fbbf24" stroke="#fde047" stroke-width="1.5"/>
+  <text x="340" y="147" fill="#0f172a" font-size="9" font-weight="700" text-anchor="middle">3. HUKUM (Patuhi Hukum &amp; Regulasi Negara)</text>
 
-  <rect x="415" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="472" y="78" fill="#a855f7" font-size="9.5" font-weight="700" text-anchor="middle">4. Justice</text>
-  <text x="472" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Keadilan Setara</text>
-  <line x1="425" y1="108" x2="520" y2="108" stroke="#334155"/>
-  <text x="472" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">Keadilan distributif,</text>
-  <text x="472" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">prosedural, dan</text>
-  <text x="472" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">kompensatori</text>
-  <text x="472" y="180" fill="#c084fc" font-size="8.5" font-weight="700" text-anchor="middle">(Fairness)</text>
-
-  <rect x="545" y="55" width="115" height="150" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
-  <text x="602" y="78" fill="#ec4899" font-size="9.5" font-weight="700" text-anchor="middle">5. Practical</text>
-  <text x="602" y="96" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Standar Publik</text>
-  <line x1="555" y1="108" x2="650" y2="108" stroke="#334155"/>
-  <text x="602" y="126" fill="#94a3b8" font-size="8.5" text-anchor="middle">Transparan bagi</text>
-  <text x="602" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">masyarakat dan</text>
-  <text x="602" y="158" fill="#94a3b8" font-size="8.5" text-anchor="middle">profesi profesi</text>
-  <text x="602" y="180" fill="#f472b6" font-size="8.5" font-weight="700" text-anchor="middle">(Public Scrutiny)</text>
+  <polygon points="170,164 510,164 550,200 130,200" fill="#4ade80" stroke="#86efac" stroke-width="1.5"/>
+  <text x="340" y="185" fill="#0f172a" font-size="9.5" font-weight="700" text-anchor="middle">4. EKONOMI (Hasilkan Keuntungan &amp; Bernilai Ekonomis)</text>
 </svg>`;
 
 export const TM4_READING: Reading = {
   tm: 4,
   title: 'Managing Ethics and Social Responsibility (CSR & ESG)',
-  ref: 'Richard L. Daft & Dorothy Marcic Ch. 4',
-  intro: 'Modul Pembelajaran Mendalam Pengantar Manajemen TM 4: Menguasai etika manajerial (*Managerial Ethics*), domain hukum tertulis vs domain etika vs domain pilihan bebas, 5 pendekatan pengambilan keputusan etis (Utilitarian, Individualism, Moral-Rights, Justice, Practical), 3 tahapan perkembangan moral Lawrence Kohlberg, Tanggung Jawab Sosial Perusahaan (Corporate Social Responsibility / CSR), model Triple Bottom Line (People, Planet, Profit), serta struktur tata kelola etika (Code of Ethics, Chief Ethics Officer, Whistleblowing).',
+  ref: 'Richard L. Daft Bab 5 | Archie Carroll CSR Pyramid | 4 Pendekatan Etika & Kerangka Triple Bottom Line',
+  intro: 'TM 4 membahas dimensi moral dalam pengambilan keputusan bisnis: domain hukum vs etika vs kebebasan individu, 4 pendekatan etika manajerial (Utilitarian, Individualism, Moral-Rights, Justice Approach), tahapan perkembangan moral Lawrence Kohlberg, Piramida Tanggung Jawab Sosial Korporasi (Archie B. Carroll: Ekonomi, Hukum, Etis, Filantropis), serta evolusi keberlanjutan bisnis modern melalui kerangka Triple Bottom Line (People, Planet, Profit) dan Environmental, Social, and Governance (ESG).',
   objectives: [
-    'Mendefinisikan Etika Manajerial sebagai standar moral perilaku yang memandu pengambilan keputusan benar versus salah.',
-    'Membedakan Tiga Domain Perilaku Manusia: Domain Hukum Terkodifikasi (Legal), Domain Etika (Standar Moral Sosial), dan Domain Pilihan Bebas (Personal Free Choice).',
-    'Menerapkan 5 Kerangka Kerja Pengambilan Keputusan Etis: Utilitarian, Individualisme, Hak Moral, Keadilan (Distributif, Prosedural, Kompensatori), dan Praktikal.',
-    'Menjelaskan Tiga Tingkat Perkembangan Moral Lawrence Kohlberg: Preconventional (Patuh demi hindari hukuman), Conventional (Menuruti norma sosial/hukum), dan Postconventional (Berprinsip keadilan universal).',
-    'Mengevaluasi Piramida Tanggung Jawab Sosial Perusahaan Archie Carroll: Ekonomi, Hukum, Etika, dan Filantropis/Diskresioner.',
-    'Menjelaskan mekanisme perlindungan bagi peniup peluit (*Whistleblower Protection*).'
+    'Membedakan 3 domain tindakan manusia: Hukum yang Dikodifikasi, Etika, dan Pilihan Bebas Individu.',
+    'Menerapkan 4 pendekatan etika manajerial dalam memecahkan dilema bisnis yang ambigu.',
+    'Menganalisis 4 tingkatan piramida CSR Archie Carroll: Ekonomi, Hukum, Etis, dan Filantropis.',
+    'Menjelaskan integrasi prinsip Environmental, Social, and Governance (ESG) dalam penciptaan nilai jangka panjang.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Lima Kerangka Kerja Pengambilan Keputusan Etis (Daft & Marcic)',
-      svg: SVG_ETHICAL_FRAMEWORKS,
-      caption: 'Gambar 4.1: Perspektif filosofis yang digunakan manajer untuk memecahkan dilema moral bisnis.'
+      caption: 'Gambar 4.1: Piramida Tanggung Jawab Sosial Perusahaan (Carrolls CSR Pyramid).',
+      svg: SVG_CARROLL_CSR
     },
-
-    { kind: 'h2', text: '1. Tiga Tingkat Perkembangan Moral (Lawrence Kohlberg)' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 4'
+    },
     {
       kind: 'table',
-      headers: ['Tingkat Perkembangan Moral', 'Motivasi Perilaku Individu', 'Gaya Kepemimpinan Manajer'],
+      headers: ['Pendekatan Etika Manajerial', 'Prinsip Penentuan Keputusan Moral', 'Contoh Kasus Pengambilan Keputusan', 'Kelemahan / Risiko Pendekatan'],
       rows: [
-        ['**Tingkat 1: Preconventional (Prakonvensional)**', 'Fokus pada kepentingan diri sendiri; mematuhi aturan hanya demi menghindari hukuman atau memperoleh hadiah fisik.', '**Otokratis / Koersif**: Menggunakan kekuasaan imbalan dan hukuman.'],
-        ['**Tingkat 2: Conventional (Konvensional)**', 'Menuruti ekspektasi orang lain, menjaga norma sosial, dan mematuhi undang-undang yang berlaku.', '**Berorientasi Tim & Pembimbing**: Menekankan kepatuhan aturan dan harmoni kerja bersama.'],
-        ['**Tingkat 3: Postconventional / Principled (Pascakonvensional)**', 'Berpegang teguh pada prinsip-prinsip keadilan, kesetaraan, dan hak asasi manusia universal, bahkan jika bertentangan dengan hukum mayoritas.', '**Servant Leadership / Transformatif**: Memberdayakan bawahan untuk berkembang penuh dan bertindak benar secara independen.']
+        ['Pendekatan Utilitarian', 'Memilih alternatif yang menghasilkan kebaikan terbesar bagi jumlah orang terbanyak.', 'Menutup satu pabrik cabang yang merugi demi menyelamatkan ribuan pekerja di pabrik utama.', 'Bisa mengorbankan hak dasar kelompok minoritas demi kepentingan mayoritas.'],
+        ['Pendekatan Individualisme', 'Tindakan benar secara moral jika mempromosikan kepentingan pribadi jangka panjang terbaik.', 'Menolak memberi suap kepada pejabat agar perusahaan tidak terkena sanksi hukum di masa depan.', 'Rentan disalahartikan sebagai justifikasi keserakahan jangka pendek.'],
+        ['Pendekatan Hak Moral (Moral-Rights)', 'Menghormati hak asasi manusia dasar yang tidak boleh dilanggar (privasi, kebebasan berbicara, keselamatan).', 'Melarang pemantauan CCTV di ruang istirahat pribadi dan menolak jam kerja yang membahayakan nyawa.', 'Dapat menghambat efisiensi operasional dan manajemen kontrol.'],
+        ['Pendekatan Keadilan (Justice)', 'Standar keadilan distributive (distribusi adil), procedural (prosedur transparan), dan compensatory (ganti rugi).', 'Memberikan upah setara untuk pekerjaan yang sama (Equal Pay for Equal Work) tanpa diskriminasi gender.', 'Sulit mendefinisikan apa yang adil bagi pihak-pihak yang memiliki kepentingan berbeda.']
       ],
-      caption: 'Tabel 4.1: Tahapan kematangan moral manajerial.'
+      caption: 'Tabel 4.0: Matriks 4 pendekatan etika manajerial dalam pengambilan keputusan.'
     },
-
-    CASE_ETHICAL_DECISION,
-
-    { kind: 'h2', text: '2. Piramida Tanggung Jawab Sosial Perusahaan (Archie Carroll)' },
     {
-      kind: 'ol',
-      items: [
-        '**1. Tanggung Jawab Ekonomi (Economic Responsibility)**: Landasan dasar; menghasilkan laba dan menciptakan nilai ekonomis bagi pemilik modal (*Be profitable*).',
-        '**2. Tanggung Jawab Hukum (Legal Responsibility)**: Mematuhi seluruh undang-undang dan peraturan pemerintah yang berlaku (*Obey the law*).',
-        '**3. Tanggung Jawab Etis (Ethical Responsibility)**: Melakukan apa yang adil, patut, dan benar meskipun tidak diwajibkan secara eksplisit oleh hukum (*Be ethical*).',
-        '**4. Tanggung Jawab Filantropis (Discretionary / Philanthropic)**: Berkontribusi secara sukarela untuk meningkatkan kesejahteraan komunitas lokal dan keberlanjutan bumi (*Be a good corporate citizen*).'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 3 Tingkat Perkembangan Moral Lawrence Kohlberg'
+    },
+    {
+      kind: 'table',
+      headers: ['Tingkatan Moral Kohlberg', 'Fokus Pertimbangan Moral', 'Perilaku Manajer di Tempat Kerja', 'Gaya Kepemimpinan'],
+      rows: [
+        ['Tingkat 1: Pra-Konvensional (Pre-Conventional)', 'Fokus pada diri sendiri: Menghindari hukuman fisik dan mengejar imbalan langsung.', 'Mematuhi aturan hanya jika diawasi atasan; mencari keuntungan pribadi semata.', 'Kepemimpinan Otokratis / Memaksa.'],
+        ['Tingkat 2: Konvensional (Conventional)', 'Fokus pada harapan sosial: Memenuhi ekspektasi masyarakat, rekan kerja, dan hukum tertulis.', 'Menjadi pemain tim yang patuh norma kelompok dan menjaga keharmonisan organisasi.', 'Kepemimpinan Berorientasi Hubungan & Tim.'],
+        ['Tingkat 3: Pasca-Konvensional (Post-Conventional)', 'Fokus pada prinsip universal: Bertindak berdasarkan keadilan dan nilai moral internal meskipun melawan hukum atau tekanan kelompok.', 'Berani menjadi Whistleblower membongkar korupsi internal demi membela kebenaran.', 'Kepemimpinan Visioner / Pelayan (Servant).']
+      ],
+      caption: 'Tabel 4.1: Tahapan perkembangan moral Kohlberg.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Evaluasi Kasus Penarikan Produk Cacat (Product Recall)',
+      prompt: 'Sebuah pabrik makanan bayi mendeteksi adanya potensi kontaminasi bakteri dalam 0,1% produk yang telah beredar di supermarket. Hukum belum mewajibkan penarikan karena belum ada laporan korban sakit, dan penarikan produk (recall) akan memicu kerugian finansial Rp 50 Miliar. Apa tindakan manajer yang berada di level moral Pasca-Konvensional Kohlberg?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Tindakan Manajer Moral Level 3 (Pasca-Konvensional)**: Manajer akan segera melakukan **Penarikan Produk Massal Sukarela (Voluntary Recall)** dan mengumumkan bahaya tersebut secara transparan ke publik.',
+            '**Landasan Etika**: Keselamatan nyawa bayi merupakan nilai universal tertinggi (*Moral-Rights Approach*) yang mutlak tidak dapat ditukar dengan kerugian finansial Rp 50 Miliar atau ketiadaan sanksi hukum formal.',
+            '**Dampak Reputasi Jangka Panjang**: Langkah etis ini (seperti kasus klasik Tylenol Johnson & Johnson) justru menyelamatkan reputasi korporasi dan membangun kepercayaan abadi dari konsumen di masa depan.'
+          ]
+        }
       ]
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 4' },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 4'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', '4 Pendekatan Etika', 'Pembedaan utilitarian, individualisme, hak moral, dan keadilan distributive/procedural.', 'Mampu menganalisis studi kasus dilema etika bisnis.'],
+        ['2', 'Piramida CSR Carroll', 'Hierarki 4 tanggung jawab: ekonomi, hukum, etis, dan filantropis.', 'Mampu memetakan program tanggung jawab sosial perusahaan.'],
+        ['3', 'Kerangka ESG & Triple Bottom Line', 'Integrasi pilar Lingkungan, Sosial, dan Tata Kelola dalam strategi korporasi.', 'Mampu mengevaluasi laporan keberlanjutan (Sustainability Report).']
+      ],
+      caption: 'Tabel 4.2: Peta penguasaan submateri TM 4 Pengantar Manajemen.'
+    },
+    CASE_ETHICAL_DECISION_CSR,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Dilema Etis**: Situasi di mana semua pilihan alternatif memiliki konsekuensi negatif potensial dan sulit membedakan benar vs salah.',
-        '**Triple Bottom Line (3P)**: Mengukur kinerja organisasi tidak hanya dari Profit finansial, tetapi juga dampak sosial People dan kelestarian lingkungan Planet.',
-        '**Whistleblowing**: Pengungkapan tindakan ilegal atau tidak etis di dalam organisasi oleh karyawan kepada pihak berwenang.'
+        '**Legal Belum Tentu Etis**: Hukum adalah batas standar minimal yang disepakati masyarakat; tindakan yang legal secara formal dapat tetap sangat tidak etis di mata moralitas publik.',
+        '**Landasan Ekonomi Adalah Fondasi Piramida**: Perusahaan tidak dapat menjalankan tanggung jawab etis atau filantropis jika gagal menghasilkan laba (tanggung jawab ekonomi dasar) untuk mempertahankan kelangsungan hidup usahanya.',
+        '**Whistleblower Butuh Perlindungan Formal**: Manajemen wajib menyediakan saluran pengaduan pelanggaran anonim (Whistleblowing System) yang menjamin pelapor bebas dari ancaman pembalasan karier.'
       ]
     }
   ]

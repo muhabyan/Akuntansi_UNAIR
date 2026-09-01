@@ -1,89 +1,123 @@
-﻿import type { Reading } from '../../../types';
-import { CASE_CULTURE_ENVIRONMENT } from '../manajemenPracticeCases';
+import type { Reading } from '../../../types';
+import { CASE_CULTURE_ENVIRONMENT_DAFT } from '../manajemenPracticeCases';
 
-const SVG_CULTURE_MATRIX = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">EMPAT TIPE BUDAYA ORGANISASI (DAFT &amp; MARCIC CULTURE MATRIX)</text>
+const SVG_CULTURE_DAFT = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">4 KUADRAN TIPOLOGI BUDAYA ORGANISASI (RICHARD L. DAFT)</text>
   
-  <!-- Adaptability Box -->
-  <rect x="40" y="55" width="280" height="70" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="180" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. Adaptability Culture</text>
-  <text x="180" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Fokus Eksternal &amp; Fleksibilitas Tinggi</text>
-  <text x="180" y="112" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">(Inovasi Cepat &amp; Responsif Pasar)</text>
+  <rect x="35" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="177" y="76" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">ADAPTABILITY CULTURE</text>
+  <text x="177" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Eksternal | Lingkungan: Dinamis</text>
+  <text x="177" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Inovasi lincah, berani risiko (Apple, Gojek)</text>
 
-  <!-- Achievement Box -->
-  <rect x="360" y="55" width="280" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="500" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. Achievement Culture</text>
-  <text x="500" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Fokus Eksternal &amp; Stabilitas Terarah</text>
-  <text x="500" y="112" fill="#fbbf24" font-size="9.5" font-weight="600" text-anchor="middle">(Target Kinerja &amp; Kompetitif Agresif)</text>
+  <rect x="355" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="497" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">ACHIEVEMENT CULTURE</text>
+  <text x="497" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Eksternal | Lingkungan: Stabil</text>
+  <text x="497" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Berorientasi hasil, kompetitif (Investment Bank)</text>
 
-  <!-- Involvement Box -->
-  <rect x="40" y="135" width="280" height="70" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="180" y="158" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">3. Involvement / Clan Culture</text>
-  <text x="180" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Fokus Internal &amp; Fleksibilitas Partisipatif</text>
-  <text x="180" y="192" fill="#7dd3fc" font-size="9.5" font-weight="600" text-anchor="middle">(Kekeluargaan &amp; Kesejahteraan Karyawan)</text>
+  <rect x="35" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="177" y="153" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">INVOLVEMENT CULTURE</text>
+  <text x="177" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Internal | Lingkungan: Fleksibel</text>
+  <text x="177" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Kekeluargaan, kepedulian karyawan (Southwest)</text>
 
-  <!-- Consistency Box -->
-  <rect x="360" y="135" width="280" height="70" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="500" y="158" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">4. Consistency Culture</text>
-  <text x="500" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Fokus Internal &amp; Stabilitas Prosedural</text>
-  <text x="500" y="192" fill="#c084fc" font-size="9.5" font-weight="600" text-anchor="middle">(Kepatuhan SOP, Disiplin, &amp; Ketertiban)</text>
+  <rect x="355" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="497" y="153" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">CONSISTENCY CULTURE</text>
+  <text x="497" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Internal | Lingkungan: Stabil</text>
+  <text x="497" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Tertib aturan, metodis, kepatuhan SOP (Bank/BUMN)</text>
 </svg>`;
 
 export const TM2_READING: Reading = {
   tm: 2,
   title: 'The Environment and Corporate Culture: Lingkungan Eksternal & Budaya Organisasi',
-  ref: 'Richard L. Daft & Dorothy Marcic Ch. 2',
-  intro: 'Modul Pembelajaran Mendalam Pengantar Manajemen TM 2: Menguasai analisis Lingkungan Eksternal (Lingkungan Tugas / *Task Environment*: Pelanggan, Pesaing, Pemasok, Pasar Tenaga Kerja vs Lingkungan Umum / *General Environment*: Teknologi, Alami, Sosial-Budaya, Ekonomi, Hukum-Politik, Internasional), dimensi ketidakpastian lingkungan (*Environmental Uncertainty*), 4 tipologi Budaya Organisasi Daft (Adaptability, Achievement, Involvement, Consistency), serta peran Kepemimpinan Budaya (*Cultural Leadership*) dalam membangun organisasi berkinerja tinggi.',
+  ref: 'Richard L. Daft Bab 2 & 3 | Edgar Schein Organizational Culture | Analisis PESTEL & Task Environment',
+  intro: 'TM 2 membahas interaksi antara organisasi dengan ekosistem lingkungannya: pemisahan Lingkungan Umum (General Environment: Politik/Hukum, Ekonomi, Sosial-Budaya, Teknologi, Lingkungan Alami, Global / PESTEL) vs Lingkungan Tugas (Task Environment: Pelanggan, Pesaing, Pemasok, Pasar Tenaga Kerja), ketidakpastian lingkungan, serta 4 Tipologi Budaya Organisasi Daft (Adaptability, Achievement, Involvement, dan Consistency Culture) dan 3 Level Budaya menurut Edgar Schein (Artifacts, Espoused Values, Underlying Assumptions).',
   objectives: [
-    'Menganalisis komponen Lingkungan Tugas (Task Environment) yang berinteraksi langsung dengan organisasi setiap hari.',
-    'Menganalisis 6 dimensi Lingkungan Umum (General Environment) yang mempengaruhi organisasi secara tidak langsung.',
-    'Menjelaskan strategi organisasi dalam merespons ketidakpastian lingkungan (Boundary-spanning roles, Kemitraan antarorganisasi / Interorganizational partnerships, Merger & Joint Ventures).',
-    'Mengidentifikasi simbol-simbol kasat mata dan nilai-nilai tersembunyi pembentuk Budaya Organisasi (Simbol, Cerita / Stories, Pahlawan / Heroes, Slogan, dan Upacara / Ceremonies).',
-    'Membandingkan 4 tipe budaya organisasi berdasarkan matriks Fokus Strategis vs Kebutuhan Lingkungan.',
-    'Menerapkan peran Cultural Leader dalam menyelaraskan budaya dengan strategi kinerja tinggi.'
+    'Membedakan dimensi Lingkungan Umum (PESTEL) vs Lingkungan Tugas yang dihadapi perusahaan.',
+    'Menganalisis derajat ketidakpastian lingkungan (Environmental Uncertainty) berdasarkan dinamika dan kompleksitas.',
+    'Mengklasifikasikan budaya perusahaan ke dalam 4 tipologi Daft (Adaptability, Achievement, Involvement, Consistency).',
+    'Mendiagnosa 3 lapisan budaya organisasi Edgar Schein: Artifak terlihat, Nilai-nilai yang dianut, dan Asumsi dasar tersembunyi.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Empat Tipologi Budaya Organisasi (Daft & Marcic)',
-      svg: SVG_CULTURE_MATRIX,
-      caption: 'Gambar 2.1: Klasifikasi budaya berdasarkan fokus internal/eksternal dan kebutuhan stabilitas/fleksibilitas lingkungan.'
+      caption: 'Gambar 2.1: Matriks 4 Kuadran Budaya Organisasi Daft Berdasarkan Fokus Strategis dan Tuntutan Lingkungan.',
+      svg: SVG_CULTURE_DAFT
     },
-
-    { kind: 'h2', text: '1. Komponen Lingkungan Tugas vs Lingkungan Umum' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 2'
+    },
     {
       kind: 'table',
-      headers: ['Kategori Lingkungan', 'Elemen Komponen', 'Dampak Terhadap Keputusan Manajemen'],
+      headers: ['Dimensi Lingkungan Organisasi', 'Komponen Lingkungan Kunci', 'Contoh Nyata di Indonesia', 'Dampak Strategis bagi Manajemen'],
       rows: [
-        ['**I. Lingkungan Tugas (Task Environment)**', '1. Pelanggan (Customers)\n2. Pesaing (Competitors)\n3. Pemasok (Suppliers)\n4. Pasar Tenaga Kerja (Labor Market)', 'Mempengaruhi transaksi operasional harian secara langsung; menuntut diferensiasi produk, negosiasi harga bahan baku, dan perekrutan talenta terampil.'],
-        ['**II. Lingkungan Umum (General Environment)**', '1. Teknologi (AI, Cloud, Robotika)\n2. Alamiah / Lingkungan Fisik (ESG)\n3. Sosial Budaya (Demografi, Gaya Hidup)\n4. Ekonomi (Inflasi, Suku Bunga, PDB)\n5. Hukum & Politik (Regulasi, Pajak)\n6. Internasional (Globalisasi, Tarif)', 'Menciptakan peluang atau ancaman makro jangka panjang yang memaksa organisasi mengubah model bisnis secara fundamental.']
+        ['Lingkungan Tugas (Task)', 'Pesaing (Competitors)', 'Persaingan Alfamart vs Indomaret, Gojek vs Grab.', 'Menentukan penetapan harga, promosi, dan diferensiasi produk.'],
+        ['Lingkungan Tugas (Task)', 'Konsumen (Customers)', 'Pergeseran konsumen belanja offline ke live TikTok Shop.', 'Mendorong adopsi model bisnis omnichannel instan.'],
+        ['Lingkungan Tugas (Task)', 'Pemasok (Suppliers)', 'Ketergantungan pabrik mie instan pada gandum impor Australia.', 'Memerlukan manajemen risiko rantai pasok dan kontrak berjangka.'],
+        ['Lingkungan Umum (General)', 'Dimensi Teknologi', 'Kecerdasan buatan generatif (Generative AI) dan otomatisasi robotik.', 'Mereduksi kebutuhan staf administrasi dan menuntut upskilling.'],
+        ['Lingkungan Umum (General)', 'Dimensi Hukum & Politik', 'UU Cipta Kerja, UU Pajak HPP, dan regulasi emisi karbon.', 'Meningkatkan biaya kepatuhan hukum dan tata kelola perusahaan.']
       ],
-      caption: 'Tabel 2.1: Pemilahan komponen lingkungan eksternal organisasi.'
+      caption: 'Tabel 2.0: Matriks klasifikasi lingkungan eksternal organisasi.'
     },
-
-    { kind: 'h2', text: '2. Lima Unsur Terlihat Pembentuk Budaya Organisasi' },
     {
-      kind: 'ul',
-      items: [
-        '**Simbol (Symbols)**: Objek, tindakan, atau peristiwa yang memiliki makna khusus (misal: tata ruang kantor terbuka tanpa sekat untuk melambangkan kesetaraan).',
-        '**Cerita (Stories)**: Narasi berbasis kisah nyata yang diceritakan berulang-ulang untuk mengilustrasikan nilai-nilai utama perusahaan (misal kisah pendiri merintis dari garasi).',
-        '**Pahlawan (Heroes)**: Sosok figur teladan yang menjadi model peran perilaku terpuji bagi karyawan.',
-        '**Slogan (Slogans)**: Frasa ringkas yang mengekspresikan nilai budaya utama (misal *“Think Different”* atau *“Customer First”*).',
-        '**Upacara (Ceremonies)**: Acara formal yang direncanakan untuk merayakan momen pencapaian penting dan memperkuat ikatan kebersamaan.'
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 3 Lapisan Budaya Organisasi Edgar Schein'
+    },
+    {
+      kind: 'table',
+      headers: ['Tingkatan Budaya Schein', 'Karakteristik Visibilitas', 'Wujud Konkret dalam Organisasi', 'Tingkat Kesulitan Diubah'],
+      rows: [
+        ['1. Artifak (Artifacts)', 'Sangat terlihat di permukaan (Visible).', 'Seragam kantor kasual, tata letak ruang kerja terbuka (open space), jargon bahasa, upacara tahunan, logo.', 'Mudah diamati dan mudah diubah secara fisik.'],
+        ['2. Nilai-Nilai Dianut (Espoused Values)', 'Kesadaran tingkat menengah (Conscious).', 'Pernyataan misi resmi, semboyan integritas, nilai AKHLAK di BUMN, kode etik perusahaan.', 'Dapat diubah melalui pelatihan kepemimpinan intensif.'],
+        ['3. Asumsi Dasar (Underlying Assumptions)', 'Tidak terlihat dan di bawah sadar (Invisible / Subconscious).', 'Keyakinan terdalam yang dianggap sudah semestinya benar (contoh: "manusia pada dasarnya malas dan harus diawasi ketat").', 'Sangat sulit diubah; merupakan akar perilaku sejati organisasi.']
+      ],
+      caption: 'Tabel 2.1: Tiga tingkatan budaya organisasi Edgar Schein.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Mendiagnosa Budaya Perusahaan Startup Fintech',
+      prompt: 'Sebuah startup fintech memiliki ruangan kantor tanpa sekat dinding, karyawan bebas berpakaian kasual, jam kerja fleksibel, dan pimpinan mendorong staf untuk berani bereksperimen meluncurkan fitur baru meskipun sesekali gagal (Fail Fast, Learn Faster). Tentukan tipologi budaya organisasi Daft yang dominan!',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Karakteristik Kunci**: Lingkungan industri fintech sangat dinamis, menuntut fleksibilitas tinggi, dan fokus pada respon kebutuhan pasar eksternal yang bergerak cepat.',
+            '**Tipologi Budaya Daft**: Karakteristik ini mencerminkan **Adaptability Culture** (Budaya Adaptabilitas).',
+            '**Nilai Utama**: Nilai yang dihargai adalah kreativitas, eksperimentasi lincah, otonomi pengambilan keputusan cepat, dan kesiapan merangkul perubahan tanpa takut disanksi.'
+          ]
+        }
       ]
     },
-
-    CASE_CULTURE_ENVIRONMENT,
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 2' },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 2'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'PESTEL & Task Environment', 'Pemisahan 6 dimensi makro dan 4 aktor mikro lingkungan tugas.', 'Mampu mengidentifikasi sumber ancaman dan peluang eksternal.'],
+        ['2', '4 Tipologi Budaya Daft', 'Kombinasi fokus internal/eksternal dan kebutuhan lingkungan fleksibel/stabil.', 'Mampu mencocokkan profil perusahaan dengan tipe budaya Daft.'],
+        ['3', '3 Level Budaya Schein', 'Analisis artifak fisik, nilai resmi, dan asumsi dasar bawah sadar.', 'Mampu menguraikan anatomi budaya sebuah korporasi.']
+      ],
+      caption: 'Tabel 2.2: Peta penguasaan submateri TM 2 Pengantar Manajemen.'
+    },
+    CASE_CULTURE_ENVIRONMENT_DAFT,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**High-Performance Culture**: Budaya yang menyeimbangkan antara nilai-nilai budaya yang kuat dengan dorongan pencapaian kinerja bisnis yang tinggi.',
-        '**Boundary-Spanning**: Peran karyawan (seperti tim riset pasar dan humas) untuk mendeteksi sinyal perubahan di lingkungan luar.',
-        '**Cultural Leader**: Pemimpin yang secara konsisten mengomunikasikan visi melalui tindakan nyata dan pemberian penghargaan.'
+        '**Budaya Memakan Strategi Saat Sarapan (Culture Eats Strategy for Breakfast)**: Ucapan terkenal Peter Drucker menegaskan bahwa sebaik apapun rencana strategis dirancang, rencana tersebut akan gagal total jika bertentangan dengan budaya organisasi internal.',
+        '**Boundary-Spanning Roles**: Untuk mengatasi ketidakpastian lingkungan, manajer harus membentuk peran perentang batas (Boundary Spanning) seperti tim riset pasar dan hubungan pemerintah.',
+        '**Simbol dan Cerita Membentuk Budaya**: Para pemimpin menanamkan budaya baru bukan hanya melalui instruksi memo, melainkan melalui cerita keteladanan (hero stories), slogan inspiratif, dan upacara pemberian penghargaan.'
       ]
     }
   ]

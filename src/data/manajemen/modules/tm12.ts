@@ -1,90 +1,136 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
+import { CASE_LEADERSHIP_TRANSFORMATIONAL } from '../manajemenPracticeCases';
 
-const SVG_LEADERSHIP_GRID = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">THE LEADERSHIP GRID (BLAKE &amp; MOUTON / DAFT CH. 11)</text>
+const SVG_SITUATIONAL_LEADERSHIP = `
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
+  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL KEPEMIMPINAN SITUASIONAL (HERSEY-BLANCHARD)</text>
   
-  <!-- Country Club (1,9) -->
-  <rect x="30" y="55" width="280" height="70" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="170" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">Country Club Management (1,9)</text>
-  <text x="170" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Perhatian Tinggi pada Orang / Rendah pada Produksi</text>
-  <text x="170" y="112" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Suasana ramah nyaman tapi target terabaikan)</text>
+  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="97" y="78" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DIRECTING / TELLING</text>
+  <text x="97" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R1</text>
+  <text x="97" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Bawahan: Tidak mampu</text>
+  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kurang percaya diri</text>
+  <text x="97" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#7dd3fc" font-weight="700">Tinggi Tugas, Rendah Relasi</tspan></text>
+  <text x="97" y="175" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Instruksi Spesifik</text>
 
-  <!-- Team Management (9,9) -->
-  <rect x="370" y="55" width="280" height="70" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="510" y="78" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">Team Management (9,9) [IDEAL]</text>
-  <text x="510" y="96" fill="#cbd5e1" font-size="9" text-anchor="middle">Perhatian Tinggi pada Orang &amp; Tinggi pada Produksi</text>
-  <text x="510" y="112" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">(Komitmen bersama, kepercayaan, &amp; kinerja unggul)</text>
+  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="257" y="78" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">COACHING / SELLING</text>
+  <text x="257" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R2</text>
+  <text x="257" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Belum mampu tapi Mau</text>
+  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Motivasi belajar tinggi</text>
+  <text x="257" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#86efac" font-weight="700">Tinggi Tugas, Tinggi Relasi</tspan></text>
+  <text x="257" y="175" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle">Bimbingan &amp; Dukungan</text>
 
-  <!-- Impoverished (1,1) -->
-  <rect x="30" y="135" width="280" height="70" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="170" y="158" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">Impoverished Management (1,1)</text>
-  <text x="170" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Perhatian Rendah pada Orang &amp; Rendah pada Produksi</text>
-  <text x="170" y="192" fill="#fca5a5" font-size="8.5" text-anchor="middle">(Usaha minimal sekadar mempertahankan pekerjaan)</text>
+  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="417" y="78" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">SUPPORTING</text>
+  <text x="417" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R3</text>
+  <text x="417" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Mampu tapi Ragu/Demotivasi</text>
+  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Butuh dorongan moral</text>
+  <text x="417" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#fde047" font-weight="700">Rendah Tugas, Tinggi Relasi</tspan></text>
+  <text x="417" y="175" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Partisipasi Diskusi</text>
 
-  <!-- Authority-Compliance (9,1) -->
-  <rect x="370" y="135" width="280" height="70" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="510" y="158" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">Authority-Compliance (9,1)</text>
-  <text x="510" y="176" fill="#cbd5e1" font-size="9" text-anchor="middle">Perhatian Rendah pada Orang &amp; Tinggi pada Produksi</text>
-  <text x="510" y="192" fill="#fbbf24" font-size="8.5" text-anchor="middle">(Efisiensi hasil kerja tinggi, manusia dianggap mesin)</text>
+  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="580" y="78" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">DELEGATING</text>
+  <text x="580" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R4</text>
+  <text x="580" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Sangat mampu &amp; Percaya diri</text>
+  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ahli independen</text>
+  <text x="580" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#c4b5fd" font-weight="700">Rendah Tugas, Rendah Relasi</tspan></text>
+  <text x="580" y="175" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Otonomi Mandiri</text>
 </svg>`;
 
 export const TM12_READING: Reading = {
   tm: 12,
   title: 'Leadership in Organizations: Teori Perilaku, Kontinjensi, & Kepemimpinan Transformasional',
-  ref: 'Richard L. Daft & Dorothy Marcic Ch. 11',
-  intro: 'Modul Pembelajaran Mendalam Pengantar Manajemen TM 12: Menguasai hakikat Kepemimpinan vs Manajemen (Mengarahkan perubahan inspiratif vs Menjaga keteraturan operasional), Teori Sifat (*Trait Theory*), Teori Perilaku (The Leadership Grid: *Team Management 9,9*), Teori Kontinjensi Situasional (Fiedler Contingency Model: *LPC Scale* & Kesesuaian Situasi; Teori Situasional Hersey-Blanchard: *Telling, Selling, Participating, Delegating* berdasarkan Kematangan Pengikut), Kepemimpinan Karismatik & Transformasional vs Transaksional, Kepemimpinan Pelayan (*Servant Leadership*), serta 5 Sumber Kekuasaan (*Power & Influence*).',
+  ref: 'Richard L. Daft Bab 16 | Hersey-Blanchard Situational Leadership | Bernard Bass Transformational Leadership',
+  intro: 'TM 12 membahas evolusi teori kepemimpinan dalam organisasi: pergeseran dari Teori Sifat (Trait Theory) ke Teori Perilaku (Blake & Mouton Leadership Grid), Teori Kontinjensi (Model Kontinjensi Fiedler dan Kepemimpinan Situasional Hersey-Blanchard), perbandingan Kepemimpinan Transaksional vs Kepemimpinan Transformasional (The 4 Is: Idealized Influence, Inspirational Motivation, Intellectual Stimulation, Individualized Consideration), Kepemimpinan Karismatik, serta filosofi Kepemimpinan Pelayan (Servant Leadership).',
   objectives: [
-    'Membedakan Hakikat Manajemen (menghasilkan keteraturan dan efisiensi melalui kontrol) vs Kepemimpinan (menghasilkan perubahan visi dan memotivasi pengikut).',
-    'Menganalisis kisi-kisi kepemimpinan Blake & Mouton (The Leadership Grid) berdasarkan dimensi Kepedulian pada Orang vs Kepedulian pada Produksi.',
-    'Menerapkan Teori Kepemimpinan Situasional Hersey & Blanchard berdasarkan tingkat Kesiapan / Kematangan Pengikut (R1 s.d R4).',
-    'Menjelaskan Teori Kontinjensi Fred Fiedler (mencocokkan gaya pemimpin berorientasi tugas vs hubungan dengan kendali situasi: Hubungan Pemimpin-Anggota, Struktur Tugas, Kekuasaan Posisi).',
-    'Membedakan Pemimpin Transformasional (menginspirasi bawahan melampaui kepentingan pribadi demi visi luhur) vs Pemimpin Transaksional (menjelaskan peran tugas dan memberikan imbalan kontraktual).',
-    'Mengidentifikasi 5 Sumber Kekuasaan (Power): Kekuasaan Posisi (*Legitimate, Reward, Coercive*) vs Kekuasaan Personal (*Expert, Referent*).'
+    'Membedakan peran Manajemen (menciptakan keteraturan dan stabilitas) vs Kepemimpinan (menciptakan perubahan dan visi).',
+    'Menerapkan Model Kepemimpinan Situasional Hersey-Blanchard sesuai tingkat kesiapan pengikut (R1 s/d R4).',
+    'Menjelaskan model kontinjensi Fiedler (LPC Scale dan kesesuaian situasi kepemimpinan).',
+    'Menganalisis 4 pilar Kepemimpinan Transformasional dalam mendorong kinerja melampaui ekspektasi.',
+    'Menjelaskan karakteristik Servant Leadership menurut Robert Greenleaf.'
   ],
   blocks: [
     {
       kind: 'figure',
-      title: 'Kisi-Kisi Gaya Kepemimpinan Manajerial (The Leadership Grid)',
-      svg: SVG_LEADERSHIP_GRID,
-      caption: 'Gambar 12.1: Empat kuadran ekstrem gaya kepemimpinan berdasarkan orientasi manusia vs orientasi tugas.'
+      caption: 'Gambar 12.1: Model Kepemimpinan Situasional Hersey-Blanchard Berdasarkan Tingkat Kesiapan Pengikut.',
+      svg: SVG_SITUATIONAL_LEADERSHIP
     },
-
-    { kind: 'h2', text: '1. Model Kepemimpinan Situasional Hersey-Blanchard' },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 12'
+    },
     {
       kind: 'table',
-      headers: ['Tingkat Kesiapan Bawahan (Follower Readiness)', 'Karakteristik Kompetensi & Komitmen', 'Gaya Kepemimpinan yang Tepat'],
+      headers: ['Tingkat Kesiapan Pengikut', 'Karakteristik Kompetensi & Komitmen Bawahan', 'Gaya Kepemimpinan yang Cocok', 'Fokus Perilaku Pemimpin'],
       rows: [
-        ['**R1: Kesiapan Rendah (Low)**', 'Bawahan tidak mampu (*unable*) dan tidak mau/tidak percaya diri (*unwilling/insecure*).', '**Telling / Directing (Gaya Menginstruksikan)**: Memberikan arahan tugas rinci dan pengawasan ketat.'],
-        ['**R2: Kesiapan Sedang (Moderate)**', 'Bawahan tidak mampu (*unable*) tetapi memiliki kemauan belajar tinggi (*willing/confident*).', '**Selling / Coaching (Gaya Membimbing)**: Memberikan arahan tugas sekaligus penjelasan dan dukungan emosional.'],
-        ['**R3: Kesiapan Tinggi (High)**', 'Bawahan mampu (*able*) tetapi kurang percaya diri atau enggan mengambil inisiatif (*unwilling/insecure*).', '**Participating / Supporting (Gaya Berpartisipasi)**: Berbagi ide dalam pengambilan keputusan dan memfasilitasi.'],
-        ['**R4: Kesiapan Sangat Tinggi (Very High)**', 'Bawahan sangat mampu (*able*) dan sangat berkomitmen mandiri (*willing/confident*).', '**Delegating (Gaya Mendelegasikan)**: Memberikan otonomi penuh atas pelaksanaan tugas dan keputusan.']
+        ['R1: Kesiapan Rendah', 'Tidak mampu dan tidak percaya diri / enggan.', 'Directing / Telling (Menginstruksikan)', 'Tinggi perilaku tugas, rendah relasi; beri arahan SOP rinci dan pantau ketat.'],
+        ['R2: Kesiapan Sedang-Rendah', 'Belum mampu secara teknis, namun bersemangat dan mau belajar.', 'Coaching / Selling (Melatih/Menjual Ide)', 'Tinggi tugas, tinggi relasi; menjelaskan rasionalitas keputusan dan membimbing.'],
+        ['R3: Kesiapan Sedang-Tinggi', 'Kompeten secara teknis, namun ragu-ragu atau kehilangan motivasi.', 'Supporting / Participating (Mendukung)', 'Rendah tugas, tinggi relasi; membuka diskusi partisipatif dan memompa moral.'],
+        ['R4: Kesiapan Sangat Tinggi', 'Sangat kompeten, berpengalaman, dan memiliki komitmen mandiri tinggi.', 'Delegating (Mendelegasikan)', 'Rendah tugas, rendah relasi; memberikan otonomi penuh atas sasaran kerja.']
       ],
-      caption: 'Tabel 12.1: Penyelarasan gaya kepemimpinan dengan kematangan bawahan.'
+      caption: 'Tabel 12.0: Matriks kepemimpinan situasional Hersey-Blanchard.'
     },
-
-    { kind: 'h2', text: '2. Lima Sumber Kekuasaan Pemimpin (French & Raven)' },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: 4 Pilar Kepemimpinan Transformasional (The 4 Is)'
+    },
     {
       kind: 'table',
-      headers: ['Sumber Kekuasaan (Power)', 'Basis Kekuasaan', 'Respon Khas Bawahan'],
+      headers: ['Pilar Transformasional', 'Definisi Perilaku Kepemimpinan', 'Pengaruh Nyata Terhadap Karyawan'],
       rows: [
-        ['**1. Kekuasaan Sah (Legitimate Power)**', 'Wewenang formal yang melekat pada posisi jabatan struktural dalam organisasi.', 'Kepatuhan (*Compliance*)'],
-        ['**2. Kekuasaan Imbalan (Reward Power)**', 'Kewenangan untuk memberikan imbalan (bonus, promosi kerja, pujian).', 'Kepatuhan (*Compliance*)'],
-        ['**3. Kekuasaan Paksaan (Coercive Power)**', 'Kewenangan untuk menghukum atau merekomendasikan sanksi (teguran, pemecatan).', 'Resistensi / Perlawanan pasif'],
-        ['**4. Kekuasaan Keahlian (Expert Power)**', 'Pengetahuan khusus, keterampilan teknis, dan keahlian mendalam yang diakui.', '**Komitmen Tulus (*Commitment*)**'],
-        ['**5. Kekuasaan Rujukan (Referent Power)**', 'Karakteristik pribadi, integritas, dan karisma yang membuat orang lain kagum dan ingin meniru.', '**Komitmen Tulus (*Commitment*)**']
+        ['Idealized Influence (Pengaruh Ideal / Karisma)', 'Pemimpin menjadi panutan teladan integritas, moralitas, dan keberanian berkorban.', 'Pengikut menaruh rasa hormat mendalam, kagum, dan meniru standar etikanya.'],
+        ['Inspirational Motivation (Motivasi Inspiratif)', 'Mengkomunikasikan visi masa depan yang optimis dan menantang dengan penuh semangat.', 'Membangkitkan rasa memiliki misi luhur dan antusiasme kerja tim.'],
+        ['Intellectual Stimulation (Stimulasi Intelektual)', 'Mendorong bawahan mempertanyakan cara-cara kerja konvensional dan mencoba ide baru.', 'Menciptakan budaya inovasi dan keberanian berpikir di luar kotak.'],
+        ['Individualized Consideration (Perhatian Individual)', 'Memperlakukan setiap anggota tim secara unik, bertindak sebagai mentor dan pendengar sabar.', 'Karyawan merasa dihargai secara personal dan potensi kariernya bertumbuh mekar.']
       ],
-      caption: 'Tabel 12.2: Klasifikasi kekuasaan posisi vs kekuasaan personal.'
+      caption: 'Tabel 12.1: Empat pilar kepemimpinan transformasional Bernard Bass.'
     },
-
-    { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian TM 12' },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Memilih Gaya Kepemimpinan untuk Tim Programmer Senior',
+      prompt: 'Sebuah perusahaan teknologi merekrut tim yang terdiri dari 5 orang software engineer senior kelas dunia (Kesiapan R4: sangat ahli dan berkomitmen tinggi). Manajer proyek baru justru menerapkan gaya kepemimpinan Telling (mengecek baris kode setiap jam dan mendikte cara penulisan algoritma). Apa dampak kesalahan gaya kepemimpinan ini?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Kondisi Kesiapan Pengikut**: Para engineer berada pada level kesiapan **R4 (Mampu dan Percaya Diri Tinggi)**.',
+            '**Gaya yang Seharusnya**: Gaya yang cocok adalah **Delegating** (memberikan tujuan akhir proyek dan membiarkan mereka merancang arsitektur kode secara kreatif).',
+            '**Dampak Kesalahan Gaya (Micromanagement)**: Penerapan gaya *Telling* yang kaku merendahkan martabat profesional para ahli, mematikan inovasi mereka, menimbulkan kebencian mendalam, dan memicu pengunduran diri massal talenta kunci.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 12'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Manajemen vs Kepemimpinan', 'Pembedaan fungsi kestabilan manajerial vs agen perubahan kepemimpinan.', 'Mampu membedakan aksi manajemen vs kepemimpinan.'],
+        ['2', 'Situational Leadership Model', 'Penerapan 4 gaya (Telling, Selling, Supporting, Delegating) pada kesiapan R1-R4.', 'Mampu mendiagnosa gaya kepemimpinan yang tepat pada studi kasus.'],
+        ['3', 'Kepemimpinan Transformasional', 'Analisis 4 pilar transformasional vs kepemimpinan transaksional dan servant.', 'Mampu menguraikan strategi kepemimpinan perubahan berskala masif.']
+      ],
+      caption: 'Tabel 12.2: Peta penguasaan submateri TM 12 Pengantar Manajemen.'
+    },
+    CASE_LEADERSHIP_TRANSFORMATIONAL,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
     {
       kind: 'ul',
       items: [
-        '**Servant Leadership**: Gaya kepemimpinan yang melampaui kepentingan diri sendiri untuk melayani kebutuhan bawahan, pelanggan, dan masyarakat luas.',
-        '**Authentic Leadership**: Pemimpin yang mengenal jati diri mereka, bertindak konsisten dengan nilai etika sejati, dan membangun hubungan kepercayaan terbuka.',
-        '**Followership**: Gaya bawahan yang efektif (*Effective Follower*) bersikap kritis mandiri (*critical thinking*) sekaligus aktif terlibat memberikan kontribusi positif bagi organisasi.'
+        '**Tidak Ada Satu Gaya Kepemimpinan Terbaik**: Teori Kontinjensi membuktikan bahwa efektivitas pemimpin bergantung pada kecocokan gaya kepemimpinannya dengan situasi dan tingkat kesiapan pengikut.',
+        '**Pemimpin Melayani Dahulu (Servant First)**: Servant Leadership membalik logika tradisional kekuasaan; keberhasilan pemimpin diukur bukan dari berapa banyak orang yang melayaninya, melainkan dari berapa banyak orang yang ia layani dan kembangkan.',
+        '**Transaksional Menjaga Sistem, Transformasional Mengubahnya**: Kepemimpinan transaksional efektif untuk menjaga kepatuhan operasional rutin harian, sedangkan kepemimpinan transformasional dibutuhkan saat krisis disrupsi.'
       ]
     }
   ]
