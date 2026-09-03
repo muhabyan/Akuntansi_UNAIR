@@ -9,6 +9,7 @@ import { AKS301_FC } from './aks301';
 import { EKT109_FLASHCARDS } from './ekt109';
 
 // Semester 3
+import { MNM101_FC } from './mnm101';
 import { AKK202_FC } from './akk202';
 import { AKM202_FC } from './akm202';
 import { AKS201_FC } from './aks201';
@@ -43,6 +44,8 @@ const FLASHCARD_REGISTRY: Record<string, AdvancedStudyCard[]> = {
   AKS301: AKS301_FC as AdvancedStudyCard[],
   EKT109: EKT109_FLASHCARDS as unknown as AdvancedStudyCard[],
   // Semester 3
+  MNM101: MNM101_FC as AdvancedStudyCard[],
+  MNM201: MNM101_FC as AdvancedStudyCard[],
   AKK202: AKK202_FC as AdvancedStudyCard[],
   AKM202: AKM202_FC as AdvancedStudyCard[],
   AKS201: AKS201_FC as AdvancedStudyCard[],

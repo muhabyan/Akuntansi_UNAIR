@@ -8,6 +8,7 @@ import { MAS122_BANK } from './mas122';
 import { PJK201_BANK, PJK201_BANK_UAS } from './pjk201';
 
 // Semester 3
+import { MNM101_BANK, MNM101_BANK_UTS, MNM101_BANK_UAS } from './mnm101';
 import { AKK202_BANK, AKK202_BANK_UTS, AKK202_BANK_UAS } from './akk202';
 import { AKM202_BANK, AKM202_BANK_UTS, AKM202_BANK_UAS } from './akm202';
 import { AKS201_BANK, AKS201_BANK_UTS, AKS201_BANK_UAS } from './aks201';
@@ -20,6 +21,8 @@ const REGISTRY: Record<string, BankSoal[]> = {
   AKK201: AKK201_BANK, AKM201: AKM201_BANK,
   MNU101: MNU101_BANK, AKA103: AKA103_BANK, MAS122: MAS122_BANK, PJK201: PJK201_BANK,
   // Semester 3
+  MNM101: MNM101_BANK,
+  MNM201: MNM101_BANK,
   AKK202: AKK202_BANK,
   AKM202: AKM202_BANK,
   AKS201: AKS201_BANK,
@@ -51,6 +54,13 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
     ];
   }
   // Semester 3 Sets
+  if (code === 'MNM101' || code === 'MNM201') {
+    return [
+      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Pengantar Manajemen (TM 1–7)', items: MNM101_BANK_UTS },
+      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Pengantar Manajemen (TM 8–14)', items: MNM101_BANK_UAS },
+      { id: 'all', label: 'Kompilasi Seluruh Kasus Pengantar Manajemen (14 TM)', items: MNM101_BANK },
+    ];
+  }
   if (code === 'AKK202') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS AKM II (TM 1–7)', items: AKK202_BANK_UTS },

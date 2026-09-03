@@ -28,6 +28,7 @@ import { MNM107_QUIZ } from './mnm107';
 import { MNM106_QUIZ } from './mnm106';
 
 // Semester 3
+import { MNM101_QUIZ, MNM101_QUIZ_UTS, MNM101_QUIZ_UAS } from './mnm101';
 import { AKK202_QUIZ, AKK202_QUIZ_UTS, AKK202_QUIZ_UAS } from './akk202';
 import { AKM202_QUIZ, AKM202_QUIZ_UTS, AKM202_QUIZ_UAS } from './akm202';
 import { AKS201_QUIZ, AKS201_QUIZ_UTS, AKS201_QUIZ_UAS } from './aks201';
@@ -54,6 +55,8 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   MAS122: MAS122_QUIZ_ALL,
   PJK201: [...PJK201_QUIZ_UTS_SIMULATOR, ...PJK201_QUIZ_UAS_SIMULATOR],
   // Semester 3
+  MNM101: MNM101_QUIZ,
+  MNM201: MNM101_QUIZ,
   AKK202: AKK202_QUIZ,
   AKM202: AKM202_QUIZ,
   AKS201: AKS201_QUIZ,
@@ -120,6 +123,13 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
     ];
   }
   // Semester 3 Sets
+  if (courseCode === 'MNM101' || courseCode === 'MNM201') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Pengantar Manajemen (TM 1–7)', items: MNM101_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengantar Manajemen (TM 8–14)', items: MNM101_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Pengantar Manajemen (14 TM)', items: MNM101_QUIZ },
+    ];
+  }
   if (courseCode === 'AKK202') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS AKM II (TM 1–7)', items: AKK202_QUIZ_UTS },
