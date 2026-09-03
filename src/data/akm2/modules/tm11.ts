@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_TREASURY_DIVIDENDS,
-} from '../akm2PracticeCases';
+  CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION } from '../akm2PracticeCases';
 
 const SVG_EQUITY_STRUCTURE = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -190,6 +190,12 @@ Kredit: Investasi Saham PT X Rp 140.000.000`
       text: `==Saham treasuri adalah saham entitas yang telah diterbitkan dan dibeli kembali oleh entitas tetapi tidak dibatalkan. Transaksi pembelian dan penjualan saham treasuri tidak pernah menghasilkan laba atau rugi di laporan laba rugi.==`
     },
     CASE_TREASURY_DIVIDENDS,
+    { kind: 'h2', text: "2. Pembagian Dividen Saham Preferen Kumulatif & Berpartisipasi Penuh" },
+    {
+      kind: 'p',
+      text: "==Saham preferen kumulatif berhak menerima seluruh tunggakan dividen tahun-tahun sebelumnya (dividends in arrears) sebelum dividen saham biasa dibagikan. Jika bersifat berpartisipasi penuh, sisa dana dividen setelah dividen persentase dasar dibagikan secara proporsional berdasarkan rasio nilai nominal saham.=="
+    },
+    CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION,
     { kind: 'h2', text: `2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)` },
     {
       kind: `ul`,

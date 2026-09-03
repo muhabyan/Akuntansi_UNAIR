@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_CURRENT_LIABILITIES,
-} from '../akm2PracticeCases';
+  CASE_PAYROLL_BONUS_PROFIT_SHARING } from '../akm2PracticeCases';
 
 const SVG_LIABILITIES = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -157,6 +157,12 @@ Kredit: Diskonto Wesel Bayar Rp 6.000.000`
       text: '==Liabilitas adalah kewajiban kini entitas yang timbul dari peristiwa masa lalu, yang penyelesaiannya diperkirakan mengakibatkan arus keluar sumber daya yang mengandung manfaat ekonomik.=='
     },
     CASE_CURRENT_LIABILITIES,
+    { kind: 'h2', text: "2. Skema Bonus Karyawan (Profit-Sharing) & Cuti Berbayar (PSAK 24)" },
+    {
+      kind: 'p',
+      text: "==Perjanjian bonus eksekutif sering dirumuskan sebagai persentase dari laba bersih setelah dikurangi bonus dan pajak. Perhitungan matematisnya wajib diselesaikan menggunakan sistem persamaan aljabar dua variabel secara simultan.=="
+    },
+    CASE_PAYROLL_BONUS_PROFIT_SHARING,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

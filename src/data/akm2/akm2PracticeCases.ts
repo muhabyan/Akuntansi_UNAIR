@@ -1105,3 +1105,541 @@ export const CASE_EQUITY_METHOD_INVESTMENT: ContentBlock = {
     }
   ]
 };
+
+// -------------------------------------------------------------
+// KASUS 4B: Aset Tidak Lancar Dimiliki untuk Dijual (PSAK 58) & Hak Tanah (TM 4)
+// -------------------------------------------------------------
+export const CASE_HELD_FOR_SALE_LAND: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 4B: Reklasifikasi Aset Dimiliki untuk Dijual (PSAK 58) & Hak Tanah ISAK 25',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'Pada 1 Juli 2026, manajemen PT Graha Sentosa berkomitmen pada rencana penjualan mesin lini produksi lama dan memenuhi seluruh kriteria klasifikasi Aset Dimiliki untuk Dijual (Held for Sale - PSAK 58). Data aset pada 1 Juli 2026:\n• Harga Perolehan Mesin: Rp 600.000.000\n• Akumulasi Penyusutan s.d. 30 Juni 2026: Rp 200.000.000 (Nilai Buku = Rp 400.000.000)\n• Nilai Wajar Mesin: Rp 350.000.000\n• Estimasi Biaya Pelepasan/Penjualan (Cost to Sell): Rp 20.000.000\n• Nilai Realisasi Neto (Fair Value Less Cost to Sell): Rp 330.000.000\n\nPada 15 November 2026, mesin tersebut akhirnya terjual tunai seharga Rp 345.000.000 dengan biaya pelepasan aktual Rp 18.000.000 (Kas neto diterima = Rp 327.000.000).'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Pembahasan & Jurnal PSAK 58 Lengkap',
+      prompt: 'Pahami aturan penghentian depresiasi dan batas pemulihan nilai PSAK 58:',
+      blocks: [
+        {
+          kind: 'h3',
+          text: '1. Pengukuran Awal & Reklasifikasi (1 Juli 2026)'
+        },
+        {
+          kind: 'p',
+          text: 'Berdasarkan PSAK 58, aset yang dimiliki untuk dijual diukur pada **nilai yang lebih rendah antara Nilai Tercatat (Rp 400 jt) vs Nilai Wajar Setelah Dikurangi Biaya Penjualan (Rp 330 jt)**.\nPenurunan nilai sebesar Rp 70.000.000 (Rp 400 jt - Rp 330 jt) diakui langsung di Laba Rugi!'
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Reklasifikasi & Penurunan Nilai ke Aset Dimiliki untuk Dijual (1 Juli 2026)',
+          lines: [
+            { account: 'Aset Tidak Lancar Dimiliki untuk Dijual (Held for Sale)', debit: 'Rp 330.000.000' },
+            { account: 'Akumulasi Penyusutan Mesin', debit: 'Rp 200.000.000' },
+            { account: 'Rugi Penurunan Nilai Aset Dimiliki untuk Dijual (Laba Rugi)', debit: 'Rp 70.000.000' },
+            { account: 'Mesin Pabrik', credit: 'Rp 600.000.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'callout',
+          variant: 'warning',
+          title: 'Aturan Kunci Penyusutan PSAK 58',
+          text: 'Sejak tanggal reklasifikasi (1 Juli 2026), **ASET DIMILIKI UNTUK DIJUAL TIDAK BOLEH DISUSUTKAN LAGI**, meskipun aset tersebut masih berada di lokasi pabrik!'
+        },
+        {
+          kind: 'h3',
+          text: '2. Pelepasan / Penjualan Akhir (15 November 2026)'
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Penjualan Aset Dimiliki untuk Dijual (15 Nov 2026)',
+          lines: [
+            { account: 'Kas (Neto setelah biaya penjualan: 345 jt - 18 jt)', debit: 'Rp 327.000.000' },
+            { account: 'Rugi Pelepasan Aset Dimiliki untuk Dijual (330 jt - 327 jt)', debit: 'Rp 3.000.000' },
+            { account: 'Aset Tidak Lancar Dimiliki untuk Dijual', credit: 'Rp 330.000.000', isCredit: true }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 5B: Riset & Pengembangan (R&D) & Lisensi Paten (TM 5)
+// -------------------------------------------------------------
+export const CASE_RD_CAPITALIZATION: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 5B: Kriteria Kapitalisasi Riset & Pengembangan (PSAK 19 - PIRATE Criteria)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'PT Biofarma Unggul mengembangkan formula vaksin sintetis baru sepanjang tahun 2026. Rincian pengeluaran kas:\n1. Jan - April (Fase Riset): Riset laboratorium pencarian senyawa aktif Rp 500.000.000.\n2. Mei - Juli (Fase Pengembangan Awal): Pengujian sebelum kelayakan teknis dan komersial terbukti Rp 300.000.000.\n3. 1 Agustus 2026: Proyek secara resmi memenuhi seluruh 6 Kriteria PIRATE PSAK 19 (kelayakan teknis, niat menyelesaikan, kemampuan menjual, pasar terbukti, sumber daya ada, biaya terukur andal).\n4. Agustus - Oktober (Fase Pengembangan Lanjut): Pembuatan prototipe uji klinis Rp 850.000.000.\n5. November: Biaya legal pendaftaran hak paten ke Kemenkumham dan biaya uji sertifikasi BPOM Rp 150.000.000.\n6. Desember: Biaya promosi peluncuran produk dan iklan awal Rp 120.000.000.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Pembahasan Klasifikasi & Jurnal PSAK 19',
+      prompt: 'Pahami batas tegas antara beban riset vs aset takberwujud paten:',
+      blocks: [
+        {
+          kind: 'table',
+          headers: ['Komponen Pengeluaran', 'Nominal', 'Perlakuan Akuntansi (PSAK 19)', 'Alasan Standar'],
+          rows: [
+            ['Fase Riset (Jan - Apr)', 'Rp 500.000.000', 'Beban Riset (Laba Rugi)', 'Ketidakpastian manfaat ekonomi masa depan sangat tinggi.'],
+            ['Pengembangan Awal (Mei - Jul)', 'Rp 300.000.000', 'Beban Pengembangan (Laba Rugi)', 'Belum memenuhi 6 kriteria kelayakan PIRATE.'],
+            ['Pengembangan Lanjut (Ags - Okt)', 'Rp 850.000.000', 'KAPITALISASI (Aset Takberwujud - Paten dlm Proses)', 'Telah memenuhi 6 kriteria PIRATE secara andal.'],
+            ['Biaya Legal Pendaftaran Paten & BPOM', 'Rp 150.000.000', 'KAPITALISASI (Aset Takberwujud - Hak Paten)', 'Biaya langsung atribusi pendaftaran hak hukum.'],
+            ['Biaya Promosi Peluncuran & Iklan', 'Rp 120.000.000', 'Beban Penjualan (Laba Rugi)', 'Biaya pemasaran dilarang dikapitalisasi ke aset takberwujud.']
+          ],
+          caption: 'Evaluasi kapitalisasi R&D berdasarkan PSAK 19.'
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Kapitalisasi Hak Paten Resmi (Per 30 November 2026)',
+          lines: [
+            { account: 'Aset Takberwujud - Hak Paten (850 jt + 150 jt)', debit: 'Rp 1.000.000.000' },
+            { account: 'Beban Riset & Pengembangan (500 jt + 300 jt)', debit: 'Rp 800.000.000' },
+            { account: 'Beban Pemasaran & Iklan', debit: 'Rp 120.000.000' },
+            { account: 'Kas / Utang', credit: 'Rp 1.920.000.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'callout',
+          variant: 'key',
+          title: 'Total Nilai Buku Hak Paten Terdaftar',
+          text: 'Paten diakui di neraca sebesar **Rp 1.000.000.000** dan diamortisasi secara garis lurus sepanjang umur hukum 20 tahun atau umur ekonomis (mana yang lebih pendek) mulai tanggal paten siap digunakan.'
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 6B: Skema Bonus Karyawan (Profit-Sharing Plan) & Cuti Berbayar (TM 6)
+// -------------------------------------------------------------
+export const CASE_PAYROLL_BONUS_PROFIT_SHARING: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 6B: Perhitungan Bonus Karyawan Metode Aljabar & Cuti Berbayar (PSAK 24)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'PT Surya Gemilang memiliki perjanjian kerja dengan para eksekutif bahwa mereka berhak atas pembagian bonus tahunan sebesar **10% dari Laba Bersih**. Laba operasi sebelum bonus dan pajak penghasilan untuk tahun 2026 adalah **Rp 1.000.000.000**. Tarif pajak penghasilan badan adalah **22%**.\nBonus diperlakukan sebagai beban pengurang pajak (tax-deductible expense).'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Perhitungan Aljabar & Jurnal Bonus',
+      prompt: 'Selesaikan 2 sistem persamaan linier dua variabel (Bonus & Pajak):',
+      blocks: [
+        {
+          kind: 'p',
+          text: 'Definisi Persamaan:\n• $B = 0,10 \times (1.000.000.000 - B - P)$\n• $P = 0,22 \times (1.000.000.000 - B)$'
+        },
+        {
+          kind: 'ul',
+          items: [
+            'Substitusikan persamaan P ke dalam B:',
+            '$B = 0,10 \times [1.000.000.000 - B - 0,22 \times (1.000.000.000 - B)]$',
+            '$B = 0,10 \times [1.000.000.000 - B - 220.000.000 + 0,22B]$',
+            '$B = 0,10 \times [780.000.000 - 0,78B]$',
+            '$B = 78.000.000 - 0,078B$',
+            '$1,078B = 78.000.000$',
+            '**Bonus (B) = Rp 72.356.215**',
+            'Pajak (P) = 0,22 × (1.000.000.000 - 72.356.215) = 0,22 × 927.643.785 = **Rp 204.081.633**'
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Penyesuaian Akrual Bonus Eksekutif per 31 Desember 2026',
+          lines: [
+            { account: 'Beban Bonus Karyawan (Operating Expense)', debit: 'Rp 72.356.215' },
+            { account: 'Utang Bonus Karyawan (Current Liability)', credit: 'Rp 72.356.215', isCredit: true }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 7B: Provisi Gugatan Hukum & Kontrak Memberatkan (TM 7)
+// -------------------------------------------------------------
+export const CASE_LITIGATION_ONEROUS_CONTRACT: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 7B: Provisi Gugatan Hukum Pengadilan & Kontrak Memberatkan (PSAK 57)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Perkara Akhir Tahun',
+      text: 'Per 31 Desember 2026, PT Kimia Lestari menghadapi dua kondisi ketidakpastian hukum:\n1. **Gugatan Pencemaran Sungai:** Warga menggugat ganti rugi Rp 1.500.000.000. Tim kuasa hukum independen menyatakan kemungkinan kalah adalah **85% (Probable)**, dengan estimasi penyelesaian paling andal berkisar antara Rp 800.000.000 s.d. Rp 1.200.000.000, di mana titik tengah Rp 1.000.000.000 dipandang sebagai estimasi terbaik.\n2. **Kontrak Sewa Memberatkan (Onerous Contract):** Perusahaan menyewa gudang dengan sisa masa sewa 2 tahun yang tidak dapat dibatalkan (non-cancellable lease). Beban sewa tahunan Rp 100.000.000 (total komitmen Rp 200.000.000). Karena relokasi pabrik, gudang tidak terpakai sama sekali dan tidak dapat disubsewakan. Pemilik gudang menawarkan pembatalan kontrak dengan membayar denda penalti sekaligus sebesar Rp 130.000.000.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Analisis Standar PSAK 57 & Jurnal',
+      prompt: 'Pahami pengakuan liabilitas provisi di neraca vs CALK:',
+      blocks: [
+        {
+          kind: 'h3',
+          text: '1. Perkara Gugatan Lingkungan (Probable > 50% & Estimasi Andal)'
+        },
+        {
+          kind: 'p',
+          text: 'Karena kemungkinan arus keluar sumber daya bersifat **Probable (85%)** dan estimasi terbaik bernilai **Rp 1.000.000.000**, maka WAJIB dicatat sebagai LIABILITAS PROVISI di neraca!'
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Pembentukan Provisi Gugatan Hukum',
+          lines: [
+            { account: 'Beban Kerugian Gugatan Hukum (Laba Rugi)', debit: 'Rp 1.000.000.000' },
+            { account: 'Provisi Gugatan Hukum (Liabilitas Lancar/Jangka Panjang)', credit: 'Rp 1.000.000.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'h3',
+          text: '2. Kontrak Memberatkan (Onerous Contract - PSAK 57 Par 66-69)'
+        },
+        {
+          kind: 'p',
+          text: 'Liabilitas kontrak memberatkan diukur pada **biaya terendah yang tidak dapat dihindari (Least Net Cost of Exiting)** antara:\n• Biaya melanjutkan kontrak sewa (Rp 200.000.000)\n• Denda penalti pembatalan kontrak (Rp 130.000.000)\nNilai terendah yang dipilih = **Rp 130.000.000**.'
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Pengakuan Provisi Kontrak Memberatkan',
+          lines: [
+            { account: 'Beban Kontrak Memberatkan (Laba Rugi)', debit: 'Rp 130.000.000' },
+            { account: 'Provisi Kontrak Memberatkan (Liabilitas Jangka Pendek)', credit: 'Rp 130.000.000', isCredit: true }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 8B: Master Kasus Terpadu Simulasi UTS (TM 8)
+// -------------------------------------------------------------
+export const CASE_UTS_MASTER_SIMULATION: ContentBlock = {
+  kind: 'example',
+  title: 'Master Kasus Terpadu Simulasi UTS: PT Mahakarya Nusantara Tbk',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Skenario Soal Ujian Komprehensif',
+      text: 'PT Mahakarya Nusantara Tbk menyajikan transaksi tahun 2026 yang menguji seluruh materi TM 1 s.d. TM 7:\n1. 1 Jan: Menerbitkan wesel bayar tanpa bunga senilai nominal Rp 500.000.000 (jatuh tempo 1 tahun, suku bunga pasar 10%) untuk melunasi utang usaha.\n2. 1 Feb: Membeli tanah dan bangunan kantor secara lump-sum tunai Rp 3.000.000.000. Nilai wajar penilai: Tanah Rp 2.400.000.000, Bangunan Rp 800.000.000.\n3. 1 April: Memulai konstruksi mandiri pabrik baru. Pengeluaran: 1 April Rp 600 jt, 1 September Rp 900 jt. Pinjaman khusus konstruksi 12% Rp 800 jt. Pinjaman umum 10% Rp 1.000.000.000. Konstruksi selesai 31 Desember.\n4. 1 Juli: Menjual 2.000 unit produk elektronik dengan garansi 1 tahun. Estimasi biaya garansi 4% dari penjualan Rp 4.000.000.000. Klaim garansi aktual yang dibayar hingga akhir tahun Rp 90.000.000.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Solusi Lengkap & Rekonsiliasi Neraca UTS',
+      prompt: 'Pelajari sintesis 4 transaksi inti akuntansi keuangan menengah:',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Penyelesaian 1 (Wesel Tanpa Bunga)**: PV Kas = Rp 500 jt / 1,10 = Rp 454.545.455. Diskonto = Rp 45.454.545. Beban bunga tahun 2026 = Rp 45.454.545.',
+            '**Penyelesaian 2 (Lump-Sum)**: Total Nilai Wajar = Rp 3,2 M. Tanah (2,4 / 3,2) × Rp 3 M = **Rp 2.250.000.000**; Bangunan (0,8 / 3,2) × Rp 3 M = **Rp 750.000.000**.',
+            '**Penyelesaian 3 (Kapitalisasi Bunga Konstruksi)**:\n• WAAE = (600 jt × 9/12) + (900 jt × 4/12) = 450 jt + 300 jt = **Rp 750.000.000**.\n• Seluruh WAAE (Rp 750 jt) ditutup oleh pinjaman khusus (Rp 800 jt @ 12%).\n• Bunga yang Dihindari (Avoidable Interest) = Rp 750 jt × 12% = **Rp 90.000.000** (Dikapitalisasi ke akun Bangunan Dalam Konstruksi!).',
+            '**Penyelesaian 4 (Provisi Garansi Produk)**:\n• Beban Garansi Estimasi = 4% × Rp 4 M = **Rp 160.000.000**.\n• Klaim Terjadi Aktual = Rp 90.000.000.\n• Saldo Akhir Provisi Garansi di Neraca 31 Des 2026 = 160 jt - 90 jt = **Rp 70.000.000**.'
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 9B: Obligasi Diterbitkan di Antara Tanggal Bunga & Biaya Penerbitan (TM 9)
+// -------------------------------------------------------------
+export const CASE_BONDS_BETWEEN_DATES_ISSUE_COSTS: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 9B: Obligasi Diterbitkan di Antara Tanggal Bunga & Biaya Penerbitan (PSAK 71)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'PT Semen Perkasa menerbitkan obligasi 10% bernilai nominal Rp 1.000.000.000, tertanggal 1 Januari 2026, jatuh tempo 5 tahun. Bunga dibayarkan semesteran setiap 1 Juli dan 1 Januari.\nKarena keterlambatan persetujuan administratif, obligasi baru resmi dijual pada **1 Maret 2026** pada harga kurs **102** (premi 2%) ditambah **bunga berjalan (accrued interest)** selama 2 bulan (Januari-Februari). Perusahaan membayar biaya penerbitan obligasi (legal & penjamin emisi) sebesar Rp 15.000.000.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Perhitungan Bunga Berjalan & Jurnal Lengkap',
+      prompt: 'Kuasai pencatatan bunga berjalan dan perlakuan biaya penerbitan obligasi:',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '1. Harga Jual Pokok Obligasi (102% × Rp 1.000.000.000) = Rp 1.020.000.000',
+            '2. Bunga Berjalan (1 Jan s.d. 1 Mar = 2 bulan):\nRp 1.000.000.000 × 10% × (2 / 12) = **Rp 16.666.667**',
+            '3. Total Kas Diterima dari Investor = Rp 1.020.000.000 + Rp 16.666.667 = **Rp 1.036.666.667**',
+            '4. Biaya Penerbitan Obligasi Rp 15.000.000 (PSAK 71 mewajibkan mengurangi nilai tercatat awal liabilitas, yaitu mengurangi saldo Premi Obligasi).'
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Penerbitan Obligasi di Antara Tanggal Bunga (1 Maret 2026)',
+          lines: [
+            { account: 'Kas (Neto biaya penerbitan: 1.036.666.667 - 15.000.000)', debit: 'Rp 1.021.666.667' },
+            { account: 'Utang Obligasi (Bonds Payable - Face Value)', credit: 'Rp 1.000.000.000', isCredit: true },
+            { account: 'Premi Utang Obligasi (Neto: 20 jt premi - 15 jt biaya terbit)', credit: 'Rp 5.000.000', isCredit: true },
+            { account: 'Beban Bunga Obligasi / Utang Bunga Berjalan', credit: 'Rp 16.666.667', isCredit: true }
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Pembayaran Bunga Semesteran Pertama (1 Juli 2026)',
+          lines: [
+            { account: 'Beban Bunga Obligasi (6 bulan penuh)', debit: 'Rp 50.000.000' },
+            { account: 'Kas (Kupon 6 bulan: 1 M × 10% × 6/12)', credit: 'Rp 50.000.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'callout',
+          variant: 'tip',
+          title: 'Dampak Bersih Beban Bunga Semester 1',
+          text: 'Beban bunga bersih yang ditanggung perusahaan untuk periode 1 Maret s.d. 1 Juli (4 bulan) adalah Beban Bunga Didebit Rp 50 jt dikurangi Kredit awal Rp 16.666.667 = **Rp 33.333.333** (Tepat setara dengan 4 bulan: 1 M × 10% × 4/12!).'
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 10B: Restrukturisasi Utang Bermasalah & Uji 10% (TM 10)
+// -------------------------------------------------------------
+export const CASE_TROUBLED_DEBT_RESTRUCTURING: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 10B: Restrukturisasi Utang Bermasalah (Debt-for-Equity Swap & IFRIC 19)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'PT Tekstil Sejahtera mengalami defisit likuiditas berat dan memiliki kewajiban utang pinjaman bank pokok Rp 3.000.000.000 ditambah akumulasi bunga tertunggak Rp 300.000.000 (Total Carrying Amount Liabilitas = Rp 3.300.000.000). Bank Permata menyetujui penyelesaian penuh kewajiban tersebut melalui penerbitan **150.000 lembar saham biasa** PT Tekstil Sejahtera (Nilai nominal Rp 10.000/lembar, Nilai wajar pasar per tanggal kesepakatan Rp 16.000/lembar).'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Analisis Standar IFRIC 19 & Jurnal Swap',
+      prompt: 'Pahami pemisahan agio saham dan laba penghentian utang (Gain on Debt Extinguishment):',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '1. Nilai Wajar Saham yang Diserahkan = 150.000 lembar × Rp 16.000 = **Rp 2.400.000.000**',
+            '2. Modal Saham Biasa (Nilai Nominal) = 150.000 lembar × Rp 10.000 = **Rp 1.500.000.000**',
+            '3. Agio Saham Biasa (Share Premium) = Rp 2.400.000.000 - Rp 1.500.000.000 = **Rp 900.000.000**',
+            '4. Keuntungan Pelunasan Utang (Gain on Debt Restructuring) = Nilai Tercatat Utang (Rp 3.300.000.000) - Nilai Wajar Saham (Rp 2.400.000.000) = **Rp 900.000.000** (Diakui di Laba Rugi periode berjalan!).'
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: 'Jurnal Penyelesaian Utang dengan Saham (Debt-for-Equity Swap)',
+          lines: [
+            { account: 'Utang Bank (Pokok)', debit: 'Rp 3.000.000.000' },
+            { account: 'Utang Bunga (Accrued Interest)', debit: 'Rp 300.000.000' },
+            { account: 'Modal Saham Biasa', credit: 'Rp 1.500.000.000', isCredit: true },
+            { account: 'Agio Saham Biasa (Share Premium)', credit: 'Rp 900.000.000', isCredit: true },
+            { account: 'Keuntungan Pelunasan Utang (Laba Rugi)', credit: 'Rp 900.000.000', isCredit: true }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 11B: Pembagian Dividen Saham Preferen Kumulatif & Berpartisipasi (TM 11)
+// -------------------------------------------------------------
+export const CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 11B: Alokasi Dividen Saham Preferen Kumulatif & Berpartisipasi Penuh',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Struktur Ekuitas',
+      text: 'PT Megatama memiliki struktur modal:\n• Saham Preferen 7%, Nilai Nominal Rp 10.000, Beredar 100.000 lembar (Total Par = Rp 1.000.000.000).\n• Saham Biasa, Nilai Nominal Rp 1.000, Beredar 2.000.000 lembar (Total Par = Rp 2.000.000.000).\nDividen preferen menunggak selama **2 tahun sebelumnya** (2024 & 2025). Pada akhir 2026, perusahaan mendeklarasikan pembagian total dividen kas sebesar **Rp 450.000.000**.\n\nHitung alokasi dividen jika Saham Preferen bersifat: **KUMULATIF DAN BERPARTISIPASI PENUH (Fully Participating)**!'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Tabel Perhitungan 4 Tahap Alokasi Dividen',
+      prompt: 'Kuasai 4 urutan matematis pembagian dividen partisipasi:',
+      blocks: [
+        {
+          kind: 'table',
+          headers: ['Tahap Alokasi', 'Saham Preferen (Par 1 M)', 'Saham Biasa (Par 2 M)', 'Total Kas'],
+          rows: [
+            ['1. Tunggakan Dividen (Arrears 2 Thn: 2 × 7% × 1 M)', 'Rp 140.000.000', 'Rp 0', 'Rp 140.000.000'],
+            ['2. Dividen Tahun Berjalan 2026 (Preferen 7%)', 'Rp 70.000.000', 'Rp 0', 'Rp 70.000.000'],
+            ['3. Dividen Tahun Berjalan Biasa (Biasa 7% × 2 M)', 'Rp 0', 'Rp 140.000.000', 'Rp 140.000.000'],
+            ['Sisa Dana untuk Partisipasi (450 jt - 350 jt)', '-', '-', 'Rp 100.000.000'],
+            ['4. Partisipasi Penuh (Rasio Par 1 : 2)', 'Rp 33.333.333 (1/3)', 'Rp 66.666.667 (2/3)', 'Rp 100.000.000'],
+            ['TOTAL DIVIDEN DITERIMA', 'Rp 243.333.333', 'Rp 206.666.667', 'Rp 450.000.000']
+          ],
+          caption: 'Alokasi komprehensif dividen kumulatif dan berpartisipasi penuh.'
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 12B: Opsi Saham Karyawan (Share-Based Payment - PSAK 53) (TM 12)
+// -------------------------------------------------------------
+export const CASE_STOCK_OPTIONS_SHARE_BASED_PAYMENT: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 12B: Kompensasi Opsi Saham Karyawan (PSAK 53 / IFRS 2 - Black-Scholes Model)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'Pada 1 Januari 2026 (Grant Date), PT Teknologi Maju memberikan opsi saham kepada 20 manajer kunci untuk membeli masing-masing 1.000 lembar saham biasa (nominal Rp 1.000) pada harga eksekusi Rp 5.000. Syarat kerja: manajer harus mengabdi selama **2 tahun** (2026 s.d. 2027).\nModel penetapan harga opsi Black-Scholes menghasilkan nilai wajar opsi pada tanggal hibah sebesar **Rp 3.000 per opsi** (Total nilai wajar kompensasi = 20.000 opsi × Rp 3.000 = **Rp 60.000.000**).\nPada 15 Januari 2028, seluruh 20 manajer mengeksekusi opsi saham mereka secara tunai.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Jurnal Bertahap Kompensasi Opsi Saham',
+      prompt: 'Kuasai pengakuan beban kompensasi selama masa vesting dan eksekusi:',
+      blocks: [
+        {
+          kind: 'journal',
+          caption: '1. Jurnal Beban Kompensasi Tahun 1 (31 Desember 2026: 60 jt / 2 tahun)',
+          lines: [
+            { account: 'Beban Kompensasi Karyawan (Operating Expense)', debit: 'Rp 30.000.000' },
+            { account: 'Modal Saham - Opsi Saham (Share Options - Equity)', credit: 'Rp 30.000.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: '2. Jurnal Beban Kompensasi Tahun 2 (31 Desember 2027)',
+          lines: [
+            { account: 'Beban Kompensasi Karyawan', debit: 'Rp 30.000.000' },
+            { account: 'Modal Saham - Opsi Saham', credit: 'Rp 30.000.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: '3. Jurnal Eksekusi Opsi Saham Menjadi Saham Biasa (15 Januari 2028)',
+          lines: [
+            { account: 'Kas (20.000 lembar × Rp 5.000)', debit: 'Rp 100.000.000' },
+            { account: 'Modal Saham - Opsi Saham (Tutup saldo opsi)', debit: 'Rp 60.000.000' },
+            { account: 'Modal Saham Biasa (20.000 × Rp 1.000 par)', credit: 'Rp 20.000.000', isCredit: true },
+            { account: 'Agio Saham Biasa (Share Premium - Ordinary)', credit: 'Rp 140.000.000', isCredit: true }
+          ]
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 13B: WASO Bertahap & Uji Anti-Dilutif Lengkap (TM 13)
+// -------------------------------------------------------------
+export const CASE_COMPREHENSIVE_DILUTED_EPS_RANKING: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 13B: Perhitungan WASO Komprehensif & Uji Anti-Dilutif Bertingkat (PSAK 56)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Perhitungan EPS',
+      text: 'PT Bintang Nusantara melaporkan Laba Bersih tahun 2026 sebesar **Rp 2.500.000.000**. Tidak ada saham preferen.\nMutasi Saham Biasa Beredar:\n• 1 Jan: Saldo awal 800.000 lembar.\n• 1 Mei: Menerbitkan 120.000 lembar saham baru.\n• 1 Juli: Membagikan **Dividen Saham 20%**.\n• 1 Oktober: Membeli kembali 50.000 lembar Saham Treasuri.\n\nSekuritas Berpotensi Dilutif:\n1. Opsi Saham 40.000 lembar @ harga eksekusi Rp 20.000 (Rata-rata harga pasar saham = Rp 25.000).\n2. Obligasi Konversi 7% nominal Rp 2.000.000.000 dapat dikonversi menjadi 100.000 lembar saham biasa (Tarif pajak 22%).'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Langkah Perhitungan WASO, Basic EPS, dan Diluted EPS',
+      prompt: 'Perhatikan faktor pengali retrospektif dividen saham:',
+      blocks: [
+        {
+          kind: 'table',
+          headers: ['Tanggal Transaksi', 'Perubahan Lembar', 'Faktor Dividen Saham 20%', 'Pecahan Tahun', 'Bobot Saham Rata-rata'],
+          rows: [
+            ['1 Jan s.d. 1 Mei (4 bln)', '800.000', '× 1,20', '4/12', '320.000 lembar'],
+            ['1 Mei s.d. 1 Okt (5 bln)', '920.000', '× 1,20', '5/12', '460.000 lembar'],
+            ['1 Okt s.d. 31 Des (3 bln)', '1.054.000 (1.104.000 - 50.000)', '-', '3/12', '263.500 lembar'],
+            ['TOTAL WASO (Penyebut Basic EPS)', '-', '-', '-', '1.043.500 lembar']
+          ],
+          caption: 'Kalkulasi Weighted Average Shares Outstanding (WASO) tahun 2026.'
+        },
+        {
+          kind: 'p',
+          text: '**1. Basic EPS** = Rp 2.500.000.000 / 1.043.500 lembar = **Rp 2.395,78 per lembar**.'
+        },
+        {
+          kind: 'p',
+          text: '**2. Efek Opsi Saham (Treasury Stock Method)**:\n• Lembar Diterbitkan = 40.000\n• Kas Diterima = 40.000 × Rp 20.000 = Rp 800.000.000\n• Saham Beli Kembali = Rp 800.000.000 / Rp 25.000 = 32.000 lembar\n• Tambahan Lembar Bersih = 40.000 - 32.000 = **8.000 lembar** (DILUTIF karena pasar > eksekusi).'
+        },
+        {
+          kind: 'p',
+          text: '**3. Efek Obligasi Konversi (If-Converted Method)**:\n• Penyesuaian Bunga Bersih Pajak = (Rp 2 M × 7%) × (1 - 0,22) = Rp 140 jt × 0,78 = **Rp 109.200.000**\n• Tambahan Lembar Saham = **100.000 lembar**\n• Efek Inkremental per lembar = Rp 109.200.000 / 100.000 = Rp 1.092 (Jauh lebih kecil dari Basic EPS Rp 2.395,78 -> SANGAT DILUTIF!).'
+        },
+        {
+          kind: 'callout',
+          variant: 'key',
+          title: 'Kalkulasi Diluted EPS Final',
+          text: 'Diluted EPS = (Rp 2.500.000.000 + Rp 109.200.000) / (1.043.500 + 8.000 + 100.000)\nDiluted EPS = Rp 2.609.200.000 / 1.151.500 lembar = **Rp 2.265,91 per lembar** (Turun dari Rp 2.395,78!).'
+        }
+      ]
+    }
+  ]
+};
+
+// -------------------------------------------------------------
+// KASUS 14B: Efek Utang FVOCI, ECL Impairment, dan Daur Ulang (TM 14)
+// -------------------------------------------------------------
+export const CASE_DEBT_INVESTMENTS_FVOCI_RECYCLING: ContentBlock = {
+  kind: 'example',
+  title: 'Studi Kasus 14B: Investasi Efek Utang FVOCI, Amortisasi Bunga, dan Daur Ulang (Recycling PSAK 71)',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konteks Transaksi',
+      text: 'Pada 1 Januari 2026, PT Prima Finansial membeli obligasi 8% senilai nominal Rp 1.000.000.000 seharga Rp 924.180.000 (diskonto untuk menghasilkan suku bunga efektif 10%). Model bisnis: mengoleksi arus kas kontraktual dan menjual efek (FVOCI - Efek Utang).\nBunga diterima tahunan tiap 31 Desember.\n• 31 Des 2026: Bunga kupon diterima Rp 80.000.000. Beban bunga efektif = Rp 92.418.000 (Amortisasi diskonto = Rp 12.418.000). Nilai tercatat sebelum nilai wajar = Rp 936.598.000.\n• Nilai wajar pasar obligasi pada 31 Des 2026 adalah **Rp 950.000.000**.\n• 1 Juli 2027: Seluruh obligasi dijual seharga Rp 965.000.000.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Buka Jurnal FVOCI Akhir Tahun & Jurnal Daur Ulang (Recycling)',
+      prompt: 'Pahami perbedaan esensial daur ulang OCI efek utang vs efek ekuitas:',
+      blocks: [
+        {
+          kind: 'journal',
+          caption: '1. Jurnal Penerimaan Bunga & Amortisasi Efektif (31 Des 2026)',
+          lines: [
+            { account: 'Kas', debit: 'Rp 80.000.000' },
+            { account: 'Investasi Efek Utang - FVOCI (Amortisasi Diskonto)', debit: 'Rp 12.418.000' },
+            { account: 'Pendapatan Bunga (Laba Rugi: 10% × 924.180.000)', credit: 'Rp 92.418.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: '2. Jurnal Penyesuaian Nilai Wajar ke OCI (31 Des 2026: 950 jt - 936.598.000 = 13.402.000)',
+          lines: [
+            { account: 'Penyesuaian Nilai Wajar - FVOCI', debit: 'Rp 13.402.000' },
+            { account: 'Keuntungan Belum Terealisasi - OCI (Unrealized Holding Gain)', credit: 'Rp 13.402.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'journal',
+          caption: '3. Jurnal Penjualan & Daur Ulang (Recycling) Akumulasi OCI ke Laba Rugi (1 Juli 2027)',
+          lines: [
+            { account: 'Kas', debit: 'Rp 965.000.000' },
+            { account: 'Keuntungan Belum Terealisasi - OCI (Tutup saldo OCI)', debit: 'Rp 13.402.000' },
+            { account: 'Investasi Efek Utang - FVOCI', credit: 'Rp 950.000.000', isCredit: true },
+            { account: 'Keuntungan Penjualan Investasi (Direklasifikasi ke Laba Rugi!)', credit: 'Rp 28.402.000', isCredit: true }
+          ]
+        },
+        {
+          kind: 'callout',
+          variant: 'key',
+          title: 'Aturan Emas PSAK 71: Recycling Efek Utang vs Efek Ekuitas',
+          text: 'Pada Efek Utang FVOCI, keuntungan/kerugian yang tertampung di OCI **WAJIB DIREKLASIFIKASI (RECYCLED)** ke Laporan Laba Rugi saat aset dijual. Sebaliknya, pada Efek Ekuitas FVOCI, keuntungan/kerugian OCI **DILARANG KERAS DIRECYCLED** ke Laba Rugi (hanya boleh ditransfer langsung ke Laba Ditahan).'
+        }
+      ]
+    }
+  ]
+};

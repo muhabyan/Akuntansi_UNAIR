@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_IMPAIRMENT_TEST,
-} from '../akm2PracticeCases';
+  CASE_HELD_FOR_SALE_LAND } from '../akm2PracticeCases';
 
 const SVG_IMPAIRMENT_FLOW = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -166,6 +166,12 @@ Tahap 2 (Alokasi Prorata ke Satelit & Stasiun Bumi):
       kind: 'p',
       text: 'Jika tidak memungkinkan mengestimasi jumlah terpulihkan untuk aset individual (karena aset tidak menghasilkan arus kas masuk independen), maka entitas menguji **Unit Penghasil Kas (Cash-Generating Unit - CGU)** terkecil yang menaungi aset tersebut.'
     },
+    { kind: 'h2', text: "2. Aset Tidak Lancar Dimiliki untuk Dijual (PSAK 58) & Hak Tanah (ISAK 25)" },
+    {
+      kind: 'p',
+      text: "==PSAK 58 menetapkan bahwa aset tidak lancar yang dimiliki untuk dijual tidak boleh lagi disusutkan sejak tanggal reklasifikasi, dan diukur pada nilai yang lebih rendah antara nilai tercatat vs nilai wajar setelah dikurangi biaya pelepasan (FVLCD). Sementara itu, ISAK 25 menegaskan bahwa hak legal atas tanah di Indonesia (HGB/HGU) pada hakikatnya diamortisasi jika umur haknya terbatas.=="
+    },
+    CASE_HELD_FOR_SALE_LAND,
     { kind: 'h2', text: '3. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

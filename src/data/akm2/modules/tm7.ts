@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_WARRANTY_PROVISION,
-} from '../akm2PracticeCases';
+  CASE_LITIGATION_ONEROUS_CONTRACT } from '../akm2PracticeCases';
 
 const SVG_PROVISION_DECISION = `
 <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -165,6 +165,12 @@ Kredit: Provisi Gugatan Hukum (Liabilitas) Rp 1.100.000.000`,
       text: '==Provisi adalah liabilitas yang waktu atau jumlahnya belum pasti. Entitas mengakui provisi ketika terdapat kewajiban kini akibat peristiwa masa lalu, penyelesaiannya kemungkinan besar mengakibatkan arus keluar kas, dan estimasi andal dapat dibuat.=='
     },
     CASE_WARRANTY_PROVISION,
+    { kind: 'h2', text: "2. Provisi Gugatan Hukum Pengadilan & Kontrak Memberatkan (PSAK 57)" },
+    {
+      kind: 'p',
+      text: "==PSAK 57 membedakan secara tegas antara kewajiban kontinjensi yang berstatus Probable (>50% dan dapat diestimasi andal -> wajib dicatat sebagai Provisi di Neraca) vs Possible (hanya diungkapkan di Catatan atas Laporan Keuangan). Pada Kontrak Memberatkan, kewajiban diukur pada biaya terendah untuk keluar dari kontrak.=="
+    },
+    CASE_LITIGATION_ONEROUS_CONTRACT,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_EXTINGUISHMENT_BONDS,
-} from '../akm2PracticeCases';
+  CASE_TROUBLED_DEBT_RESTRUCTURING } from '../akm2PracticeCases';
 
 const SVG_EXTINGUISHMENT = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -154,6 +154,12 @@ Kredit: Keuntungan Pelunasan Dini Obligasi (Laba Rugi) Rp 30.000.000`
       text: '==Penghentian pengakuan liabilitas keuangan terjadi ketika liabilitas tersebut dipadamkan (extinguished), yaitu ketika kewajiban yang ditentukan dalam kontrak dilepaskan, dibatalkan, atau kedaluwarsa.=='
     },
     CASE_EXTINGUISHMENT_BONDS,
+    { kind: 'h2', text: "2. Restrukturisasi Utang Bermasalah (Debt-for-Equity Swap & IFRIC 19)" },
+    {
+      kind: 'p',
+      text: "==Berdasarkan IFRIC 19 / ISAK 28, ketika debitur melunasi kewajiban utang dengan menerbitkan instrumen ekuitas, saham diukur pada nilai wajarnya. Selisih antara nilai tercatat utang yang dihentikan pengakuannya dan nilai wajar saham yang diterbitkan diakui sebagai Keuntungan Pelunasan Utang di Laporan Laba Rugi.=="
+    },
+    CASE_TROUBLED_DEBT_RESTRUCTURING,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

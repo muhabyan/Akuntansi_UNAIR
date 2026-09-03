@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_BONDS_AMORTIZATION,
-} from '../akm2PracticeCases';
+  CASE_BONDS_BETWEEN_DATES_ISSUE_COSTS } from '../akm2PracticeCases';
 
 const SVG_BONDS = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -162,6 +162,12 @@ Kredit: Kas Rp 80.000.000`
       text: '==PSAK 71 mewajibkan penggunaan metode suku bunga efektif untuk amortisasi diskonto dan premi obligasi, yang menghasilkan persentase beban bunga konstan terhadap nilai tercatat obligasi setiap periode.=='
     },
     CASE_BONDS_AMORTIZATION,
+    { kind: 'h2', text: "2. Penerbitan Obligasi di Antara Tanggal Bunga & Biaya Emisi Bersih (PSAK 71)" },
+    {
+      kind: 'p',
+      text: "==Ketika obligasi diterbitkan di antara tanggal pembayaran bunga kupon, pembeli membayar harga obligasi ditambah bunga berjalan sejak tanggal bunga terakhir. PSAK 71 mewajibkan biaya penerbitan obligasi mengurangi nilai tercatat awal liabilitas, sehingga meningkatkan suku bunga efektif yang diamortisasi.=="
+    },
+    CASE_BONDS_BETWEEN_DATES_ISSUE_COSTS,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

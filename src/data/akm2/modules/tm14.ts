@@ -1,7 +1,7 @@
 ﻿import type { Reading } from '../../../types';
 import {
   CASE_EQUITY_METHOD_INVESTMENT,
-} from '../akm2PracticeCases';
+  CASE_DEBT_INVESTMENTS_FVOCI_RECYCLING } from '../akm2PracticeCases';
 
 const SVG_INVESTMENTS = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -156,6 +156,12 @@ export const TM14_READING: Reading = {
       text: '==Metode ekuitas adalah metode akuntansi di mana investasi pada awalnya dicatat sebesar biaya perolehan dan selanjutnya disesuaikan untuk mengakui bagian investor atas laba atau rugi dan OCI entitas asosiasi setelah tanggal perolehan.=='
     },
     CASE_EQUITY_METHOD_INVESTMENT,
+    { kind: 'h2', text: "2. Efek Utang FVOCI, Amortisasi Bunga, dan Daur Ulang (Recycling PSAK 71)" },
+    {
+      kind: 'p',
+      text: "==Pada Efek Utang FVOCI, pendapatan bunga dihitung menggunakan metode suku bunga efektif di laba rugi, sementara fluktuasi nilai wajar pasar dicatat di OCI. Saat efek utang dijual, seluruh saldo akumulasi keuntungan/kerugian OCI WAJIB direklasifikasi (recycled) ke Laba Rugi periode berjalan.=="
+    },
+    CASE_DEBT_INVESTMENTS_FVOCI_RECYCLING,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

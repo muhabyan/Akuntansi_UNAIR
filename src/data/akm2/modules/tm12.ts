@@ -1,7 +1,7 @@
 ﻿import type { Reading } from '../../../types';
 import {
   CASE_CONVERTIBLE_BONDS,
-} from '../akm2PracticeCases';
+  CASE_STOCK_OPTIONS_SHARE_BASED_PAYMENT } from '../akm2PracticeCases';
 
 const SVG_CONVERTIBLES = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -151,6 +151,12 @@ export const TM12_READING: Reading = {
       text: '==Sekuritas dilutif adalah instrumen keuangan yang memberikan hak kepada pemegangnya untuk memperoleh saham biasa, yang jika dieksekusi akan menurunkan laba per saham (EPS) pemegang saham yang ada.=='
     },
     CASE_CONVERTIBLE_BONDS,
+    { kind: 'h2', text: "2. Kompensasi Berbasis Saham (Opsi Saham Karyawan - PSAK 53 / IFRS 2)" },
+    {
+      kind: 'p',
+      text: "==PSAK 53 mewajibkan nilai wajar opsi saham diukur pada tanggal hibah (Grant Date) menggunakan model penetapan harga opsi (Black-Scholes). Nilai wajar tersebut diakui sebagai Beban Kompensasi secara bertahap sepanjang masa bakti (Vesting Period) dengan kredit ke akun Ekuitas Modal Saham - Opsi Saham.=="
+    },
+    CASE_STOCK_OPTIONS_SHARE_BASED_PAYMENT,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

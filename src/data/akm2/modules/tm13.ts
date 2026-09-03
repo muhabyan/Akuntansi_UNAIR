@@ -1,7 +1,7 @@
 ﻿import type { Reading } from '../../../types';
 import {
   CASE_EPS_COMPLEX,
-} from '../akm2PracticeCases';
+  CASE_COMPREHENSIVE_DILUTED_EPS_RANKING } from '../akm2PracticeCases';
 
 const SVG_EPS_STRUCTURE = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -144,6 +144,12 @@ export const TM13_READING: Reading = {
       text: '==Laba per saham (EPS) menunjukkan porsi laba bersih entitas yang dapat diatribusikan kepada setiap lembar saham biasa yang beredar selama periode pelaporan.=='
     },
     CASE_EPS_COMPLEX,
+    { kind: 'h2', text: "2. Perhitungan WASO Komprehensif & Uji Anti-Dilutif Bertingkat (PSAK 56)" },
+    {
+      kind: 'p',
+      text: "==Dalam menghitung Weighted Average Shares Outstanding (WASO), dividen saham dan pemecahan saham diperlakukan secara retrospektif seolah-olah terjadi sejak awal tahun. Pada Diluted EPS, setiap sekuritas berpotensi dilutif diuji efek inkrementalnya dari yang paling dilutif hingga berpotensi anti-dilutif.=="
+    },
+    CASE_COMPREHENSIVE_DILUTED_EPS_RANKING,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

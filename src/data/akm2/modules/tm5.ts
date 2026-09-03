@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import {
   CASE_INTANGIBLE_GOODWILL,
-} from '../akm2PracticeCases';
+  CASE_RD_CAPITALIZATION } from '../akm2PracticeCases';
 
 const SVG_INTANGIBLES = `
 <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -166,6 +166,12 @@ Tentukan jumlah yang dibebankan ke Laba Rugi vs Dikapitalisasi!`,
       text: '==Aset takberwujud adalah aset non-moneter teridentifikasi tanpa wujud fisik. Entitas mengakui aset takberwujud hanya jika memenuhi kriteria keteridentifikasian, dapat dikendalikan, dan menghasilkan manfaat ekonomik masa depan.=='
     },
     CASE_INTANGIBLE_GOODWILL,
+    { kind: 'h2', text: "2. Kriteria Kapitalisasi Riset & Pengembangan (R&D) PSAK 19" },
+    {
+      kind: 'p',
+      text: "==Berdasarkan PSAK 19, seluruh pengeluaran selama Fase Riset WAJIB diakui sebagai beban saat terjadinya. Pengeluaran pada Fase Pengembangan HANYA boleh dikapitalisasi sebagai aset takberwujud setelah entitas membuktikan pemenuhan seluruh 6 Kriteria Kelayakan PIRATE.=="
+    },
+    CASE_RD_CAPITALIZATION,
     { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
       kind: 'ul',

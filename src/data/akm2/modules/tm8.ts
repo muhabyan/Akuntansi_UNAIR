@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { CASE_UTS_MASTER_SIMULATION } from '../akm2PracticeCases';
 
 const SVG_UTS_INTEGRATION = `
 <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
@@ -178,6 +179,15 @@ Debit: Akumulasi Penurunan Nilai Mesin Rp 20.000.000 | Kredit: Keuntungan Pembal
       ],
       caption: 'Tabel 8.2: Strategi alokasi waktu dan perolehan nilai maksimal UTS.'
     },
+    {
+      kind: 'h2',
+      text: '2. Master Kasus Terpadu Simulasi Ujian Tengah Semester (UTS)'
+    },
+    {
+      kind: 'p',
+      text: '==Simulasi komprehensif berikut mengintegrasikan seluruh transaksi inti materi TM 1 s.d. TM 7: perolehan aset lump-sum, wesel bayar diskonto, kapitalisasi bunga pinjaman PSAK 26, dan provisi garansi produk.=='
+    },
+    CASE_UTS_MASTER_SIMULATION,
     {
       kind: 'h2',
       text: 'Rangkuman & Kunci Sukses UTS (Key Takeaways)'
