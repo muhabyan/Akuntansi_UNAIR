@@ -572,12 +572,6 @@ export const SEMESTERS: Semester[] = [
         title: 'Mata Kuliah Pendukung (Bisnis & Ekonomi)',
         courses: [
           {
-            code: 'MNM101', newCode: 'MNM201', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
-            references: MNM101_REF,
-            materiTM1_7: MNM101_TM1_7, materiTM8_14: MNM101_TM8_14,
-            featureBadge: 'Modul Interaktif + 3 Kasus Keputusan',
-          },
-          {
             code: 'MNU101', newCode: 'FEB25603004', name: 'Pengantar Bisnis', sks: 3, iconKey: 'briefcase',
             references: MNU101_REF,
             materiTM1_7: MNU101_TM1_7, materiTM8_14: MNU101_TM8_14,
@@ -603,7 +597,7 @@ export const SEMESTERS: Semester[] = [
     id: 'sem3',
     number: 3,
     title: 'Semester 3',
-    desc: 'Akuntansi Manajemen, Keuangan, SIA & Sektor Publik',
+    desc: 'Pengantar Manajemen, Keuangan, SIA & Sektor Publik',
     totalSks: 21,
     locked: false,
     groups: [
@@ -617,9 +611,10 @@ export const SEMESTERS: Semester[] = [
             materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'AKM202', newCode: 'FEB25603012', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', prasyarat: 'AKM201 (L)',
-            references: AKM202_REF,
-            materiTM1_7: AKM202_TM1_7, materiTM8_14: AKM202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            code: 'MNM101', newCode: 'MNM201', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
+            references: MNM101_REF,
+            materiTM1_7: MNM101_TM1_7, materiTM8_14: MNM101_TM8_14,
+            flashcardCount: 84, featureBadge: 'Flashcard + Modul Interaktif + Kuis',
           },
           {
             code: 'AKS201', newCode: 'FEB25603013', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
@@ -655,7 +650,7 @@ export const SEMESTERS: Semester[] = [
     id: 'sem4',
     number: 4,
     title: 'Semester 4',
-    desc: 'Audit II, Internal Audit, Hukum Bisnis & Lanjutan',
+    desc: 'Akuntansi Manajemen, Audit II, Internal Audit, Hukum Bisnis & Lanjutan',
     totalSks: 18,
     locked: false,
     groups: [
@@ -663,6 +658,11 @@ export const SEMESTERS: Semester[] = [
         title: 'Mata Kuliah Keahlian',
         highlight: true,
         courses: [
+          {
+            code: 'AKM202', newCode: 'FEB25603012', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', prasyarat: 'AKM201 (L)',
+            references: AKM202_REF,
+            materiTM1_7: AKM202_TM1_7, materiTM8_14: AKM202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+          },
           { code: 'AKK203', name: 'Akuntansi Keuangan Menengah III', sks: 3, iconKey: 'calculator', materiTM1_7: makeMateri('AKM III', 1, 7), materiTM8_14: makeMateri('AKM III', 8, 14) },
           { code: 'AKA202', name: 'Pengauditan Berbasis Risiko II', sks: 3, iconKey: 'award', materiTM1_7: makeMateri('Audit II', 1, 7), materiTM8_14: makeMateri('Audit II', 8, 14) },
           { code: 'AKA203', name: 'Internal Audit', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Internal Audit', 1, 7), materiTM8_14: makeMateri('Internal Audit', 8, 14) },
