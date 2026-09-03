@@ -1,42 +1,68 @@
 import type { Reading } from '../../../types';
 import { CASE_CAPITAL_STRUCTURE_LEVERAGE } from '../mankeuPracticeCases';
 
-const SVG_CAPITAL_STRUCTURE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TEORI STRUKTUR MODAL: TRADE-OFF THEORY &amp; NILAI PERUSAHAAN (V_L)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">MM TANPA PAJAK (1958)</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Irrelevance Proposition:</text>
-  <text x="97" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• V_L = V_U (Sama)</text>
-  <text x="97" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• WACC konstan</text>
-  <text x="97" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Struktur modal tdk relevan</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Pasar Sempurna</text>
+const SVG_CAPITAL_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="mm1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="mm2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="toGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk9)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">EVOLUSI TEORI STRUKTUR MODAL: MODIGLIANI-MILLER HINGGA TRADE-OFF THEORY</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CAPITAL STRUCTURE</text>
 
-  <rect x="185" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="260" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">MM DENGAN PAJAK (1963)</text>
-  <text x="260" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Tax Shield Maximization:</text>
-  <text x="260" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• V_L = V_U + (T × D)</text>
-  <text x="260" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• WACC turun terus</text>
-  <text x="260" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Optimal: 100% Utang</text>
-  <text x="260" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Manfaat Pajak Bunga</text>
+  <!-- 3 Evolution Stages -->
+  <!-- Stage 1: MM Without Tax (1958) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#mm1)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">MM TANPA PAJAK (1958)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Proposisi 1: V_L = V_U (Irrelevan)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Asumsi pasar modal sempurna tanpa gesekan</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Tidak ada pajak, biaya transaksi, &amp; kebangkrutan</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Nilai perusahaan ditentukan oleh aset riil</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Rasio utang tidak mempengaruhi nilai korporasi</text>
+    <rect class="svg-badge-blue" x="14" y="175" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="191" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fondasi Awal Teori Finansial Modern</text>
+  </g>
 
-  <rect x="350" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="425" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">TRADE-OFF THEORY</text>
-  <text x="425" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Keseimbangan Riil:</text>
-  <text x="425" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tax Shield vs Distress</text>
-  <text x="425" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Biaya Kebangkrutan</text>
-  <text x="425" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ada D/E Rasio Optimal</text>
-  <text x="425" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Titik Optimal WACC</text>
+  <!-- Stage 2: MM With Tax (1963) -->
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#mm2)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">MM DENGAN PAJAK (1963)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Proposisi 1: V_L = V_U + (Tc × D)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Pengakuan bunga utang sebagai pengurang pajak</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Tax Shield Bunga</tspan> meningkatkan arus kas</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Nilai perusahaan meningkat seiring porsi utang</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Implikasi ekstrem teoretis: Utang 100% optimal</text>
+    <rect class="svg-badge-green" x="14" y="175" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="191" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Penghematan Pajak Mendorong Nilai</text>
+  </g>
 
-  <rect x="515" y="55" width="140" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="585" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">PECKING ORDER</text>
-  <text x="585" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Asimetri Informasi:</text>
-  <text x="585" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">1. Laba Ditahan</text>
-  <text x="585" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">2. Utang / Obligasi</text>
-  <text x="585" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">3. Emisi Saham Baru</text>
-  <text x="585" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Hierarki Pendanaan</text>
+  <!-- Stage 3: Trade-Off Theory (Myers, 1984) -->
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#toGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">TRADE-OFF THEORY (REALISTIS)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="132" y="56" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">V_L = V_U + PV(Tax Shield) - PV(Distress)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Menyeimbangkan tax shield vs risiko kebangkrutan</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Utang berlebih memicu Biaya Financial Distress</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Terdapat titik struktur modal optimal (D*)</text>
+    <text class="text-accent-amber" x="14" y="136" fill="#fbbf24" font-size="8">• Pada titik optimal, WACC mencapai titik terendah</text>
+    <rect class="svg-badge-amber" x="14" y="175" width="237" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="132" y="191" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Struktur Modal Optimal di Dunia Nyata</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Titik struktur modal optimal tercapai saat manfaat marjinal tax shield tepat diimbangi oleh kenaikan marjinal biaya kebangkrutan.</text>
 </svg>`;
 
 export const TM9_READING: Reading = {
@@ -48,7 +74,7 @@ export const TM9_READING: Reading = {
     'Menganalisis Proposisi MM I & II (tanpa pajak dan dengan pajak korporasi).',
     'Menghitung nilai perusahaan ter-leverage ($V_L = V_U + T \\times D$) dan penghematan pajak bunga.',
     'Menerapkan Persamaan Hamada untuk mengkonversi Unlevered Beta ($\\beta_U$) menjadi Levered Beta ($\\beta_L$).',
-    'Menjelaskan hierarki pendanaan Teori Pecking Order (Internal Funds $\\rightarrow$ Debt $\\rightarrow$ External Equity).'
+    'Menjelaskan hierarki pendanaan Teori Pecking Order (Internal Funds $\\r→$ Debt $\\r→$ External Equity).'
   ],
   blocks: [
     {

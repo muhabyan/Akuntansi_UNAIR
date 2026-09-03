@@ -1,30 +1,63 @@
 import type { Reading } from '../../../types';
 import { CASE_MANAGEMENT_ASSERTIONS } from '../pbriPracticeCases';
 
-const SVG_ASSERTIONS_DIRECTION = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ARAH PENGUJIAN AUDIT: TRACING (COMPLETENESS) VS VOUCHING (OCCURRENCE)</text>
-  
-  <rect x="30" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="130" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">DOKUMEN SUMBER</text>
-  <text x="130" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Surat Jalan, Faktur,</text>
-  <text x="130" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">Bukti Kas, Slip Gaji,</text>
-  <text x="130" y="134" fill="#94a3b8" font-size="10" text-anchor="middle">Laporan Penerimaan Barang</text>
-  <text x="130" y="165" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">Fakta Riil Terjadi</text>
+const SVG_ASSERTIONS_DIRECTION = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb3)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARAH PENGUJIAN AUDIT: VOUCHING (KEBERADAAN) VS TRACING (KELENGKAPAN)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DIRECTION TESTING</text>
 
-  <rect x="450" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="550" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">JURNAL &amp; BUKU BESAR</text>
-  <text x="550" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Jurnal Penjualan,</text>
-  <text x="550" y="116" fill="#94a3b8" font-size="10" text-anchor="middle">Jurnal Pengeluaran Kas,</text>
-  <text x="550" y="134" fill="#94a3b8" font-size="10" text-anchor="middle">Buku Besar Piutang/Utang</text>
-  <text x="550" y="165" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">Pencatatan Akuntansi</text>
+  <g transform="translate(45, 120)">
+    <rect class="svg-card" x="0" y="0" width="220" height="120" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="110" y="24" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">DOKUMEN SUMBER</text>
+    <text class="svg-muted" x="110" y="38" fill="#94a3b8" font-size="8" text-anchor="middle">(Source Documents)</text>
+    <text class="svg-text" x="14" y="62" fill="#cbd5e1" font-size="8">• Faktur Pembelian Vendor</text>
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="8">• Surat Jalan Pengiriman</text>
+    <text class="svg-text" x="14" y="94" fill="#cbd5e1" font-size="8">• Rekening Koran Bank</text>
+    <text class="svg-text" x="14" y="110" fill="#cbd5e1" font-size="8">• Berita Acara Penerimaan</text>
+  </g>
 
-  <text x="340" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TRACING (Maju: Kelengkapan)</text>
-  <text x="340" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">Cek Transaksi Riil yg Hilang</text>
+  <g transform="translate(635, 120)">
+    <rect class="svg-card" x="0" y="0" width="220" height="120" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <text class="text-accent-green" x="110" y="24" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">CATATAN AKUNTANSI</text>
+    <text class="svg-muted" x="110" y="38" fill="#94a3b8" font-size="8" text-anchor="middle">(Journals / General Ledger)</text>
+    <text class="svg-text" x="14" y="62" fill="#cbd5e1" font-size="8">• Jurnal Penjualan / Pembelian</text>
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="8">• Buku Besar Pembantu Piutang</text>
+    <text class="svg-text" x="14" y="94" fill="#cbd5e1" font-size="8">• Neraca Saldo (Trial Balance)</text>
+    <text class="svg-text" x="14" y="110" fill="#cbd5e1" font-size="8">• Laporan Keuangan Neraca</text>
+  </g>
 
-  <text x="340" y="138" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">VOUCHING (Mundur: Keterjadian)</text>
-  <text x="340" y="158" fill="#94a3b8" font-size="9" text-anchor="middle">Cek Transaksi Fiktif/Ganda</text>
+  <g transform="translate(285, 95)">
+    <line x1="330" y1="20" x2="20" y2="20" stroke="#38bdf8" stroke-width="3"/>
+    <polygon points="15,20 28,14 28,26" fill="#38bdf8"/>
+    <rect class="svg-subcard" x="50" y="0" width="240" height="38" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="170" y="16" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">VOUCHING (UJI KEBERADAAN / OCCURRENCE)</text>
+    <text class="svg-text" x="170" y="30" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Mendeteksi Salah Saji Lebih (Overstatement / Fiktif)</text>
+  </g>
+
+  <g transform="translate(285, 195)">
+    <line x1="20" y1="20" x2="330" y2="20" stroke="#34d399" stroke-width="3"/>
+    <polygon points="335,20 322,14 322,26" fill="#34d399"/>
+    <rect class="svg-subcard" x="50" y="0" width="240" height="38" rx="6" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="170" y="16" fill="#34d399" font-size="9" font-weight="800" text-anchor="middle">TRACING (UJI KELENGKAPAN / COMPLETENESS)</text>
+    <text class="svg-text" x="170" y="30" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Mendeteksi Salah Saji Kurang (Understatement / Hilang)</text>
+  </g>
+
+  <g transform="translate(45, 275)">
+    <rect class="svg-subcard" x="0" y="0" width="810" height="45" rx="8" fill="#1e293b"/>
+    <text class="text-accent-blue" x="405" y="18" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">
+      Kaidah Emas Audit: Vouching membuktikan bahwa angka tercatat benar-benar ADA transaksi riilnya.
+    </text>
+    <text class="text-accent-green" x="405" y="34" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">
+      Sedangkan Tracing membuktikan seluruh transaksi riil sudah LENGKAP dibukukan tanpa ada utang disembunyikan.
+    </text>
+  </g>
 </svg>`;
 
 export const TM3_READING: Reading = {
@@ -67,8 +100,8 @@ export const TM3_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: `\\text{Vouching (Buku Besar } \\rightarrow \\text{ Dokumen)} \\Longrightarrow \\text{Uji Asersi OCCURRENCE / EXISTENCE (Cegah Overstatement)}
-\\text{Tracing (Dokumen } \\rightarrow \\text{ Buku Besar)} \\Longrightarrow \\text{Uji Asersi COMPLETENESS (Cegah Understatement)}`,
+      text: `\\text{Vouching (Buku Besar } \\r→ \\text{ Dokumen)} \\Longr→ \\text{Uji Asersi OCCURRENCE / EXISTENCE (Cegah Overstatement)}
+\\text{Tracing (Dokumen } \\r→ \\text{ Buku Besar)} \\Longr→ \\text{Uji Asersi COMPLETENESS (Cegah Understatement)}`,
       note: 'Menghafal arah pengujian adalah kunci menjawab 80% soal kasus pengujian substantif siklus akuntansi di UTS.'
     },
     {

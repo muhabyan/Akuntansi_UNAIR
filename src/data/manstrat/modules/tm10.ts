@@ -1,26 +1,69 @@
 import type { Reading } from '../../../types';
 import { CASE_BALANCED_SCORECARD_MAP } from '../manstratPracticeCases';
 
-const SVG_STRATEGY_MAP_BSC = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="28" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ARSITEKTUR STRATEGY MAP &amp; BALANCED SCORECARD (KAPLAN &amp; NORTON)</text>
-  
-  <rect x="30" y="42" width="620" height="34" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="340" y="58" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">1. FINANCIAL PERSPECTIVE (HASIL AKHIR PEMEGANG SAHAM)</text>
-  <text x="340" y="70" fill="#cbd5e1" font-size="8" text-anchor="middle">Pertumbuhan Pendapatan, Produktivitas Biaya, Nilai Pemegang Saham (ROE, EVA)</text>
+const SVG_STRATEGY_MAP_BSC = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="finGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="custGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="intGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="lrnGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns10)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PETA STRATEGI 4 PERSPEKTIF BALANCED SCORECARD (KAPLAN &amp; NORTON)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">STRATEGY MAP</text>
 
-  <rect x="30" y="82" width="620" height="34" rx="6" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="98" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">2. CUSTOMER PERSPECTIVE (PROPOSISI NILAI KONSUMEN)</text>
-  <text x="340" y="110" fill="#cbd5e1" font-size="8" text-anchor="middle">Kepuasan Nasabah, Retensi Pelanggan, Akuisisi Pasar, Hubungan Kemitraan</text>
+  <!-- 4-Tier Vertical Cascade connected by Upward Arrows -->
+  <!-- Tier 1: FINANCIAL PERSPECTIVE (Top) -->
+  <g transform="translate(45, 70)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#finGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="14" fill="#34d399" font-size="9" font-weight="800">1. PERSPEKTIF KEUANGAN (FINANCIAL PERSPECTIVE) - HASIL AKHIR</text>
+    <text class="svg-text" x="795" y="14" fill="#cbd5e1" font-size="7.5" text-anchor="end">"Bagaimana Kita Terlihat di Mata Pemegang Saham?"</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Sasaran: Pertumbuhan Pendapatan Usaha, Peningkatan Margin Laba Bersih, Optimalisasi ROIC/ROE, &amp; Arus Kas Bebas.</text>
+  </g>
 
-  <rect x="30" y="122" width="620" height="34" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="340" y="138" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">3. INTERNAL BUSINESS PROCESS (PROSES RANTAI NILAI UTAMA)</text>
-  <text x="340" y="150" fill="#cbd5e1" font-size="8" text-anchor="middle">Manajemen Operasi, Manajemen Inovasi, Manajemen Pelanggan, Regulasi &amp; Sosial</text>
+  <!-- Arrow Up 1 -->
+  <polygon points="450,126 445,133 455,133" fill="#38bdf8"/>
 
-  <rect x="30" y="162" width="620" height="34" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="340" y="178" fill="#a78bfa" font-size="9.5" font-weight="700" text-anchor="middle">4. LEARNING &amp; GROWTH PERSPECTIVE (FONDASI ASET TAK BERWUJUD)</text>
-  <text x="340" y="190" fill="#cbd5e1" font-size="8" text-anchor="middle">Modal Manusia (Kompetensi), Modal Informasi (Sistem IT), Modal Organisasi (Budaya &amp; Visi)</text>
+  <!-- Tier 2: CUSTOMER PERSPECTIVE -->
+  <g transform="translate(45, 133)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#custGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="14" fill="#38bdf8" font-size="9" font-weight="800">2. PERSPEKTIF PELANGGAN (CUSTOMER PERSPECTIVE)</text>
+    <text class="svg-text" x="795" y="14" fill="#cbd5e1" font-size="7.5" text-anchor="end">"Proposisi Nilai Apa yang Diberikan ke Pelanggan?"</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Sasaran: Retensi Pelanggan, Kepuasan Pengguna (CSAT/NPS Tinggi), Kecepatan Pengiriman, &amp; Loyalitas Merek.</text>
+  </g>
+
+  <!-- Arrow Up 2 -->
+  <polygon points="450,189 445,196 455,196" fill="#fbbf24"/>
+
+  <!-- Tier 3: INTERNAL BUSINESS PROCESSES -->
+  <g transform="translate(45, 196)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#intGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="14" fill="#fbbf24" font-size="9" font-weight="800">3. PERSPEKTIF PROSES BISNIS INTERNAL (INTERNAL PROCESSES)</text>
+    <text class="svg-text" x="795" y="14" fill="#cbd5e1" font-size="7.5" text-anchor="end">"Proses Internal Mana yang Harus Kita Ungguli?"</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Sasaran: Inovasi R&amp;D Produk Baru, Keunggulan Rantai Pasok Lean, Otomasi Pabrikasi, &amp; Kepatuhan Tata Kelola ESG.</text>
+  </g>
+
+  <!-- Arrow Up 3 -->
+  <polygon points="450,252 445,259 455,259" fill="#a78bfa"/>
+
+  <!-- Tier 4: LEARNING & GROWTH (Base) -->
+  <g transform="translate(45, 259)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#lrnGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="14" fill="#a78bfa" font-size="9" font-weight="800">4. PERSPEKTIF PEMBELAJARAN &amp; PERTUMBUHAN (LEARNING &amp; GROWTH) - FONDASI</text>
+    <text class="svg-text" x="795" y="14" fill="#cbd5e1" font-size="7.5" text-anchor="end">"Bagaimana Menjaga Kemampuan Belajar &amp; Berinovasi?"</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Sasaran: Modal Manusia (Upskilling Staf), Modal Informasi (Infrastruktur Cloud/AI), &amp; Modal Organisasi (Budaya Kerja Agile).</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="332" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Hubungan Sebab-Akibat (Cause-and-Effect): Peningkatan di level Pembelajaran memicu efisiensi Proses, kepuasan Pelanggan, hingga Laba Keuangan.</text>
 </svg>`;
 
 export const TM10_READING: Reading = {

@@ -1,42 +1,86 @@
 import type { Reading } from '../../../types';
 import { CASE_UTS_MANSTRAT_INTEGRATED } from '../manstratPracticeCases';
 
-const SVG_UTS_MANSTRAT_SUMMARY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PETA KONSEP SINTESIS MATERI PRA-UTS MANAJEMEN STRATEGIK (TM 1 - TM 7)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">TM 1 &amp; TM 2</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Fondasi &amp; Industri:</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keunggulan Bersaing</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Simbiosis Stakeholder</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Porters Five Forces</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Analisis Eksternal</text>
+const SVG_UTS_MANSTRAT_SUMMARY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="s1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="s2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="s3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="s4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns8)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PETA SINTESIS KURIKULUM PRA-UTS MANAJEMEN STRATEGIK (TM 1 - TM 7)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ROADMAP UTS</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TM 3 &amp; TM 4</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Internal &amp; Bisnis:</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Value Chain Porter</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kerangka VRIO</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 3 Strategi Generik</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Kapabilitas &amp; Posisi</text>
+  <!-- 4 Pillars Roadmap -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#s1)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="21" fill="#38bdf8" font-size="10.5" font-weight="800">ANALISIS LINGKUNGAN</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-blue" x="44" y="56" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">TM 1 - TM 2</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• 3 Tingkat Hierarki Strategi</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Visi, Misi, Sasaran Strategis</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Analisis Makro PESTEL</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 5 Kekuatan Bersaing Porter</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Pemetaan Strategic Groups</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="167" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Scanning Peluang &amp; Ancaman</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">TM 5 &amp; TM 6</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Korporasi &amp; Kontrol:</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Diversifikasi &amp; M&amp;A</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 4 Strategi Global</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Informational Control</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Tata Kelola Agensi</text>
+  <polygon points="237,185 247,190 237,195" fill="#38bdf8"/>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">TM 7</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Desain &amp; Pimpinan:</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Desain Ambidextrous</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Hambatan Perubahan</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Corporate Venture</text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Eksekusi Korporasi</text>
+  <g transform="translate(250, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#s2)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="21" fill="#34d399" font-size="10.5" font-weight="800">SUMBER DAYA INTERNAL</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-green" x="44" y="56" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">TM 3</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Rantai Nilai (Value Chain)</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• 5 Aktivitas Primer Porter</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• 4 Aktivitas Pendukung</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Kerangka VRIO (Jay Barney)</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Parit Keunggulan (SCA)</text>
+    <rect class="svg-badge-green" x="14" y="185" width="167" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Identifikasi Kompetensi Inti</text>
+  </g>
+
+  <polygon points="452,185 462,190 452,195" fill="#34d399"/>
+
+  <g transform="translate(465, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#s3)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="21" fill="#fbbf24" font-size="10.5" font-weight="800">FORMULASI &amp; GLOBAL</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-amber" x="44" y="56" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">TM 4 - TM 5</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• 4 Strategi Generik Porter</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Cost vs Differentiation</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Bahaya "Stuck in the Middle"</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 4 Strategi Global Bartlett</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Sinergi Efisiensi &amp; Budaya</text>
+    <rect class="svg-badge-amber" x="14" y="185" width="167" height="24" rx="6" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Penentuan Posisi Pasar</text>
+  </g>
+
+  <polygon points="667,185 677,190 667,195" fill="#fbbf24"/>
+
+  <g transform="translate(680, 75)">
+    <rect class="svg-card" x="0" y="0" width="185" height="225" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="185" height="32" rx="12" fill="url(#s4)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="21" fill="#a78bfa" font-size="10.5" font-weight="800">KENDALI &amp; STRUKTUR</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-purple" x="44" y="56" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">TM 6 - TM 7</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Informational Control Loop</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Behavioral Control Triangle</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Tata Kelola Good Governance</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Desain Ambidextrous</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Eksploitasi vs Eksplorasi</text>
+    <rect class="svg-badge-purple" x="14" y="185" width="157" height="24" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="92" y="201" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Institusionalisasi Eksekusi</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Integrasi holistik TM 1-7 mempersiapkan mahasiswa mengupas studi kasus korporasi multidimensional pada evaluasi UTS.</text>
 </svg>`;
 
 export const TM8_READING: Reading = {

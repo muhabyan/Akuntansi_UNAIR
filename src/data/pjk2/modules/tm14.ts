@@ -1,34 +1,56 @@
 import type { Reading } from '../../../types';
 import { CASE_VAT_REFUND_CARBON_TAX } from '../pjk2PracticeCases';
 
-const SVG_RESTITUSI_CARBON = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">RESTITUSI PPN, PEMUNGUT WAPU, &amp; SKEMA PAJAK KARBON (UU HPP NO. 7/2021)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">RESTITUSI PPN</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Kelebihan Bayar Pajak):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pasal 17C KUP: PKP Kriteria Tertentu</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pasal 17D KUP: Nilai Lebih Bayar Kecil</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengembalian Pendahuluan 1 Bulan</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Restitusi Dipercepat</text>
+const SVG_RESTITUSI_CARBON = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="resGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="carbGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk14)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PROSEDUR RESTITUSI PPN &amp; PENGENALAN PAJAK KARBON (UU HPP NO. 7/2021)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">RESTITUSI &amp; CARBON</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">PEMUNGUT WAPU</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Wajib Pungut Khusus):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Instansi Pemerintah (KPPN / Kasda)</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• BUMN Tertentu (Pertamina, PLN)</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PPN Disetor Langsung ke Kas Negara</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Kode Faktur 02 &amp; 03</text>
+  <!-- Left: Restitusi PPN -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#resGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">1. JALUR RESTITUSI PPN (LEBIH BAYAR)</text>
+    
+    <text class="text-accent-blue" x="14" y="52" fill="#38bdf8" font-size="8.5" font-weight="700">A. Jalur Pemeriksaan Rutin (Pasal 17B UU KUP):</text>
+    <text class="svg-text" x="14" y="66" fill="#cbd5e1" font-size="7.5">• Melalui audit pemeriksaan lengkap kantor pajak jangka waktu maks 12 bulan</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="7.5">• Berisiko terbit SKPKB jika ditemukan koreksi pembukuan</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">PAJAK KARBON</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Bab VI UU HPP No. 7/2021):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Prinsip Cap and Tax</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tarif Min: Rp 30 / kg CO2e</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Terhubung Bursa Karbon (IDXCarbon)</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Instrumen Iklim Masa Depan</text>
+    <text class="text-accent-green" x="14" y="104" fill="#34d399" font-size="8.5" font-weight="700">B. Pengembalian Pendahuluan (Pasal 17C &amp; 17D UU KUP):</text>
+    <text class="svg-text" x="14" y="118" fill="#cbd5e1" font-size="7.5">• Jalur Cepat (Golden Taxpayer / PKP Berisiko Rendah)</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="7.5">• Restitusi cair dalam tempo <tspan class="text-accent-green" fill="#34d399" font-weight="700">1 BULAN</tspan> tanpa pemeriksaan awal</text>
+    <text class="svg-text" x="14" y="146" fill="#cbd5e1" font-size="7.5">• Syarat: Eksportir, kepatuhan tepat waktu lapor SPT 3 tahun</text>
+
+    <rect class="svg-badge-blue" x="14" y="175" width="367" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="191" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Pengembalian Kelebihan Saldo Kas dari Kas Negara</text>
+  </g>
+
+  <!-- Right: Pajak Karbon UU HPP -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#carbGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="10.5" font-weight="800">2. PAJAK KARBON (CARBON TAX - UU HPP BAB VI)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Tarif Minimum:</tspan> Rp 30 per kilogram CO2 ekuivalen (CO2e)</text>
+    <text class="svg-text" x="14" y="70" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Subjek Pajak:</tspan> Orang Pribadi atau Badan yang membeli barang yang mengandung karbon atau melakukan aktivitas yang menghasilkan emisi karbon</text>
+    <text class="svg-text" x="14" y="100" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Sektor Pilot Project:</tspan> Pembangkit Listrik Tenaga Uap (PLTU) Batubara</text>
+    <text class="svg-text" x="14" y="118" fill="#cbd5e1" font-size="8">• Mekanisme Cap-and-Tax (Batas emisi &amp; sertifikat izin emisi)</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Mendorong transisi energi hijau &amp; penurunan emisi Gas Rumah Kaca</text>
+    
+    <rect class="svg-badge-green" x="14" y="175" width="367" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="191" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Instrumen Fiskal Pengendalian Perubahan Iklim</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Pajak Karbon selaras dengan komitmen Net Zero Emission Indonesia pada Nationally Determined Contribution (NDC) global.</text>
 </svg>`;
 
 export const TM14_READING: Reading = {
@@ -47,6 +69,18 @@ export const TM14_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 14.1: Mekanisme Restitusi PPN, Pemungut PPN (WAPU), dan Skema Pemajakan Karbon (UU HPP).',
       svg: SVG_RESTITUSI_CARBON
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 17B, 17C, 17D UU KUP s.t.d.t.d UU HPP (Mekanisme Restitusi Pajak)',
+      text: '"1. Pasal 17B UU KUP (Restitusi Melalui Pemeriksaan Normal):\n   Direktur Jenderal Pajak setelah melakukan pemeriksaan atas permohonan pengembalian kelebihan pembayaran pajak menerbitkan surat ketetapan pajak paling lama 12 (dua belas) bulan sejak surat permohonan diterima secara lengkap.\n\n2. Pasal 17C UU KUP (Pengembalian Pendahuluan WP Kriteria Tertentu / Golden Taxpayer):\n   Diberikan kepada WP Patuh (tidak pernah terlambat SPT, tidak punya tunggakan pajak, LK diaudit WTP 3 tahun berturut-turut). SKPPKP terbit paling lama 1 bulan untuk PPN atau 3 bulan untuk PPh tanpa pemeriksaan awal.\n\n3. Pasal 17D UU KUP jo PMK 209/2021 (Pengembalian Pendahuluan WP Persyaratan Tertentu):\n   Diberikan untuk lebih bayar skala tertentu: WP Orang Pribadi non-usaha s/d Rp 100 Juta; WP OP pengusaha s/d Rp 100 Juta; WP Badan s/d Rp 1 Miliar; PKP PPN s/d Rp 5 Miliar. SKPPKP terbit dalam waktu 1 bulan tanpa pemeriksaan awal."'
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: '📜 Dasar Hukum Otentik: UU No. 7 Tahun 2021 (UU HPP) Bab VI Pasal 13 (Pajak Karbon)',
+      text: '"Pasal 13 ayat (1) & (2): Pajak Karbon dikenakan atas emisi karbon yang memberikan dampak negatif bagi lingkungan hidup. Subjek pajak karbon adalah orang pribadi atau badan yang membeli barang yang mengandung karbon dan/atau melakukan aktivitas yang menghasilkan emisi karbon.\n\nPasal 13 ayat (8) & (9): Tarif pajak karbon ditetapkan paling rendah Rp 30,00 (tiga puluh rupiah) per kilogram karbon dioksida ekuivalen (CO2e) atau satuan yang setara. Prinsip pengenaan pajak karbon mengadopsi mekanisme Cap and Tax dan Cap and Trade yang diselaraskan dengan pasar karbon (carbon market)."'
     },
     {
       kind: 'h2',

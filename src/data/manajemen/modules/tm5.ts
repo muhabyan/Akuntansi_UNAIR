@@ -1,30 +1,76 @@
 import type { Reading } from '../../../types';
 import { CASE_STRATEGIC_PLANNING_PORTER } from '../manajemenPracticeCases';
 
-const SVG_BCG_MATRIX = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MATRIKS PORTOFOLIO BISNIS BCG (BOSTON CONSULTING GROUP)</text>
-  
-  <rect x="35" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="76" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">STARS (BINTANG)</text>
-  <text x="177" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Pangsa Pasar Tinggi | Pertumbuhan Pasar Tinggi</text>
-  <text x="177" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Strategi: Investasi agresif untuk pertahankan posisi</text>
+const SVG_BCG_MATRIX = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="starGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="qmGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="cowGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="dogGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad5)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MATRIKS PORTOFOLIO BISNIS BCG (BOSTON CONSULTING GROUP)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">BCG MATRIX</text>
 
-  <rect x="355" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="497" y="76" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">QUESTION MARKS (TANDA TANYA)</text>
-  <text x="497" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Pangsa Pasar Rendah | Pertumbuhan Pasar Tinggi</text>
-  <text x="497" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Strategi: Selektif investasi menjadi Star atau divestasi</text>
+  <!-- Y-Axis -->
+  <text class="text-accent-blue" x="50" y="120" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">PERTUMBUHAN</text>
+  <text class="text-accent-blue" x="50" y="135" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">PASAR TINGGI</text>
+  <text class="svg-muted" x="50" y="275" fill="#94a3b8" font-size="9.5" font-weight="800" text-anchor="middle">PERTUMBUHAN</text>
+  <text class="svg-muted" x="50" y="290" fill="#94a3b8" font-size="9.5" font-weight="800" text-anchor="middle">PASAR RENDAH</text>
 
-  <rect x="35" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="177" y="153" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">CASH COWS (SAPI PERAH)</text>
-  <text x="177" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Pangsa Pasar Tinggi | Pertumbuhan Pasar Rendah</text>
-  <text x="177" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Strategi: Perah kas surplus untuk mendanai Stars/R&amp;D</text>
+  <!-- X-Axis -->
+  <text class="text-accent-green" x="275" y="78" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">PANGSA PASAR RELATIF TINGGI</text>
+  <text class="text-accent-red" x="685" y="78" fill="#f87171" font-size="10" font-weight="800" text-anchor="middle">PANGSA PASAR RELATIF RENDAH</text>
 
-  <rect x="355" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="497" y="153" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">DOGS (ANJING)</text>
-  <text x="497" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Pangsa Pasar Rendah | Pertumbuhan Pasar Rendah</text>
-  <text x="497" y="185" fill="#fca5a5" font-size="8" text-anchor="middle">Strategi: Likuidasi, perampingan, atau divestasi</text>
+  <!-- Quadrants -->
+  <g transform="translate(105, 92)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#starGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">★ STARS (BINTANG)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pertumbuhan pasar cepat &amp; pangsa dominan</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Arus kas seimbang / butuh reinvestasi besar</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Investasi agresif pertahankan kepemimpinan</text>
+    <rect x="250" y="88" width="100" height="18" rx="9" fill="#0284c7" fill-opacity="0.3"/>
+    <text class="text-accent-blue" x="300" y="101" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Masa Depan Korporasi</text>
+  </g>
+
+  <g transform="translate(490, 92)">
+    <rect class="svg-card" x="0" y="0" width="370" height="115" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="370" height="28" rx="12" fill="url(#qmGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="16" y="20" fill="#fbbf24" font-size="11" font-weight="800">? QUESTION MARKS (TANDA TANYA)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pasar tumbuh cepat namun pangsa pasar tertinggal</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Menguras kas besar; belum tentu sukses</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Suntik modal ubah ke Star ATAU Divestasi</text>
+    <rect x="255" y="88" width="100" height="18" rx="9" fill="#d97706" fill-opacity="0.3"/>
+    <text class="text-accent-amber" x="305" y="101" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Keputusan Kritis</text>
+  </g>
+
+  <g transform="translate(105, 218)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#cowGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">CASH COWS (SAPI PERAH)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pertumbuhan lambat namun pangsa pasar terkuat</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Mesin pencetak arus kas positif melimpah</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Pertahankan posisi, perah kas untuk danai Star</text>
+    <rect x="250" y="88" width="100" height="18" rx="9" fill="#059669" fill-opacity="0.3"/>
+    <text class="text-accent-green" x="300" y="101" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Sumber Oksigen Kas</text>
+  </g>
+
+  <g transform="translate(490, 218)">
+    <rect class="svg-card" x="0" y="0" width="370" height="115" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="370" height="28" rx="12" fill="url(#dogGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="16" y="20" fill="#f87171" font-size="11" font-weight="800">DOGS (ANJING)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pasar stagnan/turun &amp; pangsa pasar sangat kecil</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Menghasilkan laba minim atau jebakan kerugian kas</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Panen kas (Harvesting) atau Jual (Divestasi)</text>
+    <rect x="255" y="88" width="100" height="18" rx="9" fill="#dc2626" fill-opacity="0.3"/>
+    <text class="text-accent-red" x="305" y="101" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Kandidat Divestasi</text>
+  </g>
 </svg>`;
 
 export const TM5_READING: Reading = {

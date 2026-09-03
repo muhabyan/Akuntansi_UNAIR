@@ -1,34 +1,73 @@
 import type { Reading } from '../../../types';
 import { CASE_PLATFORM_ECOSYSTEM_NETWORK } from '../manstratPracticeCases';
 
-const SVG_PLATFORM_ECOSYSTEM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL BISNIS PLATFORM DUA SISI &amp; EFEK JARINGAN (MULTI-SIDED PLATFORM)</text>
-  
-  <rect x="30" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="120" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">SISI PRODUSEN</text>
-  <text x="120" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Penjual / Merchant / Driver):</text>
-  <text x="120" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mengunggah produk &amp; jasa</text>
-  <text x="120" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Menikmati akses jutaan pembeli</text>
-  <text x="120" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Membayar take-rate / komisi</text>
-  <text x="120" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Monetization Side</text>
+const SVG_PLATFORM_ECOSYSTEM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="prodGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="platGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="consGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns11)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">EKOSISTEM BISNIS PLATFORM DUA SISI &amp; EFEK JARINGAN (NETWORK EFFECTS)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">PLATFORM DYNAMICS</text>
 
-  <rect x="235" y="55" width="210" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
-  <text x="340" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">INTI PLATFORM DIGITAL</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Matchmaker &amp; Tata Kelola):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Algoritma pencocokan presisi</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sistem pembayaran &amp; escrow aman</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Aturan main &amp; kurasi kualitas</text>
-  <text x="340" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pereduksi Biaya Transaksi</text>
+  <!-- Left: PRODUCER SIDE -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="245" height="215" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="245" height="30" rx="12" fill="url(#prodGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="122" y="20" fill="#38bdf8" font-size="10.5" font-weight="800" text-anchor="middle">SISI PRODUSEN / PENJUAL</text>
+    <text class="svg-text" x="12" y="48" fill="#cbd5e1" font-size="8">• Merchant Toko, Driver Ojol, Developer App</text>
+    <text class="svg-text" x="12" y="66" fill="#cbd5e1" font-size="8">• Menyediakan barang, jasa, konten, &amp; aset</text>
+    <text class="svg-text" x="12" y="84" fill="#cbd5e1" font-size="8">• Tertarik masuk jika jumlah pembeli masif</text>
+    <text class="svg-text" x="12" y="102" fill="#cbd5e1" font-size="8">• Menanggung komisi / biaya transaksi platform</text>
+    <rect class="svg-subcard" x="12" y="140" width="221" height="50" rx="6" fill="#1e293b"/>
+    <text class="text-accent-blue" x="122" y="158" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Same-Side Effect: Kompetisi</text>
+    <text class="svg-muted" x="122" y="174" fill="#94a3b8" font-size="7.5" text-anchor="middle">(Banyak penjual = persaingan harga ketat)</text>
+  </g>
 
-  <rect x="470" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="560" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">SISI KONSUMEN</text>
-  <text x="560" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Pembeli / Penumpang):</text>
-  <text x="560" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pilihan produk melimpah</text>
-  <text x="560" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ulasan reputasi transparan</text>
-  <text x="560" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Disubsidi promo / gratis ongkir</text>
-  <text x="560" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Subsidy Side</text>
+  <!-- Bilateral Cross-Side Network Effect Arrows -->
+  <polygon points="300,165 315,160 300,155" fill="#38bdf8"/>
+  <polygon points="315,195 300,200 315,205" fill="#34d399"/>
+
+  <!-- Center: PLATFORM ENGINE -->
+  <g transform="translate(315, 75)">
+    <rect class="svg-card" x="0" y="0" width="270" height="215" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="270" height="30" rx="12" fill="url(#platGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="135" y="20" fill="#34d399" font-size="10.5" font-weight="800" text-anchor="middle">PLATFORM CORE &amp; GOVERNANCE</text>
+    <circle cx="135" cy="85" r="32" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="135" y="82" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">MATCHING</text>
+    <text class="svg-text" x="135" y="94" fill="#cbd5e1" font-size="7.5" text-anchor="middle">ALGORITHM</text>
+    <text class="svg-text" x="12" y="135" fill="#cbd5e1" font-size="8">• Fasilitator transaksi &amp; penjamin kepercayaan (Escrow)</text>
+    <text class="svg-text" x="12" y="152" fill="#cbd5e1" font-size="8">• Menetapkan aturan main, subsidi sisi sensitif, &amp; rating</text>
+    <text class="svg-text" x="12" y="169" fill="#cbd5e1" font-size="8">• Biaya marjinal mendekati nol (Zero Marginal Cost)</text>
+    <rect class="svg-badge-green" x="12" y="182" width="246" height="20" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="135" y="196" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Efek Flywheel: Winner-Take-All Market</text>
+  </g>
+
+  <!-- Bilateral Cross-Side Network Effect Arrows -->
+  <polygon points="605,160 590,165 605,170" fill="#34d399"/>
+  <polygon points="590,195 605,200 590,205" fill="#fbbf24"/>
+
+  <!-- Right: CONSUMER SIDE -->
+  <g transform="translate(620, 75)">
+    <rect class="svg-card" x="0" y="0" width="245" height="215" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="245" height="30" rx="12" fill="url(#consGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="122" y="20" fill="#fbbf24" font-size="10.5" font-weight="800" text-anchor="middle">SISI KONSUMEN / PEMBELI</text>
+    <text class="svg-text" x="12" y="48" fill="#cbd5e1" font-size="8">• Pembeli Online, Penumpang, Pemakai Aplikasi</text>
+    <text class="svg-text" x="12" y="66" fill="#cbd5e1" font-size="8">• Menikmati variasi produk melimpah &amp; harga hemat</text>
+    <text class="svg-text" x="12" y="84" fill="#cbd5e1" font-size="8">• Sering disubsidi promosi (Gratis Ongkir / Diskon)</text>
+    <text class="svg-text" x="12" y="102" fill="#cbd5e1" font-size="8">• Terikat oleh kemudahan ekosistem (Lock-in effect)</text>
+    <rect class="svg-subcard" x="12" y="140" width="221" height="50" rx="6" fill="#1e293b"/>
+    <text class="text-accent-amber" x="122" y="158" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Cross-Side Effect: Nilai Melompat</text>
+    <text class="svg-muted" x="122" y="174" fill="#94a3b8" font-size="7.5" text-anchor="middle">(Banyak pembeli = lebih banyak penjual masuk)</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Efek jaringan silang (Cross-Side Network Effect) menciptakan lingkaran pertumbuhan mandiri yang sulit ditumbangkan oleh bisnis pipa tradisional.</text>
 </svg>`;
 
 export const TM11_READING: Reading = {

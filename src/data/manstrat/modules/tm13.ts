@@ -1,26 +1,62 @@
 import type { Reading } from '../../../types';
 import { CASE_EMIRATES_AIRLINE_STRATEGY } from '../manstratPracticeCases';
 
-const SVG_AIRLINE_STRATEGY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL JARINGAN HUB-AND-SPOKE (EMIRATES) VS POINT-TO-POINT (LCC)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">HUB-AND-SPOKE GLOBAL (EMIRATES)</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Mega-Hub Tunggal di Dubai:</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pesawat raksasa berbadan lebar (A380, B777)</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Menghubungkan kota sekunder ke seluruh benua</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Layanan mewah first-class &amp; business lounge</text>
-  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Konektivitas Global &amp; Marjin Tinggi</text>
+const SVG_AIRLINE_STRATEGY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns13" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns13)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRATEGI JARINGAN PENERBANGAN: HUB-AND-SPOKE (EMIRATES) VS POINT-TO-POINT (LCC)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">AVIATION MODEL</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">POINT-TO-POINT LCC (RYANAIR / LION)</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Penerbangan Langsung Antar Kota:</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Armada tunggal berbadan sempit (B737/A320)</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Perputaran pesawat kilat 25 menit di apron</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Unbundling tarif: bagasi &amp; makanan berbayar</text>
-  <text x="497" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Efisiensi Biaya per Kursi (CASK)</text>
+  <!-- Left: HUB-AND-SPOKE (EMIRATES) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="245" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="197" y="22" fill="#38bdf8" font-size="11" font-weight="800" text-anchor="middle">HUB-AND-SPOKE (EMIRATES / QATAR / SQ)</text>
+    <!-- Visual Hub Chart -->
+    <circle cx="197" cy="78" r="22" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
+    <text x="197" y="78" fill="#ffffff" font-size="7.5" font-weight="800" text-anchor="middle">MEGA HUB</text>
+    <text x="197" y="89" fill="#ffffff" font-size="6.5" text-anchor="middle">(DXB)</text>
+    <!-- Spokes -->
+    <circle cx="95" cy="55" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="95" y="58" fill="#cbd5e1" font-size="6" text-anchor="middle">London</text>
+    <circle cx="95" cy="105" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="95" y="108" fill="#cbd5e1" font-size="6" text-anchor="middle">NY</text>
+    <circle cx="300" cy="55" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="300" y="58" fill="#cbd5e1" font-size="6" text-anchor="middle">Tokyo</text>
+    <circle cx="300" cy="105" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="300" y="108" fill="#cbd5e1" font-size="6" text-anchor="middle">Sydney</text>
+    <line x1="107" y1="58" x2="175" y2="72" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="107" y1="102" x2="175" y2="84" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="288" y1="58" x2="219" y2="72" stroke="#38bdf8" stroke-width="1.5"/>
+    <line x1="288" y1="102" x2="219" y2="84" stroke="#38bdf8" stroke-width="1.5"/>
+
+    <text class="svg-text" x="14" y="145" fill="#cbd5e1" font-size="8">• Menghubungkan ribuan kombinasi kota dunia lewat 1 mega transfer hub</text>
+    <text class="svg-text" x="14" y="162" fill="#cbd5e1" font-size="8">• Armada pesawat berbadan lebar (A380, B777) →Maksimalkan penumpang</text>
+    <text class="svg-text" x="14" y="179" fill="#cbd5e1" font-size="8">• Layanan premium full-service (First/Business class &amp; inflight lounge mewah)</text>
+    <rect class="svg-badge-blue" x="14" y="195" width="367" height="22" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="210" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Konektivitas Global Maksimal Antar-Benua</text>
+  </g>
+
+  <!-- Right: POINT-TO-POINT (LCC) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="245" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text class="text-accent-amber" x="197" y="22" fill="#fbbf24" font-size="11" font-weight="800" text-anchor="middle">POINT-TO-POINT DIRECT (AIRASIA / RYANAIR)</text>
+    <!-- Visual P2P Chart -->
+    <circle cx="100" cy="65" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="100" y="68" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota A</text>
+    <circle cx="295" cy="65" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="295" y="68" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota B</text>
+    <circle cx="100" cy="105" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="100" y="108" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota C</text>
+    <circle cx="295" cy="105" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="295" y="108" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota D</text>
+    <line x1="114" y1="65" x2="281" y2="65" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="114" y1="105" x2="281" y2="105" stroke="#fbbf24" stroke-width="2"/>
+    <text class="text-accent-amber" x="197" y="88" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Penerbangan Langsung Tanpa Transit</text>
+
+    <text class="svg-text" x="14" y="145" fill="#cbd5e1" font-size="8">• Rute langsung antar bandara sekunder (Biaya landing fee bandara murah)</text>
+    <text class="svg-text" x="14" y="162" fill="#cbd5e1" font-size="8">• Satu tipe pesawat seragam (A320/B737) →Efisiensi mekanik &amp; pilot</text>
+    <text class="svg-text" x="14" y="179" fill="#cbd5e1" font-size="8">• Waktu putar pesawat cepat di darat (Turnaround time 25 menit) →Utilisasi 14 jam</text>
+    <rect class="svg-badge-amber" x="14" y="195" width="367" height="22" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="197" y="210" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Struktur Biaya Operasional Per Kursi Terendah (CASK)</text>
+  </g>
 </svg>`;
 
 export const TM13_READING: Reading = {

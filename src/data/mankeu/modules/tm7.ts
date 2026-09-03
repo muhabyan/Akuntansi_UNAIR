@@ -1,34 +1,75 @@
 import type { Reading } from '../../../types';
 import { CASE_CASHFLOW_RISK_ANALYSIS } from '../mankeuPracticeCases';
 
-const SVG_CASH_FLOW_STRUCTURE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">3 TAHAP ESTIMASI ARUS KAS PROYEK (INCREMENTAL CASH FLOWS)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">1. INITIAL OUTLAY (CF_0)</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Pengeluaran Awal (t=0):</text>
-  <text x="125" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Harga Beli + Instalasi</text>
-  <text x="125" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tambahan Modal Kerja (NWC)</text>
-  <text x="125" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Opportunity Costs tanah</text>
-  <text x="125" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Sunk Cost TIDAK Masuk</text>
+const SVG_CASH_FLOW_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="cf0Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+    <linearGradient id="ocfGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="tcfGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk7)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">3 FASE ESTIMASI ARUS KAS INKREMENTAL PROYEK INVESTASI (CAPITAL EXPENDITURE)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">PROJECT CASH FLOWS</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">2. OPERATING CF (OCF)</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Arus Kas Operasional (t=1..N):</text>
-  <text x="340" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• OCF = NOPAT + Depresiasi</text>
-  <text x="340" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• OCF = (Rev-Cost)(1-T) + Dep(T)</text>
-  <text x="340" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pertimbangkan kanibalisasi</text>
-  <text x="340" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Tax Shield Depresiasi</text>
+  <!-- 3 Phases Horizontal Sequence -->
+  <!-- Phase 1: Initial Outlay (t=0) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#cf0Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="132" y="20" fill="#f87171" font-size="10" font-weight="800" text-anchor="middle">FASE 1: ARUS KAS AWAL (t = 0)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-red" x="132" y="56" fill="#f87171" font-size="9" font-weight="700" text-anchor="middle">Initial Outlay (Kas Keluar Bersih)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Harga perolehan aset tetap baru</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Biaya pengiriman &amp; instalasi mesin</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Kebutuhan tambahan Modal Kerja (ΔNWC)</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Dikurangi: Kas hasil jual aset lama</text>
+    <text class="svg-text" x="14" y="153" fill="#cbd5e1" font-size="8">• Ditambah/dikurangi: Pajak atas laba/rugi jual</text>
+    <rect class="svg-badge-red" x="14" y="185" width="237" height="24" rx="4" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="132" y="201" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Pengeluaran Investasi Awal (Outflow)</text>
+  </g>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">3. TERMINAL CF (TCF)</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Arus Kas Akhir Proyek (t=N):</text>
-  <text x="555" y="120" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Nilai Sisa Bersih (Salvage)</text>
-  <text x="555" y="136" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pajak atas Gain/Loss Jual</text>
-  <text x="555" y="152" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pencairan Kembali 100% NWC</text>
-  <text x="555" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Likuidasi Aset Proyek</text>
+  <!-- Arrow 1 -->
+  <polygon points="310,185 318,190 310,195" fill="#38bdf8"/>
+
+  <!-- Phase 2: Operating Cash Flow (t=1..N) -->
+  <g transform="translate(325, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#ocfGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">FASE 2: OPERASIONAL (t = 1 s.d. N)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">OCF = EBIT(1 - T) + Depresiasi</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Pendapatan tambahan operasional proyek</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Penghematan beban kas operasional</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Beban penyusutan (Non-cash tax shield)</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Beban bunga utang <tspan class="text-accent-red" fill="#f87171" font-weight="700">TIDAK dimasukkan</tspan></text>
+    <text class="svg-text" x="14" y="153" fill="#cbd5e1" font-size="8">  (sudah tercermin pada WACC)</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Arus Kas Masuk Bersih Tahunan (Inflow)</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <polygon points="600,185 608,190 600,195" fill="#34d399"/>
+
+  <!-- Phase 3: Terminal Cash Flow (t=N) -->
+  <g transform="translate(615, 75)">
+    <rect class="svg-card" x="0" y="0" width="250" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="250" height="30" rx="10" fill="url(#tcfGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="125" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">FASE 3: TERMINAL AKHIR (t = N)</text>
+    <rect class="svg-subcard" x="14" y="40" width="222" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="125" y="56" fill="#34d399" font-size="9" font-weight="700" text-anchor="middle">Terminal Cash Flow (TCF)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Nilai sisa penjualan mesin (Salvage Value)</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Pajak atas pelepasan nilai sisa aset</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Pemulihan Modal Kerja</tspan> (100% NWC Recovery)</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Saldo piutang &amp; stok dilikuidasi ke kas</text>
+    <text class="svg-text" x="14" y="153" fill="#cbd5e1" font-size="8">• Ditambahkan ke OCF tahun terakhir (N)</text>
+    <rect class="svg-badge-green" x="14" y="185" width="222" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="125" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Penutupan &amp; Likuidasi Proyek</text>
+  </g>
 </svg>`;
 
 export const TM7_READING: Reading = {

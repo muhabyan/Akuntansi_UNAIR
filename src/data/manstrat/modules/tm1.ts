@@ -1,34 +1,57 @@
 import type { Reading } from '../../../types';
 import { CASE_COMPETITIVE_ADVANTAGE_STAKEHOLDER } from '../manstratPracticeCases';
 
-const SVG_STRATEGY_HIERARCHY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">HIERARKI STRATEGI &amp; SIMBIOSIS PEMANGKU KEPENTINGAN (DESS ET AL.)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">CORPORATE LEVEL</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">"What business to be in?":</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Alokasi portofolio bisnis</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Diversifikasi M&amp;A &amp; Aliansi</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Manajemen sinergi grup</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Direksi &amp; Pemegang Saham</text>
+const SVG_STRATEGY_HIERARCHY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="corpGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="busGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="funcGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns1)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">HIERARKI STRATEGI KORPORASI 3 TINGKAT (GREGORY G. DESS)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">STRATEGY LEVELS</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">BUSINESS LEVEL</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">"How to compete &amp; win?":</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Cost Leadership</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Diferensiasi Nilai Unik</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fokus Pasar Ceruk</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">General Manager SBU</text>
+  <!-- Left: Visual Stepped Pyramid -->
+  <polygon points="230,75 140,150 320,150" fill="url(#corpGrad)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="230" y="125" fill="#0f172a" font-size="11" font-weight="800" text-anchor="middle">CORPORATE LEVEL</text>
+  <text x="230" y="139" fill="#0f172a" font-size="8" font-weight="700" text-anchor="middle">"Bisnis Apa yang Kita Masuki?"</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">FUNCTIONAL LEVEL</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">"How to execute?":</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pemasaran, R&amp;D, Operasi</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keuangan &amp; Manajemen SDM</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Integrasi rantai pasok</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Departemen Fungsional</text>
+  <polygon points="137,155 70,235 390,235 323,155" fill="url(#busGrad)" stroke="#7dd3fc" stroke-width="1.5"/>
+  <text x="230" y="195" fill="#0f172a" font-size="11.5" font-weight="800" text-anchor="middle">BUSINESS LEVEL (SBU)</text>
+  <text x="230" y="211" fill="#0f172a" font-size="8.5" font-weight="700" text-anchor="middle">"Bagaimana Bersaing &amp; Menang di Pasar?"</text>
+
+  <polygon points="67,240 15,325 445,325 393,240" fill="url(#funcGrad)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="230" y="280" fill="#0f172a" font-size="12" font-weight="800" text-anchor="middle">FUNCTIONAL LEVEL (OPERASIONAL)</text>
+  <text x="230" y="298" fill="#0f172a" font-size="9" font-weight="700" text-anchor="middle">"Alokasi Sumber Daya Penopang Strategi SBU"</text>
+
+  <!-- Right: 3 Strategy Cards -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="400" height="75" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="400" height="24" rx="10" fill="url(#corpGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="17" fill="#a78bfa" font-size="10" font-weight="800">1. CORPORATE LEVEL (DIREKSI KORPORAT / CEO)</text>
+    <text class="svg-text" x="14" y="38" fill="#cbd5e1" font-size="8">• Portofolio multi-bisnis, sinergi korporasi, M&amp;A, dan alokasi modal</text>
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• Keputusan diversifikasi (terkait/konglomerasi) &amp; aliansi global</text>
+    <text class="svg-muted" x="14" y="66" fill="#94a3b8" font-size="7.5">Contoh: PT Astra International Tbk mengelola 7 pilar industri mandiri</text>
+
+    <rect class="svg-card" x="0" y="85" width="400" height="75" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="85" width="400" height="24" rx="10" fill="url(#busGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="102" fill="#38bdf8" font-size="10" font-weight="800">2. BUSINESS LEVEL (KEPALA SBU / GENERAL MANAGER)</text>
+    <text class="svg-text" x="14" y="123" fill="#cbd5e1" font-size="8">• Posisi bersaing: Keunggulan Biaya (Cost) vs Diferensiasi Produk</text>
+    <text class="svg-text" x="14" y="137" fill="#cbd5e1" font-size="8">• Merespon ancaman 5 Kekuatan Porter &amp; membangun parit proteksi (Moat)</text>
+    <text class="svg-muted" x="14" y="151" fill="#94a3b8" font-size="7.5">Contoh: Auto2000 (Otomotif) vs United Tractors (Alat Berat)</text>
+
+    <rect class="svg-card" x="0" y="170" width="400" height="75" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="170" width="400" height="24" rx="10" fill="url(#funcGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="187" fill="#34d399" font-size="10" font-weight="800">3. FUNCTIONAL LEVEL (MANAJER OPERASIONAL &amp; TI)</text>
+    <text class="svg-text" x="14" y="208" fill="#cbd5e1" font-size="8">• Penerjemahan taktis: Anggaran R&amp;D, pemasaran digital, efisiensi rantai pasok</text>
+    <text class="svg-text" x="14" y="222" fill="#cbd5e1" font-size="8">• Menjamin integrasi mulus antara efisiensi proses harian &amp; target laba SBU</text>
+    <text class="svg-muted" x="14" y="236" fill="#94a3b8" font-size="7.5">Contoh: Departemen Pemasaran meluncurkan program loyalitas terintegrasi</text>
+  </g>
 </svg>`;
 
 export const TM1_READING: Reading = {

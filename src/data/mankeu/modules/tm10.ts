@@ -1,26 +1,57 @@
 import type { Reading } from '../../../types';
 import { CASE_DIVIDEND_POLICY_REPURCHASE } from '../mankeuPracticeCases';
 
-const SVG_DIVIDEND_POLICY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">DISTRIBUSI KAS: DIVIDEN TUNAI VS SHARE REPURCHASE (BUYBACK)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">PEMBAGIAN DIVIDEN TUNAI</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Cash Dividend Characteristics:</text>
-  <text x="177" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pembayaran kas langsung ke pemegang saham</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Menciptakan ekspektasi pembayaran rutin</text>
-  <text x="177" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pemotongan dividen dipandang sinyal buruk</text>
-  <text x="177" y="180" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Sticky Dividend Policy</text>
+const SVG_DIVIDEND_POLICY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="divGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="repGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk10)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">DISTRIBUSI KAS KEPADA PEMEGANG SAHAM: DIVIDEN TUNAI VS SHARE BUYBACK</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DIVIDEND POLICY</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="502" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">PEMBELIAN KEMBALI SAHAM (BUYBACK)</text>
-  <text x="502" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Stock Repurchase Advantages:</text>
-  <text x="502" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Fleksibilitas kas tanpa komitmen permanen</text>
-  <text x="502" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Menurunkan lembar saham $\rightarrow$ EPS naik</text>
-  <text x="502" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Sinyal manajemen: Saham sedang Undervalued</text>
-  <text x="502" y="180" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">Capital Gain &amp; EPS Booster</text>
+  <!-- Left: Cash Dividend -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#divGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">1. DIVIDEN TUNAI (CASH DIVIDEND)</text>
+    
+    <rect class="svg-subcard" x="16" y="44" width="363" height="36" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="197" y="58" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">MEKANISME: TRANSFER KAS BERKALA</text>
+    <text class="svg-muted" x="197" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Kas Keluar Neraca →Masuk Rekening RDN Investor</text>
+
+    <text class="svg-text" x="16" y="102" fill="#cbd5e1" font-size="8">• Sinyal Komitmen: Menunjukkan kepastian arus kas stabil ("Bird in the Hand")</text>
+    <text class="svg-text" x="16" y="120" fill="#cbd5e1" font-size="8">• Efek Klientel: Sangat disukai dana pensiun &amp; yayasan yang butuh kas rutin</text>
+    <text class="svg-text" x="16" y="138" fill="#cbd5e1" font-size="8">• Kekakuan Dividen (Dividend Sticky): Pemotongan dividen dianggap sinyal krisis buruk</text>
+    <text class="svg-text" x="16" y="156" fill="#cbd5e1" font-size="8">• Harga saham otomatis terkoreksi turun sebesar dividen per lembar saat Ex-Date</text>
+    
+    <rect class="svg-badge-blue" x="16" y="185" width="363" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Sinyal Kesehatan Operasional &amp; Kepastian Kas Terjadwal</text>
+  </g>
+
+  <!-- Right: Share Buyback (Repurchase) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#repGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">2. PEMBELIAN KEMBALI SAHAM (SHARE BUYBACK)</text>
+    
+    <rect class="svg-subcard" x="16" y="44" width="363" height="36" rx="6" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="197" y="58" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">MEKANISME: BUYBACK VIA PASAR REGULER</text>
+    <text class="svg-muted" x="197" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Saham dibeli kembali menjadi Saham Treasuri (Treasury Shares)</text>
+
+    <text class="svg-text" x="16" y="102" fill="#cbd5e1" font-size="8">• Sinyal Undervaluation: Manajemen yakin harga saham di pasar terlalu murah</text>
+    <text class="svg-text" x="16" y="120" fill="#cbd5e1" font-size="8">• Mengurangi jumlah saham beredar →Secara mekanis mendongkrak EPS &amp; ROE</text>
+    <text class="svg-text" x="16" y="138" fill="#cbd5e1" font-size="8">• Fleksibilitas Tinggi: Tidak menimbulkan ekspektasi komitmen wajib di tahun depan</text>
+    <text class="svg-text" x="16" y="156" fill="#cbd5e1" font-size="8">• Efisiensi Pajak: Memberikan opsi capital gain bagi pemegang saham</text>
+    
+    <rect class="svg-badge-green" x="16" y="185" width="363" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Mendongkrak Laba Per Lembar Saham (EPS Booster)</text>
+  </g>
 </svg>`;
 
 export const TM10_READING: Reading = {

@@ -1,34 +1,69 @@
 import type { Reading } from '../../../types';
 import { CASE_DIGITAL_SIPD_SPAN_GOVERNANCE } from '../aspPracticeCases';
 
-const SVG_DIGITAL_TRENDS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TREN KONTEMPORER AKUNTANSI SEKTOR PUBLIK: DIGITALISASI, TATA KELOLA, &amp; SUSTAINABILITY</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">SIPD &amp; SPAN DIGITAL</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Integrated Financial System):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• SIPD-RI Kemendagri Terpadu</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• SPAN Kemenkeu Real-Time</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Menghapus 'Anggaran Siluman'</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Single Source of Truth</text>
+const SVG_DIGITAL_TRENDS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="dt1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="dt2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="dt3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp14)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">TREN DIGITALISASI &amp; MASA DEPAN AKUNTANSI SEKTOR PUBLIK: SIPD, SPAN, &amp; GREEN BUDGETING</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">FUTURE TRENDS</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">GREEN BUDGETING</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Sustainability &amp; ESG):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penandaan Anggaran Iklim</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penerbitan Green Sukuk Negara</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Akuntansi Emisi Karbon Pemda</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Keberlanjutan Fiskal</text>
+  <!-- 3 Pillars Grid -->
+  <!-- 1. SIPD & SPAN Integration -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#dt1)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">1. INTEGRASI SIPD &amp; SPAN</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="55" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Sistem Informasi Satu Data Keuangan</text>
+    
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="7.5">• SIPD-RI (Kemendagri): Menyatukan perencanaan, penganggaran, penatausahaan, &amp; akuntansi 542 Pemda se-Indonesia</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• SPAN &amp; SAKTI (Kemenkeu): ERP Keuangan Negara APBN terintegrasi Single Treasury Account</text>
+    <text class="text-accent-blue" x="14" y="142" fill="#38bdf8" font-size="7.5" font-weight="700">• Menghilangkan data silo dan manipulasi anggaran</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">INTEGRITAS &amp; ANTI-FRAUD</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Public Governance):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Whistleblowing System (WBS)</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kolaborasi KPK &amp; BPKP</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Audit Investigatif Berbasis AI</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Clean Government</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">ERP Sektor Publik Terintegrasi</text>
+  </g>
+
+  <!-- 2. Green Budgeting & SDGs -->
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#dt2)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">2. GREEN BUDGETING &amp; CLIMATE</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="55" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Penandaan Anggaran Iklim (Climate Tagging)</text>
+    
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="7.5">• Climate Budget Tagging (CBT): Melacak belanja mitigasi dan adaptasi perubahan iklim di APBN/APBD</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Penerbitan Green Sukuk (Surat Berharga Syariah Hijau) untuk proyek energi terbarukan</text>
+    <text class="text-accent-green" x="14" y="142" fill="#34d399" font-size="7.5" font-weight="700">• Pelaporan Capaian 17 Target SDGs PBB</text>
+
+    <rect class="svg-badge-green" x="14" y="185" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Fiskal Berkelanjutan &amp; Ramah Lingkungan</text>
+  </g>
+
+  <!-- 3. AI & Continuous Auditing -->
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#dt3)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">3. AUDIT DIGITAL &amp; ANALITIK</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="132" y="55" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Continuous Auditing &amp; AI Forensik</text>
+    
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="7.5">• Big Data Analytics BPK &amp; BPKP untuk mendeteksi transaksi janggal, split billing pengadaan, &amp; vendor fiktif</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Pemantauan real-time transaksi e-Purchasing &amp; transaksi nontunai (Cashless Pemda)</text>
+    <text class="text-accent-purple" x="14" y="142" fill="#a78bfa" font-size="7.5" font-weight="700">• Transparansi Open Government Data bagi publik</text>
+
+    <rect class="svg-badge-purple" x="14" y="185" width="237" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="132" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Pencegahan Korupsi Berbasis Kecerdasan Buatan</text>
+  </g>
 </svg>`;
 
 export const TM14_READING: Reading = {

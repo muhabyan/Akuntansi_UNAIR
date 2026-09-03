@@ -572,9 +572,9 @@ function MaterialCard({
         <h3 className={`text-base font-bold leading-snug md:text-lg transition-colors ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400'}`}>
           {reading.title}
         </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+        <div className="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
           {renderText(reading.intro)}
-        </p>
+        </div>
       </div>
 
       <button

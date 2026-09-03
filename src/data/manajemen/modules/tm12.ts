@@ -1,42 +1,70 @@
 import type { Reading } from '../../../types';
 import { CASE_LEADERSHIP_TRANSFORMATIONAL } from '../manajemenPracticeCases';
 
-const SVG_SITUATIONAL_LEADERSHIP = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL KEPEMIMPINAN SITUASIONAL (HERSEY-BLANCHARD)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DIRECTING / TELLING</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R1</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Bawahan: Tidak mampu</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kurang percaya diri</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#7dd3fc" font-weight="700">Tinggi Tugas, Rendah Relasi</tspan></text>
-  <text x="97" y="175" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Instruksi Spesifik</text>
+const SVG_SITUATIONAL_LEADERSHIP = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="s1Grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="s2Grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="s3Grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="s4Grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad12)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL KEPEMIMPINAN SITUASIONAL (HERSEY-BLANCHARD)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SITUATIONAL MODEL</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">COACHING / SELLING</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R2</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Belum mampu tapi Mau</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Motivasi belajar tinggi</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#86efac" font-weight="700">Tinggi Tugas, Tinggi Relasi</tspan></text>
-  <text x="257" y="175" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle">Bimbingan &amp; Dukungan</text>
+  <g transform="translate(45, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="100" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="24" rx="10" fill="url(#s3Grad)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="17" fill="#fbbf24" font-size="10" font-weight="800">S3: SUPPORTING / PARTICIPATING</text>
+    <text class="svg-text" x="380" y="17" fill="#cbd5e1" font-size="7.5" text-anchor="end">Tinggi Relasi, Rendah Tugas</text>
+    <text class="svg-text" x="14" y="42" fill="#cbd5e1" font-size="8">• Kesiapan Pengikut: <tspan class="text-accent-amber" fill="#fbbf24" font-weight="700">R3 (Mampu tapi Ragu / Demotivasi)</tspan></text>
+    <text class="svg-text" x="14" y="58" fill="#cbd5e1" font-size="8">• Buka diskusi partisipatif, dengarkan masukan, pompa moral</text>
+    <text class="svg-muted" x="14" y="74" fill="#94a3b8" font-size="7.5">Peran Pemimpin: Fasilitator &amp; Pembangkit Kepercayaan Diri</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">SUPPORTING</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R3</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Mampu tapi Ragu/Demotivasi</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Butuh dorongan moral</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#fde047" font-weight="700">Rendah Tugas, Tinggi Relasi</tspan></text>
-  <text x="417" y="175" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Partisipasi Diskusi</text>
+  <g transform="translate(460, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="100" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="24" rx="10" fill="url(#s2Grad)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="17" fill="#34d399" font-size="10" font-weight="800">S2: COACHING / SELLING</text>
+    <text class="svg-text" x="380" y="17" fill="#cbd5e1" font-size="7.5" text-anchor="end">Tinggi Relasi, Tinggi Tugas</text>
+    <text class="svg-text" x="14" y="42" fill="#cbd5e1" font-size="8">• Kesiapan Pengikut: <tspan class="text-accent-green" fill="#34d399" font-weight="700">R2 (Belum Mampu tapi Mau Belajar)</tspan></text>
+    <text class="svg-text" x="14" y="58" fill="#cbd5e1" font-size="8">• Jelaskan arahan kerja + beri dukungan emosional intensif</text>
+    <text class="svg-muted" x="14" y="74" fill="#94a3b8" font-size="7.5">Peran Pemimpin: Pelatih &amp; Penjelas Rasionalitas Keputusan</text>
+  </g>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">DELEGATING</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Kesiapan Bawahan: R4</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Sangat mampu &amp; Percaya diri</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ahli independen</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• <tspan fill="#c4b5fd" font-weight="700">Rendah Tugas, Rendah Relasi</tspan></text>
-  <text x="580" y="175" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Otonomi Mandiri</text>
+  <g transform="translate(45, 185)">
+    <rect class="svg-card" x="0" y="0" width="395" height="100" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="24" rx="10" fill="url(#s4Grad)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="17" fill="#a78bfa" font-size="10" font-weight="800">S4: DELEGATING (MENDELEGASIKAN)</text>
+    <text class="svg-text" x="380" y="17" fill="#cbd5e1" font-size="7.5" text-anchor="end">Rendah Relasi, Rendah Tugas</text>
+    <text class="svg-text" x="14" y="42" fill="#cbd5e1" font-size="8">• Kesiapan Pengikut: <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">R4 (Sangat Mampu &amp; Komitmen Tinggi)</tspan></text>
+    <text class="svg-text" x="14" y="58" fill="#cbd5e1" font-size="8">• Berikan otonomi penuh atas cara kerja dan pengambilan keputusan</text>
+    <text class="svg-muted" x="14" y="74" fill="#94a3b8" font-size="7.5">Peran Pemimpin: Pemberi Mandat &amp; Penyedia Sumber Daya</text>
+  </g>
+
+  <g transform="translate(460, 185)">
+    <rect class="svg-card" x="0" y="0" width="395" height="100" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="24" rx="10" fill="url(#s1Grad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="17" fill="#38bdf8" font-size="10" font-weight="800">S1: DIRECTING / TELLING (MENDIKTE)</text>
+    <text class="svg-text" x="380" y="17" fill="#cbd5e1" font-size="7.5" text-anchor="end">Rendah Relasi, Tinggi Tugas</text>
+    <text class="svg-text" x="14" y="42" fill="#cbd5e1" font-size="8">• Kesiapan Pengikut: <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">R1 (Tidak Mampu &amp; Tidak Percaya Diri)</tspan></text>
+    <text class="svg-text" x="14" y="58" fill="#cbd5e1" font-size="8">• Berikan instruksi SOP rinci, spesifik, dan pantau harian ketat</text>
+    <text class="svg-muted" x="14" y="74" fill="#94a3b8" font-size="7.5">Peran Pemimpin: Pengarah Tugas Spesifik &amp; Pengawas Langsung</text>
+  </g>
+
+  <g transform="translate(45, 295)">
+    <rect class="svg-subcard" x="0" y="0" width="810" height="24" rx="6" fill="#1e293b"/>
+    <rect x="5" y="3" width="195" height="18" rx="4" fill="#7c3aed" fill-opacity="0.3"/><text class="text-accent-purple" x="102" y="15" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">R4: Mampu &amp; Percaya Diri</text>
+    <rect x="207" y="3" width="195" height="18" rx="4" fill="#d97706" fill-opacity="0.3"/><text class="text-accent-amber" x="304" y="15" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">R3: Mampu tapi Ragu</text>
+    <rect x="409" y="3" width="195" height="18" rx="4" fill="#059669" fill-opacity="0.3"/><text class="text-accent-green" x="506" y="15" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">R2: Belum Mampu tapi Mau</text>
+    <rect x="611" y="3" width="195" height="18" rx="4" fill="#0284c7" fill-opacity="0.3"/><text class="text-accent-blue" x="708" y="15" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">R1: Tidak Mampu &amp; Enggan</text>
+  </g>
+  <text class="svg-muted" x="450" y="335" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Tingkat Kesiapan Pengikut: Tinggi (Kiri) menuju Rendah (Kanan)</text>
 </svg>`;
 
 export const TM12_READING: Reading = {

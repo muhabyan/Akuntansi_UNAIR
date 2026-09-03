@@ -1,34 +1,81 @@
 import type { Reading } from '../../../types';
 import { CASE_ASSURANCE_DEMAND } from '../pbriPracticeCases';
 
-const SVG_ASSURANCE_SPECTRUM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM TINGKAT KEYAKINAN JASA ASURANS &amp; NON-ASURANS</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">AUDIT LAPORAN KEUANGAN</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Standar: SA / ISA</text>
-  <text x="125" y="118" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">Reasonable Assurance</text>
-  <text x="125" y="136" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Tingkat Keyakinan Tinggi</text>
-  <text x="125" y="154" fill="#fbbf24" font-size="9.5" text-anchor="middle">Opini Positif (Wajar)</text>
-  <text x="125" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">Pengujian Substantif Lengkap</text>
+const SVG_ASSURANCE_SPECTRUM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="audGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="revGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="aupGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="comGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb1)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SPEKTRUM JASA ASSURANCE DAN NON-ASSURANCE AKUNTAN PUBLIK (IAPI / IFAC)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ASSURANCE SPECTRUM</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#818cf8" font-size="11.5" font-weight="700" text-anchor="middle">PERIKATAN REVIU</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Standar: SPR / ISRE</text>
-  <text x="340" y="118" fill="#a78bfa" font-size="11" font-weight="700" text-anchor="middle">Limited Assurance</text>
-  <text x="340" y="136" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Tingkat Keyakinan Moderat</text>
-  <text x="340" y="154" fill="#fbbf24" font-size="9.5" text-anchor="middle">Kesimpulan Negatif</text>
-  <text x="340" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">Hanya Inquiry &amp; Analitis</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#audGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">1. AUDIT (SA 200 - 700)</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Keyakinan Memadai (High)</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bentuk Opini: <tspan class="text-accent-green" fill="#34d399" font-weight="700">Positif</tspan></text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  "Menyajikan secara wajar..."</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Prosedur: Uji SPI, Vouching,</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  Tracing, Konfirmasi, Stock Opname</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Pengguna: Investor, OJK, Bank</text>
+    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Tingkat Keyakinan Tertinggi</text>
+  </g>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#f472b6" font-size="11.5" font-weight="700" text-anchor="middle">NON-ASURANS (AUP / KOMPILASI)</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Standar: SJTT / ISRS</text>
-  <text x="555" y="118" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">No Assurance</text>
-  <text x="555" y="136" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Tanpa Pemberian Keyakinan</text>
-  <text x="555" y="154" fill="#fbbf24" font-size="9.5" text-anchor="middle">Temuan Faktual Sahaja</text>
-  <text x="555" y="172" fill="#94a3b8" font-size="9" text-anchor="middle">Sesuai Prosedur Tertentu</text>
+  <g transform="translate(245, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#revGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">2. REVIEW (SPR 2400)</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Keyakinan Terbatas (Moderate)</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bentuk Opini: <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Negatif</tspan></text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  "Tidak ada hal yang menyebabkan..."</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Prosedur: Tanya Jawab (Inquiry)</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  &amp; Prosedur Analitis saja</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Tanpa uji fisik/konfirmasi bank</text>
+    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Hemat Waktu &amp; Biaya Audit</text>
+  </g>
+
+  <g transform="translate(455, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#aupGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">3. AUP (SJTN 4400)</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Tanpa Keyakinan (Factual)</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bentuk Laporan: <tspan class="text-accent-amber" fill="#fbbf24" font-weight="700">Faktual</tspan></text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  Laporan Temuan Faktual semata</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Prosedur disepakati bersama</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  antara klien &amp; pihak ketiga</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Pengguna menarik simpulan sendiri</text>
+    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Prosedur yang Disepakati</text>
+  </g>
+
+  <g transform="translate(665, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#comGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">4. KOMPILASI (SJK 4410)</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Tanpa Keyakinan (No Assurance)</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bentuk Laporan: <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Kompilasi</tspan></text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  Membantu menyusun format lapkeu</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Berdasarkan data mentah manajemen</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Tidak menguji akurasi angka data</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Jasa Akuntansi Non-Assurance</text>
+    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Penyusunan Format Laporan</text>
+  </g>
 </svg>`;
 
 export const TM1_READING: Reading = {
@@ -70,7 +117,7 @@ export const TM1_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Tingkat Bunga Pinjaman Bank} = \\text{Risk-Free Rate} + \\text{Business Risk Premium} + \\text{Information Risk Premium}
-\\text{Peran Audit Independen} \\rightarrow \\text{Mereduksi } \\text{Information Risk Premium} \\approx 0, \\text{ sehingga Menurunkan Biaya Modal (Cost of Capital)}`,
+\\text{Peran Audit Independen} \\r→ \\text{Mereduksi } \\text{Information Risk Premium} \\approx 0, \\text{ sehingga Menurunkan Biaya Modal (Cost of Capital)}`,
       note: 'Audit independen tidak dapat menghapus Risiko Bisnis (kebangkrutan/kondisi ekonomi makro), namun secara langsung menekan Risiko Informasi laporan keuangan.'
     },
     {

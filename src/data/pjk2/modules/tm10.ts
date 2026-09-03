@@ -1,42 +1,82 @@
 import type { Reading } from '../../../types';
 import { CASE_PPH21_TER_DECEMBER_CALC } from '../pjk2PracticeCases';
 
-const SVG_PPH21_SCENARIOS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PEMOTONGAN PPH 21 BERBAGAI SUBJEK PENERIMA PENGHASILAN (PMK 168/2023)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">PEGAWAI TETAP</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Kontrak / Permanen):</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Jan-Nov: Bruto × TER</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Des: Tarif Ps 17 setahun</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dikurangi Biaya Jabatan</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Form 1721-A1</text>
+const SVG_PPH21_SCENARIOS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="sc1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="sc2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="sc3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+    <linearGradient id="sc4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk10)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">4 KATEGORI PENERIMA PENGHASILAN PPH 21 (PMK 168/2023)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SUBJEK PPH 21</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">PEGAWAI TDK TETAP</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Upah Harian/Borongan):</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Upah s/d 450 rb/hari: 0%</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Upah > 450 rb - 2,5 jt: 0,5%</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bulanan: TER Bulanan</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Harian Lepas</text>
+  <!-- 4 Subject Categories Grid -->
+  <g transform="translate(35, 75)">
+    <!-- 1. Pegawai Tetap -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc1)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. PEGAWAI TETAP</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Skema: TER Bulanan + Ps 17 Des</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Menerima gaji teratur bulanan</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Berhak: Biaya Jabatan (5% maks Rp 500rb/bln atau Rp 6jt/thn)</text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• Berhak: Pengurang iuran pensiun</text>
+    <text class="svg-text" x="10" y="126" fill="#cbd5e1" font-size="7.5">• Bukti Potong: Form 1721-A1</text>
+    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Karyawan Kontrak &amp; Organik</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">BUKAN PEGAWAI</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Dokter, Artis, Ahli):</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• DPP = 50% × Bruto</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dikalikan Tarif Ps 17</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dihitung per transaksi</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Jasa Tenaga Ahli</text>
+  <g transform="translate(245, 75)">
+    <!-- 2. Pegawai Tidak Tetap -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc2)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. PEGAWAI TIDAK TETAP</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Skema: TER Harian / Bulanan</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Upah harian, mingguan, borongan</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Upah &lt; Rp 450rb/hari →TER 0%</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Upah Rp 450rb - Rp 2,5jt/hari →TER 0,5%</text>
+    <text class="svg-text" x="10" y="124" fill="#cbd5e1" font-size="7.5">• Upah &gt; Rp 2,5 jt/hari →Tarif Ps 17</text>
+    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Pekerja Lepas / Buruh Harian</text>
+  </g>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">UANG PESANGON</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Dibayar Sekaligus):</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• s/d 50 Juta: 0%</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 50 Jt s/d 100 Jt: 5%</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 100 Jt s/d 500 Jt: 15%</text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">PPh Final Pesangon</text>
+  <g transform="translate(455, 75)">
+    <!-- 3. Bukan Pegawai -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc3)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. BUKAN PEGAWAI</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Skema: Tarif Ps 17 × (50% × Bruto)</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Dokter, Notaris, Pengacara, Artis</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Dasar Pengenaan Pajak (DPP):</text>
+    <text class="text-accent-amber" x="10" y="106" fill="#fbbf24" font-size="7.5" font-weight="700">  50% × Penghasilan Bruto</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• PMK 168: Dihitung per transaksi tanpa kumulatif berjenjang bulanan</text>
+    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Tenaga Ahli &amp; Profesional Lepas</text>
+  </g>
+
+  <g transform="translate(665, 75)">
+    <!-- 4. Dewan Komisaris / Peserta Kegiatan -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc4)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">4. DEWAN KOMISARIS / LAIN</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Skema: Tarif Ps 17 × Bruto</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Honorarium Komisaris Non-Pegawai</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Peserta kegiatan seminar / workshop</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Mantan pegawai terima bonus jasa</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Penarikan dana pensiun pegawai</text>
+    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Penghasilan Tidak Berkesinambungan</text>
+  </g>
 </svg>`;
 
 export const TM10_READING: Reading = {
@@ -55,6 +95,12 @@ export const TM10_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 10.1: Skema Penghitungan PPh 21 untuk Pegawai Tetap, Pegawai Tidak Tetap, Bukan Pegawai, dan Pesangon.',
       svg: SVG_PPH21_SCENARIOS
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: PMK No. 168/PMK.03/2023 Pasal 10 & 11 (Bukan Pegawai & Pegawai Tidak Tetap)',
+      text: '"1. Bukan Pegawai (Tenaga Ahli, Pengajar, Penulis, Agen Iklan, dll.):\n   Dasar Pengenaan Pajak (DPP) = 50% dari Penghasilan Bruto (Dihitung per transaksi dan tidak berlaku kumulatif berkesinambungan).\n   PPh 21 Terutang = Tarif Progresif Pasal 17 ayat (1) huruf a x (50% x Penghasilan Bruto).\n\n2. Pegawai Tidak Tetap / Tenaga Kerja Lepas Harian:\n   • Upah harian s/d Rp 450.000: TER Harian 0% (Bebas PPh 21);\n   • Upah harian > Rp 450.000 s/d Rp 2.500.000: TER Harian 0,5% dari Penghasilan Bruto Harian;\n   • Upah harian > Rp 2.500.000: Tarif Pasal 17 x (Upah Bruto Harian - [PTKP Tahunan / 360]);\n   • Apabila kumulatif upah sebulan > Rp 2.500.000 s/d Rp 10.000.000: PPh 21 = Tarif Pasal 17 x (Penghasilan Bruto Kumulatif - PTKP Kumulatif);\n   • Apabila kumulatif upah sebulan > Rp 10.000.000: Diterapkan TER Bulanan Kategori A/B/C sesuai status PTKP."'
     },
     {
       kind: 'h2',

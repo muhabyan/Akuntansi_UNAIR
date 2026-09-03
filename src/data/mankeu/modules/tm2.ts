@@ -1,44 +1,79 @@
 import type { Reading } from '../../../types';
 import { CASE_DUPONT_ANALYSIS } from '../mankeuPracticeCases';
 
-const SVG_DUPONT_SYSTEM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">DEKOMPOSISI SISTEM DUPONT (3-STEP &amp; 5-STEP ROE BREAKDOWN)</text>
-  
-  <rect x="25" y="55" width="130" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="90" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">RETURN ON EQUITY</text>
-  <text x="90" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(ROE Target)</text>
-  <text x="90" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Laba Bersih /</text>
-  <text x="90" y="145" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Total Ekuitas</text>
-  <text x="90" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Ukuran Kinerja Akhir</text>
+const SVG_DUPONT_SYSTEM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="roeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="npmGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="tatGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="emGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk2)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">POHON DEKOMPOSISI ANALISIS DUPONT 3 PILAR (RETURN ON EQUITY)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DUPONT TREE</text>
 
-  <text x="170" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">=</text>
+  <!-- Top Apex: RETURN ON EQUITY -->
+  <g transform="translate(300, 68)">
+    <rect class="svg-card" x="0" y="0" width="300" height="48" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="300" height="20" rx="10" fill="url(#roeGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="150" y="16" fill="#34d399" font-size="11" font-weight="900" text-anchor="middle">RETURN ON EQUITY (ROE)</text>
+    <text class="svg-text" x="150" y="36" fill="#cbd5e1" font-size="8.5" font-weight="700" text-anchor="middle">ROE = Net Profit Margin × Asset Turnover × Equity Multiplier</text>
+  </g>
 
-  <rect x="185" y="55" width="140" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="255" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">NET PROFIT MARGIN</text>
-  <text x="255" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Efisiensi Operasi)</text>
-  <text x="255" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Laba Bersih /</text>
-  <text x="255" y="145" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Penjualan</text>
-  <text x="255" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Margin Keuntungan</text>
+  <!-- Branch Lines -->
+  <line x1="450" y1="116" x2="165" y2="145" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="450" y1="116" x2="450" y2="145" stroke="#fbbf24" stroke-width="2"/>
+  <line x1="450" y1="116" x2="735" y2="145" stroke="#a78bfa" stroke-width="2"/>
 
-  <text x="340" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">×</text>
+  <!-- 3 Pillar Foundation Cards -->
+  <!-- Pillar 1: Net Profit Margin -->
+  <g transform="translate(35, 145)">
+    <rect class="svg-card" x="0" y="0" width="260" height="155" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="260" height="28" rx="10" fill="url(#npmGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="130" y="18" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. NET PROFIT MARGIN (NPM)</text>
+    <rect class="svg-subcard" x="14" y="36" width="232" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="130" y="52" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Laba Bersih ÷ Penjualan</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Mengukur: <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Profitabilitas Operasional</tspan></text>
+    <text class="svg-text" x="14" y="96" fill="#cbd5e1" font-size="8">• Efisiensi pengendalian beban pokok (HPP)</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• Strategi penetapan harga jual &amp; biaya pajak</text>
+    <rect class="svg-badge-blue" x="14" y="125" width="232" height="18" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="130" y="137" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Efisiensi Biaya Produksi</text>
+  </g>
 
-  <rect x="355" y="55" width="140" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="425" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">TOTAL ASSET TURNOVER</text>
-  <text x="425" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Efisiensi Aset)</text>
-  <text x="425" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Penjualan /</text>
-  <text x="425" y="145" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Total Aset</text>
-  <text x="425" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Produktivitas Aset</text>
+  <!-- Pillar 2: Total Asset Turnover -->
+  <g transform="translate(320, 145)">
+    <rect class="svg-card" x="0" y="0" width="260" height="155" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="260" height="28" rx="10" fill="url(#tatGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="130" y="18" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">2. TOTAL ASSET TURNOVER (TATO)</text>
+    <rect class="svg-subcard" x="14" y="36" width="232" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="130" y="52" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Penjualan ÷ Total Aset</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Mengukur: <tspan class="text-accent-amber" fill="#fbbf24" font-weight="700">Efisiensi Utilisasi Aset</tspan></text>
+    <text class="svg-text" x="14" y="96" fill="#cbd5e1" font-size="8">• Perputaran piutang, kas, &amp; stok gudang</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• Optimalisasi kapasitas utilisasi pabrik</text>
+    <rect class="svg-badge-amber" x="14" y="125" width="232" height="18" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="130" y="137" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Produktivitas Modal Kerja</text>
+  </g>
 
-  <text x="510" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">×</text>
+  <!-- Pillar 3: Equity Multiplier -->
+  <g transform="translate(605, 145)">
+    <rect class="svg-card" x="0" y="0" width="260" height="155" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="260" height="28" rx="10" fill="url(#emGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="130" y="18" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">3. EQUITY MULTIPLIER (LEVERAGE)</text>
+    <rect class="svg-subcard" x="14" y="36" width="232" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="130" y="52" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Total Aset ÷ Total Ekuitas</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Mengukur: <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Tingkat Leverage Finansial</tspan></text>
+    <text class="svg-text" x="14" y="96" fill="#cbd5e1" font-size="8">• Pemanfaatan utang untuk mendongkrak laba</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• Menimbang risiko insolvensi vs tax shield</text>
+    <rect class="svg-badge-purple" x="14" y="125" width="232" height="18" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="130" y="137" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Struktur Modal Pengungkit</text>
+  </g>
 
-  <rect x="525" y="55" width="130" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="590" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">EQUITY MULTIPLIER</text>
-  <text x="590" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Leverage Keuangan)</text>
-  <text x="590" y="125" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Total Aset /</text>
-  <text x="590" y="145" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Total Ekuitas</text>
-  <text x="590" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">1 + (Debt / Equity)</text>
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">DuPont membongkar apakah lonjakan ROE didorong oleh keunggulan produk (NPM), kecepatan operasi (TATO), atau risiko utang (Leverage).</text>
 </svg>`;
 
 export const TM2_READING: Reading = {

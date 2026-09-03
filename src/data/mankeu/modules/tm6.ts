@@ -1,50 +1,76 @@
 import type { Reading } from '../../../types';
 import { CASE_CAPITAL_BUDGETING_EVAL } from '../mankeuPracticeCases';
 
-const SVG_CAPITAL_BUDGETING = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">5 METODE EVALUASI PENGANGGARAN MODAL (CAPITAL BUDGETING)</text>
-  
-  <rect x="25" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="84" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">NET PRESENT VALUE</text>
-  <text x="84" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(NPV - Raja Metode)</text>
-  <text x="84" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tambahan nilai riil</text>
-  <text x="84" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Asumsi reinvest: WACC</text>
-  <text x="84" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kriteria: NPV &gt; 0</text>
-  <text x="84" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Superior Rule</text>
+const SVG_CAPITAL_BUDGETING = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="npvGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk6)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 METODE EVALUASI PENGANGGARAN MODAL (CAPITAL BUDGETING CRITERIA)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DECISION RULES</text>
 
-  <rect x="153" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">INTERNAL RATE</text>
-  <text x="212" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(IRR)</text>
-  <text x="212" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Discount rate saat NPV=0</text>
-  <text x="212" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Asumsi reinvest: IRR</text>
-  <text x="212" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kriteria: IRR &gt; WACC</text>
-  <text x="212" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Tingkat Imbal Hasil</text>
+  <!-- Left: Gold Standard King (NPV) Large Card -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="310" height="240" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="310" height="34" rx="12" fill="url(#npvGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="155" y="22" fill="#34d399" font-size="11" font-weight="900" text-anchor="middle">1. NET PRESENT VALUE (GOLD STANDARD)</text>
+    
+    <rect class="svg-subcard" x="14" y="44" width="282" height="32" rx="6" fill="#1e293b"/>
+    <text class="text-accent-green" x="155" y="64" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">Kriteria: Terima Jika NPV &gt; 0</text>
 
-  <rect x="281" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">MODIFIED IRR</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(MIRR)</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Solusi Multiple IRR</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Asumsi reinvest: WACC</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kriteria: MIRR &gt; WACC</text>
-  <text x="340" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Perbaikan IRR</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Menghitung tambahan kekayaan riil pemegang saham</text>
+    <text class="svg-text" x="14" y="115" fill="#cbd5e1" font-size="8">• Mempertimbangkan seluruh arus kas masuk &amp; keluar</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">• Menggunakan prinsip nilai waktu uang (Discount rate WACC)</text>
+    <text class="svg-text" x="14" y="149" fill="#cbd5e1" font-size="8">• Mengasumsikan reinvestasi pada tingkat biaya modal (Realistis)</text>
+    <text class="svg-text" x="14" y="166" fill="#cbd5e1" font-size="8">• Selalu konsisten saat memilih proyek saling eksklusif</text>
+    
+    <rect class="svg-badge-green" x="14" y="190" width="282" height="28" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="155" y="208" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Metode Terbaik &amp; Paling Teoretis Bebas Bias</text>
+  </g>
 
-  <rect x="409" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="468" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">PROFITABILITY IX</text>
-  <text x="468" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(PI)</text>
-  <text x="468" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PV Arus Kas / Initial</text>
-  <text x="468" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Efisiensi per rupiah</text>
-  <text x="468" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kriteria: PI &gt; 1,0</text>
-  <text x="468" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Capital Rationing</text>
+  <!-- Right: 4 Other Methods Grid (2x2) -->
+  <g transform="translate(365, 75)">
+    <!-- 2. IRR -->
+    <rect class="svg-card" x="0" y="0" width="245" height="112" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="14" y="20" fill="#38bdf8" font-size="9.5" font-weight="800">2. INTERNAL RATE OF RETURN (IRR)</text>
+    <rect class="svg-subcard" x="14" y="28" width="217" height="18" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="122" y="41" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Kriteria: Terima jika IRR &gt; WACC</text>
+    <text class="svg-text" x="14" y="62" fill="#cbd5e1" font-size="7.5">• Tingkat diskonto yang membuat NPV = 0</text>
+    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="7.5">• Kelemahan: Asumsi reinvestasi setinggi IRR</text>
+    <text class="text-accent-red" x="14" y="90" fill="#f87171" font-size="7.5">• Dapat muncul Multiple IRR bila arus kas tidak normal</text>
 
-  <rect x="537" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="596" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">PAYBACK PERIOD</text>
-  <text x="596" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(PB &amp; DPB)</text>
-  <text x="596" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Waktu balik modal</text>
-  <text x="596" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ukuran likuiditas</text>
-  <text x="596" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Abaikan CF post-PB</text>
-  <text x="596" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Skrining Likuiditas</text>
+    <!-- 3. MIRR -->
+    <rect class="svg-card" x="255" y="0" width="245" height="112" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <text class="text-accent-purple" x="14" y="20" fill="#a78bfa" font-size="9.5" font-weight="800">3. MODIFIED IRR (MIRR)</text>
+    <rect class="svg-subcard" x="14" y="28" width="217" height="18" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="122" y="41" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Kriteria: Terima jika MIRR &gt; WACC</text>
+    <text class="svg-text" x="14" y="62" fill="#cbd5e1" font-size="7.5">• Memperbaiki kelemahan utama model IRR standar</text>
+    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="7.5">• Arus kas masuk direinvestasikan pada suku bunga WACC</text>
+    <text class="text-accent-purple" x="14" y="90" fill="#a78bfa" font-size="7.5">• Menghilangkan problem multiple IRR</text>
+
+    <!-- 4. Payback Period -->
+    <rect class="svg-card" x="0" y="128" width="245" height="112" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text class="text-accent-amber" x="14" y="20" fill="#fbbf24" font-size="9.5" font-weight="800">4. PAYBACK PERIOD (PP)</text>
+    <rect class="svg-subcard" x="14" y="28" width="217" height="18" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="122" y="41" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Kriteria: Waktu Balik Modal &lt; Target</text>
+    <text class="svg-text" x="14" y="62" fill="#cbd5e1" font-size="7.5">• Sederhana &amp; mengukur likuiditas kas awal</text>
+    <text class="text-accent-red" x="14" y="76" fill="#f87171" font-size="7.5">• Mengabaikan arus kas setelah periode balik modal</text>
+    <text class="text-accent-red" x="14" y="90" fill="#f87171" font-size="7.5">• Mengabaikan nilai waktu uang (pada Simple PP)</text>
+
+    <!-- 5. Profitability Index -->
+    <rect class="svg-card" x="255" y="128" width="245" height="112" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <text class="text-accent-green" x="14" y="20" fill="#34d399" font-size="9.5" font-weight="800">5. PROFITABILITY INDEX (PI)</text>
+    <rect class="svg-subcard" x="14" y="28" width="217" height="18" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="122" y="41" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Kriteria: Terima jika PI &gt; 1.0</text>
+    <text class="svg-text" x="14" y="62" fill="#cbd5e1" font-size="7.5">• PI = PV Arus Kas Masuk ÷ Investasi Awal</text>
+    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="7.5">• Rasio efisiensi "bang-for-buck" modal terpakai</text>
+    <text class="text-accent-green" x="14" y="90" fill="#34d399" font-size="7.5">• Sangat ampuh saat perusahaan mengalami penjatahan modal (Rationing)</text>
+  </g>
 </svg>`;
 
 export const TM6_READING: Reading = {

@@ -1,42 +1,86 @@
 import type { Reading } from '../../../types';
 import { CASE_GLOBAL_HOFSTEDE_ENTRY } from '../manajemenPracticeCases';
 
-const SVG_GLOBAL_ENTRY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM STRATEGI MASUK PASAR GLOBAL: RISIKO, KONTROL, &amp; BIAYA</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. EKSPOR</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Exporting):</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Produksi di DN, jual ke LN</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Risiko paling rendah</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kontrol pasar minimal</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Biaya Awal Rendah</text>
+const SVG_GLOBAL_ENTRY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="expGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="licGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="jvGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="wosGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+    <linearGradient id="trendArrow" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad3)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SPEKTRUM MODA MASUK PASAR GLOBAL: KENDALI, BIAYA, &amp; RISIKO</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ENTRY SPECTRUM</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">2. LISENSI / FRANCHISE</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Licensing/Franchising):</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sewa merek &amp; teknologi</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Royalti penerimaan rutin</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Risiko tiruan teknologi</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Ekspansi Cepat</text>
+  <!-- 4 Ascending Cards -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="175" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#expGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="16" y="22" fill="#38bdf8" font-size="11" font-weight="800">1. EKSPOR (EXPORT)</text>
+    <text class="svg-muted" x="16" y="52" fill="#94a3b8" font-size="8" font-weight="700">Langsung / Tak Langsung</text>
+    <text class="svg-text" x="16" y="74" fill="#cbd5e1" font-size="8">• Biaya investasi: Terendah</text>
+    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• Tingkat kendali: Minimal</text>
+    <text class="svg-text" x="16" y="110" fill="#cbd5e1" font-size="8">• Risiko modal: Sangat rendah</text>
+    <text class="svg-text" x="16" y="128" fill="#cbd5e1" font-size="8">• Hambatan: Bea cukai &amp; tarif</text>
+    <rect class="svg-badge-blue" x="16" y="145" width="163" height="20" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="159" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Tahap Awal Penetrasi</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">3. JOINT VENTURE</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Aliansi Strategis):</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kongsi dengan mitra lokal</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bagi biaya &amp; keahlian</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Potensi konflik wewenang</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Akses Pasar Lokal</text>
+  <g transform="translate(250, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="175" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#licGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="16" y="22" fill="#34d399" font-size="11" font-weight="800">2. LISENSI &amp; WARALABA</text>
+    <text class="svg-muted" x="16" y="52" fill="#94a3b8" font-size="8" font-weight="700">Licensing &amp; Franchising</text>
+    <text class="svg-text" x="16" y="74" fill="#cbd5e1" font-size="8">• Menjual hak merek / paten</text>
+    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• Pendapatan fee royalti</text>
+    <text class="svg-text" x="16" y="110" fill="#cbd5e1" font-size="8">• Risiko mutu mitra lokal</text>
+    <text class="svg-text" x="16" y="128" fill="#cbd5e1" font-size="8">• Contoh: McDonald's, Disney</text>
+    <rect class="svg-badge-green" x="16" y="145" width="163" height="20" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="159" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Skalabilitas Cepat</text>
+  </g>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">4. GREENFIELD / FDI</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Investasi Langsung):</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bangun pabrik baru 100%</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• <tspan fill="#fca5a5" font-weight="700">Risiko &amp; Biaya TERTINGGI</tspan></text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• <tspan fill="#86efac" font-weight="700">Kontrol Penuh 100%</tspan></text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Komitmen Maksimal</text>
+  <g transform="translate(465, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="175" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#jvGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="16" y="22" fill="#fbbf24" font-size="11" font-weight="800">3. JOINT VENTURE</text>
+    <text class="svg-muted" x="16" y="52" fill="#94a3b8" font-size="8" font-weight="700">Kemitraan Strategis</text>
+    <text class="svg-text" x="16" y="74" fill="#cbd5e1" font-size="8">• Berbagi modal &amp; risiko (50:50)</text>
+    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• Akses jaringan mitra lokal</text>
+    <text class="svg-text" x="16" y="110" fill="#cbd5e1" font-size="8">• Rawan friksi manajemen</text>
+    <text class="svg-text" x="16" y="128" fill="#cbd5e1" font-size="8">• Kepatuhan aturan negara</text>
+    <rect class="svg-badge-amber" x="16" y="145" width="163" height="20" rx="6" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="159" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Sinergi Lokal-Global</text>
+  </g>
+
+  <g transform="translate(680, 75)">
+    <rect class="svg-card" x="0" y="0" width="185" height="175" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="185" height="32" rx="12" fill="url(#wosGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="14" y="22" fill="#f87171" font-size="11" font-weight="800">4. DIRECT SUBSIDIARY</text>
+    <text class="svg-muted" x="14" y="52" fill="#94a3b8" font-size="8" font-weight="700">Greenfield / Akuisisi</text>
+    <text class="svg-text" x="14" y="74" fill="#cbd5e1" font-size="8">• Kendali operasional 100%</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• Biaya modal: TERTINGGI</text>
+    <text class="svg-text" x="14" y="110" fill="#cbd5e1" font-size="8">• Risiko politik &amp; pasar penuh</text>
+    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="8">• Proteksi rahasia paten</text>
+    <rect class="svg-badge-red" x="14" y="145" width="157" height="20" rx="6" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="92" y="159" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Kendali Mutlak</text>
+  </g>
+
+  <!-- Bottom Comparison Trend Bar -->
+  <g transform="translate(35, 270)">
+    <rect class="svg-subcard" x="0" y="0" width="830" height="22" rx="11" fill="#1e293b"/>
+    <rect x="0" y="0" width="830" height="22" rx="11" fill="url(#trendArrow)" fill-opacity="0.25"/>
+    <polygon points="825,11 810,4 810,18" fill="#f87171"/>
+    <text class="text-accent-blue" x="15" y="15" fill="#38bdf8" font-size="9" font-weight="700">RENDAH</text>
+    <text class="svg-text" x="415" y="15" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">KOMITMEN MODAL, TINGKAT KENDALI, &amp; RISIKO KORPORASI</text>
+    <text class="text-accent-red" x="800" y="15" fill="#f87171" font-size="9" font-weight="700" text-anchor="end">TERTINGGI</text>
+  </g>
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Semakin bergerak ke kanan, potensi keuntungan jangka panjang semakin besar namun menuntut belanja modal masif.</text>
 </svg>`;
 
 export const TM3_READING: Reading = {

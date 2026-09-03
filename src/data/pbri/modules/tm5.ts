@@ -1,34 +1,55 @@
 import type { Reading } from '../../../types';
 import { CASE_AUDIT_EVIDENCE_DOCS } from '../pbriPracticeCases';
 
-const SVG_EVIDENCE_HIERARCHY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">HIERARKI KEANDALAN 8 JENIS BUKTI AUDIT (SA 500)</text>
-  
-  <rect x="30" y="52" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="125" y="75" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">TINGKAT TINGGI</text>
-  <text x="125" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Pemeriksaan Fisik (Aset)</text>
-  <text x="125" y="118" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Konfirmasi Pihak Ke-3</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Perhitungan Ulang (Recalc)</text>
-  <text x="125" y="158" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Pelaksanaan Ulang (Reperform)</text>
-  <text x="125" y="180" fill="#4ade80" font-size="9" text-anchor="middle">Diperoleh Langsung / Luar</text>
+const SVG_EVIDENCE_HIERARCHY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="ev1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="ev2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="ev3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="ev4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb5)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">HIERARKI TINGKAT KEANDALAN BUKTI AUDIT (SA 500: SUFFICIENCY &amp; APPROPRIATENESS)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">EVIDENCE HIERARCHY</text>
 
-  <rect x="245" y="52" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="340" y="75" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">TINGKAT SEDANG</text>
-  <text x="340" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Dokumentasi Eksternal</text>
-  <text x="340" y="118" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Prosedur Analitis (SAP)</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Dokumen Internal (IC Baik)</text>
-  <text x="340" y="158" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Observasi Proses Operasional</text>
-  <text x="340" y="180" fill="#fbbf24" font-size="9" text-anchor="middle">Tergantung Kontrol Internal</text>
+  <g transform="translate(45, 70)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#ev1)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="14" fill="#34d399" font-size="9" font-weight="800">LEVEL 1: KEANDALAN TERTINGGI (BUKTI FISIK LANGSUNG &amp; KONFIRMASI PIHAK KETIGA)</text>
+    <text class="text-accent-green" x="795" y="14" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="end">Rating: ★★★★★</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Contoh: Inspeksi fisik stok kas/emas oleh auditor (Physical), Konfirmasi saldo rekening bank langsung dari pihak bank, Surat konfirmasi piutang debitur.</text>
+  </g>
 
-  <rect x="460" y="52" width="190" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="555" y="75" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">TINGKAT RENDAH</text>
-  <text x="555" y="98" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Tanya Jawab (Inquiry)</text>
-  <text x="555" y="118" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Dokumen Internal (IC Lemah)</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Estimasi Lisan Manajemen</text>
-  <text x="555" y="158" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Brosur / Data Tidak Resmi</text>
-  <text x="555" y="180" fill="#f87171" font-size="9" text-anchor="middle">Wajib Bukti Pendukung Lain</text>
+  <g transform="translate(45, 130)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#ev2)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="14" fill="#38bdf8" font-size="9" font-weight="800">LEVEL 2: KEANDALAN TINGGI (DOKUMEN EKSTERNAL DARI PIHAK INDEPENDEN)</text>
+    <text class="text-accent-blue" x="795" y="38" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="end">Rating: ★★★★☆</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Contoh: Rekening koran asli cetak bank, Faktur tagihan dari vendor pihak ketiga, Sertifikat hak milik tanah BPN, Perhitungan ulang matematis (Recalculation).</text>
+  </g>
+
+  <g transform="translate(45, 190)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#ev3)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="14" fill="#fbbf24" font-size="9" font-weight="800">LEVEL 3: KEANDALAN SEDANG (DOKUMEN INTERNAL DENGAN SISTEM SPI YANG EFEKTIF)</text>
+    <text class="text-accent-amber" x="795" y="14" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="end">Rating: ★★★☆☆</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Contoh: Surat Perintah Kerja (SPK) bernomor urut tercetak, Laporan penerimaan barang gudang terotorisasi, Bukti kas keluar bertanda tangan lengkap.</text>
+  </g>
+
+  <g transform="translate(45, 250)">
+    <rect class="svg-card" x="0" y="0" width="810" height="52" rx="8" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="18" rx="8" fill="url(#ev4)" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="14" y="14" fill="#f87171" font-size="9" font-weight="800">LEVEL 4: KEANDALAN TERENDAH (PERNYATAAN LISAN MANAJEMEN / INTERNAL TANPA SPI)</text>
+    <text class="text-accent-red" x="795" y="14" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="end">Rating: ★★☆☆☆</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Contoh: Wawancara lisan (Inquiry) dengan direksi, Memo internal tanpa otorisasi. Catatan: Wajib dikuatkan dengan bukti dokumenter pendukung (Corroborating Evidence).</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Prinsip SA 500: Bukti asli lebih andal daripada salinan fotokopi; bukti yang dibuat pihak ketiga independen lebih andal daripada buatan internal klien.</text>
 </svg>`;
 
 export const TM5_READING: Reading = {

@@ -1,29 +1,66 @@
 import type { Reading } from '../../../types';
 import { CASE_INVENTORY_TRADE_CREDIT } from '../mankeuPracticeCases';
 
-const SVG_EOQ_COST_CURVE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL KUANTITAS PESANAN EKONOMIS (ECONOMIC ORDER QUANTITY - EOQ)</text>
-  
-  <line x1="80" y1="180" x2="620" y2="180" stroke="#64748b" stroke-width="2"/>
-  <line x1="80" y1="180" x2="80" y2="45" stroke="#64748b" stroke-width="2"/>
-  <text x="620" y="195" fill="#94a3b8" font-size="10" text-anchor="end">Kuantitas Pesanan (Q Unit)</text>
-  <text x="70" y="50" fill="#94a3b8" font-size="10" text-anchor="end">Biaya Total (Rp)</text>
+const SVG_EOQ_COST_CURVE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk12)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL KUANTITAS PESANAN EKONOMIS: ECONOMIC ORDER QUANTITY (EOQ)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">INVENTORY MODEL</text>
 
-  <path d="M 90 60 L 600 170" stroke="#f87171" stroke-width="2" fill="none"/>
-  <text x="590" y="160" fill="#f87171" font-size="9" font-weight="700" text-anchor="end">Biaya Simpan (Holding Cost): (Q/2) × H</text>
+  <!-- Left: Cost Curve Graph (Width 450px) -->
+  <g transform="translate(65, 80)">
+    <!-- Axes -->
+    <line x1="40" y1="20" x2="40" y2="210" stroke="#94a3b8" stroke-width="2"/>
+    <text x="30" y="20" fill="#f8fafc" font-size="8.5" font-weight="800" text-anchor="end">Total Biaya (Rp)</text>
+    <line x1="40" y1="210" x2="410" y2="210" stroke="#94a3b8" stroke-width="2"/>
+    <text x="410" y="228" fill="#f8fafc" font-size="8.5" font-weight="800" text-anchor="end">Kuantitas Pesanan (Q)</text>
 
-  <path d="M 100 170 Q 250 140 600 70" stroke="#fbbf24" stroke-width="2" fill="none"/>
-  <text x="590" y="85" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="end">Biaya Pesan (Ordering Cost): (D/Q) × S</text>
+    <!-- Carrying Cost Line (Linear Upward: H × Q/2) -->
+    <line x1="40" y1="210" x2="380" y2="40" stroke="#38bdf8" stroke-width="2.5"/>
+    <text class="text-accent-blue" x="385" y="45" fill="#38bdf8" font-size="8" font-weight="800">Biaya Simpan (Carrying Cost)</text>
 
-  <path d="M 100 190 Q 320 85 580 180" stroke="#4ade80" stroke-width="2.5" fill="none"/>
-  <text x="340" y="90" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">TOTAL INVENTORY COST (TIC)</text>
+    <!-- Ordering Cost Curve (Hyperbolic Downward: S × D/Q) -->
+    <path d="M 55 50 Q 120 180 380 205" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+    <text class="text-accent-amber" x="385" y="205" fill="#fbbf24" font-size="8" font-weight="800">Biaya Pesan (Ordering Cost)</text>
 
-  <line x1="335" y1="180" x2="335" y2="115" stroke="#38bdf8" stroke-dasharray="3 3"/>
-  <circle cx="335" cy="115" r="5" fill="#38bdf8"/>
-  <text x="335" y="195" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TITIK OPTIMAL EOQ</text>
-  <text x="340" y="135" fill="#38bdf8" font-size="8.5">Biaya Pesan = Biaya Simpan</text>
+    <!-- Total Cost Curve U-Shape -->
+    <path d="M 65 75 Q 210 180 380 90" fill="none" stroke="#34d399" stroke-width="3"/>
+    <text class="text-accent-green" x="385" y="90" fill="#34d399" font-size="9" font-weight="900">Total Biaya Persediaan (TC)</text>
+
+    <!-- Optimal Point EOQ (Intersection) -->
+    <line x1="210" y1="130" x2="210" y2="210" stroke="#f87171" stroke-dasharray="3 3"/>
+    <line x1="40" y1="130" x2="210" y2="130" stroke="#f87171" stroke-dasharray="3 3"/>
+    <circle cx="210" cy="130" r="6" fill="#f87171"/>
+    <text class="text-accent-red" x="210" y="225" fill="#f87171" font-size="9" font-weight="900" text-anchor="middle">EOQ (Q*)</text>
+    <text class="text-accent-red" x="35" y="134" fill="#f87171" font-size="8" font-weight="800" text-anchor="end">TC Min</text>
+  </g>
+
+  <!-- Right: Formula & Parameters Card -->
+  <g transform="translate(540, 75)">
+    <!-- Formula Box -->
+    <rect class="svg-subcard" x="0" y="0" width="325" height="55" rx="8" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="162" y="22" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">RUMUS KUANTITAS OPTIMAL (EOQ)</text>
+    <text x="162" y="44" fill="#f8fafc" font-size="13" font-weight="900" text-anchor="middle">EOQ = √[ (2 × D × S) ÷ H ]</text>
+
+    <!-- Parameter Items -->
+    <rect class="svg-card" x="0" y="65" width="325" height="52" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+    <text class="text-accent-blue" x="14" y="85" fill="#38bdf8" font-size="9" font-weight="800">D: Permintaan Tahunan (Annual Demand)</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="7.5">Total unit barang yang dibutuhkan perusahaan dalam 1 tahun.</text>
+
+    <rect class="svg-card" x="0" y="125" width="325" height="52" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+    <text class="text-accent-amber" x="14" y="145" fill="#fbbf24" font-size="9" font-weight="800">S: Biaya Pemesanan Per Order (Setup/Order Cost)</text>
+    <text class="svg-text" x="14" y="162" fill="#cbd5e1" font-size="7.5">Biaya kurir, administrasi PO, ekspedisi, inspeksi barang masuk.</text>
+
+    <rect class="svg-card" x="0" y="185" width="325" height="52" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+    <text class="text-accent-blue" x="14" y="205" fill="#38bdf8" font-size="9" font-weight="800">H: Biaya Penyimpanan Per Unit/Tahun (Holding Cost)</text>
+    <text class="svg-text" x="14" y="222" fill="#cbd5e1" font-size="7.5">Sewa gudang, listrik pendingin, asuransi, risiko usang/rusak.</text>
+  </g>
 </svg>`;
 
 export const TM12_READING: Reading = {

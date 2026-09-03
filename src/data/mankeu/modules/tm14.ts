@@ -1,25 +1,78 @@
 import type { Reading } from '../../../types';
 import { CASE_MA_ALTMAN_ZSCORE } from '../mankeuPracticeCases';
 
-const SVG_ALTMAN_SCALE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SKALA PREDIKSI KEBANGKRUTAN ALTMAN Z-SCORE (EMERGING / SERVICE MODEL)</text>
-  
-  <rect x="40" y="70" width="180" height="90" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="2"/>
-  <text x="130" y="98" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">DISTRESS ZONE</text>
-  <text x="130" y="120" fill="#fca5a5" font-size="10" font-weight="700" text-anchor="middle">Z &lt; 1,10</text>
-  <text x="130" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">Bahaya Bangkrut Tinggi</text>
+const SVG_ALTMAN_SCALE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="safeGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="greyGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="distGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk14)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PREDIKSI KEBANGKRUTAN KORPORASI: 3 ZONA SKOR ALTMAN Z-SCORE (EDWARD ALTMAN)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DISTRESS MODEL</text>
 
-  <rect x="250" y="70" width="180" height="90" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="2"/>
-  <text x="340" y="98" fill="#fbbf24" font-size="12" font-weight="700" text-anchor="middle">GREY ZONE</text>
-  <text x="340" y="120" fill="#fde68a" font-size="10" font-weight="700" text-anchor="middle">1,10 ≤ Z ≤ 2,60</text>
-  <text x="340" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">Zona Waspada / Rawan</text>
+  <!-- 3 Continuum Zones -->
+  <!-- Zone 1: Safe Zone (Z > 2.99) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#safeGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="11" font-weight="900" text-anchor="middle">SAFE ZONE (Z &gt; 2.99)</text>
+    
+    <rect class="svg-badge-green" x="14" y="42" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="58" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">KONDISI SEHAT &amp; SOLVEN</text>
 
-  <rect x="460" y="70" width="180" height="90" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="2"/>
-  <text x="550" y="98" fill="#4ade80" font-size="12" font-weight="700" text-anchor="middle">SAFE ZONE</text>
-  <text x="550" y="120" fill="#86efac" font-size="10" font-weight="700" text-anchor="middle">Z &gt; 2,60</text>
-  <text x="550" y="142" fill="#94a3b8" font-size="8.5" text-anchor="middle">Keuangan Sangat Sehat</text>
+    <text class="svg-text" x="14" y="86" fill="#cbd5e1" font-size="8">• Peluang kebangkrutan mendekati 0%</text>
+    <text class="svg-text" x="14" y="103" fill="#cbd5e1" font-size="8">• Likuiditas kas &amp; modal kerja sangat kokoh</text>
+    <text class="svg-text" x="14" y="120" fill="#cbd5e1" font-size="8">• Laba ditahan tinggi &amp; produktivitas aset prima</text>
+    <text class="svg-text" x="14" y="137" fill="#cbd5e1" font-size="8">• Rating kredit layak investasi (Investment Grade)</text>
+    <text class="text-accent-green" x="14" y="154" fill="#34d399" font-size="7.5" font-weight="700">Tindakan: Pertahankan efisiensi struktur modal</text>
+  </g>
+
+  <!-- Zone 2: Grey Zone (1.81 <= Z <= 2.99) -->
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#greyGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="11" font-weight="900" text-anchor="middle">GREY ZONE (1.81 - 2.99)</text>
+    
+    <rect class="svg-badge-amber" x="14" y="42" width="237" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="132" y="58" fill="#fbbf24" font-size="8.5" font-weight="800" text-anchor="middle">ZONA WASPADA / ABU-ABU</text>
+
+    <text class="svg-text" x="14" y="86" fill="#cbd5e1" font-size="8">• Risiko moderat mengalami kesulitan likuiditas</text>
+    <text class="svg-text" x="14" y="103" fill="#cbd5e1" font-size="8">• Rentan bila terjadi guncangan makro ekonomi</text>
+    <text class="svg-text" x="14" y="120" fill="#cbd5e1" font-size="8">• Beban bunga utang mulai menggerus laba</text>
+    <text class="svg-text" x="14" y="137" fill="#cbd5e1" font-size="8">• Butuh pengawasan ketat dari komite audit</text>
+    <text class="text-accent-amber" x="14" y="154" fill="#fbbf24" font-size="7.5" font-weight="700">Tindakan: Pengendalian biaya ketat &amp; cegah utang baru</text>
+  </g>
+
+  <!-- Zone 3: Distress Zone (Z < 1.81) -->
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#f87171" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#distGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="132" y="20" fill="#f87171" font-size="11" font-weight="900" text-anchor="middle">DISTRESS ZONE (Z &lt; 1.81)</text>
+    
+    <rect class="svg-badge-red" x="14" y="42" width="237" height="24" rx="4" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="132" y="58" fill="#f87171" font-size="8.5" font-weight="800" text-anchor="middle">ZONA KRITIS KEBANGKRUTAN</text>
+
+    <text class="svg-text" x="14" y="86" fill="#cbd5e1" font-size="8">• Peluang bangkrut dalam 2 tahun mencapai 80%+</text>
+    <text class="svg-text" x="14" y="103" fill="#cbd5e1" font-size="8">• Modal kerja negatif &amp; arus kas operasional tekor</text>
+    <text class="svg-text" x="14" y="120" fill="#cbd5e1" font-size="8">• Terancam gagal bayar utang (Default Risk)</text>
+    <text class="svg-text" x="14" y="137" fill="#cbd5e1" font-size="8">• Masuk pengawasan PKPU di Pengadilan Niaga</text>
+    <text class="text-accent-red" x="14" y="154" fill="#f87171" font-size="7.5" font-weight="700">Tindakan: Restrukturisasi utang &amp; divestasi aset</text>
+  </g>
+
+  <!-- Bottom Formula Card -->
+  <g transform="translate(35, 260)">
+    <rect class="svg-subcard" x="0" y="0" width="830" height="52" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text class="text-accent-blue" x="14" y="22" fill="#38bdf8" font-size="9" font-weight="800">5 VARIABEL RASIO ALTMAN Z-SCORE:</text>
+    <text class="svg-text" x="14" y="40" fill="#cbd5e1" font-size="8">
+      Z = 1.2(Modal Kerja/Total Aset) + 1.4(Laba Ditahan/Total Aset) + 3.3(EBIT/Total Aset) + 0.6(Nilai Pasar Ekuitas/Total Utang) + 0.999(Penjualan/Total Aset)
+    </text>
+  </g>
 </svg>`;
 
 export const TM14_READING: Reading = {
@@ -50,7 +103,7 @@ export const TM14_READING: Reading = {
         ['Sinergi M&A', '$\\text{Nilai Sinergi} = V_{AB} - (V_A + V_B)$', 'Penghematan biaya skala ekonomis, cross-selling produk, dan tax benefits.', 'Merger layak HANYA jika Nilai Sinergi > Premi Akuisisi yang dibayarkan.'],
         ['Maksimum Bid Price', '$\\text{Max Bid} = V_{\\text{Target Stand-alone}} + \\text{Present Value Sinergi}$', 'Batas atas harga akuisisi agar pengakuisisi tidak mengalami kerugian nilai.', 'Tawaran > Max Bid menghancurkan kekayaan pemegang saham pembeli.'],
         ['Altman Z-Score', '$Z = 6,56 X_1 + 3,26 X_2 + 6,72 X_3 + 1,05 X_4$', '$X_1$: NWC/TA; $X_2$: RE/TA; $X_3$: EBIT/TA; $X_4$: Market Eq/TL.', '$Z < 1,10$ = Distress; $1,10 \\le Z \\le 2,60$ = Grey; $Z > 2,60$ = Safe.'],
-        ['Reorganisasi vs Likuidasi', 'Evaluasi Going Concern Value vs Liquidation Value.', 'Apakah aset perusahaan bernilai lebih tinggi jika tetap beroperasi atau dijual eceran?', 'Jika Going Concern Value > Liquidation Value $\\rightarrow$ Lakukan Reorganisasi PKPU.']
+        ['Reorganisasi vs Likuidasi', 'Evaluasi Going Concern Value vs Liquidation Value.', 'Apakah aset perusahaan bernilai lebih tinggi jika tetap beroperasi atau dijual eceran?', 'Jika Going Concern Value > Liquidation Value $\\r→$ Lakukan Reorganisasi PKPU.']
       ],
       caption: 'Tabel 14.0: Matriks keputusan merger, akuisisi, dan restrukturisasi kebangkrutan.'
     },
@@ -109,7 +162,7 @@ export const TM14_READING: Reading = {
       items: [
         '**Penyebab Kegagalan M&A Terbesar**: Membayar premi akuisisi yang terlalu mahal (Overbidding / Winner Curse) yang menghabiskan seluruh potensi nilai sinergi.',
         '**Altman Z-Score Bukan Vonis Mati**: Skor dalam Distress Zone adalah sinyal peringatan dini (Early Warning Indicator) agar direksi segera melakukan restrukturisasi utang sebelum terjadi insolvensi teknis.',
-        '**Absolute Priority Rule**: Dalam likuiditas kebangkrutan, kreditor berhak atas pelunasan penuh sesuai hierarki klaim (Kreditor Separatis $\\rightarrow$ Konkuren $\\rightarrow$ Saham Preferen $\\rightarrow$ Saham Biasa).'
+        '**Absolute Priority Rule**: Dalam likuiditas kebangkrutan, kreditor berhak atas pelunasan penuh sesuai hierarki klaim (Kreditor Separatis $\\r→$ Konkuren $\\r→$ Saham Preferen $\\r→$ Saham Biasa).'
       ]
     }
   ]

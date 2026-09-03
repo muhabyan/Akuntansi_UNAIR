@@ -1,26 +1,53 @@
 import type { Reading } from '../../../types';
 import { CASE_BUDGET_APPROACHES_PBB_ZBB } from '../aspPracticeCases';
 
-const SVG_BUDGET_APPROACHES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">EVOLUSI PENDEKATAN ANGGARAN: TRADISIONAL VS NEW PUBLIC MANAGEMENT (NPM)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">ANGGARAN TRADISIONAL</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Line-Item &amp; Inkrementalisme:</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fokus input belanja (gaji, ATK, dinas)</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Asumsi dasar tahun lalu + persentase kenaikan</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mengabaikan efisiensi &amp; capaian manfaat</text>
-  <text x="177" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Spend-It-Or-Lose-It Syndrome</text>
+const SVG_BUDGET_APPROACHES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="tradGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+    <linearGradient id="npmGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp5)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">EVOLUSI PENDEKATAN ANGGARAN: TRADISIONAL (LINE-ITEM) VS NEW PUBLIC MANAGEMENT (KINERJA)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">BUDGET EVOLUTION</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">NEW PUBLIC MANAGEMENT (NPM)</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Performance-Based &amp; Zero-Based:</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Menghubungkan dana belanja dengan Output/Outcome</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• ZBB: Justifikasi kelayakan dari titik nol</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PPBS: Perencanaan strategis multi-tahunan</text>
-  <text x="497" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Value for Money (VFM)</text>
+  <!-- Left: Traditional Budgeting -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#tradGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="16" y="20" fill="#f87171" font-size="10.5" font-weight="800">1. ANGGARAN TRADISIONAL (LINE-ITEM / INCREMENTAL)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-red" fill="#f87171" font-weight="700">Sifat Inkrementalisme:</tspan> Anggaran tahun berjalan ditambah persentase kenaikan rutin (misal +10%)</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-red" fill="#f87171" font-weight="700">Orientasi Input:</tspan> Fokus hanya pada rincian belanja pos mata anggaran (ATK, lembur, dinas)</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-red" fill="#f87171" font-weight="700">Kelemahan Utama:</tspan> Tidak mengukur apakah belanja tersebut menghasilkan manfaat riil bagi publik</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• Memicu fenomena "Spend It or Lose It" di akhir tahun anggaran</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">• Struktur kaku, sentralistis, &amp; minim fleksibilitas operasional</text>
+    
+    <rect class="svg-badge-red" x="14" y="175" width="367" height="30" rx="6" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="197" y="194" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Paradigma Usang: Habiskan Anggaran Tanpa Ukuran Hasil</text>
+  </g>
+
+  <!-- Right: New Public Management -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#npmGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="10.5" font-weight="800">2. ANGGARAN MODERN (PERFORMANCE-BASED / NPM)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Orientasi Output &amp; Outcome:</tspan> Setiap rupiah dikaitkan dengan Indikator Kinerja Utama (IKU)</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Prinsip Value for Money:</tspan> Menjamin aspek Ekonomi (Hemat), Efisiensi, &amp; Efektivitas belanja</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Pendekatan Terpadu:</tspan> Zero-Based Budgeting (ZBB) &amp; Kerangka Pengeluaran Jangka Menengah (KPJM)</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• Menggunakan Analisis Standar Belanja (ASB) &amp; Standar Biaya Masukan (SBM)</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">• Desentralisasi kewenangan dengan akuntabilitas hasil yang terukur</text>
+    
+    <rect class="svg-badge-green" x="14" y="175" width="367" height="30" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="194" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Paradigma Modern: Money Follows Program &amp; Kinerja Pelayanan</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Indonesia mengadopsi Penganggaran Berbasis Kinerja (PBK) melalui UU 17/2003 untuk menjamin akuntabilitas setiap rupiah uang rakyat.</text>
 </svg>`;
 
 export const TM5_READING: Reading = {
@@ -62,7 +89,7 @@ export const TM5_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Rantai Nilai Kinerja (Performance Value Chain)}:
-\\text{Input (Dana, SDM)} \\longrightarrow \\text{Proses (Aktivitas)} \\longrightarrow \\text{Output (Barang/Jasa Dihasilkan)} \\longrightarrow \\text{Outcome (Manfaat Nyata)} \\longrightarrow \\text{Impact (Dampak Jangka Panjang)}
+\\text{Input (Dana, SDM)} \\longr→ \\text{Proses (Aktivitas)} \\longr→ \\text{Output (Barang/Jasa Dihasilkan)} \\longr→ \\text{Outcome (Manfaat Nyata)} \\longr→ \\text{Impact (Dampak Jangka Panjang)}
 \\text{Rasio Efisiensi Teknis} = \\frac{\\text{Realisasi Biaya Input}}{\\text{Output Fisik yang Dihasilkan}} \\quad \\text{(Biaya per Unit Output)}`,
       note: 'Tolok ukur keberhasilan PBK di Indonesia adalah ketercapaian target Standar Pelayanan Minimal (SPM) dan Indikator Kinerja Utama (IKU) Kepala Daerah.'
     },

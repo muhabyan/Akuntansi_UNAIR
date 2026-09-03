@@ -261,9 +261,9 @@ export const CASE_VALUE_FOR_MONEY_EVAL: ContentBlock = {
         {
           kind: 'ul',
           items: [
-            '**1. Aspek Ekonomi (Hemat Biaya Masukan)**:\nIndikator Ekonomi = Realisasi Input / Anggaran Input = Rp 8,5 Miliar / Rp 10 Miliar = **85,0% (< 100%)** $\\rightarrow$ **EKONOMIS / HEMAT**. Manajemen berhasil menghemat Rp 1,5 Miliar tanpa mengorbankan kualitas spesifikasi teknis alat.',
-            '**2. Aspek Efisiensi (Hubungan Input vs Output)**:\nEfisiensi = Output Riil / Biaya Riil. Dengan biaya lebih rendah (Rp 8,5 M), rumah sakit mampu melayani 5.500 pasien (melampaui target awal 5.000 pasien) $\\rightarrow$ **EFISIENSI TINGGI**.',
-            '**3. Aspek Efektivitas (Hubungan Output vs Outcome/Hasil)**:\nEfektivitas = Realisasi Outcome / Target Outcome. Tercapainya peningkatan harapan hidup pasien sebesar 25% dan kepuasan masyarakat terhadap layanan cuci darah $\\rightarrow$ **SANGAT EFEKTIF**.'
+            '**1. Aspek Ekonomi (Hemat Biaya Masukan)**:\nIndikator Ekonomi = Realisasi Input / Anggaran Input = Rp 8,5 Miliar / Rp 10 Miliar = **85,0% (< 100%)** $\\r→$ **EKONOMIS / HEMAT**. Manajemen berhasil menghemat Rp 1,5 Miliar tanpa mengorbankan kualitas spesifikasi teknis alat.',
+            '**2. Aspek Efisiensi (Hubungan Input vs Output)**:\nEfisiensi = Output Riil / Biaya Riil. Dengan biaya lebih rendah (Rp 8,5 M), rumah sakit mampu melayani 5.500 pasien (melampaui target awal 5.000 pasien) $\\r→$ **EFISIENSI TINGGI**.',
+            '**3. Aspek Efektivitas (Hubungan Output vs Outcome/Hasil)**:\nEfektivitas = Realisasi Outcome / Target Outcome. Tercapainya peningkatan harapan hidup pasien sebesar 25% dan kepuasan masyarakat terhadap layanan cuci darah $\\r→$ **SANGAT EFEKTIF**.'
           ]
         }
       ]

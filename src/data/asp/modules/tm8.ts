@@ -1,42 +1,84 @@
 import type { Reading } from '../../../types';
 import { CASE_UTS_ASP_INTEGRATED } from '../aspPracticeCases';
 
-const SVG_UTS_ASP_SUMMARY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PETA KONSEP SINTESIS MATERI PRA-UTS AKUNTANSI SEKTOR PUBLIK (TM 1 - TM 7)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">TM 1 &amp; TM 2</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Karakteristik &amp; ISAK 35:</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Non-profit objective</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Akuntabilitas publik</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Aset neto terikat/bebas</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Entitas Nirlaba</text>
+const SVG_UTS_ASP_SUMMARY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="pk1a" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="pk2a" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="pk3a" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="pk4a" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp8)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PETA SINTESIS KURIKULUM PRA-UTS AKUNTANSI SEKTOR PUBLIK (TM 1 - TM 7)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ROADMAP UTS</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TM 3 &amp; TM 4</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Regulasi &amp; Siklus APBD:</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Paket UU Keu Negara</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Musrenbang → RKPD</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• KUA-PPAS → Perda APBD</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Siklus Anggaran</text>
+  <!-- 4 Pillars Roadmap -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#pk1a)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="21" fill="#38bdf8" font-size="10.5" font-weight="800">FONDASI &amp; NIRLABA</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-blue" x="44" y="56" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">TM 1 - TM 2</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Sektor Publik vs Swasta</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• ISAK 35 Organisasi Nirlaba</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Aset Neto Terikat/Bebas</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Akuntabilitas Dana Publik</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Karakteristik Organisasi Non-Profit</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="167" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Karakteristik &amp; Standar Nirlaba</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">TM 5 &amp; TM 6</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Pendekatan &amp; Teknik:</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• NPM: PBK vs ZBB</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Akuntansi Dana (Funds)</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Komitmen / Encumbrance</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pengendalian Biaya</text>
+  <polygon points="237,185 247,190 237,195" fill="#38bdf8"/>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">TM 7</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Laporan Akrual PP 71:</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• LRA (Kas) vs LO (Akrual)</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• LP-SAL, LPE, Neraca</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• LAK BUD &amp; CaLK</text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Pelaporan Resmi</text>
+  <g transform="translate(250, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#pk2a)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="21" fill="#34d399" font-size="10.5" font-weight="800">REGULASI KEUANGAN</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-green" x="44" y="56" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">TM 3</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• UU 17/2003 Keuangan Negara</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• UU 1/2004 Perbendaharaan</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• UU 15/2004 Pemeriksaan BPK</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• PP 71/2010 SAP Akrual</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Asas Pengelolaan Fiskal</text>
+    <rect class="svg-badge-green" x="14" y="185" width="167" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Landasan Yuridis Sektor Publik</text>
+  </g>
+
+  <polygon points="452,185 462,190 452,195" fill="#34d399"/>
+
+  <g transform="translate(465, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#pk3a)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="21" fill="#fbbf24" font-size="10.5" font-weight="800">ANGGARAN DAERAH</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-amber" x="44" y="56" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">TM 4 - TM 5</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Siklus APBD (RKPD, KUA-PPAS)</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• RKA-SKPD &amp; Perda APBD</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Line-Item vs Performance NPM</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Zero-Based Budgeting (ZBB)</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Analisis Standar Belanja (ASB)</text>
+    <rect class="svg-badge-amber" x="14" y="185" width="167" height="24" rx="6" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Perencanaan &amp; Penganggaran</text>
+  </g>
+
+  <polygon points="667,185 677,190 667,195" fill="#fbbf24"/>
+
+  <g transform="translate(680, 75)">
+    <rect class="svg-card" x="0" y="0" width="185" height="225" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="185" height="32" rx="12" fill="url(#pk4a)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="21" fill="#a78bfa" font-size="10.5" font-weight="800">STANDAR LAPKEU</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-purple" x="44" y="56" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">TM 6 - TM 7</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Basis Kas LRA &amp; LP-SAL</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Basis Akrual LO &amp; Neraca</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Struktur 7 Komponen SAP</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Rekonsiliasi LRA vs LO</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• CaLK Pengungkapan Wajib</text>
+    <rect class="svg-badge-purple" x="14" y="185" width="157" height="24" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="92" y="201" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Pelaporan Keuangan Pemerintah</text>
+  </g>
 </svg>`;
 
 export const TM8_READING: Reading = {

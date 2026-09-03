@@ -1,26 +1,56 @@
 import type { Reading } from '../../../types';
 import { CASE_PUBLIC_AUDIT_BPK_APIP } from '../aspPracticeCases';
 
-const SVG_AUDIT_SPECTRUM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ARSITEKTUR PENGAWASAN SEKTOR PUBLIK: PENGAWAS INTERN (APIP) VS PEMERIKSA EKSTERN (BPK)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">PENGAWAS INTERN (APIP)</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">BPKP, Inspektorat Jenderal, Inspektorat Daerah:</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kedudukan: Di bawah Presiden / Menteri / KDH</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fungsi: Early Warning System &amp; Consulting</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Output: Reviu Laporan Keuangan &amp; Audit Kepatuhan</text>
-  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Pengawasan Preventif Internal</text>
+const SVG_AUDIT_SPECTRUM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="bpkGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="apipGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp11)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARSITEKTUR PENGAWASAN KEUANGAN NEGARA: AUDITOR EKSTERNAL (BPK RI) VS INTERNAL (APIP / BPKP)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">GOV AUDIT</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">PEMERIKSA EKSTERN (BPK RI)</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Badan Pemeriksa Keuangan Republik Indonesia:</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kedudukan: Lembaga Negara Independen (UUD 1945)</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fungsi: Audit Keuangan, Kinerja, &amp; ADTT</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Output: Opini LKPD &amp; Laporan Hasil Pemeriksaan (LHP)</text>
-  <text x="497" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pertanggungjawaban ke DPR/DPRD</text>
+  <!-- Left: BPK RI (External) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#bpkGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="10.5" font-weight="800">1. AUDITOR EKSTERNAL INDEPENDEN (BPK RI)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Kedudukan Yuridis:</tspan> Lembaga Tinggi Negara independen (UUD 1945 &amp; UU 15/2004)</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Objek Audit:</tspan> Seluruh entitas pengelola keuangan negara (K/L, Pemda, BUMN, BLU)</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">3 Jenis Pemeriksaan:</tspan></text>
+    <text class="text-accent-purple" x="14" y="106" fill="#a78bfa" font-size="7.5">  1. Audit Keuangan (Memberikan Opini WTP/WDP/TW/TMP atas LKPP/LKPD)</text>
+    <text class="text-accent-purple" x="14" y="120" fill="#a78bfa" font-size="7.5">  2. Audit Kinerja (Menilai aspek Ekonomi, Efisiensi, &amp; Efektivitas VFM)</text>
+    <text class="text-accent-purple" x="14" y="134" fill="#a78bfa" font-size="7.5">  3. Pemeriksaan Dengan Tujuan Tertentu (PDTT / Investigasi Fraud)</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Hasil Pemeriksaan diserahkan kepada DPR, DPD, &amp; DPRD</text>
+    
+    <rect class="svg-badge-purple" x="14" y="175" width="367" height="30" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="197" y="194" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Satu-satunya Lembaga Berwenang Memberikan Opini Lapkeu</text>
+  </g>
+
+  <!-- Right: APIP / BPKP (Internal) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#apipGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">2. PENGAWAS INTERN PEMERINTAH (APIP / BPKP)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Komponen APIP:</tspan> BPKP (Nasional), Itjen K/L, &amp; Inspektorat Daerah Provinsi/Kab</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Fungsi Utama:</tspan> Early warning system, consulting partner, &amp; pengawalan akuntabilitas</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• Melakukan reviu atas Laporan Keuangan sebelum diserahkan ke BPK RI</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• Evaluasi Sistem Pengendalian Intern Pemerintah (SPIP Terintegrasi)</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">• Audit probity tender pengadaan barang/jasa bernilai strategis</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Bertanggung jawab langsung kepada Presiden / Menteri / Kepala Daerah</text>
+    
+    <rect class="svg-badge-blue" x="14" y="175" width="367" height="30" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="194" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Mitra Konsultasi Manajemen untuk Mencegah Kebocoran Anggaran</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Sinergi: Reviu APIP yang bermutu tinggi menjamin kualitas laporan keuangan pemerintah sebelum diaudit secara independen oleh BPK.</text>
 </svg>`;
 
 export const TM11_READING: Reading = {

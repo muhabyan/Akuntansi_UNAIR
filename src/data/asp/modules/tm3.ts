@@ -1,42 +1,86 @@
 import type { Reading } from '../../../types';
 import { CASE_GOV_ACCOUNTING_STANDARDS } from '../aspPracticeCases';
 
-const SVG_GOV_REGULATIONS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">HIERARKI REGULASI KEUANGAN NEGARA &amp; STANDAR AKUNTANSI PEMERINTAHAN</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">UU NO. 17 / 2003</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Keuangan Negara:</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Asas kesatuan &amp; universal</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bentuk APBN &amp; APBD</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mandat Basis Akrual</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Fondasi Keuangan</text>
+const SVG_GOV_REGULATIONS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="reg1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="reg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="reg3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="reg4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp3)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PAKET 3 UNDANG-UNDANG KEUANGAN NEGARA &amp; STANDAR AKUNTANSI PEMERINTAHAN (SAP)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">LEGAL FRAMEWORK</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">UU NO. 1 / 2004</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Perbendaharaan Negara:</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Fungsi Bendahara Umum (BUN)</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengelolaan Kas &amp; Piutang</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Badan Layanan Umum (BLU)</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Eksekusi Kas Negara</text>
+  <!-- 4 Columns Regulatory Pillars -->
+  <!-- 1. UU 17/2003 -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#reg1)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">UU NO. 17 TAHUN 2003</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Tentang: Keuangan Negara</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Landasan reformasi fiskal RI</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Ruang lingkup keuangan negara</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Asas tahunan, universalitas,</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  kesatuan, &amp; asas spesialitas</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Mandat basis akrual pemerintah</text>
+    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Payung Hukum Anggaran Negara</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">UU NO. 15 / 2004</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Pemeriksaan Keuangan:</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kewenangan BPK RI</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 3 Jenis Pemeriksaan Audit</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tindak lanjut LHP 60 hari</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pengawasan BPK RI</text>
+  <!-- 2. UU 1/2004 -->
+  <g transform="translate(245, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#reg2)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">UU NO. 1 TAHUN 2004</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Perbendaharaan Negara</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Pengelolaan Kas Negara (TSA)</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Pembayaran belanja &amp; SPM/SP2D</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Pengelolaan Barang Milik Negara</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Larangan penyitaan uang negara</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Pejabat Bendahara &amp; PPK</text>
+    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Tata Kelola Kas &amp; Aset Negara</text>
+  </g>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">PP NO. 71 / 2010</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Standar Akuntansi (SAP):</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Lampiran I: SAP Akrual</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 7 Laporan Keuangan Pemda</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PSAP 01 s/d PSAP 17</text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Standar Pelaporan</text>
+  <!-- 3. UU 15/2004 -->
+  <g transform="translate(455, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#reg3)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">UU NO. 15 TAHUN 2004</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Pemeriksaan Keuangan</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Mandat audit Badan Pemeriksa</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  Keuangan (BPK RI)</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• 3 Jenis Pemeriksaan: Keuangan,</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  Kinerja (VFM), &amp; Tujuan Tertentu</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Tindak lanjut rekomendasi BPK</text>
+    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Audit Independen Eksternal</text>
+  </g>
+
+  <!-- 4. PP 71/2010 SAP -->
+  <g transform="translate(665, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#reg4)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">PP NO. 71 TAHUN 2010</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Standar Akuntansi Pemerintah</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• SAP Berbasis Akrual Penuh</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Diterapkan oleh seluruh K/L &amp; Pemda</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Mengatur 7 komponen laporan</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  keuangan pemerintah</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Disusun oleh Komite KSAP</text>
+    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Standar Resmi Penyusunan Lapkeu</text>
+  </g>
 </svg>`;
 
 export const TM3_READING: Reading = {

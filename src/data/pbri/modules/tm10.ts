@@ -1,34 +1,60 @@
 import type { Reading } from '../../../types';
 import { CASE_FRAUD_RISK_ASSESSMENT } from '../pbriPracticeCases';
 
-const SVG_FRAUD_TRIANGLE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SEGITIGA KECURANGAN (FRAUD TRIANGLE) &amp; RESPONS AUDIT (SA 240)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">1. TEKANAN (PRESSURE)</text>
-  <text x="125" y="100" fill="#94a3b8" font-size="9.5" text-anchor="middle">Incentives / Pressures:</text>
-  <text x="125" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Target laba bonus direksi</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Ancaman delisting saham</text>
-  <text x="125" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Masalah utang pribadi</text>
-  <text x="125" y="178" fill="#fca5a5" font-size="9" text-anchor="middle">Motivasi Finansial</text>
+const SVG_FRAUD_TRIANGLE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb10)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SEGITIGA KECURANGAN KORPORASI: THE FRAUD TRIANGLE (DONALD R. CRESSEY &amp; SA 240)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">FRAUD TRIANGLE</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">2. PELUANG (OPPORTUNITY)</text>
-  <text x="340" y="100" fill="#94a3b8" font-size="9.5" text-anchor="middle">Opportunities:</text>
-  <text x="340" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Kontrol internal lemah</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Management Override</text>
-  <text x="340" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Transaksi pihak berelasi</text>
-  <text x="340" y="178" fill="#fde68a" font-size="9" text-anchor="middle">Celah dalam Sistem</text>
+  <!-- Left: Triangular Graphic Layout (Width 450px) -->
+  <g transform="translate(50, 75)">
+    <!-- Top: Pressure / Incentive -->
+    <rect class="svg-card" x="120" y="0" width="200" height="52" rx="8" fill="#0f172a" stroke="#f87171" stroke-width="2"/>
+    <text class="text-accent-red" x="220" y="22" fill="#f87171" font-size="9.5" font-weight="800" text-anchor="middle">1. TEKANAN (PRESSURE)</text>
+    <text class="svg-text" x="220" y="38" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Motivasi Finansial / Target Berat</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#a78bfa" font-size="11" font-weight="700" text-anchor="middle">3. RASIONALISASI</text>
-  <text x="555" y="100" fill="#94a3b8" font-size="9.5" text-anchor="middle">Attitudes / Rationalization:</text>
-  <text x="555" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• "Hanya pinjam sementara"</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• "Perusahaan berutang budi"</text>
-  <text x="555" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• "Semua orang melakukannya"</text>
-  <text x="555" y="178" fill="#ddd6fe" font-size="9" text-anchor="middle">Pembenaran Moral</text>
+    <!-- Bottom Left: Opportunity -->
+    <rect class="svg-card" x="0" y="160" width="190" height="52" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <text class="text-accent-amber" x="95" y="182" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">2. PELUANG (OPPORTUNITY)</text>
+    <text class="svg-text" x="95" y="198" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Kelemahan SPI / Celah Sistem</text>
+
+    <!-- Bottom Right: Rationalization -->
+    <rect class="svg-card" x="250" y="160" width="190" height="52" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text class="text-accent-blue" x="345" y="182" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">3. RASIONALISASI</text>
+    <text class="svg-text" x="345" y="198" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Pembenaran Moral Internal</text>
+
+    <!-- Triangle Connector Lines -->
+    <line x1="180" y1="52" x2="110" y2="160" stroke="#f87171" stroke-width="2" stroke-dasharray="4 4"/>
+    <line x1="260" y1="52" x2="330" y2="160" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/>
+    <line x1="190" y1="186" x2="250" y2="186" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Right: 3 Fraud Condition Cards -->
+  <g transform="translate(520, 75)">
+    <rect class="svg-subcard" x="0" y="0" width="345" height="70" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1"/>
+    <text class="text-accent-red" x="14" y="20" fill="#f87171" font-size="9.5" font-weight="800">1. TEKANAN / INSENTIF (INCENTIVE)</text>
+    <text class="svg-text" x="14" y="38" fill="#cbd5e1" font-size="8">• Gaya hidup mewah di luar kemampuan gaji, utang judi</text>
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• Tekanan direksi mencapai target laba agresif dari analis pasar</text>
+
+    <rect class="svg-subcard" x="0" y="80" width="345" height="70" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
+    <text class="text-accent-amber" x="14" y="100" fill="#fbbf24" font-size="9.5" font-weight="800">2. KELUASAN PELUANG (OPPORTUNITY)</text>
+    <text class="svg-text" x="14" y="118" fill="#cbd5e1" font-size="8">• Tidak adanya pemisahan fungsi (Segregation of Duties)</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">• Lemahnya pengawasan komisaris &amp; pengabaian kontrol oleh bos</text>
+
+    <rect class="svg-subcard" x="0" y="160" width="345" height="70" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text class="text-accent-blue" x="14" y="180" fill="#38bdf8" font-size="9.5" font-weight="800">3. SIKAP RASIONALISASI (RATIONALIZATION)</text>
+    <text class="svg-text" x="14" y="198" fill="#cbd5e1" font-size="8">• "Saya hanya meminjam sementara, nanti diganti"</text>
+    <text class="svg-text" x="14" y="212" fill="#cbd5e1" font-size="8">• "Perusahaan labanya miliaran, gaji saya tidak sebanding kerja keras"</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Auditor paling mampu memitigasi elemen PELUANG melalui pengujian dan rekomendasi perbaikan Pengendalian Internal.</text>
 </svg>`;
 
 export const TM10_READING: Reading = {

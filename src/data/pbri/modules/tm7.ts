@@ -1,38 +1,92 @@
 import type { Reading } from '../../../types';
 import { CASE_ANALYTICAL_PROCEDURES } from '../pbriPracticeCases';
 
-const SVG_ANALYTICAL_FLOW = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">4 TAHAP PROSEDUR ANALITIS SUBSTANTIF (SA 520)</text>
-  
-  <rect x="30" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. FORMULASI</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Bentuk Ekspektasi:</text>
-  <text x="97" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Berdasarkan tren,</text>
-  <text x="97" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">anggaran, industri,</text>
-  <text x="97" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">atau data non-keu.</text>
+const SVG_ANALYTICAL_FLOW = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="step1Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="step2Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="step3Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="step4Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb7)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">4 TAHAP PROSEDUR ANALITIS SUBSTANTIF DALAM AUDIT LAPORAN KEUANGAN (SA 520)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ANALYTICAL FLOW</text>
 
-  <rect x="185" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="252" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">2. THRESHOLD</text>
-  <text x="252" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Batas Toleransi:</text>
-  <text x="252" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tentukan batas</text>
-  <text x="252" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">selisih yg dapat</text>
-  <text x="252" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">diterima tanpa audit.</text>
+  <!-- 4 Sequential Stepped Cards -->
+  <!-- Step 1 -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#step1Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">TAHAP 1: EKSPEKTASI</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Menentukan Ekspektasi Auditor</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Membangun angka perkiraan</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  yang independen</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Sumber: Tren historis, anggaran,</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  benchmark rasio industri kompetitor</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Hubungan keuangan &amp; non-keuangan</text>
+    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Prediksi Independen Auditor</text>
+  </g>
 
-  <rect x="340" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="412" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">3. BANDINGKAN</text>
-  <text x="412" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Hitung Selisih:</text>
-  <text x="412" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Selisih = Saldo</text>
-  <text x="412" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tercatat Klien</text>
-  <text x="412" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">vs Ekspektasi Auditor.</text>
+  <polygon points="237,185 245,190 237,195" fill="#38bdf8"/>
 
-  <rect x="505" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="577" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">4. INVESTIGASI</text>
-  <text x="577" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Tindak Lanjut:</text>
-  <text x="577" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Wawancara Direksi &amp;</text>
-  <text x="577" y="134" fill="#fca5a5" font-size="8.5" text-anchor="middle">verifikasi bukti</text>
-  <text x="577" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">koraboratif mandatori.</text>
+  <!-- Step 2 -->
+  <g transform="translate(250, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#step2Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">TAHAP 2: BATAS AMBANG</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Menetapkan Threshold Selisih</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Menentukan selisih maksimal yang</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  dapat diterima tanpa investigasi</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Didasarkan pada materialitas</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  pelaksanaan (Performance Materiality)</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Misal: Selisih &gt; 5% atau &gt; Rp 100jt</text>
+    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Ambang Batas Toleransi Selisih</text>
+  </g>
+
+  <polygon points="452,185 460,190 452,195" fill="#a78bfa"/>
+
+  <!-- Step 3 -->
+  <g transform="translate(465, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#step3Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">TAHAP 3: BANDINGKAN</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Bandingkan Angka Tercatat</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bandingkan angka riil klien</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  dengan ekspektasi auditor</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Identifikasi fluktuasi tidak wajar</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  atau ketiadaan fluktuasi wajar</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Hitung besaran selisih (Variance)</text>
+    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Identifikasi Fluktuasi Anomali</text>
+  </g>
+
+  <polygon points="667,185 675,190 667,195" fill="#fbbf24"/>
+
+  <!-- Step 4 -->
+  <g transform="translate(680, 75)">
+    <rect class="svg-card" x="0" y="0" width="185" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="185" height="30" rx="10" fill="url(#step4Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="92" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">TAHAP 4: INVESTIGASI</text>
+    <rect class="svg-subcard" x="10" y="38" width="165" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="92" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Investigasi &amp; Konfirmasi</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Inquiry penjelasan ke direksi</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">WAJIB</tspan> peroleh bukti audit</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">  pendukung yang menguatkan</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Lakukan pengujian rincian jika</text>
+    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">  penjelasan tidak memadai</text>
+    <rect class="svg-badge-green" x="10" y="185" width="165" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="92" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Bukti Penguat &amp; Simpulan</text>
+  </g>
 </svg>`;
 
 export const TM7_READING: Reading = {

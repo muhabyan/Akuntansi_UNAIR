@@ -207,3 +207,151 @@
   }
 }
 body.zen-mode-active .zen-hideable { display: none !important; } 
+
+
+/* ==========================================================================
+   Adaptive Course Diagram SVG Engine (Light & Dark Mode)
+   ========================================================================== */
+.course-diagram-svg {
+  width: 100%;
+  height: auto;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: all 0.25s ease-in-out;
+}
+
+/* --- LIGHT THEME (Default) --- */
+.course-diagram-svg .svg-bg {
+  fill: #f8fafc !important;
+  stroke: #e2e8f0 !important;
+}
+.course-diagram-svg .svg-header {
+  fill: #f1f5f9 !important;
+  fill-opacity: 0.9 !important;
+}
+.course-diagram-svg .svg-divider {
+  stroke: #cbd5e1 !important;
+}
+.course-diagram-svg .svg-title {
+  fill: #0f172a !important;
+  font-weight: 800 !important;
+}
+.course-diagram-svg .svg-card {
+  fill: #ffffff !important;
+}
+.course-diagram-svg .svg-subcard {
+  fill: #f8fafc !important;
+  stroke: #e2e8f0 !important;
+}
+.course-diagram-svg .svg-text {
+  fill: #334155 !important;
+}
+.course-diagram-svg .svg-muted {
+  fill: #64748b !important;
+}
+
+/* Light Theme Accent Text (Deep saturated tones for crystal clear readability) */
+.course-diagram-svg .text-accent-blue {
+  fill: #0284c7 !important;
+}
+.course-diagram-svg .text-accent-green {
+  fill: #059669 !important;
+}
+.course-diagram-svg .text-accent-amber {
+  fill: #d97706 !important;
+}
+.course-diagram-svg .text-accent-purple {
+  fill: #7c3aed !important;
+}
+.course-diagram-svg .text-accent-red {
+  fill: #dc2626 !important;
+}
+
+/* Light Theme Accent Badges / Pill Surfaces */
+.course-diagram-svg .svg-badge-blue {
+  fill: #e0f2fe !important;
+  fill-opacity: 0.9 !important;
+}
+.course-diagram-svg .svg-badge-green {
+  fill: #dcfce7 !important;
+  fill-opacity: 0.9 !important;
+}
+.course-diagram-svg .svg-badge-amber {
+  fill: #fef3c7 !important;
+  fill-opacity: 0.9 !important;
+}
+.course-diagram-svg .svg-badge-purple {
+  fill: #f3e8ff !important;
+  fill-opacity: 0.9 !important;
+}
+.course-diagram-svg .svg-badge-red {
+  fill: #fee2e2 !important;
+  fill-opacity: 0.9 !important;
+}
+
+/* --- DARK THEME OVERRIDES (html.dark) --- */
+html.dark .course-diagram-svg .svg-bg {
+  fill: #0b1329 !important;
+  stroke: #1e293b !important;
+}
+html.dark .course-diagram-svg .svg-header {
+  fill: #1e293b !important;
+  fill-opacity: 0.6 !important;
+}
+html.dark .course-diagram-svg .svg-divider {
+  stroke: #334155 !important;
+}
+html.dark .course-diagram-svg .svg-title {
+  fill: #f8fafc !important;
+}
+html.dark .course-diagram-svg .svg-card {
+  fill: #0f172a !important;
+}
+html.dark .course-diagram-svg .svg-subcard {
+  fill: #1e293b !important;
+  stroke: #334155 !important;
+}
+html.dark .course-diagram-svg .svg-text {
+  fill: #cbd5e1 !important;
+}
+html.dark .course-diagram-svg .svg-muted {
+  fill: #94a3b8 !important;
+}
+
+/* Dark Theme Accent Text (Vibrant luminous tones) */
+html.dark .course-diagram-svg .text-accent-blue {
+  fill: #38bdf8 !important;
+}
+html.dark .course-diagram-svg .text-accent-green {
+  fill: #34d399 !important;
+}
+html.dark .course-diagram-svg .text-accent-amber {
+  fill: #fbbf24 !important;
+}
+html.dark .course-diagram-svg .text-accent-purple {
+  fill: #a78bfa !important;
+}
+html.dark .course-diagram-svg .text-accent-red {
+  fill: #f87171 !important;
+}
+
+/* Dark Theme Accent Badges / Pill Surfaces */
+html.dark .course-diagram-svg .svg-badge-blue {
+  fill: #0284c7 !important;
+  fill-opacity: 0.25 !important;
+}
+html.dark .course-diagram-svg .svg-badge-green {
+  fill: #059669 !important;
+  fill-opacity: 0.25 !important;
+}
+html.dark .course-diagram-svg .svg-badge-amber {
+  fill: #d97706 !important;
+  fill-opacity: 0.25 !important;
+}
+html.dark .course-diagram-svg .svg-badge-purple {
+  fill: #7c3aed !important;
+  fill-opacity: 0.25 !important;
+}
+html.dark .course-diagram-svg .svg-badge-red {
+  fill: #dc2626 !important;
+  fill-opacity: 0.25 !important;
+}

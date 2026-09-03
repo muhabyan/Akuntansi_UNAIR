@@ -565,7 +565,15 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               const body = economicFormula.body;
               const isLatex = body.includes('\\') || body.includes('$');
               if (isLatex) {
-                const mathText = !body.includes('$') ? `$$\n${body}\n$$` : body;
+                let mathText = body;
+                if (!body.includes('$')) {
+                  const rawLines = body.trim().split(/\r?\n+/).map(l => l.trim()).filter(Boolean);
+                  if (rawLines.length > 1 && !body.includes('\\begin{')) {
+                    mathText = `$$\n\\begin{aligned}\n${rawLines.map(l => l.startsWith('&') ? l : `& ${l}`).join(' \\\\\n')}\n\\end{aligned}\n$$`;
+                  } else {
+                    mathText = `$$\n${body}\n$$`;
+                  }
+                }
                 return (
                   <div className="text-base text-slate-900 dark:text-slate-100 overflow-x-auto py-1">
                     {renderText(mathText)}

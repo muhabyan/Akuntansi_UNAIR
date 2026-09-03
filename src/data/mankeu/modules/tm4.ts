@@ -1,34 +1,80 @@
 import type { Reading } from '../../../types';
 import { CASE_CAPM_PORTFOLIO_RISK } from '../mankeuPracticeCases';
 
-const SVG_SML_CAPM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">GARIS PASAR SEKURITAS (SECURITY MARKET LINE - SML / CAPM)</text>
-  
-  <line x1="70" y1="180" x2="630" y2="180" stroke="#64748b" stroke-width="2"/>
-  <line x1="70" y1="180" x2="70" y2="45" stroke="#64748b" stroke-width="2"/>
-  <text x="630" y="195" fill="#94a3b8" font-size="10" text-anchor="end">Risiko Sistematis (Beta β)</text>
-  <text x="60" y="50" fill="#94a3b8" font-size="10" text-anchor="end">Return (r%)</text>
+const SVG_SML_CAPM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="smlLine" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk4)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">GARIS PASAR SEKURITAS (SECURITY MARKET LINE - SML / CAPM)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CAPM GRAPH</text>
 
-  <line x1="70" y1="150" x2="600" y2="60" stroke="#38bdf8" stroke-width="2.5"/>
-  
-  <circle cx="70" cy="150" r="5" fill="#f87171"/>
-  <text x="60" y="154" fill="#f87171" font-size="10" font-weight="700" text-anchor="end">r_RF (6%)</text>
-  <text x="80" y="165" fill="#94a3b8" font-size="9">Beta = 0</text>
+  <!-- Left: SML Graph Axes (Width 450px, Height 240px) -->
+  <g transform="translate(65, 80)">
+    <!-- Y-Axis: Expected Return E(R) -->
+    <line x1="50" y1="20" x2="50" y2="210" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="50,15 46,25 54,25" fill="#94a3b8"/>
+    <text x="40" y="20" fill="#f8fafc" font-size="9" font-weight="800" text-anchor="end">Expected Return E(R)</text>
 
-  <line x1="335" y1="180" x2="335" y2="110" stroke="#64748b" stroke-dasharray="3 3"/>
-  <circle cx="335" cy="110" r="6" fill="#fbbf24"/>
-  <text x="335" y="195" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">β_M = 1,0</text>
-  <text x="345" y="105" fill="#fbbf24" font-size="10" font-weight="700">Pasar (r_M = 12%)</text>
+    <!-- X-Axis: Systematic Risk (Beta β) -->
+    <line x1="50" y1="210" x2="430" y2="210" stroke="#94a3b8" stroke-width="2"/>
+    <polygon points="435,210 425,206 425,214" fill="#94a3b8"/>
+    <text x="430" y="228" fill="#f8fafc" font-size="9" font-weight="800" text-anchor="end">Risiko Sistematis (Beta β)</text>
 
-  <circle cx="236" cy="75" r="6" fill="#4ade80"/>
-  <text x="236" y="65" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">UNDERVALUED (BUY)</text>
-  <text x="236" y="90" fill="#94a3b8" font-size="8.5" text-anchor="middle">Ekspektasi Return > SML</text>
+    <!-- Risk-Free Rate Rf Tick -->
+    <line x1="45" y1="165" x2="55" y2="165" stroke="#a78bfa" stroke-width="2"/>
+    <text class="text-accent-purple" x="40" y="169" fill="#a78bfa" font-size="9" font-weight="800" text-anchor="end">Rf (6%)</text>
 
-  <circle cx="434" cy="115" r="6" fill="#ef4444"/>
-  <text x="434" y="130" fill="#ef4444" font-size="9.5" font-weight="700" text-anchor="middle">OVERVALUED (SELL)</text>
-  <text x="434" y="145" fill="#94a3b8" font-size="8.5" text-anchor="middle">Ekspektasi Return &lt; SML</text>
+    <!-- SML Linear Slope Line -->
+    <line x1="50" y1="165" x2="400" y2="50" stroke="#38bdf8" stroke-width="3.5"/>
+    <text class="text-accent-blue" x="390" y="42" fill="#38bdf8" font-size="10" font-weight="900">SML</text>
+
+    <!-- Market Portfolio Point M (Beta = 1.0) -->
+    <line x1="225" y1="110" x2="225" y2="210" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="50" y1="110" x2="225" y2="110" stroke="#334155" stroke-dasharray="3 3"/>
+    <circle cx="225" cy="110" r="6" fill="#34d399"/>
+    <text class="text-accent-green" x="225" y="225" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">βm = 1.0</text>
+    <text class="text-accent-green" x="40" y="114" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="end">Rm (12%)</text>
+    <text class="text-accent-green" x="235" y="105" fill="#34d399" font-size="8" font-weight="700">Portofolio Pasar (IHSG)</text>
+
+    <!-- Undervalued Zone (Above SML) -->
+    <rect x="110" y="45" width="130" height="32" rx="6" fill="#059669" fill-opacity="0.3" stroke="#34d399"/>
+    <text class="text-accent-green" x="175" y="60" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">UNDERVALUED (BUY)</text>
+    <text class="svg-text" x="175" y="71" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Return Riil &gt; Required Return</text>
+
+    <!-- Overvalued Zone (Below SML) -->
+    <rect x="255" y="145" width="130" height="32" rx="6" fill="#dc2626" fill-opacity="0.3" stroke="#f87171"/>
+    <text class="text-accent-red" x="320" y="160" fill="#f87171" font-size="8" font-weight="800" text-anchor="middle">OVERVALUED (SELL)</text>
+    <text class="svg-text" x="320" y="171" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Return Riil &lt; Required Return</text>
+  </g>
+
+  <!-- Right: CAPM Formula & Components Explanation -->
+  <g transform="translate(540, 75)">
+    <!-- Formula Box -->
+    <rect class="svg-subcard" x="0" y="0" width="325" height="48" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="162" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">RUMUS DASAR MODEL CAPM</text>
+    <text x="162" y="38" fill="#f8fafc" font-size="10" font-weight="700" text-anchor="middle">E(Ri) = Rf + βi × [ E(Rm) - Rf ]</text>
+
+    <!-- Variable Cards -->
+    <rect class="svg-card" x="0" y="58" width="325" height="52" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="12" y="76" fill="#a78bfa" font-size="8.5" font-weight="800">Rf: Risk-Free Rate (Suku Bunga Bebas Risiko)</text>
+    <text class="svg-text" x="12" y="92" fill="#cbd5e1" font-size="7.5">Imbal hasil instrumen tanpa risiko gagal bayar (contoh: SBN / SUN 10 Tahun).</text>
+
+    <rect class="svg-card" x="0" y="118" width="325" height="52" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+    <text class="text-accent-blue" x="12" y="136" fill="#38bdf8" font-size="8.5" font-weight="800">βi: Koefisien Beta Sekuritas i</text>
+    <text class="svg-text" x="12" y="152" fill="#cbd5e1" font-size="7.5">Sensitivitas return saham terhadap fluktuasi IHSG. β &gt; 1 = Saham agresif.</text>
+
+    <rect class="svg-card" x="0" y="178" width="325" height="52" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
+    <text class="text-accent-amber" x="12" y="196" fill="#fbbf24" font-size="8.5" font-weight="800">[ E(Rm) - Rf ]: Market Risk Premium (MRP)</text>
+    <text class="svg-text" x="12" y="212" fill="#cbd5e1" font-size="7.5">Kompensasi imbal hasil tambahan atas kesediaan investor menanggung risiko saham.</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Saham di atas garis SML memberikan return lebih tinggi dari kompensasi risikonya (Murah/Layak Beli).</text>
 </svg>`;
 
 export const TM4_READING: Reading = {
@@ -88,8 +134,8 @@ export const TM4_READING: Reading = {
           kind: 'ul',
           items: [
             '**Perhitungan CAPM SML**:\n- Saham X: $r_X = 5,0\\% + 1,40(11,0\\% - 5,0\\%) = 5,0\\% + 8,4\\% = \\mathbf{13,4\\%}$.\n- Saham Y: $r_Y = 5,0\\% + 0,60(6,0\\%) = 5,0\\% + 3,6\\% = \\mathbf{8,6\\%}$.',
-            '**Keputusan Saham X**: Ekspektasi Return Analis (15,0%) > CAPM (13,4%) $\\rightarrow$ Saham X terletak DI ATAS SML $\\rightarrow$ **Undervalued (Beli / Buy)**.',
-            '**Keputusan Saham Y**: Ekspektasi Return Analis (8,0%) < CAPM (8,6%) $\\rightarrow$ Saham Y terletak DI BAWAH SML $\\rightarrow$ **Overvalued (Jual / Sell / Hindari)**.'
+            '**Keputusan Saham X**: Ekspektasi Return Analis (15,0%) > CAPM (13,4%) $\\r→$ Saham X terletak DI ATAS SML $\\r→$ **Undervalued (Beli / Buy)**.',
+            '**Keputusan Saham Y**: Ekspektasi Return Analis (8,0%) < CAPM (8,6%) $\\r→$ Saham Y terletak DI BAWAH SML $\\r→$ **Overvalued (Jual / Sell / Hindari)**.'
           ]
         }
       ]

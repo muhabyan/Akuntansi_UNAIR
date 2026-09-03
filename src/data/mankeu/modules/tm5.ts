@@ -1,34 +1,76 @@
 import type { Reading } from '../../../types';
 import { CASE_WACC_COMPREHENSIVE } from '../mankeuPracticeCases';
 
-const SVG_WACC_STRUCTURE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KOMPONEN BIAYA MODAL RATA-RATA TERTIMBANG (WACC)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">BIAYA UTANG (DEBT)</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">After-Tax Cost of Debt:</text>
-  <text x="125" y="122" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">r_d × (1 - T)</text>
-  <text x="125" y="146" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tax-deductible interest</text>
-  <text x="125" y="162" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Biaya komponen terendah</text>
-  <text x="125" y="180" fill="#4ade80" font-size="9" text-anchor="middle">Tax Shield Benefit</text>
+const SVG_WACC_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="waccWd" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="waccWp" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="waccWe" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk5)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">KOMPONEN BIAYA MODAL RATA-RATA TERTIMBANG (WACC)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">WACC MODEL</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">SAHAM PREFEREN</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Cost of Preferred Stock:</text>
-  <text x="340" y="122" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">r_p = D_p / P_n</text>
-  <text x="340" y="146" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dividen tdk kurangi pajak</text>
-  <text x="340" y="162" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Memperhitungkan flotation</text>
-  <text x="340" y="180" fill="#fde68a" font-size="9" text-anchor="middle">Hybrid Capital</text>
+  <!-- Formula Banner on Top -->
+  <g transform="translate(35, 70)">
+    <rect class="svg-subcard" x="0" y="0" width="830" height="42" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+    <text x="415" y="26" fill="#f8fafc" font-size="10.5" font-weight="800" text-anchor="middle">
+      WACC = [ <tspan class="text-accent-blue" fill="#38bdf8">Wd × Kd × (1 - T)</tspan> ] + [ <tspan class="text-accent-purple" fill="#a78bfa">Wp × Kp</tspan> ] + [ <tspan class="text-accent-green" fill="#34d399">We × Ke</tspan> ]
+    </text>
+  </g>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">SAHAM BIASA (EQUITY)</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Cost of Common Equity (r_s):</text>
-  <text x="555" y="122" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">CAPM / DCF / Bond+RP</text>
-  <text x="555" y="146" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kompensasi risiko residual</text>
-  <text x="555" y="162" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Komponen biaya tertinggi</text>
-  <text x="555" y="180" fill="#fca5a5" font-size="9" text-anchor="middle">Opportunity Cost Modal</text>
+  <!-- 3 Capital Component Pillars -->
+  <!-- Pillar 1: Debt (Kd after-tax) -->
+  <g transform="translate(35, 125)">
+    <rect class="svg-card" x="0" y="0" width="265" height="180" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#waccWd)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. MODAL UTANG (DEBT - Wd)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Biaya Riil: Kd × (1 - Tax Rate)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Memiliki fasilitas <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Tax Shield</tspan> bunga</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Bunga pinjaman mengurangi beban pajak</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Biaya modal paling murah di antara ketiganya</text>
+    <text class="text-accent-red" x="14" y="136" fill="#f87171" font-size="8">• Risiko: Risiko kebangkrutan finansial</text>
+    <rect class="svg-badge-blue" x="14" y="148" width="237" height="20" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="162" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Contoh Bobot Target: 30% - 40%</text>
+  </g>
+
+  <!-- Pillar 2: Preferred Stock (Kp) -->
+  <g transform="translate(318, 125)">
+    <rect class="svg-card" x="0" y="0" width="265" height="180" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#waccWp)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">2. SAHAM PREFEREN (Wp)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="132" y="56" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Biaya Riil: Dp ÷ Net Proceeds (Pn)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Dividen tetap kumulatif prioritas</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-red" fill="#f87171" font-weight="700">TIDAK ADA tax shield</tspan> (bayar dari laba bersih)</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Memiliki sifat hibrida: Utang + Saham</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Hak klaim aset di atas saham biasa</text>
+    <rect class="svg-badge-purple" x="14" y="148" width="237" height="20" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="132" y="162" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Contoh Bobot Target: 0% - 10%</text>
+  </g>
+
+  <!-- Pillar 3: Common Equity (Ke / Ks) -->
+  <g transform="translate(600, 125)">
+    <rect class="svg-card" x="0" y="0" width="265" height="180" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#waccWe)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">3. SAHAM BIASA (EQUITY - We)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Dihitung via CAPM: Rf + β(Rm - Rf)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Biaya modal paling mahal (Risk Premium tertinggi)</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Pembayar klaim sisa terakhir (Residual Claimant)</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Menuntut imbal hasil laba &amp; capital gain</text>
+    <text class="text-accent-green" x="14" y="136" fill="#34d399" font-size="8">• Keunggulan: Bebas kewajiban bayar bunga tetap</text>
+    <rect class="svg-badge-green" x="14" y="148" width="237" height="20" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="162" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Contoh Bobot Target: 50% - 70%</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">WACC adalah "Hurdle Rate" minimum yang harus dilampaui (IRR &gt; WACC) agar proyek investasi menciptakan nilai tambah pemegang saham.</text>
 </svg>`;
 
 export const TM5_READING: Reading = {

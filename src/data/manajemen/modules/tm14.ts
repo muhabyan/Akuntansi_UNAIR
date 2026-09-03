@@ -1,50 +1,70 @@
 import type { Reading } from '../../../types';
 import { CASE_TEAM_COMMUNICATION_TQM } from '../manajemenPracticeCases';
 
-const SVG_TUCKMAN_TQM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">5 TAHAP PERKEMBANGAN TIM TUCKMAN &amp; SIKLUS PENGENDALIAN PDCA (TQM)</text>
-  
-  <rect x="25" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="82" y="78" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">FORMING</text>
-  <text x="82" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Tahap 1: Orientasi</text>
-  <text x="82" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Saling mengenal</text>
-  <text x="82" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Suasana canggung</text>
-  <text x="82" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Butuh arahan jelas</text>
-  <text x="82" y="175" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Penjajakan Peran</text>
+const SVG_TUCKMAN_TQM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad14)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 TAHAP PERKEMBANGAN TIM TUCKMAN &amp; SIKLUS PENGENDALIAN PDCA</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TEAM &amp; TQM</text>
 
-  <rect x="155" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#f87171" font-size="9.5" font-weight="700" text-anchor="middle">STORMING</text>
-  <text x="212" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Tahap 2: Konflik</text>
-  <text x="212" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Friksi pendapat</text>
-  <text x="212" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Rebutan pengaruh</text>
-  <text x="212" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Resistensi kendali</text>
-  <text x="212" y="175" fill="#fca5a5" font-size="8.5" font-weight="700" text-anchor="middle">Fase Kritis</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="540" height="250" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="270" y="24" fill="#38bdf8" font-size="11" font-weight="800" text-anchor="middle">KURVA KINERJA TIM SEIRING WAKTU (BRUCE TUCKMAN)</text>
+    <path d="M 20 180 Q 70 120 120 140 Q 180 210 230 190 Q 300 130 360 90 Q 430 40 480 50 Q 510 60 520 120" fill="none" stroke="#38bdf8" stroke-width="3"/>
+    
+    <circle cx="60" cy="145" r="14" fill="#0284c7"/>
+    <text x="60" y="149" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">1</text>
+    <text class="text-accent-blue" x="60" y="172" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">FORMING</text>
+    <text class="svg-muted" x="60" y="185" fill="#94a3b8" font-size="7" text-anchor="middle">Orientasi &amp; Sopan</text>
 
-  <rect x="285" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="342" y="78" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">NORMING</text>
-  <text x="342" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Tahap 3: Harmoni</text>
-  <text x="342" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Konsensus norma</text>
-  <text x="342" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Peran disepakati</text>
-  <text x="342" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Kohesivitas tumbuh</text>
-  <text x="342" y="175" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Aturan Main Jelas</text>
+    <circle cx="175" cy="200" r="14" fill="#dc2626"/>
+    <text x="175" y="204" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">2</text>
+    <text class="text-accent-red" x="175" y="226" fill="#f87171" font-size="8.5" font-weight="700" text-anchor="middle">STORMING</text>
+    <text class="svg-muted" x="175" y="238" fill="#94a3b8" font-size="7" text-anchor="middle">Friksi &amp; Konflik</text>
 
-  <rect x="415" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="472" y="78" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">PERFORMING</text>
-  <text x="472" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Tahap 4: Sinergi</text>
-  <text x="472" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Kinerja puncak</text>
-  <text x="472" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Problem solving</text>
-  <text x="472" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Otonomi tinggi</text>
-  <text x="472" y="175" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle">Produktivitas Maks</text>
+    <circle cx="295" cy="130" r="14" fill="#d97706"/>
+    <text x="295" y="134" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">3</text>
+    <text class="text-accent-amber" x="295" y="152" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">NORMING</text>
+    <text class="svg-muted" x="295" y="165" fill="#94a3b8" font-size="7" text-anchor="middle">Konsensus Norma</text>
 
-  <rect x="545" y="55" width="110" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="600" y="78" fill="#a78bfa" font-size="9.5" font-weight="700" text-anchor="middle">ADJOURNING</text>
-  <text x="600" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Tahap 5: Pembubaran</text>
-  <text x="600" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Proyek tuntas</text>
-  <text x="600" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Perayaan capaian</text>
-  <text x="600" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Evaluasi akhir</text>
-  <text x="600" y="175" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Dokumentasi</text>
+    <circle cx="430" cy="50" r="16" fill="#059669"/>
+    <text x="430" y="55" fill="#ffffff" font-size="10" font-weight="800" text-anchor="middle">4</text>
+    <text class="text-accent-green" x="430" y="76" fill="#34d399" font-size="9" font-weight="800" text-anchor="middle">PERFORMING</text>
+    <text class="svg-muted" x="430" y="89" fill="#94a3b8" font-size="7" text-anchor="middle">Sinergi Produktif</text>
+
+    <circle cx="510" cy="115" r="14" fill="#7c3aed"/>
+    <text x="510" y="119" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">5</text>
+    <text class="text-accent-purple" x="510" y="140" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">ADJOURNING</text>
+    <text class="svg-muted" x="510" y="153" fill="#94a3b8" font-size="7" text-anchor="middle">Pembubaran Tim</text>
+  </g>
+
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="250" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <text class="text-accent-green" x="132" y="24" fill="#34d399" font-size="11" font-weight="800" text-anchor="middle">SIKLUS KENDALI MUTU PDCA</text>
+    <circle cx="132" cy="135" r="75" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <rect class="svg-subcard" x="30" y="50" width="90" height="42" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="75" y="68" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">PLAN</text>
+    <text class="svg-muted" x="75" y="80" fill="#94a3b8" font-size="6.5" text-anchor="middle">Rencana Standar</text>
+
+    <rect class="svg-subcard" x="145" y="50" width="90" height="42" rx="6" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="190" y="68" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">DO</text>
+    <text class="svg-muted" x="190" y="80" fill="#94a3b8" font-size="6.5" text-anchor="middle">Jalankan Operasi</text>
+
+    <rect class="svg-subcard" x="145" y="175" width="90" height="42" rx="6" fill="#1e293b" stroke="#fbbf24"/>
+    <text class="text-accent-amber" x="190" y="193" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">CHECK</text>
+    <text class="svg-muted" x="190" y="205" fill="#94a3b8" font-size="6.5" text-anchor="middle">Audit &amp; Bandingkan</text>
+
+    <rect class="svg-subcard" x="30" y="175" width="90" height="42" rx="6" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="75" y="193" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">ACT</text>
+    <text class="svg-muted" x="75" y="205" fill="#94a3b8" font-size="6.5" text-anchor="middle">Tindakan Korektif</text>
+  </g>
 </svg>`;
 
 export const TM14_READING: Reading = {

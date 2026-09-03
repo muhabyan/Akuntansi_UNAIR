@@ -1,44 +1,72 @@
 import type { Reading } from '../../../types';
 import { CASE_VRIO_ANALYSIS_RESOURCES } from '../manstratPracticeCases';
 
-const SVG_VALUE_CHAIN = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">RANTAI NILAI PERUSAHAAN (MICHAEL PORTER'S VALUE CHAIN)</text>
-  
-  <rect x="30" y="48" width="510" height="70" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="285" y="65" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">AKTIVITAS PENDUKUNG (SUPPORT ACTIVITIES)</text>
-  <text x="285" y="82" fill="#cbd5e1" font-size="8" text-anchor="middle">• Infrastruktur Perusahaan (Tata Kelola, Keuangan, Legal)</text>
-  <text x="285" y="96" fill="#cbd5e1" font-size="8" text-anchor="middle">• Manajemen SDM &amp; Pengembangan Teknologi (R&amp;D)</text>
-  <text x="285" y="110" fill="#cbd5e1" font-size="8" text-anchor="middle">• Pengadaan Barang &amp; Jasa (Procurement)</text>
+const SVG_VALUE_CHAIN = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="marginGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns3)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">RANTAI NILAI KORPORASI &amp; SUMBER MARGIN LABA (MICHAEL E. PORTER)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">VALUE CHAIN</text>
 
-  <rect x="30" y="125" width="95" height="75" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="77" y="145" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">INBOUND</text>
-  <text x="77" y="160" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Penerimaan &amp;</text>
-  <text x="77" y="173" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Gudang Bahan</text>
+  <!-- Support Activities (Top 4 Rows) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="700" height="32" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="15" y="20" fill="#a78bfa" font-size="9" font-weight="700">INFRASTRUKTUR PERUSAHAAN (Manajemen Umum, Perencanaan Strategis, Hukum, Keuangan)</text>
 
-  <rect x="135" y="125" width="95" height="75" rx="6" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="182" y="145" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle">OPERATIONS</text>
-  <text x="182" y="160" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Pabrikasi &amp;</text>
-  <text x="182" y="173" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Perakitan</text>
+    <rect class="svg-card" x="0" y="36" width="700" height="32" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="15" y="56" fill="#a78bfa" font-size="9" font-weight="700">MANAJEMEN SUMBER DAYA MANUSIA (Perekrutan, Pelatihan, Sistem Insentif, Kompensasi)</text>
 
-  <rect x="240" y="125" width="95" height="75" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="287" y="145" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">OUTBOUND</text>
-  <text x="287" y="160" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Distribusi &amp;</text>
-  <text x="287" y="173" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Pengiriman</text>
+    <rect class="svg-card" x="0" y="72" width="700" height="32" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="15" y="92" fill="#a78bfa" font-size="9" font-weight="700">PENGEMBANGAN TEKNOLOGI (R&amp;D, Otomasi Pabrik, Desain Produk, Software IT)</text>
 
-  <rect x="345" y="125" width="95" height="75" rx="6" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
-  <text x="392" y="145" fill="#f472b6" font-size="8.5" font-weight="700" text-anchor="middle">MARKETING</text>
-  <text x="392" y="160" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Iklan, Promosi,</text>
-  <text x="392" y="173" fill="#cbd5e1" font-size="7.5" text-anchor="middle">&amp; Penjualan</text>
+    <rect class="svg-card" x="0" y="108" width="700" height="32" rx="4" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="15" y="128" fill="#a78bfa" font-size="9" font-weight="700">PENGADAAN / PROCUREMENT (Pembelian Bahan Baku, Negosiasi Kontrak Vendor Global)</text>
+    
+    <text class="text-accent-purple" x="690" y="18" fill="#a78bfa" font-size="8" font-style="italic" text-anchor="end">AKTIVITAS PENDUKUNG (SUPPORT ACTIVITIES)</text>
+  </g>
 
-  <rect x="450" y="125" width="90" height="75" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="495" y="145" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">SERVICE</text>
-  <text x="495" y="160" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Layanan</text>
-  <text x="495" y="173" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Purnajual</text>
+  <!-- Primary Activities (Bottom 5 Columns) -->
+  <g transform="translate(35, 225)">
+    <rect class="svg-card" x="0" y="0" width="135" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="67" y="18" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">INBOUND LOGISTICS</text>
+    <text class="svg-text" x="10" y="40" fill="#cbd5e1" font-size="7.5">• Penerimaan bahan</text>
+    <text class="svg-text" x="10" y="55" fill="#cbd5e1" font-size="7.5">• Gudang penyimpanan</text>
+    <text class="svg-text" x="10" y="70" fill="#cbd5e1" font-size="7.5">• Pengendalian stok</text>
 
-  <polygon points="555,48 645,125 555,200 555,48" fill="#4ade80" stroke="#86efac" stroke-width="1.5"/>
-  <text x="590" y="130" fill="#0f172a" font-size="12" font-weight="700" text-anchor="middle">MARGIN</text>
+    <rect class="svg-card" x="141" y="0" width="135" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="208" y="18" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">OPERATIONS</text>
+    <text class="svg-text" x="151" y="40" fill="#cbd5e1" font-size="7.5">• Pabrikasi perakitan</text>
+    <text class="svg-text" x="151" y="55" fill="#cbd5e1" font-size="7.5">• Uji kendali mutu</text>
+    <text class="svg-text" x="151" y="70" fill="#cbd5e1" font-size="7.5">• Operasional mesin</text>
+
+    <rect class="svg-card" x="282" y="0" width="135" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="349" y="18" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">OUTBOUND LOGISTICS</text>
+    <text class="svg-text" x="292" y="40" fill="#cbd5e1" font-size="7.5">• Pengiriman produk</text>
+    <text class="svg-text" x="292" y="55" fill="#cbd5e1" font-size="7.5">• Distribusi armada</text>
+    <text class="svg-text" x="292" y="70" fill="#cbd5e1" font-size="7.5">• Pemenuhan order</text>
+
+    <rect class="svg-card" x="423" y="0" width="135" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="490" y="18" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">MARKETING &amp; SALES</text>
+    <text class="svg-text" x="433" y="40" fill="#cbd5e1" font-size="7.5">• Iklan &amp; promosi</text>
+    <text class="svg-text" x="433" y="55" fill="#cbd5e1" font-size="7.5">• Penetapan harga</text>
+    <text class="svg-text" x="433" y="70" fill="#cbd5e1" font-size="7.5">• Saluran distribusi</text>
+
+    <rect class="svg-card" x="564" y="0" width="136" height="100" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="632" y="18" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">AFTER-SALES SERVICE</text>
+    <text class="svg-text" x="574" y="40" fill="#cbd5e1" font-size="7.5">• Layanan servis garansi</text>
+    <text class="svg-text" x="574" y="55" fill="#cbd5e1" font-size="7.5">• Pasokan suku cadang</text>
+    <text class="svg-text" x="574" y="70" fill="#cbd5e1" font-size="7.5">• Pelatihan pemakai</text>
+  </g>
+
+  <!-- Margin Wedge -->
+  <polygon points="742,75 865,200 742,325" fill="url(#marginGrad)" stroke="#86efac" stroke-width="2"/>
+  <text x="770" y="195" fill="#0f172a" font-size="14" font-weight="900" text-anchor="middle" transform="rotate(90, 770, 195)">MARGIN LABA</text>
 </svg>`;
 
 export const TM3_READING: Reading = {

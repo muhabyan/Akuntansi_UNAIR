@@ -1,22 +1,57 @@
 import type { Reading } from '../../../types';
 import { CASE_ETHICAL_DECISION_CSR } from '../manajemenPracticeCases';
 
-const SVG_CARROLL_CSR = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="30" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PIRAMIDA TANGGUNG JAWAB SOSIAL PERUSAHAAN (ARCHIE B. CARROLL)</text>
-  
-  <polygon points="340,50 430,85 250,85" fill="#a78bfa" stroke="#c4b5fd" stroke-width="1.5"/>
-  <text x="340" y="74" fill="#ffffff" font-size="8.5" font-weight="700" text-anchor="middle">1. FILANTROPIS (Jadilah Warga Baik)</text>
+const SVG_CARROLL_CSR = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="phGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="etGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="legGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="ecGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad4)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PIRAMIDA TANGGUNG JAWAB SOSIAL PERUSAHAAN (ARCHIE B. CARROLL)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CSR PYRAMID</text>
 
-  <polygon points="250,88 430,88 470,123 210,123" fill="#38bdf8" stroke="#7dd3fc" stroke-width="1.5"/>
-  <text x="340" y="109" fill="#0f172a" font-size="9" font-weight="700" text-anchor="middle">2. ETIS (Lakukan Hal yang Benar &amp; Adil)</text>
+  <!-- Left: Visual 4-Tier Pyramid -->
+  <polygon points="250,75 190,135 310,135" fill="url(#phGrad)" stroke="#c4b5fd" stroke-width="1.5"/>
+  <text x="250" y="120" fill="#0f172a" font-size="10" font-weight="800" text-anchor="middle">FILANTROPIS</text>
 
-  <polygon points="210,126 470,126 510,161 170,161" fill="#fbbf24" stroke="#fde047" stroke-width="1.5"/>
-  <text x="340" y="147" fill="#0f172a" font-size="9" font-weight="700" text-anchor="middle">3. HUKUM (Patuhi Hukum &amp; Regulasi Negara)</text>
+  <polygon points="187,140 135,200 365,200 313,140" fill="url(#etGrad)" stroke="#7dd3fc" stroke-width="1.5"/>
+  <text x="250" y="175" fill="#0f172a" font-size="10" font-weight="800" text-anchor="middle">ETIS (ETHICAL)</text>
 
-  <polygon points="170,164 510,164 550,200 130,200" fill="#4ade80" stroke="#86efac" stroke-width="1.5"/>
-  <text x="340" y="185" fill="#0f172a" font-size="9.5" font-weight="700" text-anchor="middle">4. EKONOMI (Hasilkan Keuntungan &amp; Bernilai Ekonomis)</text>
+  <polygon points="132,205 80,265 420,265 368,205" fill="url(#legGrad)" stroke="#86efac" stroke-width="1.5"/>
+  <text x="250" y="240" fill="#0f172a" font-size="10.5" font-weight="800" text-anchor="middle">HUKUM (LEGAL)</text>
+
+  <polygon points="77,270 25,330 475,330 423,270" fill="url(#ecGrad)" stroke="#fde047" stroke-width="1.5"/>
+  <text x="250" y="305" fill="#0f172a" font-size="11" font-weight="800" text-anchor="middle">EKONOMI (ECONOMIC) - FONDASI DASAR</text>
+
+  <!-- Right: Explanatory Cards for Each Tier -->
+  <g transform="translate(505, 75)">
+    <rect class="svg-subcard" x="0" y="0" width="365" height="58" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="14" y="20" fill="#a78bfa" font-size="9.5" font-weight="700">4. TANGGUNG JAWAB FILANTROPIS</text>
+    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Kontribusi sukarela: Beasiswa, amal, dan pemberdayaan komunitas.</text>
+    <text class="svg-muted" x="14" y="48" fill="#94a3b8" font-size="7.5" font-style="italic">"Be a good corporate citizen" (Diharapkan masyarakat)</text>
+
+    <rect class="svg-subcard" x="0" y="65" width="365" height="58" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text class="text-accent-blue" x="14" y="85" fill="#38bdf8" font-size="9.5" font-weight="700">3. TANGGUNG JAWAB ETIS</text>
+    <text class="svg-text" x="14" y="101" fill="#cbd5e1" font-size="8">Menjalankan bisnis secara adil dan bermoral melampaui aturan tertulis.</text>
+    <text class="svg-muted" x="14" y="113" fill="#94a3b8" font-size="7.5" font-style="italic">"Be ethical &amp; do what is right" (Diharapkan masyarakat)</text>
+
+    <rect class="svg-subcard" x="0" y="130" width="365" height="58" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
+    <text class="text-accent-green" x="14" y="150" fill="#34d399" font-size="9.5" font-weight="700">2. TANGGUNG JAWAB HUKUM</text>
+    <text class="svg-text" x="14" y="166" fill="#cbd5e1" font-size="8">Mematuhi seluruh regulasi ketenagakerjaan, pajak, dan lingkungan.</text>
+    <text class="svg-muted" x="14" y="178" fill="#94a3b8" font-size="7.5" font-style="italic">"Obey the law" (Kewajiban mutlak masyarakat)</text>
+
+    <rect class="svg-subcard" x="0" y="195" width="365" height="58" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
+    <text class="text-accent-amber" x="14" y="215" fill="#fbbf24" font-size="9.5" font-weight="700">1. TANGGUNG JAWAB EKONOMI</text>
+    <text class="svg-text" x="14" y="231" fill="#cbd5e1" font-size="8">Menghasilkan laba, menciptakan lapangan kerja, &amp; efisiensi biaya.</text>
+    <text class="svg-muted" x="14" y="243" fill="#94a3b8" font-size="7.5" font-style="italic">"Be profitable" (Fondasi dasar kelangsungan hidup korporasi)</text>
+  </g>
 </svg>`;
 
 export const TM4_READING: Reading = {

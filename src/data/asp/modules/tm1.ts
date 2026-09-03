@@ -1,26 +1,53 @@
 import type { Reading } from '../../../types';
 import { CASE_PUBLIC_SECTOR_ACCOUNTABILITY } from '../aspPracticeCases';
 
-const SVG_ASP_CHARACTERISTICS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KOMPARASI SEKTOR PUBLIK VS SEKTOR SWASTA KOMERSIAL</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">ORGANISASI SEKTOR PUBLIK</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Pemerintah, RSUD, Yayasan, Kampus:</text>
-  <text x="177" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Tujuan: Pelayanan Publik (Non-Profit)</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Sumber Dana: Pajak, Retribusi, Hibah</text>
-  <text x="177" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pertanggungjawaban: Rakyat &amp; Parlemen</text>
-  <text x="177" y="180" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Akuntabilitas Publik Terbuka</text>
+const SVG_ASP_CHARACTERISTICS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="pubGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="priGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp1)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">KOMPARASI FUNDAMENTAL: SEKTOR PUBLIK / PEMERINTAH VS SWASTA KOMERSIAL</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SECTOR COMPARISON</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="502" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">ORGANISASI SEKTOR SWASTA</text>
-  <text x="502" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Perseroan Terbatas Komersial:</text>
-  <text x="502" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Tujuan: Maksimalkan Laba &amp; Dividen</text>
-  <text x="502" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Sumber Dana: Modal Sendiri &amp; Utang Bank</text>
-  <text x="502" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pertanggungjawaban: Pemegang Saham (RUPS)</text>
-  <text x="502" y="180" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">Return on Investment (ROI)</text>
+  <!-- Left: Public Sector -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#pubGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">SEKTOR PUBLIK (PEMERINTAH &amp; NIRLABA)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Tujuan Utama:</tspan> Pelayanan publik &amp; kesejahteraan masyarakat (Non-profit)</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Sumber Pendanaan:</tspan> Pajak warga, retribusi, transfer DAU/DAK, PNBP, hibah</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Pertanggungjawaban:</tspan> Akuntabilitas publik kepada parlemen (DPR/DPRD) &amp; rakyat</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Peran Anggaran:</tspan> Dokumen hukum mengikat (Undang-Undang / Perda APBD)</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Standar Akuntansi:</tspan> Standar Akuntansi Pemerintahan (SAP PP 71/2010) &amp; ISAK 35</text>
+    
+    <rect class="svg-badge-blue" x="14" y="175" width="367" height="30" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="194" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fokus: Kualitas Pelayanan &amp; Transparansi Nilai Uang (Value for Money)</text>
+  </g>
+
+  <!-- Right: Private Sector -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#priGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="10.5" font-weight="800">SEKTOR SWASTA (PERUSAHAAN KOMERSIAL)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Tujuan Utama:</tspan> Memaksimalkan laba bersih &amp; kekayaan pemegang saham</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Sumber Pendanaan:</tspan> Modal disetor pemilik, laba ditahan, penerbitan obligasi/utang bank</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Pertanggungjawaban:</tspan> Akuntabilitas kepada investor via RUPS &amp; dewan komisaris</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Peran Anggaran:</tspan> Dokumen rencana kerja internal yang fleksibel dapat direvisi</text>
+    <text class="text-accent-purple" x="14" y="132" fill="#a78bfa" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Standar Akuntansi:</tspan> Standar Akuntansi Keuangan SAK berbasis IFRS</text>
+    
+    <rect class="svg-badge-purple" x="14" y="175" width="367" height="30" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="197" y="194" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Fokus: Efisiensi Biaya &amp; Pertumbuhan Laba Bersih Per Lembar Saham</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Pada sektor publik, Anggaran adalah HUKUM dan BATASAN MAKSIMAL belanja yang tidak boleh dilanggar tanpa persetujuan parlemen.</text>
 </svg>`;
 
 export const TM1_READING: Reading = {

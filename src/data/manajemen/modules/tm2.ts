@@ -1,30 +1,78 @@
 import type { Reading } from '../../../types';
 import { CASE_CULTURE_ENVIRONMENT_DAFT } from '../manajemenPracticeCases';
 
-const SVG_CULTURE_DAFT = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">4 KUADRAN TIPOLOGI BUDAYA ORGANISASI (RICHARD L. DAFT)</text>
-  
-  <rect x="35" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="76" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">ADAPTABILITY CULTURE</text>
-  <text x="177" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Eksternal | Lingkungan: Dinamis</text>
-  <text x="177" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Inovasi lincah, berani risiko (Apple, Gojek)</text>
+const SVG_CULTURE_DAFT = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="adapGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="achGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="invGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="consGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad2)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">4 KUADRAN TIPOLOGI BUDAYA ORGANISASI (RICHARD L. DAFT)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CULTURE MATRIX</text>
 
-  <rect x="355" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="497" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">ACHIEVEMENT CULTURE</text>
-  <text x="497" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Eksternal | Lingkungan: Stabil</text>
-  <text x="497" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Berorientasi hasil, kompetitif (Investment Bank)</text>
+  <!-- Y-Axis: Fokus Lingkungan -->
+  <text class="text-accent-blue" x="55" y="125" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">FOKUS EKSTERNAL</text>
+  <text class="text-accent-purple" x="55" y="280" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">FOKUS INTERNAL</text>
+  <line x1="55" y1="140" x2="55" y2="260" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4"/>
 
-  <rect x="35" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="177" y="153" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">INVOLVEMENT CULTURE</text>
-  <text x="177" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Internal | Lingkungan: Fleksibel</text>
-  <text x="177" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Kekeluargaan, kepedulian karyawan (Southwest)</text>
+  <!-- X-Axis: Kebutuhan Lingkungan -->
+  <text class="text-accent-green" x="275" y="78" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">FLEKSIBILITAS / ADAPTASI CEPAT</text>
+  <text class="text-accent-amber" x="695" y="78" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">STABILITAS / KETERATURAN</text>
 
-  <rect x="355" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="497" y="153" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">CONSISTENCY CULTURE</text>
-  <text x="497" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Fokus: Internal | Lingkungan: Stabil</text>
-  <text x="497" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Tertib aturan, metodis, kepatuhan SOP (Bank/BUMN)</text>
+  <!-- Quadrant 1: ADAPTABILITY -->
+  <g transform="translate(110, 92)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#adapGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">1. ADAPTABILITY CULTURE (ADAPTASI)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Cepat merespon sinyal pasar eksternal</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Mendorong eksperimen, inovasi, &amp; risiko kreatif</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Google, Startup Fintech, E-Commerce</text>
+    <rect x="265" y="88" width="85" height="18" rx="9" fill="#0284c7" fill-opacity="0.3"/>
+    <text class="text-accent-blue" x="307" y="101" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Lincah &amp; Inovatif</text>
+  </g>
+
+  <!-- Quadrant 2: ACHIEVEMENT -->
+  <g transform="translate(495, 92)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#achGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="16" y="20" fill="#fbbf24" font-size="11" font-weight="800">2. ACHIEVEMENT CULTURE (PENCAPAIAN)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Berorientasi target penjualan &amp; pangsa pasar</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Menghargai persaingan &amp; bonus kinerja tinggi</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Lembaga Investasi Wall Street, Sales</text>
+    <rect x="265" y="88" width="85" height="18" rx="9" fill="#d97706" fill-opacity="0.3"/>
+    <text class="text-accent-amber" x="307" y="101" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Target &amp; Kompetitif</text>
+  </g>
+
+  <!-- Quadrant 3: INVOLVEMENT -->
+  <g transform="translate(110, 218)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#invGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">3. INVOLVEMENT CULTURE (KETERLIBATAN)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Kesejahteraan, kepedulian, &amp; partisipasi staf</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Suasana kekeluargaan hangat (Clan Culture)</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Southwest Airlines, Bisnis Keluarga</text>
+    <rect x="265" y="88" width="85" height="18" rx="9" fill="#059669" fill-opacity="0.3"/>
+    <text class="text-accent-green" x="307" y="101" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Kekeluargaan</text>
+  </g>
+
+  <!-- Quadrant 4: CONSISTENCY -->
+  <g transform="translate(495, 218)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#consGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="11" font-weight="800">4. CONSISTENCY CULTURE (KONSISTENSI)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Menghargai aturan resmi, SOP, &amp; hierarki</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Disiplin kerja metodis, akurasi, &amp; minim cacat</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Pabrikasi Otomotif Presisi, Bank</text>
+    <rect x="265" y="88" width="85" height="18" rx="9" fill="#7c3aed" fill-opacity="0.3"/>
+    <text class="text-accent-purple" x="307" y="101" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">SOP &amp; Kepatuhan</text>
+  </g>
 </svg>`;
 
 export const TM2_READING: Reading = {

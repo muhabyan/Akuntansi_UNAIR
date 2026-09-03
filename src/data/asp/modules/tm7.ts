@@ -1,37 +1,82 @@
 import type { Reading } from '../../../types';
 import { CASE_GOVERNMENT_ACCRUAL_STATEMENTS } from '../aspPracticeCases';
 
-const SVG_7_STATEMENTS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ARSITEKTUR 7 LAPORAN KEUANGAN PEMERINTAH DAERAH (PP 71/2010)</text>
-  
-  <rect x="25" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">LAPORAN ANGGARAN</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Budgetary - Basis Kas):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">1. LRA (Realisasi Anggaran)</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">   → Pendapatan, Belanja, SiLPA</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">2. LP-SAL (Perubahan Saldo</text>
-  <text x="125" y="170" fill="#cbd5e1" font-size="8.5" text-anchor="middle">   Anggaran Lebih Kasda)</text>
-  <text x="125" y="188" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Ketaatan Anggaran Kas</text>
+const SVG_7_STATEMENTS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="lraGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="loGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="calkGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp7)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRUKTUR 7 KOMPONEN UTAMA LAPORAN KEUANGAN PEMERINTAH (PP NO. 71 TAHUN 2010)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">7 STATEMENTS</text>
 
-  <rect x="240" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">LAPORAN FINANSIAL</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Financial - Basis Akrual):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">3. LO (Laporan Operasional)</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">4. LPE (Perubahan Ekuitas)</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">5. NERACA (Aset, Kewajiban)</text>
-  <text x="340" y="170" fill="#cbd5e1" font-size="8.5" text-anchor="middle">6. LAK (Arus Kas - BUD/BUN)</text>
-  <text x="340" y="188" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Kinerja Operasi Nyata</text>
+  <!-- 3 Pillar Categories Grid -->
+  <!-- 1. Laporan Pelaksanaan Anggaran (Basis Kas) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#lraGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. LAPORAN ANGGARAN (KAS)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="55" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Basis Kas (Cash Basis)</text>
+    
+    <text class="text-accent-blue" x="14" y="78" fill="#38bdf8" font-size="8" font-weight="700">A. Laporan Realisasi Anggaran (LRA):</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="7.5">Membandingkan anggaran vs realisasi pendapatan LRA, belanja daerah, transfer, &amp; pembiayaan.</text>
 
-  <rect x="455" y="55" width="200" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">CATATAN PENGUNGKAPAN</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Disclosures):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">7. CaLK (Catatan atas</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">   Laporan Keuangan):</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penjelasan naratif pos</text>
-  <text x="555" y="170" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Rekonsiliasi LRA vs LO</text>
-  <text x="555" y="188" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Transparansi Penuh</text>
+    <text class="text-accent-blue" x="14" y="118" fill="#38bdf8" font-size="8" font-weight="700">B. Laporan Perubahan SAL (LP-SAL):</text>
+    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="7.5">Rincian akumulasi SiLPA/SiKPA tahun berjalan ditambah saldo awal SAL.</text>
+
+    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">2 Komponen Laporan Anggaran</text>
+  </g>
+
+  <!-- 2. Laporan Finansial (Basis Akrual) -->
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#loGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. LAPORAN FINANSIAL (AKRUAL)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="55" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Basis Akrual (Accrual Basis)</text>
+    
+    <text class="text-accent-green" x="14" y="74" fill="#34d399" font-size="7.5" font-weight="700">C. Laporan Operasional (LO):</text>
+    <text class="svg-text" x="14" y="86" fill="#cbd5e1" font-size="7">Pendapatan LO dikurangi Beban = Surplus/Defisit LO.</text>
+
+    <text class="text-accent-green" x="14" y="102" fill="#34d399" font-size="7.5" font-weight="700">D. Laporan Perubahan Ekuitas (LPE):</text>
+    <text class="svg-text" x="14" y="114" fill="#cbd5e1" font-size="7">Menghubungkan Surplus LO ke Ekuitas Akhir Neraca.</text>
+
+    <text class="text-accent-green" x="14" y="130" fill="#34d399" font-size="7.5" font-weight="700">E. Neraca Pemerintah:</text>
+    <text class="svg-text" x="14" y="142" fill="#cbd5e1" font-size="7">Posisi Aset, Kewajiban Utang, &amp; Ekuitas Dana.</text>
+
+    <text class="text-accent-green" x="14" y="158" fill="#34d399" font-size="7.5" font-weight="700">F. Laporan Arus Kas (LAK):</text>
+    <text class="svg-text" x="14" y="170" fill="#cbd5e1" font-size="7">Arus kas Operasi, Investasi, Pendanaan, &amp; Transitoris.</text>
+
+    <rect class="svg-badge-green" x="14" y="185" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">4 Komponen Laporan Finansial</text>
+  </g>
+
+  <!-- 3. Catatan atas Laporan Keuangan (CaLK) -->
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#calkGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">3. CATATAN LAPORAN (CALK)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="132" y="55" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Pengungkapan Wajib (Disclosure)</text>
+    
+    <text class="text-accent-purple" x="14" y="78" fill="#a78bfa" font-size="8" font-weight="700">G. CaLK (Catatan atas Lapkeu):</text>
+    <text class="svg-text" x="14" y="94" fill="#cbd5e1" font-size="7.5">• Penjelasan naratif rincian pos 6 laporan di samping</text>
+    <text class="svg-text" x="14" y="110" fill="#cbd5e1" font-size="7.5">• Kebijakan akuntansi yang dianut (Dasar penilaian)</text>
+    <text class="svg-text" x="14" y="126" fill="#cbd5e1" font-size="7.5">• Pencapaian target kinerja keuangan makro daerah</text>
+    <text class="svg-text" x="14" y="142" fill="#cbd5e1" font-size="7.5">• Rekonsiliasi perbedaan angka LRA vs LO</text>
+    <text class="svg-text" x="14" y="158" fill="#cbd5e1" font-size="7.5">• Informasi kontinjensi &amp; peristiwa setelah tanggal neraca</text>
+
+    <rect class="svg-badge-purple" x="14" y="185" width="237" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="132" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">1 Komponen Pengungkapan Komprehensif</text>
+  </g>
 </svg>`;
 
 export const TM7_READING: Reading = {
@@ -95,7 +140,7 @@ export const TM7_READING: Reading = {
           items: [
             '**LRA (Basis Kas)**: Dicatat sebagai **Belanja Modal Pengadaan Gedung** sebesar **Rp 20 Miliar** (mengurangi SiLPA kas).',
             '**LO (Basis Akrual)**: Pengeluaran Rp 20 Miliar BUKAN beban LO; yang masuk ke LO adalah **Beban Penyusutan Gedung** non-kas sebesar **Rp 1 Miliar** (mengurangi Surplus LO).',
-            '**Neraca**: Aset Tetap Gedung bertambah Rp 20 Miliar dan Akumulasi Penyusutan bertambah Rp 1 Miliar $\\rightarrow$ Nilai Buku Bersih Gedung = **Rp 19 Miliar**; Kas berkurang Rp 20 Miliar.',
+            '**Neraca**: Aset Tetap Gedung bertambah Rp 20 Miliar dan Akumulasi Penyusutan bertambah Rp 1 Miliar $\\r→$ Nilai Buku Bersih Gedung = **Rp 19 Miliar**; Kas berkurang Rp 20 Miliar.',
             '**LAK**: Dicatat sebagai **Arus Kas Keluar dari Aktivitas Investasi Aset Non-Keuangan** sebesar **Rp 20 Miliar**.'
           ]
         }

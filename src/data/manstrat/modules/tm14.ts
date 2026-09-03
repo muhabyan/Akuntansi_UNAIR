@@ -1,26 +1,72 @@
 import type { Reading } from '../../../types';
 import { CASE_SAMSUNG_TECH_PORTFOLIO } from '../manstratPracticeCases';
 
-const SVG_COOPETITION_PORTFOLIO = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL CO-OPETITION &amp; INTEGRASI VERTIKAL: SAMSUNG VS APPLE</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">SAMSUNG ELECTRONICS (IDM)</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Integrasi Vertikal Manufaktur:</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Memiliki pabrik fabrikasi cip (Fabs) sendiri</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Menguasai display OLED &amp; memori DRAM/NAND</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Memasok komponen kritis ke rival Apple</text>
-  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Keunggulan Teknologi &amp; Skala Fisik</text>
+const SVG_COOPETITION_PORTFOLIO = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="coopGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns14)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRATEGI CO-OPETITION &amp; KERANGKA THE VALUE NET (BRANDENBURGER &amp; NALEBUFF)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">VALUE NET</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">APPLE INC. (FABLESS ECOSYSTEM)</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">Orkestrasi Ekosistem Tertutup:</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Desain silikon arsitektur cip in-house</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Manufaktur fisik di-outsource 100% (TSMC/Foxconn)</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mengunci pengguna dalam ekosistem iOS &amp; Services</text>
-  <text x="497" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Taman Bertembok &amp; Margin Laba Raksasa</text>
+  <!-- Left: The Value Net Diamond Rhombus (Width 450px) -->
+  <g transform="translate(35, 70)">
+    <!-- Top: Competitors / Substitutors -->
+    <rect class="svg-subcard" x="140" y="0" width="180" height="42" rx="6" fill="#1e293b" stroke="#f87171"/>
+    <text class="text-accent-red" x="230" y="18" fill="#f87171" font-size="8.5" font-weight="800" text-anchor="middle">PESAING (COMPETITORS)</text>
+    <text class="svg-text" x="230" y="32" fill="#cbd5e1" font-size="7" text-anchor="middle">Bersaing merebut kue pasar</text>
+
+    <!-- Center: Company -->
+    <rect class="svg-card" x="140" y="100" width="180" height="52" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <text class="text-accent-green" x="230" y="122" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">PERUSAHAAN KITA</text>
+    <text class="svg-text" x="230" y="138" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Pencipta Nilai Bersama</text>
+
+    <!-- Left: Suppliers -->
+    <rect class="svg-subcard" x="0" y="100" width="120" height="52" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="60" y="122" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">PEMASOK</text>
+    <text class="svg-text" x="60" y="136" fill="#cbd5e1" font-size="6.5" text-anchor="middle">(Suppliers)</text>
+
+    <!-- Right: Customers -->
+    <rect class="svg-subcard" x="340" y="100" width="120" height="52" rx="6" fill="#1e293b" stroke="#fbbf24"/>
+    <text class="text-accent-amber" x="400" y="122" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">PELANGGAN</text>
+    <text class="svg-text" x="400" y="136" fill="#cbd5e1" font-size="6.5" text-anchor="middle">(Customers)</text>
+
+    <!-- Bottom: Complementors -->
+    <rect class="svg-subcard" x="140" y="210" width="180" height="42" rx="6" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="230" y="228" fill="#a78bfa" font-size="8.5" font-weight="800" text-anchor="middle">KOMPLEMENTOR (COMPLEMENTORS)</text>
+    <text class="svg-text" x="230" y="242" fill="#cbd5e1" font-size="7" text-anchor="middle">Membuat produk kita makin bernilai</text>
+
+    <!-- Connective Grid Lines -->
+    <line x1="230" y1="42" x2="230" y2="100" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="120" y1="126" x2="140" y2="126" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="320" y1="126" x2="340" y2="126" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="230" y1="152" x2="230" y2="210" stroke="#334155" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- Right: Real-World Corporate Co-opetition Case -->
+  <g transform="translate(520, 75)">
+    <rect class="svg-card" x="0" y="0" width="345" height="245" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="345" height="28" rx="12" fill="url(#coopGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="14" y="19" fill="#34d399" font-size="10" font-weight="800">STUDI KASUS: SAMSUNG VS APPLE</text>
+    
+    <text class="text-accent-amber" x="14" y="48" fill="#fbbf24" font-size="8.5" font-weight="700">1. KOLABORASI DI TINGKAT RANTAI PASOK:</text>
+    <text class="svg-text" x="14" y="64" fill="#cbd5e1" font-size="8">• Samsung Display adalah pemasok eksklusif layar OLED iPhone</text>
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="8">• Samsung meraup laba miliaran dolar dari setiap unit iPhone terjual</text>
+
+    <text class="text-accent-red" x="14" y="105" fill="#f87171" font-size="8.5" font-weight="700">2. KOMPETISI DI TINGKAT PRODUK AKHIR:</text>
+    <text class="svg-text" x="14" y="121" fill="#cbd5e1" font-size="8">• Galaxy S / Fold bersaing sengit dengan iPhone di pasar flagship</text>
+    <text class="svg-text" x="14" y="135" fill="#cbd5e1" font-size="8">• Saling berseteru paten desain dan perang iklan komparatif</text>
+
+    <rect class="svg-subcard" x="14" y="155" width="317" height="75" rx="6" fill="#1e293b"/>
+    <text class="text-accent-blue" x="172" y="174" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Esensi Strategis Co-opetition:</text>
+    <text class="svg-text" x="172" y="190" fill="#cbd5e1" font-size="7.5" text-anchor="middle">"Bekerjasama memperbesar ukuran kue pasar (Cooperate),</text>
+    <text class="svg-text" x="172" y="204" fill="#cbd5e1" font-size="7.5" text-anchor="middle">lalu bersaing keras memperebutkan potongan kue (Compete)."</text>
+  </g>
 </svg>`;
 
 export const TM14_READING: Reading = {

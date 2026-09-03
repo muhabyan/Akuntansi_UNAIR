@@ -1,34 +1,170 @@
 import type { Reading } from '../../../types';
 import { CASE_POAC_MANAGERIAL_ROLES } from '../manajemenPracticeCases';
 
-const SVG_POAC_SKILLS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">FUNSI MANAJEMEN POAC &amp; KETERAMPILAN MANAJERIAL (ROBERT L. KATZ)</text>
+const SVG_POAC_SKILLS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="planGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="orgGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="actGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="ctrlGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <filter id="cardGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Container Box -->
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad)" stroke="#1e293b" stroke-width="1.5" filter="url(#cardGlow)"/>
   
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">TOP MANAGEMENT</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Direksi / C-Level):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dominan: Keahlian Konseptual</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keahlian Manusiawi (Human)</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Teknis: Minimal</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Visi &amp; Sasaran Strategis</text>
+  <!-- Header Bar -->
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700" letter-spacing="0.5">FUNGSI MANAJEMEN POAC &amp; MODEL PROPORSI KETERAMPILAN MANAJERIAL (KATZ)</text>
+  <rect class="svg-badge-blue" x="740" y="21" width="135" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="807" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">INTEGRATED MODEL</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">MIDDLE MANAGEMENT</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Kepala Divisi / Manajer):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keahlian Konseptual: Sedang</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• <tspan fill="#86efac" font-weight="700">Keahlian Manusiawi: TERTINGGI</tspan></text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keahlian Teknis: Sedang</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Penerjemah Rencana Taktis</text>
+  <!-- Divider Line Between POAC and Katz -->
+  <line x1="440" y1="70" x2="440" y2="330" stroke="#1e293b" stroke-width="2" stroke-dasharray="4 4"/>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">FIRST-LINE MANAGEMENT</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Supervisor / Team Leader):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Konseptual: Minimal</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keahlian Manusiawi (Human)</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• <tspan fill="#fde047" font-weight="700">Dominan: Keahlian Teknis</tspan></text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Eksekusi Operasional Harian</text>
+  <!-- ==================== LEFT PANEL: POAC CONTINUOUS CYCLE ==================== -->
+  <text class="svg-muted" x="225" y="82" fill="#94a3b8" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">SIKLUS MANAJEMEN BERKELANJUTAN (POAC)</text>
+  
+  <!-- Connecting Track Circle -->
+  <circle cx="225" cy="205" r="95" fill="none" stroke="#1e293b" stroke-width="6"/>
+  <circle cx="225" cy="205" r="95" fill="none" stroke="#334155" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <!-- Center Core: Organizational Goals -->
+  <circle cx="225" cy="205" r="38" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="225" y="200" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">TUJUAN</text>
+  <text class="svg-text" x="225" y="214" fill="#cbd5e1" font-size="8.5" font-weight="600" text-anchor="middle">ORGANISASI</text>
+
+  <!-- Step 1: PLANNING (Top) -->
+  <g transform="translate(225, 110)">
+    <rect class="svg-card" x="-70" y="-22" width="140" height="44" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="-70" y="-22" width="28" height="44" rx="10" fill="url(#planGrad)"/>
+    <text x="-56" y="5" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">P</text>
+    <text class="text-accent-blue" x="2" y="-4" fill="#38bdf8" font-size="9.5" font-weight="700">PLANNING</text>
+    <text class="svg-muted" x="2" y="10" fill="#94a3b8" font-size="7.5">Visi, Sasaran, Strategi</text>
+  </g>
+
+  <!-- Step 2: ORGANIZING (Right) -->
+  <g transform="translate(320, 205)">
+    <rect class="svg-card" x="-20" y="-22" width="130" height="44" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="-20" y="-22" width="28" height="44" rx="10" fill="url(#orgGrad)"/>
+    <text x="-6" y="5" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">O</text>
+    <text class="text-accent-green" x="18" y="-4" fill="#34d399" font-size="9.5" font-weight="700">ORGANIZING</text>
+    <text class="svg-muted" x="18" y="10" fill="#94a3b8" font-size="7.5">Struktur &amp; Sumber Daya</text>
+  </g>
+
+  <!-- Step 3: ACTUATING / LEADING (Bottom) -->
+  <g transform="translate(225, 300)">
+    <rect class="svg-card" x="-70" y="-22" width="140" height="44" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="-70" y="-22" width="28" height="44" rx="10" fill="url(#actGrad)"/>
+    <text x="-56" y="5" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">A</text>
+    <text class="text-accent-amber" x="2" y="-4" fill="#fbbf24" font-size="9.5" font-weight="700">ACTUATING</text>
+    <text class="svg-muted" x="2" y="10" fill="#94a3b8" font-size="7.5">Motivasi &amp; Memimpin</text>
+  </g>
+
+  <!-- Step 4: CONTROLLING (Left) -->
+  <g transform="translate(130, 205)">
+    <rect class="svg-card" x="-110" y="-22" width="130" height="44" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="-110" y="-22" width="28" height="44" rx="10" fill="url(#ctrlGrad)"/>
+    <text x="-96" y="5" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">C</text>
+    <text class="text-accent-purple" x="-72" y="-4" fill="#a78bfa" font-size="9.5" font-weight="700">CONTROLLING</text>
+    <text class="svg-muted" x="-72" y="10" fill="#94a3b8" font-size="7.5">Ukur Kinerja &amp; Koreksi</text>
+  </g>
+
+  <!-- Flow Arrows around circle -->
+  <path d="M 285 130 Q 315 155 318 175" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 315 235 Q 295 275 270 285" fill="none" stroke="#34d399" stroke-width="2"/>
+  <path d="M 165 285 Q 135 265 132 235" fill="none" stroke="#fbbf24" stroke-width="2"/>
+  <path d="M 135 175 Q 155 135 180 128" fill="none" stroke="#a78bfa" stroke-width="2"/>
+
+  <!-- ==================== RIGHT PANEL: KATZ SKILLS DISTRIBUTION ==================== -->
+  <text class="svg-muted" x="665" y="82" fill="#94a3b8" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">DISTRIBUSI KETERAMPILAN MANAJERIAL (KATZ)</text>
+
+  <!-- Skill Legend -->
+  <g transform="translate(470, 96)">
+    <rect x="0" y="0" width="12" height="12" rx="3" fill="#38bdf8"/>
+    <text class="svg-text" x="18" y="10" fill="#cbd5e1" font-size="8.5" font-weight="600">Konseptual</text>
+
+    <rect x="130" y="0" width="12" height="12" rx="3" fill="#34d399"/>
+    <text class="svg-text" x="148" y="10" fill="#cbd5e1" font-size="8.5" font-weight="600">Manusiawi (Human)</text>
+
+    <rect x="280" y="0" width="12" height="12" rx="3" fill="#fbbf24"/>
+    <text class="svg-text" x="298" y="10" fill="#cbd5e1" font-size="8.5" font-weight="600">Teknis (Technical)</text>
+  </g>
+
+  <!-- Level 1: TOP MANAGEMENT -->
+  <g transform="translate(460, 122)">
+    <text x="0" y="12" fill="#f8fafc" font-size="10" font-weight="700">TOP MANAGEMENT (Direksi / CEO)</text>
+    <text class="text-accent-blue" x="400" y="12" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="end">Fokus Visi Strategis</text>
+    <!-- Stacked Bar: 45% Conceptual, 40% Human, 15% Technical (Total 400px width) -->
+    <!-- 45% = 180px, 40% = 160px, 15% = 60px -->
+    <rect class="svg-subcard" x="0" y="20" width="400" height="26" rx="6" fill="#1e293b"/>
+    <rect x="0" y="20" width="180" height="26" rx="6" fill="url(#planGrad)"/>
+    <text x="90" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">Konseptual 45%</text>
+
+    <rect x="182" y="20" width="158" height="26" fill="url(#orgGrad)"/>
+    <text x="261" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">Manusiawi 40%</text>
+
+    <rect x="342" y="20" width="58" height="26" rx="6" fill="url(#actGrad)"/>
+    <text x="371" y="37" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">15%</text>
+  </g>
+
+  <!-- Level 2: MIDDLE MANAGEMENT -->
+  <g transform="translate(460, 192)">
+    <text x="0" y="12" fill="#f8fafc" font-size="10" font-weight="700">MIDDLE MANAGEMENT (Kepala Divisi / Manajer)</text>
+    <text class="text-accent-green" x="400" y="12" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="end">Jembatan Komunikasi</text>
+    <!-- Stacked Bar: 25% Conceptual, 50% Human, 25% Technical -->
+    <!-- 25% = 100px, 50% = 200px, 25% = 100px -->
+    <rect class="svg-subcard" x="0" y="20" width="400" height="26" rx="6" fill="#1e293b"/>
+    <rect x="0" y="20" width="100" height="26" rx="6" fill="url(#planGrad)"/>
+    <text x="50" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">25%</text>
+
+    <rect x="102" y="20" width="196" height="26" fill="url(#orgGrad)"/>
+    <text x="200" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">Manusiawi 50% (Paling Kritis)</text>
+
+    <rect x="300" y="20" width="100" height="26" rx="6" fill="url(#actGrad)"/>
+    <text x="350" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">Teknis 25%</text>
+  </g>
+
+  <!-- Level 3: FIRST-LINE MANAGEMENT -->
+  <g transform="translate(460, 262)">
+    <text x="0" y="12" fill="#f8fafc" font-size="10" font-weight="700">FIRST-LINE (Supervisor / Team Leader)</text>
+    <text class="text-accent-amber" x="400" y="12" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="end">Eksekusi Lapangan</text>
+    <!-- Stacked Bar: 15% Conceptual, 35% Human, 50% Technical -->
+    <!-- 15% = 60px, 35% = 140px, 50% = 200px -->
+    <rect class="svg-subcard" x="0" y="20" width="400" height="26" rx="6" fill="#1e293b"/>
+    <rect x="0" y="20" width="60" height="26" rx="6" fill="url(#planGrad)"/>
+    <text x="30" y="37" fill="#0f172a" font-size="8" font-weight="800" text-anchor="middle">15%</text>
+
+    <rect x="62" y="20" width="136" height="26" fill="url(#orgGrad)"/>
+    <text x="130" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">Manusiawi 35%</text>
+
+    <rect x="200" y="20" width="200" height="26" rx="6" fill="url(#actGrad)"/>
+    <text x="300" y="37" fill="#0f172a" font-size="9" font-weight="800" text-anchor="middle">Teknis 50% (SOP &amp; Alat)</text>
+  </g>
+
+  <!-- Bottom Insight Note -->
+  <rect class="svg-subcard" x="460" y="316" width="400" height="22" rx="6" fill="#1e293b" fill-opacity="0.6"/>
+  <text class="svg-muted" x="660" y="331" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Keahlian Manusiawi (Human Skills) dibutuhkan konstan di seluruh level manajemen.</text>
 </svg>`;
 
 export const TM1_READING: Reading = {
@@ -96,7 +232,7 @@ export const TM1_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Definisi Konseptual (Peter Drucker)**:\n- *Efisiensi*: Melakukan sesuatu dengan benar (*Doing things right*) $\\rightarrow$ Fokus pada input, biaya minimal, dan rasio output/input.\n- *Efektivitas*: Melakukan hal yang benar (*Doing the right things*) $\\rightarrow$ Fokus pada kesesuaian hasil akhir dengan kebutuhan pasar dan tujuan strategis.',
+            '**Definisi Konseptual (Peter Drucker)**:\n- *Efisiensi*: Melakukan sesuatu dengan benar (*Doing things right*) $\\r→$ Fokus pada input, biaya minimal, dan rasio output/input.\n- *Efektivitas*: Melakukan hal yang benar (*Doing the right things*) $\\r→$ Fokus pada kesesuaian hasil akhir dengan kebutuhan pasar dan tujuan strategis.',
             '**Evaluasi Kasus**: Pabrik tersebut memiliki **Efisiensi Tinggi tetapi Efektivitas Nol**. Memproduksi barang yang salah secara murah dan cepat tetap menghasilkan kerugian finansial karena mobil tersebut menumpuk di gudang tanpa ada pembeli.',
             '**Kesimpulan**: Manajemen berkinerja buruk. Manajemen modern menuntut **Efektivitas terlebih dahulu**, baru kemudian dicapai dengan cara yang paling **Efisien**.'
           ]

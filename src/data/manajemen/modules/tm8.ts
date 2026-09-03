@@ -1,42 +1,90 @@
 import type { Reading } from '../../../types';
 import { CASE_UTS_MANAJEMEN_INTEGRATED } from '../manajemenPracticeCases';
 
-const SVG_UTS_MANAJEMEN_MAP = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PETA KONSEP SINTESIS MATERI PRA-UTS PENGANTAR MANAJEMEN (TM 1 - TM 7)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">TM 1 &amp; TM 2</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Fondasi &amp; Budaya:</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 4 Fungsi POAC</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Keterampilan Katz</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 4 Budaya Daft &amp; PESTEL</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Fondasi Manajemen</text>
+const SVG_UTS_MANAJEMEN_MAP = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="m1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="m2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="m3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="m4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad8)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PETA SINTESIS KURIKULUM PRA-UTS PENGANTAR MANAJEMEN (TM 1 - TM 7)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ROADMAP UTS</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TM 3 &amp; TM 4</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Global &amp; Etika:</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dimensi Hofstede</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Moda Masuk Pasar</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 4 Etika &amp; CSR Carroll</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Konteks Eksternal</text>
+  <!-- 4 Milestones Journey -->
+  <!-- Milestone 1 -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#m1)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="21" fill="#38bdf8" font-size="10.5" font-weight="800">FONDASI &amp; LINGKUNGAN</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-blue" x="44" y="56" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">TM 1 - TM 2</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• 4 Fungsi POAC &amp; Efisiensi</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Keterampilan Manajerial Katz</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• 10 Peran Manajer Mintzberg</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Lingkungan Umum PESTEL</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• 4 Budaya Daft (Clan/Market)</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="167" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fondasi Prinsip Dasar</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">TM 5 &amp; TM 6</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Rencana &amp; Keputusan:</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• MBO &amp; Matriks BCG</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Strategi Porter</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bounded Rationality</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Formulasi Strategis</text>
+  <polygon points="237,185 247,190 237,195" fill="#38bdf8"/>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">TM 7</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Struktur Organisasi:</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Rentang Kendali (Span)</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 5 Departementalisasi</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mekanistik vs Organik</text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Eksekusi Struktural</text>
+  <!-- Milestone 2 -->
+  <g transform="translate(250, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#m2)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="21" fill="#34d399" font-size="10.5" font-weight="800">GLOBAL &amp; ETIKA SOSIAL</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-green" x="44" y="56" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">TM 3 - TM 4</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Moda Masuk Pasar Global</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Dimensi Budaya Hofstede</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Piramida CSR 4-Tier Carroll</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 4 Pendekatan Etika Bisnis</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Whistleblowing &amp; Integritas</text>
+    <rect class="svg-badge-green" x="14" y="185" width="167" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Tanggung Jawab Moral</text>
+  </g>
+
+  <polygon points="452,185 462,190 452,195" fill="#34d399"/>
+
+  <!-- Milestone 3 -->
+  <g transform="translate(465, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#m3)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="21" fill="#fbbf24" font-size="10.5" font-weight="800">PERENCANAAN &amp; KEPUTUSAN</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-amber" x="44" y="56" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">TM 5 - TM 6</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Hierarki Visi, Misi, Sasaran</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Matriks Portofolio BCG 2x2</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Strategi Bersaing Porter</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 3 Model Keputusan Simon</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• 6 Tahap Keputusan Rasional</text>
+    <rect class="svg-badge-amber" x="14" y="185" width="167" height="24" rx="6" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Arah &amp; Formulasi</text>
+  </g>
+
+  <polygon points="667,185 677,190 667,195" fill="#fbbf24"/>
+
+  <!-- Milestone 4 -->
+  <g transform="translate(680, 75)">
+    <rect class="svg-card" x="0" y="0" width="185" height="225" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="185" height="32" rx="12" fill="url(#m4)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="21" fill="#a78bfa" font-size="10.5" font-weight="800">PENGORGANISASIAN</text>
+    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-purple" x="44" y="56" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">TM 7</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Rantai Komando &amp; Wewenang</text>
+    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Rentang Kendali (Span of Ctrl)</text>
+    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Sentralisasi vs Desentralisasi</text>
+    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 5 Desain Struktur (Daft)</text>
+    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Koordinasi Horizontal</text>
+    <rect class="svg-badge-purple" x="14" y="185" width="157" height="24" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="92" y="201" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Arsitektur Eksekusi</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Penguasaan terpadu TM 1 hingga TM 7 menjamin ketajaman analisis studi kasus komprehensif pada Ujian Tengah Semester (UTS).</text>
 </svg>`;
 
 export const TM8_READING: Reading = {

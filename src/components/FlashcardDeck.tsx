@@ -489,11 +489,16 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
                   filter: `blur(${blur}px)`,
                 }}
               >
-                <button
-                  type="button"
+                <div
+                  role="button"
                   onClick={() => toggleFlip(index)}
-                  disabled={!isCenter || isSpinning}
-                  tabIndex={isCenter ? 0 : -1}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggleFlip(index);
+                    }
+                  }}
+                  tabIndex={isCenter && !isSpinning ? 0 : -1}
                   aria-pressed={isFlipped}
                   aria-describedby={`${instructionId} ${instructionId}-${index}`}
                   className={`flashcard-gacha-card group relative h-full w-full cursor-pointer transform-style-3d rounded-[1.7rem] text-left transition-transform duration-700 ease-in-out focus:outline-none ${isFlipped ? 'rotate-y-180' : ''} ${isCenter && !isSpinning ? 'md:hover:-translate-y-2' : ''}`}
@@ -575,7 +580,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
                       </div>
                     </div>
                   </div>
-                </button>
+                </div>
               </div>
             );
           })}

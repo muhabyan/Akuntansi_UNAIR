@@ -171,16 +171,24 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
       );
     case 'formula': {
       const isLatex = block.text.includes('\\') || block.text.includes('$');
-      const mathContent = isLatex && !block.text.includes('$') ? `$$\n${block.text}\n$$` : block.text;
+      let mathContent = block.text;
+      if (isLatex && !block.text.includes('$')) {
+        const rawLines = block.text.trim().split(/\r?\n+/).map(l => l.trim()).filter(Boolean);
+        if (rawLines.length > 1 && !block.text.includes('\\begin{')) {
+          mathContent = `$$\n\\begin{aligned}\n${rawLines.map(l => l.startsWith('&') ? l : `& ${l}`).join(' \\\\\n')}\n\\end{aligned}\n$$`;
+        } else {
+          mathContent = `$$\n${block.text}\n$$`;
+        }
+      }
       return (
-        <div className="my-6 p-4 rounded-xl bg-slate-900/60 dark:bg-slate-900/80 border border-slate-800 border-l-4 border-l-amber-400 dark:border-l-amber-400 shadow-sm">
-          <div className="text-xs uppercase tracking-wider font-bold text-amber-400 mb-2 flex items-center gap-1.5">
+        <div className="my-6 p-4 rounded-xl bg-amber-50/70 dark:bg-slate-900/80 border border-amber-200/80 dark:border-slate-800 border-l-4 border-l-amber-500 dark:border-l-amber-400 shadow-sm transition-colors">
+          <div className="text-xs uppercase tracking-wider font-bold text-amber-800 dark:text-amber-400 mb-2 flex items-center gap-1.5">
             <span>∑</span> RUMUS / FORMULA
           </div>
-          <div className="text-base text-slate-100 overflow-x-auto py-1">
+          <div className="text-base text-slate-900 dark:text-slate-100 overflow-x-auto py-1 font-medium">
             {renderText(mathContent)}
           </div>
-          {block.note && <div className="text-xs text-slate-400 mt-2.5 pt-2 border-t border-slate-800/80">{renderText(block.note)}</div>}
+          {block.note && <div className="text-xs text-slate-600 dark:text-slate-400 mt-2.5 pt-2 border-t border-amber-200/60 dark:border-slate-800/80">{renderText(block.note)}</div>}
         </div>
       );
     }

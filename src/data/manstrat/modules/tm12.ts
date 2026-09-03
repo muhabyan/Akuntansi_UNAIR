@@ -1,34 +1,59 @@
 import type { Reading } from '../../../types';
 import { CASE_ZARA_FAST_FASHION_SUPPLY } from '../manstratPracticeCases';
 
-const SVG_ZARA_SUPPLY_CHAIN = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">RANTAI PASOK RESPON CEPAT ZARA INDITEX VS STRATEGI KEMEWAHAN LVMH</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. DESAIN KILAT</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Feedback Toko Real-Time):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 300+ desainer internal</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pantau tren runway &amp; media</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sketsa pola selesai 24 jam</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Respon Selera Konsumen</text>
+const SVG_ZARA_SUPPLY_CHAIN = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="zaraGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="luxGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns12)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">KOMPARASI STRATEGI RANTAI PASOK: ZARA FAST FASHION VS CLASSIC LUXURY (LVMH)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SUPPLY CHAIN</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">2. PRODUKSI FLEKSIBEL</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Near-Shoring Spanyol/Portugal):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pabrik otomatis sendiri (50%)</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kain polos dicelup belakangan</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Batch produksi kecil (Scarcity)</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Hindari Stok Menumpuk</text>
+  <!-- Left: ZARA AGILE PULL MODEL -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="225" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#zaraGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">ZARA INDITEX: FAST FASHION AGILE PULL SYSTEM</text>
+    
+    <!-- Timeline Badge -->
+    <rect class="svg-subcard" x="16" y="44" width="363" height="36" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="197" y="60" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">KECEPATAN SIKLUS: 15 HARI (DESAIN KE TOKO)</text>
+    <text class="svg-muted" x="197" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Respon Cepat Mengikuti Tren Viral TikTok / Runway</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">3. LOGISTIK TERBANG</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="8.5" text-anchor="middle">(Distribusi Global 48 Jam):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Hub logistik La Coruna Spanyol</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kirim udara 2x seminggu</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Total siklus: Hanya 15 HARI!</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Keunggulan Waktu Kilat</text>
+    <text class="svg-text" x="16" y="100" fill="#cbd5e1" font-size="8">• Produksi batch kecil (Artificial Scarcity) →Minim diskon obral</text>
+    <text class="svg-text" x="16" y="118" fill="#cbd5e1" font-size="8">• Pabrikasi dekat Spanyol/Portugal/Maroko (Near-shoring lincah)</text>
+    <text class="svg-text" x="16" y="136" fill="#cbd5e1" font-size="8">• Data penjualan POS harian langsung memicu pesanan jahit baru</text>
+    <text class="svg-text" x="16" y="154" fill="#cbd5e1" font-size="8">• Distribusi logistik udara 48 jam ke seluruh gerai dunia</text>
+    <rect class="svg-badge-blue" x="16" y="180" width="363" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="196" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Keunggulan: Perputaran Persediaan Sangat Cepat &amp; Full Margin</text>
+  </g>
+
+  <!-- Right: CLASSIC LUXURY PUSH MODEL -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="225" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#luxGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="16" y="20" fill="#fbbf24" font-size="10.5" font-weight="800">CLASSIC LUXURY (LVMH / HERMÈS): HERITAGE PUSH</text>
+    
+    <!-- Timeline Badge -->
+    <rect class="svg-subcard" x="16" y="44" width="363" height="36" rx="6" fill="#1e293b" stroke="#fbbf24"/>
+    <text class="text-accent-amber" x="197" y="60" fill="#fbbf24" font-size="9" font-weight="800" text-anchor="middle">KECEPATAN SIKLUS: 6 - 12 BULAN (TIMELESS HERITAGE)</text>
+    <text class="svg-muted" x="197" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Menciptakan Tren &amp; Menjaga Citra Keabadian Merek</text>
+
+    <text class="svg-text" x="16" y="100" fill="#cbd5e1" font-size="8">• Keahlian tangan perajin Eropa (Artisanal Craftsmanship)</text>
+    <text class="svg-text" x="16" y="118" fill="#cbd5e1" font-size="8">• Kelangkaan absolut terkendali (Daftar tunggu tas Birkin bertahun-tahun)</text>
+    <text class="svg-text" x="16" y="136" fill="#cbd5e1" font-size="8">• Tidak pernah melakukan diskon harga (Proteksi nilai prestise)</text>
+    <text class="svg-text" x="16" y="154" fill="#cbd5e1" font-size="8">• Penetapan harga ultra-premi dengan margin laba kotor 70%+</text>
+    <rect class="svg-badge-amber" x="16" y="180" width="363" height="24" rx="6" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="197" y="196" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Keunggulan: Pricing Power Mutlak &amp; Nilai Investasi Kolektor</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Zara memenangkan persaingan melalui kecepatan respon waktu (Time-based), sedangkan Luxury memenangkan persaingan melalui mitologi warisan &amp; prestise.</text>
 </svg>`;
 
 export const TM12_READING: Reading = {

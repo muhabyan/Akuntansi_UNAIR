@@ -1,38 +1,56 @@
 import type { Reading } from '../../../types';
 import { CASE_VAT_PKP_OBJECTS } from '../pjk2PracticeCases';
 
-const SVG_VAT_MECHANISM = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MEKANISME PENGKREDITAN PAJAK PERTAMBAHAN NILAI (PPN KELUARAN VS MASUKAN)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. PAJAK KELUARAN (PK)</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">PPN Dipungut dari Pembeli:</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tarif Normal: 11% (UU HPP)</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penyerahan BKP / JKP domestik</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ekspor BKP / JKP: Tarif 0%</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Kewajiban Setor Kas</text>
+const SVG_VAT_MECHANISM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="pkGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="pmGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk12)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MEKANISME PENGKREDITAN PAJAK PERTAMBAHAN NILAI: PAJAK KELUARAN (PK) VS PAJAK MASUKAN (PM)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">MEKANISME PPN</text>
 
-  <text x="232" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">-</text>
+  <!-- Left: Pajak Keluaran (Penjualan) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="150" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="28" rx="10" fill="url(#pkGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="19" fill="#38bdf8" font-size="10.5" font-weight="800">1. PAJAK KELUARAN (PK) - PENYERAHAN BKP / JKP</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8">• PPN 11% (UU HPP) yang dipungut PKP Penjual saat menjual barang/jasa</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8">• Menerbitkan Faktur Pajak Elektronik (e-Faktur) kode 010 / 020 / 030 / 040</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8">• Merupakan utang titipan kas dari pembeli yang wajib disetor ke kas negara</text>
+    <rect class="svg-badge-blue" x="16" y="105" width="363" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="121" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Kewajiban Setor Pajak Pertambahan Nilai</text>
+  </g>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">2. PAJAK MASUKAN (PM)</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">PPN Dibayar ke Pemasok:</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pembelian bahan baku &amp; mesin</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PPN Impor PIB tervalidasi</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Syarat Pasal 9 ayat 8 terpenuhi</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Pengurang Kewajiban</text>
+  <!-- Right: Pajak Masukan (Pembelian) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="150" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="28" rx="10" fill="url(#pmGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="19" fill="#34d399" font-size="10.5" font-weight="800">2. PAJAK MASUKAN (PM) - PEROLEHAN BKP / JKP</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8">• PPN 11% yang telah dibayar PKP saat membeli bahan baku / barang dagang</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8">• Menerima Faktur Pajak Masukan sah &amp; tervalidasi di sistem e-Faktur DJP</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8">• Berfungsi sebagai kredit pajak pengurang atas Pajak Keluaran</text>
+    <rect class="svg-badge-green" x="16" y="105" width="363" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="121" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Hak Kredit Pajak Pengurang (Prepaid Tax)</text>
+  </g>
 
-  <text x="447" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">=</text>
+  <!-- Bottom Outcomes (Kurang Bayar vs Lebih Bayar) -->
+  <g transform="translate(35, 238)">
+    <rect class="svg-subcard" x="0" y="0" width="395" height="75" rx="8" fill="#1e293b" stroke="#f87171"/>
+    <text class="text-accent-red" x="14" y="20" fill="#f87171" font-size="9.5" font-weight="800">KONDISI A: PAJAK KELUARAN &gt; PAJAK MASUKAN (PK &gt; PM)</text>
+    <text class="text-accent-red" x="14" y="38" fill="#f87171" font-size="8.5" font-weight="700">STATUS: PPN KURANG BAYAR</text>
+    <text class="svg-text" x="14" y="54" fill="#cbd5e1" font-size="7.5">Selisih wajib disetor ke kas negara via Kode Billing sebelum SPT Masa PPN 1111 dilaporkan pada akhir bulan berikutnya.</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">3. SALDO PPN BULANAN</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Status SPT Masa 1111:</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PK &gt; PM → <tspan fill="#fca5a5" font-weight="700">PPN Kurang Bayar</tspan></text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PK &lt; PM → <tspan fill="#86efac" font-weight="700">PPN Lebih Bayar</tspan></text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Opsi Lebih Bayar: Kompensasi / Restitusi</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Multi-Stage Non-Kumulatif</text>
+    <rect class="svg-subcard" x="435" y="0" width="395" height="75" rx="8" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="449" y="20" fill="#34d399" font-size="9.5" font-weight="800">KONDISI B: PAJAK KELUARAN &lt; PAJAK MASUKAN (PK &lt; PM)</text>
+    <text class="text-accent-green" x="449" y="38" fill="#34d399" font-size="8.5" font-weight="700">STATUS: PPN LEBIH BAYAR</text>
+    <text class="svg-text" x="449" y="54" fill="#cbd5e1" font-size="7.5">PKP berhak memilih: (1) Dikompensasikan ke masa pajak berikutnya (Default), atau (2) Diajukan Permohonan Restitusi pengembalian kas.</text>
+  </g>
 </svg>`;
 
 export const TM12_READING: Reading = {
@@ -51,6 +69,12 @@ export const TM12_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 12.1: Mekanisme Pengkreditan PPN: Pajak Keluaran dikurangi Pajak Masukan (Credit Method).',
       svg: SVG_VAT_MECHANISM
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 1 angka 2, Pasal 3A, Pasal 4, & Pasal 7 UU PPN s.t.d.t.d UU HPP',
+      text: '"Pasal 1 angka 2: Barang Kena Pajak (BKP) adalah barang berwujud atau tidak berwujud yang dikenai pajak berdasarkan Undang-Undang ini.\n\nPasal 3A ayat (1): Pengusaha yang melakukan penyerahan BKP/JKP wajib melaporkan usahanya untuk dikukuhkan sebagai Pengusaha Kena Pajak (PKP) dan wajib memungut, menyetor, dan melaporkan PPN/PPnBM, kecuali pengusaha kecil dengan omzet tahunan di bawah Rp 4,8 Miliar.\n\nPasal 4 ayat (1): PPN dikenakan atas penyerahan BKP/JKP di dalam Daerah Pabean oleh Pengusaha, impor BKP, pemanfaatan BKP Tidak Berwujud/JKP dari luar Daerah Pabean, dan ekspor BKP/JKP oleh PKP.\n\nPasal 7 ayat (1): Tarif Pajak Pertambahan Nilai yaitu: a. sebesar 11% yang mulai berlaku pada tanggal 1 April 2022; b. sebesar 12% yang mulai berlaku paling lambat pada tanggal 1 Januari 2025; c. tarif 0% diterapkan atas ekspor BKP Berwujud, BKP Tidak Berwujud, dan JKP."'
     },
     {
       kind: 'h2',

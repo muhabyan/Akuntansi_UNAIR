@@ -1,34 +1,69 @@
 import type { Reading } from '../../../types';
 import { CASE_INNOVATION_CHANGE_LEWIN } from '../manajemenPracticeCases';
 
-const SVG_LEWIN_CHANGE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL 3 TAHAP MANAJEMEN PERUBAHAN (KURT LEWIN)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. UNFREEZING</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Mencairkan Status Quo):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ciptakan rasa urgensi (Kotter)</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Paparkan kesenjangan kinerja</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kurangi kekuatan penolak</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Kesiapan Berubah</text>
+const SVG_LEWIN_CHANGE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="unfrGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="chgGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="refrGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad9)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL 3 TAHAP MANAJEMEN PERUBAHAN ORGANISASI (KURT LEWIN)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">LEWIN MODEL</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">2. CHANGING / MOVING</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Eksekusi Perubahan Baru):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Terapkan sistem/teknologi baru</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pelatihan keterampilan baru</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bimbingan &amp; role modeling</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Transisi Perilaku</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="34" rx="12" fill="url(#unfrGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="20" y="23" fill="#38bdf8" font-size="12" font-weight="800">1. UNFREEZING (MENCAIRKAN)</text>
+    <rect class="svg-subcard" x="20" y="48" width="225" height="38" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-dasharray="3 3"/>
+    <text class="text-accent-blue" x="132" y="65" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Mencairkan Status Quo</text>
+    <text class="svg-muted" x="132" y="78" fill="#94a3b8" font-size="7.5" text-anchor="middle">Driving Forces &gt; Restraining Forces</text>
+    <text class="svg-text" x="20" y="106" fill="#cbd5e1" font-size="8.5">• Ciptakan rasa urgensi krisis (Kotter)</text>
+    <text class="svg-text" x="20" y="126" fill="#cbd5e1" font-size="8.5">• Paparkan kesenjangan kinerja riil</text>
+    <text class="svg-text" x="20" y="146" fill="#cbd5e1" font-size="8.5">• Kurangi ketakutan &amp; resistensi staf</text>
+    <text class="svg-text" x="20" y="166" fill="#cbd5e1" font-size="8.5">• Buka komunikasi dua arah transparan</text>
+    <rect class="svg-badge-blue" x="20" y="185" width="225" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Kesiapan &amp; Motivasi Berubah</text>
+  </g>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">3. REFREEZING</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Membekukan Budaya Baru):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Integrasikan ke KPI &amp; sistem bonus</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Perbaharui SOP resmi perusahaan</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Rayakan keberhasilan jangka pendek</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Institusionalisasi</text>
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="34" rx="12" fill="url(#chgGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="20" y="23" fill="#34d399" font-size="12" font-weight="800">2. CHANGING (TRANSISI)</text>
+    <rect class="svg-subcard" x="20" y="48" width="225" height="38" rx="6" fill="#1e293b" stroke="#34d399"/>
+    <text class="text-accent-green" x="132" y="65" fill="#34d399" font-size="9" font-weight="700" text-anchor="middle">Eksekusi Perilaku Baru</text>
+    <text class="svg-muted" x="132" y="78" fill="#94a3b8" font-size="7.5" text-anchor="middle">Implementasi Sistem &amp; Teknologi</text>
+    <text class="svg-text" x="20" y="106" fill="#cbd5e1" font-size="8.5">• Luncurkan teknologi &amp; SOP baru</text>
+    <text class="svg-text" x="20" y="126" fill="#cbd5e1" font-size="8.5">• Berikan pelatihan upskilling intensif</text>
+    <text class="svg-text" x="20" y="146" fill="#cbd5e1" font-size="8.5">• Bimbingan &amp; role-modeling pimpinan</text>
+    <text class="svg-text" x="20" y="166" fill="#cbd5e1" font-size="8.5">• Raih short-term wins (6 bulan)</text>
+    <rect class="svg-badge-green" x="20" y="185" width="225" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Pergeseran Sikap &amp; Kebiasaan</text>
+  </g>
+
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="0" y="0" width="265" height="34" rx="12" fill="url(#refrGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="20" y="23" fill="#a78bfa" font-size="12" font-weight="800">3. REFREEZING (MEMBEKUKAN)</text>
+    <rect class="svg-subcard" x="20" y="48" width="225" height="38" rx="6" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="132" y="65" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Institusionalisasi Budaya Baru</text>
+    <text class="svg-muted" x="132" y="78" fill="#94a3b8" font-size="7.5" text-anchor="middle">Mengunci agar Tidak Kambuh</text>
+    <text class="svg-text" x="20" y="106" fill="#cbd5e1" font-size="8.5">• Integrasikan ke KPI &amp; sistem bonus</text>
+    <text class="svg-text" x="20" y="126" fill="#cbd5e1" font-size="8.5">• Perbaharui struktur organisasi formal</text>
+    <text class="svg-text" x="20" y="146" fill="#cbd5e1" font-size="8.5">• Rayakan kesuksesan transformasi</text>
+    <text class="svg-text" x="20" y="166" fill="#cbd5e1" font-size="8.5">• Jadikan norma kerja sehari-hari</text>
+    <rect class="svg-badge-purple" x="20" y="185" width="225" height="24" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="132" y="201" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Kestabilan Budaya Permanen</text>
+  </g>
+
+  <polygon points="305,185 315,190 305,195" fill="#38bdf8"/>
+  <polygon points="587,185 597,190 587,195" fill="#34d399"/>
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Tanpa tahap Refreezing, karyawan akan otomatis kembali ke kebiasaan kerja lama yang nyaman dalam hitungan bulan.</text>
 </svg>`;
 
 export const TM9_READING: Reading = {

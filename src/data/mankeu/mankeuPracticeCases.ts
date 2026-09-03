@@ -103,7 +103,7 @@ export const CASE_CAPM_PORTFOLIO_RISK: ContentBlock = {
           items: [
             '**1. Bobot dan Beta Portofolio**:\n- Bobot: $w_A = 40\\%$, $w_B = 40\\%$, $w_C = 20\\%$.\n- $\\beta_p = (0,40 \\times 1,20) + (0,40 \\times 0,80) + (0,20 \\times 1,50) = 0,48 + 0,32 + 0,30 = \\mathbf{1,10}$.',
             '**2. Required Rate of Return CAPM ($r_i = r_{RF} + \\beta_i (r_M - r_{RF})$)**:\n- Saham A: $r_A = 6,0\\% + 1,20(12,0\\% - 6,0\\%) = 6,0\\% + 7,2\\% = \\mathbf{13,2\\%}$.\n- Saham B: $r_B = 6,0\\% + 0,80(6,0\\%) = 6,0\\% + 4,8\\% = \\mathbf{10,8\\%}$.\n- Saham C: $r_C = 6,0\\% + 1,50(6,0\\%) = 6,0\\% + 9,0\\% = \\mathbf{15,0\\%}$.',
-            '**3. Evaluasi Valuasi Saham**:\n- **Saham A**: Ekspektasi Return (14,0%) > CAPM (13,2%) $\\rightarrow$ Terletak di atas SML $\\rightarrow$ **Undervalued (Layak Dibeli / Buy)**.\n- **Saham B**: Ekspektasi Return (11,0%) > CAPM (10,8%) $\\rightarrow$ Terletak di atas SML $\\rightarrow$ **Undervalued (Layak Dibeli / Buy)**.\n- **Saham C**: Ekspektasi Return (16,0%) > CAPM (15,0%) $\\rightarrow$ Terletak di atas SML $\\rightarrow$ **Undervalued (Layak Dibeli / Buy)**.'
+            '**3. Evaluasi Valuasi Saham**:\n- **Saham A**: Ekspektasi Return (14,0%) > CAPM (13,2%) $\\r→$ Terletak di atas SML $\\r→$ **Undervalued (Layak Dibeli / Buy)**.\n- **Saham B**: Ekspektasi Return (11,0%) > CAPM (10,8%) $\\r→$ Terletak di atas SML $\\r→$ **Undervalued (Layak Dibeli / Buy)**.\n- **Saham C**: Ekspektasi Return (16,0%) > CAPM (15,0%) $\\r→$ Terletak di atas SML $\\r→$ **Undervalued (Layak Dibeli / Buy)**.'
           ]
         }
       ]
@@ -158,7 +158,7 @@ export const CASE_CAPITAL_BUDGETING_EVAL: ContentBlock = {
           items: [
             '**1. Perhitungan NPV pada WACC 10%**:\n- **Proyek A**: $NPV_A = -1.000 + \\frac{500}{1,10} + \\frac{400}{1,10^2} + \\frac{300}{1,10^3} + \\frac{100}{1,10^4} = -1.000 + 454,55 + 330,58 + 225,39 + 68,30 = \\mathbf{+Rp 78,82 \\text{ Juta}}$.\n- **Proyek B**: $NPV_B = -1.000 + \\frac{100}{1,10} + \\frac{300}{1,10^2} + \\frac{400}{1,10^3} + \\frac{675}{1,10^4} = -1.000 + 90,91 + 247,93 + 300,53 + 461,03 = \\mathbf{+Rp 100,40 \\text{ Juta}}$.',
             '**2. Perhitungan IRR**:\n- **IRR Proyek A**: $\\approx \\mathbf{14,49\\%}$.\n- **IRR Proyek B**: $\\approx \\mathbf{13,51\\%}$.',
-            '**3. Payback Period**:\n- **Proyek A**: Tahun 1 (500) + Tahun 2 (400) = 900. Sisa 100 di Tahun 3 $\\rightarrow$ $Payback = 2 + \\frac{100}{300} = \\mathbf{2,33 \\text{ Tahun}}$.\n- **Proyek B**: Tahun 1 (100) + Tahun 2 (300) + Tahun 3 (400) = 800. Sisa 200 di Tahun 4 $\\rightarrow$ $Payback = 3 + \\frac{200}{675} = \\mathbf{3,30 \\text{ Tahun}}$.',
+            '**3. Payback Period**:\n- **Proyek A**: Tahun 1 (500) + Tahun 2 (400) = 900. Sisa 100 di Tahun 3 $\\r→$ $Payback = 2 + \\frac{100}{300} = \\mathbf{2,33 \\text{ Tahun}}$.\n- **Proyek B**: Tahun 1 (100) + Tahun 2 (300) + Tahun 3 (400) = 800. Sisa 200 di Tahun 4 $\\r→$ $Payback = 3 + \\frac{200}{675} = \\mathbf{3,30 \\text{ Tahun}}$.',
             '**4. Keputusan & Justifikasi**: Terjadi konflik peringkat antara NPV ($NPV_B > NPV_A$) dan IRR ($IRR_A > IRR_B$). Sesuai teori keuangan korporasi, untuk proyek *Mutually Exclusive*, kriteria **NPV adalah raja (Superior Rule)** karena mengukur penambahan nilai kekayaan absolut bagi pemegang saham dengan asumsi reinvestasi wajar pada WACC. Maka, **PILIH PROYEK B**.'
           ]
         }
@@ -186,7 +186,7 @@ export const CASE_CASHFLOW_RISK_ANALYSIS: ContentBlock = {
           items: [
             '**1. Initial Outlay ($CF_0$)**:\nBasis Depresiasi Mesin = Harga Beli (Rp 8.000 Jt) + Instalasi (Rp 500 Jt) = Rp 8.500 Juta.\n$CF_0 = -(\\text{Basis Mesin} + \\text{NWC}) = -(8.500 + 500) = \\mathbf{-Rp 9.000.000.000}$.',
             '**2. Annual Depresiasi & Operating Cash Flow (OCF)**:\n- Depresiasi per tahun = $(8.500 - 500) / 4 = \\mathbf{Rp 2.000.000.000}$ per tahun.\n- $EBIT = EBDIT - \\text{Depresiasi} = 4.000 - 2.000 = Rp 2.000.000.000$.\n- Pajak (22%) = $0,22 \\times 2.000 = Rp 440.000.000$.\n- $NOPAT = 2.000 - 440 = Rp 1.560.000.000$.\n- $OCF = NOPAT + \\text{Depresiasi} = 1.560 + 2.000 = \\mathbf{Rp 3.560.000.000}$ per tahun.',
-            '**3. Terminal Cash Flow ($TCF$) Tahun 4**:\n- Nilai Jual Pasar = Rp 1.500 Juta; Nilai Buku Akhir = Rp 500 Juta $\\rightarrow$ Gain = Rp 1.000 Juta.\n- Pajak atas Gain = $22\\% \\times 1.000 = Rp 220.000.000$.\n- Arus Kas Bersih Salvage = $1.500 - 220 = Rp 1.280.000.000$.\n- Pengembalian NWC = Rp 500.000.000.\n- $TCF = 1.280 + 500 = \\mathbf{Rp 1.780.000.000}$. Total Arus Kas Tahun 4 = $3.560 + 1.780 = Rp 5.340.000.000$.',
+            '**3. Terminal Cash Flow ($TCF$) Tahun 4**:\n- Nilai Jual Pasar = Rp 1.500 Juta; Nilai Buku Akhir = Rp 500 Juta $\\r→$ Gain = Rp 1.000 Juta.\n- Pajak atas Gain = $22\\% \\times 1.000 = Rp 220.000.000$.\n- Arus Kas Bersih Salvage = $1.500 - 220 = Rp 1.280.000.000$.\n- Pengembalian NWC = Rp 500.000.000.\n- $TCF = 1.280 + 500 = \\mathbf{Rp 1.780.000.000}$. Total Arus Kas Tahun 4 = $3.560 + 1.780 = Rp 5.340.000.000$.',
             '**4. Perhitungan NPV Proyek**:\n$NPV = -9.000 + \\frac{3.560}{1,12^1} + \\frac{3.560}{1,12^2} + \\frac{3.560}{1,12^3} + \\frac{5.340}{1,12^4}$\n$NPV = -9.000 + 3.178,57 + 2.837,97 + 2.533,90 + 3.393,65 = \\mathbf{+Rp 2.944.090.000}$. Proyek Sangat Layak Diterima.'
           ]
         }

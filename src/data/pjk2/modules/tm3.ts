@@ -1,34 +1,56 @@
 import type { Reading } from '../../../types';
 import { CASE_TRANSFER_PRICING_ALP } from '../pjk2PracticeCases';
 
-const SVG_TRANSFER_PRICING = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PRINSIP KEWAJARAN DAN KELAZIMAN USAHA (ARM'S LENGTH PRINCIPLE - PMK 172/2023)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">METODE TRANSAKSI LABA</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Traditional Transaction Methods):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 1. CUP (Comparable Uncontrolled Price)</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 2. RPM (Resale Price Method)</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 3. CPM (Cost Plus Method)</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Metode Berbasis Harga/Biaya</text>
+const SVG_TRANSFER_PRICING = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="tpTrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="tpProf" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk3)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 METODE PENETAPAN HARGA TRANSFER &amp; PRINSIP KEWAJARAN / ARMS LENGTH (PMK 172/2023)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TRANSFER PRICING</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">METODE MARGIN TRANSAKSI</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Transactional Profit Methods):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 4. TNMM (Transactional Net Margin)</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 5. PSM (Profit Split Method)</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Digunakan jika CUP sulit dibandingkan</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Metode Berbasis Laba Bersih</text>
+  <!-- Left: Traditional Transaction Methods (3 Methods) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#tpTrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">1. METODE TRANSAKSI TRADISIONAL (TRADITIONAL)</text>
+    
+    <text class="text-accent-blue" x="14" y="50" fill="#38bdf8" font-size="8.5" font-weight="700">A. CUP (Comparable Uncontrolled Price):</text>
+    <text class="svg-text" x="14" y="64" fill="#cbd5e1" font-size="7.5">Bandingkan harga langsung dengan transaksi barang sejenis pada pihak independen.</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">DOKUMEN TP (TP DOC)</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Ketentuan Pelaporan 3 Tingkat):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dokumen Induk (Master File)</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dokumen Lokal (Local File)</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• CbCR (Laporan per Negara)</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Kepatuhan Anti-BEPS</text>
+    <text class="text-accent-blue" x="14" y="86" fill="#38bdf8" font-size="8.5" font-weight="700">B. RPM (Resale Price Method):</text>
+    <text class="svg-text" x="14" y="100" fill="#cbd5e1" font-size="7.5">Harga jual kembali ke pihak independen dikurangi margin laba kotor wajar distributor.</text>
+
+    <text class="text-accent-blue" x="14" y="122" fill="#38bdf8" font-size="8.5" font-weight="700">C. CPM (Cost Plus Method):</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="7.5">Beban pokok produksi ditambah mark-up laba kotor wajar pabrikan manufaktur.</text>
+
+    <rect class="svg-badge-blue" x="14" y="175" width="367" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="191" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Prioritas Utama Bila Data Pembanding Identik Tersedia</text>
+  </g>
+
+  <!-- Right: Transactional Profit Methods (2 Methods) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#tpProf)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="10.5" font-weight="800">2. METODE LABA TRANSAKSIONAL (PROFIT METHODS)</text>
+    
+    <text class="text-accent-purple" x="14" y="50" fill="#a78bfa" font-size="8.5" font-weight="700">D. TNMM (Transactional Net Margin Method):</text>
+    <text class="svg-text" x="14" y="64" fill="#cbd5e1" font-size="7.5">Membandingkan margin laba bersih usaha (Net Margin / Berry Ratio / OM) terhadap basis yang tepat (Biaya / Penjualan / Aset).</text>
+
+    <text class="text-accent-purple" x="14" y="96" fill="#a78bfa" font-size="8.5" font-weight="700">E. PSM (Profit Split Method):</text>
+    <text class="svg-text" x="14" y="110" fill="#cbd5e1" font-size="7.5">Membagi laba gabungan dari transaksi terafiliasi berdasarkan kontribusi fungsi, aset tak berwujud unik, &amp; risiko yang ditanggung (FAR).</text>
+
+    <rect class="svg-badge-purple" x="14" y="175" width="367" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="197" y="191" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Digunakan Bila Transaksi Sangat Terintegrasi / Memiliki Intangibles</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Wajib didokumentasikan dalam TP Doc (Local File, Master File, CbCR) untuk menghindari koreksi jabatan oleh DJP.</text>
 </svg>`;
 
 export const TM3_READING: Reading = {
@@ -47,6 +69,18 @@ export const TM3_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 3.1: Hierarki Metode Transfer Pricing dan Dokumentasi TP Doc menurut PMK No. 172/2023.',
       svg: SVG_TRANSFER_PRICING
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 18 ayat (3) & (4) UU PPh (Transfer Pricing & Hubungan Istimewa)',
+      text: '"Pasal 18 ayat (3): Direktur Jenderal Pajak berwenang untuk menentukan kembali besarnya penghasilan dan pengurangan serta menentukan utang sebagai modal untuk menghitung besarnya Penghasilan Kena Pajak bagi Wajib Pajak yang mempunyai hubungan istimewa dengan Wajib Pajak lainnya sesuai dengan kewajaran dan kelaziman usaha yang tidak dipengaruhi oleh hubungan istimewa (Arm\'s Length Principle / PKKU) dengan menggunakan metode penentuan harga transfer.\n\nPasal 18 ayat (4): Hubungan istimewa dianggap ada apabila: a. WP mempunyai penyertaan modal langsung atau tidak langsung paling rendah 25% pada WP lain; b. WP menguasai WP lainnya atau dua/lebih WP berada di bawah penguasaan yang sama baik langsung maupun tidak langsung; atau c. terdapat hubungan keluarga baik sedarah maupun semenda dalam garis keturunan lurus dan/atau ke samping satu derajat."'
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: '📜 Ketentuan Regulasi: PMK No. 172 Tahun 2023 (Prinsip Kewajaran & Kelaziman Usaha / PKKU)',
+      text: '"PMK 172/2023 mengatur penerapan Prinsip Kewajaran dan Kelaziman Usaha (PKKU) melalui 3 tahapan: 1. Analisis Industri & Karakterisasi Fungsi, Aset, dan Risiko (FAR); 2. Pemilihan Metode Transfer Pricing yang Tepat (CUP, Resale Price, Cost Plus, TNMM, atau Profit Split); dan 3. Analisis Komparabilitas & Penentuan Nilai Wajar. Wajib Pajak dengan transaksi afiliasi di atas threshold wajib menyusun Dokumen Penentuan Harga Transfer (TP Doc) yang terdiri dari Dokumen Induk (Master File), Dokumen Lokal (Local File), dan Laporan per Negara (CbCR)."'
     },
     {
       kind: 'h2',

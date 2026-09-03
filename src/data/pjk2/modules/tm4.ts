@@ -1,42 +1,79 @@
 import type { Reading } from '../../../types';
 import { CASE_DEPRECIATION_REVALUATION } from '../pjk2PracticeCases';
 
-const SVG_DEPRECIATION_RATES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">TABEL TARIF PENYUSUTAN FISKAL HARTA BERWUJUD (PASAL 11 UU PPH)</text>
-  
-  <rect x="30" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">KELOMPOK 1</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Masa Manfaat: 4 Tahun</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Komputer, printer, HP</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Garis Lurus: 25%</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Saldo Menurun: 50%</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Aset Cepat Aus</text>
+const SVG_DEPRECIATION_RATES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="thGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk4)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">TABEL TARIF PENYUSUTAN FISKAL HARTA BERWUJUD (PASAL 11 UU PPH &amp; PMK 72/2023)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DEPRECIATION RATES</text>
 
-  <rect x="180" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="247" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">KELOMPOK 2</text>
-  <text x="247" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Masa Manfaat: 8 Tahun</text>
-  <text x="247" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mobil dinas, truk, mesin</text>
-  <text x="247" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Garis Lurus: 12,5%</text>
-  <text x="247" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Saldo Menurun: 25%</text>
-  <text x="247" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Kendaraan &amp; Mesin</text>
+  <!-- Table Container (Width 830px) -->
+  <g transform="translate(35, 75)">
+    <!-- Header Row -->
+    <rect class="svg-subcard" x="0" y="0" width="830" height="32" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="15" y="20" fill="#38bdf8" font-size="9" font-weight="800">KELOMPOK HARTA BERWUJUD</text>
+    <text class="text-accent-blue" x="260" y="20" fill="#38bdf8" font-size="9" font-weight="800">MASA MANFAAT</text>
+    <text class="text-accent-blue" x="400" y="20" fill="#38bdf8" font-size="9" font-weight="800">GARIS LURUS (SLM)</text>
+    <text class="text-accent-blue" x="560" y="20" fill="#38bdf8" font-size="9" font-weight="800">SALDO MENURUN (DBM)</text>
+    <text class="text-accent-blue" x="730" y="20" fill="#38bdf8" font-size="9" font-weight="800">CONTOH ASET</text>
 
-  <rect x="330" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="397" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">KELOMPOK 3 &amp; 4</text>
-  <text x="397" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Manfaat: 16 &amp; 20 Thn</text>
-  <text x="397" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Alat berat tambang (K3)</text>
-  <text x="397" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Garis Lurus: 6,25% / 5%</text>
-  <text x="397" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Saldo Menurun: 12,5% / 10%</text>
-  <text x="397" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Aset Berat Berat</text>
+    <!-- Row 1: Kelompok 1 -->
+    <rect class="svg-card" x="0" y="36" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text x="15" y="56" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 1 (Bukan Bangunan)</text>
+    <text class="svg-text" x="260" y="56" fill="#cbd5e1" font-size="8.5">4 Tahun</text>
+    <text class="text-accent-green" x="400" y="56" fill="#34d399" font-size="8.5" font-weight="700">25% per tahun</text>
+    <text class="text-accent-amber" x="560" y="56" fill="#fbbf24" font-size="8.5" font-weight="700">50% per tahun</text>
+    <text class="svg-muted" x="730" y="56" fill="#94a3b8" font-size="7.5">Komputer, Printer, HP, Mebel Kayu</text>
 
-  <rect x="480" y="55" width="170" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="565" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">BANGUNAN</text>
-  <text x="565" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Permanen &amp; Non-Permanen:</text>
-  <text x="565" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Permanen: 20 Thn (5% GL)</text>
-  <text x="565" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Non-Permanen: 10 Thn (10% GL)</text>
-  <text x="565" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• <tspan fill="#fca5a5" font-weight="700">Dilarang Saldo Menurun</tspan></text>
-  <text x="565" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Hanya Garis Lurus</text>
+    <!-- Row 2: Kelompok 2 -->
+    <rect class="svg-card" x="0" y="70" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text x="15" y="90" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 2 (Bukan Bangunan)</text>
+    <text class="svg-text" x="260" y="90" fill="#cbd5e1" font-size="8.5">8 Tahun</text>
+    <text class="text-accent-green" x="400" y="90" fill="#34d399" font-size="8.5" font-weight="700">12,5% per tahun</text>
+    <text class="text-accent-amber" x="560" y="90" fill="#fbbf24" font-size="8.5" font-weight="700">25% per tahun</text>
+    <text class="svg-muted" x="730" y="90" fill="#94a3b8" font-size="7.5">Mobil Truk, Bus, AC, Mesin Ringan</text>
+
+    <!-- Row 3: Kelompok 3 -->
+    <rect class="svg-card" x="0" y="104" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text x="15" y="124" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 3 (Bukan Bangunan)</text>
+    <text class="svg-text" x="260" y="124" fill="#cbd5e1" font-size="8.5">16 Tahun</text>
+    <text class="text-accent-green" x="400" y="124" fill="#34d399" font-size="8.5" font-weight="700">6,25% per tahun</text>
+    <text class="text-accent-amber" x="560" y="124" fill="#fbbf24" font-size="8.5" font-weight="700">12,5% per tahun</text>
+    <text class="svg-muted" x="730" y="124" fill="#94a3b8" font-size="7.5">Mesin Pabrik Berat, Kapal, Pipa Tambang</text>
+
+    <!-- Row 4: Kelompok 4 -->
+    <rect class="svg-card" x="0" y="138" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text x="15" y="158" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 4 (Bukan Bangunan)</text>
+    <text class="svg-text" x="260" y="158" fill="#cbd5e1" font-size="8.5">20 Tahun</text>
+    <text class="text-accent-green" x="400" y="158" fill="#34d399" font-size="8.5" font-weight="700">5% per tahun</text>
+    <text class="text-accent-amber" x="560" y="158" fill="#fbbf24" font-size="8.5" font-weight="700">10% per tahun</text>
+    <text class="svg-muted" x="730" y="158" fill="#94a3b8" font-size="7.5">Konstruksi Berat, Rel Kereta, Dok Kapal</text>
+
+    <!-- Row 5: Bangunan Permanen -->
+    <rect class="svg-card" x="0" y="172" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="text-accent-purple" x="15" y="192" fill="#a78bfa" font-size="8.5" font-weight="700">Bangunan: Permanen</text>
+    <text class="svg-text" x="260" y="192" fill="#cbd5e1" font-size="8.5">20 Tahun</text>
+    <text class="text-accent-green" x="400" y="192" fill="#34d399" font-size="8.5" font-weight="700">5% per tahun</text>
+    <text class="text-accent-red" x="560" y="192" fill="#f87171" font-size="8.5" font-weight="700">Tidak Boleh DBM</text>
+    <text class="svg-muted" x="730" y="192" fill="#94a3b8" font-size="7.5">Gedung Kantor, Gudang Permanen, Pabrik</text>
+
+    <!-- Row 6: Bangunan Tidak Permanen -->
+    <rect class="svg-card" x="0" y="206" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="text-accent-purple" x="15" y="226" fill="#a78bfa" font-size="8.5" font-weight="700">Bangunan: Tidak Permanen</text>
+    <text class="svg-text" x="260" y="226" fill="#cbd5e1" font-size="8.5">10 Tahun</text>
+    <text class="text-accent-green" x="400" y="226" fill="#34d399" font-size="8.5" font-weight="700">10% per tahun</text>
+    <text class="text-accent-red" x="560" y="226" fill="#f87171" font-size="8.5" font-weight="700">Tidak Boleh DBM</text>
+    <text class="svg-muted" x="730" y="226" fill="#94a3b8" font-size="7.5">Barak Pekerja Proyek, Gudang Kayu Seng</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="332" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Catatan Kunci: Bangunan WAJIB disusutkan dengan Metode Garis Lurus (Straight-Line Method) dan tidak diperkenankan metode Saldo Menurun.</text>
 </svg>`;
 
 export const TM4_READING: Reading = {
@@ -56,6 +93,18 @@ export const TM4_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 4.1: Pengelompokan dan Tarif Penyusutan Fiskal Harta Berwujud (Pasal 11 UU PPh).',
       svg: SVG_DEPRECIATION_RATES
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 11 ayat (1) & (6) UU PPh (Tarif Penyusutan Fiskal)',
+      text: '"Pasal 11 ayat (1): Penyusutan atas pengeluaran untuk pembelian, pendirian, penambahan, perbaikan, atau perubahan harta berwujud, kecuali tanah, yang dimiliki dan digunakan untuk mendapatkan, menagih, dan memelihara penghasilan yang mempunyai masa manfaat lebih dari 1 tahun dilakukan dalam bagian-bagian yang sama besar (Garis Lurus) atau dalam bagian-bagian yang menurun (Saldo Menurun).\n\nPasal 11 ayat (6) - Tabel Tarif Penyusutan:\n• Kelompok 1: Masa Manfaat 4 Tahun (Garis Lurus 25% / Saldo Menurun 50%)\n• Kelompok 2: Masa Manfaat 8 Tahun (Garis Lurus 12,5% / Saldo Menurun 25%)\n• Kelompok 3: Masa Manfaat 16 Tahun (Garis Lurus 6,25% / Saldo Menurun 12,5%)\n• Kelompok 4: Masa Manfaat 20 Tahun (Garis Lurus 5% / Saldo Menurun 10%)\n• Bangunan Permanen: Masa Manfaat 20 Tahun (Garis Lurus 5%)\n• Bangunan Tidak Permanen: Masa Manfaat 10 Tahun (Garis Lurus 10%)."'
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: '📜 Ketentuan Regulasi: PMK No. 72 Tahun 2023 Pasal 6 (Penyusutan Aset > 20 Tahun)',
+      text: '"Berdasarkan PMK 72/2023, untuk harta berwujud bukan bangunan yang masa manfaat sebenarnya melebihi 20 tahun dan bangunan permanen yang masa manfaat sebenarnya melebihi 20 tahun, Wajib Pajak dapat memilih melakukan penyusutan sesuai dengan masa manfaat sebenarnya (misal 25 atau 30 tahun) berdasarkan pembukuan Wajib Pajak, dengan menyampaikan pemberitahuan tertulis kepada Direktur Jenderal Pajak paling lambat akhir tahun pajak bersangkutan."'
     },
     {
       kind: 'h2',

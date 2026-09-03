@@ -1,26 +1,55 @@
 import type { Reading } from '../../../types';
 import { CASE_EXPENSE_DEDUCTIBILITY } from '../pjk2PracticeCases';
 
-const SVG_DEDUCTIBILITY = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SKEMA PENGURANGAN PENGHASILAN BRUTO PPH BADAN (UU HPP NO. 7/2021)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">BIAYA 3M BOLEH DIKURANGKAN</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Deductible Expenses - Pasal 6 UU PPh):</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Biaya bahan baku, gaji, &amp; tunjangan</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penyusutan &amp; amortisasi fiskal</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sumbangan bencana nasional &amp; litbang</text>
-  <text x="177" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Mengurangi Laba Kena Pajak</text>
+const SVG_DEDUCTIBILITY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="dedGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="nondedGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk1)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">KLASIFIKASI BEBAN FISKAL: DEDUCTIBLE (PASAL 6) VS NON-DEDUCTIBLE (PASAL 9 UU PPH)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TAX DEDUCTIBILITY</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">BIAYA TIDAK BOLEH DIKURANGKAN</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Non-Deductible - Pasal 9 UU PPh):</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pembagian dividen &amp; prive pemilik</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sanksi bunga / denda administrasi pajak</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Biaya keperluan pribadi pemegang saham</text>
-  <text x="497" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Wajib Koreksi Fiskal Positif</text>
+  <!-- Left: Deductible Expense (Pasal 6) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#dedGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="10.5" font-weight="800">1. BIAYA 3M BOLEH DIKURANGKAN (PASAL 6 AYAT 1)</text>
+    
+    <text class="svg-text" x="16" y="50" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Prinsip 3M:</tspan> Mendapatkan, Menagih, &amp; Memelihara penghasilan usaha</text>
+    <text class="svg-text" x="16" y="68" fill="#cbd5e1" font-size="8">• Gaji, upah, honorarium, bonus, &amp; tunjangan BPJS Ketenagakerjaan</text>
+    <text class="svg-text" x="16" y="86" fill="#cbd5e1" font-size="8">• Beban bunga pinjaman perbankan untuk kegiatan operasional</text>
+    <text class="svg-text" x="16" y="104" fill="#cbd5e1" font-size="8">• Biaya sewa kantor, penyusutan aset tetap fiskal, &amp; royalti paten</text>
+    <text class="svg-text" x="16" y="122" fill="#cbd5e1" font-size="8">• Piutang nyata-nyata tak tertagih (syarat daftar nominatif terpenuhi)</text>
+    <text class="svg-text" x="16" y="140" fill="#cbd5e1" font-size="8">• Biaya natura di daerah tertentu / natura wajib kerja (UU HPP &amp; PMK 66)</text>
+    
+    <rect class="svg-badge-green" x="16" y="175" width="363" height="30" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="194" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Mengurangi Penghasilan Bruto → PPh Terutang Lebih Rendah</text>
+  </g>
+
+  <!-- Right: Non-Deductible Expense (Pasal 9) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#nondedGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="16" y="20" fill="#f87171" font-size="10.5" font-weight="800">2. BIAYA TIDAK BOLEH DIKURANGKAN (PASAL 9 AYAT 1)</text>
+    
+    <text class="svg-text" x="16" y="50" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-red" fill="#f87171" font-weight="700">Pembagian Laba:</tspan> Dividen tunai kepada pemegang saham</text>
+    <text class="svg-text" x="16" y="68" fill="#cbd5e1" font-size="8">• Biaya untuk kepentingan pribadi pemegang saham / keluarga direksi</text>
+    <text class="svg-text" x="16" y="86" fill="#cbd5e1" font-size="8">• Pembentukan atau pemupukan dana cadangan (Kecuali bank &amp; asuransi)</text>
+    <text class="svg-text" x="16" y="104" fill="#cbd5e1" font-size="8">• Pajak Penghasilan (PPh Badan itu sendiri tidak boleh jadi beban)</text>
+    <text class="svg-text" x="16" y="122" fill="#cbd5e1" font-size="8">• Sanksi administrasi pajak: Bunga keterlambatan, denda, &amp; kenaikan SKP</text>
+    <text class="svg-text" x="16" y="140" fill="#cbd5e1" font-size="8">• Biaya yang dikeluarkan untuk menghasilkan objek PPh Final / Bukan Objek</text>
+    
+    <rect class="svg-badge-red" x="16" y="175" width="363" height="30" rx="6" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="197" y="194" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Wajib Dilakukan Koreksi Fiskal Positif (Menambah Laba Kena Pajak)</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Koreksi Fiskal Positif dilakukan atas biaya non-deductible yang sudah terlanjur dicatat di laporan laba rugi komersial.</text>
 </svg>`;
 
 export const TM1_READING: Reading = {
@@ -39,6 +68,18 @@ export const TM1_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 1.1: Klasifikasi Beban Fiskal: Deductible Expense (Pasal 6) vs Non-Deductible Expense (Pasal 9).',
       svg: SVG_DEDUCTIBILITY
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 6 ayat (1) UU PPh (Deductible Expense)',
+      text: '"Besarnya Penghasilan Kena Pajak bagi Wajib Pajak dalam negeri dan bentuk usaha tetap, ditentukan berdasarkan penghasilan bruto dikurangi biaya untuk mendapatkan, menagih, dan memelihara penghasilan (Biaya 3M), termasuk: a. biaya yang secara langsung atau tidak langsung berkaitan dengan kegiatan usaha, antara lain: 1. biaya pembelian bahan; 2. biaya berkenaan dengan pekerjaan atau jasa termasuk upah, gaji, honorarium, bonus, gratifikasi, dan tunjangan dalam bentuk uang; 3. bunga, sewa, dan royalti; 4. biaya perjalanan; 5. biaya pengolahan limbah; 6. premi asuransi; 7. biaya promosi dan penjualan; 8. biaya administrasi; dan 9. pajak kecuali Pajak Penghasilan; b. penyusutan dan amortisasi fiskal (Pasal 11 & 11A); c. iuran dana pensiun yang disahkan Menkeu; d. kerugian pengalihan harta perusahaan; e. kerugian selisih kurs; f. biaya penelitian & pengembangan di Indonesia; g. biaya beasiswa, magang, & pelatihan; h. piutang yang nyata-nyata tidak dapat ditagih; i. sumbangan penanggulangan bencana nasional; j. sumbangan litbang; k. sumbangan fasilitas pendidikan; l. sumbangan pembinaan olahraga; dan m. biaya pembangunan infrastruktur sosial."'
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 9 ayat (1) UU PPh (Non-Deductible Expense)',
+      text: '"Untuk menentukan besarnya Penghasilan Kena Pajak bagi Wajib Pajak dalam negeri dan bentuk usaha tetap tidak boleh dikurangkan: a. pembagian laba dengan nama dan dalam bentuk apapun seperti dividen; b. biaya yang dibebankan atau dikeluarkan untuk kepentingan pribadi pemegang saham, sekutu, atau anggota; c. pembentukan atau pemupukan dana cadangan, kecuali cadangan piutang tak tertagih bank/lembaga keuangan/asuransi; d. premi asuransi kesehatan, kecelakaan, jiwa, dwiguna, dan bea siswa yang dibayar oleh WP orang pribadi; e. penggantian atau imbalan sehubungan dengan pekerjaan atau jasa yang diberikan dalam bentuk natura/kenikmatan kecuali yang diatur khusus dalam PMK 66/2023; f. jumlah yang melebihi kewajaran yang dibayarkan kepada pihak yang mempunyai hubungan istimewa; g. harta yang dihibahkan, bantuan atau sumbangan, dan warisan; h. Pajak Penghasilan itu sendiri; i. gaji yang dibayarkan kepada anggota persekutuan, firma, atau CV yang modalnya tidak terbagi atas saham; j. sanksi administrasi berupa bunga, denda, dan kenaikan serta sanksi pidana perpajakan; dan k. pajak masukan yang tidak dapat dikreditkan karena faktur pajak cacat atau perolehan barang non-usaha."'
     },
     {
       kind: 'h2',

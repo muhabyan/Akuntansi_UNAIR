@@ -1,50 +1,77 @@
 import type { Reading } from '../../../types';
 import { CASE_AUDIT_ETHICS_INDEPENDENCE } from '../pbriPracticeCases';
 
-const SVG_ETHICS_THREATS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">5 ANCAMAN ETIKA &amp; INDEPENDENSI AUDITOR (KODE ETIK IAPI / IESBA)</text>
-  
-  <rect x="25" y="52" width="118" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="84" y="75" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">SELF-INTEREST</text>
-  <text x="84" y="94" fill="#94a3b8" font-size="9" text-anchor="middle">Kepentingan Pribadi:</text>
-  <text x="84" y="112" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Memiliki saham klien,</text>
-  <text x="84" y="128" fill="#cbd5e1" font-size="8.5" text-anchor="middle">fee kontinjensi, atau</text>
-  <text x="84" y="144" fill="#cbd5e1" font-size="8.5" text-anchor="middle">ketergantungan fee</text>
-  <text x="84" y="160" fill="#fca5a5" font-size="8.5" text-anchor="middle">&gt;15% dr klien.</text>
+const SVG_ETHICS_THREATS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb2)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 ANCAMAN KODE ETIK PROFESI AKUNTAN PUBLIK &amp; PENGAMANANNYA (IESBA / IAPI)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ETHICAL THREATS</text>
 
-  <rect x="153" y="52" width="118" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="212" y="75" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">SELF-REVIEW</text>
-  <text x="212" y="94" fill="#94a3b8" font-size="9" text-anchor="middle">Telaah Pribadi:</text>
-  <text x="212" y="112" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Mengaudit sistem</text>
-  <text x="212" y="128" fill="#cbd5e1" font-size="8.5" text-anchor="middle">atau pembukuan yg</text>
-  <text x="212" y="144" fill="#cbd5e1" font-size="8.5" text-anchor="middle">dibuat sendiri oleh</text>
-  <text x="212" y="160" fill="#fde68a" font-size="8.5" text-anchor="middle">tim/KAP yg sama.</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="160" height="150" rx="8" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <text class="text-accent-red" x="80" y="20" fill="#f87171" font-size="9" font-weight="800" text-anchor="middle">1. DIRI SENDIRI</text>
+    <text class="text-accent-red" x="80" y="34" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">(Self-Interest)</text>
+    <text class="svg-text" x="8" y="56" fill="#cbd5e1" font-size="7">• Memiliki saham klien</text>
+    <text class="svg-text" x="8" y="70" fill="#cbd5e1" font-size="7">• Ketergantungan fee dominan</text>
+    <text class="svg-text" x="8" y="84" fill="#cbd5e1" font-size="7">• Fee kontinjen hasil audit</text>
+    <text class="svg-text" x="8" y="98" fill="#cbd5e1" font-size="7">• Takut kehilangan klien</text>
+    <rect class="svg-badge-red" x="8" y="115" width="144" height="24" rx="4" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="80" y="131" fill="#f87171" font-size="7" font-weight="700" text-anchor="middle">Kepentingan Finansial</text>
 
-  <rect x="281" y="52" width="118" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="340" y="75" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">ADVOCACY</text>
-  <text x="340" y="94" fill="#94a3b8" font-size="9" text-anchor="middle">Advokasi:</text>
-  <text x="340" y="112" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Mempromosikan</text>
-  <text x="340" y="128" fill="#cbd5e1" font-size="8.5" text-anchor="middle">saham klien atau</text>
-  <text x="340" y="144" fill="#cbd5e1" font-size="8.5" text-anchor="middle">menjadi saksi ahli</text>
-  <text x="340" y="160" fill="#ddd6fe" font-size="8.5" text-anchor="middle">membela klien.</text>
+    <rect class="svg-card" x="168" y="0" width="160" height="150" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text class="text-accent-amber" x="248" y="20" fill="#fbbf24" font-size="9" font-weight="800" text-anchor="middle">2. TELAAH SENDIRI</text>
+    <text class="text-accent-amber" x="248" y="34" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">(Self-Review)</text>
+    <text class="svg-text" x="176" y="56" fill="#cbd5e1" font-size="7">• Mengaudit lapkeu buatan KAP</text>
+    <text class="svg-text" x="176" y="70" fill="#cbd5e1" font-size="7">• Desain implementasi TI klien</text>
+    <text class="svg-text" x="176" y="84" fill="#cbd5e1" font-size="7">• Mantan auditor jadi CFO</text>
+    <text class="svg-text" x="176" y="98" fill="#cbd5e1" font-size="7">• Jasa pembukuan akuntansi</text>
+    <rect class="svg-badge-amber" x="176" y="115" width="144" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="248" y="131" fill="#fbbf24" font-size="7" font-weight="700" text-anchor="middle">Bias Menguji Hasil Sendiri</text>
 
-  <rect x="409" y="52" width="118" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="468" y="75" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">FAMILIARITY</text>
-  <text x="468" y="94" fill="#94a3b8" font-size="9" text-anchor="middle">Kedekatan:</text>
-  <text x="468" y="112" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Keluarga kandung</text>
-  <text x="468" y="128" fill="#cbd5e1" font-size="8.5" text-anchor="middle">menjabat CFO atau</text>
-  <text x="468" y="144" fill="#cbd5e1" font-size="8.5" text-anchor="middle">perikatan audit</text>
-  <text x="468" y="160" fill="#bae6fd" font-size="8.5" text-anchor="middle">&gt;7 thn tanpa rotasi.</text>
+    <rect class="svg-card" x="336" y="0" width="160" height="150" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="416" y="20" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">3. ADVOKASI</text>
+    <text class="text-accent-blue" x="416" y="34" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">(Advocacy Threat)</text>
+    <text class="svg-text" x="344" y="56" fill="#cbd5e1" font-size="7">• Mempromosikan saham klien</text>
+    <text class="svg-text" x="344" y="70" fill="#cbd5e1" font-size="7">• Saksi ahli pembela klien</text>
+    <text class="svg-text" x="344" y="84" fill="#cbd5e1" font-size="7">  dalam sengketa pajak</text>
+    <text class="svg-text" x="344" y="98" fill="#cbd5e1" font-size="7">• Juru bicara negosiasi klien</text>
+    <rect class="svg-badge-blue" x="344" y="115" width="144" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="416" y="131" fill="#38bdf8" font-size="7" font-weight="700" text-anchor="middle">Objektivitas Terkompromi</text>
 
-  <rect x="537" y="52" width="118" height="145" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="1.5"/>
-  <text x="596" y="75" fill="#ec4899" font-size="10.5" font-weight="700" text-anchor="middle">INTIMIDATION</text>
-  <text x="596" y="94" fill="#94a3b8" font-size="9" text-anchor="middle">Intimidasi:</text>
-  <text x="596" y="112" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Diancam diganti,</text>
-  <text x="596" y="128" fill="#cbd5e1" font-size="8.5" text-anchor="middle">diancam dituntut,</text>
-  <text x="596" y="144" fill="#cbd5e1" font-size="8.5" text-anchor="middle">atau ditekan fee</text>
-  <text x="596" y="160" fill="#fbcfe8" font-size="8.5" text-anchor="middle">scr tidak wajar.</text>
+    <rect class="svg-card" x="504" y="0" width="160" height="150" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <text class="text-accent-green" x="584" y="20" fill="#34d399" font-size="9" font-weight="800" text-anchor="middle">4. KEDEKATAN</text>
+    <text class="text-accent-green" x="584" y="34" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">(Familiarity Threat)</text>
+    <text class="svg-text" x="512" y="56" fill="#cbd5e1" font-size="7">• Hubungan keluarga dekat</text>
+    <text class="svg-text" x="512" y="70" fill="#cbd5e1" font-size="7">• Partner audit &gt; 5 tahun</text>
+    <text class="svg-text" x="512" y="84" fill="#cbd5e1" font-size="7">• Menerima hadiah bernilai</text>
+    <text class="svg-text" x="512" y="98" fill="#cbd5e1" font-size="7">• Terlalu percaya manajemen</text>
+    <rect class="svg-badge-green" x="512" y="115" width="144" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="584" y="131" fill="#34d399" font-size="7" font-weight="700" text-anchor="middle">Sikap Skeptis Menurun</text>
+
+    <rect class="svg-card" x="672" y="0" width="160" height="150" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <text class="text-accent-purple" x="752" y="20" fill="#a78bfa" font-size="9" font-weight="800" text-anchor="middle">5. INTIMIDASI</text>
+    <text class="text-accent-purple" x="752" y="34" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">(Intimidation Threat)</text>
+    <text class="svg-text" x="680" y="56" fill="#cbd5e1" font-size="7">• Ancaman pemecatan KAP</text>
+    <text class="svg-text" x="680" y="70" fill="#cbd5e1" font-size="7">• Ancaman gugatan perdata</text>
+    <text class="svg-text" x="680" y="84" fill="#cbd5e1" font-size="7">• Tekanan menurunkan fee</text>
+    <text class="svg-text" x="680" y="98" fill="#cbd5e1" font-size="7">• Pembatasan gerak auditor</text>
+    <rect class="svg-badge-purple" x="680" y="115" width="144" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="752" y="131" fill="#a78bfa" font-size="7" font-weight="700" text-anchor="middle">Tekanan Psikologis</text>
+  </g>
+
+  <g transform="translate(35, 238)">
+    <rect class="svg-subcard" x="0" y="0" width="830" height="75" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="14" y="20" fill="#38bdf8" font-size="9" font-weight="800">TINDAKAN PENGAMANAN PROFESI (SAFEGUARDS):</text>
+    <text class="svg-text" x="14" y="38" fill="#cbd5e1" font-size="7.5">1. <tspan class="text-accent-green" fill="#34d399" font-weight="700">Rotasi Partner Audit:</tspan> Wajib rotasi maksimal 5-7 tahun untuk memutus ancaman kedekatan.</text>
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="7.5">2. <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Review Kendali Mutu (EQCR):</tspan> Partner penelaah independen memeriksa kertas kerja sebelum opini rilis.</text>
+    <text class="text-accent-red" x="14" y="66" fill="#f87171" font-size="7.5">3. <tspan class="text-accent-amber" fill="#fbbf24" font-weight="700">Menolak Perikatan:</tspan> Jika ancaman tidak dapat ditekan ke tingkat aman, auditor WAJIB mengundurkan diri.</text>
+  </g>
 </svg>`;
 
 export const TM2_READING: Reading = {
@@ -86,7 +113,7 @@ export const TM2_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Batas Konsentrasi Fee (Public Interest Entity)} \\le 15\\% \\text{ dari Total Pendapatan KAP Selama 2 Tahun Berturut-turut}
-\\text{Masa Perikatan Maksimum Partner Audit (Audit Partner Rotation)} = 7 \\text{ Tahun} \\rightarrow \\text{Cooling-off Period} = 5 \\text{ Tahun (IESBA)}`,
+\\text{Masa Perikatan Maksimum Partner Audit (Audit Partner Rotation)} = 7 \\text{ Tahun} \\r→ \\text{Cooling-off Period} = 5 \\text{ Tahun (IESBA)}`,
       note: 'Jika fee dari satu klien publik melampaui 15%, KAP wajib menginformasikan kepada Komite Audit klien dan melakukan evaluasi pengamanan independensi pra-penerbitan.'
     },
     {

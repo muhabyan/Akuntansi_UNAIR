@@ -1,50 +1,69 @@
 import type { Reading } from '../../../types';
 import { CASE_INDIVIDUAL_BEHAVIOR_EQ } from '../manajemenPracticeCases';
 
-const SVG_BIG_FIVE_OCEAN = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL 5 BESAR KEPRIBADIAN (THE BIG FIVE PERSONALITY - OCEAN)</text>
-  
-  <rect x="25" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="82" y="78" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">OPENNESS</text>
-  <text x="82" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Keterbukaan:</text>
-  <text x="82" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Imajinasi luas</text>
-  <text x="82" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Rasa ingin tahu</text>
-  <text x="82" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Suka hal baru</text>
-  <text x="82" y="175" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Inovator Kreatif</text>
+const SVG_BIG_FIVE_OCEAN = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="oGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="cGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="eGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="aGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="nGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad11)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL 5 BESAR KEPRIBADIAN (THE BIG FIVE PERSONALITY - OCEAN)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">OCEAN MODEL</text>
 
-  <rect x="155" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">CONSCIENTIOUS</text>
-  <text x="212" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Kehati-hatian:</text>
-  <text x="212" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Teratur &amp; disiplin</text>
-  <text x="212" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bertanggung jawab</text>
-  <text x="212" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Fokus target</text>
-  <text x="212" y="175" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle">Prediktor Kerja #1</text>
+  <g transform="translate(35, 70)">
+    <text class="text-accent-blue" x="0" y="14" fill="#38bdf8" font-size="10.5" font-weight="800">O - OPENNESS TO EXPERIENCE</text>
+    <text class="svg-muted" x="830" y="14" fill="#94a3b8" font-size="8" text-anchor="end">Inovator &amp; R&amp;D Kreatif</text>
+    <rect class="svg-subcard" x="0" y="22" width="830" height="24" rx="6" fill="#1e293b"/>
+    <rect x="0" y="22" width="550" height="24" rx="6" fill="url(#oGrad)" fill-opacity="0.3"/>
+    <text class="svg-text" x="15" y="38" fill="#cbd5e1" font-size="8">Rendah: Praktis, konvensional, suka rutinitas</text>
+    <text class="text-accent-blue" x="815" y="38" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="end">Tinggi: Imajinatif, rasa ingin tahu luas, suka hal baru</text>
+  </g>
 
-  <rect x="285" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="342" y="78" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">EXTRAVERSION</text>
-  <text x="342" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Ekstraversi:</text>
-  <text x="342" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Senang sosialisasi</text>
-  <text x="342" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Enerjik &amp; asertif</text>
-  <text x="342" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Percaya diri</text>
-  <text x="342" y="175" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Sales &amp; Leader</text>
+  <g transform="translate(35, 122)">
+    <text class="text-accent-green" x="0" y="14" fill="#34d399" font-size="10.5" font-weight="800">C - CONSCIENTIOUSNESS (KEHATI-HATIAN)</text>
+    <text class="text-accent-green" x="830" y="14" fill="#34d399" font-size="8" font-weight="700" text-anchor="end">★ Prediktor Kinerja Kerja #1</text>
+    <rect class="svg-subcard" x="0" y="22" width="830" height="24" rx="6" fill="#1e293b"/>
+    <rect x="0" y="22" width="680" height="24" rx="6" fill="url(#cGrad)" fill-opacity="0.3"/>
+    <text class="svg-text" x="15" y="38" fill="#cbd5e1" font-size="8">Rendah: Spontan, ceroboh, mudah terdistraksi</text>
+    <text class="text-accent-green" x="815" y="38" fill="#34d399" font-size="8" font-weight="700" text-anchor="end">Tinggi: Teratur, disiplin, tekun, bertanggung jawab</text>
+  </g>
 
-  <rect x="415" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="472" y="78" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">AGREEABLENESS</text>
-  <text x="472" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Keramahan:</text>
-  <text x="472" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Kerja sama tim</text>
-  <text x="472" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Empati &amp; percaya</text>
-  <text x="472" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Menghindari friksi</text>
-  <text x="472" y="175" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Harmoni Tim</text>
+  <g transform="translate(35, 174)">
+    <text class="text-accent-amber" x="0" y="14" fill="#fbbf24" font-size="10.5" font-weight="800">E - EXTRAVERSION (EKSTRAVERSI)</text>
+    <text class="svg-muted" x="830" y="14" fill="#94a3b8" font-size="8" text-anchor="end">Sales, Negosiator, &amp; Pemimpin Publik</text>
+    <rect class="svg-subcard" x="0" y="22" width="830" height="24" rx="6" fill="#1e293b"/>
+    <rect x="0" y="22" width="480" height="24" rx="6" fill="url(#eGrad)" fill-opacity="0.3"/>
+    <text class="svg-text" x="15" y="38" fill="#cbd5e1" font-size="8">Rendah (Introvert): Pendiam, mandiri, reflektif</text>
+    <text class="text-accent-amber" x="815" y="38" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="end">Tinggi (Ekstrovert): Asertif, senang bergaul, enerjik</text>
+  </g>
 
-  <rect x="545" y="55" width="110" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="600" y="78" fill="#f43f5e" font-size="9" font-weight="700" text-anchor="middle">NEUROTICISM</text>
-  <text x="600" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Stabilitas Emosi:</text>
-  <text x="600" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Cemas &amp; tegang</text>
-  <text x="600" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mudah murung</text>
-  <text x="600" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Rentan stres</text>
-  <text x="600" y="175" fill="#f43f5e" font-size="8.5" font-weight="700" text-anchor="middle">Stres Kerja</text>
+  <g transform="translate(35, 226)">
+    <text class="text-accent-purple" x="0" y="14" fill="#a78bfa" font-size="10.5" font-weight="800">A - AGREEABLENESS (KERAMAHAN)</text>
+    <text class="svg-muted" x="830" y="14" fill="#94a3b8" font-size="8" text-anchor="end">Harmoni Kerja Tim &amp; Layanan Nasabah</text>
+    <rect class="svg-subcard" x="0" y="22" width="830" height="24" rx="6" fill="#1e293b"/>
+    <rect x="0" y="22" width="600" height="24" rx="6" fill="url(#aGrad)" fill-opacity="0.3"/>
+    <text class="svg-text" x="15" y="38" fill="#cbd5e1" font-size="8">Rendah: Dingin, skeptis, kompetitif keras</text>
+    <text class="text-accent-purple" x="815" y="38" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="end">Tinggi: Empatik, kooperatif, dapat dipercaya, hangat</text>
+  </g>
+
+  <g transform="translate(35, 278)">
+    <text class="text-accent-red" x="0" y="14" fill="#f87171" font-size="10.5" font-weight="800">N - NEUROTICISM / EMOTIONAL STABILITY</text>
+    <text class="svg-muted" x="830" y="14" fill="#94a3b8" font-size="8" text-anchor="end">Stabilitas Emosi di Bawah Tekanan</text>
+    <rect class="svg-subcard" x="0" y="22" width="830" height="24" rx="6" fill="#1e293b"/>
+    <rect x="0" y="22" width="350" height="24" rx="6" fill="url(#nGrad)" fill-opacity="0.3"/>
+    <text class="text-accent-green" x="15" y="38" fill="#34d399" font-size="8" font-weight="700">Rendah (Stabil): Tenang, percaya diri, tahan banting</text>
+    <text class="text-accent-red" x="815" y="38" fill="#f87171" font-size="8" font-weight="700" text-anchor="end">Tinggi: Cemas, mudah tegang, murung, rentan stres</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="332" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Dimensi Conscientiousness terbukti secara empiris sebagai prediktor performa kerja paling konsisten di semua jenis industri.</text>
 </svg>`;
 
 export const TM11_READING: Reading = {

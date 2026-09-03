@@ -1,50 +1,65 @@
 import type { Reading } from '../../../types';
 import { CASE_COSO_INTERNAL_CONTROL } from '../pbriPracticeCases';
 
-const SVG_COSO_CUBE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">5 KOMPONEN PENGENDALIAN INTERNAL COSO (2013 FRAMEWORK)</text>
-  
-  <rect x="25" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="84" y="78" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">1. CONTROL ENV</text>
-  <text x="84" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Lingkungan Pengendalian:</text>
-  <text x="84" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Integritas &amp; Etika</text>
-  <text x="84" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tone at the Top</text>
-  <text x="84" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengawasan BoD</text>
-  <text x="84" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Fondasi Pengendalian</text>
+const SVG_COSO_CUBE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="c5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb11)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 KOMPONEN PENGENDALIAN INTERNAL COSO FRAMEWORK &amp; 17 PRINSIP (SA 315)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">COSO FRAMEWORK</text>
 
-  <rect x="153" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#f87171" font-size="10" font-weight="700" text-anchor="middle">2. RISK ASSESS</text>
-  <text x="212" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Penilaian Risiko:</text>
-  <text x="212" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Identifikasi risiko</text>
-  <text x="212" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Evaluasi potensi fraud</text>
-  <text x="212" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Analisis perubahan</text>
-  <text x="212" y="175" fill="#f87171" font-size="9" font-weight="700" text-anchor="middle">Mitigasi Ancaman</text>
+  <!-- 5 Horizontal Stepped Layers Cascade (Bottom to Top) -->
+  <!-- 5. Monitoring (Top) -->
+  <g transform="translate(45, 68)">
+    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c5)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="14" y="13" fill="#34d399" font-size="8.5" font-weight="800">5. PEMANTAUAN (MONITORING ACTIVITIES) - 2 Prinsip</text>
+    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Evaluasi berkelanjutan oleh Internal Audit &amp; Komite Audit; pelaporan defisiensi kepada Dewan Direksi &amp; Komisaris.</text>
+  </g>
 
-  <rect x="281" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">3. CONTROL ACT</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Aktivitas Pengendalian:</text>
-  <text x="340" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Segregasi CARP</text>
-  <text x="340" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Otorisasi transaksi</text>
-  <text x="340" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengamanan fisik</text>
-  <text x="340" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Kebijakan &amp; Prosedur</text>
+  <!-- 4. Information & Communication -->
+  <g transform="translate(45, 116)">
+    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c4)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="14" y="13" fill="#fbbf24" font-size="8.5" font-weight="800">4. INFORMASI DAN KOMUNIKASI (INFORMATION &amp; COMMUNICATION) - 3 Prinsip</text>
+    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Sistem informasi akuntansi yang andal, saluran pelaporan pelanggaran (Whistleblowing System), komunikasi eksternal regulator.</text>
+  </g>
 
-  <rect x="409" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="468" y="78" fill="#a78bfa" font-size="10" font-weight="700" text-anchor="middle">4. INFO &amp; COMM</text>
-  <text x="468" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Informasi &amp; Komunikasi:</text>
-  <text x="468" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kualitas data ERP</text>
-  <text x="468" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Whistleblowing line</text>
-  <text x="468" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Komunikasi eksternal</text>
-  <text x="468" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Transmisi Data Akurat</text>
+  <!-- 3. Control Activities -->
+  <g transform="translate(45, 164)">
+    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c3)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="14" y="13" fill="#38bdf8" font-size="8.5" font-weight="800">3. AKTIVITAS PENGENDALIAN (CONTROL ACTIVITIES) - 3 Prinsip</text>
+    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Pemisahan tugas (Segregation of Duties), otorisasi bertingkat, verifikasi berkas, rekonsiliasi bank, &amp; kontrol fisik aset.</text>
+  </g>
 
-  <rect x="537" y="55" width="118" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="596" y="78" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">5. MONITORING</text>
-  <text x="596" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Pemantauan:</text>
-  <text x="596" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Audit Internal</text>
-  <text x="596" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Evaluasi berkala</text>
-  <text x="596" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tindak lanjut audit</text>
-  <text x="596" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Evaluasi Berkelanjutan</text>
+  <!-- 2. Risk Assessment -->
+  <g transform="translate(45, 212)">
+    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c2)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="14" y="13" fill="#f87171" font-size="8.5" font-weight="800">2. PENILAIAN RISIKO (RISK ASSESSMENT) - 4 Prinsip</text>
+    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Identifikasi risiko bisnis makro, penilaian signifikansi risiko kecurangan (Fraud Risk Assessment), &amp; respon risiko perubahan.</text>
+  </g>
+
+  <!-- 1. Control Environment (Foundation) -->
+  <g transform="translate(45, 260)">
+    <rect class="svg-card" x="0" y="0" width="810" height="48" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
+    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c1)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="14" y="13" fill="#a78bfa" font-size="8.5" font-weight="800">1. LINGKUNGAN PENGENDALIAN (CONTROL ENVIRONMENT) - FONDASI 5 Prinsip</text>
+    <text class="svg-text" x="14" y="32" fill="#cbd5e1" font-size="7.5">Integritas &amp; etika, "Tone at the Top" dari direksi, independensi Dewan Komisaris, struktur organisasi hierarki, komitmen kompetensi SDM.</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Lingkungan Pengendalian adalah fondasi penentu: Jika "Tone at the Top" rusak, 4 komponen di atasnya tidak akan efektif.</text>
 </svg>`;
 
 export const TM11_READING: Reading = {

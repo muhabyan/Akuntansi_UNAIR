@@ -1,30 +1,75 @@
 import type { Reading } from '../../../types';
 import { CASE_CORPORATE_DIVERSIFICATION_MA } from '../manstratPracticeCases';
 
-const SVG_GLOBAL_STRATEGIES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">4 STRATEGI INTEGRASI GLOBAL (BARTLETT &amp; GHOSHAL / DESS ET AL.)</text>
-  
-  <rect x="35" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="76" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">GLOBAL STRATEGY</text>
-  <text x="177" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: TINGGI | Responsivitas Lokal: RENDAH</text>
-  <text x="177" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Produk standar dunia, sentralisasi pabrik (Boeing, Intel)</text>
+const SVG_GLOBAL_STRATEGIES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns5)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">4 STRATEGI EKSPANSI INTERNASIONAL (BARTLETT &amp; GHOSHAL)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">GLOBAL MATRIX</text>
 
-  <rect x="355" y="55" width="285" height="68" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="497" y="76" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">TRANSNATIONAL STRATEGY</text>
-  <text x="497" y="93" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: TINGGI | Responsivitas Lokal: TINGGI</text>
-  <text x="497" y="108" fill="#94a3b8" font-size="8" text-anchor="middle">Efisiensi global + adaptasi lokal lincah (Unilever, Toyota)</text>
+  <!-- Y-Axis -->
+  <text class="text-accent-blue" x="55" y="120" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">INTEGRASI</text>
+  <text class="text-accent-blue" x="55" y="135" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">GLOBAL TINGGI</text>
+  <text class="svg-muted" x="55" y="275" fill="#94a3b8" font-size="9" font-weight="800" text-anchor="middle">INTEGRASI</text>
+  <text class="svg-muted" x="55" y="290" fill="#94a3b8" font-size="9" font-weight="800" text-anchor="middle">GLOBAL RENDAH</text>
 
-  <rect x="35" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="177" y="153" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">INTERNATIONAL STRATEGY</text>
-  <text x="177" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: RENDAH | Responsivitas Lokal: RENDAH</text>
-  <text x="177" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Eksploitasi kompetensi inti ke luar negeri (Harley-Davidson)</text>
+  <!-- X-Axis -->
+  <text class="svg-text" x="290" y="78" fill="#cbd5e1" font-size="9.5" font-weight="800" text-anchor="middle">RESPON LOKAL RENDAH</text>
+  <text class="text-accent-green" x="690" y="78" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">RESPON LOKAL TINGGI (ADAPTASI BUDAYA)</text>
 
-  <rect x="355" y="132" width="285" height="68" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="497" y="153" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">MULTIDOMESTIC STRATEGY</text>
-  <text x="497" y="170" fill="#cbd5e1" font-size="8" text-anchor="middle">Tekanan Biaya: RENDAH | Responsivitas Lokal: TINGGI</text>
-  <text x="497" y="185" fill="#94a3b8" font-size="8" text-anchor="middle">Desentralisasi cabang, kustomisasi rasa/budaya (Nestle, Kraft)</text>
+  <g transform="translate(110, 92)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#g1)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">1. GLOBAL STANDARDIZATION</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Produk standar seragam sedunia tanpa kustomisasi lokal</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Pabrikasi terpusat di negara biaya terendah (Skala raksasa)</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Chip Semikonduktor Intel, Boeing, Komponen Mesin</text>
+    <rect x="250" y="88" width="100" height="18" rx="9" fill="#0284c7" fill-opacity="0.3"/>
+    <text class="text-accent-blue" x="300" y="101" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Efisiensi Global</text>
+  </g>
+
+  <g transform="translate(495, 92)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#g2)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">2. TRANSNATIONAL STRATEGY</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Paling ideal namun kompleks: Efisiensi global + Adaptasi lokal</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Berbagi inovasi dua arah di jaringan anak perusahaan global</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Unilever (Glico/Walls), Toyota Motor Corporation</text>
+    <rect x="250" y="88" width="100" height="18" rx="9" fill="#059669" fill-opacity="0.3"/>
+    <text class="text-accent-green" x="300" y="101" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Sinergi Dua Arah</text>
+  </g>
+
+  <g transform="translate(110, 218)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#g4)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="11" font-weight="800">3. INTERNATIONAL / EXPORT</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Menjual produk domestik ke luar negeri tanpa modifikasi</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Mengandalkan keunggulan kompetitif inti di kantor pusat</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Harley-Davidson, Apple (Diekspor langsung)</text>
+    <rect x="250" y="88" width="100" height="18" rx="9" fill="#7c3aed" fill-opacity="0.3"/>
+    <text class="text-accent-purple" x="300" y="101" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Transfer Inti</text>
+  </g>
+
+  <g transform="translate(495, 218)">
+    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#g3)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="16" y="20" fill="#fbbf24" font-size="11" font-weight="800">4. MULTIDOMESTIC / LOCALIZATION</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Kustomisasi penuh sesuai selera, lidah, &amp; regulasi lokal</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Otonomi penuh anak perusahaan di tiap negara tujuan</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Nestle (Rasa lokal), McDonald's (Menu nasi/halal)</text>
+    <rect x="250" y="88" width="100" height="18" rx="9" fill="#d97706" fill-opacity="0.3"/>
+    <text class="text-accent-amber" x="300" y="101" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Kustomisasi Lokal</text>
+  </g>
 </svg>`;
 
 export const TM5_READING: Reading = {

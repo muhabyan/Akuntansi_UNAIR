@@ -1,29 +1,64 @@
 import type { Reading } from '../../../types';
 import { CASE_SKPD_PPKD_CONSOLIDATION } from '../aspPracticeCases';
 
-const SVG_SAPD_STRUCTURE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR HUBUNGAN KANTOR PUSAT - CABANG (HOBO) SISTEM AKUNTANSI PEMDA (SAPD)</text>
-  
-  <rect x="35" y="55" width="275" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="172" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">PPKD (KANTOR PUSAT / HO)</text>
-  <text x="172" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Pejabat Pengelola Keuangan Daerah (BUD):</text>
-  <text x="172" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mengelola Rekening Kas Umum Daerah (Kasda)</text>
-  <text x="172" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mencatat Pendapatan Dana Transfer &amp; Pembiayaan</text>
-  <text x="172" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Akun Timbal Balik: <tspan fill="#38bdf8" font-weight="700">RK-SKPD (Aset Lancar)</tspan></text>
-  <text x="172" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Entitas Pelaporan Pemda</text>
+const SVG_SAPD_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="ppkdGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="skpdGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp9)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRUKTUR HUBUNGAN HOBO SISTEM AKUNTANSI PEMERINTAH DAERAH: PPKD (BUD) VS SKPD</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SAPD HOBO</text>
 
-  <line x1="315" y1="128" x2="365" y2="128" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/>
-  <text x="340" y="120" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">ELIMINASI</text>
+  <!-- Left: PPKD / BUD (Home Office) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="365" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="30" rx="12" fill="url(#ppkdGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">1. PPKD (BENDAHARA UMUM DAERAH - BUD)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Peran:</tspan> Home Office (Kantor Pusat Entitas Pelaporan Pemda)</text>
+    <text class="svg-text" x="14" y="70" fill="#cbd5e1" font-size="8">• Mengelola Rekening Kas Umum Daerah (RKUD)</text>
+    <text class="svg-text" x="14" y="88" fill="#cbd5e1" font-size="8">• Mencatat Pendapatan PAD Tingkat Pemda, DAU, DAK, DBH</text>
+    <text class="svg-text" x="14" y="106" fill="#cbd5e1" font-size="8">• Mencatat Belanja Bagi Hasil, Bunga Utang, Belanja BTT, &amp; Pembiayaan</text>
+    <text class="svg-text" x="14" y="124" fill="#cbd5e1" font-size="8">• Menerbitkan SP2D transfer uang persediaan ke Bendahara SKPD</text>
+    
+    <rect class="svg-badge-blue" x="14" y="175" width="337" height="30" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="182" y="194" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Mencatat Akun Resiprokal: <tspan fill="#f8fafc">RK-SKPD (Debet)</tspan></text>
+  </g>
 
-  <rect x="370" y="55" width="275" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="507" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">SKPD (KANTOR CABANG / BRANCH)</text>
-  <text x="507" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Dinas Daerah, Badan, Satpol PP, RSUD:</text>
-  <text x="507" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Melaksanakan Belanja Operasi &amp; Modal</text>
-  <text x="507" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Memungut Retribusi &amp; Pajak Pelayanan</text>
-  <text x="507" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Akun Timbal Balik: <tspan fill="#4ade80" font-weight="700">RK-PPKD (Ekuitas Dana)</tspan></text>
-  <text x="507" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Entitas Akuntansi Dinas</text>
+  <!-- Center Bidirectional Connectors -->
+  <g transform="translate(405, 140)">
+    <rect class="svg-subcard" x="0" y="0" width="90" height="42" rx="6" fill="#1e293b" stroke="#fbbf24"/>
+    <text class="text-accent-amber" x="45" y="18" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">REKENING</text>
+    <text class="text-accent-amber" x="45" y="32" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">KORAN (RK)</text>
+    <!-- Arrow Left -->
+    <polygon points="-8,21 -2,16 -2,26" fill="#38bdf8"/>
+    <!-- Arrow Right -->
+    <polygon points="98,21 92,16 92,26" fill="#34d399"/>
+  </g>
+
+  <!-- Right: SKPD (Branch Office) -->
+  <g transform="translate(500, 75)">
+    <rect class="svg-card" x="0" y="0" width="365" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="365" height="30" rx="12" fill="url(#skpdGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="10.5" font-weight="800">2. SKPD (SATUAN KERJA PERANGKAT DAERAH)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Peran:</tspan> Branch Office (Kantor Cabang / Entitas Akuntansi)</text>
+    <text class="svg-text" x="14" y="70" fill="#cbd5e1" font-size="8">• Contoh: Dinas Pendidikan, Dinas Kesehatan, Satpol PP, Dinas PU</text>
+    <text class="svg-text" x="14" y="88" fill="#cbd5e1" font-size="8">• Mencatat Retribusi Daerah &amp; Belanja Operasional SKPD (Gaji, ATK, Perjadin)</text>
+    <text class="svg-text" x="14" y="106" fill="#cbd5e1" font-size="8">• Menerima dana via mekanisme SP2D-UP/GU/TU atau SP2D-LS Gaji/Barang</text>
+    <text class="svg-text" x="14" y="124" fill="#cbd5e1" font-size="8">• Mengirim laporan realisasi anggaran SKPD untuk dikonsolidasikan PPKD</text>
+    
+    <rect class="svg-badge-green" x="14" y="175" width="337" height="30" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="182" y="194" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Mencatat Akun Resiprokal: <tspan fill="#f8fafc">RK-PPKD (Kredit)</tspan></text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Pada akhir tahun, akun resiprokal RK-SKPD dan RK-PPKD WAJIB dieliminasi dalam Jurnal Eliminasi Konsolidasi Lapkeu Pemda.</text>
 </svg>`;
 
 export const TM9_READING: Reading = {

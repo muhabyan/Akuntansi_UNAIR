@@ -1,34 +1,79 @@
 import type { Reading } from '../../../types';
 import { CASE_GOVERNANCE_AGENCY_CONTROL } from '../manstratPracticeCases';
 
-const SVG_STRATEGIC_CONTROL = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SISTEM PENGENDALIAN STRATEGIK &amp; TATA KELOLA KORPORASI (DESS ET AL.)</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">INFORMATIONAL CONTROL</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">"Doing the right things":</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pemantauan lingkungan luar</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Evaluasi premis strategis</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Apakah asumsi masih valid?</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Kesesuaian Strategi</text>
+const SVG_STRATEGIC_CONTROL = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="infoGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="behGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns6)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARSITEKTUR PENGENDALIAN STRATEGIK &amp; TATA KELOLA KORPORASI (DESS)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">STRATEGIC CONTROL</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">BEHAVIORAL CONTROL</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">"Doing things right":</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Budaya organisasi bersama</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Sistem reward berbasis kinerja</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Batasan aturan kepatuhan (SOP)</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Eksekusi Perilaku</text>
+  <!-- Left: Dual-Loop Control Structure (Width 400px) -->
+  <g transform="translate(35, 75)">
+    <!-- 1. Informational Control -->
+    <rect class="svg-card" x="0" y="0" width="395" height="115" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="26" rx="10" fill="url(#infoGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="18" fill="#38bdf8" font-size="10" font-weight="800">1. INFORMATIONAL CONTROL ("DOING THE RIGHT THINGS")</text>
+    <text class="svg-text" x="14" y="44" fill="#cbd5e1" font-size="8">• Memindai lingkungan eksternal &amp; menguji asumsi strategis</text>
+    <text class="svg-text" x="14" y="60" fill="#cbd5e1" font-size="8">• Sistem peringatan dini (Early Warning System) disrupsi pasar</text>
+    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="8">• Umpan balik real-time: "Apakah strategi kita masih relevan?"</text>
+    <rect class="svg-badge-blue" x="14" y="88" width="367" height="18" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="100" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Kemampuan Adaptasi Terhadap Perubahan Eksternal</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">CORPORATE GOVERNANCE</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Mengatasi Agency Problem):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dewan Komisaris Independen</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Komite Audit &amp; Remunerasi</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Ancaman Hostile Takeover</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Penyelarasan Kepentingan</text>
+    <!-- 2. Behavioral Control -->
+    <rect class="svg-card" x="0" y="130" width="395" height="120" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="130" width="395" height="26" rx="10" fill="url(#behGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="14" y="148" fill="#a78bfa" font-size="10" font-weight="800">2. BEHAVIORAL CONTROL ("DOING THINGS RIGHT")</text>
+    <text class="svg-text" x="14" y="174" fill="#cbd5e1" font-size="8">• Mempengaruhi tindakan staf agar selaras dengan sasaran korporasi</text>
+    <text class="svg-text" x="14" y="190" fill="#cbd5e1" font-size="8">• Menyelaraskan kepentingan manajemen &amp; pemegang saham (Agency)</text>
+    <text class="svg-text" x="14" y="206" fill="#cbd5e1" font-size="8">• Menggunakan 3 pilar: Budaya, Sistem Imbalan, &amp; Batasan Regulasi</text>
+    <rect class="svg-badge-purple" x="14" y="222" width="367" height="18" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="197" y="234" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Eksekusi Disiplin &amp; Integritas Perilaku Internal</text>
+  </g>
+
+  <!-- Right: The Behavioral Control Triangle -->
+  <g transform="translate(465, 75)">
+    <rect class="svg-card" x="0" y="0" width="400" height="245" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+    <text class="text-accent-green" x="200" y="24" fill="#34d399" font-size="11" font-weight="800" text-anchor="middle">SEGITIGA PENGENDALIAN PERILAKU (BEHAVIORAL TRIANGLE)</text>
+
+    <!-- Pillar 1: Culture (Top) -->
+    <g transform="translate(100, 40)">
+      <rect class="svg-subcard" x="0" y="0" width="200" height="50" rx="8" fill="#1e293b" stroke="#34d399"/>
+      <text class="text-accent-green" x="100" y="18" fill="#34d399" font-size="9" font-weight="800" text-anchor="middle">1. BUDAYA (CULTURE)</text>
+      <text class="svg-text" x="100" y="32" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Norma tak tertulis, nilai bersama,</text>
+      <text class="svg-text" x="100" y="44" fill="#cbd5e1" font-size="7.5" text-anchor="middle">identitas &amp; rasa kepemilikan tim</text>
+    </g>
+
+    <!-- Pillar 2: Rewards (Bottom Left) -->
+    <g transform="translate(20, 150)">
+      <rect class="svg-subcard" x="0" y="0" width="165" height="55" rx="8" fill="#1e293b" stroke="#fbbf24"/>
+      <text class="text-accent-amber" x="82" y="18" fill="#fbbf24" font-size="9" font-weight="800" text-anchor="middle">2. IMBALAN (REWARDS)</text>
+      <text class="svg-text" x="82" y="32" fill="#cbd5e1" font-size="7" text-anchor="middle">Bonus KPI, kenaikan gaji,</text>
+      <text class="svg-text" x="82" y="44" fill="#cbd5e1" font-size="7" text-anchor="middle">insentif saham (ESOP)</text>
+    </g>
+
+    <!-- Pillar 3: Boundaries (Bottom Right) -->
+    <g transform="translate(215, 150)">
+      <rect class="svg-subcard" x="0" y="0" width="165" height="55" rx="8" fill="#1e293b" stroke="#f87171"/>
+      <text class="text-accent-red" x="82" y="18" fill="#f87171" font-size="9" font-weight="800" text-anchor="middle">3. BATASAN (BOUNDARIES)</text>
+      <text class="svg-text" x="82" y="32" fill="#cbd5e1" font-size="7" text-anchor="middle">Kode etik, pagu anggaran,</text>
+      <text class="svg-text" x="82" y="44" fill="#cbd5e1" font-size="7" text-anchor="middle">SOP &amp; aturan kepatuhan hukum</text>
+    </g>
+
+    <!-- Connective Triangle Lines -->
+    <line x1="160" y1="90" x2="105" y2="150" stroke="#34d399" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <line x1="240" y1="90" x2="295" y2="150" stroke="#34d399" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <line x1="185" y1="177" x2="215" y2="177" stroke="#34d399" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+    <text class="svg-muted" x="200" y="228" fill="#94a3b8" font-size="7.5" font-style="italic" text-anchor="middle">Kombinasi harmonis ketiganya meminimalkan perilaku oportunistik manajemen.</text>
+  </g>
 </svg>`;
 
 export const TM6_READING: Reading = {

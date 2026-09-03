@@ -1,34 +1,69 @@
 import type { Reading } from '../../../types';
 import { CASE_POLITICAL_PARTY_NGO_ACCOUNTING } from '../aspPracticeCases';
 
-const SVG_SPECIAL_NONPROFIT = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">AKUNTABILITAS ORGANISASI NIRLABA KHUSUS: YAYASAN, LSM, &amp; PARTAI POLITIK</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">YAYASAN PENDIDIKAN</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(UU No. 16/2001 &amp; 28/2004):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dana SPP, Gedung, &amp; BOS</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Larangan pembagian dividen</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Wajib audit KAP jika aset > 20 M</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Nirlaba Pendidikan</text>
+const SVG_SPECIAL_NONPROFIT = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="np1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="np2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="np3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp12)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">AKUNTANSI ENTITAS NIRLABA KHUSUS: YAYASAN PENDIDIKAN, RUMAH SAKIT, &amp; LEMBAGA SOSIAL / ZAKAT</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">NONPROFIT SPECIAL</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">LEMBAGA SWADAYA (LSM)</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Organisasi Advokasi / Amal):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Hibah Donor Domestik/Asing</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kepatuhan Project Grant Budget</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Time &amp; Purpose Restrictions</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Akuntabilitas Donor</text>
+  <!-- 3 Sector Pillars Grid -->
+  <!-- 1. Yayasan Pendidikan / Universitas -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#np1)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">1. YAYASAN PENDIDIKAN (PTS)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="55" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Standar: ISAK 35 &amp; Standar Dikti</text>
+    
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="7.5">• Sumber Dana: Uang Kuliah Tunggal (UKT), sumbangan gedung, dana BOS, hibah riset</text>
+    <text class="svg-text" x="14" y="104" fill="#cbd5e1" font-size="7.5">• Pengelolaan Endowment Fund (Dana Abadi Alumni untuk beasiswa)</text>
+    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="7.5">• Beban: Gaji dosen, operasional laboratorium, akreditasi internasional</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">PARTAI POLITIK</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(UU No. 2/2011 &amp; KPU):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bantuan Keuangan APBN/APBD</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 60% Pendidikan Politik Kader</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Wajib diaudit BPK setiap tahun</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Dana Politik Terbuka</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Pendidikan Tinggi Non-Profit</text>
+  </g>
+
+  <!-- 2. Rumah Sakit Non-Profit -->
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#np2)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">2. RUMAH SAKIT NONLABA</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="55" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Standar: ISAK 35 &amp; Pedoman Kemenkes</text>
+    
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="7.5">• Pendapatan Layanan Medis: Klaim BPJS Kesehatan, pasien umum, subsidi obat</text>
+    <text class="svg-text" x="14" y="104" fill="#cbd5e1" font-size="7.5">• Akuntansi Unit Cost: Biaya tindakan medis per INA-CBGs</text>
+    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="7.5">• Dana Charity / Baksos pengobatan gratis bagi pasien dhuafa</text>
+
+    <rect class="svg-badge-green" x="14" y="185" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Layanan Kesehatan Publik</text>
+  </g>
+
+  <!-- 3. Lembaga Zakat & Wakaf -->
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#np3)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">3. LEMBAGA ZAKAT &amp; WAKAF</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="132" y="55" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Standar: PSAK 109 (ZIS) &amp; PSAK 112 (Wakaf)</text>
+    
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="7.5">• Pemisahan Dana: Dana Zakat (8 Asnaf), Dana Infak/Sedekah, &amp; Dana Amil</text>
+    <text class="svg-text" x="14" y="104" fill="#cbd5e1" font-size="7.5">• Larangan mencampur dana zakat untuk biaya operasional di luar hak amil 1/8</text>
+    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="7.5">• Akuntansi Wakaf Uang Produktif: Menjaga keutuhan pokok wakaf</text>
+
+    <rect class="svg-badge-purple" x="14" y="185" width="237" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="132" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Filantropi &amp; Sosial Keagamaan</text>
+  </g>
 </svg>`;
 
 export const TM12_READING: Reading = {

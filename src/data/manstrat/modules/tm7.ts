@@ -1,26 +1,58 @@
 import type { Reading } from '../../../types';
 import { CASE_AMBIDEXTROUS_ORGANIZATIONAL_DESIGN } from '../manstratPracticeCases';
 
-const SVG_AMBIDEXTROUS_DESIGN = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">DESAIN ORGANISASI AMBIDEXTROUS: EKSPLOITASI VS EKSPLORASI (DESS ET AL.)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">BISNIS INTI EKSPLOITASI</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Cash Cows / Efisiensi Operasional):</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Struktur mekanistik kaku &amp; disiplin</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Inovasi bertahap (Incremental)</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kontrol biaya &amp; marjin laba</text>
-  <text x="177" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Sumber Arus Kas Hari Ini</text>
+const SVG_AMBIDEXTROUS_DESIGN = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="topExecGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="coreGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="ventGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns7)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">DESAIN ORGANISASI AMBIDEXTROUS: EKSPLOITASI VS EKSPLORASI (O'REILLY &amp; TUSHMAN)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">AMBIDEXTROUS</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">UNIT INOVASI EKSPLORASI</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Venture Baru / Riset Disruptif):</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Struktur organik lincah (Agile Squads)</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Eksperimen radikal &amp; berani gagal</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Otonomi tinggi dari birokrasi induk</text>
-  <text x="497" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Pertumbuhan Masa Depan</text>
+  <!-- Top: Executive Management Integrator -->
+  <g transform="translate(250, 68)">
+    <rect class="svg-card" x="0" y="0" width="400" height="48" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="0" y="0" width="400" height="20" rx="10" fill="url(#topExecGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="200" y="16" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">KEPEMIMPINAN EKSEKUTIF SENIOR (INTEGRATOR KORPORASI)</text>
+    <text class="svg-text" x="200" y="36" fill="#cbd5e1" font-size="8" text-anchor="middle">Mengalokasikan kas hasil eksploitasi bisnis inti untuk mendanai unit eksplorasi radikal</text>
+  </g>
+
+  <!-- Connector Lines to Left and Right Units -->
+  <line x1="330" y1="116" x2="230" y2="140" stroke="#38bdf8" stroke-width="2"/>
+  <line x1="570" y1="116" x2="670" y2="140" stroke="#a78bfa" stroke-width="2"/>
+
+  <!-- Left: Core Business (Eksploitasi) -->
+  <g transform="translate(35, 140)">
+    <rect class="svg-card" x="0" y="0" width="395" height="175" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="28" rx="12" fill="url(#coreGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="16" y="19" fill="#38bdf8" font-size="11" font-weight="800">SAYAP KIRI: CORE BUSINESS (EKSPLOITASI)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Target: Efisiensi biaya, produktivitas, laba kuartalan</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Tipe Inovasi: Bertahap / Inkremental (Penyempurnaan produk)</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Budaya: Disiplin, patuh SOP, minim kesalahan operasional</text>
+    <text class="svg-text" x="16" y="102" fill="#cbd5e1" font-size="8.5">• Struktur: Mekanistik, hierarki ketat, koordinasi formal</text>
+    <rect class="svg-badge-blue" x="16" y="138" width="363" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="154" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Mesin Penghasil Arus Kas Saat Ini (Cash Generator)</text>
+  </g>
+
+  <!-- Right: Venture Unit (Eksplorasi) -->
+  <g transform="translate(470, 140)">
+    <rect class="svg-card" x="0" y="0" width="395" height="175" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="28" rx="12" fill="url(#ventGrad)" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="16" y="19" fill="#a78bfa" font-size="11" font-weight="800">SAYAP KANAN: VENTURE UNIT (EKSPLORASI)</text>
+    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Target: Model bisnis baru, teknologi terobosan masa depan</text>
+    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Tipe Inovasi: Radikal / Disruptif (Mengguncang industri)</text>
+    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Budaya: Fleksibel, otonom, toleran terhadap kegagalan eksperimen</text>
+    <text class="svg-text" x="16" y="102" fill="#cbd5e1" font-size="8.5">• Struktur: Organik, unit otonom terpisah (Skunkworks squad)</text>
+    <rect class="svg-badge-purple" x="16" y="138" width="363" height="24" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="197" y="154" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Pencipta Keunggulan Hidup Jangka Panjang Korporasi</text>
+  </g>
 </svg>`;
 
 export const TM7_READING: Reading = {

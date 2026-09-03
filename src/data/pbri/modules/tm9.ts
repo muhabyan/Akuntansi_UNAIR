@@ -1,48 +1,76 @@
 import type { Reading } from '../../../types';
 import { CASE_AUDIT_RISK_MODEL } from '../pbriPracticeCases';
 
-const SVG_AUDIT_RISK_MODEL = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL RISIKO AUDIT (AUDIT RISK MODEL - SA 315 &amp; SA 330)</text>
-  
-  <rect x="30" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">AAR</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Acceptable Audit Risk:</text>
-  <text x="97" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tingkat risiko opini</text>
-  <text x="97" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">WTP terbit pd LK</text>
-  <text x="97" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">salah saji material</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">(Target: 1% - 5%)</text>
+const SVG_AUDIT_RISK_MODEL = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="irGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+    <linearGradient id="crGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="drGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb9)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL RISIKO AUDIT: AR = IR × CR × DR (SA 200 &amp; SA 315)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">RISK MODEL</text>
 
-  <text x="180" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">=</text>
+  <!-- Formula Banner on Top -->
+  <g transform="translate(35, 70)">
+    <rect class="svg-subcard" x="0" y="0" width="830" height="42" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+    <text x="415" y="26" fill="#f8fafc" font-size="10.5" font-weight="800" text-anchor="middle">
+      AUDIT RISK (AR) = [ <tspan class="text-accent-red" fill="#f87171">INHERENT RISK (IR)</tspan> × <tspan class="text-accent-amber" fill="#fbbf24">CONTROL RISK (CR)</tspan> ] × <tspan class="text-accent-blue" fill="#38bdf8">DETECTION RISK (DR)</tspan>
+    </text>
+  </g>
 
-  <rect x="195" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="262" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">INHERENT RISK (IR)</text>
-  <text x="262" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Risiko Bawaan:</text>
-  <text x="262" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Kerentanan akun</text>
-  <text x="262" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">terhadap salah saji</text>
-  <text x="262" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">tanpa kontrol</text>
-  <text x="262" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">(Di luar kendali auditor)</text>
+  <!-- 3 Components Pillars -->
+  <!-- Pillar 1: Inherent Risk -->
+  <g transform="translate(35, 125)">
+    <rect class="svg-card" x="0" y="0" width="265" height="180" rx="10" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#irGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="132" y="20" fill="#f87171" font-size="10" font-weight="800" text-anchor="middle">1. INHERENT RISK (IR)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-red" x="132" y="56" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Risiko Bawaan Alami Saldo Akun</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="7.5">• Kerentanan akun terhadap salah saji tanpa SPI</text>
+    <text class="svg-text" x="14" y="96" fill="#cbd5e1" font-size="7.5">• Dipengaruhi kompleksitas transaksi, estimasi nilai</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">  wajar, instrumen derivatif, &amp; tekanan pasar</text>
+    <text class="svg-muted" x="14" y="128" fill="#94a3b8" font-size="7.5">• Di luar kendali auditor (Karakteristik klien)</text>
+    <rect class="svg-badge-red" x="14" y="148" width="237" height="20" rx="4" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="132" y="162" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Risiko Lingkungan Bisnis Klien</text>
+  </g>
 
-  <text x="345" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">×</text>
+  <!-- Pillar 2: Control Risk -->
+  <g transform="translate(318, 125)">
+    <rect class="svg-card" x="0" y="0" width="265" height="180" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#crGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">2. CONTROL RISK (CR)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="132" y="56" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Risiko Pengendalian Internal (SPI)</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="7.5">• Risiko SPI klien gagal mencegah atau mendeteksi</text>
+    <text class="svg-text" x="14" y="96" fill="#cbd5e1" font-size="7.5">  salah saji material secara tepat waktu</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Keterbatasan bawaan: Kolusi &amp; kelalaian manusia</text>
+    <text class="svg-muted" x="14" y="128" fill="#94a3b8" font-size="7.5">• IR × CR = Risk of Material Misstatement (RMM)</text>
+    <rect class="svg-badge-amber" x="14" y="148" width="237" height="20" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="132" y="162" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Efektivitas Sistem Pengendalian Internal</text>
+  </g>
 
-  <rect x="360" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="427" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">CONTROL RISK (CR)</text>
-  <text x="427" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Risiko Pengendalian:</text>
-  <text x="427" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Risiko kontrol klien</text>
-  <text x="427" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">gagal cegah/deteksi</text>
-  <text x="427" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">salah saji material</text>
-  <text x="427" y="175" fill="#fde68a" font-size="9" font-weight="700" text-anchor="middle">(Diuji lewat TOC)</text>
+  <!-- Pillar 3: Detection Risk -->
+  <g transform="translate(600, 125)">
+    <rect class="svg-card" x="0" y="0" width="265" height="180" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#drGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">3. DETECTION RISK (DR)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Risiko Deteksi Prosedur Auditor</text>
+    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="7.5">• Risiko prosedur audit gagal menemukan salah saji</text>
+    <text class="text-accent-green" x="14" y="96" fill="#34d399" font-size="7.5" font-weight="700">• SATU-SATUNYA risiko yang BISA dikendalikan</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">  oleh auditor via sampel &amp; kompetensi tim</text>
+    <text class="text-accent-blue" x="14" y="128" fill="#38bdf8" font-size="7.5">• Jika RMM Tinggi →DR Ditekan Rendah (Uji Luas)</text>
+    <rect class="svg-badge-blue" x="14" y="148" width="237" height="20" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="162" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Hubungan Terbalik (Inverse) dengan RMM</text>
+  </g>
 
-  <text x="510" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">×</text>
-
-  <rect x="525" y="55" width="135" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="592" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">PLANNED PDR</text>
-  <text x="592" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Risiko Deteksi:</text>
-  <text x="592" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Risiko bukti auditor</text>
-  <text x="592" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">gagal deteksi salah saji</text>
-  <text x="592" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">PDR = AAR / (IR × CR)</text>
-  <text x="592" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">(Menentukan Bukti!)</text>
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Hubungan Terbalik: Semakin tinggi risiko bawaan dan kegagalan SPI klien (RMM tinggi), auditor wajib memperluas sampel pengujian agar DR rendah.</text>
 </svg>`;
 
 export const TM9_READING: Reading = {
@@ -83,9 +111,9 @@ export const TM9_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: `\\text{Audit Risk Model}: \\quad AAR = IR \\times CR \\times PDR \\quad \\Longleftrightarrow \\quad PDR = \\frac{AAR}{IR \\times CR}
+      text: `\\text{Audit Risk Model}: \\quad AAR = IR \\times CR \\times PDR \\quad \\Longleftr→ \\quad PDR = \\frac{AAR}{IR \\times CR}
 \\text{Risk of Material Misstatement (RMM)} = IR \\times CR
-\\text{Hubungan Kunci}: \\quad PDR \\downarrow \\quad \\Longrightarrow \\quad \\text{Jumlah Bukti Substantif (Sample Size)} \\uparrow`,
+\\text{Hubungan Kunci}: \\quad PDR \\downarrow \\quad \\Longr→ \\quad \\text{Jumlah Bukti Substantif (Sample Size)} \\uparrow`,
       note: 'Auditor tidak dapat mengubah IR dan CR klien (faktor independen klien), namun auditor MENGENDALIKAN PDR dengan mengatur luas bukti substantif yang dikumpulkan.'
     },
     {

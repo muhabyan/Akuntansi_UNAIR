@@ -1,40 +1,76 @@
 import type { Reading } from '../../../types';
 import { CASE_TVM_LOAN_AMORTIZATION } from '../mankeuPracticeCases';
 
-const SVG_TVM_TIMELINE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">GARIS WAKTU NILAI WAKTU UANG (TIME VALUE OF MONEY TIMELINE)</text>
-  
-  <line x1="60" y1="110" x2="620" y2="110" stroke="#475569" stroke-width="3"/>
-  
-  <circle cx="90" cy="110" r="14" fill="#38bdf8"/>
-  <text x="90" y="115" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">0</text>
-  <text x="90" y="85" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">PV</text>
-  <text x="90" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Saat Ini (t=0)</text>
+const SVG_TVM_TIMELINE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="fvGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="pvGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk3)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">GARIS WAKTU NILAI WAKTU UANG: COMPOUNDING (FV) VS DISCOUNTING (PV)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TVM DYNAMICS</text>
 
-  <circle cx="230" cy="110" r="14" fill="#64748b"/>
-  <text x="230" y="115" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">1</text>
-  <text x="230" y="85" fill="#cbd5e1" font-size="10" font-weight="700" text-anchor="middle">PMT 1</text>
-  <text x="230" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Akhir Thn 1</text>
+  <!-- Central Timeline Track -->
+  <g transform="translate(45, 120)">
+    <line x1="20" y1="50" x2="790" y2="50" stroke="#334155" stroke-width="4"/>
+    
+    <!-- Year 0 (Present Value) -->
+    <circle cx="50" cy="50" r="16" fill="#0f172a" stroke="#a78bfa" stroke-width="3"/>
+    <text class="text-accent-purple" x="50" y="54" fill="#a78bfa" font-size="10" font-weight="900" text-anchor="middle">t=0</text>
+    <text class="text-accent-purple" x="50" y="85" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">PV</text>
+    <text class="svg-text" x="50" y="100" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Saat Ini</text>
 
-  <circle cx="370" cy="110" r="14" fill="#64748b"/>
-  <text x="370" y="115" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">2</text>
-  <text x="370" y="85" fill="#cbd5e1" font-size="10" font-weight="700" text-anchor="middle">PMT 2</text>
-  <text x="370" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Akhir Thn 2</text>
+    <!-- Year 1 -->
+    <circle cx="230" cy="50" r="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text class="svg-text" x="230" y="54" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">t=1</text>
+    <text class="svg-muted" x="230" y="85" fill="#94a3b8" font-size="8" text-anchor="middle">Tahun 1</text>
 
-  <circle cx="510" cy="110" r="14" fill="#64748b"/>
-  <text x="510" y="115" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">3</text>
-  <text x="510" y="85" fill="#cbd5e1" font-size="10" font-weight="700" text-anchor="middle">PMT 3</text>
-  <text x="510" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Akhir Thn 3</text>
+    <!-- Year 2 -->
+    <circle cx="410" cy="50" r="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text class="svg-text" x="410" y="54" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">t=2</text>
+    <text class="svg-muted" x="410" y="85" fill="#94a3b8" font-size="8" text-anchor="middle">Tahun 2</text>
 
-  <circle cx="610" cy="110" r="14" fill="#4ade80"/>
-  <text x="610" y="115" fill="#0f172a" font-size="11" font-weight="700" text-anchor="middle">N</text>
-  <text x="610" y="85" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">FV</text>
-  <text x="610" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Masa Depan (t=N)</text>
+    <!-- Year 3 -->
+    <circle cx="590" cy="50" r="12" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+    <text class="svg-text" x="590" y="54" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">t=3</text>
+    <text class="svg-muted" x="590" y="85" fill="#94a3b8" font-size="8" text-anchor="middle">Tahun 3</text>
 
-  <text x="350" y="65" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">Pemajemukan (Compounding): FV = PV × (1 + i)^N</text>
-  <text x="350" y="180" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">Pendiskontoan (Discounting): PV = FV / (1 + i)^N</text>
+    <!-- Year N (Future Value) -->
+    <circle cx="760" cy="50" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+    <text class="text-accent-blue" x="760" y="54" fill="#38bdf8" font-size="10" font-weight="900" text-anchor="middle">t=N</text>
+    <text class="text-accent-blue" x="760" y="85" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">FV</text>
+    <text class="svg-text" x="760" y="100" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Masa Depan</text>
+
+    <!-- Compounding Arc (Top: PV -> FV) -->
+    <path d="M 65 35 Q 405 -40 745 35" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <polygon points="745,35 735,28 738,40" fill="#38bdf8"/>
+    <rect class="svg-subcard" x="300" y="-30" width="210" height="24" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="405" y="-14" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">COMPOUNDING: FV = PV × (1 + r)ⁿ</text>
+
+    <!-- Discounting Arc (Bottom: FV -> PV) -->
+    <path d="M 745 65 Q 405 140 65 65" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-dasharray="6 4"/>
+    <polygon points="65,65 75,72 72,60" fill="#a78bfa"/>
+    <rect class="svg-subcard" x="300" y="115" width="210" height="24" rx="6" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="405" y="131" fill="#a78bfa" font-size="9" font-weight="800" text-anchor="middle">DISCOUNTING: PV = FV ÷ (1 + r)ⁿ</text>
+  </g>
+
+  <!-- Bottom Explanatory Concept Cards -->
+  <g transform="translate(45, 275)">
+    <rect class="svg-subcard" x="0" y="0" width="395" height="52" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+    <text class="text-accent-blue" x="14" y="18" fill="#38bdf8" font-size="9" font-weight="800">BUNGA MAJEMUK (COMPOUND INTEREST)</text>
+    <text class="svg-text" x="14" y="34" fill="#cbd5e1" font-size="7.5">Bunga menghasilkan bunga kembali seiring waktu (Eksponensial). Semakin tinggi suku bunga</text>
+    <text class="svg-text" x="14" y="44" fill="#cbd5e1" font-size="7.5">dan periode (n), akumulasi nilai akhir kas melonjak berlipat ganda.</text>
+
+    <rect class="svg-subcard" x="415" y="0" width="395" height="52" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
+    <text class="text-accent-purple" x="14" y="18" fill="#a78bfa" font-size="9" font-weight="800">NILAI SEKARANG (PRESENT VALUE &amp; INFLASI)</text>
+    <text class="svg-text" x="14" y="34" fill="#cbd5e1" font-size="7.5">Rp 1 juta hari ini lebih berharga daripada Rp 1 juta 5 tahun lagi karena adanya peluang investasi</text>
+    <text class="svg-text" x="14" y="44" fill="#cbd5e1" font-size="7.5">(Opportunity Cost of Capital) serta erosi daya beli akibat inflasi.</text>
+  </g>
 </svg>`;
 
 export const TM3_READING: Reading = {

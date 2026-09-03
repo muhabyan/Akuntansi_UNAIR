@@ -1,50 +1,121 @@
 import type { Reading } from '../../../types';
 import { CASE_ORG_STRUCTURE_ADAPTIVE } from '../manajemenPracticeCases';
 
-const SVG_ORG_STRUCTURES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">5 DESAIN STRUKTUR ORGANISASI UTAMA (RICHARD L. DAFT)</text>
-  
-  <rect x="25" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="82" y="78" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">FUNGSIONAL</text>
-  <text x="82" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Kelompok Keahlian:</text>
-  <text x="82" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• SDM, Pemasaran</text>
-  <text x="82" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Efisiensi tinggi</text>
-  <text x="82" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Silo Effect kaku</text>
-  <text x="82" y="175" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Skala Ekonomis</text>
+const SVG_ORG_STRUCTURES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad7)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 DESAIN STRUKTUR DEPARTEMENTALISASI ORGANISASI (RICHARD L. DAFT)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ORG DESIGN</text>
 
-  <rect x="155" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="212" y="78" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">DIVISIONAL</text>
-  <text x="212" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Produk / Geografi:</text>
-  <text x="212" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Unit mandiri</text>
-  <text x="212" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Cepat respon</text>
-  <text x="212" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Duplikasi biaya</text>
-  <text x="212" y="175" fill="#4ade80" font-size="8.5" font-weight="700" text-anchor="middle">Fokus Produk</text>
+  <!-- 1. FUNGSIONAL -->
+  <g transform="translate(30, 75)">
+    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect class="svg-badge-blue" x="0" y="0" width="160" height="28" rx="10" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="80" y="19" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. FUNGSIONAL</text>
+    <rect class="svg-subcard" x="55" y="38" width="50" height="18" rx="4" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="svg-text" x="80" y="50" fill="#cbd5e1" font-size="7" text-anchor="middle">CEO</text>
+    <line x1="80" y1="56" x2="80" y2="66" stroke="#334155"/>
+    <line x1="25" y1="66" x2="135" y2="66" stroke="#334155"/>
+    <rect class="svg-subcard" x="15" y="70" width="38" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="34" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">SDM</text>
+    <rect class="svg-subcard" x="61" y="70" width="38" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="80" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Pemasaran</text>
+    <rect class="svg-subcard" x="107" y="70" width="38" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="126" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Keuangan</text>
+    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
+    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Kesamaan fungsi keahlian</text>
+    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
+    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Skala ekonomis tinggi</text>
+    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Pendalaman keahlian</text>
+    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
+    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Silo effect terkotak</text>
+    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Koordinasi fungsi kaku</text>
+  </g>
 
-  <rect x="285" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="342" y="78" fill="#fbbf24" font-size="9.5" font-weight="700" text-anchor="middle">MATRIKS</text>
-  <text x="342" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Komando Ganda:</text>
-  <text x="342" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Dual Authority</text>
-  <text x="342" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Kolaborasi ahli</text>
-  <text x="342" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Rawan konflik</text>
-  <text x="342" y="175" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Fleksibilitas</text>
+  <!-- 2. DIVISIONAL -->
+  <g transform="translate(200, 75)">
+    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect class="svg-badge-green" x="0" y="0" width="160" height="28" rx="10" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="80" y="19" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. DIVISIONAL</text>
+    <rect class="svg-subcard" x="55" y="38" width="50" height="18" rx="4" fill="#1e293b" stroke="#34d399"/>
+    <text class="svg-text" x="80" y="50" fill="#cbd5e1" font-size="7" text-anchor="middle">CEO</text>
+    <line x1="80" y1="56" x2="80" y2="66" stroke="#334155"/>
+    <line x1="40" y1="66" x2="120" y2="66" stroke="#334155"/>
+    <rect class="svg-subcard" x="18" y="70" width="55" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="45" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Divisi Produk A</text>
+    <rect class="svg-subcard" x="88" y="70" width="55" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="115" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Divisi Produk B</text>
+    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
+    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Output produk / Geografi</text>
+    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
+    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Respon cepat pada pasar</text>
+    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Otonomi unit mandiri</text>
+    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
+    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Duplikasi biaya divisi</text>
+    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Persaingan sumber daya</text>
+  </g>
 
-  <rect x="415" y="55" width="115" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="472" y="78" fill="#a78bfa" font-size="9.5" font-weight="700" text-anchor="middle">TIM (TEAM-BASED)</text>
-  <text x="472" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Lintas Fungsi:</text>
-  <text x="472" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Otonomi tinggi</text>
-  <text x="472" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Tanpa sekat seksi</text>
-  <text x="472" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Butuh kedewasaan</text>
-  <text x="472" y="175" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Agile Squads</text>
+  <!-- 3. MATRIKS -->
+  <g transform="translate(370, 75)">
+    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect class="svg-badge-amber" x="0" y="0" width="160" height="28" rx="10" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="80" y="19" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. MATRIKS</text>
+    <rect class="svg-subcard" x="15" y="38" width="45" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="37" y="49" fill="#94a3b8" font-size="6" text-anchor="middle">Fungsi IT</text>
+    <rect class="svg-subcard" x="15" y="60" width="45" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="37" y="71" fill="#94a3b8" font-size="6" text-anchor="middle">Fungsi SDM</text>
+    <rect class="svg-subcard" x="75" y="38" width="70" height="38" rx="4" fill="#1e293b" stroke="#fbbf24"/><text class="text-accent-amber" x="110" y="55" fill="#fbbf24" font-size="6.5" font-weight="700" text-anchor="middle">Dual Authority</text><text class="svg-text" x="110" y="66" fill="#cbd5e1" font-size="6" text-anchor="middle">Komando Ganda</text>
+    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
+    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Simultan Fungsi &amp; Produk</text>
+    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
+    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Optimalisasi SDM ahli</text>
+    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Fleksibilitas proyek</text>
+    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
+    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Perebutan wewenang 2 bos</text>
+    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Frustrasi &amp; stres staf</text>
+  </g>
 
-  <rect x="545" y="55" width="110" height="145" rx="8" fill="#1e293b" stroke="#f472b6" stroke-width="1.5"/>
-  <text x="600" y="78" fill="#f472b6" font-size="9" font-weight="700" text-anchor="middle">VIRTUAL NETWORK</text>
-  <text x="600" y="98" fill="#94a3b8" font-size="8" text-anchor="middle">Outsourcing:</text>
-  <text x="600" y="122" fill="#cbd5e1" font-size="8" text-anchor="middle">• Inti kecil (hub)</text>
-  <text x="600" y="138" fill="#cbd5e1" font-size="8" text-anchor="middle">• Mitra global</text>
-  <text x="600" y="154" fill="#cbd5e1" font-size="8" text-anchor="middle">• Kontrol rapuh</text>
-  <text x="600" y="175" fill="#f472b6" font-size="8.5" font-weight="700" text-anchor="middle">Ramping &amp; Lincah</text>
+  <!-- 4. TEAM-BASED -->
+  <g transform="translate(540, 75)">
+    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect class="svg-badge-purple" x="0" y="0" width="160" height="28" rx="10" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="80" y="19" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">4. TEAM-BASED</text>
+    <circle cx="50" cy="55" r="16" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="50" y="58" fill="#a78bfa" font-size="6.5" font-weight="700" text-anchor="middle">Squad 1</text>
+    <circle cx="110" cy="55" r="16" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="110" y="58" fill="#a78bfa" font-size="6.5" font-weight="700" text-anchor="middle">Squad 2</text>
+    <line x1="66" y1="55" x2="94" y2="55" stroke="#a78bfa" stroke-dasharray="2 2"/>
+    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
+    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Tim otonom lintas-fungsi</text>
+    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
+    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Runtuhkan sekat seksi</text>
+    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Kecepatan adaptasi tinggi</text>
+    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
+    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Konflik loyalitas ganda</text>
+    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Butuh banyak rapat</text>
+  </g>
+
+  <!-- 5. VIRTUAL NETWORK -->
+  <g transform="translate(710, 75)">
+    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#f472b6" stroke-width="1.5"/>
+    <rect x="0" y="0" width="160" height="28" rx="10" fill="#db2777" fill-opacity="0.2"/>
+    <text x="80" y="19" fill="#f472b6" font-size="10" font-weight="800" text-anchor="middle">5. VIRTUAL NETWORK</text>
+    <circle cx="80" cy="55" r="16" fill="#db2777" fill-opacity="0.3" stroke="#f472b6"/>
+    <text x="80" y="58" fill="#f472b6" font-size="6.5" font-weight="800" text-anchor="middle">HUB</text>
+    <circle cx="28" cy="40" r="10" fill="#1e293b"/><text class="svg-muted" x="28" y="43" fill="#94a3b8" font-size="5" text-anchor="middle">R&amp;D</text>
+    <circle cx="132" cy="40" r="10" fill="#1e293b"/><text class="svg-muted" x="132" y="43" fill="#94a3b8" font-size="5" text-anchor="middle">Pabrik</text>
+    <circle cx="80" cy="85" r="10" fill="#1e293b"/><text class="svg-muted" x="80" y="88" fill="#94a3b8" font-size="5" text-anchor="middle">Sales</text>
+    <line x1="38" y1="45" x2="65" y2="52" stroke="#334155"/>
+    <line x1="122" y1="45" x2="95" y2="52" stroke="#334155"/>
+    <line x1="80" y1="71" x2="80" y2="75" stroke="#334155"/>
+    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
+    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Outsource ke mitra global</text>
+    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
+    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Sangat ramping &amp; lincah</text>
+    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Biaya modal tetap minimal</text>
+    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
+    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Kontrol kualitas rapuh</text>
+    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Risiko rahasia bocor</text>
+  </g>
 </svg>`;
 
 export const TM7_READING: Reading = {

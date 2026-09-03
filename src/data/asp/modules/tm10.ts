@@ -1,34 +1,73 @@
 import type { Reading } from '../../../types';
 import { CASE_VALUE_FOR_MONEY_EVAL } from '../aspPracticeCases';
 
-const SVG_VFM_TRIANGLE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PARADIGMA VALUE FOR MONEY (3E): EKONOMI, EFISIENSI, &amp; EFEKTIVITAS</text>
-  
-  <rect x="35" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. EKONOMI (HEMAT)</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Realisasi Biaya vs Anggaran:</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pemerolehan input biaya</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">dengan harga paling wajar</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tanpa kompromi mutu</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Input Terhemat</text>
+const SVG_VFM_TRIANGLE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="e1Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="e2Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="e3Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp10)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">KERANGKA PENGUKURAN KINERJA VALUE FOR MONEY 3E (EKONOMI, EFISIENSI, &amp; EFEKTIVITAS)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">VFM 3E MODEL</text>
 
-  <rect x="250" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">2. EFISIENSI (BERDAYAGUNA)</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Hubungan Input vs Output:</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Output maksimal per unit input</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Atau input minimal per output</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Produktivitas layanan</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Biaya per Unit Rendah</text>
+  <!-- 3 Sequential E-Pillars -->
+  <!-- 1. Ekonomi (Input) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#e1Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. EKONOMI (HEMAT INPUT)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Rasio: Input Riil vs Input Anggaran</text>
+    
+    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• Memperoleh sumber daya input (SDM, material, fasilitas) dengan biaya serendah mungkin tanpa mengorbankan standar mutu</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Contoh: Pengadaan obat generik RSUD via e-Katalog LKPP dengan harga diskon optimal</text>
+    <text class="text-accent-blue" x="14" y="138" fill="#38bdf8" font-size="7.5" font-weight="700">• Pertanyaan Kunci: "Apakah biaya input hemat?"</text>
 
-  <rect x="465" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">3. EFEKTIVITAS (BERHASIL)</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Hubungan Output vs Outcome:</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Capaian sasaran tujuan akhir</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Manfaat riil bagi warga</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kepuasan publik terjamin</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Target Sasaran Tercapai</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Fokus: Pengendalian Biaya Masukan</text>
+  </g>
+
+  <polygon points="307,185 315,190 307,195" fill="#38bdf8"/>
+
+  <!-- 2. Efisiensi (Input to Output) -->
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#e2Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">2. EFISIENSI (BERDAYA GUNA)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="132" y="56" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="middle">Rasio: Output Dihasilkan ÷ Input Digunakan</text>
+    
+    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• Memaksimalkan jumlah output fisik dengan input tertentu, atau meminimalkan input untuk target output tertentu</text>
+    <text class="svg-text" x="14" y="112" fill="#cbd5e1" font-size="7.5">• Contoh: Jumlah kilometer jalan aspal yang terbangun per alokasi dana Rp 1 Miliar</text>
+    <text class="text-accent-amber" x="14" y="138" fill="#fbbf24" font-size="7.5" font-weight="700">• Pertanyaan Kunci: "Apakah output optimal?"</text>
+
+    <rect class="svg-badge-amber" x="14" y="185" width="237" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Fokus: Produktivitas Transformasi Proses</text>
+  </g>
+
+  <polygon points="590,185 598,190 590,195" fill="#fbbf24"/>
+
+  <!-- 3. Efektivitas (Output to Outcome) -->
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#e3Grad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">3. EFEKTIVITAS (BERHASIL GUNA)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Rasio: Realisasi Outcome ÷ Target Outcome</text>
+    
+    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• Tingkat keberhasilan dalam mencapai sasaran strategis &amp; dampak nyata bagi masyarakat</text>
+    <text class="svg-text" x="14" y="106" fill="#cbd5e1" font-size="7.5">• Contoh: Penurunan prevalensi angka stunting balita daerah sebesar 5% pasca program gizi</text>
+    <text class="text-accent-green" x="14" y="134" fill="#34d399" font-size="7.5" font-weight="700">• Pertanyaan Kunci: "Apakah tujuan tercapai?"</text>
+
+    <rect class="svg-badge-green" x="14" y="185" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Fokus: Dampak Nyata bagi Kesejahteraan</text>
+  </g>
 </svg>`;
 
 export const TM10_READING: Reading = {
@@ -86,9 +125,9 @@ export const TM10_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**1. Rasio Ekonomi**: $\\frac{180 \\text{ Juta}}{200 \\text{ Juta}} \\times 100\\% = \\mathbf{90,0\\%}$ $\\rightarrow$ **Ekonomis** (Hemat Rp 20 Juta).',
+            '**1. Rasio Ekonomi**: $\\frac{180 \\text{ Juta}}{200 \\text{ Juta}} \\times 100\\% = \\mathbf{90,0\\%}$ $\\r→$ **Ekonomis** (Hemat Rp 20 Juta).',
             '**2. Efisiensi Biaya per Unit**: $\\frac{Rp 180.000.000}{100 \\text{ Peserta}} = \\mathbf{Rp 1.800.000 \\text{ per peserta}}$ (Lebih efisien dibanding target awal Rp 2.000.000 per orang).',
-            '**3. Rasio Efektivitas**: $\\frac{85 \\text{ Orang Terserap}}{80 \\text{ Orang Target}} \\times 100\\% = \\mathbf{106,25\\%}$ $\\rightarrow$ **Sangat Efektif** (Melampaui target penyerapan kerja).',
+            '**3. Rasio Efektivitas**: $\\frac{85 \\text{ Orang Terserap}}{80 \\text{ Orang Target}} \\times 100\\% = \\mathbf{106,25\\%}$ $\\r→$ **Sangat Efektif** (Melampaui target penyerapan kerja).',
             '**Kesimpulan**: Program ini berkinerja unggul karena memenuhi kriteria Value for Money secara sempurna (Ekonomis, Efisien, dan Efektif).'
           ]
         }

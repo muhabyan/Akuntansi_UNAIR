@@ -1,34 +1,55 @@
 import type { Reading } from '../../../types';
 import { CASE_FUND_COMMITMENT_ACCOUNTING } from '../aspPracticeCases';
 
-const SVG_ACCOUNTING_BASES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM TEKNIK &amp; BASIS AKUNTANSI SEKTOR PUBLIK</text>
-  
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">AKUNTANSI DANA</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Fund Accounting):</text>
-  <text x="125" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• General Fund (Dana Umum)</text>
-  <text x="125" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Special Revenue Fund</text>
-  <text x="125" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Setiap dana = entitas akuntansi</text>
-  <text x="125" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Restriksi Penggunaan</text>
+const SVG_ACCOUNTING_BASES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgAsp6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="kasGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="akrualGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgAsp6)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">DUAL BASIS AKUNTANSI PEMERINTAH: BASIS KAS (LRA) VS BASIS AKRUAL (LO &amp; NERACA - PP 71/2010)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ACCOUNTING BASES</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">AKUNTANSI ANGGARAN</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Budgetary Accounting):</text>
-  <text x="340" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Anggaran dicatat ke buku besar</text>
-  <text x="340" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Estimasi Pendapatan vs Apropriasi</text>
-  <text x="340" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Pengawasan varians real-time</text>
-  <text x="340" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Kontrol Otorisasi</text>
+  <!-- Left: Basis Kas (LRA) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#kasGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">1. BASIS KAS (UNTUK LAPORAN PELAKSANAAN ANGGARAN)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Prinsip Pengakuan:</tspan> Transaksi diakui HANYA saat kas riil diterima atau dikeluarkan dari Kas Umum Negara/Daerah (KUN/KUD)</text>
+    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Laporan yang Dihasilkan:</tspan></text>
+    <text class="text-accent-blue" x="14" y="96" fill="#38bdf8" font-size="7.5">  1. Laporan Realisasi Anggaran (LRA) - Pendapatan LRA &amp; Belanja</text>
+    <text class="text-accent-blue" x="14" y="110" fill="#38bdf8" font-size="7.5">  2. Laporan Perubahan Saldo Anggaran Lebih (LP-SAL)</text>
+    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="8">• Mengukur kepatuhan terhadap pagu Undang-Undang APBN / Perda APBD</text>
+    <text class="svg-text" x="14" y="146" fill="#cbd5e1" font-size="8">• Tidak mencatat utang piutang atau penyusutan aset tetap</text>
+    
+    <rect class="svg-badge-blue" x="14" y="175" width="367" height="30" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="194" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fungsi: Akuntabilitas Ketaatan Hukum Realisasi Anggaran Kas</text>
+  </g>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">AKUNTANSI KOMITMEN</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Commitment / Encumbrance):</text>
-  <text x="555" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dicatat saat order/SPK terbit</text>
-  <text x="555" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mengunci pagu sisa anggaran</text>
-  <text x="555" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Mencegah overspending kontrak</text>
-  <text x="555" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pengendalian Kontrak</text>
+  <!-- Right: Basis Akrual (Finansial) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#akrualGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="10.5" font-weight="800">2. BASIS AKRUAL (UNTUK LAPORAN FINANSIAL)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Prinsip Pengakuan:</tspan> Transaksi diakui saat timbulnya hak/kewajiban ekonomi, terlepas dari kapan kas riil diterima atau dibayar</text>
+    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Laporan yang Dihasilkan:</tspan></text>
+    <text class="text-accent-green" x="14" y="96" fill="#34d399" font-size="7.5">  1. Laporan Operasional (LO) - Pendapatan LO &amp; Beban Operasional</text>
+    <text class="text-accent-green" x="14" y="110" fill="#34d399" font-size="7.5">  2. Laporan Perubahan Ekuitas (LPE)</text>
+    <text class="text-accent-green" x="14" y="124" fill="#34d399" font-size="7.5">  3. Neraca Pemerintah (Aset, Kewajiban Utang, &amp; Ekuitas)</text>
+    <text class="svg-text" x="14" y="142" fill="#cbd5e1" font-size="8">• Mengakui piutang pajak, beban penyusutan gedung, &amp; kewajiban pensiun</text>
+    
+    <rect class="svg-badge-green" x="14" y="175" width="367" height="30" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="194" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Fungsi: Mengukur Posisi Kekayaan Bersih &amp; Kinerja Hakiki Pemerintah</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Sistem Akuntansi Pemerintah RI menggunakan basis Akrual untuk Laporan Finansial dan basis Kas untuk Laporan Anggaran.</text>
 </svg>`;
 
 export const TM6_READING: Reading = {

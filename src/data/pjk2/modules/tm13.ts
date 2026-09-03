@@ -1,26 +1,49 @@
 import type { Reading } from '../../../types';
 import { CASE_EFAKTUR_INPUT_CREDIT } from '../pjk2PracticeCases';
 
-const SVG_INPUT_TAX_RULES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ATURAN PENGKREDITAN PAJAK MASUKAN: PASAL 9 AYAT (8) UU PPN (UU HPP)</text>
-  
-  <rect x="35" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">PAJAK MASUKAN DAPAT DIKREDITKAN</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Memenuhi Syarat Material &amp; Formal):</text>
-  <text x="177" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Terkait langsung kegiatan 3M usaha</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• e-Faktur valid terhubung server DJP</text>
-  <text x="177" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Dikreditkan pada masa yang sama / max 3 bln</text>
-  <text x="177" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Mengurangi Setoran PPN</text>
+const SVG_INPUT_TAX_RULES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk13" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk13)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ATURAN PENGKREDITAN PAJAK MASUKAN: PASAL 9 AYAT (8) UU PPN / HPP</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">PAJAK MASUKAN</text>
 
-  <rect x="355" y="55" width="285" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="497" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">PAJAK MASUKAN TIDAK DAPAT DIKREDITKAN</text>
-  <text x="497" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Pasal 9 ayat 8 UU PPN):</text>
-  <text x="497" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Tidak terkait langsung kegiatan 3M</text>
-  <text x="497" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Faktur cacat / identitas pembeli fiktif</text>
-  <text x="497" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Perolehan BKP penyerahan PPN Dibebaskan</text>
-  <text x="497" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">Wajib Dibiayakan Komersial</text>
+  <!-- Left: Dapat Dikreditkan -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <text class="text-accent-green" x="197" y="24" fill="#34d399" font-size="10.5" font-weight="800" text-anchor="middle">SYARAT PAJAK MASUKAN DAPAT DIKREDITKAN</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Keterkaitan Usaha 3M:</tspan> Terkait langsung dengan kegiatan penyerahan BKP/JKP</text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Faktur Pajak Lengkap:</tspan> Memenuhi syarat formal &amp; material (Kode 010 e-Faktur)</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Masa Pengkreditan:</tspan> Dapat dikreditkan pada masa pajak yang sama atau paling lambat 3 bulan setelah masa pajak berakhir</text>
+    <text class="svg-text" x="14" y="122" fill="#cbd5e1" font-size="8">• Pembelian mesin pabrik, bahan baku, sewa gudang pabrikasi, &amp; jasa logistik</text>
+    
+    <rect class="svg-badge-green" x="14" y="175" width="367" height="30" rx="6" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="197" y="194" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Memenuhi Syarat Formal &amp; Material Menurut UU PPN</text>
+  </g>
+
+  <!-- Right: TIDAK DAPAT DIKREDITKAN (Pasal 9 ayat 8) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <text class="text-accent-red" x="197" y="24" fill="#f87171" font-size="10.5" font-weight="800" text-anchor="middle">PAJAK MASUKAN TIDAK DAPAT DIKREDITKAN (PASAL 9 AYAT 8)</text>
+    
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• Perolehan BKP/JKP <tspan class="text-accent-red" fill="#f87171" font-weight="700">sebelum pengusaha dikukuhkan sebagai PKP</tspan></text>
+    <text class="svg-text" x="14" y="72" fill="#cbd5e1" font-size="8">• Perolehan yang <tspan class="text-accent-red" fill="#f87171" font-weight="700">TIDAK mempunyai hubungan langsung</tspan> dengan kegiatan usaha</text>
+    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• Perolehan dan pemeliharaan kendaraan sedan dan station wagon</text>
+    <text class="svg-muted" x="14" y="106" fill="#94a3b8" font-size="7.5">  (Kecuali barang dagangan atau disewakan)</text>
+    <text class="svg-text" x="14" y="124" fill="#cbd5e1" font-size="8">• Faktur Pajak Cacat: Tidak mencantumkan nama, alamat, NPWP pembeli</text>
+    <text class="svg-text" x="14" y="142" fill="#cbd5e1" font-size="8">• Perolehan BKP/JKP yang Pajak Masukannya ditagih dengan SKP</text>
+    
+    <rect class="svg-badge-red" x="14" y="175" width="367" height="30" rx="6" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="197" y="194" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Pajak Masukan Gugur / Tidak Boleh Dikurangkan</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Pajak Masukan yang tidak dapat dikreditkan dapat dibiayakan (Deductible) pada PPh Badan sepanjang memenuhi Pasal 6 UU PPh.</text>
 </svg>`;
 
 export const TM13_READING: Reading = {
@@ -39,6 +62,12 @@ export const TM13_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 13.1: Ketentuan Pengkreditan Pajak Masukan menurut Pasal 9 ayat (8) UU PPN.',
       svg: SVG_INPUT_TAX_RULES
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 9 ayat (8) UU PPN s.t.d.t.d UU HPP (Pajak Masukan Non-Kredit)',
+      text: '"Pengkreditan Pajak Masukan tidak dapat diberlakukan bagi pengeluaran untuk:\na. [dihapus UU HPP];\nb. perolehan BKP atau JKP yang tidak mempunyai hubungan langsung dengan kegiatan usaha;\nc. perolehan dan pemeliharaan kendaraan bermotor berupa sedan dan station wagon, kecuali merupakan barang dagangan atau digunakan secara langsung sesuai bidang usahanya;\nd. [dihapus]; e. [dihapus];\nf. perolehan BKP/JKP yang Faktur Pajaknya tidak memenuhi ketentuan formal/material (cacat) atau tidak mencantumkan nama, alamat, dan NPWP pembeli;\ng. pemanfaatan BKP Tidak Berwujud/JKP dari luar Daerah Pabean yang faktur pajaknya tidak memenuhi ketentuan;\nh. [dihapus];\ni. perolehan BKP/JKP yang Pajak Masukannya ditagih dengan penerbitan ketetapan pajak (SKP);\nj. perolehan BKP/JKP yang Pajak Masukannya tidak dilaporkan dalam SPT Masa PPN dan ditemukan saat pemeriksaan;\nk. perolehan BKP selain barang modal atau JKP sebelum Pengusaha Kena Pajak berproduksi."'
     },
     {
       kind: 'h2',

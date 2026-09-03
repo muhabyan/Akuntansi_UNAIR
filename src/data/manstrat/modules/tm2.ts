@@ -1,30 +1,70 @@
 import type { Reading } from '../../../types';
 import { CASE_PORTER_FIVE_FORCES_GROUPS } from '../manstratPracticeCases';
 
-const SVG_FIVE_FORCES = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="28" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL 5 KEKUATAN BERSAING INDUSTRI (MICHAEL E. PORTER)</text>
-  
-  <rect x="235" y="42" width="210" height="38" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="340" y="58" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">ANCAMAN PENDATANG BARU</text>
-  <text x="340" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Skala ekonomis, paten, modal masuk</text>
+const SVG_FIVE_FORCES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="centerGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns2)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL 5 KEKUATAN BERSAING INDUSTRI (MICHAEL E. PORTER)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">FIVE FORCES</text>
 
-  <rect x="25" y="92" width="180" height="42" rx="6" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="115" y="110" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">DAYA TAWAR PEMASOK</text>
-  <text x="115" y="124" fill="#94a3b8" font-size="7.5" text-anchor="middle">Dominasi vendor, biaya beralih</text>
+  <!-- Force 1: Threat of New Entrants -->
+  <g transform="translate(325, 68)">
+    <rect class="svg-card" x="0" y="0" width="250" height="65" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="125" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. ANCAMAN PENDATANG BARU</text>
+    <text class="svg-text" x="125" y="36" fill="#cbd5e1" font-size="8" text-anchor="middle">Skala ekonomis, hak paten,</text>
+    <text class="svg-text" x="125" y="50" fill="#cbd5e1" font-size="8" text-anchor="middle">switching costs &amp; saluran distribusi</text>
+    <polygon points="125,72 120,65 130,65" fill="#38bdf8"/>
+  </g>
 
-  <rect x="225" y="90" width="230" height="46" rx="8" fill="#0f172a" stroke="#f43f5e" stroke-width="2"/>
-  <text x="340" y="109" fill="#f43f5e" font-size="10" font-weight="700" text-anchor="middle">RIVALITAS ANTAR PESAING</text>
-  <text x="340" y="125" fill="#fca5a5" font-size="8" text-anchor="middle">Perang harga, diferensiasi, pertumbuhan pasar</text>
+  <!-- Force 2: Bargaining Power of Suppliers -->
+  <g transform="translate(35, 145)">
+    <rect class="svg-card" x="0" y="0" width="245" height="95" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <text class="text-accent-green" x="122" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. DAYA TAWAR PEMASOK</text>
+    <text class="svg-text" x="12" y="42" fill="#cbd5e1" font-size="8">• Konsentrasi pemasok dominan</text>
+    <text class="svg-text" x="12" y="58" fill="#cbd5e1" font-size="8">• Diferensiasi input bahan baku unik</text>
+    <text class="svg-text" x="12" y="74" fill="#cbd5e1" font-size="8">• Ancaman integrasi ke depan (Forward)</text>
+    <polygon points="255,48 248,43 248,53" fill="#34d399"/>
+  </g>
 
-  <rect x="475" y="92" width="180" height="42" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="565" y="110" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">DAYA TAWAR PEMBELI</text>
-  <text x="565" y="124" fill="#94a3b8" font-size="7.5" text-anchor="middle">Volume beli, switching cost rendah</text>
+  <!-- Force 3: INDUSTRY RIVALRY (Center) -->
+  <g transform="translate(315, 140)">
+    <rect class="svg-card" x="0" y="0" width="270" height="105" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="2"/>
+    <rect x="0" y="0" width="270" height="28" rx="12" fill="url(#centerGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="135" y="20" fill="#f87171" font-size="10.5" font-weight="800" text-anchor="middle">3. RIVALITAS ANTAR PESAING</text>
+    <text class="svg-text" x="12" y="46" fill="#cbd5e1" font-size="8">• Pertumbuhan pasar lambat / perang harga</text>
+    <text class="svg-text" x="12" y="62" fill="#cbd5e1" font-size="8">• Hambatan keluar (Exit Barriers) tinggi</text>
+    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="8">• Jumlah &amp; kapasitas kompetitor seimbang</text>
+    <rect x="15" y="85" width="240" height="15" rx="4" fill="#dc2626" fill-opacity="0.3"/>
+    <text class="text-accent-red" x="135" y="96" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Pusat Profitabilitas Industri</text>
+  </g>
 
-  <rect x="235" y="148" width="210" height="38" rx="6" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="340" y="164" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">ANCAMAN PRODUK SUBSTITUSI</text>
-  <text x="340" y="178" fill="#94a3b8" font-size="7.5" text-anchor="middle">Substitusi fungsi, tren harga-kinerja</text>
+  <!-- Force 4: Bargaining Power of Buyers -->
+  <g transform="translate(620, 145)">
+    <rect class="svg-card" x="0" y="0" width="245" height="95" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <text class="text-accent-amber" x="122" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">4. DAYA TAWAR PEMBELI</text>
+    <text class="svg-text" x="12" y="42" fill="#cbd5e1" font-size="8">• Pembelian volume besar (B2B)</text>
+    <text class="svg-text" x="12" y="58" fill="#cbd5e1" font-size="8">• Produk komoditas minim diferensiasi</text>
+    <text class="svg-text" x="12" y="74" fill="#cbd5e1" font-size="8">• Ancaman integrasi ke belakang (Backward)</text>
+    <polygon points="-5,48 2,43 2,53" fill="#fbbf24"/>
+  </g>
+
+  <!-- Force 5: Threat of Substitutes -->
+  <g transform="translate(325, 255)">
+    <rect class="svg-card" x="0" y="0" width="250" height="65" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <text class="text-accent-purple" x="125" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">5. ANCAMAN PRODUK SUBSTITUSI</text>
+    <text class="svg-text" x="125" y="36" fill="#cbd5e1" font-size="8" text-anchor="middle">Alternatif lintas industri (misal: KA vs Pesawat),</text>
+    <text class="svg-text" x="125" y="50" fill="#cbd5e1" font-size="8" text-anchor="middle">rasio harga/kinerja produk pengganti</text>
+    <polygon points="125,-6 120,0 130,0" fill="#a78bfa"/>
+  </g>
+
+  <text class="svg-muted" x="150" y="325" fill="#94a3b8" font-size="8" font-style="italic">Semakin kuat akumulasi ke-5 kekuatan ini, semakin tertekan rata-rata profitabilitas (ROIC) industri.</text>
 </svg>`;
 
 export const TM2_READING: Reading = {

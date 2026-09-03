@@ -1,38 +1,77 @@
 import type { Reading } from '../../../types';
 import { CASE_WORKING_CAPITAL_CASH_CCC } from '../mankeuPracticeCases';
 
-const SVG_WORKING_CAPITAL_CCC = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SIKLUS KONVERSI KAS (CASH CONVERSION CYCLE - CCC)</text>
-  
-  <rect x="30" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="120" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">1. ICP (DSI)</text>
-  <text x="120" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Inventory Conversion:</text>
-  <text x="120" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Persediaan / (HPP/365)</text>
-  <text x="120" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Waktu bahan mentah</text>
-  <text x="120" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">jadi barang &amp; terjual</text>
-  <text x="120" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Perputaran Stok</text>
+const SVG_WORKING_CAPITAL_CCC = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMk11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="cccGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk11)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SIKLUS KONVERSI KAS: CCC = DIO (PERSEDIAAN) + DSO (PIUTANG) - DPO (UTANG DAGANG)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">WORKING CAPITAL</text>
 
-  <text x="225" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">+</text>
+  <!-- Top Level: OPERATING CYCLE (DIO + DSO) -->
+  <g transform="translate(45, 75)">
+    <!-- Bar 1: Days Inventory Outstanding (DIO) -->
+    <rect x="0" y="0" width="460" height="36" rx="6" fill="#0284c7" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1.5"/>
+    <text class="text-accent-blue" x="230" y="22" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">1. DIO: DAYS INVENTORY OUTSTANDING (Misal: 60 Hari)</text>
 
-  <rect x="240" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="330" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">2. DSO (ACP)</text>
-  <text x="330" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Days Sales Outstanding:</text>
-  <text x="330" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Piutang / (Penjualan/365)</text>
-  <text x="330" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Waktu penagihan kas</text>
-  <text x="330" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">dari pembeli piutang</text>
-  <text x="330" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Penagihan Piutang</text>
+    <!-- Bar 2: Days Sales Outstanding (DSO) -->
+    <rect x="468" y="0" width="342" height="36" rx="6" fill="#7c3aed" fill-opacity="0.3" stroke="#a78bfa" stroke-width="1.5"/>
+    <text class="text-accent-purple" x="639" y="22" fill="#a78bfa" font-size="9" font-weight="800" text-anchor="middle">2. DSO: DAYS SALES OUTSTANDING (Misal: 45 Hari)</text>
 
-  <text x="435" y="130" fill="#94a3b8" font-size="18" font-weight="700" text-anchor="middle">-</text>
+    <text class="svg-text" x="405" y="52" fill="#cbd5e1" font-size="8" font-weight="700" text-anchor="middle">SIKLUS OPERASI TOTAL (OPERATING CYCLE) = DIO + DSO = 105 HARI</text>
+  </g>
 
-  <rect x="450" y="55" width="195" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="547" y="78" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">3. PDP (DPO)</text>
-  <text x="547" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">Payables Deferral Period:</text>
-  <text x="547" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Utang Usaha / (HPP/365)</text>
-  <text x="547" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Jangka waktu tunda bayar</text>
-  <text x="547" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">ke vendor pemasok</text>
-  <text x="547" y="175" fill="#fca5a5" font-size="9" font-weight="700" text-anchor="middle">CCC = ICP + DSO - PDP</text>
+  <!-- Middle Level: PAYABLES DELAY (DPO) -->
+  <g transform="translate(45, 145)">
+    <!-- Bar 3: Days Payables Outstanding (DPO) -->
+    <rect x="0" y="0" width="280" height="36" rx="6" fill="#059669" fill-opacity="0.3" stroke="#34d399" stroke-width="1.5"/>
+    <text class="text-accent-green" x="140" y="22" fill="#34d399" font-size="9" font-weight="800" text-anchor="middle">3. DPO: UTANG USAHA (Misal: 35 Hari)</text>
+    <text class="text-accent-green" x="140" y="50" fill="#34d399" font-size="7.5" text-anchor="middle">Penundaan Kas Keluar Didanai Pemasok</text>
+
+    <!-- Bar 4: CASH CONVERSION CYCLE (GAP) -->
+    <rect x="288" y="0" width="522" height="36" rx="6" fill="#dc2626" fill-opacity="0.3" stroke="#f87171" stroke-width="2"/>
+    <text class="text-accent-red" x="549" y="22" fill="#f87171" font-size="9.5" font-weight="900" text-anchor="middle">CASH CONVERSION CYCLE (CCC) = 70 HARI</text>
+    <text class="text-accent-red" x="549" y="50" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Periode Kas Perusahaan "Terkunci" &amp; Membutuhkan Pendanaan Modal Kerja Eksternal</text>
+  </g>
+
+  <!-- Milestone Dots & Event Labels on Timeline -->
+  <g transform="translate(45, 215)">
+    <line x1="0" y1="20" x2="810" y2="20" stroke="#334155" stroke-width="2"/>
+    
+    <!-- Day 0: Beli Bahan Baku -->
+    <circle cx="0" cy="20" r="5" fill="#38bdf8"/>
+    <text class="text-accent-blue" x="0" y="42" fill="#38bdf8" font-size="7.5" font-weight="700">Hari 0</text>
+    <text class="svg-text" x="0" y="55" fill="#cbd5e1" font-size="7">Beli Bahan Baku</text>
+
+    <!-- Day 35: Bayar Utang Dagang -->
+    <circle cx="280" cy="20" r="5" fill="#34d399"/>
+    <text class="text-accent-green" x="280" y="42" fill="#34d399" font-size="7.5" font-weight="700">Hari 35</text>
+    <text class="svg-text" x="280" y="55" fill="#cbd5e1" font-size="7">Bayar Pemasok (Kas Keluar)</text>
+
+    <!-- Day 60: Jual Barang Jadi -->
+    <circle cx="460" cy="20" r="5" fill="#a78bfa"/>
+    <text class="text-accent-purple" x="460" y="42" fill="#a78bfa" font-size="7.5" font-weight="700">Hari 60</text>
+    <text class="svg-text" x="460" y="55" fill="#cbd5e1" font-size="7">Barang Jadi Terjual (Kredit)</text>
+
+    <!-- Day 105: Terima Pelunasan Kas -->
+    <circle cx="810" cy="20" r="5" fill="#fbbf24"/>
+    <text class="text-accent-amber" x="810" y="42" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="end">Hari 105</text>
+    <text class="svg-text" x="810" y="55" fill="#cbd5e1" font-size="7" text-anchor="end">Terima Kas Pelanggan</text>
+  </g>
+
+  <!-- Strategic Insight Box -->
+  <g transform="translate(45, 290)">
+    <rect class="svg-subcard" x="0" y="0" width="810" height="34" rx="6" fill="#1e293b"/>
+    <text class="text-accent-blue" x="405" y="21" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">
+      Trik Perusahaan Kelas Dunia (contoh: Dell &amp; Amazon): Memiliki CCC Negatif (DPO &gt; DIO + DSO) sehingga bisnis didanai gratis oleh vendor!
+    </text>
+  </g>
 </svg>`;
 
 export const TM11_READING: Reading = {

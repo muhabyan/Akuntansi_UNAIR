@@ -1,33 +1,75 @@
 import type { Reading } from '../../../types';
 import { CASE_MOTIVATION_THEORIES_JCM } from '../manajemenPracticeCases';
 
-const SVG_JCM_MODEL = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MODEL KARAKTERISTIK PEKERJAAN (JOB CHARACTERISTICS MODEL - HACKMAN &amp; OLDHAM)</text>
-  
-  <rect x="25" y="55" width="185" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="117" y="78" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">5 DIMENSI INTI PEKERJAAN</text>
-  <text x="117" y="98" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 1. Variasi Keterampilan (Skill)</text>
-  <text x="117" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 2. Identitas Tugas (Identity)</text>
-  <text x="117" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 3. Signifikansi Tugas (Significance)</text>
-  <text x="117" y="158" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 4. Otonomi Mandiri (Autonomy)</text>
-  <text x="117" y="178" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• 5. Umpan Balik (Feedback)</text>
+const SVG_JCM_MODEL = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgGrad13" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="jcmCol1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="jcmCol2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="jcmCol3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad13)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MODEL KARAKTERISTIK PEKERJAAN (JOB CHARACTERISTICS MODEL - HACKMAN &amp; OLDHAM)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">JCM PIPELINE</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#4ade80" font-size="10" font-weight="700" text-anchor="middle">KONDISI PSIKOLOGIS KRITIS</text>
-  <text x="340" y="105" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Merasakan Kebermaknaan Kerja</text>
-  <text x="340" y="122" fill="#94a3b8" font-size="8" text-anchor="middle">(Meaningfulness of the Work)</text>
-  <text x="340" y="145" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Tanggung Jawab atas Hasil</text>
-  <text x="340" y="162" fill="#94a3b8" font-size="8" text-anchor="middle">(Responsibility for Outcomes)</text>
-  <text x="340" y="185" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Pengetahuan Hasil Nyata Kerja</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="255" height="215" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="255" height="30" rx="10" fill="url(#jcmCol1)" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="14" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">5 DIMENSI INTI PEKERJAAN</text>
+    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8.5">• 1. Variasi Keterampilan (Skill Variety)</text>
+    <text class="svg-text" x="14" y="74" fill="#cbd5e1" font-size="8.5">• 2. Identitas Tugas (Task Identity)</text>
+    <text class="svg-text" x="14" y="96" fill="#cbd5e1" font-size="8.5">• 3. Signifikansi Tugas (Task Significance)</text>
+    <line x1="14" y1="110" x2="240" y2="110" stroke="#1e293b"/>
+    <text class="text-accent-green" x="14" y="130" fill="#34d399" font-size="8.5" font-weight="700">• 4. OTONOMI MANDIRI (Autonomy)</text>
+    <line x1="14" y1="144" x2="240" y2="144" stroke="#1e293b"/>
+    <text class="text-accent-amber" x="14" y="164" fill="#fbbf24" font-size="8.5" font-weight="700">• 5. UMPAN BALIK (Feedback)</text>
+    <rect class="svg-subcard" x="14" y="180" width="227" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="127" y="194" fill="#38bdf8" font-size="7.5" font-weight="600" text-anchor="middle">Input Karakteristik Desain Tugas</text>
+  </g>
 
-  <rect x="465" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="560" y="78" fill="#fbbf24" font-size="10" font-weight="700" text-anchor="middle">HASIL KERJA PERSONAL</text>
-  <text x="560" y="108" fill="#fde047" font-size="9" font-weight="700" text-anchor="middle">Motivasi Kerja Intrinsik Tinggi</text>
-  <text x="560" y="132" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Kualitas Kinerja Unggul</text>
-  <text x="560" y="156" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Kepuasan Kerja Maksimal</text>
-  <text x="560" y="180" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Turnover &amp; Absensi Rendah</text>
+  <polygon points="302,180 314,185 302,190" fill="#38bdf8"/>
+  <polygon points="585,180 597,185 585,190" fill="#34d399"/>
+
+  <g transform="translate(325, 75)">
+    <rect class="svg-card" x="0" y="0" width="255" height="215" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="255" height="30" rx="10" fill="url(#jcmCol2)" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="14" y="20" fill="#34d399" font-size="10.5" font-weight="800">KONDISI PSIKOLOGIS KRITIS</text>
+    <rect class="svg-subcard" x="14" y="44" width="227" height="42" rx="6" fill="#1e293b"/>
+    <text class="svg-text" x="127" y="60" fill="#cbd5e1" font-size="8" font-weight="700" text-anchor="middle">Merasakan Kebermaknaan Kerja</text>
+    <text class="svg-muted" x="127" y="74" fill="#94a3b8" font-size="7" text-anchor="middle">(Experienced Meaningfulness)</text>
+
+    <rect class="svg-subcard" x="14" y="94" width="227" height="42" rx="6" fill="#1e293b"/>
+    <text class="text-accent-green" x="127" y="110" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Tanggung Jawab atas Hasil</text>
+    <text class="svg-muted" x="127" y="124" fill="#94a3b8" font-size="7" text-anchor="middle">(Experienced Responsibility)</text>
+
+    <rect class="svg-subcard" x="14" y="144" width="227" height="42" rx="6" fill="#1e293b"/>
+    <text class="text-accent-amber" x="127" y="160" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Pengetahuan Hasil Nyata Kerja</text>
+    <text class="svg-muted" x="127" y="174" fill="#94a3b8" font-size="7" text-anchor="middle">(Knowledge of the Actual Results)</text>
+  </g>
+
+  <g transform="translate(610, 75)">
+    <rect class="svg-card" x="0" y="0" width="255" height="215" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="255" height="30" rx="10" fill="url(#jcmCol3)" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="14" y="20" fill="#fbbf24" font-size="10.5" font-weight="800">HASIL KERJA PERSONAL</text>
+    <text class="text-accent-amber" x="14" y="58" fill="#fbbf24" font-size="9" font-weight="700">★ Motivasi Intrinsik Tinggi</text>
+    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="8.5">• Kualitas performa kerja unggul</text>
+    <text class="svg-text" x="14" y="106" fill="#cbd5e1" font-size="8.5">• Kepuasan kerja maksimal</text>
+    <text class="text-accent-green" x="14" y="130" fill="#34d399" font-size="8.5" font-weight="700">• Tingkat absensi sangat rendah</text>
+    <text class="text-accent-green" x="14" y="154" fill="#34d399" font-size="8.5" font-weight="700">• Pergantian staf (turnover) minim</text>
+    <rect class="svg-badge-amber" x="14" y="176" width="227" height="26" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="127" y="193" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Tumbuh Optimal</text>
+  </g>
+
+  <g transform="translate(35, 302)">
+    <rect class="svg-subcard" x="0" y="0" width="830" height="28" rx="8" fill="#1e293b" stroke="#334155"/>
+    <text class="svg-text" x="415" y="18" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">
+      <tspan class="text-accent-blue" fill="#38bdf8">MPS (Motivating Potential Score)</tspan> = [ (Skill Variety + Task Identity + Task Significance) / 3 ] × <tspan class="text-accent-green" fill="#34d399">AUTONOMY</tspan> × <tspan class="text-accent-amber" fill="#fbbf24">FEEDBACK</tspan>
+    </text>
+  </g>
 </svg>`;
 
 export const TM13_READING: Reading = {

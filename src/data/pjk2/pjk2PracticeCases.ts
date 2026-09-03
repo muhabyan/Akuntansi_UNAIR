@@ -187,7 +187,7 @@ export const CASE_PPH24_ARTICLE_31E: ContentBlock = {
           items: [
             '**1. Fasilitas Tarif Pasal 31E (Omzet antara 4,8 M s/d 50 M)**:\n- Bagian PKP yang memperoleh fasilitas diskon tarif 50%:\n$PKP_{Fasilitas} = \\frac{Rp 4,8 \\text{ Miliar}}{Rp 30 \\text{ Miliar}} \\times Rp 10.000.000.000 = \\mathbf{Rp 1.600.000.000}$.\n- Bagian PKP Non-Fasilitas: Rp 10.000.000.000 - Rp 1.600.000.000 = **Rp 8.400.000.000**.',
             '**2. Perhitungan PPh Badan Terutang**:\n- PPh Fasilitas = $50\\% \\times 22\\% \\times Rp 1.600.000.000 = 11\\% \\times 1,6 \\text{ M} = Rp 176.000.000$.\n- PPh Non-Fasilitas = $22\\% \\times Rp 8.400.000.000 = Rp 1.848.000.000$.\n- **Total PPh Terutang** = Rp 176 Jt + Rp 1.848 Jt = **Rp 2.024.000.000**.',
-            '**3. Maksimum Kredit Pajak PPh Pasal 24 (Ordinary Credit)**:\n- Batas Maksimum = $\\frac{\\text{Penghasilan LN}}{\\text{Total PKP}} \\times \\text{Total PPh Terutang} = \\frac{Rp 2.000.000.000}{Rp 10.000.000.000} \\times Rp 2.024.000.000 = \\mathbf{Rp 404.800.000}$.\n- Pajak riil yang dibayar di Filipina = Rp 500.000.000.\n- **Kredit Pajak PPh 24 yang Boleh Dikurangkan**: Pilih yang **TERKECIL** antara pajak riil dibayar (500 Jt) vs batas maksimum teoritis (404,8 Jt) $\\rightarrow$ **Rp 404.800.000**. Selisih Rp 95,2 Jt tidak boleh dikreditkan dan tidak boleh dibebankan.'
+            '**3. Maksimum Kredit Pajak PPh Pasal 24 (Ordinary Credit)**:\n- Batas Maksimum = $\\frac{\\text{Penghasilan LN}}{\\text{Total PKP}} \\times \\text{Total PPh Terutang} = \\frac{Rp 2.000.000.000}{Rp 10.000.000.000} \\times Rp 2.024.000.000 = \\mathbf{Rp 404.800.000}$.\n- Pajak riil yang dibayar di Filipina = Rp 500.000.000.\n- **Kredit Pajak PPh 24 yang Boleh Dikurangkan**: Pilih yang **TERKECIL** antara pajak riil dibayar (500 Jt) vs batas maksimum teoritis (404,8 Jt) $\\r→$ **Rp 404.800.000**. Selisih Rp 95,2 Jt tidak boleh dikreditkan dan tidak boleh dibebankan.'
           ]
         }
       ]
@@ -267,7 +267,7 @@ export const CASE_PPH21_TER_DECEMBER_CALC: ContentBlock = {
           kind: 'ul',
           items: [
             '**1. Pemotongan PPh 21 Januari s/d November (11 Bulan)**:\n- Bruto bulanan = Rp 10.000.000.\n- Tabel TER Kategori A untuk rentang Rp 9.650.001 - Rp 10.050.000 memiliki tarif = **2,0%**.\n- PPh 21 per bulan (Jan - Nov) = 2,0% × Rp 10.000.000 = **Rp 200.000** per bulan.\n- Total PPh 21 disetor Jan - Nov (11 bulan) = 11 × Rp 200.000 = **Rp 2.200.000**.',
-            '**2. Rekalkulasi PPh 21 Setahun di Bulan Desember (Tarif Pasal 17)**:\n- Total Penghasilan Bruto Setahun = (11 × 10 Jt) + 30 Jt (Desember) = **Rp 140.000.000**.\n- Pengurang Biaya Jabatan (5% max Rp 500.000/bln = Rp 6.000.000/thn):\nBiaya Jabatan = 5% × Rp 140.000.000 = Rp 7.000.000 $\\rightarrow$ Dibatasi maksimum **Rp 6.000.000**.\n- Penghasilan Neto Setahun = Rp 140.000.000 - Rp 6.000.000 = **Rp 134.000.000**.\n- PTKP K/1 = **Rp 63.000.000**.\n- Penghasilan Kena Pajak (PKP) Setahun = Rp 134.000.000 - Rp 63.000.000 = **Rp 71.000.000**.\n- PPh 21 Terutang Setahun (Tarif Pasal 17 UU HPP):\n  * Lapisan I (5% × Rp 60.000.000) = Rp 3.000.000\n  * Lapisan II (15% × Rp 11.000.000) = Rp 1.650.000\n  * **Total PPh 21 Terutang Setahun** = Rp 3.000.000 + Rp 1.650.000 = **Rp 4.650.000**.',
+            '**2. Rekalkulasi PPh 21 Setahun di Bulan Desember (Tarif Pasal 17)**:\n- Total Penghasilan Bruto Setahun = (11 × 10 Jt) + 30 Jt (Desember) = **Rp 140.000.000**.\n- Pengurang Biaya Jabatan (5% max Rp 500.000/bln = Rp 6.000.000/thn):\nBiaya Jabatan = 5% × Rp 140.000.000 = Rp 7.000.000 $\\r→$ Dibatasi maksimum **Rp 6.000.000**.\n- Penghasilan Neto Setahun = Rp 140.000.000 - Rp 6.000.000 = **Rp 134.000.000**.\n- PTKP K/1 = **Rp 63.000.000**.\n- Penghasilan Kena Pajak (PKP) Setahun = Rp 134.000.000 - Rp 63.000.000 = **Rp 71.000.000**.\n- PPh 21 Terutang Setahun (Tarif Pasal 17 UU HPP):\n  * Lapisan I (5% × Rp 60.000.000) = Rp 3.000.000\n  * Lapisan II (15% × Rp 11.000.000) = Rp 1.650.000\n  * **Total PPh 21 Terutang Setahun** = Rp 3.000.000 + Rp 1.650.000 = **Rp 4.650.000**.',
             '**3. PPh 21 yang Dipotong Khusus Bulan Desember 2026**:\nPPh 21 Desember = PPh 21 Setahun - PPh 21 Jan-Nov yang Sudah Dipotong\nPPh 21 Desember = Rp 4.650.000 - Rp 2.200.000 = **Rp 2.450.000**.'
           ]
         }
@@ -321,9 +321,9 @@ export const CASE_VAT_PKP_OBJECTS: ContentBlock = {
           kind: 'ul',
           items: [
             '**1. Penjualan Barang Elektronik (BKP Umum Tarif 11%)**:\nPPN Keluaran = 11% × Rp 500.000.000 = **Rp 55.000.000**.',
-            '**2. Penjualan Beras dan Telur Mentah (Barang Kebutuhan Pokok)**:\nSesuai Pasal 4A jo Pasal 16B UU PPN (UU HPP), beras dan telur adalah barang kebutuhan pokok yang sangat dibutuhkan rakyat banyak yang mendapat fasilitas **Dibebaskan dari Pengenaan PPN** $\\rightarrow$ **PPN Rp 0**.',
+            '**2. Penjualan Beras dan Telur Mentah (Barang Kebutuhan Pokok)**:\nSesuai Pasal 4A jo Pasal 16B UU PPN (UU HPP), beras dan telur adalah barang kebutuhan pokok yang sangat dibutuhkan rakyat banyak yang mendapat fasilitas **Dibebaskan dari Pengenaan PPN** $\\r→$ **PPN Rp 0**.',
             '**3. Jasa Perbaikan AC (JKP Dalam Negeri Tarif 11%)**:\nPPN Keluaran = 11% × Rp 50.000.000 = **Rp 5.500.000**.',
-            '**4. Ekspor Mie Instan (Ekspor BKP Berwujud Tarif 0%)**:\nSesuai Pasal 7 ayat (2) UU PPN, ekspor BKP berwujud dikenai tarif **0%** $\\rightarrow$ **PPN Rp 0** (Namun Pajak Masukan terkait ekspor tetap dapat dikreditkan/direstitusi).',
+            '**4. Ekspor Mie Instan (Ekspor BKP Berwujud Tarif 0%)**:\nSesuai Pasal 7 ayat (2) UU PPN, ekspor BKP berwujud dikenai tarif **0%** $\\r→$ **PPN Rp 0** (Namun Pajak Masukan terkait ekspor tetap dapat dikreditkan/direstitusi).',
             '**Total Pajak Keluaran (PPN Wajib Dipungut)** = Rp 55.000.000 + Rp 5.500.000 = **Rp 60.500.000**.'
           ]
         }

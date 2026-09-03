@@ -1,4 +1,4 @@
-﻿// =============================================================
+// =============================================================
 // src/data/courses/courseRegistry.ts
 // Registri data mata kuliah dengan lazy-loading per mata kuliah.
 // Batch 8: hanya data course yang sedang dibuka yang diunduh/diparse.
@@ -229,7 +229,7 @@ function blockquoteToCallout(section: string, enableLegal = false): ContentBlock
   const parsed = parseBoldTitle(cleaned);
   const body = parsed.body || cleaned;
   const titleSource = parsed.title ?? 'Catatan Penting';
-  const warning = /âš |PENTING|jangan keliru|tidak berlaku|koreksi|usang|wajib/i.test(cleaned);
+  const warning = /⚠️|PENTING|jangan keliru|tidak berlaku|koreksi|usang|wajib/i.test(cleaned);
   const variant: CalloutVariant = warning ? 'warning' : (enableLegal && hasLegalSignal(cleaned)) ? 'key' : 'info';
 
   return {
@@ -279,7 +279,7 @@ function parseMarkdownList(section: string): ContentBlock | null {
       if (/^\d+\.\s+/.test(trimmed)) {
         items.push(trimmed.replace(/^\d+\.\s+/, ''));
       } else if (hasNestedBullets && items.length > 0 && /^[-*]\s+/.test(trimmed)) {
-        items[items.length - 1] += `\nâ€¢ ${trimmed.replace(/^[-*]\s+/, '')}`;
+        items[items.length - 1] += `\n• ${trimmed.replace(/^[-*]\s+/, '')}`;
       }
     }
     return { kind: 'ol', items };
@@ -320,7 +320,7 @@ export function parseMarkdownToBlocks(md: string, options: { enableLegal?: boole
 
   for (let i = 0; i < rawSections.length; i += 1) {
     const section = rawSections[i].trim();
-    if (!section || isHorizontalRule(section) || isHtmlAnchor(section) || /^\[â†‘\s*Kembali/i.test(section)) {
+    if (!section || isHorizontalRule(section) || isHtmlAnchor(section) || /^\[↑\s*Kembali/i.test(section)) {
       pendingCalloutEmoji = null;
       continue;
     }
@@ -346,8 +346,8 @@ export function parseMarkdownToBlocks(md: string, options: { enableLegal?: boole
 
     if (pendingCalloutEmoji) {
       let variant: CalloutVariant = 'info';
-      if (['âš ï¸', 'âš '].includes(pendingCalloutEmoji)) variant = 'warning';
-      else if (['ðŸ’¡', 'â­', 'ðŸ”‘', 'ðŸ“Œ', 'ðŸ”', 'ðŸŽ¯'].includes(pendingCalloutEmoji)) variant = 'tip';
+      if (['⚠️'].includes(pendingCalloutEmoji)) variant = 'warning';
+      else if (['💡', '⭐', '🔑', '📌', '🔍', '🎯'].includes(pendingCalloutEmoji)) variant = 'tip';
       else if (enableLegal && hasLegalSignal(section)) variant = 'key';
 
       const parsed = parseBoldTitle(section);
@@ -517,7 +517,7 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
       tm: module.tm,
       title: module.title,
       ref: `Regulasi s.d. ${perpajakanPraUAS.dateBasis || 'Juni 2026'}`,
-      intro: `Modul Perpajakan I Tatap Muka ${module.tm} â€” sinkron dari materi kompilasi TM8-14 berbasis regulasi s.d. ${perpajakanPraUAS.dateBasis || 'Juni 2026'}.`,
+      intro: `Modul Perpajakan I Tatap Muka ${module.tm} — sinkron dari materi kompilasi TM8-14 berbasis regulasi s.d. ${perpajakanPraUAS.dateBasis || 'Juni 2026'}.`,
       objectives: [],
       blocks
     };
@@ -577,6 +577,10 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         customReferensi: buildAkbiFormulaBank(module.AKM201_READINGS, module.AKBI_REVIEW_READINGS),
       };
     }
+    case 'AKM202': {
+      const module = await import('../akmen/akmenData');
+      return { readings: module.AKM202_READINGS, reviews: module.AKM202_REVIEW_READINGS };
+    }
     case 'EKT109': {
       const module = await import('../pte/pteData');
       return {
@@ -596,7 +600,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
 
       const chunks = rawText.split(/(?=### TM\d{1,2}\b)/i);
       chunks.forEach((chunk: string) => {
-        const match = chunk.match(/^### TM(\d{1,2})\s*(?:â€”|-)\s*([^\n]+)/i);
+        const match = chunk.match(/^### TM(\d{1,2})\s*(?:—|-)\s*([^\n]+)/i);
         if (!match) return;
         const tm = parseInt(match[1], 10);
 

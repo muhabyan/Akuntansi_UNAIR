@@ -26,6 +26,16 @@ import { SIP107_QUIZ } from './sip107';
 import { PHP103_QUIZ } from './php103';
 import { MNM107_QUIZ } from './mnm107';
 import { MNM106_QUIZ } from './mnm106';
+
+// Semester 3
+import { AKK202_QUIZ, AKK202_QUIZ_UTS, AKK202_QUIZ_UAS } from './akk202';
+import { AKM202_QUIZ, AKM202_QUIZ_UTS, AKM202_QUIZ_UAS } from './akm202';
+import { AKS201_QUIZ, AKS201_QUIZ_UTS, AKS201_QUIZ_UAS } from './aks201';
+import { PJK202_QUIZ, PJK202_QUIZ_UTS, PJK202_QUIZ_UAS } from './pjk202';
+import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
+import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
+import { AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './aks301';
+
 const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK106: AKK106_QUIZ,
   AGX101: AGX101_QUIZ,
@@ -43,6 +53,14 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   AKA103: [...AKA103_QUIZ_UTS_SIMULATOR, ...AKA103_QUIZ_UAS_SIMULATOR],
   MAS122: MAS122_QUIZ_ALL,
   PJK201: [...PJK201_QUIZ_UTS_SIMULATOR, ...PJK201_QUIZ_UAS_SIMULATOR],
+  // Semester 3
+  AKK202: AKK202_QUIZ,
+  AKM202: AKM202_QUIZ,
+  AKS201: AKS201_QUIZ,
+  PJK202: PJK202_QUIZ,
+  MNK201: MNK201_QUIZ,
+  AKA201: AKA201_QUIZ,
+  AKS301: AKS301_QUIZ,
 };
 
 export function getQuiz(courseCode: string): QuizQuestion[] {
@@ -99,6 +117,56 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'uas', label: `Simulasi UAS Statistik — Website Mode 90 Menit (40 Soal Sesuai Bocoran UAS 2024)`, items: MAS122_UAS_2024 },
       { id: 'uts', label: `Simulasi UTS Statistik — Website Mode 90 Menit (30 Soal Distribusi & Hipotesis)`, items: MAS122_QUIZ },
       { id: 'all', label: `Kompilasi Seluruh Soal Statistik (${MAS122_QUIZ_ALL.length} Soal Komprehensif)`, items: MAS122_QUIZ_ALL },
+    ];
+  }
+  // Semester 3 Sets
+  if (courseCode === 'AKK202') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS AKM II (TM 1–7)', items: AKK202_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS AKM II (TM 8–14)', items: AKK202_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap AKM II (14 TM)', items: AKK202_QUIZ },
+    ];
+  }
+  if (courseCode === 'AKM202') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Akuntansi Manajemen (TM 1–7)', items: AKM202_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Akuntansi Manajemen (TM 8–14)', items: AKM202_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Akuntansi Manajemen (14 TM)', items: AKM202_QUIZ },
+    ];
+  }
+  if (courseCode === 'AKS201') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Akuntansi Sektor Publik (TM 1–7)', items: AKS201_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Akuntansi Sektor Publik (TM 8–14)', items: AKS201_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Sektor Publik (14 TM)', items: AKS201_QUIZ },
+    ];
+  }
+  if (courseCode === 'PJK202') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Perpajakan II (TM 1–7)', items: PJK202_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 8–14)', items: PJK202_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (14 TM)', items: PJK202_QUIZ },
+    ];
+  }
+  if (courseCode === 'MNK201') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Manajemen Keuangan (TM 1–7)', items: MNK201_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Manajemen Keuangan (TM 8–14)', items: MNK201_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Manajemen Keuangan (14 TM)', items: MNK201_QUIZ },
+    ];
+  }
+  if (courseCode === 'AKA201') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Pengauditan Berbasis Risiko I (TM 1–7)', items: AKA201_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengauditan Berbasis Risiko I (TM 8–14)', items: AKA201_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Pengauditan I (14 TM)', items: AKA201_QUIZ },
+    ];
+  }
+  if (courseCode === 'AKS301') {
+    return [
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Sistem Informasi Akuntansi (TM 1–7)', items: AKS301_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Sistem Informasi Akuntansi (TM 8–14)', items: AKS301_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap SIA (14 TM)', items: AKS301_QUIZ },
     ];
   }
   const items = getQuiz(courseCode);

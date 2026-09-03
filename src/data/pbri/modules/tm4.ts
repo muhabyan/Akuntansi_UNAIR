@@ -1,42 +1,77 @@
 import type { Reading } from '../../../types';
 import { CASE_AUDIT_OPINIONS } from '../pbriPracticeCases';
 
-const SVG_AUDIT_OPINION_TREE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">POHON KEPUTUSAN PENENTUAN OPINI AUDIT (SA 700 &amp; SA 705)</text>
-  
-  <rect x="25" y="55" width="140" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="95" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">WTP (UNMODIFIED)</text>
-  <text x="95" y="100" fill="#94a3b8" font-size="9" text-anchor="middle">Kondisi:</text>
-  <text x="95" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Laporan Keuangan</text>
-  <text x="95" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">bebas salah saji</text>
-  <text x="95" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">material &amp; sesuai SAK.</text>
-  <text x="95" y="175" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">Opini Bersih</text>
+const SVG_AUDIT_OPINION_TREE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="wtpGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="wdpGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="advGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+    <linearGradient id="disGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb4)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">POHON KEPUTUSAN 4 JENIS OPINI AUDITOR INDEPENDEN (SA 700 &amp; SA 705 REVISI)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">OPINION TREE</text>
 
-  <rect x="180" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="252" y="78" fill="#fbbf24" font-size="11" font-weight="700" text-anchor="middle">WDP (QUALIFIED)</text>
-  <text x="252" y="100" fill="#94a3b8" font-size="9" text-anchor="middle">Kondisi:</text>
-  <text x="252" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Salah saji material</text>
-  <text x="252" y="134" fill="#cbd5e1" font-size="8.5" text-anchor="middle">ATAU batasan lingkup,</text>
-  <text x="252" y="150" fill="#fde68a" font-size="8.5" text-anchor="middle">TETAPI TIDAK PERVASIF.</text>
-  <text x="252" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">"Kecuali untuk..."</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#wtpGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="10" font-weight="900" text-anchor="middle">1. WAJAR TANPA PENGECUALIAN</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="97" y="54" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">WTP (UNMODIFIED)</text>
+    <text class="svg-text" x="10" y="80" fill="#cbd5e1" font-size="7.5">• Bukti audit cukup &amp; tepat</text>
+    <text class="svg-text" x="10" y="96" fill="#cbd5e1" font-size="7.5">• Bebas dari salah saji material</text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• Sesuai SAK / IFRS secara wajar</text>
+    <text class="svg-text" x="10" y="128" fill="#cbd5e1" font-size="7.5">• Tidak ada pembatasan lingkup</text>
+    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Opini Terbaik (Clean Opinion)</text>
+  </g>
 
-  <rect x="340" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#f87171" stroke-width="1.5"/>
-  <text x="415" y="78" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">TIDAK WAJAR (ADVERSE)</text>
-  <text x="415" y="100" fill="#94a3b8" font-size="9" text-anchor="middle">Kondisi:</text>
-  <text x="415" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Salah saji material</text>
-  <text x="415" y="134" fill="#fca5a5" font-size="8.5" text-anchor="middle">DAN SANGAT PERVASIF</text>
-  <text x="415" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Merusak laporan).</text>
-  <text x="415" y="175" fill="#f87171" font-size="9" font-weight="700" text-anchor="middle">"Tidak menyajikan wajar"</text>
+  <g transform="translate(245, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#wdpGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">2. WAJAR DENGAN PENGECUALIAN</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="97" y="54" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">WDP (QUALIFIED - "KECUALI")</text>
+    <text class="svg-text" x="10" y="80" fill="#cbd5e1" font-size="7.5">• Ada salah saji <tspan class="text-accent-amber" fill="#fbbf24" font-weight="700">Material</tspan></text>
+    <text class="svg-text" x="10" y="96" fill="#cbd5e1" font-size="7.5">• Namun <tspan class="text-accent-green" fill="#34d399" font-weight="700">TIDAK Pervasif</tspan></text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• Hanya terlokalisir di 1 akun</text>
+    <text class="svg-text" x="10" y="128" fill="#cbd5e1" font-size="7.5">• Lapkeu secara umum masih wajar</text>
+    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Material Namun Terisolir</text>
+  </g>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">DISCLAIMER</text>
-  <text x="580" y="100" fill="#94a3b8" font-size="9" text-anchor="middle">Kondisi:</text>
-  <text x="580" y="118" fill="#cbd5e1" font-size="8.5" text-anchor="middle">Pembatasan lingkup</text>
-  <text x="580" y="134" fill="#e9d5ff" font-size="8.5" text-anchor="middle">material &amp; pervasif</text>
-  <text x="580" y="150" fill="#cbd5e1" font-size="8.5" text-anchor="middle">ATAU auditor tdk independen.</text>
-  <text x="580" y="175" fill="#a855f7" font-size="9" font-weight="700" text-anchor="middle">"Tidak menyatakan pendapat"</text>
+  <g transform="translate(455, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#advGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-red" x="97" y="20" fill="#f87171" font-size="10" font-weight="800" text-anchor="middle">3. TIDAK WAJAR</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-red" x="97" y="54" fill="#f87171" font-size="8" font-weight="800" text-anchor="middle">ADVERSE OPINION</text>
+    <text class="svg-text" x="10" y="80" fill="#cbd5e1" font-size="7.5">• Bukti salah saji didapatkan</text>
+    <text class="svg-text" x="10" y="96" fill="#cbd5e1" font-size="7.5">• Salah saji <tspan class="text-accent-red" fill="#f87171" font-weight="700">Material &amp; PERVASIF</tspan></text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• Merusak keandalan seluruh lapkeu</text>
+    <text class="svg-text" x="10" y="128" fill="#cbd5e1" font-size="7.5">• Lapkeu menyesatkan pembaca</text>
+    <rect class="svg-badge-red" x="10" y="185" width="175" height="24" rx="4" fill="#dc2626" fill-opacity="0.2"/>
+    <text class="text-accent-red" x="97" y="201" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Menyesatkan &amp; Rusak Pervasif</text>
+  </g>
+
+  <g transform="translate(665, 75)">
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#disGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">4. TIDAK MENYATAKAN PENDAPAT</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="24" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="97" y="54" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">DISCLAIMER OF OPINION</text>
+    <text class="svg-text" x="10" y="80" fill="#cbd5e1" font-size="7.5">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Gagal memperoleh bukti</tspan> audit</text>
+    <text class="svg-text" x="10" y="96" fill="#cbd5e1" font-size="7.5">• Pembatasan lingkup <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Pervasif</tspan></text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• Keraguan kelangsungan usaha parah</text>
+    <text class="svg-text" x="10" y="128" fill="#cbd5e1" font-size="7.5">• Auditor tidak independen</text>
+    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Ruang Lingkup Dibatasi Total</text>
+  </g>
 </svg>`;
 
 export const TM4_READING: Reading = {
@@ -77,11 +112,11 @@ export const TM4_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Struktur Baku LAI SA 700}:
-1. \\text{Judul Resmi: \"Laporan Auditor Independen\"} \\rightarrow 2. \\text{Pihak yang Dituju (Pemegang Saham / Dewan Komisaris)}
-\\rightarrow 3. \\mathbf{\\text{Paragraf OPINI (Di Urutan Pertama)}} \\rightarrow 4. \\mathbf{\\text{Paragraf BASIS OPINI}}
-\\rightarrow 5. \\text{Kelangsungan Usaha (Going Concern, jika ada)} \\rightarrow 6. \\mathbf{\\text{Hal Audit Utama / KAM (SA 701)}}
-\\rightarrow 7. \\text{Tanggung Jawab Manajemen & TCWG} \\rightarrow 8. \\text{Tanggung Jawab Auditor}
-\\rightarrow 9. \\text{Tanda Tangan Partner, Nomor Registrasi AP/KAP, Tanggal LAI, & Alamat}`,
+1. \\text{Judul Resmi: \"Laporan Auditor Independen\"} \\r→ 2. \\text{Pihak yang Dituju (Pemegang Saham / Dewan Komisaris)}
+\\r→ 3. \\mathbf{\\text{Paragraf OPINI (Di Urutan Pertama)}} \\r→ 4. \\mathbf{\\text{Paragraf BASIS OPINI}}
+\\r→ 5. \\text{Kelangsungan Usaha (Going Concern, jika ada)} \\r→ 6. \\mathbf{\\text{Hal Audit Utama / KAM (SA 701)}}
+\\r→ 7. \\text{Tanggung Jawab Manajemen & TCWG} \\r→ 8. \\text{Tanggung Jawab Auditor}
+\\r→ 9. \\text{Tanda Tangan Partner, Nomor Registrasi AP/KAP, Tanggal LAI, & Alamat}`,
       note: 'Format SA 700 (Revisi) menempatkan paragraf OPINI di bagian paling atas agar pengguna langsung mengetahui kesimpulan audit.'
     },
     {

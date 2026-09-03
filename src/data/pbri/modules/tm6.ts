@@ -1,22 +1,62 @@
 import type { Reading } from '../../../types';
 import { CASE_AUDIT_MATERIALITY } from '../pbriPracticeCases';
 
-const SVG_MATERIALITY_LEVELS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">3 TINGKATAN MATERIALITAS AUDIT LAPORAN KEUANGAN (SA 320 &amp; SA 450)</text>
-  
-  <rect x="40" y="55" width="600" height="40" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="55" y="80" fill="#38bdf8" font-size="11" font-weight="700">1. OVERALL MATERIALITY (OM)</text>
-  <text x="380" y="80" fill="#cbd5e1" font-size="10">Ambang batas kewajaran laporan keseluruhan (5% PBT)</text>
+const SVG_MATERIALITY_LEVELS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="omGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="pmGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="sumGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb6)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">3 TINGKATAN AMBANG MATERIALITAS AUDIT LAPORAN KEUANGAN (SA 320)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">MATERIALITY CASCADE</text>
 
-  <rect x="70" y="105" width="540" height="40" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="85" y="130" fill="#fbbf24" font-size="11" font-weight="700">2. PERFORMANCE MATERIALITY (PM)</text>
-  <text x="390" y="130" fill="#cbd5e1" font-size="10">Alokasi untuk pengujian saldo akun (50% - 75% OM)</text>
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#omGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">1. OVERALL MATERIALITY (OM)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="132" y="56" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Benchmark: 5% Laba Sebelum Pajak (EBT)</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Tolok ukur materialitas lapkeu secara keseluruhan</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Besaran salah saji yang dapat mempengaruhi</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">  keputusan ekonomi pengguna laporan keuangan</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Acuan penentuan jenis opini akhir auditor</text>
+    <rect class="svg-badge-purple" x="14" y="185" width="237" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="132" y="201" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Ambang Batas Opini Laporan Keuangan</text>
+  </g>
 
-  <rect x="100" y="155" width="480" height="40" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="115" y="180" fill="#4ade80" font-size="11" font-weight="700">3. CLEARLY TRIVIAL (PAAD)</text>
-  <text x="400" y="180" fill="#cbd5e1" font-size="10">Batas salah saji sepele yg diabaikan (3% - 5% OM)</text>
+  <g transform="translate(318, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#pmGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">2. PERFORMANCE MATERIALITY (PM)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Kisaran: 50% - 75% dari OM</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Berfungsi sebagai "Bantalan Pengaman" (Safety Cushion)</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Digunakan dalam menentukan lingkup pengujian</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">  saldo akun spesifik &amp; ukuran sampel audit</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Mencegah akumulasi salah saji kecil melampaui OM</text>
+    <rect class="svg-badge-blue" x="14" y="185" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Alat Ukur Luas Pengujian Sampel</text>
+  </g>
+
+  <g transform="translate(600, 75)">
+    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#sumGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">3. CLEARLY TRIVIAL (SUM)</text>
+    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Batas Ambang: 3% - 5% dari OM</text>
+    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Batas salah saji yang dapat diabaikan</text>
+    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Salah saji di bawah angka ini tidak perlu</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">  dimasukkan dalam daftar akumulasi koreksi (SUM)</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Di atas batas ini, wajib dicatat &amp; diminta koreksi</text>
+    <rect class="svg-badge-green" x="14" y="185" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Ambang Batas Pengabaian Salah Saji</text>
+  </g>
 </svg>`;
 
 export const TM6_READING: Reading = {

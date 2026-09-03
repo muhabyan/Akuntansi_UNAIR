@@ -1,42 +1,90 @@
 import type { Reading } from '../../../types';
 import { CASE_CORPORATE_TAX_RETURN_1771 } from '../pjk2PracticeCases';
 
-const SVG_SPT_1771_STRUCTURE = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR FORMULIR SPT TAHUNAN PPH BADAN (FORM 1771)</text>
-  
-  <rect x="25" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="97" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">INDUK SPT 1771</text>
-  <text x="97" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Ringkasan Pajak):</text>
-  <text x="97" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penghasilan Kena Pajak</text>
-  <text x="97" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PPh Terutang (22%)</text>
-  <text x="97" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• PPh 29 Kurang Bayar</text>
-  <text x="97" y="175" fill="#38bdf8" font-size="9" font-weight="700" text-anchor="middle">Hasil Rekapitulasi</text>
+const SVG_SPT_1771_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPjk11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="flow1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+    <linearGradient id="flow2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
+    <linearGradient id="flow3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+    <linearGradient id="flow4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk11)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRUKTUR FORMULIR DAN ALUR REKONSILIASI FISKAL SPT TAHUNAN PPH BADAN (FORMULIR 1771)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">FORMULIR 1771</text>
 
-  <rect x="185" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="257" y="78" fill="#4ade80" font-size="10.5" font-weight="700" text-anchor="middle">LAMPIRAN I</text>
-  <text x="257" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Rekonsiliasi Fiskal):</text>
-  <text x="257" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Laba Komersial Neto</text>
-  <text x="257" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Koreksi Positif 11 pos</text>
-  <text x="257" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Koreksi Negatif PPh Final</text>
-  <text x="257" y="175" fill="#4ade80" font-size="9" font-weight="700" text-anchor="middle">Kertas Kerja Fiskal</text>
+  <!-- 4 Step Sequential Cascade -->
+  <g transform="translate(35, 75)">
+    <!-- Step 1: Lampiran I -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#flow1)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">1. LAMPIRAN 1771-I</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Penghitungan Neto Fiskal</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Laba Bersih Komersial</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• (+) Koreksi Fiskal Positif (Beban non-deductible Pasal 9)</text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• (-) Koreksi Fiskal Negatif (Penghasilan PPh Final &amp; Bukan Objek)</text>
+    <text class="svg-text" x="10" y="132" fill="#cbd5e1" font-size="7.5">• Hasil: Penghasilan Neto Fiskal</text>
+    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Rekonsiliasi Komersial - Fiskal</text>
+  </g>
 
-  <rect x="345" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5"/>
-  <text x="417" y="78" fill="#fbbf24" font-size="10.5" font-weight="700" text-anchor="middle">LAMPIRAN II &amp; III</text>
-  <text x="417" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(HPP &amp; Kredit Pajak):</text>
-  <text x="417" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Rincian elemen HPP</text>
-  <text x="417" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Kredit PPh 22, 23, 24</text>
-  <text x="417" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Bukti Potong Unifikasi</text>
-  <text x="417" y="175" fill="#fbbf24" font-size="9" font-weight="700" text-anchor="middle">Pengurang Pajak</text>
+  <polygon points="237,185 245,190 237,195" fill="#38bdf8"/>
 
-  <rect x="505" y="55" width="150" height="145" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1.5"/>
-  <text x="580" y="78" fill="#a78bfa" font-size="10.5" font-weight="700" text-anchor="middle">LAMPIRAN IV - VI</text>
-  <text x="580" y="98" fill="#94a3b8" font-size="9" text-anchor="middle">(Final, Afiliasi, Saham):</text>
-  <text x="580" y="122" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Penghasilan PPh Final</text>
-  <text x="580" y="138" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Daftar pemegang saham</text>
-  <text x="580" y="154" fill="#cbd5e1" font-size="8.5" text-anchor="middle">• Daftar hubungan istimewa</text>
-  <text x="580" y="175" fill="#a78bfa" font-size="9" font-weight="700" text-anchor="middle">Informasi Kepemilikan</text>
+  <g transform="translate(250, 75)">
+    <!-- Step 2: Lampiran II, IV, V -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#flow2)" fill-opacity="0.25"/>
+    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">2. LAMPIRAN PENDUKUNG</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Lampiran 1771-II s.d. VI</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• 1771-II: Rincian HPP &amp; Biaya Usaha</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• 1771-IV: Penghasilan PPh Final &amp; Bukan Objek Pajak</text>
+    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• 1771-V: Daftar Pemegang Saham &amp; Susunan Pengurus/Direksi</text>
+    <text class="svg-text" x="10" y="132" fill="#cbd5e1" font-size="7.5">• 1771-VI: Hubungan Istimewa</text>
+    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
+    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Rincian Detail Transaksi</text>
+  </g>
+
+  <polygon points="452,185 460,190 452,195" fill="#fbbf24"/>
+
+  <g transform="translate(465, 75)">
+    <!-- Step 3: Lampiran III Kredit Pajak -->
+    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#flow3)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">3. LAMPIRAN 1771-III</text>
+    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Kredit Pajak Dalam Negeri</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bukti Potong PPh 22 (Impor/BUMN)</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Bukti Potong PPh 23 (Jasa/Sewa)</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Bukti Potong PPh 24 (Luar Negeri)</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Bukti setor PPh Pasal 25 bulanan</text>
+    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Surat Setoran Pajak (SSP)</text>
+    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
+    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Akumulasi Kredit Pengurang</text>
+  </g>
+
+  <polygon points="667,185 675,190 667,195" fill="#34d399"/>
+
+  <g transform="translate(680, 75)">
+    <!-- Step 4: Induk SPT 1771 -->
+    <rect class="svg-card" x="0" y="0" width="185" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="185" height="30" rx="10" fill="url(#flow4)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="92" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">4. INDUK SPT 1771</text>
+    <rect class="svg-subcard" x="10" y="38" width="165" height="22" rx="4" fill="#1e293b"/>
+    <text class="text-accent-purple" x="92" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Penentuan PPh Kurang/Lebih</text>
+    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• PKP = Neto - Kompensasi Rugi</text>
+    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• PPh Terutang = 22% (atau 31E)</text>
+    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• (-) Total Kredit Pajak (Lamp III)</text>
+    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Hasil: PPh Kurang Bayar (Ps 29)</text>
+    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Menghitung Angsuran PPh 25 baru</text>
+    <rect class="svg-badge-purple" x="10" y="185" width="165" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="92" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">SPT Induk Siap Lapor DJP</text>
+  </g>
 </svg>`;
 
 export const TM11_READING: Reading = {
@@ -55,6 +103,18 @@ export const TM11_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 11.1: Struktur Arsitektur Formulir SPT Tahunan PPh Badan (Formulir 1771).',
       svg: SVG_SPT_1771_STRUCTURE
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 6 ayat (2) UU PPh (Kompensasi Kerugian Fiskal)',
+      text: '"Apabila penghasilan bruto setelah pengurangan biaya-biaya sebagaimana dimaksud pada ayat (1) didapat kerugian, kerugian tersebut dikompensasikan dengan penghasilan mulai tahun pajak berikutnya berturut-turut sampai dengan 5 (lima) tahun.\nContoh: Rugi fiskal tahun 2021 sebesar Rp 1 Miliar dapat dikompensasikan mengurangi laba fiskal tahun 2022, 2023, 2024, 2025, dan paling lambat tahun 2026. Sisa rugi yang belum habis dikompensasi setelah tahun 2026 dinyatakan hangus dan tidak dapat dikurangkan lagi."'
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: '📜 Struktur Formulir SPT Tahunan PPh Badan (Formulir 1771)',
+      text: '"Urutan Pengisian Lampiran SPT Tahunan PPh Badan 1771:\n• Lampiran 1771-I: Penghitungan Penghasilan Neto Fiskal (Rekonsiliasi Fiskal Positif & Negatif atas Laba Komersial);\n• Lampiran 1771-II: Rincian HPP, Biaya Usaha Lainnya, dan Biaya Luar Usaha secara komersial;\n• Lampiran 1771-III: Kredit Pajak Dalam Negeri (Bukti Potong/Pungut PPh 22 dan PPh 23);\n• Lampiran 1771-IV: Penghasilan yang Dikenai PPh Final (Pasal 4 ayat 2) dan Bukan Objek Pajak (Pasal 4 ayat 3);\n• Lampiran 1771-V: Daftar Pemegang Saham/Pemilik Modal dan Susunan Pengurus/Komisaris;\n• Lampiran 1771-VI: Daftar Penyertaan Modal pada Perusahaan Afiliasi dan Daftar Utang Piutang Pemegang Saham;\n• SPT 1771 Induk: Perhitungan PPh Terutang, Kredit Pajak (Pasal 22, 23, 24, 25), dan PPh Kurang/Lebih Bayar (Pasal 29/28A)."'
     },
     {
       kind: 'h2',

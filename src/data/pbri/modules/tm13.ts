@@ -1,26 +1,51 @@
 import type { Reading } from '../../../types';
 import { CASE_IT_AUDIT_CAATS } from '../pbriPracticeCases';
 
-const SVG_IT_AUDIT_CONTROLS = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="32" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR AUDIT TI: GENERAL CONTROLS (ITGC) VS APPLICATION CONTROLS (ITAC)</text>
-  
-  <rect x="30" y="55" width="295" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="177" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">IT GENERAL CONTROLS (ITGC)</text>
-  <text x="177" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Pengendalian Umum Seluruh Sistem:</text>
-  <text x="177" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Access Security (Password, 2FA, Firewall)</text>
-  <text x="177" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Program Change Management (Testing kode)</text>
-  <text x="177" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Computer Operations &amp; Backup Disasters</text>
-  <text x="177" y="180" fill="#38bdf8" font-size="9.5" font-weight="700" text-anchor="middle">Fondasi Keamanan Sistem TI</text>
+const SVG_IT_AUDIT_CONTROLS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgPb13" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="itgcGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+    <linearGradient id="itacGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb13)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARSITEKTUR PENGENDALIAN TEKNOLOGI INFORMASI: ITGC VS APPLICATION CONTROLS</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">IT AUDIT</text>
 
-  <rect x="355" y="55" width="295" height="145" rx="8" fill="#1e293b" stroke="#4ade80" stroke-width="1.5"/>
-  <text x="502" y="78" fill="#4ade80" font-size="11" font-weight="700" text-anchor="middle">IT APPLICATION CONTROLS (ITAC)</text>
-  <text x="502" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Pengendalian pada Modul Transaksi Spesifik:</text>
-  <text x="502" y="120" fill="#cbd5e1" font-size="9" text-anchor="middle">• Input Controls (Field check, Limit check)</text>
-  <text x="502" y="138" fill="#cbd5e1" font-size="9" text-anchor="middle">• Processing Controls (Matching PO-GR-Inv)</text>
-  <text x="502" y="156" fill="#cbd5e1" font-size="9" text-anchor="middle">• Output Controls (Validasi laporan cetak)</text>
-  <text x="502" y="180" fill="#4ade80" font-size="9.5" font-weight="700" text-anchor="middle">Integritas Transaksi Akuntansi</text>
+  <!-- Left: IT GENERAL CONTROLS (Foundation) -->
+  <g transform="translate(35, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#itgcGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="11" font-weight="800">1. IT GENERAL CONTROLS (ITGC) - KENDALI UMUM</text>
+    
+    <text class="svg-text" x="16" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Keamanan Akses Logik &amp; Fisik:</tspan> Password kompleksitas, 2FA, hak akses database restricted</text>
+    <text class="svg-text" x="16" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Manajemen Perubahan Program:</tspan> Prosedur uji User Acceptance Test (UAT) sebelum live production</text>
+    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Operasi Komputer &amp; Backup:</tspan> Jadwal backup data harian/mingguan &amp; Disaster Recovery Plan (DRP)</text>
+    <text class="svg-text" x="16" y="112" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-purple" fill="#a78bfa" font-weight="700">Pemisahan Tugas IT:</tspan> Programmer dilarang memiliki hak akses administrator database live</text>
+    
+    <rect class="svg-badge-purple" x="16" y="175" width="363" height="30" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text class="text-accent-purple" x="197" y="194" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Fondasi Keandalan Lingkungan Seluruh Sistem Aplikasi</text>
+  </g>
+
+  <!-- Right: IT APPLICATION CONTROLS (Business Process) -->
+  <g transform="translate(470, 75)">
+    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#itacGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">2. IT APPLICATION CONTROLS (ITAC) - APLIKASI OTOMATIS</text>
+    
+    <text class="svg-text" x="16" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Validasi Input (Input Controls):</tspan> Format check, digit check, limit check (cegah nilai negatif)</text>
+    <text class="svg-text" x="16" y="72" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Otomasi Proses (Processing Controls):</tspan> Three-Way Matching otomatis (PO = Surat Jalan = Faktur)</text>
+    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Pengendalian Output (Output Controls):</tspan> Log distribusi laporan transaksi &amp; error reporting log</text>
+    <text class="svg-text" x="16" y="112" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-blue" fill="#38bdf8" font-weight="700">Master Data Integrity:</tspan> Validasi nomor NPWP &amp; rekening vendor resmi terdaftar</text>
+    
+    <rect class="svg-badge-blue" x="16" y="175" width="363" height="30" rx="6" fill="#0284c7" fill-opacity="0.2"/>
+    <text class="text-accent-blue" x="197" y="194" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Pengendalian Otomatis Terprogram di Setiap Transaksi Modul ERP</text>
+  </g>
+
+  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Hubungan: Jika ITGC tidak efektif, maka seluruh pengendalian aplikasi (ITAC) otomatis dianggap TIDAK ANDAL oleh auditor.</text>
 </svg>`;
 
 export const TM13_READING: Reading = {
@@ -62,8 +87,8 @@ export const TM13_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Prinsip Dasar Ketergantungan TI}:
-\\text{ITGC Efektif (Keamanan & Perubahan Program Terjaga)} \\Longrightarrow \\text{ITAC dapat Diuji & Diandalkan Sepanjang Tahun}
-\\text{ITGC Lemah (Akses Bebas / Tanpa Otorisasi Perubahan)} \\Longrightarrow \\mathbf{\\text{ITAC TIDAK BISA DIANDALKAN (Wajib Uji Substantif 100\\% Manual!)}}`,
+\\text{ITGC Efektif (Keamanan & Perubahan Program Terjaga)} \\Longr→ \\text{ITAC dapat Diuji & Diandalkan Sepanjang Tahun}
+\\text{ITGC Lemah (Akses Bebas / Tanpa Otorisasi Perubahan)} \\Longr→ \\mathbf{\\text{ITAC TIDAK BISA DIANDALKAN (Wajib Uji Substantif 100\\% Manual!)}}`,
       note: 'Jika programmer dapat langsung mengubah kode di server produksi tanpa persetujuan (ITGC lemah), program otomatis yang tampak sempurna sekalipun tidak boleh diandalkan.'
     },
     {
