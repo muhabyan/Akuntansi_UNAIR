@@ -1,28 +1,30 @@
-﻿import type { Reading } from '../../../types';
+import type { Reading } from '../../../types';
 import {
   CASE_EPS_COMPLEX,
   CASE_COMPREHENSIVE_DILUTED_EPS_RANKING } from '../akm2PracticeCases';
 
 const SVG_EPS_STRUCTURE = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KERANGKA PERHITUNGAN LABA PER SAHAM (EPS - PSAK 56)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KERANGKA PERHITUNGAN LABA PER SAHAM (EPS - PSAK 56)</text>
 
-  <rect x="30" y="55" width="290" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="175" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. EPS DASAR (BASIC EPS)</text>
-  <line x1="45" y1="90" x2="305" y2="90" stroke="#334155"/>
-  <text x="175" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Laba Bersih - Dividen Saham Preferen</text>
+  <rect class="svg-card" x="30" y="55" width="290" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="175" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. EPS DASAR (BASIC EPS)</text>
+  <line class="svg-divider" x1="45" y1="90" x2="305" y2="90" stroke="#334155"/>
+  <text class="svg-text" x="175" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Laba Bersih - Dividen Saham Preferen</text>
   <line x1="60" y1="125" x2="290" y2="125" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="175" y="145" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Rata-Rata Tertimbang Saham Beredar (WASC)</text>
-  <text x="175" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">(Wajib disajikan di Wajah Laporan Laba Rugi)</text>
+  <text class="text-accent-green" x="175" y="145" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Rata-Rata Tertimbang Saham Beredar (WASC)</text>
+  <text class="svg-muted" x="175" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">(Wajib disajikan di Wajah Laporan Laba Rugi)</text>
 
-  <rect x="360" y="55" width="290" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="505" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">2. EPS DILUSIAN (DILUTED EPS)</text>
-  <line x1="375" y1="90" x2="635" y2="90" stroke="#334155"/>
-  <text x="505" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Laba Dasar + Bunga Obligasi Konversi (Net Pajak)</text>
+  <rect class="svg-card" x="360" y="55" width="290" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="text-accent-amber" x="505" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">2. EPS DILUSIAN (DILUTED EPS)</text>
+  <line class="svg-divider" x1="375" y1="90" x2="635" y2="90" stroke="#334155"/>
+  <text class="svg-text" x="505" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Laba Dasar + Bunga Obligasi Konversi (Net Pajak)</text>
   <line x1="375" y1="125" x2="635" y2="125" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="505" y="145" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">WASC + Saham Tambahan Konversi &amp; Opsi</text>
-  <text x="505" y="175" fill="#f87171" font-size="9" text-anchor="middle">(Hanya disajikan jika Dilutif: Diluted EPS &lt; Basic EPS)</text>
+  <text class="text-accent-green" x="505" y="145" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">WASC + Saham Tambahan Konversi &amp; Opsi</text>
+  <text class="text-accent-red" x="505" y="175" fill="#f87171" font-size="9" text-anchor="middle">(Hanya disajikan jika Dilutif: Diluted EPS &lt; Basic EPS)</text>
 </svg>`;
 
 export const TM13_READING: Reading = {

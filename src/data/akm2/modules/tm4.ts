@@ -4,33 +4,35 @@ import {
   CASE_HELD_FOR_SALE_LAND } from '../akm2PracticeCases';
 
 const SVG_IMPAIRMENT_FLOW = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ALUR UJI PENURUNAN NILAI (IMPAIRMENT TEST - PSAK 48)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ALUR UJI PENURUNAN NILAI (IMPAIRMENT TEST - PSAK 48)</text>
 
-  <rect x="30" y="55" width="180" height="60" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="120" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. CARRYING AMOUNT</text>
-  <text x="120" y="98" fill="#cbd5e1" font-size="10" text-anchor="middle">Nilai Tercatat di Buku</text>
+  <rect class="svg-card" x="30" y="55" width="180" height="60" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="120" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. CARRYING AMOUNT</text>
+  <text class="svg-text" x="120" y="98" fill="#cbd5e1" font-size="10" text-anchor="middle">Nilai Tercatat di Buku</text>
 
-  <text x="235" y="90" fill="#f59e0b" font-size="14" font-weight="800" text-anchor="middle">VS</text>
+  <text class="text-accent-amber" x="235" y="90" fill="#f59e0b" font-size="14" font-weight="800" text-anchor="middle">VS</text>
 
-  <rect x="260" y="55" width="220" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="370" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. RECOVERABLE AMOUNT</text>
-  <text x="370" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">PILIH NILAI TERTINGGI ANTARA:</text>
-  <rect x="275" y="110" width="190" height="38" rx="6" fill="#0f172a" stroke="#334155"/>
-  <text x="370" y="126" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">A. Fair Value less Cost to Sell</text>
-  <text x="370" y="140" fill="#64748b" font-size="8.5" text-anchor="middle">(Harga pasar neto pelepasan)</text>
-  <rect x="275" y="155" width="190" height="38" rx="6" fill="#0f172a" stroke="#334155"/>
-  <text x="370" y="171" fill="#38bdf8" font-size="9.5" font-weight="600" text-anchor="middle">B. Value in Use</text>
-  <text x="370" y="185" fill="#64748b" font-size="8.5" text-anchor="middle">(PV arus kas masa depan)</text>
+  <rect class="svg-card" x="260" y="55" width="220" height="150" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="text-accent-amber" x="370" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. RECOVERABLE AMOUNT</text>
+  <text class="svg-muted" x="370" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">PILIH NILAI TERTINGGI ANTARA:</text>
+  <rect class="svg-subcard" x="275" y="110" width="190" height="38" rx="6" fill="#0f172a" stroke="#334155"/>
+  <text class="text-accent-green" x="370" y="126" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">A. Fair Value less Cost to Sell</text>
+  <text class="svg-muted" x="370" y="140" fill="#64748b" font-size="8.5" text-anchor="middle">(Harga pasar neto pelepasan)</text>
+  <rect class="svg-subcard" x="275" y="155" width="190" height="38" rx="6" fill="#0f172a" stroke="#334155"/>
+  <text class="text-accent-blue" x="370" y="171" fill="#38bdf8" font-size="9.5" font-weight="600" text-anchor="middle">B. Value in Use</text>
+  <text class="svg-muted" x="370" y="185" fill="#64748b" font-size="8.5" text-anchor="middle">(PV arus kas masa depan)</text>
 
-  <rect x="500" y="55" width="155" height="150" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="577" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">3. KESIMPULAN</text>
-  <text x="577" y="105" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Jika Carrying &gt; Recoverable:</text>
-  <text x="577" y="125" fill="#f87171" font-size="11" font-weight="800" text-anchor="middle">IMPAIRMENT!</text>
-  <text x="577" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Akui Rugi di Laba Rugi</text>
-  <text x="577" y="170" fill="#34d399" font-size="9" text-anchor="middle">Jika Sebaliknya:</text>
-  <text x="577" y="188" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">NO IMPAIRMENT</text>
+  <rect class="svg-card" x="500" y="55" width="155" height="150" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+  <text class="text-accent-red" x="577" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">3. KESIMPULAN</text>
+  <text class="svg-text" x="577" y="105" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Jika Carrying &gt; Recoverable:</text>
+  <text class="text-accent-red" x="577" y="125" fill="#f87171" font-size="11" font-weight="800" text-anchor="middle">IMPAIRMENT!</text>
+  <text class="svg-muted" x="577" y="145" fill="#94a3b8" font-size="9" text-anchor="middle">Akui Rugi di Laba Rugi</text>
+  <text class="text-accent-green" x="577" y="170" fill="#34d399" font-size="9" text-anchor="middle">Jika Sebaliknya:</text>
+  <text class="text-accent-green" x="577" y="188" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">NO IMPAIRMENT</text>
 </svg>`;
 
 export const TM4_READING: Reading = {

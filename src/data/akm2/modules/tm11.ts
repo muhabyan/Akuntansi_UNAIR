@@ -4,50 +4,52 @@ import {
   CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION } from '../akm2PracticeCases';
 
 const SVG_EQUITY_STRUCTURE = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR EKUITAS PEMEGANG SAHAM (PSAK 1 &amp; PSAK 50)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR EKUITAS PEMEGANG SAHAM (PSAK 1 &amp; PSAK 50)</text>
 
-  <rect x="30" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="102" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. MODAL DISETOR</text>
-  <line x1="40" y1="90" x2="165" y2="90" stroke="#334155"/>
-  <text x="102" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Saham Biasa (Par)</text>
-  <text x="102" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Saham Preferen (Par)</text>
-  <text x="102" y="146" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Biasa</text>
-  <text x="102" y="164" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Preferen</text>
-  <text x="102" y="182" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Treasuri</text>
+  <rect class="svg-card" x="30" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="102" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. MODAL DISETOR</text>
+  <line class="svg-divider" x1="40" y1="90" x2="165" y2="90" stroke="#334155"/>
+  <text class="svg-text" x="102" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Saham Biasa (Par)</text>
+  <text class="svg-text" x="102" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Saham Preferen (Par)</text>
+  <text class="text-accent-blue" x="102" y="146" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Biasa</text>
+  <text class="text-accent-blue" x="102" y="164" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Preferen</text>
+  <text class="text-accent-blue" x="102" y="182" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Treasuri</text>
 
-  <rect x="190" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="262" y="78" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">2. LABA DITAHAN</text>
-  <line x1="200" y1="90" x2="325" y2="90" stroke="#334155"/>
-  <text x="262" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Akumulasi Laba Bersih</text>
-  <text x="262" y="128" fill="#f87171" font-size="9" text-anchor="middle">(-) Akumulasi Rugi</text>
-  <text x="262" y="146" fill="#f87171" font-size="9" text-anchor="middle">(-) Pembagian Dividen</text>
-  <text x="262" y="164" fill="#f59e0b" font-size="9" text-anchor="middle">• Laba Ditahan Dibatasi</text>
-  <text x="262" y="182" fill="#34d399" font-size="9" text-anchor="middle">• Laba Ditahan Bebas</text>
+  <rect class="svg-card" x="190" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text class="text-accent-green" x="262" y="78" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">2. LABA DITAHAN</text>
+  <line class="svg-divider" x1="200" y1="90" x2="325" y2="90" stroke="#334155"/>
+  <text class="svg-text" x="262" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Akumulasi Laba Bersih</text>
+  <text class="text-accent-red" x="262" y="128" fill="#f87171" font-size="9" text-anchor="middle">(-) Akumulasi Rugi</text>
+  <text class="text-accent-red" x="262" y="146" fill="#f87171" font-size="9" text-anchor="middle">(-) Pembagian Dividen</text>
+  <text class="text-accent-amber" x="262" y="164" fill="#f59e0b" font-size="9" text-anchor="middle">• Laba Ditahan Dibatasi</text>
+  <text class="text-accent-green" x="262" y="182" fill="#34d399" font-size="9" text-anchor="middle">• Laba Ditahan Bebas</text>
 
-  <rect x="350" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="422" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. AKUMULASI OCI</text>
-  <line x1="360" y1="90" x2="485" y2="90" stroke="#334155"/>
-  <text x="422" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Surplus Revaluasi Aset</text>
-  <text x="422" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Unrealized Gain FVOCI</text>
-  <text x="422" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Keuntungan Aktuaria</text>
-  <text x="422" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Selisih Kurs Translasi</text>
-  <text x="422" y="182" fill="#a855f7" font-size="9" text-anchor="middle">(Pos OCI Komprehensif)</text>
+  <rect class="svg-card" x="350" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+  <text class="text-accent-purple" x="422" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. AKUMULASI OCI</text>
+  <line class="svg-divider" x1="360" y1="90" x2="485" y2="90" stroke="#334155"/>
+  <text class="svg-text" x="422" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Surplus Revaluasi Aset</text>
+  <text class="svg-text" x="422" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Unrealized Gain FVOCI</text>
+  <text class="svg-text" x="422" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Keuntungan Aktuaria</text>
+  <text class="svg-text" x="422" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Selisih Kurs Translasi</text>
+  <text class="text-accent-purple" x="422" y="182" fill="#a855f7" font-size="9" text-anchor="middle">(Pos OCI Komprehensif)</text>
 
-  <rect x="510" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="582" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">4. SAHAM TREASURI</text>
-  <line x1="520" y1="90" x2="645" y2="90" stroke="#334155"/>
-  <text x="582" y="110" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">KONTRA-EKUITAS</text>
-  <text x="582" y="130" fill="#cbd5e1" font-size="9" text-anchor="middle">Saham dibeli kembali</text>
-  <text x="582" y="148" fill="#f87171" font-size="9" text-anchor="middle">MENGURANGI</text>
-  <text x="582" y="166" fill="#f87171" font-size="9" text-anchor="middle">Total Nilai Ekuitas</text>
-  <text x="582" y="184" fill="#64748b" font-size="8.5" text-anchor="middle">(Cost Method / Nilai Kos)</text>
+  <rect class="svg-card" x="510" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+  <text class="text-accent-red" x="582" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">4. SAHAM TREASURI</text>
+  <line class="svg-divider" x1="520" y1="90" x2="645" y2="90" stroke="#334155"/>
+  <text class="text-accent-red" x="582" y="110" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">KONTRA-EKUITAS</text>
+  <text class="svg-text" x="582" y="130" fill="#cbd5e1" font-size="9" text-anchor="middle">Saham dibeli kembali</text>
+  <text class="text-accent-red" x="582" y="148" fill="#f87171" font-size="9" text-anchor="middle">MENGURANGI</text>
+  <text class="text-accent-red" x="582" y="166" fill="#f87171" font-size="9" text-anchor="middle">Total Nilai Ekuitas</text>
+  <text class="svg-muted" x="582" y="184" fill="#64748b" font-size="8.5" text-anchor="middle">(Cost Method / Nilai Kos)</text>
 </svg>`;
 
 export const TM11_READING: Reading = {
   tm: 11,
-  title: "Ekuitas Pemegang Saham (Stockholders' Equity), Saham Treasuri, dan Kebijakan Dividen",
+  title: 'Ekuitas Pemegang Saham (Stockholders Equity), Saham Treasuri, dan Kebijakan Dividen',
   ref: `Kieso IFRS 5e Ch. 15 | PSAK 50, PSAK 55, UU PT`,
   intro: `TM 11 membedah komponen Ekuitas Pemegang Saham: penerbitan saham biasa & preferen (lump-sum & non-kas), akuntansi Saham Treasuri metode biaya (Cost Method), perlakuan penjualan kembali saham treasuri di atas/bawah harga perolehan, berbagai bentuk dividen (Tunai, Properti, Likuidasi, Saham), serta pemecahan saham (Stock Split).`,
   objectives: [
@@ -59,17 +61,17 @@ export const TM11_READING: Reading = {
   ],
   blocks: [
     {
-      kind: `figure`,
+      kind: 'figure',
       title: `Struktur Komponen Ekuitas Pemegang Saham`,
       svg: SVG_EQUITY_STRUCTURE,
       caption: `Gambar 11.1: Pemisahan modal disetor, laba ditahan, akumulasi OCI, dan saham treasuri.`
     },
     {
-      kind: `h2`,
+      kind: 'h2',
       text: `Alur Belajar Cepat TM 11`
     },
     {
-      kind: `table`,
+      kind: 'table',
       headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
       rows: [
         ['1', 'Penerbitan Saham', 'Berapa nilai nominal vs kelebihan kas yang diterima (Agio Saham/Share Premium)?', 'Menjurnal penerbitan saham biasa dan saham preferen.'],
@@ -81,36 +83,36 @@ export const TM11_READING: Reading = {
       caption: `Tabel 11.0: Roadmap belajar ekuitas, saham treasuri, dan dividen.`
     },
     {
-      kind: `h2`,
+      kind: 'h2',
       text: `Formula Sheet Fondasi TM 11`
     },
     {
-      kind: `formula`,
+      kind: 'formula',
       text: `\\text{Total Ekuitas} = \\text{Modal Saham} + \\text{Agio Saham} + \\text{Laba Ditahan} + \\text{Akumulasi OCI} - \\text{Saham Treasuri}`,
       note: `Saham Treasuri adalah akun kontra-ekuitas yang disajikan mengurangi total ekuitas di neraca.`
     },
     {
-      kind: `formula`,
+      kind: 'formula',
       text: `\\text{Dividen Saham Kecil (< 20%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Wajar Pasar Saham}`,
       note: `Laba ditahan didebit sebesar NILAI WAJAR pasar saham pada tanggal pengumuman.`
     },
     {
-      kind: `formula`,
+      kind: 'formula',
       text: `\\text{Dividen Saham Besar (> 20%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Nominal (Par Value)}`,
       note: `Laba ditahan didebit hanya sebesar NILAI NOMINAL saham yang diterbitkan.`
     },
     {
-      kind: `example`,
+      kind: 'example',
       title: `Contoh Mini Numerik: Transaksi Saham Treasuri PT Unilever Indonesia Tbk`,
       blocks: [
         {
-          kind: `p`,
+          kind: 'p',
           text: `PT Unilever membeli kembali 10.000 lembar saham biasa (nominal Rp 1.000) seharga Rp 4.500/lembar secara tunai (Cost Method). Beberapa bulan kemudian:
 1. Menjual 4.000 lembar saham treasuri seharga Rp 5.000/lembar.
 2. Menjual 6.000 lembar sisa saham treasuri seharga Rp 4.000/lembar.`
         },
         {
-          kind: `formula`,
+          kind: 'formula',
           text: `Beli Treasuri = 10.000 × Rp 4.500 = Rp 45.000.000
 
 Penjualan 1 (Untung):
@@ -124,8 +126,8 @@ Penjualan 2 (Rugi):
 • Defisit Penjualan = Rp 3.000.000 (Tutup ke Agio Treasuri Rp 2 jt, sisanya Rp 1 jt ke Laba Ditahan!)`
         },
         {
-          kind: `callout`,
-          variant: `key`,
+          kind: 'callout',
+          variant: 'key',
           title: `Jurnal Akuntansi PT Unilever`,
           text: `1. Pembelian Treasuri:
 Debit: Saham Treasuri Rp 45.000.000 | Kredit: Kas Rp 45.000.000
@@ -142,12 +144,12 @@ Kredit: Saham Treasuri Rp 27.000.000`
       ]
     },
     {
-      kind: `solution-reveal`,
+      kind: 'solution-reveal',
       title: `Latihan Aktif: Dividen Properti (Penyesuaian Nilai Wajar)`,
       prompt: `PT Sentosa mengumumkan dividen properti berupa investasi saham PT X (Nilai buku Rp 100 jt, Nilai wajar pada tanggal pengumuman Rp 140 jt). Buat jurnal pada tanggal pengumuman dan tanggal pembagian dividen!`,
       blocks: [
         {
-          kind: `ul`,
+          kind: 'ul',
           items: [
             `**Tahap 1: Sesuaikan Nilai Investasi ke Nilai Wajar (Tanggal Pengumuman)**:
 Debit: Investasi Saham PT X Rp 40.000.000
@@ -161,19 +163,19 @@ Kredit: Investasi Saham PT X Rp 140.000.000`
           ]
         },
         {
-          kind: `callout`,
-          variant: `warning`,
+          kind: 'callout',
+          variant: 'warning',
           title: `Jebakan UAS Dividen Properti`,
           text: `Sebelum membagikan dividen properti, aset non-kas yang akan dibagikan **WAJIB DIREVALUASI KE NILAI WAJAR TERKININYA** pada tanggal pengumuman, dan keuntungan/kerugian revaluasi diakui di Laba Rugi periode berjalan!`
         }
       ]
     },
     {
-      kind: `h2`,
+      kind: 'h2',
       text: `Peta Submateri & Target Penguasaan TM 11`
     },
     {
-      kind: `table`,
+      kind: 'table',
       headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
       rows: [
         ['1', 'Penerbitan Saham & Agio', 'Penerbitan saham biasa/preferen secara tunai, lump-sum, dan non-kas.', 'Menjurnal akun modal saham dan agio saham terkait.'],
@@ -186,7 +188,7 @@ Kredit: Investasi Saham PT X Rp 140.000.000`
     },
     { kind: 'h2', text: `1. Transaksi Saham Treasuri & Kebijakan Dividen` },
     {
-      kind: `p`,
+      kind: 'p',
       text: `==Saham treasuri adalah saham entitas yang telah diterbitkan dan dibeli kembali oleh entitas tetapi tidak dibatalkan. Transaksi pembelian dan penjualan saham treasuri tidak pernah menghasilkan laba atau rugi di laporan laba rugi.==`
     },
     CASE_TREASURY_DIVIDENDS,
@@ -198,7 +200,7 @@ Kredit: Investasi Saham PT X Rp 140.000.000`
     CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION,
     { kind: 'h2', text: `2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)` },
     {
-      kind: `ul`,
+      kind: 'ul',
       items: [
         `**Saham Treasuri Cost Method**: Didebit sebesar kas yang dibayarkan, disajikan mengurangi total ekuitas.`,
         `**Defisit Jual Treasuri**: Menghabiskan saldo Agio Saham Treasuri terlebih dahulu, sisanya mengurangi Laba Ditahan.`,

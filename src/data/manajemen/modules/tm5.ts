@@ -125,7 +125,7 @@ export const TM5_READING: Reading = {
     {
       kind: 'solution-reveal',
       title: 'Latihan Mandiri: Jebakan "Terjebak di Tengah" (Stuck in the Middle)',
-      prompt: 'Sebuah jaringan toserba mencoba bersaing dengan supermarket diskon grosir dalam hal harga murah, sekaligus ingin menawarkan suasana belanja mewah seperti butik kelas atas. Namun, toserba ini tidak berhasil menjadi yang termurah dan juga tidak berhasil menjadi yang termewah. Jelaskan resiko kondisi ini menurut Michael Porter!',
+      prompt: 'Sebuah jaringan toserba mencoba bersaing dengan supermarket diskon grosir dalam hal harga murah, sekaligus ingin menawarkan suasana belanja mewah seperti butik kelas atas. Namun, toserba ini tidak berhasil menjadi yang termurah dan juga tidak berhasil menjadi yang termewah. Jelaskan risiko kondisi ini menurut Michael Porter!',
       blocks: [
         {
           kind: 'ul',

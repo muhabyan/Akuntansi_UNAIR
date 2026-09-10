@@ -6,36 +6,38 @@ import {
 } from '../akm2PracticeCases';
 
 const SVG_PPE_CLASSIFICATION = `
-<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KLASIFIKASI KEPEMILIKAN PROPERTI &amp; ASET BERWUJUD</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="200" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KLASIFIKASI KEPEMILIKAN PROPERTI &amp; ASET BERWUJUD</text>
   
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">ASET TETAP (PSAK 16)</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Tujuan Penggunaan:</text>
-  <text x="125" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Operasi / Kantor / Pabrik</text>
-  <line x1="45" y1="128" x2="205" y2="128" stroke="#334155"/>
-  <text x="125" y="145" fill="#94a3b8" font-size="10" text-anchor="middle">Pengukuran Lanjutan:</text>
-  <text x="125" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">Cost Model (Didepresiasi)</text>
-  <text x="125" y="178" fill="#cbd5e1" font-size="10" text-anchor="middle">atau Revaluation (OCI)</text>
+  <rect class="svg-card" x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="125" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">ASET TETAP (PSAK 16)</text>
+  <text class="svg-muted" x="125" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Tujuan Penggunaan:</text>
+  <text class="svg-text" x="125" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Operasi / Kantor / Pabrik</text>
+  <line class="svg-divider" x1="45" y1="128" x2="205" y2="128" stroke="#334155"/>
+  <text class="svg-muted" x="125" y="145" fill="#94a3b8" font-size="10" text-anchor="middle">Pengukuran Lanjutan:</text>
+  <text class="svg-text" x="125" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">Cost Model (Didepresiasi)</text>
+  <text class="svg-text" x="125" y="178" fill="#cbd5e1" font-size="10" text-anchor="middle">atau Revaluation (OCI)</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">PROPERTI INVESTASI (PSAK 13)</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Tujuan Penggunaan:</text>
-  <text x="340" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Sewa Rental / Capital Gain</text>
-  <line x1="260" y1="128" x2="420" y2="128" stroke="#334155"/>
-  <text x="340" y="145" fill="#94a3b8" font-size="10" text-anchor="middle">Pengukuran Lanjutan:</text>
-  <text x="340" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">Cost Model (Depresiasi)</text>
-  <text x="340" y="178" fill="#34d399" font-size="10" font-weight="600" text-anchor="middle">atau Fair Value (Laba Rugi!)</text>
+  <rect class="svg-card" x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text class="text-accent-green" x="340" y="78" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="middle">PROPERTI INVESTASI (PSAK 13)</text>
+  <text class="svg-muted" x="340" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Tujuan Penggunaan:</text>
+  <text class="svg-text" x="340" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Sewa Rental / Capital Gain</text>
+  <line class="svg-divider" x1="260" y1="128" x2="420" y2="128" stroke="#334155"/>
+  <text class="svg-muted" x="340" y="145" fill="#94a3b8" font-size="10" text-anchor="middle">Pengukuran Lanjutan:</text>
+  <text class="svg-text" x="340" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">Cost Model (Depresiasi)</text>
+  <text class="text-accent-green" x="340" y="178" fill="#34d399" font-size="10" font-weight="600" text-anchor="middle">atau Fair Value (Laba Rugi!)</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">PERSEDIAAN (PSAK 14)</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Tujuan Penggunaan:</text>
-  <text x="555" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Dijual dlm Kegiatan Biasa</text>
-  <line x1="475" y1="128" x2="635" y2="128" stroke="#334155"/>
-  <text x="555" y="145" fill="#94a3b8" font-size="10" text-anchor="middle">Karakteristik Entitas:</text>
-  <text x="555" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">Pengembang Real Estat /</text>
-  <text x="555" y="178" fill="#cbd5e1" font-size="10" text-anchor="middle">Developer Perumahan</text>
+  <rect class="svg-card" x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="text-accent-amber" x="555" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">PERSEDIAAN (PSAK 14)</text>
+  <text class="svg-muted" x="555" y="98" fill="#94a3b8" font-size="10" text-anchor="middle">Tujuan Penggunaan:</text>
+  <text class="svg-text" x="555" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Dijual dlm Kegiatan Biasa</text>
+  <line class="svg-divider" x1="475" y1="128" x2="635" y2="128" stroke="#334155"/>
+  <text class="svg-muted" x="555" y="145" fill="#94a3b8" font-size="10" text-anchor="middle">Karakteristik Entitas:</text>
+  <text class="svg-text" x="555" y="162" fill="#cbd5e1" font-size="10" text-anchor="middle">Pengembang Real Estat /</text>
+  <text class="svg-text" x="555" y="178" fill="#cbd5e1" font-size="10" text-anchor="middle">Developer Perumahan</text>
 </svg>`;
 
 export const TM1_READING: Reading = {

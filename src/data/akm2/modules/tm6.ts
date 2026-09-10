@@ -4,36 +4,38 @@ import {
   CASE_PAYROLL_BONUS_PROFIT_SHARING } from '../akm2PracticeCases';
 
 const SVG_LIABILITIES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM KEWAJIBAN &amp; LIABILITAS JANGKA PENDEK (PSAK 1 &amp; PSAK 57)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">SPEKTRUM KEWAJIBAN &amp; LIABILITAS JANGKA PENDEK (PSAK 1 &amp; PSAK 57)</text>
 
-  <rect x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. LIABILITAS PASTI</text>
-  <text x="125" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Jumlah &amp; Tanggal Pasti</text>
-  <line x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
-  <text x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Utang Usaha (Trade AP)</text>
-  <text x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Wesel Bayar Jangka Pendek</text>
-  <text x="125" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Bagian Lancar Utang JP</text>
-  <text x="125" y="184" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">Dicatat di Neraca (Lancar)</text>
+  <rect class="svg-card" x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. LIABILITAS PASTI</text>
+  <text class="svg-muted" x="125" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Jumlah &amp; Tanggal Pasti</text>
+  <line class="svg-divider" x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
+  <text class="svg-text" x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Utang Usaha (Trade AP)</text>
+  <text class="svg-text" x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Wesel Bayar Jangka Pendek</text>
+  <text class="svg-text" x="125" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Bagian Lancar Utang JP</text>
+  <text class="text-accent-green" x="125" y="184" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">Dicatat di Neraca (Lancar)</text>
 
-  <rect x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="340" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. PROVISI (PSAK 57)</text>
-  <text x="340" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Waktu / Jumlah Tidak Pasti</text>
-  <line x1="260" y1="110" x2="420" y2="110" stroke="#334155"/>
-  <text x="340" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Garansi Produk (Warranty)</text>
-  <text x="340" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Premi &amp; Kupon Hadiah</text>
-  <text x="340" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Provisi Gugatan Hukum</text>
-  <text x="340" y="184" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">Dicatat di Neraca (Estimasi)</text>
+  <rect class="svg-card" x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="text-accent-amber" x="340" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. PROVISI (PSAK 57)</text>
+  <text class="svg-muted" x="340" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Waktu / Jumlah Tidak Pasti</text>
+  <line class="svg-divider" x1="260" y1="110" x2="420" y2="110" stroke="#334155"/>
+  <text class="svg-text" x="340" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Garansi Produk (Warranty)</text>
+  <text class="svg-text" x="340" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Premi &amp; Kupon Hadiah</text>
+  <text class="svg-text" x="340" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Provisi Gugatan Hukum</text>
+  <text class="text-accent-green" x="340" y="184" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">Dicatat di Neraca (Estimasi)</text>
 
-  <rect x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="555" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">3. KONTINJENSI</text>
-  <text x="555" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Kewajiban Potensial</text>
-  <line x1="475" y1="110" x2="635" y2="110" stroke="#334155"/>
-  <text x="555" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Gugatan Belum Pasti (Possible)</text>
-  <text x="555" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Jaminan Utang Pihak Lain</text>
-  <text x="555" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Perkara Banding Pajak</text>
-  <text x="555" y="184" fill="#f59e0b" font-size="9.5" font-weight="600" text-anchor="middle">HANYA Diungkap di CALK</text>
+  <rect class="svg-card" x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+  <text class="text-accent-red" x="555" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">3. KONTINJENSI</text>
+  <text class="svg-muted" x="555" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Kewajiban Potensial</text>
+  <line class="svg-divider" x1="475" y1="110" x2="635" y2="110" stroke="#334155"/>
+  <text class="svg-text" x="555" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Gugatan Belum Pasti (Possible)</text>
+  <text class="svg-text" x="555" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Jaminan Utang Pihak Lain</text>
+  <text class="svg-text" x="555" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Perkara Banding Pajak</text>
+  <text class="text-accent-amber" x="555" y="184" fill="#f59e0b" font-size="9.5" font-weight="600" text-anchor="middle">HANYA Diungkap di CALK</text>
 </svg>`;
 
 export const TM6_READING: Reading = {

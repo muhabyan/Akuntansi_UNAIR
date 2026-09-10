@@ -27,7 +27,7 @@ const SVG_CAPITAL_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 
     <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Asumsi pasar modal sempurna tanpa gesekan</text>
     <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Tidak ada pajak, biaya transaksi, &amp; kebangkrutan</text>
     <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Nilai perusahaan ditentukan oleh aset riil</text>
-    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Rasio utang tidak mempengaruhi nilai korporasi</text>
+    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Rasio utang tidak memengaruhi nilai korporasi</text>
     <rect class="svg-badge-blue" x="14" y="175" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
     <text class="text-accent-blue" x="132" y="191" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fondasi Awal Teori Finansial Modern</text>
   </g>
@@ -90,7 +90,7 @@ export const TM9_READING: Reading = {
       kind: 'table',
       headers: ['Teori Struktur Modal', 'Asumsi Dasar', 'Implikasi terhadap Nilai Perusahaan ($V_L$)', 'Implikasi terhadap WACC'],
       rows: [
-        ['MM Tanpa Pajak (1958)', 'Pasar modal sempurna, tanpa pajak, tanpa biaya kebangkrutan.', '$V_L = V_U$ (Struktur modal sama sekali TIDAK mempengaruhi nilai).', 'WACC konstan pada seluruh rentang rasio utang.'],
+        ['MM Tanpa Pajak (1958)', 'Pasar modal sempurna, tanpa pajak, tanpa biaya kebangkrutan.', '$V_L = V_U$ (Struktur modal sama sekali TIDAK memengaruhi nilai).', 'WACC konstan pada seluruh rentang rasio utang.'],
         ['MM Dengan Pajak (1963)', 'Bunga utang dapat dikurangkan dari pajak penghasilan korporasi.', '$V_L = V_U + (T \\times D)$ (Nilai bertambah sebesar present value tax shield).', 'WACC turun terus mendekati biaya utang; modal optimal 100% utang.'],
         ['Trade-Off Theory (Static Trade-off)', 'Ada penghematan pajak bunga DAN ada biaya kebangkrutan (Financial Distress Costs).', '$V_L = V_U + (T \\times D) - PV(\\text{Distress Costs})$.', 'WACC berbentuk kurva U; titik minimum kurva adalah Struktur Modal Optimal.'],
         ['Pecking Order Theory', 'Asimetri informasi antara manajer (insider) dan investor publik.', 'Tidak ada target rasio D/E tetap; struktur modal mengikuti kebutuhan kas.', 'Pendanaan diprioritaskan: 1. Kas Internal, 2. Utang, 3. Saham Baru.']

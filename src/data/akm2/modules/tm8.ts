@@ -2,49 +2,51 @@ import type { Reading } from '../../../types';
 import { CASE_UTS_MASTER_SIMULATION } from '../akm2PracticeCases';
 
 const SVG_UTS_INTEGRATION = `
-<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="230" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="800" text-anchor="middle">PETA INTEGRASI MATERI UTS AKM II (TM 1 s.d. TM 7)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="230" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="800" text-anchor="middle">PETA INTEGRASI MATERI UTS AKM II (TM 1 s.d. TM 7)</text>
 
   <!-- Box 1: Aset Tetap -->
-  <rect x="30" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="102" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">TM 1 &amp; TM 2</text>
-  <text x="102" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Aset Tetap &amp; Properti</text>
-  <line x1="40" y1="108" x2="165" y2="108" stroke="#334155"/>
-  <text x="102" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Kos Awal &amp; Lump-Sum</text>
-  <text x="102" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Bunga PSAK 26 (WAAE)</text>
-  <text x="102" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pertukaran Non-Moneter</text>
-  <text x="102" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Properti Investasi</text>
+  <rect class="svg-card" x="30" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="102" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">TM 1 &amp; TM 2</text>
+  <text class="svg-text" x="102" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Aset Tetap &amp; Properti</text>
+  <line class="svg-divider" x1="40" y1="108" x2="165" y2="108" stroke="#334155"/>
+  <text class="svg-text" x="102" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Kos Awal &amp; Lump-Sum</text>
+  <text class="svg-text" x="102" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Bunga PSAK 26 (WAAE)</text>
+  <text class="svg-text" x="102" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pertukaran Non-Moneter</text>
+  <text class="svg-text" x="102" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Properti Investasi</text>
 
   <!-- Box 2: Depresiasi & Impairment -->
-  <rect x="190" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="262" y="78" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">TM 3 &amp; TM 4</text>
-  <text x="262" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Alokasi &amp; Impairment</text>
-  <line x1="200" y1="108" x2="325" y2="108" stroke="#334155"/>
-  <text x="262" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• 4 Metode Depresiasi</text>
-  <text x="262" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Deplesi Tambang</text>
-  <text x="262" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Uji PSAK 48 (FV vs VIU)</text>
-  <text x="262" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Alokasi CGU &amp; Reversal</text>
+  <rect class="svg-card" x="190" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text class="text-accent-green" x="262" y="78" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">TM 3 &amp; TM 4</text>
+  <text class="svg-text" x="262" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Alokasi &amp; Impairment</text>
+  <line class="svg-divider" x1="200" y1="108" x2="325" y2="108" stroke="#334155"/>
+  <text class="svg-text" x="262" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• 4 Metode Depresiasi</text>
+  <text class="svg-text" x="262" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Deplesi Tambang</text>
+  <text class="svg-text" x="262" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Uji PSAK 48 (FV vs VIU)</text>
+  <text class="svg-text" x="262" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Alokasi CGU &amp; Reversal</text>
 
   <!-- Box 3: Aset Takberwujud -->
-  <rect x="350" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="422" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">TM 5</text>
-  <text x="422" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Aset Takberwujud</text>
-  <line x1="360" y1="108" x2="485" y2="108" stroke="#334155"/>
-  <text x="422" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Riset (Exp) vs Dev (Cap)</text>
-  <text x="422" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Amortisasi Paten/Lisensi</text>
-  <text x="422" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Goodwill Akuisisi</text>
-  <text x="422" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Bargain Purchase</text>
+  <rect class="svg-card" x="350" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+  <text class="text-accent-purple" x="422" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">TM 5</text>
+  <text class="svg-text" x="422" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Aset Takberwujud</text>
+  <line class="svg-divider" x1="360" y1="108" x2="485" y2="108" stroke="#334155"/>
+  <text class="svg-text" x="422" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Riset (Exp) vs Dev (Cap)</text>
+  <text class="svg-text" x="422" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Amortisasi Paten/Lisensi</text>
+  <text class="svg-text" x="422" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Goodwill Akuisisi</text>
+  <text class="svg-text" x="422" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Bargain Purchase</text>
 
   <!-- Box 4: Liabilitas & Provisi -->
-  <rect x="510" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="582" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">TM 6 &amp; TM 7</text>
-  <text x="582" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Liabilitas &amp; Provisi</text>
-  <line x1="520" y1="108" x2="645" y2="108" stroke="#334155"/>
-  <text x="582" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Wesel Bayar Diskonto</text>
-  <text x="582" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Refinancing PSAK 1</text>
-  <text x="582" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Provisi Garansi PSAK 57</text>
-  <text x="582" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Kontinjensi vs Neraca</text>
+  <rect class="svg-card" x="510" y="55" width="145" height="155" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="text-accent-amber" x="582" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">TM 6 &amp; TM 7</text>
+  <text class="svg-text" x="582" y="98" fill="#f1f5f9" font-size="10" font-weight="600" text-anchor="middle">Liabilitas &amp; Provisi</text>
+  <line class="svg-divider" x1="520" y1="108" x2="645" y2="108" stroke="#334155"/>
+  <text class="svg-text" x="582" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Wesel Bayar Diskonto</text>
+  <text class="svg-text" x="582" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Refinancing PSAK 1</text>
+  <text class="svg-text" x="582" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Provisi Garansi PSAK 57</text>
+  <text class="svg-text" x="582" y="182" fill="#cbd5e1" font-size="9" text-anchor="middle">• Kontinjensi vs Neraca</text>
 </svg>`;
 
 export const TM8_READING: Reading = {

@@ -4,42 +4,44 @@ import {
   CASE_LITIGATION_ONEROUS_CONTRACT } from '../akm2PracticeCases';
 
 const SVG_PROVISION_DECISION = `
-<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="230" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#f59e0b" font-size="13" font-weight="700" text-anchor="middle">POHON KEPUTUSAN PENGAKUAN PROVISI &amp; KONTINJENSI (PSAK 57)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="230" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#f59e0b" font-size="13" font-weight="700" text-anchor="middle">POHON KEPUTUSAN PENGAKUAN PROVISI &amp; KONTINJENSI (PSAK 57)</text>
 
   <!-- Step 1 -->
-  <rect x="30" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="120" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Kewajiban Kini?</text>
-  <text x="120" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Hukum / Konstruktif)</text>
+  <rect class="svg-card" x="30" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="svg-text" x="120" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Kewajiban Kini?</text>
+  <text class="svg-muted" x="120" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Hukum / Konstruktif)</text>
 
   <!-- Step 2 -->
-  <rect x="250" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="340" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Arus Keluar Probable?</text>
-  <text x="340" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Kemungkinan &gt; 50%)</text>
+  <rect class="svg-card" x="250" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="svg-text" x="340" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Arus Keluar Probable?</text>
+  <text class="svg-muted" x="340" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Kemungkinan &gt; 50%)</text>
 
   <!-- Step 3 -->
-  <rect x="470" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text x="560" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Estimasi Andal?</text>
-  <text x="560" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Reliable Estimate)</text>
+  <rect class="svg-card" x="470" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
+  <text class="svg-text" x="560" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Estimasi Andal?</text>
+  <text class="svg-muted" x="560" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Reliable Estimate)</text>
 
   <!-- Outcome 1: PROVISION -->
-  <rect x="470" y="130" width="180" height="90" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
-  <text x="560" y="155" fill="#34d399" font-size="12" font-weight="800" text-anchor="middle">AKUI PROVISI (NERACA)</text>
-  <text x="560" y="175" fill="#ecfdf5" font-size="9.5" text-anchor="middle">• Jurnal Beban vs Provisi</text>
-  <text x="560" y="195" fill="#ecfdf5" font-size="9.5" text-anchor="middle">• Ungkapkan rincian di CALK</text>
+  <rect class="svg-card svg-badge-green" x="470" y="130" width="180" height="90" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text class="text-accent-green" x="560" y="155" fill="#34d399" font-size="12" font-weight="800" text-anchor="middle">AKUI PROVISI (NERACA)</text>
+  <text class="svg-text text-accent-green" x="560" y="175" fill="#ecfdf5" font-size="9.5" text-anchor="middle">• Jurnal Beban vs Provisi</text>
+  <text class="svg-text text-accent-green" x="560" y="195" fill="#ecfdf5" font-size="9.5" text-anchor="middle">• Ungkapkan rincian di CALK</text>
 
   <!-- Outcome 2: CONTINGENT LIABILITY -->
-  <rect x="250" y="130" width="180" height="90" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
-  <text x="340" y="155" fill="#fbbf24" font-size="11.5" font-weight="800" text-anchor="middle">LIABILITAS KONTINJENSI</text>
-  <text x="340" y="175" fill="#fef3c7" font-size="9.5" text-anchor="middle">• HANYA Ungkap di CALK</text>
-  <text x="340" y="195" fill="#fef3c7" font-size="9.5" text-anchor="middle">• TIDAK Dijurnal di Neraca</text>
+  <rect class="svg-card svg-badge-amber" x="250" y="130" width="180" height="90" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
+  <text class="text-accent-amber" x="340" y="155" fill="#fbbf24" font-size="11.5" font-weight="800" text-anchor="middle">LIABILITAS KONTINJENSI</text>
+  <text class="svg-text text-accent-amber" x="340" y="175" fill="#fef3c7" font-size="9.5" text-anchor="middle">• HANYA Ungkap di CALK</text>
+  <text class="svg-text text-accent-amber" x="340" y="195" fill="#fef3c7" font-size="9.5" text-anchor="middle">• TIDAK Dijurnal di Neraca</text>
 
   <!-- Outcome 3: REMOTE -->
-  <rect x="30" y="130" width="180" height="90" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
-  <text x="120" y="155" fill="#94a3b8" font-size="11.5" font-weight="800" text-anchor="middle">KEMUNGKINAN REMOTE</text>
-  <text x="120" y="175" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Kemungkinan Kecil (&lt; 5%)</text>
-  <text x="120" y="195" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• TIDAK Perlu Diungkap</text>
+  <rect class="svg-card" x="30" y="130" width="180" height="90" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <text class="svg-muted" x="120" y="155" fill="#94a3b8" font-size="11.5" font-weight="800" text-anchor="middle">KEMUNGKINAN REMOTE</text>
+  <text class="svg-text" x="120" y="175" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Kemungkinan Kecil (&lt; 5%)</text>
+  <text class="svg-text" x="120" y="195" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• TIDAK Perlu Diungkap</text>
 </svg>`;
 
 export const TM7_READING: Reading = {

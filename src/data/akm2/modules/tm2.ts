@@ -5,28 +5,30 @@ import {
 } from '../akm2PracticeCases';
 
 const SVG_EXCHANGE_DECISION = `
-<svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="220" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#a855f7" font-size="13" font-weight="700" text-anchor="middle">POHON KEPUTUSAN PERTUKARAN ASET NON-MONETER (PSAK 16)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="220" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#a855f7" font-size="13" font-weight="700" text-anchor="middle">POHON KEPUTUSAN PERTUKARAN ASET NON-MONETER (PSAK 16)</text>
   
-  <rect x="230" y="50" width="220" height="34" rx="6" fill="#3b0764" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="340" y="72" fill="#f3e8ff" font-size="11" font-weight="700" text-anchor="middle">Memiliki Substansi Komersial?</text>
+  <rect class="svg-badge-purple" x="230" y="50" width="220" height="34" rx="6" fill="#3b0764" stroke="#a855f7" stroke-width="1.5"/>
+  <text class="svg-text text-accent-purple" x="340" y="72" fill="#f3e8ff" font-size="11" font-weight="700" text-anchor="middle">Memiliki Substansi Komersial?</text>
 
   <line x1="280" y1="84" x2="160" y2="110" stroke="#a855f7" stroke-width="1.5"/>
-  <rect x="50" y="110" width="220" height="105" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-  <text x="160" y="130" fill="#10b981" font-size="11.5" font-weight="700" text-anchor="middle">YA (COMMERCIAL SUBSTANCE)</text>
-  <text x="160" y="148" fill="#cbd5e1" font-size="10" text-anchor="middle">• Akui SEMUA Keuntungan (Gain)</text>
-  <text x="160" y="164" fill="#cbd5e1" font-size="10" text-anchor="middle">• Akui SEMUA Kerugian (Loss)</text>
-  <text x="160" y="184" fill="#38bdf8" font-size="9.5" text-anchor="middle">Aset Baru = Fair Value Aset Diserahkan</text>
-  <text x="160" y="198" fill="#38bdf8" font-size="9.5" text-anchor="middle">(+/- Kas yang Diberikan/Diterima)</text>
+  <rect class="svg-card" x="50" y="110" width="220" height="105" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+  <text class="text-accent-green" x="160" y="130" fill="#10b981" font-size="11.5" font-weight="700" text-anchor="middle">YA (COMMERCIAL SUBSTANCE)</text>
+  <text class="svg-text" x="160" y="148" fill="#cbd5e1" font-size="10" text-anchor="middle">• Akui SEMUA Keuntungan (Gain)</text>
+  <text class="svg-text" x="160" y="164" fill="#cbd5e1" font-size="10" text-anchor="middle">• Akui SEMUA Kerugian (Loss)</text>
+  <text class="text-accent-blue" x="160" y="184" fill="#38bdf8" font-size="9.5" text-anchor="middle">Aset Baru = Fair Value Aset Diserahkan</text>
+  <text class="text-accent-blue" x="160" y="198" fill="#38bdf8" font-size="9.5" text-anchor="middle">(+/- Kas yang Diberikan/Diterima)</text>
 
   <line x1="400" y1="84" x2="520" y2="110" stroke="#a855f7" stroke-width="1.5"/>
-  <rect x="410" y="110" width="220" height="105" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text x="520" y="130" fill="#f43f5e" font-size="11.5" font-weight="700" text-anchor="middle">TIDAK (LACKS SUBSTANCE)</text>
-  <text x="520" y="148" fill="#f87171" font-size="10" text-anchor="middle">• Akui SEMUA Kerugian (Loss)</text>
-  <text x="520" y="164" fill="#fbbf24" font-size="10" text-anchor="middle">• TANGGUHKAN Keuntungan (Gain)</text>
-  <text x="520" y="184" fill="#94a3b8" font-size="9.5" text-anchor="middle">Aset Baru = Carrying Value Aset Lama</text>
-  <text x="520" y="198" fill="#94a3b8" font-size="9.5" text-anchor="middle">(Gain mengurangi harga aset baru)</text>
+  <rect class="svg-card" x="410" y="110" width="220" height="105" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
+  <text class="text-accent-red" x="520" y="130" fill="#f43f5e" font-size="11.5" font-weight="700" text-anchor="middle">TIDAK (LACKS SUBSTANCE)</text>
+  <text class="text-accent-red" x="520" y="148" fill="#f87171" font-size="10" text-anchor="middle">• Akui SEMUA Kerugian (Loss)</text>
+  <text class="text-accent-amber" x="520" y="164" fill="#fbbf24" font-size="10" text-anchor="middle">• TANGGUHKAN Keuntungan (Gain)</text>
+  <text class="svg-muted" x="520" y="184" fill="#94a3b8" font-size="9.5" text-anchor="middle">Aset Baru = Carrying Value Aset Lama</text>
+  <text class="svg-muted" x="520" y="198" fill="#94a3b8" font-size="9.5" text-anchor="middle">(Gain mengurangi harga aset baru)</text>
 </svg>`;
 
 export const TM2_READING: Reading = {

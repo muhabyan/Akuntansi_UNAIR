@@ -6,23 +6,25 @@ import {
 } from '../akm2PracticeCases';
 
 const SVG_DEPRECIATION_CURVES = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">POLA ALOKASI BEBAN METODE DEPRESIASI</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">POLA ALOKASI BEBAN METODE DEPRESIASI</text>
   
   <line x1="60" y1="180" x2="620" y2="180" stroke="#475569" stroke-width="1.5"/>
   <line x1="60" y1="50" x2="60" y2="180" stroke="#475569" stroke-width="1.5"/>
-  <text x="50" y="55" fill="#94a3b8" font-size="9" text-anchor="end">Beban (Rp)</text>
-  <text x="620" y="195" fill="#94a3b8" font-size="9" text-anchor="end">Tahun (1..5)</text>
+  <text class="svg-muted" x="50" y="55" fill="#94a3b8" font-size="9" text-anchor="end">Beban (Rp)</text>
+  <text class="svg-muted" x="620" y="195" fill="#94a3b8" font-size="9" text-anchor="end">Tahun (1..5)</text>
 
   <line x1="70" y1="120" x2="600" y2="120" stroke="#38bdf8" stroke-width="3"/>
-  <text x="605" y="124" fill="#38bdf8" font-size="10" font-weight="700">Garis Lurus (Konstan)</text>
+  <text class="text-accent-blue" x="605" y="124" fill="#38bdf8" font-size="10" font-weight="700">Garis Lurus (Konstan)</text>
 
   <path d="M 70 60 Q 250 140 600 170" fill="none" stroke="#f43f5e" stroke-width="3"/>
-  <text x="605" y="170" fill="#f43f5e" font-size="10" font-weight="700">DDB / SYD (Menurun Cepat)</text>
+  <text class="text-accent-red" x="605" y="170" fill="#f43f5e" font-size="10" font-weight="700">DDB / SYD (Menurun Cepat)</text>
 
   <path d="M 70 140 L 200 80 L 330 150 L 460 70 L 600 130" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="4"/>
-  <text x="605" y="130" fill="#34d399" font-size="10" font-weight="700">Aktivitas (Fluktuatif)</text>
+  <text class="text-accent-green" x="605" y="130" fill="#34d399" font-size="10" font-weight="700">Aktivitas (Fluktuatif)</text>
 </svg>`;
 
 export const TM3_READING: Reading = {

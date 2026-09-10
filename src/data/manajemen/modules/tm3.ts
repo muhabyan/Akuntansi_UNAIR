@@ -126,7 +126,7 @@ export const TM3_READING: Reading = {
         ['Power Distance (PDI)', 'Menerima hierarki kekuasaan kaku dan kesenjangan status (contoh: Indonesia, Malaysia).', 'Menuntut kesetaraan wewenang, gaya kepemimpinan egaliter (contoh: Denmark, Belanda).', 'Menentukan apakah gaya kepemimpinan harus instruktif atau partisipatif.'],
         ['Individualism (IDV)', 'Mengutamakan pencapaian pribadi dan hak individu (contoh: AS, Inggris).', 'Kolektivisme; loyalitas kelompok dan keharmonisan tim diutamakan (contoh: Indonesia, Jepang).', 'Menentukan apakah sistem reward berbasis kinerja individu atau bonus tim.'],
         ['Uncertainty Avoidance (UAI)', 'Menolak ambiguitas; membutuhkan aturan formal kaku dan SOP tertulis (contoh: Jerman, Jepang).', 'Nyaman dengan ketidakpastian; fleksibel dan toleran terhadap perbedaan (contoh: Singapura).', 'Menentukan tingkat detail dan kekakuan prosedur operasi standar pabrik.'],
-        ['Long-Term Orientation (LTO)', 'Fokus pada masa depan, ketekunan, menabung, dan adaptasi (contoh: Tiongkok, Korsel).', 'Fokus pada masa kini dan tradisi masa lalu, mengejar hasil kuartalan instan (contoh: AS).', 'Mempengaruhi horizon waktu perencanaan investasi strategis korporasi.']
+        ['Long-Term Orientation (LTO)', 'Fokus pada masa depan, ketekunan, menabung, dan adaptasi (contoh: Tiongkok, Korsel).', 'Fokus pada masa kini dan tradisi masa lalu, mengejar hasil kuartalan instan (contoh: AS).', 'Memengaruhi horizon waktu perencanaan investasi strategis korporasi.']
       ],
       caption: 'Tabel 3.1: Dimensi budaya Geert Hofstede dalam manajemen lintas budaya.'
     },

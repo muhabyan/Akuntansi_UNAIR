@@ -65,7 +65,7 @@ export const MNM101_FC: AdvancedStudyCard[] = [
     "topic": "Lingkungan Organisasi",
     "category": "Konsep",
     "front": "Lingkungan Umum (General Environment) vs Lingkungan Tugas (Task Environment)",
-    "back": "• Lingkungan Umum: Dimensi eksternal makro yang mempengaruhi organisasi secara tidak langsung (PESTEL: Politik, Ekonomi, Sosiokultural, Teknologi, Lingkungan Alami, Hukum).\n• Lingkungan Tugas: Sektor yang berinteraksi langsung dalam operasional harian (Pelanggan, Pesaing, Pemasok, Pasar Tenaga Kerja)."
+    "back": "• Lingkungan Umum: Dimensi eksternal makro yang memengaruhi organisasi secara tidak langsung (PESTEL: Politik, Ekonomi, Sosiokultural, Teknologi, Lingkungan Alami, Hukum).\n• Lingkungan Tugas: Sektor yang berinteraksi langsung dalam operasional harian (Pelanggan, Pesaing, Pemasok, Pasar Tenaga Kerja)."
   },
   {
     "id": "mnm101-tm02-02",

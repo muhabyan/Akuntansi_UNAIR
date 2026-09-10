@@ -252,13 +252,13 @@ const AKK202_TM1_7 = materi([
   ['Provisi, Kontinjensi & Peristiwa Pasca Pelaporan', 'Kieso IFRS 5e Ch. 13 | PSAK 57'],
 ], 1);
 const AKK202_TM8_14 = materi([
-  ['Liabilitas Jangka Panjang & Penerbitan Obligasi', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
-  ['Amortisasi Bunga Efektif & Pelunasan Dini Obligasi', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
-  ['Ekuitas: Saham Biasa, Preferen & Saham Treasuri', 'Kieso IFRS 5e Ch. 15 | PSAK 50'],
-  ['Kebijakan Dividen & Hibah Pemerintah', 'Kieso IFRS 5e Ch. 15 | UU PT 40/2007'],
-  ['Sekuritas Dilutif & Kompensasi Berbasis Saham', 'Kieso IFRS 5e Ch. 16 | PSAK 50, 71'],
-  ['Laba Per Saham (Basic & Diluted EPS)', 'Kieso IFRS 5e Ch. 16 | PSAK 56'],
-  ['Investasi Efek Utang dan Ekuitas', 'Kieso IFRS 5e Ch. 17 | PSAK 71, 65'],
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Kieso IFRS 5e Ch. 10–13 | PSAK 16, 48, 19, 57'],
+  ['Liabilitas Jangka Panjang: Obligasi & Metode Suku Bunga Efektif', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
+  ['Pelunasan Dini Obligasi, Wesel Bayar & Restrukturisasi Utang', 'Kieso IFRS 5e Ch. 14 | PSAK 71, IFRIC 19'],
+  ['Ekuitas Pemegang Saham, Saham Treasuri & Kebijakan Dividen', 'Kieso IFRS 5e Ch. 15 | PSAK 50, UU PT'],
+  ['Sekuritas Dilutif, Obligasi Konversi & Kompensasi Saham', 'Kieso IFRS 5e Ch. 16 | PSAK 50, 53, 71'],
+  ['Laba Per Saham (Earnings Per Share - Basic & Diluted EPS)', 'Kieso IFRS 5e Ch. 16 | PSAK 56, IAS 33'],
+  ['Akuntansi Investasi: Efek Utang, Efek Ekuitas & Metode Ekuitas', 'Kieso IFRS 5e Ch. 17 | PSAK 71, PSAK 15'],
 ], 8);
 const AKK202_REF = [
   'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. (2024). Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons. (Wajib)',

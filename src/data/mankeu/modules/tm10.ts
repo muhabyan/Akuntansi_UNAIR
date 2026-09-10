@@ -79,7 +79,7 @@ export const TM10_READING: Reading = {
       kind: 'table',
       headers: ['Teori Kebijakan Dividen', 'Pencetus Teori', 'Pandangan terhadap DPR Tinggi', 'Rekomendasi Manajer'],
       rows: [
-        ['1. Dividend Irrelevance', 'Modigliani & Miller (1961)', 'TIDAK MEMPENGARUHI nilai perusahaan (investor dapat menciptakan *homemade dividends*).', 'Fokus pada proyek NPV positif, jangan pusingkan dividen.'],
+        ['1. Dividend Irrelevance', 'Modigliani & Miller (1961)', 'TIDAK MEMENGARUHI nilai perusahaan (investor dapat menciptakan *homemade dividends*).', 'Fokus pada proyek NPV positif, jangan pusingkan dividen.'],
         ['2. Bird-in-the-Hand Theory', 'Myron Gordon & John Lintner', 'MENINGKATKAN nilai saham (investor lebih menghargai dividen pasti dibanding capital gain berisiko).', 'Bayar dividen tunai tinggi untuk menekan biaya modal ekuitas ($r_s$).'],
         ['3. Tax Preference Theory', 'Farrar, Selwyn, Brennan', 'MENURUNKAN nilai saham (karena tarif pajak dividen sering lebih tinggi dibanding pajak capital gain yang ditunda).', 'Tahan laba dan lakukan reinvestasi atau bagikan via Share Buyback.']
       ],

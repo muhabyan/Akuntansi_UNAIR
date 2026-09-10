@@ -4,36 +4,38 @@ import {
   CASE_TROUBLED_DEBT_RESTRUCTURING } from '../akm2PracticeCases';
 
 const SVG_EXTINGUISHMENT = `
-<svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif">
-  <rect x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <text x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MEKANISME PELUNASAN DINI OBLIGASI (PSAK 71)</text>
+<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
+  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MEKANISME PELUNASAN DINI OBLIGASI (PSAK 71)</text>
 
-  <rect x="30" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text x="120" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. CARRYING VALUE</text>
-  <text x="120" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Nilai Buku Bersih Obligasi</text>
-  <line x1="40" y1="110" x2="200" y2="110" stroke="#334155"/>
-  <text x="120" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Nominal Obligasi</text>
-  <text x="120" y="148" fill="#f87171" font-size="9.5" text-anchor="middle">(-) Unamortized Discount</text>
-  <text x="120" y="166" fill="#34d399" font-size="9.5" text-anchor="middle">(+) Unamortized Premium</text>
-  <text x="120" y="184" fill="#64748b" font-size="8.5" text-anchor="middle">(Tepat per tgl pelunasan)</text>
+  <rect class="svg-card" x="30" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text class="text-accent-blue" x="120" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. CARRYING VALUE</text>
+  <text class="svg-muted" x="120" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Nilai Buku Bersih Obligasi</text>
+  <line class="svg-divider" x1="40" y1="110" x2="200" y2="110" stroke="#334155"/>
+  <text class="svg-text" x="120" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Nominal Obligasi</text>
+  <text class="text-accent-red" x="120" y="148" fill="#f87171" font-size="9.5" text-anchor="middle">(-) Unamortized Discount</text>
+  <text class="text-accent-green" x="120" y="166" fill="#34d399" font-size="9.5" text-anchor="middle">(+) Unamortized Premium</text>
+  <text class="svg-muted" x="120" y="184" fill="#64748b" font-size="8.5" text-anchor="middle">(Tepat per tgl pelunasan)</text>
 
-  <text x="235" y="130" fill="#f59e0b" font-size="16" font-weight="800" text-anchor="middle">VS</text>
+  <text class="text-accent-amber" x="235" y="130" fill="#f59e0b" font-size="16" font-weight="800" text-anchor="middle">VS</text>
 
-  <rect x="260" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text x="350" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. REACQUISITION</text>
-  <text x="350" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Harga Beli Kembali (Kas)</text>
-  <line x1="270" y1="110" x2="430" y2="110" stroke="#334155"/>
-  <text x="350" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga Kurs Beli (%)</text>
-  <text x="350" y="148" fill="#f59e0b" font-size="9.5" text-anchor="middle">(+) Biaya Penarikan</text>
-  <text x="350" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Belum termasuk bunga)</text>
+  <rect class="svg-card" x="260" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+  <text class="text-accent-amber" x="350" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. REACQUISITION</text>
+  <text class="svg-muted" x="350" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Harga Beli Kembali (Kas)</text>
+  <line class="svg-divider" x1="270" y1="110" x2="430" y2="110" stroke="#334155"/>
+  <text class="svg-text" x="350" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga Kurs Beli (%)</text>
+  <text class="text-accent-amber" x="350" y="148" fill="#f59e0b" font-size="9.5" text-anchor="middle">(+) Biaya Penarikan</text>
+  <text class="svg-text" x="350" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Belum termasuk bunga)</text>
 
-  <rect x="470" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text x="560" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. LABA / (RUGI)</text>
-  <text x="560" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Penghentian Liabilitas</text>
-  <line x1="480" y1="110" x2="640" y2="110" stroke="#334155"/>
-  <text x="560" y="130" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Carrying &gt; Kas = UNTUNG</text>
-  <text x="560" y="150" fill="#f87171" font-size="9.5" font-weight="700" text-anchor="middle">Carrying &lt; Kas = RUGI</text>
-  <text x="560" y="175" fill="#f1f5f9" font-size="9" text-anchor="middle">Diakui di Laba Rugi Berjalan</text>
+  <rect class="svg-card" x="470" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+  <text class="text-accent-purple" x="560" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. LABA / (RUGI)</text>
+  <text class="svg-muted" x="560" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Penghentian Liabilitas</text>
+  <line class="svg-divider" x1="480" y1="110" x2="640" y2="110" stroke="#334155"/>
+  <text class="text-accent-green" x="560" y="130" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Carrying &gt; Kas = UNTUNG</text>
+  <text class="text-accent-red" x="560" y="150" fill="#f87171" font-size="9.5" font-weight="700" text-anchor="middle">Carrying &lt; Kas = RUGI</text>
+  <text class="svg-text" x="560" y="175" fill="#f1f5f9" font-size="9" text-anchor="middle">Diakui di Laba Rugi Berjalan</text>
 </svg>`;
 
 export const TM10_READING: Reading = {

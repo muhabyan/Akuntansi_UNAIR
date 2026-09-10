@@ -168,7 +168,7 @@ export const TM6_READING: Reading = {
       kind: 'ul',
       items: [
         '**Satisficing Adalah Realitas Manajer**: Dalam dunia nyata yang serba cepat dan informasi tidak lengkap, manajer mencari alternatif pertama yang memenuhi kriteria minimal (*satisficing*), bukan alternatif sempurna.',
-        '**Sunk Cost Adalah Biaya Masa Lalu**: Uang yang sudah keluar di masa lalu tidak boleh mempengaruhi keputusan masa depan; keputusan harus semata-mata didasarkan pada arus kas masa depan (*incremental future cash flows*).',
+        '**Sunk Cost Adalah Biaya Masa Lalu**: Uang yang sudah keluar di masa lalu tidak boleh memengaruhi keputusan masa depan; keputusan harus semata-mata didasarkan pada arus kas masa depan (*incremental future cash flows*).',
         '**Intuisi Bukan Sekadar Tebakan**: Intuisi manajerial adalah pengenalan pola bawah sadar yang dibangun dari pengalaman praktis bertahun-tahun di lapangan.'
       ]
     }

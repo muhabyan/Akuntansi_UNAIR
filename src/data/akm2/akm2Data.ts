@@ -1,4 +1,4 @@
-﻿// =============================================================
+// =============================================================
 // src/data/akm2/akm2Data.ts
 // Rangkuman KOMPREHENSIF AKM II (AKK202) - FEB UNAIR
 // Sumber: Kieso, Weygandt & Warfield, Intermediate Accounting IFRS 5th Ed (2024),
