@@ -4,14 +4,14 @@ import { X, Sparkles, CheckCircle2 } from 'lucide-react';
 
 // --- KONFIGURASI PATCH UPDATE ---
 // Ubah versi ini setiap kali ada pembaruan fitur.
-const CURRENT_PATCH_VERSION = 'v1.1.1';
+const CURRENT_PATCH_VERSION = 'v1.2.0';
 
 // Tuliskan detail pembaruan di sini, bisa berupa array of strings.
 const PATCH_NOTES = [
-  'Fitur Nickname di Pengaturan Profil kini otomatis mengubah pesan lama di Live Chat.',
-  'Animasi Splash Screen baru yang lebih elegan dan heboh.',
-  'Pemisah tanggal otomatis (Hari ini, Kemarin) di dalam Live Chat dan AI Tutor.',
-  'Peningkatan UI/UX untuk resolusi layar HP.'
+  'Pembaruan otomatis real-time: deteksi update Vercel seketika saat membuka atau kembali ke aplikasi.',
+  'Bank Soal & Kuis Komprehensif Semester 3 (Manajemen Keuangan, Akuntansi Sektor Publik, Akuntansi Manajemen, SIA).',
+  'Penataan lisensi perlindungan hak cipta resmi pada seluruh kurikulum dan sistem.',
+  'Optimasi performa caching dan pembersihan cache usang secara otomatis.'
 ];
 
 export default function UpdateNotifier() {
@@ -26,8 +26,8 @@ export default function UpdateNotifier() {
       if (savedVersion !== CURRENT_PATCH_VERSION) {
         addNotification({
           type: 'system',
-          title: `Update Baru: ${CURRENT_PATCH_VERSION} 🎉`,
-          message: 'Ada pembaruan fitur baru! Klik notifikasi ini untuk melihat detail lengkapnya.',
+          title: `Update Baru: ${CURRENT_PATCH_VERSION} 🚀`,
+          message: 'Ada materi & fitur baru! Klik notifikasi ini untuk melihat detail lengkapnya.',
           link: '#patch-notes'
         });
         localStorage.setItem('app_patch_version', CURRENT_PATCH_VERSION);
@@ -102,7 +102,7 @@ export default function UpdateNotifier() {
 
           <button
             onClick={() => setShowModal(false)}
-            className="w-full mt-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 font-semibold rounded-xl transition-colors"
+            className="w-full mt-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-slate-200 font-semibold rounded-xl transition-colors cursor-pointer"
           >
             Tutup
           </button>
