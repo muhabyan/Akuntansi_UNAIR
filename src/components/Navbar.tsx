@@ -134,19 +134,19 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
 
   return (
     <nav
-      className={`fixed top-0 z-[90] w-full transition-all duration-300 border-b border-gray-200 dark:border-gray-800 ${
-        isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm py-2' : 'bg-white dark:bg-gray-900 py-3'
+      className={`fixed top-0 z-[90] w-full border-b border-gray-200 pt-[env(safe-area-inset-top)] transition-all duration-300 dark:border-gray-800 ${
+        isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm py-2' : 'bg-white dark:bg-gray-900 py-2 md:py-3'
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-12 nav-menu-container">
-        <div className="flex items-center justify-between gap-4">
-          <button onClick={handleHome} className="group flex shrink-0 cursor-pointer items-center gap-3 text-left" type="button">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-white transition-all group-hover:bg-blue-700 md:h-11 md:w-11">
+      <div className="nav-menu-container mx-auto max-w-7xl px-2 sm:px-4 md:px-8 lg:px-12">
+        <div className="flex items-center justify-between gap-1 md:gap-4">
+          <button onClick={handleHome} className="group flex min-h-11 min-w-0 shrink cursor-pointer items-center gap-1.5 text-left md:shrink-0 md:gap-3" type="button">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-sm shadow-blue-500/20 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:shadow-indigo-500/20 md:h-11 md:w-11 md:rounded-xl">
               <GraduationCap size={21} aria-hidden="true" />
             </div>
-            <div>
-              <h1 className="font-display text-base font-bold tracking-tight text-gray-900 dark:text-white md:text-lg">
-                AKS1<span className="text-blue-600 dark:text-blue-400">.</span>
+            <div className="min-w-0">
+              <h1 className="truncate font-display text-[13px] font-bold tracking-tight text-gray-900 dark:text-white sm:text-base md:text-lg">
+                AkuntansiHub<span className="text-blue-600 dark:text-blue-400">.</span>
               </h1>
               <p className="hidden text-[10px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 sm:block">
                 FEB UNAIR
@@ -154,8 +154,8 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             </div>
           </button>
 
-          <div className="flex min-w-0 items-center gap-2 md:gap-3">
-            <div className="stage9-nav-pill glass-nav-segment hidden items-center gap-1 rounded-2xl p-1 md:flex">
+          <div className="flex min-w-0 shrink-0 items-center gap-1 md:gap-3">
+            <div className="stage9-nav-pill glass-nav-segment hidden items-center gap-1 rounded-xl p-1 md:flex">
               <NavBtn label="Home" onClick={handleHome} />
 
               <div className="relative" id="tour-materi">
@@ -239,21 +239,24 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
           </div>
         </div>
 
-        <div className="mt-3 lg:hidden">
+        <div className="mt-3 hidden md:block lg:hidden">
           <SearchBar onSelectCourse={(c, tab) => handleSelect(c, tab ?? 'tm1-7')} />
         </div>
 
         {mobileOpen && (
           <div className="stage9-mobile-panel md:hidden">
+            <div className="mb-2" id="tour-search-mobile">
+              <SearchBar onSelectCourse={(c, tab) => handleSelect(c, tab ?? 'tm1-7')} />
+            </div>
             {deferredPrompt && (
-              <NavBtn label="📱 Install Aplikasi (Offline)" onClick={handleInstallClick} compact />
+              <NavBtn label="Install Aplikasi (Offline)" onClick={handleInstallClick} compact />
             )}
             <NavBtn label="Home" onClick={handleHome} compact />
             <NavBtn label="Materi & Soal" isActive={activeMenu === 'materi'} onClick={() => toggleMenu('materi')} compact />
             <NavBtn label="Kuis" isActive={activeMenu === 'quiz'} onClick={() => toggleMenu('quiz')} compact />
             <NavBtn label="Laporan" isActive={activeMenu === 'laporan'} onClick={() => toggleMenu('laporan')} compact />
             
-            <div className="mt-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+            <div className="mt-4 border-t border-gray-200 pt-4 dark:border-gray-700">
               {!loading && (
                 user ? (
                   <button onClick={() => { setProfileModalOpen(true); setMobileOpen(false); }} className="w-full text-left text-sm font-medium text-slate-600 dark:text-slate-300 flex items-center gap-2 py-2 px-3 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">

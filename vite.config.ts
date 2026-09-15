@@ -25,9 +25,58 @@ function malformedUriGuard(): Plugin {
   };
 }
 
+function developmentServiceWorkerCleanup(): Plugin {
+  const cleanupWorker = `
+self.addEventListener('install', () => self.skipWaiting());
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    self.registration.unregister()
+      .then(() => self.clients.matchAll({ type: 'window' }))
+      .then((clients) => Promise.all(clients.map((client) => client.navigate(client.url))))
+  );
+});`;
+
+  return {
+    name: 'development-service-worker-cleanup',
+    apply: 'serve',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.originalUrl?.split('?')[0] !== '/sw.js') return next();
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+        res.setHeader('Cache-Control', 'no-store, max-age=0');
+        res.end(cleanupWorker);
+      });
+    },
+    transformIndexHtml() {
+      return [{
+        tag: 'script',
+        injectTo: 'head-prepend',
+        children: `
+if ('serviceWorker' in navigator) {
+  const reloadKey = 'akuntansihub-dev-sw-cleanup';
+  const hadController = Boolean(navigator.serviceWorker.controller);
+  Promise.all([
+    navigator.serviceWorker.getRegistrations().then((registrations) => Promise.all(registrations.map((registration) => registration.unregister()))),
+    'caches' in window ? caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key)))) : Promise.resolve(),
+  ]).then(() => {
+    if (hadController && !sessionStorage.getItem(reloadKey)) {
+      sessionStorage.setItem(reloadKey, '1');
+      location.reload();
+    } else if (!hadController) {
+      sessionStorage.removeItem(reloadKey);
+    }
+  });
+}`,
+      }];
+    },
+  };
+}
+
 export default defineConfig({
   base: '/',
   plugins: [
+    developmentServiceWorkerCleanup(),
     malformedUriGuard(),
     react(),
     VitePWA({
@@ -39,8 +88,8 @@ export default defineConfig({
         navigateFallbackDenylist: [/^\/arsip-uas/],
       },
       manifest: {
-        name: 'AKS1 | Akuntansi S1 UNAIR',
-        short_name: 'AKS1',
+        name: 'AkuntansiHub | S1 Akuntansi FEB UNAIR',
+        short_name: 'AkuntansiHub',
         description: 'Interactive E-Learning Platform untuk Akuntansi FEB UNAIR',
         theme_color: '#ffffff',
         background_color: '#ffffff',

@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import {
-  ArrowLeft, ChevronLeft, ChevronRight, Check, Target,
+  ArrowLeft, ChevronLeft, ChevronRight, Check,
   Info, Lightbulb, AlertTriangle, KeyRound, BookOpen, ListChecks, PenTool, ClipboardCheck, Sigma, Table2, ScrollText,
-  Maximize, Minimize
 } from 'lucide-react';
 import { loadCourseContent, type LoadedCourseContent } from '../data/courses/courseRegistry';
 import { useStudyProgress, materialKey } from '../hooks/useStudyProgress';
@@ -10,6 +9,8 @@ import { StatementFull, StatementBuilder } from './StatementBuilder';
 import { InteractiveMatchBuilder, JournalBuilder as InteractiveJournalBuilder, TableFillBuilder, TAccountBuilder } from './InteractivePracticeBuilders';
 import type { Course, ContentBlock, CalloutVariant } from '../types';
 import TTSPlayer from './TTSPlayer';
+import CourseHeader from './course/CourseHeader';
+import ReadingOutline, { buildReadingOutline, getReadingBlockId } from './course/ReadingOutline';
 
 interface ReadingViewProps {
   course: Course;
@@ -39,14 +40,6 @@ const TONE_STYLE: Record<BlockTone, { label: string; icon: ReactNode; cls: strin
   journal: { label: 'Jurnal', icon: <ScrollText size={16} />, cls: 'text-rose-700 dark:text-rose-400', accent: 'border-rose-500' },
   section: { label: 'Bagian', icon: <ListChecks size={16} />, cls: 'text-gray-700 dark:text-gray-400', accent: 'border-gray-500' },
 };
-
-function slugify(text: string) {
-  return text.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').slice(0, 72) || 'bagian-materi';
-}
-
-function makeHeadingId(text: string, blockIndex: number) {
-  return `${slugify(text)}-${blockIndex + 1}`;
-}
 
 function inferTone(text: string): BlockTone {
   const t = text.toLowerCase();
@@ -78,17 +71,17 @@ function SolutionRevealBlock({ block }: { block: Extract<ContentBlock, { kind: '
           {isOpen ? 'Sembunyikan pembahasan' : 'Tampilkan pembahasan'}
         </button>
       </div>
-      {isOpen && <div className="border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-900/50">{block.blocks.map((nested, index) => <Block key={index} block={nested} blockIndex={index} />)}</div>}
+      {isOpen && <div className="border-t border-gray-200 dark:border-gray-700 p-4 bg-gray-50 dark:bg-gray-900/50">{block.blocks.map((nested, index) => <Block key={index} block={nested} />)}</div>}
     </div>
   );
 }
 
-function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number }) {
+function Block({ block }: { block: ContentBlock }) {
   switch (block.kind) {
     case 'h2': {
       const tone = inferTone(block.text);
       return (
-        <section id={blockIndex === undefined ? slugify(block.text) : makeHeadingId(block.text, blockIndex)} className="mt-12 mb-6 scroll-mt-24">
+        <section className="mt-12 mb-6 scroll-mt-24">
           <div className="mb-2"><SectionBadge tone={tone} /></div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white pb-2 border-b border-gray-200 dark:border-gray-800">{block.text}</h2>
         </section>
@@ -214,7 +207,7 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
       return (
         <div className="my-8 pl-4 border-l-4 border-emerald-500">
           <div className="font-semibold text-emerald-700 dark:text-emerald-400 mb-3">{block.title}</div>
-          <div>{block.blocks.map((b, i) => <Block key={i} block={b} blockIndex={i} />)}</div>
+          <div>{block.blocks.map((b, i) => <Block key={i} block={b} />)}</div>
         </div>
       );
     case 'solution-reveal':
@@ -239,16 +232,6 @@ function Block({ block, blockIndex }: { block: ContentBlock; blockIndex?: number
 export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingViewProps) {
   const [courseContent, setCourseContent] = useState<LoadedCourseContent | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [zenMode, setZenMode] = useState(false);
-
-  useEffect(() => {
-    if (zenMode) {
-      document.body.classList.add('zen-mode-active');
-    } else {
-      document.body.classList.remove('zen-mode-active');
-    }
-    return () => document.body.classList.remove('zen-mode-active');
-  }, [zenMode]);
 
   useEffect(() => {
     let isActive = true;
@@ -264,6 +247,7 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
   }, [course.code]);
 
   const reading = courseContent?.readings[tm];
+  const outlineItems = useMemo(() => reading ? buildReadingOutline(reading.blocks) : [], [reading]);
   const tms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
   const idx = tms.indexOf(tm);
   const prevTm = idx > 0 ? tms[idx - 1] : null;
@@ -272,6 +256,11 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
   const { isDone, toggle } = useStudyProgress();
   const key = materialKey(course.code, tm);
   const done = isDone(key);
+
+  useEffect(() => {
+    document.body.classList.add('reading-mode-active');
+    return () => document.body.classList.remove('reading-mode-active');
+  }, []);
 
   useEffect(() => { window.scrollTo(0, 0); }, [tm]);
 
@@ -311,91 +300,42 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
   }
 
   return (
-    <>
-      <article className="max-w-3xl mx-auto px-4 md:px-8 pb-20 relative">
-        <div className="flex items-center justify-between mb-8">
-          <button onClick={onBack} className="flex items-center gap-2 text-gray-500 hover:text-gray-900 dark:hover:text-white text-sm font-medium transition-colors">
-            <ArrowLeft size={16} /> Kembali ke {course.name}
-          </button>
-          <button 
-            onClick={() => setZenMode(!zenMode)} 
-            className="flex items-center gap-2 text-gray-500 hover:text-emerald-600 dark:hover:text-emerald-400 text-sm font-bold transition-colors bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-full"
-            title={zenMode ? "Keluar dari Zen Mode" : "Masuk ke Zen Mode (Fokus Membaca)"}
-          >
-            {zenMode ? <Minimize size={14} /> : <Maximize size={14} />}
-            <span className="hidden sm:inline">Zen Mode</span>
-          </button>
-        </div>
+    <div className="-mt-16 mx-auto max-w-6xl px-4 md:px-8">
+      <div className="reading-layout grid min-w-0 gap-8 lg:grid-cols-[minmax(0,46rem)_14rem] lg:justify-center xl:gap-10">
+        <article className="min-w-0 pb-6">
+          <CourseHeader courseName={course.name} reading={reading} onBack={onBack} />
 
-      <header className="mb-10">
-        <div className="flex items-center gap-2 text-xs font-semibold mb-3">
-          <span className="px-2 py-1 rounded bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-300 uppercase tracking-wider">TM {reading.tm}</span>
-          {reading.ref && <span className="px-2 py-1 rounded bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400">{reading.ref}</span>}
-        </div>
-        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight mb-4">{reading.title}</h1>
-        <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">{renderText(reading.intro)}</div>
-        <TTSPlayer title={reading.title} intro={reading.intro} blocks={reading.blocks} />
-      </header>
+          <div className="mb-6"><TTSPlayer title={reading.title} intro={reading.intro} blocks={reading.blocks} /></div>
+          <ReadingOutline items={outlineItems} variant="mobile" />
 
-      {reading.objectives.length > 0 && (
-        <div className="mb-12 bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
-          <h2 className="flex items-center gap-2 text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">
-            <Target size={18} className="text-blue-500" /> Tujuan Pembelajaran
-          </h2>
-          <ul className="space-y-3">
-            {reading.objectives.map((o: string, i: number) => (
-              <li key={i} className="flex gap-3 text-gray-700 dark:text-gray-300">
-                <Check size={18} className="text-emerald-500 shrink-0 mt-0.5" /> <span>{o}</span>
-              </li>
+          <div className="reading-document min-w-0">
+            {reading.blocks.map((block: ContentBlock, index: number) => (
+              <div key={index} id={getReadingBlockId(block, index)} className="reading-block-anchor min-w-0 scroll-mt-24">
+                <Block block={block} />
+              </div>
             ))}
-          </ul>
-        </div>
-      )}
+          </div>
 
-      <div className="prose dark:prose-invert max-w-none">
-        {reading.blocks.map((b: ContentBlock, i: number) => <Block key={i} block={b} blockIndex={i} />)}
+          <footer className="reading-completion mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
+            <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Selesai membaca?</p>
+            <h2 className="mt-1.5 text-lg font-bold text-gray-900 dark:text-white">Catat progres, lalu lanjutkan saat siap.</h2>
+            <button type="button" onClick={() => toggle(key)} className={`mt-4 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border px-4 font-bold transition-colors ${done ? 'border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/35 dark:text-emerald-300' : 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700 dark:border-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500'}`}>
+              <Check size={20} strokeWidth={done ? 3 : 2} /> {done ? 'Tandai belum selesai' : 'Tandai sudah dipelajari'}
+            </button>
+
+            <nav className="reading-essential-nav mt-5 grid grid-cols-2 gap-3" aria-label="Navigasi materi">
+              <button type="button" onClick={() => prevTm && onSelectTm(prevTm)} disabled={!prevTm} className="flex min-h-12 min-w-0 items-center gap-2 rounded-xl border border-gray-200 px-3 text-left text-sm font-semibold text-gray-700 transition-colors hover:border-blue-200 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/30">
+                <ChevronLeft size={17} className="shrink-0" /> <span className="truncate">{prevTm ? `TM ${prevTm} sebelumnya` : 'Awal materi'}</span>
+              </button>
+              <button type="button" onClick={() => nextTm && onSelectTm(nextTm)} disabled={!nextTm} className="flex min-h-12 min-w-0 items-center justify-end gap-2 rounded-xl border border-gray-200 px-3 text-right text-sm font-semibold text-gray-700 transition-colors hover:border-blue-200 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/30">
+                <span className="truncate">{nextTm ? `TM ${nextTm} berikutnya` : 'Akhir materi'}</span> <ChevronRight size={17} className="shrink-0" />
+              </button>
+            </nav>
+          </footer>
+        </article>
+
+        <ReadingOutline items={outlineItems} variant="desktop" />
       </div>
-
-      <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800">
-        <button
-          onClick={() => toggle(key)}
-          className={`w-full flex items-center justify-center gap-2 px-4 py-4 rounded-xl font-medium transition-all border ${
-            done
-              ? 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-900/20 dark:text-emerald-400 dark:border-emerald-800'
-              : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700 dark:hover:bg-gray-700'
-          }`}
-        >
-          <Check size={20} strokeWidth={done ? 3 : 2} className={done ? 'text-emerald-600 dark:text-emerald-400' : ''} /> 
-          {done ? 'Tandai Belum Selesai' : 'Tandai Sudah Dipelajari'}
-        </button>
-
-        <nav className="mt-6 flex items-center justify-between gap-4">
-          <button
-            onClick={() => prevTm && onSelectTm(prevTm)}
-            disabled={!prevTm}
-            className="flex-1 flex items-center gap-2 px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-50 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
-          >
-            <ChevronLeft size={16} /> <span className="hidden sm:inline">{prevTm ? `TM ${prevTm} sebelumnya` : 'Awal materi'}</span><span className="sm:hidden">Sebelumnnya</span>
-          </button>
-          <button
-            onClick={() => nextTm && onSelectTm(nextTm)}
-            disabled={!nextTm}
-            className="flex-1 flex items-center justify-end gap-2 px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-100 disabled:opacity-50 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
-          >
-            <span className="hidden sm:inline">{nextTm ? `TM ${nextTm} berikutnya` : 'Akhir materi'}</span><span className="sm:hidden">Berikutnya</span> <ChevronRight size={16} />
-          </button>
-        </nav>
-      </div>
-    </article>
-      
-      {zenMode && (
-        <button
-          onClick={() => setZenMode(false)}
-          className="fixed bottom-6 right-6 z-[100] flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-3 rounded-full shadow-2xl font-bold transition-transform hover:-translate-y-1 active:translate-y-0"
-        >
-          <Minimize size={18} /> Keluar Zen Mode
-        </button>
-      )}
-    </>
+    </div>
   );
 }

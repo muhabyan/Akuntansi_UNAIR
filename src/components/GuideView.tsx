@@ -14,7 +14,7 @@ function GuideSection({ children, className = '' }: { children: React.ReactNode;
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.remove('opacity-0', 'translate-y-16');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
             entry.target.classList.add('opacity-100', 'translate-y-0');
           }
         });
@@ -26,7 +26,7 @@ function GuideSection({ children, className = '' }: { children: React.ReactNode;
   }, []);
 
   return (
-    <div ref={ref} className={`opacity-0 translate-y-16 transition-all duration-1000 ease-out ${className}`}>
+    <div ref={ref} className={`opacity-0 translate-y-8 transition-all duration-700 ease-out ${className}`}>
       {children}
     </div>
   );
@@ -98,20 +98,20 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
       </button>
 
       {/* 1. Hero Section */}
-      <section className="relative pt-24 pb-20 px-6 lg:px-8 overflow-hidden">
+      <section className="relative px-6 pb-14 pt-20 lg:px-8">
         <div className="absolute inset-0 bg-blue-600/5 dark:bg-blue-500/5 -skew-y-3 origin-top-left -z-10" />
-        <div className="max-w-5xl mx-auto text-center relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+        <div className="max-w-5xl mx-auto text-center relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-medium text-sm mb-6 border border-blue-200 dark:border-blue-800">
-            <Sparkles className="w-4 h-4" /> E-Learning Akuntansi Generasi Baru
+            <Sparkles className="w-4 h-4" /> Panduan AkuntansiHub
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
-            Pelajari Cara Menguasai <br className="hidden md:block" />
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-5 leading-tight">
+            Gunakan Setiap Fitur <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
-              Setiap Fitur Kami
+              dengan Lebih Terarah
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Aplikasi ini bukan sekadar gudang PDF. Ini adalah ruang belajar interaktif dengan asisten AI, flashcard, kuis langsung, dan manajemen waktu yang cerdas.
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-9 leading-relaxed">
+            Kenali cara membaca materi, menyusun jadwal, berlatih dengan flashcard dan kuis, serta memakai alat bantu belajar saat dibutuhkan.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <button onClick={handleStartLearning} className="btn-primary px-8 py-3 rounded-xl shadow-lg shadow-blue-500/25 flex items-center gap-2 hover:scale-105 transition-transform">
@@ -121,15 +121,15 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
         </div>
       </section>
 
-      <div className="max-w-5xl mx-auto px-6 py-12 space-y-32">
+      <div className="max-w-5xl mx-auto px-6 py-10 space-y-20 md:space-y-24">
         
         {/* 2. Materi Bacaan */}
         <GuideSection>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-80 rounded-2xl bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex items-center justify-center group">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex items-center justify-center group">
               <div className="absolute inset-0 bg-slate-200/50 dark:bg-slate-700/25 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,black,rgba(0,0,0,0.6))]" />
               {/* Animasi Buku Mockup */}
-              <div className="relative w-48 h-64 bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-gray-200 dark:border-slate-700 p-4 transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-2">
+              <div className="relative w-48 h-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl shadow-slate-900/10 dark:shadow-black/25 border border-gray-200 dark:border-slate-700 p-4 transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-2">
                 <div className="w-full h-4 bg-indigo-100 dark:bg-indigo-900/50 rounded mb-3" />
                 <div className="w-3/4 h-3 bg-gray-200 dark:bg-slate-700 rounded mb-6" />
                 <div className="space-y-2">
@@ -148,7 +148,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Materi Bacaan Interaktif</h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                Tinggalkan PDF statis yang membosankan. Materi bacaan kami disusun rapi dengan tabel interaktif, format yang responsif untuk HP, dan integrasi langsung dengan AI untuk menjelaskan bagian yang kamu tidak mengerti.
+                Baca materi yang tersusun per pertemuan, lengkap dengan tabel responsif, latihan, dan akses ke AI Tutor saat penjelasan tambahan diperlukan.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -164,14 +164,14 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
         {/* 3. Jadwal Belajar */}
         <GuideSection>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center mb-6">
                 <Calendar className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Jadwal Belajar (Max 8 Kuota)</h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                Jangan biarkan materi menumpuk! Rencanakan target harianmu. Aplikasi kami secara cerdas membatasi maksimal 8 jadwal aktif agar kamu fokus mengeksekusi, bukan sekadar merencanakan.
+                Susun target belajar harian dan buka materi langsung dari jadwal. Batas delapan jadwal aktif membantu menjaga rencana tetap realistis.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -182,7 +182,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
                 </li>
               </ul>
             </div>
-            <div className="relative h-80 rounded-2xl bg-gradient-to-bl from-emerald-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col items-center justify-center p-6 group">
+            <div className="relative h-72 rounded-2xl bg-gradient-to-bl from-emerald-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex flex-col items-center justify-center p-6 group">
               {/* Mockup Schedule Cards */}
               <div className="flex gap-4 w-full justify-center transform transition-transform duration-700 group-hover:-translate-x-4">
                 {[1, 2, 3].map((i) => (
@@ -199,8 +199,8 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
         {/* 4. Evaluasi & Review */}
         <GuideSection>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-80 rounded-2xl bg-gradient-to-tr from-rose-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex items-center justify-center group [perspective:1000px]">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-gradient-to-tr from-rose-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex items-center justify-center group [perspective:1000px]">
               {/* Mockup Flashcard Flipping */}
               <div className="relative w-56 h-40 transition-transform duration-1000 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
                 {/* Front */}
@@ -238,7 +238,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
         {/* 5. AI Tutor & Chatbot */}
         <GuideSection>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-6">
                 <Bot className="w-6 h-6 text-purple-600 dark:text-purple-400" />
@@ -261,14 +261,14 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
               <ul className="space-y-3">
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-                  <Zap className="w-5 h-5 text-purple-500" /> Respons Secepat Kilat (Groq)
+                  <Zap className="w-5 h-5 text-purple-500" /> Respons cepat dengan Groq
                 </li>
                 <li className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300">
-                  <Zap className="w-5 h-5 text-purple-500" /> Menempel di Pojok Layar (Floating widget)
+                  <Zap className="w-5 h-5 text-purple-500" /> Siap dibuka saat dibutuhkan
                 </li>
               </ul>
             </div>
-            <div className="relative h-80 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col p-6 group">
+            <div className="relative h-72 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex flex-col p-6 group">
               {/* Mockup Chat */}
               <div className="flex-1 overflow-hidden space-y-4 pt-4">
                 <div className="bg-blue-500 text-white p-3 rounded-2xl rounded-tr-sm self-end max-w-[80%] ml-auto text-xs font-medium shadow-sm transform transition-all translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 duration-500 delay-100">
@@ -285,8 +285,8 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
 
         {/* 6. Produktivitas */}
         <GuideSection>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 relative h-80 rounded-2xl bg-gradient-to-bl from-teal-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex items-center justify-center group">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-gradient-to-bl from-teal-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex items-center justify-center group">
               {/* Mockup Pomodoro */}
               <div className="relative w-48 h-48 rounded-full border-8 border-teal-100 dark:border-teal-900 flex items-center justify-center bg-white dark:bg-slate-800 shadow-inner group-hover:border-teal-400 dark:group-hover:border-teal-500 transition-colors duration-1000">
                 <div className="text-4xl font-black text-slate-800 dark:text-white tracking-tighter">25:00</div>
@@ -304,7 +304,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
               </div>
               <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Pomodoro & Zen Mode</h2>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                Fokus adalah kunci. Gunakan fitur Pomodoro Timer bawaan untuk mengatur sesi belajarmu. Butuh konsentrasi penuh? Aktifkan Zen Mode untuk pengalaman belajar imersif bak menonton film! Di PC, Zen Mode akan mengaktifkan <strong>Fullscreen</strong> secara otomatis, sementara seluruh elemen UI yang mengganggu (seperti AI Tutor dan Chat Global) akan <strong>disembunyikan sepenuhnya</strong>.
+                Gunakan Pomodoro untuk mengatur sesi belajar. Saat perlu fokus penuh, Zen Mode membuka ruang baca fullscreen dan menyembunyikan elemen yang tidak diperlukan.
               </p>
               
               <div className="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800 rounded-xl p-4 mb-6">
@@ -328,7 +328,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
         
         {/* 7. Global Chat */}
         <GuideSection>
-          <div className="bg-blue-600 dark:bg-blue-900/50 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden shadow-2xl mb-20">
+          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-900 dark:to-indigo-950 rounded-2xl p-8 md:p-10 text-center text-white relative overflow-hidden shadow-xl shadow-blue-950/20 mb-12">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
             

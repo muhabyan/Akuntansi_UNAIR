@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Play, Pause, RotateCcw, Timer, X, Coffee, Brain } from 'lucide-react';
 import { useDraggableWidget } from '../hooks/useDraggableWidget';
 
@@ -19,6 +19,19 @@ export default function PomodoroTimer() {
     id: 'pomodoro-timer',
     defaultPosition: { x: 16, y: window.innerHeight / 2 - 28 }
   });
+
+  const openPanel = useCallback(() => {
+    window.dispatchEvent(new CustomEvent('akuntansihub:utility-open', { detail: { id: 'pomodoro-timer' } }));
+    setIsOpen(true);
+  }, []);
+
+  useEffect(() => {
+    const closeWhenAnotherUtilityOpens = (event: Event) => {
+      if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'pomodoro-timer') setIsOpen(false);
+    };
+    window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+  }, []);
   
   const playBell = () => {
     try {
@@ -41,7 +54,7 @@ export default function PomodoroTimer() {
       playTone(880, ctx.currentTime, 1);       // A5
       playTone(1108.73, ctx.currentTime + 0.15, 1.5); // C#6
     } catch (e) {
-      console.log('Audio error', e);
+      console.error('Audio error', e);
     }
   };
 
@@ -62,11 +75,11 @@ export default function PomodoroTimer() {
       } else {
         switchMode('focus');
       }
-      setIsOpen(true); // Pop up when done
+      openPanel(); // Pop up when done
     }
 
     return () => window.clearInterval(interval);
-  }, [isRunning, timeLeft, mode]);
+  }, [isRunning, timeLeft, mode, openPanel]);
 
   const switchMode = (newMode: TimerMode) => {
     setMode(newMode);
@@ -96,21 +109,17 @@ export default function PomodoroTimer() {
     <>
       {/* Expanded Panel */}
       <div 
-        className={`fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
+        id="pomodoro-panel"
+        data-utility-panel="pomodoro-timer"
+        aria-hidden={!isOpen}
+        className={`mobile-utility-panel fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
           !isOpen ? 'scale-90 opacity-0 pointer-events-none' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
-        style={{
-          ...(isLeftHalf 
-            ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 288px - 16px))` } 
-            : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 288px - 16px))` }),
-          ...(isTopHalf 
-            ? { top: `clamp(80px, ${draggable.position.y}px, calc(100vh - 350px - 16px))` } 
-            : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 350px - 16px))` })
-        }}
+        style={draggable.isDesktop ? draggable.getPanelStyle(288, 350) : undefined}
       >
-        <div className="w-72 bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4">
+        <div className="mobile-utility-card w-72 max-h-full bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4 overflow-y-auto">
           <div className="flex items-center justify-between mb-4 select-none p-2 -m-2 rounded-lg bg-slate-50 dark:bg-slate-800/50">
             <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pointer-events-none">
               <Timer size={18} className="text-blue-500" /> Pomodoro
@@ -119,6 +128,7 @@ export default function PomodoroTimer() {
               onPointerDown={(e) => e.stopPropagation()}
               onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
+              aria-label="Tutup Pomodoro"
               className="text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-full transition relative z-10 cursor-pointer"
               title="Tutup Timer"
             >
@@ -176,6 +186,7 @@ export default function PomodoroTimer() {
           <div className="flex justify-center gap-4">
             <button
               onClick={toggleTimer}
+              aria-label={isRunning ? 'Jeda Pomodoro' : 'Mulai Pomodoro'}
               className={`pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105 active:scale-95 ${
                 mode === 'focus' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-emerald-600 hover:bg-emerald-700'
               }`}
@@ -184,6 +195,7 @@ export default function PomodoroTimer() {
             </button>
             <button
               onClick={resetTimer}
+              aria-label="Reset Pomodoro"
               className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-transform hover:scale-105 active:scale-95"
               title="Reset Timer"
             >
@@ -196,23 +208,29 @@ export default function PomodoroTimer() {
       {/* Floating Toggle Button */}
       <button
         ref={draggable.ref}
-        {...draggable.handlers}
+        {...(draggable.isDesktop ? draggable.handlers : {})}
+        type="button"
+        aria-label={isOpen ? 'Tutup Pomodoro' : 'Buka Pomodoro'}
+        aria-controls="pomodoro-panel"
+        aria-expanded={isOpen}
+        title={isOpen ? 'Tutup Pomodoro' : 'Buka Pomodoro'}
         onClick={(e) => {
           if (draggable.isMoved) {
             e.preventDefault();
             e.stopPropagation();
             return;
           }
-          setIsOpen(!isOpen);
+          if (isOpen) setIsOpen(false);
+          else openPanel();
         }}
-        style={{
+        style={draggable.isDesktop ? {
           ...draggable.handlers.style,
           position: 'fixed',
           left: `clamp(0px, ${draggable.position.x}px, calc(100vw - 48px))`,
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 100
-        }}
-        className={`group flex items-center justify-center shadow-md ${
+        } : undefined}
+        className={`group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--pomodoro' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-slate-400/50' : 'cursor-pointer active:scale-95'

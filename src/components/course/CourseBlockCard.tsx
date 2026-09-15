@@ -82,16 +82,16 @@ function stripChecklistMarker(item: string): string {
 }
 
 function RenderMultilineText({ text }: { text: string }) {
-  return <span className="whitespace-pre-line">{renderText(text)}</span>;
+  return <div className="whitespace-pre-line">{renderText(text)}</div>;
 }
 
 
 
 function ReadableParagraph({ text }: { text: string }) {
   return (
-    <p className="mb-4 max-w-[88ch] text-[15px] leading-[1.8] text-slate-800 dark:text-slate-300 md:text-base">
+    <div className="mb-4 max-w-[88ch] text-[15px] leading-[1.8] text-slate-800 dark:text-slate-300 md:text-base">
       {renderText(text)}
-    </p>
+    </div>
   );
 }
 
@@ -127,7 +127,7 @@ function SolutionRevealCard({
           <Eye size={14} /> Pembahasan Setelah Mengerjakan
         </div>
         <h3 className="font-display text-base font-black leading-snug text-slate-900 dark:text-slate-100 md:text-lg">{block.title}</h3>
-        {block.prompt && <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-400">{renderText(block.prompt)}</p>}
+        {block.prompt && <div className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-400">{renderText(block.prompt)}</div>}
         <button
           type="button"
           onClick={() => setIsOpen((open) => !open)}
@@ -344,6 +344,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] text-gold/90">
                 <Table2 size={14} /> Tabel Data Khusus
               </div>
+              {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
             </div>
             <div 
               className="akbi-table-scroll w-full overflow-x-auto" 
@@ -401,7 +402,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <div className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-amber-600 dark:text-amber-400">
               <AlertTriangle size={15} /> [Perlu Pemeriksaan Manual]
             </div>
-            <p className="text-amber-950 dark:text-amber-100 font-medium">{renderText(block.caption ?? '[Perlu pemeriksaan manual]')}</p>
+            <div className="text-amber-950 dark:text-amber-100 font-medium">{renderText(block.caption ?? '[Perlu pemeriksaan manual]')}</div>
           </div>
         );
       }
@@ -467,8 +468,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     case 'journal':
       return (
         <div className="course-journal-card mb-7 overflow-hidden rounded-2xl border border-emerald-500/30 dark:border-emerald-500/25">
-          <div className="flex items-center gap-2 border-b border-emerald-500/20 dark:border-emerald-500/15 bg-emerald-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800 dark:text-emerald-300">
-            <FileText size={15} /> Jurnal Akuntansi
+          <div className="flex items-center justify-between gap-3 border-b border-emerald-500/20 dark:border-emerald-500/15 bg-emerald-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800 dark:text-emerald-300">
+            <span className="flex items-center gap-2"><FileText size={15} /> Jurnal Akuntansi</span>
+            {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
           </div>
           <div 
             className="akbi-table-scroll w-full overflow-x-auto" 
@@ -501,7 +503,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             </table>
           </div>
           {block.caption && (
-            <p className="border-t border-emerald-500/10 dark:border-emerald-500/15 px-4 py-3 text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>
+            <div className="border-t border-emerald-500/10 dark:border-emerald-500/15 px-4 py-3 text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</div>
           )}
         </div>
       );
@@ -520,7 +522,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <div className="whitespace-pre-wrap px-5 py-4 font-sans text-sm leading-[1.85] text-slate-800 dark:text-slate-300">
               {renderText(block.text)}
             </div>
-            {block.note && <p className="border-t border-indigo-500/10 dark:border-indigo-500/15 px-5 py-3 text-xs text-slate-600 dark:text-slate-400">{renderText(block.note)}</p>}
+            {block.note && <div className="border-t border-indigo-500/10 dark:border-indigo-500/15 px-5 py-3 text-xs text-slate-600 dark:text-slate-400">{renderText(block.note)}</div>}
           </div>
         );
       }
@@ -528,8 +530,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       if (matrix) {
         return (
           <div className="course-matrix-card mb-6 overflow-hidden rounded-2xl border border-navy-500/15 dark:border-transparent">
-            <div className="flex items-center gap-2 border-b border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-              <Table2 size={15} /> Format Teks Terstruktur
+            <div className="flex items-center justify-between gap-3 border-b border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+              <span className="flex items-center gap-2"><Table2 size={15} /> Format Teks Terstruktur</span>
+              {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
             </div>
             <div 
               className="akbi-table-scroll w-full overflow-x-auto px-5 py-4" 
@@ -542,15 +545,16 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             >
               <pre className="w-full whitespace-pre-wrap font-sans text-xs leading-[1.75] tracking-wide text-slate-800 dark:text-slate-300 md:text-sm">{block.text}</pre>
             </div>
-            {block.note && <p className="border-t border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs text-slate-600 dark:text-slate-400">{renderText(block.note)}</p>}
+            {block.note && <div className="border-t border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs text-slate-600 dark:text-slate-400">{renderText(block.note)}</div>}
           </div>
         );
       }
 
       return (
         <div className={`course-formula-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border ${warning ? 'border-amber-400/50 bg-amber-400/10' : 'border-gold-500/40 dark:border-gold/35 bg-gold-500/10 dark:bg-gold/10'}`}>
-          <div className={`flex items-center gap-2 border-b px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-gold-700 dark:text-gold'}`}>
-            {warning ? <AlertTriangle size={15} /> : <Sigma size={15} />} {economicFormula.title ? `Formula Ekonomi · ${economicFormula.title}` : 'Rumus / Formula'}
+          <div className={`flex items-center justify-between gap-3 border-b px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-gold-700 dark:text-gold'}`}>
+            <span className="flex items-center gap-2">{warning ? <AlertTriangle size={15} /> : <Sigma size={15} />} {economicFormula.title ? `Formula Ekonomi · ${economicFormula.title}` : 'Rumus / Formula'}</span>
+            {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
           </div>
           <div 
             className="akbi-table-scroll overflow-x-auto px-5 py-4" 
@@ -585,7 +589,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               );
             })()}
           </div>
-          {block.note && <p className={`border-t px-5 py-3 text-xs leading-relaxed ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-slate-700 dark:text-slate-400'}`}>{renderText(block.note)}</p>}
+          {block.note && <div className={`border-t px-5 py-3 text-xs leading-relaxed ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-slate-700 dark:text-slate-400'}`}>{renderText(block.note)}</div>}
         </div>
       );
     }
@@ -610,7 +614,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
               ) : null}
             </div>
-            {block.caption && <p className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
+            {block.caption && <div className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic text-slate-600 dark:text-slate-500">{renderText(block.caption)}</div>}
           </figure>
         );
       }
@@ -636,7 +640,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
             ) : null}
           </div>
-          {block.caption && <p id={`${blockId}-caption`} className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
+          {block.caption && <div id={`${blockId}-caption`} className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</div>}
         </figure>
       );
     case 'solution-reveal':
@@ -672,7 +676,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           <div className="p-3 md:p-5">
             <EconDiagram type={block.type} />
           </div>
-          {block.caption && <p className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</p>}
+          {block.caption && <div className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</div>}
         </figure>
       );
     case 'math-example':

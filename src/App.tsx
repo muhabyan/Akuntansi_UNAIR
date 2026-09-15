@@ -131,6 +131,27 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
+    let settleTimer: number | undefined;
+
+    const handleScroll = () => {
+      if (!window.matchMedia('(max-width: 767px)').matches || document.body.classList.contains('driver-active')) return;
+
+      document.body.classList.add('mobile-utility-scrolling');
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        document.body.classList.remove('mobile-utility-scrolling');
+      }, 320);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.clearTimeout(settleTimer);
+      document.body.classList.remove('mobile-utility-scrolling');
+    };
+  }, []);
+
+  useEffect(() => {
     const handlePopState = () => {
       const routeState = getRouteState(window.location.pathname);
       setSelectedCourse(routeState.course);
@@ -303,7 +324,7 @@ export default function App() {
       <main
         id="main-content"
         tabIndex={-1}
-        className={`${isHomeLanding || isGuideView ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-28' : 'pt-[10.25rem] md:pt-[10.75rem] lg:pt-32'} pb-20`}
+        className={`${isHomeLanding || isGuideView ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-28' : 'pt-[10.25rem] md:pt-[10.75rem] lg:pt-32'} pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-20`}
       >
         <ErrorBoundary onReset={goHome}>
           <Suspense fallback={<ViewLoader />}>
@@ -342,7 +363,7 @@ export default function App() {
         </ErrorBoundary>
       </main>
 
-      <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 px-4 py-9 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
+      <footer className="app-footer border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 px-4 py-9 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
         <p>© {new Date().getFullYear()} E-Learning S1 Akuntansi FEB Universitas Airlangga. Arsip pribadi.</p>
         <p className="mt-1">Developed by <span className="font-semibold text-blue-500 dark:text-blue-400">Muhammad Abyan Hafizh</span></p>
         <p className="mt-3 font-bold tracking-widest text-blue-600/80 dark:text-blue-400/80 uppercase text-[10px] md:text-xs">Excellence with Morality</p>

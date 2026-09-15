@@ -2,6 +2,26 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 type Position = { x: number; y: number };
 
+const TOP_CLEARANCE = 80;
+const VIEWPORT_MARGIN = 16;
+const FALLBACK_WIDGET_SIZE = 56;
+
+function getViewportSize() {
+  return {
+    width: typeof document !== 'undefined' ? document.documentElement.clientWidth : 1024,
+    height: typeof window !== 'undefined' ? window.innerHeight : 768,
+  };
+}
+
+function clampLauncherPosition(position: Position, width = FALLBACK_WIDGET_SIZE, height = FALLBACK_WIDGET_SIZE): Position {
+  const viewport = getViewportSize();
+  const maxX = Math.max(0, viewport.width - width);
+  const maxY = Math.max(TOP_CLEARANCE, viewport.height - height);
+  const x = Number.isFinite(position.x) ? Math.min(Math.max(position.x, 0), maxX) : 0;
+  const y = Number.isFinite(position.y) ? Math.min(Math.max(position.y, TOP_CLEARANCE), maxY) : TOP_CLEARANCE;
+  return { x, y };
+}
+
 interface UseDraggableWidgetProps {
   id: string;
   defaultPosition: {
@@ -17,12 +37,18 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       try {
         const parsed = JSON.parse(saved);
         if (typeof parsed.x === 'number' && typeof parsed.y === 'number') {
-          parsed.y = Math.max(85, parsed.y);
-          return parsed;
+          if (getViewportSize().width < 768) return parsed;
+          const safePosition = clampLauncherPosition(parsed);
+          if (safePosition.x !== parsed.x || safePosition.y !== parsed.y) {
+            localStorage.setItem(`draggable_widget_${id}`, JSON.stringify(safePosition));
+          }
+          return safePosition;
         }
-      } catch (e) {}
+      } catch {
+        localStorage.removeItem(`draggable_widget_${id}`);
+      }
     }
-    return defaultPosition;
+    return clampLauncherPosition(defaultPosition);
   });
 
   const [isDragging, setIsDragging] = useState(false);
@@ -52,18 +78,14 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
+      if (window.innerWidth < 768) return;
       const rect = widgetRef.current?.getBoundingClientRect();
       const w = rect?.width || 56;
       const h = rect?.height || 56;
       
-      const clientWidth = document.documentElement.clientWidth;
       setPosition(prev => {
-        let newX = prev.x;
-        let newY = prev.y;
-        if (newX > clientWidth - w) newX = Math.max(0, clientWidth - w);
-        if (newY > window.innerHeight - h) newY = Math.max(85, window.innerHeight - h);
-        if (newY < 85) newY = 85;
-        return { x: newX, y: newY };
+        const safePosition = clampLauncherPosition(prev, w, h);
+        return safePosition.x === prev.x && safePosition.y === prev.y ? prev : safePosition;
       });
     };
     window.addEventListener('resize', handleResize);
@@ -116,7 +138,7 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
       const clientWidth = document.documentElement.clientWidth;
       
       newX = Math.max(0, Math.min(newX, clientWidth - w));
-      newY = Math.max(85, Math.min(newY, window.innerHeight - h));
+      newY = Math.max(TOP_CLEARANCE, Math.min(newY, window.innerHeight - h));
 
       setPosition({ x: newX, y: newY });
     }
@@ -159,13 +181,30 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
         }
       }
 
-      finalY = Math.max(85, Math.min(finalY, window.innerHeight - h));
+      finalY = Math.max(TOP_CLEARANCE, Math.min(finalY, window.innerHeight - h));
 
       const newPos = { x: finalX, y: finalY };
       setPosition(newPos);
       localStorage.setItem(`draggable_widget_${id}`, JSON.stringify(newPos));
     }
   }, [isDragging, position.x, position.y, id]);
+
+  const getPanelStyle = (panelWidth: number, panelHeight: number): React.CSSProperties => {
+    const viewport = getViewportSize();
+    const safeWidth = Math.min(panelWidth, Math.max(0, viewport.width - VIEWPORT_MARGIN * 2));
+    const safeHeight = Math.min(panelHeight, Math.max(0, viewport.height - TOP_CLEARANCE - VIEWPORT_MARGIN));
+    const opensRight = position.x < viewport.width / 2;
+    const opensDown = position.y < viewport.height / 2;
+    const preferredX = opensRight ? position.x + 64 : position.x - safeWidth - VIEWPORT_MARGIN;
+    const preferredY = opensDown ? position.y : position.y - safeHeight - VIEWPORT_MARGIN;
+
+    return {
+      left: Math.min(Math.max(preferredX, VIEWPORT_MARGIN), Math.max(VIEWPORT_MARGIN, viewport.width - safeWidth - VIEWPORT_MARGIN)),
+      top: Math.min(Math.max(preferredY, TOP_CLEARANCE), Math.max(TOP_CLEARANCE, viewport.height - safeHeight - VIEWPORT_MARGIN)),
+      maxWidth: `calc(100vw - ${VIEWPORT_MARGIN * 2}px)`,
+      maxHeight: `calc(100dvh - ${TOP_CLEARANCE + VIEWPORT_MARGIN}px)`,
+    };
+  };
 
   return {
     ref: widgetRef,
@@ -175,6 +214,7 @@ export function useDraggableWidget({ id, defaultPosition }: UseDraggableWidgetPr
     get isMoved() { return dragInfo.current.isMoved; },
     edgeState,
     isDesktop: typeof window !== 'undefined' ? window.innerWidth >= 768 : true,
+    getPanelStyle,
     handlers: {
       onPointerDown: handlePointerDown,
       onPointerMove: handlePointerMove,

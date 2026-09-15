@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, FormEvent } from 'react';
+import { useState, useEffect, useRef, useCallback, FormEvent } from 'react';
 import { MessageSquare, Send, X, Users, AlertCircle, Trash2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
@@ -28,6 +28,19 @@ export default function LiveChatFloating() {
     defaultPosition: { x: window.innerWidth - 72, y: window.innerHeight / 2 - 80 }
   });
 
+  const openPanel = useCallback(() => {
+    window.dispatchEvent(new CustomEvent('akuntansihub:utility-open', { detail: { id: 'live-chat' } }));
+    setIsOpen(true);
+  }, []);
+
+  useEffect(() => {
+    const closeWhenAnotherUtilityOpens = (event: Event) => {
+      if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'live-chat') setIsOpen(false);
+    };
+    window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+  }, []);
+
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const [unreadCount, setUnreadCount] = useState(0);
 
@@ -40,10 +53,10 @@ export default function LiveChatFloating() {
 
   // Listen to open-global-chat custom event
   useEffect(() => {
-    const handleOpenChat = () => setIsOpen(true);
+    const handleOpenChat = () => openPanel();
     window.addEventListener('open-global-chat', handleOpenChat);
     return () => window.removeEventListener('open-global-chat', handleOpenChat);
-  }, []);
+  }, [openPanel]);
 
   // Load initial messages and subscribe
   useEffect(() => {
@@ -85,7 +98,7 @@ export default function LiveChatFloating() {
     return () => {
       supabase.removeChannel(channel);
     };
-  }, [isOpen, user?.id]);
+  }, [addNotification, isOpen, user?.id]);
 
   // Clear unread when opening
   useEffect(() => {
@@ -163,21 +176,17 @@ export default function LiveChatFloating() {
     <>
       {/* Expanded Panel */}
       <div 
-        className={`zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
+        id="global-chat-panel"
+        data-utility-panel="live-chat"
+        aria-hidden={!isOpen}
+        className={`mobile-utility-panel zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
           !isOpen ? 'scale-90 opacity-0 pointer-events-none' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
-        style={{
-          ...(isLeftHalf 
-            ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 340px - 16px))` } 
-            : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 340px - 16px))` }),
-          ...(isTopHalf 
-            ? { top: `clamp(80px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
-            : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 550px - 16px))` })
-        }}
+        style={draggable.isDesktop ? draggable.getPanelStyle(400, 550) : undefined}
       >
-        <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div className="mobile-utility-card mobile-utility-card--chat w-[340px] md:w-[400px] h-[550px] max-h-full flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
           <div className="flex items-center justify-between p-4 text-white shrink-0 select-none bg-indigo-600">
             <div className="flex items-center gap-2 font-bold pointer-events-none">
@@ -187,6 +196,7 @@ export default function LiveChatFloating() {
               onPointerDown={(e) => e.stopPropagation()}
               onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
+              aria-label="Tutup Kelas Global"
               className="text-indigo-100 hover:text-white hover:bg-indigo-700 p-1 rounded-full transition relative z-10 cursor-pointer"
               title="Tutup obrolan"
             >
@@ -262,6 +272,7 @@ export default function LiveChatFloating() {
                       {canDelete && (
                         <button 
                           onClick={() => handleDeleteMessage(msg.id)}
+                          aria-label="Hapus pesan"
                           className="opacity-0 group-hover:opacity-100 p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-full transition-all shrink-0"
                           title="Hapus pesan"
                         >
@@ -310,6 +321,7 @@ export default function LiveChatFloating() {
                 <button 
                   type="submit"
                   disabled={!inputText.trim() || isSending}
+                  aria-label="Kirim pesan ke Kelas Global"
                   className="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 disabled:opacity-50 transition"
                 >
                   <Send size={16} className="ml-0.5" />
@@ -324,23 +336,29 @@ export default function LiveChatFloating() {
       {/* Floating Toggle Button */}
       <button
         ref={draggable.ref}
-        {...draggable.handlers}
+        {...(draggable.isDesktop ? draggable.handlers : {})}
+        type="button"
+        aria-label={isOpen ? 'Tutup Kelas Global' : 'Buka Kelas Global'}
+        aria-controls="global-chat-panel"
+        aria-expanded={isOpen}
+        title={isOpen ? 'Tutup Kelas Global' : 'Buka Kelas Global'}
         onClick={(e) => {
           if (draggable.isMoved) {
             e.preventDefault();
             e.stopPropagation();
             return;
           }
-          setIsOpen(!isOpen);
+          if (isOpen) setIsOpen(false);
+          else openPanel();
         }}
-        style={{
+        style={draggable.isDesktop ? {
           ...draggable.handlers.style,
           position: 'fixed',
           left: draggable.position.x,
           top: draggable.position.y,
           zIndex: 100
-        }}
-        className={`zen-hideable group flex items-center justify-center shadow-md ${
+        } : undefined}
+        className={`zen-hideable group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--global-chat' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-indigo-400/50' : 'cursor-pointer active:scale-95'

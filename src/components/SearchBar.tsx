@@ -50,7 +50,7 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
 
   return (
     <div ref={containerRef} className="relative w-full">
-      <div className="glass-input-shell flex items-center gap-2 rounded-2xl border px-3 py-2.5 transition-all">
+      <div className="glass-input-shell mobile-search-shell flex items-center gap-2 rounded-2xl border px-3 py-2.5 transition-all">
         <Search size={16} className="shrink-0 text-slate-500" />
         <input
           type="text"
@@ -75,7 +75,7 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
       </div>
 
       {open && query.trim().length >= 2 && (
-        <div className="glass-command-panel glass-enter absolute left-0 top-full z-50 mt-3 w-[24rem] max-w-[92vw] overflow-hidden rounded-3xl py-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border border-gray-200 dark:border-gray-800">
+        <div className="glass-command-panel glass-enter mobile-search-results absolute left-0 top-full z-50 mt-3 w-[24rem] max-w-[92vw] overflow-hidden rounded-3xl py-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border border-gray-200 dark:border-gray-800">
           <div className="glass-command-header px-4 pb-2 pt-1 border-b border-gray-100 dark:border-gray-800/50">
             <p className="eyebrow">Pencarian</p>
             <p className="mt-1 text-xs text-slate-500">{results.length} hasil untuk “{query}”</p>

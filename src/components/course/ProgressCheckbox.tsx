@@ -9,15 +9,21 @@ interface ProgressCheckboxProps {
 export default function ProgressCheckbox({ checked, onToggle, size = 14 }: ProgressCheckboxProps) {
   return (
     <button
+      type="button"
+      aria-label={checked ? 'Tandai materi belum selesai' : 'Tandai materi selesai'}
+      title={checked ? 'Sudah selesai' : 'Tandai selesai'}
       onClick={(e) => {
         e.stopPropagation();
         onToggle();
       }}
-      className={`w-6 h-6 rounded-md border flex items-center justify-center shrink-0 transition-all ${
-        checked ? 'bg-gold border-gold text-navy-900' : 'border-navy-500 text-transparent hover:border-gold/50'
-      }`}
+      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/35"
     >
-      <Check size={size} strokeWidth={3} />
+      <span className={`flex h-6 w-6 items-center justify-center rounded-md border transition-all ${
+        checked ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-gray-300 text-transparent hover:border-blue-500 dark:border-gray-600'
+      }`}
+      >
+        <Check size={size} strokeWidth={3} />
+      </span>
     </button>
   );
 }
