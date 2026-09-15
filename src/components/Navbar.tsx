@@ -39,16 +39,20 @@ function NavBtn({
   isActive?: boolean;
   compact?: boolean;
 }) {
+  const buttonClass = compact
+    ? `flex min-h-11 w-full items-center rounded-lg px-3 py-2 text-left text-sm font-semibold transition-colors ${
+        isActive
+          ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/35 dark:text-blue-300'
+          : 'text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
+      }`
+    : `global-nav-link ${isActive ? 'is-active' : ''}`;
+
   return (
     <button
       type="button"
       onClick={onClick}
       aria-expanded={isActive || undefined}
-      className={`relative rounded-md px-3 py-2 text-sm font-semibold lg:px-4 transition-colors ${compact ? 'w-full justify-between text-left' : ''} ${
-        isActive
-          ? 'text-blue-600 bg-blue-50 dark:text-blue-400 dark:bg-blue-900/20'
-          : 'text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
-      }`}
+      className={buttonClass}
     >
       {label}
     </button>
@@ -138,8 +142,8 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
         isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm py-2' : 'bg-white dark:bg-gray-900 py-2 md:py-3'
       }`}
     >
-      <div className="nav-menu-container mx-auto max-w-7xl px-2 sm:px-4 md:px-8 lg:px-12">
-        <div className="flex items-center justify-between gap-1 md:gap-4">
+      <div className="nav-menu-container mx-auto w-full max-w-[90rem] px-3 sm:px-5 lg:px-6 xl:px-8">
+        <div className="flex items-center justify-between gap-3">
           <button onClick={handleHome} className="group flex min-h-11 min-w-0 shrink cursor-pointer items-center gap-1.5 text-left md:shrink-0 md:gap-3" type="button">
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-sm shadow-blue-500/20 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:shadow-indigo-500/20 md:h-11 md:w-11 md:rounded-xl">
               <GraduationCap size={21} aria-hidden="true" />
@@ -154,8 +158,8 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
             </div>
           </button>
 
-          <div className="flex min-w-0 shrink-0 items-center gap-1 md:gap-3">
-            <div className="stage9-nav-pill glass-nav-segment hidden items-center gap-1 rounded-xl p-1 md:flex">
+          <div className="flex min-w-0 flex-1 items-center justify-end gap-2 lg:gap-3">
+            <div className="hidden shrink-0 items-center gap-0.5 lg:flex">
               <NavBtn label="Home" onClick={handleHome} />
 
               <div className="relative" id="tour-materi">
@@ -192,12 +196,12 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               )}
             </div>
 
-            <div className="hidden min-w-[260px] lg:block lg:min-w-[310px]" id="tour-search">
+            <div className="hidden min-w-0 w-[clamp(14rem,20vw,19rem)] shrink xl:block" id="tour-search">
               <SearchBar onSelectCourse={(c, tab) => handleSelect(c, tab ?? 'tm1-7')} />
             </div>
 
-            <div className="flex shrink-0 items-center gap-2" id="tour-theme-wrapper">
-              <div className="hidden md:flex items-center mr-2">
+            <div className="flex shrink-0 items-center gap-1.5 sm:gap-2" id="tour-theme-wrapper">
+              <div className="hidden items-center md:flex">
                 {!loading && (
                   user ? (
                     <button onClick={() => setProfileModalOpen(true)} className="text-sm font-semibold text-gray-800 dark:text-white flex items-center gap-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 px-3 py-1.5 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition shadow-sm" title="Profil & Nickname">
@@ -214,7 +218,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               {deferredPrompt && (
                 <button
                   onClick={handleInstallClick}
-                  className="hidden md:flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded-full transition shadow-sm mr-2"
+                  className="hidden items-center gap-1.5 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-green-700 md:flex"
                   title="Install Aplikasi (Offline)"
                 >
                   <Download size={14} />
@@ -225,7 +229,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               <ThemeSwitch theme={theme} onToggleTheme={onToggleTheme} variant={isQuietThemeControl ? 'quiet' : 'legacy'} />
               <button
                 type="button"
-                className="stage9-mobile-toggle md:hidden"
+                className="stage9-mobile-toggle lg:hidden"
                 onClick={() => {
                   setMobileOpen((value) => !value);
                   setActiveMenu(null);
@@ -239,12 +243,12 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
           </div>
         </div>
 
-        <div className="mt-3 hidden md:block lg:hidden">
+        <div className="mt-2 hidden lg:block xl:hidden">
           <SearchBar onSelectCourse={(c, tab) => handleSelect(c, tab ?? 'tm1-7')} />
         </div>
 
         {mobileOpen && (
-          <div className="stage9-mobile-panel md:hidden">
+          <div className="stage9-mobile-panel lg:hidden">
             <div className="mb-2" id="tour-search-mobile">
               <SearchBar onSelectCourse={(c, tab) => handleSelect(c, tab ?? 'tm1-7')} />
             </div>

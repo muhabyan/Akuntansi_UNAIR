@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import {
   Award,
   ArrowUpDown,
@@ -9,6 +9,8 @@ import {
   ChevronRight,
   ClipboardList,
   Layers,
+  ListTree,
+  Maximize,
   PlayCircle,
   Sparkles,
   Target,
@@ -28,7 +30,7 @@ import QuizCard from './QuizCard';
 import PteQuizCard from './PteQuizCard';
 import FlashcardGrid from './FlashcardGrid';
 import BankQuestionList from './BankQuestionList';
-import ReadingOutline, { buildReadingOutline, getReadingBlockId } from './ReadingOutline';
+import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
 
 interface CourseLayoutProps {
@@ -122,6 +124,36 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
   }
 }
 
+function formulaNeedsFullWidth(block: Extract<ContentBlock, { kind: 'formula' }>) {
+  const readableLength = block.text
+    .replace(/\\text\{([^}]*)\}/g, '$1')
+    .replace(/\\[a-zA-Z]+/g, '')
+    .replace(/[{}\s]/g, '')
+    .length;
+  return readableLength > 55 || block.text.includes('\\\\');
+}
+
+function isWideLearningBlock(block: ContentBlock) {
+  return [
+    'table',
+    'journal',
+    'formula',
+    'figure',
+    'example',
+    'solution-reveal',
+    'statement',
+    'builder',
+    'interactive-match',
+    'table-fill',
+    'journal-builder',
+    't-account-builder',
+    'illustration',
+    'math-example',
+    'chart-guide',
+    'practice-box',
+  ].includes(block.kind);
+}
+
 // ----------------- DETAIL BACAAN TATAP MUKA -----------------
 function ReadingPanel({
   reading,
@@ -149,11 +181,39 @@ function ReadingPanel({
   const key = materialKey(courseCode, reading.tm);
   const done = isDone(key);
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
-  const outlineItems = buildReadingOutline(reading.blocks);
+  const outlineItems = useMemo(() => buildReadingOutline(reading.blocks), [reading.blocks]);
+  const activeOutlineId = useReadingOutlineActive(outlineItems);
+  const activeOutlineIndex = Math.max(0, outlineItems.findIndex((item) => item.id === activeOutlineId));
+  const activeOutlineItem = outlineItems[activeOutlineIndex];
+  const [desktopOutlineOpen, setDesktopOutlineOpen] = useState(() => {
+    try {
+      return window.localStorage.getItem(DESKTOP_OUTLINE_STORAGE_KEY) !== 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [mobileOutlineOpen, setMobileOutlineOpen] = useState(false);
+  const mobileOutlineTriggerRef = useRef<HTMLButtonElement>(null);
+  const mobileOutlineWasOpen = useRef(false);
 
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const minSwipeDistance = 50;
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(DESKTOP_OUTLINE_STORAGE_KEY, String(!desktopOutlineOpen));
+    } catch {
+      // The outline remains usable when browser storage is unavailable.
+    }
+  }, [desktopOutlineOpen]);
+
+  useEffect(() => {
+    document.body.classList.toggle('reading-outline-menu-open', mobileOutlineOpen);
+    if (mobileOutlineWasOpen.current && !mobileOutlineOpen) mobileOutlineTriggerRef.current?.focus();
+    mobileOutlineWasOpen.current = mobileOutlineOpen;
+    return () => document.body.classList.remove('reading-outline-menu-open');
+  }, [mobileOutlineOpen]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -200,27 +260,102 @@ function ReadingPanel({
   }, []);
 
   return (
-    <div className="reading-layout grid min-w-0 gap-8 lg:grid-cols-[minmax(0,46rem)_14rem] lg:justify-center xl:gap-10">
+    <div
+      className="reading-layout grid min-w-0 gap-6 lg:grid-cols-[minmax(0,64rem)_12.5rem] lg:justify-center"
+      data-outline-expanded={desktopOutlineOpen}
+    >
       <article
         className="min-w-0 animate-fade-in-up"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <CourseHeader courseName={courseName} reading={reading} onBack={onBack} />
-        <ReadingOutline items={outlineItems} variant="mobile" />
+        <div className="reading-toolbar sticky top-[calc(4.25rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-200/90 bg-white/95 p-1.5 shadow-sm shadow-slate-900/5 backdrop-blur-md transition-[opacity,transform] duration-200 dark:border-gray-700/90 dark:bg-gray-900/95 dark:shadow-black/20 md:top-[4.75rem]">
+          <button
+            ref={mobileOutlineTriggerRef}
+            type="button"
+            aria-label="Buka daftar isi"
+            aria-expanded={mobileOutlineOpen}
+            aria-controls="reading-outline-mobile-dialog"
+            onClick={() => setMobileOutlineOpen((open) => !open)}
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-bold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300 lg:hidden"
+          >
+            <ListTree size={17} /> <span className="hidden min-[360px]:inline">Daftar Isi</span>
+          </button>
+          <button
+            type="button"
+            aria-label={desktopOutlineOpen ? 'Tutup daftar isi' : 'Buka daftar isi'}
+            aria-expanded={desktopOutlineOpen}
+            aria-controls="reading-outline-desktop-panel"
+            onClick={() => setDesktopOutlineOpen((open) => !open)}
+            className="hidden min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-bold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300 lg:inline-flex"
+          >
+            <ListTree size={17} /> Daftar Isi
+          </button>
+          <div className="min-w-0 flex-1 px-1 text-center">
+            <p className="truncate text-[11px] font-semibold text-gray-500 dark:text-gray-400" aria-live="polite">
+              {activeOutlineItem ? `${String(activeOutlineIndex + 1).padStart(2, '0')} · ${activeOutlineItem.label.replace(/^\d+\.\s*/, '')}` : `TM ${reading.tm}`}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('akuntansihub:toggle-zen'))}
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-bold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300"
+            title="Masuk ke Zen Mode"
+          >
+            <Maximize size={16} /> <span className="hidden sm:inline">Zen Mode</span>
+          </button>
+        </div>
+
+        <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} />
 
         <div className="reading-document akbi-reading-flow min-w-0">
           <div className="space-y-6 md:space-y-8">
-            {reading.blocks.map((block, index) => (
-              <div key={index} id={getReadingBlockId(block, index)} className="reading-block-anchor min-w-0 scroll-mt-24">
-                <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
-              </div>
-            ))}
+            {reading.blocks.map((block, index) => {
+              const previousBlock = reading.blocks[index - 1];
+              const nextBlock = reading.blocks[index + 1];
+
+              if (block.kind === 'formula' && previousBlock?.kind === 'formula') return null;
+
+              if (block.kind === 'formula' && nextBlock?.kind === 'formula') {
+                const formulaRun: Array<{ block: Extract<ContentBlock, { kind: 'formula' }>; index: number }> = [];
+                let formulaIndex = index;
+                while (reading.blocks[formulaIndex]?.kind === 'formula') {
+                  formulaRun.push({
+                    block: reading.blocks[formulaIndex] as Extract<ContentBlock, { kind: 'formula' }>,
+                    index: formulaIndex,
+                  });
+                  formulaIndex += 1;
+                }
+
+                return (
+                  <div key={`formula-run-${index}`} className="reading-exam-formula-grid reading-wide-block min-w-0">
+                    {formulaRun.map(({ block: formulaBlock, index: originalIndex }) => (
+                      <div
+                        key={originalIndex}
+                        className={`reading-block-anchor min-w-0 scroll-mt-40 ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
+                      >
+                        <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              return (
+                <div
+                  key={index}
+                  id={getReadingBlockId(block, index)}
+                  className={`reading-block-anchor min-w-0 scroll-mt-40 ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
+                >
+                  <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        <footer className="reading-completion mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
+        <footer className="reading-completion reading-prose-block mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Selesai membaca?</p>
           <h2 className="mt-1.5 text-lg font-bold text-gray-900 dark:text-white">Catat progres, lalu lanjutkan saat siap.</h2>
           <button
@@ -246,7 +381,8 @@ function ReadingPanel({
         </footer>
       </article>
 
-      <ReadingOutline items={outlineItems} variant="desktop" />
+      <ReadingOutline items={outlineItems} variant="desktop" activeId={activeOutlineId} isOpen={desktopOutlineOpen} onOpenChange={setDesktopOutlineOpen} />
+      <ReadingOutline items={outlineItems} variant="mobile" activeId={activeOutlineId} isOpen={mobileOutlineOpen} onOpenChange={setMobileOutlineOpen} />
     </div>
   );
 }
@@ -641,7 +777,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
 
 
   return (
-    <div className={`mx-auto px-4 md:px-8 ${currentReading ? '-mt-16 max-w-6xl' : '-mt-12 max-w-5xl md:mt-0'}`}>
+    <div className={`mx-auto ${currentReading ? '-mt-16 max-w-[80rem] px-4' : '-mt-12 max-w-5xl px-4 md:mt-0 md:px-8'}`}>
       <div className="flex flex-col">
         {!currentReading && (
           <CourseSidebar

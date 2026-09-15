@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { ArrowLeft, BookOpen, Check, Maximize, Minimize, Target } from 'lucide-react';
 import type { Reading } from '../../types';
 import { renderText } from './MarkdownContent';
@@ -7,6 +7,7 @@ interface CourseHeaderProps {
   courseName: string;
   reading: Reading;
   onBack: () => void;
+  showZenControl?: boolean;
 }
 
 function getReadingContext(reading: Reading) {
@@ -19,7 +20,7 @@ function getReadingContext(reading: Reading) {
   };
 }
 
-export default function CourseHeader({ courseName, reading, onBack }: CourseHeaderProps) {
+export default function CourseHeader({ courseName, reading, onBack, showZenControl = true }: CourseHeaderProps) {
   const [zenMode, setZenMode] = useState(false);
   const context = getReadingContext(reading);
 
@@ -36,7 +37,7 @@ export default function CourseHeader({ courseName, reading, onBack }: CourseHead
     return () => document.body.classList.remove('zen-mode-active');
   }, [zenMode]);
 
-  const toggleZenMode = () => {
+  const toggleZenMode = useCallback(() => {
     const nextZenMode = !zenMode;
     setZenMode(nextZenMode);
 
@@ -45,7 +46,13 @@ export default function CourseHeader({ courseName, reading, onBack }: CourseHead
     } else if (!nextZenMode && document.fullscreenElement && document.exitFullscreen) {
       document.exitFullscreen().catch(() => {});
     }
-  };
+  }, [zenMode]);
+
+  useEffect(() => {
+    const handleToolbarToggle = () => toggleZenMode();
+    window.addEventListener('akuntansihub:toggle-zen', handleToolbarToggle);
+    return () => window.removeEventListener('akuntansihub:toggle-zen', handleToolbarToggle);
+  }, [toggleZenMode]);
 
   return (
     <>
@@ -54,7 +61,7 @@ export default function CourseHeader({ courseName, reading, onBack }: CourseHead
           <button type="button" onClick={onBack} className="inline-flex min-h-11 min-w-0 items-center gap-2 rounded-lg px-2 text-sm font-semibold text-gray-500 transition-colors hover:bg-gray-100 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-blue-300" aria-label={`Kembali ke daftar materi ${courseName}`}>
             <ArrowLeft size={17} className="shrink-0" /> <span className="truncate">Daftar materi</span>
           </button>
-          {!zenMode && (
+          {showZenControl && !zenMode && (
             <button type="button" onClick={toggleZenMode} className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg border border-gray-200 px-3 text-sm font-bold text-gray-600 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/35 dark:hover:text-blue-300" title="Masuk ke Zen Mode">
               <Maximize size={16} />
               <span className="hidden sm:inline">Zen Mode</span>

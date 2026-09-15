@@ -41,7 +41,7 @@ export const CASE_LUMP_SUM_PPE: ContentBlock = {
     {
       kind: 'solution-reveal',
       title: 'Buka Pembahasan & Jurnal Akuntansi (Skenario A & B)',
-      prompt: 'Pahami perbedaan esensial intensi manajemen (management intent) sesuai PSAK 16:',
+      prompt: 'Pahami perbedaan esensial intensi manajemen (management intent) sesuai PSAK 216 (dahulu PSAK 16):',
       blocks: [
         {
           kind: 'h3',
@@ -74,7 +74,7 @@ export const CASE_LUMP_SUM_PPE: ContentBlock = {
         {
           kind: 'callout',
           variant: 'key',
-          title: 'Aturan Kunci PSAK 16 / IAS 16',
+          title: 'Aturan Kunci PSAK 216 (dahulu PSAK 16) / IAS 16',
           text: 'Jika tanah dibeli dengan bangunan tua di atasnya dan tujuannya adalah membangun fasilitas baru, maka **seluruh harga beli awal dialokasikan 100% ke akun Tanah**. Biaya bersih pembongkaran (Biaya pembongkaran Rp 120jt - Penjualan material Rp 25jt = Rp 95jt) dikapitalisasi ke akun **Tanah** karena merupakan biaya persiapan lahan agar siap digunakan.',
         },
         {
@@ -203,7 +203,7 @@ export const CASE_BORROWING_COST: ContentBlock = {
 // -------------------------------------------------------------
 export const CASE_DECOMMISSIONING_RESTORE: ContentBlock = {
   kind: 'example',
-  title: 'Studi Kasus 3: Estimasi Biaya Pembongkaran & Restorasi Lokasi (PSAK 16 & PSAK 57)',
+  title: 'Studi Kasus 3: Estimasi Biaya Pembongkaran & Restorasi Lokasi (PSAK 216 & PSAK 237)',
   blocks: [
     {
       kind: 'callout',

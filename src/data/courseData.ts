@@ -243,7 +243,7 @@ const AKA201_REF = [
 // --- AKK202 Akuntansi Keuangan Menengah II (Kieso Intermediate IFRS 5e) ---
 // RPP OBE Akuntansi Keuangan Menengah II, Departemen Akuntansi FEB UNAIR.
 const AKK202_TM1_7 = materi([
-  ['Akuntansi Aset Tetap, Properti Investasi, dan Tanah', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 13, 26'],
+  ['Akuntansi Aset Tetap, Properti Investasi, dan Tanah', 'Kieso IFRS 5e Ch. 9–10 | PSAK 216, 223, 240; ISAK 336'],
   ['Kos setelah Akuisisi & Disposisi Aset Tetap', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 58'],
   ['Depresiasi & Deplesi Sumber Daya Alam', 'Kieso IFRS 5e Ch. 11 | PSAK 16'],
   ['Penurunan Nilai Aset (Impairment) & Penyajian', 'Kieso IFRS 5e Ch. 11 | PSAK 48'],

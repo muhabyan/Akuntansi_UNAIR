@@ -132,10 +132,63 @@ export default function App() {
 
   useEffect(() => {
     let settleTimer: number | undefined;
+    let utilityIdleTimer: number | undefined;
+    let toolbarIdleTimer: number | undefined;
+    let lastUserScrollIntentAt = Number.NEGATIVE_INFINITY;
+    let lastUserScrollAt = Number.NEGATIVE_INFINITY;
+    let lastEdgeRevealAt = 0;
+    let initialReadingGraceUntil = 0;
+    let lastScrollY = window.scrollY;
+    let lastTouchY: number | null = null;
+    const controlIdleDelay = 3600;
+    const userScrollIntentWindow = 800;
 
-    const handleScroll = () => {
+    const isReadingMode = () => document.body.classList.contains('reading-mode-active');
+    const hasOpenUtilityPanel = () => Boolean(document.querySelector('[data-utility-panel][aria-hidden="false"]'));
+    const hasOpenReaderPanel = () => hasOpenUtilityPanel() || document.body.classList.contains('reading-outline-menu-open');
+
+    const clearUtilityIdleTimer = () => {
+      window.clearTimeout(utilityIdleTimer);
+      utilityIdleTimer = undefined;
+    };
+
+    const hideReadingUtilities = () => {
+      clearUtilityIdleTimer();
+      if (!isReadingMode() || hasOpenUtilityPanel()) return;
+      document.body.classList.add('reading-utilities-hidden');
+    };
+
+    const revealReadingUtilities = (scheduleHide = true) => {
+      if (!isReadingMode()) return;
+      document.body.classList.remove('reading-utilities-hidden');
+      clearUtilityIdleTimer();
+      if (scheduleHide && !hasOpenUtilityPanel()) {
+        utilityIdleTimer = window.setTimeout(hideReadingUtilities, controlIdleDelay);
+      }
+    };
+
+    const clearToolbarIdleTimer = () => {
+      window.clearTimeout(toolbarIdleTimer);
+      toolbarIdleTimer = undefined;
+    };
+
+    const hideReadingToolbar = () => {
+      clearToolbarIdleTimer();
+      if (!isReadingMode() || hasOpenReaderPanel()) return;
+      document.body.classList.add('reading-toolbar-hidden');
+    };
+
+    const revealReadingToolbar = (scheduleHide = true) => {
+      if (!isReadingMode()) return;
+      document.body.classList.remove('reading-toolbar-hidden');
+      clearToolbarIdleTimer();
+      if (scheduleHide && !hasOpenReaderPanel()) {
+        toolbarIdleTimer = window.setTimeout(hideReadingToolbar, controlIdleDelay);
+      }
+    };
+
+    const showMobileScrollState = () => {
       if (!window.matchMedia('(max-width: 767px)').matches || document.body.classList.contains('driver-active')) return;
-
       document.body.classList.add('mobile-utility-scrolling');
       window.clearTimeout(settleTimer);
       settleTimer = window.setTimeout(() => {
@@ -143,11 +196,209 @@ export default function App() {
       }, 320);
     };
 
+    const markUserScrollIntent = (direction: 'up' | 'down') => {
+      lastUserScrollIntentAt = performance.now();
+      lastUserScrollAt = lastUserScrollIntentAt;
+      if (!isReadingMode()) return;
+      hideReadingUtilities();
+      if (direction === 'up') revealReadingToolbar(true);
+      else hideReadingToolbar();
+      showMobileScrollState();
+    };
+
+    const syncUtilityPanelState = () => {
+      const panelOpen = isReadingMode() && hasOpenUtilityPanel();
+      document.body.classList.toggle('reading-utility-panel-open', panelOpen);
+      if (panelOpen) {
+        revealReadingUtilities(false);
+        revealReadingToolbar(false);
+      } else if (isReadingMode()) {
+        revealReadingUtilities(true);
+        revealReadingToolbar(true);
+      }
+    };
+
+    const handleScroll = () => {
+      const now = performance.now();
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY < lastScrollY ? 'up' : 'down';
+      const userDriven = now >= initialReadingGraceUntil && now - lastUserScrollIntentAt <= userScrollIntentWindow;
+
+      if (isReadingMode() && userDriven) {
+        lastUserScrollAt = now;
+        hideReadingUtilities();
+        if (direction === 'up') revealReadingToolbar(true);
+        else hideReadingToolbar();
+      }
+
+      if (!isReadingMode() || userDriven) showMobileScrollState();
+      lastScrollY = currentScrollY;
+    };
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!isReadingMode() || event.deltaY === 0) return;
+      const target = event.target instanceof Element ? event.target : null;
+      if (target?.closest('.mobile-utility-panel, .reading-outline-sheet')) return;
+      markUserScrollIntent(event.deltaY > 0 ? 'down' : 'up');
+    };
+
+    const handleTouchStart = (event: TouchEvent) => {
+      lastTouchY = event.touches[0]?.clientY ?? null;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      if (!isReadingMode() || lastTouchY === null) return;
+      const target = event.target instanceof Element ? event.target : null;
+      if (target?.closest('.mobile-utility-panel, .reading-outline-sheet')) return;
+      const currentY = event.touches[0]?.clientY;
+      if (currentY === undefined || Math.abs(currentY - lastTouchY) < 4) return;
+      markUserScrollIntent(currentY < lastTouchY ? 'down' : 'up');
+      lastTouchY = currentY;
+    };
+
+    const handlePointerUp = (event: PointerEvent) => {
+      if (!isReadingMode() || performance.now() - lastUserScrollAt < 220) return;
+      const target = event.target instanceof Element ? event.target : null;
+      if (!target?.closest('.reading-layout')) return;
+      if (window.getSelection()?.toString().trim()) return;
+      if (target.closest('a, button, input, textarea, select, summary, details, table, [role="button"], [contenteditable="true"], .akbi-table-scroll, .course-formula-surface, .course-journal-card, .course-table-card, .reading-outline-sheet')) return;
+      revealReadingUtilities(true);
+      revealReadingToolbar(true);
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      if (!isReadingMode() || event.pointerType !== 'mouse' || hasOpenReaderPanel()) return;
+      const nearControlEdge = event.clientX <= 72 || event.clientX >= window.innerWidth - 72 || event.clientY >= window.innerHeight - 72;
+      if (!nearControlEdge || performance.now() - lastEdgeRevealAt < 500) return;
+      lastEdgeRevealAt = performance.now();
+      revealReadingUtilities(true);
+      revealReadingToolbar(true);
+    };
+
+    const handleFocusIn = (event: FocusEvent) => {
+      const target = event.target instanceof Element ? event.target : null;
+      if (!isReadingMode()) return;
+      if (target?.closest('.mobile-utility-launcher, .mobile-utility-panel')) {
+        revealReadingUtilities(false);
+        revealReadingToolbar(false);
+      } else if (target?.closest('.reading-toolbar, .reading-outline-sheet')) {
+        revealReadingToolbar(false);
+      }
+    };
+
+    const handleFocusOut = (event: FocusEvent) => {
+      const target = event.target instanceof Element ? event.target : null;
+      if (!isReadingMode() || !target?.closest('.mobile-utility-launcher, .mobile-utility-panel')) return;
+      window.requestAnimationFrame(() => {
+        const activeElement = document.activeElement instanceof Element ? document.activeElement : null;
+        if (!activeElement?.closest('.mobile-utility-launcher, .mobile-utility-panel') && !hasOpenUtilityPanel()) {
+          revealReadingUtilities(true);
+        }
+        if (!activeElement?.closest('.reading-toolbar, .reading-outline-sheet') && !hasOpenReaderPanel()) revealReadingToolbar(true);
+      });
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isReadingMode()) return;
+      if (event.key === 'Tab') {
+        revealReadingUtilities(true);
+        revealReadingToolbar(true);
+        return;
+      }
+
+      const target = event.target instanceof HTMLElement ? event.target : null;
+      if (target && (target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName))) return;
+      if (['ArrowDown', 'PageDown', 'End'].includes(event.key) || (event.key === ' ' && !event.shiftKey)) {
+        markUserScrollIntent('down');
+      } else if (['ArrowUp', 'PageUp', 'Home'].includes(event.key) || (event.key === ' ' && event.shiftKey)) {
+        markUserScrollIntent('up');
+      }
+    };
+
+    const handleUtilityOpen = () => {
+      revealReadingUtilities(false);
+      revealReadingToolbar(false);
+      window.requestAnimationFrame(syncUtilityPanelState);
+    };
+
+    const handleMutations = (mutations: MutationRecord[]) => {
+      let panelStateChanged = false;
+      for (const mutation of mutations) {
+        if (mutation.target === document.body && mutation.attributeName === 'class') {
+          const wasReading = mutation.oldValue?.split(/\s+/).includes('reading-mode-active') ?? false;
+          const readingNow = isReadingMode();
+          if (wasReading !== readingNow) {
+            if (readingNow) {
+              initialReadingGraceUntil = performance.now() + 900;
+              lastScrollY = window.scrollY;
+              revealReadingUtilities(true);
+              revealReadingToolbar(true);
+            }
+            else {
+              clearUtilityIdleTimer();
+              clearToolbarIdleTimer();
+              document.body.classList.remove('reading-utilities-hidden', 'reading-utility-panel-open', 'reading-toolbar-hidden');
+            }
+          } else {
+            const hadOutlineMenu = mutation.oldValue?.split(/\s+/).includes('reading-outline-menu-open') ?? false;
+            const outlineMenuOpen = document.body.classList.contains('reading-outline-menu-open');
+            if (hadOutlineMenu !== outlineMenuOpen) {
+              if (outlineMenuOpen) revealReadingToolbar(false);
+              else revealReadingToolbar(true);
+            }
+          }
+        } else if (
+          mutation.attributeName === 'aria-hidden'
+          && mutation.target instanceof Element
+          && mutation.target.matches('[data-utility-panel]')
+        ) {
+          panelStateChanged = true;
+        }
+      }
+      if (panelStateChanged) syncUtilityPanelState();
+    };
+
+    const utilityObserver = new MutationObserver(handleMutations);
+    utilityObserver.observe(document.body, {
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: ['class', 'aria-hidden'],
+      subtree: true,
+    });
+
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('wheel', handleWheel, { passive: true, capture: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true, capture: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: true, capture: true });
+    window.addEventListener('pointerup', handlePointerUp, { passive: true });
+    window.addEventListener('pointermove', handlePointerMove, { passive: true });
+    document.addEventListener('focus', handleFocusIn, true);
+    document.addEventListener('blur', handleFocusOut, true);
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('akuntansihub:utility-open', handleUtilityOpen);
+    if (isReadingMode()) {
+      initialReadingGraceUntil = performance.now() + 900;
+      revealReadingUtilities(true);
+      revealReadingToolbar(true);
+    }
+
     return () => {
+      utilityObserver.disconnect();
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('wheel', handleWheel, true);
+      window.removeEventListener('touchstart', handleTouchStart, true);
+      window.removeEventListener('touchmove', handleTouchMove, true);
+      window.removeEventListener('pointerup', handlePointerUp);
+      window.removeEventListener('pointermove', handlePointerMove);
+      document.removeEventListener('focus', handleFocusIn, true);
+      document.removeEventListener('blur', handleFocusOut, true);
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('akuntansihub:utility-open', handleUtilityOpen);
       window.clearTimeout(settleTimer);
+      clearUtilityIdleTimer();
+      clearToolbarIdleTimer();
       document.body.classList.remove('mobile-utility-scrolling');
+      document.body.classList.remove('reading-utilities-hidden', 'reading-utility-panel-open', 'reading-toolbar-hidden');
     };
   }, []);
 
