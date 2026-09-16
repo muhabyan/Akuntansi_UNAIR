@@ -28,3 +28,4 @@ extract_*.py
 scripts/*.py
 *.txt
 *.pdf
+.content-inbox/
