@@ -91,10 +91,10 @@ export const SIA_TM1: Reading = {
     { kind: 'h2', text: '4. Enterprise Systems & Process Flows' },
     { kind: 'h3', text: 'Order fulfillment: Order → Pick → Ship → Bill' },
     { kind: 'table', headers: ['Tahap / aktor', 'Aktivitas dan data', 'Dokumen / tujuan', 'Kontrol'], rows: [
-      ['1. Sales — order entry', 'Terima pesanan; validasi Customer ID, SKU, quantity, unit price, stok, credit limit, dan shipping address.', 'Sales Order: dasar permintaan barang dan pemenuhan.', 'Blokir kredit terlampaui atau pelanggan menunggak.'],
-      ['2. Warehouse — picking', 'Ambil barang sesuai SKU, quantity, nomor seri/batch.', 'Picking Ticket: instruksi dan bukti pengambilan.', 'Scan barcode untuk mencocokkan SKU dan kuantitas.'],
-      ['3. Shipping — pack & dispatch', 'Bandingkan barang, sales order, dan picking ticket; kemas dan serahkan ke carrier; rekam tracking number.', 'Packing Slip: rincian isi; Bill of Lading (BOL): bukti serah terima carrier.', 'Verifikasi independen dan tanda terima carrier.'],
-      ['4. Billing / Accounting', 'Konfirmasi shipping tervalidasi memicu invoice, AR, dan akun buku besar.', 'Sales Invoice: tagihan; pembaruan GL/AR dan persediaan.', 'Invoice hanya berdasarkan BOL tervalidasi; cegah pengiriman tanpa tagihan.'],
+      ['1\\. Sales — order entry', 'Terima pesanan; validasi Customer ID, SKU, quantity, unit price, stok, credit limit, dan shipping address.', 'Sales Order: dasar permintaan barang dan pemenuhan.', 'Blokir kredit terlampaui atau pelanggan menunggak.'],
+      ['2\\. Warehouse — picking', 'Ambil barang sesuai SKU, quantity, nomor seri/batch.', 'Picking Ticket: instruksi dan bukti pengambilan.', 'Scan barcode untuk mencocokkan SKU dan kuantitas.'],
+      ['3\\. Shipping — pack & dispatch', 'Bandingkan barang, sales order, dan picking ticket; kemas dan serahkan ke carrier; rekam tracking number.', 'Packing Slip: rincian isi; Bill of Lading (BOL): bukti serah terima carrier.', 'Verifikasi independen dan tanda terima carrier.'],
+      ['4\\. Billing / Accounting', 'Konfirmasi shipping tervalidasi memicu invoice, AR, dan akun buku besar.', 'Sales Invoice: tagihan; pembaruan GL/AR dan persediaan.', 'Invoice hanya berdasarkan BOL tervalidasi; cegah pengiriman tanpa tagihan.'],
     ], caption: 'PPT slide 23; Richardson 4e, pp. 12–14.' },
     { kind: 'example', title: 'Posting terintegrasi: penjualan kredit $10,000', blocks: [
       { kind: 'p', text: 'Barang berbiaya $6,500 dikirim ke pelanggan dengan syarat 2/10, n/30. BOL mengonfirmasi serah terima; ERP menerbitkan invoice dan jurnal dalam contoh ini.' },

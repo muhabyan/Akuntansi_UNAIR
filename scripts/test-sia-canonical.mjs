@@ -63,7 +63,7 @@ const required = {
 };
 // Strings rendered through remark-math must not contain two unescaped "$": they turn into inline math.
 const mathSafeTms = new Set([1, 2, 3, 4, 5]);
-// Leading ">", "#", or "1." in a rendered string becomes a blockquote, heading, or list.
+// Leading ">" or "#" in a rendered string becomes a blockquote or heading.
 const markdownBlockSafeTms = new Set([3, 4, 5]);
 const forbidden = [
   /\.content-inbox|canonical_spec|qa_manifest|docs\/content-audit/,
@@ -110,9 +110,10 @@ for (const tm of tms) {
     for (const value of rendered) {
       assert.ok(!/^\s*(>|#)/.test(value), `TM${tm}: leading ">" or "#" renders as markdown block: ${value.slice(0, 80)}`);
     }
-    for (const cell of blocks.filter((block) => block.kind === 'table').flatMap((block) => block.rows.flat())) {
-      assert.ok(!/^\s*(\d+\.|[-*+])\s/.test(cell), `TM${tm}: table cell renders as a markdown list: ${cell.slice(0, 80)}`);
-    }
+  }
+  // Table cells are rendered as markdown: "1. text" or "- text" becomes a list and the marker disappears.
+  for (const cell of blocks.filter((block) => block.kind === 'table').flatMap((block) => block.rows.flat())) {
+    assert.ok(!/^\s*(\d+\.|[-*+])\s/.test(cell), `TM${tm}: table cell renders as a markdown list: ${cell.slice(0, 80)}`);
   }
   for (const block of blocks) {
     if (block.kind === 'table') {
