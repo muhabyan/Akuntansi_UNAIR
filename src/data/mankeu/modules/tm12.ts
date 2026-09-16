@@ -90,7 +90,7 @@ export const TM12_READING: Reading = {
       rows: [
         ['Economic Order Quantity (EOQ)', '$EOQ = \\sqrt{\\frac{2 \\times D \\times S}{H}}$', 'Meminimalkan penjumlahan total Biaya Pemesanan dan Biaya Penyimpanan.', 'Pada titik EOQ, Total Biaya Pesan selalu SAMA PERSIS dengan Total Biaya Simpan.'],
         ['Reorder Point (ROP)', '$ROP = (\\text{Lead Time} \\times \\text{Daily Usage}) + \\text{Safety Stock}$', 'Menentukan kapan surat pesanan pembelian baru harus dikirimkan ke vendor.', 'Lupa menambahkan Safety Stock saat lead time atau permintaan harian bersifat fluktuatif.'],
-        ['Cost of Trade Credit (Nominal)', '$r_{Nom} = \\frac{\\text{Discount}\\}{100 - \\text{Discount}\} \\times \\frac{365}{\\text{Net Period} - \\text{Discount Period}}$', 'Mengukur mahalnya biaya dana jika menolak diskon pembayaran cepat.', 'Mengabaikan diskon 2/10 net 30 menghasilkan biaya tahunan sangat mahal (> 37%).'],
+        ['Cost of Trade Credit (Nominal)', '$r_{Nom} = \\frac{\\text{Discount}}{100 - \\text{Discount}} \\times \\frac{365}{\\text{Net Period} - \\text{Discount Period}}$', 'Mengukur mahalnya biaya dana jika menolak diskon pembayaran cepat.', 'Mengabaikan diskon 2/10 net 30 menghasilkan biaya tahunan sangat mahal (> 37%).'],
         ['Compensating Balance', '$EAR = \\frac{\\text{Bunga Nominal Pinjaman}}{\\text{Plafon Pinjaman} - \\text{Saldo Mengendap (CB)}}$', 'Persyaratan bank menyisakan saldo kas minimum tanpa bunga di rekening.', 'Compensating balance menaikkan tingkat suku bunga efektif pinjaman secara signifikan.']
       ],
       caption: 'Tabel 12.0: Matriks rumus persediaan dan pendanaan jangka pendek.'
