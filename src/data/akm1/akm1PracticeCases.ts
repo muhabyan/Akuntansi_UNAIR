@@ -56,12 +56,12 @@ const CASSY_2025_FACTS: ContentBlock = {
     ['Long-term investment in shares purchased', '$19.200'],
     ['Current assets other than cash increased', '$34.800'],
     ['Current liabilities increased', '$15.600'],
-    ['Depreciation expense - building / equipment', '$4.800 / $10.800'],
+    ['Depreciation expense - building / equipment', '\\$4.800 / \\$10.800'],
     ['Net income', '$66.000'],
     ['Bonds payable issued', '$60.000'],
     ['Addition to building completed', '$32.400'],
     ['Patent amortization', '$3.000'],
-    ['Equipment sold: cost / accumulated depreciation / proceeds', '$24.000 / $9.600 / $12.000'],
+    ['Equipment sold: cost / accumulated depreciation / proceeds', '\\$24.000 / \\$9.600 / \\$12.000'],
   ],
   caption: 'Given data - sepuluh informasi Cassy untuk penyusunan laporan 2025. Data ini digunakan bersama oleh TM 5, TM 6, dan fitur Laporan.',
 };
@@ -92,16 +92,16 @@ export const CASSY_SFP_CASE: Akm1PracticeCase = {
     prompt: 'Buka setelah Anda mencoba menyusun laporan dan memeriksa total assets dengan total equity and liabilities.',
     blocks: [
       { kind: 'table', headers: ['Saldo yang diturunkan', 'Perhitungan', 'Hasil'], rows: [
-        ['Buildings', '$144.000 + $32.400', '$176.400'],
-        ['Accumulated depreciation—buildings', '$36.000 + $4.800', '$40.800'],
-        ['Equipment', '$108.000 - $24.000', '$84.000'],
-        ['Accumulated depreciation—equipment', '$13.200 - $9.600 + $10.800', '$14.400'],
-        ['Net property, plant, and equipment', '$36.000 + ($176.400 - $40.800) + ($84.000 - $14.400)', '$241.200'],
-        ['Patents', '$48.000 - $3.000', '$45.000'],
-        ['Retained earnings', '$52.800 + $66.000 - $36.000', '$82.800'],
-        ['Total equity', '$216.000 + $82.800 - $13.200', '$285.600'],
-        ['Bonds payable', '$120.000 + $60.000', '$180.000'],
-        ['Current liabilities', '$180.000 + $15.600', '$195.600'],
+        ['Buildings', '\\$144.000 + \\$32.400', '$176.400'],
+        ['Accumulated depreciation—buildings', '\\$36.000 + \\$4.800', '$40.800'],
+        ['Equipment', '\\$108.000 - \\$24.000', '$84.000'],
+        ['Accumulated depreciation—equipment', '\\$13.200 - \\$9.600 + \\$10.800', '$14.400'],
+        ['Net property, plant, and equipment', '\\$36.000 + (\\$176.400 - \\$40.800) + (\\$84.000 - \\$14.400)', '$241.200'],
+        ['Patents', '\\$48.000 - \\$3.000', '$45.000'],
+        ['Retained earnings', '\\$52.800 + \\$66.000 - \\$36.000', '$82.800'],
+        ['Total equity', '\\$216.000 + \\$82.800 - \\$13.200', '$285.600'],
+        ['Bonds payable', '\\$120.000 + \\$60.000', '$180.000'],
+        ['Current liabilities', '\\$180.000 + \\$15.600', '$195.600'],
       ], caption: 'Derivasi saldo yang tersedia langsung dari informasi kasus Cassy.' },
       { kind: 'formula', text: 'Total equity and liabilities = $285.600 + $180.000 + $195.600 = $661.200', note: 'Total ini menentukan total assets karena statement of financial position harus seimbang.' },
       { kind: 'formula', text: 'Current assets = $661.200 - $19.200 - $241.200 - $45.000 = $355.800', note: 'Kieso menentukan current assets sebagai plug figure karena rincian perubahan kas tidak diberikan sebagai saldo akhir tersendiri.' },
@@ -136,9 +136,9 @@ export const CASSY_SCF_CASE: Akm1PracticeCase = {
     blocks: [
       { kind: 'formula', text: 'Carrying amount of equipment sold = $24.000 - $9.600 = $14.400; Loss on sale = $14.400 - $12.000 = $2.400', note: 'Loss ditambahkan kembali pada indirect method karena sudah mengurangi net income tetapi bukan operating cash outflow.' },
       { kind: 'table', headers: ['Section', 'Derivasi', 'Net cash flow'], rows: [
-        ['Operating activities', '$66.000 + $2.400 + $15.600 + $3.000 - $34.800 + $15.600', '$67.800'],
-        ['Investing activities', '$12.000 - $32.400 - $19.200', '($39.600)'],
-        ['Financing activities', '$60.000 - $36.000 - $13.200', '$10.800'],
+        ['Operating activities', '\\$66.000 + \\$2.400 + \\$15.600 + \\$3.000 - \\$34.800 + \\$15.600', '$67.800'],
+        ['Investing activities', '\\$12.000 - \\$32.400 - \\$19.200', '($39.600)'],
+        ['Financing activities', '\\$60.000 - \\$36.000 - \\$13.200', '$10.800'],
       ], caption: 'Indirect-method reconciliation dan pengelompokan kas Cassy Corporation.' },
       { kind: 'formula', text: 'Net increase in cash = $67.800 - $39.600 + $10.800 = $39.000', note: 'Nilai ini menjelaskan komponen kas yang termasuk dalam plug figure current assets pada statement of financial position.' },
       { kind: 'callout', variant: 'key', title: 'Hubungan TM 5 dan TM 6', text: 'Cassy dirancang sebagai satu kasus terpadu: arus kas bersih $39.000 adalah informasi yang membantu menjelaskan current assets pada laporan posisi keuangan, sementara transaksi nonkas tidak masuk sebagai cash flow.' },
@@ -189,9 +189,9 @@ export const VESPER_TVM_CASE: Akm1PracticeCase = {
         ['a. Future value deposit', '$12.000 × 2,59374', '$31.125'],
         ['b. PV interest payments', '$165.000 × 15,37245', '$2.536.454'],
         ['b. PV principal', '$3.000.000 × 0,23138', '$694.140'],
-        ['b. Selling price of bonds', '$2.536.454 + $694.140', '$3.230.594'],
+        ['b. Selling price of bonds', '\\$2.536.454 + \\$694.140', '$3.230.594'],
         ['c. Sinking fund at maturity', '$90.000 × 31,77248', '$2.859.523'],
-        ['c. Deficiency', '$3.000.000 - $2.859.523', '$140.477'],
+        ['c. Deficiency', '\\$3.000.000 - \\$2.859.523', '$140.477'],
         ['d. Pension value at retirement', '$800.000 × 6,71008', '$5.368.064'],
         ['d. Pension liability at beginning of 2025', '$5.368.064 × 0,31524', '$1.692.228'],
       ], caption: 'Substitusi dan pembulatan mengikuti solusi Practice Problem Vesper pada Kieso IFRS 5e Chapter 5.' },
@@ -263,8 +263,8 @@ export const CINER_FULL_CYCLE_CASE: Akm1PracticeCase = {
       { kind: 'table', headers: ['Tahap siklus', 'Hasil penting', 'Makna'], rows: [
         ['Adjustments columns', 'Debit = Credit = $14.800', 'Tujuh adjustment facts dimasukkan tanpa melibatkan Cash.'],
         ['Adjusted trial balance', 'Debit = Credit = $557.640', 'Saldo yang sudah disesuaikan menjadi dasar laporan.'],
-        ['Income statement', 'Net sales $400.000; COGS $316.000; gross profit $84.000; net income $12.200', 'Perusahaan dagang menampilkan gross profit karena mempunyai inventory dan COGS.'],
-        ['Retained earnings statement', '$16.200 + $12.200 - $2.000 = $26.400', 'Net income ditutup ke retained earnings setelah dividends.'],
+        ['Income statement', 'Net sales \\$400.000; COGS \\$316.000; gross profit \\$84.000; net income \\$12.200', 'Perusahaan dagang menampilkan gross profit karena mempunyai inventory dan COGS.'],
+        ['Retained earnings statement', '\\$16.200 + \\$12.200 - \\$2.000 = \\$26.400', 'Net income ditutup ke retained earnings setelah dividends.'],
         ['Statement of financial position', 'Total assets = total equity and liabilities = $145.340', 'Keseimbangan laporan mengonfirmasi alur worksheet ke laporan formal.'],
       ], caption: 'Checkpoint output mengikuti Kieso Illustrations 2.44-2.46 dan Illustration 2C.1.' },
       { kind: 'callout', variant: 'key', title: 'Perpetual inventory pada Ciner', text: 'Inventory $40.000 telah tercermin sebagai ending inventory di trial balance karena Ciner menggunakan perpetual inventory system. Karena itu, latihan ini tidak membuat jurnal periodik untuk memperbarui inventory dan cost of goods sold pada akhir periode.' },
@@ -302,8 +302,8 @@ export const SKIPPER_REVENUE_ALLOCATION_CASE: Akm1PracticeCase = {
     prompt: 'Buka setelah mengalokasikan harga kontrak ke boat dan mooring services.',
     blocks: [
       { kind: 'table', headers: ['Performance obligation', 'Relative allocation', 'Allocated revenue'], rows: [
-        ['Boat', '$32.500 x ($30.000 / $35.000)', '$27.857'],
-        ['Mooring services - one year', '$32.500 x ($5.000 / $35.000)', '$4.643'],
+        ['Boat', '\\$32.500 x (\\$30.000 / \\$35.000)', '$27.857'],
+        ['Mooring services - one year', '\\$32.500 x (\\$5.000 / \\$35.000)', '$4.643'],
         ['Total allocated transaction price', '-', '$32.500'],
       ], caption: 'Kieso Example 3.5 mengalokasikan bundle discount secara proporsional berdasarkan standalone selling prices.' },
       { kind: 'callout', variant: 'key', title: 'Makna langkah alokasi', text: 'Boat menghasilkan revenue ketika control boat berpindah. Mooring services diakui ketika jasa diberikan; alokasi memastikan masing-masing obligation menerima bagian harga kontrak yang tepat.' },
@@ -319,10 +319,10 @@ export const AMAZON_WARRANTY_REVENUE_CASE: Akm1PracticeCase = {
   linkedReportIds: [],
   learningGoal: 'Membedakan revenue recognized at a point in time dari revenue recognized over time untuk service-type warranty.',
   promptBlocks: [
-    sourceCase('Pada 1 Januari 2025, **Amazon** menjual 100 fitness trackers seharga $36 per unit. Amazon juga menjual extended warranty dua tahun untuk 40 tracker, seharga $12 per warranty. Extended warranty baru berlaku setelah assurance warranty satu tahun berakhir.'),
+    sourceCase('Pada 1 Januari 2025, **Amazon** menjual 100 fitness trackers seharga \\$36 per unit. Amazon juga menjual extended warranty dua tahun untuk 40 tracker, seharga \\$12 per warranty. Extended warranty baru berlaku setelah assurance warranty satu tahun berakhir.'),
     { kind: 'table', headers: ['Data diketahui', 'Jumlah / periode'], rows: [
-      ['Fitness trackers sold', '100 unit x $36 = $3.600'],
-      ['Extended warranty sold', '40 warranty x $12 = $480'],
+      ['Fitness trackers sold', '100 unit x \\$36 = \\$3.600'],
+      ['Extended warranty sold', '40 warranty x \\$12 = \\$480'],
       ['Warranty service period', 'Dua tahun: 2026 dan 2027'],
       ['Revenue pattern', 'Tracker: point in time; extended warranty: over time'],
     ], caption: 'Given data dari Kieso Example 3.6.' },
@@ -358,16 +358,16 @@ export const NUGGET_BANK_RECONCILIATION_CASE: Akm1PracticeCase = {
   linkedReportIds: ['financial-bank-reconciliation'],
   learningGoal: 'Menyusun rekonsiliasi bank dua sisi dan jurnal penyesuaian sisi buku.',
   promptBlocks: [
-    sourceCase('**Nugget Mining Company** memakai rekening Denver National Bank. Buku perusahaan menunjukkan saldo cash **$20.502** pada 30 November 2025, sedangkan bank statement menunjukkan saldo akhir **$22.190**. Gunakan data rekonsiliasi yang terlihat di bawah ini sebelum mengisi workspace.'),
+    sourceCase('**Nugget Mining Company** memakai rekening Denver National Bank. Buku perusahaan menunjukkan saldo cash **\\$20.502** pada 30 November 2025, sedangkan bank statement menunjukkan saldo akhir **\\$22.190**. Gunakan data rekonsiliasi yang terlihat di bawah ini sebelum mengisi workspace.'),
     { kind: 'table', headers: ['Data diketahui Nugget', 'Jumlah / fakta', 'Letak rekonsiliasi'], rows: [
       ['Balance per bank statement', '$22.190', 'Saldo awal sisi bank'],
       ['Balance per depositor books', '$20.502', 'Saldo awal sisi buku'],
       ['Deposit mailed November 30, not on bank statement', '$3.680', 'Tambah sisi bank'],
-      ['Outstanding checks #7327, #7348, #7349', '$150 + $4.820 + $31 = $5.001', 'Kurang sisi bank'],
+      ['Outstanding checks #7327, #7348, #7349', '\\$150 + \\$4.820 + \\$31 = \\$5.001', 'Kurang sisi bank'],
       ['Interest collected by bank on Sequoia Co. bonds', '$600', 'Tambah sisi buku dan dijurnal'],
       ['Bank service charges', '$18', 'Kurang sisi buku dan dijurnal'],
       ['Customer NSF check returned by bank', '$220', 'Kurang sisi buku dan dijurnal'],
-      ['Check #7322 recorded by Nugget as $311; correct amount was $131', '$180 overrecorded cash payment', 'Tambah sisi buku dan dijurnal'],
+      ['Check #7322 recorded by Nugget as \\$311; correct amount was \\$131', '$180 overrecorded cash payment', 'Tambah sisi buku dan dijurnal'],
       ['Nugent Oil Co. check charged by bank to Nugget in error', '$175', 'Tambah sisi bank; bank yang mengoreksi'],
     ], caption: 'Given data harus dibaca sebagai lembar soal. Tidak semua item menghasilkan jurnal perusahaan.' },
     { kind: 'h3', text: 'Requirements - Nugget Bank Reconciliation' },
@@ -385,8 +385,8 @@ export const NUGGET_BANK_RECONCILIATION_CASE: Akm1PracticeCase = {
     prompt: 'Buka setelah kedua sisi rekonsiliasi menghasilkan correct cash balance yang sama.',
     blocks: [
       { kind: 'table', headers: ['Sisi rekonsiliasi', 'Perhitungan', 'Correct cash balance'], rows: [
-        ['Bank statement', '$22.190 + $3.680 + $175 - $5.001', '$21.044'],
-        ['Depositor books', '$20.502 + $600 + $180 - $18 - $220', '$21.044'],
+        ['Bank statement', '\\$22.190 + \\$3.680 + \\$175 - \\$5.001', '$21.044'],
+        ['Depositor books', '\\$20.502 + \\$600 + \\$180 - \\$18 - \\$220', '$21.044'],
       ], caption: 'Kedua sisi harus bertemu pada saldo kas benar yang sama.' },
       { kind: 'table', headers: ['Jurnal sisi buku', 'Debit', 'Credit'], rows: [
         ['Cash', '$780', ''],
@@ -454,7 +454,7 @@ export const JEREMIAH_NOTES_RECEIVABLE_CASE: Akm1PracticeCase = {
   linkedReportIds: ['financial-notes-receivable'],
   learningGoal: 'Mengukur long-term note receivable pada present value dan mengamortisasi diskon dengan effective-interest method.',
   promptBlocks: [
-    sourceCase('**Jeremiah Company** menerima three-year zero-interest-bearing note dengan face value **$10.000**. Present value note saat diterima adalah **$7.721,80**. Implicit interest rate yang menyamakan future cash flow dengan present value adalah **9%**.'),
+    sourceCase('**Jeremiah Company** menerima three-year zero-interest-bearing note dengan face value **\\$10.000**. Present value note saat diterima adalah **\\$7.721,80**. Implicit interest rate yang menyamakan future cash flow dengan present value adalah **9%**.'),
     { kind: 'table', headers: ['Data diketahui Jeremiah', 'Jumlah'], rows: [
       ['Face value due at maturity', '$10.000'],
       ['Cash paid / present value at issue date', '$7.721,80'],
@@ -539,12 +539,12 @@ export const WERTH_INVENTORY_OWNERSHIP_CASE: Akm1PracticeCase = {
     { kind: 'table', headers: ['No.', 'Fakta kasus Werth', 'Nilai'], rows: [
       ['1', 'Physical inventory count on hand', '$234.890'],
       ['2', 'Browser merchandise purchased Dec. 15; shipped FOB shipping point Dec. 29; arrived in January; invoice recorded Dec. 31; not counted', '$10.420'],
-      ['3', 'Bubbey sale recorded Dec. 31; shipped FOB destination; counted; cost of merchandise', '$7.350 cost; sale $12.800'],
+      ['3', 'Bubbey sale recorded Dec. 31; shipped FOB destination; counted; cost of merchandise', '\\$7.350 cost; sale \\$12.800'],
       ['4', 'Dudley merchandise received Dec. 31; shipped FOB destination; invoice not recorded; included in count', '$15.630'],
       ['5', 'Minsky merchandise received after count on Dec. 31; invoice received and recorded Dec. 30; not counted', '$8.540'],
       ['6', 'Jackel goods held on consignment included in Werth count', '$10.438'],
-      ['7', 'Sims sale FOB shipping point; shipped after count; included in count; invoice recorded Dec. 31', '$11.520 cost; sale $18.900'],
-      ['8', 'Returned goods accepted for credit; not counted; no entry made', '$1.500 cost; sale $2.600'],
+      ['7', 'Sims sale FOB shipping point; shipped after count; included in count; invoice recorded Dec. 31', '\\$11.520 cost; sale \\$18.900'],
+      ['8', 'Returned goods accepted for credit; not counted; no entry made', '\\$1.500 cost; sale \\$2.600'],
     ], caption: 'FOB terms, consignment, dan cutoff menentukan apakah inventory ditambah, dikurang, atau tidak mengubah count.' },
     { kind: 'h3', text: 'Requirements - Werth Company' },
     { kind: 'ol', items: [
@@ -979,7 +979,7 @@ export const NORWOOD_INVENTORY_TURNOVER_CASE: Akm1PracticeCase = {
     { kind: 'table', headers: ['Adjustment item', 'Data diketahui', 'Dampak yang harus dianalisis'], rows: [
       ['Consigned goods', 'Sales dan COGS sudah dicatat atas goods $22.000 yang masih berada di consignee dan belum terjual.', 'Tambahkan kembali ending inventory dan kurangi COGS.'],
       ['Goods in transit', 'Shipping terms berubah menjadi FOB destination; goods $25.000 masih dalam perjalanan ke China.', 'Tambahkan ending inventory dan kurangi COGS karena control belum berpindah.'],
-      ['LCNRV', 'Inventory cost $112.000 memiliki NRV $100.800.', 'Akui write-down $11.200; kurangi ending inventory dan tambah COGS.'],
+      ['LCNRV', 'Inventory cost \\$112.000 memiliki NRV \\$100.800.', 'Akui write-down $11.200; kurangi ending inventory dan tambah COGS.'],
     ], caption: 'Ketiga adjustment memengaruhi numerator dan/atau denominator inventory turnover.' },
     { kind: 'h3', text: 'Requirements - Norwood Integrated Review' },
     { kind: 'ol', items: [
@@ -999,7 +999,7 @@ export const NORWOOD_INVENTORY_TURNOVER_CASE: Akm1PracticeCase = {
       { kind: 'table', headers: ['Adjustment', 'Ending inventory', 'Cost of goods sold', 'Alasan'], rows: [
         ['Consigned goods', '+$22.000', '-$22.000', 'Goods masih milik Norwood karena consignee belum menjualnya.'],
         ['Goods in transit FOB destination', '+$25.000', '-$25.000', 'Barang belum mencapai destination, sehingga control belum berpindah.'],
-        ['LCNRV write-down', '-$11.200', '+$11.200', 'Cost $112.000 melebihi NRV $100.800.'],
+        ['LCNRV write-down', '-$11.200', '+$11.200', 'Cost \\$112.000 melebihi NRV \\$100.800.'],
       ] },
       { kind: 'formula', text: 'Adjusted ending inventory = $1.007.000 + $22.000 + $25.000 - $11.200 = $1.042.800', note: 'Ending inventory naik bersih $35.800.' },
       { kind: 'formula', text: 'Adjusted COGS = $11.776.000 - $22.000 - $25.000 + $11.200 = $11.740.200', note: 'Consignment dan goods in transit membalik COGS yang terlalu besar; LCNRV menambah COGS.' },

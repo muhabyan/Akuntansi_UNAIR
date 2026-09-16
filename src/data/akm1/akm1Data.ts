@@ -3502,7 +3502,7 @@ const tm8: Reading = {
       rows: [
         ["Deposit in transit $3,680", "Tambah sisi bank"],
         [
-          "Outstanding checks: $150 + $4,820 + $31 = $5,001",
+          "Outstanding checks: \\$150 + \\$4,820 + \\$31 = \\$5,001",
           "Kurang sisi bank",
         ],
         [
@@ -3515,7 +3515,7 @@ const tm8: Reading = {
           "Tambah sisi buku dan jurnal koreksi",
         ],
         [
-          "Bank service charge $18 dan NSF check $220",
+          "Bank service charge \\$18 dan NSF check \\$220",
           "Kurang sisi buku dan jurnal",
         ],
       ],
