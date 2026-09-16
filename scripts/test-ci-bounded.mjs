@@ -8,6 +8,7 @@ const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 const standardTasks = [
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
+  ['aks301_alignment', 'scripts/test-aks301-alignment.mjs'],
   ['render_s1_guard', 'scripts/test-render-s1.mjs'],
   ['uiux_course_consistency', 'scripts/test-uiux-course-consistency.mjs'],
   ['flashcard_behavior', 'scripts/test-flashcard-behavior.mjs'],
@@ -34,6 +35,7 @@ const standardTasks = [
 const extendedTasks = [
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
+  ['aks301_alignment', 'scripts/test-aks301-alignment.mjs'],
   ['render_s1_guard', 'scripts/test-render-s1.mjs'],
   ['flashcard_behavior', 'scripts/test-flashcard-behavior.mjs'],
   ['e2e_policy_detection', 'scripts/test-e2e-policy-detection.mjs'],

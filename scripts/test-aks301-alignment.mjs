@@ -1,0 +1,114 @@
+// AKS301 Pra-UTS alignment guard: the dedicated UTS review and the TM1–TM7 quiz, flashcard,
+// and bank soal items must follow the canonical readings (Richardson 4e Ch. 1, 2, 4–8) and the
+// render path of each file.
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { build } from 'esbuild';
+import katex from 'katex';
+
+const bundle = await build({
+  stdin: {
+    contents: [
+      "export { loadCourseContent } from './src/data/courses/courseRegistry.ts';",
+      "export { AKS301_READINGS, AKS301_REVIEW_READINGS } from './src/data/sia/siaReadings.ts';",
+    ].join('\n'),
+    resolveDir: process.cwd(), loader: 'ts',
+  },
+  bundle: true, write: false, format: 'esm', platform: 'node', logLevel: 'silent',
+  plugins: [{
+    // Vite "?raw" imports resolve to the file contents as a string.
+    name: 'vite-raw',
+    setup(builder) {
+      builder.onResolve({ filter: /\?raw$/ }, (args) => ({
+        path: path.resolve(args.resolveDir, args.path.slice(0, -'?raw'.length)), namespace: 'raw',
+      }));
+      builder.onLoad({ filter: /.*/, namespace: 'raw' }, (args) => ({ contents: readFileSync(args.path, 'utf8'), loader: 'text' }));
+    },
+  }],
+});
+const mod = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`);
+const { loadCourseContent, AKS301_READINGS: readings } = mod;
+
+// Topics that are not part of the TM1–TM7 readings (old Conversion-cycle and non-canonical items).
+const oldTopicMarkers = [
+  /Conversion/i, /Konversi/i, /Bill of Materials/i, /\bBOM\b/, /Move Ticket/i, /Work Order/i, /Work-in-Process/i,
+  /\bWIP\b/, /Route Sheet/i, /Evaluated Receipt Settlement/i, /\bERS\b/, /Lockbox/i, /Kotak Kunci/i,
+  /\b[23]NF\b/, /Transitive/i, /Transitif/i, /Partial Dependency/i, /Ketergantungan Parsial/i,
+  /\bPAID\b/, /\bLUNAS\b/, /Kiting/i,
+];
+const assertNoOldTopics = (label, value) => {
+  const text = JSON.stringify(value);
+  for (const marker of oldTopicMarkers) assert.ok(!marker.test(text), `${label}: old-topic marker ${marker}`);
+};
+
+// Markdown render-path checks (same heuristics as test-sia-canonical.mjs).
+const withoutCode = (text) => text.replace(/`[^`]*`/g, '');
+const unescapedDollars = (text) => (withoutCode(text).match(/(?<!\\)\$/g) ?? []).length;
+const loneStars = (text) => [...withoutCode(text).matchAll(/(?<![\\*])\*(?!\*)/g)];
+const hasNotationStarPair = (text) => {
+  const stars = loneStars(text);
+  const source = withoutCode(text);
+  return stars.length >= 2 && stars.some((m) => /[.\d"]/.test(source[m.index - 1] ?? '') || /[)"]/.test(source[m.index + 1] ?? ''));
+};
+const assertMarkdownSafe = (label, text) => {
+  assert.ok(unescapedDollars(text) < 2, `${label}: escape "$" as "\\$" (markdown math): ${text.slice(0, 80)}`);
+  assert.ok(!hasNotationStarPair(text), `${label}: escape "*" in notation (markdown emphasis): ${text.slice(0, 80)}`);
+  assert.ok(!/^\s*(>|#)/.test(text), `${label}: leading ">" or "#" renders as a markdown block: ${text.slice(0, 80)}`);
+};
+
+const flatten = (blocks) => blocks.flatMap((block) => [block, ...('blocks' in block ? flatten(block.blocks) : [])]);
+const money = (value = '') => Number(value.replace(/[$,]/g, ''));
+const renderedStrings = (block) => {
+  const values = [];
+  for (const [key, value] of Object.entries(block)) {
+    if (['kind', 'blocks', 'lines', 'variant'].includes(key)) continue;
+    if ((block.kind === 'formula' || block.kind === 'code') && key === 'text') continue;
+    if (typeof value === 'string') values.push(value);
+    if (Array.isArray(value)) values.push(...value.flat().filter((item) => typeof item === 'string'));
+  }
+  return values;
+};
+
+// ---------------------------------------------------------------- UTS review
+const content = await loadCourseContent('AKS301');
+const review = content.reviews.uts;
+assert.ok(review, 'AKS301 has a UTS review');
+assert.notEqual(review, readings[7], 'reviews.uts must not be the TM07 reading object');
+assert.ok(Object.values(readings).every((reading) => reading !== review), 'reviews.uts is not any TM reading');
+assert.equal(review, mod.AKS301_REVIEW_READINGS.uts);
+assert.equal(review.tm, 0, 'review uses tm 0 so its progress key does not collide with TM07');
+assert.equal(content.reviews.uas, readings[14], 'UAS review is unchanged');
+assert.equal(content.readings, readings);
+assertNoOldTopics('review', review);
+const reviewBlocks = flatten(review.blocks);
+const reviewHeadings = review.blocks.filter((block) => block.kind === 'h2');
+reviewHeadings.forEach((heading, index) => assert.ok(heading.text.startsWith(`${index + 1}. `), `review heading order: ${heading.text}`));
+for (const value of [review.title, review.intro, ...review.objectives, ...reviewBlocks.flatMap(renderedStrings)]) {
+  assertMarkdownSafe('review', value);
+}
+let reviewJournals = 0;
+for (const block of reviewBlocks) {
+  if (block.kind === 'table') {
+    block.rows.forEach((row) => assert.equal(row.length, block.headers.length, `review table shape: ${block.headers.join('|')}`));
+    for (const cell of block.rows.flat()) assert.ok(!/^\s*(\d+\.|[-*+])\s/.test(cell), `review table cell renders as a list: ${cell}`);
+  }
+  if (block.kind === 'journal') {
+    const debit = block.lines.reduce((sum, line) => sum + money(line.debit), 0);
+    const credit = block.lines.reduce((sum, line) => sum + money(line.credit), 0);
+    assert.ok(debit > 0 && Math.abs(debit - credit) < 1e-9, `review journal balances: ${block.caption}`);
+    reviewJournals++;
+  }
+  if (block.kind === 'formula') {
+    assert.ok(block.text.includes('\\') && !block.text.includes('$'), 'review formula uses native TeX without "$"');
+    const lines = block.text.split('\n');
+    const tex = lines.length > 1 ? `\\begin{aligned}${lines.map((line) => `& ${line}`).join(' \\\\ ')}\\end{aligned}` : block.text;
+    katex.renderToString(tex, { throwOnError: true, displayMode: true, strict: 'error' });
+  }
+}
+assert.ok(reviewJournals >= 5, 'review keeps the O2C and P2P journals');
+for (const tm of [1, 2, 3, 4, 5, 6, 7]) {
+  assert.ok(JSON.stringify(review).includes(`TM${tm}`), `review covers TM${tm}`);
+}
+
+console.log(`AKS301 alignment PASS: review (${reviewHeadings.length} sections, ${reviewJournals} balanced journals).`);
