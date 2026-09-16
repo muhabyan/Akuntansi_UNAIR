@@ -18,6 +18,7 @@ const bundle = await build({
       "export { AKS301_READINGS, AKS301_REVIEW_READINGS } from './src/data/sia/siaReadings.ts';",
       "export { AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './src/data/quizzes/aks301.ts';",
       "export { AKS301_FC } from './src/data/flashcards/aks301.ts';",
+      "export { AKS301_BANK, AKS301_BANK_UTS, AKS301_BANK_UAS } from './src/data/banksoal/aks301.ts';",
     ].join('\n'),
     resolveDir: process.cwd(), loader: 'ts',
   },
@@ -192,4 +193,45 @@ for (const card of praUtsCards) {
   }
 }
 
-console.log(`AKS301 alignment PASS: flashcards ${praUtsCards.length} TM1–TM7 cards; quiz UTS ${quiz.length} items; review (${reviewHeadings.length} sections, ${reviewJournals} balanced journals).`);
+// ---------------------------------------------------------------- Bank soal (plain text in EssayBank)
+const bank = mod.AKS301_BANK_UTS;
+assert.equal(bank.length, 7, 'bank soal UTS: one case per TM');
+assert.equal(mod.AKS301_BANK.length, bank.length + mod.AKS301_BANK_UAS.length);
+assert.equal(mod.AKS301_BANK_UAS.length, 7, 'TM8–TM14 bank soal unchanged in count');
+assertNoOldTopics('bank soal UTS', bank);
+const plainTextFields = ['question', 'scope', 'difficulty', 'context', 'answerGuide'];
+const listFields = ['data', 'instructions', 'outputFormat', 'rubric'];
+bank.forEach((item, index) => {
+  const tm = index + 1;
+  const label = `bank soal TM${tm}`;
+  assert.equal(item.type, 'case', `${label}: type`);
+  assert.ok(item.scope.startsWith(`TM ${tm}: `), `${label}: scope starts with "TM ${tm}: "`);
+  assert.ok(item.question.startsWith(`Studi Kasus ${tm}: `), `${label}: question numbering`);
+  const texts = [...plainTextFields.map((field) => item[field]), ...listFields.flatMap((field) => item[field])];
+  for (const field of listFields) assert.ok(Array.isArray(item[field]) && item[field].length > 0, `${label}: ${field} list`);
+  for (const text of texts) {
+    assert.ok(typeof text === 'string' && text.trim().length > 0, `${label}: empty text`);
+    // EssayBank renders plain text: escapes and markup would show literally, and line breaks collapse.
+    assert.ok(!/\\[$*.]|\*\*|`|\n/.test(text), `${label}: plain-text field contains markdown escapes, markup, or line breaks: ${text.slice(0, 60)}`);
+  }
+  assert.ok(!item.rubric.some((entry) => /\d\s*%/.test(entry)), `${label}: rubric weights are not reading facts`);
+});
+
+// ---------------------------------------------------------------- Numeric traceability
+// Every number in a TM1–TM7 quiz item or bank case must also occur in that TM's canonical reading.
+const numberTokens = (text) => text.match(/\d+(?:,\d{3})*(?:\.\d+)?/g) ?? [];
+const readingNumbers = new Map(PRA_UTS_TMS.map((tm) => [tm, new Set(numberTokens(JSON.stringify(readings[tm]).replace(/\{,\}/g, ',')))]));
+const assertNumbersFromReading = (label, tm, texts) => {
+  for (const token of texts.flatMap(numberTokens)) {
+    assert.ok(readingNumbers.get(tm).has(token), `${label}: number ${token} does not occur in the TM${tm} reading`);
+  }
+};
+quiz.forEach((item, index) => assertNumbersFromReading(`quiz UTS #${index + 1}`, item.tm, [item.q, ...item.options, item.explanation]));
+const allReadingNumbers = new Set(PRA_UTS_TMS.flatMap((tm) => [...readingNumbers.get(tm)]));
+for (const token of numberTokens(JSON.stringify(review).replace(/\{,\}/g, ','))) {
+  assert.ok(allReadingNumbers.has(token), `review: number ${token} does not occur in the TM1–TM7 readings`);
+}
+bank.forEach((item, index) => assertNumbersFromReading(`bank soal TM${index + 1}`, index + 1,
+  [...['question', 'context', 'answerGuide'].map((field) => item[field]), ...listFields.flatMap((field) => item[field])]));
+
+console.log(`AKS301 alignment PASS: bank soal ${bank.length} TM1–TM7 cases; numbers traced to readings; flashcards ${praUtsCards.length} TM1–TM7 cards; quiz UTS ${quiz.length} items; review (${reviewHeadings.length} sections, ${reviewJournals} balanced journals).`);

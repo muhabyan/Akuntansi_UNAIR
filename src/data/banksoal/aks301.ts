@@ -3,222 +3,242 @@
 // Berdasarkan Vernon J. Richardson et al. (4th ISE ed. 2023), Romney & Steinbart (15e),
 // COSO Internal Control (2013), dan ISACA COBIT 2019 Framework.
 // 14 Studi Kasus Lengkap: 7 Kasus Pra-UTS (TM 1-7) & 7 Kasus Pra-UAS (TM 8-14)
+// Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/sia/modules/tm1.ts-tm7.ts.
 import type { BankSoal } from '../../types';
 
 export const AKS301_BANK_UTS: BankSoal[] = [
   {
     "type": "case",
-    "scope": "TM 1: Rantai Nilai SIA, Kualitas Informasi & Evaluasi Investasi Sistem",
+    "scope": "TM 1: Nilai Informasi, Order Fulfillment Terintegrasi & Pemisahan Tugas",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 1: Transformasi Rantai Nilai Ritel & Analisis Kelayakan Investasi Cloud POS",
-    "context": "PT Ritel Sejahtera mengoperasikan 120 minimarket waralaba. Saat ini, setiap gerai masih menggunakan sistem kasir offline yang datanya baru dikirim ke kantor pusat setiap tengah malam melalui email file spreadsheet. Manajemen menghadapi masalah serius: sering terjadi kehabisan stok barang laris (stockout), kelebihan stok barang lambat terjual (overstock), dan pencurian kasir yang baru terdeteksi 3 minggu kemudian.",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 1: Keputusan Investasi RFID, Posting Terintegrasi, dan Konflik Kewenangan",
+    "context": "Tiga situasi dari materi TM1 menguji hubungan antara nilai informasi, alur order fulfillment di ERP, dan pemisahan tugas. Gunakan hanya data yang diberikan.",
     "data": [
-      "Kerugian Akibat Stockout & Overstock: Rp 1,8 miliar per tahun.",
-      "Kerugian Kasir & Selisih Kas Tidak Terlacak: Rp 450 juta per tahun.",
-      "Tawaran Investasi Cloud ERP-POS Real-Time: Biaya pengadaan lisensi dan hardware Rp 1,2 miliar (amortisasi 4 tahun = Rp 300 juta/tahun).",
-      "Biaya Pemeliharaan & Langganan Cloud: Rp 180 juta per tahun.",
-      "Estimasi Penghematan & Peningkatan Penjualan dari Ketersediaan Stok Real-Time: Rp 1,1 miliar per tahun."
+      "PT Jayakarta Distribution: sistem barcode/RFID terintegrasi ERP bersifat discretionary; horizon evaluasi satu tahun; penghematan $120,000/tahun; biaya hardware, integrasi, dan pelatihan $45,000.",
+      "Apex Industrial Equipment: 5 pompa dijual kredit $25,000 dengan syarat 2/10, n/30; biaya $16,000. Barang telah diambil, diverifikasi, dikemas, dan dikirim; carrier mengonfirmasi Bill of Lading (BOL).",
+      "Rendi (Sales) dapat membuat pelanggan, menetapkan credit limit, memasukkan sales order, dan menerbitkan credit memo penghapusan invoice."
     ],
     "instructions": [
-      "Petakan bagaimana implementasi Cloud ERP-POS mentransformasikan Aktivitas Utama (Inbound, Operations, Outbound, Marketing) dan Aktivitas Pendukung dalam Rantai Nilai (Value Chain) Porter.",
-      "Evaluasi karakteristik kualitatif informasi yang dihasilkan sistem baru (Relevance, Faithful Representation, Timeliness, Verifiability) dibanding sistem spreadsheet lama.",
-      "Hitung Nilai Ekonomi Bersih Informasi (Net Value of Information / ROI) per tahun atas usulan investasi teknologi tersebut dan berikan rekomendasi manajerial apakah proyek layak dieksekusi."
+      "Tentukan apakah investasi PT Jayakarta Distribution bersifat mandatory atau discretionary, hitung nilai bersih informasi V = B − C, dan berikan keputusan. Jelaskan mengapa uji yang sama tidak dipakai untuk menolak sistem mandatory.",
+      "Telusuri alur Order → Pick → Ship → Bill untuk penjualan Apex: dokumen dan kontrol pada setiap tahap, serta event yang memicu invoice.",
+      "Susun jurnal penjualan Apex dan hitung gross profit serta gross margin.",
+      "Identifikasi konflik kewenangan Rendi, risikonya, tujuan kontrol, dan perbaikan kontrolnya."
     ],
     "outputFormat": [
-      "Diagram matriks pemetaan Rantai Nilai Porter",
-      "Tabel komparasi karakteristik kualitas informasi",
-      "Analisis kuantitatif Cost-Benefit & rekomendasi keputusan"
+      "Perhitungan V = B − C dan keputusan investasi",
+      "Tabel tahap, dokumen, dan kontrol order fulfillment",
+      "Jurnal Apex serta perhitungan gross profit dan gross margin",
+      "Analisis konflik kewenangan dan rencana perbaikan"
     ],
     "rubric": [
-      "Ketepatan pemetaan konsep Value Chain (30%)",
-      "Kedalaman evaluasi kualitas informasi akuntansi (35%)",
-      "Akurasi perhitungan kelayakan ekonomi sistem (35%)"
+      "Ketepatan klasifikasi discretionary vs mandatory dan perhitungan nilai informasi",
+      "Kelengkapan dokumen dan kontrol Order → Pick → Ship → Bill",
+      "Keseimbangan jurnal dan akurasi gross margin",
+      "Ketajaman analisis pemisahan tugas dan perbaikan kontrol"
     ],
-    "answerGuide": "1. Pemetaan Rantai Nilai: Inbound Logistics menjadi otomatis via Auto-Replenishment System saat stok mencapai reorder point; Operations memangkas antrean kasir; Outbound Logistics mempercepat pemenuhan pesanan omnichannel; Marketing mendapatkan data perilaku belanja pelanggan secara real-time.\n\n2. Kualitas Informasi: Timeliness melonjak dari 24 jam menjadi real-time detik; Faithful Representation terjamin karena input kasir terhubung scanner barcode (bebas salah ketik); Verifiability meningkat karena setiap transaksi tersimpan dalam cloud audit log yang tidak dapat diedit kasir gerai.\n\n3. Analisis Biaya-Manfaat: Total Manfaat Tahunan = Rp 1,1 miliar + penghentian kerugian kasir Rp 450 juta = Rp 1,55 miliar. Total Biaya Tahunan = Rp 300 juta (depresiasi hardware) + Rp 180 juta (langganan cloud) = Rp 480 juta. Net Benefit per tahun = Rp 1,07 miliar. ROI = (1.070 / 480) x 100% = 222.9%. Rekomendasi: Investasi SANGAT LAYAK dieksekusi segera."
+    "answerGuide": "1. Nilai informasi: sistem bersifat discretionary sehingga V = B − C = $120,000 − $45,000 = $75,000. Karena V > 0, keputusannya ACCEPT AND IMPLEMENT. Sistem mandatory (mis. FRS dan pelaporan pajak) tetap wajib walaupun manfaat terukur lebih kecil dari biaya, sehingga uji V > 0 tidak dipakai untuk menolaknya. 2. Order fulfillment: Sales menerima pesanan dan memvalidasi Customer ID, SKU, quantity, unit price, stok, credit limit, dan shipping address pada Sales Order (blokir kredit terlampaui); Warehouse mengambil barang berdasarkan Picking Ticket dengan scan barcode untuk mencocokkan SKU dan kuantitas; Shipping membandingkan barang, sales order, dan picking ticket, lalu menyiapkan Packing Slip dan BOL yang menjadi bukti serah terima carrier; Billing menerbitkan Sales Invoice hanya berdasarkan BOL tervalidasi sehingga pengiriman tanpa tagihan dicegah. Event pemicu invoice adalah konfirmasi shipping yang tervalidasi. 3. Jurnal: Dr Accounts Receivable $25,000, Cr Sales Revenue $25,000; Dr Cost of Goods Sold $16,000, Cr Merchandise Inventory $16,000. Gross profit = $25,000 − $16,000 = $9,000; gross margin = $9,000 / $25,000 = 36%. ERP mencegah billing tanpa referensi BOL elektronik. 4. Konflik Rendi: risiko pelanggan fiktif memperoleh kredit $50,000, barang dikirim ke rekan pelaku, lalu saldo dihapus lewat credit memo. Tujuan kontrol: mencegah penjualan tanpa otorisasi, kerugian piutang, dan pencurian persediaan. Perbaikan: cabut persetujuan kredit dan penerbitan credit memo dari peran Sales; alihkan persetujuan limit kepada Credit Manager independen; credit memo di atas $1,000 membutuhkan Finance Director dan Controller; terapkan pemisahan otomatis melalui RBAC."
   },
   {
     "type": "case",
-    "scope": "TM 2: Pemodelan BPMN 2.0 & Evaluasi Pemisahan Tugas (SoD) Siklus Penjualan",
+    "scope": "TM 2: Analitika Prediktif, Preskriptif & Diagnostik untuk Audit",
     "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 2: Redesain Proses Bisnis BPMN 2.0 & Mitigasi Fraud Piutang Tak Tertagih",
-    "context": "PT Distribusi Nusantara mengalami lonjakan piutang macet sebesar Rp 620 juta dalam dua kuartal terakhir. Investigasi internal menemukan bahwa bagian pemasaran (Sales Department) memiliki wewenang menyetujui batas kredit pelanggan baru sekaligus mencetak Surat Jalan pengeluaran barang dari gudang tanpa persetujuan dari Departemen Keuangan.",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 2: Z-Score Klien, Breakeven Product A, dan Audit Self-Approval",
+    "context": "Tim audit dan management accountant memakai model AMPS untuk tiga pertanyaan: risiko kebangkrutan klien manufaktur, titik impas Product A Jing LCC, dan kepatuhan pemisahan tugas pada jurnal bulanan.",
     "data": [
-      "Entitas yang Terlibat: Pelanggan, Bagian Penjualan, Departemen Kredit/Keuangan, Gudang, dan Bagian Penagihan/Piutang.",
-      "Temuan Investigasi: 14 pesanan besar disetujui untuk pelanggan yang sedang mengalami gagal bayar karena staf penjualan mengejar komisi target bulanan.",
-      "Kelemahan Kontrol: Tidak ada pemisahan antara fungsi otorisasi kredit (authorization), penyimpanan fisik barang (custody), dan pencatatan penagihan (recording)."
+      "Rasio klien manufaktur: X₁ = 0.250; X₂ = 0.100; X₃ = 0.050; X₄ = 0.500; X₅ = 1.100. Model: Z = 1.2X₁ + 1.4X₂ + 3.3X₃ + 0.6X₄ + 1.0X₅.",
+      "Batas zona: Z < 1.80 Distress Zone; 1.80 ≤ Z < 3.00 Gray Zone; Z ≥ 3.00 Safe Zone.",
+      "Jing LCC Product A (Januari): harga P = $7; biaya variabel V = $3/unit; biaya tetap F = $1,600.",
+      "Cross-tab jurnal bulanan (52 jurnal; temuan terpilih, bukan rincian seluruh jurnal): VR memasukkan 20 disetujui AC; MW memasukkan 10 disetujui DH; VR memasukkan 4 disetujui VR."
     ],
     "instructions": [
-      "Identifikasi 3 kelemahan pengendalian internal fatal pada proses penjualan PT Distribusi Nusantara berdasarkan konsep COSO Control Activities.",
-      "Rancang struktur pemisahan tugas (Segregation of Duties) yang ideal dengan membagi alur kerja ke dalam 4 Swimlanes independen.",
-      "Buat spesifikasi notasi diagram BPMN 2.0 yang mencakup Start Event, Exclusive Gateway pemeriksaan batas kredit (XOR), aktivitas gudang dan penagihan paralel, hingga End Event.",
-      "Sebutkan 2 kontrol aplikasi terprogram (automated application controls) pada software ERP untuk mengunci wewenang kredit."
+      "Hitung Altman Z-score klien, tentukan zonanya, dan susun tindak lanjut auditor.",
+      "Hitung contribution margin, unit breakeven, dan revenue breakeven Product A; tuliskan parameter Goal Seek.",
+      "Klasifikasikan ketiga analisis ke dalam descriptive, diagnostic, predictive, atau prescriptive analytics.",
+      "Identifikasi kegagalan kontrol pada cross-tab jurnal (Field 14 Entered_By vs Field 17 Approved_By) dan rancang tindak lanjutnya."
     ],
     "outputFormat": [
-      "Daftar kelemahan pengendalian internal",
-      "Matriks Segregation of Duties (Otorisasi vs Kustodi vs Pencatatan)",
-      "Deskripsi alur diagram BPMN 2.0 dan rekomendasi kontrol aplikasi"
+      "Tabel perhitungan Z-score dan kesimpulan risiko",
+      "Perhitungan breakeven dan parameter Goal Seek",
+      "Klasifikasi jenis analitika",
+      "Temuan pemisahan tugas dan rencana tindak lanjut"
     ],
     "rubric": [
-      "Ketajaman identifikasi risiko SoD (30%)",
-      "Ketepatan rancangan Swimlanes & notasi BPMN (40%)",
-      "Kelayakan solusi application controls ERP (30%)"
+      "Akurasi skor tertimbang Z-score dan interpretasi zona",
+      "Akurasi breakeven dan pemahaman Goal Seek",
+      "Ketepatan klasifikasi jenis analitika",
+      "Ketajaman analisis self-approval dan kontrol"
     ],
-    "answerGuide": "1. Kelemahan Fatal: (a) Conflict of interest karena sales mengejar target komisi tanpa peduli risiko kredit; (b) Tidak adanya otorisasi independen dari manajer kredit; (c) Ketiadaan verifikasi sistem atas saldo piutang overdue.\n\n2. Matriks SoD Ideal: Sales (hanya input pesanan draft); Departemen Kredit (otorisasi kredit independen); Gudang (kustodi fisik dan picking berdasarkan SO yang telah di-approve); Billing/Akuntansi (pencatatan faktur dan buku pembantu piutang).\n\n3. Alur BPMN 2.0: Start Event di Pool Pelanggan -> Message Flow Pesanan -> Lane Sales input SO -> Lane Kredit evaluasi via Exclusive Gateway (Jika Saldo + Pesanan > Limit, tolak/eskalasi ke Direktur; Jika <= Limit, approve) -> Lane Gudang cetak Picking Ticket -> Lane Shipping kirim barang & terbitkan Surat Jalan -> Lane Billing terbitkan Faktur -> End Event.\n\n4. Automated Application Controls: (a) System Hard-Lock: ERP secara otomatis memblokir pembuatan Surat Jalan jika status kredit pelanggan dibekukan; (b) Credit Limit Exception Approval hanya dapat di-override menggunakan otentikasi biometrik/password Direktur Keuangan."
+    "answerGuide": "1. Z-score: 1.2 × 0.250 = 0.3000; 1.4 × 0.100 = 0.1400; 3.3 × 0.050 = 0.1650; 0.6 × 0.500 = 0.3000; 1.0 × 1.100 = 1.1000; total Z = 2.0050. Karena 1.80 ≤ Z < 3.00, klien berada di Gray Zone (kerentanan moderat). Tindak lanjut: tingkatkan scrutiny audit, perluas pengujian going concern, dan minta proyeksi arus kas manajemen. Skor bukan kepastian kebangkrutan. 2. Breakeven: CM = $7 − $3 = $4/unit; Q = $1,600 / $4 = 400 units; revenue = 400 × $7 = $2,800; cek NI = $2,800 − $1,200 − $1,600 = $0. Goal Seek: Set Cell = Net Income; To Value = 0; By Changing Cell = Unit Sales. 3. Klasifikasi: Altman Z-score adalah predictive (estimasi risiko kejadian mendatang, bukan kepastian); breakeven dengan Goal Seek adalah prescriptive (menentukan target dengan kendala); cross-tab pembuat vs penyetuju jurnal adalah diagnostic (drill-down penyebab, audit SoD). 4. Pemisahan tugas: empat jurnal VR → VR adalah self-approval karena Entered_By sama dengan Approved_By; risikonya expense fiktif, penghapusan aset tanpa izin, atau manipulasi revenue. Tindak lanjut dalam skenario latihan: balik empat transaksi self-approved sambil menunggu review senior controller; hapus approval rights VR pada matriks akses ERP; terapkan aturan IF Entered_By == Approved_By THEN BLOCK POSTING."
   },
   {
     "type": "case",
-    "scope": "TM 3: Perancangan Model Data REA & Desain Database Relasional",
+    "scope": "TM 3: Process Cycle Efficiency, Trace BPMN & Validasi DFD",
     "difficulty": "Sulit",
-    "estimatedTime": "40\u201350 menit",
-    "question": "Studi Kasus 3: Pemodelan Data Semantik REA & Kardinalitas Siklus Penggajian Pabrik",
-    "context": "PT Industri Baja Mandiri mempekerjakan 800 tenaga kerja harian pabrik dan 100 staf administrasi. Sistem absensi lama berbasis kartu kertas manual sering kali disusupi manipulasi absensi titip absen (ghost employees) dan kesalahan perhitungan upah lembur.",
+    "estimatedTime": "40–50 menit",
+    "question": "Studi Kasus 3: Efisiensi Order Fulfillment, Starbucks Drive-Through, dan Jebakan DFD",
+    "context": "Akuntan sebagai business analyst mengevaluasi efisiensi siklus pemenuhan pesanan manufaktur, menelusuri model BPMN transaksi drive-through Starbucks, dan memeriksa logika Data Flow Diagram sebelum dokumentasi proses dipakai untuk walkthrough PCAOB AS 2201.",
     "data": [
-      "Resources yang Relevan: Kas (Cash) untuk pembayaran gaji.",
-      "Events yang Relevan: Perekaman Jam Kerja (Time Worked Event) dan Pembayaran Upah (Disburse Cash Event).",
-      "Agents yang Relevan: Karyawan Pabrik (Internal Agent), Penyelia/Supervisor (Internal Agent yang mengotorisasi), dan Kasir/Bank Payroll (Internal/External Agent).",
-      "Kebijakan Bisnis: Setiap jam kerja diverifikasi fingerprint harian, dan pembayaran gaji dilakukan seminggu sekali secara transfer massal bank."
+      "Siklus pemenuhan pesanan: verifikasi desain teknis 15 menit; menunggu antrean persetujuan kredit supervisor 50 menit; picking dan pengemasan persediaan otomatis 25 menit; menunggu staging transit dock pengiriman 30 menit.",
+      "Starbucks Drive-Through: pelanggan memesan Venti latte dan muffin seharga $8.50 dan membayar dengan Starbucks Gift Card terdaftar; standard cost barang (biji kopi, susu, cup, roti) $2.75. Model memiliki pool Customer dan pool Starbucks Corporation dengan lane Cashier dan lane Barista.",
+      "DFD proses 2.1: menerima Employee Timecard dan memperbarui Employee Master File, tetapi tidak memiliki data flow keluar ke payroll atau laporan.",
+      "DFD proses 2.2: menghasilkan Vendor Disbursement Check dan Remittance Advice tanpa data flow masuk dari invoice, purchase order, atau catatan bank.",
+      "DFD proses 2.3: menerima Customer Zip Code dan menghasilkan Full Customer Credit History & FICO Score."
     ],
     "instructions": [
-      "Gambarkan skema relasi REA lengkap yang menghubungkan Resources, Events, dan Agents untuk siklus penggajian tersebut.",
-      "Tentukan kardinalitas (minimum dan maksimum: 1:1, 1:N, atau M:N) pada setiap pasangan relasi (Resource-Event, Event-Event / Duality, Event-Agent).",
-      "Transformasikan diagram REA ke dalam struktur tabel basis data relasional (RDBMS) dengan menetapkan Primary Key (PK) dan Foreign Key (FK) pada setiap tabel."
+      "Klasifikasikan setiap aktivitas pemenuhan pesanan sebagai value-added atau cost-added-only, hitung total cycle time dan Process Cycle Efficiency (PCE), lalu beri rekomendasi.",
+      "Telusuri interaksi BPMN transaksi Starbucks: tentukan interaksi yang memakai message flow dan yang memakai sequence flow, serta di mana terjadi eksekusi paralel.",
+      "Susun jurnal redemption gift card dan pengurangan persediaan.",
+      "Identifikasi jebakan DFD pada proses 2.1, 2.2, dan 2.3 beserta alasannya."
     ],
     "outputFormat": [
-      "Daftar klasifikasi entitas REA",
-      "Matriks analisis kardinalitas (Min:Max)",
-      "Skema relasional tabel database (PK & FK)"
+      "Tabel klasifikasi aktivitas dan perhitungan PCE",
+      "Trace BPMN (pool, lane, message flow, sequence flow)",
+      "Jurnal redemption gift card",
+      "Tabel jebakan DFD"
     ],
     "rubric": [
-      "Ketepatan klasifikasi entitas REA (30%)",
-      "Akurasi logika penentuan kardinalitas (35%)",
-      "Struktur desain relasional dan penempatan Foreign Key (35%)"
+      "Ketepatan klasifikasi waktu dan perhitungan PCE",
+      "Kebenaran aturan pool, lane, dan jenis flow BPMN",
+      "Ketepatan akun jurnal unearned revenue dan COGS",
+      "Ketepatan identifikasi Black Hole, Miracle, dan Gray Hole"
     ],
-    "answerGuide": "1. Klasifikasi REA: Resources = Kas/Rekening Payroll; Events = Rekam_Jam_Kerja (Time_Worked) dan Pembayaran_Gaji (Payroll_Disbursement); Agents = Karyawan, Supervisor, Bank Payroll.\n\n2. Kardinalitas: (a) Karyawan ke Rekam_Jam_Kerja = 1:N (satu karyawan memiliki banyak log jam kerja); (b) Rekam_Jam_Kerja ke Pembayaran_Gaji = N:1 (banyak catatan jam kerja harian dirangkum dalam satu pembayaran gaji mingguan); (c) Pembayaran_Gaji ke Kas = N:1 (banyak pembayaran gaji mengalir keluar dari satu akun kas payroll).\n\n3. Skema Relasional: Tabel Karyawan [NIK (PK), Nama, Golongan, Tarif_Upah]; Tabel Jam_Kerja [ID_Absen (PK), NIK (FK), Tanggal, Jam_Masuk, Jam_Keluar, ID_Supervisor (FK)]; Tabel Pembayaran_Gaji [No_Slip_Gaji (PK), NIK (FK), Tgl_Bayar, Total_Gaji_Kotor, Potongan, Gaji_Bersih, No_Rek_Bank (FK)]. Foreign Key NIK dan No_Rek_Bank memastikan integritas data terjamin."
+    "answerGuide": "1. PCE: value-added = verifikasi desain teknis 15 + picking dan pengemasan 25 = 40 menit; cost-added-only = antrean persetujuan kredit 50 + staging transit 30 = 80 menit; total cycle time = 40 + 80 = 120 menit; PCE = 40 / 120 × 100% = 33.33%. Sebanyak 66.67% waktu adalah penundaan administratif. Rekomendasi: terapkan credit scoring otomatis untuk menghilangkan bottleneck persetujuan kredit 50 menit. 2. Trace BPMN: pool Customer mengirim pesanan melalui message flow ke lane Cashier di pool Starbucks; Cashier memasukkan pesanan ke POS (Data Store: Orders Database); Cashier menyampaikan total harga melalui message flow, bersamaan dengan lane Barista yang menyiapkan minuman (eksekusi paralel); Customer menyerahkan gift card melalui message flow antar-pool; Cashier memproses kartu, mengurangi saldo prepaid di database POS, lalu menyerahkan struk dan minuman. Aliran Cashier → Barista berada dalam pool Starbucks sehingga memakai sequence flow; setiap interaksi dengan Customer melintasi pool sehingga memakai message flow. 3. Jurnal: Dr Unearned Gift Card Revenue $8.50, Cr Sales Revenue $8.50; Dr Cost of Goods Sold $2.75, Cr Merchandise Inventory $2.75. Kas sudah diterima saat kartu diisi sehingga redemption mengurangi liabilitas Unearned Revenue, bukan mendebit Cash. 4. DFD: proses 2.1 adalah Black Hole (data input ditelan tanpa menghasilkan output); proses 2.2 adalah Miracle (menghasilkan pengeluaran keuangan tanpa input apa pun); proses 2.3 adalah Gray Hole (kode pos saja tidak mungkin menghasilkan riwayat kredit pribadi seseorang). Setiap proses DFD harus memiliki minimal satu aliran masuk, minimal satu aliran keluar, dan input yang cukup untuk menghasilkan output."
   },
   {
     "type": "case",
-    "scope": "TM 4: Normalisasi Database (1NF\u20133NF) & Anomali Data Akuntansi",
+    "scope": "TM 4: Pemetaan Class Diagram ke Tabel Relasional & Decision Table",
     "difficulty": "Sulit",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 4: Dekomposisi Normalisasi 1NF-2NF-3NF pada Master Faktur Penjualan",
-    "context": "Sebuah perusahaan distributor mendokumentasikan transaksi penjualannya dalam satu tabel spreadsheet flat-file raksasa bernama 'Tabel_Penjualan_Mentah' dengan kolom: [No_Faktur, Tgl_Faktur, Kode_Pelanggan, Nama_Pelanggan, Alamat_Pelanggan, Kode_Barang, Nama_Barang, Harga_Satuan, Kuantitas_Jual, Kode_Sales, Nama_Sales, Komisi_Sales]. Tabel ini mengalami kerusakan integritas data parah.",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 4: Skema Full-Time Fitness, Letak Foreign Key, dan Decision Table Kredit",
+    "context": "Full-Time Fitness (Seattle) mengoperasikan jaringan gym dan mencatat instruktur, kelas, dan anggota. Tim SIA juga harus menetapkan letak foreign key untuk data departemen dan karyawan serta merumuskan aturan persetujuan kredit sebagai decision table.",
     "data": [
-      "Contoh Masalah: Ketika alamat pelanggan berubah, petugas harus mengedit ratusan baris faktur lama (Update Anomaly).",
-      "Jika ada pelanggan baru yang belum pernah membeli barang, data pelanggan tersebut tidak bisa diinput karena No_Faktur masih kosong (Insertion Anomaly).",
-      "Jika satu-satunya faktur dari seorang pelanggan dihapus, catatan nama dan alamat pelanggan tersebut ikut hilang permanen (Deletion Anomaly)."
+      "Seorang instruktur mengajar 1 sampai 5 kelas (0 untuk instruktur baru); setiap kelas memiliki tepat 1 instruktur.",
+      "Satu kelas menerima 1 sampai 40 anggota; seorang anggota mengikuti 0 sampai 10 kelas per minggu.",
+      "Setiap departemen memiliki 1 atau banyak karyawan (1..*); setiap karyawan termasuk tepat 1 departemen (1..1).",
+      "Aturan kredit berdasarkan Credit Score (S) dan Order Amount (A): Rule 1: S ≥ 700 dan A ≤ $10,000 → auto-approve dengan termin 30 hari. Rule 2: S ≥ 700 dan A > $10,000 → dirutekan ke Credit Manager. Rule 3: S < 700 → wajib Cash on Delivery (COD), tidak diberi kredit."
     ],
     "instructions": [
-      "Jelaskan mengapa tabel awal tersebut melanggar aturan 2NF dan 3NF.",
-      "Lakukan proses dekomposisi normalisasi secara bertahap: (a) Bentuk 2NF (hilangkan ketergantungan parsial); (b) Bentuk 3NF (hilangkan ketergantungan transitif).",
-      "Tuliskan struktur skema tabel final hasil 3NF lengkap dengan penentuan Primary Key dan Foreign Key.",
-      "Tuliskan sintaks query SQL untuk menampilkan total penjualan per nama pelanggan pada bulan Januari 2026."
+      "Tentukan multiplicity dan tipe relasi Instructors–Fitness_Classes serta Fitness_Classes–Gym_Members.",
+      "Terapkan algoritma lima langkah untuk menyusun skema tabel Full-Time Fitness lengkap dengan primary key, foreign key, dan linking table.",
+      "Tentukan letak foreign key pada relasi Department–Employee dan jelaskan alasannya.",
+      "Susun decision table persetujuan kredit dan jelaskan di mana business rule tersebut ditegakkan dalam activity model."
     ],
     "outputFormat": [
-      "Analisis anomali dan jenis ketergantungan fungsional",
-      "Langkah dekomposisi 2NF dan 3NF",
-      "Skema final tabel 3NF",
-      "Kode SQL Query analitis"
+      "Tabel multiplicity dan tipe relasi",
+      "Skema tabel relasional (PK, FK, linking table)",
+      "Penjelasan letak foreign key",
+      "Decision table persetujuan kredit"
     ],
     "rubric": [
-      "Identifikasi anomali data (25%)",
-      "Ketepatan proses normalisasi bertahap (45%)",
-      "Kebenaran sintaks SQL query akuntansi (30%)"
+      "Ketepatan multiplicity dan tipe relasi",
+      "Kebenaran penerapan algoritma lima langkah dan composite primary key",
+      "Ketepatan aturan posting PK sisi \"1\" ke sisi \"many\"",
+      "Kelengkapan kondisi dan aksi decision table"
     ],
-    "answerGuide": "1. Pelanggaran: Ketergantungan Parsial melanggar 2NF (misal Nama_Barang hanya bergantung pada Kode_Barang, bukan gabungan No_Faktur + Kode_Barang). Ketergantungan Transitif melanggar 3NF (Nama_Pelanggan bergantung pada Kode_Pelanggan, yang bukan PK tabel).\n\n2. Dekomposisi 3NF menghasilkan 5 tabel independen: (1) Tabel Pelanggan [Kode_Pelanggan (PK), Nama_Pelanggan, Alamat_Pelanggan]; (2) Tabel Sales [Kode_Sales (PK), Nama_Sales, Komisi_Sales]; (3) Tabel Barang [Kode_Barang (PK), Nama_Barang, Harga_Satuan]; (4) Tabel Faktur_Header [No_Faktur (PK), Tgl_Faktur, Kode_Pelanggan (FK), Kode_Sales (FK)]; (5) Tabel Faktur_Detail [No_Faktur (PK/FK), Kode_Barang (PK/FK), Kuantitas_Jual].\n\n3. Query SQL:\nSELECT p.Nama_Pelanggan, SUM(d.Kuantitas_Jual * b.Harga_Satuan) AS Total_Penjualan\nFROM Faktur_Header f\nJOIN Pelanggan p ON f.Kode_Pelanggan = p.Kode_Pelanggan\nJOIN Faktur_Detail d ON f.No_Faktur = d.No_Faktur\nJOIN Barang b ON d.Kode_Barang = b.Kode_Barang\nWHERE f.Tgl_Faktur BETWEEN '2026-01-01' AND '2026-01-31'\nGROUP BY p.Nama_Pelanggan\nORDER BY Total_Penjualan DESC;"
+    "answerGuide": "1. Multiplicity: Instructors (1..1) teach Fitness_Classes (0..5) adalah One-to-Many (1:N); Fitness_Classes (1..40) enroll Gym_Members (0..10) adalah Many-to-Many (M:N). 2. Skema: Step 1 dan Step 2 memetakan setiap class menjadi tabel dengan primary key; Step 4 memposting PK sisi \"1\" ke sisi \"many\"; Step 5 menyelesaikan M:N dengan linking table berkunci komposit. Instructors: Instructor_ID [PK], Name, Phone, Hire_Date. Fitness_Classes: Class_ID [PK], Title, Schedule, Room, Instructor_ID [FK]. Gym_Members: Member_ID [PK], Name, Membership_Type, Join_Date. Class_Enrollments: Class_ID [PK/FK], Member_ID [PK/FK], Enrollment_Date, Payment_Status. 3. Foreign key: Department berada di sisi \"1\" dan Employee di sisi \"many\"; aturan 1:N memposting PK sisi \"1\" ke sisi \"many\", sehingga Department_ID menjadi foreign key di tabel Employee. Kebalikannya memaksa satu sel di tabel sisi \"1\" menampung sekumpulan nilai dan melanggar First Normal Form (1NF). 4. Decision table: Rule 1 — S ≥ 700 dan A ≤ $10,000 → Approved, Net 30 Days; Rule 2 — S ≥ 700 dan A > $10,000 → Review Required, Credit Manager Sign-Off; Rule 3 — S < 700 dan A Any → tanpa kredit, Cash on Delivery (COD). Dalam activity model, business rule menentukan kriteria percabangan gateway, mis. Exclusive Gateway (XOR) yang mengevaluasi parameter transaksi; dalam structure model, business rule menentukan multiplicity dan constraint referential integrity."
   },
   {
     "type": "case",
-    "scope": "TM 5: Siklus Pendapatan (Order-to-Cash) & Pengendalian Piutang Usaha",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 5: Investigasi Lapping Fraud & Desain Sistem Kontrol Penerimaan Kas",
-    "context": "Auditor internal PT Logistik Cepat menemukan bahwa rata-rata umur piutang (Days Sales Outstanding / DSO) membengkak dari 34 hari menjadi 78 hari, padahal volume penjualan stabil. Setelah konfirmasi saldo langsung ke 20 pelanggan besar, ditemukan 6 pelanggan mengaku telah membayar tagihan mereka tepat waktu 1 bulan yang lalu, namun catatan di sistem akuntansi masih berstatus 'Belum Bayar'.",
-    "data": [
-      "Struktur Personalia: Staf Kasir (Budi) bertugas menerima cek/setoran tunai pelanggan, mencatat bukti kas masuk, dan sekaligus memegang hak akses menginput jurnal pelunasan piutang ke modul AR.",
-      "Hasil Audit: Budi menggunakan uang setoran dari Pelanggan X untuk keperluan judi online, lalu saat Pelanggan Y membayar, ia menggunakan dana Y untuk mencatat pelunasan Pelanggan X (Skema Lapping).",
-      "Total Dana yang Menguap: Rp 380 juta."
-    ],
-    "instructions": [
-      "Jelaskan mengapa skema kecurangan Lapping dapat terjadi pada PT Logistik Cepat ditinjau dari prinsip pemisahan tugas (SoD).",
-      "Rancang perbaikan menyeluruh atas alur pengendalian penerimaan kas menggunakan teknologi perbankan modern (Lockbox System dan Virtual Account).",
-      "Sebutkan prosedur rekonsiliasi independen yang wajib dilakukan setiap hari untuk mendeteksi manipulasi kas secara dini.",
-      "Bagaimanakah kontrol sistem ERP dalam membatasi penerbitan Memo Kredit (Credit Memo) agar kasir tidak menghapus saldo piutang fiktif?"
-    ],
-    "outputFormat": [
-      "Analisis kelemahan struktural SoD",
-      "Desain arsitektur Lockbox & Virtual Account",
-      "Prosedur rekonsiliasi harian dan kontrol Memo Kredit"
-    ],
-    "rubric": [
-      "Analisis investigasi fraud (35%)",
-      "Solusi arsitektur kas modern (35%)",
-      "Rancangan kontrol preventif Memo Kredit (30%)"
-    ],
-    "answerGuide": "1. Penyebab Lapping: Terjadinya perangkapan wewenang Kustodi (menerima uang fisik) dan Pencatatan (mengedit saldo kartu piutang di sistem). Selama satu orang memegang kedua fungsi ini, lapping tidak akan pernah terdeteksi dari pencocokan kas masuk internal.\n\n2. Solusi Lockbox & Virtual Account: Alihkan seluruh pembayaran pelanggan melalui Virtual Account (VA) bank terdedikasi per invoice atau Lockbox Bank. Uang langsung masuk ke rekening koran perusahaan dan sistem perbankan mengirimkan webhook data mutasi (EDI) langsung ke sistem ERP untuk posting otomatis tanpa ada personil kasir yang menyentuh uang tunai.\n\n3. Rekonsiliasi Harian: Staf yang terpisah dari bagian kasir (misal staf Rekonsiliasi Bank di departemen Akuntansi Umum) wajib mencocokkan total setoran di rekening koran bank dengan total jurnal penerimaan kas setiap sore hari secara independen.\n\n4. Kontrol Memo Kredit: Sistem ERP harus memblokir pembuatan Memo Kredit oleh staf AR. Setiap penghapusan piutang (write-off) atau retur penjualan harus mewajibkan persetujuan digital berjenjang (dual approval) oleh Manajer Keuangan dan Direktur Utama serta melampirkan Berita Acara Retur yang telah diverifikasi fisik oleh Kepala Gudang."
-  },
-  {
-    "type": "case",
-    "scope": "TM 6: Siklus Pengeluaran (Procure-to-Pay) & Deteksi Vendor Fiktif",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35\u201345 menit",
-    "question": "Studi Kasus 6: Evaluasi Verifikasi Three-Way Match & Deteksi Skema Shell Company",
-    "context": "Dalam audit kepatuhan pengeluaran kas PT Citra Konstruksi, ditemukan transaksi pembayaran senilai Rp 1,4 miliar kepada pemasok baru bernama 'CV Mitra Mandiri'. Namun, saat tim audit melakukan verifikasi lapangan, alamat kantor CV Mitra Mandiri ternyata merupakan sebuah rumah kosong di pinggiran kota.",
-    "data": [
-      "Temuan Berkas: Berkas pembayaran memiliki Purchase Order dan Faktur Tagihan, namun dokumen Laporan Penerimaan Barang (Receiving Report / LPB) tidak memiliki nomor seri sah gudang dan hanya ditandatangani oleh Staf Pembelian (Hendra).",
-      "Analisis Database: Nomor rekening penerima pembayaran atas nama CV Mitra Mandiri ternyata memiliki nomor rekening bank yang sama dengan nomor rekening payroll istri Hendra.",
-      "Faktur Tagihan tertulis pembelian 'Jasa Konsultasi Teknis & Material Khusus'."
-    ],
-    "instructions": [
-      "Jelaskan bagaimana prosedur Three-Way Matching yang benar seharusnya dapat menggagalkan pencairan dana fiktif tersebut.",
-      "Identifikasi 3 indikator bahaya (Red Flags) kecurangan vendor fiktif (Shell Company) yang diabaikan oleh bagian Keuangan PT Citra Konstruksi.",
-      "Rancang prosedur pengendalian preventif dan detektif pada sistem ERP pengadaan untuk menyaring pendaftaran vendor baru (Vendor Master File Onboarding).",
-      "Jelaskan fungsi penerapan 'Evaluated Receipt Settlement' (ERS) dalam memitigasi risiko manipulasi faktur tagihan vendor."
-    ],
-    "outputFormat": [
-      "Evaluasi kegagalan Three-Way Match",
-      "Daftar Red Flags kecurangan pengadaan",
-      "Prosedur kontrol master vendor dan evaluasi ERS"
-    ],
-    "rubric": [
-      "Ketajaman analisis kegagalan kontrol Three-Way Match (35%)",
-      "Identifikasi Red Flags audit forensik (35%)",
-      "Rancangan kontrol preventif ERP (30%)"
-    ],
-    "answerGuide": "1. Kegagalan Three-Way Match: Bagian Hutang (AP) membayar tanpa Laporan Penerimaan Barang (LPB) sah dari staf gudang independen. Three-Way Match mensyaratkan pencocokan sempurna: PO (otorisasi beli) + LPB (bukti fisik barang diterima) + Faktur Vendor. Tanpa LPB sah, pembayaran dilarang keras diproses.\n\n2. Red Flags: (a) Vendor baru yang langsung mendapatkan kontrak miliaran rupiah tanpa tender; (b) Alamat kantor fiktif dan deskripsi jasa tidak berwujud; (c) Staf pembelian menandatangani dokumen penerimaan barang (perangkapan wewenang parah).\n\n3. Kontrol Master Vendor ERP: (a) Pendaftaran vendor baru wajib melalui Komite Pengadaan independen dan verifikasi legalitas faktual (NIB, NPWP, verifikasi fisik lapangan); (b) Automated Cross-Check: Sistem ERP secara otomatis mencocokkan nomor rekening, NPWP, nomor telepon, dan alamat vendor baru dengan database master file karyawan (jika cocok, sistem otomatis memblokir); (c) Hak akses input master vendor hanya dimiliki staf Master Data Administrator yang terpisah dari bagian pembelian.\n\n4. Evaluated Receipt Settlement (ERS): Dalam ERS, sistem mengeliminasi faktur vendor. Pembayaran dipicu otomatis murni berdasarkan kecocokan harga kontrak di PO dan kuantitas fisik yang dipindai saat barang tiba di gudang. Karena vendor fiktif tidak pernah mengirimkan barang fisik ke gudang, sistem ERS tidak akan pernah memicu pembayaran."
-  },
-  {
-    "type": "case",
-    "scope": "TM 7: Siklus Konversi/Produksi & Simulasi Master Kasus Pra-UTS",
+    "scope": "TM 5: Audit Tabel Relasional, SQL & Integrasi Modul ERP",
     "difficulty": "Sulit",
-    "estimatedTime": "40\u201350 menit",
-    "question": "Studi Kasus 7: Integrasi Siklus Manufaktur, Bill of Materials & Penelusuran Selisih WIP",
-    "context": "PT Elektronika Nusantara memproduksi smartphone tipe Alpha-X. Pada akhir bulan Maret 2026, bagian akuntansi biaya mencatat bahwa nilai barang dalam proses (WIP) di buku besar adalah Rp 4,5 miliar. Namun, laporan fisik supervisor pabrik menunjukkan hanya terdapat unit senilai Rp 3,8 miliar di jalur perakitan, menyisakan selisih tidak wajar sebesar Rp 700 juta.",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 5: Integritas Tabel, Kueri Penerimaan Kas, dan Posting Goods Receipt di SAP",
+    "context": "Auditor internal meninjau rancangan database penjualan, menguji data penerimaan kas dengan SQL, dan menelusuri integrasi modul SAP ERP untuk transaksi goods receipt. Angka goods receipt adalah ilustrasi dalam materi TM5.",
     "data": [
-      "Dokumen Terkait: Bill of Materials (BOM) standar membutuhkan 1 unit Chipset Qualcomm Snapdragon @ Rp 1.500.000 per smartphone.",
-      "Work Order #WO-301 diterbitkan untuk perakitan 1.000 unit Alpha-X (standar kebutuhan: 1.000 unit Chipset = Rp 1,5 miliar).",
-      "Catatan Move Ticket Gudang: Gudang telah mengeluarkan 1.400 unit Chipset (senilai Rp 2,1 miliar) untuk WO-301 karena permintaan lisan supervisor pabrik yang menyatakan 'banyak chipset cacat saat pemasangan'.",
-      "Tidak ada Laporan Scrap atau Berita Acara Kerusakan Bahan Baku yang diterbitkan."
+      "Tabel A: Customer_ID adalah primary key, tetapi 5 baris memiliki Customer_ID kosong/null.",
+      "Tabel B: tabel Order_Items memiliki kolom Product_List berisi \"Lens-01, Frame-04, Case-02\" dalam satu sel.",
+      "Tabel C: tabel Sales memiliki foreign key Customer_ID = 999, padahal tidak ada pelanggan 999 di tabel Customer.",
+      "Dataset Cash_Receipt (Receipt_Number, Customer_ID, Amount): 1001, 101, 120.00; 1002, 102, 350.00; 1003, 101, 80.00.",
+      "SAP ERP: petugas gudang mencatat goods receipt bahan baku senilai $15,000 atas Purchase Order #45001."
     ],
     "instructions": [
-      "Identifikasi kelemahan pengendalian internal pada alur otorisasi pengeluaran bahan baku tambahan di lantai pabrik PT Elektronika Nusantara.",
-      "Jelaskan bagaimana dokumen Bill of Materials (BOM), Work Order (WO), dan Move Ticket seharusnya diintegrasikan dalam modul ERP Manufacturing untuk mencegah kebocoran bahan.",
-      "Buat ayat jurnal akuntansi yang tepat untuk: (a) Pengeluaran bahan baku standar ke WIP; (b) Pengeluaran bahan baku berlebih yang ternyata dicuri oleh oknum teknisi pabrik.",
-      "Sebutkan 3 laporan analitika biaya yang wajib disajikan oleh SIA siklus konversi kepada Manajer Pabrik setiap akhir pekan."
+      "Tentukan aturan tabel relasional yang dilanggar oleh Tabel A, B, dan C, beserta perbaikannya.",
+      "Tulis kueri SQL yang menampilkan pelanggan dengan total pembayaran lebih dari 200.00, diurutkan dari total terbesar, lalu tentukan hasilnya.",
+      "Jelaskan perbedaan WHERE dan HAVING serta urutan logis eksekusi klausa SQL.",
+      "Telusuri integrasi modul SAP untuk goods receipt, jurnal otomatis yang terbentuk, dan keunggulan kontrolnya."
     ],
     "outputFormat": [
-      "Analisis kelemahan pengendalian siklus produksi",
-      "Alur integrasi dokumen ERP manufaktur",
-      "Pencatatan ayat jurnal akuntansi biaya",
-      "Daftar laporan analitika operasional pabrik"
+      "Tabel pelanggaran aturan relasional dan perbaikan",
+      "Kueri SQL dan tabel hasil",
+      "Penjelasan WHERE vs HAVING dan urutan eksekusi",
+      "Alur modul MM ke FI dan jurnal otomatis"
     ],
     "rubric": [
-      "Identifikasi celah kontrol bahan baku (30%)",
-      "Ketepatan integrasi dokumen ERP (30%)",
-      "Akurasi jurnal akuntansi biaya dan penanganan selisih (40%)"
+      "Ketepatan identifikasi entity integrity, atomic attribute (1NF), dan referential integrity",
+      "Kebenaran sintaks dan hasil kueri agregasi",
+      "Pemahaman urutan logis klausa SQL",
+      "Ketepatan integrasi modul ERP dan jurnal GR/IR"
     ],
-    "answerGuide": "1. Kelemahan Fatal: Gudang mengeluarkan 400 chipset tambahan hanya berdasarkan permintaan lisan tanpa adanya persetujuan revisi Work Order resmi atau Laporan Bahan Cacat (Scrap Report) yang disetujui Manajer Mutu (QA).\n\n2. Integrasi ERP: Ketika WO diterbitkan, sistem ERP secara otomatis mengunci kuantitas bahan yang boleh dikeluarkan gudang sesuai BOM standar. Jika pabrik membutuhkan bahan tambahan di luar BOM, sistem harus mewajibkan penerbitan 'Excess Materials Requisition' yang ditandatangani Kepala Produksi dan Manajer Akuntansi Biaya.\n\n3. Ayat Jurnal:\n(a) Pengeluaran bahan standar (1.000 unit):\n[D] Persediaan Barang Dalam Proses (WIP) Rp 1.500.000.000\n   [K] Persediaan Bahan Baku (Chipset) Rp 1.500.000.000\n(b) Selisih bahan hilang/dicuri (400 unit):\n[D] Kerugian Selisih Persediaan / Kerugian Fraud Rp 600.000.000\n   [K] Persediaan Bahan Baku Rp 600.000.000\n(Selisih dicatat langsung sebagai beban periode di Laba Rugi, bukan dibebankan ke harga pokok produk).\n4. Laporan Analitika: (1) Laporan Varians Efisiensi Bahan Baku (Material Usage Variance); (2) Laporan Tingkat Cacat dan Scrap per Stasiun Kerja (Scrap Percentage Report); (3) Laporan Utilisasi Kapasitas Mesin dan Jam Tenaga Kerja Langsung (Capacity & Labor Efficiency Report)."
+    "answerGuide": "1. Tabel A melanggar Entity Integrity: primary key tidak boleh null; terapkan NOT NULL dan indeks unik. Tabel B melanggar Atomic Attribute (1NF): satu sel harus berisi satu nilai; pecah menjadi satu baris per produk di linking table. Tabel C melanggar Referential Integrity: foreign key harus cocok dengan PK induk yang ada (atau null bila opsional); tolak orphan record dan batasi penghapusan induk. 2. Kueri: SELECT Customer_ID, SUM(Amount) AS Total_Paid FROM Cash_Receipt GROUP BY Customer_ID HAVING SUM(Amount) > 200.00 ORDER BY SUM(Amount) DESC; Total per pelanggan: 101 = 120.00 + 80.00 = 200.00; 102 = 350.00. Hasil: hanya Customer_ID 102 dengan Total_Paid 350.00, karena total tepat 200.00 tidak memenuhi kondisi > 200.00. 3. WHERE menyaring baris individual sebelum agregasi; HAVING menyaring kelompok hasil agregasi setelah GROUP BY. Urutan logis: FROM & JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY. Setiap kolom non-agregat di SELECT wajib ada di GROUP BY. 4. ERP: goods receipt di modul MM (Materials Management) memicu posting otomatis real time di modul FI (Financial Accounting) tanpa jurnal manual: Dr Raw Materials Inventory $15,000, Cr GR/IR Clearing Account $15,000. Keunggulan kontrol: kewajiban yang belum tercatat dicegah dan three-way match dipastikan sebelum kas dikeluarkan."
+  },
+  {
+    "type": "case",
+    "scope": "TM 6: Jurnal Order-to-Cash, Pemisahan Tugas & Application Control",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 6: Pesanan Banner Sunset Graphics, Penghapusan Piutang, dan Validasi Input",
+    "context": "Sunset Graphics menjual produk custom dengan termin kredit. Auditor menelusuri jurnal satu pesanan banner, mengevaluasi hak sistem shipping manager di Company X, dan mengklasifikasikan validasi input pada entri pesanan.",
+    "data": [
+      "Sunset Graphics menerima pesanan 10 vinyl event banner custom dari klien korporat seharga $120.00 per unit; standard cost $45.00 per unit; termin 2/10, net 30.",
+      "Banner diserahkan beserta invoice pada 5 Oktober; klien membayar pada 12 Oktober (dalam 10 hari).",
+      "Company X: shipping manager memiliki hak sistem untuk menghapus saldo piutang pelanggan di bawah $1,000 sebagai \"uncollectible\" tanpa persetujuan kedua.",
+      "Validasi input: (a) karyawan tidak dapat memasukkan 30 Februari sebagai tanggal pesanan; (b) kuantitas invoice tidak boleh negatif atau melebihi 10,000 unit; (c) nomor telepon pelanggan harus tepat 10 digit tanpa huruf; (d) tanggal pengiriman tidak boleh sebelum tanggal sales order; (e) NPWP pelanggan tidak boleh kosong."
+    ],
+    "instructions": [
+      "Tentukan peristiwa Order-to-Cash yang dijurnal dan yang tidak, lalu susun seluruh jurnal pesanan banner Sunset Graphics.",
+      "Jelaskan bagaimana model REA menentukan saldo piutang pesanan ini tanpa menyimpan saldo statis.",
+      "Evaluasi hak sistem shipping manager Company X: defek kontrol, risiko, dan remediasi.",
+      "Klasifikasikan validasi (a)–(e) ke dalam application control yang tepat beserta alasannya."
+    ],
+    "outputFormat": [
+      "Perhitungan invoice, COGS, potongan, dan kas",
+      "Jurnal 5 Oktober dan 12 Oktober",
+      "Evaluasi pemisahan tugas",
+      "Tabel klasifikasi application control"
+    ],
+    "rubric": [
+      "Ketepatan titik pengakuan pendapatan dan jurnal potongan tunai",
+      "Pemahaman Accounts Receivable yang diturunkan dalam REA",
+      "Ketajaman analisis pemisahan tugas",
+      "Ketepatan klasifikasi application control"
+    ],
+    "answerGuide": "1. Quote dan sales order tidak dijurnal; pendapatan dan COGS diakui saat barang diserahkan dan kewajiban kinerja terpenuhi. Gross invoice = 10 × $120.00 = $1,200.00; total COGS = 10 × $45.00 = $450.00; potongan 2% = $1,200.00 × 0.02 = $24.00; kas diterima = $1,200.00 − $24.00 = $1,176.00. Jurnal 5 Oktober: Dr Accounts Receivable $1,200.00, Cr Sales Revenue $1,200.00; Dr Cost of Goods Sold $450.00, Cr Merchandise Inventory $450.00. Jurnal 12 Oktober: Dr Cash $1,176.00, Dr Sales Discounts $24.00, Cr Accounts Receivable $1,200.00. Sales Discounts adalah akun kontra-pendapatan. Total debit = total kredit = $1,650.00 pada 5 Oktober dan $1,200.00 pada 12 Oktober. 2. REA: A/R = Σ Delivered Orders − Σ Applied Cash Receipts. Sebelum 12 Oktober, order yang sudah diserahkan belum memiliki Cash_Receipts terkait sehingga menjadi piutang terbuka; penerimaan kas diterapkan ke order melalui linking table Order_Cash_Receipts (Amount_Applied). Saldo statis di tabel master pelanggan tidak disimpan sehingga redundansi dan saldo yang saling bertentangan hilang. 3. Shipping manager: pelanggaran berat Segregation of Duties karena custody barang fisik digabung dengan otorisasi penyesuaian catatan piutang. Risiko: shipping manager dapat mencuri persediaan, mengirimnya ke kaki tangan, membuat piutang fiktif, lalu menghapusnya sebagai uncollectible sehingga pencurian tertutup sepenuhnya. Remediasi: cabut hak penghapusan piutang dari staf shipping dan batasi otorisasi penghapusan piutang pada CFO atau credit manager yang independen dari penanganan kas dan pengiriman. 4. Application control: (a) Field Check, karena nilai tidak memenuhi tipe data DATE yang valid (bukan validity check karena tidak ada kode yang dicocokkan ke tabel master); (b) Range Check, karena ada batas bawah dan batas atas sekaligus; (c) Field Check, karena menguji tipe dan format data; (d) Reasonableness Check, karena menguji logika hubungan antar-field; (e) Completeness Check, karena field wajib NOT NULL."
+  },
+  {
+    "type": "case",
+    "scope": "TM 7: Jurnal Procure-to-Pay, Three-Way Match & Vendor Master",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "40–50 menit",
+    "question": "Studi Kasus 7: Pembelian Spandex Baer Belly Bikinis, Selisih Three-Way Match, dan Pelanggaran Vendor Master",
+    "context": "Baer Belly Bikinis (BBB), didirikan Paige Baer di Santa Monica, California, memproduksi pakaian renang desainer kelas atas dan membeli bahan baku dari supplier tekstil resmi dengan termin 2/10, net 30. Auditor juga menguji dokumen kiriman tinta printer dan hak akses supervisor Accounts Payable di sebuah perusahaan ritel menengah.",
+    "data": [
+      "BBB menerbitkan PO senilai $5,000.00 untuk kain spandex premium dari textile mill resmi dengan termin 2/10, net 30. Barang diterima, diinspeksi, dan diterima baik pada 10 Oktober; pembayaran disetujui dan dikeluarkan pada 18 Oktober (hari ke-8). BBB memakai sistem persediaan perpetual.",
+      "Purchase Order #802 = 100 cartridge @ $25.00 = $2,500.00.",
+      "Receiving Report #415 = 80 cartridge diterima dalam kondisi baik (20 kurang kirim).",
+      "Vendor Invoice #9910 = 100 cartridge @ $27.00 = $2,700.00.",
+      "Supervisor Accounts Payable memiliki izin sistem untuk membuat profil vendor baru di ERP dan mencetak cek Accounts Payable yang belum ditandatangani."
+    ],
+    "instructions": [
+      "Tentukan titik pengakuan utang dan susun jurnal BBB untuk penerimaan barang dan pembayaran dalam periode potongan.",
+      "Lakukan Three-Way Match atas PO #802, Receiving Report #415, dan Invoice #9910; hitung kelebihan tagihan dan tentukan tindakan clerk Accounts Payable.",
+      "Jelaskan kontrol preventif yang membuat hitungan penerimaan dapat dipercaya dan yang mencegah vendor fiktif.",
+      "Evaluasi hak akses supervisor Accounts Payable: defek kontrol, ancaman fraud, dan remediasi."
+    ],
+    "outputFormat": [
+      "Jurnal 10 Oktober dan 18 Oktober",
+      "Tabel Three-Way Match dan perhitungan kelebihan tagihan",
+      "Uraian blind purchase order dan Approved Vendor List",
+      "Evaluasi pemisahan tugas vendor master"
+    ],
+    "rubric": [
+      "Ketepatan titik pengakuan utang dan jurnal potongan pembelian",
+      "Akurasi perbandingan kuantitas dan harga serta tindakan Accounts Payable",
+      "Pemahaman kontrol preventif Procure-to-Pay",
+      "Ketajaman analisis pemisahan tugas"
+    ],
+    "answerGuide": "1. Purchase order tidak dijurnal; persediaan dan Accounts Payable diakui saat barang diterima dan diterima baik. Potongan 2% = $5,000.00 × 0.02 = $100.00; kas dibayar = $5,000.00 − $100.00 = $4,900.00. Jurnal 10 Oktober: Dr Raw Materials Inventory $5,000.00, Cr Accounts Payable $5,000.00. Jurnal 18 Oktober: Dr Accounts Payable $5,000.00, Cr Cash $4,900.00, Cr Raw Materials Inventory (atau Purchase Discounts) $100.00. Dalam sistem perpetual potongan menurunkan biaya persediaan yang dikapitalisasi dari $5,000 menjadi $4,900; potongan pembelian bukan pendapatan. 2. Three-Way Match: kuantitas PO 100, diterima 80, ditagih 100 → selisih kuantitas; harga PO $25.00 vs invoice $27.00 → selisih harga. Invoice billed = 100 × $27.00 = $2,700.00; amount supported = 80 × $25.00 = $2,000.00; excess billing = $2,700.00 − $2,000.00 = $700.00. Clerk AP tidak boleh menyetujui invoice: invoice ditahan, lalu minta invoice revisi untuk 80 unit @ $25.00 = $2,000.00 atau terbitkan debit memo $700 sebelum pembayaran diotorisasi. 3. Blind purchase order: salinan PO ke receiving dock memiliki kolom kuantitas yang dihitamkan sehingga petugas receiving melakukan hitung fisik sungguhan dan short shipment tidak lolos tanpa tercatat. Approved Vendor List: vendor baru memerlukan persetujuan manajemen pengadaan yang independen, verifikasi nomor pajak (TIN/NPWP), dan validasi alamat fisik untuk mencegah Shell Company Invoicing. 4. Supervisor AP: kegagalan kritis Segregation of Duties yang menggabungkan otorisasi vendor master, pencatatan liabilitas, dan custody pengeluaran kas. Ancaman: membuat shell company fiktif di vendor master, membuat invoice pembelian palsu, dan mencetak cek ke alamat kaki tangan. Remediasi: cabut hak pembuatan vendor dari Accounts Payable dan batasi pemeliharaan vendor master pada manajemen purchasing atau administrator vendor master yang independen."
   }
 ];
 
