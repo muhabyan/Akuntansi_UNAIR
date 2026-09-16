@@ -60,11 +60,39 @@ const required = {
     'MM — Materials Management', 'SD — Sales and Distribution', 'PP — Production Planning', 'HR / PT',
     'Completeness', 'Transparency', 'Timeliness', 'Hershey', '27,000', 'SaaS', 'CapEx', 'OpEx', 'GDPR', 'OJK',
     'Vendor Lock-In', 'Legacy terpisah', 'On-premise ERP', 'Cloud ERP (SaaS)', '3–7 tahun', 'GR/IR', '$15,000'],
+  6: ['Order-to-Cash', 'Provide Quote', 'Receive Sales Order', 'Prepare Products (Pick & Pack)',
+    'Deliver Products & Issue Invoice', 'Receive Payment & Deposit Cash', 'Sales Tax Payable', 'Sales Discounts',
+    '2/10, net 30', 'Orchestration', 'Collaboration', 'Message Flow', 'Customer Remittance Advice & Payment',
+    'Exclusive Gateway (XOR)', 'backorder', 'Intermediate Error Boundary Event', 'Intermediate Timer Boundary Event',
+    'Generate Dunning Notice', 'Looping Task', '{Retry_Count <= 3}', 'Preventive', 'Detective', 'Corrective',
+    'Sales Order Entry', 'Credit Department', 'Warehouse / Shipping', 'Billing / Accounts Receivable',
+    'Cashier / Mailroom', 'lapping', 'Event-Condition-Action', '$10,000', '60 hari', 'For Deposit Only',
+    'Field Check', 'Validity Check', 'Limit Check', 'Range Check', 'Reasonableness Check', 'Completeness Check',
+    '1 dan 10,000', 'RFID', 'UPC', 'Quotes', 'Cash_Receipts', '(1..\\\\*) – (0..\\\\*)', 'Applied Cash Receipts',
+    'Product_Category', 'Order_Status', 'Under Review', 'In Production', 'Customers', 'Employees', 'Products',
+    'Order_Items', 'Quote_Items', 'Bank_Accounts', 'Order_Cash_Receipts', '(Order_Number, Product_Number)',
+    '(Quote_Number, Product_Number)', '(Order_Number, Receipt_Number)', 'Manager_Employee#', 'Amount_Applied',
+    'Main form', 'Subform', 'combo box', '$120.00', '$45.00', '$1,200.00', '$450.00', '$24.00', '$1,176.00',
+    'pp. 306–312', 'trade discount'],
+  7: ['Procure-to-Pay', 'Identify Need & Request Prices', 'Issue Purchase Order (PO)', 'Receive and Inspect Goods',
+    'Verify Vendor Invoice (Three-Way Match)', 'Execute Cash Disbursement', 'Raw Materials Inventory',
+    'Purchase Discounts', '2/10, net 30', 'debit memo', 'Supplier Pool', 'Enterprise Pool',
+    'Enterprise Check / Electronic Remittance Advice', 'Buyer / Purchasing', 'Receiving', 'Accounts Payable',
+    'Cashier / Treasury', 'Exclusive Gateway (XOR)', 'Debit Memo', 'tidak ada Accounts Payable ke supplier',
+    'Preventive', 'Detective', 'Corrective', 'Approved Vendor List (AVL)', 'Purchase Order (PO)', 'Receiving Report',
+    'Vendor Invoice', 'administrative hold', 'short shipment', 'Blind purchase order', 'receiving dock', 'Requisitioner',
+    'Receiving Clerk', 'Shell Company Invoicing', 'Purchasing Kickbacks', 'Duplicate Payments', 'TIN/NPWP',
+    'Purchase_Orders', 'Receipts', 'Cash_Disbursements', 'Suppliers', '(1..\\\\*) – (0..\\\\*)',
+    'Applied Cash Disbursements', 'Supplier_Category', 'Item_Status', 'In Transit', 'Rejected', 'PO_Items',
+    'Receipt_Items', 'Receipt_Disbursements', '(PO_Number, Item_Number)', '(Receipt_Number, Item_Number)',
+    '(Receipt_Number, Disbursement_Num)', 'Agreed_Unit_Cost', 'Default_Terms', 'Baer Belly Bikinis', 'Paige Baer',
+    'Santa Monica', 'Economic Duality', '$5,000.00', '$100.00', '$4,900.00', '$25.00', '$27.00', '$2,000.00',
+    '$700', 'pp. 340–343'],
 };
 // Strings rendered through remark-math must not contain two unescaped "$": they turn into inline math.
-const mathSafeTms = new Set([1, 2, 3, 4, 5]);
+const mathSafeTms = new Set([1, 2, 3, 4, 5, 6, 7]);
 // Leading ">" or "#" in a rendered string becomes a blockquote or heading.
-const markdownBlockSafeTms = new Set([3, 4, 5]);
+const markdownBlockSafeTms = new Set([3, 4, 5, 6, 7]);
 const forbidden = [
   /\.content-inbox|canonical_spec|qa_manifest|docs\/content-audit/,
   /\bRMK\b|Abyan|Hafizh|143251119/,
@@ -169,5 +197,36 @@ assert.ok(tm5Code.length >= 6, 'TM5 SQL rendered as code blocks');
 assert.ok(tm5Code.some((block) => /HAVING SUM\(Amount\) > 200\.00/.test(block.text)));
 const tm5Text = JSON.stringify(readings[5]);
 assert.ok(!/Assigned_Employee_ID|Total_Amount|WHERE City/.test(tm5Text), 'TM5 queries must use columns from the SSS schema');
+// TM6 Sunset Graphics banner order (Richardson 4e pp. 306–312): 10 banners, 2/10 net 30.
+assert.equal(10 * 120, 1200);
+assert.equal(10 * 45, 450);
+assert.equal(1200 * 0.02, 24);
+assert.equal(1200 - 24, 1176);
+assert.equal(1200 + 450, 1650);
+const tm6Blocks = flatten(readings[6].blocks);
+const schemaTables = (blocks) => new Set(blocks.filter((block) => block.kind === 'table' && block.headers[0] === 'Tabel')
+  .flatMap((block) => block.rows.map((row) => row[0].replace(/ \(linking\)$/, ''))));
+assert.equal(schemaTables(tm6Blocks).size, 12, 'TM6 Sunset Graphics schema has 12 tables');
+const tm6Controls = tm6Blocks.find((block) => block.kind === 'table' && block.headers[0] === 'Application control');
+assert.deepEqual(tm6Controls.rows.map((row) => row[0]),
+  ['Field Check', 'Validity Check', 'Limit Check', 'Range Check', 'Reasonableness Check', 'Completeness Check']);
+assert.ok(!/1 dan 5,000|5,000 unit/.test(JSON.stringify(readings[6])), 'TM6 range check follows the canonical 1–10,000');
+assert.ok(!/ilustrasi/i.test(JSON.stringify(readings[6])), 'TM6 banner numbers are cited as book data');
+// TM7 Baer Belly Bikinis spandex purchase (Richardson 4e pp. 340–343) and Three-Way Match discrepancy.
+assert.equal(5000 * 0.02, 100);
+assert.equal(5000 - 100, 4900);
+assert.equal(100 * 25, 2500);
+assert.equal(100 * 27, 2700);
+assert.equal(80 * 25, 2000);
+assert.equal(2700 - 2000, 700);
+const tm7Blocks = flatten(readings[7].blocks);
+// The canonical schema defines 11 tables although the handoff summaries call it a "10-table" schema.
+assert.equal(schemaTables(tm7Blocks).size, 11, 'TM7 purchasing schema has the 11 canonical tables');
+assert.ok(!/10-table|10 tabel|sepuluh tabel/i.test(JSON.stringify(readings[7])), 'TM7 states no incorrect table count');
+const tm7Lanes = tm7Blocks.find((block) => block.kind === 'table' && block.headers[0] === 'Swimlane');
+assert.deepEqual(tm7Lanes.rows.map((row) => row[0]), ['Buyer / Purchasing', 'Receiving', 'Accounts Payable', 'Cashier / Treasury']);
+const tm7Match = tm7Blocks.find((block) => block.kind === 'table' && block.headers[0] === 'Dokumen');
+assert.deepEqual(tm7Match.rows.map((row) => row[0]), ['Purchase Order (PO)', 'Receiving Report', 'Vendor Invoice']);
+assert.ok(tm7Blocks.every((block) => block.kind !== 'code'), 'TM7 Three-Way Match is a table and ordered list, not ASCII art');
 assert.equal(Object.keys(readings).length, 14);
 console.log(`SIA canonical PASS: TM${tms.join('/TM')} coverage, section order, three practices each, ${journals} balanced journals, ${formulas} valid formulas, tables and numerical baselines.`);

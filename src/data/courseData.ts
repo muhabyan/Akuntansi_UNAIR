@@ -325,8 +325,8 @@ const AKS301_TM1_7 = materi([
   ['Accountants as Business Analysts', 'Richardson et al. AIS 4e · Ch. 4'],
   ['Data Modeling', 'Richardson et al. AIS 4e · Ch. 5'],
   ['Relational Databases and Enterprise Systems', 'Richardson et al. AIS 4e · Ch. 6'],
-  ['Siklus Pengeluaran: Proses Pembelian & Pengeluaran Kas', 'Richardson et al. AIS 4e · Ch. 6'],
-  ['Siklus Konversi: Proses Produksi & Review Kasus UTS', 'Richardson et al. AIS 4e · Ch. 7'],
+  ['Sales and Collections Business Process', 'Richardson et al. AIS 4e · Ch. 7'],
+  ['Purchases and Payments Business Process', 'Richardson et al. AIS 4e · Ch. 8'],
 ], 1);
 const AKS301_TM8_14 = materi([
   ['Pengendalian Internal & Kerangka Kerja COSO', 'Richardson et al. AIS 4e · Ch. 9'],
