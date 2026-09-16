@@ -94,7 +94,7 @@ const NON_MONETARY_EXCHANGE_CASES: ContentBlock = {
     {
       kind: 'solution-reveal',
       title: 'Interstate Transportation — substansi komersial, laba',
-      prompt: 'Truk lama: cost $64.000, akumulasi depresiasi $22.000, nilai buku $42.000, nilai wajar $49.000. Kas dibayar $11.000.',
+      prompt: 'Truk lama: cost \\$64.000, akumulasi depresiasi \\$22.000, nilai buku \\$42.000, nilai wajar \\$49.000. Kas dibayar \\$11.000.',
       blocks: [
         { kind: 'formula', text: '\\text{Truk baru}=\\text{USD }49.000+\\text{USD }11.000=\\text{USD }60.000\\\\\\text{Gain}=\\text{USD }49.000-\\text{USD }42.000=\\text{USD }7.000' },
         {
@@ -180,7 +180,7 @@ const SHALLA_BORROWING_COST_CASE: ContentBlock = {
     {
       kind: 'formula',
       text: '\\text{Net borrowing cost capitalized}=(\\text{USD }750{,}000\\times15\\%)-\\text{USD }40{,}000+(\\text{USD }200{,}000\\times11.5\\%)=\\text{USD }95{,}500',
-      note: 'Gross specific interest $112,500; general borrowing capitalization $23,000.'
+      note: 'Gross specific interest \\$112,500; general borrowing capitalization \\$23,000.'
     },
     {
       kind: 'journal',

@@ -1237,15 +1237,15 @@ export const CASE_PAYROLL_BONUS_PROFIT_SHARING: ContentBlock = {
       blocks: [
         {
           kind: 'p',
-          text: 'Definisi Persamaan:\n• $B = 0,10 \times (1.000.000.000 - B - P)$\n• $P = 0,22 \times (1.000.000.000 - B)$'
+          text: 'Definisi Persamaan:\n• $B = 0,10 \\times (1.000.000.000 - B - P)$\n• $P = 0,22 \\times (1.000.000.000 - B)$'
         },
         {
           kind: 'ul',
           items: [
             'Substitusikan persamaan P ke dalam B:',
-            '$B = 0,10 \times [1.000.000.000 - B - 0,22 \times (1.000.000.000 - B)]$',
-            '$B = 0,10 \times [1.000.000.000 - B - 220.000.000 + 0,22B]$',
-            '$B = 0,10 \times [780.000.000 - 0,78B]$',
+            '$B = 0,10 \\times [1.000.000.000 - B - 0,22 \\times (1.000.000.000 - B)]$',
+            '$B = 0,10 \\times [1.000.000.000 - B - 220.000.000 + 0,22B]$',
+            '$B = 0,10 \\times [780.000.000 - 0,78B]$',
             '$B = 78.000.000 - 0,078B$',
             '$1,078B = 78.000.000$',
             '**Bonus (B) = Rp 72.356.215**',
