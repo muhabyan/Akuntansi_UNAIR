@@ -3,498 +3,499 @@
 // Berdasarkan Vernon J. Richardson et al. (4th ISE ed. 2023), Romney & Steinbart (15e),
 // COSO Internal Control (2013), dan ISACA COBIT 2019 Framework.
 // 70 Soal Lengkap: 35 Soal Pra-UTS (TM 1-7) & 35 Soal Pra-UAS (TM 8-14)
+// Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/sia/modules/tm1.ts-tm7.ts.
 import type { QuizQuestion } from '../../types';
 
 export const AKS301_QUIZ_UTS: QuizQuestion[] = [
   {
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "medium",
-    "q": "Karakteristik kualitatif fundamental informasi akuntansi yang berguna menurut Conceptual Framework IFRS/FASB dan buku teks SIA adalah...",
+    "q": "Pasangan kualitas informasi yang unsur-unsurnya mencakup predictive value, confirmatory value, dan materiality serta complete, neutral, dan free from error adalah...",
     "options": [
-      "Dapat dipahami dan tepat waktu",
-      "Relevansi (Relevance) dan Penyajian Jujur (Faithful Representation)",
-      "Keterbandingan dan dapat diverifikasi",
-      "Ringkas dan bernilai moneter tinggi"
+      "Understandability dan Timeliness",
+      "Relevance dan Faithful Representation",
+      "Comparability dan Verifiability",
+      "Timeliness dan Verifiability"
     ],
     "answer": 1,
-    "explanation": "Dua kualitas fundamental informasi akuntansi adalah Relevansi (memiliki nilai prediktif dan/atau konfirmatif) serta Penyajian Jujur (lengkap, netral, dan bebas dari kesalahan material). Kualitas lainnya seperti keterbandingan dan tepat waktu adalah kualitas peningkat (enhancing qualities)."
+    "explanation": "Relevance mencakup predictive value, confirmatory value, dan materiality. Faithful Representation mencakup complete, neutral, dan free from error (tidak ada kesalahan material, bukan jaminan prediksi 100% tepat). Comparability, verifiability, timeliness, dan understandability adalah kualitas lain yang juga dibahas di TM1."
   },
   {
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "medium",
-    "q": "Dalam kerangka Rantai Nilai (Value Chain) Michael Porter, aktivitas utama (primary activity) yang berhubungan langsung dengan penerimaan, penyimpanan, dan penyaluran input bahan baku ke pabrik adalah...",
+    "q": "Dalam rantai nilai, aktivitas utama (primary activity) yang menerima, menyimpan, dan menangani bahan adalah...",
     "options": [
-      "Operations (Operasi Pabrikasi)",
-      "Inbound Logistics (Logistik Masuk)",
-      "Outbound Logistics (Logistik Keluar)",
-      "Procurement (Pengadaan)"
+      "Inbound Logistics",
+      "Operations",
+      "Outbound Logistics",
+      "Procurement"
     ],
-    "answer": 1,
-    "explanation": "Inbound Logistics mencakup penanganan, penyimpanan, dan pengendalian persediaan bahan mentah dari pemasok. Sedangkan Procurement adalah aktivitas pendukung (support activity) yang mencakup proses pembelian aset dan jasa secara korporat."
+    "answer": 0,
+    "explanation": "Inbound Logistics menerima, menyimpan, dan menangani bahan serta terhubung dengan SCM dan penerimaan persediaan. Operations mengubah bahan menjadi produk; Outbound Logistics menyimpan dan mendistribusikan barang jadi; Procurement adalah aktivitas pendukung (support) untuk pengadaan input."
   },
   {
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "advanced",
-    "q": "Kondisi di mana pengguna menerima informasi melebihi kapasitas kognitif untuk memprosesnya, sehingga menurunkan kualitas keputusan bisnis disebut...",
+    "q": "Manajer menerima terlalu banyak data mentah sehingga keputusan melambat dan sinyal penting tersembunyi. Kondisi ini disebut...",
     "options": [
-      "Data Redundancy",
-      "Information Overload",
-      "System Latency",
-      "Cognitive Bias"
-    ],
-    "answer": 1,
-    "explanation": "Information Overload terjadi ketika volume data yang disajikan terlalu berlebihan sehingga pengambil keputusan kesulitan menyaring sinyal relevan dari derau (noise), mengakibatkan kelelahan mental dan kesalahan fatal dalam pengambilan keputusan."
-  },
-  {
-    "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
-    "difficulty": "medium",
-    "q": "Manakah pernyataan yang paling tepat mengenai perbedaan antara data dan informasi dalam sistem akuntansi?",
-    "options": [
-      "Data selalu berbentuk angka, sedangkan informasi selalu berbentuk teks narasi",
-      "Data adalah fakta mentah yang belum diolah, sedangkan informasi adalah data yang telah diorganisasikan sehingga memiliki makna dan nilai keputusan",
-      "Data dihasilkan oleh komputer, sedangkan informasi dihasilkan secara manual oleh akuntan",
-      "Data hanya disimpan di buku besar, sedangkan informasi hanya disimpan di laporan laba rugi"
-    ],
-    "answer": 1,
-    "explanation": "Data adalah fakta mentah (seperti angka harga Rp 50.000 atau kode barang B-01). Ketika data tersebut diagregasikan, dianalisis, dan disajikan dalam konteks tertentu (misalnya laporan margin laba kotor per lini produk), data berubah menjadi informasi bernilai."
-  },
-  {
-    "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
-    "difficulty": "advanced",
-    "q": "Nilai ekonomi suatu informasi akuntansi (Value of Information) secara teoritis dihitung sebagai...",
-    "options": [
-      "Biaya pengadaan software database dikurangi depresiasi tahunan",
-      "Manfaat finansial dari keputusan yang lebih baik dikurangi biaya untuk memproduksi informasi tersebut",
-      "Total harga jual sistem ERP ditambah penghematan pajak",
-      "Selisih antara laba kotor dan laba bersih perusahaan"
-    ],
-    "answer": 1,
-    "explanation": "Value of Information = Manfaat (Benefit) - Biaya (Cost). Informasi hanya layak diproduksi jika peningkatan kualitas keputusan bisnis menghasilkan nilai moneter yang melampaui biaya pengumpulan, pemrosesan, dan penyimpanan data tersebut."
-  },
-  {
-    "tm": 2,
-    "topic": "Pemodelan Proses Bisnis (BPMN 2.0)",
-    "difficulty": "medium",
-    "q": "Dalam diagram BPMN 2.0, simbol belah ketupat dengan tanda silang (X) di tengahnya merepresentasikan...",
-    "options": [
-      "Parallel Gateway (AND) di mana seluruh jalur dikerjakan serentak",
-      "Exclusive Gateway (XOR) di mana hanya satu jalur percabangan yang dipilih berdasarkan evaluasi kondisi",
-      "Inclusive Gateway (OR) di mana satu atau beberapa jalur dapat dipilih",
-      "Start Timer Event"
-    ],
-    "answer": 1,
-    "explanation": "Exclusive Gateway (XOR Gateway) berfungsi sebagai titik percabangan kondisional di mana hanya satu dari beberapa alternatif aliran proses yang akan dieksekusi (misal: Jika kredit disetujui, lanjut ke pengiriman; jika ditolak, proses berakhir)."
-  },
-  {
-    "tm": 2,
-    "topic": "Pemodelan Proses Bisnis (BPMN 2.0)",
-    "difficulty": "advanced",
-    "q": "Manakah aturan pemodelan BPMN 2.0 yang BENAR terkait penggunaan Pools dan Swimlanes?",
-    "options": [
-      "Sequence Flow (garis panah solid) boleh melintasi batas antara dua Pool yang berbeda",
-      "Sequence Flow hanya boleh menghubungkan elemen di dalam Pool yang sama; komunikasi antar Pool harus menggunakan Message Flow (garis panah putus-putus)",
-      "Satu Pool hanya boleh memiliki maksimal satu Swimlane",
-      "Swimlane digunakan untuk memisahkan entitas legal independen, sedangkan Pool memisahkan departemen internal"
-    ],
-    "answer": 1,
-    "explanation": "Aturan fundamental BPMN 2.0: Sequence Flow merepresentasikan urutan eksekusi internal dan TIDAK BOLEH menyeberangi batas Pool. Komunikasi antar-organisasi/Pool independen wajib direpresentasikan menggunakan Message Flow bergaris putus-putus."
-  },
-  {
-    "tm": 2,
-    "topic": "Pemodelan Proses Bisnis (BPMN 2.0)",
-    "difficulty": "medium",
-    "q": "Mengapa akuntan dan auditor sangat membutuhkan diagram BPMN dalam evaluasi kepatuhan Sarbanes-Oxley Act (SOX) Section 404?",
-    "options": [
-      "Karena BPMN menggantikan kewajiban pembuatan laporan keuangan tahunan",
-      "Karena BPMN memvisualisasikan alur dokumen dan mempermudah identifikasi kelemahan pemisahan tugas (Segregation of Duties) serta titik kontrol",
-      "Karena BPMN otomatis memprogram kode database SQL tanpa campur tangan programmer",
-      "Karena BPMN menghapuskan kebutuhan uji substantif saldo akun"
-    ],
-    "answer": 1,
-    "explanation": "SOX 404 mewajibkan audit atas pengendalian internal pelaporan keuangan (ICFR). Swimlanes dalam BPMN memperjelas departemen mana yang memegang otorisasi, pencatatan, dan kustodi fisik, sehingga celah perangkapan tugas mudah terdeteksi."
-  },
-  {
-    "tm": 2,
-    "topic": "Pemodelan Proses Bisnis (BPMN 2.0)",
-    "difficulty": "medium",
-    "q": "Simbol lingkaran dengan garis tepi ganda (double-line circle) dalam notasi standar BPMN menandakan...",
-    "options": [
-      "Start Event (awal mula proses)",
-      "Intermediate Event (peristiwa penunda/antara, seperti menunggu waktu atau pesan)",
-      "End Event (akhir dari proses bisnis)",
-      "Data Store (basis data relasional)"
-    ],
-    "answer": 1,
-    "explanation": "Lingkaran garis tunggal tipis adalah Start Event; lingkaran garis ganda adalah Intermediate Event (seperti timer delay atau sinyal pesan masuk); dan lingkaran garis tebal adalah End Event."
-  },
-  {
-    "tm": 2,
-    "topic": "Pemodelan Proses Bisnis (BPMN 2.0)",
-    "difficulty": "advanced",
-    "q": "Dalam evaluasi proses bisnis, seorang akuntan menemukan bahwa seorang staf gudang memiliki wewenang membuat pesanan pembelian (PO) sekaligus menandatangani tanda terima barang (LPB). Konsep apa yang dilanggar?",
-    "options": [
-      "Relevance of Accounting Data",
-      "Segregation of Duties (Pemisahan Otorisasi Transaksi dan Kustodi Fisik Aset)",
-      "Single-Entry Verification",
-      "Normalization Level 3"
-    ],
-    "answer": 1,
-    "explanation": "Prinsip pemisahan tugas (SoD) menegaskan bahwa fungsi Otorisasi (membeli barang), Kustodi (menyimpan barang di gudang), dan Pencatatan (akuntansi/pembukuan) harus dipegang oleh personil independen guna mencegah penggelapan dan manipulasi persediaan."
-  },
-  {
-    "tm": 3,
-    "topic": "Pemodelan Data & REA Framework",
-    "difficulty": "medium",
-    "q": "Tiga entitas fundamental dalam pemodelan data akuntansi semantik REA Framework adalah...",
-    "options": [
-      "Revenue, Expense, Assets",
-      "Resources, Events, Agents",
-      "Receivables, Equity, Accounts",
-      "Requisition, Execution, Authorization"
-    ],
-    "answer": 1,
-    "explanation": "Kerangka kerja REA yang dikembangkan oleh Prof. William McCarthy terdiri dari Resources (sumber daya ekonomi yang dikendalikan), Events (kejadian atau transaksi pertukaran ekonomi), dan Agents (individu/entitas internal & eksternal yang berpartisipasi)."
-  },
-  {
-    "tm": 3,
-    "topic": "Pemodelan Data & REA Framework",
-    "difficulty": "advanced",
-    "q": "Konsep 'Dualitas Ekonomi' (Economic Duality) dalam REA Framework mencerminkan prinsip bahwa...",
-    "options": [
-      "Setiap debit harus menghasilkan kredit dalam nominal yang seimbang",
-      "Setiap peristiwa pelepasan sumber daya (Give Event) harus memiliki kaitan pertukaran dengan peristiwa perolehan sumber daya (Get Event)",
-      "Satu agen internal harus selalu diawasi oleh dua agen eksternal",
-      "Setiap aset lancar harus didanai oleh liabilitas jangka pendek"
-    ],
-    "answer": 1,
-    "explanation": "Dualitas Ekonomi adalah representasi semantik pertukaran bisnis: perusahaan menyerahkan sesuatu (Give Event, misal menyerahkan barang) untuk mendapatkan sesuatu yang lain (Get Event, misal menerima pembayaran kas)."
-  },
-  {
-    "tm": 3,
-    "topic": "Pemodelan Data & REA Framework",
-    "difficulty": "medium",
-    "q": "Manakah di bawah ini yang merupakan contoh dari entitas RESOURCE dalam siklus pengeluaran?",
-    "options": [
-      "Penerimaan Barang (Receive Goods)",
-      "Pemasok / Vendor",
-      "Persediaan Bahan Baku (Raw Materials Inventory)",
-      "Manajer Pembelian"
+      "Veracity",
+      "Exception reporting",
+      "Information overload",
+      "Timeliness"
     ],
     "answer": 2,
-    "explanation": "Persediaan Bahan Baku dan Kas adalah Resources (sumber daya). Penerimaan Barang adalah Event. Pemasok dan Manajer Pembelian adalah Agents."
+    "explanation": "Information overload terjadi ketika terlalu banyak data mentah memperlambat keputusan dan menyembunyikan sinyal penting. Cara mengatasinya menurut TM1: exception reporting, agregasi, dashboard yang relevan, dan drill-down, bukan menambah data mentah."
   },
   {
-    "tm": 3,
-    "topic": "Pemodelan Data & REA Framework",
-    "difficulty": "advanced",
-    "q": "Dalam diagram REA siklus penjualan, jika relasi antara Event 'Penjualan' (Sales) dan Resource 'Persediaan' (Inventory) memiliki kardinalitas Many-to-Many (M:N), bagaimana struktur tabel database relasional yang terbentuk?",
-    "options": [
-      "Primary key tabel Penjualan langsung disalin ke tabel Persediaan",
-      "Wajib dibentuk Tabel Asosiasi/Jembatan (Junction Table, misal 'Sales_Order_Line') yang memiliki kunci komposit (No_Faktur + Kode_Barang)",
-      "Persediaan tidak perlu disimpan dalam database",
-      "Tabel Penjualan dan Persediaan digabungkan menjadi satu tabel tunggal tanpa normalisasi"
-    ],
-    "answer": 1,
-    "explanation": "Hubungan Many-to-Many (M:N) dalam database relasional tidak dapat dihubungkan langsung dengan foreign key tunggal. Solusinya adalah membuat junction table (seperti tabel 'Detail_Penjualan') yang berisi Primary Key gabungan (composite key) dari kedua tabel induk."
-  },
-  {
-    "tm": 3,
-    "topic": "Pemodelan Data & REA Framework",
+    "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "medium",
-    "q": "Siapakah yang diklasifikasikan sebagai Internal Agent dan External Agent dalam transaksi penerimaan kas dari piutang pelanggan?",
+    "q": "Pernyataan yang paling tepat tentang data dan information dalam SIA adalah...",
     "options": [
-      "Kasir (Internal Agent) dan Pelanggan (External Agent)",
-      "Bank (Internal Agent) dan Kasir (External Agent)",
-      "Manajer Penjualan (External Agent) dan Manajer Kredit (Internal Agent)",
-      "Direktur Keuangan (Internal Agent) dan Auditor Eksternal (Internal Agent)"
+      "Data selalu berbentuk angka, sedangkan information selalu berbentuk narasi",
+      "Data hanya dihasilkan komputer, sedangkan information hanya disusun manual oleh akuntan",
+      "Data dan information sama saja karena keduanya disimpan di database",
+      "Data adalah fakta, simbol, atau pengukuran mentah tanpa konteks keputusan; information adalah data yang diolah dan diberi konteks sehingga mengurangi ketidakpastian"
+    ],
+    "answer": 3,
+    "explanation": "Contoh TM1: barcode 7501031311309, kuantitas 42, dan waktu 08:14:22 adalah data. Information: stok SKU 11309 di Store #4 berada di bawah reorder point sehingga sistem memicu pemesanan kembali."
+  },
+  {
+    "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value",
+    "difficulty": "advanced",
+    "q": "Perusahaan menilai investasi sistem yang bersifat discretionary. Menurut TM1, nilai bersih informasi dihitung dan diputuskan dengan cara...",
+    "options": [
+      "V = B − C; ACCEPT jika V > 0 dan REJECT jika V ≤ 0",
+      "V = B + C; ACCEPT jika V lebih besar dari biaya software",
+      "V = C − B; ACCEPT jika biaya lebih besar dari manfaat",
+      "V = B − C; sistem apa pun, termasuk sistem mandatory, ditolak jika V ≤ 0"
     ],
     "answer": 0,
-    "explanation": "Internal Agent adalah personil dalam perusahaan yang bertanggung jawab melaksanakan atau mengotorisasi transaksi (Kasir). External Agent adalah pihak ketiga di luar organisasi yang bertransaksi dengan perusahaan (Pelanggan)."
+    "explanation": "B = manfaat (pendapatan, penghematan persediaan, berkurangnya piutang macet); C = software, hardware, integrasi, pelatihan, pemeliharaan. Aturan ACCEPT/REJECT berlaku untuk sistem discretionary; sistem mandatory seperti FRS dan pelaporan pajak tetap wajib walaupun manfaat terukur lebih kecil dari biaya. Contoh: PT Jayakarta Distribution \\$120,000 − \\$45,000 = \\$75,000 → ACCEPT."
   },
   {
-    "tm": 4,
-    "topic": "RDBMS, Normalisasi & ERP",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "difficulty": "medium",
-    "q": "Suatu tabel database akuntansi dikatakan telah memenuhi Bentuk Normal Pertama (1NF) apabila...",
+    "q": "Saldo bank yang telah direkonsiliasi dibandingkan dengan estimasi nilai wajar, impairment, atau umur manfaat yang masih memerlukan verifikasi. Dimensi Big Data yang diilustrasikan contoh ini adalah...",
     "options": [
-      "Semua atribut non-kunci bergantung secara transitif pada primary key",
-      "Tidak ada atribut yang memiliki kelompok berulang (repeating groups) dan setiap sel berisi nilai atomik tunggal",
-      "Tabel tersebut memiliki minimal lima kolom kunci asing (foreign key)",
-      "Tabel telah terhubung langsung ke modul SAP S/4HANA"
+      "Volume",
+      "Variety",
+      "Velocity",
+      "Veracity"
+    ],
+    "answer": 3,
+    "explanation": "Veracity menyangkut kebenaran, akurasi, kebersihan, dan representasi data. Volume adalah besarnya data; Variety adalah keragaman format (sekitar 80% data perusahaan tidak terstruktur); Velocity adalah kecepatan data dihasilkan, ditangkap, dan diproses."
+  },
+  {
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "difficulty": "medium",
+    "q": "Dalam model AMPS, tahap yang mencakup Extract, Transform, Load serta penilaian accessibility, reliability, integrity, ethics & privacy, dan data type adalah...",
+    "options": [
+      "Ask the Question",
+      "Master the Data",
+      "Perform the Analysis",
+      "Share the Story"
     ],
     "answer": 1,
-    "explanation": "Syarat 1NF: setiap perpotongan baris dan kolom hanya boleh berisi satu nilai skalar tunggal (atomic value), tidak ada array atau repeating groups, dan setiap baris memiliki identitas unik (Primary Key)."
+    "explanation": "Master the Data menghasilkan data relevan yang dinilai, dibersihkan, dan divalidasi. Persiapan dan pembersihan data menghabiskan 50%–90% waktu proyek. AMPS bersifat rekursif: temuan dapat memunculkan pertanyaan baru dan mengembalikan proses ke Ask/Master."
   },
   {
-    "tm": 4,
-    "topic": "RDBMS, Normalisasi & ERP",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "difficulty": "advanced",
-    "q": "Ketergantungan di mana suatu atribut non-kunci hanya bergantung pada SEBAGIAN dari composite primary key (bukan seluruhnya) disebut...",
+    "q": "Auditor membandingkan Field 14 (Entered_By) dan Field 17 (Approved_By) pada ekspor General Ledger berformat AICPA Audit Data Standards. Pada empat jurnal, kedua field berisi user VR. Kesimpulan yang tepat adalah...",
     "options": [
-      "Transitive Dependency",
-      "Partial Dependency (Ketergantungan Parsial)",
-      "Referential Dependency",
-      "Atomic Dependency"
+      "Keempat jurnal self-approved sehingga melanggar pemisahan preparer dan approver",
+      "Tidak ada masalah karena VR adalah entry clerk yang sah",
+      "Reversal_Indicator keempat jurnal harus diubah menjadi 2",
+      "Amount_Credit_Debit_Indicator keempat jurnal salah input"
     ],
-    "answer": 1,
-    "explanation": "Partial Dependency terjadi jika primary key terdiri dari gabungan dua kolom (misal: No_Faktur + Kode_Barang), namun nama barang hanya bergantung pada Kode_Barang. Menghilangkan ketergantungan parsial adalah syarat untuk mencapai 2NF."
+    "answer": 0,
+    "explanation": "User yang sama pada Entered_By dan Approved_By menandai self-approval yang memerlukan investigasi. Tindak lanjut dalam latihan TM2: balik transaksi self-approved sambil menunggu review senior controller, hapus approval rights VR pada matriks akses ERP, dan blok posting bila Entered_By sama dengan Approved_By."
   },
   {
-    "tm": 4,
-    "topic": "RDBMS, Normalisasi & ERP",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "difficulty": "medium",
+    "q": "Analis menentukan jumlah unit Product A yang harus terjual agar Net Income = 0 dengan Goal Seek. Jenis analitika ini adalah...",
+    "options": [
+      "Prescriptive",
+      "Predictive",
+      "Diagnostic",
+      "Descriptive"
+    ],
+    "answer": 0,
+    "explanation": "Menentukan target atau tindakan dengan kendala (breakeven, Goal Seek) adalah prescriptive; memprediksi kebangkrutan dengan Altman Z-score adalah predictive. Common trap TM2: breakeven bukan predictive. Jing LCC Januari: Q = \\$1,600 / (\\$7 − \\$3) = 400 units."
+  },
+  {
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "difficulty": "advanced",
-    "q": "Sebuah tabel transaksi berisi atribut: [No_Faktur (PK), Tgl_Faktur, Kode_Pelanggan, Nama_Pelanggan, Alamat_Pelanggan]. Mengapa tabel ini melanggar Bentuk Normal Ketiga (3NF)?",
+    "q": "Rasio klien manufaktur: X₁ = 0.250; X₂ = 0.100; X₃ = 0.050; X₄ = 0.500; X₅ = 1.100. Dengan Z = 1.2X₁ + 1.4X₂ + 3.3X₃ + 0.6X₄ + 1.0X₅, skor dan klasifikasinya adalah...",
     "options": [
-      "Karena tidak memiliki primary key",
-      "Karena terdapat Ketergantungan Transitif: Nama_Pelanggan dan Alamat bergantung pada Kode_Pelanggan, bukan langsung pada No_Faktur",
-      "Karena tanggal faktur tidak boleh dicatat dalam database relasional",
-      "Karena tabel tersebut belum diubah menjadi tabel blockchain"
+      "2.0050 — Distress Zone",
+      "2.0251 — Gray Zone",
+      "2.0050 — Gray Zone",
+      "2.0050 — Safe Zone"
+    ],
+    "answer": 2,
+    "explanation": "Skor tertimbang: 0.3000 + 0.1400 + 0.1650 + 0.3000 + 1.1000 = 2.0050. Karena 1.80 ≤ Z < 3.00, klien berada di Gray Zone (kerentanan moderat): tingkatkan scrutiny audit, perluas pengujian going concern, dan minta proyeksi arus kas manajemen. Skor 2.0251 adalah baseline Apple 1997, bukan klien ini."
+  },
+  {
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "difficulty": "medium",
+    "q": "Dalam diagram BPMN 2.0, simbol diamond dengan tanda \"X\" merepresentasikan...",
+    "options": [
+      "Parallel Gateway (AND): token digandakan ke semua jalur keluar secara bersamaan",
+      "Exclusive Gateway (XOR): tepat satu jalur yang kondisinya benar dijalankan",
+      "Inclusive Gateway (OR): satu, beberapa, atau semua jalur yang benar dijalankan",
+      "Intermediate Event: peristiwa di tengah alur seperti timer delay"
     ],
     "answer": 1,
-    "explanation": "Transitive dependency terjadi ketika atribut non-key (Nama_Pelanggan) bergantung pada atribut non-key lain (Kode_Pelanggan). Untuk mencapai 3NF, data pelanggan harus dipisah ke tabel 'Pelanggan' tersendiri."
+    "explanation": "Exclusive (XOR) digambar sebagai diamond kosong atau diamond dengan \"X\" dan mengevaluasi kondisi yang saling eksklusif. Parallel (AND) memakai \"+\" dan Inclusive (OR) memakai \"O\". Cabang Exclusive Gateway harus mencakup semua kemungkinan logis."
+  },
+  {
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "difficulty": "advanced",
+    "q": "Aturan BPMN 2.0 yang BENAR tentang pool, lane, sequence flow, dan message flow adalah...",
+    "options": [
+      "Sequence flow boleh melintasi batas dua pool yang berbeda",
+      "Message flow menghubungkan lane Sales dan lane Accounting di dalam pool perusahaan yang sama",
+      "Pool mewakili departemen internal, sedangkan lane mewakili partisipan eksternal independen",
+      "Sequence flow hanya menghubungkan elemen di dalam satu pool (boleh melintasi lane); komunikasi antar-pool memakai message flow"
+    ],
+    "answer": 3,
+    "explanation": "Aturan 1 (intra-pool): sequence flow boleh melintasi lane dalam pool yang sama, tetapi tidak pernah melintasi batas pool. Aturan 2 (inter-pool): message flow hanya menghubungkan pool yang terpisah. Pool = entitas (Company, Vendor); lane = departemen internal (Sales, Accounting)."
+  },
+  {
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "difficulty": "medium",
+    "q": "Mengapa dokumentasi proses bisnis seperti process map, swimlane diagram, dan flowchart penting bagi kepatuhan SOX Section 404?",
+    "options": [
+      "Manajemen dan auditor eksternal independen harus mengatestasi desain dan efektivitas ICFR; PCAOB AS 2201 mensyaratkan walkthrough, dan tanpa dokumentasi mutakhir desain kontrol yang efektif tidak dapat ditunjukkan",
+      "Dokumentasi proses menggantikan kewajiban menyusun laporan keuangan",
+      "BPMN otomatis menghasilkan skema database relasional tanpa perancang",
+      "Dokumentasi proses menghapus kebutuhan auditor eksternal independen"
+    ],
+    "answer": 0,
+    "explanation": "Section 404 mewajibkan atestasi atas desain dan efektivitas operasi ICFR. AS 2201 mengharuskan walkthrough yang menelusuri transaksi dari awal hingga laporan keuangan. Tanpa dokumentasi yang mutakhir, perusahaan berisiko scope limitation, pengungkapan material weakness, dan ketidakpatuhan. Diagram proses juga menjadi instrumen utama untuk memverifikasi pemisahan tugas."
+  },
+  {
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "difficulty": "medium",
+    "q": "Simbol lingkaran dengan garis tepi ganda dalam notasi BPMN 2.0 menandakan...",
+    "options": [
+      "Start Event",
+      "End Event",
+      "Intermediate Event",
+      "Data Store"
+    ],
+    "answer": 2,
+    "explanation": "Start Event adalah lingkaran bergaris tipis dan membuat token; Intermediate Event adalah lingkaran bergaris ganda (mis. timer delay, pesan diterima/dikirim) yang memengaruhi alur tanpa mengakhirinya; End Event adalah lingkaran bergaris tebal dan mengonsumsi token. Data Store digambar sebagai ikon silinder database."
+  },
+  {
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
+    "difficulty": "advanced",
+    "q": "Dalam model swimlane, satu lane Warehouse menjalankan aktivitas menerbitkan purchase order sekaligus menyimpan barang yang diterima. Kelemahan kontrol apa yang terlihat?",
+    "options": [
+      "Pelanggaran Entity Integrity karena primary key purchase order kosong",
+      "Pelanggaran Segregation of Duties: authorization dan custody dijalankan oleh lane yang sama",
+      "Black Hole pada Data Flow Diagram",
+      "Pelanggaran aturan penamaan Active Verb + Noun"
+    ],
+    "answer": 1,
+    "explanation": "Fungsi yang dipisahkan: Authorization (menyetujui transaksi), Custody (memegang aset fisik atau kas), Recording (memposting jurnal atau memperbarui ledger), dan Reconciliation (mencocokkan catatan dengan aset fisik). Kelemahan kontrol terlihat ketika satu swimlane menjalankan authorization dan custody, atau custody dan recording, sekaligus."
   },
   {
     "tm": 4,
-    "topic": "RDBMS, Normalisasi & ERP",
+    "topic": "Data Modeling",
     "difficulty": "medium",
-    "q": "Aturan Integritas Referensial (Referential Integrity Constraint) dalam sistem manajemen basis data relasional menegaskan bahwa...",
+    "q": "Tiga kategori class dalam pola REA yang dikembangkan William McCarthy adalah...",
     "options": [
-      "Setiap tabel harus memiliki minimal 1000 baris data",
-      "Nilai suatu Foreign Key pada tabel anak harus cocok dengan nilai Primary Key yang valid pada tabel induk, atau bernilai null",
-      "Semua akun akuntansi harus memiliki saldo debit",
-      "Data hanya boleh diakses melalui perintah SQL DELETE"
+      "Revenue, Expense, Assets",
+      "Receivables, Equity, Accounts",
+      "Resources, Events, Agents",
+      "Requisition, Execution, Authorization"
     ],
-    "answer": 1,
-    "explanation": "Referential Integrity mencegah terjadinya 'orphaned records' (misal: ada faktur penjualan dengan Kode_Pelanggan 'C999' padahal pelanggan tersebut tidak terdaftar di master tabel Pelanggan)."
+    "answer": 2,
+    "explanation": "Resources adalah aset ekonomi bernilai yang dimiliki atau dikendalikan (Cash, Merchandise_Inventory); Events adalah transaksi bisnis dan kejadian operasional (Purchase_Order, Sales_Invoice); Agents adalah individu internal dan entitas eksternal yang berpartisipasi (Employee, Customer, Vendor)."
   },
   {
     "tm": 4,
-    "topic": "RDBMS, Normalisasi & ERP",
+    "topic": "Data Modeling",
+    "difficulty": "advanced",
+    "q": "Class Sales_Order dan Inventory memiliki association Many-to-Many. Menurut algoritma lima langkah, implementasi relasionalnya adalah...",
+    "options": [
+      "Posting primary key Sales_Order sebagai satu foreign key di tabel Inventory",
+      "Membuat linking table Order_Lines dengan composite primary key (Order_ID, Product_ID) dan menyimpan Quantity serta Unit_Price di tabel tersebut",
+      "Menggabungkan Sales_Order dan Inventory menjadi satu tabel dengan daftar produk dalam satu sel",
+      "Menghapus association karena Many-to-Many tidak dapat dimodelkan dalam UML"
+    ],
+    "answer": 1,
+    "explanation": "Step 5: M:N tidak dapat dipetakan menjadi satu foreign key. Buat linking table yang primary key-nya gabungan PK kedua tabel, pindahkan atribut milik relasi (Quantity, Unit_Price) ke linking table, sehingga M:N menjadi dua relasi 1:N. Menyimpan banyak nilai dalam satu sel melanggar First Normal Form."
+  },
+  {
+    "tm": 4,
+    "topic": "Data Modeling",
     "difficulty": "medium",
-    "q": "Karakteristik arsitektur utama dari Enterprise Resource Planning (ERP) modern seperti SAP S/4HANA atau Oracle NetSuite adalah...",
+    "q": "Setiap departemen memiliki satu atau banyak karyawan, dan setiap karyawan termasuk tepat satu departemen. Di mana foreign key diletakkan?",
+    "options": [
+      "Department_ID sebagai foreign key di tabel Employee",
+      "Employee_ID sebagai foreign key di tabel Department",
+      "Linking table Department_Employee dengan composite primary key",
+      "Department_ID dan Employee_ID saling diposting di kedua tabel"
+    ],
+    "answer": 0,
+    "explanation": "Department berada di sisi \"1\" (1..1) dan Employee di sisi \"many\" (1..\\*). Aturan 1:N: primary key sisi \"1\" diposting sebagai foreign key di sisi \"many\", sehingga Department_ID menjadi foreign key di tabel Employee. Linking table hanya diperlukan untuk M:N."
+  },
+  {
+    "tm": 4,
+    "topic": "Data Modeling",
+    "difficulty": "medium",
+    "q": "Sales_Invoice tersusun atas Invoice_Line_Items; jika invoice dihapus, seluruh baris item ikut terhapus. Jenis asosiasi dan notasinya adalah...",
+    "options": [
+      "Aggregation: diamond kosong pada class induk",
+      "Generalization: segitiga kosong mengarah ke superclass",
+      "Association biasa: garis penuh berlabel kata kerja aktif",
+      "Composition: diamond hitam penuh pada class induk"
+    ],
+    "answer": 3,
+    "explanation": "Composition adalah hubungan bagian–keseluruhan yang ketat: bagian tidak dapat ada tanpa induk (cascading delete) dan digambar dengan diamond hitam penuh. Aggregation (diamond kosong) bersifat longgar karena bagian tetap ada, mis. University agregat Professors. Generalization adalah relasi \"is-a\"."
+  },
+  {
+    "tm": 4,
+    "topic": "Data Modeling",
+    "difficulty": "advanced",
+    "q": "Dalam model BPMN, purchase requisition ≤ \\$5,000 dirutekan otomatis ke pembuatan PO, sedangkan yang melebihi \\$5,000 dirutekan ke otorisasi Department Head. Aturan bisnis ini ditanamkan pada elemen...",
+    "options": [
+      "Exclusive Gateway (XOR)",
+      "Parallel Gateway (AND)",
+      "Message Flow antar-pool",
+      "Data Store"
+    ],
+    "answer": 0,
+    "explanation": "Proper authorization dalam BPMN: business rule ditanamkan pada Exclusive Gateway (XOR) yang mengevaluasi parameter transaksi sehingga tepat satu jalur dijalankan. Dalam activity model, business rule menentukan kriteria percabangan gateway; dalam structure model, business rule menentukan multiplicity dan constraint referential integrity."
+  },
+  {
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "difficulty": "medium",
+    "q": "Sebuah tabel memenuhi aturan Atomic Attribute (First Normal Form/1NF) apabila...",
+    "options": [
+      "Setiap tabel memiliki minimal satu linking table",
+      "Setiap sel berisi tepat satu nilai skalar; repeating group, atribut bernilai banyak, dan array dalam satu sel dilarang",
+      "Urutan baris dan kolom dapat diatur ulang tanpa mengubah makna",
+      "Primary key tidak pernah null dan selalu unik"
+    ],
+    "answer": 1,
+    "explanation": "Atomic Attribute (1NF) mensyaratkan tepat satu nilai per sel; contoh pelanggaran: beberapa nomor telepon dalam satu field. Primary key yang tidak null dan unik adalah Entity Integrity, sedangkan urutan baris/kolom yang tidak memengaruhi makna adalah Order Independence."
+  },
+  {
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "difficulty": "medium",
+    "q": "Aturan Referential Integrity dalam database relasional menegaskan bahwa...",
+    "options": [
+      "Nilai foreign key harus cocok dengan primary key yang ada di tabel induk, atau null bila partisipasi dalam relasi bersifat opsional",
+      "Setiap record diidentifikasi berdasarkan posisi fisik barisnya",
+      "Setiap sel hanya boleh berisi satu nilai",
+      "Setiap tabel wajib memiliki composite primary key"
+    ],
+    "answer": 0,
+    "explanation": "Record Sales dengan Customer_ID = 999 padahal tidak ada pelanggan 999 di tabel Customer adalah orphan record yang melanggar referential integrity. Perbaikan: tolak orphan record dan batasi penghapusan induk yang masih dirujuk. Dropdown combo box pada form membatasi isian foreign key hanya pada primary key yang sudah ada."
+  },
+  {
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "difficulty": "medium",
+    "q": "Karakteristik arsitektur utama Enterprise Resource Planning (ERP) seperti SAP S/4HANA adalah...",
     "options": [
       "Setiap departemen memiliki database terpisah yang tidak saling terhubung",
-      "Basis data tunggal terpusat (Centralized Shared Database) yang mengintegrasikan transaksi seluruh departemen secara real-time",
-      "Penghapusan seluruh jejak audit transaksi (audit trail) untuk menghemat memori",
-      "Operasional sistem hanya menggunakan pemrosesan batch manual di akhir tahun"
+      "Batch posting periodik menggantikan pemrosesan transaksi berkelanjutan",
+      "Satu database relasional pusat yang mengintegrasikan fungsi bisnis; pada SAP ERP terdiri atas lebih dari 10,000 tabel relasional yang saling terhubung",
+      "ERP otomatis memperbaiki proses bisnis yang tidak efisien"
     ],
-    "answer": 1,
-    "explanation": "Keunggulan utama ERP adalah integrasi data terpusat: ketika pesanan penjualan diinput, data persediaan gudang langsung berkurang, jadwal produksi diperbarui, dan jurnal akuntansi terposting secara real-time tanpa redundansi data."
+    "answer": 2,
+    "explanation": "ERP menggantikan sistem departemen yang terisolasi dengan satu repositori data. Manfaat informasinya: Completeness, Transparency (penerimaan persediaan langsung memperbarui utang usaha dan penilaian persediaan), dan Timeliness (batch posting periodik diganti pemrosesan transaksi berkelanjutan). Mengotomatiskan proses yang buruk hanya menghasilkan inefisiensi yang otomatis dan mahal."
   },
   {
     "tm": 5,
-    "topic": "Siklus Pendapatan (O2C)",
-    "difficulty": "medium",
-    "q": "Dalam siklus penjualan kredit, dokumen internal yang diterbitkan oleh departemen penjualan untuk memberi wewenang kepada bagian gudang mengambil barang dari rak penyimpanan adalah...",
-    "options": [
-      "Purchase Requisition",
-      "Picking Ticket (Stock Release Form)",
-      "Bill of Lading",
-      "Remittance Advice"
-    ],
-    "answer": 1,
-    "explanation": "Picking Ticket dicetak oleh bagian gudang segera setelah pesanan penjualan diotorisasi kreditnya. Dokumen ini mencantumkan lokasi lorong rak, kode barang, dan kuantitas barang yang harus diambil."
-  },
-  {
-    "tm": 5,
-    "topic": "Siklus Pendapatan (O2C)",
+    "topic": "Relational Databases and Enterprise Systems",
     "difficulty": "advanced",
-    "q": "Praktik kecurangan di mana kasir mencuri pembayaran dari Pelanggan A, kemudian menutupinya dengan pembayaran berikutnya dari Pelanggan B, dan pembayaran Pelanggan C untuk menutup Pelanggan B disebut...",
+    "q": "Tabel Cash_Receipt berisi Receipt 1001 (Customer 101, 120.00), Receipt 1002 (Customer 102, 350.00), dan Receipt 1003 (Customer 101, 80.00). Kueri `SELECT Customer_ID, SUM(Amount) FROM Cash_Receipt GROUP BY Customer_ID HAVING SUM(Amount) > 200.00;` mengembalikan...",
     "options": [
-      "Kiting Fraud",
-      "Lapping Fraud",
-      "Round-Tripping",
-      "Phishing"
+      "Customer 101 dan Customer 102",
+      "Hanya Customer 101 dengan total 200.00",
+      "Tidak ada baris karena HAVING harus ditulis sebelum GROUP BY",
+      "Hanya Customer 102 dengan total 350.00"
     ],
-    "answer": 1,
-    "explanation": "Lapping adalah skema penipuan piutang klasik yang terjadi jika personil yang memegang fisik penerimaan kas juga memiliki wewenang mengedit buku besar pembantu piutang (Accounts Receivable Ledger)."
+    "answer": 3,
+    "explanation": "GROUP BY menghasilkan Customer 101 = 120.00 + 80.00 = 200.00 dan Customer 102 = 350.00. HAVING menyaring kelompok setelah agregasi; karena kondisinya lebih besar dari 200.00 (bukan lebih besar atau sama dengan), Customer 101 tidak lolos. WHERE menyaring baris individual sebelum agregasi."
   },
   {
     "tm": 5,
-    "topic": "Siklus Pendapatan (O2C)",
-    "difficulty": "medium",
-    "q": "Pengendalian preventif manakah yang paling efektif untuk mengeliminasi risiko terjadinya kecurangan Lapping pada penerimaan kas piutang?",
-    "options": [
-      "Menambah bonus penjualan kepada manajer marketing",
-      "Menerapkan sistem Lockbox Bank atau pembayaran Virtual Account / Electronic Funds Transfer (EFT)",
-      "Mengganti faktur kertas dengan faktur manual bermaterai",
-      "Menghapus limit kredit bagi seluruh pelanggan lama"
-    ],
-    "answer": 1,
-    "explanation": "Dengan sistem Lockbox atau Virtual Account, kas dari pelanggan disetor langsung ke rekening bank perusahaan tanpa pernah disentuh fisik kasnya oleh staf penagihan atau akuntansi, sehingga memotong peluang terjadinya lapping."
-  },
-  {
-    "tm": 5,
-    "topic": "Siklus Pendapatan (O2C)",
-    "difficulty": "medium",
-    "q": "Dokumen resmi yang berfungsi sebagai kontrak hukum pengangkutan barang antara pengirim (perusahaan) dan pihak ekspedisi kargo/kurir disebut...",
-    "options": [
-      "Faktur Pajak Standar",
-      "Bill of Lading (Surat Muatan Kapal/Kurir)",
-      "Surat Permintaan Penawaran Harga",
-      "Memo Kredit"
-    ],
-    "answer": 1,
-    "explanation": "Bill of Lading adalah dokumen legal formal yang mendokumentasikan serah terima barang dari penjual ke pihak kurir/freight carrier, menetapkan tanggung jawab hukum atas barang selama transit (FOB Shipping Point vs Destination)."
-  },
-  {
-    "tm": 5,
-    "topic": "Siklus Pendapatan (O2C)",
+    "topic": "Relational Databases and Enterprise Systems",
     "difficulty": "advanced",
-    "q": "Untuk mencegah pengiriman barang fiktif atau pencatatan penjualan prematur pada akhir periode (Cut-Off Violation), kontrol aplikasi SIA manakah yang harus diaktifkan?",
+    "q": "Di SAP ERP, petugas gudang mencatat goods receipt bahan baku senilai \\$15,000 atas Purchase Order #45001 (ilustrasi TM5). Posting otomatis yang terbentuk di modul FI adalah...",
     "options": [
-      "Faktur penagihan hanya boleh diterbitkan oleh sistem jika nomor Surat Jalan (Bill of Lading) yang telah ditandatangani kurir telah diinput ke sistem ERP",
-      "Memberikan akses tak terbatas bagi staf penjualan untuk mengubah status pesanan",
-      "Mengabaikan nomor urut faktur penjualan",
-      "Menghilangkan fungsi pemeriksaan saldo batas kredit pelanggan"
+      "Dr Raw Materials Inventory \\$15,000; Cr GR/IR Clearing Account \\$15,000",
+      "Dr Accounts Payable \\$15,000; Cr Cash \\$15,000",
+      "Dr Cost of Goods Sold \\$15,000; Cr Raw Materials Inventory \\$15,000",
+      "Tidak ada posting sampai akuntan membuat jurnal manual"
     ],
     "answer": 0,
-    "explanation": "Prinsip kecocokan penagihan: faktur penjualan hanya boleh dicatat dan diterbitkan bila ada bukti objektif bahwa barang telah benar-benar dikirimkan dan diserahkan ke pihak ekspedisi (Shipping Document Matching Control)."
+    "explanation": "Goods receipt di modul MM (Materials Management) memicu posting otomatis real time di modul FI (Financial Accounting) tanpa jurnal manual. Keunggulan kontrol: kewajiban yang belum tercatat dicegah dan three-way match dipastikan sebelum kas dikeluarkan."
   },
   {
     "tm": 6,
-    "topic": "Siklus Pengeluaran (P2P)",
-    "difficulty": "advanced",
-    "q": "Mengapa salinan pesanan pembelian (PO) yang dikirim ke departemen penerimaan barang (Receiving Department) harus berupa 'Blind Copy' (kuantitas dikosongkan)?",
+    "topic": "Sales and Collections Business Process",
+    "difficulty": "medium",
+    "q": "Dalam model REA Sales and Collections, klasifikasi agent yang tepat untuk transaksi penerimaan kas dari pelanggan adalah...",
     "options": [
-      "Untuk merahasiakan harga barang dari para pemasok",
-      "Untuk memaksa staf penerimaan menghitung dan memeriksa kondisi fisik barang secara nyata tanpa menebak-nebak",
-      "Agar barang tidak perlu dicatat dalam database",
-      "Untuk menghindari pemotongan pajak penghasilan pasal 22"
+      "Kasir sebagai internal agent (Employees) dan pelanggan sebagai external agent (Customers)",
+      "Bank Accounts sebagai internal agent dan kasir sebagai external agent",
+      "Pelanggan sebagai internal agent dan salesperson sebagai external agent",
+      "Cash_Receipts sebagai agent dan Customers sebagai event"
     ],
-    "answer": 1,
-    "explanation": "Blind Copy PO adalah kontrol klasik: kolom kuantitas sengaja dikosongkan agar petugas penerimaan tidak sekadar mencentang form, melainkan wajib membongkar kotak dan menghitung unit fisik riil yang diterima."
+    "answer": 0,
+    "explanation": "TM6: Agents = Customers (eksternal: pembeli yang memesan dan membayar) dan Employees (internal: salesperson, staf gudang, dan kasir). Cash (Bank Accounts) adalah resource; Quotes, Orders, dan Cash_Receipts adalah events."
   },
   {
     "tm": 6,
-    "topic": "Siklus Pengeluaran (P2P)",
+    "topic": "Sales and Collections Business Process",
     "difficulty": "medium",
-    "q": "Tiga dokumen yang wajib diverifikasi dalam prosedur Three-Way Matching sebelum tagihan utang usaha dibayar adalah...",
+    "q": "Dalam siklus Order-to-Cash, kapan pendapatan dan COGS diakui?",
     "options": [
-      "Purchase Requisition, Slip Setoran Bank, dan Kartu Kredit",
-      "Purchase Order (PO), Receiving Report (LPB), dan Vendor Invoice (Faktur Tagihan Pemasok)",
-      "Faktur Pajak, Slip Gaji, dan Laporan Laba Rugi",
-      "Bill of Materials, Work Order, dan Bukti Kas Masuk"
+      "Saat quote diberikan kepada calon pembeli",
+      "Saat sales order diterima atau ditandatangani",
+      "Saat barang diserahkan dan kewajiban kinerja terpenuhi",
+      "Saat kas disetor ke rekening bank perusahaan"
     ],
-    "answer": 1,
-    "explanation": "Three-Way Match memverifikasi: (1) PO membuktikan pembelian diotorisasi dan harganya disepakati; (2) Receiving Report membuktikan barang telah diterima secara fisik; (3) Vendor Invoice membuktikan tagihan dihitung secara benar."
+    "answer": 2,
+    "explanation": "Quote tidak menimbulkan komitmen hukum maupun dampak akuntansi; sales order adalah kontrak eksekutori yang belum memicu pengakuan pendapatan. Saat barang diserahkan, hak milik dan risiko kerugian berpindah: Dr Accounts Receivable, Cr Sales Revenue; Dr Cost of Goods Sold, Cr Merchandise Inventory."
   },
   {
     "tm": 6,
-    "topic": "Siklus Pengeluaran (P2P)",
+    "topic": "Sales and Collections Business Process",
     "difficulty": "advanced",
-    "q": "Tindakan mencap atau memberi tanda 'PAID / LUNAS' beserta nomor cek/referensi transfer pada paket voucher faktur saat pembayaran bertujuan untuk...",
+    "q": "Sunset Graphics menagih invoice \\$1,200.00 dengan termin 2/10, net 30, dan klien membayar dalam periode diskon. Jurnal penerimaan kasnya adalah...",
     "options": [
-      "Memenuhi kewajiban perpajakan UU PPN",
-      "Mencegah terjadinya pembayaran ganda (duplicate payment) atas faktur yang sama secara sengaja maupun tidak sengaja",
-      "Menghapus kewajiban pencatatan di buku besar pembantu utang",
-      "Menutup rekening bank operasional"
+      "Dr Cash \\$1,200.00; Cr Accounts Receivable \\$1,200.00",
+      "Dr Cash \\$1,176.00; Dr Sales Discounts \\$24.00; Cr Accounts Receivable \\$1,200.00",
+      "Dr Cash \\$1,176.00; Cr Accounts Receivable \\$1,176.00",
+      "Dr Cash \\$1,176.00; Dr Sales Revenue \\$24.00; Cr Accounts Receivable \\$1,200.00"
     ],
     "answer": 1,
-    "explanation": "Pembatalan voucher dokumen (defacing invoice dengan cap PAID) merupakan kontrol krusial agar staf akuntansi nakal tidak dapat menggunakan kembali faktur yang sama untuk mencairkan cek kedua kalinya."
+    "explanation": "Potongan = \\$1,200.00 × 0.02 = \\$24.00; kas diterima = \\$1,176.00. Piutang dihapus penuh sebesar jumlah bruto, dan Sales Discounts adalah akun kontra-pendapatan yang mengurangi Net Sales. Jika pelanggan membayar setelah periode diskon, jurnalnya Dr Cash (bruto), Cr Accounts Receivable (bruto)."
   },
   {
     "tm": 6,
-    "topic": "Siklus Pengeluaran (P2P)",
+    "topic": "Sales and Collections Business Process",
     "difficulty": "medium",
-    "q": "Metode pembayaran utang pemasok tanpa faktur tagihan fisik, di mana pembayaran otomatis dipicu oleh kecocokan antara PO dan laporan penerimaan barang disebut...",
+    "q": "Sistem menolak entri pesanan dengan Delivery_Date lebih awal dari Order_Date. Application control ini adalah...",
     "options": [
-      "Cash on Delivery (COD)",
-      "Evaluated Receipt Settlement (ERS)",
-      "Petty Cash Imprest",
-      "Letter of Credit (L/C)"
+      "Field Check",
+      "Validity Check",
+      "Range Check",
+      "Reasonableness Check"
     ],
-    "answer": 1,
-    "explanation": "ERS (dikembangkan pertama kali oleh Ford) adalah sistem 'invoiceless': begitu bagian penerimaan memindai barcode barang yang tiba dan cocok dengan PO, sistem ERP langsung mengotorisasi pembayaran sesuai harga kontrak tanpa menunggu faktur kertas vendor."
+    "answer": 3,
+    "explanation": "Reasonableness Check mengevaluasi logika kontekstual antar-field. Field Check menegakkan tipe data yang valid; Validity Check memastikan kode ada di tabel master (Customer_Number ada di Customers); Range Check menguji batas bawah dan batas atas (kuantitas antara 1 dan 10,000 unit)."
   },
   {
     "tm": 6,
-    "topic": "Siklus Pengeluaran (P2P)",
+    "topic": "Sales and Collections Business Process",
     "difficulty": "advanced",
-    "q": "Pemeriksaan berkala atas master file vendor untuk mendeteksi kesamaan nomor rekening, alamat kantor, atau nomor telepon vendor dengan data pribadi karyawan bertujuan untuk mencegah kecurangan...",
+    "q": "Dalam database relasional berbasis REA, bagaimana saldo Accounts Receivable diperoleh?",
     "options": [
-      "Lapping Fraud",
-      "Shell Company / Fictitious Vendor Fraud (Perusahaan Fiktif Rekayasa Karyawan)",
-      "Kiting Kas Antar-Bank",
-      "Under-Billing Piutang"
+      "Disimpan sebagai saldo statis di tabel master Customers",
+      "Diturunkan secara dinamis dari pesanan terkirim dikurangi penerimaan kas yang diterapkan (Amount_Applied)",
+      "Diambil dari kolom Credit_Limit di tabel Customers",
+      "Dihitung dari jumlah Quotes dikurangi jumlah Orders"
     ],
     "answer": 1,
-    "explanation": "Karyawan korup sering kali mendaftarkan 'perusahaan boneka' (shell company) ke sistem ERP, membuat PO fiktif, menyetujui LPB fiktif, dan mengalihkan dana transfer perusahaan ke rekening pribadinya."
+    "explanation": "A/R = Σ Delivered Orders − Σ Applied Cash Receipts. Orders yang sudah diserahkan tetapi belum memiliki Cash_Receipts terkait adalah piutang terbuka. Karena tidak ada saldo statis, redundansi dan saldo yang saling bertentangan hilang. Amount_Applied disimpan di linking table Order_Cash_Receipts."
   },
   {
     "tm": 7,
-    "topic": "Siklus Konversi & Review UTS",
+    "topic": "Purchases and Payments Business Process",
     "difficulty": "medium",
-    "q": "Dokumen rekayasa manufaktur yang memuat spesifikasi terperinci mengenai jenis, nomor komponen, dan kuantitas bahan baku yang dibutuhkan untuk membuat satu unit produk jadi disebut...",
+    "q": "Prinsip Economic Duality (Appendix A TM7) menyatakan bahwa...",
     "options": [
-      "Routing Sheet",
-      "Bill of Materials (BOM)",
-      "Master Production Schedule (MPS)",
-      "Materials Requisition Form"
+      "Setiap debit harus diimbangi kredit dengan nominal yang sama",
+      "Setiap event ekonomi berpasangan dengan event timbal baliknya: penjualan memberi Inventory dan menerima Cash, pembelian memberi Cash dan menerima Inventory",
+      "Setiap agent internal harus diawasi dua agent eksternal",
+      "Setiap resource harus dicatat di dua rekening bank"
     ],
     "answer": 1,
-    "explanation": "Bill of Materials (BOM) adalah 'resep baku' manufaktur yang merinci komponen sub-rakitan dan bahan baku pembentuk satu unit produk jadi dalam sistem perencanaan kebutuhan bahan (MRP)."
+    "explanation": "Dualitas ekonomi menghubungkan give dan get. Sales and Collections: give Inventory, get Cash. Purchases and Payments: give Cash, get Inventory."
   },
   {
     "tm": 7,
-    "topic": "Siklus Konversi & Review UTS",
+    "topic": "Purchases and Payments Business Process",
     "difficulty": "medium",
-    "q": "Dokumen otorisasi resmi yang memerintahkan bagian lantai pabrik untuk memproduksi sejumlah produk dalam spesifikasi dan jangka waktu tertentu disebut...",
+    "q": "Dalam model REA Procure-to-Pay, manakah yang termasuk RESOURCE?",
     "options": [
-      "Surat Jalan Pengiriman",
-      "Work Order (Surat Perintah Kerja)",
-      "Purchase Order",
-      "Voucher Pembayaran"
+      "Receipts (Goods Receipts)",
+      "Suppliers / Vendors",
+      "Raw Materials Inventory",
+      "Buyer (Employees)"
     ],
-    "answer": 1,
-    "explanation": "Work Order (SPK) diterbitkan oleh bagian Pengendalian Produksi (Production Planning & Control / PPIC) sebagai otorisasi resmi lantai pabrik untuk menarik bahan dari gudang dan menjadwalkan jam kerja mesin."
+    "answer": 2,
+    "explanation": "Resources Procure-to-Pay: Inventory (Raw Materials / Merchandise) dan Cash (Bank Accounts). Receipts adalah event perolehan fisik yang memicu liabilitas dan Purchase_Orders adalah commitment event; Suppliers / Vendors adalah agent eksternal; buyer, receiving clerk, dan kasir adalah agent internal (Employees)."
   },
   {
     "tm": 7,
-    "topic": "Siklus Konversi & Review UTS",
+    "topic": "Purchases and Payments Business Process",
     "difficulty": "advanced",
-    "q": "Dalam integrasi akuntansi biaya siklus konversi, pemindahan fisik bahan baku dari gudang ke area produksi wajib dicatat dengan mendebit akun...",
+    "q": "Mengapa salinan purchase order yang dikirim ke receiving dock dibuat sebagai blind purchase order?",
     "options": [
-      "Beban Pokok Penjualan (COGS)",
-      "Persediaan Barang Dalam Proses (Work-in-Process / WIP Inventory)",
-      "Persediaan Produk Jadi (Finished Goods Inventory)",
-      "Kas dan Setara Kas"
+      "Agar petugas receiving melakukan hitung fisik sungguhan karena kolom kuantitas dihitamkan, sehingga short shipment tidak lolos tanpa tercatat",
+      "Agar vendor tidak mengetahui harga yang disepakati",
+      "Agar barang yang diterima tidak perlu dicatat di receiving report",
+      "Agar Accounts Payable dapat membayar tanpa invoice vendor"
     ],
-    "answer": 1,
-    "explanation": "Jurnal akuntansi: Debit Persediaan Barang Dalam Proses (WIP) dan Kredit Persediaan Bahan Baku (Raw Materials Inventory). Ini mencerminkan transformasi nilai sumber daya dalam sistem akuntansi."
+    "answer": 0,
+    "explanation": "Blind PO dikirim ke receiving dock, bukan ke vendor, dengan kolom kuantitas yang dihitamkan. Petugas receiving terpaksa menghitung fisik alih-alih sekadar mencentang kuantitas. Blind PO termasuk kontrol preventive dalam Procure-to-Pay."
   },
   {
     "tm": 7,
-    "topic": "Siklus Konversi & Review UTS",
-    "difficulty": "advanced",
-    "q": "Manakah pernyataan yang paling tepat merangkum keterkaitan terintegrasi antara siklus pengeluaran, konversi, dan pendapatan dalam SIA perusahaan manufaktur?",
-    "options": [
-      "Siklus pendapatan membeli bahan, siklus konversi menjual ke pelanggan, siklus pengeluaran membuat produk",
-      "Siklus pengeluaran memperoleh input bahan/TKL, siklus konversi mentransformasikan bahan menjadi produk jadi, dan siklus pendapatan menjual barang jadi untuk menghasilkan arus kas",
-      "Ketiga siklus berjalan secara terisolasi tanpa berbagi database relasional",
-      "Siklus konversi hanya berfungsi memproses penggajian direksi"
-    ],
-    "answer": 1,
-    "explanation": "Ini adalah rantai nilai ekonomi terpadu manufaktur: Procure-to-Pay (beli input) -> Conversion Cycle (olah jadi output bernilai) -> Order-to-Cash (jual dan tagih kas untuk mendanai siklus pengeluaran berikutnya)."
-  },
-  {
-    "tm": 7,
-    "topic": "Siklus Konversi & Review UTS",
+    "topic": "Purchases and Payments Business Process",
     "difficulty": "medium",
-    "q": "Dalam simulasi ujian komprehensif UTS SIA, jika auditor menemukan bahwa persediaan fisik di gudang lebih rendah Rp 200 juta dibanding catatan di modul persediaan ERP, prosedur audit manakah yang pertama kali harus diuji?",
+    "q": "Tiga dokumen yang dibandingkan Accounts Payable dalam Three-Way Match sebelum invoice vendor disetujui untuk dibayar adalah...",
     "options": [
-      "Mengganti seluruh tim manajemen puncak",
-      "Menguji rekonsiliasi stock opname fisik gudang dan memeriksa catatan pengeluaran barang tanpa Surat Perintah Kerja (Move Ticket) yang sah",
-      "Menghapus saldo akun persediaan dari neraca",
-      "Menolak memberikan opini atas seluruh laporan keuangan"
+      "Purchase requisition, debit memo, dan remittance advice",
+      "Sales Order, Picking Ticket, dan Bill of Lading",
+      "Receiving Report, cek, dan statement bank",
+      "Purchase Order, Receiving Report, dan Vendor Invoice"
+    ],
+    "answer": 3,
+    "explanation": "Purchase Order (internal, Purchasing / Buyer) membuktikan otorisasi pembelian; Receiving Report (internal, Warehouse Receiving) membuktikan penerimaan fisik; Vendor Invoice (eksternal, Supplier) membuktikan jumlah yang ditagih. Jika ada selisih kuantitas, harga, atau termin, invoice langsung ditahan (administrative hold) sampai diselesaikan dengan supplier."
+  },
+  {
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "difficulty": "advanced",
+    "q": "Approved Vendor List mewajibkan vendor baru disetujui manajemen pengadaan yang independen, diverifikasi nomor pajaknya (TIN/NPWP), dan divalidasi alamat fisiknya. Skema fraud yang dicegah kontrol ini adalah...",
+    "options": [
+      "Duplicate Payments",
+      "Shell Company Invoicing",
+      "Purchasing Kickbacks",
+      "Lapping piutang"
     ],
     "answer": 1,
-    "explanation": "Selisih fisik persediaan (inventory shrinkage) mengindikasikan pencurian, pencatatan scrap yang tidak dilaporkan, atau barang keluar tanpa otorisasi. Auditor harus melacak jejak audit pergerakan mutasi fisik barang dan dokumen otorisasi."
+    "explanation": "Shell Company Invoicing: karyawan tidak jujur membuat entitas vendor fiktif untuk menagih jasa yang tidak pernah ada. Purchasing Kickbacks dicegah dengan pemilihan vendor dari AVL, Three-Way Match atas harga PO, dan pemisahan Purchasing dari Receiving serta Accounts Payable. Duplicate Payments dicegah dengan Three-Way Match per transaksi dan pemulihan pembayaran ganda secara otomatis."
   }
 ];
 
