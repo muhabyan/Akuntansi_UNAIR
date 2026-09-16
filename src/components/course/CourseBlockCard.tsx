@@ -374,7 +374,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                       {row.map((cell, c) => (
                         <td
                           key={c}
-                          className="border-t border-navy-500/10 dark:border-navy-500/35 px-4 py-3 align-top text-[13.5px] leading-[1.75] text-slate-800 dark:text-slate-300 first:sticky first:left-0 first:z-[1] first:bg-slate-50 dark:first:bg-navy-900 first:font-semibold first:text-slate-900 dark:first:text-slate-200"
+                          className="border-t border-navy-500/10 dark:border-navy-500/35 px-4 py-3 align-top text-[13.5px] leading-[1.75] text-slate-800 dark:text-slate-300 md:first:sticky md:first:left-0 md:first:z-[1] first:bg-slate-50 dark:first:bg-navy-900 first:font-semibold first:text-slate-900 dark:first:text-slate-200"
                         >
                           <RenderMultilineText text={cell} />
                         </td>
