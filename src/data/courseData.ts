@@ -320,8 +320,8 @@ const AKM202_REF = [
 // --- AKS301 Sistem Informasi Akuntansi (Richardson, Chang, Smith 4e ISE) ---
 // Sumber: Silabus Resmi Sistem Informasi Akuntansi, Departemen Akuntansi FEB UNAIR.
 const AKS301_TM1_7 = materi([
-  ['Sistem Informasi Akuntansi & Nilai Perusahaan', 'Richardson et al. AIS 4e · Ch. 1'],
-  ['Akuntan sebagai Analis Bisnis & Pemodelan Proses Bisnis (BPMN)', 'Richardson et al. AIS 4e · Ch. 2'],
+  ['Accounting Information Systems and Firm Value', 'Richardson et al. AIS 4e · Ch. 1'],
+  ['Data Analytics: Addressing Accounting Questions with Data', 'Richardson et al. AIS 4e · Ch. 2'],
   ['Pemodelan Data & Kerangka Kerja REA', 'Richardson et al. AIS 4e · Ch. 3'],
   ['Basis Data Relasional & Sistem Perusahaan (ERP)', 'Richardson et al. AIS 4e · Ch. 4'],
   ['Siklus Pendapatan: Proses Penjualan & Penerimaan Kas', 'Richardson et al. AIS 4e · Ch. 5'],
