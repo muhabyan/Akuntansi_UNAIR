@@ -185,6 +185,16 @@ function Block({ block }: { block: ContentBlock }) {
         </div>
       );
     }
+    case 'code':
+      return (
+        <figure className="my-6 max-w-full overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+          {block.language && <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">{block.language}</div>}
+          <div className="overflow-x-auto">
+            <pre className="m-0 w-max min-w-full whitespace-pre px-4 py-3 font-mono text-sm text-gray-800 dark:text-gray-200"><code>{block.text}</code></pre>
+          </div>
+          {block.caption && <figcaption className="px-4 py-2 border-t border-gray-200 dark:border-gray-700 text-xs text-gray-500 italic">{renderText(block.caption)}</figcaption>}
+        </figure>
+      );
     case 'figure':
       return (
         <figure className="my-8">

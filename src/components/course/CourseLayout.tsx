@@ -63,6 +63,7 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
     case 'h3':
     case 'p':
     case 'formula':
+    case 'code':
       return block.text.toLowerCase().includes(query);
     case 'ul':
     case 'ol':

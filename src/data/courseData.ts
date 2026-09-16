@@ -322,9 +322,9 @@ const AKM202_REF = [
 const AKS301_TM1_7 = materi([
   ['Accounting Information Systems and Firm Value', 'Richardson et al. AIS 4e · Ch. 1'],
   ['Data Analytics: Addressing Accounting Questions with Data', 'Richardson et al. AIS 4e · Ch. 2'],
-  ['Pemodelan Data & Kerangka Kerja REA', 'Richardson et al. AIS 4e · Ch. 3'],
-  ['Basis Data Relasional & Sistem Perusahaan (ERP)', 'Richardson et al. AIS 4e · Ch. 4'],
-  ['Siklus Pendapatan: Proses Penjualan & Penerimaan Kas', 'Richardson et al. AIS 4e · Ch. 5'],
+  ['Accountants as Business Analysts', 'Richardson et al. AIS 4e · Ch. 4'],
+  ['Data Modeling', 'Richardson et al. AIS 4e · Ch. 5'],
+  ['Relational Databases and Enterprise Systems', 'Richardson et al. AIS 4e · Ch. 6'],
   ['Siklus Pengeluaran: Proses Pembelian & Pengeluaran Kas', 'Richardson et al. AIS 4e · Ch. 6'],
   ['Siklus Konversi: Proses Produksi & Review Kasus UTS', 'Richardson et al. AIS 4e · Ch. 7'],
 ], 1);
