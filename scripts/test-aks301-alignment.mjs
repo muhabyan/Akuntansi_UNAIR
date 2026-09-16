@@ -17,6 +17,7 @@ const bundle = await build({
       "export { loadCourseContent } from './src/data/courses/courseRegistry.ts';",
       "export { AKS301_READINGS, AKS301_REVIEW_READINGS } from './src/data/sia/siaReadings.ts';",
       "export { AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './src/data/quizzes/aks301.ts';",
+      "export { AKS301_FC } from './src/data/flashcards/aks301.ts';",
     ].join('\n'),
     resolveDir: process.cwd(), loader: 'ts',
   },
@@ -161,4 +162,34 @@ for (const tm of PRA_UTS_TMS) {
   assert.ok(answers.size > 1, `quiz TM${tm}: correct answers are not all the same letter`);
 }
 
-console.log(`AKS301 alignment PASS: quiz UTS ${quiz.length} items; review (${reviewHeadings.length} sections, ${reviewJournals} balanced journals).`);
+// ---------------------------------------------------------------- Flashcards (plain text in FlashcardDeck)
+const flashcards = mod.AKS301_FC;
+const ids = flashcards.map((card) => card.id);
+assert.equal(new Set(ids).size, ids.length, 'flashcard ids are unique');
+for (const card of flashcards) {
+  const match = /^aks301-(?:v2-)?tm(\d{2})-(\d{2})$/.exec(card.id);
+  assert.ok(match, `flashcard id pattern: ${card.id}`);
+  assert.equal(Number(match[1]), card.tm, `flashcard id matches its tm: ${card.id} (tm ${card.tm})`);
+  assert.equal(card.phase, card.tm <= 7 ? 'pra-uts' : 'pra-uas', `flashcard phase: ${card.id}`);
+}
+const praUtsCards = flashcards.filter((card) => card.tm <= 7);
+const fcCounts = countByTm(praUtsCards);
+for (const tm of PRA_UTS_TMS) assert.equal(fcCounts.get(tm), 6, `flashcards TM${tm}: 6 cards`);
+assert.equal(flashcards.length - praUtsCards.length, 42, 'TM8–TM14 flashcards unchanged in count');
+// Only the three cards whose content did not change keep their original ids; every other TM1–TM7 card is v2.
+const keptIds = ['aks301-tm01-01', 'aks301-tm01-02', 'aks301-tm04-02'];
+assert.deepEqual(praUtsCards.filter((card) => !card.id.startsWith('aks301-v2-')).map((card) => card.id), keptIds);
+assertNoOldTopics('flashcards TM1–TM7', praUtsCards);
+assert.equal(new Set(praUtsCards.map((card) => card.front)).size, praUtsCards.length, 'flashcard fronts are unique');
+const categories = new Set(['Definisi', 'Konsep', 'Mekanisme', 'Hukum', 'Klasifikasi', 'Prosedur', 'Dokumen', 'Pengendalian', 'Contoh', 'Standar', 'Perbandingan']);
+for (const card of praUtsCards) {
+  assert.equal(card.topic, readings[card.tm].title, `${card.id}: topic follows the canonical reading title`);
+  assert.ok(categories.has(card.category), `${card.id}: category ${card.category}`);
+  for (const text of [card.front, card.back]) {
+    assert.ok(text.trim().length > 0, `${card.id}: empty text`);
+    // Plain-text render path: markdown escapes and markup would show up literally.
+    assert.ok(!/\\[$*.]|\*\*|`/.test(text), `${card.id}: plain-text field contains markdown escapes or markup: ${text.slice(0, 60)}`);
+  }
+}
+
+console.log(`AKS301 alignment PASS: flashcards ${praUtsCards.length} TM1–TM7 cards; quiz UTS ${quiz.length} items; review (${reviewHeadings.length} sections, ${reviewJournals} balanced journals).`);

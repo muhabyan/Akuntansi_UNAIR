@@ -7,7 +7,7 @@ export const AKS301_FC: AdvancedStudyCard[] = [
     "id": "aks301-tm01-01",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "category": "Definisi",
     "front": "Definisi Sistem Informasi Akuntansi (SIA)",
     "back": "Sistem yang mencatat, memproses, meringkas, dan melaporkan data transaksi finansial dan nonfinansial untuk pengambilan keputusan dengan pengendalian internal memadai."
@@ -16,370 +16,370 @@ export const AKS301_FC: AdvancedStudyCard[] = [
     "id": "aks301-tm01-02",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
     "front": "Data vs Informasi",
     "back": "Data adalah fakta mentah yang belum diolah. Informasi adalah data yang telah diorganisasikan dan diproses sehingga memiliki arti dan nilai bagi pengambil keputusan."
   },
   {
-    "id": "aks301-tm01-03",
+    "id": "aks301-v2-tm01-03",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
-    "front": "Dua Atribut Kualitas Fundamental Informasi",
-    "back": "(1) Relevansi (Relevance) — memiliki nilai prediktif dan konfirmasi, dan (2) Penyajian Jujur (Faithful Representation) — lengkap, netral, bebas dari kesalahan."
+    "front": "Kualitas Informasi: Relevance & Faithful Representation",
+    "back": "Relevance: predictive value, confirmatory value, dan materiality. Faithful Representation: complete, neutral, dan free from error (tidak ada kesalahan material, bukan jaminan prediksi 100% tepat). Kualitas lain: comparability, verifiability, timeliness, understandability."
   },
   {
-    "id": "aks301-tm01-04",
+    "id": "aks301-v2-tm01-04",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "category": "Mekanisme",
     "front": "Empat Peran Akuntan dalam SIA",
-    "back": "(1) User (pemakai sistem), (2) Manager (pengelola anggaran & staf), (3) Designer (perancang kebutuhan kontrol dan proses), dan (4) Evaluator (auditor sistem/CISA)."
+    "back": "User: input transaksi, jurnal, rekonsiliasi, closing, laporan. Manager: mengatur staf, jadwal tutup buku, anggaran. Designer: kebutuhan akuntansi, COA, validasi data, kontrol akses. Evaluator: menguji integritas, keamanan, kontrol, dan kepatuhan secara independen. Designer ≠ evaluator independen untuk sistem yang sama."
   },
   {
-    "id": "aks301-tm01-05",
+    "id": "aks301-v2-tm01-05",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
-    "front": "Rantai Nilai Porter (Value Chain) & SIA",
-    "back": "SIA mendukung aktivitas utama (inbound logistics, operasi, outbound, marketing, service) dan aktivitas pendukung (infrastruktur, HR, IT, pengadaan) untuk meningkatkan efisiensi."
+    "front": "Rantai Nilai: Primary vs Support Activities",
+    "back": "Primary: Inbound Logistics, Operations, Outbound Logistics, Marketing & Sales, Service. Support: Firm Infrastructure (AIS, legal, manajemen eksekutif), Human Resource Management, Technology Development, Procurement. AIS berada dalam Firm Infrastructure, bukan primary activity."
   },
   {
-    "id": "aks301-tm01-06",
+    "id": "aks301-v2-tm01-06",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "SIA & Nilai Perusahaan",
+    "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
     "front": "Sertifikasi Profesional Bidang SIA",
-    "back": "Certified Information Systems Auditor (CISA - ISACA), Certified Information Technology Professional (CITP - AICPA), Certified Internal Auditor (CIA)."
+    "back": "CISA (Certified Information Systems Auditor) — ISACA: audit SI, tata kelola keamanan, kontrol otomatis. CITP (Certified Information Technology Professional) — AICPA: CPA spesialis teknologi, analitika, arsitektur sistem. CIA (Certified Internal Auditor) — IIA: audit internal, risiko, tata kelola."
   },
   {
-    "id": "aks301-tm02-01",
+    "id": "aks301-v2-tm02-01",
     "phase": "pra-uts",
     "tm": 2,
-    "topic": "Akuntan sebagai Analis Bisnis & BPMN",
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Konsep",
+    "front": "4V Big Data",
+    "back": "Volume: besarnya data. Variety: keragaman format (structured, semi-structured, unstructured; sekitar 80% data perusahaan tidak terstruktur). Velocity: kecepatan data dihasilkan, ditangkap, dan diproses. Veracity: kebenaran, akurasi, kebersihan, dan representasi data."
+  },
+  {
+    "id": "aks301-v2-tm02-02",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Prosedur",
+    "front": "Model AMPS",
+    "back": "Ask the Question → Master the Data (ETL; 50%–90% waktu proyek) → Perform the Analysis → Share the Story. Bersifat rekursif: temuan baru dapat mengembalikan proses ke Ask/Master."
+  },
+  {
+    "id": "aks301-v2-tm02-03",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Pengendalian",
+    "front": "Audit Data Standards: Entered_By vs Approved_By",
+    "back": "AICPA Audit Data Standards menstandarkan field ekspor GL. Bandingkan Field 14 (Entered_By) dengan Field 17 (Approved_By); user yang sama menandai self-approval yang harus diinvestigasi. Pisahkan preparer dan approver."
+  },
+  {
+    "id": "aks301-v2-tm02-04",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Klasifikasi",
+    "front": "Empat Jenis Analitika",
+    "back": "Descriptive: What happened? (aging piutang). Diagnostic: Why did it happen? (varians, audit SoD). Predictive: Will it happen? (Altman Z-score, credit scoring). Prescriptive: What should we do? (breakeven, Goal Seek)."
+  },
+  {
+    "id": "aks301-v2-tm02-05",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Konsep",
+    "front": "Altman Z-Score",
+    "back": "Z = 1.2X₁ + 1.4X₂ + 3.3X₃ + 0.6X₄ + 1.0X₅. Z < 1.80 Distress Zone; 1.80 ≤ Z < 3.00 Gray Zone; Z ≥ 3.00 Safe Zone. Apple 1997 = 2.0251 (Gray Zone). Skor adalah sinyal risiko, bukan kepastian."
+  },
+  {
+    "id": "aks301-v2-tm02-06",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data",
+    "category": "Mekanisme",
+    "front": "Breakeven dengan Goal Seek",
+    "back": "Q_BE = F / (P − V); breakeven saat Net Income = 0. Jing LCC Januari: $1,600 / ($7 − $3) = 400 units; revenue $2,800. Goal Seek: Set Cell = Net Income, To Value = 0, By Changing Cell = Unit Sales. Termasuk prescriptive analytics."
+  },
+  {
+    "id": "aks301-v2-tm03-01",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
     "category": "Hukum",
-    "front": "Pentingnya Dokumentasi Proses Bisnis",
-    "back": "Wajib bagi kepatuhan regulasi Sarbanes-Oxley Act (SOX Section 404), pelatihan pegawai baru, audit kepatuhan, dan inisiatif rekayasa ulang proses bisnis (BPR)."
+    "front": "Dokumentasi Proses Bisnis & SOX 404",
+    "back": "SOX Section 404 mewajibkan atestasi atas desain dan efektivitas ICFR; PCAOB AS 2201 mensyaratkan walkthrough transaksi. Model proses juga bernilai untuk Communication & Training, Process Standardization & Automation, Complexity Management, serta Continuous Improvement & BPR."
   },
   {
-    "id": "aks301-tm02-02",
+    "id": "aks301-v2-tm03-02",
     "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Akuntan sebagai Analis Bisnis & BPMN",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
     "category": "Konsep",
-    "front": "Tiga Tipe Simbol Utama BPMN",
-    "back": "(1) Flow Objects (Events, Activities, Gateways), (2) Connecting Objects (Sequence Flow, Message Flow), dan (3) Swimlanes (Pools, Lanes)."
+    "front": "Pool vs Swimlane (Lane)",
+    "back": "Pool: entitas organisasi atau partisipan eksternal independen (Customer, Vendor, Bank). Lane: departemen, peran, atau unit sistem di dalam satu pool (Sales, Credit, Warehouse, Billing)."
   },
   {
-    "id": "aks301-tm02-03",
+    "id": "aks301-v2-tm03-03",
     "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Akuntan sebagai Analis Bisnis & BPMN",
-    "category": "Konsep",
-    "front": "Perbedaan Pool vs Swimlane",
-    "back": "Pool merepresentasikan entitas organisasi yang terpisah (misal: Vendor vs Perusahaan). Swimlane memisahkan departemen atau peran di dalam satu Pool (misal: Gudang, Kasir)."
-  },
-  {
-    "id": "aks301-tm02-04",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Akuntan sebagai Analis Bisnis & BPMN",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
     "category": "Hukum",
     "front": "Sequence Flow vs Message Flow",
-    "back": "Sequence Flow (garis utuh) HANYA boleh menghubungkan aktivitas di dalam satu Pool yang sama. Message Flow (garis putus-putus) menghubungkan dua Pool berbeda."
+    "back": "Sequence flow (garis penuh) mengurutkan aktivitas di dalam satu pool dan boleh melintasi lane, tetapi tidak pernah melintasi batas pool. Message flow (garis putus-putus) hanya menghubungkan pool yang terpisah."
   },
   {
-    "id": "aks301-tm02-05",
+    "id": "aks301-v2-tm03-04",
     "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Akuntan sebagai Analis Bisnis & BPMN",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
     "category": "Konsep",
     "front": "Exclusive Gateway (XOR)",
-    "back": "Titik percabangan keputusan di mana hanya satu jalur keluar yang valid berdasarkan kondisi tertentu (misal: Kredit Disetujui ATAU Ditolak)."
+    "back": "Diamond kosong atau bertanda \"X\". Split: mengevaluasi kondisi yang saling eksklusif sehingga tepat satu jalur dijalankan. Join: menggabungkan alur alternatif tanpa sinkronisasi. Cabang XOR harus mencakup semua kemungkinan logis."
   },
   {
-    "id": "aks301-tm02-06",
+    "id": "aks301-v2-tm03-05",
     "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Akuntan sebagai Analis Bisnis & BPMN",
+    "tm": 3,
+    "topic": "Accountants as Business Analysts",
     "category": "Konsep",
     "front": "Parallel Gateway (AND)",
-    "back": "Titik percabangan di mana semua jalur paralel yang keluar harus dikerjakan secara serentak (misal: cetak faktur DAN siapkan barang di gudang)."
+    "back": "Diamond bertanda \"+\". Split: token digandakan ke semua jalur keluar secara bersamaan. Join: menunggu token dari semua jalur masuk lalu menggabungkannya. Contoh: lane Barista Starbucks menyiapkan minuman secara paralel."
   },
   {
-    "id": "aks301-tm03-01",
+    "id": "aks301-v2-tm03-06",
     "phase": "pra-uts",
     "tm": 3,
-    "topic": "Pemodelan Data & Kerangka Kerja REA",
+    "topic": "Accountants as Business Analysts",
     "category": "Klasifikasi",
-    "front": "Tiga Entitas Kerangka Kerja REA",
-    "back": "Resources (sumber daya bernilai ekonomi), Events (peristiwa atau transaksi bisnis), dan Agents (pelaku internal dan eksternal)."
+    "front": "Jebakan DFD: Black Hole, Miracle, Gray Hole",
+    "back": "Black Hole: proses menerima data flow masuk tanpa data flow keluar. Miracle: proses menghasilkan data flow keluar tanpa data flow masuk. Gray Hole: output melampaui cakupan input, mis. Customer Zip Code saja menghasilkan riwayat kredit lengkap."
   },
   {
-    "id": "aks301-tm03-02",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Pemodelan Data & Kerangka Kerja REA",
-    "category": "Konsep",
-    "front": "Prinsip Dualitas Ekonomi (Economic Duality)",
-    "back": "Setiap siklus bisnis melibatkan pertukaran nilai: peristiwa penambahan sumber daya (increment event) berpasangan dengan peristiwa pengurangan sumber daya (decrement event)."
-  },
-  {
-    "id": "aks301-tm03-03",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Pemodelan Data & Kerangka Kerja REA",
-    "category": "Hukum",
-    "front": "Kardinalitas / Multiplisitas Minimum",
-    "back": "Menentukan apakah partisipasi entitas dalam relasi bersifat Wajib (1) atau Opsional (0). Misal: Pelanggan baru dapat ada tanpa pesanan (0..*)."
-  },
-  {
-    "id": "aks301-tm03-04",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Pemodelan Data & Kerangka Kerja REA",
-    "category": "Hukum",
-    "front": "Kardinalitas / Multiplisitas Maksimum",
-    "back": "Menentukan batas terbanyak keterlibatan entitas: Satu (1) atau Banyak (*). Relasi dapat berbentuk 1:1, 1:N, atau M:N."
-  },
-  {
-    "id": "aks301-tm03-05",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Pemodelan Data & Kerangka Kerja REA",
-    "category": "Konsep",
-    "front": "Resolusi Relasi Many-to-Many (M:N)",
-    "back": "Relasi M:N (misal: Penjualan ke Persediaan) tidak dapat diimplementasikan langsung; harus dipecah dengan tabel penghubung (Junction/Link Table) \"Rincian Penjualan\"."
-  },
-  {
-    "id": "aks301-tm03-06",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Pemodelan Data & Kerangka Kerja REA",
-    "category": "Konsep",
-    "front": "Diagram Kelas UML (Unified Modeling Language)",
-    "back": "Model data statis yang menggambarkan struktur kelas entitas, atribut (fields), dan asosiasi hubungan antar entitas bisnis."
-  },
-  {
-    "id": "aks301-tm04-01",
+    "id": "aks301-v2-tm04-01",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Basis Data Relasional & Sistem ERP",
-    "category": "Definisi",
-    "front": "Primary Key (Kunci Utama)",
-    "back": "Atribut atau kombinasi atribut yang secara unik mengidentifikasi setiap baris (record) data dalam sebuah tabel dan tidak boleh bernilai NULL."
+    "topic": "Data Modeling",
+    "category": "Konsep",
+    "front": "UML Class Diagram (Structure Model)",
+    "back": "Structure model statis yang menggambarkan class, atribut, dan association; activity model (BPMN, flowchart) bersifat dinamis. Kompartemen class: Class Name, Attributes, Operations (Operations biasanya dihilangkan dalam desain konseptual database SIA)."
   },
   {
     "id": "aks301-tm04-02",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Basis Data Relasional & Sistem ERP",
+    "topic": "Data Modeling",
     "category": "Definisi",
     "front": "Foreign Key (Kunci Tamu)",
     "back": "Atribut dalam suatu tabel yang merupakan Primary Key di tabel lain; berfungsi untuk menghubungkan kedua tabel secara logis."
   },
   {
-    "id": "aks301-tm04-03",
+    "id": "aks301-v2-tm04-03",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Basis Data Relasional & Sistem ERP",
+    "topic": "Data Modeling",
+    "category": "Klasifikasi",
+    "front": "Tiga Kategori REA",
+    "back": "Resources: aset ekonomi bernilai yang dimiliki/dikendalikan (Cash, Merchandise_Inventory). Events: transaksi bisnis dan kejadian operasional (Purchase_Order, Sales_Invoice). Agents: individu internal dan entitas eksternal yang berpartisipasi (Employee, Customer, Vendor). Pola REA dikembangkan William McCarthy."
+  },
+  {
+    "id": "aks301-v2-tm04-04",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Data Modeling",
     "category": "Hukum",
-    "front": "Integritas Referensial (Referential Integrity)",
-    "back": "Nilai Foreign Key harus merujuk pada nilai Primary Key yang valid di tabel referensinya, atau bernilai NULL jika relasi bersifat opsional."
+    "front": "Multiplicity Minimum (0 vs 1)",
+    "back": "Batas minimum menyatakan partisipasi opsional (0) atau wajib (1): 0..1 dan 0..* opsional; 1..1 dan 1..* wajib. Contoh Full-Time Fitness: Instructors (1..1) teach Fitness_Classes (0..5); instruktur baru boleh belum mengajar kelas."
   },
   {
-    "id": "aks301-tm04-04",
+    "id": "aks301-v2-tm04-05",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Basis Data Relasional & Sistem ERP",
-    "category": "Konsep",
-    "front": "Bentuk Normal Pertama (1NF)",
-    "back": "Setiap atribut dalam tabel bernilai atomik (tunggal, tidak dapat dipecah lagi) dan tidak ada baris atau kolom yang berulang (repeating groups)."
+    "topic": "Data Modeling",
+    "category": "Hukum",
+    "front": "Multiplicity Maksimum & Tipe Relasi",
+    "back": "Batas maksimum: 1 atau * (banyak). Kombinasi maksimum kedua sisi menentukan relasi 1:1, 1:N, atau M:N, yang dipetakan pada Step 3, Step 4, dan Step 5 algoritma lima langkah."
   },
   {
-    "id": "aks301-tm04-05",
+    "id": "aks301-v2-tm04-06",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Basis Data Relasional & Sistem ERP",
-    "category": "Konsep",
-    "front": "Bentuk Normal Kedua (2NF)",
-    "back": "Telah memenuhi 1NF dan setiap atribut non-kunci bergantung secara fungsional penuh pada seluruh Primary Key (tidak ada ketergantungan parsial)."
-  },
-  {
-    "id": "aks301-tm04-06",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Basis Data Relasional & Sistem ERP",
-    "category": "Konsep",
-    "front": "Bentuk Normal Ketiga (3NF)",
-    "back": "Telah memenuhi 2NF dan tidak ada ketergantungan transitif antar atribut non-kunci (atribut non-kunci tidak boleh bergantung pada atribut non-kunci lainnya)."
-  },
-  {
-    "id": "aks301-tm05-01",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Siklus Pendapatan (Order-to-Cash / O2C)",
-    "category": "Prosedur",
-    "front": "Alur Transaksi Siklus Pendapatan (O2C)",
-    "back": "(1) Entri Pesanan Penjualan, (2) Persetujuan Batas Kredit, (3) Pengambilan & Pengepakan Barang, (4) Pengiriman Barang, (5) Penagihan Faktur, (6) Penerimaan Kas."
-  },
-  {
-    "id": "aks301-tm05-02",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Siklus Pendapatan (Order-to-Cash / O2C)",
-    "category": "Dokumen",
-    "front": "Dokumen Pengiriman: Bill of Lading (BoL)",
-    "back": "Kontrak legal antara pengirim barang dengan kurir pengangkut yang merinci jenis, kuantitas, dan tujuan pengiriman barang."
-  },
-  {
-    "id": "aks301-tm05-03",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Siklus Pendapatan (Order-to-Cash / O2C)",
-    "category": "Pengendalian",
-    "front": "Pemisahan Tugas Kunci Siklus Pendapatan",
-    "back": "Fungsi otorisasi kredit harus terpisah dari fungsi penjualan; fungsi penerimaan kas harus terpisah dari pencatatan buku besar piutang."
-  },
-  {
-    "id": "aks301-tm05-04",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Siklus Pendapatan (Order-to-Cash / O2C)",
-    "category": "Pengendalian",
-    "front": "Pencegahan Skema Lapping Piutang",
-    "back": "Lapping (menutupi kekurangan kas dengan pembayaran pelanggan berikutnya) dicegah melalui rotasi tugas staf kasir, rekening lockbox bank, dan konfirmasi piutang rutin."
-  },
-  {
-    "id": "aks301-tm05-05",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Siklus Pendapatan (Order-to-Cash / O2C)",
-    "category": "Konsep",
-    "front": "Sistem Kotak Kunci (Lockbox System)",
-    "back": "Pelanggan mengirim pembayaran cek langsung ke kotak pos khusus bank; bank menyetor dana ke rekening perusahaan dan mengirimkan data pelunasan."
-  },
-  {
-    "id": "aks301-tm05-06",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Siklus Pendapatan (Order-to-Cash / O2C)",
-    "category": "Konsep",
-    "front": "Electronic Data Interchange (EDI) Penjualan",
-    "back": "Pertukaran dokumen bisnis komputer-ke-komputer secara elektronik dalam format standar (misal: pesanan pelanggan masuk otomatis ke ERP)."
-  },
-  {
-    "id": "aks301-tm06-01",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Siklus Pengeluaran (Procure-to-Pay / P2P)",
-    "category": "Prosedur",
-    "front": "Alur Transaksi Siklus Pengeluaran (P2P)",
-    "back": "(1) Permintaan Pembelian (Purchase Requisition), (2) Pemesanan Resmi (Purchase Order), (3) Penerimaan Barang, (4) Pencatatan Utang, (5) Pembayaran Kas."
-  },
-  {
-    "id": "aks301-tm06-02",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Siklus Pengeluaran (Procure-to-Pay / P2P)",
-    "category": "Pengendalian",
-    "front": "Laporan Penerimaan Buta (Blind Receiving Report)",
-    "back": "Salinan PO yang diberikan ke staf penerimaan gudang sengaja dikosongkan jumlah kuantitasnya agar staf wajib menghitung fisik barang secara nyata."
-  },
-  {
-    "id": "aks301-tm06-03",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Siklus Pengeluaran (Procure-to-Pay / P2P)",
-    "category": "Pengendalian",
-    "front": "Three-Way Matching pada Akun Utang",
-    "back": "Verifikasi kesesuaian antara (1) Purchase Order, (2) Receiving Report, dan (3) Vendor Invoice sebelum menyetujui voucher pengeluaran kas."
-  },
-  {
-    "id": "aks301-tm06-04",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Siklus Pengeluaran (Procure-to-Pay / P2P)",
+    "topic": "Data Modeling",
     "category": "Mekanisme",
-    "front": "Evaluated Receipt Settlement (ERS)",
-    "back": "Sistem pembayaran tanpa faktur kertas: pembeli otomatis membayar vendor berdasarkan data kuantitas barang yang diterima dan harga pada PO."
+    "front": "Linking Table untuk Relasi M:N",
+    "back": "M:N tidak dapat diwakili satu foreign key. Buat linking table dengan composite primary key gabungan PK kedua tabel dan simpan atribut relasi di dalamnya, mis. Class_Enrollments (Class_ID, Member_ID) dengan Enrollment_Date dan Payment_Status."
   },
   {
-    "id": "aks301-tm06-05",
+    "id": "aks301-v2-tm05-01",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Hukum",
+    "front": "Primary Key & Entity Integrity",
+    "back": "Primary key: atribut atau kombinasi atribut minimal yang mengidentifikasi setiap record secara unik. Entity integrity: primary key tidak pernah null (NOT NULL) dan unik (UNIQUE); contoh pelanggaran: Invoice# kosong atau duplikat."
+  },
+  {
+    "id": "aks301-v2-tm05-02",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Hukum",
+    "front": "Referential Integrity",
+    "back": "Nilai foreign key harus cocok dengan primary key yang ada di tabel induk, atau null bila partisipasi opsional. Pelanggaran: orphan record, mis. Sales dengan Customer_ID yang tidak ada di tabel Customer."
+  },
+  {
+    "id": "aks301-v2-tm05-03",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Konsep",
+    "front": "Atomic Attribute (1NF)",
+    "back": "Setiap sel berisi tepat satu nilai skalar; repeating group, atribut bernilai banyak, dan array dalam satu sel dilarang. Contoh pelanggaran: beberapa nomor telepon dalam satu field."
+  },
+  {
+    "id": "aks301-v2-tm05-04",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Perbandingan",
+    "front": "WHERE vs HAVING",
+    "back": "WHERE menyaring baris individual sebelum agregasi; HAVING menyaring kelompok setelah GROUP BY. Setiap kolom non-agregat di SELECT wajib ada di GROUP BY. HAVING SUM(Amount) > 200.00 tidak meloloskan total tepat 200.00."
+  },
+  {
+    "id": "aks301-v2-tm05-05",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Klasifikasi",
+    "front": "Modul SAP S/4HANA",
+    "back": "FI (Financial Accounting), CO (Controlling), MM (Materials Management), SD (Sales and Distribution), PP (Production Planning), HR/PT (Human Resources & Personnel Time Management). Goods receipt di MM memicu posting otomatis di FI."
+  },
+  {
+    "id": "aks301-v2-tm05-06",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems",
+    "category": "Perbandingan",
+    "front": "Cloud ERP (SaaS): Keunggulan & Risiko",
+    "back": "Keunggulan: CapEx menjadi OpEx langganan, deployment lebih cepat, upgrade dan patch keamanan otomatis oleh vendor. Risiko: internet dependency, data sovereignty & privacy (GDPR, OJK), vendor lock-in."
+  },
+  {
+    "id": "aks301-v2-tm06-01",
     "phase": "pra-uts",
     "tm": 6,
-    "topic": "Siklus Pengeluaran (Procure-to-Pay / P2P)",
-    "category": "Pengendalian",
-    "front": "Pencegahan Kickback & Pembayaran Fiktif",
-    "back": "Wajibkan daftar pemasok yang disetujui (Approved Vendor List), rotasi agen pembelian, dan lelang tender tertutup untuk pesanan material bernilai besar."
+    "topic": "Sales and Collections Business Process",
+    "category": "Prosedur",
+    "front": "Lima Aktivitas Order-to-Cash",
+    "back": "(1) Provide Quote, (2) Receive Sales Order, (3) Prepare Products (Pick & Pack), (4) Deliver Products & Issue Invoice, (5) Receive Payment & Deposit Cash. Quote dan sales order tidak dijurnal."
   },
   {
-    "id": "aks301-tm06-06",
+    "id": "aks301-v2-tm06-02",
     "phase": "pra-uts",
     "tm": 6,
-    "topic": "Siklus Pengeluaran (Procure-to-Pay / P2P)",
-    "category": "Konsep",
-    "front": "Voucher System Pengeluaran Kas",
-    "back": "Setiap pengeluaran kas wajib didukung oleh Paket Voucher lengkap yang telah diverifikasi dan dibubuhi cap \"LUNAS\" (PAID) saat cek diterbitkan."
-  },
-  {
-    "id": "aks301-tm07-01",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Siklus Konversi & Review Kasus UTS",
-    "category": "Dokumen",
-    "front": "Bill of Materials (BOM)",
-    "back": "Daftar rincian spesifikasi teknik, nomor komponen, dan kuantitas bahan baku yang dibutuhkan untuk menghasilkan satu unit produk jadi."
-  },
-  {
-    "id": "aks301-tm07-02",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Siklus Konversi & Review Kasus UTS",
-    "category": "Dokumen",
-    "front": "Lembar Rute Operasi (Route Sheet)",
-    "back": "Menentukan urutan mesin, stasiun kerja, perkakas, dan standar jam kerja tenaga kerja yang harus dilalui dalam proses produksi."
-  },
-  {
-    "id": "aks301-tm07-03",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Siklus Konversi & Review Kasus UTS",
-    "category": "Dokumen",
-    "front": "Perintah Produksi (Work Order / Production Order)",
-    "back": "Otorisasi resmi bagi lantai produksi untuk memulai proses pembuatan produk dengan kuantitas dan batas waktu tertentu."
-  },
-  {
-    "id": "aks301-tm07-04",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Siklus Konversi & Review Kasus UTS",
-    "category": "Konsep",
-    "front": "Integrasi Siklus Konversi dengan Akuntansi Biaya",
-    "back": "Pemindahan bahan baku dicatat memotong akun Persediaan Bahan dan mendebit Persediaan Barang Dalam Proses (WIP)."
-  },
-  {
-    "id": "aks301-tm07-05",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Siklus Konversi & Review Kasus UTS",
+    "topic": "Sales and Collections Business Process",
     "category": "Pengendalian",
-    "front": "Pengendalian Fisik Persediaan Manufaktur",
-    "back": "Pagar pembatas gudang, akses kartu RFID, pemantauan CCTV, dan rekonsiliasi berkala hasil stock opname fisik dengan saldo buku persediaan ERP."
+    "front": "Pemisahan Tugas Sales & Collections",
+    "back": "Sales Order Entry tidak menyetujui batas kredit; Credit Department tidak memulai penjualan atau menangani kas; Warehouse/Shipping tidak memperbarui catatan penagihan; Billing/AR tidak menangani kas; Cashier/Mailroom tidak memposting kredit ke akun piutang pelanggan."
   },
   {
-    "id": "aks301-tm07-06",
+    "id": "aks301-v2-tm06-03",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Konsep",
+    "front": "Titik Pengakuan Pendapatan",
+    "back": "Pendapatan dan COGS diakui saat barang diserahkan dan kewajiban kinerja terpenuhi: Dr Accounts Receivable, Cr Sales Revenue; Dr COGS, Cr Merchandise Inventory. Bukan saat sales order ditandatangani."
+  },
+  {
+    "id": "aks301-v2-tm06-04",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Mekanisme",
+    "front": "Sales Discounts (2/10, net 30)",
+    "back": "Dibayar dalam periode diskon: Dr Cash (neto), Dr Sales Discounts, Cr Accounts Receivable (bruto). Sunset Graphics: invoice $1,200.00 → potongan $24.00, kas $1,176.00. Sales Discounts adalah akun kontra-pendapatan."
+  },
+  {
+    "id": "aks301-v2-tm06-05",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Klasifikasi",
+    "front": "Enam Application Control",
+    "back": "Field Check (tipe data), Validity Check (ada di file master), Limit Check (batas satu sisi), Range Check (batas dua sisi), Reasonableness Check (logika antar-field), Completeness Check (field wajib, NOT NULL)."
+  },
+  {
+    "id": "aks301-v2-tm06-06",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Sales and Collections Business Process",
+    "category": "Konsep",
+    "front": "Accounts Receivable dalam REA",
+    "back": "A/R diturunkan secara dinamis: Σ Delivered Orders − Σ Applied Cash Receipts. Pesanan terkirim tanpa Cash_Receipts terkait adalah piutang terbuka; tidak ada saldo statis di tabel master pelanggan."
+  },
+  {
+    "id": "aks301-v2-tm07-01",
     "phase": "pra-uts",
     "tm": 7,
-    "topic": "Siklus Konversi & Review Kasus UTS",
+    "topic": "Purchases and Payments Business Process",
+    "category": "Prosedur",
+    "front": "Lima Aktivitas Procure-to-Pay",
+    "back": "(1) Identify Need & Request Prices, (2) Issue Purchase Order (PO), (3) Receive and Inspect Goods, (4) Verify Vendor Invoice (Three-Way Match), (5) Execute Cash Disbursement. Purchase order tidak dijurnal."
+  },
+  {
+    "id": "aks301-v2-tm07-02",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Pengendalian",
+    "front": "Blind Purchase Order",
+    "back": "Salinan PO yang dikirim ke receiving dock (bukan ke vendor) dengan kolom kuantitas dihitamkan, sehingga petugas receiving melakukan hitung fisik sungguhan dan short shipment tidak lolos tanpa tercatat."
+  },
+  {
+    "id": "aks301-v2-tm07-03",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Pengendalian",
+    "front": "Three-Way Match",
+    "back": "Accounts Payable mencocokkan Purchase Order (otorisasi pembelian), Receiving Report (penerimaan fisik), dan Vendor Invoice (jumlah yang ditagih) sebelum pembayaran. Selisih kuantitas, harga, atau termin → invoice ditahan (administrative hold)."
+  },
+  {
+    "id": "aks301-v2-tm07-04",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Pengendalian",
+    "front": "Mencegah Purchasing Kickbacks",
+    "back": "Kickback: buyer berkolusi menerima barang di bawah standar atau harga yang digelembungkan demi imbalan. Kontrol: pemilihan vendor dari Approved Vendor List, Three-Way Match atas harga PO, dan pemisahan Purchasing dari Receiving serta Accounts Payable."
+  },
+  {
+    "id": "aks301-v2-tm07-05",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
     "category": "Konsep",
-    "front": "Checklist Kesiapan UTS SIA",
-    "back": "Kuasai simbol BPMN 2.0, pemodelan kardinalitas REA, alur 3-way matching pada siklus P2P, serta identifikasi kelemahan pemisahan tugas (SoD)."
+    "front": "Economic Duality",
+    "back": "Setiap event ekonomi berpasangan dengan event timbal baliknya. Sales and Collections: give Inventory, get Cash. Purchases and Payments: give Cash, get Inventory."
+  },
+  {
+    "id": "aks301-v2-tm07-06",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Purchases and Payments Business Process",
+    "category": "Mekanisme",
+    "front": "Jurnal Procure-to-Pay",
+    "back": "Barang diterima: Dr Inventory, Cr Accounts Payable. Bayar dalam periode diskon: Dr Accounts Payable (bruto), Cr Cash (neto), Cr Inventory/Purchase Discounts. Baer Belly Bikinis: $5,000.00 → potongan $100.00, kas $4,900.00."
   },
   {
     "id": "aks301-tm08-01",
