@@ -53,7 +53,7 @@ export const SIA_TM5: Reading = {
     { kind: 'table', headers: ['Asosiasi', 'Multiplicity', 'Logika bisnis'], rows: [
       ['Customers places Sales', '(1..1) – (0..*)', 'Setiap penjualan harus milik pelanggan yang teridentifikasi; pelanggan dapat punya nol atau banyak penjualan.'],
       ['Employees records Sales', '(1..1) – (0..*)', 'Tepat satu karyawan bertanggung jawab atas setiap penjualan.'],
-      ['Sales contains Inventory', '(0..*) – (0..*)', 'Satu invoice memuat banyak item dan satu item muncul di banyak invoice (Many-to-Many).'],
+      ['Sales contains Inventory', '(0..\\*) – (0..\\*)', 'Satu invoice memuat banyak item dan satu item muncul di banyak invoice (Many-to-Many).'],
       ['Sales settled by Cash_Receipts', '(1..1) – (0..1)', 'Mengasumsikan pembayaran langsung di point of sale atau pelunasan invoice tunggal.'],
     ], caption: 'Richardson 4e, Exhibits 6.2–6.3.' },
     { kind: 'table', headers: ['Tabel', 'Kolom', 'Tipe', 'Kunci / constraint'], rows: [

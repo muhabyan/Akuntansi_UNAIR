@@ -176,7 +176,7 @@ export const SIA_TM4: Reading = {
     { kind: 'solution-reveal', title: '2. Letak foreign key: Department dan Employee', prompt: 'Setiap departemen memiliki 1 atau banyak karyawan (1..*). Setiap karyawan termasuk tepat 1 departemen (1..1). Di mana foreign key diletakkan?', blocks: [
       { kind: 'ol', items: [
         'Department berada di sisi "1" (1..1).',
-        'Employee berada di sisi "*" (1..*).',
+        'Employee berada di sisi "\\*" (1..\\*).',
         'Aturan: posting PK sisi "1" ke sisi "*".',
         'Kesimpulan: **Department_ID** menjadi foreign key di tabel **Employee**.',
       ] },

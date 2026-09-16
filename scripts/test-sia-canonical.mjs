@@ -71,6 +71,14 @@ const forbidden = [
   /automatic zero/i,
   /Context Diagram \(Level 0\)/,
 ];
+// Two unescaped single "*" in one string become <em>, e.g. "(0..*) – (0..*)" renders "(0..<em>) – (0..</em>)".
+// Only notation-like stars ("..*", '"*"', "*)") are checked, so deliberate *italics* and **bold** stay allowed.
+const loneStars = (text) => [...text.replace(/`[^`]*`/g, '').matchAll(/(?<![\\*])\*(?!\*)/g)];
+const hasNotationStarPair = (text) => {
+  const stars = loneStars(text);
+  const source = text.replace(/`[^`]*`/g, '');
+  return stars.length >= 2 && stars.some((m) => /[.\d"]/.test(source[m.index - 1] ?? '') || /[)"]/.test(source[m.index + 1] ?? ''));
+};
 // Inline code spans are literal in markdown, so "$" inside backticks is safe and must stay unescaped.
 const unescapedDollars = (text) => (text.replace(/`[^`]*`/g, '').match(/(?<!\\)\$/g) ?? []).length;
 const renderedStrings = (block) => {
@@ -101,6 +109,9 @@ for (const tm of tms) {
   const blocks = flatten(reading.blocks);
   assert.equal(blocks.filter((block) => block.kind === 'solution-reveal').length, 3);
   const rendered = [reading.title, reading.intro, ...reading.objectives, ...blocks.flatMap(renderedStrings)];
+  for (const value of rendered) {
+    assert.ok(!hasNotationStarPair(value), `TM${tm}: escape "*" in multiplicity/wildcard notation to avoid accidental <em>: ${value.slice(0, 80)}`);
+  }
   if (mathSafeTms.has(tm)) {
     for (const value of rendered) {
       assert.ok(unescapedDollars(value) < 2, `TM${tm}: escape "$" to avoid accidental inline math: ${value.slice(0, 80)}`);
