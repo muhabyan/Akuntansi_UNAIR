@@ -62,7 +62,7 @@ const required = {
     'Vendor Lock-In', 'Legacy terpisah', 'On-premise ERP', 'Cloud ERP (SaaS)', '3–7 tahun', 'GR/IR', '$15,000'],
 };
 // Strings rendered through remark-math must not contain two unescaped "$": they turn into inline math.
-const mathSafeTms = new Set([3, 4, 5]);
+const mathSafeTms = new Set([1, 2, 3, 4, 5]);
 // Leading ">", "#", or "1." in a rendered string becomes a blockquote, heading, or list.
 const markdownBlockSafeTms = new Set([3, 4, 5]);
 const forbidden = [
@@ -71,7 +71,8 @@ const forbidden = [
   /automatic zero/i,
   /Context Diagram \(Level 0\)/,
 ];
-const unescapedDollars = (text) => (text.match(/(?<!\\)\$/g) ?? []).length;
+// Inline code spans are literal in markdown, so "$" inside backticks is safe and must stay unescaped.
+const unescapedDollars = (text) => (text.replace(/`[^`]*`/g, '').match(/(?<!\\)\$/g) ?? []).length;
 const renderedStrings = (block) => {
   const values = [];
   for (const [key, value] of Object.entries(block)) {

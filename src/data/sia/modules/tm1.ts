@@ -54,7 +54,7 @@ export const SIA_TM1: Reading = {
     { kind: 'ol', items: ['Business need / event → tentukan keputusan yang perlu didukung.', 'Data capture melalui AIS → tangkap peristiwa relevan.', 'Information processing → olah data menjadi informasi.', 'Business decision → gunakan informasi.', 'Firm value impact → evaluasi manfaat dan biaya.'] },
     { kind: 'formula', text: '\\displaystyle V = B - C', note: 'V = Nilai Bersih Informasi; B = manfaat (pendapatan, penghematan persediaan, berkurangnya piutang macet); C = software, hardware, integrasi, pelatihan, pemeliharaan. Discretionary: V > 0 → ACCEPT; V ≤ 0 → REJECT. Sistem mandatory tetap wajib. PPT slide 16; Richardson 4e, pp. 8–9.' },
     { kind: 'example', title: 'PT Nusantara Retail — investasi RFID', blocks: [
-      { kind: 'p', text: 'Manfaat $150,000 dan biaya $40,000 untuk sistem discretionary.' },
+      { kind: 'p', text: 'Manfaat \\$150,000 dan biaya \\$40,000 untuk sistem discretionary.' },
       { kind: 'formula', text: '\\displaystyle V = 150{,}000 - 40{,}000 = 110{,}000', note: 'ACCEPT: nilai bersih $110,000 > 0.' },
     ] },
     { kind: 'example', title: 'Walmart: logistik pisang dan nilai informasi', blocks: [
@@ -100,7 +100,7 @@ export const SIA_TM1: Reading = {
       { kind: 'p', text: 'Barang berbiaya $6,500 dikirim ke pelanggan dengan syarat 2/10, n/30. BOL mengonfirmasi serah terima; ERP menerbitkan invoice dan jurnal dalam contoh ini.' },
       { kind: 'journal', caption: 'Pengakuan pendapatan dan piutang (USD)', lines: [{ account: 'Accounts Receivable', debit: '$10,000' }, { account: 'Sales Revenue', credit: '$10,000', isCredit: true }] },
       { kind: 'journal', caption: 'COGS dan pengurangan persediaan (USD)', lines: [{ account: 'Cost of Goods Sold', debit: '$6,500' }, { account: 'Merchandise Inventory', credit: '$6,500', isCredit: true }] },
-      { kind: 'p', text: 'Gross profit = $10,000 − $6,500 = $3,500. Kedua jurnal seimbang dan bersumber dari event shipping yang sama. Richardson 4e, pp. 12–14; Exhibit 1.9.' },
+      { kind: 'p', text: 'Gross profit = \\$10,000 − \\$6,500 = \\$3,500. Kedua jurnal seimbang dan bersumber dari event shipping yang sama. Richardson 4e, pp. 12–14; Exhibit 1.9.' },
     ] },
     { kind: 'table', headers: ['Sistem', 'Fungsi dan integrasi'], rows: [
       ['ERP — Enterprise Resource Planning', 'Satu database relasional lintas fungsi mengurangi silo. Sales order memperbarui kebutuhan stok, produksi, dan proyeksi kas.'],
@@ -147,10 +147,10 @@ export const SIA_TM1: Reading = {
     ], caption: 'Richardson 4e, pp. 15–16, Exhibit 1.9.' },
     { kind: 'p', text: 'Bukti empiris yang dibahas: Kobelsky et al. (2008) mengaitkan belanja TI dengan ROA/ROS periode berikutnya; Hendricks et al. (2007) membahas abnormal returns/profitabilitas ERP, working capital SCM, serta manfaat pendapatan CRM ketika terintegrasi. Integrasi proses dan penggunaan informasi menjembatani investasi dengan kinerja.' },
     { kind: 'h2', text: '6. Worked Practice' },
-    { kind: 'solution-reveal', title: '1. PT Jayakarta Distribution — keputusan RFID', prompt: 'Sistem barcode/RFID terintegrasi ERP bersifat discretionary. Horizon evaluasi satu tahun; penghematan $120,000/tahun; biaya hardware, integrasi, dan pelatihan $45,000. Hitung nilai bersih dan keputusan.', blocks: [
+    { kind: 'solution-reveal', title: '1. PT Jayakarta Distribution — keputusan RFID', prompt: 'Sistem barcode/RFID terintegrasi ERP bersifat discretionary. Horizon evaluasi satu tahun; penghematan \\$120,000/tahun; biaya hardware, integrasi, dan pelatihan \\$45,000. Hitung nilai bersih dan keputusan.', blocks: [
       { kind: 'table', headers: ['Langkah', 'Hasil'], rows: [['Manfaat B', '$120,000'], ['Biaya C', '$45,000'], ['V = B − C', '$75,000'], ['Keputusan', 'ACCEPT AND IMPLEMENT: V > 0.']] },
     ] },
-    { kind: 'solution-reveal', title: '2. Apex Industrial Equipment — proses dan jurnal', prompt: '5 pompa dijual kredit $25,000, syarat 2/10, n/30; biaya $16,000. Barang telah diambil, diverifikasi, dikemas, dan dikirim. Carrier mengonfirmasi BOL. Tentukan jurnal dan gross margin.', blocks: [
+    { kind: 'solution-reveal', title: '2. Apex Industrial Equipment — proses dan jurnal', prompt: '5 pompa dijual kredit \\$25,000, syarat 2/10, n/30; biaya \\$16,000. Barang telah diambil, diverifikasi, dikemas, dan dikirim. Carrier mengonfirmasi BOL. Tentukan jurnal dan gross margin.', blocks: [
       { kind: 'journal', caption: 'Billing module (USD)', lines: [{ account: 'Accounts Receivable', debit: '$25,000' }, { account: 'Sales Revenue', credit: '$25,000', isCredit: true }] },
       { kind: 'journal', caption: 'Inventory / cost module (USD)', lines: [{ account: 'Cost of Goods Sold', debit: '$16,000' }, { account: 'Merchandise Inventory', credit: '$16,000', isCredit: true }] },
       { kind: 'formula', text: '\\text{Gross profit}=25{,}000-16{,}000=9{,}000\\\\\\text{Gross margin}=9{,}000/25{,}000=36\\%', note: 'ERP mencegah billing tanpa referensi BOL elektronik.' },

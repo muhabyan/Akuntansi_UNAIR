@@ -18,7 +18,7 @@ export const SIA_TM2: Reading = {
       ['Big Data', 'Lingkungan data: volume besar, cepat, kompleks, dan sering tidak terstruktur sehingga melampaui kemampuan pemrosesan database konvensional.'],
       ['Data Analytics', 'Proses komputasional dan kognitif untuk memeriksa data, menghilangkan noise, mengorganisasi, mentransformasi, serta memodelkan data guna menjawab pertanyaan dan mendukung keputusan.'],
     ], caption: 'Richardson 4e, pp. 44, 86. Data perlu dihubungkan dengan pertanyaan, model, dan tindakan agar memberi nilai.' },
-    { kind: 'callout', variant: 'info', title: 'Konteks ekonomi dalam textbook', text: 'Estimasi McKinsey yang dikutip: nilai ekonomi global $9.5–$15.4 trillion. Survei CEO PwC yang dikutip: 80% menempatkan data mining/analysis sebagai teknologi strategis kedua terpenting; 82% menekankan kebutuhan keputusan berbasis data pada skala operasi. Angka ini adalah konteks sumber kuliah, bukan statistik real-time. Richardson 4e, p. 44.' },
+    { kind: 'callout', variant: 'info', title: 'Konteks ekonomi dalam textbook', text: 'Estimasi McKinsey yang dikutip: nilai ekonomi global \\$9.5–\\$15.4 trillion. Survei CEO PwC yang dikutip: 80% menempatkan data mining/analysis sebagai teknologi strategis kedua terpenting; 82% menekankan kebutuhan keputusan berbasis data pada skala operasi. Angka ini adalah konteks sumber kuliah, bukan statistik real-time. Richardson 4e, p. 44.' },
     { kind: 'table', headers: ['4V', 'Makna', 'Contoh / implikasi'], rows: [
       ['Volume', 'Besarnya data.', 'POS, RFID, clickstream, pencarian web, dan interaksi pelanggan.'],
       ['Variety', 'Keragaman format.', 'Structured, semi-structured, unstructured; sumber menyebut sekitar 80% data perusahaan tidak terstruktur.'],
@@ -104,7 +104,7 @@ export const SIA_TM2: Reading = {
       { kind: 'ol', items: ['Hitung Days Past Due = tanggal evaluasi − Due_Date (mekanika spreadsheet: `=$G$1 - Due_Date`).', 'PivotTable: Rows = Days Past Due; Values = Sum of Invoice Amount.', 'Kelompokkan 1–30, 31–60, 61–90, 91–120, 121–150, dan 151–180 hari.', 'Drill-down bucket 151–180: total $3,336.51. Umur lebih panjang meningkatkan risiko gagal bayar dan kebutuhan allowance.'] },
       { kind: 'table', headers: ['Contoh due date 07/25/2025', 'Hari'], rows: [['Juli: 31 − 25', '6'], ['Agustus', '31'], ['September', '30'], ['Oktober', '31'], ['November', '30'], ['Desember', '31'], ['Total / bucket', '159 hari → 151–180']] },
       { kind: 'journal', caption: 'Contoh penyesuaian allowance dalam materi (USD)', lines: [{ account: 'Bad Debt Expense (Beban Kerugian Piutang)', debit: '$4,500' }, { account: 'Allowance for Doubtful Accounts (Cadangan Kerugian Piutang)', credit: '$4,500', isCredit: true }] },
-      { kind: 'p', text: 'Jurnal menaikkan beban dan cadangan $4,500. Angka penyesuaian diberikan dalam contoh; persentase kerugian per bucket dan saldo awal allowance tidak disediakan sehingga tidak diturunkan dari total $56,381.41.' },
+      { kind: 'p', text: 'Jurnal menaikkan beban dan cadangan \\$4,500. Angka penyesuaian diberikan dalam contoh; persentase kerugian per bucket dan saldo awal allowance tidak disediakan sehingga tidak diturunkan dari total \\$56,381.41.' },
     ] },
     { kind: 'h3', text: 'Lab 2 — Diagnostic: Segregation of Duties Audit' },
     { kind: 'example', title: 'AttackID — Januari 2022', blocks: [
@@ -136,7 +136,7 @@ export const SIA_TM2: Reading = {
     { kind: 'formula', text: 'Q_{BE}=\\frac{F}{P-V}', note: 'Richardson 4e, pp. 80–85; Exhibits 2.42–2.54. Hasil bergantung pada parameter biaya/harga yang dimasukkan.' },
     { kind: 'example', title: 'Jing LCC — Product A', blocks: [
       { kind: 'table', headers: ['Bulan', 'Fixed cost', 'Price', 'Unit variable cost', 'Breakeven units', 'Sales revenue'], rows: [['Januari', '$1,600', '$7', '$3', '400', '$2,800'], ['Februari', '$1,500', '$7', '$3.10', '384.62', '—'], ['Desember', '$2,000', '$7', '$2.40', '434.78', '$3,043.48']] },
-      { kind: 'ol', items: ['Januari: contribution margin = $7 − $3 = $4/unit.', 'Q = $1,600 / $4 = 400 units.', 'Revenue = 400 × $7 = $2,800.', 'Cek NI = $2,800 − (400 × $3) − $1,600 = $0.'] },
+      { kind: 'ol', items: ['Januari: contribution margin = \\$7 − \\$3 = \\$4/unit.', 'Q = \\$1,600 / \\$4 = 400 units.', 'Revenue = 400 × \\$7 = \\$2,800.', 'Cek NI = \\$2,800 − (400 × \\$3) − \\$1,600 = \\$0.'] },
       { kind: 'p', text: 'Mekanika Goal Seek: Data → What-If Analysis → Goal Seek; Set Cell = Net Income; To Value = 0; By Changing Cell = Unit Sales. Website menunjukkan logika dan hasilnya, bukan menjalankan Excel. Angka pecahan Februari/Desember adalah solusi matematis model.' },
     ] },
     { kind: 'h3', text: 'Share the Story: tutup lingkaran keputusan' },
@@ -147,8 +147,8 @@ export const SIA_TM2: Reading = {
       { kind: 'table', headers: ['Faktor', 'Perhitungan', 'Skor'], rows: [['X₁', '1.2 × 0.250', '0.3000'], ['X₂', '1.4 × 0.100', '0.1400'], ['X₃', '3.3 × 0.050', '0.1650'], ['X₄', '0.6 × 0.500', '0.3000'], ['X₅', '1.0 × 1.100', '1.1000'], ['Total Z', 'Jumlah skor tertimbang', '2.0050']] },
       { kind: 'p', text: 'Gray Zone: kerentanan moderat. Tingkatkan scrutiny audit, perluas pengujian going concern, dan minta proyeksi arus kas manajemen. Skor bukan kepastian kebangkrutan.' },
     ] },
-    { kind: 'solution-reveal', title: '2. Breakeven — ulangi mekanika Januari', prompt: 'Product A: P = $7, V = $3, F = $1,600. Tentukan CM, unit minimum pada titik impas, revenue, dan parameter Goal Seek.', blocks: [
-      { kind: 'table', headers: ['Langkah', 'Perhitungan / hasil'], rows: [['CM', '$7 − $3 = $4/unit'], ['Q', '$1,600 / $4 = 400 units'], ['Revenue', '400 × $7 = $2,800'], ['NI', '$2,800 − $1,200 − $1,600 = $0'], ['Goal Seek', 'Net Income → 0 dengan mengubah Unit Sales.']] },
+    { kind: 'solution-reveal', title: '2. Breakeven — ulangi mekanika Januari', prompt: 'Product A: P = \\$7, V = \\$3, F = \\$1,600. Tentukan CM, unit minimum pada titik impas, revenue, dan parameter Goal Seek.', blocks: [
+      { kind: 'table', headers: ['Langkah', 'Perhitungan / hasil'], rows: [['CM', '\\$7 − \\$3 = \\$4/unit'], ['Q', '\\$1,600 / \\$4 = 400 units'], ['Revenue', '400 × \\$7 = \\$2,800'], ['NI', '\\$2,800 − \\$1,200 − \\$1,600 = \\$0'], ['Goal Seek', 'Net Income → 0 dengan mengubah Unit Sales.']] },
     ] },
     { kind: 'solution-reveal', title: '3. SoD — baca cross-tab dan tentukan perbaikan', prompt: 'Dari 52 jurnal bulanan, temuan terpilih: VR memasukkan 20 disetujui AC; MW memasukkan 10 disetujui DH; VR memasukkan 4 disetujui VR. Apa kegagalan kontrol dan tindak lanjutnya? Temuan terpilih ini bukan rincian seluruh 52 jurnal.', blocks: [
       { kind: 'p', text: 'Empat jurnal VR → VR melanggar SoD. Risiko: expense fiktif, penghapusan aset tanpa izin, atau manipulasi revenue.' },
