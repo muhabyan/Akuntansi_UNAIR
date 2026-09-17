@@ -1,4 +1,4 @@
-// Canonical content guard for AKK202 (AKM II) TM02–TM04, implemented from the verified content handoffs.
+// Canonical content guard for AKK202 (AKM II) TM02–TM07, implemented from the verified content handoffs.
 // Checks structure, render safety, balanced journals, and the key numbers of every worked case.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
@@ -192,7 +192,7 @@ const tm3 = checkReading(3, [
   'Cost allocation, not valuation', 'Accumulated Depletion', 'Interpretasi — akun kredit deplesi',
   'Interpretasi — metode eliminasi', 'Land is not depreciated because its utility usually does not diminish over time.',
   'TM1, bagian 11', 'ceiling', 'US GAAP', 'straddling', 'P10.2', 'BE10.10', 'E10.18', 'E10.27', 'E10.22', 'E10.28',
-  'IAS 37', 'IFRS 6', 'prospektif',
+  'IAS 37', 'IFRS 6', 'prospektif', 'BE10.2–BE10.4',
 ]);
 {
   const text = JSON.stringify(tm3);
@@ -210,6 +210,22 @@ const tm3 = checkReading(3, [
   const depreciation = (amount) => journalsOf(tm3).find((j) => j.lines.some((l) => l.account === 'Depreciation Expense' && money(l.debit) === amount));
   for (const amount of [7000, 12250, 14833]) assert.ok(depreciation(amount), `Charleston journal ${amount}`);
   for (const phrase of ['€19.250', '€21.190', '€14.833,33', '€74.166,67']) assert.ok(text.includes(phrase), `Charleston ${phrase}`);
+
+  // Lockard BE10.2–BE10.4 is the class quiz; Charleston P10.2 is practice.
+  const titles = flatten(tm3.blocks).filter((b) => b.kind === 'solution-reveal').map((b) => b.title);
+  assert.ok(titles.some((t) => t.startsWith('Kuis Kelas — Lockard SE') && t.includes('BE10.2–BE10.4')), 'Lockard labeled as class quiz');
+  assert.ok(titles.some((t) => t.startsWith('Latihan — Charleston, SA')) && !titles.some((t) => /Kuis Kelas — Charleston/.test(t)), 'Charleston not labeled as class quiz');
+  const lockard = flatten(tm3.blocks).find((b) => b.kind === 'solution-reveal' && b.title.includes('Lockard SE'));
+  const lockardBase = 80000 - 8000;
+  const lockardExpected = [
+    lockardBase / 8, lockardBase / 8 * 4 / 12,
+    lockardBase * 8 / 36, lockardBase * 8 / 36 * 9 / 12,
+    80000 * 2 / 8, 80000 * 2 / 8 * 3 / 12,
+  ];
+  assert.deepEqual(lockardExpected, [9000, 3000, 16000, 12000, 20000, 5000]);
+  const lockardJournals = journalsOf(lockard);
+  assert.deepEqual(lockardJournals.map((j) => lineAmount(j, 'Depreciation Expense', 'debit')), lockardExpected, 'Lockard journals in order');
+  lockardJournals.forEach((j) => assert.ok(j.lines.some((l) => l.account === 'Accumulated Depreciation—Machinery' && l.credit), `Lockard credit account ${j.caption}`));
 
   // Everly BE10.10 and Henrik E10.22.
   assert.equal(400000 + 100000 + 80000 - 160000, 420000);
@@ -366,4 +382,198 @@ const tm4 = checkReading(4, [
   }
 }
 
-console.log(`AKK202 canonical PASS: TM1 frozen, TM2–TM4 coverage, ${journals} balanced journals, ${formulas} valid formulas, key numbers.`);
+// ---------------------------------------------------------------- TM05
+const tm5 = checkReading(5, [
+  'P11.1', 'CA11.1', 'E11.4', 'E11.9', 'E11.12', 'E11.14', 'Illustration 11.13', 'Next Century Incorporated',
+  'Costs of successfully defending patent on laser scanner. Expense as legal fees. Such expenditures only maintain expected benefits.',
+  'Interpretasi — kapitalisasi dan amortisasi €45.000', 'catatan 17', 'Standards Comparison',
+]);
+{
+  const text = JSON.stringify(tm5);
+  assert.ok(!/defending patent\.\.\./.test(text), 'TM5 cites Illustration 11.13 item 13, not the spliced quote');
+  const solution = (title) => {
+    const block = flatten(tm5.blocks).find((b) => b.kind === 'solution-reveal' && b.title.includes(title));
+    assert.ok(block, `${title}: solution not found`);
+    return block;
+  };
+
+  // Reichenbach P11.1: the problem's debit list is reproduced and every figure traces to it.
+  const reichenbach = solution('Reichenbach Co.');
+  const debitList = reichenbach.blocks.find((b) => b.kind === 'table');
+  const debits = [48000, 24000, 16000, 84000, 75000, 278400, 12650, 160000];
+  assert.deepEqual(debitList.rows.slice(0, -1).map((row) => row[0]), ['7/1/24', '10/1/24', '12/31/24', '1/2/25', '3/1/25', '4/1/25', '6/1/25', '9/1/25']);
+  assert.deepEqual(debitList.rows.slice(0, -1).map((row) => money(row[2])), debits);
+  assert.ok(debitList.rows[7][1].includes('development costs of €45.000 incurred related to 1/2/25 patent, which has achieved economic viability'));
+  const balance = debits.reduce((sum, value) => sum + value, 0);
+  assert.equal(balance, 698050);
+  const interpretation = flatten(reichenbach.blocks).find((b) => b.kind === 'callout' && b.title.startsWith('Interpretasi'));
+  assert.ok(interpretation && interpretation.text.includes('€1.607'), 'P11.1 €45.000 treatment is a visible interpretation');
+  const correction = journalsOf(reichenbach)[0];
+  const franchise = 48000 / 96;
+  const rent = 24000 / 24;
+  const developmentAmortization = Math.round(45000 / (120 - 8) * 4);
+  assert.equal(developmentAmortization, 1607);
+  const expected = {
+    Franchise: 48000, 'Prepaid Rent': rent * 9, Patents: 84000 + 45000, Goodwill: 278400,
+    'Retained Earnings': franchise * 6 + rent * 3 + 16000, 'Rent Expense': rent * 12, 'Franchise Amortization Expense': franchise * 12,
+    'Patent Amortization Expense': 84000 / 10 + developmentAmortization, 'Legal Expense': 12650,
+    'Research and Development Expense': 75000 + (160000 - 45000),
+  };
+  for (const [account, amount] of Object.entries(expected)) assert.equal(lineAmount(correction, account, 'debit'), amount, `P11.1 ${account}`);
+  assert.equal(expected['Research and Development Expense'], 190000);
+  assert.equal(lineAmount(correction, 'Intangible Assets', 'credit'), balance);
+  assert.equal(lineAmount(correction, 'Accumulated Amortization—Patents', 'credit'), 10007);
+  assert.equal(correction.lines.reduce((sum, l) => sum + money(l.debit), 0), 717057);
+
+  // Terrell E11.12.
+  const goodwill = 380000 - (200000 + (175000 - 5000) + 30000 + (70000 + 50000) + 100000 - (50000 + 300000));
+  assert.equal(goodwill, 110000);
+  assert.equal(lineAmount(journalsOf(solution('Terrell Galleries'))[0], 'Goodwill', 'debit'), goodwill);
+
+  // Botticelli E11.14.
+  const loss = 4300000 - 3400000;
+  const amortization2026 = 3400000 / 10;
+  const ceiling = 4300000 - 4300000 / 10;
+  const recovery = Math.min(3500000, ceiling) - (3400000 - amortization2026);
+  assert.deepEqual([loss, amortization2026, recovery], [900000, 340000, 440000]);
+  const botticelli = journalsOf(solution('Botticelli Company'));
+  assert.equal(lineAmount(botticelli[0], 'Loss on Impairment', 'debit'), loss);
+  assert.equal(lineAmount(botticelli[1], 'Amortization Expense', 'debit'), amortization2026);
+  assert.equal(lineAmount(botticelli[2], 'Recovery of Impairment Loss', 'credit'), recovery);
+  assert.ok(botticelli.every((j) => j.lines.every((l) => !l.account.startsWith('Accumulated'))), 'Botticelli credits the copyright directly');
+
+  // Devon Harris E11.9.
+  const patent = 2500000 - 2500000 / 10 - (2500000 - 2500000 / 10) / 5;
+  const franchiseNet = 580000 - 580000 / 10;
+  assert.equal(patent + franchiseNet, 2322000);
+  const intangibles = solution('Devon Harris').blocks.find((b) => b.kind === 'table');
+  assert.deepEqual(intangibles.rows.map((row) => money(row[2])), [patent, franchiseNet, 2322000]);
+
+  // Palmiero E11.4 and Dogwood CA11.1.
+  assert.equal(1500000 - 1500000 / 10 * 2 - (1500000 - 1500000 / 10 * 2) / 4, 900000);
+  assert.ok(text.includes('\\$900.000') && text.includes('\\$35.000'));
+  const dogwood = journalsOf(solution('Dogwood Electronics'));
+  assert.deepEqual(dogwood.map((j) => money(j.lines[0].debit)), [10000, 23000 + 34000, 45000]);
+}
+
+// ---------------------------------------------------------------- TM06
+const tm6 = checkReading(6, [
+  'E12.1', 'E12.2', 'P12.1', 'P12.2', 'Purchase Discounts Lost', 'Discount on Notes Payable', 'Refundable Deposits',
+  'Interpretasi — PPN pembelian truk', 'Alternatif A', 'Alternatif B', 'Kieso p. 1066', 'pp. 1027–1028',
+  'more likely than not', 'tidak pernah diakui', 'Environmental Restoration Provision', 'Standards Comparison',
+]);
+{
+  const text = JSON.stringify(tm6);
+  const solution = (title) => {
+    const block = flatten(tm6.blocks).find((b) => b.kind === 'solution-reveal' && b.title.includes(title));
+    assert.ok(block, `${title}: solution not found`);
+    return block;
+  };
+  assert.ok(!/\d\s?%\s?[-–]\s?50|≥\s?90|90\s?%|75\s?%|80\s?%|<\s?5\s?%/.test(text), 'TM6 contingency matrix keeps only the >50% threshold');
+  const contingency = flatten(tm6.blocks).find((b) => b.kind === 'table' && b.headers.join('|') === 'Kemungkinan|Sisi kewajiban|Sisi aset');
+  assert.ok(contingency, 'TM6 contingency matrix');
+  assert.deepEqual(contingency.rows.map((row) => row[0].split(' (')[0]), ['Virtually certain', 'Probable', 'Possible', 'Remote']);
+  // A contingent liability is never recognized; only a provision is. "Virtually certain" governs contingent assets.
+  const [certain, probable, possible] = contingency.rows;
+  assert.ok(/Liabilitas kontinjensi/.test(possible[1]) && /tidak diakui/.test(possible[1]), 'possible: contingent liability disclosed, not recognized');
+  for (const row of [certain, probable]) assert.ok(/provisi/.test(row[1]) && !/kontinjensi/i.test(row[1]), `${row[0]}: liability side is a provision`);
+  assert.ok(/\*\*diakui\*\*/.test(certain[2]) && /tidak diakui/.test(probable[2]), 'contingent asset recognized only when virtually certain');
+
+  // Darby E12.2.
+  const darby = journalsOf(solution('Darby Corporation'));
+  const discount = 81000 - 75000;
+  assert.equal(lineAmount(darby.find((j) => j.lines.some((l) => l.account === 'Discount on Notes Payable' && l.debit)), 'Discount on Notes Payable', 'debit'), discount);
+  const amortization = discount * 3 / 12;
+  assert.equal(lineAmount(darby.find((j) => j.lines.some((l) => l.account === 'Discount on Notes Payable' && l.credit)), 'Interest Expense', 'debit'), amortization);
+  assert.equal(lineAmount(darby.find((j) => j.lines.some((l) => l.account === 'Interest Payable')), 'Interest Payable', 'credit'), 50000 * 0.08 * 3 / 12);
+  assert.equal(81000 - (discount - amortization), 76500);
+  assert.ok(text.includes('\\$76.500'), 'Darby carrying amount 76.500');
+
+  // Edwardson P12.1.
+  const edwardson = journalsOf(solution('Edwardson AG'));
+  assert.equal(lineAmount(edwardson.find((j) => j.lines.some((l) => l.account === 'Purchases')), 'Purchases', 'debit'), 70000 * 0.98);
+  assert.equal(lineAmount(edwardson.find((j) => j.lines.some((l) => l.account === 'Purchase Discounts Lost')), 'Purchase Discounts Lost', 'debit'), 1400);
+  assert.equal(lineAmount(edwardson.find((j) => j.lines.some((l) => l.account === 'Notes Payable')), 'Notes Payable', 'credit'), 50000 - 4000);
+  assert.equal(Math.round((50000 - 4000) * 0.12 * 9 / 12), 4140);
+  assert.equal(lineAmount(edwardson.find((j) => j.lines.some((l) => l.account === 'Interest Payable')), 'Interest Expense', 'debit'), 4140);
+
+  // Schultz P12.2.
+  const schultz = journalsOf(solution('Schultz Department Store'));
+  const sales = schultz.find((j) => j.lines.some((l) => l.account === 'Sales Revenue'));
+  assert.equal(Math.round(798000 / 1.05), 760000);
+  assert.equal(lineAmount(sales, 'Sales Revenue', 'credit'), 760000);
+  assert.equal(lineAmount(sales, 'VAT Taxes Payable', 'credit'), 798000 - 760000);
+  const trucks = schultz.filter((j) => j.lines.some((l) => l.account === 'Equipment (Delivery Trucks)'));
+  assert.equal(trucks.length, 2, 'both truck alternatives');
+  const [truckA, truckB] = trucks;
+  assert.ok(truckA.caption.startsWith('(3) Alternatif A') && truckB.caption.startsWith('(3) Alternatif B'));
+  assert.equal(lineAmount(truckA, 'Equipment (Delivery Trucks)', 'debit'), Math.round(120000 * 1.05));
+  assert.equal(truckA.lines.length, 2, 'Alternatif A capitalizes VAT');
+  assert.equal(lineAmount(truckB, 'Equipment (Delivery Trucks)', 'debit'), 120000);
+  assert.equal(lineAmount(truckB, 'VAT Taxes Recoverable', 'debit'), 120000 * 0.05);
+  assert.equal(lineAmount(truckB, 'Cash', 'credit'), 126000);
+  const restoration = schultz.find((j) => j.lines.some((l) => l.account === 'Environmental Restoration Provision'));
+  assert.equal(lineAmount(restoration, 'Land Improvements (Parking Lot)', 'debit'), 84000);
+  assert.equal(lineAmount(restoration, 'Environmental Restoration Provision', 'credit'), 84000);
+
+  // E12.1 classifies all sixteen items.
+  const classification = solution('E12.1').blocks.find((b) => b.kind === 'table');
+  assert.deepEqual(classification.rows.map((row) => row[0]), 'abcdefghijklmnop'.split(''));
+}
+
+// ---------------------------------------------------------------- TM07
+const tm7 = checkReading(7, [
+  'E13.4', 'E13.5', 'E13.6', 'Foreman Cleaners', 'Spencer plc', 'RPP AKM II', 'pertemuan 9–10', 'pertemuan 7',
+  'Kieso p. 1171', 'faktor tabel nilai kini 5 desimal', 'menyerap selisih pembulatan', 'IFRIC 19', 'Standards Comparison',
+]);
+{
+  const solution = (title) => {
+    const block = flatten(tm7.blocks).find((b) => b.kind === 'solution-reveal' && b.title.includes(title));
+    assert.ok(block, `${title}: solution not found`);
+    return block;
+  };
+  const round = (value) => Math.round(value);
+
+  // Foreman Cleaners E13.5 (E13.4 data): IFRS net entries only in the worked practice.
+  const cash = round(800000 * 0.8495);
+  const july = round(cash * 0.06);
+  const december = round((cash + july - 40000) * 0.06);
+  assert.deepEqual([cash, july, december], [679600, 40776, 40823]);
+  const foreman = journalsOf(solution('Foreman Cleaners'));
+  assert.equal(foreman.length, 3);
+  assert.ok(foreman.every((j) => j.lines.every((l) => l.account !== 'Discount on Bonds Payable')), 'worked practice uses IFRS net entries');
+  assert.equal(lineAmount(foreman[0], 'Cash', 'debit'), cash);
+  assert.equal(lineAmount(foreman[0], 'Bonds Payable', 'credit'), cash);
+  assert.equal(lineAmount(foreman[1], 'Interest Expense', 'debit'), july);
+  assert.equal(lineAmount(foreman[1], 'Bonds Payable', 'credit'), july - 40000);
+  assert.equal(lineAmount(foreman[2], 'Interest Expense', 'debit'), december);
+  assert.equal(lineAmount(foreman[2], 'Interest Payable', 'credit'), 40000);
+  assert.equal(lineAmount(foreman[2], 'Bonds Payable', 'credit'), december - 40000);
+  const comparison = flatten(tm7.blocks).find((b) => b.kind === 'table' && b.headers[2] === 'US GAAP: akun diskonto terpisah');
+  assert.ok(comparison && comparison.caption.includes('Kieso p. 1171'), 'US GAAP comparison note');
+  assert.ok(comparison.rows[0][2].includes('€120.400') && comparison.rows[0][2].includes('€800.000'));
+
+  // Spencer plc E13.6: 5-decimal table factors, schedule rows, final-year plug.
+  assert.equal(round(3000000 * 0.56743 + 300000 * 3.60478), 2783724);
+  const expected = [['1/1/2025', null, null, null, 2783724]];
+  let carrying = 2783724;
+  for (let year = 2026; year <= 2030; year++) {
+    const amortization = year === 2030 ? 3000000 - carrying : round(carrying * 0.12) - 300000;
+    carrying += amortization;
+    expected.push([`1/1/${year}`, 300000, 300000 + amortization, amortization, carrying]);
+  }
+  assert.equal(carrying, 3000000);
+  const schedule = solution('Spencer plc').blocks.find((b) => b.kind === 'table');
+  const cells = (row) => row.map((cell, i) => (i === 0 ? cell : cell === '—' ? null : money(cell)));
+  assert.deepEqual(schedule.rows.slice(0, -1).map(cells), expected, 'Spencer schedule rows');
+  const totalInterest = expected.slice(1).reduce((sum, row) => sum + row[2], 0);
+  assert.equal(totalInterest, 1716276);
+  assert.deepEqual(cells(schedule.rows.at(-1)), ['Total', 1500000, totalInterest, 216276, null]);
+  const spencer = journalsOf(solution('Spencer plc'));
+  const accrual = spencer.find((j) => j.lines.some((l) => l.account === 'Interest Expense'));
+  assert.equal(lineAmount(accrual, 'Interest Expense', 'debit'), expected[1][2]);
+  assert.equal(lineAmount(accrual, 'Bonds Payable', 'credit'), expected[1][3]);
+  assert.ok(spencer.some((j) => j.lines.some((l) => l.account === 'Bonds Payable' && l.debit === '£3.000.000')), 'principal repaid at maturity');
+}
+
+console.log(`AKK202 canonical PASS: TM1 frozen, TM2–TM7 coverage, ${journals} balanced journals, ${formulas} valid formulas, key numbers.`);

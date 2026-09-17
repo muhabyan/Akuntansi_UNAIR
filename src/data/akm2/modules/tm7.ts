@@ -1,187 +1,315 @@
-import type { Reading } from '../../../types';
-import {
-  CASE_WARRANTY_PROVISION,
-  CASE_LITIGATION_ONEROUS_CONTRACT } from '../akm2PracticeCases';
+import type { ContentBlock, Reading } from '../../../types';
 
-const SVG_PROVISION_DECISION = `
-<svg class="course-diagram-svg" viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="230" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#f59e0b" font-size="13" font-weight="700" text-anchor="middle">POHON KEPUTUSAN PENGAKUAN PROVISI &amp; KONTINJENSI (PSAK 57)</text>
+const FOREMAN_BOND_DISCOUNT_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Soal Dosen — Foreman Cleaners: Obligasi Diskonto Semesteran (E13.5 dengan data E13.4, Kieso p. 1150)',
+  prompt: 'Data E13.4: Foreman Cleaners menerbitkan obligasi **€800.000**, bunga kupon 10% per tahun dibayar setiap **1 Juli dan 1 Januari**, jangka waktu 20 tahun, tertanggal **1 Januari 2025**, pada harga **84,95** untuk menghasilkan yield 12%. E13.5: dengan metode bunga efektif, catat (a) penerbitan 1 Januari 2025, (b) pembayaran bunga dan amortisasi 1 Juli 2025, dan (c) akrual bunga dan amortisasi 31 Desember 2025.',
+  blocks: [
+    {
+      kind: 'table',
+      headers: ['Tanggal', 'Kas bunga (5%)', 'Beban bunga (6%)', 'Amortisasi diskonto', 'Nilai tercatat'],
+      rows: [
+        ['1 Januari 2025', '—', '—', '—', '€679.600'],
+        ['1 Juli 2025', '€40.000', '€679.600 × 6% = €40.776', '€776', '€680.376'],
+        ['31 Desember 2025', '€40.000', '€680.376 × 6% = €40.822,56 ≈ €40.823', '€823', '€681.199']
+      ],
+      caption: 'Harga = 0,8495 × €800.000 = €679.600; diskonto awal €120.400. Kupon semesteran = €800.000 × 10% ÷ 2 = €40.000; tarif efektif semesteran = 12% ÷ 2 = 6%.'
+    },
+    {
+      kind: 'journal',
+      caption: '(a) 1 Januari 2025 — penerbitan pada 84,95',
+      lines: [
+        { account: 'Cash', debit: '€679.600' },
+        { account: 'Bonds Payable', credit: '€679.600', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(b) 1 Juli 2025 — pembayaran bunga dan amortisasi diskonto',
+      lines: [
+        { account: 'Interest Expense', debit: '€40.776' },
+        { account: 'Bonds Payable', credit: '€776', isCredit: true },
+        { account: 'Cash', credit: '€40.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(c) 31 Desember 2025 — akrual bunga (dibayar 1 Januari 2026) dan amortisasi diskonto',
+      lines: [
+        { account: 'Interest Expense', debit: '€40.823' },
+        { account: 'Interest Payable', credit: '€40.000', isCredit: true },
+        { account: 'Bonds Payable', credit: '€823', isCredit: true }
+      ]
+    }
+  ]
+};
 
-  <!-- Step 1 -->
-  <rect class="svg-card" x="30" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="svg-text" x="120" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Kewajiban Kini?</text>
-  <text class="svg-muted" x="120" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Hukum / Konstruktif)</text>
-
-  <!-- Step 2 -->
-  <rect class="svg-card" x="250" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text class="svg-text" x="340" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Arus Keluar Probable?</text>
-  <text class="svg-muted" x="340" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Kemungkinan &gt; 50%)</text>
-
-  <!-- Step 3 -->
-  <rect class="svg-card" x="470" y="55" width="180" height="40" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text class="svg-text" x="560" y="75" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Estimasi Andal?</text>
-  <text class="svg-muted" x="560" y="88" fill="#94a3b8" font-size="9" text-anchor="middle">(Reliable Estimate)</text>
-
-  <!-- Outcome 1: PROVISION -->
-  <rect class="svg-card svg-badge-green" x="470" y="130" width="180" height="90" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
-  <text class="text-accent-green" x="560" y="155" fill="#34d399" font-size="12" font-weight="800" text-anchor="middle">AKUI PROVISI (NERACA)</text>
-  <text class="svg-text text-accent-green" x="560" y="175" fill="#ecfdf5" font-size="9.5" text-anchor="middle">• Jurnal Beban vs Provisi</text>
-  <text class="svg-text text-accent-green" x="560" y="195" fill="#ecfdf5" font-size="9.5" text-anchor="middle">• Ungkapkan rincian di CALK</text>
-
-  <!-- Outcome 2: CONTINGENT LIABILITY -->
-  <rect class="svg-card svg-badge-amber" x="250" y="130" width="180" height="90" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
-  <text class="text-accent-amber" x="340" y="155" fill="#fbbf24" font-size="11.5" font-weight="800" text-anchor="middle">LIABILITAS KONTINJENSI</text>
-  <text class="svg-text text-accent-amber" x="340" y="175" fill="#fef3c7" font-size="9.5" text-anchor="middle">• HANYA Ungkap di CALK</text>
-  <text class="svg-text text-accent-amber" x="340" y="195" fill="#fef3c7" font-size="9.5" text-anchor="middle">• TIDAK Dijurnal di Neraca</text>
-
-  <!-- Outcome 3: REMOTE -->
-  <rect class="svg-card" x="30" y="130" width="180" height="90" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
-  <text class="svg-muted" x="120" y="155" fill="#94a3b8" font-size="11.5" font-weight="800" text-anchor="middle">KEMUNGKINAN REMOTE</text>
-  <text class="svg-text" x="120" y="175" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• Kemungkinan Kecil (&lt; 5%)</text>
-  <text class="svg-text" x="120" y="195" fill="#cbd5e1" font-size="9.5" text-anchor="middle">• TIDAK Perlu Diungkap</text>
-</svg>`;
+const SPENCER_AMORTIZATION_SCHEDULE_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Soal Dosen — Spencer plc: Tarif Efektif dan Skedul Amortisasi (E13.6, Kieso p. 1150)',
+  prompt: 'Spencer plc menjual obligasi 10% bernilai jatuh tempo **£3.000.000** seharga **£2.783.724**. Obligasi tertanggal **1 Januari 2025**, jatuh tempo **1 Januari 2030**, bunga dibayar tahunan setiap 1 Januari. Susun skedul beban bunga dan amortisasi diskonto dengan metode bunga efektif (petunjuk: tarif efektif harus dihitung).',
+  blocks: [
+    { kind: 'h3', text: 'Langkah 1 — tarif efektif' },
+    {
+      kind: 'formula',
+      text: '\\text{£2.783.724}=\\text{£3.000.000}\\times(1+i)^{-5}+\\text{£300.000}\\times\\frac{1-(1+i)^{-5}}{i}'
+    },
+    {
+      kind: 'formula',
+      text: 'i=12\\%:\\quad\\text{£3.000.000}\\times 0{,}56743+\\text{£300.000}\\times 3{,}60478=\\text{£1.702.290}+\\text{£1.081.434}=\\text{£2.783.724}',
+      note: 'Harga di bawah nominal berarti tarif efektif di atas 10%. Dengan faktor tabel nilai kini 5 desimal seperti Kieso, 12% menghasilkan tepat harga jual.'
+    },
+    { kind: 'h3', text: 'Langkah 2 — skedul amortisasi' },
+    {
+      kind: 'table',
+      headers: ['Tanggal', 'Kas dibayar (10%)', 'Beban bunga (12%)', 'Amortisasi diskonto', 'Nilai tercatat'],
+      rows: [
+        ['1/1/2025', '—', '—', '—', '£2.783.724'],
+        ['1/1/2026', '£300.000', '£334.047', '£34.047', '£2.817.771'],
+        ['1/1/2027', '£300.000', '£338.133', '£38.133', '£2.855.904'],
+        ['1/1/2028', '£300.000', '£342.708', '£42.708', '£2.898.612'],
+        ['1/1/2029', '£300.000', '£347.833', '£47.833', '£2.946.445'],
+        ['1/1/2030', '£300.000', '£353.555', '£53.555', '£3.000.000'],
+        ['Total', '£1.500.000', '£1.716.276', '£216.276', '—']
+      ],
+      caption: 'Beban bunga = nilai tercatat awal × 12%, dibulatkan ke pound terdekat (2025: £2.783.724 × 12% = £334.046,88 ≈ £334.047).'
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Pembulatan tahun terakhir',
+      text: 'Amortisasi tahun terakhir (£3.000.000 − £2.946.445 = £53.555) menyerap selisih pembulatan, sehingga beban bunga 2029 menjadi £353.555 dan nilai tercatat tepat £3.000.000 saat jatuh tempo (Kieso p. 1113).'
+    },
+    { kind: 'h3', text: 'Langkah 3 — jurnal terkait' },
+    {
+      kind: 'journal',
+      caption: '1 Januari 2025 — penerbitan',
+      lines: [
+        { account: 'Cash', debit: '£2.783.724' },
+        { account: 'Bonds Payable', credit: '£2.783.724', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '31 Desember 2025 — akrual bunga tahun pertama dan amortisasi diskonto',
+      lines: [
+        { account: 'Interest Expense', debit: '£334.047' },
+        { account: 'Interest Payable', credit: '£300.000', isCredit: true },
+        { account: 'Bonds Payable', credit: '£34.047', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '1 Januari 2026 — pembayaran bunga',
+      lines: [
+        { account: 'Interest Payable', debit: '£300.000' },
+        { account: 'Cash', credit: '£300.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '1 Januari 2030 — pelunasan pokok saat jatuh tempo',
+      lines: [
+        { account: 'Bonds Payable', debit: '£3.000.000' },
+        { account: 'Cash', credit: '£3.000.000', isCredit: true }
+      ]
+    }
+  ]
+};
 
 export const TM7_READING: Reading = {
   tm: 7,
-  title: 'Provisi, Liabilitas Kontinjensi, Aset Kontinjensi, dan Garansi Produk',
-  ref: 'Kieso IFRS 5e Ch. 13 | PSAK 57',
-  intro: 'TM 7 mengupas 3 kriteria mutlak pengakuan Provisi (PSAK 57), akuntansi garansi produk (Metode Beban Jaminan vs Metode Pendapatan Jaminan Terpisah), program loyalitas kupon/premi, provisi kontrak memberatkan (Onerous Contracts), serta batas ketat pengungkapan kontinjensi.',
+  title: 'Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar',
+  ref: 'Kieso IFRS 5e Ch. 13 (pp. 1100–1170) | IFRS 9, IAS 1, IFRIC 19',
+  intro: 'TM7 membahas Kieso Bab 13: karakteristik dan jenis obligasi, penilaian dengan nilai kini, metode bunga efektif, akrual akhir tahun, penerbitan di antara tanggal bunga dan biaya penerbitan, wesel bayar jangka panjang, penghentian utang, opsi nilai wajar, serta penyajian dan analisis solvabilitas. Soal dosen E13.5 (dengan data E13.4) dan E13.6 dibahas langkah demi langkah.',
   objectives: [
-    'Menerapkan 3 kriteria pengakuan Provisi menurut PSAK 57 (Kewajiban Kini, Arus Keluar Probable, Estimasi Andal).',
-    'Membedakan perlakuan akuntansi Garansi Jaminan Kualitas (Assurance-Type Warranty) vs Garansi Jasa Tambahan (Service-Type Warranty).',
-    'Menghitung dan menjurnal Provisi Premi dan Poin Hadiah Pelanggan.',
-    'Memahami perlakuan Kontrak yang Memberatkan (Onerous Contracts) dan Provisi Restrukturisasi Perusahaan.',
-    'Membedakan penyajian Liabilitas Kontinjensi (CALK) vs Aset Kontinjensi (hanya diungkap jika virtually certain/probable).'
+    'Menjelaskan perjanjian obligasi, jenis-jenis obligasi, dan hubungan tarif kupon dengan tarif efektif.',
+    'Menghitung harga obligasi dari nilai kini pokok dan anuitas kupon, serta menurunkan tarif efektif dari harga.',
+    'Menyusun skedul amortisasi diskonto atau premi dengan metode bunga efektif dan mencatat jurnalnya secara neto di Bonds Payable.',
+    'Mencatat akrual bunga akhir tahun, penerbitan di antara tanggal bunga, biaya penerbitan, dan wesel bayar jangka panjang.',
+    'Menghitung gain atau loss penghentian utang dan menilai penyajian serta rasio solvabilitas.'
   ],
   blocks: [
-    {
-      kind: 'figure',
-      title: 'Pohon Keputusan Pengakuan Provisi & Kontinjensi Sesuai PSAK 57',
-      svg: SVG_PROVISION_DECISION,
-      caption: 'Gambar 7.1: Alur penentuan apakah suatu kewajiban dicatat di neraca, diungkap di CALK, atau diabaikan.'
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat TM 7'
-    },
+    { kind: 'h2', text: '1. Orientation / Quick Map' },
     {
       kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
+      headers: ['Tahap', 'Pertanyaan ujian', 'Output'],
       rows: [
-        ['1', 'Uji 3 Kriteria PSAK 57', 'Apakah ada kewajiban kini, kemungkinan > 50%, dan dapat diukur andal?', 'Memutuskan pencatatan sebagai Provisi (neraca) vs Kontinjensi (CALK).'],
-        ['2', 'Garansi Kualitas vs Jasa', 'Apakah garansi melekat pada produk (assurance) atau dibeli terpisah (service)?', 'Mendebit Beban Garansi vs menangguhkan Pendapatan Garansi Belum Dihasilkan.'],
-        ['3', 'Premi & Poin Loyalitas', 'Berapa estimasi persentase kupon yang akan ditukarkan pelanggan di masa depan?', 'Mencatat Provisi Hadiah dan Liabilitas Poin Hadiah.'],
-        ['4', 'Onerous Contracts', 'Apakah biaya tak terhindarkan untuk memenuhi kontrak melebihi manfaat ekonominya?', 'Mengakui provisi kontrak memberatkan sebesar nilai terendah penalti vs rugi kontrak.'],
-        ['5', 'Aset Kontinjensi', 'Apakah klaim laba masa depan berstatus virtually certain atau probable?', 'Menerapkan prinsip kehati-hatian: dilarang mengakui aset kontinjensi di neraca.']
+        ['Karakteristik', 'Apa isi perjanjian obligasi dan jenis obligasinya?', 'Klasifikasi obligasi'],
+        ['Penilaian', 'Berapa nilai kini pokok dan kupon pada tarif efektif?', 'Harga penerbitan: pari, diskonto, atau premi'],
+        ['Metode bunga efektif', 'Berapa beban bunga, kas kupon, dan amortisasi per periode?', 'Skedul amortisasi dan jurnal'],
+        ['Situasi khusus', 'Akhir tahun di antara tanggal bunga? Biaya penerbitan?', 'Jurnal akrual dan nilai tercatat awal'],
+        ['Wesel jangka panjang', 'Apakah wesel berbunga realistis?', 'Nilai kini dan tarif imputasi'],
+        ['Penghentian', 'Nilai tercatat bersih dibanding harga penebusan?', 'Gain atau loss di laba rugi'],
+        ['Penyajian', 'Bagian mana yang jatuh tempo dalam 12 bulan?', 'Pengungkapan dan rasio solvabilitas']
       ],
-      caption: 'Tabel 7.0: Roadmap belajar provisi, kontinjensi, dan garansi.'
+      caption: 'Alur TM7: obligasi → penilaian → bunga efektif → situasi khusus → wesel → penghentian → penyajian.'
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi TM 7'
+      kind: 'callout',
+      variant: 'info',
+      title: 'Penempatan topik dalam RPP',
+      text: 'RPP AKM II mencantumkan liabilitas jangka panjang pada pertemuan 9–10 dengan peta bab edisi lama ("KW ch 14"). Dosen menugaskan topik ini (Kieso IFRS 5e Bab 13, soal E13.5 dan E13.6) untuk pertemuan 7.'
     },
-    {
-      kind: 'formula',
-      text: 'Beban Garansi Kualitas = \\text{Total Penjualan Unit Periode Berjalan} \\times \\text{Estimasi % Biaya Perbaikan Garansi}',
-      note: 'Diakui pada periode penjualan (prinsip penandingan matching principle). Saat klaim servis terjadi, mendebit Provisi Garansi dan mengkredit Kas/Persediaan Suku Cadang.'
-    },
-    {
-      kind: 'formula',
-      text: 'Nilai Provisi Terbaik (Best Estimate) = \\begin{cases} \\text{Expected Value (Probabilitas Tertimbang)}, & \\text{Populasi besar (Garansi/Premi)} \\ \\text{Titik Paling Probable / Titik Tengah Rentang}, & \\text{Kewajiban tunggal (Gugatan hukum)} \\end{cases}',
-      note: 'Jika terdapat rentang nilai yang sama-sama mungkin terjadi, ambil TITIK TENGAH (Midpoint) rentang tersebut.'
-    },
-    {
-      kind: 'example',
-      title: 'Contoh Mini Numerik: Akuntansi Garansi Laptop PT Zyrex Indonesia Tbk',
-      blocks: [
-        {
-          kind: 'p',
-          text: 'PT Zyrex menjual 1.000 unit laptop selama tahun 2026 seharga Rp 8.000.000/unit (Total Penjualan: Rp 8.000.000.000). Setiap laptop bergaransi perbaikan cacat pabrik 1 tahun (Assurance-Type). Manajemen mengestimasi biaya garansi adalah 4% dari total penjualan. Sepanjang tahun 2026, biaya klaim suku cadang dan upah teknisi aktual yang dikeluarkan adalah Rp 190.000.000.'
-        },
-        {
-          kind: `formula`,
-          text: `Estimasi Total Beban Garansi 2026 = 4% × 8.000.000.000 = Rp 320.000.000
-Klaim Garansi Aktual Terjadi = Rp 190.000.000
-Saldo Akhir Provisi Garansi di Neraca per 31 Des 2026 = 320.000.000 - 190.000.000 = Rp 130.000.000`
-        },
-        {
-          kind: 'callout',
-          variant: 'key',
-          title: `Jurnal Akuntansi PT Zyrex`,
-          text: `1. Pengakuan Beban Garansi saat Penjualan:
-Debit: Beban Garansi Rp 320.000.000
-Kredit: Provisi Garansi (Liabilitas) Rp 320.000.000
 
-2. Realisasi Klaim Servis Aktual:
-Debit: Provisi Garansi Rp 190.000.000
-Kredit: Persediaan Suku Cadang & Kas Rp 190.000.000`
-        }
-      ]
-    },
+    { kind: 'h2', text: '2. Nature of Non-Current Liabilities & Bond Types' },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Aktif: Evaluasi Kasus Gugatan Hukum Lingkungan Hidup',
-      prompt: 'PT Kimia Sejahtera digugat oleh masyarakat sekitar pabrik atas dugaan pencemaran limbah sebesar Rp 2.000.000.000. Penasihat hukum independen menyatakan bahwa kemungkinan kalah di pengadilan adalah 70% (probable), dan estimasi ganti rugi yang kemungkinan besar diputuskan hakim berada pada rentang Rp 800.000.000 s.d Rp 1.400.000.000 tanpa ada angka tunggal yang paling diunggulkan. Bagaimana perlakuan akuntansinya?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Status Kewajiban**: Wajib diakui sebagai **PROVISI DI NERACA** (karena memenuhi 3 syarat: ada peristiwa masa lalu pencemaran, kemungkinan keluar kas 70% > 50%, dan ada rentang estimasi andal).',
-            `**Penentuan Angka Provisi**: Karena semua titik dalam rentang sama kemungkinannya, ambil **TITIK TENGAH (Midpoint)**: (800 jt + 1.400 jt) / 2 = **Rp 1.100.000.000**.`,
-            `**Jurnal Akuntansi per 31 Desember**:
-Debit: Beban Kerugian Gugatan Hukum (Laba Rugi) Rp 1.100.000.000
-Kredit: Provisi Gugatan Hukum (Liabilitas) Rp 1.100.000.000`,
-            '**CALK**: Mengungkapkan rincian gugatan, dasar estimasi rentang, dan potensi liabilitas kontinjensi sisa sebesar Rp 300 jt (hingga batas atas Rp 1,4 M).'
-          ]
-        },
-        {
-          kind: 'callout',
-          variant: 'warning',
-          title: 'Jebakan UTS PSAK 57',
-          text: 'Jika kemungkinan kalah pengadilan hanya "Possible" (misal 30-40%), DILARANG MENJURNAL PROVISI DI NERACA! Cukup diungkapkan sebagai Liabilitas Kontinjensi di Catatan atas Laporan Keuangan (CALK).'
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan TM 7'
+      kind: 'p',
+      text: 'Liabilitas jangka panjang adalah kewajiban kini yang penyelesaiannya tidak diharapkan dalam 12 bulan setelah periode pelaporan atau dalam siklus operasi normal (Kieso p. 1101). Penerbitan obligasi diatur oleh **perjanjian obligasi (bond indenture)** yang memuat jumlah nominal yang diizinkan, tarif kupon, tanggal pembayaran bunga, tanggal jatuh tempo, ketentuan penebusan atau konversi, dan kovenan pembatas.'
     },
     {
       kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      headers: ['Jenis', 'Ciri'],
       rows: [
-        ['1', 'Kriteria Pengakuan Provisi PSAK 57', '3 syarat mutlak: kewajiban kini, aliran keluar probable, estimasi andal.', 'Mampu mengklasifikasikan kasus sengketa/gugatan ke provisi vs kontinjensi.'],
-        ['2', 'Metode Akuntansi Garansi Produk', 'Assurance-Type (Beban Garansi) vs Service-Type (Pendapatan Garansi Tangguhan).', 'Menghitung beban garansi dan menjurnal klaim perbaikan suku cadang.'],
-        ['3', 'Provisi Kupon Premi & Hadiah', 'Estimasi persentase penukaran kupon dan perhitungan liabilitas hadiah.', 'Menyusun skedul biaya promosi dan jurnal provisi hadiah.'],
-        ['4', 'Kontrak Memberatkan (Onerous)', 'Kalkulasi nilai terendah antara penalti pembatalan vs kerugian pelaksanaan kontrak.', 'Menjurnal pengakuan provisi kontrak memberatkan di laba rugi.'],
-        ['5', 'Aset & Liabilitas Kontinjensi', 'Prinsip asimetri pengakuan: konservatisme pada aset vs pengungkapan penuh liabilitas.', 'Menyusun paragraf pengungkapan resmi di CALK.']
+        ['Secured vs unsecured', 'Secured bonds dijamin aset tertentu (mortgage bonds, collateral trust bonds); unsecured bonds (debentures) hanya bersandar pada kredit umum penerbit.'],
+        ['Term vs serial', 'Term bonds jatuh tempo pada satu tanggal; serial bonds jatuh tempo bertahap.'],
+        ['Callable', 'Penerbit berhak menebus sebelum jatuh tempo pada call price.'],
+        ['Convertible', 'Pemegang dapat menukar obligasi menjadi saham penerbit.'],
+        ['Zero-interest / deep-discount', 'Tanpa kupon berkala; dijual jauh di bawah nominal.']
       ],
-      caption: 'Tabel 7.1: Matriks kompetensi komprehensif materi TM 7 AKM II.'
+      caption: 'Kieso pp. 1102–1103.'
     },
-    { kind: 'h2', text: '1. Pengakuan Provisi & Garansi Produk' },
+
+    { kind: 'h2', text: '3. Bond Valuation' },
+    {
+      kind: 'formula',
+      text: '\\text{Harga obligasi}=\\text{Nominal}\\times(1+i)^{-n}+\\text{Kupon periodik}\\times\\frac{1-(1+i)^{-n}}{i}',
+      note: 'i = tarif efektif (pasar) per periode; n = jumlah periode bunga (Kieso pp. 1104–1108).'
+    },
+    {
+      kind: 'table',
+      headers: ['Hubungan tarif', 'Harga', 'Amortisasi'],
+      rows: [
+        ['Tarif kupon = tarif efektif', 'Pari (100% nominal)', 'Tidak ada'],
+        ['Tarif kupon < tarif efektif', 'Diskonto (di bawah nominal)', 'Menambah nilai tercatat sampai nominal'],
+        ['Tarif kupon > tarif efektif', 'Premi (di atas nominal)', 'Mengurangi nilai tercatat sampai nominal']
+      ]
+    },
+
+    { kind: 'h2', text: '4. Effective-Interest Method' },
     {
       kind: 'p',
-      text: '==Provisi adalah liabilitas yang waktu atau jumlahnya belum pasti. Entitas mengakui provisi ketika terdapat kewajiban kini akibat peristiwa masa lalu, penyelesaiannya kemungkinan besar mengakibatkan arus keluar kas, dan estimasi andal dapat dibuat.=='
+      text: 'Di bawah IFRS 9, diskonto dan premi **wajib** diamortisasi dengan metode bunga efektif, sehingga beban bunga merupakan persentase konstan dari nilai tercatat (Kieso p. 1109). IFRS mencatat obligasi **secara neto**: diskonto atau premi tidak dicatat di akun terpisah, melainkan langsung menambah atau mengurangi Bonds Payable (Kieso p. 1112).'
     },
-    CASE_WARRANTY_PROVISION,
-    { kind: 'h2', text: "2. Provisi Gugatan Hukum Pengadilan & Kontrak Memberatkan (PSAK 57)" },
     {
-      kind: 'p',
-      text: "==PSAK 57 membedakan secara tegas antara kewajiban kontinjensi yang berstatus Probable (>50% dan dapat diestimasi andal -> wajib dicatat sebagai Provisi di Neraca) vs Possible (hanya diungkapkan di Catatan atas Laporan Keuangan). Pada Kontrak Memberatkan, kewajiban diukur pada biaya terendah untuk keluar dari kontrak.=="
+      kind: 'formula',
+      text: '\\text{Beban bunga}=\\text{Nilai tercatat awal}\\times\\text{tarif efektif}\\qquad\\text{Kas kupon}=\\text{Nominal}\\times\\text{tarif kupon}'
     },
-    CASE_LITIGATION_ONEROUS_CONTRACT,
-    { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
+    {
+      kind: 'formula',
+      text: '\\text{Amortisasi diskonto}=\\text{Beban bunga}-\\text{Kas kupon}\\qquad\\text{Amortisasi premi}=\\text{Kas kupon}-\\text{Beban bunga}'
+    },
+    SPENCER_AMORTIZATION_SCHEDULE_CASE,
+
+    { kind: 'h2', text: '5. Year-End Accrual, Issuance Between Interest Dates & Issue Costs' },
+    {
+      kind: 'table',
+      headers: ['Situasi', 'Perlakuan', 'Kieso'],
+      rows: [
+        ['Akhir tahun di antara tanggal bunga', 'Debit Interest Expense (nilai tercatat × tarif efektif × bulan/12); kredit Interest Payable (kupon berjalan) dan Bonds Payable (amortisasi diskonto) atau debit Bonds Payable (amortisasi premi)', 'pp. 1114–1115'],
+        ['Penerbitan di antara tanggal bunga', 'Pembeli membayar harga obligasi ditambah bunga berjalan sejak tanggal bunga terakhir; kas didebit sebesar keduanya, Bonds Payable dikredit sebesar harga, dan bunga berjalan dikredit ke Interest Expense (atau Interest Payable)', 'pp. 1115–1117'],
+        ['Biaya penerbitan', 'Mengurangi kas bersih dan nilai tercatat awal Bonds Payable; tidak dicatat sebagai aset tangguhan; menaikkan tarif efektif', 'pp. 1118–1119']
+      ]
+    },
+    FOREMAN_BOND_DISCOUNT_CASE,
+
+    { kind: 'h2', text: '6. Long-Term Notes Payable' },
+    {
+      kind: 'table',
+      headers: ['Jenis wesel', 'Pengukuran', 'Kieso'],
+      rows: [
+        ['Wesel tanpa bunga', 'Nilai kini arus kas (kas yang diterima); selisih dengan nominal adalah diskonto yang diamortisasi ke beban bunga', 'p. 1122'],
+        ['Wesel dengan bunga tidak realistis', 'Didiskontokan pada tarif pasar (imputed interest rate); diskonto atau premi diamortisasi', 'pp. 1122–1124'],
+        ['Wesel untuk properti, barang, atau jasa', 'Nilai wajar barang/jasa atau nilai wajar wesel, mana yang lebih andal; bila tidak ada, gunakan tarif imputasi', 'p. 1124'],
+        ['Wesel hipotek (mortgage notes)', 'Dijamin properti; setiap angsuran memuat bunga dan pelunasan pokok', 'p. 1128']
+      ]
+    },
+
+    { kind: 'h2', text: '7. Extinguishment of Liabilities' },
+    {
+      kind: 'formula',
+      text: '\\text{Gain (loss) penghentian}=\\text{Nilai tercatat bersih}-\\text{Harga penebusan}',
+      note: 'Nilai tercatat bersih mencakup nominal yang disesuaikan dengan sisa diskonto/premi dan biaya penerbitan; gain atau loss diakui di laba rugi (Kieso p. 1129).'
+    },
+    {
+      kind: 'table',
+      headers: ['Cara penghentian', 'Perlakuan', 'Kieso'],
+      rows: [
+        ['Pelunasan dengan kas sebelum jatuh tempo', 'Selisih nilai tercatat bersih dan harga penebusan ke laba rugi', 'p. 1129'],
+        ['Pertukaran utang dengan saham (IFRIC 19)', 'Saham diukur pada nilai wajarnya; selisih dengan nilai tercatat utang ke laba rugi', 'p. 1131'],
+        ['Modifikasi persyaratan', 'Bandingkan nilai kini arus kas baru (didiskontokan dengan tarif efektif awal) dengan nilai tercatat; selisih ≥ 10% berarti substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar. Selisih < 10%: utang tetap, nilai tercatat disesuaikan dan gain/loss ke laba rugi', 'p. 1133']
+      ]
+    },
+
+    { kind: 'h2', text: '8. Fair Value Option, Presentation & Analysis' },
     {
       kind: 'ul',
       items: [
-        '**3 Syarat Provisi**: Kewajiban kini (hukum/konstruktif) + Probable (>50%) + Estimasi andal.',
-        '**Garansi Servis Terpisah**: Dicatat sebagai pendapatan tangguhan dan diakui bertahap sepanjang masa servis.',
-        '**Rentang Estimasi Provisi**: Ambil nilai titik tengah (midpoint) jika semua nilai sama-sama mungkin terjadi.',
-        `**Aset Kontinjensi**: TIDAK BOLEH diakui di neraca sampai realisasi kas praktis pasti (virtually certain).`
+        '**Opsi nilai wajar:** liabilitas keuangan boleh diukur pada nilai wajar; perubahan akibat **risiko kredit entitas sendiri** ke OCI, sisanya ke laba rugi (Kieso p. 1137).',
+        '**Penyajian:** bagian yang jatuh tempo dalam 12 bulan dipindahkan ke liabilitas jangka pendek.',
+        '**Pengungkapan:** sifat liabilitas, tarif, jatuh tempo, ketentuan penebusan dan konversi, kovenan, aset yang dijaminkan, dan jatuh tempo pokok lima tahun ke depan.'
       ]
+    },
+    {
+      kind: 'formula',
+      text: '\\text{Debt to assets}=\\frac{\\text{Total liabilitas}}{\\text{Total aset}}\\qquad\\text{Times interest earned}=\\frac{\\text{Laba sebelum pajak dan beban bunga}}{\\text{Beban bunga}}',
+      note: 'Kieso pp. 1142–1143.'
+    },
+
+    { kind: 'h2', text: '9. Standards Comparison' },
+    {
+      kind: 'table',
+      headers: ['Aspek', 'IFRS (Kieso IFRS 5e)', 'US GAAP'],
+      rows: [
+        ['Pencatatan diskonto dan premi', 'Neto langsung di Bonds Payable', 'Akun terpisah: Discount on Bonds Payable (kontra) atau Premium on Bonds Payable (tambahan)'],
+        ['Metode amortisasi', 'Wajib metode bunga efektif', 'Metode bunga efektif; garis lurus diizinkan bila perbedaannya tidak material'],
+        ['Biaya penerbitan', 'Mengurangi nilai tercatat awal liabilitas', 'Sama: dikurangkan dari nilai tercatat liabilitas'],
+        ['Opsi nilai wajar dan risiko kredit sendiri', 'Porsi risiko kredit sendiri ke OCI', 'Porsi risiko kredit sendiri ke OCI']
+      ]
+    },
+    {
+      kind: 'table',
+      headers: ['Tanggal (Foreman Cleaners, E13.5)', 'IFRS: neto di Bonds Payable', 'US GAAP: akun diskonto terpisah'],
+      rows: [
+        ['1 Januari 2025', 'Dr Cash €679.600; Cr Bonds Payable €679.600', 'Dr Cash €679.600, Dr Discount on Bonds Payable €120.400; Cr Bonds Payable €800.000'],
+        ['1 Juli 2025', 'Dr Interest Expense €40.776; Cr Bonds Payable €776, Cr Cash €40.000', 'Dr Interest Expense €40.776; Cr Discount on Bonds Payable €776, Cr Cash €40.000'],
+        ['31 Desember 2025', 'Dr Interest Expense €40.823; Cr Interest Payable €40.000, Cr Bonds Payable €823', 'Dr Interest Expense €40.823; Cr Interest Payable €40.000, Cr Discount on Bonds Payable €823']
+      ],
+      caption: 'Catatan perbandingan (Kieso p. 1171): beban bunga dan nilai tercatat neto sama; yang berbeda hanya akun tempat diskonto dicatat.'
+    },
+
+    { kind: 'h2', text: '10. Exam Toolkit' },
+    { kind: 'h3', text: 'Formula Sheet' },
+    { kind: 'formula', text: '\\text{Kas kupon}=\\text{Nominal}\\times\\text{tarif kupon}\\times\\frac{\\text{bulan}}{12}\\qquad\\text{Beban bunga}=\\text{Nilai tercatat awal}\\times\\text{tarif efektif}\\times\\frac{\\text{bulan}}{12}' },
+    { kind: 'formula', text: '\\text{Amortisasi}=|\\text{Beban bunga}-\\text{Kas kupon}|\\qquad\\text{Gain (loss) penghentian}=\\text{Nilai tercatat bersih}-\\text{Harga penebusan}' },
+    { kind: 'h3', text: 'Common Traps' },
+    {
+      kind: 'table',
+      headers: ['Jebakan', 'Kesalahan umum', 'Perlakuan benar', 'Kieso'],
+      rows: [
+        ['Tarif untuk beban bunga', 'Nilai tercatat × tarif kupon', 'Beban bunga = nilai tercatat × tarif efektif; kas = nominal × tarif kupon', 'p. 1109'],
+        ['Arah amortisasi', 'Mengurangkan amortisasi diskonto dari nilai tercatat', 'Diskonto menambah nilai tercatat; premi mengurangi', 'p. 1113'],
+        ['Biaya penerbitan', 'Mencatat Deferred Bond Issue Costs sebagai aset', 'Kurangi kas bersih dan nilai tercatat awal liabilitas', 'p. 1118'],
+        ['Bunga semesteran', 'Memakai tarif tahunan penuh', 'Bagi tarif kupon dan tarif efektif dengan 2 (E13.5: 5% dan 6%)', 'E13.5'],
+        ['Opsi nilai wajar', 'Seluruh perubahan nilai wajar ke laba rugi', 'Porsi risiko kredit sendiri ke OCI', 'p. 1137']
+      ]
+    },
+    { kind: 'h3', text: 'Quick Review' },
+    {
+      kind: 'ol',
+      items: [
+        'Bandingkan tarif kupon dan tarif efektif untuk menentukan pari, diskonto, atau premi.',
+        'Hitung beban bunga dari nilai tercatat awal periode, bukan dari nominal.',
+        'Di bawah IFRS, amortisasi dicatat langsung ke Bonds Payable.',
+        'Pada akhir tahun di antara tanggal bunga, akrualkan kupon ke Interest Payable dan catat amortisasinya.',
+        'Nilai tercatat harus tepat sama dengan nominal pada jatuh tempo; periode terakhir menyerap pembulatan.'
+      ]
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Checklist 60 detik sebelum mengumpulkan',
+      text: 'Foreman: kas **€679.600**, beban bunga **€40.776** (1 Juli) dan **€40.823** (31 Desember). Spencer: tarif efektif **12%**, total beban bunga **£1.716.276**, nilai tercatat akhir **£3.000.000**. Apakah setiap jurnal debit = kredit?'
     }
   ]
 };
