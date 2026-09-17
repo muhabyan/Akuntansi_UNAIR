@@ -28,7 +28,7 @@ const LEARNING_MODULES: { id: CourseTabId; label: string; icon: React.ReactNode 
 const firstOpenSemester = SEMESTERS.find((semester) => !semester.locked) ?? SEMESTERS[0];
 
 const PANEL_BASE =
-  'fixed inset-x-4 top-[5.8rem] z-[60] mx-auto overflow-hidden rounded-[2rem] p-3 border border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl md:top-[9.75rem] md:max-h-[calc(100dvh-10.75rem)] md:overflow-hidden lg:top-[6.25rem] lg:max-h-[calc(100dvh-7.25rem)]';
+  'fixed inset-x-4 top-[5.8rem] z-[60] mx-auto overflow-hidden rounded-2xl p-2 border border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-xl shadow-slate-950/10 dark:shadow-black/30 md:top-[9.75rem] md:max-h-[calc(100dvh-10.75rem)] md:overflow-hidden lg:top-[6.25rem] lg:max-h-[calc(100dvh-7.25rem)]';
 
 const THREE_COLUMN_GRID =
   'grid max-h-[min(72vh,calc(100dvh-7.25rem))] min-h-0 gap-3 overflow-y-auto akbi-table-scroll md:max-h-[min(72vh,calc(100dvh-12.75rem))] md:grid-cols-[12rem_minmax(0,1fr)] lg:h-[min(36rem,calc(100dvh-10.25rem))] lg:max-h-none lg:grid-cols-[13rem_minmax(18rem,1fr)_18rem] lg:overflow-hidden';
@@ -66,7 +66,7 @@ function SemesterColumn({
   compactCopy?: boolean;
 }) {
   return (
-    <section className="flex min-h-0 flex-col rounded-3xl glass-menu-section p-2">
+    <section className="flex min-h-0 flex-col rounded-2xl glass-menu-section p-2">
       <header className="px-3 pb-2 pt-2">
         <p className="eyebrow">Navigasi</p>
         <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-500">
@@ -84,7 +84,7 @@ function SemesterColumn({
               onMouseEnter={() => !semester.locked && setSemesterId(semester.id)}
               onFocus={() => !semester.locked && setSemesterId(semester.id)}
               onClick={() => !semester.locked && setSemesterId(semester.id)}
-              className={`glass-menu-item flex w-full items-center justify-between rounded-2xl px-3 py-3 text-left ${
+              className={`glass-menu-item flex w-full items-center justify-between rounded-xl px-3 py-3 text-left ${
                 semester.locked
                   ? 'cursor-not-allowed text-slate-400 dark:text-slate-600 opacity-60'
                   : isActive
@@ -110,7 +110,7 @@ export function MegaMenu({ onSelect }: CourseMenuProps) {
       <div className={THREE_COLUMN_GRID}>
         <SemesterColumn semesterId={semesterId} setSemesterId={setSemesterId} />
 
-        <section className="flex min-h-0 flex-col rounded-3xl glass-menu-section p-2">
+        <section className="flex min-h-0 flex-col rounded-2xl glass-menu-section p-2">
           <header className="glass-menu-divider px-3 pb-3 pt-2">
             <p className="eyebrow">Daftar Mata Kuliah</p>
             <p className="mt-1 text-xs text-slate-600 dark:text-slate-500">{SEMESTERS.find((semester) => semester.id === semesterId)?.title}</p>
@@ -125,7 +125,7 @@ export function MegaMenu({ onSelect }: CourseMenuProps) {
                   onMouseEnter={() => setCourseCode(course.code)}
                   onFocus={() => setCourseCode(course.code)}
                   onClick={() => setCourseCode(course.code)}
-                  className={`glass-menu-item flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-left ${
+                  className={`glass-menu-item flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left ${
                     isActive
                       ? 'is-active bg-gold-50 dark:bg-gold/10 text-gold-700 dark:text-gold ring-1 ring-gold-500/20 dark:ring-gold/20'
                       : 'text-slate-700 dark:text-slate-300 hover:text-gold-700 dark:hover:text-gold'
@@ -135,7 +135,7 @@ export function MegaMenu({ onSelect }: CourseMenuProps) {
                     <CourseIcon iconKey={course.iconKey} size={16} />
                   </span>
                   <span className="min-w-0 flex-1 truncate text-sm font-bold text-slate-900 dark:text-white">{course.name}</span>
-                  <span className="rounded-lg bg-navy-500/10 dark:bg-white/[0.05] px-2 py-0.5 text-[10px] font-black text-slate-600 dark:text-slate-500">{course.code}</span>
+                  <span className="rounded-md bg-navy-500/10 dark:bg-white/[0.05] px-2 py-0.5 text-[10px] font-bold text-slate-600 dark:text-slate-500">{course.code}</span>
                   <ChevronRight size={14} className="shrink-0 opacity-60 text-slate-500 dark:text-slate-400" />
                 </button>
               );
@@ -143,7 +143,7 @@ export function MegaMenu({ onSelect }: CourseMenuProps) {
           </div>
         </section>
 
-        <section className="flex min-h-0 flex-col rounded-3xl glass-menu-section p-2 md:col-span-2 lg:col-span-1">
+        <section className="flex min-h-0 flex-col rounded-2xl glass-menu-section p-2 md:col-span-2 lg:col-span-1">
           <header className="glass-menu-divider px-3 pb-3 pt-2">
             <p className="eyebrow">Modul Pembelajaran</p>
             <p className="mt-1 truncate text-xs font-semibold text-slate-500 dark:text-slate-400">{selectedCourse?.name ?? 'Pilih mata kuliah'}</p>
@@ -157,7 +157,7 @@ export function MegaMenu({ onSelect }: CourseMenuProps) {
                   event.stopPropagation();
                   onSelect(selectedCourse, item.id);
                 }}
-                className="glass-menu-item glass-menu-action group/btn flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-gold-700 dark:hover:text-gold"
+                className="glass-menu-item glass-menu-action group/btn flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-gold-700 dark:hover:text-gold"
               >
                 <span className="text-slate-500 group-hover/btn:text-gold-600 dark:group-hover/btn:text-gold">{item.icon}</span>
                 <span>{item.label}</span>
@@ -185,7 +185,7 @@ export function QuizMegaMenu({ onSelect }: CourseMenuProps) {
       <div className={TWO_COLUMN_GRID}>
         <SemesterColumn semesterId={semesterId} setSemesterId={setSemesterId} compactCopy />
 
-        <section className="flex min-h-0 flex-col rounded-3xl glass-menu-section p-2">
+        <section className="flex min-h-0 flex-col rounded-2xl glass-menu-section p-2">
           <header className="glass-menu-divider px-3 pb-3 pt-2">
             <p className="eyebrow">Kuis Interaktif</p>
             <p className="mt-1 text-xs text-slate-600 dark:text-slate-500">Pilih mata kuliah. Menu ini langsung menuju ruang kuis.</p>
@@ -199,15 +199,15 @@ export function QuizMegaMenu({ onSelect }: CourseMenuProps) {
                   event.stopPropagation();
                   onSelect(course, 'quiz');
                 }}
-                className="glass-menu-item glass-menu-action group flex w-full items-center gap-3 rounded-2xl border border-transparent bg-slate-50 dark:bg-white/[0.025] p-3 text-left text-slate-700 dark:text-slate-300 hover:border-gold-500/30 dark:hover:border-gold/30 hover:text-gold-700 dark:hover:text-gold shadow-sm dark:shadow-none"
+                className="glass-menu-item glass-menu-action group flex w-full items-center gap-3 rounded-xl border border-transparent bg-slate-50 dark:bg-white/[0.025] p-3 text-left text-slate-700 dark:text-slate-300 hover:border-gold-500/30 dark:hover:border-gold/30 hover:text-gold-700 dark:hover:text-gold"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gold-50 dark:bg-gold/10 text-gold-700 dark:text-gold">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gold-50 dark:bg-gold/10 text-gold-700 dark:text-gold">
                   <CourseIcon iconKey={course.iconKey} size={18} />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">
                     {course.name}
-                    <span className="rounded-lg bg-navy-500/10 dark:bg-white/[0.05] px-2 py-0.5 text-[10px] font-black text-slate-600 dark:text-slate-500">{course.code}</span>
+                    <span className="rounded-md bg-navy-500/10 dark:bg-white/[0.05] px-2 py-0.5 text-[10px] font-bold text-slate-600 dark:text-slate-500">{course.code}</span>
                   </span>
                   <span className="mt-1 block text-xs leading-5 text-slate-600 dark:text-slate-500">{quizDescription(course.code)}</span>
                 </span>
@@ -236,7 +236,7 @@ export function LaporanMegaMenu({ onSelectReport }: { onSelectReport: (reportId:
   return (
     <div className={`${PANEL_BASE} akbi-report-menu-panel max-w-4xl`}>
       <div className={TWO_COLUMN_GRID}>
-        <section className="flex min-h-0 flex-col rounded-3xl glass-menu-section p-2">
+        <section className="flex min-h-0 flex-col rounded-2xl glass-menu-section p-2">
           <header className="px-3 pb-2 pt-2">
             <p className="eyebrow">Siklus</p>
             <p className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-500">Pilih bidang laporan.</p>
@@ -251,7 +251,7 @@ export function LaporanMegaMenu({ onSelectReport }: { onSelectReport: (reportId:
                   onMouseEnter={() => setActiveSection(section.title)}
                   onFocus={() => setActiveSection(section.title)}
                   onClick={() => setActiveSection(section.title)}
-                  className={`glass-menu-item flex w-full items-center justify-between rounded-2xl px-3 py-3 text-left ${
+                  className={`glass-menu-item flex w-full items-center justify-between rounded-xl px-3 py-3 text-left ${
                     isActive ? 'is-active bg-gold-50 dark:bg-gold/10 text-gold-700 dark:text-gold ring-1 ring-gold-500/20 dark:ring-gold/20' : 'text-slate-700 dark:text-slate-300 hover:text-gold-700 dark:hover:text-gold'
                   }`}
                 >
@@ -266,7 +266,7 @@ export function LaporanMegaMenu({ onSelectReport }: { onSelectReport: (reportId:
           </div>
         </section>
 
-        <section className="flex min-h-0 flex-col rounded-3xl glass-menu-section p-2">
+        <section className="flex min-h-0 flex-col rounded-2xl glass-menu-section p-2">
           <header className="glass-menu-divider px-3 pb-3 pt-2">
             <p className="eyebrow">Format Laporan</p>
             <p className="mt-1 text-xs font-semibold text-slate-500 dark:text-slate-400">{activeSection}</p>
@@ -282,7 +282,7 @@ export function LaporanMegaMenu({ onSelectReport }: { onSelectReport: (reportId:
                     event.stopPropagation();
                     if (active) onSelectReport(item.id);
                   }}
-                  className={`glass-menu-item group/item flex w-full items-center gap-2 rounded-2xl px-3 py-2.5 text-left text-sm font-semibold ${
+                  className={`glass-menu-item group/item flex w-full items-center gap-2 rounded-xl px-3 py-2.5 text-left text-sm font-semibold ${
                     active
                       ? 'glass-menu-action text-slate-700 dark:text-slate-300 hover:text-gold-700 dark:hover:text-gold'
                       : 'cursor-default text-slate-400 dark:text-slate-500 opacity-80'

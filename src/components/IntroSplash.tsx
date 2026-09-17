@@ -45,7 +45,7 @@ export default function IntroSplash() {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 mask-radial-faded" />
         
         {/* Single Elegant Central Glow */}
-        <div className={`absolute w-[50rem] h-[50rem] rounded-full bg-blue-600/10 blur-[120px] transition-all duration-[2000ms] ease-out ${
+        <div className={`absolute w-[50rem] h-[50rem] rounded-full bg-indigo-500/12 blur-[120px] transition-all duration-[2000ms] ease-out ${
           stage === 'visible' ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
         }`} />
       </div>
@@ -57,14 +57,14 @@ export default function IntroSplash() {
         <div className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
           stage === 'visible' ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
-          <div className="w-20 h-20 mb-8 rounded-2xl bg-gradient-to-tr from-gray-800/60 to-gray-700/30 border border-gray-600/30 flex items-center justify-center shadow-2xl shadow-black/80 backdrop-blur-md relative overflow-hidden">
+          <div className="w-20 h-20 mb-8 rounded-2xl bg-gradient-to-br from-blue-600/80 to-indigo-600/70 border border-blue-300/20 flex items-center justify-center shadow-xl shadow-blue-950/40 backdrop-blur-md relative overflow-hidden">
             {/* Shimmer effect inside box */}
             <div className={`absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-[1500ms] ease-in-out delay-[800ms] ${
               stage === 'visible' ? 'translate-x-[200%]' : '-translate-x-full'
             }`} />
             
             <GraduationCap 
-              className="w-10 h-10 text-gray-200" 
+              className="w-10 h-10 text-white"
               strokeWidth={1.5} 
             />
           </div>
@@ -75,9 +75,9 @@ export default function IntroSplash() {
           <h1 className={`text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3 transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[200ms] ${
             stage === 'visible' ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-8 opacity-0 blur-sm'
           }`}>
-            Akuntansi
+            AkuntansiHub
           </h1>
-          <p className={`text-sm md:text-base font-medium tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-100 to-gray-400 uppercase transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[400ms] ${
+          <p className={`text-sm md:text-base font-medium tracking-[0.22em] text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-gray-100 to-indigo-300 uppercase transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[400ms] ${
             stage === 'visible' ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-8 opacity-0 blur-sm'
           }`}>
             FEB UNAIR

@@ -12,7 +12,7 @@ export default function Aks1Logo3D() {
   const layerCount = 5;
 
   return (
-    <div className="absolute inset-0 flex items-center justify-end pr-[10%] pointer-events-none overflow-hidden opacity-[0.18] dark:opacity-[0.30]">
+    <div className="pointer-events-none absolute inset-0 flex items-end justify-center overflow-hidden pb-10 opacity-[0.05] dark:opacity-[0.08] md:items-center md:justify-end md:pb-0 md:pr-[10%] md:opacity-[0.18] md:dark:opacity-[0.30]">
       <style>{`
         @keyframes logo-spin-y {
           from { transform: rotateY(0deg) rotateX(8deg); }
@@ -25,7 +25,7 @@ export default function Aks1Logo3D() {
       `}</style>
 
       <div
-        className="relative w-[600px] h-[500px] flex items-center justify-center animate-logo-3d"
+        className="relative flex h-[210px] w-[250px] translate-y-4 items-center justify-center animate-logo-3d md:h-[500px] md:w-[600px] md:translate-y-0"
         style={{ perspective: '1200px' }}
       >
         {Array.from({ length: layerCount }, (_, i) => (

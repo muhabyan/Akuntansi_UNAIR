@@ -4,9 +4,9 @@
 // + tombol "Buka di Google Drive".
 // =============================================================
 import { useEffect, useState } from 'react';
-import { Layers, BookOpenText, Headphones, ExternalLink, Check, TrendingUp } from 'lucide-react';
-import { useStudyProgress, materialKey } from '../hooks/useStudyProgress';
+import { BookOpenText, Check, ExternalLink, Headphones } from 'lucide-react';
 import { loadCourseContent } from '../data/courses/courseRegistry';
+import { materialKey, useStudyProgress } from '../hooks/useStudyProgress';
 import type { Course, Material } from '../types';
 
 interface MateriListProps {
@@ -29,153 +29,95 @@ export default function MateriList({ course, range, onOpenReading }: MateriListP
     return () => { isActive = false; };
   }, [course.code]);
 
-  const materials: Material[] =
-    (range === 'tm1-7' ? course.materiTM1_7 : course.materiTM8_14) ?? [];
+  const materials: Material[] = (range === 'tm1-7' ? course.materiTM1_7 : course.materiTM8_14) ?? [];
+  const allMaterials = [...(course.materiTM1_7 ?? []), ...(course.materiTM8_14 ?? [])];
+  const currentTm = allMaterials.find((material) => !isDone(materialKey(course.code, material.tm)))?.tm ?? null;
   const start = range === 'tm1-7' ? 1 : 8;
   const end = range === 'tm1-7' ? 7 : 14;
-
-  const keys = materials.map((m) => materialKey(course.code, m.tm));
+  const keys = materials.map((material) => materialKey(course.code, material.tm));
   const done = countDone(keys);
-  const pct = materials.length ? Math.round((done / materials.length) * 100) : 0;
+  const percent = materials.length ? Math.round((done / materials.length) * 100) : 0;
 
   return (
     <div className="animate-fade-in-up">
-      <div className="mb-7 flex flex-col justify-between gap-5 rounded-[1.6rem] border border-navy-500 bg-navy-800/60 p-5 sm:flex-row sm:items-center">
+      <div className="mb-5 flex items-end justify-between gap-4 border-b border-gray-200 pb-4 dark:border-gray-700">
         <div>
-          <p className="eyebrow">Materi kuliah</p>
-          <h3 className="mt-2 flex items-center gap-3 text-2xl font-black text-slate-100">
-            <Layers className="text-gold" /> Tatap Muka {start}–{end}
-          </h3>
-          <p className="mt-2 text-sm text-slate-500">Tandai materi yang selesai supaya alur belajar tetap rapi.</p>
+          <p className="eyebrow">Materi utama</p>
+          <h2 className="mt-1.5 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">TM {start}–{end}</h2>
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{materials.length} materi · {done} selesai</p>
         </div>
-
-        <div className="min-w-[210px] rounded-2xl border border-navy-500 bg-navy-850/80 p-4">
-          <div className="mb-2 flex justify-between text-xs font-bold text-slate-400">
-            <span className="flex items-center gap-1.5"><TrendingUp size={14} /> Progress</span>
-            <span className="text-gold">{done}/{materials.length}</span>
+        <div className="w-28 shrink-0 sm:w-40">
+          <div className="mb-1.5 flex items-center justify-between text-xs font-semibold text-gray-500 dark:text-gray-400">
+            <span>Progress</span><span className="text-blue-600 dark:text-blue-400">{percent}%</span>
           </div>
-          <div className="h-2.5 overflow-hidden rounded-full bg-navy-700">
-            <div className="h-full rounded-full bg-gradient-to-r from-gold to-gold-light transition-all duration-500" style={{ width: `${pct}%` }} />
+          <div className="h-1.5 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700" role="progressbar" aria-label={`Progress TM ${start} sampai ${end}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent}>
+            <div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-[width] duration-500" style={{ width: `${percent}%` }} />
           </div>
-          <p className="mt-2 text-right text-xs font-black text-slate-500">{pct}% selesai</p>
         </div>
       </div>
 
-      <div className="space-y-3.5">
-        {materials.map((m) => {
-          const key = materialKey(course.code, m.tm);
+      <div className="overflow-hidden rounded-xl border border-gray-200 bg-white/75 dark:border-gray-700 dark:bg-gray-800/60">
+        {materials.map((material) => {
+          const key = materialKey(course.code, material.tm);
           const checked = isDone(key);
-          const hasDrive = Boolean(m.driveUrl);
-          const hasReading = readingTms.has(m.tm);
+          const current = material.tm === currentTm && !checked;
+          const hasDrive = Boolean(material.driveUrl);
+          const hasReading = readingTms.has(material.tm);
 
           return (
-            <div
-              key={m.tm}
-              className={`group rounded-[1.45rem] border p-4 transition-all md:p-5 ${
-                checked
-                  ? 'border-gold/35 bg-gold/5 shadow-sm'
-                  : 'border-navy-500 bg-navy-800/75 hover:border-gold/45 hover:bg-navy-800'
-              }`}
-            >
-              <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
-                <div className="flex min-w-0 gap-4">
-                  <button
-                    onClick={() => toggle(key)}
-                    aria-label={checked ? 'Tandai belum dipelajari' : 'Tandai sudah dipelajari'}
-                    title={checked ? 'Sudah dipelajari' : 'Tandai sudah dipelajari'}
-                    className={`mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-xl border transition-all ${
-                      checked
-                        ? 'border-gold bg-gold text-navy-950 shadow-sm shadow-gold/20'
-                        : 'border-navy-500 text-transparent hover:border-gold hover:text-gold'
-                    }`}
-                  >
-                    <Check size={16} strokeWidth={3} />
-                  </button>
+            <article key={material.tm} aria-current={current ? 'step' : undefined} className={`grid grid-cols-[2.75rem_minmax(0,1fr)] gap-x-3 border-b border-gray-200 px-3 py-3.5 last:border-b-0 dark:border-gray-700 md:grid-cols-[2.75rem_minmax(0,1fr)_auto] md:items-center md:px-4 ${current ? 'bg-blue-50/75 dark:bg-blue-950/25' : checked ? 'bg-gray-50/80 dark:bg-gray-900/25' : 'hover:bg-gray-50/80 dark:hover:bg-gray-800'}`}>
+              <button type="button" onClick={() => toggle(key)} aria-label={checked ? `Tandai TM ${material.tm} belum selesai` : `Tandai TM ${material.tm} selesai`} className="flex h-11 w-11 items-center justify-center rounded-lg transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/35">
+                <span className={`flex h-6 w-6 items-center justify-center rounded-md border transition-all ${checked ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-gray-300 text-transparent hover:border-blue-500 dark:border-gray-600'}`}>
+                  <Check size={14} strokeWidth={3} />
+                </span>
+              </button>
 
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-navy-500 bg-navy-900/65 text-sm font-black text-gold">
-                    TM{m.tm}
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className={`font-black leading-snug transition-colors ${checked ? 'text-gold' : 'text-slate-100 group-hover:text-gold'}`}>
-                      {m.title}
-                    </h4>
-                    <p className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                      {m.ref && m.ref !== '—' && (
-                        <span className="rounded-full border border-navy-500 bg-navy-900/50 px-2 py-0.5 font-bold text-gold/85">
-                          {m.ref}
-                        </span>
-                      )}
-                      <span>{checked ? '✓ Sudah dipelajari' : 'Belum ditandai'}</span>
-                    </p>
-                  </div>
+              <button type="button" onClick={() => hasReading && onOpenReading(material.tm)} disabled={!hasReading} className="min-w-0 text-left disabled:cursor-default">
+                <div className="mb-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-bold uppercase tracking-[0.14em]">
+                  <span className={current ? 'text-blue-700 dark:text-blue-300' : 'text-gray-500 dark:text-gray-400'}>TM {material.tm}</span>
+                  {current && <span className="text-blue-600 dark:text-blue-400">Berikutnya</span>}
+                  {checked && <span className="text-emerald-600 dark:text-emerald-400">Selesai</span>}
+                  {material.ref && material.ref !== '—' && <span className="truncate normal-case tracking-normal text-gray-400 dark:text-gray-500">{material.ref}</span>}
                 </div>
+                <h3 className={`text-sm font-bold leading-snug md:text-base ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white'}`}>{material.title}</h3>
+              </button>
 
-                <div className="flex w-full flex-wrap gap-2 sm:flex-nowrap xl:w-auto">
-                  {hasDrive ? (
-                    <a
-                      href={m.driveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-gold/30 bg-gold/10 px-3 py-2.5 text-sm font-black text-gold transition-all hover:bg-gold hover:text-navy-950 sm:flex-none"
-                      title="Buka di Google Drive"
-                    >
-                      <ExternalLink size={16} /> Drive
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      disabled
-                      className="flex flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-2xl border border-navy-500 bg-navy-800/40 px-3 py-2.5 text-sm font-black text-slate-600 sm:flex-none"
-                      title="Link Drive belum tersedia"
-                    >
-                      <ExternalLink size={16} /> Drive
-                    </button>
-                  )}
-
-                  {m.podcastUrl ? (
-                    <a
-                      href={m.podcastUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/podcast flex flex-1 items-center justify-center gap-2 rounded-2xl border border-navy-500 bg-navy-850/70 px-3 py-2.5 text-sm font-black text-slate-300 transition-all hover:border-gold/45 hover:text-gold sm:flex-none"
-                      title="Dengarkan Podcast AI (NotebookLM)"
-                    >
-                      <Headphones size={16} className="text-purple-400 transition-colors group-hover/podcast:text-gold" /> Podcast
-                    </a>
-                  ) : (
-                    <button
-                      type="button"
-                      disabled
-                      className="flex flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-2xl border border-navy-500 bg-navy-800/40 px-3 py-2.5 text-sm font-black text-slate-600 sm:flex-none"
-                      title="Podcast belum tersedia"
-                    >
-                      <Headphones size={16} className="text-purple-400" /> Podcast
-                    </button>
-                  )}
-
-                  <button
-                    onClick={() => hasReading && onOpenReading(m.tm)}
-                    disabled={!hasReading}
-                    className={`flex flex-1 items-center justify-center gap-2 rounded-2xl px-3 py-2.5 text-sm font-black transition-all sm:flex-none ${
-                      hasReading
-                        ? 'border border-gold/30 bg-gold/10 text-gold hover:bg-gold hover:text-navy-950'
-                        : 'cursor-not-allowed border border-navy-500 bg-navy-800/40 text-slate-600'
-                    }`}
-                    title={hasReading ? 'Baca rangkuman materi' : 'Rangkuman belum tersedia'}
-                  >
-                    <BookOpenText size={16} /> Baca
+              <div className="col-start-2 mt-2 flex min-w-0 flex-wrap items-center gap-1.5 md:col-start-auto md:mt-0 md:flex-nowrap md:justify-end">
+                {hasReading ? (
+                  <button type="button" onClick={() => onOpenReading(material.tm)} className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg bg-blue-600 px-3 text-xs font-bold text-white transition-colors hover:bg-blue-700">
+                    <BookOpenText size={15} /> Baca
                   </button>
-                </div>
+                ) : (
+                  <button type="button" disabled className="inline-flex min-h-11 cursor-not-allowed items-center justify-center gap-1.5 rounded-lg bg-gray-100 px-3 text-xs font-semibold text-gray-400 dark:bg-gray-700/50 dark:text-gray-500" title="Rangkuman belum tersedia">
+                    <BookOpenText size={15} /> Baca
+                  </button>
+                )}
+
+                {hasDrive ? (
+                  <a href={material.driveUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300" title="Buka di Google Drive">
+                    <ExternalLink size={15} /> Drive
+                  </a>
+                ) : (
+                  <button type="button" disabled className="inline-flex min-h-11 cursor-not-allowed items-center justify-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold text-gray-300 dark:text-gray-600" title="Link Drive belum tersedia">
+                    <ExternalLink size={15} /> Drive
+                  </button>
+                )}
+
+                {material.podcastUrl ? (
+                  <a href={material.podcastUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold text-gray-600 transition-colors hover:bg-indigo-50 hover:text-indigo-700 dark:text-gray-300 dark:hover:bg-indigo-950/35 dark:hover:text-indigo-300" title="Dengarkan Podcast AI (NotebookLM)">
+                    <Headphones size={15} /> Podcast
+                  </a>
+                ) : (
+                  <button type="button" disabled className="inline-flex min-h-11 cursor-not-allowed items-center justify-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold text-gray-300 dark:text-gray-600" title="Podcast belum tersedia">
+                    <Headphones size={15} /> Podcast
+                  </button>
+                )}
               </div>
-            </div>
+            </article>
           );
         })}
 
-        {materials.length === 0 && (
-          <p className="rounded-2xl border border-navy-500 bg-navy-800/70 p-4 text-sm text-slate-500">
-            Belum ada materi untuk rentang ini. Tambahkan di <code className="font-bold text-gold">src/data/courseData.ts</code>.
-          </p>
-        )}
+        {materials.length === 0 && <p className="p-5 text-sm text-gray-500 dark:text-gray-400">Belum ada materi untuk rentang ini.</p>}
       </div>
     </div>
   );

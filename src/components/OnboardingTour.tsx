@@ -20,7 +20,7 @@ export default function OnboardingTour() {
             {
               element: 'body',
               popover: {
-                title: 'Selamat Datang di AKS1! 👋',
+                title: 'Selamat Datang di AkuntansiHub! 👋',
                 description: 'E-Learning interaktif untuk mahasiswa S1 Akuntansi UNAIR. Mari ikuti tur singkat ini untuk mengenal fitur-fitur unggulan kami.',
                 side: 'top',
                 align: 'center'
@@ -45,7 +45,7 @@ export default function OnboardingTour() {
               }
             },
             {
-              element: '#tour-pomodoro',
+              element: '.mobile-utility-launcher--pomodoro',
               popover: {
                 title: 'Pomodoro Timer ⏱️',
                 description: 'Gunakan fitur ini untuk menjaga fokus belajar Anda (25 menit fokus, 5 menit istirahat). Timer akan tetap berjalan meski Anda berpindah halaman.',

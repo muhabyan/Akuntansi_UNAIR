@@ -122,7 +122,7 @@ export const TM13_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Perhitungan Cross Rate IDR/JPY**:\n$\text{Kurs (IDR/JPY)} = \\frac{\\text{USD/IDR}}{\\text{USD/JPY}} = \\frac{Rp 16.000}{JPY 160} = \\mathbf{Rp 100 / JPY}$.',
+            '**Perhitungan Cross Rate IDR/JPY**:\n$\\text{Kurs (IDR/JPY)} = \\frac{\\text{USD/IDR}}{\\text{USD/JPY}} = \\frac{Rp 16.000}{JPY 160} = \\mathbf{Rp 100 / JPY}$.',
             '**Total Nilai Rupiah Transaksi**:\nTotal Rupiah = JPY 10.000.000 × Rp 100/JPY = **Rp 1.000.000.000** (1 Miliar Rupiah).'
           ]
         }

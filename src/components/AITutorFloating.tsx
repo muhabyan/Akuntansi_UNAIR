@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Bot, Send, X, Key, Info } from 'lucide-react';
 import { useGeminiSettings } from '../hooks/useGeminiSettings';
 import { chatWithAI, type AIMessage } from '../lib/aiClient';
@@ -19,18 +19,31 @@ export default function AITutorFloating() {
     id: 'ai-tutor',
     defaultPosition: { x: window.innerWidth - 72, y: window.innerHeight / 2 }
   });
+
+  const openPanel = useCallback(() => {
+    window.dispatchEvent(new CustomEvent('akuntansihub:utility-open', { detail: { id: 'ai-tutor' } }));
+    setIsOpen(true);
+  }, []);
+
+  useEffect(() => {
+    const closeWhenAnotherUtilityOpens = (event: Event) => {
+      if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'ai-tutor') setIsOpen(false);
+    };
+    window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+  }, []);
   
   const [messages, setMessages] = useState<AIMessage[]>(() => {
     const saved = localStorage.getItem('aiTutorChatHistory');
     if (saved) {
       try {
         return JSON.parse(saved);
-      } catch (e) {
+      } catch {
         console.error('Failed to parse chat history');
       }
     }
     return [
-      { role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!', timestamp: Date.now() }
+      { role: 'model', content: 'Halo! Saya AI Tutor AkuntansiHub. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!', timestamp: Date.now() }
     ];
   });
   const [inputText, setInputText] = useState('');
@@ -54,7 +67,7 @@ export default function AITutorFloating() {
 
   const handleClearChat = () => {
     if (confirm('Apakah Anda yakin ingin menghapus seluruh riwayat obrolan?')) {
-      const initialMessage: AIMessage[] = [{ role: 'model', content: 'Halo! Saya AI Tutor AKS1. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }];
+      const initialMessage: AIMessage[] = [{ role: 'model', content: 'Halo! Saya AI Tutor AkuntansiHub. Ada materi kuliah Akuntansi atau Perpajakan yang bikin bingung? Tanyakan saja!' }];
       setMessages(initialMessage);
       localStorage.setItem('aiTutorChatHistory', JSON.stringify(initialMessage));
     }
@@ -212,21 +225,17 @@ ${pageText}
     <>
       {/* Expanded Panel */}
       <div 
-        className={`zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
+        id="ai-tutor-panel"
+        data-utility-panel="ai-tutor"
+        aria-hidden={!isOpen}
+        className={`mobile-utility-panel zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
           !isOpen ? 'scale-90 opacity-0 pointer-events-none' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
-        style={{
-          ...(isLeftHalf 
-            ? { left: `clamp(16px, ${draggable.position.x + 64}px, calc(100vw - 340px - 16px))` } 
-            : { right: `clamp(16px, ${typeof window !== 'undefined' ? (document.documentElement.clientWidth || window.innerWidth) - draggable.position.x + 16 : 16}px, calc(100vw - 340px - 16px))` }),
-          ...(isTopHalf 
-            ? { top: `clamp(80px, ${draggable.position.y}px, calc(100vh - 550px - 16px))` } 
-            : { bottom: `clamp(16px, ${typeof window !== 'undefined' ? window.innerHeight - draggable.position.y - 56 : 16}px, calc(100vh - 550px - 16px))` })
-        }}
+        style={draggable.isDesktop ? draggable.getPanelStyle(400, 550) : undefined}
       >
-        <div className="w-[340px] md:w-[400px] h-[550px] max-h-[85vh] flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div className="mobile-utility-card mobile-utility-card--chat w-[340px] md:w-[400px] h-[550px] max-h-full flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           
           <div className="flex items-center justify-between p-4 text-white shrink-0 select-none bg-blue-600">
             <div className="flex items-center gap-2 font-bold pointer-events-none">
@@ -236,6 +245,7 @@ ${pageText}
               onPointerDown={(e) => e.stopPropagation()}
               onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
+              aria-label="Tutup AI Tutor"
               className="text-blue-100 hover:text-white hover:bg-blue-700 p-1 rounded-full transition relative z-10 cursor-pointer"
               title="Tutup obrolan"
             >
@@ -332,16 +342,16 @@ ${pageText}
                         ) : (
                           <ReactMarkdown
                             components={{
-                              p: ({node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
-                              strong: ({node, ...props}) => <strong className="font-bold" {...props} />,
-                              em: ({node, ...props}) => <em className="italic" {...props} />,
-                              ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
-                              ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
-                              li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                              h1: ({node, ...props}) => <h1 className="font-bold text-lg mb-2" {...props} />,
-                              h2: ({node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
-                              h3: ({node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
-                              code: ({node, inline, className, children, ...props}: any) => {
+                              p: ({node: _node, ...props}) => <p className="mb-2 last:mb-0" {...props} />,
+                              strong: ({node: _node, ...props}) => <strong className="font-bold" {...props} />,
+                              em: ({node: _node, ...props}) => <em className="italic" {...props} />,
+                              ul: ({node: _node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
+                              ol: ({node: _node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
+                              li: ({node: _node, ...props}) => <li className="mb-1" {...props} />,
+                              h1: ({node: _node, ...props}) => <h1 className="font-bold text-lg mb-2" {...props} />,
+                              h2: ({node: _node, ...props}) => <h2 className="font-bold text-base mb-2" {...props} />,
+                              h3: ({node: _node, ...props}) => <h3 className="font-semibold mb-2" {...props} />,
+                              code: ({node: _node, inline, className, children, ...props}: any) => {
                                 return !inline ? (
                                   <pre className="bg-gray-100 dark:bg-gray-700 rounded p-2 overflow-x-auto text-xs my-2">
                                     <code className={className} {...props}>
@@ -416,6 +426,7 @@ ${pageText}
                   <button 
                     type="submit"
                     disabled={!inputText.trim() || isLoading}
+                    aria-label="Kirim pesan ke AI Tutor"
                     className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 disabled:opacity-50 transition"
                   >
                     <Send size={16} className="ml-0.5" />
@@ -441,7 +452,12 @@ ${pageText}
       {/* Floating Toggle Button */}
       <button
         ref={draggable.ref}
-        {...draggable.handlers}
+        {...(draggable.isDesktop ? draggable.handlers : {})}
+        type="button"
+        aria-label={isOpen ? 'Tutup AI Tutor' : 'Buka AI Tutor'}
+        aria-controls="ai-tutor-panel"
+        aria-expanded={isOpen}
+        title={isOpen ? 'Tutup AI Tutor' : 'Buka AI Tutor'}
         onClick={(e) => {
           // If we dragged, don't trigger click
           if (draggable.isMoved) {
@@ -449,16 +465,17 @@ ${pageText}
             e.stopPropagation();
             return;
           }
-          setIsOpen(!isOpen);
+          if (isOpen) setIsOpen(false);
+          else openPanel();
         }}
-        style={{
+        style={draggable.isDesktop ? {
           ...draggable.handlers.style,
           position: 'fixed',
           left: `clamp(0px, ${draggable.position.x}px, calc(100vw - 48px))`,
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 99
-        }}
-        className={`zen-hideable group flex items-center justify-center shadow-md ${
+        } : undefined}
+        className={`zen-hideable group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--ai' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-blue-400/50' : 'cursor-pointer active:scale-95'
@@ -484,7 +501,7 @@ ${pageText}
       {/* Unread Badge outside button */}
       {!isOpen && unreadCount > 0 && (
         <div 
-          className="fixed z-[100] flex items-center justify-center pointer-events-none"
+          className="mobile-utility-badge mobile-utility-badge--ai fixed z-[100] flex items-center justify-center pointer-events-none"
           style={{
             left: `clamp(0px, ${draggable.position.x + (draggable.isDesktop ? 30 : 25)}px, calc(100vw - 16px))`,
             top: `clamp(70px, ${draggable.position.y - 10}px, calc(100vh - 48px))`

@@ -680,13 +680,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     }
     case 'AKS301': {
       const module = await import('../sia/siaReadings');
-      return {
-        readings: module.AKS301_READINGS,
-        reviews: {
-          'uts': module.AKS301_READINGS[7],
-          'uas': module.AKS301_READINGS[14],
-        },
-      };
+      return { readings: module.AKS301_READINGS, reviews: module.AKS301_REVIEW_READINGS };
     }
     case 'AGX101':
     case 'NOP103':

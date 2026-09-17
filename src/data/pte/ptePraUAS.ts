@@ -784,14 +784,14 @@ const tm11: Reading = {
         {
           "kind": "ul",
           "items": [
-            "Bank Pertama menerima deposit $1000. Menyimpan $100 (10%) sebagai cadangan, meminjamkan $900.",
-            "Peminjam membelanjakan $900, dan uang itu masuk ke Bank Kedua. Bank Kedua menyimpan $90 (10%) dan meminjamkan $810.",
-            "Total uang beredar pada tahap ini: $1000 + $900 + $810 + ... = $10.000."
+            "Bank Pertama menerima deposit \\$1000. Menyimpan \\$100 (10%) sebagai cadangan, meminjamkan \\$900.",
+            "Peminjam membelanjakan \\$900, dan uang itu masuk ke Bank Kedua. Bank Kedua menyimpan \\$90 (10%) dan meminjamkan \\$810.",
+            "Total uang beredar pada tahap ini: \\$1000 + \\$900 + \\$810 + ... = \\$10.000."
           ]
         },
         {
           "kind": "p",
-          "text": "Pengganda uang = 1 / 0.1 = 10. Uang $1000 berubah menjadi **$10.000** dalam sistem perbankan."
+          "text": "Pengganda uang = 1 / 0.1 = 10. Uang \\$1000 berubah menjadi **\\$10.000** dalam sistem perbankan."
         }
       ]
     },

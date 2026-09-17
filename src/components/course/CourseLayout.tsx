@@ -1,18 +1,19 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import {
   Award,
+  ArrowUpDown,
   BookMarked,
   BookOpen,
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
   ClipboardList,
-  FileText,
   Layers,
+  ListTree,
+  Maximize,
   PlayCircle,
   Sparkles,
   Target,
-  X,
 } from 'lucide-react';
 import { useStudyProgress, materialKey } from '../../hooks/useStudyProgress';
 import { loadCourseContent, type LoadedCourseContent, type ReviewReadingKey } from '../../data/courses/courseRegistry';
@@ -29,6 +30,7 @@ import QuizCard from './QuizCard';
 import PteQuizCard from './PteQuizCard';
 import FlashcardGrid from './FlashcardGrid';
 import BankQuestionList from './BankQuestionList';
+import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
 
 interface CourseLayoutProps {
@@ -61,6 +63,7 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
     case 'h3':
     case 'p':
     case 'formula':
+    case 'code':
       return block.text.toLowerCase().includes(query);
     case 'ul':
     case 'ol':
@@ -122,6 +125,36 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
   }
 }
 
+function formulaNeedsFullWidth(block: Extract<ContentBlock, { kind: 'formula' }>) {
+  const readableLength = block.text
+    .replace(/\\text\{([^}]*)\}/g, '$1')
+    .replace(/\\[a-zA-Z]+/g, '')
+    .replace(/[{}\s]/g, '')
+    .length;
+  return readableLength > 55 || block.text.includes('\\\\');
+}
+
+function isWideLearningBlock(block: ContentBlock) {
+  return [
+    'table',
+    'journal',
+    'formula',
+    'figure',
+    'example',
+    'solution-reveal',
+    'statement',
+    'builder',
+    'interactive-match',
+    'table-fill',
+    'journal-builder',
+    't-account-builder',
+    'illustration',
+    'math-example',
+    'chart-guide',
+    'practice-box',
+  ].includes(block.kind);
+}
+
 // ----------------- DETAIL BACAAN TATAP MUKA -----------------
 function ReadingPanel({
   reading,
@@ -129,6 +162,7 @@ function ReadingPanel({
   onPrev,
   onNext,
   courseCode,
+  courseName,
   isFirst,
   isLast,
   isDone,
@@ -139,6 +173,7 @@ function ReadingPanel({
   onPrev: () => void;
   onNext: () => void;
   courseCode: string;
+  courseName: string;
   isFirst: boolean;
   isLast: boolean;
   isDone: (key: string) => boolean;
@@ -147,10 +182,39 @@ function ReadingPanel({
   const key = materialKey(courseCode, reading.tm);
   const done = isDone(key);
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
+  const outlineItems = useMemo(() => buildReadingOutline(reading.blocks), [reading.blocks]);
+  const activeOutlineId = useReadingOutlineActive(outlineItems);
+  const activeOutlineIndex = Math.max(0, outlineItems.findIndex((item) => item.id === activeOutlineId));
+  const activeOutlineItem = outlineItems[activeOutlineIndex];
+  const [desktopOutlineOpen, setDesktopOutlineOpen] = useState(() => {
+    try {
+      return window.localStorage.getItem(DESKTOP_OUTLINE_STORAGE_KEY) !== 'true';
+    } catch {
+      return true;
+    }
+  });
+  const [mobileOutlineOpen, setMobileOutlineOpen] = useState(false);
+  const mobileOutlineTriggerRef = useRef<HTMLButtonElement>(null);
+  const mobileOutlineWasOpen = useRef(false);
 
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const minSwipeDistance = 50;
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(DESKTOP_OUTLINE_STORAGE_KEY, String(!desktopOutlineOpen));
+    } catch {
+      // The outline remains usable when browser storage is unavailable.
+    }
+  }, [desktopOutlineOpen]);
+
+  useEffect(() => {
+    document.body.classList.toggle('reading-outline-menu-open', mobileOutlineOpen);
+    if (mobileOutlineWasOpen.current && !mobileOutlineOpen) mobileOutlineTriggerRef.current?.focus();
+    mobileOutlineWasOpen.current = mobileOutlineOpen;
+    return () => document.body.classList.remove('reading-outline-menu-open');
+  }, [mobileOutlineOpen]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -191,258 +255,179 @@ function ReadingPanel({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [reading.tm]);
 
+  useEffect(() => {
+    document.body.classList.add('reading-mode-active');
+    return () => document.body.classList.remove('reading-mode-active');
+  }, []);
+
   return (
-    <>
-      <article 
-        className="animate-fade-in-up"
+    <div
+      className="reading-layout grid min-w-0 gap-6 lg:grid-cols-[minmax(0,64rem)_12.5rem] lg:justify-center"
+      data-outline-expanded={desktopOutlineOpen}
+    >
+      <article
+        className="min-w-0 animate-fade-in-up"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-      <CourseHeader reading={reading} onBack={onBack} />
+        <div className="reading-toolbar sticky top-[calc(4.25rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-200/90 bg-white/95 p-1.5 shadow-sm shadow-slate-900/5 backdrop-blur-md transition-[opacity,transform] duration-200 dark:border-gray-700/90 dark:bg-gray-900/95 dark:shadow-black/20 md:top-[4.75rem]">
+          <button
+            ref={mobileOutlineTriggerRef}
+            type="button"
+            aria-label="Buka daftar isi"
+            aria-expanded={mobileOutlineOpen}
+            aria-controls="reading-outline-mobile-dialog"
+            onClick={() => setMobileOutlineOpen((open) => !open)}
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-bold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300 lg:hidden"
+          >
+            <ListTree size={17} /> <span className="hidden min-[360px]:inline">Daftar Isi</span>
+          </button>
+          <button
+            type="button"
+            aria-label={desktopOutlineOpen ? 'Tutup daftar isi' : 'Buka daftar isi'}
+            aria-expanded={desktopOutlineOpen}
+            aria-controls="reading-outline-desktop-panel"
+            onClick={() => setDesktopOutlineOpen((open) => !open)}
+            className="hidden min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-bold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300 lg:inline-flex"
+          >
+            <ListTree size={17} /> Daftar Isi
+          </button>
+          <div className="min-w-0 flex-1 px-1 text-center">
+            <p className="truncate text-[11px] font-semibold text-gray-500 dark:text-gray-400" aria-live="polite">
+              {activeOutlineItem ? `${String(activeOutlineIndex + 1).padStart(2, '0')} · ${activeOutlineItem.label.replace(/^\d+\.\s*/, '')}` : `TM ${reading.tm}`}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('akuntansihub:toggle-zen'))}
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg px-3 text-sm font-bold text-gray-600 transition-colors hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:text-gray-300 dark:hover:bg-blue-950/35 dark:hover:text-blue-300"
+            title="Masuk ke Zen Mode"
+          >
+            <Maximize size={16} /> <span className="hidden sm:inline">Zen Mode</span>
+          </button>
+        </div>
 
-      <div className="akbi-reading-flow course-reading-panel mb-8 overflow-hidden rounded-[1.85rem] p-4 md:p-6 xl:p-7">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b border-navy-500/45 pb-3">
-          <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-gold">
-            <FileText size={15} /> {isSimulation ? 'Mode Simulasi Ujian' : 'Mode Baca Materi'}
+        <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} />
+
+        <div className="reading-document akbi-reading-flow min-w-0">
+          <div className="space-y-6 md:space-y-8">
+            {reading.blocks.map((block, index) => {
+              const previousBlock = reading.blocks[index - 1];
+              const nextBlock = reading.blocks[index + 1];
+
+              if (block.kind === 'formula' && previousBlock?.kind === 'formula') return null;
+
+              if (block.kind === 'formula' && nextBlock?.kind === 'formula') {
+                const formulaRun: Array<{ block: Extract<ContentBlock, { kind: 'formula' }>; index: number }> = [];
+                let formulaIndex = index;
+                while (reading.blocks[formulaIndex]?.kind === 'formula') {
+                  formulaRun.push({
+                    block: reading.blocks[formulaIndex] as Extract<ContentBlock, { kind: 'formula' }>,
+                    index: formulaIndex,
+                  });
+                  formulaIndex += 1;
+                }
+
+                return (
+                  <div key={`formula-run-${index}`} className="reading-exam-formula-grid reading-wide-block min-w-0">
+                    {formulaRun.map(({ block: formulaBlock, index: originalIndex }) => (
+                      <div
+                        key={originalIndex}
+                        className={`reading-block-anchor min-w-0 scroll-mt-40 ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
+                      >
+                        <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                      </div>
+                    ))}
+                  </div>
+                );
+              }
+
+              return (
+                <div
+                  key={index}
+                  id={getReadingBlockId(block, index)}
+                  className={`reading-block-anchor min-w-0 scroll-mt-40 ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
+                >
+                  <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                </div>
+              );
+            })}
           </div>
         </div>
-        <div className="space-y-6 md:space-y-8">
-          {reading.blocks.map((b, i) => (
-            <CourseBlockCard key={i} block={b} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} />
-          ))}
-        </div>
-        {/* <TTSPlayer title={reading.title} intro={''} blocks={reading.blocks} /> */}
-      </div>
 
-      <button
-        onClick={() => toggle(key)}
-        className={`course-toggle-btn w-full flex items-center justify-center gap-2 rounded-2xl border px-4 py-3.5 font-bold ${
-          done
-            ? 'border-gold bg-gold text-navy-950 shadow-lg shadow-gold/20'
-            : 'border-gold/30 bg-gold/10 text-gold hover:bg-gold hover:text-navy-950'
-        }`}
-      >
-        <CheckCircle2 size={18} /> {done ? 'Sudah dipelajari' : 'Tandai sudah dipelajari'}
-      </button>
+        <footer className="reading-completion reading-prose-block mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
+          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Selesai membaca?</p>
+          <h2 className="mt-1.5 text-lg font-bold text-gray-900 dark:text-white">Catat progres, lalu lanjutkan saat siap.</h2>
+          <button
+            type="button"
+            onClick={() => toggle(key)}
+            className={`mt-4 flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border px-4 font-bold transition-colors ${
+              done
+                ? 'border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950/35 dark:text-emerald-300'
+                : 'border-blue-600 bg-blue-600 text-white hover:bg-blue-700 dark:border-blue-500 dark:bg-blue-600 dark:hover:bg-blue-500'
+            }`}
+          >
+            <CheckCircle2 size={18} /> {done ? 'Sudah dipelajari' : 'Tandai sudah dipelajari'}
+          </button>
 
-      <nav className="mt-8 flex items-center justify-between gap-3 border-t border-navy-700/60 pt-6">
-        <button
-          onClick={onPrev}
-          disabled={isFirst}
-          className="course-nav-btn flex flex-1 items-center gap-2 rounded-xl border border-navy-500/70 bg-navy-850/60 px-4 py-3 text-sm text-slate-300 hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          <ChevronLeft size={16} /> Sebelumnya
-        </button>
-        <button
-          onClick={onNext}
-          disabled={isLast}
-          className="course-nav-btn flex flex-1 items-center justify-end gap-2 rounded-xl border border-navy-500/70 bg-navy-850/60 px-4 py-3 text-sm text-slate-300 hover:border-gold/50 disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          Berikutnya <ChevronRight size={16} />
-        </button>
-      </nav>
-
+          <nav className="reading-essential-nav mt-5 grid grid-cols-2 gap-3" aria-label="Navigasi materi">
+            <button type="button" onClick={onPrev} disabled={isFirst} className="flex min-h-12 min-w-0 items-center gap-2 rounded-xl border border-gray-200 px-3 text-left text-sm font-semibold text-gray-700 transition-colors hover:border-blue-200 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/30">
+              <ChevronLeft size={17} className="shrink-0" /> <span className="truncate">Sebelumnya</span>
+            </button>
+            <button type="button" onClick={onNext} disabled={isLast} className="flex min-h-12 min-w-0 items-center justify-end gap-2 rounded-xl border border-gray-200 px-3 text-right text-sm font-semibold text-gray-700 transition-colors hover:border-blue-200 hover:bg-blue-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-gray-700 dark:text-gray-300 dark:hover:border-blue-800 dark:hover:bg-blue-950/30">
+              <span className="truncate">Berikutnya</span> <ChevronRight size={17} className="shrink-0" />
+            </button>
+          </nav>
+        </footer>
       </article>
 
-      {/* Floating Quick Navigation */}
-      <div className="fixed bottom-6 right-6 z-[60] flex items-center gap-2 drop-shadow-2xl md:bottom-8 md:right-8">
-        <button
-          onClick={onBack}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-900 text-white transition-all hover:scale-105 hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
-          title="Tutup & Kembali ke Daftar Materi"
-        >
-          <X size={20} />
-        </button>
-        <div className="flex h-11 items-center rounded-full bg-slate-900 px-1 text-white dark:bg-white dark:text-slate-900">
-          <button
-            onClick={onPrev}
-            disabled={isFirst}
-            className="flex h-9 w-10 items-center justify-center rounded-full transition-colors hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:bg-slate-300"
-            title="Materi Sebelumnya"
-          >
-            <ChevronLeft size={20} />
-          </button>
-          <div className="h-4 w-[1px] bg-slate-700 dark:bg-slate-400"></div>
-          <button
-            onClick={onNext}
-            disabled={isLast}
-            className="flex h-9 w-10 items-center justify-center rounded-full transition-colors hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-30 dark:hover:bg-slate-300"
-            title="Materi Berikutnya"
-          >
-            <ChevronRight size={20} />
-          </button>
-        </div>
-      </div>
-    </>
+      <ReadingOutline items={outlineItems} variant="desktop" activeId={activeOutlineId} isOpen={desktopOutlineOpen} onOpenChange={setDesktopOutlineOpen} />
+      <ReadingOutline items={outlineItems} variant="mobile" activeId={activeOutlineId} isOpen={mobileOutlineOpen} onOpenChange={setMobileOutlineOpen} />
+    </div>
   );
 }
 
 // ----------------- DASHBOARD UNIVERSAL (PTE-STYLE) -----------------
 function UniversalCourseDashboard({
-  course,
-  percent,
+  nextTm,
+  nextTitle,
+  isComplete,
   completedCount,
   totalCount,
-  utsCount,
-  uasCount,
   onStart,
-  onPraUts,
-  onPraUas,
-  onQuiz,
-  onBank,
-  onFlashcard,
-  onSimUts,
-  onSimUas,
 }: {
-  course: Course;
-  percent: number;
+  nextTm: number | null;
+  nextTitle?: string;
+  isComplete: boolean;
   completedCount: number;
   totalCount: number;
-  utsCount: number;
-  uasCount: number;
   onStart: () => void;
-  onPraUts: () => void;
-  onPraUas: () => void;
-  onQuiz: () => void;
-  onBank: () => void;
-  onFlashcard: () => void;
-  onSimUts?: () => void;
-  onSimUas?: () => void;
 }) {
-  const ringStyle = {
-    background: `conic-gradient(#3b82f6 ${percent * 3.6}deg, transparent 0deg)`,
-  };
-
-  const isAkm1 = course.code === 'AKK201';
-  const isPjk = course.code === 'PJK201';
-  
-  const introText = isAkm1
-    ? 'Dashboard AKM I untuk membaca Pra-UTS dan Pra-UAS, mengerjakan kuis, bank soal, flashcard, lalu masuk ke simulasi UTS/UAS 2 jam.'
-    : isPjk
-      ? 'Materi Perpajakan I dibagi jelas menjadi Pra-UTS TM 1-7 dan Pra-UAS TM 8-14. Gunakan jalur materi untuk membaca konsep, lalu lanjutkan latihan.'
-      : 'Dashboard belajar untuk membaca materi, mengerjakan latihan interaktif, dan simulasi ujian. Disusun agar pengalaman belajar terasa premium, ringan, dan fokus.';
+  if (nextTm === null) return null;
 
   return (
-    <section className="mb-8 overflow-hidden rounded-[2.5rem] border border-gray-200/60 dark:border-navy-600/50 bg-white dark:bg-navy-900/40 p-5 shadow-lg shadow-gray-200/50 dark:shadow-none md:p-7 xl:p-8 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/10 pointer-events-none" />
-      <div className="grid gap-6 xl:grid-cols-[1.3fr_0.7fr] relative z-10">
-        <div>
-          <div className="mb-5 flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-blue-100 dark:bg-blue-900/40 px-3.5 py-1.5 text-[11px] font-black uppercase tracking-wider text-blue-700 dark:text-blue-300 ring-1 ring-blue-500/20">
-              Course Utama
-            </span>
-            <span className="rounded-full bg-emerald-100 dark:bg-emerald-900/40 px-3.5 py-1.5 text-[11px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-500/20">
-              Terstruktur
-            </span>
-          </div>
-
-          <h1 className="text-3xl font-black leading-tight tracking-tight text-gray-900 dark:text-slate-100 md:text-4xl xl:text-[2.75rem]">
-            {course.name}
-          </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-600 dark:text-slate-300 md:text-[15px] md:leading-8">
-            {introText}
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <button onClick={onStart} className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-blue-600/20 transition-all hover:bg-blue-700 hover:shadow-lg hover:-translate-y-0.5">
-              <PlayCircle size={18} /> Lanjutkan Belajar
-            </button>
-            <button onClick={onPraUts} className="inline-flex items-center gap-2 rounded-2xl border border-gray-200 dark:border-navy-600 bg-white dark:bg-navy-800 px-6 py-3.5 text-sm font-bold text-gray-700 dark:text-slate-200 shadow-sm transition-all hover:border-blue-500/50 hover:bg-blue-50/50 dark:hover:bg-navy-700/50 hover:text-blue-600 dark:hover:text-blue-300">
-              <Layers size={18} /> Pra-UTS
-            </button>
-            <button onClick={onPraUas} className="inline-flex items-center gap-2 rounded-2xl border border-gray-200 dark:border-navy-600 bg-white dark:bg-navy-800 px-6 py-3.5 text-sm font-bold text-gray-700 dark:text-slate-200 shadow-sm transition-all hover:border-emerald-500/50 hover:bg-emerald-50/50 dark:hover:bg-navy-700/50 hover:text-emerald-600 dark:hover:text-emerald-300">
-              <Award size={18} /> Pra-UAS
-            </button>
-          </div>
-        </div>
-
-        <div className="rounded-[1.75rem] border border-gray-200/80 dark:border-navy-600/60 bg-gray-50/80 dark:bg-navy-950/40 p-6 backdrop-blur-sm shadow-inner">
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.15em] text-gray-500 dark:text-slate-400">Progress Belajar</p>
-              <div className="mt-2 flex items-baseline gap-1">
-                <h2 className="text-3xl font-black tracking-tight text-gray-900 dark:text-slate-100">{percent}</h2>
-                <span className="text-lg font-bold text-gray-500 dark:text-slate-400">%</span>
-              </div>
-              <p className="mt-1 text-xs font-semibold text-gray-500 dark:text-slate-400">{completedCount} dari {totalCount} TM selesai</p>
-            </div>
-            <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-gray-200 dark:bg-navy-800">
-              <div className="absolute inset-0 rounded-full" style={ringStyle} />
-              <div className="absolute inset-1.5 flex items-center justify-center rounded-full bg-white dark:bg-navy-900 shadow-sm">
-                <span className="text-sm font-black text-blue-600 dark:text-blue-400">
-                  {completedCount}/{totalCount}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 grid grid-cols-2 gap-3">
-            <div className="rounded-2xl bg-white dark:bg-navy-800 p-4 border border-gray-100 dark:border-navy-700 shadow-sm">
-              <p className="text-[10px] font-black uppercase tracking-wider text-blue-600 dark:text-blue-400">Pra-UTS</p>
-              <p className="mt-1.5 text-xl font-black text-gray-900 dark:text-slate-100">{utsCount} TM</p>
-              <p className="mt-1 text-xs text-gray-500 dark:text-slate-400">Dasar Konsep</p>
-            </div>
-            <div className="rounded-2xl bg-white dark:bg-navy-800 p-4 border border-gray-100 dark:border-navy-700 shadow-sm">
-              <p className="text-[10px] font-black uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Pra-UAS</p>
-              <p className="mt-1.5 text-xl font-black text-gray-900 dark:text-slate-100">{uasCount} TM</p>
-              <p className="mt-1 text-xs text-gray-500 dark:text-slate-400">Materi Lanjut</p>
-            </div>
-          </div>
-        </div>
+    <section className="relative mb-6 overflow-hidden rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50/90 via-white to-indigo-50/70 px-5 py-5 dark:border-blue-900/45 dark:from-blue-950/35 dark:via-gray-900 dark:to-indigo-950/25 md:flex md:items-center md:justify-between md:gap-6 md:px-6" aria-labelledby="course-next-step-title">
+      <div className="pointer-events-none absolute -right-10 -top-16 h-36 w-36 rounded-full bg-blue-400/10 blur-2xl" />
+      <div className="relative min-w-0">
+        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">
+          {isComplete ? 'Tinjau kembali' : 'Titik belajar berikutnya'}
+        </p>
+        <h2 id="course-next-step-title" className="mt-1.5 text-lg font-bold leading-snug text-gray-900 dark:text-white md:text-xl">
+          TM {nextTm} · {nextTitle}
+        </h2>
+        <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
+          {isComplete
+            ? `Semua ${totalCount} materi sudah ditandai selesai. Mulai ulang dari awal bila ingin meninjau.`
+            : `${completedCount} dari ${totalCount} materi sudah selesai.`}
+        </p>
       </div>
-
-      <div className="mt-8 grid gap-4 md:grid-cols-3 relative z-10">
-        <button onClick={onFlashcard} className="group flex items-start gap-4 rounded-[1.5rem] border border-gray-200/80 dark:border-navy-600/60 bg-gray-50/50 dark:bg-navy-900/30 p-5 text-left transition-all hover:bg-white dark:hover:bg-navy-800 hover:shadow-md hover:border-gold/40">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-amber-100 dark:bg-gold/10 text-amber-600 dark:text-gold transition-transform group-hover:scale-110">
-            <Layers size={20} />
-          </div>
-          <div>
-            <p className="text-[10px] font-black uppercase tracking-wider text-gray-500 dark:text-slate-400">Flashcard</p>
-            <h3 className="mt-1 text-base font-bold text-gray-900 dark:text-slate-100">Review Cepat</h3>
-            <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-slate-400">Hafalan konsep & rumus</p>
-          </div>
-        </button>
-        <button onClick={onBank} className="group flex items-start gap-4 rounded-[1.5rem] border border-gray-200/80 dark:border-navy-600/60 bg-gray-50/50 dark:bg-navy-900/30 p-5 text-left transition-all hover:bg-white dark:hover:bg-navy-800 hover:shadow-md hover:border-emerald-400/40">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 transition-transform group-hover:scale-110">
-            <ClipboardList size={20} />
-          </div>
-          <div>
-            <p className="text-[10px] font-black uppercase tracking-wider text-gray-500 dark:text-slate-400">Bank Soal</p>
-            <h3 className="mt-1 text-base font-bold text-gray-900 dark:text-slate-100">Latihan Mandiri</h3>
-            <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-slate-400">Latihan terpandu per topik</p>
-          </div>
-        </button>
-        <button onClick={onQuiz} className="group flex items-start gap-4 rounded-[1.5rem] border border-gray-200/80 dark:border-navy-600/60 bg-gray-50/50 dark:bg-navy-900/30 p-5 text-left transition-all hover:bg-white dark:hover:bg-navy-800 hover:shadow-md hover:border-blue-400/40">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-100 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 transition-transform group-hover:scale-110">
-            <Target size={20} />
-          </div>
-          <div>
-            <p className="text-[10px] font-black uppercase tracking-wider text-gray-500 dark:text-slate-400">Ujian</p>
-            <h3 className="mt-1 text-base font-bold text-gray-900 dark:text-slate-100">Simulasi Waktu</h3>
-            <p className="mt-1 text-xs leading-5 text-gray-500 dark:text-slate-400">Latihan dengan timer</p>
-          </div>
-        </button>
-      </div>
-
-      {(onSimUts || onSimUas) && (
-        <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-gray-200/60 dark:border-navy-700/50">
-          {onSimUts && (
-            <button onClick={onSimUts} className="rounded-full bg-gray-100 dark:bg-navy-800 px-4 py-2 text-xs font-bold text-gray-600 dark:text-slate-300 transition-colors hover:bg-gray-200 dark:hover:bg-navy-700">
-              Akses Simulasi UTS
-            </button>
-          )}
-          {onSimUas && (
-            <button onClick={onSimUas} className="rounded-full bg-gray-100 dark:bg-navy-800 px-4 py-2 text-xs font-bold text-gray-600 dark:text-slate-300 transition-colors hover:bg-gray-200 dark:hover:bg-navy-700">
-              Akses Simulasi UAS
-            </button>
-          )}
-        </div>
-      )}
+      <button type="button" onClick={onStart} className="relative mt-4 inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 text-sm font-bold text-white shadow-sm shadow-blue-600/20 transition hover:bg-blue-700 md:mt-0 md:w-auto">
+        <PlayCircle size={18} /> {isComplete ? `Tinjau TM ${nextTm}` : `Lanjut TM ${nextTm}`}
+      </button>
     </section>
   );
 }
-
 // ----------------- KARTU SIMULASI UJIAN -----------------
 function ReviewReadingCard({
   reading,
@@ -538,52 +523,51 @@ function MaterialCard({
   tmNum,
   reading,
   checked,
+  current,
   onToggle,
   onOpen,
 }: {
   tmNum: number;
   reading: Reading;
   checked: boolean;
+  current: boolean;
   onToggle: () => void;
   onOpen: () => void;
 }) {
   return (
-    <div className={`group flex items-start gap-3 rounded-xl border p-4 shadow-sm transition-all hover:shadow-md md:gap-4 md:p-5 ${checked ? 'border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800/50' : 'border-gray-200 bg-white hover:border-blue-300 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-500'}`}>
-      <div className="pt-1">
-        <ProgressCheckbox checked={checked} onToggle={onToggle} />
-      </div>
+    <article className={`group grid grid-cols-[2.75rem_minmax(0,1fr)_2.75rem] items-start gap-3 border-b border-gray-200 px-3 py-3.5 last:border-b-0 dark:border-gray-700 md:grid-cols-[2.75rem_minmax(0,1fr)_auto] md:items-center md:px-4 ${
+      current
+        ? 'bg-blue-50/75 dark:bg-blue-950/25'
+        : checked
+          ? 'bg-gray-50/80 dark:bg-gray-900/25'
+          : 'bg-white/80 hover:bg-gray-50/80 dark:bg-gray-800/65 dark:hover:bg-gray-800'
+    }`} aria-current={current ? 'step' : undefined}>
+      <ProgressCheckbox checked={checked} onToggle={onToggle} />
 
-      <div onClick={onOpen} className="min-w-0 flex-1 cursor-pointer text-left">
-        <div className="mb-2 flex flex-wrap items-center gap-2">
-          <span className="rounded-md bg-blue-50 dark:bg-blue-900/30 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-            TM {tmNum}
-          </span>
-          {reading.ref && (
-            <span className="rounded-md bg-gray-100 dark:bg-gray-700 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-300">
-              {reading.ref}
-            </span>
-          )}
-          {checked && (
-            <span className="rounded-md bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-              Selesai
-            </span>
-          )}
+      <button type="button" onClick={onOpen} className="min-w-0 text-left">
+        <div className="mb-1 flex min-w-0 flex-wrap items-center gap-x-2 gap-y-0.5 text-[10px] font-bold uppercase tracking-[0.14em]">
+          <span className={current ? 'text-blue-700 dark:text-blue-300' : 'text-gray-500 dark:text-gray-400'}>TM {tmNum}</span>
+          {current && <span className="text-blue-600 dark:text-blue-400">Berikutnya</span>}
+          {checked && <span className="text-emerald-600 dark:text-emerald-400">Selesai</span>}
+          {reading.ref && <span className="truncate normal-case tracking-normal text-gray-400 dark:text-gray-500">{reading.ref}</span>}
         </div>
-        <h3 className={`text-base font-bold leading-snug md:text-lg transition-colors ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400'}`}>
+        <h3 className={`text-sm font-bold leading-snug transition-colors md:text-base ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 group-hover:text-blue-700 dark:text-white dark:group-hover:text-blue-300'}`}>
           {reading.title}
         </h3>
-        <div className="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+        <div className="mt-1 line-clamp-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400 md:text-sm">
           {renderText(reading.intro)}
         </div>
-      </div>
+      </button>
 
       <button
+        type="button"
         onClick={onOpen}
-        className="flex shrink-0 items-center gap-1.5 rounded-lg bg-blue-50 dark:bg-blue-900/30 px-3 py-2 text-xs font-bold text-blue-600 dark:text-blue-400 transition-colors hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 dark:hover:text-white md:px-4"
+        aria-label={`Buka TM ${tmNum}: ${reading.title}`}
+        className="flex min-h-11 min-w-11 shrink-0 items-center justify-center gap-1.5 rounded-lg text-xs font-bold text-blue-600 transition-colors hover:bg-blue-50 hover:text-blue-700 dark:text-blue-400 dark:hover:bg-blue-950/40 dark:hover:text-blue-300 md:px-3"
       >
         <BookOpen size={14} /> <span className="hidden sm:inline">Buka</span>
       </button>
-    </div>
+    </article>
   );
 }
 
@@ -611,7 +595,6 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setIsLoadingContent(true);
     setContentError(null);
     setCourseContent(null);
-    setSelectedMeetingTm(initialTm);
     setSelectedReviewKey(null);
 
     loadCourseContent(course.code)
@@ -676,6 +659,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
   const nextTm = useMemo(() => {
     return availableTms.find((t) => !isDone(materialKey(course.code, t))) ?? availableTms[0] ?? null;
   }, [availableTms, course.code, isDone]);
+  const isCourseComplete = stats.total > 0 && stats.completed === stats.total;
 
 
 
@@ -684,30 +668,30 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     const list: { id: TabType; label: string; icon: React.ReactNode; count?: number }[] = [
       {
         id: 'pra_uts',
-        label: isPjk ? 'Materi Pra-UTS (TM 1-7)' : reviewUtsReading ? 'Pra-UTS + Simulasi UTS' : 'Pra-UTS',
+        label: 'TM 1–7',
         icon: <Layers size={16} />,
-        count: utsTms.length + (reviewUtsReading ? 1 : 0),
+        count: utsTms.length,
       },
       {
         id: 'pra_uas',
-        label: isPjk ? 'Materi Pra-UAS (TM 8-14)' : reviewUasReading ? 'Pra-UAS + Simulasi UAS' : 'Pra-UAS',
+        label: 'TM 8–14',
         icon: <Award size={16} />,
-        count: uasTms.length + (reviewUasReading ? 1 : 0),
+        count: uasTms.length,
       },
     ];
     if ((course.flashcardCount ?? course.flashcards?.length ?? 0) > 0) {
-      list.push({ id: 'flashcards', label: 'Flashcard & Rangkuman', icon: <Layers size={16} /> });
+      list.push({ id: 'flashcards', label: 'Flashcard', icon: <Layers size={16} /> });
     }
-    list.push({ id: 'quiz', label: isPjk || course.code === 'EKT109' ? 'Simulasi UTS & UAS' : 'Kuis Interaktif', icon: <Target size={16} /> });
-    list.push({ id: 'bank_soal', label: isPjk ? 'Bank Soal' : 'Bank Soal Praktik', icon: <ClipboardList size={16} /> });
-    list.push({ id: 'referensi', label: course.code === 'AKM201' ? 'Referensi & Bank Rumus' : isPjk ? 'Referensi & Regulasi' : course.code === 'EKT109' ? 'Formula, Checklist & Referensi' : 'Referensi & Buku', icon: <BookMarked size={16} /> });
+    list.push({ id: 'quiz', label: isPjk || course.code === 'EKT109' ? 'UTS & UAS' : 'Kuis', icon: <Target size={16} /> });
+    list.push({ id: 'bank_soal', label: 'Bank Soal', icon: <ClipboardList size={16} /> });
+    list.push({ id: 'referensi', label: 'Referensi', icon: <BookMarked size={16} /> });
     
     if (getArsipFiles(course.code).length > 0) {
-      list.push({ id: 'arsip', label: 'Bocoran UAS', icon: <BookMarked size={16} /> });
+      list.push({ id: 'arsip', label: 'Arsip UAS', icon: <BookMarked size={16} /> });
     }
     
     return list;
-  }, [course, utsTms.length, uasTms.length, reviewUtsReading, reviewUasReading]);
+  }, [course, utsTms.length, uasTms.length]);
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase();
   const pteToolkitMetrics = useMemo(() => {
@@ -794,31 +778,33 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
 
 
   return (
-    <div className="mx-auto max-w-5xl px-4 md:px-8">
+    <div className={`mx-auto ${currentReading ? '-mt-16 max-w-[80rem] px-4' : '-mt-12 max-w-5xl px-4 md:mt-0 md:px-8'}`}>
       <div className="flex flex-col">
-        <CourseSidebar
-          course={course}
-          onBack={onBack}
-          searchQuery={searchQuery}
-          onSearchChange={(q) => {
-            setSearchQuery(q);
-            setSelectedMeetingTm(null);
-            setSelectedReviewKey(null);
-          }}
-          percent={stats.percent}
-          completedCount={stats.completed}
-          totalCount={stats.total}
-          tabs={tabs}
-          activeTab={activeTab}
-          onTabChange={switchTab}
-          onToggleSort={() => setIsSortedAsc(!isSortedAsc)}
-        />
+        {!currentReading && (
+          <CourseSidebar
+            course={course}
+            onBack={onBack}
+            searchQuery={searchQuery}
+            onSearchChange={(q) => {
+              setSearchQuery(q);
+              setSelectedMeetingTm(null);
+              setSelectedReviewKey(null);
+            }}
+            percent={stats.percent}
+            completedCount={stats.completed}
+            totalCount={stats.total}
+            tabs={tabs}
+            activeTab={activeTab}
+            onTabChange={switchTab}
+          />
+        )}
 
         <main className="relative min-w-0 flex-1 pb-10">
           {currentReading ? (
             <ReadingPanel
               reading={currentReading}
               courseCode={course.code}
+              courseName={course.name}
               onBack={() => {
                 setSelectedMeetingTm(null);
                 setSelectedReviewKey(null);
@@ -840,22 +826,14 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
             <>
               {!searchQuery && (
                 <UniversalCourseDashboard
-                  course={course}
-                  percent={stats.percent}
+                  nextTm={nextTm}
+                  nextTitle={nextTm === null ? undefined : courseContent.readings[nextTm]?.title}
+                  isComplete={isCourseComplete}
                   completedCount={stats.completed}
                   totalCount={stats.total}
-                  utsCount={utsTms.length}
-                  uasCount={uasTms.length}
                   onStart={() => {
                     if (nextTm !== null) navigateToMeeting(nextTm);
                   }}
-                  onPraUts={() => switchTab('pra_uts')}
-                  onPraUas={() => switchTab('pra_uas')}
-                  onQuiz={() => switchTab('quiz')}
-                  onBank={() => switchTab('bank_soal')}
-                  onFlashcard={() => switchTab('flashcards')}
-                  onSimUts={() => navigateToReview('uts')}
-                  onSimUas={() => navigateToReview('uas')}
                 />
               )}
 
@@ -871,16 +849,19 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
                     </p>
                   </div>
                 ) : (
-                  <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div className="flex items-end justify-between gap-4">
                     <div>
-                      <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">{course.name}</span>
+                      <span className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Materi utama</span>
                       <h1 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
                         {tabs.find((t) => t.id === activeTab)?.label}
                       </h1>
                     </div>
                     {(activeTab === 'pra_uts' || activeTab === 'pra_uas') && (
-                      <div className="rounded-lg bg-gray-100 dark:bg-gray-800 px-3 py-2 text-xs font-semibold text-gray-600 dark:text-gray-300">
-                        {filteredTms.length} TM · urutan {isSortedAsc ? 'naik' : 'turun'}
+                      <div className="flex items-center gap-2">
+                        <span className="hidden text-xs font-semibold text-gray-500 dark:text-gray-400 sm:inline">{filteredTms.length} materi</span>
+                        <button type="button" onClick={() => setIsSortedAsc(!isSortedAsc)} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gray-200 text-gray-500 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-gray-700 dark:text-gray-400 dark:hover:border-blue-800 dark:hover:bg-blue-950/35 dark:hover:text-blue-300" aria-label={`Urutkan materi ${isSortedAsc ? 'menurun' : 'menaik'}`} title={`Urutan ${isSortedAsc ? 'TM awal ke akhir' : 'TM akhir ke awal'}`}>
+                          <ArrowUpDown size={17} />
+                        </button>
                       </div>
                     )}
                   </div>
@@ -904,29 +885,32 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
               )}
 
               {(activeTab === 'pra_uts' || activeTab === 'pra_uas' || searchQuery) && (
-                <div className="space-y-3">
-                  {filteredTms.length === 0 && filteredSpecialReviewCount === 0 && filteredToolkitCount === 0 ? (
-                    <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 py-12 text-center text-sm text-gray-500 dark:text-gray-400">Tidak ada materi yang cocok.</div>
-                  ) : (
-                    filteredTms.map((tmNum) => {
-                      const reading = courseContent.readings[tmNum];
-                      const key = materialKey(course.code, tmNum);
-                      const checked = isDone(key);
+                <div>
+                  <div className="overflow-hidden rounded-xl border border-gray-200 bg-white/70 dark:border-gray-700 dark:bg-gray-800/55">
+                    {filteredTms.length === 0 && filteredSpecialReviewCount === 0 && filteredToolkitCount === 0 ? (
+                      <div className="bg-gray-50 py-12 text-center text-sm text-gray-500 dark:bg-gray-800/50 dark:text-gray-400">Tidak ada materi yang cocok.</div>
+                    ) : (
+                      filteredTms.map((tmNum) => {
+                        const reading = courseContent.readings[tmNum];
+                        const key = materialKey(course.code, tmNum);
+                        const checked = isDone(key);
 
-                      if (!reading) return null;
+                        if (!reading) return null;
 
-                      return (
-                        <MaterialCard
-                          key={tmNum}
-                          tmNum={tmNum}
-                          reading={reading}
-                          checked={checked}
-                          onToggle={() => toggle(key)}
-                          onOpen={() => navigateToMeeting(tmNum)}
-                        />
-                      );
-                    })
-                  )}
+                        return (
+                          <MaterialCard
+                            key={tmNum}
+                            tmNum={tmNum}
+                            reading={reading}
+                            checked={checked}
+                            current={tmNum === nextTm && !checked}
+                            onToggle={() => toggle(key)}
+                            onOpen={() => navigateToMeeting(tmNum)}
+                          />
+                        );
+                      })
+                    )}
+                  </div>
 
                   {((!searchQuery && activeTab === 'pra_uts') || reviewUtsMatchesSearch) && reviewUtsReading && (
                     <ReviewReadingCard

@@ -243,7 +243,7 @@ const AKA201_REF = [
 // --- AKK202 Akuntansi Keuangan Menengah II (Kieso Intermediate IFRS 5e) ---
 // RPP OBE Akuntansi Keuangan Menengah II, Departemen Akuntansi FEB UNAIR.
 const AKK202_TM1_7 = materi([
-  ['Akuntansi Aset Tetap, Properti Investasi, dan Tanah', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 13, 26'],
+  ['Akuntansi Aset Tetap, Properti Investasi, dan Tanah', 'Kieso IFRS 5e Ch. 9–10 | PSAK 216, 223, 240; ISAK 336'],
   ['Kos setelah Akuisisi & Disposisi Aset Tetap', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 58'],
   ['Depresiasi & Deplesi Sumber Daya Alam', 'Kieso IFRS 5e Ch. 11 | PSAK 16'],
   ['Penurunan Nilai Aset (Impairment) & Penyajian', 'Kieso IFRS 5e Ch. 11 | PSAK 48'],
@@ -320,13 +320,13 @@ const AKM202_REF = [
 // --- AKS301 Sistem Informasi Akuntansi (Richardson, Chang, Smith 4e ISE) ---
 // Sumber: Silabus Resmi Sistem Informasi Akuntansi, Departemen Akuntansi FEB UNAIR.
 const AKS301_TM1_7 = materi([
-  ['Sistem Informasi Akuntansi & Nilai Perusahaan', 'Richardson et al. AIS 4e · Ch. 1'],
-  ['Akuntan sebagai Analis Bisnis & Pemodelan Proses Bisnis (BPMN)', 'Richardson et al. AIS 4e · Ch. 2'],
-  ['Pemodelan Data & Kerangka Kerja REA', 'Richardson et al. AIS 4e · Ch. 3'],
-  ['Basis Data Relasional & Sistem Perusahaan (ERP)', 'Richardson et al. AIS 4e · Ch. 4'],
-  ['Siklus Pendapatan: Proses Penjualan & Penerimaan Kas', 'Richardson et al. AIS 4e · Ch. 5'],
-  ['Siklus Pengeluaran: Proses Pembelian & Pengeluaran Kas', 'Richardson et al. AIS 4e · Ch. 6'],
-  ['Siklus Konversi: Proses Produksi & Review Kasus UTS', 'Richardson et al. AIS 4e · Ch. 7'],
+  ['Accounting Information Systems and Firm Value', 'Richardson et al. AIS 4e · Ch. 1'],
+  ['Data Analytics: Addressing Accounting Questions with Data', 'Richardson et al. AIS 4e · Ch. 2'],
+  ['Accountants as Business Analysts', 'Richardson et al. AIS 4e · Ch. 4'],
+  ['Data Modeling', 'Richardson et al. AIS 4e · Ch. 5'],
+  ['Relational Databases and Enterprise Systems', 'Richardson et al. AIS 4e · Ch. 6'],
+  ['Sales and Collections Business Process', 'Richardson et al. AIS 4e · Ch. 7'],
+  ['Purchases and Payments Business Process', 'Richardson et al. AIS 4e · Ch. 8'],
 ], 1);
 const AKS301_TM8_14 = materi([
   ['Pengendalian Internal & Kerangka Kerja COSO', 'Richardson et al. AIS 4e · Ch. 9'],
