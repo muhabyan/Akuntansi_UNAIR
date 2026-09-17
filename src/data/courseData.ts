@@ -247,9 +247,9 @@ const AKK202_TM1_7 = materi([
   ['Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter', 'Kieso IFRS 5e Ch. 9 | IAS 16, IAS 37'],
   ['Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi', 'Kieso IFRS 5e Ch. 10, App. 10A | IAS 16, IAS 36'],
   ['Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS', 'Kieso IFRS 5e Ch. 10, App. 10A | IAS 36, IFRS 5; Latsol UTS'],
-  ['Aset Tidak Berwujud (Intangible Assets)', 'Kieso IFRS 5e Ch. 12 | PSAK 19'],
-  ['Liabilitas Jangka Pendek (Current Liabilities)', 'Kieso IFRS 5e Ch. 13 | PSAK 71'],
-  ['Provisi, Kontinjensi & Peristiwa Pasca Pelaporan', 'Kieso IFRS 5e Ch. 13 | PSAK 57'],
+  ['Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan', 'Kieso IFRS 5e Ch. 11 | IAS 38, IAS 36, IFRS 3'],
+  ['Liabilitas Jangka Pendek, Provisi, dan Kontinjensi', 'Kieso IFRS 5e Ch. 12 | IAS 1, IAS 37'],
+  ['Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar', 'Kieso IFRS 5e Ch. 13 | IFRS 9'],
 ], 1);
 const AKK202_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Kieso IFRS 5e Ch. 10–13 | PSAK 16, 48, 19, 57'],

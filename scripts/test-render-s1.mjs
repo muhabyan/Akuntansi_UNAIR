@@ -134,7 +134,6 @@ const knownIssues = new Set([
     'TM9.blocks[42].blocks[1]', 'TM14.blocks[29].blocks[0]', 'TM14.blocks[29].blocks[2]', 'TM14.blocks[29].blocks[3]',
     'TM14.blocks[29].blocks[4]', 'UAS.blocks[29].blocks[1]', 'UAS.blocks[119].blocks[0]', 'UAS.blocks[119].blocks[2]',
     'UAS.blocks[119].blocks[3]', 'UAS.blocks[119].blocks[4]'].map((where) => `AKK201 ${where}.text currency`),
-  'AKK202 TM7.blocks[4].text katex',
   'AKK202 TM10.blocks[5].text katex',
   'AKK202 TM11.blocks[5].text katex',
   'AKK202 TM11.blocks[6].text katex',

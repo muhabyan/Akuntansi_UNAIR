@@ -2,7 +2,7 @@ import type { ContentBlock, Reading } from '../../../types';
 
 const CHARLESTON_PARTIAL_YEAR_CASE: ContentBlock = {
   kind: 'solution-reveal',
-  title: 'Kuis Kelas — Charleston, SA: Depresiasi Sebagian Periode (P10.2, Kieso p. 914)',
+  title: 'Latihan — Charleston, SA: Depresiasi Sebagian Periode (P10.2, Kieso p. 914)',
   prompt: 'Charleston, SA membeli peralatan pada **1 Juni 2025** seharga €89.000. Nilai residu €5.000 dan umur manfaat 7 tahun. Hitung beban depresiasi 2025 dan 2026 dengan metode garis lurus, jumlah angka tahun (SYD), dan saldo menurun ganda (DDB), lalu buat jurnal 31 Desember 2025.',
   blocks: [
     {
@@ -47,6 +47,48 @@ const CHARLESTON_PARTIAL_YEAR_CASE: ContentBlock = {
         { account: 'Accumulated Depreciation—Equipment', credit: '€14.833', isCredit: true }
       ]
     }
+  ]
+};
+
+const lockardJournal = (caption: string, amount: string): ContentBlock => ({
+  kind: 'journal',
+  caption,
+  lines: [
+    { account: 'Depreciation Expense', debit: amount },
+    { account: 'Accumulated Depreciation—Machinery', credit: amount, isCredit: true }
+  ]
+});
+
+const LOCKARD_FIRST_YEAR_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Kuis Kelas — Lockard SE: Depresiasi Tahun Pertama (BE10.2–BE10.4, Kieso p. 898)',
+  prompt: 'Lockard SE membeli mesin pada **1 Januari 2025** seharga €80.000. Nilai residu €8.000 dan umur manfaat 8 tahun. Hitung beban depresiasi 2025 dengan (BE10.2) garis lurus, (BE10.3) jumlah angka tahun (SYD), dan (BE10.4) saldo menurun ganda (DDB). Untuk bagian (b), asumsikan mesin dibeli **1 September 2025** (garis lurus), **1 April 2025** (SYD), dan **1 Oktober 2025** (DDB). Buat jurnal penyesuaian 31 Desember 2025.',
+  blocks: [
+    {
+      kind: 'p',
+      text: 'Dasar depresiasi = €80.000 − €8.000 = €72.000. Bagian (a) memakai setahun penuh; bagian (b) memakai bulan pemakaian sampai 31 Desember 2025.'
+    },
+    {
+      kind: 'table',
+      headers: ['Soal', 'Beban tahun pertama pemakaian', '(a) 1 Januari 2025', '(b) Pembelian tengah tahun'],
+      rows: [
+        ['BE10.2 garis lurus', '€72.000 ÷ 8 = €9.000', '€9.000', '1 September: €9.000 × 4/12 = €3.000'],
+        ['BE10.3 SYD', 'S = 8 × 9 ÷ 2 = 36; €72.000 × 8/36 = €16.000', '€16.000', '1 April: €16.000 × 9/12 = €12.000'],
+        ['BE10.4 DDB', 'Tarif 2/8 = 25%; €80.000 × 25% = €20.000', '€20.000', '1 Oktober: €20.000 × 3/12 = €5.000']
+      ],
+      caption: 'Pada DDB residu €8.000 tidak dikurangkan; nilai buku akhir 2025 (€60.000 atau €75.000) masih di atas batas residu.'
+    },
+    {
+      kind: 'formula',
+      text: '\\text{SYD (b)}=\\text{€72.000}\\times\\frac{8}{36}\\times\\frac{9}{12}=\\text{€12.000}\\\\\\text{DDB (b)}=\\text{€80.000}\\times\\frac{2}{8}\\times\\frac{3}{12}=\\text{€5.000}'
+    },
+    { kind: 'h3', text: 'Jurnal penyesuaian 31 Desember 2025' },
+    lockardJournal('BE10.2 (a) — garis lurus setahun penuh (€72.000 ÷ 8)', '€9.000'),
+    lockardJournal('BE10.2 (b) — garis lurus 4 bulan (€9.000 × 4/12)', '€3.000'),
+    lockardJournal('BE10.3 (a) — SYD setahun penuh (€72.000 × 8/36)', '€16.000'),
+    lockardJournal('BE10.3 (b) — SYD 9 bulan (€16.000 × 9/12)', '€12.000'),
+    lockardJournal('BE10.4 (a) — DDB setahun penuh (€80.000 × 25%)', '€20.000'),
+    lockardJournal('BE10.4 (b) — DDB 3 bulan (€20.000 × 3/12)', '€5.000')
   ]
 };
 
@@ -230,7 +272,7 @@ export const TM3_READING: Reading = {
   tm: 3,
   title: 'Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi',
   ref: 'Kieso IFRS 5e Ch. 10 (pp. 838–916) & Appendix 10A | IAS 16, IAS 36, IFRS 6, IAS 37',
-  intro: 'TM3 membahas pengukuran aset tetap setelah perolehan: mengalokasikan cost melalui depresiasi (termasuk sebagian periode), menghitung deplesi sumber daya alam, menguji dan memulihkan penurunan nilai aset individual, menerapkan model revaluasi dasar, lalu menganalisis penyajian dan rasio aset. Soal dosen E10.18 dan E10.27 serta kuis kelas P10.2 dan BE10.10 dibahas langkah demi langkah.',
+  intro: 'TM3 membahas pengukuran aset tetap setelah perolehan: mengalokasikan cost melalui depresiasi (termasuk sebagian periode), menghitung deplesi sumber daya alam, menguji dan memulihkan penurunan nilai aset individual, menerapkan model revaluasi dasar, lalu menganalisis penyajian dan rasio aset. Soal dosen E10.18 dan E10.27, kuis kelas BE10.2–BE10.4 (Lockard SE) dan BE10.10, serta latihan P10.2 dibahas langkah demi langkah.',
   objectives: [
     'Menjelaskan depresiasi sebagai alokasi cost dan tiga faktor penentu beban depresiasi.',
     'Menghitung depresiasi garis lurus, aktivitas, SYD, dan DDB, termasuk untuk sebagian periode.',
@@ -330,6 +372,7 @@ export const TM3_READING: Reading = {
       text: '\\text{SYD tahun 2}=\\left(\\text{Service year 1}\\times\\frac{12-m}{12}\\right)+\\left(\\text{Service year 2}\\times\\frac{m}{12}\\right)'
     },
     CHARLESTON_PARTIAL_YEAR_CASE,
+    LOCKARD_FIRST_YEAR_CASE,
 
     { kind: 'h2', text: '5. Depletion of Natural Resources' },
     {
