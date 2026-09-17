@@ -244,9 +244,9 @@ const AKA201_REF = [
 // RPP OBE Akuntansi Keuangan Menengah II, Departemen Akuntansi FEB UNAIR.
 const AKK202_TM1_7 = materi([
   ['Akuntansi Aset Tetap, Properti Investasi, dan Tanah', 'Kieso IFRS 5e Ch. 9–10 | PSAK 216, 223, 240; ISAK 336'],
-  ['Kos setelah Akuisisi & Disposisi Aset Tetap', 'Kieso IFRS 5e Ch. 10 | PSAK 16, 58'],
-  ['Depresiasi & Deplesi Sumber Daya Alam', 'Kieso IFRS 5e Ch. 11 | PSAK 16'],
-  ['Penurunan Nilai Aset (Impairment) & Penyajian', 'Kieso IFRS 5e Ch. 11 | PSAK 48'],
+  ['Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter', 'Kieso IFRS 5e Ch. 9 | IAS 16, IAS 37'],
+  ['Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi', 'Kieso IFRS 5e Ch. 10, App. 10A | IAS 16, IAS 36'],
+  ['Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS', 'Kieso IFRS 5e Ch. 10, App. 10A | IAS 36, IFRS 5; Latsol UTS'],
   ['Aset Tidak Berwujud (Intangible Assets)', 'Kieso IFRS 5e Ch. 12 | PSAK 19'],
   ['Liabilitas Jangka Pendek (Current Liabilities)', 'Kieso IFRS 5e Ch. 13 | PSAK 71'],
   ['Provisi, Kontinjensi & Peristiwa Pasca Pelaporan', 'Kieso IFRS 5e Ch. 13 | PSAK 57'],
