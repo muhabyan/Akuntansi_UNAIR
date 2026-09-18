@@ -3,499 +3,500 @@
 // Bank Soal Kuis Pilihan Ganda Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI
 // 70 Soal Lengkap: 35 Soal Pra-UTS (TM 1-7) & 35 Soal Pra-UAS (TM 8-14)
+// Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { QuizQuestion } from '../../types';
 
 export const AKK202_QUIZ_UTS: QuizQuestion[] = [
   {
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
     "difficulty": "medium",
-    "q": "Menurut PSAK 16, manakah dari pos berikut yang TIDAK boleh dimasukkan sebagai komponen biaya perolehan mesin pabrik?",
+    "q": "PT Semen Gresik membeli mesin dengan harga faktur Rp800.000.000 dan memanfaatkan diskon tunai 2%. Biaya lain: bea masuk Rp45.000.000, angkut Rp25.000.000, pondasi khusus Rp35.000.000, pengujian Rp15.000.000, pelatihan operator Rp12.000.000, dan peresmian Rp8.000.000. Berapa biaya perolehan mesin?",
     "options": [
-      "Biaya pengiriman dan penanganan awal mesin",
-      "Biaya instalasi pondasi dan perakitan teknis mesin",
-      "Biaya pelatihan operator mesin dan pemotongan pita peresmian",
-      "Estimasi biaya pembongkaran mesin pada akhir masa manfaat"
-    ],
-    "answer": 2,
-    "explanation": "Biaya pembukaan fasilitas baru, biaya pengenalan produk baru (iklan), dan biaya pelatihan staf BUKAN komponen harga perolehan aset tetap melainkan beban operasional berjalan."
-  },
-  {
-    "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
-    "difficulty": "medium",
-    "q": "PT Sejahtera membeli tanah dan bangunan tua seharga Rp 1.000.000.000 dengan niat langsung merobohkan gedung lama dan membangun gedung kantor baru. Biaya perobohan gedung lama sebesar Rp 80.000.000 dan hasil penjualan sisa material Rp 15.000.000. Berapakah jumlah yang dikapitalisasi ke akun Tanah?",
-    "options": [
-      "Rp 1.000.000.000",
-      "Rp 1.065.000.000",
-      "Rp 1.080.000.000",
-      "Rp 1.095.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Biaya bersih pembongkaran gedung lama (Rp 80 jt - Rp 15 jt = Rp 65 jt) dikapitalisasi ke akun Tanah: Rp 1.000 jt + Rp 65 jt = Rp 1.065.000.000."
-  },
-  {
-    "tm": 1,
-    "topic": "Kapitalisasi Bunga Pinjaman (PSAK 26)",
-    "difficulty": "advanced",
-    "q": "Selama masa konstruksi gedung baru yang memenuhi syarat kualifikasi aset, pengeluaran akumulasian rata-rata tertimbang (WAAE) adalah Rp 500.000.000. Pinjaman khusus konstruksi 10% adalah Rp 400.000.000, dan pinjaman umum berbobot bunga 12% adalah Rp 300.000.000. Berapakah Bunga yang Dapat Dihindari (Avoidable Interest)?",
-    "options": [
-      "Rp 40.000.000",
-      "Rp 50.000.000",
-      "Rp 52.000.000",
-      "Rp 60.000.000"
-    ],
-    "answer": 2,
-    "explanation": "Porsi pinjaman khusus = Rp 400 jt × 10% = Rp 40.000.000. Sisa WAAE (Rp 500 jt - Rp 400 jt = Rp 100 jt) ditutup pinjaman umum = Rp 100 jt × 12% = Rp 12.000.000. Total Avoidable Interest = Rp 40 jt + Rp 12 jt = Rp 52.000.000."
-  },
-  {
-    "tm": 1,
-    "topic": "Properti Investasi (PSAK 13)",
-    "difficulty": "medium",
-    "q": "PT Graha memiliki gedung perkantoran yang disewakan kepada pihak ketiga (operating lease). Jika perusahaan memilih Model Nilai Wajar (Fair Value Model) sesuai PSAK 13, perlakuan yang tepat atas perubahan nilai wajar akhir tahun adalah...",
-    "options": [
-      "Diakui pada Penghasilan Komprehensif Lain (OCI)",
-      "Diakui pada Laporan Laba Rugi periode berjalan dan bangunan tidak disusutkan",
-      "Diakui sebagai penambah modal saham disetor",
-      "Bangunan tetap disusutkan dan selisih nilai wajar masuk ke Surplus Revaluasi"
-    ],
-    "answer": 1,
-    "explanation": "Pada Fair Value Model PSAK 13, properti investasi TIDAK DISUSUTKAN dan setiap fluktuasi nilai wajar diakui langsung di Laporan Laba Rugi periode berjalan."
-  },
-  {
-    "tm": 1,
-    "topic": "Kewajiban Pembongkaran & Restorasi (ISAK 9 / PSAK 57)",
-    "difficulty": "advanced",
-    "q": "PT Energi Tambang membangun anjungan minyak lepas pantai seharga Rp 200.000.000.000. Entitas memiliki kewajiban hukum untuk membongkar anjungan 10 tahun lagi dengan estimasi biaya Rp 50.000.000.000 (Nilai Tunai PV pada diskonto 8% = Rp 23.160.000.000). Berapakah harga perolehan awal anjungan minyak?",
-    "options": [
-      "Rp 200.000.000.000",
-      "Rp 223.160.000.000",
-      "Rp 250.000.000.000",
-      "Rp 230.000.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Sesuai PSAK 16 dan ISAK 9, nilai tunai (PV) provisi pembongkaran dan restorasi lokasi sebesar Rp 23.160.000.000 wajib dikapitalisasi ke nilai perolehan awal aset: Rp 200 M + Rp 23,16 M = Rp 223.160.000.000."
-  },
-  {
-    "tm": 2,
-    "topic": "Pertukaran Aset Non-Moneter (PSAK 16)",
-    "difficulty": "medium",
-    "q": "Pengeluaran sebesar Rp 150.000.000 untuk merombak total mesin produksi yang berhasil memperpanjang masa manfaat mesin dari 3 tahun menjadi 7 tahun harus diperlakukan sebagai...",
-    "options": [
-      "Beban pemeliharaan rutin pada Laporan Laba Rugi",
-      "Capital expenditure yang menambah nilai tercatat mesin",
-      "Pengurang saldo akumulasi penyusutan secara proporsional",
-      "Beban tangguhan yang diamortisasi selama 4 tahun"
-    ],
-    "answer": 1,
-    "explanation": "Pengeluaran yang memperpanjang masa manfaat atau meningkatkan kapasitas/efisiensi aset dikapitalisasi sebagai pengeluaran modal (capital expenditure)."
-  },
-  {
-    "tm": 2,
-    "topic": "Pertukaran Aset Non-Moneter (PSAK 16)",
-    "difficulty": "advanced",
-    "q": "PT Bromo menukar truk lama (Kos Rp 100 jt, Akum Depresiasi Rp 60 jt, Nilai Wajar Rp 55 jt) dengan mesin baru dan membayar kas Rp 15 jt. Transaksi MEMILIKI substansi komersial. Berapakah nilai perolehan mesin baru dan laba/rugi pertukaran yang diakui?",
-    "options": [
-      "Mesin Baru Rp 70 jt; Laba Rp 15 jt",
-      "Mesin Baru Rp 55 jt; Laba Rp 15 jt",
-      "Mesin Baru Rp 55 jt; Tidak ada laba yang diakui",
-      "Mesin Baru Rp 70 jt; Tidak ada laba yang diakui"
+      "Rp904.000.000",
+      "Rp924.000.000",
+      "Rp784.000.000",
+      "Rp920.000.000"
     ],
     "answer": 0,
-    "explanation": "Nilai buku truk lama = 100 jt - 60 jt = 40 jt. Nilai wajar = 55 jt. Keuntungan pertukaran = 55 jt - 40 jt = Rp 15.000.000 (diakui penuh). Nilai mesin baru = Nilai wajar aset lama (55 jt) + Kas dibayar (15 jt) = Rp 70.000.000."
+    "explanation": "Harga beli bersih = Rp800.000.000 − Rp16.000.000 = Rp784.000.000. Biaya atribusi langsung = Rp45.000.000 + Rp25.000.000 + Rp35.000.000 + Rp15.000.000 = Rp120.000.000, sehingga biaya perolehan Rp904.000.000. Pelatihan Rp12.000.000 dan peresmian Rp8.000.000 tidak membawa mesin ke kondisi siap digunakan, jadi dibebankan."
+  },
+  {
+    "tm": 1,
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "difficulty": "advanced",
+    "q": "PT Surya Prima membeli tanah beserta gedung tua secara lump-sum Rp2.400.000.000 dan membayar biaya notaris serta legal Rp60.000.000. Nilai wajar: tanah Rp2.100.000.000 dan gedung Rp900.000.000. Tanah dibeli semata-mata untuk membangun pabrik baru; gedung tua diratakan dengan biaya Rp120.000.000 dan puingnya terjual Rp25.000.000. Berapa nilai tercatat Tanah?",
+    "options": [
+      "Rp1.722.000.000",
+      "Rp2.555.000.000",
+      "Rp2.460.000.000",
+      "Rp2.580.000.000"
+    ],
+    "answer": 1,
+    "explanation": "Karena gedung langsung dibongkar untuk proyek baru, seluruh harga beli dan biaya legal Rp2.460.000.000 masuk Tanah (tanpa alokasi 70%/30%). Biaya bersih pembongkaran Rp120.000.000 − Rp25.000.000 = Rp95.000.000 juga masuk Tanah, sehingga nilai tercatat Tanah Rp2.555.000.000."
+  },
+  {
+    "tm": 1,
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "difficulty": "advanced",
+    "q": "Shalla Company membangun gedung dengan utang konstruksi spesifik USD 750,000 bunga 15%. General WAAE USD 200,000 dengan capitalization rate umum 11.5%, dan dana spesifik yang menganggur menghasilkan pendapatan investasi USD 40,000. Berapa biaya pinjaman neto yang dikapitalisasi (PSAK 223)?",
+    "options": [
+      "USD 135,500",
+      "USD 112,500",
+      "USD 95,500",
+      "USD 342,500"
+    ],
+    "answer": 2,
+    "explanation": "Bunga spesifik USD 750,000 × 15% = USD 112,500 dikurangi pendapatan investasi USD 40,000, ditambah porsi umum USD 200,000 × 11.5% = USD 23,000. Biaya pinjaman neto yang dikapitalisasi = USD 95,500; sisa bunga aktual dari total USD 342,500 dibebankan."
+  },
+  {
+    "tm": 1,
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "difficulty": "advanced",
+    "q": "Peralatan (model revaluasi) dibeli €1.000.000, umur lima tahun, garis lurus. Setelah depresiasi tahun pertama €200.000, nilai buku €800.000 direvaluasi ke nilai wajar €850.000. Berapa transfer tahunan dari AOCI ke saldo laba pada tahun berikutnya, dan lewat mana transfer itu dicatat?",
+    "options": [
+      "€50.000, melalui laba rugi",
+      "€12.500, melalui laba rugi sebagai pembalik beban depresiasi",
+      "€212.500, langsung dalam ekuitas",
+      "€12.500, langsung dalam ekuitas tanpa melalui laba rugi"
+    ],
+    "answer": 3,
+    "explanation": "Depresiasi tahun berikutnya = €850.000/4 = €212.500, sedangkan depresiasi berbasis cost €200.000. Selisih €12.500 ditransfer dari Accumulated OCI — Revaluation Surplus ke Retained Earnings langsung dalam ekuitas; transfer ini tidak membalik beban depresiasi dan tidak masuk laba rugi."
+  },
+  {
+    "tm": 1,
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "difficulty": "medium",
+    "q": "Entitas Full SAK memiliki gedung yang disewakan kepada pihak ketiga untuk memperoleh rental income dan memilih fair value model. Bagaimana perlakuan kenaikan nilai wajar gedung pada akhir tahun?",
+    "options": [
+      "Langsung ke laba rugi, dan gedung tidak disusutkan (PSAK 240)",
+      "Ke OCI sebagai revaluation surplus, dan gedung tetap disusutkan (PSAK 216)",
+      "Tidak diakui karena gedung diklasifikasikan sebagai persediaan",
+      "Ke OCI, lalu didaur ulang ke laba rugi saat gedung dijual"
+    ],
+    "answer": 0,
+    "explanation": "Gedung untuk sewa atau kenaikan nilai adalah properti investasi (PSAK 240), bukan PPE atau persediaan. Dalam fair value model, perubahan nilai wajar masuk langsung ke Profit or Loss, bukan OCI, dan properti investasi tidak disusutkan."
   },
   {
     "tm": 2,
-    "topic": "Pertukaran Aset Tanpa Substansi Komersial",
-    "difficulty": "advanced",
-    "q": "Jika suatu pertukaran aset non-moneter TIDAK MEMILIKI substansi komersial (lacks commercial substance) dan entitas berada pada posisi UNTUNG (Gain), maka perlakuan standar PSAK 16 adalah...",
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "difficulty": "medium",
+    "q": "Instinct Enterprises mengganti sistem pipa lama (cost £150.000, akumulasi depresiasi £135.000) dengan pipa plastik seharga £125.000. Pipa lama laku dijual sebagai scrap £1.000. Dengan substitution approach, berapa rugi pelepasan pipa lama?",
     "options": [
-      "Mengakui seluruh keuntungan di Laba Rugi",
-      "Menangguhkan seluruh keuntungan dengan mengurangi harga perolehan aset baru",
-      "Mengakui keuntungan di Penghasilan Komprehensif Lain (OCI)",
-      "Membatalkan transaksi pertukaran"
+      "£15.000",
+      "£1.000",
+      "£14.000",
+      "£124.000"
     ],
-    "answer": 1,
-    "explanation": "Jika pertukaran tidak memiliki substansi komersial, keuntungan ditangguhkan (tidak diakui di laba rugi) dan digunakan untuk mengurangi nilai tercatat awal aset baru."
+    "answer": 2,
+    "explanation": "Nilai buku pipa lama = £150.000 − £135.000 = £15.000. Rugi pelepasan = £15.000 − £1.000 = £14.000. Pipa baru dikapitalisasi £125.000 dan kas neto yang dibayar £124.000."
   },
   {
     "tm": 2,
-    "topic": "Hibah Pemerintah (PSAK 61)",
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
     "difficulty": "medium",
-    "q": "Entitas menerima hibah pemerintah berupa mesin senilai Rp 500.000.000 tanpa biaya. Jika menggunakan Pendekatan Pengurangan Biaya Aset (Net Method) sesuai PSAK 61, bagaimana penyajian awal aset tersebut?",
+    "q": "Barret Group menjual mesin (cost €18.000, depresiasi garis lurus €1.200 per tahun, akumulasi depresiasi akhir tahun ke-9 €10.800) secara tunai €7.000 pada 1 Juli tahun ke-10. Berapa gain atau loss pelepasannya?",
     "options": [
-      "Mesin dicatat Rp 500.000.000 dan Pendapatan Hibah Rp 500.000.000",
-      "Mesin dicatat dengan nilai nominal Rp 0 (atau nilai nominal simbolis Rp 1) dan tanpa beban penyusutan",
-      "Mesin dicatat Rp 500.000.000 dan Ekuitas Donasi Rp 500.000.000",
-      "Mesin tidak boleh diakui di neraca sama sekali"
+      "Rugi €200",
+      "Gain €400",
+      "Gain €7.000",
+      "Rugi €600"
     ],
     "answer": 1,
-    "explanation": "Pada Net Method, hibah dikurangkan langsung dari biaya perolehan aset sehingga nilai tercatat awal menjadi Rp 0 (atau nilai nominal simbolis), sehingga entitas tidak mencatat penyusutan di masa depan."
+    "explanation": "Depresiasi diperbarui dulu sampai 1 Juli: €1.200 × 6/12 = €600, sehingga akumulasi depresiasi €11.400 dan nilai buku €18.000 − €11.400 = €6.600. Gain on disposal = €7.000 − €6.600 = €400. Lupa memperbarui depresiasi menghasilkan rugi yang salah."
   },
   {
     "tm": 2,
-    "topic": "Pelepasan Terpaksa (Involuntary Conversion)",
-    "difficulty": "medium",
-    "q": "Gedung pabrik terbakar habis (Nilai buku Rp 300.000.000). Perusahaan asuransi membayar klaim ganti rugi tunai sebesar Rp 450.000.000. Manajemen segera membeli gedung baru seharga Rp 500.000.000. Berapakah laba pelepasan terpaksa yang diakui di Laba Rugi?",
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "difficulty": "advanced",
+    "q": "Interstate Transportation menukar truk bekas (cost USD 64.000, akumulasi depresiasi USD 22.000, nilai wajar USD 49.000) dan membayar kas USD 11.000 untuk truk semi baru. Pertukaran TIDAK memiliki substansi komersial. Bagaimana pencatatannya?",
     "options": [
-      "Rp 0 (karena dana langsung dibelikan gedung baru)",
-      "Rp 50.000.000",
-      "Rp 150.000.000",
-      "Rp 200.000.000"
+      "Truk baru USD 60.000; gain USD 7.000 diakui",
+      "Truk baru USD 53.000; tidak ada gain yang diakui",
+      "Truk baru USD 53.000; gain USD 7.000 diakui",
+      "Truk baru USD 42.000; tidak ada gain yang diakui"
+    ],
+    "answer": 1,
+    "explanation": "Tanpa substansi komersial, tidak ada gain maupun loss yang diakui. Basis truk baru = nilai buku USD 42.000 + kas dibayar USD 11.000 = USD 53.000, sama dengan nilai wajar USD 60.000 dikurangi gain yang ditangguhkan USD 7.000."
+  },
+  {
+    "tm": 2,
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "difficulty": "medium",
+    "q": "Fasilitas Camel Transport (cost USD 6.000.000, akumulasi depresiasi USD 2.500.000) hancur akibat tornado pada 16 Mei 2025. Klaim asuransi baru disepakati 18 Maret 2026 sebesar USD 5.000.000. Apa yang diakui pada 16 Mei 2025?",
+    "options": [
+      "Casualty loss USD 3.500.000; klaim asuransi belum diakui",
+      "Gain USD 5.000.000 dari klaim asuransi",
+      "Tidak ada jurnal sampai klaim asuransi disepakati",
+      "Loss USD 6.000.000 sebesar cost fasilitas"
+    ],
+    "answer": 0,
+    "explanation": "Konversi terpaksa dicatat dua tahap. Pada 16 Mei 2025 nilai buku USD 3.500.000 dihapus sebagai casualty loss. Klaim yang belum disepakati adalah aset kontinjensi (IAS 37), sehingga gain USD 5.000.000 baru diakui pada 18 Maret 2026."
+  },
+  {
+    "tm": 2,
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "difficulty": "advanced",
+    "q": "Troopers Medical Labs membangun sendiri mesin medis khusus. Mesin pertama menelan biaya €714.000, sedangkan tiga mesin identik berikutnya masing-masing €441.000. Bagaimana perlakuan mesin pertama (CA9.2)?",
+    "options": [
+      "Kapitalisasi penuh €714.000 karena seluruh biaya terjadi untuk membangun mesin",
+      "Mesin €441.000; selisih €273.000 dicatat sebagai aset tangguhan",
+      "Mesin €441.000; selisih €273.000 diakui sebagai rugi periode berjalan",
+      "Kapitalisasi €714.000 lalu disusutkan dengan metode dipercepat"
     ],
     "answer": 2,
-    "explanation": "Sesuai PSAK 16, konversi terpaksa (involuntary conversion) diakui penuh untung/ruginya di Laba Rugi periode berjalan: Kas asuransi Rp 450 jt - Nilai buku Rp 300 jt = Keuntungan Rp 150.000.000."
+    "explanation": "Selisih €714.000 − €441.000 = €273.000 mencerminkan pemborosan tidak normal dan inefisiensi kurva pembelajaran. Kieso p. 768 (IAS 16 paragraf 22) melarang mengkapitalisasi jumlah abnormal, sehingga mesin dicatat €441.000 dan €273.000 menjadi period loss."
   },
   {
     "tm": 3,
-    "topic": "Metode Saldo Menurun Ganda (DDB)",
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
     "difficulty": "medium",
-    "q": "Peralatan dibeli 1 Januari 2024 seharga Rp 120.000.000 dengan estimasi umur 5 tahun dan nilai sisa Rp 20.000.000. Menggunakan metode saldo menurun ganda (double declining balance), berapakah beban penyusutan tahun 2024?",
+    "q": "Lockard SE membeli mesin pada 1 Januari 2025 seharga €80.000, nilai residu €8.000, umur manfaat 8 tahun. Berapa beban depresiasi 2025 dengan metode saldo menurun ganda (DDB)?",
     "options": [
-      "Rp 20.000.000",
-      "Rp 24.000.000",
-      "Rp 40.000.000",
-      "Rp 48.000.000"
+      "€18.000",
+      "€9.000",
+      "€16.000",
+      "€20.000"
     ],
     "answer": 3,
-    "explanation": "Tarif DDB = (100% / 5) × 2 = 40%. Beban penyusutan tahun pertama = 40% × Rp 120.000.000 = Rp 48.000.000 (nilai sisa tidak dikurangkan pada awal kalkulasi DDB)."
+    "explanation": "Tarif DDB = 2/8 = 25% dikalikan langsung dengan nilai buku awal €80.000, sehingga beban 2025 = €20.000. Residu €8.000 tidak dikurangkan di awal; residu hanya menjadi batas bawah nilai buku pada tahun akhir."
   },
   {
     "tm": 3,
-    "topic": "Metode Jumlah Angka Tahun (SYD)",
-    "difficulty": "medium",
-    "q": "Kendaraan operasional diperoleh seharga Rp 150.000.000 dengan nilai sisa Rp 30.000.000 dan masa manfaat 4 tahun. Berapakah beban penyusutan tahun ke-2 menggunakan metode Sum-of-the-Years'-Digits (SYD)?",
-    "options": [
-      "Rp 48.000.000",
-      "Rp 36.000.000",
-      "Rp 30.000.000",
-      "Rp 24.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Jumlah angka tahun = 1 + 2 + 3 + 4 = 10. Dasar penyusutan = 150 jt - 30 jt = Rp 120 jt. Beban tahun ke-2 = (3/10) × Rp 120 jt = Rp 36.000.000."
-  },
-  {
-    "tm": 3,
-    "topic": "Perubahan Estimasi Akuntansi (PSAK 25)",
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
     "difficulty": "advanced",
-    "q": "Mesin dibeli 1 Jan 2024 seharga Rp 100 jt, disusutkan garis lurus 10 tahun tanpa nilai sisa (penyusutan Rp 10 jt/thn). Pada 1 Jan 2026 (setelah 2 tahun), umur sisa direvisi menjadi 4 tahun lagi dengan nilai sisa Rp 8 jt. Berapakah penyusutan tahun 2026?",
+    "q": "Charleston, SA membeli peralatan pada 1 Juni 2025 seharga €89.000, residu €5.000, umur 7 tahun. Berapa beban depresiasi 2026 dengan metode jumlah angka tahun (SYD)?",
     "options": [
-      "Rp 10.000.000",
-      "Rp 18.000.000",
-      "Rp 20.000.000",
-      "Rp 22.500.000"
+      "€18.000",
+      "€19.250",
+      "€21.000",
+      "€12.250"
     ],
     "answer": 1,
-    "explanation": "Nilai buku 1 Jan 2026 = 100 jt - (2 × 10 jt) = Rp 80 jt. Dasar penyusutan baru = 80 jt - 8 jt = Rp 72 jt. Sisa umur baru = 4 tahun. Beban penyusutan 2026 = 72 jt / 4 = Rp 18.000.000 (diperlakukan secara prospektif!)."
+    "explanation": "S = 28; service year 1 = €84.000 × 7/28 = €21.000 dan service year 2 = €84.000 × 6/28 = €18.000. Tahun 2026 menggabungkan sisa service year 1 dan awal service year 2: (€21.000 × 5/12) + (€18.000 × 7/12) = €8.750 + €10.500 = €19.250."
   },
   {
     "tm": 3,
-    "topic": "Deplesi Sumber Daya Alam (PSAK 64)",
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
     "difficulty": "medium",
-    "q": "Manakah dari pos berikut yang TIDAK termasuk dalam dasar penentuan beban deplesi tambang?",
+    "q": "Everly Corporation membeli tambang batubara USD 400.000, biaya pengembangan tidak berwujud USD 100.000, estimasi kewajiban restorasi USD 80.000, dan tanah bekas tambang dapat dijual USD 160.000. Cadangan 4.000 ton; tahun pertama diekstraksi 700 ton. Berapa deplesi tahun pertama dan akun debitnya?",
     "options": [
-      "Biaya akuisisi hak eksplorasi dan penambangan",
-      "Biaya restorasi dan penutupan tambang di masa depan",
-      "Nilai sisa residu tanah setelah penambangan selesai",
-      "Biaya bunga pinjaman modal kerja operasional harian"
+      "USD 73.500 ke Cost of Goods Sold saat ekstraksi",
+      "USD 101.500 ke Inventory (Coal)",
+      "USD 73.500 ke Inventory (Coal)",
+      "USD 420.000 ke Depletion Expense"
+    ],
+    "answer": 2,
+    "explanation": "Dasar deplesi = USD 400.000 + USD 100.000 + USD 80.000 − USD 160.000 = USD 420.000; tarif = USD 420.000 / 4.000 ton = USD 105 per ton; deplesi = 700 × USD 105 = USD 73.500. Deplesi dikapitalisasi ke Inventory (Coal) saat ekstraksi dan baru menjadi beban pokok penjualan saat batubara terjual."
+  },
+  {
+    "tm": 3,
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "difficulty": "advanced",
+    "q": "Pujols SpA mencatat rugi impairment €1.000.000 pada 2025 sehingga nilai tercatat peralatan menjadi €7.000.000 (sisa umur 4 tahun, residu €0). Setelah depresiasi 2026, recoverable amount 31 Desember 2026 naik menjadi €6.000.000. Tanpa impairment, nilai tercatat saat itu adalah €6.000.000. Berapa pemulihan yang diakui?",
+    "options": [
+      "€750.000",
+      "€1.000.000",
+      "€0, karena pemulihan impairment dilarang",
+      "€1.750.000"
+    ],
+    "answer": 0,
+    "explanation": "Depresiasi 2026 = €7.000.000/4 = €1.750.000, sehingga nilai tercatat sebelum pemulihan €5.250.000. Ceiling tanpa impairment = €8.000.000 − €2.000.000 = €6.000.000. Pemulihan = €6.000.000 − €5.250.000 = €750.000, dicatat ke Recovery of Impairment Loss."
+  },
+  {
+    "tm": 3,
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "difficulty": "medium",
+    "q": "Falcetto Company (model revaluasi) memiliki peralatan dengan nilai tercatat €8.000 per 31 Desember 2025, sedangkan nilai wajarnya €7.000. Belum pernah ada surplus revaluasi. Bagaimana penurunan €1.000 dicatat?",
+    "options": [
+      "Debit OCI €1.000 sehingga AOCI menjadi negatif",
+      "Debit Loss on Revaluation €1.000 di laba rugi",
+      "Tidak dicatat; penurunan menunggu pemulihan tahun berikutnya",
+      "Debit Retained Earnings €1.000 langsung dalam ekuitas"
+    ],
+    "answer": 1,
+    "explanation": "Penurunan revaluasi pertama kali (tanpa surplus sebelumnya) didebit ke laba rugi sebagai Loss on Revaluation. Dengan metode eliminasi, akumulasi depresiasi €4.000 didebit ke nol dan Equipment dikredit €5.000 sehingga menjadi €7.000; depresiasi 2026 = €7.000/4 = €1.750."
+  },
+  {
+    "tm": 4,
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "difficulty": "medium",
+    "q": "Rugi penurunan nilai suatu cash-generating unit (CGU) yang memiliki goodwill harus dialokasikan dengan urutan apa?",
+    "options": [
+      "Pro-rata ke seluruh aset termasuk goodwill berdasarkan nilai tercatat relatif",
+      "Ke aset tetap dengan nilai tercatat terbesar lebih dulu, lalu goodwill",
+      "Goodwill sampai nol, lalu pro-rata ke aset lain dengan batas bawah nilai tertinggi FVLCD, VIU, dan nol",
+      "Hanya ke goodwill; sisa rugi yang tidak terserap diabaikan"
+    ],
+    "answer": 2,
+    "explanation": "Tingkat 1: kurangi goodwill yang dialokasikan ke CGU sampai nol. Tingkat 2: alokasikan sisa rugi pro-rata ke aset lain berdasarkan nilai tercatat relatif, tetapi nilai tercatat aset tidak boleh turun di bawah max(FVLCD, VIU, 0); sisa yang tidak terserap dialokasikan ulang ke aset lain (Kieso p. 853)."
+  },
+  {
+    "tm": 4,
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "difficulty": "advanced",
+    "q": "Roland SE menurunkan nilai peralatan ke €5.600.000 pada 31 Desember 2025 dan mengklasifikasikannya sebagai dimiliki untuk dilepas (held for disposal). Nilai realisasi neto 31 Desember 2026 menjadi €4.900.000. Apa yang dicatat pada 2026?",
+    "options": [
+      "Depresiasi €1.400.000 lalu pemulihan €700.000",
+      "Rugi tambahan €700.000 tanpa depresiasi",
+      "Depresiasi €1.400.000 tanpa penyesuaian nilai",
+      "Pemulihan €700.000 tanpa depresiasi"
+    ],
+    "answer": 1,
+    "explanation": "Aset held for disposal tidak didepresiasi (Kieso p. 854), sehingga nilai tercatat tetap €5.600.000. Penurunan ke €4.900.000 adalah rugi tambahan €700.000. Jika aset tetap digunakan, depresiasi €1.400.000 membuat nilai tercatat €4.200.000 dan penyesuaiannya justru pemulihan €700.000."
+  },
+  {
+    "tm": 4,
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "difficulty": "advanced",
+    "q": "Tanah PT Sugehdewe (cost Rp1.000.000, dalam ribuan) direvaluasi ke Rp1.125.000 pada 2017 dan turun ke Rp900.000 pada 2018 (AOCI Rp125.000 habis, rugi Rp100.000 ke laba rugi). Pada 31 Desember 2019 nilai wajarnya Rp962.500. Bagaimana dampak 2019?",
+    "options": [
+      "OCI +Rp62.500; laba rugi Rp0",
+      "Laba rugi +Rp37.500; OCI +Rp25.000",
+      "Laba rugi +Rp62.500 (Recovery of Prior Revaluation Loss); OCI Rp0",
+      "Tidak ada jurnal karena nilai wajar masih di bawah cost"
+    ],
+    "answer": 2,
+    "explanation": "Kenaikan yang membalik rugi laba rugi sebelumnya dicatat dulu ke laba rugi sampai rugi Rp100.000 pulih. Kenaikan Rp62.500 seluruhnya menjadi Recovery of Prior Revaluation Loss, sehingga sisa rugi belum pulih Rp37.500 dan OCI 2019 Rp0."
+  },
+  {
+    "tm": 4,
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "difficulty": "medium",
+    "q": "Peralatan PT Friedrich dibeli 1 Januari 2018 seharga Rp3.060.000.000, umur 12 tahun, residu Rp0, garis lurus. Pada 31 Desember 2018: FVLCD Rp2.600.000.000 dan VIU Rp2.365.000.000. Berapa rugi penurunan nilai?",
+    "options": [
+      "Rp440.000.000",
+      "Rp460.000.000",
+      "Rp255.000.000",
+      "Rp205.000.000"
     ],
     "answer": 3,
-    "explanation": "Biaya bunga operasional modal kerja harian dibebankan langsung ke periode berjalan, bukan komponen dasar deplesi aset sumber daya alam."
-  },
-  {
-    "tm": 3,
-    "topic": "Penyusutan Komponen Aset (Component Depreciation)",
-    "difficulty": "medium",
-    "q": "Sesuai PSAK 16, jika suatu aset memiliki bagian-bagian yang signifikan dengan umur manfaat yang berbeda-beda (misalnya turbin vs gedung pembangkit listrik), maka perlakuan yang wajib diterapkan adalah...",
-    "options": [
-      "Menyusutkan seluruh aset menggunakan umur manfaat bagian yang paling panjang",
-      "Menyusutkan setiap bagian yang signifikan secara terpisah (Component Depreciation)",
-      "Menyusutkan aset menggunakan rata-rata sederhana umur seluruh komponen",
-      "Membebankan komponen yang lebih pendek sebagai biaya pemeliharaan"
-    ],
-    "answer": 1,
-    "explanation": "PSAK 16 mewajibkan Component Depreciation: setiap bagian aset tetap dengan biaya perolehan signifikan terhadap total aset dan umur manfaat berbeda harus disusutkan secara terpisah."
+    "explanation": "Depresiasi 2018 = Rp3.060.000.000/12 = Rp255.000.000, sehingga nilai tercatat Rp2.805.000.000. Recoverable amount adalah nilai tertinggi: FVLCD Rp2.600.000.000 (bukan VIU Rp2.365.000.000). Rugi = Rp2.805.000.000 − Rp2.600.000.000 = Rp205.000.000."
   },
   {
     "tm": 4,
-    "topic": "Uji Penurunan Nilai (Impairment - PSAK 48)",
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
     "difficulty": "advanced",
-    "q": "PT Semen Gresik menguji penurunan nilai satu unit pabrik. Nilai tercatat adalah Rp 1.500.000.000. Nilai wajar dikurangi biaya pelepasan (FVLCD) adalah Rp 1.300.000.000, sedangkan Nilai Pakai (Value in Use) adalah Rp 1.380.000.000. Berapakah rugi penurunan nilai yang diakui?",
+    "q": "Su Ltd. mentransfer surplus tahunan ¥100 dari AOCI ke saldo laba (Interpretasi A), sehingga per 31 Desember 2026 sisa AOCI ekskavator ¥600 dan nilai buku sebelum revaluasi ¥6.600. Nilai wajar turun menjadi ¥5.000. Bagaimana penurunan ¥1.600 dialokasikan?",
     "options": [
-      "Rp 0",
-      "Rp 120.000.000",
-      "Rp 200.000.000",
-      "Rp 80.000.000"
+      "OCI ¥600; Loss on Revaluation ¥1.000",
+      "OCI ¥1.600 seluruhnya",
+      "Loss on Revaluation ¥1.600 seluruhnya",
+      "OCI ¥800; Loss on Revaluation ¥800"
     ],
-    "answer": 1,
-    "explanation": "Jumlah Terpulihkan (Recoverable Amount) adalah nilai TERTINGGI antara FVLCD (Rp 1.300 jt) dan Nilai Pakai (Rp 1.380 jt), yaitu Rp 1.380.000.000. Rugi penurunan nilai = Nilai Tercatat (Rp 1.500 jt) - Rp 1.380 jt = Rp 120.000.000."
-  },
-  {
-    "tm": 4,
-    "topic": "Alokasi Impairment Unit Penghasil Kas (CGU)",
-    "difficulty": "advanced",
-    "q": "Ketika terjadi kerugian penurunan nilai pada suatu Unit Penghasil Kas (CGU) yang memiliki Goodwill dan aset-aset tetap lainnya, alokasi kerugian pertama kali WAJIB ditujukan kepada pos...",
-    "options": [
-      "Aset tetap berwujud dengan nilai tercatat paling besar",
-      "Goodwill yang dialokasikan ke CGU tersebut sampai habis",
-      "Seluruh aset CGU secara proporsional nilai buku",
-      "Piutang usaha dan persediaan lancar"
-    ],
-    "answer": 1,
-    "explanation": "PSAK 48 Paragraf 104 menyatakan kerugian penurunan nilai CGU dialokasikan pertama kali untuk mengurangi nilai tercatat Goodwill hingga nol, baru sisanya dialokasikan prorata ke aset lain."
-  },
-  {
-    "tm": 4,
-    "topic": "Pembalikan Rugi Penurunan Nilai (Reversal)",
-    "difficulty": "medium",
-    "q": "Pernyataan manakah yang BENAR mengenai pembalikan kerugian penurunan nilai (reversal of impairment loss)?",
-    "options": [
-      "Pembalikan kerugian penurunan nilai Goodwill diizinkan jika perekonomian pulih",
-      "Pembalikan kerugian penurunan nilai Goodwill dilarang keras oleh PSAK 48",
-      "Aset tetap tidak berwujud dilarang dibalik kerugian penurunannya",
-      "Nilai tercatat aset setelah pembalikan boleh melebihi harga perolehan awalnya"
-    ],
-    "answer": 1,
-    "explanation": "PSAK 48 secara eksplisit melarang pembalikan rugi penurunan nilai atas Goodwill karena setiap peningkatan nilai setelah impairment dianggap sebagai goodwill internal."
-  },
-  {
-    "tm": 4,
-    "topic": "Aset Dimiliki untuk Dijual (PSAK 58)",
-    "difficulty": "medium",
-    "q": "Suatu aset tidak lancar direklasifikasi menjadi 'Dimiliki untuk Dijual' (Held for Sale) sesuai PSAK 58. Perlakuan yang tepat adalah...",
-    "options": [
-      "Aset tetap disusutkan seperti biasa hingga tanggal penjualan aktual",
-      "Penyusutan aset dihentikan dan aset diukur pada nilai yang lebih rendah antara Nilai Tercatat vs Nilai Wajar Neto (FVLCD)",
-      "Aset langsung dihapusbukukan ke laba rugi",
-      "Aset dipindahkan ke kelompok investasi saham"
-    ],
-    "answer": 1,
-    "explanation": "Sejak tanggal klasifikasi sebagai Dimiliki untuk Dijual, aset TIDAK BOLEH DISUSUTKAN LAGI dan diukur pada lower of carrying amount vs fair value less costs to sell."
-  },
-  {
-    "tm": 4,
-    "topic": "Akuntansi Hak Atas Tanah (ISAK 25)",
-    "difficulty": "medium",
-    "q": "Berdasarkan ISAK 25 di Indonesia, bagaimana perlakuan akuntansi atas Hak Guna Bangunan (HGB) dan Hak Guna Usaha (HGU)?",
-    "options": [
-      "Tanah HGB tidak pernah diamortisasi karena tanah selalu mengalami kenaikan nilai",
-      "Biaya perolehan hak tanah diamortisasi sepanjang umur hak jika tidak ada kepastian perpanjangan hak",
-      "Tanah HGB wajib diklasifikasikan sebagai persediaan perusahaan",
-      "Biaya perpanjangan izin HGB dibebankan langsung ke laba rugi saat dibayarkan"
-    ],
-    "answer": 1,
-    "explanation": "Berdasarkan ISAK 25, hak atas tanah dengan umur terbatas (HGB/HGU) diamortisasi sepanjang masa manfaat haknya kecuali entitas memiliki kepastian tinggi untuk memperpanjang hak tersebut."
+    "answer": 0,
+    "explanation": "Penurunan didebit ke OCI hanya sebesar sisa AOCI aset (¥600), karena AOCI tidak boleh negatif; kelebihannya ¥1.600 − ¥600 = ¥1.000 menjadi Loss on Revaluation. Alokasi ¥800/¥800 hanya berlaku pada Interpretasi B yang tidak mentransfer surplus tahunan."
   },
   {
     "tm": 5,
-    "topic": "Aset Takberwujud & Riset Pengembangan (PSAK 19)",
-    "difficulty": "medium",
-    "q": "Manakah dari pengeluaran berikut yang WAJIB dibebankan langsung pada saat terjadinya (expense as incurred) menurut PSAK 19?",
-    "options": [
-      "Biaya pendaftaran hukum hak paten ke kementerian hukum",
-      "Biaya perolehan lisensi perangkat lunak dari vendor eksternal",
-      "Biaya riset laboratorium untuk menemukan formula obat baru",
-      "Biaya pengembangan setelah memenuhi 6 kriteria kelayakan teknis"
-    ],
-    "answer": 2,
-    "explanation": "PSAK 19 melarang kapitalisasi biaya riset (research phase) karena belum ada kepastian manfaat ekonomi masa depan; seluruhnya harus diakui sebagai beban."
-  },
-  {
-    "tm": 5,
-    "topic": "Kriteria Kapitalisasi R&D (PIRATE Criteria)",
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
     "difficulty": "advanced",
-    "q": "Fase pengembangan (development phase) boleh dikapitalisasi sebagai aset takberwujud jika memenuhi kriteria berikut, KECUALI...",
+    "q": "Fred Graf membeli Terrell Galleries seharga USD 380.000. Nilai buku Terrell: Buildings USD 200.000; Equipment USD 175.000; Copyrights USD 30.000; Land USD 70.000; Cash USD 100.000; Accounts payable USD 50.000; Long-term notes payable USD 300.000. Tanah undervalued USD 50.000 dan peralatan overvalued USD 5.000. Berapa goodwill?",
     "options": [
-      "Kelayakan teknis penyelesaian aset takberwujud dapat dibuktikan",
-      "Niat entitas untuk menyelesaikan dan menjual atau menggunakannya",
-      "Telah memperoleh izin komersial dari otoritas pajak",
-      "Adanya pasar bagi output aset takberwujud atau kegunaan internalnya"
+      "USD 155.000",
+      "USD 110.000",
+      "USD 105.000",
+      "USD 160.000"
     ],
-    "answer": 2,
-    "explanation": "6 Kriteria PIRATE mencakup: Probable future economic benefit, Intention to complete, Resources availability, Ability to use/sell, Technical feasibility, dan Expendable cost measurability. Izin otoritas pajak bukan kriteria PSAK 19."
+    "answer": 1,
+    "explanation": "Aset teridentifikasi pada nilai wajar = USD 200.000 + USD 170.000 + USD 30.000 + USD 120.000 + USD 100.000 = USD 620.000. Aset neto = USD 620.000 − (USD 50.000 + USD 300.000) = USD 270.000. Goodwill = USD 380.000 − USD 270.000 = USD 110.000."
   },
   {
     "tm": 5,
-    "topic": "Goodwill Kombinasi Bisnis (PSAK 22 / IFRS 3)",
-    "difficulty": "medium",
-    "q": "Goodwill yang timbul dari kombinasi bisnis dihitung sebagai...",
-    "options": [
-      "Selisih lebih harga perolehan akuisisi di atas nilai buku ekuitas entitas anak",
-      "Selisih lebih imbalan yang dialihkan di atas nilai wajar aset neto teridentifikasi yang diakuisisi",
-      "Akumulasi laba bersih historis entitas anak selama 5 tahun terakhir",
-      "Nilai kapitalisasi reputasi manajemen entitas pembeli"
-    ],
-    "answer": 1,
-    "explanation": "Goodwill = Imbalan yang dialihkan (Purchase Consideration) dikurangi Nilai Wajar Aset Neto Teridentifikasi yang Diakuisisi (Fair Value of Identifiable Net Assets)."
-  },
-  {
-    "tm": 5,
-    "topic": "Amortisasi Aset Takberwujud",
-    "difficulty": "medium",
-    "q": "Aset takberwujud yang memiliki masa manfaat tidak terbatas (indefinite useful life) diperlakukan dengan cara...",
-    "options": [
-      "Diamortisasi menggunakan metode garis lurus selama 20 tahun",
-      "Tidak diamortisasi, tetapi wajib diuji penurunan nilai (impairment) minimal setahun sekali",
-      "Diamortisasi hanya jika menghasilkan rugi operasional",
-      "Dihapusbukukan langsung dari laporan keuangan"
-    ],
-    "answer": 1,
-    "explanation": "Aset takberwujud dengan indefinite life (seperti merek dagang tertentu atau goodwill) TIDAK DIAMORTISASI, tetapi wajib diuji penurunan nilai setiap tahun."
-  },
-  {
-    "tm": 5,
-    "topic": "Biaya Pembelaan Hukum Paten",
-    "difficulty": "medium",
-    "q": "PT Indofarma mengeluarkan kas Rp 80 jt untuk berhasil mempertahankan hak patennya dari gugatan kompetitor di pengadilan. Pengeluaran ini harus diperlakukan sebagai...",
-    "options": [
-      "Beban operasional umum pada periode berjalan",
-      "Kapitalisasi penambah nilai tercatat hak paten",
-      "Pengurang nilai akumulasi amortisasi",
-      "Kerugian luar biasa di laporan laba rugi"
-    ],
-    "answer": 1,
-    "explanation": "Biaya pembelaan hukum paten yang BERHASIL dikapitalisasi ke akun Paten karena membuktikan keabsahan hak eksklusif aset tersebut."
-  },
-  {
-    "tm": 6,
-    "topic": "Klasifikasi Liabilitas Jangka Pendek (PSAK 1)",
-    "difficulty": "medium",
-    "q": "Kriteria manakah yang TIDAK menyebabkan suatu liabilitas diklasifikasikan sebagai Liabilitas Jangka Pendek menurut PSAK 1?",
-    "options": [
-      "Liabilitas diperkirakan akan diselesaikan dalam siklus operasi normal entitas",
-      "Liabilitas jatuh tempo dalam jangka waktu 12 bulan setelah periode pelaporan",
-      "Entitas memiliki hak tanpa syarat untuk menunda pelunasan liabilitas selama minimal 12 bulan setelah periode pelaporan",
-      "Liabilitas dimiliki terutama untuk tujuan diperdagangkan (trading)"
-    ],
-    "answer": 2,
-    "explanation": "Jika entitas memiliki hak tanpa syarat untuk menunda pelunasan minimal 12 bulan, maka liabilitas tersebut diklasifikasikan sebagai Liabilitas Jangka Panjang."
-  },
-  {
-    "tm": 6,
-    "topic": "Wesel Bayar Diskonto",
-    "difficulty": "medium",
-    "q": "PT Surya menerbitkan wesel bayar tanpa bunga (zero-interest-bearing note) 6 bulan senilai Rp 100.000.000 pada 1 Oktober 2024. Tingkat bunga pasar adalah 12%. Berapakah kas tunai yang diterima PT Surya pada 1 Oktober 2024?",
-    "options": [
-      "Rp 100.000.000",
-      "Rp 94.000.000",
-      "Rp 88.000.000",
-      "Rp 96.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Diskonto wesel = Rp 100.000.000 × 12% × (6/12) = Rp 6.000.000. Kas yang diterima = Rp 100 jt - Rp 6 jt = Rp 94.000.000."
-  },
-  {
-    "tm": 6,
-    "topic": "Diskonto Wesel Bayar di Neraca",
-    "difficulty": "medium",
-    "q": "Akun 'Diskonto Wesel Bayar' (Discount on Notes Payable) disajikan di Laporan Posisi Keuangan sebagai...",
-    "options": [
-      "Aset Lancar",
-      "Kontra-Liabilitas yang mengurangi Nilai Nominal Wesel Bayar",
-      "Beban Bunga Ditangguhkan di Aset Tidak Lancar",
-      "Pengurang Ekuitas Modal Saham"
-    ],
-    "answer": 1,
-    "explanation": "Diskonto Wesel Bayar adalah akun kontra-liabilitas yang disajikan sebagai pengurang nilai nominal wesel untuk menghasilkan nilai tercatat bersih (carrying amount)."
-  },
-  {
-    "tm": 6,
-    "topic": "Pembiayaan Kembali (Refinancing Agreement)",
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
     "difficulty": "advanced",
-    "q": "Utang jangka pendek jatuh tempo 15 Maret 2027. Pada 10 Januari 2027 (sebelum laporan keuangan 2026 diterbitkan), entitas menandatangani kontrak refinancing jangka panjang. Menurut PSAK 1 (revisi), per 31 Desember 2026 utang tersebut disajikan sebagai...",
+    "q": "Hak cipta Botticelli Company (tanpa akun akumulasi amortisasi) diturunkan nilainya dari USD 4.300.000 ke recoverable amount USD 3.400.000 pada 2025, sisa umur 10 tahun. Setelah amortisasi 2026, nilai wajarnya USD 3.500.000 (ceiling tanpa impairment USD 3.870.000). Berapa pemulihan yang dicatat?",
     "options": [
-      "Liabilitas Jangka Panjang karena refinancing sudah disepakati sebelum terbit laporan",
-      "Liabilitas Jangka Pendek karena hak penundaan belum ada per tanggal akhir pelaporan (31 Des 2026)",
-      "Pos Ekuitas Kuasi",
-      "Tidak dicatat di neraca melainkan hanya di CALK"
-    ],
-    "answer": 1,
-    "explanation": "Berdasarkan PSAK 1 / IAS 1 amandemen, hak untuk menunda pelunasan minimal 12 bulan HARUS SUDAH EKSIS PADA AKHIR PERIODE PELAPORAN (31 Des 2026). Perjanjian yang diteken setelah tanggal neraca tidak mengubah klasifikasi jangka pendek."
-  },
-  {
-    "tm": 6,
-    "topic": "Skema Bonus Eksekutif",
-    "difficulty": "advanced",
-    "q": "Bonus manajer adalah 10% dari laba setelah bonus. Jika laba sebelum bonus adalah Rp 110.000.000 (tanpa pajak), berapakah nilai bonus manajer tersebut?",
-    "options": [
-      "Rp 11.000.000",
-      "Rp 10.000.000",
-      "Rp 9.090.909",
-      "Rp 12.100.000"
-    ],
-    "answer": 1,
-    "explanation": "B = 0,10 × (110 jt - B) -> B = 11 jt - 0,10B -> 1,10B = 11 jt -> B = Rp 10.000.000."
-  },
-  {
-    "tm": 7,
-    "topic": "Kriteria Pengakuan Provisi (PSAK 57)",
-    "difficulty": "medium",
-    "q": "Menurut PSAK 57, suatu provisi WAJIB diakui di neraca jika memenuhi 3 syarat kumulatif berikut, KECUALI...",
-    "options": [
-      "Entitas memiliki kewajiban kini (legal atau konstruktif) akibat peristiwa masa lalu",
-      "Kemungkinan besar (probable > 50%) terjadi arus keluar sumber daya yang mengandung manfaat ekonomi",
-      "Estimasi yang andal dapat dibuat mengenai jumlah kewajiban tersebut",
-      "Telah disetujui secara tertulis oleh pengadilan negeri setempat"
+      "USD 900.000",
+      "USD 810.000",
+      "USD 0, karena pemulihan aset tidak berwujud dilarang",
+      "USD 440.000"
     ],
     "answer": 3,
-    "explanation": "3 Syarat kumulatif pengakuan provisi: (1) Kewajiban kini masa lalu; (2) Probable arus keluar kas (>50%); (3) Estimasi andal. Persetujuan tertulis pengadilan bukan syarat pengakuan provisi."
+    "explanation": "Amortisasi 2026 = USD 3.400.000/10 = USD 340.000, sehingga nilai tercatat USD 3.060.000. Nilai USD 3.500.000 di bawah ceiling USD 3.870.000, jadi pemulihan = USD 3.500.000 − USD 3.060.000 = USD 440.000 (didebit ke Copyright)."
   },
   {
-    "tm": 7,
-    "topic": "Provisi Garansi Produk (PSAK 57)",
+    "tm": 5,
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
     "difficulty": "medium",
-    "q": "PT Garansi menjual produk elektronik dengan estimasi klaim garansi sebesar 3% dari penjualan. Pada tahun 2024, penjualan tercatat Rp 2.000.000.000 dan klaim perbaikan riil yang telah dibayarkan Rp 40.000.000. Berapakah saldo akhir liabilitas garansi jika saldo awal nol?",
+    "q": "Dogwood Electronics: 1 Maret biaya legal paten €10.000; 5 April biaya laboratorium €23.000; 15 Mei prototipe €34.000; 1 Juni viabilitas ekonomi tercapai; 30 Juni pengembangan akhir €45.000. Berapa yang dibebankan dan yang dikapitalisasi?",
     "options": [
-      "Rp 0",
-      "Rp 20.000.000",
-      "Rp 40.000.000",
-      "Rp 60.000.000"
+      "Dibebankan €57.000; dikapitalisasi €55.000",
+      "Dibebankan €67.000; dikapitalisasi €45.000",
+      "Dibebankan €23.000; dikapitalisasi €89.000",
+      "Dibebankan €112.000; dikapitalisasi €0"
+    ],
+    "answer": 0,
+    "explanation": "Laboratorium €23.000 (riset) dan prototipe €34.000 (sebelum viabilitas) dibebankan: €57.000. Biaya legal paten €10.000 dikapitalisasi ke Patents dan pengembangan setelah viabilitas €45.000 ke Development Costs: €55.000."
+  },
+  {
+    "tm": 5,
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "difficulty": "medium",
+    "q": "Pada P11.1, Reichenbach Co. membayar €12.650 untuk berhasil membela paten yang dibelinya. Menurut Kieso Illustration 11.13 item 13, bagaimana perlakuan biaya tersebut?",
+    "options": [
+      "Dikapitalisasi ke Patents karena membuktikan keabsahan hak",
+      "Dikapitalisasi ke Goodwill",
+      "Dibebankan sebagai Legal Expense",
+      "Dikurangkan dari Accumulated Amortization—Patents"
+    ],
+    "answer": 2,
+    "explanation": "Kieso Illustration 11.13 item 13: biaya berhasil membela paten dibebankan sebagai legal fees karena pengeluaran itu hanya mempertahankan manfaat yang diharapkan. Karena itu €12.650 pada P11.1 menjadi Legal Expense, bukan tambahan Patents."
+  },
+  {
+    "tm": 5,
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "difficulty": "medium",
+    "q": "Palmiero Company membeli waralaba dari Dougherty Co. pada 1 Januari 2024 seharga USD 350.000 (nilai tercatat di Dougherty USD 500.000). Umur perjanjian 30 tahun, tetapi Palmiero harus ikut lelang kompetitif pada akhir 2033. Berapa amortisasi 2025?",
+    "options": [
+      "USD 11.667",
+      "USD 50.000",
+      "USD 35.000",
+      "USD 16.667"
+    ],
+    "answer": 2,
+    "explanation": "Cost pembeli USD 350.000 menjadi dasar; nilai tercatat penjual tidak relevan. Periode manfaat dibatasi lelang akhir 2033, yaitu 10 tahun (2024–2033), sehingga amortisasi 2025 = USD 350.000/10 = USD 35.000."
+  },
+  {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "medium",
+    "q": "Pada 1 Oktober 2025 Darby Corporation meminjam kas USD 75.000 dari Shore Bank dengan wesel tanpa bunga 12 bulan bernilai nominal USD 81.000. Berapa liabilitas neto wesel ini per 31 Desember 2025?",
+    "options": [
+      "USD 81.000",
+      "USD 76.500",
+      "USD 75.000",
+      "USD 79.500"
     ],
     "answer": 1,
-    "explanation": "Beban garansi diakui = 3% × Rp 2.000.000.000 = Rp 60.000.000. Saldo liabilitas garansi = Rp 60 jt - pembayaran riil Rp 40 jt = Rp 20.000.000."
+    "explanation": "Discount on Notes Payable awal = USD 81.000 − USD 75.000 = USD 6.000; amortisasi 3 bulan = USD 6.000 × 3/12 = USD 1.500. Liabilitas neto = USD 81.000 − (USD 6.000 − USD 1.500) = USD 76.500, sama dengan kas USD 75.000 + bunga diakui USD 1.500."
   },
   {
-    "tm": 7,
-    "topic": "Spektrum Kontinjensi",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
     "difficulty": "medium",
-    "q": "Jika kemungkinan terjadinya kewajiban di masa depan berada pada rentang 'Possible' (mungkin terjadi tetapi kemungkinan < 50%), perlakuan akuntansi yang tepat adalah...",
+    "q": "Edwardson AG mencatat pembelian secara neto. Barang €70.000 dengan syarat 2/10, n/30 dibeli 2 Februari dan baru dilunasi 26 Februari. Bagaimana jurnal pelunasannya?",
     "options": [
-      "Diakui sebagai liabilitas provisi di neraca",
-      "Hanya diungkapkan dalam Catatan atas Laporan Keuangan (CALK)",
-      "Diabaikan sepenuhnya tanpa pengungkapan apa pun",
-      "Diakui sebagai pengurang ekuitas pemegang saham"
+      "Debit Accounts Payable €68.600 dan Purchase Discounts Lost €1.400; kredit Cash €70.000",
+      "Debit Accounts Payable €70.000; kredit Purchase Discounts €1.400 dan Cash €68.600",
+      "Debit Accounts Payable €68.600 dan Purchases €1.400; kredit Cash €70.000",
+      "Debit Accounts Payable €70.000; kredit Cash €70.000"
     ],
-    "answer": 1,
-    "explanation": "Kewajiban kontinjensi yang berstatus 'Possible' tidak diakui di neraca, melainkan cukup diungkapkan secara memadai di Catatan atas Laporan Keuangan (CALK)."
+    "answer": 0,
+    "explanation": "Metode neto mencatat pembelian €70.000 × (1 − 0,02) = €68.600. Karena dibayar setelah periode diskon, selisih €1.400 didebit ke Purchase Discounts Lost, yang menonjolkan biaya pembiayaan akibat gagal memanfaatkan diskon."
   },
   {
-    "tm": 7,
-    "topic": "Aset Kontinjensi",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
     "difficulty": "medium",
-    "q": "PT Perkasa menggugat kompetitor atas pencemaran nama baik. Pengacara menyatakan 90% kemungkinan besar perusahaan akan memenangkan ganti rugi Rp 500.000.000. Perlakuan akuntansi yang tepat adalah...",
+    "q": "Penjualan tunai Schultz Department Store selama Desember €798.000 sudah termasuk PPN 5%. Berapa Sales Revenue dan VAT Taxes Payable yang dicatat?",
     "options": [
-      "Mencatat Piutang Klaim Rp 500 jt dan Pendapatan Luar Biasa Rp 500 jt di neraca",
-      "Hanya mengungkapkan keberadaan aset kontinjensi dalam CALK jika arus masuk manfaat ekonomi bersifat probable",
-      "Mencatat Pendapatan Ditangguhkan di liabilitas",
-      "Mengakui aset di laporan posisi keuangan jika dijamin notaris"
+      "Sales Revenue €798.000; VAT Taxes Payable €39.900",
+      "Sales Revenue €758.100; VAT Taxes Payable €39.900",
+      "Sales Revenue €798.000; VAT Taxes Payable €38.000",
+      "Sales Revenue €760.000; VAT Taxes Payable €38.000"
     ],
-    "answer": 1,
-    "explanation": "Prinsip kehati-hatian (prudence) melarang pengakuan aset kontinjensi di neraca karena dapat menghasilkan pengakuan pendapatan yang tidak pernah terealisasi. Aset kontinjensi hanya diungkapkan di CALK jika probable."
+    "answer": 3,
+    "explanation": "Kas €798.000 sudah termasuk pajak, sehingga Sales Revenue = €798.000 / 1,05 = €760.000 dan VAT Taxes Payable = €798.000 − €760.000 = €38.000. Mengalikan €798.000 × 5% = €39.900 adalah jebakan PPN inklusif."
   },
   {
-    "tm": 7,
-    "topic": "Kontrak Memberatkan (Onerous Contract)",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
     "difficulty": "advanced",
-    "q": "Dalam kontrak memberatkan (onerous contract) menurut PSAK 57, kewajiban kini diukur pada nilai yang mencerminkan...",
+    "q": "Utang bank jatuh tempo dalam 12 bulan setelah 31 Desember. Perjanjian pembiayaan kembali jangka panjang baru ditandatangani pada bulan Januari, sebelum laporan keuangan diterbitkan. Bagaimana penyajiannya per 31 Desember menurut IFRS?",
     "options": [
-      "Biaya tertinggi untuk menyelesaikan kontrak",
-      "Biaya terendah yang tidak dapat dihindari untuk keluar dari kontrak (least net cost of exiting)",
-      "Nilai nominal total kontrak masa depan",
-      "Estimasi kerugian laba bruto"
+      "Liabilitas jangka panjang, karena perjanjian selesai sebelum laporan diterbitkan",
+      "Liabilitas jangka pendek; perjanjian diungkapkan dalam catatan sebagai peristiwa setelah periode pelaporan",
+      "Dipisah pro-rata antara jangka pendek dan jangka panjang",
+      "Direklasifikasi ke ekuitas sampai pembiayaan kembali terlaksana"
     ],
     "answer": 1,
-    "explanation": "Biaya yang tidak dapat dihindari mencerminkan nilai terendah antara biaya memenuhi kontrak dan setiap kompensasi atau penalti yang timbul dari kegagalan memenuhinya."
+    "explanation": "Hak menunda pelunasan sekurang-kurangnya 12 bulan harus sudah ada pada atau sebelum tanggal pelaporan (Kieso p. 1021). Perjanjian bulan Januari adalah peristiwa setelah periode pelaporan yang tidak memerlukan penyesuaian, sehingga utang tetap jangka pendek. US GAAP-lah yang mengizinkan klasifikasi jangka panjang."
+  },
+  {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "medium",
+    "q": "Entitas menggugat pihak lain dan penasihat hukum menilai arus masuk ganti rugi probable (lebih mungkin terjadi daripada tidak), tetapi belum virtually certain. Bagaimana perlakuannya?",
+    "options": [
+      "Diakui sebagai piutang dan pendapatan karena probable",
+      "Diakui sebagai provisi di sisi aset",
+      "Aset kontinjensi yang hanya diungkapkan dalam catatan",
+      "Tidak diakui dan tidak diungkapkan"
+    ],
+    "answer": 2,
+    "explanation": "Pada sisi aset, kemungkinan probable menghasilkan aset kontinjensi yang diungkapkan dalam catatan tetapi tidak diakui. Aset baru diakui di neraca bila arus masuknya virtually certain; possible dan remote tidak diakui maupun diungkapkan."
+  },
+  {
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "difficulty": "advanced",
+    "q": "Foreman Cleaners menerbitkan obligasi €800.000, kupon 10% per tahun dibayar setiap 1 Juli dan 1 Januari, pada harga 84,95 untuk menghasilkan yield 12% (tanggal 1 Januari 2025). Berapa beban bunga pada 1 Juli 2025 dengan metode bunga efektif?",
+    "options": [
+      "€40.000",
+      "€40.776",
+      "€48.000",
+      "€81.552"
+    ],
+    "answer": 1,
+    "explanation": "Harga = 0,8495 × €800.000 = €679.600. Tarif efektif semesteran 12% ÷ 2 = 6%, sehingga beban bunga = €679.600 × 6% = €40.776. Kas kupon = €800.000 × 10% ÷ 2 = €40.000, dan selisih €776 menambah Bonds Payable."
+  },
+  {
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "difficulty": "advanced",
+    "q": "Spencer plc menjual obligasi 10% bernilai jatuh tempo £3.000.000 seharga £2.783.724 pada 1 Januari 2025 (jatuh tempo 1 Januari 2030, bunga tahunan). Tarif efektifnya 12%. Berapa beban bunga tahun pertama?",
+    "options": [
+      "£300.000",
+      "£360.000",
+      "£334.047",
+      "£278.372"
+    ],
+    "answer": 2,
+    "explanation": "Beban bunga = nilai tercatat awal × tarif efektif = £2.783.724 × 12% = £334.046,88 ≈ £334.047. Kas kupon = £3.000.000 × 10% = £300.000, sehingga amortisasi diskonto £34.047 menaikkan nilai tercatat menjadi £2.817.771."
+  },
+  {
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "difficulty": "medium",
+    "q": "Jika tarif kupon obligasi lebih rendah dari tarif efektif (pasar), bagaimana harga penerbitan dan arah amortisasinya?",
+    "options": [
+      "Premi; amortisasi mengurangi nilai tercatat sampai nominal",
+      "Pari; tidak ada amortisasi",
+      "Diskonto; amortisasi mengurangi nilai tercatat",
+      "Diskonto; amortisasi menambah nilai tercatat sampai nominal"
+    ],
+    "answer": 3,
+    "explanation": "Kupon di bawah tarif efektif membuat obligasi dijual di bawah nominal (diskonto). Setiap periode beban bunga lebih besar dari kas kupon, dan selisihnya menambah nilai tercatat sampai sama dengan nominal saat jatuh tempo."
+  },
+  {
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "difficulty": "medium",
+    "q": "Bagaimana perlakuan biaya penerbitan obligasi menurut IFRS?",
+    "options": [
+      "Dicatat sebagai aset Deferred Bond Issue Costs lalu diamortisasi",
+      "Mengurangi kas bersih dan nilai tercatat awal Bonds Payable, sehingga tarif efektif naik",
+      "Dibebankan seluruhnya pada tanggal penerbitan",
+      "Dikreditkan ke Interest Expense sepanjang umur obligasi"
+    ],
+    "answer": 1,
+    "explanation": "Biaya penerbitan mengurangi kas bersih dan nilai tercatat awal liabilitas; biaya itu tidak dicatat sebagai aset tangguhan (Kieso p. 1118). Karena nilai tercatat awal lebih kecil, tarif efektif yang dipakai untuk amortisasi menjadi lebih tinggi."
+  },
+  {
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "difficulty": "advanced",
+    "q": "Persyaratan utang dimodifikasi. Nilai kini arus kas baru, didiskontokan dengan tarif efektif awal, berbeda 10% atau lebih dari nilai tercatat utang lama. Bagaimana perlakuannya?",
+    "options": [
+      "Modifikasi substansial: utang lama dihentikan, utang baru dicatat pada nilai wajar, dan gain atau loss ke laba rugi",
+      "Utang lama tetap; hanya tarif bunga yang diubah secara prospektif",
+      "Selisih langsung dicatat ke OCI",
+      "Tidak ada jurnal sampai utang baru jatuh tempo"
+    ],
+    "answer": 0,
+    "explanation": "Selisih 10% atau lebih berarti modifikasi substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar, dengan gain atau loss di laba rugi. Bila selisihnya di bawah 10%, utang tetap dan nilai tercatatnya disesuaikan (Kieso p. 1133)."
   }
 ];
 
