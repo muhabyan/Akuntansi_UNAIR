@@ -133,7 +133,7 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
   if (courseCode === 'AKK202') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS AKM II (TM 1–7)', items: AKK202_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS AKM II (TM 8–14)', items: AKK202_QUIZ_UAS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS AKM II (TM 9–14)', items: AKK202_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap AKM II (14 TM)', items: AKK202_QUIZ },
     ];
   }
