@@ -19,6 +19,7 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { AKK202_REVIEW_UTS_READING } from './akm2ReviewReadings';
 
 export const AKK202_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -37,6 +38,7 @@ export const AKK202_READINGS: Record<number, Reading> = {
   14: TM14_READING,
 };
 
+// Review UTS berdiri sendiri (tm 0) agar tidak berbagi objek maupun progress key dengan TM08.
 export const AKM2_REVIEW_READINGS: Record<string, Reading> = {
-  'uts': TM8_READING,
+  uts: AKK202_REVIEW_UTS_READING,
 };

@@ -1,8 +1,11 @@
-// AKK202 Pra-UTS alignment guard: the TM1–TM7 quiz, flashcard, and bank soal items must follow the
-// canonical readings (Kieso IFRS 5e Ch. 9–13, src/data/akm2/modules/tm1.ts–tm7.ts) and the render
-// path of each file.
+// AKK202 Pra-UTS alignment guard: the dedicated UTS review and the TM1–TM7 quiz, flashcard, and bank soal
+// items must follow the canonical readings (Kieso IFRS 5e Ch. 9–13, src/data/akm2/modules/tm1.ts–tm7.ts)
+// and the render path of each file.
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { build } from 'esbuild';
+import katex from 'katex';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
@@ -11,7 +14,8 @@ import remarkMath from 'remark-math';
 const bundle = await build({
   stdin: {
     contents: [
-      "export { AKK202_READINGS } from './src/data/akm2/akm2Data.ts';",
+      "export { AKK202_READINGS, AKM2_REVIEW_READINGS } from './src/data/akm2/akm2Data.ts';",
+      "export { loadCourseContent } from './src/data/courses/courseRegistry.ts';",
       "export { AKK202_QUIZ, AKK202_QUIZ_UTS, AKK202_QUIZ_UAS } from './src/data/quizzes/akk202.ts';",
       "export { AKK202_FC } from './src/data/flashcards/akk202.ts';",
       "export { AKK202_BANK, AKK202_BANK_UTS, AKK202_BANK_UAS } from './src/data/banksoal/akk202.ts';",
@@ -19,6 +23,16 @@ const bundle = await build({
     resolveDir: process.cwd(), loader: 'ts',
   },
   bundle: true, write: false, format: 'esm', platform: 'node', logLevel: 'silent',
+  plugins: [{
+    // Vite "?raw" imports resolve to the file contents as a string.
+    name: 'vite-raw',
+    setup(builder) {
+      builder.onResolve({ filter: /\?raw$/ }, (args) => ({
+        path: path.resolve(args.resolveDir, args.path.slice(0, -'?raw'.length)), namespace: 'raw',
+      }));
+      builder.onLoad({ filter: /.*/, namespace: 'raw' }, (args) => ({ contents: readFileSync(args.path, 'utf8'), loader: 'text' }));
+    },
+  }],
 });
 const mod = await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`);
 const readings = mod.AKK202_READINGS;
@@ -162,4 +176,88 @@ bank.forEach((item, index) => {
     ...listFields.flatMap((field) => item[field])]);
 });
 
+// ---------------------------------------------------------------- UTS review
+const content = await mod.loadCourseContent('AKK202');
+const review = content.reviews.uts;
+assert.ok(review, 'AKK202 has a UTS review');
+assert.equal(review, mod.AKM2_REVIEW_READINGS.uts);
+assert.ok(Object.values(readings).every((reading) => reading !== review), 'reviews.uts is not any TM reading (TM08 included)');
+assert.equal(review.tm, 0, 'review uses tm 0 so its progress key does not collide with any TM');
+assert.deepEqual(Object.keys(content.reviews), ['uts'], 'AKK202 exposes only the UTS review');
+assert.equal(content.readings, readings);
+assertNoOldTopics('review', review);
+// Markers of the retired TM08 review content: old PSAK numbering, the wrong exchange-loss rule, invented cases, highlights.
+const reviewText = JSON.stringify(review);
+for (const marker of [/\bPSAK\b/, /selalu diakui penuh/i, /Maju Bersama/, /==/]) {
+  assert.ok(!marker.test(reviewText), `review contains retired TM08 marker ${marker}`);
+}
+
+const flatten = (blocks) => blocks.flatMap((block) => [block, ...('blocks' in block ? flatten(block.blocks) : [])]);
+// "€14.833", "R$11.000", "¥1.100" use id-ID grouping; TM1 Shalla keeps US grouping ("$135,500").
+const money = (value) => {
+  if (!value) return 0;
+  const text = value.replace(/[^\d.,]/g, '');
+  assert.ok(text.length > 0, `unparseable amount ${value}`);
+  return /^\d{1,3}(,\d{3})+$/.test(text) ? Number(text.replace(/,/g, '')) : Number(text.replace(/\./g, '').replace(',', '.'));
+};
+const reviewBlocks = flatten(review.blocks);
+const markdownValues = [review.intro];
+const plainValues = [review.title, review.ref, ...review.objectives];
+for (const block of reviewBlocks) {
+  switch (block.kind) {
+    case 'p': case 'callout': markdownValues.push(block.text); break;
+    case 'ul': case 'ol': markdownValues.push(...block.items); break;
+    case 'table': markdownValues.push(...block.rows.flat(), block.caption); plainValues.push(...block.headers); break;
+    case 'journal': markdownValues.push(block.caption); block.lines.forEach((line) => plainValues.push(line.account, line.debit ?? '', line.credit ?? '')); break;
+    case 'formula': markdownValues.push(block.note); break;
+    case 'solution-reveal': markdownValues.push(block.prompt); break;
+    case 'h2': case 'h3': plainValues.push(block.text); break;
+    default:
+  }
+  if (['solution-reveal', 'callout'].includes(block.kind) && block.title) plainValues.push(block.title);
+}
+for (const value of markdownValues.filter((item) => typeof item === 'string')) {
+  assertMarkdownSafe('review', value);
+  assert.equal(unescapedDollars(value), 0, `review: escape "$" in markdown text: ${value.slice(0, 80)}`);
+}
+for (const value of plainValues) assert.ok(!value.includes('\\'), `review: backslash in plain-text field: ${value.slice(0, 80)}`);
+
+const reviewHeadings = review.blocks.filter((block) => block.kind === 'h2');
+reviewHeadings.forEach((heading, index) => assert.ok(heading.text.startsWith(`${index + 1}. `), `review heading order: ${heading.text}`));
+assert.equal(reviewHeadings.length, 12, 'review keeps the 12 approved sections');
+console.warn = () => {}; // KaTeX unknownSymbol warnings for €, £, ¥ inside \text{} do not change the output.
+let reviewJournals = 0;
+for (const block of reviewBlocks) {
+  if (block.kind === 'table') {
+    block.rows.forEach((row) => assert.equal(row.length, block.headers.length, `review table shape: ${block.headers.join('|')}`));
+  }
+  if (block.kind === 'journal') {
+    const debit = block.lines.reduce((sum, line) => sum + money(line.debit), 0);
+    const credit = block.lines.reduce((sum, line) => sum + money(line.credit), 0);
+    assert.ok(debit > 0 && Math.abs(debit - credit) < 1e-6, `review journal balances: ${block.caption} (${debit} vs ${credit})`);
+    block.lines.forEach((line) => assert.equal(Boolean(line.isCredit), Boolean(line.credit), `review isCredit flag: ${line.account}`));
+    reviewJournals++;
+  }
+  if (block.kind === 'formula') {
+    assert.ok(block.text.includes('\\') && !block.text.includes('$'), 'review formula uses native TeX without "$"');
+    katex.renderToString(block.text, {
+      throwOnError: true, displayMode: true, strict: (code) => (code === 'unknownSymbol' ? 'ignore' : 'error'),
+    });
+  }
+}
+for (const tm of PRA_UTS_TMS) assert.ok(reviewText.includes(`TM${tm}`), `review covers TM${tm}`);
+// Both branches stay visible where the readings give alternatives.
+for (const term of ['Interpretasi A', 'Interpretasi B', 'Alternatif A', 'Alternatif B', 'Interpretasi — akun kredit deplesi',
+  'Interpretasi — kapitalisasi dan amortisasi €45.000', 'Interpretasi — metode eliminasi pada E10.27', 'Illustration 9.14']) {
+  assert.ok(reviewText.includes(term), `review keeps "${term}"`);
+}
+const practices = review.blocks.filter((block) => block.kind === 'solution-reveal');
+assert.equal(practices.length, 7, 'review has seven integrated practices');
+// Every number in the review occurs in at least one TM1–TM7 reading.
+const allReadingNumbers = new Set([...readingNumbers.values()].flatMap((set) => [...set]));
+for (const token of numberTokens(readingText(review))) {
+  assert.ok(allReadingNumbers.has(token), `review: number ${token} does not occur in the TM1–TM7 readings`);
+}
+
+console.log(`AKK202 alignment PASS: UTS review (${reviewHeadings.length} sections, ${practices.length} practices, ${reviewJournals} balanced journals).`);
 console.log(`AKK202 alignment PASS: quiz UTS ${quiz.length} items; flashcards ${praUtsCards.length} TM1–TM7 cards (${keptIds.length} kept ids); bank soal ${bank.length} TM1–TM7 cases; numbers traced to readings.`);
