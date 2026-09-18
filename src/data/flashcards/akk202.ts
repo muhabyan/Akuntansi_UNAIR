@@ -1,385 +1,386 @@
 // src/data/flashcards/akk202.ts
 // Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) — 84 kartu lengkap (6 kartu per TM)
+// Kartu TM 1-7 mengikuti bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts; kartu yang isinya berubah memakai id akk202-v2-tmXX-YY.
 import type { AdvancedStudyCard } from '../../types';
 
 export const AKK202_FC: AdvancedStudyCard[] = [
   {
-    "id": "akk202-tm01-01",
+    "id": "akk202-v2-tm01-01",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
-    "category": "Konsep",
-    "front": "Kriteria Pengakuan Aset Tetap (PSAK 16)",
-    "back": "Aset berwujud diakui jika: (1) Besar kemungkinan entitas memperoleh manfaat ekonomi masa depan, dan (2) Biaya perolehannya dapat diukur secara andal."
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "category": "Rumus",
+    "front": "Biaya Perolehan Awal Aset Tetap (PSAK 216)",
+    "back": "Harga beli neto + biaya atribusi langsung (persiapan lokasi, angkut, instalasi, trial run, jasa profesional) + nilai kini estimasi pembongkaran/restorasi. Pelatihan, pembukaan fasilitas, iklan, dan administrasi umum adalah beban periode."
   },
   {
-    "id": "akk202-tm01-02",
+    "id": "akk202-v2-tm01-02",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
-    "category": "Definisi",
-    "front": "Komponen Biaya Perolehan Aset Tetap",
-    "back": "Harga beli, bea impor, pajak tidak dapat direstitusi, biaya persiapan lokasi, penanganan awal, instalasi, dan estimasi awal pembongkaran/restorasi (decommissioning)."
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "category": "Perbandingan",
+    "front": "Pembongkaran Gedung Lama: Masuk Tanah atau Rugi?",
+    "back": "Gedung pada tanah yang baru dibeli dan memang akan dibongkar: biaya pembongkaran neto (dikurangi hasil puing) menambah Land. Gedung milik sendiri yang kemudian dibongkar: nilai buku dan biaya terkait menjadi loss on disposal."
   },
   {
-    "id": "akk202-tm01-03",
+    "id": "akk202-v2-tm01-03",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
     "category": "Hukum",
-    "front": "Perlakuan Properti Investasi (PSAK 13)",
-    "back": "Properti (tanah/bangunan) yang dikuasai untuk menghasilkan sewa rental, kenaikan nilai (capital appreciation), atau keduanya; bukan untuk operasi atau persediaan."
+    "front": "Kapitalisasi Biaya Pinjaman (PSAK 223)",
+    "back": "Wajib dikapitalisasi untuk aset kualifikasian sebesar min(avoidable interest, actual interest) selama aktivitas penyiapan berlangsung; pendapatan investasi dana spesifik yang menganggur mengurangi jumlahnya. SAK Entitas Privat Bab 25.2 membebankan seluruh biaya pinjaman."
   },
   {
     "id": "akk202-tm01-04",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
     "category": "Mekanisme",
     "front": "Model Nilai Wajar Properti Investasi",
     "back": "Perubahan nilai wajar diakui langsung dalam Laporan Laba Rugi pada periode terjadinya, dan aset TIDAK disusutkan."
   },
   {
-    "id": "akk202-tm01-05",
+    "id": "akk202-v2-tm01-05",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
-    "category": "Contoh",
-    "front": "Biaya Pembongkaran Gedung Lama",
-    "back": "Jika tanah dibeli dengan gedung tua yang langsung dirobohkan untuk membangun gedung baru, seluruh biaya beli dan pembongkaran bersih dikapitalisasi ke Tanah."
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "category": "Standar",
+    "front": "Hak atas Tanah Indonesia (ISAK 336)",
+    "back": "Hak Milik tidak diamortisasi. Biaya legal awal HGB/HGU/Hak Pakai dikapitalisasi ke biaya perolehan tanah. Biaya pembaruan/perpanjangan hak diakui sebagai aset hak-guna/beban tangguhan dan diamortisasi selama masa legal hak."
   },
   {
-    "id": "akk202-tm01-06",
+    "id": "akk202-v2-tm01-06",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Aset Tetap & Properti Investasi",
-    "category": "Rumus",
-    "front": "Alokasi Pembelian Lump-Sum",
-    "back": "Harga perolehan total dialokasikan ke masing-masing aset berdasarkan rasio Nilai Wajar Relatif (Relative Fair Value) saat akuisisi."
-  },
-  {
-    "id": "akk202-tm02-01",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Kos setelah Akuisisi & Disposisi Aset",
-    "category": "Konsep",
-    "front": "Pengeluaran Modal (Capital Expenditure)",
-    "back": "Pengeluaran yang menambah umur manfaat, kapasitas, atau efisiensi aset; dikapitalisasi menambah nilai tercatat aset."
-  },
-  {
-    "id": "akk202-tm02-02",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Kos setelah Akuisisi & Disposisi Aset",
-    "category": "Konsep",
-    "front": "Pengeluaran Pendapatan (Revenue Expenditure)",
-    "back": "Biaya perbaikan dan perawatan rutin untuk mempertahankan kondisi kerja normal aset; dibebankan langsung ke laba rugi periode berjalan."
-  },
-  {
-    "id": "akk202-tm02-03",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Kos setelah Akuisisi & Disposisi Aset",
+    "topic": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
     "category": "Mekanisme",
-    "front": "Penggantian Komponen Signifikan",
-    "back": "Nilai tercatat komponen lama yang diganti dihentikan pengakuannya (derecognized), dan biaya komponen baru dikapitalisasi (PSAK 16 Component Depreciation)."
+    "front": "Cost Model vs Revaluation Model Aset Tetap",
+    "back": "Revaluasi berlaku untuk seluruh kelas aset. Kenaikan pertama ke OCI (revaluation surplus); penurunan pertama ke laba rugi. Selisih depresiasi berbasis nilai wajar dan berbasis cost ditransfer dari AOCI ke saldo laba langsung dalam ekuitas, tidak melalui laba rugi."
   },
   {
-    "id": "akk202-tm02-04",
+    "id": "akk202-v2-tm02-01",
     "phase": "pra-uts",
     "tm": 2,
-    "topic": "Kos setelah Akuisisi & Disposisi Aset",
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "category": "Konsep",
+    "front": "Uji Kapitalisasi Pengeluaran setelah Perolehan",
+    "back": "Kapitalisasi hanya bila manfaat ekonomi masa depan probable (umur, kapasitas, mutu naik, atau biaya operasi turun) dan biaya dapat diukur andal: additions, improvements, replacements, overhaul besar. Perawatan rutin dan rearrangement dibebankan."
+  },
+  {
+    "id": "akk202-v2-tm02-02",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
     "category": "Prosedur",
-    "front": "Penghentian Pengakuan Aset Tetap",
-    "back": "Nilai buku aset dieliminasi; laba/rugi pelepasan dihitung dari selisih antara penerimaan bersih pelepasan dengan nilai tercatat aset."
+    "front": "Substitution Approach saat Mengganti Komponen",
+    "back": "Hapus cost dan akumulasi depresiasi komponen lama, akui gain/loss = hasil pelepasan neto − nilai tercatat komponen lama, lalu kapitalisasi cost komponen baru. Contoh Instinct Enterprises: pipa lama nilai buku £15.000, scrap £1.000, rugi £14.000."
+  },
+  {
+    "id": "akk202-v2-tm02-03",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "category": "Mekanisme",
+    "front": "Konversi Terpaksa (Involuntary Conversion) Dua Tahap",
+    "back": "Tahap 1 (tanggal bencana): hapus aset dan akui casualty loss sebesar nilai buku. Tahap 2 (klaim disepakati): catat kas/piutang asuransi dan gain from insurance settlement. Klaim yang belum disepakati adalah aset kontinjensi, jadi belum diakui."
+  },
+  {
+    "id": "akk202-v2-tm02-04",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "category": "Prosedur",
+    "front": "Pelepasan (Disposal) Aset Tetap",
+    "back": "Perbarui depresiasi sampai tanggal pelepasan lebih dulu. Lalu debit kas/piutang dan seluruh akumulasi depresiasi, kredit aset sebesar cost, dan akui gain/loss = imbalan neto − nilai buku pada tanggal pelepasan."
   },
   {
     "id": "akk202-tm02-05",
     "phase": "pra-uts",
     "tm": 2,
-    "topic": "Kos setelah Akuisisi & Disposisi Aset",
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
     "category": "Hukum",
     "front": "Pertukaran Aset Memiliki Substansi Komersial",
     "back": "Aset baru dicatat pada nilai wajar aset yang diserahkan (atau aset diterima), dan seluruh laba atau rugi pertukaran diakui seketika."
   },
   {
-    "id": "akk202-tm02-06",
+    "id": "akk202-v2-tm02-06",
     "phase": "pra-uts",
     "tm": 2,
-    "topic": "Kos setelah Akuisisi & Disposisi Aset",
+    "topic": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
     "category": "Hukum",
-    "front": "Pertukaran Tanpa Substansi Komersial",
-    "back": "Arus kas entitas tidak berubah signifikan pasca pertukaran; keuntungan yang timbul ditangguhkan dengan mengurangi nilai tercatat aset baru."
+    "front": "Pertukaran Tanpa Substansi Komersial (IFRS)",
+    "back": "Tidak ada gain maupun loss yang diakui pada tanggal pertukaran. Basis aset baru = nilai buku aset diserahkan + kas dibayar − kas diterima (Interstate: $42.000 + $11.000 = $53.000). Nilai wajar di bawah nilai tercatat dievaluasi sebagai impairment (IAS 36), bukan rugi pertukaran."
   },
   {
-    "id": "akk202-tm03-01",
+    "id": "akk202-v2-tm03-01",
     "phase": "pra-uts",
     "tm": 3,
-    "topic": "Depresiasi & Deplesi Sumber Daya Alam",
-    "category": "Definisi",
-    "front": "Definisi Depresiasi Akuntansi",
-    "back": "Alokasi sistematis jumlah tersusutkan (cost dikurangi nilai sisa) suatu aset selama estimasi masa manfaatnya; bukan penilaian aset ke nilai pasar."
-  },
-  {
-    "id": "akk202-tm03-02",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Depresiasi & Deplesi Sumber Daya Alam",
-    "category": "Rumus",
-    "front": "Metode Depresiasi Saldo Menurun Ganda",
-    "back": "Tarif = (100% / Umur) × 2. Tarif dikalikan Nilai Buku Awal Tahun (tanpa mengurangkan nilai sisa di awal perhitungan, tapi nilai buku akhir tidak boleh di bawah nilai sisa)."
-  },
-  {
-    "id": "akk202-tm03-03",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Depresiasi & Deplesi Sumber Daya Alam",
-    "category": "Rumus",
-    "front": "Metode Unit Produksi",
-    "back": "Beban Depresiasi = [(Harga Perolehan - Nilai Sisa) / Total Estimasi Kapasitas Unit] × Unit Aktual Diproduksi."
-  },
-  {
-    "id": "akk202-tm03-04",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Depresiasi & Deplesi Sumber Daya Alam",
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
     "category": "Konsep",
-    "front": "Deplesi Sumber Daya Alam (PSAK 64)",
-    "back": "Alokasi biaya perolehan sumber daya mineral/tambang berdasarkan metode unit ekstraksi; didebit ke Persediaan dan dikredit ke Akumulasi Deplesi."
+    "front": "Depresiasi dan Tiga Faktor Penentunya",
+    "back": "Alokasi sistematis cost (bukan penilaian ke nilai pasar) selama umur manfaat; beban nonkas yang tidak mencadangkan dana penggantian. Tiga faktor: dasar depresiasi (cost − residu), estimasi umur manfaat, dan metode yang mencerminkan pola konsumsi manfaat."
   },
   {
-    "id": "akk202-tm03-05",
+    "id": "akk202-v2-tm03-02",
     "phase": "pra-uts",
     "tm": 3,
-    "topic": "Depresiasi & Deplesi Sumber Daya Alam",
-    "category": "Prosedur",
-    "front": "Revisi Estimasi Masa Manfaat",
-    "back": "Diperlakukan secara Prospektif (bukan retrospektif); nilai buku saat ini dikurangi estimasi nilai sisa baru disusutkan selama sisa masa manfaat baru."
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "category": "Rumus",
+    "front": "Saldo Menurun Ganda (DDB)",
+    "back": "Beban = nilai buku awal tahun × 2/n. Residu tidak dikurangkan di awal; residu hanya batas bawah nilai buku pada tahun akhir. Lockard SE: €80.000 × 2/8 = €20.000 pada tahun pertama."
   },
   {
-    "id": "akk202-tm03-06",
+    "id": "akk202-v2-tm03-03",
     "phase": "pra-uts",
     "tm": 3,
-    "topic": "Depresiasi & Deplesi Sumber Daya Alam",
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "category": "Rumus",
+    "front": "SYD untuk Pembelian Tengah Tahun",
+    "back": "Tahun kalender 2 = (service year 1 × (12 − m)/12) + (service year 2 × m/12), dengan m = bulan pemakaian tahun pertama. Charleston (m = 7): (€21.000 × 5/12) + (€18.000 × 7/12) = €19.250."
+  },
+  {
+    "id": "akk202-v2-tm03-04",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "category": "Rumus",
+    "front": "Dasar dan Tarif Deplesi",
+    "back": "Dasar = akuisisi + eksplorasi + pengembangan tidak berwujud + kewajiban restorasi − nilai residu; peralatan berwujud disusutkan terpisah. Tarif = dasar ÷ total cadangan. Deplesi didebit ke persediaan saat ekstraksi, lalu menjadi beban pokok penjualan saat terjual."
+  },
+  {
+    "id": "akk202-v2-tm03-05",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "category": "Hukum",
+    "front": "Impairment Aset Individual dan Batas Pemulihan",
+    "back": "Rugi = carrying amount − recoverable amount, dengan recoverable amount = max(FVLCD, VIU). Pemulihan ke laba rugi dibatasi ceiling: nilai tercatat seandainya tidak pernah ada impairment setelah depresiasi normal. US GAAP melarang pemulihan untuk aset held and used."
+  },
+  {
+    "id": "akk202-v2-tm03-06",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
     "category": "Mekanisme",
-    "front": "Komponen Biaya Restorasi Lingkungan",
-    "back": "Kewajiban hukum penutupan tambang diakui sebagai provisi (kewajiban) dan dikapitalisasi menambah basis aset tambang untuk dideplesi."
+    "front": "Metode Eliminasi pada Revaluasi",
+    "back": "Debit akumulasi depresiasi sampai nol, sesuaikan akun aset ke nilai wajar. Kenaikan pertama ke OCI; penurunan pertama ke Loss on Revaluation (Falcetto: €1.000). Kenaikan yang membalik rugi lama masuk laba rugi dulu; penurunan yang membalik surplus memakai OCI dulu."
   },
   {
-    "id": "akk202-tm04-01",
+    "id": "akk202-v2-tm04-01",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Penurunan Nilai Aset (Impairment - PSAK 48)",
-    "category": "Definisi",
-    "front": "Jumlah Terpulihkan (Recoverable Amount)",
-    "back": "Nilai yang lebih tinggi antara: Nilai Wajar Dikurangi Biaya Pelepasan (FVLCOD) atau Nilai Pakai (Value in Use)."
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "category": "Prosedur",
+    "front": "Alokasi Rugi Penurunan Nilai CGU",
+    "back": "Tingkat 1: kurangi goodwill CGU sampai nol. Tingkat 2: sisa rugi pro-rata ke aset lain berdasarkan nilai tercatat relatif. Batas bawah tiap aset = max(FVLCD, VIU, 0); rugi yang tidak terserap dialokasikan ulang ke aset lain."
   },
   {
-    "id": "akk202-tm04-02",
+    "id": "akk202-v2-tm04-02",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Penurunan Nilai Aset (Impairment - PSAK 48)",
-    "category": "Konsep",
-    "front": "Nilai Pakai (Value in Use)",
-    "back": "Nilai sekarang (Present Value) dari estimasi arus kas masa depan yang diharapkan akan diperoleh dari penggunaan aset dan pelepasannya."
-  },
-  {
-    "id": "akk202-tm04-03",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penurunan Nilai Aset (Impairment - PSAK 48)",
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
     "category": "Hukum",
-    "front": "Kondisi Terjadinya Impairment",
-    "back": "Penurunan nilai terjadi jika Nilai Tercatat (Carrying Amount) aset MELEBIHI Jumlah Terpulihkannya (Recoverable Amount)."
+    "front": "Aset Dimiliki untuk Dilepas (Held for Disposal)",
+    "back": "Diukur pada lower of cost/nilai tercatat or nilai realisasi neto dan TIDAK didepresiasi. Dinilai ulang setiap akhir periode; write-up dibatasi nilai tercatat saat reklasifikasi. Roland 2026: tanpa depresiasi, penurunan ke €4.900.000 adalah rugi tambahan €700.000."
   },
   {
-    "id": "akk202-tm04-04",
+    "id": "akk202-v2-tm04-03",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Penurunan Nilai Aset (Impairment - PSAK 48)",
-    "category": "Jurnal",
-    "front": "Pengakuan Rugi Penurunan Nilai",
-    "back": "Debit: Rugi Penurunan Nilai (Laba Rugi); Kredit: Akumulasi Rugi Penurunan Nilai (kontra akun aset tetap)."
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "category": "Mekanisme",
+    "front": "Revaluasi Tanah Multi-Periode",
+    "back": "Kenaikan di atas cost ke OCI. Penurunan memakai AOCI tanah itu dulu sampai nol, sisanya ke laba rugi (AOCI tidak boleh negatif). Pemulihan berikutnya ke laba rugi dulu sebesar rugi lama (Recovery of Prior Revaluation Loss), kelebihannya ke OCI."
+  },
+  {
+    "id": "akk202-v2-tm04-04",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "category": "Miskonsepsi",
+    "front": "Surplus Revaluasi saat Aset Dijual atau Dipakai",
+    "back": "Sisa AOCI ditransfer langsung ke Retained Earnings (debit AOCI, kredit Retained Earnings) dan tidak didaur ulang ke laba rugi. Transfer bertahap boleh dilakukan tiap tahun sebesar depresiasi nilai wajar − depresiasi cost historis (Su Ltd.: ¥1.100 − ¥1.000 = ¥100)."
   },
   {
     "id": "akk202-tm04-05",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Penurunan Nilai Aset (Impairment - PSAK 48)",
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
     "category": "Definisi",
     "front": "Unit Penghasil Kas (Cash Generating Unit / CGU)",
     "back": "Kelompok aset terkecil yang menghasilkan arus kas masuk yang sebagian besar independen dari arus kas aset lainnya."
   },
   {
-    "id": "akk202-tm04-06",
+    "id": "akk202-v2-tm04-06",
     "phase": "pra-uts",
     "tm": 4,
-    "topic": "Penurunan Nilai Aset (Impairment - PSAK 48)",
-    "category": "Hukum",
-    "front": "Pemulihan Rugi Penurunan Nilai (Reversal)",
-    "back": "Rugi penurunan nilai dapat dipulihkan di periode berikutnya jika ada indikasi perbaikan, KECUALI untuk penurunan nilai Goodwill yang dilarang dipulihkan."
+    "topic": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "category": "Konsep",
+    "front": "Pemilihan Model per Kelas Aset",
+    "back": "Revaluasi diterapkan pada seluruh aset dalam satu kelas, tetapi kelas berbeda boleh memakai model berbeda (mis. peralatan direvaluasi, tanah dan bangunan tetap cost). Alasan manajerial: biaya penilaian tinggi, volatilitas ekuitas, dan kesederhanaan operasional."
   },
   {
     "id": "akk202-tm05-01",
     "phase": "pra-uts",
     "tm": 5,
-    "topic": "Aset Tidak Berwujud (Intangibles - PSAK 19)",
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
     "category": "Definisi",
     "front": "Kriteria Aset Tidak Berwujud",
     "back": "Aset non-moneter yang dapat diidentifikasi, tidak memiliki wujud fisik, dan dikendalikan oleh entitas untuk menghasilkan manfaat ekonomi."
   },
   {
-    "id": "akk202-tm05-02",
+    "id": "akk202-v2-tm05-02",
     "phase": "pra-uts",
     "tm": 5,
-    "topic": "Aset Tidak Berwujud (Intangibles - PSAK 19)",
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
     "category": "Hukum",
-    "front": "Tahap Riset vs Tahap Pengembangan",
-    "back": "Biaya Riset SELALU dibebankan seketika. Biaya Pengembangan DIKAPITALISASI jika memenuhi 6 kriteria kelayakan teknis dan komersial (PIRATE)."
+    "front": "Amortisasi: Umur Terbatas vs Tidak Terbatas",
+    "back": "Umur terbatas: diamortisasi selama yang lebih pendek antara umur legal dan umur manfaat, residu umumnya nol, revisi umur prospektif. Umur tidak terbatas (mis. lisensi yang dapat diperpanjang dengan biaya nominal): tidak diamortisasi, diuji penurunan nilai setiap tahun."
   },
   {
-    "id": "akk202-tm05-03",
+    "id": "akk202-v2-tm05-03",
     "phase": "pra-uts",
     "tm": 5,
-    "topic": "Aset Tidak Berwujud (Intangibles - PSAK 19)",
-    "category": "Mekanisme",
-    "front": "Amortisasi Aset Tidak Berwujud Terbatas",
-    "back": "Diamortisasi secara sistematis selama masa manfaat legal/ekonomis yang lebih pendek; nilai sisa umumnya diasumsikan nol."
-  },
-  {
-    "id": "akk202-tm05-04",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Aset Tidak Berwujud (Intangibles - PSAK 19)",
-    "category": "Hukum",
-    "front": "Aset Tidak Berwujud Masa Manfaat Tidak Terbatas",
-    "back": "TIDAK diamortisasi, tetapi WAJIB diuji penurunan nilainya (impairment test) minimal satu kali setiap tahun (misal: Goodwill, Merek Dagang)."
-  },
-  {
-    "id": "akk202-tm05-05",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Aset Tidak Berwujud (Intangibles - PSAK 19)",
-    "category": "Prinsip",
-    "front": "Goodwill yang Dihasilkan Internal",
-    "back": "Dilarang dikapitalisasi karena bukan sumber daya teridentifikasi yang dapat dipisahkan atau dikendalikan secara andal."
-  },
-  {
-    "id": "akk202-tm05-06",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Aset Tidak Berwujud (Intangibles - PSAK 19)",
-    "category": "Jurnal",
-    "front": "Pencatatan Biaya Paten yang Dibeli",
-    "back": "Harga beli + biaya legal pendaftaran paten dikapitalisasi ke akun Paten; biaya sukses mempertahankan paten di pengadilan dikapitalisasi."
-  },
-  {
-    "id": "akk202-tm06-01",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Liabilitas Jangka Pendek (Current Liabilities)",
-    "category": "Definisi",
-    "front": "Kriteria Liabilitas Jangka Pendek",
-    "back": "Diselesaikan dalam siklus operasi normal entitas, dimiliki untuk diperdagangkan, atau jatuh tempo dalam waktu 12 bulan setelah tanggal neraca."
-  },
-  {
-    "id": "akk202-tm06-02",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Liabilitas Jangka Pendek (Current Liabilities)",
-    "category": "Mekanisme",
-    "front": "Wesel Bayar dengan Diskonto (Zero-Interest Note)",
-    "back": "Selisih antara nilai nominal wesel dengan kas yang diterima dicatat sebagai Diskonto Wesel Bayar (kontra liabilitas) dan diamortisasi ke Beban Bunga."
-  },
-  {
-    "id": "akk202-tm06-03",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Liabilitas Jangka Pendek (Current Liabilities)",
-    "category": "Konsep",
-    "front": "Pendapatan Diterima di Muka (Unearned Revenue)",
-    "back": "Penerimaan kas sebelum penyerahan barang/jasa; dicatat sebagai Liabilitas dan diakui bertahap sebagai Pendapatan saat kewajiban pelaksanaan terpenuhi."
-  },
-  {
-    "id": "akk202-tm06-04",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Liabilitas Jangka Pendek (Current Liabilities)",
-    "category": "Dokumen",
-    "front": "Bagian Lancar Utang Jangka Panjang",
-    "back": "Bagian dari utang jangka panjang yang jatuh tempo dalam 12 bulan ke depan wajib direklasifikasi sebagai Liabilitas Jangka Pendek."
-  },
-  {
-    "id": "akk202-tm06-05",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Liabilitas Jangka Pendek (Current Liabilities)",
-    "category": "Hukum",
-    "front": "Refinancing Utang Jangka Pendek",
-    "back": "Dapat tetap disajikan jangka panjang jika entitas memiliki HAK dan NIAT untuk mendanai kembali minimal 12 bulan ke depan pada tanggal neraca."
-  },
-  {
-    "id": "akk202-tm06-06",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Liabilitas Jangka Pendek (Current Liabilities)",
-    "category": "Klasifikasi",
-    "front": "Pajak Penjualan & PPN yang Belum Disetor",
-    "back": "PPN Keluaran yang dipungut dari pelanggan merupakan liabilitas jangka pendek kepada kas negara sampai disetorkan ke kas negara."
-  },
-  {
-    "id": "akk202-tm07-01",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Provisi & Kontinjensi (PSAK 57)",
-    "category": "Hukum",
-    "front": "Tiga Syarat Pengakuan Provisi",
-    "back": "(1) Entitas memiliki kewajiban kini (hukum/konstruktif), (2) Kemungkinan besar (probable > 50%) terjadi arus keluar kas, (3) Estimasi andal dapat dibuat."
-  },
-  {
-    "id": "akk202-tm07-02",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Provisi & Kontinjensi (PSAK 57)",
-    "category": "Konsep",
-    "front": "Kewajiban Konstruktif (Constructive Obligation)",
-    "back": "Kewajiban yang timbul dari tindakan entitas yang membentuk ekspektasi sah pihak ketiga (misal: janji retur barang melampaui masa garansi resmi)."
-  },
-  {
-    "id": "akk202-tm07-03",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Provisi & Kontinjensi (PSAK 57)",
-    "category": "Dokumen",
-    "front": "Liabilitas Kontinjensi",
-    "back": "Kewajiban potensial atau kewajiban kini yang tidak memenuhi syarat pengakuan; TIDAK dicatat di neraca, melainkan DIUNGKAPKAN dalam CaLK."
-  },
-  {
-    "id": "akk202-tm07-04",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Provisi & Kontinjensi (PSAK 57)",
-    "category": "Prinsip",
-    "front": "Aset Kontinjensi",
-    "back": "TIDAK PERNAH diakui di neraca untuk mencegah antisipasi laba yang belum terealisasi; hanya diungkapkan dalam CaLK jika kemungkinan masuk kas tinggi (probable)."
-  },
-  {
-    "id": "akk202-tm07-05",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Provisi & Kontinjensi (PSAK 57)",
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
     "category": "Rumus",
-    "front": "Pengukuran Garansi Produk (Warranty Provision)",
-    "back": "Diestimasi berdasarkan persentase klaim historis dan diakui sebagai Beban Garansi dan Provisi Garansi pada periode penjualan barang."
+    "front": "Goodwill dan Pembelian Murah",
+    "back": "Goodwill = harga beli − nilai wajar aset neto teridentifikasi; hanya dari kombinasi bisnis, goodwill internal tidak dikapitalisasi, dan goodwill tidak diamortisasi. Bila harga beli di bawah nilai wajar aset neto, selisihnya diakui pembeli sebagai gain pembelian murah."
   },
   {
-    "id": "akk202-tm07-06",
+    "id": "akk202-v2-tm05-04",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "category": "Perbandingan",
+    "front": "Pemulihan Impairment: Goodwill vs Aset Tidak Berwujud Lain",
+    "back": "Aset tidak berwujud selain goodwill: pemulihan boleh, dibatasi nilai tercatat seandainya tidak pernah ada impairment, dilaporkan di Other income and expense. Goodwill diuji setiap tahun pada tingkat CGU dan rugi impairment-nya tidak boleh dibalik."
+  },
+  {
+    "id": "akk202-v2-tm05-05",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "category": "Klasifikasi",
+    "front": "Perlakuan Biaya Riset dan Pengembangan",
+    "back": "Riset: beban. Pengembangan sebelum viabilitas ekonomi: beban R&D. Pengembangan setelah seluruh kriteria viabilitas terpenuhi: dikapitalisasi. Biaya legal memperoleh paten dikapitalisasi. Start-up, biaya organisasi, rugi operasi awal, dan iklan dibebankan."
+  },
+  {
+    "id": "akk202-v2-tm05-06",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "category": "Miskonsepsi",
+    "front": "Biaya Pembelaan Paten yang Berhasil",
+    "back": "Dibebankan sebagai legal fees karena hanya mempertahankan manfaat yang diharapkan (Kieso Illustration 11.13 item 13), sehingga pada P11.1 €12.650 menjadi Legal Expense. Serupa, pembayaran tahunan dalam perjanjian waralaba adalah beban operasi, bukan aset."
+  },
+  {
+    "id": "akk202-v2-tm06-01",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Definisi",
+    "front": "Liabilitas dan Kriteria Liabilitas Jangka Pendek",
+    "back": "Liabilitas: kewajiban kini untuk mengalihkan sumber daya ekonomi akibat peristiwa masa lalu. Jangka pendek bila diselesaikan dalam siklus operasi normal, dimiliki untuk diperdagangkan, jatuh tempo dalam 12 bulan, atau entitas tidak berhak menunda penyelesaian minimal 12 bulan."
+  },
+  {
+    "id": "akk202-v2-tm06-02",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Perbandingan",
+    "front": "Utang Usaha: Metode Bruto vs Neto",
+    "back": "Bruto: pembelian dicatat harga faktur penuh; diskon yang dimanfaatkan dikredit ke Purchase Discounts. Neto: pembelian dicatat setelah diskon; diskon yang terlewat didebit ke Purchase Discounts Lost sebagai beban pembiayaan."
+  },
+  {
+    "id": "akk202-v2-tm06-03",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Mekanisme",
+    "front": "Wesel Bayar Tanpa Bunga (Zero-Interest-Bearing)",
+    "back": "Kas diterima sebesar nilai kini; selisih dengan nominal didebit ke Discount on Notes Payable (kontra-liabilitas) dan diamortisasi ke beban bunga. Liabilitas neto = nominal − diskonto yang belum diamortisasi (Darby: $81.000 − $4.500 = $76.500)."
+  },
+  {
+    "id": "akk202-v2-tm06-04",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Hukum",
+    "front": "Pembiayaan Kembali Utang Jangka Pendek (IFRS)",
+    "back": "Boleh disajikan jangka panjang hanya bila hak membiayai kembali minimal 12 bulan sudah ada pada atau sebelum tanggal pelaporan. Perjanjian yang ditandatangani setelah tanggal pelaporan tidak mengubah klasifikasi jangka pendek; cukup diungkapkan dalam catatan."
+  },
+  {
+    "id": "akk202-v2-tm06-05",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Hukum",
+    "front": "Pengakuan dan Pengukuran Provisi (IAS 37)",
+    "back": "Diakui bila ada kewajiban kini (hukum atau konstruktif) dari peristiwa masa lalu, arus keluar probable (lebih dari 50%), dan estimasi andal. Diukur dengan nilai harapan (populasi besar), hasil paling mungkin (kewajiban tunggal), titik tengah rentang, atau nilai kini bila material."
+  },
+  {
+    "id": "akk202-v2-tm06-06",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Klasifikasi",
+    "front": "Spektrum Kontinjensi",
+    "back": "Liabilitas kontinjensi (possible) hanya diungkapkan dan tidak pernah diakui; yang probable dengan estimasi andal menjadi provisi. Aset kontinjensi probable hanya diungkapkan; aset baru diakui bila virtually certain. Kondisi remote tidak diakui maupun diungkapkan."
+  },
+  {
+    "id": "akk202-v2-tm07-01",
     "phase": "pra-uts",
     "tm": 7,
-    "topic": "Provisi & Kontinjensi (PSAK 57)",
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "category": "Rumus",
+    "front": "Harga Obligasi",
+    "back": "Nilai kini pokok + nilai kini anuitas kupon, keduanya didiskontokan pada tarif efektif (pasar) per periode. Kupon = tarif efektif: pari; kupon di bawah tarif efektif: diskonto; kupon di atas tarif efektif: premi."
+  },
+  {
+    "id": "akk202-v2-tm07-02",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
     "category": "Mekanisme",
-    "front": "Kontrak Memberatkan (Onerous Contracts)",
-    "back": "Kontrak di mana biaya tak terhindarkan untuk memenuhi kewajiban melebihi manfaat ekonomi yang akan diterima; wajib diakui provisi seketika."
+    "front": "Metode Bunga Efektif (IFRS 9)",
+    "back": "Beban bunga = nilai tercatat awal periode × tarif efektif; kas = nominal × tarif kupon; selisihnya adalah amortisasi. Diskonto menambah dan premi mengurangi nilai tercatat sampai sama dengan nominal saat jatuh tempo; periode terakhir menyerap pembulatan."
+  },
+  {
+    "id": "akk202-v2-tm07-03",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "category": "Perbandingan",
+    "front": "Pencatatan Diskonto/Premi: IFRS vs US GAAP",
+    "back": "IFRS mencatat obligasi secara neto: diskonto atau premi langsung menambah/mengurangi Bonds Payable. US GAAP memakai akun terpisah Discount/Premium on Bonds Payable. Beban bunga dan nilai tercatat neto keduanya sama."
+  },
+  {
+    "id": "akk202-v2-tm07-04",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "category": "Prosedur",
+    "front": "Penerbitan di Antara Tanggal Bunga dan Biaya Penerbitan",
+    "back": "Di antara tanggal bunga, pembeli membayar harga ditambah bunga berjalan; bunga berjalan dikredit ke Interest Expense atau Interest Payable. Biaya penerbitan mengurangi kas bersih dan nilai tercatat awal Bonds Payable (bukan aset tangguhan) sehingga tarif efektif naik."
+  },
+  {
+    "id": "akk202-v2-tm07-05",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "category": "Hukum",
+    "front": "Penghentian dan Modifikasi Utang",
+    "back": "Gain (loss) = nilai tercatat bersih − harga penebusan, ke laba rugi. Pertukaran utang dengan saham (IFRIC 19): saham pada nilai wajar. Modifikasi dengan selisih nilai kini 10% atau lebih bersifat substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar."
+  },
+  {
+    "id": "akk202-v2-tm07-06",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "category": "Standar",
+    "front": "Opsi Nilai Wajar dan Penyajian Utang Jangka Panjang",
+    "back": "Dengan opsi nilai wajar, perubahan akibat risiko kredit entitas sendiri masuk OCI dan sisanya laba rugi. Bagian yang jatuh tempo dalam 12 bulan dipindahkan ke liabilitas jangka pendek. Solvabilitas: debt to assets dan times interest earned."
   },
   {
     "id": "akk202-tm08-01",

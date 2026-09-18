@@ -3,226 +3,237 @@
 // Bank Soal Esai & Kasus Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI.
 // 14 Kasus Lengkap (7 Kasus Pra-UTS & 7 Kasus Pra-UAS)
+// Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { BankSoal } from '../../types';
 
 export const AKK202_BANK_UTS: BankSoal[] = [
   {
-    "type": "calculation",
-    "scope": "TM 1: Aset Tetap, Lump-Sum & Kapitalisasi Bunga PSAK 26",
+    "type": "case",
+    "scope": "TM 1: Biaya Perolehan, Pembelian Lump-Sum & Provisi Restorasi",
     "difficulty": "Komprehensif",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 1: Lump-Sum PT Surya Prima, Mesin PT Semen Gresik, dan Fasilitas Tambang PT Borneo Mineral",
+    "context": "Tiga transaksi perolehan aset tetap dari materi TM1 menguji dasar pengukuran awal: alokasi harga gabungan menurut niat manajemen, pemilahan biaya yang dikapitalisasi dari beban, dan kapitalisasi nilai kini kewajiban restorasi. Gunakan hanya data yang diberikan.",
+    "data": [
+      "PT Surya Prima membeli tanah dan gedung tua secara lump-sum Rp2.400.000.000 ditambah biaya notaris dan legal Rp60.000.000. Nilai wajar penilai: tanah Rp2.100.000.000 (70%) dan gedung Rp900.000.000 (30%).",
+      "Skenario A: gedung direnovasi ringan dan langsung dipakai sebagai kantor. Skenario B: tanah dibeli untuk membangun pabrik baru; gedung diratakan dengan biaya Rp120.000.000 dan puingnya terjual Rp25.000.000.",
+      "PT Semen Gresik: harga faktur mesin Rp800.000.000 dengan diskon tunai 2% dimanfaatkan; bea masuk Rp45.000.000; angkut Rp25.000.000; pondasi khusus Rp35.000.000; pengujian Rp15.000.000; pelatihan operator Rp12.000.000; peresmian Rp8.000.000.",
+      "PT Borneo Mineral, 2 Januari 2026: biaya konstruksi tunai instalasi tambang Rp8.000.000.000, umur 5 tahun. Estimasi biaya pembongkaran dan restorasi di akhir tahun ke-5 Rp1.500.000.000; tingkat diskonto 10% (faktor PV n=5, i=10% = 0,62092)."
+    ],
+    "instructions": [
+      "Hitung alokasi biaya perolehan PT Surya Prima pada Skenario A dan Skenario B, lalu susun jurnalnya. Jelaskan mengapa niat manajemen mengubah hasilnya.",
+      "Tentukan biaya perolehan mesin PT Semen Gresik dan pisahkan biaya yang dibebankan. Susun jurnal pencatatannya.",
+      "Hitung nilai kini provisi restorasi dan biaya perolehan awal fasilitas PT Borneo Mineral, lalu jurnal 2 Januari 2026.",
+      "Hitung beban depresiasi dan beban bunga unwinding of discount tahun 2026 serta jurnal penyesuaian 31 Desember 2026."
+    ],
+    "outputFormat": [
+      "Tabel alokasi lump-sum Skenario A dan perhitungan Tanah Skenario B",
+      "Perhitungan biaya perolehan mesin dan daftar biaya periode",
+      "Perhitungan PV provisi restorasi dan biaya perolehan fasilitas",
+      "Jurnal perolehan dan jurnal penyesuaian 31 Desember 2026"
+    ],
+    "rubric": [
+      "Ketepatan alokasi nilai wajar relatif vs kapitalisasi penuh ke Tanah",
+      "Pemisahan biaya atribusi langsung dari biaya pelatihan dan peresmian",
+      "Kapitalisasi PV provisi dan perhitungan unwinding of discount",
+      "Keseimbangan seluruh jurnal"
+    ],
+    "answerGuide": "1. Skenario A: total biaya Rp2.400.000.000 + Rp60.000.000 = Rp2.460.000.000 dialokasikan dengan nilai wajar relatif: Tanah 70% × Rp2.460.000.000 = Rp1.722.000.000; Bangunan 30% × Rp2.460.000.000 = Rp738.000.000. Jurnal: Dr Tanah Rp1.722.000.000, Dr Bangunan Rp738.000.000, Cr Kas Rp2.460.000.000. Skenario B: karena gedung dibeli untuk dibongkar, seluruh Rp2.460.000.000 masuk Tanah, ditambah biaya bersih pembongkaran Rp120.000.000 − Rp25.000.000 = Rp95.000.000, sehingga Tanah Rp2.555.000.000. Jurnal: Dr Tanah Rp2.460.000.000, Cr Kas Rp2.460.000.000; Dr Tanah Rp95.000.000 dan Dr Kas (hasil puing) Rp25.000.000, Cr Kas (kontraktor) Rp120.000.000. Niat membangun fasilitas baru menjadikan pembongkaran sebagai biaya persiapan lahan. 2. Harga beli bersih = Rp800.000.000 − Rp16.000.000 = Rp784.000.000; biaya atribusi langsung = Rp45.000.000 + Rp25.000.000 + Rp35.000.000 + Rp15.000.000 = Rp120.000.000; biaya perolehan mesin Rp904.000.000. Pelatihan Rp12.000.000 dan peresmian Rp8.000.000 dibebankan karena tidak membawa mesin ke kondisi siap digunakan. Jurnal: Dr Mesin Rp904.000.000, Dr Beban Pelatihan Rp12.000.000, Dr Beban Peresmian Rp8.000.000, Cr Kas/Utang Usaha Rp924.000.000. 3. PV provisi = Rp1.500.000.000 × 0,62092 = Rp931.380.000; biaya perolehan fasilitas = Rp8.000.000.000 + Rp931.380.000 = Rp8.931.380.000. Jurnal 2 Januari 2026: Dr Instalasi Fasilitas Tambang Rp8.931.380.000, Cr Kas Rp8.000.000.000, Cr Provisi Pembongkaran dan Restorasi Rp931.380.000. 4. Depresiasi 2026 = Rp8.931.380.000 / 5 = Rp1.786.276.000; unwinding of discount = 10% × Rp931.380.000 = Rp93.138.000. Jurnal 31 Desember 2026: Dr Beban Depresiasi Rp1.786.276.000, Cr Akumulasi Depresiasi Rp1.786.276.000; Dr Beban Bunga Rp93.138.000, Cr Provisi Pembongkaran dan Restorasi Rp93.138.000. Saldo provisi terus naik sampai Rp1.500.000.000 pada akhir tahun ke-5."
+  },
+  {
+    "type": "case",
+    "scope": "TM 2: Disposisi, Penggantian Komponen & Pertukaran Aset Nonmoneter",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 2: Penjualan Mesin Barret Group dan Pertukaran Peralatan Santana SA–Delaware Co. (E9.19)",
+    "context": "Barret Group menjual mesin di tengah tahun, sedangkan Santana SA dan Delaware Co. saling menukar peralatan (Kieso E9.19). Kasus ini menguji pembaruan depresiasi sebelum pelepasan dan pengaruh substansi komersial terhadap basis aset baru serta gain atau loss.",
+    "data": [
+      "Barret Group: mesin cost €18.000, depresiasi garis lurus €1.200 per tahun, akumulasi depresiasi akhir tahun ke-9 €10.800. Dijual tunai €7.000 pada 1 Juli tahun ke-10.",
+      "Santana SA: peralatan cost R$28.000, akumulasi depresiasi R$19.000, nilai wajar R$13.500; Santana membayar kas R$2.000.",
+      "Delaware Co.: peralatan cost R$28.000, akumulasi depresiasi R$10.000, nilai wajar R$15.500; Delaware menerima kas R$2.000.",
+      "Skenario A: pertukaran tidak memiliki substansi komersial. Skenario B: pertukaran memiliki substansi komersial."
+    ],
+    "instructions": [
+      "Catat pembaruan depresiasi Barret Group sampai 1 Juli tahun ke-10, hitung nilai buku dan gain atau loss, lalu jurnal penjualannya.",
+      "Hitung nilai buku, selisih nilai wajar dengan nilai buku, basis aset baru, serta gain atau loss Santana dan Delaware pada Skenario A dan B.",
+      "Susun jurnal pertukaran kedua entitas untuk kedua skenario.",
+      "Jelaskan bagaimana potensi loss Delaware pada Skenario A dievaluasi."
+    ],
+    "outputFormat": [
+      "Perhitungan depresiasi parsial, nilai buku, dan gain Barret",
+      "Tabel perbandingan Santana vs Delaware untuk Skenario A dan B",
+      "Jurnal pertukaran empat kombinasi entitas dan skenario",
+      "Penjelasan singkat perlakuan potensi penurunan nilai"
+    ],
+    "rubric": [
+      "Depresiasi diperbarui sebelum gain atau loss dihitung",
+      "Tidak ada gain maupun loss pada pertukaran tanpa substansi komersial",
+      "Basis aset baru memperhitungkan kas dibayar atau diterima",
+      "Keseimbangan setiap jurnal"
+    ],
+    "answerGuide": "1. Barret: depresiasi 6 bulan = €1.200 × 6/12 = €600 (Dr Depreciation Expense €600, Cr Accumulated Depreciation—Machinery €600). Akumulasi depresiasi €10.800 + €600 = €11.400; nilai buku €18.000 − €11.400 = €6.600; gain = €7.000 − €6.600 = €400. Jurnal: Dr Cash €7.000, Dr Accumulated Depreciation—Machinery €11.400, Cr Machinery €18.000, Cr Gain on Disposal of Machinery €400. 2. Santana: nilai buku R$28.000 − R$19.000 = R$9.000; potensi gain R$13.500 − R$9.000 = R$4.500. Delaware: nilai buku R$28.000 − R$10.000 = R$18.000; potensi loss R$18.000 − R$15.500 = R$2.500. Skenario A: basis Santana R$9.000 + R$2.000 = R$11.000 dan basis Delaware R$18.000 − R$2.000 = R$16.000, tanpa gain maupun loss. Skenario B: cost Santana R$13.500 + R$2.000 = R$15.500 dengan gain R$4.500; cost Delaware R$15.500 − R$2.000 = R$13.500 dengan loss R$2.500. 3. Skenario A Santana: Dr Equipment (New) R$11.000, Dr Accumulated Depreciation R$19.000, Cr Equipment (Old) R$28.000, Cr Cash R$2.000. Skenario A Delaware: Dr Cash R$2.000, Dr Equipment (New) R$16.000, Dr Accumulated Depreciation R$10.000, Cr Equipment (Old) R$28.000. Skenario B Santana: Dr Equipment (New) R$15.500, Dr Accumulated Depreciation R$19.000, Cr Equipment (Old) R$28.000, Cr Cash R$2.000, Cr Gain on Disposal of Equipment R$4.500. Skenario B Delaware: Dr Cash R$2.000, Dr Equipment (New) R$13.500, Dr Accumulated Depreciation R$10.000, Dr Loss on Disposal of Equipment R$2.500, Cr Equipment (Old) R$28.000. 4. Bila nilai wajar R$15.500 mengindikasikan penurunan nilai sebelum pertukaran, hal itu dievaluasi terpisah berdasarkan IAS 36 di TM impairment, bukan sebagai rugi pertukaran."
+  },
+  {
+    "type": "case",
+    "scope": "TM 3: Depresiasi Sebagian Periode & Impairment Aset Individual",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "40–50 menit",
+    "question": "Studi Kasus 3: Depresiasi Charleston, SA (P10.2) dan Impairment Pujols SpA (E10.18)",
+    "context": "Charleston, SA membeli peralatan di tengah tahun dan membandingkan tiga metode depresiasi. Pujols SpA menguji penurunan nilai peralatannya lalu memulihkannya setahun kemudian. Kasus ini menguji perhitungan sebagian periode, straddling SYD, kaidah residu pada DDB, dan ceiling pemulihan.",
+    "data": [
+      "Charleston, SA: peralatan dibeli 1 Juni 2025 seharga €89.000; nilai residu €5.000; umur manfaat 7 tahun.",
+      "Pujols SpA, 31 Desember 2025: cost peralatan €9.000.000; akumulasi depresiasi €1.000.000; value-in-use €7.000.000; fair value less costs of disposal €4.400.000; sisa umur 4 tahun; residu €0.",
+      "Pujols SpA, 31 Desember 2026: recoverable amount €6.000.000."
+    ],
+    "instructions": [
+      "Hitung beban depresiasi Charleston 2025 dan 2026 dengan metode garis lurus, SYD, dan DDB, lalu jurnal 31 Desember 2025 untuk ketiganya.",
+      "Hitung carrying amount, recoverable amount, dan rugi penurunan nilai Pujols per 31 Desember 2025 serta jurnalnya.",
+      "Hitung depresiasi Pujols 2026 atas dasar baru dan nilai tercatat sebelum pemulihan.",
+      "Hitung ceiling pemulihan, jumlah pemulihan, dan jurnal 31 Desember 2026."
+    ],
+    "outputFormat": [
+      "Tabel depresiasi tiga metode untuk 2025 dan 2026",
+      "Jurnal 31 Desember 2025 Charleston",
+      "Perhitungan impairment, depresiasi baru, dan ceiling Pujols",
+      "Jurnal impairment, depresiasi, dan pemulihan Pujols"
+    ],
+    "rubric": [
+      "Jumlah bulan pemakaian dan straddling service year SYD",
+      "Residu diabaikan pada tarif DDB",
+      "Recoverable amount sebagai nilai tertinggi FVLCD dan VIU",
+      "Pemulihan dibatasi ceiling tanpa impairment"
+    ],
+    "answerGuide": "1. Dasar depresiasi Charleston = €89.000 − €5.000 = €84.000; periode 2025 = 7 bulan. Garis lurus: €84.000 ÷ 7 = €12.000 per tahun; 2025 = €12.000 × 7/12 = €7.000; 2026 = €12.000. SYD: S = 28; service year 1 = €84.000 × 7/28 = €21.000; service year 2 = €84.000 × 6/28 = €18.000; 2025 = €21.000 × 7/12 = €12.250; 2026 = (€21.000 × 5/12) + (€18.000 × 7/12) = €8.750 + €10.500 = €19.250. DDB: tarif 2/7, residu diabaikan; 2025 = €89.000 × 2/7 × 7/12 = €14.833,33 ≈ €14.833; nilai buku awal 2026 €74.166,67 × 2/7 = €21.190,48 ≈ €21.190. Jurnal 31 Desember 2025: Dr Depreciation Expense, Cr Accumulated Depreciation—Equipment sebesar €7.000 (garis lurus), €12.250 (SYD), atau €14.833 (DDB). 2. Pujols: carrying amount = €9.000.000 − €1.000.000 = €8.000.000; recoverable amount = max(€7.000.000, €4.400.000) = €7.000.000; rugi = €1.000.000. Jurnal: Dr Loss on Impairment €1.000.000, Cr Accumulated Depreciation—Equipment €1.000.000. 3. Depresiasi 2026 = €7.000.000 ÷ 4 = €1.750.000 (Dr Depreciation Expense, Cr Accumulated Depreciation—Equipment); nilai tercatat sebelum pemulihan €7.000.000 − €1.750.000 = €5.250.000. 4. Tanpa impairment, depresiasi = €8.000.000 ÷ 4 = €2.000.000 sehingga ceiling = €8.000.000 − €2.000.000 = €6.000.000. Recoverable amount €6.000.000 sama dengan ceiling, maka pemulihan = €6.000.000 − €5.250.000 = €750.000. Jurnal: Dr Accumulated Depreciation—Equipment €750.000, Cr Recovery of Impairment Loss €750.000; nilai tercatat akhir €6.000.000."
+  },
+  {
+    "type": "case",
+    "scope": "TM 4: Held for Use vs Held for Disposal & Revaluasi Tanah Multi-Periode",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "40–50 menit",
+    "question": "Studi Kasus 4: Peralatan Roland SE (P10.9) dan Tanah PT Mentari Jaya (Latsol UTS)",
+    "context": "Roland SE menghadapi keusangan peralatan pengemasan dan harus membandingkan akuntansi aset yang tetap digunakan dengan aset yang dimiliki untuk dilepas. PT Mentari Jaya mengukur tanahnya dengan model revaluasi selama enam tahun. Nilai tanah dalam ribuan rupiah.",
+    "data": [
+      "Roland SE: peralatan dibeli Januari 2024 seharga €10.000.000, umur 8 tahun, residu €0, garis lurus €1.250.000 per tahun; nilai tercatat 31 Desember 2025 €7.500.000.",
+      "Roland SE, 31 Desember 2025: VIU €5.300.000; FVLCD €5.600.000; sisa umur 4 tahun. Recoverable amount atau nilai realisasi neto 31 Desember 2026: €4.900.000.",
+      "PT Mentari Jaya: tanah dibeli 2016 seharga Rp800.000. Nilai wajar 31 Desember: 2016 Rp800.000; 2017 Rp950.000; 2018 Rp700.000; 2019 Rp650.000; 2020 Rp780.000; 2021 Rp900.000."
+    ],
+    "instructions": [
+      "Hitung rugi penurunan nilai Roland per 31 Desember 2025 dan jurnalnya.",
+      "Susun jurnal 2026 bila (A) peralatan tetap digunakan dan (B) peralatan dimiliki untuk dilepas; untuk (A) periksa ceiling pemulihan.",
+      "Susun skedul OCI, AOCI, dan laba rugi PT Mentari Jaya 2016–2021.",
+      "Susun jurnal revaluasi tanah PT Mentari Jaya setiap tahun yang memerlukan jurnal."
+    ],
+    "outputFormat": [
+      "Perhitungan recoverable amount dan rugi 2025",
+      "Tabel kontras Kasus A vs Kasus B untuk 2026 beserta jurnal",
+      "Skedul OCI, AOCI, dan laba rugi tanah",
+      "Jurnal revaluasi tanah 2017–2021"
+    ],
+    "rubric": [
+      "Depresiasi dihentikan untuk aset held for disposal",
+      "Pemeriksaan ceiling pada aset held for use",
+      "Penurunan tanah memakai AOCI dulu dan AOCI tidak negatif",
+      "Pemulihan tanah memulihkan rugi laba rugi dulu sebelum OCI"
+    ],
+    "answerGuide": "1. Recoverable amount = max(€5.300.000, €5.600.000) = €5.600.000; rugi = €7.500.000 − €5.600.000 = €1.900.000. Jurnal (sama untuk A dan B): Dr Loss on Impairment €1.900.000, Cr Accumulated Depreciation—Equipment €1.900.000. 2. Kasus A (held for use): depresiasi 2026 = €5.600.000 ÷ 4 = €1.400.000 (Dr Depreciation Expense, Cr Accumulated Depreciation—Equipment), nilai tercatat €4.200.000. Ceiling = €10.000.000 − (3 × €1.250.000) = €6.250.000 tidak terlampaui, sehingga pemulihan = €4.900.000 − €4.200.000 = €700.000: Dr Accumulated Depreciation—Equipment €700.000, Cr Recovery of Impairment Loss €700.000. Kasus B (held for disposal): tidak ada depresiasi, nilai tercatat tetap €5.600.000; penurunan ke €4.900.000 adalah rugi tambahan €700.000: Dr Loss on Impairment €700.000, Cr Accumulated Depreciation—Equipment €700.000. Nilai tercatat akhir kedua kasus €4.900.000. 3. Skedul Mentari Jaya: 2016 tanpa perubahan; 2017 OCI +Rp150.000, AOCI Rp150.000; 2018 OCI −Rp150.000, AOCI Rp0, laba rugi −Rp100.000; 2019 laba rugi −Rp50.000; 2020 laba rugi +Rp130.000; 2021 laba rugi +Rp20.000, OCI +Rp100.000, AOCI Rp100.000. 4. Jurnal: 2017 Dr Land Rp150.000, Cr Unrealized Gain on Revaluation—Land (OCI) Rp150.000. 2018 Dr Unrealized Gain on Revaluation—Land (OCI) Rp150.000, Dr Loss on Revaluation Rp100.000, Cr Land Rp250.000. 2019 Dr Loss on Revaluation Rp50.000, Cr Land Rp50.000. 2020 Dr Land Rp130.000, Cr Recovery of Prior Revaluation Loss Rp130.000. 2021 Dr Land Rp120.000, Cr Recovery of Prior Revaluation Loss Rp20.000, Cr Unrealized Gain on Revaluation—Land (OCI) Rp100.000."
+  },
+  {
+    "type": "case",
+    "scope": "TM 5: Goodwill, Impairment Hak Cipta & Biaya Pengembangan",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35–45 menit",
+    "question": "Studi Kasus 5: Goodwill Terrell Galleries (E11.12), Hak Cipta Botticelli (E11.14), dan R&D Dogwood Electronics (CA11.1)",
+    "context": "Tiga soal dosen Kieso Bab 11 menguji pengukuran goodwill dari nilai wajar aset neto, impairment dan pemulihan aset tidak berwujud berumur terbatas, serta batas antara biaya riset, pengembangan, dan paten.",
+    "data": [
+      "Fred Graf membeli Terrell Galleries seharga $380.000. Nilai buku Terrell: Buildings (net) $200.000; Equipment (net) $175.000; Copyrights (net) $30.000; Land $70.000; Cash $100.000; Accounts payable $50.000; Long-term notes payable $300.000. Tanah undervalued $50.000; peralatan overvalued $5.000.",
+      "Botticelli Company, 31 Desember 2025: hak cipta cost $8.600.000, nilai tercatat $4.300.000, recoverable amount $3.400.000, sisa umur 10 tahun; tidak memakai akun akumulasi amortisasi. Nilai wajar 31 Desember 2026: $3.500.000.",
+      "Dogwood Electronics: 1 Maret biaya legal dan pemrosesan paten €10.000; 5 April laboratorium dan bahan €23.000; 15 Mei prototipe dan pengujian €34.000; 1 Juni viabilitas ekonomi tercapai (kontrak pasti); 30 Juni pengembangan akhir €45.000."
+    ],
+    "instructions": [
+      "Hitung aset neto teridentifikasi pada nilai wajar dan goodwill Terrell, lalu jurnal pembelian di buku Graf.",
+      "Catat impairment hak cipta Botticelli 2025, amortisasi 2026, dan pemulihan 2026 dengan memeriksa ceiling.",
+      "Klasifikasikan setiap biaya Dogwood sebagai beban atau kapitalisasi dan jurnalnya.",
+      "Jelaskan dampak perlakuan Dogwood terhadap laporan keuangan kini dan mendatang."
+    ],
+    "outputFormat": [
+      "Perhitungan goodwill dan jurnal pembelian",
+      "Tabel impairment, amortisasi, ceiling, dan pemulihan Botticelli",
+      "Jadwal biaya Dogwood dibebankan vs dikapitalisasi",
+      "Analisis dampak laporan keuangan"
+    ],
+    "rubric": [
+      "Aset dan liabilitas diukur pada nilai wajar sebelum goodwill dihitung",
+      "Ceiling pemulihan hak cipta diperiksa",
+      "Batas viabilitas ekonomi diterapkan tepat",
+      "Keseimbangan setiap jurnal"
+    ],
+    "answerGuide": "1. Aset teridentifikasi pada nilai wajar = $200.000 + $170.000 + $30.000 + $120.000 + $100.000 = $620.000; aset neto = $620.000 − ($50.000 + $300.000) = $270.000; goodwill = $380.000 − $270.000 = $110.000. Jurnal: Dr Buildings $200.000, Dr Equipment $170.000, Dr Copyrights $30.000, Dr Land $120.000, Dr Cash $100.000, Dr Goodwill $110.000, Cr Accounts Payable $50.000, Cr Long-Term Notes Payable $300.000, Cr Cash $380.000. Goodwill tidak diamortisasi dan hanya diuji penurunan nilai setiap tahun. 2. Rugi impairment 2025 = $4.300.000 − $3.400.000 = $900.000: Dr Loss on Impairment $900.000, Cr Copyright $900.000. Amortisasi 2026 = $3.400.000 ÷ 10 = $340.000: Dr Amortization Expense $340.000, Cr Copyright $340.000; nilai tercatat $3.060.000. Ceiling tanpa impairment = $4.300.000 − ($4.300.000 ÷ 10) = $3.870.000; nilai $3.500.000 di bawah ceiling, sehingga pemulihan = $3.500.000 − $3.060.000 = $440.000: Dr Copyright $440.000, Cr Recovery of Impairment Loss $440.000, dilaporkan di Other income and expense. 3. Dogwood: biaya legal paten €10.000 dikapitalisasi (Dr Patents €10.000, Cr Cash €10.000); laboratorium €23.000 (riset) dan prototipe €34.000 (sebelum viabilitas) dibebankan (Dr Research and Development Expense €57.000, Cr Cash €57.000); pengembangan akhir €45.000 setelah viabilitas dikapitalisasi (Dr Development Costs €45.000, Cr Cash €45.000). Total dibebankan €57.000 dan dikapitalisasi €55.000. 4. Laba periode berjalan turun €57.000 dan laporan posisi keuangan menyajikan aset tidak berwujud €55.000, yang diamortisasi selama umur manfaat sejak produk mulai dijual sehingga beban dicocokkan dengan pendapatan produk."
+  },
+  {
+    "type": "case",
+    "scope": "TM 6: Wesel Bayar, PPN Inklusif & Provisi Restorasi",
+    "difficulty": "Menengah",
     "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 1: Alokasi Pembelian Lump-Sum & Perhitungan 3 Tahap Bunga Konstruksi",
-    "context": "Pada 2 Januari 2026, PT Wijaya Karya membeli sebidang tanah beserta bangunan tua seharga Rp 3.600.000.000 secara lump-sum. Nilai wajar penilai: Tanah Rp 3.000.000.000 dan Bangunan Rp 1.000.000.000. Gedung tua langsung dibongkar dengan biaya bersih Rp 150.000.000 untuk membangun kantor pusat baru. Konstruksi mandiri dimulai 1 Maret 2026 dan selesai 31 Desember 2026. Pengeluaran: 1 Maret Rp 800 jt, 1 Juli Rp 1.200 jt, 1 November Rp 600 jt. Pinjaman konstruksi: Wesel Khusus Konstruksi 12% Rp 1.000.000.000; Utang Obligasi Umum 10% Rp 2.000.000.000.",
+    "question": "Studi Kasus 6: Utang Usaha dan Wesel Darby Corporation (E12.2) serta Transaksi Schultz Department Store (P12.2)",
+    "context": "Darby Corporation (metode bruto, sistem periodik) mengganti utang usaha dengan wesel berbunga dan meminjam dengan wesel tanpa bunga. Schultz Department Store mencatat deposit, penjualan dengan PPN inklusif, pembelian truk, dan kewajiban restorasi area parkir.",
     "data": [
-      "Harga Beli Lump-Sum: Rp 3.600.000.000.",
-      "Biaya Bersih Pembongkaran Gedung Lama: Rp 150.000.000 (diperuntukkan persiapan lahan baru).",
-      "Pengeluaran Konstruksi: 1 Maret (10 bln) Rp 800 jt; 1 Juli (6 bln) Rp 1.200 jt; 1 Nov (2 bln) Rp 600 jt.",
-      "Pinjaman Khusus Konstruksi: Rp 1.000.000.000 @ 12% per tahun.",
-      "Pinjaman Umum: Rp 2.000.000.000 @ 10% per tahun."
+      "Darby, 1 September 2025: membeli persediaan kredit dari Orion Company $50.000. 1 Oktober 2025: menerbitkan wesel 12 bulan bunga 8% $50.000 kepada Orion untuk melunasi utang usaha.",
+      "Darby, 1 Oktober 2025: meminjam kas $75.000 dari Shore Bank dengan wesel tanpa bunga 12 bulan bernilai nominal $81.000.",
+      "Schultz, 5 Desember: menerima deposit kas €500 dari Jackson Players yang akan dikembalikan 15 Januari. Selama Desember: penjualan tunai €798.000 sudah termasuk PPN 5%.",
+      "Schultz, 10 Desember: membeli tunai 3 truk pengiriman €120.000 di yurisdiksi dengan PPN 5%. 31 Desember: biaya pemulihan area parkir saat toko ditutup 2 tahun lagi diperkirakan €100.000; nilai wajar liabilitas pemulihan €84.000."
     ],
     "instructions": [
-      "Hitung alokasi biaya perolehan lump-sum dan tentukan nilai tercatat awal akun Tanah.",
-      "Hitung Weighted Average Accumulated Expenditures (WAAE) selama masa konstruksi tahun 2026.",
-      "Hitung Bunga yang Dapat Dihindari (Avoidable Interest) dan bandingkan dengan Bunga Aktual.",
-      "Buat seluruh ayat jurnal kapitalisasi bunga dan biaya perolehan gedung baru per 31 Desember 2026."
+      "Susun jurnal transaksi Darby dan jurnal penyesuaian 31 Desember 2025.",
+      "Hitung liabilitas neto setiap wesel Darby per 31 Desember 2025.",
+      "Susun jurnal Schultz untuk deposit, penjualan dengan PPN, pembelian truk (kedua alternatif perlakuan PPN), dan kewajiban restorasi.",
+      "Tentukan klasifikasi provisi restorasi Schultz pada laporan posisi keuangan."
     ],
     "outputFormat": [
-      "Tabel Alokasi Lump-Sum",
-      "Tabel Perhitungan WAAE",
-      "Kalkulasi Bunga Konstruksi PSAK 26",
-      "Ayat Jurnal Lengkap"
+      "Jurnal transaksi dan penyesuaian Darby",
+      "Tabel liabilitas neto wesel berbunga vs tanpa bunga",
+      "Jurnal Schultz termasuk perhitungan PPN inklusif",
+      "Klasifikasi provisi dan alasannya"
     ],
     "rubric": [
-      "Alokasi 100% harga lump-sum + bongkar ke Tanah karena niat membangun baru (25%)",
-      "Akurasi perhitungan bobot bulan WAAE (25%)",
-      "Kalkulasi Avoidable Interest vs Actual Interest (25%)",
-      "Jurnal kapitalisasi ke Bangunan dan pengakuan sisa beban bunga (25%)"
+      "Diskonto wesel tanpa bunga dicatat sebagai kontra-liabilitas dan diamortisasi",
+      "PPN dihitung dari harga termasuk pajak, bukan dikalikan langsung",
+      "Kewajiban restorasi dikapitalisasi ke aset terkait",
+      "Keseimbangan setiap jurnal"
     ],
-    "answerGuide": "1. Nilai Tercatat Awal Tanah:\nKarena bangunan lama langsung dibongkar untuk proyek baru, seluruh harga lump-sum dialokasikan ke Tanah:\nHarga Beli = Rp 3.600.000.000\nBiaya Bersih Pembongkaran = Rp 150.000.000\nTotal Nilai Tercatat Tanah = Rp 3.750.000.000.\n\n2. Perhitungan WAAE (1 Maret - 31 Des 2026):\n• 1 Maret: Rp 800.000.000 × 10/12 = Rp 666.666.667\n• 1 Juli: Rp 1.200.000.000 × 6/12 = Rp 600.000.000\n• 1 Nov: Rp 600.000.000 × 2/12 = Rp 100.000.000\nTotal WAAE = Rp 1.366.666.667.\n\n3. Kalkulasi Bunga Dihindari (Avoidable Interest):\n• Porsi ditutup Pinjaman Khusus (Rp 1.000.000.000 @ 12%) = Rp 120.000.000\n• Porsi sisa ditutup Pinjaman Umum (Rp 366.666.667 @ 10%) = Rp 36.666.667\nTotal Avoidable Interest = Rp 156.666.667.\nTotal Bunga Aktual = (Rp 1 M × 12%) + (Rp 2 M × 10%) = Rp 120 jt + Rp 200 jt = Rp 320.000.000.\nKarena Avoidable Interest (Rp 156.666.667) < Bunga Aktual (Rp 320.000.000), maka JUMLAH YANG DIKAPITALISASI = Rp 156.666.667. Sisa bunga Rp 163.333.333 diakui sebagai Beban Bunga operasional.\n\n4. Jurnal Kapitalisasi Bunga 31 Des 2026:\n(D) Bangunan Dalam Konstruksi ........... Rp 156.666.667\n(D) Beban Bunga (Laba Rugi) ............. Rp 163.333.333\n    (K) Kas / Utang Bunga ............................. Rp 320.000.000"
+    "answerGuide": "1. Darby: 1 September Dr Purchases $50.000, Cr Accounts Payable $50.000. 1 Oktober Dr Accounts Payable $50.000, Cr Notes Payable $50.000. 1 Oktober Dr Cash $75.000, Dr Discount on Notes Payable $6.000, Cr Notes Payable $81.000. Penyesuaian 31 Desember 2025: bunga Orion = $50.000 × 8% × 3/12 = $1.000 (Dr Interest Expense $1.000, Cr Interest Payable $1.000); amortisasi diskonto Shore Bank = $6.000 × 3/12 = $1.500 (Dr Interest Expense $1.500, Cr Discount on Notes Payable $1.500). 2. Wesel berbunga: Notes Payable $50.000 + Interest Payable $1.000 = $51.000. Wesel tanpa bunga: $81.000 − ($6.000 − $1.500) = $76.500, sama dengan kas $75.000 + bunga diakui $1.500; suku bunga implisit $6.000 ÷ $75.000 = 8%. 3. Schultz: (1) Dr Cash €500, Cr Refundable Deposits €500. (2) Sales Revenue = €798.000 ÷ 1,05 = €760.000; VAT Taxes Payable = €798.000 − €760.000 = €38.000: Dr Cash €798.000, Cr Sales Revenue €760.000, Cr VAT Taxes Payable €38.000. (3) Alternatif A (PPN dikapitalisasi): Dr Equipment (Delivery Trucks) €126.000, Cr Cash €126.000. Alternatif B (PPN masukan dapat dikreditkan): Dr Equipment (Delivery Trucks) €120.000, Dr VAT Taxes Recoverable €6.000, Cr Cash €126.000. (4) Dr Land Improvements (Parking Lot) €84.000, Cr Environmental Restoration Provision €84.000; biayanya dialokasikan melalui depresiasi. 4. Provisi €84.000 disajikan sebagai liabilitas jangka panjang karena penyelesaiannya baru terjadi 2 tahun lagi."
   },
   {
-    "type": "journal",
-    "scope": "TM 2: Pertukaran Aset Non-Moneter & Hibah Pemerintah PSAK 61",
-    "difficulty": "Menengah",
-    "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 2: Pertukaran Mesin (Commercial vs Lacks Substance) & Hibah Pemerintah",
-    "context": "PT Astra memproses dua transaksi: (1) Pertukaran mesin pabrik lama (Kos Rp 500 jt, Akum Depresiasi Rp 320 jt, Nilai Wajar Rp 210 jt) dengan mesin baru sejenis dan membayar kas tambahan Rp 40 jt. Uji menunjukkan transaksi MEMILIKI SUBSTANSI KOMERSIAL. (2) Menerima hibah pemerintah berupa tanah senilai Rp 800 jt dengan syarat membangun pusat pelatihan vokasi.",
-    "data": [
-      "Mesin Lama: Kos Rp 500 jt, Akum Depresiasi Rp 320 jt (Nilai Buku = Rp 180 jt).",
-      "Nilai Wajar Mesin Lama: Rp 210 jt. Kas Dibayar: Rp 40 jt. Nilai Wajar Mesin Baru: Rp 250 jt.",
-      "Hibah Tanah: Nilai Wajar Rp 800 jt dengan kewajiban fasilitas pelatihan."
-    ],
-    "instructions": [
-      "Hitung laba/rugi pertukaran mesin dan tentukan harga perolehan mesin baru.",
-      "Buat ayat jurnal pertukaran mesin non-moneter.",
-      "Jelaskan perlakuan hibah tanah dan buat ayat jurnal pengakuan hibah pemerintah (Deferred Income Method)."
-    ],
-    "outputFormat": [
-      "Perhitungan Gain on Exchange",
-      "Jurnal Pertukaran Mesin",
-      "Jurnal Hibah Pemerintah"
-    ],
-    "rubric": [
-      "Perhitungan keuntungan pertukaran (210 jt - 180 jt = 30 jt) (30%)",
-      "Jurnal pertukaran dengan pengakuan penuh keuntungan (40%)",
-      "Jurnal pengakuan hibah sebagai Pendapatan Ditangguhkan (30%)"
-    ],
-    "answerGuide": "1. Kalkulasi Pertukaran Mesin:\nNilai Buku Mesin Lama = Rp 500 jt - Rp 320 jt = Rp 180.000.000.\nNilai Wajar Mesin Lama = Rp 210.000.000.\nKeuntungan Pertukaran (Gain on Exchange) = Rp 210 jt - Rp 180 jt = Rp 30.000.000.\nHarga Perolehan Mesin Baru = Nilai Wajar Mesin Lama (Rp 210 jt) + Kas Dibayar (Rp 40 jt) = Rp 250.000.000.\n\n2. Jurnal Pertukaran Mesin (Substansi Komersial):\n(D) Mesin Baru ........................... Rp 250.000.000\n(D) Akumulasi Penyusutan Mesin Lama ..... Rp 320.000.000\n    (K) Mesin Lama .................................... Rp 500.000.000\n    (K) Kas ........................................... Rp 40.000.000\n    (K) Keuntungan Pertukaran Aset (Laba Rugi) ....... Rp 30.000.000\n\n3. Jurnal Hibah Pemerintah (PSAK 61 - Deferred Income):\n(D) Tanah ................................ Rp 800.000.000\n    (K) Pendapatan Hibah Pemerintah Ditangguhkan ...... Rp 800.000.000"
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 3: Depresiasi Komponen & Deplesi Sumber Daya Alam PSAK 64",
+    "type": "case",
+    "scope": "TM 7: Penilaian Obligasi & Metode Bunga Efektif",
     "difficulty": "Komprehensif",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 3: Penyusutan Komponen Pesawat Terbang & Deplesi Tambang Batubara",
-    "context": "PT Merpati Airways membeli pesawat jet seharga Rp 600.000.000.000. Komponen: Rangka Pesawat Rp 360 M (umur 20 tahun), Mesin Jet Rp 180 M (umur 10 tahun atau 15.000 jam terbang), Interior Kabin Rp 60 M (umur 5 tahun). Selama tahun pertama, pesawat terbang selama 1.800 jam. Selain itu, anak usaha pertambangan membeli hak tambang batubara Rp 400.000.000.000 dengan estimasi deposit 10.000.000 ton dan kewajiban restorasi lingkungan Rp 50.000.000.000 (PV Rp 30 M). Produksi tahun pertama 1.200.000 ton.",
+    "estimatedTime": "40–50 menit",
+    "question": "Studi Kasus 7: Obligasi Semesteran Foreman Cleaners (E13.5) dan Skedul Amortisasi Spencer plc (E13.6)",
+    "context": "Foreman Cleaners menerbitkan obligasi diskonto dengan bunga semesteran, sedangkan Spencer plc menjual obligasi di bawah nominal tanpa menyebut tarif efektifnya. Di bawah IFRS, diskonto dicatat neto langsung di Bonds Payable dan diamortisasi dengan metode bunga efektif.",
     "data": [
-      "Pesawat Jet: Rangka Rp 360 M (Garis Lurus 20 thn); Mesin Rp 180 M (Unit of Activity 15.000 jam); Kabin Rp 60 M (Garis Lurus 5 thn).",
-      "Jam Terbang Mesin Tahun 1: 1.800 jam.",
-      "Tambang Batubara: Biaya Akuisisi Rp 400 M + Provisi Restorasi PV Rp 30 M = Dasar Deplesi Rp 430 M.",
-      "Deposit: 10.000.000 ton. Penambangan Tahun 1: 1.200.000 ton (1.000.000 ton terjual, 200.000 ton persediaan)."
+      "Foreman Cleaners: obligasi €800.000, kupon 10% per tahun dibayar setiap 1 Juli dan 1 Januari, jangka waktu 20 tahun, tertanggal 1 Januari 2025, dijual pada harga 84,95 untuk menghasilkan yield 12%.",
+      "Spencer plc: obligasi 10% bernilai jatuh tempo £3.000.000 dijual seharga £2.783.724; tertanggal 1 Januari 2025, jatuh tempo 1 Januari 2030; bunga dibayar tahunan setiap 1 Januari.",
+      "Faktor nilai kini 5 periode pada 12%: pokok 0,56743; anuitas 3,60478."
     ],
     "instructions": [
-      "Hitung beban penyusutan tahun 1 untuk masing-masing komponen pesawat terbang (Component Depreciation).",
-      "Hitung tarif deplesi tambang batubara per ton dan alokasi deplesi tahun 1.",
-      "Tentukan berapa porsi deplesi yang masuk Beban Pokok Penjualan vs Aset Persediaan."
+      "Catat penerbitan obligasi Foreman 1 Januari 2025, pembayaran bunga dan amortisasi 1 Juli 2025, serta akrual bunga dan amortisasi 31 Desember 2025.",
+      "Buktikan tarif efektif obligasi Spencer dari harga jualnya.",
+      "Susun skedul beban bunga dan amortisasi diskonto Spencer 2025–2030.",
+      "Catat jurnal Spencer untuk penerbitan, akrual bunga 31 Desember 2025, pembayaran 1 Januari 2026, dan pelunasan saat jatuh tempo."
     ],
     "outputFormat": [
-      "Tabel Penyusutan Komponen Pesawat",
-      "Kalkulasi Tarif & Alokasi Deplesi Batubara",
-      "Ayat Jurnal Deplesi"
+      "Skedul dan jurnal Foreman untuk 2025",
+      "Pembuktian tarif efektif Spencer",
+      "Skedul amortisasi Spencer lima periode",
+      "Jurnal Spencer"
     ],
     "rubric": [
-      "Penerapan Component Depreciation sesuai PSAK 16 (35%)",
-      "Kalkulasi tarif deplesi termasuk provisi restorasi lingkungan (35%)",
-      "Pemisahan deplesi barang terjual (HPP) vs persediaan akhir (30%)"
+      "Tarif kupon dan tarif efektif dibagi dua untuk bunga semesteran",
+      "Beban bunga dihitung dari nilai tercatat awal periode",
+      "Amortisasi diskonto menambah Bonds Payable sampai nominal",
+      "Pembulatan tahun terakhir diserap sehingga nilai tercatat tepat sama dengan nominal"
     ],
-    "answerGuide": "1. Penyusutan Komponen Pesawat Terbang:\n• Rangka Pesawat (Garis Lurus): Rp 360 M / 20 tahun = Rp 18.000.000.000\n• Mesin Jet (Jam Aktivitas): (1.800 jam / 15.000 jam) × Rp 180 M = Rp 21.600.000.000\n• Interior Kabin (Garis Lurus): Rp 60 M / 5 tahun = Rp 12.000.000.000\nTotal Beban Penyusutan Pesawat Tahun 1 = Rp 51.600.000.000.\n\n2. Perhitungan Deplesi Tambang Batubara:\nDasar Deplesi = Kos Akuisisi (Rp 400 M) + PV Restorasi (Rp 30 M) = Rp 430.000.000.000.\nTarif Deplesi per Ton = Rp 430.000.000.000 / 10.000.000 ton = Rp 43.000 per ton.\nTotal Deplesi Tahun 1 (1.200.000 ton) = 1.200.000 × Rp 43.000 = Rp 51.600.000.000.\n\n3. Alokasi Deplesi:\n• Persediaan Batubara Terjual (1.000.000 ton × 43rb) = Rp 43.000.000.000 (Beban Pokok Penjualan)\n• Persediaan Batubara Akhir (200.000 ton × 43rb) = Rp 8.600.000.000 (Aset Lancar di Neraca)\n\nJurnal Deplesi:\n(D) Persediaan Batubara ................... Rp 51.600.000.000\n    (K) Akumulasi Deplesi Sumber Daya Alam ............ Rp 51.600.000.000"
-  },
-  {
-    "type": "analysis",
-    "scope": "TM 4: Uji Penurunan Nilai (Impairment PSAK 48) & CGU",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 4: Uji Penurunan Nilai Unit Penghasil Kas (CGU) & Pembalikan Impairment",
-    "context": "Divisi Manufaktur Keramik PT Arwana dipandang sebagai satu Unit Penghasil Kas (CGU). Per 31 Desember 2026, nilai tercatat aset CGU adalah: Goodwill Rp 100 jt, Bangunan Pabrik Rp 600 jt, Mesin Khusus Rp 300 jt (Total Nilai Buku CGU = Rp 1.000.000.000). Karena krisis konstruksi, diuji impairment. Data penilai: Nilai Wajar Dikurangi Biaya Pelepasan (FVLCD) = Rp 750.000.000; Nilai Pakai (Value in Use) = Rp 780.000.000.",
-    "data": [
-      "Nilai Buku Aset CGU: Goodwill Rp 100 jt; Bangunan Rp 600 jt (66,67% dari porsi aset tetap); Mesin Rp 300 jt (33,33% dari porsi aset tetap).",
-      "Jumlah Terpulihkan (Recoverable Amount) = Nilai Tertinggi antara FVLCD (Rp 750 jt) vs Nilai Pakai (Rp 780 jt) = Rp 780.000.000.",
-      "Total Kerugian Penurunan Nilai = Rp 1.000.000.000 - Rp 780.000.000 = Rp 220.000.000."
-    ],
-    "instructions": [
-      "Tentukan Jumlah Terpulihkan (Recoverable Amount) CGU dan hitung total kerugian penurunan nilai.",
-      "Jelaskan urutan alokasi kerugian penurunan nilai ke aset-aset dalam CGU sesuai PSAK 48.",
-      "Susun tabel alokasi kerugian dan buat ayat jurnal impairment per 31 Desember 2026.",
-      "Jelaskan apakah kerugian penurunan nilai atas Goodwill boleh dibalik (reversed) di masa depan jika kondisi ekonomi membaik."
-    ],
-    "outputFormat": [
-      "Analisis Recoverable Amount",
-      "Tabel Alokasi Impairment CGU",
-      "Ayat Jurnal Impairment",
-      "Evaluasi Reversal Goodwill"
-    ],
-    "rubric": [
-      "Penentuan recoverable amount berbasis nilai tertinggi (25%)",
-      "Alokasi pertama menghabiskan Goodwill 100% (25%)",
-      "Alokasi sisa rugi secara proporsional ke Bangunan dan Mesin (25%)",
-      "Penjelasan larangan mutlak pembalikan impairment Goodwill (25%)"
-    ],
-    "answerGuide": "1. Penentuan Recoverable Amount & Total Impairment:\nRecoverable Amount = MAX(FVLCD Rp 750 jt, Value in Use Rp 780 jt) = Rp 780.000.000.\nRugi Penurunan Nilai (Impairment Loss) = Rp 1.000.000.000 - Rp 780.000.000 = Rp 220.000.000.\n\n2. Urutan Alokasi Berdasarkan PSAK 48:\n• Tahap 1: Alokasikan kerugian terlebih dahulu untuk MENGHAPUS GOODWILL HINGGA NOL = Rp 100.000.000.\n• Tahap 2: Sisa kerugian sebesar Rp 120.000.000 (Rp 220 jt - Rp 100 jt) dialokasikan secara proporsional ke aset tetap lain berdasarkan nilai buku relatif:\n  - Bangunan (600 / 900) × Rp 120 jt = Rp 80.000.000.\n  - Mesin (300 / 900) × Rp 120 jt = Rp 40.000.000.\n\n3. Nilai Buku Baru Setelah Impairment:\n• Goodwill: Rp 100 jt - Rp 100 jt = Rp 0.\n• Bangunan: Rp 600 jt - Rp 80 jt = Rp 520.000.000.\n• Mesin: Rp 300 jt - Rp 40 jt = Rp 260.000.000.\nTotal Nilai Tercatat CGU = Rp 780.000.000 (Tepat sama dengan Recoverable Amount!).\n\nJurnal Impairment 31 Des 2026:\n(D) Rugi Penurunan Nilai - CGU ............ Rp 220.000.000\n    (K) Goodwill ...................................... Rp 100.000.000\n    (K) Akumulasi Penurunan Nilai Bangunan ........... Rp 80.000.000\n    (K) Akumulasi Penurunan Nilai Mesin .............. Rp 40.000.000\n\n4. Aturan Pembalikan (Reversal) Goodwill:\nBerdasarkan PSAK 48 Paragraf 124, **KERUGIAN PENURUNAN NILAI ATAS GOODWILL DILARANG KERAS DIBALIK PADA PERIODE BERIKUTNYA DENGAN ALASAN APA PUN**! Kenaikan nilai di masa depan dianggap sebagai goodwill yang dihasilkan secara internal (internal goodwill) yang dilarang diakui oleh standar akuntansi."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 5: Aset Takberwujud & Goodwill Akuisisi Kombinasi Bisnis PSAK 22",
-    "difficulty": "Menengah",
-    "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 5: Penentuan Nilai Goodwill Akuisisi & Amortisasi Hak Paten",
-    "context": "PT Indofood mengakuisisi 100% kepemilikan PT Sari Roti seharga Rp 5.000.000.000 tunai. Neraca PT Sari Roti sebelum akuisisi menunjukkan Total Aset Rp 3.800.000.000 dan Total Liabilitas Rp 1.200.000.000 (Nilai Buku Ekuitas = Rp 2.600.000.000). Hasil audit penilai independen menemukan: Nilai wajar Persediaan lebih tinggi Rp 150 jt dari nilai buku, Gedung lebih tinggi Rp 450 jt, serta terdapat Hak Paten formula roti yang belum tercatat di neraca dengan nilai wajar Rp 600 jt. Liabilitas dinilai wajar.",
-    "data": [
-      "Harga Beli Akuisisi: Rp 5.000.000.000 tunai.",
-      "Nilai Buku Aset Neto: Rp 3.800 jt - Rp 1.200 jt = Rp 2.600.000.000.",
-      "Selisih Nilai Wajar: Persediaan (+150 jt), Gedung (+450 jt), Paten Rahasia (+600 jt)."
-    ],
-    "instructions": [
-      "Hitung Nilai Wajar Aset Neto Teridentifikasi (Fair Value of Identifiable Net Assets) PT Sari Roti.",
-      "Hitung jumlah Goodwill yang timbul dari kombinasi bisnis ini.",
-      "Buat ayat jurnal pencatatan akuisisi pada pembukuan PT Indofood.",
-      "Jelaskan apakah Goodwill diamortisasi tiap tahun atau diuji impairment."
-    ],
-    "outputFormat": [
-      "Tabel Penyesuaian Nilai Wajar Aset Neto",
-      "Kalkulasi Goodwill",
-      "Ayat Jurnal Akuisisi"
-    ],
-    "rubric": [
-      "Perhitungan nilai wajar aset neto teridentifikasi (30%)",
-      "Perhitungan goodwill = Purchase Price - Fair Value Net Assets (30%)",
-      "Kebenaran ayat jurnal akuisisi (25%)",
-      "Penjelasan standar perlakuan goodwill (15%)"
-    ],
-    "answerGuide": "1. Nilai Wajar Aset Neto Teridentifikasi:\nNilai Buku Aset Neto Awal = Rp 2.600.000.000\nKenaikan Nilai Wajar Persediaan = +Rp 150.000.000\nKenaikan Nilai Wajar Gedung = +Rp 450.000.000\nPengakuan Nilai Wajar Paten Formula = +Rp 600.000.000\nTotal Nilai Wajar Aset Neto Teridentifikasi = Rp 3.800.000.000.\n\n2. Perhitungan Goodwill:\nHarga Pembelian (Purchase Price) = Rp 5.000.000.000\nDikurangi Nilai Wajar Aset Neto = (Rp 3.800.000.000)\nGoodwill yang Diakui = Rp 1.200.000.000.\n\n3. Jurnal Akuisisi PT Indofood:\n(D) Aset Teridentifikasi (pada Nilai Wajar) ... Rp 5.000.000.000\n(D) Goodwill .................................. Rp 1.200.000.000\n    (K) Liabilitas Diambil Alih ....................... Rp 1.200.000.000\n    (K) Kas ........................................... Rp 5.000.000.000\n\n4. Perlakuan Akuntansi Goodwill:\nGoodwill memiliki masa manfaat tidak terbatas (indefinite life), sehingga **TIDAK DIAMORTISASI**. Berdasarkan PSAK 22 dan PSAK 48, Goodwill wajib diuji penurunan nilai (impairment test) minimal setahun sekali pada level CGU."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 6: Liabilitas Jangka Pendek, Wesel Bayar Diskonto & Bonus Eksekutif",
-    "difficulty": "Menengah",
-    "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 6: Amortisasi Diskonto Wesel Bayar & Perhitungan Bonus Setelah Pajak",
-    "context": "Pada 1 September 2026, PT Kalbe menerbitkan wesel bayar tanpa bunga senilai Rp 600.000.000 dengan jangka waktu 6 bulan (jatuh tempo 1 Maret 2027) kepada bank dengan suku bunga diskonto 10%. Selain itu, pada akhir 2026 perusahaan menghitung bonus eksekutif sebesar 8% dari laba setelah dikurangi bonus dan pajak (laba sebelum bonus & pajak = Rp 800.000.000, tarif pajak 22%).",
-    "data": [
-      "Wesel Bayar: Nominal Rp 600 jt, 6 bulan, diskonto 10% per tahun.",
-      "Kas Diterima Wesel: Rp 600 jt - (Rp 600 jt × 10% × 6/12) = Rp 570.000.000.",
-      "Bonus: 8% dari Laba Bersih setelah bonus dan setelah pajak 22%."
-    ],
-    "instructions": [
-      "Buat jurnal penerbitan wesel bayar pada 1 September 2026.",
-      "Buat jurnal penyesuaian amortisasi diskonto bunga wesel per 31 Desember 2026.",
-      "Hitung nilai bonus eksekutif dan buat jurnal akrual per 31 Desember 2026."
-    ],
-    "outputFormat": [
-      "Jurnal Penerbitan & Penyesuaian Wesel",
-      "Persamaan Aljabar Bonus",
-      "Jurnal Akrual Bonus"
-    ],
-    "rubric": [
-      "Kalkulasi diskonto wesel bayar dan amortisasi 4 bulan (35%)",
-      "Penyelesaian persamaan aljabar bonus dan pajak (40%)",
-      "Kebenaran seluruh ayat jurnal debit/kredit (25%)"
-    ],
-    "answerGuide": "1. Jurnal Penerbitan Wesel (1 Sept 2026):\n(D) Kas ................................... Rp 570.000.000\n(D) Diskonto Wesel Bayar .................. Rp 30.000.000\n    (K) Wesel Bayar ................................... Rp 600.000.000\n\n2. Jurnal Penyesuaian 31 Des 2026 (4 bulan: Sept - Des):\nAmortisasi Diskonto = Rp 30.000.000 × (4 / 6) = Rp 20.000.000.\n(D) Beban Bunga ........................... Rp 20.000.000\n    (K) Diskonto Wesel Bayar .......................... Rp 20.000.000\n\n3. Perhitungan Bonus Eksekutif:\n• B = 0,08 × (800 jt - B - P)\n• P = 0,22 × (800 jt - B)\nSubstitusi P:\nB = 0,08 × [800 jt - B - 0,22(800 jt - B)]\nB = 0,08 × [800 jt - B - 176 jt + 0,22B]\nB = 0,08 × [624 jt - 0,78B] = 49.920.000 - 0,0624B\n1,0624B = 49.920.000 -> Bonus (B) = Rp 46.987.952.\n\nJurnal Akrual Bonus 31 Des 2026:\n(D) Beban Bonus Karyawan .................. Rp 46.987.952\n    (K) Utang Bonus Karyawan .......................... Rp 46.987.952"
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 7: Provisi Garansi Produk (Assurance vs Service) PSAK 57 & IFRS 15",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 7: Garansi Jaminan (Assurance) vs Garansi Jasa Tambahan (Service-Type Warranty)",
-    "context": "PT Samsung Elektronik menjual 5.000 unit smartphone seharga Rp 6.000.000 per unit secara tunai. Penjualan mencakup garansi cacat pabrik 1 tahun (Assurance-type warranty) dengan estimasi biaya klaim 3% dari penjualan. Selain itu, 1.000 pelanggan membeli garansi perpanjangan servis 2 tahun tambahan (Service-type warranty) seharga Rp 500.000 per unit secara tunai. Klaim aktual garansi assurance sepanjang tahun pertama adalah Rp 75.000.000 tunai.",
-    "data": [
-      "Penjualan Handphone: 5.000 unit × Rp 6.000.000 = Rp 30.000.000.000.",
-      "Estimasi Biaya Garansi Assurance: 3% × Rp 30.000.000.000 = Rp 900.000.000.",
-      "Klaim Garansi Assurance Aktual: Rp 75.000.000.",
-      "Penjualan Garansi Servis Tambahan: 1.000 unit × Rp 500.000 = Rp 500.000.000 (Masa lindung tahun ke-2 dan ke-3)."
-    ],
-    "instructions": [
-      "Buat ayat jurnal pencatatan penjualan handphone dan pengakuan garansi assurance.",
-      "Buat ayat jurnal pembayaran klaim garansi aktual sepanjang tahun pertama.",
-      "Buat ayat jurnal penerimaan kas dari penjualan garansi service-type tambahan.",
-      "Tentukan penyajian saldo provisi garansi dan pendapatan garansi tangguhan di neraca akhir tahun pertama."
-    ],
-    "outputFormat": [
-      "Ayat Jurnal Penjualan & Garansi Assurance",
-      "Ayat Jurnal Pembayaran Klaim",
-      "Ayat Jurnal Garansi Servis IFRS 15",
-      "Penyajian Laporan Posisi Keuangan"
-    ],
-    "rubric": [
-      "Pembedaan tegas akuntansi assurance vs service warranty (35%)",
-      "Kebenaran jurnal estimasi vs klaim aktual (35%)",
-      "Penyajian neraca liabilitas lancar vs tidak lancar (30%)"
-    ],
-    "answerGuide": "1. Jurnal Penjualan & Pengakuan Provisi Garansi Assurance:\n(D) Kas .................................. Rp 30.000.000.000\n    (K) Pendapatan Penjualan .......................... Rp 30.000.000.000\n\n(D) Beban Garansi (Laba Rugi) ............. Rp 900.000.000\n    (K) Provisi Garansi Produk (Liabilitas Lancar) .... Rp 900.000.000\n\n2. Jurnal Pembayaran Klaim Garansi Aktual:\n(D) Provisi Garansi Produk ................ Rp 75.000.000\n    (K) Kas / Suku Cadang ............................. Rp 75.000.000\n(Saldo akhir Provisi Garansi di Neraca = 900 jt - 75 jt = Rp 825.000.000).\n\n3. Jurnal Penjualan Garansi Servis Tambahan (Service-Type - IFRS 15):\n(D) Kas .................................. Rp 500.000.000\n    (K) Pendapatan Garansi Ditangguhkan (Unearned) .... Rp 500.000.000\n(Pendapatan garansi ini baru diakui secara proporsional pada tahun ke-2 dan ke-3 saat periode layanan servis berjalan)."
+    "answerGuide": "1. Foreman: harga = 0,8495 × €800.000 = €679.600 (diskonto awal €120.400). Kupon semesteran = €800.000 × 10% ÷ 2 = €40.000; tarif efektif semesteran 6%. (a) 1 Januari 2025: Dr Cash €679.600, Cr Bonds Payable €679.600. (b) 1 Juli 2025: beban bunga €679.600 × 6% = €40.776; Dr Interest Expense €40.776, Cr Bonds Payable €776, Cr Cash €40.000; nilai tercatat €680.376. (c) 31 Desember 2025: beban bunga €680.376 × 6% = €40.822,56 ≈ €40.823; Dr Interest Expense €40.823, Cr Interest Payable €40.000, Cr Bonds Payable €823; nilai tercatat €681.199. 2. Pada 12%: £3.000.000 × 0,56743 + £300.000 × 3,60478 = £1.702.290 + £1.081.434 = £2.783.724, sama dengan harga jual; harga di bawah nominal konsisten dengan tarif efektif di atas kupon 10%. 3. Skedul (kas £300.000 per tahun; beban = nilai tercatat awal × 12%): 1/1/2026 beban £334.047, amortisasi £34.047, nilai tercatat £2.817.771; 1/1/2027 £338.133, £38.133, £2.855.904; 1/1/2028 £342.708, £42.708, £2.898.612; 1/1/2029 £347.833, £47.833, £2.946.445; 1/1/2030 £353.555, £53.555, £3.000.000. Total kas £1.500.000, beban bunga £1.716.276, amortisasi £216.276; amortisasi terakhir menyerap pembulatan. 4. Jurnal: 1 Januari 2025 Dr Cash £2.783.724, Cr Bonds Payable £2.783.724. 31 Desember 2025 Dr Interest Expense £334.047, Cr Interest Payable £300.000, Cr Bonds Payable £34.047. 1 Januari 2026 Dr Interest Payable £300.000, Cr Cash £300.000. 1 Januari 2030 Dr Bonds Payable £3.000.000, Cr Cash £3.000.000."
   }
 ];
 
