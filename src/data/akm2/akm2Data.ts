@@ -12,7 +12,6 @@ import { TM4_READING } from './modules/tm4';
 import { TM5_READING } from './modules/tm5';
 import { TM6_READING } from './modules/tm6';
 import { TM7_READING } from './modules/tm7';
-import { TM8_READING } from './modules/tm8';
 import { TM9_READING } from './modules/tm9';
 import { TM10_READING } from './modules/tm10';
 import { TM11_READING } from './modules/tm11';
@@ -29,7 +28,7 @@ export const AKK202_READINGS: Record<number, Reading> = {
   5: TM5_READING,
   6: TM6_READING,
   7: TM7_READING,
-  8: TM8_READING,
+  // TM8 (review UTS lama, belum kanonik) sengaja tidak dimuat; modules/tm8.ts dipertahankan untuk ditulis ulang setelah UTS.
   9: TM9_READING,
   10: TM10_READING,
   11: TM11_READING,

@@ -2,7 +2,7 @@
 // src/data/quizzes/akk202.ts
 // Bank Soal Kuis Pilihan Ganda Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI
-// 70 Soal Lengkap: 35 Soal Pra-UTS (TM 1-7) & 35 Soal Pra-UAS (TM 8-14)
+// 66 Soal: 36 Soal Pra-UTS (TM 1-7; TM 6 memuat 6 soal) & 30 Soal Pra-UAS (TM 9-14); soal TM 8 (review UTS lama) dihapus.
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { QuizQuestion } from '../../types';
@@ -429,6 +429,20 @@ export const AKK202_QUIZ_UTS: QuizQuestion[] = [
     "explanation": "Pada sisi aset, kemungkinan probable menghasilkan aset kontinjensi yang diungkapkan dalam catatan tetapi tidak diakui. Aset baru diakui di neraca bila arus masuknya virtually certain; possible dan remote tidak diakui maupun diungkapkan."
   },
   {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "medium",
+    "q": "Entitas menjual garansi jasa (service-type warranty) secara terpisah dari produknya. Bagaimana perlakuan kas yang diterima atas garansi tersebut?",
+    "options": [
+      "Diakui seluruhnya sebagai pendapatan pada tanggal penjualan",
+      "Dicatat sebagai Unearned Warranty Revenue dan diakui sebagai pendapatan selama masa layanan",
+      "Diakui sebagai beban dan provisi garansi pada periode penjualan",
+      "Hanya diungkapkan dalam catatan sebagai liabilitas kontinjensi"
+    ],
+    "answer": 1,
+    "explanation": "Garansi jasa (service-type) dijual terpisah, sehingga kas yang diterima dicatat sebagai Unearned Warranty Revenue dan diakui sebagai pendapatan selama masa layanan. Pengakuan beban dan provisi garansi pada periode penjualan adalah perlakuan garansi jaminan (assurance-type), bukan garansi jasa."
+  },
+  {
     "tm": 7,
     "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
     "difficulty": "advanced",
@@ -501,76 +515,6 @@ export const AKK202_QUIZ_UTS: QuizQuestion[] = [
 ];
 
 export const AKK202_QUIZ_UAS: QuizQuestion[] = [
-  {
-    "tm": 8,
-    "topic": "Review Terpadu Silabus Pra-UTS",
-    "difficulty": "advanced",
-    "q": "Manakah pernyataan yang BENAR mengenai perlakuan biaya perolehan aset tetap dan liabilitas kontinjensi?",
-    "options": [
-      "Biaya pembongkaran gedung lama saat membeli tanah untuk membangun pabrik baru dibebankan ke Gedung Baru",
-      "Biaya pembongkaran gedung lama saat membeli tanah untuk proyek baru dikapitalisasi ke akun Tanah",
-      "Aset kontinjensi yang berstatus probable wajib dijurnal di neraca",
-      "Diskonto wesel bayar disajikan di kelompok aset lancar"
-    ],
-    "answer": 1,
-    "explanation": "Biaya pembongkaran gedung lama untuk mempersiapkan tanah bagi pembangunan fasilitas baru dikapitalisasi ke akun Tanah karena merupakan pengorbanan untuk menyiapkan lahan."
-  },
-  {
-    "tm": 8,
-    "topic": "Kapitalisasi Bunga & Impairment",
-    "difficulty": "advanced",
-    "q": "Jika Bunga Aktual entitas selama tahun konstruksi adalah Rp 80.000.000 dan Bunga yang Dapat Dihindari (Avoidable Interest) adalah Rp 95.000.000, berapakah bunga yang boleh dikapitalisasi ke aset tetap?",
-    "options": [
-      "Rp 95.000.000",
-      "Rp 80.000.000",
-      "Rp 175.000.000",
-      "Rp 15.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Berdasarkan PSAK 26, jumlah bunga yang dikapitalisasi dibatasi paling tinggi sebesar BUNGA AKTUAL yang benar-benar terjadi selama periode tersebut (yaitu Rp 80.000.000)."
-  },
-  {
-    "tm": 8,
-    "topic": "Depresiasi & Nilai Sisa DDB",
-    "difficulty": "medium",
-    "q": "Pada metode Saldo Menurun Ganda (DDB), nilai sisa (residual value) aset...",
-    "options": [
-      "Dikurangkan dari harga perolehan sebelum mengalikan dengan tarif depresiasi",
-      "Diabaikan pada tahun pertama, tetapi menjadi batas bawah (plafon) penghentian penyusutan pada akhir masa manfaat",
-      "Tidak pernah diperhatikan sama sekali hingga aset dijual",
-      "Ditambahkan ke harga perolehan setiap awal tahun"
-    ],
-    "answer": 1,
-    "explanation": "Pada DDB, nilai sisa diabaikan saat menghitung beban depresiasi tahunan, namun nilai buku aset tidak boleh disusutkan di bawah estimasi nilai sisanya."
-  },
-  {
-    "tm": 8,
-    "topic": "Kriteria PIRATE R&D",
-    "difficulty": "medium",
-    "q": "Huruf 'T' dalam akronim PIRATE kriteria kapitalisasi aset takberwujud fase pengembangan merujuk pada...",
-    "options": [
-      "Tax deduction eligibility",
-      "Technical feasibility to complete the intangible asset",
-      "Time-bound project management",
-      "Total expenditure reliability"
-    ],
-    "answer": 1,
-    "explanation": "'T' adalah Technical Feasibility (kelayakan teknis penyelesaian aset takberwujud sehingga siap digunakan atau dijual)."
-  },
-  {
-    "tm": 8,
-    "topic": "Provisi Garansi Jasa",
-    "difficulty": "medium",
-    "q": "Pendapatan dari penjualan kontrak garansi servis tambahan (Service-type warranty) yang dibayar di muka oleh pelanggan diakui sebagai...",
-    "options": [
-      "Pendapatan penjualan tunai langsung pada tanggal transaksi",
-      "Pendapatan ditangguhkan (unearned revenue) dan diakui bertahap selama masa kontrak servis berjalan",
-      "Provisi garansi di liabilitas lancar",
-      "Pengurang harga pokok penjualan"
-    ],
-    "answer": 1,
-    "explanation": "Sesuai IFRS 15 / PSAK 72, garansi tipe jasa merupakan kewajiban pelaksanaan terpisah, sehingga uang yang diterima dicatat sebagai pendapatan ditangguhkan dan diakui secara proporsional selama masa perlindungan."
-  },
   {
     "tm": 9,
     "topic": "Penentuan Harga Obligasi",

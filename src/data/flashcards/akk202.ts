@@ -1,5 +1,5 @@
 // src/data/flashcards/akk202.ts
-// Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) — 84 kartu lengkap (6 kartu per TM)
+// Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) — 78 kartu (6 kartu per TM; kartu TM 8 lama dihapus)
 // Kartu TM 1-7 mengikuti bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts; kartu yang isinya berubah memakai id akk202-v2-tmXX-YY.
 import type { AdvancedStudyCard } from '../../types';
 
@@ -381,60 +381,6 @@ export const AKK202_FC: AdvancedStudyCard[] = [
     "category": "Standar",
     "front": "Opsi Nilai Wajar dan Penyajian Utang Jangka Panjang",
     "back": "Dengan opsi nilai wajar, perubahan akibat risiko kredit entitas sendiri masuk OCI dan sisanya laba rugi. Bagian yang jatuh tempo dalam 12 bulan dipindahkan ke liabilitas jangka pendek. Solvabilitas: debt to assets dan times interest earned."
-  },
-  {
-    "id": "akk202-tm08-01",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Liabilitas Jangka Panjang & Penerbitan Obligasi",
-    "category": "Mekanisme",
-    "front": "Obligasi Diterbitkan pada Nilai Premium",
-    "back": "Terjadi jika Tingkat Bunga Kupon (Stated Rate) > Tingkat Bunga Pasar (Market/Effective Rate); investor bersedia membayar di atas nilai nominal."
-  },
-  {
-    "id": "akk202-tm08-02",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Liabilitas Jangka Panjang & Penerbitan Obligasi",
-    "category": "Mekanisme",
-    "front": "Obligasi Diterbitkan pada Nilai Diskonto",
-    "back": "Terjadi jika Tingkat Bunga Kupon < Tingkat Bunga Pasar; investor membayar lebih rendah dari nilai nominal untuk menaikkan yield efektif."
-  },
-  {
-    "id": "akk202-tm08-03",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Liabilitas Jangka Panjang & Penerbitan Obligasi",
-    "category": "Rumus",
-    "front": "Perhitungan Harga Penerbitan Obligasi",
-    "back": "Harga Obligasi = Present Value Pokok Obligasi (lump sum) + Present Value Pembayaran Anuitas Bunga Kupon, keduanya didiskonto dengan Bunga Pasar."
-  },
-  {
-    "id": "akk202-tm08-04",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Liabilitas Jangka Panjang & Penerbitan Obligasi",
-    "category": "Dokumen",
-    "front": "Biaya Penerbitan Obligasi (Bond Issue Costs)",
-    "back": "Mengurangi hasil kas bersih penerbitan obligasi dan menambah diskonto awal (atau mengurangi premium awal), efektif menaikkan suku bunga."
-  },
-  {
-    "id": "akk202-tm08-05",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Liabilitas Jangka Panjang & Penerbitan Obligasi",
-    "category": "Dokumen",
-    "front": "Akun Diskonto Obligasi di Neraca",
-    "back": "Disajikan sebagai Akun Kontra (pengurang langsung) terhadap Nilai Nominal Utang Obligasi pada Liabilitas Jangka Panjang."
-  },
-  {
-    "id": "akk202-tm08-06",
-    "phase": "pra-uas",
-    "tm": 8,
-    "topic": "Liabilitas Jangka Panjang & Penerbitan Obligasi",
-    "category": "Jurnal",
-    "front": "Pelunasan Dini Obligasi (Early Extinguishment)",
-    "back": "Laba/Rugi Pelunasan Dini = Nilai Tercatat Obligasi (Nominal - Sisa Diskonto) dikurangi Kas yang Dibayarkan untuk Membeli Kembali."
   },
   {
     "id": "akk202-tm09-01",

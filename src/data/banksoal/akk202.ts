@@ -2,7 +2,7 @@
 // src/data/banksoal/akk202.ts
 // Bank Soal Esai & Kasus Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI.
-// 14 Kasus Lengkap (7 Kasus Pra-UTS & 7 Kasus Pra-UAS)
+// 13 Kasus (7 Kasus Pra-UTS & 6 Kasus Pra-UAS TM 9-14); kasus TM 8 (review UTS lama) dihapus.
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { BankSoal } from '../../types';
@@ -238,35 +238,6 @@ export const AKK202_BANK_UTS: BankSoal[] = [
 ];
 
 export const AKK202_BANK_UAS: BankSoal[] = [
-  {
-    "type": "calculation",
-    "scope": "TM 8: Evaluasi Komprehensif Terpadu Silabus Pra-UTS",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35–45 menit",
-    "question": "Studi Kasus 8: Simulasi Ujian Master Komprehensif Pra-UTS PT Petrokimia Nusantara",
-    "context": "PT Petrokimia Nusantara menyajikan 3 transaksi strategis tahun 2026: (1) 1 Jan: Pembelian tanah & gedung lump-sum Rp 4 M (Tanah Rp 3,2 M, Gedung Rp 800 jt); (2) 1 April s.d. 31 Des: Konstruksi mandiri dermaga pabrik dengan pengeluaran Rp 1,5 M (WAAE Rp 900 jt, Pinjaman khusus 11% Rp 1 M); (3) 31 Des: Uji penurunan nilai atas lini produk amonia (Nilai buku Rp 800 jt, Nilai wajar dikurangi biaya jual Rp 650 jt, Nilai pakai Rp 700 jt).",
-    "data": [
-      "Lump-Sum: Kas Rp 4.000.000.000, Gedung lama langsung dihancurkan dengan biaya bersih Rp 100 jt.",
-      "Konstruksi: WAAE Rp 900.000.000, Pinjaman khusus Rp 1 M @ 11%.",
-      "Impairment: Nilai Buku Rp 800 jt, Recoverable Amount = MAX(650 jt, 700 jt) = Rp 700 jt."
-    ],
-    "instructions": [
-      "Tentukan nilai perolehan akun Tanah dari transaksi lump-sum dan pembongkaran.",
-      "Hitung bunga yang wajib dikapitalisasi ke dermaga pabrik tahun 2026.",
-      "Hitung rugi penurunan nilai aset amonia dan buat ayat jurnal penyesuaiannya."
-    ],
-    "outputFormat": [
-      "Kalkulasi Aset Tanah",
-      "Kalkulasi Bunga Konstruksi",
-      "Jurnal Impairment Aset"
-    ],
-    "rubric": [
-      "Kapitalisasi 100% biaya lump-sum + bongkar ke Tanah (30%)",
-      "Kalkulasi WAAE dan Avoidable Interest (900 jt × 11% = 99 jt) (35%)",
-      "Penentuan recoverable amount dan jurnal impairment 100 jt (35%)"
-    ],
-    "answerGuide": "1. Nilai Perolehan Tanah:\nKarena gedung lama langsung dibongkar untuk proyek dermaga, seluruh harga beli awal dan biaya bersih pembongkaran masuk ke Tanah:\nNilai Tanah = Rp 4.000.000.000 + Rp 100.000.000 = Rp 4.100.000.000.\n\n2. Bunga Konstruksi PSAK 26:\nWAAE = Rp 900.000.000.\nSeluruh WAAE ditutup oleh Pinjaman Khusus Konstruksi 11%.\nBunga yang Dikapitalisasi = Rp 900.000.000 × 11% = Rp 99.000.000.\n(D) Dermaga Dalam Konstruksi ............ Rp 99.000.000\n    (K) Kas / Utang Bunga ............................. Rp 99.000.000\n\n3. Uji Impairment Lini Amonia:\nRecoverable Amount = MAX(FVLCD Rp 650 jt, Value in Use Rp 700 jt) = Rp 700.000.000.\nRugi Penurunan Nilai = Nilai Buku (Rp 800 jt) - Recoverable Amount (Rp 700 jt) = Rp 100.000.000.\n(D) Rugi Penurunan Nilai (Laba Rugi) .... Rp 100.000.000\n    (K) Akumulasi Penurunan Nilai Aset Pabrik ......... Rp 100.000.000"
-  },
   {
     "type": "calculation",
     "scope": "TM 9: Amortisasi Suku Bunga Efektif & Bunga Berjalan PSAK 71",
