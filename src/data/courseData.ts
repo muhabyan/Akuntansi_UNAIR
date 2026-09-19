@@ -608,7 +608,7 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'AKK202', newCode: 'FEB25603011', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (L)',
             references: AKK202_REF,
-            materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 78, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 82, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'MNM101', newCode: 'MNM201', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',

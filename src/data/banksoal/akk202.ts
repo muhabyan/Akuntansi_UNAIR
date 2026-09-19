@@ -2,7 +2,7 @@
 // src/data/banksoal/akk202.ts
 // Bank Soal Esai & Kasus Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI.
-// 13 Kasus (7 Kasus Pra-UTS & 6 Kasus Pra-UAS TM 9-14); kasus TM 8 (review UTS lama) dihapus.
+// 14 Kasus (8 Kasus Pra-UTS, TM 6 memuat Studi Kasus 6 dan 6B, & 6 Kasus Pra-UAS TM 9-14); kasus TM 8 (review UTS lama) dihapus.
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { BankSoal } from '../../types';
@@ -202,6 +202,41 @@ export const AKK202_BANK_UTS: BankSoal[] = [
       "Keseimbangan setiap jurnal"
     ],
     "answerGuide": "1. Darby: 1 September Dr Purchases $50.000, Cr Accounts Payable $50.000. 1 Oktober Dr Accounts Payable $50.000, Cr Notes Payable $50.000. 1 Oktober Dr Cash $75.000, Dr Discount on Notes Payable $6.000, Cr Notes Payable $81.000. Penyesuaian 31 Desember 2025: bunga Orion = $50.000 × 8% × 3/12 = $1.000 (Dr Interest Expense $1.000, Cr Interest Payable $1.000); amortisasi diskonto Shore Bank = $6.000 × 3/12 = $1.500 (Dr Interest Expense $1.500, Cr Discount on Notes Payable $1.500). 2. Wesel berbunga: Notes Payable $50.000 + Interest Payable $1.000 = $51.000. Wesel tanpa bunga: $81.000 − ($6.000 − $1.500) = $76.500, sama dengan kas $75.000 + bunga diakui $1.500; suku bunga implisit $6.000 ÷ $75.000 = 8%. 3. Schultz: (1) Dr Cash €500, Cr Refundable Deposits €500. (2) Sales Revenue = €798.000 ÷ 1,05 = €760.000; VAT Taxes Payable = €798.000 − €760.000 = €38.000: Dr Cash €798.000, Cr Sales Revenue €760.000, Cr VAT Taxes Payable €38.000. (3) Alternatif A (PPN dikapitalisasi): Dr Equipment (Delivery Trucks) €126.000, Cr Cash €126.000. Alternatif B (PPN masukan dapat dikreditkan): Dr Equipment (Delivery Trucks) €120.000, Dr VAT Taxes Recoverable €6.000, Cr Cash €126.000. (4) Dr Land Improvements (Parking Lot) €84.000, Cr Environmental Restoration Provision €84.000; biayanya dialokasikan melalui depresiasi. 4. Provisi €84.000 disajikan sebagai liabilitas jangka panjang karena penyelesaiannya baru terjadi 2 tahun lagi."
+  },
+  {
+    "type": "case",
+    "scope": "TM 6: Rantai PPN, Garansi Jaminan dan Jasa & Premi",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "40–50 menit",
+    "question": "Studi Kasus 6B: Rantai PPN (Illustration 12.2), Garansi Denson dan Hamlin (Example 12.6–12.7), serta Premi Fluffy Cake Mix (Example 12.8)",
+    "context": "Empat contoh Kieso Bab 12 yang dibahas di TM6: PPN yang dipungut di setiap mata rantai dari produsen sampai pengecer, garansi jaminan dengan penyesuaian akhir tahun, garansi jasa yang dijual terpisah dari produknya, dan penawaran premi dengan estimasi tingkat penukaran.",
+    "data": [
+      "Rantai PPN, tarif 10%: Hill Farms Wheat menanam gandum dan menjualnya kepada Sunshine Baking seharga €1.000; Sunshine Baking membuat roti dan menjualnya kepada Halo Supermarket seharga €2.000; Halo Supermarket menjual roti kepada konsumen seharga €2.400. Semua penjualan diterima tunai.",
+      "Denson Machinery Company: mulai Juli 2025 sampai akhir tahun menjual 100 mesin tunai seharga $5.000 per unit, masing-masing bergaransi jaminan 1 tahun. Estimasi biaya garansi $200 per unit. Biaya garansi aktual $4.000 pada 2025 dan $16.000 pada 2026.",
+      "Hamlin Auto, 2 Januari 2025: menjual mobil seharga €30.000; biaya garansi jaminannya diestimasi €700 (36.000 km pertama atau 3 tahun). Pembeli juga membeli garansi jasa seharga €900 untuk tambahan 3 tahun atau 36.000 km (2028–2030); pendapatannya diakui secara garis lurus. Biaya garansi jaminan aktual €500 pada 2025 dan €100 pada 2026 dan 2027.",
+      "Fluffy Cake Mix Ltd.: menjual adonan kue £3 per kotak; pelanggan dapat menukarkan £1 dan 10 tutup kotak dengan mangkuk pengaduk berharga perolehan £2; estimasi penukaran 60%. Program dimulai Juni 2025. Selama 2025 dibeli 20.000 mangkuk seharga £2, terjual 300.000 kotak, dan ditukarkan 60.000 tutup kotak."
+    ],
+    "instructions": [
+      "Catat jurnal penjualan setiap entitas dalam rantai PPN, hitung PPN yang disetor masing-masing ke kantor pajak dan totalnya, lalu susun jurnal pembelian dan penyetoran PPN dengan label Interpretasi.",
+      "Catat jurnal garansi Denson untuk 2025 dan 2026, lalu tentukan Warranty Expense 2025 dan saldo Warranty Liability per 31 Desember 2025 dan 2026.",
+      "Catat jurnal Hamlin untuk penjualan 2 Januari 2025, biaya garansi jaminan 2025, penyesuaian 31 Desember 2025, dan pendapatan garansi jasa 2028; lalu susun skedul saldo Warranty Liability dan Unearned Warranty Revenue 2025–2030 dengan label Interpretasi.",
+      "Catat seluruh jurnal premi Fluffy 2025, hitung Premium Liability per 31 Desember 2025, dan tentukan penyajian persediaan premi, Premium Liability, dan Premium Expense."
+    ],
+    "outputFormat": [
+      "Jurnal penjualan tiga entitas dan tabel PPN dipungut, dikreditkan, dan disetor",
+      "Jurnal pembelian dan penyetoran PPN berlabel Interpretasi",
+      "Jurnal dan saldo garansi Denson serta Hamlin, termasuk skedul Interpretasi 2025–2030",
+      "Perhitungan Premium Liability dan penyajian pos premi"
+    ],
+    "rubric": [
+      "PPN disetor = PPN keluaran − PPN masukan; total disetor dibedakan dari total dipungut",
+      "Biaya garansi aktual tahun penjualan didebit ke Warranty Expense, bukan Warranty Liability",
+      "Garansi jasa dicatat di Unearned Warranty Revenue dan diakui garis lurus",
+      "Biaya premi dihitung neto setelah kas yang dibayar pelanggan",
+      "Jurnal yang tidak ditampilkan Kieso diberi label Interpretasi",
+      "Keseimbangan setiap jurnal"
+    ],
+    "answerGuide": "1. Rantai PPN (Kieso p. 1028): Hill Farms Wheat Dr Cash €1.100, Cr Sales Revenue €1.000, Cr VAT Taxes Payable €100. Sunshine Baking Dr Cash €2.200, Cr Sales Revenue €2.000, Cr VAT Taxes Payable €200. Halo Supermarket Dr Cash €2.640, Cr Sales Revenue €2.400, Cr VAT Taxes Payable €240. Kieso menamai akun ini Value-Added Taxes Payable. PPN disetor = PPN keluaran − PPN masukan: Hill Farms €100 − €0 = €100; Sunshine €200 − €100 = €100; Halo €240 − €200 = €40. Total dipungut €540, dikreditkan €300, disetor €240, yang ditanggung konsumen akhir (Kieso Illustration 12.2, p. 1029). Interpretasi (Kieso pp. 1028–1029): Sunshine membeli gandum Dr Inventory €1.000, Dr VAT Taxes Recoverable €100, Cr Cash €1.100; Halo membeli roti Dr Inventory €2.000, Dr VAT Taxes Recoverable €200, Cr Cash €2.200. Penyetoran: Hill Farms Dr VAT Taxes Payable €100, Cr Cash €100; Sunshine Dr VAT Taxes Payable €200, Cr VAT Taxes Recoverable €100, Cr Cash €100; Halo Dr VAT Taxes Payable €240, Cr VAT Taxes Recoverable €200, Cr Cash €40. Hill Farms tidak memiliki PPN masukan karena menanam sendiri gandumnya. Kieso p. 1029 hanya menyebut bahwa entitas melacak kredit PPN dan menyesuaikan Inventory (atau Cost of Goods Sold) saat menyetor PPN, tanpa menampilkan jurnalnya; berapa pun akun yang dipakai, kas yang disetor tetap sama. 2. Denson (Kieso pp. 1041–1042): estimasi total = 100 × $200 = $20.000. Juli–Desember 2025: Dr Cash $500.000, Cr Sales Revenue $500.000; biaya aktual Dr Warranty Expense $4.000, Cr Cash, Inventory, Accrued Payroll $4.000, bukan ke Warranty Liability. 31 Desember 2025: Dr Warranty Expense $16.000, Cr Warranty Liability $16.000 ($20.000 − $4.000). Warranty Expense 2025 $20.000; Warranty Liability 31 Desember 2025 $16.000 (lancar). 2026: Dr Warranty Liability $16.000, Cr Cash, Inventory, Accrued Payroll $16.000; saldo 31 Desember 2026 $0. 3. Hamlin (Kieso p. 1044): 2 Januari 2025 Dr Cash €30.900, Cr Unearned Warranty Revenue €900, Cr Sales Revenue €30.000; kas dipisah berdasarkan harga yang dinyatakan terpisah, sedangkan alokasi berdasarkan harga jual berdiri sendiri relatif adalah materi pengakuan pendapatan dari bab lain. 2025: Dr Warranty Expense €500, Cr Cash, Inventory, Accrued Payroll €500. 31 Desember 2025: Dr Warranty Expense €200, Cr Warranty Liability €200; Warranty Expense 2025 €700 dan Warranty Liability €200. 31 Desember 2028: Dr Unearned Warranty Revenue €300, Cr Warranty Revenue €300 (€900 ÷ 3); biaya garansi jasa dibebankan saat terjadi selama 2028–2030. Interpretasi (Kieso p. 1044), dengan membaca biaya €100 sebagai €100 untuk masing-masing tahun 2026 dan 2027: 2026 dan 2027 masing-masing Dr Warranty Liability €100, Cr Cash, Inventory, Accrued Payroll €100; 31 Desember 2029 dan 31 Desember 2030 masing-masing Dr Unearned Warranty Revenue €300, Cr Warranty Revenue €300. Skedul 31 Desember: Warranty Liability €200 (2025), €100 (2026), €0 (2027–2030); Unearned Warranty Revenue €900 (2025–2027), €600 (2028), €300 (2029), €0 (2030). 4. Fluffy (Kieso pp. 1046–1047): Dr Inventory of Premiums £40.000, Cr Cash £40.000; Dr Cash £900.000, Cr Sales Revenue £900.000; penukaran 60.000 tutup kotak (6.000 mangkuk): Dr Cash £6.000, Dr Premium Expense £6.000, Cr Inventory of Premiums £12.000. Estimasi tutup ditukar = 300.000 × 60% = 180.000; biaya estimasi = 180.000 ÷ 10 × (£2 − £1) = £18.000; Premium Liability = £18.000 − £6.000 = £12.000: Dr Premium Expense £12.000, Cr Premium Liability £12.000. Penyajian 31 Desember 2025: Inventory of Premiums £28.000 (£40.000 − £12.000) sebagai aset lancar, Premium Liability £12.000 sebagai liabilitas jangka pendek, Premium Expense £18.000 sebagai beban penjualan. Mangkuk diasumsikan tidak material sehingga tidak dicatat sebagai kewajiban pelaksanaan terpisah."
   },
   {
     "type": "case",

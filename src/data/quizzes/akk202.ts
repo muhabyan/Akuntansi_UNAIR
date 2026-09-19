@@ -2,7 +2,7 @@
 // src/data/quizzes/akk202.ts
 // Bank Soal Kuis Pilihan Ganda Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI
-// 66 Soal: 36 Soal Pra-UTS (TM 1-7; TM 6 memuat 6 soal) & 30 Soal Pra-UAS (TM 9-14); soal TM 8 (review UTS lama) dihapus.
+// 70 Soal: 40 Soal Pra-UTS (TM 1-7; TM 6 memuat 10 soal) & 30 Soal Pra-UAS (TM 9-14); soal TM 8 (review UTS lama) dihapus.
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { QuizQuestion } from '../../types';
@@ -441,6 +441,62 @@ export const AKK202_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Garansi jasa (service-type) dijual terpisah, sehingga kas yang diterima dicatat sebagai Unearned Warranty Revenue dan diakui sebagai pendapatan selama masa layanan. Pengakuan beban dan provisi garansi pada periode penjualan adalah perlakuan garansi jaminan (assurance-type), bukan garansi jasa."
+  },
+  {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "medium",
+    "q": "Kieso Illustration 12.2 (PPN 10%): Hill Farms Wheat menjual gandum kepada Sunshine Baking €1.000, Sunshine Baking menjual roti kepada Halo Supermarket €2.000, dan Halo Supermarket menjual roti kepada konsumen €2.400. Berapa PPN yang disetor Halo Supermarket ke kantor pajak, dan berapa total PPN yang disetor seluruh rantai?",
+    "options": [
+      "Halo €240; total disetor €540",
+      "Halo €240; total disetor €240",
+      "Halo €40; total disetor €240",
+      "Halo €40; total disetor €540"
+    ],
+    "answer": 2,
+    "explanation": "PPN disetor = PPN keluaran − PPN masukan. Halo memungut €240 tetapi sudah membayar PPN €200 kepada Sunshine Baking, sehingga menyetor €240 − €200 = €40. Hill Farms Wheat menyetor €100 dan Sunshine Baking €200 − €100 = €100, sehingga total disetor €100 + €100 + €40 = €240, yaitu PPN yang ditanggung konsumen akhir (Kieso p. 1029). €540 adalah total PPN yang dipungut, bukan yang disetor."
+  },
+  {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "advanced",
+    "q": "Denson Machinery menjual 100 mesin seharga USD 5.000 per unit pada 2025, masing-masing dengan garansi jaminan 1 tahun. Estimasi biaya garansi USD 200 per unit dan biaya garansi aktual 2025 USD 4.000. Mengikuti pola jurnal Kieso Example 12.6, bagaimana biaya aktual 2025 dan penyesuaian 31 Desember 2025 dicatat?",
+    "options": [
+      "Biaya aktual: debit Warranty Expense USD 4.000; penyesuaian: debit Warranty Expense dan kredit Warranty Liability USD 16.000",
+      "Biaya aktual: debit Warranty Liability USD 4.000; penyesuaian: debit Warranty Expense dan kredit Warranty Liability USD 16.000",
+      "Biaya aktual: debit Warranty Expense USD 4.000; penyesuaian: debit Warranty Expense dan kredit Warranty Liability USD 20.000",
+      "Biaya aktual: debit Warranty Expense USD 4.000; tanpa penyesuaian sampai klaim 2026 terjadi"
+    ],
+    "answer": 0,
+    "explanation": "Biaya garansi aktual tahun penjualan didebit ke Warranty Expense, bukan Warranty Liability (Kieso p. 1042). Estimasi total = 100 × USD 200 = USD 20.000, sehingga penyesuaian 31 Desember = USD 20.000 − USD 4.000 = USD 16.000; beban 2025 USD 20.000 dan Warranty Liability USD 16.000. Bila biaya USD 4.000 didebit ke Warranty Liability sementara penyesuaian tetap USD 16.000, beban hanya USD 16.000 dan liabilitas hanya USD 12.000."
+  },
+  {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "medium",
+    "q": "Pada 2 Januari 2025 Hamlin Auto menjual mobil €30.000 dan garansi jasa terpisah €900 untuk tambahan 3 tahun (2028–2030), yang pendapatannya diakui secara garis lurus. Bagaimana €900 dicatat pada tanggal penjualan, dan berapa Warranty Revenue yang diakui pada 2028?",
+    "options": [
+      "Kredit Sales Revenue €900; Warranty Revenue 2028 nihil",
+      "Kredit Warranty Liability €900; Warranty Revenue 2028 €300",
+      "Kredit Unearned Warranty Revenue €900; Warranty Revenue 2028 €900",
+      "Kredit Unearned Warranty Revenue €900; Warranty Revenue 2028 €300"
+    ],
+    "answer": 3,
+    "explanation": "Kieso memisahkan kas €30.900 berdasarkan harga yang dinyatakan terpisah: Sales Revenue €30.000 dan Unearned Warranty Revenue €900. Garansi jasa adalah kewajiban pelaksanaan terpisah yang diakui garis lurus selama 2028–2030, sehingga 31 Desember 2028 dicatat Unearned Warranty Revenue €300 dan Warranty Revenue €300 (€900 ÷ 3) (Kieso p. 1044)."
+  },
+  {
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "difficulty": "advanced",
+    "q": "Fluffy Cake Mix menjual 300.000 kotak adonan kue pada 2025. Pelanggan menukarkan £1 dan 10 tutup kotak untuk satu mangkuk yang berharga perolehan £2, dan perusahaan mengestimasi 60% tutup kotak akan ditukarkan. Selama 2025 ditukarkan 60.000 tutup kotak. Berapa Premium Liability per 31 Desember 2025?",
+    "options": [
+      "£18.000",
+      "£12.000",
+      "£24.000",
+      "£30.000"
+    ],
+    "answer": 1,
+    "explanation": "Estimasi tutup ditukar = 300.000 × 60% = 180.000; biaya estimasi penukaran = 180.000 ÷ 10 × (£2 − £1) = £18.000, karena pelanggan membayar £1 per mangkuk. Biaya penukaran yang sudah terjadi = 6.000 mangkuk × £1 = £6.000, sehingga Premium Liability = £18.000 − £6.000 = £12.000 dan Premium Expense 2025 = £18.000 (Kieso p. 1047)."
   },
   {
     "tm": 7,
