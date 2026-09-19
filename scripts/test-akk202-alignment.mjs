@@ -309,7 +309,28 @@ for (const term of ['Interpretasi A', 'Interpretasi B', 'Alternatif A', 'Alterna
   assert.ok(reviewText.includes(term), `review keeps "${term}"`);
 }
 const practices = review.blocks.filter((block) => block.kind === 'solution-reveal');
-assert.equal(practices.length, 7, 'review has seven integrated practices');
+assert.equal(practices.length, 8, 'review has eight integrated practices (seven plus Latihan 6B)');
+assert.ok(review.intro.includes('delapan latihan terpadu'), 'review intro counts eight practices');
+{
+  // TM6 Ch. 12 worked cases: §8 rules, §10 key figures, §11 traps and Latihan 6B, with Interpretasi kept labelled.
+  for (const term of ['Illustration 12.2', 'Example 12.6', 'Example 12.7', 'Example 12.8', 'bukan Warranty Liability',
+    'Interpretasi — jurnal pembelian dan penyetoran PPN (Kieso pp. 1028–1029)', 'Interpretasi — 2026–2027 dan 2029–2030 (Kieso p. 1044)',
+    'menyesuaikan Inventory (atau Cost of Goods Sold)', 'relative stand-alone selling price', 'Program loyalitas']) {
+    assert.ok(reviewText.includes(term), `review keeps "${term}"`);
+  }
+  const practice6b = practices.find((block) => block.title.startsWith('6B. '));
+  assert.ok(practice6b && practices.indexOf(practice6b) === practices.findIndex((block) => block.title.startsWith('6. ')) + 1, 'Latihan 6B follows Latihan 6');
+  for (const derived of ['€240', '€540', '€40', '\\$20.000', '€200', '€300', '£18.000', '£12.000']) {
+    assert.ok(!practice6b.prompt.includes(derived), `Latihan 6B prompt must not give the derived figure ${derived}`);
+  }
+  const journals6b = flatten(practice6b.blocks).filter((block) => block.kind === 'journal');
+  const densonActual = journals6b.find((j) => j.lines.some((l) => l.account === 'Warranty Expense' && l.debit === '$4.000'));
+  assert.ok(densonActual && !densonActual.lines.some((l) => l.account === 'Warranty Liability'), 'Latihan 6B: Denson year-of-sale costs go to Warranty Expense');
+  assert.ok(journals6b.filter((j) => !j.caption.startsWith('(')).every((j) => j.caption.startsWith('Interpretasi (Kieso pp. 1028–1029)')), 'Latihan 6B: the only uncaptioned-part journal is the labelled VAT Interpretasi');
+  const keyFigures = review.blocks.find((block) => block.kind === 'table' && block.headers.join('|') === 'TM|Kasus|Hasil');
+  assert.deepEqual(keyFigures.rows.filter((row) => /Illustration 12\.2|Example 12\.[678]/.test(row[1])).map((row) => row[1].split(' (')[0]),
+    ['Rantai PPN', 'Denson Machinery', 'Hamlin Auto', 'Fluffy Cake Mix'], 'Angka Kunci lists the four TM6 cases');
+}
 // Every number in the review occurs in at least one TM1–TM7 reading.
 const allReadingNumbers = new Set([...readingNumbers.values()].flatMap((set) => [...set]));
 for (const token of numberTokens(readingText(review))) {
