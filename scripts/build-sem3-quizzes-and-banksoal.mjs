@@ -1,5 +1,6 @@
 // scripts/build-sem3-quizzes-and-banksoal.mjs
-// Generator kuis pilihan ganda dan bank soal komprehensif untuk 7 MK Semester 3.
+// Generator kuis pilihan ganda dan bank soal komprehensif untuk MK Semester 3 yang masih dihasilkan generator
+// (daftar yang boleh dihasilkan ada di scripts/test-sem3-generators.mjs; sisanya dirawat manual).
 import fs from 'node:fs';
 import path from 'node:path';
 
