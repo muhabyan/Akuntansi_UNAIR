@@ -101,9 +101,22 @@ assert.equal(mod.AKK202_QUIZ_UAS.length, 30, 'TM9–TM14 quiz unchanged in count
 assert.ok(mod.AKK202_QUIZ_UAS.every((item) => item.tm >= 9 && item.tm <= 14), 'UAS quiz keeps TM9–TM14 only');
 const quizCounts = countByTm(quiz);
 assert.deepEqual([...quizCounts.keys()].sort((a, b) => a - b), PRA_UTS_TMS, 'quiz UTS covers exactly TM1–TM7');
-// TM6 carries a sixth item: the service-type warranty question (TM6 §9) that replaced the removed TM8 item.
-for (const tm of PRA_UTS_TMS) assert.equal(quizCounts.get(tm), tm === 6 ? 6 : 5, `quiz TM${tm}: item count`);
+// TM6 carries a sixth item (the service-type warranty question that replaced the removed TM8 item) and four items
+// for the Ch. 12 worked cases: VAT chain (Illustration 12.2), Denson, Hamlin and Fluffy (Examples 12.6–12.8).
+for (const tm of PRA_UTS_TMS) assert.equal(quizCounts.get(tm), tm === 6 ? 10 : 5, `quiz TM${tm}: item count`);
 assert.ok(quiz.some((item) => item.tm === 6 && item.options[item.answer].includes('Unearned Warranty Revenue')), 'quiz TM6 covers service-type warranty');
+{
+  const tm6Quiz = quiz.filter((item) => item.tm === 6);
+  const keyed = (needle) => tm6Quiz.find((item) => item.q.includes(needle));
+  assert.equal(keyed('Illustration 12.2').options[keyed('Illustration 12.2').answer], 'Halo €40; total disetor €240', 'quiz TM6 VAT chain');
+  const denson = keyed('Denson Machinery');
+  assert.ok(/^Biaya aktual: debit Warranty Expense USD 4\.000; .*USD 16\.000$/.test(denson.options[denson.answer]), 'quiz TM6 Denson: actual costs to Warranty Expense');
+  assert.ok(denson.options.some((option) => option.startsWith('Biaya aktual: debit Warranty Liability')), 'quiz TM6 Denson keeps the Warranty Liability trap');
+  const hamlin = keyed('Hamlin Auto');
+  assert.equal(hamlin.options[hamlin.answer], 'Kredit Unearned Warranty Revenue €900; Warranty Revenue 2028 €300', 'quiz TM6 Hamlin');
+  const fluffy = keyed('Fluffy Cake Mix');
+  assert.equal(fluffy.options[fluffy.answer], '£12.000', 'quiz TM6 Fluffy premium liability');
+}
 assertNoOldTopics('quiz UTS', quiz);
 const questionTexts = new Set();
 quiz.forEach((item, index) => {
@@ -138,7 +151,16 @@ for (const card of flashcards) {
 }
 const praUtsCards = flashcards.filter((card) => card.tm <= 7);
 const fcCounts = countByTm(praUtsCards);
-for (const tm of PRA_UTS_TMS) assert.equal(fcCounts.get(tm), 6, `flashcards TM${tm}: 6 cards`);
+// TM6 adds four cards (tm06-07 to tm06-10) for the Ch. 12 worked cases; every other TM keeps six.
+for (const tm of PRA_UTS_TMS) assert.equal(fcCounts.get(tm), tm === 6 ? 10 : 6, `flashcards TM${tm}: card count`);
+assert.deepEqual(praUtsCards.filter((card) => card.tm === 6).map((card) => card.id.slice(-2)), ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10'], 'TM6 card ids are sequential');
+for (const [id, needle] of [['07', 'Illustration 12.2'], ['08', 'Example 12.6'], ['09', 'Example 12.7'], ['10', 'Example 12.8']]) {
+  assert.ok(praUtsCards.find((card) => card.id === `akk202-v2-tm06-${id}`).front.includes(needle), `flashcard tm06-${id} covers ${needle}`);
+}
+assert.ok(/bukan Warranty Liability/.test(praUtsCards.find((card) => card.id === 'akk202-v2-tm06-08').back), 'Denson card states the Warranty Expense rule');
+// FlashcardDeck shows the answer on a fixed-height face that clips overflow; 281 characters (akk202-v2-tm06-05) is the
+// longest back verified in the browser to fit, so a longer back would hide its last sentence.
+for (const card of praUtsCards) assert.ok(card.back.length <= 281, `${card.id}: back has ${card.back.length} characters, over the 281 that fit the card face`);
 // The six stale TM8 cards were removed; TM9–TM14 cards are unchanged.
 assert.ok(flashcards.every((card) => card.tm !== 8), 'no TM8 flashcards');
 assert.equal(flashcards.length - praUtsCards.length, 36, 'TM9–TM14 flashcards unchanged in count');
@@ -163,7 +185,9 @@ for (const card of praUtsCards) {
 
 // ---------------------------------------------------------------- Bank soal (plain text in EssayBank)
 const bank = mod.AKK202_BANK_UTS;
-assert.equal(bank.length, 7, 'bank soal UTS: one case per TM');
+// One case per TM, plus Studi Kasus 6B for the TM6 Ch. 12 worked cases (VAT chain, warranties, premiums).
+const BANK_UTS_CASES = [[1, '1'], [2, '2'], [3, '3'], [4, '4'], [5, '5'], [6, '6'], [6, '6B'], [7, '7']];
+assert.equal(bank.length, BANK_UTS_CASES.length, 'bank soal UTS: one case per TM plus Studi Kasus 6B');
 assert.equal(mod.AKK202_BANK.length, bank.length + mod.AKK202_BANK_UAS.length);
 // The stale TM8 case was removed; the TM9–TM14 cases are unchanged.
 assert.equal(mod.AKK202_BANK_UAS.length, 6, 'TM9–TM14 bank soal unchanged in count');
@@ -172,11 +196,11 @@ assertNoOldTopics('bank soal UTS', bank);
 const plainTextFields = ['question', 'scope', 'difficulty', 'context', 'answerGuide'];
 const listFields = ['data', 'instructions', 'outputFormat', 'rubric'];
 bank.forEach((item, index) => {
-  const tm = index + 1;
-  const label = `bank soal TM${tm}`;
+  const [tm, caseNumber] = BANK_UTS_CASES[index];
+  const label = `bank soal ${caseNumber} (TM${tm})`;
   assert.equal(item.type, 'case', `${label}: type`);
   assert.ok(item.scope.startsWith(`TM ${tm}: `), `${label}: scope starts with "TM ${tm}: "`);
-  assert.ok(item.question.startsWith(`Studi Kasus ${tm}: `), `${label}: question numbering`);
+  assert.ok(item.question.startsWith(`Studi Kasus ${caseNumber}: `), `${label}: question numbering`);
   for (const field of listFields) assert.ok(Array.isArray(item[field]) && item[field].length > 0, `${label}: ${field} list`);
   const texts = [...plainTextFields.map((field) => item[field]), ...listFields.flatMap((field) => item[field])];
   for (const text of texts) {
@@ -188,6 +212,20 @@ bank.forEach((item, index) => {
   assertNumbersFromReading(label, tm, [...['question', 'context', 'answerGuide'].map((field) => item[field]),
     ...listFields.flatMap((field) => item[field])]);
 });
+{
+  // Studi Kasus 6B: entries Kieso does not show stay labelled Interpretasi, both VAT recording routes stay visible,
+  // and the data never hands over a figure the instructions ask for.
+  const case6b = bank[BANK_UTS_CASES.findIndex(([, caseNumber]) => caseNumber === '6B')];
+  const guide = case6b.answerGuide;
+  assert.ok(guide.includes('Interpretasi (Kieso pp. 1028–1029)') && guide.includes('Interpretasi (Kieso p. 1044)'), 'case 6B labels Interpretasi entries');
+  assert.ok(guide.includes('VAT Taxes Recoverable') && guide.includes('menyesuaikan Inventory (atau Cost of Goods Sold)'), 'case 6B keeps both VAT recording routes');
+  assert.ok(guide.includes('bukan ke Warranty Liability'), 'case 6B states the Warranty Expense rule');
+  assert.ok(guide.includes('harga jual berdiri sendiri relatif'), 'case 6B notes the allocation boundary');
+  const data = case6b.data.join(' ');
+  for (const derived of ['€240', '€540', '€40', '$20.000', '€200', '€300', '£18.000', '£12.000', '£28.000']) {
+    assert.ok(!data.includes(derived), `case 6B data must not give the derived figure ${derived}`);
+  }
+}
 
 // ---------------------------------------------------------------- TM8 reading withheld
 // The stale TM8 reading is not loaded until it is rebuilt after UTS; the catalog lists TM1–TM7 and TM9–TM14.

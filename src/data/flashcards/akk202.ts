@@ -1,5 +1,5 @@
 // src/data/flashcards/akk202.ts
-// Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) — 78 kartu (6 kartu per TM; kartu TM 8 lama dihapus)
+// Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) — 82 kartu (6 kartu per TM, TM 6 memuat 10 kartu; kartu TM 8 lama dihapus)
 // Kartu TM 1-7 mengikuti bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts; kartu yang isinya berubah memakai id akk202-v2-tmXX-YY.
 import type { AdvancedStudyCard } from '../../types';
 
@@ -327,6 +327,42 @@ export const AKK202_FC: AdvancedStudyCard[] = [
     "category": "Klasifikasi",
     "front": "Spektrum Kontinjensi",
     "back": "Liabilitas kontinjensi (possible) hanya diungkapkan dan tidak pernah diakui; yang probable dengan estimasi andal menjadi provisi. Aset kontinjensi probable hanya diungkapkan; aset baru diakui bila virtually certain. Kondisi remote tidak diakui maupun diungkapkan."
+  },
+  {
+    "id": "akk202-v2-tm06-07",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Mekanisme",
+    "front": "Rantai PPN: PPN yang Disetor (Illustration 12.2)",
+    "back": "PPN disetor = keluaran − masukan: Hill Farms €100; Sunshine Baking €200 − €100 = €100; Halo €240 − €200 = €40. Total disetor €240 ditanggung konsumen; €540 = total dipungut (p. 1029). Jurnal pembelian dan penyetoran (VAT Taxes Recoverable) adalah Interpretasi (pp. 1028–1029)."
+  },
+  {
+    "id": "akk202-v2-tm06-08",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Jurnal",
+    "front": "Garansi Jaminan: Biaya Aktual Tahun Penjualan (Example 12.6)",
+    "back": "Biaya aktual tahun penjualan didebit ke Warranty Expense, bukan Warranty Liability. Penyesuaian 31 Desember mengkredit Warranty Liability sebesar estimasi − biaya aktual (Denson: $20.000 − $4.000 = $16.000). Biaya tahun berikutnya mendebit Warranty Liability (p. 1042)."
+  },
+  {
+    "id": "akk202-v2-tm06-09",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Perbandingan",
+    "front": "Garansi Jasa Dijual Terpisah (Example 12.7)",
+    "back": "Hamlin memisah kas €30.900 menurut harga yang dinyatakan: Sales Revenue €30.000 dan Unearned Warranty Revenue €900 (alokasi harga jual berdiri sendiri relatif: bab lain). Pendapatan €900 ÷ 3 = €300 per tahun, 2028–2030 (p. 1044). Jurnal 2029–2030 adalah Interpretasi."
+  },
+  {
+    "id": "akk202-v2-tm06-10",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "category": "Rumus",
+    "front": "Premium Liability (Example 12.8)",
+    "back": "Premium Liability = estimasi biaya neto penukaran − biaya penukaran yang sudah terjadi. Fluffy: 300.000 × 60% = 180.000 tutup; 180.000 ÷ 10 × (£2 − £1) = £18.000; dikurangi £6.000 = £12.000. Premium Expense 2025 £18.000 (Kieso p. 1047)."
   },
   {
     "id": "akk202-v2-tm07-01",
