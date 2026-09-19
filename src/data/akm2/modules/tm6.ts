@@ -224,11 +224,347 @@ const BALANCE_SHEET_CLASSIFICATION_CASE: ContentBlock = {
   ]
 };
 
+const VAT_CHAIN_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Contoh Kieso — Illustration 12.2: Rantai PPN Hill Farms Wheat, Sunshine Baking, Halo Supermarket (Kieso pp. 1028–1029)',
+  prompt: 'Tarif PPN 10%. (1) Hill Farms Wheat menanam gandum dan menjualnya kepada Sunshine Baking seharga **€1.000**. (2) Sunshine Baking membuat roti dari gandum tersebut dan menjualnya kepada Halo Supermarket seharga **€2.000**. (3) Halo Supermarket menjual roti kepada konsumen seharga **€2.400**. Catat jurnal setiap entitas dan tentukan PPN yang disetor masing-masing ke kantor pajak.',
+  blocks: [
+    { kind: 'h3', text: 'Jurnal penjualan setiap entitas (Kieso p. 1028)' },
+    {
+      kind: 'journal',
+      caption: '(1) Hill Farms Wheat — penjualan gandum kepada Sunshine Baking',
+      lines: [
+        { account: 'Cash', debit: '€1.100' },
+        { account: 'Sales Revenue', credit: '€1.000', isCredit: true },
+        { account: 'VAT Taxes Payable', credit: '€100', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(2) Sunshine Baking — penjualan roti kepada Halo Supermarket',
+      lines: [
+        { account: 'Cash', debit: '€2.200' },
+        { account: 'Sales Revenue', credit: '€2.000', isCredit: true },
+        { account: 'VAT Taxes Payable', credit: '€200', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(3) Halo Supermarket — penjualan roti kepada konsumen',
+      lines: [
+        { account: 'Cash', debit: '€2.640' },
+        { account: 'Sales Revenue', credit: '€2.400', isCredit: true },
+        { account: 'VAT Taxes Payable', credit: '€240', isCredit: true }
+      ]
+    },
+    {
+      kind: 'p',
+      text: 'Kieso menamai akun ini **Value-Added Taxes Payable**; TM6 memakai nama VAT Taxes Payable untuk akun yang sama. Hill Farms Wheat menyetor €100; Sunshine Baking menyetor €100, bukan €200, karena sudah membayar PPN €100 kepada Hill Farms Wheat; Halo Supermarket menyetor €40 karena sudah membayar PPN €200 kepada Sunshine Baking (Kieso p. 1028).'
+    },
+    { kind: 'formula', text: '\\text{PPN disetor}=\\text{PPN keluaran}-\\text{PPN masukan}\\\\\\text{Hill Farms: €100}-\\text{€0}=\\text{€100}\\qquad\\text{Sunshine: €200}-\\text{€100}=\\text{€100}\\qquad\\text{Halo: €240}-\\text{€200}=\\text{€40}' },
+    { kind: 'h3', text: 'Jurnal pembelian dan penyetoran' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Interpretasi — jurnal pembelian dan penyetoran PPN (Kieso pp. 1028–1029)',
+      text: 'Kieso hanya menampilkan jurnal penjualan. Jurnal pembelian dan penyetoran di bawah disusun dari penjelasan kredit PPN pada pp. 1028–1029, dengan akun PPN masukan VAT Taxes Recoverable seperti Alternatif B Schultz. Hill Farms Wheat menanam sendiri gandumnya sehingga tidak memiliki PPN masukan. Kieso p. 1029 hanya menyebut bahwa entitas harus melacak kredit PPN dan menyesuaikan Inventory (atau Cost of Goods Sold) saat menyetor PPN, tanpa menampilkan jurnalnya; berapa pun akun yang dipakai, kas yang disetor ke kantor pajak tetap sama.'
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — Sunshine Baking membeli gandum dari Hill Farms Wheat',
+      lines: [
+        { account: 'Inventory', debit: '€1.000' },
+        { account: 'VAT Taxes Recoverable', debit: '€100' },
+        { account: 'Cash', credit: '€1.100', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — Halo Supermarket membeli roti dari Sunshine Baking',
+      lines: [
+        { account: 'Inventory', debit: '€2.000' },
+        { account: 'VAT Taxes Recoverable', debit: '€200' },
+        { account: 'Cash', credit: '€2.200', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — Hill Farms Wheat menyetor PPN ke kantor pajak',
+      lines: [
+        { account: 'VAT Taxes Payable', debit: '€100' },
+        { account: 'Cash', credit: '€100', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — Sunshine Baking menyetor PPN neto ke kantor pajak',
+      lines: [
+        { account: 'VAT Taxes Payable', debit: '€200' },
+        { account: 'VAT Taxes Recoverable', credit: '€100', isCredit: true },
+        { account: 'Cash', credit: '€100', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — Halo Supermarket menyetor PPN neto ke kantor pajak',
+      lines: [
+        { account: 'VAT Taxes Payable', debit: '€240' },
+        { account: 'VAT Taxes Recoverable', credit: '€200', isCredit: true },
+        { account: 'Cash', credit: '€40', isCredit: true }
+      ]
+    },
+    { kind: 'h3', text: 'Siapa yang menanggung PPN? (Kieso Illustration 12.2, p. 1029)' },
+    {
+      kind: 'table',
+      headers: ['Entitas', 'PPN dipungut', 'PPN disetor', 'PPN dikreditkan', 'Sisa terutang'],
+      rows: [
+        ['Hill Farms Wheat', '€100', '€100', '€0', '€0'],
+        ['Sunshine Baking', '€200', '€100', '€100', '€0'],
+        ['Halo Supermarket', '€240', '€40', '€200', '€0'],
+        ['**Total**', '**€540**', '**€240**', '**€300**', '**€0**']
+      ],
+      caption: 'Total PPN yang disetor ke kantor pajak €240 ditanggung konsumen akhir sebagai bagian harga beli roti; tidak ada entitas dalam rantai yang menanggung arus kas neto untuk PPN (Kieso p. 1029).'
+    },
+    {
+      kind: 'p',
+      text: 'Keunggulan PPN: mekanismenya mengoreksi diri, karena Halo Supermarket melaporkan pembeliannya dari Sunshine Baking untuk mengklaim kredit, sehingga kantor pajak memiliki catatan transaksi tersebut. Kelemahannya: pencatatan lebih banyak karena setiap entitas harus melacak kredit PPN (Kieso p. 1029).'
+    }
+  ]
+};
+
+const DENSON_ASSURANCE_WARRANTY_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Contoh Kieso — Example 12.6: Denson Machinery, Garansi Jaminan (Kieso pp. 1041–1042)',
+  prompt: 'Denson Machinery Company mulai memproduksi mesin baru pada Juli 2025 dan sampai akhir tahun menjual **100 mesin** secara tunai seharga **\\$5.000** per unit (penjualan \\$500.000). Setiap mesin bergaransi 1 tahun. Berdasarkan pengalaman atas mesin serupa, biaya garansi rata-rata **\\$200 per unit** (total estimasi \\$20.000). Biaya garansi aktual **\\$4.000 pada 2025** dan **\\$16.000 pada 2026**. Catat jurnal penjualan dan biaya garansi 2025 dan 2026.',
+  blocks: [
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Biaya aktual tahun penjualan: debit Warranty Expense, bukan Warranty Liability',
+      text: 'Pada pola jurnal Kieso (p. 1042), biaya garansi aktual yang terjadi **pada tahun penjualan** didebit ke **Warranty Expense**. Warranty Liability baru dibentuk melalui **jurnal penyesuaian 31 Desember** sebesar estimasi total dikurangi biaya aktual tahun berjalan (\\$20.000 − \\$4.000 = \\$16.000). Baru pada **tahun berikutnya** biaya aktual atas penjualan tahun lalu didebit ke Warranty Liability. Bila biaya 2025 \\$4.000 didebit ke Warranty Liability sementara penyesuaian tetap \\$16.000, beban 2025 hanya \\$16.000 dan liabilitas hanya \\$12.000; keduanya salah.'
+    },
+    { kind: 'formula', text: '\\text{Estimasi total}=100\\times\\text{USD }200=\\text{USD }20.000\\qquad\\text{Liabilitas 31/12/2025}=\\text{USD }20.000-\\text{USD }4.000=\\text{USD }16.000' },
+    {
+      kind: 'journal',
+      caption: '(1) Juli–Desember 2025 — penjualan mesin',
+      lines: [
+        { account: 'Cash', debit: '$500.000' },
+        { account: 'Sales Revenue', credit: '$500.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(2) Juli–Desember 2025 — biaya garansi aktual tahun penjualan didebit ke Warranty Expense',
+      lines: [
+        { account: 'Warranty Expense', debit: '$4.000' },
+        { account: 'Cash, Inventory, Accrued Payroll', credit: '$4.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(3) 31 Desember 2025 — penyesuaian: estimasi klaim garansi 2026',
+      lines: [
+        { account: 'Warranty Expense', debit: '$16.000' },
+        { account: 'Warranty Liability', credit: '$16.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'p',
+      text: 'Laporan 2025: Sales Revenue **\\$500.000**; Warranty Expense **\\$20.000** (\\$4.000 + \\$16.000); Warranty Liability (lancar) **\\$16.000**.'
+    },
+    {
+      kind: 'journal',
+      caption: '(4) 1 Januari–31 Desember 2026 — biaya garansi aktual atas penjualan 2025 didebit ke Warranty Liability',
+      lines: [
+        { account: 'Warranty Liability', debit: '$16.000' },
+        { account: 'Cash, Inventory, Accrued Payroll', credit: '$16.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'table',
+      headers: ['Tahun', 'Biaya aktual', 'Didebit ke', 'Warranty Expense', 'Warranty Liability akhir tahun'],
+      rows: [
+        ['2025', '\\$4.000', 'Warranty Expense', '\\$20.000 (\\$4.000 + penyesuaian \\$16.000)', '\\$16.000'],
+        ['2026', '\\$16.000', 'Warranty Liability', '\\$0', '\\$0']
+      ],
+      caption: 'Pada akhir 2026 tidak ada Warranty Liability untuk mesin yang dijual 2025 (Kieso p. 1042). Biaya aktual 2026 sama dengan estimasi, sehingga contoh ini tidak memerlukan koreksi estimasi.'
+    }
+  ]
+};
+
+const HAMLIN_WARRANTIES_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Contoh Kieso — Example 12.7: Hamlin Auto, Garansi Jaminan dan Garansi Jasa (Kieso p. 1044)',
+  prompt: 'Pada 2 Januari 2025 Anda membeli mobil dari Hamlin Auto seharga **€30.000**. Hamlin mengestimasi biaya garansi jaminan mobil tersebut **€700** (perbaikan untuk 36.000 km pertama atau 3 tahun, mana yang lebih dulu). Anda juga membeli **garansi jasa seharga €900** untuk tambahan 3 tahun atau 36.000 km. Biaya garansi jaminan aktual **€500 pada 2025** dan **€100 pada 2026 dan 2027**. Hamlin mengakui pendapatan garansi jasa secara garis lurus. Catat jurnal 2025 dan 2028.',
+  blocks: [
+    { kind: 'h3', text: 'Pemisahan harga transaksi' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Harga yang dinyatakan terpisah',
+      text: 'Kieso memisahkan kas €30.900 berdasarkan harga yang dinyatakan terpisah: **€30.000** untuk mobil beserta garansi jaminannya dan **€900** untuk garansi jasa (p. 1044). Garansi jasa adalah kewajiban pelaksanaan terpisah yang dicatat di Unearned Warranty Revenue lalu diakui secara garis lurus selama masa berlakunya (pp. 1042–1043). Alokasi berdasarkan harga jual berdiri sendiri relatif (relative stand-alone selling price) adalah materi pengakuan pendapatan dari bab lain dan tidak dibahas di Bab 12.'
+    },
+    { kind: 'h3', text: 'Jurnal yang ditampilkan Kieso (2025 dan 2028)' },
+    {
+      kind: 'journal',
+      caption: '(1) 2 Januari 2025 — penjualan mobil dan garansi jasa',
+      lines: [
+        { account: 'Cash', debit: '€30.900' },
+        { account: 'Unearned Warranty Revenue', credit: '€900', isCredit: true },
+        { account: 'Sales Revenue', credit: '€30.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(2) 2 Januari–31 Desember 2025 — biaya garansi jaminan aktual didebit ke Warranty Expense',
+      lines: [
+        { account: 'Warranty Expense', debit: '€500' },
+        { account: 'Cash, Inventory, Accrued Payroll', credit: '€500', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(3) 31 Desember 2025 — penyesuaian: estimasi klaim garansi jaminan 2026–2027',
+      lines: [
+        { account: 'Warranty Expense', debit: '€200' },
+        { account: 'Warranty Liability', credit: '€200', isCredit: true }
+      ]
+    },
+    {
+      kind: 'p',
+      text: 'Laporan 2025: Sales Revenue **€30.000**; Warranty Expense **€700**; Warranty Liability **€200** (€700 − €500) untuk garansi jaminan (Kieso p. 1044).'
+    },
+    {
+      kind: 'journal',
+      caption: '(4) 31 Desember 2028 — pendapatan garansi jasa (€900 ÷ 3)',
+      lines: [
+        { account: 'Unearned Warranty Revenue', debit: '€300' },
+        { account: 'Warranty Revenue', credit: '€300', isCredit: true }
+      ]
+    },
+    { kind: 'p', text: 'Biaya garansi jasa dibebankan saat terjadi selama 2028–2030 (Kieso p. 1044).' },
+    { kind: 'h3', text: 'Tahun yang tidak ditampilkan Kieso' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Interpretasi — jurnal 2026–2027, 2029–2030, dan skedul saldo (Kieso p. 1044)',
+      text: 'Kieso hanya menampilkan jurnal 2025 dan 2028. Jurnal di bawah melanjutkan pola Example 12.6 jurnal (4), yaitu biaya aktual tahun berikutnya didebit ke Warranty Liability (p. 1042), dan pola garis lurus €900 ÷ 3 = €300 per tahun (p. 1044). Biaya aktual €100 dibaca sebagai €100 untuk masing-masing tahun 2026 dan 2027, sehingga total biaya aktual sama dengan estimasi €700.'
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — 2026: biaya garansi jaminan aktual didebit ke Warranty Liability',
+      lines: [
+        { account: 'Warranty Liability', debit: '€100' },
+        { account: 'Cash, Inventory, Accrued Payroll', credit: '€100', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — 2027: biaya garansi jaminan aktual didebit ke Warranty Liability',
+      lines: [
+        { account: 'Warranty Liability', debit: '€100' },
+        { account: 'Cash, Inventory, Accrued Payroll', credit: '€100', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — 31 Desember 2029: pendapatan garansi jasa',
+      lines: [
+        { account: 'Unearned Warranty Revenue', debit: '€300' },
+        { account: 'Warranty Revenue', credit: '€300', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: 'Interpretasi — 31 Desember 2030: pendapatan garansi jasa',
+      lines: [
+        { account: 'Unearned Warranty Revenue', debit: '€300' },
+        { account: 'Warranty Revenue', credit: '€300', isCredit: true }
+      ]
+    },
+    {
+      kind: 'table',
+      headers: ['31 Desember', 'Warranty Liability (jaminan)', 'Unearned Warranty Revenue (jasa)', 'Warranty Revenue tahun berjalan'],
+      rows: [
+        ['2025', '€200', '€900', '—'],
+        ['2026', '€100', '€900', '—'],
+        ['2027', '€0', '€900', '—'],
+        ['2028', '€0', '€600', '€300'],
+        ['2029', '€0', '€300', '€300'],
+        ['2030', '€0', '€0', '€300']
+      ],
+      caption: 'Interpretasi (Kieso p. 1044): Kieso hanya menyatakan Warranty Liability €200 per 31 Desember 2025 dan pendapatan €300 untuk 2028; baris lain diturunkan dengan pola yang sama.'
+    }
+  ]
+};
+
+const FLUFFY_PREMIUM_CASE: ContentBlock = {
+  kind: 'solution-reveal',
+  title: 'Contoh Kieso — Example 12.8: Fluffy Cake Mix, Premi dan Premium Liability (Kieso pp. 1046–1047)',
+  prompt: 'Fluffy Cake Mix Ltd. menjual adonan kue seharga **£3 per kotak** dan menawarkan mangkuk pengaduk kepada pelanggan yang menukarkan **£1 dan 10 tutup kotak**. Harga perolehan mangkuk **£2**, dan perusahaan mengestimasi **60%** tutup kotak akan ditukarkan. Program dimulai Juni 2025. Selama 2025 Fluffy membeli **20.000 mangkuk** seharga £2, menjual **300.000 kotak** seharga £3, dan menerima penukaran **60.000 tutup kotak**. Catat jurnal 2025.',
+  blocks: [
+    {
+      kind: 'journal',
+      caption: '(1) 2025 — pembelian 20.000 mangkuk × £2',
+      lines: [
+        { account: 'Inventory of Premiums', debit: '£40.000' },
+        { account: 'Cash', credit: '£40.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(2) 2025 — penjualan 300.000 kotak × £3',
+      lines: [
+        { account: 'Cash', debit: '£900.000' },
+        { account: 'Sales Revenue', credit: '£900.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'journal',
+      caption: '(3) 2025 — penukaran 60.000 tutup kotak: 6.000 mangkuk diserahkan, kas £1 per mangkuk',
+      lines: [
+        { account: 'Cash', debit: '£6.000' },
+        { account: 'Premium Expense', debit: '£6.000' },
+        { account: 'Inventory of Premiums', credit: '£12.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'formula',
+      text: '\\text{Estimasi tutup ditukar}=300.000\\times 60\\%=180.000\\\\\\text{Biaya estimasi penukaran}=\\frac{180.000}{10}\\times(\\text{£}2-\\text{£}1)=\\text{£}18.000\\\\\\text{Premium Liability}=\\text{£}18.000-\\text{£}6.000=\\text{£}12.000',
+      note: 'Kieso p. 1047. Biaya yang ditanggung perusahaan per mangkuk adalah £2 − £1 = £1, karena pelanggan membayar £1.'
+    },
+    {
+      kind: 'journal',
+      caption: '(4) 31 Desember 2025 — penyesuaian: estimasi premi yang masih akan ditukar',
+      lines: [
+        { account: 'Premium Expense', debit: '£12.000' },
+        { account: 'Premium Liability', credit: '£12.000', isCredit: true }
+      ]
+    },
+    {
+      kind: 'table',
+      headers: ['Pos 2025', 'Jumlah', 'Penyajian'],
+      rows: [
+        ['Inventory of Premiums', '£28.000 (£40.000 − £12.000)', 'Aset lancar'],
+        ['Premium Liability', '£12.000', 'Liabilitas jangka pendek'],
+        ['Premium Expense', '£18.000 (£6.000 + £12.000)', 'Beban penjualan di laporan laba rugi']
+      ],
+      caption: 'Kieso p. 1047.'
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Asumsi Kieso',
+      text: 'Solusi mengasumsikan mangkuk tidak material sehingga tidak dicatat sebagai kewajiban pelaksanaan terpisah; asumsi yang sama dipakai untuk soal premi di Bab 12 (Kieso p. 1047).'
+    }
+  ]
+};
+
 export const TM6_READING: Reading = {
   tm: 6,
   title: 'Liabilitas Jangka Pendek, Provisi, dan Kontinjensi',
   ref: 'Kieso IFRS 5e Ch. 12 (pp. 1015–1092) | IAS 1, IAS 37',
-  intro: 'TM6 membahas seluruh Kieso Bab 12: definisi dan klasifikasi liabilitas jangka pendek, utang usaha dan wesel bayar, pembiayaan kembali, dividen dan pendapatan diterima di muka, PPN, liabilitas karyawan, provisi, kontinjensi, serta penyajian dan analisis likuiditas. Soal dosen E12.1, E12.2, P12.1, dan P12.2 dibahas langkah demi langkah.',
+  intro: 'TM6 membahas seluruh Kieso Bab 12: definisi dan klasifikasi liabilitas jangka pendek, utang usaha dan wesel bayar, pembiayaan kembali, dividen dan pendapatan diterima di muka, PPN, liabilitas karyawan, provisi, kontinjensi, serta penyajian dan analisis likuiditas. Soal dosen E12.1, E12.2, P12.1, dan P12.2 serta contoh Kieso Illustration 12.2 (rantai PPN) dan Example 12.6–12.8 (garansi dan premi) dibahas langkah demi langkah.',
   objectives: [
     'Menjelaskan tiga karakteristik liabilitas dan kriteria klasifikasi liabilitas jangka pendek.',
     'Mencatat utang usaha metode bruto dan neto, wesel berbunga, dan wesel tanpa bunga beserta penyesuaian akhir tahun.',
@@ -350,6 +686,7 @@ export const TM6_READING: Reading = {
       kind: 'formula',
       text: '\\text{Penjualan}=\\frac{\\text{Kas diterima termasuk pajak}}{1+\\text{tarif pajak}}\\qquad\\text{Pajak terutang}=\\text{Kas diterima}-\\text{Penjualan}'
     },
+    VAT_CHAIN_CASE,
 
     { kind: 'h2', text: '7. Employee-Related Liabilities' },
     {
@@ -401,6 +738,30 @@ export const TM6_READING: Reading = {
       ]
     },
     SCHULTZ_LIABILITY_ENTRIES_CASE,
+    { kind: 'h3', text: 'Garansi jaminan (assurance-type): contoh Kieso' },
+    {
+      kind: 'p',
+      text: 'Garansi jaminan hanya menjamin produk bebas cacat pada saat penjualan, sehingga tidak dicatat sebagai kewajiban pelaksanaan terpisah. Biayanya dibebankan pada periode penjualan dan entitas mencatat Warranty Liability atas estimasi biaya setelah penjualan (Kieso p. 1040).'
+    },
+    DENSON_ASSURANCE_WARRANTY_CASE,
+    { kind: 'h3', text: 'Garansi jasa (service-type): contoh Kieso' },
+    {
+      kind: 'p',
+      text: 'Garansi jasa dijual terpisah dan memberikan layanan di luar perbaikan cacat yang sudah ada saat penjualan. Garansi ini adalah kewajiban pelaksanaan terpisah: dicatat di Unearned Warranty Revenue dan diakui secara garis lurus selama masa berlakunya. Hanya biaya yang berubah seiring dan berkaitan langsung dengan penjualan kontrak (terutama komisi) yang ditangguhkan dan diamortisasi (Kieso pp. 1042–1043).'
+    },
+    HAMLIN_WARRANTIES_CASE,
+    { kind: 'h3', text: 'Premi dan program loyalitas: contoh Kieso' },
+    {
+      kind: 'p',
+      text: 'Pada akhir periode, entitas mengestimasi jumlah penawaran premi beredar yang akan ditukarkan pelanggan, membebankan biayanya ke Premium Expense, dan mengkredit kewajiban yang belum ditukar ke Premium Liability (Kieso p. 1045).'
+    },
+    FLUFFY_PREMIUM_CASE,
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Program loyalitas pelanggan (frequent flyer)',
+      text: 'Kieso Bab 12 membahas program loyalitas hanya secara naratif. Program frequent-flyer adalah premi berupa janji barang atau jasa di masa depan yang dapat menjadi liabilitas besar (Kieso p. 1048). Bila premi merupakan hak material (material right) bagi pelanggan, terdapat kewajiban pelaksanaan yang dicatat sebagai liabilitas (Kieso p. 1045). Bab 12 tidak memuat contoh perhitungan poin loyalitas.'
+    },
 
     { kind: 'h2', text: '10. Contingencies' },
     {
@@ -459,7 +820,11 @@ export const TM6_READING: Reading = {
         ['Tunggakan dividen preferen', 'Mencatat Dividends Payable', 'Bukan liabilitas; ungkapkan dalam catatan', 'p. 1023; E12.1(o)'],
         ['Biaya restorasi', 'Mendebit Restoration Expense €84.000', 'Kapitalisasi ke Land Improvements; kredit provisi', 'p. 1049; P12.2'],
         ['PPN inklusif', '€798.000 × 5% = €39.900', 'Penjualan €798.000 ÷ 1,05 = €760.000; PPN €38.000', 'pp. 1026–1028; P12.2'],
-        ['Kontinjensi', 'Mengakui liabilitas kontinjensi atau aset kontinjensi yang baru probable', 'Liabilitas kontinjensi hanya diungkapkan; aset baru diakui bila virtually certain', 'pp. 1057–1059']
+        ['Kontinjensi', 'Mengakui liabilitas kontinjensi atau aset kontinjensi yang baru probable', 'Liabilitas kontinjensi hanya diungkapkan; aset baru diakui bila virtually certain', 'pp. 1057–1059'],
+        ['PPN dalam rantai pasok', 'Setiap entitas menyetor seluruh PPN keluaran (total €540)', 'Setor PPN keluaran − PPN masukan; total disetor €240', 'p. 1029; Illustration 12.2'],
+        ['Biaya garansi jaminan tahun penjualan', 'Mendebit Warranty Liability \\$4.000', 'Debit Warranty Expense \\$4.000; liabilitas dibentuk lewat penyesuaian \\$16.000', 'p. 1042; Example 12.6'],
+        ['Garansi jasa dijual terpisah', 'Mengakui €900 sebagai pendapatan saat penjualan', 'Kredit Unearned Warranty Revenue; akui €300 per tahun selama 2028–2030', 'p. 1044; Example 12.7'],
+        ['Biaya premi per mangkuk', 'Memakai harga perolehan penuh £2', 'Biaya neto £2 − £1 = £1; estimasi £18.000, Premium Liability £12.000', 'p. 1047; Example 12.8']
       ]
     },
     { kind: 'h3', text: 'Quick Review' },
@@ -470,14 +835,17 @@ export const TM6_READING: Reading = {
         'Metode neto: diskon yang terlewat masuk Purchase Discounts Lost.',
         'Wesel tanpa bunga: liabilitas neto = nominal − diskonto yang belum diamortisasi.',
         'Provisi = kewajiban kini + probable (>50%) + estimasi andal; bila tidak terpenuhi, ungkapkan atau abaikan.',
-        'Liabilitas kontinjensi tidak pernah diakui; aset kontinjensi diakui hanya bila virtually certain.'
+        'Liabilitas kontinjensi tidak pernah diakui; aset kontinjensi diakui hanya bila virtually certain.',
+        'PPN yang disetor setiap entitas = PPN keluaran − PPN masukan; konsumen akhir menanggung seluruh PPN.',
+        'Garansi jaminan: biaya aktual tahun penjualan ke Warranty Expense, sisanya diakrualkan ke Warranty Liability; garansi jasa: Unearned Warranty Revenue diakui garis lurus.',
+        'Premium Liability = estimasi biaya neto penukaran − biaya penukaran yang sudah terjadi.'
       ]
     },
     {
       kind: 'callout',
       variant: 'key',
       title: 'Checklist 60 detik sebelum mengumpulkan',
-      text: 'Darby: liabilitas neto wesel tanpa bunga **\\$76.500**. Edwardson: Purchase Discounts Lost **€1.400**, bunga **€4.140**. Schultz: penjualan **€760.000**, PPN **€38.000**, truk **€126.000** (Alternatif A) atau **€120.000 + €6.000** (Alternatif B), provisi **€84.000**. Apakah setiap jurnal debit = kredit?'
+      text: 'Darby: liabilitas neto wesel tanpa bunga **\\$76.500**. Edwardson: Purchase Discounts Lost **€1.400**, bunga **€4.140**. Schultz: penjualan **€760.000**, PPN **€38.000**, truk **€126.000** (Alternatif A) atau **€120.000 + €6.000** (Alternatif B), provisi **€84.000**. Rantai PPN: disetor €100 + €100 + €40 = **€240**. Denson: Warranty Expense 2025 **\\$20.000**, Warranty Liability **\\$16.000**. Hamlin: Warranty Liability **€200**, pendapatan garansi jasa **€300** per tahun 2028–2030. Fluffy: Premium Liability **£12.000**, Premium Expense **£18.000**. Apakah setiap jurnal debit = kredit?'
     }
   ]
 };

@@ -519,6 +519,49 @@ const tm6 = checkReading(6, [
   // E12.1 classifies all sixteen items.
   const classification = solution('E12.1').blocks.find((b) => b.kind === 'table');
   assert.deepEqual(classification.rows.map((row) => row[0]), 'abcdefghijklmnop'.split(''));
+
+  // Kieso Illustration 12.2: each entity remits output VAT less input VAT; €240 in total, borne by the consumer.
+  const vatSolution = solution('Illustration 12.2');
+  const vat = journalsOf(vatSolution);
+  const vatSales = vat.filter((j) => j.lines.some((l) => l.account === 'Sales Revenue'));
+  assert.deepEqual(vatSales.map((j) => lineAmount(j, 'VAT Taxes Payable', 'credit')), [100, 200, 240]);
+  const remittances = vat.filter((j) => j.lines.some((l) => l.account === 'VAT Taxes Payable' && l.debit));
+  assert.deepEqual(remittances.map((j) => lineAmount(j, 'Cash', 'credit')), [100, 200 - 100, 240 - 200]);
+  // Kieso shows only the sales entries; purchase and remittance entries are labelled Interpretasi.
+  for (const journal of vat.filter((j) => !vatSales.includes(j))) assert.ok(journal.caption.startsWith('Interpretasi — '), `VAT: ${journal.caption}`);
+  assert.ok(flatten(vatSolution.blocks).some((b) => b.kind === 'callout' && b.title === 'Interpretasi — jurnal pembelian dan penyetoran PPN (Kieso pp. 1028–1029)'));
+
+  // Kieso Example 12.6: actual costs in the year of sale are debited to Warranty Expense, not Warranty Liability.
+  const densonSolution = solution('Denson Machinery');
+  const denson = journalsOf(densonSolution);
+  const densonActual = denson.find((j) => j.lines.some((l) => l.account === 'Warranty Expense' && l.debit === '$4.000'));
+  assert.ok(densonActual && !densonActual.lines.some((l) => l.account === 'Warranty Liability'), 'Denson 2025 costs go to Warranty Expense');
+  assert.ok(densonSolution.blocks[0].kind === 'callout' && densonSolution.blocks[0].title.includes('bukan Warranty Liability'), 'Denson callout leads the solution');
+  const densonAccrual = denson.find((j) => j.lines.some((l) => l.account === 'Warranty Liability' && l.credit));
+  assert.equal(lineAmount(densonAccrual, 'Warranty Liability', 'credit'), 100 * 200 - 4000);
+  assert.equal(lineAmount(denson.find((j) => j.lines.some((l) => l.account === 'Warranty Liability' && l.debit)), 'Warranty Liability', 'debit'), 16000);
+
+  // Kieso Example 12.7: stated-price split, straight-line service-type revenue; years Kieso omits are Interpretasi.
+  const hamlinSolution = solution('Hamlin Auto');
+  const hamlin = journalsOf(hamlinSolution);
+  const hamlinSale = hamlin.find((j) => j.lines.some((l) => l.account === 'Sales Revenue'));
+  assert.equal(lineAmount(hamlinSale, 'Cash', 'debit'), 30900);
+  assert.equal(lineAmount(hamlinSale, 'Unearned Warranty Revenue', 'credit'), 900);
+  assert.equal(lineAmount(hamlin.find((j) => j.lines.some((l) => l.account === 'Warranty Liability' && l.credit)), 'Warranty Liability', 'credit'), 700 - 500);
+  const hamlinRevenue = hamlin.filter((j) => j.lines.some((l) => l.account === 'Warranty Revenue'));
+  assert.deepEqual(hamlinRevenue.map((j) => lineAmount(j, 'Warranty Revenue', 'credit')), [900 / 3, 900 / 3, 900 / 3]);
+  const hamlinInterpretasi = hamlin.filter((j) => j.caption.startsWith('Interpretasi — '));
+  assert.deepEqual(hamlinInterpretasi.map((j) => j.caption.slice(15, 34)), ['2026: biaya garansi', '2027: biaya garansi', '31 Desember 2029: p', '31 Desember 2030: p']);
+  const hamlinSchedule = flatten(hamlinSolution.blocks).find((b) => b.kind === 'table');
+  assert.ok(hamlinSchedule.caption.startsWith('Interpretasi (Kieso p. 1044)'), 'Hamlin balance schedule is Interpretasi');
+  assert.ok(JSON.stringify(hamlinSolution).includes('relative stand-alone selling price'), 'Hamlin notes the allocation boundary');
+
+  // Kieso Example 12.8: liability = estimated net cost of redemptions less redemptions to date.
+  const fluffy = journalsOf(solution('Fluffy Cake Mix'));
+  const estimatedCost = (300000 * 0.6 / 10) * (2 - 1);
+  assert.equal(lineAmount(fluffy.find((j) => j.lines.some((l) => l.account === 'Premium Liability')), 'Premium Liability', 'credit'), estimatedCost - 6000);
+  assert.equal(lineAmount(fluffy.find((j) => j.lines.some((l) => l.account === 'Premium Expense') && j.lines.some((l) => l.account === 'Cash')), 'Inventory of Premiums', 'credit'), 6000 * 2);
+  assert.ok(text.includes('Program loyalitas pelanggan'), 'loyalty programmes noted as narrative only');
 }
 
 // ---------------------------------------------------------------- TM07
