@@ -212,7 +212,7 @@ const BALANCE_SHEET_CLASSIFICATION_CASE: ContentBlock = {
         ['g', 'Deposit received from customer to guarantee performance of a contract', 'Liabilitas jangka pendek', 'Deposit yang dapat dikembalikan (p. 1023)'],
         ['h', 'Value-added tax payable', 'Liabilitas jangka pendek', 'PPN keluaran yang dipungut dan wajib disetor (p. 1026)'],
         ['i', 'Gift certificates sold to customers but not yet redeemed', 'Liabilitas jangka pendek', 'Pendapatan diterima di muka atas voucher yang belum ditebus (p. 1024)'],
-        ['j', 'Premium offers outstanding', 'Liabilitas jangka pendek', 'Estimasi hadiah yang akan ditebus pelanggan (p. 1043)'],
+        ['j', 'Premium offers outstanding', 'Liabilitas jangka pendek', 'Estimasi hadiah yang akan ditebus pelanggan (p. 1045)'],
         ['k', 'Accounts payable', 'Liabilitas jangka pendek', 'Utang dagang dalam siklus operasi normal (p. 1017)'],
         ['l', 'Employee payroll deductions unremitted', 'Liabilitas jangka pendek', 'Potongan gaji yang belum disetor ke pihak ketiga (p. 1028)'],
         ['m', 'Current maturities of long-term debts to be paid from current assets', 'Liabilitas jangka pendek', 'Bagian utang jangka panjang yang jatuh tempo dalam 12 bulan (p. 1020)'],
@@ -680,7 +680,7 @@ export const TM6_READING: Reading = {
         ['Pajak penjualan (sales tax)', 'Dipungut sekali dari konsumen akhir dan disetor ke pemerintah', 'Sales Taxes Payable'],
         ['PPN (value-added tax)', 'Dipungut di setiap mata rantai; PPN masukan atas pembelian dikreditkan terhadap PPN keluaran atas penjualan', 'VAT Taxes Recoverable (masukan), VAT Taxes Payable (keluaran)']
       ],
-      caption: 'Kieso pp. 1026–1028.'
+      caption: 'Kieso pp. 1027–1029.'
     },
     {
       kind: 'formula',
@@ -819,7 +819,7 @@ export const TM6_READING: Reading = {
         ['Pembiayaan kembali setelah tanggal pelaporan', 'Menyajikan utang jangka panjang karena perjanjian ditandatangani Januari', 'Tetap jangka pendek; hak menunda harus ada pada 31 Desember', 'p. 1021'],
         ['Tunggakan dividen preferen', 'Mencatat Dividends Payable', 'Bukan liabilitas; ungkapkan dalam catatan', 'p. 1023; E12.1(o)'],
         ['Biaya restorasi', 'Mendebit Restoration Expense €84.000', 'Kapitalisasi ke Land Improvements; kredit provisi', 'p. 1049; P12.2'],
-        ['PPN inklusif', '€798.000 × 5% = €39.900', 'Penjualan €798.000 ÷ 1,05 = €760.000; PPN €38.000', 'pp. 1026–1028; P12.2'],
+        ['PPN inklusif', '€798.000 × 5% = €39.900', 'Penjualan €798.000 ÷ 1,05 = €760.000; PPN €38.000', 'pp. 1027–1029; P12.2'],
         ['Kontinjensi', 'Mengakui liabilitas kontinjensi atau aset kontinjensi yang baru probable', 'Liabilitas kontinjensi hanya diungkapkan; aset baru diakui bila virtually certain', 'pp. 1057–1059'],
         ['PPN dalam rantai pasok', 'Setiap entitas menyetor seluruh PPN keluaran (total €540)', 'Setor PPN keluaran − PPN masukan; total disetor €240', 'p. 1029; Illustration 12.2'],
         ['Biaya garansi jaminan tahun penjualan', 'Mendebit Warranty Liability \\$4.000', 'Debit Warranty Expense \\$4.000; liabilitas dibentuk lewat penyesuaian \\$16.000', 'p. 1042; Example 12.6'],
