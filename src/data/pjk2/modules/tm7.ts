@@ -46,7 +46,7 @@ const SVG_PPH24_31E = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xml
     
     <rect class="svg-subcard" x="14" y="88" width="367" height="36" rx="6" fill="#1e293b" stroke="#38bdf8"/>
     <text class="text-accent-blue" x="197" y="102" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">BATAS MAKSIMUM KREDIT PAJAK (ORDINARY CREDIT):</text>
-    <text x="197" y="116" fill="#f8fafc" font-size="8" font-weight="700" text-anchor="middle">Max Kredit = (Penghasilan LN ÷ Total PKP Gabungan) × Total PPh Terutang</text>
+    <text class="svg-title" x="197" y="116" fill="#0f172a" font-size="8.5" font-weight="700" text-anchor="middle">Max Kredit = (Penghasilan LN ÷ Total PKP Gabungan) × Total PPh Terutang</text>
 
     <text class="svg-text" x="14" y="142" fill="#cbd5e1" font-size="8">• Kredit pajak yang diakui adalah nilai <tspan class="text-accent-green" fill="#34d399" font-weight="700">TERENDAH</tspan> antara:</text>
     <text class="svg-text" x="14" y="158" fill="#cbd5e1" font-size="8">  (1) Pajak riil dibayar di LN vs (2) Batas Maksimum Kredit PPh 24</text>

@@ -89,7 +89,7 @@ function RenderMultilineText({ text }: { text: string }) {
 
 function ReadableParagraph({ text }: { text: string }) {
   return (
-    <div className="mb-4 max-w-[88ch] text-[15px] leading-[1.8] text-slate-800 dark:text-slate-300 md:text-base">
+    <div className="mb-4 max-w-[88ch] text-base leading-[1.8] text-slate-800 dark:text-slate-200 md:text-[16.5px]">
       {renderText(text)}
     </div>
   );
@@ -240,16 +240,16 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       return (
         <ul
           className={checklist
-            ? 'mb-6 max-w-[88ch] space-y-2.5 pl-1 md:pl-2'
-            : 'mb-6 max-w-[88ch] space-y-2.5 pl-1 md:pl-2'}
+            ? 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'
+            : 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'}
           aria-label={checklist ? 'Checklist review UAS' : undefined}
         >
           {block.items.map((it, i) => (
-            <li key={i} className="flex gap-3 text-[15px] leading-[1.8] text-slate-800 dark:text-slate-300">
+            <li key={i} className="flex gap-3 text-base leading-[1.8] text-slate-800 dark:text-slate-200 md:text-[16px]">
               {checklist ? (
                 <Square aria-hidden="true" className="mt-1 shrink-0 text-emerald-600 dark:text-emerald-300" size={18} />
               ) : (
-                <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-gold-500 dark:bg-gold shadow-sm shadow-gold/40" />
+                <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 shadow-sm shadow-blue-500/40" />
               )}
               <span className="whitespace-pre-line">{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
             </li>
@@ -259,7 +259,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     }
     case 'ol':
       return (
-        <ol className="mb-6 max-w-[88ch] list-decimal space-y-2.5 pl-6 md:pl-8 text-[15px] leading-[1.8] text-slate-800 dark:text-slate-300 marker:font-black marker:text-gold-600 dark:marker:text-gold">
+        <ol className="mb-6 max-w-[88ch] list-decimal space-y-3 pl-6 md:pl-8 text-base leading-[1.8] text-slate-800 dark:text-slate-200 md:text-[16px] marker:font-black marker:text-blue-600 dark:marker:text-blue-400">
           {block.items.map((it, i) => (
             <li key={i} className="whitespace-pre-line pl-1">{renderText(it)}</li>
           ))}
@@ -324,7 +324,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           <div className={`flex items-center gap-2 border-b border-navy-500/10 dark:border-white/5 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${titleCls}`}>
             <IconComponent size={16} /> {titleText}
           </div>
-          <div className={`px-5 py-4 text-[15px] leading-[1.85] ${textCls}`}>
+          <div className={`px-5 py-4 text-base leading-[1.85] text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
             <RenderMultilineText text={block.text} />
           </div>
         </div>
@@ -339,12 +339,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       if (!enableEconomicStyling) {
         const tableLabel = isComparisonTable ? 'Tabel Perbandingan Regulasi' : isLegalTable ? 'Tabel Hukum Pajak' : 'Tabel Materi';
         return (
-          <div className="course-table-card mb-7 overflow-hidden rounded-2xl">
-            <div className="mb-4 flex items-center justify-between border-b border-navy-500/40 pb-3 px-4 pt-4">
-              <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] text-gold/90">
-                <Table2 size={14} /> Tabel Data Khusus
+          <div className="course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
+            <div className="flex items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
+              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
+                <Table2 size={15} /> {tableLabel}
               </div>
-              {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
+              <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 md:hidden">Geser tabel bila perlu →</span>
             </div>
             <div 
               className="akbi-table-scroll w-full overflow-x-auto" 
@@ -355,26 +355,26 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               onTouchMove={(e) => e.stopPropagation()}
               onTouchEnd={(e) => e.stopPropagation()}
             >
-              <table className="w-full border-collapse text-sm">
+              <table className="w-full border-collapse text-left">
                 <thead>
                   <tr className="course-table-head">
                     {block.headers.map((h, i) => (
                       <th
                         key={i}
-                        className="sticky top-0 z-10 border-b border-navy-500/20 dark:border-navy-500/70 bg-slate-50 dark:bg-navy-950 px-4 py-3 text-left text-[11px] font-black uppercase tracking-wider text-gold-700 dark:text-gold"
+                        className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300"
                       >
                         {h}
                       </th>
                     ))}
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className="divide-y divide-gray-100 dark:divide-gray-800/60">
                   {block.rows.map((row, r) => (
-                    <tr key={r} className={r % 2 ? 'bg-slate-50 dark:bg-navy-800/25' : 'bg-transparent'}>
+                    <tr key={r} className={r % 2 ? 'bg-gray-50/70 dark:bg-gray-800/40 transition-colors' : 'bg-white dark:bg-gray-900/70 transition-colors'}>
                       {row.map((cell, c) => (
                         <td
                           key={c}
-                          className="border-t border-navy-500/10 dark:border-navy-500/35 px-4 py-3 align-top text-[13.5px] leading-[1.75] text-slate-800 dark:text-slate-300 md:first:sticky md:first:left-0 md:first:z-[1] first:bg-slate-50 dark:first:bg-navy-900 first:font-semibold first:text-slate-900 dark:first:text-slate-200"
+                          className="px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white"
                         >
                           <RenderMultilineText text={cell} />
                         </td>
@@ -407,14 +407,14 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         );
       }
       return (
-        <div className="course-table-card course-economic-table mb-7 overflow-hidden rounded-2xl">
-          <div className="course-solid-head flex flex-wrap items-center justify-between gap-2 border-b border-navy-500/20 dark:border-navy-500/55 px-4 py-3">
-            <div className="flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.18em] text-gold-700 dark:text-gold">
+        <div className="course-table-card course-economic-table mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
+          <div className="course-solid-head flex flex-wrap items-center justify-between gap-2 border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
               <Table2 size={15} /> {tableLabel}
             </div>
-            <div className="text-right text-[11px] font-semibold text-slate-600 dark:text-slate-500">
+            <div className="text-right text-xs font-medium text-slate-600 dark:text-slate-400">
               {block.rows.length} baris · {block.headers.length} kolom
-              <span className="block md:hidden">geser untuk kolom lain</span>
+              <span className="block text-[11px] md:hidden">geser untuk kolom lain →</span>
             </div>
           </div>
           <div 
@@ -426,27 +426,27 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             onTouchMove={(e) => e.stopPropagation()}
             onTouchEnd={(e) => e.stopPropagation()}
           >
-            <table className="w-full border-collapse text-sm">
+            <table className="w-full border-collapse text-left">
               <caption className="sr-only">{block.caption ?? tableLabel}</caption>
               <thead>
                 <tr className="course-table-head">
                   {block.headers.map((h, i) => (
                     <th
                       key={i}
-                      className="sticky top-0 z-10 border-b border-navy-500/20 dark:border-navy-500/70 bg-slate-50 dark:bg-navy-950 px-4 py-3 text-left text-[11px] font-black uppercase tracking-wider text-slate-600 dark:text-slate-400"
+                      className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200"
                     >
                       {h}
                     </th>
                   ))}
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 dark:divide-white/5">
+              <tbody className="divide-y divide-gray-100 dark:divide-gray-800/60">
                 {block.rows.map((row, r) => (
-                  <tr key={r} className="bg-white dark:bg-transparent transition hover:bg-slate-50 dark:hover:bg-navy-800/25">
+                  <tr key={r} className={r % 2 ? 'bg-gray-50/70 dark:bg-gray-800/40 transition-colors' : 'bg-white dark:bg-gray-900/70 transition-colors'}>
                     {row.map((cell, c) => (
                       <td
                         key={c}
-                        className="border-t border-slate-100 dark:border-navy-500/35 px-4 py-4 align-top text-[13.5px] leading-[1.85] text-slate-800 dark:text-slate-300 first:bg-slate-50 dark:first:bg-navy-900 first:text-[13px] first:font-medium first:text-slate-700 dark:first:text-slate-400"
+                        className="px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white"
                       >
                         <RenderMultilineText text={cell} />
                       </td>
@@ -579,7 +579,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                   }
                 }
                 return (
-                  <div className="text-base text-slate-900 dark:text-slate-100 overflow-x-auto py-1">
+                  <div className="text-base md:text-lg text-slate-900 dark:text-slate-100 overflow-x-auto py-3 px-1.5">
                     {renderText(mathText)}
                   </div>
                 );
@@ -624,14 +624,21 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               </figcaption>
             )}
             <div className="p-4 md:p-5">
-              {block.svg ? (
-                <div
-                  className="course-solid-surface rounded-xl p-3 bg-white dark:bg-navy-800/40"
-                  role="img"
-                  aria-label={block.altText ?? block.title ?? 'Visual materi'}
-                  dangerouslySetInnerHTML={{ __html: block.svg }}
-                />
-              ) : block.url ? (
+              {block.svg ? (() => {
+                const hasDiagramClass = block.svg.includes('course-diagram-svg');
+                const processedSvg = hasDiagramClass
+                  ? block.svg
+                  : block.svg.replace('<svg', '<svg class="course-diagram-svg"');
+                return (
+                  <div
+                    className="course-solid-surface akbi-table-scroll overflow-x-auto rounded-xl p-3 md:p-4 bg-white dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-sm"
+                    role="img"
+                    aria-label={block.altText ?? block.title ?? 'Visual materi'}
+                  >
+                    <div className="min-w-[620px] sm:min-w-0" dangerouslySetInnerHTML={{ __html: processedSvg }} />
+                  </div>
+                );
+              })() : block.url ? (
                 <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
               ) : null}
             </div>

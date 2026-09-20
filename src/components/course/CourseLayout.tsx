@@ -336,7 +336,7 @@ function ReadingPanel({
                         key={originalIndex}
                         className={`reading-block-anchor min-w-0 scroll-mt-40 ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
                       >
-                        <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                        <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
                       </div>
                     ))}
                   </div>
@@ -349,7 +349,7 @@ function ReadingPanel({
                   id={getReadingBlockId(block, index)}
                   className={`reading-block-anchor min-w-0 scroll-mt-40 ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
                 >
-                  <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                  <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
                 </div>
               );
             })}

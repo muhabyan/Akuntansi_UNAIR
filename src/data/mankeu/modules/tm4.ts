@@ -19,12 +19,12 @@ const SVG_SML_CAPM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmln
     <!-- Y-Axis: Expected Return E(R) -->
     <line x1="50" y1="20" x2="50" y2="210" stroke="#94a3b8" stroke-width="2"/>
     <polygon points="50,15 46,25 54,25" fill="#94a3b8"/>
-    <text x="40" y="20" fill="#f8fafc" font-size="9" font-weight="800" text-anchor="end">Expected Return E(R)</text>
+    <text class="svg-title font-bold" x="40" y="20" fill="#0f172a" font-size="9.5" font-weight="800" text-anchor="end">Expected Return E(R)</text>
 
     <!-- X-Axis: Systematic Risk (Beta β) -->
     <line x1="50" y1="210" x2="430" y2="210" stroke="#94a3b8" stroke-width="2"/>
     <polygon points="435,210 425,206 425,214" fill="#94a3b8"/>
-    <text x="430" y="228" fill="#f8fafc" font-size="9" font-weight="800" text-anchor="end">Risiko Sistematis (Beta β)</text>
+    <text class="svg-title font-bold" x="430" y="228" fill="#0f172a" font-size="9.5" font-weight="800" text-anchor="end">Risiko Sistematis (Beta β)</text>
 
     <!-- Risk-Free Rate Rf Tick -->
     <line x1="45" y1="165" x2="55" y2="165" stroke="#a78bfa" stroke-width="2"/>
@@ -58,7 +58,7 @@ const SVG_SML_CAPM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmln
     <!-- Formula Box -->
     <rect class="svg-subcard" x="0" y="0" width="325" height="48" rx="8" fill="#1e293b" stroke="#38bdf8"/>
     <text class="text-accent-blue" x="162" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">RUMUS DASAR MODEL CAPM</text>
-    <text x="162" y="38" fill="#f8fafc" font-size="10" font-weight="700" text-anchor="middle">E(Ri) = Rf + βi × [ E(Rm) - Rf ]</text>
+    <text class="svg-title font-bold" x="162" y="38" fill="#0f172a" font-size="10.5" font-weight="700" text-anchor="middle">E(Ri) = Rf + βi × [ E(Rm) - Rf ]</text>
 
     <!-- Variable Cards -->
     <rect class="svg-card" x="0" y="58" width="325" height="52" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>

@@ -17,9 +17,9 @@ const SVG_EOQ_COST_CURVE = `<svg class="course-diagram-svg" viewBox="0 0 900 360
   <g transform="translate(65, 80)">
     <!-- Axes -->
     <line x1="40" y1="20" x2="40" y2="210" stroke="#94a3b8" stroke-width="2"/>
-    <text x="30" y="20" fill="#f8fafc" font-size="8.5" font-weight="800" text-anchor="end">Total Biaya (Rp)</text>
+    <text class="svg-title font-bold" x="30" y="20" fill="#0f172a" font-size="9" font-weight="800" text-anchor="end">Total Biaya (Rp)</text>
     <line x1="40" y1="210" x2="410" y2="210" stroke="#94a3b8" stroke-width="2"/>
-    <text x="410" y="228" fill="#f8fafc" font-size="8.5" font-weight="800" text-anchor="end">Kuantitas Pesanan (Q)</text>
+    <text class="svg-title font-bold" x="410" y="228" fill="#0f172a" font-size="9" font-weight="800" text-anchor="end">Kuantitas Pesanan (Q)</text>
 
     <!-- Carrying Cost Line (Linear Upward: H × Q/2) -->
     <line x1="40" y1="210" x2="380" y2="40" stroke="#38bdf8" stroke-width="2.5"/>
@@ -46,7 +46,7 @@ const SVG_EOQ_COST_CURVE = `<svg class="course-diagram-svg" viewBox="0 0 900 360
     <!-- Formula Box -->
     <rect class="svg-subcard" x="0" y="0" width="325" height="55" rx="8" fill="#1e293b" stroke="#34d399"/>
     <text class="text-accent-green" x="162" y="22" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">RUMUS KUANTITAS OPTIMAL (EOQ)</text>
-    <text x="162" y="44" fill="#f8fafc" font-size="13" font-weight="900" text-anchor="middle">EOQ = √[ (2 × D × S) ÷ H ]</text>
+    <text class="svg-title font-bold" x="162" y="44" fill="#0f172a" font-size="13" font-weight="900" text-anchor="middle">EOQ = √[ (2 × D × S) ÷ H ]</text>
 
     <!-- Parameter Items -->
     <rect class="svg-card" x="0" y="65" width="325" height="52" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>

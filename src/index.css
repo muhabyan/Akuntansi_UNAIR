@@ -768,7 +768,7 @@ body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-ope
 }
 .course-diagram-svg .svg-header {
   fill: #f1f5f9 !important;
-  fill-opacity: 0.9 !important;
+  fill-opacity: 0.95 !important;
 }
 .course-diagram-svg .svg-divider {
   stroke: #cbd5e1 !important;
@@ -779,6 +779,7 @@ body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-ope
 }
 .course-diagram-svg .svg-card {
   fill: #ffffff !important;
+  stroke: #e2e8f0 !important;
 }
 .course-diagram-svg .svg-subcard {
   fill: #f8fafc !important;
@@ -789,6 +790,16 @@ body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-ope
 }
 .course-diagram-svg .svg-muted {
   fill: #64748b !important;
+}
+
+/* Fallback: ensure light-colored SVG texts without classes are dark in Light Mode */
+.course-diagram-svg text.text-white {
+  fill: #ffffff !important;
+}
+.course-diagram-svg text[fill="#f8fafc"]:not([class*="text-accent"]):not([class*="text-white"]),
+.course-diagram-svg text[fill="#cbd5e1"]:not([class*="text-accent"]):not([class*="text-white"]),
+.course-diagram-svg text[fill="#ffffff"]:not([class*="text-accent"]):not([class*="text-white"]):not(.text-white) {
+  fill: #1e293b !important;
 }
 
 /* Light Theme Accent Text (Deep saturated tones for crystal clear readability) */
@@ -812,22 +823,27 @@ body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-ope
 .course-diagram-svg .svg-badge-blue {
   fill: #e0f2fe !important;
   fill-opacity: 0.9 !important;
+  stroke: #38bdf8 !important;
 }
 .course-diagram-svg .svg-badge-green {
   fill: #dcfce7 !important;
   fill-opacity: 0.9 !important;
+  stroke: #34d399 !important;
 }
 .course-diagram-svg .svg-badge-amber {
   fill: #fef3c7 !important;
   fill-opacity: 0.9 !important;
+  stroke: #fbbf24 !important;
 }
 .course-diagram-svg .svg-badge-purple {
   fill: #f3e8ff !important;
   fill-opacity: 0.9 !important;
+  stroke: #c084fc !important;
 }
 .course-diagram-svg .svg-badge-red {
   fill: #fee2e2 !important;
   fill-opacity: 0.9 !important;
+  stroke: #f87171 !important;
 }
 
 /* --- DARK THEME OVERRIDES (html.dark) --- */
@@ -847,6 +863,7 @@ html.dark .course-diagram-svg .svg-title {
 }
 html.dark .course-diagram-svg .svg-card {
   fill: #0f172a !important;
+  stroke: #334155 !important;
 }
 html.dark .course-diagram-svg .svg-subcard {
   fill: #1e293b !important;
@@ -859,7 +876,16 @@ html.dark .course-diagram-svg .svg-muted {
   fill: #94a3b8 !important;
 }
 
-/* Dark Theme Accent Text (Vibrant luminous tones) */
+html.dark .course-diagram-svg text.text-white {
+  fill: #ffffff !important;
+}
+html.dark .course-diagram-svg text[fill="#f8fafc"]:not([class*="text-accent"]),
+html.dark .course-diagram-svg text[fill="#cbd5e1"]:not([class*="text-accent"]),
+html.dark .course-diagram-svg text[fill="#ffffff"]:not([class*="text-accent"]) {
+  fill: #f8fafc !important;
+}
+
+/* Dark Theme Accent Text (Vibrant luminous tones with high contrast) */
 html.dark .course-diagram-svg .text-accent-blue {
   fill: #38bdf8 !important;
 }
@@ -870,7 +896,7 @@ html.dark .course-diagram-svg .text-accent-amber {
   fill: #fbbf24 !important;
 }
 html.dark .course-diagram-svg .text-accent-purple {
-  fill: #a78bfa !important;
+  fill: #c084fc !important;
 }
 html.dark .course-diagram-svg .text-accent-red {
   fill: #f87171 !important;
@@ -880,20 +906,37 @@ html.dark .course-diagram-svg .text-accent-red {
 html.dark .course-diagram-svg .svg-badge-blue {
   fill: #0284c7 !important;
   fill-opacity: 0.25 !important;
+  stroke: #38bdf8 !important;
 }
 html.dark .course-diagram-svg .svg-badge-green {
   fill: #059669 !important;
   fill-opacity: 0.25 !important;
+  stroke: #34d399 !important;
 }
 html.dark .course-diagram-svg .svg-badge-amber {
   fill: #d97706 !important;
   fill-opacity: 0.25 !important;
+  stroke: #fbbf24 !important;
 }
 html.dark .course-diagram-svg .svg-badge-purple {
   fill: #7c3aed !important;
   fill-opacity: 0.25 !important;
+  stroke: #c084fc !important;
 }
 html.dark .course-diagram-svg .svg-badge-red {
   fill: #dc2626 !important;
   fill-opacity: 0.25 !important;
+  stroke: #f87171 !important;
 }
+
+/* Dark Mode Table Row Contrast Enhancement */
+html.dark table tbody tr:nth-child(even) {
+  background-color: rgba(30, 41, 59, 0.35);
+}
+html.dark table tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+html.dark table td {
+  color: #e2e8f0;
+}
+
