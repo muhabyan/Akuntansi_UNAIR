@@ -1,5 +1,5 @@
 // src/data/pjk2/pjk2PracticeCases.ts
-// 14 Studi Kasus Riil Komprehensif Perpajakan II (PJK202)
+// 14 Studi Kasus Riil Komprehensif Perpajakan II (PJK301)
 // Berdasarkan Standar UU HPP No. 7/2021, PP 58/2023, PMK 168/2023, PMK 66/2023, & PMK 172/2023
 import type { ContentBlock } from '../../types';
 

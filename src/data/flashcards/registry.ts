@@ -13,7 +13,7 @@ import { MNM101_FC } from './mnm101';
 import { AKK202_FC } from './akk202';
 import { AKM202_FC } from './akm202';
 import { AKS201_FC } from './aks201';
-import { PJK202_FC } from './pjk202';
+import { PJK301_FC } from './pjk301';
 import { MNK201_FC } from './mnk201';
 import { AKA201_FC } from './aka201';
 
@@ -49,7 +49,7 @@ const FLASHCARD_REGISTRY: Record<string, AdvancedStudyCard[]> = {
   AKK202: AKK202_FC as AdvancedStudyCard[],
   AKM202: AKM202_FC as AdvancedStudyCard[],
   AKS201: AKS201_FC as AdvancedStudyCard[],
-  PJK202: PJK202_FC as AdvancedStudyCard[],
+  PJK301: PJK301_FC as AdvancedStudyCard[],
   MNK201: MNK201_FC as AdvancedStudyCard[],
   AKA201: AKA201_FC as AdvancedStudyCard[],
 };

@@ -145,7 +145,6 @@ const knownIssues = new Set([
   'AKS201 TM10.blocks[4].text katex',
   'AKS201 TM14.blocks[4].text katex',
   'AKS201 UAS.blocks[4].text katex',
-  'PJK202 TM11.blocks[6].text katex',
   'PJK301 TM11.blocks[6].text katex',
 ]);
 const seenKnownIssues = new Set();

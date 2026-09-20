@@ -32,7 +32,7 @@ import { MNM101_QUIZ, MNM101_QUIZ_UTS, MNM101_QUIZ_UAS } from './mnm101';
 import { AKK202_QUIZ, AKK202_QUIZ_UTS, AKK202_QUIZ_UAS } from './akk202';
 import { AKM202_QUIZ, AKM202_QUIZ_UTS, AKM202_QUIZ_UAS } from './akm202';
 import { AKS201_QUIZ, AKS201_QUIZ_UTS, AKS201_QUIZ_UAS } from './aks201';
-import { PJK202_QUIZ, PJK202_QUIZ_UTS, PJK202_QUIZ_UAS } from './pjk202';
+import { PJK301_QUIZ, PJK301_QUIZ_UTS, PJK301_QUIZ_UAS } from './pjk301';
 import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
 import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
 import { AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './aks301';
@@ -60,7 +60,7 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK202: AKK202_QUIZ,
   AKM202: AKM202_QUIZ,
   AKS201: AKS201_QUIZ,
-  PJK202: PJK202_QUIZ,
+  PJK301: PJK301_QUIZ,
   MNK201: MNK201_QUIZ,
   AKA201: AKA201_QUIZ,
   AKS301: AKS301_QUIZ,
@@ -151,11 +151,11 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'all', label: 'Kompilasi Kuis Lengkap Sektor Publik (14 TM)', items: AKS201_QUIZ },
     ];
   }
-  if (courseCode === 'PJK202') {
+  if (courseCode === 'PJK301') {
     return [
-      { id: 'uts', label: 'Kuis Praktik Pra-UTS Perpajakan II (TM 1–7)', items: PJK202_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 8–14)', items: PJK202_QUIZ_UAS },
-      { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (14 TM)', items: PJK202_QUIZ },
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Perpajakan II (TM 1–7)', items: PJK301_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 8–14)', items: PJK301_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (14 TM)', items: PJK301_QUIZ },
     ];
   }
   if (courseCode === 'MNK201') {

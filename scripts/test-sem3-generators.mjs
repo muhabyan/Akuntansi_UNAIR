@@ -5,7 +5,7 @@
 // GENERATED is the complete set of files the generators may write, per artefact. Every generator map is
 // compared with it exactly, so adding or dropping a course anywhere has to be a deliberate edit here too.
 //
-// Edited by hand, never generated: AKK202, AKS301, PJK202/PJK301 (all artefacts) and the quiz and bank soal of
+// Edited by hand, never generated: AKK202, AKS301, PJK301 (formerly PJK202; all artefacts) and the quiz and bank soal of
 // AKS201 and MNK201 (expanded in eb2282c). The flashcards of AKS201 and MNK201 still match their generator.
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';

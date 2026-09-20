@@ -1,8 +1,10 @@
-// src/data/flashcards/pjk202.ts
-// Flashcard komprehensif Perpajakan II (PJK202) — 84 kartu lengkap (6 kartu per TM)
+// src/data/flashcards/pjk301.ts
+// Flashcard komprehensif Perpajakan II (PJK301) — 84 kartu lengkap (6 kartu per TM)
+// Card ids keep the "pjk202-" prefix: it is the legacy prefix from the old course code (PJK202). Saved review state
+// (flashcard-srs-PJK301 / flashcard-stars-PJK301) is keyed by card id, so renaming the ids would discard it.
 import type { AdvancedStudyCard } from '../../types';
 
-export const PJK202_FC: AdvancedStudyCard[] = [
+export const PJK301_FC: AdvancedStudyCard[] = [
   {
     "id": "pjk202-tm01-01",
     "phase": "pra-uts",

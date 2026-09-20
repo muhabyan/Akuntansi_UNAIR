@@ -544,10 +544,9 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       const module = await import('../manajemen/manajemenData');
       return { readings: module.MANAJEMEN_READINGS, reviews: module.MANAJEMEN_REVIEW_READINGS };
     }
-    case 'PJK202':
     case 'PJK301': {
       const module = await import('../pjk2/pjk2Data');
-      return { readings: module.PJK202_READINGS, reviews: module.PJK202_REVIEW_READINGS };
+      return { readings: module.PJK301_READINGS, reviews: module.PJK301_REVIEW_READINGS };
     }
     case 'AKS201': {
       const module = await import('../asp/aspData');
