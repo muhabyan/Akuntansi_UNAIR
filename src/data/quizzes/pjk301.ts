@@ -1,8 +1,8 @@
-// src/data/quizzes/pjk202.ts
-// Bank Soal Kuis Pilihan Ganda Komprehensif Perpajakan II (PJK202)
+// src/data/quizzes/pjk301.ts
+// Bank Soal Kuis Pilihan Ganda Komprehensif Perpajakan II (PJK301)
 import type { QuizQuestion } from '../../types';
 
-export const PJK202_QUIZ_UTS: QuizQuestion[] = [
+export const PJK301_QUIZ_UTS: QuizQuestion[] = [
   {
     "tm": 1,
     "topic": "Konsep PPh & Biaya 3M",
@@ -103,7 +103,7 @@ export const PJK202_QUIZ_UTS: QuizQuestion[] = [
   }
 ];
 
-export const PJK202_QUIZ_UAS: QuizQuestion[] = [
+export const PJK301_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 8,
     "topic": "Fasilitas PPh Badan Pasal 31E",
@@ -204,4 +204,4 @@ export const PJK202_QUIZ_UAS: QuizQuestion[] = [
   }
 ];
 
-export const PJK202_QUIZ: QuizQuestion[] = [...PJK202_QUIZ_UTS, ...PJK202_QUIZ_UAS];
+export const PJK301_QUIZ: QuizQuestion[] = [...PJK301_QUIZ_UTS, ...PJK301_QUIZ_UAS];

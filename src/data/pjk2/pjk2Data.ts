@@ -1,5 +1,5 @@
 // src/data/pjk2/pjk2Data.ts
-// Rangkuman KOMPREHENSIF Perpajakan II (PJK202)
+// Rangkuman KOMPREHENSIF Perpajakan II (PJK301)
 // Sumber: UU HPP No. 7/2021, UU PPh No. 36/2008, UU PPN No. 42/2009,
 //         PP 58/2023 & PMK 168/2023 (TER PPh 21), PMK 66/2023 (Pajak Natura),
 //         PMK 172/2023 (Transfer Pricing & ALP), PP 55/2022 (PPh Final UMKM),
@@ -20,7 +20,7 @@ import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
 
-export const PJK202_READINGS: Record<number, Reading> = {
+export const PJK301_READINGS: Record<number, Reading> = {
   1: TM1_READING,
   2: TM2_READING,
   3: TM3_READING,
@@ -37,7 +37,7 @@ export const PJK202_READINGS: Record<number, Reading> = {
   14: TM14_READING,
 };
 
-export const PJK202_REVIEW_READINGS: Record<string, Reading> = {
+export const PJK301_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
   uas: TM14_READING,
 };

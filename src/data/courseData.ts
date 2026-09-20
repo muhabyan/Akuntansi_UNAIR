@@ -129,9 +129,9 @@ const MNS301_REF = [
   'Silabus & RPP Resmi Manajemen Stratejik, FEB Universitas Airlangga.',
 ];
 
-// --- PJK202 / PJK301 Perpajakan II (UU HPP, PP 55/2022, PP 58/2023, PMK 168/2023, UU PPN) ---
+// --- PJK301 Perpajakan II, formerly catalogued as PJK202 (UU HPP, PP 55/2022, PP 58/2023, PMK 168/2023, UU PPN) ---
 // Sumber: RPP Resmi Perpajakan II, Departemen Akuntansi FEB UNAIR.
-const PJK202_TM1_7 = materi([
+const PJK301_TM1_7 = materi([
   ['Konsep Dasar PPh, Subjek/Objek Pajak, & Biaya 3M', 'UU PPh Pasal 4, 6, 9 jo. UU HPP'],
   ['Penilaian Harta Pengalihan, Persediaan, & Tarif PPh', 'UU PPh Pasal 10, 17 | PP 55/2022'],
   ['Hubungan Istimewa & Transfer Pricing (PMK 172/2023)', 'UU PPh Pasal 18 | PMK 172/2023'],
@@ -140,7 +140,7 @@ const PJK202_TM1_7 = materi([
   ['Pemotongan PPh Final Pasal 4(2) & Norma PPh Pasal 15', 'UU PPh Pasal 4(2), 15 | PP 9/2022'],
   ['Kredit Pajak LN PPh 24, Angsuran PPh 25, & Fasilitas 31E', 'UU PPh Pasal 24, 25, 31E'],
 ], 1);
-const PJK202_TM8_14 = materi([
+const PJK301_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'UU PPh jo. UU HPP | Kompilasi TM 1-7'],
   ['Konsep PPh 21/26 Terbaru (TER PP 58/2023 & Natura)', 'PP 58/2023 | PMK 168/2023 | PMK 66/2023'],
   ['Kalkulasi Komprehensif PPh 21 (Tetap, Lepas, Ahli)', 'PMK 168/2023 | PP 68/2009 Pesangon'],
@@ -149,7 +149,7 @@ const PJK202_TM8_14 = materi([
   ['Mekanisme e-Faktur Pajak, DPP Nilai Lain, & PM', 'PER-03/PJ/2022 | PMK 71/2022'],
   ['Restitusi PPN, PPN WAPU, & Pajak Karbon UU HPP', 'UU HPP Bab VI | PMK 59/2022 WAPU'],
 ], 8);
-const PJK202_REF = [
+const PJK301_REF = [
   'Republik Indonesia. UU No. 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah diubah terakhir dengan UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP). (Wajib)',
   'Republik Indonesia. UU No. 8 Tahun 1983 tentang Pajak Pertambahan Nilai dan PPnBM sebagaimana telah diubah terakhir dengan UU HPP. (Wajib)',
   'Kementerian Keuangan RI. PP No. 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang PPh.',
@@ -628,9 +628,9 @@ export const SEMESTERS: Semester[] = [
             flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'PJK202', newCode: 'FEB25603015', name: 'Perpajakan II', sks: 3, iconKey: 'file', prasyarat: 'PJK201 (L)',
-            references: PJK202_REF,
-            materiTM1_7: PJK202_TM1_7, materiTM8_14: PJK202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            code: 'PJK301', newCode: 'FEB25603015', name: 'Perpajakan II', sks: 3, iconKey: 'file', prasyarat: 'PJK201 (L)',
+            references: PJK301_REF,
+            materiTM1_7: PJK301_TM1_7, materiTM8_14: PJK301_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'MNK201', newCode: 'FEB25603014', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', prasyarat: 'AKK106 (L)',

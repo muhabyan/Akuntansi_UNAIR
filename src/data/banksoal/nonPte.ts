@@ -12,7 +12,7 @@ import { MNM101_BANK, MNM101_BANK_UTS, MNM101_BANK_UAS } from './mnm101';
 import { AKK202_BANK, AKK202_BANK_UTS, AKK202_BANK_UAS } from './akk202';
 import { AKM202_BANK, AKM202_BANK_UTS, AKM202_BANK_UAS } from './akm202';
 import { AKS201_BANK, AKS201_BANK_UTS, AKS201_BANK_UAS } from './aks201';
-import { PJK202_BANK, PJK202_BANK_UTS, PJK202_BANK_UAS } from './pjk202';
+import { PJK301_BANK, PJK301_BANK_UTS, PJK301_BANK_UAS } from './pjk301';
 import { MNK201_BANK, MNK201_BANK_UTS, MNK201_BANK_UAS } from './mnk201';
 import { AKA201_BANK, AKA201_BANK_UTS, AKA201_BANK_UAS } from './aka201';
 import { AKS301_BANK, AKS301_BANK_UTS, AKS301_BANK_UAS } from './aks301';
@@ -26,7 +26,7 @@ const REGISTRY: Record<string, BankSoal[]> = {
   AKK202: AKK202_BANK,
   AKM202: AKM202_BANK,
   AKS201: AKS201_BANK,
-  PJK202: PJK202_BANK,
+  PJK301: PJK301_BANK,
   MNK201: MNK201_BANK,
   AKA201: AKA201_BANK,
   AKS301: AKS301_BANK,
@@ -82,11 +82,11 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
       { id: 'all', label: 'Kompilasi Seluruh Kasus Sektor Publik (14 TM)', items: AKS201_BANK },
     ];
   }
-  if (code === 'PJK202') {
+  if (code === 'PJK301') {
     return [
-      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Perpajakan II (TM 1–7)', items: PJK202_BANK_UTS },
-      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Perpajakan II (TM 8–14)', items: PJK202_BANK_UAS },
-      { id: 'all', label: 'Kompilasi Seluruh Kasus Perpajakan II (14 TM)', items: PJK202_BANK },
+      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Perpajakan II (TM 1–7)', items: PJK301_BANK_UTS },
+      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Perpajakan II (TM 8–14)', items: PJK301_BANK_UAS },
+      { id: 'all', label: 'Kompilasi Seluruh Kasus Perpajakan II (14 TM)', items: PJK301_BANK },
     ];
   }
   if (code === 'MNK201') {

@@ -1,8 +1,8 @@
-// src/data/banksoal/pjk202.ts
-// Bank Soal Esai & Studi Kasus Perpajakan II (PJK202)
+// src/data/banksoal/pjk301.ts
+// Bank Soal Esai & Studi Kasus Perpajakan II (PJK301)
 import type { BankSoal } from '../../types';
 
-export const PJK202_BANK_UTS: BankSoal[] = [
+export const PJK301_BANK_UTS: BankSoal[] = [
   {
     "type": "calculation",
     "scope": "TM 4–6: Penyusutan Fiskal & Pemotongan PPh 22/23/Final",
@@ -32,7 +32,7 @@ export const PJK202_BANK_UTS: BankSoal[] = [
   }
 ];
 
-export const PJK202_BANK_UAS: BankSoal[] = [
+export const PJK301_BANK_UAS: BankSoal[] = [
   {
     "type": "calculation",
     "scope": "TM 11: Rekonsiliasi Fiskal & SPT 1771",
@@ -63,4 +63,4 @@ export const PJK202_BANK_UAS: BankSoal[] = [
   }
 ];
 
-export const PJK202_BANK: BankSoal[] = [...PJK202_BANK_UTS, ...PJK202_BANK_UAS];
+export const PJK301_BANK: BankSoal[] = [...PJK301_BANK_UTS, ...PJK301_BANK_UAS];

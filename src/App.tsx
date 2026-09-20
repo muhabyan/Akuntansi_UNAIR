@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import HomeView from './components/HomeView';
 import SemesterView from './components/SemesterView';
 import { SEMESTERS, ALL_COURSES } from './data/courseData';
+import { canonicalCourseCode, canonicalCoursePath } from './lib/legacyCourseCodes';
 import type { Course, CourseTabId, ViewId } from './types';
 import IntroSplash from './components/IntroSplash';
 import AuthModal from './components/AuthModal';
@@ -34,7 +35,7 @@ const UNIVERSAL_COURSES = [
   // Semester 2 Supporting / PDB
   'MNM101', 'MNM201', 'AGX101', 'NOP103', 'BAI101', 'NOP104', 'SIP107', 'PHP103', 'MNM107', 'MNM106',
   // Semester 3 & 4
-  'AKK202', 'AKM202', 'AKA201', 'MNK201', 'AKS201', 'PJK202', 'PJK301', 'AKS301',
+  'AKK202', 'AKM202', 'AKA201', 'MNK201', 'AKS201', 'PJK301', 'AKS301',
   // Semester 5
   'MNS301', 'MNU307', 'MNM301'
 ];
@@ -49,7 +50,8 @@ function resolveCourseFromPath(pathname: string): CourseRouteResolution {
   if (!match) return { isCourseRoute: false, course: null };
 
   try {
-    const routeCode = decodeURIComponent(match[1]).toUpperCase();
+    // A renamed course keeps its old URL: the old code is mapped to the current one (old bookmarks and shared links).
+    const routeCode = canonicalCourseCode(decodeURIComponent(match[1])).toUpperCase();
     const course =
       ALL_COURSES.find(({ course }) =>
         course.code.toUpperCase() === routeCode || course.newCode?.toUpperCase() === routeCode
@@ -78,6 +80,14 @@ function pushUrl(path: string) {
   if (window.location.pathname !== path) {
     window.history.pushState(null, '', path);
   }
+}
+
+// A course URL with a legacy code is replaced (not pushed) by the current one: Back still leaves the page, and old
+// links stop spreading, so the alias can be removed later.
+function replaceLegacyCourseUrl() {
+  const { pathname, search, hash } = window.location;
+  const current = canonicalCoursePath(pathname);
+  if (current) window.history.replaceState(window.history.state, '', `${current}${search}${hash}`);
 }
 
 function getInitialTheme(): 'light' | 'dark' {
@@ -403,7 +413,9 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    replaceLegacyCourseUrl(); // the page was opened on a legacy URL
     const handlePopState = () => {
+      replaceLegacyCourseUrl(); // Back or Forward reached a legacy URL
       const routeState = getRouteState(window.location.pathname);
       setSelectedCourse(routeState.course);
       setRouteNotFound(routeState.notFound);
