@@ -113,7 +113,7 @@ const SVG_POAC_SKILLS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" x
 
   <!-- Level 1: TOP MANAGEMENT -->
   <g transform="translate(460, 122)">
-    <text x="0" y="12" fill="#f8fafc" font-size="10" font-weight="700">TOP MANAGEMENT (Direksi / CEO)</text>
+    <text class="svg-title font-bold" x="0" y="12" fill="#0f172a" font-size="10.5" font-weight="700">TOP MANAGEMENT (Direksi / CEO)</text>
     <text class="text-accent-blue" x="400" y="12" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="end">Fokus Visi Strategis</text>
     <!-- Stacked Bar: 45% Conceptual, 40% Human, 15% Technical (Total 400px width) -->
     <!-- 45% = 180px, 40% = 160px, 15% = 60px -->
@@ -130,7 +130,7 @@ const SVG_POAC_SKILLS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" x
 
   <!-- Level 2: MIDDLE MANAGEMENT -->
   <g transform="translate(460, 192)">
-    <text x="0" y="12" fill="#f8fafc" font-size="10" font-weight="700">MIDDLE MANAGEMENT (Kepala Divisi / Manajer)</text>
+    <text class="svg-title font-bold" x="0" y="12" fill="#0f172a" font-size="10.5" font-weight="700">MIDDLE MANAGEMENT (Kepala Divisi / Manajer)</text>
     <text class="text-accent-green" x="400" y="12" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="end">Jembatan Komunikasi</text>
     <!-- Stacked Bar: 25% Conceptual, 50% Human, 25% Technical -->
     <!-- 25% = 100px, 50% = 200px, 25% = 100px -->
@@ -147,7 +147,7 @@ const SVG_POAC_SKILLS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" x
 
   <!-- Level 3: FIRST-LINE MANAGEMENT -->
   <g transform="translate(460, 262)">
-    <text x="0" y="12" fill="#f8fafc" font-size="10" font-weight="700">FIRST-LINE (Supervisor / Team Leader)</text>
+    <text class="svg-title font-bold" x="0" y="12" fill="#0f172a" font-size="10.5" font-weight="700">FIRST-LINE (Supervisor / Team Leader)</text>
     <text class="text-accent-amber" x="400" y="12" fill="#fbbf24" font-size="8.5" font-weight="700" text-anchor="end">Eksekusi Lapangan</text>
     <!-- Stacked Bar: 15% Conceptual, 35% Human, 50% Technical -->
     <!-- 15% = 60px, 35% = 140px, 50% = 200px -->

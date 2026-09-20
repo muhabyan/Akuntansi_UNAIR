@@ -1,79 +1,79 @@
 import type { Reading } from '../../../types';
 import { CASE_DEPRECIATION_REVALUATION } from '../pjk2PracticeCases';
 
-const SVG_DEPRECIATION_RATES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+const SVG_DEPRECIATION_RATES = `<svg class="course-diagram-svg" viewBox="0 0 960 410" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Manrope,Inter,-apple-system,BlinkMacSystemFont,sans-serif">
   <defs>
     <linearGradient id="bgPjk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
     <linearGradient id="thGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
   </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk4)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">TABEL TARIF PENYUSUTAN FISKAL HARTA BERWUJUD (PASAL 11 UU PPH &amp; PMK 72/2023)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DEPRECIATION RATES</text>
+  <rect class="svg-bg" x="10" y="10" width="940" height="390" rx="16" fill="url(#bgPjk4)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="940" height="48" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="58" x2="950" y2="58" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="34" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="39" fill="#0f172a" font-size="13.5" font-weight="800">TABEL TARIF PENYUSUTAN FISKAL HARTA BERWUJUD (PASAL 11 UU PPH &amp; PMK 72/2023)</text>
+  <rect class="svg-badge-blue" x="785" y="21" width="150" height="26" rx="13" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="860" y="38" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">DEPRECIATION RATES</text>
 
-  <!-- Table Container (Width 830px) -->
-  <g transform="translate(35, 75)">
+  <!-- Table Container (Width 910px) -->
+  <g transform="translate(25, 74)">
     <!-- Header Row -->
-    <rect class="svg-subcard" x="0" y="0" width="830" height="32" rx="6" fill="#1e293b" stroke="#38bdf8"/>
-    <text class="text-accent-blue" x="15" y="20" fill="#38bdf8" font-size="9" font-weight="800">KELOMPOK HARTA BERWUJUD</text>
-    <text class="text-accent-blue" x="260" y="20" fill="#38bdf8" font-size="9" font-weight="800">MASA MANFAAT</text>
-    <text class="text-accent-blue" x="400" y="20" fill="#38bdf8" font-size="9" font-weight="800">GARIS LURUS (SLM)</text>
-    <text class="text-accent-blue" x="560" y="20" fill="#38bdf8" font-size="9" font-weight="800">SALDO MENURUN (DBM)</text>
-    <text class="text-accent-blue" x="730" y="20" fill="#38bdf8" font-size="9" font-weight="800">CONTOH ASET</text>
+    <rect class="svg-subcard" x="0" y="0" width="910" height="34" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="16" y="22" fill="#38bdf8" font-size="10" font-weight="800">KELOMPOK HARTA BERWUJUD</text>
+    <text class="text-accent-blue" x="250" y="22" fill="#38bdf8" font-size="10" font-weight="800">MASA MANFAAT</text>
+    <text class="text-accent-blue" x="380" y="22" fill="#38bdf8" font-size="10" font-weight="800">GARIS LURUS (SLM)</text>
+    <text class="text-accent-blue" x="535" y="22" fill="#38bdf8" font-size="10" font-weight="800">SALDO MENURUN (DBM)</text>
+    <text class="text-accent-blue" x="705" y="22" fill="#38bdf8" font-size="10" font-weight="800">CONTOH ASET</text>
 
     <!-- Row 1: Kelompok 1 -->
-    <rect class="svg-card" x="0" y="36" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
-    <text x="15" y="56" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 1 (Bukan Bangunan)</text>
-    <text class="svg-text" x="260" y="56" fill="#cbd5e1" font-size="8.5">4 Tahun</text>
-    <text class="text-accent-green" x="400" y="56" fill="#34d399" font-size="8.5" font-weight="700">25% per tahun</text>
-    <text class="text-accent-amber" x="560" y="56" fill="#fbbf24" font-size="8.5" font-weight="700">50% per tahun</text>
-    <text class="svg-muted" x="730" y="56" fill="#94a3b8" font-size="7.5">Komputer, Printer, HP, Mebel Kayu</text>
+    <rect class="svg-card" x="0" y="40" width="910" height="34" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="svg-title" x="16" y="62" fill="#0f172a" font-size="11" font-weight="700">Kelompok 1 (Bukan Bangunan)</text>
+    <text class="svg-text" x="250" y="62" fill="#cbd5e1" font-size="11">4 Tahun</text>
+    <text class="text-accent-green" x="380" y="62" fill="#34d399" font-size="11" font-weight="700">25% per tahun</text>
+    <text class="text-accent-amber" x="535" y="62" fill="#fbbf24" font-size="11" font-weight="700">50% per tahun</text>
+    <text class="svg-muted" x="705" y="62" fill="#94a3b8" font-size="10">Komputer, Printer, HP, Mebel Kayu</text>
 
     <!-- Row 2: Kelompok 2 -->
-    <rect class="svg-card" x="0" y="70" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
-    <text x="15" y="90" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 2 (Bukan Bangunan)</text>
-    <text class="svg-text" x="260" y="90" fill="#cbd5e1" font-size="8.5">8 Tahun</text>
-    <text class="text-accent-green" x="400" y="90" fill="#34d399" font-size="8.5" font-weight="700">12,5% per tahun</text>
-    <text class="text-accent-amber" x="560" y="90" fill="#fbbf24" font-size="8.5" font-weight="700">25% per tahun</text>
-    <text class="svg-muted" x="730" y="90" fill="#94a3b8" font-size="7.5">Mobil Truk, Bus, AC, Mesin Ringan</text>
+    <rect class="svg-card" x="0" y="78" width="910" height="34" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="svg-title" x="16" y="100" fill="#0f172a" font-size="11" font-weight="700">Kelompok 2 (Bukan Bangunan)</text>
+    <text class="svg-text" x="250" y="100" fill="#cbd5e1" font-size="11">8 Tahun</text>
+    <text class="text-accent-green" x="380" y="100" fill="#34d399" font-size="11" font-weight="700">12,5% per tahun</text>
+    <text class="text-accent-amber" x="535" y="100" fill="#fbbf24" font-size="11" font-weight="700">25% per tahun</text>
+    <text class="svg-muted" x="705" y="100" fill="#94a3b8" font-size="10">Mobil Truk, Bus, AC, Mesin Ringan</text>
 
     <!-- Row 3: Kelompok 3 -->
-    <rect class="svg-card" x="0" y="104" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
-    <text x="15" y="124" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 3 (Bukan Bangunan)</text>
-    <text class="svg-text" x="260" y="124" fill="#cbd5e1" font-size="8.5">16 Tahun</text>
-    <text class="text-accent-green" x="400" y="124" fill="#34d399" font-size="8.5" font-weight="700">6,25% per tahun</text>
-    <text class="text-accent-amber" x="560" y="124" fill="#fbbf24" font-size="8.5" font-weight="700">12,5% per tahun</text>
-    <text class="svg-muted" x="730" y="124" fill="#94a3b8" font-size="7.5">Mesin Pabrik Berat, Kapal, Pipa Tambang</text>
+    <rect class="svg-card" x="0" y="116" width="910" height="34" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="svg-title" x="16" y="138" fill="#0f172a" font-size="11" font-weight="700">Kelompok 3 (Bukan Bangunan)</text>
+    <text class="svg-text" x="250" y="138" fill="#cbd5e1" font-size="11">16 Tahun</text>
+    <text class="text-accent-green" x="380" y="138" fill="#34d399" font-size="11" font-weight="700">6,25% per tahun</text>
+    <text class="text-accent-amber" x="535" y="138" fill="#fbbf24" font-size="11" font-weight="700">12,5% per tahun</text>
+    <text class="svg-muted" x="705" y="138" fill="#94a3b8" font-size="10">Mesin Pabrik Berat, Kapal, Pipa Tambang</text>
 
     <!-- Row 4: Kelompok 4 -->
-    <rect class="svg-card" x="0" y="138" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
-    <text x="15" y="158" fill="#f8fafc" font-size="8.5" font-weight="700">Kelompok 4 (Bukan Bangunan)</text>
-    <text class="svg-text" x="260" y="158" fill="#cbd5e1" font-size="8.5">20 Tahun</text>
-    <text class="text-accent-green" x="400" y="158" fill="#34d399" font-size="8.5" font-weight="700">5% per tahun</text>
-    <text class="text-accent-amber" x="560" y="158" fill="#fbbf24" font-size="8.5" font-weight="700">10% per tahun</text>
-    <text class="svg-muted" x="730" y="158" fill="#94a3b8" font-size="7.5">Konstruksi Berat, Rel Kereta, Dok Kapal</text>
+    <rect class="svg-card" x="0" y="154" width="910" height="34" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="svg-title" x="16" y="176" fill="#0f172a" font-size="11" font-weight="700">Kelompok 4 (Bukan Bangunan)</text>
+    <text class="svg-text" x="250" y="176" fill="#cbd5e1" font-size="11">20 Tahun</text>
+    <text class="text-accent-green" x="380" y="176" fill="#34d399" font-size="11" font-weight="700">5% per tahun</text>
+    <text class="text-accent-amber" x="535" y="176" fill="#fbbf24" font-size="11" font-weight="700">10% per tahun</text>
+    <text class="svg-muted" x="705" y="176" fill="#94a3b8" font-size="10">Konstruksi Berat, Rel Kereta, Dok Kapal</text>
 
     <!-- Row 5: Bangunan Permanen -->
-    <rect class="svg-card" x="0" y="172" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
-    <text class="text-accent-purple" x="15" y="192" fill="#a78bfa" font-size="8.5" font-weight="700">Bangunan: Permanen</text>
-    <text class="svg-text" x="260" y="192" fill="#cbd5e1" font-size="8.5">20 Tahun</text>
-    <text class="text-accent-green" x="400" y="192" fill="#34d399" font-size="8.5" font-weight="700">5% per tahun</text>
-    <text class="text-accent-red" x="560" y="192" fill="#f87171" font-size="8.5" font-weight="700">Tidak Boleh DBM</text>
-    <text class="svg-muted" x="730" y="192" fill="#94a3b8" font-size="7.5">Gedung Kantor, Gudang Permanen, Pabrik</text>
+    <rect class="svg-card" x="0" y="192" width="910" height="34" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="text-accent-purple" x="16" y="214" fill="#7c3aed" font-size="11" font-weight="700">Bangunan: Permanen</text>
+    <text class="svg-text" x="250" y="214" fill="#cbd5e1" font-size="11">20 Tahun</text>
+    <text class="text-accent-green" x="380" y="214" fill="#34d399" font-size="11" font-weight="700">5% per tahun</text>
+    <text class="text-accent-red" x="535" y="214" fill="#dc2626" font-size="11" font-weight="700">Tidak Boleh DBM</text>
+    <text class="svg-muted" x="705" y="214" fill="#94a3b8" font-size="10">Gedung Kantor, Gudang Permanen, Pabrik</text>
 
     <!-- Row 6: Bangunan Tidak Permanen -->
-    <rect class="svg-card" x="0" y="206" width="830" height="30" rx="4" fill="#0f172a" stroke="#334155"/>
-    <text class="text-accent-purple" x="15" y="226" fill="#a78bfa" font-size="8.5" font-weight="700">Bangunan: Tidak Permanen</text>
-    <text class="svg-text" x="260" y="226" fill="#cbd5e1" font-size="8.5">10 Tahun</text>
-    <text class="text-accent-green" x="400" y="226" fill="#34d399" font-size="8.5" font-weight="700">10% per tahun</text>
-    <text class="text-accent-red" x="560" y="226" fill="#f87171" font-size="8.5" font-weight="700">Tidak Boleh DBM</text>
-    <text class="svg-muted" x="730" y="226" fill="#94a3b8" font-size="7.5">Barak Pekerja Proyek, Gudang Kayu Seng</text>
+    <rect class="svg-card" x="0" y="230" width="910" height="34" rx="4" fill="#0f172a" stroke="#334155"/>
+    <text class="text-accent-purple" x="16" y="252" fill="#7c3aed" font-size="11" font-weight="700">Bangunan: Tidak Permanen</text>
+    <text class="svg-text" x="250" y="252" fill="#cbd5e1" font-size="11">10 Tahun</text>
+    <text class="text-accent-green" x="380" y="252" fill="#34d399" font-size="11" font-weight="700">10% per tahun</text>
+    <text class="text-accent-red" x="535" y="252" fill="#dc2626" font-size="11" font-weight="700">Tidak Boleh DBM</text>
+    <text class="svg-muted" x="705" y="252" fill="#94a3b8" font-size="10">Barak Pekerja Proyek, Gudang Kayu Seng</text>
   </g>
 
-  <text class="svg-muted" x="450" y="332" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Catatan Kunci: Bangunan WAJIB disusutkan dengan Metode Garis Lurus (Straight-Line Method) dan tidak diperkenankan metode Saldo Menurun.</text>
+  <text class="svg-muted" x="480" y="382" fill="#64748b" font-size="10.5" font-style="italic" text-anchor="middle">Catatan Kunci: Bangunan WAJIB disusutkan dengan Metode Garis Lurus (Straight-Line Method) dan tidak diperkenankan metode Saldo Menurun.</text>
 </svg>`;
 
 export const TM4_READING: Reading = {
