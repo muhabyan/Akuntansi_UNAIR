@@ -1,12 +1,12 @@
-// src/data/quizzes/aks301.ts
-// Bank Soal Kuis Pilihan Ganda Komprehensif Sistem Informasi Akuntansi (AKS301)
+// src/data/quizzes/sii306.ts
+// Bank Soal Kuis Pilihan Ganda Komprehensif Sistem Informasi Akuntansi (SII306)
 // Berdasarkan Vernon J. Richardson et al. (4th ISE ed. 2023), Romney & Steinbart (15e),
 // COSO Internal Control (2013), dan ISACA COBIT 2019 Framework.
 // 70 Soal Lengkap: 35 Soal Pra-UTS (TM 1-7) & 35 Soal Pra-UAS (TM 8-14)
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/sia/modules/tm1.ts-tm7.ts.
 import type { QuizQuestion } from '../../types';
 
-export const AKS301_QUIZ_UTS: QuizQuestion[] = [
+export const SII306_QUIZ_UTS: QuizQuestion[] = [
   {
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
@@ -499,7 +499,7 @@ export const AKS301_QUIZ_UTS: QuizQuestion[] = [
   }
 ];
 
-export const AKS301_QUIZ_UAS: QuizQuestion[] = [
+export const SII306_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 8,
     "topic": "Pengendalian Internal COSO",
@@ -992,4 +992,9 @@ export const AKS301_QUIZ_UAS: QuizQuestion[] = [
   }
 ];
 
-export const AKS301_QUIZ: QuizQuestion[] = [...AKS301_QUIZ_UTS, ...AKS301_QUIZ_UAS];
+export const SII306_QUIZ: QuizQuestion[] = [...SII306_QUIZ_UTS, ...SII306_QUIZ_UAS];
+
+export const AKS301_QUIZ_UTS = SII306_QUIZ_UTS;
+export const AKS301_QUIZ_UAS = SII306_QUIZ_UAS;
+export const AKS301_QUIZ = SII306_QUIZ;
+

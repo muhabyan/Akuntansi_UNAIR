@@ -36,10 +36,10 @@ const { getFlashcards, getQuiz, getQuizSets, getBankSoal, getBankSoalSets } = mo
 const read = (file) => readFileSync(file, 'utf8');
 
 // ---- The alias: /course/PJK202 opens the same course as /course/PJK301 and /course/FEB25603015.
-assert.deepEqual(LEGACY_COURSE_CODES, { PJK202: 'PJK301' });
+assert.equal(LEGACY_COURSE_CODES.PJK202, 'PJK301');
 assert.equal(canonicalCourseCode('PJK202'), 'PJK301');
 assert.equal(canonicalCourseCode('pjk202'), 'PJK301');
-for (const code of ['PJK301', 'PJK201', 'FEB25603015', 'AKK202']) assert.equal(canonicalCourseCode(code), code, `${code} must not be remapped`);
+for (const code of ['PJK301', 'PJK201', 'FEB25603015', 'AKK202', 'SII306']) assert.equal(canonicalCourseCode(code), code, `${code} must not be remapped`);
 
 const appSource = read('src/App.tsx');
 assert.ok(/canonicalCourseCode\(decodeURIComponent\(match\[1\]\)\)/.test(appSource), 'resolveCourseFromPath must map the route code through canonicalCourseCode');

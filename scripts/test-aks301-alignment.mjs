@@ -15,10 +15,10 @@ const bundle = await build({
   stdin: {
     contents: [
       "export { loadCourseContent } from './src/data/courses/courseRegistry.ts';",
-      "export { AKS301_READINGS, AKS301_REVIEW_READINGS } from './src/data/sia/siaReadings.ts';",
-      "export { AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './src/data/quizzes/aks301.ts';",
-      "export { AKS301_FC } from './src/data/flashcards/aks301.ts';",
-      "export { AKS301_BANK, AKS301_BANK_UTS, AKS301_BANK_UAS } from './src/data/banksoal/aks301.ts';",
+      "export { SII306_READINGS, SII306_REVIEW_READINGS, AKS301_READINGS, AKS301_REVIEW_READINGS } from './src/data/sia/siaReadings.ts';",
+      "export { SII306_QUIZ, SII306_QUIZ_UTS, SII306_QUIZ_UAS, AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './src/data/quizzes/sii306.ts';",
+      "export { SII306_FC, AKS301_FC } from './src/data/flashcards/sii306.ts';",
+      "export { SII306_BANK, SII306_BANK_UTS, SII306_BANK_UAS, AKS301_BANK, AKS301_BANK_UTS, AKS301_BANK_UAS } from './src/data/banksoal/sii306.ts';",
     ].join('\n'),
     resolveDir: process.cwd(), loader: 'ts',
   },
@@ -89,11 +89,14 @@ const renderedStrings = (block) => {
 };
 
 // ---------------------------------------------------------------- UTS review
-const content = await loadCourseContent('AKS301');
+const content = await loadCourseContent('SII306');
+const legacyContent = await loadCourseContent('AKS301');
+assert.equal(content.readings, legacyContent.readings, 'legacy AKS301 loads same readings as SII306');
 const review = content.reviews.uts;
-assert.ok(review, 'AKS301 has a UTS review');
+assert.ok(review, 'SII306 has a UTS review');
 assert.notEqual(review, readings[7], 'reviews.uts must not be the TM07 reading object');
 assert.ok(Object.values(readings).every((reading) => reading !== review), 'reviews.uts is not any TM reading');
+assert.equal(review, mod.SII306_REVIEW_READINGS.uts);
 assert.equal(review, mod.AKS301_REVIEW_READINGS.uts);
 assert.equal(review.tm, 0, 'review uses tm 0 so its progress key does not collide with TM07');
 assert.equal(content.reviews.uas, readings[14], 'UAS review is unchanged');

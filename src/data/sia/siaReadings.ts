@@ -12,9 +12,9 @@ import { SIA_TM4 } from './modules/tm4';
 import { SIA_TM5 } from './modules/tm5';
 import { SIA_TM6 } from './modules/tm6';
 import { SIA_TM7 } from './modules/tm7';
-import { AKS301_REVIEW_UTS_READING } from './siaReviewReadings';
+import { SII306_REVIEW_UTS_READING } from './siaReviewReadings';
 
-export const AKS301_READINGS: Record<number, Reading> = {
+export const SII306_READINGS: Record<number, Reading> = {
   1: SIA_TM1,
   2: SIA_TM2,
   3: SIA_TM3,
@@ -806,7 +806,10 @@ export const AKS301_READINGS: Record<number, Reading> = {
 };
 
 // Review UTS berdiri sendiri (tm 0) agar tidak berbagi objek maupun progress key dengan TM07.
-export const AKS301_REVIEW_READINGS: Partial<Record<'uts' | 'uas', Reading>> = {
-  uts: AKS301_REVIEW_UTS_READING,
-  uas: AKS301_READINGS[14],
+export const SII306_REVIEW_READINGS: Partial<Record<'uts' | 'uas', Reading>> = {
+  uts: SII306_REVIEW_UTS_READING,
+  uas: SII306_READINGS[14],
 };
+
+export const AKS301_READINGS = SII306_READINGS;
+export const AKS301_REVIEW_READINGS = SII306_REVIEW_READINGS;

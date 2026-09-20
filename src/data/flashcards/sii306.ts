@@ -1,8 +1,9 @@
-// src/data/flashcards/aks301.ts
-// Flashcard komprehensif Sistem Informasi Akuntansi (AKS301) — 84 kartu lengkap (6 kartu per TM)
+// src/data/flashcards/sii306.ts
+// Flashcard komprehensif Sistem Informasi Akuntansi (SII306) — 84 kartu lengkap (6 kartu per TM)
+// Note: card IDs keep the aks301- prefix so existing SRS review states remain unbroken.
 import type { AdvancedStudyCard } from '../../types';
 
-export const AKS301_FC: AdvancedStudyCard[] = [
+export const SII306_FC: AdvancedStudyCard[] = [
   {
     "id": "aks301-tm01-01",
     "phase": "pra-uts",
@@ -760,3 +761,5 @@ export const AKS301_FC: AdvancedStudyCard[] = [
     "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian."
   }
 ];
+
+export const AKS301_FC = SII306_FC;

@@ -1,7 +1,7 @@
 import type { Reading } from '../../types';
 
-// Review Pra-UTS AKS301. Seluruh isi diringkas dari bacaan kanonik TM1–TM7 (src/data/sia/modules).
-export const AKS301_REVIEW_UTS_READING: Reading = {
+// Review Pra-UTS SII306 (SIA). Seluruh isi diringkas dari bacaan kanonik TM1–TM7 (src/data/sia/modules).
+export const SII306_REVIEW_UTS_READING: Reading = {
   tm: 0,
   title: 'Review Pra-UTS Sistem Informasi Akuntansi',
   ref: 'Kompilasi TM 1–7 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 1, 2, 4–8',
@@ -232,3 +232,6 @@ export const AKS301_REVIEW_UTS_READING: Reading = {
     { kind: 'callout', variant: 'info', title: 'Batas review', text: 'Review ini hanya merangkum bacaan TM 1–7 (Richardson, Chang & Smith, AIS 4e ISE, Ch. 1, 2, 4–8). Materi TM 8–14 tidak termasuk.' },
   ],
 };
+
+export const AKS301_REVIEW_UTS_READING = SII306_REVIEW_UTS_READING;
+

@@ -35,7 +35,7 @@ import { AKS201_QUIZ, AKS201_QUIZ_UTS, AKS201_QUIZ_UAS } from './aks201';
 import { PJK301_QUIZ, PJK301_QUIZ_UTS, PJK301_QUIZ_UAS } from './pjk301';
 import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
 import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
-import { AKS301_QUIZ, AKS301_QUIZ_UTS, AKS301_QUIZ_UAS } from './aks301';
+import { SII306_QUIZ, SII306_QUIZ_UTS, SII306_QUIZ_UAS } from './sii306';
 
 const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK106: AKK106_QUIZ,
@@ -63,7 +63,8 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   PJK301: PJK301_QUIZ,
   MNK201: MNK201_QUIZ,
   AKA201: AKA201_QUIZ,
-  AKS301: AKS301_QUIZ,
+  SII306: SII306_QUIZ,
+  AKS301: SII306_QUIZ,
 };
 
 export function getQuiz(courseCode: string): QuizQuestion[] {
@@ -172,11 +173,11 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'all', label: 'Kompilasi Kuis Lengkap Pengauditan I (14 TM)', items: AKA201_QUIZ },
     ];
   }
-  if (courseCode === 'AKS301') {
+  if (courseCode === 'SII306' || courseCode === 'AKS301') {
     return [
-      { id: 'uts', label: 'Kuis Praktik Pra-UTS Sistem Informasi Akuntansi (TM 1–7)', items: AKS301_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Sistem Informasi Akuntansi (TM 8–14)', items: AKS301_QUIZ_UAS },
-      { id: 'all', label: 'Kompilasi Kuis Lengkap SIA (14 TM)', items: AKS301_QUIZ },
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS Sistem Informasi Akuntansi (TM 1–7)', items: SII306_QUIZ_UTS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Sistem Informasi Akuntansi (TM 8–14)', items: SII306_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap SIA (14 TM)', items: SII306_QUIZ },
     ];
   }
   const items = getQuiz(courseCode);

@@ -317,9 +317,9 @@ const AKM202_REF = [
   'Silabus & RPP Resmi Akuntansi Manajemen, Departemen Akuntansi FEB Universitas Airlangga.',
 ];
 
-// --- AKS301 Sistem Informasi Akuntansi (Richardson, Chang, Smith 4e ISE) ---
+// --- SII306 Sistem Informasi Akuntansi (Richardson, Chang, Smith 4e ISE) ---
 // Sumber: Silabus Resmi Sistem Informasi Akuntansi, Departemen Akuntansi FEB UNAIR.
-const AKS301_TM1_7 = materi([
+const SII306_TM1_7 = materi([
   ['Accounting Information Systems and Firm Value', 'Richardson et al. AIS 4e · Ch. 1'],
   ['Data Analytics: Addressing Accounting Questions with Data', 'Richardson et al. AIS 4e · Ch. 2'],
   ['Accountants as Business Analysts', 'Richardson et al. AIS 4e · Ch. 4'],
@@ -328,7 +328,7 @@ const AKS301_TM1_7 = materi([
   ['Sales and Collections Business Process', 'Richardson et al. AIS 4e · Ch. 7'],
   ['Purchases and Payments Business Process', 'Richardson et al. AIS 4e · Ch. 8'],
 ], 1);
-const AKS301_TM8_14 = materi([
+const SII306_TM8_14 = materi([
   ['Pengendalian Internal & Kerangka Kerja COSO', 'Richardson et al. AIS 4e · Ch. 9'],
   ['Keamanan Informasi, Ancaman Siber & Computer Fraud', 'Richardson et al. AIS 4e · Ch. 10'],
   ['Audit Sistem Informasi, CAATs & Tata Kelola TI (COBIT)', 'Richardson et al. AIS 4e · Ch. 11'],
@@ -337,7 +337,7 @@ const AKS301_TM8_14 = materi([
   ['Blockchain, Smart Contracts & Cloud Accounting', 'Richardson et al. AIS 4e · Ch. 14'],
   ['Review Komprehensif Siklus SIA & Simulasi Kasus UAS', 'Richardson et al. AIS 4e · Kompilasi'],
 ], 8);
-const AKS301_REF = [
+const SII306_REF = [
   'Richardson, V. J., Chang, C. J., & Smith, R. E. (2023). Accounting Information Systems (4th ISE ed.). McGraw-Hill. (Wajib)',
   'Romney, M. B., & Steinbart, P. J. (2021). Accounting Information Systems (15th ed.). Pearson.',
   'Committee of Sponsoring Organizations of the Treadway Commission (COSO). (2013). Internal Control - Integrated Framework.',
@@ -622,9 +622,9 @@ export const SEMESTERS: Semester[] = [
             materiTM1_7: AKS201_TM1_7, materiTM8_14: AKS201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'AKS301', newCode: 'FEB25603016', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book',
-            references: AKS301_REF,
-            materiTM1_7: AKS301_TM1_7, materiTM8_14: AKS301_TM8_14,
+            code: 'SII306', newCode: 'FEB25603016', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
+            references: SII306_REF,
+            materiTM1_7: SII306_TM1_7, materiTM8_14: SII306_TM8_14,
             flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {

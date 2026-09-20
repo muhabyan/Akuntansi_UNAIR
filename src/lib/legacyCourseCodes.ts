@@ -5,9 +5,13 @@
 // PJK202 -> PJK301 rename. Remove them after this semester: this file, the call in main.tsx, replaceLegacyCourseUrl in
 // App.tsx, and the alias/URL/shim sections of scripts/test-pjk301-rename.mjs.
 
-/** Old course code -> current course code. Perpajakan II: the faculty handbook code is PJK301 (FEB25603015). */
+/** Old course code -> current course code.
+ * - Perpajakan II: the faculty handbook code is PJK301 (FEB25603015).
+ * - Sistem Informasi Akuntansi: the faculty handbook code is SII306 (FEB25603016).
+ */
 export const LEGACY_COURSE_CODES: Readonly<Record<string, string>> = {
   PJK202: 'PJK301',
+  AKS301: 'SII306',
 };
 
 /** The current code for a possibly renamed course code (any letter case). Any other code is returned unchanged. */

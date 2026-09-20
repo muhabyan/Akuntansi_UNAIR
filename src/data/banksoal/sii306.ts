@@ -1,12 +1,12 @@
-// src/data/banksoal/aks301.ts
-// Bank Soal Esai & Studi Kasus Komprehensif Sistem Informasi Akuntansi (AKS301)
+// src/data/banksoal/sii306.ts
+// Bank Soal Esai & Studi Kasus Komprehensif Sistem Informasi Akuntansi (SII306)
 // Berdasarkan Vernon J. Richardson et al. (4th ISE ed. 2023), Romney & Steinbart (15e),
 // COSO Internal Control (2013), dan ISACA COBIT 2019 Framework.
 // 14 Studi Kasus Lengkap: 7 Kasus Pra-UTS (TM 1-7) & 7 Kasus Pra-UAS (TM 8-14)
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/sia/modules/tm1.ts-tm7.ts.
 import type { BankSoal } from '../../types';
 
-export const AKS301_BANK_UTS: BankSoal[] = [
+export const SII306_BANK_UTS: BankSoal[] = [
   {
     "type": "case",
     "scope": "TM 1: Nilai Informasi, Order Fulfillment Terintegrasi & Pemisahan Tugas",
@@ -242,7 +242,7 @@ export const AKS301_BANK_UTS: BankSoal[] = [
   }
 ];
 
-export const AKS301_BANK_UAS: BankSoal[] = [
+export const SII306_BANK_UAS: BankSoal[] = [
   {
     "type": "case",
     "scope": "TM 8: Desain Matriks Pengendalian Internal COSO 17 Prinsip",
@@ -451,4 +451,9 @@ export const AKS301_BANK_UAS: BankSoal[] = [
   }
 ];
 
-export const AKS301_BANK: BankSoal[] = [...AKS301_BANK_UTS, ...AKS301_BANK_UAS];
+export const SII306_BANK: BankSoal[] = [...SII306_BANK_UTS, ...SII306_BANK_UAS];
+
+// Aliases for backwards compatibility
+export const AKS301_BANK_UTS = SII306_BANK_UTS;
+export const AKS301_BANK_UAS = SII306_BANK_UAS;
+export const AKS301_BANK = SII306_BANK;

@@ -6,7 +6,7 @@ const bundle = await build({
   entryPoints: ['src/data/sia/siaReadings.ts'], bundle: true, write: false,
   format: 'esm', platform: 'node', logLevel: 'silent',
 });
-const { AKS301_READINGS: readings } = await import(
+const { SII306_READINGS: readings } = await import(
   `data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`
 );
 const flatten = (blocks) => blocks.flatMap((block) => [block, ...('blocks' in block ? flatten(block.blocks) : [])]);

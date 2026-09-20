@@ -356,7 +356,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
         event.preventDefault();
         handleNext();
       }
-      if ((event.key === 'Enter' || event.key === ' ') && !isFlashcardInteractiveTarget(target)) {
+      if ((event.key === 'Enter' || event.key === ' ') && !isFlashcardInteractiveTarget(event.target)) {
         event.preventDefault();
         toggleFlip(activeIndex);
       }
