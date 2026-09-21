@@ -136,9 +136,9 @@ const PJK301_TM1_7 = materi([
   ['Penilaian Harta Pengalihan, Persediaan, & Tarif PPh', 'UU PPh Pasal 10, 17 | PP 55/2022'],
   ['Hubungan Istimewa & Transfer Pricing (PMK 172/2023)', 'UU PPh Pasal 18 | PMK 172/2023'],
   ['Penyusutan & Amortisasi Fiskal (PMK 72/2023)', 'UU PPh Pasal 11, 11A | PMK 72/2023'],
-  ['Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%', 'UU PPh Pasal 22, 23, 26 | PP 55/2022'],
-  ['Pemotongan PPh Final Pasal 4(2) & Norma PPh Pasal 15', 'UU PPh Pasal 4(2), 15 | PP 9/2022'],
-  ['Kredit Pajak LN PPh 24, Angsuran PPh 25, & Fasilitas 31E', 'UU PPh Pasal 24, 25, 31E'],
+  ['Pemungutan PPh 22, Pemotongan PPh 23/26, & PPh Final UMKM (PP 20/2026)', 'UU PPh Pasal 22, 23, 26 | PMK 51/2025 | PP 20/2026'],
+  ['Pemotongan PPh Final Pasal 4 ayat (2) & Norma Khusus PPh Pasal 15', 'UU PPh Pasal 4(2), 15 | PP 9/2022 | PMK 81/2024'],
+  ['Kredit Pajak LN (PPh 24), Angsuran PPh 25 / OPPT, & Insentif 31A/31E', 'UU PPh Pasal 24, 25, 31A, 31E | PMK 81/2024 | PP 78/2019'],
 ], 1);
 const PJK301_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'UU PPh jo. UU HPP | Kompilasi TM 1-7'],
@@ -152,9 +152,15 @@ const PJK301_TM8_14 = materi([
 const PJK301_REF = [
   'Republik Indonesia. UU No. 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah diubah terakhir dengan UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP). (Wajib)',
   'Republik Indonesia. UU No. 8 Tahun 1983 tentang Pajak Pertambahan Nilai dan PPnBM sebagaimana telah diubah terakhir dengan UU HPP. (Wajib)',
-  'Kementerian Keuangan RI. PP No. 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang PPh.',
+  'Kementerian Keuangan RI. PMK No. 81 Tahun 2024 tentang Tata Cara Pelaksanaan Hak dan Kewajiban Perpajakan (Coretax).',
+  'Kementerian Keuangan RI. PMK No. 51 Tahun 2025 tentang Pemungutan PPh Pasal 22 sehubungan dengan Pembayaran atas Penyerahan Barang dan Kegiatan di Bidang Impor atau Kegiatan Usaha di Bidang Lain.',
+  'Republik Indonesia. PP No. 20 Tahun 2026 tentang Perlakuan Perpajakan atas Penghasilan Tertentu (Pemberlakuan Tarif Final UMKM 0,5%).',
   'Kementerian Keuangan RI. PP No. 58 Tahun 2023 & PMK No. 168 Tahun 2023 tentang Pemotongan PPh Pasal 21 (TER).',
+  'Kementerian Keuangan RI. PMK No. 66 Tahun 2023 tentang Perlakuan Pajak Penghasilan atas Penggantian atau Imbalan Sehubungan dengan Pekerjaan atau Jasa dalam Bentuk Natura dan/atau Kenikmatan.',
   'Kementerian Keuangan RI. PMK No. 172 Tahun 2023 tentang Penerapan Prinsip Kewajaran dan Kelaziman Usaha (Transfer Pricing).',
+  'Kementerian Keuangan RI. PMK No. 72 Tahun 2023 tentang Penyusutan Harta Berwujud dan/atau Amortisasi Harta Tak Berwujud.',
+  'Republik Indonesia. PP No. 9 Tahun 2022 tentang Pajak Penghasilan atas Penghasilan dari Usaha Jasa Konstruksi.',
+  'Republik Indonesia. PP No. 78 Tahun 2019 tentang Fasilitas Pajak Penghasilan untuk Penanaman Modal di Bidang-Bidang Usaha Tertentu dan/atau di Daerah-Daerah Tertentu (Tax Allowance).',
   'Waluyo. (2020/2022). Perpajakan Indonesia (Edisi Terbaru). Salemba Empat.',
   'Resmi, Siti. (2022). Perpajakan: Teori dan Kasus (Edisi 12). Salemba Empat.',
 ];
