@@ -133,6 +133,127 @@ const checkReading = (tm, requiredPatterns, forbiddenPatterns = []) => {
   return reading;
 };
 
+// ---------------------------------------------------------------- TM01
+const tm1 = checkReading(
+  1,
+  [
+    'PP 20/2026',
+    'PP No. 20 Tahun 2026',
+    'PMK 66/2023',
+    'PMK 114/2025',
+    'Pasal 20A',
+    'Pasal 58',
+    'Schanz-Haig-Simons',
+    'PT BA',
+    'PT BC',
+    'Nona A',
+    'Zakat',
+    'Tuan F',
+    '397.500.000',
+    '68.375.000',
+    'Nona E',
+    '35%',
+  ],
+  [
+    /batas waktu 7 tahun bagi orang pribadi/i,
+  ]
+);
+
+// ---------------------------------------------------------------- TM02
+const tm2 = checkReading(
+  2,
+  [
+    'Pasal 10',
+    'PMK 81/2024',
+    'PMK 01/2026',
+    'Pasal 392',
+    'Pasal 402',
+    'Pasal 448',
+    'FIFO',
+    'Average',
+    'DILARANG',
+    'PT A',
+    'PT B',
+    '10.000.000',
+    '8.000.000',
+    '13.975.000',
+    '8.875.000',
+    '14.043.229,17',
+    '8.806.770,83',
+    'Tuan Idris',
+    '229.750.000',
+    '193.750.000',
+    '36.000.000',
+    'Pak Arjuna',
+    '124.000.000',
+    'PT Cemerlang Mandiri',
+    '176.000.000',
+  ],
+  [
+    /PMK 52\/2017(?!.*(?:dicabut|pencabutan))/i,
+  ]
+);
+
+// ---------------------------------------------------------------- TM03
+const tm3 = checkReading(
+  3,
+  [
+    'Pasal 18',
+    'PMK 172/2023',
+    'PMK 169/2015',
+    'PP 55/2022',
+    'CUP',
+    'RPM',
+    'CPM',
+    'TNMM',
+    'PSM',
+    'PT Alpha',
+    'PT Beta',
+    'Tuan Haryo',
+    'PT Manufaktur Jaya',
+    'SingaCorp',
+    '3.000.000.000',
+    '770.000.000',
+    '660.000.000',
+    '300.000.000',
+    '960.000.000',
+    'PT Finansia Investama',
+    '800.000.000',
+    '200.000.000',
+    'Substance Over Form',
+  ],
+  [
+    /PER-43\/PJ\/2010(?!.*(?:dicabut|pencabutan))/i,
+  ]
+);
+
+// ---------------------------------------------------------------- TM04
+const tm4 = checkReading(
+  4,
+  [
+    'Pasal 11',
+    'Pasal 11A',
+    'PMK 72/2023',
+    'PMK 66/2023',
+    'PMK 79/2008',
+    'Maret 2026',
+    '41.666.666,67',
+    '958.333.333,33',
+    'Kelompok 1',
+    '25 Juli 2022',
+    '9.375.000',
+    'PT Argobisnis',
+    'Februari 2026',
+    'PT Dynaplast',
+    '135.000.000',
+    '13.500.000',
+    '121.500.000',
+  ],
+  [
+    /KEP-220\/PJ\/2002(?!.*(?:tidak berlaku|digantikan|bukan lagi))/i,
+  ]
+);
+
 // ---------------------------------------------------------------- TM05
 const tm5 = checkReading(
   5,
@@ -234,9 +355,9 @@ const tm7 = checkReading(
   ]
 );
 
-assert.ok(formulas >= 30, `Total KaTeX formulas tested: ${formulas}`);
-assert.ok(solutionReveals >= 30, `Total worked solution cases tested: ${solutionReveals}`);
+assert.ok(formulas >= 35, `Total KaTeX formulas tested: ${formulas}`);
+assert.ok(solutionReveals >= 45, `Total worked solution cases tested: ${solutionReveals}`);
 
-console.log(`PASS: PJK301 canonical readings guard (TM05, TM06, TM07).`);
+console.log(`PASS: PJK301 canonical readings guard (TM01 through TM07).`);
 console.log(`- Validated KaTeX formulas: ${formulas}`);
 console.log(`- Validated worked solution cases: ${solutionReveals}`);
