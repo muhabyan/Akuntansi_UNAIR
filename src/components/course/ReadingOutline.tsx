@@ -7,6 +7,7 @@ export const DESKTOP_OUTLINE_STORAGE_KEY = 'akuntansihub:reading-outline-collaps
 export interface ReadingOutlineItem {
   id: string;
   label: string;
+  level: 2 | 3;
 }
 
 function slugifyHeading(text: string) {
@@ -19,39 +20,62 @@ function slugifyHeading(text: string) {
 }
 
 export function getReadingBlockId(block: ContentBlock, index: number) {
-  return block.kind === 'h2' ? `${slugifyHeading(block.text)}-${index + 1}` : undefined;
+  if (block.kind === 'h2') return `${slugifyHeading(block.text)}-${index + 1}`;
+  if (block.kind === 'h3') return `sub-${slugifyHeading(block.text)}-${index + 1}`;
+  if (block.kind === 'solution-reveal') return `case-${slugifyHeading(block.title)}-${index + 1}`;
+  return undefined;
 }
 
 export function buildReadingOutline(blocks: ContentBlock[]): ReadingOutlineItem[] {
-  return blocks.flatMap((block, index) => {
+  const result: ReadingOutlineItem[] = [];
+  blocks.forEach((block, index) => {
     const id = getReadingBlockId(block, index);
-    return block.kind === 'h2' && id ? [{ id, label: block.text }] : [];
+    if (block.kind === 'h2' && id) {
+      result.push({ id, label: block.text, level: 2 });
+    } else if (block.kind === 'h3' && id) {
+      result.push({ id, label: block.text, level: 3 });
+    } else if (block.kind === 'solution-reveal' && id) {
+      const cleanLabel = block.title.length > 55 ? block.title.slice(0, 52) + '…' : block.title;
+      result.push({ id, label: cleanLabel, level: 3 });
+    }
   });
+  return result;
 }
 
 function OutlineLinks({ items, activeId, onNavigate }: { items: ReadingOutlineItem[]; activeId?: string; onNavigate?: () => void }) {
+  let sectionIndex = 0;
   return (
     <nav className="reading-outline-nav" aria-label="Daftar isi bacaan">
-      <ol className="space-y-1">
-        {items.map((item, index) => (
-          <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              onClick={onNavigate}
-              aria-current={activeId === item.id ? 'location' : undefined}
-              className={`group flex min-h-11 items-start gap-2.5 rounded-lg border-l-2 px-2.5 py-2 text-sm leading-5 transition-colors ${
-                activeId === item.id
-                  ? 'border-blue-500 bg-blue-50 text-blue-700 dark:bg-blue-950/35 dark:text-blue-300'
-                  : 'border-transparent text-gray-600 hover:bg-blue-50 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/35 dark:hover:text-blue-300'
-              }`}
-            >
-              <span className="mt-0.5 shrink-0 font-mono text-[10px] font-bold text-blue-500/70" aria-hidden="true">
-                {String(index + 1).padStart(2, '0')}
-              </span>
-              <span>{item.label}</span>
-            </a>
-          </li>
-        ))}
+      <ol className="space-y-0.5">
+        {items.map((item) => {
+          const isH2 = item.level === 2;
+          if (isH2) sectionIndex++;
+          return (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={onNavigate}
+                aria-current={activeId === item.id ? 'location' : undefined}
+                className={`group flex min-h-9 items-start gap-2 rounded-lg border-l-2 py-1.5 text-sm leading-snug transition-colors ${
+                  isH2 ? 'px-2.5 font-medium' : 'pl-6 pr-2 text-[13px]'
+                } ${
+                  activeId === item.id
+                    ? 'border-blue-500 bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300 font-semibold'
+                    : 'border-transparent text-gray-600 hover:bg-blue-50/70 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/30 dark:hover:text-blue-300'
+                }`}
+              >
+                {isH2 ? (
+                  <span className="mt-0.5 shrink-0 font-mono text-[10px] font-bold text-blue-500 dark:text-blue-400" aria-hidden="true">
+                    {String(sectionIndex).padStart(2, '0')}
+                  </span>
+                ) : (
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-blue-400 dark:bg-gray-600 dark:group-hover:bg-blue-400" aria-hidden="true" />
+                )}
+                <span className="line-clamp-2">{item.label}</span>
+              </a>
+            </li>
+          );
+        })}
       </ol>
     </nav>
   );

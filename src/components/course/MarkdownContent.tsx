@@ -29,13 +29,17 @@ export function renderText(text: string): React.ReactNode {
           return (
             <a
               {...props}
-              className="font-semibold text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+              className="font-semibold text-blue-600 dark:text-blue-400 underline decoration-blue-500/40 underline-offset-4 hover:decoration-blue-500"
               {...(!isAnchor ? { target: '_blank', rel: 'noreferrer' } : {})}
             />
           );
         },
-        strong: ({ node: _node, ...props }) => <strong className="text-gold font-bold" {...props} />,
+        strong: ({ node: _node, ...props }) => <strong className="text-gray-900 dark:text-gray-100 font-bold" {...props} />,
         em: ({ node: _node, ...props }) => <em className="italic text-slate-800 dark:text-slate-200" {...props} />,
+        p: ({ node: _node, ...props }) => <p className="mb-2 last:mb-0 leading-relaxed text-gray-700 dark:text-gray-200" {...props} />,
+        ul: ({ node: _node, ...props }) => <ul className="my-2 space-y-1.5 pl-5 list-disc marker:text-blue-500 dark:marker:text-blue-400 text-gray-700 dark:text-gray-200" {...props} />,
+        ol: ({ node: _node, ...props }) => <ol className="my-2 space-y-1.5 pl-5 list-decimal marker:text-blue-500 dark:marker:text-blue-400 font-medium text-gray-700 dark:text-gray-200" {...props} />,
+        li: ({ node: _node, ...props }) => <li className="pl-0.5 leading-relaxed" {...props} />,
         code: ({ node: _node, inline, ...props }: any) => {
           if (inline) {
             return (
