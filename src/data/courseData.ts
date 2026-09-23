@@ -132,10 +132,10 @@ const MNS301_REF = [
 // --- PJK301 Perpajakan II, formerly catalogued as PJK202 (UU HPP, PP 55/2022, PP 58/2023, PMK 168/2023, UU PPN) ---
 // Sumber: RPP Resmi Perpajakan II, Departemen Akuntansi FEB UNAIR.
 const PJK301_TM1_7 = materi([
-  ['Konsep Dasar PPh, Subjek/Objek Pajak, & Biaya 3M', 'UU PPh Pasal 4, 6, 9 jo. UU HPP'],
-  ['Penilaian Harta Pengalihan, Persediaan, & Tarif PPh', 'UU PPh Pasal 10, 17 | PP 55/2022'],
-  ['Hubungan Istimewa & Transfer Pricing (PMK 172/2023)', 'UU PPh Pasal 18 | PMK 172/2023'],
-  ['Penyusutan & Amortisasi Fiskal (PMK 72/2023)', 'UU PPh Pasal 11, 11A | PMK 72/2023'],
+  ['Konsep Dasar PPh, Subjek/Objek Pajak, Biaya 3M, & PPh Orang Pribadi', 'UU PPh Pasal 4, 6, 7, 9, 17 | UU HPP | PP 55/2022 | PP 20/2026 | PMK 66/2023'],
+  ['Perolehan Harta, Penilaian Persediaan, dan Norma Penghitungan Penghasilan Neto (NPPN)', 'UU PPh Pasal 10, 14, 6(2), 17, 31E | UU HPP | PP 55/2022 | PMK 81/2024 jo. PMK 01/2026'],
+  ['Hubungan Istimewa, Instrumen Pencegahan Penghindaran Pajak, & Kesepakatan Harga Transfer (APA)', 'UU PPh Pasal 18, 32A | UU HPP | PP 55/2022 Bab VI | PMK 172/2023 | PMK 169/2015'],
+  ['Penyusutan Harta Berwujud, Amortisasi Harta Tak Berwujud, & Revaluasi Aset Tetap', 'UU PPh Pasal 11, 11A | UU HPP | PP 55/2022 | PMK 72/2023 | PMK 66/2023 | PMK 79/2008'],
   ['Pemungutan PPh 22, Pemotongan PPh 23/26, & PPh Final UMKM (PP 20/2026)', 'UU PPh Pasal 22, 23, 26 | PMK 51/2025 | PP 20/2026'],
   ['Pemotongan PPh Final Pasal 4 ayat (2) & Norma Khusus PPh Pasal 15', 'UU PPh Pasal 4(2), 15 | PP 9/2022 | PMK 81/2024'],
   ['Kredit Pajak LN (PPh 24), Angsuran PPh 25 / OPPT, & Insentif 31A/31E', 'UU PPh Pasal 24, 25, 31A, 31E | PMK 81/2024 | PP 78/2019'],
