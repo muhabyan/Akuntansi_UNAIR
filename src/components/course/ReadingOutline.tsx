@@ -50,6 +50,8 @@ function OutlineLinks({ items, activeId, onNavigate }: { items: ReadingOutlineIt
         {items.map((item) => {
           const isH2 = item.level === 2;
           if (isH2) sectionIndex++;
+          // Strip redundant leading numbers from h2 (e.g., "1. Ruang Lingkup" -> "Ruang Lingkup") since sectionIndex is already displayed
+          const cleanDisplayLabel = isH2 ? item.label.replace(/^\d+[\.\)]\s*/, '') : item.label;
           return (
             <li key={item.id}>
               <a
@@ -71,7 +73,7 @@ function OutlineLinks({ items, activeId, onNavigate }: { items: ReadingOutlineIt
                 ) : (
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-blue-400 dark:bg-gray-600 dark:group-hover:bg-blue-400" aria-hidden="true" />
                 )}
-                <span className="line-clamp-2">{item.label}</span>
+                <span className="line-clamp-2 leading-tight">{cleanDisplayLabel}</span>
               </a>
             </li>
           );

@@ -131,29 +131,35 @@ function renderCalloutText(text: string) {
 function SolutionRevealBlock({ block }: { block: Extract<ContentBlock, { kind: 'solution-reveal' }> }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="mb-6 rounded-xl border border-emerald-200/90 dark:border-emerald-800/70 bg-white dark:bg-gray-800/80 shadow-xs overflow-hidden">
-      <div className="p-5 flex flex-col items-start">
+    <div className="mb-8 rounded-xl border border-emerald-200/90 dark:border-emerald-800/70 bg-white dark:bg-gray-800/80 shadow-xs overflow-hidden">
+      <div className="p-5 md:p-6 flex flex-col items-start">
         <div className="flex items-center gap-2 mb-2">
           <span className="inline-flex items-center gap-1 rounded-md bg-emerald-100 dark:bg-emerald-950/70 px-2.5 py-0.5 text-xs font-bold text-emerald-800 dark:text-emerald-300 border border-emerald-200/70 dark:border-emerald-800/60">
-            <ClipboardCheck size={13} /> Kasus Praktik
+            <ClipboardCheck size={13} /> Kasus Praktik Terapan
           </span>
         </div>
         <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white leading-snug">{block.title}</h3>
-        {block.prompt && <div className="mt-2.5 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line">{renderText(block.prompt)}</div>}
+        {block.prompt && (
+          <div className="mt-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line bg-gray-50/80 dark:bg-gray-900/60 p-4 rounded-xl border border-gray-200/70 dark:border-gray-800 w-full">
+            {renderText(block.prompt)}
+          </div>
+        )}
         <button
           type="button"
           onClick={() => setIsOpen((open) => !open)}
-          className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 dark:border-emerald-700/80 bg-emerald-50/80 dark:bg-emerald-950/40 px-3 py-1.5 text-xs font-bold text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-colors"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 dark:border-emerald-700/80 bg-emerald-50/80 dark:bg-emerald-950/40 px-3.5 py-2 text-xs font-bold text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-colors shadow-xs"
         >
-          {isOpen ? '▲ Sembunyikan Pembahasan Solusi' : '▼ Tampilkan Pembahasan Solusi'}
+          {isOpen ? '▲ Sembunyikan Pembahasan Solusi' : '▼ Tampilkan Pembahasan Solusi Lengkap'}
         </button>
       </div>
       {isOpen && (
-        <div className="border-t border-emerald-200/80 dark:border-emerald-800/60 p-5 bg-emerald-50/30 dark:bg-gray-900/70">
-          <div className="mb-3 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300">
-            Pembahasan &amp; Analisis Fiskal:
+        <div className="border-t border-emerald-200/80 dark:border-emerald-800/60 p-5 md:p-6 bg-emerald-50/30 dark:bg-gray-900/70">
+          <div className="mb-4 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 border-b border-emerald-200/80 dark:border-emerald-800/60 pb-2 w-full">
+            <ListChecks size={14} /> Langkah Penyelesaian &amp; Analisis:
           </div>
-          {block.blocks.map((nested, index) => <Block key={index} block={nested} />)}
+          <div className="space-y-4">
+            {block.blocks.map((nested, index) => <Block key={index} block={nested} />)}
+          </div>
         </div>
       )}
     </div>
@@ -219,11 +225,11 @@ function Block({ block }: { block: ContentBlock }) {
     case 'table':
       return (
         <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
-          <table className="w-full min-w-[700px] text-[15px] text-left text-gray-800 dark:text-gray-200">
-            <thead className="text-[13.5px] font-bold uppercase tracking-wider bg-gray-50/95 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-700">
+          <table className="w-full min-w-[720px] text-[14px] text-left text-gray-800 dark:text-gray-200 border-collapse">
+            <thead className="text-[12.5px] font-bold uppercase tracking-wider bg-gray-50/95 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-700">
               <tr>
                 {block.headers.map((h, i) => (
-                  <th key={i} className="px-5 py-3.5 font-bold align-top">
+                  <th key={i} className={`px-4 py-3.5 font-bold align-top ${i === 0 ? 'min-w-[170px] w-[22%]' : ''}`}>
                     {h}
                   </th>
                 ))}
@@ -233,7 +239,7 @@ function Block({ block }: { block: ContentBlock }) {
               {block.rows.map((row, r) => (
                 <tr key={r} className="hover:bg-blue-50/40 dark:hover:bg-blue-900/15 transition-colors odd:bg-transparent even:bg-gray-50/40 dark:even:bg-gray-800/25">
                   {row.map((cell, c) => (
-                    <td key={c} className={`px-5 py-3.5 align-top leading-relaxed ${c === 0 ? 'font-medium text-gray-900 dark:text-white' : ''}`}>
+                    <td key={c} className={`px-4 py-3.5 align-top leading-relaxed ${c === 0 ? 'font-semibold text-gray-900 dark:text-white whitespace-normal break-normal' : 'text-gray-700 dark:text-gray-300'}`}>
                       {renderText(cell)}
                     </td>
                   ))}
@@ -241,7 +247,7 @@ function Block({ block }: { block: ContentBlock }) {
               ))}
             </tbody>
           </table>
-          {block.caption && <div className="px-5 py-3 bg-gray-50/60 dark:bg-gray-800/40 border-t border-gray-200 dark:border-gray-700/80 text-sm text-gray-500 dark:text-gray-400 italic">{renderText(block.caption)}</div>}
+          {block.caption && <div className="px-4 py-2.5 bg-gray-50/60 dark:bg-gray-800/40 border-t border-gray-200 dark:border-gray-700/80 text-xs text-gray-500 dark:text-gray-400 italic">{renderText(block.caption)}</div>}
         </div>
       );
     case 'journal':
@@ -416,8 +422,8 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
   }
 
   return (
-    <div className="-mt-16 mx-auto max-w-6xl px-4 md:px-8">
-      <div className="reading-layout grid min-w-0 gap-8 lg:grid-cols-[minmax(0,46rem)_14rem] lg:justify-center xl:gap-10">
+    <div className="-mt-16 mx-auto max-w-7xl px-4 md:px-8">
+      <div className="reading-layout grid min-w-0 gap-8 lg:grid-cols-[minmax(0,48rem)_16.5rem] xl:grid-cols-[minmax(0,50rem)_17.5rem] lg:justify-center xl:gap-10">
         <article className="min-w-0 pb-6">
           <CourseHeader courseName={course.name} reading={reading} onBack={onBack} />
 

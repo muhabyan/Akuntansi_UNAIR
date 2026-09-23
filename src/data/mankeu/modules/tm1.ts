@@ -123,11 +123,11 @@ export const TM1_READING: Reading = {
       kind: 'table',
       headers: ['Dimensi Tanggung Jawab', 'Treasurer (Bendahara Perusahaan)', 'Controller (Kepala Akuntansi)'],
       rows: [
-        ['Fokus Utama Aktivitas', 'Pengelolaan kas, modal, likuiditas, dan hubungan pasar modal.', 'Pencatatan akuntansi historis, pelaporan, dan kepatuhan regulasi.'],
-        ['Manajemen Kas & Likuiditas', 'Menjaga saldo kas optimal, investasi jangka pendek, dan fasilitas kredit bank.', 'Melakukan rekonsiliasi bank, pencatatan jurnal kas, dan verifikasi faktur.'],
-        ['Keputusan Penganggaran Modal', 'Mengevaluasi kelayakan investasi (NPV/IRR) dan mencari sumber pendanaan modal.', 'Mencatat pengeluaran modal (CapEx) dan menghitung beban depresiasi fiskal/komersial.'],
-        ['Hubungan Eksternal', 'Berinteraksi langsung dengan bankir investasi, investor saham, dan lembaga pemeringkat kredit.', 'Berinteraksi dengan auditor eksternal independen dan otoritas perpajakan (DJP/IRS).'],
-        ['Manajemen Risiko Finansial', 'Merancang lindung nilai (hedging) risiko suku bunga dan risiko valuta asing.', 'Mengembangkan sistem pengendalian internal (internal controls) dan audit kepatuhan.']
+        ['Fokus Utama Aktivitas', '🎯 **Forward-Looking (Masa Depan)**\nPengelolaan kas, modal, likuiditas, dan hubungan pasar modal.', '📊 **Backward-Looking (Historis)**\nPencatatan akuntansi historis, pelaporan berkala, dan kepatuhan regulasi.'],
+        ['Manajemen Kas & Likuiditas', '💰 **Strategi Saldo Kas & Kredit**\nMenjaga saldo kas optimal, investasi jangka pendek, dan fasilitas kredit bank.', '📝 **Verifikasi Transaksi Harian**\nMelakukan rekonsiliasi bank harian, pencatatan jurnal kas, dan verifikasi faktur.'],
+        ['Keputusan Penganggaran Modal', '📈 **Evaluasi Proyek & Pendanaan**\nMengevaluasi kelayakan investasi (NPV/IRR) dan mencari sumber pendanaan modal.', '📑 **Akuntansi Aset Tetap**\nMencatat pengeluaran modal (CapEx) dan menghitung beban depresiasi komersial/fiskal.'],
+        ['Hubungan Mitra Eksternal', '🤝 **Pelaku Pasar Modal**\nBerinteraksi langsung dengan bankir investasi, analis sekuritas, dan agen pemeringkat kredit.', '⚖️ **Auditor & Otoritas Fiskal**\nBerinteraksi dengan auditor eksternal (KAP independen) dan pemeriksa pajak (DJP).'],
+        ['Manajemen Risiko Finansial', '🛡️ **Lindung Nilai (Hedging)**\nMerancang lindung nilai suku bunga dan risiko valuta asing (pasar derivatif).', '🔒 **Pengendalian Internal**\nMengembangkan sistem pengendalian internal (SOP/COSO) dan audit kepatuhan.']
       ],
       caption: 'Tabel 1.1: Pembagian tanggung jawab eksekutif antara Treasurer dan Controller di bawah arahan CFO.'
     },
@@ -141,14 +141,14 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
-      headers: ['Kriteria Evaluasi', 'Perusahaan Perseorangan (Proprietorship)', 'Persekutuan (Partnership / Firma / CV)', 'Perseroan Terbatas (Corporation / PT)'],
+      headers: ['Kriteria Evaluasi', 'Perusahaan Perseorangan (Proprietorship)', 'Persekutuan (Partnership / CV)', 'Perseroan Terbatas (Corporation / PT)'],
       rows: [
-        ['Kemudahan & Biaya Pendirian', 'Sangat mudah dan berbiaya minimal; tidak memerlukan akta formal rumit.', 'Cukup mudah; membutuhkan perjanjian persekutuan/akta notaris mengenai bagi laba.', 'Relatif kompleks; membutuhkan akta notaris, pengesahan Kemenkumham, dan anggaran dasar formal.'],
-        ['Pertanggungjawaban Hukum Pemilik', 'Tanggung jawab pribadi tak terbatas (Unlimited Personal Liability); harta pribadi disita jika pailit.', 'Sekutu aktif memikul tanggung jawab tak terbatas; sekutu pasif terbatas pada modal yang disetor.', 'Tanggung jawab terbatas (Limited Liability); pemegang saham hanya bertanggung jawab sebesar modal saham disetor.'],
-        ['Akses Pasar Modal & Skalabilitas', 'Sangat terbatas; bergantung semata-mata pada kekayaan pribadi pemilik dan pinjaman bank kecil.', 'Terbatas pada kekayaan para sekutu; sulit menghimpun modal skala raksasa untuk proyek ekspansi.', 'Sangat luas; mampu menerbitkan saham dan obligasi ke publik (IPO) serta menarik ribuan investor global.'],
-        ['Kelangsungan Hidup (Going Concern)', 'Terbatas pada umur pemilik; usaha otomatis bubar secara hukum bila pemilik meninggal dunia.', 'Terbatas; persekutuan bubar jika ada sekutu yang mengundurkan diri, bangkrut, atau wafat.', 'Tidak terbatas (Perpetual / Unlimited Life); entitas hukum terpisah tetap berjalan meski pemegang saham berganti.'],
-        ['Likuiditas Pengalihan Kepemilikan', 'Sulit; memerlukan penjualan seluruh aset fisik atau pencarian pembeli baru dari awal.', 'Sulit; pengalihan bagian sekutu wajib memperoleh persetujuan bulat dari seluruh sekutu lainnya.', 'Sangat likuid dan mudah; saham perusahaan publik dapat diperjualbelikan seketika di bursa efek.'],
-        ['Perlakuan Pajak Penghasilan', 'Pass-Through Taxation (pajak dikenakan sekali pada level Surat Pemberitahuan Tahunan pemilik).', 'Pass-Through Taxation (penghasilan dibagi kepada sekutu, laba CV modal tak terbagi bukan objek PPh).', 'Pajak Berganda (Double Taxation): Laba korporasi kena PPh Badan 22%, dividen kena PPh Orang Pribadi.']
+        ['Kemudahan & Biaya Pendirian', '🟢 **Sangat Mudah & Murah**\nTidak memerlukan akta formal rumit atau izin khusus.', '🟡 **Moderat**\nMemerlukan akta notaris & kesepakatan pembagian laba para sekutu.', '🔴 **Formal & Kompleks**\nMemerlukan akta notaris, pengesahan Kemenkumham, & anggaran dasar.'],
+        ['Tanggung Jawab Hukum', '⚠️ **Tanggung Jawab Tak Terbatas**\nHarta pribadi disita penuh jika usaha mengalami kepailitan.', '⚠️ **Tanggung Jawab Campuran**\nSekutu aktif tak terbatas; sekutu pasif terbatas modal disetor.', '✅ **Tanggung Jawab Terbatas**\nPemegang saham hanya menanggung risiko sebesar modal saham disetor.'],
+        ['Akses Modal & Skalabilitas', '❌ **Sangat Terbatas**\nHanya bergantung kekayaan pemilik & utang bank skala kecil.', '⚠️ **Terbatas**\nTerbatas pada modal sekutu; sulit danai proyek ekspansi raksasa.', '✅ **Sangat Luas (Akses IPO)**\nDapat menerbitkan saham & obligasi ke ribuan investor publik.'],
+        ['Kelangsungan Hidup (Going Concern)', '❌ **Terbatas Umur Pemilik**\nUsaha otomatis bubar secara hukum bila pemilik meninggal dunia.', '⚠️ **Rentan Pembubaran**\nPersekutuan bubar jika ada sekutu yang mundur, pailit, atau wafat.', '✅ **Abadi (Perpetual Life)**\nEntitas hukum terpisah tetap berjalan meski pemegang saham berganti.'],
+        ['Likuiditas Pengalihan Hak', '❌ **Sangat Sulit**\nMemerlukan penjualan seluruh aset fisik atau mencari pembeli baru.', '⚠️ **Sulit**\nPengalihan bagian sekutu wajib disetujui bulat oleh seluruh sekutu lain.', '✅ **Sangat Likuid**\nSaham emiten publik dapat diperjualbelikan seketika di bursa efek.'],
+        ['Perlakuan Pajak Penghasilan', '✅ **Pajak Tunggal (Pass-Through)**\nDikenakan sekali pada SPT Tahunan Orang Pribadi pemilik usaha.', '✅ **Pajak Tunggal (Pass-Through)**\nLaba CV bukan objek pajak saat dibagikan ke sekutu (Ps. 4 (3) i).', '⚠️ **Pajak Berganda (Double Taxation)**\nPPh Badan 22% atas laba usaha + PPh Final 10% atas dividen pemegang saham.']
       ],
       caption: 'Tabel 1.2: Matriks perbandingan yuridis dan finansial bentuk-bentuk organisasi bisnis.'
     },
@@ -212,11 +212,11 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
-      headers: ['Kondisi Pasar', 'Hubungan Harga vs Nilai', 'Status Valuasi Saham', 'Tindakan Investor Rasional', 'Tekanan Pasar Menuju Ekuilibrium'],
+      headers: ['Kondisi Pasar', 'Hubungan Harga vs Nilai', 'Status Valuasi', 'Tindakan Investor Rasional', 'Dinamika Koreksi Pasar'],
       rows: [
-        ['Harga Pasar < Nilai Intrinsik', 'Market Price < Intrinsic Value', 'Undervalued (Saham Terlalu Murah / Bargain)', 'Melakukan aksi beli akumulasi (Buy / Long).', 'Permintaan meningkat mendongkrak harga pasar naik kembali mendekati nilai intrinsik.'],
-        ['Harga Pasar = Nilai Intrinsik', 'Market Price = Intrinsic Value', 'Equilibrium (Nilai Wajar Pasar)', 'Hold (Pertahankan portofolio sesuai imbal hasil yang disyaratkan).', 'Pasar berada dalam kondisi stabil tanpa tekanan koreksi ekstrem.'],
-        ['Harga Pasar > Nilai Intrinsik', 'Market Price > Intrinsic Value', 'Overvalued (Saham Terlalu Mahal / Gelembung)', 'Melakukan aksi jual atau short-selling.', 'Penjualan masif mendorong harga pasar turun terkoreksi menuju nilai fundamentalnya.']
+        ['Harga Pasar < Nilai Intrinsik', '$P_0 < P_0^*$', '🟢 **Undervalued (Diskon)**', '🛍️ **BUY / Akumulasi**\nBeli saham karena harga pasar berada di bawah nilai wajar riil.', 'Lonjakan permintaan beli mendorong harga pasar naik kembali menuju nilai intrinsik.'],
+        ['Harga Pasar = Nilai Intrinsik', '$P_0 = P_0^*$', '⚖️ **Equilibrium (Wajar)**', '⏸️ **HOLD / Pertahankan**\nPertahankan portofolio sesuai tingkat imbal hasil yang disyaratkan.', 'Pasar berada dalam ekuilibrium stabil tanpa tekanan aksi beli atau jual panik.'],
+        ['Harga Pasar > Nilai Intrinsik', '$P_0 > P_0^*$', '🔴 **Overvalued (Gelembung)**', '🏷️ **SELL / Ambil Laba**\nJual saham atau kurangi eksposur sebelum terjadi koreksi harga turun.', 'Aksi jual masif mendorong harga pasar turun terkoreksi menuju nilai fundamentalnya.']
       ],
       caption: 'Tabel 1.3: Dinamika ekuilibrium pasar modal berdasarkan perbandingan harga pasar terhadap nilai intrinsik.'
     },
@@ -321,62 +321,157 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'solution-reveal',
-      title: 'Kasus 1: Evaluasi Pemilihan Bentuk Usaha & Analisis Pajak Berganda',
-      prompt: 'Tuan Baskara dan Nyonya Citra mendirikan usaha rintisan konsultan teknologi finansial dengan modal awal Rp 1 Miliar. Pada tahun pertama operasional, usaha menghasilkan laba sebelum pajak sebesar Rp 800.000.000. Seluruh laba bersih setelah pajak direncanakan akan ditarik oleh kedua pendiri sebagai penghasilan pribadi (bagi rata 50:50). Bandingkan total kas bersih yang diterima pendiri jika memilih bentuk usaha: (1) Persekutuan / CV, dibandingkan dengan (2) Perseroan Terbatas (PT) dengan tarif PPh Badan 22% dan dividen Orang Pribadi dikenakan PPh Final 10%!',
+      title: 'Kasus 1: Evaluasi Pemilihan Bentuk Usaha & Pajak Berganda',
+      prompt: 'Tuan Baskara dan Nyonya Citra mendirikan usaha rintisan konsultan teknologi finansial dengan modal awal Rp 1 Miliar. Pada tahun pertama operasional, usaha menghasilkan laba sebelum pajak sebesar Rp 800.000.000. Seluruh laba bersih setelah pajak direncanakan akan ditarik oleh kedua pendiri sebagai penghasilan pribadi (bagi rata 50:50).\n\nBandingkan total kas bersih yang diterima pendiri jika memilih bentuk usaha: (1) Persekutuan / CV, dibandingkan dengan (2) Perseroan Terbatas (PT) dengan tarif PPh Badan 22% dan dividen Orang Pribadi dikenakan PPh Final 10%!',
       blocks: [
         {
-          kind: 'ul',
-          items: [
-            '**1. Analisis Skenario 1 (Bentuk Persekutuan / CV)**:\n- Laba Operasional Usaha = Rp 800.000.000.\n- Berdasarkan Pasal 4 ayat (3) huruf i UU PPh Indonesia, bagian laba yang diterima oleh anggota persekutuan komanditer (CV) yang modalnya tidak terbagi atas saham BUKAN merupakan objek pajak (bebas pajak dividen).\n- Pajak Badan CV (PPh Badan 22%) = 22% × Rp 800.000.000 = Rp 176.000.000.\n- Sisa Laba Bersih = Rp 800.000.000 - Rp 176.000.000 = **Rp 624.000.000**.\n- Saat ditarik oleh Tuan Baskara dan Nyonya Citra, tidak ada potongan pajak dividen tambahan.\n- **Total Kas Bersih Diterima Pemilik** = **Rp 624.000.000** (masing-masing Rp 312.000.000).',
-            '**2. Analisis Skenario 2 (Bentuk Perseroan Terbatas / PT)**:\n- Laba Sebelum Pajak PT = Rp 800.000.000.\n- PPh Badan (22%) = 22% × Rp 800.000.000 = Rp 176.000.000.\n- Laba Bersih Setelah Pajak (EAT) = Rp 800.000.000 - Rp 176.000.000 = Rp 624.000.000.\n- Jika dibagikan sebagai Dividen Kas kepada pemegang saham Orang Pribadi dan tidak diinvestasikan kembali, dikenakan PPh Final Dividen 10%:\n  Pajak Dividen = 10% × Rp 624.000.000 = Rp 62.400.000.\n- Sisa Kas Diterima = Rp 624.000.000 - Rp 62.400.000 = **Rp 561.600.000** (masing-masing Rp 280.800.000).',
-            '**3. Evaluasi Finansial & Trade-Off Yuridis**:\n- Bentuk CV menghasilkan kas bersih lebih besar Rp 62.400.000 karena terhindar dari pajak berganda (Double Taxation) atas pembagian laba.\n- Namun, bentuk PT memberikan perlindungan hukum Tanggung Jawab Terbatas (Limited Liability) yang melindungi kekayaan pribadi pendiri dari tuntutan hukum pihak ketiga di masa depan.'
-          ]
+          kind: 'h3',
+          text: 'Langkah 1: Perhitungan Kas Bersih Bentuk Persekutuan (CV)'
+        },
+        {
+          kind: 'p',
+          text: 'Berdasarkan Pasal 4 ayat (3) huruf i UU PPh Indonesia, bagian laba yang diterima oleh anggota persekutuan komanditer (CV) yang modalnya tidak terbagi atas saham **bukan merupakan objek pajak** (bebas pajak dividen):'
+        },
+        {
+          kind: 'formula',
+          text: `\\text{Laba Sebelum Pajak CV} = \\text{Rp } 800.000.000
+\\text{PPh Badan (22\\%)} = 22\\% \\times \\text{Rp } 800.000.000 = \\text{Rp } 176.000.000
+\\text{Sisa Laba Bersih Setelah Pajak} = \\text{Rp } 800.000.000 - \\text{Rp } 176.000.000 = \\mathbf{Rp\\ 624.000.000}
+\\text{Pajak Dividen Pribadi} = \\text{Rp 0 (Bukan Objek Pajak)}
+\\text{Total Kas Bersih Diterima Pemilik} = \\mathbf{Rp\\ 624.000.000}\\ (\\text{Masing-masing Rp 312.000.000})`
+        },
+        {
+          kind: 'h3',
+          text: 'Langkah 2: Perhitungan Kas Bersih Bentuk Perseroan Terbatas (PT)'
+        },
+        {
+          kind: 'p',
+          text: 'Pada perseroan terbatas, laba korporasi dikenakan **Pajak Berganda (Double Taxation)**: pertama pada tingkat entitas perseroan (PPh Badan 22%), kedua pada tingkat pemegang saham saat dividen dibagikan (PPh Final 10%):'
+        },
+        {
+          kind: 'formula',
+          text: `\\text{Laba Sebelum Pajak PT} = \\text{Rp } 800.000.000
+\\text{PPh Badan (22\\%)} = 22\\% \\times \\text{Rp } 800.000.000 = \\text{Rp } 176.000.000
+\\text{Laba Bersih Setelah Pajak (EAT)} = \\text{Rp } 624.000.000
+\\text{PPh Final Dividen OP (10\\%)} = 10\\% \\times \\text{Rp } 624.000.000 = \\text{Rp } 62.400.000
+\\text{Total Kas Bersih Diterima Pemilik} = \\text{Rp } 624.000.000 - \\text{Rp } 62.400.000 = \\mathbf{Rp\\ 561.600.000}\\ (\\text{Masing-masing Rp 280.800.000})`
+        },
+        {
+          kind: 'callout',
+          variant: 'key',
+          title: 'Evaluasi Finansial & Pertimbangan Yuridis',
+          text: '1. Efisiensi Arus Kas: Memilih bentuk CV menghasilkan tambahan kas bersih sebesar Rp 62.400.000 (+11,1%) karena terbebas dari pajak dividen berganda.\n2. Trade-Off Tanggung Jawab Hukum: Meskipun bentuk CV lebih hemat pajak, sekutu pengurus CV memikul tanggung jawab hukum pribadi tak terbatas (Unlimited Liability). Bentuk PT memberikan perisai Tanggung Jawab Terbatas (Limited Liability) yang melindungi aset pribadi pendiri dari risiko tuntutan kepailitan bisnis.'
         }
       ]
     },
     {
       kind: 'solution-reveal',
-      title: 'Kasus 2: Penentuan Nilai Intrinsik Saham vs Harga Pasar (Market Equilibrium)',
-      prompt: 'Analis riset ekuitas PT Danareksa mengevaluasi saham PT Telekom Nusantara Tbk. Proyeksi arus kas bebas (Free Cash Flow) tahun depan adalah Rp 500 Miliar dan diharapkan tumbuh konstan 5% per tahun selamanya. Biaya modal rata-rata tertimbang (WACC) perusahaan adalah 10%. Perusahaan memiliki utang berbunga sebesar Rp 2.000 Miliar dan 200 juta lembar saham biasa beredar. Saat ini, saham diperdagangkan di Bursa Efek Indonesia pada harga Rp 3.500 per lembar. Hitung nilai intrinsik saham per lembar dan tentukan rekomendasi investasi bagi nasabah!',
+      title: 'Kasus 2: Nilai Intrinsik Saham vs Harga Pasar (Ekuilibrium)',
+      prompt: 'Analis riset ekuitas mengevaluasi saham PT Telekom Nusantara Tbk. Proyeksi arus kas bebas (Free Cash Flow) tahun depan adalah Rp 500 Miliar dan diharapkan tumbuh konstan 5% per tahun selamanya. Biaya modal rata-rata tertimbang (WACC) adalah 10%. Perusahaan memiliki utang berbunga sebesar Rp 2.000 Miliar dan 200 juta lembar saham biasa beredar. Saat ini saham diperdagangkan di Bursa Efek Indonesia pada harga Rp 3.500 per lembar.\n\nHitung nilai intrinsik saham per lembar dan tentukan rekomendasi investasi bagi nasabah!',
       blocks: [
         {
-          kind: 'ul',
-          items: [
-            '**1. Menghitung Total Nilai Korporasi (Total Firm Value)**:\nDengan asumsi pertumbuhan konstan (Constant Growth Model):\n$$\\text{Nilai Perusahaan} = \\frac{\\text{FCF}_1}{\\text{WACC} - g} = \\frac{\\text{Rp } 500 \\text{ Miliar}}{0,10 - 0,05} = \\frac{\\text{Rp } 500 \\text{ Miliar}}{0,05} = \\mathbf{Rp\\ 10.000 \\text{ Miliar}}$$',
-            '**2. Menghitung Nilai Ekuitas Pemegang Saham (Value of Equity)**:\n$$\\text{Nilai Ekuitas} = \\text{Total Nilai Perusahaan} - \\text{Total Nilai Utang}$$\n$$\\text{Nilai Ekuitas} = \\text{Rp } 10.000 \\text{ Miliar} - \\text{Rp } 2.000 \\text{ Miliar} = \\mathbf{Rp\\ 8.000 \\text{ Miliar}}$$',
-            '**3. Menghitung Nilai Intrinsik Per Lembar Saham ($P_0^*$)**:\n$$\\text{Nilai Intrinsik per Lembar} = \\frac{\\text{Nilai Ekuitas}}{\\text{Jumlah Saham Beredar}} = \\frac{\\text{Rp } 8.000 \\text{ Miliar}}{200 \\text{ Juta Lembar}} = \\mathbf{Rp\\ 4.000 \\text{ per lembar}}$$',
-            '**4. Evaluasi Kondisi Pasar & Rekomendasi Investasi**:\n- Nilai Intrinsik ($P_0^* = \\text{Rp } 4.000$) > Harga Pasar Aktual ($P_0 = \\text{Rp } 3.500$).\n- **Status Saham**: **Undervalued** (diperdagangkan dengan diskon Rp 500 atau 12,5% di bawah nilai fundamentalnya).\n- **Rekomendasi Analis**: **BUY (Beli / Akumulasi)**. Dalam kondisi efisiensi pasar yang wajar, tekanan aksi beli akan mendorong harga pasar naik menuju nilai intrinsiknya di Rp 4.000.'
-          ]
+          kind: 'h3',
+          text: 'Langkah 1: Menghitung Nilai Total Perusahaan (Total Firm Value)'
+        },
+        {
+          kind: 'formula',
+          text: `\\text{Nilai Perusahaan} = \\frac{\\text{FCF}_1}{\\text{WACC} - g} = \\frac{\\text{Rp } 500 \\text{ Miliar}}{0,10 - 0,05} = \\frac{\\text{Rp } 500 \\text{ Miliar}}{0,05} = \\mathbf{Rp\\ 10.000 \\text{ Miliar}}`
+        },
+        {
+          kind: 'h3',
+          text: 'Langkah 2: Menghitung Nilai Ekuitas Pemegang Saham'
+        },
+        {
+          kind: 'formula',
+          text: `\\text{Nilai Ekuitas} = \\text{Total Nilai Perusahaan} - \\text{Total Nilai Utang}
+\\text{Nilai Ekuitas} = \\text{Rp } 10.000 \\text{ Miliar} - \\text{Rp } 2.000 \\text{ Miliar} = \\mathbf{Rp\\ 8.000 \\text{ Miliar}}`
+        },
+        {
+          kind: 'h3',
+          text: 'Langkah 3: Menghitung Nilai Intrinsik Saham per Lembar'
+        },
+        {
+          kind: 'formula',
+          text: `P_0^* = \\frac{\\text{Nilai Ekuitas}}{\\text{Jumlah Lembar Saham}} = \\frac{\\text{Rp } 8.000 \\text{ Miliar}}{200 \\text{ Juta Lembar}} = \\mathbf{Rp\\ 4.000 \\text{ per lembar}}`
+        },
+        {
+          kind: 'callout',
+          variant: 'tip',
+          title: 'Keputusan Investasi & Rekomendasi Analis',
+          text: '1. Status Valuasi: Nilai Intrinsik ($P_0^* = \\text{Rp } 4.000$) lebih tinggi dari Harga Pasar Aktual ($P_0 = \\text{Rp } 3.500$). Saham berstatus **Undervalued** (diperdagangkan dengan diskon Rp 500 atau 12,5% di bawah nilai fundamentalnya).\n2. Rekomendasi: **BUY (Beli / Akumulasi)**. Dalam pasar modal yang efisien, aksi akumulasi beli investor rasional akan mendongkrak harga pasar naik kembali menuju nilai wajar intrinsiknya di level Rp 4.000.'
         }
       ]
     },
     {
       kind: 'solution-reveal',
       title: 'Kasus 3: Desain Kompensasi Manajemen & Mitigasi Horizon Problem',
-      prompt: 'Dewan Komisaris PT Bio Farma Sejahtera mengamati bahwa Direktur Utama menolak proyek riset vaksin baru yang membutuhkan investasi CapEx Rp 50 Miliar hari ini namun diperkirakan menghasilkan nilai tambah NPV sebesar Rp 120 Miliar dalam 7 tahun ke depan. CEO menolak karena ia akan pensiun dalam 2 tahun, dan pengeluaran riset saat ini akan menurunkan laba bersih kuartalan serta memangkas bonus tunai tahunannya. Rancanglah restrukturisasi paket kompensasi untuk mengatasi konflik keagenan ini!',
+      prompt: 'Dewan Komisaris PT Bio Farma Sejahtera mengamati Direktur Utama menolak proyek riset vaksin baru ber-NPV Rp 120 Miliar dalam 7 tahun ke depan, yang memerlukan belanja modal (CapEx) Rp 50 Miliar saat ini. CEO menolak karena ia akan pensiun dalam 2 tahun, dan biaya riset akan memangkas laba akrual kuartalan serta mengurangi bonus kas tahunannya.\n\nRancanglah restrukturisasi paket kompensasi untuk mengatasi konflik keagenan ini!',
       blocks: [
         {
-          kind: 'ul',
+          kind: 'h3',
+          text: 'Langkah 1: Diagnosis Masalah Keagenan (Agency Conflict)'
+        },
+        {
+          kind: 'p',
+          text: 'Terjadi **Horizon Problem** dan **Risk Aversion**. Karena insentif eksekutif terikat pada laba akuntansi jangka pendek (Net Income), manajer termotivasi mengorbankan proyek investasi ber-NPV sangat positif demi mengamankan bonus kas tahunan sebelum masa pensiunnya tiba.'
+        },
+        {
+          kind: 'h3',
+          text: 'Langkah 2: Restrukturisasi Paket Kompensasi Eksekutif'
+        },
+        {
+          kind: 'ol',
           items: [
-            '**1. Diagnosis Masalah Keagenan**:\nTerjadi **Horizon Problem** dan **Risk Aversion**. Insentif manajer terkunci pada bonus tunai berbasis laba akuntansi jangka pendek (Net Income), sehingga ia mengorbankan proyek investasi ber-NPV positif yang sebenarnya memaksimalkan kekayaan pemegang saham.',
-            '**2. Restrukturisasi Struktur Kompensasi**:\n- **Kurangi Porsi Bonus Kas Tahunan Murni**: Batasi ketergantungan kompensasi pada laba akuntansi kuartalan agar direksi tidak termotivasi memotong belanja modal penting.\n- **Pemberian Restricted Stock Units (RSU) / Performance Shares**: Berikan hibah saham bersyarat yang didasarkan pada pencapaian indikator nilai tambah ekonomis (Economic Value Added / EVA) jangka panjang.\n- **Penerapan Masa Tunggu (Vesting Period) 5 Tahun**: Saham atau opsi saham yang diberikan dilarang dijual sebelum 5 tahun, bahkan jika sang eksekutif telah pensiun pada tahun kedua. Ketentuan ini memaksa CEO mengambil keputusan yang menjaga nilai saham tetap tinggi pasca-pensiunnya.',
-            '**3. Klausul Pengembalian Bonus (Clawback Provision)**:\nSertakan klausul pembatalan dan penarikan kembali bonus jika di kemudian hari terbukti laba masa lalu merupakan hasil manipulasi akrual atau penundaan biaya strategis.'
+            '**Kurangi Porsi Bonus Kas Tahunan Murni**: Batasi ketergantungan insentif pada laba akrual tahun berjalan agar direksi tidak tergoda menunda pengeluaran belanja modal penting.',
+            '**Berikan Restricted Stock Units (RSU) / Performance Shares**: Alokasikan saham hibah yang didasarkan pada metrik penciptaan nilai jangka panjang (Economic Value Added / EVA).',
+            '**Terapkan Masa Tunggu (Vesting Period) 5 Tahun**: Hak pencairan saham ditangguhkan minimal 5 tahun. Ketentuan ini tetap berlaku mengikat meskipun sang CEO telah pensiun pada tahun kedua.'
           ]
+        },
+        {
+          kind: 'callout',
+          variant: 'key',
+          title: 'Efek Penyelarasan Kepentingan & Klausul Clawback',
+          text: '1. Penyelarasan Horizon: Dengan masa vesting 5 tahun, kekayaan pensiun CEO tetap bergantung pada harga saham perusahaan di pasar modal di tahun ke-5. Hal ini mendorong CEO menyetujui proyek vaksin bernilai tambah tinggi.\n2. Klausul Clawback: Sertakan hak bagi Dewan Komisaris untuk membatalkan dan menarik kembali bonus jika terbukti terjadi manipulasi laba akrual atau pengabaian aset strategis di masa jabatannya.'
         }
       ]
     },
     {
       kind: 'solution-reveal',
-      title: 'Kasus 4: Dilema Pengambilan Risiko (Asset Substitution) Debtholders vs Shareholders',
-      prompt: 'PT Garuda Ekspres menghadapi kesulitan keuangan. Perusahaan memiliki utang obligasi Rp 80 Miliar yang jatuh tempo dalam 1 tahun dan aset yang tersisa saat ini bernilai Rp 85 Miliar. Manajemen dihadapkan pada peluang Proyek Investasi Spekulatif yang membutuhkan seluruh aset Rp 85 Miliar: Proyek memiliki probabilitas 20% menghasilkan kas Rp 200 Miliar dan probabilitas 80% menghasilkan kas hanya Rp 10 Miliar. Hitung expected payoff pemegang saham dan kreditor jika proyek diambil vs tidak diambil, serta jelaskan mengapa terjadi konflik keagenan!',
+      title: 'Kasus 4: Risiko Asset Substitution Debtholders vs Shareholders',
+      prompt: 'PT Garuda Ekspres menghadapi kesulitan keuangan. Perusahaan memiliki utang obligasi Rp 80 Miliar yang jatuh tempo dalam 1 tahun dan sisa aset bernilai Rp 85 Miliar. Manajemen ditawari proyek investasi spekulatif yang membutuhkan seluruh aset Rp 85 Miliar: memiliki probabilitas 20% menghasilkan kas Rp 200 Miliar dan 80% menghasilkan kas hanya Rp 10 Miliar.\n\nHitung expected payoff pemegang saham vs kreditor jika proyek diambil vs ditolak, serta jelaskan mengapa timbul konflik keagenan!',
       blocks: [
         {
-          kind: 'ul',
-          items: [
-            '**1. Kondisi Jika Proyek DITOLAK (Aset Tetap Likuid Rp 85 Miliar)**:\n- Kas Tersedia = Rp 85 Miliar.\n- Kreditor menerima hak utang pokok penuh = **Rp 80 Miliar**.\n- Pemegang Saham menerima sisa ekuitas = $\\text{Rp } 85 \\text{ Miliar} - \\text{Rp } 80 \\text{ Miliar} = \\mathbf{Rp\\ 5 \\text{ Miliar}}$.',
-            '**2. Kondisi Jika Proyek Spekulatif DIAMBIL**:\n- **Skenario Sukses (Probabilitas 20%, Kas Rp 200 Miliar)**:\n  Kreditor menerima pembayaran utang penuh = Rp 80 Miliar.\n  Pemegang Saham menerima sisa laba = $\\text{Rp } 200 \\text{ Miliar} - \\text{Rp } 80 \\text{ Miliar} = \\text{Rp } 120 \\text{ Miliar}$.\n- **Skenario Gagal (Probabilitas 80%, Kas Rp 10 Miliar)**:\n  Kreditor menerima seluruh kas sisa likuidasi = Rp 10 Miliar (mengalami kerugian/haircut Rp 70 Miliar).\n  Pemegang Saham menerima = Rp 0 (karena tanggung jawab terbatas/limited liability).\n- **Expected Payoff Pemegang Saham**:\n  $$\\text{E(Payoff)} = (0,20 \\times \\text{Rp } 120 \\text{ Miliar}) + (0,80 \\times \\text{Rp } 0) = \\mathbf{Rp\\ 24 \\text{ Miliar}}$$\n- **Expected Payoff Kreditor**:\n  $$\\text{E(Payoff)} = (0,20 \\times \\text{Rp } 80 \\text{ Miliar}) + (0,80 \\times \\text{Rp } 10 \\text{ Miliar}) = \\text{Rp } 16 \\text{ Miliar} + \\text{Rp } 8 \\text{ Miliar} = \\mathbf{Rp\\ 24 \\text{ Miliar}}$$',
-            '**3. Analisis Konflik Keagenan (Asset Substitution Problem)**:\n- Bagi Pemegang Saham, mengambil proyek spekulatif menaikkan nilai ekspektasi dari **Rp 5 Miliar menjadi Rp 24 Miliar** (keuntungan bersih +Rp 19 Miliar). Pemegang saham bermain dengan uang kreditor (*Heads I win, Tails the bank loses*).\n- Bagi Kreditor, nilai ekspektasi klaim anjlok drastis dari **Rp 80 Miliar menjadi Rp 24 Miliar** (kerugian masif -Rp 56 Miliar).\n- **Mitigasi**: Kreditor wajib melindungi diri sejak awal dengan **Debt Covenants** (larangan pergantian lini bisnis berisiko dan larangan pelepasan aset likuid).'
-          ]
+          kind: 'h3',
+          text: 'Skenario A: Proyek Spekulatif DITOLAK (Aset Likuid Rp 85 Miliar)'
+        },
+        {
+          kind: 'p',
+          text: 'Jika proyek ditolak dan kas dipertahankan likuid hingga jatuh tempo obligasi:'
+        },
+        {
+          kind: 'formula',
+          text: `\\text{Kas Likuid Tersedia} = \\text{Rp } 85 \\text{ Miliar}
+\\text{Klaim Kreditor (Pelunasan Pokok Utang)} = \\mathbf{Rp\\ 80 \\text{ Miliar}}
+\\text{Klaim Pemegang Saham (Sisa Ekuitas)} = \\text{Rp } 85 \\text{ M} - \\text{Rp } 80 \\text{ M} = \\mathbf{Rp\\ 5 \\text{ Miliar}}`
+        },
+        {
+          kind: 'h3',
+          text: 'Skenario B: Proyek Spekulatif DIAMBIL (Expected Payoff)'
+        },
+        {
+          kind: 'p',
+          text: 'Karena pemegang saham memiliki Tanggung Jawab Terbatas (Limited Liability), kerugian maksimal mereka terlindungi pada angka Rp 0 jika proyek gagal total:'
+        },
+        {
+          kind: 'formula',
+          text: `\\text{E(Payoff Saham)} = [0,20 \\times (\\text{Rp } 200 \\text{ M} - \\text{Rp } 80 \\text{ M})] + [0,80 \\times \\text{Rp } 0] = \\mathbf{Rp\\ 24 \\text{ Miliar}}
+\\text{E(Payoff Kreditor)} = [0,20 \\times \\text{Rp } 80 \\text{ M}] + [0,80 \\times \\text{Rp } 10 \\text{ M}] = \\text{Rp } 16 \\text{ M} + \\text{Rp } 8 \\text{ M} = \\mathbf{Rp\\ 24 \\text{ Miliar}}`
+        },
+        {
+          kind: 'callout',
+          variant: 'warning',
+          title: 'Inti Konflik Asset Substitution & Mitigasi Debt Covenants',
+          text: '1. Pergeseran Risiko (Risk Shifting): Pemegang saham melonjakkan nilai ekspektasi kekayaannya dari Rp 5 Miliar menjadi Rp 24 Miliar (+Rp 19 Miliar) dengan mempertaruhkan uang kreditor. Sebaliknya, kreditor menderita potensi kerugian masif karena nilai ekspektasi klaim anjlok dari Rp 80 Miliar menjadi Rp 24 Miliar (-Rp 56 Miliar).\n2. Mitigasi Kreditor: Lembaga keuangan dan pemegang obligasi wajib menyertakan Klausul Pembatasan Utang (Debt Covenants) dalam kontrak pinjaman, termasuk larangan penggantian lini bisnis berisiko tinggi dan batas rasio likuiditas minimum.'
         }
       ]
     },
