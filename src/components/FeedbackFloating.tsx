@@ -549,7 +549,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
             : undefined
         }
         className={`zen-hideable group flex items-center justify-center shadow-md ${
-          !isOpen ? 'mobile-utility-launcher mobile-utility-launcher--feedback' : ''
+          !isOpen && !draggable.isDesktop ? 'mobile-utility-launcher mobile-utility-launcher--feedback' : ''
         } ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
@@ -561,17 +561,17 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                 if (!draggable.isDesktop) {
                   if (draggable.edgeState === 'left')
                     return draggable.isLongPressing
-                      ? 'w-12 h-12 rounded-r-2xl bg-amber-500 text-white'
+                      ? 'w-12 h-12 rounded-r-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-white'
                       : 'w-1.5 h-10 rounded-r-md bg-amber-500/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-amber-500 text-white';
                   if (draggable.edgeState === 'right')
                     return draggable.isLongPressing
-                      ? 'w-12 h-12 rounded-l-2xl bg-amber-500 text-white'
-                      : 'w-1.5 h-10 rounded-l-md bg-amber-500/60 active:w-12 active:h-12 active:rounded-l-2xl active:bg-amber-500 text-white';
-                  return 'w-10 h-10 rounded-full bg-amber-500 text-white opacity-60';
+                      ? 'w-12 h-12 rounded-l-2xl bg-gradient-to-l from-amber-500 to-orange-500 text-white'
+                      : 'w-1.5 h-10 rounded-l-md bg-amber-500/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-amber-500 text-white';
+                  return 'w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white opacity-80';
                 } else {
-                  if (draggable.edgeState === 'left') return 'w-10 h-12 rounded-r-xl bg-amber-500 text-white';
-                  if (draggable.edgeState === 'right') return 'w-10 h-12 rounded-l-xl bg-amber-500 text-white';
-                  return 'w-10 h-10 rounded-full bg-amber-500 text-white opacity-60 hover:opacity-100 transition-opacity';
+                  if (draggable.edgeState === 'left') return 'w-10 h-12 rounded-r-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg';
+                  if (draggable.edgeState === 'right') return 'w-10 h-12 rounded-l-xl bg-gradient-to-l from-amber-500 to-orange-500 text-white shadow-lg';
+                  return 'w-11 h-11 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white opacity-90 hover:opacity-100 hover:scale-105 transition-all shadow-lg shadow-orange-500/30';
                 }
               })()
         }`}

@@ -11,6 +11,7 @@ import {
   Layers,
   ListTree,
   Maximize,
+  MessageSquarePlus,
   PlayCircle,
   Sparkles,
   Target,
@@ -343,6 +344,15 @@ function ReadingPanel({
               {activeOutlineItem ? `${String(activeOutlineIndex + 1).padStart(2, '0')} · ${activeOutlineItem.label.replace(/^\d+\.\s*/, '')}` : `TM ${reading.tm}`}
             </p>
           </div>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent('open-material-request', { detail: { courseCode, tm: reading.tm } }))}
+            className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg px-2.5 sm:px-3 text-xs sm:text-sm font-semibold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100/80 border border-amber-200/80 transition-colors dark:text-amber-300 dark:bg-amber-950/40 dark:hover:bg-amber-900/50 dark:border-amber-800/60"
+            title="Minta materi tambahan atau laporkan kesalahan materi"
+          >
+            <MessageSquarePlus size={15} className="text-amber-600 dark:text-amber-400" />
+            <span className="hidden sm:inline">Request Materi</span>
+          </button>
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent('akuntansihub:toggle-zen'))}

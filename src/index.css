@@ -600,16 +600,18 @@ html.dark .reading-scroll-cue {
 }
 
 /* Focused long-form reading controls. */
-body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-open) .mobile-utility-launcher,
-body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-open) .mobile-utility-badge {
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
+@media (max-width: 767px) {
+  body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-open) .mobile-utility-launcher,
+  body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-open) .mobile-utility-badge {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 
-body.reading-outline-menu-open .mobile-utility-launcher,
-body.reading-outline-menu-open .mobile-utility-badge {
-  opacity: 0 !important;
-  pointer-events: none !important;
+  body.reading-outline-menu-open .mobile-utility-launcher,
+  body.reading-outline-menu-open .mobile-utility-badge {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
 }
 
 body.reading-outline-menu-open {

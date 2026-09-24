@@ -1,12 +1,13 @@
 // =============================================================
-// api/report.ts — Vercel Serverless Function proxy to Telegram Bot
+// api/report.js — Vercel Serverless Function proxy to Telegram Bot
+// Pure JavaScript ES Module for 100% reliable Vercel Node runtime
 // =============================================================
 
-const rateLimitMap = new Map<string, number[]>();
+const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 minute
 const RATE_LIMIT_MAX = 3; // max 3 requests per minute per IP
 
-function isRateLimited(ip: string): boolean {
+function isRateLimited(ip) {
   const now = Date.now();
   const timestamps = rateLimitMap.get(ip) ?? [];
   const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
@@ -16,38 +17,27 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-const URGENCY_EMOJI: Record<string, string> = {
+const URGENCY_EMOJI = {
   biasa: '🟢',
   penting: '🟡',
   mendesak: '🔴',
 };
 
-const REPORT_TYPE_LABEL: Record<string, string> = {
+const REPORT_TYPE_LABEL = {
   'request-materi': '📚 Minta Materi Tambahan',
   'laporkan-kesalahan': '🐛 Laporkan Kesalahan',
   'saran-perbaikan': '💡 Saran Perbaikan',
 };
 
-function escapeHtml(str: string): string {
+function escapeHtml(str) {
+  if (!str || typeof str !== 'string') return '';
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 }
 
-type VercelReq = {
-  method?: string;
-  headers: Record<string, string | string[] | undefined>;
-  socket?: { remoteAddress?: string };
-  body?: any;
-};
-
-type VercelRes = {
-  status: (code: number) => VercelRes;
-  json: (data: any) => void;
-};
-
-export default async function handler(req: VercelReq, res: VercelRes) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
