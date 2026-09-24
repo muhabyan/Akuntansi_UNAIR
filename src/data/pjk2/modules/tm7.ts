@@ -46,7 +46,7 @@ const SVG_PPH24_25_31E = `<svg class="course-diagram-svg" viewBox="0 0 900 360" 
     
     <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Dasar Angsuran = PPh SPT Lalu - Kredit (21-24)</text>
     <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Angsuran Normal = Dasar Angsuran ÷ 12 bulan</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Masa Transisi (Jan-Feb) = Angsuran Des lalu</text>
+    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Sebelum SPT dalam batas normal = Angsuran Des lalu</text>
     <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• WP OPPT = 0,75% × Omzet per Outlet bulanan</text>
     <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Sifat OPPT: TIDAK FINAL (Kredit PPh 1770)</text>
     <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Setor tgl 15 bulan berikut, lapor validasi SSP</text>
@@ -85,7 +85,7 @@ export const TM7_READING: Reading = {
   intro: 'Pertemuan TM07 merupakan materi penutup paruh pertama semester sebelum Ujian Tengah Semester (UTS). Pembahasan mengintegrasikan mekanisme pelunasan pajak tahun berjalan dan optimalisasi insentif fiskal: penghitungan Kredit Pajak Luar Negeri (PPh Pasal 24) dengan metode Ordinary Credit per-country limitation, penetapan cicilan bulanan Wajib Pajak Badan dan Orang Pribadi (PPh Pasal 25 normal, masa transisi, dan WP OPPT 0,75%), fasilitas Tax Allowance penanaman modal (Pasal 31A UU PPh jo. PP 78/2019 jo. PMK 81/2024), serta fasilitas pengurangan tarif 50% bagi perseroan dengan peredaran bruto sampai dengan Rp50 Miliar (Pasal 31E UU PPh).',
   objectives: [
     'Menghitung Batas Maksimum Kredit Pajak Luar Negeri (BKMKPLN) per negara (Ordinary Credit) dan mengisolasi kerugian luar negeri.',
-    'Menghitung angsuran bulanan PPh Pasal 25 normal dan angsuran masa transisi awal tahun (Januari-Februari) sesuai PMK 81/2024 Pasal 226–237.',
+    'Menghitung angsuran bulanan PPh Pasal 25 normal dan masa transisi sebelum SPT Tahunan disampaikan dalam batas waktu normal sesuai Pasal 25 ayat (2) UU PPh.',
     'Menghitung angsuran PPh Pasal 25 Wajib Pajak Orang Pribadi Pengusaha Tertentu (WP OPPT) 0,75% per tempat usaha dan status kreditnya.',
     'Menghitung fasilitas Tax Allowance Pasal 31A (pengurangan neto 5% per tahun selama 6 tahun).',
     'Mengidentifikasi hak fasilitas Pasal 31E UU PPh dan menghitung PPh terutang (fasilitas penuh vs fasilitas proporsional).',
@@ -113,7 +113,7 @@ export const TM7_READING: Reading = {
       kind: 'callout',
       variant: 'key',
       title: 'Dasar Hukum Otentik: Angsuran PPh Pasal 25 & WP OPPT (PMK 81/2024 BAB VI Bagian Keenam Pasal 226–237)',
-      text: '1. Pencabutan PMK 215/2018: Berdasarkan Pasal 483 angka 27 PMK 81/2024, ketentuan teknis angsuran PPh 25 dialihkan ke BAB VI Bagian Keenam Pasal 226 sampai dengan Pasal 237 PMK 81/2024.\n2. Rumus Normal (Pasal 226): Dasar angsuran adalah PPh Terutang menurut SPT Tahunan tahun pajak yang lalu dikurangi kredit pajak PPh 21, 22, 23, dan 24, kemudian dibagi 12 bulan.\n3. Masa Transisi Awal Tahun (Pasal 229): Untuk bulan-bulan sebelum batas waktu penyampaian SPT Tahunan (Masa Januari dan Februari bagi WP Badan), besarnya angsuran PPh 25 sama dengan angsuran Masa Desember tahun pajak sebelumnya.\n4. Pengurangan Angsuran (Pasal 232): WP dapat mengajukan permohonan pengurangan angsuran PPh 25 apabila proyeksi PPh terutang tahun berjalan turun hingga kurang dari 75% dari dasar penghitungan.\n5. WP Orang Pribadi Pengusaha Tertentu / OPPT (Pasal 235 & 236): WP OP yang melakukan kegiatan usaha perdagangan eceran atau penyerahan jasa melalui tempat usaha yang berbeda domisili wajib membayar angsuran PPh 25 sebesar 0,75% dari peredaran bruto per bulan untuk masing-masing tempat usaha. Pembayaran ini bersifat TIDAK FINAL dan merupakan kredit pajak pada Formulir SPT Tahunan 1770.'
+      text: '1. Pencabutan PMK 215/2018: Berdasarkan Pasal 483 angka 27 PMK 81/2024, ketentuan teknis angsuran PPh 25 dialihkan ke BAB VI Bagian Keenam Pasal 226 sampai dengan Pasal 237 PMK 81/2024.\n2. Rumus Normal (Pasal 226): Dasar angsuran adalah PPh Terutang menurut SPT Tahunan tahun pajak yang lalu dikurangi kredit pajak PPh 21, 22, 23, dan 24, kemudian dibagi 12 bulan.\n3. Masa Transisi Awal Tahun (Pasal 25 ayat (2) UU PPh): Sebelum SPT Tahunan disampaikan dalam batas waktu normal, angsuran PPh 25 sama dengan angsuran bulan terakhir tahun pajak sebelumnya. Bagi WP OP yang menyampaikan SPT pada Maret, ini umumnya Januari–Februari; bagi WP Badan yang menyampaikan SPT pada April, umumnya Januari–Maret.\n4. Pengurangan Angsuran (Pasal 232): WP dapat mengajukan permohonan pengurangan angsuran PPh 25 apabila proyeksi PPh terutang tahun berjalan turun hingga kurang dari 75% dari dasar penghitungan.\n5. WP Orang Pribadi Pengusaha Tertentu / OPPT (Pasal 235 & 236): WP OP yang melakukan kegiatan usaha perdagangan eceran atau penyerahan jasa melalui tempat usaha yang berbeda domisili wajib membayar angsuran PPh 25 sebesar 0,75% dari peredaran bruto per bulan untuk masing-masing tempat usaha. Pembayaran ini bersifat TIDAK FINAL dan merupakan kredit pajak pada Formulir SPT Tahunan 1770.'
     },
     {
       kind: 'callout',
@@ -131,7 +131,7 @@ export const TM7_READING: Reading = {
       rows: [
         ['PPh Pasal 24 (Kredit Pajak LN)', 'Pasal 24 UU PPh jo. PMK 192/2018', 'Penghasilan neto dari luar negeri (worldwide income)', 'Kredit = min(Pajak LN, BKMKPLN). BKMKPLN = (Penghasilan LN / PKP) × PPh Terutang', 'Kredit Pajak Luar Negeri'],
         ['PPh Pasal 25 Badan Normal', 'Pasal 25 UU PPh jo. PMK 81/2024 Ps 226', 'Wajib Pajak Badan yang telah memiliki SPT Tahunan', 'Angsuran = [PPh Terutang Lalu - Kredit (21+22+23+24)] ÷ 12', 'Penyetoran Sendiri (Kredit PPh 28)'],
-        ['PPh Pasal 25 Masa Transisi', 'PMK 81/2024 Pasal 229', 'WP Badan sebelum batas lapor SPT (Jan-Feb)', 'Besaran angsuran = Angsuran PPh 25 Masa Desember tahun lalu', 'Penyetoran Sendiri (Kredit PPh 28)'],
+        ['PPh Pasal 25 Masa Transisi', 'Pasal 25 ayat (2) UU PPh', 'WP sebelum SPT Tahunan disampaikan dalam batas waktu normal', 'Besaran angsuran = Angsuran PPh 25 bulan terakhir tahun lalu', 'Penyetoran Sendiri (Kredit PPh 28)'],
         ['PPh 25 WP OPPT', 'PMK 81/2024 Pasal 235 & 236', 'Pedagang eceran / jasa dengan gerai/outlet terpisah', '0,75% × Peredaran bruto bulanan per masing-masing tempat usaha', 'TIDAK FINAL (Kredit SPT OP 1770)'],
         ['Tax Allowance (Pasal 31A)', 'PP 78/2019 jo. PMK 81/2024 Ps 407–424', 'WP Badan industri tertentu / daerah tertentu', 'Pengurangan neto fiskal 5% per tahun selama 6 tahun (total 30%)', 'Fasilitas Pengurang Penghasilan'],
         ['Pasal 31E (Omzet s.d. 4,8 M)', 'Pasal 31E UU PPh jo. SE-02/PJ/2015', 'WP Badan omzet tahunan s.d. Rp4.800.000.000', 'Diskon 50% atas seluruh PKP: PPh = 11% × PKP', 'Penetapan Beban Pajak Terutang'],
@@ -210,13 +210,13 @@ export const TM7_READING: Reading = {
     },
     {
       kind: 'solution-reveal',
-      title: 'Kasus 4: Angsuran PPh Pasal 25 Masa Awal Tahun (Januari-Februari Rollover)',
+      title: 'Kasus 4: Angsuran PPh Pasal 25 Masa Awal Tahun (WP Badan Januari–Maret)',
       prompt: 'Melanjutkan data PT Sumber Rezeki pada Kasus 3, perusahaan baru menyampaikan SPT Tahunan PPh Badan Tahun Pajak 2025 pada tanggal 28 April 2026. Angsuran PPh Pasal 25 Masa Pajak Desember 2025 tercatat sebesar Rp25.000.000. Berapa besarnya angsuran PPh Pasal 25 yang wajib dibayar perusahaan untuk Masa Pajak Januari, Februari, dan Maret 2026, serta mulai kapan angsuran baru Rp30.000.000 diberlakukan?',
       blocks: [
         {
           kind: 'ul',
           items: [
-            '**1. Dasar Hukum Transisi (Pasal 229 PMK 81/2024)**:\nUntuk bulan-bulan sebelum batas waktu penyampaian SPT Tahunan PPh (Masa Januari s.d. Maret bagi WP Badan yang menyampaikan SPT di bulan April), besarnya angsuran PPh 25 adalah sama dengan besarnya angsuran PPh 25 Masa Pajak terakhir dari Tahun Pajak sebelumnya (Masa Desember).',
+            '**1. Dasar Hukum Transisi (Pasal 25 ayat (2) UU PPh)**:\nUntuk bulan-bulan sebelum SPT Tahunan disampaikan dalam batas waktu normal (Masa Januari s.d. Maret bagi WP Badan yang menyampaikan SPT di bulan April), besarnya angsuran PPh 25 sama dengan angsuran Masa Pajak terakhir dari tahun pajak sebelumnya (Masa Desember).',
             '**2. Besaran Angsuran Masa Januari, Februari, dan Maret 2026**:\nMengikuti nilai angsuran Masa Desember 2025, yaitu sebesar **Rp25.000.000 per bulan**.',
             '**3. Mulai Berlakunya Angsuran Baru**:\nAngsuran hasil perhitungan SPT Tahunan 2025 (sebesar **Rp30.000.000 per bulan**) mulai berlaku untuk Masa Pajak April 2026 (bulan disampaikannya SPT Tahunan).'
           ]
@@ -307,7 +307,7 @@ export const TM7_READING: Reading = {
       kind: 'callout',
       variant: 'key',
       title: 'Daftar Jebakan Klasik Ujian Tengah Semester (Exam Traps)',
-      text: '1. Jebakan Kerugian Luar Negeri pada PPh 24:\n- Jebakan Soal: Soal menyajikan PT X memiliki laba dalam negeri Rp1 Miliar dan menderita rugi cabang di luar negeri Rp300 Juta.\n- Perangkap: Mahasiswa mengurangkan kerugian luar negeri sehingga PKP dihitung Rp700 Juta.\n- Solusi Benar: Berdasarkan asas pemajakan internasional, kerugian luar negeri DILARANG DIGABUNG. PKP di Indonesia tetap utuh Rp1.000.000.000.\n\n2. Jebakan Batasan Omzet Rp50 Miliar Fasilitas Pasal 31E:\n- Jebakan Soal: PT Y membukukan omzet Rp52 Miliar, apakah berhak atas tarif 11% atas omzet s.d. Rp4,8 Miliar?\n- Solusi Benar: TIDAK BERHAK SAMA SEKALI. Syarat mutlak Pasal 31E adalah peredaran bruto kumulatif tidak melebihi Rp50 Miliar. Jika omzet > Rp50 Miliar, seluruh PKP wajib dikenai tarif normal 22%.\n\n3. Jebakan Angsuran Awal Tahun PPh 25 (Rollover Masa Transisi):\n- Jebakan Soal: Kapan hasil perhitungan angsuran PPh 25 baru dari SPT Tahunan 2025 mulai berlaku?\n- Solusi Benar: Mulai berlaku pada bulan disampaikannya SPT Tahunan. Untuk Masa Januari dan Februari (atau Masa Januari s.d. Maret bagi WP Badan), besarnya angsuran WAJIB MENGIKUTI Masa Desember tahun pajak sebelumnya.\n\n4. Jebakan Sifat Pajak WP OPPT:\n- Jebakan Soal: Apakah setoran 0,75% per gerai bagi pedagang eceran bersifat final?\n- Solusi Benar: BUKAN FINAL. Angsuran 0,75% adalah cicilan pelunasan pajak di muka (Kredit PPh 28) yang dapat dikreditkan pada SPT Tahunan Orang Pribadi Formulir 1770.'
+      text: '1. Jebakan Kerugian Luar Negeri pada PPh 24:\n- Jebakan Soal: Soal menyajikan PT X memiliki laba dalam negeri Rp1 Miliar dan menderita rugi cabang di luar negeri Rp300 Juta.\n- Perangkap: Mahasiswa mengurangkan kerugian luar negeri sehingga PKP dihitung Rp700 Juta.\n- Solusi Benar: Berdasarkan asas pemajakan internasional, kerugian luar negeri DILARANG DIGABUNG. PKP di Indonesia tetap utuh Rp1.000.000.000.\n\n2. Jebakan Batasan Omzet Rp50 Miliar Fasilitas Pasal 31E:\n- Jebakan Soal: PT Y membukukan omzet Rp52 Miliar, apakah berhak atas tarif 11% atas omzet s.d. Rp4,8 Miliar?\n- Solusi Benar: TIDAK BERHAK SAMA SEKALI. Syarat mutlak Pasal 31E adalah peredaran bruto kumulatif tidak melebihi Rp50 Miliar. Jika omzet > Rp50 Miliar, seluruh PKP wajib dikenai tarif normal 22%.\n\n3. Jebakan Angsuran Awal Tahun PPh 25 (Rollover Masa Transisi):\n- Jebakan Soal: Kapan hasil perhitungan angsuran PPh 25 baru dari SPT Tahunan 2025 mulai berlaku?\n- Solusi Benar: Mulai berlaku pada bulan disampaikannya SPT Tahunan. Jika WP OP menyampaikan SPT pada Maret, angsuran Januari–Februari umumnya mengikuti Desember sebelumnya; jika WP Badan menyampaikan SPT pada April, angsuran Januari–Maret umumnya mengikuti Desember sebelumnya.\n\n4. Jebakan Sifat Pajak WP OPPT:\n- Jebakan Soal: Apakah setoran 0,75% per gerai bagi pedagang eceran bersifat final?\n- Solusi Benar: BUKAN FINAL. Angsuran 0,75% adalah cicilan pelunasan pajak di muka (Kredit PPh 28) yang dapat dikreditkan pada SPT Tahunan Orang Pribadi Formulir 1770.'
     },
     {
       kind: 'h2',
@@ -318,7 +318,7 @@ export const TM7_READING: Reading = {
       items: [
         '**Per-Country Limitation Mutlak**: Batas maksimum kredit PPh 24 wajib dihitung secara terpisah untuk masing-masing negara sumber penghasilan. Dilarang menggabungkan (pooling) pajak dari berbagai negara.',
         '**Pajak Luar Negeri Lebih Hangus**: Kelebihan pajak yang dibayar di luar negeri dibanding batas BKMKPLN tidak dapat direstitusi, tidak dapat dikompensasikan ke tahun depan, dan dilarang dibebankan sebagai biaya fiskal.',
-        '**Masa Transisi PPh 25 (Pasal 229 PMK 81/2024)**: Sebelum SPT Tahunan baru dilaporkan, angsuran bulanan tahun berjalan sama dengan angsuran Masa Desember tahun sebelumnya.',
+        '**Masa Transisi PPh 25 (Pasal 25 ayat (2) UU PPh)**: Sebelum SPT Tahunan disampaikan dalam batas waktu normal, angsuran bulanan mengikuti angsuran bulan terakhir tahun sebelumnya.',
         '**WP OPPT Tarif 0,75% Bersifat Kredit**: PPh 25 OPPT dikenakan per masing-masing tempat usaha yang berbeda domisili, dan seluruhnya merupakan kredit pajak di SPT Tahunan.',
         '**Fasilitas Pasal 31E Otomatis Berdasarkan Omzet**: Diskon 50% tarif PPh Badan berlaku otomatis bagi WP Badan dalam negeri dengan omzet kumulatif sampai dengan Rp50 Miliar (penuh untuk omzet s.d. Rp4,8 Miliar, proporsional untuk omzet antara Rp4,8 Miliar s.d. Rp50 Miliar).'
       ]

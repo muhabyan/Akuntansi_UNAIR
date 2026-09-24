@@ -78,8 +78,12 @@ assert.deepEqual(Object.keys(content.reviews).sort(), ['uas', 'uts']);
 const cards = getFlashcards('PJK301');
 assert.equal(cards.length, 84);
 assert.equal(perpajakan[0].flashcardCount, cards.length, 'catalog flashcardCount matches the deck');
-// Saved review state is keyed by card id, so the ids keep the legacy prefix (PR for the TM1-TM7 practice items replaces some).
-for (const card of cards) assert.match(card.id, /^pjk202-tm\d{2}-\d{2}$/, 'flashcard ids keep the legacy prefix');
+// TM01–TM07 changed meaning, so v2 ids prevent old SRS/star state from following new cards.
+// TM08–TM14 retain their existing legacy ids and stored state.
+for (const card of cards) {
+  assert.match(card.id, card.tm <= 7 ? /^pjk202-v2-tm\d{2}-\d{2}$/ : /^pjk202-tm\d{2}-\d{2}$/,
+    'flashcard ids isolate rebuilt Pra-UTS cards and preserve Pra-UAS ids');
+}
 assert.deepEqual(getQuizSets('PJK301').map((set) => set.id), ['uts', 'uas', 'all']);
 assert.ok(getQuizSets('PJK301').every((set) => set.items.length > 0) && getQuiz('PJK301').length > 0);
 assert.deepEqual(getBankSoalSets('PJK301').map((set) => set.id), ['uts', 'uas', 'all']);

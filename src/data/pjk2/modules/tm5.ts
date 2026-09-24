@@ -278,7 +278,7 @@ export const TM5_READING: Reading = {
         { kind: 'formula', text: '\\text{PPh Pasal 22}=0{,}3\\% \\times \\text{Rp}400.000.000=\\text{Rp}1.200.000' },
         { kind: 'p', text: 'Sifat: **TIDAK FINAL** (dapat diperhitungkan sebagai kredit pajak di SPT Tahunan PT Bahtera Abadi).' },
         { kind: 'p', text: '**2. Penjualan Bensin ke SPBU Swasta Non-Pertamina (Penyalur / Agen):**' },
-        { kind: 'formula', text: '\\text{PPh Pasal 22}=0{,}25\\% \\times \\text{Rp}50.000.000=\\text{Rp}1.250.000' },
+        { kind: 'formula', text: '\\text{PPh Pasal 22}=0{,}25\\% \\times \\text{Rp}500.000.000=\\text{Rp}1.250.000' },
         { kind: 'p', text: 'Sifat: **FINAL** (pajak rampung seketika; laba penjualan BBM SPBU swasta tidak dihitung pajaknya lagi di akhir tahun).' },
       ],
     },
