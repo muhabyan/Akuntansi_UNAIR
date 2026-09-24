@@ -15,6 +15,7 @@ import PomodoroTimer from './components/PomodoroTimer';
 import OnboardingTour from './components/OnboardingTour';
 import AITutorFloating from './components/AITutorFloating';
 import LiveChatFloating from './components/LiveChatFloating';
+import FeedbackFloating from './components/FeedbackFloating';
 import AICommandHandler from './components/AICommandHandler';
 import PWAPrompt from './components/PWAPrompt';
 import { NotificationProvider } from './contexts/NotificationContext';
@@ -570,6 +571,7 @@ export default function App() {
       <PomodoroTimer />
       <AITutorFloating />
       <LiveChatFloating />
+      <FeedbackFloating currentCourse={selectedCourse} currentTm={readingTm} />
       <AICommandHandler />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama

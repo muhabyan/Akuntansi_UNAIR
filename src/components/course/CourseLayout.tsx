@@ -197,9 +197,12 @@ function ReadingPanel({
   const mobileOutlineTriggerRef = useRef<HTMLButtonElement>(null);
   const mobileOutlineWasOpen = useRef(false);
 
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const minSwipeDistance = 50;
+  const touchInfoRef = useRef<{
+    startX: number;
+    startY: number;
+    startTime: number;
+    ignored: boolean;
+  } | null>(null);
 
   useEffect(() => {
     try {
@@ -217,24 +220,66 @@ function ReadingPanel({
   }, [mobileOutlineOpen]);
 
   const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    const target = e.target instanceof Element ? e.target : null;
+    const isScrollableOrInteractive = Boolean(
+      target?.closest(
+        'table, .akbi-table-scroll, .course-table-card, .course-table-head, ' +
+        '.course-formula-surface, .course-journal-card, .katex, .katex-display, ' +
+        'pre, code, svg, button, a, input, textarea, select, details, summary, ' +
+        '[role="region"], [role="button"], [contenteditable="true"], ' +
+        '.reading-outline-sheet, .mobile-utility-panel, .mobile-utility-launcher'
+      )
+    );
+
+    touchInfoRef.current = {
+      startX: touch.clientX,
+      startY: touch.clientY,
+      startTime: performance.now(),
+      ignored: isScrollableOrInteractive,
+    };
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+    if (!touchInfoRef.current || touchInfoRef.current.ignored) return;
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    const deltaX = Math.abs(touch.clientX - touchInfoRef.current.startX);
+    const deltaY = Math.abs(touch.clientY - touchInfoRef.current.startY);
+
+    // If movement is predominantly vertical (page scrolling), cancel swipe navigation
+    if (deltaY > 12 && deltaY > deltaX) {
+      touchInfoRef.current.ignored = true;
+    }
   };
 
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-    
-    if (isLeftSwipe && !isLast) {
-      onNext();
-    } else if (isRightSwipe && !isFirst) {
-      onPrev();
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const touchInfo = touchInfoRef.current;
+    touchInfoRef.current = null;
+    if (!touchInfo || touchInfo.ignored) return;
+
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+
+    const deltaX = touchInfo.startX - touch.clientX;
+    const deltaY = touchInfo.startY - touch.clientY;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+    const duration = performance.now() - touchInfo.startTime;
+
+    const minSwipeDistance = 90;
+    const isQuickSwipe = duration <= 450;
+    const isPredominantlyHorizontal = absX >= absY * 2.5;
+
+    if (absX >= minSwipeDistance && isPredominantlyHorizontal && isQuickSwipe) {
+      if (deltaX > 0 && !isLast) {
+        onNext();
+      } else if (deltaX < 0 && !isFirst) {
+        onPrev();
+      }
     }
   };
 
