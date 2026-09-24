@@ -325,6 +325,12 @@ body.zen-mode-active .mobile-utility-badge { display: none !important; }
 
 /* Preserve useful column widths inside the document while keeping the page
    itself within the viewport. Dense academic tables remain swipeable. */
+.akbi-table-scroll {
+  touch-action: pan-x pan-y;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
 .reading-document .akbi-table-scroll > table {
   min-width: max(100%, 42rem);
 }
