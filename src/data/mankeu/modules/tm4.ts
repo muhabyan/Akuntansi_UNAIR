@@ -111,70 +111,100 @@ export const TM4_READING: Reading = {
     },
     {
       kind: 'table',
-      headers: ['Simbol', 'Nama Finansial', 'Bahasa Manusia (Maksud Aslinya)', 'Arti Angka / Satuan'],
+      headers: ['Simbol / Notasi', 'Nama Finansial', 'Bahasa Manusia (Maksud Aslinya)', 'Arti Angka & Satuan'],
       rows: [
         [
           '$r$ atau $k$',
-          'Rate of Return',
+          'Rate of Return (Total Return)',
           '**Persentase Keuntungan**. Berapa persen uang Anda bertumbuh setelah diinvestasikan selama 1 periode.',
-          'Contoh: $15\\%$ artinya modal Rp 1.000 bertambah untung Rp 150.'
+          'Satuan: $\\%$. Contoh: $15\\%$ artinya modal Rp 1.000 bertambah untung Rp 150.'
         ],
         [
           '$\\hat{r}$ (*r-hat*)',
-          'Expected Return',
-          '**Ekspektasi Keuntungan**. Rata-rata tertimbang dari seluruh skenario kemungkinan masa depan (probabilitas dikali return skenario).',
-          'Contoh: $\\hat{r} = 12\\%$ adalah rata-rata keuntungan yang diharapkan investor.'
+          'Expected Rate of Return',
+          '**Ekspektasi Keuntungan ke Depan**. Rata-rata tertimbang dari seluruh skenario kemungkinan masa depan (probabilitas dikali return skenario).',
+          'Satuan: $\\%$. Contoh: $\\hat{r} = 12\\%$ adalah rata-rata keuntungan yang diantisipasi investor.'
+        ],
+        [
+          '$\\bar{r}$ (*r-bar*)',
+          'Realized / Historical Return',
+          '**Keuntungan Masa Lalu yang Nyata Terjadi**. Rata-rata pengembalian historis yang dihitung dari data realisasi beberapa tahun ke belakang.',
+          'Satuan: $\\%$. Contoh: $\\bar{r} = 11,5\\%$ adalah rata-rata return riil selama 5 tahun terakhir.'
         ],
         [
           '$r_i$ atau $k_i$',
           'Required Rate of Return',
           '**Return Minimal yang Dituntut**. Syarat batas keuntungan minimal yang diminta investor agar mau menaruh uang di saham $i$.',
-          'Dihitung dengan rumus CAPM. Jika saham diproyeksikan untung $15\\%$ padahal syarat minimalnya $13,4\\%$, saham tersebut layak dibeli!'
+          'Satuan: $\\%$. Dihitung dengan rumus CAPM. Jika saham diproyeksikan untung $15\\%$ padahal syarat minimalnya $13,4\\%$, saham tersebut layak dibeli!'
         ],
         [
           '$\\sigma$ (*Sigma*)',
           'Standar Deviasi',
-          '**Ukuran Lebar Goyangan / Risiko Total (*Stand-alone Risk*)**. Seberapa jauh hasil riil bisa melenceng meleset dari ekspektasi.',
-          'Contoh: $\\sigma = 20\\%$ artinya harga saham sangat fluktuatif (berdebar-debar). $\\sigma = 3\\%$ artinya sangat stabil.'
+          '**Ukuran Lebar Goyangan / Risiko Total (*Stand-alone Risk*)**. Seberapa jauh hasil riil bisa melenceng meleset dari ekspektasi rata-rata.',
+          'Satuan: $\\%$. Contoh: $\\sigma = 20\\%$ artinya harga saham sangat fluktuatif (berdebar-debar). $\\sigma = 3\\%$ artinya sangat stabil.'
+        ],
+        [
+          '$\\sigma^2$',
+          'Varians (Variance)',
+          '**Kuadrat Deviasi**. Nilai rata-rata dari kuadrat selisih antara return tiap kondisi dengan expected return.',
+          'Satuan: desimal kuadrat. Diakarkuadratkan menjadi $\\sigma$ agar satuannya kembali ke $\\%$.'
         ],
         [
           '$CV$',
           'Coefficient of Variation',
-          '**Risiko per 1 Unit Return** ($CV = \\sigma / \\hat{r}$). Mengukur risiko secara adil tanpa bias besarnya nilai return.',
-          'Contoh: $CV = 1,5\\times$ artinya untuk tiap 1% keuntungan yang diharapkan, Anda harus menanggung 1,5 unit risiko.'
+          '**Risiko per 1 Unit Return** ($CV = \\sigma / \\hat{r}$). Mengukur risiko secara adil tanpa bias besarnya nilai keuntungan.',
+          'Satuan: Rasio / Pengali ($\\times$). Contoh: $CV = 1,5\\times$ artinya untuk tiap 1% keuntungan yang diharapkan, Anda harus menanggung 1,5 unit risiko.'
         ],
         [
           '$\\rho_{AB}$ atau $r_{AB}$',
           'Koefisien Korelasi',
           '**Kekompakan Arah Gerak Dua Saham**. Nilainya selalu berkisar antara $-1,0$ (berlawanan arah total) sampai $+1,0$ (searah kompak total).',
-          'Contoh: $\\rho = -0,80$ artinya jika saham A anjlok, saham B hampir pasti melonjak.'
+          'Satuan: Indeks ($-1,0$ s.d. $+1,0$). Contoh: $\\rho = -0,80$ artinya jika saham A anjlok, saham B hampir pasti melonjak.'
+        ],
+        [
+          '$\\text{Cov}(i, j)$',
+          'Kovarians (Covariance)',
+          '**Ukuran Gerak Bersama**. Angka statistik yang menunjukkan apakah dua saham bergerak searah (positif) atau berlawanan arah (negatif).',
+          '$\\text{Cov}(i, j) = \\rho_{ij} \\times \\sigma_i \\times \\sigma_j$. Digunakan dalam perhitungan varians portofolio.'
         ],
         [
           '$\\beta$ (*Beta*)',
           'Koefisien Beta',
           '**Sensitivitas Keliaran Saham terhadap Pasar (IHSG)**. Mengukur seberapa keras saham berguncang jika pasar saham bergoncang.',
-          '$\\beta = 1,0$ (seirama pasar); $\\beta = 1,30$ (30% lebih liar/agresif); $\\beta = 0,80$ (defensif/kalem); $\\beta = 0$ (bebas risiko).'
+          'Satuan: Pengali / Rasio. $\\beta = 1,0$ (seirama pasar); $\\beta = 1,30$ (30% lebih liar); $\\beta = 0,80$ (defensif); $\\beta = -0,87$ (kontra-siklikal).'
+        ],
+        [
+          '$w_i$',
+          'Bobot Modal Portofolio',
+          '**Porsi Alokasi Dana**. Persentase uang yang diinvestasikan pada aset $i$. Total seluruh bobot wajib $\\sum w_i = 100\\% = 1,0$.',
+          'Satuan: $\\%$ atau desimal. Contoh: $w_A = 50\\% = 0,50$.'
         ],
         [
           '$r_{RF}$ atau $k_{RF}$',
           'Risk-Free Rate',
           '**Suku Bunga Bebas Risiko**. Bunga investasi teraman di negara tersebut (Obligasi Pemerintah / SBN / T-bills) di mana $\\beta = 0$.',
-          'Contoh: $k_{RF} = 8\\%$. Uang dijamin pasti balik utuh beserta bunga 8%.'
+          'Satuan: $\\%$. Contoh: $k_{RF} = 8\\%$. Uang dijamin pasti balik utuh beserta bunga 8%.'
         ],
         [
           '$r_M$ atau $k_M$',
           'Market Return',
           '**Keuntungan Rata-rata Seluruh Pasar**. Imbal hasil rata-rata jika investor membeli seluruh saham di bursa (portofolio pasar IHSG).',
-          'Contoh: $k_M = 15\\%$.'
+          'Satuan: $\\%$. Contoh: $k_M = 15\\%$.'
         ],
         [
           '$(r_M - r_{RF})$ / $RPM$',
           'Market Risk Premium',
           '**Uang Lelah / Premi Risiko Pasar**. Bonus ekstra yang diminta investor karena berani tarung di bursa saham dibanding taruh dana aman di obligasi negara.',
-          'Contoh: $RPM = 15\\% - 8\\% = 7\\%$.'
+          'Satuan: $\\%$. Contoh: $RPM = 15\\% - 8\\% = 7\\%$.'
+        ],
+        [
+          '$SML$',
+          'Security Market Line',
+          '**Garis Pasar Sekuritas**. Garis lurus pada grafik CAPM yang menggambarkan hubungan linier antara risiko pasar (Beta) dengan return yang dituntut.',
+          'Garis ekuilibrium pasar modal. Di atas SML = Murah (Beli), di bawah SML = Kemahalan (Jual).'
         ]
       ],
-      caption: 'Tabel 4.1: Kamus simbol notasi risiko dan return.'
+      caption: 'Tabel 4.1: Kamus lengkap simbol notasi risiko dan return (TM 4).'
     },
     {
       kind: 'h2',
@@ -223,6 +253,36 @@ export const TM4_READING: Reading = {
 \\text{Standar Deviasi}: \\quad \\sigma = \\sqrt{\\sigma^2} = \\sqrt{\\sum_{i=1}^N P_i (r_i - \\hat{r})^2}
 \\text{Koefisien Variasi (CV)}: \\quad CV = \\frac{\\sigma}{\\hat{r}}`,
       note: 'Pi adalah probabilitas terjadinya skenario ekonomi i (total seluruh Pi harus sama dengan 1,0 atau 100%). ri adalah return pada skenario tersebut.'
+    },
+    {
+      kind: 'example',
+      title: 'Tabel Standar Buku Brigham: Perhitungan Lengkap Expected Return, Standar Deviasi & CV',
+      blocks: [
+        {
+          kind: 'p',
+          text: 'Misalkan analis mengevaluasi Saham PT Samudera Perkasa dengan 3 kemungkinan kondisi ekonomi tahun depan:'
+        },
+        {
+          kind: 'table',
+          headers: ['Kondisi Ekonomi', 'Probabilitas ($P_i$)', 'Return ($r_i$)', 'Tertimbang ($P_i \\times r_i$)', 'Deviasi ($r_i - \\hat{r}$)', 'Deviasi Kuadrat', 'Tertimbang Varian $P_i (r_i - \\hat{r})^2$'],
+          rows: [
+            ['Resesi Berat', '0,20 (20%)', '-10,0% (-0,10)', '-0,020 (-2,0%)', '-0,10 - 0,13 = -0,23', '0,0529', '0,20 × 0,0529 = 0,01058'],
+            ['Normal / Rata-rata', '0,60 (60%)', '+15,0% (+0,15)', '+0,090 (+9,0%)', '+0,15 - 0,13 = +0,02', '0,0004', '0,60 × 0,0004 = 0,00024'],
+            ['Boom / Ekspansi', '0,20 (20%)', '+30,0% (+0,30)', '+0,060 (+6,0%)', '+0,30 - 0,13 = +0,17', '0,0289', '0,20 × 0,0289 = 0,00578']
+          ],
+          caption: 'Tabel 4.1b: Lembar kerja perhitungan standar deviasi probabilitas diskrit.'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**Expected Return ($\\hat{r}$)**: $-2,0\\% + 9,0\\% + 6,0\\% = \\mathbf{13,0\\%}$ (Jumlah kolom 4).',
+            '**Varians ($\\sigma^2$)**: $0,01058 + 0,00024 + 0,00578 = \\mathbf{0,01660}$ (Jumlah kolom 7).',
+            '**Standar Deviasi ($\\sigma$)**: $\\sqrt{0,01660} = 0,1288 = \\mathbf{12,88\\%}$.',
+            '**Koefisien Variasi ($CV$)**: $\\frac{\\sigma}{\\hat{r}} = \\frac{12,88\\%}{13,0\\%} = \\mathbf{0,991\\times}$.',
+            '**Rentang Interval Keyakinan Normal**: Berdasarkan Teorema Kurva Normal: 68,3% kemungkinan return berada dalam rentang $13\\% \\pm 12,88\\%$ (antara $0,12\\%$ sampai $25,88\\%$); dan 95,4% kemungkinan berada dalam rentang $\\hat{r} \\pm 2\\sigma$ (antara $-12,76\\%$ sampai $+38,76\\%$).'
+          ]
+        }
+      ]
     },
     {
       kind: 'callout',
@@ -370,6 +430,19 @@ export const TM4_READING: Reading = {
     },
     {
       kind: 'h3',
+      text: 'Rumus Matematis Koefisien Beta Saham Tunggal (Dari Mana Angka Beta Berasal?)'
+    },
+    {
+      kind: 'formula',
+      text: `\\beta_i = \\left(\\frac{\\sigma_i}{\\sigma_M}\\right) \\times \\rho_{i,M} = \\frac{\\text{Cov}(r_i, r_M)}{\\sigma_M^2}`,
+      note: 'sigma_i adalah standar deviasi saham i. sigma_M adalah standar deviasi pasar IHSG. rho_iM adalah koefisien korelasi saham i dengan pasar. Cov(ri, rM) adalah kovarians antara saham dan pasar.'
+    },
+    {
+      kind: 'p',
+      text: 'Secara statistik regresi linear (*characteristic line*), koefisien Beta adalah kemiringan (*slope*) garis hubungan antara return saham dengan return pasar. Beta dibentuk oleh **dua komponen utama**:\n1. **Rasio Volatilitas Relatif ($\\frac{\\sigma_i}{\\sigma_M}$)**: Seberapa liar saham berguncang dibanding keliaran pasar. Jika saham berfluktuasi $\\sigma_i = 30\\%$ sementara pasar hanya berfluktuasi $\\sigma_M = 15\\%$, maka rasio volatilitasnya adalah $\\mathbf{2,0\\times}$ (dua kali lipat lebih bergejolak).\n2. **Korelasi dengan Pasar ($\\rho_{i,M}$)**: Seberapa kompak arah ayunan saham mengikuti IHSG. Jika $\\rho_{i,M} = +0,65$, maka Beta saham tersebut adalah $\\beta_i = 2,0 \\times 0,65 = \\mathbf{1,30}$.'
+    },
+    {
+      kind: 'h3',
       text: 'Menghitung Beta Portofolio (\\beta_p)'
     },
     {
@@ -477,7 +550,105 @@ r_i = r_{RF} + RPM \\times \\beta_i`,
       items: [
         '**Jebakan 1: Hati-hati dengan Kalimat Soal "Market Risk Premium" vs "Market Return"**:\n- Jika soal menyebut: *"Return pasar adalah 12% dan Risk-free rate 5%"*, maka $RPM = 12\\% - 5\\% = 7\\%$.\n- Namun jika soal menyebut: *"Premi risiko pasar (Market Risk Premium) adalah 7%"*, **JANGAN DIKURANGI RISK-FREE RATE LAGI!** Angka 7% itu sudah merupakan selisih $(r_M - r_{RF})$. Kesalahan ini sering membuat mahasiswa kehilangan nilai penuh!',
         '**Jebakan 2: Tertukar Menghitung Standar Deviasi vs Beta**:\nStandar deviasi ($\sigma$) mengukur risiko total (stand-alone risk), cocok hanya jika investor menaruh 100% uangnya di satu saham itu saja. Jika investor memiliki portofolio saham, ukuran risiko yang benar **HANYALAH BETA ($\beta$)**.',
-        '**Jebakan 3: Efek Pergeseran Garis SML**:\n- Jika **ekspektasi inflasi naik**, suku bunga bebas risiko ($r_{RF}$) naik $\to$ kurva SML **bergeser sejajar ke atas** (garis tetap paralel).\n- Jika **keengganan risiko investor (*risk aversion*) naik**, premi risiko pasar $(r_M - r_{RF})$ membesar $\to$ kurva SML **berotasi menjadi semakin curam (slope naik)**.'
+        '**Jebakan 3: Efek Pergeseran Garis SML**:\n- Jika **ekspektasi inflasi naik**, suku bunga bebas risiko ($r_{RF}$) naik $\to$ kurva SML **bergeser sejajar ke atas** (garis tetap paralel, slope tidak berubah).\n- Jika **keengganan risiko investor (*risk aversion*) naik**, premi risiko pasar $(r_M - r_{RF})$ membesar $\to$ kurva SML **berotasi menjadi semakin curam (slope naik)**.'
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Bedah Tuntas Kumpulan Soal Asistensi UTS FEB UNAIR (Bocoran Asistensi TM 4)'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Soal Asistensi 1: Stand-Alone Risk vs Portofolio (Teori CAPM & Diversifikasi)',
+      prompt: 'Investor A memilih hanya berinvestasi pada satu saham dengan stand-alone risk tinggi, sementara Investor B membuat portofolio dari 10 saham berbeda. Menurut teori CAPM dan diversifikasi, manakah pernyataan berikut yang paling tepat?\\nA. Investor A akan mendapatkan return lebih tinggi sebagai kompensasi atas risiko tambahan.\\nB. Investor B tidak bisa mengurangi risiko karena semua saham tetap dipengaruhi pasar.\\nC. Investor A tidak akan mendapat kompensasi tambahan karena stand-alone risk dapat dieliminasi melalui diversifikasi.\\nD. Investor B akan selalu memiliki return lebih tinggi daripada Investor A.',
+      blocks: [
+        {
+          kind: 'p',
+          text: '**KUNCI JAWABAN: C** (Investor A tidak akan mendapat kompensasi tambahan karena stand-alone risk dapat dieliminasi melalui diversifikasi).'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**Penjelasan Logika Bahasa Bayi**: Risiko total yang ditanggung Investor A adalah *Stand-Alone Risk* yang sebagian besar isinya adalah *Unsystematic Risk* (risiko unik perusahaan). Risiko unik ini sebenarnya bisa dihilangkan secara **gratis** hanya dengan menyebar modal ke beberapa saham seperti yang dilakukan Investor B.',
+            '**Hukum Keseimbangan CAPM**: Pasar modal tidak bodoh. Pasar **TIDAK AKAN PERNAH** memberikan imbalan atau kompensasi return ekstra untuk risiko yang sebenarnya bisa dihilangkan sendiri oleh investor dengan gampang lewat diversifikasi.',
+            '**Kenapa Pilihan Lain Salah?**:\n- **Opsi A Salah**: Investor A menanggung risiko tinggi bukan karena pasar memaksanya, tapi karena kelalaiannya tidak mendiversifikasi portofolio.\n- **Opsi B Salah**: Investor B berhasil mengurangi risiko unik hingga nyaris nol, menyisakan hanya risiko pasar yang murni.\n- **Opsi D Salah**: Belum tentu selalu lebih tinggi, namun portofolio Investor B memberikan return yang jauh lebih efisien per unit risiko yang ditanggung.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Soal Asistensi 2: Menghitung Beta Portofolio dengan Saham Beta Negatif',
+      prompt: 'Seorang investor membentuk portofolio dengan 50% dana pada saham HT (β = 1,30) dan 50% dana pada saham Coll (β = -0,87). Berapakah beta portofolio tersebut?\\nA. 0,215\\nB. 0,500\\nC. 1,000\\nD. -0,285',
+      blocks: [
+        {
+          kind: 'p',
+          text: '**KUNCI JAWABAN: A (0,215)**'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**Diketahui Data Soal**:\n- Bobot saham HT ($w_{HT}$) = $50\\% = 0,50$; Beta saham HT ($\\beta_{HT}$) = $1,30$.\n- Bobot saham Coll ($w_{Coll}$) = $50\\% = 0,50$; Beta saham Coll ($\\beta_{Coll}$) = $-0,87$.\n- Ditanya: Beta Portofolio ($\\beta_p$).',
+            '**Rumus Sakti Beta Portofolio**:\n$$\\beta_p = \\sum_{i=1}^N w_i \\beta_i = (w_{HT} \\times \\beta_{HT}) + (w_{Coll} \\times \\beta_{Coll})$$',
+            '**Perhitungan Matematis Langkah demi Langkah**:\n$$\\beta_p = (0,50 \\times 1,30) + (0,50 \\times -0,87)$$\n$$\\beta_p = 0,650 + (-0,435)$$\n$$\\beta_p = 0,650 - 0,435 = \\mathbf{0,215}$$',
+            '**Makna Finansial untuk Ujian**: Saham HT aslinya agresif (Beta 1,30). Namun saat dipadukan dengan saham Coll yang bergerak berlawanan arah dengan pasar (Beta negatif -0,87), keliaran portofolio teredam luar biasa menjadi hanya **0,215**! Nilai ini jauh di bawah risiko pasar rata-rata (1,0).'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Soal Asistensi 3: Teori Korelasi Negatif dalam Portofolio (Negative Correlation)',
+      prompt: 'Mengapa menggabungkan dua saham dengan korelasi negatif (negative correlation) dapat mengurangi risiko portofolio?\\nA. Karena return kedua saham bergerak ke arah yang sama sehingga memperbesar keuntungan dan kerugian.\\nB. Karena return kedua saham bergerak ke arah yang berlawanan sehingga saling mengimbangi risikonya.\\nC. Karena korelasi negatif menjamin expected return yang lebih tinggi.\\nD. Karena risiko portofolio selalu menjadi nol ketika korelasinya negatif.',
+      blocks: [
+        {
+          kind: 'p',
+          text: '**KUNCI JAWABAN: B** (Karena return kedua saham bergerak ke arah yang berlawanan sehingga saling mengimbangi risikonya).'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**Analogi Bahasa Bayi**: Bayangkan Anda berjualan **Payung Hujan** dan **Kacamata Hitam**. Saat musim hujan lebat, payung laku keras (untung besar) sementara kacamata sepi (rugi). Saat musim kemarau terik, kacamata laris manis sementara payung sepi. Hasil akhirnya: bisnis Anda selalu untung stabil di musim apa pun!',
+            '**Mekanisme Finansial**: Ketika saham A turun, saham B naik. Kenaikan return pada saham B menambal kerugian pada saham A sehingga grafik total portofolio menjadi mulus dan tenang tanpa fluktuasi tajam.',
+            '**Kenapa Opsi D Salah?**: Risiko portofolio **hanya akan menjadi nol jika korelasi negatif sempurna ($\\rho = -1,0$)** DAN proporsi bobotnya diatur dengan presisi matematis tertentu. Jika korelasi negatif biasa (misal $-0,30$ atau $-0,50$), risikonya berkurang drastis namun tidak sampai nol.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Soal Asistensi 4: Menghitung Tingkat Return Satu Periode',
+      prompt: 'Seorang investor menginvestasikan $1.000 dan menerima $1.150 setelah satu tahun. Berapakah tingkat return yang diperoleh investor?\\nA. 5%\\nB. 10%\\nC. 12%\\nD. 15%',
+      blocks: [
+        {
+          kind: 'p',
+          text: '**KUNCI JAWABAN: D (15%)**'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**Diketahui Data Soal**:\n- Investasi Awal ($P_0$) = $\\$1.000$.\n- Nilai Investasi Akhir ($P_1$) = $\\$1.150$.\n- Keuntungan Kas Bersih (Dollar Return) = $\\$1.150 - \\$1.000 = \\$150$.',
+            '**Rumus Tingkat Pengembalian (Rate of Return)**:\n$$\\text{Rate of Return} = \\frac{\\text{Nilai Akhir} - \\text{Investasi Awal}}{\\text{Investasi Awal}} = \\frac{\\$1.150 - \\$1.000}{\\$1.000} = \\frac{\\$150}{\\$1.000} = 0,15 = \\mathbf{15\\%}$$'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Soal Asistensi 5: Model Valuasi CAPM dan Evaluasi Status Saham USR',
+      prompt: 'Diketahui data sekuritas pasar:\\n- Saham HT: Expected Return = 17,4%, Beta = 1,30\\n- Portofolio Pasar (Market): Expected Return = 15,0%, Beta = 1,00\\n- Saham USR: Expected Return = 13,8%, Beta = 0,89\\n- T-bills (Risk-Free): Expected Return = 8,0%, Beta = 0,00\\n- Saham Coll: Expected Return = 1,7%, Beta = -0,87\\n\\nJika suku bunga bebas risiko $k_{RF} = 8\\%$ dan return pasar $k_M = 15\\%$, maka:\\n1. Berapakah Required Return ($k_i$) untuk saham USR?\\n2. Apakah saham USR layak dibeli atau harus dijual? Jelaskan posisinya terhadap garis SML!',
+      blocks: [
+        {
+          kind: 'p',
+          text: '**KUNCI JAWABAN: Required Return USR = 14,23%; Status: OVERVALUED (LAYAK DIJUAL / HINDARI)**'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**1. Langkah Menghitung Required Return Saham USR dengan CAPM**:\n- $k_{RF} = 8,0\\%$\n- $k_M = 15,0\\%$\n- Market Risk Premium $(RPM) = k_M - k_{RF} = 15,0\\% - 8,0\\% = \\mathbf{7,0\\%}$\n- Beta USR ($\\beta_{USR}$) = $0,89$\n$$\\text{Rumus CAPM: } k_{USR} = k_{RF} + (k_M - k_{RF}) \\times \\beta_{USR}$$\n$$k_{USR} = 8,0\\% + (7,0\\% \\times 0,89)$$\n$$k_{USR} = 8,0\\% + 6,23\\% = \\mathbf{14,23\\%}$$',
+            '**2. Evaluasi Valuasi Saham USR (Analisis Posisi SML)**:\n- **Ekspektasi Return Analis ($\\hat{r}$)** = **13,8%**.\n- **Syarat Return Minimal CAPM ($k_i$)** = **14,23%**.\n- Karena Return yang Diharapkan Analis ($13,8\\%$) **LEBIH KECIL** daripada syarat keuntungan minimal yang dituntut risiko pasar ($14,23\\%$):\n  $$\\hat{r}_{USR} (13,8\\%) < k_{USR} (14,23\\%)$$\n- **Kesimpulan Status**: Saham USR berada di **BAWAH garis SML**, berstatus **OVERVALUED (Kemahalan)**, dan rekomendasi investasinya adalah **JUAL (SELL) atau JANGAN DIBELI** karena kompensasi keuntungannya tidak sebanding dengan risikonya!'
+          ]
+        }
       ]
     },
     {
