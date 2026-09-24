@@ -393,6 +393,13 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
         return;
       }
       
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        onBack();
+        return;
+      }
+      
       if (e.key === 'ArrowLeft' && prevTm) {
         e.preventDefault();
         onSelectTm(prevTm);
@@ -404,7 +411,7 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [prevTm, nextTm, onSelectTm]);
+  }, [prevTm, nextTm, onSelectTm, onBack]);
 
   if (isLoading) {
     return <div className="py-28 text-center text-sm font-semibold text-gray-500">Memuat materi…</div>;

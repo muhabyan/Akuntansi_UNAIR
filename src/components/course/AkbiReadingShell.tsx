@@ -246,6 +246,12 @@ export default function AkbiReadingShell({ course, reading, done, isFirst, isLas
   useEffect(() => {
     const handleGlobalKeyDown = (e: KeyboardEvent) => {
       if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        onBack();
+        return;
+      }
       if (e.key === 'ArrowLeft' && !isFirst) {
         onPrev();
       } else if (e.key === 'ArrowRight' && !isLast) {
@@ -254,7 +260,7 @@ export default function AkbiReadingShell({ course, reading, done, isFirst, isLas
     };
     window.addEventListener('keydown', handleGlobalKeyDown);
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
-  }, [isFirst, isLast, onPrev, onNext]);
+  }, [isFirst, isLast, onPrev, onNext, onBack]);
 
   return (
     <div 

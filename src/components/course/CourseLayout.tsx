@@ -287,6 +287,12 @@ function ReadingPanel({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        onBack();
+        return;
+      }
       if (e.key === 'ArrowLeft' && !isFirst) {
         onPrev();
       } else if (e.key === 'ArrowRight' && !isLast) {
@@ -295,7 +301,7 @@ function ReadingPanel({
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isFirst, isLast, onPrev, onNext]);
+  }, [isFirst, isLast, onPrev, onNext, onBack]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -794,14 +800,68 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
   const navigateToMeeting = (tm: number) => {
     setSelectedMeetingTm(tm);
     setSelectedReviewKey(null);
+    try {
+      window.history.pushState({ akuntansihub_tm: tm, courseCode: course.code }, '', window.location.pathname);
+    } catch {
+      // ignore
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToReview = (key: ReviewReadingKey) => {
     setSelectedMeetingTm(null);
     setSelectedReviewKey(key);
+    try {
+      window.history.pushState({ akuntansihub_review: key, courseCode: course.code }, '', window.location.pathname);
+    } catch {
+      // ignore
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleBackFromReading = () => {
+    if (window.history.state?.akuntansihub_tm || window.history.state?.akuntansihub_review) {
+      window.history.back();
+    } else {
+      setSelectedMeetingTm(null);
+      setSelectedReviewKey(null);
+    }
+  };
+
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      if (e.state?.akuntansihub_tm) {
+        setSelectedMeetingTm(e.state.akuntansihub_tm);
+        setSelectedReviewKey(null);
+      } else if (e.state?.akuntansihub_review) {
+        setSelectedMeetingTm(null);
+        setSelectedReviewKey(e.state.akuntansihub_review);
+      } else {
+        setSelectedMeetingTm(null);
+        setSelectedReviewKey(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  useEffect(() => {
+    const handleCourseKeyDown = (e: KeyboardEvent) => {
+      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (e.key === 'Escape') {
+        if (selectedMeetingTm !== null || selectedReviewKey !== null) {
+          e.preventDefault();
+          e.stopPropagation();
+          handleBackFromReading();
+          return;
+        }
+        e.preventDefault();
+        onBack();
+      }
+    };
+    window.addEventListener('keydown', handleCourseKeyDown);
+    return () => window.removeEventListener('keydown', handleCourseKeyDown);
+  }, [selectedMeetingTm, selectedReviewKey, onBack]);
 
   const switchTab = (id: TabType) => {
     setActiveTab(id);
@@ -860,10 +920,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
               reading={currentReading}
               courseCode={course.code}
               courseName={course.name}
-              onBack={() => {
-                setSelectedMeetingTm(null);
-                setSelectedReviewKey(null);
-              }}
+              onBack={handleBackFromReading}
               isFirst={selectedReviewKey !== null || currentIdx === 0}
               isLast={selectedReviewKey !== null || currentIdx === availableTms.length - 1}
               isDone={isDone}

@@ -103,7 +103,11 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
   useEffect(() => {
     if (!isOpen) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsOpen(false);
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsOpen(false);
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
@@ -549,7 +553,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
             : undefined
         }
         className={`zen-hideable group flex items-center justify-center shadow-md ${
-          !isOpen && !draggable.isDesktop ? 'mobile-utility-launcher mobile-utility-launcher--feedback' : ''
+          !isOpen ? 'mobile-utility-launcher mobile-utility-launcher--feedback' : ''
         } ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${

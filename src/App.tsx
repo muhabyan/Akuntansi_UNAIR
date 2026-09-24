@@ -439,6 +439,24 @@ export default function App() {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
+  useEffect(() => {
+    const handleGlobalEsc = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
+      if (document.querySelector('[data-utility-panel][aria-hidden="false"]')) return;
+      if (document.body.classList.contains('reading-outline-menu-open')) return;
+
+      if (!selectedCourse) {
+        if (activeView !== 'home' || selectedReportId !== null) {
+          e.preventDefault();
+          goHome();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleGlobalEsc);
+    return () => window.removeEventListener('keydown', handleGlobalEsc);
+  }, [selectedCourse, activeView, selectedReportId]);
+
   const toggleTheme = () => {
     setTheme((prev) => {
       const next = prev === 'dark' ? 'light' : 'dark';
