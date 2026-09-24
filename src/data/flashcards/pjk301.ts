@@ -1,388 +1,71 @@
 // src/data/flashcards/pjk301.ts
-// Flashcard komprehensif Perpajakan II (PJK301) — 84 kartu lengkap (6 kartu per TM)
-// Card ids keep the "pjk202-" prefix: it is the legacy prefix from the old course code (PJK202). Saved review state
-// (flashcard-srs-PJK301 / flashcard-stars-PJK301) is keyed by card id, so renaming the ids would discard it.
+// TM01–TM07 cards use v2 ids: stored SRS/star state is keyed by id, and legacy
+// meanings must not be attached to these rebuilt cards. TM08–TM14 retain their ids.
 import type { AdvancedStudyCard } from '../../types';
 
+const UTS_TOPICS: Record<number, string> = {
+  1: 'Ketentuan Umum Pajak Penghasilan (PPh Umum) dan PPh Wajib Pajak Orang Pribadi',
+  2: 'Perolehan Harta, Penilaian Persediaan, dan Norma Penghitungan Penghasilan Neto (NPPN)',
+  3: 'Hubungan Istimewa, Instrumen Pencegahan Penghindaran Pajak, dan Kesepakatan Harga Transfer (APA)',
+  4: 'Penyusutan Harta Berwujud, Amortisasi Harta Tak Berwujud, dan Revaluasi Aset Tetap',
+  5: 'Pemungutan PPh Pasal 22, Pemotongan PPh Pasal 23/26, Pemungut Marketplace, dan Skema PPh Final UMKM',
+  6: 'Pemotongan Pajak Penghasilan Bersifat Final (PPh Pasal 4 ayat 2, PPh Pasal 15, Dividen Wajib Pajak Orang Pribadi)',
+  7: 'Kredit Pajak Luar Negeri (PPh 24), Angsuran PPh 25 & WP OPPT, Insentif PPh Pasal 31A & 31E',
+};
+const utsCard = (tm: number, no: number, category: AdvancedStudyCard['category'], front: string, back: string): AdvancedStudyCard => ({
+  id: `pjk202-v2-tm${String(tm).padStart(2, '0')}-${String(no).padStart(2, '0')}`,
+  phase: 'pra-uts', tm, topic: UTS_TOPICS[tm], category, front, back,
+});
+
 export const PJK301_FC: AdvancedStudyCard[] = [
-  {
-    "id": "pjk202-tm01-01",
-    "phase": "pra-uts",
-    "tm": 1,
-    "topic": "Konsep Dasar PPh, Subjek/Objek & Biaya 3M",
-    "category": "Konsep",
-    "front": "Prinsip Penghasilan Luas (World Wide Income)",
-    "back": "Subjek Pajak Dalam Negeri (SPDN) dikenakan PPh atas seluruh penghasilan yang diperoleh, baik dari Indonesia maupun dari luar negeri."
-  },
-  {
-    "id": "pjk202-tm01-02",
-    "phase": "pra-uts",
-    "tm": 1,
-    "topic": "Konsep Dasar PPh, Subjek/Objek & Biaya 3M",
-    "category": "Hukum",
-    "front": "Kriteria Beban 3M (Deductible Expenses)",
-    "back": "Biaya untuk Mendapatkan, Menagih, dan Memelihara penghasilan yang merupakan objek pajak dapat dikurangkan dari penghasilan bruto (Pasal 6 UU PPh)."
-  },
-  {
-    "id": "pjk202-tm01-03",
-    "phase": "pra-uts",
-    "tm": 1,
-    "topic": "Konsep Dasar PPh, Subjek/Objek & Biaya 3M",
-    "category": "Hukum",
-    "front": "Biaya Tidak Dapat Dikurangkan (Non-Deductible)",
-    "back": "Pasal 9 UU PPh: pembagian laba/dividen, biaya untuk kepentingan pribadi pemegang saham, sanksi administrasi pajak, premi asuransi pribadi."
-  },
-  {
-    "id": "pjk202-tm01-04",
-    "phase": "pra-uts",
-    "tm": 1,
-    "topic": "Konsep Dasar PPh, Subjek/Objek & Biaya 3M",
-    "category": "Definisi",
-    "front": "Objek Pajak Penghasilan (Pasal 4 ayat 1)",
-    "back": "Setiap tambahan kemampuan ekonomis yang diterima atau diperoleh Wajib Pajak yang dapat dipakai untuk konsumsi atau menambah kekayaan."
-  },
-  {
-    "id": "pjk202-tm01-05",
-    "phase": "pra-uts",
-    "tm": 1,
-    "topic": "Konsep Dasar PPh, Subjek/Objek & Biaya 3M",
-    "category": "Klasifikasi",
-    "front": "Bukan Objek Pajak (Pasal 4 ayat 3)",
-    "back": "Bantuan/sumbangan yang memenuhi syarat, warisan, dividen dari dalam negeri yang diinvestasikan kembali (UU HPP), klaim asuransi kesehatan."
-  },
-  {
-    "id": "pjk202-tm01-06",
-    "phase": "pra-uts",
-    "tm": 1,
-    "topic": "Konsep Dasar PPh, Subjek/Objek & Biaya 3M",
-    "category": "Konsep",
-    "front": "Subjek Pajak Luar Negeri (SPLN)",
-    "back": "Dikenakan pajak hanya atas penghasilan yang bersumber dari Indonesia melalui Bentuk Usaha Tetap (BUT) atau pemotongan PPh Pasal 26."
-  },
-  {
-    "id": "pjk202-tm02-01",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Penilaian Harta Pengalihan, Persediaan, & Tarif PPh",
-    "category": "Hukum",
-    "front": "Metode Penilaian Persediaan Fiskal",
-    "back": "Pasal 10 ayat 6 UU PPh: Penilaian persediaan HANYA boleh menggunakan metode FIFO (First-In First-Out) atau metode Rata-Rata (Average). LIFO dilarang keras."
-  },
-  {
-    "id": "pjk202-tm02-02",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Penilaian Harta Pengalihan, Persediaan, & Tarif PPh",
-    "category": "Hukum",
-    "front": "Penilaian Pengalihan Harta dalam Likuidasi",
-    "back": "Keuntungan/kerugian dihitung berdasarkan Nilai Pasar (Fair Market Value) dari harta yang dialihkan."
-  },
-  {
-    "id": "pjk202-tm02-03",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Penilaian Harta Pengalihan, Persediaan, & Tarif PPh",
-    "category": "Hukum",
-    "front": "Tarif Umum PPh Badan (UU HPP)",
-    "back": "Tarif PPh Badan adalah sebesar 22% dari Penghasilan Kena Pajak (berlaku sejak Tahun Pajak 2022 sesuai UU HPP)."
-  },
-  {
-    "id": "pjk202-tm02-04",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Penilaian Harta Pengalihan, Persediaan, & Tarif PPh",
-    "category": "Tarif",
-    "front": "Fasilitas Penurunan Tarif Pasal 31E UU PPh",
-    "back": "Peredaran bruto s.d Rp 50 Miliar mendapat fasilitas pengurangan tarif 50% (tarif efektif 11%) atas PKP dari porsi omzet s.d Rp 4,8 Miliar."
-  },
-  {
-    "id": "pjk202-tm02-05",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Penilaian Harta Pengalihan, Persediaan, & Tarif PPh",
-    "category": "Tarif",
-    "front": "Insentif PPh Badan Go Public (Tbk)",
-    "back": "Diskon tarif tambahan 3% (menjadi 19%) bagi perseroan terbuka dengan kepemilikan publik minimal 40% dan memenuhi ketentuan PP No. 30/2020."
-  },
-  {
-    "id": "pjk202-tm02-06",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Penilaian Harta Pengalihan, Persediaan, & Tarif PPh",
-    "category": "Tarif",
-    "front": "Perlakuan Transaksi Pengalihan Hak atas Tanah/Bangunan",
-    "back": "Dikenakan PPh Final Pasal 4(2) sebesar 2,5% dari jumlah bruto nilai pengalihan (PP 34/2016)."
-  },
-  {
-    "id": "pjk202-tm03-01",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Hubungan Istimewa & Transfer Pricing (PMK 172/2023)",
-    "category": "Hukum",
-    "front": "Kriteria Hubungan Istimewa (Pasal 18 ayat 4)",
-    "back": "(1) Kepemilikan saham/modal ≥ 25%, (2) Penguasaan melalui manajemen/teknologi, atau (3) Hubungan keluarga sedarah/semenda."
-  },
-  {
-    "id": "pjk202-tm03-02",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Hubungan Istimewa & Transfer Pricing (PMK 172/2023)",
-    "category": "Konsep",
-    "front": "Prinsip Kewajaran dan Kelaziman Usaha (ALP)",
-    "back": "Arm's Length Principle (ALP) mensyaratkan kondisi transaksi afiliasi harus setara dengan kondisi transaksi independen tak terafiliasi."
-  },
-  {
-    "id": "pjk202-tm03-03",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Hubungan Istimewa & Transfer Pricing (PMK 172/2023)",
-    "category": "Prosedur",
-    "front": "Metode Penentuan Harga Transfer (PMK 172/2023)",
-    "back": "CUP (Comparable Uncontrolled Price), Resale Price Method, Cost Plus Method, Profit Split Method, TNMM (Transactional Net Margin Method)."
-  },
-  {
-    "id": "pjk202-tm03-04",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Hubungan Istimewa & Transfer Pricing (PMK 172/2023)",
-    "category": "Konsep",
-    "front": "Dokumentasi Transfer Pricing (TP Doc)",
-    "back": "Wajib Pajak yang memenuhi batas omzet wajib menyusun Master File, Local File, dan Country-by-Country Report (CbCR)."
-  },
-  {
-    "id": "pjk202-tm03-05",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Hubungan Istimewa & Transfer Pricing (PMK 172/2023)",
-    "category": "Mekanisme",
-    "front": "Advanced Pricing Agreement (APA)",
-    "back": "Kesepakatan harga transfer di muka antara Wajib Pajak dan Direktur Jenderal Pajak (serta otoritas pajak negara mitra jika bilateral APA)."
-  },
-  {
-    "id": "pjk202-tm03-06",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Hubungan Istimewa & Transfer Pricing (PMK 172/2023)",
-    "category": "Hukum",
-    "front": "Penetapan Debt to Equity Ratio (DER 4:1)",
-    "back": "PMK 169/PMK.010/2015 membatasi perbandingan utang terhadap modal maksimal 4:1; bunga atas utang yang melebihi rasio tidak boleh dibiayakan."
-  },
-  {
-    "id": "pjk202-tm04-01",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penyusutan & Amortisasi Fiskal (PMK 72/2023)",
-    "category": "Klasifikasi",
-    "front": "Kelompok Harta Berwujud Bukan Bangunan",
-    "back": "Kelompok 1 (4 tahun: tarif 25% garis lurus / 50% saldo menurun), Kelompok 2 (8 tahun: 12.5% / 25%), Kelompok 3 (16 tahun: 6.25% / 12.5%), Kelompok 4 (20 tahun: 5% / 10%)."
-  },
-  {
-    "id": "pjk202-tm04-02",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penyusutan & Amortisasi Fiskal (PMK 72/2023)",
-    "category": "Hukum",
-    "front": "Penyusutan Bangunan Fiskal",
-    "back": "Bangunan Permanen (20 tahun: tarif 5% garis lurus). Bangunan Tidak Permanen (10 tahun: tarif 10% garis lurus). Bangunan DILARANG memakai metode saldo menurun."
-  },
-  {
-    "id": "pjk202-tm04-03",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penyusutan & Amortisasi Fiskal (PMK 72/2023)",
-    "category": "Hukum",
-    "front": "Penyusutan HP & Kendaraan Operasional Tertentu",
-    "back": "Kep-220/PJ./2002 jo. PMK 72/2023: Biaya perolehan ponsel dan kendaraan sedan/minibus yang dibawa pulang pegawai hanya boleh disusutkan 50%."
-  },
-  {
-    "id": "pjk202-tm04-04",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penyusutan & Amortisasi Fiskal (PMK 72/2023)",
-    "category": "Hukum",
-    "front": "Saat Dimulainya Penyusutan Fiskal",
-    "back": "Penyusutan dimulai pada bulan dilakukannya pengeluaran, kecuali untuk harta yang masih dalam proses pengerjaan (dimulai bulan selesainya pengerjaan)."
-  },
-  {
-    "id": "pjk202-tm04-05",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penyusutan & Amortisasi Fiskal (PMK 72/2023)",
-    "category": "Hukum",
-    "front": "Amortisasi Harta Tak Berwujud Fiskal",
-    "back": "Kelompok 1 (4 tahun), Kelompok 2 (8 tahun), Kelompok 3 (16 tahun), Kelompok 4 (20 tahun) menggunakan metode garis lurus atau saldo menurun."
-  },
-  {
-    "id": "pjk202-tm04-06",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Penyusutan & Amortisasi Fiskal (PMK 72/2023)",
-    "category": "Prosedur",
-    "front": "Amortisasi Hak Pengusahaan Hutan (HPH)",
-    "back": "Diamortisasi menggunakan metode Satuan Produksi dengan batas maksimum 20% per tahun."
-  },
-  {
-    "id": "pjk202-tm05-01",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%",
-    "category": "Tarif",
-    "front": "Objek & Tarif PPh Pasal 22 Impor",
-    "back": "Impor dengan Angka Pengenal Importir (API) = 2,5%; tanpa API = 7,5% dari Nilai Impor (CIF + Bea Masuk)."
-  },
-  {
-    "id": "pjk202-tm05-02",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%",
-    "category": "Tarif",
-    "front": "PPh Pasal 22 Pembelian oleh Instansi Pemerintah",
-    "back": "Dikenakan tarif 1,5% dari harga pembelian tidak termasuk PPN; batas pembayaran di atas Rp 2.000.000 bukan pemecahan faktur."
-  },
-  {
-    "id": "pjk202-tm05-03",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%",
-    "category": "Tarif",
-    "front": "Objek & Tarif PPh Pasal 23 Jasa & Royalti",
-    "back": "Dividen, Bunga, Royalti, Hadiah = 15%. Sewa harta selain tanah/bangunan dan Jasa Teknik/Manajemen/Konsultan/Lainnya = 2%."
-  },
-  {
-    "id": "pjk202-tm05-04",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%",
-    "category": "Sanksi",
-    "front": "Tarif PPh Pasal 23 Tanpa NPWP",
-    "back": "Wajib Pajak yang tidak memiliki NPWP dikenakan tarif pemotongan 100% lebih tinggi (tarif 2% menjadi 4%; tarif 15% menjadi 30%)."
-  },
-  {
-    "id": "pjk202-tm05-05",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%",
-    "category": "Tarif",
-    "front": "PPh Pasal 26 atas Pembayaran ke Luar Negeri",
-    "back": "Tarif umum 20% bersifat Final dari jumlah bruto, kecuali terdapat penurunan tarif berdasarkan Perjanjian Penghindaran Pajak Berganda (P3B/Tax Treaty)."
-  },
-  {
-    "id": "pjk202-tm05-06",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Pemungutan PPh 22, 23/26, & PPh Final UMKM 0,5%",
-    "category": "Tarif",
-    "front": "PPh Final UMKM PP No. 55 Tahun 2022",
-    "back": "Tarif 0,5% dari omzet bruto bagi WP dengan peredaran bruto tidak melebihi Rp 4,8 Miliar setahun (batas waktu berlaku 3 tahun PT, 4 tahun CV, 7 tahun OP)."
-  },
-  {
-    "id": "pjk202-tm06-01",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "PPh Final Pasal 4(2) & Norma PPh Pasal 15",
-    "category": "Tarif",
-    "front": "Sewa Tanah dan/atau Bangunan",
-    "back": "PPh Final Pasal 4 ayat 2 sebesar 10% dari jumlah bruto nilai persewaan (termasuk service charge jika ditagihkan satu kesatuan)."
-  },
-  {
-    "id": "pjk202-tm06-02",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "PPh Final Pasal 4(2) & Norma PPh Pasal 15",
-    "category": "Tarif",
-    "front": "Jasa Konstruksi (PP No. 9 Tahun 2022)",
-    "back": "Pekerjaan konstruksi kualifikasi kecil = 1,75%; kualifikasi menengah/besar = 2,65%; tanpa kualifikasi = 4%; Konsultasi konstruksi berizin = 3,5%."
-  },
-  {
-    "id": "pjk202-tm06-03",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "PPh Final Pasal 4(2) & Norma PPh Pasal 15",
-    "category": "Tarif",
-    "front": "Bunga Deposito & Tabungan Bank",
-    "back": "PPh Final Pasal 4(2) sebesar 20% dari jumlah bruto bunga deposito/tabungan yang ditempatkan di bank dalam negeri."
-  },
-  {
-    "id": "pjk202-tm06-04",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "PPh Final Pasal 4(2) & Norma PPh Pasal 15",
-    "category": "Tarif",
-    "front": "Hadiah Undian (PP 132/2000)",
-    "back": "Dikenakan PPh Final sebesar 25% dari nilai bruto hadiah undian (penyelenggara wajib memotong)."
-  },
-  {
-    "id": "pjk202-tm06-05",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "PPh Final Pasal 4(2) & Norma PPh Pasal 15",
-    "category": "Tarif",
-    "front": "Norma PPh Pasal 15 Perusahaan Pelayaran Nasional",
-    "back": "Penghasilan neto dihitung 4% dari peredaran bruto; PPh terutang Final = 1,2% dari peredaran bruto."
-  },
-  {
-    "id": "pjk202-tm06-06",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "PPh Final Pasal 4(2) & Norma PPh Pasal 15",
-    "category": "Tarif",
-    "front": "Norma PPh Pasal 15 Penerbangan Luar Negeri",
-    "back": "Penghasilan neto dihitung 6% dari peredaran bruto; PPh terutang Final = 2,64% dari peredaran bruto."
-  },
-  {
-    "id": "pjk202-tm07-01",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Kredit Pajak LN PPh 24 & Angsuran PPh 25",
-    "category": "Prinsip",
-    "front": "Mekanisme Pengkreditan PPh Pasal 24",
-    "back": "Metode Ordinary Credit: Jumlah kredit pajak luar negeri yang dapat dikreditkan adalah nilai yang terendah di antara 3 batas perhitungan."
-  },
-  {
-    "id": "pjk202-tm07-02",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Kredit Pajak LN PPh 24 & Angsuran PPh 25",
-    "category": "Rumus",
-    "front": "Tiga Batas Kredit PPh Pasal 24",
-    "back": "(1) Pajak aktual yang dibayar di luar negeri, (2) Batas Proporsional = (Penghasilan Luar Negeri / Total PKP) × Total PPh Terutang, (3) Total PPh Terutang."
-  },
-  {
-    "id": "pjk202-tm07-03",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Kredit Pajak LN PPh 24 & Angsuran PPh 25",
-    "category": "Hukum",
-    "front": "Perhitungan Country by Country Limitation",
-    "back": "Pengkreditan PPh Pasal 24 wajib dihitung secara terpisah untuk masing-masing negara (per-country limitation)."
-  },
-  {
-    "id": "pjk202-tm07-04",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Kredit Pajak LN PPh 24 & Angsuran PPh 25",
-    "category": "Rumus",
-    "front": "Perhitungan Angsuran Bulanan PPh Pasal 25",
-    "back": "PPh 25 per bulan = (PPh Terutang SPT Tahun Lalu - Total Kredit Pajak PPh 21, 22, 23, 24) / 12 bulan."
-  },
-  {
-    "id": "pjk202-tm07-05",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Kredit Pajak LN PPh 24 & Angsuran PPh 25",
-    "category": "Hukum",
-    "front": "PPh Pasal 25 Wajib Pajak Baru",
-    "back": "Besarnya angsuran PPh 25 untuk Wajib Pajak baru pada tahun pertama dihitung berdasarkan proyeksi laba atau nihil jika tidak ada ketentuan khusus."
-  },
-  {
-    "id": "pjk202-tm07-06",
-    "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Kredit Pajak LN PPh 24 & Angsuran PPh 25",
-    "category": "Sanksi",
-    "front": "Sanksi Keterlambatan Pembayaran PPh 25",
-    "back": "Dikenakan sanksi bunga per bulan sesuai tarif bunga acuan Menkeu (UU HPP) dihitung sejak tanggal jatuh tempo tanggal 15 bulan berikutnya."
-  },
+  utsCard(1, 1, 'Konsep', 'Worldwide income bagi WP dalam negeri', 'Penghasilan dari Indonesia dan luar negeri masuk cakupan PPh Indonesia; WP luar negeri dikenai atas sumber Indonesia.'),
+  utsCard(1, 2, 'Klasifikasi', 'Objek reguler, final, dan bukan objek', 'Objek reguler masuk PKP dan kredit pajaknya diperhitungkan. Objek final dilaporkan terpisah; warisan yang memenuhi syarat bukan objek.'),
+  utsCard(1, 3, 'Hukum', 'Biaya 3M dan biaya suap', 'Biaya 3M terkait penghasilan kena pajak dapat dikurangkan menurut Pasal 6. Suap dan sanksi pajak dikoreksi positif.'),
+  utsCard(1, 4, 'Klasifikasi', 'Natura pegawai dan bingkisan hari raya', 'Natura umumnya deductible bagi pemberi kerja dan taxable bagi pegawai; bingkisan hari raya keagamaan bagi seluruh pegawai dikecualikan.'),
+  utsCard(1, 5, 'Rumus', 'Batas zakat yang sah', 'Zakat melalui lembaga sah dengan bukti setor dapat mengurangi penghasilan, tetapi tidak boleh menimbulkan atau memperbesar rugi fiskal.'),
+  utsCard(1, 6, 'Rumus', 'PTKP K/2 dan lapisan awal tarif OP', 'PTKP K/2 Rp67.500.000. PKP sampai Rp60.000.000 dikenai 5%; bagian berikutnya sampai Rp250.000.000 dikenai 15%.'),
+
+  utsCard(2, 1, 'Hukum', 'Nilai fiskal barter harta', 'Pasal 10 ayat (2): kedua pihak memakai harga pasar. Laba pengalihan ialah harga pasar dikurangi nilai sisa buku harta yang diserahkan.'),
+  utsCard(2, 2, 'Klasifikasi', 'Metode persediaan fiskal yang sah', 'Pasal 10 ayat (6) mengizinkan FIFO atau rata-rata secara taat asas. LIFO harus direkonsiliasi ke metode yang sah.'),
+  utsCard(2, 3, 'Rumus', 'FIFO versus rata-rata tertimbang', 'FIFO membebankan lapisan biaya terlama dulu. Rata-rata membagi total biaya barang tersedia untuk dijual dengan total unitnya.'),
+  utsCard(2, 4, 'Hukum', 'Syarat memilih NPPN', 'Hanya WP orang pribadi dengan omzet tidak melebihi Rp4,8 miliar dan pemberitahuan dalam tiga bulan pertama; jika terlambat dianggap memilih pembukuan.'),
+  utsCard(2, 5, 'Hukum', 'Batas kompensasi rugi fiskal', 'Rugi fiskal WP yang membukukan dapat dipakai lima tahun berturut-turut mulai tahun berikutnya; sisa setelah tahun kelima hangus.'),
+  utsCard(2, 6, 'Rumus', 'Fasilitas Pasal 31E pada omzet menengah', 'Untuk omzet di atas Rp4,8 miliar sampai Rp50 miliar, PKP fasilitas = Rp4,8 miliar/omzet × PKP; tarif 11% untuk bagian itu, 22% untuk sisanya.'),
+
+  utsCard(3, 1, 'Hukum', 'Tiga pilar hubungan istimewa', 'Pasal 18 ayat (4): modal langsung/tidak langsung minimal 25%, penguasaan manajemen atau teknologi, atau keluarga sedarah/semenda satu derajat.'),
+  utsCard(3, 2, 'Rumus', 'Uji kepemilikan bertingkat', 'Kalikan persentase saham setiap tingkat. Kepemilikan 50% lalu 50% menghasilkan 25%, sehingga memenuhi pilar modal.'),
+  utsCard(3, 3, 'Klasifikasi', 'Memilih metode harga transfer', 'CUP membandingkan harga identik; RPM cocok untuk distributor murni; CPM untuk manufaktur kontrak; TNMM untuk margin bersih; PSM untuk kontribusi unik bersama.'),
+  utsCard(3, 4, 'Mekanisme', 'Koreksi primer dan sekunder', 'Koreksi primer menyesuaikan harga afiliasi ke harga wajar. Selisih yang tidak dikembalikan dapat menjadi dividen terselubung dan terutang PPh 23/26.'),
+  utsCard(3, 5, 'Rumus', 'Thin capitalization DER 4:1', 'Utang fiskal maksimal empat kali ekuitas rata-rata. Bunga atas porsi utang yang melampaui batas dikoreksi positif, bukan seluruh bunga.'),
+  utsCard(3, 6, 'Hukum', 'APA bilateral dan masa berlaku', 'APA bilateral melibatkan otoritas pajak negara mitra P3B untuk menyepakati metode harga wajar; berlaku ke depan paling lama lima tahun pajak.'),
+
+  utsCard(4, 1, 'Klasifikasi', 'Kelompok bukan bangunan dan tarifnya', 'Kelompok 1: 4 tahun, 25%/50%; 2: 8 tahun, 12,5%/25%; 3: 16 tahun, 6,25%/12,5%; 4: 20 tahun, 5%/10% (garis lurus/saldo menurun).'),
+  utsCard(4, 2, 'Hukum', 'Bangunan permanen dan tidak permanen', 'Permanen: 20 tahun, garis lurus 5%. Tidak permanen: 10 tahun, garis lurus 10%. Metode saldo menurun tidak boleh untuk bangunan.'),
+  utsCard(4, 3, 'Rumus', 'Bulan awal penyusutan fiskal', 'Aset siap pakai mulai bulan perolehan, dihitung satu bulan penuh. Aset konstruksi mulai bulan selesai; penundaan sampai menghasilkan memerlukan izin DJP.'),
+  utsCard(4, 4, 'Rumus', 'Saldo menurun dan tahun terakhir', 'Tarif dikalikan nilai sisa buku awal tahun; tahun pertama diprorata bulan. Pada akhir masa manfaat, seluruh sisa buku disusutkan sekaligus.'),
+  utsCard(4, 5, 'Perbandingan', 'Residu komersial versus fiskal', 'Komersial dapat memakai estimasi residu dan masa manfaat manajemen. Fiskal memakai kelompok baku, residu Rp0, dan selisih bebannya direkonsiliasi.'),
+  utsCard(4, 6, 'Hukum', 'Ponsel dan sedan dinas untuk 3M', 'KEP-220/PJ/2002 sudah tidak berlaku. Biaya terkait ponsel dan sedan dinas dapat dibebankan penuh jika dipakai untuk kegiatan 3M menurut aturan kini.'),
+
+  utsCard(5, 1, 'Perbandingan', 'Pemungutan PPh 22 dan pemotongan PPh 23/26', 'PPh 22 dipungut pada transaksi barang oleh pemungut yang ditunjuk; PPh 23/26 dipotong pihak pembayar penghasilan penerima.'),
+  utsCard(5, 2, 'Rumus', 'Nilai impor dan API pada PPh 22', 'Nilai impor = CIF + bea masuk. Impor barang umum ber-API dikenai 2,5%; non-API 7,5%, tidak final.'),
+  utsCard(5, 3, 'Hukum', 'Ambang belanja pemerintah dan BUMN', 'Belanja pemerintah sampai Rp2.000.000 dan BUMN sampai Rp10.000.000 yang tidak dipecah bebas PPh 22; di atas batas dipungut 1,5%.'),
+  utsCard(5, 4, 'Klasifikasi', 'Tarif PPh 23 utama', 'Bunga non-bank dan royalti: 15% bruto. Sewa harta selain tanah/bangunan serta jasa teknik, manajemen, dan konsultan: 2% bruto.'),
+  utsCard(5, 5, 'Hukum', 'PPh 26 dan Form DGT', 'Penghasilan sumber Indonesia untuk WPLN non-BUT umumnya dipotong final 20% bruto; tarif P3B lebih rendah perlu Form DGT yang sah.'),
+  utsCard(5, 6, 'Rumus', 'UMKM orang pribadi menurut PP 20/2026', 'Tarif final 0,5% berlaku jika omzet tahunan tidak melebihi Rp4.800.000.000. Rp500.000.000 omzet kumulatif pertama bebas; batas tujuh tahun OP telah dihapus.'),
+
+  utsCard(6, 1, 'Konsep', 'Akibat penghasilan dikenai PPh final', 'Penghasilan final dilaporkan terpisah dari PKP reguler. PPh final tidak dikreditkan; biaya yang terkait penghasilan final dikoreksi positif.'),
+  utsCard(6, 2, 'Rumus', 'Sewa tanah/bangunan', 'PPh final Pasal 4 ayat (2) sebesar 10% dari sewa bruto termasuk service charge; sewa mesin atau mobil masuk PPh 23.'),
+  utsCard(6, 3, 'Klasifikasi', 'Tarif pekerjaan konstruksi', 'PP 9/2022: kualifikasi kecil 1,75%; menengah/besar 2,65%; tanpa kualifikasi 4%; konsultansi bersertifikat 3,5%.'),
+  utsCard(6, 4, 'Mekanisme', 'PHTB umum dan saat setor', 'Pengalihan hak tanah/bangunan umum dikenai PPh final 2,5% dari nilai bruto. Penjual menyetor sebelum akta ditandatangani PPAT.'),
+  utsCard(6, 5, 'Perbandingan', 'PPh 15 pelayaran vs penerbangan domestik', 'Pelayaran dalam negeri 1,2% bruto dan final. Penerbangan dalam negeri carter 1,8% bruto dan tidak final, sehingga dapat dikreditkan.'),
+  utsCard(6, 6, 'Hukum', 'Dividen OP dalam negeri', 'Dividen OP dalam negeri dikenai PPh final 10%, kecuali memenuhi syarat investasi kembali di NKRI paling singkat tiga tahun pajak.'),
+
+  utsCard(7, 1, 'Rumus', 'Batas kredit PPh 24 per negara', 'Batas tiap negara = penghasilan LN/PKP total × PPh Indonesia. Kredit yang diakui ialah nilai lebih rendah antara pajak LN dan batas tersebut.'),
+  utsCard(7, 2, 'Hukum', 'Kerugian dan kelebihan pajak luar negeri', 'Rugi luar negeri tidak digabung dengan laba domestik. Pajak LN di atas batas kredit hangus, tidak menjadi biaya atau kompensasi tahun depan.'),
+  utsCard(7, 3, 'Rumus', 'Angsuran PPh 25 normal', 'Kurangi PPh terutang SPT lalu dengan kredit PPh 21, 22, 23, dan 24; bagi hasilnya 12 untuk angsuran bulanan.'),
+  utsCard(7, 4, 'Rumus', 'WP OPPT per gerai', 'Angsuran PPh 25 WP OPPT = 0,75% dari omzet bulanan setiap tempat usaha; setoran tidak final dan menjadi kredit SPT tahunan OP.'),
+  utsCard(7, 5, 'Rumus', 'Tax allowance Pasal 31A', 'WP yang disetujui memperoleh pengurang neto 30% dari investasi aktiva tetap, dialokasikan 5% per tahun selama enam tahun.'),
+  utsCard(7, 6, 'Rumus', 'Fasilitas tarif Pasal 31E', 'Omzet sampai Rp4,8 miliar: seluruh PKP bertarif 11%. Di atas itu sampai Rp50 miliar: bagian PKP proporsional 11%, sisanya 22%.'),
   {
     "id": "pjk202-tm08-01",
     "phase": "pra-uas",

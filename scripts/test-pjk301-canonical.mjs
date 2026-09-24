@@ -284,6 +284,12 @@ const tm5 = checkReading(
     /batas waktu 7 tahun bagi orang pribadi/i,
   ]
 );
+const spbuCase = tm5.blocks.find((block) => block.kind === 'solution-reveal' && block.title.includes('SPBU Swasta'));
+assert.ok(spbuCase, 'TM05 BBM/SPBU worked case exists');
+assert.ok(spbuCase.prompt.includes('Rp500.000.000 kepada SPBU Swasta'), 'TM05 SPBU prompt amount');
+const spbuFormula = spbuCase.blocks.find((block) => block.kind === 'formula' && block.text.includes('0{,}25'));
+assert.ok(spbuFormula?.text.includes('0{,}25\\% \\times \\text{Rp}500.000.000=\\text{Rp}1.250.000'),
+  'TM05 SPBU formula uses the prompt base and correct result');
 
 // ---------------------------------------------------------------- TM06
 const tm6 = checkReading(
@@ -354,6 +360,21 @@ const tm7 = checkReading(
     /PP 9\/2021/,
   ]
 );
+const tm7Figure = tm7.blocks.find((block) => block.kind === 'figure');
+assert.ok(tm7Figure?.svg.includes('Sebelum SPT dalam batas normal'), 'TM07 SVG uses neutral rollover period');
+assert.ok(!tm7Figure.svg.includes('Jan-Feb'), 'TM07 SVG does not state universal Jan-Feb');
+assert.ok(tm7.objectives.some((objective) => objective.includes('Pasal 25 ayat (2) UU PPh')), 'TM07 rollover objective cites general rule');
+assert.ok(!JSON.stringify(tm7).includes('Pasal 229'), 'TM07 does not cite BUMN/BUMD rule for general rollover');
+const rolloverCallout = tm7.blocks.find((block) => block.kind === 'callout' && block.text.includes('Masa Transisi Awal Tahun'));
+assert.match(rolloverCallout.text, /WP OP.*Maret.*Januari–Februari.*WP Badan.*April.*Januari–Maret/,
+  'TM07 distinguishes individual and corporate normal filing months');
+const rolloverRow = tm7.blocks.find((block) => block.kind === 'table' && block.rows.some((row) => row[0] === 'PPh Pasal 25 Masa Transisi'))
+  .rows.find((row) => row[0] === 'PPh Pasal 25 Masa Transisi');
+assert.equal(rolloverRow[1], 'Pasal 25 ayat (2) UU PPh', 'TM07 matrix cites general rollover rule');
+const rolloverCase = tm7.blocks.find((block) => block.kind === 'solution-reveal' && block.title.startsWith('Kasus 4:'));
+assert.match(rolloverCase.title, /WP Badan Januari–Maret/, 'TM07 corporate case title');
+assert.match(rolloverCase.blocks[0].items[0], /Pasal 25 ayat \(2\) UU PPh/, 'TM07 corporate case legal basis');
+assert.match(rolloverCase.blocks[0].items[1], /Rp25\.000\.000 per bulan/, 'TM07 corporate Jan–Mar amount preserved');
 
 assert.ok(formulas >= 35, `Total KaTeX formulas tested: ${formulas}`);
 assert.ok(solutionReveals >= 45, `Total worked solution cases tested: ${solutionReveals}`);
