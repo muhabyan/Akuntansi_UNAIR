@@ -75,15 +75,22 @@ const SVG_CASH_FLOW_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 90
 export const TM7_READING: Reading = {
   tm: 7,
   title: 'Cash Flow Estimation, Tax Shield Depreciation, & Project Risk Analysis',
-  ref: 'Brigham & Ehrhardt Ch. 11 | Estimasi Arus Kas Relevan | Analisis Sensitivitas, Skenario, & Simulasi Monte Carlo',
-  intro: 'TM 7 membahas estimasi arus kas inkremental yang relevan dalam penganggaran modal: pengeluaran awal (Initial Outlay), arus kas operasi tahunan (Operating Cash Flow), arus kas terminal (Terminal Cash Flow), perlakuan biaya hangus (Sunk Costs) vs biaya kesempatan (Opportunity Costs), efek kanibalisasi, serta metode analisis risiko proyek (Sensitivitas, Skenario, dan Pohon Keputusan).',
+  ref: 'Brigham & Houston Ch. 11 | Brigham & Ehrhardt Ch. 11 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR',
+  intro: 'Di TM 6 kita belajar mengevaluasi NPV jika deretan angka arus kas sudah tersedia. Namun di dunia nyata dan lembar ujian komprehensif, angka-angka arus kas tersebut harus Anda rakit sendiri dari nol! TM 7 membahas proses perakitan arus kas inkremental yang relevan melalui 3 fase hidup proyek: Pengeluaran Investasi Awal (Initial Outlay t=0), Arus Kas Operasi Tahunan (Operating Cash Flow t=1..N), dan Arus Kas Terminal Penutupan (Terminal Cash Flow t=N). Modul ini juga membedah pembedaan biaya hangus (Sunk Cost), biaya kesempatan (Opportunity Cost), efek kanibalisasi, serta metode analisis risiko proyek (Sensitivitas dan Skenario).',
   objectives: [
-    'Mengidentifikasi arus kas inkremental relevan dan mengecualikan Sunk Costs serta Beban Bunga Pembiayaan dari OCF.',
-    'Menghitung Initial Outlay ($CF_0$), Annual OCF dengan Depresiasi Tax Shield, dan Terminal Cash Flow ($TCF$).',
-    'Menghitung pajak atas penjualan aset bekas (Taxes on Salvage Value).',
-    'Menerapkan Analisis Sensitivitas (NPV vs satu variabel) dan Analisis Skenario (Base, Best, Worst case).'
+    'Membedah kamus istilah estimasi arus kas (Initial Outlay, OCF, TCF, NWC, Sunk Cost, Opportunity Cost, Cannibalization, Salvage Value).',
+    'Menghitung Initial Outlay (CF0) untuk proyek baru maupun proyek penggantian mesin lama (Replacement Project).',
+    'Menghitung Operating Cash Flow (OCF) tahunan menggunakan Depreciation Tax Shield.',
+    'Menghitung Terminal Cash Flow (TCF) termasuk pajak atas nilai sisa penjualan aset bekas dan pemulihan modal kerja bersih (100% NWC Recovery).',
+    'Melakukan analisis risiko proyek melalui Analisis Sensitivitas (Sensitivity Analysis) dan Analisis Skenario (Best, Base, Worst Case).'
   ],
   blocks: [
+    {
+      kind: 'callout',
+      title: 'Dua Peraturan Sakti Dosen FEB UNAIR yang Sering Menjebak di Ujian',
+      text: '1. **JANGAN PERNAH Mengurangkan Beban Bunga Pinjaman dari OCF!**: Bunga adalah biaya pembiayaan (*financing cost*), bukan biaya operasional. Biaya bunga sudah tercermin di dalam tingkat diskonto WACC saat mendiskontokan NPV. Jika Anda memasukkan bunga ke OCF, Anda melakukan kesalahan fatal **Double Counting** (menghukum proyek dua kali)!\n2. **Modal Kerja (NWC) WAJIB Balik 100% di Akhir Proyek**: Uang modal kerja yang disetor di tahun $0$ (seperti stok barang dan piutang) akan dicairkan kembali menjadi kas tunai di tahun terakhir proyek ($t=N$) secara penuh **TANPA DIKENAKAN PAJAK**.',
+      variant: 'warning'
+    },
     {
       kind: 'figure',
       caption: 'Gambar 7.1: 3 Tahap Aliran Arus Kas Inkremental Proyek Investasi.',
@@ -91,76 +98,214 @@ export const TM7_READING: Reading = {
     },
     {
       kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 7'
+      text: 'Kamus Bahasa Bayi Simbol & Istilah Arus Kas Proyek (TM 7)'
+    },
+    {
+      kind: 'p',
+      text: 'Berikut adalah kamus terjemahan bahasa manusia untuk seluruh konsep dan istilah estimasi arus kas:'
     },
     {
       kind: 'table',
-      headers: ['Komponen Arus Kas', 'Aturan Perlakuan Finansial', 'Formula Pokok', 'Jebakan Ujian Terpopuler'],
+      headers: ['Istilah / Simbol', 'Nama Finansial', 'Bahasa Manusia (Maksud Aslinya)', 'Aturan Perlakuannya di Ujian'],
       rows: [
-        ['Sunk Costs (Biaya Riset Lalu)', 'TIDAK RELEVAN (Abaikan 100%).', 'Tidak dimasukkan ke $CF_0$.', 'Memasukkan biaya survei kelayakan yang sudah dibayar tahun lalu ke biaya proyek.'],
-        ['Opportunity Costs (Tanah Sendiri)', 'RELEVAN (Wajib Ditambahkan).', 'Nilai pasar wajar tanah dimasukkan sebagai arus kas keluar di $t=0$.', 'Menganggap tanah milik sendiri gratis dan tidak berbiaya modal.'],
-        ['Efek Kanibalisasi (Erosion)', 'RELEVAN (Wajib Dikurangkan).', 'Penurunan laba produk lama dikurangkan dari pendapatan proyek baru.', 'Mengabaikan hilangnya penjualan lini produk lama saat meluncurkan varian baru.'],
-        ['Beban Bunga Pinjaman', 'JANGAN DIMASUKKAN ke dalam OCF!', 'Dikeluarkan dari OCF (sudah diakomodasi di tingkat diskonto WACC).', 'Mengurangkan beban bunga pada laba operasional (Double Counting of Financing Cost)!'],
-        ['Nilai Sisa Aset (Salvage Value)', 'RELEVAN + Penyesuaian Pajak.', '$\\text{After-tax Salvage} = \\text{Harga Jual} - T(\\text{Harga Jual} - \\text{Nilai Buku})$', 'Lupa memperhitungkan pajak atas laba penjualan aset bekas di atas nilai buku.']
+        [
+          '$CF_0$ / *Initial Outlay*',
+          'Pengeluaran Investasi Awal',
+          '**Modal Pertama Keluar**. Total uang tunai bersih yang harus digelontorkan hari ini ($t=0$) untuk memulai proyek.',
+          'Nilainya selalu **NEGATIF** (arus kas keluar). Meliputi: harga beli mesin, biaya pasang, dan modal kerja.'
+        ],
+        [
+          '$OCF$',
+          'Operating Cash Flow',
+          '**Uang Kas Masuk Bersih Operasional**. Uang tunai riil yang mengalir masuk ke kas perusahaan tiap tahun dari hasil jualan barang.',
+          'Dihitung dengan rumus: $OCF = EBIT(1 - T) + \\text{Depresiasi}$. Beban bunga utang DILARANG masuk!'
+        ],
+        [
+          '$TCF$',
+          'Terminal Cash Flow',
+          '**Uang Kas Penutupan Proyek**. Kas ekstra di tahun terakhir ($t=N$) saat proyek dibubarkan/selesai.',
+          'Menjumlahkan: kas bersih hasil jual mesin rongsokan (setelah pajak) + pengembalian 100% modal kerja.'
+        ],
+        [
+          '$\\Delta NWC$',
+          'Net Working Capital (Modal Kerja)',
+          '**Uang Kas Mengendap Operasional**. Uang yang harus disiapkan untuk mengisi stok persediaan barang dan piutang pelanggan.',
+          'Keluar di $t=0$ (mengurangi kas), lalu **kembali masuk utuh 100% di tahun ke-$N$** (tanpa kena pajak).'
+        ],
+        [
+          '*Depreciation Tax Shield*',
+          'Perisai Pajak Penyusutan',
+          '**Diskon Pajak dari Depresiasi**. Penghematan pengeluaran kas pajak riil yang timbul karena adanya beban penyusutan mesin.',
+          'Rumus penghematannya: $\\text{Depresiasi} \\times T$. Depresiasi bukan kas keluar, tapi membuat tagihan pajak berkurang!'
+        ],
+        [
+          '*Sunk Cost*',
+          'Biaya Hangus (Masa Lalu)',
+          '**Uang yang Sudah Lenyap**. Pengeluaran masa lalu yang sudah terjadi dan tidak bisa ditarik kembali apa pun keputusan proyeknya.',
+          '**100% HARUS DIABAIKAN!** Contoh: biaya survei riset kelayakan Rp 50 juta tahun lalu. Jangan dimasukkan ke biaya proyek!'
+        ],
+        [
+          '*Opportunity Cost*',
+          'Biaya Kesempatan',
+          '**Uang yang Dikorbankan**. Nilai keuntungan yang hilang karena aset milik sendiri dipakai untuk proyek ini bukan disewakan/dijual.',
+          '**WAJIB DIMASUKKAN** sebagai kas keluar di $t=0$. Contoh: tanah nganggur milik sendiri yang kalau dijual laku Rp 1 Miliar.'
+        ],
+        [
+          '*Cannibalization / Erosion*',
+          'Efek Kanibalisasi',
+          '**Makan Pasar Saudara Sendiri**. Penurunan omzet penjualan produk lama perusahaan akibat diluncurkannya produk baru ini.',
+          '**WAJIB DIKURANGKAN** dari arus kas masuk proyek baru (arus kas inkremental murni).'
+        ],
+        [
+          '*Salvage Value*',
+          'Nilai Sisa Jual Aset',
+          '**Harga Jual Besi Tua / Mesin Bekas**. Uang kas yang diterima saat mesin proyek dijual di pasar loak pada akhir masa pakainya.',
+          'Jika harga jual $>$ nilai buku, selisih untungnya **wajib dipotong pajak** penghasilan.'
+        ]
       ],
-      caption: 'Tabel 7.0: Matriks perlakuan item arus kas relevan vs tidak relevan.'
+      caption: 'Tabel 7.1: Kamus lengkap istilah estimasi arus kas penganggaran modal (TM 7).'
     },
     {
       kind: 'h2',
-      text: 'Formula Sheet Fondasi: OCF & After-Tax Salvage Value'
+      text: 'Pilar I: Menghitung Arus Kas 3 Babak (Fase 1, 2, dan 3)'
+    },
+    {
+      kind: 'h3',
+      text: 'Babak 1: Initial Outlay (t = 0)'
     },
     {
       kind: 'formula',
-      text: `\\text{Operating Cash Flow (OCF)} = EBIT(1 - T) + \\text{Depresiasi} = (\\text{Revenues} - \\text{Costs})(1 - T) + (\\text{Depresiasi} \\times T)
-\\text{After-Tax Salvage Value} = \\text{Market Salvage Value} - T \\times (\\text{Market Salvage Value} - \\text{Book Value})
-\\text{Terminal Cash Flow (TCF)} = \\text{After-Tax Salvage Value} + \\Delta \\text{NWC Recovery}`,
-      note: 'Formula Tax Shield: $(\\text{Depresiasi} \\times T)$ memperlihatkan bahwa depresiasi bukan pengeluaran kas, namun menghemat pengeluaran kas pajak riil.'
+      text: `CF_0 = - \\left[ \\text{Harga Beli Mesin Baru} + \\text{Biaya Angkut & Instalasi} \\right] - \\Delta NWC + \\text{Hasil Jual Mesin Lama} - \\text{Pajak atas Laba Jual Mesin Lama}`,
+      note: 'Basis depresiasi mesin baru adalah (Harga Beli + Biaya Angkut & Instalasi). NWC adalah modal kerja tambahan.'
+    },
+    {
+      kind: 'h3',
+      text: 'Babak 2: Operating Cash Flow / OCF (t = 1 s.d. N)'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Metode Laba Operasi}: \\quad OCF = EBIT(1 - T) + \\text{Depresiasi}
+\\text{Metode Tax Shield}: \\quad OCF = (\\text{Pendapatan} - \\text{Biaya Kas})(1 - T) + (\\text{Depresiasi} \\times T)`,
+      note: 'Kedua rumus di atas menghasilkan angka yang persis sama. Depresiasi x T adalah besarnya uang tunai riil yang dihemat dari kantor pajak.'
+    },
+    {
+      kind: 'h3',
+      text: 'Babak 3: Terminal Cash Flow / TCF (t = N)'
+    },
+    {
+      kind: 'formula',
+      text: `\\text{Arus Kas Masuk Nilai Sisa Setelah Pajak} = \\text{Harga Jual Bekas} - T \\times (\\text{Harga Jual Bekas} - \\text{Nilai Buku Akhir})
+\\text{Terminal Cash Flow (TCF)} = \\text{Arus Kas Nilai Sisa Setelah Pajak} + \\text{Pengembalian 100% Modal Kerja } (\\Delta NWC)`,
+      note: 'Jika mesin laku dijual persis sama dengan nilai bukunya, pajaknya adalah nol. TCF ditambahkan ke OCF tahun terakhir (t = N).'
     },
     {
       kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
+      text: 'Latihan Studi Kasus Lengkap Angka per Angka (Tipe Soal Klasik UTS)'
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Perhitungan Nilai Sisa Setelah Pajak',
-      prompt: 'Mesin pabrik dibeli seharga Rp 500 Juta, disusutkan selama 5 tahun hingga nilai buku akhir tahun ke-5 menjadi Rp 50 Juta. Pada akhir tahun ke-5, mesin tersebut berhasil dijual seharga Rp 120 Juta. Tarif pajak korporasi = 22%. Berapa Arus Kas Bersih dari Penjualan Mesin tersebut?',
+      kind: 'example',
+      title: 'Studi Kasus Menyeluruh: Proyek Pengadaan Mesin Cetak Baru PT Grafika Utama',
       blocks: [
         {
-          kind: 'ul',
-          items: [
-            '**Keuntungan Penjualan Aset (Gain on Sale)**: Harga Jual - Nilai Buku = Rp 120 Juta - Rp 50 Juta = **Rp 70 Juta**.',
-            '**Pajak atas Keuntungan**: 22% × Rp 70 Juta = **Rp 15,4 Juta**.',
-            '**Arus Kas Bersih (After-Tax Salvage)**: Harga Jual - Pajak = Rp 120 Juta - Rp 15,4 Juta = **Rp 104,6 Juta**.',
-            '**Catatan**: Angka Rp 104,6 Juta ini yang dicatat sebagai arus kas masuk terminal di tahun ke-5.'
+          kind: 'p',
+          text: 'PT Grafika Utama mempertimbangkan pembelian mesin cetak otomatis baru dengan data:\n- Harga beli mesin baru = **Rp 400 Juta**; Biaya pengiriman & instalasi = **Rp 50 Juta**.\n- Umur ekonomis = **4 tahun**, disusutkan metode garis lurus (*straight-line*) hingga nilai buku akhir tahun ke-4 menjadi **Rp 50 Juta**.\n- Kebutuhan tambahan modal kerja bersih (NWC) pada awal proyek = **Rp 30 Juta**.\n- Mesin baru diproyeksikan menghemat biaya operasional kas sebesar **Rp 180 Juta per tahun** selama 4 tahun berturut-turut.\n- Pada akhir tahun ke-4, mesin baru diperkirakan bisa dijual di pasar loak seharga **Rp 80 Juta**.\n- Tarif pajak penghasilan badan = **25%** ($0,25$), dan WACC perusahaan = **10%**.'
+        },
+        {
+          kind: 'solution-reveal',
+          title: 'Solusi Langkah demi Langkah (Initial Outlay, OCF, TCF, dan NPV)',
+          prompt: 'Buka lembar kerja penyelesaian perhitungan lengkap angka per angka!',
+          blocks: [
+            {
+              kind: 'ul',
+              items: [
+                '**Langkah 1: Hitung Initial Outlay ($CF_0$) di Tahun 0**:\n- Basis biaya mesin = Rp 400 Juta + Rp 50 Juta = Rp 450 Juta.\n- Tambahan Modal Kerja (NWC) = Rp 30 Juta.\n$$CF_0 = - (450 \\text{ Juta} + 30 \\text{ Juta}) = \\mathbf{-Rp 480 \\text{ Juta}}$$',
+                '**Langkah 2: Hitung Beban Depresiasi Tahunan (Metode Garis Lurus)**:\n$$\\text{Depresiasi Tahunan} = \\frac{\\text{Harga Perolehan} - \\text{Nilai Buku Akhir}}{\\text{Umur Proyek}} = \\frac{450 - 50}{4} = \\mathbf{Rp 100 \\text{ Juta / Tahun}}$$',
+                '**Langkah 3: Hitung Operating Cash Flow (OCF) Tahun 1 s.d. 4**:\n- Penghematan kas operasional = Rp 180 Juta.\n- Beban depresiasi = Rp 100 Juta.\n- $EBIT = 180 - 100 = Rp 80 \\text{ Juta}$.\n- Pajak (25%) = $25\\% \\times 80 = Rp 20 \\text{ Juta}$.\n- Laba Bersih Operasi Setelah Pajak ($EAT / NOPAT$) = $80 - 20 = Rp 60 \\text{ Juta}$.\n- Tambahkan kembali Depresiasi non-kas:\n$$OCF = NOPAT + \\text{Depresiasi} = 60 \\text{ Juta} + 100 \\text{ Juta} = \\mathbf{Rp 160 \\text{ Juta / Tahun}}$$\n*(Cek dengan rumus Tax Shield: $180(1 - 0,25) + (100 \\times 0,25) = 135 + 25 = 160 \\text{ Juta}$ — Cocok!)*',
+                '**Langkah 4: Hitung Terminal Cash Flow (TCF) di Akhir Tahun 4**:\n- Harga jual besi tua mesin = Rp 80 Juta; Nilai buku akhir = Rp 50 Juta.\n- Laba penjualan aset (*Gain on Sale*) = $80 - 50 = Rp 30 \\text{ Juta}$.\n- Pajak atas laba penjualan = $25\\% \\times 30 = Rp 7,5 \\text{ Juta}$.\n- Nilai sisa setelah pajak = $80 - 7,5 = \\mathbf{Rp 72,5 \\text{ Juta}}$.\n- Tambahkan Pengembalian Modal Kerja 100% (NWC Recovery) = $\\mathbf{Rp 30 \\text{ Juta}}$.\n$$TCF = 72,5 \\text{ Juta} + 30 \\text{ Juta} = \\mathbf{Rp 102,5 \\text{ Juta}}$$',
+                '**Langkah 5: Rakit Total Arus Kas Bersih Tahunan**:\n- Tahun 0: **-Rp 480,0 Juta**\n- Tahun 1: **+Rp 160,0 Juta**\n- Tahun 2: **+Rp 160,0 Juta**\n- Tahun 3: **+Rp 160,0 Juta**\n- Tahun 4: $OCF + TCF = 160,0 + 102,5 = \\mathbf{+Rp 262,5 \\text{ Juta}}$',
+                '**Langkah 6: Hitung Net Present Value (NPV pada WACC = 10%)**:\n$$PV_1 = \\frac{160}{1,10^1} = 145,45 \\text{ Juta}$$\n$$PV_2 = \\frac{160}{1,10^2} = 132,23 \\text{ Juta}$$\n$$PV_3 = \\frac{160}{1,10^3} = 120,21 \\text{ Juta}$$\n$$PV_4 = \\frac{262,5}{1,10^4} = 179,30 \\text{ Juta}$$\n$$\\text{Total PV Kas Masuk} = 145,45 + 132,23 + 120,21 + 179,30 = Rp 577,19 \\text{ Juta}$$\n$$NPV = 577,19 - 480,00 = \\mathbf{+Rp 97,19 \\text{ Juta}}$$',
+                '**Keputusan Investasi**: Karena $NPV > 0$ (+Rp 97,19 Juta), proyek pengadaan mesin cetak baru ini **LAYAK DITERIMA (DILAKSANAKAN)** karena menambah kekayaan riil perusahaan sebesar Rp 97,19 Juta!'
+              ]
+            }
           ]
         }
       ]
     },
     {
       kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 7'
+      text: 'Pilar II: Analisis Risiko Proyek (Stand-Alone Risk Analysis)'
+    },
+    {
+      kind: 'p',
+      text: 'Di dunia nyata, estimasi penjualan, harga, dan biaya bisa meleset. Manajemen menggunakan **tiga teknik analisis risiko** untuk mengantisipasi ketidakpastian:'
     },
     {
       kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      headers: ['Metode Analisis Risiko', 'Cara Kerja', 'Tujuan / Output Utama', 'Kelemahan'],
       rows: [
-        ['1', 'Prinsip Arus Kas Inkremental', 'Identifikasi Sunk Cost, Opportunity Cost, NWC, dan Kanibalisasi.', 'Mampu mengeliminasi pos non-relevan dari skedul arus kas.'],
-        ['2', 'Kalkulasi Initial, OCF, & Terminal CF', 'Penyusunan tabel arus kas proyek multi-tahun lengkap.', 'Mampu menghitung NPV proyek investasi aset modal nyata.'],
-        ['3', 'Analisis Risiko Proyek', 'Analisis Sensitivitas, Skenario (Best/Base/Worst), dan Pohon Keputusan.', 'Mampu menghitung Expected NPV dan Standar Deviasi skenario.']
+        [
+          '**Analisis Sensitivitas (Sensitivity Analysis)**',
+          'Mengubah **SATU variabel input** (misal: volume unit turun 10%) sementara seluruh variabel lain dianggap tetap konstan (*ceteris paribus*).',
+          'Mengidentifikasi variabel mana yang paling berbahaya/kritis bagi proyek. Semakin curam grafik garisnya, semakin berbahaya variabel tersebut.',
+          'Mengabaikan kemungkinan beberapa variabel berubah bersamaan.'
+        ],
+        [
+          '**Analisis Skenario (Scenario Analysis)**',
+          'Mengubah **BANYAK variabel sekaligus** ke dalam 3 kemungkinan kondisi: Skenario Terburuk (*Worst Case* / Resesi), Normal (*Base Case*), dan Terbaik (*Best Case* / Boom).',
+          'Menghasilkan nilai Expected NPV ($\\hat{NPV} = \\sum P_i NPV_i$) dan standar deviasi $\\sigma_{NPV}$ proyek.',
+          'Hanya menguji 3 skenario diskrit yang kaku.'
+        ],
+        [
+          '**Simulasi Monte Carlo**',
+          'Komputer memasukkan distribusi probabilitas setiap variabel dan mengacak ribuan kemungkinan kombinasi arus kas secara otomatis.',
+          'Menghasilkan kurva distribusi probabilitas kontinu lengkap dari NPV dan peluang proyek menghasilkan $NPV < 0$.',
+          'Membutuhkan perangkat lunak dan keahlian statistik yang kompleks.'
+        ]
       ],
-      caption: 'Tabel 7.2: Peta penguasaan submateri TM 7 Manajemen Keuangan.'
+      caption: 'Tabel 7.2: Perbandingan 3 metode analisis risiko proyek investasi.'
+    },
+    {
+      kind: 'example',
+      title: 'Contoh Soal Ujian: Menghitung Expected NPV dan Risiko Skenario',
+      blocks: [
+        {
+          kind: 'p',
+          text: 'Sebuah proyek pertambangan memiliki estimasi hasil skenario ekonomi sebagai berikut:\n- **Worst Case (Probabilitas 20%)**: $NPV = -Rp 300 \\text{ Juta}$.\n- **Base Case (Probabilitas 60%)**: $NPV = +Rp 100 \\text{ Juta}$.\n- **Best Case (Probabilitas 20%)**: $NPV = +Rp 500 \\text{ Juta}$.\nHitunglah Expected NPV dan Standar Deviasi risiko proyek!'
+        },
+        {
+          kind: 'ul',
+          items: [
+            '**1. Expected NPV ($\\hat{NPV}$)**:\n$$\\hat{NPV} = (0,20 \\times -300) + (0,60 \\times 100) + (0,20 \\times 500) = -60 + 60 + 100 = \\mathbf{+Rp 100 \\text{ Juta}}$$',
+            '**2. Varians ($\\sigma^2$)**:\n- Worst: $0,20 \\times (-300 - 100)^2 = 0,20 \\times (-400)^2 = 0,20 \\times 160.000 = 32.000$.\n- Base: $0,60 \\times (100 - 100)^2 = 0,60 \\times 0 = 0$.\n- Best: $0,20 \\times (500 - 100)^2 = 0,20 \\times (400)^2 = 0,20 \\times 160.000 = 32.000$.\n$$\\sigma^2 = 32.000 + 0 + 32.000 = 64.000$$\n$$\\sigma = \\sqrt{64.000} = \\mathbf{Rp 252,98 \\text{ Juta}}$$',
+            '**3. Koefisien Variasi ($CV$)**:\n$$CV = \\frac{\\sigma}{\\hat{NPV}} = \\frac{252,98}{100} = \\mathbf{2,53\\times}$$\n*Makna*: Proyek ini memiliki risiko yang sangat tinggi ($CV = 2,53\\times$) karena terdapat 20% peluang perusahaan menanggung kerugian parah sebesar Rp 300 Juta jika terjadi kondisi terburuk.'
+          ]
+        }
+      ]
     },
     CASE_CASHFLOW_RISK_ANALYSIS,
     {
       kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      text: 'Jebakan Klasik Ujian Tengah Semester (Exam Traps TM 7)'
     },
     {
       kind: 'ul',
       items: [
-        '**Modal Kerja Bersih (NWC) Dicairkan Penuh**: Tambahan NWC di awal ($t=0$) selalu dicairkan kembali 100% pada akhir proyek ($t=N$) tanpa potongan pajak.',
-        '**Depreciation Tax Shield**: Depresiasi non-kas menghemat pembayaran pajak riil sebesar $\\text{Depresiasi} \\times T$.',
-        '**Jangan Masukkan Bunga**: Beban bunga tidak boleh dikurangkan saat menghitung OCF proyek karena biaya bunga sudah tercermin di dalam tingkat diskonto WACC.'
+        '**Jebakan 1: Memasukkan Biaya Sunk Cost ke Initial Outlay**:\nJika soal menyebut *"Perusahaan telah menghabiskan Rp 50 Juta tahun lalu untuk menyewa konsultan riset"*, **CORET DAN ABAIKAN!** Uang itu sudah hilang di masa lalu, tidak boleh dimasukkan ke dalam perhitungan proyek baru.',
+        '**Jebakan 2: Lupa Menghitung Pajak atas Laba Penjualan Aset Sisa**:\nJika mesin laku dijual Rp 80 Juta padahal nilai bukunya tinggal Rp 50 Juta, perusahaan tidak menerima bersih Rp 80 Juta! Selisih untung Rp 30 Juta dikenai pajak 25% (Rp 7,5 Juta), sehingga kas bersih yang diterima hanyalah Rp 72,5 Juta.',
+        '**Jebakan 3: Mengurangkan Modal Kerja (NWC) Tanpa Memulihkannya**:\nJika di tahun 0 ada modal kerja keluar Rp 30 Juta, **JANGAN LUPA** menambahkan kembali Rp 30 Juta itu di tahun terakhir proyek ($t=N$) sebagai kas masuk pemulihan (NWC Recovery).'
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Rangkuman Inti & Checklist Kesiapan Ujian TM 7'
+    },
+    {
+      kind: 'ul',
+      items: [
+        '**Arus Kas Inkremental**: Hanya kas tambahan yang benar-benar berubah akibat diambilnya proyek yang dihitung.',
+        '**Depresiasi Menghemat Kas**: Depresiasi bukan kas keluar, melainkan tameng pelindung kas pajak (*Depreciation Tax Shield*).',
+        '**Modal Kerja Cair Penuh**: Modal kerja bersifat seperti uang deposit/jaminan, disetor di awal dan dicairkan kembali utuh di akhir.',
+        '**Analisis Sensitivitas vs Skenario**: Sensitivitas mengubah 1 variabel; Skenario mengubah banyak variabel sekaligus.'
       ]
     }
   ]
