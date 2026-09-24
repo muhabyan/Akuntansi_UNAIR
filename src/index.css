@@ -426,6 +426,10 @@ html.dark .reading-scroll-cue {
     pointer-events: none !important;
   }
 
+  .mobile-utility-launcher--feedback {
+    left: calc(100% - 214px) !important;
+  }
+
   .mobile-utility-launcher--pomodoro {
     left: calc(100% - 160px) !important;
   }
@@ -459,8 +463,9 @@ html.dark .reading-scroll-cue {
     max-width: none !important;
   }
 
-  .mobile-utility-card--chat {
-    height: min(550px, calc(100dvh - 9rem - env(safe-area-inset-bottom))) !important;
+  .mobile-utility-card--chat,
+  .mobile-utility-card--feedback {
+    height: min(580px, calc(100dvh - 9rem - env(safe-area-inset-bottom))) !important;
     max-height: calc(100dvh - 9rem - env(safe-area-inset-bottom)) !important;
   }
 
