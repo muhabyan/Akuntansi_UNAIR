@@ -691,7 +691,6 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     case 'MNM107':
     case 'MNM106': {
       const module = await import('../pdb/pdbReadings');
-      // @ts-ignore dynamic indexing
       return { readings: module[`${courseCode}_READINGS`], reviews: {} };
     }
     default:

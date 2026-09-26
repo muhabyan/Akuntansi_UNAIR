@@ -37,8 +37,13 @@ export default function LiveChatFloating() {
     const closeWhenAnotherUtilityOpens = (event: Event) => {
       if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'live-chat') setIsOpen(false);
     };
+    const closeUtility = () => setIsOpen(false);
     window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
-    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    window.addEventListener('akuntansihub:close-utility', closeUtility);
+    return () => {
+      window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+      window.removeEventListener('akuntansihub:close-utility', closeUtility);
+    };
   }, []);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -179,6 +184,7 @@ export default function LiveChatFloating() {
         id="global-chat-panel"
         data-utility-panel="live-chat"
         aria-hidden={!isOpen}
+        ref={(panel) => { panel?.toggleAttribute('inert', !isOpen); }}
         className={`mobile-utility-panel zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
@@ -358,7 +364,7 @@ export default function LiveChatFloating() {
           top: draggable.position.y,
           zIndex: 100
         } : undefined}
-        className={`zen-hideable group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--global-chat' : ''} ${
+        className={`zen-hideable utility-launcher-quiet group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--global-chat' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-indigo-400/50' : 'cursor-pointer active:scale-95'

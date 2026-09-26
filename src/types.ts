@@ -105,6 +105,25 @@ export interface JournalLine {
   isCredit?: boolean;
 }
 
+/** Ringkasan visual berbasis teks yang dapat membungkus isi pada layar sempit. */
+export interface FigureOverview {
+  heading: string;
+  badge?: string;
+  cards: { title: string; subtitle: string; items: string[]; takeaway: string }[];
+  footer?: string;
+}
+
+export interface FigureTranscriptSection {
+  title: string;
+  items: string[];
+}
+
+export interface FigureMobileFlow {
+  title: string;
+  stages: { actor: string; actions: string[]; note?: string }[];
+  messages: string[];
+}
+
 /** Blok konten. Discriminated union -> aman & mudah dirender. */
 export type ContentBlock =
   | { kind: 'h2'; text: string }
@@ -112,12 +131,12 @@ export type ContentBlock =
   | { kind: 'p'; text: string } // mendukung **tebal** sederhana
   | { kind: 'ul'; items: string[] }
   | { kind: 'ol'; items: string[] }
-  | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string }
+  | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string; compact?: boolean }
   | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string }
   | { kind: 'journal'; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
   | { kind: 'code'; text: string; language?: string; caption?: string } // teks literal (mis. SQL), tidak diproses markdown
-  | { kind: 'figure'; title?: string; svg?: string; url?: string; caption?: string; altText?: string }
+  | { kind: 'figure'; title?: string; svg?: string; url?: string; overview?: FigureOverview; transcript?: string[]; transcriptSections?: FigureTranscriptSection[]; mobileFlow?: FigureMobileFlow; caption?: string; altText?: string }
   | { kind: 'example'; title: string; blocks: ContentBlock[] }
   | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[] }
   | { kind: 'statement'; spec: StatementSpec }

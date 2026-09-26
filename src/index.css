@@ -323,6 +323,26 @@ body.zen-mode-active .mobile-utility-badge { display: none !important; }
   overflow-wrap: anywhere;
 }
 
+/* Only the explicitly compact teaching callouts use denser list rhythm. */
+.course-callout-compact :is(ol, ul) {
+  margin-block: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.course-callout-compact :is(p, li) {
+  margin-block: 0;
+  line-height: 1.55;
+}
+
+.mobile-utility-panel[aria-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none !important;
+}
+.course-callout-compact p + :is(ol, ul),
+.course-callout-compact :is(ol, ul) + p {
+  margin-top: 0.65rem;
+}
+
 /* Preserve useful column widths inside the document while keeping the page
    itself within the viewport. Dense academic tables remain swipeable. */
 .akbi-table-scroll {
@@ -614,6 +634,40 @@ body.reading-outline-menu-open .mobile-utility-badge {
 
 .mobile-utility-launcher {
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+  .utility-launcher-quiet { display: none !important; }
+  body.reading-mode-active.reading-utilities-hidden .study-utility-dock[data-open="false"],
+  body.mobile-utility-scrolling .study-utility-dock[data-open="false"],
+  body.reading-outline-menu-open .study-utility-dock,
+  body.driver-active .study-utility-dock {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .utility-launcher-quiet[aria-expanded="false"] {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 14px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #fff !important;
+    color: #334155 !important;
+    opacity: 0.9 !important;
+    box-shadow: 0 3px 12px rgb(15 23 42 / 12%) !important;
+  }
+  .dark .utility-launcher-quiet[aria-expanded="false"] {
+    border-color: #475569 !important;
+    background: #0f172a !important;
+    color: #e2e8f0 !important;
+  }
+  .utility-launcher-quiet[aria-expanded="false"]:is(:hover, :focus-visible) {
+    opacity: 1 !important;
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+  }
 }
 
 body.reading-outline-menu-open {

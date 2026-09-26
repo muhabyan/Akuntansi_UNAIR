@@ -22,6 +22,18 @@ export default function AuthModal() {
     }
   }, [showAuthModal]);
 
+  React.useEffect(() => {
+    if (!showAuthModal) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      setShowAuthModal(false);
+    };
+    document.addEventListener('keydown', closeOnEscape, true);
+    return () => document.removeEventListener('keydown', closeOnEscape, true);
+  }, [showAuthModal, setShowAuthModal]);
+
   if (!showAuthModal) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -60,7 +72,7 @@ export default function AuthModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
+    <div data-auth-modal role="dialog" aria-modal="true" aria-label="Akun AkuntansiHub" className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
       <div className="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
         {/* Header */}

@@ -95,7 +95,37 @@ export const TM6_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 6.1: 5 Metode Evaluasi Penganggaran Modal (Capital Budgeting Criteria).',
-      svg: SVG_CAPITAL_BUDGETING
+      svg: SVG_CAPITAL_BUDGETING,
+      transcript: [
+        "1. NET PRESENT VALUE (GOLD STANDARD)",
+        "Kriteria: Terima Jika NPV > 0",
+        "Menghitung tambahan kekayaan riil pemegang saham",
+        "Mempertimbangkan seluruh arus kas masuk & keluar",
+        "Menggunakan prinsip nilai waktu uang (Discount rate WACC)",
+        "Mengasumsikan reinvestasi pada tingkat biaya modal (Realistis)",
+        "Selalu konsisten saat memilih proyek saling eksklusif",
+        "Raja Penganggaran Modal: Selalu Menang Saat Konflik",
+        "2. INTERNAL RATE OF RETURN (IRR)",
+        "Kriteria: Terima jika IRR > WACC",
+        "Tingkat diskonto yang membuat NPV = 0",
+        "Kelemahan: Asumsi reinvestasi tidak realistis (reinvest pada IRR)",
+        "Dapat terjadi Multiple IRR bila arus kas tidak normal",
+        "3. MODIFIED IRR (MIRR)",
+        "Kriteria: Terima jika MIRR > WACC",
+        "Memperbaiki kelemahan utama model IRR standar",
+        "Arus kas masuk direinvestasikan pada suku bunga WACC",
+        "Menghilangkan problem multiple IRR",
+        "4. PAYBACK PERIOD (PP)",
+        "Kriteria: Waktu Balik Modal < Target",
+        "Sederhana & mengukur likuiditas kas awal",
+        "Mengabaikan arus kas setelah periode balik modal",
+        "Mengabaikan nilai waktu uang (pada Simple PP)",
+        "5. DISCOUNTED PAYBACK (DPB)",
+        "Kriteria: DPB < Batas Waktu Maksimal",
+        "Memperbaiki PP dengan memperhitungkan faktor bunga diskonto",
+        "Mengukur berapa lama modal riil balik nilai tunai",
+        "Tetap mengabaikan arus kas setelah titik impas diskonto"
+      ]
     },
     {
       kind: 'h2',
@@ -193,7 +223,7 @@ export const TM6_READING: Reading = {
       blocks: [
         {
           kind: 'p',
-          text: 'Sebuah perusahaan sedang menganalisis dua proyek yang **mutually exclusive**, yaitu **Project S** dan **Project L**, dengan arus kas berikut:\n- Investasi Awal ($CF_0$): $-\\$1.000$ untuk kedua proyek.\n- Arus Kas Project S: Tahun 1 = $\$870$; Tahun 2 = $\$250$; Tahun 3 = $\$25$; Tahun 4 = $\$25$.\n- Arus Kas Project L: Tahun 1 = $\$0$; Tahun 2 = $\$250$; Tahun 3 = $\$400$; Tahun 4 = $\$845$.\nWACC perusahaan adalah **8,5%**.\n**Pertanyaan**: Proyek manakah yang seharusnya dipilih, dan berapakah IRR dari proyek yang lebih baik tersebut?'
+          text: 'Sebuah perusahaan sedang menganalisis dua proyek yang **mutually exclusive**, yaitu **Project S** dan **Project L**, dengan arus kas berikut:\n- Investasi Awal ($CF_0$): $-1.000$ untuk kedua proyek.\n- Arus Kas Project S: Tahun 1 = $870$; Tahun 2 = $250$; Tahun 3 = $25$; Tahun 4 = $25$.\n- Arus Kas Project L: Tahun 1 = $0$; Tahun 2 = $250$; Tahun 3 = $400$; Tahun 4 = $845$.\nWACC perusahaan adalah **8,5%**.\n**Pertanyaan**: Proyek manakah yang seharusnya dipilih, dan berapakah IRR dari proyek yang lebih baik tersebut?'
         },
         {
           kind: 'solution-reveal',
@@ -204,9 +234,9 @@ export const TM6_READING: Reading = {
               kind: 'ul',
               items: [
                 '**Prinsip Dasar Proyek Mutually Exclusive**: Karena proyek saling meniadakan, kita hanya boleh memilih SATU proyek. Kriteria utama pemutus pilihan adalah **NPV tertinggi**, bukan IRR!',
-                '**Langkah 1: Hitung NPV Project S (WACC = 8,5% = 0,085)**:\n$$NPV_S = -1.000 + \\frac{870}{(1,085)^1} + \\frac{250}{(1,085)^2} + \\frac{25}{(1,085)^3} + \\frac{25}{(1,085)^4}$$\n$$NPV_S = -1.000 + 801,84 + 212,36 + 19,57 + 18,04 = \\mathbf{+\\$51,82}$$',
-                '**Langkah 2: Hitung NPV Project L (WACC = 8,5% = 0,085)**:\n$$NPV_L = -1.000 + \\frac{0}{(1,085)^1} + \\frac{250}{(1,085)^2} + \\frac{400}{(1,085)^3} + \\frac{845}{(1,085)^4}$$\n$$NPV_L = -1.000 + 0 + 212,36 + 313,16 + 609,73 = \\mathbf{+\\$135,26}$$',
-                '**Langkah 3: Tentukan Proyek Pemenang**:\nKarena $NPV_L (+\\$135,26) > NPV_S (+\\$51,82)$, maka **Project L yang dipilih** karena memberikan tambahan kekayaan lebih dari dua kali lipat dibanding Project S.',
+                '**Langkah 1: Hitung NPV Project S (WACC = 8,5% = 0,085)**:\n$$NPV_S = -1.000 + \\frac{870}{(1,085)^1} + \\frac{250}{(1,085)^2} + \\frac{25}{(1,085)^3} + \\frac{25}{(1,085)^4}$$\n$$NPV_S = -1.000 + 801,84 + 212,36 + 19,57 + 18,04 = \\mathbf{+51,82}$$',
+                '**Langkah 2: Hitung NPV Project L (WACC = 8,5% = 0,085)**:\n$$NPV_L = -1.000 + \\frac{0}{(1,085)^1} + \\frac{250}{(1,085)^2} + \\frac{400}{(1,085)^3} + \\frac{845}{(1,085)^4}$$\n$$NPV_L = -1.000 + 0 + 212,36 + 313,16 + 609,73 = \\mathbf{+135,26}$$',
+                '**Langkah 3: Tentukan Proyek Pemenang**:\nKarena $NPV_L (+135,26) > NPV_S (+51,82)$, maka **Project L yang dipilih** karena memberikan tambahan kekayaan lebih dari dua kali lipat dibanding Project S.',
                 '**Langkah 4: Hitung IRR Project L (Tingkat Diskonto yang membuat NPV = 0)**:\n$$0 = -1.000 + \\frac{0}{(1 + IRR)^1} + \\frac{250}{(1 + IRR)^2} + \\frac{400}{(1 + IRR)^3} + \\frac{845}{(1 + IRR)^4}$$\nDengan kalkulator finansial / interpolasi matematika:\n$$\\mathbf{IRR_L = 12,70\\%}$$',
                 '**Kesimpulan Akhir Soal 1**: Proyek yang dipilih adalah **Project L** (karena NPV lebih tinggi), dan IRR Project L adalah **12,70%**.'
               ]
@@ -262,8 +292,8 @@ export const TM6_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Project X**:\n$$PV_1 = \\frac{6.500}{(1,12)^1} = 5.803,57$$\n$$PV_2 = \\frac{3.000}{(1,12)^2} = 2.391,58$$\n$$PV_3 = \\frac{3.000}{(1,12)^3} = 2.135,34$$\n$$PV_4 = \\frac{1.000}{(1,12)^4} = 635,52$$\n$$\\text{Total PV Kas Masuk} = 5.803,57 + 2.391,58 + 2.135,34 + 635,52 = \\$10.966,01$$\n$$NPV_X = 10.966,01 - 10.000 = \\mathbf{+\\$966,01}$$',
-            '**Project Y (Bentuk Anuitas $3.500 per tahun selama 4 tahun)**:\n$$PVIFA_{12\\%, 4} = \\frac{1 - (1,12)^{-4}}{0,12} = 3,037349$$\n$$\\text{Total PV Kas Masuk} = 3.500 \\times 3,037349 = \\$10.630,72$$\n$$NPV_Y = 10.630,72 - 10.000 = \\mathbf{+\\$630,72}$$'
+            '**Project X**:\n$$PV_1 = \\frac{6.500}{(1,12)^1} = 5.803,57$$\n$$PV_2 = \\frac{3.000}{(1,12)^2} = 2.391,58$$\n$$PV_3 = \\frac{3.000}{(1,12)^3} = 2.135,34$$\n$$PV_4 = \\frac{1.000}{(1,12)^4} = 635,52$$\n$$\\text{Total PV Kas Masuk} = 5.803,57 + 2.391,58 + 2.135,34 + 635,52 = 10.966,01$$\n$$NPV_X = 10.966,01 - 10.000 = \\mathbf{+966,01}$$',
+            '**Project Y (Anuitas 3.500 per tahun selama 4 tahun)**:\n$$PVIFA_{12\\%, 4} = \\frac{1 - (1,12)^{-4}}{0,12} = 3,037349$$\n$$\\text{Total PV Kas Masuk} = 3.500 \\times 3,037349 = 10.630,72$$\n$$NPV_Y = 10.630,72 - 10.000 = \\mathbf{+630,72}$$'
           ]
         },
         {
@@ -284,8 +314,8 @@ export const TM6_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Project X (Tarik seluruh arus kas masuk ke Nilai Masa Depan / Terminal Value pada Tahun 4)**:\n- Tahun 1: $6.500 \\times (1,12)^3 = 6.500 \\times 1,404928 = \\$9.132,03$\n- Tahun 2: $3.000 \\times (1,12)^2 = 3.000 \\times 1,254400 = \\$3.763,20$\n- Tahun 3: $3.000 \\times (1,12)^1 = 3.000 \\times 1,120000 = \\$3.360,00$\n- Tahun 4: $1.000 \\times (1,12)^0 = \\$1.000,00$\n$$\\text{Terminal Value (TV}_X) = 9.132,03 + 3.763,20 + 3.360,00 + 1.000,00 = \\mathbf{\\$17.255,23}$$\n$$MIRR_X = \\left( \\frac{TV_X}{|CF_0|} \\right)^{1/4} - 1 = \\left( \\frac{17.255,23}{10.000} \\right)^{0,25} - 1 = (1,725523)^{0,25} - 1 = \\mathbf{14,61\\%}$$',
-            '**Project Y (Terminal Value Anuitas)**:\n$$TV_Y = 3.500 \\times FVIFA_{12\\%, 4} = 3.500 \\times \\frac{(1,12)^4 - 1}{0,12} = 3.500 \\times 4,779328 = \\mathbf{\\$16.727,65}$$\n$$MIRR_Y = \\left( \\frac{16.727,65}{10.000} \\right)^{0,25} - 1 = (1,672765)^{0,25} - 1 = \\mathbf{13,73\\%}$$'
+            '**Project X (Tarik seluruh arus kas masuk ke Nilai Masa Depan / Terminal Value pada Tahun 4)**:\n- Tahun 1: $6.500 \\times (1,12)^3 = 6.500 \\times 1,404928 = 9.132,03$\n- Tahun 2: $3.000 \\times (1,12)^2 = 3.000 \\times 1,254400 = 3.763,20$\n- Tahun 3: $3.000 \\times (1,12)^1 = 3.000 \\times 1,120000 = 3.360,00$\n- Tahun 4: $1.000 \\times (1,12)^0 = 1.000,00$\n$$\\text{Terminal Value (TV}_X) = 9.132,03 + 3.763,20 + 3.360,00 + 1.000,00 = \\mathbf{17.255,23}$$\n$$MIRR_X = \\left( \\frac{TV_X}{|CF_0|} \\right)^{1/4} - 1 = \\left( \\frac{17.255,23}{10.000} \\right)^{0,25} - 1 = (1,725523)^{0,25} - 1 = \\mathbf{14,61\\%}$$',
+            '**Project Y (Terminal Value Anuitas)**:\n$$TV_Y = 3.500 \\times FVIFA_{12\\%, 4} = 3.500 \\times \\frac{(1,12)^4 - 1}{0,12} = 3.500 \\times 4,779328 = \\mathbf{16.727,65}$$\n$$MIRR_Y = \\left( \\frac{16.727,65}{10.000} \\right)^{0,25} - 1 = (1,672765)^{0,25} - 1 = \\mathbf{13,73\\%}$$'
           ]
         },
         {
@@ -295,8 +325,8 @@ export const TM6_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Project X**:\n- Modal awal: $-\\$10.000$.\n- Tahun 1 masuk $\$6.500 \\implies$ Sisa belum balik: $\$3.500$.\n- Tahun 2 masuk $\$3.000 \\implies$ Sisa belum balik: $\$500$.\n- Tahun 3 masuk $\$3.000$. Kita hanya butuh $\$500$ dari $\$3.000$.\n$$Payback_X = 2 + \\frac{500}{3.000} = 2 + 0,167 = \\mathbf{2,17 \\text{ Tahun (2 Tahun 2 Bulan)}}$$',
-            '**Project Y**:\n- Modal awal: $-\\$10.000$.\n- Tahun 1 masuk $\$3.500$; Tahun 2 masuk $\$3.500$ (Total $\$7.000$). Sisa belum balik di akhir tahun 2: $\$3.000$.\n- Tahun 3 masuk $\$3.500$. Kita hanya butuh $\$3.000$ dari $\$3.500$.\n$$Payback_Y = 2 + \\frac{3.000}{3.500} = 2 + 0,857 = \\mathbf{2,86 \\text{ Tahun (2 Tahun 10 Bulan)}}$$'
+            '**Project X**:\n- Modal awal: $-10.000$.\n- Tahun 1 masuk $6.500 \\implies$ Sisa belum balik: $3.500$.\n- Tahun 2 masuk $3.000 \\implies$ Sisa belum balik: $500$.\n- Tahun 3 masuk $3.000$. Kita hanya butuh $500$ dari $3.000$.\n$$Payback_X = 2 + \\frac{500}{3.000} = 2 + 0,167 = \\mathbf{2,17 \\text{ Tahun (2 Tahun 2 Bulan)}}$$',
+            '**Project Y**:\n- Modal awal: $-10.000$.\n- Tahun 1 masuk $3.500$; Tahun 2 masuk $3.500$ (Total $7.000$). Sisa belum balik di akhir tahun 2: $3.000$.\n- Tahun 3 masuk $3.500$. Kita hanya butuh $3.000$ dari $3.500$.\n$$Payback_Y = 2 + \\frac{3.000}{3.500} = 2 + 0,857 = \\mathbf{2,86 \\text{ Tahun (2 Tahun 10 Bulan)}}$$'
           ]
         },
         {
@@ -306,15 +336,15 @@ export const TM6_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Project X (Arus kas terdiskon $PV$)**:\n- Tahun 1: $PV = \\$5.803,57 \\implies$ Sisa modal riil belum balik: $\$4.196,43$.\n- Tahun 2: $PV = \\$2.391,58 \\implies$ Sisa modal riil belum balik: $\$1.804,85$.\n- Tahun 3: $PV = \\$2.135,34$. Modal tertutup di tahun ke-3!\n$$DPB_X = 2 + \\frac{1.804,85}{2.135,34} = 2 + 0,845 = \\mathbf{2,85 \\text{ Tahun (2 Tahun 10 Bulan)}}$$',
-            '**Project Y (Arus kas terdiskon $PV$)**:\n- Tahun 1: $PV = \\$3.125,00 \\implies$ Sisa: $\$6.875,00$.\n- Tahun 2: $PV = \\$2.790,18 \\implies$ Sisa: $\$4.084,82$.\n- Tahun 3: $PV = \\$2.491,23 \\implies$ Sisa: $\$1.593,59$.\n- Tahun 4: $PV = \\$2.224,31$. Modal tertutup di tahun ke-4!\n$$DPB_Y = 3 + \\frac{1.593,59}{2.224,31} = 3 + 0,716 = \\mathbf{3,72 \\text{ Tahun (3 Tahun 9 Bulan)}}$$'
+            '**Project X (Arus kas terdiskon $PV$)**:\n- Tahun 1: $PV = 5.803,57 \\implies$ Sisa modal riil belum balik: $4.196,43$.\n- Tahun 2: $PV = 2.391,58 \\implies$ Sisa modal riil belum balik: $1.804,85$.\n- Tahun 3: $PV = 2.135,34$. Modal tertutup di tahun ke-3!\n$$DPB_X = 2 + \\frac{1.804,85}{2.135,34} = 2 + 0,845 = \\mathbf{2,85 \\text{ Tahun (2 Tahun 10 Bulan)}}$$',
+            '**Project Y (Arus kas terdiskon $PV$)**:\n- Tahun 1: $PV = 3.125,00 \\implies$ Sisa: $6.875,00$.\n- Tahun 2: $PV = 2.790,18 \\implies$ Sisa: $4.084,82$.\n- Tahun 3: $PV = 2.491,23 \\implies$ Sisa: $1.593,59$.\n- Tahun 4: $PV = 2.224,31$. Modal tertutup di tahun ke-4!\n$$DPB_Y = 3 + \\frac{1.593,59}{2.224,31} = 3 + 0,716 = \\mathbf{3,72 \\text{ Tahun (3 Tahun 9 Bulan)}}$$'
           ]
         },
         {
           kind: 'table',
           headers: ['Metode Evaluasi', 'Project X', 'Project Y', 'Pemenang (WACC = 12%)'],
           rows: [
-            ['Net Present Value (NPV)', '+$966,01', '+$630,72', '**Project X**'],
+            ['Net Present Value (NPV)', '+966,01', '+630,72', '**Project X**'],
             ['Internal Rate of Return (IRR)', '18,03%', '14,96%', '**Project X**'],
             ['Modified IRR (MIRR)', '14,61%', '13,73%', '**Project X**'],
             ['Payback Period (PP)', '2,17 Tahun', '2,86 Tahun', '**Project X (Lebih Cepat)**'],
@@ -332,10 +362,10 @@ export const TM6_READING: Reading = {
         {
           kind: 'ul',
           items: [
-            '**Jawaban Bagian b (Jika Proyek Bersifat Independent)**:\n- **Keputusan: TERIMA KEDUA PROYEK (Project X dan Project Y keduanya diterima!)**.\n- *Alasan*: Karena kedua proyek bersifat independen, keduanya tidak saling menghalangi. Kriteria penerimaan adalah $NPV > 0$ dan $IRR > WACC$. Karena Project X ($NPV = +\\$966,01; IRR = 18,03\\% > 12\\%$) dan Project Y ($NPV = +\\$630,72; IRR = 14,96\\% > 12\\%$) keduanya menghasilkan nilai tambah positif, maka kedua proyek wajib dijalankan bersama-sama.',
-            '**Jawaban Bagian c (Jika Proyek Bersifat Mutually Exclusive pada WACC = 12%)**:\n- **Keputusan: PILIH PROJECT X!**\n- *Alasan*: Proyek saling meniadakan hanya mengizinkan kita memilih satu proyek terbaik. Project X memiliki $NPV$ lebih tinggi ($+\\$966,01 > +\\$630,72$) dan juga $IRR$ lebih tinggi ($18,03\\% > 14,96\\%$). Pada tingkat bunga 12%, tidak terjadi konflik antara NPV dan IRR.',
-            '**Jawaban Bagian d (Analisis Konflik Jika WACC = 5%)**:\n- Mari kita hitung ulang NPV kedua proyek pada suku bunga diskonto rendah **WACC = 5%**:\n  $$NPV_X (5\\%) = -10.000 + \\frac{6.500}{1,05} + \\frac{3.000}{(1,05)^2} + \\frac{3.000}{(1,05)^3} + \\frac{1.000}{(1,05)^4} = \\mathbf{+\\$2.325,78}$$\n  $$NPV_Y (5\\%) = -10.000 + 3.500 \\times PVIFA_{5\\%, 4} = -10.000 + (3.500 \\times 3,54595) = \\mathbf{+\\$2.410,83}$$\n- **Evaluasi Hasil**: Lihat apa yang terjadi!\n  - Berdasarkan kriteria **NPV**: Project Y menang ($NPV_Y \\$2.410,83 > NPV_X \\$2.325,78$)!\n  - Berdasarkan kriteria **IRR**: Project X tetap menang ($IRR_X 18,03\\% > IRR_Y 14,96\\%$)!\n- **Kesimpulan Bagian d: YA, TERJADI KONFLIK ANTARA NPV DAN IRR PADA WACC = 5%!**\n  - Titik persimpangan (*Crossover Rate*) terjadi pada tingkat diskonto **6,22%**.\n  - Jika WACC < 6,22% (seperti pada 5%), Project Y memiliki NPV lebih tinggi.\n  - Jika WACC > 6,22% (seperti pada 12%), Project X memiliki NPV lebih tinggi.\n  - *Keputusan yang benar saat konflik*: **Pilih Project Y** karena NPV-nya lebih tinggi!',
-            '**Jawaban Bagian e (Mengapa Dapat Terjadi Konflik Antara NPV dan IRR?)**:\nAda dua penyebab mendasar mengapa NPV dan IRR bisa berselisih paham saat memeringkat proyek mutually exclusive:\n1. **Perbedaan Pola Waktu Arus Kas (*Timing Differences*)**:\n   - Project X adalah proyek "cepat panen" yang menerima kas sangat besar di awal (Tahun 1 = $6.500).\n   - Project Y adalah proyek dengan kas masuk yang bertahan lebih lama dan merata ($3.500 tiap tahun hingga tahun ke-4), dengan total kas masuk tanpa diskonto lebih besar ($14.000 vs $13.500).\n   - Saat suku bunga WACC tinggi (12%), arus kas tahun ke-3 dan 4 milik Project Y tergerus habis oleh diskonto yang berat sehingga Project X menang.\n   - Namun saat suku bunga WACC rendah (5%), nilai waktu uang tidak terlalu "menghukum" kas di masa depan, sehingga total uang Project Y yang lebih besar akhirnya mengalahkan Project X!\n2. **Perbedaan Asumsi Reinvestasi (*Reinvestment Rate Assumption*)**:\n   - **Metode IRR mengasumsikan kas masuk direinvestasikan pada tingkat bunga IRR proyek itu sendiri** (18,03% untuk X dan 14,96% untuk Y). Ini sangat tidak realistis karena sulit bagi perusahaan menemukan proyek baru di pasar yang terus-menerus bisa menghasilkan untung setinggi 18%.\n   - **Metode NPV mengasumsikan kas masuk direinvestasikan pada biaya modal (WACC)**, yaitu tingkat suku bunga pasar riil yang wajar (12% atau 5%). Asumsi NPV jauh lebih realistis!\n   - Karena itulah, para profesor keuangan dan penguji UTS FEB UNAIR sepakat: **NPV adalah Raja Penganggaran Modal yang tidak pernah salah!**'
+            '**Jawaban Bagian b (Jika Proyek Bersifat Independent)**:\n- **Keputusan: TERIMA KEDUA PROYEK (Project X dan Project Y keduanya diterima!)**.\n- *Alasan*: Karena kedua proyek bersifat independen, keduanya tidak saling menghalangi. Kriteria penerimaan adalah $NPV > 0$ dan $IRR > WACC$. Karena Project X ($NPV = +966,01; IRR = 18,03\\% > 12\\%$) dan Project Y ($NPV = +630,72; IRR = 14,96\\% > 12\\%$) keduanya menghasilkan nilai tambah positif, maka kedua proyek wajib dijalankan bersama-sama.',
+            '**Jawaban Bagian c (Jika Proyek Bersifat Mutually Exclusive pada WACC = 12%)**:\n- **Keputusan: PILIH PROJECT X!**\n- *Alasan*: Proyek saling meniadakan hanya mengizinkan kita memilih satu proyek terbaik. Project X memiliki $NPV$ lebih tinggi ($+966,01 > +630,72$) dan juga $IRR$ lebih tinggi ($18,03\\% > 14,96\\%$). Pada tingkat bunga 12%, tidak terjadi konflik antara NPV dan IRR.',
+            '**Jawaban Bagian d (Analisis Konflik Jika WACC = 5%)**:\n- Mari kita hitung ulang NPV kedua proyek pada suku bunga diskonto rendah **WACC = 5%**:\n  $$NPV_X (5\\%) = -10.000 + \\frac{6.500}{1,05} + \\frac{3.000}{(1,05)^2} + \\frac{3.000}{(1,05)^3} + \\frac{1.000}{(1,05)^4} = \\mathbf{+2.325,78}$$\n  $$NPV_Y (5\\%) = -10.000 + 3.500 \\times PVIFA_{5\\%, 4} = -10.000 + (3.500 \\times 3,54595) = \\mathbf{+2.410,83}$$\n- **Evaluasi Hasil**: Lihat apa yang terjadi!\n  - Berdasarkan kriteria **NPV**: Project Y menang ($NPV_Y = 2.410,83 > NPV_X = 2.325,78$)!\n  - Berdasarkan kriteria **IRR**: Project X tetap menang ($IRR_X = 18,03\\% > IRR_Y = 14,96\\%$)!\n- **Kesimpulan Bagian d: YA, TERJADI KONFLIK ANTARA NPV DAN IRR PADA WACC = 5%!**\n  - Titik persimpangan (*Crossover Rate*) terjadi pada tingkat diskonto **6,22%**.\n  - Jika WACC < 6,22% (seperti pada 5%), Project Y memiliki NPV lebih tinggi.\n  - Jika WACC > 6,22% (seperti pada 12%), Project X memiliki NPV lebih tinggi.\n  - *Keputusan yang benar saat konflik*: **Pilih Project Y** karena NPV-nya lebih tinggi!',
+            '**Jawaban Bagian e (Mengapa Dapat Terjadi Konflik Antara NPV dan IRR?)**:\nAda dua penyebab mendasar mengapa NPV dan IRR bisa berselisih paham saat memeringkat proyek mutually exclusive:\n1. **Perbedaan Pola Waktu Arus Kas (*Timing Differences*)**:\n   - Project X adalah proyek "cepat panen" yang menerima kas sangat besar di awal (Tahun 1 = 6.500).\n   - Project Y adalah proyek dengan kas masuk yang bertahan lebih lama dan merata (3.500 tiap tahun hingga tahun ke-4), dengan total kas masuk tanpa diskonto lebih besar (14.000 vs 13.500).\n   - Saat suku bunga WACC tinggi (12%), arus kas tahun ke-3 dan 4 milik Project Y tergerus habis oleh diskonto yang berat sehingga Project X menang.\n   - Namun saat suku bunga WACC rendah (5%), nilai waktu uang tidak terlalu "menghukum" kas di masa depan, sehingga total uang Project Y yang lebih besar akhirnya mengalahkan Project X!\n2. **Perbedaan Asumsi Reinvestasi (*Reinvestment Rate Assumption*)**:\n   - **Metode IRR mengasumsikan kas masuk direinvestasikan pada tingkat bunga IRR proyek itu sendiri** (18,03% untuk X dan 14,96% untuk Y). Ini sangat tidak realistis karena sulit bagi perusahaan menemukan proyek baru di pasar yang terus-menerus bisa menghasilkan untung setinggi 18%.\n   - **Metode NPV mengasumsikan kas masuk direinvestasikan pada biaya modal (WACC)**, yaitu tingkat suku bunga pasar riil yang wajar (12% atau 5%). Asumsi NPV jauh lebih realistis!\n   - Karena itulah, para profesor keuangan dan penguji UTS FEB UNAIR sepakat: **NPV adalah Raja Penganggaran Modal yang tidak pernah salah!**'
           ]
         }
       ]
@@ -348,7 +378,7 @@ export const TM6_READING: Reading = {
     {
       kind: 'ul',
       items: [
-        '**Jebakan 1: Terkecoh Memilih Proyek Berdasarkan IRR Tertinggi**:\nPada proyek saling meniadakan (Mutually Exclusive), jangan pernah tergoda memilih proyek hanya karena IRR-nya 50%. Jika proyek lain menghasilkan NPV $10 Miliar sedangkan proyek ber-IRR 50% hanya menghasilkan NPV $10 Juta, memilih proyek berdasarkan IRR akan membuat perusahaan rugi besar! Selalu patuhi NPV.',
+        '**Jebakan 1: Terkecoh Memilih Proyek Berdasarkan IRR Tertinggi**:\nPada proyek saling meniadakan (Mutually Exclusive), jangan pernah tergoda memilih proyek hanya karena IRR-nya 50%. Jika proyek lain menghasilkan NPV Rp 10 Miliar sedangkan proyek ber-IRR 50% hanya menghasilkan NPV Rp 10 Juta, memilih proyek berdasarkan IRR akan membuat perusahaan rugi besar! Selalu patuhi NPV.',
         '**Jebakan 2: Lupa Membedakan Independent vs Mutually Exclusive**:\n- Jika soal menyebut *Independent Projects*, jawabannya bisa "Terima Keduanya" atau "Tolak Keduanya".\n- Jika soal menyebut *Mutually Exclusive Projects*, jawabannya HANYA BISA SATU pemenang.',
         '**Jebakan 3: Arus Kas Non-Normal dan Multiple IRR**:\nJika arus kas berubah tanda dari negatif $\\to$ positif $\\to$ negatif (misalnya proyek tambang yang butuh biaya reklamasi lingkungan di tahun terakhir), rumus IRR akan menghasilkan lebih dari 1 angka IRR yang membingungkan. Solusi akademis resminya: Gunakan **MIRR**!'
       ]

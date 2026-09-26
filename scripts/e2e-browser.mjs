@@ -5,8 +5,8 @@ import path from 'node:path';
 import { createEnterprisePolicyBlockError, isEnterprisePolicyBlock } from './e2e-policy.mjs';
 
 const root = process.cwd();
-const host = '127.0.0.1';
-const browserHost = '127.0.0.1';
+const host = process.env.E2E_SERVER_HOST ?? '127.0.0.1';
+const browserHost = process.env.E2E_BROWSER_HOST ?? '127.0.0.1';
 const port = 4173;
 const baseUrl = `http://${browserHost}:${port}`;
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -170,18 +170,29 @@ try {
   const malformed = await fetch(`${baseUrl}/course/%E0%A4%A`);
   if (malformed.status !== 400) throw new Error(`Malformed route status ${malformed.status}, expected 400`);
 
-  chromium = start('/usr/bin/chromium', [
+  const chromiumPath = process.env.CHROMIUM_PATH ?? (process.platform === 'win32'
+    ? path.join(process.env.ProgramFiles ?? 'C:\\Program Files', 'Google', 'Chrome', 'Application', 'chrome.exe')
+    : '/usr/bin/chromium');
+  chromium = start(chromiumPath, [
     '--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
+    '--disable-extensions', '--no-first-run', '--no-default-browser-check', '--no-proxy-server',
     '--remote-debugging-port=9222', `--user-data-dir=${profile}`, 'about:blank',
   ]);
   await waitFor('http://127.0.0.1:9222/json/version');
   const targets = await (await waitFor('http://127.0.0.1:9222/json/list')).json();
-  const pageTarget = targets.find((target) => target.type === 'page');
+  const pageTarget = targets.find((target) => target.type === 'page' && target.url === 'about:blank')
+    ?? targets.find((target) => target.type === 'page');
   if (!pageTarget?.webSocketDebuggerUrl) throw new Error('Chromium page target tidak ditemukan');
   cdp = new CdpClient(pageTarget.webSocketDebuggerUrl);
   await cdp.open();
   await cdp.send('Page.enable');
   await cdp.send('Runtime.enable');
+  if (process.env.E2E_DIAG === '1') {
+    const probe = await cdp.send('Page.navigate', { url: 'data:text/html,%3Ctitle%3EAKS-probe%3C/title%3E%3Cbody%3EAKS-data-probe%3C/body%3E' });
+    await sleep(700);
+    const state = await readBrowserState(cdp);
+    console.log('Browser data URL preflight:', JSON.stringify({ navigation: probe, state }));
+  }
 
   // EKT109 Bank Soal interaction contract. This scenario runs in environments
   // where Chromium may access the preview URL; React interaction tests cover

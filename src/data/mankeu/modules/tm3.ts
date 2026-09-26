@@ -95,7 +95,20 @@ export const TM3_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 3.1: Garis Waktu Nilai Waktu Uang (Compounding vs Discounting).',
-      svg: SVG_TVM_TIMELINE
+      svg: SVG_TVM_TIMELINE,
+      transcript: [
+        "t=0: PV (Saat Ini)",
+        "t=1: Tahun 1",
+        "t=2: Tahun 2",
+        "t=3: Tahun 3",
+        "t=N: FV (Masa Depan)",
+        "COMPOUNDING: FV = PV × (1 + r)ⁿ",
+        "DISCOUNTING: PV = FV ÷ (1 + r)ⁿ",
+        "BUNGA MAJEMUK (COMPOUND INTEREST)",
+        "Bunga menghasilkan bunga kembali seiring waktu (Eksponensial). Semakin tinggi suku bunga dan periode (n), akumulasi nilai akhir kas melonjak berlipat ganda.",
+        "NILAI SEKARANG (PRESENT VALUE & INFLASI)",
+        "Rp 1 juta hari ini lebih berharga daripada Rp 1 juta 5 tahun lagi karena adanya peluang investasi (Opportunity Cost of Capital) serta erosi daya beli akibat inflasi."
+      ]
     },
     {
       kind: 'h2',

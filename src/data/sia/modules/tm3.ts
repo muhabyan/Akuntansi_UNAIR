@@ -1,5 +1,43 @@
 import type { Reading } from '../../../types';
 
+// Skema belajar dari Problem 1, Richardson 4e halaman buku 207; bukan gambar terbitan.
+const STARBUCKS_FLOW = `<svg class="course-diagram-svg course-diagram-bpmn" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
+  <rect x="2" y="2" width="1196" height="356" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="22" y="30" font-size="18" font-weight="700" fill="#0f172a">Starbucks Drive-Through — alur dasar pada soal buku</text>
+  <line x1="790" y1="25" x2="824" y2="25" stroke="#0369a1" stroke-width="3"/><polygon points="830,25 822,20 822,30" fill="#0369a1"/><text x="840" y="30" font-size="13" fill="#334155">sequence flow</text>
+  <path d="M970 25 h8 m5 0 h8 m5 0 h8" fill="none" stroke="#b45309" stroke-width="3"/><polygon points="1010,25 1002,20 1002,30" fill="#b45309"/><text x="1020" y="30" font-size="13" fill="#334155">message flow</text>
+  <rect x="18" y="50" width="1164" height="118" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="32" y="72" font-size="15" font-weight="700" fill="#9a3412">Pool Customer</text>
+  <rect x="18" y="182" width="1164" height="158" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="32" y="204" font-size="15" font-weight="700" fill="#1e3a8a">Pool Starbucks · lane Barista</text>
+  <g fill="#fff" stroke="#cbd5e1" stroke-width="1.5">
+    <rect x="48" y="100" width="145" height="47" rx="8"/><rect x="236" y="100" width="145" height="47" rx="8"/><rect x="424" y="100" width="145" height="47" rx="8"/><rect x="612" y="100" width="145" height="47" rx="8"/><rect x="800" y="100" width="145" height="47" rx="8"/><rect x="988" y="100" width="145" height="47" rx="8"/>
+    <rect x="236" y="245" width="145" height="49" rx="8"/><rect x="424" y="245" width="145" height="49" rx="8"/><rect x="612" y="245" width="145" height="49" rx="8"/><rect x="800" y="245" width="145" height="49" rx="8"/><rect x="988" y="245" width="145" height="49" rx="8"/>
+  </g>
+  <g fill="#0f172a" font-size="13" font-weight="600" text-anchor="middle">
+    <text x="120" y="119"><tspan x="120">Tiba, lihat</tspan><tspan x="120" dy="17">menu</tspan></text>
+    <text x="308" y="119"><tspan x="308">Pesan kopi</tspan><tspan x="308" dy="17">dan muffin</tspan></text>
+    <text x="496" y="128">Ke jendela</text><text x="684" y="119"><tspan x="684">Terima kopi</tspan><tspan x="684" dy="17">dan muffin</tspan></text><text x="872" y="119"><tspan x="872">Bayar dengan</tspan><tspan x="872" dy="17">gift card</tspan></text><text x="1060" y="119"><tspan x="1060">Terima kartu</tspan><tspan x="1060" dy="17">dan struk</tspan></text>
+    <text x="308" y="264"><tspan x="308">Catat pesanan</tspan><tspan x="308" dy="17">di kasir</tspan></text><text x="496" y="264"><tspan x="496">Siapkan kopi</tspan><tspan x="496" dy="17">dan muffin</tspan></text><text x="684" y="264"><tspan x="684">Serahkan</tspan><tspan x="684" dy="17">pesanan</tspan></text><text x="872" y="264"><tspan x="872">Catat</tspan><tspan x="872" dy="17">pembayaran</tspan></text><text x="1060" y="264"><tspan x="1060">Kembalikan</tspan><tspan x="1060" dy="17">kartu, struk</tspan></text>
+  </g>
+  <g fill="none" stroke="#0369a1" stroke-width="2.5">
+    <path d="M193 123 H225 M381 123 H413 M569 123 H601 M757 123 H789 M945 123 H977"/>
+    <path d="M381 269 H413 M569 269 H601 M757 269 H789 M945 269 H977"/>
+  </g>
+  <g fill="#0369a1">
+    <polygon points="231,123 223,118 223,128"/><polygon points="419,123 411,118 411,128"/><polygon points="607,123 599,118 599,128"/><polygon points="795,123 787,118 787,128"/><polygon points="983,123 975,118 975,128"/>
+    <polygon points="419,269 411,264 411,274"/><polygon points="607,269 599,264 599,274"/><polygon points="795,269 787,264 787,274"/><polygon points="983,269 975,264 975,274"/>
+  </g>
+  <g fill="none" stroke="#b45309" stroke-width="2.5">
+    <path d="M308 150 v8 M308 164 v8 M308 178 v8 M308 192 v8 M308 206 v8 M308 220 v8 M308 234 v5"/>
+    <path d="M684 237 v-8 M684 223 v-8 M684 209 v-8 M684 195 v-8 M684 181 v-8 M684 167 v-8 M684 153 v-5"/>
+    <path d="M872 150 v8 M872 164 v8 M872 178 v8 M872 192 v8 M872 206 v8 M872 220 v8 M872 234 v5"/>
+    <path d="M1060 237 v-8 M1060 223 v-8 M1060 209 v-8 M1060 195 v-8 M1060 181 v-8 M1060 167 v-8 M1060 153 v-5"/>
+  </g>
+  <g fill="#b45309"><polygon points="308,244 303,236 313,236"/><polygon points="684,148 679,156 689,156"/><polygon points="872,244 867,236 877,236"/><polygon points="1060,148 1055,156 1065,156"/></g>
+  <text x="600" y="324" font-size="12" text-anchor="middle" fill="#475569">Panah utuh berada dalam pool; panah putus-putus melintasi batas Customer–Starbucks.</text>
+</svg>`;
+
 export const SIA_TM3: Reading = {
   tm: 3,
   title: 'Accountants as Business Analysts',
@@ -114,20 +152,28 @@ export const SIA_TM3: Reading = {
       ['Accurate', 'Mencerminkan alur kerja, kebijakan, dan struktur kontrol yang sebenarnya tanpa penghilangan atau rekaan.'],
     ], caption: 'Richardson 4e, pp. 187–188. Model yang memenuhi 4V dapat menjadi dokumentasi audit dan cetak biru desain teknis.' },
     { kind: 'example', title: 'Starbucks Drive-Through: model proses', blocks: [
-      { kind: 'p', text: '**Pool Customer:** partisipan eksternal yang memesan, membayar, dan menerima minuman. **Pool Starbucks Corporation:** dua lane — Drive-Through Cashier/Order Taker dan Barista. Richardson 4e, pp. 207–208; Exhibit 4.10.' },
+      { kind: 'p', text: '**Pool Customer:** partisipan eksternal yang datang, memesan, menerima pesanan, membayar, dan menerima kartu serta struk. **Pool Starbucks:** lane Barista yang mencatat pesanan di kasir, menyiapkan kopi dan muffin, menyerahkan pesanan, lalu mencatat pembayaran. Dasarnya adalah **Problem 1, Richardson 4e, hlm. buku 207**. Exhibit 4.10 pada hlm. 186 membahas jenis gateway, bukan diagram Starbucks.' },
+      { kind: 'figure', svg: STARBUCKS_FLOW, altText: 'Skema soal Starbucks drive-through: pool Customer dan pool Starbucks dengan lane Barista. Panah utuh mengurutkan tugas dalam pool; panah putus-putus menunjukkan pertukaran pesanan, barang, pembayaran, serta kartu dan struk antar-pool.', mobileFlow: {
+        title: 'Alur Starbucks di layar sempit',
+        stages: [
+          { actor: 'Customer', actions: ['Tiba dan melihat menu', 'Memesan kopi dan muffin'] },
+          { actor: 'Starbucks · Barista', actions: ['Mencatat pesanan di kasir', 'Menyiapkan kopi dan muffin', 'Menyerahkan pesanan'], note: 'Pada waktu yang sama, Customer bergerak ke jendela.' },
+          { actor: 'Customer', actions: ['Menerima kopi dan muffin', 'Membayar dengan gift card'] },
+          { actor: 'Starbucks · Barista', actions: ['Mencatat pembayaran', 'Mengembalikan gift card dan struk'] },
+          { actor: 'Customer', actions: ['Menerima kartu dan struk'] },
+        ],
+        messages: ['Pesanan dikirim ke barista', 'Kopi dan muffin diserahkan ke customer', 'Pembayaran gift card disampaikan ke barista', 'Kartu dan struk dikembalikan ke customer'],
+      }, caption: 'Rekonstruksi alur dasar Problem 1 Richardson 4e hlm. 207; bukan gambar buku. Penyempurnaan loop persiapan tiap item dan cabang menunggu kopi pada bagian (d) soal tidak digambar di skema dasar ini.' },
       { kind: 'ol', items: [
-        'Customer tiba di speaker box (**Start Event**).',
-        'Customer menyebutkan pesanan melalui intercom (**Message Flow** antar-pool ke Cashier).',
-        'Cashier mencatat pesanan di sistem POS (**Data Store: Orders Database**).',
-        'Cashier menghitung total harga dan menyampaikannya ke Customer (**Message Flow**).',
-        'Lane Barista menerima tiket pesanan secara bersamaan (**eksekusi paralel**): menggiling biji kopi, mengukus susu, dan menyeduh minuman.',
-        'Customer bergerak ke pickup window.',
-        'Customer menyerahkan prepaid Starbucks card atau kartu kredit (**Message Flow**).',
-        'Cashier memproses penyelesaian pembayaran elektronik melalui terminal POS.',
-        'Cashier menyerahkan minuman dan struk rinci kepada Customer (**Message Flow**).',
-        'Proses selesai (**End Event**).',
+        'Customer masuk drive-through dan melihat menu, lalu memesan Venti coffee of the day dan blueberry muffin kepada barista (**message flow** antar-pool).',
+        'Barista mencatat pesanan di cash register (**sequence flow** di pool Starbucks).',
+        'Saat customer bergerak ke jendela, barista mengisi cangkir kopi, menutupnya, dan mengambil serta membungkus muffin.',
+        'Barista menyerahkan kopi dan muffin kepada customer (**message flow**).',
+        'Customer memilih cara bayar; pada narasi buku ia membayar dengan gift card (**message flow**).',
+        'Barista mencatat pembayaran dan mengembalikan kartu bersama struk kepada customer (**message flow**).',
+        'Proses dasar selesai. Bagian (d) soal meminta pengembangan terpisah untuk loop setiap item serta kondisi kopi belum siap dan timer lima menit.',
       ] },
-      { kind: 'p', text: 'Perhatikan: aliran Cashier → Barista berada dalam pool Starbucks sehingga menggunakan sequence flow; setiap interaksi dengan Customer melintasi pool sehingga menggunakan message flow.' },
+      { kind: 'p', text: 'Perhatikan: panah utuh di lane Barista menunjukkan sequence flow di dalam pool Starbucks. Pertukaran dengan Customer melintasi batas pool, sehingga memakai message flow. Buku menyebut satu barista pada kasus dasar ini; pemisahan cashier dan barista atau eksekusi paralel bukan fakta dari narasi Problem 1.' },
     ] },
 
     { kind: 'h2', text: '4. Alternative Process Documentation Techniques' },
@@ -207,17 +253,16 @@ export const SIA_TM3: Reading = {
       { kind: 'formula', text: 'T_{\\text{VA}} = 15 + 25 = 40\nT_{\\text{CA}} = 50 + 30 = 80\nT_{\\text{Total}} = 40 + 80 = 120\n\\text{PCE} = \\frac{40}{120} \\times 100\\% = 33.33\\%', note: 'Satuan menit.' },
       { kind: 'p', text: 'Hanya 33.33% waktu proses menciptakan nilai; 66.67% adalah penundaan administratif. Terapkan credit scoring otomatis untuk menghilangkan bottleneck persetujuan kredit 50 menit.' },
     ] },
-    { kind: 'solution-reveal', title: '2. Starbucks Drive-Through — trace BPMN dan jurnal', prompt: 'Pelanggan memesan Venti latte dan muffin seharga \\$8.50 di drive-through dan membayar dengan Starbucks Gift Card terdaftar. Standard cost barang (biji kopi, susu, cup, roti) adalah \\$2.75. Telusuri interaksi BPMN dan susun jurnalnya.', blocks: [
+    { kind: 'solution-reveal', title: '2. Starbucks Drive-Through — trace BPMN dan jurnal', prompt: 'Latihan turunan dengan angka asumsi, bukan angka Problem 1 buku: pelanggan memesan kopi dan muffin seharga \\$8.50 di drive-through dan membayar dengan Starbucks Gift Card. Asumsikan biaya persediaan \\$2.75. Telusuri interaksi BPMN dan susun jurnalnya.', blocks: [
       { kind: 'ol', items: [
-        'Pool Customer mengirim pesanan melalui message flow ke lane Cashier di pool Starbucks.',
-        'Cashier memasukkan pesanan ke POS (Data Store: Orders Database).',
-        'Cashier menyampaikan total harga melalui message flow; bersamaan, lane Barista menyiapkan minuman (eksekusi paralel).',
-        'Customer menyerahkan gift card (message flow antar-pool).',
-        'Cashier memproses kartu, mengurangi saldo prepaid di database POS, lalu menyerahkan struk dan minuman.',
+        'Pool Customer mengirim pesanan melalui message flow ke lane Barista di pool Starbucks.',
+        'Barista mencatat pesanan di cash register, kemudian menyiapkan kopi dan muffin (sequence flow dalam pool).',
+        'Barista menyerahkan pesanan; setelah itu customer menyerahkan gift card (dua message flow antar-pool).',
+        'Barista mencatat pembayaran, lalu mengembalikan kartu dan struk melalui message flow.',
       ] },
       { kind: 'journal', caption: 'Pengakuan pendapatan atas redemption gift card (USD)', lines: [{ account: 'Unearned Gift Card Revenue (Pendapatan Diterima di Muka - Kartu Hadiah)', debit: '$8.50' }, { account: 'Sales Revenue (Pendapatan Penjualan)', credit: '$8.50', isCredit: true }] },
       { kind: 'journal', caption: 'Beban pokok penjualan dan pengurangan persediaan (USD)', lines: [{ account: 'Cost of Goods Sold (Beban Pokok Penjualan)', debit: '$2.75' }, { account: 'Merchandise Inventory (Persediaan Barang Dagang)', credit: '$2.75', isCredit: true }] },
-      { kind: 'p', text: 'Kas sudah diterima saat kartu diisi sehingga redemption mengurangi liabilitas Unearned Revenue, bukan mendebit Cash. Richardson 4e, pp. 207–208.' },
+      { kind: 'p', text: 'Dengan asumsi gift card telah dibayar sebelumnya, penukaran kartu mengurangi liabilitas pendapatan diterima di muka, bukan mendebit kas lagi. Nominal, biaya persediaan, dan jurnal di atas adalah asumsi latihan; Problem 1 Richardson 4e hlm. 207 hanya memberikan narasi proses.' },
     ] },
     { kind: 'solution-reveal', title: '3. Identifikasi jebakan DFD', prompt: 'Auditor memeriksa tiga proses DFD: (2.1) menerima Employee Timecard dan memperbarui Employee Master File, tetapi tidak memiliki data flow keluar ke payroll atau laporan; (2.2) menghasilkan Vendor Disbursement Check dan Remittance Advice tanpa data flow masuk dari invoice, purchase order, atau catatan bank; (2.3) menerima Customer Zip Code dan menghasilkan Full Customer Credit History & FICO Score.', blocks: [
       { kind: 'table', headers: ['Proses', 'Jebakan', 'Alasan'], rows: [

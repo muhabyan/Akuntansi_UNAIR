@@ -1,82 +1,51 @@
 import type { Reading } from '../../../types';
 
-const SVG_PPH24_25_31E = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="gBlue" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="gGreen" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk7)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARSITEKTUR KREDIT PAJAK LUAR NEGERI, ANGSURAN PPH 25, &amp; INSENTIF PPH BADAN</text>
-  <rect class="svg-badge-blue" x="725" y="21" width="150" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="800" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TM07 PRA-UTS</text>
-
-  <!-- Card 1: PPh Pasal 24 Kredit Luar Negeri -->
-  <g transform="translate(30, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gBlue)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. PPH PASAL 24 (KREDIT LN)</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="53" fill="#38bdf8" font-size="7.5" font-weight="800" text-anchor="middle">Asas Worldwide Income &amp; Ordinary Credit</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Per-Country Limitation (dihitung per negara)</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• BKMKPLN = (Penghasilan LN ÷ PKP) × PPh Terutang</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Kredit Diakui = min(Pajak LN, BKMKPLN)</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Rugi LN dilarang digabung / diisolasi</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Kelebihan pajak LN hangus (tidak restitusi/biaya)</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Rujukan: UU PPh Pasal 24 jo. PMK 192/2018</text>
-
-    <rect class="svg-badge-blue" x="12" y="185" width="241" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Metode Batas Maksimum Terbatas</text>
-  </g>
-
-  <!-- Card 2: PPh Pasal 25 & WP OPPT -->
-  <g transform="translate(315, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gGreen)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. PPH 25 &amp; WP OPPT</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="53" fill="#34d399" font-size="7.5" font-weight="800" text-anchor="middle">PMK 81/2024 Pasal 226 s.d. 237</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Dasar Angsuran = PPh SPT Lalu - Kredit (21-24)</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Angsuran Normal = Dasar Angsuran ÷ 12 bulan</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Sebelum SPT dalam batas normal = Angsuran Des lalu</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• WP OPPT = 0,75% × Omzet per Outlet bulanan</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Sifat OPPT: TIDAK FINAL (Kredit PPh 1770)</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Setor tgl 15 bulan berikut, lapor validasi SSP</text>
-
-    <rect class="svg-badge-green" x="12" y="185" width="241" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Pelunasan Pajak Berjalan Sendiri</text>
-  </g>
-
-  <!-- Card 3: Insentif Pasal 31A & 31E -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gAmber)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. INSENTIF PASAL 31A &amp; 31E</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="53" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">Fasilitas Investasi &amp; Pengurangan Tarif</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• 31A: Tax Allowance (PP 78/2019 jo. PMK 81)</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">  - Pengurang neto 30% (5%/th selama 6 th)</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• 31E: Diskon 50% Tarif PPh Badan (Omzet &le; 50 M)</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">  - Omzet &le; 4,8 Miliar: Fasilitas penuh (11%)</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">  - Omzet 4,8 M s.d. 50 M: Proporsional</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">  - Omzet &gt; 50 Miliar: Tarif normal 22%</text>
-
-    <rect class="svg-badge-amber" x="12" y="185" width="241" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Pengurangan Beban Pajak Badan</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Penerapan Fasilitas Pasal 31E menentukan PPh Terutang, sedangkan PPh 24 dan PPh 25 menjadi pengurang sebelum pelunasan PPh Pasal 29 akhir tahun.</text>
-</svg>`;
+const OVERVIEW_PPH24_25_31E = {
+  "heading": "ARSITEKTUR KREDIT PAJAK LUAR NEGERI, ANGSURAN PPH 25, & INSENTIF PPH BADAN",
+  "badge": "TM07 PRA-UTS",
+  "cards": [
+    {
+      "title": "1. PPH PASAL 24 (KREDIT LN)",
+      "subtitle": "Asas Worldwide Income & Ordinary Credit",
+      "items": [
+        "Per-Country Limitation (dihitung per negara)",
+        "BKMKPLN = (Penghasilan LN ÷ PKP) × PPh Terutang",
+        "Kredit Diakui = min(Pajak LN, BKMKPLN)",
+        "Rugi LN dilarang digabung / diisolasi",
+        "Kelebihan pajak LN hangus (tidak restitusi/biaya)",
+        "Rujukan utama: UU PPh Pasal 24"
+      ],
+      "takeaway": "Metode Batas Maksimum Terbatas"
+    },
+    {
+      "title": "2. PPH 25 & WP OPPT",
+      "subtitle": "PMK 81/2024 Pasal 226 s.d. 237",
+      "items": [
+        "Dasar Angsuran = PPh SPT Lalu - Kredit (21-24)",
+        "Angsuran Normal = Dasar Angsuran ÷ 12 bulan",
+        "Sebelum SPT dalam batas normal = Angsuran Des lalu",
+        "WP OPPT = 0,75% × Omzet per Outlet bulanan",
+        "Sifat OPPT: TIDAK FINAL (Kredit PPh 1770)",
+        "Setor tgl 15 bulan berikut, lapor validasi SSP"
+      ],
+      "takeaway": "Pelunasan Pajak Berjalan Sendiri"
+    },
+    {
+      "title": "3. INSENTIF PASAL 31A & 31E",
+      "subtitle": "Fasilitas Investasi & Pengurangan Tarif",
+      "items": [
+        "31A: Tax Allowance (PP 78/2019 jo. PMK 81)",
+        "- Pengurang neto 30% (5%/th selama 6 th)",
+        "31E: Diskon 50% Tarif PPh Badan (Omzet ≤ 50 M)",
+        "- Omzet ≤ 4,8 Miliar: Fasilitas penuh (11%)",
+        "- Omzet 4,8 M s.d. 50 M: Proporsional",
+        "- Omzet > 50 Miliar: Tarif normal 22%"
+      ],
+      "takeaway": "Pengurangan Beban Pajak Badan"
+    }
+  ],
+  "footer": "Penerapan Fasilitas Pasal 31E menentukan PPh Terutang, sedangkan PPh 24 dan PPh 25 menjadi pengurang sebelum pelunasan PPh Pasal 29 akhir tahun."
+};
 
 export const TM7_READING: Reading = {
   tm: 7,
@@ -95,13 +64,13 @@ export const TM7_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 7.1: Taksonomi Terpadu Kredit Pajak Luar Negeri, Angsuran PPh 25 / OPPT, dan Insentif Perpajakan Badan.',
-      svg: SVG_PPH24_25_31E
+      overview: OVERVIEW_PPH24_25_31E
     },
     {
       kind: 'callout',
       variant: 'key',
       title: 'Transparansi Asal Rujukan (Provenance Notice)',
-      text: 'Karena silabus TM07 tidak memiliki materi tayang slide resmi dosen di repositori, materi komprehensif ini dikonstruksi secara otoritatif dan terstruktur dari kombinasi Subbahasan RPS Pertemuan 7 Perpajakan II serta teks perundang-undangan primer yang berlaku positif: UU PPh jo. UU HPP No. 7 Tahun 2021, PP No. 78 Tahun 2019, dan PMK No. 81 Tahun 2024 (Coretax).'
+      text: 'Slide dosen TM07 Pasal 24 dan 25 (22 September 2026, 33 halaman) tersedia bersama RPS Pertemuan 7. Contoh kredit pajak luar negeri di bawah dicocokkan dengan slide 17-18. Dasar hukum utama adalah Pasal 24 dan 25 UU PPh jo. UU HPP, PP 78/2019, serta PMK 81/2024 sebagaimana diubah. Teks PMK 192/2018 belum tersedia dalam himpunan peraturan yang diperiksa; rincian yang hanya bertumpu pada slide tidak dinyatakan sebagai verifikasi peraturan tersebut.'
     },
     {
       kind: 'callout',
@@ -127,9 +96,9 @@ export const TM7_READING: Reading = {
     },
     {
       kind: 'table',
-      headers: ['Instrumen Perpajakan', 'Dasar Regulasi Primer', 'Objek / Target Subjek', 'Formula / Tarif Pokok', 'Sifat Pembayaran'],
+      headers: ['Instrumen Perpajakan', 'Dasar hukum / sumber', 'Objek / Target Subjek', 'Formula / Tarif Pokok', 'Sifat Pembayaran'],
       rows: [
-        ['PPh Pasal 24 (Kredit Pajak LN)', 'Pasal 24 UU PPh jo. PMK 192/2018', 'Penghasilan neto dari luar negeri (worldwide income)', 'Kredit = min(Pajak LN, BKMKPLN). BKMKPLN = (Penghasilan LN / PKP) × PPh Terutang', 'Kredit Pajak Luar Negeri'],
+        ['PPh Pasal 24 (Kredit Pajak LN)', 'Pasal 24 UU PPh; contoh slide dosen hlm. 17-18', 'Penghasilan neto dari luar negeri (worldwide income)', 'Kredit = min(Pajak LN, BKMKPLN). BKMKPLN = (Penghasilan LN / PKP) × PPh Terutang', 'Kredit Pajak Luar Negeri'],
         ['PPh Pasal 25 Badan Normal', 'Pasal 25 UU PPh jo. PMK 81/2024 Ps 226', 'Wajib Pajak Badan yang telah memiliki SPT Tahunan', 'Angsuran = [PPh Terutang Lalu - Kredit (21+22+23+24)] ÷ 12', 'Penyetoran Sendiri (Kredit PPh 28)'],
         ['PPh Pasal 25 Masa Transisi', 'Pasal 25 ayat (2) UU PPh', 'WP sebelum SPT Tahunan disampaikan dalam batas waktu normal', 'Besaran angsuran = Angsuran PPh 25 bulan terakhir tahun lalu', 'Penyetoran Sendiri (Kredit PPh 28)'],
         ['PPh 25 WP OPPT', 'PMK 81/2024 Pasal 235 & 236', 'Pedagang eceran / jasa dengan gerai/outlet terpisah', '0,75% × Peredaran bruto bulanan per masing-masing tempat usaha', 'TIDAK FINAL (Kredit SPT OP 1770)'],
@@ -138,6 +107,15 @@ export const TM7_READING: Reading = {
         ['Pasal 31E (Omzet 4,8 M - 50 M)', 'Pasal 31E UU PPh jo. SE-02/PJ/2015', 'WP Badan omzet > Rp4,8 Miliar s.d. Rp50 Miliar', 'PKP Fasilitas (tarif 11%) + PKP Non-Fasilitas (tarif 22%)', 'Penetapan Beban Pajak Terutang']
       ],
       caption: 'Tabel 7.1: Matriks perbandingan instrumen kredit pajak, angsuran tahun berjalan, dan fasilitas insentif PPh Badan.'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Contoh slide dosen hlm. 17-18: batas kredit PPh 24 Italia',
+      prompt: 'PT Alawafood memiliki penghasilan neto dalam negeri Rp2.000.000.000, Italia Rp1.800.000.000 (pajak Italia Rp540.000.000), dan bunga Swiss Rp100.000.000 (tanpa pajak Swiss). Omzet Rp48.000.000.000. Hitung batas kredit Italia menurut contoh dosen dengan tarif badan 22% dan fasilitas Pasal 31E.',
+      blocks: [
+        { kind: 'p', text: 'Penghasilan neto total = Rp3.900.000.000. Bagian PKP fasilitas = Rp4.800.000.000 / Rp48.000.000.000 x Rp3.900.000.000 = Rp390.000.000. PPh terutang = 11% x Rp390.000.000 + 22% x Rp3.510.000.000 = Rp42.900.000 + Rp772.200.000 = **Rp815.100.000**.' },
+        { kind: 'p', text: 'Batas kredit Italia = Rp1.800.000.000 / Rp3.900.000.000 x Rp815.100.000 = **Rp376.200.000**. Pajak yang dibayar di Italia Rp540.000.000, sehingga kredit PPh 24 yang boleh diambil adalah nilai lebih rendah, **Rp376.200.000**. Bunga Swiss tetap masuk penghasilan neto, tetapi tidak ada pajak Swiss untuk dikreditkan. Contoh ini mengikuti data dan asumsi slide dosen 22 September 2026, bukan verifikasi PMK 192/2018.' }
+      ]
     },
     {
       kind: 'h2',

@@ -10,7 +10,7 @@ export const CASE_UTS_PJK2_INTEGRATED: ContentBlock = {
   blocks: [
     {
       kind: 'p',
-      text: '**Skenario Kasus**: Dalam soal ujian UTS, disajikan data laba komersial PT Makmur Abadi sebesar Rp 2 Miliar. Akuntan menemukan koreksi: Beban natura paket sembako karyawan yang bukan di daerah tertentu Rp 80 Jt (Deductible PMK 66/2023 jika memenuhi kriteria), rugi cabang usaha luar negeri Rp 100 Jt, dan penghasilan dividen dari PT Anak (kepemilikan 30%) sebesar Rp 250 Jt yang belum dieliminasi.'
+      text: '**Skenario Kasus**: Dalam soal ujian UTS, disajikan data laba komersial sebelum pajak PT Makmur Abadi sebesar Rp 2 Miliar. Akuntan menemukan: biaya paket sembako karyawan Rp 80 Jt sebagai imbalan kerja yang terkait kegiatan usaha (3M) dan sudah dibebankan secara komersial; rugi cabang usaha luar negeri Rp 100 Jt yang sudah menurunkan laba komersial; serta penghasilan dividen dari PT Anak dalam negeri (kepemilikan 30%) Rp 250 Jt yang sudah menaikkan laba komersial. Ketiga pos belum disesuaikan secara fiskal.'
     },
     {
       kind: 'solution-reveal',
@@ -22,7 +22,8 @@ export const CASE_UTS_PJK2_INTEGRATED: ContentBlock = {
           items: [
             '**1. Dividen Antar-Badan Usaha (Pasal 4 ayat (3) huruf f UU PPh)**: Dividen yang diterima oleh Wajib Pajak Badan dalam negeri dari perseroan terbatas lain di Indonesia berstatus **BUKAN OBJEK PAJAK (Non-Taxable Income)** tanpa syarat persentase kepemilikan saham minimum. Dilakukan **Koreksi Fiskal Negatif sebesar Rp 250.000.000**.',
             '**2. Kerugian Usaha Cabang Luar Negeri**: Berdasarkan Pasal 24 UU PPh, kerugian yang diderita di luar negeri **TIDAK BOLEH DIGABUNGKAN** untuk mengurangi penghasilan dalam negeri (Koreksi Fiskal Positif Rp 100.000.000).',
-            '**3. Evaluasi Natura PMK 66/2023**: Makanan dan minuman bagi seluruh pegawai di tempat kerja adalah deductible (beban boleh dikurangkan), sehingga tidak perlu dikoreksi positif.'
+            '**3. Evaluasi Natura PMK 66/2023 Pasal 2**: Paket sembako adalah imbalan kerja berupa natura, bukan otomatis sama dengan makanan/minuman yang disediakan di tempat kerja. Bagi pemberi kerja, biaya Rp 80.000.000 boleh dikurangkan karena dalam skenario ini terkait pekerjaan dan kegiatan 3M; tidak ada koreksi fiskal atas biaya tersebut. Status sebagai objek atau pengecualian PPh bagi pegawai perlu diuji terpisah menurut jenis, nilai, dan syarat PMK 66/2023.',
+            '**4. Penghasilan Kena Pajak (dengan asumsi tidak ada koreksi lain)**: Rp 2.000.000.000 + Rp 100.000.000 - Rp 250.000.000 = **Rp 1.850.000.000**. Biaya natura tetap masuk dalam laba komersial dan fiskal.'
           ]
         }
       ]

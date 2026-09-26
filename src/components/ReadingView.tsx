@@ -81,14 +81,14 @@ function renderCalloutText(text: string) {
 
   return rawParagraphs.map((para, pIdx) => {
     const lines = para.split(/\n/).map((l) => l.trim()).filter(Boolean);
-    const isNumbered = lines.length > 1 && lines.every((l) => /^\d+[\.\)]\s+/.test(l));
+    const isNumbered = lines.length > 1 && lines.every((l) => /^\d+[.)]\s+/.test(l));
     const isBulleted = lines.length > 1 && lines.every((l) => /^[-•*]\s+/.test(l));
 
     if (isNumbered) {
       return (
         <ol key={pIdx} className="my-2 space-y-2 pl-0.5">
           {lines.map((line, lIdx) => {
-            const match = line.match(/^(\d+)[\.\)]\s+(.*)$/);
+            const match = line.match(/^(\d+)[.)]\s+(.*)$/);
             const num = match ? match[1] : String(lIdx + 1);
             const content = match ? match[2] : line;
             return (
@@ -390,13 +390,6 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
       if (['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName) || target.isContentEditable) {
-        return;
-      }
-      
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        e.stopPropagation();
-        onBack();
         return;
       }
       

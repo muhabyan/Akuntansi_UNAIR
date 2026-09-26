@@ -26,11 +26,21 @@ export default function AITutorFloating() {
   }, []);
 
   useEffect(() => {
+    window.addEventListener('open-ai-tutor', openPanel);
+    return () => window.removeEventListener('open-ai-tutor', openPanel);
+  }, [openPanel]);
+
+  useEffect(() => {
     const closeWhenAnotherUtilityOpens = (event: Event) => {
       if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'ai-tutor') setIsOpen(false);
     };
+    const closeUtility = () => setIsOpen(false);
     window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
-    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    window.addEventListener('akuntansihub:close-utility', closeUtility);
+    return () => {
+      window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+      window.removeEventListener('akuntansihub:close-utility', closeUtility);
+    };
   }, []);
   
   const [messages, setMessages] = useState<AIMessage[]>(() => {
@@ -228,6 +238,7 @@ ${pageText}
         id="ai-tutor-panel"
         data-utility-panel="ai-tutor"
         aria-hidden={!isOpen}
+        ref={(panel) => { panel?.toggleAttribute('inert', !isOpen); }}
         className={`mobile-utility-panel zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
@@ -475,7 +486,7 @@ ${pageText}
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 99
         } : undefined}
-        className={`zen-hideable group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--ai' : ''} ${
+        className={`zen-hideable utility-launcher-quiet group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--ai' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-blue-400/50' : 'cursor-pointer active:scale-95'

@@ -287,12 +287,6 @@ function ReadingPanel({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        e.stopPropagation();
-        onBack();
-        return;
-      }
       if (e.key === 'ArrowLeft' && !isFirst) {
         onPrev();
       } else if (e.key === 'ArrowRight' && !isLast) {
@@ -801,7 +795,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSelectedMeetingTm(tm);
     setSelectedReviewKey(null);
     try {
-      window.history.pushState({ akuntansihub_tm: tm, courseCode: course.code }, '', window.location.pathname);
+      window.history.pushState({ akuntansihub_tm: tm, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
     } catch {
       // ignore
     }
@@ -812,7 +806,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSelectedMeetingTm(null);
     setSelectedReviewKey(key);
     try {
-      window.history.pushState({ akuntansihub_review: key, courseCode: course.code }, '', window.location.pathname);
+      window.history.pushState({ akuntansihub_review: key, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
     } catch {
       // ignore
     }
@@ -844,24 +838,6 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
-
-  useEffect(() => {
-    const handleCourseKeyDown = (e: KeyboardEvent) => {
-      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
-      if (e.key === 'Escape') {
-        if (selectedMeetingTm !== null || selectedReviewKey !== null) {
-          e.preventDefault();
-          e.stopPropagation();
-          handleBackFromReading();
-          return;
-        }
-        e.preventDefault();
-        onBack();
-      }
-    };
-    window.addEventListener('keydown', handleCourseKeyDown);
-    return () => window.removeEventListener('keydown', handleCourseKeyDown);
-  }, [selectedMeetingTm, selectedReviewKey, onBack]);
 
   const switchTab = (id: TabType) => {
     setActiveTab(id);

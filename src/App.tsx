@@ -16,6 +16,8 @@ import OnboardingTour from './components/OnboardingTour';
 import AITutorFloating from './components/AITutorFloating';
 import LiveChatFloating from './components/LiveChatFloating';
 import FeedbackFloating from './components/FeedbackFloating';
+import StudyUtilityDock from './components/StudyUtilityDock';
+import UtilityEscapeHandler from './components/UtilityEscapeHandler';
 import AICommandHandler from './components/AICommandHandler';
 import PWAPrompt from './components/PWAPrompt';
 import { NotificationProvider } from './contexts/NotificationContext';
@@ -77,9 +79,9 @@ function getRouteState(pathname: string): { course: Course | null; notFound: boo
   };
 }
 
-function pushUrl(path: string) {
+function pushUrl(path: string, state: Record<string, unknown> | null = null) {
   if (window.location.pathname !== path) {
-    window.history.pushState(null, '', path);
+    window.history.pushState(state, '', path);
   }
 }
 
@@ -127,7 +129,7 @@ function NotFoundView({ onHome }: { onHome: () => void }) {
 
 export default function App() {
   const [initialRoute] = useState(() => getRouteState(window.location.pathname));
-  const [activeView, setActiveView] = useState<ViewId>(initialRoute.isGuide ? 'guide' : 'home');
+  const [activeView, setActiveView] = useState<ViewId>(initialRoute.isGuide ? 'guide' : (initialRoute.semesterId ?? window.history.state?.fromSemester ?? 'home') as ViewId);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(initialRoute.course);
   const [routeNotFound, setRouteNotFound] = useState(initialRoute.notFound);
   const [activeTab, setActiveTab] = useState<CourseTabId>('tm1-7');
@@ -415,7 +417,7 @@ export default function App() {
 
   useEffect(() => {
     replaceLegacyCourseUrl(); // the page was opened on a legacy URL
-    const handlePopState = () => {
+    const handlePopState = (event: PopStateEvent) => {
       replaceLegacyCourseUrl(); // Back or Forward reached a legacy URL
       const routeState = getRouteState(window.location.pathname);
       setSelectedCourse(routeState.course);
@@ -425,6 +427,8 @@ export default function App() {
         setActiveView('guide');
       } else if (routeState.semesterId) {
         setActiveView(routeState.semesterId as ViewId);
+      } else if (routeState.course && event.state?.fromSemester) {
+        setActiveView(event.state.fromSemester as ViewId);
       } else {
         setActiveView('home');
       }
@@ -438,24 +442,6 @@ export default function App() {
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
-
-  useEffect(() => {
-    const handleGlobalEsc = (e: KeyboardEvent) => {
-      if (e.key !== 'Escape') return;
-      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
-      if (document.querySelector('[data-utility-panel][aria-hidden="false"]')) return;
-      if (document.body.classList.contains('reading-outline-menu-open')) return;
-
-      if (!selectedCourse) {
-        if (activeView !== 'home' || selectedReportId !== null) {
-          e.preventDefault();
-          goHome();
-        }
-      }
-    };
-    window.addEventListener('keydown', handleGlobalEsc);
-    return () => window.removeEventListener('keydown', handleGlobalEsc);
-  }, [selectedCourse, activeView, selectedReportId]);
 
   const toggleTheme = () => {
     setTheme((prev) => {
@@ -486,7 +472,8 @@ export default function App() {
   };
 
   const openCourse = (course: Course, tab: CourseTabId = 'tm1-7') => {
-    pushUrl(`/course/${course.code}`);
+    const fromSemester = SEMESTERS.some((semester) => semester.id === activeView) ? activeView : null;
+    pushUrl(`/course/${course.code}`, fromSemester ? { fromSemester } : null);
     setSelectedCourse(course);
     setRouteNotFound(false);
     setActiveTab(tab);
@@ -529,7 +516,7 @@ export default function App() {
   };
 
   const openSemester = (semesterId: string) => {
-    pushUrl('/');
+    pushUrl(`/semester/${semesterId}`);
     setActiveView(semesterId);
     setSelectedCourse(null);
     setRouteNotFound(false);
@@ -551,6 +538,10 @@ export default function App() {
   const closeCourse = () => {
     const currentSemester = Object.values(SEMESTERS).find(s => s.id === activeView);
     if (currentSemester) {
+      if (window.history.state?.fromSemester === currentSemester.id) {
+        window.history.back();
+        return;
+      }
       pushUrl(`/semester/${currentSemester.id}`);
     } else {
       pushUrl('/');
@@ -590,6 +581,8 @@ export default function App() {
       <AITutorFloating />
       <LiveChatFloating />
       <FeedbackFloating currentCourse={selectedCourse} currentTm={readingTm} />
+      <StudyUtilityDock />
+      <UtilityEscapeHandler />
       <AICommandHandler />
       <a className="ux-v2-skip-link" href="#main-content">
         Lewati ke konten utama

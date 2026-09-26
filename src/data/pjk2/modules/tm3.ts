@@ -1,84 +1,47 @@
 import type { Reading } from '../../../types';
 
-const SVG_TRANSFER_PRICING_APA = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="gBlue3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="gPurple3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-    <linearGradient id="gAmber3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk3)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">HUBUNGAN ISTIMEWA, TRANSFER PRICING, &amp; ANTI-PENGHINDARAN PAJAK (SAAR/GAAR/APA)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TM03 AFILIASI</text>
-
-  <!-- Card 1: 3 Pilar Hubungan Istimewa -->
-  <g transform="translate(30, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gBlue3)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. TIGA PILAR AFILIASI</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="53" fill="#38bdf8" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 18(4) UU PPh &amp; Pasal 33 PP 55/2022</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Pilar 1 (Modal): Saham &ge; 25% langsung atau</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">  bertingkat, atau dimiliki pihak sama &ge; 25%</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Pilar 2 (Penguasaan): Manajemen, teknologi,</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">  operasional, ketergantungan keputusan bisnis</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Pilar 3 (Keluarga): Sedarah / semenda</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">  1 derajat lurus/ke samping + Suami-Istri PH</text>
-
-    <rect class="svg-badge-blue" x="12" y="185" width="241" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Uji Yuridis Hubungan Istimewa</text>
-  </g>
-
-  <!-- Card 2: ALP & 5 Metode Transfer Pricing -->
-  <g transform="translate(315, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gPurple3)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">2. ARM'S LENGTH &amp; 5 METODE</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-purple" x="132" y="53" fill="#a78bfa" font-size="7.5" font-weight="800" text-anchor="middle">PMK 172/2023 &amp; Secondary Adjustment</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• CUP: Pembanding harga barang sejenis</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• RPM: Distributor murni tanpa nilai tambah</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• CPM: Manufaktur kontrak / jasa rutin</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• TNMM: Uji net margin (Berry/OM/Full Cost)</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• PSM: Pembagian laba aset unik (intangibles)</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Secondary Adj: Selisih = Dividen Terselubung</text>
-
-    <rect class="svg-badge-purple" x="12" y="185" width="241" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="132" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Pencegahan Pergeseran Laba Fiskal</text>
-  </g>
-
-  <!-- Card 3: 8 SAAR, GAAR, & Kesepakatan APA -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gAmber3)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. SAAR, GAAR, &amp; APA</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="53" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">PP 55/2022 &amp; PMK 169/2015</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• CFC: WPDN &ge; 50% &rarr; Deemed Dividend</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Thin Capitalization: Batas DER maks 4:1</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• SPV, Conduit, Deemed Salary, Anti-Hybrid</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• GAAR: Prinsip Substance Over Form</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• APA: Maksimal 5 Tahun Pajak (Unilateral /</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">  Bilateral/Multilateral MAP) + Roll-back</text>
-
-    <rect class="svg-badge-amber" x="12" y="185" width="241" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Instrumen Anti-Penghindaran Komprehensif</text>
-  </g>
-
-  <!-- Footer Banner -->
-  <rect class="svg-footer" x="30" y="320" width="835" height="22" rx="6" fill="#1e293b" fill-opacity="0.8"/>
-  <text class="svg-muted" x="447" y="335" fill="#94a3b8" font-size="8" text-anchor="middle">Pasal 18 &amp; 32A UU PPh | Bab VI PP 55/2022 | PMK 172/2023 | PMK 169/PMK.010/2015 | Pedoman OECD Transfer Pricing</text>
-</svg>`;
+const OVERVIEW_TRANSFER_PRICING_APA = {
+  "heading": "HUBUNGAN ISTIMEWA, TRANSFER PRICING, & ANTI-PENGHINDARAN PAJAK (SAAR/GAAR/APA)",
+  "badge": "TM03 AFILIASI",
+  "cards": [
+    {
+      "title": "1. TIGA PILAR AFILIASI",
+      "subtitle": "Pasal 18(4) UU PPh & Pasal 33 PP 55/2022",
+      "items": [
+        "Pilar 1 (Modal): Saham ≥ 25% langsung atau bertingkat, atau dimiliki pihak sama ≥ 25%",
+        "Pilar 2 (Penguasaan): Manajemen, teknologi, operasional, ketergantungan keputusan bisnis",
+        "Pilar 3 (Keluarga): Sedarah / semenda 1 derajat lurus/ke samping + Suami-Istri PH"
+      ],
+      "takeaway": "Uji Yuridis Hubungan Istimewa"
+    },
+    {
+      "title": "2. ARM'S LENGTH & 5 METODE",
+      "subtitle": "PMK 172/2023 & Secondary Adjustment",
+      "items": [
+        "CUP: Pembanding harga barang sejenis",
+        "RPM: Distributor murni tanpa nilai tambah",
+        "CPM: Manufaktur kontrak / jasa rutin",
+        "TNMM: Uji net margin (Berry/OM/Full Cost)",
+        "PSM: Pembagian laba aset unik (intangibles)",
+        "Secondary Adj: Selisih = Dividen Terselubung"
+      ],
+      "takeaway": "Pencegahan Pergeseran Laba Fiskal"
+    },
+    {
+      "title": "3. SAAR, GAAR, & APA",
+      "subtitle": "PP 55/2022 & PMK 169/2015",
+      "items": [
+        "CFC: WPDN ≥ 50% → Deemed Dividend",
+        "Thin Capitalization: Batas DER maks 4:1",
+        "SPV, Conduit, Deemed Salary, Anti-Hybrid",
+        "GAAR: Prinsip Substance Over Form",
+        "APA: Maksimal 5 Tahun Pajak (Unilateral / Bilateral/Multilateral MAP) + Roll-back"
+      ],
+      "takeaway": "Instrumen Anti-Penghindaran Komprehensif"
+    }
+  ],
+  "footer": "Pasal 18 & 32A UU PPh | Bab VI PP 55/2022 | PMK 172/2023 | PMK 169/PMK.010/2015 | Pedoman OECD Transfer Pricing"
+};
 
 export const TM3_READING: Reading = {
   tm: 3,
@@ -98,7 +61,7 @@ export const TM3_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 3.1: Arsitektur Pengujian Hubungan Istimewa, Transfer Pricing, SAAR/GAAR, dan APA.',
-      svg: SVG_TRANSFER_PRICING_APA
+      overview: OVERVIEW_TRANSFER_PRICING_APA
     },
     {
       kind: 'callout',

@@ -64,7 +64,7 @@ const SVG_CASH_FLOW_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 90
     <text class="text-accent-green" x="125" y="56" fill="#34d399" font-size="9" font-weight="700" text-anchor="middle">Terminal Cash Flow (TCF)</text>
     <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Nilai sisa penjualan mesin (Salvage Value)</text>
     <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Pajak atas pelepasan nilai sisa aset</text>
-    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Pemulihan Modal Kerja</tspan> (100% NWC Recovery)</text>
+    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Pemulihan Modal Kerja</tspan> (sesuai proyeksi)</text>
     <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Saldo piutang &amp; stok dilikuidasi ke kas</text>
     <text class="svg-text" x="14" y="153" fill="#cbd5e1" font-size="8">• Ditambahkan ke OCF tahun terakhir (N)</text>
     <rect class="svg-badge-green" x="14" y="185" width="222" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
@@ -81,20 +81,45 @@ export const TM7_READING: Reading = {
     'Membedah kamus istilah estimasi arus kas (Initial Outlay, OCF, TCF, NWC, Sunk Cost, Opportunity Cost, Cannibalization, Salvage Value).',
     'Menghitung Initial Outlay (CF0) untuk proyek baru maupun proyek penggantian mesin lama (Replacement Project).',
     'Menghitung Operating Cash Flow (OCF) tahunan menggunakan Depreciation Tax Shield.',
-    'Menghitung Terminal Cash Flow (TCF) termasuk pajak atas nilai sisa penjualan aset bekas dan pemulihan modal kerja bersih (100% NWC Recovery).',
+    'Menghitung Terminal Cash Flow (TCF) termasuk pajak atas nilai sisa penjualan aset bekas dan pemulihan modal kerja bersih sesuai jumlah yang benar-benar dilepas pada akhir proyek.',
     'Melakukan analisis risiko proyek melalui Analisis Sensitivitas (Sensitivity Analysis) dan Analisis Skenario (Best, Base, Worst Case).'
   ],
   blocks: [
     {
       kind: 'callout',
       title: 'Dua Peraturan Sakti Dosen FEB UNAIR yang Sering Menjebak di Ujian',
-      text: '1. **JANGAN PERNAH Mengurangkan Beban Bunga Pinjaman dari OCF!**: Bunga adalah biaya pembiayaan (*financing cost*), bukan biaya operasional. Biaya bunga sudah tercermin di dalam tingkat diskonto WACC saat mendiskontokan NPV. Jika Anda memasukkan bunga ke OCF, Anda melakukan kesalahan fatal **Double Counting** (menghukum proyek dua kali)!\n2. **Modal Kerja (NWC) WAJIB Balik 100% di Akhir Proyek**: Uang modal kerja yang disetor di tahun $0$ (seperti stok barang dan piutang) akan dicairkan kembali menjadi kas tunai di tahun terakhir proyek ($t=N$) secara penuh **TANPA DIKENAKAN PAJAK**.',
+      text: '1. **JANGAN PERNAH Mengurangkan Beban Bunga Pinjaman dari OCF!**: Bunga adalah biaya pembiayaan (*financing cost*), bukan biaya operasional. Biaya bunga sudah tercermin di dalam tingkat diskonto WACC saat mendiskontokan NPV. Jika Anda memasukkan bunga ke OCF, Anda melakukan kesalahan fatal **Double Counting** (menghukum proyek dua kali)!\n2. **Pulihkan Modal Kerja (NWC) Sesuai Asumsi Soal**: Tambahan modal kerja pada awal proyek biasanya dilepas saat proyek berakhir. Contoh di bawah mengasumsikan seluruh Rp30 juta pulih; jika soal memperkirakan piutang tidak tertagih atau persediaan tidak terjual, gunakan jumlah pemulihan yang diproyeksikan dan perhitungkan dampak pajak kerugiannya sesuai kasus.',
       variant: 'warning'
     },
     {
       kind: 'figure',
       caption: 'Gambar 7.1: 3 Tahap Aliran Arus Kas Inkremental Proyek Investasi.',
-      svg: SVG_CASH_FLOW_STRUCTURE
+      svg: SVG_CASH_FLOW_STRUCTURE,
+      transcript: [
+        "FASE 1: ARUS KAS AWAL (t = 0)",
+        "Initial Outlay (Kas Keluar Bersih)",
+        "Harga perolehan aset tetap baru",
+        "Biaya pengiriman & instalasi mesin",
+        "Kebutuhan tambahan Modal Kerja (ΔNWC)",
+        "Dikurangi: Kas hasil jual aset lama",
+        "Ditambah/dikurangi: Pajak atas laba/rugi jual",
+        "Pengeluaran Investasi Awal (Outflow)",
+        "FASE 2: OPERASIONAL (t = 1 s.d. N)",
+        "OCF = EBIT(1 - T) + Depresiasi",
+        "Pendapatan tambahan operasional proyek",
+        "Penghematan beban kas operasional",
+        "Beban penyusutan (Non-cash tax shield)",
+        "Beban bunga utang TIDAK dimasukkan (sudah tercermin pada WACC)",
+        "Arus Kas Masuk Bersih Tahunan (Inflow)",
+        "FASE 3: TERMINAL AKHIR (t = N)",
+        "Terminal Cash Flow (TCF)",
+        "Nilai sisa penjualan mesin (Salvage Value)",
+        "Pajak atas pelepasan nilai sisa aset",
+        "Pemulihan Modal Kerja (sesuai proyeksi)",
+        "Saldo piutang & stok dilikuidasi ke kas",
+        "Ditambahkan ke OCF tahun terakhir (N)",
+        "Penutupan & Likuidasi Proyek"
+      ]
     },
     {
       kind: 'h2',
@@ -124,13 +149,13 @@ export const TM7_READING: Reading = {
           '$TCF$',
           'Terminal Cash Flow',
           '**Uang Kas Penutupan Proyek**. Kas ekstra di tahun terakhir ($t=N$) saat proyek dibubarkan/selesai.',
-          'Menjumlahkan: kas bersih hasil jual mesin rongsokan (setelah pajak) + pengembalian 100% modal kerja.'
+          'Menjumlahkan: kas bersih hasil jual mesin rongsokan (setelah pajak) + modal kerja yang dipulihkan menurut asumsi proyek.'
         ],
         [
           '$\\Delta NWC$',
           'Net Working Capital (Modal Kerja)',
           '**Uang Kas Mengendap Operasional**. Uang yang harus disiapkan untuk mengisi stok persediaan barang dan piutang pelanggan.',
-          'Keluar di $t=0$ (mengurangi kas), lalu **kembali masuk utuh 100% di tahun ke-$N$** (tanpa kena pajak).'
+          'Keluar di $t=0$ (mengurangi kas), lalu masuk kembali di tahun ke-$N$ sebesar modal kerja yang dapat dipulihkan; contoh standar mengasumsikan seluruhnya kembali.'
         ],
         [
           '*Depreciation Tax Shield*',
@@ -175,7 +200,7 @@ export const TM7_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: `CF_0 = - \\left[ \\text{Harga Beli Mesin Baru} + \\text{Biaya Angkut & Instalasi} \\right] - \\Delta NWC + \\text{Hasil Jual Mesin Lama} - \\text{Pajak atas Laba Jual Mesin Lama}`,
+      text: `CF_0 = - \\left[ \\text{Harga Beli Mesin Baru} + \\text{Biaya Angkut dan Instalasi} \\right] - \\Delta NWC + \\text{Hasil Jual Mesin Lama} - \\text{Pajak atas Laba Jual Mesin Lama}`,
       note: 'Basis depresiasi mesin baru adalah (Harga Beli + Biaya Angkut & Instalasi). NWC adalah modal kerja tambahan.'
     },
     {
@@ -195,7 +220,7 @@ export const TM7_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Arus Kas Masuk Nilai Sisa Setelah Pajak} = \\text{Harga Jual Bekas} - T \\times (\\text{Harga Jual Bekas} - \\text{Nilai Buku Akhir})
-\\text{Terminal Cash Flow (TCF)} = \\text{Arus Kas Nilai Sisa Setelah Pajak} + \\text{Pengembalian 100% Modal Kerja } (\\Delta NWC)`,
+\\text{Terminal Cash Flow (TCF)} = \\text{Arus Kas Nilai Sisa Setelah Pajak} + \\text{Pengembalian 100\\% Modal Kerja } (\\Delta NWC)`,
       note: 'Jika mesin laku dijual persis sama dengan nilai bukunya, pajaknya adalah nol. TCF ditambahkan ke OCF tahun terakhir (t = N).'
     },
     {
@@ -208,7 +233,7 @@ export const TM7_READING: Reading = {
       blocks: [
         {
           kind: 'p',
-          text: 'PT Grafika Utama mempertimbangkan pembelian mesin cetak otomatis baru dengan data:\n- Harga beli mesin baru = **Rp 400 Juta**; Biaya pengiriman & instalasi = **Rp 50 Juta**.\n- Umur ekonomis = **4 tahun**, disusutkan metode garis lurus (*straight-line*) hingga nilai buku akhir tahun ke-4 menjadi **Rp 50 Juta**.\n- Kebutuhan tambahan modal kerja bersih (NWC) pada awal proyek = **Rp 30 Juta**.\n- Mesin baru diproyeksikan menghemat biaya operasional kas sebesar **Rp 180 Juta per tahun** selama 4 tahun berturut-turut.\n- Pada akhir tahun ke-4, mesin baru diperkirakan bisa dijual di pasar loak seharga **Rp 80 Juta**.\n- Tarif pajak penghasilan badan = **25%** ($0,25$), dan WACC perusahaan = **10%**.'
+          text: 'PT Grafika Utama mempertimbangkan pembelian mesin cetak otomatis baru dengan data:\n- Harga beli mesin baru = **Rp 400 Juta**; Biaya pengiriman & instalasi = **Rp 50 Juta**.\n- Umur ekonomis = **4 tahun**, disusutkan metode garis lurus (*straight-line*) hingga nilai buku akhir tahun ke-4 menjadi **Rp 50 Juta**.\n- Kebutuhan tambahan modal kerja bersih (NWC) pada awal proyek = **Rp 30 Juta**, diasumsikan pulih seluruhnya pada akhir proyek.\n- Mesin baru diproyeksikan menghemat biaya operasional kas sebesar **Rp 180 Juta per tahun** selama 4 tahun berturut-turut.\n- Pada akhir tahun ke-4, mesin baru diperkirakan bisa dijual di pasar loak seharga **Rp 80 Juta**.\n- Tarif pajak penghasilan badan = **25%** ($0,25$), dan WACC perusahaan = **10%**.'
         },
         {
           kind: 'solution-reveal',
@@ -304,7 +329,7 @@ export const TM7_READING: Reading = {
       items: [
         '**Arus Kas Inkremental**: Hanya kas tambahan yang benar-benar berubah akibat diambilnya proyek yang dihitung.',
         '**Depresiasi Menghemat Kas**: Depresiasi bukan kas keluar, melainkan tameng pelindung kas pajak (*Depreciation Tax Shield*).',
-        '**Modal Kerja Cair Penuh**: Modal kerja bersifat seperti uang deposit/jaminan, disetor di awal dan dicairkan kembali utuh di akhir.',
+        '**Pemulihan Modal Kerja**: Tambahan modal kerja keluar di awal dan biasanya dilepas pada akhir proyek. Gunakan persentase pemulihan yang diberikan soal; contoh modul ini mengasumsikan pemulihan penuh.',
         '**Analisis Sensitivitas vs Skenario**: Sensitivitas mengubah 1 variabel; Skenario mengubah banyak variabel sekaligus.'
       ]
     }

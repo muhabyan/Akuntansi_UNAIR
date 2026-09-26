@@ -26,11 +26,21 @@ export default function PomodoroTimer() {
   }, []);
 
   useEffect(() => {
+    window.addEventListener('open-pomodoro', openPanel);
+    return () => window.removeEventListener('open-pomodoro', openPanel);
+  }, [openPanel]);
+
+  useEffect(() => {
     const closeWhenAnotherUtilityOpens = (event: Event) => {
       if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'pomodoro-timer') setIsOpen(false);
     };
+    const closeUtility = () => setIsOpen(false);
     window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
-    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    window.addEventListener('akuntansihub:close-utility', closeUtility);
+    return () => {
+      window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+      window.removeEventListener('akuntansihub:close-utility', closeUtility);
+    };
   }, []);
   
   const playBell = () => {
@@ -112,6 +122,7 @@ export default function PomodoroTimer() {
         id="pomodoro-panel"
         data-utility-panel="pomodoro-timer"
         aria-hidden={!isOpen}
+        ref={(panel) => { panel?.toggleAttribute('inert', !isOpen); }}
         className={`mobile-utility-panel fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
@@ -230,7 +241,7 @@ export default function PomodoroTimer() {
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 100
         } : undefined}
-        className={`group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--pomodoro' : ''} ${
+        className={`utility-launcher-quiet group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--pomodoro' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-slate-400/50' : 'cursor-pointer active:scale-95'

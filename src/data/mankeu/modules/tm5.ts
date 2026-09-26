@@ -95,7 +95,32 @@ export const TM5_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 5.1: Struktur Komponen Biaya Modal Rata-rata Tertimbang (WACC).',
-      svg: SVG_WACC_STRUCTURE
+      svg: SVG_WACC_STRUCTURE,
+      transcript: [
+        "WACC = [ Wd × Rd × (1 - T) ] + [ Wp × Rp ] + [ We × Rs ]",
+        "1. MODAL UTANG (DEBT - Wd)",
+        "Biaya Riil: Rd × (1 - Tax Rate)",
+        "Memiliki fasilitas Tax Shield bunga",
+        "Bunga pinjaman mengurangi beban pajak",
+        "Biaya modal paling murah di antara ketiganya",
+        "Risiko: Risiko kebangkrutan finansial",
+        "Contoh Bobot Target: 30% - 40%",
+        "2. SAHAM PREFEREN (Wp)",
+        "Biaya Riil: Dp ÷ Net Proceeds (Pn)",
+        "Dividen tetap kumulatif prioritas",
+        "TIDAK ADA tax shield (bayar dari laba bersih)",
+        "Memiliki sifat hibrida: Utang + Saham",
+        "Hak klaim aset di atas saham biasa",
+        "Contoh Bobot Target: 0% - 10%",
+        "3. SAHAM BIASA (EQUITY - We)",
+        "Dihitung via CAPM: Rf + β(Rm - Rf)",
+        "Biaya modal paling mahal (Risk Premium tertinggi)",
+        "Pembayar klaim sisa terakhir (Residual Claimant)",
+        "Menuntut imbal hasil dividen & capital gain",
+        "Keunggulan: Bebas kewajiban bayar bunga tetap",
+        "Contoh Bobot Target: 50% - 70%",
+        "WACC adalah \"Hurdle Rate\" minimum yang harus dilampaui (IRR > WACC) agar proyek investasi menciptakan nilai tambah pemegang saham."
+      ]
     },
     {
       kind: 'h2',
@@ -240,11 +265,11 @@ export const TM5_READING: Reading = {
       blocks: [
         {
           kind: 'p',
-          text: 'Perusahaan menerbitkan saham preferen dengan dividen tetap **$10** per lembar. Harga pasar saham saat ini adalah **$100**, dan biaya emisi (*flotation cost*) adalah **2,5%** ($F = 0,025$).'
+          text: 'Perusahaan menerbitkan saham preferen dengan dividen tetap **Rp 10** per lembar. Harga pasar saham saat ini adalah **Rp 100**, dan biaya emisi (*flotation cost*) adalah **2,5%** ($F = 0,025$).'
         },
         {
           kind: 'p',
-          text: '$$\\text{Kas Bersih yang Diterima } (P_n) = 100 \\times (1 - 0,025) = \\$97,50$$'
+          text: '$$\\text{Kas Bersih yang Diterima } (P_n) = 100 \\times (1 - 0,025) = 97,50$$'
         },
         {
           kind: 'p',

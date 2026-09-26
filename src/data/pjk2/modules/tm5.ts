@@ -1,82 +1,56 @@
 import type { Reading } from '../../../types';
 
-const SVG_WITHHOLDING_SYSTEM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="w1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="w2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="w3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="w4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk5)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARSITEKTUR SISTEM PEMOTONGAN &amp; PEMUNGUTAN PAJAK PENGHASILAN (WITHHOLDING TAX)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">WITHHOLDING TAX</text>
-
-  <!-- 4 Columns Withholding Taxonomy -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#w1)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">PPH PASAL 21 / 26</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Objek: Tenaga Kerja &amp; WPLN</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Pemotong: Pemberi kerja / Badan</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Skema: TER bulanan &amp; Tarif Ps 17</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Pegawai tetap, honorarium dokter,</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  tenaga ahli, konsultan lepas</text>
-    <text class="svg-text" x="10" y="138" fill="#cbd5e1" font-size="7.5">• Ps 26: WNA bukan BUT (20% / P3B)</text>
-    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Pemotongan atas Tenaga Kerja</text>
-  </g>
-
-  <g transform="translate(245, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#w2)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">PPH PASAL 22</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Objek: Perdagangan &amp; Impor</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Pemungut: DJBC, BUMN, Bendahara</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Impor API (2,5%) / Non-API (7,5%)</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Belanja Pemerintah: 1,5%</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Industri semen, kertas, baja, oto</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Regulasi: PMK 51/2025</text>
-    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Pemungutan Transaksi Komoditas</text>
-  </g>
-
-  <g transform="translate(455, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#w3)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">PPH PASAL 23</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Objek: Jasa, Modal, &amp; Royalti</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Tarif 2%: Jasa teknik, manajemen,</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  konsultan, sewa harta (non-tanah)</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Tarif 15%: Bunga pinjaman, royalti,</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">  hadiah undian badan usaha</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Dividen Badan DN: Non-Objek</text>
-    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Pemotongan Penghasilan Modal/Jasa</text>
-  </g>
-
-  <g transform="translate(665, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#w4)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">PPH FINAL &amp; UMKM</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Objek: Pasal 4(2) &amp; PP 20/2026</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Sewa Tanah/Bangunan: 10%</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Pengalihan Tanah/Bangunan: 2,5%</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• UMKM OP: 0,5% tanpa batas waktu</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Bebas omzet s.d. Rp500 Juta/thn</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Konstruksi: 1,75% s.d. 4% (PP 9/2022)</text>
-    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Pajak Rampung Seketika</text>
-  </g>
-</svg>`;
+const OVERVIEW_WITHHOLDING_SYSTEM = {
+  "heading": "ARSITEKTUR SISTEM PEMOTONGAN & PEMUNGUTAN PAJAK PENGHASILAN (WITHHOLDING TAX)",
+  "badge": "WITHHOLDING TAX",
+  "cards": [
+    {
+      "title": "PPH PASAL 21 / 26",
+      "subtitle": "Objek: Tenaga Kerja & WPLN",
+      "items": [
+        "Pemotong: Pemberi kerja / Badan",
+        "Skema: TER bulanan & Tarif Ps 17",
+        "Pegawai tetap, honorarium dokter, tenaga ahli, konsultan lepas",
+        "Ps 26: WNA bukan BUT (20% / P3B)"
+      ],
+      "takeaway": "Pemotongan atas Tenaga Kerja"
+    },
+    {
+      "title": "PPH PASAL 22",
+      "subtitle": "Objek: Perdagangan & Impor",
+      "items": [
+        "Pemungut: DJBC, BUMN, Bendahara",
+        "Impor API (2,5%) / Non-API (7,5%)",
+        "Belanja Pemerintah: 1,5%",
+        "Industri semen, kertas, baja, oto",
+        "Regulasi: PMK 51/2025"
+      ],
+      "takeaway": "Pemungutan Transaksi Komoditas"
+    },
+    {
+      "title": "PPH PASAL 23",
+      "subtitle": "Objek: Jasa, Modal, & Royalti",
+      "items": [
+        "Tarif 2%: Jasa teknik, manajemen, konsultan, sewa harta (non-tanah)",
+        "Tarif 15%: Bunga pinjaman, royalti, hadiah undian badan usaha",
+        "Dividen Badan DN: Non-Objek"
+      ],
+      "takeaway": "Pemotongan Penghasilan Modal/Jasa"
+    },
+    {
+      "title": "PPH FINAL & UMKM",
+      "subtitle": "Objek: Pasal 4(2) & PP 20/2026",
+      "items": [
+        "Sewa Tanah/Bangunan: 10%",
+        "Pengalihan Tanah/Bangunan: 2,5%",
+        "UMKM OP: 0,5% tanpa batas waktu",
+        "Bebas omzet s.d. Rp500 Juta/thn",
+        "Konstruksi: 1,75% s.d. 4% (PP 9/2022)"
+      ],
+      "takeaway": "Pajak Rampung Seketika"
+    }
+  ]
+};
 
 export const TM5_READING: Reading = {
   tm: 5,
@@ -94,7 +68,7 @@ export const TM5_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 5.1: Arsitektur Taksonomi Sistem Pemotongan dan Pemungutan PPh (Withholding Tax).',
-      svg: SVG_WITHHOLDING_SYSTEM,
+      overview: OVERVIEW_WITHHOLDING_SYSTEM,
     },
     {
       kind: 'h2',
@@ -177,7 +151,7 @@ export const TM5_READING: Reading = {
       kind: 'callout',
       variant: 'warning',
       title: 'Catatan Rujukan - Penundaan Administratif PMK 37/2025',
-      text: 'Berdasarkan pengumuman resmi Direktorat Jenderal Pajak (DJP), penunjukan dan implementasi teknis pemungutan oleh marketplace ditunda sampai dengan 31 Oktober 2026 dan baru mulai berlaku efektif per 1 November 2026 guna memberikan waktu kesiapan integrasi sistem TI platform e-commerce.',
+      text: 'Menurut pengumuman resmi Direktorat Jenderal Pajak (DJP), pemungutan PPh Pasal 22 oleh marketplace berdasarkan PMK 37/2025 ditunda sampai dengan 31 Oktober 2026 dan dijadwalkan mulai 1 November 2026. DJP menyebut penundaan ini sebagai upaya menjaga daya beli masyarakat. Untuk transaksi sebelum tanggal mulai tersebut, jangan menganggap marketplace sudah wajib memungut berdasarkan penunjukan yang ditunda.',
     },
     {
       kind: 'h2',

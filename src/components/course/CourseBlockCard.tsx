@@ -5,6 +5,7 @@ import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
 import EconDiagram from './EconDiagrams';
+import { MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -320,12 +321,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       }
 
       return (
-        <div className={`course-callout-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border ${borderCls} ${bgCls}`}>
+        <div className={`course-callout-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border ${block.compact ? 'course-callout-compact' : ''} ${borderCls} ${bgCls}`}>
           <div className={`flex items-center gap-2 border-b border-navy-500/10 dark:border-white/5 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${titleCls}`}>
             <IconComponent size={16} /> {titleText}
           </div>
-          <div className={`px-5 py-4 text-base leading-[1.85] text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
-            <RenderMultilineText text={block.text} />
+          <div className={`px-5 ${block.compact ? 'py-3 leading-relaxed' : 'py-4 leading-[1.85]'} text-base text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
+            {block.compact ? renderText(block.text) : <RenderMultilineText text={block.text} />}
           </div>
         </div>
       );
@@ -338,16 +339,35 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
 
       if (!enableEconomicStyling) {
         const tableLabel = isComparisonTable ? 'Tabel Perbandingan Regulasi' : isLegalTable ? 'Tabel Hukum Pajak' : 'Tabel Materi';
+        const isFinancialGlossary = block.headers.length === 4 && block.headers.includes('Nama Finansial');
         return (
           <div className="course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
             <div className="flex items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
                 <Table2 size={15} /> {tableLabel}
               </div>
-              <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 md:hidden">Geser tabel bila perlu →</span>
+              <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
             </div>
+            {isFinancialGlossary && (
+              <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">
+                {block.rows.map((row, index) => (
+                  <article key={index} className="min-w-0 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800/60">
+                    <div className="min-w-0 text-base font-bold leading-relaxed text-slate-900 dark:text-slate-100">{renderText(row[0])}</div>
+                    <div className="mt-1 min-w-0 break-words text-sm font-semibold leading-relaxed text-blue-800 dark:text-blue-200">{renderText(row[1])}</div>
+                    <dl className="mt-3 space-y-3 border-t border-slate-200 pt-3 dark:border-slate-700">
+                      {row.slice(2).map((cell, cellIndex) => (
+                        <div key={cellIndex} className="min-w-0">
+                          <dt className="text-xs font-bold uppercase tracking-wide text-slate-600 dark:text-slate-300">{block.headers[cellIndex + 2]}</dt>
+                          <dd className="mt-1 min-w-0 break-words text-sm leading-relaxed text-slate-800 dark:text-slate-200"><RenderMultilineText text={cell} /></dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </article>
+                ))}
+              </div>
+            )}
             <div 
-              className="akbi-table-scroll w-full overflow-x-auto" 
+              className={`akbi-table-scroll w-full overflow-x-auto ${isFinancialGlossary ? 'hidden md:block' : ''}`}
               role={enableEditorialReading ? 'region' : undefined} 
               aria-label={enableEditorialReading ? `${tableLabel}. Geser horizontal untuk membaca seluruh kolom.` : undefined} 
               tabIndex={enableEditorialReading ? 0 : undefined}
@@ -355,7 +375,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               onTouchMove={(e) => e.stopPropagation()}
               onTouchEnd={(e) => e.stopPropagation()}
             >
-              <table className="w-full border-collapse text-left">
+              <table className={`w-full border-collapse text-left ${isFinancialGlossary ? 'min-w-[840px]' : ''}`}>
                 <thead>
                   <tr className="course-table-head">
                     {block.headers.map((h, i) => (
@@ -615,6 +635,37 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         </figure>
       );
     case 'figure':
+      if (block.overview) {
+        const overview = block.overview;
+        const accents = [
+          'border-sky-300 dark:border-sky-700 bg-sky-50/70 dark:bg-sky-950/20',
+          'border-emerald-300 dark:border-emerald-700 bg-emerald-50/70 dark:bg-emerald-950/20',
+          'border-amber-300 dark:border-amber-700 bg-amber-50/70 dark:bg-amber-950/20',
+          'border-violet-300 dark:border-violet-700 bg-violet-50/70 dark:bg-violet-950/20',
+        ];
+        return (
+          <figure className="course-figure-surface mb-7 overflow-hidden rounded-2xl border border-slate-300 bg-white dark:border-slate-700 dark:bg-slate-900">
+            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-200 px-5 py-4 dark:border-slate-700">
+              <h3 className="max-w-[65ch] text-lg font-bold leading-snug text-slate-900 dark:text-slate-100">{overview.heading}</h3>
+              {overview.badge && <span className="rounded-full bg-sky-100 px-3 py-1 text-sm font-bold text-sky-800 dark:bg-sky-950 dark:text-sky-200">{overview.badge}</span>}
+            </div>
+            <div className="grid grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-5">
+              {overview.cards.map((card, index) => (
+                <section key={index} className={`min-w-0 rounded-xl border p-4 ${accents[index % accents.length]}`}>
+                  <h4 className="text-base font-bold leading-snug text-slate-900 dark:text-slate-100">{card.title}</h4>
+                  <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-700 dark:text-slate-300">{card.subtitle}</p>
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-slate-800 marker:text-slate-600 dark:text-slate-200 dark:marker:text-slate-400 sm:text-base">
+                    {card.items.map((item, itemIndex) => <li key={itemIndex} className="break-words">{item}</li>)}
+                  </ul>
+                  <p className="mt-4 border-t border-slate-300/70 pt-3 text-sm font-semibold leading-relaxed text-slate-700 dark:border-slate-600 dark:text-slate-300">{card.takeaway}</p>
+                </section>
+              ))}
+            </div>
+            {overview.footer && <p className="border-t border-slate-200 px-5 py-3 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:text-slate-300">{overview.footer}</p>}
+            {block.caption && <figcaption className="border-t border-slate-200 bg-slate-50 px-5 py-3 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800/50 dark:text-slate-300">{renderText(block.caption)}</figcaption>}
+          </figure>
+        );
+      }
       if (!enableEconomicStyling) {
         return (
           <figure className="course-figure-surface mb-7 overflow-hidden rounded-2xl border border-navy-500/10 dark:border-navy-500/20">
@@ -626,23 +677,63 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <div className="p-4 md:p-5">
               {block.svg ? (() => {
                 const hasDiagramClass = block.svg.includes('course-diagram-svg');
+                const isDetailedDiagram = /course-diagram-(sml|bpmn)/.test(block.svg);
+                const isSmlDiagram = block.svg.includes('course-diagram-sml');
+                const hasMobileOverview = isSmlDiagram || Boolean(block.mobileFlow);
                 const processedSvg = hasDiagramClass
                   ? block.svg
                   : block.svg.replace('<svg', '<svg class="course-diagram-svg"');
+                const diagramWidth = block.svg.includes('course-diagram-bpmn') ? 'min-w-[1200px] xl:min-w-0' : isDetailedDiagram ? 'min-w-[900px] xl:min-w-0' : 'min-w-[620px] sm:min-w-0';
                 return (
-                  <div
-                    className="course-solid-surface akbi-table-scroll overflow-x-auto rounded-xl p-3 md:p-4 bg-white dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-sm"
-                    role="img"
-                    aria-label={block.altText ?? block.title ?? 'Visual materi'}
-                  >
-                    <div className="min-w-[620px] sm:min-w-0" dangerouslySetInnerHTML={{ __html: processedSvg }} />
-                  </div>
+                  <>
+                    {isSmlDiagram && <SmlMobileOverview />}
+                    {block.mobileFlow && <MobileParticipantFlow flow={block.mobileFlow} />}
+                    <div
+                      className={`course-solid-surface akbi-table-scroll overflow-x-auto rounded-xl border border-gray-200/80 bg-white p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900/80 md:p-4 ${hasMobileOverview ? 'hidden md:block' : ''}`}
+                      role="img"
+                      aria-label={block.altText ?? block.title ?? 'Visual materi'}
+                      tabIndex={isDetailedDiagram ? 0 : undefined}
+                    >
+                      <div className={diagramWidth} dangerouslySetInnerHTML={{ __html: processedSvg }} />
+                    </div>
+                    {hasMobileOverview && (
+                      <details className="rounded-xl border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900 md:hidden">
+                        <summary className="cursor-pointer text-sm font-bold text-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 dark:text-blue-200">Perbesar diagram rinci</summary>
+                        <p className="my-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">Geser ke samping untuk memeriksa bagian diagram. Ringkasan utuh tersedia di atas.</p>
+                        <div className="akbi-table-scroll overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700" role="img" aria-label={block.altText ?? block.title ?? 'Diagram rinci'} tabIndex={0}>
+                          <div className={diagramWidth} dangerouslySetInnerHTML={{ __html: processedSvg }} />
+                        </div>
+                      </details>
+                    )}
+                  </>
                 );
               })() : block.url ? (
                 <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
               ) : null}
             </div>
-            {block.caption && <div className="border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center text-xs italic text-slate-600 dark:text-slate-500">{renderText(block.caption)}</div>}
+            {block.svg && /course-diagram-(sml|bpmn)/.test(block.svg) && <p className="hidden px-5 pb-2 text-xs text-slate-600 dark:text-slate-300 md:block xl:hidden">Geser diagram ke samping untuk melihat seluruh alur. Versi teks tersedia di bawah.</p>}
+            {(block.transcript || block.transcriptSections) && (
+              <section aria-label="Isi diagram dalam teks" className="border-t border-slate-200 bg-slate-50/70 px-5 py-4 dark:border-slate-700 dark:bg-slate-800/40">
+                <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">Isi diagram dalam teks</h4>
+                {block.transcriptSections ? (
+                  <div className="mt-3 grid gap-3 md:grid-cols-2">
+                    {block.transcriptSections.map((section, index) => (
+                      <div key={index} className="min-w-0 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+                        <h5 className="font-bold text-slate-900 dark:text-slate-100">{section.title}</h5>
+                        <ul className="mt-2 list-disc space-y-1.5 pl-5 text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 sm:text-base">
+                          {section.items.map((item, itemIndex) => <li key={itemIndex}>{item}</li>)}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-slate-800 marker:text-slate-600 dark:text-slate-200 dark:marker:text-slate-400 sm:text-base">
+                    {block.transcript?.map((line, index) => <li key={index} className="break-words">{line}</li>)}
+                  </ul>
+                )}
+              </section>
+            )}
+            {block.caption && <div className={`border-t border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/20 px-5 py-3 text-center italic text-slate-700 dark:text-slate-300 ${block.transcript || block.transcriptSections ? 'text-sm leading-relaxed' : 'text-xs'}`}>{renderText(block.caption)}</div>}
           </figure>
         );
       }
