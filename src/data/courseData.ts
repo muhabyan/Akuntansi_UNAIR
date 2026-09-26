@@ -224,7 +224,7 @@ const MNK201_REF = [
 const AKA201_TM1_7 = materi([
   ['Sifat Audit, Permintaan atas Audit, dan Jenis Auditor', 'Ch.1 Arens (pp.1–19) · ISA/SA 200 (konseptual)'],
   ['Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu', 'Ch.2 Arens (pp.25–43) · ISQM 1 / SMM 1 · ISA 220 (Revised) · UU 5/2011 · PP 20/2015'],
-  ['Tanggung Jawab Audit, Skeptisisme, & Asersi Manajemen', 'Arens Ch. 6 | SA 200, SA 315 Revisi'],
+  ['Etika Profesi, Independensi, dan Lingkungan Hukum Auditor', 'Ch.3 Arens (pp.50–71) · KEPAP 2025 Seksi 110, 120, 420 · UU 5/2011'],
   ['Laporan Audit Independen, Jenis Opini, & KAM', 'Arens Ch. 3 | SA 700, 701, 705, 706'],
   ['Konsep Materialitas Audit: Perencanaan & Pelaksanaan', 'Arens Ch. 9 | SA 320, SA 450'],
   ['Bukti Audit, 8 Prosedur Pengujian, & Kertas Kerja', 'Arens Ch. 7 | SA 500, SA 230'],

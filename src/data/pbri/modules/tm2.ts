@@ -26,11 +26,6 @@ export const TM2_READING: Reading = {
           "text": "**Intinya:** opini auditor hanya berguna kalau pengguna **percaya** pada auditornya. Buku menyebut pengguna menghargai auditor karena integritas, independensi, keahlian, dan pengetahuannya. `(ARENS p.9)` Karena kepercayaan itu yang dijual, ada tiga lapis pengaman yang dibahas di TM ini:"
         },
         {
-          "kind": "callout",
-          "variant": "note",
-          "text": "**Perhatikan.** Buku memakai versi lama (6 elemen *quality control*). Yang berlaku sekarang 8 komponen *quality management* (SMM 1, efektif 31 Desember 2025). Untuk ujian, jawab dengan versi yang berlaku."
-        },
-        {
           "kind": "table",
           "headers": [
             "Lapis",
@@ -63,6 +58,11 @@ export const TM2_READING: Reading = {
         {
           "kind": "p",
           "text": "Semua lapis ini ada karena **kualitas audit sulit dilihat langsung oleh pengguna**. Buku mencatat bahwa sampai sekarang belum ada definisi atau ukuran kualitas audit yang disepakati. `(ARENS p.25)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Perhatikan.** Buku memakai versi lama (6 elemen *quality control*). Yang berlaku sekarang 8 komponen *quality management* (SMM 1, efektif 31 Desember 2025). Untuk ujian, jawab dengan versi yang berlaku."
         },
         {
           "kind": "h3",

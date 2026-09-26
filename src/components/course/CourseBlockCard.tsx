@@ -7,7 +7,7 @@ import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuil
 import EconDiagram from './EconDiagrams';
 import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
 import { LayeredContext, useLayered } from './layeredContext';
-import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, isSourceOnly } from './LayeredBlocks';
+import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, isSourceOnly, literalLeadingNumber } from './LayeredBlocks';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -418,7 +418,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                             ? 'px-4 py-3.5 align-top text-xs leading-relaxed text-gray-500 dark:text-gray-400'
                             : 'px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white'}
                         >
-                          <RenderMultilineText text={cell} />
+                          <RenderMultilineText text={layered ? literalLeadingNumber(cell) : cell} />
                         </td>
                       ))}
                     </tr>
