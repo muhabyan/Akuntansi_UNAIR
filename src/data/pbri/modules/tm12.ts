@@ -124,8 +124,8 @@ export const TM12_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Efisiensi Bauran Audit}:
-\\text{TOC Efektif (Kontrol Kuat)} \\Longr→ \\text{Control Risk (CR) Rendah} \\Longr→ \\text{Planned Detection Risk (PDR) Tinggi}
-\\Longr→ \\mathbf{\\text{Pengujian Rinci Saldo (TOD) Minimal (Hemat Waktu & Biaya!)}}`,
+\\text{TOC Efektif (Kontrol Kuat)} \\longrightarrow \\text{Control Risk (CR) Rendah} \\longrightarrow \\text{Planned Detection Risk (PDR) Tinggi}
+\\longrightarrow \\mathbf{\\text{Pengujian Rinci Saldo (TOD) Minimal (Hemat Waktu \\& Biaya!)}}`,
       note: 'Jika hasil TOC menunjukkan kontrol klien gagal/tidak efektif, auditor WAJIB membatalkan pengandalan kontrol dan memperluas sampel TOD hingga 100% populasi saldo akun material.'
     },
     {

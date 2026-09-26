@@ -141,7 +141,7 @@ export const TM11_READING: Reading = {
       kind: 'formula',
       text: `\\text{Penghasilan Neto Komersial Sebelum Pajak}
 + \\text{Koreksi Positif (Pasal 9 UU PPh: Beda Tetap Jamuan, Sanksi, Natura Pribadi)}
-- \\text{Koreksi Negatif (Pasal 4(2) PPh Final & Pasal 4(3) Bukan Objek)}
+- \\text{Koreksi Negatif (Pasal 4(2) PPh Final \\& Pasal 4(3) Bukan Objek)}
 \\pm \\text{Penyesuaian Beda Waktu (Selisih Penyusutan Fiskal vs Komersial)}
 = \\mathbf{\\text{Penghasilan Neto Fiskal / Penghasilan Kena Pajak (PKP)}}
 \\text{PPh Terutang} = 22\\% \\times PKP \\quad | \\quad \\text{PPh 29} = \\text{PPh Terutang} - \\text{Total Kredit Pajak (PPh 22, 23, 24, 25)}`,

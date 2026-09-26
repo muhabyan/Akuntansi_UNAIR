@@ -83,7 +83,7 @@ export const TM10_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: '\\text{Uji Modifikasi 10% PSAK 71} = \\left| \\frac{\\text{PV Arus Kas Syarat Baru} - \\text{Carrying Amount Utang Lama}}{\\text{Carrying Amount Utang Lama}} \\right| \\ge 10\%',
+      text: '\\text{Uji Modifikasi 10\\% PSAK 71} = \\left| \\frac{\\text{PV Arus Kas Syarat Baru} - \\text{Carrying Amount Utang Lama}}{\\text{Carrying Amount Utang Lama}} \\right| \\ge 10\\%',
       note: 'Jika selisih PV >= 10%, modifikasi dianggap substansial (utang lama dihapus, utang baru diakui pada nilai wajar, selisih masuk Laba Rugi).'
     },
     {

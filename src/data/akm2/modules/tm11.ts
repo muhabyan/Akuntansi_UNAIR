@@ -93,12 +93,12 @@ export const TM11_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: `\\text{Dividen Saham Kecil (< 20%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Wajar Pasar Saham}`,
+      text: `\\text{Dividen Saham Kecil (< 20\\%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Wajar Pasar Saham}`,
       note: `Laba ditahan didebit sebesar NILAI WAJAR pasar saham pada tanggal pengumuman.`
     },
     {
       kind: 'formula',
-      text: `\\text{Dividen Saham Besar (> 20%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Nominal (Par Value)}`,
+      text: `\\text{Dividen Saham Besar (> 20\\%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Nominal (Par Value)}`,
       note: `Laba ditahan didebit hanya sebesar NILAI NOMINAL saham yang diterbitkan.`
     },
     {

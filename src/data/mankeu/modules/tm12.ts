@@ -102,7 +102,7 @@ export const TM12_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Total Inventory Cost (TIC)} = \\left(\\frac{D}{Q} \\times S\\right) + \\left(\\frac{Q}{2} \\times H\\right)
-\\text{Cost of Forgoing Discount (EAR)} = \\left(1 + \\frac{\\text{Discount}\\}{100 - \\text{Discount}\\}}\\right)^{\\frac{365}{\\text{Days Credit} - \\text{Days Discount}}} - 1
+\\text{Cost of Forgoing Discount (EAR)} = \\left(1 + \\frac{\\text{Discount}}{100 - \\text{Discount}}\\right)^{\\frac{365}{\\text{Days Credit} - \\text{Days Discount}}} - 1
 \\text{Bank Loan with Compensating Balance (CB)}: \\quad EAR = \\frac{\\text{Nominal Interest Amount}}{\\text{Loan Amount} \\times (1 - CB\\%)}`,
       note: 'Perusahaan sebaiknya meminjam ke bank dengan bunga wajar (misal 10-14%) untuk mengambil diskon dagang 2/10 net 30 daripada membayar pada hari ke-30 (biaya > 44% EAR).'
     },

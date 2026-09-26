@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 // scripts/fix-mojibake.mjs
 import fs from 'node:fs';
 import path from 'node:path';

@@ -87,8 +87,8 @@ export const TM13_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Prinsip Dasar Ketergantungan TI}:
-\\text{ITGC Efektif (Keamanan & Perubahan Program Terjaga)} \\Longr→ \\text{ITAC dapat Diuji & Diandalkan Sepanjang Tahun}
-\\text{ITGC Lemah (Akses Bebas / Tanpa Otorisasi Perubahan)} \\Longr→ \\mathbf{\\text{ITAC TIDAK BISA DIANDALKAN (Wajib Uji Substantif 100\\% Manual!)}}`,
+\\text{ITGC Efektif (Keamanan \\& Perubahan Program Terjaga)} \\longrightarrow \\text{ITAC dapat Diuji \\& Diandalkan Sepanjang Tahun}
+\\text{ITGC Lemah (Akses Bebas / Tanpa Otorisasi Perubahan)} \\longrightarrow \\mathbf{\\text{ITAC TIDAK BISA DIANDALKAN (Wajib Uji Substantif 100\\% Manual!)}}`,
       note: 'Jika programmer dapat langsung mengubah kode di server produksi tanpa persetujuan (ITGC lemah), program otomatis yang tampak sempurna sekalipun tidak boleh diandalkan.'
     },
     {

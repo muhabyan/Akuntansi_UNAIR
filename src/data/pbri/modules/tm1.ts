@@ -164,7 +164,7 @@ export const TM1_READING: Reading = {
       items: [
         '**Reasonable Assurance**: Auditor memberikan keyakinan memadai, bukan mutlak (bukan penjamin 100% bebas dari segala fraud kecil).',
         '**Tanggung Jawab Manajemen**: Penyusunan laporan keuangan dan perancangan pengendalian internal mutlak ada di tangan Manajemen, bukan Auditor.',
-        '**Laporan Reviu**: Menghasilkan Negative Assurance (\"Tidak ada hal yang menyebabkan kami percaya bahwa laporan keuangan tidak wajar...\").',
+        '**Laporan Reviu**: Menghasilkan Negative Assurance ("Tidak ada hal yang menyebabkan kami percaya bahwa laporan keuangan tidak wajar...").',
         '**Laporan AUP**: Bersifat Factual Findings tanpa kesimpulan opini dan ditujukan khusus bagi pihak yang menandatangani perikatan.'
       ]
     }

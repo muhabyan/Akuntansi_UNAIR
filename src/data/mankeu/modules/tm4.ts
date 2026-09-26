@@ -415,7 +415,7 @@ export const TM4_READING: Reading = {
     },
     {
       kind: 'h2',
-      text: 'Pilar IV: Koefisien Beta (\\beta) — Mengukur Risiko Pasar'
+      text: 'Pilar IV: Koefisien Beta ($\\beta$) — Mengukur Risiko Pasar'
     },
     {
       kind: 'p',
@@ -423,7 +423,7 @@ export const TM4_READING: Reading = {
     },
     {
       kind: 'table',
-      headers: ['Besar Nilai Beta (\\beta)', 'Kategori Saham', 'Arti Bahasa Manusianya', 'Contoh Sektor Industri'],
+      headers: ['Besar Nilai Beta ($\\beta$)', 'Kategori Saham', 'Arti Bahasa Manusianya', 'Contoh Sektor Industri'],
       rows: [
         [
           '$\\beta = 1,0$',

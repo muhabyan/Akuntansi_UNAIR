@@ -12,8 +12,8 @@ export const CASE_ASSURANCE_DEMAND: ContentBlock = {
       kind: 'table',
       headers: ['Jenis Perikatan', 'Standar Profesi', 'Tingkat Keyakinan (Assurance)', 'Bentuk Kesimpulan / Output'],
       rows: [
-        ['Audit Laporan Keuangan', 'SA 200 / ISA', 'Keyakinan Memadai (Reasonable/Tinggi)', 'Opini Positif: \"Laporan keuangan menyajikan secara wajar dalam semua hal yang material...\"'],
-        ['Reviu Laporan Interim', 'ISRE 2410 / SPR 2410', 'Keyakinan Terbatas (Limited/Moderat)', 'Kesimpulan Negatif: \"Tidak ada hal yang menjadi perhatian kami yang menyebabkan kami percaya...\"'],
+        ['Audit Laporan Keuangan', 'SA 200 / ISA', 'Keyakinan Memadai (Reasonable/Tinggi)', 'Opini Positif: "Laporan keuangan menyajikan secara wajar dalam semua hal yang material..."'],
+        ['Reviu Laporan Interim', 'ISRE 2410 / SPR 2410', 'Keyakinan Terbatas (Limited/Moderat)', 'Kesimpulan Negatif: "Tidak ada hal yang menjadi perhatian kami yang menyebabkan kami percaya..."'],
         ['Agreed-Upon Procedures (AUP)', 'ISRS 4400 / SJTT 4400', 'Tanpa Asurans (No Assurance)', 'Laporan Temuan Faktual (Factual Findings) tanpa kesimpulan/opini.']
       ],
       caption: 'Tabel 1.1: Perbandingan karakteristik jasa asurans vs non-asurans pada kasus PT Mahakam Mineral.'
@@ -143,7 +143,7 @@ export const CASE_AUDIT_OPINIONS: ContentBlock = {
     {
       kind: 'solution-reveal',
       title: 'Solusi & Kriteria Pervasif Menurut SA 705',
-      prompt: 'Kapan suatu salah saji atau pembatasan lingkup dikategorikan sebagai \"Pervasif\"?',
+      prompt: 'Kapan suatu salah saji atau pembatasan lingkup dikategorikan sebagai "Pervasif"?',
       blocks: [
         {
           kind: 'ul',

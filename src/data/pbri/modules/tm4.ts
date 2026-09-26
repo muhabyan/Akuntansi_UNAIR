@@ -112,11 +112,11 @@ export const TM4_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Struktur Baku LAI SA 700}:
-1. \\text{Judul Resmi: \"Laporan Auditor Independen\"} \\r→ 2. \\text{Pihak yang Dituju (Pemegang Saham / Dewan Komisaris)}
-\\r→ 3. \\mathbf{\\text{Paragraf OPINI (Di Urutan Pertama)}} \\r→ 4. \\mathbf{\\text{Paragraf BASIS OPINI}}
-\\r→ 5. \\text{Kelangsungan Usaha (Going Concern, jika ada)} \\r→ 6. \\mathbf{\\text{Hal Audit Utama / KAM (SA 701)}}
-\\r→ 7. \\text{Tanggung Jawab Manajemen & TCWG} \\r→ 8. \\text{Tanggung Jawab Auditor}
-\\r→ 9. \\text{Tanda Tangan Partner, Nomor Registrasi AP/KAP, Tanggal LAI, & Alamat}`,
+1. \\text{Judul Resmi: "Laporan Auditor Independen"} \\rightarrow 2. \\text{Pihak yang Dituju (Pemegang Saham / Dewan Komisaris)}
+\\rightarrow 3. \\mathbf{\\text{Paragraf OPINI (Di Urutan Pertama)}} \\rightarrow 4. \\mathbf{\\text{Paragraf BASIS OPINI}}
+\\rightarrow 5. \\text{Kelangsungan Usaha (Going Concern, jika ada)} \\rightarrow 6. \\mathbf{\\text{Hal Audit Utama / KAM (SA 701)}}
+\\rightarrow 7. \\text{Tanggung Jawab Manajemen \\& TCWG} \\rightarrow 8. \\text{Tanggung Jawab Auditor}
+\\rightarrow 9. \\text{Tanda Tangan Partner, Nomor Registrasi AP/KAP, Tanggal LAI, \\& Alamat}`,
       note: 'Format SA 700 (Revisi) menempatkan paragraf OPINI di bagian paling atas agar pengguna langsung mengetahui kesimpulan audit.'
     },
     {
