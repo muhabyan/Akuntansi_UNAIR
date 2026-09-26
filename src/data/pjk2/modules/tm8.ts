@@ -1,6 +1,50 @@
 import type { Reading } from '../../../types';
 
 // Acuan peraturan: 25 September 2026. Baca batasan sumber di tiap TM.
+const OVERVIEW_REVIEW_UTS = {
+  heading: 'ARSITEKTUR INTEGRASI MATERI UJIAN TENGAH SEMESTER (UTS) PERPAJAKAN II',
+  badge: 'TM08 REVIEW UTS',
+  cards: [
+    {
+      title: '1. FONDASI PPH & PERSEDIAAN (TM 1-2)',
+      subtitle: 'Worldwide Income, Biaya 3M, Natura, Persediaan, & NPPN',
+      items: [
+        'TM 1: Asas worldwide income, biaya 3M (Ps 6) vs non-deductible (Ps 9), rezim natura PMK 66/2023, tarif progresif OP 5 lapisan (5%–35%).',
+        'TM 2: Penilaian pengalihan harta (harga pasar/buku), persediaan fiskal taat asas (FIFO/Average, LIFO terlarang), NPPN omzet < Rp4,8 M, batas kompensasi rugi 5 tahun.'
+      ],
+      takeaway: 'Pemahaman Subjek, Objek, & Pengurang Sah'
+    },
+    {
+      title: '2. AFILIASI & ASET TETAP (TM 3-4)',
+      subtitle: 'Transfer Pricing PMK 172/2023, Depresiasi, & Revaluasi',
+      items: [
+        'TM 3: Hubungan istimewa kepemilikan ≥ 25%, ALP (Arm\'s Length Principle), hierarki metode TP (CUP, Resale Price, Cost Plus, TNMM, Profit Split), APA & MAP.',
+        'TM 4: Penyusutan fiskal (Garis Lurus & Saldo Menurun), amortisasi harta tak berwujud, prorata bulan penuh ke atas, revaluasi PMK 79/2008 tarif final 10%.'
+      ],
+      takeaway: 'Kewajaran Transaksi & Alokasi Beban Modal'
+    },
+    {
+      title: '3. WITHHOLDING TAX & PPH FINAL (TM 5-6)',
+      subtitle: 'PPh 22, PPh 23, PPh 26, PPh 4(2), & Norma Khusus Ps 15',
+      items: [
+        'TM 5: Pemungutan PPh 22 (impor, bendahara, industri, SIPLah), pemotongan PPh 23 (dividen, bunga, royalti 15%, jasa 2%), PPh 26 WPLN 20%, final UMKM 0,5% PP 20/2026.',
+        'TM 6: PPh Final 4(2) deposito (20%), sewa tanah/bangunan (10%), jasa konstruksi (1,75%–4%), PHTB (2,5%), norma khusus pelayaran (1,2%) & penerbangan (1,8%).'
+      ],
+      takeaway: 'Pemotongan/Pemungutan Pajak Tahun Berjalan'
+    },
+    {
+      title: '4. KREDIT PAJAK & FASILITAS BADAN (TM 7)',
+      subtitle: 'Kredit PPh 24, Angsuran PPh 25, OPPT, & Insentif 31E',
+      items: [
+        'TM 7: Ordinary credit PPh 24 per-country limitation (rugi LN isolated), angsuran PPh 25 bulanan PMK 81/2024, WP OPPT 0,75% per gerai usaha (kredit tidak final).',
+        'Fasilitas Pasal 31E: Diskon tarif 50% (tarif efektif 11%) untuk omzet s.d. Rp4,8 Miliar; fasilitas proporsional omzet Rp4,8 M–Rp50 M; omzet > Rp50 M tarif normal 22%.'
+      ],
+      takeaway: 'Pelunasan Akhir & Optimalisasi Insentif Pajak'
+    }
+  ],
+  footer: 'Peta komprehensif mengintegrasikan seluruh RPS paruh pertama semester untuk persiapan Ujian Tengah Semester (UTS).'
+};
+
 export const TM8_READING: Reading = {
   tm: 8,
   title: 'Review UTS Perpajakan II: Peta TM1-7 dan Latihan Terpadu',
@@ -13,6 +57,11 @@ export const TM8_READING: Reading = {
     'Mengenali batas sumber dan tanggal berlaku peraturan dalam jawaban kasus.'
   ],
   blocks: [
+    {
+      kind: 'figure',
+      caption: 'Gambar 8.1: Peta Arsitektur Navigasi Ujian Tengah Semester (UTS) Perpajakan II (TM 1 s.d. TM 7).',
+      overview: OVERVIEW_REVIEW_UTS
+    },
     { kind: 'h2', text: '1. Peta materi dan urutan kerja' },
     {
       kind: 'table',

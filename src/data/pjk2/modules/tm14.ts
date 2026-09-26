@@ -106,7 +106,7 @@ export const TM14_READING: Reading = {
       kind: 'formula',
       text: `\\text{Pajak Karbon Terutang} = \\max(0, \\text{Emisi Riil} - \\text{Cap Emisi yang Ditetapkan}) \\times \\text{Tarif Pajak Karbon (Min Rp 30 / kg CO2e)}
 \\text{Transaksi Rekanan ke Bendaharawan (WAPU Kode 02)}:
-\\text{Kas yang Diterima Rekanan} = \\text{Harga Jual Tanpa PPN} - \\text{PPh 22 Terpotong (1,5\\%)} \\quad \\text{(PPN 11\\% Disetor Langsung oleh KPPN)}`,
+\\text{Kas yang Diterima Rekanan} = \\text{Harga Jual Tanpa PPN} - \\text{PPh 22 Terpotong } (1{,}5\\%) \\quad (\\text{PPN } 11\\% \\text{ Disetor Langsung oleh KPPN})`,
       note: 'Penyerahan kepada Pemungut WAPU tidak menghasilkan kas penerimaan PPN bagi rekanan penjual; rekanan hanya menerima harga pokok barang dikurangi PPh 22.'
     },
     {
