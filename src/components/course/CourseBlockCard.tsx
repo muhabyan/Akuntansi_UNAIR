@@ -7,7 +7,7 @@ import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuil
 import EconDiagram from './EconDiagrams';
 import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
 import { LayeredContext, useLayered } from './layeredContext';
-import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
+import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, InlineMarkdown, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -269,7 +269,8 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               ) : (
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 shadow-sm shadow-blue-500/40" />
               )}
-              <span className="whitespace-pre-line">{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
+              {/* Layered items are plain markdown: pre-line would turn the newlines between nested blocks into gaps. */}
+              <span className={layered ? 'min-w-0' : 'whitespace-pre-line'}>{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
             </li>
           ))}
         </ul>
@@ -279,7 +280,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       return (
         <ol className={`mb-6 list-decimal pl-6 text-base text-slate-800 dark:text-slate-200 marker:font-black marker:text-blue-600 dark:marker:text-blue-400 ${layered ? 'max-w-[70ch] space-y-2 leading-[1.7] md:text-[16.5px]' : 'max-w-[88ch] space-y-3 md:pl-8 leading-[1.8] md:text-[16px]'}`}>
           {block.items.map((it, i) => (
-            <li key={i} className="whitespace-pre-line pl-1">{renderText(it)}</li>
+            <li key={i} className={layered ? 'pl-1' : 'whitespace-pre-line pl-1'}>{renderText(it)}</li>
           ))}
         </ol>
       );
@@ -405,7 +406,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                         key={i}
                         className={`sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300${alignCls(i)}`}
                       >
-                        {h}
+                        {layered ? <InlineMarkdown text={h} /> : h}
                       </th>
                     ))}
                   </tr>

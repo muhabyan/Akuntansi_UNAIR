@@ -23,9 +23,19 @@ export function SourceLine({ text }: { text: string }) {
   );
 }
 
-/** A table cell such as "1. Kumpulkan fakta" or "+ Penjualan kredit" is a label, not a list: escape the marker so
- *  markdown keeps "1." or "+" as text instead of turning the cell into a list. */
-export const literalLeadingMarker = (text: string) => text.replace(/^(\d+)\. /, '$1\\. ').replace(/^([-+*]) /, '\\$1 ');
+/** A table cell such as "1. Kumpulkan fakta", "+ Penjualan kredit" or a header "#" is a label, not markdown structure:
+ *  escape the leading marker so markdown keeps it as text instead of making a list, heading or quote. */
+export const literalLeadingMarker = (text: string) =>
+  text.replace(/^(\d+)\. /, '$1\\. ').replace(/^([-+*]) /, '\\$1 ').replace(/^(#+|>)(?=\s|$)/, '\\$1');
+
+/** Short markdown (e.g. a table header with **bold**) rendered inline, inheriting the surrounding colour and size. */
+export function InlineMarkdown({ text }: { text: string }) {
+  return (
+    <span className="[&_p]:m-0 [&_p]:inline [&_p]:text-inherit dark:[&_p]:text-inherit [&_p]:leading-[inherit] [&_strong]:text-inherit dark:[&_strong]:text-inherit">
+      {renderText(literalLeadingMarker(text))}
+    </span>
+  );
+}
 
 /** One body size for all layered reading text. */
 export const LAYERED_BODY = 'text-base leading-[1.7] md:text-[16.5px]';
@@ -159,10 +169,10 @@ export function StackedTable({ headers, rows }: { headers: string[]; rows: strin
           <dl className="mt-2 space-y-2">
             {headers.slice(1).map((header, c) =>
               !(row[c + 1] ?? '').trim() ? null : isSource(header) ? (
-                <dd key={c} className="text-xs text-gray-500 dark:text-gray-400">{header}: {row[c + 1]}</dd>
+                <dd key={c} className="text-xs text-gray-500 dark:text-gray-400"><InlineMarkdown text={header} />: {row[c + 1]}</dd>
               ) : (
                 <div key={c}>
-                  <dt className="text-xs font-medium text-gray-500 dark:text-gray-400">{header}</dt>
+                  <dt className="text-xs font-medium text-gray-500 dark:text-gray-400"><InlineMarkdown text={header} /></dt>
                   <dd className={`text-gray-800 dark:text-gray-200 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[c + 1] ?? ''))}</dd>
                 </div>
               ),

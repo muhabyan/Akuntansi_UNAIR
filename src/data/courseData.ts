@@ -227,7 +227,7 @@ const AKA201_TM1_7 = materi([
   ['Etika Profesi, Independensi, dan Lingkungan Hukum Auditor', 'Ch.3 Arens (pp.50–71) · KEPAP 2025 Seksi 110, 120, 420 · UU 5/2011'],
   ['Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional', 'Ch.4 Arens (pp.86–99) · ISA/SA 200'],
   ['Siklus, Asersi Manajemen, dan Gambaran Proses Audit', 'Ch.4 Arens (pp.99–117) · ISA/SA 315 (Revised 2019)'],
-  ['Bukti Audit, 8 Prosedur Pengujian, & Kertas Kerja', 'Arens Ch. 7 | SA 500, SA 230'],
+  ['Laporan Auditor dan Jenis Opini', 'Ch.18 Arens (pp.619–642) · SA/ISA 700, 701, 705, 706'],
   ['Prosedur Analitis & Analisis Rasio Keuangan', 'Arens Ch. 7, 8 | SA 520'],
 ], 1);
 const AKA201_TM8_14 = materi([
