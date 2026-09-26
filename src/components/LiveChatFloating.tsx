@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import { useDraggableWidget } from '../hooks/useDraggableWidget';
 import { useNotification } from '../contexts/NotificationContext';
+import { isAdminUser } from '../config/admin';
 
 interface ChatMessage {
   id: string;
@@ -19,9 +20,11 @@ export default function LiveChatFloating() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputText, setInputText] = useState('');
   const [isSending, setIsSending] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const { user, signIn } = useAuth();
   const { addNotification } = useNotification();
+  const isAdmin = isAdminUser(user?.email);
   
   const draggable = useDraggableWidget({
     id: 'live-chat',
@@ -139,18 +142,53 @@ export default function LiveChatFloating() {
     }
   };
 
-  const handleDeleteMessage = async (msgId: string) => {
-    if (!window.confirm('Hapus pesan ini?')) return;
+  const handleDeleteMessage = async (msgId: string, asAdmin = false) => {
+    const confirmPrompt = asAdmin 
+      ? 'Moderasi Admin: Hapus pesan ini dari Kelas Global?' 
+      : 'Hapus pesan ini?';
+    if (!window.confirm(confirmPrompt)) return;
     
     // Optimistic UI update
     const previousMessages = [...messages];
     setMessages(prev => prev.filter(m => m.id !== msgId));
     
-    const { error } = await supabase.from('global_chat').delete().eq('id', msgId).eq('user_id', user?.id || '');
+    let query = supabase.from('global_chat').delete().eq('id', msgId);
+    if (!isAdmin) {
+      query = query.eq('user_id', user?.id || '');
+    }
+    
+    const { error } = await query;
     
     if (error) {
       console.error('Error deleting message:', error);
-      setErrorMsg('Gagal menghapus pesan. Anda belum menambahkan SQL Policy untuk DELETE.');
+      setErrorMsg('Gagal menghapus pesan. Pastikan SQL Policy untuk DELETE di Supabase sudah mengizinkan admin.');
+      setMessages(previousMessages); // Revert
+    }
+  };
+
+  const handleResetAllMessages = async () => {
+    if (!isAdmin || isResetting) return;
+    const confirmed = window.confirm(
+      'PERINGATAN ADMIN: Apakah Anda yakin ingin MENGHAPUS SELURUH riwayat pesan di Kelas Global? Tindakan ini tidak dapat dibatalkan.'
+    );
+    if (!confirmed) return;
+
+    const previousMessages = [...messages];
+    setMessages([]);
+    setIsResetting(true);
+    setErrorMsg('');
+
+    // In Supabase, delete requires a WHERE clause; neq on empty UUID matches all rows
+    const { error } = await supabase
+      .from('global_chat')
+      .delete()
+      .neq('id', '00000000-0000-0000-0000-000000000000');
+
+    setIsResetting(false);
+
+    if (error) {
+      console.error('Error resetting chat:', error);
+      setErrorMsg('Gagal mereset chat. Pastikan SQL Policy DELETE di Supabase sudah mengizinkan admin.');
       setMessages(previousMessages); // Revert
     }
   };
@@ -197,17 +235,38 @@ export default function LiveChatFloating() {
           <div className="flex items-center justify-between p-4 text-white shrink-0 select-none bg-indigo-600">
             <div className="flex items-center gap-2 font-bold pointer-events-none">
               <Users size={20} /> Kelas Global (Live)
+              {isAdmin && (
+                <span className="bg-amber-400 text-slate-900 text-[10px] font-black uppercase px-2 py-0.5 rounded-full tracking-wider shadow-sm">
+                  Admin
+                </span>
+              )}
             </div>
-            <button 
-              onPointerDown={(e) => e.stopPropagation()}
-              onPointerUp={(e) => e.stopPropagation()}
-              onClick={() => setIsOpen(false)}
-              aria-label="Tutup Kelas Global"
-              className="text-indigo-100 hover:text-white hover:bg-indigo-700 p-1 rounded-full transition relative z-10 cursor-pointer"
-              title="Tutup obrolan"
-            >
-              <X size={18} />
-            </button>
+            <div className="flex items-center gap-1.5">
+              {isAdmin && messages.length > 0 && (
+                <button
+                  type="button"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  onPointerUp={(e) => e.stopPropagation()}
+                  onClick={handleResetAllMessages}
+                  disabled={isResetting}
+                  className="text-indigo-100 hover:text-white hover:bg-red-600/80 px-2 py-1 rounded-lg text-xs font-semibold flex items-center gap-1 transition cursor-pointer disabled:opacity-50"
+                  title="Bersihkan Seluruh Chat (Admin Reset)"
+                >
+                  <Trash2 size={13} />
+                  <span className="hidden sm:inline">{isResetting ? 'Mereset...' : 'Reset Chat'}</span>
+                </button>
+              )}
+              <button 
+                onPointerDown={(e) => e.stopPropagation()}
+                onPointerUp={(e) => e.stopPropagation()}
+                onClick={() => setIsOpen(false)}
+                aria-label="Tutup Kelas Global"
+                className="text-indigo-100 hover:text-white hover:bg-indigo-700 p-1 rounded-full transition relative z-10 cursor-pointer"
+                title="Tutup obrolan"
+              >
+                <X size={18} />
+              </button>
+            </div>
           </div>
 
           {/* Error Banner */}
@@ -232,7 +291,7 @@ export default function LiveChatFloating() {
                 
                 const msgDate = new Date(msg.created_at);
                 const hoursDiff = (new Date().getTime() - msgDate.getTime()) / (1000 * 60 * 60);
-                const canDelete = isMe && hoursDiff <= 3;
+                const canDelete = (isMe && hoursDiff <= 3) || isAdmin;
 
                 let showDatePill = false;
                 if (i === 0) {
@@ -277,10 +336,14 @@ export default function LiveChatFloating() {
                       
                       {canDelete && (
                         <button 
-                          onClick={() => handleDeleteMessage(msg.id)}
-                          aria-label="Hapus pesan"
-                          className="opacity-0 group-hover:opacity-100 p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-full transition-all shrink-0"
-                          title="Hapus pesan"
+                          onClick={() => handleDeleteMessage(msg.id, !isMe)}
+                          aria-label={!isMe ? "Moderasi Admin: Hapus pesan ini" : "Hapus pesan"}
+                          className={`opacity-0 group-hover:opacity-100 p-1.5 rounded-full transition-all shrink-0 cursor-pointer ${
+                            !isMe
+                              ? 'text-red-500 hover:text-red-700 hover:bg-red-100 dark:hover:bg-red-950/60'
+                              : 'text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30'
+                          }`}
+                          title={!isMe ? "Hapus pesan ini (Admin Moderasi)" : "Hapus pesan"}
                         >
                           <Trash2 size={14} />
                         </button>
