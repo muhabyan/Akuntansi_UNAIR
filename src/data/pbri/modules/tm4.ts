@@ -706,7 +706,7 @@ export const TM4_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "*Contoh jawaban:* bukti sebagian besar dari sampel, laporan penuh estimasi, dan fraud dirancang untuk disembunyikan, sehingga bukti bersifat meyakinkan dan tidak pasti. `(ARENS pp.89–90; ISA200 paras. A50–A52)` Tetapi ISA 200 menegaskan bahwa kesulitan, waktu, atau biaya bukan alasan sah untuk melewatkan prosedur yang tidak ada alternatifnya. `(ISA200 para. A53)`"
+              "text": "*Contoh jawaban:* bukti sebagian besar dari sampel, laporan penuh estimasi, dan fraud dirancang untuk disembunyikan, sehingga bukti bersifat meyakinkan dan tidak pasti. `(ARENS pp.89–90; ISA200 paras. A50–A52)` Tetapi ISA 200 menegaskan bahwa kesulitan, waktu, atau biaya tidak boleh dijadikan alasan untuk melewatkan prosedur yang tidak bisa diganti prosedur lain. `(ISA200 para. A53)`"
             }
           ],
           "signal": "*Tanda belum paham:* hanya menjawab bagian pertama."

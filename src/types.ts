@@ -136,7 +136,8 @@ export type ContentBlock =
   | { kind: 'ul'; items: string[] }
   | { kind: 'ol'; items: string[] }
   | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string; compact?: boolean }
-  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean }
+  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
+      /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null> }
   | { kind: 'journal'; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
   | { kind: 'code'; text: string; language?: string; caption?: string } // teks literal (mis. SQL), tidak diproses markdown

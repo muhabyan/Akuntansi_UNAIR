@@ -23,9 +23,9 @@ export function SourceLine({ text }: { text: string }) {
   );
 }
 
-/** A table cell such as "1. Kumpulkan fakta" is a numbered label, not a list: escape the dot so markdown keeps the
- *  number as text instead of turning it into a list marker. */
-export const literalLeadingNumber = (text: string) => text.replace(/^(\d+)\. /, '$1\\. ');
+/** A table cell such as "1. Kumpulkan fakta" or "+ Penjualan kredit" is a label, not a list: escape the marker so
+ *  markdown keeps "1." or "+" as text instead of turning the cell into a list. */
+export const literalLeadingMarker = (text: string) => text.replace(/^(\d+)\. /, '$1\\. ').replace(/^([-+*]) /, '\\$1 ');
 
 /** One body size for all layered reading text. */
 export const LAYERED_BODY = 'text-base leading-[1.7] md:text-[16.5px]';
@@ -155,7 +155,7 @@ export function StackedTable({ headers, rows }: { headers: string[]; rows: strin
     <div className="layered-stacked-table space-y-3 md:hidden">
       {rows.map((row, r) => (
         <div key={r} className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900/80">
-          <div className={`font-semibold text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(literalLeadingNumber(row[0] ?? ''))}</div>
+          <div className={`font-semibold text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[0] ?? ''))}</div>
           <dl className="mt-2 space-y-2">
             {headers.slice(1).map((header, c) =>
               !(row[c + 1] ?? '').trim() ? null : isSource(header) ? (
@@ -163,7 +163,7 @@ export function StackedTable({ headers, rows }: { headers: string[]; rows: strin
               ) : (
                 <div key={c}>
                   <dt className="text-xs font-medium text-gray-500 dark:text-gray-400">{header}</dt>
-                  <dd className={`text-gray-800 dark:text-gray-200 ${LAYERED_BODY}`}>{renderText(literalLeadingNumber(row[c + 1] ?? ''))}</dd>
+                  <dd className={`text-gray-800 dark:text-gray-200 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[c + 1] ?? ''))}</dd>
                 </div>
               ),
             )}

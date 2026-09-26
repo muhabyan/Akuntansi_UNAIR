@@ -7,7 +7,7 @@ import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuil
 import EconDiagram from './EconDiagrams';
 import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
 import { LayeredContext, useLayered } from './layeredContext';
-import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, isSourceOnly, literalLeadingNumber } from './LayeredBlocks';
+import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -360,6 +360,8 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const isFinancialGlossary = block.headers.length === 4 && block.headers.includes('Nama Finansial');
         // In a layered reading a "Sumber" column is a source reference: small and muted.
         const mutedColumns = block.headers.map((header) => layered && /^sumber$/i.test(header.trim()));
+        // Column alignment from the source table (e.g. right-aligned amounts); desktop table only, phone cards ignore it.
+        const alignCls = (c: number) => (block.align?.[c] === 'right' ? ' text-right tabular-nums' : block.align?.[c] === 'center' ? ' text-center' : '');
         const tableCard = (
           <div className="course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
             <div className="flex items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
@@ -401,7 +403,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                     {block.headers.map((h, i) => (
                       <th
                         key={i}
-                        className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300"
+                        className={`sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300${alignCls(i)}`}
                       >
                         {h}
                       </th>
@@ -414,11 +416,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                       {row.map((cell, c) => (
                         <td
                           key={c}
-                          className={mutedColumns[c]
+                          className={(mutedColumns[c]
                             ? 'px-4 py-3.5 align-top text-xs leading-relaxed text-gray-500 dark:text-gray-400'
-                            : 'px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white'}
+                            : 'px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white') + alignCls(c)}
                         >
-                          <RenderMultilineText text={layered ? literalLeadingNumber(cell) : cell} />
+                          <RenderMultilineText text={layered ? literalLeadingMarker(cell) : cell} />
                         </td>
                       ))}
                     </tr>

@@ -10,7 +10,7 @@ const { AKA201_READINGS, AKA201_REVIEW_READINGS, AKA201_PREP } = await import(
   `data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`
 );
 
-const LAYERED_TMS = [1, 2, 3, 4];
+const LAYERED_TMS = [1, 2, 3, 4, 5];
 const CALLOUT_VARIANTS = new Set(['gist', 'warning', 'info', 'note', 'quote']);
 // Figures and infographics: at least 12 px text at 390 px, where a section card leaves about 320 px of width.
 // (The browser check in the converter harness also verifies that nothing overflows sideways.)
@@ -50,6 +50,7 @@ function checkLayered(label, reading) {
       const px = smallestFigureTextPx(block.svg);
       assert.ok(px === null || px >= MIN_FIGURE_TEXT_PX, `${at}: figure text renders at ${px?.toFixed(1)} px on a 390 px phone; needs at least ${MIN_FIGURE_TEXT_PX} px`);
     }
+    if (block.kind === 'table' && block.align) assert.equal(block.align.length, block.headers.length, `${at}: one alignment per column`);
     if (block.kind === 'table') assert.equal(block.stackOnMobile, true, `${at}: tables stack on phones (reading tables are at least 42rem wide)`);
     if (block.kind === 'self-check') assert.ok(block.answer.length > 0, `${at}: self check without a sample answer`);
     if (block.kind === 'solution-reveal') assert.ok(block.blocks.length > 0 && block.revealLabel, `${at}: case needs a hidden discussion and a reveal label`);

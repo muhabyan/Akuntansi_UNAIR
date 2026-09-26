@@ -226,7 +226,7 @@ const AKA201_TM1_7 = materi([
   ['Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu', 'Ch.2 Arens (pp.25–43) · ISQM 1 / SMM 1 · ISA 220 (Revised) · UU 5/2011 · PP 20/2015'],
   ['Etika Profesi, Independensi, dan Lingkungan Hukum Auditor', 'Ch.3 Arens (pp.50–71) · KEPAP 2025 Seksi 110, 120, 420 · UU 5/2011'],
   ['Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional', 'Ch.4 Arens (pp.86–99) · ISA/SA 200'],
-  ['Konsep Materialitas Audit: Perencanaan & Pelaksanaan', 'Arens Ch. 9 | SA 320, SA 450'],
+  ['Siklus, Asersi Manajemen, dan Gambaran Proses Audit', 'Ch.4 Arens (pp.99–117) · ISA/SA 315 (Revised 2019)'],
   ['Bukti Audit, 8 Prosedur Pengujian, & Kertas Kerja', 'Arens Ch. 7 | SA 500, SA 230'],
   ['Prosedur Analitis & Analisis Rasio Keuangan', 'Arens Ch. 7, 8 | SA 520'],
 ], 1);
