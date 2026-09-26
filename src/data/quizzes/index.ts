@@ -34,13 +34,8 @@ import { AKM202_QUIZ, AKM202_QUIZ_UTS, AKM202_QUIZ_UAS } from './akm202';
 import { AKS201_QUIZ, AKS201_QUIZ_UTS, AKS201_QUIZ_UAS } from './aks201';
 import { PJK301_QUIZ, PJK301_QUIZ_UTS, PJK301_QUIZ_UAS } from './pjk301';
 import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
-import { AKA201_QUIZ as AKA201_QUIZ_ALL, AKA201_QUIZ_UTS as AKA201_QUIZ_UTS_ALL, AKA201_QUIZ_UAS } from './aka201';
-import { isAka201QuizVisible } from '../pbri/practiceVisibility';
+import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
 import { SII306_QUIZ, SII306_QUIZ_UTS, SII306_QUIZ_UAS } from './sii306';
-
-// AKA201: old TM2–TM7 items no longer match the rebuilt TM01–TM07 (see pbri/practiceVisibility.ts).
-const AKA201_QUIZ = AKA201_QUIZ_ALL.filter(isAka201QuizVisible);
-const AKA201_QUIZ_UTS = AKA201_QUIZ_UTS_ALL.filter(isAka201QuizVisible);
 
 const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK106: AKK106_QUIZ,
