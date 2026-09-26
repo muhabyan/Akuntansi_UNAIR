@@ -228,7 +228,7 @@ const AKA201_TM1_7 = materi([
   ['Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional', 'Ch.4 Arens (pp.86–99) · ISA/SA 200'],
   ['Siklus, Asersi Manajemen, dan Gambaran Proses Audit', 'Ch.4 Arens (pp.99–117) · ISA/SA 315 (Revised 2019)'],
   ['Laporan Auditor dan Jenis Opini', 'Ch.18 Arens (pp.619–642) · SA/ISA 700, 701, 705, 706'],
-  ['Prosedur Analitis & Analisis Rasio Keuangan', 'Arens Ch. 7, 8 | SA 520'],
+  ['Materialitas Perencanaan dan Pelaksanaan', 'Ch.6 Arens (pp.199–211) · SA/ISA 320'],
 ], 1);
 const AKA201_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Arens Ch. 1-9 | Kompilasi TM 1-7'],

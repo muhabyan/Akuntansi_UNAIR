@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { ArrowDown, ArrowLeft, BookOpen, Check, Clock, Maximize, Minimize, Target } from 'lucide-react';
 import type { Reading } from '../../types';
 import { renderText } from './MarkdownContent';
-import { BackToTopButton, estimateLayeredReading, isSourceOnly, LAYERED_BODY, SourceLine } from './LayeredBlocks';
+import { BackToTopButton, estimateLayeredReading, InlineMarkdown, isSourceOnly, LAYERED_BODY, SourceLine } from './LayeredBlocks';
 import { getReadingBlockId } from './ReadingOutline';
 
 interface CourseHeaderProps {
@@ -82,7 +82,7 @@ function LayeredEntry({ courseName, reading, onBack, badge, phase }: { courseNam
           <ul className="mt-1 space-y-0.5">
             {reading.objectives.map((objective, index) => (
               <li key={index} className="flex gap-2 text-base leading-[1.6] text-gray-700 dark:text-gray-300 md:text-[16.5px]">
-                <Check size={16} className="mt-1 shrink-0 text-emerald-500" /> <span>{objective}</span>
+                <Check size={16} className="mt-1 shrink-0 text-emerald-500" /> <span><InlineMarkdown text={objective} /></span>
               </li>
             ))}
           </ul>
