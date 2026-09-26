@@ -5,7 +5,7 @@ import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
 import EconDiagram from './EconDiagrams';
-import { MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
+import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -677,9 +677,10 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <div className="p-4 md:p-5">
               {block.svg ? (() => {
                 const hasDiagramClass = block.svg.includes('course-diagram-svg');
-                const isDetailedDiagram = /course-diagram-(sml|bpmn)/.test(block.svg);
+                const isDetailedDiagram = /course-diagram-(sml|bpmn|agency)/.test(block.svg);
                 const isSmlDiagram = block.svg.includes('course-diagram-sml');
-                const hasMobileOverview = isSmlDiagram || Boolean(block.mobileFlow);
+                const isAgencyDiagram = block.svg.includes('course-diagram-agency');
+                const hasMobileOverview = isSmlDiagram || isAgencyDiagram || Boolean(block.mobileFlow);
                 const processedSvg = hasDiagramClass
                   ? block.svg
                   : block.svg.replace('<svg', '<svg class="course-diagram-svg"');
@@ -687,6 +688,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 return (
                   <>
                     {isSmlDiagram && <SmlMobileOverview />}
+                    {isAgencyDiagram && <AgencyMobileOverview />}
                     {block.mobileFlow && <MobileParticipantFlow flow={block.mobileFlow} />}
                     <div
                       className={`course-solid-surface akbi-table-scroll overflow-x-auto rounded-xl border border-gray-200/80 bg-white p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900/80 md:p-4 ${hasMobileOverview ? 'hidden md:block' : ''}`}
@@ -711,7 +713,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
               ) : null}
             </div>
-            {block.svg && /course-diagram-(sml|bpmn)/.test(block.svg) && <p className="hidden px-5 pb-2 text-xs text-slate-600 dark:text-slate-300 md:block xl:hidden">Geser diagram ke samping untuk melihat seluruh alur. Versi teks tersedia di bawah.</p>}
+            {block.svg && /course-diagram-(sml|bpmn|agency)/.test(block.svg) && <p className="hidden px-5 pb-2 text-xs text-slate-600 dark:text-slate-300 md:block xl:hidden">Geser diagram ke samping untuk melihat seluruh alur. Versi teks tersedia di bawah.</p>}
             {(block.transcript || block.transcriptSections) && (
               <section aria-label="Isi diagram dalam teks" className="border-t border-slate-200 bg-slate-50/70 px-5 py-4 dark:border-slate-700 dark:bg-slate-800/40">
                 <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">Isi diagram dalam teks</h4>

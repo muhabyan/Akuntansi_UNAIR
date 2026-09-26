@@ -85,7 +85,7 @@ try {
     check(Boolean(pjkFigure?.overview?.cards.length >= 3 && !pjkFigure.svg), `PJK301 TM${tm} summary uses readable content cards`);
     check(pjkFigure.overview.cards.every((card) => card.title && card.subtitle && card.items.length >= 3 && card.takeaway), `PJK301 TM${tm} retains titles, source labels, details, and takeaways`);
     const mnkFigure = MNK201_READINGS[tm].blocks.find((block) => block.kind === 'figure');
-    check(Boolean(mnkFigure?.svg && (tm === 4 ? mnkFigure.transcriptSections?.length === 3 : mnkFigure.transcript?.length >= 10)), `MNK201 TM${tm} diagram retains SVG and has a text version`);
+    check(Boolean(mnkFigure?.svg && ([1, 4].includes(tm) ? mnkFigure.transcriptSections?.length === 3 : mnkFigure.transcript?.length >= 10)), `MNK201 TM${tm} diagram retains SVG and has a text version`);
   }
   const semester = SEMESTERS.find((item) => codes.every((code) => item.groups.some((group) => group.courses.some((course) => course.code === code))));
   check(Boolean(semester && !semester.locked), 'All four UTS courses share an open semester');
@@ -129,6 +129,16 @@ try {
       await click(window.document.querySelector('button[aria-label^="Buka TM 1:"]'), `${code} TM1 reading`);
       await waitFor(() => window.document.body.textContent.includes('Selesai membaca?'), `${code} reading body`);
       check(Boolean(window.document.querySelector('main')), `${width}px DOM: ${code} TM1 reading renders`);
+      const readingToolbar = window.document.querySelector('.reading-toolbar');
+      check(Boolean(readingToolbar?.classList.contains('relative') && readingToolbar.classList.contains('md:sticky')), `${width}px DOM: reading outline toolbar is in document flow on mobile and sticky from desktop breakpoint`);
+      if (code === 'MNK201') {
+        const agency = window.document.querySelector('section[aria-label="Ringkasan visual teori keagenan pada layar sempit"]');
+        const agencyText = window.document.querySelector('section[aria-label="Isi diagram dalam teks"]');
+        check(Boolean(agency?.textContent.includes('Pemegang saham') && agency.textContent.includes('Manajemen') && agency.textContent.includes('Kreditor') && agency.textContent.includes('Konflik 1') && agency.textContent.includes('Konflik 2') && agency.textContent.includes('debt covenants') && window.document.querySelector('.course-diagram-agency') && [...window.document.querySelectorAll('details summary')].some((item) => item.textContent.includes('Perbesar diagram'))), `${width}px DOM: MNK201 TM1 whole agency overview precedes optional detailed diagram`);
+        check(Boolean(agencyText?.querySelectorAll('h5').length === 3 && agencyText.textContent.includes('Pelaku dan tujuan') && agencyText.textContent.includes('Dua konflik') && agencyText.textContent.includes('Cara mengurangi konflik')), `${width}px DOM: MNK201 TM1 agency transcript is grouped by actors, conflicts, and remedies`);
+        const callouts = [...window.document.querySelectorAll('.course-callout-compact')];
+        check(callouts.length >= 2 && callouts[0].textContent.includes('Nilai Intrinsik vs Laba Akuntansi') && callouts[1].textContent.includes('Fokus Latihan TM1') && callouts[1].textContent.includes('belum terverifikasi'), `${width}px DOM: MNK201 TM1 callouts use compact spacing and cautious exam label`);
+      }
       if (code === 'PJK301' || code === 'MNK201') {
         await render(React.createElement(CourseLayout, { key: `${width}-${code}-visual`, course, initialTm: 4, onBack() {} }));
         await waitFor(() => window.document.body.textContent.includes('Selesai membaca?'), `${code} TM4 reading`);

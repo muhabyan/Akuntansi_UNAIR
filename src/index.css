@@ -674,10 +674,12 @@ body.reading-outline-menu-open {
   overflow: hidden;
 }
 
-body.reading-mode-active.reading-toolbar-hidden:not(.reading-outline-menu-open):not(.reading-utility-panel-open) .reading-toolbar {
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-0.5rem);
+@media (min-width: 768px) {
+  body.reading-mode-active.reading-toolbar-hidden:not(.reading-outline-menu-open):not(.reading-utility-panel-open) .reading-toolbar {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.5rem);
+  }
 }
 
 body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-open) .mobile-utility-launcher:focus {

@@ -317,7 +317,7 @@ function ReadingPanel({
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <div className="reading-toolbar sticky top-[calc(4.25rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-200/90 bg-white/95 p-1.5 shadow-sm shadow-slate-900/5 backdrop-blur-md transition-[opacity,transform] duration-200 dark:border-gray-700/90 dark:bg-gray-900/95 dark:shadow-black/20 md:top-[4.75rem]">
+        <div className="reading-toolbar relative z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-200/90 bg-white/95 p-1.5 shadow-sm shadow-slate-900/5 backdrop-blur-md transition-[opacity,transform] duration-200 dark:border-gray-700/90 dark:bg-gray-900/95 dark:shadow-black/20 md:sticky md:top-[4.75rem]">
           <button
             ref={mobileOutlineTriggerRef}
             type="button"

@@ -1,5 +1,34 @@
 import type { FigureMobileFlow } from '../../types';
 
+export function AgencyMobileOverview() {
+  return (
+    <section aria-label="Ringkasan visual teori keagenan pada layar sempit" className="mb-3 rounded-xl border border-slate-200 bg-white p-3 text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 md:hidden">
+      <h4 className="text-base font-bold">Teori keagenan: gambaran utuh</h4>
+      <p className="mt-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">Pemegang saham terhubung dengan dua pihak yang kepentingannya bisa berbeda.</p>
+      <div className="mt-3 rounded-lg border border-sky-300 bg-sky-50 p-2.5 text-center dark:border-sky-700 dark:bg-sky-950/50">
+        <strong className="block text-sm text-sky-900 dark:text-sky-100">Pemegang saham</strong>
+        <span className="text-sm text-slate-700 dark:text-slate-300">Tujuan: nilai saham dan dividen</span>
+      </div>
+      <div className="grid grid-cols-2 gap-2 py-2 text-center text-sm font-bold leading-snug text-rose-800 dark:text-rose-200" aria-hidden="true">
+        <span className="border-b-2 border-dashed border-amber-500 pb-1">↓ Konflik 1</span>
+        <span className="border-b-2 border-dashed border-violet-500 pb-1">↓ Konflik 2</span>
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        <div className="min-w-0 rounded-lg border border-amber-300 bg-amber-50 p-2.5 dark:border-amber-700 dark:bg-amber-950/40">
+          <strong className="block text-sm text-amber-950 dark:text-amber-100">Manajemen</strong>
+          <span className="text-sm leading-snug text-slate-700 dark:text-slate-300">Gaji, fasilitas, kewenangan</span>
+        </div>
+        <div className="min-w-0 rounded-lg border border-violet-300 bg-violet-50 p-2.5 dark:border-violet-700 dark:bg-violet-950/40">
+          <strong className="block text-sm text-violet-950 dark:text-violet-100">Kreditor</strong>
+          <span className="text-sm leading-snug text-slate-700 dark:text-slate-300">Keamanan pokok dan bunga</span>
+        </div>
+      </div>
+      <p className="mt-3 rounded-lg bg-slate-100 px-3 py-2 text-sm leading-relaxed text-slate-800 dark:bg-slate-800 dark:text-slate-100"><strong>Pengurang konflik:</strong> insentif berbasis saham dan pengawasan untuk manajer; debt covenants untuk melindungi kreditor.</p>
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Uraian tiap hubungan tersedia dalam “Isi diagram dalam teks” di bawah.</p>
+    </section>
+  );
+}
+
 export function SmlMobileOverview() {
   return (
     <section aria-label="Ringkasan visual SML pada layar sempit" className="mb-3 rounded-xl border border-slate-200 bg-white p-3 text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 md:hidden">

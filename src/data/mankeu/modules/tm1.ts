@@ -1,6 +1,6 @@
 import type { Reading } from '../../../types';
 
-const SVG_AGENCY_GOVERNANCE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+const SVG_AGENCY_GOVERNANCE = `<svg class="course-diagram-svg course-diagram-agency" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
   <defs>
     <linearGradient id="bgMk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
     <linearGradient id="shGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
@@ -67,7 +67,7 @@ export const TM1_READING: Reading = {
   tm: 1,
   title: 'An Overview of Financial Management, Corporate Goals, & Agency Theory',
   ref: 'Brigham & Houston (Fundamentals of Financial Management 16e/2022 Ch. 1) | Silabus FEB UNAIR 2026 | Jensen & Meckling (1976)',
-  intro: 'TM 1 membahas dasar-dasar manajemen keuangan: apa sih sebenarnya tugas seorang CFO, bedanya Treasurer sama Controller, kenapa bentuk badan usaha (Perseorangan, CV, PT) itu penting buat keputusan keuangan, dan yang paling sering keluar di ujian — Teori Keagenan (Agency Theory). Intinya, pemegang saham dan manajer itu punya kepentingan beda, dan perusahaan harus punya mekanisme supaya manajer nggak seenaknya sendiri.',
+  intro: 'TM 1 membahas dasar-dasar manajemen keuangan: tugas seorang CFO, perbedaan Treasurer dan Controller, pengaruh bentuk badan usaha (Perseorangan, CV, PT) pada keputusan keuangan, serta Teori Keagenan (Agency Theory). Intinya, pemegang saham dan manajer dapat memiliki kepentingan berbeda, sehingga perusahaan memerlukan mekanisme untuk menyelaraskannya.',
   objectives: [
     'Paham 3 bidang utama keuangan (Corporate Finance, Pasar Modal, Investasi) dan bedanya tugas Treasurer vs Controller.',
     'Tahu kelebihan-kekurangan tiap bentuk badan usaha: soal tanggung jawab hukum (unlimited vs limited liability) dan pajaknya.',
@@ -82,35 +82,47 @@ export const TM1_READING: Reading = {
       kind: 'figure',
       caption: 'Gambar 1.1: Segitiga konflik keagenan dan cara perusahaan mengatasinya.',
       svg: SVG_AGENCY_GOVERNANCE,
-      transcript: [
-        "1. PEMEGANG SAHAM (PRINCIPAL)",
-        "Tujuan: Maksimalkan Nilai Saham & Dividen",
-        "2. MANAJEMEN (AGENT)",
-        "Tujuan: Gaji, Fasilitas, & Kekuasaan",
-        "3. KREDITOR / PERBANKAN",
-        "Tujuan: Keamanan Pokok & Bunga Utang",
-        "Konflik 1: Saham vs Manajer",
-        "Konflik 2: Saham vs Kreditor",
-        "1. KOMPENSASI BERBASIS KINERJA (ESOP)",
-        "Memberikan opsi saham kepada direksi agar kepentingan manajer sejalan dengan pemegang saham untuk memacu harga saham.",
-        "2. PENGAWASAN DEWAN KOMISARIS INDEPENDEN",
-        "Audit eksternal independen dan komite audit untuk membatasi pengeluaran fasilitas berlebihan (Perquisites) oleh direksi.",
-        "3. PERJANJIAN PEMBATASAN UTANG (DEBT COVENANTS)",
-        "Kreditor mensyaratkan batas rasio leverage (DER < 2x) & saldo kas minimum sebelum perusahaan boleh membagikan dividen tunai.",
-        "Mekanisme tata kelola yang efektif menekan Biaya Keagenan (Agency Cost) dan memaksimalkan nilai intrinsik perusahaan."
+      altText: 'Segitiga pemegang saham, manajemen, dan kreditor. Konflik pemegang saham dengan manajer dan kreditor dapat dikurangi melalui insentif berbasis saham, pengawasan independen, dan perjanjian pembatasan utang.',
+      transcriptSections: [
+        {
+          title: 'Pelaku dan tujuan',
+          items: [
+            'Pemegang saham (principal): mengejar nilai saham dan dividen.',
+            'Manajemen (agent): menerima gaji, fasilitas, dan kewenangan dalam mengelola perusahaan.',
+            'Kreditor atau bank: mengutamakan keamanan pokok dan bunga utang.'
+          ]
+        },
+        {
+          title: 'Dua konflik',
+          items: [
+            'Pemegang saham vs manajer: keputusan dan fasilitas manajer bisa mengurangi nilai bagi pemilik.',
+            'Pemegang saham vs kreditor: pemilik dapat memilih risiko atau dividen yang melemahkan perlindungan pemberi pinjaman.'
+          ]
+        },
+        {
+          title: 'Cara mengurangi konflik',
+          items: [
+            'Kompensasi berbasis kinerja, termasuk opsi saham (ESOP), dapat menyelaraskan insentif manajer dan pemegang saham.',
+            'Komisaris independen, komite audit, dan audit eksternal membantu mengawasi pengeluaran fasilitas berlebihan.',
+            'Debt covenants dapat menetapkan batas leverage dan kas minimum sebelum pembagian dividen. DER < 2× pada gambar adalah contoh batas kontrak, bukan ketentuan umum.',
+            'Tata kelola yang efektif bertujuan mengurangi biaya keagenan dan menjaga nilai intrinsik perusahaan.'
+          ]
+        }
       ]
     },
     {
       kind: 'callout',
       variant: 'key',
       title: 'Poin Paling Penting: Nilai Intrinsik vs Laba Akuntansi',
+      compact: true,
       text: '1. **Tujuan utama** manajemen keuangan bukan sekadar cari laba, tapi meningkatkan nilai intrinsik saham jangka panjang (Shareholder Wealth Maximization).\n2. **Nilai Intrinsik** itu perkiraan nilai "asli" suatu saham berdasarkan arus kas bebas (Free Cash Flow) dan risiko perusahaan di masa depan — bukan cuma angka di layar bursa.\n3. **Kenapa laba akuntansi bisa menipu?** Karena laba bersih (Net Income) nggak memperhitungkan nilai waktu uang, nggak memperhitungkan risiko, dan bisa dimanipulasi lewat kebijakan akuntansi (misal: menunda biaya R&D biar laba tahun ini keliatan gede).'
     },
     {
       kind: 'callout',
       variant: 'info',
-      title: 'Yang Sering Keluar di Ujian FEB UNAIR',
-      text: '1. **Teori Keagenan**: Dosen suka nanya kenapa manajer bisa bertindak nggak sesuai kepentingan pemegang saham, dan apa solusinya (Stock Options, Performance Shares, Vesting Period).\n2. **Valuasi Saham**: Soal tentang kapan saham undervalued vs overvalued sering muncul — paham konsep Harga Pasar vs Nilai Intrinsik itu wajib.\n3. **Bentuk Badan Usaha**: Bedain tanggung jawab hukum (Unlimited Liability di CV vs Limited Liability di PT) dan masalah pajak berganda (Double Taxation) di PT.'
+      title: 'Fokus Latihan TM1: Keagenan, Valuasi, dan Bentuk Usaha',
+      compact: true,
+      text: 'Konsep berikut dibahas di TM1 dan layak dilatih; frekuensinya dalam soal UTS dosen belum terverifikasi.\n\n1. **Teori Keagenan**: Jelaskan mengapa kepentingan manajer dapat berbeda dari pemegang saham dan bagaimana opsi saham, saham berbasis kinerja, serta periode vesting dapat membantu.\n2. **Valuasi Saham**: Bandingkan harga pasar dengan nilai intrinsik untuk menjelaskan kapan saham dinilai undervalued atau overvalued.\n3. **Bentuk Badan Usaha**: Bandingkan tanggung jawab hukum pada CV dan PT, serta kemungkinan pajak berganda pada dividen PT.'
     },
     {
       kind: 'h2',
