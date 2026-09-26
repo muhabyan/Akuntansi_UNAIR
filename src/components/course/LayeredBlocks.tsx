@@ -60,7 +60,11 @@ export function LayeredSection({ title, layer, source, children }: { title?: str
   );
 }
 
-const GIST_LABEL = '[&_p>strong:first-child]:mb-0.5 [&_p>strong:first-child]:block [&_p>strong:first-child]:text-[13px] [&_p>strong:first-child]:font-semibold [&_p>strong:first-child]:text-gray-500 dark:[&_p>strong:first-child]:text-gray-400';
+const GIST_LABEL = '[&_p>strong:first-child]:mb-1 [&_p>strong:first-child]:block [&_p>strong:first-child]:text-[11px] [&_p>strong:first-child]:font-semibold [&_p>strong:first-child]:uppercase [&_p>strong:first-child]:tracking-[0.08em] [&_p>strong:first-child]:text-gray-600 dark:[&_p>strong:first-child]:text-gray-400';
+
+/** A field label (stacked-table column name, callout label): small, uppercase and letter-spaced, so labels differ
+ *  from the near-black values by shape as well as colour; gray-600 keeps AA contrast on tinted boxes too. */
+export const FIELD_LABEL = 'text-[11px] font-semibold uppercase tracking-[0.08em] text-gray-600 dark:text-gray-400';
 
 const CALLOUT_STYLE: Partial<Record<CalloutVariant, { box: string; Icon?: typeof Info; icon?: string }>> = {
   // Intinya: an inline left rule with a light tint, its leading **Intinya:** as a small label line. Definisi/Aturannya
@@ -94,7 +98,7 @@ export function LayeredCallout({ variant, title, text }: { variant: CalloutVaria
       )}
       <div className={Icon ? 'flex gap-2.5' : undefined}>
         {Icon && <Icon size={17} aria-hidden="true" className={`mt-1 shrink-0 ${style.icon}`} />}
-        <div className="min-w-0 flex-1 [&_p]:leading-[1.7]">{renderText(text)}</div>
+        <div className="reading-ink min-w-0 flex-1 [&_p]:leading-[1.7]">{renderText(text)}</div>
       </div>
     </div>
   );
@@ -134,7 +138,7 @@ export function SelfCheckCard({ question, signal, children }: { question: string
   return (
     <div className="layered-self-check rounded-xl border border-gray-200 p-4 dark:border-gray-700 md:p-5">
       {/* An empty question means the task is stated just above the card (e.g. a scenario's facts table). */}
-      {question && <div className={`max-w-[70ch] text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(question)}</div>}
+      {question && <div className={`reading-ink max-w-[70ch] text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(question)}</div>}
       <label className={`block text-xs font-bold text-gray-600 dark:text-gray-300 ${question ? 'mt-3' : ''}`}>
         <span className="flex items-center gap-1.5"><PencilLine size={14} aria-hidden="true" /> Tulis jawabanmu dulu</span>
         <textarea
@@ -196,18 +200,19 @@ export function StackedTable({ headers, rows, label, caption, warning = false }:
   const list = (
     <div className={`layered-stacked-table divide-y divide-gray-200 dark:divide-gray-700/70 ${flat ? 'border-y border-gray-200 dark:border-gray-700/70' : ''}`}>
       {rows.map((row, r) => (
-        <div key={r} className={flat ? 'py-3' : 'px-4 py-4'}>
+        <div key={r} className={flat ? 'py-4' : 'px-4 py-5'}>
           {/* Layered cards leave the first column unlabelled (the package's rule); elsewhere every header stays visible. */}
-          {!layered && headers[0]?.trim() && <div className="text-xs font-medium text-gray-500 dark:text-gray-400">{headers[0]}</div>}
-          <div className={`font-semibold text-gray-900 dark:text-gray-100 ${body}`}>{cellText(row[0] ?? '')}</div>
-          <dl className="mt-2 space-y-2">
+          {!layered && headers[0]?.trim() && <div className={`mb-1 ${FIELD_LABEL}`}>{headers[0]}</div>}
+          {/* The card title: a step larger and bolder than the values below it. */}
+          <div className="reading-ink text-[17px] font-bold leading-snug text-gray-900 dark:text-gray-100 [&_p]:leading-snug">{cellText(row[0] ?? '')}</div>
+          <dl className="mt-3 space-y-2.5">
             {headers.slice(1).map((header, c) =>
               !(row[c + 1] ?? '').trim() ? null : isSource(header) ? (
                 <dd key={c} className="text-xs text-gray-500 dark:text-gray-400"><InlineMarkdown text={header} />: {row[c + 1]}</dd>
               ) : (
                 <div key={c}>
-                  <dt className="text-xs font-medium text-gray-500 dark:text-gray-400">{headerText(header)}</dt>
-                  <dd className={`text-gray-800 dark:text-gray-200 ${body}`}>{cellText(row[c + 1] ?? '')}</dd>
+                  <dt className={FIELD_LABEL}>{headerText(header)}</dt>
+                  <dd className={`reading-ink mt-0.5 text-gray-800 dark:text-gray-200 ${body}`}>{cellText(row[c + 1] ?? '')}</dd>
                 </div>
               ),
             )}

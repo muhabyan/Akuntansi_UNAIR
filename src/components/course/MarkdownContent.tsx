@@ -13,7 +13,7 @@ function InlineCode({ node: _node, inline, ...props }: any) {
   const text = typeof props.children === 'string' ? props.children : '';
   if (layered && /^\(.*\)$/.test(text) && !text.includes('\n')) {
     return (
-      <span className="layered-source-chip mx-0.5 inline-block max-w-full rounded bg-gray-100 px-1.5 py-px font-sans text-[11px] font-medium leading-5 text-gray-500 [box-decoration-break:clone] dark:bg-gray-800/70 dark:text-gray-400">
+      <span className="layered-source-chip mx-0.5 inline-block max-w-full rounded bg-gray-100 px-1.5 py-px font-sans text-[11px] font-medium leading-5 text-gray-600 [box-decoration-break:clone] dark:bg-gray-800/70 dark:text-gray-400">
         {text}
       </span>
     );
