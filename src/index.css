@@ -1060,3 +1060,11 @@ html.dark table td {
     padding-bottom: calc(7.5rem + env(safe-area-inset-bottom));
   }
 }
+
+/* Layered readings sit open on the page (no section cards). Where the page has no side margin, keep their text clear
+   of the desktop utility launchers, which park at the left edge by default (40px at x = 16px). */
+@media (min-width: 768px) and (max-width: 1375px) {
+  .reading-layout:has(.layered-section) > article {
+    padding-left: 3.5rem;
+  }
+}
