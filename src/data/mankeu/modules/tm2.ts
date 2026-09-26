@@ -80,33 +80,56 @@ export const TM2_READING: Reading = {
   tm: 2,
   title: 'Analysis of Financial Statements, Financial Ratio Systems, & The DuPont Identity',
   ref: 'Brigham & Houston (Fundamentals of Financial Management 16e/2022 Ch. 3 & Ch. 4) | Silabus FEB UNAIR 2026',
-  intro: 'Modul TM 2 membedah arsitektur diagnostik kinerja keuangan korporasi: pembacaan kritis atas 4 laporan keuangan utama, pemisahan arus kas akuntansi dengan Free Cash Flow (FCF) dan Net Operating Working Capital (NOWC), kalkulasi dan analisis 5 kelompok rasio keuangan (Likuiditas, Manajemen Aset, Manajemen Utang/Solvabilitas, Profitabilitas, dan Nilai Pasar), dekomposisi Return on Equity (ROE) melalui DuPont System 3 langkah dan 5 langkah, analisis ukuran bersama (Common-Size Statements), hingga batasan inheren analisis rasio dan praktik window dressing yang wajib diwaspadai analis keuangan profesional.',
+  intro: 'TM 2 ini tentang cara "membaca" kesehatan keuangan perusahaan lewat 4 laporan keuangan utama, menghitung Free Cash Flow (FCF), dan menguasai 5 kelompok rasio keuangan (Likuiditas, Manajemen Aset, Utang, Profitabilitas, Nilai Pasar). Yang paling penting dan paling sering keluar ujian: Sistem DuPont 3-langkah dan 5-langkah buat membongkar dari mana ROE perusahaan sebenarnya berasal. Plus, kamu juga harus tahu trik window dressing yang sering dipakai perusahaan buat mempercantik laporan keuangannya.',
   objectives: [
-    'Memahami struktur dan keterkaitan 4 laporan keuangan korporasi (Neraca, Laba Rugi, Arus Kas, dan Ekuitas Pemegang Saham).',
-    'Menghitung dan membedakan Net Operating Profit After Taxes (NOPAT), Net Operating Working Capital (NOWC), dan Free Cash Flow (FCF).',
-    'Menguasai kalkulasi, interpretasi, dan tolok ukur industri untuk 5 kelompok rasio keuangan korporasi.',
-    'Mendekonstruksi ROE melalui 3-Step DuPont (NPM × TATO × EM) dan 5-Step DuPont untuk mengisolasi beban pajak dan beban bunga.',
-    'Menyusun dan menganalisis laporan keuangan ukuran bersama (Common-Size Balance Sheet & Income Statement) serta analisis tren persentase.',
-    'Mendiagnosis Economic Value Added (EVA) dan Market Value Added (MVA) sebagai indikator penciptaan nilai riil bagi pemegang saham.',
-    'Mengidentifikasi keterbatasan data rasio historis, efek inflasi, distorsi musiman, serta manipulasi akuntansi (Window Dressing).'
+    'Paham 4 laporan keuangan utama (Neraca, Laba Rugi, Arus Kas, Ekuitas) dan hubungannya satu sama lain.',
+    'Bisa hitung NOPAT, NOWC, dan Free Cash Flow (FCF) — bedain mana kas operasional, mana kas pendanaan.',
+    'Hafal dan bisa pakai 5 kelompok rasio keuangan, plus tahu benchmark industrinya.',
+    'Bisa bongkar ROE pakai DuPont 3-Langkah (NPM × TATO × EM) dan 5-Langkah (tambah Tax Burden dan Interest Burden).',
+    'Paham cara bikin laporan keuangan ukuran bersama (Common-Size Statements) buat bandingin perusahaan beda ukuran.',
+    'Bisa hitung EVA dan MVA — dua ukuran apakah manajemen beneran nambah nilai buat pemegang saham.',
+    'Tahu keterbatasan analisis rasio: efek konglomerasi, window dressing, beda kebijakan akuntansi, dan inflasi.'
   ],
   blocks: [
     {
       kind: 'figure',
       caption: 'Gambar 2.1: Pohon Dekomposisi Sistem DuPont 3 Pilar (Return on Equity).',
-      svg: SVG_DUPONT_SYSTEM
+      svg: SVG_DUPONT_SYSTEM,
+      transcript: [
+        "RETURN ON EQUITY (ROE)",
+        "ROE = Net Profit Margin × Asset Turnover × Equity Multiplier",
+        "1. NET PROFIT MARGIN (NPM)",
+        "Laba Bersih ÷ Penjualan",
+        "Mengukur: Profitabilitas Operasional",
+        "Efisiensi pengendalian beban pokok (HPP)",
+        "Strategi penetapan harga jual & biaya pajak",
+        "Efisiensi Biaya Produksi",
+        "2. TOTAL ASSET TURNOVER (TATO)",
+        "Penjualan ÷ Total Aset",
+        "Mengukur: Efisiensi Utilisasi Aset",
+        "Perputaran piutang, kas, & stok gudang",
+        "Optimalisasi kapasitas utilisasi pabrik",
+        "Produktivitas Modal Kerja",
+        "3. EQUITY MULTIPLIER (LEVERAGE)",
+        "Total Aset ÷ Total Ekuitas",
+        "Mengukur: Tingkat Leverage Finansial",
+        "Pemanfaatan utang untuk mendongkrak laba",
+        "Menimbang risiko insolvensi vs tax shield",
+        "Struktur Modal Pengungkit",
+        "DuPont membongkar apakah lonjakan ROE didorong oleh keunggulan produk (NPM), kecepatan operasi (TATO), atau risiko utang (Leverage)."
+      ]
     },
     {
       kind: 'callout',
       variant: 'key',
-      title: 'Prinsip Kritis Analisis Keuangan: Bukan Sekadar Menghitung Angka',
-      text: '1. Rasio Hanyalah Gejala Awal: Nilai rasio finansial bertindak seperti termometer bagi dokter. Nilai yang abnormal mengindikasikan adanya penyakit operasional, pembiayaan, atau likuiditas yang memerlukan investigasi kualitatif mendalam.\n2. Wajib Menggunakan Tolok Ukur (Benchmark): Suatu rasio tidak bermakna tanpa pembanding. Analisis harus menggabungkan Analisis Lintas Bagian (Cross-Sectional / Benchmarking terhadap rata-rata industri) dan Analisis Deret Waktu (Time-Series / Trend Analysis 3–5 tahun terakhir).\n3. Arus Kas vs Laba Bersih: Perusahaan yang membukukan laba akrual positif bisa tetap mengalami kebangkrutan likuiditas jika kas operasional (Free Cash Flow) negatif akibat tumpukan piutang macet dan stok barang usang.'
+      title: 'Prinsip Dasar Analisis Keuangan: Jangan Asal Hitung',
+      text: '1. **Rasio itu cuma gejala, bukan diagnosis**: Nilai rasio itu kayak termometer buat dokter. Angka yang aneh cuma nunjukin "ada yang sakit" — kamu tetap perlu investigasi lebih lanjut buat tahu penyebabnya.\n2. **Selalu bandingin**: Satu angka rasio nggak ada artinya kalau berdiri sendiri. Kamu harus bandingin sama rata-rata industri (Cross-Sectional) dan sama data perusahaan itu sendiri 3–5 tahun terakhir (Time-Series / Trend Analysis).\n3. **Kas lebih penting dari laba**: Perusahaan bisa aja punya laba akrual positif di atas kertas, tapi tetep bangkrut kalau Free Cash Flow-nya negatif karena piutang macet dan stok numpuk.'
     },
     {
       kind: 'callout',
       variant: 'info',
-      title: 'Sorotan Silabus & Tip Ujian Tengah Semester (UTS) FEB UNAIR',
-      text: '1. Perhatian Khusus Rumus Perputaran Persediaan: Buku Brigham & Houston menggunakan Penjualan / Persediaan pada rasio umum, namun mencatat bahwa Harga Pokok Penjualan (HPP) / Persediaan lebih akurat secara akuntansi. Pahami instruksi spesifik soal ujian.\n2. Formula Equity Multiplier: Hafalkan hubungan matematis EM = Total Aset / Total Ekuitas = 1 / (1 - Debt Ratio) = 1 + Debt-to-Equity Ratio.\n3. Perbedaan NOWC vs Working Capital Tradisional: Notes Payable (wesel bayar bunga) adalah utang berbunga/keputusan pendanaan, bukan kewajiban operasional, sehingga tidak boleh mengurangi Net Operating Working Capital (NOWC).'
+      title: 'Tips Ujian FEB UNAIR',
+      text: '1. **Hati-hati rumus Inventory Turnover**: Buku Brigham pakai Penjualan / Persediaan di rasio umum, tapi juga nyebut HPP / Persediaan lebih akurat. Baca instruksi soal baik-baik.\n2. **Hafalin hubungan Equity Multiplier**: EM = Total Aset / Total Ekuitas = 1 / (1 − Debt Ratio) = 1 + D/E Ratio. Ini sering muncul di soal.\n3. **NOWC ≠ Working Capital biasa**: Notes Payable (utang wesel berbunga) itu utang pendanaan, bukan utang operasional. Jadi nggak boleh dikurangin waktu hitung NOWC!'
     },
     {
       kind: 'h2',
@@ -114,7 +137,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Laporan keuangan tahunan (*Annual Report*) yang diterbitkan korporasi publik memuat empat dokumen akuntansi mendasar yang saling berkorelasi secara integral:'
+      text: 'Laporan keuangan tahunan (Annual Report) perusahaan itu isinya 4 dokumen utama yang saling berhubungan:'
     },
     {
       kind: 'table',
@@ -142,7 +165,7 @@ export const TM2_READING: Reading = {
           '4. Laporan Ekuitas Pemegang Saham',
           '⏳ **Sepanjang Periode Waktu**\nPerubahan komponen modal sendiri.',
           'Melacak penambahan modal disetor, laba ditahan yang diinvestasikan kembali, dan dividen yang dibayarkan.',
-          '$\\text{Laba Ditahan Akhir} = \\text{Laba Ditahan Awal} + \\text{Laba Bersih} - \\text{Dividen Saham Biasa & Preferen}$'
+          'Laba Ditahan Akhir = Laba Ditahan Awal + Laba Bersih − Dividen Saham Biasa dan Preferen'
         ]
       ],
       caption: 'Tabel 2.1: Karakteristik dan keterkaitan empat laporan keuangan korporasi fundamental.'
@@ -153,7 +176,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Dalam manajemen keuangan korporasi, nilai intrinsik perusahaan tidak ditentukan oleh laba akrual (Net Income), melainkan oleh Free Cash Flow (FCF) — yaitu kas bersih yang dihasilkan operasi yang benar-benar bebas dibagikan kepada seluruh penyedia modal (pemegang saham dan kreditor) setelah mendanai seluruh investasi aset modal dan modal kerja yang diperlukan.'
+      text: 'Di manajemen keuangan, yang menentukan nilai perusahaan itu bukan laba akrual (Net Income), tapi Free Cash Flow (FCF) — yaitu kas bersih dari operasi yang beneran bebas buat dibagiin ke pemegang saham dan kreditor, setelah semua investasi aset dan modal kerja terpenuhi.'
     },
     {
       kind: 'formula',
@@ -192,7 +215,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Analisis rasio mengelompokkan metrik keuangan ke dalam lima dimensi evaluasi kinerja yang komprehensif:'
+      text: 'Analisis rasio itu dibagi jadi 5 kelompok besar:'
     },
     {
       kind: 'h3',
@@ -200,7 +223,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Rasio likuiditas menguji kemampuan entitas bisnis dalam memenuhi kewajiban jangka pendek yang jatuh tempo dalam waktu kurang dari 1 tahun:'
+      text: 'Rasio likuiditas ngecek satu hal: sanggup nggak perusahaan bayar utang jangka pendek yang jatuh tempo kurang dari 1 tahun?'
     },
     {
       kind: 'table',
@@ -227,7 +250,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Mengukur seberapa efisien dan produktif manajemen memanfaatkan setiap rupiah dana yang tertanam dalam aktiva untuk menghasilkan penjualan:'
+      text: 'Kelompok ini ngukur seberapa produktif perusahaan ngelola asetnya buat menghasilkan pendapatan:'
     },
     {
       kind: 'table',
@@ -266,7 +289,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Menguji struktur modal, proporsi pendanaan dari kreditor vs pemegang saham, serta kapasitas perusahaan membayar beban bunga dan cicilan pokok utang jangka panjang:'
+      text: 'Kelompok ini ngecek seberapa besar utang perusahaan dan sanggup nggak bayar bunga plus cicilan pokoknya:'
     },
     {
       kind: 'table',
@@ -311,7 +334,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Mengevaluasi hasil akhir gabungan dari kebijakan likuiditas, manajemen aset, dan struktur modal terhadap perolehan laba:'
+      text: 'Rasio ini nunjukin hasil akhir gabungan dari semua kebijakan di atas — seberapa banyak laba yang bisa dihasilin:'
     },
     {
       kind: 'table',
@@ -351,7 +374,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Menghubungkan harga saham perusahaan di bursa efek dengan laba per saham dan nilai buku ekuitas, mencerminkan ekspektasi masa depan para investor pasar modal:'
+      text: 'Kelompok ini nyambungin harga saham di bursa sama kinerja keuangan internal perusahaan:'
     },
     {
       kind: 'table',
@@ -381,7 +404,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Sistem DuPont dikembangkan oleh DuPont Corporation pada dekade 1920-an untuk membedah pendorong utama Return on Equity (ROE). Tanpa DuPont, peningkatan ROE bisa disalahartikan sebagai prestasi manajemen, padahal semata-mata dipicu oleh penambahan utang berbahaya.'
+      text: 'Sistem DuPont ini dikembangin oleh perusahaan DuPont di tahun 1920-an buat jawab pertanyaan penting: ROE perusahaan naik itu karena emang bagus operasinya, atau cuma karena nambah utang?'
     },
     {
       kind: 'h3',
@@ -399,7 +422,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Analisis sekuritas modern mengembangkan model 5 langkah yang membedah Net Profit Margin secara mendalam menjadi efisiensi operasional murni (Operating Margin), beban bunga utang (Interest Burden), dan beban pajak penghasilan (Tax Burden):'
+      text: 'DuPont 5-Langkah ini versi lebih detail — bongkar Net Profit Margin jadi 3 bagian: efisiensi operasi (Operating Margin), beban bunga (Interest Burden), dan beban pajak (Tax Burden):'
     },
     {
       kind: 'formula',
@@ -424,7 +447,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Ketika membandingkan dua perusahaan dengan ukuran skala yang berbeda (misalnya Indofood vs UMKM makanan), perbandingan nominal rupiah mentah menjadi bias dan tidak valid. Solusinya adalah menyusun Laporan Keuangan Ukuran Bersama (*Common-Size Statements*):'
+      text: 'Kalau mau bandingin dua perusahaan yang ukurannya jauh beda (misal Indofood vs UMKM makanan), bandingin angka rupiah mentah itu nggak adil. Solusinya: bikin semua angka jadi persentase!'
     },
     {
       kind: 'ul',
@@ -465,7 +488,7 @@ export const TM2_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Seorang manajer keuangan atau analis kredit profesional tidak boleh mempercayai angka rasio secara membabi-buta karena terdapat berbagai keterbatasan struktural dan distorsi akuntansi:'
+      text: 'Jangan langsung percaya angka rasio mentah-mentah! Ada beberapa jebakan yang harus kamu waspadai:'
     },
     {
       kind: 'ul',

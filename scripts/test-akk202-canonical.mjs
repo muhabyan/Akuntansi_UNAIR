@@ -6,10 +6,13 @@ import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
 import katex from 'katex';
 
-// TM01 is canonical and frozen: its source must stay byte-identical (line endings normalized).
-const TM1_SHA256 = 'cf859a9796fb84377e1f0188164a783cfc5f5a2b812dafd965bc4a336853ed35';
+// TM01 baseline includes the audited KaTeX repair. The figure's new text version
+// is checked separately so the underlying teaching content remains frozen.
+const TM1_SHA256 = 'e24fc815cf509d893b33dd55078aba154a68cd0518283136204efbf07c3935a5';
 const tm1Source = readFileSync('src/data/akm2/modules/tm1.ts', 'utf8').replace(/\r\n/g, '\n');
-assert.equal(createHash('sha256').update(tm1Source).digest('hex'), TM1_SHA256, 'AKK202 TM1 is frozen and must not change');
+const tm1WithoutTranscript = tm1Source.replace(/\n {6}transcript: \[\n[\s\S]*?\n {6}\],(?=\n {6}caption:)/, '');
+assert.notEqual(tm1WithoutTranscript, tm1Source, 'AKK202 TM1 figure must have a text version');
+assert.equal(createHash('sha256').update(tm1WithoutTranscript).digest('hex'), TM1_SHA256, 'AKK202 TM1 teaching content is frozen');
 
 const bundle = await build({
   entryPoints: ['src/data/akm2/akm2Data.ts'], bundle: true, write: false,
@@ -18,6 +21,10 @@ const bundle = await build({
 const { AKK202_READINGS: readings } = await import(
   `data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`
 );
+assert.equal(readings[1].blocks.find((block) => block.kind === 'figure')?.transcript?.length, 3, 'AKK202 TM1 figure has three readable classification paths');
+for (const block of readings[1].blocks.flatMap((item) => item.kind === 'solution-reveal' ? item.blocks : [item])) {
+  if (block.kind === 'formula') katex.renderToString(block.text, { throwOnError: true, displayMode: true, strict: 'error' });
+}
 
 const flatten = (blocks) => blocks.flatMap((block) => [block, ...('blocks' in block ? flatten(block.blocks) : [])]);
 // id-ID amounts with a currency prefix: "€14.833", "R$11.000", "Rp464.285.714", "¥1.100".
@@ -566,9 +573,10 @@ const tm6 = checkReading(6, [
 
 // ---------------------------------------------------------------- TM07
 const tm7 = checkReading(7, [
-  'E13.4', 'E13.5', 'E13.6', 'Foreman Cleaners', 'Spencer plc', 'RPP AKM II', 'pertemuan 9–10', 'pertemuan 7',
+  'E13.4', 'E13.5', 'E13.6', 'Foreman Cleaners', 'Spencer plc', 'RPP AKM II', 'pertemuan 9–10', 'Cakupan UTS belum terkonfirmasi',
   'Kieso p. 1171', 'faktor tabel nilai kini 5 desimal', 'menyerap selisih pembulatan', 'IFRIC 19', 'Standards Comparison',
 ]);
+assert.ok(!JSON.stringify(tm7).includes('Soal Dosen'), 'TM7: latihan buku tidak boleh diatribusikan ke dosen tanpa bukti kelas');
 {
   const solution = (title) => {
     const block = flatten(tm7.blocks).find((b) => b.kind === 'solution-reveal' && b.title.includes(title));

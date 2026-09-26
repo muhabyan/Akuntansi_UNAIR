@@ -236,6 +236,8 @@ const tm4 = checkReading(
     'PMK 72/2023',
     'PMK 66/2023',
     'PMK 79/2008',
+    'PER-8/PJ/2025',
+    'rata-rata penghasilan bruto 12 bulan terakhir',
     'Maret 2026',
     '41.666.666,67',
     '958.333.333,33',
@@ -250,7 +252,8 @@ const tm4 = checkReading(
     '121.500.000',
   ],
   [
-    /KEP-220\/PJ\/2002(?!.*(?:tidak berlaku|digantikan|bukan lagi))/i,
+    /KEP-220\/PJ\/2002.{0,40}(?:masih|tetap) berlaku/i,
+    'Bukan objek PPh bagi pegawai karena merupakan sarana/peralatan kerja',
   ]
 );
 
@@ -361,8 +364,8 @@ const tm7 = checkReading(
   ]
 );
 const tm7Figure = tm7.blocks.find((block) => block.kind === 'figure');
-assert.ok(tm7Figure?.svg.includes('Sebelum SPT dalam batas normal'), 'TM07 SVG uses neutral rollover period');
-assert.ok(!tm7Figure.svg.includes('Jan-Feb'), 'TM07 SVG does not state universal Jan-Feb');
+assert.ok(tm7Figure?.overview?.cards.some((card) => card.items.some((item) => item.includes('Sebelum SPT dalam batas normal'))), 'TM07 overview uses neutral rollover period');
+assert.ok(!JSON.stringify(tm7Figure?.overview).includes('Jan-Feb'), 'TM07 overview does not state universal Jan-Feb');
 assert.ok(tm7.objectives.some((objective) => objective.includes('Pasal 25 ayat (2) UU PPh')), 'TM07 rollover objective cites general rule');
 assert.ok(!JSON.stringify(tm7).includes('Pasal 229'), 'TM07 does not cite BUMN/BUMD rule for general rollover');
 const rolloverCallout = tm7.blocks.find((block) => block.kind === 'callout' && block.text.includes('Masa Transisi Awal Tahun'));

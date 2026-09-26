@@ -2,7 +2,7 @@ import type { ContentBlock, Reading } from '../../../types';
 
 const FOREMAN_BOND_DISCOUNT_CASE: ContentBlock = {
   kind: 'solution-reveal',
-  title: 'Soal Dosen — Foreman Cleaners: Obligasi Diskonto Semesteran (E13.5 dengan data E13.4, Kieso p. 1150)',
+  title: 'Latihan Kieso — Foreman Cleaners: Obligasi Diskonto Semesteran (E13.5 dengan data E13.4, Kieso p. 1150)',
   prompt: 'Data E13.4: Foreman Cleaners menerbitkan obligasi **€800.000**, bunga kupon 10% per tahun dibayar setiap **1 Juli dan 1 Januari**, jangka waktu 20 tahun, tertanggal **1 Januari 2025**, pada harga **84,95** untuk menghasilkan yield 12%. E13.5: dengan metode bunga efektif, catat (a) penerbitan 1 Januari 2025, (b) pembayaran bunga dan amortisasi 1 Juli 2025, dan (c) akrual bunga dan amortisasi 31 Desember 2025.',
   blocks: [
     {
@@ -46,7 +46,7 @@ const FOREMAN_BOND_DISCOUNT_CASE: ContentBlock = {
 
 const SPENCER_AMORTIZATION_SCHEDULE_CASE: ContentBlock = {
   kind: 'solution-reveal',
-  title: 'Soal Dosen — Spencer plc: Tarif Efektif dan Skedul Amortisasi (E13.6, Kieso p. 1150)',
+  title: 'Latihan Kieso — Spencer plc: Tarif Efektif dan Skedul Amortisasi (E13.6, Kieso p. 1150)',
   prompt: 'Spencer plc menjual obligasi 10% bernilai jatuh tempo **£3.000.000** seharga **£2.783.724**. Obligasi tertanggal **1 Januari 2025**, jatuh tempo **1 Januari 2030**, bunga dibayar tahunan setiap 1 Januari. Susun skedul beban bunga dan amortisasi diskonto dengan metode bunga efektif (petunjuk: tarif efektif harus dihitung).',
   blocks: [
     { kind: 'h3', text: 'Langkah 1 — tarif efektif' },
@@ -121,7 +121,7 @@ export const TM7_READING: Reading = {
   tm: 7,
   title: 'Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar',
   ref: 'Kieso IFRS 5e Ch. 13 (pp. 1100–1170) | IFRS 9, IAS 1, IFRIC 19',
-  intro: 'TM7 membahas Kieso Bab 13: karakteristik dan jenis obligasi, penilaian dengan nilai kini, metode bunga efektif, akrual akhir tahun, penerbitan di antara tanggal bunga dan biaya penerbitan, wesel bayar jangka panjang, penghentian utang, opsi nilai wajar, serta penyajian dan analisis solvabilitas. Soal dosen E13.5 (dengan data E13.4) dan E13.6 dibahas langkah demi langkah.',
+  intro: 'TM7 membahas Kieso Bab 13: karakteristik dan jenis obligasi, penilaian dengan nilai kini, metode bunga efektif, akrual akhir tahun, penerbitan di antara tanggal bunga dan biaya penerbitan, wesel bayar jangka panjang, penghentian utang, opsi nilai wajar, serta penyajian dan analisis solvabilitas. Latihan buku E13.5 (dengan data E13.4) dan E13.6 dibahas langkah demi langkah. Cakupan obligasi untuk UTS kelas ini belum terkonfirmasi.',
   objectives: [
     'Menjelaskan perjanjian obligasi, jenis-jenis obligasi, dan hubungan tarif kupon dengan tarif efektif.',
     'Menghitung harga obligasi dari nilai kini pokok dan anuitas kupon, serta menurunkan tarif efektif dari harga.',
@@ -149,7 +149,7 @@ export const TM7_READING: Reading = {
       kind: 'callout',
       variant: 'info',
       title: 'Penempatan topik dalam RPP',
-      text: 'RPP AKM II mencantumkan liabilitas jangka panjang pada pertemuan 9–10 dengan peta bab edisi lama ("KW ch 14"). Dosen menugaskan topik ini (Kieso IFRS 5e Bab 13, soal E13.5 dan E13.6) untuk pertemuan 7.'
+      text: 'Dua RPP AKM II yang tersedia menempatkan liabilitas jangka panjang/obligasi pada pertemuan 9–10, sesudah UTS di pertemuan 8. Materi Kieso IFRS 5e Bab 13 serta latihan E13.5/E13.6 tetap tersedia di TM7 situs, tetapi belum ditemukan pengumuman atau instruksi kelas terbaru yang memastikan obligasi masuk cakupan UTS. **Cakupan UTS belum terkonfirmasi; periksa pengumuman dosen/LMS sebelum menjadikannya prioritas belajar UTS.**'
     },
 
     { kind: 'h2', text: '2. Nature of Non-Current Liabilities & Bond Types' },

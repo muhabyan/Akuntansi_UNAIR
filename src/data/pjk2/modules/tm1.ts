@@ -1,82 +1,50 @@
 import type { Reading } from '../../../types';
 
-const SVG_PPH_GENERAL_OP = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="gBlue1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="gGreen1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="gAmber1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk1)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">ARSITEKTUR KETENTUAN UMUM PPH &amp; PPH WAJIB PAJAK ORANG PRIBADI</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TM01 PPH UMUM</text>
-
-  <!-- Card 1: Konsep & Subjek/Objek -->
-  <g transform="translate(30, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gBlue1)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. KONSEP &amp; ASAS PEMAJAKAN</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="53" fill="#38bdf8" font-size="7.5" font-weight="800" text-anchor="middle">Teori SHS &amp; Asas Worldwide Income</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Konsep SHS: Income = Konsumsi + &Delta;Wealth</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• SPDN (Worldwide) vs SPLN (Sumber RI)</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Objek Reguler: 19 kelompok Pasal 4(1)</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Objek Final: Pasal 4(2) rampung seketika</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Bukan Objek: Bantuan, warisan, dividen OP</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">  (reinvestasi 3 th), laba CV modal tak terbagi</text>
-
-    <rect class="svg-badge-blue" x="12" y="185" width="241" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Pondasi Pemajakan Penghasilan</text>
-  </g>
-
-  <!-- Card 2: Biaya 3M vs Rezim Natura -->
-  <g transform="translate(315, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gGreen1)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. BIAYA 3M &amp; REZIM NATURA</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="53" fill="#34d399" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 6, 9 &amp; PMK 66/2023</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Deductible: 3M, natura huruf n, sumbangan 5%</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Non-Deductible: Dividen, premi pribadi, suap</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Rezim Baru: Deductible bagi WP &amp; Taxable OP</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Bingkisan hari raya: Bebas penuh tanpa batas</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Bingkisan non-raya &le; 3 Jt/th, olahraga &le; 1,5 Jt</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Kendaraan dinas: non-pemegang saham &le; 100 Jt</text>
-
-    <rect class="svg-badge-green" x="12" y="185" width="241" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Matching Cost &amp; Fringe Benefits</text>
-  </g>
-
-  <!-- Card 3: Penghitungan PPh OP & UMKM -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gAmber1)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. PPH OP &amp; UMKM PP 20/2026</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="53" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 17 UU HPP &amp; PP 20/2026</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Zakat PMK 114/2025: Dilarang picu rugi fiskal</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• PTKP: Diri Rp54 Jt, Kawin Rp4,5 Jt, Anak Rp4,5 Jt</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Tarif 5 Lapisan: 5%, 15%, 25%, 30%, 35%</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• UMKM PP 20/2026: Tarif 0,5% tanpa batas waktu</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Fasilitas omzet bebas: s.d. Rp500 Juta setahun</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Uji omzet 4,8 M: Wajib agregasi usaha + jasa bebas</text>
-
-    <rect class="svg-badge-amber" x="12" y="185" width="241" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Skema Umum vs Skema Final UMKM</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Penghasilan neto dihitung setelah mengurangkan biaya 3M, zakat sah, dan kompensasi rugi, kemudian dikurangi PTKP sebelum dikenakan tarif progresif Pasal 17.</text>
-</svg>`;
+const OVERVIEW_PPH_GENERAL_OP = {
+  "heading": "ARSITEKTUR KETENTUAN UMUM PPH & PPH WAJIB PAJAK ORANG PRIBADI",
+  "badge": "TM01 PPH UMUM",
+  "cards": [
+    {
+      "title": "1. KONSEP & ASAS PEMAJAKAN",
+      "subtitle": "Teori SHS & Asas Worldwide Income",
+      "items": [
+        "Konsep SHS: Income = Konsumsi + ΔWealth",
+        "SPDN (Worldwide) vs SPLN (Sumber RI)",
+        "Objek Reguler: 19 kelompok Pasal 4(1)",
+        "Objek Final: Pasal 4(2) rampung seketika",
+        "Bukan Objek: Bantuan, warisan, dividen OP (reinvestasi 3 th), laba CV modal tak terbagi"
+      ],
+      "takeaway": "Pondasi Pemajakan Penghasilan"
+    },
+    {
+      "title": "2. BIAYA 3M & REZIM NATURA",
+      "subtitle": "Pasal 6, 9 & PMK 66/2023",
+      "items": [
+        "Deductible: 3M, natura huruf n, sumbangan 5%",
+        "Non-Deductible: Dividen, premi pribadi, suap",
+        "Rezim Baru: Deductible bagi WP & Taxable OP",
+        "Bingkisan hari raya: Bebas penuh tanpa batas",
+        "Bingkisan non-raya ≤ 3 Jt/th, olahraga ≤ 1,5 Jt",
+        "Kendaraan dinas: non-pemegang saham ≤ 100 Jt"
+      ],
+      "takeaway": "Matching Cost & Fringe Benefits"
+    },
+    {
+      "title": "3. PPH OP & UMKM PP 20/2026",
+      "subtitle": "Pasal 17 UU HPP & PP 20/2026",
+      "items": [
+        "Zakat PMK 114/2025: Dilarang picu rugi fiskal",
+        "PTKP: Diri Rp54 Jt, Kawin Rp4,5 Jt, Anak Rp4,5 Jt",
+        "Tarif 5 Lapisan: 5%, 15%, 25%, 30%, 35%",
+        "UMKM PP 20/2026: Tarif 0,5% tanpa batas waktu",
+        "Fasilitas omzet bebas: s.d. Rp500 Juta setahun",
+        "Uji omzet 4,8 M: Wajib agregasi usaha + jasa bebas"
+      ],
+      "takeaway": "Skema Umum vs Skema Final UMKM"
+    }
+  ],
+  "footer": "Penghasilan neto dihitung setelah mengurangkan biaya 3M, zakat sah, dan kompensasi rugi, kemudian dikurangi PTKP sebelum dikenakan tarif progresif Pasal 17."
+};
 
 export const TM1_READING: Reading = {
   tm: 1,
@@ -95,7 +63,7 @@ export const TM1_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 1.1: Arsitektur Ketentuan Umum Pajak Penghasilan dan PPh Wajib Pajak Orang Pribadi.',
-      svg: SVG_PPH_GENERAL_OP
+      overview: OVERVIEW_PPH_GENERAL_OP
     },
     {
       kind: 'callout',
@@ -107,7 +75,7 @@ export const TM1_READING: Reading = {
       kind: 'callout',
       variant: 'info',
       title: 'Dua Posisi - Harmonisasi Regulasi Positif vs Slide Dosen',
-      text: '1. Jangka Waktu Retensi Dokumen: Slide dosen mencantumkan 10 tahun, namun berdasarkan hukum positif Pasal 28 ayat (11) UU KUP di Indonesia, buku, catatan, dan dokumen pendukung wajib disimpan selama 5 (lima) tahun di tempat tinggal atau tempat kegiatan usaha.\n2. Bingkisan Hari Raya Keagamaan: Pada beberapa materi slide biaya, bingkisan pegawai ditandai kena pajak. Namun secara hukum positif yang berlaku (PP 55/2022 Pasal 24 jo. PMK 66/2023 Lampiran A No. 1), bingkisan dalam rangka hari raya keagamaan (Idulfitri, Natal, Nyepi, Waisak, Imlek) yang diberikan kepada seluruh pegawai berstatus BUKAN OBJEK PAJAK (Non-Taxable) penuh tanpa batasan nominal rupiah.\n3. Skema PPh Final UMKM 0,5%: Slide perkuliahan lama mengutip ketentuan jangka waktu 7 tahun PP 55/2022. Berdasarkan Peraturan Pemerintah No. 20 Tahun 2026, batasan 7 tahun tersebut resmi DIHAPUS, sehingga WP Orang Pribadi dapat memanfaatkan tarif 0,5% tanpa batas waktu sepanjang omzet tahunannya tidak melebihi Rp4,8 Miliar.'
+      text: '1. Jangka Waktu Retensi Dokumen: Slide dosen mencantumkan 10 tahun. Ini sesuai Pasal 28 ayat (11) UU KUP: buku, catatan, dokumen dasar pembukuan atau pencatatan, dan dokumen lain termasuk hasil pengolahan data elektronik wajib disimpan selama 10 (sepuluh) tahun di Indonesia.\n2. Bingkisan Hari Raya Keagamaan: Pada beberapa materi slide biaya, bingkisan pegawai ditandai kena pajak. Namun secara hukum positif yang berlaku (PP 55/2022 Pasal 24 jo. PMK 66/2023 Lampiran A No. 1), bingkisan dalam rangka hari raya keagamaan (Idulfitri, Natal, Nyepi, Waisak, Imlek) yang diberikan kepada seluruh pegawai berstatus BUKAN OBJEK PAJAK (Non-Taxable) penuh tanpa batasan nominal rupiah.\n3. Skema PPh Final UMKM 0,5%: Slide perkuliahan lama mengutip ketentuan jangka waktu 7 tahun PP 55/2022. Berdasarkan Peraturan Pemerintah No. 20 Tahun 2026, batasan 7 tahun tersebut resmi DIHAPUS, sehingga WP Orang Pribadi dapat memanfaatkan tarif 0,5% tanpa batas waktu sepanjang omzet tahunannya tidak melebihi Rp4,8 Miliar.'
     },
     {
       kind: 'h2',
@@ -294,7 +262,7 @@ export const TM1_READING: Reading = {
       kind: 'callout',
       variant: 'key',
       title: 'Daftar 7 Jebakan Klasik Ujian Tengah Semester (Exam Traps)',
-      text: '1. Jebakan Jangka Waktu Simpan Dokumen: Slide dosen menyebut 10 tahun, namun hukum positif Indonesia (Pasal 28 ayat 11 UU KUP) menetapkan 5 (lima) tahun.\n2. Jebakan Bingkisan Hari Raya: Bingkisan hari raya keagamaan bagi seluruh pegawai berstatus BEBAS PAJAK PENUH tanpa batas nominal rupiah (bukan batas Rp3 Juta).\n3. Jebakan Fasilitas Olahraga Mewah: Fasilitas golf, pacuan kuda, terbang layang, dan balap otomotif SELALU TAXABLE PENUH bagi penerima (tidak berlaku ambang batas Rp1,5 Juta).\n4. Jebakan Zakat Menyebabkan Rugi: Zakat dilarang menyebabkan rugi fiskal. Jika laba Rp15 Juta dan zakat Rp20 Juta, zakat yang boleh dikurangkan maksimal Rp15 Juta, sisa Rp5 Juta hangus.\n5. Jebakan Biaya Pribadi Direktur: Beban listrik dan pembantu rumah direktur merupakan beban pribadi non-deductible (Pasal 9 ayat 1 huruf b), KECUALI dipotong PPh 21 kenikmatan atas nama direktur.\n6. Jebakan Dividen Badan: Pembebasan PPh atas dividen bagi Wajib Pajak Badan Dalam Negeri berlaku TANPA SYARAT investasi (syarat investasi 3 tahun hanya untuk Orang Pribadi).\n7. Jebakan Hapus Batas 7 Tahun UMKM: Berdasarkan PP 20/2026, pembatasan jangka waktu 7 tahun bagi Wajib Pajak Orang Pribadi telah DIHAPUS. Namun, pengujian ambang batas Rp4,8 Miliar wajib menggabungkan omzet usaha dengan seluruh peredaran bruto pekerjaan bebas (Pasal 58).'
+      text: '1. Jebakan Jangka Waktu Simpan Dokumen: Pasal 28 ayat (11) UU KUP mewajibkan penyimpanan buku, catatan, dan dokumen dasar pembukuan atau pencatatan selama 10 (sepuluh) tahun di Indonesia; jangan tertukar dengan jangka waktu lain dalam administrasi pajak.\n2. Jebakan Bingkisan Hari Raya: Bingkisan hari raya keagamaan bagi seluruh pegawai berstatus BEBAS PAJAK PENUH tanpa batas nominal rupiah (bukan batas Rp3 Juta).\n3. Jebakan Fasilitas Olahraga Mewah: Fasilitas golf, pacuan kuda, terbang layang, dan balap otomotif SELALU TAXABLE PENUH bagi penerima (tidak berlaku ambang batas Rp1,5 Juta).\n4. Jebakan Zakat Menyebabkan Rugi: Zakat dilarang menyebabkan rugi fiskal. Jika laba Rp15 Juta dan zakat Rp20 Juta, zakat yang boleh dikurangkan maksimal Rp15 Juta, sisa Rp5 Juta hangus.\n5. Jebakan Biaya Pribadi Direktur: Beban listrik dan pembantu rumah direktur merupakan beban pribadi non-deductible (Pasal 9 ayat 1 huruf b), KECUALI dipotong PPh 21 kenikmatan atas nama direktur.\n6. Jebakan Dividen Badan: Pembebasan PPh atas dividen bagi Wajib Pajak Badan Dalam Negeri berlaku TANPA SYARAT investasi (syarat investasi 3 tahun hanya untuk Orang Pribadi).\n7. Jebakan Hapus Batas 7 Tahun UMKM: Berdasarkan PP 20/2026, pembatasan jangka waktu 7 tahun bagi Wajib Pajak Orang Pribadi telah DIHAPUS. Namun, pengujian ambang batas Rp4,8 Miliar wajib menggabungkan omzet usaha dengan seluruh peredaran bruto pekerjaan bebas (Pasal 58).'
     },
     {
       kind: 'h2',

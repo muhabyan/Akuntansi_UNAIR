@@ -1,7 +1,7 @@
 import type { Reading } from '../../../types';
 import { CASE_CAPM_PORTFOLIO_RISK } from '../mankeuPracticeCases';
 
-const SVG_SML_CAPM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+const SVG_SML_CAPM = `<svg class="course-diagram-svg course-diagram-sml" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
   <defs>
     <linearGradient id="bgMk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
     <linearGradient id="smlLine" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
@@ -19,16 +19,16 @@ const SVG_SML_CAPM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmln
     <!-- Y-Axis: Expected Return E(R) -->
     <line x1="50" y1="20" x2="50" y2="210" stroke="#94a3b8" stroke-width="2"/>
     <polygon points="50,15 46,25 54,25" fill="#94a3b8"/>
-    <text class="svg-title font-bold" x="40" y="20" fill="#94a3b8" font-size="9.5" font-weight="800" text-anchor="end">Required Return (ri)</text>
+    <text class="svg-title font-bold" x="52" y="8" fill="#e2e8f0" font-size="11" font-weight="800">Required Return (ri)</text>
 
     <!-- X-Axis: Systematic Risk (Beta β) -->
     <line x1="50" y1="210" x2="430" y2="210" stroke="#94a3b8" stroke-width="2"/>
     <polygon points="435,210 425,206 425,214" fill="#94a3b8"/>
-    <text class="svg-title font-bold" x="430" y="228" fill="#94a3b8" font-size="9.5" font-weight="800" text-anchor="end">Risiko Pasar (Beta β)</text>
+    <text class="svg-title font-bold" x="430" y="231" fill="#e2e8f0" font-size="11" font-weight="800" text-anchor="end">Risiko Pasar (Beta β)</text>
 
     <!-- Risk-Free Rate Rf Tick -->
     <line x1="45" y1="165" x2="55" y2="165" stroke="#a78bfa" stroke-width="2"/>
-    <text class="text-accent-purple" x="40" y="169" fill="#a78bfa" font-size="9" font-weight="800" text-anchor="end">rRF (8%)</text>
+    <text class="text-accent-purple" x="40" y="169" fill="#a78bfa" font-size="11" font-weight="800" text-anchor="end">rRF (8%)</text>
 
     <!-- SML Linear Slope Line -->
     <line x1="50" y1="165" x2="400" y2="50" stroke="#38bdf8" stroke-width="3.5"/>
@@ -38,43 +38,43 @@ const SVG_SML_CAPM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmln
     <line x1="225" y1="110" x2="225" y2="210" stroke="#334155" stroke-dasharray="3 3"/>
     <line x1="50" y1="110" x2="225" y2="110" stroke="#334155" stroke-dasharray="3 3"/>
     <circle cx="225" cy="110" r="6" fill="#34d399"/>
-    <text class="text-accent-green" x="225" y="225" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">βM = 1.0</text>
-    <text class="text-accent-green" x="40" y="114" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="end">rM (15%)</text>
-    <text class="text-accent-green" x="235" y="105" fill="#34d399" font-size="8" font-weight="700">Portofolio Pasar (IHSG)</text>
+    <text class="text-accent-green" x="225" y="228" fill="#34d399" font-size="10" font-weight="700" text-anchor="middle">βM = 1,0</text>
+    <text class="text-accent-green" x="40" y="114" fill="#34d399" font-size="11" font-weight="800" text-anchor="end">rM (15%)</text>
+    <text class="text-accent-green" x="235" y="101" fill="#34d399" font-size="10" font-weight="700">Portofolio Pasar</text>
 
     <!-- Undervalued Zone (Above SML) -->
-    <rect x="110" y="45" width="130" height="32" rx="6" fill="#059669" fill-opacity="0.3" stroke="#34d399"/>
-    <text class="text-accent-green" x="175" y="60" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">UNDERVALUED (BELI)</text>
-    <text class="svg-text" x="175" y="71" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Return Ekspektasi &gt; Required Return</text>
+    <rect x="106" y="43" width="145" height="37" rx="6" fill="#059669" fill-opacity="0.3" stroke="#34d399"/>
+    <text class="text-accent-green" x="178" y="59" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">DI ATAS: BELI</text>
+    <text class="svg-text" x="178" y="73" fill="#e2e8f0" font-size="11" text-anchor="middle">Ekspektasi &gt; CAPM</text>
 
     <!-- Overvalued Zone (Below SML) -->
-    <rect x="255" y="145" width="130" height="32" rx="6" fill="#dc2626" fill-opacity="0.3" stroke="#f87171"/>
-    <text class="text-accent-red" x="320" y="160" fill="#f87171" font-size="8" font-weight="800" text-anchor="middle">OVERVALUED (JUAL)</text>
-    <text class="svg-text" x="320" y="171" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Return Ekspektasi &lt; Required Return</text>
+    <rect x="255" y="142" width="145" height="37" rx="6" fill="#dc2626" fill-opacity="0.3" stroke="#f87171"/>
+    <text class="text-accent-red" x="327" y="158" fill="#f87171" font-size="10" font-weight="800" text-anchor="middle">DI BAWAH: JUAL</text>
+    <text class="svg-text" x="327" y="172" fill="#e2e8f0" font-size="11" text-anchor="middle">Ekspektasi &lt; CAPM</text>
   </g>
 
   <!-- Right: CAPM Formula & Components Explanation -->
   <g transform="translate(540, 75)">
     <!-- Formula Box -->
     <rect class="svg-subcard" x="0" y="0" width="325" height="48" rx="8" fill="#1e293b" stroke="#38bdf8"/>
-    <text class="text-accent-blue" x="162" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">PERSAMAAN SAKTI MODEL CAPM</text>
-    <text class="text-accent-blue" x="162" y="38" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">ri = rRF + βi × ( rM - rRF )</text>
+    <text class="text-accent-blue" x="162" y="20" fill="#38bdf8" font-size="11" font-weight="800" text-anchor="middle">PERSAMAAN CAPM</text>
+    <text class="text-accent-blue" x="162" y="38" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">ri = rRF + βi × (rM − rRF)</text>
 
     <!-- Variable Cards -->
     <rect class="svg-card" x="0" y="58" width="325" height="52" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1"/>
-    <text class="text-accent-purple" x="12" y="76" fill="#a78bfa" font-size="8.5" font-weight="800">rRF: Risk-Free Rate (Suku Bunga Bebas Risiko)</text>
-    <text class="svg-text" x="12" y="92" fill="#cbd5e1" font-size="7.5">Imbal hasil instrumen tanpa risiko gagal bayar (contoh: Surat Berharga Negara / T-bills 8%).</text>
+    <text class="text-accent-purple" x="12" y="76" fill="#c4b5fd" font-size="10.5" font-weight="800">rRF: tingkat bebas risiko</text>
+    <text class="svg-text" x="12" y="94" fill="#e2e8f0" font-size="11">Titik potong saat β = 0 (contoh: 8%).</text>
 
     <rect class="svg-card" x="0" y="118" width="325" height="52" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
-    <text class="text-accent-blue" x="12" y="136" fill="#38bdf8" font-size="8.5" font-weight="800">βi: Koefisien Beta Saham i</text>
-    <text class="svg-text" x="12" y="152" fill="#cbd5e1" font-size="7.5">Sensitivitas fluktuasi saham terhadap pasar. β &gt; 1 = Agresif, β &lt; 1 = Defensif.</text>
+    <text class="text-accent-blue" x="12" y="136" fill="#7dd3fc" font-size="10.5" font-weight="800">βi: sensitivitas terhadap pasar</text>
+    <text class="svg-text" x="12" y="154" fill="#e2e8f0" font-size="11">βM = 1; β &gt; 1 lebih sensitif.</text>
 
     <rect class="svg-card" x="0" y="178" width="325" height="52" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1"/>
-    <text class="text-accent-amber" x="12" y="196" fill="#fbbf24" font-size="8.5" font-weight="800">( rM - rRF ): Market Risk Premium (RPM)</text>
-    <text class="svg-text" x="12" y="212" fill="#cbd5e1" font-size="7.5">Kompensasi "uang lelah" ekstra atas keberanian menanggung risiko saham di atas aset bebas risiko.</text>
+    <text class="text-accent-amber" x="12" y="196" fill="#fbbf24" font-size="10.5" font-weight="800">rM − rRF: premi risiko pasar</text>
+    <text class="svg-text" x="12" y="214" fill="#e2e8f0" font-size="11">Kemiringan SML; contoh: 15% − 8% = 7%.</text>
   </g>
 
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Saham di atas garis SML memberikan return lebih tinggi dari kompensasi risikonya (Murah/Layak Beli / Undervalued).</text>
+  <text class="svg-muted" x="450" y="330" fill="#cbd5e1" font-size="12" font-style="italic" text-anchor="middle">Di atas SML: undervalued · di bawah SML: overvalued</text>
 </svg>`;
 
 export const TM4_READING: Reading = {
@@ -93,13 +93,42 @@ export const TM4_READING: Reading = {
     {
       kind: 'callout',
       title: 'Sorotan Dosen FEB UNAIR: Dua Konsep Kunci yang Selalu Menjebak di UTS',
-      text: '1. **Investor tidak pernah dibayar atas risiko unik (*stand-alone risk*)**: Jika Anda nekat membeli 1 saham saja, Anda menanggung risiko kebangkrutan perusahaan sendirian tanpa kompensasi return tambahan karena risiko itu sebenarnya bisa Anda hilangkan gratis lewat diversifikasi.\n2. **Korelasi Negatif ($\rho < 0$) adalah penyelamat portofolio**: Menggabungkan dua saham yang bergerak berlawanan arah saling menambal kerugian sehingga risiko portofolio mengecil drastis tanpa harus mengorbankan return yang diharapkan.',
+      compact: true,
+      text: '1. **Investor tidak pernah dibayar atas risiko unik (*stand-alone risk*)**: Jika Anda nekat membeli 1 saham saja, Anda menanggung risiko kebangkrutan perusahaan sendirian tanpa kompensasi return tambahan karena risiko itu sebenarnya bisa Anda hilangkan gratis lewat diversifikasi.\n2. **Korelasi Negatif ($\\rho < 0$) adalah penyelamat portofolio**: Menggabungkan dua saham yang bergerak berlawanan arah saling menambal kerugian sehingga risiko portofolio mengecil drastis tanpa harus mengorbankan return yang diharapkan.',
       variant: 'tip'
     },
     {
       kind: 'figure',
       caption: 'Gambar 4.1: Garis Pasar Sekuritas (Security Market Line - SML) dan Posisi Valuasi Saham.',
-      svg: SVG_SML_CAPM
+      svg: SVG_SML_CAPM,
+      altText: 'Diagram SML: sumbu horizontal beta dan sumbu vertikal required return. Garis naik dari tingkat bebas risiko 8% pada beta nol melalui portofolio pasar 15% pada beta satu. Posisi di atas garis undervalued, di bawah garis overvalued.',
+      transcriptSections: [
+        {
+          title: 'Sumbu dan titik acuan',
+          items: [
+            'Sumbu mendatar menunjukkan risiko pasar (beta β); sumbu tegak menunjukkan required return ri.',
+            'Pada β = 0, garis SML memotong sumbu return di rRF = 8%. Pada βM = 1, titik portofolio pasar berada di rM = 15%.',
+            'Garis SML menghubungkan kedua titik tersebut. Angka 8% dan 15% adalah contoh pada gambar, bukan tarif yang selalu berlaku.'
+          ]
+        },
+        {
+          title: 'Persamaan dan arti variabel',
+          items: [
+            'CAPM: ri = rRF + βi × (rM − rRF).',
+            'ri adalah return minimum yang disyaratkan untuk saham i; rRF adalah tingkat bebas risiko.',
+            'βi mengukur sensitivitas saham terhadap perubahan pasar; beta pasar βM = 1.',
+            'rM adalah return pasar. Selisih rM − rRF adalah premi risiko pasar; dalam contoh, 15% − 8% = 7%.'
+          ]
+        },
+        {
+          title: 'Membaca posisi saham',
+          items: [
+            'Pada beta yang sama, titik di atas SML berarti return ekspektasi analis lebih tinggi daripada ri menurut CAPM: saham tampak undervalued dan layak dipertimbangkan untuk dibeli.',
+            'Titik di bawah SML berarti return ekspektasi lebih rendah daripada ri: saham tampak overvalued dan layak dipertimbangkan untuk dijual atau dihindari.',
+            'Titik tepat pada SML berarti return ekspektasi sama dengan required return; penilaian menurut model ini wajar.'
+          ]
+        }
+      ]
     },
     {
       kind: 'h2',
@@ -230,7 +259,7 @@ export const TM4_READING: Reading = {
       blocks: [
         {
           kind: 'p',
-          text: 'Anda membeli saham pada awal tahun seharga **$1.000**. Selama setahun memegang saham, perusahaan membagikan dividen tunai sebesar **$50**, dan di akhir tahun harga saham naik menjadi **$1.100** (total uang yang Anda terima adalah $1.150).'
+          text: 'Anda membeli saham pada awal tahun seharga **Rp 1.000**. Selama setahun memegang saham, perusahaan membagikan dividen tunai sebesar **Rp 50**, dan di akhir tahun harga saham naik menjadi **Rp 1.100** (total uang yang Anda terima adalah Rp 1.150).'
         },
         {
           kind: 'p',
@@ -287,6 +316,7 @@ export const TM4_READING: Reading = {
     {
       kind: 'callout',
       title: 'Kenapa Harus Ada Koefisien Variasi (CV)? Kenapa Standar Deviasi Saja Kurang?',
+      compact: true,
       text: 'Bayangkan ada 2 pilihan investasi:\n- **Investasi A**: Expected return 10%, standar deviasi $\\sigma = 5\\%$.\n- **Investasi B**: Expected return 100%, standar deviasi $\\sigma = 15\\%$.\nJika Anda hanya melihat standar deviasi, Investasi B terlihat 3 kali lebih berisiko (15% vs 5%). Tapi hitunglah CV-nya:\n- $CV_A = 5\\% / 10\\% = 0,50$.\n- $CV_B = 15\\% / 100\\% = 0,15$.\nInvestasi B sebenarnya **JAUH LEBIH EFISIEN** karena untuk setiap 1 unit keuntungan, risikonya hanya 0,15! CV mengukur risiko per unit return yang menghilangkan bias perbedaan skala keuntungan.',
       variant: 'tip'
     },
@@ -549,8 +579,8 @@ r_i = r_{RF} + RPM \\times \\beta_i`,
       kind: 'ul',
       items: [
         '**Jebakan 1: Hati-hati dengan Kalimat Soal "Market Risk Premium" vs "Market Return"**:\n- Jika soal menyebut: *"Return pasar adalah 12% dan Risk-free rate 5%"*, maka $RPM = 12\\% - 5\\% = 7\\%$.\n- Namun jika soal menyebut: *"Premi risiko pasar (Market Risk Premium) adalah 7%"*, **JANGAN DIKURANGI RISK-FREE RATE LAGI!** Angka 7% itu sudah merupakan selisih $(r_M - r_{RF})$. Kesalahan ini sering membuat mahasiswa kehilangan nilai penuh!',
-        '**Jebakan 2: Tertukar Menghitung Standar Deviasi vs Beta**:\nStandar deviasi ($\sigma$) mengukur risiko total (stand-alone risk), cocok hanya jika investor menaruh 100% uangnya di satu saham itu saja. Jika investor memiliki portofolio saham, ukuran risiko yang benar **HANYALAH BETA ($\beta$)**.',
-        '**Jebakan 3: Efek Pergeseran Garis SML**:\n- Jika **ekspektasi inflasi naik**, suku bunga bebas risiko ($r_{RF}$) naik $\to$ kurva SML **bergeser sejajar ke atas** (garis tetap paralel, slope tidak berubah).\n- Jika **keengganan risiko investor (*risk aversion*) naik**, premi risiko pasar $(r_M - r_{RF})$ membesar $\to$ kurva SML **berotasi menjadi semakin curam (slope naik)**.'
+        '**Jebakan 2: Tertukar Menghitung Standar Deviasi vs Beta**:\nStandar deviasi ($\\sigma$) mengukur risiko total (stand-alone risk), cocok hanya jika investor menaruh 100% uangnya di satu saham itu saja. Jika investor memiliki portofolio saham, ukuran risiko yang benar **HANYALAH BETA ($\\beta$)**.',
+        '**Jebakan 3: Efek Pergeseran Garis SML**:\n- Jika **ekspektasi inflasi naik**, suku bunga bebas risiko ($r_{RF}$) naik $\\to$ kurva SML **bergeser sejajar ke atas** (garis tetap paralel, slope tidak berubah).\n- Jika **keengganan risiko investor (*risk aversion*) naik**, premi risiko pasar $(r_M - r_{RF})$ membesar $\\to$ kurva SML **berotasi menjadi semakin curam (slope naik)**.'
       ]
     },
     {
@@ -618,7 +648,7 @@ r_i = r_{RF} + RPM \\times \\beta_i`,
     {
       kind: 'solution-reveal',
       title: 'Soal Asistensi 4: Menghitung Tingkat Return Satu Periode',
-      prompt: 'Seorang investor menginvestasikan $1.000 dan menerima $1.150 setelah satu tahun. Berapakah tingkat return yang diperoleh investor?\\nA. 5%\\nB. 10%\\nC. 12%\\nD. 15%',
+      prompt: 'Seorang investor menginvestasikan Rp 1.000 dan menerima Rp 1.150 setelah satu tahun. Berapakah tingkat return yang diperoleh investor?\\nA. 5%\\nB. 10%\\nC. 12%\\nD. 15%',
       blocks: [
         {
           kind: 'p',
@@ -627,8 +657,8 @@ r_i = r_{RF} + RPM \\times \\beta_i`,
         {
           kind: 'ul',
           items: [
-            '**Diketahui Data Soal**:\n- Investasi Awal ($P_0$) = $\\$1.000$.\n- Nilai Investasi Akhir ($P_1$) = $\\$1.150$.\n- Keuntungan Kas Bersih (Dollar Return) = $\\$1.150 - \\$1.000 = \\$150$.',
-            '**Rumus Tingkat Pengembalian (Rate of Return)**:\n$$\\text{Rate of Return} = \\frac{\\text{Nilai Akhir} - \\text{Investasi Awal}}{\\text{Investasi Awal}} = \\frac{\\$1.150 - \\$1.000}{\\$1.000} = \\frac{\\$150}{\\$1.000} = 0,15 = \\mathbf{15\\%}$$'
+            '**Diketahui Data Soal**:\n- Investasi Awal ($P_0$) = Rp 1.000.\n- Nilai Investasi Akhir ($P_1$) = Rp 1.150.\n- Keuntungan Kas Bersih = Rp 1.150 - Rp 1.000 = Rp 150.',
+            '**Rumus Tingkat Pengembalian (Rate of Return)**:\n$$\\text{Rate of Return} = \\frac{\\text{Nilai Akhir} - \\text{Investasi Awal}}{\\text{Investasi Awal}} = \\frac{1.150 - 1.000}{1.000} = \\frac{150}{1.000} = 0,15 = \\mathbf{15\\%}$$'
           ]
         }
       ]

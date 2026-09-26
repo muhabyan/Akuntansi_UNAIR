@@ -108,7 +108,9 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
       
       try {
         localStorage.setItem(`flashcard-srs-${courseCode}`, JSON.stringify(next));
-      } catch {}
+      } catch {
+        // Storage can be disabled; keep the in-memory SRS state usable.
+      }
       
       return next;
     });
@@ -544,10 +546,10 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
                     </div>
                   </div>
 
-                  <div aria-hidden={!isFlipped} className="absolute inset-0 rotate-y-180 backface-hidden overflow-hidden rounded-[1.7rem] border border-gold/30 bg-gradient-to-br from-navy-850 via-navy-800 to-slate-900 p-6 text-slate-100 shadow-calm-lift">
+                  <div aria-hidden={!isFlipped} className="absolute inset-0 rotate-y-180 backface-hidden overflow-x-hidden overflow-y-auto overscroll-contain rounded-[1.7rem] border border-gold/30 bg-gradient-to-br from-navy-850 via-navy-800 to-slate-900 p-6 text-slate-100 shadow-calm-lift">
                     <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-400 via-gold to-emerald-400" />
                     <div className="absolute -left-16 -bottom-16 h-44 w-44 rounded-full bg-gold/15 blur-3xl" />
-                    <div className="relative flex h-full flex-col">
+                    <div className="relative flex min-h-full flex-col">
                       <div className="mb-5 flex items-center justify-between gap-3">
                         <span className="rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-sky-200">Jawaban</span>
                         <div className="flex items-center gap-2">

@@ -60,8 +60,13 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
         setIsOpen(false);
       }
     };
+    const closeUtility = () => setIsOpen(false);
     window.addEventListener('akuntansihub:utility-open', handleUtilityOpen);
-    return () => window.removeEventListener('akuntansihub:utility-open', handleUtilityOpen);
+    window.addEventListener('akuntansihub:close-utility', closeUtility);
+    return () => {
+      window.removeEventListener('akuntansihub:utility-open', handleUtilityOpen);
+      window.removeEventListener('akuntansihub:close-utility', closeUtility);
+    };
   }, []);
 
   // Listen to custom trigger event
@@ -223,6 +228,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
         id="material-feedback-panel"
         data-utility-panel="material-feedback"
         aria-hidden={!isOpen}
+        ref={(panel) => { panel?.toggleAttribute('inert', !isOpen); }}
         className={`mobile-utility-panel zen-hideable fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
@@ -552,7 +558,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
               }
             : undefined
         }
-        className={`zen-hideable group flex items-center justify-center shadow-md ${
+        className={`zen-hideable utility-launcher-quiet group flex items-center justify-center shadow-md ${
           !isOpen ? 'mobile-utility-launcher mobile-utility-launcher--feedback' : ''
         } ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'

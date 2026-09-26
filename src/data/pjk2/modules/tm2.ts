@@ -1,84 +1,49 @@
 import type { Reading } from '../../../types';
 
-const SVG_ASSET_INVENTORY_NPPN = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="gBlue2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="gGreen2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="gAmber2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk2)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PENILAIAN HARTA, PERSEDIAAN FISKAL, &amp; NORMA PENGHITUNGAN NETO (NPPN)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TM02 FISKAL</text>
-
-  <!-- Card 1: Penilaian Harta & Reorganisasi -->
-  <g transform="translate(30, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gBlue2)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. PENILAIAN PENGALIHAN HARTA</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="53" fill="#38bdf8" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 10 UU PPh &amp; PMK 81/2024</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Jual beli bebas: Harga riil dibayar/diterima</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Berafiliasi / Barter: Wajib HARGA PASAR</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Laba barter = Harga Pasar &minus; Nilai Sisa Buku</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Reorganisasi: Default nilai pasar; Nilai Buku</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">  wajib izin DJP (maks 6 bln) &amp; uji 4 th bisnis</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Rugi merger dilarang transfer ke entitas baru</text>
-
-    <rect class="svg-badge-blue" x="12" y="185" width="241" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Rezim Pengalihan Aktiva &amp; Reorganisasi</text>
-  </g>
-
-  <!-- Card 2: Persediaan Fiskal FIFO vs Average -->
-  <g transform="translate(315, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gGreen2)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. PERSEDIAAN &amp; HPP FISKAL</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="53" fill="#34d399" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 10 ayat (6) UU PPh</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• FIFO: Barang awal keluar awal; persediaan</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">  akhir dinilai pada harga pembelian terkini</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• AVERAGE: Rata-rata tertimbang perolehan</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• LIFO DILARANG KERAS secara yuridis fiskal</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• LIFO menekan laba semu saat inflasi harga</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Wajib asas konsisten (taat asas tahunan)</text>
-
-    <rect class="svg-badge-green" x="12" y="185" width="241" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Hanya FIFO &amp; Average Sah Secara Fiskal</text>
-  </g>
-
-  <!-- Card 3: NPPN vs Pembukuan & Kompensasi Rugi -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gAmber2)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. SKEMA OP &amp; KOMPENSASI RUGI</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="53" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 14, 6(2), 17 &amp; 31E UU PPh</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• NPPN: Khusus WP OP omzet &lt; Rp4,8 Miliar</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Wajib beritahu DJP s.d. 31 Maret (3 bulan awal)</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Kompensasi rugi: Maksimal 5 tahun berurutan</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Rugi lewat 5 tahun otomatis hangus/kadaluwarsa</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Tarif OP UU HPP: 5 Lapisan (5% s.d. 35%)</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• PPh Badan: 22% (Fasilitas 31E diskon 50%)</text>
-
-    <rect class="svg-badge-amber" x="12" y="185" width="241" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Kepatuhan Administrasi &amp; Kompensasi</text>
-  </g>
-
-  <!-- Footer Banner -->
-  <rect class="svg-footer" x="30" y="320" width="835" height="22" rx="6" fill="#1e293b" fill-opacity="0.8"/>
-  <text class="svg-muted" x="447" y="335" fill="#94a3b8" font-size="8" text-anchor="middle">Pasal 10, 14, 6(2) UU PPh s.t.d.t.d UU HPP | PMK 81/2024 jo. PMK 01/2026 | PP 55/2022 | Larangan Mutlak LIFO</text>
-</svg>`;
+const OVERVIEW_ASSET_INVENTORY_NPPN = {
+  "heading": "PENILAIAN HARTA, PERSEDIAAN FISKAL, & NORMA PENGHITUNGAN NETO (NPPN)",
+  "badge": "TM02 FISKAL",
+  "cards": [
+    {
+      "title": "1. PENILAIAN PENGALIHAN HARTA",
+      "subtitle": "Pasal 10 UU PPh & PMK 81/2024",
+      "items": [
+        "Jual beli bebas: Harga riil dibayar/diterima",
+        "Berafiliasi / Barter: Wajib HARGA PASAR",
+        "Laba barter = Harga Pasar − Nilai Sisa Buku",
+        "Reorganisasi: Default nilai pasar; Nilai Buku wajib izin DJP (maks 6 bln) & uji 4 th bisnis",
+        "Rugi merger dilarang transfer ke entitas baru"
+      ],
+      "takeaway": "Rezim Pengalihan Aktiva & Reorganisasi"
+    },
+    {
+      "title": "2. PERSEDIAAN & HPP FISKAL",
+      "subtitle": "Pasal 10 ayat (6) UU PPh",
+      "items": [
+        "FIFO: Barang awal keluar awal; persediaan akhir dinilai pada harga pembelian terkini",
+        "AVERAGE: Rata-rata tertimbang perolehan",
+        "LIFO DILARANG KERAS secara yuridis fiskal",
+        "LIFO menekan laba semu saat inflasi harga",
+        "Wajib asas konsisten (taat asas tahunan)"
+      ],
+      "takeaway": "Hanya FIFO & Average Sah Secara Fiskal"
+    },
+    {
+      "title": "3. SKEMA OP & KOMPENSASI RUGI",
+      "subtitle": "Pasal 14, 6(2), 17 & 31E UU PPh",
+      "items": [
+        "NPPN: Khusus WP OP omzet < Rp4,8 Miliar",
+        "Wajib beritahu DJP s.d. 31 Maret (3 bulan awal)",
+        "Kompensasi rugi: Maksimal 5 tahun berurutan",
+        "Rugi lewat 5 tahun otomatis hangus/kadaluwarsa",
+        "Tarif OP UU HPP: 5 Lapisan (5% s.d. 35%)",
+        "PPh Badan: 22% (Fasilitas 31E diskon 50%)"
+      ],
+      "takeaway": "Kepatuhan Administrasi & Kompensasi"
+    }
+  ],
+  "footer": "Pasal 10, 14, 6(2) UU PPh s.t.d.t.d UU HPP | PMK 81/2024 jo. PMK 01/2026 | PP 55/2022 | Larangan Mutlak LIFO"
+};
 
 export const TM2_READING: Reading = {
   tm: 2,
@@ -98,7 +63,7 @@ export const TM2_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 2.1: Arsitektur Penilaian Harta, Persediaan Fiskal, dan Norma Penghitungan Neto (NPPN).',
-      svg: SVG_ASSET_INVENTORY_NPPN
+      overview: OVERVIEW_ASSET_INVENTORY_NPPN
     },
     {
       kind: 'callout',

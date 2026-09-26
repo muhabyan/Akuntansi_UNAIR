@@ -152,17 +152,17 @@ export const SIA_TM7: Reading = {
       ['Receipt_Disbursements (linking)', 'Disbursement_Num', 'INT', 'NOT NULL, FOREIGN KEY → Cash_Disbursements(Disbursement_Num)'],
       ['Receipt_Disbursements (linking)', 'Amount_Applied', 'DECIMAL(10,2)', 'NOT NULL'],
       ['Receipt_Disbursements (linking)', '(Receipt_Number, Disbursement_Num)', '—', 'Composite PRIMARY KEY'],
-    ], caption: 'Skema relasional pembelian Sunset Graphics. Richardson 4e, pp. 336–340; Exhibits 8.9–8.10. Linking table PO_Items, Receipt_Items, dan Receipt_Disbursements menyelesaikan asosiasi M:N dengan kunci komposit.' },
+    ], caption: 'Skema relasional pembelian Sunset Graphics. Richardson 4e, Bab 8, sekitar hlm. 332–334; Exhibits 8.9–8.10. Linking table PO_Items, Receipt_Items, dan Receipt_Disbursements menyelesaikan asosiasi M:N dengan kunci komposit.' },
     { kind: 'p', text: 'Catatan: skema yang diberikan tidak memiliki tautan Receipts ke Purchase_Orders maupun tabel invoice vendor, sehingga Three-Way Match di atas tidak dapat ditelusuri seluruhnya dari tabel ini saja.' },
     { kind: 'h3', text: 'Baer Belly Bikinis dan dualitas ekonomi' },
-    { kind: 'p', text: '**Baer Belly Bikinis (BBB)** didirikan Paige Baer di Santa Monica, California, dan memproduksi pakaian renang desainer kelas atas. BBB membeli bahan baku (spandex, elastic, thread) dari supplier tekstil resmi dengan termin 2/10, net 30. Richardson 4e, pp. 340–345.' },
+    { kind: 'p', text: '**Baer Belly Bikinis (BBB)** didirikan Paige Baer di Santa Monica, California, dan membeli kain dari pemasok lokal untuk memproduksi pakaian renang. Dalam contoh buku, pemasok biasanya mengirim dalam dua minggu dan BBB biasanya membayar dalam sekitar dua minggu. Richardson 4e, Bab 8, hlm. 334–336. Angka dan termin potongan dalam latihan berikut adalah asumsi ilustrasi, bukan data kasus asli buku.' },
     { kind: 'table', headers: ['Proses', 'Memberi (give)', 'Menerima (get)'], rows: [
       ['Sales and Collections', 'Inventory', 'Cash'],
       ['Purchases and Payments', 'Cash', 'Inventory'],
     ], caption: 'Economic Duality Principle (Appendix A): setiap event ekonomi berpasangan dengan event timbal baliknya.' },
 
     { kind: 'h2', text: '6. Worked Practice' },
-    { kind: 'solution-reveal', title: '1. Baer Belly Bikinis: pembelian spandex dan potongan pembelian', prompt: 'BBB menerbitkan PO senilai \\$5,000.00 untuk kain spandex premium dari textile mill resmi dengan termin 2/10, net 30. Barang diterima, diinspeksi, dan diterima baik pada 10 Oktober. Pembayaran disetujui dan dikeluarkan pada 18 Oktober (hari ke-8). Susun jurnalnya dengan sistem persediaan perpetual. Data kasus: Richardson 4e, pp. 340–343.', blocks: [
+    { kind: 'solution-reveal', title: '1. Ilustrasi pembelian kain BBB dan potongan pembelian', prompt: 'Sebagai latihan buatan berdasarkan alur BBB di Richardson 4e Bab 8 (hlm. 334–336), andaikan BBB menerbitkan PO senilai \\$5,000.00 untuk kain dengan termin 2/10, net 30. Barang diterima pada 10 Oktober dan pembayaran dikeluarkan pada 18 Oktober (hari ke-8). Susun jurnalnya dengan sistem persediaan perpetual. Nominal, termin, dan tanggal ini adalah asumsi latihan.', blocks: [
       { kind: 'formula', text: '\\text{Purchase Discount (2\\%)} = 5{,}000.00 \\times 0.02 = 100.00\n\\text{Net Cash Disbursed} = 5{,}000.00 - 100.00 = 4{,}900.00', note: 'Satuan USD. Dalam sistem perpetual, potongan \\$100 menurunkan biaya persediaan yang dikapitalisasi dari \\$5,000 menjadi \\$4,900.' },
       { kind: 'journal', caption: '10 Oktober: penerimaan barang dan pengakuan utang vendor (USD)', lines: [{ account: 'Raw Materials Inventory (Persediaan Bahan Baku)', debit: '$5,000.00' }, { account: 'Accounts Payable (Utang Usaha)', credit: '$5,000.00', isCredit: true }] },
       { kind: 'journal', caption: '18 Oktober: pembayaran dalam periode potongan 2% (USD)', lines: [{ account: 'Accounts Payable (Utang Usaha)', debit: '$5,000.00' }, { account: 'Cash (Kas)', credit: '$4,900.00', isCredit: true }, { account: 'Raw Materials Inventory (Persediaan Bahan Baku; atau Purchase Discounts / Potongan Pembelian)', credit: '$100.00', isCredit: true }] },

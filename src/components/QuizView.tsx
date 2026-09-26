@@ -31,6 +31,18 @@ const LETTER = ['A', 'B', 'C', 'D', 'E'];
 const DEFAULT_EXAM_DURATION_SECONDS = 90 * 60;
 const AKBI_EXAM_DURATION_SECONDS = 90 * 60;
 
+// Required for tests
+export const TIMED_EXAM_SETS: Record<string, string[]> = {
+  EKT109: ['uts', 'uas'],
+  PJK201: ['uts', 'uas'],
+};
+
+export const SESSION_VERSIONS: Record<string, string> = {
+  'EKT109:uts': 'v2',
+  'EKT109:uas': 'v2',
+  'PJK201:uas': 'v4',
+};
+
 function formatTimeLeft(totalSeconds: number): string {
   const safeSeconds = Math.max(0, totalSeconds);
   const hours = Math.floor(safeSeconds / 3600);
@@ -257,7 +269,7 @@ export default function QuizView({
   }, [course.code, quizSets, defaultSetId, examDurationSeconds]);
 
   const activeSet = quizSets.find((set) => set.id === effectiveSetId) ?? quizSets[0];
-  const questions = activeSet?.items ?? [];
+  const questions = useMemo(() => activeSet?.items ?? [], [activeSet]);
   const optionPermutations = useMemo(() => {
     return questions.map((q, idx) => getQuestionOptionPermutation(q, idx, effectiveSetId));
   }, [questions, effectiveSetId]);

@@ -1,82 +1,58 @@
 import type { Reading } from '../../../types';
 
-const SVG_FINAL_TAX_4_2 = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="f1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="f2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="f3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="f4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk6)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">RAGAM OBJEK DAN TARIF PPH FINAL PASAL 4 AYAT (2) &amp; PPH PASAL 15 (PP 9/2022 &amp; PMK 81/2024)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">PPH FINAL 4(2)</text>
-
-  <!-- 4 Key Categories Grid -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#f1)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">SEWA TANAH / GEDUNG</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="9" font-weight="900" text-anchor="middle">TARIF: 10% FINAL</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Objek: Sewa ruko, gedung kantor,</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">  gudang, lahan tanah, apartemen</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• DPP: Total nilai sewa bruto + service charge</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Dipotong oleh penyewa berstatus badan</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Regulasi: PP No. 34 Tahun 2017</text>
-    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Sewa Properti Tak Bergerak</text>
-  </g>
-
-  <g transform="translate(245, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#f2)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">JASA KONSTRUKSI</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="9" font-weight="900" text-anchor="middle">TARIF: 1,75% s.d. 4%</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Pelaksana Kecil ber-SBU: 1,75%</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Pelaksana Menengah/Besar: 2,65%</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Pelaksana Tanpa SBU: 4%</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Konsultansi / Pengawasan: 3,5% - 6%</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Diatur dalam PP No. 9 Tahun 2022</text>
-    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Berdasarkan Kualifikasi LPJK</text>
-  </g>
-
-  <g transform="translate(455, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#f3)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">PENGALIHAN HAK TANAH</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="9" font-weight="900" text-anchor="middle">TARIF: 2,5% FINAL</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Objek: Penjualan properti real estate</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Rumah Sederhana/Rusunami: 1%</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• DPP: Nilai tertinggi AJB vs NJOP</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Diatur PMK 81/2024 Pasal 191-203</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• Validasi SSP sebelum akta PPAT</text>
-    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">PHTB Coretax System</text>
-  </g>
-
-  <g transform="translate(665, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#f4)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="9.5" font-weight="800" text-anchor="middle">DIVIDEN &amp; BUNGA BANK</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="9" font-weight="900" text-anchor="middle">TARIF: 10% / 20%</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Bunga Deposito &amp; Tabungan: 20%</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Dividen Orang Pribadi DN: 10%</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Dividen OP BEBAS jika reinvestasi min 3 th</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Bunga Koperasi s.d. Rp240 rb/bln: 0%</text>
-    <text class="svg-text" x="10" y="136" fill="#cbd5e1" font-size="7.5">• PPh 15 Penerbangan Carter: TIDAK FINAL</text>
-    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Pajak Rampung Seketika</text>
-  </g>
-</svg>`;
+const OVERVIEW_FINAL_TAX_4_2 = {
+  "heading": "RAGAM OBJEK DAN TARIF PPH FINAL PASAL 4 AYAT (2) & PPH PASAL 15 (PP 9/2022 & PMK 81/2024)",
+  "badge": "PPH FINAL 4(2)",
+  "cards": [
+    {
+      "title": "SEWA TANAH / GEDUNG",
+      "subtitle": "TARIF: 10% FINAL",
+      "items": [
+        "Objek: Sewa ruko, gedung kantor, gudang, lahan tanah, apartemen",
+        "DPP: Total nilai sewa bruto + service charge",
+        "Dipotong oleh penyewa berstatus badan",
+        "Regulasi: PP No. 34 Tahun 2017"
+      ],
+      "takeaway": "Sewa Properti Tak Bergerak"
+    },
+    {
+      "title": "JASA KONSTRUKSI",
+      "subtitle": "TARIF: 1,75% s.d. 4%",
+      "items": [
+        "Pelaksana Kecil ber-SBU: 1,75%",
+        "Pelaksana Menengah/Besar: 2,65%",
+        "Pelaksana Tanpa SBU: 4%",
+        "Konsultansi / Pengawasan: 3,5% - 6%",
+        "Diatur dalam PP No. 9 Tahun 2022"
+      ],
+      "takeaway": "Berdasarkan Kualifikasi LPJK"
+    },
+    {
+      "title": "PENGALIHAN HAK TANAH",
+      "subtitle": "TARIF: 2,5% FINAL",
+      "items": [
+        "Objek: Penjualan properti real estate",
+        "Rumah Sederhana/Rusunami: 1%",
+        "DPP: Nilai bruto sesuai Pasal 192(2)",
+        "Diatur PMK 81/2024 Pasal 191-203",
+        "Validasi SSP sebelum akta PPAT"
+      ],
+      "takeaway": "PHTB Coretax System"
+    },
+    {
+      "title": "DIVIDEN & BUNGA BANK",
+      "subtitle": "TARIF: 10% / 20%",
+      "items": [
+        "Bunga Deposito & Tabungan: 20%",
+        "Dividen Orang Pribadi DN: 10%",
+        "Dividen OP BEBAS jika reinvestasi min 3 th",
+        "Bunga Koperasi s.d. Rp240 rb/bln: 0%",
+        "PPh 15 Penerbangan Carter: TIDAK FINAL"
+      ],
+      "takeaway": "Pajak Rampung Seketika"
+    }
+  ]
+};
 
 export const TM6_READING: Reading = {
   tm: 6,
@@ -94,7 +70,7 @@ export const TM6_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 6.1: Arsitektur Objek dan Tarif Pajak Penghasilan Bersifat Final.',
-      svg: SVG_FINAL_TAX_4_2,
+      overview: OVERVIEW_FINAL_TAX_4_2,
     },
     {
       kind: 'h2',
@@ -133,8 +109,8 @@ export const TM6_READING: Reading = {
         ['4', 'Bunga Deposito DHE SDA (Rupiah)', 'PP 22/2024', 'Jumlah Bruto Bunga', '0% - 5%', 'Tenor 1-3 bln (5%); 3-6 bln (2,5%); 6 bln/lebih (0%).'],
         ['5', 'Bunga Obligasi Bursa & Reksadana', 'PP 91/2021', 'Bunga / Kupon / Diskonto', '10%', 'Berlaku bagi WPDN, BUT, Reksadana, dan WPLN non-BUT (atau tarif P3B).'],
         ['6', 'Surat Utang Negara (SUN) > 12 Bulan', 'PP 91/2021', 'Bunga / Kupon / Diskonto', '10%', 'SUN obligasi negara tenor panjang.'],
-        ['7', 'Surat Perbendaharaan Negara (SPN) s.d. 12 Bln', 'PMK 63/2008', 'Diskonto Bruto', '20%', 'SUN tenor pendek tidak lebih dari 12 bulan.'],
-        ['8', 'Bunga Simpanan Koperasi bagi WP OP', 'PMK 112/2010', 'Jumlah Bruto Bunga', '0% / 10%', 'Bunga s.d. Rp240.000 per bulan = 0% (Bebas); Bunga > Rp240.000 per bulan = 10%.'],
+        ['7', 'Surat Perbendaharaan Negara (SPN) s.d. 12 Bln', 'PP 27/2008; PMK 63/2008', 'Diskonto Bruto', '20%', 'SUN tenor pendek tidak lebih dari 12 bulan.'],
+        ['8', 'Bunga Simpanan Koperasi bagi WP OP', 'PP 15/2009; PMK 112/2010', 'Jumlah Bruto Bunga', '0% / 10%', 'Bunga s.d. Rp240.000 per bulan = 0%; Bunga > Rp240.000 per bulan = 10% dari seluruh bunga bruto.'],
         ['9', 'Hadiah Undian', 'PP 132/2000', 'Nilai Bruto Hadiah', '25%', 'Dipotong penyelenggara undian (tanpa batasan nilai hadiah).'],
         ['10', 'Penjualan Saham di Bursa Efek', 'PP 41/1994 jo. PP 14/1997', 'Nilai Bruto Transaksi', '0,1%', 'Tambahan 0,5% untuk transaksi penjualan saham pendiri (founder shares).'],
         ['11', 'Saham Modal Ventura (Perusahaan Pasangan)', 'PMK 48/2018', 'Nilai Bruto Transaksi', '0,1%', 'Atas saham pasangan usaha yang memenuhi kualifikasi.'],
@@ -164,8 +140,9 @@ export const TM6_READING: Reading = {
       kind: 'ul',
       items: [
         '**Pencabutan PMK 261/2016:** Pasal 483 angka 21 PMK 81/2024 resmi mencabut PMK No. 261/PMK.03/2016. Pengaturan administrasi PHTB disatukan dalam BAB VI Bagian Kedua PMK 81/2024.',
+        '**Dasar pengenaan (Pasal 192 ayat 2):** Untuk jual beli tanpa hubungan istimewa, gunakan nilai yang sesungguhnya diterima atau diperoleh. Untuk jual beli dengan hubungan istimewa, gunakan nilai yang seharusnya diterima atau diperoleh. Lelang, pengalihan kepada pemerintah, dan bentuk pengalihan lain memiliki dasar nilai tersendiri; jangan otomatis memilih angka tertinggi antara akta dan NJOP.',
         '**Penyetoran Sebelum Akta (Pasal 193):** Orang pribadi atau badan wajib menyetor sendiri PPh terutang ke Kas Negara sebelum akta, keputusan, atau risalah lelang ditandatangani oleh PPAT atau pejabat lelang.',
-        '**Validasi SSP oleh KPP (Pasal 197-198):** Pejabat Pembuat Akta Tanah (PPAT) hanya diperbolehkan menandatangani akta setelah menerima bukti bahwa Surat Setoran Pajak (SSP) telah divalidasi keabsahannya oleh sistem DJP.',
+        '**Bukti pemenuhan sebelum akta (Pasal 193 ayat 7-8):** Pejabat Pembuat Akta Tanah (PPAT) hanya boleh menandatangani akta setelah menerima salinan SSP atau bukti administrasi yang disamakan dengan SSP dan telah dilakukan penelitian oleh Kepala KPP.',
         '**Pelaporan Otomatis via SPT Masa PPh Unifikasi (Pasal 199):** Wajib Pajak yang menyetor sendiri dan divalidasi SSP-nya dianggap telah menyampaikan SPT Masa PPh Unifikasi sesuai tanggal pembayaran pada SSP.',
         '**Pengecualian Pembayaran PHTB (Pasal 200):** Diberikan bagi orang pribadi berpenghasilan di bawah PTKP dengan nilai pengalihan kurang dari Rp60.000.000, pengalihan hibah keluarga sedarah satu derajat / badan sosial keagamaan, serta pengalihan karena pewarisan.',
       ],
@@ -184,15 +161,15 @@ export const TM6_READING: Reading = {
       headers: ['Sektor Usaha', 'Dasar Regulasi', 'Norma Penghasilan Neto', 'Tarif Efektif PPh 15', 'Sifat Pemajakan'],
       rows: [
         ['Pelayaran Dalam Negeri', 'KMK No. 416/KMK.04/1996', '4% dari peredaran bruto', '1,2% (4% × 30%)', 'FINAL'],
-        ['Penerbangan Dalam Negeri (Carter)', 'KMK No. 475/KMK.04/1996', '6% dari peredaran bruto', '1,8% (6% × 30%)', 'TIDAK FINAL (Kredit PPh 28)'],
-        ['Pelayaran & Penerbangan Luar Negeri', 'KMK No. 417/KMK.04/1996', '6% dari peredaran bruto', '2,64% (PPh 1,8% + BPT 0,84%)', 'FINAL'],
+        ['Penerbangan Dalam Negeri (Carter)', 'KMK No. 475/KMK.04/1996', '6% dari peredaran bruto', '1,8% (6% × 30%)', 'TIDAK FINAL; dapat dikreditkan pada SPT Tahunan'],
+        ['Pelayaran & Penerbangan Luar Negeri', 'KMK No. 417/KMK.04/1996', '6% dari peredaran bruto', '2,64% dari peredaran bruto', 'FINAL'],
       ],
     },
     {
       kind: 'callout',
       variant: 'warning',
       title: 'Jebakan Ujian Utama PPh Pasal 15',
-      text: 'Sering diuji dalam ujian: Pelayaran Dalam Negeri (tarif 1,2%) bersifat FINAL. Sebaliknya, Penerbangan Dalam Negeri Carter (tarif 1,8%) bersifat TIDAK FINAL dan dapat diperhitungkan sebagai Kredit Pajak (PPh Pasal 28) pada SPT Tahunan Badan perusahaan maskapai penerbangan.',
+      text: 'Sering diuji dalam ujian: Pelayaran Dalam Negeri (tarif 1,2%) bersifat FINAL. Sebaliknya, Penerbangan Dalam Negeri Carter (tarif 1,8%) bersifat TIDAK FINAL dan dapat diperhitungkan sebagai kredit pajak pada SPT Tahunan PPh perusahaan maskapai penerbangan.',
     },
     {
       kind: 'h2',
@@ -321,7 +298,7 @@ export const TM6_READING: Reading = {
       prompt: 'PT Nusantara Air melayani carter penerbangan wisata dalam negeri kepada rombongan perusahaan dengan nilai kontrak Rp100.000.000. Hitung PPh Pasal 15 dan jelaskan perlakuan akhir tahunnya!',
       blocks: [
         { kind: 'formula', text: '\\text{PPh Pasal 15 Penerbangan DN}=1{,}8\\% \\times \\text{Rp}100.000.000=\\text{Rp}1.800.000' },
-        { kind: 'p', text: 'Sifat Pemajakan: **TIDAK FINAL** (KMK No. 475/KMK.04/1996). Pajak Rp1.800.000 dapat diperhitungkan sebagai **Kredit Pajak (PPh Pasal 28)** pada SPT Tahunan PPh Badan PT Nusantara Air.' },
+        { kind: 'p', text: 'Sifat Pemajakan: **TIDAK FINAL** (KMK No. 475/KMK.04/1996). Pajak Rp1.800.000 dapat diperhitungkan sebagai **kredit pajak** pada SPT Tahunan PPh Badan PT Nusantara Air.' },
       ],
     },
     {

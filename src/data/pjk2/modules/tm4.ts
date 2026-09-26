@@ -1,96 +1,61 @@
 import type { Reading } from '../../../types';
 
-const SVG_DEPRECIATION_REVALUATION = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="gBlue4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="gGreen4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="gAmber4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk4)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PENYUSUTAN FISKAL, AMORTISASI, &amp; PENILAIAN KEMBALI (REVALUASI) AKTIVA TETAP</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TM04 AKTIVA</text>
-
-  <!-- Card 1: Tarif & Kelompok Penyusutan -->
-  <g transform="translate(30, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gBlue4)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. KELOMPOK &amp; TARIF FISKAL</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="53" fill="#38bdf8" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 11 UU PPh &amp; PMK 72/2023</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Kel. 1 (4 th): Garis Lurus 25% | Saldo 50%</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Kel. 2 (8 th): Garis Lurus 12,5% | Saldo 25%</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Kel. 3 (16 th): Garis Lurus 6,25% | Saldo 12,5%</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Kel. 4 (20 th): Garis Lurus 5% | Saldo 10%</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Bangunan Permanen 20 th (5%): Saldo DILARANG</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Bangunan Tidak Permanen 10 th: Garis Lurus 10%</text>
-
-    <rect class="svg-badge-blue" x="12" y="185" width="241" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Tabel Baku Masa Manfaat Fiskal</text>
-  </g>
-
-  <!-- Card 2: Kaidah Perhitungan & Amortisasi -->
-  <g transform="translate(315, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gGreen4)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. KAIDAH HITUNG &amp; AMORTISASI</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="53" fill="#34d399" font-size="7.5" font-weight="800" text-anchor="middle">Pasal 11A UU PPh &amp; PMK 66/2023</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Residu Fiskal: Selalu Rp0 (Nol) mutlak</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Pembulatan Bulan Awal: Selalu penuh ke atas</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Saldo Menurun: Akhir masa disusut sekaligus</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• Mobil sedan &amp; HP dinas: 100% deductible (3M)</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">• Amortisasi: Kelompok 1-4 atas hak tanah HGB/</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">  HGU/HP, goodwill, paten, lisensi, merek dagang</text>
-
-    <rect class="svg-badge-green" x="12" y="185" width="241" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Kepastian Beban Operasional 3M</text>
-  </g>
-
-  <!-- Card 3: Revaluasi Aset Tetap -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="235" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="12" fill="url(#gAmber4)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. REVALUASI AKTIVA TETAP</text>
-    
-    <rect class="svg-subcard" x="12" y="38" width="241" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="53" fill="#fbbf24" font-size="7.5" font-weight="800" text-anchor="middle">PMK No. 79/PMK.03/2008</text>
-    
-    <text class="svg-text" x="12" y="78" fill="#cbd5e1" font-size="7.5">• Subjek: WP Badan DN &amp; BUT pembukuan IDR</text>
-    <text class="svg-text" x="12" y="93" fill="#cbd5e1" font-size="7.5">• Syarat: Wajib izin DJP &amp; dinilai oleh KJPP</text>
-    <text class="svg-text" x="12" y="108" fill="#cbd5e1" font-size="7.5">• Interval: Tidak boleh diulang sebelum 5 tahun</text>
-    <text class="svg-text" x="12" y="123" fill="#cbd5e1" font-size="7.5">• PPh Final 10%: Atas selisih lebih nilai appraisal</text>
-    <text class="svg-text" x="12" y="138" fill="#cbd5e1" font-size="7.5">  di atas nilai sisa buku fiskal semula</text>
-    <text class="svg-text" x="12" y="153" fill="#cbd5e1" font-size="7.5">• Angsuran: Maksimal 12 bulan; susut masa baru</text>
-
-    <rect class="svg-badge-amber" x="12" y="185" width="241" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Pembaruan Nilai Aktiva &amp; Modal</text>
-  </g>
-
-  <!-- Footer Banner -->
-  <rect class="svg-footer" x="30" y="320" width="835" height="22" rx="6" fill="#1e293b" fill-opacity="0.8"/>
-  <text class="svg-muted" x="447" y="335" fill="#94a3b8" font-size="8" text-anchor="middle">Pasal 11 &amp; 11A UU PPh s.t.d.t.d UU HPP | PMK 72/2023 | PP 55/2022 | PMK 66/2023 | PMK 79/PMK.03/2008</text>
-</svg>`;
+const OVERVIEW_DEPRECIATION_REVALUATION = {
+  "heading": "PENYUSUTAN FISKAL, AMORTISASI, & PENILAIAN KEMBALI (REVALUASI) AKTIVA TETAP",
+  "badge": "TM04 AKTIVA",
+  "cards": [
+    {
+      "title": "1. KELOMPOK & TARIF FISKAL",
+      "subtitle": "Pasal 11 UU PPh & PMK 72/2023",
+      "items": [
+        "Kel. 1 (4 th): Garis Lurus 25% | Saldo 50%",
+        "Kel. 2 (8 th): Garis Lurus 12,5% | Saldo 25%",
+        "Kel. 3 (16 th): Garis Lurus 6,25% | Saldo 12,5%",
+        "Kel. 4 (20 th): Garis Lurus 5% | Saldo 10%",
+        "Bangunan Permanen 20 th (5%): Saldo DILARANG",
+        "Bangunan Tidak Permanen 10 th: Garis Lurus 10%"
+      ],
+      "takeaway": "Tabel Baku Masa Manfaat Fiskal"
+    },
+    {
+      "title": "2. KAIDAH HITUNG & AMORTISASI",
+      "subtitle": "Pasal 11 dan 11A UU PPh; PMK 72/2023. Natura: PMK 66/2023",
+      "items": [
+        "Dasar penyusutan fiskal tidak dikurangi estimasi nilai residu komersial",
+        "Penyusutan umumnya dimulai pada bulan pengeluaran; lihat pengecualian PMK 72/2023 Pasal 5",
+        "Saldo Menurun: Akhir masa disusut sekaligus",
+        "Biaya HP dan kendaraan dinas dapat menjadi pengurang sepanjang terkait 3M; PPh penerima diuji terpisah",
+        "Amortisasi: Kelompok 1-4 atas hak tanah HGB/ HGU/HP, goodwill, paten, lisensi, merek dagang"
+      ],
+      "takeaway": "Kepastian Beban Operasional 3M"
+    },
+    {
+      "title": "3. REVALUASI AKTIVA TETAP",
+      "subtitle": "PMK No. 79/PMK.03/2008",
+      "items": [
+        "Subjek: WP Badan DN & BUT pembukuan IDR",
+        "Syarat: Permohonan ke DJP dan penilaian oleh perusahaan jasa penilai atau ahli penilai berizin",
+        "Interval: Tidak boleh diulang sebelum 5 tahun",
+        "PPh Final 10%: Atas selisih lebih nilai appraisal di atas nilai sisa buku fiskal semula",
+        "PPh final dapat dimohonkan angsuran maksimal 12 bulan bila kondisi keuangan tidak memungkinkan; masa manfaat susut dimulai lagi"
+      ],
+      "takeaway": "Pembaruan Nilai Aktiva & Modal"
+    }
+  ],
+  "footer": "Penyusutan dan amortisasi: Pasal 11 dan 11A UU PPh serta PMK 72/2023. Biaya dan kenikmatan: PP 55/2022, PMK 66/2023, PER-8/PJ/2025 Pasal 147 angka 26. Revaluasi: PMK 79/PMK.03/2008."
+};
 
 export const TM4_READING: Reading = {
   tm: 4,
   title: 'Penyusutan Harta Berwujud, Amortisasi Harta Tak Berwujud, dan Revaluasi Aset Tetap',
   ref: 'UU PPh Pasal 11 & 11A | UU No. 7/2021 HPP | PP 55/2022 | PMK 72/2023 | PMK 66/2023 | PMK 79/2008',
-  intro: 'Modul TM 4 menyajikan arsitektur pembebanan aktiva tetap berwujud dan harta tak berwujud dalam hukum pajak Indonesia: komparasi prinsip akuntansi komersial (PSAK 216) vs fiskal (pengabaian nilai residu nol, pembulatan bulan awal ke atas, dan sistem individual), tabel tarif dan masa manfaat baku Kelompok 1 s.d. 4 serta bangunan (metode garis lurus vs saldo menurun), tata cara permohonan masa manfaat ke DJP, logika penentuan waktu dimulainya penyusutan (perolehan, selesai konstruksi, atau izin DJP saat panen/komersial), status pembebanan 100% ponsel dan sedan dinas 3M pasca PMK 66/2023, ketentuan amortisasi hak atas tanah HGB/HGU dan aset tak berwujud (Pasal 11A UU PPh), perlakuan penarikan aktiva dan penggantian asuransi, serta tata kelola Penilaian Kembali (Revaluasi) Aktiva Tetap menurut PMK 79/PMK.03/2008 dengan pengenaan PPh Final 10%.',
+  intro: 'Modul TM 4 menyajikan pembebanan aktiva tetap berwujud dan harta tak berwujud dalam hukum pajak Indonesia: perbandingan prinsip akuntansi komersial (PSAK 216) dan fiskal, tarif serta masa manfaat Kelompok 1 s.d. 4 dan bangunan, permohonan masa manfaat ke DJP, saat mulai penyusutan dan pengecualiannya, pembebanan biaya ponsel dan kendaraan dinas sepanjang memenuhi prinsip 3M, amortisasi hak atas tanah dan aset tak berwujud, penarikan aktiva serta penggantian asuransi, dan penilaian kembali aktiva tetap menurut PMK 79/PMK.03/2008 dengan PPh final 10%.',
   objectives: [
     'Menganalisis perbedaan fundamental antara perlakuan akuntansi komersial (PSAK 216) dan fiskal (UU PPh & PMK 72/2023) dalam penentuan masa manfaat, nilai residu Rp0, saat mulai susut, dan larangan metode saldo menurun pada bangunan.',
     'Menghitung beban penyusutan fiskal harta berwujud Bukan Bangunan (Kelompok 1, 2, 3, dan 4) menggunakan metode Garis Lurus (Straight-Line) dan Saldo Menurun (Declining-Balance) dengan aturan disusutkan sekaligus pada tahun terakhir.',
     'Menghitung beban penyusutan kelompok Bangunan Permanen (20 tahun) dan Tidak Permanen (10 tahun) serta memahami opsi masa manfaat sesungguhnya melebihi 20 tahun sesuai PMK 72/2023.',
     'Menentukan saat dimulainya penyusutan fiskal (bulan perolehan, bulan selesainya konstruksi, atau bulan mulai menghasilkan di sektor perkebunan dengan persetujuan DJP).',
-    'Menjelaskan status pembebanan biaya telepon seluler dan kendaraan sedan dinas menurut hukum positif mutakhir (PP 55/2022 jo. PMK 66/2023) yang menggantikan KEP-220/PJ/2002.',
+    'Membedakan pengurangan biaya HP dan kendaraan dinas bagi pemberi kerja dari pengenaan PPh atas kenikmatan bagi pegawai menurut PP 55/2022 dan PMK 66/2023; KEP-220/PJ/2002 dicabut oleh PER-8/PJ/2025.',
     'Menghitung amortisasi harta tak berwujud dan biaya perpanjangan hak atas tanah (HGB, HGU, Hak Pakai) sesuai Pasal 11A UU PPh.',
     'Menghitung pajak penghasilan terutang (PPh Final 10%) atas selisih lebih Penilaian Kembali (Revaluasi) Aktiva Tetap serta pencatatan akun ekuitas modalnya menurut PMK No. 79/PMK.03/2008.'
   ],
@@ -98,7 +63,7 @@ export const TM4_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 4.1: Arsitektur Penyusutan Fiskal, Amortisasi, dan Penilaian Kembali Aktiva Tetap.',
-      svg: SVG_DEPRECIATION_REVALUATION
+      overview: OVERVIEW_DEPRECIATION_REVALUATION
     },
     {
       kind: 'callout',
@@ -175,11 +140,11 @@ export const TM4_READING: Reading = {
       kind: 'table',
       headers: ['Aspek Evaluasi', 'Posisi Historis (KEP-220/PJ/2002)', 'Posisi Positif Mutakhir (PP 55/2022 & PMK 66/2023)'],
       rows: [
-        ['Telepon Seluler (HP) Karyawan', 'Biaya perolehan HP disusutkan Kelompok 1 (4 tahun) namun HANYA BISA DIBEBANKAN 50%. Pulsa juga 50%.', 'KEP-220/PJ/2002 TELAH TIDAK BERLAKU LAGI. Biaya HP dan pulsa dinas dapat dibebankan 100% PENUH (deductible) jika berkaitan langsung dengan kegiatan 3M.'],
-        ['Mobil Sedan Dinas Jabatan', 'Biaya perolehan sedan dinas disusutkan Kelompok 2 (8 tahun) namun HANYA BISA DIBEBANKAN 50%. Biaya bensin/servis 50%.', 'Dapat dibebankan 100% PENUH (deductible) sepanjang digunakan untuk operasional dinas 3M pegawai/direksi perusahaan.'],
-        ['Sifat Pemajakan Pegawai', 'Bukan objek PPh bagi pegawai (natura/kenikmatan bebas pajak).', 'Bukan objek PPh bagi pegawai karena merupakan sarana/peralatan kerja yang disediakan pemberi kerja untuk pelaksanaan pekerjaan (Pasal 24 PP 55/2022).']
+        ['Telepon Seluler (HP) Karyawan', 'KEP-220/PJ/2002 membatasi pembebanan HP dan pulsa tertentu sebesar 50%.', 'KEP-220/PJ/2002 dicabut oleh PER-8/PJ/2025 Pasal 147 angka 26. Biaya HP dan pulsa dinas dapat dikurangkan sepanjang terbukti terkait kegiatan 3M; penyusutan berlaku untuk aset dengan masa manfaat lebih dari satu tahun.'],
+        ['Mobil Sedan Dinas Jabatan', 'KEP-220/PJ/2002 membatasi pembebanan sedan dinas dan biaya terkait tertentu sebesar 50%.', 'Biaya kendaraan yang berkaitan dengan kegiatan 3M dapat menjadi pengurang. Pemakaian pribadi atau kenikmatan pegawai perlu diuji tersendiri; jangan langsung menganggap seluruh biaya operasional sebagai 3M.'],
+        ['Sifat Pemajakan Pegawai', 'Perlakuan sebelum rezim natura UU HPP berbeda dari ketentuan kini.', 'Fasilitas kendaraan yang menjadi kenikmatan dikecualikan dari objek PPh penerima hanya jika pegawai bukan pemegang saham dan rata-rata penghasilan bruto 12 bulan terakhir dari pemberi kerja tidak lebih dari Rp100 juta per bulan (PMK 66/2023, lampiran). Peralatan kerja seperti HP diuji menurut fungsi dan ketentuan pengecualian yang relevan.']
       ],
-      caption: 'Tabel 4.3: Perbandingan status pembebanan HP dan sedan dinas KEP-220 vs PMK 66/2023.'
+      caption: 'Tabel 4.3: Perbandingan KEP-220/PJ/2002 yang dicabut PER-8/PJ/2025 dengan rezim UU HPP dan PMK 66/2023. Pembebanan pemberi kerja dan PPh penerima adalah dua pengujian berbeda.'
     },
     {
       kind: 'h2',
@@ -376,7 +341,7 @@ export const TM4_READING: Reading = {
         '**Masa Manfaat Baku Fiskal**: Bukan Bangunan (Kel. 1 = 4 th, Kel. 2 = 8 th, Kel. 3 = 16 th, Kel. 4 = 20 th). Bangunan (Permanen = 20 th, Tidak Permanen = 10 th). Bangunan dilarang saldo menurun.',
         '**Nilai Residu Nol & Pembulatan**: Pajak mengabaikan nilai residu komersial. Bulan perolehan dihitung penuh ke atas.',
         '**Saldo Menurun Tahun Terakhir**: Seluruh sisa buku fiskal wajib disusutkan sekaligus.',
-        '**Ponsel & Sedan Dinas (PMK 66/2023)**: KEP-220/2002 dicabut; biaya penyusutan dapat dibebankan 100% penuh jika terkait 3M.',
+        '**Ponsel & Sedan Dinas (PMK 66/2023)**: KEP-220/PJ/2002 dicabut secara formal oleh PER-8/PJ/2025. Biaya yang terbukti terkait 3M dapat dikurangkan sesuai ketentuan penyusutan; kenikmatan pada pegawai diuji terpisah.',
         '**Amortisasi Harta Tak Berwujud**: Menggunakan Kelompok 1-4 untuk hak atas tanah (HGB/HGU/HP) dan hak kekayaan intelektual.',
         '**Revaluasi PMK 79/2008**: Izin DJP, penilai publik KJPP, interval minimal 5 tahun, dikenakan PPh Final 10% atas selisih lebih nilai pasar di atas nilai sisa buku fiskal semula.'
       ]

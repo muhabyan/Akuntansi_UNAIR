@@ -1,6 +1,6 @@
 import type { Reading } from '../../../types';
 
-const SVG_AGENCY_GOVERNANCE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+const SVG_AGENCY_GOVERNANCE = `<svg class="course-diagram-svg course-diagram-agency" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
   <defs>
     <linearGradient id="bgMk1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
     <linearGradient id="shGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
@@ -67,33 +67,62 @@ export const TM1_READING: Reading = {
   tm: 1,
   title: 'An Overview of Financial Management, Corporate Goals, & Agency Theory',
   ref: 'Brigham & Houston (Fundamentals of Financial Management 16e/2022 Ch. 1) | Silabus FEB UNAIR 2026 | Jensen & Meckling (1976)',
-  intro: 'Modul TM 1 membedah fondasi filosofis dan arsitektur keputusan manajemen keuangan korporasi modern: pembagian 3 pilar utama keuangan, posisi strategis Chief Financial Officer (CFO) serta perbedaan peran Treasurer vs Controller, evaluasi komparatif bentuk badan usaha (Perusahaan Perseorangan, Persekutuan/CV, dan Perseroan Terbatas/PT), penetapan tujuan normatif Shareholder Wealth Maximization dan model penentuan Nilai Intrinsik berbasis Free Cash Flow (FCF) & WACC, dinamika Teori Keagenan (Agency Theory) mencakup konflik Stockholders vs Managers dan Stockholders vs Debtholders beserta instrumen mitigasinya, hingga relevansi etika bisnis dan tata kelola korporasi (Corporate Governance).',
+  intro: 'TM 1 membahas dasar-dasar manajemen keuangan: tugas seorang CFO, perbedaan Treasurer dan Controller, pengaruh bentuk badan usaha (Perseorangan, CV, PT) pada keputusan keuangan, serta Teori Keagenan (Agency Theory). Intinya, pemegang saham dan manajer dapat memiliki kepentingan berbeda, sehingga perusahaan memerlukan mekanisme untuk menyelaraskannya.',
   objectives: [
-    'Membedakan 3 area utama keuangan (Financial Management, Capital Markets, Investments) dan fungsi strategis CFO (Treasurer vs Controller).',
-    'Menganalisis kelebihan, kelemahan, tanggung jawab hukum (unlimited vs limited liability), dan implikasi pajak bentuk-bentuk badan usaha.',
-    'Membuktikan mengapa Maksimalisasi Nilai Saham Intrinsik jangka panjang lebih unggul dibanding Maksimalisasi Laba Akuntansi kuartalan.',
-    'Menganalisis konsep Ekuilibrium Pasar: perbedaan antara Nilai Intrinsik (fundamental value) dengan Harga Pasar Saham (market price).',
-    'Membedah konflik keagenan Pemegang Saham vs Manajer serta instrumen mitigasinya (paket kompensasi ber-vesting, intervensi pemegang saham, ancaman pemecatan, dan hostile takeover).',
-    'Membedah konflik keagenan Pemegang Saham vs Kreditor (Asset Substitution & Debt Dilution) serta instrumen mitigasinya melalui Debt Covenants.',
-    'Mengevaluasi peran etika bisnis, kepatuhan regulasi Sarbanes-Oxley Act (SOX), dan tanggung jawab sosial (ESG) terhadap nilai korporasi.'
+    'Paham 3 bidang utama keuangan (Corporate Finance, Pasar Modal, Investasi) dan bedanya tugas Treasurer vs Controller.',
+    'Tahu kelebihan-kekurangan tiap bentuk badan usaha: soal tanggung jawab hukum (unlimited vs limited liability) dan pajaknya.',
+    'Ngerti kenapa tujuan perusahaan itu bukan cuma "cari laba sebesar-besarnya", tapi memaksimalkan nilai saham jangka panjang.',
+    'Bisa bedain Nilai Intrinsik saham (fundamental value) sama Harga Pasar — kapan saham undervalued, overvalued, atau equilibrium.',
+    'Paham konflik keagenan: Pemegang Saham vs Manajer, dan cara ngatasinnya (stock options, dewan komisaris, ancaman takeover).',
+    'Paham konflik Pemegang Saham vs Kreditor (masalah asset substitution) dan cara ngatasinnya lewat Debt Covenants.',
+    'Tahu pentingnya etika bisnis, Sarbanes-Oxley Act (SOX), dan tanggung jawab sosial (ESG) buat nilai perusahaan.'
   ],
   blocks: [
     {
       kind: 'figure',
-      caption: 'Gambar 1.1: Arsitektur Konflik Keagenan Segitiga dan Mekanisme Solusi Tata Kelola Korporasi.',
-      svg: SVG_AGENCY_GOVERNANCE
+      caption: 'Gambar 1.1: Segitiga konflik keagenan dan cara perusahaan mengatasinya.',
+      svg: SVG_AGENCY_GOVERNANCE,
+      altText: 'Segitiga pemegang saham, manajemen, dan kreditor. Konflik pemegang saham dengan manajer dan kreditor dapat dikurangi melalui insentif berbasis saham, pengawasan independen, dan perjanjian pembatasan utang.',
+      transcriptSections: [
+        {
+          title: 'Pelaku dan tujuan',
+          items: [
+            'Pemegang saham (principal): mengejar nilai saham dan dividen.',
+            'Manajemen (agent): menerima gaji, fasilitas, dan kewenangan dalam mengelola perusahaan.',
+            'Kreditor atau bank: mengutamakan keamanan pokok dan bunga utang.'
+          ]
+        },
+        {
+          title: 'Dua konflik',
+          items: [
+            'Pemegang saham vs manajer: keputusan dan fasilitas manajer bisa mengurangi nilai bagi pemilik.',
+            'Pemegang saham vs kreditor: pemilik dapat memilih risiko atau dividen yang melemahkan perlindungan pemberi pinjaman.'
+          ]
+        },
+        {
+          title: 'Cara mengurangi konflik',
+          items: [
+            'Kompensasi berbasis kinerja, termasuk opsi saham (ESOP), dapat menyelaraskan insentif manajer dan pemegang saham.',
+            'Komisaris independen, komite audit, dan audit eksternal membantu mengawasi pengeluaran fasilitas berlebihan.',
+            'Debt covenants dapat menetapkan batas leverage dan kas minimum sebelum pembagian dividen. DER < 2× pada gambar adalah contoh batas kontrak, bukan ketentuan umum.',
+            'Tata kelola yang efektif bertujuan mengurangi biaya keagenan dan menjaga nilai intrinsik perusahaan.'
+          ]
+        }
+      ]
     },
     {
       kind: 'callout',
       variant: 'key',
-      title: 'Pondasi Filosofis: Intrinsic Value vs Accounting Profit',
-      text: '1. Tujuan Utama Manajemen Finansial: Mengambil keputusan investasi, pendanaan, dan operasional yang memaksimalkan nilai intrinsik saham jangka panjang bagi pemegang saham (Shareholder Wealth Maximization).\n2. Nilai Intrinsik (Fundamental Value): Estimasi nilai wajar riil saham berdasarkan analisis fundamental atas arus kas bebas (Free Cash Flow) dan risiko objektif masa depan.\n3. Perbedaan Kritis dengan Laba Akuntansi: Laba akrual bersih (Net Income) mengabaikan nilai waktu uang (TVM), mengabaikan premi risiko, serta rentan dimanipulasi dengan kebijakan akuntansi agresif atau penundaan biaya riset jangka panjang.'
+      title: 'Poin Paling Penting: Nilai Intrinsik vs Laba Akuntansi',
+      compact: true,
+      text: '1. **Tujuan utama** manajemen keuangan bukan sekadar cari laba, tapi meningkatkan nilai intrinsik saham jangka panjang (Shareholder Wealth Maximization).\n2. **Nilai Intrinsik** itu perkiraan nilai "asli" suatu saham berdasarkan arus kas bebas (Free Cash Flow) dan risiko perusahaan di masa depan — bukan cuma angka di layar bursa.\n3. **Kenapa laba akuntansi bisa menipu?** Karena laba bersih (Net Income) nggak memperhitungkan nilai waktu uang, nggak memperhitungkan risiko, dan bisa dimanipulasi lewat kebijakan akuntansi (misal: menunda biaya R&D biar laba tahun ini keliatan gede).'
     },
     {
       kind: 'callout',
       variant: 'info',
-      title: 'Fokus Ujian & Panduan Silabus FEB UNAIR',
-      text: '1. Pengujian Teoretis: Ujian Manajemen Keuangan kerap menguji pemahaman mendalam atas alasan manajer bertindak tidak selaras dengan pemegang saham (Agency Problem) serta instrumen kontrak kompensasi (Stock Options, Performance Shares, Vesting Periods).\n2. Pengujian Konsep Pasar Modal: Soal ujian sering menanyakan kondisi ekuilibrium pasar (Kapan saham berstatus Undervalued vs Overvalued) dan peran analis sekuritas.\n3. Pertimbangan Bentuk Entitas: Pembedaan aspek pertanggungjawaban hukum (Unlimited Liability pada CV/Perseorangan vs Limited Liability pada PT) dan aspek pajak berganda (Double Taxation).'
+      title: 'Fokus Latihan TM1: Keagenan, Valuasi, dan Bentuk Usaha',
+      compact: true,
+      text: 'Konsep berikut dibahas di TM1 dan layak dilatih; frekuensinya dalam soal UTS dosen belum terverifikasi.\n\n1. **Teori Keagenan**: Jelaskan mengapa kepentingan manajer dapat berbeda dari pemegang saham dan bagaimana opsi saham, saham berbasis kinerja, serta periode vesting dapat membantu.\n2. **Valuasi Saham**: Bandingkan harga pasar dengan nilai intrinsik untuk menjelaskan kapan saham dinilai undervalued atau overvalued.\n3. **Bentuk Badan Usaha**: Bandingkan tanggung jawab hukum pada CV dan PT, serta kemungkinan pajak berganda pada dividen PT.'
     },
     {
       kind: 'h2',
@@ -101,7 +130,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Keuangan (Finance) dalam dunia bisnis terbagi ke dalam tiga pilar utama yang saling terhubung erat:'
+      text: 'Keuangan (Finance) itu sebenernya ada tiga bidang besar yang saling nyambung:'
     },
     {
       kind: 'ul',
@@ -137,7 +166,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Berdasarkan hukum korporasi dan literatur keuangan standar Brigham & Houston, terdapat tiga bentuk badan usaha utama yang memiliki karakteristik yuridis, hak kepemilikan, dan implikasi perpajakan yang sangat berbeda:'
+      text: 'Ada tiga bentuk badan usaha utama yang perlu kamu tahu — masing-masing beda soal tanggung jawab hukum, akses modal, dan pajaknya:'
     },
     {
       kind: 'table',
@@ -166,7 +195,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Sasaran normatif utama bagi manajer keuangan adalah memaksimalkan kekayaan pemegang saham (Shareholder Wealth Maximization), yang diterjemahkan secara langsung ke dalam upaya memaksimalkan nilai intrinsik saham jangka panjang perusahaan.'
+      text: 'Tujuan utama manajer keuangan itu satu: bikin kekayaan pemegang saham makin besar (Shareholder Wealth Maximization). Caranya? Dengan membuat nilai intrinsik saham perusahaan naik dalam jangka panjang.'
     },
     {
       kind: 'h3',
@@ -174,7 +203,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Banyak orang awam mengira tujuan perusahaan adalah sekadar "memperoleh laba sebesar-besarnya". Namun, dalam teori keuangan korporasi, memusatkan perhatian semata-mata pada laba bersih akuntansi (Net Income) adalah kekeliruan fatal karena tiga alasan fundamental:'
+      text: 'Banyak yang ngira tujuan perusahaan itu cuma "cari laba sebanyak-banyaknya". Tapi di mata mankeu, cuma fokus ke laba bersih (Net Income) itu salah besar. Kenapa? Ada 3 alasan:'
     },
     {
       kind: 'ol',

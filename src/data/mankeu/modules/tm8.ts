@@ -97,7 +97,42 @@ export const TM8_READING: Reading = {
     {
       kind: 'figure',
       caption: 'Gambar 8.1: Peta Sintesis Alur Manajemen Keuangan (Pra-UTS TM 1 s.d. TM 7).',
-      svg: SVG_UTS_MANKEU_SUMMARY
+      svg: SVG_UTS_MANKEU_SUMMARY,
+      transcript: [
+        "1. RASIO & DUPONT",
+        "TM 1 & TM 2 | Rasio & Analisis",
+        "Teori Keagenan & Tata Kelola",
+        "Likuiditas: Current & Quick",
+        "Solvabilitas: DER & TIE Ratio",
+        "Profitabilitas: ROA & ROE",
+        "DuPont 3-Way: PM x TATO x EM",
+        "Fokus: Dekomposisi Kinerja",
+        "2. TVM & VALUASI",
+        "TM 3 | Nilai Waktu dari Uang",
+        "Present Value & Future Value",
+        "Ordinary Annuity vs Annuity Due",
+        "Perpetuitas: PV = PMT / r",
+        "Suku Bunga Efektif (EAR / EFF%)",
+        "Tabel Amortisasi Pinjaman Bank",
+        "Fokus: Matematika Keuangan",
+        "3. RISIKO, CAPM, & WACC",
+        "TM 4 & TM 5 | Risk & Return",
+        "Diversifikasi & Risiko Sistematik",
+        "Koefisien Beta (β) Portofolio",
+        "SML / CAPM: r_s = r_RF + β(r_M - r_RF)",
+        "Cost of Debt Setelah Pajak: r_d(1-T)",
+        "WACC = w_d r_d(1-T) + w_p r_p + w_s r_s",
+        "Fokus: Biaya Modal Rata-rata",
+        "4. CAPITAL BUDGETING",
+        "TM 6 & TM 7 | Evaluasi Proyek",
+        "NPV: Metode Evaluasi Emas",
+        "IRR vs MIRR (Tingkat Reinvestasi)",
+        "Profitability Index (PI) & Payback",
+        "Crossover Rate Mutually Exclusive",
+        "OCF & Tax Shield Depresiasi",
+        "Fokus: Kelayakan Investasi",
+        "Sintesis Terpadu Manajemen Keuangan Pra-UTS: Integrasi menyeluruh analisis rasio, nilai waktu uang, risiko portofolio, biaya modal, dan keputusan investasi modal."
+      ]
     },
     {
       kind: 'h2',
@@ -176,8 +211,8 @@ export const TM8_READING: Reading = {
         [
           '**TM 7**',
           'Arus Kas Proyek 3 Babak',
-          '$CF_0 = -(\\text{Aset Baru} + \\Delta NWC) + \\text{Jual Lama Net Pajak}$\n$OCF = EBIT(1-T) + \\text{Depr} = (\\text{Rev} - \\text{Cost})(1-T) + \\text{Depr}(T)$\n$TCF = \\text{Salvage Net Pajak} + \\Delta NWC \\text{ (100% Recovery)}$',
-          'Beban bunga pembiayaan DILARANG masuk OCF. Modal kerja disetor di awal ($CF_0$) dan WAJIB dicairkan kembali utuh 100% di akhir ($TCF$).'
+          '$CF_0 = -(\\text{Aset Baru} + \\Delta NWC) + \\text{Jual Lama Net Pajak}$\n$OCF = EBIT(1-T) + \\text{Depr} = (\\text{Rev} - \\text{Cost})(1-T) + \\text{Depr}(T)$\n$TCF = \\text{Salvage Net Pajak} + \\text{Pemulihan NWC}$',
+          'Beban bunga pembiayaan tidak dimasukkan ke OCF ketika WACC sudah mencerminkan biaya pendanaan. Tambahan modal kerja keluar di awal ($CF_0$); masukkan pemulihannya di akhir ($TCF$) sesuai asumsi soal, yang sering menganggap seluruhnya kembali.'
         ]
       ],
       caption: 'Tabel 8.1: Master Cheatsheet Rumus Lengkap Pra-UTS Manajemen Keuangan.'
@@ -221,7 +256,7 @@ export const TM8_READING: Reading = {
     {
       kind: 'solution-reveal',
       title: 'Soal Integrasi 2: Rangkaian Lengkap WACC ke Evaluasi Penganggaran Modal',
-      prompt: 'Sebuah perusahaan manufaktur memiliki struktur modal: 40% Utang ($r_d = 10\\%$, Pajak $T = 20\\%$) dan 60% Ekuitas Biasa (Saham memiliki $\\beta = 1,25$, $r_{RF} = 5\\%$, $r_M = 13\\%$). Perusahaan sedang mengevaluasi proyek investasi mesin baru yang membutuhkan modal awal $CF_0 = -\\$10.000$ dan menghasilkan arus kas bersih $CF_1 = \\$4.000$, $CF_2 = \\$4.000$, $CF_3 = \\$4.000$, $CF_4 = \\$4.000$. Hitunglah WACC perusahaan dan tentukan apakah proyek diterima berdasarkan kriteria NPV!',
+      prompt: 'Sebuah perusahaan manufaktur memiliki struktur modal: 40% Utang ($r_d = 10\\%$, Pajak $T = 20\\%$) dan 60% Ekuitas Biasa (Saham memiliki $\\beta = 1,25$, $r_{RF} = 5\\%$, $r_M = 13\\%$). Perusahaan sedang mengevaluasi proyek investasi mesin baru yang membutuhkan modal awal $CF_0 = -10.000$ dan menghasilkan arus kas bersih $CF_1 = 4.000$, $CF_2 = 4.000$, $CF_3 = 4.000$, $CF_4 = 4.000$. Hitunglah WACC perusahaan dan tentukan apakah proyek diterima berdasarkan kriteria NPV!',
       blocks: [
         {
           kind: 'ul',
@@ -229,8 +264,8 @@ export const TM8_READING: Reading = {
             '**Langkah 1: Hitung Biaya Utang Setelah Pajak**:\n$$r_{d, after-tax} = r_d \\times (1 - T) = 10\\% \\times (1 - 0,20) = \\mathbf{8,0\\%}$$',
             '**Langkah 2: Hitung Biaya Ekuitas Menggunakan CAPM**:\n$$r_s = r_{RF} + \\beta \\times (r_M - r_{RF}) = 5\\% + 1,25 \\times (13\\% - 5\\%) = 5\\% + 1,25(8\\%) = 5\\% + 10\\% = \\mathbf{15,0\\%}$$',
             '**Langkah 3: Hitung WACC Perusahaan**:\n$$\\text{WACC} = (w_d \\times r_d(1-T)) + (w_e \\times r_s) = (0,40 \\times 8,0\\%) + (0,60 \\times 15,0\\%) = 3,2\\% + 9,0\\% = \\mathbf{12,2\\%}$$',
-            '**Langkah 4: Hitung NPV Proyek Menggunakan WACC = 12,2% Sebagai Hurdle Rate**:\nArus kas adalah anuitas $\$4.000$ per tahun selama 4 tahun pada bunga $12,2\\%$ ($r = 0,122$):\n$$PVIFA_{12,2\\%, 4} = \\frac{1 - (1,122)^{-4}}{0,122} = \\frac{1 - 0,63098}{0,122} = 3,02475$$\n$$\\text{Total PV Kas Masuk} = 4.000 \\times 3,02475 = \\$12.099$$\n$$NPV = 12.099 - 10.000 = \\mathbf{+\\$2.099}$$',
-            '**Kesimpulan Keputusan**: Karena $NPV > 0$ (**+$2.099**), proyek investasi mesin baru ini **LAYAK DITERIMA** karena memberikan imbal hasil di atas biaya modal WACC perusahaan.'
+            '**Langkah 4: Hitung NPV Proyek Menggunakan WACC = 12,2% Sebagai Hurdle Rate**:\nArus kas adalah anuitas $4.000$ per tahun selama 4 tahun pada bunga $12,2\\%$ ($r = 0,122$):\n$$PVIFA_{12,2\\%, 4} = \\frac{1 - (1,122)^{-4}}{0,122} \\approx 3,02460$$\n$$\\text{Total PV Kas Masuk} \\approx 4.000 \\times 3,02460 = 12.098,40$$\n$$NPV \\approx 12.098,40 - 10.000 = \\mathbf{+2.098,40}$$',
+            '**Kesimpulan Keputusan**: Karena $NPV > 0$ (**sekitar +2.098,40**), proyek investasi mesin baru ini **LAYAK DITERIMA** karena memberikan imbal hasil di atas biaya modal WACC perusahaan.'
           ]
         }
       ]

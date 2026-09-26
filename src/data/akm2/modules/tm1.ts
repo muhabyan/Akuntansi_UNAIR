@@ -43,7 +43,7 @@ const EQUIPMENT_ACQUISITION_EXAMPLE: ContentBlock = {
     },
     {
       kind: 'formula',
-      text: '\\text{Harga beli bersih}=Rp800.000.000-Rp16.000.000=Rp784.000.000\\\\\\text{Biaya atribusi langsung}=Rp45.000.000+Rp25.000.000+Rp35.000.000+Rp15.000.000=Rp120.000.000\\\\\\text{Biaya perolehan mesin}=Rp904.000.000',
+      text: '\\begin{aligned}\\text{Harga beli bersih}&=\\text{Rp }800.000.000-\\text{Rp }16.000.000=\\text{Rp }784.000.000\\\\\\text{Biaya atribusi langsung}&=\\text{Rp }45.000.000+\\text{Rp }25.000.000+\\text{Rp }35.000.000+\\text{Rp }15.000.000=\\text{Rp }120.000.000\\\\\\text{Biaya perolehan mesin}&=\\text{Rp }904.000.000\\end{aligned}',
       note: 'Hasil penjualan output pengujian tidak digunakan dalam perhitungan ini karena perlakuan tersebut tidak terverifikasi dalam lapisan sumber kanonis TM1.'
     },
     {
@@ -77,7 +77,7 @@ const NON_MONETARY_EXCHANGE_CASES: ContentBlock = {
       title: 'Information Processing SA — substansi komersial, rugi',
       prompt: 'Aset lama: cost €12.000, akumulasi depresiasi €4.000, nilai buku €8.000, nilai wajar €6.000. Kas dibayar €7.000. Hitung aset baru dan rugi.',
       blocks: [
-        { kind: 'formula', text: '\\text{Aset baru}=€6.000+€7.000=€13.000\\\\\\text{Rugi}=€8.000-€6.000=€2.000' },
+        { kind: 'formula', text: '\\begin{aligned}\\text{Aset baru}&=\\text{EUR }6.000+\\text{EUR }7.000=\\text{EUR }13.000\\\\\\text{Rugi}&=\\text{EUR }8.000-\\text{EUR }6.000=\\text{EUR }2.000\\end{aligned}' },
         {
           kind: 'journal',
           caption: 'Pertukaran dengan substansi komersial',
@@ -96,7 +96,7 @@ const NON_MONETARY_EXCHANGE_CASES: ContentBlock = {
       title: 'Interstate Transportation — substansi komersial, laba',
       prompt: 'Truk lama: cost \\$64.000, akumulasi depresiasi \\$22.000, nilai buku \\$42.000, nilai wajar \\$49.000. Kas dibayar \\$11.000.',
       blocks: [
-        { kind: 'formula', text: '\\text{Truk baru}=\\text{USD }49.000+\\text{USD }11.000=\\text{USD }60.000\\\\\\text{Gain}=\\text{USD }49.000-\\text{USD }42.000=\\text{USD }7.000' },
+        { kind: 'formula', text: '\\begin{aligned}\\text{Truk baru}&=\\text{USD }49.000+\\text{USD }11.000=\\text{USD }60.000\\\\\\text{Gain}&=\\text{USD }49.000-\\text{USD }42.000=\\text{USD }7.000\\end{aligned}' },
         {
           kind: 'journal',
           caption: 'Pertukaran dengan substansi komersial',
@@ -223,7 +223,7 @@ const COMPONENT_DEPRECIATION_CASE: ContentBlock = {
       ],
       caption: 'IAS 16.43 / PSAK 216; Kieso IFRS 5e Ch. 9 p. 9-22.'
     },
-    { kind: 'formula', text: '€60.000.000/20+€30.000.000/10+€10.000.000/5=€8.000.000' },
+    { kind: 'formula', text: '\\frac{\\text{EUR }60.000.000}{20}+\\frac{\\text{EUR }30.000.000}{10}+\\frac{\\text{EUR }10.000.000}{5}=\\text{EUR }8.000.000' },
     {
       kind: 'journal',
       caption: 'Jurnal agregat depresiasi tahun pertama',
@@ -262,7 +262,7 @@ const REVALUATION_CASE: ContentBlock = {
         { account: 'Unrealized Gain on Revaluation — OCI', credit: '€50.000', isCredit: true }
       ]
     },
-    { kind: 'formula', text: '\\text{Depresiasi tahun berikutnya}=€850.000/4=€212.500\\\\\\text{Transfer tahunan}=€212.500-€200.000=€12.500' },
+    { kind: 'formula', text: '\\begin{aligned}\\text{Depresiasi tahun berikutnya}&=\\text{EUR }850.000/4=\\text{EUR }212.500\\\\\\text{Transfer tahunan}&=\\text{EUR }212.500-\\text{EUR }200.000=\\text{EUR }12.500\\end{aligned}' },
     {
       kind: 'journal',
       caption: '3. Depresiasi tahun berikutnya',
@@ -301,6 +301,11 @@ export const TM1_READING: Reading = {
       kind: 'figure',
       title: 'Peta Keputusan Properti dan Aset Berwujud',
       svg: SVG_PPE_CLASSIFICATION,
+      transcript: [
+        'Aset tetap (PSAK 216): dipakai dalam operasi atau administrasi; setelah pengakuan awal dapat menggunakan model biaya atau model revaluasi.',
+        'Properti investasi (PSAK 240): dimiliki untuk pendapatan sewa atau kenaikan nilai; dalam model nilai wajar, perubahan nilai masuk laba rugi.',
+        'Persediaan properti: dijual dalam kegiatan usaha biasa, misalnya kavling milik pengembang real estat.'
+      ],
       caption: 'Mulai dari tujuan penggunaan aset; standar pengukuran mengikuti klasifikasinya.'
     },
     {

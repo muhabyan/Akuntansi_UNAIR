@@ -153,7 +153,7 @@ export const SIA_TM6: Reading = {
       ['Order_Cash_Receipts (linking)', 'Receipt_Number', 'INT', 'NOT NULL, FOREIGN KEY → Cash_Receipts(Receipt_Number)'],
       ['Order_Cash_Receipts (linking)', 'Amount_Applied', 'DECIMAL(10,2)', 'NOT NULL'],
       ['Order_Cash_Receipts (linking)', '(Order_Number, Receipt_Number)', '—', 'Composite PRIMARY KEY'],
-    ], caption: 'Skema relasional 12 tabel Sunset Graphics. Richardson 4e, pp. 304–311; Exhibits 7.24–7.29. PK sisi "1" menjadi FK di sisi "many"; asosiasi M:N diselesaikan dengan linking table berkunci komposit.' },
+    ], caption: 'Skema relasional Sunset Graphics. Richardson 4e, Bab 7, sekitar hlm. 301–305; Exhibits 7.24–7.29. PK sisi "1" menjadi FK di sisi "many"; asosiasi M:N diselesaikan dengan linking table berkunci komposit.' },
     { kind: 'table', headers: ['Kelompok tabel', 'Tabel'], rows: [
       ['Master', 'Customers, Employees, Products, Bank_Accounts'],
       ['Transaksi (event)', 'Quotes, Orders, Cash_Receipts'],
@@ -163,7 +163,7 @@ export const SIA_TM6: Reading = {
     { kind: 'callout', variant: 'tip', title: 'Form dan subform sales order', text: '**Main form** menampilkan header `Orders` (Order Number, Order Date, Customer, Employee, Status). **Subform** tertanam terikat ke `Order_Items` dan menghitung total baris (`Quantity_Ordered * Selling_Price`) serta total invoice secara dinamis. **Dropdown combo box** membatasi input hanya pada primary key yang sudah ada di `Customers`, `Employees`, dan `Products` sehingga referential integrity ditegakkan sejak entri data.' },
 
     { kind: 'h2', text: '6. Worked Practice' },
-    { kind: 'solution-reveal', title: '1. Sunset Graphics: pesanan banner custom dan potongan tunai', prompt: 'Sunset Graphics menerima pesanan 10 vinyl event banner custom dari klien korporat seharga \\$120.00 per unit; standard cost \\$45.00 per unit; termin 2/10, net 30. Banner diserahkan beserta invoice pada 5 Oktober dan klien membayar pada 12 Oktober (dalam 10 hari). Susun seluruh jurnalnya. Data kasus: Richardson 4e, pp. 306–312.', blocks: [
+    { kind: 'solution-reveal', title: '1. Ilustrasi Sunset Graphics: banner custom dan potongan tunai', prompt: 'Sebagai latihan buatan berdasarkan alur Sunset Graphics dalam Richardson 4e Bab 7 (hlm. 284–305), andaikan ada pesanan 10 vinyl event banner seharga \\$120.00 per unit; biaya standar \\$45.00 per unit; termin 2/10, net 30. Banner diserahkan dan ditagih pada 5 Oktober, lalu dibayar pada 12 Oktober. Susun seluruh jurnalnya. Jumlah, harga, dan tanggal ini adalah asumsi latihan.', blocks: [
       { kind: 'formula', text: '\\text{Gross Invoice} = 10 \\times 120.00 = 1{,}200.00\n\\text{Total COGS} = 10 \\times 45.00 = 450.00\n\\text{Cash Discount (2\\%)} = 1{,}200.00 \\times 0.02 = 24.00\n\\text{Cash Received} = 1{,}200.00 - 24.00 = 1{,}176.00', note: 'Satuan USD. Pembayaran 12 Oktober masih dalam periode diskon 10 hari sejak invoice 5 Oktober.' },
       { kind: 'journal', caption: '5 Oktober: penyerahan dan invoice 10 banner (USD)', lines: [{ account: 'Accounts Receivable (Piutang Usaha)', debit: '$1,200.00' }, { account: 'Sales Revenue (Pendapatan Penjualan)', credit: '$1,200.00', isCredit: true }] },
       { kind: 'journal', caption: '5 Oktober: pengurangan persediaan pada standard cost 10 × 45.00 (USD)', lines: [{ account: 'Cost of Goods Sold (Beban Pokok Penjualan)', debit: '$450.00' }, { account: 'Merchandise Inventory (Persediaan Barang Dagang)', credit: '$450.00', isCredit: true }] },

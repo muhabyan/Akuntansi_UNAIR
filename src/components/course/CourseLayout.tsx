@@ -287,12 +287,6 @@ function ReadingPanel({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        e.stopPropagation();
-        onBack();
-        return;
-      }
       if (e.key === 'ArrowLeft' && !isFirst) {
         onPrev();
       } else if (e.key === 'ArrowRight' && !isLast) {
@@ -323,7 +317,7 @@ function ReadingPanel({
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <div className="reading-toolbar sticky top-[calc(4.25rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-200/90 bg-white/95 p-1.5 shadow-sm shadow-slate-900/5 backdrop-blur-md transition-[opacity,transform] duration-200 dark:border-gray-700/90 dark:bg-gray-900/95 dark:shadow-black/20 md:top-[4.75rem]">
+        <div className="reading-toolbar sticky top-[calc(4rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-300 bg-white p-1.5 shadow-md shadow-slate-900/10 transition-[opacity,transform] duration-200 dark:border-gray-600 dark:bg-gray-900 dark:shadow-black/30 md:top-[4.75rem]">
           <button
             ref={mobileOutlineTriggerRef}
             type="button"
@@ -801,7 +795,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSelectedMeetingTm(tm);
     setSelectedReviewKey(null);
     try {
-      window.history.pushState({ akuntansihub_tm: tm, courseCode: course.code }, '', window.location.pathname);
+      window.history.pushState({ akuntansihub_tm: tm, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
     } catch {
       // ignore
     }
@@ -812,7 +806,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSelectedMeetingTm(null);
     setSelectedReviewKey(key);
     try {
-      window.history.pushState({ akuntansihub_review: key, courseCode: course.code }, '', window.location.pathname);
+      window.history.pushState({ akuntansihub_review: key, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
     } catch {
       // ignore
     }
@@ -844,24 +838,6 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
-
-  useEffect(() => {
-    const handleCourseKeyDown = (e: KeyboardEvent) => {
-      if (document.activeElement?.tagName === 'INPUT' || document.activeElement?.tagName === 'TEXTAREA') return;
-      if (e.key === 'Escape') {
-        if (selectedMeetingTm !== null || selectedReviewKey !== null) {
-          e.preventDefault();
-          e.stopPropagation();
-          handleBackFromReading();
-          return;
-        }
-        e.preventDefault();
-        onBack();
-      }
-    };
-    window.addEventListener('keydown', handleCourseKeyDown);
-    return () => window.removeEventListener('keydown', handleCourseKeyDown);
-  }, [selectedMeetingTm, selectedReviewKey, onBack]);
 
   const switchTab = (id: TabType) => {
     setActiveTab(id);

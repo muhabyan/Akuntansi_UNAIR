@@ -26,11 +26,21 @@ export default function PomodoroTimer() {
   }, []);
 
   useEffect(() => {
+    window.addEventListener('open-pomodoro', openPanel);
+    return () => window.removeEventListener('open-pomodoro', openPanel);
+  }, [openPanel]);
+
+  useEffect(() => {
     const closeWhenAnotherUtilityOpens = (event: Event) => {
       if ((event as CustomEvent<{ id?: string }>).detail?.id !== 'pomodoro-timer') setIsOpen(false);
     };
+    const closeUtility = () => setIsOpen(false);
     window.addEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
-    return () => window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+    window.addEventListener('akuntansihub:close-utility', closeUtility);
+    return () => {
+      window.removeEventListener('akuntansihub:utility-open', closeWhenAnotherUtilityOpens);
+      window.removeEventListener('akuntansihub:close-utility', closeUtility);
+    };
   }, []);
   
   const playBell = () => {
@@ -112,16 +122,17 @@ export default function PomodoroTimer() {
         id="pomodoro-panel"
         data-utility-panel="pomodoro-timer"
         aria-hidden={!isOpen}
-        className={`mobile-utility-panel fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
+        ref={(panel) => { panel?.toggleAttribute('inert', !isOpen); }}
+        className={`mobile-utility-panel mobile-utility-panel--pomodoro fixed z-[100] transition-[transform,opacity] duration-200 ease-out ${
           isTopHalf ? 'origin-top' : 'origin-bottom'
         }-${isLeftHalf ? 'left' : 'right'} ${
           !isOpen ? 'scale-90 opacity-0 pointer-events-none' : 'scale-100 opacity-100 pointer-events-auto'
         }`}
-        style={draggable.isDesktop ? draggable.getPanelStyle(288, 350) : undefined}
+        style={draggable.isDesktop ? draggable.getPanelStyle(288, 300) : undefined}
       >
-        <div className="mobile-utility-card w-72 max-h-full bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-4 overflow-y-auto">
-          <div className="flex items-center justify-between mb-4 select-none p-2 -m-2 rounded-lg bg-slate-50 dark:bg-slate-800/50">
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-2 pointer-events-none">
+        <div className="mobile-utility-card mobile-utility-card--pomodoro w-72 max-h-full overflow-y-auto rounded-2xl border border-slate-200 bg-white p-3 shadow-xl shadow-slate-900/15 dark:border-slate-700 dark:bg-slate-900 dark:shadow-black/30">
+          <div className="mb-3 flex select-none items-center justify-between border-b border-slate-200 pb-2 dark:border-slate-700">
+            <h3 className="flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-slate-100">
               <Timer size={18} className="text-blue-500" /> Pomodoro
             </h3>
             <button 
@@ -129,65 +140,65 @@ export default function PomodoroTimer() {
               onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
               aria-label="Tutup Pomodoro"
-              className="text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 p-1 rounded-full transition relative z-10 cursor-pointer"
-              title="Tutup Timer"
+              className="relative z-10 flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-700 transition-colors hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+              title="Tutup Pomodoro"
             >
-              <X size={16} />
+              <X size={20} aria-hidden="true" />
             </button>
           </div>
 
-          <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg mb-6">
+          <div className="mb-3 flex gap-2">
             <button
               onClick={() => switchMode('focus')}
-              className={`flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold py-1.5 rounded-md transition-all ${
+              className={`flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-lg border px-2 text-sm font-semibold transition-colors ${
                 mode === 'focus' 
-                  ? 'bg-white dark:bg-slate-700 text-blue-600 dark:text-blue-400 shadow-sm' 
-                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                  ? 'border-blue-300 bg-blue-50 text-blue-800 dark:border-blue-700 dark:bg-blue-950/60 dark:text-blue-200'
+                  : 'border-slate-200 text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800'
               }`}
             >
               {MODES.focus.icon} {MODES.focus.label}
             </button>
             <button
               onClick={() => switchMode('break')}
-              className={`flex-1 flex items-center justify-center gap-1.5 text-xs font-semibold py-1.5 rounded-md transition-all ${
+              className={`flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-lg border px-2 text-sm font-semibold transition-colors ${
                 mode === 'break' 
-                  ? 'bg-white dark:bg-slate-700 text-emerald-600 dark:text-emerald-400 shadow-sm' 
-                  : 'text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200'
+                  ? 'border-emerald-300 bg-emerald-50 text-emerald-800 dark:border-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-200'
+                  : 'border-slate-200 text-slate-700 hover:bg-slate-50 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800'
               }`}
             >
               {MODES.break.icon} {MODES.break.label}
             </button>
           </div>
 
-          <div className="flex flex-col items-center justify-center mb-6 relative">
+          <div className="relative mb-3 flex flex-col items-center justify-center">
             {/* Progress Circle (Decorative) */}
-            <svg className="w-32 h-32 transform -rotate-90">
+            <svg className="h-28 w-28 -rotate-90" viewBox="0 0 112 112" aria-hidden="true">
               <circle
-                cx="64" cy="64" r="60"
+                cx="56" cy="56" r="50"
                 fill="none" strokeWidth="6"
                 className="stroke-slate-100 dark:stroke-slate-800"
               />
               <circle
-                cx="64" cy="64" r="60"
+                cx="56" cy="56" r="50"
                 fill="none" strokeWidth="6"
                 strokeLinecap="round"
                 className={`transition-all duration-1000 ${mode === 'focus' ? 'stroke-blue-500' : 'stroke-emerald-500'}`}
-                strokeDasharray="377" // 2 * PI * 60
-                strokeDashoffset={377 - (377 * progress) / 100}
+                strokeDasharray="314" // approximately 2 * PI * 50
+                strokeDashoffset={314 - (314 * progress) / 100}
               />
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className="text-4xl font-black text-slate-800 dark:text-slate-100 tracking-tighter">
+              <span className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100">
                 {formatTime(timeLeft)}
               </span>
             </div>
           </div>
 
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-3">
             <button
               onClick={toggleTimer}
               aria-label={isRunning ? 'Jeda Pomodoro' : 'Mulai Pomodoro'}
-              className={`pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full text-white shadow-lg transition-transform hover:scale-105 active:scale-95 ${
+              className={`pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full text-white shadow-sm transition-transform hover:scale-105 active:scale-95 ${
                 mode === 'focus' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-emerald-600 hover:bg-emerald-700'
               }`}
             >
@@ -196,7 +207,7 @@ export default function PomodoroTimer() {
             <button
               onClick={resetTimer}
               aria-label="Reset Pomodoro"
-              className="pointer-events-auto w-12 h-12 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-transform hover:scale-105 active:scale-95"
+              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-slate-100 text-slate-700 transition-colors hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
               title="Reset Timer"
             >
               <RotateCcw size={18} />
@@ -230,7 +241,7 @@ export default function PomodoroTimer() {
           top: `clamp(70px, ${draggable.position.y}px, calc(100vh - 48px))`,
           zIndex: 100
         } : undefined}
-        className={`group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--pomodoro' : ''} ${
+        className={`utility-launcher-quiet group flex items-center justify-center shadow-md ${!isOpen ? 'mobile-utility-launcher mobile-utility-launcher--pomodoro' : ''} ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
           draggable.isLongPressing ? 'shadow-xl ring-4 ring-slate-400/50' : 'cursor-pointer active:scale-95'

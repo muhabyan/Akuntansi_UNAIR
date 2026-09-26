@@ -53,7 +53,7 @@ const HANOI_COMPONENT_CASE: ContentBlock = {
     },
     {
       kind: 'p',
-      text: 'Pada akhir tahun ke-2, ban diganti dengan biaya £7.000. Akumulasi depresiasi ban sudah £3.000 × 2 = £6.000, sehingga nilai buku ban lama £6.000 − £6.000 = £0.'
+      text: '**Ilustrasi lanjutan buatan situs (bukan angka dari Kieso p. 781):** andaikan pada akhir tahun ke-2 ban diganti dengan biaya £7.000. Akumulasi depresiasi ban sudah £3.000 × 2 = £6.000, sehingga nilai buku ban lama £6.000 − £6.000 = £0.'
     },
     {
       kind: 'journal',

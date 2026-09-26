@@ -73,7 +73,7 @@ const required = {
     'Order_Items', 'Quote_Items', 'Bank_Accounts', 'Order_Cash_Receipts', '(Order_Number, Product_Number)',
     '(Quote_Number, Product_Number)', '(Order_Number, Receipt_Number)', 'Manager_Employee#', 'Amount_Applied',
     'Main form', 'Subform', 'combo box', '$120.00', '$45.00', '$1,200.00', '$450.00', '$24.00', '$1,176.00',
-    'pp. 306–312', 'trade discount'],
+    'hlm. 301–305', 'trade discount'],
   7: ['Procure-to-Pay', 'Identify Need & Request Prices', 'Issue Purchase Order (PO)', 'Receive and Inspect Goods',
     'Verify Vendor Invoice (Three-Way Match)', 'Execute Cash Disbursement', 'Raw Materials Inventory',
     'Purchase Discounts', '2/10, net 30', 'debit memo', 'Supplier Pool', 'Enterprise Pool',
@@ -87,7 +87,7 @@ const required = {
     'Receipt_Items', 'Receipt_Disbursements', '(PO_Number, Item_Number)', '(Receipt_Number, Item_Number)',
     '(Receipt_Number, Disbursement_Num)', 'Agreed_Unit_Cost', 'Default_Terms', 'Baer Belly Bikinis', 'Paige Baer',
     'Santa Monica', 'Economic Duality', '$5,000.00', '$100.00', '$4,900.00', '$25.00', '$27.00', '$2,000.00',
-    '$700', 'pp. 340–343'],
+    '$700', 'hlm. 334–336'],
 };
 // Strings rendered through remark-math must not contain two unescaped "$": they turn into inline math.
 const mathSafeTms = new Set([1, 2, 3, 4, 5, 6, 7]);
@@ -184,6 +184,13 @@ assert.equal(15 + 25, 40);
 assert.equal(40 + 50 + 30, 120);
 assert.equal((40 / 120 * 100).toFixed(2), '33.33');
 assert.equal((80 / 120 * 100).toFixed(2), '66.67');
+const tm3Blocks = flatten(readings[3].blocks);
+const starbucksFigure = tm3Blocks.find((block) => block.kind === 'figure' && block.svg?.includes('Starbucks Drive-Through'));
+assert.ok(starbucksFigure, 'TM3 Starbucks mempunyai diagram pool dan alur');
+assert.ok(starbucksFigure.svg.includes('Pool Customer') && starbucksFigure.svg.includes('lane Barista'));
+assert.ok(starbucksFigure.svg.includes('sequence flow') && starbucksFigure.svg.includes('message flow'));
+assert.ok(starbucksFigure.caption.includes('Problem 1') && starbucksFigure.caption.includes('bukan gambar buku'));
+assert.ok(JSON.stringify(readings[3]).includes('Exhibit 4.10 pada hlm. 186 membahas jenis gateway'));
 // TM4 illustrative capacity: 5 instructors x 5 classes x 40 members.
 assert.equal(5 * 5 * 40, 1000);
 // TM5 cash receipts aggregation and HAVING SUM(Amount) > 200.00 result.
@@ -197,7 +204,7 @@ assert.ok(tm5Code.length >= 6, 'TM5 SQL rendered as code blocks');
 assert.ok(tm5Code.some((block) => /HAVING SUM\(Amount\) > 200\.00/.test(block.text)));
 const tm5Text = JSON.stringify(readings[5]);
 assert.ok(!/Assigned_Employee_ID|Total_Amount|WHERE City/.test(tm5Text), 'TM5 queries must use columns from the SSS schema');
-// TM6 Sunset Graphics banner order (Richardson 4e pp. 306–312): 10 banners, 2/10 net 30.
+// TM6 numerical practice is an invented adaptation of the Sunset Graphics process in Richardson 4e.
 assert.equal(10 * 120, 1200);
 assert.equal(10 * 45, 450);
 assert.equal(1200 * 0.02, 24);
@@ -211,8 +218,8 @@ const tm6Controls = tm6Blocks.find((block) => block.kind === 'table' && block.he
 assert.deepEqual(tm6Controls.rows.map((row) => row[0]),
   ['Field Check', 'Validity Check', 'Limit Check', 'Range Check', 'Reasonableness Check', 'Completeness Check']);
 assert.ok(!/1 dan 5,000|5,000 unit/.test(JSON.stringify(readings[6])), 'TM6 range check follows the canonical 1–10,000');
-assert.ok(!/ilustrasi/i.test(JSON.stringify(readings[6])), 'TM6 banner numbers are cited as book data');
-// TM7 Baer Belly Bikinis spandex purchase (Richardson 4e pp. 340–343) and Three-Way Match discrepancy.
+assert.ok(JSON.stringify(readings[6]).includes('asumsi latihan'), 'TM6 invented banner figures are labeled as practice assumptions');
+// TM7 numerical practice adapts the BBB process; the three-way match discrepancy is a separate illustration.
 assert.equal(5000 * 0.02, 100);
 assert.equal(5000 - 100, 4900);
 assert.equal(100 * 25, 2500);
@@ -220,6 +227,7 @@ assert.equal(100 * 27, 2700);
 assert.equal(80 * 25, 2000);
 assert.equal(2700 - 2000, 700);
 const tm7Blocks = flatten(readings[7].blocks);
+assert.ok(JSON.stringify(readings[7]).includes('asumsi latihan'), 'TM7 invented BBB figures are labeled as practice assumptions');
 // The canonical schema defines 11 tables although the handoff summaries call it a "10-table" schema.
 assert.equal(schemaTables(tm7Blocks).size, 11, 'TM7 purchasing schema has the 11 canonical tables');
 assert.ok(!/10-table|10 tabel|sepuluh tabel/i.test(JSON.stringify(readings[7])), 'TM7 states no incorrect table count');

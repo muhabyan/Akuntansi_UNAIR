@@ -135,7 +135,7 @@ export const SII306_REVIEW_UTS_READING: Reading = {
       ['Type image', 'Product_Category, Order_Status.', 'Supplier_Category, Item_Status.'],
       ['Dualitas ekonomi', 'Give Inventory, get Cash.', 'Give Cash, get Inventory.'],
     ] },
-    { kind: 'h3', text: 'Jurnal potongan pembelian: Baer Belly Bikinis (TM7)' },
+    { kind: 'h3', text: 'Jurnal potongan pembelian: ilustrasi BBB (TM7; angka asumsi latihan)' },
     { kind: 'journal', caption: '10 Oktober: penerimaan spandex dan pengakuan utang vendor (USD)', lines: [{ account: 'Raw Materials Inventory (Persediaan Bahan Baku)', debit: '$5,000.00' }, { account: 'Accounts Payable (Utang Usaha)', credit: '$5,000.00', isCredit: true }] },
     { kind: 'journal', caption: '18 Oktober: pembayaran dalam periode potongan 2% (USD)', lines: [{ account: 'Accounts Payable (Utang Usaha)', debit: '$5,000.00' }, { account: 'Cash (Kas)', credit: '$4,900.00', isCredit: true }, { account: 'Raw Materials Inventory (atau Purchase Discounts)', credit: '$100.00', isCredit: true }] },
     { kind: 'p', text: 'Bandingkan dengan Sunset Graphics pada Latihan 1: penjual mendebit Sales Discounts (kontra-pendapatan), sedangkan pembeli dengan sistem perpetual mengkredit persediaan sebesar potongan.' },
@@ -183,8 +183,8 @@ export const SII306_REVIEW_UTS_READING: Reading = {
       ['TM4', 'Full-Time Fitness', 'Instructors (1..1) – Fitness_Classes (0..5); Fitness_Classes (1..40) – Gym_Members (0..10)'],
       ['TM5', 'HAVING SUM(Amount) > 200.00', 'Hanya customer 102 (350.00); total populasi 550.00'],
       ['TM5', 'Goods receipt atas PO #45001', 'Dr Raw Materials Inventory / Cr GR/IR \\$15,000'],
-      ['TM6', 'Sunset Graphics: 10 × \\$120.00; COGS 10 × \\$45.00', 'Invoice \\$1,200.00; COGS \\$450.00; potongan \\$24.00; kas \\$1,176.00'],
-      ['TM7', 'Baer Belly Bikinis: PO \\$5,000.00, 2/10, net 30', 'Potongan \\$100.00; kas \\$4,900.00'],
+      ['TM6', 'Ilustrasi Sunset Graphics: 10 × \\$120.00; COGS 10 × \\$45.00 (angka asumsi)', 'Invoice \\$1,200.00; COGS \\$450.00; potongan \\$24.00; kas \\$1,176.00'],
+      ['TM7', 'Ilustrasi BBB: PO \\$5,000.00, 2/10, net 30 (angka asumsi)', 'Potongan \\$100.00; kas \\$4,900.00'],
       ['TM7', 'PO #802 vs Receiving Report #415 vs Invoice #9910', 'Ditagih \\$2,700.00 − didukung \\$2,000.00 = kelebihan \\$700.00'],
     ] },
 
@@ -207,7 +207,7 @@ export const SII306_REVIEW_UTS_READING: Reading = {
     ] },
 
     { kind: 'h2', text: '9. Latihan Terpadu' },
-    { kind: 'solution-reveal', title: '1. Order-to-Cash: dari pesanan sampai piutang dinamis', prompt: 'Kasus Sunset Graphics (TM6): 10 vinyl event banner @ \\$120.00, standard cost \\$45.00 per unit, termin 2/10, net 30. Banner diserahkan dan ditagih 5 Oktober; klien membayar 12 Oktober. (a) Peristiwa apa yang tidak dijurnal? (b) Susun jurnalnya. (c) Bagaimana model REA menentukan piutang pesanan ini?', blocks: [
+    { kind: 'solution-reveal', title: '1. Order-to-Cash: dari pesanan sampai piutang dinamis', prompt: 'Ilustrasi buatan berdasarkan alur Sunset Graphics (TM6): 10 vinyl event banner @ \\$120.00, biaya standar \\$45.00 per unit, termin 2/10, net 30. Banner diserahkan dan ditagih 5 Oktober; klien membayar 12 Oktober. Angka dan tanggal adalah asumsi latihan. (a) Peristiwa apa yang tidak dijurnal? (b) Susun jurnalnya. (c) Bagaimana model REA menentukan piutang pesanan ini?', blocks: [
       { kind: 'p', text: '(a) Quote dan sales order tidak dijurnal. Pendapatan dan COGS diakui saat barang diserahkan.' },
       { kind: 'journal', caption: '5 Oktober: penyerahan dan invoice 10 banner (USD)', lines: [{ account: 'Accounts Receivable (Piutang Usaha)', debit: '$1,200.00' }, { account: 'Sales Revenue (Pendapatan Penjualan)', credit: '$1,200.00', isCredit: true }] },
       { kind: 'journal', caption: '5 Oktober: COGS pada standard cost (USD)', lines: [{ account: 'Cost of Goods Sold (Beban Pokok Penjualan)', debit: '$450.00' }, { account: 'Merchandise Inventory (Persediaan Barang Dagang)', credit: '$450.00', isCredit: true }] },

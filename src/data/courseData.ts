@@ -154,7 +154,7 @@ const PJK301_REF = [
   'Republik Indonesia. UU No. 8 Tahun 1983 tentang Pajak Pertambahan Nilai dan PPnBM sebagaimana telah diubah terakhir dengan UU HPP. (Wajib)',
   'Kementerian Keuangan RI. PMK No. 81 Tahun 2024 tentang Tata Cara Pelaksanaan Hak dan Kewajiban Perpajakan (Coretax).',
   'Kementerian Keuangan RI. PMK No. 51 Tahun 2025 tentang Pemungutan PPh Pasal 22 sehubungan dengan Pembayaran atas Penyerahan Barang dan Kegiatan di Bidang Impor atau Kegiatan Usaha di Bidang Lain.',
-  'Republik Indonesia. PP No. 20 Tahun 2026 tentang Perlakuan Perpajakan atas Penghasilan Tertentu (Pemberlakuan Tarif Final UMKM 0,5%).',
+  'Republik Indonesia. PP No. 20 Tahun 2026 tentang Perubahan atas Peraturan Pemerintah Nomor 55 Tahun 2022 tentang Penyesuaian Pengaturan di Bidang Pajak Penghasilan.',
   'Kementerian Keuangan RI. PP No. 58 Tahun 2023 & PMK No. 168 Tahun 2023 tentang Pemotongan PPh Pasal 21 (TER).',
   'Kementerian Keuangan RI. PMK No. 66 Tahun 2023 tentang Perlakuan Pajak Penghasilan atas Penggantian atau Imbalan Sehubungan dengan Pekerjaan atau Jasa dalam Bentuk Natura dan/atau Kenikmatan.',
   'Kementerian Keuangan RI. PMK No. 172 Tahun 2023 tentang Penerapan Prinsip Kewajaran dan Kelaziman Usaha (Transfer Pricing).',
@@ -268,7 +268,7 @@ const AKK202_TM8_14 = materi([
 ], 8);
 const AKK202_REF = [
   'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. (2024). Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons. (Wajib)',
-  'Ikatan Akuntan Indonesia (IAI). Standar Akuntansi Keuangan (SAK) Indonesia: PSAK 16, 13, 26, 48, 19, 57, 71, 50, 56.',
+  'Ikatan Akuntan Indonesia (IAI). SAK Indonesia, penomoran efektif 1 Januari 2024: PSAK 216 (aset tetap), 240 (properti investasi), 223 (biaya pinjaman), 236 (penurunan nilai), 238 (aset takberwujud), 237 (provisi), dan 109 (instrumen keuangan).',
 ];
 
 // --- AKM201 Akuntansi Biaya (Carter/Usry = CU; Narsa = IMN) -----------
