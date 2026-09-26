@@ -143,7 +143,6 @@ const knownIssues = new Set([
   'AKK202 TM11.blocks[5].text katex',
   'AKK202 TM11.blocks[6].text katex',
   'MNK201 TM12.blocks[4].text katex',
-  'AKA201 TM4.blocks[4].text katex',
   'AKA201 TM12.blocks[4].text katex',
   'AKA201 TM13.blocks[4].text katex',
   'AKS201 TM1.blocks[4].text katex',
