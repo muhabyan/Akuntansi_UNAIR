@@ -10,7 +10,7 @@ const { AKA201_READINGS, AKA201_REVIEW_READINGS, AKA201_PREP } = await import(
   `data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`
 );
 
-const LAYERED_TMS = [1];
+const LAYERED_TMS = [1, 2];
 const CALLOUT_VARIANTS = new Set(['gist', 'warning', 'info', 'note', 'quote']);
 // Figures and infographics: at least 12 px text at 390 px, where a section card leaves about 320 px of width.
 // (The browser check in the converter harness also verifies that nothing overflows sideways.)
@@ -61,8 +61,11 @@ for (const tm of LAYERED_TMS) {
   const label = `TM${tm}`;
   checkLayered(label, reading);
   assert.equal(reading.tm, tm);
-  const sections = reading.blocks;
-  assert.equal(sections[0].layer, 'fondasi', `${label}: the page opens with Fondasi`);
+  // Only callouts from before Fondasi (e.g. "Perhatikan sebelum membaca") may sit above it, in an untitled block.
+  const firstTitled = reading.blocks.findIndex((s) => s.title);
+  for (const pre of reading.blocks.slice(0, firstTitled)) assert.ok(pre.blocks.every((b) => b.kind === 'callout'), `${label}: only callouts above Fondasi`);
+  const sections = reading.blocks.slice(firstTitled);
+  assert.equal(sections[0].layer, 'fondasi', `${label}: the first section is Fondasi`);
   assert.equal(sections[0].blocks[0]?.variant, 'gist', `${label}: Fondasi opens with Intinya`);
   for (const section of sections.filter((s) => /^\d+\. /.test(s.title ?? '') && s.layer === 'main')) {
     assert.equal(section.blocks[0]?.kind === 'callout' && section.blocks[0].variant, 'gist', `${label} "${section.title}": opens with Intinya`);
@@ -86,12 +89,9 @@ for (const { key, label } of AKA201_PREP) {
 }
 assert.equal(new Set(AKA201_PREP.map((item) => AKA201_REVIEW_READINGS[item.key].tm)).size, AKA201_PREP.length, 'each prep page has its own tm');
 
-{
-  const oldFigure = AKA201_READINGS[2]?.blocks.find((block) => block.kind === 'figure' && block.svg);
-  if (oldFigure && AKA201_READINGS[2].layout !== 'layered') {
-    const px = smallestFigureTextPx(oldFigure.svg);
-    assert.ok(px !== null && px < MIN_FIGURE_TEXT_PX, 'the figure rule must flag the old TM 2 infographic (self-test of the rule)');
-  }
-}
+// Self-test of the figure rule. The first sample has the proportions of the old TM 2 infographic (900-wide viewBox,
+// 7-unit text: about 2.5 px on a phone); the second fits.
+assert.ok(smallestFigureTextPx('<svg viewBox="0 0 900 360"><text font-size="7">x</text></svg>') < MIN_FIGURE_TEXT_PX, 'figure rule flags tiny text');
+assert.ok(smallestFigureTextPx('<svg viewBox="0 0 320 200"><text font-size="13">x</text></svg>') >= MIN_FIGURE_TEXT_PX, 'figure rule accepts readable text');
 
 console.log(`aka201 layered: TM ${LAYERED_TMS.join(', ')} and ${AKA201_PREP.length} Persiapan UTS page(s) ok`);

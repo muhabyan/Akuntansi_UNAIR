@@ -223,7 +223,7 @@ const MNK201_REF = [
 // Sumber: RPP Resmi OBE Pengauditan Berbasis Risiko I, Departemen Akuntansi FEB UNAIR.
 const AKA201_TM1_7 = materi([
   ['Sifat Audit, Permintaan atas Audit, dan Jenis Auditor', 'Ch.1 Arens (pp.1–19) · ISA/SA 200 (konseptual)'],
-  ['Etika Profesi, Dilema Etis, & Independensi Auditor', 'Arens Ch. 4 | Kode Etik IESBA / IAPI'],
+  ['Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu', 'Ch.2 Arens (pp.25–43) · ISQM 1 / SMM 1 · ISA 220 (Revised) · UU 5/2011 · PP 20/2015'],
   ['Tanggung Jawab Audit, Skeptisisme, & Asersi Manajemen', 'Arens Ch. 6 | SA 200, SA 315 Revisi'],
   ['Laporan Audit Independen, Jenis Opini, & KAM', 'Arens Ch. 3 | SA 700, 701, 705, 706'],
   ['Konsep Materialitas Audit: Perencanaan & Pelaksanaan', 'Arens Ch. 9 | SA 320, SA 450'],

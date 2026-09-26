@@ -143,7 +143,8 @@ export function SelfCheckCard({ question, signal, children }: { question: string
   );
 }
 
-/** Phone view of a table: one card per row, the first cell as its title; the desktop table is rendered separately. */
+/** Phone view of a table: one card per row, the first cell as its title, empty cells left out; the desktop table is
+ *  rendered separately. */
 export function StackedTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
   const isSource = (header: string) => /^sumber$/i.test(header.trim());
   return (
@@ -153,7 +154,7 @@ export function StackedTable({ headers, rows }: { headers: string[]; rows: strin
           <div className={`font-semibold text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(row[0] ?? '')}</div>
           <dl className="mt-2 space-y-2">
             {headers.slice(1).map((header, c) =>
-              isSource(header) ? (
+              !(row[c + 1] ?? '').trim() ? null : isSource(header) ? (
                 <dd key={c} className="text-xs text-gray-500 dark:text-gray-400">{header}: {row[c + 1]}</dd>
               ) : (
                 <div key={c}>
