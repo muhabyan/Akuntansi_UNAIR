@@ -1052,3 +1052,11 @@ html.dark table td {
   color: #e2e8f0;
 }
 
+
+/* Layered readings: on phones, keep the last lines clear of the floating button row and "Kembali ke atas"
+   (44px launchers at 0.5rem, the round button above them), so every line can be scrolled into full view. */
+@media (max-width: 767px) {
+  .reading-layout:has(.layered-section) {
+    padding-bottom: calc(7.5rem + env(safe-area-inset-bottom));
+  }
+}

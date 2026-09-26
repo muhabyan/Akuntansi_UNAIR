@@ -22,6 +22,7 @@ function slugifyHeading(text: string) {
 export function getReadingBlockId(block: ContentBlock, index: number) {
   if (block.kind === 'h2') return `${slugifyHeading(block.text)}-${index + 1}`;
   if (block.kind === 'h3') return `sub-${slugifyHeading(block.text)}-${index + 1}`;
+  if (block.kind === 'section' && block.title) return `section-${slugifyHeading(block.title)}-${index + 1}`;
   if (block.kind === 'solution-reveal') return `case-${slugifyHeading(block.title)}-${index + 1}`;
   return undefined;
 }
@@ -32,6 +33,8 @@ export function buildReadingOutline(blocks: ContentBlock[]): ReadingOutlineItem[
     const id = getReadingBlockId(block, index);
     if (block.kind === 'h2' && id) {
       result.push({ id, label: block.text, level: 2 });
+    } else if (block.kind === 'section' && block.title && id) {
+      result.push({ id, label: block.title, level: 2 });
     } else if (block.kind === 'h3' && id) {
       result.push({ id, label: block.text, level: 3 });
     } else if (block.kind === 'solution-reveal' && id) {

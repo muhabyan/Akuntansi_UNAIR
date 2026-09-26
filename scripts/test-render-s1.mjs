@@ -84,6 +84,11 @@ function collectBlock(block, path, flags, out) {
       push('answerKey', block.answerKey); nested(block.blocks); break;
     case 'example': case 'math-example':
       nested(block.blocks); break;
+    case 'section': case 'pendalaman':
+      push('title', block.title); nested(block.blocks); break;
+    case 'self-check':
+      push('question', block.question); push('signal', block.signal);
+      (block.answer ?? []).forEach((child, i) => collectBlock(child, `${path}.answer[${i}]`, flags, out)); break;
     case 'chart-guide':
       block.points.forEach((point, i) => push(`points[${i}]`, point)); break;
     default:

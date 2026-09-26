@@ -5,12 +5,15 @@
 // =============================================================
 import type { Reading, ContentBlock, CalloutVariant } from '../../types';
 
-export type ReviewReadingKey = 'uts' | 'uas';
+/** 'prep:<slug>' keys are the "Persiapan UTS" pages; they live in `reviews` and are listed, in order, by `prep`. */
+export type ReviewReadingKey = 'uts' | 'uas' | `prep:${string}`;
 
 export interface LoadedCourseContent {
   readings: Record<number, Reading>;
   reviews: Partial<Record<ReviewReadingKey, Reading>>;
   customReferensi?: ContentBlock[];
+  /** Cards shown as "Persiapan UTS" in the Pra-UTS tab. */
+  prep?: Array<{ key: `prep:${string}`; label: string }>;
 }
 
 interface AkdasSource {
@@ -558,7 +561,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     }
     case 'AKA201': {
       const module = await import('../pbri/pbriData');
-      return { readings: module.AKA201_READINGS, reviews: module.AKA201_REVIEW_READINGS };
+      return { readings: module.AKA201_READINGS, reviews: module.AKA201_REVIEW_READINGS, prep: module.AKA201_PREP };
     }
     case 'AKK202': {
       const module = await import('../akm2/akm2Data');

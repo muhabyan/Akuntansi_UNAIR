@@ -21,7 +21,8 @@ interface ReadingViewProps {
 
 import { renderText } from './course/MarkdownContent';
 
-const CALLOUT_STYLE: Record<CalloutVariant, { icon: ReactNode; cls: string; label: string }> = {
+// Layered-only variants (gist, note, quote) never reach this view; they fall back to 'info'.
+const CALLOUT_STYLE: Record<Exclude<CalloutVariant, 'gist' | 'note' | 'quote'>, { icon: ReactNode; cls: string; label: string }> = {
   info: {
     icon: <Info size={18} className="text-blue-600 dark:text-blue-400 shrink-0" />,
     cls: 'border border-blue-200/80 dark:border-blue-800/60 border-l-4 border-l-blue-600 dark:border-l-blue-400 bg-blue-50/60 dark:bg-blue-950/25',
@@ -212,7 +213,7 @@ function Block({ block }: { block: ContentBlock }) {
         </ol>
       );
     case 'callout': {
-      const s = CALLOUT_STYLE[block.variant];
+      const s = CALLOUT_STYLE[block.variant as keyof typeof CALLOUT_STYLE] ?? CALLOUT_STYLE.info;
       return (
         <div className={`p-5 my-6 rounded-xl shadow-xs ${s.cls}`}>
           <div className="flex items-center gap-2 font-bold text-gray-900 dark:text-gray-100 mb-3 text-sm md:text-[15px]">{s.icon} {block.title ?? s.label}</div>

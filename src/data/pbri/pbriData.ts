@@ -19,6 +19,7 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { PANDUAN_MENJAWAB_KASUS_READING } from './prep/panduanMenjawabKasus';
 
 export const AKA201_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -40,4 +41,11 @@ export const AKA201_READINGS: Record<number, Reading> = {
 export const AKA201_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
   uas: TM14_READING,
+  'prep:panduan-menjawab-kasus': PANDUAN_MENJAWAB_KASUS_READING,
 };
+
+// "Persiapan UTS" cards, in reading order: Benang Merah, Panduan Menjawab Kasus, Latihan Skenario UTS,
+// Latihan Penyelesaian Masalah. The pages are layered readings (tm 91-94) kept in AKA201_REVIEW_READINGS.
+export const AKA201_PREP: Array<{ key: `prep:${string}`; label: string }> = [
+  { key: 'prep:panduan-menjawab-kasus', label: 'Panduan Menjawab Kasus' },
+];
