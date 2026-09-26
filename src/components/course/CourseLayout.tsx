@@ -33,6 +33,7 @@ import FlashcardGrid from './FlashcardGrid';
 import BankQuestionList from './BankQuestionList';
 import PrepReadingList from './PrepReadingList';
 import { useEscapeToBack } from './escapeToBack';
+import { SHARED_FRAME_CLASS, SharedFrameContext, usesSharedFrame } from './readingFrame';
 import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
 
@@ -189,6 +190,7 @@ function ReadingPanel({
 }) {
   const key = materialKey(courseCode, reading.tm);
   useEscapeToBack(reading.layout === 'layered', onBack);
+  const sharedFrame = usesSharedFrame(reading, courseCode);
   const done = isDone(key);
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
   const outlineItems = useMemo(() => buildReadingOutline(reading.blocks), [reading.blocks]);
@@ -316,7 +318,7 @@ function ReadingPanel({
 
   return (
     <div
-      className="reading-layout grid min-w-0 gap-6 lg:grid-cols-[minmax(0,64rem)_12.5rem] lg:justify-center"
+      className={`reading-layout grid min-w-0 gap-6 lg:grid-cols-[minmax(0,64rem)_12.5rem] lg:justify-center${sharedFrame ? ` ${SHARED_FRAME_CLASS}` : ''}`}
       data-outline-expanded={desktopOutlineOpen}
     >
       <article
@@ -373,51 +375,53 @@ function ReadingPanel({
 
         <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} />
 
-        <div className="reading-document akbi-reading-flow min-w-0">
-          <div className="space-y-6 md:space-y-8">
-            {reading.blocks.map((block, index) => {
-              const previousBlock = reading.blocks[index - 1];
-              const nextBlock = reading.blocks[index + 1];
+        <SharedFrameContext.Provider value={sharedFrame}>
+          <div className="reading-document akbi-reading-flow min-w-0">
+            <div className="space-y-6 md:space-y-8">
+              {reading.blocks.map((block, index) => {
+                const previousBlock = reading.blocks[index - 1];
+                const nextBlock = reading.blocks[index + 1];
 
-              if (block.kind === 'formula' && previousBlock?.kind === 'formula') return null;
+                if (block.kind === 'formula' && previousBlock?.kind === 'formula') return null;
 
-              if (block.kind === 'formula' && nextBlock?.kind === 'formula') {
-                const formulaRun: Array<{ block: Extract<ContentBlock, { kind: 'formula' }>; index: number }> = [];
-                let formulaIndex = index;
-                while (reading.blocks[formulaIndex]?.kind === 'formula') {
-                  formulaRun.push({
-                    block: reading.blocks[formulaIndex] as Extract<ContentBlock, { kind: 'formula' }>,
-                    index: formulaIndex,
-                  });
-                  formulaIndex += 1;
+                if (block.kind === 'formula' && nextBlock?.kind === 'formula') {
+                  const formulaRun: Array<{ block: Extract<ContentBlock, { kind: 'formula' }>; index: number }> = [];
+                  let formulaIndex = index;
+                  while (reading.blocks[formulaIndex]?.kind === 'formula') {
+                    formulaRun.push({
+                      block: reading.blocks[formulaIndex] as Extract<ContentBlock, { kind: 'formula' }>,
+                      index: formulaIndex,
+                    });
+                    formulaIndex += 1;
+                  }
+
+                  return (
+                    <div key={`formula-run-${index}`} className="reading-exam-formula-grid reading-wide-block min-w-0">
+                      {formulaRun.map(({ block: formulaBlock, index: originalIndex }) => (
+                        <div
+                          key={originalIndex}
+                          className={`reading-block-anchor min-w-0 scroll-mt-40 ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
+                        >
+                          <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
+                        </div>
+                      ))}
+                    </div>
+                  );
                 }
 
                 return (
-                  <div key={`formula-run-${index}`} className="reading-exam-formula-grid reading-wide-block min-w-0">
-                    {formulaRun.map(({ block: formulaBlock, index: originalIndex }) => (
-                      <div
-                        key={originalIndex}
-                        className={`reading-block-anchor min-w-0 scroll-mt-40 ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
-                      >
-                        <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
-                      </div>
-                    ))}
+                  <div
+                    key={index}
+                    id={getReadingBlockId(block, index)}
+                    className={`reading-block-anchor min-w-0 scroll-mt-40 ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
+                  >
+                    <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
                   </div>
                 );
-              }
-
-              return (
-                <div
-                  key={index}
-                  id={getReadingBlockId(block, index)}
-                  className={`reading-block-anchor min-w-0 scroll-mt-40 ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
-                >
-                  <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
-                </div>
-              );
-            })}
+              })}
+            </div>
           </div>
-        </div>
+        </SharedFrameContext.Provider>
 
         <footer className="reading-completion reading-prose-block mt-14 border-t border-gray-200 pt-7 dark:border-gray-800 md:mt-16 md:pt-8">
           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">Selesai membaca?</p>

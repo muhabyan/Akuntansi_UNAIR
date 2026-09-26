@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom';
 import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Lightbulb, PencilLine, Table2 } from 'lucide-react';
 import type { CalloutVariant, ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
-import { InsideBoxContext, useInsideBox } from './layeredContext';
+import { InsideBoxContext, useInsideBox, useLayered } from './layeredContext';
 
 /** A paragraph that is only a source reference: `(ARENS p.3)`, *Sumber: ...*, or one opening with a bold
  *  Sumber label (**Sumber:** ..., **Sumber utama:** ...). */
@@ -174,26 +174,40 @@ export function SelfCheckCard({ question, signal, children }: { question: string
   );
 }
 
-/** Phone and tablet view of a table (below 1024px, where the launcher insets leave less than the 42rem a desktop table
- *  needs): one row per block, the first cell as its title, empty cells left out; the desktop table is rendered
- *  separately. On its own it is one "Tabel materi" box with divided rows, like the desktop table card; inside
- *  another box (pendalaman, self-check) the rows are only divided, so boxes never nest. */
-export function StackedTable({ headers, rows, label }: { headers: string[]; rows: string[][]; label: string }) {
+/** Phone and tablet view of a table in the shared reading frame (below 1024px, where the launcher insets leave less
+ *  than the 42rem a desktop table needs): one row per block, the first cell as its title, empty cells left out; the
+ *  desktop table is rendered separately. On its own it is one "Tabel materi" box with divided rows, like the desktop
+ *  table card; inside another box (pendalaman, self-check, pembahasan) the rows are only divided, so boxes never nest.
+ *  In a layered reading cells use the layered text style; elsewhere they render exactly as the desktop table's cells
+ *  and the first column keeps its header too. */
+export function StackedTable({ headers, rows, label, caption, warning = false }: { headers: string[]; rows: string[][]; label: string; caption?: string; warning?: boolean }) {
   const flat = useInsideBox();
-  const isSource = (header: string) => /^sumber$/i.test(header.trim());
+  const layered = useLayered();
+  const isSource = (header: string) => layered && /^sumber$/i.test(header.trim());
+  const body = layered ? LAYERED_BODY : 'text-[15px] leading-relaxed';
+  const cellText = (text: string) => (layered ? renderText(literalLeadingMarker(text)) : <div className="whitespace-pre-line">{renderText(text)}</div>);
+  const headerText = (header: string) => (layered ? <InlineMarkdown text={header} /> : header);
+  const footer = (caption || warning) && (
+    <div className={`border-t border-gray-200 py-3 text-xs leading-relaxed dark:border-gray-700/70 ${flat ? 'px-0' : 'px-4'} ${warning ? 'bg-amber-50 font-medium text-amber-900 dark:bg-amber-400/10 dark:text-amber-200' : 'text-slate-600 dark:text-slate-400'}`}>
+      {warning && <span className="mr-1 font-black">⚠</span>}
+      {caption ? renderText(caption) : '[Perlu pemeriksaan manual]'}
+    </div>
+  );
   const list = (
-    <div className={`layered-stacked-table divide-y divide-gray-200 dark:divide-gray-700/70 ${flat ? 'lg:hidden border-y border-gray-200 dark:border-gray-700/70' : ''}`}>
+    <div className={`layered-stacked-table divide-y divide-gray-200 dark:divide-gray-700/70 ${flat ? 'border-y border-gray-200 dark:border-gray-700/70' : ''}`}>
       {rows.map((row, r) => (
         <div key={r} className={flat ? 'py-3' : 'px-4 py-4'}>
-          <div className={`font-semibold text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[0] ?? ''))}</div>
+          {/* Layered cards leave the first column unlabelled (the package's rule); elsewhere every header stays visible. */}
+          {!layered && headers[0]?.trim() && <div className="text-xs font-medium text-gray-500 dark:text-gray-400">{headers[0]}</div>}
+          <div className={`font-semibold text-gray-900 dark:text-gray-100 ${body}`}>{cellText(row[0] ?? '')}</div>
           <dl className="mt-2 space-y-2">
             {headers.slice(1).map((header, c) =>
               !(row[c + 1] ?? '').trim() ? null : isSource(header) ? (
                 <dd key={c} className="text-xs text-gray-500 dark:text-gray-400"><InlineMarkdown text={header} />: {row[c + 1]}</dd>
               ) : (
                 <div key={c}>
-                  <dt className="text-xs font-medium text-gray-500 dark:text-gray-400"><InlineMarkdown text={header} /></dt>
-                  <dd className={`text-gray-800 dark:text-gray-200 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[c + 1] ?? ''))}</dd>
+                  <dt className="text-xs font-medium text-gray-500 dark:text-gray-400">{headerText(header)}</dt>
+                  <dd className={`text-gray-800 dark:text-gray-200 ${body}`}>{cellText(row[c + 1] ?? '')}</dd>
                 </div>
               ),
             )}
@@ -202,13 +216,21 @@ export function StackedTable({ headers, rows, label }: { headers: string[]; rows
       ))}
     </div>
   );
-  if (flat) return list;
+  if (flat) {
+    return (
+      <div className="lg:hidden">
+        {list}
+        {footer}
+      </div>
+    );
+  }
   return (
     <div className="layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 lg:hidden">
       <div className="flex items-center gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-400">
         <Table2 size={15} aria-hidden="true" /> {label}
       </div>
       {list}
+      {footer}
     </div>
   );
 }

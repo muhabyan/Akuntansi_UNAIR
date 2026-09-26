@@ -387,8 +387,10 @@ html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
   min-width: max(100%, 42rem);
 }
 
-/* A layered table inside a self-check or pendalaman box loses the box padding; at 1024px that leaves 670px. */
-.reading-document .course-table-flat .akbi-table-scroll > table {
+/* A table inside a box loses the box padding: a layered table in a self-check or pendalaman box, and in the shared
+   reading frame a table in a pembahasan box. At 1024px, with the frame's left inset, that leaves 660-670px. */
+.reading-document .course-table-flat .akbi-table-scroll > table,
+.reading-layout--shared-frame .course-solution-surface .akbi-table-scroll > table {
   min-width: max(100%, 40rem);
 }
 
@@ -1066,17 +1068,18 @@ html.dark table td {
   }
 }
 
-/* Layered readings sit open on the page (no section cards). Where the page has no side margin, keep their text clear
-   of the desktop utility launchers, which park at the left edge by default (40px at x = 16px). */
+/* Shared reading frame (layered readings and the courses in SHARED_FRAME_COURSES, see readingFrame.ts). Where the page
+   has no side margin, keep the text clear of the desktop utility launchers, which park at the left edge by default
+   (40px at x = 16px). Tables in the frame stack below 1024px, where these insets leave less than 42rem. */
 @media (min-width: 768px) and (max-width: 1375px) {
-  .reading-layout:has(.layered-section) > article {
+  .reading-layout--shared-frame > article {
     padding-left: 3.5rem;
   }
 }
 
 /* Below 1024px there is no outline column, so the right-hand launchers (chat, AI tutor, request) sit over the text. */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .reading-layout:has(.layered-section) > article {
+  .reading-layout--shared-frame > article {
     padding-right: 3.5rem;
   }
 }

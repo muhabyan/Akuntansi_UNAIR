@@ -7,6 +7,7 @@ import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuil
 import EconDiagram from './EconDiagrams';
 import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
 import { InsideBoxContext, LayeredContext, useInsideBox, useLayered } from './layeredContext';
+import { useSharedFrame } from './readingFrame';
 import { LayeredCallout, LayeredSection, PendalamanBlock, SelfCheckCard, SourceLine, StackedTable, InlineMarkdown, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
 
 interface CourseBlockCardProps {
@@ -224,6 +225,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
   const blockId = useId();
   const layered = useLayered();
   const insideBox = useInsideBox();
+  const sharedFrame = useSharedFrame();
   const nestedBlocks = (blocks: ContentBlock[]) =>
     blocks.map((nested, index) => (
       <CourseBlockCard key={index} block={nested} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
@@ -443,11 +445,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             )}
           </div>
         );
-        if (!(layered && block.stackOnMobile)) return tableCard;
+        // The shared reading frame (layered readings, PJK301) stacks every table below 1024px.
+        if (!sharedFrame && !(layered && block.stackOnMobile)) return tableCard;
         return (
           <>
             <div className="hidden lg:block">{tableCard}</div>
-            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} />
+            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} caption={block.caption} warning={warning} />
           </>
         );
       }
