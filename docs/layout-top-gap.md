@@ -48,3 +48,22 @@ paddings in `src/styles/*.css` (`ux-v2-catalog`, `landing-semester-experience`) 
 3. **Zen mode** (header and reading bar hidden): `<main>` 24 px + inner `<main>` 24 px (the zen rule matches both)
    − 64 px wrapper = content starts at −16 px, so the breadcrumb row is cut off at the top at every width, and the fixed
    "Keluar Zen" button sits over the TM badge.
+
+## Result (steps 2–3)
+
+From 768 px every page starts at `--page-top` = resting header height (`--site-header-rest-h`, 70 px, or 120 px at
+1024–1279) + 34 px. Measured on `claude-top-gap` d57c17c (`assets/index-BPVdGGUQ.js`), light mode, scroll 0:
+
+| Page | 390 | 1280 | 1918 |
+| --- | --- | --- | --- |
+| Home | 72 → 72 | 63 → 32 | 145 → 32 |
+| Semester | 80 → 80 | 79 → 39 | 79 → 39 |
+| Course, Kuis, Bank Soal, Flashcard, legacy course | 80 → 80 | 75 → 39 | 75 → 39 |
+| Reading, layered and PJK301 (to the Daftar Isi bar) | 54 → 54 | 6 → 34 | 6 → 34 |
+| Laporan | 111 → 111 | 58 → 34 | 58 → 34 |
+| Panduan | 91 → 91 | 74 → 34 | 74 → 34 |
+
+Numbers are to the letters of a text link (39 = 34 px line top + the font's own space above the letters) or to the top
+edge of a box. Sticky bars and `#` jumps now use the live header height (`--site-header-h`, published by `Navbar.tsx`);
+no Daftar Isi jump lands under the header or the bar at 390–1918 px, and Zen mode starts below "Keluar Zen".
+Screenshots: https://claude.ai/artifact/CzTHK8uXf8HrQi4E8aTKnF (private to the owner until shared).
