@@ -11,7 +11,7 @@ import { renderText } from './MarkdownContent';
  *  Sumber label (**Sumber:** ..., **Sumber utama:** ...). */
 export function isSourceOnly(text: string): boolean {
   const trimmed = text.trim();
-  return /^`\([^`]*\)`$/.test(trimmed) || /^\*Sumber: [^*]+\*$/.test(trimmed) || /^\*\*Sumber( utama)?:\*\*/.test(trimmed);
+  return /^`\([^`]*\)`$/.test(trimmed) || /^\*Sumber: [^*]+\*$/.test(trimmed) || /^\*\*Sumber[^*:]*:\*\*/.test(trimmed);
 }
 
 /** A source reference line: small and muted, its markdown (bold, italic) kept but not coloured. */
@@ -119,8 +119,9 @@ export function SelfCheckCard({ question, signal, children }: { question: string
   const canReveal = tried || words >= MIN_WORDS;
   return (
     <div className="layered-self-check rounded-xl border border-gray-200 p-4 dark:border-gray-700 md:p-5">
-      <div className={`max-w-[70ch] text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(question)}</div>
-      <label className="mt-3 block text-xs font-bold text-gray-600 dark:text-gray-300">
+      {/* An empty question means the task is stated just above the card (e.g. a scenario's facts table). */}
+      {question && <div className={`max-w-[70ch] text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(question)}</div>}
+      <label className={`block text-xs font-bold text-gray-600 dark:text-gray-300 ${question ? 'mt-3' : ''}`}>
         <span className="flex items-center gap-1.5"><PencilLine size={14} aria-hidden="true" /> Tulis jawabanmu dulu</span>
         <textarea
           value={draft}

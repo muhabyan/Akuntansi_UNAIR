@@ -88,6 +88,8 @@ for (const { key, label } of AKA201_PREP) {
   assert.equal(reading.badge, 'Persiapan UTS', `${key}: header badge`);
   assert.ok(reading.tm >= 91 && reading.tm <= 94, `${key}: tm 91-94 keeps its progress key apart from the TMs`);
 }
+assert.deepEqual(AKA201_PREP.map((item) => item.label), ['Benang Merah', 'Panduan Menjawab Kasus', 'Latihan Skenario UTS', 'Latihan Penyelesaian Masalah'], 'Persiapan UTS order (spec §3)');
+assert.equal(AKA201_REVIEW_READINGS.uts, undefined, 'the old TM8 Simulasi UTS card is hidden');
 assert.equal(new Set(AKA201_PREP.map((item) => AKA201_REVIEW_READINGS[item.key].tm)).size, AKA201_PREP.length, 'each prep page has its own tm');
 
 // Self-test of the figure rule. The first sample has the proportions of the old TM 2 infographic (900-wide viewBox,
