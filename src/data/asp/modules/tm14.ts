@@ -104,7 +104,7 @@ export const TM14_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: `\\text{Rasio Green Budgeting (Climate Tagging Ratio)} = \\frac{\\text{Total Belanja Terkait Mitigasi & Adaptasi Iklim}}{\\text{Total Belanja APBN / APBD}} \\times 100\\%
+      text: `\\text{Rasio Green Budgeting (Climate Tagging Ratio)} = \\frac{\\text{Total Belanja Terkait Mitigasi \\& Adaptasi Iklim}}{\\text{Total Belanja APBN / APBD}} \\times 100\\%
 \\text{Prinsip Locking System SIPD}: \\quad \\text{Belanja RKA Wajib Berelasi 1-to-1 dengan Sub-Kegiatan di RKPD}
 \\text{Jika } \\text{Program } \\notin \\text{ RKPD} \\implies \\text{Sistem Menolak Input Anggaran Otomatis (Anti-Ghost Budgeting)}`,
       note: 'Teknologi digital governance mentransformasikan akuntansi sektor publik dari sekadar pencatatan administratif historis menjadi instrumen pencegahan kecurangan (Fraud Prevention) secara real-time.'

@@ -560,24 +560,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         </div>
       );
     case 'formula': {
-      const legal = enableLegalStyling && isLegalContent(block.text);
       const matrix = isMatrixContent(block.text);
       const warning = hasManualWarning(block.text) || hasManualWarning(block.note);
       const economicFormula = enableEconomicStyling ? splitEconomicFormula(block.text) : { body: block.text };
-
-      if (legal) {
-        return (
-          <div className="course-callout-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border border-indigo-500/35 bg-indigo-500/10 dark:bg-indigo-500/5">
-            <div className="flex items-center gap-2 border-b border-indigo-500/10 dark:border-indigo-500/15 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-indigo-800 dark:text-indigo-300">
-              <Scale size={15} /> Dasar Hukum
-            </div>
-            <div className="whitespace-pre-wrap px-5 py-4 font-sans text-sm leading-[1.85] text-slate-800 dark:text-slate-300">
-              {renderText(block.text)}
-            </div>
-            {block.note && <div className="border-t border-indigo-500/10 dark:border-indigo-500/15 px-5 py-3 text-xs text-slate-600 dark:text-slate-400">{renderText(block.note)}</div>}
-          </div>
-        );
-      }
 
       if (matrix) {
         return (
@@ -602,10 +587,36 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         );
       }
 
+      const surfaceBorderCls = enableLegalStyling
+        ? 'border-indigo-500/40 dark:border-indigo-500/35 bg-indigo-500/10 dark:bg-indigo-500/5'
+        : warning
+        ? 'border-amber-400/50 bg-amber-400/10'
+        : 'border-gold-500/40 dark:border-gold/35 bg-gold-500/10 dark:bg-gold/10';
+
+      const headerBorderCls = enableLegalStyling
+        ? 'border-indigo-500/20 dark:border-indigo-500/15 text-indigo-800 dark:text-indigo-300'
+        : warning
+        ? 'border-amber-400/20 text-amber-800 dark:text-amber-200'
+        : 'border-gold-500/20 dark:border-gold/15 text-gold-700 dark:text-gold';
+
+      const formulaTitle = economicFormula.title
+        ? `Formula Ekonomi · ${economicFormula.title}`
+        : enableLegalStyling
+        ? 'Rumus Perpajakan'
+        : 'Rumus / Formula';
+
+      const noteBorderCls = enableLegalStyling
+        ? 'border-indigo-500/20 dark:border-indigo-500/15 text-slate-700 dark:text-slate-300'
+        : warning
+        ? 'border-amber-400/20 text-amber-800 dark:text-amber-200'
+        : 'border-gold-500/20 dark:border-gold/15 text-slate-700 dark:text-slate-400';
+
       return (
-        <div className={`course-formula-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border ${warning ? 'border-amber-400/50 bg-amber-400/10' : 'border-gold-500/40 dark:border-gold/35 bg-gold-500/10 dark:bg-gold/10'}`}>
-          <div className={`flex items-center justify-between gap-3 border-b px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-gold-700 dark:text-gold'}`}>
-            <span className="flex items-center gap-2">{warning ? <AlertTriangle size={15} /> : <Sigma size={15} />} {economicFormula.title ? `Formula Ekonomi · ${economicFormula.title}` : 'Rumus / Formula'}</span>
+        <div className={`course-formula-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border ${surfaceBorderCls}`}>
+          <div className={`flex items-center justify-between gap-3 border-b px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${headerBorderCls}`}>
+            <span className="flex items-center gap-2">
+              {warning ? <AlertTriangle size={15} /> : <Sigma size={15} />} {formulaTitle}
+            </span>
             {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
           </div>
           <div 
@@ -641,7 +652,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               );
             })()}
           </div>
-          {block.note && <div className={`border-t px-5 py-3 text-xs leading-relaxed ${warning ? 'border-amber-400/20 text-amber-800 dark:text-amber-200' : 'border-gold-500/20 dark:border-gold/15 text-slate-700 dark:text-slate-400'}`}>{renderText(block.note)}</div>}
+          {block.note && <div className={`border-t px-5 py-3 text-xs leading-relaxed ${noteBorderCls}`}>{renderText(block.note)}</div>}
         </div>
       );
     }

@@ -38,8 +38,6 @@ const { loadCourseContent } = await import(
   `data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`
 );
 
-// Mirrors of the renderer heuristics in CourseBlockCard.tsx that decide whether a formula goes through renderText.
-const isLegalContent = (text) => /\b(Pasal|UU|PMK|PER|PP|Peraturan|KUP|HPP|Dasar Hukum|ayat|huruf|Undang-Undang|Perda|SE-|KEP-|S-)\b/i.test(text);
 const isMatrixContent = (text) => {
   const lines = text.split('\n');
   return lines.length >= 3 && lines.filter((line) => /\s{3,}/.test(line)).length > lines.length * 0.3;
@@ -71,8 +69,7 @@ function collectBlock(block, path, flags, out) {
     case 'journal': case 'code': case 'figure': case 'illustration':
       push('caption', block.caption); break;
     case 'formula': {
-      if (flags.legal && isLegalContent(block.text)) push('text', block.text);
-      else if (!isMatrixContent(block.text)) {
+      if (!isMatrixContent(block.text)) {
         const body = flags.economic ? splitEconomicFormula(block.text) : block.text;
         if (body.includes('\\') || body.includes('$')) push('text', formulaMathText(body));
       }
@@ -132,25 +129,8 @@ function checkText(text) {
   return problems;
 }
 
-// Known defects outside the S1 list of render-audit-2026-09-16, left for a separate fix.
-// Formula blocks were not fully covered by that audit. Remove an entry once it is fixed; stale entries fail the test.
-const knownIssues = new Set([
-  ...['TM5.blocks[18].blocks[1]', 'TM5.blocks[18].blocks[2]', 'TM6.blocks[17].blocks[0]', 'TM6.blocks[17].blocks[2]',
-    'TM9.blocks[42].blocks[1]', 'TM14.blocks[29].blocks[0]', 'TM14.blocks[29].blocks[2]', 'TM14.blocks[29].blocks[3]',
-    'TM14.blocks[29].blocks[4]', 'UAS.blocks[29].blocks[1]', 'UAS.blocks[119].blocks[0]', 'UAS.blocks[119].blocks[2]',
-    'UAS.blocks[119].blocks[3]', 'UAS.blocks[119].blocks[4]'].map((where) => `AKK201 ${where}.text currency`),
-  'AKK202 TM10.blocks[5].text katex',
-  'AKK202 TM11.blocks[5].text katex',
-  'AKK202 TM11.blocks[6].text katex',
-  'MNK201 TM12.blocks[4].text katex',
-  'AKA201 TM12.blocks[4].text katex',
-  'AKA201 TM13.blocks[4].text katex',
-  'AKS201 TM1.blocks[4].text katex',
-  'AKS201 TM10.blocks[4].text katex',
-  'AKS201 TM14.blocks[4].text katex',
-  'AKS201 UAS.blocks[4].text katex',
-  'PJK301 TM11.blocks[6].text katex',
-]);
+// All previous known defects have been fully resolved across all 28 universal courses.
+const knownIssues = new Set();
 const seenKnownIssues = new Set();
 
 const failures = [];

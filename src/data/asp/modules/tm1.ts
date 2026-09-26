@@ -90,9 +90,9 @@ export const TM1_READING: Reading = {
     {
       kind: 'formula',
       text: `\\text{Akuntabilitas Publik (Stewart, 1984)} = \\begin{cases}
-\\text{1. Probity & Legality} & \\text{(Ketaatan Hukum & Anti Korupsi)} \\\\
-\\text{2. Process} & \\text{(Kecukupan SOP & Sistem Informasi Akuntansi)} \\\\
-\\text{3. Performance} & \\text{(Efisiensi Anggaran & Capaian Output Target)} \\\\
+\\text{1. Probity \\& Legality} & \\text{(Ketaatan Hukum \\& Anti Korupsi)} \\\\
+\\text{2. Process} & \\text{(Kecukupan SOP \\& Sistem Informasi Akuntansi)} \\\\
+\\text{3. Performance} & \\text{(Efisiensi Anggaran \\& Capaian Output Target)} \\\\
 \\text{4. Policy} & \\text{(Pertanggungjawaban Pilihan Arah Kebijakan Publik)}
 \\end{cases}`,
       note: 'Akuntansi sektor publik berfungsi sebagai jembatan yang mentransformasikan data keuangan menjadi informasi pertanggungjawaban publik yang transparan.'

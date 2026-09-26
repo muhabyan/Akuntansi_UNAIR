@@ -108,7 +108,7 @@ export const TM10_READING: Reading = {
     },
     {
       kind: 'formula',
-      text: `\\text{Rasio Ekonomi} = \\frac{\\text{Realisasi Belanja}}{\\text{Anggaran Belanja}} \\times 100\\% \\quad \\text{(Nilai < 100% Menandakan Penghematan Kas)}
+      text: `\\text{Rasio Ekonomi} = \\frac{\\text{Realisasi Belanja}}{\\text{Anggaran Belanja}} \\times 100\\% \\quad \\text{(Nilai < 100\\% Menandakan Penghematan Kas)}
 \\text{Biaya per Unit Output} = \\frac{\\text{Total Biaya Realisasi}}{\\text{Jumlah Unit Output Fisik}} \\quad \\text{(Semakin Rendah, Semakin Efisien)}
 \\text{Rasio Efektivitas} = \\frac{\\text{Realisasi Outcome}}{\\text{Target Outcome}} \\times 100\\% \\quad \\text{(Nilai } \\ge 100\\% \\text{ Menandakan Target Tercapai)}`,
       note: 'Program publik yang paling ideal adalah program yang memenuhi ketiga syarat sekaligus: Ekonomis saat membeli input, Efisien dalam memproses output, dan Efektif dalam menghasilkan outcome bagi rakyat.'
