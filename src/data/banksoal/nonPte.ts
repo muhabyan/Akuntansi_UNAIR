@@ -14,8 +14,12 @@ import { AKM202_BANK, AKM202_BANK_UTS, AKM202_BANK_UAS } from './akm202';
 import { AKS201_BANK, AKS201_BANK_UTS, AKS201_BANK_UAS } from './aks201';
 import { PJK301_BANK, PJK301_BANK_UTS, PJK301_BANK_UAS } from './pjk301';
 import { MNK201_BANK, MNK201_BANK_UTS, MNK201_BANK_UAS } from './mnk201';
-import { AKA201_BANK, AKA201_BANK_UTS, AKA201_BANK_UAS } from './aka201';
+import { AKA201_BANK_UAS } from './aka201';
 import { SII306_BANK, SII306_BANK_UTS, SII306_BANK_UAS } from './sii306';
+
+// AKA201: the one old pre-UTS case is scoped "TM 2–5" of the old sequence, so only the TM 8–14 cases are listed
+// until the rebuilt TM01–TM07 get their own cases (see pbri/practiceVisibility.ts).
+const AKA201_BANK = AKA201_BANK_UAS;
 
 const REGISTRY: Record<string, BankSoal[]> = {
   AKK201: AKK201_BANK, AKM201: AKM201_BANK,
@@ -99,7 +103,6 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
   }
   if (code === 'AKA201') {
     return [
-      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Pengauditan Berbasis Risiko I (TM 1–7)', items: AKA201_BANK_UTS },
       { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Pengauditan Berbasis Risiko I (TM 8–14)', items: AKA201_BANK_UAS },
       { id: 'all', label: 'Kompilasi Seluruh Kasus Pengauditan I (14 TM)', items: AKA201_BANK },
     ];

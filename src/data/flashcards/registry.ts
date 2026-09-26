@@ -16,6 +16,7 @@ import { AKS201_FC } from './aks201';
 import { PJK301_FC } from './pjk301';
 import { MNK201_FC } from './mnk201';
 import { AKA201_FC } from './aka201';
+import { isAka201FlashcardVisible } from '../pbri/practiceVisibility';
 
 import { AGX101_FC } from './agx101';
 import { NOP103_FC } from './nop103';
@@ -52,7 +53,8 @@ const FLASHCARD_REGISTRY: Record<string, AdvancedStudyCard[]> = {
   AKS201: AKS201_FC as AdvancedStudyCard[],
   PJK301: PJK301_FC as AdvancedStudyCard[],
   MNK201: MNK201_FC as AdvancedStudyCard[],
-  AKA201: AKA201_FC as AdvancedStudyCard[],
+  // Old TM01–TM07 cards that no longer match the rebuilt TMs are hidden (see pbri/practiceVisibility.ts).
+  AKA201: (AKA201_FC as AdvancedStudyCard[]).filter(isAka201FlashcardVisible),
 };
 
 export function getFlashcards(code: string): AdvancedStudyCard[] {
