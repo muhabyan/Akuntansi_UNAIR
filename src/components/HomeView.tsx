@@ -88,10 +88,10 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
     <>
       <MotionBackground />
       {/* Hero Section */}
-      <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-transparent pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:pb-0 md:pt-0">
+      <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-transparent pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:min-h-0 md:justify-start md:pb-0 md:pt-[calc(var(--page-top)-0.5rem)] lg:pt-[var(--page-top)]">
         {/* Logo watermark - positioned right, only in hero */}
         <Aks1Logo3D />
-        <div className="mobile-home-hero-content mx-auto w-full max-w-7xl px-5 py-14 sm:py-16 md:px-10 md:py-20 lg:px-14">
+        <div className="mobile-home-hero-content mx-auto w-full max-w-7xl px-5 py-14 sm:py-16 md:px-10 md:pb-20 md:pt-0 lg:px-14">
           <div className="max-w-3xl">
             <h1 className="mb-5 text-[2rem] font-bold leading-[1.12] text-gray-900 dark:text-white sm:text-4xl md:mb-6 md:text-5xl md:leading-tight lg:text-6xl">
               <span className="block mb-2 md:mb-4">Tingkatkan Pemahaman</span>

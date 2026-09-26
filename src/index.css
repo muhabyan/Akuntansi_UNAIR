@@ -47,6 +47,28 @@
     --color-gold-dark: 59 130 246; /* blue-500 */
   }
 
+  /* Fixed site header (Navbar.tsx). --site-header-rest-h is its height before the page is scrolled: 53-54px on phones,
+     70px from 768px, 120px at 1024-1279px where the search field wraps to a second row. Page offsets use it, so the
+     content does not move when the header shrinks after scrolling. --page-top puts the first content 34px below it
+     (the letters of a text link then start about 39px below it). */
+  :root {
+    --site-header-rest-h: calc(3.375rem + env(safe-area-inset-top));
+    --page-top-gap: 2.125rem;
+    --page-top: calc(var(--site-header-rest-h) + var(--page-top-gap));
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --site-header-rest-h: calc(4.375rem + env(safe-area-inset-top));
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1279.98px) {
+    :root {
+      --site-header-rest-h: calc(7.5rem + env(safe-area-inset-top));
+    }
+  }
+
   html {
     scroll-behavior: smooth;
   }

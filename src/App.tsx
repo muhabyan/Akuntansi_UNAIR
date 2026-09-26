@@ -616,7 +616,7 @@ export default function App() {
       <main
         id="main-content"
         tabIndex={-1}
-        className={`${isHomeLanding || isGuideView ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-28' : 'pt-[10.25rem] md:pt-[10.75rem] lg:pt-32'} pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-20`}
+        className={`${isHomeLanding || isGuideView ? 'pt-0' : activeSemester && selectedCourse === null && !routeNotFound ? 'pt-24 md:pt-[var(--page-top)]' : 'pt-[10.25rem] md:pt-[var(--page-top)]'} pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-20`}
       >
         <ErrorBoundary onReset={goHome}>
           <Suspense fallback={<ViewLoader />}>

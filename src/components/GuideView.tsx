@@ -84,7 +84,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden selection:bg-blue-200 dark:selection:bg-blue-900/50 pt-16 relative">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 overflow-x-hidden selection:bg-blue-200 dark:selection:bg-blue-900/50 pt-16 md:pt-[var(--site-header-rest-h)] relative">
       
       {/* Scroll to Top Button */}
       <button
@@ -98,7 +98,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
       </button>
 
       {/* 1. Hero Section */}
-      <section className="relative px-6 pb-14 pt-20 lg:px-8">
+      <section className="relative px-6 pb-14 pt-20 md:pt-[var(--page-top-gap)] lg:px-8">
         <div className="absolute inset-0 bg-blue-600/5 dark:bg-blue-500/5 -skew-y-3 origin-top-left -z-10" />
         <div className="max-w-5xl mx-auto text-center relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-medium text-sm mb-6 border border-blue-200 dark:border-blue-800">

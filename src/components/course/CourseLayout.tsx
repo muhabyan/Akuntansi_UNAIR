@@ -890,7 +890,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
 
 
   return (
-    <div className={`mx-auto ${currentReading ? '-mt-16 max-w-[80rem] px-4' : '-mt-12 max-w-5xl px-4 md:mt-0 md:px-8'}`}>
+    <div className={`mx-auto ${currentReading ? '-mt-16 max-w-[80rem] px-4 md:mt-0' : '-mt-12 max-w-5xl px-4 md:mt-0 md:px-8'}`}>
       <div className="flex flex-col">
         {!currentReading && (
           <CourseSidebar
