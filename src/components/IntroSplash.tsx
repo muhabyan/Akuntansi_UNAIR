@@ -122,10 +122,10 @@ export default function IntroSplash() {
         {/* Babak 2: logo Neraca + wordmark */}
         <div className="ahs-lockup">
           <svg viewBox="0 0 64 64" className="ahs-tile">
-            <rect width="64" height="64" rx="15" className="fill-gray-900 dark:fill-white" />
-            <rect x="17" y="14" width="8" height="36" rx="2" className="ahs-barL fill-white dark:fill-gray-900" />
-            <rect x="39" y="14" width="8" height="36" rx="2" className="ahs-barR fill-white dark:fill-gray-900" />
-            <rect x="25" y="29" width="14" height="6" rx="1" className="ahs-cross fill-blue-500 dark:fill-blue-600" />
+            <rect width="64" height="64" rx="15" className="fill-blue-50 dark:fill-blue-400/15" />
+            <rect x="17" y="14" width="8" height="36" rx="2" className="ahs-barL fill-gray-900 dark:fill-white" />
+            <rect x="39" y="14" width="8" height="36" rx="2" className="ahs-barR fill-gray-900 dark:fill-white" />
+            <rect x="25" y="29" width="14" height="6" rx="1" className="ahs-cross fill-blue-600 dark:fill-blue-400" />
           </svg>
           <span className="ahs-wm font-display">
             akuntansi<span className="text-blue-600 dark:text-blue-400">hub</span>
