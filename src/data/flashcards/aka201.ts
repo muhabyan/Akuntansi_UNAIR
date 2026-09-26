@@ -1,385 +1,766 @@
 // src/data/flashcards/aka201.ts
-// Flashcard komprehensif Pengauditan Berbasis Risiko I (AKA201) — 84 kartu lengkap (6 kartu per TM)
+// Flashcard Pengauditan Berbasis Risiko I (AKA201).
+// TM01–TM07: converted verbatim from each TM's 06_implementation_brief.md in the content package (IDs from 06, answer keys
+// follow the key spread in 06 and 07). TM08–TM14: the earlier items, unchanged until that half is rebuilt.
+// Edited by hand, not by the Semester 3 generators (see scripts/test-sem3-generators.mjs).
 import type { AdvancedStudyCard } from '../../types';
 
 export const AKA201_FC: AdvancedStudyCard[] = [
   {
-    "id": "aka201-tm01-01",
+    "id": "aka201-tm01-fc01",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Konsep Dasar Audit & Jasa Asurans",
-    "category": "Definisi",
-    "front": "Definisi Audit Laporan Keuangan",
-    "back": "Proses sistematis untuk memperoleh dan mengevaluasi bukti secara objektif mengenai asersi manajemen guna menentukan tingkat kesesuaian dengan kriteria yang ditetapkan (SAK/IFRS)."
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Contoh",
+    "front": "Beri contoh perikatan asurans selain audit laporan keuangan, dengan informasi dan kriterianya",
+    "back": "Asurans atas laporan emisi gas rumah kaca (informasi: laporan emisi; kriteria: kerangka pelaporan yang disepakati) atau audit SPT (informasi: SPT; kriteria: undang-undang pajak)"
   },
   {
-    "id": "aka201-tm01-02",
+    "id": "aka201-tm01-fc02",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Konsep Dasar Audit & Jasa Asurans",
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
     "category": "Klasifikasi",
-    "front": "Jasa Asurans vs Non-Asurans",
-    "back": "Jasa Asurans meningkatkan kredibilitas informasi bagi pengambil keputusan (Audit, Reviu). Jasa Non-Asurans mencakup Kompilasi, Jasa Perpajakan, dan Konsultasi Manajemen."
+    "front": "Tiga pihak dalam audit laporan keuangan",
+    "back": "Klien (manajemen), pengguna eksternal, auditor; auditor akuntabel kepada pengguna"
   },
   {
-    "id": "aka201-tm01-03",
+    "id": "aka201-tm01-fc03",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Konsep Dasar Audit & Jasa Asurans",
-    "category": "Konsep",
-    "front": "Penyebab Timbulnya Risiko Informasi",
-    "back": "Jarak informasi yang jauh antara pengguna dan manajemen, bias dan motif penyaji, volume data yang sangat masif, dan kompleksitas transaksi ekonomi."
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Perbandingan",
+    "front": "Reasonable vs limited assurance",
+    "back": "Tinggi tapi tidak absolut, opini positif vs moderat, keyakinan negatif"
   },
   {
-    "id": "aka201-tm01-04",
+    "id": "aka201-tm01-fc04",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Konsep Dasar Audit & Jasa Asurans",
-    "category": "Teori",
-    "front": "Hubungan Agensi dalam Auditing",
-    "back": "Auditor independen bertindak sebagai pihak ketiga tepercaya untuk menjembatani konflik kepentingan antara pemilik modal (prinsipal) dan pengelola perusahaan (agen)."
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Konsep",
+    "front": "Kenapa definisi auditing tidak menyebut \"laporan keuangan\"?",
+    "back": "Karena berlaku untuk informasi apa pun yang dapat diverifikasi terhadap kriteria; audit laporan keuangan hanya salah satu jenis. Bagi akuntan publik, \"audit\" biasanya menyebut audit laporan keuangan, dan itulah asal kebingungannya"
   },
   {
-    "id": "aka201-tm01-05",
+    "id": "aka201-tm01-fc05",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Konsep Dasar Audit & Jasa Asurans",
-    "category": "Hukum",
-    "front": "Standar Pengendalian Mutu KAP (ISQM 1)",
-    "back": "Firma audit wajib merancang, mengimplementasikan, dan mengoperasikan sistem manajemen mutu yang menjamin kepatuhan pada standar profesional dan laporan yang tepat."
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Contoh",
+    "front": "Petakan empat unsur auditing pada audit kepatuhan covenant bank",
+    "back": "Informasi: catatan perusahaan; kriteria: ketentuan perjanjian pinjaman; bukti: laporan keuangan dan perhitungan auditor; oleh orang kompeten dan independen; hasilnya dilaporkan"
   },
   {
-    "id": "aka201-tm01-06",
+    "id": "aka201-tm01-fc06",
     "phase": "pra-uts",
     "tm": 1,
-    "topic": "Konsep Dasar Audit & Jasa Asurans",
-    "category": "Prinsip",
-    "front": "Tanggung Jawab Auditor vs Manajemen",
-    "back": "Manajemen bertanggung jawab atas penyusunan laporan keuangan dan perancangan pengendalian internal. Auditor bertanggung jawab menyatakan opini independen atas laporan keuangan."
-  },
-  {
-    "id": "aka201-tm02-01",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Etika Profesi, Dilema Etis & Independensi",
-    "category": "Prinsip",
-    "front": "Lima Prinsip Dasar Etika IESBA / IAPI",
-    "back": "(1) Integritas, (2) Objektivitas, (3) Kompetensi dan Kehati-hatian Profesional, (4) Kerahasian, dan (5) Perilaku Profesional."
-  },
-  {
-    "id": "aka201-tm02-02",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Etika Profesi, Dilema Etis & Independensi",
-    "category": "Konsep",
-    "front": "Independence in Fact vs in Appearance",
-    "back": "Independence in Fact (pikiran) adalah keadaan mental yang bebas dari bias. Independence in Appearance (penampilan) adalah persepsi pihak ketiga yang berpengetahuan bahwa auditor independen."
-  },
-  {
-    "id": "aka201-tm02-03",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Etika Profesi, Dilema Etis & Independensi",
-    "category": "Konsep",
-    "front": "Lima Ancaman terhadap Independensi Auditor",
-    "back": "(1) Self-Interest Threat, (2) Self-Review Threat, (3) Advocacy Threat, (4) Familiarity Threat, dan (5) Intimidation Threat."
-  },
-  {
-    "id": "aka201-tm02-04",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Etika Profesi, Dilema Etis & Independensi",
-    "category": "Mekanisme",
-    "front": "Safeguards (Pencegahan) Ancaman Etika",
-    "back": "Pencegahan yang dibuat profesi/regulasi (rotasi auditor, larangan jasa non-audit tertentu) dan pencegahan dalam lingkungan kerja KAP (reviu mutu independen)."
-  },
-  {
-    "id": "aka201-tm02-05",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Etika Profesi, Dilema Etis & Independensi",
-    "category": "Hukum",
-    "front": "Larangan Kepemilikan Keuangan Klien",
-    "back": "Auditor dan anggota tim penugasan dilarang memiliki kepentingan keuangan langsung (saham/obligasi) pada klien audit karena menciptakan Self-Interest Threat berat."
-  },
-  {
-    "id": "aka201-tm02-06",
-    "phase": "pra-uts",
-    "tm": 2,
-    "topic": "Etika Profesi, Dilema Etis & Independensi",
-    "category": "Hukum",
-    "front": "Rotasi Partner Audit (SA 220 & Regulasi OJK)",
-    "back": "Kewajiban rotasi Partner Penandatangan Laporan Audit setelah periode tertentu (misal: 5-7 tahun) untuk memitigasi Familiarity Threat."
-  },
-  {
-    "id": "aka201-tm03-01",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Tanggung Jawab Audit & Asersi Manajemen",
-    "category": "Konsep",
-    "front": "Konsep Skeptisisme Profesional (SA 200)",
-    "back": "Sikap yang mencakup pikiran yang selalu mempertanyakan, waspada terhadap kondisi yang mengindikasikan kemungkinan salah saji, dan penilaian kritis atas bukti audit."
-  },
-  {
-    "id": "aka201-tm03-02",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Tanggung Jawab Audit & Asersi Manajemen",
-    "category": "Konsep",
-    "front": "Asersi Transaksi dan Peristiwa (Laba Rugi)",
-    "back": "Keterjadian (Occurrence), Kelengkapan (Completeness), Keakurasian (Accuracy), Pisah Batas (Cutoff), dan Klasifikasi (Classification)."
-  },
-  {
-    "id": "aka201-tm03-03",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Tanggung Jawab Audit & Asersi Manajemen",
-    "category": "Konsep",
-    "front": "Asersi Saldo Akun Akhir Periode (Neraca)",
-    "back": "Keberadaan (Existence), Hak dan Kewajiban (Rights & Obligations), Kelengkapan (Completeness), serta Penilaian dan Alokasi (Valuation & Allocation)."
-  },
-  {
-    "id": "aka201-tm03-04",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Tanggung Jawab Audit & Asersi Manajemen",
-    "category": "Konsep",
-    "front": "Asersi Penyajian dan Pengungkapan",
-    "back": "Keterjadian serta Hak & Kewajiban, Kelengkapan, Klasifikasi & Keterpahaman, serta Keakurasian & Penilaian dalam Catatan atas Laporan Keuangan."
-  },
-  {
-    "id": "aka201-tm03-05",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Tanggung Jawab Audit & Asersi Manajemen",
-    "category": "Konsep",
-    "front": "Keyakinan Memadai (Reasonable Assurance)",
-    "back": "Tingkat keyakinan tinggi namun bukan absolut, karena adanya keterbatasan bawaan audit (penggunaan sampel dan pertimbangan subjektif estimasi akuntansi)."
-  },
-  {
-    "id": "aka201-tm03-06",
-    "phase": "pra-uts",
-    "tm": 3,
-    "topic": "Tanggung Jawab Audit & Asersi Manajemen",
-    "category": "Konsep",
-    "front": "Ekspektasi Publik (Expectation Gap)",
-    "back": "Kesenjangan antara apa yang diharapkan publik dari auditor (jaminan bebas mutlak dari fraud) dengan tanggung jawab riil auditor menurut standar profesional."
-  },
-  {
-    "id": "aka201-tm04-01",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Laporan Audit Independen & Key Audit Matters",
-    "category": "Klasifikasi",
-    "front": "Struktur Baku Laporan Auditor Independen (SA 700)",
-    "back": "Judul Independen, Pihak yang Dituju, Paragraf Opini (paling atas), Dasar Opini, Kelangsungan Usaha, Key Audit Matters (KAM), Tanggung Jawab Manajemen & Auditor."
-  },
-  {
-    "id": "aka201-tm04-02",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Laporan Audit Independen & Key Audit Matters",
-    "category": "Konsep",
-    "front": "Opini Wajar Tanpa Pengecualian (Unmodified Opinion)",
-    "back": "Diterbitkan saat auditor menyimpulkan bahwa laporan keuangan disajikan secara wajar, dalam semua hal yang material, sesuai dengan SAK."
-  },
-  {
-    "id": "aka201-tm04-03",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Laporan Audit Independen & Key Audit Matters",
-    "category": "Konsep",
-    "front": "Opini Wajar Dengan Pengecualian (Qualified Opinion)",
-    "back": "Diterbitkan saat salah saji adalah material tetapi TIDAK pervasif, atau auditor tidak dapat memperoleh bukti yang cukup namun dampaknya tidak pervasif."
-  },
-  {
-    "id": "aka201-tm04-04",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Laporan Audit Independen & Key Audit Matters",
-    "category": "Konsep",
-    "front": "Opini Tidak Wajar (Adverse Opinion)",
-    "back": "Diterbitkan saat salah saji laporan keuangan bersifat MATERIAL dan PERVASIF terhadap laporan keuangan secara keseluruhan."
-  },
-  {
-    "id": "aka201-tm04-05",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Laporan Audit Independen & Key Audit Matters",
-    "category": "Konsep",
-    "front": "Opini Tidak Menyatakan Pendapat (Disclaimer)",
-    "back": "Diterbitkan saat auditor tidak dapat memperoleh bukti audit yang cukup dan tepat, dan potensi dampaknya bersifat MATERIAL dan PERVASIF."
-  },
-  {
-    "id": "aka201-tm04-06",
-    "phase": "pra-uts",
-    "tm": 4,
-    "topic": "Laporan Audit Independen & Key Audit Matters",
-    "category": "Hukum",
-    "front": "Key Audit Matters (KAM - SA 701)",
-    "back": "Hal-hal yang menurut pertimbangan profesional auditor paling signifikan dalam audit laporan keuangan entitas publik (emiten) periode berjalan."
-  },
-  {
-    "id": "aka201-tm05-01",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Konsep Materialitas Audit (SA 320 & SA 450)",
-    "category": "Definisi",
-    "front": "Definisi Materialitas Audit",
-    "back": "Besaran salah saji yang secara individual atau agregat diperkirakan dapat memengaruhi keputusan ekonomi yang diambil pengguna laporan keuangan."
-  },
-  {
-    "id": "aka201-tm05-02",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Konsep Materialitas Audit (SA 320 & SA 450)",
-    "category": "Rumus",
-    "front": "Materialitas Keseluruhan (Planning Materiality)",
-    "back": "Batas materialitas laporan keuangan secara keseluruhan; umumnya dihitung 0.5-1% dari Total Aset atau 5% dari Laba Sebelum Pajak entitas berorientasi laba."
-  },
-  {
-    "id": "aka201-tm05-03",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Konsep Materialitas Audit (SA 320 & SA 450)",
-    "category": "Rumus",
-    "front": "Materialitas Pelaksanaan (Performance Materiality)",
-    "back": "Jumlah yang ditetapkan auditor di bawah materialitas keseluruhan (misal 50-75% dari Planning Materiality) untuk mengurangi risiko akumulasi salah saji kecil."
-  },
-  {
-    "id": "aka201-tm05-04",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Konsep Materialitas Audit (SA 320 & SA 450)",
-    "category": "Hukum",
-    "front": "Ambang Batas Sepele (Trivial Threshold / Clearly Trivial)",
-    "back": "Batas nilai di bawah mana salah saji dianggap sepele (misal 3-5% dari Planning Materiality) dan tidak perlu diakumulasikan ke tabel salah saji."
-  },
-  {
-    "id": "aka201-tm05-05",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Konsep Materialitas Audit (SA 320 & SA 450)",
-    "category": "Konsep",
-    "front": "Materialitas Kualitatif",
-    "back": "Salah saji dengan nilai rupiah kecil tetapi material karena sifatnya (misal: fraud direksi, pelanggaran klausul utang, mengubah rugi menjadi laba)."
-  },
-  {
-    "id": "aka201-tm05-06",
-    "phase": "pra-uts",
-    "tm": 5,
-    "topic": "Konsep Materialitas Audit (SA 320 & SA 450)",
-    "category": "Prosedur",
-    "front": "Evaluasi Dampak Salah Saji Belum Dikoreksi (SA 450)",
-    "back": "Auditor menguji apakah total salah saji yang tidak dikoreksi manajemen melebihi batas materialitas; jika melebihi, auditor wajib memodifikasi opini."
-  },
-  {
-    "id": "aka201-tm06-01",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Bukti Audit, 8 Prosedur & Kertas Kerja (SA 500 & SA 230)",
-    "category": "Prinsip",
-    "front": "Dua Kriteria Bukti Audit: Cukup & Tepat",
-    "back": "Cukup (Sufficiency) mengukur kuantitas bukti yang dibutuhkan. Tepat (Appropriateness) mengukur kualitas bukti (relevansi dan keandalan)."
-  },
-  {
-    "id": "aka201-tm06-02",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Bukti Audit, 8 Prosedur & Kertas Kerja (SA 500 & SA 230)",
-    "category": "Hukum",
-    "front": "Hierarki Keandalan Bukti Audit",
-    "back": "Bukti pihak ketiga independen > Bukti langsung auditor > Bukti internal klien dengan SPI kuat > Bukti dokumenter tertulis > Pernyataan lisan manajemen."
-  },
-  {
-    "id": "aka201-tm06-03",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Bukti Audit, 8 Prosedur & Kertas Kerja (SA 500 & SA 230)",
-    "category": "Prosedur",
-    "front": "Delapan Prosedur Audit Bukti (SA 500)",
-    "back": "(1) Inspeksi, (2) Pengamatan/Observasi, (3) Konfirmasi Eksternal, (4) Rekalkulasi, (5) Pelaksanaan Kembali (Reperformance), (6) Prosedur Analitis, (7) Permintaan Keterangan (Inquiry), (8) Tracing & Vouching."
-  },
-  {
-    "id": "aka201-tm06-04",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Bukti Audit, 8 Prosedur & Kertas Kerja (SA 500 & SA 230)",
-    "category": "Prosedur",
-    "front": "Tracing vs Vouching",
-    "back": "Tracing (dokumen sumber ke jurnal) menguji asersi KELENGKAPAN. Vouching (jurnal ke dokumen pendukung) menguji asersi KETERJADIAN / KEBERADAAN."
-  },
-  {
-    "id": "aka201-tm06-05",
-    "phase": "pra-uts",
-    "tm": 6,
-    "topic": "Bukti Audit, 8 Prosedur & Kertas Kerja (SA 500 & SA 230)",
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
     "category": "Standar",
-    "front": "Konfirmasi Eksternal Positif vs Negatif (SA 505)",
-    "back": "Konfirmasi Positif meminta responden menjawab setuju atau tidak. Konfirmasi Negatif meminta jawaban HANYA jika responden tidak setuju dengan saldo."
+    "front": "Professional skepticism (ISA 200)",
+    "back": "Pikiran yang mempertanyakan, waspada terhadap kondisi yang mengindikasikan salah saji karena error atau fraud, penilaian kritis atas bukti"
   },
   {
-    "id": "aka201-tm06-06",
+    "id": "aka201-tm01-fc07",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Standar",
+    "front": "Tujuan keseluruhan auditor (ISA 200 para. 11)",
+    "back": "Keyakinan memadai bahwa laporan keuangan bebas salah saji material karena fraud atau error, lalu melaporkan dan berkomunikasi sesuai temuan"
+  },
+  {
+    "id": "aka201-tm01-fc08",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Konsep",
+    "front": "Kenapa audit bisa menurunkan bunga pinjaman tetapi tidak menurunkan risiko bisnis?",
+    "back": "Audit memperbaiki keandalan informasi (information risk), tidak mengubah kondisi usaha atau ekonomi debitur"
+  },
+  {
+    "id": "aka201-tm01-fc09",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Klasifikasi",
+    "front": "Empat penyebab information risk",
+    "back": "Remoteness, biases and motives of provider, voluminous data, complex exchange transactions"
+  },
+  {
+    "id": "aka201-tm01-fc10",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Klasifikasi",
+    "front": "Tiga cara mengurangi information risk",
+    "back": "Pengguna verifikasi sendiri; berbagi risiko dengan manajemen; laporan keuangan diaudit"
+  },
+  {
+    "id": "aka201-tm01-fc11",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Klasifikasi",
+    "front": "Tiga jenis audit",
+    "back": "Financial statement, compliance, operational (economy, efficiency, effectiveness)"
+  },
+  {
+    "id": "aka201-tm01-fc12",
+    "phase": "pra-uts",
+    "tm": 1,
+    "topic": "Sifat Audit, Permintaan atas Audit, dan Jenis Auditor",
+    "category": "Perbandingan",
+    "front": "Audit vs review vs compilation",
+    "back": "Reasonable assurance; limited assurance; tanpa asurans"
+  },
+  {
+    "id": "aka201-tm02-fc01",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Konsep",
+    "front": "Kenapa struktur berjenjang di KAP mendukung kualitas?",
+    "back": "Setiap jenjang mereviu pekerjaan di bawahnya; staf yang kurang berpengalaman mengerjakan sebagian besar pekerjaan sehingga supervisi penting"
+  },
+  {
+    "id": "aka201-tm02-fc02",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Definisi",
+    "front": "Peran IAASB",
+    "back": "Menyusun ISA; memfasilitasi konvergensi standar internasional dan nasional"
+  },
+  {
+    "id": "aka201-tm02-fc03",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Klasifikasi",
+    "front": "Empat prinsip yang mendasari audit",
+    "back": "Purpose, personal responsibilities, performance responsibilities, reporting responsibilities"
+  },
+  {
+    "id": "aka201-tm02-fc04",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Klasifikasi",
+    "front": "Empat pendorong kualitas audit",
+    "back": "Right teams, right support, in-process reviews, accountability and monitoring"
+  },
+  {
+    "id": "aka201-tm02-fc05",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Konsep",
+    "front": "Kenapa enam elemen di buku tidak boleh dijawab sebagai standar yang berlaku?",
+    "back": "Itu quality control versi lama (CSQC 1). Yang berlaku ISQM 1 / SMM 1: delapan komponen berbasis risiko; SMM 1 efektif 31 Desember 2025"
+  },
+  {
+    "id": "aka201-tm02-fc06",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Klasifikasi",
+    "front": "Delapan komponen manajemen mutu",
+    "back": "Proses penilaian risiko KAP; tata kelola dan kepemimpinan; etika; penerimaan dan keberlanjutan klien; pelaksanaan perikatan; sumber daya; informasi dan komunikasi; pemantauan dan remediasi"
+  },
+  {
+    "id": "aka201-tm02-fc07",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Definisi",
+    "front": "Tujuan sistem manajemen mutu",
+    "back": "Keyakinan memadai bahwa KAP dan personel patuh standar dan hukum, dan laporan yang diterbitkan sesuai kondisinya"
+  },
+  {
+    "id": "aka201-tm02-fc08",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Definisi",
+    "front": "Engagement quality review",
+    "back": "Evaluasi objektif atas pertimbangan signifikan tim perikatan, selesai paling lambat pada tanggal laporan"
+  },
+  {
+    "id": "aka201-tm02-fc09",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Konsep",
+    "front": "Rekan KAP yang bukan Akuntan Publik ingin menandatangani laporan audit. Boleh?",
+    "back": "Tidak. Jasa asurans hanya dapat diberikan oleh Akuntan Publik (UU 5/2011 Pasal 3)"
+  },
+  {
+    "id": "aka201-tm02-fc10",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Konsep",
+    "front": "Siapa memberi izin Akuntan Publik, dan apa peran Asosiasi Profesi?",
+    "back": "Menteri Keuangan memberi izin; Asosiasi Profesi menyusun SPAP, menyelenggarakan ujian dan PPL, serta reviu mutu anggota"
+  },
+  {
+    "id": "aka201-tm02-fc11",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Hukum",
+    "front": "Pembatasan jasa audit PP 20/2015",
+    "back": "5 tahun buku berturut-turut; bank umum, pasar modal, dana pensiun, asuransi/reasuransi, BUMN; jeda 2 tahun buku"
+  },
+  {
+    "id": "aka201-tm02-fc12",
+    "phase": "pra-uts",
+    "tm": 2,
+    "topic": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "category": "Standar",
+    "front": "Tanggal efektif SMM 1",
+    "back": "31 Desember 2025 (disahkan 17 September 2024)"
+  },
+  {
+    "id": "aka201-tm03-fc01",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Perbandingan",
+    "front": "Apa beda objektivitas dan independensi?",
+    "back": "Objektivitas adalah sikap mental; independensi mencakup sikap mental dan penampilan"
+  },
+  {
+    "id": "aka201-tm03-fc02",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Klasifikasi",
+    "front": "Lima langkah kerangka keputusan etis",
+    "back": "Fakta; isu etis; pihak terdampak; evaluasi alternatif; laksanakan dan dokumentasikan"
+  },
+  {
+    "id": "aka201-tm03-fc03",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Definisi",
+    "front": "Ethical fading",
+    "back": "Dimensi etis hilang karena keputusan dibingkai sebagai soal hukum atau biaya saja"
+  },
+  {
+    "id": "aka201-tm03-fc04",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Konsep",
+    "front": "Situasi tidak dilarang secara spesifik oleh kode etik. Berarti boleh?",
+    "back": "Tidak otomatis. Anggota tetap wajib mengidentifikasi, mengevaluasi, dan mengatasi ancaman (KEPAP P120.3)"
+  },
+  {
+    "id": "aka201-tm03-fc05",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Konsep",
+    "front": "Klien mengancam ganti KAP jika catatan tidak dihapus. Ancaman apa, dan kenapa?",
+    "back": "Intimidasi: tekanan nyata atau dirasakan yang menghalangi auditor bertindak objektif"
+  },
+  {
+    "id": "aka201-tm03-fc06",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Klasifikasi",
+    "front": "Tiga cara mengatasi ancaman",
+    "back": "Hilangkan keadaan; terapkan pengamanan; tolak atau akhiri"
+  },
+  {
+    "id": "aka201-tm03-fc07",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Konsep",
+    "front": "Auditor yakin tetap objektif walau sering liburan bersama CFO klien. Kenapa tetap masalah?",
+    "back": "Independensi dalam penampilan: pihak ketiga yang rasional kemungkinan menyimpulkan objektivitasnya dikompromikan (contoh kasus EY)"
+  },
+  {
+    "id": "aka201-tm03-fc08",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Definisi",
+    "front": "Aturan hadiah dari klien audit",
+    "back": "Tidak boleh diterima kecuali trivial dan tidak berkonsekuensi; trivial pun dilarang jika untuk memengaruhi"
+  },
+  {
+    "id": "aka201-tm03-fc09",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Klasifikasi",
+    "front": "Tiga sumber pengamanan (buku)",
+    "back": "Profesi/regulasi; klien; KAP"
+  },
+  {
+    "id": "aka201-tm03-fc10",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Hukum",
+    "front": "Larangan etika UU 5/2011 Pasal 30 (contoh)",
+    "back": "Imbalan jasa bersyarat; komisi; manipulasi atau pemalsuan data"
+  },
+  {
+    "id": "aka201-tm03-fc11",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Klasifikasi",
+    "front": "Dua komponen expectations gap (Porter)",
+    "back": "Reasonableness gap; performance gap (deficient standards, deficient performance)"
+  },
+  {
+    "id": "aka201-tm03-fc12",
+    "phase": "pra-uts",
+    "tm": 3,
+    "topic": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "category": "Perbandingan",
+    "front": "Audit failure vs audit risk",
+    "back": "Opini keliru karena tidak patuh standar vs opini keliru walau sudah patuh standar"
+  },
+  {
+    "id": "aka201-tm04-fc01",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Konsep",
+    "front": "Kenapa auditor tidak boleh membuat sendiri jurnal koreksi klien?",
+    "back": "Koreksi tanggung jawab manajemen; jika auditor yang membuat, ia menelaah pekerjaannya sendiri (ancaman telaah pribadi)"
+  },
+  {
+    "id": "aka201-tm04-fc02",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Konsep",
+    "front": "Apa itu tata kelola korporat menurut buku, dan di mana posisi TCWG?",
+    "back": "Seperangkat hubungan manajemen, dewan, pemegang saham, dan pemangku kepentingan untuk menetapkan tujuan, cara mencapainya, dan pemantauan; TCWG mengawasi pelaporan keuangan dan audit"
+  },
+  {
+    "id": "aka201-tm04-fc03",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Konsep",
+    "front": "Keyakinan audit tidak absolut. Bolehkah auditor melewatkan prosedur yang mahal?",
+    "back": "Tidak. Kesulitan, waktu, atau biaya bukan alasan sah untuk melewatkan prosedur yang tidak ada alternatifnya (ISA 200 A53)"
+  },
+  {
+    "id": "aka201-tm04-fc04",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Klasifikasi",
+    "front": "Tiga sumber keterbatasan bawaan (ISA 200)",
+    "back": "Sifat pelaporan keuangan; sifat prosedur audit; waktu dan biaya yang wajar"
+  },
+  {
+    "id": "aka201-tm04-fc05",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Perbandingan",
+    "front": "Error vs fraud",
+    "back": "Tidak disengaja vs disengaja; tanggung jawab auditor sama"
+  },
+  {
+    "id": "aka201-tm04-fc06",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Klasifikasi",
+    "front": "Dua jenis fraud",
+    "back": "Penyalahgunaan aset; pelaporan keuangan curang"
+  },
+  {
+    "id": "aka201-tm04-fc07",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Klasifikasi",
+    "front": "Empat area dengan keterbatasan khusus",
+    "back": "Fraud; pihak berelasi; ketidakpatuhan hukum; kelangsungan usaha"
+  },
+  {
+    "id": "aka201-tm04-fc08",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Klasifikasi",
+    "front": "Empat langkah kerangka pertimbangan profesional",
+    "back": "Definisikan masalah; kumpulkan fakta; analisis alternatif; simpulkan dan dokumentasikan"
+  },
+  {
+    "id": "aka201-tm04-fc09",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Konsep",
+    "front": "Manajer menjawab lancar dan meyakinkan. Kenapa auditor tetap meminta bukti?",
+    "back": "Jawaban wawancara juga dinilai keandalannya; keyakinan bahwa manajemen jujur tidak membebaskan dari skeptisisme (ISA 200 A21, A25)"
+  },
+  {
+    "id": "aka201-tm04-fc10",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Klasifikasi",
+    "front": "Enam kualitas skeptisisme",
+    "back": "Questioning mind, suspension of judgment, search for knowledge, interpersonal understanding, autonomy, self-esteem"
+  },
+  {
+    "id": "aka201-tm04-fc11",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Klasifikasi",
+    "front": "Empat jebakan pertimbangan",
+    "back": "Confirmation, overconfidence, anchoring, availability"
+  },
+  {
+    "id": "aka201-tm04-fc12",
+    "phase": "pra-uts",
+    "tm": 4,
+    "topic": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "category": "Definisi",
+    "front": "Pelajaran kasus Satyam",
+    "back": "Auditor menyerahkan proses konfirmasi bank kepada manajemen, padahal harus mengendalikannya sendiri"
+  },
+  {
+    "id": "aka201-tm05-fc01",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Konsep",
+    "front": "Kenapa kas disebut penghubung siklus?",
+    "back": "Hampir semua siklus melibatkan penerimaan atau pengeluaran kas"
+  },
+  {
+    "id": "aka201-tm05-fc02",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Klasifikasi",
+    "front": "Lima siklus",
+    "back": "Pendapatan dan penagihan; pembelian dan pembayaran; SDM dan penggajian; persediaan dan distribusi; perolehan dan pelunasan modal"
+  },
+  {
+    "id": "aka201-tm05-fc03",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Definisi",
+    "front": "Akun yang menghubungkan hampir semua siklus",
+    "back": "Kas"
+  },
+  {
+    "id": "aka201-tm05-fc04",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Definisi",
+    "front": "Entity-level controls",
+    "back": "Pengendalian untuk banyak siklus atau seluruh organisasi; menangani risiko pervasif"
+  },
+  {
+    "id": "aka201-tm05-fc05",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Konsep",
+    "front": "Kenapa auditor memecah laporan keuangan menjadi asersi?",
+    "back": "Asersi dipakai untuk mempertimbangkan jenis salah saji yang mungkin terjadi, sehingga tiap klaim bisa diuji dengan bukti yang sesuai (ISA 315 para. 12(a))"
+  },
+  {
+    "id": "aka201-tm05-fc06",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Konsep",
+    "front": "Barang konsinyasi milik pemasok ikut dihitung. Asersi apa, dan kenapa bukan existence?",
+    "back": "Rights and obligations: barangnya ada, tetapi bukan milik entitas"
+  },
+  {
+    "id": "aka201-tm05-fc07",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Klasifikasi",
+    "front": "Enam asersi saldo",
+    "back": "Existence, rights and obligations, completeness, accuracy valuation and allocation, classification, presentation"
+  },
+  {
+    "id": "aka201-tm05-fc08",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Perbandingan",
+    "front": "Occurrence vs existence",
+    "back": "Keduanya lebih saji; occurrence untuk transaksi selama periode, existence untuk saldo pada satu titik waktu"
+  },
+  {
+    "id": "aka201-tm05-fc09",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Definisi",
+    "front": "Asersi yang dilanggar oleh kurang saji",
+    "back": "Completeness"
+  },
+  {
+    "id": "aka201-tm05-fc10",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Klasifikasi",
+    "front": "Tiga faktor penentu asersi relevan",
+    "back": "Bias/insentif/tekanan manajemen; kompleksitas atau subjektivitas; risiko fraud dan error"
+  },
+  {
+    "id": "aka201-tm05-fc11",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Klasifikasi",
+    "front": "Tiga kategori uji substantif",
+    "back": "Uji rinci; prosedur analitis substantif; uji atas pos kunci"
+  },
+  {
+    "id": "aka201-tm05-fc12",
+    "phase": "pra-uts",
+    "tm": 5,
+    "topic": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "category": "Konsep",
+    "front": "Mencocokkan total daftar persediaan dengan buku besar. Apakah itu membuktikan existence?",
+    "back": "Tidak. Keberadaan dibuktikan antara lain dengan mengamati perhitungan fisik"
+  },
+  {
+    "id": "aka201-tm06-fc01",
     "phase": "pra-uts",
     "tm": 6,
-    "topic": "Bukti Audit, 8 Prosedur & Kertas Kerja (SA 500 & SA 230)",
+    "topic": "Laporan Auditor dan Jenis Opini",
     "category": "Konsep",
-    "front": "Dokumentasi Audit & Kertas Kerja (SA 230)",
-    "back": "Kertas kerja audit adalah milik KAP; harus memungkinkan auditor berpengalaman lainnya memahami sifat, waktu, luas prosedur, dan temuan audit."
+    "front": "Ada ketidakpastian kelangsungan usaha yang diungkapkan memadai. Kenapa opininya tetap tanpa modifikasian?",
+    "back": "Laporan keuangan tidak salah saji; auditor menarik perhatian pengguna lewat paragraf Material Uncertainty Related to Going Concern"
   },
   {
-    "id": "aka201-tm07-01",
+    "id": "aka201-tm06-fc02",
     "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Prosedur Analitis (SA 520) & Review Pra-UTS",
-    "category": "Prosedur",
-    "front": "Tiga Tahap Penggunaan Prosedur Analitis",
-    "back": "(1) Tahap Perencanaan (wajib - menilai risiko), (2) Tahap Pengujian Substantif (opsional - mengumpulkan bukti), (3) Tahap Reviu Akhir (wajib - kesimpulan menyeluruh)."
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Klasifikasi",
+    "front": "Dua kondisi yang menyebabkan modifikasi opini",
+    "back": "Salah saji material; tidak dapat memperoleh bukti yang cukup dan tepat"
   },
   {
-    "id": "aka201-tm07-02",
+    "id": "aka201-tm06-fc03",
     "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Prosedur Analitis (SA 520) & Review Pra-UTS",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Konsep",
+    "front": "Salah saji hanya di satu akun tetapi nilainya separuh total aset. Pervasif?",
+    "back": "Bisa pervasif: walau terbatas pada satu pos, pos itu mewakili bagian substansial laporan keuangan (ISA 705 para. 5(a)(ii))"
+  },
+  {
+    "id": "aka201-tm06-fc04",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
     "category": "Definisi",
-    "front": "Definisi Prosedur Analitis",
-    "back": "Evaluasi informasi keuangan yang dilakukan melalui analisis hubungan yang masuk akal antara data keuangan dan non-keuangan."
+    "front": "Salah saji material, tidak pervasif",
+    "back": "Opini wajar dengan pengecualian"
   },
   {
-    "id": "aka201-tm07-03",
+    "id": "aka201-tm06-fc05",
     "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Prosedur Analitis (SA 520) & Review Pra-UTS",
-    "category": "Prosedur",
-    "front": "Empat Teknik Prosedur Analitis",
-    "back": "(1) Analisis Tren (Trend Analysis), (2) Analisis Rasio, (3) Analisis Kelayakan/Reasonableness Test, dan (4) Pemodelan Regresi/Data Analytics."
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Definisi",
+    "front": "Salah saji material dan pervasif",
+    "back": "Opini tidak wajar"
   },
   {
-    "id": "aka201-tm07-04",
+    "id": "aka201-tm06-fc06",
     "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Prosedur Analitis (SA 520) & Review Pra-UTS",
-    "category": "Prosedur",
-    "front": "Investigasi Fluktuasi Signifikan",
-    "back": "Jika hasil analitis berbeda signifikan dari ekspektasi auditor, auditor wajib meminta keterangan manajemen dan melakukan pengujian substantif tambahan."
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Definisi",
+    "front": "Bukti tidak cukup, material dan pervasif",
+    "back": "Opini tidak menyatakan pendapat (atau mundur bila memungkinkan)"
   },
   {
-    "id": "aka201-tm07-05",
+    "id": "aka201-tm06-fc07",
     "phase": "pra-uts",
-    "tm": 7,
-    "topic": "Prosedur Analitis (SA 520) & Review Pra-UTS",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Definisi",
+    "front": "Basis kelangsungan usaha tidak tepat",
+    "back": "Opini tidak wajar"
+  },
+  {
+    "id": "aka201-tm06-fc08",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
     "category": "Konsep",
-    "front": "Fokus Utama Ujian Tengah Semester (UTS) Audit",
-    "back": "Kuasai Kode Etik IESBA (5 prinsip & 5 ancaman), Asersi Manajemen Laba Rugi/Neraca, Jenis-jenis Opini Audit, dan Perhitungan Materialitas SA 320."
+    "front": "Kenapa KAM tidak bisa menggantikan opini wajar dengan pengecualian?",
+    "back": "ISA 701 para. 4: KAM bukan pengganti opini modifikasian, bukan pengganti pengungkapan, dan bukan opini terpisah"
   },
   {
-    "id": "aka201-tm07-06",
+    "id": "aka201-tm06-fc09",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Definisi",
+    "front": "Isi deskripsi KAM",
+    "back": "Mengapa paling signifikan; bagaimana ditangani; rujukan ke pengungkapan"
+  },
+  {
+    "id": "aka201-tm06-fc10",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Perbandingan",
+    "front": "Penekanan Suatu Hal vs Hal Lain",
+    "back": "Hal di dalam laporan keuangan vs hal di luar laporan keuangan; keduanya tidak mengubah opini"
+  },
+  {
+    "id": "aka201-tm06-fc11",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Konsep",
+    "front": "Kenapa auditor menulis \"menurut opini kami\", bukan \"kami menjamin\"?",
+    "back": "Opini adalah pendapat profesional dengan keyakinan memadai; risiko informasi tetap ada"
+  },
+  {
+    "id": "aka201-tm06-fc12",
+    "phase": "pra-uts",
+    "tm": 6,
+    "topic": "Laporan Auditor dan Jenis Opini",
+    "category": "Klasifikasi",
+    "front": "Tiga tipe opini modifikasian (SA 705)",
+    "back": "Wajar dengan pengecualian; tidak wajar; tidak menyatakan pendapat"
+  },
+  {
+    "id": "aka201-tm07-fc01",
     "phase": "pra-uts",
     "tm": 7,
-    "topic": "Prosedur Analitis (SA 520) & Review Pra-UTS",
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
     "category": "Konsep",
-    "front": "Tips Menjawab Kasus Etika dan Asersi",
-    "back": "Sebutkan jenis ancaman etika secara spesifik, identifikasi asersi yang terancam salah saji, dan usulkan prosedur audit yang paling tepat untuk mengujinya."
+    "front": "Kenapa salah saji 1 juta dolar bisa material bagi satu perusahaan tetapi tidak bagi yang lain?",
+    "back": "Materialitas relatif terhadap pengguna dan ukuran entitas (Hillsburg vs perusahaan dengan laba miliaran)"
+  },
+  {
+    "id": "aka201-tm07-fc02",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Klasifikasi",
+    "front": "Tiga langkah materialitas keseluruhan",
+    "back": "Pilih tolok ukur; tentukan persentase; justifikasi"
+  },
+  {
+    "id": "aka201-tm07-fc03",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Konsep",
+    "front": "Bolehkah menulis di UTS \"5% karena diwajibkan standar\"?",
+    "back": "Tidak. 5% adalah rule of thumb; ISA 320 menyebut persentase sebagai pertimbangan profesional (A8)"
+  },
+  {
+    "id": "aka201-tm07-fc04",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Definisi",
+    "front": "Rule of thumb nirlaba",
+    "back": "1–3% pendapatan, beban, atau total aset"
+  },
+  {
+    "id": "aka201-tm07-fc05",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Konsep",
+    "front": "Kenapa auditor tidak cukup mencari salah saji yang masing-masing material?",
+    "back": "Salah saji kecil bisa menumpuk melebihi materialitas (aggregation risk); karena itu ada materialitas pelaksanaan"
+  },
+  {
+    "id": "aka201-tm07-fc06",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Definisi",
+    "front": "Rentang materialitas pelaksanaan dalam praktik",
+    "back": "50% (risiko tinggi) sampai 75% (risiko rendah) dari materialitas keseluruhan"
+  },
+  {
+    "id": "aka201-tm07-fc07",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Definisi",
+    "front": "Materialitas spesifik",
+    "back": "Tingkat lebih rendah untuk pos yang sensitif bagi pengguna tertentu, misalnya kompensasi eksekutif dan pihak berelasi"
+  },
+  {
+    "id": "aka201-tm07-fc08",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Definisi",
+    "front": "Ambang trivial Hillsburg",
+    "back": "1% dari materialitas keseluruhan (4.400)"
+  },
+  {
+    "id": "aka201-tm07-fc09",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Klasifikasi",
+    "front": "Tiga kategori salah saji",
+    "back": "Factual, judgmental, projected"
+  },
+  {
+    "id": "aka201-tm07-fc10",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Klasifikasi",
+    "front": "Tiga contoh faktor kualitatif",
+    "back": "Mengubah rugi jadi laba; covenant; menaikkan kompensasi manajemen"
+  },
+  {
+    "id": "aka201-tm07-fc11",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Konsep",
+    "front": "Kapan materialitas direvisi",
+    "back": "Jika ada informasi yang seandainya diketahui sejak awal akan menghasilkan jumlah berbeda"
+  },
+  {
+    "id": "aka201-tm07-fc12",
+    "phase": "pra-uts",
+    "tm": 7,
+    "topic": "Materialitas Perencanaan dan Pelaksanaan",
+    "category": "Konsep",
+    "front": "Materialitas keseluruhan didasarkan pada kebutuhan siapa?",
+    "back": "Pengguna laporan keuangan sebagai kelompok, bukan manajemen dan bukan tiap pengguna secara individual"
   },
   {
     "id": "aka201-tm08-01",

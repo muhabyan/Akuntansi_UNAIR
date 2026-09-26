@@ -652,7 +652,7 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'AKA201', newCode: 'FEB25603017', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', prasyarat: 'AKK106 (L)',
             references: AKA201_REF,
-            materiTM1_7: AKA201_TM1_7, materiTM8_14: AKA201_TM8_14, flashcardCount: 46, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            materiTM1_7: AKA201_TM1_7, materiTM8_14: AKA201_TM8_14, flashcardCount: 126, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
         ],
       },
