@@ -1066,17 +1066,18 @@ html.dark table td {
   }
 }
 
-/* Layered readings sit open on the page (no section cards). Where the page has no side margin, keep their text clear
-   of the desktop utility launchers, which park at the left edge by default (40px at x = 16px). */
+/* Shared reading frame (layered readings and the courses in SHARED_FRAME_COURSES, see readingFrame.ts). Where the page
+   has no side margin, keep the text clear of the desktop utility launchers, which park at the left edge by default
+   (40px at x = 16px). Tables in the frame stack below 1024px, where these insets leave less than 42rem. */
 @media (min-width: 768px) and (max-width: 1375px) {
-  .reading-layout:has(.layered-section) > article {
+  .reading-layout--shared-frame > article {
     padding-left: 3.5rem;
   }
 }
 
 /* Below 1024px there is no outline column, so the right-hand launchers (chat, AI tutor, request) sit over the text. */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .reading-layout:has(.layered-section) > article {
+  .reading-layout--shared-frame > article {
     padding-right: 3.5rem;
   }
 }
