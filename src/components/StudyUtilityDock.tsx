@@ -36,7 +36,7 @@ export default function StudyUtilityDock() {
   return (
     <div ref={rootRef} data-open={open} className={`study-utility-dock fixed bottom-[calc(0.75rem+env(safe-area-inset-bottom))] right-3 md:hidden ${open ? 'z-[120]' : 'z-[90]'}`}>
       {open && (
-        <div id="study-utility-menu" role="group" aria-label="Alat belajar" className="mb-2 w-64 max-w-[calc(100vw-1.5rem)] rounded-2xl border border-slate-200 bg-white p-1.5 shadow-lg dark:border-slate-700 dark:bg-slate-900">
+        <div id="study-utility-menu" role="group" aria-label="Alat belajar" className="study-utility-menu mb-2 w-64 max-w-[calc(100vw-1.5rem)] rounded-2xl border border-slate-200 p-1.5 shadow-lg dark:border-slate-700">
           {actions.map(({ label, icon: Icon, event }) => (
             <button
               key={event}
@@ -46,7 +46,7 @@ export default function StudyUtilityDock() {
                 setOpen(false);
                 window.dispatchEvent(new Event(event));
               }}
-              className="flex min-h-11 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold text-slate-700 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 dark:text-slate-200 dark:hover:bg-slate-800"
+              className="study-utility-menu-action flex min-h-11 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600"
             >
               <Icon size={18} aria-hidden="true" /> {label}
             </button>

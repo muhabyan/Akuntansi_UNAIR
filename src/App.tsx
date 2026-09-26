@@ -24,6 +24,7 @@ import { NotificationProvider } from './contexts/NotificationContext';
 import ScheduleNotifier from './components/ScheduleNotifier';
 import UpdateNotifier from './components/UpdateNotifier';
 import ErrorBoundary from './components/ErrorBoundary';
+import { advanceMobileToolbarScroll, initialMobileToolbarScrollState } from './utils/readingToolbarScroll';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -153,6 +154,7 @@ export default function App() {
     let initialReadingGraceUntil = 0;
     let lastScrollY = window.scrollY;
     let lastTouchY: number | null = null;
+    let mobileToolbarScrollState = initialMobileToolbarScrollState;
     const controlIdleDelay = 3600;
     const userScrollIntentWindow = 800;
 
@@ -195,7 +197,7 @@ export default function App() {
       if (!isReadingMode()) return;
       document.body.classList.remove('reading-toolbar-hidden');
       clearToolbarIdleTimer();
-      if (scheduleHide && !hasOpenReaderPanel()) {
+      if (scheduleHide && !window.matchMedia('(max-width: 767px)').matches && !hasOpenReaderPanel()) {
         toolbarIdleTimer = window.setTimeout(hideReadingToolbar, controlIdleDelay);
       }
     };
@@ -214,8 +216,10 @@ export default function App() {
       lastUserScrollAt = lastUserScrollIntentAt;
       if (!isReadingMode()) return;
       hideReadingUtilities();
-      if (direction === 'up') revealReadingToolbar(true);
-      else hideReadingToolbar();
+      if (!window.matchMedia('(max-width: 767px)').matches) {
+        if (direction === 'up') revealReadingToolbar(true);
+        else hideReadingToolbar();
+      }
       showMobileScrollState();
     };
 
@@ -234,14 +238,24 @@ export default function App() {
     const handleScroll = () => {
       const now = performance.now();
       const currentScrollY = window.scrollY;
-      const direction = currentScrollY < lastScrollY ? 'up' : 'down';
+      const deltaY = currentScrollY - lastScrollY;
+      const direction = deltaY < 0 ? 'up' : 'down';
       const userDriven = now >= initialReadingGraceUntil && now - lastUserScrollIntentAt <= userScrollIntentWindow;
+
+      if (isReadingMode() && !hasOpenReaderPanel() && window.matchMedia('(max-width: 767px)').matches && (userDriven || currentScrollY <= 80)) {
+        const next = advanceMobileToolbarScroll(mobileToolbarScrollState, deltaY, currentScrollY);
+        mobileToolbarScrollState = next.state;
+        if (next.action === 'show') revealReadingToolbar(false);
+        else if (next.action === 'hide') hideReadingToolbar();
+      }
 
       if (isReadingMode() && userDriven) {
         lastUserScrollAt = now;
         hideReadingUtilities();
-        if (direction === 'up') revealReadingToolbar(true);
-        else hideReadingToolbar();
+        if (!window.matchMedia('(max-width: 767px)').matches) {
+          if (direction === 'up') revealReadingToolbar(true);
+          else hideReadingToolbar();
+        }
       }
 
       if (!isReadingMode() || userDriven) showMobileScrollState();
@@ -344,10 +358,12 @@ export default function App() {
             if (readingNow) {
               initialReadingGraceUntil = performance.now() + 900;
               lastScrollY = window.scrollY;
+              mobileToolbarScrollState = initialMobileToolbarScrollState;
               revealReadingUtilities(true);
               revealReadingToolbar(true);
             }
             else {
+              mobileToolbarScrollState = initialMobileToolbarScrollState;
               clearUtilityIdleTimer();
               clearToolbarIdleTimer();
               document.body.classList.remove('reading-utilities-hidden', 'reading-utility-panel-open', 'reading-toolbar-hidden');

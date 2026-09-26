@@ -63,7 +63,7 @@ const button = (text, within = window.document) => [...within.querySelectorAll('
 
 try {
   server = await createServer({ root: process.cwd(), cacheDir, appType: 'custom', server: { middlewareMode: true }, optimizeDeps: { noDiscovery: true }, logLevel: 'silent' });
-  const [{ default: HomeView }, { default: SemesterView }, { default: CourseLayout }, { default: CourseBlockCard }, { default: Navbar }, { default: StudyUtilityDock }, { default: UtilityEscapeHandler }, { default: AITutorFloating }, { default: PomodoroTimer }, { default: FeedbackFloating }, { NotificationProvider }, { SEMESTERS }, { PJK301_READINGS }, { MNK201_READINGS }, { SII306_READINGS }] = await Promise.all([
+  const [{ default: HomeView }, { default: SemesterView }, { default: CourseLayout }, { default: CourseBlockCard }, { default: Navbar }, { default: StudyUtilityDock }, { default: UtilityEscapeHandler }, { default: AITutorFloating }, { default: PomodoroTimer }, { default: FeedbackFloating }, { NotificationProvider }, { SEMESTERS }, { PJK301_READINGS }, { MNK201_READINGS }, { SII306_READINGS }, { advanceMobileToolbarScroll, initialMobileToolbarScrollState }] = await Promise.all([
     server.ssrLoadModule('/src/components/HomeView.tsx'),
     server.ssrLoadModule('/src/components/SemesterView.tsx'),
     server.ssrLoadModule('/src/components/course/CourseLayout.tsx'),
@@ -79,7 +79,22 @@ try {
     server.ssrLoadModule('/src/data/pjk2/pjk2Data.ts'),
     server.ssrLoadModule('/src/data/mankeu/mankeuData.ts'),
     server.ssrLoadModule('/src/data/sia/siaReadings.ts'),
+    server.ssrLoadModule('/src/utils/readingToolbarScroll.ts'),
   ]);
+  let toolbarScrollState = initialMobileToolbarScrollState;
+  const advanceToolbar = (deltaY, scrollY) => {
+    const next = advanceMobileToolbarScroll(toolbarScrollState, deltaY, scrollY);
+    toolbarScrollState = next.state;
+    return next.action;
+  };
+  check(advanceToolbar(20, 400) === null && advanceToolbar(15, 415) === null, 'Mobile reading toolbar ignores short downward travel');
+  check(advanceToolbar(3, 418) === 'hide', 'Mobile reading toolbar hides after cumulative downward travel');
+  check(advanceToolbar(-3, 415) === null && advanceToolbar(2, 417) === null && advanceToolbar(-3, 414) === null, 'Mobile reading toolbar does not flicker on tiny direction changes');
+  check(advanceToolbar(-24, 390) === null && advanceToolbar(-24, 366) === 'show', 'Mobile reading toolbar returns after meaningful upward travel');
+  check(advanceToolbar(0, 70) === 'show', 'Mobile reading toolbar stays reachable near article top');
+  const visualCss = fs.readFileSync(path.join(process.cwd(), 'src/index.css'), 'utf8');
+  check(/\.agency-conflict-note\s*\{[^}]*background:\s*#e0f2fe;[^}]*color:\s*#082f49;/s.test(visualCss) && /html\.dark \.agency-conflict-note\s*\{[^}]*background:\s*#1e293b;[^}]*color:\s*#f8fafc;/s.test(visualCss), 'Agency conflict note has explicit contrasting colors in light and dark themes');
+  check(/html\.dark \.study-utility-menu-action\s*\{[^}]*background:\s*#0f172a;[^}]*color:\s*#f8fafc;/s.test(visualCss), 'Study utility menu has explicit light text on dark surface');
   for (let tm = 1; tm <= 7; tm++) {
     const pjkFigure = PJK301_READINGS[tm].blocks.find((block) => block.kind === 'figure');
     check(Boolean(pjkFigure?.overview?.cards.length >= 3 && !pjkFigure.svg), `PJK301 TM${tm} summary uses readable content cards`);
@@ -130,7 +145,7 @@ try {
       await waitFor(() => window.document.body.textContent.includes('Selesai membaca?'), `${code} reading body`);
       check(Boolean(window.document.querySelector('main')), `${width}px DOM: ${code} TM1 reading renders`);
       const readingToolbar = window.document.querySelector('.reading-toolbar');
-      check(Boolean(readingToolbar?.classList.contains('relative') && readingToolbar.classList.contains('md:sticky')), `${width}px DOM: reading outline toolbar is in document flow on mobile and sticky from desktop breakpoint`);
+      check(Boolean(readingToolbar?.classList.contains('sticky') && readingToolbar.className.includes('top-[calc(4rem+env(safe-area-inset-top))]') && readingToolbar.classList.contains('bg-white')), `${width}px DOM: reading outline toolbar is sticky below navbar with opaque surface`);
       if (code === 'MNK201') {
         const agency = window.document.querySelector('section[aria-label="Ringkasan visual teori keagenan pada layar sempit"]');
         const agencyText = window.document.querySelector('section[aria-label="Isi diagram dalam teks"]');
@@ -222,12 +237,14 @@ try {
     if (width === 390) {
       await click(utilityTrigger, 'mobile utility dock');
       check(window.document.querySelectorAll('#study-utility-menu button').length === 4, 'Mobile utility menu exposes four labeled actions');
+      check(Boolean(window.document.querySelector('#study-utility-menu.study-utility-menu button.study-utility-menu-action')), 'Mobile utility menu uses scoped contrast styles');
       await click(button('AI Tutor', window.document.querySelector('#study-utility-menu')), 'mobile AI Tutor action');
       check(aiPanel.getAttribute('aria-hidden') === 'false' && !window.document.querySelector('#study-utility-menu'), 'Mobile AI Tutor opens and menu closes');
       await click(utilityTrigger, 'mobile utility dock over AI Tutor');
       check(aiPanel.getAttribute('aria-hidden') === 'true' && aiPanel.hasAttribute('inert') && Boolean(window.document.querySelector('#study-utility-menu')) && window.document.querySelector('.study-utility-dock').className.includes('z-[120]'), 'Mobile dock closes active AI panel and rises above it');
       await click(button('Pomodoro', window.document.querySelector('#study-utility-menu')), 'mobile switch to Pomodoro');
       check(pomoPanel.getAttribute('aria-hidden') === 'false' && aiPanel.getAttribute('aria-hidden') === 'true' && !window.document.querySelector('#study-utility-menu'), 'Mobile switches directly from AI Tutor to Pomodoro');
+      check(Boolean(pomoPanel.classList.contains('mobile-utility-panel--pomodoro') && pomoPanel.querySelector('.mobile-utility-card--pomodoro') && pomoPanel.querySelector('button[aria-label="Tutup Pomodoro"].h-11.w-11')), 'Mobile Pomodoro has scoped compact panel and visible 44px close control');
       await click(utilityTrigger, 'mobile utility dock over Pomodoro');
       check(pomoPanel.getAttribute('aria-hidden') === 'true' && pomoPanel.hasAttribute('inert') && Boolean(window.document.querySelector('#study-utility-menu')), 'Mobile dock closes Pomodoro before showing menu');
       await act(async () => { window.document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); });
@@ -242,6 +259,7 @@ try {
       check(aiPanel.getAttribute('aria-hidden') === 'false', 'Desktop AI Tutor opens');
       await click(window.document.querySelector('button.utility-launcher-quiet[aria-controls="pomodoro-panel"]'), 'desktop Pomodoro launcher');
       check(aiPanel.getAttribute('aria-hidden') === 'true' && pomoPanel.getAttribute('aria-hidden') === 'false', 'Desktop launcher switches directly to Pomodoro');
+      check(Boolean(pomoPanel.querySelector('.mobile-utility-card--pomodoro') && pomoPanel.querySelector('button[aria-label="Tutup Pomodoro"].h-11.w-11')), 'Desktop Pomodoro retains compact card and visible close control');
       await act(async () => { window.document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); });
       check(pomoPanel.getAttribute('aria-hidden') === 'true' && pomoPanel.hasAttribute('inert'), 'Desktop Escape closes Pomodoro and disables its layer');
       await click(window.document.querySelector('button.utility-launcher-quiet[aria-controls="material-feedback-panel"]'), 'desktop feedback launcher');

@@ -323,6 +323,16 @@ body.zen-mode-active .mobile-utility-badge { display: none !important; }
   overflow-wrap: anywhere;
 }
 
+.agency-conflict-note {
+  background: #e0f2fe;
+  color: #082f49;
+}
+
+html.dark .agency-conflict-note {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
 /* Only the explicitly compact teaching callouts use denser list rhythm. */
 .course-callout-compact :is(ol, ul) {
   margin-block: 0;
@@ -337,6 +347,28 @@ body.zen-mode-active .mobile-utility-badge { display: none !important; }
 .mobile-utility-panel[aria-hidden="true"] {
   visibility: hidden;
   pointer-events: none !important;
+}
+
+.study-utility-menu,
+.study-utility-menu-action {
+  background: #fff;
+  color: #0f172a;
+}
+
+.study-utility-menu-action:is(:hover, :focus-visible) {
+  background: #eff6ff;
+  color: #1e40af;
+}
+
+html.dark .study-utility-menu,
+html.dark .study-utility-menu-action {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
+  background: #334155;
+  color: #fff;
 }
 .course-callout-compact p + :is(ol, ul),
 .course-callout-compact :is(ol, ul) + p {
@@ -487,6 +519,17 @@ html.dark .reading-scroll-cue {
   .mobile-utility-card {
     width: 100% !important;
     max-width: none !important;
+  }
+
+  .mobile-utility-panel--pomodoro {
+    right: 0.75rem !important;
+    left: auto !important;
+    width: min(18rem, calc(100vw - 1.5rem)) !important;
+  }
+
+  .mobile-utility-card--pomodoro {
+    width: 100% !important;
+    max-width: 18rem !important;
   }
 
   .mobile-utility-card--chat,
@@ -674,12 +717,10 @@ body.reading-outline-menu-open {
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  body.reading-mode-active.reading-toolbar-hidden:not(.reading-outline-menu-open):not(.reading-utility-panel-open) .reading-toolbar {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-0.5rem);
-  }
+body.reading-mode-active.reading-toolbar-hidden:not(.reading-outline-menu-open):not(.reading-utility-panel-open) .reading-toolbar {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-0.5rem);
 }
 
 body.reading-mode-active.reading-utilities-hidden:not(.reading-utility-panel-open) .mobile-utility-launcher:focus {
