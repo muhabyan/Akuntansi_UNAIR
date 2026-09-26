@@ -172,7 +172,7 @@ function Block({ block }: { block: ContentBlock }) {
     case 'h2': {
       const tone = inferTone(block.text);
       return (
-        <section className="mt-12 mb-6 scroll-mt-24">
+        <section className="mt-12 mb-6 scroll-mt-24 md:scroll-mt-0">
           <div className="mb-2"><SectionBadge tone={tone} /></div>
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white pb-2.5 border-b border-gray-200 dark:border-gray-800 leading-snug">{block.text}</h2>
         </section>
@@ -433,7 +433,7 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
 
           <div className="reading-document min-w-0">
             {reading.blocks.map((block: ContentBlock, index: number) => (
-              <div key={index} id={getReadingBlockId(block, index)} className="reading-block-anchor min-w-0 scroll-mt-24">
+              <div key={index} id={getReadingBlockId(block, index)} className="reading-block-anchor min-w-0 scroll-mt-24 md:scroll-mt-0">
                 <Block block={block} />
               </div>
             ))}

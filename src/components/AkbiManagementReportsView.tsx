@@ -139,7 +139,7 @@ export default function AkbiManagementReportsView({ reportId, onBack }: AkbiMana
       </section>
 
       <div className="grid gap-6 lg:grid-cols-[360px,minmax(0,1fr)] xl:grid-cols-[400px,minmax(0,1fr)]">
-        <aside className="space-y-4 lg:sticky lg:top-24 lg:self-start">
+        <aside className="space-y-4 lg:sticky lg:top-[calc(var(--site-header-h)+1.625rem)] lg:self-start">
           <div className="learning-card overflow-hidden rounded-[1.8rem] p-0">
             <div className="border-b border-navy-500/20 dark:border-navy-500/60 p-5">
               <div className="mb-2 flex items-center gap-2 text-gold-700 dark:text-gold">

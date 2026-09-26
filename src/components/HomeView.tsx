@@ -197,7 +197,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
       )}
 
       {/* Course Catalog */}
-      <section id="course-catalog" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-5 pb-16 pt-10 md:px-10 md:pt-12 lg:px-14 lg:pb-20">
+      <section id="course-catalog" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 md:scroll-mt-0 px-5 pb-16 pt-10 md:px-10 md:pt-12 lg:px-14 lg:pb-20">
         <div className="mb-6 md:mb-8">
           <p className="eyebrow mb-1.5">Kurikulum</p>
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl">Pilih semester</h2>

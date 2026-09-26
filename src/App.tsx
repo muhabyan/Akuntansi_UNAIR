@@ -25,6 +25,7 @@ import ScheduleNotifier from './components/ScheduleNotifier';
 import UpdateNotifier from './components/UpdateNotifier';
 import ErrorBoundary from './components/ErrorBoundary';
 import { advanceMobileToolbarScroll, initialMobileToolbarScrollState } from './utils/readingToolbarScroll';
+import { installInPageAnchorHandler } from './utils/inPageAnchors';
 
 const CourseDetailView = lazy(() => import('./components/CourseDetailView'));
 const ReadingView = lazy(() => import('./components/ReadingView'));
@@ -430,6 +431,8 @@ export default function App() {
       document.body.classList.remove('reading-utilities-hidden', 'reading-utility-panel-open', 'reading-toolbar-hidden');
     };
   }, []);
+
+  useEffect(() => installInPageAnchorHandler(), []);
 
   useEffect(() => {
     replaceLegacyCourseUrl(); // the page was opened on a legacy URL

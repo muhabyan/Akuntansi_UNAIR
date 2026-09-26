@@ -53,6 +53,7 @@
      (the letters of a text link then start about 39px below it). */
   :root {
     --site-header-rest-h: calc(3.375rem + env(safe-area-inset-top));
+    --site-header-h: var(--site-header-rest-h); /* live height, set by Navbar.tsx */
     --page-top-gap: 2.125rem;
     --page-top: calc(var(--site-header-rest-h) + var(--page-top-gap));
   }
@@ -60,6 +61,12 @@
   @media (min-width: 768px) {
     :root {
       --site-header-rest-h: calc(4.375rem + env(safe-area-inset-top));
+    }
+
+    /* # links and scrollIntoView land below the header; targets add their own scroll-margin-top (the reading anchors
+       add the Daftar Isi bar). Phones keep their own scroll margins, which already clear the 53px header. */
+    html {
+      scroll-padding-top: calc(var(--site-header-h) + 1.5rem);
     }
   }
 
@@ -296,7 +303,13 @@
 .zen-mode-active footer,  
 .zen-mode-active .pomodoro-timer,  
 .zen-mode-active #course-sidebar { display: none !important; }  
-.zen-mode-active main { padding-top: 1.5rem !important; } 
+/* Zen mode hides the header and the Daftar Isi bar, so the page starts below the fixed "Keluar Zen" button instead
+   (CourseHeader.tsx: 44px tall, 0.75rem from the top, 1.5rem from 768px) and the reading drops its -4rem pull. */
+.zen-mode-active #main-content { padding-top: calc(4.5rem + env(safe-area-inset-top)) !important; }
+.zen-mode-active .reading-shell { margin-top: 0 !important; }
+@media (min-width: 768px) {
+  .zen-mode-active #main-content { padding-top: 5.25rem !important; }
+}
 
 @layer utilities {
   .animate-blob {

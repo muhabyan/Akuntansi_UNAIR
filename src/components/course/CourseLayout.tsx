@@ -327,7 +327,7 @@ function ReadingPanel({
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        <div className="reading-toolbar sticky top-[calc(4rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-300 bg-white p-1.5 shadow-md shadow-slate-900/10 transition-[opacity,transform] duration-200 dark:border-gray-600 dark:bg-gray-900 dark:shadow-black/30 md:top-[4.75rem]">
+        <div className="reading-toolbar sticky top-[calc(4rem+env(safe-area-inset-top))] z-30 mb-5 flex min-h-12 items-center gap-2 rounded-xl border border-gray-300 bg-white p-1.5 shadow-md shadow-slate-900/10 transition-[opacity,transform] duration-200 dark:border-gray-600 dark:bg-gray-900 dark:shadow-black/30 md:top-[calc(var(--site-header-h)+0.375rem)]">
           <button
             ref={mobileOutlineTriggerRef}
             type="button"
@@ -400,7 +400,7 @@ function ReadingPanel({
                       {formulaRun.map(({ block: formulaBlock, index: originalIndex }) => (
                         <div
                           key={originalIndex}
-                          className={`reading-block-anchor min-w-0 scroll-mt-40 ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
+                          className={`reading-block-anchor min-w-0 scroll-mt-40 md:scroll-mt-[3.75rem] ${formulaNeedsFullWidth(formulaBlock) ? 'reading-exam-formula--wide' : ''}`}
                         >
                           <CourseBlockCard block={formulaBlock} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
                         </div>
@@ -413,7 +413,7 @@ function ReadingPanel({
                   <div
                     key={index}
                     id={getReadingBlockId(block, index)}
-                    className={`reading-block-anchor min-w-0 scroll-mt-40 ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
+                    className={`reading-block-anchor min-w-0 scroll-mt-40 md:scroll-mt-[3.75rem] ${isWideLearningBlock(block) ? 'reading-wide-block' : 'reading-prose-block'}`}
                   >
                     <CourseBlockCard block={block} isSimulation={isSimulation} enableLegalStyling={courseCode === 'PJK201' || courseCode === 'PJK301'} enableEconomicStyling={courseCode === 'EKT109'} enableEditorialReading />
                   </div>
@@ -890,7 +890,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
 
 
   return (
-    <div className={`mx-auto ${currentReading ? '-mt-16 max-w-[80rem] px-4 md:mt-0' : '-mt-12 max-w-5xl px-4 md:mt-0 md:px-8'}`}>
+    <div className={`mx-auto ${currentReading ? 'reading-shell -mt-16 max-w-[80rem] px-4 md:mt-0' : '-mt-12 max-w-5xl px-4 md:mt-0 md:px-8'}`}>
       <div className="flex flex-col">
         {!currentReading && (
           <CourseSidebar

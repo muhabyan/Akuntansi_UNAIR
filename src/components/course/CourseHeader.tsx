@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { ArrowDown, ArrowLeft, BookOpen, Check, Clock, Maximize, Minimize, Target } from 'lucide-react';
 import type { Reading } from '../../types';
 import { renderText } from './MarkdownContent';
@@ -190,10 +191,13 @@ export default function CourseHeader({ courseName, reading, onBack, showZenContr
         )}
       </header>}
 
-      {zenMode && (
+      {/* Portalled like BackToTopButton: the reading article keeps a transform from its fade-in, which would make "fixed"
+          relative to the article (the button then scrolled away and covered the TM badge). */}
+      {zenMode && createPortal(
         <button type="button" onClick={toggleZenMode} className="fixed right-3 top-[calc(0.75rem+env(safe-area-inset-top))] z-[120] inline-flex min-h-11 items-center gap-2 rounded-xl bg-blue-600 px-3.5 text-sm font-bold text-white shadow-lg shadow-blue-950/20 transition-colors hover:bg-blue-700 md:right-6 md:top-6">
           <Minimize size={17} /> Keluar Zen
-        </button>
+        </button>,
+        document.body,
       )}
     </>
   );
