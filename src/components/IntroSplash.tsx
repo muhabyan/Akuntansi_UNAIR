@@ -1,94 +1,141 @@
-import { useState, useEffect } from 'react';
-import { GraduationCap } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import './IntroSplash.css';
+
+/**
+ * Splash pembuka AkuntansiHub (±2 detik, sekali per sesi).
+ *
+ * 0.0–0.9s  akun T tergambar, saldo Debit & Kredit berputar sampai sama
+ * 0.9–1.3s  akun T mengecil, logo "Neraca" (H) dan wordmark muncul
+ * 1.3–1.7s  tagline
+ * 1.7–2.0s  splash memudar, home page tampil
+ *
+ * Klik/tap di mana saja atau tekan Esc untuk melewati.
+ * Pengguna dengan "reduce motion" hanya melihat logo statis sebentar.
+ */
+
+const STORAGE_KEY = 'splash_played';
+const DURATION_MS = 2000;
+const REDUCED_DURATION_MS = 600;
+
+// Saldo yang ditampilkan: 1.250.000 (digit → posisi stagger)
+const AMOUNT = ['1', '.', '2', '5', '0', '.', '0', '0', '0'];
+const DIGITS = '0123456789'.split('');
+
+function RollingAmount({ side }: { side: 'L' | 'R' }) {
+  let digitIndex = 0;
+  return (
+    <div className={`ahs-amount ahs-${side}`}>
+      {AMOUNT.map((ch, i) => {
+        if (ch === '.') {
+          return (
+            <span key={i} className="ahs-dot">
+              .
+            </span>
+          );
+        }
+        digitIndex += 1;
+        return (
+          <span key={i} className="ahs-dg">
+            <span className={`ahs-st ahs-d${ch} ahs-w${digitIndex}`}>
+              {DIGITS.map((d) => (
+                <span key={d} className="ahs-digit">
+                  {d}
+                </span>
+              ))}
+            </span>
+          </span>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function IntroSplash() {
-  const [stage, setStage] = useState<'hidden' | 'entering' | 'visible' | 'exiting'>('hidden');
+  const [visible, setVisible] = useState(false);
+  const timer = useRef<number | undefined>(undefined);
 
-  useEffect(() => {
-    // Cek apakah animasi sudah dijalankan di sesi ini
-    const hasPlayed = sessionStorage.getItem('splash_played');
-    if (hasPlayed) return;
-
-    // Mulai sequence animasi
-    setStage('entering');
-    
-    // Sedikit delay agar transisi masuk (entering -> visible) terlihat sangat smooth
-    const t0 = setTimeout(() => setStage('visible'), 100);
-    
-    // Tahan di layar selama 2.5 detik, lalu mulai proses keluar
-    const t1 = setTimeout(() => setStage('exiting'), 2500);
-    
-    // Bersihkan layar setelah efek memudar selesai
-    const t2 = setTimeout(() => {
-      setStage('hidden');
-      sessionStorage.setItem('splash_played', 'true');
-    }, 3300);
-
-    return () => {
-      clearTimeout(t0);
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
+  const close = useCallback(() => {
+    window.clearTimeout(timer.current);
+    setVisible(false);
   }, []);
 
-  if (stage === 'hidden') return null;
+  useEffect(() => {
+    let alreadyPlayed = false;
+    try {
+      alreadyPlayed = sessionStorage.getItem(STORAGE_KEY) === 'true';
+      sessionStorage.setItem(STORAGE_KEY, 'true');
+    } catch {
+      // sessionStorage bisa diblokir (mode privat tertentu): tetap tampilkan sekali.
+    }
+    if (alreadyPlayed) return;
+
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    setVisible(true);
+    timer.current = window.setTimeout(() => setVisible(false), reduced ? REDUCED_DURATION_MS : DURATION_MS);
+
+    return () => window.clearTimeout(timer.current);
+  }, []);
+
+  useEffect(() => {
+    if (!visible) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') close();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [visible, close]);
+
+  if (!visible) return null;
 
   return (
-    <div 
-      className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#09090b] overflow-hidden transition-opacity duration-[800ms] ease-in-out ${
-        stage === 'exiting' ? 'opacity-0 pointer-events-none backdrop-blur-sm' : 'opacity-100 backdrop-blur-none'
-      }`}
+    <div
+      className="ahs-root fixed inset-0 z-[9999] flex flex-col items-center justify-center overflow-hidden bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+      onClick={close}
+      role="status"
+      aria-label="Membuka AkuntansiHub"
     >
-      {/* --- ELEGANT AMBIENT BACKGROUND --- */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden">
-        {/* Subtle Minimalist Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:40px_40px] opacity-40 mask-radial-faded" />
-        
-        {/* Single Elegant Central Glow */}
-        <div className={`absolute w-[50rem] h-[50rem] rounded-full bg-indigo-500/12 blur-[120px] transition-all duration-[2000ms] ease-out ${
-          stage === 'visible' ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
-        }`} />
+      <button
+        type="button"
+        onClick={close}
+        className="absolute right-4 top-[calc(env(safe-area-inset-top)+1rem)] min-h-11 rounded-full border border-gray-200 bg-white px-4 text-sm font-semibold text-gray-600 transition-colors hover:border-gray-300 hover:text-gray-900 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 dark:hover:text-white"
+      >
+        Lewati
+      </button>
+
+      <div className="ahs-stage" aria-hidden="true">
+        {/* Babak 1: akun T yang seimbang */}
+        <div className="ahs-intro">
+          <div className="ahs-labels text-gray-500 dark:text-gray-400">
+            <span className="ahs-lbl">DEBIT</span>
+            <span className="ahs-lbl">KREDIT</span>
+          </div>
+          <div className="ahs-bar bg-gray-900 dark:bg-white" />
+          <div className="ahs-stem bg-gray-900 dark:bg-white" />
+          <RollingAmount side="L" />
+          <RollingAmount side="R" />
+          <div className="ahs-dl ahs-dl1 bg-blue-600 dark:bg-blue-400" />
+          <div className="ahs-dl ahs-dl2 bg-blue-600 dark:bg-blue-400" />
+          <div className="ahs-dl ahs-dr1 bg-blue-600 dark:bg-blue-400" />
+          <div className="ahs-dl ahs-dr2 bg-blue-600 dark:bg-blue-400" />
+        </div>
+
+        {/* Babak 2: logo Neraca + wordmark */}
+        <div className="ahs-lockup">
+          <svg viewBox="0 0 64 64" className="ahs-tile">
+            <rect width="64" height="64" rx="15" className="fill-gray-900 dark:fill-white" />
+            <rect x="17" y="14" width="8" height="36" rx="2" className="ahs-barL fill-white dark:fill-gray-900" />
+            <rect x="39" y="14" width="8" height="36" rx="2" className="ahs-barR fill-white dark:fill-gray-900" />
+            <rect x="25" y="29" width="14" height="6" rx="1" className="ahs-cross fill-blue-500 dark:fill-blue-600" />
+          </svg>
+          <span className="ahs-wm font-display">
+            akuntansi<span className="text-blue-600 dark:text-blue-400">hub</span>
+          </span>
+        </div>
       </div>
 
-      {/* --- MAIN CONTENT (GLASSMORPHISM & CLEAN TYPOGRAPHY) --- */}
-      <div className="relative z-10 flex flex-col items-center justify-center">
-        
-        {/* Glass Icon Box */}
-        <div className={`transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          stage === 'visible' ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}>
-          <div className="w-20 h-20 mb-8 rounded-2xl bg-gradient-to-br from-blue-600/80 to-indigo-600/70 border border-blue-300/20 flex items-center justify-center shadow-xl shadow-blue-950/40 backdrop-blur-md relative overflow-hidden">
-            {/* Shimmer effect inside box */}
-            <div className={`absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-[1500ms] ease-in-out delay-[800ms] ${
-              stage === 'visible' ? 'translate-x-[200%]' : '-translate-x-full'
-            }`} />
-            
-            <GraduationCap 
-              className="w-10 h-10 text-white"
-              strokeWidth={1.5} 
-            />
-          </div>
-        </div>
-        
-        {/* Typography Sequence */}
-        <div className="text-center overflow-hidden flex flex-col items-center">
-          <h1 className={`text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3 transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[200ms] ${
-            stage === 'visible' ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-8 opacity-0 blur-sm'
-          }`}>
-            AkuntansiHub
-          </h1>
-          <p className={`text-sm md:text-base font-medium tracking-[0.22em] text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-gray-100 to-indigo-300 uppercase transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] delay-[400ms] ${
-            stage === 'visible' ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-8 opacity-0 blur-sm'
-          }`}>
-            FEB UNAIR
-          </p>
-        </div>
-        
-        {/* Subtle decorative dividing line */}
-        <div className={`w-16 h-px bg-gradient-to-r from-transparent via-gray-500/40 to-transparent mt-10 transition-all duration-[1500ms] ease-out delay-[600ms] ${
-          stage === 'visible' ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0'
-        }`} />
-      </div>
+      <p className="ahs-tag mt-2 px-6 text-center font-sans text-base font-medium text-gray-600 dark:text-gray-300 md:text-xl">
+        Paham dulu, <span className="font-bold text-gray-900 dark:text-white">balance</span> menyusul.
+      </p>
     </div>
   );
 }
