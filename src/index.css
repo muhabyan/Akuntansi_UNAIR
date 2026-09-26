@@ -387,6 +387,11 @@ html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
   min-width: max(100%, 42rem);
 }
 
+/* A layered table inside a self-check or pendalaman box loses the box padding; at 1024px that leaves 670px. */
+.reading-document .course-table-flat .akbi-table-scroll > table {
+  min-width: max(100%, 40rem);
+}
+
 .reading-scroll-cue {
   white-space: nowrap;
   font-size: 9px;
@@ -1066,5 +1071,12 @@ html.dark table td {
 @media (min-width: 768px) and (max-width: 1375px) {
   .reading-layout:has(.layered-section) > article {
     padding-left: 3.5rem;
+  }
+}
+
+/* Below 1024px there is no outline column, so the right-hand launchers (chat, AI tutor, request) sit over the text. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .reading-layout:has(.layered-section) > article {
+    padding-right: 3.5rem;
   }
 }

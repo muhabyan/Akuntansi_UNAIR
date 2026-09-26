@@ -446,7 +446,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         if (!(layered && block.stackOnMobile)) return tableCard;
         return (
           <>
-            <div className="hidden md:block">{tableCard}</div>
+            <div className="hidden lg:block">{tableCard}</div>
             <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} />
           </>
         );

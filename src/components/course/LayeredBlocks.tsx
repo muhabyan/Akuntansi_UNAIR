@@ -174,14 +174,15 @@ export function SelfCheckCard({ question, signal, children }: { question: string
   );
 }
 
-/** Phone view of a table: one row per block, the first cell as its title, empty cells left out; the desktop table is
- *  rendered separately. On its own it is one "Tabel materi" box with divided rows, like the desktop table card; inside
+/** Phone and tablet view of a table (below 1024px, where the launcher insets leave less than the 42rem a desktop table
+ *  needs): one row per block, the first cell as its title, empty cells left out; the desktop table is rendered
+ *  separately. On its own it is one "Tabel materi" box with divided rows, like the desktop table card; inside
  *  another box (pendalaman, self-check) the rows are only divided, so boxes never nest. */
 export function StackedTable({ headers, rows, label }: { headers: string[]; rows: string[][]; label: string }) {
   const flat = useInsideBox();
   const isSource = (header: string) => /^sumber$/i.test(header.trim());
   const list = (
-    <div className={`layered-stacked-table divide-y divide-gray-200 dark:divide-gray-700/70 ${flat ? 'md:hidden border-y border-gray-200 dark:border-gray-700/70' : ''}`}>
+    <div className={`layered-stacked-table divide-y divide-gray-200 dark:divide-gray-700/70 ${flat ? 'lg:hidden border-y border-gray-200 dark:border-gray-700/70' : ''}`}>
       {rows.map((row, r) => (
         <div key={r} className={flat ? 'py-3' : 'px-4 py-4'}>
           <div className={`font-semibold text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[0] ?? ''))}</div>
@@ -203,7 +204,7 @@ export function StackedTable({ headers, rows, label }: { headers: string[]; rows
   );
   if (flat) return list;
   return (
-    <div className="layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 md:hidden">
+    <div className="layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 lg:hidden">
       <div className="flex items-center gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-400">
         <Table2 size={15} aria-hidden="true" /> {label}
       </div>
