@@ -1,0 +1,178 @@
+/* Splash pembuka AkuntansiHub — total 2 detik. Lihat IntroSplash.tsx. */
+
+.ahs-root {
+  animation: ahs-out 0.3s ease-in 1.7s forwards;
+  cursor: pointer;
+}
+
+.ahs-stage {
+  position: relative;
+  width: 700px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+/* Layar kecil: perkecil seluruh panggung (zoom ikut mengecilkan ruang layout). */
+@media (max-width: 760px) { .ahs-stage { zoom: 0.72; } }
+@media (max-width: 540px) { .ahs-stage { zoom: 0.48; } }
+@media (max-width: 380px) { .ahs-stage { zoom: 0.42; } }
+
+/* ── Babak 1: akun T ─────────────────────────────── */
+.ahs-intro {
+  position: absolute;
+  left: 30px;
+  top: 0;
+  width: 640px;
+  height: 300px;
+  opacity: 0;
+  pointer-events: none;
+  animation: ahs-intro-out 1.3s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+.ahs-labels {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+.ahs-lbl { animation: ahs-fade-up 0.3s ease-out 0.1s both; }
+.ahs-bar {
+  position: absolute;
+  left: 0;
+  top: 32px;
+  width: 640px;
+  height: 8px;
+  border-radius: 4px;
+  transform-origin: left center;
+  animation: ahs-grow-x 0.25s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+.ahs-stem {
+  position: absolute;
+  left: 316px;
+  top: 32px;
+  width: 8px;
+  height: 240px;
+  border-radius: 4px;
+  transform-origin: center top;
+  animation: ahs-grow-y 0.22s cubic-bezier(0.6, 0, 0.2, 1) 0.15s both;
+}
+.ahs-amount {
+  position: absolute;
+  top: 92px;
+  width: 250px;
+  text-align: right;
+  white-space: nowrap;
+  font-family: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.ahs-L { left: 36px; }
+.ahs-R { left: 354px; }
+.ahs-dg {
+  display: inline-block;
+  height: 1.2em;
+  line-height: 1.2em;
+  overflow: hidden;
+  vertical-align: top;
+}
+.ahs-dot {
+  display: inline-block;
+  height: 1.2em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+.ahs-digit {
+  display: block;
+  height: 1.2em;
+  line-height: 1.2em;
+}
+.ahs-st {
+  display: block;
+  transform: translateY(calc(var(--d) * -1.2em));
+  animation: ahs-roll 0.45s cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+.ahs-d0 { --d: 0; } .ahs-d1 { --d: 1; } .ahs-d2 { --d: 2; } .ahs-d5 { --d: 5; }
+.ahs-L .ahs-w1 { animation-delay: 0.2s; }  .ahs-L .ahs-w2 { animation-delay: 0.23s; }
+.ahs-L .ahs-w3 { animation-delay: 0.26s; } .ahs-L .ahs-w4 { animation-delay: 0.29s; }
+.ahs-L .ahs-w5 { animation-delay: 0.32s; } .ahs-L .ahs-w6 { animation-delay: 0.35s; }
+.ahs-L .ahs-w7 { animation-delay: 0.38s; }
+.ahs-R .ahs-w1 { animation-delay: 0.26s; } .ahs-R .ahs-w2 { animation-delay: 0.29s; }
+.ahs-R .ahs-w3 { animation-delay: 0.32s; } .ahs-R .ahs-w4 { animation-delay: 0.35s; }
+.ahs-R .ahs-w5 { animation-delay: 0.38s; } .ahs-R .ahs-w6 { animation-delay: 0.41s; }
+.ahs-R .ahs-w7 { animation-delay: 0.44s; }
+.ahs-dl {
+  position: absolute;
+  width: 240px;
+  height: 3px;
+  transform-origin: left center;
+  animation: ahs-grow-x 0.12s ease-out both;
+}
+.ahs-dl1 { left: 46px; top: 156px; animation-delay: 0.8s; }
+.ahs-dl2 { left: 46px; top: 164px; animation-delay: 0.83s; }
+.ahs-dr1 { left: 364px; top: 156px; animation-delay: 0.86s; }
+.ahs-dr2 { left: 364px; top: 164px; animation-delay: 0.89s; }
+
+/* ── Babak 2: logo Neraca ─────────────────────────── */
+.ahs-lockup {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+.ahs-tile {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  animation: ahs-pop 0.3s cubic-bezier(0.3, 1.5, 0.5, 1) 1s both;
+}
+.ahs-barL,
+.ahs-barR {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: ahs-rise 0.28s cubic-bezier(0.3, 0.7, 0.3, 1) 1.05s both;
+}
+.ahs-cross {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: ahs-grow-x 0.2s cubic-bezier(0.3, 1.6, 0.5, 1) 1.28s both;
+}
+.ahs-wm {
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+  white-space: nowrap;
+  clip-path: inset(-20% -5% -20% 0);
+  animation: ahs-wipe 0.35s cubic-bezier(0.6, 0, 0.2, 1) 1.08s both;
+}
+.ahs-tag { animation: ahs-fade-up 0.3s ease-out 1.3s both; }
+
+@keyframes ahs-out { to { opacity: 0; } }
+@keyframes ahs-intro-out {
+  0%, 75% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: translateY(-24px) scale(0.42); }
+}
+@keyframes ahs-grow-x { from { transform: scaleX(0); } }
+@keyframes ahs-grow-y { from { transform: scaleY(0); } }
+@keyframes ahs-fade-up { from { opacity: 0; transform: translateY(10px); } }
+@keyframes ahs-roll { from { transform: translateY(-10.8em); } }
+@keyframes ahs-pop { from { opacity: 0; transform: scale(0.55); } }
+@keyframes ahs-rise {
+  0% { transform: scaleY(0); }
+  70% { transform: scaleY(1.08); }
+  100% { transform: scaleY(1); }
+}
+@keyframes ahs-wipe { from { clip-path: inset(-20% 100% -20% 0); transform: translateX(-12px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .ahs-root,
+  .ahs-root * { animation: none !important; }
+}

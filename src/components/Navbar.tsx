@@ -7,7 +7,8 @@
 // - keeps subtle scroll progress without blocking pointer events.
 // =============================================================
 import { useEffect, useState } from 'react';
-import { GraduationCap, Menu, UserCircle2, X, Download } from 'lucide-react';
+import { Menu, UserCircle2, X, Download } from 'lucide-react';
+import { LogoMark, Wordmark } from './brand/AkuntansiHubLogo';
 import { MegaMenu, QuizMegaMenu, LaporanMegaMenu } from './MegaMenu';
 import SearchBar from './SearchBar';
 import ThemeSwitch from './ThemeSwitch';
@@ -145,14 +146,13 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
       <div className="nav-menu-container mx-auto w-full max-w-[90rem] px-3 sm:px-5 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between gap-3">
           <button onClick={handleHome} className="group flex min-h-11 min-w-0 shrink cursor-pointer items-center gap-1.5 text-left md:shrink-0 md:gap-3" type="button">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-sm shadow-blue-500/20 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:shadow-indigo-500/20 md:h-11 md:w-11 md:rounded-xl">
-              <GraduationCap size={21} aria-hidden="true" />
-            </div>
+            <LogoMark className="h-9 w-9 shrink-0 transition-transform duration-200 group-hover:-translate-y-0.5 md:h-10 md:w-10" />
             <div className="min-w-0">
-              <h1 className="truncate font-display text-[13px] font-bold tracking-tight text-gray-900 dark:text-white sm:text-base md:text-lg">
-                AkuntansiHub<span className="text-blue-600 dark:text-blue-400">.</span>
+              <h1 className="truncate">
+                <span aria-hidden="true"><Wordmark className="text-[15px] sm:text-lg md:text-xl" /></span>
+                <span className="sr-only">AkuntansiHub</span>
               </h1>
-              <p className="hidden text-[10px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 sm:block">
+              <p className="mt-0.5 hidden text-[10px] font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 sm:block">
                 FEB UNAIR
               </p>
             </div>
