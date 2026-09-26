@@ -231,14 +231,14 @@ export function BackToTopButton() {
   }, []);
   if (!visible) return null;
   // Portal: the reading article animates with a transform, which would pin a fixed button to the article.
-  // On phones it sits above the right-most floating button (that row is 44px high, 0.5rem from the bottom).
+  // On phones it sits right above the study utility dock button (44px, 0.75rem from the bottom and right edges).
   return createPortal(
     <button
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Kembali ke atas"
       title="Kembali ke atas"
-      className="layered-back-to-top fixed bottom-[calc(3.75rem+env(safe-area-inset-bottom))] right-2 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white/95 text-gray-700 shadow-lg shadow-gray-900/10 backdrop-blur dark:border-gray-700 dark:bg-gray-900/95 dark:text-gray-200 md:bottom-4 md:right-4 lg:hidden"
+      className="layered-back-to-top fixed bottom-[calc(4rem+env(safe-area-inset-bottom))] right-3 z-40 inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white/95 text-gray-700 shadow-lg shadow-gray-900/10 backdrop-blur dark:border-gray-700 dark:bg-gray-900/95 dark:text-gray-200 md:bottom-4 md:right-4 lg:hidden"
     >
       <ArrowUp size={18} aria-hidden="true" />
     </button>,
