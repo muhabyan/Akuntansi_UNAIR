@@ -31,6 +31,7 @@ import QuizCard from './QuizCard';
 import PteQuizCard from './PteQuizCard';
 import FlashcardGrid from './FlashcardGrid';
 import BankQuestionList from './BankQuestionList';
+import PrepReadingList from './PrepReadingList';
 import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
 
@@ -88,6 +89,11 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
       return block.title.toLowerCase().includes(query) || block.blocks.some((nested) => blockContainsQuery(nested, query));
     case 'solution-reveal':
       return [block.title, block.prompt].filter(Boolean).some((text) => text!.toLowerCase().includes(query)) || block.blocks.some((nested) => blockContainsQuery(nested, query));
+    case 'section':
+    case 'pendalaman':
+      return Boolean(block.title?.toLowerCase().includes(query)) || block.blocks.some((nested) => blockContainsQuery(nested, query));
+    case 'self-check':
+      return [block.question, block.signal].filter(Boolean).some((text) => text!.toLowerCase().includes(query)) || block.answer.some((nested) => blockContainsQuery(nested, query));
     case 'statement':
       return [block.spec.entity, block.spec.title, block.spec.period, ...block.spec.lines.map((line) => line.label)]
         .some((text) => text.toLowerCase().includes(query));
@@ -1006,6 +1012,10 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
                       label="Simulasi UTS"
                       onOpen={() => navigateToReview('uts')}
                     />
+                  )}
+
+                  {!searchQuery && activeTab === 'pra_uts' && courseContent.prep && (
+                    <PrepReadingList items={courseContent.prep} reviews={courseContent.reviews} onOpen={navigateToReview} />
                   )}
 
                   {((!searchQuery && activeTab === 'pra_uas') || reviewUasMatchesSearch) && reviewUasReading && (

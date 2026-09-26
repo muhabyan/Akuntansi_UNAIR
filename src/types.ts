@@ -94,7 +94,11 @@ export type ViewId = 'home' | string; // 'home' atau id semester ('sem1', ...)
 // KONTEN BACAAN (fitur "Baca") — rangkuman materi komprehensif
 // =============================================================
 
-export type CalloutVariant = 'info' | 'tip' | 'warning' | 'key';
+/**
+ * 'gist' (Intinya), 'note' (catatan tenang) dan 'quote' (kutipan menjorok, mis. definisi) hanya dipakai
+ * di bacaan berlapis (Reading.layout 'layered').
+ */
+export type CalloutVariant = 'info' | 'tip' | 'warning' | 'key' | 'gist' | 'note' | 'quote';
 
 /** Satu baris jurnal. Baris kredit diberi indentasi otomatis saat render. */
 export interface JournalLine {
@@ -132,13 +136,21 @@ export type ContentBlock =
   | { kind: 'ul'; items: string[] }
   | { kind: 'ol'; items: string[] }
   | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string; compact?: boolean }
-  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string }
+  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
+      /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null> }
   | { kind: 'journal'; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
   | { kind: 'code'; text: string; language?: string; caption?: string } // teks literal (mis. SQL), tidak diproses markdown
   | { kind: 'figure'; title?: string; svg?: string; url?: string; overview?: FigureOverview; transcript?: string[]; transcriptSections?: FigureTranscriptSection[]; mobileFlow?: FigureMobileFlow; caption?: string; altText?: string }
   | { kind: 'example'; title: string; blocks: ContentBlock[] }
-  | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[] }
+  | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[]; revealLabel?: string }
+  // ---- Bacaan berlapis (Reading.layout 'layered') ----
+  /** Satu section sebagai kartu. layer: 'fondasi' dan 'main' dihitung dalam waktu baca, 'latihan' tidak. */
+  | { kind: 'section'; title?: string; layer: 'fondasi' | 'main' | 'latihan'; source?: string; blocks: ContentBlock[] }
+  /** Blok pendalaman: tertutup sampai dibuka. */
+  | { kind: 'pendalaman'; title: string; blocks: ContentBlock[] }
+  /** Soal terbuka: tulis jawaban dulu, baru contoh jawaban (answer) dan tanda belum paham (signal). */
+  | { kind: 'self-check'; question: string; answer: ContentBlock[]; signal?: string }
   | { kind: 'statement'; spec: StatementSpec }
   | { kind: 'builder'; spec: StatementSpec; instructions?: string }
   | { kind: 'interactive-match'; spec: InteractiveMatchSpec }
@@ -285,6 +297,10 @@ export interface Reading {
   intro: string;
   objectives: string[];
   blocks: ContentBlock[];
+  /** 'layered': Pintu masuk, Fondasi, section berkartu, pendalaman tertutup, latihan tersembunyi. */
+  layout?: 'layered';
+  /** Label badge di header, menggantikan "TM n" (mis. untuk halaman Persiapan UTS). */
+  badge?: string;
 }
 
 // =============================================================

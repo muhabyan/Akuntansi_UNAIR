@@ -19,6 +19,10 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { BENANG_MERAH_READING } from './prep/benangMerah';
+import { PANDUAN_MENJAWAB_KASUS_READING } from './prep/panduanMenjawabKasus';
+import { LATIHAN_SKENARIO_UTS_READING } from './prep/latihanSkenarioUts';
+import { LATIHAN_PENYELESAIAN_MASALAH_READING } from './prep/latihanPenyelesaianMasalah';
 
 export const AKA201_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -37,7 +41,21 @@ export const AKA201_READINGS: Record<number, Reading> = {
   14: TM14_READING,
 };
 
+// No 'uts' entry: the old TM8 "Simulasi UTS" card is hidden now that the Persiapan UTS pages replace it
+// (TM8 itself stays in the TM 8–14 list until that half is rebuilt).
 export const AKA201_REVIEW_READINGS: Record<string, Reading> = {
-  uts: TM8_READING,
   uas: TM14_READING,
+  'prep:benang-merah': BENANG_MERAH_READING,
+  'prep:panduan-menjawab-kasus': PANDUAN_MENJAWAB_KASUS_READING,
+  'prep:latihan-skenario-uts': LATIHAN_SKENARIO_UTS_READING,
+  'prep:latihan-penyelesaian-masalah': LATIHAN_PENYELESAIAN_MASALAH_READING,
 };
+
+// "Persiapan UTS" cards, in reading order: Benang Merah, Panduan Menjawab Kasus, Latihan Skenario UTS,
+// Latihan Penyelesaian Masalah. The pages are layered readings (tm 91-94) kept in AKA201_REVIEW_READINGS.
+export const AKA201_PREP: Array<{ key: `prep:${string}`; label: string }> = [
+  { key: 'prep:benang-merah', label: 'Benang Merah' },
+  { key: 'prep:panduan-menjawab-kasus', label: 'Panduan Menjawab Kasus' },
+  { key: 'prep:latihan-skenario-uts', label: 'Latihan Skenario UTS' },
+  { key: 'prep:latihan-penyelesaian-masalah', label: 'Latihan Penyelesaian Masalah' },
+];

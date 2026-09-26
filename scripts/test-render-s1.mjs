@@ -84,6 +84,11 @@ function collectBlock(block, path, flags, out) {
       push('answerKey', block.answerKey); nested(block.blocks); break;
     case 'example': case 'math-example':
       nested(block.blocks); break;
+    case 'section': case 'pendalaman':
+      push('title', block.title); nested(block.blocks); break;
+    case 'self-check':
+      push('question', block.question); push('signal', block.signal);
+      (block.answer ?? []).forEach((child, i) => collectBlock(child, `${path}.answer[${i}]`, flags, out)); break;
     case 'chart-guide':
       block.points.forEach((point, i) => push(`points[${i}]`, point)); break;
     default:
@@ -138,7 +143,6 @@ const knownIssues = new Set([
   'AKK202 TM11.blocks[5].text katex',
   'AKK202 TM11.blocks[6].text katex',
   'MNK201 TM12.blocks[4].text katex',
-  'AKA201 TM4.blocks[4].text katex',
   'AKA201 TM12.blocks[4].text katex',
   'AKA201 TM13.blocks[4].text katex',
   'AKS201 TM1.blocks[4].text katex',

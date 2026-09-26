@@ -5,6 +5,26 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
 import 'katex/dist/katex.min.css';
+import { useLayered } from './layeredContext';
+
+/** Inline code. In a layered reading, a `(…)` source reference becomes a small, muted chip. */
+function InlineCode({ node: _node, inline, ...props }: any) {
+  const layered = useLayered();
+  const text = typeof props.children === 'string' ? props.children : '';
+  if (layered && /^\(.*\)$/.test(text) && !text.includes('\n')) {
+    return (
+      <span className="layered-source-chip mx-0.5 inline-block max-w-full rounded bg-gray-100 px-1.5 py-px font-sans text-[11px] font-medium leading-5 text-gray-500 [box-decoration-break:clone] dark:bg-gray-800/70 dark:text-gray-400">
+        {text}
+      </span>
+    );
+  }
+  if (inline) {
+    return (
+      <code className="bg-slate-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded text-[0.9em] font-mono" {...props} />
+    );
+  }
+  return <code {...props} />;
+}
 
 interface MarkdownContentProps {
   text: string;
@@ -40,14 +60,7 @@ export function renderText(text: string): React.ReactNode {
         ul: ({ node: _node, ...props }) => <ul className="my-2 space-y-1.5 pl-5 list-disc marker:text-blue-500 dark:marker:text-blue-400 text-gray-700 dark:text-gray-200" {...props} />,
         ol: ({ node: _node, ...props }) => <ol className="my-2 space-y-1.5 pl-5 list-decimal marker:text-blue-500 dark:marker:text-blue-400 font-medium text-gray-700 dark:text-gray-200" {...props} />,
         li: ({ node: _node, ...props }) => <li className="pl-0.5 leading-relaxed" {...props} />,
-        code: ({ node: _node, inline, ...props }: any) => {
-          if (inline) {
-            return (
-              <code className="bg-slate-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-blue-700 dark:text-blue-300 px-1.5 py-0.5 rounded text-[0.9em] font-mono" {...props} />
-            );
-          }
-          return <code {...props} />;
-        },
+        code: InlineCode,
         table: ({ node: _node, ...props }) => (
           <div className="overflow-x-auto my-5 rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
             <table className="w-full text-left border-collapse" {...props} />

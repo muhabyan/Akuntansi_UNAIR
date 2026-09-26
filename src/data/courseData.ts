@@ -222,13 +222,13 @@ const MNK201_REF = [
 // --- AKA201 Pengauditan Berbasis Risiko I (Arens Auditing 16e & Standar Audit ISA/IAPI) ---
 // Sumber: RPP Resmi OBE Pengauditan Berbasis Risiko I, Departemen Akuntansi FEB UNAIR.
 const AKA201_TM1_7 = materi([
-  ['Konsep Dasar Audit, Jasa Asurans, & Profesi Akuntan Publik', 'Arens Ch. 1 & 2 | SA 200, ISQM 1'],
-  ['Etika Profesi, Dilema Etis, & Independensi Auditor', 'Arens Ch. 4 | Kode Etik IESBA / IAPI'],
-  ['Tanggung Jawab Audit, Skeptisisme, & Asersi Manajemen', 'Arens Ch. 6 | SA 200, SA 315 Revisi'],
-  ['Laporan Audit Independen, Jenis Opini, & KAM', 'Arens Ch. 3 | SA 700, 701, 705, 706'],
-  ['Konsep Materialitas Audit: Perencanaan & Pelaksanaan', 'Arens Ch. 9 | SA 320, SA 450'],
-  ['Bukti Audit, 8 Prosedur Pengujian, & Kertas Kerja', 'Arens Ch. 7 | SA 500, SA 230'],
-  ['Prosedur Analitis & Analisis Rasio Keuangan', 'Arens Ch. 7, 8 | SA 520'],
+  ['Sifat Audit, Permintaan atas Audit, dan Jenis Auditor', 'Ch.1 Arens (pp.1–19) · ISA/SA 200 (konseptual)'],
+  ['Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu', 'Ch.2 Arens (pp.25–43) · ISQM 1 / SMM 1 · ISA 220 (Revised) · UU 5/2011 · PP 20/2015'],
+  ['Etika Profesi, Independensi, dan Lingkungan Hukum Auditor', 'Ch.3 Arens (pp.50–71) · KEPAP 2025 Seksi 110, 120, 420 · UU 5/2011'],
+  ['Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional', 'Ch.4 Arens (pp.86–99) · ISA/SA 200'],
+  ['Siklus, Asersi Manajemen, dan Gambaran Proses Audit', 'Ch.4 Arens (pp.99–117) · ISA/SA 315 (Revised 2019)'],
+  ['Laporan Auditor dan Jenis Opini', 'Ch.18 Arens (pp.619–642) · SA/ISA 700, 701, 705, 706'],
+  ['Materialitas Perencanaan dan Pelaksanaan', 'Ch.6 Arens (pp.199–211) · SA/ISA 320'],
 ], 1);
 const AKA201_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Arens Ch. 1-9 | Kompilasi TM 1-7'],
@@ -240,10 +240,16 @@ const AKA201_TM8_14 = materi([
   ['Teknik Audit Berbantuan Komputer (CAATs) & Program Audit', 'Arens Ch. 13 | IAASB Tech Guide'],
 ], 8);
 const AKA201_REF = [
-  'Arens, A.A., Elder, R.J., Beasley, M.S., Hogan, C.E., & Jones, J.C. (2024). Auditing: The Art and Science of Assurance Engagements (16th ed.). Pearson. (Wajib)',
+  'Arens dkk., Auditing: The Art and Science of Assurance Engagements, 15th Canadian ed. (page numbers match those cited in the RPS)',
   'Institut Akuntan Publik Indonesia (IAPI). Standar Profesional Akuntan Publik (SPAP) & Standar Audit (SA 200 s.d SA 706).',
   'IAASB. International Standards on Auditing (ISA) Consolidated Handbook.',
   'Committee of Sponsoring Organizations of the Treadway Commission (COSO). (2013). Internal Control - Integrated Framework.',
+  'IAASB 2025 Handbook Vol. 1',
+  'IAPI KEPAP 2025',
+  'IAPI SMM 1',
+  'UU 5/2011',
+  'PP 20/2015',
+  'Jensen & Meckling (1976), JFE 3(4), 305–360',
 ];
 
 // --- AKK202 Akuntansi Keuangan Menengah II (Kieso Intermediate IFRS 5e) ---
@@ -646,7 +652,7 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'AKA201', newCode: 'FEB25603017', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', prasyarat: 'AKK106 (L)',
             references: AKA201_REF,
-            materiTM1_7: AKA201_TM1_7, materiTM8_14: AKA201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            materiTM1_7: AKA201_TM1_7, materiTM8_14: AKA201_TM8_14, flashcardCount: 46, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
         ],
       },

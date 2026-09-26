@@ -6,6 +6,8 @@ import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
 import EconDiagram from './EconDiagrams';
 import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
+import { LayeredContext, useLayered } from './layeredContext';
+import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, InlineMarkdown, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -89,8 +91,9 @@ function RenderMultilineText({ text }: { text: string }) {
 
 
 function ReadableParagraph({ text }: { text: string }) {
+  const layered = useLayered();
   return (
-    <div className="mb-4 max-w-[88ch] text-base leading-[1.8] text-slate-800 dark:text-slate-200 md:text-[16.5px]">
+    <div className={`mb-4 text-base text-slate-800 dark:text-slate-200 md:text-[16.5px] ${layered ? 'max-w-[70ch] leading-[1.7]' : 'max-w-[88ch] leading-[1.8]'}`}>
       {renderText(text)}
     </div>
   );
@@ -135,7 +138,7 @@ function SolutionRevealCard({
           className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 dark:border-emerald-500/30 bg-emerald-500/15 dark:bg-emerald-500/10 px-4 py-2.5 text-xs font-black text-emerald-800 dark:text-emerald-300 transition hover:bg-emerald-500/20"
         >
           {isOpen ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
-          {isOpen ? 'Sembunyikan pembahasan' : 'Tampilkan pembahasan langkah demi langkah'}
+          {isOpen ? 'Sembunyikan pembahasan' : block.revealLabel ?? 'Tampilkan pembahasan langkah demi langkah'}
         </button>
       </div>
       {isOpen && (
@@ -216,7 +219,22 @@ function ChartGuideBox({ block }: any) {
 
 export default function CourseBlockCard({ block, isSimulation = false, enableLegalStyling = false, enableEconomicStyling = false, enableEditorialReading = false }: CourseBlockCardProps) {
   const blockId = useId();
+  const layered = useLayered();
+  const nestedBlocks = (blocks: ContentBlock[]) =>
+    blocks.map((nested, index) => (
+      <CourseBlockCard key={index} block={nested} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
+    ));
   switch (block.kind) {
+    case 'section':
+      return (
+        <LayeredContext.Provider value>
+          <SectionCard title={block.title} layer={block.layer} source={block.source}>{nestedBlocks(block.blocks)}</SectionCard>
+        </LayeredContext.Provider>
+      );
+    case 'pendalaman':
+      return <PendalamanBlock title={block.title}>{nestedBlocks(block.blocks)}</PendalamanBlock>;
+    case 'self-check':
+      return <SelfCheckCard question={block.question} signal={block.signal}>{nestedBlocks(block.answer)}</SelfCheckCard>;
     case 'h2':
       return (
         <div className="group mt-8 mb-3 scroll-mt-28">
@@ -234,25 +252,25 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           {renderText(block.text)}
         </h3>
       );
-    case 'p':
-      return <ReadableParagraph text={block.text} />;
+    case 'p': {
+      return layered && isSourceOnly(block.text) ? <SourceLine text={block.text} /> : <ReadableParagraph text={block.text} />;
+    }
     case 'ul': {
-      const checklist = enableEconomicStyling && isChecklist(block.items);
+      const checklist = (enableEconomicStyling || layered) && isChecklist(block.items);
       return (
         <ul
-          className={checklist
-            ? 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'
-            : 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'}
-          aria-label={checklist ? 'Checklist review UAS' : undefined}
+          className={layered ? 'mb-6 max-w-[70ch] space-y-2 pl-1' : 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'}
+          aria-label={checklist ? (layered ? 'Daftar periksa' : 'Checklist review UAS') : undefined}
         >
           {block.items.map((it, i) => (
-            <li key={i} className="flex gap-3 text-base leading-[1.8] text-slate-800 dark:text-slate-200 md:text-[16px]">
+            <li key={i} className={`flex gap-3 text-base text-slate-800 dark:text-slate-200 ${layered ? 'leading-[1.7] md:text-[16.5px]' : 'leading-[1.8] md:text-[16px]'}`}>
               {checklist ? (
                 <Square aria-hidden="true" className="mt-1 shrink-0 text-emerald-600 dark:text-emerald-300" size={18} />
               ) : (
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 shadow-sm shadow-blue-500/40" />
               )}
-              <span className="whitespace-pre-line">{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
+              {/* Layered items are plain markdown: pre-line would turn the newlines between nested blocks into gaps. */}
+              <span className={layered ? 'min-w-0' : 'whitespace-pre-line'}>{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
             </li>
           ))}
         </ul>
@@ -260,13 +278,14 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     }
     case 'ol':
       return (
-        <ol className="mb-6 max-w-[88ch] list-decimal space-y-3 pl-6 md:pl-8 text-base leading-[1.8] text-slate-800 dark:text-slate-200 md:text-[16px] marker:font-black marker:text-blue-600 dark:marker:text-blue-400">
+        <ol className={`mb-6 list-decimal pl-6 text-base text-slate-800 dark:text-slate-200 marker:font-black marker:text-blue-600 dark:marker:text-blue-400 ${layered ? 'max-w-[70ch] space-y-2 leading-[1.7] md:text-[16.5px]' : 'max-w-[88ch] space-y-3 md:pl-8 leading-[1.8] md:text-[16px]'}`}>
           {block.items.map((it, i) => (
-            <li key={i} className="whitespace-pre-line pl-1">{renderText(it)}</li>
+            <li key={i} className={layered ? 'pl-1' : 'whitespace-pre-line pl-1'}>{renderText(it)}</li>
           ))}
         </ol>
       );
     case 'callout': {
+      if (layered) return <LayeredCallout variant={block.variant} title={block.title} text={block.text} />;
       let borderCls = 'border-sky-500/35';
       let bgCls = 'bg-sky-500/10 dark:bg-sky-500/5';
       let titleCls = 'text-sky-800 dark:text-sky-300';
@@ -340,7 +359,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       if (!enableEconomicStyling) {
         const tableLabel = isComparisonTable ? 'Tabel Perbandingan Regulasi' : isLegalTable ? 'Tabel Hukum Pajak' : 'Tabel Materi';
         const isFinancialGlossary = block.headers.length === 4 && block.headers.includes('Nama Finansial');
-        return (
+        // In a layered reading a "Sumber" column is a source reference: small and muted.
+        const mutedColumns = block.headers.map((header) => layered && /^sumber$/i.test(header.trim()));
+        // Column alignment from the source table (e.g. right-aligned amounts); desktop table only, phone cards ignore it.
+        const alignCls = (c: number) => (block.align?.[c] === 'right' ? ' text-right tabular-nums' : block.align?.[c] === 'center' ? ' text-center' : '');
+        const tableCard = (
           <div className="course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
             <div className="flex items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
@@ -381,9 +404,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                     {block.headers.map((h, i) => (
                       <th
                         key={i}
-                        className="sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300"
+                        className={`sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300${alignCls(i)}`}
                       >
-                        {h}
+                        {layered ? <InlineMarkdown text={h} /> : h}
                       </th>
                     ))}
                   </tr>
@@ -394,9 +417,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                       {row.map((cell, c) => (
                         <td
                           key={c}
-                          className="px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white"
+                          className={(mutedColumns[c]
+                            ? 'px-4 py-3.5 align-top text-xs leading-relaxed text-gray-500 dark:text-gray-400'
+                            : 'px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white') + alignCls(c)}
                         >
-                          <RenderMultilineText text={cell} />
+                          <RenderMultilineText text={layered ? literalLeadingMarker(cell) : cell} />
                         </td>
                       ))}
                     </tr>
@@ -411,6 +436,13 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               </div>
             )}
           </div>
+        );
+        if (!(layered && block.stackOnMobile)) return tableCard;
+        return (
+          <>
+            <div className="hidden md:block">{tableCard}</div>
+            <StackedTable headers={block.headers} rows={block.rows} />
+          </>
         );
       }
 
