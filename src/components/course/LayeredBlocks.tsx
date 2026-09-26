@@ -1,11 +1,12 @@
-// Presentation of layered readings (Reading.layout 'layered'): Fondasi and section cards, the four callout tiers,
+// Presentation of layered readings (Reading.layout 'layered'): open Fondasi and main sections, the four callout tiers,
 // closed "pendalaman" blocks, write-first self checks, stacked tables on phones, source chips and the reading-time
 // estimate. Every text shown here comes from the data unchanged; only the button labels and hints are written here.
 import { useEffect, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Lightbulb, PencilLine } from 'lucide-react';
+import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Lightbulb, PencilLine, Table2 } from 'lucide-react';
 import type { CalloutVariant, ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
+import { InsideBoxContext, useInsideBox } from './layeredContext';
 
 /** A paragraph that is only a source reference: `(ARENS p.3)`, *Sumber: ...*, or one opening with a bold
  *  Sumber label (**Sumber:** ..., **Sumber utama:** ...). */
@@ -40,43 +41,52 @@ export function InlineMarkdown({ text }: { text: string }) {
 /** One body size for all layered reading text. */
 export const LAYERED_BODY = 'text-base leading-[1.7] md:text-[16.5px]';
 
-const SECTION_SURFACE: Record<'fondasi' | 'main' | 'latihan', string> = {
-  fondasi: 'border-gray-200 bg-gray-50/80 dark:border-gray-700/70 dark:bg-gray-900/50',
-  main: 'border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900/70',
-  latihan: 'border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900/70',
-};
+const EYEBROW: Record<'fondasi' | 'main' | 'latihan', string> = { fondasi: 'Fondasi', main: 'Bagian Materi', latihan: 'Latihan' };
 
-export function SectionCard({ title, layer, source, children }: { title?: string; layer: 'fondasi' | 'main' | 'latihan'; source?: string; children: ReactNode }) {
+/** A section laid out like the other course readings (PJK301): no card, an eyebrow label and a numbered heading. */
+export function LayeredSection({ title, layer, source, children }: { title?: string; layer: 'fondasi' | 'main' | 'latihan'; source?: string; children: ReactNode }) {
   if (!title) return <div className="layered-section-plain">{children}</div>;
+  const [, number, text] = /^(\d+\.)\s+([\s\S]*)$/.exec(title) ?? [title, '', title];
   return (
-    <section className={`layered-section rounded-2xl border px-4 py-5 shadow-sm shadow-gray-900/[0.03] sm:px-6 md:px-8 md:py-7 ${SECTION_SURFACE[layer]}`}>
-      {layer !== 'main' && (
-        <div className="mb-1.5 text-[10.5px] font-bold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
-          {layer === 'fondasi' ? 'Fondasi' : 'Latihan'}
-        </div>
-      )}
-      <h2 className="font-display text-xl font-bold leading-snug text-gray-900 dark:text-gray-100 md:text-2xl">{title}</h2>
+    <section className={`layered-section layered-section--${layer} pt-4 md:pt-6`}>
+      <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">{EYEBROW[layer]}</div>
+      <h2 className="flex gap-2 font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl">
+        {number && <span className="shrink-0 text-blue-500 dark:text-blue-400">{number}</span>}
+        <span className="min-w-0">{text}</span>
+      </h2>
       {source && <SourceLine text={source} />}
       <div className="mt-4 space-y-4">{children}</div>
     </section>
   );
 }
 
+const GIST_LABEL = '[&_p>strong:first-child]:mb-0.5 [&_p>strong:first-child]:block [&_p>strong:first-child]:text-[13px] [&_p>strong:first-child]:font-semibold [&_p>strong:first-child]:text-gray-500 dark:[&_p>strong:first-child]:text-gray-400';
+
 const CALLOUT_STYLE: Partial<Record<CalloutVariant, { box: string; Icon?: typeof Info; icon?: string }>> = {
-  // The leading **Intinya:** becomes a small label line; Definisi/Aturannya stay a plain quote (no tint, no label).
-  gist: { box: 'rounded-r-xl border-l-4 border-gray-500 bg-gray-500/[0.07] py-3 pl-4 pr-4 text-gray-900 dark:border-gray-400 dark:bg-white/[0.05] dark:text-gray-100 [&_p>strong:first-child]:mb-0.5 [&_p>strong:first-child]:block [&_p>strong:first-child]:text-[13px] [&_p>strong:first-child]:font-semibold [&_p>strong:first-child]:text-gray-500 dark:[&_p>strong:first-child]:text-gray-400' },
+  // Intinya: an inline left rule with a light tint, its leading **Intinya:** as a small label line. Definisi/Aturannya
+  // stay a plain quote (no tint, no label).
+  gist: { box: `border-l-[3px] border-gray-400 bg-gray-500/[0.05] py-2.5 pl-4 pr-3 text-gray-900 dark:border-gray-500 dark:bg-white/[0.04] dark:text-gray-100 ${GIST_LABEL}` },
   warning: { box: 'rounded-xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 dark:bg-amber-500/10', Icon: AlertTriangle, icon: 'text-amber-600 dark:text-amber-300' },
   info: { box: 'rounded-xl border border-sky-500/35 bg-sky-500/10 px-4 py-3 dark:bg-sky-500/[0.07]', Icon: Lightbulb, icon: 'text-sky-600 dark:text-sky-300' },
   note: { box: 'rounded-xl bg-gray-100 px-4 py-3 text-gray-700 dark:bg-gray-800/60 dark:text-gray-300', Icon: Info, icon: 'text-gray-500 dark:text-gray-400' },
   quote: { box: 'ml-1 border-l-2 border-gray-300 pl-4 text-gray-800 dark:border-gray-600 dark:text-gray-200' },
 };
 
+/** Inside a pendalaman, self-check or pembahasan box the same tiers keep their colour as a left rule only. */
+const FLAT_CALLOUT_BOX: Partial<Record<CalloutVariant, string>> = {
+  gist: `border-l-[3px] border-gray-400 pl-4 text-gray-900 dark:border-gray-500 dark:text-gray-100 ${GIST_LABEL}`,
+  warning: 'border-l-[3px] border-amber-500/70 pl-4',
+  info: 'border-l-[3px] border-sky-500/60 pl-4',
+  note: 'border-l-[3px] border-gray-300 pl-4 text-gray-700 dark:border-gray-600 dark:text-gray-300',
+};
+
 /** Tier 1 gist, tier 2 warning (Jebakan ujian), tier 3 info (Interpretasi/Perbandingan), tier 4 note; plus the plain quote. */
 export function LayeredCallout({ variant, title, text }: { variant: CalloutVariant; title?: string; text: string }) {
   const style = CALLOUT_STYLE[variant] ?? CALLOUT_STYLE.note!;
+  const box = (useInsideBox() && FLAT_CALLOUT_BOX[variant]) || style.box;
   const { Icon } = style;
   return (
-    <div className={`layered-callout layered-callout--${variant} max-w-[70ch] ${LAYERED_BODY} ${style.box}`}>
+    <div className={`layered-callout layered-callout--${variant} max-w-[70ch] ${LAYERED_BODY} ${box}`}>
       {title && (
         <span className="mb-1.5 inline-block rounded-md bg-sky-600/10 px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-sky-800 dark:bg-sky-400/10 dark:text-sky-300">
           {title}
@@ -104,7 +114,11 @@ export function PendalamanBlock({ title, children }: { title: string; children: 
         <span className="min-w-0 flex-1">{open ? 'Tutup pendalaman' : 'Buka pendalaman'}: {title}</span>
         {open ? <ChevronUp size={16} aria-hidden="true" /> : <ChevronDown size={16} aria-hidden="true" />}
       </button>
-      {open && <div className="space-y-4 border-t border-dashed border-gray-300 px-4 pb-4 pt-4 dark:border-gray-700">{children}</div>}
+      {open && (
+        <div className="space-y-4 border-t border-dashed border-gray-300 px-4 pb-4 pt-4 dark:border-gray-700">
+          <InsideBoxContext.Provider value>{children}</InsideBoxContext.Provider>
+        </div>
+      )}
     </div>
   );
 }
@@ -150,22 +164,27 @@ export function SelfCheckCard({ question, signal, children }: { question: string
         </div>
       ) : (
         <div className="mt-4 space-y-3 border-t border-gray-200 pt-4 dark:border-gray-700">
-          {children}
-          {signal && <LayeredCallout variant="note" text={signal} />}
+          <InsideBoxContext.Provider value>
+            {children}
+            {signal && <LayeredCallout variant="note" text={signal} />}
+          </InsideBoxContext.Provider>
         </div>
       )}
     </div>
   );
 }
 
-/** Phone view of a table: one card per row, the first cell as its title, empty cells left out; the desktop table is
- *  rendered separately. */
-export function StackedTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
+/** Phone and tablet view of a table (below 1024px, where the launcher insets leave less than the 42rem a desktop table
+ *  needs): one row per block, the first cell as its title, empty cells left out; the desktop table is rendered
+ *  separately. On its own it is one "Tabel materi" box with divided rows, like the desktop table card; inside
+ *  another box (pendalaman, self-check) the rows are only divided, so boxes never nest. */
+export function StackedTable({ headers, rows, label }: { headers: string[]; rows: string[][]; label: string }) {
+  const flat = useInsideBox();
   const isSource = (header: string) => /^sumber$/i.test(header.trim());
-  return (
-    <div className="layered-stacked-table space-y-3 md:hidden">
+  const list = (
+    <div className={`layered-stacked-table divide-y divide-gray-200 dark:divide-gray-700/70 ${flat ? 'lg:hidden border-y border-gray-200 dark:border-gray-700/70' : ''}`}>
       {rows.map((row, r) => (
-        <div key={r} className="rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900/80">
+        <div key={r} className={flat ? 'py-3' : 'px-4 py-4'}>
           <div className={`font-semibold text-gray-900 dark:text-gray-100 ${LAYERED_BODY}`}>{renderText(literalLeadingMarker(row[0] ?? ''))}</div>
           <dl className="mt-2 space-y-2">
             {headers.slice(1).map((header, c) =>
@@ -181,6 +200,15 @@ export function StackedTable({ headers, rows }: { headers: string[]; rows: strin
           </dl>
         </div>
       ))}
+    </div>
+  );
+  if (flat) return list;
+  return (
+    <div className="layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 lg:hidden">
+      <div className="flex items-center gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-400">
+        <Table2 size={15} aria-hidden="true" /> {label}
+      </div>
+      {list}
     </div>
   );
 }

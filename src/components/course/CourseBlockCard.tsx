@@ -6,8 +6,8 @@ import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
 import EconDiagram from './EconDiagrams';
 import { AgencyMobileOverview, MobileParticipantFlow, SmlMobileOverview } from './MobileDiagramOverviews';
-import { LayeredContext, useLayered } from './layeredContext';
-import { LayeredCallout, PendalamanBlock, SectionCard, SelfCheckCard, SourceLine, StackedTable, InlineMarkdown, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
+import { InsideBoxContext, LayeredContext, useInsideBox, useLayered } from './layeredContext';
+import { LayeredCallout, LayeredSection, PendalamanBlock, SelfCheckCard, SourceLine, StackedTable, InlineMarkdown, isSourceOnly, literalLeadingMarker } from './LayeredBlocks';
 
 interface CourseBlockCardProps {
   block: ContentBlock;
@@ -143,9 +143,12 @@ function SolutionRevealCard({
       </div>
       {isOpen && (
         <div className="p-4 md:p-6">
-          {block.blocks.map((nestedBlock, index) => (
-            <CourseBlockCard key={index} block={nestedBlock} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
-          ))}
+          {/* Only read by layered readings: a table or callout in here renders flat. */}
+          <InsideBoxContext.Provider value>
+            {block.blocks.map((nestedBlock, index) => (
+              <CourseBlockCard key={index} block={nestedBlock} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
+            ))}
+          </InsideBoxContext.Provider>
         </div>
       )}
     </section>
@@ -220,6 +223,7 @@ function ChartGuideBox({ block }: any) {
 export default function CourseBlockCard({ block, isSimulation = false, enableLegalStyling = false, enableEconomicStyling = false, enableEditorialReading = false }: CourseBlockCardProps) {
   const blockId = useId();
   const layered = useLayered();
+  const insideBox = useInsideBox();
   const nestedBlocks = (blocks: ContentBlock[]) =>
     blocks.map((nested, index) => (
       <CourseBlockCard key={index} block={nested} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />
@@ -228,7 +232,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     case 'section':
       return (
         <LayeredContext.Provider value>
-          <SectionCard title={block.title} layer={block.layer} source={block.source}>{nestedBlocks(block.blocks)}</SectionCard>
+          <LayeredSection title={block.title} layer={block.layer} source={block.source}>{nestedBlocks(block.blocks)}</LayeredSection>
         </LayeredContext.Provider>
       );
     case 'pendalaman':
@@ -363,9 +367,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const mutedColumns = block.headers.map((header) => layered && /^sumber$/i.test(header.trim()));
         // Column alignment from the source table (e.g. right-aligned amounts); desktop table only, phone cards ignore it.
         const alignCls = (c: number) => (block.align?.[c] === 'right' ? ' text-right tabular-nums' : block.align?.[c] === 'center' ? ' text-center' : '');
+        // Layered pages box a table once: inside a pendalaman or self-check it is a plain table between two rules.
+        const flatTable = layered && insideBox;
         const tableCard = (
-          <div className="course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
-            <div className="flex items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
+          <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
+            <div className={`${flatTable ? 'hidden' : 'flex'} items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50`}>
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
                 <Table2 size={15} /> {tableLabel}
               </div>
@@ -440,8 +446,8 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         if (!(layered && block.stackOnMobile)) return tableCard;
         return (
           <>
-            <div className="hidden md:block">{tableCard}</div>
-            <StackedTable headers={block.headers} rows={block.rows} />
+            <div className="hidden lg:block">{tableCard}</div>
+            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} />
           </>
         );
       }

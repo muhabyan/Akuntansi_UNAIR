@@ -12,7 +12,7 @@ const { AKA201_READINGS, AKA201_REVIEW_READINGS, AKA201_PREP } = await import(
 
 const LAYERED_TMS = [1, 2, 3, 4, 5, 6, 7];
 const CALLOUT_VARIANTS = new Set(['gist', 'warning', 'info', 'note', 'quote']);
-// Figures and infographics: at least 12 px text at 390 px, where a section card leaves about 320 px of width.
+// Figures and infographics: at least 12 px text at 390 px, where a box inside a section (pendalaman, self-check) leaves about 320 px of width.
 // (The browser check in the converter harness also verifies that nothing overflows sideways.)
 const PHONE_CONTENT_WIDTH = 320;
 const MIN_FIGURE_TEXT_PX = 12;
@@ -34,7 +34,7 @@ const strings = (block) => [block.text, block.title, block.prompt, block.questio
 function checkLayered(label, reading) {
   assert.equal(reading.layout, 'layered', `${label}: layout 'layered'`);
   assert.ok(reading.objectives.length <= 5, `${label}: at most 5 objectives (has ${reading.objectives.length})`);
-  for (const [i, block] of reading.blocks.entries()) assert.equal(block.kind, 'section', `${label}: top-level block ${i} is a section card`);
+  for (const [i, block] of reading.blocks.entries()) assert.equal(block.kind, 'section', `${label}: top-level block ${i} is a section`);
   walk(reading.blocks, (block, where) => {
     const at = `${label} ${where}`;
     for (const text of strings(block)) {

@@ -962,7 +962,8 @@ export default function QuizView({
       )}
 
       {mode === 'exam' && (
-        <div data-testid="quiz-exam-summary" className="glass-sticky-action sticky bottom-4 z-20 mt-7 rounded-[1.35rem] p-3">
+        // Solid in both themes: the bar floats over the questions while scrolling, so text must not show through it.
+        <div data-testid="quiz-exam-summary" className="glass-sticky-action sticky bottom-4 z-20 mt-7 rounded-[1.35rem] border border-gray-200 bg-white p-3 shadow-lg shadow-slate-900/10 dark:border-gray-700 dark:bg-gray-900 dark:shadow-black/40">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="text-sm font-semibold text-slate-300">
               <span>Terjawab <span className="text-gold">{answeredCount}</span> dari {questions.length} soal</span>

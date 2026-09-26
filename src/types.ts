@@ -297,7 +297,7 @@ export interface Reading {
   intro: string;
   objectives: string[];
   blocks: ContentBlock[];
-  /** 'layered': Pintu masuk, Fondasi, section berkartu, pendalaman tertutup, latihan tersembunyi. */
+  /** 'layered': Pintu masuk, Fondasi, section terbuka (tanpa kartu), pendalaman tertutup, latihan tersembunyi. */
   layout?: 'layered';
   /** Label badge di header, menggantikan "TM n" (mis. untuk halaman Persiapan UTS). */
   badge?: string;

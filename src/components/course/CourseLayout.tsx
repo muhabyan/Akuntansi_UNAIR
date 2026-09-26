@@ -32,6 +32,7 @@ import PteQuizCard from './PteQuizCard';
 import FlashcardGrid from './FlashcardGrid';
 import BankQuestionList from './BankQuestionList';
 import PrepReadingList from './PrepReadingList';
+import { useEscapeToBack } from './escapeToBack';
 import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
 
@@ -187,6 +188,7 @@ function ReadingPanel({
   toggle: (key: string) => void;
 }) {
   const key = materialKey(courseCode, reading.tm);
+  useEscapeToBack(reading.layout === 'layered', onBack);
   const done = isDone(key);
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
   const outlineItems = useMemo(() => buildReadingOutline(reading.blocks), [reading.blocks]);
@@ -649,6 +651,15 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSearchQuery('');
     setSelectedMeetingTm(initialTm);
     setSelectedReviewKey(null);
+    // A TM opened from outside the course page (e.g. the home page's schedule) gets its own history entry like one
+    // opened from the list, so Back returns to the course page instead of leaving it.
+    if (initialTm !== null && window.history.state?.akuntansihub_tm !== initialTm) {
+      try {
+        window.history.pushState({ akuntansihub_tm: initialTm, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
+      } catch {
+        // ignore
+      }
+    }
   }, [course.code, initialTab, initialTm]);
 
   useEffect(() => {
