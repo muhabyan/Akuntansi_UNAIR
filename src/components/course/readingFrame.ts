@@ -7,7 +7,7 @@ import type { Reading } from '../../types';
  * since a desktop reading table needs 42rem. Layered readings always use it; the courses listed here opt in for
  * their other readings.
  */
-export const SHARED_FRAME_COURSES: ReadonlySet<string> = new Set<string>();
+export const SHARED_FRAME_COURSES: ReadonlySet<string> = new Set(['PJK301']);
 
 export const usesSharedFrame = (reading: Pick<Reading, 'layout'>, courseCode: string) =>
   reading.layout === 'layered' || SHARED_FRAME_COURSES.has(courseCode);

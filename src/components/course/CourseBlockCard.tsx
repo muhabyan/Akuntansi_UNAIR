@@ -445,12 +445,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             )}
           </div>
         );
-        // The shared reading frame (see readingFrame.ts) stacks every table below 1024px.
+        // The shared reading frame (layered readings, PJK301) stacks every table below 1024px.
         if (!sharedFrame && !(layered && block.stackOnMobile)) return tableCard;
         return (
           <>
             <div className="hidden lg:block">{tableCard}</div>
-            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} />
+            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} caption={block.caption} warning={warning} />
           </>
         );
       }

@@ -387,8 +387,10 @@ html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
   min-width: max(100%, 42rem);
 }
 
-/* A layered table inside a self-check or pendalaman box loses the box padding; at 1024px that leaves 670px. */
-.reading-document .course-table-flat .akbi-table-scroll > table {
+/* A table inside a box loses the box padding: a layered table in a self-check or pendalaman box, and in the shared
+   reading frame a table in a pembahasan box. At 1024px, with the frame's left inset, that leaves 660-670px. */
+.reading-document .course-table-flat .akbi-table-scroll > table,
+.reading-layout--shared-frame .course-solution-surface .akbi-table-scroll > table {
   min-width: max(100%, 40rem);
 }
 
