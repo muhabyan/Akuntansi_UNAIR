@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>AkuntansiHub</title>
+  <g stroke-linejoin="round" stroke-width="2.4">
+    <path d="M7 29 L20 22.5 V52 L7 58.5 Z" fill="#182632" stroke="#182632"/>
+    <path d="M24 5 L43 15.5 L24 25.5 Z" fill="#182632" stroke="#182632"/>
+    <path d="M27 28.5 L39.5 22 V50 L27 56.5 Z" fill="#CEC2B2" stroke="#CEC2B2"/>
+    <path d="M44 22.5 L57 29 V58.5 L44 52 Z" fill="#182632" stroke="#182632"/>
+  </g>
+</svg>

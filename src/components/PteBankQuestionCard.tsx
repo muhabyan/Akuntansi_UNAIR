@@ -47,7 +47,7 @@ function Feedback({ checked, correct, explanation }: { checked: boolean; correct
   if (!checked) return null;
   return (
     <div
-      className={`rounded-2xl border p-4 text-sm leading-7 ${correct ? 'border-emerald-400/30 bg-emerald-400/10 text-emerald-100' : 'border-rose-400/30 bg-rose-400/10 text-rose-100'}`}
+      className={`rounded-lg border border-l-[3px] bg-surface p-4 text-sm leading-7 ${correct ? 'border-success/50 border-l-success text-success' : 'border-danger/50 border-l-danger text-danger'}`}
       role="status"
       aria-live="polite"
     >
@@ -55,7 +55,7 @@ function Feedback({ checked, correct, explanation }: { checked: boolean; correct
         {correct ? <CheckCircle2 size={17} /> : <XCircle size={17} />}
         {correct ? 'Jawaban tepat' : 'Jawaban belum tepat'}
       </p>
-      <p className="text-slate-300">{explanation}</p>
+      <p className="text-secondary">{explanation}</p>
     </div>
   );
 }
@@ -68,19 +68,19 @@ function MatchingWorkspace({ question, onResult }: { question: PteBankMatchingQu
   return (
     <div className="space-y-3">
       {question.pairs.map((pair) => (
-        <label key={pair.prompt} className="grid gap-2 rounded-2xl border border-navy-600 bg-navy-950/35 p-3 text-sm md:grid-cols-[1fr_1fr] md:items-center">
-          <span className="font-semibold text-slate-200">{pair.prompt}</span>
+        <label key={pair.prompt} className="grid gap-2 rounded-2xl border border-line bg-surface/35 p-3 text-sm md:grid-cols-[1fr_1fr] md:items-center">
+          <span className="font-semibold text-ink">{pair.prompt}</span>
           <select
             value={answers[pair.prompt] ?? ''}
             onChange={(event) => { setAnswers((prev) => ({ ...prev, [pair.prompt]: event.target.value })); setChecked(false); onResult(false, false); }}
-            className="rounded-xl border border-navy-500 bg-navy-900 px-3 py-2 text-slate-100 outline-none focus:border-gold"
+            className="rounded-xl border border-line bg-surface px-3 py-2 text-ink outline-none focus:border-accent"
           >
             <option value="">Pilih pasangan...</option>
             {question.choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}
           </select>
         </label>
       ))}
-      <button type="button" onClick={check} className="rounded-xl bg-gold px-4 py-2 text-sm font-black text-navy-950">Periksa pencocokan</button>
+      <button type="button" onClick={check} className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-gray-800">Periksa pencocokan</button>
       <Feedback checked={checked} correct={correct} explanation={question.explanation} />
     </div>
   );
@@ -105,17 +105,17 @@ function OrderingWorkspace({ question, onResult }: { question: PteBankOrderingQu
     <div className="space-y-3">
       <ol className="space-y-2">
         {order.map((item, index) => (
-          <li key={item} className="flex items-center gap-3 rounded-2xl border border-navy-600 bg-navy-950/35 p-3">
-            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gold/10 text-sm font-black text-gold">{index + 1}</span>
-            <span className="min-w-0 flex-1 text-sm text-slate-200">{item}</span>
-            <button type="button" onClick={() => move(index, -1)} disabled={index === 0} aria-label={`Naikkan ${item}`} className="rounded-lg border border-navy-500 p-2 text-slate-300 disabled:opacity-30"><ArrowUp size={15} /></button>
-            <button type="button" onClick={() => move(index, 1)} disabled={index === order.length - 1} aria-label={`Turunkan ${item}`} className="rounded-lg border border-navy-500 p-2 text-slate-300 disabled:opacity-30"><ArrowDown size={15} /></button>
+          <li key={item} className="flex items-center gap-3 rounded-2xl border border-line bg-surface/35 p-3">
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-sm font-black text-accent">{index + 1}</span>
+            <span className="min-w-0 flex-1 text-sm text-ink">{item}</span>
+            <button type="button" onClick={() => move(index, -1)} disabled={index === 0} aria-label={`Naikkan ${item}`} className="rounded-lg border border-line p-2 text-secondary disabled:opacity-30"><ArrowUp size={15} /></button>
+            <button type="button" onClick={() => move(index, 1)} disabled={index === order.length - 1} aria-label={`Turunkan ${item}`} className="rounded-lg border border-line p-2 text-secondary disabled:opacity-30"><ArrowDown size={15} /></button>
           </li>
         ))}
       </ol>
       <div className="flex flex-wrap gap-2">
-        <button type="button" onClick={() => { setChecked(true); onResult(true, correct); }} className="rounded-xl bg-gold px-4 py-2 text-sm font-black text-navy-950">Periksa urutan</button>
-        <button type="button" onClick={() => { setOrder(question.items); setChecked(false); onResult(false, false); }} className="inline-flex items-center gap-2 rounded-xl border border-navy-500 px-4 py-2 text-sm font-bold text-slate-300"><RotateCcw size={15} /> Reset</button>
+        <button type="button" onClick={() => { setChecked(true); onResult(true, correct); }} className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-gray-800">Periksa urutan</button>
+        <button type="button" onClick={() => { setOrder(question.items); setChecked(false); onResult(false, false); }} className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2 text-sm font-bold text-secondary"><RotateCcw size={15} /> Reset</button>
       </div>
       <Feedback checked={checked} correct={correct} explanation={question.explanation} />
     </div>
@@ -128,21 +128,21 @@ function NumericWorkspace({ question, onResult }: { question: PteBankNumericQues
   const correct = isPteNumericCorrect(question, value);
   return (
     <div className="space-y-3">
-      <label className="grid max-w-md gap-2 text-sm font-bold text-slate-300">
+      <label className="grid max-w-md gap-2 text-sm font-bold text-secondary">
         Jawaban angka
-        <div className="flex items-center rounded-2xl border border-navy-500 bg-navy-950/55 focus-within:border-gold">
-          {question.answerPrefix && <span className="pl-3 text-slate-500">{question.answerPrefix}</span>}
+        <div className="flex items-center rounded-2xl border border-line bg-surface/55 focus-within:border-accent">
+          {question.answerPrefix && <span className="pl-3 text-muted">{question.answerPrefix}</span>}
           <input
             inputMode="decimal"
             value={value}
             onChange={(event) => { setValue(event.target.value); setChecked(false); onResult(false, false); }}
-            className="min-w-0 flex-1 bg-transparent px-3 py-3 text-slate-100 outline-none"
+            className="min-w-0 flex-1 bg-transparent px-3 py-3 text-ink outline-none"
             placeholder="Masukkan angka"
           />
-          {question.answerSuffix && <span className="pr-3 text-slate-500">{question.answerSuffix}</span>}
+          {question.answerSuffix && <span className="pr-3 text-muted">{question.answerSuffix}</span>}
         </div>
       </label>
-      <button type="button" onClick={() => { setChecked(true); onResult(true, correct); }} className="rounded-xl bg-gold px-4 py-2 text-sm font-black text-navy-950">Periksa angka</button>
+      <button type="button" onClick={() => { setChecked(true); onResult(true, correct); }} className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-gray-800">Periksa angka</button>
       <Feedback checked={checked} correct={correct} explanation={question.explanation} />
     </div>
   );
@@ -177,19 +177,19 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
   };
 
   return (
-    <article data-testid="pte-bank-question-card" data-question-id={question.id} data-question-number={number} className="overflow-hidden rounded-[1.5rem] border border-navy-500 bg-navy-800/78 shadow-sm" aria-labelledby={`${question.id}-title`}>
-      <header className="border-b border-white/5 bg-gradient-to-r from-white/[0.04] to-transparent px-4 py-4 md:px-5">
+    <article data-testid="pte-bank-question-card" data-question-id={question.id} data-question-number={number} className="overflow-hidden rounded-xl border border-line bg-surface shadow-sm" aria-labelledby={`${question.id}-title`}>
+      <header className="border-b border-line bg-elevated px-4 py-4 md:px-5">
         <div className="flex items-start gap-3">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 text-sm font-black text-gold">{number}</span>
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-accent/25 bg-accent/10 text-sm font-black text-accent">{number}</span>
           <div className="min-w-0 flex-1">
             <div className="mb-2 flex flex-wrap gap-2 text-[10px] font-black uppercase tracking-[0.12em]">
-              <span className="rounded-full border border-sky-400/20 bg-sky-400/10 px-2.5 py-1 text-sky-200">TM {question.tm}</span>
-              <span className="rounded-full border border-navy-500 px-2.5 py-1 text-slate-400">{kindLabel(question)}</span>
-              <span className="rounded-full border border-navy-500 px-2.5 py-1 text-slate-400">{question.competency}</span>
-              <span className="rounded-full border border-navy-500 px-2.5 py-1 text-slate-400">{question.difficulty}</span>
+              <span className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-1 text-accent">TM {question.tm}</span>
+              <span className="rounded-full border border-line px-2.5 py-1 text-muted">{kindLabel(question)}</span>
+              <span className="rounded-full border border-line px-2.5 py-1 text-muted">{question.competency}</span>
+              <span className="rounded-full border border-line px-2.5 py-1 text-muted">{question.difficulty}</span>
             </div>
-            <h4 id={`${question.id}-title`} className="text-[15px] font-semibold leading-7 text-slate-100 md:text-base">{question.prompt}</h4>
-            <p className="mt-1 text-xs text-slate-500">{question.sourceRef}</p>
+            <h4 id={`${question.id}-title`} className="text-[15px] font-semibold leading-7 text-ink md:text-base">{question.prompt}</h4>
+            <p className="mt-1 text-xs text-muted">{question.sourceRef}</p>
           </div>
         </div>
       </header>
@@ -209,7 +209,7 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
               const correctOption = semanticStatus === 'correct';
               const wrongOption = semanticStatus === 'incorrect-selected';
               return (
-                <label key={`${question.id}-${index}`} className={`flex cursor-pointer items-start gap-3 rounded-2xl border p-3 text-sm leading-6 transition ${correctOption ? 'border-emerald-400/40 bg-emerald-400/10' : wrongOption ? 'border-rose-400/40 bg-rose-400/10' : active ? 'border-gold/50 bg-gold/10' : 'border-navy-600 bg-navy-950/35 hover:border-navy-400'}`}>
+                <label key={`${question.id}-${index}`} className={`flex cursor-pointer items-start gap-3 rounded-lg border p-3 text-sm leading-6 transition-colors duration-200 ${correctOption ? 'border-success bg-success/10' : wrongOption ? 'border-danger bg-danger/10' : active ? 'border-accent bg-accent/10' : 'border-line bg-surface hover:border-accent'}`}>
                   <input
                     type={question.kind === 'multi-select' ? 'checkbox' : 'radio'}
                     name={question.id}
@@ -223,12 +223,12 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
                       setChecked(false);
                     }}
                     aria-invalid={wrongOption || undefined}
-                    className="mt-1 accent-amber-400"
+                    className="mt-1 accent-[#2F6F73]"
                   />
-                  <span className="font-black text-gold">{LETTERS[index]}.</span>
-                  <span className="text-slate-200">{option}</span>
-                  {semanticStatus === 'correct' && <span className="sr-only">Jawaban benar.</span>}
-                  {semanticStatus === 'incorrect-selected' && <span className="sr-only">Pilihan ini salah.</span>}
+                  <span className="font-black text-accent">{LETTERS[index]}.</span>
+                  <span className="text-ink">{option}</span>
+                  {semanticStatus === 'correct' && <span className="ml-auto inline-flex shrink-0 items-center gap-1 text-xs font-bold text-success"><CheckCircle2 size={15} />{active ? 'Benar' : 'Jawaban benar'}</span>}
+                  {semanticStatus === 'incorrect-selected' && <span className="ml-auto inline-flex shrink-0 items-center gap-1 text-xs font-bold text-danger"><XCircle size={15} />Jawaban kamu</span>}
                 </label>
               );
             })}
@@ -237,7 +237,7 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
 
         {(isChoice || question.kind === 'multi-select') && (
           <>
-            <button type="button" onClick={handleChoiceCheck} disabled={question.kind === 'multi-select' ? multi.length === 0 : selected === null} className="rounded-xl bg-gold px-4 py-2 text-sm font-black text-navy-950 disabled:cursor-not-allowed disabled:opacity-40">Periksa jawaban</button>
+            <button type="button" onClick={handleChoiceCheck} disabled={question.kind === 'multi-select' ? multi.length === 0 : selected === null} className="rounded-lg bg-gray-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-40">Periksa jawaban</button>
             <Feedback checked={checked} correct={correct} explanation={question.explanation} />
           </>
         )}
@@ -248,11 +248,11 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
 
         {question.kind === 'short-answer' && (
           <div className="space-y-3">
-            <div className="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-4 text-sm leading-7 text-slate-300">
-              <p className="font-black text-sky-200">Review terpandu, tidak dinilai otomatis</p>
+            <div className="rounded-2xl border border-sky-400/20 bg-sky-400/10 p-4 text-sm leading-7 text-secondary">
+              <p className="font-black text-accent">Review terpandu, tidak dinilai otomatis</p>
               <p className="mt-1">Tulis jawaban ringkas, lalu bandingkan dengan panduan. Soal ini tidak masuk perhitungan skor dan tidak boleh digunakan dalam simulator.</p>
             </div>
-            <label className="grid gap-2 text-sm font-bold text-slate-300" htmlFor={`${question.id}-guided-draft`}>
+            <label className="grid gap-2 text-sm font-bold text-secondary" htmlFor={`${question.id}-guided-draft`}>
               Jawaban latihan
               <textarea
                 id={`${question.id}-guided-draft`}
@@ -261,7 +261,7 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
                 onChange={(event) => { setGuidedDraft(event.target.value); setRevealed(false); }}
                 rows={5}
                 placeholder="Tuliskan mekanisme, rumus, atau argumen utama..."
-                className="w-full resize-y rounded-2xl border border-navy-500 bg-navy-950/55 px-3 py-3 font-normal leading-7 text-slate-100 outline-none focus:border-gold"
+                className="w-full resize-y rounded-2xl border border-line bg-surface/55 px-3 py-3 font-normal leading-7 text-ink outline-none focus:border-accent"
               />
             </label>
             <button
@@ -270,13 +270,13 @@ export default function PteBankQuestionCard({ question, number }: { question: Pt
               onClick={() => setRevealed((current) => !current)}
               aria-expanded={revealed}
               disabled={!guidedDraft.trim()}
-              className="inline-flex items-center gap-2 rounded-xl border border-gold/35 bg-gold/10 px-4 py-2 text-sm font-black text-gold disabled:cursor-not-allowed disabled:opacity-40"
+              className="inline-flex items-center gap-2 rounded-xl border border-accent/35 bg-accent/10 px-4 py-2 text-sm font-black text-accent disabled:cursor-not-allowed disabled:opacity-40"
             >
               <Eye size={16} /> {revealed ? 'Tutup panduan' : 'Bandingkan dengan panduan'}
             </button>
             {revealed && (
-              <div data-testid="pte-guided-review-guide" className="rounded-2xl border border-gold/25 bg-gold/10 p-4 text-sm leading-7 text-slate-300" role="status" aria-live="polite">
-                <p className="mb-1 font-black text-gold">Panduan jawaban</p>
+              <div data-testid="pte-guided-review-guide" className="rounded-2xl border border-accent/25 bg-accent/10 p-4 text-sm leading-7 text-secondary" role="status" aria-live="polite">
+                <p className="mb-1 font-black text-accent">Panduan jawaban</p>
                 <p>{question.answerGuide}</p>
               </div>
             )}

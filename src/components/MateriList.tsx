@@ -51,7 +51,7 @@ export default function MateriList({ course, range, onOpenReading }: MateriListP
             <span>Progress</span><span className="text-blue-600 dark:text-blue-400">{percent}%</span>
           </div>
           <div className="h-1.5 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700" role="progressbar" aria-label={`Progress TM ${start} sampai ${end}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent}>
-            <div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-[width] duration-500" style={{ width: `${percent}%` }} />
+            <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${percent}%` }} />
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function MateriList({ course, range, onOpenReading }: MateriListP
                   {checked && <span className="text-emerald-600 dark:text-emerald-400">Selesai</span>}
                   {material.ref && material.ref !== '—' && <span className="truncate normal-case tracking-normal text-gray-400 dark:text-gray-500">{material.ref}</span>}
                 </div>
-                <h3 className={`text-sm font-bold leading-snug md:text-base ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white'}`}>{material.title}</h3>
+                <h3 className={`text-sm font-bold leading-snug md:text-base md:leading-snug ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white'}`}>{material.title}</h3>
               </button>
 
               <div className="col-start-2 mt-2 flex min-w-0 flex-wrap items-center gap-1.5 md:col-start-auto md:mt-0 md:flex-nowrap md:justify-end">

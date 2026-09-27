@@ -70,18 +70,18 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
       </button>
 
       <header className="relative mb-4 overflow-hidden rounded-2xl border border-blue-100 bg-white/90 shadow-sm shadow-blue-950/5 dark:border-blue-900/45 dark:bg-gray-900/90">
-        <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-600" />
+        <div className="absolute inset-y-0 left-0 w-1 bg-accent" />
         {showInfo ? (
           <div className="grid gap-5 px-5 py-5 md:grid-cols-[minmax(0,1fr)_18rem] md:items-center md:px-6">
             <div className="flex min-w-0 gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-sm shadow-blue-500/20">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-white dark:bg-accent dark:text-gray-950">
                 <CourseIcon iconKey={course.iconKey} size={21} />
               </div>
               <div className="min-w-0">
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-600 dark:text-blue-400">
                   {semester ? `Semester ${semester.number} · ` : ''}{course.code} · {course.sks} SKS
                 </p>
-                <h1 className="mt-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl">{course.name}</h1>
+                <h1 className="mt-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl md:leading-tight">{course.name}</h1>
                 {(course.prasyarat || course.driveFolderUrl) && (
                   <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
                     {course.prasyarat && <span>Prasyarat: {course.prasyarat}</span>}
@@ -108,13 +108,13 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
                 </div>
               </div>
               <div className="h-1.5 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700" role="progressbar" aria-label={`Progress ${course.name}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={progressPercent}>
-                <div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-[width] duration-500" style={{ width: `${progressPercent}%` }} />
+                <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${progressPercent}%` }} />
               </div>
             </div>
           </div>
         ) : (
           <div className="flex min-h-14 items-center gap-3 px-5 py-2.5 md:px-6">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-indigo-600 text-white"><CourseIcon iconKey={course.iconKey} size={17} /></div>
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary text-white dark:bg-accent dark:text-gray-950"><CourseIcon iconKey={course.iconKey} size={17} /></div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-bold text-gray-900 dark:text-white">{course.name}</p>
               <p className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">{course.code} · {completedCount}/{allMaterials.length} TM · {progressPercent}%</p>
@@ -131,7 +131,7 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
             {learningTabs.map((tab, index) => {
               const active = activeTab === tab.id;
               return (
-                <button key={tab.id} type="button" onClick={() => setActiveTab(tab.id)} aria-current={active ? 'page' : undefined} className={`relative flex min-h-14 items-center gap-3 px-4 py-3 text-left transition-colors md:px-5 ${index === 0 ? 'border-r border-gray-200 dark:border-gray-700' : ''} ${active ? 'bg-gradient-to-r from-blue-50 to-indigo-50/60 text-blue-700 dark:from-blue-950/45 dark:to-indigo-950/25 dark:text-blue-300' : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700/55'}`}>
+                <button key={tab.id} type="button" onClick={() => setActiveTab(tab.id)} aria-current={active ? 'page' : undefined} className={`relative flex min-h-14 items-center gap-3 px-4 py-3 text-left transition-colors md:px-5 ${index === 0 ? 'border-r border-gray-200 dark:border-gray-700' : ''} ${active ? 'bg-elevated text-accent' : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700/55'}`}>
                   <span className={active ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400'}>{tab.icon}</span>
                   <span className="text-sm font-bold">{tab.label}</span>
                   {active && <span className="absolute inset-x-3 bottom-0 h-0.5 rounded-full bg-blue-600 dark:bg-blue-400" />}

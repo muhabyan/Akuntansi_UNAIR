@@ -130,7 +130,7 @@ function ModuleDetail({ m, q, setQ, onBack, onPrev, onNext }: {
         <span className="px-2 py-0.5 rounded bg-navy-700 border border-navy-500 text-gold font-bold">TM {m.tm}</span>
         <span className="text-slate-500">{m.pages.length} halaman · sumber: {m.sourcePdf.replace(/\(1\)\.pdf$/, '').replace(/_/g, ' ')}</span>
       </div>
-      <h1 className="text-2xl md:text-3xl font-display font-extrabold text-slate-100 leading-tight">{m.title.replace(/^TM\d+\s*-\s*/, '')}</h1>
+      <h1 className="text-2xl md:text-3xl font-display font-extrabold text-slate-100 leading-tight md:leading-tight">{m.title.replace(/^TM\d+\s*-\s*/, '')}</h1>
 
       <div className="mt-4 flex flex-wrap gap-2">
         {CHIPS.map((c) => (
@@ -193,7 +193,7 @@ export default function PerpajakanView({ course, onBack }: { course: Course; onB
         <aside className="w-full lg:w-72 flex-shrink-0 flex flex-col gap-4">
           <div className="bg-navy-700 border border-navy-500 rounded-2xl p-5 shadow-lg">
             <button onClick={onBack} className="flex items-center gap-2 text-slate-400 hover:text-gold mb-4 font-medium text-sm"><ArrowLeft size={16} /> Kembali</button>
-            <h2 className="text-xl md:text-2xl font-display font-bold text-slate-100 leading-tight mb-2 flex items-center gap-2"><Scale size={20} className="text-gold shrink-0" /> {course.name}</h2>
+            <h2 className="text-xl md:text-2xl font-display font-bold text-slate-100 leading-tight md:leading-tight mb-2 flex items-center gap-2"><Scale size={20} className="text-gold shrink-0" /> {course.name}</h2>
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-bold text-slate-500 bg-navy-900 px-2 py-1 rounded-md border border-navy-600">{course.code}</span>
               <span className="text-xs text-gold font-medium">{course.sks} SKS</span>

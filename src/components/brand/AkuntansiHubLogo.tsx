@@ -1,53 +1,39 @@
-/**
- * Logo AkuntansiHub — "Neraca".
- * Dua batang (Debit & Kredit) setinggi sama yang disatukan palang tengah
- * membentuk huruf H, di atas tile biru muda. Warna mengikuti mode terang/gelap.
- */
-
+/** Four Knowledge Panels, traced from design/brand/logo-mark*.svg. */
 type LogoMarkProps = {
   className?: string;
-  /** Versi sederhana untuk ukuran sangat kecil (≤ 20px). */
   compact?: boolean;
+  mono?: boolean;
   title?: string;
 };
 
-export function LogoMark({ className = 'h-10 w-10', compact = false, title }: LogoMarkProps) {
-  const labelled = Boolean(title);
+const panels = [
+  'M7 29 L20 22.5 V52 L7 58.5 Z',
+  'M24 5 L43 15.5 L24 25.5 Z',
+  'M27 28.5 L39.5 22 V50 L27 56.5 Z',
+  'M44 22.5 L57 29 V58.5 L44 52 Z',
+];
+
+export function LogoMark({ className = 'h-10 w-10', mono = false, title }: LogoMarkProps) {
   return (
-    <svg
-      viewBox="0 0 64 64"
-      className={className}
-      role={labelled ? 'img' : undefined}
-      aria-hidden={labelled ? undefined : true}
-      aria-label={title}
-      focusable="false"
-    >
-      <rect width="64" height="64" rx="15" className="fill-blue-50 dark:fill-blue-400/15" />
-      {compact ? (
-        <>
-          <rect x="15" y="12" width="12" height="40" rx="2" className="fill-gray-900 dark:fill-white" />
-          <rect x="37" y="12" width="12" height="40" rx="2" className="fill-gray-900 dark:fill-white" />
-          <rect x="27" y="27" width="10" height="10" className="fill-blue-600 dark:fill-blue-400" />
-        </>
-      ) : (
-        <>
-          <rect x="17" y="14" width="8" height="36" rx="2" className="fill-gray-900 dark:fill-white" />
-          <rect x="39" y="14" width="8" height="36" rx="2" className="fill-gray-900 dark:fill-white" />
-          <rect x="25" y="29" width="14" height="6" rx="1" className="fill-blue-600 dark:fill-blue-400" />
-        </>
-      )}
+    <svg viewBox="0 0 64 64" fill="none" className={className}
+      role={title ? 'img' : undefined} aria-hidden={title ? undefined : true}
+      aria-label={title} focusable="false">
+      <g strokeLinejoin="round" strokeWidth="2.4">
+        {panels.map((d, index) => (
+          <path key={d} d={d}
+            fill={mono ? 'currentColor' : index === 2 ? 'var(--logo-support)' : 'var(--logo-primary)'}
+            stroke={mono ? 'currentColor' : index === 2 ? 'var(--logo-support)' : 'var(--logo-primary)'}
+            opacity={mono && index === 2 ? 0.45 : undefined} />
+        ))}
+      </g>
     </svg>
   );
 }
 
-type WordmarkProps = {
-  className?: string;
-};
-
-export function Wordmark({ className = 'text-lg' }: WordmarkProps) {
+export function Wordmark({ className = 'text-lg' }: { className?: string }) {
   return (
-    <span className={`font-display font-extrabold tracking-[-0.05em] leading-none text-gray-900 dark:text-white ${className}`}>
-      akuntansi<span className="text-blue-600 dark:text-blue-400">hub</span>
+    <span className={`font-display leading-none tracking-[-0.045em] text-primary ${className}`}>
+      <strong className="font-bold">Akuntansi</strong><span className="font-normal">Hub</span>
     </span>
   );
 }

@@ -131,7 +131,7 @@ function SolutionRevealCard({
         <div className="mb-2 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-300">
           <Eye size={14} /> Pembahasan Setelah Mengerjakan
         </div>
-        <h3 className="font-display text-base font-black leading-snug text-slate-900 dark:text-slate-100 md:text-lg">{block.title}</h3>
+        <h3 className="font-display text-base font-black leading-snug text-slate-900 dark:text-slate-100 md:text-lg md:leading-snug">{block.title}</h3>
         {block.prompt && <div className="reading-ink mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-400">{renderText(block.prompt)}</div>}
         <button
           type="button"
@@ -247,7 +247,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           {!isSimulation && (
             <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">Bagian Materi</div>
           )}
-          <h2 className="font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl">
+          <h2 className="font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl md:leading-tight">
             {renderText(block.text)}
           </h2>
         </div>
@@ -314,6 +314,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       }
 
       const titleText = block.title ?? 'Konsep Kunci';
+      const titleParts = titleText.match(/^([^:]{2,32}):\s*(.+)$/);
       const isLegal = enableLegalStyling && (isLegalContent(titleText) || isLegalContent(block.text));
       const isManual = hasManualWarning(titleText) || hasManualWarning(block.text);
 
@@ -347,10 +348,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
 
       return (
         <div className={`course-callout-surface mb-6 max-w-[92ch] overflow-hidden rounded-2xl border ${block.compact ? 'course-callout-compact' : ''} ${borderCls} ${bgCls}`}>
-          <div className={`flex items-center gap-2 border-b border-navy-500/10 dark:border-white/5 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${titleCls}`}>
-            <IconComponent size={16} /> {titleText}
+          <div className={`flex flex-wrap items-baseline gap-x-2 gap-y-1 border-b border-line px-5 py-3 ${titleCls}`}>
+            <IconComponent size={16} className="self-center" aria-hidden="true" />
+            {titleParts ? <><span className="text-[11px] font-bold uppercase tracking-[0.1em]">{titleParts[1]}</span><span className="text-sm font-semibold normal-case tracking-normal text-ink">{titleParts[2]}</span></> : <span className="text-sm font-semibold normal-case tracking-normal">{titleText}</span>}
           </div>
-          <div className={`reading-ink px-5 ${block.compact ? 'py-3 leading-relaxed' : 'py-4 leading-[1.85]'} text-base text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
+          <div className={`reading-ink max-w-[70ch] px-5 ${block.compact ? 'py-3 leading-relaxed' : 'py-4 leading-[1.7]'} text-base text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
             {block.compact ? renderText(block.text) : <RenderMultilineText text={block.text} />}
           </div>
         </div>
@@ -412,7 +414,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                     {block.headers.map((h, i) => (
                       <th
                         key={i}
-                        className={`sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700 bg-gray-50/95 dark:bg-gray-900/95 px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300${alignCls(i)}`}
+                        className={`sticky top-0 z-10 border-b border-line bg-elevated px-4 py-3.5 text-xs md:text-[13px] font-bold uppercase tracking-wider text-accent ${/dasar hukum|pasal/i.test(h) ? 'min-w-[135px] ' : ''}${alignCls(i)}`}
                       >
                         {layered ? <InlineMarkdown text={h} /> : h}
                       </th>
@@ -427,7 +429,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                           key={c}
                           className={(mutedColumns[c]
                             ? 'px-4 py-3.5 align-top text-xs leading-relaxed text-gray-500 dark:text-gray-400'
-                            : 'reading-ink px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white') + alignCls(c)}
+                            : 'reading-ink px-4 py-3.5 align-top text-[15px] leading-[1.5] text-ink first:font-semibold') + alignCls(c)}
                         >
                           <RenderMultilineText text={layered ? literalLeadingMarker(cell) : cell} />
                         </td>

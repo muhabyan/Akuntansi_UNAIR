@@ -91,8 +91,8 @@ export default defineConfig({
         name: 'AkuntansiHub | S1 Akuntansi FEB UNAIR',
         short_name: 'AkuntansiHub',
         description: 'Interactive E-Learning Platform untuk Akuntansi FEB UNAIR',
-        theme_color: '#ffffff',
-        background_color: '#ffffff',
+        theme_color: '#182632',
+        background_color: '#F7F5F0',
         display: 'standalone',
         icons: [
           {

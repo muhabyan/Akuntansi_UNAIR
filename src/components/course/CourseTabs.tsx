@@ -39,7 +39,7 @@ export default function CourseTabs({ tabs, activeTab, onTabChange, searchQuery }
                   index === 0 ? 'border-r border-gray-200 dark:border-gray-700' : ''
                 } ${
                   active
-                    ? 'bg-gradient-to-r from-blue-50 to-indigo-50/60 text-blue-700 dark:from-blue-950/45 dark:to-indigo-950/25 dark:text-blue-300'
+                    ? 'bg-elevated text-accent'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700/55 dark:hover:text-white'
                 }`}
               >

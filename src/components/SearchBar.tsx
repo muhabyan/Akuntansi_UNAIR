@@ -50,8 +50,8 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
 
   return (
     <div ref={containerRef} className="relative w-full">
-      <div className="glass-input-shell mobile-search-shell flex items-center gap-2 rounded-2xl border px-3 py-2.5 transition-all">
-        <Search size={16} className="shrink-0 text-slate-500" />
+      <div className="mobile-search-shell flex items-center gap-2 rounded-lg border border-line-strong bg-surface px-3 py-2.5 transition-colors duration-200 focus-within:border-focus">
+        <Search size={16} className="shrink-0 text-muted" />
         <input
           type="text"
           value={query}
@@ -61,12 +61,12 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
           }}
           onFocus={() => setOpen(true)}
           placeholder="Cari mata kuliah / topik…"
-          className="w-full bg-transparent text-sm font-semibold text-slate-200 outline-none placeholder:text-slate-500"
+          className="w-full bg-transparent text-sm font-semibold text-ink outline-none placeholder:text-muted"
         />
         {query && (
           <button
             onClick={() => setQuery('')}
-            className="rounded-full p-1 text-slate-500 transition-colors hover:bg-white/10 hover:text-slate-200"
+            className="rounded-full p-1 text-muted transition-colors hover:bg-elevated hover:text-ink"
             aria-label="Hapus pencarian"
           >
             <X size={14} />
@@ -75,14 +75,14 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
       </div>
 
       {open && query.trim().length >= 2 && (
-        <div className="glass-command-panel glass-enter mobile-search-results absolute left-0 top-full z-50 mt-3 w-[24rem] max-w-[92vw] overflow-hidden rounded-3xl py-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl border border-gray-200 dark:border-gray-800">
+        <div className="mobile-search-results absolute left-0 top-full z-50 mt-3 w-[24rem] max-w-[92vw] overflow-hidden rounded-xl border border-line bg-surface py-2 shadow-md">
           <div className="glass-command-header px-4 pb-2 pt-1 border-b border-gray-100 dark:border-gray-800/50">
             <p className="eyebrow">Pencarian</p>
             <p className="mt-1 text-xs text-slate-500">{results.length} hasil untuk “{query}”</p>
           </div>
 
           {results.length === 0 ? (
-            <p className="px-4 py-4 text-sm text-slate-500">Tidak ada hasil. Coba kata kunci mata kuliah, kode, atau topik materi.</p>
+            <p className="px-4 py-4 text-sm text-secondary">Tidak ada hasil. Coba kata kunci mata kuliah, kode, atau topik materi.</p>
           ) : (
             <div className="max-h-[26rem] overflow-y-auto py-1">
               {results.map((r, i) => (
@@ -93,16 +93,16 @@ export default function SearchBar({ onSelectCourse }: SearchBarProps) {
                     setOpen(false);
                     setQuery('');
                   }}
-                  className="glass-search-result group flex w-full items-center gap-3 px-4 py-3 text-left hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                  className="group flex w-full items-center gap-3 px-4 py-3 text-left transition-colors hover:bg-elevated"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-gold/20 bg-gold/10 text-gold">
                     <CourseIcon iconKey={r.course.iconKey} size={17} />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-extrabold text-gray-900 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-gold transition-colors">
+                    <span className="block truncate text-sm font-bold text-ink transition-colors group-hover:text-accent">
                       {r.course.name}
                     </span>
-                    <span className="mt-0.5 block truncate text-xs text-slate-500">
+                    <span className="mt-0.5 block truncate text-xs text-muted">
                       {r.semesterTitle} · {r.course.code}
                       {r.matchedMateri ? ` — ${r.matchedMateri}` : ''}
                     </span>

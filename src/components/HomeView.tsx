@@ -4,7 +4,6 @@ import { useEffect, useMemo } from 'react';
 import type { Course } from '../types';
 import { CourseIcon } from '../lib/icons';
 import { materialKey, useStudyProgress } from '../hooks/useStudyProgress';
-import MotionBackground from './MotionBackground';
 import Typewriter from './Typewriter';
 import Aks1Logo3D from './Aks1Logo3D';
 
@@ -86,15 +85,14 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
 
   return (
     <>
-      <MotionBackground />
       {/* Hero Section. From 1024px it fills the first screen below the header (min 100svh, so the next section starts
           below the fold) and centres its text 4svh above the middle; 768-1023px starts 34px below the header. */}
-      <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-transparent pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:min-h-0 md:justify-start md:pb-0 md:pt-[calc(var(--page-top)-0.5rem)] lg:min-h-[100svh] lg:justify-center lg:pb-[8svh] lg:pt-[var(--site-header-rest-h)]">
+      <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-bg pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:min-h-0 md:justify-start md:pb-0 md:pt-[calc(var(--page-top)-0.5rem)] lg:min-h-[100svh] lg:justify-center lg:pb-[8svh] lg:pt-[var(--site-header-rest-h)]">
         {/* Logo watermark - positioned right, only in hero */}
         <Aks1Logo3D />
         <div className="mobile-home-hero-content mx-auto w-full max-w-7xl px-5 py-14 sm:py-16 md:px-10 md:pb-20 md:pt-0 lg:px-14 lg:py-0">
           <div className="max-w-3xl">
-            <h1 className="mb-5 text-[2rem] font-bold leading-[1.12] text-gray-900 dark:text-white sm:text-4xl md:mb-6 md:text-5xl md:leading-tight lg:text-6xl">
+            <h1 className="mb-5 text-[2rem] font-bold leading-[1.12] text-gray-900 dark:text-white sm:text-4xl sm:leading-[1.12] md:mb-6 md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
               <span className="block mb-2 md:mb-4">Tingkatkan Pemahaman</span>
               <span className="block min-h-[1.2em] text-blue-600 dark:text-blue-400 sm:inline sm:min-h-0">
                 <Typewriter words={['Akuntansi', 'Bisnis', 'Keuangan', 'Perpajakan']} />
@@ -129,7 +127,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
       </section>
 
       {/* Returning-student study continuation, powered only by existing progress keys. */}
-      <section id="continue-learning" className="relative z-10 border-y border-blue-100/80 bg-gradient-to-r from-blue-50/75 via-white/80 to-indigo-50/70 dark:border-blue-900/40 dark:from-blue-950/30 dark:via-gray-900/75 dark:to-indigo-950/30">
+      <section id="continue-learning" className="relative z-10 border-y border-line bg-surface">
         <div className="mx-auto max-w-7xl px-5 py-6 sm:py-8 md:px-10 md:py-10 lg:px-14">
           <div className="mb-4 flex flex-col gap-2 sm:mb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -147,7 +145,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
                 const percent = Math.round((item.completed / item.total) * 100);
                 return (
                   <article key={item.course.code} className="grid gap-4 border-b border-gray-100 p-4 last:border-b-0 dark:border-gray-800 sm:grid-cols-[auto_minmax(0,1fr)_auto] sm:items-center md:p-5">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-sm shadow-blue-500/20">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white dark:bg-accent dark:text-gray-950">
                       <CourseIcon iconKey={item.course.iconKey} size={19} />
                     </div>
                     <div className="min-w-0">
@@ -159,7 +157,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
                         TM {item.nextTm} · {item.nextTitle}
                       </p>
                       <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-blue-100 dark:bg-gray-700" role="progressbar" aria-label={`Progress ${item.course.name}`} aria-valuemin={0} aria-valuemax={item.total} aria-valuenow={item.completed}>
-                        <div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-[width] duration-500" style={{ width: `${percent}%` }} />
+                        <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${percent}%` }} />
                       </div>
                     </div>
                     <button

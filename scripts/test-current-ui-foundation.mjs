@@ -39,10 +39,20 @@ const tokens = { light: new Map(), dark: new Map() };
 postcss.parse(css).walkRules((rule) => {
   if (rule.selector !== ':root' && rule.selector !== 'html.dark') return;
   const theme = rule.selector === ':root' ? 'light' : 'dark';
-  rule.walkDecls(/^--color-(?:bg-page|text-title|text-main|text-description|text-muted)$/, (declaration) => {
-    tokens[theme].set(declaration.prop, declaration.value.trim().split(/\s+/).map(Number));
+  rule.walkDecls(/^--/, (declaration) => {
+    tokens[theme].set(declaration.prop, declaration.value.trim());
   });
 });
+const resolveTriplet = (theme, name, visited = new Set()) => {
+  if (visited.has(name)) return null;
+  visited.add(name);
+  const raw = tokens[theme].get(name) ?? tokens.light.get(name);
+  if (!raw) return null;
+  const alias = raw.match(/^var\((--[\w-]+)\)$/);
+  if (alias) return resolveTriplet(theme, alias[1], visited);
+  const channels = raw.split(/\s+/).map(Number);
+  return channels.length === 3 && channels.every(Number.isFinite) ? channels : null;
+};
 const luminance = (rgb) => rgb.map((channel) => {
   const value = channel / 255;
   return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
@@ -54,7 +64,7 @@ const contrast = (a, b) => {
 };
 for (const theme of ['light', 'dark']) {
   for (const name of ['title', 'main', 'description', 'muted']) {
-    const ratio = contrast(tokens[theme].get('--color-bg-page'), tokens[theme].get(`--color-text-${name}`));
+    const ratio = contrast(resolveTriplet(theme, '--color-bg-page'), resolveTriplet(theme, `--color-text-${name}`));
     check(ratio >= 4.5, `${theme} ${name} text token contrast is at least 4.5:1 (actual ${ratio.toFixed(2)}:1)`);
   }
 }

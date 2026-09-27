@@ -56,11 +56,11 @@ export default function UpdateNotifier() {
   if (!showModal) return null;
 
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="relative w-full max-w-md bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in zoom-in-95 duration-300">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center bg-gray-950/65 p-4 animate-in fade-in duration-200">
+      <div className="relative w-full max-w-md overflow-hidden rounded-xl border border-line bg-surface shadow-md animate-in fade-in duration-200">
         
         {/* Header dengan efek gradient elegan */}
-        <div className="relative px-6 py-8 overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700">
+        <div className="relative px-6 py-8 overflow-hidden bg-gray-900">
           <div className="absolute top-0 right-0 p-4 opacity-20">
             <Sparkles className="w-24 h-24 text-white" />
           </div>

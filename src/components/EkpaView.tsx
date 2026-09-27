@@ -457,7 +457,7 @@ export default function EkpaView({ course, onBack }: EkpaViewProps) {
             <div className="flex items-center gap-2 text-gold mb-1.5 text-xs font-bold tracking-widest uppercase">
               <Sparkles size={13} /> Modul Premium
             </div>
-            <h2 className="text-xl md:text-2xl font-display font-bold text-slate-100 leading-tight mb-2">
+            <h2 className="text-xl md:text-2xl font-display font-bold text-slate-100 leading-tight md:leading-tight mb-2">
               {course.name}
             </h2>
             <div className="flex flex-wrap items-center gap-2">
@@ -491,7 +491,7 @@ export default function EkpaView({ course, onBack }: EkpaViewProps) {
             
             <div className="h-2 rounded-full bg-navy-900 overflow-hidden mb-4">
               <div 
-                className="h-full bg-gradient-to-r from-gold/70 to-gold transition-all duration-500 rounded-full" 
+                className="h-full bg-accent transition-all duration-200 rounded-full"
                 style={{ width: `${stats.percent}%` }} 
               />
             </div>

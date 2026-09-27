@@ -113,7 +113,7 @@ export default function AkbiManagementReportsView({ reportId, onBack }: AkbiMana
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/10 px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-gold">
               <Sparkles size={14} /> Format laporan praktik
             </div>
-            <h1 className="font-display text-3xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-4xl">
+            <h1 className="font-display text-3xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-4xl md:leading-tight">
               Ruang Laporan Akuntansi Manajemen
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-400 md:text-base">
@@ -262,7 +262,7 @@ export default function AkbiManagementReportsView({ reportId, onBack }: AkbiMana
                       <BookOpen size={18} />
                       <span className="eyebrow">Format aktif</span>
                     </div>
-                    <h2 className="font-display text-2xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-3xl">
+                    <h2 className="font-display text-2xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-3xl md:leading-tight">
                       {selectedReport.title}
                     </h2>
                     <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-slate-400 md:text-[15px]">

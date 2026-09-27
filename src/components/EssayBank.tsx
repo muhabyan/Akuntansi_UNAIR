@@ -23,9 +23,9 @@ const LABEL: Record<string, string> = {
 function DetailList({ title, items, icon }: { title: string; items?: string[]; icon?: ReactNode }) {
   if (!items || items.length === 0) return null;
   return (
-    <div className="rounded-2xl border border-navy-600 bg-navy-900/52 p-4">
-      <p className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-gold">{icon} {title}</p>
-      <ul className="list-disc space-y-1.5 pl-5 text-sm leading-7 text-slate-300">
+    <div className="rounded-2xl border border-line bg-surface/52 p-4">
+      <p className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-accent">{icon} {title}</p>
+      <ul className="list-disc space-y-1.5 pl-5 text-sm leading-7 text-secondary">
         {items.map((item, idx) => (
           <li key={idx}>{item}</li>
         ))}
@@ -74,30 +74,30 @@ export default function EssayBank({ items, title = 'Bank Soal Esai & Kasus' }: {
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
               <div className="eyebrow mb-2">Bank Soal Praktik</div>
-              <h3 className="flex items-center gap-3 font-display text-2xl font-black text-slate-100 md:text-3xl"><PenLine className="text-gold" /> {title}</h3>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-400">Kerjakan sebagai latihan praktik: susun laporan, jurnal, schedule/worksheet, tabel perhitungan, dan analisis sesuai instruksi. Buka panduan setelah mencoba menyusun jawaban sendiri.</p>
+              <h3 className="flex items-center gap-3 font-display text-2xl font-black text-ink md:text-3xl"><PenLine className="text-accent" /> {title}</h3>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-muted">Kerjakan sebagai latihan praktik: susun laporan, jurnal, schedule/worksheet, tabel perhitungan, dan analisis sesuai instruksi. Buka panduan setelah mencoba menyusun jawaban sendiri.</p>
             </div>
-            <div className="rounded-2xl border border-navy-500/70 bg-navy-950/38 p-4 text-sm">
-              <div className="flex justify-between gap-8"><span className="text-slate-500">Total soal</span><span className="font-black text-slate-100">{items.length}</span></div>
-              <div className="mt-1 flex justify-between gap-8"><span className="text-slate-500">Tampil</span><span className="font-black text-gold">{filtered.length}</span></div>
+            <div className="rounded-2xl border border-line/70 bg-surface/38 p-4 text-sm">
+              <div className="flex justify-between gap-8"><span className="text-muted">Total soal</span><span className="font-black text-ink">{items.length}</span></div>
+              <div className="mt-1 flex justify-between gap-8"><span className="text-muted">Tampil</span><span className="font-black text-accent">{filtered.length}</span></div>
             </div>
           </div>
         </div>
 
-        <div className="grid gap-3 border-t border-navy-500/65 p-4 md:grid-cols-[1fr_auto] md:p-5">
+        <div className="grid gap-3 border-t border-line/65 p-4 md:grid-cols-[1fr_auto] md:p-5">
           <label className="relative block">
-            <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
+            <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-muted" />
             <input
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Cari topik, laporan, jurnal, worksheet, FIFO..."
-              className="w-full rounded-2xl border border-navy-500 bg-navy-950 px-10 py-3 text-sm text-slate-100 outline-none focus:border-gold"
+              className="w-full rounded-2xl border border-line bg-surface px-10 py-3 text-sm text-ink outline-none focus:border-accent"
             />
           </label>
           <div className="flex flex-wrap gap-2">
-            <button onClick={() => setTypeFilter('all')} className={`rounded-2xl border px-3 py-2 text-xs font-black ${typeFilter === 'all' ? 'border-gold bg-gold text-navy-950' : 'border-navy-500 bg-navy-850 text-slate-300 hover:border-gold/50'}`}>Semua</button>
+            <button onClick={() => setTypeFilter('all')} className={`rounded-2xl border px-3 py-2 text-xs font-black ${typeFilter === 'all' ? 'border-gray-900 bg-gray-900 text-white' : 'border-line bg-elevated text-secondary hover:border-accent/50'}`}>Semua</button>
             {types.map((type) => (
-              <button key={type} onClick={() => setTypeFilter(type)} className={`rounded-2xl border px-3 py-2 text-xs font-black ${typeFilter === type ? 'border-gold bg-gold text-navy-950' : 'border-navy-500 bg-navy-850 text-slate-300 hover:border-gold/50'}`}>{LABEL[type] ?? type}</button>
+              <button key={type} onClick={() => setTypeFilter(type)} className={`rounded-2xl border px-3 py-2 text-xs font-black ${typeFilter === type ? 'border-gray-900 bg-gray-900 text-white' : 'border-line bg-elevated text-secondary hover:border-accent/50'}`}>{LABEL[type] ?? type}</button>
             ))}
           </div>
         </div>
@@ -105,36 +105,36 @@ export default function EssayBank({ items, title = 'Bank Soal Esai & Kasus' }: {
 
       <div className="space-y-3.5">
         {filtered.map(({ item: b, index: originalIndex }, visibleIndex) => (
-          <div key={originalIndex} className="essay-question-card overflow-hidden rounded-[1.35rem] border border-navy-500 bg-navy-800/78 shadow-sm">
-            <button onClick={() => setOpen((prev) => ({ ...prev, [originalIndex]: !prev[originalIndex] }))} className="w-full p-4 text-left transition-colors hover:bg-navy-700/45 md:p-5">
+          <div key={originalIndex} className="essay-question-card overflow-hidden rounded-[1.35rem] border border-line bg-surface/78 shadow-sm">
+            <button onClick={() => setOpen((prev) => ({ ...prev, [originalIndex]: !prev[originalIndex] }))} className="w-full p-4 text-left transition-colors hover:bg-elevated/45 md:p-5">
               <div className="flex items-start gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 text-sm font-black text-gold">{visibleIndex + 1}</span>
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-accent/25 bg-accent/10 text-sm font-black text-accent">{visibleIndex + 1}</span>
                 <div className="min-w-0 flex-1">
                   <div className="mb-2 flex flex-wrap gap-2 text-[11px]">
-                    <span className="rounded-full border border-gold/20 bg-gold/10 px-2.5 py-1 font-black uppercase tracking-[0.14em] text-gold">{LABEL[b.type] ?? b.type}</span>
-                    {b.scope && <span className="inline-flex items-center gap-1 rounded-full border border-navy-500 px-2.5 py-1 text-slate-400"><Target size={12} /> {b.scope}</span>}
-                    {b.difficulty && <span className="rounded-full border border-navy-500 px-2.5 py-1 text-slate-400">{b.difficulty}</span>}
-                    {b.estimatedTime && <span className="inline-flex items-center gap-1 rounded-full border border-navy-500 px-2.5 py-1 text-slate-400"><Clock size={12} /> {b.estimatedTime}</span>}
+                    <span className="rounded-full border border-accent/20 bg-accent/10 px-2.5 py-1 font-black uppercase tracking-[0.14em] text-accent">{LABEL[b.type] ?? b.type}</span>
+                    {b.scope && <span className="inline-flex items-center gap-1 rounded-full border border-line px-2.5 py-1 text-muted"><Target size={12} /> {b.scope}</span>}
+                    {b.difficulty && <span className="rounded-full border border-line px-2.5 py-1 text-muted">{b.difficulty}</span>}
+                    {b.estimatedTime && <span className="inline-flex items-center gap-1 rounded-full border border-line px-2.5 py-1 text-muted"><Clock size={12} /> {b.estimatedTime}</span>}
                   </div>
-                  <span className="block text-sm font-semibold leading-7 text-slate-100 md:text-[15px]">{b.question}</span>
+                  <span className="block text-sm font-semibold leading-7 text-ink md:text-[15px]">{b.question}</span>
                 </div>
-                <ChevronRight size={18} className={`mt-1 shrink-0 text-slate-500 transition-transform ${open[originalIndex] ? 'rotate-90' : ''}`} />
+                <ChevronRight size={18} className={`mt-1 shrink-0 text-muted transition-transform ${open[originalIndex] ? 'rotate-90' : ''}`} />
               </div>
             </button>
 
             {open[originalIndex] && (
-              <div className="space-y-3 border-t border-navy-500/65 px-4 pb-4 pt-4 md:px-5 md:pb-5">
+              <div className="space-y-3 border-t border-line/65 px-4 pb-4 pt-4 md:px-5 md:pb-5">
                 {b.context && (
-                  <div className="rounded-2xl border border-navy-600 bg-navy-900/52 p-4 text-sm leading-7 text-slate-300">
-                    <span className="font-black text-gold">Konteks: </span>{b.context}
+                  <div className="rounded-2xl border border-line bg-surface/52 p-4 text-sm leading-7 text-secondary">
+                    <span className="font-black text-accent">Konteks: </span>{b.context}
                   </div>
                 )}
                 <DetailList title="Data Kasus" items={b.data} icon={<FileText size={14} />} />
                 <DetailList title="Instruksi Pengerjaan" items={b.instructions} icon={<Target size={14} />} />
                 <DetailList title="Format Jawaban yang Diminta" items={b.outputFormat} icon={<FileText size={14} />} />
                 <DetailList title="Rubrik Ringkas" items={b.rubric} icon={<ListChecksIcon />} />
-                <div className="rounded-2xl border border-gold/22 bg-gold/10 p-4 text-sm leading-7 text-slate-300">
-                  <span className="font-black text-gold">Panduan jawaban: </span>{b.answerGuide}
+                <div className="rounded-2xl border border-accent/22 bg-accent/10 p-4 text-sm leading-7 text-secondary">
+                  <span className="font-black text-accent">Panduan jawaban: </span>{b.answerGuide}
                 </div>
               </div>
             )}
@@ -143,10 +143,10 @@ export default function EssayBank({ items, title = 'Bank Soal Esai & Kasus' }: {
       </div>
 
       {filtered.length === 0 && (
-        <div className="learning-card p-8 text-center text-sm text-slate-500">Tidak ada soal yang cocok dengan filter saat ini.</div>
+        <div className="learning-card p-8 text-center text-sm text-muted">Tidak ada soal yang cocok dengan filter saat ini.</div>
       )}
 
-      <p className="mt-4 rounded-2xl border border-navy-500/70 bg-navy-900/35 px-4 py-3 text-xs leading-6 text-slate-500">Panduan jawaban bersifat kerangka pembanding. Untuk jawaban esai, susunan laporan, langkah hitung, dan alasan klasifikasi tetap harus ditulis lengkap.</p>
+      <p className="mt-4 rounded-2xl border border-line/70 bg-surface/35 px-4 py-3 text-xs leading-6 text-muted">Panduan jawaban bersifat kerangka pembanding. Untuk jawaban esai, susunan laporan, langkah hitung, dan alasan klasifikasi tetap harus ditulis lengkap.</p>
     </div>
   );
 }

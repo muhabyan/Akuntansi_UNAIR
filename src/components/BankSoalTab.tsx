@@ -16,8 +16,8 @@ export default function BankSoalTab({ course }: { course: Course }) {
 
     return (
       <div className="space-y-12">
-        <div className="rounded-2xl border border-gold/20 bg-gold/10 p-4 text-sm leading-7 text-slate-300">
-          <p className="font-bold text-gold">{course.code === 'AKM201' ? 'Bank Soal AKBI khusus esai praktik.' : course.code === 'AKK201' ? 'Bank Soal AKM I berbasis praktik financial accounting.' : 'Bank Soal Perpajakan I Pra-UAS.'}</p>
+        <div className="rounded-lg border border-line border-l-[3px] border-l-accent bg-surface p-4 text-sm leading-7 text-secondary">
+          <p className="font-bold text-ink">{course.code === 'AKM201' ? 'Bank Soal AKBI khusus esai praktik.' : course.code === 'AKK201' ? 'Bank Soal AKM I berbasis praktik financial accounting.' : 'Bank Soal Perpajakan I Pra-UAS.'}</p>
           <p>{course.code === 'PJK201' ? 'Paket bank soal disusun dari materi kompilasi TM 8-14. Simulator UAS terpisah mengadaptasi pola latihan kating, tetapi substansi, angka, dan kuncinya telah diselaraskan dengan materi serta regulasi aktif.' : 'Bagian ini dipisah menjadi UTS untuk TM 1-7 dan UAS untuk TM 8-14. Fokusnya laporan, jurnal, schedule, hitungan, dan kasus; latihan ringkas interaktif berada di tab Kuis Interaktif.'}</p>
         </div>
         {sets.map((set) => (

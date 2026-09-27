@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { 
   BookOpen, Calendar, Target, BrainCircuit, Bot, MessageSquare, 
   Clock, Coffee, GraduationCap, Sparkles, Zap, Shield, ArrowRight, ArrowUp, Maximize
@@ -7,26 +7,8 @@ import { useAuth } from '../contexts/AuthContext';
 
 // Reusable Intersection Observer Wrapper
 function GuideSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('opacity-0', 'translate-y-8');
-            entry.target.classList.add('opacity-100', 'translate-y-0');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div ref={ref} className={`opacity-0 translate-y-8 transition-all duration-700 ease-out ${className}`}>
+    <div className={className}>
       {children}
     </div>
   );
@@ -89,7 +71,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/30 transition-all duration-300 ${
+        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary text-white shadow-sm transition-[opacity,transform] duration-200 motion-reduce:transition-none ${
           showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
         }`}
         aria-label="Kembali ke Atas"
@@ -100,13 +82,13 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
       {/* 1. Hero Section */}
       <section className="relative px-6 pb-14 pt-20 md:pt-[var(--page-top-gap)] lg:px-8">
         <div className="absolute inset-0 bg-blue-600/5 dark:bg-blue-500/5 -skew-y-3 origin-top-left -z-10" />
-        <div className="max-w-5xl mx-auto text-center relative z-10 animate-in fade-in slide-in-from-bottom-8 duration-700">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 font-medium text-sm mb-6 border border-blue-200 dark:border-blue-800">
             <Sparkles className="w-4 h-4" /> Panduan AkuntansiHub
           </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-5 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-5 leading-tight md:leading-tight">
             Gunakan Setiap Fitur <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
+            <span className="text-accent">
               dengan Lebih Terarah
             </span>
           </h1>
@@ -114,7 +96,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
             Kenali cara membaca materi, menyusun jadwal, berlatih dengan flashcard dan kuis, serta memakai alat bantu belajar saat dibutuhkan.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <button onClick={handleStartLearning} className="btn-primary px-8 py-3 rounded-xl shadow-lg shadow-blue-500/25 flex items-center gap-2 hover:scale-105 transition-transform">
+            <button onClick={handleStartLearning} className="btn-primary px-8 py-3 rounded-xl flex items-center gap-2">
               <GraduationCap className="w-5 h-5" /> Mulai Belajar Sekarang
             </button>
           </div>
@@ -126,10 +108,10 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
         {/* 2. Materi Bacaan */}
         <GuideSection>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex items-center justify-center group">
-              <div className="absolute inset-0 bg-slate-200/50 dark:bg-slate-700/25 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:[mask-image:linear-gradient(0deg,black,rgba(0,0,0,0.6))]" />
+            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-surface border border-line overflow-hidden flex items-center justify-center group">
+              <div className="absolute inset-0 bg-elevated/50" />
               {/* Animasi Buku Mockup */}
-              <div className="relative w-48 h-64 bg-white dark:bg-slate-800 rounded-lg shadow-xl shadow-slate-900/10 dark:shadow-black/25 border border-gray-200 dark:border-slate-700 p-4 transform transition-all duration-700 group-hover:scale-105 group-hover:rotate-2">
+              <div className="relative w-48 h-64 bg-surface rounded-lg shadow-sm border border-line p-4">
                 <div className="w-full h-4 bg-indigo-100 dark:bg-indigo-900/50 rounded mb-3" />
                 <div className="w-3/4 h-3 bg-gray-200 dark:bg-slate-700 rounded mb-6" />
                 <div className="space-y-2">
@@ -137,7 +119,7 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
                   <div className="w-full h-2 bg-gray-200 dark:bg-slate-700 rounded" />
                   <div className="w-5/6 h-2 bg-gray-200 dark:bg-slate-700 rounded" />
                 </div>
-                <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center animate-bounce">
+                <div className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-accent flex items-center justify-center">
                   <ArrowRight className="w-4 h-4 text-white" />
                 </div>
               </div>
@@ -182,11 +164,11 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
                 </li>
               </ul>
             </div>
-            <div className="relative h-72 rounded-2xl bg-gradient-to-bl from-emerald-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex flex-col items-center justify-center p-6 group">
+            <div className="relative h-72 rounded-2xl bg-surface border border-line overflow-hidden flex flex-col items-center justify-center p-6 group">
               {/* Mockup Schedule Cards */}
-              <div className="flex gap-4 w-full justify-center transform transition-transform duration-700 group-hover:-translate-x-4">
+              <div className="flex gap-4 w-full justify-center">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className={`w-40 h-32 rounded-xl bg-white dark:bg-slate-800 shadow-md border border-gray-200 dark:border-slate-700 p-4 flex flex-col ${i === 3 ? 'opacity-50' : ''} transition-transform hover:-translate-y-2`}>
+                  <div key={i} className={`w-40 h-32 rounded-xl bg-surface shadow-sm border border-line p-4 flex flex-col ${i === 3 ? 'opacity-50' : ''}`}>
                     <div className="w-12 h-4 rounded bg-emerald-100 dark:bg-emerald-900/50 mb-3" />
                     <div className="w-full h-3 rounded bg-gray-200 dark:bg-slate-700 mb-2" />
                     <div className="w-2/3 h-3 rounded bg-gray-200 dark:bg-slate-700 mt-auto" />
@@ -200,16 +182,16 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
         {/* 4. Evaluasi & Review */}
         <GuideSection>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-gradient-to-tr from-rose-50 to-orange-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex items-center justify-center group [perspective:1000px]">
-              {/* Mockup Flashcard Flipping */}
-              <div className="relative w-56 h-40 transition-transform duration-1000 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer">
+            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-surface border border-line overflow-hidden flex items-center justify-center">
+              {/* Mockup Flashcard */}
+              <div className="relative w-56 h-40">
                 {/* Front */}
-                <div className="absolute inset-0 [backface-visibility:hidden] bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 flex flex-col items-center justify-center text-center">
+                <div className="absolute inset-0 bg-surface rounded-xl shadow-sm border border-line p-6 flex flex-col items-center justify-center text-center">
                   <BrainCircuit className="w-8 h-8 text-orange-500 mb-3" />
                   <div className="font-bold text-slate-800 dark:text-white">Apa itu Akrual?</div>
                 </div>
                 {/* Back */}
-                <div className="absolute inset-0 [backface-visibility:hidden] bg-orange-50 dark:bg-orange-900/20 rounded-xl shadow-lg border border-orange-200 dark:border-orange-800 p-6 flex flex-col items-center justify-center text-center [transform:rotateY(180deg)]">
+                <div className="sr-only">
                   <div className="text-sm font-medium text-orange-800 dark:text-orange-200">
                     Pencatatan pendapatan dan beban saat terjadi, bukan saat kas diterima/dibayar.
                   </div>
@@ -268,13 +250,13 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
                 </li>
               </ul>
             </div>
-            <div className="relative h-72 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex flex-col p-6 group">
+            <div className="relative h-72 rounded-2xl bg-surface border border-line overflow-hidden flex flex-col p-6 group">
               {/* Mockup Chat */}
               <div className="flex-1 overflow-hidden space-y-4 pt-4">
-                <div className="bg-blue-500 text-white p-3 rounded-2xl rounded-tr-sm self-end max-w-[80%] ml-auto text-xs font-medium shadow-sm transform transition-all translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 duration-500 delay-100">
+                <div className="bg-accent text-white p-3 rounded-2xl rounded-tr-sm self-end max-w-[80%] ml-auto text-xs font-medium shadow-sm">
                   Kenapa saldo normal kas ada di debit?
                 </div>
-                <div className="bg-white dark:bg-slate-700 text-slate-800 dark:text-slate-200 p-3 rounded-2xl rounded-tl-sm self-start max-w-[80%] text-xs font-medium shadow-sm transform transition-all -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 duration-500 delay-500">
+                <div className="bg-surface text-ink p-3 rounded-2xl rounded-tl-sm self-start max-w-[80%] text-xs font-medium shadow-sm">
                   Berdasarkan persamaan dasar akuntansi (Aset = Liabilitas + Ekuitas), Kas adalah bagian dari Aset. Peningkatan pada Aset dicatat di sisi Debit.
                 </div>
               </div>
@@ -286,11 +268,11 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
         {/* 6. Produktivitas */}
         <GuideSection>
           <div className="grid md:grid-cols-2 gap-10 items-center">
-            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-gradient-to-bl from-teal-50 to-blue-50 dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg shadow-slate-900/5 dark:shadow-black/20 overflow-hidden flex items-center justify-center group">
+            <div className="order-2 md:order-1 relative h-72 rounded-2xl bg-surface border border-line overflow-hidden flex items-center justify-center group">
               {/* Mockup Pomodoro */}
-              <div className="relative w-48 h-48 rounded-full border-8 border-teal-100 dark:border-teal-900 flex items-center justify-center bg-white dark:bg-slate-800 shadow-inner group-hover:border-teal-400 dark:group-hover:border-teal-500 transition-colors duration-1000">
+              <div className="relative w-48 h-48 rounded-full border-8 border-line flex items-center justify-center bg-surface">
                 <div className="text-4xl font-black text-slate-800 dark:text-white tracking-tighter">25:00</div>
-                <div className="absolute top-4 w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+                <div className="absolute top-4 w-2 h-2 rounded-full bg-success" />
               </div>
             </div>
             <div className="order-1 md:order-2">
@@ -328,17 +310,14 @@ export default function GuideView({ onHome }: { onHome: () => void }) {
         
         {/* 7. Global Chat */}
         <GuideSection>
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-blue-900 dark:to-indigo-950 rounded-2xl p-8 md:p-10 text-center text-white relative overflow-hidden shadow-xl shadow-blue-950/20 mb-12">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-            
-            <div className="relative z-10 max-w-2xl mx-auto">
+          <div className="bg-gray-900 rounded-2xl p-8 md:p-10 text-center text-white mb-12">
+            <div className="max-w-2xl mx-auto">
               <MessageSquare className="w-12 h-12 mx-auto mb-6 opacity-90" />
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Ruang Diskusi Global</h2>
               <p className="text-blue-100 text-lg mb-8 leading-relaxed">
                 Kamu tidak belajar sendirian. Tanyakan materi yang sulit, diskusikan tugas, atau sekadar menyapa mahasiswa lain di Global Chat interaktif yang selalu aktif 24/7.
               </p>
-              <button onClick={handleJoinCommunity} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-50 transition-colors">
+              <button onClick={handleJoinCommunity} className="bg-white text-blue-600 font-bold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors duration-200 motion-reduce:transition-none">
                 {user ? "Mulai Diskusi Sekarang" : "Login untuk Gabung Komunitas"}
               </button>
             </div>

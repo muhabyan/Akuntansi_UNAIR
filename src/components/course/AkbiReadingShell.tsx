@@ -296,7 +296,7 @@ export default function AkbiReadingShell({ course, reading, done, isFirst, isLas
 
           <header className="mb-12">
             <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-3">{`TM ${reading.tm} · ${phaseLabel}${reading.ref ? ` · ${reading.ref}` : ''}`}</p>
-            <h1 id="reading-title" className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white leading-tight mb-6" tabIndex={-1}>{reading.title}</h1>
+            <h1 id="reading-title" className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white leading-tight md:leading-tight lg:leading-tight mb-6" tabIndex={-1}>{reading.title}</h1>
             <div className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-blue-500 pl-4">{reading.intro}</div>
           </header>
 

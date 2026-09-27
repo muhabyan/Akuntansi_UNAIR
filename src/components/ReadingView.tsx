@@ -139,7 +139,7 @@ function SolutionRevealBlock({ block }: { block: Extract<ContentBlock, { kind: '
             <ClipboardCheck size={13} /> Kasus Praktik Terapan
           </span>
         </div>
-        <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white leading-snug">{block.title}</h3>
+        <h3 className="text-base md:text-lg font-bold text-gray-900 dark:text-white leading-snug md:leading-snug">{block.title}</h3>
         {block.prompt && (
           <div className="mt-3 text-[15px] leading-relaxed text-gray-700 dark:text-gray-300 whitespace-pre-line bg-gray-50/80 dark:bg-gray-900/60 p-4 rounded-xl border border-gray-200/70 dark:border-gray-800 w-full">
             {renderText(block.prompt)}
@@ -182,7 +182,7 @@ function Block({ block }: { block: ContentBlock }) {
       const tone = inferTone(block.text);
       return (
         <div className="mt-8 mb-4">
-          <h3 className={`text-lg md:text-xl font-bold text-gray-900 dark:text-white pl-3.5 border-l-4 ${TONE_STYLE[tone].accent} leading-snug`}>{block.text}</h3>
+          <h3 className={`text-lg md:text-xl font-bold text-gray-900 dark:text-white pl-3.5 border-l-4 ${TONE_STYLE[tone].accent} leading-snug md:leading-snug`}>{block.text}</h3>
         </div>
       );
     }

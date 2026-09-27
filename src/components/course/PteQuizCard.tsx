@@ -8,8 +8,8 @@ export default function PteQuizCard({ course }: { course: Course }) {
     <div className="animate-fade-in-up">
       <Suspense
         fallback={
-          <div className="course-card-glass rounded-[1.5rem] py-12 text-center text-slate-500">
-            <div className="mx-auto mb-3 h-6 w-6 animate-spin rounded-full border-2 border-navy-500 border-t-gold" />
+          <div className="rounded-lg border border-line bg-surface py-12 text-center text-muted">
+            <div className="mx-auto mb-3 h-6 w-6 animate-spin rounded-full border-2 border-line border-t-accent" />
             Memuat simulator PTE...
           </div>
         }

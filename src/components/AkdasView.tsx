@@ -181,7 +181,7 @@ function MeetingDetail({ m, onBack, onPrev, onNext }: {
         <span className="px-2 py-0.5 rounded bg-navy-700 border border-navy-500 text-gold font-bold">TM {m.meeting}</span>
         {m.references.map((r, i) => <Pill key={i}>{r}</Pill>)}
       </div>
-      <h1 className="text-2xl md:text-3xl font-display font-extrabold text-slate-100 leading-tight">{m.title}</h1>
+      <h1 className="text-2xl md:text-3xl font-display font-extrabold text-slate-100 leading-tight md:leading-tight">{m.title}</h1>
       <p className="text-slate-400 mt-2">{m.topicGroup}</p>
 
       <SectionHeader>Tujuan Pembelajaran</SectionHeader>
@@ -324,7 +324,7 @@ export default function AkdasView({ course, onBack }: { course: Course; onBack: 
             <button onClick={onBack} className="flex items-center gap-2 text-slate-400 hover:text-gold transition-colors mb-4 font-medium text-sm">
               <ArrowLeft size={16} /> Kembali
             </button>
-            <h2 className="text-xl md:text-2xl font-display font-bold text-slate-100 leading-tight mb-2">{course.name}</h2>
+            <h2 className="text-xl md:text-2xl font-display font-bold text-slate-100 leading-tight md:leading-tight mb-2">{course.name}</h2>
             <div className="flex flex-wrap items-center gap-2">
               <span className="text-xs font-bold text-slate-500 bg-navy-900 px-2 py-1 rounded-md border border-navy-600">{course.code}</span>
               <span className="text-xs text-gold font-medium">{course.sks} SKS</span>

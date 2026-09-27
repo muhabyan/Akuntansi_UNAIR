@@ -14,8 +14,8 @@ export default function QuizCard({ course, selectedSetId, onSelectedSetIdChange 
     <div className="animate-fade-in-up">
       <Suspense
         fallback={
-          <div className="course-card-glass rounded-[1.5rem] py-12 text-center text-slate-500">
-            <div className="w-6 h-6 mx-auto rounded-full border-2 border-navy-500 border-t-gold animate-spin mb-3" />
+          <div className="rounded-lg border border-line bg-surface py-12 text-center text-muted">
+            <div className="mx-auto mb-3 h-6 w-6 animate-spin rounded-full border-2 border-line border-t-accent" />
             Memuat kuis...
           </div>
         }

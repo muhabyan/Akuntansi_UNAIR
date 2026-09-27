@@ -97,7 +97,7 @@ export default function PteBankSoalTab() {
   return (
     <div className="space-y-6">
       <section className="overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 shadow-sm">
-        <div className="bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-900/20 dark:to-gray-900 px-5 py-5 md:px-6 md:py-6">
+        <div className="bg-surface px-5 py-5 md:px-6 md:py-6">
           <div className="flex flex-wrap items-start justify-between gap-5">
             <div className="max-w-3xl">
               <div className="mb-2 text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Bank Soal TM 1–14</div>
