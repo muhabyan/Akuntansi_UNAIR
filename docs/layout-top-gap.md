@@ -56,7 +56,7 @@ From 768 px every page starts at `--page-top` = resting header height (`--site-h
 
 | Page | 390 | 1280 | 1918 |
 | --- | --- | --- | --- |
-| Home | 72 → 72 | 63 → 32 | 145 → 32 |
+| Home (768–1023 only; from 1024 see below) | 72 → 72 | 63 → 32 | 145 → 32 |
 | Semester | 80 → 80 | 79 → 39 | 79 → 39 |
 | Course, Kuis, Bank Soal, Flashcard, legacy course | 80 → 80 | 75 → 39 | 75 → 39 |
 | Reading, layered and PJK301 (to the Daftar Isi bar) | 54 → 54 | 6 → 34 | 6 → 34 |
@@ -67,3 +67,12 @@ Numbers are to the letters of a text link (39 = 34 px line top + the font's own 
 edge of a box. Sticky bars and `#` jumps now use the live header height (`--site-header-h`, published by `Navbar.tsx`);
 no Daftar Isi jump lands under the header or the bar at 390–1918 px, and Zen mode starts below "Keluar Zen".
 Screenshots: https://claude.ai/artifact/CzTHK8uXf8HrQi4E8aTKnF (private to the owner until shared).
+
+### Home from 1024 px (follow-up)
+
+From 1024 px the home hero fills the first screen instead: it starts at the top of the page with the header's resting
+height as padding (`--site-header-rest-h`, 70 px or 120 px, equal to the measured header at every width checked) and is at
+least `100svh` tall, so "Lanjutkan belajar" starts at the fold. The text is centred with `8svh` of extra bottom padding,
+which puts it 4svh (31–40 px) above the middle of the space below the header. Phones and 768–1023 px are unchanged.
+Measured: hero bottom = window bottom and next section at the fold at 1024×768, 1100×800, 1279×800, 1280×800, 1440×900,
+1918×1000 and 1280×600.

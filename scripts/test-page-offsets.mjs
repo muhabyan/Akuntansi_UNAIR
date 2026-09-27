@@ -3,7 +3,8 @@
 //    popstate, which App and CourseLayout read as Back. Renders the real CourseLayout (AKA201 layered, PJK301) in jsdom,
 //    once without the handler (the page must close, or this test no longer sees the bug) and once with it.
 // 2. Source guard: tablet/desktop offsets follow the header height (CSS variables) instead of fixed numbers, and the
-//    "Keluar Zen" button is portalled so "fixed" is relative to the window.
+//    "Keluar Zen" button is portalled so "fixed" is relative to the window. The home hero is the exception: from 1024px
+//    it fills the first screen below the header instead of starting 34px below it.
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
@@ -30,6 +31,18 @@ check(/--page-top: calc\(var\(--site-header-rest-h\) \+ var\(--page-top-gap\)\)/
 check(/scroll-padding-top: calc\(var\(--site-header-h\) \+ 1\.5rem\)/.test(css), 'index.css: # jumps land below the live header height');
 check(!/\.zen-mode-active main \{/.test(css), 'Zen mode no longer pads every <main> (it pulled the reading above the window)');
 check(css.includes('.zen-mode-active .reading-shell { margin-top: 0 !important; }'), 'Zen mode drops the reading wrapper pull');
+// Home hero: phones keep 82svh, 768-1023px starts at --page-top - 0.5rem, from 1024px it fills the window below the
+// header (so "Lanjutkan belajar" starts below the fold) with the text centred slightly above the middle.
+const home = read('src/components/HomeView.tsx');
+const heroMatch = home.match(/<section className="([^"]*)">\s*(?:\{\/\*[^]*?\*\/\}\s*)?<Aks1Logo3D \/>/);
+const hero = new Set((heroMatch?.[1] ?? '').split(/\s+/));
+const heroContent = new Set((home.match(/className="(mobile-home-hero-content[^"]*)"/)?.[1] ?? '').split(/\s+/));
+check(Boolean(heroMatch), 'Home hero section with the decorative logo is found');
+check(['min-h-[82svh]', 'justify-center', 'pt-[calc(4.25rem+env(safe-area-inset-top))]'].every((c) => hero.has(c)), 'Home hero on phones is unchanged (82svh, centred)');
+check(['md:min-h-0', 'md:justify-start', 'md:pt-[calc(var(--page-top)-0.5rem)]'].every((c) => hero.has(c)), 'Home hero at 768-1023px keeps the PR #28 page-top offset');
+check(hero.has('lg:min-h-[100svh]') && hero.has('lg:pt-[var(--site-header-rest-h)]'), 'Home hero from 1024px fills the viewport: header height + the rest of the window (100svh)');
+check(hero.has('lg:justify-center') && hero.has('lg:pb-[8svh]') && heroContent.has('lg:py-0'), 'Home hero text from 1024px is centred, 4svh above the middle');
+check(!hero.has('lg:pt-[var(--page-top)]'), 'Home hero from 1024px no longer uses the 34px page-top rule');
 const navbar = read('src/components/Navbar.tsx');
 check(navbar.includes("setProperty('--site-header-h'") && navbar.includes("box: 'border-box'"), 'Navbar publishes its live border-box height');
 const layout = read('src/components/course/CourseLayout.tsx');
