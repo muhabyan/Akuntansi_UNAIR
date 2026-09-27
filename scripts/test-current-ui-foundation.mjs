@@ -25,7 +25,7 @@ check(css.includes('.ux-v2-skip-link:focus-visible'), 'Skip link becomes visible
 check(app.includes('isQuietThemeControl={true}') && navbar.includes("variant={isQuietThemeControl ? 'quiet' : 'legacy'}"), 'Quiet theme control is wired');
 check(themeSwitch.includes('className="ux-v2-theme-toggle"') && css.includes('.ux-v2-theme-toggle'), 'Active stylesheet styles the theme control');
 check(navbar.includes('className="stage9-mobile-toggle lg:hidden"') && navbar.includes('aria-expanded={mobileOpen}') && css.includes('.stage9-mobile-panel'), 'Mobile menu has state and active styles');
-check(navbar.includes('AkuntansiHub<span'), 'Current navbar renders the site brand');
+check(navbar.includes("import { LogoMark, Wordmark } from './brand/AkuntansiHubLogo';") && navbar.includes('<LogoMark ') && navbar.includes('<Wordmark ') && navbar.includes('<span className="sr-only">AkuntansiHub</span>'), 'Current navbar renders the site brand');
 check(sidebar.includes('role="progressbar"') && sidebar.includes('aria-valuenow={percent}') && sidebar.includes('style={{ width: `${percent}%` }}'), 'Course progress uses an accessible bar with dynamic width');
 check(app.includes('<CourseLayout course={selectedCourse}') && app.includes('<CourseDetailView'), 'Course route chooses the registered layout');
 check(['AKK202', 'PJK301', 'SII306', 'MNK201'].every((code) => app.includes(`'${code}'`)), 'All four UTS courses use the active course layout');
