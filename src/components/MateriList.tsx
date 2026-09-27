@@ -51,7 +51,7 @@ export default function MateriList({ course, range, onOpenReading }: MateriListP
             <span>Progress</span><span className="text-blue-600 dark:text-blue-400">{percent}%</span>
           </div>
           <div className="h-1.5 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700" role="progressbar" aria-label={`Progress TM ${start} sampai ${end}`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={percent}>
-            <div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-500 transition-[width] duration-500" style={{ width: `${percent}%` }} />
+            <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${percent}%` }} />
           </div>
         </div>
       </div>

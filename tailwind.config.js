@@ -5,6 +5,27 @@ export default {
   theme: {
     extend: {
       colors: {
+        gray: { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' },
+        blue: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
+        indigo: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
+        sky: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
+        cyan: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
+        zinc: { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' },
+        neutral: { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' },
+        bg: 'rgb(var(--bg) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        elevated: 'rgb(var(--surface-elevated) / <alpha-value>)',
+        ink: 'rgb(var(--text-primary) / <alpha-value>)',
+        secondary: 'rgb(var(--text-secondary) / <alpha-value>)',
+        muted: 'rgb(var(--text-muted) / <alpha-value>)',
+        line: 'rgb(var(--border) / <alpha-value>)',
+        'line-strong': 'rgb(var(--border-strong) / <alpha-value>)',
+        primary: 'rgb(var(--primary) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        success: 'rgb(var(--success) / <alpha-value>)',
+        warning: 'rgb(var(--warning) / <alpha-value>)',
+        danger: 'rgb(var(--danger) / <alpha-value>)',
+        focus: 'rgb(var(--focus) / <alpha-value>)',
         // ── Semantic surfaces — driven by CSS variables (RGB triplets) ──
         // Using `<alpha-value>` enables proper opacity modifier support:
         //   bg-navy-900/50  →  rgb(var(--color-bg-page) / 0.5)

@@ -474,7 +474,7 @@ function UniversalCourseDashboard({
   if (nextTm === null) return null;
 
   return (
-    <section className="relative mb-6 overflow-hidden rounded-xl border border-blue-100 bg-gradient-to-r from-blue-50/90 via-white to-indigo-50/70 px-5 py-5 dark:border-blue-900/45 dark:from-blue-950/35 dark:via-gray-900 dark:to-indigo-950/25 md:flex md:items-center md:justify-between md:gap-6 md:px-6" aria-labelledby="course-next-step-title">
+    <section className="relative mb-6 overflow-hidden rounded-xl border border-line bg-surface px-5 py-5 md:flex md:items-center md:justify-between md:gap-6 md:px-6" aria-labelledby="course-next-step-title">
       <div className="pointer-events-none absolute -right-10 -top-16 h-36 w-36 rounded-full bg-blue-400/10 blur-2xl" />
       <div className="relative min-w-0">
         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">
@@ -489,7 +489,7 @@ function UniversalCourseDashboard({
             : `${completedCount} dari ${totalCount} materi sudah selesai.`}
         </p>
       </div>
-      <button type="button" onClick={onStart} className="relative mt-4 inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 text-sm font-bold text-white shadow-sm shadow-blue-600/20 transition hover:bg-blue-700 md:mt-0 md:w-auto">
+      <button type="button" onClick={onStart} className="relative mt-4 inline-flex min-h-11 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-[#182632] px-5 text-sm font-bold text-white shadow-sm transition hover:bg-[#263b4d] dark:bg-accent dark:text-gray-950 dark:hover:bg-blue-300 md:mt-0 md:w-auto">
         <PlayCircle size={18} /> {isComplete ? `Tinjau TM ${nextTm}` : `Lanjut TM ${nextTm}`}
       </button>
     </section>

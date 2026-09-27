@@ -4,47 +4,62 @@
 
 @layer base {
   :root {
-    /* Coursera-like Clean Professional Palette */
-    --color-bg-page: 255 255 255;
-    --color-bg-footer: 249 250 251;
-    --color-bg-panel: 255 255 255;
-    --color-bg-card: 255 255 255;
-    --color-bg-accent: 243 244 246;
-    
-    --color-border: 229 231 235;
-    --color-border-hover: 209 213 219;
-
-    --color-text-title: 17 24 39;
-    --color-text-main: 55 65 81;
-    --color-text-description: 75 85 99;
-    --color-text-muted: 107 114 128;
-
-    /* Primary Blue */
-    --color-gold: 37 99 235; /* blue-600 */
-    --color-gold-light: 59 130 246; /* blue-500 */
-    --color-gold-dark: 29 78 216; /* blue-700 */
+    --bg: 247 245 240;
+    --surface: 255 255 255;
+    --surface-elevated: 247 245 240;
+    --text-primary: 24 38 50;
+    --text-secondary: 62 74 85;
+    --text-muted: 95 90 82;
+    --border: 226 221 211;
+    --border-strong: 140 131 118;
+    --primary: 24 38 50;
+    --accent: 47 111 115;
+    --success: 46 107 69;
+    --warning: 138 90 0;
+    --danger: 168 50 42;
+    --focus: 47 111 115;
+    --logo-primary: #182632;
+    --logo-support: #CEC2B2;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --shadow-sm: 0 2px 8px rgb(24 38 50 / 0.05);
+    --shadow-md: 0 10px 28px rgb(24 38 50 / 0.08);
+    --color-bg-page: var(--bg);
+    --color-bg-footer: var(--surface);
+    --color-bg-panel: var(--surface);
+    --color-bg-card: var(--surface);
+    --color-bg-accent: var(--surface-elevated);
+    --color-border: var(--border);
+    --color-border-hover: var(--border-strong);
+    --color-text-title: var(--text-primary);
+    --color-text-main: var(--text-primary);
+    --color-text-description: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-gold: var(--accent);
+    --color-gold-light: var(--accent);
+    --color-gold-dark: var(--accent);
   }
 
   html.dark {
-    /* Clean Dark Mode (No Heavy Blue/Navy Tints) */
-    --color-bg-page: 17 24 39;
-    --color-bg-footer: 31 41 55;
-    --color-bg-panel: 31 41 55;
-    --color-bg-card: 31 41 55;
-    --color-bg-accent: 55 65 81;
-    
-    --color-border: 55 65 81;
-    --color-border-hover: 75 85 99;
-
-    --color-text-title: 249 250 251;
-    --color-text-main: 229 231 235;
-    --color-text-description: 209 213 219;
-    --color-text-muted: 156 163 175;
-
-    /* Primary Blue for dark mode */
-    --color-gold: 96 165 250; /* blue-400 */
-    --color-gold-light: 147 197 253; /* blue-300 */
-    --color-gold-dark: 59 130 246; /* blue-500 */
+    --bg: 20 25 31;
+    --surface: 27 34 42;
+    --surface-elevated: 34 43 52;
+    --text-primary: 237 232 223;
+    --text-secondary: 201 194 182;
+    --text-muted: 163 155 142;
+    --border: 46 56 66;
+    --border-strong: 102 114 126;
+    --primary: 237 232 223;
+    --accent: 127 184 180;
+    --success: 124 196 154;
+    --warning: 224 178 92;
+    --danger: 240 138 128;
+    --focus: 127 184 180;
+    --logo-primary: #F2EEE6;
+    --logo-support: #A89A87;
+    --shadow-sm: 0 2px 8px rgb(0 0 0 / 0.15);
+    --shadow-md: 0 10px 28px rgb(0 0 0 / 0.22);
   }
 
   /* Fixed site header (Navbar.tsx). --site-header-rest-h is its height before the page is scrolled: 53-54px on phones,
@@ -81,14 +96,18 @@
   }
 
   body {
-    @apply text-slate-800 font-sans antialiased;
+    @apply font-sans antialiased;
     min-height: 100vh;
-    background-color: rgb(var(--color-bg-page));
+    color: rgb(var(--text-primary));
+    background-color: rgb(var(--bg));
   }
   
   html.dark body {
-    @apply text-slate-200;
+    color: rgb(var(--text-primary));
   }
+
+  a { color: rgb(var(--accent)); }
+  input, textarea, select { border-color: rgb(var(--border-strong)); }
 
   /* Reset some basic elements */
   ::selection {
@@ -103,11 +122,16 @@
 @layer components {
   /* Replace glass-panel with a clean card */
   .glass-panel, .soft-card, .akbi-report-menu-panel {
-    @apply bg-white border border-gray-200 shadow-sm rounded-xl;
+    border: 1px solid rgb(var(--border));
+    border-radius: var(--radius-md);
+    background: rgb(var(--surface));
+    box-shadow: var(--shadow-sm);
   }
   
   html.dark .glass-panel, html.dark .soft-card, html.dark .akbi-report-menu-panel {
-    @apply bg-gray-800 border-gray-700 shadow-md;
+    border-color: rgb(var(--border));
+    background: rgb(var(--surface));
+    box-shadow: var(--shadow-md);
   }
 
   .eyebrow {
@@ -119,19 +143,31 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-2.5 font-medium text-white shadow-sm hover:bg-blue-700 transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 font-medium transition-colors;
+    background: #182632;
+    color: #fff;
+    box-shadow: var(--shadow-sm);
   }
+  .btn-primary:hover { background: #263b4d; }
   
   html.dark .btn-primary {
-    @apply bg-blue-500 hover:bg-blue-600;
+    background: #7FB8B4;
+    color: #14191F;
   }
+  html.dark .btn-primary:hover { background: #9ACBC6; }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-5 py-2.5 font-medium text-gray-700 hover:bg-gray-50 transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-2.5 font-medium transition-colors;
+    border-color: rgb(var(--accent));
+    background: rgb(var(--surface));
+    color: rgb(var(--accent));
   }
+  .btn-secondary:hover { background: rgb(var(--surface-elevated)); }
   
   html.dark .btn-secondary {
-    @apply border-gray-600 bg-gray-800 text-gray-200 hover:bg-gray-700;
+    border-color: rgb(var(--accent));
+    background: rgb(var(--surface));
+    color: rgb(var(--accent));
   }
 
   /* Live navigation primitives. These intentionally live in the active
@@ -156,7 +192,7 @@
     left: 0.625rem;
     height: 2px;
     border-radius: 999px;
-    background: rgb(37 99 235);
+    background: rgb(var(--accent));
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 160ms ease;
@@ -226,7 +262,7 @@
   }
 
   :where(button, a, input, select, textarea):focus-visible {
-    outline: 2px solid rgb(59 130 246 / 0.9);
+    outline: 2px solid rgb(var(--focus));
     outline-offset: 2px;
   }
 }
@@ -1091,7 +1127,7 @@ html.dark table tbody tr:nth-child(odd) {
   background-color: transparent;
 }
 html.dark table td {
-  color: #e2e8f0;
+  color: rgb(var(--text-primary));
 }
 
 
@@ -1124,10 +1160,54 @@ html.dark table td {
    renderText gives its <p> a gray-700 class, so the rule also reaches the paragraphs inside a marked element. */
 .reading-layout--shared-frame .reading-ink,
 .reading-layout--shared-frame .reading-ink :is(p, li) {
-  color: #111827; /* gray-900: 17.7:1 on white */
+  color: #111827;
 }
 
 html.dark .reading-layout--shared-frame .reading-ink,
 html.dark .reading-layout--shared-frame .reading-ink :is(p, li) {
-  color: #f3f4f6; /* gray-100: 16:1 on gray-900 */
+  color: #f3f4f6;
+}
+
+/* Brand override follows the legacy reading-frame contract above. */
+.reading-layout--shared-frame .reading-ink,
+.reading-layout--shared-frame .reading-ink :is(p, li),
+html.dark .reading-layout--shared-frame .reading-ink,
+html.dark .reading-layout--shared-frame .reading-ink :is(p, li) {
+  color: rgb(var(--text-primary));
+}
+
+/* Phase 1 reading foundation; content and navigation remain intact. */
+.reading-layout > article {
+  min-width: 0;
+  border: 1px solid rgb(var(--border));
+  border-radius: var(--radius-lg);
+  background: rgb(var(--surface));
+  box-shadow: var(--shadow-sm);
+  padding: clamp(1rem, 3vw, 2rem);
+}
+.reading-document {
+  color: rgb(var(--text-primary));
+  font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.075rem;
+  line-height: 1.7;
+}
+.reading-document :is(p, ul, ol) { max-width: 72ch; }
+.reading-document p { margin-block: 0 1.15em; line-height: 1.7; }
+.reading-document :is(h2, h3, h4) { font-family: Sora, ui-sans-serif, system-ui, sans-serif; color: rgb(var(--text-primary)); }
+.reading-document h2 { margin-top: 2.3em; margin-bottom: .7em; }
+.reading-document h3 { margin-top: 1.8em; margin-bottom: .6em; }
+.reading-document :is(ul, ol) { margin-block: 1em 1.35em; padding-left: 1.4em; }
+.reading-document li { padding-left: .15em; margin-block: .35em; line-height: 1.7; }
+.reading-document .akbi-table-scroll { max-width: 100%; overflow-x: auto; }
+.reading-document table { font-variant-numeric: tabular-nums; }
+.reading-document :is(th, td) { padding: .55em .75em; }
+.reading-document thead th { position: sticky; top: 0; background: rgb(var(--surface-elevated)); }
+.reading-layout .course-callout-surface {
+  border: 1px solid rgb(var(--border));
+  border-left: 3px solid rgb(var(--accent));
+  background: rgb(var(--surface));
+}
+@media (max-width: 767px) {
+  .reading-layout > article { padding: 1rem; }
+  .reading-document { font-size: 1.025rem; line-height: 1.7; }
 }

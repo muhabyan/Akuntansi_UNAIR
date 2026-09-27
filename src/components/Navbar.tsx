@@ -154,8 +154,8 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
   return (
     <nav
       ref={navRef}
-      className={`fixed top-0 z-[90] w-full border-b border-gray-200 pt-[env(safe-area-inset-top)] transition-all duration-300 dark:border-gray-800 ${
-        isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm py-2' : 'bg-white dark:bg-gray-900 py-2 md:py-3'
+      className={`fixed top-0 z-[90] w-full border-b border-line bg-surface pt-[env(safe-area-inset-top)] transition-all duration-300 ${
+        isScrolled ? 'shadow-sm py-2' : 'py-2 md:py-3'
       }`}
     >
       <div className="nav-menu-container mx-auto w-full max-w-[90rem] px-3 sm:px-5 lg:px-6 xl:px-8">
@@ -224,7 +224,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
                       <span className="truncate max-w-[100px]">{user.user_metadata?.nickname || user.email?.split('@')[0]}</span>
                     </button>
                   ) : (
-                    <button onClick={signIn} className="text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-1.5 rounded-full transition shadow-sm">
+                    <button onClick={signIn} className="text-sm font-semibold text-white bg-[#182632] hover:bg-[#263b4d] dark:bg-accent dark:text-gray-950 dark:hover:bg-blue-300 px-4 py-1.5 rounded-full transition shadow-sm">
                       Masuk
                     </button>
                   )
@@ -283,7 +283,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
                     <span className="truncate">{user.user_metadata?.nickname || user.email}</span>
                   </button>
                 ) : (
-                  <button onClick={() => { signIn(); setMobileOpen(false); }} className="w-full text-center text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition shadow-sm">
+                  <button onClick={() => { signIn(); setMobileOpen(false); }} className="w-full text-center text-sm font-semibold text-white bg-[#182632] hover:bg-[#263b4d] dark:bg-accent dark:text-gray-950 dark:hover:bg-blue-300 px-4 py-2 rounded-lg transition shadow-sm">
                     Masuk / Daftar
                   </button>
                 )
