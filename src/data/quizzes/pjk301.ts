@@ -15,22 +15,22 @@ const uts = (tm: number, difficulty: 'basic' | 'medium' | 'advanced', q: string,
   ({ tm, topic: UTS_TOPICS[tm], difficulty, q, options, answer, explanation });
 
 export const PJK301_QUIZ_UTS: QuizQuestion[] = [
-  // TM01 — objek, biaya 3M, natura, zakat, dan tarif orang pribadi.
-  uts(1, 'medium', 'WP dalam negeri menerima laba usaha dari Indonesia dan penghasilan dari cabang luar negeri. Penghasilan mana yang masuk cakupan PPh Indonesia?',
-    ['Hanya laba usaha dari Indonesia', 'Keduanya, karena asas worldwide income', 'Hanya penghasilan cabang luar negeri', 'Tidak satu pun sampai laba dibagikan'],
-    1, 'Pasal 4 ayat (1) dan asas worldwide income dalam TM01 mencakup tambahan kemampuan ekonomis WP dalam negeri dari Indonesia maupun luar negeri.'),
+  // TM01 — SPDN, kewajiban subjektif, biaya 3M, natura, dan dividen lintas aturan.
+  uts(1, 'medium', 'WNA tinggal di Indonesia dan berniat menetap meskipun belum melewati 183 hari dalam 12 bulan. Bagaimana menguji status subjek pajaknya?',
+    ['Pasti SPLN karena bukan WNI', 'Pasti SPLN sebelum lewat 183 hari', 'Dapat menjadi SPDN karena tempat tinggal atau niat menetap merupakan kriteria alternatif', 'Selalu bukan subjek pajak'],
+    2, 'SPDN menurut Pasal 2 ayat (3) UU PPh memakai kriteria alternatif: tempat tinggal, keberadaan lebih dari 183 hari dalam 12 bulan, atau berada di Indonesia dalam tahun pajak dan berniat bertempat tinggal. Kewarganegaraan bukan penentu tunggal.'),
   uts(1, 'medium', 'Perusahaan mencatat biaya operasional dan pengeluaran suap sebagai beban komersial. Perlakuan fiskal yang tepat?',
     ['Keduanya biaya 3M', 'Suap menjadi pengurang bila ada bukti bayar', 'Biaya operasional terkait 3M dapat dikurangkan; suap dikoreksi positif', 'Keduanya merupakan objek PPh final'],
     2, 'Biaya untuk mendapatkan, menagih, dan memelihara penghasilan dapat dikurangkan menurut Pasal 6; pengeluaran suap dilarang sebagai biaya oleh Pasal 20A PP 20/2026.'),
   uts(1, 'advanced', 'PT BA memberi kupon makan dinas luar Rp110.000 per bulan; nilai makan di kantor Rp100.000. Berapa bagian kupon yang menjadi objek PPh 21 pegawai?',
     ['Rp0', 'Rp10.000', 'Rp100.000', 'Rp110.000'],
     1, 'Pengecualian kupon dibatasi nilai makan kantor. Selisih Rp110.000 dikurangi Rp100.000, yaitu Rp10.000, menjadi objek PPh 21; biaya kupon tetap deductible bagi pemberi kerja.'),
-  uts(1, 'medium', 'Zakat sah melalui BAZNAS Rp20.000.000 disertai bukti transfer; penghasilan neto fiskal sebelum zakat Rp15.000.000. Berapa zakat yang dapat dikurangkan?',
-    ['Rp0', 'Rp5.000.000', 'Rp15.000.000', 'Rp20.000.000'],
-    2, 'PMK 114/2025 melarang zakat menimbulkan rugi fiskal. Pengurangan maksimal Rp15.000.000 sampai laba menjadi nol; kelebihan Rp5.000.000 hangus.'),
-  uts(1, 'advanced', 'Tuan F berstatus K/2 mempunyai PKP Rp397.500.000 setelah semua pengurang. Berapa PPh orang pribadi terutang menurut lapisan UU HPP?',
-    ['Rp36.875.000', 'Rp68.375.000', 'Rp99.375.000', 'Rp124.000.000'],
-    1, 'PPh = 5% × Rp60.000.000 + 15% × Rp190.000.000 + 25% × Rp147.500.000 = Rp68.375.000; PKP belum mencapai lapisan berikutnya.'),
+  uts(1, 'medium', 'Kapan kewajiban pajak subjektif suatu badan dalam negeri mulai menurut Pasal 2A UU PPh?',
+    ['Saat didirikan atau bertempat kedudukan di Indonesia', 'Hanya setelah omzet pertama diterima', 'Hanya setelah berdiri selama 183 hari', 'Saat direktur berkewarganegaraan Indonesia'],
+    0, 'Pasal 2A ayat (2) menetapkan titik awal badan dalam negeri ketika badan didirikan atau bertempat kedudukan di Indonesia. Titik awal warisan, BUT, dan SPLN tanpa BUT berbeda, sehingga jenis subjek harus dikenali dulu.'),
+  uts(1, 'advanced', 'PT dalam negeri menerima dividen dari PT Indonesia dengan kepemilikan saham di bawah 25%. Perlakuan manakah yang tepat bila soal membandingkan tahun 2020 sebelum Cipta Kerja dengan tahun 2025?',
+    ['Kedua tahun selalu bukan objek tanpa syarat', 'Tahun 2020 tetap dapat dikenai PPh karena syarat kepemilikan lama tidak terpenuhi; tahun 2025 dividen DN bagi badan DN bukan objek tanpa syarat saham', 'Tahun 2025 wajib investasi tiga tahun seperti OP', 'Kedua tahun selalu PPh final 10%'],
+    1, 'Sebelum perubahan, pengecualian dividen PT/BUMN/BUMD dalam negeri mensyaratkan paling rendah 25% modal disetor dan cadangan laba ditahan. Sejak UU Cipta Kerja jo. UU HPP, dividen dalam negeri bagi badan dalam negeri bukan objek tanpa syarat persentase saham.'),
 
   // TM02 — harga pasar, persediaan, NPPN, rugi, dan fasilitas badan.
   uts(2, 'medium', 'Dalam barter harta PT A dan PT B, masing-masing harta bernilai pasar Rp20.000.000; nilai buku harta PT A Rp10.000.000 dan PT B Rp12.000.000. Berapa keuntungan fiskal masing-masing?',
@@ -83,22 +83,22 @@ export const PJK301_QUIZ_UTS: QuizQuestion[] = [
     ['Koreksi fiskal positif sebesar selisih', 'Koreksi fiskal negatif sebesar selisih', 'Tidak ada koreksi karena nilai residu komersial selalu diakui fiskal', 'Seluruh harga perolehan langsung menjadi biaya'],
     0, 'Selisih beban komersial yang melebihi beban fiskal harus ditambahkan kembali sebagai koreksi positif. TM04 membedakan dasar, masa manfaat, dan awal susut komersial versus fiskal.'),
 
-  // TM05 — pungut, potong, ambang, dan UMKM mutakhir.
+  // TM05 — impor, ambang pemungut, pengecualian, dan PPh 23.
   uts(5, 'advanced', 'PT Dynaplast mengimpor dengan API: CIF USD 1.200, bea masuk 10%, kurs KMK Rp14.500 per USD 1. Berapa PPh 22 impor barang umum?',
     ['Rp350.000', 'Rp478.500', 'Rp1.435.500', 'Rp19.140.000'],
     1, 'Nilai impor = USD 1.320 × Rp14.500 = Rp19.140.000. Tarif impor umum ber-API 2,5%, jadi PPh 22 = Rp478.500 dan bersifat tidak final.'),
-  uts(5, 'medium', 'Instansi pemerintah membeli barang dalam satu transaksi tepat Rp2.000.000, tidak dipecah. Apa perlakuan PPh 22?',
-    ['Dipungut 1,5% atas seluruh harga', 'Dipungut 3% karena ambang terlampaui', 'Dibebaskan karena nilai tidak melebihi batas Rp2.000.000', 'Dipotong PPh 23 sebesar 2%'],
-    2, 'TM05 menyatakan belanja pemerintah sampai dengan Rp2.000.000 yang tidak dipecah bebas PPh 22; pemungutan 1,5% berlaku jika nilai di atas batas.'),
+  uts(5, 'medium', 'Instansi pemerintah membeli barang Rp1.750.000 dan pemungut BUMN membeli barang Rp5.000.000; keduanya satu transaksi, di luar PPN, dan tidak dipecah. Perlakuan PPh 22?',
+    ['Keduanya dipungut 1,5%', 'Hanya pembelian BUMN dipungut', 'Keduanya tidak dipungut karena masing-masing di bawah ambang pemungutnya', 'Hanya belanja pemerintah dipungut'],
+    2, 'PMK 51/2025 Pasal 4 memberi ambang paling banyak Rp2.000.000 bagi instansi pemerintah dan Rp10.000.000 bagi badan usaha tertentu. Rp1.750.000 dan Rp5.000.000 memenuhi batas masing-masing; transaksi yang dipecah tidak mendapat pengecualian.'),
   uts(5, 'advanced', 'PT Dynaplast membayar royalti paten Rp100.000.000 kepada PT Polimer Inovasi yang ber-NPWP. Berapa PPh 23 yang dipotong?',
     ['Rp2.000.000', 'Rp10.000.000', 'Rp15.000.000', 'Rp20.000.000'],
     2, 'Royalti kepada WP dalam negeri dikenai PPh 23 sebesar 15% dari jumlah bruto; 15% × Rp100.000.000 = Rp15.000.000.'),
-  uts(5, 'medium', 'Rekanan penerima jasa yang tidak ber-NPWP seharusnya terkena tarif PPh 23 normal 2%. Tarif pemotongannya menjadi berapa?',
-    ['0,5%', '2%', '3%', '4%'],
-    3, 'TM05 menyebut tarif PPh 23 tanpa NPWP naik 100% dari tarif normal; tarif 2% menjadi 4%.'),
-  uts(5, 'advanced', 'Omzet kumulatif Tuan Bambang sampai Mei Rp400.000.000 dan omzet Juni Rp150.000.000. Berapa PPh final UMKM Juni menurut PP 20/2026?',
-    ['Rp0', 'Rp250.000', 'Rp750.000', 'Rp2.750.000'],
-    1, 'Khusus WP orang pribadi, Rp500.000.000 omzet kumulatif pertama bebas PPh. Bagian kena pajak Juni Rp50.000.000 × 0,5% = Rp250.000.'),
+  uts(5, 'medium', 'Bendahara instansi pemerintah membayar pembelian BBM dan benda pos. Apa perlakuan PPh 22 atas pembayaran tersebut menurut PMK 51/2025?',
+    ['Selalu dipungut 1,5% tanpa melihat objek', 'Tidak dipungut atas pembelian tersebut; aturan PPh 22 produsen/importir BBM adalah mekanisme terpisah', 'Dipungut PPh 23 sebesar 2%', 'Bebas hanya jika pemasok tidak ber-NPWP'],
+    1, 'PMK 51/2025 Pasal 4 mengecualikan pembayaran pembelian BBM, bahan bakar gas, pelumas, benda pos, serta pemakaian air dan listrik. PPh 22 atas penjualan BBM oleh produsen/importir merupakan objek pemungutan tersendiri.'),
+  uts(5, 'advanced', 'PT menyewa mesin dan membayar cleaning service kepada badan dalam negeri, serta menyewa gedung. Klasifikasi pemotongan yang benar?',
+    ['Semuanya PPh 23 sebesar 2%', 'Mesin dan cleaning service PPh 23 sebesar 2%; gedung PPh final Pasal 4 ayat (2) sebesar 10%', 'Semuanya PPh 23 sebesar 15%', 'Gedung PPh 26 dan mesin PPh final'],
+    1, 'Sewa mesin termasuk penggunaan harta selain tanah/bangunan, dan cleaning service termasuk jasa lain Pasal 23: keduanya bertarif 2%. Sewa gedung termasuk sewa tanah/bangunan yang dikenai PPh final Pasal 4 ayat (2) 10% bruto.'),
 
   // TM06 — klasifikasi final, sewa, konstruksi, PHTB, Pasal 15.
   uts(6, 'medium', 'Perusahaan memperoleh penghasilan yang telah dikenai PPh final dan mengeluarkan biaya khusus untuk memperolehnya. Perlakuan SPT tahunan yang tepat?',

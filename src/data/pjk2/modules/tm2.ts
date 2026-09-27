@@ -439,7 +439,7 @@ PPh_{\\text{Badan 31E}} = (11\\% \\times PKP_{\\text{fasilitas}}) + [22\\% \\tim
         ['ET-004', 'Menggunakan metode LIFO untuk menghitung persediaan dan Beban Pokok Penjualan fiskal.', 'Metode LIFO DILARANG KERAS secara fiskal di Indonesia. Wajib dikoreksi fiskal ke metode FIFO atau Average.', 'Pasal 10 ayat (6) UU PPh'],
         ['ET-005', 'Menghitung NPPN padahal tidak menyampaikan surat pemberitahuan dalam 3 bulan pertama.', 'Jika tidak lapor atau terlambat lapor setelah 31 Maret, Wajib Pajak otomatis DIANGGAP MEMILIH PEMBUKUAN.', 'Pasal 14 (2) UU PPh; Pasal 448 PMK 81/2024'],
         ['ET-006', 'Melakukan kompensasi sisa rugi fiskal pada tahun ke-6.', 'Kompensasi rugi fiskal dibatasi MAKSIMAL 5 TAHUN berturut-turut. Sisa rugi pada akhir tahun ke-5 langsung HANGUS.', 'Pasal 6 ayat (2) UU PPh'],
-        ['ET-007', 'Menyebut hasil perhitungan tarif Pasal 17 pada PKP tahunan Wajib Pajak Orang Pribadi sebagai "PPh 21".', 'Hasil perhitungan adalah PPh Terutang Wajib Pajak Orang Pribadi Tahunan, bukan pemotongan PPh 21 bulanan pegawai.', 'Pasal 17 ayat (1) huruf a UU HPP']
+        ['ET-007', 'Menyamakan omzet dan PKP ketika menguji NPPN atau fasilitas Pasal 31E.', 'Omzet adalah peredaran bruto untuk uji kelayakan; PKP adalah hasil penghitungan fiskal yang dikenai tarif. NPPN hanya bagi OP yang memenuhi syarat Pasal 14, bukan semua WP beromzet kecil.', 'Pasal 14 dan Pasal 31E UU PPh']
       ],
       caption: 'Tabel 2.4: Matriks jebakan ujian dan analisis perlakuan fiskal yang benar.'
     },

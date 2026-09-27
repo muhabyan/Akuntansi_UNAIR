@@ -32,7 +32,7 @@ const OVERVIEW_WITHHOLDING_SYSTEM = {
       "subtitle": "Objek: Jasa, Modal, & Royalti",
       "items": [
         "Tarif 2%: Jasa teknik, manajemen, konsultan, sewa harta (non-tanah)",
-        "Tarif 15%: Bunga pinjaman, royalti, hadiah undian badan usaha",
+        "Tarif 15%: Bunga tertentu, royalti, hadiah/penghargaan non-undian yang memenuhi Pasal 23",
         "Dividen Badan DN: Non-Objek"
       ],
       "takeaway": "Pemotongan Penghasilan Modal/Jasa"
@@ -112,17 +112,33 @@ export const TM5_READING: Reading = {
         ['10', 'Badan Usaha Industri Semen', 'Penjualan Semen di Dalam Negeri', 'DPP PPN (Harga Jual)', '0,25%', 'Tidak Final', 'Penjualan kepada distributor.'],
         ['11', 'Badan Usaha Industri Kertas', 'Penjualan Kertas di Dalam Negeri', 'DPP PPN (Harga Jual)', '0,1%', 'Tidak Final', 'Penjualan kepada distributor.'],
         ['12', 'Badan Usaha Industri Baja', 'Penjualan Baja di Dalam Negeri', 'DPP PPN (Harga Jual)', '0,3%', 'Tidak Final', 'Penjualan kepada distributor.'],
-        ['13', 'Badan Usaha Industri Otomotif', 'Penjualan Kendaraan Bermotor Roda 4 atau Lebih', 'DPP PPN (Harga Jual)', '0,45%', 'Tidak Final', 'Penjualan kepada dealer/distributor.'],
+        ['13', 'Badan Usaha Industri Otomotif', 'Penjualan Kendaraan Bermotor Roda 2 atau Lebih (selain alat berat)', 'Harga Jual (non-PPN)', '0,45%', 'Tidak Final', 'Penjualan kepada dealer/distributor.'],
         ['14', 'Badan Usaha Industri Farmasi', 'Penjualan Obat-Obatan di Dalam Negeri', 'DPP PPN (Harga Jual)', '0,3%', 'Tidak Final', 'Penjualan kepada distributor.'],
-        ['15', 'Produsen / Importir BBM & Gas', 'Penjualan BBM ke SPBU Swasta Non-Pertamina', 'Nilai Penjualan (non-PPN)', '0,25%', 'FINAL', 'Membebaskan SPT Tahunan atas laba BBM agen.'],
+        ['15', 'Produsen / Importir BBM & Gas', 'Penjualan BBM ke SPBU yang membeli dari Pertamina/anak usahanya', 'Nilai Penjualan (non-PPN)', '0,25%', 'FINAL bagi penyalur/agen', 'SPBU yang membeli dari pemasok selain Pertamina/anak usahanya dikenai 0,3%; sifatnya tetap final bagi penyalur/agen.'],
         ['16', 'Produsen / Importir BBM & Gas', 'Penjualan BBM ke Pabrik / Industri Manufaktur', 'Nilai Penjualan (non-PPN)', '0,3%', 'Tidak Final', 'Dapat dikreditkan di SPT Tahunan pembeli.'],
         ['17', 'Produsen / Importir BBM & Gas', 'Penjualan Pelumas', 'Nilai Penjualan (non-PPN)', '0,3%', 'Tidak Final', 'Berlaku bagi seluruh segmen pembeli.'],
         ['18', 'Industri Pengolah Hasil Alam', 'Pembelian Bahan Hasil Perkebunan, Pertanian, Perikanan', 'Harga Pembelian (non-PPN)', '0,25%', 'Tidak Final', 'Dibeli dari pedagang pengumpul.'],
         ['19', 'Badan Usaha Pembeli Tambang', 'Pembelian Batubara dan Mineral dari Pemegang IUP', 'Harga Pembelian (non-PPN)', '1,5%', 'Tidak Final', 'Dibeli dari pemilik izin tambang.'],
-        ['20', 'Penyelenggara PMSE Terdaftar', 'Transaksi Penjualan Aset Kripto (PMK 68/2022)', 'Nilai Transaksi Kripto', '0,1%', 'FINAL', 'Jika exchange tidak terdaftar: tarif 0,2%.'],
+        ['20', 'Pedagang Aset Keuangan Digital', 'Penjualan Aset Kripto sejak 1 Agustus 2025 (PMK 50/2025)', 'Nilai Transaksi Kripto', '0,21%', 'FINAL', 'Tarif 0,1% pada contoh PMK 68/2022 adalah aturan historis; identifikasi tahun transaksi.'],
         ['21', 'Mitra Pengadaan SIPLah / LPSE', 'Pembelian Barang Pengadaan Sekolah Elektronik', 'Harga Belanja (non-PPN)', '0,5%', 'Tidak Final', 'PMK 58/2022 jo. PMK 81/2024.'],
         ['22', 'Penjual WP Badan', 'Penjualan Barang Sangat Mewah (Supercar, Rumah Mewah)', 'Harga Jual (non-PPN/PPnBM)', '5%', 'Tidak Final', 'Mobil > Rp2 Miliar / cc > 3.000; Rumah > Rp30 Miliar.'],
       ],
+    },
+    {
+      kind: 'table',
+      caption: 'Tabel 5.1a: PPh Pasal 22 yang tidak dipungut atas pembelian/pembayaran tertentu (PMK 51/2025 Pasal 4).',
+      headers: ['Pemungut / transaksi', 'Batas atau pengecualian', 'Cara membaca soal'],
+      rows: [
+        ['Instansi pemerintah (Pasal 2 ayat (1) huruf b)', 'Pembayaran paling banyak Rp2.000.000, tidak termasuk PPN dan tidak dipecah dari transaksi yang sebenarnya melebihi batas', 'Belanja barang Rp1.750.000 dalam satu transaksi: tidak dipungut PPh 22.'],
+        ['BUMN/badan usaha tertentu (Pasal 2 ayat (1) huruf c)', 'Pembayaran paling banyak Rp10.000.000, tidak termasuk PPN dan tidak dipecah dari transaksi yang sebenarnya melebihi batas', 'Pembelian barang Rp5.000.000 oleh pemungut kategori ini: tidak dipungut PPh 22.'],
+        ['Pembelian BBM, bahan bakar gas, pelumas, benda pos; pemakaian air dan listrik', 'Tidak dipungut PPh 22 atas pembayaran/pembelian ini menurut Pasal 4 ayat (1) huruf e', 'Pengecualian belanja pemungut tidak menghapus PPh 22 tersendiri atas penjualan BBM/gas/pelumas oleh produsen atau importir.']
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Exam Trap: Ambang Rp2 Juta vs Rp10 Juta',
+      text: 'Rp2.000.000 dan Rp10.000.000 bukan ambang universal PPh 22: pilih ambang menurut siapa pemungutnya. Kedua batas dihitung tanpa PPN dan tidak boleh berasal dari pemecahan satu transaksi yang nilai sebenarnya melampaui batas. Perhatikan Tahun Transaksi: ambang pemerintah Rp2 juta dan BUMN/badan usaha tertentu Rp10 juta juga digunakan pada pola soal 2020/2023 menurut aturan PPh 22 saat itu (PMK 34/2017 sebagaimana diubah), sedangkan PMK 51/2025 berlaku sejak 1 Agustus 2025. Pastikan pemungut dan aturan pada tanggal soal.'
     },
     {
       kind: 'callout',
@@ -166,13 +182,19 @@ export const TM5_READING: Reading = {
       caption: 'Tabel 5.2: Matriks Objek, Tarif, dan Dasar Pemotongan PPh Pasal 23',
       headers: ['Jenis Penghasilan', 'Tarif', 'Dasar Pemotongan', 'Ketentuan Khusus & Pembebasan'],
       rows: [
-        ['Dividen', '0% / 10% / 15%', 'Jumlah Bruto', 'Badan DN: BUKAN OBJEK (Pasal 4 ayat 3 huruf f UU PPh). Orang Pribadi DN: PPh Final 10% (bebas jika reinvestasi di NKRI min 3 tahun). Non-kualifikasi dipotong 15%.'],
+        ['Dividen (uji tahun dan penerima)', '15% hanya untuk objek PPh 23 historis', 'Jumlah Bruto', 'Sejak UU Cipta Kerja, dividen DN bagi badan DN bukan objek; bagi OP DN bukan objek jika investasi memenuhi syarat, jika tidak PPh final 10%; bagi WPLN uji PPh 26/P3B. Sebelum perubahan, dividen badan DN yang tidak memenuhi pengecualian lama dapat dipotong PPh 23 15%.'],
         ['Bunga (Pinjaman selain Bank)', '15%', 'Jumlah Bruto', 'Bunga pinjaman antar-perusahaan, bunga obligasi non-bursa, dan diskonto pinjaman.'],
         ['Royalti', '15%', 'Jumlah Bruto', 'Imbalan atas penggunaan hak cipta, paten, merek dagang, formula, atau lisensi teknologi.'],
-        ['Hadiah, Penghargaan, Bonus', '15%', 'Jumlah Bruto', 'Hadiah perlombaan atau penghargaan kepada badan usaha (selain yang dipotong PPh 21).'],
+        ['Hadiah, Penghargaan, Bonus selain undian', '15%', 'Jumlah Bruto', 'Hadiah/penghargaan/bonus yang termasuk Pasal 23 dan belum dipotong PPh 21; hadiah undian justru PPh final Pasal 4 ayat (2) 25%.'],
         ['Sewa Harta (selain Tanah/Bangunan)', '2%', 'Jumlah Bruto', 'Sewa kendaraan, mesin pabrik, alat berat, dan peralatan kantor. (Sewa tanah/bangunan objek PPh Final 4(2) 10%).'],
-        ['Jasa Teknik, Manajemen, Konsultan, & Jasa Lain', '2%', 'Jumlah Bruto (non-PPN & non-material)', 'Diatur dalam PMK 141/2015 mencakup 62 jenis jasa lain (jasa katering, kebersihan, keamanan, akuntansi, hukum, TI).'],
+        ['Jasa Teknik, Manajemen, Konsultan, & Jasa Lain', '2%', 'Jumlah Bruto sesuai ketentuan (di luar PPN)', 'PMK 141/2015 mencakup jasa kebersihan/cleaning service, keamanan, akuntansi, hukum, TI, dan jasa lain yang memenuhi cakupan Pasal 23; periksa pemisahan tagihan material sesuai syarat dokumen.'],
       ],
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Exam Trap: PPh 23 Bukan Hadiah Undian dan Bukan Sewa Gedung',
+      text: 'PPh 23 tarif 15% berlaku untuk bunga tertentu, royalti, serta hadiah/penghargaan/bonus yang memang termasuk Pasal 23; hadiah undian adalah PPh final Pasal 4 ayat (2) sebesar 25% bruto. Tarif 2% berlaku untuk sewa harta selain tanah/bangunan dan jasa teknik, manajemen, konsultan, serta jasa lain seperti cleaning service. Sewa tanah/bangunan dikenai PPh final Pasal 4 ayat (2) 10% bruto, sedangkan sewa bus, kendaraan, mesin, atau peralatan masuk PPh 23 2%. Penerima luar negeri non-BUT diuji menurut PPh 26/P3B, bukan otomatis PPh 23.'
     },
     {
       kind: 'callout',
@@ -246,12 +268,12 @@ export const TM5_READING: Reading = {
     {
       kind: 'solution-reveal',
       title: 'Kasus 4: Penjualan BBM Industri vs SPBU Swasta (PT Pertamina Patra Niaga)',
-      prompt: 'PT Pertamina Patra Niaga menjual solar Rp400.000.000 kepada pabrik PT Bahtera Abadi, dan bensin Rp500.000.000 kepada SPBU Swasta Non-Pertamina (keduanya belum termasuk PPN). Hitung PPh 22 masing-masing transaksi dan jelaskan sifatnya!',
+      prompt: 'PT Pertamina Patra Niaga menjual solar Rp400.000.000 kepada pabrik PT Bahtera Abadi, dan bensin Rp500.000.000 kepada SPBU swasta yang membeli BBM dari Pertamina (keduanya belum termasuk PPN). Hitung PPh 22 masing-masing transaksi dan jelaskan sifatnya!',
       blocks: [
         { kind: 'p', text: '**1. Penjualan Solar ke PT Bahtera Abadi (Pabrik / Manufaktur):**' },
         { kind: 'formula', text: '\\text{PPh Pasal 22}=0{,}3\\% \\times \\text{Rp}400.000.000=\\text{Rp}1.200.000' },
         { kind: 'p', text: 'Sifat: **TIDAK FINAL** (dapat diperhitungkan sebagai kredit pajak di SPT Tahunan PT Bahtera Abadi).' },
-        { kind: 'p', text: '**2. Penjualan Bensin ke SPBU Swasta Non-Pertamina (Penyalur / Agen):**' },
+        { kind: 'p', text: '**2. Penjualan Bensin ke SPBU Swasta Pembeli BBM Pertamina (Penyalur / Agen):**' },
         { kind: 'formula', text: '\\text{PPh Pasal 22}=0{,}25\\% \\times \\text{Rp}500.000.000=\\text{Rp}1.250.000' },
         { kind: 'p', text: 'Sifat: **FINAL** (pajak rampung seketika; laba penjualan BBM SPBU swasta tidak dihitung pajaknya lagi di akhir tahun).' },
       ],
@@ -285,12 +307,13 @@ export const TM5_READING: Reading = {
     },
     {
       kind: 'solution-reveal',
-      title: 'Kasus 8: Transaksi Pembelian Aset Kripto (PMK 68/2022)',
-      prompt: 'Nona Felicia membeli 0,7 unit Bitcoin seharga Rp350.000.000 di exchange terdaftar Bappebti. Hitung PPh Pasal 22 dan PPN yang dipungut platform!',
+      title: 'Kasus 8: Transaksi Historis Pembelian Aset Kripto Tahun 2023 (PMK 68/2022)',
+      prompt: 'Pada tahun 2023, Nona Felicia membeli 0,7 unit Bitcoin seharga Rp350.000.000 di exchange terdaftar Bappebti. Hitung PPh Pasal 22 dan PPN menurut aturan pada tahun transaksi itu!',
       blocks: [
         { kind: 'formula', text: '\\text{PPh Pasal 22 Final}=0{,}1\\% \\times \\text{Rp}350.000.000=\\text{Rp}350.000' },
         { kind: 'formula', text: '\\text{PPN}=0{,}11\\% \\times \\text{Rp}350.000.000=\\text{Rp}385.000' },
         { kind: 'formula', text: '\\text{Total Pungutan Pajak}=\\text{Rp}350.000+\\text{Rp}385.000=\\text{Rp}735.000' },
+        { kind: 'p', text: 'Perhatikan Tahun Transaksi: tarif PPh 22 sebesar 0,1% pada kasus ini berlaku untuk ilustrasi historis 2023. Sejak 1 Agustus 2025, PMK 50/2025 mengatur PPh 22 final penjualan aset kripto melalui pedagang aset keuangan digital sebesar 0,21% dari nilai transaksi.' },
       ],
     },
     {
@@ -305,11 +328,11 @@ export const TM5_READING: Reading = {
     {
       kind: 'solution-reveal',
       title: 'Kasus 10: Pemotongan PPh Pasal 23 Multi-Transaksi (PT Dynaplast)',
-      prompt: 'PT Dynaplast membayar bunga pinjaman Rp20.000.000 ke PT Mitra Finansial (non-bank), royalti paten Rp100.000.000 ke PT Polimer Inovasi, dan hadiah undian operasional Rp200.000.000 ke CV Sukses Abadi (semua ber-NPWP). Hitung total PPh 23!',
+      prompt: 'PT Dynaplast membayar bunga pinjaman Rp20.000.000 ke PT Mitra Finansial (non-bank), royalti paten Rp100.000.000 ke PT Polimer Inovasi, dan hadiah penghargaan lomba tanpa undian Rp200.000.000 ke CV Sukses Abadi (semua ber-NPWP). Hitung total PPh 23!',
       blocks: [
         { kind: 'formula', text: '\\text{PPh 23 Bunga}=15\\% \\times \\text{Rp}20.000.000=\\text{Rp}3.000.000' },
         { kind: 'formula', text: '\\text{PPh 23 Royalti}=15\\% \\times \\text{Rp}100.000.000=\\text{Rp}15.000.000' },
-        { kind: 'formula', text: '\\text{PPh 23 Hadiah Undian}=15\\% \\times \\text{Rp}200.000.000=\\text{Rp}30.000.000' },
+        { kind: 'formula', text: '\\text{PPh 23 Hadiah Penghargaan}=15\\% \\times \\text{Rp}200.000.000=\\text{Rp}30.000.000' },
         { kind: 'formula', text: '\\text{Total PPh 23}=\\text{Rp}3.000.000+\\text{Rp}15.000.000+\\text{Rp}30.000.000=\\text{Rp}48.000.000' },
       ],
     },
@@ -330,16 +353,18 @@ export const TM5_READING: Reading = {
     },
     {
       kind: 'h2',
-      text: '7. Exam Toolkit: Pohon Keputusan & 5 Jebakan Klasik Ujian UTS',
+      text: '7. Exam Toolkit: 7 Jebakan Klasik Ujian UTS',
     },
     {
       kind: 'ul',
       items: [
-        '**Pohon Keputusan Belanja Pemerintah vs BUMN:** Belanja oleh Instansi Pemerintah dibebaskan jika nilai transaksi s.d. Rp2.000.000; jika di atas Rp2.000.000 dipungut 1,5%. Belanja oleh BUMN dibebaskan jika nilai transaksi s.d. Rp10.000.000; jika di atas Rp10.000.000 dipungut 1,5%.',
-        '**Jebakan Sifat PPh 22 BBM:** Penjualan BBM ke industri manufaktur bertarif 0,3% dan TIDAK FINAL (dapat dikreditkan). Sifat FINAL (tarif 0,25%) hanya berlaku untuk penjualan ke SPBU swasta / agen penyalur.',
-        '**Jebakan Dividen Badan DN:** Dividen yang dibagikan kepada Wajib Pajak Badan Dalam Negeri BUKAN OBJEK PAJAK (Pasal 4 ayat 3 huruf f UU PPh), sehingga TIDAK DIPOTONG PPh 23 berapapun persentase kepemilikannya.',
-        '**Jebakan PPh 23 Sewa Harta:** Sewa tanah dan/atau bangunan objek PPh Final Pasal 4 ayat (2) tarif 10%. Sewa harta bergerak (kendaraan, mesin, komputer) objek PPh Pasal 23 tarif 2%.',
-        '**Jebakan Batas Belanja Tepat Rp2.000.000:** Pembelian barang oleh instansi pemerintah dengan nilai faktur tepat Rp2.000.000 (tidak dipecah) dibebaskan dari pemungutan PPh 22. Pemungutan baru berlaku jika nilai belanja di atas Rp2.000.000.',
+        '**PPh 22 bukan selalu 1,5%:** Impor umum ber-API 2,5% dari nilai impor (CIF + Bea Masuk dengan kurs KMK), industri kertas 0,1% dari penjualan, sedangkan belanja pemerintah yang memenuhi syarat 1,5%.',
+        '**Ambang berdasarkan pemungut:** Instansi pemerintah s.d. Rp2.000.000 dan BUMN/badan usaha tertentu s.d. Rp10.000.000 tidak dipungut jika tidak dipecah; kedua batas tidak termasuk PPN.',
+        '**Pembelian BBM dan benda pos:** Pengecualian pemungutan atas pembelian BBM, gas, pelumas, benda pos, air, dan listrik berbeda dari PPh 22 atas penjualan BBM/gas/pelumas oleh produsen/importir.',
+        '**Asal BBM menentukan tarif SPBU:** BBM yang dibeli SPBU dari Pertamina/anak usahanya 0,25%; dari pemasok selain itu 0,3%. Pungutan atas penjualan kepada penyalur/agen bersifat final, sedangkan kepada industri 0,3% tidak final.',
+        '**PPh 23 15% vs 2%:** Bunga tertentu, royalti, dan hadiah/penghargaan non-undian yang masuk Pasal 23 bertarif 15%; sewa mesin/kendaraan dan cleaning service bertarif 2%. Hadiah undian adalah PPh final 25%.',
+        '**Sewa tanah/bangunan dan subjek luar negeri:** Sewa gedung adalah PPh final Pasal 4 ayat (2) 10%, bukan PPh 23 sewa mesin 2%; penghasilan WPLN non-BUT diuji menurut Pasal 26/P3B.',
+        '**Identitas dan tahun transaksi:** Jika NPWP/NIK tidak valid, periksa ketentuan kenaikan tarif Pasal 22/23 menurut tahun kasus. Dividen badan DN kini bukan objek PPh 23; ketentuan lama dan tarif kripto 2023 tidak boleh dipakai sebagai hukum 2026.',
       ],
     },
   ],

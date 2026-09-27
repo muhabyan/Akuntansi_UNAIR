@@ -85,8 +85,8 @@ export const TM1_READING: Reading = {
       kind: 'table',
       headers: ['Kategori Yuridis', 'Dasar Regulasi Positif', 'Cakupan Subjek / Objek', 'Perlakuan Fiskal', 'Syarat & Pengecualian'],
       rows: [
-        ['Subjek Pajak Dalam Negeri (SPDN)', 'Pasal 2 ayat (3) UU PPh', 'Orang Pribadi bertempat tinggal > 183 hari di RI, Badan didirikan di RI, Warisan belum terbagi', 'Dikenakan pajak atas penghasilan worldwide berdasar penghasilan neto', 'Tarif progresif Pasal 17 (OP) atau tarif Pasal 17 (Badan)'],
-        ['Subjek Pajak Luar Negeri (SPLN)', 'Pasal 2 ayat (4) UU PPh', 'OP/Badan tidak bertempat tinggal di RI yang menjalankan BUT atau menerima penghasilan dari RI', 'Dikenakan pajak hanya atas penghasilan bersumber dari Indonesia (bruto)', 'Tarif sepadan 20% (Pasal 26) atau tarif reduksi Tax Treaty (P3B)'],
+        ['Subjek Pajak Dalam Negeri (SPDN)', 'Pasal 2 ayat (3) UU PPh', 'OP: bertempat tinggal di Indonesia; atau berada >183 hari dalam 12 bulan; atau dalam suatu tahun pajak berada di Indonesia dan berniat bertempat tinggal. Badan: didirikan atau berkedudukan di Indonesia; warisan belum terbagi mengikuti pewaris SPDN.', 'Dikenakan pajak atas penghasilan dari Indonesia dan luar negeri sesuai ketentuan UU PPh', 'Kriteria OP bersifat alternatif, bukan semata kewarganegaraan atau uji 183 hari.'],
+        ['Subjek Pajak Luar Negeri (SPLN)', 'Pasal 2 ayat (4) UU PPh', 'OP yang tidak memenuhi kriteria SPDN, atau badan yang tidak didirikan dan tidak berkedudukan di Indonesia, tetapi menjalankan usaha melalui BUT atau menerima penghasilan dari Indonesia', 'Dikenakan pajak atas penghasilan bersumber dari Indonesia; penghasilan BUT dihitung menurut ketentuan BUT', 'Tanpa BUT, pemotongan Pasal 26 umumnya 20% bruto atau tarif P3B yang memenuhi syarat.'],
         ['Bukan Subjek Pajak', 'Pasal 3 ayat (1) UU PPh', 'Pejabat diplomatik/konsulat asing, pejabat organisasi internasional', 'Dikecualikan dari kewajiban perpajakan Indonesia', 'Bukan WNI dan berlaku asas perlakuan timbal balik (resiprositas)'],
         ['Objek PPh Tidak Final', 'Pasal 4 ayat (1) UU PPh', '19 kelompok: gaji, laba usaha, bunga, royalti, sewa, dividen non-investasi, keuntungan pengalihan harta', 'Digabungkan dalam SPT Tahunan, dihitung berdasar penghasilan neto', 'Kredit pajak (PPh 21, 22, 23, 24, 25) mengurangi pajak terutang'],
         ['Objek PPh Bersifat Final', 'Pasal 4 ayat (2) UU PPh', 'Bunga deposito, hadiah undian, transaksi saham bursa, sewa tanah/bangunan, PHTB, UMKM', 'Pajak rampung seketika saat potong/setor; tidak digabung pada akhir tahun', 'Biaya 3M terkait non-deductible; bukti potong tidak dapat dikreditkan'],
@@ -94,6 +94,24 @@ export const TM1_READING: Reading = {
         ['Dividen Dalam Negeri', 'Pasal 4 ayat (3) huruf f UU PPh', 'Dividen yang diterima WP Orang Pribadi dan WP Badan Dalam Negeri', 'Bukan Objek Pajak jika syarat terpenuhi', 'Bagi WP OP wajib diinvestasikan min 3 tahun di NKRI; Bagi WP Badan bebas syarat']
       ],
       caption: 'Tabel 1.1: Matriks taksonomi subjek dan objek Pajak Penghasilan di Indonesia.'
+    },
+    {
+      kind: 'table',
+      headers: ['Jenis subjek', 'Mulai kewajiban pajak subjektif', 'Berakhir kewajiban pajak subjektif'],
+      rows: [
+        ['Orang pribadi dalam negeri', 'Saat dilahirkan, berada, atau berniat bertempat tinggal di Indonesia sesuai kriteria SPDN', 'Saat meninggal dunia atau meninggalkan Indonesia untuk selama-lamanya'],
+        ['Badan dalam negeri', 'Saat didirikan atau bertempat kedudukan di Indonesia', 'Saat dibubarkan atau tidak lagi bertempat kedudukan di Indonesia'],
+        ['Warisan yang belum terbagi', 'Saat timbul warisan yang belum terbagi (pewaris meninggal)', 'Saat warisan selesai dibagi'],
+        ['OP/badan luar negeri melalui BUT', 'Saat mulai menjalankan usaha atau kegiatan melalui BUT di Indonesia', 'Saat tidak lagi menjalankan usaha atau kegiatan melalui BUT'],
+        ['SPLN tanpa BUT', 'Saat menerima atau memperoleh penghasilan dari Indonesia', 'Saat tidak lagi menerima atau memperoleh penghasilan tersebut']
+      ],
+      caption: 'Tabel 1.1a: Saat mulai dan berakhirnya kewajiban pajak subjektif menurut Pasal 2A UU PPh; identifikasi jenis subjek sebelum memilih jawaban.'
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Exam Trap: Dividen Sebelum vs Setelah UU Cipta Kerja',
+      text: 'Perhatikan Tahun Transaksi. Sebelum 2 November 2020: dividen dalam negeri untuk WP OP DN dikenai PPh final 10%; untuk PT/BUMN/BUMD DN, pengecualian mensyaratkan kepemilikan paling rendah 25% dari modal disetor dan berasal dari cadangan laba ditahan, sedangkan dividen yang tidak memenuhi syarat masuk rezim umum/PPh 23. Dividen dari Indonesia kepada WP luar negeri pada umumnya dipotong PPh 26 sebesar 20% bruto atau tarif P3B yang sah. Setelah UU Cipta Kerja jo. UU HPP: dividen dalam negeri bagi WP badan DN dikecualikan tanpa syarat persentase saham maupun reinvestasi; bagi WP OP DN dikecualikan sepanjang diinvestasikan di Indonesia sesuai jangka waktu (paling singkat 3 Tahun Pajak), jika tidak maka berlaku PPh final 10%. Dividen luar negeri bagi WP DN dapat dikecualikan jika syarat investasi di Indonesia dipenuhi; untuk dividen dari perusahaan luar negeri nonbursa, perhatikan batas investasi paling sedikit 30% laba setelah pajak. WP luar negeri penerima dividen dari Indonesia tetap diuji tersendiri menurut Pasal 26/P3B. Dasar: Pasal 4 ayat (3) huruf f dan Pasal 26 UU PPh, PP 19/2009, PP 55/2022, PMK 18/2021.'
     },
     {
       kind: 'h2',
@@ -262,7 +280,7 @@ export const TM1_READING: Reading = {
       kind: 'callout',
       variant: 'key',
       title: 'Daftar 7 Jebakan Klasik Ujian Tengah Semester (Exam Traps)',
-      text: '1. Jebakan Jangka Waktu Simpan Dokumen: Pasal 28 ayat (11) UU KUP mewajibkan penyimpanan buku, catatan, dan dokumen dasar pembukuan atau pencatatan selama 10 (sepuluh) tahun di Indonesia; jangan tertukar dengan jangka waktu lain dalam administrasi pajak.\n2. Jebakan Bingkisan Hari Raya: Bingkisan hari raya keagamaan bagi seluruh pegawai berstatus BEBAS PAJAK PENUH tanpa batas nominal rupiah (bukan batas Rp3 Juta).\n3. Jebakan Fasilitas Olahraga Mewah: Fasilitas golf, pacuan kuda, terbang layang, dan balap otomotif SELALU TAXABLE PENUH bagi penerima (tidak berlaku ambang batas Rp1,5 Juta).\n4. Jebakan Zakat Menyebabkan Rugi: Zakat dilarang menyebabkan rugi fiskal. Jika laba Rp15 Juta dan zakat Rp20 Juta, zakat yang boleh dikurangkan maksimal Rp15 Juta, sisa Rp5 Juta hangus.\n5. Jebakan Biaya Pribadi Direktur: Beban listrik dan pembantu rumah direktur merupakan beban pribadi non-deductible (Pasal 9 ayat 1 huruf b), KECUALI dipotong PPh 21 kenikmatan atas nama direktur.\n6. Jebakan Dividen Badan: Pembebasan PPh atas dividen bagi Wajib Pajak Badan Dalam Negeri berlaku TANPA SYARAT investasi (syarat investasi 3 tahun hanya untuk Orang Pribadi).\n7. Jebakan Hapus Batas 7 Tahun UMKM: Berdasarkan PP 20/2026, pembatasan jangka waktu 7 tahun bagi Wajib Pajak Orang Pribadi telah DIHAPUS. Namun, pengujian ambang batas Rp4,8 Miliar wajib menggabungkan omzet usaha dengan seluruh peredaran bruto pekerjaan bebas (Pasal 58).'
+      text: '1. SPDN/SPLN: Kewarganegaraan dan angka 183 hari saja tidak menentukan status; uji juga tempat tinggal dan niat bertempat tinggal menurut Pasal 2 ayat (3).\n2. Kewajiban subjektif: Badan DN mulai saat didirikan ATAU berkedudukan di Indonesia; warisan, BUT, dan SPLN tanpa BUT memiliki titik awal berbeda (Pasal 2A).\n3. Klasifikasi penghasilan: Pasal 4 ayat (1) masuk penghitungan reguler, Pasal 4 ayat (2) bersifat final, dan Pasal 4 ayat (3) bukan objek; jangan kreditkan PPh final.\n4. Deductible vs non-deductible: Biaya 3M yang memenuhi Pasal 6 dapat dikurangkan, sedangkan pembagian laba, biaya pribadi, dan PPh terutang menurut Pasal 9 tidak. Natura pasca UU HPP tidak otomatis non-deductible bagi pemberi kerja.\n5. Natura penerima: Bingkisan hari raya keagamaan untuk seluruh pegawai dikecualikan; fasilitas golf dan olahraga mewah lain tetap objek PPh pegawai.\n6. Dividen: Badan DN kini tidak perlu syarat investasi atau kepemilikan saham; OP DN harus memenuhi investasi agar dikecualikan. Untuk soal sebelum 2 November 2020, cek syarat kepemilikan 25% bagi badan yang memenuhi kategori lama.\n7. Tahun transaksi UMKM: PP 20/2026 menghapus batas waktu tujuh tahun bagi OP, sedangkan kasus 2020/2023 mengikuti aturan tahun itu. Omzet usaha dan pekerjaan bebas diuji sesuai ketentuan masing-masing tahun.'
     },
     {
       kind: 'h2',

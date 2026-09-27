@@ -288,6 +288,12 @@ export const TM7_READING: Reading = {
       text: '1. Jebakan Kerugian Luar Negeri pada PPh 24:\n- Jebakan Soal: Soal menyajikan PT X memiliki laba dalam negeri Rp1 Miliar dan menderita rugi cabang di luar negeri Rp300 Juta.\n- Perangkap: Mahasiswa mengurangkan kerugian luar negeri sehingga PKP dihitung Rp700 Juta.\n- Solusi Benar: Berdasarkan asas pemajakan internasional, kerugian luar negeri DILARANG DIGABUNG. PKP di Indonesia tetap utuh Rp1.000.000.000.\n\n2. Jebakan Batasan Omzet Rp50 Miliar Fasilitas Pasal 31E:\n- Jebakan Soal: PT Y membukukan omzet Rp52 Miliar, apakah berhak atas tarif 11% atas omzet s.d. Rp4,8 Miliar?\n- Solusi Benar: TIDAK BERHAK SAMA SEKALI. Syarat mutlak Pasal 31E adalah peredaran bruto kumulatif tidak melebihi Rp50 Miliar. Jika omzet > Rp50 Miliar, seluruh PKP wajib dikenai tarif normal 22%.\n\n3. Jebakan Angsuran Awal Tahun PPh 25 (Rollover Masa Transisi):\n- Jebakan Soal: Kapan hasil perhitungan angsuran PPh 25 baru dari SPT Tahunan 2025 mulai berlaku?\n- Solusi Benar: Mulai berlaku pada bulan disampaikannya SPT Tahunan. Jika WP OP menyampaikan SPT pada Maret, angsuran Januari–Februari umumnya mengikuti Desember sebelumnya; jika WP Badan menyampaikan SPT pada April, angsuran Januari–Maret umumnya mengikuti Desember sebelumnya.\n\n4. Jebakan Sifat Pajak WP OPPT:\n- Jebakan Soal: Apakah setoran 0,75% per gerai bagi pedagang eceran bersifat final?\n- Solusi Benar: BUKAN FINAL. Angsuran 0,75% adalah cicilan pelunasan pajak di muka (Kredit PPh 28) yang dapat dikreditkan pada SPT Tahunan Orang Pribadi Formulir 1770.'
     },
     {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Exam Trap Tambahan: PPh 24, PPh 25, dan Pasal 31E',
+      text: '5. PPh 24 bukan tarif tetap: ini kredit atas pajak luar negeri yang dibatasi pajak Indonesia atas penghasilan luar negeri, dihitung per negara sesuai ketentuan; rugi luar negeri tidak mengurangi laba dalam negeri.\n6. PPh 25 normal = (PPh terutang SPT Tahunan lalu − kredit PPh 21, 22, 23, 24) / 12. Setoran PPh 25 tahun lalu dipakai untuk pelunasan PPh 29, bukan dikurangkan lagi dari dasar angsuran normal tahun berikutnya.\n7. Pasal 31E: batas Rp4,8 miliar dan Rp50 miliar diuji pada peredaran bruto/omzet, bukan PKP; PKP dipakai setelahnya untuk menghitung bagian fasilitas.'
+    },
+    {
       kind: 'h2',
       text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
     },

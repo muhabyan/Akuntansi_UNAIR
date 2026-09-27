@@ -18,12 +18,12 @@ const utsCard = (tm: number, no: number, category: AdvancedStudyCard['category']
 });
 
 export const PJK301_FC: AdvancedStudyCard[] = [
-  utsCard(1, 1, 'Konsep', 'Worldwide income bagi WP dalam negeri', 'Penghasilan dari Indonesia dan luar negeri masuk cakupan PPh Indonesia; WP luar negeri dikenai atas sumber Indonesia.'),
+  utsCard(1, 1, 'Klasifikasi', 'SPDN orang pribadi dan awal kewajiban badan', 'SPDN OP dapat berdasar tempat tinggal, lebih dari 183 hari dalam 12 bulan, atau niat menetap saat berada di Indonesia. Badan DN mulai saat didirikan atau berkedudukan di Indonesia.'),
   utsCard(1, 2, 'Klasifikasi', 'Objek reguler, final, dan bukan objek', 'Objek reguler masuk PKP dan kredit pajaknya diperhitungkan. Objek final dilaporkan terpisah; warisan yang memenuhi syarat bukan objek.'),
   utsCard(1, 3, 'Hukum', 'Biaya 3M dan biaya suap', 'Biaya 3M terkait penghasilan kena pajak dapat dikurangkan menurut Pasal 6. Suap dan sanksi pajak dikoreksi positif.'),
   utsCard(1, 4, 'Klasifikasi', 'Natura pegawai dan bingkisan hari raya', 'Natura umumnya deductible bagi pemberi kerja dan taxable bagi pegawai; bingkisan hari raya keagamaan bagi seluruh pegawai dikecualikan.'),
   utsCard(1, 5, 'Rumus', 'Batas zakat yang sah', 'Zakat melalui lembaga sah dengan bukti setor dapat mengurangi penghasilan, tetapi tidak boleh menimbulkan atau memperbesar rugi fiskal.'),
-  utsCard(1, 6, 'Rumus', 'PTKP K/2 dan lapisan awal tarif OP', 'PTKP K/2 Rp67.500.000. PKP sampai Rp60.000.000 dikenai 5%; bagian berikutnya sampai Rp250.000.000 dikenai 15%.'),
+  utsCard(1, 6, 'Perbandingan', 'Dividen dalam negeri sebelum dan setelah Cipta Kerja', 'Pra-Cipta Kerja: OP DN final 10%; pengecualian PT/BUMN/BUMD DN mensyaratkan saham minimal 25% dan laba ditahan. Kini badan DN bebas tanpa syarat saham; OP DN perlu investasi di Indonesia.'),
 
   utsCard(2, 1, 'Hukum', 'Nilai fiskal barter harta', 'Pasal 10 ayat (2): kedua pihak memakai harga pasar. Laba pengalihan ialah harga pasar dikurangi nilai sisa buku harta yang diserahkan.'),
   utsCard(2, 2, 'Klasifikasi', 'Metode persediaan fiskal yang sah', 'Pasal 10 ayat (6) mengizinkan FIFO atau rata-rata secara taat asas. LIFO harus direkonsiliasi ke metode yang sah.'),
@@ -48,8 +48,8 @@ export const PJK301_FC: AdvancedStudyCard[] = [
 
   utsCard(5, 1, 'Perbandingan', 'Pemungutan PPh 22 dan pemotongan PPh 23/26', 'PPh 22 dipungut pada transaksi barang oleh pemungut yang ditunjuk; PPh 23/26 dipotong pihak pembayar penghasilan penerima.'),
   utsCard(5, 2, 'Rumus', 'Nilai impor dan API pada PPh 22', 'Nilai impor = CIF + bea masuk. Impor barang umum ber-API dikenai 2,5%; non-API 7,5%, tidak final.'),
-  utsCard(5, 3, 'Hukum', 'Ambang belanja pemerintah dan BUMN', 'Belanja pemerintah sampai Rp2.000.000 dan BUMN sampai Rp10.000.000 yang tidak dipecah bebas PPh 22; di atas batas dipungut 1,5%.'),
-  utsCard(5, 4, 'Klasifikasi', 'Tarif PPh 23 utama', 'Bunga non-bank dan royalti: 15% bruto. Sewa harta selain tanah/bangunan serta jasa teknik, manajemen, dan konsultan: 2% bruto.'),
+  utsCard(5, 3, 'Hukum', 'Ambang dan pengecualian belanja PPh 22', 'Pemerintah s.d. Rp2.000.000; badan usaha tertentu s.d. Rp10.000.000, di luar PPN dan tidak dipecah. Pembelian BBM, gas, pelumas, benda pos, air, dan listrik juga dikecualikan.'),
+  utsCard(5, 4, 'Klasifikasi', 'PPh 23 sewa, jasa, hadiah', 'Bunga tertentu, royalti, hadiah non-undian Pasal 23: 15%. Sewa mesin/kendaraan dan cleaning service: 2%. Sewa gedung final 10%; hadiah undian final 25%.'),
   utsCard(5, 5, 'Hukum', 'PPh 26 dan Form DGT', 'Penghasilan sumber Indonesia untuk WPLN non-BUT umumnya dipotong final 20% bruto; tarif P3B lebih rendah perlu Form DGT yang sah.'),
   utsCard(5, 6, 'Rumus', 'UMKM orang pribadi menurut PP 20/2026', 'Tarif final 0,5% berlaku jika omzet tahunan tidak melebihi Rp4.800.000.000. Rp500.000.000 omzet kumulatif pertama bebas; batas tujuh tahun OP telah dihapus.'),
 

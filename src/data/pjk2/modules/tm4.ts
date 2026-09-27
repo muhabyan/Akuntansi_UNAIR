@@ -316,7 +316,8 @@ export const TM4_READING: Reading = {
         ['ET-002', 'Mengurangkan taksiran nilai residu dari harga perolehan fiskal.', 'Ketentuan pajak TIDAK MENGENAL NILAI RESIDU (Residu = Rp0). Tarif penyusutan selalu dikalikan dari 100% harga perolehan penuh.', 'Penjelasan Pasal 11 UU PPh'],
         ['ET-003', 'Menghitung proporsi bulan awal perolehan tanpa pembulatan ke atas.', 'Jumlah bulan perolehan pada tahun pertama SELALU DIBULATKAN PENUH KE ATAS (misal perolehan tanggal 25 Juli dihitung 6 bulan).', 'Slide 9; PMK 72/2023'],
         ['ET-004', 'Mengalikan tarif saldo menurun pada tahun terakhir masa manfaat aktiva.', 'Pada tahun terakhir masa manfaat metode saldo menurun, seluruh sisa nilai buku fiskal WAJIB DISUSUTKAN SEKALIGUS hingga bernilai nol.', 'Pasal 11 ayat (2) UU PPh'],
-        ['ET-005', 'Mengasumsikan revaluasi aktiva tetap boleh dilakukan setiap tahun.', 'Penilaian kembali aktiva tetap dibatasi TIDAK BOLEH DILAKUKAN KEMBALI SEBELUM LEWAT WAKTU 5 TAHUN.', 'Pasal 3 PMK 79/PMK.03/2008']
+        ['ET-005', 'Mengasumsikan revaluasi aktiva tetap boleh dilakukan setiap tahun.', 'Penilaian kembali aktiva tetap dibatasi TIDAK BOLEH DILAKUKAN KEMBALI SEBELUM LEWAT WAKTU 5 TAHUN.', 'Pasal 3 PMK 79/PMK.03/2008'],
+        ['ET-006', 'Menyusutkan harta yang masih dikerjakan sejak pembayaran uang muka atau selalu menunggu tahun berikutnya.', 'Harta dalam proses pengerjaan mulai disusutkan pada bulan selesai; dengan persetujuan DJP pada kondisi tertentu dapat dimulai saat digunakan atau mulai menghasilkan.', 'Pasal 11 ayat (3)–(4) UU PPh; PMK 72/2023']
       ],
       caption: 'Tabel 4.5: Matriks jebakan ujian penyusutan dan revaluasi aktiva tetap.'
     },

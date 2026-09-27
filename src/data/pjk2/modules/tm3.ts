@@ -309,7 +309,8 @@ export const TM3_READING: Reading = {
         ['ET-002', 'Menganggap paman, bibi, keponakan, atau sepupu sebagai pihak yang memiliki hubungan istimewa.', 'UU PPh membatasi hubungan istimewa keluarga HANYA SATU DERAJAT lurus dan ke samping. Paman/sepupu adalah 2 atau 3 derajat, sehingga secara yuridis adalah pihak independen non-afiliasi.', 'Pasal 18 (4) huruf c UU PPh'],
         ['ET-003', 'Mengabaikan kewajiban withholding tax atas koreksi sekunder transfer pricing.', 'Koreksi primer transfer pricing yang tidak disetorkan kembali ke kas perseroan diakui sebagai DIVIDEN TERSELUBUNG yang terutang PPh 23 / PPh 26.', 'Pasal 37 PP 55/2022; PMK 172/2023'],
         ['ET-004', 'Mengoreksi seluruh total beban bunga pinjaman ketika rasio DER melebihi 4:1.', 'Hanya beban bunga atas PORSI KELEBIHAN UTANG di atas 4:1 yang dikoreksi fiskal positif; bunga atas utang s.d. rasio 4:1 tetap deductible.', 'PMK 169/PMK.010/2015'],
-        ['ET-005', 'Mengasumsikan kesepakatan APA berlaku selamanya tanpa batas waktu.', 'Kesepakatan APA dibatasi maksimal untuk periode 5 (LIMA) TAHUN PAJAK ke depan sejak tahun pajak disepakati.', 'PMK 172/2023 Bab VI']
+        ['ET-005', 'Mengasumsikan kesepakatan APA berlaku selamanya tanpa batas waktu.', 'Kesepakatan APA dibatasi maksimal untuk periode 5 (LIMA) TAHUN PAJAK ke depan sejak tahun pajak disepakati.', 'PMK 172/2023 Bab VI'],
+        ['ET-006', 'Memilih metode transfer pricing sesuka WP hanya karena hasil pajaknya lebih rendah.', 'Gunakan metode paling sesuai (most appropriate method) berdasarkan karakter transaksi, fungsi/risiko, dan data pembanding. Hubungan istimewa sendiri dapat timbul dari modal ≥25%, penguasaan, atau keluarga satu derajat.', 'Pasal 18 ayat (3)–(4) UU PPh; PMK 172/2023']
       ],
       caption: 'Tabel 3.4: Panduan jebakan ujian hubungan istimewa dan anti-penghindaran pajak.'
     },
