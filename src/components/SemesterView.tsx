@@ -22,7 +22,7 @@ export default function SemesterView({ semester, onBack, onCourseClick }: Semest
   return (
     <>
       <MotionBackground />
-      <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-12 pt-8">
+      <div className="mx-auto max-w-7xl px-4 md:px-8 lg:px-12 pt-8 md:pt-0">
         <button
           onClick={onBack}
           className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors"

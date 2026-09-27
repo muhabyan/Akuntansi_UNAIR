@@ -6,7 +6,7 @@
 // - adds responsive mobile access;
 // - keeps subtle scroll progress without blocking pointer events.
 // =============================================================
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Menu, UserCircle2, X, Download } from 'lucide-react';
 import { LogoMark, Wordmark } from './brand/AkuntansiHubLogo';
 import { MegaMenu, QuizMegaMenu, LaporanMegaMenu } from './MegaMenu';
@@ -67,6 +67,20 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const { user, loading, signIn } = useAuth();
+  const navRef = useRef<HTMLElement>(null);
+
+  // Sticky bars and # jumps stay clear of the header through --site-header-h (index.css). The header shrinks after
+  // scrolling and is hidden in Zen mode, so its height is published live, except while the phone menu is open: that
+  // menu only covers the page.
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!nav || mobileOpen || typeof ResizeObserver === 'undefined') return;
+    const publish = () => document.documentElement.style.setProperty('--site-header-h', `${nav.getBoundingClientRect().height}px`);
+    const observer = new ResizeObserver(publish);
+    observer.observe(nav, { box: 'border-box' });
+    publish();
+    return () => observer.disconnect();
+  }, [mobileOpen]);
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: Event) => {
@@ -139,6 +153,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
 
   return (
     <nav
+      ref={navRef}
       className={`fixed top-0 z-[90] w-full border-b border-gray-200 pt-[env(safe-area-inset-top)] transition-all duration-300 dark:border-gray-800 ${
         isScrolled ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm py-2' : 'bg-white dark:bg-gray-900 py-2 md:py-3'
       }`}

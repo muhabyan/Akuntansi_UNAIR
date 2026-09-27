@@ -163,7 +163,7 @@ export default function PteBankSoalTab() {
         </div>
       </section>
 
-      <div data-testid="pte-bank-results-summary" ref={resultsSummaryRef} tabIndex={-1} className="flex scroll-mt-24 flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">
+      <div data-testid="pte-bank-results-summary" ref={resultsSummaryRef} tabIndex={-1} className="flex scroll-mt-24 md:scroll-mt-0 flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 px-4 py-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">
         <p className="text-gray-600 dark:text-gray-300"><span className="font-bold text-gray-900 dark:text-white">{filtered.length}</span> soal cocok · halaman {currentPage} dari {pageCount}</p>
         <p className="inline-flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400"><ShieldCheck size={15} /> Telah lulus validasi sumber dan distribusi kunci</p>
       </div>

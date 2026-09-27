@@ -162,7 +162,7 @@ function QuestionFrame({
       : 'border-navy-500/70 bg-navy-800/72';
 
   return (
-    <article id={`quiz-question-${index + 1}`} data-testid="quiz-question-card" data-question-id={question.id ?? ''} className={`quiz-question-card scroll-mt-24 overflow-hidden rounded-[1.35rem] border ${statusClass} shadow-sm`}>
+    <article id={`quiz-question-${index + 1}`} data-testid="quiz-question-card" data-question-id={question.id ?? ''} className={`quiz-question-card scroll-mt-24 md:scroll-mt-0 overflow-hidden rounded-[1.35rem] border ${statusClass} shadow-sm`}>
       <div className="flex flex-wrap items-start justify-between gap-3 border-b border-white/5 bg-gradient-to-r from-white/[0.04] to-transparent px-4 py-3 md:px-5">
           <div className="flex min-w-0 items-start gap-3">
           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border border-gold/25 bg-gold/10 text-sm font-black text-gold">{index + 1}</div>

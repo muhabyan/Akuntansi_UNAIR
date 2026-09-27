@@ -87,11 +87,12 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
   return (
     <>
       <MotionBackground />
-      {/* Hero Section */}
-      <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-transparent pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:pb-0 md:pt-0">
+      {/* Hero Section. From 1024px it fills the first screen below the header (min 100svh, so the next section starts
+          below the fold) and centres its text 4svh above the middle; 768-1023px starts 34px below the header. */}
+      <section className="relative z-10 flex min-h-[82svh] flex-col justify-center overflow-hidden bg-transparent pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(4.25rem+env(safe-area-inset-top))] md:min-h-0 md:justify-start md:pb-0 md:pt-[calc(var(--page-top)-0.5rem)] lg:min-h-[100svh] lg:justify-center lg:pb-[8svh] lg:pt-[var(--site-header-rest-h)]">
         {/* Logo watermark - positioned right, only in hero */}
         <Aks1Logo3D />
-        <div className="mobile-home-hero-content mx-auto w-full max-w-7xl px-5 py-14 sm:py-16 md:px-10 md:py-20 lg:px-14">
+        <div className="mobile-home-hero-content mx-auto w-full max-w-7xl px-5 py-14 sm:py-16 md:px-10 md:pb-20 md:pt-0 lg:px-14 lg:py-0">
           <div className="max-w-3xl">
             <h1 className="mb-5 text-[2rem] font-bold leading-[1.12] text-gray-900 dark:text-white sm:text-4xl md:mb-6 md:text-5xl md:leading-tight lg:text-6xl">
               <span className="block mb-2 md:mb-4">Tingkatkan Pemahaman</span>
@@ -197,7 +198,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
       )}
 
       {/* Course Catalog */}
-      <section id="course-catalog" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 px-5 pb-16 pt-10 md:px-10 md:pt-12 lg:px-14 lg:pb-20">
+      <section id="course-catalog" className="relative z-10 mx-auto max-w-7xl scroll-mt-20 md:scroll-mt-0 px-5 pb-16 pt-10 md:px-10 md:pt-12 lg:px-14 lg:pb-20">
         <div className="mb-6 md:mb-8">
           <p className="eyebrow mb-1.5">Kurikulum</p>
           <h2 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white md:text-3xl">Pilih semester</h2>

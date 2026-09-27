@@ -65,7 +65,7 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
 
   return (
     <div className="-mt-12 mx-auto max-w-5xl px-4 md:mt-0 md:px-8">
-      <button type="button" onClick={onBack} className="mb-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-gray-500 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
+      <button type="button" onClick={onBack} className="mb-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-gray-500 md:-mt-3 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400">
         <ArrowLeft size={16} /> Kembali
       </button>
 

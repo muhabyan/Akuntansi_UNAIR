@@ -212,7 +212,7 @@ export default function ReadingOutline({ items, variant, activeId: controlledAct
   return (
     <aside
       id="reading-outline-desktop-panel"
-      className="reading-outline reading-outline--desktop sticky top-24 hidden max-h-[calc(100dvh-7rem)] self-start overflow-y-auto border-l border-gray-200 pl-4 pr-1 dark:border-gray-800 lg:block"
+      className="reading-outline reading-outline--desktop sticky top-[calc(var(--site-header-h)+1.625rem)] hidden max-h-[calc(100dvh-var(--site-header-h)-2.625rem)] self-start overflow-y-auto border-l border-gray-200 pl-4 pr-1 dark:border-gray-800 lg:block"
       aria-label="Daftar isi bacaan"
     >
       <div className="mb-3 flex min-h-11 items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
