@@ -94,7 +94,7 @@ function RenderMultilineText({ text }: { text: string }) {
 function ReadableParagraph({ text }: { text: string }) {
   const layered = useLayered();
   return (
-    <div className={`mb-4 text-base text-slate-800 dark:text-slate-200 md:text-[16.5px] ${layered ? 'max-w-[70ch] leading-[1.7]' : 'max-w-[88ch] leading-[1.8]'}`}>
+    <div className={`reading-ink mb-4 text-base text-slate-800 dark:text-slate-200 md:text-[16.5px] ${layered ? 'max-w-[70ch] leading-[1.7]' : 'max-w-[88ch] leading-[1.8]'}`}>
       {renderText(text)}
     </div>
   );
@@ -132,7 +132,7 @@ function SolutionRevealCard({
           <Eye size={14} /> Pembahasan Setelah Mengerjakan
         </div>
         <h3 className="font-display text-base font-black leading-snug text-slate-900 dark:text-slate-100 md:text-lg">{block.title}</h3>
-        {block.prompt && <div className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-400">{renderText(block.prompt)}</div>}
+        {block.prompt && <div className="reading-ink mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-400">{renderText(block.prompt)}</div>}
         <button
           type="button"
           onClick={() => setIsOpen((open) => !open)}
@@ -265,7 +265,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       const checklist = (enableEconomicStyling || layered) && isChecklist(block.items);
       return (
         <ul
-          className={layered ? 'mb-6 max-w-[70ch] space-y-2 pl-1' : 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'}
+          className={`reading-ink ${layered ? 'mb-6 max-w-[70ch] space-y-2 pl-1' : 'mb-6 max-w-[88ch] space-y-3 pl-1 md:pl-2'}`}
           aria-label={checklist ? (layered ? 'Daftar periksa' : 'Checklist review UAS') : undefined}
         >
           {block.items.map((it, i) => (
@@ -284,7 +284,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     }
     case 'ol':
       return (
-        <ol className={`mb-6 list-decimal pl-6 text-base text-slate-800 dark:text-slate-200 marker:font-black marker:text-blue-600 dark:marker:text-blue-400 ${layered ? 'max-w-[70ch] space-y-2 leading-[1.7] md:text-[16.5px]' : 'max-w-[88ch] space-y-3 md:pl-8 leading-[1.8] md:text-[16px]'}`}>
+        <ol className={`reading-ink mb-6 list-decimal pl-6 text-base text-slate-800 dark:text-slate-200 marker:font-black marker:text-blue-600 dark:marker:text-blue-400 ${layered ? 'max-w-[70ch] space-y-2 leading-[1.7] md:text-[16.5px]' : 'max-w-[88ch] space-y-3 md:pl-8 leading-[1.8] md:text-[16px]'}`}>
           {block.items.map((it, i) => (
             <li key={i} className={layered ? 'pl-1' : 'whitespace-pre-line pl-1'}>{renderText(it)}</li>
           ))}
@@ -350,7 +350,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           <div className={`flex items-center gap-2 border-b border-navy-500/10 dark:border-white/5 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] ${titleCls}`}>
             <IconComponent size={16} /> {titleText}
           </div>
-          <div className={`px-5 ${block.compact ? 'py-3 leading-relaxed' : 'py-4 leading-[1.85]'} text-base text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
+          <div className={`reading-ink px-5 ${block.compact ? 'py-3 leading-relaxed' : 'py-4 leading-[1.85]'} text-base text-slate-800 dark:text-slate-200 md:text-[16px] ${textCls}`}>
             {block.compact ? renderText(block.text) : <RenderMultilineText text={block.text} />}
           </div>
         </div>
@@ -427,7 +427,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                           key={c}
                           className={(mutedColumns[c]
                             ? 'px-4 py-3.5 align-top text-xs leading-relaxed text-gray-500 dark:text-gray-400'
-                            : 'px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white') + alignCls(c)}
+                            : 'reading-ink px-4 py-3.5 align-top text-sm md:text-[15px] leading-relaxed text-slate-800 dark:text-slate-200 first:font-semibold first:text-slate-900 dark:first:text-white') + alignCls(c)}
                         >
                           <RenderMultilineText text={layered ? literalLeadingMarker(cell) : cell} />
                         </td>

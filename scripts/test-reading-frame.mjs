@@ -22,6 +22,11 @@ const css = fs.readFileSync('src/index.css', 'utf8').replace(/\/\*[\s\S]*?\*\//g
 const rule = (min, max, prop) => new RegExp(String.raw`@media\s*\(min-width:\s*${min}px\)\s*and\s*\(max-width:\s*${max}px\)\s*\{\s*\.reading-layout--shared-frame\s*>\s*article\s*\{\s*${prop}:\s*3\.5rem;?\s*\}\s*\}`);
 check(rule(768, 1375, 'padding-left').test(css), 'CSS: left inset 3.5rem on the frame between 768 and 1375px');
 check(rule(768, 1023, 'padding-right').test(css), 'CSS: right inset 3.5rem on the frame between 768 and 1023px');
+// Ink: body text, table values and card titles near-black / near-white, scoped to the frame.
+const inkRule = (prefix, color) => new RegExp(String.raw`${prefix}\.reading-layout--shared-frame\s+\.reading-ink\s*,\s*${prefix}\.reading-layout--shared-frame\s+\.reading-ink\s+:is\(p,\s*li\)\s*\{\s*color:\s*${color};?\s*\}`, 'i');
+check(inkRule('', '#111827').test(css), 'CSS: reading text in the frame is gray-900 in light mode');
+check(inkRule(String.raw`html\.dark\s+`, '#f3f4f6').test(css), 'CSS: reading text in the frame is gray-100 in dark mode');
+check(!/(^|[^-\w])\.reading-ink\s*[,{]/m.test(css.replace(/\.reading-layout--shared-frame\s+\.reading-ink/g, '')), 'CSS: the ink colour is never applied outside the frame');
 check(!/:has\(\.layered-section\)\s*>\s*article\s*\{\s*padding-(left|right)/.test(css), 'CSS: the insets are no longer tied to AKA201 layered sections only');
 check(/\.reading-layout--shared-frame\s+\.course-solution-surface\s+\.akbi-table-scroll\s*>\s*table\s*(,[^{]*)?\{\s*min-width:\s*max\(100%,\s*40rem\)/.test(css), 'CSS: a table in a pembahasan box in the frame may shrink to 40rem (fits at 1024px)');
 
@@ -104,6 +109,17 @@ try {
     check(state.tables > 0 || code === 'PJK301', `${at}: has tables to check`, JSON.stringify(state));
     check(state.desktopHiddenBelowLg === state.tables, `${at}: every desktop table is hidden below 1024px`, JSON.stringify(state));
     check(state.stacked === state.tables && state.stackedHiddenFromLg === state.stacked, `${at}: every table has a stacked view, hidden from 1024px`, JSON.stringify(state));
+    // Stacked cards: labels shaped differently from values, a bolder title, values and prose marked as ink text.
+    const has = (el, ...classes) => classes.every((c) => el.classList.contains(c));
+    const labels = [...document.querySelectorAll('.layered-stacked-table dt')];
+    const titles = [...document.querySelectorAll('.layered-stacked-table > div > dl')].map((dl) => dl.previousElementSibling);
+    const values = [...document.querySelectorAll('.layered-stacked-table dd:not(.text-xs)')];
+    if (state.stacked > 0) {
+      check(labels.length > 0 && labels.every((el) => has(el, 'uppercase', 'text-[11px]', 'font-semibold', 'tracking-[0.08em]', 'text-gray-600')), `${at}: stacked labels are small, uppercase, letter-spaced, gray-600`, String(labels.length));
+      check(titles.length > 0 && titles.every((el) => has(el, 'reading-ink', 'text-[17px]', 'font-bold')), `${at}: stacked card titles are 17px bold ink text`, String(titles.length));
+      check(values.length > 0 && values.every((el) => has(el, 'reading-ink')), `${at}: stacked values are ink text`, String(values.length));
+    }
+    check(document.querySelectorAll('.reading-document .reading-ink').length > 20, `${at}: paragraphs, lists and callouts are marked as ink text`);
   }
   if (await openReading('SII306', 1)) {
     await settle(80);

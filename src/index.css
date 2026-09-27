@@ -1083,3 +1083,16 @@ html.dark table td {
     padding-right: 3.5rem;
   }
 }
+
+/* Shared reading frame: body text, table values and card titles (marked .reading-ink in the components) are
+   near-black, or near-white in dark mode. Labels, captions and source notes keep their own muted colours.
+   renderText gives its <p> a gray-700 class, so the rule also reaches the paragraphs inside a marked element. */
+.reading-layout--shared-frame .reading-ink,
+.reading-layout--shared-frame .reading-ink :is(p, li) {
+  color: #111827; /* gray-900: 17.7:1 on white */
+}
+
+html.dark .reading-layout--shared-frame .reading-ink,
+html.dark .reading-layout--shared-frame .reading-ink :is(p, li) {
+  color: #f3f4f6; /* gray-100: 16:1 on gray-900 */
+}
