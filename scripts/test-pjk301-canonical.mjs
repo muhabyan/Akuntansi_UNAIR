@@ -158,6 +158,13 @@ const tm1 = checkReading(
     /batas waktu 7 tahun bagi orang pribadi/i,
   ]
 );
+const subjectTable = tm1.blocks.find((block) => block.kind === 'table' && block.caption.includes('Pasal 2A'));
+assert.equal(subjectTable?.rows.length, 5, 'TM01 covers five distinct subjective-obligation types');
+assert.ok(subjectTable.rows.some((row) => row[0] === 'Badan dalam negeri' && row[1].includes('didirikan atau bertempat kedudukan')));
+const spdnRow = tm1.blocks.find((block) => block.kind === 'table' && block.rows.some((row) => row[0] === 'Subjek Pajak Dalam Negeri (SPDN)'))
+  .rows.find((row) => row[0] === 'Subjek Pajak Dalam Negeri (SPDN)');
+assert.match(spdnRow[2], /bertempat tinggal.*>183 hari.*berniat bertempat tinggal/);
+assert.ok(tm1.blocks.some((block) => block.kind === 'callout' && block.title.includes('Dividen Sebelum vs Setelah')));
 
 // ---------------------------------------------------------------- TM02
 const tm2 = checkReading(
@@ -289,10 +296,17 @@ const tm5 = checkReading(
 );
 const spbuCase = tm5.blocks.find((block) => block.kind === 'solution-reveal' && block.title.includes('SPBU Swasta'));
 assert.ok(spbuCase, 'TM05 BBM/SPBU worked case exists');
-assert.ok(spbuCase.prompt.includes('Rp500.000.000 kepada SPBU Swasta'), 'TM05 SPBU prompt amount');
+assert.ok(spbuCase.prompt.includes('Rp500.000.000 kepada SPBU swasta yang membeli BBM dari Pertamina'), 'TM05 SPBU source and amount');
 const spbuFormula = spbuCase.blocks.find((block) => block.kind === 'formula' && block.text.includes('0{,}25'));
 assert.ok(spbuFormula?.text.includes('0{,}25\\% \\times \\text{Rp}500.000.000=\\text{Rp}1.250.000'),
   'TM05 SPBU formula uses the prompt base and correct result');
+const exemptionTable = tm5.blocks.find((block) => block.kind === 'table' && block.caption.includes('tidak dipungut'));
+assert.ok(exemptionTable?.rows.some((row) => row[0].includes('Instansi pemerintah') && row[1].includes('Rp2.000.000')));
+assert.ok(exemptionTable?.rows.some((row) => row[0].includes('BUMN') && row[1].includes('Rp10.000.000')));
+assert.ok(exemptionTable?.rows.some((row) => row[0].includes('BBM') && row[0].includes('benda pos')));
+assert.ok(!JSON.stringify(tm5).includes('hadiah undian badan usaha'), 'TM05 does not classify lottery prizes as PPh 23');
+const giftCase = tm5.blocks.find((block) => block.kind === 'solution-reveal' && block.title.includes('Multi-Transaksi'));
+assert.ok(giftCase.prompt.includes('tanpa undian'), 'TM05 PPh 23 worked award is non-lottery');
 
 // ---------------------------------------------------------------- TM06
 const tm6 = checkReading(

@@ -115,7 +115,9 @@ for (const [index, item] of quiz.entries()) {
 }
 for (const tm of tms) assert.ok(new Set(quiz.filter((item) => item.tm === tm).map((item) => item.answer)).size > 1, 'TM' + tm + ': varied key positions');
 for (const [tm, patterns] of [
+  [1, [/SPDN/, /kewajiban pajak subjektif/i, /dividen.*2020/i]],
   [4, [/Kelompok 2/, /gedung permanen/i, /saldo menurun/i, /Juli/i, /komersial/i]],
+  [5, [/API/, /1\.750\.000.*5\.000\.000/, /BBM.*benda pos/, /cleaning service.*sewa gedung/i]],
   [7, [/PPh 24/, /PPh 25/, /OPPT/, /31A/, /31E/]],
 ]) {
   const text = quiz.filter((item) => item.tm === tm).map((item) => item.q + ' ' + item.explanation).join(' ');
@@ -128,6 +130,9 @@ assert.deepEqual([...countByTm(utsCards)], tms.map((tm) => [tm, 6]));
 assert.equal(new Set(cards.map((card) => card.id)).size, cards.length, 'card ids unique');
 assert.equal(new Set(utsCards.map((card) => card.front)).size, utsCards.length, 'card fronts unique');
 assertNoStale('flashcards UTS', utsCards);
+assert.ok(utsCards.some((card) => card.tm === 1 && /183 hari.*niat menetap/.test(card.back)), 'TM01 card distinguishes SPDN alternatives');
+assert.ok(utsCards.some((card) => card.tm === 5 && /Rp2\.000\.000.*Rp10\.000\.000/.test(card.back)), 'TM05 card distinguishes collector thresholds');
+assert.ok(utsCards.some((card) => card.tm === 5 && /cleaning service.*sewa gedung/i.test(card.back)), 'TM05 card distinguishes service and rent categories');
 for (const card of cards) {
   const pattern = card.tm <= 7 ? /^pjk202-v2-tm(\d{2})-(\d{2})$/ : /^pjk202-tm(\d{2})-(\d{2})$/;
   const match = pattern.exec(card.id);
@@ -150,6 +155,8 @@ assert.match(tm4Card.back, /dibebankan penuh/i, 'current 3M treatment taught');
 assert.equal(bank.length, 7, 'one UTS case per TM');
 assert.deepEqual(bank.map((item) => Number(/^TM (\d+):/.exec(item.scope)?.[1])), tms);
 assertNoStale('bank UTS', bank);
+assert.match(bank[4].answerGuide, /Rp1\.750\.000.*Rp2\.000\.000.*Rp5\.000\.000.*Rp10\.000\.000/, 'TM05 bank explains both PPh 22 thresholds');
+assert.match(bank[4].answerGuide, /cleaning service.*sewa mesin.*sewa gedung/i, 'TM05 bank distinguishes PPh 23 and final rent');
 for (const [index, item] of bank.entries()) {
   const tm = tms[index], label = 'bank TM' + tm;
   assert.ok(item.question.startsWith('Studi Kasus ' + tm + ': '), label + ': numbered case');
