@@ -400,11 +400,11 @@ html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: none;
-  color: rgb(100 116 139 / 0.78);
+  color: rgb(71 85 105);
 }
 
 html.dark .reading-scroll-cue {
-  color: rgb(148 163 184 / 0.72);
+  color: rgb(148 163 184);
 }
 
 /* Mobile foundation: compact navigation and a stable utility dock. */
