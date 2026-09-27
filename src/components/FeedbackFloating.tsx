@@ -238,9 +238,9 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
       >
         <div className="mobile-utility-card mobile-utility-card--feedback w-[340px] sm:w-[390px] md:w-[410px] h-[580px] max-h-full flex flex-col bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3.5 bg-gradient-to-r from-amber-500 to-orange-600 text-white shrink-0 select-none">
+          <div className="flex items-center justify-between px-4 py-3.5 bg-gray-900 text-white shrink-0 select-none">
             <div className="flex items-center gap-2 font-bold text-sm tracking-wide">
-              <Sparkles size={18} className="text-amber-200" />
+              <Sparkles size={18} className="text-white" />
               <span>Request Materi & Feedback</span>
             </div>
             <button
@@ -249,14 +249,14 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
               onPointerUp={(e) => e.stopPropagation()}
               onClick={() => setIsOpen(false)}
               aria-label="Tutup form feedback"
-              className="text-amber-100 hover:text-white hover:bg-white/20 p-1.5 rounded-full transition cursor-pointer"
+              className="cursor-pointer rounded-full p-1.5 text-white transition-colors hover:bg-white/20"
             >
               <X size={18} />
             </button>
           </div>
 
           {/* Subheader info */}
-          <div className="bg-amber-50/80 dark:bg-amber-950/30 px-4 py-2 border-b border-amber-200/50 dark:border-amber-900/40 text-[11px] text-amber-900 dark:text-amber-200/90 leading-tight">
+          <div className="border-b border-line bg-elevated px-4 py-2 text-[11px] leading-tight text-secondary">
             ⚡ Laporan diteruskan langsung ke bot Telegram pemilik web untuk segera ditinjau dan ditambahkan.
           </div>
 
@@ -284,7 +284,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="px-4 py-2 text-xs font-semibold rounded-lg bg-amber-600 hover:bg-amber-700 text-white transition shadow-sm"
+                    className="rounded-lg bg-gray-900 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
                   >
                     Tutup
                   </button>
@@ -311,7 +311,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                       onClick={() => setReportType('request-materi')}
                       className={`py-1.5 px-2 text-[11px] font-semibold rounded-lg transition text-center ${
                         reportType === 'request-materi'
-                          ? 'bg-white dark:bg-gray-700 text-amber-600 dark:text-amber-400 shadow-sm'
+                          ? 'bg-surface text-accent shadow-sm'
                           : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                       }`}
                     >
@@ -322,7 +322,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                       onClick={() => setReportType('laporkan-kesalahan')}
                       className={`py-1.5 px-2 text-[11px] font-semibold rounded-lg transition text-center ${
                         reportType === 'laporkan-kesalahan'
-                          ? 'bg-white dark:bg-gray-700 text-amber-600 dark:text-amber-400 shadow-sm'
+                          ? 'bg-surface text-accent shadow-sm'
                           : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                       }`}
                     >
@@ -333,7 +333,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                       onClick={() => setReportType('saran-perbaikan')}
                       className={`py-1.5 px-2 text-[11px] font-semibold rounded-lg transition text-center ${
                         reportType === 'saran-perbaikan'
-                          ? 'bg-white dark:bg-gray-700 text-amber-600 dark:text-amber-400 shadow-sm'
+                          ? 'bg-surface text-accent shadow-sm'
                           : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200'
                       }`}
                     >
@@ -355,7 +355,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                       id="feedback-course"
                       value={selectedCourseCode}
                       onChange={(e) => setSelectedCourseCode(e.target.value)}
-                      className="w-full text-xs px-2.5 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium"
+                      className="w-full text-xs px-2.5 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-focus font-medium"
                     >
                       {courseOptions.map((opt) => (
                         <option key={opt.code} value={opt.code}>
@@ -377,7 +377,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                       placeholder="Mis: 2"
                       value={tmInput}
                       onChange={(e) => setTmInput(e.target.value)}
-                      className="w-full text-xs px-2.5 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium text-center"
+                      className="w-full text-xs px-2.5 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-focus font-medium text-center"
                     />
                   </div>
                 </div>
@@ -404,7 +404,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                       onClick={() => setUrgency('penting')}
                       className={`py-1.5 px-2 text-[10px] font-bold rounded-lg border transition ${
                         urgency === 'penting'
-                          ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-500 text-amber-700 dark:text-amber-300'
+                          ? 'bg-accent/10 border-accent text-accent'
                           : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:border-gray-300'
                       }`}
                     >
@@ -453,7 +453,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                         ? 'Contoh: Pada tabel perbandingan TM 1 baris ke-3 ada kesalahan angka debit kredit...'
                         : 'Contoh: Tampilan tabel di HP akan lebih nyaman jika...'
                     }
-                    className="w-full text-xs p-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 leading-relaxed resize-none"
+                    className="w-full text-xs p-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-focus leading-relaxed resize-none"
                   />
                 </div>
 
@@ -495,7 +495,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 hover:border-amber-400 dark:hover:border-amber-500 text-gray-500 dark:text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 text-xs transition bg-white/50 dark:bg-gray-800/40"
+                      className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 hover:border-accent text-gray-500 dark:text-gray-400 hover:text-accent text-xs transition bg-white/50 dark:bg-gray-800/40"
                     >
                       <ImageIcon size={15} />
                       <span>Upload Screenshot / Catatan Dosen</span>
@@ -507,7 +507,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                 <button
                   type="submit"
                   disabled={isSubmitting || cooldown > 0 || description.trim().length < 10}
-                  className="w-full mt-1 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-md shadow-amber-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition transform active:scale-[0.99]"
+                  className="w-full mt-1 py-2.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-white font-bold text-xs flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   {isSubmitting ? (
                     <>
@@ -563,7 +563,7 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
         } ${
           draggable.isDragging ? 'transition-none cursor-grabbing scale-105' : 'transition-[all] duration-300'
         } touch-none ${
-          draggable.isLongPressing ? 'shadow-xl ring-4 ring-amber-400/50' : 'cursor-pointer active:scale-95'
+          draggable.isLongPressing ? 'shadow-sm ring-2 ring-focus/50' : 'cursor-pointer'
         } ${
           isOpen
             ? 'w-0 h-0 opacity-0 overflow-hidden'
@@ -571,17 +571,17 @@ export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackF
                 if (!draggable.isDesktop) {
                   if (draggable.edgeState === 'left')
                     return draggable.isLongPressing
-                      ? 'w-12 h-12 rounded-r-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-white'
-                      : 'w-1.5 h-10 rounded-r-md bg-amber-500/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-amber-500 text-white';
+                      ? 'w-12 h-12 rounded-r-2xl bg-gray-900 text-white'
+                      : 'w-1.5 h-10 rounded-r-md bg-gray-900/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-gray-900 text-white';
                   if (draggable.edgeState === 'right')
                     return draggable.isLongPressing
-                      ? 'w-12 h-12 rounded-l-2xl bg-gradient-to-l from-amber-500 to-orange-500 text-white'
-                      : 'w-1.5 h-10 rounded-l-md bg-amber-500/60 active:w-12 active:h-12 active:rounded-r-2xl active:bg-amber-500 text-white';
-                  return 'w-10 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white opacity-80';
+                      ? 'w-12 h-12 rounded-l-2xl bg-gray-900 text-white'
+                      : 'w-1.5 h-10 rounded-l-md bg-gray-900/60 active:w-12 active:h-12 active:rounded-l-2xl active:bg-gray-900 text-white';
+                  return 'w-10 h-10 rounded-full bg-gray-900 text-white opacity-80';
                 } else {
-                  if (draggable.edgeState === 'left') return 'w-10 h-12 rounded-r-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg';
-                  if (draggable.edgeState === 'right') return 'w-10 h-12 rounded-l-xl bg-gradient-to-l from-amber-500 to-orange-500 text-white shadow-lg';
-                  return 'w-11 h-11 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 text-white opacity-90 hover:opacity-100 hover:scale-105 transition-all shadow-lg shadow-orange-500/30';
+                  if (draggable.edgeState === 'left') return 'w-10 h-12 rounded-r-xl bg-gray-900 text-white shadow-sm';
+                  if (draggable.edgeState === 'right') return 'w-10 h-12 rounded-l-xl bg-gray-900 text-white shadow-sm';
+                  return 'w-11 h-11 rounded-full bg-gray-900 text-white opacity-90 hover:opacity-100 transition-opacity shadow-sm';
                 }
               })()
         }`}

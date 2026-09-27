@@ -1,7 +1,7 @@
 // Presentation of layered readings (Reading.layout 'layered'): open Fondasi and main sections, the four callout tiers,
 // closed "pendalaman" blocks, write-first self checks, stacked tables on phones, source chips and the reading-time
 // estimate. Every text shown here comes from the data unchanged; only the button labels and hints are written here.
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Lightbulb, PencilLine, Table2 } from 'lucide-react';
 import type { CalloutVariant, ContentBlock } from '../../types';
@@ -17,9 +17,45 @@ export function isSourceOnly(text: string): boolean {
 
 /** A source reference line: small and muted, its markdown (bold, italic) kept but not coloured. */
 export function SourceLine({ text }: { text: string }) {
+  const [expanded, setExpanded] = useState(false);
+  const [overflowing, setOverflowing] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const content = contentRef.current;
+    if (!content) return;
+    let active = true;
+    const measure = () => {
+      if (!active) return;
+      const temporarilyClamped = !content.classList.contains('line-clamp-2');
+      if (temporarilyClamped) content.classList.add('line-clamp-2');
+      const exceedsTwoLines = content.scrollHeight > content.clientHeight + 1;
+      if (temporarilyClamped) content.classList.remove('line-clamp-2');
+      setOverflowing(exceedsTwoLines);
+      if (!exceedsTwoLines) setExpanded(false);
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(content);
+    if (content.parentElement) observer.observe(content.parentElement);
+    window.addEventListener('resize', measure);
+    document.fonts?.ready.then(measure);
+    return () => {
+      active = false;
+      observer.disconnect();
+      window.removeEventListener('resize', measure);
+    };
+  }, [text, expanded]);
+
   return (
     <div className="layered-source my-2 text-xs leading-5 text-gray-500 dark:text-gray-400 [&_p]:m-0 [&_p]:leading-5 [&_p]:text-inherit dark:[&_p]:text-inherit [&_strong]:font-semibold [&_strong]:text-inherit dark:[&_strong]:text-inherit [&_em]:text-inherit dark:[&_em]:text-inherit">
-      {renderText(text)}
+      <div ref={contentRef} className={expanded ? '' : 'line-clamp-2'}>{renderText(text)}</div>
+      {overflowing && (
+        <button type="button" aria-expanded={expanded} onClick={() => setExpanded(!expanded)} className="mt-1 min-h-7 font-semibold text-accent underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus">
+          {expanded ? 'Sembunyikan sumber' : 'Lihat semua sumber'}
+        </button>
+      )}
     </div>
   );
 }
@@ -50,7 +86,7 @@ export function LayeredSection({ title, layer, source, children }: { title?: str
   return (
     <section className={`layered-section layered-section--${layer} pt-4 md:pt-6`}>
       <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">{EYEBROW[layer]}</div>
-      <h2 className="flex gap-2 font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl">
+      <h2 className="flex gap-2 font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl md:leading-tight">
         {number && <span className="shrink-0 text-blue-500 dark:text-blue-400">{number}</span>}
         <span className="min-w-0">{text}</span>
       </h2>
@@ -89,12 +125,13 @@ export function LayeredCallout({ variant, title, text }: { variant: CalloutVaria
   const style = CALLOUT_STYLE[variant] ?? CALLOUT_STYLE.note!;
   const box = (useInsideBox() && FLAT_CALLOUT_BOX[variant]) || style.box;
   const { Icon } = style;
+  const titleParts = title?.match(/^([^:]{2,32}):\s*(.+)$/);
   return (
     <div className={`layered-callout layered-callout--${variant} max-w-[70ch] ${LAYERED_BODY} ${box}`}>
       {title && (
-        <span className="mb-1.5 inline-block rounded-md bg-sky-600/10 px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-sky-800 dark:bg-sky-400/10 dark:text-sky-300">
-          {title}
-        </span>
+        <div className="mb-1.5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          {titleParts ? <><span className="text-[11px] font-bold uppercase tracking-[0.1em] text-accent">{titleParts[1]}</span><span className="text-sm font-semibold normal-case tracking-normal text-ink">{titleParts[2]}</span></> : <span className="text-sm font-semibold normal-case tracking-normal text-ink">{title}</span>}
+        </div>
       )}
       <div className={Icon ? 'flex gap-2.5' : undefined}>
         {Icon && <Icon size={17} aria-hidden="true" className={`mt-1 shrink-0 ${style.icon}`} />}

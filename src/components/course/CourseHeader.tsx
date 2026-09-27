@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import { ArrowDown, ArrowLeft, BookOpen, Check, Clock, Maximize, Minimize, Target } from 'lucide-react';
 import type { Reading } from '../../types';
 import { renderText } from './MarkdownContent';
-import { BackToTopButton, estimateLayeredReading, InlineMarkdown, isSourceOnly, LAYERED_BODY, SourceLine } from './LayeredBlocks';
+import { BackToTopButton, estimateLayeredReading, InlineMarkdown, isSourceOnly, SourceLine } from './LayeredBlocks';
 import { getReadingBlockId } from './ReadingOutline';
 
 interface CourseHeaderProps {
@@ -62,13 +62,13 @@ function LayeredEntry({ courseName, reading, onBack, badge, phase }: { courseNam
         </span>
       </div>
 
-      <h1 className="mt-2 max-w-[24ch] text-2xl font-extrabold leading-[1.16] tracking-tight text-gray-950 dark:text-white sm:text-3xl md:mt-4 md:text-4xl">
+      <h1 className="mt-2 max-w-[24ch] text-2xl font-extrabold leading-[1.2] tracking-tight text-ink sm:text-3xl sm:leading-[1.2] md:mt-4 md:text-[42px] md:leading-[1.15]">
         {reading.title}
       </h1>
       {isSourceOnly(reading.intro) ? (
         <div className="mt-2 max-w-[70ch]"><SourceLine text={reading.intro} /></div>
       ) : (
-        <div className={`mt-3 max-w-[70ch] text-gray-700 dark:text-gray-300 ${LAYERED_BODY}`}>{renderText(reading.intro)}</div>
+        <div className="mt-3 max-w-[720px] text-base leading-[1.65] text-secondary md:text-[18px]">{renderText(reading.intro)}</div>
       )}
 
       {reading.objectives.length > 0 ? (
@@ -156,14 +156,14 @@ export default function CourseHeader({ courseName, reading, onBack, showZenContr
 
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
           <span className="rounded-md bg-blue-50 px-2 py-1 font-bold text-blue-700 dark:bg-blue-950/45 dark:text-blue-300">{context.badge}</span>
-          {reading.ref && <span className="font-medium text-gray-500 dark:text-gray-400">Sumber: {reading.ref}</span>}
-          <span className="text-gray-400 dark:text-gray-500">{reading.blocks.length} blok materi</span>
+          <span className="text-muted">{reading.blocks.length} blok materi</span>
         </div>
+        {reading.ref && <div className="mt-1 max-w-[70ch]"><SourceLine text={`Sumber: ${reading.ref}`} /></div>}
 
-        <h1 className="mt-4 max-w-[24ch] text-2xl font-extrabold leading-[1.16] tracking-tight text-gray-950 dark:text-white sm:text-3xl md:text-4xl">
+        <h1 className="mt-4 max-w-[24ch] text-2xl font-extrabold leading-[1.2] tracking-tight text-ink sm:text-3xl sm:leading-[1.2] md:text-[42px] md:leading-[1.15]">
           {reading.title}
         </h1>
-        <div className="mt-4 max-w-[70ch] text-[15px] leading-7 text-gray-600 dark:text-gray-300 md:text-base md:leading-8">
+        <div className="mt-4 max-w-[720px] text-base leading-[1.65] text-secondary md:text-[18px]">
           {renderText(reading.intro)}
         </div>
 

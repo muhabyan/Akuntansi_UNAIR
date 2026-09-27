@@ -79,7 +79,7 @@ export default function MateriList({ course, range, onOpenReading }: MateriListP
                   {checked && <span className="text-emerald-600 dark:text-emerald-400">Selesai</span>}
                   {material.ref && material.ref !== '—' && <span className="truncate normal-case tracking-normal text-gray-400 dark:text-gray-500">{material.ref}</span>}
                 </div>
-                <h3 className={`text-sm font-bold leading-snug md:text-base ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white'}`}>{material.title}</h3>
+                <h3 className={`text-sm font-bold leading-snug md:text-base md:leading-snug ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 dark:text-white'}`}>{material.title}</h3>
               </button>
 
               <div className="col-start-2 mt-2 flex min-w-0 flex-wrap items-center gap-1.5 md:col-start-auto md:mt-0 md:flex-nowrap md:justify-end">

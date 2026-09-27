@@ -38,7 +38,7 @@ export default function PrepReadingList({
                   <span className="mb-1.5 inline-block rounded-md bg-blue-50 px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
                     {item.label}
                   </span>
-                  <span className="block text-base font-bold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400 md:text-lg">
+                  <span className="block text-base font-bold leading-snug text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400 md:text-lg md:leading-snug">
                     {reading.title}
                   </span>
                   <span className="mt-1.5 line-clamp-2 block text-sm leading-relaxed text-gray-500 dark:text-gray-400 [&_p]:m-0 [&_p]:inline [&_p]:text-inherit [&_strong]:text-inherit">

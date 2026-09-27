@@ -357,10 +357,10 @@ function ReadingPanel({
           <button
             type="button"
             onClick={() => window.dispatchEvent(new CustomEvent('open-material-request', { detail: { courseCode, tm: reading.tm } }))}
-            className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg px-2.5 sm:px-3 text-xs sm:text-sm font-semibold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100/80 border border-amber-200/80 transition-colors dark:text-amber-300 dark:bg-amber-950/40 dark:hover:bg-amber-900/50 dark:border-amber-800/60"
+            className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-lg border border-accent/40 bg-surface px-2.5 text-xs font-semibold text-accent transition-colors hover:bg-accent/10 sm:px-3 sm:text-sm"
             title="Minta materi tambahan atau laporkan kesalahan materi"
           >
-            <MessageSquarePlus size={15} className="text-amber-600 dark:text-amber-400" />
+            <MessageSquarePlus size={15} className="text-accent" />
             <span className="hidden sm:inline">Request Materi</span>
           </button>
           <button
@@ -480,7 +480,7 @@ function UniversalCourseDashboard({
         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-600 dark:text-blue-400">
           {isComplete ? 'Tinjau kembali' : 'Titik belajar berikutnya'}
         </p>
-        <h2 id="course-next-step-title" className="mt-1.5 text-lg font-bold leading-snug text-gray-900 dark:text-white md:text-xl">
+        <h2 id="course-next-step-title" className="mt-1.5 text-lg font-bold leading-snug text-gray-900 dark:text-white md:text-xl md:leading-snug">
           TM {nextTm} · {nextTitle}
         </h2>
         <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
@@ -523,7 +523,7 @@ function ReviewReadingCard({
               Simulasi
             </span>
           </div>
-          <h3 className="text-base font-bold leading-snug text-gray-900 dark:text-white transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400 md:text-lg">
+          <h3 className="text-base font-bold leading-snug text-gray-900 dark:text-white transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400 md:text-lg md:leading-snug">
             {reading.title}
           </h3>
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
@@ -618,7 +618,7 @@ function MaterialCard({
           {checked && <span className="text-emerald-600 dark:text-emerald-400">Selesai</span>}
           {reading.ref && <span className="truncate normal-case tracking-normal text-gray-400 dark:text-gray-500">{reading.ref}</span>}
         </div>
-        <h3 className={`text-sm font-bold leading-snug transition-colors md:text-base ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 group-hover:text-blue-700 dark:text-white dark:group-hover:text-blue-300'}`}>
+        <h3 className={`text-sm font-bold leading-snug transition-colors md:text-base md:leading-snug ${checked ? 'text-gray-500 dark:text-gray-400' : 'text-gray-900 group-hover:text-blue-700 dark:text-white dark:group-hover:text-blue-300'}`}>
           {reading.title}
         </h3>
         <div className="mt-1 line-clamp-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400 md:text-sm">

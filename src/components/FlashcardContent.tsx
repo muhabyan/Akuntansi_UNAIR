@@ -33,17 +33,17 @@ export default function FlashcardContent({ course }: { course: Course }) {
             onClick={() => toggle(idx)}
             className={`flip-card group h-48 perspective-1000 cursor-pointer ${flipped[idx] ? 'is-flipped' : ''}`}
           >
-            <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+            <div className="flip-card-inner relative w-full h-full transition-transform duration-200 transform-style-3d">
               {/* Depan */}
-              <div className="absolute inset-0 w-full h-full bg-navy-800 border border-navy-500 rounded-2xl flex items-center justify-center p-6 text-center shadow-lg backface-hidden">
-                <h4 className="text-xl font-bold text-gold">{card.title}</h4>
+              <div className="absolute inset-0 flex h-full w-full items-center justify-center rounded-2xl border border-line bg-surface p-6 text-center shadow-sm backface-hidden">
+                <h4 className="text-xl font-bold text-ink">{card.title}</h4>
                 <div className="absolute bottom-4 right-4 text-slate-600">
                   <LayoutDashboard size={20} />
                 </div>
               </div>
               {/* Belakang */}
-              <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-gold to-gold-dark rounded-2xl flex items-center justify-center p-6 text-center shadow-lg backface-hidden rotate-y-180">
-                <p className="text-navy-900 font-medium leading-relaxed">{card.back}</p>
+              <div className="absolute inset-0 w-full h-full bg-elevated border border-accent rounded-2xl flex items-center justify-center p-6 text-center shadow-sm backface-hidden rotate-y-180">
+                <p className="text-ink font-medium leading-relaxed">{card.back}</p>
               </div>
             </div>
           </div>

@@ -1,17 +1,34 @@
 /** @type {import('tailwindcss').Config} */
+const neutralRamp = { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' };
+const accentRamp = { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' };
+const successRamp = { 50: '#EFF7F1', 100: '#DDEFE1', 200: '#BEDFC8', 300: '#A1D2B0', 400: '#7CC49A', 500: '#33784E', 600: '#2E6B45', 700: '#255B3A', 800: '#1E4A31', 900: '#163926', 950: '#10281B' };
+const dangerRamp = { 50: '#FCF2F0', 100: '#F9E2DE', 200: '#F3C4BE', 300: '#F0A9A0', 400: '#F08A80', 500: '#B84037', 600: '#A8322A', 700: '#8C2924', 800: '#72221F', 900: '#561B19', 950: '#3B1413' };
+const warningRamp = { 50: '#FFF9EB', 100: '#FAEFD1', 200: '#F4DFA5', 300: '#E9C77E', 400: '#E0B25C', 500: '#966500', 600: '#8A5A00', 700: '#704900', 800: '#593B00', 900: '#422C00', 950: '#2E1F00' };
 export default {
   darkMode: 'class',
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        gray: { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' },
-        blue: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
-        indigo: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
-        sky: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
-        cyan: { 50: '#EEF7F5', 100: '#DBEFEC', 200: '#BCDEDA', 300: '#9ACBC6', 400: '#7FB8B4', 500: '#347579', 600: '#2F6F73', 700: '#285D60', 800: '#214E52', 900: '#183A3D', 950: '#10292B' },
-        zinc: { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' },
-        neutral: { 50: '#F7F5F0', 100: '#EFEBE4', 200: '#E2DDD3', 300: '#CFC8BC', 400: '#A39B8E', 500: '#6E685F', 600: '#5F5A52', 700: '#3E4A55', 800: '#222E3A', 900: '#182632', 950: '#111B24' },
+        gray: neutralRamp,
+        zinc: neutralRamp,
+        neutral: neutralRamp,
+        slate: neutralRamp,
+        blue: accentRamp,
+        indigo: accentRamp,
+        sky: accentRamp,
+        cyan: accentRamp,
+        teal: successRamp,
+        emerald: successRamp,
+        green: successRamp,
+        red: dangerRamp,
+        rose: dangerRamp,
+        amber: warningRamp,
+        yellow: warningRamp,
+        orange: warningRamp,
+        violet: accentRamp,
+        purple: accentRamp,
+        pink: accentRamp,
         bg: 'rgb(var(--bg) / <alpha-value>)',
         surface: 'rgb(var(--surface) / <alpha-value>)',
         elevated: 'rgb(var(--surface-elevated) / <alpha-value>)',
@@ -37,14 +54,6 @@ export default {
           700: 'rgb(var(--color-bg-accent) / <alpha-value>)',
           600: 'rgb(var(--color-border-hover) / <alpha-value>)',
           500: 'rgb(var(--color-border) / <alpha-value>)',
-        },
-        slate: {
-          100: 'rgb(var(--color-text-title) / <alpha-value>)',
-          200: 'rgb(var(--color-text-title) / <alpha-value>)',   // alias for title
-          300: 'rgb(var(--color-text-main) / <alpha-value>)',
-          400: 'rgb(var(--color-text-description) / <alpha-value>)',
-          500: 'rgb(var(--color-text-muted) / <alpha-value>)',
-          600: 'rgb(var(--color-text-muted) / <alpha-value>)',   // alias for muted
         },
         gold: {
           DEFAULT: 'rgb(var(--color-gold) / <alpha-value>)',

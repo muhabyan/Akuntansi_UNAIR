@@ -65,7 +65,7 @@ export default function CourseSidebar({
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-600 dark:text-blue-400">
                   {semester ? `Semester ${semester.number} · ` : ''}{course.code} · {course.sks} SKS
                 </p>
-                <h1 className="mt-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl">{course.name}</h1>
+                <h1 className="mt-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl md:leading-tight">{course.name}</h1>
                 {(course.prasyarat || course.driveFolderUrl) && (
                   <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-500 dark:text-gray-400">
                     {course.prasyarat && <span>Prasyarat: {course.prasyarat}</span>}

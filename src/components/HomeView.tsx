@@ -92,7 +92,7 @@ export default function HomeView({ onSelectSemester, onOpenCourseDirectly, onOpe
         <Aks1Logo3D />
         <div className="mobile-home-hero-content mx-auto w-full max-w-7xl px-5 py-14 sm:py-16 md:px-10 md:pb-20 md:pt-0 lg:px-14 lg:py-0">
           <div className="max-w-3xl">
-            <h1 className="mb-5 text-[2rem] font-bold leading-[1.12] text-gray-900 dark:text-white sm:text-4xl md:mb-6 md:text-5xl md:leading-tight lg:text-6xl">
+            <h1 className="mb-5 text-[2rem] font-bold leading-[1.12] text-gray-900 dark:text-white sm:text-4xl sm:leading-[1.12] md:mb-6 md:text-5xl md:leading-tight lg:text-6xl lg:leading-tight">
               <span className="block mb-2 md:mb-4">Tingkatkan Pemahaman</span>
               <span className="block min-h-[1.2em] text-blue-600 dark:text-blue-400 sm:inline sm:min-h-0">
                 <Typewriter words={['Akuntansi', 'Bisnis', 'Keuangan', 'Perpajakan']} />

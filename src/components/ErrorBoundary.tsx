@@ -92,7 +92,7 @@ export default class ErrorBoundary extends Component<Props, State> {
               <button
                 type="button"
                 onClick={this.handleReload}
-                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold to-amber-500 px-5 py-3.5 text-sm font-bold text-navy-950 shadow-lg transition hover:brightness-110 active:scale-[0.98]"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gray-900 px-5 py-3.5 text-sm font-bold text-white transition-colors hover:bg-gray-800"
               >
                 <RefreshCw size={16} />
                 Muat Ulang Halaman

@@ -49,8 +49,8 @@ export default function ScheduleAddModal({ onClose, onSave, currentActiveCount =
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-lg bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-gray-950/65 p-4">
+      <div className="relative w-full max-w-lg overflow-hidden rounded-xl border border-line bg-surface shadow-md animate-in fade-in duration-200">
         
         {/* Header */}
         <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">

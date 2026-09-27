@@ -26,10 +26,10 @@ function parseNum(raw: string): number | undefined {
 function Header({ spec, compact = false }: { spec: StatementSpec; compact?: boolean }) {
   return (
     <div className={`report-document-header text-center ${compact ? 'mb-4' : 'mb-5'} leading-tight`}>
-      <div className="text-sm font-black uppercase tracking-[0.14em] text-slate-100">{spec.entity}</div>
-      <div className="mt-1 font-display text-lg font-black text-gold md:text-xl">
+      <div className="text-sm font-bold uppercase tracking-[0.1em] text-ink">{spec.entity}</div>
+      <div className="mt-1 font-display text-lg font-bold text-accent md:text-xl">
         {spec.title}{' '}
-        {spec.partial && <span className="font-semibold text-slate-400">{spec.partial}</span>}
+        {spec.partial && <span className="font-semibold text-muted">{spec.partial}</span>}
       </div>
       <div className="mt-1 text-xs font-semibold text-slate-500">{spec.period}</div>
       {spec.currency && <div className="mt-1 text-[11px] font-bold uppercase tracking-wider text-slate-500">dalam {spec.currency}</div>}
@@ -171,8 +171,8 @@ export function StatementBuilder({ spec, instructions }: { spec: StatementSpec; 
       </div>
 
       {instructions && (
-        <div className="mx-4 mt-4 rounded-2xl border border-gold/20 bg-gold/10 px-4 py-3 text-sm leading-relaxed text-slate-300 md:mx-5">
-          <div className="mb-1 flex items-center gap-2 font-black text-gold">
+        <div className="mx-4 mt-4 rounded-lg border border-line border-l-[3px] border-l-accent bg-surface px-4 py-3 text-sm leading-relaxed text-secondary md:mx-5">
+          <div className="mb-1 flex items-center gap-2 font-bold text-accent">
             <PenLine size={15} /> Instruksi
           </div>
           {instructions}
@@ -220,17 +220,17 @@ export function StatementBuilder({ spec, instructions }: { spec: StatementSpec; 
       </div>
 
       <div className="report-action-bar flex flex-wrap items-center gap-2 border-t px-4 py-4 md:px-5">
-        <button onClick={() => setChecked(true)} className="inline-flex items-center gap-2 rounded-xl bg-gold px-4 py-2.5 text-sm font-black text-navy-950 transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold/50">
+        <button onClick={() => setChecked(true)} className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus">
           <Check size={16} /> Periksa
         </button>
-        <button onClick={showKey} className="inline-flex items-center gap-2 rounded-xl border border-navy-500 bg-navy-800/70 px-4 py-2.5 text-sm font-bold text-slate-300 transition hover:border-gold/50 hover:text-gold">
+        <button onClick={showKey} className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2.5 text-sm font-bold text-secondary transition-colors hover:border-accent hover:text-accent">
           <Eye size={16} /> Lihat kunci
         </button>
-        <button onClick={reset} className="inline-flex items-center gap-2 rounded-xl border border-navy-500 bg-navy-800/70 px-4 py-2.5 text-sm font-bold text-slate-300 transition hover:border-gold/50 hover:text-gold">
+        <button onClick={reset} className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-4 py-2.5 text-sm font-bold text-secondary transition-colors hover:border-accent hover:text-accent">
           <RotateCcw size={16} /> Reset
         </button>
         {checked && (
-          <span className={`ml-1 inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-black ${complete ? 'bg-emerald-500/10 text-emerald-300' : 'bg-amber-500/10 text-amber-300'}`}>
+          <span className={`ml-1 inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-bold ${complete ? 'border-success/40 bg-success/10 text-success' : 'border-warning/40 bg-warning/10 text-warning'}`}>
             <BadgeCheck size={16} /> {complete ? 'Semua isian benar' : `${correctCount}/${inputLines.length} isian benar`}
           </span>
         )}

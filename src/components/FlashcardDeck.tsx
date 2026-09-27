@@ -6,7 +6,7 @@
 // Isi akademik tetap berasal dari data flashcard.
 // =============================================================
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { CheckCircle2, ChevronLeft, ChevronRight, Dices, Eye, Layers3, RotateCcw, SkipForward, Sparkles, Star, CalendarClock, Brain, Frown, Smile, ThumbsUp } from 'lucide-react';
+import { CheckCircle2, ChevronLeft, ChevronRight, Dices, Eye, Layers3, RotateCcw, SkipForward, Star, CalendarClock, Brain, Frown, Smile, ThumbsUp } from 'lucide-react';
 import { calculateNextReview, type SRSData, type SRSGrade } from '../lib/srsAlgo';
 import type { StudyCard } from '../types';
 import { buildFlashcardSpinSequence, pickRandomFlashcardTarget } from './flashcardRandom';
@@ -380,34 +380,32 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
       </div>
       <section className="learning-surface overflow-hidden">
         <div className="relative isolate overflow-hidden bg-calm-aurora px-5 py-5 md:px-6 md:py-6">
-          <div className="pointer-events-none absolute -right-16 -top-24 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 left-1/4 h-56 w-56 rounded-full bg-sky-500/10 blur-3xl" />
 
           <div className="relative flex flex-wrap items-start justify-between gap-5">
             <div className="max-w-3xl">
               <div className="eyebrow mb-2">Pengingat Konsep</div>
-              <h3 className="flex items-center gap-3 font-display text-2xl font-black text-slate-100 md:text-3xl">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/30 bg-gold/15 text-gold shadow-lg shadow-gold/10">
-                  <Sparkles size={22} />
+              <h3 className="flex items-center gap-3 font-display text-2xl font-bold text-ink md:text-3xl">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent">
+                  <Layers3 size={22} />
                 </span>
-                {isAkbiWorkspace ? 'Studio Flashcard AKBI' : 'Flashcard Gacha'}
+                {isAkbiWorkspace ? 'Flashcard AKBI' : 'Flashcard Materi'}
               </h3>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-400">
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-secondary">
                 {isAkbiWorkspace
                   ? 'Gunakan satu kartu sebagai satu unit latihan. Jawab dari ingatan, periksa penjelasan, lalu tandai konsep yang sudah dikuasai sebelum beralih.'
-                  : 'Pilih kartu tengah, balik untuk melihat jawaban, atau gunakan tombol acak untuk memilih konsep secara random. Model ini menjaga latihan tetap ringan tanpa mengubah isi akademik.'}
+                  : 'Pilih kartu tengah dan balik untuk melihat jawaban. Gunakan tombol acak atau panah untuk beralih ke konsep lain.'}
               </p>
             </div>
 
-            <div className="grid min-w-[230px] gap-2 rounded-3xl border border-navy-500/70 bg-navy-950/42 p-4 text-sm shadow-inner backdrop-blur-sm">
-              <div className="flex justify-between gap-8"><span className="text-slate-500">Total kartu</span><span className="font-black text-slate-100">{totalCards}</span></div>
-              <div className="flex justify-between gap-8"><span className="text-slate-500">{isAkbiWorkspace ? 'Sudah dilihat' : 'Kartu aktif'}</span><span className="font-black text-gold">{isAkbiWorkspace ? seenCount : activeIndex + 1}</span></div>
-              <div className="flex justify-between gap-8"><span className="text-slate-500">{isAkbiWorkspace ? 'Dikuasai' : 'Terbuka'}</span><span className="font-black text-slate-100">{isAkbiWorkspace ? masteredCount : openedCount}</span></div>
+            <div className="grid min-w-[230px] gap-2 rounded-lg border border-line bg-surface p-4 text-sm">
+              <div className="flex justify-between gap-8"><span className="text-muted">Total kartu</span><span className="font-bold text-ink">{totalCards}</span></div>
+              <div className="flex justify-between gap-8"><span className="text-muted">{isAkbiWorkspace ? 'Sudah dilihat' : 'Kartu aktif'}</span><span className="font-bold text-accent">{isAkbiWorkspace ? seenCount : activeIndex + 1}</span></div>
+              <div className="flex justify-between gap-8"><span className="text-muted">{isAkbiWorkspace ? 'Dikuasai' : 'Terbuka'}</span><span className="font-bold text-ink">{isAkbiWorkspace ? masteredCount : openedCount}</span></div>
             </div>
           </div>
           {isAkbiWorkspace && (
-            <div className="relative mt-5 rounded-2xl border border-navy-500/65 bg-navy-950/36 p-3.5">
-              <div className="mb-2 flex items-center justify-between gap-3 text-xs font-bold text-slate-400">
+            <div className="relative mt-5 rounded-lg border border-line bg-elevated p-3.5">
+              <div className="mb-2 flex items-center justify-between gap-3 text-xs font-bold text-secondary">
                 <span>Penguasaan sesi</span>
                 <span className="text-gold">{masteredCount}/{totalCards} · {masteryPercent}%</span>
               </div>
@@ -421,7 +419,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
             <button
               onClick={closeAll}
               disabled={isSpinning}
-              className="inline-flex items-center gap-2 rounded-2xl border border-navy-500 bg-navy-850 px-3.5 py-2 text-sm font-bold text-slate-300 transition-all hover:border-gold/50 hover:text-gold disabled:cursor-not-allowed disabled:opacity-50"
+              className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3.5 py-2 text-sm font-bold text-secondary transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-50"
             >
               <RotateCcw size={15} /> Tutup semua
             </button>
@@ -429,7 +427,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
               <button
                 onClick={resetStudySession}
                 disabled={isSpinning}
-                className="inline-flex items-center gap-2 rounded-2xl border border-navy-500 bg-navy-850 px-3.5 py-2 text-sm font-bold text-slate-300 transition-all hover:border-gold/50 hover:text-gold disabled:cursor-not-allowed disabled:opacity-50"
+                className="inline-flex items-center gap-2 rounded-lg border border-line bg-surface px-3.5 py-2 text-sm font-bold text-secondary transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-50"
               >
                 <RotateCcw size={15} /> Reset sesi
               </button>
@@ -437,26 +435,25 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
             <button
               onClick={spinCards}
               disabled={isSpinning}
-              className="inline-flex items-center gap-2 rounded-2xl bg-gold px-4 py-2 text-sm font-black text-navy-950 shadow-lg shadow-gold/20 transition-all hover:-translate-y-0.5 hover:bg-gold-light disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center gap-2 rounded-lg bg-gray-900 px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <Dices size={17} className={isSpinning ? 'animate-spin' : ''} /> {isSpinning ? 'Mengacak...' : 'Acak kartu'}
             </button>
           </div>
 
-          <div className="inline-flex items-center gap-2 rounded-full border border-navy-500/70 bg-navy-850/60 px-3 py-2 text-xs font-bold text-slate-400">
+          <div className="inline-flex items-center gap-2 rounded-full border border-line bg-elevated px-3 py-2 text-xs font-bold text-secondary">
             <Layers3 size={14} className="text-gold" /> Geser kartu, gunakan panah, atau ketuk
           </div>
         </div>
       </section>
 
       <section 
-        className="flashcard-gacha-stage relative isolate overflow-hidden rounded-[2rem] border border-[rgb(var(--color-border)/0.78)] bg-[rgb(var(--surface-soft)/0.62)] px-2 py-8 shadow-calm-soft md:px-6 md:py-10"
+        className="flashcard-gacha-stage relative isolate overflow-hidden rounded-[2rem] border border-line bg-elevated px-2 py-8 shadow-sm md:px-6 md:py-10"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[90px]" />
-        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-24 bg-gradient-to-b from-gold/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-24 bg-elevated" />
 
         <div className="relative mx-auto h-[430px] w-full max-w-6xl perspective-1000 md:h-[470px]">
           {cards.map((card, index) => {
@@ -471,24 +468,40 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
             if (!isVisible) return null;
 
             const translateX = offset * 250;
-            const scale = isCenter ? 1 : Math.max(0.55, 1 - Math.abs(offset) * 0.16);
+            const scale = 1;
             const zIndex = 80 - Math.abs(offset);
-            const opacity = isCenter ? 1 : Math.max(0.16, 1 - Math.abs(offset) * 0.26);
-            const rotateY = offset * -13;
-            const blur = isCenter ? 0 : Math.min(3.25, Math.abs(offset) * 1.05);
+            const opacity = isCenter ? 1 : 0.78;
+            const rotateY = 0;
             const isFlipped = !!flippedCards[index];
+
+            if (!isCenter) return (
+              <div
+                key={`${studySeed}-${index}-${card.front}`}
+                aria-hidden="true"
+                className="flashcard-gacha-card-shell pointer-events-none absolute left-1/2 top-1/2 hidden h-[300px] w-[210px] origin-center rounded-[1.3rem] border-2 border-line-strong bg-surface p-5 text-muted shadow-sm transition-[transform,opacity] duration-200 motion-reduce:transition-none sm:block"
+                style={{
+                  transform: `translate(-50%, -50%) translateX(${offset * 300}px)`,
+                  zIndex,
+                  opacity,
+                }}
+              >
+                <div className={`flex h-full flex-col gap-5 overflow-hidden ${offset < 0 ? 'items-start text-left' : 'items-end text-right'}`}>
+                  <span className="rounded-full border border-line-strong bg-elevated px-3 py-1 text-xs font-bold">#{index + 1}</span>
+                  <p className="line-clamp-2 max-w-[160px] text-sm font-semibold leading-snug">{card.front}</p>
+                </div>
+              </div>
+            );
 
             return (
               <div
                 key={`${studySeed}-${index}-${card.front}`}
                 aria-hidden={!isCenter}
                 onClick={() => { if (isCenter && !isSpinning) toggleFlip(index); }}
-                className="flashcard-gacha-card-shell absolute left-1/2 top-1/2 h-[385px] w-[290px] origin-center transition-all duration-500 ease-out md:h-[420px] md:w-[330px]"
+                className="flashcard-gacha-card-shell absolute left-1/2 top-1/2 h-[385px] w-[290px] origin-center transition-all duration-200 ease-out md:h-[420px] md:w-[330px]"
                 style={{
                   transform: `translate(-50%, -50%) translateX(${translateX}px) scale(${scale}) rotateY(${rotateY}deg)`,
                   zIndex,
                   opacity,
-                  filter: `blur(${blur}px)`,
                 }}
               >
                 <div
@@ -503,24 +516,23 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
                   tabIndex={isCenter && !isSpinning ? 0 : -1}
                   aria-pressed={isFlipped}
                   aria-describedby={`${instructionId} ${instructionId}-${index}`}
-                  className={`flashcard-gacha-card group relative h-full w-full cursor-pointer transform-style-3d rounded-[1.7rem] text-left transition-transform duration-700 ease-in-out focus:outline-none ${isFlipped ? 'rotate-y-180' : ''} ${isCenter && !isSpinning ? 'md:hover:-translate-y-2' : ''}`}
+                  className={`flashcard-gacha-card group relative h-full w-full cursor-pointer transform-style-3d rounded-[1.7rem] text-left transition-transform duration-200 ease-in-out focus:outline-none ${isFlipped ? 'rotate-y-180' : ''}`}
                   aria-label={getFlashcardAccessibleLabel(card, index, totalCards, isFlipped)}
                 >
                   <span id={`${instructionId}-${index}`} className="sr-only">
                     {getFlashcardFlipInstruction(isFlipped)}
                   </span>
-                  <div aria-hidden={isFlipped} className="absolute inset-0 backface-hidden overflow-hidden rounded-[1.7rem] border border-[rgb(var(--color-border)/0.92)] bg-[rgb(var(--surface-card)/0.98)] p-6 shadow-calm-lift">
-                    <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-gold via-gold-light to-amber-500" />
-                    <div className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-gold/10 blur-3xl" />
+                  <div aria-hidden={isFlipped} className="absolute inset-0 backface-hidden overflow-hidden rounded-[1.7rem] border border-line bg-surface p-6 shadow-sm">
+                    <div className="absolute inset-x-0 top-0 h-1.5 bg-accent" />
                     <div className="relative flex h-full flex-col">
-                      <div className="mb-5 flex items-center justify-between gap-3">
-                        <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-gold">Pertanyaan</span>
-                        <div className="flex items-center gap-2">
-                          {courseCode && card.id && (
+                      <div className="mb-5 flex items-center gap-2">
+                        <span className="shrink-0 rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-gold">Pertanyaan</span>
+                        <span className="shrink-0 rounded-full border border-line bg-elevated px-2.5 py-1 text-xs font-black text-muted">#{index + 1}</span>
+                        {courseCode && card.id && (
                             <button
                               type="button"
                               onClick={(e) => toggleStar(e, card.id)}
-                              className={`rounded-full p-1.5 transition-colors ${
+                              className={`ml-auto shrink-0 rounded-full p-1.5 transition-colors ${
                                 starredCards[card.id]
                                   ? 'text-gold bg-gold/10 hover:bg-gold/20'
                                   : 'text-slate-400 hover:text-gold hover:bg-gold/10'
@@ -529,35 +541,32 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
                             >
                               <Star size={16} fill={starredCards[card.id] ? 'currentColor' : 'none'} />
                             </button>
-                          )}
-                          <span className="rounded-full border border-[rgb(var(--color-border)/0.85)] bg-[rgb(var(--surface-muted)/0.65)] px-2.5 py-1 text-xs font-black text-[rgb(var(--color-text-muted))]">#{index + 1}</span>
-                        </div>
+                        )}
                       </div>
 
                       <div className="flex flex-1 items-center justify-center text-center">
-                        <h4 className="text-balance font-display text-2xl font-black leading-tight text-[rgb(var(--color-text-title))] md:text-[1.7rem]">
+                        <h4 className="text-balance font-display text-2xl font-black leading-tight text-[rgb(var(--color-text-title))] md:text-[1.7rem] md:leading-tight">
                           {card.front}
                         </h4>
                       </div>
 
-                      <div className="mt-5 flex items-center justify-center gap-2 rounded-2xl border border-[rgb(var(--color-border)/0.72)] bg-[rgb(var(--surface-muted)/0.45)] px-3 py-2 text-xs font-bold text-[rgb(var(--color-text-muted))]">
+                      <div className="mt-5 flex items-center justify-center gap-2 rounded-2xl border border-line bg-elevated px-3 py-2 text-xs font-bold text-muted">
                         <Eye size={14} className="text-gold" /> {isCenter ? 'Klik untuk membuka jawaban' : 'Geser ke tengah untuk membuka'}
                       </div>
                     </div>
                   </div>
 
-                  <div aria-hidden={!isFlipped} className="absolute inset-0 rotate-y-180 backface-hidden overflow-x-hidden overflow-y-auto overscroll-contain rounded-[1.7rem] border border-gold/30 bg-gradient-to-br from-navy-850 via-navy-800 to-slate-900 p-6 text-slate-100 shadow-calm-lift">
-                    <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-sky-400 via-gold to-emerald-400" />
-                    <div className="absolute -left-16 -bottom-16 h-44 w-44 rounded-full bg-gold/15 blur-3xl" />
+                  <div aria-hidden={!isFlipped} className="absolute inset-0 rotate-y-180 backface-hidden overflow-x-hidden overflow-y-auto overscroll-contain rounded-[1.7rem] border border-accent/40 bg-elevated p-6 text-ink shadow-sm">
+                    <div className="absolute inset-x-0 top-0 h-1.5 bg-accent" />
                     <div className="relative flex min-h-full flex-col">
-                      <div className="mb-5 flex items-center justify-between gap-3">
-                        <span className="rounded-full border border-sky-300/20 bg-sky-400/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-sky-200">Jawaban</span>
-                        <div className="flex items-center gap-2">
-                          {courseCode && card.id && (
+                      <div className="mb-5 flex items-center gap-2">
+                        <span className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-accent">Jawaban</span>
+                        <span className="shrink-0 rounded-full border border-line bg-surface px-2.5 py-1 text-xs font-bold text-secondary">#{index + 1}</span>
+                        {courseCode && card.id && (
                             <button
                               type="button"
                               onClick={(e) => toggleStar(e, card.id)}
-                              className={`rounded-full p-1.5 transition-colors ${
+                              className={`ml-auto shrink-0 rounded-full p-1.5 transition-colors ${
                                 starredCards[card.id]
                                   ? 'text-gold bg-gold/10 hover:bg-gold/20'
                                   : 'text-slate-400 hover:text-gold hover:bg-gold/10'
@@ -566,18 +575,16 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
                             >
                               <Star size={16} fill={starredCards[card.id] ? 'currentColor' : 'none'} />
                             </button>
-                          )}
-                          <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-black text-slate-400">#{index + 1}</span>
-                        </div>
+                        )}
                       </div>
 
                       <div className="flex flex-1 items-center justify-center text-center">
-                        <p className="text-pretty text-base font-semibold leading-8 text-slate-100 md:text-lg">
+                        <p className="text-pretty text-base font-semibold leading-8 text-ink md:text-lg">
                           {card.back}
                         </p>
                       </div>
 
-                      <div className="mt-5 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-center text-xs font-bold text-slate-400">
+                      <div className="mt-5 rounded-2xl border border-line bg-surface px-3 py-2 text-center text-xs font-bold text-secondary">
                         Klik lagi untuk kembali ke pertanyaan
                       </div>
                     </div>
@@ -592,13 +599,13 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
           <button
             onClick={handlePrev}
             disabled={isSpinning}
-            className="inline-flex h-13 w-13 items-center justify-center rounded-full border border-[rgb(var(--color-border)/0.82)] bg-[rgb(var(--surface-card)/0.94)] text-[rgb(var(--color-text-main))] shadow-calm-soft transition-all hover:-translate-y-0.5 hover:border-gold/45 hover:text-gold disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex h-13 w-13 items-center justify-center rounded-full border border-line bg-surface text-ink shadow-sm transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Kartu sebelumnya"
           >
             <ChevronLeft size={26} />
           </button>
 
-          <div className="min-w-[190px] rounded-2xl border border-[rgb(var(--color-border)/0.78)] bg-[rgb(var(--surface-card)/0.82)] px-5 py-3 text-center shadow-inner">
+          <div className="min-w-[190px] rounded-2xl border border-line bg-surface px-5 py-3 text-center shadow-sm">
             <div className="text-[11px] font-black uppercase tracking-[0.18em] text-[rgb(var(--color-text-muted))]">Kartu aktif</div>
             <div className="mt-1 font-display text-xl font-black text-[rgb(var(--color-text-title))]">{activeIndex + 1} / {totalCards}</div>
           </div>
@@ -606,7 +613,7 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
           <button
             onClick={handleNext}
             disabled={isSpinning}
-            className="inline-flex h-13 w-13 items-center justify-center rounded-full border border-[rgb(var(--color-border)/0.82)] bg-[rgb(var(--surface-card)/0.94)] text-[rgb(var(--color-text-main))] shadow-calm-soft transition-all hover:-translate-y-0.5 hover:border-gold/45 hover:text-gold disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex h-13 w-13 items-center justify-center rounded-full border border-line bg-surface text-ink shadow-sm transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-50"
             aria-label="Kartu berikutnya"
           >
             <ChevronRight size={26} />

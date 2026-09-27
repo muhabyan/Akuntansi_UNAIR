@@ -233,7 +233,7 @@ export default function Navbar({ onHome, onSelectCourse, theme, onToggleTheme, o
               {deferredPrompt && (
                 <button
                   onClick={handleInstallClick}
-                  className="hidden items-center gap-1.5 rounded-full bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:bg-green-700 md:flex"
+                  className="hidden items-center gap-1.5 rounded-full border border-accent bg-surface px-3 py-1.5 text-sm font-semibold text-accent transition-colors hover:bg-accent/10 md:flex"
                   title="Install Aplikasi (Offline)"
                 >
                   <Download size={14} />
