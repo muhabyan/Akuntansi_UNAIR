@@ -21,6 +21,7 @@ const REGISTRY: Record<string, BankSoal[]> = {
   AKK201: AKK201_BANK, AKM201: AKM201_BANK,
   MNU101: MNU101_BANK, AKA103: AKA103_BANK, MAS122: MAS122_BANK, PJK201: PJK201_BANK,
   // Semester 3
+  MNU108: MNM101_BANK,
   MNM101: MNM101_BANK,
   MNM201: MNM101_BANK,
   AKK202: AKK202_BANK,
@@ -55,7 +56,7 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
     ];
   }
   // Semester 3 Sets
-  if (code === 'MNM101' || code === 'MNM201') {
+  if (code === 'MNU108' || code === 'MNM101' || code === 'MNM201') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Pengantar Manajemen (TM 1–7)', items: MNM101_BANK_UTS },
       { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Pengantar Manajemen (TM 8–14)', items: MNM101_BANK_UAS },

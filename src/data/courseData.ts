@@ -77,9 +77,10 @@ const AKK201_REF = [
   'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons.',
 ];
 
-// --- MNM101 / MNM201 Pengantar Manajemen (Richard L. Daft & Dorothy Marcic, Understanding Management 12e) ---
+// --- MNU108 Pengantar Manajemen (Richard L. Daft & Dorothy Marcic, Understanding Management 12e) ---
 // Sumber: RPP Resmi Pengantar Manajemen, Departemen Manajemen / Akuntansi FEB UNAIR.
-const MNM101_TM1_7 = materi([
+// Kode buku panduan: MNU108 (FEB25603011). Kode lama MNM101 dan MNM201 dialiaskan di src/lib/legacyCourseCodes.ts.
+const MNU108_TM1_7 = materi([
   ['Pengantar Manajemen: Manajer & Organisasi Inovatif', 'Daft Ch. 1'],
   ['Lingkungan Eksternal & Budaya Organisasi', 'Daft Ch. 2'],
   ['Manajemen dalam Lingkungan Global', 'Daft Ch. 3'],
@@ -88,7 +89,7 @@ const MNM101_TM1_7 = materi([
   ['Perumusan & Eksekusi Strategi (Porter & BCG)', 'Daft Ch. 6'],
   ['Pengambilan Keputusan Manajerial & Desain Organisasi', 'Daft Ch. 7–8'],
 ], 1);
-const MNM101_TM8_14 = materi([
+const MNU108_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–8'],
   ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft Ch. 9'],
   ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft Ch. 10'],
@@ -97,7 +98,7 @@ const MNM101_TM8_14 = materi([
   ['Memotivasi Karyawan (Maslow, Herzberg, Vroom)', 'Daft Ch. 13'],
   ['Mengelola Tim Kerja & Sistem Pengendalian Kualitas (TQM)', 'Daft Ch. 14–15'],
 ], 8);
-const MNM101_REF = [
+const MNU108_REF = [
   'Daft, R.L. & Marcic, D. (2023). Understanding Management (12th ed.). Cengage Learning.',
   'Silabus & RPP Resmi Pengantar Manajemen, FEB Universitas Airlangga.',
 ];
@@ -618,14 +619,14 @@ export const SEMESTERS: Semester[] = [
         highlight: true,
         courses: [
           {
-            code: 'AKK202', newCode: 'FEB25603011', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (L)',
+            code: 'AKK202', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (L)',
             references: AKK202_REF,
             materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 82, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'MNM101', newCode: 'MNM201', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
-            references: MNM101_REF,
-            materiTM1_7: MNM101_TM1_7, materiTM8_14: MNM101_TM8_14,
+            code: 'MNU108', newCode: 'FEB25603011', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
+            references: MNU108_REF,
+            materiTM1_7: MNU108_TM1_7, materiTM8_14: MNU108_TM8_14,
             flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {

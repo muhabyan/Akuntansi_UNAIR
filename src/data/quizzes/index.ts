@@ -55,6 +55,7 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   MAS122: MAS122_QUIZ_ALL,
   PJK201: [...PJK201_QUIZ_UTS_SIMULATOR, ...PJK201_QUIZ_UAS_SIMULATOR],
   // Semester 3
+  MNU108: MNM101_QUIZ,
   MNM101: MNM101_QUIZ,
   MNM201: MNM101_QUIZ,
   AKK202: AKK202_QUIZ,
@@ -124,7 +125,7 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
     ];
   }
   // Semester 3 Sets
-  if (courseCode === 'MNM101' || courseCode === 'MNM201') {
+  if (courseCode === 'MNU108' || courseCode === 'MNM101' || courseCode === 'MNM201') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Pengantar Manajemen (TM 1–7)', items: MNM101_QUIZ_UTS },
       { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengantar Manajemen (TM 8–14)', items: MNM101_QUIZ_UAS },

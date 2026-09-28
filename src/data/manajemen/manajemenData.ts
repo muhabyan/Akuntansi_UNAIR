@@ -1,5 +1,5 @@
 // src/data/manajemen/manajemenData.ts
-// Rangkuman KOMPREHENSIF Pengantar Manajemen (MNM101)
+// Rangkuman KOMPREHENSIF Pengantar Manajemen (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
 // Sumber: Richard L. Daft (Management 13e/14e), Stephen P. Robbins (Management 15e/16e),
 //         Henry Mintzberg, Peter Drucker, Michael Porter, Geert Hofstede,
 //         Herbert Simon, Kurt Lewin, Bruce Tuckman, Hackman & Oldham.

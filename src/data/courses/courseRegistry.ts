@@ -542,6 +542,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       const module = await import('../manstrat/manstratData');
       return { readings: module.MANSTRAT_READINGS, reviews: module.MANSTRAT_REVIEW_READINGS };
     }
+    case 'MNU108':
     case 'MNM101':
     case 'MNM201': {
       const module = await import('../manajemen/manajemenData');
