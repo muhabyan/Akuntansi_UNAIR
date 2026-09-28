@@ -159,12 +159,16 @@ assert.deepEqual(hawthorneClaims, [], 'FS-008: the single misleading reading may
 ok('AT-008 / FS-008: both Hawthorne readings, the misleading claim only as a labelled wrong answer');
 
 // ---------------------------------------------------------------- AT-009
-// §13 lists 10–12 book examples; the package settled on 12.
-const applicationTable = byKind('table').find((block) => block.headers.join('|') === '#|Konsep|Contoh dari buku|Hal.');
+// §13 lists 10–12 book examples; the package settled on 12. There is no index column: the row order carries it,
+// and dropping it is what lets the table fit a phone without stacking.
+const applicationTable = byKind('table').find((block) => block.headers.join('|') === 'Konsep|Contoh dari buku|Hal.');
 assert.ok(applicationTable, 'AT-009: §13 application table exists');
 assert.equal(applicationTable.rows.length, 12, 'AT-009: §13 has 12 rows');
-assert.deepEqual(applicationTable.rows.map((row) => row[0]), Array.from({ length: 12 }, (_, i) => String(i + 1)));
-ok('AT-009: §13 has 12 numbered examples');
+assert.ok(applicationTable.rows.every((row) => row.length === 3), 'AT-009: §13 rows have three cells');
+assert.ok(applicationTable.rows.every((row) => row[0].trim() && row[1].trim() && row[2].trim()), 'AT-009: no empty cell in §13');
+assert.equal(applicationTable.rows[0][0], 'Empat fungsi manajemen', 'AT-009: §13 starts at the four functions');
+assert.equal(applicationTable.rows[11][0], 'Theory Y / self-managed teams', 'AT-009: §13 ends at Buurtzorg');
+ok('AT-009: §13 has 12 examples in three columns');
 
 // ---------------------------------------------------------------- AT-010 / other exclusions
 assert.ok(!page.includes('The New Test'), 'AT-010: the Ethical Dilemma stays out of the page');
@@ -251,41 +255,20 @@ ok('render rules: one level of boxing, no hex, Exhibit 1.2 table, concept map co
 // ---------------------------------------------------------------- phone layout
 // A table that cannot be read on a 390px phone renders stacked below 640px instead (one block per row, each cell
 // labelled by its header). The rule: four columns or more, or a cell longer than 80 characters. Everything narrower
-// stays a table, so the reader still sees the comparison side by side.
-//
-// Two tables are exempt by an explicit decision: they trip the four-column half of the rule, but stacking them was
-// judged to cost more than it buys. The price, measured at 390px, is that they are the only two tables on the page
-// the reader has to swipe sideways: Exhibit 1.3 by 51px and the §13 table by 76px. Both fit from 640px up.
-// Every other table follows the rule in both directions.
-const STAY_A_TABLE = new Map([
-  ['Kelompok | Technical | Human | Conceptual',
-    'Exhibit 1.3: the last three columns hold only Besar/Sedang/Kecil, and the side-by-side comparison is the point'],
-  ['# | Konsep | Contoh dari buku | Hal.',
-    '§13: short cells, and stacked each card would be titled with nothing but its row number'],
-]);
+// stays a table, so the reader still sees the comparison side by side. No table is exempt: measured at 390px, every
+// table on the page either stacks or fits without sideways scrolling.
 const needsStacking = (table) =>
   table.headers.length >= 4 || Math.max(...[...table.rows.flat(), ...table.headers].map((cell) => cell.length)) > 80;
-const seenExemptions = new Set();
 for (const table of byKind('table')) {
-  const key = table.headers.join(' | ');
-  const label = `table "${key}"`;
-  const exemption = STAY_A_TABLE.get(key);
-  if (exemption) {
-    seenExemptions.add(key);
-    assert.equal(table.stackOnMobile, undefined, `phone layout: ${label} is exempt (${exemption}), so it must not set stackOnMobile`);
-    assert.ok(
-      Math.max(...[...table.rows.flat(), ...table.headers].map((cell) => cell.length)) <= 80,
-      `phone layout: ${label} is exempt from the column half of the rule only; its cells must stay short`,
-    );
-  } else if (needsStacking(table)) {
+  const label = `table "${table.headers.join(' | ')}"`;
+  if (needsStacking(table)) {
     assert.equal(table.stackOnMobile, true, `phone layout: ${label} is wide or long, so it must set stackOnMobile`);
   } else {
     assert.equal(table.stackOnMobile, undefined, `phone layout: ${label} fits a phone, so it must stay a table`);
   }
 }
-assert.deepEqual([...seenExemptions].sort(), [...STAY_A_TABLE.keys()].sort(), 'phone layout: every exemption still matches a table on the page');
 const stacked = byKind('table').filter((table) => table.stackOnMobile).length;
-ok(`phone layout: ${stacked} of ${byKind('table').length} tables stack below 640px, ${STAY_A_TABLE.size} exempt, the rest fit as tables`);
+ok(`phone layout: ${stacked} of ${byKind('table').length} tables stack below 640px, the rest fit as tables`);
 
 // ---------------------------------------------------------------- required exceptions (RE-001..RE-005)
 for (const [id, pattern] of [

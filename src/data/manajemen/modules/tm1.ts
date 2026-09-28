@@ -280,8 +280,7 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: '**Exhibit 1.3** [hal. 12] membandingkan dua kelompok saja:' },
     {
       kind: 'table',
-      // Tetap tabel di ponsel meski empat kolom: tiga kolom terakhir hanya berisi Besar/Sedang/Kecil, dan justru
-      // perbandingan berdampingan itulah isi Exhibit 1.3.
+      stackOnMobile: true,
       headers: ['Kelompok', 'Technical', 'Human', 'Conceptual'],
       rows: [
         ['Nonmanagers (individual contributors)', 'Besar', 'Sedang', 'Kecil'],
@@ -832,21 +831,21 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
-      // Tetap tabel di ponsel meski empat kolom: selnya pendek, dan kalau ditumpuk judul tiap kartu hanya angka urut.
-      headers: ['#', 'Konsep', 'Contoh dari buku', 'Hal.'],
+      // Tanpa kolom nomor: urutan baris sudah membawanya, dan tiga kolom muat di ponsel tanpa perlu digeser.
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
       rows: [
-        ['1', 'Empat fungsi manajemen', 'John Stonecipher, Guidance Aviation', '9'],
-        ['2', 'Controlling', 'Marne Levine membuat anggaran pertama Instagram', '10'],
-        ['3', 'Efficiency dan effectiveness sama-sama naik', 'Square', '11'],
-        ['4', 'Efisiensi merusak efektivitas', 'EMI', '12'],
-        ['5', 'Bossless organization', 'Morning Star (CLOUs)', '7'],
-        ['6', 'Human skills', 'Google Top 10 Behaviors', '13'],
-        ['7', 'Conceptual skills', 'Ursula Burns, Xerox', '14'],
-        ['8', 'Transisi individual performer → manager', 'Mark Zuckerberg, Facebook', '15–16'],
-        ['9', 'Kegagalan role disseminator/spokesperson', 'Boeing 737 MAX', '21–22'],
-        ['10', 'Scientific management', 'Taylor di Bethlehem Steel', '27'],
-        ['11', 'Bureaucracy', 'UPS', '30'],
-        ['12', 'Theory Y / self-managed teams', 'Buurtzorg', '38'],
+        ['Empat fungsi manajemen', 'John Stonecipher, Guidance Aviation', '9'],
+        ['Controlling', 'Marne Levine membuat anggaran pertama Instagram', '10'],
+        ['Efficiency dan effectiveness sama-sama naik', 'Square', '11'],
+        ['Efisiensi merusak efektivitas', 'EMI', '12'],
+        ['Bossless organization', 'Morning Star (CLOUs)', '7'],
+        ['Human skills', 'Google Top 10 Behaviors', '13'],
+        ['Conceptual skills', 'Ursula Burns, Xerox', '14'],
+        ['Transisi individual performer → manager', 'Mark Zuckerberg, Facebook', '15–16'],
+        ['Kegagalan role disseminator/spokesperson', 'Boeing 737 MAX', '21–22'],
+        ['Scientific management', 'Taylor di Bethlehem Steel', '27'],
+        ['Bureaucracy', 'UPS', '30'],
+        ['Theory Y / self-managed teams', 'Buurtzorg', '38'],
       ],
     },
     {

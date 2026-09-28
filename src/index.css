@@ -477,8 +477,13 @@ html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
   .reading-document .akbi-table-scroll > table {
     min-width: 100%;
   }
-  /* The first column reserves 170px so a term column stays readable on a desktop. On a narrow screen that is half of
-     it, and it is what pushed the last few tables past the edge; the column takes what its content needs instead. */
+  /* Columns reserve a floor so a desktop table keeps readable widths: 9rem for the term column, 6rem for the rest,
+     plus 170px from the class on the first header. On a narrow screen those floors add up to more than the screen
+     (three columns already reserve 340px before a single word is measured), so each column takes what its own
+     content needs instead. */
+  /* Both selectors are needed: the 9rem floor further down this file is written as `th:first-child`, so only an
+     equally deep `th:first-child` selector can lift it. */
+  .reading-document .akbi-table-scroll > table th,
   .reading-document .akbi-table-scroll > table th:first-child {
     min-width: 0;
     width: auto;
