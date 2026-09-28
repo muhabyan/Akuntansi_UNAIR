@@ -53,8 +53,10 @@ function OutlineLinks({ items, activeId, onNavigate }: { items: ReadingOutlineIt
         {items.map((item) => {
           const isH2 = item.level === 2;
           if (isH2) sectionIndex++;
-          // Strip redundant leading numbers from h2 (e.g., "1. Ruang Lingkup" -> "Ruang Lingkup") since sectionIndex is already displayed
-          const cleanDisplayLabel = isH2 ? item.label.replace(/^\d+[.)]\s*/, '') : item.label;
+          // Strip redundant leading numbers from h2 (e.g., "1. Ruang Lingkup" -> "Ruang Lingkup") since sectionIndex is
+          // already displayed. The dot may be backslash-escaped in the source, so that markdown renders the heading as
+          // a heading instead of turning "1. " into an ordered list.
+          const cleanDisplayLabel = isH2 ? item.label.replace(/^\d+\\?[.)]\s*/, '') : item.label;
           return (
             <li key={item.id}>
               <a

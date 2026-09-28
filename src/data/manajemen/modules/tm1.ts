@@ -61,26 +61,44 @@ export const TM1_READING: Reading = {
   ],
   blocks: [
     // ---------------------------------------------------------------- §0
-    { kind: 'h2', text: '0. Orientasi TM01' },
+    { kind: 'h2', text: '0\\. Orientasi TM01' },
     {
       kind: 'p',
       text: '**Sub-CPMK TM01 (RPP):** mahasiswa mampu menjelaskan konsep dasar manajemen, fungsi inti manajemen, evolusi pemikiran manajemen, dan tantangan organisasi modern dengan mengaitkannya pada praktik bisnis nyata. Sub-CPMK ini mendukung CLO 1 (menjelaskan konsep, fungsi, dan evolusi manajemen) dan CLO 4 (menerapkan teori untuk menganalisis kasus).',
     },
-    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    // Daftar, bukan tabel: kolom pertamanya mengelompokkan baris, dan di ponsel kelompok itu hilang saat tabel digeser.
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok** (format tugas mengikuti mekanisme perkuliahan):' },
+    { kind: 'p', text: '**Presenter Materi**' },
     {
-      kind: 'table',
-      headers: ['Tugas', 'Yang wajib ada', 'Ambil dari bagian'],
-      rows: [
-        ['**Presenter Materi**', '1. Konsep utama chapter', '§1–§11'],
-        ['', '2. Hubungan antar konsep', '§12 Peta Konsep'],
-        ['', '3. Contoh penerapan di organisasi', '§13 + contoh di tiap bagian'],
-        ['', '4. Bedah film', '**Tidak ada di TM01**'],
-        ['', '5. Kesimpulan & implikasi manajerial', '§15'],
-        ['**Presenter Kasus**', 'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi', '§14 (SmartStyle Salons)'],
-        ['**Non-presenter (Mind Map)**', 'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci', '§12 (cabang, garis silang, kata kunci)'],
-        ['**Non-presenter (pertanyaan kritis)**', 'Minimal satu pertanyaan kritis', '§16 Bank Pertanyaan Kritis'],
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§11',
+        'Hubungan antar konsep → §12 Peta Konsep',
+        'Contoh penerapan di organisasi → §13 dan contoh di tiap bagian',
+        'Bedah film → **Tidak ada di TM01**',
+        'Kesimpulan dan implikasi manajerial → §15',
       ],
-      caption: 'Format tugas mengikuti mekanisme perkuliahan. Baris kosong pada kolom pertama adalah lanjutan tugas di atasnya.',
+    },
+    { kind: 'p', text: '**Presenter Kasus**' },
+    {
+      kind: 'ul',
+      items: [
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi, seluruhnya di §14 (SmartStyle Salons)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter: Mind Map**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §12 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter: pertanyaan kritis**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §16 Bank Pertanyaan Kritis',
+      ],
     },
     {
       kind: 'callout',
@@ -90,9 +108,10 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §1
-    { kind: 'h2', text: '1. Apa itu Management dan Organization' },
+    { kind: 'h2', text: '1\\. Apa itu Management dan Organization' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Istilah', 'Arti sederhana', 'Sumber'],
       rows: [
         ['**Management**', 'Mencapai tujuan organisasi secara **effective** dan **efficient** melalui **planning, organizing, leading, controlling** sumber daya organisasi.', '[hal. 5]'],
@@ -125,9 +144,10 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §2
-    { kind: 'h2', text: '2. Empat Fungsi Manajemen' },
+    { kind: 'h2', text: '2\\. Empat Fungsi Manajemen' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Fungsi', 'Arti sederhana', 'Pertanyaan kunci', 'Contoh dari buku'],
       rows: [
         ['**Planning**', 'Menetapkan tujuan kinerja masa depan dan cara mencapainya', '"Mau ke mana, lewat jalan apa?"', 'Coca-Cola menetapkan tujuan spesifik untuk kesejahteraan komunitas, water neutrality, pemberdayaan pengusaha perempuan (Ekocenter) [hal. 10]'],
@@ -142,10 +162,10 @@ export const TM1_READING: Reading = {
       kind: 'table',
       headers: ['Resources (input)', 'Management functions (siklus)', 'Performance (hasil)'],
       rows: [
-        ['Human', '1. Planning', 'Attain goals'],
-        ['Financial', '2. Organizing', 'Products'],
-        ['Raw materials', '3. Leading', 'Services'],
-        ['Technological', '4. Controlling', 'Efficiency'],
+        ['Human', 'Planning', 'Attain goals'],
+        ['Financial', 'Organizing', 'Products'],
+        ['Raw materials', 'Leading', 'Services'],
+        ['Technological', 'Controlling', 'Efficiency'],
         ['Information', '→ kembali ke Planning', 'Effectiveness'],
       ],
       caption: 'Exhibit 1.2 [hal. 9]: lima sumber daya masuk, diolah lewat empat fungsi, dan menghasilkan lima bentuk performance. Keempat fungsi membentuk siklus dan saling terhubung satu sama lain.',
@@ -158,9 +178,10 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §3
-    { kind: 'h2', text: '3. Organizational Performance' },
+    { kind: 'h2', text: '3\\. Organizational Performance' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Konsep', 'Arti sederhana', 'Fokus', 'Sumber'],
       rows: [
         ['**Organizational effectiveness**', 'Sejauh mana organisasi mencapai tujuan yang dinyatakan; memberi produk/jasa yang dihargai pelanggan', '**Hasil**: apakah tujuannya tercapai?', '[hal. 11]'],
@@ -190,7 +211,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §4
-    { kind: 'h2', text: '4. Kompetensi Manajer Masa Kini dan Tren Bosslessness' },
+    { kind: 'h2', text: '4\\. Kompetensi Manajer Masa Kini dan Tren Bosslessness' },
     {
       kind: 'p',
       text: '**Mengapa kompetensi manajer berubah** [hal. 5]: teknologi (social media, mobile apps), ekonomi berbasis pengetahuan, AI, pasar global, cybercrime, dan ekspektasi karyawan serta pelanggan yang berubah. Akibatnya hierarki organisasi menurun dan pekerja makin berdaya.',
@@ -244,9 +265,10 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §5
-    { kind: 'h2', text: '5. Management Skills' },
+    { kind: 'h2', text: '5\\. Management Skills' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Skill', 'Arti sederhana', 'Paling menonjol pada', 'Contoh dari buku'],
       rows: [
         ['**Technical**', 'Memahami dan cakap melakukan tugas spesifik', 'Nonmanager (individual contributor)', 'Elon Musk: gelar fisika dan ekonomi [hal. 13]'],
@@ -258,6 +280,8 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: '**Exhibit 1.3** [hal. 12] membandingkan dua kelompok saja:' },
     {
       kind: 'table',
+      // Tetap tabel di ponsel meski empat kolom: tiga kolom terakhir hanya berisi Besar/Sedang/Kecil, dan justru
+      // perbandingan berdampingan itulah isi Exhibit 1.3.
       headers: ['Kelompok', 'Technical', 'Human', 'Conceptual'],
       rows: [
         ['Nonmanagers (individual contributors)', 'Besar', 'Sedang', 'Kecil'],
@@ -320,7 +344,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §6
-    { kind: 'h2', text: '6. Tantangan Manajer Baru' },
+    { kind: 'h2', text: '6\\. Tantangan Manajer Baru' },
     {
       kind: 'p',
       text: 'Menjadi manajer bukan sekadar belajar skill baru, tetapi **transformasi personal identity**: melepas kebiasaan lama dan belajar cara berpikir baru (riset Linda Hill terhadap 19 manajer baru) [hal. 16].',
@@ -356,7 +380,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §7
-    { kind: 'h2', text: '7. Pekerjaan Manajer Sebenarnya: Activities dan Roles' },
+    { kind: 'h2', text: '7\\. Pekerjaan Manajer Sebenarnya: Activities dan Roles' },
     {
       kind: 'p',
       text: 'Henry Mintzberg mengikuti dan mencatat aktivitas manajer, lalu merumuskan **3 karakteristik umum** dan **10 roles** [hal. 17].',
@@ -364,6 +388,7 @@ export const TM1_READING: Reading = {
     { kind: 'h3', text: '7a. Manager Activities [hal. 18–20]' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Karakteristik', 'Artinya', 'Bukti dari buku'],
       rows: [
         ['**Adventures in multitasking**', 'Kerja manajer beragam (variety), terpotong-potong (fragmentation), dan singkat (brevity)', 'Top executive rata-rata < 9 menit per aktivitas; sebagian first-line supervisor satu aktivitas tiap 48 detik [hal. 18]'],
@@ -388,6 +413,7 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: '**Role** = seperangkat ekspektasi atas perilaku manajer [hal. 21].' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Kategori', 'Role', 'Aktivitas'],
       rows: [
         ['**Informational** (managing by information)', 'Monitor', 'Mencari dan menerima informasi; memindai web, laporan; menjaga kontak'],
@@ -423,7 +449,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §8
-    { kind: 'h2', text: '8. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)' },
+    { kind: 'h2', text: '8\\. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)' },
     { kind: 'p', text: 'Fungsi, skill, dan aktivitas manajemen berlaku sama di nonprofit, tetapi konteksnya berbeda [hal. 23–24].' },
     {
       kind: 'table',
@@ -443,11 +469,12 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §9
-    { kind: 'h2', text: '9. Evolusi Pemikiran Manajemen' },
+    { kind: 'h2', text: '9\\. Evolusi Pemikiran Manajemen' },
     { kind: 'h3', text: '9a. The Historical Struggle: Things of Production vs Humanity of Production [hal. 25–26]' },
     { kind: 'p', text: 'Sejarah manajemen adalah tarik-menarik antara dua fokus:' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Fokus', 'Isi', 'Tujuan utama', 'Contoh perspektif'],
       rows: [
         ['**Things of production**', 'Desain organisasi, alur kerja, sistem, dan kontrol', 'Efisiensi produksi', 'Classical perspective'],
@@ -482,6 +509,7 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: 'Classical perspective punya **empat subbidang** [hal. 27]:' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Subbidang', 'Fokus', 'Tokoh', 'Ide kunci', 'Contoh dari buku'],
       rows: [
         ['**Scientific management**', 'Produktivitas **pekerja individu**', 'Frederick W. Taylor; Henry Gantt; Frank & Lillian Gilbreth', 'Pekerjaan dan praktik manajemen ditentukan lewat studi ilmiah, menggantikan kebiasaan dan tradisi', 'Bethlehem Steel; lini perakitan Ford [hal. 27]'],
@@ -567,6 +595,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Prinsip Fayol', 'Arti'],
       rows: [
         ['Unity of command', 'Setiap bawahan menerima perintah dari satu atasan saja'],
@@ -593,6 +622,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Subset', 'Isi', 'Sumber'],
       rows: [
         ['**Operations research**', 'Membangun model matematis untuk masalah manajerial', '[hal. 32]'],
@@ -615,6 +645,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Tokoh', 'Kontribusi'],
       rows: [
         ['**Mary Parker Follett**', 'Common superordinate goals untuk meredam konflik; kepemimpinan berfokus pada manusia, bukan teknik ("Don\'t hug your blueprints"); empowering dan facilitating, bukan controlling'],
@@ -625,6 +656,7 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: '**Tiga subbidang humanistic perspective:**' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Subbidang', 'Ide inti', 'Tokoh / studi', 'Sumber'],
       rows: [
         ['**Human relations movement**', 'Kontrol yang efektif datang dari dalam diri pekerja, bukan dari kontrol otoriter', 'Hawthorne studies (Mayo & Roethlisberger)', '[hal. 35–36]'],
@@ -634,6 +666,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Tafsiran awal', 'Reanalisis kemudian'],
       rows: [
         ['Output naik bukan karena uang, tetapi karena **human relations**: manajer memperlakukan pekerja dengan baik', '**Uang mungkin faktor terpenting**; masuk kelompok eksperimen berarti kenaikan pendapatan besar. Rasa dianggap penting dan kebanggaan kelompok juga berperan'],
@@ -658,6 +691,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Theory X (asumsi)', 'Theory Y (asumsi)'],
       rows: [
         ['Rata-rata orang tidak suka bekerja dan menghindarinya bila bisa', 'Mengeluarkan usaha fisik dan mental dalam bekerja sama alaminya dengan bermain atau istirahat'],
@@ -685,6 +719,7 @@ export const TM1_READING: Reading = {
     { kind: 'h3', text: '9d. Perbandingan Besar: Classical vs Humanistic vs Management Science' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Aspek', 'Classical (SM, Bureaucracy, Admin. Principles)', 'Management Science', 'Humanistic'],
       rows: [
         ['Posisi dalam buku', 'Perspektif pertama', '**Subbidang ke-4 classical perspective** [hal. 27, 31]', 'Perspektif kedua'],
@@ -699,13 +734,14 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §10
-    { kind: 'h2', text: '10. Manajemen ke Depan: Technology-Driven dan People-Driven Workplace (ringkas)' },
+    { kind: 'h2', text: '10\\. Manajemen ke Depan: Technology-Driven dan People-Driven Workplace (ringkas)' },
     {
       kind: 'p',
       text: 'Survei Bain & Company mencatat lima tren: pergeseran dari hierarki ke empowered teams, pemanfaatan teknologi digital, fokus membangun budaya, penguatan relasi pelanggan, dan kontrol biaya. Tren ini kembali jatuh ke dua kategori lama, **things** dan **humanity of production** [hal. 40].',
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Workplace', 'Konsep', 'Arti singkat', 'Contoh dari buku'],
       rows: [
         ['**Technology-driven**', 'Big data analytics', 'Teknologi, skill, dan proses untuk menelusuri data masif dan kompleks demi menemukan pola dan korelasi tersembunyi', 'Rekomendasi produk Amazon [hal. 41]'],
@@ -718,6 +754,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Pipe (linear) organization', 'Platform-based organization'],
       rows: [
         ['Mengambil sumber daya, memproduksi, lalu mendorong hasil ke pelanggan secara berurutan', 'Menghubungkan produsen dan konsumen lewat teknologi digital'],
@@ -738,7 +775,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §11
-    { kind: 'h2', text: '11. AI dan Historical Struggle (ringkas)' },
+    { kind: 'h2', text: '11\\. AI dan Historical Struggle (ringkas)' },
     {
       kind: 'ul',
       items: [
@@ -755,7 +792,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §12
-    { kind: 'h2', text: '12. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'h2', text: '12\\. Peta Konsep (siap dijadikan Mind Map)' },
     { kind: 'p', text: '**Simpul pusat:** LEADING EDGE MANAGEMENT' },
     {
       kind: 'code',
@@ -766,6 +803,7 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
       rows: [
         ['10 Roles', '4 Fungsi', 'Roles adalah aktivitas untuk menjalankan fungsi', '[hal. 21]'],
@@ -787,13 +825,14 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §13
-    { kind: 'h2', text: '13. Contoh Penerapan' },
+    { kind: 'h2', text: '13\\. Contoh Penerapan' },
     {
       kind: 'p',
       text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):',
     },
     {
       kind: 'table',
+      // Tetap tabel di ponsel meski empat kolom: selnya pendek, dan kalau ditumpuk judul tiap kartu hanya angka urut.
       headers: ['#', 'Konsep', 'Contoh dari buku', 'Hal.'],
       rows: [
         ['1', 'Empat fungsi manajemen', 'John Stonecipher, Guidance Aviation', '9'],
@@ -816,7 +855,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §14
-    { kind: 'h2', text: '14. Analisis Kasus: SmartStyle Salons [hal. 49–50]' },
+    { kind: 'h2', text: '14\\. Analisis Kasus: SmartStyle Salons [hal. 49–50]' },
     { kind: 'h3', text: '14.1 Case Summary' },
     {
       kind: 'p',
@@ -828,6 +867,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Kejadian', 'Respons Keisha'],
       rows: [
         ['Carol Jean, penata rambut populer, izin sakit dan kembali menjelekkan salon di Facebook. Sebelumnya Keisha menolak permintaannya untuk tidak masuk sehari karena ingin menonton konser di luar kota [hal. 49]', 'Menyuruh resepsionis Marianne menuntut surat dokter; berteriak "She had better be sick!" dan membanting pintu di depan staf dan pelanggan'],
@@ -842,6 +882,7 @@ export const TM1_READING: Reading = {
     { kind: 'h3', text: '14.2 Problem Identification' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['#', 'Isu', 'Jenis'],
       rows: [
         ['P1', 'Resesi menurunkan permintaan dan laba', 'Eksternal, di luar kendali manajer'],
@@ -863,6 +904,7 @@ export const TM1_READING: Reading = {
     { kind: 'h3', text: '14.3 Analisis Kasus (dengan teori Chapter 1)' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
       rows: [
         ['**Exh. 1.6: identity shift**', 'Keisha naik karena ia *top hairdresser* (specialist, individual actor). Ia belum sepenuhnya menjadi network builder yang bekerja lewat orang lain. Ia memegang sendiri urusan pelanggan dan laporan', '16'],
@@ -885,6 +927,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Skill', 'Positif', 'Negatif'],
       rows: [
         ['**Technical**', 'Penata rambut terbaik dengan banyak pelanggan setia; paham operasi salon [hal. 49]', 'Masih mengandalkan cara kerja "mengerjakan sendiri"'],
@@ -924,6 +967,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Orang', 'Yang terjadi', 'Penanganan yang disarankan', 'Dasar teori'],
       rows: [
         ['**Marianne** (resepsionis)', 'Dijadikan penyampai ancaman ke Carol Jean; menyaksikan kemarahan', 'Berterima kasih atas informasinya; minta ia fokus menjadwal ulang pelanggan; **Keisha sendiri** yang menghubungi Carol Jean', 'Komunikasi langsung (Exh. 1.5 #1); disturbance handler adalah peran manajer [hal. 15, 21]'],
@@ -939,6 +983,7 @@ export const TM1_READING: Reading = {
     },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Horizon', 'Rekomendasi', 'Teori pendukung'],
       rows: [
         ['**Hari ini**', 'Tenangkan diri, akui kepada staf bahwa reaksinya tadi tidak pantas, dan pulihkan suasana kerja', 'Human skills; communication [hal. 13, 15]'],
@@ -953,7 +998,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §15
-    { kind: 'h2', text: '15. Implikasi Manajerial dan Kesimpulan' },
+    { kind: 'h2', text: '15\\. Implikasi Manajerial dan Kesimpulan' },
     {
       kind: 'ol',
       items: [
@@ -968,10 +1013,11 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §16
-    { kind: 'h2', text: '16. Alat Bantu Ujian' },
+    { kind: 'h2', text: '16\\. Alat Bantu Ujian' },
     { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Kerangka', 'Komponen', 'Hal.'],
       rows: [
         ['4 fungsi', 'Planning, Organizing, Leading, Controlling', '8–10'],
@@ -989,6 +1035,7 @@ export const TM1_READING: Reading = {
     { kind: 'h3', text: 'Exam Traps' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
       rows: [
         ['Posisi management science', '"Perspektif ketiga yang terpisah dari classical"', 'Menurut buku, management science adalah **subbidang ke-4 classical perspective** (hal. 27). RPP mendaftarnya berdampingan dengan classical dan humanistic; kalau ditanya klasifikasinya, pakai versi buku.', '27'],
@@ -1009,6 +1056,7 @@ export const TM1_READING: Reading = {
     { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 46]:' },
     {
       kind: 'table',
+      stackOnMobile: true,
       headers: ['Pertanyaan', 'Terkait bagian'],
       rows: [
         ['Bisakah manajer mengejar profit dan keselamatan sekaligus? (kasus Boeing)', '§3, §7'],

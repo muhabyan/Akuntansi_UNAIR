@@ -56,16 +56,23 @@ ok('header: title, ref, objectives, flat layout');
 // 17 sections §0..§16 as h2, in order, and nothing else at h2 level (no CORE LEARNING / WORKED PRACTICE banners).
 const h2 = byKind('h2').map((block) => block.text);
 assert.equal(h2.length, 17, `expected 17 h2 sections, got ${h2.length}: ${h2.join(' | ')}`);
+// The numbering dot is backslash-escaped so markdown renders a heading instead of a one-item ordered list.
 h2.forEach((text, index) => {
-  assert.ok(text.startsWith(`${index}. `), `AT-001: h2 #${index} must start with "${index}. ", got "${text}"`);
+  assert.ok(text.startsWith(`${index}\\. `), `AT-001: h2 #${index} must start with "${index}\\. ", got "${text}"`);
 });
+// Nothing else on the page may start with "1. ": markdown would turn that string into a one-item ordered list.
+const orderedListStart = /^\s{0,3}\d{1,9}[.)]\s/;
+for (const text of [...h2, ...byKind('h3').map((block) => block.text), ...byKind('p').map((block) => block.text),
+  ...byKind('ul').flatMap((block) => block.items), ...byKind('table').flatMap((block) => block.rows.flat())]) {
+  assert.ok(!orderedListStart.test(text), `AT-001: "${text.slice(0, 50)}" would render as an ordered list, not as itself`);
+}
 ok('AT-001: 17 sections §0–§16 in order');
 
 // ---------------------------------------------------------------- AT-002
 // "di luar RPP" marks exactly one section title; the other two occurrences are references
 // (the mind map node in §12 and the closing footnote).
 const sectionsWithLabel = h2.filter((text) => text.includes('di luar RPP'));
-assert.deepEqual(sectionsWithLabel, ['8. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)']);
+assert.deepEqual(sectionsWithLabel, ['8\\. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)']);
 assert.equal(countOf('di luar RPP'), 3, 'AT-002: exactly 3 occurrences (title §8, mind map node, footnote)');
 assert.ok(byKind('code').some((block) => block.text.includes('[di luar RPP] Nonprofit')), 'AT-002: mind map keeps the node');
 ok('AT-002: "di luar RPP" on §8 only, 3 occurrences in all');
@@ -88,12 +95,16 @@ assert.equal(byKind('illustration').length, 0, 'AT-004: no illustration block');
 assert.ok(!blocks.some((block) => (block.title ?? '') === 'Ilustrasi'), 'AT-004: no block titled Ilustrasi');
 assert.equal(countOf('Ilustrasi'), 1, 'AT-004: "Ilustrasi" appears once, in the footnote that says it is unused');
 assert.match(page, /"Ilustrasi" \(0×, karena TM01 tanpa bedah film\)/, 'AT-004: footnote states the label is unused');
-const bedahFilmRow = byKind('table')
-  .flatMap((block) => block.rows)
-  .find((row) => row.some((cell) => /Bedah film/i.test(cell)));
-assert.ok(bedahFilmRow, 'AT-004: the task table mentions bedah film');
-assert.ok(bedahFilmRow.some((cell) => cell.includes('Tidak ada di TM01')), 'AT-004: bedah film is marked "Tidak ada di TM01"');
-ok('AT-004: no Ilustrasi block, bedah film only as "Tidak ada di TM01"');
+// §0 lists the presenter duties (a list, not a table: its first column grouped the rows, and that grouping is lost
+// once a phone scrolls the table sideways). The bedah film duty is the one marked as absent.
+const bedahFilmItem = [...byKind('ul'), ...byKind('ol')].flatMap((block) => block.items).find((item) => /Bedah film/i.test(item));
+assert.ok(bedahFilmItem, 'AT-004: the presenter duty list mentions bedah film');
+assert.ok(bedahFilmItem.includes('Tidak ada di TM01'), 'AT-004: bedah film is marked "Tidak ada di TM01"');
+assert.ok(!byKind('table').some((block) => block.headers.includes('Yang wajib ada')), '§0: the duty table is now a list');
+for (const duty of ['**Presenter Materi**', '**Presenter Kasus**', '**Non-presenter: Mind Map**', '**Non-presenter: pertanyaan kritis**']) {
+  assert.ok(byKind('p').some((block) => block.text === duty), `§0: missing duty heading ${duty}`);
+}
+ok('AT-004 / §0: duties as a list, no Ilustrasi block, bedah film only as "Tidak ada di TM01"');
 
 // ---------------------------------------------------------------- AT-005
 // §14 keeps the five lecturer-format subheadings and answers all three case questions.
@@ -232,10 +243,49 @@ assert.ok(crossLinks.rows.every((row) => row[3].includes('[hal.')), 'SA-004: eve
 const exhibit12 = byKind('table').find((block) => block.headers.join('|') === 'Resources (input)|Management functions (siklus)|Performance (hasil)');
 assert.ok(exhibit12, '§2: Exhibit 1.2 renders as a three-column table');
 assert.deepEqual(exhibit12.rows.map((row) => row[0]), ['Human', 'Financial', 'Raw materials', 'Technological', 'Information']);
-assert.deepEqual(exhibit12.rows.slice(0, 4).map((row) => row[1]), ['1. Planning', '2. Organizing', '3. Leading', '4. Controlling']);
+assert.deepEqual(exhibit12.rows.slice(0, 4).map((row) => row[1]), ['Planning', 'Organizing', 'Leading', 'Controlling']);
 assert.deepEqual(exhibit12.rows.map((row) => row[2]), ['Attain goals', 'Products', 'Services', 'Efficiency', 'Effectiveness']);
 assert.match(exhibit12.caption ?? '', /siklus/, 'NM-004: the caption says the four functions form a cycle');
 ok('render rules: one level of boxing, no hex, Exhibit 1.2 table, concept map code block');
+
+// ---------------------------------------------------------------- phone layout
+// A table that cannot be read on a 390px phone renders stacked below 640px instead (one block per row, each cell
+// labelled by its header). The rule: four columns or more, or a cell longer than 80 characters. Everything narrower
+// stays a table, so the reader still sees the comparison side by side.
+//
+// Two tables are exempt by an explicit decision: they trip the four-column half of the rule, but stacking them was
+// judged to cost more than it buys. The price, measured at 390px, is that they are the only two tables on the page
+// the reader has to swipe sideways: Exhibit 1.3 by 51px and the §13 table by 76px. Both fit from 640px up.
+// Every other table follows the rule in both directions.
+const STAY_A_TABLE = new Map([
+  ['Kelompok | Technical | Human | Conceptual',
+    'Exhibit 1.3: the last three columns hold only Besar/Sedang/Kecil, and the side-by-side comparison is the point'],
+  ['# | Konsep | Contoh dari buku | Hal.',
+    '§13: short cells, and stacked each card would be titled with nothing but its row number'],
+]);
+const needsStacking = (table) =>
+  table.headers.length >= 4 || Math.max(...[...table.rows.flat(), ...table.headers].map((cell) => cell.length)) > 80;
+const seenExemptions = new Set();
+for (const table of byKind('table')) {
+  const key = table.headers.join(' | ');
+  const label = `table "${key}"`;
+  const exemption = STAY_A_TABLE.get(key);
+  if (exemption) {
+    seenExemptions.add(key);
+    assert.equal(table.stackOnMobile, undefined, `phone layout: ${label} is exempt (${exemption}), so it must not set stackOnMobile`);
+    assert.ok(
+      Math.max(...[...table.rows.flat(), ...table.headers].map((cell) => cell.length)) <= 80,
+      `phone layout: ${label} is exempt from the column half of the rule only; its cells must stay short`,
+    );
+  } else if (needsStacking(table)) {
+    assert.equal(table.stackOnMobile, true, `phone layout: ${label} is wide or long, so it must set stackOnMobile`);
+  } else {
+    assert.equal(table.stackOnMobile, undefined, `phone layout: ${label} fits a phone, so it must stay a table`);
+  }
+}
+assert.deepEqual([...seenExemptions].sort(), [...STAY_A_TABLE.keys()].sort(), 'phone layout: every exemption still matches a table on the page');
+const stacked = byKind('table').filter((table) => table.stackOnMobile).length;
+ok(`phone layout: ${stacked} of ${byKind('table').length} tables stack below 640px, ${STAY_A_TABLE.size} exempt, the rest fit as tables`);
 
 // ---------------------------------------------------------------- required exceptions (RE-001..RE-005)
 for (const [id, pattern] of [

@@ -447,12 +447,17 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             )}
           </div>
         );
-        // The shared reading frame (layered readings, PJK301) stacks every table below 1024px.
-        if (!sharedFrame && !(layered && block.stackOnMobile)) return tableCard;
+        // Where the stacked view takes over from the table:
+        // - the shared reading frame (layered readings, PJK301) stacks every table below 1024px, because its desktop
+        //   table needs 42rem and the frame is narrower than that from 1024px down;
+        // - any other reading opts a single table in with stackOnMobile, and only phones get the stacked view. A table
+        //   that fits a phone stays a table, so the reader still sees the comparison side by side.
+        const stackBelow = sharedFrame ? 'lg' : block.stackOnMobile ? 'sm' : null;
+        if (!stackBelow) return tableCard;
         return (
           <>
-            <div className="hidden lg:block">{tableCard}</div>
-            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} caption={block.caption} warning={warning} />
+            <div className={stackBelow === 'lg' ? 'hidden lg:block' : 'hidden sm:block'}>{tableCard}</div>
+            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} caption={block.caption} warning={warning} stackBelow={stackBelow} />
           </>
         );
       }
