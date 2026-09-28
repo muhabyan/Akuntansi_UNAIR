@@ -1,34 +1,9 @@
 // src/data/manajemen/manajemenPracticeCases.ts
-// 14 Studi Kasus Riil Komprehensif Pengantar Manajemen (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
+// Studi Kasus Riil Pengantar Manajemen TM02-TM14 (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
 // Berdasarkan Standar Richard L. Daft (Management 13e/14e) & Stephen P. Robbins
+// Kasus TM01 dihapus: TM01 kini memakai kasus SmartStyle Salons dari Daft & Marcic 12e Ch. 1, yang ditulis
+// langsung di modules/tm1.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 1
-export const CASE_POAC_MANAGERIAL_ROLES: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 1: Transformasi Fungsi POAC & 10 Peran Mintzberg di PT GoTo Gojek Tokopedia',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: Pasca merger Gojek dan Tokopedia membentuk grup GoTo, manajemen puncak menghadapi tekanan untuk mencapai profitabilitas (EBITDA positif). CEO baru harus menjalankan restrukturisasi operasional, menyelaraskan sasaran strategis dua entitas besar (Planning), menata ulang divisi logistik dan fintech (Organizing), menginspirasi ribuan talenta digital yang cemas akan PHK (Leading/Actuating), serta memantau Key Performance Indicators mingguan (Controlling).'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Analisis: (1) Bagaimana integrasi 4 fungsi manajemen POAC diterapkan dalam restrukturisasi GoTo?, (2) Identifikasi 3 kategori peran manajerial Mintzberg yang paling dominan dijalankan CEO saat restrukturisasi, dan (3) Mengapa keahlian konseptual (Conceptual Skills) menjadi keterampilan paling vital bagi manajemen puncak (Top Management) dibandingkan keahlian teknis?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Integrasi 4 Fungsi Manajemen POAC**:\n- *Planning*: Menetapkan target baru mencapai EBITDA disesuaikan positif dan memilih fokus pada unit bisnis inti (on-demand services & e-commerce).\n- *Organizing*: Melakukan konsolidasi divisi teknologi informasi dan menyatukan tim pemasaran untuk mengeliminasi duplikasi peran.\n- *Leading*: Mengkomunikasikan visi keberlanjutan baru secara transparan melalui Town Hall meeting untuk meredakan kepanikan karyawan.\n- *Controlling*: Menerapkan dashboard analitik real-time guna memantau burn-rate kas dan produktivitas per karyawan.',
-            '**2. Tiga Kategori Peran Manajerial Mintzberg**:\n- *Decisional Roles (Terutama Resource Allocator & Disturbance Handler)*: Mengalokasikan kembali anggaran modal ke divisi yang menghasilkan laba dan menangani krisis moral pasca perampingan.\n- *Interpersonal Roles (Leader)*: Membangun motivasi dan komitmen tim dalam iklim ketidakpastian.\n- *Informational Roles (Spokesperson)*: Menyampaikan prospek keuangan kepada investor publik dan regulator bursa.',
-            '**3. Keunggulan Keahlian Konseptual bagi Top Management**: Menurut Robert L. Katz, manajer puncak beroperasi pada level strategis makro. Keahlian konseptual memungkinkan eksekutif melihat organisasi secara holistik, memahami interaksi antar-divisi, serta memprediksi dampak perubahan industri teknologi dan lanskap makroekonomi terhadap kelangsungan hidup korporasi.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 2
 export const CASE_CULTURE_ENVIRONMENT_DAFT: ContentBlock = {
