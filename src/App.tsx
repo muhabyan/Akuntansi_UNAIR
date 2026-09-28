@@ -38,7 +38,7 @@ const UNIVERSAL_COURSES = [
   // Semester 1 & 2
   'AKK201', 'AKK106', 'PJK201', 'MNU101', 'AKA103', 'EKT109', 'MAS122', 'AKM201',
   // Semester 2 Supporting / PDB
-  'MNM101', 'MNM201', 'AGX101', 'NOP103', 'BAI101', 'NOP104', 'SIP107', 'PHP103', 'MNM107', 'MNM106',
+  'MNU108', 'AGX101', 'NOP103', 'BAI101', 'NOP104', 'SIP107', 'PHP103', 'MNM107', 'MNM106',
   // Semester 3 & 4
   'AKK202', 'AKM202', 'AKA201', 'MNK201', 'AKS201', 'PJK301', 'SII306',
   // Semester 5

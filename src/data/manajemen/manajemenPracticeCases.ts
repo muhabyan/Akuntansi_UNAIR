@@ -1,5 +1,5 @@
 // src/data/manajemen/manajemenPracticeCases.ts
-// 14 Studi Kasus Riil Komprehensif Pengantar Manajemen (MNM101)
+// 14 Studi Kasus Riil Komprehensif Pengantar Manajemen (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
 // Berdasarkan Standar Richard L. Daft (Management 13e/14e) & Stephen P. Robbins
 import type { ContentBlock } from '../../types';
 

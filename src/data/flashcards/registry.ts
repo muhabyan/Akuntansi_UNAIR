@@ -45,6 +45,7 @@ const FLASHCARD_REGISTRY: Record<string, AdvancedStudyCard[]> = {
   AKS301: SII306_FC as AdvancedStudyCard[],
   EKT109: EKT109_FLASHCARDS as unknown as AdvancedStudyCard[],
   // Semester 3
+  MNU108: MNM101_FC as AdvancedStudyCard[],
   MNM101: MNM101_FC as AdvancedStudyCard[],
   MNM201: MNM101_FC as AdvancedStudyCard[],
   AKK202: AKK202_FC as AdvancedStudyCard[],

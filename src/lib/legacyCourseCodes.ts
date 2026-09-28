@@ -2,16 +2,21 @@
 // browser saved under the old code is moved to the new one. This map is the only place in src that names an old course code.
 //
 // TEMPORARY: the alias, the URL replacement and the storage shim exist only to carry old links and saved data across the
-// PJK202 -> PJK301 rename. Remove them after this semester: this file, the call in main.tsx, replaceLegacyCourseUrl in
-// App.tsx, and the alias/URL/shim sections of scripts/test-pjk301-rename.mjs.
+// renames in LEGACY_COURSE_CODES. Remove them once no browser is likely to hold data under an old code: this file, the
+// call in main.tsx, replaceLegacyCourseUrl in App.tsx, and the alias/URL/shim sections of the rename tests
+// (scripts/test-pjk301-rename.mjs, scripts/test-sii306-rename.mjs, scripts/test-mnu108-rename.mjs).
 
 /** Old course code -> current course code.
  * - Perpajakan II: the faculty handbook code is PJK301 (FEB25603015).
  * - Sistem Informasi Akuntansi: the faculty handbook code is SII306 (FEB25603016).
+ * - Pengantar Manajemen: the faculty handbook code is MNU108 (FEB25603011). It was catalogued as MNM101 with MNM201 as
+ *   its alternative code, so both open the course and both carry their saved data over.
  */
 export const LEGACY_COURSE_CODES: Readonly<Record<string, string>> = {
   PJK202: 'PJK301',
   AKS301: 'SII306',
+  MNM101: 'MNU108',
+  MNM201: 'MNU108',
 };
 
 /** The current code for a possibly renamed course code (any letter case). Any other code is returned unchanged. */
