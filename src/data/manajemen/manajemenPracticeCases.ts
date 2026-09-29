@@ -6,34 +6,8 @@
 // Kasus TM02 dihapus: TM02 kini memakai kasus dari Daft & Marcic 12e Ch. 2, yang ditulis langsung di modules/tm2.ts.
 // Kasus TM03 dihapus: TM03 kini memakai kasus dari Daft & Marcic 12e Ch. 3, yang ditulis langsung di modules/tm3.ts.
 // Kasus TM04 dihapus: TM04 kini memakai kasus dari Daft & Marcic 12e Ch. 4, yang ditulis langsung di modules/tm4.ts.
+// Kasus TM05 dihapus: TM05 kini memakai kasus dari Daft & Marcic 12e Ch. 5, yang ditulis langsung di modules/tm5.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 5
-export const CASE_STRATEGIC_PLANNING_PORTER: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 5: Analisis Matriks BCG & Strategi Keunggulan Bersaing Porter di PT Astra International',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: PT Astra International Tbk mengelola portofolio konglomerasi multi-sektor:\n1. Bisnis Otomotif Roda Dua (Honda): Pangsa pasar sangat dominan (> 75%) di industri yang pasarnya telah matang dan bertumbuh lambat.\n2. Bisnis Kendaraan Listrik (EV Ecosystem): Pangsa pasar masih berkembang di industri yang sedang bertumbuh pesat (> 50% per tahun).\n3. Bisnis Pertambangan Batu Bara (PAMA): Menghasilkan arus kas likuid sangat besar di tengah tren transisi energi hijau dunia.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Analisis: (1) Petakan unit-unit bisnis tersebut ke dalam Matriks Portofolio BCG (Cash Cow, Star, Question Mark, Dog), (2) Rumuskan alokasi arus kas strategis antar-unit bisnis, dan (3) Tentukan Strategi Bersaing Generik Porter (Cost Leadership, Differentiation, Focus) yang diterapkan pada masing-masing lini!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Pemetaan Matriks BCG (Boston Consulting Group)**:\n- *Bisnis Otomotif Roda Dua (Honda)*: **Cash Cow (Sapi Perah)**. Pangsa pasar relatif tinggi di pasar pertumbuhan rendah; menghasilkan arus kas melimpah dengan kebutuhan investasi baru minimal.\n- *Bisnis Kendaraan Listrik (EV)*: **Star (Bintang) atau Question Mark**. Berada di pasar pertumbuhan tinggi; membutuhkan suntikan investasi modal masif untuk merebut kepemimpinan pasar infrastruktur baterai.\n- *Bisnis Alat Berat/Batu Bara (PAMA)*: **Cash Cow**. Arus kas tinggi yang harus dimanfaatkan sebelum transisi energi global menurunkannya menjadi Dog.',
-            '**2. Alokasi Arus Kas Strategis**: Arus kas surplus yang diperah dari Cash Cow (Honda dan PAMA) dialirkan untuk mendanai investasi R&D, pembangunan stasiun pengisian daya (SPKLU), dan perakitan ekosistem kendaraan listrik (Star/Question Mark) agar Astra tetap relevan di masa depan.',
-            '**3. Strategi Generik Porter**:\n- *Honda*: **Cost Leadership & Differentiation terintegrasi** (skala ekonomis raksasa dengan jaringan bengkel resmi AHASS di seluruh pelosok Indonesia).\n- *Kendaraan Listrik Premium*: **Differentiation Strategy** yang mengedepankan keandalan teknologi baterai, fitur pintar, dan layanan purnajual prima.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 6
 export const CASE_DECISION_MAKING_BIAS: ContentBlock = {
