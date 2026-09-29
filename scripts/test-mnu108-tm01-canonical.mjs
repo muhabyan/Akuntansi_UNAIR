@@ -74,7 +74,10 @@ ok('AT-001: 17 sections §0–§16 in order');
 const sectionsWithLabel = h2.filter((text) => text.includes('di luar RPP'));
 assert.deepEqual(sectionsWithLabel, ['8\\. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)']);
 assert.equal(countOf('di luar RPP'), 3, 'AT-002: exactly 3 occurrences (title §8, mind map node, footnote)');
-assert.ok(byKind('code').some((block) => block.text.includes('[di luar RPP] Nonprofit')), 'AT-002: mind map keeps the node');
+assert.ok(
+  byKind('ul').flatMap((block) => block.items).some((item) => item.includes('[di luar RPP] Nonprofit')),
+  'AT-002: mind map keeps the node',
+);
 ok('AT-002: "di luar RPP" on §8 only, 3 occurrences in all');
 
 // ---------------------------------------------------------------- AT-003
@@ -232,13 +235,57 @@ for (const kind of ['example', 'practice-box', 'solution-reveal', 'section', 'pe
   assert.equal(byKind(kind).length, 0, `render rule: TM01 uses no "${kind}" wrapper (one level of boxing only)`);
 }
 assert.ok(!/#[0-9a-fA-F]{6}\b/.test(page), 'render rule: no raw hex colour in the content');
-// The concept map tree is the only monospace block; it keeps the six branches.
-const codeBlocks = byKind('code');
-assert.equal(codeBlocks.length, 1, 'render rule: the concept map is the only code block');
-assert.equal(codeBlocks[0].language, 'Peta Konsep');
-for (const branch of ['1. DASAR', '2. FUNGSI & HASIL', '3. MANAJER', '4. EVOLUSI', '5. MASA DEPAN', '6. AI']) {
-  assert.ok(codeBlocks[0].text.includes(branch), `§12: concept map keeps branch "${branch}"`);
+// §12: the concept map is a nested list, not a monospace tree. The ASCII tree overflowed a phone on nearly every
+// line; a list wraps. Nothing on the page is a code block any more, since that was the only one.
+assert.equal(byKind('code').length, 0, 'render rule: no monospace block is left to scroll sideways on a phone');
+const conceptMap = byKind('ul').find((block) => block.items[0]?.startsWith('**1\\. DASAR**'));
+assert.ok(conceptMap, '§12: the concept map list exists');
+assert.equal(conceptMap.items.length, 6, '§12: six main branches');
+const CONCEPT_MAP_NODES = [
+  // Level 1 — the six branches, in order.
+  ['1\\. DASAR', '2\\. FUNGSI & HASIL', '3\\. MANAJER', '4\\. EVOLUSI: Things vs Humanity of Production',
+    '5\\. MASA DEPAN', '6\\. AI: otomasi rutin + Nudge management'],
+  // Levels 2 and 3 — every node of the tree this list replaced, in tree order.
+  ['Management (effective + efficient, lewat 4 fungsi)',
+    'Organization (social entity, goal-directed, deliberately structured)',
+    'Drucker 5 tasks',
+    'Planning → Organizing → Leading → Controlling',
+    'Performance = Efficiency (input) + Effectiveness (hasil)',
+    'Competencies: controller→enabler, … , stability→change',
+    'Bossless (Morning Star, FAVI)',
+    'Skills: Technical / Human / Conceptual',
+    'When skills fail (Exh. 1.5: komunikasi #1)',
+    'Transisi: individual identity → manager identity (Exh. 1.6)',
+    'Activities: variety, fragmentation, brevity; time mgmt ABC',
+    'Roles (10): Informational / Interpersonal / Decisional',
+    '[di luar RPP] Nonprofit',
+    'Classical: Scientific Mgmt, Bureaucracy, Admin. Principles',
+    'Management Science (bagian classical): OR, OM, IT',
+    'Humanistic: Human Relations, Human Resources (Theory X/Y), Behavioral Sciences',
+    'Technology-driven: Big data, IoT, Platform',
+    'People-driven: Radical decentralization, Employee engagement'],
+];
+conceptMap.items.forEach((item, index) => {
+  assert.ok(item.startsWith(`**${CONCEPT_MAP_NODES[0][index]}**`), `§12: branch ${index + 1} is "${CONCEPT_MAP_NODES[0][index]}"`);
+});
+const conceptMapText = conceptMap.items.join('\n');
+for (const node of CONCEPT_MAP_NODES[1]) {
+  assert.ok(conceptMapText.includes(`- ${node}`), `§12: the list is missing the tree node "${node}"`);
 }
+// Tree order is kept: each node appears after the one before it.
+let cursor = -1;
+for (const node of CONCEPT_MAP_NODES[1]) {
+  const at = conceptMapText.indexOf(`- ${node}`);
+  assert.ok(at > cursor, `§12: "${node}" is out of tree order`);
+  cursor = at;
+}
+// Levels 2 and 3 stay plain text; only the branch headings are bold.
+for (const node of CONCEPT_MAP_NODES[1]) {
+  assert.ok(!conceptMapText.includes(`- **${node}`), `§12: sub-node "${node}" must not be bold`);
+}
+assert.ok(conceptMapText.includes('  - Bossless (Morning Star, FAVI)'), '§12: Bossless stays a third-level node');
+assert.ok(conceptMapText.includes('  - When skills fail (Exh. 1.5: komunikasi #1)'), '§12: When skills fail stays a third-level node');
+assert.ok(page.includes('**Simpul pusat:** LEADING EDGE MANAGEMENT'), '§12: the centre node is stated above the list');
 const crossLinks = byKind('table').find((block) => block.headers.join('|') === 'Dari|Ke|Hubungannya|Sumber');
 assert.ok(crossLinks, '§12: the cross-link table exists');
 assert.equal(crossLinks.rows.length, 11, '§12: 11 cross links');
@@ -250,7 +297,7 @@ assert.deepEqual(exhibit12.rows.map((row) => row[0]), ['Human', 'Financial', 'Ra
 assert.deepEqual(exhibit12.rows.slice(0, 4).map((row) => row[1]), ['Planning', 'Organizing', 'Leading', 'Controlling']);
 assert.deepEqual(exhibit12.rows.map((row) => row[2]), ['Attain goals', 'Products', 'Services', 'Efficiency', 'Effectiveness']);
 assert.match(exhibit12.caption ?? '', /siklus/, 'NM-004: the caption says the four functions form a cycle');
-ok('render rules: one level of boxing, no hex, Exhibit 1.2 table, concept map code block');
+ok('render rules: one level of boxing, no hex, Exhibit 1.2 table, concept map as a nested list');
 
 // ---------------------------------------------------------------- phone layout
 // A table that cannot be read on a 390px phone renders stacked below 640px instead (one block per row, each cell

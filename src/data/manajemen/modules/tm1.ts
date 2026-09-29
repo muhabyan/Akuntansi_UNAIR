@@ -18,32 +18,36 @@ const EXHIBIT_1_9_PERSPECTIVES = [
   'The People-Driven Workplace (Employee Engagement, Radical Decentralization)',
 ];
 
-// Pohon peta konsep §12, dipertahankan sebagai teks monospace supaya cabang dan sub-cabangnya tetap terbaca.
-const CONCEPT_MAP_TREE = `LEADING EDGE MANAGEMENT
-├── 1. DASAR
-│   ├── Management (effective + efficient, lewat 4 fungsi)
-│   ├── Organization (social entity, goal-directed, deliberately structured)
-│   └── Drucker 5 tasks
-├── 2. FUNGSI & HASIL
-│   ├── Planning → Organizing → Leading → Controlling
-│   └── Performance = Efficiency (input) + Effectiveness (hasil)
-├── 3. MANAJER
-│   ├── Competencies: controller→enabler, … , stability→change
-│   │   └── Bossless (Morning Star, FAVI)
-│   ├── Skills: Technical / Human / Conceptual
-│   │   └── When skills fail (Exh. 1.5: komunikasi #1)
-│   ├── Transisi: individual identity → manager identity (Exh. 1.6)
-│   ├── Activities: variety, fragmentation, brevity; time mgmt ABC
-│   ├── Roles (10): Informational / Interpersonal / Decisional
-│   └── [di luar RPP] Nonprofit
-├── 4. EVOLUSI: Things vs Humanity of Production
-│   ├── Classical: Scientific Mgmt, Bureaucracy, Admin. Principles
-│   ├── Management Science (bagian classical): OR, OM, IT
-│   └── Humanistic: Human Relations, Human Resources (Theory X/Y), Behavioral Sciences
-├── 5. MASA DEPAN
-│   ├── Technology-driven: Big data, IoT, Platform
-│   └── People-driven: Radical decentralization, Employee engagement
-└── 6. AI: otomasi rutin + Nudge management`;
+// Peta konsep §12 sebagai daftar bertingkat, bukan pohon ASCII: pohon monospace terpotong di kanan hampir di setiap
+// baris pada layar ponsel dan harus digeser. Isi dan urutan simpulnya sama persis dengan pohon itu — satu cabang per
+// item, sub-cabangnya sebagai daftar markdown di dalam item yang sama. Titik penomoran di-escape supaya "1. " tidak
+// dibaca markdown sebagai penanda daftar bernomor.
+const CONCEPT_MAP_BRANCHES = [
+  `**1\\. DASAR**
+- Management (effective + efficient, lewat 4 fungsi)
+- Organization (social entity, goal-directed, deliberately structured)
+- Drucker 5 tasks`,
+  `**2\\. FUNGSI & HASIL**
+- Planning → Organizing → Leading → Controlling
+- Performance = Efficiency (input) + Effectiveness (hasil)`,
+  `**3\\. MANAJER**
+- Competencies: controller→enabler, … , stability→change
+  - Bossless (Morning Star, FAVI)
+- Skills: Technical / Human / Conceptual
+  - When skills fail (Exh. 1.5: komunikasi #1)
+- Transisi: individual identity → manager identity (Exh. 1.6)
+- Activities: variety, fragmentation, brevity; time mgmt ABC
+- Roles (10): Informational / Interpersonal / Decisional
+- [di luar RPP] Nonprofit`,
+  `**4\\. EVOLUSI: Things vs Humanity of Production**
+- Classical: Scientific Mgmt, Bureaucracy, Admin. Principles
+- Management Science (bagian classical): OR, OM, IT
+- Humanistic: Human Relations, Human Resources (Theory X/Y), Behavioral Sciences`,
+  `**5\\. MASA DEPAN**
+- Technology-driven: Big data, IoT, Platform
+- People-driven: Radical decentralization, Employee engagement`,
+  '**6\\. AI: otomasi rutin + Nudge management**',
+];
 
 export const TM1_READING: Reading = {
   tm: 1,
@@ -792,13 +796,11 @@ export const TM1_READING: Reading = {
 
     // ---------------------------------------------------------------- §12
     { kind: 'h2', text: '12\\. Peta Konsep (siap dijadikan Mind Map)' },
-    { kind: 'p', text: '**Simpul pusat:** LEADING EDGE MANAGEMENT' },
     {
-      kind: 'code',
-      language: 'Peta Konsep',
-      text: CONCEPT_MAP_TREE,
-      caption: 'Enam cabang utama beserta sub-cabangnya, siap disalin menjadi mind map.',
+      kind: 'p',
+      text: '**Simpul pusat:** LEADING EDGE MANAGEMENT. Enam cabang utama beserta sub-cabangnya, siap disalin menjadi mind map:',
     },
+    { kind: 'ul', items: CONCEPT_MAP_BRANCHES },
     { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
     {
       kind: 'table',

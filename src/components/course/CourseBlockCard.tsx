@@ -50,6 +50,15 @@ function hasManualWarning(text?: string): boolean {
   return Boolean(text && text.includes('[Perlu pemeriksaan manual]'));
 }
 
+/**
+ * True when a list item carries a nested list of its own, so markdown renders it as blocks rather than one line.
+ * Such an item must not get `whitespace-pre-line`: the newlines between those blocks would show up as blank gaps
+ * between the item's own text and its nested list.
+ */
+function hasNestedList(text: string): boolean {
+  return /\n\s*(?:[-*+]|\d{1,9}[.)])\s/.test(text);
+}
+
 function isRegulationComparison(text: string): boolean {
   return /aturan lama|aturan baru|sebelum|sesudah|berubah|koreksi|PMK 15\/2025|UU HPP/i.test(text);
 }
@@ -275,8 +284,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               ) : (
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 shadow-sm shadow-blue-500/40" />
               )}
-              {/* Layered items are plain markdown: pre-line would turn the newlines between nested blocks into gaps. */}
-              <span className={layered ? 'min-w-0' : 'whitespace-pre-line'}>{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
+              {/* Layered items are plain markdown: pre-line would turn the newlines between nested blocks into gaps.
+                  An item that carries its own nested list is block markdown for the same reason, whatever the reading. */}
+              <span className={layered || hasNestedList(it) ? 'min-w-0' : 'whitespace-pre-line'}>{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
             </li>
           ))}
         </ul>
