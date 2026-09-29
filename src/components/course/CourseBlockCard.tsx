@@ -256,15 +256,17 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           {!isSimulation && (
             <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">Bagian Materi</div>
           )}
+          {/* Inline markdown only: a heading such as "1. Pendahuluan" is a title, not a one-item ordered list, and
+              the heading keeps its own colour, size and leading instead of the body paragraph's. */}
           <h2 className="font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl md:leading-tight">
-            {renderText(block.text)}
+            <InlineMarkdown text={block.text} />
           </h2>
         </div>
       );
     case 'h3':
       return (
         <h3 className="mt-6 mb-2 border-l-4 border-gold-500 dark:border-gold/70 pl-4 font-display text-lg font-bold leading-snug text-gold-700 dark:text-gold">
-          {renderText(block.text)}
+          <InlineMarkdown text={block.text} />
         </h3>
       );
     case 'p': {
