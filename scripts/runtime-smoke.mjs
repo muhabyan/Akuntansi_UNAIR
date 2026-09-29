@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 
 const root = process.cwd();
 const host = '127.0.0.1';
-const port = 4174;
+const port = Number(process.env.RUNTIME_SMOKE_PORT ?? 4174);
 const baseUrl = `http://${host}:${port}`;
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

@@ -7,7 +7,9 @@ import { createEnterprisePolicyBlockError, isEnterprisePolicyBlock } from './e2e
 const root = process.cwd();
 const host = process.env.E2E_SERVER_HOST ?? '127.0.0.1';
 const browserHost = process.env.E2E_BROWSER_HOST ?? '127.0.0.1';
-const port = 4173;
+// Ports come from the environment when the default is taken (e.g. E2E_CDP_PORT=9333 npm run test:e2e).
+const port = Number(process.env.E2E_PREVIEW_PORT ?? 4173);
+const cdpPort = Number(process.env.E2E_CDP_PORT ?? 9222);
 const baseUrl = `http://${browserHost}:${port}`;
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -176,10 +178,10 @@ try {
   chromium = start(chromiumPath, [
     '--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
     '--disable-extensions', '--no-first-run', '--no-default-browser-check', '--no-proxy-server',
-    '--remote-debugging-port=9222', `--user-data-dir=${profile}`, 'about:blank',
+    `--remote-debugging-port=${cdpPort}`, `--user-data-dir=${profile}`, 'about:blank',
   ]);
-  await waitFor('http://127.0.0.1:9222/json/version');
-  const targets = await (await waitFor('http://127.0.0.1:9222/json/list')).json();
+  await waitFor(`http://127.0.0.1:${cdpPort}/json/version`);
+  const targets = await (await waitFor(`http://127.0.0.1:${cdpPort}/json/list`)).json();
   const pageTarget = targets.find((target) => target.type === 'page' && target.url === 'about:blank')
     ?? targets.find((target) => target.type === 'page');
   if (!pageTarget?.webSocketDebuggerUrl) throw new Error('Chromium page target tidak ditemukan');
