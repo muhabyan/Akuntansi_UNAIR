@@ -34,7 +34,7 @@ import BankQuestionList from './BankQuestionList';
 import PrepReadingList from './PrepReadingList';
 import { useEscapeToBack } from './escapeToBack';
 import { SHARED_FRAME_CLASS, SharedFrameContext, usesSharedFrame } from './readingFrame';
-import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, useReadingOutlineActive } from './ReadingOutline';
+import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, readingOutlineLabel, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
 
 interface CourseLayoutProps {
@@ -195,8 +195,7 @@ function ReadingPanel({
   const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
   const outlineItems = useMemo(() => buildReadingOutline(reading.blocks), [reading.blocks]);
   const activeOutlineId = useReadingOutlineActive(outlineItems);
-  const activeOutlineIndex = Math.max(0, outlineItems.findIndex((item) => item.id === activeOutlineId));
-  const activeOutlineItem = outlineItems[activeOutlineIndex];
+  const activeOutlineItem = outlineItems.find((item) => item.id === activeOutlineId) ?? outlineItems[0];
   const [desktopOutlineOpen, setDesktopOutlineOpen] = useState(() => {
     try {
       return window.localStorage.getItem(DESKTOP_OUTLINE_STORAGE_KEY) !== 'true';
@@ -351,7 +350,7 @@ function ReadingPanel({
           </button>
           <div className="min-w-0 flex-1 px-1 text-center">
             <p className="truncate text-[11px] font-semibold text-gray-500 dark:text-gray-400" aria-live="polite">
-              {activeOutlineItem ? `${String(activeOutlineIndex + 1).padStart(2, '0')} · ${activeOutlineItem.label.replace(/^\d+\.\s*/, '')}` : `TM ${reading.tm}`}
+              {activeOutlineItem ? readingOutlineLabel(activeOutlineItem) : `TM ${reading.tm}`}
             </p>
           </div>
           <button

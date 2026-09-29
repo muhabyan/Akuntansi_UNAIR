@@ -50,6 +50,15 @@ function hasManualWarning(text?: string): boolean {
   return Boolean(text && text.includes('[Perlu pemeriksaan manual]'));
 }
 
+/**
+ * True when a list item carries a nested list of its own, so markdown renders it as blocks rather than one line.
+ * Such an item must not get `whitespace-pre-line`: the newlines between those blocks would show up as blank gaps
+ * between the item's own text and its nested list.
+ */
+function hasNestedList(text: string): boolean {
+  return /\n\s*(?:[-*+]|\d{1,9}[.)])\s/.test(text);
+}
+
 function isRegulationComparison(text: string): boolean {
   return /aturan lama|aturan baru|sebelum|sesudah|berubah|koreksi|PMK 15\/2025|UU HPP/i.test(text);
 }
@@ -275,8 +284,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               ) : (
                 <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500 dark:bg-blue-400 shadow-sm shadow-blue-500/40" />
               )}
-              {/* Layered items are plain markdown: pre-line would turn the newlines between nested blocks into gaps. */}
-              <span className={layered ? 'min-w-0' : 'whitespace-pre-line'}>{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
+              {/* Layered items are plain markdown: pre-line would turn the newlines between nested blocks into gaps.
+                  An item that carries its own nested list is block markdown for the same reason, whatever the reading. */}
+              <span className={layered || hasNestedList(it) ? 'min-w-0' : 'whitespace-pre-line'}>{renderText(checklist ? stripChecklistMarker(it) : it)}</span>
             </li>
           ))}
         </ul>
@@ -447,12 +457,17 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             )}
           </div>
         );
-        // The shared reading frame (layered readings, PJK301) stacks every table below 1024px.
-        if (!sharedFrame && !(layered && block.stackOnMobile)) return tableCard;
+        // Where the stacked view takes over from the table:
+        // - the shared reading frame (layered readings, PJK301) stacks every table below 1024px, because its desktop
+        //   table needs 42rem and the frame is narrower than that from 1024px down;
+        // - any other reading opts a single table in with stackOnMobile, and only phones get the stacked view. A table
+        //   that fits a phone stays a table, so the reader still sees the comparison side by side.
+        const stackBelow = sharedFrame ? 'lg' : block.stackOnMobile ? 'sm' : null;
+        if (!stackBelow) return tableCard;
         return (
           <>
-            <div className="hidden lg:block">{tableCard}</div>
-            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} caption={block.caption} warning={warning} />
+            <div className={stackBelow === 'lg' ? 'hidden lg:block' : 'hidden sm:block'}>{tableCard}</div>
+            <StackedTable headers={block.headers} rows={block.rows} label={tableLabel} caption={block.caption} warning={warning} stackBelow={stackBelow} />
           </>
         );
       }

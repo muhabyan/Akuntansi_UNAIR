@@ -394,6 +394,16 @@ body.zen-mode-active .mobile-utility-badge { display: none !important; }
   overflow-wrap: anywhere;
 }
 
+/* Table cells break at spaces only. "anywhere" also shrinks a cell's min-content width, so a narrow table squeezed
+   its columns and split words mid-way ("Produktivita s", "organizatio n"). "break-word" keeps min-content at the
+   longest word: the column can still shrink to that word, and only a word wider than the whole column is broken.
+   A too-wide table then scrolls in its own wrapper, or renders as StackedTable on a phone. */
+.reading-document table th,
+.reading-document table td {
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
 .agency-conflict-note {
   background: #e0f2fe;
   color: #082f49;
@@ -456,6 +466,44 @@ html.dark .study-utility-menu-action:is(:hover, :focus-visible) {
 
 .reading-document .akbi-table-scroll > table {
   min-width: max(100%, 42rem);
+}
+
+/* Up to 704px a table that is still rendered as a table has to fit the screen: 42rem plus the card border and the
+   page gutters needs about 704px, so below that the floor above would make every table scroll sideways. A table too
+   wide or too long for a phone is replaced by the stacked view instead (stackOnMobile in CourseBlockCard), so nothing
+   that needs the extra width is squeezed here. Readings in the shared frame (PJK301, layered) are unaffected: their
+   tables are display:none below 1024px and the stacked view they show instead is not a table. */
+@media (max-width: 703.98px) {
+  .reading-document .akbi-table-scroll > table {
+    min-width: 100%;
+  }
+  /* Columns reserve a floor so a desktop table keeps readable widths: 9rem for the term column, 6rem for the rest,
+     plus 170px from the class on the first header. On a narrow screen those floors add up to more than the screen
+     (three columns already reserve 340px before a single word is measured), so each column takes what its own
+     content needs instead. */
+  /* Both selectors are needed: the 9rem floor further down this file is written as `th:first-child`, so only an
+     equally deep `th:first-child` selector can lift it. */
+  .reading-document .akbi-table-scroll > table th,
+  .reading-document .akbi-table-scroll > table th:first-child {
+    min-width: 0;
+    width: auto;
+  }
+}
+
+/* On a phone the columns need more than the min-width above: the side padding and the body size come down, and the
+   headers give up their letter-spacing, which is what widens a word like "competencies". Tablet widths keep the
+   roomier desktop cell, since they have the space for it. */
+@media (max-width: 639.98px) {
+  .reading-document .akbi-table-scroll > table :is(th, td) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .reading-document .akbi-table-scroll > table td {
+    font-size: 0.875rem;
+  }
+  .reading-document .akbi-table-scroll > table th {
+    letter-spacing: 0;
+  }
 }
 
 /* A table inside a box loses the box padding: a layered table in a self-check or pendalaman box, and in the shared

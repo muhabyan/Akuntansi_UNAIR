@@ -6,9 +6,27 @@ export const DESKTOP_OUTLINE_STORAGE_KEY = 'akuntansihub:reading-outline-collaps
 
 export interface ReadingOutlineItem {
   id: string;
+  /** What to show: the heading text, with its own leading number and any markdown escapes taken off. */
   label: string;
+  /**
+   * The marker in front of the label, for a section (level 2) only. It is the heading's own number when it has one
+   * ("12\. Peta Konsep" -> "12"), so a reading that starts at 0 or skips a number keeps its own numbering; otherwise
+   * it counts the sections. Both the panel and the toolbar pill show this, so they never disagree.
+   */
+  badge?: string;
   level: 2 | 3;
 }
+
+/**
+ * Markdown escapes belong to the rendered heading, not to a plain-text label: a heading written "13\. Contoh
+ * Penerapan" (escaped so markdown renders a heading instead of a one-item ordered list) reads "13. Contoh Penerapan".
+ */
+export function stripMarkdownEscapes(text: string): string {
+  return text.replace(/\\([\\`*_{}[\]()#+\-.!])/g, '$1');
+}
+
+/** A heading's own number, e.g. "0", "12"; the dot may be backslash-escaped in the source. */
+const HEADING_NUMBER = /^(\d{1,3})\\?[.)]\s+/;
 
 function slugifyHeading(text: string) {
   return text
@@ -27,34 +45,52 @@ export function getReadingBlockId(block: ContentBlock, index: number) {
   return undefined;
 }
 
+/** One section entry: its own number wins over the running count, and the number is dropped from the label. */
+function sectionItem(id: string, text: string, sectionCount: number): ReadingOutlineItem {
+  const ownNumber = text.match(HEADING_NUMBER)?.[1];
+  return {
+    id,
+    label: stripMarkdownEscapes(ownNumber === undefined ? text : text.replace(HEADING_NUMBER, '')),
+    badge: ownNumber ?? String(sectionCount),
+    level: 2,
+  };
+}
+
 export function buildReadingOutline(blocks: ContentBlock[]): ReadingOutlineItem[] {
   const result: ReadingOutlineItem[] = [];
+  let sectionCount = 0;
   blocks.forEach((block, index) => {
     const id = getReadingBlockId(block, index);
     if (block.kind === 'h2' && id) {
-      result.push({ id, label: block.text, level: 2 });
+      result.push(sectionItem(id, block.text, ++sectionCount));
     } else if (block.kind === 'section' && block.title && id) {
-      result.push({ id, label: block.title, level: 2 });
+      result.push(sectionItem(id, block.title, ++sectionCount));
     } else if (block.kind === 'h3' && id) {
-      result.push({ id, label: block.text, level: 3 });
+      result.push({ id, label: stripMarkdownEscapes(block.text), level: 3 });
     } else if (block.kind === 'solution-reveal' && id) {
-      const cleanLabel = block.title.length > 55 ? block.title.slice(0, 52) + '…' : block.title;
-      result.push({ id, label: cleanLabel, level: 3 });
+      const title = stripMarkdownEscapes(block.title);
+      result.push({ id, label: title.length > 55 ? title.slice(0, 52) + '…' : title, level: 3 });
     }
   });
   return result;
 }
 
+/** The one line that names a section: what the panel entry and the toolbar pill both read. */
+export function readingOutlineLabel(item: ReadingOutlineItem): string {
+  return item.badge ? `${outlineBadge(item.badge)} · ${item.label}` : item.label;
+}
+
+/** Two digits so the badges line up in the panel's monospace column; a longer number is left alone. */
+function outlineBadge(badge: string): string {
+  return badge.length < 2 ? badge.padStart(2, '0') : badge;
+}
+
 function OutlineLinks({ items, activeId, onNavigate }: { items: ReadingOutlineItem[]; activeId?: string; onNavigate?: () => void }) {
-  let sectionIndex = 0;
   return (
     <nav className="reading-outline-nav" aria-label="Daftar isi bacaan">
       <ol className="space-y-0.5">
         {items.map((item) => {
           const isH2 = item.level === 2;
-          if (isH2) sectionIndex++;
-          // Strip redundant leading numbers from h2 (e.g., "1. Ruang Lingkup" -> "Ruang Lingkup") since sectionIndex is already displayed
-          const cleanDisplayLabel = isH2 ? item.label.replace(/^\d+[.)]\s*/, '') : item.label;
           return (
             <li key={item.id}>
               <a
@@ -69,14 +105,14 @@ function OutlineLinks({ items, activeId, onNavigate }: { items: ReadingOutlineIt
                     : 'border-transparent text-gray-600 hover:bg-blue-50/70 hover:text-blue-700 dark:text-gray-400 dark:hover:bg-blue-950/30 dark:hover:text-blue-300'
                 }`}
               >
-                {isH2 ? (
+                {isH2 && item.badge ? (
                   <span className="mt-0.5 shrink-0 font-mono text-[10px] font-bold text-blue-500 dark:text-blue-400" aria-hidden="true">
-                    {String(sectionIndex).padStart(2, '0')}
+                    {outlineBadge(item.badge)}
                   </span>
                 ) : (
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gray-300 group-hover:bg-blue-400 dark:bg-gray-600 dark:group-hover:bg-blue-400" aria-hidden="true" />
                 )}
-                <span className="line-clamp-2 leading-tight">{cleanDisplayLabel}</span>
+                <span className="line-clamp-2 leading-tight">{item.label}</span>
               </a>
             </li>
           );

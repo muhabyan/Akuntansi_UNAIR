@@ -215,13 +215,18 @@ export function SelfCheckCard({ question, signal, children }: { question: string
   );
 }
 
-/** Phone and tablet view of a table in the shared reading frame (below 1024px, where the launcher insets leave less
- *  than the 42rem a desktop table needs): one row per block, the first cell as its title, empty cells left out; the
- *  desktop table is rendered separately. On its own it is one "Tabel materi" box with divided rows, like the desktop
- *  table card; inside another box (pendalaman, self-check, pembahasan) the rows are only divided, so boxes never nest.
- *  In a layered reading cells use the layered text style; elsewhere they render exactly as the desktop table's cells
- *  and the first column keeps its header too. */
-export function StackedTable({ headers, rows, label, caption, warning = false }: { headers: string[]; rows: string[][]; label: string; caption?: string; warning?: boolean }) {
+/** Narrow-screen view of a table: one row per block, the first cell as its title, empty cells left out; the table
+ *  itself is rendered separately for wider screens. On its own it is one "Tabel materi" box with divided rows, like the
+ *  desktop table card; inside another box (pendalaman, self-check, pembahasan) the rows are only divided, so boxes
+ *  never nest. In a layered reading cells use the layered text style; elsewhere they render exactly as the desktop
+ *  table's cells and the first column keeps its header too.
+ *
+ *  `stackBelow` says where it takes over, and must match the class on the table it replaces:
+ *  'lg' (1024px) for the shared reading frame, whose launcher insets leave less than the 42rem a desktop table needs;
+ *  'sm' (640px) for a single table opted in with stackOnMobile, where only phones are too narrow. */
+export function StackedTable({ headers, rows, label, caption, warning = false, stackBelow = 'lg' }: { headers: string[]; rows: string[][]; label: string; caption?: string; warning?: boolean; stackBelow?: 'lg' | 'sm' }) {
+  // Written out so Tailwind keeps both classes: a template string would not be picked up by the class scanner.
+  const hideAbove = stackBelow === 'sm' ? 'sm:hidden' : 'lg:hidden';
   const flat = useInsideBox();
   const layered = useLayered();
   const isSource = (header: string) => layered && /^sumber$/i.test(header.trim());
@@ -260,14 +265,14 @@ export function StackedTable({ headers, rows, label, caption, warning = false }:
   );
   if (flat) {
     return (
-      <div className="lg:hidden">
+      <div className={hideAbove}>
         {list}
         {footer}
       </div>
     );
   }
   return (
-    <div className="layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 lg:hidden">
+    <div className={`layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 ${hideAbove}`}>
       <div className="flex items-center gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-400">
         <Table2 size={15} aria-hidden="true" /> {label}
       </div>

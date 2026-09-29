@@ -4,6 +4,7 @@ import {
 } from 'lucide-react';
 import type { ContentBlock, Course, Reading } from '../../types';
 import CourseBlockCard from './CourseBlockCard';
+import { stripMarkdownEscapes } from './ReadingOutline';
 
 interface AkbiReadingShellProps {
   course: Course;
@@ -131,7 +132,12 @@ export default function AkbiReadingShell({ course, reading, done, isFirst, isLas
   const headings = useMemo<HeadingEntry[]>(() => reading.blocks
     .map((block, blockIndex) => ({ block, blockIndex }))
     .filter((entry): entry is { block: Extract<ContentBlock, { kind: 'h2' }>; blockIndex: number } => entry.block.kind === 'h2')
-    .map(({ block, blockIndex }) => ({ id: headingId(block.text, blockIndex), label: block.text.replace(/^A\d+\.\s*/i, ''), blockIndex })), [reading.blocks]);
+    .map(({ block, blockIndex }) => ({
+      id: headingId(block.text, blockIndex),
+      // A plain-text label: the "A1." prefix is redundant here, and a markdown escape belongs to the rendered heading.
+      label: stripMarkdownEscapes(block.text.replace(/^A\d+\.\s*/i, '')),
+      blockIndex,
+    })), [reading.blocks]);
 
   const [activeHeadingId, setActiveHeadingId] = useState(headings[0]?.id ?? '');
   const [drawer, setDrawer] = useState<DrawerKind>(null);
