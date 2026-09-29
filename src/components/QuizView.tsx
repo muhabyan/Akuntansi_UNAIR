@@ -31,12 +31,6 @@ const LETTER = ['A', 'B', 'C', 'D', 'E'];
 const DEFAULT_EXAM_DURATION_SECONDS = 90 * 60;
 const AKBI_EXAM_DURATION_SECONDS = 90 * 60;
 
-// Required for tests
-export const TIMED_EXAM_SETS: Record<string, string[]> = {
-  EKT109: ['uts', 'uas'],
-  PJK201: ['uts', 'uas'],
-};
-
 function formatTimeLeft(totalSeconds: number): string {
   const safeSeconds = Math.max(0, totalSeconds);
   const hours = Math.floor(safeSeconds / 3600);

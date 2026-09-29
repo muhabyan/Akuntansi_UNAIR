@@ -33,6 +33,76 @@ function assert(condition, message) {
 }
 
 /**
+ * Timed exams, checked on the real QuizView in jsdom: an exam set (PJK201 UTS and UAS, AKM201 UTS, the EKT109 PTE
+ * simulator) hides its questions until "Mulai Ujian", then shows them and a 90-minute countdown. Rendering the
+ * component tests the rule the app really applies (mode="exam"), not a list kept beside it.
+ */
+async function checkTimedExamBehavior() {
+  const { JSDOM } = await import('jsdom');
+  const { createServer } = await import('vite');
+  const React = await import('react');
+  const { createRoot } = await import('react-dom/client');
+  const { window } = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/' });
+  Object.assign(globalThis, {
+    window, document: window.document, localStorage: window.localStorage, HTMLElement: window.HTMLElement, SVGElement: window.SVGElement,
+    Node: window.Node, Event: window.Event, MouseEvent: window.MouseEvent, getComputedStyle: window.getComputedStyle.bind(window),
+    IS_REACT_ACT_ENVIRONMENT: true,
+  });
+  Object.defineProperty(globalThis, 'navigator', { configurable: true, value: window.navigator });
+  window.scrollTo = () => {};
+  window.confirm = () => true;
+  window.HTMLElement.prototype.scrollIntoView = () => {};
+  const warn = console.warn;
+  console.warn = () => {}; // KaTeX strict-mode notices do not change the output
+
+  const server = await createServer({ root, appType: 'custom', logLevel: 'silent', server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true } });
+  let mounted;
+  try {
+    const [{ default: QuizView }, { default: PteSimulatorTab }, { ALL_COURSES }] = await Promise.all([
+      server.ssrLoadModule('/src/components/QuizView.tsx'),
+      server.ssrLoadModule('/src/components/PteSimulatorTab.tsx'),
+      server.ssrLoadModule('/src/data/courseData.ts'),
+    ]);
+    const courseOf = (code) => ALL_COURSES.find((entry) => entry.course.code === code)?.course;
+    const doc = window.document;
+    const settle = () => React.act(async () => { await new Promise((resolve) => setTimeout(resolve, 30)); });
+    const cards = () => doc.querySelectorAll('[data-testid="quiz-question-card"]').length;
+    const click = (element) => React.act(async () => { element.dispatchEvent(new window.MouseEvent('click', { bubbles: true })); });
+    const cases = [
+      { label: 'PJK201 UTS', view: (course) => React.createElement(QuizView, { course, mode: 'exam' }), code: 'PJK201', set: 'uts' },
+      { label: 'PJK201 UAS', view: (course) => React.createElement(QuizView, { course, mode: 'exam' }), code: 'PJK201', set: 'uas' },
+      { label: 'AKM201 UTS', view: (course) => React.createElement(QuizView, { course, mode: 'exam' }), code: 'AKM201', set: 'uts' },
+      { label: 'EKT109 UTS (PTE simulator)', view: (course) => React.createElement(PteSimulatorTab, { course }), code: 'EKT109', set: 'uts' },
+      { label: 'EKT109 UAS (PTE simulator)', view: (course) => React.createElement(PteSimulatorTab, { course }), code: 'EKT109', set: 'uas' },
+    ];
+    for (const { label, view, code, set } of cases) {
+      const course = courseOf(code);
+      assert(course, `${label}: course ${code} not found`);
+      window.localStorage.clear();
+      mounted = createRoot(doc.getElementById('root'));
+      await React.act(async () => { mounted.render(view(course)); });
+      await settle();
+      const setButton = doc.querySelector(`[data-testid="quiz-set-${set}"]`);
+      assert(setButton, `${label}: exam set button is missing`);
+      await click(setButton);
+      await settle();
+      assert(doc.querySelector('[data-testid="quiz-start-exam"]'), `${label}: a timed exam must offer "Mulai Ujian"`);
+      assert(cards() === 0, `${label}: questions must stay hidden until the exam starts, found ${cards()}`);
+      await click(doc.querySelector('[data-testid="quiz-start-exam"]'));
+      await settle();
+      assert(cards() > 0, `${label}: questions must show once the exam has started`);
+      assert(/01:(30:00|29:[0-5]\d)/.test(doc.body.textContent), `${label}: the exam countdown must start at 90 minutes`);
+      await React.act(async () => { mounted.unmount(); });
+      mounted = undefined;
+    }
+  } finally {
+    if (mounted) await React.act(async () => { mounted.unmount(); });
+    console.warn = warn;
+    await server.close();
+  }
+}
+
+/**
  * Exam-session persistence, checked by running the real module (src/data/quizSession.ts) against an in-memory
  * localStorage: a saved session comes back unchanged, a session saved for other questions (different dataset
  * fingerprint) is ignored, unreadable data is ignored, a full or disabled storage never throws, and the key names
@@ -116,15 +186,14 @@ try {
   assert(appSource.includes('Halaman tidak ditemukan'), 'Client-side 404 content is missing');
 
   const quizSource = await fs.readFile(path.join(root, 'src/components/QuizView.tsx'), 'utf8');
-  assert(quizSource.includes("PJK201: ['uts', 'uas']"), 'PJK201 UTS/UAS timed registry is missing');
-  assert(quizSource.includes('90 * 60'), '90-minute exam duration constant is missing');
+  await checkTimedExamBehavior();
   await checkExamSessionPersistence();
   for (const hook of ['getExamSessionKey(', 'readStoredExamSession(', 'saveStoredExamSession(']) {
     assert(quizSource.includes(hook), `QuizView no longer calls ${hook.slice(0, -1)}: exam sessions would not persist`);
   }
   assert(quizSource.includes('getQuizDatasetFingerprint'), 'Exam dataset fingerprint guard is missing');
 
-  console.log(`Runtime smoke PASS: ${assetPaths.length} assets, SPA routes, malformed-route guard, 404 source, timer registry, dataset fingerprint, exam-session persistence behaviour, and persistence hooks`);
+  console.log(`Runtime smoke PASS: ${assetPaths.length} assets, SPA routes, malformed-route guard, 404 source, timed-exam behaviour, dataset fingerprint, exam-session persistence behaviour, and persistence hooks`);
 } finally {
   if (preview && preview.exitCode === null) preview.kill('SIGTERM');
   await sleep(300);
