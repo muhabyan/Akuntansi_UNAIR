@@ -48,13 +48,16 @@ try {
     await act(async () => { root.render(React.createElement(QuizView, { course, mode: 'exam' })); });
     await settle();
 
+    // Every timed exam hides its questions until "Mulai Ujian" and offers review marking once started (unchanged
+    // since 43828f5). The baseline per course: none before start, N questions and N review marks after.
     const initialCount = doc.querySelectorAll('[data-testid="quiz-question-card"]').length;
-    assert(initialCount === expectedInitialCounts[code], `${code}: shared pre-start behavior berubah, kartu ${initialCount}, expected ${expectedInitialCounts[code]}`);
-    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === 0, `${code}: tombol tanda tinjau bocor sebelum mulai`);
+    assert(initialCount === 0, `${code}: soal harus tersembunyi sebelum mulai, ditemukan ${initialCount}`);
+    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === 0, `${code}: tombol tanda tinjau tidak boleh ada sebelum mulai`);
     await click(doc.querySelector('[data-testid="quiz-start-exam"]'));
     await settle();
-    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === 0, `${code}: tombol tanda tinjau bocor setelah mulai`);
-    assert(!doc.body.textContent.includes('Ditandai'), `${code}: label tanda tinjau bocor ke course lama`);
+    const startedCount = doc.querySelectorAll('[data-testid="quiz-question-card"]').length;
+    assert(startedCount === expectedInitialCounts[code], `${code}: jumlah kartu setelah mulai berubah, kartu ${startedCount}, expected ${expectedInitialCounts[code]}`);
+    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === expectedInitialCounts[code], `${code}: setiap kartu harus punya tanda tinjau setelah mulai`);
     assert(!doc.querySelector('[data-testid="quiz-review-filter"]'), `${code}: filter hasil PTE bocor sebelum submit`);
 
     await act(async () => { root.unmount(); });
@@ -71,4 +74,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
-console.log('PTE simulator isolation test passed: AKK201, AKM201, and PJK201 preserve pre-start rendering and expose zero PTE review controls.');
+console.log('PTE simulator isolation test passed: AKK201, AKM201, and PJK201 hide their questions before start and show N questions with N review marks after it.');

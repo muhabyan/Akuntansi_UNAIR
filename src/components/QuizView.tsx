@@ -10,7 +10,7 @@ import { Award, BarChart3, Check, ClipboardList, Clock, FileText, Lightbulb, Lin
 import { getQuizSets } from '../data/quizzes';
 import type { Course, QuizQuestion } from '../types';
 import { getQuizDatasetFingerprint, isQuizResponseCorrect, normalizeQuizNumber } from '../lib/quizExamIntegrity';
-import { getExamSessionKey, readStoredExamSession, saveStoredExamSession, clearLegacyExamSessions } from '../data/quizSession';
+import { getExamSessionKey, readStoredExamSession, saveStoredExamSession } from '../data/quizSession';
 import { renderText } from './course/MarkdownContent';
 
 interface QuizViewProps {
@@ -30,18 +30,6 @@ export interface QuizSet {
 const LETTER = ['A', 'B', 'C', 'D', 'E'];
 const DEFAULT_EXAM_DURATION_SECONDS = 90 * 60;
 const AKBI_EXAM_DURATION_SECONDS = 90 * 60;
-
-// Required for tests
-export const TIMED_EXAM_SETS: Record<string, string[]> = {
-  EKT109: ['uts', 'uas'],
-  PJK201: ['uts', 'uas'],
-};
-
-export const SESSION_VERSIONS: Record<string, string> = {
-  'EKT109:uts': 'v2',
-  'EKT109:uas': 'v2',
-  'PJK201:uas': 'v4',
-};
 
 function formatTimeLeft(totalSeconds: number): string {
   const safeSeconds = Math.max(0, totalSeconds);
@@ -305,7 +293,6 @@ export default function QuizView({
       return;
     }
 
-    clearLegacyExamSessions(course.code, effectiveSetId, examDurationSeconds);
     const stored = readStoredExamSession(examSessionKey, examDatasetFingerprint);
     skipNextSessionPersist.current = true;
 
@@ -491,7 +478,6 @@ export default function QuizView({
       const confirmed = window.confirm(`Reset akan menghapus jawaban dan mengulang timer dari ${examDurationText}. Lanjutkan?`);
       if (!confirmed) return;
     }
-    if (mode === 'exam') clearLegacyExamSessions(course.code, effectiveSetId, examDurationSeconds);
     setPicks({});
     setFillAnswers({});
     setMatchAnswers({});
@@ -513,7 +499,6 @@ export default function QuizView({
       const confirmed = window.confirm('Pindah set akan menghapus jawaban dan timer pada set aktif. Lanjutkan?');
       if (!confirmed) return;
     }
-    if (mode === 'exam') clearLegacyExamSessions(course.code, effectiveSetId, examDurationSeconds);
     if (selectedSetId === undefined) setActiveSetId(id);
     onSelectedSetIdChange?.(id);
     setPicks({});

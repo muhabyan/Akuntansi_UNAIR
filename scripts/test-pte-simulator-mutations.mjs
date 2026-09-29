@@ -6,7 +6,9 @@ import { createServer } from 'vite';
 
 const root = process.cwd();
 const integritySourcePath = path.join(root, 'src/lib/quizExamIntegrity.ts');
-const integritySource = fs.readFileSync(integritySourcePath, 'utf8');
+// The markers below are written with LF; a Windows checkout has CRLF, so read the sources with LF endings.
+const readSource = (file) => fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+const integritySource = readSource(integritySourcePath);
 const domTest = fileURLToPath(new URL('./test-pte-simulator-auto-submit-dom.mjs', import.meta.url));
 const failures = [];
 const temporaryFiles = [];
@@ -130,8 +132,8 @@ try {
 // Live auto-submit mutation is exercised through the real React timer effect.
 const quizViewPath = path.join(root, 'src/components/QuizView.tsx');
 const pteTabPath = path.join(root, 'src/components/PteSimulatorTab.tsx');
-const quizViewSource = fs.readFileSync(quizViewPath, 'utf8');
-const pteTabSource = fs.readFileSync(pteTabPath, 'utf8');
+const quizViewSource = readSource(quizViewPath);
+const pteTabSource = readSource(pteTabPath);
 const autoMarker = `    setAutoSubmitted(true);
     setSubmitted(true);
     setReviewFilter('all');`;

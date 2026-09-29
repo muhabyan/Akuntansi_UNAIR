@@ -36,7 +36,3 @@ export function saveStoredExamSession(key: string, session: StoredExamSession): 
     /* localStorage quota / disabled - fail silently */
   }
 }
-
-export function clearLegacyExamSessions(_courseCode: string, _currentSetId: string, _durationSeconds: number): void {
-  // Helper function stub
-}
