@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 
 /** TMs whose reading was rewritten from a content package (12e). Add a TM here in the commit that brings its reading. */
-export const CANONICAL_TMS = [1, 2];
+export const CANONICAL_TMS = [1, 2, 3];
 /** TMs whose headings and concept map carry no backslash escapes (a heading is inline markdown, "1. Title" stays a heading). */
-export const CLEAN_HEADING_TMS = [2];
+export const CLEAN_HEADING_TMS = [2, 3];
 /** Tables allowed to stay plain although they have >=4 columns or a long cell: header rows of grids read in their own scroll wrapper. */
 export const PLAIN_GRID_HEADERS = [];
 
@@ -198,7 +198,9 @@ export async function runCanonical(spec) {
   for (const sentence of film.openerSentences) assert.ok(opener.text.includes(sentence), `film opener keeps: ${sentence}`);
   assert.deepEqual([...h2, ...h3].filter((text) => text.includes('Ilustrasi')), [film.h2, ...film.h3], 'Ilustrasi marks the film section only');
   const filmText = sectionBlocks(film.h2).filter((block) => block.kind !== 'h3').flatMap((block) => (block.kind === 'table' ? [...block.headers, ...block.rows.flat()] : block.text ? [block.text] : block.items ?? [])).join('\n');
-  assert.ok(!/\d/.test(filmText.replace(/\[hal\.[^\]]*\]/g, '').replace(/(\b(TM|Chapter|Exhibit|Exh\.)|§) ?\d+(\.\d+)?/g, '')), 'the film section has no dates or numbers of its own');
+  // The release year in the opener ("(2019)") identifies the film; it is the only figure the film section may carry.
+  const allowedInFilm = (text) => (film.allowed ?? []).reduce((rest, piece) => rest.split(piece).join(''), text);
+  assert.ok(!/\d/.test(allowedInFilm(filmText).replace(/\[hal\.[^\]]*\]/g, '').replace(/(\b(TM|Chapter|Exhibit|Exh\.)|§) ?\d+(\.\d+)?/g, '')), 'the film section has no dates or numbers of its own');
   for (const pattern of film.forbidden ?? []) assert.ok(!pattern.test(filmText), `film section must not match ${pattern}`);
   ok('film section: info opener titled Ilustrasi, label only there, no film numbers');
 

@@ -4,34 +4,8 @@
 // Kasus TM01 dihapus: TM01 kini memakai kasus SmartStyle Salons dari Daft & Marcic 12e Ch. 1, yang ditulis
 // langsung di modules/tm1.ts.
 // Kasus TM02 dihapus: TM02 kini memakai kasus dari Daft & Marcic 12e Ch. 2, yang ditulis langsung di modules/tm2.ts.
+// Kasus TM03 dihapus: TM03 kini memakai kasus dari Daft & Marcic 12e Ch. 3, yang ditulis langsung di modules/tm3.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 3
-export const CASE_GLOBAL_HOFSTEDE_ENTRY: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 3: Strategi Pasar Global & Dimensi Budaya Hofstede PT Indofood CBP di Nigeria',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: PT Indofood CBP Sukses Makmur berhasil menjadikan produk Indomie sebagai makanan pokok di Nigeria melalui anak perusahaan patungan Dufil Prima Foods. Namun, dalam mengelola ribuan tenaga kerja lokal dan rantai distribusi di Afrika Barat, para ekspatriat Indonesia menghadapi perbedaan norma budaya kerja, relasi hirarki, dan gaya komunikasi yang berbeda dari masyarakat Asia.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Analisis: (1) Tentukan strategi masuk pasar global yang diterapkan Indofood (Ekspor, Lisensi, Joint Venture, atau Greenfield) beserta alasannya, (2) Gunakan Dimensi Budaya Geert Hofstede (Power Distance, Individualism, Uncertainty Avoidance) untuk membandingkan karakteristik budaya kerja, dan (3) Rumuskan strategi kepemimpinan lintas budaya (Cross-Cultural Leadership) yang efektif!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Strategi Masuk Pasar Global**: Indofood menerapkan strategi **Joint Venture / Direct Investment (Greenfield)** dengan mendirikan pabrik manufaktur lokal bersama mitra lokal (Tolaram Group). Hal ini memangkas biaya logistik lintas benua, menghindari tarif impor tinggi, dan memastikan ketersediaan bahan baku gandum lokal.',
-            '**2. Analisis Dimensi Budaya Hofstede**:\n- *Power Distance*: Baik Indonesia maupun Nigeria memiliki skor Power Distance tinggi; bawahan menghormati otoritas pemimpin dan hierarki formal, sehingga arahan yang jelas dari atasan sangat dihargai.\n- *Individualism vs Collectivism*: Kedua negara bersifat kolektivis; loyalitas kelompok, hubungan interpersonal yang hangat, dan kerja tim lebih diutamakan daripada pencapaian individu egois.\n- *Uncertainty Avoidance*: Masyarakat lokal cenderung adaptif dan fleksibel terhadap situasi informal, berbeda dengan SOP manufaktur Jepang/Barat yang sangat kaku.',
-            '**3. Kepemimpinan Lintas Budaya**: Manajemen ekspatriat harus mengadopsi gaya kepemimpinan paternalistik yang mengayomi, mengintegrasikan kearifan lokal dalam komunikasi tim, memberdayakan manajer lokal Nigeria di level pengawasan garis depan, serta menunjukkan rasa hormat terhadap nilai-nilai keagamaan dan komunitas setempat.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 4
 export const CASE_ETHICAL_DECISION_CSR: ContentBlock = {
