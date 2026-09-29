@@ -2,9 +2,20 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
+import { build } from 'esbuild';
 import { createEnterprisePolicyBlockError, isEnterprisePolicyBlock } from './e2e-policy.mjs';
 
 const root = process.cwd();
+
+/** The app's own exam-session key builder, bundled from src so the test never writes the key format by hand. */
+async function loadExamSessionKey() {
+  const bundle = await build({
+    entryPoints: [path.join(root, 'src/data/quizSession.ts')],
+    bundle: true, write: false, format: 'esm', platform: 'node', logLevel: 'silent',
+  });
+  return (await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`)).getExamSessionKey;
+}
+const EXAM_SECONDS = 90 * 60;
 const host = process.env.E2E_SERVER_HOST ?? '127.0.0.1';
 const browserHost = process.env.E2E_BROWSER_HOST ?? '127.0.0.1';
 // Ports come from the environment when the default is taken (e.g. E2E_CDP_PORT=9333 npm run test:e2e).
@@ -201,7 +212,7 @@ try {
   // the same state transitions in Node when enterprise policy blocks browser I/O.
   await navigate(cdp, `${baseUrl}/course/EKT109`);
   await waitText(cdp, 'Pengantar Teori Ekonomi');
-  await clickText(cdp, 'Bank Soal Praktik');
+  await clickText(cdp, 'Bank Soal');
   await waitForTestId(cdp, 'pte-bank-results-summary');
   let pteSummary = await testIdState(cdp, 'pte-bank-results-summary');
   if (!/100\s+soal cocok/.test(pteSummary?.text ?? '') || !/halaman\s+1\s+dari\s+10/.test(pteSummary?.text ?? '')) {
@@ -243,26 +254,37 @@ try {
   const guidedPanel = await testIdState(cdp, 'pte-guided-review-guide');
   if (!guidedPanel?.text.includes('Panduan jawaban')) throw new Error('Guided-review answer guide did not open');
 
-  // EKT109 90-minute simulator contract.
-  await clickText(cdp, 'Simulasi UTS & UAS');
+  // EKT109 90-minute simulator contract. Questions stay hidden until "Mulai Ujian" (every timed exam does),
+  // then the whole set shows: 70 for UTS, 80 for UAS, each with its graph fixture.
+  const getExamSessionKey = await loadExamSessionKey();
+  await clickText(cdp, 'UTS & UAS');
   await waitForTestId(cdp, 'quiz-set-uts');
-  let simulatorCards = await testIdState(cdp, 'quiz-question-card');
-  let simulatorGraphs = await testIdState(cdp, 'quiz-graph-PTE-BANK-UTS-009');
-  if (simulatorCards?.count !== 70) throw new Error(`EKT109 UTS card count ${simulatorCards?.count}, expected 70`);
-  if (simulatorGraphs?.count !== 1) throw new Error('EKT109 UTS graph fixture missing');
-  await clickTestId(cdp, 'quiz-set-uas');
-  simulatorCards = await testIdState(cdp, 'quiz-question-card');
-  simulatorGraphs = await testIdState(cdp, 'quiz-graph-PTE-BANK-SRC-011');
-  if (simulatorCards?.count !== 80) throw new Error(`EKT109 UAS card count ${simulatorCards?.count}, expected 80`);
-  if (simulatorGraphs?.count !== 1) throw new Error('EKT109 UAS graph fixture missing');
+  // Switching sets while an exam is running asks for confirmation; the headless page has nobody to answer it.
+  await evaluate(cdp, 'window.confirm = () => true');
+  const startSet = async (setId, expectedCards, graphId) => {
+    await clickTestId(cdp, `quiz-set-${setId}`);
+    const hidden = await testIdState(cdp, 'quiz-question-card');
+    if ((hidden?.count ?? 0) !== 0) throw new Error(`EKT109 ${setId} shows ${hidden?.count} questions before "Mulai Ujian", expected 0`);
+    await clickTestId(cdp, 'quiz-start-exam');
+    await waitForTestId(cdp, 'quiz-mark-1');
+    const cards = await testIdState(cdp, 'quiz-question-card');
+    const graphs = await testIdState(cdp, `quiz-graph-${graphId}`);
+    if (cards?.count !== expectedCards) throw new Error(`EKT109 ${setId} card count ${cards?.count} after start, expected ${expectedCards}`);
+    if (graphs?.count !== 1) throw new Error(`EKT109 ${setId} graph fixture ${graphId} missing`);
+  };
+  await startSet('uts', 70, 'PTE-BANK-UTS-009');
+  await startSet('uas', 80, 'PTE-BANK-SRC-011');
+  // Each set keeps its own session: going back to the UTS restores the exam that was already started.
   await clickTestId(cdp, 'quiz-set-uts');
-  await clickTestId(cdp, 'quiz-start-exam');
   await waitForTestId(cdp, 'quiz-mark-1');
+  const restoredUts = await testIdState(cdp, 'quiz-question-card');
+  if (restoredUts?.count !== 70) throw new Error(`EKT109 uts not restored after switching sets: ${restoredUts?.count} cards, expected 70`);
   await clickTestId(cdp, 'quiz-mark-1');
   await selectTestId(cdp, 'quiz-order-6-1', 'Permintaan barang meningkat');
   const pteExamState = await evaluate(cdp, `(() => {
-    const key = Object.keys(localStorage).find((item) => item.startsWith('exam-session:EKT109:uts:5400:v1'));
-    return { key, session: key ? JSON.parse(localStorage.getItem(key)) : null };
+    const key = ${JSON.stringify(getExamSessionKey('EKT109', 'uts', EXAM_SECONDS))};
+    const raw = localStorage.getItem(key);
+    return { key: raw === null ? null : key, session: raw === null ? null : JSON.parse(raw) };
   })()`);
   if (!pteExamState.key) throw new Error('Session timer EKT109 UTS tidak tersimpan');
   if (pteExamState.session?.markedForReview?.['0'] !== true) throw new Error('Mark-for-review EKT109 tidak tersimpan');
@@ -271,18 +293,18 @@ try {
 
   await navigate(cdp, `${baseUrl}/course/PJK201`);
   await waitText(cdp, 'Perpajakan I');
-  await waitText(cdp, 'Kuis Interaktif');
+  await waitText(cdp, 'UTS & UAS');
 
-  await clickText(cdp, 'Kuis Interaktif');
-  await waitText(cdp, 'Simulasi UAS Perpajakan I');
-  await clickText(cdp, 'Simulasi UAS Perpajakan I');
-  await waitText(cdp, 'Mulai Ujian');
-  await clickText(cdp, 'Mulai Ujian');
-  await waitText(cdp, 'Timer');
+  await clickText(cdp, 'UTS & UAS');
+  await waitForTestId(cdp, 'quiz-set-uas');
+  await clickTestId(cdp, 'quiz-set-uas');
+  await waitForTestId(cdp, 'quiz-start-exam');
+  await clickTestId(cdp, 'quiz-start-exam');
+  await waitText(cdp, 'Sisa waktu');
   const timerState = await evaluate(cdp, `(() => ({ text: document.body.innerText, keys: Object.keys(localStorage) }))()`);
   if (!/01:29:[0-5][0-9]/.test(timerState.text) && !/01:30:00/.test(timerState.text)) throw new Error('Timer 90 menit tidak aktif');
-  const examSessionKey = timerState.keys.find((key) => key.startsWith('exam-session:PJK201:uas:5400:v4'));
-  if (!examSessionKey) throw new Error('Session timer PJK201 tidak tersimpan di localStorage');
+  const examSessionKey = getExamSessionKey('PJK201', 'uas', EXAM_SECONDS);
+  if (!timerState.keys.includes(examSessionKey)) throw new Error('Session timer PJK201 tidak tersimpan di localStorage');
   const startedSession = await evaluate(cdp, `JSON.parse(localStorage.getItem(${JSON.stringify(examSessionKey)}))`);
   if (!/^fnv1a-[0-9a-f]{8}$/.test(startedSession?.datasetFingerprint ?? '')) throw new Error('Fingerprint dataset UAS tidak tersimpan');
 
@@ -293,21 +315,28 @@ try {
     localStorage.setItem(key, JSON.stringify({ ...current, examStarted: true, submitted: false, autoSubmitted: false, examDeadlineMs: Date.now() - 1000, savedAt: Date.now() - 2000 }));
   })()`.replace('${EXAM_KEY}', examSessionKey));
   await navigate(cdp, `${baseUrl}/course/PJK201`);
-  await clickText(cdp, 'Kuis Interaktif');
-  await waitText(cdp, 'Simulasi UAS Perpajakan I');
-  await clickText(cdp, 'Simulasi UAS Perpajakan I');
+  await waitText(cdp, 'UTS & UAS');
+  await clickText(cdp, 'UTS & UAS');
+  await waitForTestId(cdp, 'quiz-set-uas');
+  await clickTestId(cdp, 'quiz-set-uas');
   await waitText(cdp, 'Hasil Terkunci');
   const restoredSession = await evaluate(cdp, `JSON.parse(localStorage.getItem(${JSON.stringify(examSessionKey)}))`);
   if (!restoredSession?.submitted || !restoredSession?.autoSubmitted) throw new Error('Expired-session terminal state tidak dipersistenkan');
 
   await evaluate(cdp, `localStorage.setItem('theme','light')`);
   await navigate(cdp, `${baseUrl}/course/PJK201`);
-  const lightMode = await evaluate(cdp, `!document.documentElement.classList.contains('dark')`);
-  if (!lightMode) throw new Error('Persistensi theme light gagal');
+  // The theme class is applied by React after the first render, so poll for it instead of reading it at once.
+  const themeIs = async (dark) => {
+    for (let attempt = 0; attempt < 40; attempt += 1) {
+      if (await evaluate(cdp, `document.documentElement.classList.contains('dark') === ${dark}`)) return true;
+      await sleep(150);
+    }
+    return false;
+  };
+  if (!(await themeIs(false))) throw new Error('Persistensi theme light gagal');
   await evaluate(cdp, `localStorage.setItem('theme','dark')`);
   await navigate(cdp, `${baseUrl}/course/PJK201`);
-  const darkMode = await evaluate(cdp, `document.documentElement.classList.contains('dark')`);
-  if (!darkMode) throw new Error('Persistensi theme dark gagal');
+  if (!(await themeIs(true))) throw new Error('Persistensi theme dark gagal');
 
   await navigate(cdp, `${baseUrl}/course/UNKNOWN`);
   await waitText(cdp, 'Halaman tidak ditemukan');
