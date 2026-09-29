@@ -2,7 +2,7 @@
 // A heading written "1. Pendahuluan" used to be read as an ordered list (an <ol> inside the <h2>), which dropped
 // the heading's own colour, size and leading. CourseBlockCard now renders h2/h3 through InlineMarkdown.
 // 1. Every h2/h3 of every course (readings, reviews, references), rendered by the real CourseBlockCard, is one
-//    heading element holding inline content only: no list, quote, nested heading or code block.
+//    heading element holding inline content only: no paragraph, list, quote, nested heading or code block.
 // 2. The numbered headings are really there (a floor per course), and keep their number in the rendered text.
 // 3. Mutation check: the old path (renderText) is caught by the same detector, so this guard cannot pass empty.
 // 4. Real CourseLayout in jsdom (PJK301 numbered, MNU108 escaped): headings stay headings, numbers stay visible.
@@ -156,10 +156,11 @@ try {
   const { renderToStaticMarkup } = await import('react-dom/server');
   globalThis.__act = reactAct;
   server = await createServer({ root: process.cwd(), cacheDir, appType: 'custom', server: { middlewareMode: true }, optimizeDeps: { noDiscovery: true }, logLevel: 'silent' });
-  const [{ default: CourseLayout }, { default: CourseBlockCard }, { renderText }, { SEMESTERS }, { loadCourseContent }, outline] = await Promise.all([
+  const [{ default: CourseLayout }, { default: CourseBlockCard }, { renderText }, { InlineMarkdown }, { SEMESTERS }, { loadCourseContent }, outline] = await Promise.all([
     server.ssrLoadModule('/src/components/course/CourseLayout.tsx'),
     server.ssrLoadModule('/src/components/course/CourseBlockCard.tsx'),
     server.ssrLoadModule('/src/components/course/MarkdownContent.tsx'),
+    server.ssrLoadModule('/src/components/course/LayeredBlocks.tsx'),
     server.ssrLoadModule('/src/data/courseData.ts'),
     server.ssrLoadModule('/src/data/courses/courseRegistry.ts'),
     server.ssrLoadModule('/src/components/course/ReadingOutline.tsx'),
@@ -175,7 +176,7 @@ try {
   };
 
   // What a heading must not contain: any block-level markdown structure.
-  const BLOCK_INSIDE_HEADING = 'ol, ul, li, blockquote, pre, table, h1, h2, h3, h4, h5, h6, hr';
+  const BLOCK_INSIDE_HEADING = 'p, ol, ul, li, blockquote, pre, table, h1, h2, h3, h4, h5, h6, hr';
   /** The problems in one rendered heading (a host element from `parse`); an empty list means it is a plain heading. */
   const headingProblems = (host, kind) => {
     const headings = host.querySelectorAll(kind);
@@ -239,6 +240,15 @@ try {
     const fixed = headingProblems(parse(cardMarkup({ kind, text: '1. Pendahuluan' })), kind);
     check(fixed.length === 0, `mutation: the card renders the same <${kind}> text as a plain heading`, JSON.stringify(fixed));
   }
+  // The paragraph is unwrapped: without it InlineMarkdown leaves a <p> inside the heading, and the detector sees that too.
+  for (const kind of ['h2', 'h3']) {
+    const wrapped = renderToStaticMarkup(React.createElement(kind, null, React.createElement(InlineMarkdown, { text: '1. Pendahuluan' })));
+    const withParagraph = headingProblems(parse(wrapped), kind);
+    check(withParagraph.length > 0 && withParagraph[0].includes('<p>'), `mutation: InlineMarkdown without unwrapParagraph leaves a <p> inside <${kind}> and the detector sees it`, JSON.stringify(withParagraph));
+    const unwrapped = renderToStaticMarkup(React.createElement(kind, null, React.createElement(InlineMarkdown, { text: '1. Pendahuluan', unwrapParagraph: true })));
+    check(headingProblems(parse(unwrapped), kind).length === 0 && parse(unwrapped).querySelector(kind).textContent === '1. Pendahuluan', `InlineMarkdown with unwrapParagraph puts the text straight in <${kind}>`);
+  }
+  check(renderToStaticMarkup(React.createElement(InlineMarkdown, { text: 'Tanpa nomor' })).includes('<p'), 'InlineMarkdown keeps its paragraph by default (other users are unchanged)');
   // Inline markdown still works inside a heading, and a heading keeps its own type styles instead of the body's.
   const bold = parse(cardMarkup({ kind: 'h2', text: '2. Pendahuluan **tebal** dan `kode`' }));
   check(bold.querySelector('h2 strong')?.textContent === 'tebal' && bold.querySelector('h2 code')?.textContent === 'kode', 'inline markdown (bold, code) still renders inside a heading');
@@ -264,7 +274,7 @@ try {
     const doc = document.querySelector('.reading-document');
     const headings = [...doc.querySelectorAll('h2, h3')];
     check(headings.length > 3, `${at}: page has headings`, String(headings.length));
-    check(doc.querySelectorAll('h2 ol, h3 ol, h2 ul, h3 ul, h2 li, h3 li').length === 0, `${at}: no list inside any heading`);
+    check(doc.querySelectorAll('h2 p, h3 p, h2 ol, h3 ol, h2 ul, h3 ul, h2 li, h3 li').length === 0, `${at}: no paragraph or list inside any heading`);
     check(headings.every((heading) => heading.textContent.trim().length > 0), `${at}: no empty heading`);
     if (first) check(headings.some((heading) => heading.textContent.trim().startsWith(first)), `${at}: a heading reads "${first}…"`);
     check(!headings.some((heading) => heading.textContent.includes('\\')), `${at}: no backslash escape is shown in a heading`);

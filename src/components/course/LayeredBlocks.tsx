@@ -66,10 +66,10 @@ export const literalLeadingMarker = (text: string) =>
   text.replace(/^(\d+)\. /, '$1\\. ').replace(/^([-+*]) /, '\\$1 ').replace(/^(#+|>)(?=\s|$)/, '\\$1');
 
 /** Short markdown (e.g. a table header with **bold**) rendered inline, inheriting the surrounding colour and size. */
-export function InlineMarkdown({ text }: { text: string }) {
+export function InlineMarkdown({ text, unwrapParagraph = false }: { text: string; unwrapParagraph?: boolean }) {
   return (
     <span className="[&_p]:m-0 [&_p]:inline [&_p]:text-inherit dark:[&_p]:text-inherit [&_p]:leading-[inherit] [&_strong]:text-inherit dark:[&_strong]:text-inherit">
-      {renderText(literalLeadingMarker(text))}
+      {renderText(literalLeadingMarker(text), { unwrapParagraph })}
     </span>
   );
 }

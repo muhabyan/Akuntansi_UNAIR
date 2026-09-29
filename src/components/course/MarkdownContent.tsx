@@ -34,7 +34,7 @@ interface MarkdownContentProps {
  * Markdown renderer used by course blocks and quizzes.
  * Supports bold, italic, inline code, markdown links, highlights, tables, and math.
  */
-export function renderText(text: string): React.ReactNode {
+export function renderText(text: string, options: { unwrapParagraph?: boolean } = {}): React.ReactNode {
   // Pre-process highlights since react-markdown doesn't support ==highlight== natively
   // We can just convert ==highlight== to a custom marker or standard markdown
   const processedText = text.replace(/==([^=\n]+)==/g, '<mark class="bg-yellow-200/80 dark:bg-yellow-400/30 text-yellow-900 dark:text-yellow-200 px-1 py-0.5 rounded-sm font-semibold">$1</mark>');
@@ -56,7 +56,10 @@ export function renderText(text: string): React.ReactNode {
         },
         strong: ({ node: _node, ...props }) => <strong className="text-gray-900 dark:text-gray-100 font-bold" {...props} />,
         em: ({ node: _node, ...props }) => <em className="italic text-slate-800 dark:text-slate-200" {...props} />,
-        p: ({ node: _node, ...props }) => <p className="mb-2 last:mb-0 leading-relaxed text-gray-700 dark:text-gray-200" {...props} />,
+        // A heading holds phrasing content only: its paragraph becomes a fragment, so the text sits straight in the <h2>/<h3>.
+        p: options.unwrapParagraph
+          ? ({ children }) => <>{children}</>
+          : ({ node: _node, ...props }) => <p className="mb-2 last:mb-0 leading-relaxed text-gray-700 dark:text-gray-200" {...props} />,
         ul: ({ node: _node, ...props }) => <ul className="my-2 space-y-1.5 pl-5 list-disc marker:text-blue-500 dark:marker:text-blue-400 text-gray-700 dark:text-gray-200" {...props} />,
         ol: ({ node: _node, ...props }) => <ol className="my-2 space-y-1.5 pl-5 list-decimal marker:text-blue-500 dark:marker:text-blue-400 font-medium text-gray-700 dark:text-gray-200" {...props} />,
         li: ({ node: _node, ...props }) => <li className="pl-0.5 leading-relaxed" {...props} />,
