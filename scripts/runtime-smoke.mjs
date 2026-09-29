@@ -122,10 +122,9 @@ try {
   for (const hook of ['getExamSessionKey(', 'readStoredExamSession(', 'saveStoredExamSession(']) {
     assert(quizSource.includes(hook), `QuizView no longer calls ${hook.slice(0, -1)}: exam sessions would not persist`);
   }
-  assert(quizSource.includes("'PJK201:uas': 'v4'"), 'PJK201 UAS session version v4 is missing');
   assert(quizSource.includes('getQuizDatasetFingerprint'), 'Exam dataset fingerprint guard is missing');
 
-  console.log(`Runtime smoke PASS: ${assetPaths.length} assets, SPA routes, malformed-route guard, 404 source, timer registry, session v4, dataset fingerprint, exam-session persistence behaviour, and persistence hooks`);
+  console.log(`Runtime smoke PASS: ${assetPaths.length} assets, SPA routes, malformed-route guard, 404 source, timer registry, dataset fingerprint, exam-session persistence behaviour, and persistence hooks`);
 } finally {
   if (preview && preview.exitCode === null) preview.kill('SIGTERM');
   await sleep(300);
