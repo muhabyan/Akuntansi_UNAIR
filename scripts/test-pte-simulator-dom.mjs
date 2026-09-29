@@ -56,13 +56,15 @@ try {
   const quizViewModule = await vite.ssrLoadModule('/src/components/QuizView.tsx');
   const simulatorModule = await vite.ssrLoadModule('/src/data/quizzes/ekt109Simulator.ts');
   const integrityModule = await vite.ssrLoadModule('/src/lib/quizExamIntegrity.ts');
+  const sessionModule = await vite.ssrLoadModule('/src/data/quizSession.ts');
   const PteSimulatorTab = quizModule.default;
   const QuizView = quizViewModule.default;
   const course = courseModule.ALL_COURSES.find((entry) => entry.course.code === 'EKT109')?.course;
   const utsQuestions = simulatorModule.EKT109_QUIZ_UTS_SIMULATOR;
   const courseRoot = doc.getElementById('root');
-  const utsKey = 'exam-session:EKT109:uts:5400:v2';
-  const uasKey = 'exam-session:EKT109:uas:5400:v2';
+  // The app's own key builder: the test never writes the key format by hand.
+  const utsKey = sessionModule.getExamSessionKey('EKT109', 'uts', 5400);
+  const uasKey = sessionModule.getExamSessionKey('EKT109', 'uas', 5400);
   assert(course, 'Course EKT109 tidak ditemukan');
 
   storage.setItem(utsKey, JSON.stringify({
@@ -135,7 +137,10 @@ try {
   await click(doc.querySelector('[data-testid="quiz-set-uas"]'));
   await settle();
   assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length === 0, 'UAS juga harus tersembunyi sebelum mulai');
-  assert(storage.getItem(utsKey) === null, 'Reset harus membersihkan session UTS');
+  // Reset leaves a clean pre-start record (no answers, no marks, not started, no deadline), not a missing key.
+  const resetSession = JSON.parse(storage.getItem(utsKey) ?? 'null');
+  assert(resetSession === null || (resetSession.examStarted === false && resetSession.submitted === false && resetSession.examDeadlineMs === null
+    && Object.keys(resetSession.picks).length === 0 && Object.keys(resetSession.markedForReview).length === 0 && Object.keys(resetSession.orderingAnswers).length === 0), 'Reset harus mengembalikan session UTS ke keadaan bersih sebelum mulai');
   await click(doc.querySelector('[data-testid="quiz-start-exam"]'));
   await settle();
   assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length === 80, 'UAS harus merender 80 kartu setelah mulai');
@@ -170,7 +175,9 @@ try {
   assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length === 0, 'CORRUPT_SESSION: session rusak harus ditolak dan kembali ke pre-start');
   assert(doc.querySelector('[data-testid="quiz-start-exam"]'), 'CORRUPT_SESSION: tombol mulai harus tersedia setelah session rusak ditolak');
 
-  // Shared-component isolation: legacy courses retain their original pre-start cards and never receive PTE review controls.
+  // Shared-component baseline for the other timed exams. Every timed exam hides its questions until "Mulai Ujian" and
+  // offers review marking once started (unchanged since 43828f5), so a legacy course is pinned to: no questions before
+  // start, N questions and N review marks after, and no result filter before submit. A change in any course fails here.
   await act(async () => { root.unmount(); });
   root = undefined;
   const legacyExpected = { AKK201: 20, AKM201: 70, PJK201: 70 };
@@ -180,12 +187,24 @@ try {
     root = createRoot(courseRoot);
     await act(async () => { root.render(React.createElement(QuizView, { course: legacyCourse, mode: 'exam' })); });
     await settle();
-    assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length === legacyExpected[code], `ISOLATION_${code}: pre-start cards berubah`);
-    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === 0, `ISOLATION_${code}: tanda tinjau bocor sebelum mulai`);
+    assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length === 0, `ISOLATION_${code}: soal harus tersembunyi sebelum mulai`);
+    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === 0, `ISOLATION_${code}: tanda tinjau tidak boleh ada sebelum mulai`);
     await click(doc.querySelector('[data-testid="quiz-start-exam"]'));
     await settle();
-    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === 0, `ISOLATION_${code}: tanda tinjau bocor setelah mulai`);
-    assert(!doc.querySelector('[data-testid="quiz-review-filter"]'), `ISOLATION_${code}: filter PTE bocor`);
+    assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length === legacyExpected[code], `ISOLATION_${code}: jumlah kartu setelah mulai berubah, harus ${legacyExpected[code]}`);
+    assert(doc.querySelectorAll('[data-testid^="quiz-mark-"]').length === legacyExpected[code], `ISOLATION_${code}: setiap kartu harus punya tanda tinjau setelah mulai`);
+    assert(!doc.querySelector('[data-testid="quiz-review-filter"]'), `ISOLATION_${code}: filter hasil tidak boleh tampil sebelum submit`);
+    await act(async () => { root.unmount(); });
+    root = undefined;
+
+    // Not a timed exam: practice quizzes show their questions at once, with no start button and no countdown.
+    storage.clear();
+    root = createRoot(courseRoot);
+    await act(async () => { root.render(React.createElement(QuizView, { course: legacyCourse, mode: 'practice' })); });
+    await settle();
+    assert(doc.querySelectorAll('[data-testid="quiz-question-card"]').length > 0, `PRACTICE_${code}: kuis latihan harus menampilkan soal tanpa Mulai Ujian`);
+    assert(!doc.querySelector('[data-testid="quiz-start-exam"]'), `PRACTICE_${code}: kuis latihan tidak boleh punya tombol Mulai Ujian`);
+    assert(!doc.body.textContent.includes('Sisa waktu'), `PRACTICE_${code}: kuis latihan tidak boleh punya timer`);
     await act(async () => { root.unmount(); });
     root = undefined;
   }
@@ -200,4 +219,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
-console.log('PTE simulator DOM test passed: pre-start concealment, 70/80 rendering, graphs, review marking, v2 persistence, restore, wrong/correct filters, session rejection, legacy-course isolation, set isolation, and live deadline auto-submit verified.');
+console.log('PTE simulator DOM test passed: pre-start concealment, 70/80 rendering, graphs, review marking, v2 persistence, restore, wrong/correct filters, session rejection, legacy-course pre-start baseline, practice quizzes without a start button, set isolation, and live deadline auto-submit verified.');

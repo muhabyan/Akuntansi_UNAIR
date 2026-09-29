@@ -34,9 +34,10 @@ try {
   const courseModule = await vite.ssrLoadModule('/src/data/courseData.ts');
   const simulatorModule = await vite.ssrLoadModule('/src/data/quizzes/ekt109Simulator.ts');
   const integrityModule = await vite.ssrLoadModule('/src/lib/quizExamIntegrity.ts');
+  const sessionModule = await vite.ssrLoadModule('/src/data/quizSession.ts');
   const course = courseModule.ALL_COURSES.find((entry) => entry.course.code === 'EKT109')?.course;
   const questions = simulatorModule.EKT109_QUIZ_UTS_SIMULATOR;
-  const key = 'exam-session:EKT109:uts:5400:v2';
+  const key = sessionModule.getExamSessionKey('EKT109', 'uts', 5400); // the app's own key builder
   window.localStorage.setItem(key, JSON.stringify({
     picks: {}, fillAnswers: {}, matchAnswers: {}, multiAnswers: {}, orderingAnswers: {}, markedForReview: {},
     submitted: false, autoSubmitted: false, examStarted: true, examDeadlineMs: Date.now() + 80,
