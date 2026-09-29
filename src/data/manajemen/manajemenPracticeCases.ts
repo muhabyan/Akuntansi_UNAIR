@@ -1,5 +1,5 @@
 // src/data/manajemen/manajemenPracticeCases.ts
-// Studi Kasus Riil Pengantar Manajemen TM02-TM14 (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
+// Studi Kasus Riil Pengantar Manajemen TM08-TM14 (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
 // Berdasarkan Standar Richard L. Daft (Management 13e/14e) & Stephen P. Robbins
 // Kasus TM01 dihapus: TM01 kini memakai kasus SmartStyle Salons dari Daft & Marcic 12e Ch. 1, yang ditulis
 // langsung di modules/tm1.ts.
@@ -8,34 +8,8 @@
 // Kasus TM04 dihapus: TM04 kini memakai kasus dari Daft & Marcic 12e Ch. 4, yang ditulis langsung di modules/tm4.ts.
 // Kasus TM05 dihapus: TM05 kini memakai kasus dari Daft & Marcic 12e Ch. 5, yang ditulis langsung di modules/tm5.ts.
 // Kasus TM06 dihapus: TM06 kini memakai kasus dari Daft & Marcic 12e Ch. 6, yang ditulis langsung di modules/tm6.ts.
+// Kasus TM07 dihapus: TM07 kini memakai kasus dari Daft & Marcic 12e Ch. 7, yang ditulis langsung di modules/tm7.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 7
-export const CASE_ORG_STRUCTURE_ADAPTIVE: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 7: Redesain Struktur Organisasi Fungsional ke Matriks Divisional di PT Unilever Indonesia',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: PT Unilever Indonesia memproduksi ratusan produk yang terbagi dalam kategori Personal Care, Home Care, dan Foods & Refreshment. Ketika masih menggunakan Struktur Fungsional murni, terjadi koordinasi yang lambat (Silo Effect): manajer divisi pemasaran, keuangan, dan R&D bertengkar mengenai alokasi prioritas produk, sehingga peluncuran sampo baru tertunda hingga kompetitor lokal merebut pangsa pasar.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Analisis: (1) Jelaskan kelemahan struktur fungsional murni (Silo Mentality), (2) Bandingkan kelebihan dan risiko Struktur Divisional vs Struktur Matriks (Dual-Command Chain), dan (3) Tentukan rentang kendali (Span of Control) yang ideal bagi manajer produk di era digital!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Kelemahan Struktur Fungsional Murni**: Karyawan terkotak-kotak dalam fungsi spesialisasi (Pemasaran, Produksi, Keuangan). Muncul ego sektoral (Silo Mentality) di mana manajer fungsional lebih memedulikan target departemennya sendiri daripada kesuksesan produk di mata konsumen, menyebabkan respon pasar menjadi sangat lambat.',
-            '**2. Struktur Divisional vs Struktur Matriks**:\n- *Struktur Divisional (Product-Based)*: Membagi perusahaan berdasarkan lini produk mandiri (Divisi Personal Care, Divisi Home Care) yang memiliki tim pemasaran dan litbang sendiri. Respon cepat terhadap kebutuhan konsumen, tetapi memicu duplikasi biaya staf antar-divisi.\n- *Struktur Matriks (Matrix Structure)*: Menggabungkan keahlian fungsional dengan fokus produk melalui sistem komando ganda (Dual Authority). Karyawan bertanggung jawab kepada Manajer Fungsional dan Manajer Produk sekaligus. Fleksibel dan optimal memanfaatkan SDM, namun rawan konflik perebutan wewenang dan stres peran ganda.',
-            '**3. Rentang Kendali (Span of Control)**: Di era digital dengan otomatisasi data dan tim kerja yang terampil (Self-Directed Teams), rentang kendali dapat dirancang lebih melebar (Flat Organization) dengan 1 manajer membawahi 10-15 orang staf, meningkatkan otonomi dan kecepatan eksekusi inovasi.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 8
 export const CASE_UTS_MANAJEMEN_INTEGRATED: ContentBlock = {

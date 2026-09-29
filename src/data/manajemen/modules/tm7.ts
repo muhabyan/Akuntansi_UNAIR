@@ -1,216 +1,1051 @@
+// MNU108 TM07 — Designing Organization Structure.
+// Isi akademik berasal dari paket konten MNU108/TM07 (05_student_learning_version.md); aturan render dari 06.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 7, hal. 226–265.
+// Cakupan mengikuti RPP Pengantar Manajemen pertemuan 7. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Jangan menambah fakta di luar paket: ubah paketnya, lalu perbarui file ini.
 import type { Reading } from '../../../types';
-import { CASE_ORG_STRUCTURE_ADAPTIVE } from '../manajemenPracticeCases';
-
-const SVG_ORG_STRUCTURES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad7" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad7)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 DESAIN STRUKTUR DEPARTEMENTALISASI ORGANISASI (RICHARD L. DAFT)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ORG DESIGN</text>
-
-  <!-- 1. FUNGSIONAL -->
-  <g transform="translate(30, 75)">
-    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect class="svg-badge-blue" x="0" y="0" width="160" height="28" rx="10" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="80" y="19" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. FUNGSIONAL</text>
-    <rect class="svg-subcard" x="55" y="38" width="50" height="18" rx="4" fill="#1e293b" stroke="#38bdf8"/>
-    <text class="svg-text" x="80" y="50" fill="#cbd5e1" font-size="7" text-anchor="middle">CEO</text>
-    <line x1="80" y1="56" x2="80" y2="66" stroke="#334155"/>
-    <line x1="25" y1="66" x2="135" y2="66" stroke="#334155"/>
-    <rect class="svg-subcard" x="15" y="70" width="38" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="34" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">SDM</text>
-    <rect class="svg-subcard" x="61" y="70" width="38" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="80" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Pemasaran</text>
-    <rect class="svg-subcard" x="107" y="70" width="38" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="126" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Keuangan</text>
-    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
-    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Kesamaan fungsi keahlian</text>
-    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
-    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Skala ekonomis tinggi</text>
-    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Pendalaman keahlian</text>
-    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
-    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Silo effect terkotak</text>
-    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Koordinasi fungsi kaku</text>
-  </g>
-
-  <!-- 2. DIVISIONAL -->
-  <g transform="translate(200, 75)">
-    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect class="svg-badge-green" x="0" y="0" width="160" height="28" rx="10" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="80" y="19" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. DIVISIONAL</text>
-    <rect class="svg-subcard" x="55" y="38" width="50" height="18" rx="4" fill="#1e293b" stroke="#34d399"/>
-    <text class="svg-text" x="80" y="50" fill="#cbd5e1" font-size="7" text-anchor="middle">CEO</text>
-    <line x1="80" y1="56" x2="80" y2="66" stroke="#334155"/>
-    <line x1="40" y1="66" x2="120" y2="66" stroke="#334155"/>
-    <rect class="svg-subcard" x="18" y="70" width="55" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="45" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Divisi Produk A</text>
-    <rect class="svg-subcard" x="88" y="70" width="55" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="115" y="81" fill="#94a3b8" font-size="6" text-anchor="middle">Divisi Produk B</text>
-    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
-    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Output produk / Geografi</text>
-    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
-    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Respon cepat pada pasar</text>
-    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Otonomi unit mandiri</text>
-    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
-    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Duplikasi biaya divisi</text>
-    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Persaingan sumber daya</text>
-  </g>
-
-  <!-- 3. MATRIKS -->
-  <g transform="translate(370, 75)">
-    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect class="svg-badge-amber" x="0" y="0" width="160" height="28" rx="10" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="80" y="19" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. MATRIKS</text>
-    <rect class="svg-subcard" x="15" y="38" width="45" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="37" y="49" fill="#94a3b8" font-size="6" text-anchor="middle">Fungsi IT</text>
-    <rect class="svg-subcard" x="15" y="60" width="45" height="16" rx="3" fill="#1e293b"/><text class="svg-muted" x="37" y="71" fill="#94a3b8" font-size="6" text-anchor="middle">Fungsi SDM</text>
-    <rect class="svg-subcard" x="75" y="38" width="70" height="38" rx="4" fill="#1e293b" stroke="#fbbf24"/><text class="text-accent-amber" x="110" y="55" fill="#fbbf24" font-size="6.5" font-weight="700" text-anchor="middle">Dual Authority</text><text class="svg-text" x="110" y="66" fill="#cbd5e1" font-size="6" text-anchor="middle">Komando Ganda</text>
-    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
-    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Simultan Fungsi &amp; Produk</text>
-    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
-    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Optimalisasi SDM ahli</text>
-    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Fleksibilitas proyek</text>
-    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
-    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Perebutan wewenang 2 bos</text>
-    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Frustrasi &amp; stres staf</text>
-  </g>
-
-  <!-- 4. TEAM-BASED -->
-  <g transform="translate(540, 75)">
-    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect class="svg-badge-purple" x="0" y="0" width="160" height="28" rx="10" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="80" y="19" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">4. TEAM-BASED</text>
-    <circle cx="50" cy="55" r="16" fill="#1e293b" stroke="#a78bfa"/>
-    <text class="text-accent-purple" x="50" y="58" fill="#a78bfa" font-size="6.5" font-weight="700" text-anchor="middle">Squad 1</text>
-    <circle cx="110" cy="55" r="16" fill="#1e293b" stroke="#a78bfa"/>
-    <text class="text-accent-purple" x="110" y="58" fill="#a78bfa" font-size="6.5" font-weight="700" text-anchor="middle">Squad 2</text>
-    <line x1="66" y1="55" x2="94" y2="55" stroke="#a78bfa" stroke-dasharray="2 2"/>
-    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
-    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Tim otonom lintas-fungsi</text>
-    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
-    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Runtuhkan sekat seksi</text>
-    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Kecepatan adaptasi tinggi</text>
-    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
-    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Konflik loyalitas ganda</text>
-    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Butuh banyak rapat</text>
-  </g>
-
-  <!-- 5. VIRTUAL NETWORK -->
-  <g transform="translate(710, 75)">
-    <rect class="svg-card" x="0" y="0" width="160" height="255" rx="10" fill="#0f172a" stroke="#f472b6" stroke-width="1.5"/>
-    <rect x="0" y="0" width="160" height="28" rx="10" fill="#db2777" fill-opacity="0.2"/>
-    <text x="80" y="19" fill="#f472b6" font-size="10" font-weight="800" text-anchor="middle">5. VIRTUAL NETWORK</text>
-    <circle cx="80" cy="55" r="16" fill="#db2777" fill-opacity="0.3" stroke="#f472b6"/>
-    <text x="80" y="58" fill="#f472b6" font-size="6.5" font-weight="800" text-anchor="middle">HUB</text>
-    <circle cx="28" cy="40" r="10" fill="#1e293b"/><text class="svg-muted" x="28" y="43" fill="#94a3b8" font-size="5" text-anchor="middle">R&amp;D</text>
-    <circle cx="132" cy="40" r="10" fill="#1e293b"/><text class="svg-muted" x="132" y="43" fill="#94a3b8" font-size="5" text-anchor="middle">Pabrik</text>
-    <circle cx="80" cy="85" r="10" fill="#1e293b"/><text class="svg-muted" x="80" y="88" fill="#94a3b8" font-size="5" text-anchor="middle">Sales</text>
-    <line x1="38" y1="45" x2="65" y2="52" stroke="#334155"/>
-    <line x1="122" y1="45" x2="95" y2="52" stroke="#334155"/>
-    <line x1="80" y1="71" x2="80" y2="75" stroke="#334155"/>
-    <text class="svg-text" x="12" y="110" fill="#cbd5e1" font-size="7.5" font-weight="700">Basis:</text>
-    <text class="svg-muted" x="12" y="124" fill="#94a3b8" font-size="7.5">Outsource ke mitra global</text>
-    <text class="text-accent-green" x="12" y="146" fill="#34d399" font-size="7.5" font-weight="700">Keunggulan:</text>
-    <text class="svg-text" x="12" y="160" fill="#cbd5e1" font-size="7.5">• Sangat ramping &amp; lincah</text>
-    <text class="svg-text" x="12" y="174" fill="#cbd5e1" font-size="7.5">• Biaya modal tetap minimal</text>
-    <text class="text-accent-red" x="12" y="196" fill="#f87171" font-size="7.5" font-weight="700">Kelemahan:</text>
-    <text class="svg-text" x="12" y="210" fill="#cbd5e1" font-size="7.5">• Kontrol kualitas rapuh</text>
-    <text class="svg-text" x="12" y="224" fill="#cbd5e1" font-size="7.5">• Risiko rahasia bocor</text>
-  </g>
-</svg>`;
 
 export const TM7_READING: Reading = {
   tm: 7,
-  title: 'Designing Adaptive Organization Structure: Rentang Kendali & Departementalisasi',
-  ref: 'Richard L. Daft Bab 10 & 11 | Desain Organisasi Mekanistik vs Organik | Rantai Komando & Wewenang',
-  intro: 'TM 7 membahas seni perancangan struktur organisasi (Organizing) untuk mengoptimalkan koordinasi kerja: dimensi struktural vertikal (Rantai Komando, Kesatuan Komando / Unity of Command, Rentang Kendali / Span of Control, Sentralisasi vs Desentralisasi), 5 pendekatan departementalisasi (Struktur Fungsional, Divisional, Matriks, Berbasis Tim, dan Jaringan Virtual / Virtual Network), serta perbandingan Kontinjensi Organisasi Mekanistik vs Organik.',
+  title: 'Designing Organization Structure',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 7 (hal. 226–265) · RPP Pengantar Manajemen pertemuan 7',
+  intro: '**Sub-CPMK (RPP):** mahasiswa mampu mengevaluasi keselarasan antara struktur organisasi dan strategi organisasi untuk meningkatkan efektivitas organisasi.',
   objectives: [
-    'Menganalisis keterkaitan antara rentang kendali (Span of Control) dengan struktur tinggi (Tall) vs datar (Flat).',
-    'Membandingkan keunggulan dan kelemahan 5 pendekatan departementalisasi organisasi.',
-    'Menjelaskan fenomena kesatuan komando ganda (Dual Authority) dan manajemen konflik pada Struktur Matriks.',
-    'Menentukan pilihan struktur Mekanistik vs Organik berdasarkan ketidakpastian lingkungan dan strategi bersaing.'
+    'Designing Organization Structure',
+    'Organizing the vertical structure',
+    'Departmentalization',
+    'Organizing for horizontal coordination',
+    'Factors shaping structure',
+    'QUIZ',
+    'Menerapkan teori Chapter 7 untuk menganalisis kasus Ace\'s Freshest Grocery Store dan merumuskan implikasi manajerial.',
   ],
   blocks: [
+    // ---------------------------------------------------------------- §0
+    { kind: 'h2', text: '0. Orientasi TM07' },
+    { kind: 'p', text: '**Sub-CPMK TM07 (RPP):** mahasiswa mampu mengevaluasi keselarasan antara struktur organisasi dan strategi organisasi untuk meningkatkan efektivitas organisasi.' },
+    { kind: 'p', text: '**Bahan kajian RPP → bagian halaman ini:**' },
     {
-      kind: 'figure',
-      caption: 'Gambar 7.1: Lima Desain Struktur Organisasi Utama: Fungsional, Divisional, Matriks, Tim, dan Virtual Network.',
-      svg: SVG_ORG_STRUCTURES
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Bahan kajian RPP', 'Bagian', 'Catatan'],
+      rows: [
+        ['Designing Organization Structure', '§1', 'Pembuka bab: organizing, struktur organisasi, bagan organisasi'],
+        ['Organizing the vertical structure', '§1–§5', 'Division of labor, chain of command, line dan staff authority, span of management, centralization dan decentralization'],
+        ['Departmentalization', '§6–§8', 'Functional, divisional, matrix, team, virtual network, dan perbandingannya'],
+        ['Organizing for horizontal coordination', '§9–§10', 'Kebutuhan koordinasi, reengineering, task force, tim, project manager, relational coordination'],
+        ['Factors shaping structure', '§11', 'Strategi dan workflow technology'],
+        ['QUIZ', '—', 'RPP mencantumkan kuis (QUIZ) pada pertemuan ini, tetapi format dan cakupannya tidak tertulis di sumber; §17 dapat dipakai untuk persiapan.'],
+      ],
+    },
+    { kind: 'p', text: 'Semua subbab Chapter 7 tercakup dalam bahan kajian RPP; tidak ada subbab yang berada di luar RPP.' },
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    { kind: 'p', text: '**Presenter Materi**' },
+    {
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§11',
+        'Hubungan antar konsep → §12 Peta Konsep',
+        'Contoh penerapan di organisasi → §13 + contoh di tiap bagian',
+        'Bedah film → §14 (*The Intern*)',
+        'Kesimpulan & implikasi manajerial → §16',
+      ],
+    },
+    { kind: 'p', text: '**Presenter Kasus**' },
+    {
+      kind: 'ul',
+      items: [
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi → §15 (Ace\'s Freshest Grocery Store)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (Mind Map)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §12 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (pertanyaan kritis)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §17 Bank Pertanyaan Kritis',
+      ],
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 7'
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Di halaman ini, isi buku, fakta kasus, dan analisis selalu dipisahkan; bagian analisis diberi keterangan. Semua exhibit buku ditampilkan sebagai tabel. Contoh perusahaan ditulis sesuai keadaan saat buku terbit (**Data per buku (2023)**), jadi struktur, jabatan, dan angka perusahaan bisa sudah berubah.',
+    },
+    // ---------------------------------------------------------------- §1
+    { kind: 'h2', text: '1. Organizing, Struktur Organisasi, dan Division of Labor' },
+    { kind: 'p', text: 'Buku membuka bab dengan **Korps Marinir AS**. Regu senapan marinir yang terdiri atas 13 orang (satu pemimpin dan tiga fire team berisi empat orang) lama dianggap formasi taktis yang sangat baik. Namun karena operasi militer kini bergantung pada intelijen medan tempur dari teknologi baru seperti drone, pada Mei 2018 komandannya mengubah struktur regu: menambah dua posisi baru (asisten pemimpin regu dan operator sistem yang fokus pada teknologi dan intelijen) dan mengurangi ukuran regu menjadi 12 orang, dengan satu penembak dikurangi dari tiap fire team [hal. 228].' },
+    { kind: 'p', text: 'Seperti di militer, manajer di semua organisasi mengubah struktur dari waktu ke waktu untuk memenuhi kebutuhan yang berubah. Procter & Gamble memangkas divisi dan level manajemen agar lebih cepat dan gesit; Spotify menambah posisi chief content officer untuk bergerak melampaui musik; di bank Inggris Standard Chartered, CEO baru merestrukturisasi divisi dari empat menjadi tiga dan menyederhanakan sistem pelaporan [hal. 228]. Sebagian orang berkembang di organisasi yang kurang hierarkis, bahkan tanpa atasan (bossless), sementara yang lain sangat menyukai struktur vertikal yang jelas: setelah Zappos beralih ke struktur bossless, lebih dari 200 orang memilih pesangon dan keluar. Riset yang dikutip buku menyatakan banyak orang menyukai hierarki karena memberi rasa nyaman di dunia yang kacau dan mengurangi stres akibat ketidakpastian [hal. 228]. *Data per buku (2023).*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti menurut buku', 'Sumber'],
+      rows: [
+        ['**Organizing**', 'Pengerahan (deployment) sumber daya organisasi untuk mencapai tujuan strategis. Pengerahan ini tercermin pada pembagian kerja ke departemen dan jabatan tertentu, garis otoritas formal, dan mekanisme untuk mengoordinasikan beragam tugas organisasi', '[hal. 228]'],
+        ['**Organization structure**', '(1) Kumpulan tugas formal yang diberikan kepada individu dan departemen; (2) hubungan pelaporan formal, termasuk garis otoritas, tanggung jawab keputusan, jumlah level hierarki, dan rentang kendali manajer; (3) desain sistem untuk memastikan koordinasi karyawan yang efektif antardepartemen', '[hal. 228–229]'],
+        ['**Organization chart**', 'Gambaran visual struktur organisasi', '[hal. 229]'],
+      ],
+    },
+    { kind: 'p', text: 'Organizing penting karena **mengikuti strategi**: strategi menentukan *apa* yang dikerjakan, organizing menentukan *bagaimana* mengerjakannya. Keberhasilan strategi sering ditentukan oleh kecocokannya dengan struktur organisasi [hal. 228]. Buku menegaskan koordinasi antardepartemen sama pentingnya dengan menetapkan departemen: **tanpa sistem koordinasi yang efektif, tidak ada struktur yang lengkap** [hal. 229]. Kumpulan tugas formal dan hubungan pelaporan formal menjadi kerangka **kendali vertikal** organisasi, yang digambarkan dalam bagan organisasi [hal. 229].' },
+    { kind: 'p', text: '**Exhibit 7.1: Organization Chart for a Water Bottling Plant** [hal. 229]' },
+    { kind: 'p', text: 'Keempat kepala departemen melapor ke **President**.' },
+    {
+      kind: 'table',
+      headers: ['Kepala departemen', 'Posisi di bawahnya', 'Lapis berikutnya'],
+      rows: [
+        ['Vice President Accounting', 'Information Center; Financial Analyst; Chief Accountant', 'Di bawah Chief Accountant: Accounts Payable; Payroll Clerk'],
+        ['Director Human Resources', 'Benefits Administrator; Industrial Relations Manager', '—'],
+        ['Vice President Production', 'Maintenance Supervisor; Quality Control Manager; Bottling Plant Superintendent', 'Di bawah Bottling Plant Superintendent: Bottling Supervisors'],
+        ['Director Marketing', 'Mountain Region Sales; Midstate Sales; Western Sales', '—'],
+      ],
+    },
+    { kind: 'p', text: 'Bagan ini menggambarkan chain of command, menunjukkan tugas tiap departemen dan cara tugas-tugas itu saling terkait, serta memberi keteraturan dan logika bagi organisasi. Setiap karyawan punya tugas, garis otoritas, dan tanggung jawab keputusan yang ditetapkan [hal. 229].' },
+    { kind: 'p', text: '**Division of labor** (sering disebut *work specialization*) = tingkat pembagian tugas organisasi menjadi jabatan-jabatan yang terpisah. Prinsip dasarnya: pekerjaan bisa dilakukan lebih efisien bila karyawan boleh berspesialisasi [hal. 229]. Di Exh. 7.1, division of labor terlihat dari pemisahan tugas produksi menjadi bottling, quality control, dan maintenance [hal. 229].' },
+    {
+      kind: 'ul',
+      items: [
+        'Saat organisasi menghadapi isu strategis baru, manajer sering **membuat posisi atau departemen baru**. Walmart membuat posisi global chief technology officer untuk mempercepat transformasi digital agar lebih mampu bersaing dengan Amazon; Warner Media membuat posisi chief diversity and inclusion officer; perusahaan manufaktur menambah posisi CTO karena teknologi digital kini menjadi inti operasi pabrik [hal. 229–230].',
+        'Bila division of labor ekstensif, karyawan berspesialisasi pada satu tugas; cakupan jabatannya kecil tetapi bisa dikerjakan efisien, seperti di jalur perakitan mobil [hal. 230].',
+        '**Batasnya:** division of labor yang berlebihan membuat karyawan terisolasi dan mengerjakan satu tugas yang membosankan, serta menciptakan pemisahan yang **menghambat koordinasi**. Karena itu banyak perusahaan beralih ke tim dan mekanisme lain yang meningkatkan koordinasi dan memberi tantangan lebih besar bagi karyawan [hal. 230].',
+      ],
+    },
+    // ---------------------------------------------------------------- §2
+    { kind: 'h2', text: '2. Chain of Command: Authority, Responsibility, Accountability, dan Delegation' },
+    { kind: 'p', text: '**Chain of command** = garis otoritas tak terputus yang menghubungkan semua karyawan dalam organisasi dan menunjukkan siapa melapor kepada siapa [hal. 230]. Ada dua prinsip yang mendasarinya:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Prinsip', 'Arti menurut buku', 'Sumber'],
+      rows: [
+        ['*Unity of command*', 'Setiap karyawan bertanggung jawab kepada **hanya satu** atasan', '[hal. 230]'],
+        ['*Scalar principle*', 'Garis otoritas yang jelas dalam organisasi dan mencakup semua karyawan. Otoritas dan tanggung jawab untuk tugas yang berbeda harus terpisah jelas; setiap orang harus tahu kepada siapa ia melapor dan level manajemen di atasnya sampai ke puncak', '[hal. 230]'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh buku: di Standard Chartered, manajer lini bisnis melapor langsung ke CEO; chief digital officer sering melapor ke chief information officer, yang melapor ke CEO. Di Exh. 7.1, payroll clerk melapor ke chief accountant, yang melapor ke vice president, yang melapor ke president [hal. 230].' },
+    { kind: 'p', text: '**Authority** = hak formal dan sah seorang manajer untuk membuat keputusan, memberi perintah, dan mengalokasikan sumber daya demi hasil yang diinginkan organisasi [hal. 230–231]. Tiga cirinya [hal. 231]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Ciri authority', 'Penjelasan buku'],
+      rows: [
+        ['**Melekat pada posisi, bukan orang**', 'Manajer punya authority karena posisinya; orang lain di posisi yang sama akan punya authority yang sama'],
+        ['**Mengalir ke bawah hierarki vertikal**', 'Posisi di puncak punya authority formal lebih besar daripada posisi di bawah'],
+        ['**Diterima oleh bawahan**', 'Bawahan patuh karena yakin manajer punya hak sah memberi perintah. Menurut *acceptance theory of authority*, manajer punya authority hanya bila bawahan memilih menerima perintahnya; bila bawahan menolak karena perintah di luar *zone of acceptance* mereka, authority manajer hilang'],
+      ],
     },
     {
       kind: 'table',
-      headers: ['Dimensi Struktur', 'Struktur Mekanistik (Mekanistis)', 'Struktur Organik (Organis)', 'Kondisi Lingkungan yang Sesuai'],
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti menurut buku', 'Sumber'],
       rows: [
-        ['Hierarki Wewenang', 'Sentralisasi kaku di puncak kepemimpinan.', 'Desentralisasi luas ke level staf pelaksana.', 'Mekanistik cocok di lingkungan stabil; Organik di lingkungan dinamis.'],
-        ['Rentang Kendali', 'Sempit (Narrow), membentuk struktur tinggi (Tall).', 'Melebar (Wide), membentuk struktur datar (Flat).', 'Flat mempercepat aliran komunikasi dan memangkas biaya gaji manajerial.'],
-        ['Spesialisasi Kerja', 'Tinggi dan terkotak-kotak (Silo Spesialisasi).', 'Fleksibel dan berbasis tim lintas fungsi (Cross-Functional).', 'Organik mendukung inovasi dan eksperimen produk baru.'],
-        ['Aturan & Prosedur', 'Banyak aturan formal tertulis (SOP kaku).', 'Sedikit aturan formal, mengandalkan nilai budaya bersama.', 'Mekanistik meminimalkan kesalahan; Organik memaksimalkan adaptasi.']
+        ['**Responsibility**', '"Sisi lain dari koin authority": kewajiban menjalankan tugas atau kegiatan yang diberikan', '[hal. 231]'],
+        ['**Accountability**', 'Mekanisme yang menyelaraskan authority dan responsibility. Accountability berarti orang yang memegang authority dan responsibility **wajib melaporkan dan mempertanggungjawabkan hasil tugasnya kepada atasan di chain of command**', '[hal. 231]'],
+        ['**Delegation**', 'Proses yang dipakai manajer untuk memindahkan authority dan responsibility kepada posisi di bawahnya dalam hierarki', '[hal. 231]'],
       ],
-      caption: 'Tabel 7.0: Perbandingan arsitektur struktur mekanistik vs organik.'
+    },
+    { kind: 'p', text: 'Pelengkap dari buku: agar organisasi berfungsi baik, setiap orang perlu tahu apa yang menjadi tanggung jawabnya (accountable for) dan menerima responsibility serta authority untuk menjalankannya [hal. 231].' },
+    { kind: 'p', text: '**Keseimbangan authority dan responsibility.** Biasanya manajer diberi authority yang sepadan dengan responsibility-nya. Bila responsibility atas hasil besar tetapi authority kecil, pekerjaan masih mungkin dilakukan tetapi sulit, dan manajer bergantung pada persuasi dan keberuntungan. Bila authority melebihi responsibility, manajer bisa menjadi tiran yang memakai authority untuk hasil yang remeh [hal. 231].' },
+    { kind: 'p', text: '**Delegation.** Kebanyakan organisasi kini mendorong manajer mendelegasikan authority ke level serendah mungkin agar fleksibel memenuhi kebutuhan pelanggan dan beradaptasi dengan perubahan lingkungan. Delegasi bisa sangat memotivasi serta meningkatkan kecepatan, fleksibilitas, dan kreativitas. Namun **banyak manajer merasa sulit mendelegasikan**; bila manajer tidak bisa mendelegasikan, ia melemahkan peran bawahannya dan menghalangi mereka bekerja efektif [hal. 231].' },
+    // ---------------------------------------------------------------- §3
+    { kind: 'h2', text: '3. Line dan Staff Authority' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Line', 'Staff'],
+      rows: [
+        ['Departemen', '*Line departments* menjalankan tugas yang mencerminkan tujuan utama dan misi organisasi. Di perusahaan software, line departments membuat dan menjual produk; di perusahaan berbasis Internet, line departments mengembangkan dan mengelola penawaran serta penjualan online', '*Staff departments* mencakup semua departemen yang memberikan keahlian khusus untuk mendukung line departments; hubungannya bersifat **advisory** (memberi nasihat). Menurut buku biasanya mencakup marketing, labor relations, research, accounting, dan HR'],
+        ['Authority', '**Line authority**: orang di posisi manajemen punya authority formal untuk **mengarahkan dan mengendalikan** bawahan langsung', '**Staff authority**: lebih sempit; hak untuk **memberi nasihat, rekomendasi, dan konseling** di bidang keahlian staf. Staff authority adalah **hubungan komunikasi**'],
+        ['Contoh buku', '—', 'Departemen keuangan perusahaan manufaktur punya staff authority untuk berkoordinasi dengan line departments tentang formulir akuntansi untuk pembelian peralatan dan standardisasi layanan penggajian'],
+        ['Sumber', '[hal. 231–232]', '[hal. 231–232]'],
+      ],
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: 5 Pendekatan Departementalisasi'
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku memasukkan marketing dalam daftar staff departments yang "typically" ada [hal. 231], padahal kalimat sebelumnya menyebut line departments perusahaan software "make and sell the product", dan di Exh. 7.1 marketing tampil sebagai salah satu departemen utama [hal. 229]. Buku tidak menjelaskan perbedaan ini. Pegang definisinya: line = tujuan utama dan misi organisasi; staff = keahlian khusus yang mendukung line.',
+    },
+    { kind: 'p', text: 'Buku juga mencontohkan BP, yang setelah bencana Deepwater Horizon membentuk departemen keselamatan baru untuk memberi nasihat kepada manajer line tentang manajemen risiko dan keselamatan. **Berbeda dari banyak staff department**, unit ini diberi kewenangan luas untuk menantang keputusan manajer line bila dinilai terlalu berisiko [hal. 232].' },
+    { kind: 'p', text: '**Half-Baked Management: Deepwater Horizon** [hal. 232]. Ledakan rig minyak Deepwater Horizon milik BP–Transocean pada 2010 menewaskan 11 awak dan memicu bencana lingkungan. Menurut buku, kegiatan di rig begitu longgar pengaturannya sehingga tidak ada yang tampak tahu siapa yang memegang kendali atau seberapa besar authority dan responsibility-nya. Saat ledakan terjadi, seorang awak yang mengirim sinyal darurat karena tidak ada orang lain yang melakukannya justru ditegur karena dianggap melampaui kewenangannya; seorang manajer tidak meminta bantuan karena tidak yakin punya otorisasi; awak tahu shutdown darurat harus dipicu, tetapi bingung siapa yang berwenang menyetujuinya. Seorang pekerja menyimpulkan: "There was no chain of command. Nobody in charge."' },
+    // ---------------------------------------------------------------- §4
+    { kind: 'h2', text: '4. Span of Management: Tall vs Flat Structure' },
+    { kind: 'p', text: '**Span of management** (disebut juga *span of control*) = jumlah karyawan yang melapor kepada seorang atasan. Karakteristik ini menentukan seberapa dekat atasan dapat memantau bawahannya [hal. 233].' },
+    {
+      kind: 'ul',
+      items: [
+        'Pandangan tradisional menganjurkan sekitar **7–10 bawahan** per manajer; banyak organisasi ramping kini punya span 30, 40, atau lebih [hal. 233].',
+        'Walmart menguji struktur "Great Workplace" di sekitar 100 toko: lebih sedikit manajer bergaji lebih tinggi yang mengelola beberapa departemen dan tim sekaligus, alih-alih banyak manajer yang masing-masing mengurus satu departemen [hal. 233]. *Data per buku (2023).*',
+      ],
+    },
+    { kind: 'p', text: 'Secara umum, bila atasan harus terlibat dekat dengan bawahan, span sebaiknya **kecil**; bila keterlibatannya sedikit, span bisa **besar**. Faktor yang terkait dengan keterlibatan atasan yang lebih sedikit, dan karena itu span lebih besar [hal. 233–234]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Faktor yang mendukung span lebih besar'],
+      rows: [
+        ['1', 'Pekerjaan bawahan stabil dan rutin'],
+        ['2', 'Bawahan mengerjakan tugas yang serupa'],
+        ['3', 'Bawahan terkonsentrasi di satu lokasi'],
+        ['4', 'Bawahan sangat terlatih dan butuh sedikit arahan'],
+        ['5', 'Tersedia aturan dan prosedur yang mendefinisikan tugas'],
+        ['6', 'Tersedia sistem dan personel pendukung bagi manajer'],
+        ['7', 'Sedikit waktu dibutuhkan untuk kegiatan nonsupervisi, seperti koordinasi dengan departemen lain atau perencanaan'],
+        ['8', 'Preferensi dan gaya pribadi manajer menyukai span besar'],
+      ],
     },
     {
       kind: 'table',
-      headers: ['Desain Struktur', 'Dasar Pengelompokan Kerja', 'Keunggulan Utama', 'Kelemahan Kritis'],
+      headers: ['Struktur', 'Ciri menurut buku', 'Sumber'],
       rows: [
-        ['Fungsional', 'Berdasarkan kesamaan keahlian fungsi (Produksi, Akuntansi, SDM).', 'Efisiensi skala ekonomis maksimal dalam departemen.', 'Koordinasi antar-fungsi sangat buruk (Silo Mentality).'],
-        ['Divisional', 'Berdasarkan kesamaan output produk, segmen konsumen, atau geografis.', 'Respon cepat dan fleksibel terhadap dinamika pasar produk.', 'Duplikasi biaya aset dan staf pendukung antar-divisi.'],
-        ['Matriks', 'Kombinasi simultan antara fungsi fungsional dan divisi produk.', 'Penggunaan SDM ahli lintas proyek yang sangat optimal.', 'Rantai komando ganda memicu kebingungan dan perebutan kekuasaan.'],
-        ['Berbasis Tim', 'Tim permanen atau temporer lintas fungsi yang memiliki otonomi.', 'Mendobrak sekat departemen, komitmen dan moral staf tinggi.', 'Konflik loyalitas antara tim proyek vs departemen asal.'],
-        ['Virtual Network', 'Fungsi inti kecil di pusat meng-outsource fungsi lain ke mitra global.', 'Sangat ramping, fleksibilitas biaya tetap yang minimal.', 'Kontrol kualitas rapuh dan rentan kehilangan keahlian inti.']
+        ['**Tall structure**', 'Span keseluruhan sempit dan **lebih banyak** level hierarki', '[hal. 234]'],
+        ['**Flat structure**', 'Span lebar, tersebar secara horizontal, dan **lebih sedikit** level hierarki', '[hal. 234]'],
       ],
-      caption: 'Tabel 7.1: Analisis komparatif 5 desain departementalisasi organisasi.'
     },
+    { kind: 'p', text: 'Rata-rata span of control dalam organisasi menentukan apakah strukturnya tall atau flat [hal. 234]. Terlalu banyak level hierarki dan span sempit adalah masalah struktural yang umum: dalam survei untuk Conference Board, 72% manajer merasa organisasinya punya terlalu banyak level manajemen. Banyak franchisee McDonald\'s menyambut restrukturisasi yang memangkas dua level manajemen antara konsultan lapangan dan CEO karena diyakini mempercepat keputusan [hal. 234].' },
     {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
+      kind: 'ul',
+      items: [
+        'Pengurangan level manajemen sering menjadi bagian dari upaya meningkatkan kecepatan dan efisiensi keputusan, dan tren beberapa tahun terakhir adalah span yang lebih lebar **untuk memudahkan delegasi** [hal. 234].',
+        'Bila level manajemen terlalu banyak, keputusan rutin diambil terlalu tinggi di organisasi. Akibatnya eksekutif tertarik menjauh dari isu strategis jangka panjang, dan kreativitas, inovasi, serta accountability manajer tingkat bawah terbatasi [hal. 234].',
+        'Span CEO meningkat dari sekitar 5 menjadi sekitar 10 manajer yang melapor langsung; posisi COO menurun, sementara posisi seperti CIO, CTO, atau chief marketing officer ditambahkan ke tim puncak [hal. 234].',
+        'Span optimal eksekutif puncak dipengaruhi situasinya: orang yang baru di posisinya biasanya menginginkan span lebih lebar untuk menilai eksekutifnya dan mempelajari bisnis; CEO yang banyak berinteraksi langsung dengan pelanggan, mitra, atau regulator mungkin menginginkan span lebih sempit; CEO yang memimpin transformasi internal besar mungkin menginginkan span lebih lebar [hal. 234].',
+      ],
     },
+    { kind: 'p', text: '**Exhibit 7.2: Reorganization to Increase the Span of Management for the CEO of an International Metals Company** [hal. 234]' },
+    { kind: 'p', text: '(a) Struktur lama (tall). Empat atasan di bawah ini melapor ke **President**.' },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Dilema Kesatuan Komando pada Struktur Matriks',
-      prompt: 'Seorang insinyur perangkat lunak di perusahaan teknologi ditugaskan dalam proyek pembuatan aplikasi e-wallet baru. Ia menerima dua perintah bertentangan pada hari yang sama: Manajer Fungsional IT memerintahkannya menulis dokumentasi kode lengkap (memakan waktu 1 minggu), sedangkan Manajer Proyek Produk memerintahkannya segera merilis aplikasi besok pagi (memotong dokumentasi). Prinsip manajemen apa yang dilanggar dan bagaimana solusinya?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Prinsip yang Dilanggar**: Melanggar prinsip klasik **Kesatuan Komando (Unity of Command)** Fayol, yang menyatakan bahwa seorang bawahan seharusnya hanya menerima perintah dari SATU orang atasan langsung.',
-            '**Karakteristik Struktur Matriks**: Struktur Matriks sengaja menerapkan **Komando Ganda (Dual-Authority System)** untuk menyeimbangkan keandalan teknis (Manajer Fungsional) dan kecepatan rilis pasar (Manajer Produk).',
-            '**Solusi Manajerial**: Manajer Fungsional dan Manajer Produk harus duduk bersama dalam forum koordinasi untuk menyepakati kompromi prioritas. Pemimpin puncak harus memfasilitasi budaya kolaboratif di mana negosiasi wewenang diselesaikan secara konstruktif tanpa menjadikan staf sebagai korban tarik-menarik kekuasaan.'
-          ]
-        }
-      ]
+      kind: 'table',
+      headers: ['Atasan', 'Yang melapor langsung kepadanya'],
+      rows: [
+        ['Executive Vice President', 'Staff Specialists (6)'],
+        ['Executive Vice President', 'Operating Managers (5); Staff Specialists (3)'],
+        ['Executive Vice President', 'Operating Managers (4); Staff Specialists (5)'],
+        ['Vice President', 'Operating Managers (10); Staff Specialists (5)'],
+      ],
     },
+    { kind: 'p', text: '(b) Struktur baru (flat).' },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 7'
+      kind: 'table',
+      headers: ['Atasan', 'Yang melapor langsung kepadanya'],
+      rows: [
+        ['President', 'Operating Managers (10); Staff Specialists (9)'],
+      ],
+    },
+    { kind: 'p', text: 'Menurut teks, CEO menyambut span 19 bawahan ini karena cocok dengan gayanya, tim manajemennya sangat baik dan butuh sedikit supervisi, dan semuanya berada di lantai yang sama di satu gedung kantor [hal. 234–235]. Ketiga alasan itu cocok dengan faktor span besar di tabel atas, yaitu butir 8, 4, dan 3 (pengamatan AkuntansiHub). Kotak teratas exhibit berlabel "President", sementara teks menyebutnya "CEO".' },
+    // ---------------------------------------------------------------- §5
+    { kind: 'h2', text: '5. Centralization dan Decentralization' },
+    { kind: 'p', text: 'Centralization dan decentralization berkaitan dengan **level hierarki tempat keputusan dibuat** [hal. 235].' },
+    {
+      kind: 'table',
+      headers: ['Istilah', 'Arti menurut buku', 'Sumber'],
+      rows: [
+        ['**Centralization**', 'Otoritas keputusan berada **dekat puncak** organisasi', '[hal. 235]'],
+        ['**Decentralization**', 'Otoritas keputusan **didorong ke bawah** ke level organisasi yang lebih rendah', '[hal. 236]'],
+      ],
+    },
+    { kind: 'p', text: '**Centralization dalam praktik (Michelin 5-Star: Chef Oya\'s TRAP).** Menurut buku, restoran kecil di bisnis yang menuntut mutu makanan dan kebersihan tertinggi kadang **"centralized in their work procedures and decision making"**, seperti restoran TRAP milik Chef Oya di Indianapolis [hal. 235]. Karena bisnisnya bergantung pada mutu yang konsisten, Chef Oya menyadari perlunya struktur dalam cara makanan disiapkan, lalu menyusun manual prosedur yang panjang untuk semua pekerjaan di restoran, dari memasak, membersihkan, sampai melayani, agar pekerjaan dan pembelajarannya terstandar. Bagian dari pembelajarannya sendiri adalah belajar **"let go"**: ia terbiasa mengerjakan semuanya sendiri, sehingga sulit melepaskan kendali dan membiarkan orang lain bertanggung jawab [hal. 235]. "Michelin 5-Star" adalah nama fitur di buku, bukan penghargaan dari Michelin.' },
+    { kind: 'p', text: '**Decentralization dalam praktik** [hal. 236]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Kebanyakan sistem sekolah besar sangat tersentralisasi, tetapi studi William Ouchi menemukan tiga sistem sekolah perkotaan besar yang beralih ke struktur terdesentralisasi (kepala sekolah dan guru lebih mengendalikan staf, jadwal, dan metode serta materi ajar) berkinerja lebih baik dan lebih efisien daripada sistem tersentralisasi berukuran serupa.',
+        'Dalam uji "Great Workplace", Walmart memberi karyawan di lantai penjualan lebih banyak otoritas keputusan, misalnya menerima retur atau mengubah harga yang dulu harus melalui banyak otorisasi. Hasil sejauh ini: biaya tenaga kerja lebih rendah dan pekerja garis depan lebih terlibat.',
+        'Di AS dan Kanada, tren 30 tahun terakhir adalah desentralisasi. Decentralization diyakini meringankan beban manajer puncak, memanfaatkan keterampilan dan kemampuan karyawan, memastikan keputusan dibuat dekat dengan kejadian oleh orang yang paham, dan memungkinkan respons lebih cepat terhadap perubahan eksternal.',
+        'Toyota, yang punya tradisi sentralisasi kuat, dikritik karena harus berkoordinasi dengan kantor pusat untuk setiap keputusan terkait masalah keselamatan dan penarikan produk pada 2009–2011; sejak itu eksekutif merombak proses quality control dan mendesentralisasi lebih banyak keputusan ke manajer regional yang menangani keselamatan di Amerika Utara, Eropa, dan Asia.',
+      ],
+    },
+    { kind: 'p', text: '**Namun tidak semua keputusan sebaiknya didesentralisasi.** Eksekutif Wells Fargo menyatakan desentralisasi yang berlebihan ikut menjadi penyebab masalah etika dan hukum ketika karyawan membuka rekening bank dan kartu kredit palsu (Ch. 4). Regulator dan dewan direksi meyakini struktur terdesentralisasi mendorong budaya penjualan agresif. CEO baru kemudian merestrukturisasi perusahaan menjadi lebih banyak divisi tetapi lebih tersentralisasi, dengan setiap kepala divisi melapor langsung ke CEO [hal. 236–237]. *Data per buku (2023).*' },
+    { kind: 'p', text: 'Di banyak perusahaan sering ada **"tug of war between centralization and decentralization"**: eksekutif puncak ingin menyentralisasi sebagian operasi untuk **menghapus duplikasi**, sementara manajer divisi ingin mempertahankan kendali terdesentralisasi. Manajer perlu mendiagnosis situasi organisasi dan memilih level pengambilan keputusan yang paling memenuhi kebutuhan organisasi [hal. 237].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Faktor yang memengaruhi pilihan', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Perubahan dan ketidakpastian lingkungan yang lebih besar** biasanya terkait dengan decentralization', 'Setelah Badai Katrina (2005), Mississippi Power memulihkan listrik hanya dalam 12 hari, terutama berkat sistem manajemen terdesentralisasi yang memberi wewenang orang di gardu listrik untuk memutuskan cepat di tempat', '[hal. 237]'],
+        ['**Tingkat centralization atau decentralization harus sesuai dengan strategi** perusahaan', 'Whole Foods sebelum diakuisisi Amazon berhasil bertahun-tahun dengan pendekatan terdesentralisasi yang sesuai dengan strategi rasa lokal, produk khusus, dan layanan pelanggan. Saat persaingan menggerus laba, Whole Foods menyentralisasi fungsi pembelian untuk menaikkan daya beli dan menekan biaya', '[hal. 237]'],
+        ['**Saat krisis atau risiko kegagalan perusahaan**, authority bisa disentralisasi di puncak', 'Setelah dua kecelakaan fatal pesawat 737 MAX menjerumuskan Boeing ke dalam krisis, Boeing menyentralisasi pengawasan keselamatan dalam organisasi baru yang mengawasi tanggung jawab keselamatan yang sebelumnya tersebar di berbagai unit bisnis', '[hal. 237]'],
+      ],
+    },
+    { kind: 'p', text: '*Data per buku (2023).*' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (1/3)',
+      text: 'Sebuah grup usaha dapat memindahkan pekerjaan akuntansi, utang usaha, dan penggajian yang sebelumnya dikerjakan sendiri-sendiri oleh tiap anak usaha ke satu pusat layanan bersama (shared service center) di kantor pusat. Keputusan ini sejalan dengan dorongan eksekutif puncak yang dicatat buku, yaitu menyentralisasi sebagian operasi untuk **menghapus duplikasi** [hal. 237]. Tarik-menarik dengan manajer anak usaha yang ingin tetap memegang kendali juga dapat muncul, seperti "tug of war" yang digambarkan buku.',
+    },
+    // ---------------------------------------------------------------- §6
+    { kind: 'h2', text: '6. Departmentalization (1): Lima Pendekatan, Functional, dan Divisional' },
+    { kind: 'p', text: '**Departmentalization** = dasar pengelompokan posisi ke dalam departemen dan departemen ke dalam organisasi secara keseluruhan [hal. 238]. Ada **lima pendekatan** desain struktur yang mencerminkan cara berbeda memakai chain of command. **Functional, divisional, dan matrix** adalah pendekatan tradisional yang mengandalkan chain of command untuk menentukan pengelompokan departemen dan hubungan pelaporan. **Team** dan **virtual network** adalah dua pendekatan inovatif yang muncul untuk memenuhi kebutuhan di lingkungan global yang bergejolak. Perbedaan dasarnya adalah **cara karyawan dikelompokkan dan kepada siapa mereka melapor** [hal. 238].' },
+    { kind: 'p', text: '**Exhibit 7.3: Five Approaches to Structural Design** [hal. 239]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pendekatan', 'Yang tampak di bagan'],
+      rows: [
+        ['1. Vertical Functional', 'Kotak puncak → Human Resources, Manufacturing, Accounting, masing-masing dengan unit di bawahnya'],
+        ['2. Divisional', 'Kotak puncak → Product Division 1 dan Product Division 2; masing-masing divisi punya Human Resources, Manufacturing, dan Accounting sendiri'],
+        ['3. Matrix', 'Kotak puncak → Human Resources, Manufacturing, Accounting (garis vertikal) dan Product Division 1, Product Division 2 (garis horizontal) yang saling bersilang'],
+        ['4. Team-Based', 'Kotak puncak → tiga tim; setiap tim berisi anggota dari fungsi yang berbeda (ditandai warna berbeda)'],
+        ['5. Virtual Network', 'Central Hub terhubung dua arah dengan Designer, Manufacturer, Human Resources Agency, dan Marketer'],
+      ],
+    },
+    { kind: 'h3', text: '6a. Vertical Functional Approach' },
+    { kind: 'p', text: '**Functional structure** (disebut juga *U-form* atau *unitary structure*) = kegiatan dikelompokkan berdasarkan **fungsi yang sama** dari bawah sampai puncak organisasi. Posisi dikelompokkan ke departemen berdasarkan kesamaan keterampilan, keahlian, kegiatan kerja, dan pemakaian sumber daya; bisa dipandang sebagai departmentalization **berdasarkan sumber daya organisasi** [hal. 238].' },
+    {
+      kind: 'ul',
+      items: [
+        'Southwest Airlines memakai struktur fungsional sejak masih maskapai lokal di Texas sampai menjadi maskapai internasional berbiaya rendah, dengan keahlian mendalam di kelompok fungsi seperti keuangan, pemasaran, operasi harian, operasi darat, operasi penerbangan, dan pemeliharaan. Blue Bell Creameries punya departemen fungsional seperti pemasaran, operasi pabrik, quality control, pemeliharaan, distribusi, R&D, dan keuangan [hal. 238].',
+        '**Cara kerja:** setiap departemen fungsional mengurus organisasi secara keseluruhan (mis. marketing menangani semua penjualan dan pemasaran). Informasi mengalir naik-turun hierarki dan **chain of command bertemu di puncak**. Orang terutama berkomunikasi dengan rekan di departemen yang sama; aturan dan prosedur mengatur tugas tiap karyawan [hal. 238].',
+      ],
     },
     {
       kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      stackOnMobile: true,
+      headers: ['Kelebihan', 'Kekurangan'],
       rows: [
-        ['1', 'Dimensi Struktural Vertikal', 'Rantai komando, span of control, dan struktur tall vs flat.', 'Mampu menghitung tingkatan hierarki dan rentang kendali.'],
-        ['2', '5 Desain Departementalisasi', 'Karakteristik fungsional, divisional, matriks, tim, dan virtual network.', 'Mampu merekomendasikan bagan struktur organisasi yang tepat.'],
-        ['3', 'Kontinjensi Desain Organisasi', 'Pengaruh strategi diferensiasi vs cost leadership pada struktur.', 'Mampu mencocokkan struktur mekanistik vs organik dengan kondisi bisnis.']
+        ['Skala ekonomi dan pemakaian sumber daya efisien (mis. semua urusan hukum, kepatuhan, dan keuangan AustralianSuper di satu departemen Corporate Services) [hal. 238]', 'Hambatan antardepartemen: komunikasi dan koordinasi antarfungsi sering buruk, sehingga respons terhadap perubahan lingkungan lambat [hal. 240]'],
+        ['Mengembangkan keterampilan mendalam karena orang menangani berbagai masalah terkait bersama ahli lain [hal. 238]', 'Inovasi dan perubahan menuntut keterlibatan beberapa departemen [hal. 240]'],
+        ['Karena chain of command bertemu di puncak, struktur ini menjadi cara **menyentralisasi** keputusan dan memberi arahan terpadu dari manajer puncak [hal. 238]', 'Keputusan yang melibatkan lebih dari satu departemen bisa **menumpuk di puncak** dan tertunda [hal. 240]'],
       ],
-      caption: 'Tabel 7.2: Peta penguasaan submateri TM 7 Pengantar Manajemen.'
     },
-    CASE_ORG_STRUCTURE_ADAPTIVE,
+    { kind: 'h3', text: '6b. Divisional Approach' },
+    { kind: 'p', text: '**Divisional structure** = departemen dikelompokkan berdasarkan **kesamaan output organisasi** [hal. 240]. Disebut juga *M-form* (multidivisional) atau *decentralized form*; juga *product structure*, *program structure*, atau *self-contained unit structure*. Semua istilah ini pada dasarnya sama: departemen yang beragam disatukan untuk menghasilkan satu output organisasi, baik produk, program, maupun layanan untuk satu pelanggan [hal. 240].' },
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      kind: 'ul',
+      items: [
+        'Procter & Gamble punya enam divisi produk (beauty; baby and feminine care; fabric and home care; family care; grooming; health care), dan CEO tiap unit bertanggung jawab atas penjualan, inovasi produk, rantai pasok, dan operasi unit itu. United Technologies Corporation punya divisi seperti Carrier, Otis, Pratt & Whitney, dan Collins Aerospace [hal. 240].',
+        'Banyak perusahaan beralih ke struktur divisional saat sudah terlalu besar sehingga kelemahan struktur fungsional terlalu besar. Reorganisasi yang menjadikan Google salah satu divisi Alphabet dimaksudkan agar setiap perusahaan yang lebih kecil lebih entrepreneurial, inovatif, dan gesit; tiap divisi Alphabet punya CEO sendiri dan beroperasi mandiri [hal. 240]. *Data per buku (2023).*',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 7.4: Functional Versus Divisional Structures** [hal. 241]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['(a) Functional Structure', '(b) Divisional Structure'],
+      rows: [
+        ['President → R&D; Finance; Manufacturing; Marketing', 'President → Division 1 (Electronics); Division 2 (Biotechnology); Division 3 (Consumer Products). Setiap divisi punya R&D, Manufacturing, Finance, dan Marketing sendiri'],
+      ],
+    },
+    { kind: 'p', text: '**Cara kerja:** divisi adalah unit yang berdiri sendiri (self-contained) dengan departemen fungsional sendiri. Dalam struktur fungsional, semua insinyur R&D dikelompokkan bersama dan menangani semua produk; dalam struktur divisional, tiap divisi punya departemen R&D sendiri, sehingga departemen **terduplikasi** antar lini produk [hal. 241]. Perbedaan utamanya: dalam struktur divisional, **chain of command tiap fungsi bertemu lebih rendah** di hierarki. Perbedaan pendapat antara R&D, marketing, manufacturing, dan finance diselesaikan di level divisi, bukan oleh president. Karena itu struktur divisional **mendorong decentralization**: keputusan didorong turun minimal satu level, sehingga president dan manajer puncak bebas untuk perencanaan strategis. Keputusan ditarik kembali ke puncak hanya bila divisi tidak sepakat, gagal berkoordinasi, atau mulai membuat keputusan yang merugikan organisasi [hal. 241].' },
+    { kind: 'p', text: '**Geographic- or customer-based divisions** adalah alternatif untuk memberi tanggung jawab divisional: sekumpulan fungsi dikelompokkan untuk melayani **wilayah geografis atau kelompok pelanggan** tertentu [hal. 241].' },
+    {
+      kind: 'ul',
+      items: [
+        'Dalam struktur berbasis geografis, semua fungsi di suatu negara atau wilayah melapor ke manajer divisi yang sama dan bekerja sama melayani pelanggan di wilayah itu. Keunggulan bersaing bisa datang dari produk atau layanan yang disesuaikan dengan negara atau wilayah tertentu. Disney Channel direorganisasi menjadi divisi geografis karena selera orang di tiap negara berbeda; organisasi nirlaba besar seperti YMCA, Habitat for Humanity International, dan Girl Scouts of the USA juga sering memakai struktur geografis dengan kantor pusat dan unit semi-otonom yang melayani pelanggan lokal [hal. 241].',
+        'Contoh berbasis pelanggan: Verizon, yang sebelumnya punya dua divisi produk (Wireless dan Wireline), direstrukturisasi menjadi tiga divisi berbasis pelanggan: Consumer Group, Business Group, dan Media Group/Oath [hal. 241–242]. *Data per buku (2023).*',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 7.5: Geographic-Based Global Organization Structure** [hal. 242]' },
+    {
+      kind: 'table',
+      headers: ['Posisi', 'Melapor ke', 'Keterangan'],
+      rows: [
+        ['Corporate Staff', 'Chief Executive Officer', 'Staf korporat (di samping garis utama)'],
+        ['Western U.S. Division', 'Chief Executive Officer', 'Divisi geografis'],
+        ['Eastern U.S. Division', 'Chief Executive Officer', 'Divisi geografis'],
+        ['Latin American Division', 'Chief Executive Officer', 'Divisi geografis'],
+        ['Asian Division', 'Chief Executive Officer', 'Divisi geografis'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kelebihan divisional', 'Kekurangan divisional'],
+      rows: [
+        ['Lebih fleksibel dan responsif terhadap perubahan karena tiap unit kecil dan peka terhadap lingkungannya', 'Koordinasi **di dalam** divisi bisa sangat baik, tetapi koordinasi **antar**divisi sering buruk; divisi otonom bisa bergerak ke arah berlawanan'],
+        ['Kepedulian terhadap kebutuhan pelanggan tinggi karena karyawan fokus pada satu lini produk atau satu kelompok geografis/pelanggan', 'Duplikasi sumber daya dan biaya tinggi menjalankan divisi terpisah; hilangnya efisiensi dan skala ekonomi'],
+        ['Koordinasi antardepartemen fungsional lebih baik karena karyawan berada di satu lokasi dan berkomitmen pada satu lini produk atau kelompok pelanggan', 'Departemen kecil di tiap divisi bisa kekurangan spesialisasi teknis, keahlian, dan pelatihan'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 242].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (2/3)',
+      text: 'Kantor akuntan publik yang besar dapat membagi organisasinya per jenis layanan, misalnya unit audit, unit perpajakan, dan unit advisory, dengan partner dan staf sendiri di tiap unit. Pola ini mengikuti **divisional structure** menurut buku: departemen dikelompokkan berdasarkan kesamaan output, dalam hal ini jenis layanan kepada klien [hal. 240]. Konsekuensinya pun sama dengan yang dicatat buku: tiap unit dekat dengan kebutuhan kliennya, tetapi keahlian tertentu bisa terduplikasi antarunit [hal. 242].',
+    },
+    // ---------------------------------------------------------------- §7
+    { kind: 'h2', text: '7. Departmentalization (2): Matrix Approach' },
+    { kind: 'p', text: '**Matrix approach** = menggabungkan aspek struktur functional dan divisional **secara bersamaan, di bagian organisasi yang sama**. Struktur ini berkembang sebagai cara meningkatkan koordinasi horizontal dan berbagi informasi. Ciri uniknya adalah **dua garis otoritas (dual lines of authority)**: hierarki fungsional berjalan vertikal, hierarki divisional berjalan horizontal. Struktur vertikal memberi kendali tradisional di dalam departemen fungsional; struktur horizontal memberi koordinasi antardepartemen [hal. 242].' },
+    { kind: 'p', text: 'Contoh buku: operasi Starbucks di AS punya empat divisi geografis (Western/Pacific, Northwest/Mountain, Southeast/Plains, Northeast/Atlantic), sementara departemen fungsional seperti keuangan dan pemasaran disentralisasi, beroperasi sebagai unit vertikal sendiri sekaligus mendukung divisi horizontal. Akibat struktur ganda ini, **sebagian karyawan melapor kepada dua atasan sekaligus** [hal. 242].' },
+    { kind: 'p', text: '**Exhibit 7.6: Dual-Authority Structure in a Matrix Organization** [hal. 243]' },
+    { kind: 'p', text: 'Baris = rantai komando horizontal untuk divisi produk; kolom = rantai komando vertikal untuk fungsi. Keduanya berada di bawah **President**. Setiap sel adalah *two-boss employee*.' },
+    {
+      kind: 'table',
+      headers: ['', 'VP Finance', 'VP Engineering Applications', 'VP Manufacturing', 'VP Marketing'],
+      rows: [
+        ['**Product Manager A**', 'Two-boss employee', 'Two-boss employee', 'Two-boss employee', 'Two-boss employee'],
+        ['**Product Manager B**', 'Two-boss employee', 'Two-boss employee', 'Two-boss employee', 'Two-boss employee'],
+        ['**Product Manager C**', 'Two-boss employee', 'Two-boss employee', 'Two-boss employee', 'Two-boss employee'],
+      ],
+    },
+    { kind: 'p', text: '**Cara kerja (matriks global).** Pada Exh. 7.7, dua garis otoritasnya adalah **geografi** dan **produk**. Bos geografis di Jerman mengoordinasikan semua anak perusahaan di Jerman; bos produk plastik mengoordinasikan manufaktur dan penjualan produk plastik di seluruh dunia. Manajer anak perusahaan lokal di Jerman melapor kepada dua atasan: bos negara dan bos produk [hal. 242–243].' },
+    { kind: 'p', text: '**Exhibit 7.7: Global Matrix Structure** [hal. 243]' },
+    { kind: 'p', text: 'Baris = lini produk global; kolom = wilayah. Keduanya berada di bawah **Chief Executive Officer**. Setiap sel adalah *subsidiary manager*.' },
+    {
+      kind: 'table',
+      headers: ['', 'Germany', 'Latin America', 'Argentina/Brazil', 'Spain/Portugal'],
+      rows: [
+        ['**Worldwide Plastics Products**', 'Subsidiary manager', 'Subsidiary manager', 'Subsidiary manager', 'Subsidiary manager'],
+        ['**Worldwide Glass Fibers**', 'Subsidiary manager', 'Subsidiary manager', 'Subsidiary manager', 'Subsidiary manager'],
+        ['**Worldwide Insulation Products**', 'Subsidiary manager', 'Subsidiary manager', 'Subsidiary manager', 'Subsidiary manager'],
+      ],
+    },
+    { kind: 'p', text: 'Nama kolom mengikuti exhibit apa adanya (buku mencantumkan "Latin America" dan "Argentina/Brazil" sebagai kolom terpisah).' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Struktur dua otoritas ini **melanggar unity of command** (§2), tetapi menurut buku hal itu perlu untuk memberi bobot yang sama pada kedua garis otoritas. Dua garis otoritas bisa membingungkan, tetapi setelah manajer terbiasa, matriks memberi koordinasi yang sangat baik sekaligus untuk tiap wilayah dan tiap lini produk [hal. 243]. Buku juga mencontohkan pelanggaran unity of command lain: Cognizant menempatkan dua manajer yang sama-sama bertanggung jawab atas satu proyek ("two in a box") [hal. 231].',
+    },
+    { kind: 'p', text: '**Peran kunci dalam matriks** [hal. 244]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Peran', 'Arti menurut buku'],
+      rows: [
+        ['**Two-boss employees**', 'Karyawan yang melapor kepada dua atasan sekaligus. Harus menyelesaikan tuntutan yang bertentangan dari kedua bos matriks, bekerja dengan manajer senior untuk mencapai keputusan bersama, dan membutuhkan keterampilan hubungan antarmanusia yang sangat baik'],
+        ['**Matrix boss**', 'Bos produk atau bos fungsional yang bertanggung jawab atas **satu sisi** matriks'],
+        ['**Top leader**', 'Bertanggung jawab atas **seluruh** matriks; mengawasi rantai komando produk dan fungsional, menjaga keseimbangan kekuasaan kedua sisi, dan menjadi tempat sengketa dibawa bila kedua sisi berselisih'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kelebihan matrix', 'Kekurangan matrix'],
+      rows: [
+        ['Sangat efektif di lingkungan yang kompleks dan cepat berubah, ketika organisasi harus fleksibel, inovatif, dan adaptif', 'Kebingungan dan frustrasi akibat dual chain of command'],
+        ['Konflik dan rapat yang sering memungkinkan isu baru diangkat dan diselesaikan', 'Konflik tinggi karena tujuan divisional diadu dengan tujuan fungsional (atau lini produk dengan negara dalam struktur global)'],
+        ['Pemakaian SDM efisien karena spesialis bisa dipindahkan antardivisi', 'Waktu hilang untuk rapat dan diskusi menyelesaikan konflik; sering lebih banyak diskusi daripada tindakan'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 244].' },
+    // ---------------------------------------------------------------- §8
+    { kind: 'h2', text: '8. Departmentalization (3): Team, Virtual Network, dan Perbandingan Lima Pendekatan' },
+    { kind: 'h3', text: '8a. Team Approach' },
+    { kind: 'p', text: 'Tren departmentalization yang paling luas beberapa tahun terakhir adalah penerapan konsep tim. Rantai komando vertikal adalah alat kendali yang kuat, tetapi meneruskan semua keputusan ke atas terlalu lama dan menahan tanggung jawab di puncak. Pendekatan tim memberi manajer cara untuk **mendelegasikan authority, mendorong responsibility ke level lebih rendah**, dan menjadi lebih fleksibel serta responsif. Tim dibahas rinci di Chapter 14 [hal. 244–245].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Cross-functional teams**', 'Karyawan dari berbagai departemen fungsional yang bertanggung jawab bertemu sebagai tim dan menyelesaikan masalah bersama. Anggota biasanya tetap melapor ke departemen fungsionalnya, tetapi juga melapor ke tim; sering dipakai untuk proyek perubahan seperti inovasi produk atau layanan baru', 'Total Attorneys: struktur fungsional yang memecah proyek menjadi tahap berurutan antardepartemen begitu lambat sehingga kebutuhan klien kadang sudah berubah saat produk selesai; solusinya tim lintas fungsi kecil, sehingga desainer, programmer, dan penguji mutu bekerja erat di tiap proyek pelanggan', '[hal. 245]'],
+        ['**Permanent teams**', 'Kelompok karyawan yang diorganisasi mirip departemen formal; tiap tim menyatukan karyawan dari semua area fungsional yang fokus pada tugas atau proyek tertentu (mis. pasokan suku cadang dan logistik pabrik mobil). Authority didorong ke bawah; anggota bisa berbagi atau bergiliran memimpin', '—', '[hal. 245]'],
+        ['**Team-based structure**', '**Seluruh organisasi** terdiri atas tim horizontal yang mengoordinasikan pekerjaannya dan bekerja langsung dengan pelanggan untuk mencapai tujuan organisasi', 'Zappos mengganti hierarki tradisional dengan tim-tim swakelola yang saling tumpang tindih yang disebut *circles*; karyawan tidak punya bos atau jabatan tradisional dan bisa menjadi anggota beberapa circle sekaligus', '[hal. 245]'],
+      ],
+    },
+    { kind: 'p', text: 'Organisasi yang menerapkan struktur berbasis tim secara penuh memastikan interaksi **antartim** kuat dan sering, bukan hanya interaksi antaranggota tim [hal. 245]. **Exhibit 7.8** ("Interactions Among Multiple-Function Teams", hal. 245) adalah ilustrasi abstrak tanpa label: tim-tim lintas fungsi saling terhubung oleh banyak garis.' },
+    { kind: 'p', text: '**Haier Group** (Qingdao, Tiongkok) adalah contoh buku untuk struktur berbasis tim. Saat CEO yang membawa transformasi mulai memimpin, banyak produk Haier harus diperbaiki sebelum bisa dipakai; kini Haier adalah pembuat peralatan rumah tangga terbesar di dunia. Strukturnya bukan hierarki vertikal, melainkan lebih dari 4.000 **microenterprise** swakelola berisi 10–15 orang dari berbagai fungsi (riset, manufaktur, pengadaan, pemasaran). Setiap tim bertanggung jawab atas misi produk atau layanan tertentu, punya tanggung jawab laba-rugi dan sistem akuntansi sendiri, serta otonomi merekrut dan memberhentikan karyawan, membuat sebagian besar keputusan operasional, dan menetapkan aturan biaya, kompensasi, dan bonus. Peran manajer bukan mengarahkan atau mengawasi, melainkan menyediakan sumber daya dan panduan [hal. 246]. *Data per buku (2023).*' },
+    { kind: 'p', text: '**Sunny Side Up: The Bossless Upside-Down Structure** [hal. 247]. Menurut fitur ini, sebagian perusahaan mendapati struktur command-and-control masa lalu tidak cocok dengan tenaga kerja masa kini. Struktur "bossless" bergeser dari bagan organisasi yang kaku ke tim operasional dan proyek yang cair, dari deskripsi jabatan sempit ke proyek dinamis dengan banyak peran kepemimpinan, dan dari penugasan top-down ke inisiatif bottom-up oleh tim swakelola.' },
+    {
+      kind: 'ul',
+      items: [
+        '**Netflix** menerapkan pendekatan hands-off dengan melibatkan karyawan dalam merumuskan tujuan dan visi; menurut seorang eksekutifnya, setelah karyawan memahami kebutuhan perusahaan di level itu, mereka dipercaya mengutamakan kepentingan perusahaan.',
+        '**W. L. Gore and Associates** (teknologi kain Gore-Tex dan Mars rover) bebas bos sejak berdiri pada 1958: tidak ada lapisan manajemen, sedikit jabatan, tanpa bagan organisasi; tim kecil adalah unit inti; orang memilih timnya dan boleh menolak permintaan siapa pun. Accountability tetap kuat: kompensasi diputuskan panel rekan kerja, dan setiap orang dinilai minimal 20 rekannya setiap tahun.',
+        '**Valve Corporation** (pengembang game dan platform Steam) juga bossless sejak berdiri: pemimpin tim dipilih lewat konsensus informal, meja karyawan beroda agar mudah pindah ke proyek baru, dan ekspansi ke perangkat keras bermula dari beberapa karyawan yang membentuk tim untuk menindaklanjuti permintaan pelanggan.',
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kelebihan team', 'Kekurangan team'],
+      rows: [
+        ['Menghapus hambatan antardepartemen dan meningkatkan koordinasi serta kerja sama; anggota saling tahu masalah masing-masing sehingga lebih mau berkompromi', 'Konflik dan loyalitas ganda: tuntutan tim bisa berbeda dari tuntutan manajer departemen'],
+        ['Organisasi lebih cepat beradaptasi dengan permintaan pelanggan dan perubahan lingkungan; keputusan lebih cepat karena tidak perlu disetujui puncak', 'Banyak waktu untuk rapat sehingga waktu koordinasi bertambah; tanpa kebutuhan nyata akan tim, efisiensi produksi turun'],
+        ['Semangat kerja naik; karyawan antusias terlibat dalam proyek yang lebih besar', 'Desentralisasi bisa berlebihan: manajer senior merasa tersisih, dan anggota tim yang tidak melihat gambaran besar bisa membuat keputusan yang baik bagi kelompoknya tetapi buruk bagi organisasi'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 246].' },
+    { kind: 'h3', text: '8b. Virtual Network Approach' },
+    { kind: 'p', text: 'Pendekatan terbaru ini memperluas koordinasi dan kolaborasi horizontal **melampaui batas organisasi**: organisasi hierarkis yang terintegrasi vertikal berganti menjadi kumpulan perusahaan yang saling terhubung longgar dengan batas yang mudah ditembus [hal. 247].' },
+    {
+      kind: 'ul',
+      items: [
+        '***Outsourcing*** = menyerahkan kegiatan tertentu, seperti manufaktur atau pemrosesan kredit, kepada pihak luar. Contoh: Honda dulu merancang semua teknologi barunya sendiri, tetapi kini mengalihdayakan sebagian pengembangan untuk kendaraan listrik dan otonom karena biaya tinggi dan teknologi yang cepat berkembang [hal. 247].',
+        '**Virtual network structure** = perusahaan mensubkontrakkan **sebagian besar fungsi utamanya** kepada perusahaan terpisah dan mengoordinasikan kegiatan mereka dari **organisasi kecil di kantor pusat** [hal. 248]. Contoh: GitLab, pengembang software dengan karyawan di banyak negara tetapi tanpa kantor; semua karyawan, termasuk CEO, bekerja jarak jauh, dan perusahaan merekrut orang secara kontrak sesuai kebutuhan proyek [hal. 248]. *Data per buku (2023).*',
+        'Jaringan virtual informal juga bisa muncul saat dibutuhkan: pada April 2020, saat pandemi COVID-19, sekelompok ilmuwan dari berbagai institusi di dunia membentuk jaringan secara ad hoc ("friends calling friends") untuk menguji obat, dan menilai kerja sama antaranggota jaringan sama pentingnya dengan peralatan di lab mereka [hal. 248].',
+      ],
+    },
+    { kind: 'p', text: '**Cara kerja.** Organisasi jaringan dapat dipandang sebagai **pusat (hub)** yang dikelilingi jaringan spesialis dari luar. Layanan seperti akuntansi, desain, manufaktur, dan distribusi dialihdayakan ke organisasi terpisah yang terhubung secara elektronik ke kantor pusat, sehingga pemasok, produsen, perakit, dan distributor yang terhubung longgar bisa tampak dan bertindak seperti satu perusahaan [hal. 248]. Idenya, perusahaan fokus pada yang paling dikuasainya dan mengontrakkan kegiatan lain kepada perusahaan yang punya kompetensi khusus. Nike adalah pelopornya: desain dan pemasaran dipertahankan di dalam, sementara manufaktur dialihdayakan untuk menekan biaya [hal. 249]. Bagian-bagian jaringan disatukan secara kontraktual dan dikoordinasikan secara elektronik, dan seperti balok susun, bisa ditambah atau dikurangi sesuai kebutuhan [hal. 249].' },
+    { kind: 'p', text: '**Exhibit 7.9: Network Approach to Departmentalization** [hal. 248]' },
+    { kind: 'p', text: 'Pusat jaringan: **Company Core (hub)**.' },
+    {
+      kind: 'table',
+      headers: ['Fungsi', 'Dikerjakan oleh'],
+      rows: [
+        ['Design', 'Perusahaan di Kanada'],
+        ['Accounting', 'Perusahaan di India'],
+        ['Transportation', 'Perusahaan di Amerika Serikat'],
+        ['Distribution', 'Perusahaan di Jerman'],
+        ['Manufacturing', 'Perusahaan di Tiongkok'],
+        ['Manufacturing', 'Perusahaan di Thailand'],
+        ['Legal', 'Perusahaan di Inggris'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kelebihan virtual network', 'Kekurangan virtual network'],
+      rows: [
+        ['Fleksibilitas dan daya saing global: bisa memakai sumber daya dan keahlian di seluruh dunia dan menjual ke seluruh dunia; bisa menyewa layanan yang dibutuhkan lalu mengubahnya beberapa bulan kemudian tanpa terikat pabrik dan peralatan. Contoh: Smart Balance masuk ke bisnis susu dengan mengontrak ilmuwan dan konsultan R&D luar, pemroses susu, laboratorium, dan perusahaan uji rasa', 'Kurangnya kendali langsung: manajer mengandalkan kontrak, koordinasi, negosiasi, dan hubungan elektronik; tiap mitra bertindak demi kepentingannya sendiri. Contoh: K\'Nex memindahkan sebagian besar produksi mainannya kembali ke pabriknya di AS dari subkontraktor di Tiongkok untuk menjaga kendali atas mutu dan bahan'],
+        ['Paling ramping: sedikit supervisi; tidak perlu tim staf spesialis dan administrator yang besar; mungkin hanya dua atau tiga level hierarki, dibanding 10 atau lebih di organisasi tradisional', 'Batas yang lemah dan ambigu meningkatkan ketidakpastian dan tuntutan kepada manajer; layanan dan loyalitas pelanggan bisa terganggu bila mitra gagal'],
+        ['—', 'Loyalitas karyawan melemah: karyawan merasa bisa digantikan layanan kontrak; budaya yang kohesif sulit tumbuh dan turnover cenderung lebih tinggi'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 249–250]. Concept Connection buku juga mencontohkan perusahaan bioteknologi rintisan yang beroperasi tanpa karyawan penuh waktu dan mengandalkan organisasi riset kontrak; pendirinya mengakui sulitnya bekerja dengan kontraktor yang mungkin tidak sepenuhnya berkomitmen pada misi perusahaan [hal. 249].' },
+    { kind: 'h3', text: '8c. Perbandingan Lima Pendekatan' },
+    { kind: 'p', text: '**Exhibit 7.10: Structural Advantages and Disadvantages** [hal. 250]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Structural Approach', 'Advantages', 'Disadvantages'],
+      rows: [
+        ['**Functional**', 'Efficient use of resources; economies of scale · In-depth skill specialization and development · Top manager direction and control', 'Poor communication across functional departments · Slow response to external changes; lagging innovation · Decisions concentrated at the top of hierarchy, creating delay'],
+        ['**Divisional**', 'Fast response; flexibility in an unstable environment · Fosters concern for customer needs · Excellent coordination across functional departments', 'Duplication of resources across divisions · Less technical depth and specialization · Poor coordination across divisions'],
+        ['**Matrix**', 'More efficient use of resources than a single hierarchy · Flexibility, adaptability to a changing environment · Interdisciplinary cooperation; expertise available to all divisions', 'Frustration and confusion from a dual chain of command · High conflict between two sides of the matrix · Many meetings; more discussion than action'],
+        ['**Team**', 'Reduced barriers among departments; increased compromise · Shorter response time; quicker decisions · Better morale; enthusiasm from employee involvement', 'Dual loyalties and conflict · Time and resources spent on meetings · Unplanned decentralization'],
+        ['**Virtual network**', 'Can draw on expertise worldwide · Highly flexible and responsive · Reduced overhead costs', 'Lack of control; weak boundaries · Greater demands on managers · Weaker employee loyalty'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Di baris Team, buku mencetak "Time and resources spent on meetings unplanned decentralization" sebagai satu butir. Teks hal. 246 membahasnya sebagai dua kelemahan terpisah: waktu untuk rapat, dan desentralisasi yang berlebihan ("too much decentralization"). Karena itu tabel di atas memisahkannya menjadi dua butir [hal. 246, 250].',
+    },
+    // ---------------------------------------------------------------- §9
+    { kind: 'h2', text: '9. Koordinasi Horizontal (1): Kebutuhan Koordinasi, Reengineering, Task Force, Tim, dan Project Manager' },
+    { kind: 'p', text: 'Salah satu alasan meningkatnya pemakaian tim dan jaringan adalah kesadaran akan keterbatasan struktur vertikal tradisional di lingkungan yang cepat berubah. Trennya adalah menghapus hambatan antardepartemen, dan banyak perusahaan bergerak ke struktur horizontal berbasis **proses kerja**, bukan fungsi departemen. Namun **apa pun tipe strukturnya, setiap organisasi membutuhkan mekanisme integrasi dan koordinasi horizontal**; struktur tidak lengkap tanpa dimensi horizontal dan vertikal [hal. 251].' },
+    { kind: 'h3', text: '9a. Kebutuhan Koordinasi dan Reengineering' },
+    { kind: 'p', text: 'Saat organisasi tumbuh dan berkembang, dua hal terjadi. **Pertama**, posisi dan departemen baru ditambahkan untuk menghadapi faktor lingkungan eksternal atau kebutuhan strategis baru, sehingga organisasi menjadi makin kompleks. **Kedua**, manajer senior harus menemukan cara menyatukan semua departemen itu. Chain of command dan supervisi formal efektif tetapi tidak cukup; organisasi juga butuh sistem untuk memproses informasi dan memungkinkan komunikasi antarorang di departemen dan level berbeda [hal. 251].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti menurut buku', 'Sumber'],
+      rows: [
+        ['**Coordination**', 'Tugas manajerial menyesuaikan dan menyelaraskan beragam kegiatan di antara individu dan departemen yang berbeda', '[hal. 251]'],
+        ['**Collaboration**', 'Upaya bersama orang dari dua departemen atau lebih untuk menghasilkan output yang memenuhi tujuan bersama, yang biasanya lebih besar daripada yang bisa dicapai tiap individu atau departemen sendirian', '[hal. 251]'],
+      ],
     },
     {
       kind: 'ul',
       items: [
-        '**Struktur Mengikuti Strategi (Structure Follows Strategy)**: Doktrin Alfred Chandler menegaskan bahwa struktur organisasi harus dirancang untuk melayani strategi korporasi, bukan sebaliknya.',
-        '**Tren Organisasi Menuju Flat**: Kemajuan teknologi komunikasi dan tim swakelola (Self-Managed Teams) mendorong perusahaan memangkas lapisan manajemen menengah untuk mempercepat keputusan.',
-        '**Silo Mentality Mematikan Kolaborasi**: Bahaya terbesar struktur fungsional murni adalah munculnya dinding ego antar-departemen yang melupakan kepentingan kepuasan pelanggan akhir.'
-      ]
-    }
-  ]
+        'Menurut survei global yang dikutip buku, lebih dari 70% perusahaan yang paling maju secara digital memakai tim lintas fungsi, dibanding kurang dari 30% perusahaan di tahap awal digitalisasi [hal. 251].',
+        'Di CarMax, strategi transformasi digital menuntut semua bagian bisnis bekerja sama; tim lintas fungsinya punya tiga peran kunci: product manager (biasanya bukan dari TI), lead developer atau engineer (dari TI), dan customer experience designer. Pimpinan memberi tahu tim masalah yang harus diselesaikan dan KPI-nya, lalu tim diberdayakan mengerjakannya. Di GE, tim penjualan pompa kini menyertakan insinyur aplikasi software [hal. 251]. *Data per buku (2023).*',
+        'Tanpa koordinasi, "tangan kiri" perusahaan tidak bergerak selaras dengan "tangan kanan". Karyawan cenderung mengidentifikasi diri dengan departemen atau timnya sendiri, mengutamakan kepentingannya, dan mungkin tidak mau berkompromi dan berkolaborasi dengan unit lain, bahkan demi kebaikan organisasi. Masalah ini makin besar di tingkat internasional karena jarak geografis, zona waktu, nilai budaya, dan bahasa [hal. 251–252].',
+        '**Koordinasi adalah hasil dari informasi dan kerja sama**; manajer dapat merancang sistem dan struktur untuk mendorongnya [hal. 252].',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 7.11: Evolution of Organization Structures** [hal. 252]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tahap', 'Ciri menurut teks'],
+      rows: [
+        ['1. Traditional Vertical Structure', 'Efektif di lingkungan stabil, tetapi tidak memberi koordinasi horizontal yang dibutuhkan saat perubahan cepat'],
+        ['2. Cross-Functional Teams and Project Managers', 'Tim lintas fungsi, task force, dan project manager bekerja **di dalam** struktur vertikal, tetapi menambah komunikasi dan kerja sama horizontal'],
+        ['3. Reengineering to Horizontal Teams', 'Organisasi distrukturkan menjadi tim yang bekerja pada proses horizontal'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber: [hal. 252].' },
+    { kind: 'p', text: '**Reengineering** = desain ulang radikal proses bisnis untuk mencapai perbaikan dramatis dalam biaya, mutu, layanan, dan kecepatan. Karena fokusnya alur kerja horizontal, bukan fungsi, reengineering umumnya menggeser organisasi dari struktur vertikal yang kuat ke struktur yang menekankan koordinasi horizontal; hierarki vertikal menjadi datar, mungkin hanya dengan beberapa eksekutif senior di fungsi pendukung seperti keuangan dan HR [hal. 252].' },
+    { kind: 'h3', text: '9b. Task Force, Tim Lintas Fungsi, dan Project Manager' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Mekanisme', 'Arti menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Task force**', 'Tim atau komite **sementara** yang dibentuk untuk menyelesaikan masalah yang melibatkan beberapa departemen atau divisi. Anggotanya mewakili departemen masing-masing dan berbagi informasi yang memungkinkan koordinasi', 'Setelah mengakuisisi Time Warner dan mengganti namanya menjadi WarnerMedia, AT&T membentuk banyak task force ("workstreams") berisi orang dari tiga divisi utama (HBO, Turner, Warner Brothers) yang lama diwarnai perebutan wilayah, untuk menganalisis perubahan industri media dan menggali ide', '[hal. 252]'],
+        ['**Cross-functional team**', 'Peserta dari beberapa departemen **bertemu secara rutin** untuk menyelesaikan masalah bersama yang **berkelanjutan**. Mirip task force, tetapi menangani masalah yang terus ada, bukan sementara, dan bisa bertahan beberapa tahun. Anggota berpikir untuk kebaikan seluruh organisasi, bukan hanya departemennya', 'Intel ("One Intel") mengembangkan produk dalam tim kecil berisi orang dari berbagai kelompok dan meningkatkan komunikasi antartim', '[hal. 253]'],
+        ['**Project manager**', 'Orang yang bertanggung jawab mengoordinasikan kegiatan beberapa departemen untuk menyelesaikan proyek tertentu. Sebutan lain: product manager, integrator, program manager, process owner. Ciri khasnya: **bukan anggota** departemen yang dikoordinasikan, melainkan berada **di luar** departemen-departemen itu', 'General Mills menugaskan manajer untuk tiap lini produk (Cheerios, Yoplait, Häagen-Dazs); product manager menetapkan target anggaran, target pemasaran, dan strategi, serta memperoleh kerja sama dari bagian periklanan, produksi, dan penjualan', '[hal. 253]'],
+      ],
+    },
+    { kind: 'p', text: '*Data per buku (2023).* Di Remember This, task force dirumuskan sebagai tim atau komite sementara yang dibentuk untuk menyelesaikan masalah **jangka pendek** tertentu yang melibatkan beberapa departemen [hal. 256].' },
+    { kind: 'p', text: '**Exhibit 7.12: Example of Project Manager Relationships to Other Departments** [hal. 253]' },
+    { kind: 'p', text: 'Puncak: **President, Sailboat Division**. Project Manager, Sails and Masts, digambar di samping bagan dan juga melapor ke President.' },
+    {
+      kind: 'table',
+      headers: ['Departemen', 'Anggota yang ditugaskan ke proyek', 'Hubungan ke Project Manager, Sails and Masts'],
+      rows: [
+        ['Finance', 'Budget Analyst', 'Garis putus-putus'],
+        ['Engineering', 'Product Designer', 'Garis putus-putus'],
+        ['Purchasing', 'Buyer', 'Garis putus-putus'],
+        ['Marketing', 'Market Researcher', 'Garis putus-putus'],
+      ],
+    },
+    { kind: 'p', text: 'Project manager digambar di satu sisi bagan untuk menunjukkan **authority atas proyek, tetapi tidak atas orang-orang yang ditugaskan**. *Dashed lines* (garis putus-putus) ke project manager menunjukkan **tanggung jawab koordinasi dan komunikasi** dengan anggota tim yang ditugaskan, sedangkan **manajer departemen tetap memegang line authority** atas karyawan fungsionalnya [hal. 253].' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Garis putus-putus **bukan** garis otoritas kedua. Karena line authority tetap pada manajer departemen [hal. 253], karyawan dalam pola ini tetap punya satu atasan lini. Ini berbeda dari matrix, yang memang punya dua garis otoritas dan two-boss employees [hal. 242–244]. Perbedaan ini dipakai di kasus Ace\'s (§15).',
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (3/3)',
+      text: 'Menjelang tutup buku akhir tahun, perusahaan dagang dapat membentuk panitia stock opname berisi perwakilan bagian akuntansi, gudang, dan penjualan. Setiap anggota mewakili bagiannya dan berbagi informasi agar penghitungan fisik dan pencatatan bisa dicocokkan. Panitia dibubarkan setelah stock opname selesai. Karena sifatnya **sementara** dan menangani masalah yang melibatkan beberapa departemen, panitia ini adalah **task force** menurut definisi buku [hal. 252].',
+    },
+    // ---------------------------------------------------------------- §10
+    { kind: 'h2', text: '10. Koordinasi Horizontal (2): Relational Coordination' },
+    { kind: 'p', text: '**Relational coordination** adalah **tingkat tertinggi** koordinasi horizontal. Definisinya: "frequent, timely, problem-solving communication carried out through [employee] relationships of shared goals, shared knowledge, and mutual respect", yaitu komunikasi yang sering, tepat waktu, dan menyelesaikan masalah, yang berlangsung melalui hubungan antarkaryawan yang dilandasi tujuan bersama, pengetahuan bersama, dan saling menghormati [hal. 253].' },
+    {
+      kind: 'ul',
+      items: [
+        'Relational coordination **bukan perangkat atau mekanisme struktural** seperti project manager, melainkan bagian dari "fabric and culture" organisasi [hal. 253–254].',
+        'Dalam organisasi dengan relational coordination tinggi, orang berbagi informasi dengan bebas melintasi batas departemen dan berinteraksi terus-menerus untuk berbagi pengetahuan dan menyelesaikan masalah. Koordinasi berjalan melalui jaringan hubungan positif yang berkelanjutan, bukan karena peran atau mekanisme koordinasi formal; karyawan berkoordinasi langsung antarunit [hal. 254].',
+      ],
+    },
+    { kind: 'p', text: '**Lingkungan fisik.** Keinginan akan relational coordination tercermin pada perubahan lingkungan fisik kantor. Pemimpin redaksi *National Geographic* meminta staf melepas kantor pribadi dan bekerja di ruang redaksi bersama tempat penulis cetak dan digital, editor, dan editor foto mudah berinteraksi. Perusahaan lain meninggalkan bilik kerja dan memakai **kantor terbuka** dengan ruang tenang untuk percakapan dan penyelesaian masalah spontan; Campbell Soup dan Microsoft merancang ruang bersama dengan "huddle rooms" untuk rapat dua sampai empat orang [hal. 254]. Namun pandemi COVID-19 mengubah sebagian hal ini: orang tidak lagi dibatasi dinding tetapi dibatasi layar, dan hubungan informal yang terbentuk saat mampir ke ruang rekan berkurang [hal. 254]. Studi menunjukkan kedekatan fisik meningkatkan kolaborasi, tetapi lokasi fisik hanyalah salah satu aspek [hal. 254].' },
+    { kind: 'p', text: '**Cara membangun relational coordination** [hal. 254]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Praktik', 'Isi menurut buku'],
+      rows: [
+        ['Pelatihan', 'Melatih keterampilan berinteraksi dan menyelesaikan konflik antardepartemen berdasarkan tujuan bersama, bukan tujuan departemen masing-masing'],
+        ['Reward', 'Imbalan didasarkan pada upaya dan pencapaian tim'],
+        ['Span supervisor garis depan', 'Span of control lebih kecil agar supervisor bisa membangun hubungan kerja yang dekat dan melatih serta membimbing karyawan'],
+      ],
+    },
+    { kind: 'p', text: '**Contoh: Southwest Airlines** [hal. 254–255]. Southwest punya waktu turnaround tersingkat di industrinya, antara lain karena manajer mendorong relational coordination. Alih-alih mencari siapa yang disalahkan saat penerbangan tertunda, Southwest memakai **team delay** untuk menunjukkan masalah koordinasi antarkelompok. Penekanan pada tim memfokuskan semua orang pada tujuan bersama: keberangkatan tepat waktu, penanganan bagasi yang akurat, dan kepuasan pelanggan. Southwest memakai span supervisi kecil, sekitar satu supervisor untuk delapan atau sembilan karyawan garis depan. **Bila relational coordination tinggi, orang berbagi informasi dan mengoordinasikan kegiatannya tanpa perlu diperintah atasan atau mekanisme formal** [hal. 255].' },
+    { kind: 'p', text: 'Fitur Recipe for Success menambahkan bahwa koordinasi juga dibutuhkan saat perusahaan berekspansi dan harus menggalang dukungan pemasok, bukan hanya karyawan: Sweetgreen, jaringan restoran salad, harus mencari petani lokal untuk tiap tokonya dan akhirnya menghubungi petani organik yang mampu memasok dalam jumlah lebih besar [hal. 254–255].' },
+    // ---------------------------------------------------------------- §11
+    { kind: 'h2', text: '11. Factors Shaping Structure: Strategi dan Workflow Technology' },
+    { kind: 'p', text: 'Hierarki vertikal tetap bertahan karena memberi manfaat penting: tingkat hierarki tertentu sering dibutuhkan untuk mengorganisasi banyak orang agar tugas kompleks bisa dikerjakan dalam kerangka yang koheren. Namun di lingkungan sekarang, struktur vertikal sering perlu **diimbangi mekanisme horizontal yang kuat** [hal. 256]. Contoh: Walmart menggabungkan tim pembelian produk online dan tokonya (yang sebelumnya berkonflik soal harga dan opsi pengiriman) menjadi enam tim kategori yang anggotanya mewakili pembelian toko dan online, serta menggabungkan tim rantai pasok dan keuangannya [hal. 256]. *Data per buku (2023).*' },
+    { kind: 'p', text: 'Organisasi yang dirancang sesuai situasinya, dengan mempertimbangkan faktor seperti **ukuran organisasi, strategi, dan teknologi produksi**, akan berkinerja lebih baik. Dua faktor yang sangat penting adalah **tujuan strategis** dan **sifat workflow technology** [hal. 256]. Buku menyebut ukuran organisasi sebagai faktor tetapi tidak membahasnya lebih lanjut di bab ini.' },
+    { kind: 'p', text: '**Exhibit 7.13: Factors Affecting Organization Structure** [hal. 256–257]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Arah tekanan', 'Sumber tekanan', 'Isi'],
+      rows: [
+        ['Dari atas ke bawah (top-down)', '**Strategic Needs**', 'Environment, strategy, goals: organisasi dirancang agar sesuai dengan lingkungan dan mencapai tujuan strategis'],
+        ['Dari bawah ke atas (bottom-up)', '**Operational Needs**', 'Technology, work processes: teknologi dan proses kerja untuk menghasilkan produk dan layanan'],
+        ['Hasil', '**Optimum Organization Structure**', '—'],
+      ],
+    },
+    { kind: 'h3', text: '11a. Structure Follows Strategy' },
+    { kind: 'p', text: 'Studi menunjukkan kinerja bisnis sangat dipengaruhi seberapa baik struktur perusahaan selaras dengan maksud strategisnya dan kebutuhan lingkungannya, sehingga manajer berusaha memilih strategi dan struktur yang sejalan [hal. 257]. Dua strategi Porter (Chapter 5): dengan **differentiation strategy**, organisasi berusaha mengembangkan produk inovatif yang unik di pasar; dengan **cost leadership strategy**, organisasi mengejar efisiensi internal [hal. 257].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Mechanistic', 'Organic'],
+      rows: [
+        ['Tujuan dan lingkungan', 'Efisiensi; lingkungan stabil', 'Inovasi; lingkungan yang cepat berubah'],
+        ['Struktur', 'Kaku, vertikal, tersentralisasi; sebagian besar keputusan dibuat di puncak', 'Jauh lebih longgar, mengalir bebas, dan adaptif; lebih horizontal'],
+        ['Ciri lain', 'Sangat terspesialisasi; ditandai aturan, prosedur, dan hierarki otoritas yang jelas', 'Otoritas keputusan terdesentralisasi; orang di level bawah punya lebih banyak responsibility dan authority untuk menyelesaikan masalah'],
+        ['Sumber', '[hal. 257]', '[hal. 257]'],
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 7.14: Relationship of Structural Approach to Strategy and the Environment** [hal. 258]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['', 'Functional Structure', 'Functional with Interdepartmental Task Forces, Integrators', 'Divisional Structure', 'Horizontal Teams'],
+      rows: [
+        ['Posisi pada kontinum', 'Ujung mechanistic', 'Antara', 'Antara', 'Ujung organic'],
+      ],
+    },
+    { kind: 'p', text: 'Tujuan strategis di ujung mechanistic: **cost leadership, efficiency, stability**. Tujuan strategis di ujung organic: **differentiation, innovation, flexibility**.' },
+    { kind: 'p', text: 'Penjelasan teks [hal. 257–258]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Struktur fungsional murni cocok untuk tujuan efisiensi internal di lingkungan stabil; spesialisasi tugas dan chain of command yang ketat mewujudkan pemakaian sumber daya langka secara efisien, tetapi tidak membuat organisasi fleksibel atau inovatif.',
+        'Tim horizontal cocok bila tujuan utamanya inovasi dan organisasi perlu fleksibel menghadapi lingkungan tidak pasti; tiap tim kecil dan responsif serta punya orang dan sumber daya untuk tugasnya, tetapi dengan mengorbankan efisiensi pemakaian sumber daya.',
+        'Struktur fungsional dengan tim lintas fungsi dan project manager memberi koordinasi dan fleksibilitas lebih besar daripada fungsional murni. Struktur divisional mendorong diferensiasi karena tiap divisi bisa fokus pada produk dan pelanggan tertentu, walau divisi cenderung lebih besar dan kurang fleksibel daripada tim kecil.',
+        'Exh. 7.14 tidak memuat semua struktur yang mungkin, tetapi menunjukkan cara struktur dipakai untuk mendukung tujuan strategis.',
+      ],
+    },
+    { kind: 'p', text: 'Label exhibit "Integrators" dan teks "project managers" merujuk ke peran yang sama: integrator adalah salah satu sebutan project manager [hal. 253].' },
+    { kind: 'h3', text: '11b. Structure Fits the Workflow Technology' },
+    { kind: 'p', text: '**Workflow technology** = pengetahuan, alat, teknik, dan kegiatan yang dipakai untuk mengubah input organisasi menjadi output. Mencakup mesin, keterampilan karyawan, dan prosedur kerja; dapat dipandang sebagai "production activities", misalnya menghasilkan konten situs web, game digital, coran baja, program televisi, atau software [hal. 258].' },
+    { kind: 'p', text: 'Riset paling berpengaruh tentang hubungan teknologi manufaktur dan struktur dilakukan **Joan Woodward**, sosiolog industri Inggris, dengan data dari 100 perusahaan Inggris. Ia menemukan perusahaan manufaktur dapat dikelompokkan menjadi tiga tipe teknologi produksi [hal. 258–259]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tipe', 'Arti menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Small-batch production** (small-batch and unit production)', 'Memproduksi barang dalam batch satu atau beberapa produk sesuai spesifikasi pelanggan; juga untuk produk besar yang unik. Dekat dengan kerja keterampilan tradisional karena manusia berperan besar', 'Pakaian pesanan, mesin perkakas pesanan khusus, kapsul ruang angkasa, satelit, kapal selam', '[hal. 258–259]'],
+        ['**Mass production** (large-batch and mass production)', 'Ditandai proses produksi yang terstandar; volume besar, semua pelanggan menerima produk yang sama, produk standar masuk persediaan. Mesin mengerjakan sebagian besar pekerjaan fisik, karyawan melengkapi mesin', 'Jalur perakitan mobil; teknik large-batch untuk produk tembakau dan tekstil', '[hal. 259]'],
+        ['**Continuous process production**', 'Seluruh alur kerja dimekanisasi dalam bentuk teknologi yang canggih dan kompleks; proses berjalan terus tanpa mulai dan berhenti. Operator manusia tidak ikut dalam produksi aktual; mereka membaca indikator, memperbaiki mesin rusak, dan mengelola proses', 'Pabrik kimia, penyulingan minuman, kilang minyak, pembangkit listrik tenaga nuklir', '[hal. 259]'],
+      ],
+    },
+    { kind: 'p', text: '**Technical complexity** = tingkat keterlibatan mesin dalam produksi hingga menggantikan manusia. Dengan teknologi yang kompleks, karyawan hampir tidak dibutuhkan kecuali untuk memantau mesin [hal. 259].' },
+    { kind: 'p', text: '**Exhibit 7.15: Relationship Between Manufacturing Technology and Organization Structure** [hal. 259]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['', 'Small Batch', 'Mass Production', 'Continuous Process'],
+      rows: [
+        ['**Technical Complexity of Production Technology**', 'Low', 'Medium', 'High'],
+        ['**Structural Characteristics**', '', '', ''],
+        ['Centralization', 'Low', 'High', 'Low'],
+        ['Top administrator ratio', 'Low', 'Medium', 'High'],
+        ['Indirect/direct labor ratio', '1/9', '1/4', '1/1'],
+        ['Supervisor\'s span of management', '23', '48', '15'],
+        ['Communication: Written (vertical)', 'Low', 'High', 'Low'],
+        ['Communication: Verbal (horizontal)', 'High', 'Low', 'High'],
+        ['**Overall Structure**', 'Organic', 'Mechanistic', 'Organic'],
+      ],
+    },
+    { kind: 'p', text: 'Cara membaca exhibit ini menurut teks [hal. 259–260]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Kemungkinan centralization **tinggi hanya pada mass production**; mesin produksi massal yang terstandar membutuhkan keputusan terpusat serta aturan dan prosedur yang jelas.',
+        'Rasio administratif dan persentase tenaga kerja tidak langsung meningkat seiring kompleksitas teknologi; lebih banyak tenaga tidak langsung (mis. tenaga pemeliharaan) dibutuhkan karena mesin makin kompleks.',
+        'Span supervisor garis depan **terbesar pada mass production**: di jalur perakitan, pekerjaan begitu rutin sehingga seorang supervisor bisa menangani rata-rata 48 karyawan. Span pada small batch dan continuous process lebih kecil karena dibutuhkan supervisi lebih dekat.',
+        'Secara keseluruhan, perusahaan small batch dan continuous process punya struktur yang agak longgar dan fleksibel (organic), sedangkan perusahaan mass production punya struktur vertikal yang ketat (mechanistic).',
+      ],
+    },
+    { kind: 'p', text: 'Woodward menemukan hubungan struktur–teknologi berkaitan langsung dengan kinerja: perusahaan berkinerja rendah cenderung menyimpang dari bentuk struktur yang sesuai, sering memakai struktur yang cocok untuk tipe teknologi lain; perusahaan berkinerja tinggi punya ciri yang mirip dengan Exh. 7.15 [hal. 260].' },
+    // ---------------------------------------------------------------- §12
+    { kind: 'h2', text: '12. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'p', text: '**Simpul pusat:** DESIGNING ORGANIZATION STRUCTURE' },
+    {
+      kind: 'ul',
+      items: [
+        '**1. ORGANIZING DAN STRUKTUR**\n- Organizing: Pengerahan sumber daya untuk tujuan strategis; mengikuti strategi\n- Organization structure: Tiga unsur: tugas formal; hubungan pelaporan formal; sistem koordinasi\n- Organization chart: Gambaran visual struktur (Exh. 7.1)',
+        '**2. STRUKTUR VERTIKAL**\n- Division of labor: Spesialisasi; efisien tetapi bisa menghambat koordinasi\n- Chain of command: Unity of command; scalar principle; authority (3 ciri); responsibility; accountability; delegation\n- Line vs staff: Line authority (mengarahkan) vs staff authority (menasihati)\n- Span of management: 8 faktor span besar; tall vs flat (Exh. 7.2)\n- Centralization vs decentralization: 3 faktor: lingkungan, strategi, krisis',
+        '**3. DEPARTMENTALIZATION**\n- Tradisional: Functional (U-form) · Divisional (M-form; geografis/pelanggan) · Matrix (dua otoritas; two-boss, matrix boss, top leader)\n- Inovatif: Team (cross-functional, permanent, team-based) · Virtual network (outsourcing, hub)\n- Perbandingan: Exh. 7.10: kelebihan dan kekurangan lima pendekatan',
+        '**4. KOORDINASI HORIZONTAL**\n- Kebutuhan: Coordination; collaboration; reengineering (Exh. 7.11)\n- Mekanisme: Task force (sementara) · Cross-functional team (berkelanjutan) · Project manager (garis putus-putus, Exh. 7.12)\n- Tingkat tertinggi: Relational coordination (tujuan, pengetahuan, rasa hormat bersama)',
+        '**5. FAKTOR PEMBENTUK STRUKTUR**\n- Strategi: Differentiation ↔ organic; cost leadership ↔ mechanistic (Exh. 7.13, 7.14)\n- Workflow technology: Woodward: small batch, mass production, continuous process; technical complexity (Exh. 7.15)',
+      ],
+    },
+    { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
+      rows: [
+        ['Division of labor', 'Koordinasi horizontal', 'Spesialisasi berlebihan menghambat koordinasi; banyak perusahaan memakai tim untuk meningkatkan koordinasi', '[hal. 230]'],
+        ['Span of management', 'Tall vs flat', 'Rata-rata span menentukan apakah struktur tall atau flat', '[hal. 234]'],
+        ['Span lebih lebar', 'Delegation', 'Tren span lebih lebar dipakai untuk memudahkan delegasi', '[hal. 234]'],
+        ['Functional structure', 'Centralization', 'Chain of command bertemu di puncak, sehingga menjadi cara menyentralisasi keputusan', '[hal. 238]'],
+        ['Divisional structure', 'Decentralization', 'Chain of command bertemu lebih rendah; divisional mendorong decentralization', '[hal. 241]'],
+        ['Matrix', 'Unity of command', 'Dua garis otoritas melanggar unity of command', '[hal. 243]'],
+        ['Team approach', 'Delegation dan decentralization', 'Tim memberi cara mendelegasikan authority; risikonya desentralisasi berlebihan', '[hal. 244–246]'],
+        ['Cross-functional teams (departmentalization)', 'Koordinasi horizontal', 'Tim lintas fungsi melengkapi struktur functional atau divisional dengan koordinasi horizontal', '[hal. 245, 253]'],
+        ['Project manager (garis putus-putus)', 'Chain of command', 'Line authority tetap pada manajer departemen; project manager memegang koordinasi dan komunikasi', '[hal. 253]'],
+        ['Relational coordination', 'Span of management', 'Supervisor garis depan diberi span lebih kecil agar bisa membimbing karyawan (Southwest: sekitar 1:8–9)', '[hal. 254–255]'],
+        ['Lingkungan tidak pasti', 'Decentralization dan organic', 'Perubahan dan ketidakpastian terkait decentralization; lingkungan yang cepat berubah terkait sistem organic', '[hal. 237, 257]'],
+        ['Structure follows strategy', 'TM05 (strategi Porter)', 'Differentiation dan cost leadership dibahas di Chapter 5', '[hal. 257]'],
+        ['Mass production', 'Centralization dan mechanistic', 'Centralization tinggi dan struktur mechanistic hanya pada mass production', '[hal. 259–260]'],
+      ],
+    },
+    { kind: 'p', text: '**Kata kunci per cabang:** Organizing: *deployment of resources, strategy defines what – organizing defines how, formal tasks, reporting relationships, coordination systems* · Vertikal: *specialization, unity of command, scalar principle, acceptance theory, accountability, delegation, advise vs direct, span of control, tall vs flat, decision level* · Departmentalization: *U-form, M-form, self-contained unit, dual authority, two-boss, circles, outsourcing, hub* · Horizontal: *coordination, collaboration, reengineering, temporary vs continuing, integrator, dashed line, shared goals, mutual respect, team delay* · Faktor: *strategic needs vs operational needs, differentiation, cost leadership, mechanistic, organic, technical complexity*' },
+    // ---------------------------------------------------------------- §13
+    { kind: 'h2', text: '13. Contoh Penerapan' },
+    { kind: 'p', text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):' },
+    {
+      kind: 'table',
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
+      rows: [
+        ['Restrukturisasi karena kebutuhan baru', 'Korps Marinir AS: regu senapan ditata ulang karena teknologi medan tempur', '228'],
+        ['Posisi baru untuk isu strategis baru', 'Walmart: global chief technology officer', '229'],
+        ['Pelanggaran unity of command', 'Cognizant: "two in a box"', '231'],
+        ['Chain of command yang tidak jelas', 'Deepwater Horizon (Half-Baked Management)', '232'],
+        ['Span lebih lebar', 'Walmart "Great Workplace"', '233'],
+        ['Centralization', 'Chef Oya\'s TRAP: prosedur kerja dan keputusan terpusat', '235'],
+        ['Centralization saat krisis', 'Boeing: pengawasan keselamatan disentralisasi', '237'],
+        ['Functional structure', 'Southwest Airlines; Blue Bell Creameries', '238'],
+        ['Divisional structure', 'Procter & Gamble: enam divisi produk', '240'],
+        ['Divisi geografis', 'Disney Channel', '241'],
+        ['Matrix', 'Starbucks AS: divisi geografis dan departemen fungsional', '242'],
+        ['Team-based structure', 'Haier: microenterprise', '246'],
+        ['Virtual network', 'Nike: desain dan pemasaran di dalam, manufaktur dialihdayakan', '249'],
+        ['Task force', 'AT&T/WarnerMedia: "workstreams"', '252'],
+        ['Project manager', 'General Mills: manajer per lini produk', '253'],
+        ['Relational coordination', 'Southwest Airlines: team delay', '254–255'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh lain: Spotify dan Standard Chartered (§1), Standard Chartered dan BP (§2–§3), McDonald\'s dan Exh. 7.2 (§4), Ouchi, Walmart, Toyota, Wells Fargo, Mississippi Power, dan Whole Foods (§5), AustralianSuper, UTC, Alphabet, dan Verizon (§6), Total Attorneys, Zappos, Netflix, W. L. Gore, dan Valve (§8a), Honda, GitLab, Smart Balance, dan K\'Nex (§8b), CarMax, GE, dan Intel (§9), *National Geographic*, Campbell Soup, dan Sweetgreen (§10), serta Walmart dan Woodward (§11). *Data per buku (2023).*' },
+    { kind: 'p', text: '**Contoh di luar buku** (3 dari maksimal 3 slot terpakai): shared service center akuntansi grup usaha sebagai centralization untuk menghapus duplikasi (§5), kantor akuntan publik yang dibagi per jenis layanan sebagai divisional structure (§6b), dan panitia stock opname menjelang tutup buku sebagai task force (§9b).' },
+    // ---------------------------------------------------------------- §14
+    { kind: 'h2', text: '14. Bedah Film: The Intern (Ilustrasi)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Ilustrasi',
+      text: '*The Intern* (2015) adalah **film pilihan AkuntansiHub, bukan dari kelas**, dan buku tidak menyebut film ini. Bagian ini hanya memuat alur besar, tanpa dialog, adegan detail, nama tokoh atau aktor, atau angka apa pun dari film; tokoh disebut dengan perannya. Kaitan film dengan teori di bawah adalah **analisis AkuntansiHub**, bukan fakta dari buku.',
+    },
+    { kind: 'h3', text: '14.1 Sinopsis Singkat dan Tokoh (Ilustrasi)' },
+    { kind: 'p', text: 'Film berlatar sebuah perusahaan rintisan fashion online di New York. Pendirinya membangun usaha itu dari kecil hingga tumbuh cepat menjadi perusahaan dengan banyak karyawan, dan ia masih terlibat langsung di hampir semua urusan, dari layanan pelanggan sampai pengemasan barang.' },
+    { kind: 'p', text: 'Perusahaan membuka program magang untuk warga senior. Seorang pensiunan yang dulu menjadi eksekutif di perusahaan tradisional diterima dan ditempatkan langsung di bawah pendiri. Awalnya pendiri tidak memberinya pekerjaan, tetapi perlahan magang senior itu membantu rekan-rekannya dan akhirnya pendiri sendiri. Sementara itu, para investor menilai perusahaan membutuhkan CEO berpengalaman dari luar, dan pendiri harus memutuskan apakah akan menerimanya.' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tokoh (peran)', 'Posisinya dalam alur besar'],
+      rows: [
+        ['**Pendiri**', 'Memimpin perusahaan dan terlibat langsung di banyak urusan operasional'],
+        ['**Magang senior**', 'Pensiunan eksekutif; masuk tanpa kewenangan formal dan ditempatkan di bawah pendiri'],
+        ['**Asisten pendiri**', 'Mengelola jadwal pendiri; kewalahan dengan beban kerja'],
+        ['**Karyawan muda** (kolektif)', 'Rekan kerja dari berbagai posisi'],
+        ['**Eksekutif penghubung investor**', 'Menyampaikan usulan investor tentang CEO dari luar'],
+        ['**Investor** (kolektif)', 'Mendorong perekrutan CEO berpengalaman dari luar'],
+      ],
+    },
+    { kind: 'h3', text: '14.2 Momen Film dan Konsep Chapter 7 (Ilustrasi; analisis AkuntansiHub)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Momen alur besar (Ilustrasi)', 'Konsep Chapter 7', 'Analisis AkuntansiHub (kaitan dengan buku)'],
+      rows: [
+        ['M1. Perusahaan tumbuh cepat dari usaha kecil menjadi perusahaan dengan banyak karyawan', '**Kebutuhan koordinasi**', 'Buku menyatakan saat organisasi tumbuh, posisi dan departemen baru ditambahkan dan organisasi makin kompleks, sehingga manajer harus menemukan cara menyatukan semuanya [hal. 251]'],
+        ['M2. Mantan eksekutif masuk sebagai magang tanpa kewenangan', '**Authority melekat pada posisi, bukan orang**', 'Authority adalah milik posisi: orang lain di posisi yang sama akan punya authority yang sama [hal. 231]. Pengalaman eksekutif magang itu tidak membawa authority, karena posisinya sekarang posisi magang'],
+        ['M3. Pendiri tidak memberi tugas kepada magang dan memilih mengerjakan sendiri', '**Delegation**', 'Buku menyatakan banyak manajer merasa sulit mendelegasikan, dan manajer yang tidak bisa mendelegasikan melemahkan peran bawahannya serta menghalangi mereka bekerja efektif [hal. 231]'],
+        ['M4. Pendiri sendiri menangani telepon pelanggan dan turun ke bagian pengemasan untuk menunjukkan cara mengemas', '**Centralization**', 'Menurut buku, restoran kecil di bisnis yang menuntut mutu tinggi kadang "centralized in their work procedures and decision making". Perusahaan di film bukan restoran, jadi kaitannya berupa analogi. Pembandingnya Chef Oya, yang harus belajar "let go" karena terbiasa mengerjakan semuanya sendiri [hal. 235]'],
+        ['M5. Sebuah meja berantakan dibiarkan semua orang, lalu dibereskan magang senior', '**Accountability**', 'Accountability berarti orang yang memegang authority dan responsibility wajib melaporkan dan mempertanggungjawabkan hasil tugasnya kepada atasan di chain of command [hal. 231]. Meja yang dibiarkan menunjukkan tugas yang tidak diberikan kepada siapa pun, sehingga tidak ada yang harus melaporkannya. Buku menambahkan bahwa setiap orang perlu tahu apa yang menjadi tanggung jawabnya [hal. 231]'],
+        ['M6. Kantor terbuka; magang membantu rekan dari berbagai posisi, dan rekan-rekan mulai datang kepadanya', '**Relational coordination**; kantor terbuka', 'Relational coordination berjalan lewat hubungan yang dilandasi tujuan bersama, pengetahuan bersama, dan saling menghormati, bukan lewat peran formal [hal. 253–254]. Buku juga mencatat tren kantor terbuka untuk mendorong interaksi [hal. 254]. Namun film hanya menunjukkan level individu, sedangkan buku menyebut pelatihan, reward tim, dan span supervisor sebagai cara membangunnya di level organisasi [hal. 254]'],
+        ['M7. Suasana startup santai dan informal, tetapi keputusan tetap di tangan pendiri', '**Bahan diskusi (analisis):** mechanistic vs organic', 'Menurut buku, sistem organic ditandai struktur horizontal dan otoritas keputusan yang **terdesentralisasi** [hal. 257]. Diskusikan: apakah suasana santai sudah membuat organisasi ini organic, bila keputusan masih terpusat pada pendiri?'],
+        ['M8. Investor mendorong perekrutan CEO berpengalaman dari luar', '**Posisi baru untuk isu strategis baru**', 'Buku menyatakan saat organisasi menghadapi isu strategis baru, manajer sering membuat posisi baru [hal. 229], dan reorganisasi sering diperlukan untuk mencerminkan strategi atau kondisi pasar yang baru [hal. 228]'],
+        ['M9. CEO dari luar akan memimpin perusahaan di atas pendiri', '**Chain of command**', 'Chain of command menunjukkan siapa melapor kepada siapa [hal. 230]. Menambah posisi di puncak mengubah garis pelaporan pendiri sendiri'],
+      ],
+    },
+    { kind: 'h3', text: '14.3 Managerial Lessons Learned (Ilustrasi; analisis)' },
+    {
+      kind: 'ol',
+      items: [
+        '**Pertumbuhan menuntut desain koordinasi.** Makin banyak posisi dan departemen, makin kompleks organisasi, dan chain of command saja tidak cukup [hal. 251].',
+        '**Delegasikan agar bawahan bisa bekerja.** Manajer yang tidak bisa mendelegasikan melemahkan peran bawahannya [hal. 231], seperti Chef Oya yang harus belajar "let go" [hal. 235].',
+        '**Tanggung jawab harus jelas.** Accountability mensyaratkan orang tahu apa yang harus ia laporkan dan pertanggungjawabkan [hal. 231].',
+        '**Organic berarti keputusan terdesentralisasi, bukan sekadar suasana santai.** Ciri organic menurut buku adalah struktur horizontal dan otoritas keputusan di level bawah [hal. 257].',
+        '**Menambah posisi di puncak adalah keputusan struktural.** Posisi baru untuk isu strategis baru [hal. 229] mengubah chain of command, termasuk bagi pendiri [hal. 230].',
+      ],
+    },
+    // ---------------------------------------------------------------- §15
+    { kind: 'h2', text: '15. Analisis Kasus: Ace\'s Freshest Grocery Store [hal. 263–264]' },
+    { kind: 'h3', text: '15.1 Case Summary' },
+    { kind: 'p', text: 'Toko Ace\'s Freshest pertama dibuka pada 1977 oleh Bill Acer dan saudarinya, Doris, dengan warisan kecil, di pinggiran Atlanta, Georgia. Lokasinya bagus, keduanya berkepribadian menyenangkan dan bersikap "serve the customer", dan toko ini dikenal karena daging dan sayur-buahnya yang bermutu. Pada 2019 jaringan ini sudah punya lebih dari 200 toko di tenggara Amerika Serikat, dengan kantor pusat di pusat kota Atlanta [hal. 263].' },
+    { kind: 'p', text: 'Setiap toko punya tiga manajer departemen: daging (meat), bahan pangan (grocery), dan sayur-buah (produce). Manajer grocery merangkap store manager, tetapi tidak punya otoritas langsung atas departemen meat dan produce, karena masing-masing melapor ke spesialis di tingkat distrik. Struktur ini menjaga mutu dengan sangat baik, tetapi di dalam toko muncul ketidakpuasan: turnover store manager tinggi, koordinasi buruk, dan manajer departemen saling bertahan pada wilayah tanggung jawabnya. Doris Acer lalu meminta saran seorang konsultan, yang mengusulkan agar ketiga departemen melapor ke store manager, sementara spesialis distrik hanya punya hubungan garis putus-putus [hal. 263–264].' },
+    { kind: 'p', text: '**Fakta kunci menurut buku** [hal. 263–264]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Yang tertulis di kasus'],
+      rows: [
+        ['Pendirian', '1977, oleh Bill Acer dan saudarinya, Doris; modal warisan kecil; pinggiran Atlanta, Georgia; langsung sukses. Keduanya punya "winning personalities and a \'serve the customer\' attitude"'],
+        ['Skala (2019)', '"More than 200 stores"; kantor pusat di pusat kota Atlanta mengawasi toko di tenggara AS. "Four regional managers responsible for about 50 stores each. Within each region, there were four districts containing 12 to 13 stores each."'],
+        ['Struktur awal di toko', 'Tiap toko punya meat department manager, grocery department manager, dan produce department manager. Grocery manager juga menjadi store manager, tetapi "did not have direct authority over the meat department or the produce department"'],
+        ['Garis lapor awal', 'Meat department manager → district meat manager specialist; produce department manager → district produce manager specialist; store/grocery department manager → district store supervisor. Kasus: "This direct line of authority ... provided excellent quality control"'],
+        ['Masalah', '"Growing dissatisfaction within the stores." Turnover store manager tinggi, "mostly because they had no control over the meat and produce departments". "Coordination within stores was terrible"'],
+        ['Contoh kejadian', 'Store manager memutuskan promosi produk Coke sebagai loss leader; ratusan karton Coke didatangkan, tetapi manajer meat dan produce "would not give up floor space". Store manager yang frustrasi menyatakan "this was no way to run a business and quit on the spot"'],
+        ['Pola konflik', 'Banyak toko mengalami "conflict rather than cooperation" di antara manajer meat, produce, dan store, "because each was very protective of their separate responsibilities"'],
+        ['Usulan konsultan (diminta Doris Acer)', 'Meat, grocery, dan produce melapor ke store manager, yang punya "complete control over store activities" dan bertanggung jawab mengoordinasikan ketiganya. Meat manager dan produce manager punya "dashed-line relationship (communication, coordination)" dengan spesialis distrik masing-masing. Store manager melapor ke district store supervisor. Spesialis distrik mengunjungi toko secara berkala "to provide advice and help"'],
+        ['Klaim konsultan', 'Konsultan "was enthusiastic": store manager akan punya lebih banyak kebebasan dan tanggung jawab; struktur baru "would encourage coordination within stores and give managers the ability to adapt to local tastes and customer needs"; hubungan garis putus-putus "would ensure excellent meat, grocery, and produce departments across all stores"'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Batas fakta kasus: kasus **tidak menyebut** kepada siapa spesialis distrik dan district store supervisor melapor, atau hubungan mereka dengan regional manager. Peran Bill Acer saat ini, keputusan Doris, dan apakah usulan dijalankan juga tidak diketahui. Alasan manajer meat dan produce menolak memberi ruang tidak dijelaskan selain "protective of their separate responsibilities". Klaim konsultan adalah **prediksi**, bukan hasil yang sudah terbukti.',
+    },
+    { kind: 'h3', text: '15.2 Problem Identification' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Isu', 'Jenis'],
+      rows: [
+        ['P1', 'Store manager tidak punya otoritas langsung atas departemen meat dan produce di tokonya sendiri', 'Struktur (garis otoritas)'],
+        ['P2', 'Koordinasi di dalam toko buruk; manajer departemen berkonflik alih-alih bekerja sama (kasus promosi Coke)', 'Koordinasi'],
+        ['P3', 'Turnover store manager tinggi, terutama karena mereka tidak punya kendali atas meat dan produce', 'Kinerja dan SDM'],
+        ['P4', 'Tiap manajer departemen melindungi wilayah tanggung jawabnya sendiri', 'Perilaku antardepartemen'],
+        ['P5', 'Struktur yang menjaga mutu dengan sangat baik adalah struktur yang sama yang menimbulkan masalah koordinasi, sehingga memperbaiki koordinasi berisiko mengorbankan mutu', 'Dilema desain struktur *(hasil analisis)*'],
+      ],
+    },
+    { kind: 'h3', text: '15.3 Analisis Kasus (dengan teori Chapter 7)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
+      rows: [
+        ['**Chain of command dan unity of command**', 'Dalam struktur awal, setiap manajer departemen punya satu atasan (di distrik), jadi unity of command terpenuhi. Masalahnya bukan atasan ganda, melainkan tidak ada satu pun orang di toko yang memegang authority atas ketiga departemen *(hasil analisis)*', '230, 263'],
+        ['**Authority vs responsibility**', 'Store manager bertindak untuk seluruh toko (misalnya memutuskan promosi), tetapi tidak punya authority atas meat dan produce. Buku menyatakan bila responsibility besar tetapi authority kecil, pekerjaan masih mungkin tetapi sulit, dan manajer bergantung pada persuasi dan keberuntungan *(hasil analisis)*', '231, 263'],
+        ['**Functional structure**', 'Ketiga departemen dikelompokkan menurut fungsi dari toko sampai distrik, dan jalurnya bertemu di atas level toko. Buku mencatat kelemahan struktur fungsional: komunikasi dan koordinasi antarfungsi sering buruk, dan keputusan lintas departemen menumpuk di puncak *(hasil analisis)*', '238, 240, 263'],
+        ['**Coordination**', 'Buku menyatakan karyawan cenderung mengidentifikasi diri dengan departemennya sendiri dan mungkin tidak mau berkompromi, bahkan demi kebaikan organisasi. Ini sejalan dengan fakta bahwa tiap manajer "very protective of their separate responsibilities"', '251, 263'],
+        ['**Divisional (geographic-based) structure**', 'Dalam usulan konsultan, semua fungsi di satu toko melapor ke satu manajer yang melayani pelanggan setempat, mirip divisi geografis yang semua fungsinya melapor ke manajer divisi yang sama *(hasil analisis)*', '241, 264'],
+        ['**Staff authority dan garis putus-putus**', 'Dalam usulan konsultan, spesialis distrik berkunjung "to provide advice and help", sejalan dengan staff authority (hak memberi nasihat, rekomendasi, dan konseling). Garis putus-putusnya didefinisikan kasus sebagai "communication, coordination", seperti garis putus-putus project manager di buku, sementara line authority tetap pada manajer lini *(hasil analisis)*', '232, 253, 264'],
+        ['**Decentralization dan strategi**', 'Klaim konsultan bahwa store manager bisa menyesuaikan dengan selera lokal sejalan dengan faktor buku bahwa tingkat desentralisasi harus sesuai strategi, seperti Whole Foods yang dulu terdesentralisasi demi rasa lokal. Klaim ini tetap prediksi konsultan *(hasil analisis)*', '237, 264'],
+        ['**Relational coordination**', 'Struktur baru mengubah garis lapor, tetapi hubungan kerja sama antarmanajer tidak otomatis terbentuk. Buku menyebut pelatihan menyelesaikan konflik berdasarkan tujuan bersama dan reward berbasis tim sebagai cara membangunnya *(hasil analisis)*', '254'],
+      ],
+    },
+    { kind: 'h3', text: '15.4 Jawaban Pertanyaan Kasus' },
+    { kind: 'p', text: '**Q1. Berdasarkan informasi di kasus, gambarkan struktur awal di dalam toko Ace\'s Freshest dan hubungan manajer toko dengan manajer spesialis di distrik. Struktur apa ini? Jelaskan.**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 7.*' },
+    { kind: 'p', text: 'Gambaran struktur awal (dalam bentuk tabel hubungan lapor) [hal. 263]:' },
+    {
+      kind: 'table',
+      headers: ['Posisi di toko', 'Melapor langsung ke (line)', 'Authority atas departemen lain di toko'],
+      rows: [
+        ['Store manager (merangkap grocery department manager)', 'District store supervisor', 'Tidak ada atas meat dan produce'],
+        ['Meat department manager', 'District meat manager specialist', '—'],
+        ['Produce department manager', 'District produce manager specialist', '—'],
+      ],
+    },
+    { kind: 'p', text: 'Kasus tidak menyebut di mana ketiga jalur ini bertemu di atas level distrik (batas fakta 15.1).' },
+    { kind: 'p', text: '**Jenis struktur: functional structure.** Alasannya:' },
+    {
+      kind: 'ul',
+      items: [
+        'Posisi dikelompokkan menurut **fungsi yang sama** (meat, produce, grocery) dari departemen di toko sampai spesialis di distrik, sesuai definisi functional structure: kegiatan dikelompokkan menurut fungsi dari bawah sampai atas [hal. 238].',
+        'Tiap manajer departemen punya satu atasan dari fungsinya sendiri; di level toko tidak ada yang memegang authority lintas fungsi, sehingga koordinasi antarfungsi harus naik ke atas level toko [hal. 238, 263].',
+        'Hasilnya persis seperti yang dicatat buku untuk struktur fungsional: mutu tiap fungsi terjaga, tetapi komunikasi dan koordinasi antarfungsi buruk [hal. 240]. Kasus promosi Coke adalah contohnya [hal. 263].',
+      ],
+    },
+    { kind: 'p', text: '**Q2. Berdasarkan informasi di kasus, gambarkan struktur yang direkomendasikan konsultan di dalam toko dan hubungan manajer departemen toko dengan manajer spesialis di distrik. Struktur apa ini? Jelaskan.**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 7.*' },
+    { kind: 'p', text: 'Gambaran struktur usulan konsultan (dalam bentuk tabel hubungan lapor) [hal. 263–264]:' },
+    {
+      kind: 'table',
+      headers: ['Posisi di toko', 'Melapor langsung ke (line)', 'Garis putus-putus (communication, coordination)'],
+      rows: [
+        ['Store manager', 'District store supervisor', '—'],
+        ['Meat department manager', 'Store manager', 'District meat specialist'],
+        ['Grocery department', 'Store manager', '— (kasus tidak menyebut garis putus-putus untuk grocery)'],
+        ['Produce department manager', 'Store manager', 'District produce specialist'],
+      ],
+    },
+    { kind: 'p', text: '**Jenis struktur: toko menjadi unit yang berdiri sendiri, seperti divisional structure berbasis geografis, dengan spesialis distrik dalam peran staf.** Alasannya:' },
+    {
+      kind: 'ul',
+      items: [
+        'Semua fungsi di satu toko melapor ke manajer yang sama dan bekerja sama melayani pelanggan setempat, seperti divisi geografis tempat semua fungsi di suatu wilayah melapor ke manajer divisi yang sama [hal. 241]. Divisi seperti ini adalah unit yang berdiri sendiri dengan departemen fungsionalnya sendiri [hal. 240–241].',
+        'Spesialis distrik berkunjung untuk memberi nasihat dan bantuan, sesuai **staff authority**: hak memberi nasihat, rekomendasi, dan konseling, yang merupakan hubungan komunikasi [hal. 232, 264].',
+      ],
+    },
+    { kind: 'p', text: '**Ini bukan matrix.** Matrix punya dua garis **otoritas** dan two-boss employees yang melapor kepada dua atasan sekaligus [hal. 242–244]. Dalam usulan konsultan, garis ke spesialis distrik adalah garis putus-putus yang oleh kasus sendiri didefinisikan sebagai "communication, coordination". Buku menjelaskan bahwa garis putus-putus menunjukkan tanggung jawab koordinasi dan komunikasi, sedangkan **line authority tetap pada manajer** [hal. 253]. Jadi manajer meat dan produce hanya punya satu atasan lini, yaitu store manager, dan unity of command tetap terpenuhi [hal. 230].' },
+    { kind: 'p', text: '**Q3. Apa kelebihan dan kekurangan kedua struktur? Struktur mana yang menurutmu paling cocok untuk Ace\'s Freshest? Mengapa?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan Exhibit 7.10.*' },
+    { kind: 'p', text: 'Kelebihan dan kekurangan diambil dari baris Functional dan Divisional di Exh. 7.10 [hal. 250], lalu dicocokkan dengan kasus:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Struktur', 'Kelebihan (Exh. 7.10)', 'Kekurangan (Exh. 7.10)', 'Yang terlihat di kasus'],
+      rows: [
+        ['**Awal (functional)**', 'Efficient use of resources; economies of scale · In-depth skill specialization and development · Top manager direction and control', 'Poor communication across functional departments · Slow response to external changes; lagging innovation · Decisions concentrated at the top of hierarchy, creating delay', 'Fakta kasus: struktur ini "provided excellent quality control". Kekurangan "poor communication across functional departments" terlihat pada konflik ruang saat promosi Coke dan koordinasi yang "terrible"'],
+        ['**Usulan konsultan (divisional per toko)**', 'Fast response; flexibility in an unstable environment · Fosters concern for customer needs · Excellent coordination across functional departments', 'Duplication of resources across divisions · Less technical depth and specialization · Poor coordination across divisions', 'Kelebihan koordinasi antarfungsi menjawab masalah utama di kasus. Risiko "less technical depth and specialization" berkaitan langsung dengan mutu daging dan sayur-buah, kekuatan yang membuat Ace\'s dikenal'],
+      ],
+    },
+    { kind: 'p', text: '**Kesimpulan: pilih struktur usulan konsultan.** Alasannya:' },
+    {
+      kind: 'ol',
+      items: [
+        '**Masalah utama kasus ada di koordinasi dalam toko**, yaitu kelemahan functional structure ("poor communication across functional departments"). Divisional structure unggul justru di "excellent coordination across functional departments" [hal. 250, 263].',
+        '**Store manager mendapat authority yang sepadan dengan perannya**, sehingga penyebab utama turnover store manager, yaitu tidak punya kendali atas meat dan produce, ditangani langsung [hal. 231, 263].',
+        '**Sikap "serve the customer"** yang menjadi dasar keberhasilan awal Ace\'s sejalan dengan kelebihan divisional "fosters concern for customer needs" [hal. 250, 263].',
+      ],
+    },
+    { kind: 'p', text: '**Trade-off yang harus diakui:**' },
+    {
+      kind: 'ul',
+      items: [
+        'Struktur lama "provided excellent quality control". Ini **fakta kasus** [hal. 263].',
+        'Pernyataan bahwa hubungan garis putus-putus "would ensure excellent meat, grocery, and produce departments across all stores" adalah **prediksi konsultan**, bukan hasil yang sudah terbukti [hal. 264]. Kekurangan divisional "less technical depth and specialization" [hal. 250] adalah risiko nyata bagi mutu.',
+        'Karena itu keberhasilan struktur baru bergantung pada apakah peran nasihat spesialis distrik benar-benar mampu menjaga mutu tanpa line authority. Ini perlu dipantau setelah reorganisasi (lihat 15.5).',
+      ],
+    },
+    { kind: 'h3', text: '15.5 Rekomendasi Manajerial' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis berdasarkan teori Chapter 7, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pihak', 'Rekomendasi', 'Teori pendukung'],
+      rows: [
+        ['**Doris Acer (manajemen puncak)**', 'Jalankan struktur usulan konsultan: ketiga departemen melapor ke store manager', 'Divisional/geographic structure [hal. 241]; Exh. 7.10 [hal. 250]'],
+        ['', 'Tetapkan dengan jelas apa yang harus dilaporkan dan dipertanggungjawabkan store manager, termasuk mutu ketiga departemen', 'Accountability [hal. 231]'],
+        ['', 'Pantau mutu daging dan sayur-buah setelah reorganisasi, karena klaim konsultan tentang mutu belum terbukti', 'Kekurangan divisional "less technical depth and specialization" [hal. 250]'],
+        ['**Spesialis distrik**', 'Jalankan peran nasihat secara aktif lewat kunjungan dan standar mutu, bukan lewat perintah', 'Staff authority [hal. 232]; garis putus-putus [hal. 253]'],
+        ['**Store manager dan manajer departemen**', 'Bangun kebiasaan menyelesaikan konflik berdasarkan tujuan toko bersama, didukung pelatihan dan reward yang didasarkan pada upaya dan pencapaian tim toko', 'Relational coordination [hal. 254]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §16
+    { kind: 'h2', text: '16. Implikasi Manajerial dan Kesimpulan' },
+    {
+      kind: 'ol',
+      items: [
+        '**Struktur adalah alat strategi.** Strategi menentukan apa yang dikerjakan; organizing menentukan bagaimana mengerjakannya, dan keberhasilan strategi sering ditentukan oleh kecocokannya dengan struktur [hal. 228, 257].',
+        '**Struktur vertikal perlu jelas.** Chain of command, authority yang sepadan dengan responsibility, dan accountability membuat setiap orang tahu kepada siapa ia melapor dan apa yang harus ia pertanggungjawabkan [hal. 230–231]. Deepwater Horizon menunjukkan akibatnya bila tidak jelas [hal. 232].',
+        '**Pilih level keputusan sesuai situasi.** Lingkungan yang tidak pasti mendorong desentralisasi, krisis bisa menuntut sentralisasi, dan tingkat desentralisasi harus sesuai strategi [hal. 237].',
+        '**Tidak ada departmentalization yang sempurna.** Setiap pendekatan (functional, divisional, matrix, team, virtual network) punya kelebihan dan kekurangan yang berbeda (Exh. 7.10) [hal. 250].',
+        '**Rancang dimensi horizontal, bukan hanya vertikal.** Tanpa sistem koordinasi, tidak ada struktur yang lengkap; task force, tim, project manager, dan relational coordination adalah pilihannya [hal. 229, 251–254].',
+        '**Sesuaikan struktur dengan strategi dan teknologi.** Mechanistic cocok untuk cost leadership di lingkungan stabil; organic untuk differentiation di lingkungan tidak pasti; dan Woodward menunjukkan perusahaan yang strukturnya sesuai dengan teknologinya berkinerja lebih baik [hal. 257–260].',
+      ],
+    },
+    // ---------------------------------------------------------------- §17
+    { kind: 'h2', text: '17. Alat Bantu Ujian' },
+    { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Organization structure (3 unsur)', 'Tugas formal; hubungan pelaporan formal; sistem koordinasi antardepartemen', '228–229'],
+        ['Ciri vertikal struktur (4)', 'Division of labor; chain of command; span of management; centralization dan decentralization', '229–237'],
+        ['Prinsip chain of command (2)', 'Unity of command; scalar principle', '230'],
+        ['Ciri authority (3)', 'Melekat pada posisi; mengalir ke bawah; diterima bawahan', '231'],
+        ['Line vs staff authority', 'Mengarahkan dan mengendalikan vs menasihati, merekomendasikan, dan memberi konseling', '232'],
+        ['Faktor span besar (8)', 'Kerja stabil dan rutin; tugas serupa; satu lokasi; bawahan terlatih; ada aturan; ada sistem pendukung; sedikit kegiatan nonsupervisi; preferensi manajer', '233–234'],
+        ['Faktor centralization vs decentralization (3)', 'Perubahan dan ketidakpastian lingkungan; kesesuaian dengan strategi; krisis', '237'],
+        ['Pendekatan departmentalization (5; Exh. 7.3)', 'Functional; Divisional; Matrix (tradisional) · Team; Virtual network (inovatif)', '238–239'],
+        ['Peran matriks (3)', 'Two-boss employees; Matrix boss; Top leader', '244'],
+        ['Pendekatan tim (3)', 'Cross-functional teams; Permanent teams; Team-based structure', '245'],
+        ['Mekanisme koordinasi horizontal (4)', 'Task force; Teams; Project manager; Relational coordination', '252–254'],
+        ['Evolusi struktur (Exh. 7.11)', 'Traditional vertical → Cross-functional teams and project managers → Reengineering to horizontal teams', '252'],
+        ['Faktor pembentuk struktur (Exh. 7.13)', 'Strategic needs (environment, strategy, goals); Operational needs (technology, work processes)', '256–257'],
+        ['Kontinum strategi (Exh. 7.14)', 'Functional → Functional with task forces, integrators → Divisional → Horizontal teams', '258'],
+        ['Teknologi Woodward (3; Exh. 7.15)', 'Small batch (organic); Mass production (mechanistic); Continuous process (organic)', '258–260'],
+      ],
+    },
+    { kind: 'h3', text: 'Exam Traps' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['Division of labor', '"Makin tinggi spesialisasi makin baik"', 'Efisien, tetapi spesialisasi berlebihan mengisolasi karyawan dan menghambat koordinasi', '230'],
+        ['Authority', '"Melekat pada orang yang berpengalaman"', 'Melekat pada **posisi**; orang lain di posisi yang sama punya authority yang sama', '231'],
+        ['Responsibility vs accountability', '"Sama saja"', 'Responsibility = kewajiban menjalankan tugas. Accountability = wajib melaporkan dan mempertanggungjawabkan hasil tugas kepada atasan di chain of command', '231'],
+        ['Staff authority', '"Staf berhak memerintah departemen line"', 'Staff authority hanya hak memberi nasihat, rekomendasi, dan konseling; hubungan komunikasi. Unit keselamatan BP adalah pengecualian yang disebut buku ("unlike many staff departments")', '232'],
+        ['Marketing: line atau staff', '"Buku menegaskan marketing selalu staff"', 'Buku memasukkan marketing dalam daftar staff yang "typically" ada, tetapi juga menyebut line software "make and sell" dan menampilkan marketing sebagai departemen utama di Exh. 7.1. Pegang definisinya: line = misi utama; staff = mendukung line', '229, 231'],
+        ['Span of management', '"Span besar selalu lebih baik"', 'Span kecil bila atasan harus terlibat dekat; span besar bila keterlibatannya sedikit (8 faktor)', '233–234'],
+        ['Tall vs flat', '"Tall = span lebar"', 'Tall = span **sempit**, banyak level. Flat = span lebar, sedikit level', '234'],
+        ['Decentralization', '"Selalu lebih baik"', 'Harus sesuai situasi; Wells Fargo dan Boeing menyentralisasi kembali', '236–237'],
+        ['Functional vs divisional', '"Divisional menyentralisasi keputusan"', 'Functional: chain of command bertemu di puncak (sentralisasi). Divisional: bertemu lebih rendah (decentralized form)', '238, 241'],
+        ['Divisi geografis/pelanggan', '"Tipe struktur keenam"', 'Alternatif cara membentuk divisi dalam divisional structure', '241'],
+        ['Matrix', '"Matrix tetap menjaga unity of command"', 'Matrix **melanggar** unity of command karena dua garis otoritas; two-boss employees melapor ke dua atasan', '242–243'],
+        ['**Garis putus-putus = matrix**', '"Manajer yang punya garis putus-putus ke spesialis adalah two-boss employee (matrix)"', 'Garis putus-putus = koordinasi dan komunikasi; **line authority tetap pada manajer**. Hanya ada satu atasan lini, jadi bukan matrix (lihat kasus Ace\'s)', '253, 264'],
+        ['Kekurangan tim (Exh. 7.10)', '"Rapat yang menyebabkan desentralisasi tak terencana" (dibaca sebagai satu butir)', 'Dua kelemahan terpisah: waktu dan sumber daya untuk rapat; desentralisasi tak terencana/berlebihan', '246, 250'],
+        ['Cross-functional vs permanent team vs team-based structure', '"Sama saja"', 'Cross-functional: anggota tetap di departemennya. Permanent: diorganisasi seperti departemen formal. Team-based structure: seluruh organisasi terdiri atas tim', '245'],
+        ['Virtual network', '"Perusahaan tetap mengerjakan semua fungsi sendiri"', 'Mensubkontrakkan **sebagian besar** fungsi utama dan mengoordinasikannya dari kantor pusat kecil', '248'],
+        ['Task force vs cross-functional team', '"Sama saja"', 'Task force **sementara**; cross-functional team menangani masalah **berkelanjutan** dan bisa bertahan bertahun-tahun', '252–253'],
+        ['Project manager', '"Anggota salah satu departemen yang dikoordinasikan dan atasan para anggota tim"', 'Berada **di luar** departemen; authority atas proyek, bukan atas orangnya', '253'],
+        ['Relational coordination', '"Mekanisme struktural seperti project manager"', 'Bukan perangkat struktural; bagian dari budaya organisasi, berjalan lewat hubungan', '253–254'],
+        ['Mechanistic vs organic', '"Organic = suasana kerja santai"', 'Organic = struktur horizontal dan otoritas keputusan terdesentralisasi', '257'],
+        ['Woodward: centralization', '"Makin kompleks teknologi makin tersentralisasi"', 'Centralization tinggi **hanya** pada mass production; rendah pada small batch dan continuous process', '259'],
+        ['Woodward: span', '"Span terkecil pada mass production"', 'Span **terbesar** pada mass production (48); small batch 23, continuous process 15', '259–260'],
+        ['Technical complexity', '"Jumlah pekerja di lini produksi"', 'Tingkat keterlibatan mesin dalam produksi hingga menggantikan manusia', '259'],
+      ],
+    },
+    { kind: 'h3', text: 'Bank Pertanyaan Kritis (untuk non-presenter)' },
+    { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 260]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Terkait bagian'],
+      rows: [
+        ['Apa perbedaan relational coordination dengan tim dan task force? Jelaskan.', '§9–§10'],
+        ['Sebagian orang berpendapat struktur matrix sebaiknya dipakai hanya sebagai pilihan terakhir, karena dua rantai komando bisa menimbulkan lebih banyak masalah daripada yang diselesaikannya. Setuju atau tidak? Mengapa?', '§7'],
+        ['Apa itu workflow technology organisasi? Bagaimana strategi dan workflow technology memengaruhi jenis struktur yang paling efektif?', '§11'],
+      ],
+    },
+    { kind: 'p', text: '*Semua `[hal. X]` merujuk ke Daft & Marcic, Understanding Management 12e (2023). Label yang dipakai: "Contoh di luar buku" (3×: §5, §6b, §9b), "Ilustrasi" (1 bagian: §14, sinopsis dan bedah film). Film di §14 adalah film pilihan AkuntansiHub, bukan dari kelas. Tidak ada bagian berlabel "di luar RPP" karena semua subbab Chapter 7 tercakup RPP.*' },
+  ],
 };

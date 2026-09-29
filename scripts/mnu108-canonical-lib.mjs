@@ -5,11 +5,14 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 
 /** TMs whose reading was rewritten from a content package (12e). Add a TM here in the commit that brings its reading. */
-export const CANONICAL_TMS = [1, 2, 3, 4, 5, 6];
+export const CANONICAL_TMS = [1, 2, 3, 4, 5, 6, 7];
 /** TMs whose headings and concept map carry no backslash escapes (a heading is inline markdown, "1. Title" stays a heading). */
-export const CLEAN_HEADING_TMS = [2, 3, 4, 5, 6];
+export const CLEAN_HEADING_TMS = [2, 3, 4, 5, 6, 7];
 /** Tables allowed to stay plain although they have >=4 columns or a long cell: header rows of grids read in their own scroll wrapper. */
-export const PLAIN_GRID_HEADERS = [];
+export const PLAIN_GRID_HEADERS = [
+  ['', 'VP Finance', 'VP Engineering Applications', 'VP Manufacturing', 'VP Marketing'], // TM07 Exh. 7.6
+  ['', 'Germany', 'Latin America', 'Argentina/Brazil', 'Spain/Portugal'], // TM07 Exh. 7.7
+];
 
 const importBundle = async (options) => {
   const bundle = await build({ bundle: true, write: false, format: 'esm', platform: 'node', logLevel: 'silent', ...options });
@@ -169,7 +172,8 @@ export async function runCanonical(spec) {
     if (end < 0) end = blocks.length;
     return blocks.slice(start + 1, end);
   };
-  const tableUnder = (headingText, headers) => sectionBlocks(headingText).find((block) => block.kind === 'table' && block.headers.join('|') === headers.join('|'));
+  // The nth table (0-based) under a heading with these headers; tables sharing headers (e.g. Exh. 7.2 a and b) are told apart by nth.
+  const tableUnder = (headingText, headers, nth = 0) => sectionBlocks(headingText).filter((block) => block.kind === 'table' && block.headers.join('|') === headers.join('|'))[nth];
 
   // header + AT-001: the section list, in order
   assert.equal(reading.title, spec.title);
@@ -216,7 +220,7 @@ export async function runCanonical(spec) {
 
   // table shapes (rows are counted, so a lost row is noticed)
   for (const t of spec.tables) {
-    const table = tableUnder(t.under, t.headers);
+    const table = tableUnder(t.under, t.headers, t.nth ?? 0);
     assert.ok(table, `table under "${t.under}": ${t.headers.join(' | ')}`);
     assert.equal(table.rows.length, t.rows, `${t.id ?? t.under}: ${t.rows} rows`);
   }
