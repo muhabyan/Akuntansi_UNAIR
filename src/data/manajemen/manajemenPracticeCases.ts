@@ -3,34 +3,8 @@
 // Berdasarkan Standar Richard L. Daft (Management 13e/14e) & Stephen P. Robbins
 // Kasus TM01 dihapus: TM01 kini memakai kasus SmartStyle Salons dari Daft & Marcic 12e Ch. 1, yang ditulis
 // langsung di modules/tm1.ts.
+// Kasus TM02 dihapus: TM02 kini memakai kasus dari Daft & Marcic 12e Ch. 2, yang ditulis langsung di modules/tm2.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 2
-export const CASE_CULTURE_ENVIRONMENT_DAFT: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 2: Analisis Lingkungan Eksternal (PESTEL) & Tipologi Budaya Organisasi Daft di BCA',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: Bank Central Asia (BCA) menghadapi guncangan disrupsi bank digital dan fintech peer-to-peer lending (Lingkungan Tugas) serta regulasi perlindungan data pribadi dan suku bunga acuan Bank Indonesia (Lingkungan Umum). Di sisi internal, BCA dikenal memiliki budaya disiplin operasional dan kehati-hatian risiko (Prudential Banking) yang sangat kuat, namun dituntut bergerak lincah dan berinovasi cepat meluncurkan aplikasi mobile baru.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Analisis: (1) Petakan faktor-faktor Lingkungan Umum (General Environment) vs Lingkungan Tugas (Task Environment) yang dihadapi BCA, (2) Berdasarkan Tipologi 4 Budaya Organisasi Daft (Adaptability, Achievement, Involvement, Consistency), tentukan orientasi budaya BCA saat ini dan pergeseran yang dibutuhkan, serta (3) Bagaimana manajemen menanamkan nilai budaya inovasi tanpa merusak kepatuhan regulasi perbankan?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Lingkungan Umum vs Tugas**:\n- *Lingkungan Umum*: Faktor Teknologi (pesatnya AI dan open banking API), Faktor Hukum/Politik (UU Perlindungan Data Pribadi dan POJK Keamanan Siber), Faktor Ekonomi (inflasi dan fluktuasi BI-Rate).\n- *Lingkungan Tugas*: Pesaing (Bank Mandiri, Bank Jago, SeaBank), Konsumen (nasabah Gen Z yang menuntut pengalaman digital instan), dan Regulator (OJK & Bank Indonesia).',
-            '**2. Tipologi Budaya Organisasi Daft**:\n- *Budaya Saat Ini*: **Consistency Culture** (Fokus internal, lingkungan stabil) yang menekankan metodis, kepatuhan prosedur baku (SOP), kontrol risiko ketat, dan keandalan sistem transaksi.\n- *Pergeseran yang Dibutuhkan*: Bergerak ke arah **Adaptability Culture** (Fokus eksternal, fleksibilitas tinggi) atau **Achievement Culture** untuk memfasilitasi eksperimen produk digital baru tanpa menghilangkan prinsip kehati-hatian.',
-            '**3. Pembentukan Ambidextrous Culture**: Manajemen dapat menerapkan unit inovasi digital terpisah (Agile Squad / BCA Digital) yang mengadopsi budaya kerja lincah dan berani mengambil risiko terkendali, sementara operasional bank inti tetap mempertahankan Consistency Culture untuk menjaga kepercayaan nasabah.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 3
 export const CASE_GLOBAL_HOFSTEDE_ENTRY: ContentBlock = {

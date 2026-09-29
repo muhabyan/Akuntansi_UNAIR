@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 
 /** TMs whose reading was rewritten from a content package (12e). Add a TM here in the commit that brings its reading. */
-export const CANONICAL_TMS = [1];
+export const CANONICAL_TMS = [1, 2];
 /** TMs whose headings and concept map carry no backslash escapes (a heading is inline markdown, "1. Title" stays a heading). */
-export const CLEAN_HEADING_TMS = [];
+export const CLEAN_HEADING_TMS = [2];
 /** Tables allowed to stay plain although they have >=4 columns or a long cell: header rows of grids read in their own scroll wrapper. */
 export const PLAIN_GRID_HEADERS = [];
 
@@ -142,4 +142,107 @@ export function checkOutline(reading, tm, outline) {
   });
   const h3 = reading.blocks.filter((block) => block.kind === 'h3');
   assert.equal(items.filter((item) => item.level === 3).length, h3.length, `${label}: one Daftar Isi entry per subsection`);
+}
+
+/**
+ * One TM's canonical guard, driven by a spec written from the package's 06 (acceptance tests, verified values, exam traps,
+ * required exceptions) and 07 (forbidden statements). The structure lists (h2, h3, table shapes, exam-trap column) are snapshots
+ * of the reviewed page, so a later edit that drifts from it is noticed.
+ */
+export async function runCanonical(spec) {
+  const readings = await loadReadings();
+  const reading = readings[spec.tm];
+  assert.ok(reading, `TM0${spec.tm} reading exists`);
+  const { blocks, byKind, page, countOf } = analyse(reading);
+  const plain = page.replace(/\\\$/g, '$');
+  const passes = [];
+  const ok = (text) => passes.push(text);
+  const h2 = byKind('h2').map((block) => block.text);
+  const h3 = byKind('h3').map((block) => block.text);
+  const indexOfText = (text) => blocks.findIndex((block) => (block.kind === 'h2' || block.kind === 'h3') && block.text === text);
+  const between = (from, to) => blocks.slice(from + 1, to < 0 ? undefined : to);
+  const sectionBlocks = (headingText) => {
+    const start = indexOfText(headingText);
+    assert.ok(start >= 0, `heading exists: ${headingText}`);
+    const level = blocks[start].kind;
+    let end = blocks.findIndex((block, index) => index > start && (block.kind === 'h2' || (level === 'h3' && block.kind === 'h3')));
+    if (end < 0) end = blocks.length;
+    return blocks.slice(start + 1, end);
+  };
+  const tableUnder = (headingText, headers) => sectionBlocks(headingText).find((block) => block.kind === 'table' && block.headers.join('|') === headers.join('|'));
+
+  // header + AT-001: the section list, in order
+  assert.equal(reading.title, spec.title);
+  assert.ok(reading.ref.includes(spec.ref), `ref mentions ${spec.ref}`);
+  assert.deepEqual(h2, spec.h2, 'AT-001: sections §0..§n in order');
+  assert.deepEqual(h3, spec.h3, 'subsections in order');
+  ok(`AT-001: ${h2.length} sections and ${h3.length} subsections in order`);
+
+  // labels: "di luar RPP" marks its sections; "Ilustrasi" marks the film section only; numbered outside-the-book boxes
+  for (const [label, sections] of Object.entries(spec.sectionLabels)) {
+    assert.deepEqual([...h2, ...h3].filter((text) => text.includes(label)), sections, `label "${label}" marks exactly these headings`);
+  }
+  const boxes = byKind('callout').filter((block) => /^Contoh di luar buku/.test(block.title));
+  assert.deepEqual(boxes.map((block) => block.title), Array.from({ length: spec.boxes }, (_, i) => `Contoh di luar buku (${i + 1}/3)`), 'numbered outside-the-book boxes');
+  assert.equal((page.match(/Contoh di luar buku \(\d\/3\)/g) ?? []).length, spec.boxes, 'the numbered form appears only in the box titles');
+  for (const box of boxes) assert.ok(!/\d/.test(box.text.replace(/\[hal\.[^\]]*\]/g, '').replace(/(Chapter|Ch\.|TM|Exhibit|Exh\.|§) ?\d+(\.\d+)?/g, '')), `FS: the box "${box.title}" has no figures, brands or dates of its own`);
+  ok(`labels: ${Object.keys(spec.sectionLabels).join(', ')}, ${spec.boxes} numbered outside-the-book boxes`);
+
+  // film section (D1): an info callout titled "Ilustrasi" opens it, every film heading carries the label, no digits from the film
+  const film = spec.film;
+  const filmStart = indexOfText(film.h2);
+  const opener = blocks[filmStart + 1];
+  assert.equal(opener.kind, 'callout');
+  assert.equal(opener.variant, 'info', 'D1: the film opener is an info callout');
+  assert.equal(opener.title, 'Ilustrasi', 'D1: the film opener is titled Ilustrasi');
+  for (const sentence of film.openerSentences) assert.ok(opener.text.includes(sentence), `film opener keeps: ${sentence}`);
+  assert.deepEqual([...h2, ...h3].filter((text) => text.includes('Ilustrasi')), [film.h2, ...film.h3], 'Ilustrasi marks the film section only');
+  const filmText = sectionBlocks(film.h2).filter((block) => block.kind !== 'h3').flatMap((block) => (block.kind === 'table' ? [...block.headers, ...block.rows.flat()] : block.text ? [block.text] : block.items ?? [])).join('\n');
+  assert.ok(!/\d/.test(filmText.replace(/\[hal\.[^\]]*\]/g, '').replace(/(\b(TM|Chapter|Exhibit|Exh\.)|§) ?\d+(\.\d+)?/g, '')), 'the film section has no dates or numbers of its own');
+  for (const pattern of film.forbidden ?? []) assert.ok(!pattern.test(filmText), `film section must not match ${pattern}`);
+  ok('film section: info opener titled Ilustrasi, label only there, no film numbers');
+
+  // case (5 subheadings in the lecturer's format) and the exam traps
+  for (const text of spec.caseSubs) assert.ok(h3.includes(text), `case subheading: ${text}`);
+  for (const q of ['Q1', 'Q2', 'Q3']) assert.ok(page.includes(`${q}`), `case answer ${q}`);
+  ok('case: five lecturer-format subheadings and Q1-Q3');
+  const traps = tableUnder('Exam Traps', spec.traps.headers);
+  assert.ok(traps, 'exam-trap table');
+  assert.deepEqual(traps.rows.map((row) => row[0]), spec.traps.firstColumn, 'exam traps, in order');
+  ok(`exam traps: ${traps.rows.length} rows in order`);
+
+  // table shapes (rows are counted, so a lost row is noticed)
+  for (const t of spec.tables) {
+    const table = tableUnder(t.under, t.headers);
+    assert.ok(table, `table under "${t.under}": ${t.headers.join(' | ')}`);
+    assert.equal(table.rows.length, t.rows, `${t.id ?? t.under}: ${t.rows} rows`);
+  }
+  for (const t of spec.exactTables ?? []) {
+    const table = tableUnder(t.under, t.headers);
+    assert.ok(table, `table under "${t.under}"`);
+    assert.deepEqual(table.rows, t.rows, `${t.id}: exact cells`);
+  }
+  ok(`${spec.tables.length} table shapes and row counts, ${(spec.exactTables ?? []).length} exact grids`);
+
+  // anchors, callout length
+  assert.equal(countOf('[hal.'), spec.anchors, 'AT-013: page anchors [hal. X] are all kept');
+  for (const callout of byKind('callout')) {
+    const sentences = callout.text.split(/(?<=[.!?])\s+(?=[A-Z*])/).length;
+    assert.ok(sentences <= (spec.maxCalloutSentences ?? 5), `AT-012: callout "${callout.title}" has ${sentences} sentences`);
+  }
+  ok('AT-012/AT-013: anchors kept, callouts short');
+
+  // required sentences and exceptions, verified values, forbidden statements
+  for (const [id, needle] of spec.required) {
+    assert.ok(needle instanceof RegExp ? needle.test(plain) : plain.includes(needle), `${id}: page must contain ${needle}`);
+  }
+  ok(`${spec.required.length} required sentences and exceptions`);
+  for (const [id, tokens] of spec.values) {
+    for (const token of tokens) assert.ok(plain.includes(token), `${id}: page must show "${token}"`);
+  }
+  ok(`${spec.values.length} verified values`);
+  for (const [id, pattern] of spec.forbidden) assert.ok(!pattern.test(plain), `${id}: forbidden statement found (${pattern})`);
+  ok(`${spec.forbidden.length} forbidden statements absent`);
+
+  console.log(JSON.stringify({ pass: true, tm: spec.tm, checks: passes.length, passes }, null, 2));
 }

@@ -1,172 +1,788 @@
+// MNU108 TM02 — The Environment and Corporate Culture.
+// Isi akademik berasal dari paket konten MNU108/TM02 (05_student_learning_version.md); aturan render dari 06.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 2, hal. 52–83.
+// Cakupan mengikuti RPP Pengantar Manajemen pertemuan 2. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Jangan menambah fakta di luar paket: ubah paketnya, lalu perbarui file ini.
 import type { Reading } from '../../../types';
-import { CASE_CULTURE_ENVIRONMENT_DAFT } from '../manajemenPracticeCases';
-
-const SVG_CULTURE_DAFT = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="adapGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="achGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="invGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="consGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad2)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">4 KUADRAN TIPOLOGI BUDAYA ORGANISASI (RICHARD L. DAFT)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CULTURE MATRIX</text>
-
-  <!-- Y-Axis: Fokus Lingkungan -->
-  <text class="text-accent-blue" x="55" y="125" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">FOKUS EKSTERNAL</text>
-  <text class="text-accent-purple" x="55" y="280" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">FOKUS INTERNAL</text>
-  <line x1="55" y1="140" x2="55" y2="260" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4"/>
-
-  <!-- X-Axis: Kebutuhan Lingkungan -->
-  <text class="text-accent-green" x="275" y="78" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">FLEKSIBILITAS / ADAPTASI CEPAT</text>
-  <text class="text-accent-amber" x="695" y="78" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">STABILITAS / KETERATURAN</text>
-
-  <!-- Quadrant 1: ADAPTABILITY -->
-  <g transform="translate(110, 92)">
-    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#adapGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">1. ADAPTABILITY CULTURE (ADAPTASI)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Cepat merespon sinyal pasar eksternal</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Mendorong eksperimen, inovasi, &amp; risiko kreatif</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Google, Startup Fintech, E-Commerce</text>
-    <rect x="265" y="88" width="85" height="18" rx="9" fill="#0284c7" fill-opacity="0.3"/>
-    <text class="text-accent-blue" x="307" y="101" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Lincah &amp; Inovatif</text>
-  </g>
-
-  <!-- Quadrant 2: ACHIEVEMENT -->
-  <g transform="translate(495, 92)">
-    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#achGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="16" y="20" fill="#fbbf24" font-size="11" font-weight="800">2. ACHIEVEMENT CULTURE (PENCAPAIAN)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Berorientasi target penjualan &amp; pangsa pasar</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Menghargai persaingan &amp; bonus kinerja tinggi</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Lembaga Investasi Wall Street, Sales</text>
-    <rect x="265" y="88" width="85" height="18" rx="9" fill="#d97706" fill-opacity="0.3"/>
-    <text class="text-accent-amber" x="307" y="101" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Target &amp; Kompetitif</text>
-  </g>
-
-  <!-- Quadrant 3: INVOLVEMENT -->
-  <g transform="translate(110, 218)">
-    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#invGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">3. INVOLVEMENT CULTURE (KETERLIBATAN)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Kesejahteraan, kepedulian, &amp; partisipasi staf</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Suasana kekeluargaan hangat (Clan Culture)</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Southwest Airlines, Bisnis Keluarga</text>
-    <rect x="265" y="88" width="85" height="18" rx="9" fill="#059669" fill-opacity="0.3"/>
-    <text class="text-accent-green" x="307" y="101" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Kekeluargaan</text>
-  </g>
-
-  <!-- Quadrant 4: CONSISTENCY -->
-  <g transform="translate(495, 218)">
-    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#consGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="16" y="20" fill="#a78bfa" font-size="11" font-weight="800">4. CONSISTENCY CULTURE (KONSISTENSI)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Menghargai aturan resmi, SOP, &amp; hierarki</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Disiplin kerja metodis, akurasi, &amp; minim cacat</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Contoh: Pabrikasi Otomotif Presisi, Bank</text>
-    <rect x="265" y="88" width="85" height="18" rx="9" fill="#7c3aed" fill-opacity="0.3"/>
-    <text class="text-accent-purple" x="307" y="101" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">SOP &amp; Kepatuhan</text>
-  </g>
-</svg>`;
 
 export const TM2_READING: Reading = {
   tm: 2,
-  title: 'The Environment and Corporate Culture: Lingkungan Eksternal & Budaya Organisasi',
-  ref: 'Richard L. Daft Bab 2 & 3 | Edgar Schein Organizational Culture | Analisis PESTEL & Task Environment',
-  intro: 'TM 2 membahas interaksi antara organisasi dengan ekosistem lingkungannya: pemisahan Lingkungan Umum (General Environment: Politik/Hukum, Ekonomi, Sosial-Budaya, Teknologi, Lingkungan Alami, Global / PESTEL) vs Lingkungan Tugas (Task Environment: Pelanggan, Pesaing, Pemasok, Pasar Tenaga Kerja), ketidakpastian lingkungan, serta 4 Tipologi Budaya Organisasi Daft (Adaptability, Achievement, Involvement, dan Consistency Culture) dan 3 Level Budaya menurut Edgar Schein (Artifacts, Espoused Values, Underlying Assumptions).',
+  title: 'The Environment and Corporate Culture',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 2 (hal. 52–83) · RPP Pengantar Manajemen pertemuan 2',
+  intro: '**Sub-CPMK (RPP):** mahasiswa mampu menganalisis pengaruh lingkungan internal dan eksternal organisasi terhadap budaya perusahaan, serta mengevaluasi implikasinya bagi efektivitas organisasi.',
   objectives: [
-    'Membedakan dimensi Lingkungan Umum (PESTEL) vs Lingkungan Tugas yang dihadapi perusahaan.',
-    'Menganalisis derajat ketidakpastian lingkungan (Environmental Uncertainty) berdasarkan dinamika dan kompleksitas.',
-    'Mengklasifikasikan budaya perusahaan ke dalam 4 tipologi Daft (Adaptability, Achievement, Involvement, Consistency).',
-    'Mendiagnosa 3 lapisan budaya organisasi Edgar Schein: Artifak terlihat, Nilai-nilai yang dianut, dan Asumsi dasar tersembunyi.'
+    'Lingkungan eksternal organisasi dan ketidakpastian lingkungan',
+    'Hubungan organisasi dengan lingkungan dan strategi adaptasi',
+    'Konsep dan unsur-unsur budaya organisasi',
+    'Tipe-tipe budaya organisasi',
+    'Budaya organisasi untuk inovasi dan kinerja tinggi',
+    'Peran kepemimpinan dalam membangun budaya organisasi',
+    'Menerapkan teori Chapter 2 untuk menganalisis kasus Not Measuring Up dan merumuskan implikasi manajerial.',
   ],
   blocks: [
-    {
-      kind: 'figure',
-      caption: 'Gambar 2.1: Matriks 4 Kuadran Budaya Organisasi Daft Berdasarkan Fokus Strategis dan Tuntutan Lingkungan.',
-      svg: SVG_CULTURE_DAFT
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 2'
-    },
+    // ---------------------------------------------------------------- §0
+    { kind: 'h2', text: '0. Orientasi TM02' },
+    { kind: 'p', text: '**Sub-CPMK TM02 (RPP):** mahasiswa mampu menganalisis pengaruh lingkungan internal dan eksternal organisasi terhadap budaya perusahaan, serta mengevaluasi implikasinya bagi efektivitas organisasi.' },
+    { kind: 'p', text: '**Bahan kajian RPP → bagian halaman ini:**' },
     {
       kind: 'table',
-      headers: ['Dimensi Lingkungan Organisasi', 'Komponen Lingkungan Kunci', 'Contoh Nyata di Indonesia', 'Dampak Strategis bagi Manajemen'],
+      headers: ['Bahan kajian RPP', 'Bagian'],
       rows: [
-        ['Lingkungan Tugas (Task)', 'Pesaing (Competitors)', 'Persaingan Alfamart vs Indomaret, Gojek vs Grab.', 'Menentukan penetapan harga, promosi, dan diferensiasi produk.'],
-        ['Lingkungan Tugas (Task)', 'Konsumen (Customers)', 'Pergeseran konsumen belanja offline ke live TikTok Shop.', 'Mendorong adopsi model bisnis omnichannel instan.'],
-        ['Lingkungan Tugas (Task)', 'Pemasok (Suppliers)', 'Ketergantungan pabrik mie instan pada gandum impor Australia.', 'Memerlukan manajemen risiko rantai pasok dan kontrak berjangka.'],
-        ['Lingkungan Umum (General)', 'Dimensi Teknologi', 'Kecerdasan buatan generatif (Generative AI) dan otomatisasi robotik.', 'Mereduksi kebutuhan staf administrasi dan menuntut upskilling.'],
-        ['Lingkungan Umum (General)', 'Dimensi Hukum & Politik', 'UU Cipta Kerja, UU Pajak HPP, dan regulasi emisi karbon.', 'Meningkatkan biaya kepatuhan hukum dan tata kelola perusahaan.']
+        ['Lingkungan eksternal organisasi dan ketidakpastian lingkungan', '§1–§4'],
+        ['Hubungan organisasi dengan lingkungan dan strategi adaptasi', '§4–§5'],
+        ['Konsep dan unsur-unsur budaya organisasi', '§6, §8'],
+        ['Tipe-tipe budaya organisasi', '§9'],
+        ['Budaya organisasi untuk inovasi dan kinerja tinggi', '§10'],
+        ['Peran kepemimpinan dalam membangun budaya organisasi', '§11'],
       ],
-      caption: 'Tabel 2.0: Matriks klasifikasi lingkungan eksternal organisasi.'
+    },
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    { kind: 'p', text: '**Presenter Materi**' },
+    {
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§11',
+        'Hubungan antar konsep → §12 Peta Konsep',
+        'Contoh penerapan di organisasi → §13 + contoh di tiap bagian',
+        'Bedah film → §14 (*The Founder*)',
+        'Kesimpulan & implikasi manajerial → §16',
+      ],
+    },
+    { kind: 'p', text: '**Presenter Kasus**' },
+    {
+      kind: 'ul',
+      items: [
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi → §15 (Not Measuring Up)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (Mind Map)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §12 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (pertanyaan kritis)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §17 Bank Pertanyaan Kritis',
+      ],
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: 3 Lapisan Budaya Organisasi Edgar Schein'
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Presentasi dinilai dari pemahaman, bukan dari membaca slide. Pakai tabel di halaman ini untuk memahami, lalu jelaskan dengan kata-katamu sendiri.',
     },
+    // ---------------------------------------------------------------- §1
+    { kind: 'h2', text: '1. Lingkungan Organisasi: Gambaran Besar' },
+    { kind: 'p', text: 'Buku membuka bab dengan gerakan advokasi "Fight for \\$15" yang memprotes upah minimum di restoran cepat saji, termasuk McDonald\'s. McDonald\'s lalu menyatakan tidak lagi memakai sumber daya perusahaan untuk menentang kenaikan upah minimum. Tekanan seperti ini datang dari **luar** organisasi, tetapi langsung menyentuh cara organisasi dikelola [hal. 54].' },
     {
       kind: 'table',
-      headers: ['Tingkatan Budaya Schein', 'Karakteristik Visibilitas', 'Wujud Konkret dalam Organisasi', 'Tingkat Kesulitan Diubah'],
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti sederhana', 'Sumber'],
       rows: [
-        ['1. Artifak (Artifacts)', 'Sangat terlihat di permukaan (Visible).', 'Seragam kantor kasual, tata letak ruang kerja terbuka (open space), jargon bahasa, upacara tahunan, logo.', 'Mudah diamati dan mudah diubah secara fisik.'],
-        ['2. Nilai-Nilai Dianut (Espoused Values)', 'Kesadaran tingkat menengah (Conscious).', 'Pernyataan misi resmi, semboyan integritas, nilai AKHLAK di BUMN, kode etik perusahaan.', 'Dapat diubah melalui pelatihan kepemimpinan intensif.'],
-        ['3. Asumsi Dasar (Underlying Assumptions)', 'Tidak terlihat dan di bawah sadar (Invisible / Subconscious).', 'Keyakinan terdalam yang dianggap sudah semestinya benar (contoh: "manusia pada dasarnya malas dan harus diawasi ketat").', 'Sangat sulit diubah; merupakan akar perilaku sejati organisasi.']
+        ['**Organizational environment** (external)', 'Semua elemen di luar batas organisasi yang berpotensi memengaruhi organisasi: pesaing, sumber daya, teknologi, kondisi ekonomi, juga kelompok advokasi. Peristiwa yang terlalu jauh sampai dampaknya tidak dirasakan tidak termasuk.', '[hal. 54]'],
+        ['**Task environment**', 'Sektor yang bertransaksi sehari-hari dengan organisasi dan **langsung** memengaruhi operasi dan kinerjanya: competitors, suppliers, customers, labor market.', '[hal. 54–55]'],
+        ['**General environment**', 'Faktor yang memengaruhi organisasi secara **tidak langsung** dan mengenai semua organisasi kurang lebih sama: international, technological, sociocultural, economic, legal–political, natural.', '[hal. 55, 58]'],
+        ['**Internal environment**', 'Elemen di dalam batas organisasi; yang terpenting adalah **corporate culture**.', '[hal. 55, 67]'],
+        ['**Organizational ecosystem**', 'Sistem yang terbentuk dari interaksi komunitas organisasi di lingkungan, mencakup semua sektor task dan general environment yang menyediakan transaksi, aliran, dan hubungan sumber daya serta informasi yang dibutuhkan organisasi untuk berkembang.', '[hal. 55]'],
       ],
-      caption: 'Tabel 2.1: Tiga tingkatan budaya organisasi Edgar Schein.'
     },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Mendiagnosa Budaya Perusahaan Startup Fintech',
-      prompt: 'Sebuah startup fintech memiliki ruangan kantor tanpa sekat dinding, karyawan bebas berpakaian kasual, jam kerja fleksibel, dan pimpinan mendorong staf untuk berani bereksperimen meluncurkan fitur baru meskipun sesekali gagal (Fail Fast, Learn Faster). Tentukan tipologi budaya organisasi Daft yang dominan!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Karakteristik Kunci**: Lingkungan industri fintech sangat dinamis, menuntut fleksibilitas tinggi, dan fokus pada respon kebutuhan pasar eksternal yang bergerak cepat.',
-            '**Tipologi Budaya Daft**: Karakteristik ini mencerminkan **Adaptability Culture** (Budaya Adaptabilitas).',
-            '**Nilai Utama**: Nilai yang dihargai adalah kreativitas, eksperimentasi lincah, otonomi pengambilan keputusan cepat, dan kesiapan merangkul perubahan tanpa takut disanksi.'
-          ]
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 2'
-    },
+    { kind: 'p', text: '**Exhibit 2.1: Dimensions of the Organization\'s General, Task, and Internal Environments** [hal. 54]' },
     {
       kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      headers: ['Task environment', 'Internal environment', 'General environment'],
       rows: [
-        ['1', 'PESTEL & Task Environment', 'Pemisahan 6 dimensi makro dan 4 aktor mikro lingkungan tugas.', 'Mampu mengidentifikasi sumber ancaman dan peluang eksternal.'],
-        ['2', '4 Tipologi Budaya Daft', 'Kombinasi fokus internal/eksternal dan kebutuhan lingkungan fleksibel/stabil.', 'Mampu mencocokkan profil perusahaan dengan tipe budaya Daft.'],
-        ['3', '3 Level Budaya Schein', 'Analisis artifak fisik, nilai resmi, dan asumsi dasar bawah sadar.', 'Mampu menguraikan anatomi budaya sebuah korporasi.']
+        ['Customers', 'Employees', 'Technological'],
+        ['Competitors', 'Culture', 'Natural'],
+        ['Suppliers', 'Management', 'Sociocultural'],
+        ['Labor Market', '', 'Economic'],
+        ['', '', 'Legal/Political'],
+        ['', '', 'International'],
       ],
-      caption: 'Tabel 2.2: Peta penguasaan submateri TM 2 Pengantar Manajemen.'
     },
-    CASE_CULTURE_ENVIRONMENT_DAFT,
+    { kind: 'p', text: '**Dua daftar komponen internal environment di buku:**' },
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Asal di buku', 'Komponen yang disebut', 'Catatan'],
+      rows: [
+        ['Teks 2-1 [hal. 55] dan Exh. 2.1 [hal. 54]', 'Employees, management, dan terutama **corporate culture**', 'Hal. 55 juga menyebut bahwa aspek internal lain, seperti structure dan technology, dibahas di bab-bab berikutnya'],
+        ['Pembuka 2-3 [hal. 67]', '**Corporate culture**, production technology, organization structure, physical facilities', 'Dari keempatnya, corporate culture disebut faktor yang sangat penting untuk meraih dan mempertahankan keunggulan bersaing'],
+      ],
+    },
+    { kind: 'p', text: 'Kedua daftar tidak saling membatalkan. Keduanya menempatkan **corporate culture** sebagai unsur kunci internal environment.' },
+    { kind: 'p', text: '**Hubungan antarlingkungan:**' },
+    {
+      kind: 'ul',
+      items: [
+        'Organisasi adalah **open system**: menarik sumber daya dari lingkungan eksternal, lalu melepas barang dan jasa kembali ke sana [hal. 55].',
+        'Perubahan dramatis di general environment bisa merembet ke banyak bagian task environment. Saat wabah COVID-19 bermula, taman hiburan Disney di Shanghai dan Hong Kong tutup, Hyundai dan Volkswagen kekurangan pasokan suku cadang dari Tiongkok, dan maskapai membatalkan penerbangan ke Tiongkok [hal. 55].',
+        'Contoh ecosystem: Apple dengan ratusan pemasok dan jutaan pelanggan di beberapa industri [hal. 55].',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Corporate culture **dibentuk oleh** lingkungan eksternal sekaligus **membentuk** cara manajer merespons perubahan di lingkungan eksternal [hal. 54]. Kalimat ini adalah benang merah seluruh bab.',
+    },
+    // ---------------------------------------------------------------- §2
+    { kind: 'h2', text: '2. Task Environment' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Sektor', 'Arti sederhana', 'Contoh dari buku'],
+      rows: [
+        ['**Customers**', 'Orang dan organisasi yang memperoleh barang/jasa dari organisasi. Mereka menentukan keberhasilan organisasi.', 'Target merombak produk grocery (lebih banyak makanan alami dan organik) karena porsi pelanggan Millennial dan Gen Z membesar [hal. 55]'],
+        ['**Competitors**', 'Organisasi di industri yang sama yang melayani kelompok pelanggan yang sama', 'PepsiCo dan Coca-Cola bersaing lebih dari seabad; keduanya meluncurkan rasa dan kampanye baru untuk Millennial dan Gen Z [hal. 55–56]'],
+        ['**Suppliers**', 'Pihak yang menyediakan bahan baku untuk output organisasi', 'Toyota, dengan lebih dari 500 pemasok suku cadang global dalam sistem just-in-time [hal. 56]'],
+        ['**Labor market**', 'Orang di lingkungan yang bisa direkrut organisasi; dipengaruhi serikat pekerja, asosiasi karyawan, dan ketersediaan kelompok pekerja tertentu', 'Disney dan GE merumahkan karyawan saat pandemi; masuknya Gen Z ke dunia kerja [hal. 57]'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber definisi: [hal. 55–57].' },
+    { kind: 'p', text: '**Supply chain dan just-in-time (JIT)** [hal. 56–57]' },
+    {
+      kind: 'ul',
+      items: [
+        '**Supply chain** = jaringan bisnis dan individu yang terhubung lewat aliran produk atau jasa.',
+        '**JIT** menjaga persediaan seminimal mungkin; bahan datang tepat saat dibutuhkan. Hasilnya ROI, kualitas, dan efisiensi naik karena lebih sedikit uang tertanam di persediaan menganggur.',
+        '**Sisi negatifnya:** gempa dan tsunami di Jepang menghentikan pemasok suku cadang Jepang. Produksi Toyota turun 800.000 kendaraan, 10% output tahunannya. Meski begitu, sebagian besar perusahaan tidak mau menambah persediaan sebagai bantalan karena biayanya besar.',
+        '**Bridge City Brinery** (usaha acar rintisan saat pandemi) sempat kesulitan mendapat toples kaca karena banyak orang mengawetkan makanan di rumah [hal. 56].',
+      ],
+    },
+    { kind: 'p', text: '**Tiga kekuatan labor market saat ini** [hal. 57]:' },
+    {
+      kind: 'ol',
+      items: [
+        'Kebutuhan akan knowledge worker yang melek komputer.',
+        'Investasi terus-menerus pada SDM lewat rekrutmen, pendidikan, dan pelatihan.',
+        'Dampak blok perdagangan internasional, otomasi, outsourcing, dan relokasi fasilitas: kelebihan tenaga kerja di satu daerah, kekurangan di daerah lain.',
+      ],
+    },
+    { kind: 'p', text: '**Contoh lingkungan yang kompleks: Costco (Exhibit 2.2)** [hal. 57–59]. Costco bersaing lewat harga murah: interior gudang yang hemat biaya, hanya sekitar 10.000 produk unik (Walmart lebih dari 100.000), dan negosiasi harga rendah dengan pemasok. Keunggulan terbesarnya adalah karyawan yang loyal: gaji dua sampai tiga kali rata-rata ritel dan asuransi kesehatan bahkan untuk karyawan paruh waktu, sehingga turnover-nya termasuk terendah di industri [hal. 57]. Exhibit 2.2 memetakan semua sektor lingkungan Costco:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Sektor', 'Gambaran di Exhibit 2.2 (ringkas)'],
+      rows: [
+        ['Competitors', 'Persaingan ketat (Sam\'s Club, BJ\'s, Walmart, dll.) dan ancaman dari persaingan online seperti Amazon'],
+        ['Suppliers', 'Vendor merek besar; hubungan erat dengan pemasok untuk menjaga harga rendah'],
+        ['Labor market', 'Karyawan dianggap keunggulan bersaing'],
+        ['Customers', 'Menarik pelanggan yang mencari volume besar dan harga rendah'],
+        ['General environment', 'Contoh per dimensi: desain gedung hemat energi (natural), kebutuhan belanja besar keluarga (sociocultural), rentan perlambatan ekonomi dan kurs (economic), pertumbuhan di Asia (international), dukungan kenaikan upah minimum (legal–political), e-commerce dan kartu anggota digital (technological)'],
+      ],
+    },
+    // ---------------------------------------------------------------- §3
+    { kind: 'h2', text: '3. General Environment' },
+    { kind: 'p', text: 'Buku menguraikan **enam dimensi** general environment [hal. 55, 58–62]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dimensi', 'Arti sederhana', 'Contoh dari buku'],
+      rows: [
+        ['**International**', 'Peristiwa yang berasal dari negara lain, juga peluang baru di negara lain; membawa pesaing, pelanggan, dan pemasok baru', 'Penegakan GDPR (aturan privasi data Uni Eropa) di Irlandia terhadap perusahaan teknologi besar [hal. 58]. Dibahas lebih dalam di TM03 (Ch. 3)'],
+        ['**Technological**', 'Kemajuan ilmu dan teknologi di industri dan masyarakat', 'Eksperimen drone-delivery (Amazon, Alphabet, Uber, UPS); pembuat kamera digital lambat menambah WiFi dan kalah oleh smartphone, "classic case of an industry that is unable to adapt" [hal. 60]'],
+        ['**Sociocultural**', 'Karakteristik demografis, norma, kebiasaan, dan nilai masyarakat (sebaran geografis, kepadatan, usia, pendidikan)', 'Hallmark Channel menarik iklan pernikahan sesama jenis setelah protes, lalu membatalkan keputusan itu setelah reaksi balik [hal. 60]'],
+        ['**Economic**', 'Kesehatan ekonomi negara/wilayah: daya beli, pengangguran, suku bunga', 'Dampak pandemi COVID-19 terhadap ekonomi AS dan sebagian besar negara lain [hal. 60]'],
+        ['**Legal–political**', 'Regulasi pemerintah di tingkat lokal, negara bagian, federal, plus aktivitas politik yang memengaruhi perilaku perusahaan', 'Johnson & Johnson menghadapi ribuan gugatan terkait tuduhan kandungan asbes pada bedak bayi [hal. 61]'],
+        ['**Natural**', 'Semua unsur alami di bumi: tumbuhan, hewan, batuan, udara, air, iklim', 'Reaksi konsumen terhadap plastik sekali pakai; Starbucks mendesain ulang tutup minuman dingin agar tidak perlu sedotan plastik [hal. 62]; Considered Design Index Nike [hal. 61]'],
+      ],
+    },
+    { kind: 'p', text: 'Dua tren sociocultural yang disorot buku [hal. 60]: (1) generasi konsumen yang sangat melek teknologi dan menghargai merek yang tepercaya serta bertanggung jawab secara lingkungan, sosial, dan fiskal; (2) anak muda memimpin tren kesetaraan sosial.' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Dimensi natural **tidak punya suara sendiri**. Tekanan untuk memperhatikannya datang lewat sektor lain: regulasi pemerintah, kepedulian konsumen, media, tindakan pesaing, bahkan karyawan [hal. 61–62]. Peringkat kinerja lingkungan antarnegara ada di Exhibit 2.3 [hal. 62].',
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (1/3)',
+      text: 'Sejumlah pemerintah daerah di Indonesia membatasi penggunaan kantong plastik sekali pakai di toko ritel. Bagi peritel, ini tekanan dari dimensi **natural** yang datang lewat dimensi **legal–political**. Polanya sesuai buku: dimensi natural memengaruhi organisasi lewat sektor lain, salah satunya regulasi pemerintah [hal. 61–62].',
+    },
+    // ---------------------------------------------------------------- §4
+    { kind: 'h2', text: '4. Hubungan Organisasi–Lingkungan dan Environmental Uncertainty' },
+    { kind: 'p', text: '**Mengapa organisasi peduli pada lingkungan?** Karena lingkungan menciptakan **ketidakpastian**, dan manajer harus meresponsnya dengan mendesain organisasi agar bisa beradaptasi [hal. 63]. Ini berlaku juga untuk nonprofit: keanggotaan Junior League turun 30% dari 2000 ke 2018. Sekitar 85% anggotanya kini bekerja di luar rumah, sehingga model penggalangan dana lewat toko barang bekas tidak lagi berjalan [hal. 63].' },
+    { kind: 'p', text: '**Uncertainty** = manajer tidak punya informasi yang cukup tentang faktor lingkungan untuk memahami dan memprediksi kebutuhan serta perubahan lingkungan [hal. 63].' },
+    { kind: 'p', text: '**Exhibit 2.4: The External Environment and Uncertainty** [hal. 63–64]' },
+    { kind: 'p', text: 'Sumbu Exhibit 2.4: **laju perubahan** faktor di lingkungan (Low di bawah, High di atas) dan **jumlah faktor** di lingkungan (Low di kiri, High di kanan). **Low uncertainty** berada di kiri-bawah; **High uncertainty** berada di kanan-atas dan mengarah ke **adapt to environment**.' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kondisi', 'Ciri', 'Contoh dari buku'],
+      rows: [
+        ['**High uncertainty**', 'Banyak faktor, faktor berubah cepat', 'Perusahaan TV kabel menghadapi streaming. Disney+ meraih 28,6 juta pelanggan dalam kurang dari tiga bulan pada 2020; Netflix pada akhir 2018 punya sekitar 1.000 acara orisinal dan lebih dari 130 juta pelanggan [hal. 63–64]'],
+        ['**Low uncertainty**', 'Sedikit faktor, relatif stabil', 'Pembotol minuman ringan dan pengolah makanan; manajer bisa mencurahkan lebih sedikit perhatian ke isu eksternal [hal. 64]'],
+      ],
+    },
+    { kind: 'p', text: 'Manajer multinasional seperti Costco harus menangani ribuan faktor eksternal yang menciptakan ketidakpastian [hal. 63].' },
+    {
+      kind: 'callout',
+      variant: 'tip',
+      title: 'Tips',
+      text: 'Dua sumbu Exhibit 2.4 adalah **jumlah faktor** dan **laju perubahan** faktor. Makin tinggi keduanya, makin tinggi ketidakpastian, dan makin kuat tuntutan untuk beradaptasi [hal. 63–64].',
+    },
+    // ---------------------------------------------------------------- §5
+    { kind: 'h2', text: '5. Adaptasi terhadap Lingkungan' },
+    { kind: 'p', text: 'Perubahan lingkungan bisa datang perlahan (selera pelanggan bergeser) atau mendadak (gempa dan tsunami Jepang). **Tingkat turbulensi menentukan jenis respons** yang harus dibuat manajer [hal. 64].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Konsep', 'Arti sederhana', 'Sumber'],
+      rows: [
+        ['**Strategic issues**', '"Events or forces either inside or outside an organization that are likely to alter its ability to achieve its objectives." Makin turbulen lingkungan, makin sering strategic issues muncul', '[hal. 64]'],
+        ['**Boundary spanning**', 'Mengaitkan dan mengoordinasikan aktivitas organisasi dengan elemen kunci di lingkungan eksternal, **termasuk** mewakili kepentingan organisasi untuk memengaruhi lingkungan', '[hal. 64, 66]'],
+        ['**Business intelligence**', 'Memindai lingkungan dari berbagai sumber untuk mengumpulkan informasi dan menemukan pola atau tren penting', '[hal. 64–65]'],
+        ['**Social media analytics**', 'Mengumpulkan dan menganalisis data dari platform media sosial untuk menyelesaikan masalah tertentu atau menilai dampak dan popularitas perusahaan', '[hal. 65]'],
+        ['**Big data analytics**', 'Menelusuri data masif dan kompleks untuk menemukan pola dan korelasi tersembunyi demi keputusan yang lebih baik (sudah dikenalkan di TM01)', '[hal. 66]'],
+      ],
+    },
+    { kind: 'p', text: 'Buku menguraikan **dua kelompok strategi** adaptasi: business intelligence dan upaya memengaruhi lingkungan [hal. 64].' },
+    { kind: 'p', text: '**Strategi 1: Business intelligence, empat sumber informasi** [hal. 65]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Sumber', 'Caranya'],
+      rows: [
+        ['**Personal internal**', 'Berbincang dengan rekan dan bawahan tentang yang terjadi di departemen dan isu dengan pelanggan, pemasok, atau pesaing'],
+        ['**Personal external**', 'Membangun hubungan baik dengan orang di perusahaan pesaing, pemasok, dan pelanggan'],
+        ['**Organizational internal**', 'Memindai laporan dan dokumen internal'],
+        ['**Organizational external**', 'Mengikuti berita, laporan industri, dan database riset'],
+      ],
     },
     {
       kind: 'ul',
       items: [
-        '**Budaya Memakan Strategi Saat Sarapan (Culture Eats Strategy for Breakfast)**: Ucapan terkenal Peter Drucker menegaskan bahwa sebaik apapun rencana strategis dirancang, rencana tersebut akan gagal total jika bertentangan dengan budaya organisasi internal.',
-        '**Boundary-Spanning Roles**: Untuk mengatasi ketidakpastian lingkungan, manajer harus membentuk peran perentang batas (Boundary Spanning) seperti tim riset pasar dan hubungan pemerintah.',
-        '**Simbol dan Cerita Membentuk Budaya**: Para pemimpin menanamkan budaya baru bukan hanya melalui instruksi memo, melainkan melalui cerita keteladanan (hero stories), slogan inspiratif, dan upacara pemberian penghargaan.'
-      ]
-    }
-  ]
+        '**Social media analytics:** Marriott punya tim yang menganalisis Twitter, Instagram, dan Facebook secara real time untuk mengikuti tren dan melayani tamu. Beberapa restoran memantau promo harian pesaing lalu membuat promo tandingan [hal. 65–66].',
+        '**Big data analytics:** *Moneyball* (Oakland Athletics memakai statistik pemain yang sebelumnya diabaikan); PASSUR Aerospace membantu maskapai memprediksi waktu kedatangan pesawat [hal. 66].',
+      ],
+    },
+    { kind: 'p', text: '**Strategi 2: Influence the environment** [hal. 66]' },
+    {
+      kind: 'ul',
+      items: [
+        'Boundary spanning juga berarti mewakili kepentingan organisasi untuk memengaruhi lingkungan eksternal. Amazon, GE, Facebook, dan Lockheed Martin mengeluarkan jutaan dolar per tahun untuk lobi politik; pada 2019 Amazon menghabiskan hampir \\$17 juta.',
+        '**Ironi Boeing:** Boeing memenangkan lobi yang melemahkan peran FAA dalam menyetujui desain pesawat baru, beberapa minggu sebelum dua pesawat 737 MAX jatuh. Seluruh 737 MAX dilarang terbang selama setahun, dan Boeing kehilangan gelar pembuat pesawat terbesar dunia ke Airbus.',
+      ],
+    },
+    { kind: 'p', text: '**Contoh adaptasi dari buku, Commit to Green** [hal. 64–65]: usaha kantong kompos milik Shien-Ru Tsao hampir berhenti saat pandemi. Tsao berpindah ke penjualan online langsung ke konsumen, bermitra dengan Amazon, dan mempercepat pengembangan aplikasi untuk membantu konsumen mengelola sampah makanan. Ia juga merampingkan operasi: mengurangi pekerja kontrak, memindahkan gudang, dan merombak strategi pemasaran serta situs web.' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (2/3)',
+      text: 'Saat pandemi, banyak UMKM kuliner di Indonesia yang tadinya mengandalkan makan di tempat beralih berjualan lewat aplikasi pesan-antar dan media sosial. Dalam bahasa Chapter 2, pandemi adalah **strategic issue** yang mengubah kemampuan usaha mencapai tujuannya, dan pola responsnya mirip Commit to Green: memindahkan saluran penjualan ke online [hal. 64–65].',
+    },
+    { kind: 'p', text: '**Catatan cakupan:** strategi adaptasi yang diuraikan Chapter 2 edisi ini hanya business intelligence (termasuk social media dan big data analytics) dan influence the environment. Halaman ini tidak menambahkan strategi lain dari luar buku.' },
+    // ---------------------------------------------------------------- §6
+    { kind: 'h2', text: '6. Corporate Culture' },
+    { kind: 'p', text: '**Internal environment** mencakup corporate culture, production technology, organization structure, dan physical facilities. Corporate culture sangat penting untuk keunggulan bersaing. Budaya internal harus **cocok (fit)** dengan kebutuhan lingkungan eksternal dan strategi perusahaan; bila cocok, karyawan yang berkomitmen tinggi menciptakan organisasi berkinerja tinggi [hal. 67].' },
+    { kind: 'p', text: '**Culture** = seperangkat nilai kunci, keyakinan, pemahaman, dan norma yang dimiliki bersama oleh anggota organisasi [hal. 67].' },
+    {
+      kind: 'ul',
+      items: [
+        'Sehari-hari sering disebut "how we do things around here" [hal. 67].',
+        'Culture mengarahkan cara orang berinteraksi di dalam organisasi **dan** cara organisasi berinteraksi dengan lingkungan eksternal [hal. 67].',
+        'Pola ini **dipelajari** anggota saat menghadapi masalah eksternal dan internal, lalu **diajarkan** kepada anggota baru sebagai cara yang benar untuk memandang, berpikir, dan merasa [hal. 67].',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 2.5: Levels of Corporate Culture** [hal. 67]' },
+    { kind: 'p', text: 'Teks buku menyebut budaya bisa dianalisis pada **dua level**: yang terlihat di permukaan dan yang tidak terlihat. Exhibit 2.5 memerinci level tak terlihat menjadi dua lapisan, sehingga ada tiga butir bernomor:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Level', 'Butir di Exhibit 2.5', 'Contoh di Exhibit', 'Cara mengenalinya'],
+      rows: [
+        ['**Visible** (permukaan)', '1. **Artifacts**', 'Cara berpakaian, tata letak kantor, simbol, slogan, seremoni', 'Bisa dilihat, didengar, diamati'],
+        ['**Invisible** (lebih dalam)', '2. **Expressed values**', '"The Penney Idea", "The HP Way"', 'Ditafsirkan dari cerita, bahasa, dan simbol yang dipakai anggota'],
+        ['', '3. **Underlying assumptions and deep beliefs**', '"People here care about one another like a family"', 'Tertanam begitu dalam sehingga anggota tidak lagi sadar; **inti budaya**, membimbing perilaku secara bawah sadar'],
+      ],
+    },
+    { kind: 'p', text: '**Contoh basic assumption** [hal. 67–68]: bila asumsinya "orang pada dasarnya malas", karyawan diawasi ketat dan diberi sedikit kebebasan. Bila asumsinya "orang ingin bekerja dengan baik", karyawan diberi kebebasan dan tanggung jawab lebih, dan rekan kerja saling percaya.' },
+    { kind: 'p', text: '**Contoh dari buku, Zara (Inditex):** desainer dan karyawan lain bekerja dalam tim di ruang terbuka, tanpa rapat formal dan tanpa satu orang yang "memegang kendali". Sebuah mantel baru bisa berpindah dari studio desain di Spanyol ke rak toko di Manhattan dalam 25 hari. Budaya ini bagian penting dari model bisnis Inditex [hal. 68].' },
+    { kind: 'p', text: '**Jembatan ke TM01, The Bossless Workplace (Sunny Side Up)** [hal. 68]. Faktor sukses organisasi tanpa bos:' },
+    {
+      kind: 'ol',
+      items: [
+        'Kurangi hierarki mulai dari atas (W. L. Gore: pemimpin muncul, bukan ditunjuk).',
+        'Kembangkan lingkungan bossless yang **cocok** dengan organisasinya (Basecamp).',
+        'Rekrut orang yang bisa beradaptasi dengan budaya tanpa bos (Menlo Innovations, "extreme interviewing").',
+        'Siap menghadapi hambatan: kebanyakan karyawan butuh enam bulan sampai satu tahun untuk beradaptasi, dan sebagian keluar.',
+      ],
+    },
+    // ---------------------------------------------------------------- §7
+    { kind: 'h2', text: '7. Toxic Cultures (di luar RPP: ringkas)' },
+    { kind: 'p', text: 'Budaya yang kuat juga bisa mendukung nilai dan perilaku negatif. **Toxic culture** terjadi ketika sentimen negatif dan konflik internal yang terus-menerus menimbulkan stres, ketidakbahagiaan, dan turunnya produktivitas di kelompok karyawan tertentu [hal. 69].' },
+    {
+      kind: 'ul',
+      items: [
+        'Salah satu bentuknya adalah budaya "bro" yang membiarkan perilaku misoginis. Isu yang disorot buku: nilai maskulin yang toksik berujung pada pelecehan seksual [hal. 69].',
+        'Gerakan #MeToo mendorong banyak perusahaan meninjau cara mereka menangani pelanggaran. Budaya di CBS, Nike, McDonald\'s, dan Google dikritik karena salah menangani tuduhan pelecehan (fitur Half-Baked Management) [hal. 69].',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Bagian ini di luar bahan kajian RPP, tetapi menjadi latar untuk memahami Kuadran A di Exhibit 2.7 (Uber) dan pembersihan budaya toksik di Traeger (§10–§11) [hal. 76, 78].',
+    },
+    // ---------------------------------------------------------------- §8
+    { kind: 'h2', text: '8. Interpreting dan Shaping Culture' },
+    { kind: 'p', text: 'Budaya yang sehat tampak dari **perilaku manajer** dan **nilai yang dinyatakan**. Nilai dasar organisasi juga tampak lewat lima unsur di bawah. Kelima unsur ini bisa **dipakai atau diubah oleh manajer** untuk membentuk budaya [hal. 69].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Unsur', 'Definisi buku', 'Contoh dari buku'],
+      rows: [
+        ['**Symbol**', 'Objek, tindakan, atau peristiwa yang menyampaikan makna kepada orang lain; "bahasa nonverbal" budaya', 'CEO Laclede Group Suzanne Sitherwood pindah ke kantor kecil, mengubah kantor sudutnya menjadi ruang rapat, dan membiarkan pintunya terbuka [hal. 70]. "Door desk" Amazon sebagai simbol hemat [hal. 70]'],
+        ['**Story**', 'Narasi **berdasarkan kejadian nyata** yang sering diulang dan dibagikan di antara karyawan', 'Huawei merayakan karyawan yang menjaga layanan telekomunikasi saat serangan teror di Mumbai dan di Gunung Everest; menguatkan nilai tenacity dan drive [hal. 70]'],
+        ['**Hero**', 'Tokoh yang mencontohkan tindakan, karakter, dan atribut budaya yang kuat; panutan karyawan', 'Steve Jobs di Apple; Tim Cook menjaga budaya yang dibangun Jobs [hal. 70]'],
+        ['**Slogan**', 'Frasa atau kalimat yang merangkum nilai kunci perusahaan', 'Ritz-Carlton: "Ladies and gentlemen taking care of ladies and gentlemen"; LEGO; Walmart [hal. 70]'],
+        ['**Ceremony**', 'Kegiatan terencana pada acara khusus, diadakan untuk audiens', 'Pesawat khusus Southwest Airlines ("Lone Star One", "Slam Dunk One") untuk merayakan tonggak sejarah perusahaan [hal. 71]'],
+      ],
+    },
+    { kind: 'p', text: 'Nilai budaya juga terlihat dari **pernyataan tertulis**, seperti mission statement dan pernyataan resmi lain tentang nilai inti organisasi [hal. 71].' },
+    {
+      kind: 'callout',
+      variant: 'tip',
+      title: 'Tips',
+      text: 'Ceremony punya tiga fungsi: menguatkan pencapaian yang dihargai, membangun ikatan lewat pengalaman bersama, dan mengangkat serta merayakan hero [hal. 71].',
+    },
+    // ---------------------------------------------------------------- §9
+    { kind: 'h2', text: '9. Empat Tipe Budaya' },
+    { kind: 'p', text: '**Mengapa budaya berbeda-beda?** Lingkungan eksternal sangat memengaruhi budaya internal. Organisasi dalam industri yang sama sering punya budaya mirip karena lingkungannya mirip. Budaya internal sebaiknya mewujudkan apa yang dibutuhkan untuk sukses di lingkungannya [hal. 71].' },
+    { kind: 'p', text: 'Tipe budaya ditentukan oleh **dua dimensi** [hal. 71]: (1) apakah lingkungan menuntut **flexibility** atau **stability**; (2) apakah fokus strategis perusahaan **internal** atau **external**.' },
+    { kind: 'p', text: '**Exhibit 2.6: Four Types of Corporate Culture** [hal. 72]' },
+    {
+      kind: 'table',
+      headers: ['Strategic focus / Needs of the environment', 'Flexibility', 'Stability'],
+      rows: [
+        ['External', 'Adaptability', 'Achievement'],
+        ['Internal', 'Involvement', 'Consistency'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tipe', 'Posisi', 'Nilai yang dihargai', 'Lingkungan yang cocok', 'Contoh dari buku'],
+      rows: [
+        ['**Adaptability**', 'External + flexibility', 'Mendeteksi, menafsirkan, dan menerjemahkan sinyal lingkungan menjadi perilaku baru; otonomi; responsif pada pelanggan; kreativitas, eksperimen, keberanian mengambil risiko', 'Respons cepat dan keputusan berisiko tinggi; perusahaan teknologi dan internet, pemasaran, elektronik, kosmetik', '**TubeMogul**: "jangan takut salah"; menghargai "do-to-say ratio" yang tinggi [hal. 71–72]'],
+        ['**Achievement**', 'External + stability', 'Hasil: daya saing, agresivitas, inisiatif pribadi, pemangkasan biaya, kemauan bekerja keras; kemenangan dan target ambisius sebagai "lem"', 'Melayani pelanggan tertentu tanpa kebutuhan fleksibilitas dan perubahan yang intens', '**Huawei**, versi radikal: "wolf spirit". Budaya ini membantu Huawei tumbuh, tetapi juga membawa masalah (tuduhan suap dan penyalinan kode sumber); kini perusahaan lebih memperhatikan aturan dan kontrol internal [hal. 72–73]'],
+        ['**Involvement**', 'Internal + flexibility', 'Partisipasi karyawan untuk beradaptasi cepat; memenuhi kebutuhan karyawan; suasana peduli seperti keluarga; kerja sama, perhatian pada karyawan dan pelanggan, menghindari perbedaan status', 'Perubahan kebutuhan lingkungan yang dijawab lewat keterlibatan karyawan', '**Four Seasons** ("golden rule": fasilitas karyawan di-upgrade lebih dulu); **Salesforce** (Ohana) [hal. 73]'],
+        ['**Consistency**', 'Internal + stability', 'Taat aturan, hemat; cara kerja metodis, rasional, teratur', 'Lingkungan stabil (makin jarang saat ini)', '**Pacific Edge Software**: budaya keteraturan, disiplin, dan kontrol; proyek tepat waktu dan sesuai anggaran [hal. 73–74]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Keempat tipe **bisa sama-sama sukses**, dan organisasi biasanya punya nilai dari **lebih dari satu** tipe. Penekanannya bergantung pada kebutuhan lingkungan dan fokus organisasi. Manajer bertanggung jawab menanamkan nilai budaya yang dibutuhkan organisasi untuk sukses di lingkungannya [hal. 74].',
+    },
+    // ---------------------------------------------------------------- §10
+    { kind: 'h2', text: '10. Budaya untuk Inovasi dan Kinerja Tinggi' },
+    { kind: 'p', text: '**Mengapa budaya penting bagi kinerja** [hal. 75]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Banyak pemimpin puncak menyebut budaya sebagai mekanisme terpenting untuk menarik, memotivasi, dan mempertahankan talenta, kemampuan yang dianggap prediktor terbaik keunggulan organisasi.',
+        'Dalam survei terhadap 500 perusahaan top Kanada, 82% pemimpin menyatakan budaya berdampak kuat pada kinerja perusahaan.',
+        'Studi Charles O\'Reilly dkk.: budaya cenderung **mencerminkan karakter pemimpin puncak**, dan budaya memengaruhi kinerja keuangan, reputasi, serta sikap karyawan.',
+      ],
+    },
+    { kind: 'p', text: '**Budaya dan inovasi** [hal. 75]: corporate culture berperan kunci dalam menciptakan iklim organisasi yang memungkinkan **pembelajaran dan respons inovatif** terhadap ancaman eksternal, peluang baru, atau krisis. Tetapi manajer tidak bisa hanya fokus pada nilai; mereka juga perlu komitmen pada kinerja bisnis. Nilai yang paling dekat dengan inovasi di bab ini adalah nilai **adaptability culture**: kreativitas, eksperimen, dan keberanian mengambil risiko (§9) [hal. 71–72].' },
+    { kind: 'p', text: '**Catatan cakupan:** Chapter 2 membahas inovasi hanya sebatas peran budaya di atas. Proses inovasi dan perubahan organisasi dibahas di TM09 (Chapter 8, Managing Innovation and Change).' },
+    { kind: 'h3', text: 'Managing the High-Performance Culture [hal. 75–77]' },
+    { kind: 'p', text: 'Perusahaan yang sukses di dunia yang turbulen **mengevaluasi dan memberi imbalan** kepada manajer atas perhatian pada **nilai budaya dan kinerja bisnis sekaligus** [hal. 75].' },
+    { kind: 'p', text: '**Exhibit 2.7: Combining Culture and Performance** [hal. 76]' },
+    {
+      kind: 'table',
+      headers: ['Attention to business performance / Attention to values', 'Low', 'High'],
+      rows: [
+        ['High', 'Quadrant A: high performance, low cultural values', 'Quadrant B: high performance, high cultural values'],
+        ['Low', 'Quadrant C: low performance, low cultural values', 'Quadrant D: low performance, high cultural values'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kuadran', 'Deskripsi Exhibit 2.7', 'Konsekuensi', 'Contoh dari buku'],
+      rows: [
+        ['**A**', 'Managers meet performance goals but fail to uphold cultural values', 'Bisa untung dalam jangka pendek, tetapi sulit bertahan lama karena "lem" organisasi, yaitu nilai budaya bersama, hilang', '**Uber** era Travis Kalanick: fokus pertumbuhan cepat, abai pada nilai budaya positif; laporan pelecehan, tuduhan mengabaikan regulasi; Kalanick tersingkir dan budaya dirombak [hal. 76]'],
+        ['**B**', 'Managers achieve performance goals and uphold desired cultural values', 'Budaya dan kinerja sama-sama menjadi penggerak sukses; nilai budaya diselaraskan dengan operasi harian (rekrutmen, performance management, anggaran, kriteria promosi dan imbalan)', '**GE** di bawah Jack Welch [hal. 76–77]'],
+        ['**C**', 'Managers do not meet performance goals or uphold cultural values', 'Kecil kemungkinan bertahan lama', '— [hal. 75]'],
+        ['**D**', 'Managers do not meet performance goals but do uphold cultural values', 'Budaya kuat dan kohesif, tetapi nilai tidak dikaitkan dengan tujuan dan hasil bisnis; tidak membantu saat masa sulit', '**LEGO** tahun 1990-an ("We\'re doing great stuff for kids—don\'t bother us with financial goals."). CEO Jørgen Vig Knudstorp (2004) mengubah budaya dengan motto "I am here to make money for the company" [hal. 75–76]'],
+      ],
+    },
+    { kind: 'p', text: '**Nilai yang diminta Welch** di samping "making their numbers" [hal. 77]: passion for excellence dan benci birokrasi; terbuka pada ide dari mana pun; "live" quality serta mendorong biaya dan kecepatan untuk keunggulan bersaing.' },
+    { kind: 'p', text: '**Tiga ciri high-performance culture (Kuadran B)** [hal. 77]:' },
+    {
+      kind: 'ol',
+      items: [
+        'Berbasis misi atau tujuan organisasi yang kokoh.',
+        'Mewujudkan **nilai adaptif bersama** yang membimbing keputusan dan praktik bisnis.',
+        'Mendorong karyawan ikut memiliki **hasil bisnis** dan **tulang punggung budaya** organisasi.',
+      ],
+    },
+    { kind: 'p', text: '**Bukti:** John Kotter dan James Heskett (*Corporate Culture and Performance*) menunjukkan perusahaan yang sengaja mengelola nilai budayanya mengungguli perusahaan serupa yang tidak. Riset terbaru juga mengonfirmasi bahwa elemen budaya berkorelasi positif dengan kinerja keuangan [hal. 77].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Budaya yang kuat belum tentu high-performance. Kuadran D punya budaya kuat tetapi kinerjanya rendah; high-performance culture adalah **Kuadran B** [hal. 75–77].',
+    },
+    // ---------------------------------------------------------------- §11
+    { kind: 'h2', text: '11. Cultural Leadership' },
+    { kind: 'p', text: '**Cultural leader** = pemimpin yang mendefinisikan dan memakai sinyal serta simbol untuk memengaruhi corporate culture. Ia memperjelas budaya baru yang diinginkan dan merangkai cerita yang menginspirasi orang untuk berubah; ia adalah **"chief marketing officer"** nilai budaya yang diinginkan [hal. 77].' },
+    {
+      kind: 'ul',
+      items: [
+        'Manajer harus **overcommunicate** agar karyawan memahami nilai budaya baru, dan memberi sinyal nilai itu lewat **tindakan** maupun kata-kata [hal. 77].',
+        'Budaya cenderung mencerminkan karakter pemimpin puncak (O\'Reilly) [hal. 75]; hero seperti Steve Jobs tetap memengaruhi budaya setelah tiada [hal. 70].',
+      ],
+    },
+    { kind: 'p', text: '**Dua area pengaruh cultural leader** [hal. 77]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Area', 'Isinya'],
+      rows: [
+        ['**1. Mengartikulasikan visi budaya**', 'Mendefinisikan dan mengomunikasikan nilai inti yang dipercaya dan didukung karyawan; nilai dikaitkan dengan misi atau tujuan inti yang jelas dan meyakinkan'],
+        ['**2. Memperhatikan aktivitas sehari-hari**', 'Memastikan **orang, prosedur, dan sistem imbalan** cocok dengan nilai dan menguatkannya; "walk their talk"'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Pernyataan nilai yang tidak diperkuat perilaku manajemen **tidak bermakna, bahkan merugikan**. Saat budaya harus berubah, cultural leader memastikan orang paham bahwa cara lama tidak lagi diterima [hal. 77].',
+    },
+    { kind: 'p', text: '**Contoh dari buku:**' },
+    {
+      kind: 'ul',
+      items: [
+        '**BlackRock:** dua eksekutif dipecat secara terbuka karena menjalin hubungan romantis dengan bawahan. Perusahaan menjelaskan kejadian dan alasannya dalam memo kepada 16.000 karyawan. Pesannya: CEO Laurence Fink menuntut standar budaya tinggi dari para eksekutif [hal. 77–78].',
+        '**Traeger:** untuk membersihkan budaya toksik, CEO Jeremy Andrus melepas orang-orang yang menentang visi budayanya, **bahkan yang berkinerja tinggi**, karena mereka berada di Kuadran A. Mereka diperlakukan adil dan mendapat pesangon. Andrus memberi bonus retensi kepada para cultural leader agar mereka bertahan [hal. 78].',
+        '**Saat krisis:** cultural leader tetap memegang komitmen pada nilai. Menjaga nilai membantu organisasi melewati krisis dan keluar lebih kuat [hal. 78].',
+      ],
+    },
+    // ---------------------------------------------------------------- §12
+    { kind: 'h2', text: '12. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'p', text: '**Simpul pusat:** THE ENVIRONMENT AND CORPORATE CULTURE' },
+    {
+      kind: 'ul',
+      items: [
+        '**1. LINGKUNGAN EKSTERNAL**\n- Task (langsung): Customers, Competitors, Suppliers (supply chain, JIT), Labor market\n- General (tidak langsung, 6): International, Technological, Sociocultural, Economic, Legal–political, Natural\n- Organizational ecosystem; organisasi = open system',
+        '**2. KETIDAKPASTIAN & ADAPTASI**\n- Uncertainty (Exh. 2.4): jumlah faktor × laju perubahan\n- Strategic issues\n- Boundary spanning\n  - Business intelligence: 4 sumber; social media analytics; big data analytics\n  - Influence the environment: lobbying',
+        '**3. LINGKUNGAN INTERNAL: CORPORATE CULTURE**\n- Definisi: shared values, beliefs, understandings, norms\n- Levels (Exh. 2.5): Artifacts · Expressed values · Underlying assumptions\n- [di luar RPP] Toxic cultures',
+        '**4. MEMBACA & MEMBENTUK BUDAYA**\n- Symbols, Stories, Heroes, Slogans, Ceremonies (+ mission statement)',
+        '**5. TIPE BUDAYA (Exh. 2.6)**\n- Adaptability · Achievement · Involvement · Consistency',
+        '**6. BUDAYA & KINERJA (Exh. 2.7)**\n- Kuadran A, B, C, D\n- High-performance culture = B (3 ciri)',
+        '**7. CULTURAL LEADERSHIP**\n- Visi budaya + aktivitas harian (walk the talk)',
+      ],
+    },
+    { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
+      rows: [
+        ['Lingkungan eksternal', 'Corporate culture', 'Budaya dibentuk oleh lingkungan eksternal dan membentuk respons manajer terhadapnya', '[hal. 54]'],
+        ['General environment', 'Task environment', 'Perubahan dramatis di general environment merembet ke banyak sektor task environment (COVID-19)', '[hal. 55]'],
+        ['Uncertainty', 'Adaptasi', 'Makin tinggi ketidakpastian, makin kuat tuntutan beradaptasi (Exh. 2.4)', '[hal. 63–64]'],
+        ['Turbulensi', 'Strategic issues', 'Makin turbulen lingkungan, makin sering strategic issues muncul', '[hal. 64]'],
+        ['Big data analytics (TM02)', 'Big data analytics (TM01)', 'Konsep yang sama dipakai sebagai alat business intelligence', '[hal. 66]'],
+        ['Needs of the environment + strategic focus', 'Tipe budaya', 'Dua dimensi Exh. 2.6 menentukan empat tipe', '[hal. 71–72]'],
+        ['Adaptability culture', 'Inovasi', 'Kreativitas, eksperimen, dan keberanian mengambil risiko menopang respons inovatif', '[hal. 71–72, 75]'],
+        ['Symbols, stories, heroes, ceremonies', 'Cultural leadership', 'Cultural leader memakai sinyal dan simbol untuk membentuk budaya', '[hal. 69, 77]'],
+        ['Artifacts', 'Underlying assumptions', 'Artifacts terlihat, tetapi inti budaya ada pada asumsi dasar', '[hal. 67]'],
+        ['Toxic culture', 'Kuadran A', 'Traeger: detractors berkinerja tinggi termasuk Kuadran A', '[hal. 78]'],
+        ['Bossless workplace', 'Kompetensi manajer (TM01)', 'Tren bossless dari Ch. 1 dibahas sebagai nilai budaya', '[hal. 68]'],
+      ],
+    },
+    { kind: 'p', text: '**Kata kunci per cabang:** Eksternal: *task, general, ecosystem, open system* · Adaptasi: *uncertainty, strategic issues, boundary spanning, BI* · Budaya: *shared values, artifacts, assumptions* · Membentuk: *symbol, story, hero, slogan, ceremony* · Tipe: *flexibility–stability, internal–external* · Kinerja: *Quadrant B, values + results* · Leadership: *overcommunicate, walk the talk*' },
+    // ---------------------------------------------------------------- §13
+    { kind: 'h2', text: '13. Contoh Penerapan' },
+    { kind: 'p', text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):' },
+    {
+      kind: 'table',
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
+      rows: [
+        ['Suppliers dan risiko JIT', 'Toyota dan tsunami Jepang', '56'],
+        ['Lingkungan yang kompleks (semua sektor)', 'Costco (Exhibit 2.2)', '57–59'],
+        ['Dimensi sociocultural', 'Hallmark Channel', '60'],
+        ['High uncertainty', 'TV kabel vs layanan streaming (Netflix, Disney+)', '63–64'],
+        ['Adaptasi terhadap strategic issue', 'Commit to Green saat pandemi', '64–65'],
+        ['Influence the environment', 'Lobi Amazon; ironi Boeing 737 MAX', '66'],
+        ['Symbol', 'Suzanne Sitherwood, Laclede Group', '70'],
+        ['Hero', 'Steve Jobs, Apple', '70'],
+        ['Adaptability culture', 'TubeMogul', '71–72'],
+        ['Achievement culture', 'Huawei', '72–73'],
+        ['Involvement culture', 'Four Seasons', '73'],
+        ['Consistency culture', 'Pacific Edge Software', '73–74'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh Exhibit 2.7 (LEGO, Uber, GE) ada di §10, dan contoh cultural leadership (BlackRock, Traeger) ada di §11.' },
+    { kind: 'p', text: '**Contoh di luar buku** (2 dari maksimal 3 slot terpakai): pembatasan kantong plastik (§3) dan UMKM kuliner yang beralih ke penjualan online (§5).' },
+    // ---------------------------------------------------------------- §14
+    { kind: 'h2', text: '14. Bedah Film: The Founder (Ilustrasi)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Ilustrasi',
+      text: 'Seluruh isi §14 adalah ilustrasi dari film *The Founder*, film yang dipakai kelas untuk TM02. Film ini adalah dramatisasi, **bukan sumber fakta sejarah**, dan bagian ini hanya memuat alur besar, tanpa dialog, adegan detail, tanggal, atau angka. **Isi bagian ini perlu dicocokkan dengan pembahasan film di kelas.** Kaitan film dengan teori di bawah adalah analisis, bukan fakta dari buku.',
+    },
+    { kind: 'h3', text: '14.1 Sinopsis Singkat (Ilustrasi)' },
+    { kind: 'p', text: 'Ray Kroc adalah penjual keliling peralatan restoran yang usahanya tidak kunjung berkembang. Ia menemukan restoran milik kakak-beradik McDonald, Dick dan Mac, yang menyajikan makanan dengan sangat cepat berkat menu sederhana dan sistem dapur yang terstandar. Kroc meyakinkan keduanya untuk mewaralabakan restoran itu, lalu memimpin ekspansi waralaba ke banyak kota.' },
+    { kind: 'p', text: 'Seiring pertumbuhan, Kroc dan kakak-beradik McDonald makin berbeda pandangan soal standar mutu, kendali atas keputusan, dan pembagian keuntungan. Kroc kemudian beralih ke model bisnis yang bertumpu pada kepemilikan lahan restoran, sehingga posisinya makin kuat. Pada akhirnya ia mengambil alih perusahaan beserta namanya dari kakak-beradik itu dan tampil sebagai sosok "pendiri".' },
+    { kind: 'h3', text: '14.2 Konsep Chapter 2 yang Muncul (Ilustrasi)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Konsep Chapter 2', 'Momen alur besar di film (Ilustrasi)', 'Teori'],
+      rows: [
+        ['Task environment: customers, competitors', 'Restoran menarik pelanggan lewat layanan cepat yang membedakannya dari restoran lain', '[hal. 55]'],
+        ['Business intelligence (personal external)', 'Sebagai penjual keliling, Kroc melihat peluang dari restoran yang ia kunjungi', '[hal. 65]'],
+        ['Strategic issues', 'Tekanan keuangan selama ekspansi mendorong perubahan model bisnis', '[hal. 64]'],
+        ['Levels of culture: artifacts', 'Sistem dapur yang terstandar dan identitas visual restoran', '[hal. 67]'],
+        ['Levels of culture: expressed values', 'Mutu dan kesederhanaan yang dijaga kakak-beradik McDonald', '[hal. 67]'],
+        ['Stories dan heroes', 'Perebutan narasi tentang siapa "pendiri"', '[hal. 70]'],
+        ['Tipe budaya', 'Cara kerja kakak-beradik yang teratur vs dorongan pertumbuhan Kroc yang agresif', '[hal. 72–74]'],
+        ['Exhibit 2.7', 'Tarik-menarik antara menjaga nilai dan mengejar hasil bisnis', '[hal. 75–77]'],
+        ['Cultural leadership', 'Upaya menjaga agar pewaralaba menjalankan standar yang sama', '[hal. 77]'],
+      ],
+    },
+    { kind: 'h3', text: '14.3 Kaitan Adegan dengan Teori (Ilustrasi; analisis, bukan fakta buku)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Alur besar (Ilustrasi)', 'Analisis dengan teori Chapter 2'],
+      rows: [
+        ['Restoran kakak-beradik McDonald bekerja dengan menu sederhana dan sistem yang terstandar', 'Dapat dibaca sebagai ciri **consistency culture**: cara kerja metodis, rasional, dan teratur [hal. 73]. Sistem dapur itu sendiri adalah **artifact**, sedangkan mutu yang dijaga adalah **expressed value** [hal. 67]'],
+        ['Kroc melihat peluang besar dari restoran itu', 'Dapat dibaca sebagai **business intelligence** dari sumber *personal external*: informasi didapat dari hubungan di luar organisasinya sendiri [hal. 65]'],
+        ['Ekspansi waralaba yang agresif', 'Nilai yang menonjol, seperti daya saing, agresivitas, dan kemauan bekerja keras demi target, dekat dengan **achievement culture** [hal. 72–73]'],
+        ['Kakak-beradik mempertahankan standar, Kroc mendorong pertumbuhan', 'Dapat dianalisis dengan **Exhibit 2.7**: satu pihak menekankan nilai, pihak lain menekankan hasil bisnis. Buku menyebut high-performance culture butuh **keduanya** (Kuadran B) [hal. 75–77]. Kelas bisa mendiskusikan kuadran mana yang paling menggambarkan tiap pihak'],
+        ['Pergeseran ke model kepemilikan lahan', 'Dapat dibaca sebagai respons terhadap **strategic issue**: tekanan yang memengaruhi kemampuan mencapai tujuan memicu perubahan strategi [hal. 64]'],
+        ['Kroc tampil sebagai "pendiri"', 'Menyentuh konsep **story** dan **hero**: narasi yang diulang tentang tokoh panutan ikut membentuk nilai yang dipelajari anggota organisasi [hal. 70]'],
+        ['Menjaga standar di banyak gerai waralaba', 'Menyentuh area kedua **cultural leadership**: memastikan orang dan prosedur cocok dengan nilai yang diinginkan [hal. 77]'],
+      ],
+    },
+    { kind: 'p', text: 'Aspek etika dalam alur film (cara pengambilalihan dan perlakuan terhadap mitra) tidak dianalisis di sini; bahan itu relevan untuk TM04 (Chapter 4, Managing Ethics and Social Responsibility).' },
+    { kind: 'h3', text: '14.4 Managerial Lessons Learned (Ilustrasi; analisis)' },
+    {
+      kind: 'ol',
+      items: [
+        '**Sistem yang konsisten bisa menjadi keunggulan, tetapi harus dijaga saat organisasi tumbuh.** Menjaga standar di banyak unit adalah tugas cultural leadership: orang, prosedur, dan imbalan harus cocok dengan nilai [hal. 77].',
+        '**Hasil tanpa nilai rapuh, nilai tanpa hasil juga rapuh.** Kuadran A sulit bertahan karena "lem" budaya hilang; Kuadran D tidak membantu di masa sulit. Targetnya Kuadran B [hal. 75–76].',
+        '**Peluang ditemukan lewat pemindaian lingkungan.** Business intelligence dari sumber personal maupun organisasional membantu manajer menangkap tren [hal. 65].',
+        '**Siapa yang menceritakan kisah organisasi ikut membentuk budayanya.** Stories dan heroes adalah alat pembentuk budaya [hal. 70].',
+        '**Tipe budaya perlu cocok dengan lingkungan dan strategi.** Tidak ada satu tipe yang selalu terbaik; yang penting kecocokannya [hal. 67, 74].',
+      ],
+    },
+    // ---------------------------------------------------------------- §15
+    { kind: 'h2', text: '15. Analisis Kasus: Not Measuring Up [hal. 82–83]' },
+    { kind: 'h3', text: '15.1 Case Summary' },
+    { kind: 'p', text: 'RTZ Corporation sudah dua tahun memakai firma konsultan milik Carole Wheeling untuk menyurvei karyawan dan menilai para manajer menengah dari sisi employee engagement. Survei ini dipicu CEO Ronald Zeitland, yang meninjau budaya dan kepuasan karyawan karena tenaga kerja makin muda, selera konsumen berubah, dan teknologi di industri berubah. Survei dimaksudkan untuk memberi umpan balik bagi perbaikan berkelanjutan: menunjukkan kekuatan dan kelemahan manajer serta perusahaan, mengantisipasi masalah, menjadi barometer kinerja individu, dan menjadi peta jalan transformasi budaya selama perusahaan berekspansi. Sejak awal Zeitland meminta karyawan menilai dengan jujur, dan setiap survei berbobot sama [hal. 82].' },
+    { kind: 'p', text: 'Dua tahun berjalan, budaya menunjukkan tanda membaik dan hasil keseluruhan naik. Namun untuk tahun kedua, skor manajer Cam Leslie mengecewakan, bahkan sedikit turun di beberapa area [hal. 82].' },
+    { kind: 'p', text: '**Fakta tentang Cam dan timnya menurut buku** [hal. 82]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Yang tertulis di kasus'],
+      rows: [
+        ['Penilaian Wheeling', 'Tampak baik, pekerja keras, cerdas, berdedikasi; mendorong timnya tetapi tidak terlalu mengontrol'],
+        ['Upaya Cam', 'Menerapkan beberapa saran survei tahun lalu; lebih hadir di departemen; menambah jumlah rapat; setidaknya mencoba membuka komunikasi'],
+        ['Gaya', 'Sangat berpengetahuan dan sangat task-oriented; cara berelasinya "a little standoffish" (menurut Zeitland)'],
+        ['Pola skor', 'Persentase skor "favorable" rendah dibanding "unfavorable" dan "neutral"; skor netral sangat banyak. Wheeling: "he\'s beige"; Zeitland: "It\'s like he\'s not there"'],
+        ['Komentar karyawan', 'Soal employee engagement: "Are you kidding?"; soal advocacy: tidak ada yang percaya ia akan "go to bat for us"'],
+        ['Sisi positif', 'Dinilai adil dalam pembagian beban kerja; skor cukup baik untuk follow-through dalam mencapai tujuan perusahaan'],
+        ['Kinerja vs moral', 'Kepuasan dan moral rendah, tetapi kinerja tim setara divisi lain'],
+      ],
+    },
+    { kind: 'p', text: 'Setelah Zeitland menyebut tim Cam tidak menyukai pekerjaannya atau tidak menemukan "any sense of fulfillment", muncul pertanyaan singkat "Does Cam?", yang tidak dijawab di kasus. Wheeling lalu bertanya bagaimana membantu Cam memperbaiki skornya, dan ingin melihat penilaian yang jelas naik atau turun, bukan netral [hal. 82].' },
+    { kind: 'h3', text: '15.2 Problem Identification' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Isu', 'Jenis'],
+      rows: [
+        ['P1', 'Engagement, kepuasan, dan moral tim Cam rendah, padahal kinerja tim setara divisi lain', 'Budaya vs kinerja'],
+        ['P2', 'Skor netral mendominasi; menurut Zeitland, karyawan tidak melihat Cam sebagai manajer mereka', 'Kehadiran kepemimpinan'],
+        ['P3', 'Upaya Cam (menerapkan saran, lebih hadir, rapat lebih banyak) disebut karyawan, tetapi tidak mengubah skor', 'Efektivitas perubahan'],
+        ['P4', 'Karyawan tidak yakin Cam akan membela mereka (advocacy)', 'Relasi manajer–tim'],
+        ['P5', 'Moral rendah tetapi produktif; menurut Zeitland biasanya keduanya berkaitan erat', 'Keberlanjutan kinerja *(hasil analisis)*'],
+        ['P6', 'Penyebab skor netral belum diketahui; Wheeling sendiri ingin menggalinya lebih jauh', 'Diagnosis'],
+        ['P7', 'Semua ini terjadi saat perusahaan sedang mengubah budaya karena lingkungan eksternal berubah', 'Konteks lingkungan'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Kasus tidak menulis bahwa Cam melanggar nilai atau berperilaku buruk. Masalahnya adalah **ketidakhadiran** dalam persepsi tim ("It\'s like he\'s not there"), bukan perilaku negatif [hal. 82].',
+    },
+    { kind: 'h3', text: '15.3 Analisis Kasus (dengan teori Chapter 2)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
+      rows: [
+        ['**Task & general environment**', 'Pemicu survei: tenaga kerja makin muda (labor market), selera konsumen berubah (customers), teknologi industri berubah (technological)', '55–57, 60, 82'],
+        ['**Culture harus fit dengan lingkungan & strategi**', 'Zeitland mengubah budaya karena lingkungan berubah dan perusahaan berekspansi', '67, 71, 82'],
+        ['**Levels of culture (Exh. 2.5)**', 'Tambahan rapat dan kehadiran adalah perubahan yang **terlihat**. Skor yang tidak bergerak menunjukkan persepsi tim di level yang lebih dalam belum berubah *(hasil analisis)*', '67'],
+        ['**Involvement culture**', 'Survei engagement yang mengundang semua karyawan bicara mencerminkan nilai partisipasi dan pemenuhan kebutuhan karyawan *(hasil analisis)*', '73'],
+        ['**Exhibit 2.7**', 'Tim memenuhi target kinerja, tetapi engagement dan moral rendah → paling dekat Kuadran A *(hasil analisis, lihat Q3)*', '76'],
+        ['**High-performance culture**', 'Ciri ke-3: karyawan ikut memiliki hasil **dan** budaya. Tim Cam berkinerja, tetapi menurut Zeitland tidak menemukan "any sense of fulfillment"', '77, 82'],
+        ['**Cultural leadership**', 'Area 1 (visi yang dipercaya) dan area 2 (aktivitas harian yang menguatkan nilai) belum terlihat oleh tim; overcommunicate dan memberi sinyal lewat tindakan', '77'],
+        ['**Symbols & ceremonies**', 'Alat untuk membuat nilai terlihat dan merayakan pencapaian tim', '70–71'],
+      ],
+    },
+    { kind: 'h3', text: '15.4 Jawaban Pertanyaan Kasus' },
+    { kind: 'p', text: '**Q1. Apakah keinginan Zeitland mengubah budaya berkaitan dengan perubahan di lingkungan eksternal? Jelaskan.**' },
+    { kind: 'p', text: 'Ya. Buku menyebut langsung tiga pemicunya [hal. 82], dan ketiganya adalah sektor lingkungan eksternal di Chapter 2:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pemicu di kasus', 'Sektor lingkungan', 'Teori'],
+      rows: [
+        ['"An increasingly younger workforce"', '**Labor market** (task environment); buku menyebut masuknya Gen Z sebagai tren labor market', '[hal. 57]'],
+        ['"Changing consumer tastes"', '**Customers** (task environment); juga tren **sociocultural** (general environment)', '[hal. 55, 60]'],
+        ['"Technology changes in the industry"', '**Technological** (general environment)', '[hal. 60]'],
+      ],
+    },
+    { kind: 'p', text: 'Argumennya: budaya internal harus cocok dengan kebutuhan lingkungan eksternal dan strategi [hal. 67], dan budaya sebaiknya mewujudkan apa yang dibutuhkan untuk sukses di lingkungannya [hal. 71]. Ketika lingkungan berubah, budaya lama bisa kehilangan kecocokan, sehingga langkah Zeitland sejalan dengan teori. Ekspansi perusahaan menambah alasan untuk menata budaya [hal. 82].' },
+    { kind: 'p', text: '**Q2. Investigasi tambahan apa yang bisa dilakukan Wheeling dan Zeitland sebelum menetapkan rencana tindakan untuk Cam?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis, disusun memakai empat sumber business intelligence [hal. 65] sebagai kerangka.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Sumber', 'Investigasi yang disarankan', 'Tujuan'],
+      rows: [
+        ['**Personal internal**', 'Berbicara dengan anggota tim Cam untuk memahami arti skor "neutral"', 'Menjawab hal yang ingin Wheeling gali ("flesh that one out") [hal. 82]'],
+        ['**Personal internal**', 'Berbicara dengan Cam sendiri: bagaimana ia memandang perannya dan hasil survei, serta apakah ia menemukan kepuasan dalam pekerjaannya', 'Pertanyaan "Does Cam?" belum terjawab di kasus [hal. 82]'],
+        ['**Organizational internal**', 'Membandingkan pola skor Cam antartahun dan dengan manajer lain yang skornya naik', 'Melihat area mana yang turun dan apa yang berbeda'],
+        ['**Organizational internal**', 'Memeriksa apakah RTZ sudah merumuskan nilai budaya yang diharapkan dari manajer, dan apakah evaluasi serta imbalan manajer mencakup nilai itu', 'Perusahaan sukses mengevaluasi manajer atas **nilai dan kinerja** [hal. 75, 77]'],
+      ],
+    },
+    { kind: 'p', text: 'Tujuannya adalah memastikan rencana tindakan menyasar penyebab, bukan hanya gejala. Upaya yang sudah dilakukan Cam (rapat lebih banyak) tidak mengubah skor, jadi menambah hal yang sama belum tentu membantu [hal. 82].' },
+    { kind: 'p', text: '**Q3. Di kuadran mana Exhibit 2.7 kamu menempatkan Cam? Langkah apa yang kamu rekomendasikan agar Cam lebih terhubung dengan bawahannya?**' },
+    { kind: 'p', text: '*Penempatan dan langkah berikut adalah hasil analisis, bukan fakta dari buku.*' },
+    { kind: 'p', text: '**Penempatan: paling dekat dengan Kuadran A** (high performance, low cultural values) [hal. 76].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Sumbu Exhibit 2.7', 'Bukti di kasus', 'Posisi'],
+      rows: [
+        ['Attention to business performance', 'Tim berkinerja setara divisi lain; follow-through mencapai tujuan perusahaan dinilai cukup baik; Cam sangat task-oriented [hal. 82]', 'Tinggi'],
+        ['Attention to values', 'Engagement, moral, dan kepuasan rendah; tim tidak melihatnya sebagai manajer; advocacy dipertanyakan [hal. 82]', 'Rendah'],
+      ],
+    },
+    { kind: 'p', text: '**Nuansa penting:** contoh Kuadran A di buku (Uber, orang-orang yang dilepas di Traeger) melibatkan perilaku negatif [hal. 76, 78]. Kasus Cam tidak begitu: ia dinilai adil dan tidak terlalu mengontrol, dan ia sudah berusaha memperbaiki diri [hal. 82]. Jadi Cam berada di Kuadran A karena **lemah pada dimensi nilai dan engagement**, bukan karena melanggar nilai. Risikonya tetap sama: keberhasilan di Kuadran A sulit bertahan karena "lem" budaya bersama hilang [hal. 76]. Arah yang dituju adalah **Kuadran B**.' },
+    { kind: 'p', text: '**Langkah yang direkomendasikan untuk Cam:**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Dasar teori'],
+      rows: [
+        ['Sampaikan kepada tim nilai dan arah unitnya, dan kaitkan dengan misi perusahaan', 'Cultural leadership area 1 [hal. 77]'],
+        ['Tunjukkan nilai itu lewat tindakan yang terlihat tim, misalnya memperjuangkan kebutuhan tim ke manajemen di atasnya, karena advocacy adalah kritik yang muncul di survei', 'Walk the talk; sinyal lewat tindakan [hal. 77, 82]'],
+        ['Utamakan kualitas interaksi, bukan jumlah rapat: kesempatan bicara dua arah dan tindak lanjut yang terlihat', 'Overcommunicate [hal. 77]; rapat lebih banyak terbukti belum menggeser skor [hal. 82]'],
+        ['Akui dan rayakan pencapaian tim, karena kinerjanya sudah setara divisi lain', 'Ceremonies menguatkan pencapaian dan membangun ikatan [hal. 71]'],
+        ['Libatkan tim dalam keputusan yang menyangkut pekerjaan mereka', 'Nilai involvement culture: partisipasi, kerja sama [hal. 73]'],
+      ],
+    },
+    { kind: 'h3', text: '15.5 Rekomendasi Manajerial' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis berdasarkan teori Chapter 2, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pihak', 'Rekomendasi', 'Teori pendukung'],
+      rows: [
+        ['**Wheeling & Zeitland (sebelum bertindak)**', 'Gali arti skor netral dan pandangan Cam sendiri sebelum menetapkan rencana', 'Business intelligence [hal. 65]'],
+        ['**Cam**', 'Jadikan nilai unit jelas dan terlihat lewat tindakan harian, termasuk membela kepentingan tim', 'Cultural leadership [hal. 77]'],
+        ['', 'Ganti "lebih banyak rapat" dengan interaksi yang lebih bermakna dan tindak lanjut yang terlihat', 'Overcommunicate; walk the talk [hal. 77]'],
+        ['', 'Pakai pengakuan dan perayaan pencapaian tim untuk membangun ikatan', 'Ceremonies [hal. 71]'],
+        ['**RTZ (organisasi)**', 'Masukkan nilai budaya ke dalam evaluasi dan imbalan manajer, di samping target kinerja', 'Kuadran B; managers evaluated on values and results [hal. 75–76]'],
+        ['', 'Selaraskan orang, prosedur, dan sistem imbalan dengan budaya yang dituju', 'Cultural leadership area 2 [hal. 77]'],
+        ['', 'Pertahankan survei sebagai alat pemindaian internal, dan lengkapi dengan percakapan langsung', 'Organizational internal + personal internal [hal. 65]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §16
+    { kind: 'h2', text: '16. Implikasi Manajerial dan Kesimpulan' },
+    {
+      kind: 'ol',
+      items: [
+        '**Lingkungan eksternal tidak bisa diabaikan.** Perubahan di general environment merembet ke task environment dan akhirnya ke operasi sehari-hari [hal. 55].',
+        '**Ketidakpastian menuntut adaptasi.** Makin banyak faktor dan makin cepat perubahannya, makin besar kebutuhan untuk memindai lingkungan (business intelligence) dan, bila perlu, memengaruhinya [hal. 63–66].',
+        '**Memengaruhi lingkungan punya risiko.** Ironi Boeing menunjukkan lobi yang berhasil tidak menjamin hasil yang baik [hal. 66].',
+        '**Inti budaya ada di bawah permukaan.** Mengubah artifacts saja tidak cukup bila asumsi dasar tidak ikut berubah [hal. 67].',
+        '**Budaya harus cocok dengan lingkungan dan strategi.** Keempat tipe budaya bisa sukses; kecocokanlah yang menentukan [hal. 67, 71, 74].',
+        '**Kinerja tinggi butuh nilai dan hasil sekaligus.** Kuadran A dan D sama-sama rapuh; Kuadran B adalah high-performance culture [hal. 75–77].',
+        '**Budaya dibangun lewat tindakan pemimpin.** Pernyataan nilai tanpa perilaku yang konsisten tidak bermakna; cultural leader "walk their talk", juga saat krisis [hal. 77–78].',
+      ],
+    },
+    // ---------------------------------------------------------------- §17
+    { kind: 'h2', text: '17. Alat Bantu Ujian' },
+    { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Task environment (4)', 'Customers, Competitors, Suppliers, Labor market', '54–57'],
+        ['General environment (6)', 'International, Technological, Sociocultural, Economic, Legal–political, Natural', '55, 58–62'],
+        ['Internal environment', 'Employees, management, culture [hal. 54–55]; culture, production technology, structure, physical facilities [hal. 67]', '54–55, 67'],
+        ['Uncertainty (Exh. 2.4)', 'Number of factors × Rate of change', '63–64'],
+        ['Boundary spanning', 'Business intelligence; Influence the environment', '64–66'],
+        ['Business intelligence (4 sumber)', 'Personal internal, Personal external, Organizational internal, Organizational external', '65'],
+        ['Levels of culture (Exh. 2.5)', 'Visible: artifacts. Invisible: expressed values; underlying assumptions', '67'],
+        ['Membentuk budaya (5)', 'Symbols, Stories, Heroes, Slogans, Ceremonies', '69–71'],
+        ['Tipe budaya (Exh. 2.6)', 'Adaptability, Achievement, Involvement, Consistency', '71–74'],
+        ['Exhibit 2.7', 'Kuadran A, B, C, D', '75–76'],
+        ['High-performance culture (3 ciri)', 'Misi kokoh; nilai adaptif bersama; karyawan ikut memiliki hasil & budaya', '77'],
+        ['Cultural leadership (2 area)', 'Mengartikulasikan visi budaya; memperhatikan aktivitas harian', '77'],
+      ],
+    },
+    { kind: 'h3', text: 'Exam Traps' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['Jumlah dimensi general environment', '"Lima dimensi"', '**Enam dimensi.** Teks utama (hal. 55, 58) dan Exhibit 2.1 (hal. 54) menyebut enam; box Remember This (hal. 58) menulis "five dimensions". Untuk ujian, jawab enam.', '54, 55, 58'],
+        ['Posisi labor market', '"Bagian general environment"', 'Labor market termasuk **task environment**', '55, 57'],
+        ['Task vs general', 'Dianggap sama pengaruhnya', 'Task: langsung, transaksi sehari-hari. General: tidak langsung, mengenai semua organisasi kurang lebih sama', '54–55'],
+        ['Sumber uncertainty', '"Cukup dilihat dari jumlah faktor"', 'Dua sumbu: jumlah faktor **dan** laju perubahan; faktor yang berubah cepat menimbulkan ketidakpastian tinggi', '63–64'],
+        ['Boundary spanning', '"Hanya mengumpulkan informasi"', 'Juga mewakili kepentingan organisasi untuk **memengaruhi** lingkungan (lobbying)', '64, 66'],
+        ['Level budaya', '"Budaya = yang terlihat (seragam, logo, kantor)"', 'Itu hanya artifacts di permukaan; inti budaya adalah underlying assumptions', '67'],
+        ['Jumlah level budaya', '"Pasti tiga level"', 'Teks: **dua level** (visible dan invisible). Exh. 2.5 memerinci level invisible menjadi expressed values dan underlying assumptions, sehingga ada tiga butir bernomor', '67'],
+        ['Story', '"Cerita karangan untuk motivasi"', 'Narasi **berdasarkan kejadian nyata** yang diulang dan dibagikan', '70'],
+        ['Symbol vs slogan', 'Dianggap sama', 'Symbol: objek, tindakan, atau peristiwa (nonverbal). Slogan: frasa atau kalimat', '70'],
+        ['Posisi involvement culture', '"Fokus eksternal"', 'Involvement: **internal + flexibility**. Achievement: **external + stability**', '72–73'],
+        ['Tipe budaya terbaik', '"Adaptability selalu terbaik"', 'Keempatnya bisa sukses; organisasi bisa punya lebih dari satu tipe', '74'],
+        ['High-performance culture', '"Kuadran D, karena budayanya kuat"', '**Kuadran B**. Kuadran D budayanya kuat tetapi tidak terkait hasil (LEGO 1990-an)', '75–77'],
+        ['Kuadran A', '"Aman karena untung"', 'Untung jangka pendek, sulit bertahan karena "lem" nilai bersama hilang', '76'],
+        ['Cultural leadership', '"Cukup merumuskan pernyataan nilai"', 'Pernyataan nilai tanpa perilaku manajemen tidak bermakna, bahkan merugikan; orang, prosedur, dan imbalan harus selaras', '77'],
+      ],
+    },
+    { kind: 'h3', text: 'Bank Pertanyaan Kritis (untuk non-presenter)' },
+    { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 78–79]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Terkait bagian'],
+      rows: [
+        ['Apakah task environment operator seluler sama dengan task environment lembaga kesejahteraan pemerintah? Apa persamaan dan perbedaannya?', '§2'],
+        ['Buku manajemen populer sering menyebut pelanggan sebagai elemen terpenting lingkungan eksternal. Setuju? Dalam situasi apa pernyataan itu tidak benar?', '§2'],
+        ['Klasifikasikan tiga organisasi (Hyundai, Facebook, gerai waralaba Subway lokal, FedEx, peternakan sapi di Oklahoma, McDonald\'s) ke lingkungan low atau high uncertainty. Apa alasannya?', '§4'],
+        ['Apa keuntungan utama big data analytics: memahami lingkungan atau memengaruhi lingkungan? Mengapa?', '§5'],
+        ['Netflix terbuka soal gaji eksekutif dan memakai prinsip seperti *context not control* serta *highly aligned, loosely coupled*. Budaya tipe apa yang didorongnya?', '§9'],
+        ['Sebagai manajer, simbol apa yang bisa kamu pakai untuk membangun adaptability culture? Bagaimana dengan involvement culture?', '§8, §9'],
+        ['Bijakkah memecat manajer yang mendatangkan penjualan dan laba besar tetapi tidak menjalankan nilai "menghormati karyawan"?', '§10, §11'],
+      ],
+    },
+    { kind: 'p', text: '*Semua `[hal. X]` merujuk ke Daft & Marcic, Understanding Management 12e (2023). Label yang dipakai: "di luar RPP" (1×: §7), "Contoh di luar buku" (2×: §3, §5), "Ilustrasi" (1 bagian: §14, sinopsis dan analisis film).*' },
+  ],
 };
