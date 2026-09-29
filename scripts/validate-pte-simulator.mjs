@@ -142,8 +142,12 @@ try {
   const quizIntegrity = read('src/lib/quizExamIntegrity.ts');
   const quizRegistry = read('src/data/quizzes/index.ts');
   const courseLayout = read('src/components/course/CourseLayout.tsx');
-  assert(quizView.includes("EKT109: ['uts', 'uas']"), 'EKT109 belum terdaftar sebagai timed exam set');
-  assert(quizView.includes("'EKT109:uts': 'v2'") && quizView.includes("'EKT109:uas': 'v2'"), 'Session version EKT109 belum dinaikkan ke v2');
+  // The simulator is a timed exam because its tab renders QuizView in exam mode with both sets; a saved session is only
+  // restored for the same question set because the stored dataset fingerprint is compared on read.
+  const pteTab = read('src/components/PteSimulatorTab.tsx');
+  assert(pteTab.includes('mode="exam"') && pteTab.includes('quizSetsOverride={PTE_SIMULATOR_SETS}'), 'EKT109 belum dirender sebagai timed exam (mode="exam" dengan set simulator)');
+  assert(pteTab.includes("id: 'uts'") && pteTab.includes("id: 'uas'"), 'Set UTS dan UAS simulator EKT109 belum terdaftar');
+  assert(quizView.includes('readStoredExamSession(examSessionKey, examDatasetFingerprint)'), 'Session tersimpan belum dicocokkan dengan fingerprint dataset');
   assert(quizView.includes('orderingAnswers') && quizIntegrity.includes("question.kind === 'ordering'"), 'Dukungan ordering belum lengkap');
   assert(quizView.includes('markedForReview') && quizView.includes('Ditandai'), 'Mark for review belum tersimpan atau belum tampil');
   assert(quizView.includes('question.svg') && quizView.includes('question.altText'), 'Graph question belum dirender di QuizView');
