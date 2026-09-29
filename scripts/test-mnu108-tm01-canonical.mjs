@@ -58,11 +58,12 @@ const h2 = byKind('h2').map((block) => block.text);
 assert.equal(h2.length, 17, `expected 17 h2 sections, got ${h2.length}: ${h2.join(' | ')}`);
 // The numbering dot is backslash-escaped so markdown renders a heading instead of a one-item ordered list.
 h2.forEach((text, index) => {
-  assert.ok(text.startsWith(`${index}\\. `), `AT-001: h2 #${index} must start with "${index}\\. ", got "${text}"`);
+  assert.ok(text.startsWith(`${index}. `), `AT-001: h2 #${index} must start with "${index}. ", got "${text}"`);
 });
-// Nothing else on the page may start with "1. ": markdown would turn that string into a one-item ordered list.
+// Body text may not start with "1. ": markdown would turn that string into a one-item ordered list. Headings are exempt:
+// since PR #34 a heading is rendered as inline markdown, so "1. Title" stays a heading (test-heading-inline.mjs guards that).
 const orderedListStart = /^\s{0,3}\d{1,9}[.)]\s/;
-for (const text of [...h2, ...byKind('h3').map((block) => block.text), ...byKind('p').map((block) => block.text),
+for (const text of [...byKind('p').map((block) => block.text),
   ...byKind('ul').flatMap((block) => block.items), ...byKind('table').flatMap((block) => block.rows.flat())]) {
   assert.ok(!orderedListStart.test(text), `AT-001: "${text.slice(0, 50)}" would render as an ordered list, not as itself`);
 }
@@ -72,7 +73,7 @@ ok('AT-001: 17 sections §0–§16 in order');
 // "di luar RPP" marks exactly one section title; the other two occurrences are references
 // (the mind map node in §12 and the closing footnote).
 const sectionsWithLabel = h2.filter((text) => text.includes('di luar RPP'));
-assert.deepEqual(sectionsWithLabel, ['8\\. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)']);
+assert.deepEqual(sectionsWithLabel, ['8. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)']);
 assert.equal(countOf('di luar RPP'), 3, 'AT-002: exactly 3 occurrences (title §8, mind map node, footnote)');
 assert.ok(
   byKind('ul').flatMap((block) => block.items).some((item) => item.includes('[di luar RPP] Nonprofit')),
@@ -238,13 +239,13 @@ assert.ok(!/#[0-9a-fA-F]{6}\b/.test(page), 'render rule: no raw hex colour in th
 // §12: the concept map is a nested list, not a monospace tree. The ASCII tree overflowed a phone on nearly every
 // line; a list wraps. Nothing on the page is a code block any more, since that was the only one.
 assert.equal(byKind('code').length, 0, 'render rule: no monospace block is left to scroll sideways on a phone');
-const conceptMap = byKind('ul').find((block) => block.items[0]?.startsWith('**1\\. DASAR**'));
+const conceptMap = byKind('ul').find((block) => block.items[0]?.startsWith('**1. DASAR**'));
 assert.ok(conceptMap, '§12: the concept map list exists');
 assert.equal(conceptMap.items.length, 6, '§12: six main branches');
 const CONCEPT_MAP_NODES = [
   // Level 1 — the six branches, in order.
-  ['1\\. DASAR', '2\\. FUNGSI & HASIL', '3\\. MANAJER', '4\\. EVOLUSI: Things vs Humanity of Production',
-    '5\\. MASA DEPAN', '6\\. AI: otomasi rutin + Nudge management'],
+  ['1. DASAR', '2. FUNGSI & HASIL', '3. MANAJER', '4. EVOLUSI: Things vs Humanity of Production',
+    '5. MASA DEPAN', '6. AI: otomasi rutin + Nudge management'],
   // Levels 2 and 3 — every node of the tree this list replaced, in tree order.
   ['Management (effective + efficient, lewat 4 fungsi)',
     'Organization (social entity, goal-directed, deliberately structured)',
