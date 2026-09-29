@@ -1,150 +1,828 @@
+// MNU108 TM04 — Managing Ethics and Social Responsibility.
+// Isi akademik berasal dari paket konten MNU108/TM04 (05_student_learning_version.md); aturan render dari 06.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 4, hal. 116–147.
+// Cakupan mengikuti RPP Pengantar Manajemen pertemuan 4. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Jangan menambah fakta di luar paket: ubah paketnya, lalu perbarui file ini.
 import type { Reading } from '../../../types';
-import { CASE_ETHICAL_DECISION_CSR } from '../manajemenPracticeCases';
-
-const SVG_CARROLL_CSR = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad4" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="phGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-    <linearGradient id="etGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="legGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="ecGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad4)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PIRAMIDA TANGGUNG JAWAB SOSIAL PERUSAHAAN (ARCHIE B. CARROLL)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CSR PYRAMID</text>
-
-  <!-- Left: Visual 4-Tier Pyramid -->
-  <polygon points="250,75 190,135 310,135" fill="url(#phGrad)" stroke="#c4b5fd" stroke-width="1.5"/>
-  <text x="250" y="120" fill="#0f172a" font-size="10" font-weight="800" text-anchor="middle">FILANTROPIS</text>
-
-  <polygon points="187,140 135,200 365,200 313,140" fill="url(#etGrad)" stroke="#7dd3fc" stroke-width="1.5"/>
-  <text x="250" y="175" fill="#0f172a" font-size="10" font-weight="800" text-anchor="middle">ETIS (ETHICAL)</text>
-
-  <polygon points="132,205 80,265 420,265 368,205" fill="url(#legGrad)" stroke="#86efac" stroke-width="1.5"/>
-  <text x="250" y="240" fill="#0f172a" font-size="10.5" font-weight="800" text-anchor="middle">HUKUM (LEGAL)</text>
-
-  <polygon points="77,270 25,330 475,330 423,270" fill="url(#ecGrad)" stroke="#fde047" stroke-width="1.5"/>
-  <text x="250" y="305" fill="#0f172a" font-size="11" font-weight="800" text-anchor="middle">EKONOMI (ECONOMIC) - FONDASI DASAR</text>
-
-  <!-- Right: Explanatory Cards for Each Tier -->
-  <g transform="translate(505, 75)">
-    <rect class="svg-subcard" x="0" y="0" width="365" height="58" rx="8" fill="#1e293b" stroke="#a78bfa" stroke-width="1"/>
-    <text class="text-accent-purple" x="14" y="20" fill="#a78bfa" font-size="9.5" font-weight="700">4. TANGGUNG JAWAB FILANTROPIS</text>
-    <text class="svg-text" x="14" y="36" fill="#cbd5e1" font-size="8">Kontribusi sukarela: Beasiswa, amal, dan pemberdayaan komunitas.</text>
-    <text class="svg-muted" x="14" y="48" fill="#94a3b8" font-size="7.5" font-style="italic">"Be a good corporate citizen" (Diharapkan masyarakat)</text>
-
-    <rect class="svg-subcard" x="0" y="65" width="365" height="58" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-    <text class="text-accent-blue" x="14" y="85" fill="#38bdf8" font-size="9.5" font-weight="700">3. TANGGUNG JAWAB ETIS</text>
-    <text class="svg-text" x="14" y="101" fill="#cbd5e1" font-size="8">Menjalankan bisnis secara adil dan bermoral melampaui aturan tertulis.</text>
-    <text class="svg-muted" x="14" y="113" fill="#94a3b8" font-size="7.5" font-style="italic">"Be ethical &amp; do what is right" (Diharapkan masyarakat)</text>
-
-    <rect class="svg-subcard" x="0" y="130" width="365" height="58" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
-    <text class="text-accent-green" x="14" y="150" fill="#34d399" font-size="9.5" font-weight="700">2. TANGGUNG JAWAB HUKUM</text>
-    <text class="svg-text" x="14" y="166" fill="#cbd5e1" font-size="8">Mematuhi seluruh regulasi ketenagakerjaan, pajak, dan lingkungan.</text>
-    <text class="svg-muted" x="14" y="178" fill="#94a3b8" font-size="7.5" font-style="italic">"Obey the law" (Kewajiban mutlak masyarakat)</text>
-
-    <rect class="svg-subcard" x="0" y="195" width="365" height="58" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
-    <text class="text-accent-amber" x="14" y="215" fill="#fbbf24" font-size="9.5" font-weight="700">1. TANGGUNG JAWAB EKONOMI</text>
-    <text class="svg-text" x="14" y="231" fill="#cbd5e1" font-size="8">Menghasilkan laba, menciptakan lapangan kerja, &amp; efisiensi biaya.</text>
-    <text class="svg-muted" x="14" y="243" fill="#94a3b8" font-size="7.5" font-style="italic">"Be profitable" (Fondasi dasar kelangsungan hidup korporasi)</text>
-  </g>
-</svg>`;
 
 export const TM4_READING: Reading = {
   tm: 4,
-  title: 'Managing Ethics and Social Responsibility (CSR & ESG)',
-  ref: 'Richard L. Daft Bab 5 | Archie Carroll CSR Pyramid | 4 Pendekatan Etika & Kerangka Triple Bottom Line',
-  intro: 'TM 4 membahas dimensi moral dalam pengambilan keputusan bisnis: domain hukum vs etika vs kebebasan individu, 4 pendekatan etika manajerial (Utilitarian, Individualism, Moral-Rights, Justice Approach), tahapan perkembangan moral Lawrence Kohlberg, Piramida Tanggung Jawab Sosial Korporasi (Archie B. Carroll: Ekonomi, Hukum, Etis, Filantropis), serta evolusi keberlanjutan bisnis modern melalui kerangka Triple Bottom Line (People, Planet, Profit) dan Environmental, Social, and Governance (ESG).',
+  title: 'Managing Ethics and Social Responsibility',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 4 (hal. 116–147) · RPP Pengantar Manajemen pertemuan 4',
+  intro: '**Sub-CPMK (RPP):** mahasiswa mampu mengevaluasi proses pengambilan keputusan etis dan penerapan tanggung jawab sosial perusahaan (CSR) dalam organisasi.',
   objectives: [
-    'Membedakan 3 domain tindakan manusia: Hukum yang Dikodifikasi, Etika, dan Pilihan Bebas Individu.',
-    'Menerapkan 4 pendekatan etika manajerial dalam memecahkan dilema bisnis yang ambigu.',
-    'Menganalisis 4 tingkatan piramida CSR Archie Carroll: Ekonomi, Hukum, Etis, dan Filantropis.',
-    'Menjelaskan integrasi prinsip Environmental, Social, and Governance (ESG) dalam penciptaan nilai jangka panjang.'
+    'Managerial ethics',
+    'Framework for Ethical Decision Making',
+    'Individual manager and ethical choices',
+    'Corporate social responsibility',
+    'Managing company ethics and social responsibility',
+    'QUIZ',
+    'Menerapkan teori Chapter 4 untuk menganalisis kasus Too Much Intelligence? dan merumuskan implikasi manajerial.',
   ],
   blocks: [
-    {
-      kind: 'figure',
-      caption: 'Gambar 4.1: Piramida Tanggung Jawab Sosial Perusahaan (Carrolls CSR Pyramid).',
-      svg: SVG_CARROLL_CSR
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 4'
-    },
+    // ---------------------------------------------------------------- §0
+    { kind: 'h2', text: '0. Orientasi TM04' },
+    { kind: 'p', text: '**Sub-CPMK TM04 (RPP):** mahasiswa mampu mengevaluasi proses pengambilan keputusan etis dan penerapan tanggung jawab sosial perusahaan (CSR) dalam organisasi.' },
+    { kind: 'p', text: '**Bahan kajian RPP → bagian halaman ini:**' },
     {
       kind: 'table',
-      headers: ['Pendekatan Etika Manajerial', 'Prinsip Penentuan Keputusan Moral', 'Contoh Kasus Pengambilan Keputusan', 'Kelemahan / Risiko Pendekatan'],
+      stackOnMobile: true,
+      headers: ['Bahan kajian RPP', 'Bagian', 'Catatan'],
       rows: [
-        ['Pendekatan Utilitarian', 'Memilih alternatif yang menghasilkan kebaikan terbesar bagi jumlah orang terbanyak.', 'Menutup satu pabrik cabang yang merugi demi menyelamatkan ribuan pekerja di pabrik utama.', 'Bisa mengorbankan hak dasar kelompok minoritas demi kepentingan mayoritas.'],
-        ['Pendekatan Individualisme', 'Tindakan benar secara moral jika mempromosikan kepentingan pribadi jangka panjang terbaik.', 'Menolak memberi suap kepada pejabat agar perusahaan tidak terkena sanksi hukum di masa depan.', 'Rentan disalahartikan sebagai justifikasi keserakahan jangka pendek.'],
-        ['Pendekatan Hak Moral (Moral-Rights)', 'Menghormati hak asasi manusia dasar yang tidak boleh dilanggar (privasi, kebebasan berbicara, keselamatan).', 'Melarang pemantauan CCTV di ruang istirahat pribadi dan menolak jam kerja yang membahayakan nyawa.', 'Dapat menghambat efisiensi operasional dan manajemen kontrol.'],
-        ['Pendekatan Keadilan (Justice)', 'Standar keadilan distributive (distribusi adil), procedural (prosedur transparan), dan compensatory (ganti rugi).', 'Memberikan upah setara untuk pekerjaan yang sama (Equal Pay for Equal Work) tanpa diskriminasi gender.', 'Sulit mendefinisikan apa yang adil bagi pihak-pihak yang memiliki kepentingan berbeda.']
+        ['Managerial ethics', '§1–§3', ''],
+        ['Framework for Ethical Decision Making', '§4', 'Buku tidak memuat model langkah-langkah pengambilan keputusan etis; yang dibahas adalah lima pendekatan normatif dan lima pertanyaan bantu'],
+        ['Individual manager and ethical choices', '§5', ''],
+        ['Corporate social responsibility', '§6–§8', ''],
+        ['Managing company ethics and social responsibility', '§9–§10', ''],
+        ['QUIZ', '—', 'RPP mencantumkan kuis (QUIZ) pada pertemuan ini, tetapi format dan cakupannya tidak tertulis di sumber; §16 dapat dipakai untuk persiapan.'],
       ],
-      caption: 'Tabel 4.0: Matriks 4 pendekatan etika manajerial dalam pengambilan keputusan.'
     },
+    { kind: 'p', text: 'Semua subbab Chapter 4 tercakup bahan kajian RPP.' },
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    { kind: 'p', text: '**Presenter Materi**' },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: 3 Tingkat Perkembangan Moral Lawrence Kohlberg'
-    },
-    {
-      kind: 'table',
-      headers: ['Tingkatan Moral Kohlberg', 'Fokus Pertimbangan Moral', 'Perilaku Manajer di Tempat Kerja', 'Gaya Kepemimpinan'],
-      rows: [
-        ['Tingkat 1: Pra-Konvensional (Pre-Conventional)', 'Fokus pada diri sendiri: Menghindari hukuman fisik dan mengejar imbalan langsung.', 'Mematuhi aturan hanya jika diawasi atasan; mencari keuntungan pribadi semata.', 'Kepemimpinan Otokratis / Memaksa.'],
-        ['Tingkat 2: Konvensional (Conventional)', 'Fokus pada harapan sosial: Memenuhi ekspektasi masyarakat, rekan kerja, dan hukum tertulis.', 'Menjadi pemain tim yang patuh norma kelompok dan menjaga keharmonisan organisasi.', 'Kepemimpinan Berorientasi Hubungan & Tim.'],
-        ['Tingkat 3: Pasca-Konvensional (Post-Conventional)', 'Fokus pada prinsip universal: Bertindak berdasarkan keadilan dan nilai moral internal meskipun melawan hukum atau tekanan kelompok.', 'Berani menjadi Whistleblower membongkar korupsi internal demi membela kebenaran.', 'Kepemimpinan Visioner / Pelayan (Servant).']
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§10',
+        'Hubungan antar konsep → §11 Peta Konsep',
+        'Contoh penerapan di organisasi → §12 + contoh di tiap bagian',
+        'Bedah film → §13 (*Dark Waters*)',
+        'Kesimpulan & implikasi manajerial → §15',
       ],
-      caption: 'Tabel 4.1: Tahapan perkembangan moral Kohlberg.'
     },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Evaluasi Kasus Penarikan Produk Cacat (Product Recall)',
-      prompt: 'Sebuah pabrik makanan bayi mendeteksi adanya potensi kontaminasi bakteri dalam 0,1% produk yang telah beredar di supermarket. Hukum belum mewajibkan penarikan karena belum ada laporan korban sakit, dan penarikan produk (recall) akan memicu kerugian finansial Rp 50 Miliar. Apa tindakan manajer yang berada di level moral Pasca-Konvensional Kohlberg?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Tindakan Manajer Moral Level 3 (Pasca-Konvensional)**: Manajer akan segera melakukan **Penarikan Produk Massal Sukarela (Voluntary Recall)** dan mengumumkan bahaya tersebut secara transparan ke publik.',
-            '**Landasan Etika**: Keselamatan nyawa bayi merupakan nilai universal tertinggi (*Moral-Rights Approach*) yang mutlak tidak dapat ditukar dengan kerugian finansial Rp 50 Miliar atau ketiadaan sanksi hukum formal.',
-            '**Dampak Reputasi Jangka Panjang**: Langkah etis ini (seperti kasus klasik Tylenol Johnson & Johnson) justru menyelamatkan reputasi korporasi dan membangun kepercayaan abadi dari konsumen di masa depan.'
-          ]
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 4'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', '4 Pendekatan Etika', 'Pembedaan utilitarian, individualisme, hak moral, dan keadilan distributive/procedural.', 'Mampu menganalisis studi kasus dilema etika bisnis.'],
-        ['2', 'Piramida CSR Carroll', 'Hierarki 4 tanggung jawab: ekonomi, hukum, etis, dan filantropis.', 'Mampu memetakan program tanggung jawab sosial perusahaan.'],
-        ['3', 'Kerangka ESG & Triple Bottom Line', 'Integrasi pilar Lingkungan, Sosial, dan Tata Kelola dalam strategi korporasi.', 'Mampu mengevaluasi laporan keberlanjutan (Sustainability Report).']
-      ],
-      caption: 'Tabel 4.2: Peta penguasaan submateri TM 4 Pengantar Manajemen.'
-    },
-    CASE_ETHICAL_DECISION_CSR,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
-    },
+    { kind: 'p', text: '**Presenter Kasus**' },
     {
       kind: 'ul',
       items: [
-        '**Legal Belum Tentu Etis**: Hukum adalah batas standar minimal yang disepakati masyarakat; tindakan yang legal secara formal dapat tetap sangat tidak etis di mata moralitas publik.',
-        '**Landasan Ekonomi Adalah Fondasi Piramida**: Perusahaan tidak dapat menjalankan tanggung jawab etis atau filantropis jika gagal menghasilkan laba (tanggung jawab ekonomi dasar) untuk mempertahankan kelangsungan hidup usahanya.',
-        '**Whistleblower Butuh Perlindungan Formal**: Manajemen wajib menyediakan saluran pengaduan pelanggaran anonim (Whistleblowing System) yang menjamin pelapor bebas dari ancaman pembalasan karier.'
-      ]
-    }
-  ]
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi → §14 (Too Much Intelligence?)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (Mind Map)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §11 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (pertanyaan kritis)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §16 Bank Pertanyaan Kritis',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Topik etika mudah tergelincir menjadi penghakiman. Di halaman ini, isi buku, fakta kasus, dan analisis selalu dipisahkan; bagian analisis diberi keterangan. Saat presentasi, lakukan hal yang sama: sebutkan mana yang ditulis buku dan mana pendapat kelompokmu.',
+    },
+    // ---------------------------------------------------------------- §1
+    { kind: 'h2', text: '1. Managerial Ethics dan Tiga Domain Tindakan' },
+    { kind: 'p', text: 'Buku membuka bab dengan skandal penerimaan mahasiswa di AS: jaksa federal mendakwa 50 orang dalam skema suap bernilai jutaan dolar agar anak-anak diterima di kampus elite. Menurut buku, kampus-kampus yang terkait tidak didakwa dan jaksa menyebutnya korban; sedikitnya 22 terdakwa mengaku bersalah, dan perkaranya masih berjalan saat buku ditulis [hal. 118].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti sederhana', 'Sumber'],
+      rows: [
+        ['**Ethics**', 'Kode prinsip moral dan nilai yang mengatur perilaku seseorang atau kelompok tentang apa yang benar atau salah; menetapkan standar baik-buruk dalam perilaku dan pengambilan keputusan', '[hal. 118]'],
+        ['**Ethical issue**', 'Ada dalam situasi ketika tindakan seseorang atau organisasi dapat merugikan atau menguntungkan orang lain', '[hal. 118]'],
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 4.1: Three Domains of Human Action** [hal. 119]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Domain', 'Standar', 'Kendali eksplisit', 'Isi', 'Contoh dari buku'],
+      rows: [
+        ['**Codified law**', 'Legal standard', 'Tinggi', 'Nilai dan standar ditulis dalam sistem hukum dan dapat ditegakkan di pengadilan', 'Izin mengemudi, pajak perusahaan; dalam skandal penerimaan mahasiswa, menyuap pelatih dan pengawas ujian, memalsukan nilai, dan membayar orang lain untuk mengerjakan ujian; penipuan dan penggelapan pajak'],
+        ['**Ethics**', 'Social standard', 'Menengah (posisi tengah di exhibit)', 'Tidak ada hukum khusus, tetapi ada standar perilaku dari prinsip dan nilai bersama', 'Facebook memanipulasi news feed lebih dari setengah juta orang untuk sebuah studi psikologi; Uber memesan lalu membatalkan lebih dari 5.000 perjalanan palsu untuk mengganggu Lyft. Keduanya tidak ilegal, tetapi merusak reputasi'],
+        ['**Free choice**', 'Personal standard', 'Rendah', 'Hukum tidak mengatur; individu atau organisasi bebas sepenuhnya', 'Manajer memilih tempat membeli jas; organisasi memilih satu dari dua pemasok yang sama-sama layak'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 118–119].' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Banyak manajer terjerumus karena memakai pandangan sederhana bahwa keputusan hanya diatur hukum atau pilihan bebas, sehingga mengira **"kalau tidak ilegal, pasti etis"**, seolah domain ketiga tidak ada. Buku menyarankan mengakui domain etika dan menerima nilai moral sebagai kekuatan yang mengatur perilaku di dalam maupun di luar organisasi [hal. 119].',
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (1/3)',
+      text: 'Di Indonesia, perseroan yang menjalankan usaha di bidang atau berkaitan dengan sumber daya alam diwajibkan undang-undang melaksanakan tanggung jawab sosial dan lingkungan (TJSL). Dalam kerangka Exh. 4.1, kewajiban ini menempatkan sebagian tanggung jawab sosial perusahaan di domain **codified law**, dengan kendali eksplisit yang tinggi, bukan hanya di domain etika [hal. 119]. Arah sebaliknya tetap berlaku: memenuhi kewajiban hukum belum tentu berarti semua tuntutan etika sudah terpenuhi.',
+    },
+    // ---------------------------------------------------------------- §2
+    { kind: 'h2', text: '2. Etika Manajerial Saat Ini dan Business Case' },
+    { kind: 'p', text: '**Kepercayaan publik terhadap pemimpin bisnis rendah** [hal. 119–120]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Dalam jajak pendapat Gallup, hanya 15% responden menilai kejujuran dan standar etika pemimpin bisnis "tinggi" atau "sangat tinggi".',
+        'Lebih dari 75% responden setuju bahwa kompas moral korporasi Amerika "menunjuk ke arah yang salah"; 69% menyatakan eksekutif jarang mempertimbangkan kepentingan publik; 94% menyatakan eksekutif mengambil keputusan terutama untuk memajukan karier sendiri.',
+      ],
+    },
+    { kind: 'p', text: '**Contoh pelanggaran etika dari buku:**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Perusahaan', 'Yang ditulis buku', 'Sumber'],
+      rows: [
+        ['**Wells Fargo** (Half-Baked Management)', 'Karyawan membuka rekening bank dan kartu kredit palsu serta memaksakan produk berbiaya yang tidak diperlukan nasabah untuk memenuhi target penjualan tinggi dari manajemen puncak. Menurut Consumer Financial Protection Bureau, skema ini berlangsung lebih dari satu dekade dan melibatkan sekitar 5.000 karyawan. Awal 2020, Wells Fargo setuju membayar denda \\$3 miliar untuk menyelesaikan gugatan perdata dan penuntutan pidana Departemen Kehakiman AS. Eksekutif puncak menyebut penyebabnya keputusan buruk karyawan yang tidak etis; sebagian karyawan menilai target itu memang tidak bisa dicapai dengan cara lain. Mantan CEO-nya didenda \\$17,5 juta', '[hal. 120]'],
+        ['**Volkswagen**', 'Ketahuan memasang software di kendaraan diesel yang dirancang untuk mengakali uji emisi AS', '[hal. 120]'],
+        ['**Kobe Steel**', 'Mengakui telah memotong prosedur dan memalsukan spesifikasi mutu produk selama puluhan tahun; CEO-nya mundur pada 2018', '[hal. 120]'],
+      ],
+    },
+    { kind: 'p', text: 'Manajer dan organisasi bisa berperilaku tidak etis karena berbagai alasan, seperti ego pribadi, keserakahan, atau tekanan untuk menaikkan laba dan terlihat sukses. Namun manajer memikul tanggung jawab besar dalam **membentuk iklim etis** organisasi dan dapat menjadi teladan perilaku etis [hal. 120].' },
+    { kind: 'p', text: '**Exhibit 4.2: Four Types of Ethical Manager Behavior** [hal. 121]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Perilaku manajer etis', 'Sumber'],
+      rows: [
+        ['1', 'Menunjukkan **kejujuran dan integritas**', '[hal. 120–121]'],
+        ['2', '**Mengomunikasikan dan menegakkan** standar etika lewat perilakunya', '[hal. 120–121]'],
+        ['3', '**Adil** dalam keputusan dan pembagian imbalan', '[hal. 120–121]'],
+        ['4', 'Menunjukkan **kebaikan, belas kasih, dan kepedulian** pada kebutuhan dan perasaan orang lain', '[hal. 120–121]'],
+      ],
+    },
+    { kind: 'p', text: '**Tekanan pemegang saham dan gaji eksekutif** [hal. 120–121]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Penekanan berlebihan untuk menyenangkan pemegang saham dapat mendorong sebagian manajer berperilaku tidak etis terhadap pelanggan, karyawan, dan masyarakat. Manajer tertekan memenuhi target laba jangka pendek; sebagian bahkan memakai **trik akuntansi** untuk menampilkan hasil yang memenuhi ekspektasi pasar, bukan kinerja sebenarnya.',
+        'Paket kompensasi eksekutif umumnya berisi insentif berbasis saham, yang kadang mendorong manajer melakukan apa saja yang menaikkan harga saham walau merugikan perusahaan dalam jangka panjang.',
+        'Menurut satu estimasi, pada 2018 rata-rata gaji CEO perusahaan besar AS 278 kali gaji rata-rata karyawan, sedangkan pada 1989 hanya sekitar 58 kali. Sebagai bagian dari undang-undang Dodd-Frank, SEC menyetujui aturan yang mewajibkan perusahaan publik mengungkap perbandingan gaji CEO dengan gaji median karyawannya.',
+      ],
+    },
+    { kind: 'p', text: '**Business case untuk etika dan tanggung jawab sosial** [hal. 121–122]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Argumen', 'Isi menurut buku', 'Sumber'],
+      rows: [
+        ['Kinerja keuangan', 'Ratusan studi memberi hasil beragam, tetapi umumnya menemukan hubungan positif antara perilaku etis dan bertanggung jawab sosial dengan kinerja keuangan. Satu studi: 100 korporasi global teratas yang berkomitmen pada sustainability punya pertumbuhan penjualan, ROA, laba, dan arus kas operasi yang jauh lebih tinggi di sebagian area bisnis. Perusahaan "best corporate citizens" menikmati reputasi dan kinerja keuangan yang lebih baik', '[hal. 121]'],
+        ['Karyawan', 'Orang lebih suka bekerja di perusahaan yang etis dan bertanggung jawab sosial, sehingga perusahaan itu lebih mudah menarik dan mempertahankan karyawan berkualitas', '[hal. 122]'],
+        ['Pelanggan', 'Studi Walker Research: bila harga dan kualitas sama, dua pertiga pelanggan akan berganti merek ke perusahaan yang etis dan bertanggung jawab sosial. Eksperimen lain: konsumen mau membayar sedikit lebih mahal untuk produk yang dibuat dengan standar etika tinggi', '[hal. 122]'],
+        ['Biaya pelanggaran', '**Volkswagen:** EPA memerintahkan penarikan hampir setengah juta kendaraan diesel; perusahaan membayar atau mencadangkan sekitar \\$33 miliar untuk denda, sanksi, dan biaya hukum; harga saham anjlok 30% dalam beberapa hari', '[hal. 122]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku berhati-hati: hasil studi itu **bukan bukti yang sangat kuat**, tetapi memberi indikasi bahwa memakai sumber daya untuk etika dan tanggung jawab sosial **tidak merugikan** perusahaan [hal. 121].',
+    },
+    // ---------------------------------------------------------------- §3
+    { kind: 'h2', text: '3. Ethical Dilemma dan Moral Agent' },
+    { kind: 'p', text: 'Menjadi etis selalu berkaitan dengan mengambil keputusan [hal. 122]. Buku memberi dua rumusan ethical dilemma:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Rumusan', 'Isi', 'Sumber'],
+      rows: [
+        ['Teks subbab 4-1c', 'Situasi tentang benar atau salah ketika **nilai-nilai saling bertentangan**; benar dan salah tidak dapat diidentifikasi dengan jelas', '[hal. 122]'],
+        ['Remember This', 'Situasi ketika **semua alternatif pilihan berpotensi membawa konsekuensi negatif**; benar dan salah tidak dapat dibedakan dengan jelas', '[hal. 123]'],
+      ],
+    },
+    { kind: 'p', text: 'Keduanya sepakat pada satu hal: dalam dilema etis, jawaban benar tidak tersedia dengan jelas.' },
+    { kind: 'p', text: '**Moral agent** = individu yang harus mengambil pilihan etis di dalam organisasi [hal. 122].' },
+    { kind: 'p', text: 'Contoh kerumitan: perusahaan makin sering memakai media sosial untuk mempelajari pesaing, sebagian bahkan "berteman" dengan pelanggan atau karyawan pesaing dan mengajukan pertanyaan yang tampak polos untuk mengumpulkan informasi. Hukum tentang pengumpulan informasi seperti ini tidak tegas, dan pendapat tentang etikanya juga terbelah [hal. 122]. Ini sisi etis dari **business intelligence** dan pemindaian lingkungan yang dibahas di TM02.' },
+    { kind: 'p', text: '**Tiga dilema dari buku** [hal. 122–123]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Situasi', 'Nilai yang bertentangan'],
+      rows: [
+        ['1', 'Eksekutif puncak bank lokal kecil diminta membuka rekening untuk perusahaan rintisan di industri ganja', 'Manfaat medis dan praktik bank lain vs opini publik setempat yang terbelah'],
+        ['2', 'Karyawan perusahaan e-commerce B2B diminta atasan mengubah algoritma agar produk merek sendiri dan produk yang lebih menguntungkan tampil lebih dulu', 'Nilai objektivitas algoritma perusahaan, kepentingan pelanggan dan pemasok kecil vs risiko kehilangan pekerjaan'],
+        ['3', 'Manajer penjualan farmasi diminta mempromosikan obat \\$2.500 per dosis yang hanya 1% lebih efektif daripada obat alternatif di bawah \\$625 per dosis', 'Biaya bagi pasien vs argumen bahwa nyawa bisa hilang tanpa tambahan efektivitas 1% itu'],
+      ],
+    },
+    { kind: 'p', text: '**Sumber konflik dalam dilema etis** [hal. 123–124]: kebanyakan dilema etis adalah konflik antara kebutuhan **bagian** dan **keseluruhan**: individu vs organisasi, atau organisasi vs masyarakat. Contoh dari buku:' },
+    {
+      kind: 'ul',
+      items: [
+        'Memeriksa unggahan media sosial calon atau karyawan: menguntungkan organisasi, mengurangi kebebasan individu.',
+        'Mengekspor produk yang gagal memenuhi standar FDA ke negara dengan standar lebih rendah: menguntungkan perusahaan, berpotensi merugikan warga dunia.',
+        'Potensi masalah kesehatan warga akibat **limbah** perusahaan vs **lapangan kerja** yang diciptakan perusahaan sebagai **pemberi kerja utama kota**.',
+      ],
+    },
+    // ---------------------------------------------------------------- §4
+    { kind: 'h2', text: '4. Lima Pendekatan Pengambilan Keputusan Etis' },
+    { kind: 'p', text: 'Menghadapi pilihan etis yang sulit, manajer terbantu oleh **strategi normatif**, yaitu strategi berbasis norma dan nilai. Normative ethics memakai beberapa pendekatan; buku membahas lima yang relevan bagi manajer [hal. 124].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku **tidak** memuat model langkah-langkah pengambilan keputusan etis. Untuk "mengevaluasi proses pengambilan keputusan etis" (Sub-CPMK), pakai lima pendekatan di bawah sebagai sudut penilaian dan lima pertanyaan bantu practical approach [hal. 124–126].',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pendekatan', 'Inti', 'Contoh / catatan dari buku', 'Sumber'],
+      rows: [
+        ['**Utilitarian** (Jeremy Bentham, John Stuart Mill)', 'Perilaku moral menghasilkan **kebaikan terbesar bagi jumlah orang terbesar**. Pengambil keputusan mempertimbangkan efek tiap alternatif pada semua pihak, lalu memilih yang mengoptimalkan manfaat bagi paling banyak orang', 'Saat pandemi COVID-19, dokter di Italia diarahkan memberi ICU dan ventilator kepada pasien yang paling mungkin selamat, lalu kepada yang harapan hidupnya jauh lebih panjang, tanpa mempertimbangkan uang, ras, etnis, atau pengaruh politik', '[hal. 124]'],
+        ['**Individualism**', 'Tindakan bermoral bila memajukan **kepentingan jangka panjang terbaik** individu. Secara teori, bila semua orang mengejar kepentingan jangka panjangnya, kebaikan bersama tercapai; berbohong dan curang demi keuntungan sesaat hanya membuat rekan bisnis membalas dengan cara yang sama', 'Mudah **disalahartikan** untuk membenarkan keuntungan diri sesaat, sehingga **tidak populer** di masyarakat modern yang sangat terorganisasi dan berorientasi kelompok. Remember This menyebutnya "not considered appropriate today"', '[hal. 124, 126]'],
+        ['**Moral-rights**', 'Manusia punya **hak dan kebebasan dasar** yang tidak bisa dicabut oleh keputusan individu. Keputusan etis adalah yang paling menjaga hak orang yang terdampak, seperti hak privasi, hak persetujuan bebas (free consent), dan kebebasan berbicara', 'Perawatan eksperimental pada pasien trauma yang tidak sadar dapat melanggar free consent; memantau kegiatan karyawan di luar kerja melanggar privasi; kebebasan berbicara mendukung **whistle-blower**. Concept Connection: gerakan serikat pekerja memakai moral-rights approach (upah layak, waktu libur, kebebasan berbicara)', '[hal. 124–125]'],
+        ['**Justice**', 'Keputusan moral harus berdasarkan standar **kesetaraan, keadilan, dan ketidakberpihakan**. Paling dekat dengan domain hukum di Exh. 4.1, karena mengandaikan keadilan diterapkan lewat aturan. Manajer diharapkan menetapkan atribut yang sah untuk membedakan perlakuan karyawan', 'Recipe for Success: Coffee of Grace membayar petani kopi di atas harga pasar fair trade dan memakai direct trade, sehingga seluruh uang pembelian panen sampai ke petani', '[hal. 125]'],
+        ['**Practical**', '**Menghindari perdebatan** tentang apa yang benar, baik, atau adil; keputusan didasarkan pada **standar yang berlaku** di profesi dan masyarakat luas, dengan mempertimbangkan kepentingan **semua stakeholder**', 'Seorang manajer U.S. Secret Service melaporkan dan memulangkan sejumlah agen yang berperilaku tidak pantas saat bertugas di luar negeri. Baginya, persoalannya bukan moral atau tidaknya perbuatan itu, tetapi bahwa perilaku itu merusak reputasi dan kemampuan lembaga menjalankan misinya', '[hal. 126]'],
+      ],
+    },
+    { kind: 'p', text: '**Tiga jenis justice** [hal. 125, 127]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jenis', 'Isi', 'Contoh'],
+      rows: [
+        ['**Distributive justice**', 'Perbedaan perlakuan tidak boleh didasarkan pada karakteristik yang sewenang-wenang', 'Laki-laki dan perempuan dengan kualifikasi dan pekerjaan sama tidak boleh digaji berbeda [hal. 125]'],
+        ['**Procedural justice**', 'Aturan dijalankan secara adil: dinyatakan jelas serta ditegakkan konsisten dan tidak berpihak', '[hal. 125]'],
+        ['**Compensatory justice**', 'Individu harus diberi kompensasi atas biaya kerugiannya oleh pihak yang bertanggung jawab. Remember This menambahkan: individu tidak boleh dimintai tanggung jawab atas hal di luar kendalinya', '[hal. 125, 127]'],
+      ],
+    },
+    { kind: 'p', text: '**Tes practical approach** [hal. 126]: sebuah keputusan dianggap etis bila (1) dapat diterima komunitas profesi, (2) manajer tidak ragu mengumumkannya di berita malam, dan (3) seseorang merasa nyaman menjelaskannya kepada keluarga dan teman. Dengan pendekatan ini, manajer bisa menggabungkan unsur utilitarian, moral-rights, dan justice.' },
+    { kind: 'p', text: '**Lima pertanyaan bantu** (usulan seorang pakar etika bisnis; menurut buku, pertanyaan ini mencakup berbagai pendekatan di atas) [hal. 126]:' },
+    {
+      kind: 'ol',
+      items: [
+        'Apa untungnya bagi saya?',
+        'Keputusan mana yang menghasilkan kebaikan terbesar bagi jumlah orang terbesar?',
+        'Aturan, kebijakan, atau norma sosial apa yang berlaku?',
+        'Apa kewajiban saya kepada orang lain?',
+        'Apa dampak jangka panjangnya bagi saya dan stakeholder penting?',
+      ],
+    },
+    // ---------------------------------------------------------------- §5
+    { kind: 'h2', text: '5. Manajer sebagai Individu: Moral Development serta Giving vs Taking' },
+    { kind: 'p', text: 'Pilihan etis manajer dipengaruhi faktor organisasi dan faktor pribadi [hal. 127]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Faktor', 'Isi menurut buku'],
+      rows: [
+        ['**Organisasi**', 'Budaya perusahaan yang tidak etis dan tekanan dari atasan serta rekan dapat mendorong karyawan berperilaku tidak etis. Saat tekanan organisasi bertentangan dengan rasa benar pribadi, orang biasanya frustrasi dan kelelahan emosional'],
+        ['**Pribadi**', 'Kebutuhan pribadi, pengaruh keluarga, dan latar belakang agama membentuk sistem nilai manajer. Ciri kepribadian seperti **ego strength**, percaya diri, dan rasa mandiri yang kuat dapat membantu manajer memilih secara etis meskipun ada tekanan dari luar dan risiko pribadi'],
+      ],
+    },
+    { kind: 'p', text: 'Salah satu faktor pribadi yang penting adalah **tahap perkembangan moral**. Buku menampilkan **versi sederhana** dari satu model perkembangan moral (berbasis Kohlberg) [hal. 127–128].' },
+    { kind: 'p', text: '**Exhibit 4.3: Three Levels of Personal Moral Development** [hal. 128]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Level 1: Preconventional', 'Level 2: Conventional', 'Level 3: Postconventional (principled)'],
+      rows: [
+        ['Orientasi', 'Self-interest', 'Societal expectations', 'Internal values'],
+        ['Ciri (Exh. 4.3)', 'Mengikuti aturan untuk menghindari hukuman; bertindak demi kepentingan sendiri; patuh demi kepatuhan itu sendiri', 'Memenuhi harapan orang lain; menjalankan tugas dan kewajiban sistem sosial; menjunjung hukum', 'Mengikuti prinsip keadilan dan kebenaran yang dipilih sendiri; sadar orang punya nilai berbeda dan mencari solusi kreatif atas dilema etis; menyeimbangkan kepedulian pada individu dengan kebaikan bersama'],
+        ['Penjelasan teks', 'Peduli pada imbalan dan hukuman eksternal; patuh pada otoritas untuk menghindari akibat buruk bagi diri sendiri', 'Menyesuaikan diri dengan harapan perilaku baik menurut rekan, keluarga, teman, dan masyarakat', 'Dipandu nilai internal berdasarkan prinsip keadilan universal; bahkan mau melanggar aturan atau hukum yang bertentangan dengan prinsip itu'],
+        ['Leader style', 'Autocratic/coercive', 'Guiding/encouraging, team oriented', 'Transforming, or servant leadership'],
+        ['Employee behavior', 'Task accomplishment', 'Work-group collaboration', 'Empowered employees, full participation'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 127–128].' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: '**Sebagian besar manajer berada di level conventional**: pikiran dan perilaku etisnya sangat dipengaruhi atasan dan rekan di organisasi atau industrinya. Hanya **sekitar 20% orang dewasa Amerika** yang mencapai level postconventional dan mampu bertindak etis secara mandiri, terlepas dari harapan orang lain [hal. 127].',
+    },
+    { kind: 'p', text: 'Contoh level postconventional dari buku: manajer Secret Service di §4, yang bertindak walau kemungkinan menghadapi reaksi internal [hal. 127]; CEO Microsoft Satya Nadella, yang menekankan pertanyaan bukan hanya apa yang *bisa* dilakukan komputer, tetapi apa yang *seharusnya* dilakukan, dan mendorong perlindungan privasi serta pedoman etis untuk AI [hal. 127]; CEO Numi Teas, yang berkomitmen pada fair trade dan mengajarkan pemimpin bisnis lain cara menerapkan dan memverifikasi praktik kerja yang adil [hal. 128]. Satu studi menemukan pemimpin dengan penalaran moral tinggi menjadi teladan etis yang menarik perhatian pengikutnya [hal. 128].' },
+    { kind: 'p', text: '**Giving versus taking** [hal. 128–130]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Konsep', 'Isi menurut buku', 'Sumber'],
+      rows: [
+        ['**Servant leadership**', 'Manajer yang beroperasi di level perkembangan lebih tinggi dapat memakai servant leadership: fokus pada kebutuhan pengikut dan mendorong mereka berpikir mandiri. Manajer sebagai "giver" menempatkan pelayanan kepada orang lain di atas kepentingan diri', '[hal. 128, 130]'],
+        ['Bukti', 'Orang bekerja lebih keras dan efektif untuk pemimpin yang mendahulukan kepentingan orang lain. Organisasi dengan **giving culture** (saling membantu, berbagi informasi, berkolaborasi) cenderung lebih efektif. Studi psikolog Harvard atas tim di sistem intelijen AS: prediktor terbesar efektivitas tim adalah banyaknya bantuan dan dukungan antaranggota', '[hal. 128–129]'],
+        ['**Givers vs takers** (Adam Grant)', 'Dulu **takers** (orang yang mendahulukan kepentingan sendiri) bisa naik ke puncak dengan menginjak **givers**, tetapi hal ini berubah seiring bergesernya sifat pekerjaan', '[hal. 129]'],
+        ['Contoh', 'Berkshire Hathaway, Robert W. Baird & Company, dan IDEO punya kebijakan resmi tidak merekrut orang yang bersikap seperti taker. Salesforce menyisihkan 1% ekuitas, produk, dan waktu ke yayasan; di hari pertama, karyawan baru ikut kegiatan pelayanan sosial', '[hal. 129]'],
+      ],
+    },
+    { kind: 'p', text: 'Kategori giver dan taker membantu orang memahami bagaimana mereka menyumbang pada, atau merusak, budaya etis organisasi [hal. 129].' },
+    // ---------------------------------------------------------------- §6
+    { kind: 'h2', text: '6. Corporate Social Responsibility, ESG, dan Stakeholders' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Corporate social responsibility (CSR)**', 'Kewajiban manajemen untuk membuat pilihan dan mengambil tindakan yang berkontribusi pada kesejahteraan dan kepentingan **masyarakat, bukan hanya organisasi**. Secara sederhana: membedakan benar dari salah dan melakukan yang benar; menjadi warga korporat yang baik', '[hal. 130]'],
+        ['**ESG**', 'Pendekatan terbaru: kinerja perusahaan dinilai dan diukur pada dimensi **environmental, social, and governance**. Skor ESG bisa berkisar 0–100', '[hal. 130]'],
+        ['**Stakeholder**', 'Setiap kelompok atau orang, di dalam atau di luar organisasi, yang punya investasi atau kepentingan dalam kinerja organisasi dan terdampak oleh tindakannya. Tiap stakeholder punya kriteria responsivitas yang berbeda karena kepentingannya berbeda', '[hal. 131]'],
+        ['**Stakeholder mapping**', 'Cara sistematis mengidentifikasi harapan, kebutuhan, kepentingan, dan kekuatan relatif berbagai stakeholder, yang bisa berubah dari waktu ke waktu; membantu manajer menentukan prioritas stakeholder untuk isu atau proyek tertentu', '[hal. 132]'],
+      ],
+    },
+    { kind: 'p', text: '**Lima area skor ESG** [hal. 130]:' },
+    {
+      kind: 'table',
+      headers: ['Area', 'Contoh butir'],
+      rows: [
+        ['Environment', 'Penggunaan air, pengelolaan bahan bakar'],
+        ['Social capital', 'Privasi pelanggan, pengembangan komunitas'],
+        ['Human capital', 'Peluang diversitas, kompensasi dan tunjangan'],
+        ['Business innovation', 'Nilai sosial produk, kualitas dan keselamatan'],
+        ['Leadership and governance', 'Etika bisnis, kompensasi eksekutif'],
+      ],
+    },
+    { kind: 'p', text: '**BHP**, salah satu perusahaan tambang terbesar dunia, mengaitkan 15% insentif jangka pendek eksekutif dengan target ESG, memakai sistem skor berimbang (kematian kerja, insiden lingkungan, dampak HAM, kesehatan kerja dan lingkungan). Menurut pemimpinnya, konsumsi energi turun 16% dalam enam tahun dan tingkat cedera terendah dalam lebih dari satu dekade [hal. 130–131].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Buku mengingatkan adanya **trade-off**: memperbaiki kinerja ESG bisa berbiaya bagi kinerja keuangan, dan sebaliknya. Memasang panel surya mahal baik bagi lingkungan, tetapi bisa buruk bagi laba. Manajer puncak mungkin harus belajar mengalokasikan sumber daya dari kontribusi langsung ke laba untuk mencapai tujuan ESG [hal. 131].',
+    },
+    { kind: 'p', text: '**"Tanggung jawab kepada siapa?"** [hal. 131]' },
+    {
+      kind: 'ul',
+      items: [
+        'Setengah abad lalu, ekonom Milton Friedman menulis bahwa satu-satunya tanggung jawab sosial bisnis adalah menjalankan kegiatan untuk menaikkan laba. Pandangan itu dominan selama bertahun-tahun.',
+        '**Business Roundtable (BRT)**, asosiasi CEO-CEO besar AS, pada 1997 menetapkan nilai pemegang saham sebagai tujuan utama korporasi. Pada akhir 2019, BRT merilis pernyataan baru yang ditandatangani 181 CEO dan berfokus pada **lima stakeholder utama**. Pemegang saham disebut **setelah** komitmen pada pelanggan, karyawan (termasuk diversitas dan inklusi), pemasok, dan komunitas (termasuk lingkungan).',
+        'Airbnb merumuskan stakeholder-nya sebagai tamu, host, komunitas, karyawan, dan pemegang saham, serta mengaitkan bonus manajer dengan tujuan sosial [hal. 131]. Selama pandemi COVID-19, bank-bank Eropa menunda miliaran dolar dividen untuk gaji karyawan dan pinjaman nasabah [hal. 131].',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 4.4: The New Purpose of a Corporation Is to Serve Multiple Stakeholders** [hal. 132]' },
+    { kind: 'p', text: '**Corporation (pusat)**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Stakeholder', 'Kepentingannya menurut buku', 'Sumber'],
+      rows: [
+        ['Investors and shareholders', 'Efisiensi manajerial: penggunaan sumber daya untuk mencapai laba', '[hal. 132]'],
+        ['Suppliers', 'Efisiensi manajerial', '[hal. 132]'],
+        ['Customers', 'Kualitas, keamanan, dan ketersediaan barang dan jasa', '[hal. 132]'],
+        ['Employees', 'Kepuasan kerja, gaji yang memadai, dan supervisi yang baik', '[hal. 132]'],
+        ['Communities', 'Kepatuhan pada hukum (keselamatan, perlindungan lingkungan, antimonopoli, antisuap), dampak sosial positif, dan perlindungan lingkungan. Mencakup pemerintah daerah, lingkungan alam, dan kualitas hidup warga', '[hal. 132–133]'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh: The Container Store sejak awal menempatkan semua stakeholder sebagai prioritas; Valentine\'s Day diganti nama menjadi "We Love Our Employees Day" [hal. 132]. Hindustan Unilever memberi pinjaman mikro dan pelatihan kepada perempuan dari rumah tangga berpenghasilan rendah di desa kecil India untuk menjual produk higienis, yang kadang menggandakan pendapatan rumah tangga dan mengurangi penyebaran penyakit [hal. 133].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Dua pernyataan buku perlu dibaca berdampingan. **BRT dan Exh. 4.4** menyebut **lima** stakeholder utama: pelanggan, karyawan, pemasok, komunitas, pemegang saham [hal. 131, 133]. **Teks hal. 132** menyebut **empat** primary stakeholders tanpa mereka organisasi tidak bisa bertahan (investor dan pemegang saham, karyawan, pelanggan, pemasok), lalu menyebut komunitas sebagai "another important stakeholder" [hal. 132]. Untuk soal tentang BRT atau Exh. 4.4, jawab lima; untuk definisi primary stakeholders di hal. 132, jawab empat.',
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Piramida CSR Carroll dan spektrum respons CSR (obstructive sampai proactive) sering muncul di materi lain, tetapi tidak dibahas di buku wajib ini.',
+    },
+    // ---------------------------------------------------------------- §7
+    { kind: 'h2', text: '7. Green Movement, Sustainability, dan Triple Bottom Line' },
+    { kind: 'p', text: '**Green movement** [hal. 133–134]: dalam dua dekade terakhir, organisasi kecil sampai korporasi raksasa "going green", didorong pergeseran sikap sosial serta pengaruh media sosial dan internet. Satu survei: 90% orang Amerika setuju ada isu "green" yang penting, dan 82% berpendapat bisnis harus menerapkan praktik ramah lingkungan. Contoh dari buku:' },
+    {
+      kind: 'ul',
+      items: [
+        'Apple menyatakan seluruh fasilitasnya di dunia sudah memakai energi terbarukan sejak 2018; Apple Park adalah salah satu instalasi surya di lokasi terbesar di dunia [hal. 134].',
+        'Cummins mendorong R&D-nya membuat mesin diesel dengan emisi di bawah batas regulasi AS [hal. 134].',
+        'Bahkan perusahaan minyak besar mulai mengaitkan gaji eksekutif dengan target lingkungan [hal. 134].',
+        'Creating a Greener World: Nestlé dan H&M mengubah rantai pasok agar tidak membeli dari lahan hasil deforestasi di Brasil [hal. 134].',
+      ],
+    },
+    { kind: 'p', text: '**Greenwashing** = perusahaan berusaha tampil **lebih peduli lingkungan daripada kenyataannya**. Contoh paling mencolok menurut buku: Volkswagen, yang mempromosikan mobilnya sebagai pelopor energi bersih sambil memasang software pengakal uji emisi pada mesin "clean diesel"-nya. Konsultan TerraChoice menemukan hampir semua produk yang dipasarkan sebagai ramah lingkungan mengandung setidaknya sedikit klaim berlebihan [hal. 134].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Sustainability** (sustainable development)', 'Kemampuan menghasilkan kekayaan dengan tanggung jawab lingkungan dan kepedulian sosial, sehingga kebutuhan stakeholder kini dan mendatang terpenuhi sambil menjaga lingkungan dan masyarakat agar generasi mendatang juga dapat memenuhi kebutuhannya. Manajer menenun pertimbangan lingkungan dan sosial ke **setiap keputusan strategis**', '[hal. 134–135]'],
+        ['**Triple bottom line (TBL)**', 'Mengukur **kinerja sosial, kinerja lingkungan, dan kinerja keuangan** organisasi; disebut juga **three Ps: People, Planet, Profit**', '[hal. 135]'],
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 4.5: Sustainability and the Triple Bottom Line** [hal. 136]' },
+    { kind: 'p', text: '**Sustainability = irisan ketiganya**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['P', 'Yang diukur', 'Sumber'],
+      rows: [
+        ['**People**', 'Kinerja sosial: praktik kerja yang adil, diversitas, hubungan dengan pemasok, perlakuan terhadap karyawan, kontribusi pada komunitas', '[hal. 135–136]'],
+        ['**Planet**', 'Kinerja lingkungan: komitmen pada keberlanjutan lingkungan', '[hal. 135–136]'],
+        ['**Profit**', 'Kinerja keuangan: bottom line finansial', '[hal. 135–136]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'tip',
+      title: 'Tips',
+      text: 'Logika TBL menurut buku: **apa yang diukur adalah apa yang dikejar dan dicapai**. Mengukur tiga P memastikan manajer memperhitungkan faktor sosial dan lingkungan, bukan mengejar laba secara membabi buta tanpa peduli biayanya bagi masyarakat dan lingkungan [hal. 135].',
+    },
+    { kind: 'p', text: 'Contoh: CEO Inditex menyatakan sustainability dipertimbangkan di setiap keputusan, termasuk kualitas produk, bahan, kondisi kerja pembuatnya, dan kemampuan didaur ulang; pada 2017 Inditex berkomitmen agar semua tokonya hemat sumber daya (40% lebih sedikit air, 20% lebih sedikit energi) [hal. 136]. Box Michelin 5-Star (Asarasi) menunjukkan usaha baru yang dibangun dari air sisa produksi sirup maple [hal. 135].' },
+    // ---------------------------------------------------------------- §8
+    { kind: 'h2', text: '8. Benefit Corporations dan B Lab' },
+    { kind: 'p', text: 'Kini organisasi dapat didirikan dengan niat menciptakan nilai finansial sekaligus dampak sosial positif. Ada **dua cara**: inkorporasi langsung di negara bagian yang mengakui benefit corporation sebagai badan hukum, atau sertifikasi oleh **B Lab**, organisasi nirlaba yang mengaudit dampak sosial secara eksternal [hal. 136].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Benefit corporation', 'Certified B Corporation'],
+      rows: [
+        ['Dasar', '**Badan hukum** menurut undang-undang negara bagian', '**Sertifikasi** oleh B Lab dengan kerangka **nonlegal**'],
+        ['Definisi', 'Organisasi for-profit yang tujuan resminya mencakup dampak positif material bagi masyarakat; wajib mempertimbangkan dampak keputusan pada karyawan, komunitas, dan lingkungan, bukan hanya pemegang saham; secara sukarela menerapkan standar akuntabilitas dan transparansi tinggi', 'Perusahaan memenuhi standar tertinggi B Lab untuk kinerja sosial dan lingkungan yang terverifikasi, transparansi publik, dan akuntabilitas hukum'],
+        ['Manfaat', 'Perlindungan hukum: manajer boleh mendahulukan tujuan sosial, moral, atau lingkungan di atas tujuan keuangan tanpa risiko digugat pemegang saham. Perusahaan harus mencantumkan di anggaran dasarnya apa yang dilakukannya untuk publik', 'Kinerja yang diverifikasi dan dipublikasikan pihak independen membantu perusahaan menghindari **greenwashing yang tidak disengaja**'],
+        ['Contoh', 'Berrett-Koehler Publishers (penerbit pertama yang mereinkorporasi sebagai benefit corporation); Patagonia, Method, Plum Organics, King Arthur Flour, Kickstarter', 'Patagonia, Eileen Fisher'],
+        ['Sumber', '[hal. 136–137]', '[hal. 137]'],
+      ],
+    },
+    { kind: 'p', text: 'Perusahaan bisa menjadi benefit corporation tanpa sertifikasi B Lab, tetapi banyak yang memilih **keduanya** untuk menunjukkan komitmen tinggi [hal. 137]. **Patagonia** menyumbangkan 10% laba sebelum pajak atau 1% penjualan (mana yang lebih besar) kepada kelompok penyelamat lingkungan, menawarkan reparasi pakaian gratis lewat kampanye Worn Wear, dan membagikan R&D teknologi manufaktur ramah lingkungannya, bahkan kepada pesaing [hal. 137].' },
+    { kind: 'p', text: 'Data per buku: undang-undang benefit corporation pertama disahkan Maryland pada 2010; pada awal 2020 ada 32 negara bagian AS ditambah District of Columbia; B Lab didirikan 2006 dan telah mensertifikasi lebih dari 1.400 perusahaan [hal. 136–137].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Data per buku (2023), bisa sudah berubah.',
+    },
+    // ---------------------------------------------------------------- §9
+    { kind: 'h2', text: '9. Membangun Organisasi Etis: Values-Oriented dan Structure-Oriented' },
+    { kind: 'p', text: '"Manajemen bertanggung jawab menciptakan dan menjaga kondisi yang membuat orang cenderung berperilaku baik," kata seorang pakar etika yang dikutip buku. Manajer dapat memakai **dua pendekatan** sekaligus [hal. 138].' },
+    { kind: 'p', text: '**Exhibit 4.6: Building an Ethical Organization** [hal. 138]' },
+    {
+      kind: 'table',
+      headers: ['Values-Oriented', 'Structure-Oriented'],
+      rows: [
+        ['Ethical Leadership', 'Chief Ethics Officer'],
+        ['Volunteerism', 'Ethics Hotline'],
+        ['Code of Ethics', 'Ethics Training'],
+        ['Ethics Committee', 'Support for Whistle-Blowers'],
+      ],
+      caption: 'The Ethical Organization',
+    },
+    { kind: 'p', text: '| | **Values-oriented approach** | **Structure-oriented approach** |' },
+    { kind: 'p', text: '|--|------------------------------|---------------------------------|' },
+    { kind: 'p', text: '| Cara kerja | Langsung menyasar **keinginan internal** individu untuk berperilaku etis; menyelaraskan nilai pribadi dengan nilai organisasi | Tidak bekerja lewat keinginan internal, tetapi memakai **struktur, insentif, pilihan, pengelompokan tugas, dan kebijakan** untuk mengurangi godaan berperilaku tidak etis |' },
+    { kind: 'p', text: '| Unsur (Exh. 4.6) | Ethical leadership, Volunteerism, Code of ethics, Ethics committee | Chief ethics officer, Ethics hotline, Ethics training, Support for whistle-blowers |' },
+    { kind: 'p', text: '| Sumber | [hal. 138–140] | [hal. 140–141] |' },
+    { kind: 'p', text: '**Unsur values-oriented** [hal. 138–140]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Unsur', 'Isi menurut buku'],
+      rows: [
+        ['**Ethical leadership**', 'Manajer menjadi teladan kejujuran dan dapat dipercaya, adil kepada karyawan dan pelanggan, serta berperilaku etis dalam kehidupan pribadi dan profesional. Manajer dan supervisor lini pertama adalah teladan penting yang sangat memengaruhi iklim etis. Menurut buku, ini salah satu langkah terpenting'],
+        ['**Volunteerism**', 'Aktif memberikan waktu dan keterampilan kepada organisasi sukarela atau amal. Google, Accenture, Mattel, FedEx, dan Goldman Sachs memberi karyawan waktu untuk kegiatan sukarela. Mengaitkan kegiatan sukarela karyawan dengan strategi CSR juga memperkuat reputasi etis perusahaan. Sunny Side Up: sekitar 90% perusahaan Fortune 500 punya program sukarela karyawan; IBM menilai programnya menghasilkan sekitar \\$5 miliar bisnis baru'],
+        ['**Code of ethics**', 'Pernyataan formal tentang nilai perusahaan terkait etika dan isu sosial. Dua jenis: **principle-based statements** (memengaruhi budaya; mendefinisikan nilai dasar; bahasa umum tentang tanggung jawab, kualitas produk, perlakuan terhadap karyawan; sering disebut **corporate credos**) dan **policy-based statements** (prosedur untuk situasi etis tertentu: praktik pemasaran, konflik kepentingan, kepatuhan hukum, informasi rahasia, hadiah politik, kesempatan setara). Contoh: Code of Conduct Google ("Don\'t be evil"), terbagi delapan bagian'],
+        ['**Ethics committee**', 'Sekelompok eksekutif (kadang juga karyawan level bawah) yang ditunjuk untuk mengawasi etika perusahaan: memberi keputusan atas isu etis yang meragukan dan bertanggung jawab mendisiplinkan pelanggar'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Kode etik **saja** hanya sedikit memengaruhi perilaku etis. Kode etik mendongkrak iklim etis bila **manajemen puncak mendukung dan menegakkannya**, termasuk dengan imbalan bagi yang patuh dan sanksi bagi pelanggar [hal. 140]. Perhatikan juga: teks menyebut kode etik sebagai "organizational mechanism", tetapi Exh. 4.6 menempatkan **code of ethics dan ethics committee di kolom Values-Oriented** [hal. 138–139].',
+    },
+    { kind: 'p', text: '**Unsur structure-oriented** [hal. 140–141]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Unsur', 'Isi menurut buku'],
+      rows: [
+        ['**Chief ethics officer** (chief ethics and compliance officer)', 'Memimpin kantor etika dengan staf penuh waktu yang ikut memberi masukan pada penilaian kinerja dan insentif. Mengawasi semua aspek etika dan kepatuhan hukum: menetapkan dan mengomunikasikan standar, menyelenggarakan pelatihan etika, menangani pengecualian atau masalah, dan menasihati manajer senior'],
+        ['**Ethics training**', 'Komunikasi langsung tentang praktik dan kebijakan etis. Topik: tempat kerja yang saling menghormati, melindungi sumber daya dan informasi perusahaan, menghindari konflik kepentingan, mematuhi hukum'],
+        ['**Ethics hotline**', 'Saluran telepon rahasia bebas pulsa untuk melaporkan perilaku yang meragukan dan meminta panduan atas dilema etis; kantor etika juga berfungsi sebagai pusat konseling'],
+        ['**Support for whistle-blowers**', 'Bagian penting organisasi etis (lihat §10). Tidak ada organisasi yang bisa sepenuhnya mengandalkan kode etik dan struktur; akuntabilitas bergantung pada orang yang berani bersuara'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (2/3)',
+      text: 'Banyak lembaga keuangan dan BUMN di Indonesia menyediakan sistem pelaporan pelanggaran (*whistleblowing system*) yang memungkinkan karyawan melaporkan dugaan pelanggaran secara rahasia. Dalam kerangka Exh. 4.6, sistem ini termasuk mekanisme **structure-oriented**, setara dengan ethics hotline dan support for whistle-blowers [hal. 138, 140–141]. Buku mengingatkan bahwa saluran seperti ini baru efektif bila perusahaan memandang whistle-blowing sebagai manfaat dan sungguh-sungguh melindungi pelapor [hal. 141].',
+    },
+    // ---------------------------------------------------------------- §10
+    { kind: 'h2', text: '10. Whistle-Blowing' },
+    { kind: 'p', text: '**Whistle-blowing** (disebut juga **conscience-seeking**) = pengungkapan oleh **karyawan** atas praktik perusahaan yang korup, ilegal, tidak etis, atau tidak sah [hal. 141]. Kebebasan berbicara dalam moral-rights approach mendukung whistle-blower [hal. 124].' },
+    { kind: 'p', text: '**Bukti manfaatnya:** studi Jaron Wilde (University of Iowa) atas organisasi yang pernah menjalani investigasi whistle-blowing menemukan penurunan tajam dan bertahan lama dalam kasus pelanggaran keuangan [hal. 141].' },
+    { kind: 'p', text: '**Ke mana melapor:** whistle-blower sering melapor ke pihak luar, seperti lembaga regulator, senator, atau wartawan. Sebagian perusahaan membuat program dan hotline rahasia untuk mendorong pelaporan internal. Agar efektif, perusahaan harus memandang whistle-blowing sebagai **manfaat** dan sungguh-sungguh mendorong serta melindungi pelapor. Bila tidak, **refleks manajemen bisa berupa melindungi perusahaan dari whistle-blower** [hal. 141].' },
+    { kind: 'p', text: '**Contoh dari buku** [hal. 141]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kasus', 'Yang ditulis buku', 'Status menurut buku'],
+      rows: [
+        ['**JPMorgan Chase** (contoh utama buku)', 'Seorang broker di divisi Private Client JPMorgan Chase mengeluhkan bahwa perusahaan sering menekan broker untuk menjual reksa dana bermerek JPMorgan walau produk pesaing lebih cocok. Setelah ia menyampaikan keluhan, atasannya mulai mempersoalkan kinerjanya, dan dalam beberapa bulan ia dipecat. Ia menggugat atas pemecatan yang tidak sah dan membawa tuduhannya ke publik; surat keluhan nasabah kemudian muncul di catatan disiplinnya, tetapi sebagian nasabah mengatakan mereka menandatangani surat yang disusun karyawan JPMorgan tanpa menyadari isinya mengkritik broker itu', 'Menurut buku, perkara whistle-blower-nya masih berjalan dan SEC masih menyelidiki tuduhannya'],
+        ['**Dover Air Force Base**', 'U.S. Office of Special Counsel menyatakan tiga pejabat Angkatan Udara bersalah membalas karyawan sipil yang melaporkan salah penanganan jenazah tentara', 'Temuan resmi'],
+        ['**Department of Veterans Affairs (VA)**', 'Pejabat VA mengungkap bahwa manajer yang memimpin kantor perlindungan whistle-blower justru menargetkan pelapor untuk pembalasan; inspektur jenderal VA menyebut kantor itu membuat kesalahan yang menciptakan budaya yang mengasingkan orang yang seharusnya dilindunginya', 'Temuan resmi'],
+      ],
+    },
+    { kind: 'p', text: 'Menurut buku, contoh JPMorgan menggambarkan apa yang bisa terjadi bila perusahaan tidak punya cara efektif untuk mendukung whistle-blowing internal, dan betapa sulitnya manajer di organisasi raksasa mengawasi kantor dan karyawan yang tersebar [hal. 141].' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Banyak manajer masih memandang whistle-blower sebagai karyawan yang tidak puas dan **bukan pemain tim**. Padahal, untuk menjaga standar etika tinggi, organisasi membutuhkan orang yang mau menunjukkan kesalahan. Manajer dapat dilatih memandang whistle-blowing sebagai **manfaat, bukan ancaman**, dan sistem dapat dibangun untuk melindungi pelapor [hal. 141].',
+    },
+    // ---------------------------------------------------------------- §11
+    { kind: 'h2', text: '11. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'p', text: '**Simpul pusat:** MANAGING ETHICS AND SOCIAL RESPONSIBILITY' },
+    {
+      kind: 'ul',
+      items: [
+        '**1. MANAGERIAL ETHICS**\n- Ethics; ethical issue\n- Exh. 4.1: Codified law · Ethics · Free choice\n- Exh. 4.2: Honesty · Enforces standards · Fair · Kindness\n- Business case: kinerja, karyawan, pelanggan, biaya pelanggaran',
+        '**2. ETHICAL DILEMMA**\n- Nilai bertentangan; benar-salah tidak jelas\n- Moral agent\n- Bagian vs keseluruhan',
+        '**3. LIMA PENDEKATAN KEPUTUSAN ETIS**\n- Utilitarian · Individualism · Moral-rights\n- Justice: distributive · procedural · compensatory\n- Practical (+ lima pertanyaan bantu)',
+        '**4. MANAJER SEBAGAI INDIVIDU**\n- Faktor organisasi vs pribadi\n- Exh. 4.3: Preconventional · Conventional · Postconventional\n- Giving vs taking; servant leadership',
+        '**5. CORPORATE SOCIAL RESPONSIBILITY**\n- CSR; ESG (5 area)\n- Stakeholders (Exh. 4.4: 5); stakeholder mapping\n- Green movement; greenwashing\n- Sustainability; TBL (Exh. 4.5: People · Planet · Profit)\n- Benefit corporation · Certified B Corp',
+        '**6. MEMBANGUN ORGANISASI ETIS (Exh. 4.6)**\n- Values: ethical leadership · volunteerism · code of ethics · ethics committee\n- Structure: chief ethics officer · hotline · training · support whistle-blowers\n- Whistle-blowing',
+      ],
+    },
+    { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
+      rows: [
+        ['Justice approach', 'Domain codified law (Exh. 4.1)', 'Justice paling dekat dengan pemikiran di balik domain hukum, karena mengandaikan keadilan diterapkan lewat aturan', '[hal. 125]'],
+        ['Moral-rights approach', 'Whistle-blowing', 'Kebebasan berbicara mendukung whistle-blower', '[hal. 124, 141]'],
+        ['Postconventional (Exh. 4.3)', 'Servant leadership', 'Leader style level 3: transforming atau servant leadership', '[hal. 128]'],
+        ['Faktor organisasi (tekanan)', 'Wells Fargo', 'Karyawan memenuhi target penjualan tinggi dari manajemen puncak', '[hal. 120, 127]'],
+        ['Exh. 4.2 (perilaku manajer etis)', 'Ethical leadership (values-oriented)', 'Kejujuran, keadilan, teladan: unsur yang sama muncul di definisi ethical leadership', '[hal. 121, 138]'],
+        ['Business case', 'Sustainability', 'Korporasi yang berkomitmen pada sustainability punya kinerja keuangan lebih tinggi di sebagian area', '[hal. 121, 134]'],
+        ['Greenwashing', 'Certified B Corp', 'Verifikasi independen B Lab membantu menghindari greenwashing yang tidak disengaja', '[hal. 134, 137]'],
+        ['Stakeholders', 'Practical approach', 'Practical approach memperhitungkan kepentingan semua stakeholder', '[hal. 126, 131]'],
+        ['Utilitarian approach', 'Lima pertanyaan bantu', 'Pertanyaan 2 memakai rumusan utilitarian ("greatest good for the greatest number")', '[hal. 124, 126]'],
+        ['Volunteerism', 'CSR', 'Mengaitkan kegiatan sukarela karyawan dengan strategi CSR memperkuat reputasi etis', '[hal. 138]'],
+        ['Ethical dilemma (pemindaian lewat media sosial)', 'TM02 (business intelligence)', 'Bab ini memperluas gagasan lingkungan dan budaya di Ch. 2–3; pemindaian lingkungan punya sisi etis', '[hal. 118, 122]'],
+      ],
+    },
+    { kind: 'p', text: '**Kata kunci per cabang:** Ethics: *three domains, not illegal ≠ ethical, ethical manager, business case* · Dilema: *values in conflict, moral agent, part vs whole* · Pendekatan: *greatest good, long-term self-interest, fundamental rights, fairness, prevailing standards* · Individu: *pressure, ego strength, 3 levels, 20%, giver vs taker* · CSR: *ESG, stakeholder, BRT, mapping, greenwashing, TBL, 3 Ps, benefit corporation, B Lab* · Organisasi etis: *values vs structure, code of ethics, ethics officer, hotline, whistle-blower*' },
+    // ---------------------------------------------------------------- §12
+    { kind: 'h2', text: '12. Contoh Penerapan' },
+    { kind: 'p', text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):' },
+    {
+      kind: 'table',
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
+      rows: [
+        ['Domain codified law', 'Skandal penerimaan mahasiswa di AS (suap, pemalsuan nilai ujian)', '118–119'],
+        ['Domain ethics: tidak ilegal tetapi merusak reputasi', 'Eksperimen news feed Facebook; perjalanan palsu Uber', '119'],
+        ['Tekanan organisasi dan target', 'Wells Fargo', '120'],
+        ['Biaya pelanggaran etika; greenwashing', 'Volkswagen', '120, 122, 134'],
+        ['Utilitarian approach', 'Alokasi ventilator di Italia saat COVID-19', '124'],
+        ['Justice approach', 'Coffee of Grace', '125'],
+        ['Practical approach', 'Manajer U.S. Secret Service melaporkan perilaku agen', '126'],
+        ['Postconventional level', 'Satya Nadella (Microsoft); CEO Numi Teas', '127–128'],
+        ['Giving culture', 'Salesforce', '129'],
+        ['ESG', 'BHP', '130–131'],
+        ['Stakeholder view', 'The Container Store; Airbnb', '131–132'],
+        ['Benefit corporation dan B Corp', 'Patagonia', '136–137'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh lain: Kobe Steel (§2), Hindustan Unilever (komunitas, §6), Apple dan Inditex (green dan sustainability, §7), Google Code of Conduct (§9), JPMorgan Chase, Dover Air Force Base, dan VA (whistle-blowing, §10).' },
+    { kind: 'p', text: '**Contoh di luar buku** (2 dari maksimal 3 slot terpakai): kewajiban TJSL bagi perseroan di bidang sumber daya alam di Indonesia (§1) dan sistem pelaporan pelanggaran di lembaga keuangan dan BUMN (§9).' },
+    // ---------------------------------------------------------------- §13
+    { kind: 'h2', text: '13. Bedah Film: Dark Waters (Ilustrasi)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Ilustrasi',
+      text: '*Dark Waters* (2019) adalah film pilihan AkuntansiHub, bukan film yang dibahas di kelas. Film ini drama berdasarkan kisah nyata tentang perusahaan nyata; bagian ini hanya memuat alur besar film, tanpa dialog, adegan detail, tanggal, atau angka, dan bukan sumber fakta tentang perusahaan maupun perkaranya. Kaitan film dengan teori di bawah adalah analisis, bukan fakta dari buku.',
+    },
+    { kind: 'h3', text: '13.1 Sinopsis Singkat (Ilustrasi)' },
+    { kind: 'p', text: 'Seorang pengacara korporat, yang firma hukumnya biasa membela perusahaan kimia, didatangi seorang peternak dari daerah asal keluarganya. Ternak sang peternak mati satu per satu, dan ia yakin penyebabnya adalah limbah dari pabrik milik DuPont, perusahaan kimia besar yang juga menjadi pemberi kerja utama di kotanya.' },
+    { kind: 'p', text: 'Pengacara itu mulai menelusuri perkaranya dan mendapati bahwa persoalannya lebih luas dari satu peternakan: film menggambarkan pencemaran yang menyentuh kesehatan warga sekitar. Upayanya membawa perkara ini ke jalur hukum membuatnya berhadapan dengan perusahaan yang jauh lebih besar, sekaligus menguji posisinya di firmanya sendiri. Film menggambarkan perjuangan hukum bertahun-tahun yang membebani karier, kesehatan, dan keluarganya.' },
+    { kind: 'h3', text: '13.2 Konsep Chapter 4 yang Muncul (Ilustrasi)' },
+    {
+      kind: 'table',
+      headers: ['Konsep Chapter 4', 'Momen alur besar di film (Ilustrasi)', 'Teori'],
+      rows: [
+        ['Tiga domain tindakan (Exh. 4.1)', 'Pertanyaan tentang tanggung jawab perusahaan dibawa ke jalur hukum', '[hal. 119]'],
+        ['Dilema bagian vs keseluruhan: limbah vs lapangan kerja', 'Kota yang bergantung pada pabrik sebagai pemberi kerja utama', '[hal. 124]'],
+        ['Komunitas sebagai stakeholder (Exh. 4.4)', 'Peternak dan warga sekitar pabrik', '[hal. 132–133]'],
+        ['Moral agent', 'Pengacara memutuskan menangani perkara', '[hal. 122]'],
+        ['Faktor organisasi: tekanan dari lingkungan kerja', 'Posisi pengacara di firma yang biasa membela perusahaan kimia', '[hal. 127]'],
+        ['Tingkat perkembangan moral (Exh. 4.3)', 'Tokoh utama bertindak berbeda dari yang biasa diharapkan di lingkungan kerjanya', '[hal. 127–128]'],
+        ['Compensatory justice', 'Warga menempuh jalur hukum atas kerugian yang mereka alami', '[hal. 125]'],
+        ['Utilitarian approach', 'Manfaat pabrik bagi kota ditimbang dengan dampaknya bagi warga', '[hal. 124]'],
+        ['Triple bottom line', 'People dan Planet berhadapan dengan Profit', '[hal. 135]'],
+      ],
+    },
+    { kind: 'h3', text: '13.3 Kaitan Adegan dengan Teori (Ilustrasi; analisis, bukan fakta buku)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Alur besar (Ilustrasi)', 'Analisis dengan teori Chapter 4'],
+      rows: [
+        ['Kota bergantung pada pabrik yang dituding mencemari lingkungan', 'Dapat dibaca sebagai bentuk nyata dilema yang ditulis buku: potensi masalah kesehatan warga akibat limbah vs lapangan kerja dari pemberi kerja utama kota [hal. 124]. Bagi warga, benar dan salah tidak mudah dipisahkan, sesuai rumusan ethical dilemma [hal. 122–123]'],
+        ['Perkara dibawa ke jalur hukum', 'Dapat dibaca dengan **Exh. 4.1**: proses hukum bekerja di domain codified law, sedangkan pertanyaan tentang apa yang seharusnya dilakukan perusahaan terhadap warga berada di domain etika. Buku mengingatkan bahwa tidak ilegal belum tentu etis [hal. 119]. Bagian ini tidak menyimpulkan apakah perusahaan melanggar hukum'],
+        ['Pengacara korporat memilih menangani perkara ini', 'Tokoh utama berperan sebagai **moral agent** [hal. 122]. Kelas bisa mendiskusikan level Exh. 4.3 mana yang paling dekat dengan tindakannya dan apa buktinya di alur film; ini bahan diskusi, bukan kesimpulan tentang isi hati tokoh [hal. 127–128]'],
+        ['Perjuangan panjang membebani karier, kesehatan, dan keluarga', 'Buku mencatat bahwa tekanan organisasi yang bertentangan dengan rasa benar pribadi membuat orang frustrasi dan kelelahan emosional, dan bahwa ciri seperti ego strength, percaya diri, dan rasa mandiri membantu orang tetap memilih secara etis meski ada risiko pribadi [hal. 127]'],
+        ['Tokoh utama bukan karyawan perusahaan yang dipersoalkan', 'Tindakannya **tidak memenuhi definisi whistle-blowing** di buku, yang mensyaratkan pengungkapan oleh karyawan [hal. 141]. Kelas bisa mendiskusikan mekanisme structure-oriented mana (hotline, chief ethics officer, dukungan bagi pelapor) yang dapat membuat masalah semacam ini muncul lebih awal dari dalam organisasi [hal. 140–141]'],
+        ['Warga menempuh jalur hukum atas kerugian', 'Dapat dibaca dengan **compensatory justice**: pihak yang dirugikan diberi kompensasi oleh pihak yang bertanggung jawab. Siapa yang bertanggung jawab adalah pertanyaan yang dijawab lewat proses hukum, bukan oleh bagian ini [hal. 125]'],
+        ['Perusahaan besar berhadapan dengan komunitas kecil', 'Dapat dibaca dengan **stakeholder mapping**, yang memetakan kekuatan relatif stakeholder [hal. 132], dan dengan pandangan BRT bahwa komunitas termasuk stakeholder utama [hal. 131]'],
+      ],
+    },
+    { kind: 'p', text: 'Aspek etika film *The Founder* (TM02) dan *American Factory* (TM03), yang sengaja ditunda ke TM04, bisa didiskusikan dengan kerangka §4; misalnya, buku mengaitkan gerakan serikat pekerja dengan moral-rights approach [hal. 125].' },
+    { kind: 'h3', text: '13.4 Managerial Lessons Learned (Ilustrasi; analisis)' },
+    {
+      kind: 'ol',
+      items: [
+        '**Tanyakan "apakah legal?" dan "apakah etis?" secara terpisah.** Domain etika ada di antara hukum dan pilihan bebas [hal. 119].',
+        '**Komunitas adalah stakeholder, bukan latar belakang.** Kepentingannya mencakup kepatuhan hukum, dampak sosial positif, dan perlindungan lingkungan [hal. 132–133].',
+        '**Mengabaikan dampak pada stakeholder bisa sangat mahal.** Buku mencontohkan biaya pelanggaran etika Volkswagen [hal. 122].',
+        '**Bertindak etis bisa berbiaya pribadi.** Ciri pribadi yang kuat dan dukungan organisasi bagi orang yang bersuara sama-sama penting [hal. 127, 141].',
+        '**Organisasi perlu saluran agar masalah muncul dari dalam.** Mekanisme structure-oriented seperti hotline dan dukungan bagi pelapor membantu organisasi tidak hanya bergantung pada pihak luar [hal. 140–141].',
+      ],
+    },
+    // ---------------------------------------------------------------- §14
+    { kind: 'h2', text: '14. Analisis Kasus: Too Much Intelligence? [hal. 146–147]' },
+    { kind: 'h3', text: '14.1 Case Summary' },
+    { kind: 'p', text: 'Pace Technologies tumbuh pesat, antara lain berkat manajer penjualan Ken Bodine dan tim penjualan muda yang ia rekrut dari dua sekolah bisnis ternama. Bodine digambarkan penuh energi, inovatif, dan bersikap "bisa", dan menjadi perwujudan budaya Pace: bergerak cepat dan selangkah di depan. Pace dikenal punya **business intelligence yang agresif**. Bodine, mantan perwira intelijen militer, membawa suasana "sneaky" ke budaya penjualan dan senang mendorong persaingan di antara anggota timnya sendiri [hal. 146].' },
+    { kind: 'p', text: '"Pertandingan" terbaru Bodine mempertemukan Cody Rudisell dan Ali Sloan, yang masing-masing menyusun proposal untuk merebut calon akun besar dari pesaing utama Pace, Raleigh-Tech. Malam sebelum presentasi, Cody menunjukkan kepada Ali sebuah map yang menurut Ali berisi banyak rahasia dagang Raleigh-Tech. Ketika Ali bertanya dari mana asalnya, Cody menolak menjawab dan yakin Bodine akan menyukainya. Setelah Cody pergi, Ali meraih telepon, lalu menutupnya lagi, dan bertanya-tanya apa yang harus ia lakukan [hal. 146–147].' },
+    { kind: 'p', text: '**Fakta kunci menurut buku** [hal. 146–147]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Yang tertulis di kasus'],
+      rows: [
+        ['Budaya penjualan', 'Tim penjualan adalah "cermin" Bodine: lebih muda, merasa tak terkalahkan, dan sangat bersaing satu sama lain. Bodine, pemain catur, senang mengamati dan mendorong persaingan itu; melihat kesenangan yang dirasakan "the boss", tenaga penjual ambisius bekerja keras membuktikan diri'],
+        ['Ucapan Bodine', '"With a great product, great staff, and great business intelligence ... you can dominate the market"; ingin pesaing selalu bertanya "What\'s Pace doing?"'],
+        ['Pandangan dewan', 'Seorang anggota dewan mengibaratkan Pace menang di setiap tangan poker, seolah Bodine dan timnya tahu kartu lawan: "Here at Pace, we all love it"'],
+        ['Ucapan Cody', '"Top that!"; "My secret"; menyebut Bodine akan menyukainya karena ini "classic Bodine, classic Pace"; "This is business, cutthroat business"'],
+        ['Pikiran Ali', 'Menilai ini "unethical, illegal"; menimbang membiarkan Cody "hang himself" besok; khawatir dianggap "sore loser and a crybaby"; bertanya apakah ini memang budaya organisasi'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Batas fakta kasus: kasus **tidak menjelaskan** dari mana atau bagaimana Cody memperoleh map itu. Klaim bahwa Bodine pernah melakukan hal serupa adalah **ucapan Cody**, bukan fakta kasus. Penilaian "unethical, illegal" adalah **pikiran Ali**; kasus sendiri tidak menetapkan status hukumnya. Kasus juga tidak menyebut hotline, kode etik, atau kebijakan etika apa pun di Pace [hal. 146–147].',
+    },
+    { kind: 'h3', text: '14.2 Problem Identification' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Isu', 'Jenis'],
+      rows: [
+        ['P1', 'Budaya penjualan menekankan kemenangan, intelijen agresif, dan persaingan internal, yang didorong langsung oleh manajer', 'Budaya dan kepemimpinan'],
+        ['P2', 'Cody memegang map yang menurut Ali berisi rahasia dagang pesaing, dan menolak menjelaskan asalnya', 'Dilema etis; potensi risiko hukum'],
+        ['P3', 'Ali harus memutuskan malam itu juga apakah akan bertindak, dan kepada siapa', 'Moral agent'],
+        ['P4', 'Ali khawatir dicap "sore loser" dan "crybaby" bila melapor', 'Tekanan sosial; cara pandang terhadap pelapor'],
+        ['P5', 'Kasus tidak menunjukkan adanya saluran atau kebijakan etika yang bisa dipakai Ali', 'Struktur *(hasil analisis: kasus tidak menyebutnya)*'],
+        ['P6', 'Ali tidak yakin nilai apa yang sebenarnya dianut organisasinya', 'Sinyal nilai dari pemimpin tidak jelas *(hasil analisis)*'],
+      ],
+    },
+    { kind: 'h3', text: '14.3 Analisis Kasus (dengan teori Chapter 4)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
+      rows: [
+        ['**Manajer membentuk iklim etis**', 'Buku menyatakan manajer memikul tanggung jawab besar membentuk iklim etis dan menjadi teladan. Di kasus, tim penjualan disebut "cermin" Bodine, dan Cody membenarkan tindakannya dengan "classic Bodine, classic Pace"', '120, 138, 146–147'],
+        ['**Exh. 4.2 dan ethical leadership**', 'Kasus menggambarkan energi, inovasi, dan dorongan bersaing. Kasus tidak menunjukkan Bodine mengomunikasikan atau menegakkan standar etika, yang merupakan salah satu dari empat perilaku manajer etis *(hasil analisis)*', '121, 138, 146'],
+        ['**Faktor organisasi**', 'Persaingan internal dan keinginan menyenangkan "the boss" adalah jenis tekanan dari atasan dan rekan yang, menurut buku, dapat mendorong perilaku tidak etis', '127, 146'],
+        ['**Ethical dilemma dan moral agent**', 'Ali adalah moral agent. Pilihannya melibatkan nilai yang bertentangan: kejujuran dan keadilan vs hubungan dengan rekan, citra diri, dan ketidakpastian reaksi atasan', '122–123, 147'],
+        ['**Business intelligence dan etikanya**', 'Buku mencatat hukum tentang pengumpulan informasi pesaing tidak selalu tegas dan pendapat tentang etikanya terbelah. Dalam kasus ini, status hukum map itu tidak ditetapkan kasus; yang jelas, Ali menilainya tidak etis', '122, 147'],
+        ['**Cara pandang terhadap pelapor**', 'Ketakutan Ali dicap "sore loser" sejalan dengan catatan buku bahwa banyak manajer memandang whistle-blower sebagai bukan pemain tim', '141, 147'],
+        ['**Individualism approach**', 'Ucapan Cody menekankan kemenangan atas Ali dan Raleigh-Tech serta persetujuan atasan, yang dekat dengan individualisme yang disalahartikan sebagai keuntungan diri sesaat *(hasil analisis berdasarkan ucapannya, bukan niatnya)*', '124, 147'],
+        ['**Values- vs structure-oriented**', 'Kasus tidak menyebut unsur Exh. 4.6 apa pun di Pace: tidak ada kode etik, komite etika, hotline, atau pelatihan etika yang disebut', '138, 146–147'],
+      ],
+    },
+    { kind: 'h3', text: '14.4 Jawaban Pertanyaan Kasus' },
+    { kind: 'p', text: '**Q1. Bagaimana Ken Bodine membentuk budaya penjualan di Pace Technologies? Apakah ia menunjukkan ethical leadership? Jelaskan. Menurutmu, budaya ini berada di level perkembangan etis preconventional, conventional, atau postconventional? Mengapa?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 4.*' },
+    { kind: 'p', text: '**Cara Bodine membentuk budaya** (semuanya tertulis di kasus) [hal. 146]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Cara', 'Bukti di kasus'],
+      rows: [
+        ['Rekrutmen', 'Merekrut lulusan terbaik dari dua sekolah bisnis dengan gaji tinggi'],
+        ['Teladan pribadi', 'Energi, inovasi, dan suasana "sneaky" dari latar intelijen militernya'],
+        ['Pesan yang diulang', '"Great product, great staff, and great business intelligence"; "What\'s Pace doing?"'],
+        ['Imbalan dan perhatian', 'Mendorong persaingan internal sebagai "pertandingan"; tenaga penjual bekerja keras karena melihat kesenangan "the boss"'],
+      ],
+    },
+    { kind: 'p', text: '**Ethical leadership?** Buku mendefinisikan ethical leadership sebagai menjadi teladan kejujuran dan dapat dipercaya, adil kepada karyawan dan pelanggan, serta berperilaku etis dalam kehidupan pribadi dan profesional [hal. 138], dengan empat perilaku di Exh. 4.2 [hal. 121]. Kasus tidak menunjukkan Bodine mengomunikasikan atau menegakkan standar etika, dan kasus juga tidak menunjukkan Bodine melakukan pelanggaran tertentu. Yang terlihat adalah budaya yang menonjolkan kemenangan dan intelijen tanpa batas etis yang dinyatakan. Karena itu, berdasarkan bukti di kasus, Bodine **belum menunjukkan ethical leadership** sebagaimana didefinisikan buku.' },
+    { kind: 'p', text: '**Level perkembangan etis budaya ini:**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Level', 'Bukti yang mendukung', 'Bukti yang tidak cocok'],
+      rows: [
+        ['Preconventional (self-interest)', 'Tenaga penjual bersaing demi penugasan dan pengakuan atasan; Cody bertindak demi menang ("neither do you") dan persetujuan Bodine', 'Leader style di Exh. 4.3 adalah autocratic/coercive, sedangkan kasus tidak menggambarkan Bodine memaksa'],
+        ['Conventional (societal expectations)', 'Tim menyesuaikan diri dengan harapan yang berlaku di Pace ("classic Pace"; tim sebagai "cermin" Bodine)', 'Level conventional mencakup "upholds laws" dan kolaborasi kelompok kerja; kasus justru menonjolkan persaingan internal'],
+        ['Postconventional (internal values)', 'Tidak ada bukti', 'Tidak ada prinsip keadilan yang dipilih sendiri; hanya Ali yang menimbang etika'],
+      ],
+    },
+    { kind: 'p', text: 'Kesimpulan analisis: budaya ini **paling dekat dengan level preconventional**, karena orientasinya kepentingan diri dan imbalan dari atasan. Unsur conventional ada, tetapi yang diikuti adalah norma "menang" di Pace, bukan harapan masyarakat atau kepatuhan pada hukum. Baris leader style Exh. 4.3 tidak pas sepenuhnya, dan hal ini layak disampaikan dalam presentasi.' },
+    { kind: 'p', text: '**Q2. Apa yang sebaiknya dilakukan Ali Sloan? Apa yang benar-benar akan kamu lakukan bila berada di posisinya? Jelaskan.**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis. Bagian kedua pertanyaan bersifat pribadi; tabel di bawah membantu menjawabnya dengan argumen.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pilihan Ali', 'Dinilai dengan teori', 'Catatan'],
+      rows: [
+        ['Diam dan membiarkan Cody presentasi', 'Tidak lolos tes practical approach: sulit dijelaskan kepada keluarga atau diumumkan di berita malam [hal. 126]. Buku juga menyebut organisasi bergantung pada orang yang mau bersuara [hal. 141]', 'Menghindari risiko pribadi, tetapi membiarkan masalah berlanjut'],
+        ['Bicara dulu dengan Cody', 'Memberi Cody kesempatan menjelaskan asal map dan mundur sendiri', 'Ali hanya melihat map sebentar dan tidak tahu asalnya; percakapan bisa mengklarifikasi fakta'],
+        ['Melapor kepada Bodine', 'Jalur internal yang paling langsung', 'Ali tidak yakin reaksi Bodine ("What if Bodine really does love it?") [hal. 147]'],
+        ['Melapor kepada manajer lain di atas Bodine atau di luar lini penjualan', 'Jalur internal di luar pihak yang terlibat dalam "pertandingan"; sejalan dengan dorongan buku agar pelaporan internal didukung [hal. 141]', 'Kasus tidak menyebut saluran resmi, jadi Ali harus memilih orangnya sendiri'],
+        ['Melapor ke pihak luar', 'Buku mencatat whistle-blower sering melapor ke pihak luar [hal. 141]', 'Langkah besar sebelum jalur internal dicoba dan sebelum fakta jelas'],
+      ],
+    },
+    { kind: 'p', text: '**Rekomendasi analisis:** Ali sebaiknya **tidak diam**. Langkah yang paling bisa dipertanggungjawabkan adalah melapor secara internal malam itu atau sebelum presentasi, kepada manajer yang tidak terlibat dalam persaingan, dengan menyampaikan **hanya apa yang ia lihat** (map yang menurutnya berisi rahasia dagang pesaing, dan penolakan Cody menjelaskan asalnya) tanpa menuduh cara perolehannya. Bila memungkinkan, ia bisa lebih dulu meminta Cody menjelaskan asal map itu.' },
+    { kind: 'p', text: '**Untuk menjawab "apa yang benar-benar akan kamu lakukan":** jujurlah tentang faktor yang memengaruhimu. Buku menyebut tekanan atasan dan rekan, kebutuhan pribadi, dan ciri seperti ego strength dan rasa mandiri sebagai faktor yang menentukan pilihan etis [hal. 127]. Sebut juga level perkembangan moral mana yang tecermin dalam jawabanmu [hal. 127–128].' },
+    { kind: 'p', text: '**Q3. Bagaimana keputusan Cody Rudisell bisa berbeda bila ia memakai utilitarian approach, individualism approach, atau practical approach? Pendekatan mana yang tampaknya ia pakai?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan ucapan Cody di kasus dan teori Chapter 4.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pendekatan', 'Pertanyaan yang harus diajukan Cody', 'Arah keputusannya'],
+      rows: [
+        ['**Utilitarian** [hal. 124]', 'Apa dampaknya bagi **semua** pihak: Raleigh-Tech, calon klien, Pace (reputasi dan risiko hukum), Ali, dan pasar?', 'Keuntungan untuk Cody dan mungkin Pace dalam jangka pendek harus ditimbang dengan kerugian bagi banyak pihak lain; kemungkinan besar tidak memakai map itu'],
+        ['**Individualism** (dalam arti buku) [hal. 124]', 'Apa **kepentingan jangka panjang terbaik** saya?', 'Buku menyatakan kecurangan demi keuntungan sesaat hanya membuat orang lain membalas dengan cara yang sama; reputasi dan risiko jangka panjang Cody mengarah pada **tidak** memakai map itu'],
+        ['**Practical** [hal. 126]', 'Apakah komunitas profesi menerimanya? Apakah saya rela ini diberitakan? Nyamankah saya menjelaskannya kepada keluarga?', 'Cody menolak menjelaskan asal map ("My secret"), yang sulit dipertahankan dalam tes ini; kemungkinan besar tidak lolos'],
+      ],
+    },
+    { kind: 'p', text: '**Pendekatan yang tampaknya dipakai Cody:** berdasarkan ucapannya ("R-T doesn\'t have a chance. And neither do you"; "cutthroat business"; Bodine akan menyukainya), cara berpikir Cody paling dekat dengan **individualism yang disalahartikan sebagai keuntungan diri sesaat**, yaitu bentuk yang menurut buku membuat pendekatan ini tidak populer [hal. 124]. Penilaian ini didasarkan pada kata-katanya di kasus, bukan pada niat yang tidak tertulis.' },
+    { kind: 'h3', text: '14.5 Rekomendasi Manajerial' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis berdasarkan teori Chapter 4, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pihak', 'Rekomendasi', 'Teori pendukung'],
+      rows: [
+        ['**Ali**', 'Laporkan secara internal apa yang ia lihat, kepada manajer yang tidak terlibat, sebelum presentasi', 'Moral agent [hal. 122]; organisasi butuh orang yang mau bersuara [hal. 141]'],
+        ['**Bodine**', 'Tegaskan batas etis business intelligence kepada tim, dan tanggapi laporan seperti ini sebagai manfaat, bukan ancaman', 'Ethical leadership; Exh. 4.2 "communicates and enforces ethical standards" [hal. 121, 138]; whistle-blowing sebagai manfaat [hal. 141]'],
+        ['', 'Tinjau "pertandingan" internal agar penilaian tidak hanya berdasarkan kemenangan', 'Adil dalam keputusan dan pembagian imbalan [hal. 121]; tekanan organisasi [hal. 127]'],
+        ['**Pace (organisasi)**', 'Susun kode etik policy-based tentang pengumpulan informasi pesaing, dan pastikan manajemen puncak menegakkannya', 'Code of ethics; kode saja tidak cukup [hal. 139–140]'],
+        ['', 'Sediakan ethics hotline dan pelatihan etika bagi tim penjualan', 'Structure-oriented approach [hal. 140–141]'],
+        ['', 'Bentuk atau libatkan ethics committee untuk memutuskan kasus map ini', 'Ethics committee [hal. 140]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §15
+    { kind: 'h2', text: '15. Implikasi Manajerial dan Kesimpulan' },
+    {
+      kind: 'ol',
+      items: [
+        '**Tidak ilegal belum tentu etis.** Manajer perlu mengenali domain etika di antara hukum dan pilihan bebas [hal. 119].',
+        '**Manajer menentukan iklim etis.** Kejujuran, penegakan standar, keadilan, dan kepedulian adalah empat perilaku manajer etis [hal. 120–121].',
+        '**Etika dan tanggung jawab sosial tidak merugikan kinerja.** Buktinya belum sangat kuat, tetapi umumnya positif, dan biaya pelanggaran etika bisa sangat besar [hal. 121–122].',
+        '**Tidak ada satu pendekatan yang selalu benar.** Utilitarian, individualism, moral-rights, justice, dan practical memberi sudut pandang berbeda; lima pertanyaan bantu menggabungkannya [hal. 124–126].',
+        '**Kebanyakan manajer mengikuti lingkungannya.** Karena sebagian besar manajer berada di level conventional, budaya dan teladan atasan sangat menentukan perilaku etis [hal. 127].',
+        '**CSR berarti melayani banyak stakeholder.** ESG, stakeholder mapping, TBL, dan benefit corporation adalah cara mengukur dan melembagakannya, dengan trade-off yang harus dikelola [hal. 130–137].',
+        '**Organisasi etis dibangun lewat nilai dan struktur sekaligus.** Kode etik saja tidak cukup; dibutuhkan kepemimpinan etis, mekanisme seperti hotline dan ethics officer, serta perlindungan bagi whistle-blower [hal. 138–141].',
+      ],
+    },
+    // ---------------------------------------------------------------- §16
+    { kind: 'h2', text: '16. Alat Bantu Ujian' },
+    { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Tiga domain tindakan (Exh. 4.1)', 'Codified law (legal standard), Ethics (social standard), Free choice (personal standard)', '119'],
+        ['Perilaku manajer etis (Exh. 4.2)', 'Honesty and integrity; Communicates and enforces ethical standards; Fair in decisions and rewards; Kindness, compassion, concern', '121'],
+        ['Lima pendekatan normatif', 'Utilitarian, Individualism, Moral-rights, Justice, Practical', '124–126'],
+        ['Tiga jenis justice', 'Distributive, Procedural, Compensatory', '125'],
+        ['Tes practical approach', 'Diterima komunitas profesi; rela diberitakan; nyaman dijelaskan kepada keluarga dan teman', '126'],
+        ['Level perkembangan moral (Exh. 4.3)', 'Preconventional, Conventional, Postconventional', '127–128'],
+        ['Area ESG (5)', 'Environment, Social capital, Human capital, Business innovation, Leadership and governance', '130'],
+        ['Stakeholder BRT (Exh. 4.4)', 'Customers, Employees, Suppliers, Communities, Shareholders', '131–132'],
+        ['Triple bottom line (Exh. 4.5)', 'People, Planet, Profit', '135–136'],
+        ['Dua cara badan usaha bermisi sosial', 'Benefit corporation (badan hukum), Certified B Corporation (sertifikasi B Lab)', '136–137'],
+        ['Jenis code of ethics', 'Principle-based, Policy-based', '139'],
+        ['Organisasi etis (Exh. 4.6)', 'Values: Ethical leadership, Volunteerism, Code of ethics, Ethics committee. Structure: Chief ethics officer, Ethics hotline, Ethics training, Support for whistle-blowers', '138'],
+      ],
+    },
+    { kind: 'h3', text: 'Exam Traps' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['Legal vs etis', '"Kalau tidak melanggar hukum, pasti etis"', 'Ada **tiga** domain; domain etika tidak diatur hukum khusus tetapi punya standar sosial', '119'],
+        ['Ethical dilemma', '"Pilihan antara yang benar dan yang salah"', 'Nilai bertentangan; benar dan salah **tidak dapat diidentifikasi dengan jelas**; semua alternatif berpotensi negatif', '122–123'],
+        ['Individualism approach', '"Mementingkan diri sendiri saat ini"', 'Kepentingan **jangka panjang terbaik**; mudah disalahartikan sebagai keuntungan sesaat, karena itu tidak populer', '124'],
+        ['Practical approach', '"Menentukan apa yang benar secara moral"', '**Menghindari perdebatan** moral; memakai standar yang berlaku di profesi dan masyarakat, memperhitungkan semua stakeholder', '126'],
+        ['Distributive vs procedural vs compensatory', 'Dianggap sama', 'Distributive: perbedaan perlakuan tidak sewenang-wenang. Procedural: aturan jelas dan ditegakkan konsisten. Compensatory: ganti rugi oleh pihak yang bertanggung jawab', '125'],
+        ['Pendekatan terdekat dengan hukum', '"Utilitarian" atau "moral-rights"', '**Justice approach**', '125'],
+        ['Level mayoritas manajer', '"Postconventional"', '**Conventional**; hanya sekitar 20% orang dewasa Amerika mencapai postconventional', '127'],
+        ['Jumlah level perkembangan moral', 'Menyebut enam tahap', 'Buku menampilkan versi sederhana dengan **tiga level**', '127–128'],
+        ['Jumlah primary stakeholders', 'Menjawab satu angka tanpa konteks', '**BRT dan Exh. 4.4: lima** (termasuk komunitas). **Teks hal. 132: empat** primary stakeholders tanpa mereka organisasi tidak bertahan; komunitas "another important stakeholder"', '131–133'],
+        ['Benefit corporation vs B Corp', '"Sama saja"', 'Benefit corporation = **badan hukum** menurut undang-undang negara bagian. Certified B Corp = **sertifikasi nonlegal** oleh B Lab. Perusahaan bisa menjadi keduanya', '136–137'],
+        ['Posisi code of ethics di Exh. 4.6', '"Structure-oriented, karena berupa mekanisme formal"', '**Values-oriented**, bersama ethics committee', '138–139'],
+        ['Efek kode etik', '"Kode etik menjamin perilaku etis"', 'Kode etik saja hanya sedikit berpengaruh; efektif bila didukung dan ditegakkan manajemen puncak', '140'],
+        ['Whistle-blowing', '"Siapa pun yang melaporkan pelanggaran perusahaan"', 'Pengungkapan oleh **karyawan**; disebut juga conscience-seeking', '141'],
+        ['Triple bottom line', '"Donasi atau filantropi perusahaan"', '**Mengukur** kinerja sosial, lingkungan, dan keuangan (People, Planet, Profit)', '135'],
+        ['Greenwashing', '"Program ramah lingkungan perusahaan"', 'Upaya tampil **lebih peduli lingkungan daripada kenyataannya**', '134'],
+      ],
+    },
+    { kind: 'h3', text: 'Bank Pertanyaan Kritis (untuk non-presenter)' },
+    { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 142]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Terkait bagian'],
+      rows: [
+        ['Realistiskah berharap manajer bisa mengukur kinerja sosial dan lingkungan setepat kinerja keuangan dengan pendekatan triple bottom line?', '§7'],
+        ['Apa beda benefit corporation dan B Corporation?', '§8'],
+        ['Bayangkan rekan-rekanmu mendorongmu menggelembungkan klaim biaya perjalanan dinas. Faktor apa yang akan memengaruhi keputusanmu?', '§5'],
+        ['Albert Einstein pernah berkata dunia berbahaya bukan karena orang yang berbuat jahat, tetapi karena orang yang melihat dan tidak berbuat apa-apa. Setujukah kamu?', '§10, §14'],
+        ['Sebuah survei menemukan 69% mahasiswa MBA memandang memaksimalkan nilai pemegang saham sebagai tanggung jawab utama perusahaan, sedangkan pernyataan BRT menyebut lima stakeholder utama harus mendapat perhatian yang sama. Kamu setuju dengan pandangan mana? Mengapa?', '§6'],
+        ['Mana yang lebih efektif membentuk perilaku etis jangka panjang: kode etik tertulis plus pelatihan etika, atau kepemimpinan etis yang kuat? Mana yang lebih berpengaruh padamu?', '§9'],
+        ['Stakeholder mapping memungkinkan manajer menetapkan stakeholder yang dianggap lebih penting. Pantaskah manajemen menganggap sebagian stakeholder lebih penting dari yang lain?', '§6'],
+      ],
+    },
+    { kind: 'p', text: '*Semua `[hal. X]` merujuk ke Daft & Marcic, Understanding Management 12e (2023). Label yang dipakai: "Contoh di luar buku" (2×: §1, §9), "Ilustrasi" (1 bagian: §13, sinopsis dan analisis film). Tidak ada bagian berlabel "di luar RPP" karena semua subbab Chapter 4 tercakup RPP.*' },
+  ],
 };

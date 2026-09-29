@@ -5,34 +5,8 @@
 // langsung di modules/tm1.ts.
 // Kasus TM02 dihapus: TM02 kini memakai kasus dari Daft & Marcic 12e Ch. 2, yang ditulis langsung di modules/tm2.ts.
 // Kasus TM03 dihapus: TM03 kini memakai kasus dari Daft & Marcic 12e Ch. 3, yang ditulis langsung di modules/tm3.ts.
+// Kasus TM04 dihapus: TM04 kini memakai kasus dari Daft & Marcic 12e Ch. 4, yang ditulis langsung di modules/tm4.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 4
-export const CASE_ETHICAL_DECISION_CSR: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 4: Dilema Etika Keputusan Manajerial & Kerangka ESG di PT Vale Indonesia',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: Manajemen operasi tambang nikel PT Vale Indonesia menghadapi dilema etika bisnis: pemasangan teknologi penyaring emisi cerobong peleburan (smelter) baru berstandar nol-karbon membutuhkan belanja modal ratusan miliar rupiah yang akan memangkas dividen kuartalan investor. Namun, tanpa teknologi ini, masyarakat lingkar tambang berisiko terpapar polusi debu silika jangka panjang.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Evaluasi dilema tersebut menggunakan: (1) 4 Pendekatan Etika Manajerial (Utilitarian, Individualism, Moral-Rights, Justice Approach), (2) Piramida Tanggung Jawab Sosial Archie Carroll, dan (3) Dampak kepatuhan Environmental, Social, and Governance (ESG) terhadap valuasi saham perusahaan!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Evaluasi 4 Pendekatan Etika**:\n- *Utilitarian Approach*: Menghasilkan kebaikan terbesar bagi jumlah orang terbanyak; memasang penyaring melindungi kesehatan ribuan warga dan keberlanjutan bumi, mengungguli kepentingan segelintir pemegang saham yang hanya menginginkan dividen jangka pendek.\n- *Moral-Rights Approach*: Setiap manusia memiliki hak asasi dasar untuk hidup sehat dan menghirup udara bersih yang tidak boleh dilanggar demi keuntungan korporasi.\n- *Justice Approach (Distributive Justice)*: Tidak adil jika beban dampak polusi ditanggung oleh masyarakat lokal, sementara seluruh keuntungan dinikmati oleh pemegang saham di kota besar.\n- *Individualism Approach*: Menjaga reputasi perusahaan demi kelangsungan izin tambang jangka panjang (Social License to Operate).',
-            '**2. Piramida CSR Carroll**: Keputusan ini melampaui tanggung jawab ekonomi (laba) dan hukum (kepatuhan standar minimum), melainkan menyentuh **Tanggung Jawab Etis (Ethical Responsibility)** dan **Filantropis (Philanthropic Responsibility)** untuk berbuat benar dan adil bagi ekosistem.',
-            '**3. Manfaat Finansial ESG**: Investor institusional global (seperti BlackRock) saat ini hanya mengalirkan modal ke emiten dengan skor ESG tinggi. Komitmen nol-karbon justru menurunkan biaya modal (Cost of Capital) perusahaan dan mendongkrak valuasi saham jangka panjang.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 5
 export const CASE_STRATEGIC_PLANNING_PORTER: ContentBlock = {

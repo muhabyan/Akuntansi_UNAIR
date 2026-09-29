@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 
 /** TMs whose reading was rewritten from a content package (12e). Add a TM here in the commit that brings its reading. */
-export const CANONICAL_TMS = [1, 2, 3];
+export const CANONICAL_TMS = [1, 2, 3, 4];
 /** TMs whose headings and concept map carry no backslash escapes (a heading is inline markdown, "1. Title" stays a heading). */
-export const CLEAN_HEADING_TMS = [2, 3];
+export const CLEAN_HEADING_TMS = [2, 3, 4];
 /** Tables allowed to stay plain although they have >=4 columns or a long cell: header rows of grids read in their own scroll wrapper. */
 export const PLAIN_GRID_HEADERS = [];
 
