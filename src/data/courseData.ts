@@ -90,7 +90,7 @@ const MNU108_TM1_7 = materi([
   ['Desain Struktur Organisasi', 'Daft Ch. 7'],
 ], 1);
 const MNU108_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–8'],
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–7'],
   ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft Ch. 9'],
   ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft Ch. 10'],
   ['Memahami Perilaku Individu, Kepribadian & Sikap Kerja', 'Daft Ch. 11'],
