@@ -7,34 +7,8 @@
 // Kasus TM03 dihapus: TM03 kini memakai kasus dari Daft & Marcic 12e Ch. 3, yang ditulis langsung di modules/tm3.ts.
 // Kasus TM04 dihapus: TM04 kini memakai kasus dari Daft & Marcic 12e Ch. 4, yang ditulis langsung di modules/tm4.ts.
 // Kasus TM05 dihapus: TM05 kini memakai kasus dari Daft & Marcic 12e Ch. 5, yang ditulis langsung di modules/tm5.ts.
+// Kasus TM06 dihapus: TM06 kini memakai kasus dari Daft & Marcic 12e Ch. 6, yang ditulis langsung di modules/tm6.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 6
-export const CASE_DECISION_MAKING_BIAS: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 6: Bounded Rationality & Bias Kognitif Keputusan Manajemen di Garuda Indonesia',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: Di masa lalu, manajemen maskapai nasional Garuda Indonesia memutuskan untuk terus menyewa armada pesawat berbadan lebar jenis tertentu meskipun utilisasi rute internasionalnya sangat rendah dan merugi ratusan miliar rupiah per tahun. Direksi saat itu merasa bahwa pembatalan sewa akan mengakibatkan hilangnya uang muka yang sudah disetor ratusan juta dolar dan merusak gengsi maskapai bendera nasional.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Analisis: (1) Jelaskan konsep Rasionalitas Terbatas (Bounded Rationality) dan Satisficing menurut Herbert Simon, (2) Identifikasi bias kognitif yang menjebak manajemen (Sunk-Cost Fallacy, Escalation of Commitment, Confirmation Bias), dan (3) Bagaimana teknik Devils Advocacy dapat mencegah jebakan keputusan serupa?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Bounded Rationality & Satisficing (Herbert Simon)**: Manajer tidak memiliki informasi sempurna, waktu tak terbatas, atau kapasitas kognitif super untuk memproses seluruh alternatif (berbeda dari Model Keputusan Klasik/Rasional murni). Akibatnya, manajer mengambil keputusan yang *Satisficing* (cukup memuaskan dan memenuhi batas minimal), bukan alternatif yang benar-benar optimal secara matematis.',
-            '**2. Identifikasi Bias Kognitif**:\n- *Sunk-Cost Fallacy & Escalation of Commitment*: Keengganan menghentikan proyek rugi karena merasa telah menginvestasikan terlalu banyak uang, waktu, dan reputasi di masa lalu, sehingga terus mengalirkan uang kas baru untuk menutupi kesalahan lama.\n- *Overconfidence & Status Quo Bias*: Terlalu percaya diri bahwa rute internasional akan segera ramai tanpa didukung data riset pasar objektif.',
-            '**3. Teknik Devils Advocacy**: Manajemen wajib menunjuk satu orang atau tim independen yang bertugas resmi sebagai Pengkritik Utama (Devils Advocate) untuk menantang setiap asumsi optimis, membeberkan skenario terburuk, dan membuktikan mengapa keputusan sewa armada pesawat tersebut berisiko menghancurkan likuiditas maskapai.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 7
 export const CASE_ORG_STRUCTURE_ADAPTIVE: ContentBlock = {

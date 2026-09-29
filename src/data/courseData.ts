@@ -86,7 +86,7 @@ const MNU108_TM1_7 = materi([
   ['Manajemen dalam Lingkungan Global', 'Daft Ch. 3'],
   ['Etika Manajerial & Tanggung Jawab Sosial Perusahaan (CSR)', 'Daft Ch. 4'],
   ['Perencanaan, Penetapan Tujuan & Strategi', 'Daft Ch. 5'],
-  ['Perumusan & Eksekusi Strategi (Porter & BCG)', 'Daft Ch. 6'],
+  ['Pengambilan Keputusan Manajerial', 'Daft Ch. 6'],
   ['Pengambilan Keputusan Manajerial & Desain Organisasi', 'Daft Ch. 7–8'],
 ], 1);
 const MNU108_TM8_14 = materi([

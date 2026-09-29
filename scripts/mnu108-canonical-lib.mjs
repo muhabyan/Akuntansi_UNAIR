@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 
 /** TMs whose reading was rewritten from a content package (12e). Add a TM here in the commit that brings its reading. */
-export const CANONICAL_TMS = [1, 2, 3, 4, 5];
+export const CANONICAL_TMS = [1, 2, 3, 4, 5, 6];
 /** TMs whose headings and concept map carry no backslash escapes (a heading is inline markdown, "1. Title" stays a heading). */
-export const CLEAN_HEADING_TMS = [2, 3, 4, 5];
+export const CLEAN_HEADING_TMS = [2, 3, 4, 5, 6];
 /** Tables allowed to stay plain although they have >=4 columns or a long cell: header rows of grids read in their own scroll wrapper. */
 export const PLAIN_GRID_HEADERS = [];
 
@@ -185,7 +185,8 @@ export async function runCanonical(spec) {
   const boxes = byKind('callout').filter((block) => /^Contoh di luar buku/.test(block.title));
   assert.deepEqual(boxes.map((block) => block.title), Array.from({ length: spec.boxes }, (_, i) => `Contoh di luar buku (${i + 1}/3)`), 'numbered outside-the-book boxes');
   assert.equal((page.match(/Contoh di luar buku \(\d\/3\)/g) ?? []).length, spec.boxes, 'the numbered form appears only in the box titles');
-  for (const box of boxes) assert.ok(!/\d/.test(box.text.replace(/\[hal\.[^\]]*\]/g, '').replace(/(Chapter|Ch\.|TM|Exhibit|Exh\.|§) ?\d+(\.\d+)?/g, '')), `FS: the box "${box.title}" has no figures, brands or dates of its own`);
+  // A book term that carries a digit (e.g. "5 Whys") is not a figure of the example; spec.boxAllowed lists those.
+  for (const box of boxes) assert.ok(!/\d/.test((spec.boxAllowed ?? []).reduce((rest, piece) => rest.split(piece).join(''), box.text).replace(/\[hal\.[^\]]*\]/g, '').replace(/(Chapter|Ch\.|TM|Exhibit|Exh\.|§) ?\d+(\.\d+)?/g, '')), `FS: the box "${box.title}" has no figures, brands or dates of its own`);
   ok(`labels: ${Object.keys(spec.sectionLabels).join(', ')}, ${spec.boxes} numbered outside-the-book boxes`);
 
   // film section (D1): an info callout titled "Ilustrasi" opens it, every film heading carries the label, no digits from the film
