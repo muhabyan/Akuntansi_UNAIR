@@ -1,31 +1,32 @@
 // src/data/quizzes/sii306.ts
-// Bank Soal Kuis Pilihan Ganda Komprehensif Sistem Informasi Akuntansi (SII306)
+// Bank kuis Sistem Informasi Akuntansi (SII306): pilihan tunggal, jamak, dan isian singkat.
 // Berdasarkan Vernon J. Richardson et al. (4th ISE ed. 2023), Romney & Steinbart (15e),
 // COSO Internal Control (2013), dan ISACA COBIT 2019 Framework.
-// 70 Soal Lengkap: 35 Soal Pra-UTS (TM 1-7) & 35 Soal Pra-UAS (TM 8-14)
+// 105 soal: 70 Pra-UTS (TM 1-7) dan 35 Pra-UAS (TM 8-14).
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/sia/modules/tm1.ts-tm7.ts.
 import type { QuizQuestion } from '../../types';
+import { SIA_UTS_SUPPLEMENT } from './siaUtsSupplement';
 
 export const SII306_QUIZ_UTS: QuizQuestion[] = [
   {
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "medium",
-    "q": "Pasangan kualitas informasi yang unsur-unsurnya mencakup predictive value, confirmatory value, dan materiality serta complete, neutral, dan free from error adalah...",
+    "q": "Laporan piutang membantu memprediksi kas masuk, tetapi sengaja menghilangkan pelanggan yang menunggak agar hasil tampak baik. Penilaian kualitas informasinya adalah...",
     "options": [
-      "Understandability dan Timeliness",
-      "Relevance dan Faithful Representation",
-      "Comparability dan Verifiability",
-      "Timeliness dan Verifiability"
+      "Relevance dan faithful representation sama-sama kuat karena laporan berguna untuk prediksi",
+      "Relevance mungkin ada, tetapi faithful representation lemah karena informasi tidak lengkap dan tidak netral",
+      "Comparability saja cukup; penghilangan pelanggan tidak memengaruhi kualitas lain",
+      "Timeliness lemah hanya jika laporan dibuat sebelum semua pelanggan membayar"
     ],
     "answer": 1,
-    "explanation": "Relevance mencakup predictive value, confirmatory value, dan materiality. Faithful Representation mencakup complete, neutral, dan free from error (tidak ada kesalahan material, bukan jaminan prediksi 100% tepat). Comparability, verifiability, timeliness, dan understandability adalah kualitas lain yang juga dibahas di TM1."
+    "explanation": "Daya prediksi membuat laporan relevan, tetapi menghapus penunggak secara sengaja membuatnya tidak lengkap dan bias, sehingga faithful representation gagal. Relevansi tidak menebus bias; comparability saja tidak cukup; tanggal pembayaran bukan ukuran tunggal ketepatan waktu laporan."
   },
   {
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "medium",
-    "q": "Dalam rantai nilai, aktivitas utama (primary activity) yang menerima, menyimpan, dan menangani bahan adalah...",
+    "q": "Produsen sepeda memindai komponen yang baru tiba, mencatat jumlah fisiknya, lalu menyimpannya sebelum perakitan. Aktivitas utama rantai nilai yang sedang berlangsung adalah...",
     "options": [
       "Inbound Logistics",
       "Operations",
@@ -33,7 +34,7 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Procurement"
     ],
     "answer": 0,
-    "explanation": "Inbound Logistics menerima, menyimpan, dan menangani bahan serta terhubung dengan SCM dan penerimaan persediaan. Operations mengubah bahan menjadi produk; Outbound Logistics menyimpan dan mendistribusikan barang jadi; Procurement adalah aktivitas pendukung (support) untuk pengadaan input."
+    "explanation": "Penerimaan dan penyimpanan input sebelum perakitan adalah inbound logistics. Operations baru terjadi saat komponen diubah menjadi sepeda; outbound logistics mengirim barang jadi; procurement memilih dan membeli input sebagai aktivitas pendukung."
   },
   {
     "tm": 1,
@@ -53,15 +54,15 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "difficulty": "medium",
-    "q": "Pernyataan yang paling tepat tentang data dan information dalam SIA adalah...",
+    "q": "Kasir memindai kode barang, jumlah, dan waktu penjualan. Manajer ingin memutuskan produk mana yang perlu dipesan ulang. Keluaran SIA mana yang sudah menjadi information untuk keputusan itu?",
     "options": [
-      "Data selalu berbentuk angka, sedangkan information selalu berbentuk narasi",
-      "Data hanya dihasilkan komputer, sedangkan information hanya disusun manual oleh akuntan",
-      "Data dan information sama saja karena keduanya disimpan di database",
-      "Data adalah fakta, simbol, atau pengukuran mentah tanpa konteks keputusan; information adalah data yang diolah dan diberi konteks sehingga mengurangi ketidakpastian"
+      "Daftar seluruh kode barang yang dipindai tanpa saldo stok atau batas pesan ulang",
+      "Urutan waktu setiap pemindaian tanpa menghubungkannya dengan produk",
+      "Jumlah baris transaksi per kasir tanpa mengaitkannya dengan persediaan",
+      "Daftar SKU yang saldo stoknya turun di bawah batas pesan ulang setelah penjualan diperhitungkan"
     ],
     "answer": 3,
-    "explanation": "Contoh TM1: barcode 7501031311309, kuantitas 42, dan waktu 08:14:22 adalah data. Information: stok SKU 11309 di Store #4 berada di bawah reorder point sehingga sistem memicu pemesanan kembali."
+    "explanation": "Kode, jumlah, dan waktu adalah data transaksi. Setelah SIA menghubungkannya dengan saldo serta reorder point, daftar SKU yang perlu tindakan menjadi information. Opsi lain hanya menyajikan data atau agregat yang belum menjawab keputusan pemesanan ulang."
   },
   {
     "tm": 1,
@@ -117,7 +118,7 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Amount_Credit_Debit_Indicator keempat jurnal salah input"
     ],
     "answer": 0,
-    "explanation": "User yang sama pada Entered_By dan Approved_By menandai self-approval yang memerlukan investigasi. Tindak lanjut dalam latihan TM2: balik transaksi self-approved sambil menunggu review senior controller, hapus approval rights VR pada matriks akses ERP, dan blok posting bila Entered_By sama dengan Approved_By."
+    "explanation": "User yang sama pada Entered_By dan Approved_By menandai self-approval dan lemahnya pemisahan tugas. Auditor perlu memeriksa otorisasi serta bukti transaksi; pembalikan jurnal hanya dilakukan jika transaksi terbukti salah, bukan otomatis dari kecocokan nama. Batasi hak akses dan blok persetujuan sendiri untuk mencegah pengulangan."
   },
   {
     "tm": 2,
@@ -179,15 +180,15 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
     "tm": 3,
     "topic": "Accountants as Business Analysts",
     "difficulty": "medium",
-    "q": "Mengapa dokumentasi proses bisnis seperti process map, swimlane diagram, dan flowchart penting bagi kepatuhan SOX Section 404?",
+    "q": "Mengapa process map dan swimlane membantu penilaian pengendalian pelaporan keuangan di bawah SOX Section 404?",
     "options": [
-      "Manajemen dan auditor eksternal independen harus mengatestasi desain dan efektivitas ICFR; PCAOB AS 2201 mensyaratkan walkthrough, dan tanpa dokumentasi mutakhir desain kontrol yang efektif tidak dapat ditunjukkan",
-      "Dokumentasi proses menggantikan kewajiban menyusun laporan keuangan",
-      "BPMN otomatis menghasilkan skema database relasional tanpa perancang",
-      "Dokumentasi proses menghapus kebutuhan auditor eksternal independen"
+      "Diagram menunjukkan langkah, penanggung jawab, dan titik kontrol sehingga manajemen dapat menilai desain serta operasi ICFR dan auditor dapat menelusuri transaksi",
+      "Diagram yang rapi sendiri membuktikan kontrol beroperasi efektif tanpa pengujian transaksi",
+      "Swimlane cukup menunjukkan jabatan; bukti otorisasi dan pengecualian tidak perlu ditelusuri",
+      "Dokumentasi hanya berguna ketika proses manual, bukan ketika persetujuan dilakukan dalam ERP"
     ],
     "answer": 0,
-    "explanation": "Section 404 mewajibkan atestasi atas desain dan efektivitas operasi ICFR. AS 2201 mengharuskan walkthrough yang menelusuri transaksi dari awal hingga laporan keuangan. Tanpa dokumentasi yang mutakhir, perusahaan berisiko scope limitation, pengungkapan material weakness, dan ketidakpatuhan. Diagram proses juga menjadi instrumen utama untuk memverifikasi pemisahan tugas."
+    "explanation": "Diagram mutakhir membantu menelusuri transaksi dari awal hingga laporan dan melihat pemisahan otorisasi, penyimpanan aset, serta pencatatan. Efektivitas operasi tetap perlu diuji dengan bukti; jabatan saja tidak menunjukkan keputusan pengecualian; alur ERP juga memerlukan dokumentasi. Manajemen menilai ICFR, sedangkan kewajiban atestasi auditor eksternal bergantung pada ketentuan perusahaan."
   },
   {
     "tm": 3,
@@ -221,15 +222,15 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
     "tm": 4,
     "topic": "Data Modeling",
     "difficulty": "medium",
-    "q": "Tiga kategori class dalam pola REA yang dikembangkan William McCarthy adalah...",
+    "q": "Pada model toko, Inventory berkurang saat Sales dicatat, dan Customer berpartisipasi dalam Sales. Pengelompokan ketiga class menurut REA adalah...",
     "options": [
-      "Revenue, Expense, Assets",
-      "Receivables, Equity, Accounts",
-      "Resources, Events, Agents",
-      "Requisition, Execution, Authorization"
+      "Inventory = event; Sales = agent; Customer = resource",
+      "Inventory = agent; Sales = resource; Customer = event",
+      "Inventory = resource; Sales = event; Customer = agent",
+      "Inventory = resource; Sales = agent; Customer = event"
     ],
     "answer": 2,
-    "explanation": "Resources adalah aset ekonomi bernilai yang dimiliki atau dikendalikan (Cash, Merchandise_Inventory); Events adalah transaksi bisnis dan kejadian operasional (Purchase_Order, Sales_Invoice); Agents adalah individu internal dan entitas eksternal yang berpartisipasi (Employee, Customer, Vendor)."
+    "explanation": "Inventory adalah resource bernilai ekonomi; Sales adalah event yang mengubah resource; Customer adalah agent eksternal yang berpartisipasi. Opsi lain menukar peran pelaku, aset, dan kejadian sehingga hubungan REA tidak dapat ditafsirkan dengan benar."
   },
   {
     "tm": 4,
@@ -271,7 +272,7 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Composition: diamond hitam penuh pada class induk"
     ],
     "answer": 3,
-    "explanation": "Composition adalah hubungan bagian–keseluruhan yang ketat: bagian tidak dapat ada tanpa induk (cascading delete) dan digambar dengan diamond hitam penuh. Aggregation (diamond kosong) bersifat longgar karena bagian tetap ada, mis. University agregat Professors. Generalization adalah relasi \"is-a\"."
+    "explanation": "Composition adalah hubungan bagian–keseluruhan yang ketat: baris item tidak bermakna tanpa invoice induknya, dan UML menaruh diamond hitam pada sisi induk. Penghapusan berantai dapat menjadi aturan implementasi, tetapi tidak otomatis diwajibkan oleh simbol UML. Aggregation lebih longgar; generalization menyatakan relasi is-a."
   },
   {
     "tm": 4,
@@ -319,15 +320,15 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
     "difficulty": "medium",
-    "q": "Karakteristik arsitektur utama Enterprise Resource Planning (ERP) seperti SAP S/4HANA adalah...",
+    "q": "Bagian gudang mencatat penerimaan bahan di ERP, dan bagian akuntansi segera melihat dampaknya tanpa mengetik ulang transaksi. Desain sistem apa yang memungkinkan alur itu?",
     "options": [
-      "Setiap departemen memiliki database terpisah yang tidak saling terhubung",
-      "Batch posting periodik menggantikan pemrosesan transaksi berkelanjutan",
-      "Satu database relasional pusat yang mengintegrasikan fungsi bisnis; pada SAP ERP terdiri atas lebih dari 10,000 tabel relasional yang saling terhubung",
-      "ERP otomatis memperbaiki proses bisnis yang tidak efisien"
+      "Gudang dan akuntansi menyimpan transaksi sendiri lalu merekonsiliasinya setiap akhir bulan",
+      "Gudang mengirim spreadsheet kepada akuntansi untuk diposting ulang secara manual",
+      "Data transaksi terintegrasi sehingga modul terkait memakai referensi penerimaan yang sama",
+      "Setiap modul memakai nomor receipt baru agar data antarbagian tetap terpisah"
     ],
     "answer": 2,
-    "explanation": "ERP menggantikan sistem departemen yang terisolasi dengan satu repositori data. Manfaat informasinya: Completeness, Transparency (penerimaan persediaan langsung memperbarui utang usaha dan penilaian persediaan), dan Timeliness (batch posting periodik diganti pemrosesan transaksi berkelanjutan). Mengotomatiskan proses yang buruk hanya menghasilkan inefisiensi yang otomatis dan mahal."
+    "explanation": "Integrasi ERP memungkinkan receipt yang sama dipakai modul gudang dan akuntansi, memperbaiki timeliness serta konsistensi data. Spreadsheet atau database terpisah memerlukan entri ulang dan rekonsiliasi; nomor receipt yang berbeda memutus jejak antarmodul. Integrasi tetap memerlukan kontrol proses yang baik."
   },
   {
     "tm": 5,
@@ -355,7 +356,7 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Tidak ada posting sampai akuntan membuat jurnal manual"
     ],
     "answer": 0,
-    "explanation": "Goods receipt di modul MM (Materials Management) memicu posting otomatis real time di modul FI (Financial Accounting) tanpa jurnal manual. Keunggulan kontrol: kewajiban yang belum tercatat dicegah dan three-way match dipastikan sebelum kas dikeluarkan."
+    "explanation": "Goods receipt di modul MM (Materials Management) dapat memicu Dr Inventory dan Cr GR/IR clearing di FI. Akun GR/IR menunggu pencocokan dengan invoice pemasok; three-way match PO, bukti terima, dan invoice baru dilakukan ketika invoice diproses sebelum pembayaran. Penerimaan barang saja belum membuktikan kecocokan ketiga dokumen."
   },
   {
     "tm": 6,
@@ -383,7 +384,7 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Saat kas disetor ke rekening bank perusahaan"
     ],
     "answer": 2,
-    "explanation": "Quote tidak menimbulkan komitmen hukum maupun dampak akuntansi; sales order adalah kontrak eksekutori yang belum memicu pengakuan pendapatan. Saat barang diserahkan, hak milik dan risiko kerugian berpindah: Dr Accounts Receivable, Cr Sales Revenue; Dr Cost of Goods Sold, Cr Merchandise Inventory."
+    "explanation": "Quote dan sales order belum membuktikan bahwa kewajiban kinerja telah dipenuhi. Untuk kasus penjualan barang ini, saat kendali barang berpindah kepada pelanggan, catat piutang dan pendapatan serta beban pokok dan penurunan persediaan. Setoran kas belakangan melunasi piutang; waktu pengakuan bisa berbeda jika syarat kontraknya berbeda."
   },
   {
     "tm": 6,
@@ -425,27 +426,27 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Dihitung dari jumlah Quotes dikurangi jumlah Orders"
     ],
     "answer": 1,
-    "explanation": "A/R = Σ Delivered Orders − Σ Applied Cash Receipts. Orders yang sudah diserahkan tetapi belum memiliki Cash_Receipts terkait adalah piutang terbuka. Karena tidak ada saldo statis, redundansi dan saldo yang saling bertentangan hilang. Amount_Applied disimpan di linking table Order_Cash_Receipts."
+    "explanation": "A/R diturunkan dari nilai penjualan yang sudah menghasilkan tagihan, dikurangi penerimaan kas yang diterapkan serta penyesuaian seperti retur atau diskon. Pesanan yang belum dipenuhi bukan piutang. Amount_Applied dapat berada di tabel penghubung penjualan dan penerimaan kas; Credit_Limit hanya batas kredit, bukan saldo."
   },
   {
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "difficulty": "medium",
-    "q": "Prinsip Economic Duality (Appendix A TM7) menyatakan bahwa...",
+    "q": "Pada pembelian kredit, toko menerima persediaan hari ini dan membayar pemasok pekan depan. Pasangan peristiwa mana menggambarkan economic duality dalam REA?",
     "options": [
-      "Setiap debit harus diimbangi kredit dengan nominal yang sama",
-      "Setiap event ekonomi berpasangan dengan event timbal baliknya: penjualan memberi Inventory dan menerima Cash, pembelian memberi Cash dan menerima Inventory",
-      "Setiap agent internal harus diawasi dua agent eksternal",
-      "Setiap resource harus dicatat di dua rekening bank"
+      "Persetujuan PO dan pembuatan salinan PO sebagai dua event ekonomi",
+      "Penerimaan Inventory dan pembayaran Cash sebagai event get dan give yang berpasangan",
+      "Pencatatan invoice vendor dan pengarsipan salinannya sebagai event get dan give",
+      "Pembuatan vendor baru dan persetujuan limit kredit sebagai pertukaran resource"
     ],
     "answer": 1,
-    "explanation": "Dualitas ekonomi menghubungkan give dan get. Sales and Collections: give Inventory, get Cash. Purchases and Payments: give Cash, get Inventory."
+    "explanation": "Dalam pembelian, perusahaan memperoleh Inventory (get) dan menyerahkan Cash (give), walaupun kedua event dapat terjadi pada hari berbeda. PO adalah komitmen, sedangkan salinan dokumen dan arsip invoice bukan penyerahan resource ekonomi. Pembuatan vendor pun bukan pertukaran barang dengan kas."
   },
   {
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "difficulty": "medium",
-    "q": "Dalam model REA Procure-to-Pay, manakah yang termasuk RESOURCE?",
+    "q": "Dalam model pembelian bahan, receiving clerk mencatat barang yang diterima dari supplier, lalu kasir membayar. Class mana yang merupakan resource pada proses ini?",
     "options": [
       "Receipts (Goods Receipts)",
       "Suppliers / Vendors",
@@ -453,7 +454,7 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Buyer (Employees)"
     ],
     "answer": 2,
-    "explanation": "Resources Procure-to-Pay: Inventory (Raw Materials / Merchandise) dan Cash (Bank Accounts). Receipts adalah event perolehan fisik yang memicu liabilitas dan Purchase_Orders adalah commitment event; Suppliers / Vendors adalah agent eksternal; buyer, receiving clerk, dan kasir adalah agent internal (Employees)."
+    "explanation": "Raw Materials Inventory adalah resource yang diperoleh. Goods Receipt ialah event penerimaan; Supplier adalah agent eksternal; Buyer dan receiving clerk ialah agent internal. Cash juga resource, tetapi tidak ada sebagai pilihan dalam soal ini."
   },
   {
     "tm": 7,
@@ -495,8 +496,9 @@ export const SII306_QUIZ_UTS: QuizQuestion[] = [
       "Lapping piutang"
     ],
     "answer": 1,
-    "explanation": "Shell Company Invoicing: karyawan tidak jujur membuat entitas vendor fiktif untuk menagih jasa yang tidak pernah ada. Purchasing Kickbacks dicegah dengan pemilihan vendor dari AVL, Three-Way Match atas harga PO, dan pemisahan Purchasing dari Receiving serta Accounts Payable. Duplicate Payments dicegah dengan Three-Way Match per transaksi dan pemulihan pembayaran ganda secara otomatis."
-  }
+    "explanation": "Verifikasi independen identitas dan alamat vendor terutama menghambat penagihan melalui vendor fiktif (shell company). AVL saja tidak menghapus risiko kickback; tender dan telaah independen tetap diperlukan. Pembayaran ganda memerlukan pemeriksaan nomor invoice unik serta status pembayaran, sedangkan lapping berkaitan dengan penerimaan piutang pelanggan."
+  },
+  ...SIA_UTS_SUPPLEMENT,
 ];
 
 export const SII306_QUIZ_UAS: QuizQuestion[] = [

@@ -36,6 +36,7 @@ import { useEscapeToBack } from './escapeToBack';
 import { SHARED_FRAME_CLASS, SharedFrameContext, usesSharedFrame } from './readingFrame';
 import ReadingOutline, { buildReadingOutline, DESKTOP_OUTLINE_STORAGE_KEY, getReadingBlockId, readingOutlineLabel, useReadingOutlineActive } from './ReadingOutline';
 import { type TabType } from './CourseTabs';
+import '../../styles/sia-reading.css';
 
 interface CourseLayoutProps {
   course: Course;
@@ -188,6 +189,7 @@ function ReadingPanel({
   isDone: (key: string) => boolean;
   toggle: (key: string) => void;
 }) {
+  const readingDocumentRef = useRef<HTMLDivElement>(null);
   const key = materialKey(courseCode, reading.tm);
   useEscapeToBack(reading.layout === 'layered', onBack);
   const sharedFrame = usesSharedFrame(reading, courseCode);
@@ -206,6 +208,27 @@ function ReadingPanel({
   const [mobileOutlineOpen, setMobileOutlineOpen] = useState(false);
   const mobileOutlineTriggerRef = useRef<HTMLButtonElement>(null);
   const mobileOutlineWasOpen = useRef(false);
+
+  useEffect(() => {
+    const root = readingDocumentRef.current;
+    if ((courseCode !== 'AKS301' && courseCode !== 'SII306') || !root) return;
+    const labelTables = () => {
+      root.querySelectorAll('table').forEach((table) => {
+        const headers = Array.from(table.querySelectorAll('thead th')).map((th) => th.textContent?.trim() ?? '');
+        table.classList.add('sia-responsive-table');
+        table.parentElement?.classList.add('sia-table-frame');
+        table.querySelectorAll('tbody tr').forEach((row) => {
+          row.querySelectorAll('td').forEach((cell, index) => {
+            if (headers[index]) cell.setAttribute('data-label', headers[index]);
+          });
+        });
+      });
+    };
+    labelTables();
+    const observer = new MutationObserver(labelTables);
+    observer.observe(root, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, [courseCode, reading]);
 
   const touchInfoRef = useRef<{
     startX: number;
@@ -375,7 +398,7 @@ function ReadingPanel({
         <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} />
 
         <SharedFrameContext.Provider value={sharedFrame}>
-          <div className="reading-document akbi-reading-flow min-w-0">
+          <div ref={readingDocumentRef} className={`reading-document akbi-reading-flow min-w-0${courseCode === 'AKS301' || courseCode === 'SII306' ? ' sia-reading-document' : ''}`}>
             <div className="space-y-6 md:space-y-8">
               {reading.blocks.map((block, index) => {
                 const previousBlock = reading.blocks[index - 1];
@@ -639,6 +662,7 @@ function MaterialCard({
 
 // ----------------- CONTAINER SHELL UTAMA -----------------
 export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm = null, onBack }: CourseLayoutProps) {
+  const isSiaCourse = course.code === 'AKS301' || course.code === 'SII306';
   const { isDone, toggle } = useStudyProgress();
   const [activeTab, setActiveTab] = useState<TabType>(() => mapInitialTab(initialTab));
   const [searchQuery, setSearchQuery] = useState('');
@@ -658,12 +682,12 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     // opened from the list, so Back returns to the course page instead of leaving it.
     if (initialTm !== null && window.history.state?.akuntansihub_tm !== initialTm) {
       try {
-        window.history.pushState({ akuntansihub_tm: initialTm, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
+        window.history.pushState({ akuntansihub_tm: initialTm, akuntansihub_list_depth: isSiaCourse ? 1 : undefined, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
       } catch {
         // ignore
       }
     }
-  }, [course.code, initialTab, initialTm]);
+  }, [course.code, initialTab, initialTm, isSiaCourse]);
 
   useEffect(() => {
     let isActive = true;
@@ -815,7 +839,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSelectedMeetingTm(tm);
     setSelectedReviewKey(null);
     try {
-      window.history.pushState({ akuntansihub_tm: tm, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
+      window.history.pushState({ akuntansihub_tm: tm, akuntansihub_list_depth: isSiaCourse ? (window.history.state?.akuntansihub_list_depth ?? 0) + 1 : undefined, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
     } catch {
       // ignore
     }
@@ -826,7 +850,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     setSelectedMeetingTm(null);
     setSelectedReviewKey(key);
     try {
-      window.history.pushState({ akuntansihub_review: key, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
+      window.history.pushState({ akuntansihub_review: key, akuntansihub_list_depth: isSiaCourse ? (window.history.state?.akuntansihub_list_depth ?? 0) + 1 : undefined, courseCode: course.code, fromSemester: window.history.state?.fromSemester }, '', window.location.pathname);
     } catch {
       // ignore
     }
@@ -834,6 +858,10 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
   };
 
   const handleBackFromReading = () => {
+    if (isSiaCourse && window.history.state?.akuntansihub_list_depth > 0) {
+      window.history.go(-window.history.state.akuntansihub_list_depth);
+      return;
+    }
     if (window.history.state?.akuntansihub_tm || window.history.state?.akuntansihub_review) {
       window.history.back();
     } else {

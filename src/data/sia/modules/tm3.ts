@@ -41,8 +41,8 @@ const STARBUCKS_FLOW = `<svg class="course-diagram-svg course-diagram-bpmn" view
 export const SIA_TM3: Reading = {
   tm: 3,
   title: 'Accountants as Business Analysts',
-  ref: 'Richardson, Chang & Smith, AIS 4e ISE · Ch. 4, pp. 174–209',
-  intro: 'Akuntan modern tidak hanya mencatat transaksi, tetapi juga memetakan, mengevaluasi, dan merancang ulang proses bisnis. Ikuti alur dari peran dan kerangka kompetensi, kewajiban dokumentasi, notasi BPMN 2.0, flowchart dan DFD, hingga perbandingan teknik serta pemetaan pengendalian internal.',
+  ref: 'RPS-SIA, minggu 3 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 4, pp. 174–209',
+  intro: 'Akuntan modern juga memetakan dan memperbaiki cara kerja perusahaan. Kita mulai dari alur pesanan, lalu belajar menggambarkannya dengan BPMN (Business Process Model and Notation, notasi untuk memetakan proses), flowchart (bagan alir), dan DFD (Data Flow Diagram, diagram perpindahan data).',
   objectives: [
     'Menjelaskan pergeseran peran akuntan dari stewardship ke business analyst beserta kerangka IMA, CGMA, IFAC, dan CPA Evolution.',
     'Menghubungkan dokumentasi proses bisnis dengan SOX Section 404 dan PCAOB AS 2201.',
@@ -51,6 +51,9 @@ export const SIA_TM3: Reading = {
     'Membandingkan BPMN, flowchart, dan DFD serta memetakan Segregation of Duties pada swimlane.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari proses: pesanan masuk sampai barang dikirim', blocks: [
+      { kind: 'p', text: 'Pelanggan memesan barang. Bagian penjualan memeriksa data pelanggan dan persetujuan kredit; gudang mengambil barang; bagian pengiriman mengirimkannya; lalu bagian penagihan membuat invoice (tagihan). **Model proses** adalah gambar atau uraian langkah, pelaku, keputusan, dan serah terima tersebut. Kita gunakan alur sederhana ini sebelum membaca contoh Starbucks dalam ebook.' },
+    ] },
     { kind: 'h2', text: '1. Changing Roles of Accountants & Professional Competency Frameworks' },
     { kind: 'p', text: 'Secara tradisional fungsi akuntansi berpusat pada **stewardship**: mencatat transaksi historis, memelihara buku besar, menyusun laporan berkala, menghitung pajak, dan mematuhi audit. Digitalisasi, ERP, dan data analytics mengotomatiskan pencatatan rutin sehingga akuntan bergeser menjadi **business analyst** dan penasihat strategis. Richardson 4e, pp. 176–177.' },
     { kind: 'ol', items: [

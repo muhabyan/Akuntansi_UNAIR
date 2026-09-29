@@ -3,16 +3,19 @@ import type { Reading } from '../../../types';
 export const SIA_TM4: Reading = {
   tm: 4,
   title: 'Data Modeling',
-  ref: 'Richardson, Chang & Smith, AIS 4e ISE · Ch. 5, pp. 210–235',
-  intro: 'Model aktivitas menunjukkan urutan kerja; model struktur menunjukkan data apa yang disimpan dan bagaimana data itu saling terhubung. Pelajari UML Class Diagram dan pola REA, terjemahkan ke tabel relasional dengan algoritma lima langkah, lalu hubungkan aturan bisnis, decision table, dan pengendalian internal dengan model.',
+  ref: 'RPS-SIA, minggu 4 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 5, pp. 210–235',
+  intro: 'Model aktivitas menunjukkan urutan kerja; model struktur menunjukkan data apa yang disimpan dan bagaimana hubungannya. Kita mulai dari data penjualan, lalu membaca UML (Unified Modeling Language, bahasa pemodelan terpadu) Class Diagram dan pola REA (Resources, Events, Agents: sumber daya, kejadian, dan pelaku). Selanjutnya, kita ubah rancangan itu menjadi tabel dan aturan yang dapat diterapkan.',
   objectives: [
     'Membedakan model struktur (statis) dari model aktivitas (dinamis) dan menjelaskan nilai strategisnya.',
-    'Membaca UML Class Diagram: class, REA, association, multiplicity, PK/FK, generalization, aggregation, dan composition.',
+    'Membaca UML Class Diagram: class, REA, association, multiplicity, PK/FK (primary key dan foreign key atau kunci utama dan kunci rujukan), generalization, aggregation, dan composition.',
     'Menerapkan algoritma lima langkah untuk memetakan class diagram menjadi tabel relasional, termasuk linking table M:N.',
     'Mengklasifikasikan keputusan operasional dan aturan bisnis serta menyusun decision table.',
     'Memetakan pengendalian COSO, otorisasi, dan SoD ke model serta menyetarakan UML dengan ERD.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari data sebuah penjualan', blocks: [
+      { kind: 'p', text: 'Untuk mencatat penjualan, toko perlu menyimpan siapa pelanggannya, barang apa yang dibeli, kapan transaksi terjadi, dan berapa jumlahnya. **Model data** adalah rancangan jenis informasi yang disimpan dan hubungan antarjenis informasi. Kita mulai dari cerita transaksi, lalu lihat bagaimana rancangan itu menjadi diagram dan tabel.' },
+    ] },
     { kind: 'h2', text: '1. Structure Models & Business Architecture Foundations' },
     { kind: 'p', text: '**Structure model** adalah cetak biru konseptual yang menggambarkan struktur data, entitas, dan batasan bisnis dalam proses bisnis organisasi. Fungsinya menyediakan arsitektur formal untuk merancang dan mengimplementasikan relational database management system (RDBMS) yang mendukung operasi akuntansi. Richardson 4e, pp. 210–212.' },
     { kind: 'table', headers: ['Jenis model', 'Sifat', 'Contoh', 'Yang dimodelkan'], rows: [

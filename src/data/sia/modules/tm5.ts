@@ -3,16 +3,19 @@ import type { Reading } from '../../../types';
 export const SIA_TM5: Reading = {
   tm: 5,
   title: 'Relational Databases and Enterprise Systems',
-  ref: 'Richardson, Chang & Smith, AIS 4e ISE · Ch. 6, pp. 236–281',
-  intro: 'Model data dari TM4 kini diwujudkan sebagai database relasional. Pelajari empat aturan tabel relasional, implementasi Steve\'s Stylin\' Sunglasses, kueri SQL yang dipakai akuntan dan auditor, lalu naik ke arsitektur ERP, risiko implementasinya, dan pilihan cloud ERP.',
+  ref: 'RPS-SIA, minggu 5 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 6, pp. 236–281',
+  intro: 'Rancangan data dari TM4 kini diwujudkan sebagai database relasional: tabel-tabel yang saling terhubung. Kita mulai dari transaksi toko, lalu belajar aturan tabel, contoh Steve\'s Stylin\' Sunglasses, kueri SQL (Structured Query Language, bahasa untuk meminta data), dan ERP (Enterprise Resource Planning, sistem yang menghubungkan proses perusahaan).',
   objectives: [
-    'Menjelaskan istilah database, DBMS, data dictionary, DBA, serta keunggulan model relasional Codd.',
+    'Menjelaskan database, DBMS (Database Management System atau perangkat lunak pengelola database), data dictionary, DBA, serta keunggulan model relasional Codd.',
     'Menerapkan empat aturan tabel relasional: entity integrity, referential integrity, atomic value (1NF), dan order independence.',
-    'Membaca skema relasional Steve\'s Stylin\' Sunglasses beserta PK, FK, linking table, dan form/subform.',
+    'Membaca skema relasional Steve\'s Stylin\' Sunglasses beserta PK/FK (kunci utama/kunci rujukan), linking table, dan form/subform.',
     'Menyusun kueri SQL dengan SELECT, WHERE, INNER JOIN, ORDER BY, DISTINCT, GROUP BY, HAVING, dan fungsi agregat.',
     'Menjelaskan modul SAP S/4HANA, manfaat dan risiko ERP, serta trade-off cloud ERP dibanding on-premise.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari satu penjualan di toko kacamata', blocks: [
+      { kind: 'p', text: 'Saat pelanggan membeli dua kacamata, sistem mencatat transaksi penjualan, rincian barang, dan pembayaran. **Database relasional** menyimpan catatan itu dalam tabel-tabel yang saling terhubung. Nama pelanggan tidak perlu disalin berulang pada setiap barang; hubungan antartabel tetap bisa ditelusuri saat akuntan membuat laporan.' },
+    ] },
     { kind: 'h2', text: '1. Relational Database Foundations & Theoretical Principles' },
     { kind: 'table', headers: ['Istilah', 'Makna'], rows: [
       ['Database', 'Kumpulan data persisten yang saling terkait secara logis, digunakan bersama, dan disusun untuk menghilangkan redundansi serta memenuhi kebutuhan banyak pengguna.'],
@@ -117,7 +120,7 @@ export const SIA_TM5: Reading = {
       ['1001', '101', '120.00'],
       ['1002', '102', '350.00'],
       ['1003', '101', '80.00'],
-    ], caption: 'Dataset penerimaan kas untuk contoh kueri agregasi (USD). Richardson 4e, pp. 262–263; Exhibits 6.44, 6.49. Di Microsoft Access nama field ditulis dengan kurung siku, mis. [Customer Number].' },
+    ], caption: 'Dataset latihan SQL yang disederhanakan (USD); Customer_ID ditambahkan agar agregasi dapat dipraktikkan tanpa JOIN. Contoh kueri dasar buku: Richardson 4e, pp. 261–267. Di Microsoft Access nama field yang mengandung spasi ditulis dengan kurung siku, mis. [Customer Number].' },
     { kind: 'code', language: 'SQL', text: 'SELECT Customer_ID, SUM(Amount) AS Total_Payments, COUNT(Receipt_Number) AS Transaction_Count\nFROM Cash_Receipt\nGROUP BY Customer_ID;', caption: 'Tanpa HAVING, kueri mengembalikan semua kelompok pelanggan.' },
     { kind: 'table', headers: ['Customer_ID', 'Total_Payments', 'Transaction_Count'], rows: [
       ['101', '200.00', '2'],
@@ -125,7 +128,7 @@ export const SIA_TM5: Reading = {
     ], caption: 'Total populasi = 120.00 + 350.00 + 80.00 = 550.00.' },
     { kind: 'formula', text: '\\text{Customer 101} = 120.00 + 80.00 = 200.00\n\\text{Customer 102} = 350.00\n\\text{Total} = 200.00 + 350.00 = 550.00', note: 'Satuan USD. Hasil GROUP BY harus sama dengan jumlah baris sumbernya.' },
     { kind: 'code', language: 'SQL', text: 'SELECT Customer_ID, SUM(Amount) AS Total_Payments, COUNT(Receipt_Number) AS Transaction_Count\nFROM Cash_Receipt\nGROUP BY Customer_ID\nHAVING SUM(Amount) > 200.00;', caption: '`HAVING` menyaring hasil agregat setelah `GROUP BY`. Karena kondisinya `> 200.00` (bukan `>=`), pelanggan 101 dengan total tepat 200.00 **tidak** lolos; hasilnya hanya pelanggan 102 (350.00; 1 transaksi).' },
-    { kind: 'callout', variant: 'info', title: 'Catatan skema', text: 'Pada skema enam tabel SSS di Bagian 2, Cash_Receipt terhubung ke pelanggan melalui Invoice_Number → Sales.Customer_ID. Untuk menjalankan agregasi per pelanggan pada skema tersebut, gabungkan kedua tabel terlebih dahulu: `FROM Cash_Receipt INNER JOIN Sales ON Cash_Receipt.Invoice_Number = Sales.Invoice_Number` lalu `GROUP BY Sales.Customer_ID`.' },
+    { kind: 'callout', variant: 'info', title: 'Catatan skema', text: 'Dataset latihan di atas sengaja menambahkan Customer_ID pada Cash_Receipt. Pada skema enam tabel SSS di Bagian 2, field itu tidak ada: pelanggan ditelusuri melalui Cash_Receipt.Invoice_Number → Sales.Customer_ID. Untuk menjalankan agregasi pada skema tersebut, gunakan `FROM Cash_Receipt INNER JOIN Sales ON Cash_Receipt.Invoice_Number = Sales.Invoice_Number` dan `GROUP BY Sales.Customer_ID`.' },
     { kind: 'table', headers: ['Perintah modifikasi data', 'Fungsi'], rows: [
       ['`INSERT INTO`', 'Menambahkan record transaksi baru.'],
       ['`UPDATE ... SET ... WHERE`', 'Mengubah field tertentu pada record yang memenuhi kriteria.'],
@@ -147,22 +150,22 @@ export const SIA_TM5: Reading = {
       ['Transparency', 'Visibilitas lintas fungsi rantai pasok dan keuangan; penerimaan persediaan langsung memperbarui utang usaha dan penilaian persediaan secara real time.'],
       ['Timeliness', 'Batch posting periodik diganti pemrosesan transaksi berkelanjutan sehingga pelaporan keuangan real time dan transparansi audit tersedia.'],
     ] },
-    { kind: 'callout', variant: 'warning', title: 'Risiko dan kegagalan implementasi ERP', text: 'Risiko implementasi: komitmen biaya sangat besar (\\$50M–\\$500M+), jadwal implementasi bertahun-tahun, resistensi perubahan yang luas, dan bahaya kustomisasi berlebihan. **Hershey Foods (1999):** kegagalan operasional ERP pada musim Halloween menahan pengiriman senilai \\$100M dan laba kuartalan turun 19%. **Kampus (UMass, Stanford, Indiana):** cutover ERP yang cacat membuat lebih dari 27,000 mahasiswa tidak dapat mendaftar kelas atau menerima pencairan bantuan keuangan. Angka tersebut adalah kasus dalam sumber kuliah, bukan statistik terkini. Richardson 4e, pp. 268–270.' },
+    { kind: 'callout', variant: 'warning', title: 'Risiko dan kegagalan implementasi ERP', text: 'Tantangan implementasi yang dibahas buku: mengintegrasikan modul dan sistem eksternal, mengonversi data lama, mengendalikan scope creep, biaya, waktu, pelatihan, dan adopsi pengguna. **Hershey Foods (1999):** proyek senilai \\$115 juta menghambat pengiriman produk senilai \\$100 juta pada musim Halloween; penjualan kuartal ketiga turun 12.4% dan laba tahunan turun 18.6% dibanding tahun sebelumnya. **Kampus (UMass, Stanford, Indiana; 2004):** lebih dari 27,000 mahasiswa sementara kesulitan menemukan jadwal kuliah dan menerima bantuan keuangan akibat gangguan ERP. Ini kasus historis dari ebook, bukan ukuran risiko umum saat ini. Richardson 4e, pp. 269–270.' },
 
     { kind: 'h2', text: '5. Cloud Computing, Cloud ERP & Comparative Data Management' },
     { kind: 'table', headers: ['Konsep', 'Makna'], rows: [
       ['Cloud Computing', 'Akses jaringan on-demand ke kumpulan sumber daya komputasi yang dapat dikonfigurasi (server, penyimpanan, aplikasi).'],
       ['Software as a Service (SaaS)', 'Perangkat lunak ERP dan database relasionalnya di-host dan dipelihara vendor di luar lokasi; klien mengakses lewat web browser dengan model langganan.'],
-      ['SAP S/4HANA Cloud & SAP Analytics Cloud', 'Platform enterprise cloud-native dengan pembaruan otomatis per kuartal, machine learning tertanam, dan skala komputasi elastis.'],
-    ], caption: 'Richardson 4e, pp. 270–272.' },
+      ['SAP S/4HANA Cloud & SAP Analytics Cloud', 'Buku mencontohkan S/4HANA Cloud sebagai sistem ERP yang dapat di-host di cloud dan SAP Analytics Cloud untuk insight serta analitika prediktif dari data ERP.'],
+    ], caption: 'Richardson 4e, pp. 270–271; rincian model langganan adalah penjelasan konsep SaaS.' },
     { kind: 'table', headers: ['Cloud ERP', 'Poin'], rows: [
       ['Keunggulan — Financial', 'Mengubah belanja modal besar di muka (CapEx) menjadi biaya langganan operasional yang dapat diprediksi (OpEx).'],
       ['Keunggulan — Speed to Deployment', 'Implementasi lebih cepat tanpa membeli server fisik.'],
       ['Keunggulan — Automatic Upgrades', 'Pembaruan dan patch keamanan diterapkan vendor sehingga technical debt berkurang.'],
       ['Risiko — Internet Dependency', 'Putusnya koneksi internet menghentikan seluruh pemrosesan transaksi.'],
-      ['Risiko — Data Sovereignty & Privacy', 'Data keuangan berada di server pihak ketiga; memunculkan isu kepatuhan GDPR dan aturan perbankan/residensi data lokal (OJK).'],
+      ['Risiko — Data Sovereignty & Privacy', 'Periksa lokasi penyimpanan, hak akses, keamanan, dan backup pada penyedia. Relevansi aturan seperti GDPR atau ketentuan OJK harus ditentukan untuk organisasi dan yurisdiksi yang bersangkutan; buku tidak menetapkan kewajiban lokal tersebut.'],
       ['Risiko — Vendor Lock-In', 'Biaya migrasi dan perpindahan vendor tinggi.'],
-    ] },
+    ], caption: 'Manfaat skalabilitas dan risiko keamanan, backup, serta koneksi internet: Richardson 4e, p. 270. Poin komparatif lain merupakan pertimbangan desain tambahan.' },
     { kind: 'table', headers: ['Dimensi', 'Legacy terpisah', 'On-premise ERP', 'Cloud ERP (SaaS)'], rows: [
       ['Arsitektur penyimpanan', 'File dan database departemen yang terfragmentasi.', 'Server database relasional terpusat di lokasi perusahaan.', 'Infrastruktur database virtual cloud multi-tenant yang terpusat.'],
       ['Integritas & konsistensi', 'Redundansi tinggi, angka bertentangan, rekonsiliasi manual ekstensif.', 'Redundansi dihilangkan lewat constraint PK–FK; single version of truth.', 'Redundansi dihilangkan; sinkronisasi real time global lintas perangkat.'],

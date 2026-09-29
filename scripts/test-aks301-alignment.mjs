@@ -142,7 +142,7 @@ assert.equal(mod.AKS301_QUIZ.length, quiz.length + mod.AKS301_QUIZ_UAS.length);
 assert.ok(mod.AKS301_QUIZ_UAS.every((item) => item.tm >= 8 && item.tm <= 14), 'UAS quiz keeps TM8–TM14');
 const quizCounts = countByTm(quiz);
 assert.deepEqual([...quizCounts.keys()].sort((a, b) => a - b), PRA_UTS_TMS, 'quiz UTS covers exactly TM1–TM7');
-for (const tm of PRA_UTS_TMS) assert.equal(quizCounts.get(tm), 5, `quiz TM${tm}: 5 items`);
+for (const tm of PRA_UTS_TMS) assert.equal(quizCounts.get(tm), 10, `quiz TM${tm}: 10 items`);
 assertNoOldTopics('quiz UTS', quiz);
 const questionTexts = new Set();
 quiz.forEach((item, index) => {
@@ -150,11 +150,22 @@ quiz.forEach((item, index) => {
   assert.equal(item.topic, readings[item.tm].title, `${label}: topic follows the canonical reading title`);
   assert.ok(!questionTexts.has(item.q), `${label}: duplicate question`);
   questionTexts.add(item.q);
-  assert.equal(item.options.length, 4, `${label}: 4 options`);
-  assert.equal(new Set(item.options).size, 4, `${label}: options unique`);
-  assert.ok(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < 4, `${label}: answer index`);
+  if (item.kind === 'short-answer') {
+    assert.ok(item.answers.length >= 2, `${label}: accepts reasonable answer variants`);
+    assert.ok(item.answers.every((answer) => answer.trim().length > 0), `${label}: no empty text answer`);
+  } else {
+    assert.equal(item.options.length, 4, `${label}: 4 options`);
+    assert.equal(new Set(item.options).size, 4, `${label}: options unique`);
+    if (item.kind === 'multi-select') {
+      assert.ok(item.answers.length >= 2 && item.answers.length < 4, `${label}: multiple correct options`);
+      assert.equal(new Set(item.answers).size, item.answers.length, `${label}: multi answer indexes unique`);
+      assert.ok(item.answers.every((answer) => Number.isInteger(answer) && answer >= 0 && answer < 4), `${label}: multi answer indexes valid`);
+    } else {
+      assert.ok(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < 4, `${label}: answer index`);
+    }
+  }
   assert.ok(item.explanation.trim().length > 40, `${label}: explanation`);
-  for (const text of [item.q, ...item.options, item.explanation]) {
+  for (const text of [item.q, ...('options' in item ? item.options : item.answers), item.explanation]) {
     assertMarkdownSafe(label, text);
     assert.ok(!/^\s*(\d+\.|[-*+])\s/.test(text), `${label}: text renders as a markdown list: ${text.slice(0, 60)}`);
     assert.ok(!/<[A-Za-z]/.test(withoutCode(text)), `${label}: "<" followed by a letter may parse as raw HTML`);
@@ -162,8 +173,10 @@ quiz.forEach((item, index) => {
   }
 });
 for (const tm of PRA_UTS_TMS) {
-  const answers = new Set(quiz.filter((item) => item.tm === tm).map((item) => item.answer));
+  const answers = new Set(quiz.filter((item) => item.tm === tm && (!item.kind || item.kind === 'mcq')).map((item) => item.answer));
   assert.ok(answers.size > 1, `quiz TM${tm}: correct answers are not all the same letter`);
+  assert.equal(quiz.filter((item) => item.tm === tm && item.kind === 'multi-select').length, 2, `quiz TM${tm}: two multi-select cases`);
+  assert.equal(quiz.filter((item) => item.tm === tm && item.kind === 'short-answer').length, 1, `quiz TM${tm}: one short-answer case`);
 }
 
 // ---------------------------------------------------------------- Flashcards (plain text in FlashcardDeck)
@@ -171,24 +184,29 @@ const flashcards = mod.AKS301_FC;
 const ids = flashcards.map((card) => card.id);
 assert.equal(new Set(ids).size, ids.length, 'flashcard ids are unique');
 for (const card of flashcards) {
-  const match = /^aks301-(?:v2-)?tm(\d{2})-(\d{2})$/.exec(card.id);
+  const match = /^aks301-(?:v[23]-)?tm(\d{2})-(\d{2})$/.exec(card.id);
   assert.ok(match, `flashcard id pattern: ${card.id}`);
   assert.equal(Number(match[1]), card.tm, `flashcard id matches its tm: ${card.id} (tm ${card.tm})`);
   assert.equal(card.phase, card.tm <= 7 ? 'pra-uts' : 'pra-uas', `flashcard phase: ${card.id}`);
 }
 const praUtsCards = flashcards.filter((card) => card.tm <= 7);
 const fcCounts = countByTm(praUtsCards);
-for (const tm of PRA_UTS_TMS) assert.equal(fcCounts.get(tm), 6, `flashcards TM${tm}: 6 cards`);
+for (const tm of PRA_UTS_TMS) assert.equal(fcCounts.get(tm), 9, `flashcards TM${tm}: 9 cards`);
 assert.equal(flashcards.length - praUtsCards.length, 42, 'TM8–TM14 flashcards unchanged in count');
-// Only the three cards whose content did not change keep their original ids; every other TM1–TM7 card is v2.
+// Legacy card ids remain stable for spaced-repetition progress; added cards use v3 ids.
 const keptIds = ['aks301-tm01-01', 'aks301-tm01-02', 'aks301-tm04-02'];
-assert.deepEqual(praUtsCards.filter((card) => !card.id.startsWith('aks301-v2-')).map((card) => card.id), keptIds);
+assert.deepEqual(praUtsCards.filter((card) => !/^aks301-v[23]-/.test(card.id)).map((card) => card.id), keptIds);
+assert.equal(praUtsCards.filter((card) => card.id.startsWith('aks301-v3-')).length, 21, '21 new UTS flashcards');
 assertNoOldTopics('flashcards TM1–TM7', praUtsCards);
 assert.equal(new Set(praUtsCards.map((card) => card.front)).size, praUtsCards.length, 'flashcard fronts are unique');
 const categories = new Set(['Definisi', 'Konsep', 'Mekanisme', 'Hukum', 'Klasifikasi', 'Prosedur', 'Dokumen', 'Pengendalian', 'Contoh', 'Standar', 'Perbandingan']);
 for (const card of praUtsCards) {
   assert.equal(card.topic, readings[card.tm].title, `${card.id}: topic follows the canonical reading title`);
   assert.ok(categories.has(card.category), `${card.id}: category ${card.category}`);
+  assert.ok(card.front.endsWith('?'), `${card.id}: front asks an active-recall question`);
+  assert.ok(card.front.length <= 125, `${card.id}: front fits the flashcard`);
+  assert.ok(card.back.length <= 180, `${card.id}: back is concise`);
+  assert.ok(!questionTexts.has(card.front), `${card.id}: flashcard does not copy a quiz prompt`);
   for (const text of [card.front, card.back]) {
     assert.ok(text.trim().length > 0, `${card.id}: empty text`);
     // Plain-text render path: markdown escapes and markup would show up literally.
@@ -221,7 +239,7 @@ bank.forEach((item, index) => {
 });
 
 // ---------------------------------------------------------------- Numeric traceability
-// Every number in a TM1–TM7 quiz item or bank case must also occur in that TM's canonical reading.
+// Legacy quiz examples and bank cases quote the reading; new quiz cases use original numbers.
 const numberTokens = (text) => text.match(/\d+(?:,\d{3})*(?:\.\d+)?/g) ?? [];
 const readingNumbers = new Map(PRA_UTS_TMS.map((tm) => [tm, new Set(numberTokens(JSON.stringify(readings[tm]).replace(/\{,\}/g, ',')))]));
 const assertNumbersFromReading = (label, tm, texts) => {
@@ -229,7 +247,9 @@ const assertNumbersFromReading = (label, tm, texts) => {
     assert.ok(readingNumbers.get(tm).has(token), `${label}: number ${token} does not occur in the TM${tm} reading`);
   }
 };
-quiz.forEach((item, index) => assertNumbersFromReading(`quiz UTS #${index + 1}`, item.tm, [item.q, ...item.options, item.explanation]));
+quiz.forEach((item, index) => {
+  if (!item.id?.startsWith('sia-uts-')) assertNumbersFromReading(`quiz UTS #${index + 1}`, item.tm, [item.q, ...item.options, item.explanation]);
+});
 const allReadingNumbers = new Set(PRA_UTS_TMS.flatMap((tm) => [...readingNumbers.get(tm)]));
 for (const token of numberTokens(JSON.stringify(review).replace(/\{,\}/g, ','))) {
   assert.ok(allReadingNumbers.has(token), `review: number ${token} does not occur in the TM1–TM7 readings`);

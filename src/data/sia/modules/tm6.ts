@@ -3,31 +3,35 @@ import type { Reading } from '../../../types';
 export const SIA_TM6: Reading = {
   tm: 6,
   title: 'Sales and Collections Business Process',
-  ref: 'Richardson, Chang & Smith, AIS 4e ISE · Ch. 7, pp. 282–321',
-  intro: 'Siklus Order-to-Cash menghubungkan penawaran, pesanan, pengiriman, penagihan, dan penerimaan kas. Ikuti alurnya dari dampak akuntansi, model BPMN kolaborasi beserta exception event, pengendalian internal dan application control, pola REA dengan piutang yang diturunkan secara dinamis, hingga skema relasional 12 tabel Sunset Graphics.',
+  ref: 'RPS-SIA, minggu 6 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 7, pp. 282–321',
+  intro: 'Order-to-Cash (pesanan hingga penerimaan kas) mengikuti perjalanan barang yang dijual dan uang yang dibayar pelanggan. Kita mulai dari satu pesanan, lalu memeriksa kapan pendapatan dicatat, bagaimana alurnya dimodelkan dengan BPMN (Business Process Model and Notation), bagaimana risiko dikendalikan dengan SoD (pemisahan tugas), dan bagaimana data penjualan serta penerimaan kas disusun dalam model REA (Resources, Events, Agents atau sumber daya, kejadian, dan pelaku).',
   objectives: [
     'Menjelaskan lima aktivitas Order-to-Cash, titik pengakuan pendapatan saat penyerahan barang, dan akuntansi potongan tunai 2/10, net 30.',
     'Membedakan collaboration dan orchestration BPMN serta memodelkan stockout, error boundary event, timer boundary event, dan looping task.',
     'Menerapkan pengendalian preventif, detektif, korektif, pemisahan tugas, business rule ECA, dan enam application control.',
     'Menyusun model REA penjualan dan penerimaan kas, multiplicity, derivasi dinamis Accounts Receivable, serta type image.',
-    'Membaca skema relasional 12 tabel Sunset Graphics beserta linking table berkunci komposit dan form/subform sales order.',
+    'Membedakan tabel Sunset Graphics dalam ebook dari skema latihan 12 tabel yang mendukung pembayaran parsial, serta membaca linking table berkunci komposit dan form/subform sales order.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari pesanan sampai pembayaran pelanggan', blocks: [
+      { kind: 'p', text: 'Toko menerima pesanan meja, memeriksa stok, mengirim meja, menerbitkan tagihan, lalu menerima transfer pelanggan. Rangkaian dari penjualan sampai uang diterima disebut **Order-to-Cash** (pesanan hingga penerimaan kas). Pesanan belum otomatis menjadi pendapatan; waktu penyerahan barang menentukan kapan penjualan dicatat.' },
+    ] },
     { kind: 'h2', text: '1. Operational Foundations & Financial Statement Impacts' },
     { kind: 'p', text: '**Sales and collections business process (Order-to-Cash)** adalah rangkaian aktivitas operasional terkoordinasi yang mencakup pemberian penawaran harga, penerimaan sales order, verifikasi persediaan dan kredit, pengiriman ke pelanggan, penerbitan invoice, penagihan pembayaran, dan penyetoran kas. Tujuannya menyediakan barang dan jasa secara efisien sambil mengamankan aset piutang usaha, memastikan pendapatan diakui secara lengkap, dan mengoptimalkan arus kas operasi. Richardson 4e, pp. 282–284.' },
+    { kind: 'h3', text: 'Alur barang, dokumen, dan uang' },
     { kind: 'ol', items: [
-      '**Provide Quote:** staf penjualan memberi calon pembeli spesifikasi produk, harga, dan estimasi pengiriman. Quote tidak menimbulkan komitmen hukum maupun dampak akuntansi.',
-      '**Receive Sales Order:** pelanggan menerima quote atau memesan. Sales order adalah kontrak eksekutori yang mengikat perusahaan untuk menyerahkan barang, tetapi **belum** memicu pengakuan pendapatan.',
+      '**Provide Quote:** staf penjualan memberi calon pembeli spesifikasi produk, harga, dan estimasi pengiriman. Pada alur Sunset, quote masih berupa penawaran sehingga belum ada penjualan yang dijurnal.',
+      '**Receive Sales Order:** pelanggan menerima quote atau memesan. Sales order menjadi dasar penyiapan barang, tetapi **belum** memicu pengakuan pendapatan.',
       '**Prepare Products (Pick & Pack):** staf gudang mengambil barang dari bin penyimpanan dan mengemasnya untuk dikirim.',
-      '**Deliver Products & Issue Invoice:** barang diserahkan ke pengangkut atau langsung ke pelanggan. Hak milik dan risiko kerugian berpindah ke pelanggan sehingga pendapatan diakui dan invoice dikirim.',
+      '**Deliver Products & Issue Invoice:** barang dikirim atau diserahkan sesuai syarat penjualan. Pendapatan diakui ketika kendali barang berpindah kepada pelanggan dan kewajiban kinerja terpenuhi; invoice kemudian dikirim.',
       '**Receive Payment & Deposit Cash:** kas, cek, atau electronic funds transfer (EFT) diterima, diterapkan ke piutang pelanggan, dan disetor ke rekening bank perusahaan.',
     ] },
     { kind: 'table', headers: ['Pemicu transaksi', 'Debit', 'Kredit', 'Dampak laporan keuangan'], rows: [
       ['Penyerahan barang (penjualan kredit)', 'Accounts Receivable', 'Sales Revenue; Sales Tax Payable (bila ada)', 'Aset piutang naik; pendapatan operasi naik; liabilitas lancar pajak penjualan naik.'],
       ['Biaya pemenuhan pesanan', 'Cost of Goods Sold', 'Merchandise Inventory', 'Beban naik; aset persediaan turun (matching).'],
-      ['Penagihan dalam periode diskon (mis. 2/10, net 30)', 'Cash (neto); Sales Discounts', 'Accounts Receivable (bruto)', 'Sales Discounts adalah akun kontra-pendapatan yang mengurangi Net Sales.'],
-      ['Penagihan setelah periode diskon', 'Cash (bruto)', 'Accounts Receivable (bruto)', 'Konversi aset langsung dari piutang ke kas.'],
-    ], caption: 'Richardson 4e, pp. 284–285; Exhibit 7.1.' },
+      ['Pembayaran diterima dalam periode diskon (mis. 2/10, net 30)', 'Cash (neto); Sales Discounts', 'Accounts Receivable (bruto)', 'Sales Discounts adalah akun kontra-pendapatan yang mengurangi Net Sales.'],
+      ['Pembayaran diterima setelah periode diskon', 'Cash (bruto)', 'Accounts Receivable (bruto)', 'Konversi aset langsung dari piutang ke kas.'],
+    ], caption: 'Penjualan kredit, pajak, COGS, dan penerimaan kas mengikuti Richardson 4e, p. 284, Exhibit 7.1. Potongan tunai 2/10, net 30 pada dua baris terakhir adalah ilustrasi tambahan.' },
     { kind: 'callout', variant: 'key', title: 'Titik pengakuan pendapatan', text: 'Pendapatan dan COGS diakui saat **barang diserahkan dan kewajiban kinerja terpenuhi**, bukan saat sales order ditandatangani. Quote dan sales order tidak dijurnal. Sales discount dicatat saat pelanggan membayar dalam periode diskon, bukan saat invoice diterbitkan.' },
 
     { kind: 'h2', text: '2. Activity Modeling: BPMN Collaboration, Orchestration & Exception Handling' },
@@ -83,6 +87,7 @@ export const SIA_TM6: Reading = {
     { kind: 'p', text: '**Automated input capture:** barcode scanner optik, UPC, dan RFID reader mengotomatiskan picking dan verifikasi pengiriman, menghilangkan kesalahan ketik manual, dan memperbarui catatan persediaan perpetual seketika. Richardson 4e, p. 299.' },
 
     { kind: 'h2', text: '4. Structure Modeling: UML Class Diagrams & REA Patterns' },
+    { kind: 'callout', variant: 'key', title: 'Asumsi pembayaran Sunset Graphics', text: 'Pada Exhibit 7.20, satu Cash Receipt dapat melunasi satu atau beberapa Orders, tetapi setiap Order terkait paling banyak satu Cash Receipt. Artinya model Sunset pada buku tidak memodelkan cicilan parsial untuk satu order. Skema latihan di bawah menambahkan linking table agar pembayaran parsial dan penerapan satu pembayaran ke beberapa order bisa dipelajari. Richardson 4e, pp. 297–298.' },
     { kind: 'table', headers: ['REA', 'Class', 'Keterangan'], rows: [
       ['Resources', 'Products (Inventory); Cash (Bank Accounts)', 'Barang jadi dan produk custom yang dijual; rekening bank yang menerima setoran pelanggan.'],
       ['Events', 'Quotes; Orders (Sales); Cash_Receipts', 'Komitmen harga tidak mengikat; purchase order pelanggan yang mengikat; transaksi pembayaran pelanggan.'],
@@ -92,9 +97,9 @@ export const SIA_TM6: Reading = {
       ['Customers places Orders', '(1..1) – (0..\\*)', 'Setiap pesanan terhubung ke tepat satu pelanggan; pelanggan dapat memiliki nol atau banyak pesanan.'],
       ['Orders includes Products', '(1..\\*) – (0..\\*)', 'Pesanan memuat minimal satu baris produk; produk dapat muncul di banyak pesanan (Many-to-Many).'],
       ['Bank_Accounts deposits Cash_Receipts', '(1..1) – (0..\\*)', 'Setiap penerimaan kas disetor ke tepat satu rekening bank.'],
-      ['Orders settled by Cash_Receipts', '(0..\\*) – (0..\\*)', 'Mendukung pembayaran cicilan parsial dan satu pembayaran yang melunasi banyak pesanan.'],
-    ], caption: 'Richardson 4e, pp. 299–304.' },
-    { kind: 'p', text: 'Dalam database relasional REA, **Accounts Receivable adalah konsep yang diturunkan secara dinamis**. Orders yang sudah diserahkan tetapi belum memiliki Cash_Receipts terkait adalah piutang terbuka. Saldo statis di tabel master pelanggan tidak disimpan sehingga redundansi dan saldo yang saling bertentangan hilang.' },
+      ['Orders settled by Cash_Receipts', '(0..1) receipt per Order; (1..\\*) Orders per Receipt', 'Asumsi Sunset pada Exhibit 7.20: order yang sudah lunas berhubungan dengan satu penerimaan kas; satu cek pelanggan dapat melunasi beberapa order.'],
+    ], caption: 'Asosiasi Sunset pada Richardson 4e, pp. 297–299, Exhibits 7.20–7.21. Pembayaran parsial di skema latihan Bagian 5 adalah perluasan.' },
+    { kind: 'p', text: 'Secara konsep REA, **Accounts Receivable dapat dihitung dari penjualan yang sudah diserahkan dikurangi kas yang diterapkan**. Exhibit 7.24 pada buku tetap mencantumkan `Customer_balance` pada tabel pelanggan; nilai itu perlu disinkronkan dengan transaksi agar tidak menjadi saldo yang bertentangan. Skema latihan di bawah memilih derivasi dinamis melalui linking table.' },
     { kind: 'formula', text: '\\text{A/R} = \\sum \\text{Delivered Orders} - \\sum \\text{Applied Cash Receipts}', note: 'Piutang dihitung dari pesanan terkirim dikurangi penerimaan kas yang diterapkan (Amount_Applied), bukan disimpan sebagai angka statis.' },
     { kind: 'table', headers: ['Type image', 'Fungsi di Sunset Graphics'], rows: [
       ['Product_Category', 'Mengklasifikasikan produk (Vinyl Banners, Embroidered Caps, Screen-printed Shirts) dan menugaskan tanggung jawab manajemen persediaan kepada partner yang ditunjuk.'],
@@ -153,7 +158,7 @@ export const SIA_TM6: Reading = {
       ['Order_Cash_Receipts (linking)', 'Receipt_Number', 'INT', 'NOT NULL, FOREIGN KEY → Cash_Receipts(Receipt_Number)'],
       ['Order_Cash_Receipts (linking)', 'Amount_Applied', 'DECIMAL(10,2)', 'NOT NULL'],
       ['Order_Cash_Receipts (linking)', '(Order_Number, Receipt_Number)', '—', 'Composite PRIMARY KEY'],
-    ], caption: 'Skema relasional Sunset Graphics. Richardson 4e, Bab 7, sekitar hlm. 301–305; Exhibits 7.24–7.29. PK sisi "1" menjadi FK di sisi "many"; asosiasi M:N diselesaikan dengan linking table berkunci komposit.' },
+    ], caption: 'Skema latihan 12 tabel yang memperluas Sunset Graphics dengan Order_Cash_Receipts untuk pembayaran parsial; bukan salinan Exhibit 7.24. Buku memuat 11 tabel dan menghubungkan Orders dengan Receipt_number. Bandingkan Richardson 4e, hlm. 301–305, Exhibits 7.24–7.29.' },
     { kind: 'table', headers: ['Kelompok tabel', 'Tabel'], rows: [
       ['Master', 'Customers, Employees, Products, Bank_Accounts'],
       ['Transaksi (event)', 'Quotes, Orders, Cash_Receipts'],

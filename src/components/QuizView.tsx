@@ -1,6 +1,6 @@
 // =============================================================
 // src/components/QuizView.tsx
-// Kuis interaktif: pilihan, multi-select, isian angka laporan,
+// Kuis interaktif: pilihan, multi-select, isian teks dan angka laporan,
 // dan pencocokan akun/kategori. Batch UI/UX 5 memoles ruang kerja
 // agar lebih nyaman dibaca dan dikerjakan tanpa mengubah isi soal.
 // =============================================================
@@ -75,6 +75,7 @@ function formatAmount(value: number, prefix?: string): string {
 function kindLabel(q: QuizQuestion): string {
   if (!q.kind || q.kind === 'mcq') return 'Pilihan';
   if (q.kind === 'multi-select') return 'Pilih banyak';
+  if (q.kind === 'short-answer') return 'Isian singkat';
   if (q.kind === 'report-fill') return 'Isian angka';
   if (q.kind === 'account-match') return 'Matching';
   return 'Urutan proses';
@@ -83,6 +84,7 @@ function kindLabel(q: QuizQuestion): string {
 function kindIcon(q: QuizQuestion) {
   if (!q.kind || q.kind === 'mcq') return <Target size={14} />;
   if (q.kind === 'multi-select') return <ListChecks size={14} />;
+  if (q.kind === 'short-answer') return <FileText size={14} />;
   if (q.kind === 'report-fill') return <FileText size={14} />;
   if (q.kind === 'account-match') return <Link2 size={14} />;
   return <ListChecks size={14} />;
@@ -239,6 +241,8 @@ export default function QuizView({
   const [fillAnswers, setFillAnswers] = useState<Record<string, string>>({});
   const [matchAnswers, setMatchAnswers] = useState<Record<string, string>>({});
   const [multiAnswers, setMultiAnswers] = useState<Record<string, number[]>>({});
+  const [checkedMulti, setCheckedMulti] = useState<Record<number, boolean>>({});
+  const [checkedShort, setCheckedShort] = useState<Record<number, boolean>>({});
   const [orderingAnswers, setOrderingAnswers] = useState<Record<string, string>>({});
   const [markedForReview, setMarkedForReview] = useState<Record<number, boolean>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -260,6 +264,8 @@ export default function QuizView({
     setFillAnswers({});
     setMatchAnswers({});
     setMultiAnswers({});
+    setCheckedMulti({});
+    setCheckedShort({});
     setOrderingAnswers({});
     setMarkedForReview({});
     setSubmitted(false);
@@ -314,6 +320,8 @@ export default function QuizView({
       setFillAnswers({});
       setMatchAnswers({});
       setMultiAnswers({});
+      setCheckedMulti({});
+      setCheckedShort({});
       setOrderingAnswers({});
       setMarkedForReview({});
       setSubmitted(false);
@@ -412,6 +420,7 @@ export default function QuizView({
   const questionAnswered = (q: QuizQuestion, i: number) => {
     if (!q.kind || q.kind === 'mcq') return picks[i] !== undefined;
     if (q.kind === 'multi-select') return (multiAnswers[questionKey(i, 'multi')] ?? []).length > 0;
+    if (q.kind === 'short-answer') return (fillAnswers[questionKey(i, 'short')] ?? '').trim() !== '';
     if (q.kind === 'report-fill') return q.blanks.every((blank) => (fillAnswers[questionKey(i, blank.id)] ?? '').trim() !== '');
     if (q.kind === 'account-match') return q.pairs.every((pair) => (matchAnswers[questionKey(i, pair.prompt)] ?? '').trim() !== '');
     if (q.kind === 'ordering') return q.correctOrder.every((_, position) => (orderingAnswers[questionKey(i, `order-${position}`)] ?? '').trim() !== '');
@@ -421,6 +430,7 @@ export default function QuizView({
   const questionCorrect = (q: QuizQuestion, i: number) => isQuizResponseCorrect(q, {
     pick: picks[i],
     multi: multiAnswers[questionKey(i, 'multi')] ?? [],
+    text: q.kind === 'short-answer' ? fillAnswers[questionKey(i, 'short')] ?? '' : undefined,
     fills: q.kind === 'report-fill'
       ? Object.fromEntries(q.blanks.map((blank) => [blank.id, fillAnswers[questionKey(i, blank.id)] ?? '']))
       : undefined,
@@ -461,7 +471,11 @@ export default function QuizView({
   const isExamInteractionLocked = mode === 'exam' && (submitted || !examStarted);
   const hasActiveExamWork = mode === 'exam' && examStarted && !submitted;
 
-  const revealed = (i: number) => (mode === 'practice' ? questionAnswered(questions[i], i) : submitted);
+  const revealed = (i: number) => mode === 'practice'
+    ? questions[i].kind === 'multi-select' ? Boolean(checkedMulti[i])
+      : questions[i].kind === 'short-answer' ? Boolean(checkedShort[i])
+        : questionAnswered(questions[i], i)
+    : submitted;
 
   const choose = (qi: number, oi: number) => {
     if (mode === 'practice' && picks[qi] !== undefined) return;
@@ -471,7 +485,7 @@ export default function QuizView({
 
   const toggleMulti = (qi: number, oi: number) => {
     const scopedKey = questionKey(qi, 'multi');
-    if (mode === 'practice' && (multiAnswers[scopedKey] ?? []).length > 0) return;
+    if (mode === 'practice' && checkedMulti[qi]) return;
     if (isExamInteractionLocked) return;
     setMultiAnswers((prev) => {
       const current = prev[scopedKey] ?? [];
@@ -496,6 +510,8 @@ export default function QuizView({
     setFillAnswers({});
     setMatchAnswers({});
     setMultiAnswers({});
+    setCheckedMulti({});
+    setCheckedShort({});
     setOrderingAnswers({});
     setMarkedForReview({});
     setSubmitted(false);
@@ -520,6 +536,8 @@ export default function QuizView({
     setFillAnswers({});
     setMatchAnswers({});
     setMultiAnswers({});
+    setCheckedMulti({});
+    setCheckedShort({});
     setOrderingAnswers({});
     setMarkedForReview({});
     setSubmitted(false);
@@ -793,7 +811,7 @@ export default function QuizView({
                       <button
                         key={origIdx}
                         onClick={() => toggleMulti(i, origIdx)}
-                        disabled={isExamInteractionLocked || (mode === 'practice' && selected.length > 0)}
+                        disabled={isExamInteractionLocked || (mode === 'practice' && checkedMulti[i])}
                         className={`flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-left text-sm leading-6 transition-all ${cls}`}
                       >
                         <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-current/30 text-[11px] font-black">{LETTER[displayIdx]}</span>
@@ -804,6 +822,38 @@ export default function QuizView({
                     );
                   })}
                 </div>
+                {mode === 'practice' && !checkedMulti[i] && (
+                  <button type="button" disabled={selected.length === 0} onClick={() => setCheckedMulti((prev) => ({ ...prev, [i]: true }))} className="mt-3 rounded-xl bg-accent px-4 py-2 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">
+                    Periksa jawaban
+                  </button>
+                )}
+                <Explanation text={show ? q.explanation : undefined} />
+              </QuestionFrame>
+            );
+          }
+
+          if (q.kind === 'short-answer') {
+            const scopedKey = questionKey(i, 'short');
+            const value = fillAnswers[scopedKey] ?? '';
+            return (
+              <QuestionFrame key={`${effectiveSetId}-${i}`} index={i} question={q} status={status} marked={markedForReview[i]} allowMark={supportsReviewMarking && mode === 'exam' && examStarted && !submitted} onToggleMark={() => toggleMarked(i)}>
+                <label htmlFor={`quiz-short-${i}`} className="mb-2 block text-sm font-semibold text-secondary">Jawaban singkat</label>
+                <input
+                  id={`quiz-short-${i}`}
+                  data-testid={`quiz-short-${i + 1}`}
+                  type="text"
+                  value={value}
+                  onChange={(event) => setFillAnswers((prev) => ({ ...prev, [scopedKey]: event.target.value }))}
+                  disabled={isExamInteractionLocked || (mode === 'practice' && checkedShort[i])}
+                  autoComplete="off"
+                  className="block w-full min-w-0 rounded-xl border border-line bg-surface px-4 py-3 text-sm text-ink outline-none focus:border-accent"
+                />
+                {mode === 'practice' && !checkedShort[i] && (
+                  <button type="button" disabled={!value.trim()} onClick={() => setCheckedShort((prev) => ({ ...prev, [i]: true }))} className="mt-3 rounded-xl bg-accent px-4 py-2 text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">
+                    Periksa jawaban
+                  </button>
+                )}
+                {show && !questionCorrect(q, i) && <p className="mt-3 text-sm font-semibold text-danger">Jawaban acuan: {q.answers[0]}</p>}
                 <Explanation text={show ? q.explanation : undefined} />
               </QuestionFrame>
             );
