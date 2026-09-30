@@ -481,11 +481,15 @@ export const TM3_READING: Reading = {
     },
     { kind: 'p', text: 'Sumber tabel: [hal. 106]. Kebanyakan manajer tidak sama kuat di ketiga komponen, tetapi CQ yang maksimal membutuhkan ketiganya [hal. 106].' },
     { kind: 'p', text: '**Jangan tertukar: global mind-set vs CQ**' },
-    { kind: 'p', text: '| | Global mind-set (Exh. 3.2) | Cultural intelligence (CQ) |' },
-    { kind: 'p', text: '|--|---------------------------|----------------------------|' },
-    { kind: 'p', text: '| Tiga unsur | Cognitive, **psychological**, **social** | Cognitive, **emotional**, **physical** |' },
-    { kind: 'p', text: '| Cakupan | Kemampuan menghargai dan memengaruhi orang dan sistem yang berbeda secara luas | Kemampuan menafsirkan situasi budaya yang asing dan merespons dengan tepat |' },
-    { kind: 'p', text: '| Sumber | [hal. 90–91] | [hal. 106] |' },
+    {
+      kind: 'table',
+      headers: ['', 'Global mind-set (Exh. 3.2)', 'Cultural intelligence (CQ)'],
+      rows: [
+        ['Tiga unsur', 'Cognitive, **psychological**, **social**', 'Cognitive, **emotional**, **physical**'],
+        ['Cakupan', 'Kemampuan menghargai dan memengaruhi orang dan sistem yang berbeda secara luas', 'Kemampuan menafsirkan situasi budaya yang asing dan merespons dengan tepat'],
+        ['Sumber', '[hal. 90–91]', '[hal. 106]'],
+      ],
+    },
     // ---------------------------------------------------------------- §9
     { kind: 'h2', text: '9. International Trade Alliances (di luar RPP: ringkas)' },
     { kind: 'p', text: 'Perubahan besar lain di lingkungan bisnis internasional adalah berkembangnya aliansi dagang regional dan perjanjian perdagangan internasional [hal. 108].' },

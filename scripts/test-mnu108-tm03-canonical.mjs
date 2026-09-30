@@ -42,6 +42,7 @@ await runCanonical({
   ],
   sectionLabels: {"di luar RPP":["6. Legal–Political Challenges (di luar RPP: ringkas)","9. International Trade Alliances (di luar RPP: ringkas)"]},
   boxes: 2,
+  boxAllowed: [],
   film: {
     h2: "12. Bedah Film: American Factory (Ilustrasi)",
     h3: ["12.1 Sinopsis Singkat (Ilustrasi)","12.2 Konsep Chapter 3 yang Muncul (Ilustrasi)","12.3 Kaitan Adegan dengan Teori (Ilustrasi; analisis, bukan fakta buku)","12.4 Managerial Lessons Learned (Ilustrasi; analisis)"],
@@ -92,6 +93,7 @@ await runCanonical({
     { under: "8. Communication Challenges dan Cultural Intelligence", headers: ["Aspek","High-context culture","Low-context culture"], rows: 5 },
     { under: "8. Communication Challenges dan Cultural Intelligence", headers: ["Urutan","Budaya"], rows: 13 },
     { under: "8. Communication Challenges dan Cultural Intelligence", headers: ["Komponen CQ","Isi"], rows: 3 },
+    { under: "8. Communication Challenges dan Cultural Intelligence", headers: ["","Global mind-set (Exh. 3.2)","Cultural intelligence (CQ)"], rows: 3 },
     { under: "9. International Trade Alliances (di luar RPP: ringkas)", headers: ["Aliansi","Isi utama menurut buku","Sumber"], rows: 3 },
     { under: "10. Peta Konsep (siap dijadikan Mind Map)", headers: ["Dari","Ke","Hubungannya","Sumber"], rows: 11 },
     { under: "11. Contoh Penerapan", headers: ["Konsep","Contoh dari buku","Hal."], rows: 12 },

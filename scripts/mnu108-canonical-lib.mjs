@@ -253,3 +253,50 @@ export async function runCanonical(spec) {
 
   console.log(JSON.stringify({ pass: true, tm: spec.tm, checks: passes.length, passes }, null, 2));
 }
+
+/**
+ * What the reader sees. Renders every block with the real CourseBlockCard and checks the visible text: a markdown table that did
+ * not parse shows up as paragraphs of raw "| a | b |" rows, and unparsed emphasis or escapes show up as literal "**" or "\.".
+ */
+export async function loadRenderer() {
+  const fs = await import('node:fs');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const { createServer } = await import('vite');
+  const React = (await import('react')).default;
+  const { renderToStaticMarkup } = await import('react-dom/server');
+  const { JSDOM } = await import('jsdom');
+  const cacheDir = fs.mkdtempSync(path.join(os.tmpdir(), 'mnu108-render-'));
+  const server = await createServer({ root: process.cwd(), cacheDir, appType: 'custom', server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true }, logLevel: 'silent' });
+  const { default: CourseBlockCard } = await server.ssrLoadModule('/src/components/course/CourseBlockCard.tsx');
+  const warn = console.warn;
+  console.warn = () => {}; // KaTeX strict-mode notices do not change the output
+  return {
+    /** The visible text, one entry per text element (p, li, cell, heading) and one for the whole block. */
+    render(block) {
+      const html = renderToStaticMarkup(React.createElement(CourseBlockCard, { block }));
+      const { document } = new JSDOM(`<body>${html}</body>`).window;
+      const elements = [...document.body.querySelectorAll('p, li, td, th, h1, h2, h3, h4')].map((element) => element.textContent.trim());
+      return { elements, whole: document.body.textContent };
+    },
+    async close() {
+      console.warn = warn;
+      await server.close();
+      fs.rmSync(cacheDir, { recursive: true, force: true });
+    },
+  };
+}
+
+export function checkRenderedText(reading, tm, renderer) {
+  const label = `TM0${tm}`;
+  reading.blocks.forEach((block, index) => {
+    const { elements, whole } = renderer.render(block);
+    const at = `${label} block #${index} (${block.kind})`;
+    for (const text of elements) {
+      assert.ok(!(text.startsWith('|') && text.endsWith('|')), `${at}: a table row shows as raw text: ${text.slice(0, 70)}`);
+    }
+    assert.ok(!/\|\s*:?-{2,}/.test(whole), `${at}: a table separator "|--" shows as text`);
+    assert.ok(!whole.includes('**'), `${at}: literal "**" shows in the page: ${whole.slice(whole.indexOf('**') - 20, whole.indexOf('**') + 30)}`);
+    assert.ok(!/\\./.test(whole), `${at}: a literal backslash-dot shows in the page`);
+  });
+}

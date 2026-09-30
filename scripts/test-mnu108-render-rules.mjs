@@ -4,11 +4,12 @@
 // The rules live in mnu108-canonical-lib.mjs; a TM joins by being listed in CANONICAL_TMS there.
 // A mutation check at the end proves each rule can fail.
 import assert from 'node:assert/strict';
-import { CANONICAL_TMS, checkOutline, checkRenderRules, loadOutline, loadReadings } from './mnu108-canonical-lib.mjs';
+import { CANONICAL_TMS, checkOutline, checkRenderRules, checkRenderedText, loadOutline, loadReadings, loadRenderer } from './mnu108-canonical-lib.mjs';
 
 const SECTION_COUNTS = { 1: 17, 2: 18, 3: 16, 4: 17, 5: 18, 6: 18, 7: 18 };
 const readings = await loadReadings();
 const outline = await loadOutline();
+const renderer = await loadRenderer();
 
 const passes = [];
 for (const tm of CANONICAL_TMS) {
@@ -16,7 +17,8 @@ for (const tm of CANONICAL_TMS) {
   assert.ok(reading, `TM0${tm} reading exists`);
   checkRenderRules(reading, tm, SECTION_COUNTS[tm]);
   checkOutline(reading, tm, outline);
-  passes.push(`TM0${tm}: render rules and Daftar Isi`);
+  checkRenderedText(reading, tm, renderer);
+  passes.push(`TM0${tm}: render rules, Daftar Isi and the visible text of every block`);
 }
 
 // ---- Mutation check: a copy of TM01 with one rule broken at a time must be rejected.
@@ -41,5 +43,20 @@ for (const [name, [mutate, reason]] of Object.entries(mutations)) {
   assert.throws(() => checkRenderRules(mutant, 1, SECTION_COUNTS[1]), reason, `rule check must reject ${name} for the right reason`);
 }
 passes.push(`mutation check: ${Object.keys(mutations).length} broken copies of TM01 are rejected`);
+
+// ---- Mutation check for the visible-text rule: what the reader would see if a table or an escape did not parse.
+const textMutations = {
+  'a table that stayed paragraphs of raw rows': [(r) => { r.blocks.push({ kind: 'p', text: '| | Kiri | Kanan |' }); }, /raw text/],
+  'a table separator shown as text': [(r) => { r.blocks.push({ kind: 'p', text: 'Judul\n|--|------|-----|' }); }, /separator/],
+  'literal bold markers in a table header': [(r) => { r.blocks.push({ kind: 'table', headers: ['', '**Kiri**'], rows: [['a', 'b']] }); }, /literal "\*\*"/],
+  'a literal escape in a table header': [(r) => { r.blocks.push({ kind: 'table', headers: ['', '1\\. Kiri'], rows: [['a', 'b']] }); }, /backslash-dot/],
+};
+for (const [name, [mutate, reason]] of Object.entries(textMutations)) {
+  const mutant = clone();
+  mutate(mutant);
+  assert.throws(() => checkRenderedText(mutant, 1, renderer), reason, `visible-text rule must reject ${name} for the right reason`);
+}
+passes.push(`mutation check: ${Object.keys(textMutations).length} broken copies of TM01 are rejected by the visible-text rule`);
+await renderer.close();
 
 console.log(JSON.stringify({ pass: true, checks: passes.length, passes }, null, 2));

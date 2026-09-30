@@ -43,6 +43,7 @@ await runCanonical({
   ],
   sectionLabels: {"di luar RPP":[]},
   boxes: 2,
+  boxAllowed: [],
   film: {
     h2: "13. Bedah Film: Dark Waters (Ilustrasi)",
     h3: ["13.1 Sinopsis Singkat (Ilustrasi)","13.2 Konsep Chapter 4 yang Muncul (Ilustrasi)","13.3 Kaitan Adegan dengan Teori (Ilustrasi; analisis, bukan fakta buku)","13.4 Managerial Lessons Learned (Ilustrasi; analisis)"],
@@ -94,8 +95,9 @@ await runCanonical({
     { under: "7. Green Movement, Sustainability, dan Triple Bottom Line", headers: ["P","Yang diukur","Sumber"], rows: 3 },
     { under: "8. Benefit Corporations dan B Lab", headers: ["Aspek","Benefit corporation","Certified B Corporation"], rows: 5 },
     { under: "9. Membangun Organisasi Etis: Values-Oriented dan Structure-Oriented", headers: ["Values-Oriented","Structure-Oriented"], rows: 4 },
+    { under: "9. Membangun Organisasi Etis: Values-Oriented dan Structure-Oriented", headers: ["","Values-oriented approach","Structure-oriented approach"], rows: 3 },
     { under: "9. Membangun Organisasi Etis: Values-Oriented dan Structure-Oriented", headers: ["Unsur","Isi menurut buku"], rows: 4 },
-    { under: "9. Membangun Organisasi Etis: Values-Oriented dan Structure-Oriented", headers: ["Unsur","Isi menurut buku"], rows: 4 },
+    { under: "9. Membangun Organisasi Etis: Values-Oriented dan Structure-Oriented", headers: ["Unsur","Isi menurut buku"], rows: 4, nth: 1 },
     { under: "10. Whistle-Blowing", headers: ["Kasus","Yang ditulis buku","Status menurut buku"], rows: 3 },
     { under: "11. Peta Konsep (siap dijadikan Mind Map)", headers: ["Dari","Ke","Hubungannya","Sumber"], rows: 11 },
     { under: "12. Contoh Penerapan", headers: ["Konsep","Contoh dari buku","Hal."], rows: 12 },

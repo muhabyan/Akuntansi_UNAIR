@@ -447,11 +447,16 @@ export const TM4_READING: Reading = {
       ],
       caption: 'The Ethical Organization',
     },
-    { kind: 'p', text: '| | **Values-oriented approach** | **Structure-oriented approach** |' },
-    { kind: 'p', text: '|--|------------------------------|---------------------------------|' },
-    { kind: 'p', text: '| Cara kerja | Langsung menyasar **keinginan internal** individu untuk berperilaku etis; menyelaraskan nilai pribadi dengan nilai organisasi | Tidak bekerja lewat keinginan internal, tetapi memakai **struktur, insentif, pilihan, pengelompokan tugas, dan kebijakan** untuk mengurangi godaan berperilaku tidak etis |' },
-    { kind: 'p', text: '| Unsur (Exh. 4.6) | Ethical leadership, Volunteerism, Code of ethics, Ethics committee | Chief ethics officer, Ethics hotline, Ethics training, Support for whistle-blowers |' },
-    { kind: 'p', text: '| Sumber | [hal. 138–140] | [hal. 140–141] |' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['', 'Values-oriented approach', 'Structure-oriented approach'],
+      rows: [
+        ['Cara kerja', 'Langsung menyasar **keinginan internal** individu untuk berperilaku etis; menyelaraskan nilai pribadi dengan nilai organisasi', 'Tidak bekerja lewat keinginan internal, tetapi memakai **struktur, insentif, pilihan, pengelompokan tugas, dan kebijakan** untuk mengurangi godaan berperilaku tidak etis'],
+        ['Unsur (Exh. 4.6)', 'Ethical leadership, Volunteerism, Code of ethics, Ethics committee', 'Chief ethics officer, Ethics hotline, Ethics training, Support for whistle-blowers'],
+        ['Sumber', '[hal. 138–140]', '[hal. 140–141]'],
+      ],
+    },
     { kind: 'p', text: '**Unsur values-oriented** [hal. 138–140]:' },
     {
       kind: 'table',
