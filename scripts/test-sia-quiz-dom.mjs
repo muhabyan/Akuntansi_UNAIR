@@ -28,7 +28,7 @@ try {
   const cards = window.document.querySelectorAll('[data-testid="quiz-question-card"]');
   assert.equal(cards.length, 2);
   const multi = cards[0];
-  const multiOptions = [...multi.querySelectorAll('button')].filter((button) => /Sinkronkan|Petakan|Tunjukkan tanggal/.test(button.textContent));
+  const multiOptions = [...multi.querySelectorAll('button')].filter((button) => /Sync the latest|Map old SKU|Show the update date/.test(button.textContent));
   assert.equal(multiOptions.length, 3);
   await act(async () => { multiOptions[0].click(); });
   assert.ok(!multi.textContent.includes('Pembahasan:'), 'multi-select stays editable after first choice');
