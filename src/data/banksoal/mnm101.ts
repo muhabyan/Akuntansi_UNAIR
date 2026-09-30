@@ -1,213 +1,240 @@
 // src/data/banksoal/mnm101.ts
-// Bank Soal Esai & Studi Kasus Keputusan Manajerial Pengantar Manajemen (MNM101)
-// Berdasarkan Richard L. Daft (Understanding Management 12e/13e)
-// 14 Kasus Lengkap (7 Kasus Pra-UTS & 7 Kasus Pra-UAS)
+// Bank Soal Esai & Studi Kasus Pengantar Manajemen (MNU108; nama variabel dan file masih MNM101)
+// Sumber: Daft & Marcic, Understanding Management 12e (2023)
+// 7 kasus Pra-UTS (satu Ethical Dilemma per TM 1-7, diparafrasekan; panduan jawaban lima langkah) dan 7 kasus Pra-UAS (belum disinkronkan ke 12e)
 import type { BankSoal } from '../../types';
 
 export const MNM101_BANK_UTS: BankSoal[] = [
   {
-    "type": "analysis",
-    "scope": "TM 1: Fungsi POAC & Keterampilan Manajerial Robert L. Katz",
+    "type": "case",
+    "scope": "TM 1: Bureaucracy, Human Skills, dan Seleksi Supervisor",
     "difficulty": "Menengah",
     "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 1: Evaluasi Transisi Peran Manajerial dari Spesialis Teknis ke Manajer Lini Pertama",
-    "context": "Andi adalah insinyur perangkat lunak paling cemerlang di PT Inovasi Solusi. Karena prestasi teknisnya, ia dipromosikan menjadi Manajer Tim Rekayasa Perangkat Lunak yang membawahi 12 staf insinyur. Tiga bulan pasca promosi, Andi mengalami stres berat: proyek sering terlambat, anggota tim mengeluh karena Andi terlalu mencampuri pekerjaan teknis mikro (micromanagement) daripada memotivasi tim, dan komunikasi antar-divisi macet. Direktur Operasional meminta Anda mengevaluasi ketidakseimbangan keterampilan manajerial Andi.",
+    "question": "Studi Kasus 1 (Ethical Dilemma \"The New Test\", Ch. 1 hal. 48–49): Promosi Supervisor antara Pengalaman dan Peringkat Tes Tertulis",
+    "context": "Sebuah kota mewajibkan tes tertulis untuk promosi supervisor. Manajer agensi, Maxine Othman, sudah menunjuk Sheryl Hines secara sementara: 17 tahun bekerja di agensi dan terbukti memimpin dengan baik. Di tes terbuka, Sheryl berada di peringkat 12, sedangkan seorang klerk baru berperingkat 1. Keputusan akhir ada di tangan Maxine.",
     "data": [
-      "Profil Awal: Insinyur senior berkinerja teknis bintang 5.",
-      "Posisi Baru: First-line Manager (Manajer Tim Rekayasa).",
-      "Keluhan Tim: Micromanagement, ketiadaan delegasi wewenang, evaluasi tugas emosional, koordinasi proyek buruk.",
-      "Model Acuan: Tiga Keterampilan Manajerial Robert L. Katz (Technical, Human, Conceptual)."
+      "Opsi (1): abaikan tes dan beri jabatan kepada Sheryl.",
+      "Opsi (2): beri jabatan kepada peserta dengan skor tertinggi.",
+      "Opsi (3): dorong Civil Service Board menyusun kriteria seleksi yang lebih komprehensif.",
+      "Kerangka acuan: Weberian bureaucracy [hal. 28–30]; technical, human, dan conceptual skills [hal. 12–15]; things vs humanity of production [hal. 25–26]."
     ],
     "instructions": [
-      "Berdasarkan model Robert L. Katz, analisis pergeseran proporsi keterampilan yang harus dikembangkan Andi saat beralih dari staf teknis ke posisi manajerial.",
-      "Identifikasi dua peran Mintzberg yang gagal dijalankan Andi dan jelaskan dampaknya terhadap tim.",
-      "Susun rekomendasi tindakan nyata (action plan) bagi Andi untuk mendelegasikan wewenang dan menjalankan 4 fungsi POAC secara efektif."
+      "Susun Case Summary dan Problem Identification dari fakta kasus.",
+      "Analisis dengan Weberian bureaucracy (seleksi berdasarkan kualifikasi teknis, aturan impersonal) dan dengan keterampilan manajer (technical, human, conceptual).",
+      "Jawab: (Q1) apa dasar bureaucracy untuk dan melawan setiap opsi? (Q2) keterampilan apa yang relevan bagi supervisor dan apa yang mungkin tidak terukur oleh tes tertulis? (Q3) opsi mana yang Anda pilih?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Analisis Pergeseran Keterampilan Katz",
-      "Evaluasi 2 Peran Kritis Mintzberg",
-      "Matriks Rencana Aksi POAC Manajerial"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Ketepatan analisis pergeseran keterampilan teknis ke human skills (35%)",
-      "Ketajaman identifikasi peran Mintzberg (Leader & Resource Allocator) (35%)",
-      "Aplikabilitas rencana aksi perbaikan manajerial POAC (30%)"
+      "Ketepatan memakai ciri bureaucracy dan tiga keterampilan dengan [hal. X] (40%)",
+      "Kelogisan analisis tiap opsi (30%)",
+      "Ketegasan rekomendasi dan alasannya (30%)"
     ],
-    "answerGuide": "1. Analisis Model Keterampilan Katz:\n• Sebagai insinyur individu, keahlian teknis (Technical Skills) adalah 80% penentu suksesnya.\n• Saat menjadi First-line Manager, porsi keahlian hubungan manusiawi (Human/Interpersonal Skills) meningkat drastis menjadi yang paling krusial (sekitar 50-60%), sementara porsi teknis harus dikurangi agar memberi ruang bagi kepemimpinan.\n• Kesalahan Andi: Ia terjebak dalam perangkap teknis (over-relying on technical skills) sehingga gagal mendengarkan, memotivasi, dan membangun kerja sama tim.\n\n2. Evaluasi Peran Mintzberg:\n• Peran Leader (Interpersonal): Gagal membimbing dan memberdayakan anggota tim, menciptakan iklim kerja yang cemas akibat kontrol berlebihan.\n• Peran Resource Allocator (Decisional): Gagal mengalokasikan sumber daya manusia secara proporsional melalui delegasi tugas yang terstruktur.\n\n3. Rencana Aksi POAC:\n• Planning: Buat target mingguan berbasis hasil akhir (deliverables), bukan mendikte cara coding.\n• Organizing: Terapkan pembagian tugas yang jelas sesuai spesialisasi masing-masing insinyur.\n• Leading: Adakan sesi one-on-one mingguan untuk mendengarkan hambatan kerja dan memberi apresiasi.\n• Controlling: Gunakan project dashboard (seperti Jira) untuk memantau kemajuan secara transparan tanpa intervensi mikro harian."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Maxine harus memilih pengisi jabatan supervisor. Sheryl berpengalaman dan terbukti memimpin baik tetapi peringkat tesnya 12; seorang klerk baru berperingkat 1.\n2. Problem Identification: P1: konflik antara aturan seleksi yang berlaku sama untuk semua dan bukti kepemimpinan nyata. P2: tes tertulis mungkin hanya mengukur sebagian dari yang dibutuhkan supervisor. P3: keputusan ada pada satu orang, sehingga risiko pilih kasih atau kaku mekanis.\n3. Analisis Kasus: Bureaucracy memilih dan mempromosikan personel berdasarkan kualifikasi teknis dan menerapkan aturan yang sama untuk semua [hal. 29–30]. Weber ingin mengatasi organisasi yang dikelola secara personal [hal. 28–29]; mengabaikan tes demi orang tertentu berlawanan dengan semangat itu. Namun buku juga mengingatkan bahwa fokus pada things of production bisa mengabaikan humanity of production [hal. 26], dan pada tingkat manajer human skills makin dibutuhkan (Exh. 1.3), sedangkan technical skill hanya di urutan 8 pada perilaku manajer Google (Exh. 1.4) [hal. 12–13].\n4. Jawaban Pertanyaan: Q1: opsi 1 melanggar aturan impersonal, opsi 2 patuh aturan tetapi hanya mengukur kualifikasi teknis [hal. 29]. Q2: supervisor membutuhkan human skills (komunikasi, coaching) selain technical [hal. 13–15]; kepemimpinan yang sudah terbukti pada Sheryl adalah bukti human skills, yang belum tentu tertangkap tes tertulis (hasil analisis). Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3. Maxine tidak mengabaikan hasil tes secara sepihak dan tidak mengangkat peringkat 1 secara mekanis, tetapi mengusulkan kriteria yang memasukkan bukti kepemimpinan, sehingga aturan tetap berlaku sama untuk semua. Selama proses berjalan, Sheryl tetap pada penugasan sementaranya yang sudah sah."
   },
   {
-    "type": "analysis",
-    "scope": "TM 2: PESTEL & Tipologi Budaya Organisasi Daft",
+    "type": "case",
+    "scope": "TM 2: Boundary Spanning, Business Intelligence, dan Cultural Leadership",
     "difficulty": "Komprehensif",
     "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 2: Penyelarasan Budaya Organisasi BCA Menghadapi Disrupsi Bank Digital",
-    "context": "Bank Central Asia (BCA) menghadapi guncangan disrupsi dari bank digital dan aplikasi fintech. Di satu sisi, industri perbankan menuntut kepatuhan regulasi ketat (Prudential Banking) dari OJK dan Bank Indonesia yang selama ini membentuk budaya keteraturan dan kepatuhan (Consistency Culture). Di sisi lain, preferensi nasabah generasi baru menuntut inovasi fitur aplikasi instan, yang menuntut fleksibilitas budaya adaptif (Adaptability Culture).",
+    "question": "Studi Kasus 2 (Ethical Dilemma \"Boundary Spanning Predicament\", Ch. 2 hal. 81): Dokumen Rahasia Pesaing dari Atasan",
+    "context": "Miquel Vasquez, product manager baru di sebuah start-up bioteknologi, menerima dari atasannya setumpuk dokumen strategis rahasia milik pesaing terdekat. Atasannya semula mengaku mengunduhnya dari bagian privat intranet pesaing, lalu belakangan hanya menyebut mendapat \"electronic access\" lewat seorang kolega. Miquel tidak menemukan kebijakan perusahaan yang memberi panduan.",
     "data": [
-      "Karakteristik Industri: Regulasi moneter ketat, ancaman serangan siber, persaingan fintech.",
-      "Budaya Eksisting: Disiplin proses, hierarki berlapis, mitigasi risiko tinggi (Consistency Culture).",
-      "Tuntutan Baru: Kecepatan rilis produk, eksperimen berbasis data, kegesitan (Agile development)."
+      "Opsi (1): pakai dokumennya, tetapi minta atasan tidak memberi informasi rahasia lagi.",
+      "Opsi (2): konfrontasi atasan secara privat soal cara memperoleh dokumen dan artinya bagi budaya perusahaan.",
+      "Opsi (3): konsultasi ke penasihat hukum dan asosiasi profesional intelijen kompetitif, lalu menemui atasan.",
+      "Kerangka acuan: boundary spanning dan empat sumber business intelligence [hal. 64–65]; cultural leadership [hal. 77]; tiga domain tindakan dan dilema etis [hal. 119, 122]."
     ],
     "instructions": [
-      "Petakan faktor Lingkungan Umum (PESTEL) dan Lingkungan Tugas yang paling mengancam model bisnis perbankan konvensional.",
-      "Berdasarkan Tipologi Budaya Daft, evaluasi konflik antara Consistency Culture dan Adaptability Culture di BCA.",
-      "Rancang strategi kepemimpinan untuk menyelaraskan budaya kepatuhan dan budaya inovasi tanpa melanggar regulasi perbankan."
+      "Susun Case Summary dan Problem Identification.",
+      "Klasifikasikan cara atasan memperoleh dokumen memakai empat sumber business intelligence, lalu nilai apakah termasuk pemindaian lingkungan yang wajar.",
+      "Jawab: (Q1) apa yang dikomunikasikan tindakan atasan tentang nilai perusahaan menurut konsep cultural leadership? (Q2) mengapa hukum saja tidak cukup memutuskan kasus ini? (Q3) opsi mana yang Anda pilih?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Tabel Pemetaan PESTEL vs Task Environment",
-      "Analisis Tipologi Budaya Daft",
-      "Solusi Manajemen Budaya Hibrida"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Kelengkapan pemetaan faktor lingkungan eksternal (30%)",
-      "Ketepatan analisis Tipologi Budaya Daft (35%)",
-      "Realisme solusi integrasi budaya kehati-hatian vs inovasi (35%)"
+      "Ketepatan memakai business intelligence dan cultural leadership dengan [hal. X] (40%)",
+      "Ketajaman membedakan hukum, etika, dan pilihan bebas (30%)",
+      "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "1. Pemetaan Lingkungan:\n• Lingkungan Umum (PESTEL): Faktor Teknologi (Artificial Intelligence, Open API), Faktor Hukum/Regulasi (UU Perlindungan Data Pribadi), Faktor Ekonomi (fluktuasi suku bunga BI-Rate).\n• Lingkungan Tugas: Pesaing (Bank Digital baru seperti Jago, SeaBank), Pelanggan (Gen Z yang mengutamakan UI/UX seamless), Regulator (OJK & BI).\n\n2. Tipologi Budaya Daft:\n• Consistency Culture menekankan fokus internal dan stabilitas. Sangat unggul untuk menjaga keandalan transaksi core-banking dan kepatuhan anti-fraud.\n• Namun, ketergantungan mutlak pada Consistency Culture membuat birokrasi persetujuan produk baru lambat dan enggan mengambil risiko inovasi (risk-averse).\n• Dibutuhkan suntikan Adaptability Culture yang berorientasi eksternal dan tangkas merespons kebutuhan pasar digital.\n\n3. Strategi Budaya Hibrida (Ambidextrous Culture):\n• Terapkan pendekatan organisasi ambidextrous: Bentuk unit inovasi digital otonom (misal BCA Digital / Lab Inovasi) yang beroperasi dengan budaya Adaptability (kerja tim lintas fungsi, agile sprint mingguan).\n• Sementara operasional transaksi utama (core banking) tetap dijaga ketat oleh Consistency Culture dengan tata kelola risiko nol-toleransi (zero-defect)."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Miquel menerima dokumen strategis rahasia pesaing dari atasannya. Cara atasan memperolehnya dijelaskan tidak konsisten, dan tidak ada kebijakan perusahaan yang jelas.\n2. Problem Identification: P1: asal dokumen dan keabsahannya belum jelas. P2: memakai dokumen berarti Miquel ikut menanggung akibatnya. P3: tidak ada panduan perusahaan, sehingga nilai ditentukan oleh contoh atasan.\n3. Analisis Kasus: Business intelligence memindai lingkungan dari empat sumber: personal internal, personal external, organizational internal, dan organizational external [hal. 65]; boundary spanning juga mencakup upaya memengaruhi lingkungan [hal. 66]. Mengunduh dokumen dari bagian privat intranet pesaing sulit disebut pemindaian dari sumber terbuka (hasil analisis). Cultural leader memperhatikan aktivitas sehari-hari agar orang, prosedur, dan imbalan cocok dengan nilai, dan pernyataan nilai tanpa perilaku manajemen tidak bermakna [hal. 77]. Buku sendiri menyebut hukum tentang pengumpulan informasi pesaing tidak tegas dan pendapat tentang etikanya terbelah [hal. 122], dan domain etika ada di antara hukum dan pilihan bebas [hal. 119].\n4. Jawaban Pertanyaan: Q1: tindakan atasan mengajarkan bahwa hasil boleh dikejar dengan cara apa pun; ini mengarah ke kuadran A pada Exhibit 2.7 (kinerja dikejar, nilai budaya diabaikan) [hal. 75–77]. Q2: karena hukum tidak tegas, domain etika (social standard) ikut menentukan [hal. 119, 122]. Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3. Miquel tidak memakai dokumen itu sebelum mendapat nasihat hukum, lalu menemui atasan dengan dasar yang jelas. Opsi 1 membuatnya ikut menikmati hasilnya; opsi 2 tanpa nasihat hukum hanya berupa konfrontasi tanpa dasar."
   },
   {
-    "type": "framework",
-    "scope": "TM 3: Budaya Global Hofstede & Tanggung Jawab Sosial Carroll",
+    "type": "case",
+    "scope": "TM 3: Global Outsourcing, Legal-Political, dan Keputusan Etis Lintas Negara",
     "difficulty": "Komprehensif",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 3: Analisis Lintas Budaya Ekspansi Indofood ke Nigeria & Piramida CSR",
-    "context": "PT Indofood Sukses Makmur berhasil mendominasi pasar mi instan di Nigeria melalui merek Indomie. Keberhasilan ini tidak diraih dengan mudah, karena manajer ekspatriat Indonesia harus beradaptasi dengan dinamika budaya lokal Nigeria yang multietnis serta tingginya ekspektasi masyarakat sekitar pabrik terkait pengentasan kemiskinan dan penyediaan air bersih.",
+    "estimatedTime": "30–40 menit",
+    "question": "Studi Kasus 3 (Ethical Dilemma \"AH Biotech\", Ch. 3 hal. 112–113): Uji Klinis Obat Baru di Negara dengan Biaya Lebih Rendah",
+    "context": "Dr. Abraham Hassan, CEO perusahaan rintisan bioteknologi di New Jersey, harus memutuskan lokasi uji klinis skala besar untuk obat baru serangan panik. Kepala R&D mengusulkan Albania: lebih cepat, lebih mudah, dan menurut kasus menghemat setidaknya 25%, karena hambatan hukum dan politik sedikit dan dokter setempat dibayar lebih baik sebagai peneliti. Namun setelah uji selesai, obat itu tidak akan dipasarkan di Albania, sehingga pengobatan peserta harus dihentikan.",
     "data": [
-      "Subjek: Ekspansi global PT Indofood di Afrika Barat (Nigeria).",
-      "Dimensi Hofstede: Karakteristik Power Distance dan Kolektivisme lokal.",
-      "Isu Komunitas: Harapan pembangunan infrastruktur dasar, pembukaan lapangan kerja lokal, dan pelestarian lingkungan."
+      "Opsi (1): uji di Albania.",
+      "Opsi (2): uji di Amerika Serikat, walau lebih mahal dan lama.",
+      "Opsi (3): uji di Albania dan, bila obat disetujui, memakai sebagian laba untuk program pengobatan lanjutan bagi warga Albania.",
+      "Kerangka acuan: global outsourcing [hal. 97–98]; ethnocentrism [hal. 102]; lima pendekatan etika [hal. 124–126]; compensatory justice [hal. 125]."
     ],
     "instructions": [
-      "Bandingkan 2 dimensi budaya Hofstede antara Indonesia dan Nigeria, serta implikasinya bagi gaya kepemimpinan manajer pabrik.",
-      "Terapkan 4 tingkatan Piramida Tanggung Jawab Sosial Archie Carroll (Ekonomi, Hukum, Etika, Filantropi) pada operasional Indofood di Nigeria.",
-      "Berikan rekomendasi pendekatan etika manajerial yang harus dipegang teguh saat menghadapi tuntutan pungutan liar dari oknum setempat."
+      "Susun Case Summary dan Problem Identification.",
+      "Klasifikasikan usulan Albania dalam Exhibit 3.3 dan jelaskan tujuannya menurut buku.",
+      "Jawab: (Q1) mengapa usulan ini termasuk global outsourcing dan apa tujuan strategi itu? (Q2) bagaimana penilaian pendekatan utilitarian, moral-rights, dan justice atas tiap opsi? (Q3) opsi mana yang Anda pilih?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Analisis Komparatif Hofstede",
-      "Matriks 4 Tingkat CSR Carroll",
-      "Kebijakan Etika Bisnis Anti-Suap"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Akurasi penerapan dimensi Hofstede (35%)",
-      "Penerapan komprehensif piramida Carroll (35%)",
-      "Ketegasan solusi etika hukum/prinsipil (30%)"
+      "Ketepatan klasifikasi strategi dan pendekatan etika dengan [hal. X] (40%)",
+      "Kelogisan penilaian tiap opsi (30%)",
+      "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "1. Analisis Hofstede:\n• Baik Indonesia maupun Nigeria memiliki skor Power Distance yang relatif tinggi (menghormati status hierarki dan pemimpin formal) serta Kolektivisme yang kuat (loyalitas kelompok/komunitas sangat diutamakan).\n• Implikasi: Manajer ekspatriat harus menjalin hubungan personal yang erat dengan kepala suku/tokoh masyarakat lokal (relationship-building), memimpin dengan wibawa kebapakan yang mengayomi, dan memperhatikan kesejahteraan keluarga karyawan.\n\n2. Piramida CSR Carroll:\n• Tanggung Jawab Ekonomi: Membangun rantai pasok lokal gandum/minyak sawit, mempekerjakan ribuan tenaga kerja lokal, dan menjaga harga mi instan terjangkau.\n• Tanggung Jawab Hukum: Mematuhi regulasi ketenagakerjaan dan standar keamanan pangan NAFDAC Nigeria secara mutlak.\n• Tanggung Jawab Etis: Menyediakan upah layak di atas UMR regional dan memastikan kondisi pabrik sehat tanpa eksploitasi.\n• Tanggung Jawab Filantropis: Menyediakan sumur air bersih komunal, beasiswa pendidikan bagi anak warga sekitar, dan bantuan pangan saat bencana.\n\n3. Pendekatan Etika Anti-Suap:\n• Menerapkan Pendekatan Hukum & Hak Moral (Justice & Moral-Rights): Menolak pungutan liar dengan mengalihkan kontribusi ke dalam program CSR kemasyarakatan formal yang diawasi bersama perwakilan warga dan aparat resmi."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: CEO memilih antara menguji obat di Albania yang lebih murah, cepat, dan mudah atau di AS yang lebih mahal. Obat tidak akan dipasarkan di Albania, sehingga pengobatan peserta berhenti setelah uji.\n2. Problem Identification: P1: penghematan biaya vs kewajiban terhadap peserta uji. P2: pengobatan peserta berhenti begitu uji selesai. P3: hambatan hukum yang lebih ringan bisa menjadi alasan memilih lokasi, bukan hanya alasan efisiensi.\n3. Analisis Kasus: Memindahkan pekerjaan ke negara berbiaya lebih rendah adalah global outsourcing, yang bertujuan memperoleh sumber daya lebih murah, bukan mengembangkan pasar [hal. 97–98]. Dengan pendekatan utilitarian, manfaat bagi banyak orang (obat baru, biaya lebih rendah) ditimbang dengan efek pada semua pihak [hal. 124]. Dengan moral-rights, hak persetujuan bebas (free consent) peserta harus dijaga [hal. 124–125]. Compensatory justice menuntut pihak yang bertanggung jawab memberi kompensasi atas kerugian [hal. 125]. Tes practical: rela keputusan itu diberitakan dan dijelaskan kepada keluarga [hal. 126]. Pertimbangkan pula kecenderungan menilai lokasi dari sudut pandang sendiri (ethnocentrism) [hal. 102].\n4. Jawaban Pertanyaan: Q1: pekerjaan uji dipindahkan ke negara dengan hambatan lebih rendah dan biaya lebih murah, sesuai tujuan mencari sumber daya lebih murah [hal. 97–98]. Q2: utilitarian condong ke opsi 1 atau 3, moral-rights menuntut informed consent penuh, justice condong ke opsi 3 karena ada kompensasi (hasil analisis). Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3, dengan syarat program pengobatan lanjutan disepakati sebelum uji dimulai dan dikomunikasikan dalam persetujuan peserta, bukan baru dijanjikan bila obat lolos. Bila syarat itu tidak bisa dipenuhi, pilih opsi 2."
   },
   {
-    "type": "decision",
-    "scope": "TM 4: Perencanaan Strategis, Sasaran SMART & MBO",
+    "type": "case",
+    "scope": "TM 4: Legal vs Etis, Justice, Practical Approach, dan Whistle-Blowing",
     "difficulty": "Menengah",
     "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 4: Restrukturisasi Sistem Penetapan Sasaran Rumah Sakit Melalui MBO",
-    "context": "Rumah Sakit Citra Medika mengalami penurunan kepuasan pasien dari 85% menjadi 62%. Evaluasi menemukan bahwa sasaran yang ditetapkan direksi terlalu kabur ('Tingkatkan pelayanan pasien sebaik mungkin') dan tidak terintegrasi antar unit kerja (dokter, perawat, apotek, dan administrasi kasir bekerja tanpa koordinasi target terukur). Direktur Utama ingin menerapkan sistem Management by Objectives (MBO).",
+    "question": "Studi Kasus 4 (Ethical Dilemma \"Should We Go Beyond the Law?\", Ch. 4 hal. 145–146): Limbah ke Sungai dalam Batas Hukum",
+    "context": "Nathan Rosillo, pengembang produk utama di Chem-Tech Corporation, dan timnya mengembangkan pelumas baru yang dianggap titik balik perusahaan. Produk itu bisa dibuat jauh lebih murah karena regulasi lingkungan dilonggarkan, sehingga perusahaan kini boleh membuang limbah langsung ke sebuah sungai. Nathan menyampaikan keberatan; manajer pabrik menjawab perusahaan memenuhi standar pemerintah dan melindungi air adalah urusan pemerintah. Atasannya sudah menuduhnya bukan pemain tim.",
     "data": [
-      "Sasaran Lama: 'Meningkatkan kualitas layanan rawat jalan secepatnya' (Tidak SMART).",
-      "Keluhan Pasien: Waktu tunggu obat apotek rata-rata 90 menit, antrean pendaftaran kasir 45 menit, dokter sering terlambat.",
-      "Target Manajemen Baru: Waktu tunggu obat maksimal 20 menit, kepuasan pasien kembali di atas 90% dalam 6 bulan."
+      "Opsi (1): bicara dengan wakil presiden manufaktur dan usulkan pengurangan polusi sukarela sebagai alat pemasaran.",
+      "Opsi (2): diam dan bekerja saja, karena perusahaan tidak melanggar hukum dan banyak orang bisa kehilangan pekerjaan.",
+      "Opsi (3): hubungi kelompok advokasi lingkungan agar memprotes perusahaan.",
+      "Kerangka acuan: tiga domain tindakan [hal. 119]; justice dan practical approach [hal. 125–126]; komunitas sebagai stakeholder [hal. 132–133]; whistle-blowing [hal. 141]."
     ],
     "instructions": [
-      "Ubah sasaran lama yang tidak efektif menjadi minimal 2 rumusan sasaran kerja yang memenuhi seluruh kriteria SMART.",
-      "Uraikan 4 langkah proses implementasi Management by Objectives (MBO) yang harus dijalankan Kepala Instalasi Farmasi bersama stafnya.",
-      "Jelaskan dua potensi kelemahan MBO yang harus diantisipasi manajemen rumah sakit."
+      "Susun Case Summary dan Problem Identification.",
+      "Tempatkan tindakan perusahaan pada Exhibit 4.1 dan nilai dengan justice dan practical approach serta perspektif stakeholder.",
+      "Jawab: (Q1) apakah \"tidak melanggar hukum\" sama dengan etis? (Q2) siapa stakeholder yang terdampak dan apa kepentingannya? (Q3) opsi mana yang Anda pilih, dan kapan opsi 3 baru layak?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Formulasi Sasaran SMART",
-      "Runtutan 4 Langkah MBO",
-      "Mitigasi Kelemahan MBO"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Ketepatan formulasi SMART (35%)",
-      "Kejelasan runtutan langkah MBO Peter Drucker (35%)",
-      "Antisipasi kelemahan MBO (30%)"
+      "Ketepatan memakai Exh. 4.1, pendekatan etika, dan stakeholder dengan [hal. X] (40%)",
+      "Kelogisan urutan langkah internal sebelum eksternal (30%)",
+      "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "1. Formulasi Sasaran SMART:\n• Sasaran 1 (Unit Farmasi): 'Menurunkan rata-rata waktu penyiapan resep obat pasien rawat jalan dari 90 menit menjadi maksimal 20 menit per resep dalam jangka waktu 3 bulan ke depan.'\n• Sasaran 2 (Kepuasan Pelanggan): 'Meningkatkan skor indeks kepuasan pasien poliklinik rawat jalan dari 62% menjadi minimal 90% berdasarkan survei digital berkala pada akhir kuartal II 2026.'\n\n2. Empat Langkah Proses MBO:\n• Langkah 1 (Menetapkan Sasaran Bersama): Kepala Farmasi berdialog dengan apoteker dan asisten apoteker menyepakati target waktu 20 menit per obat.\n• Langkah 2 (Menyusun Rencana Aksi): Menata ulang tata letak rak obat fast-moving, menerapkan sistem antrean digital, dan membagi shift jam sibuk.\n• Langkah 3 (Memantau Kemajuan): Mengadakan evaluasi mingguan untuk melihat log waktu tunggu sistem dan mengidentifikasi resep yang tertunda.\n• Langkah 4 (Evaluasi Kinerja Akhir & Apresiasi): Mengevaluasi pencapaian akhir 3 bulan, memberikan bonus kinerja tim jika target tercapai, dan merumuskan target baru.\n\n3. Antisipasi Kelemahan MBO:\n• Terlalu fokus pada metrik kuantitatif (waktu cepat) sehingga mengorbankan akurasi dispensing obat (bahaya salah obat). Mitigasi: Tambahkan standar kontrol kualitas zero-defect pada verifikasi ganda etiket obat.\n• Beban administrasi dokumen yang berlebihan jika pemantauan terlalu birokratis."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Chem-Tech dapat membuang limbah langsung ke sungai dengan sah dan menghemat biaya. Nathan keberatan, manajer pabrik menyatakan perusahaan patuh hukum, dan Nathan dicap bukan pemain tim.\n2. Problem Identification: P1: tindakan legal tetapi berpotensi merugikan komunitas. P2: konflik antara lapangan kerja dan kesehatan lingkungan. P3: risiko pribadi bagi Nathan bila bersuara.\n3. Analisis Kasus: Exhibit 4.1: hukum (codified law) hanya satu domain; domain etika punya standar sosial yang tidak diatur hukum khusus, jadi tidak melanggar hukum belum tentu etis [hal. 119]. Justice approach paling dekat dengan hukum, sedangkan practical approach mengajukan tes: diterima komunitas profesi, rela diberitakan, nyaman dijelaskan kepada keluarga dan teman [hal. 125–126]. Komunitas adalah stakeholder utama dengan kepentingan pada kepatuhan hukum, dampak sosial positif, dan perlindungan lingkungan [hal. 132–133]. Dilema limbah vs lapangan kerja adalah konflik antara kebutuhan bagian dan keseluruhan [hal. 123–124]. Triple bottom line menuntut People dan Planet ikut diukur [hal. 135–136]. Whistle-blower sering melapor ke pihak luar, tetapi perusahaan yang sehat menyediakan jalur internal [hal. 141].\n4. Jawaban Pertanyaan: Q1: tidak; ada domain etika di luar hukum [hal. 119]. Q2: komunitas sekitar sungai (kesehatan, lingkungan), karyawan (pekerjaan), pemegang saham (efisiensi), pelanggan [hal. 132–133]. Q3: opsi 1; opsi 3 baru layak bila jalur internal sudah ditempuh dan ditolak (hasil analisis).\n5. Rekomendasi: Pilih opsi 1: bicara dengan wakil presiden manufaktur dan ajukan pengurangan polusi sukarela sebagai nilai pemasaran, yang menjaga pekerjaan sekaligus melindungi komunitas. Opsi 2 gagal pada tes practical (sulit rela diberitakan); opsi 3 dipertimbangkan hanya setelah jalur internal buntu."
   },
   {
-    "type": "framework",
-    "scope": "TM 5: Manajemen Strategis (SWOT, Porter Generic, Matriks BCG)",
+    "type": "case",
+    "scope": "TM 5: Goal Setting, MBO, dan Keterbatasan Perencanaan",
     "difficulty": "Komprehensif",
     "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 5: Analisis Posisi Portofolio Bisnis & Strategi Bersaing PT Kalbe Farma Tbk",
-    "context": "PT Kalbe Farma Tbk memiliki berbagai Strategic Business Units (SBU): (1) Obat Resep Generik & Bioteknologi, (2) Produk Kesehatan Konsumen (Promag, Woods), (3) Produk Nutrisi (Morinaga, Diabetasol), dan (4) Divisi Distribusi & Logistik. Persaingan industri farmasi semakin ketat dengan masuknya produk impor murah dan perubahan skema BPJS Kesehatan.",
+    "question": "Studi Kasus 5 (Ethical Dilemma \"Inspire Learning Corporation\", Ch. 5 hal. 188–189): Target Penjualan dan Sumbangan Sebesar Selisihnya",
+    "context": "Marge Brygay, sales rep sebuah perusahaan software pendidikan yang menargetkan menjadi nomor satu dalam lima tahun, punya target penjualan satu juta dolar. Beberapa hari sebelum akhir tahun, penjualannya kurang $1.000 karena satu penjualan besar batal akibat pemotongan anggaran sebuah sistem sekolah. Ia terpikir menyumbang $1.000 ke sebuah SMA pusat kota yang paling membutuhkan software itu agar sekolah bisa membelinya; tercapainya target akan memberinya bonus $10.000 untuk biaya kuliah anaknya.",
     "data": [
-      "SBU Nutrisi Diabetes: Pertumbuhan pasar tinggi (14% per tahun), Kalbe memimpin pangsa pasar dominan 65%.",
-      "SBU Obat Bebas Tradisional (Promag): Pertumbuhan pasar stabil rendah (3%), pangsa pasar Kalbe sangat dominan 75%.",
-      "SBU Terapi Onkologi Baru: Pertumbuhan industri obat kanker sangat tinggi (20%), namun pangsa pasar Kalbe masih kecil (8%) karena dominasi pemain multinasional."
+      "Opsi (1): menyumbang dan menganggap bonus sebagai imbal hasil, karena tidak ada yang ilegal.",
+      "Opsi (2): menerima bahwa target tidak tercapai dan bekerja lebih cerdas tahun depan.",
+      "Opsi (3): tidak menyumbang, tetapi mencari cara lain membantu sekolah itu mengumpulkan dana.",
+      "Kerangka acuan: tingkatan goal (Exh. 5.1) dan goal efektif yang dikaitkan reward (Exh. 5.4) [hal. 151–154, 160–161]; MBO dan keterbatasannya [hal. 161–163]; tekanan berlebihan [hal. 165]; legal vs etis [hal. 119]."
     ],
     "instructions": [
-      "Petakan ketiga SBU tersebut ke dalam kuadran Matriks Portofolio BCG (Stars, Cash Cows, Question Marks, Dogs) beserta alasan analitisnya.",
-      "Tentukan strategi pemanfaatan arus kas antar unit bisnis berdasarkan matriks BCG tersebut.",
-      "Pilihlah salah satu Strategi Generik Porter (Cost Leadership atau Differentiation) yang paling cocok diterapkan untuk divisi Terapi Onkologi Baru dan berikan alasannya."
+      "Susun Case Summary dan Problem Identification.",
+      "Tempatkan target Marge dalam rantai goal dari strategic sampai operasional dan nilai karakteristik goal efektif serta hubungannya dengan reward.",
+      "Jawab: (Q1) bagaimana target individu ini terkait strategic goal perusahaan? (Q2) apa keterbatasan MBO dan perencanaan yang tampak pada kasus? (Q3) opsi mana yang Anda pilih?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Tabel Pemetaan Kuadran BCG",
-      "Rekomendasi Aliran Arus Kas Korporat",
-      "Justifikasi Strategi Generik Porter"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Akurasi penempatan kuadran BCG ketiga unit bisnis (35%)",
-      "Kelogisan strategi pergeseran kas (Cash Cow ke Question Mark) (35%)",
-      "Ketajaman justifikasi Strategi Generik Porter (30%)"
+      "Ketepatan memakai Exh. 5.1, 5.4, dan keterbatasan MBO dengan [hal. X] (40%)",
+      "Kelogisan hubungan target, reward, dan cara mencapainya (30%)",
+      "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "1. Pemetaan Matriks BCG:\n• SBU Obat Bebas (Promag) = CASH COW. Pertumbuhan pasar rendah (3%), tetapi pangsa pasar dominan (75%). Menghasilkan laba stabil dan arus kas surplus dengan kebutuhan investasi modal minimal.\n• SBU Nutrisi Diabetes (Diabetasol) = STAR. Pertumbuhan pasar tinggi (14%) dan pangsa pasar sangat tinggi (65%). Pemimpin pasar yang menghasilkan laba besar namun memerlukan investasi berkelanjutan untuk mempertahankan dominasi.\n• SBU Terapi Onkologi Baru = QUESTION MARK. Pertumbuhan industri sangat pesat (20%), namun pangsa pasar Kalbe masih kecil (8%). Berpotensi besar menjadi Star jika disuntik investasi riset masif, atau menjadi Dog jika gagal bersaing.\n\n2. Strategi Arus Kas Korporat:\n• Lakukan pemanenan kas dari Cash Cow (Promag) untuk mendanai riset klinis dan ekspansi pemasaran SBU Question Mark (Terapi Onkologi) agar berhasil meraih pangsa pasar signifikan dan bermutasi menjadi Star.\n• Pertahankan posisi SBU Nutrisi Diabetes (Star) dengan mendanai ekspansi dari labanya sendiri agar siap menjadi Cash Cow masa depan saat industri memasuki fase matang.\n\n3. Strategi Generik Porter untuk Terapi Onkologi:\n• Strategi yang Tepat: DIFERENSIASI (Differentiation).\n• Alasan: Produk obat onkologi (kanker) menuntut efikasi klinis superior, sertifikasi bioteknologi tinggi, dan reputasi medis yang terpercaya. Dokter dan pasien mengutamakan tingkat kesembuhan dan minim efek samping daripada harga murah. Kalbe harus berinvestasi pada formula biologis spesifik ras Asia yang tidak dimiliki kompetitor global."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Marge kurang $1.000 dari target dan bisa menutup selisih itu dengan menyumbang ke sekolah yang kemudian membeli software, sehingga ia meraih bonus $10.000.\n2. Problem Identification: P1: target ditutup lewat cara yang mengubah arti pencapaian. P2: reward besar terikat pada satu angka. P3: pembatalan penjualan berada di luar kendalinya.\n3. Analisis Kasus: Target Marge adalah operational goal yang diturunkan dari strategic goal perusahaan (Exh. 5.1) [hal. 151–154]. Goal efektif dikaitkan dengan reward [hal. 161], tetapi penekanan berlebihan pada memenuhi target dapat mengaburkan cara mencapainya sehingga orang memotong jalan atau berperilaku tidak etis demi target [hal. 163]; buku menyebut tekanan berlebihan sebagai keterbatasan perencanaan [hal. 165]. MBM (management by means) menekankan cara sama pentingnya dengan hasil [hal. 163]. Tidak ilegal belum berarti etis [hal. 119]; tes practical: rela diberitakan dan nyaman dijelaskan kepada keluarga [hal. 126].\n4. Jawaban Pertanyaan: Q1: target individu adalah operational goal yang mendukung tactical dan strategic goals (Exh. 5.1) [hal. 152–154]. Q2: tekanan berlebihan dan penekanan pada hasil di atas cara [hal. 163, 165]. Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3: tidak menyumbang untuk menutup selisih, tetapi membantu sekolah itu mencari dana lewat jalur lain, dan menerima bahwa bonus bergantung pada hasil penjualan yang sesungguhnya (opsi 2 sebagai konsekuensinya). Menyumbang agar sekolah membeli produknya untuk memenuhi target sendiri gagal pada tes practical."
   },
   {
-    "type": "decision",
-    "scope": "TM 6: Pengambilan Keputusan Manajerial & Bias Kognitif",
+    "type": "case",
+    "scope": "TM 6: Keputusan Nonprogrammed, Enam Langkah, dan Gaya Keputusan",
     "difficulty": "Menengah",
     "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 6: Analisis Bias Kognitif dan Model Pengambilan Keputusan Ekspansi Gerai Ritel",
-    "context": "Direktur Ritel PT Sumber Pangan memaksakan keputusan membuka 50 gerai baru di wilayah Kalimantan. Meskipun tim analis kelayakan bisnis telah memaparkan data bahwa daya beli masyarakat setempat sedang menurun akibat anjloknya harga komoditas tambang, sang Direktur mengabaikan laporan tersebut. Ia berargumen: 'Saya sudah 25 tahun di bisnis ini, intuisi saya tidak pernah salah! Selain itu, kita sudah membayar uang sewa lahan Rp 15 miliar, pantang bagi kita untuk mundur!'",
+    "question": "Studi Kasus 6 (Ethical Dilemma \"The No-Show Consultant\", Ch. 6 hal. 223): Konsultan Andalan yang Tidak Hadir dan Klien yang Menuntut",
+    "context": "Jeffrey Moses, manajer baru di sebuah perusahaan konsultan software, menghadapi masalah dengan salah satu konsultan terbaiknya, Andrew Carpenter, yang bekerja dari rumah. Carpenter tidak datang ke kantor pusat klien besar di New York saat sistem baru akan dipakai, beberapa kali absen di Senin pagi, dan pergi tanpa pamit dari kantor klien. Klien ingin Carpenter tetap menyelesaikan proyek, tetapi menuntut perusahaan menanggung separuh fee konsultan $250.000. Carpenter mengaku sedang mengalami masalah keluarga dan minum berlebihan, dan berjanji memperbaiki diri; Moses sudah mengatakan semuanya dimaafkan bila proyek selesai. Ketua tim ingin memberinya kesempatan; wakil presiden operasi menyarankan pemecatan.",
     "data": [
-      "Kondisi Keputusan: Keputusan strategis berbiaya tinggi di bawah kondisi ketidakpastian ekonomi.",
-      "Sikap Direktur: Menolak data riset analis, mengandalkan intuisi personal, dan menolak membatalkan sewa lahan Rp 15 M.",
-      "Model Teori: Model Administratif Herbert Simon dan Bias Kognitif Keputusan."
+      "Opsi (1): memberi pemberitahuan sebulan lalu memberhentikannya.",
+      "Opsi (2): membiarkan karena ini kesalahan besar pertamanya.",
+      "Opsi (3): menunjukkan kepedulian tetapi mewajibkan cuti berbayar singkat dan konseling, dengan syarat program perawatan atau keluar bila masalah berlanjut.",
+      "Kerangka acuan: nonprogrammed decision dan uncertainty [hal. 195–197]; enam langkah [hal. 205–209]; gaya behavioral vs directive [hal. 212–213]; lima pendekatan etika [hal. 124–126]. Kasus ditulis sebatas fakta; tidak ada penilaian medis."
     ],
     "instructions": [
-      "Identifikasi minimal dua Bias Kognitif yang menjangkiti Direktur Ritel tersebut dan jelaskan buktinya dari kutipan kasus.",
-      "Jelaskan bagaimana konsep Bounded Rationality dan Satisficing (Herbert Simon) dapat membantu dewan direksi memahami keterbatasan pertimbangan sang Direktur.",
-      "Rekomendasikan prosedur pengambilan keputusan yang lebih objektif untuk mencegah keputusan fatal tersebut (misal: Devil's Advocate, Delphi Method)."
+      "Susun Case Summary dan Problem Identification.",
+      "Klasifikasikan keputusan (programmed atau nonprogrammed) dan kondisinya, lalu petakan ke enam langkah.",
+      "Jawab: (Q1) mengapa ini nonprogrammed decision dalam kondisi uncertainty? (Q2) apa alternatif tambahan yang bisa dikembangkan di langkah 3? (Q3) opsi mana yang Anda pilih, dan gaya keputusan apa yang tercermin?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Identifikasi & Bukti Bias Kognitif",
-      "Penerapan Konsep Herbert Simon",
-      "Rekomendasi Prosedur Pencegahan Bias"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Ketepatan identifikasi bias (Overconfidence & Sunk Cost Fallacy) (35%)",
-      "Ketepatan penerapan teori Simon (35%)",
-      "Kualitas solusi prosedural mitigasi bias keputusan (30%)"
+      "Ketepatan klasifikasi keputusan, kondisi, dan enam langkah dengan [hal. X] (40%)",
+      "Kelogisan penilaian alternatif dan pendekatan etika (30%)",
+      "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "1. Identifikasi Bias Kognitif:\n• Sunk Cost Fallacy: Direktur bersikeras melanjutkan proyek ekspansi karena merasa telah mengeluarkan uang sewa lahan Rp 15 miliar ('pantang untuk mundur'). Seharusnya uang Rp 15 miliar diperlakukan sebagai biaya hangus masa lalu yang tidak boleh mendikte kelayakan investasi masa depan yang berisiko menelan kerugian operasional jauh lebih besar.\n• Overconfidence Bias: Direktur merasa intuisinya 100% sempurna selama 25 tahun sehingga menutup telinga terhadap data riset obyektif analis.\n\n2. Konsep Bounded Rationality (Herbert Simon):\n• Direktur memiliki rasionalitas yang terbatas (keterbatasan kapasitas kognitif manusia dalam memproses variabel makroekonomi yang kompleks dan dinamis).\n• Sikap Direktur mencerminkan pengambilan keputusan intuitif yang tidak terkontrol, di mana ia melakukan satisficing semu demi membenarkan persepsi ego pribadinya.\n\n3. Prosedur Rekomendasi:\n• Tunjuk tim Devil's Advocate: Berikan mandat resmi kepada tim independen untuk mengkritisi setiap asumsi pendapatan dan memetakan skenario terburuk jika proyek tetap dilanjutkan.\n• Terapkan Stage-Gate Process: Lakukan uji coba pembukaan 3 gerai percontohan terlebih dahulu selama 6 bulan. Jika metrik penjualan per gerai tidak mencapai target kelayakan, kontrak sewa lahan dihentikan tanpa perlu membangun 47 gerai sisanya."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Carpenter beberapa kali tidak hadir dan mengaku bermasalah, klien menuntut perusahaan menanggung separuh fee, dan dua pihak internal berbeda saran (beri kesempatan atau berhentikan). Moses harus memilih.\n2. Problem Identification: P1: keandalan proyek dan hubungan klien. P2: biaya $250.000 yang dituntut klien. P3: kepedulian pada karyawan vs ketegasan disiplin. P4: janji pemaafan yang sudah diucapkan.\n3. Analisis Kasus: Situasi ini unik dan berdampak penting, sehingga nonprogrammed decision [hal. 195]. Informasi tentang masa depan Carpenter tidak lengkap, jadi kondisinya uncertainty [hal. 197]. Enam langkah: recognition (ada problem), diagnosis (penyebab), pengembangan alternatif (membatasi alternatif adalah penyebab utama keputusan gagal; riset Nutt) [hal. 205–207], selection, implementation (butuh buy-in), evaluation [hal. 205–209]. Ketua tim condong ke gaya behavioral, wakil presiden operasi ke directive [hal. 212–213] (hasil analisis). Emosi dan kecenderungan membenarkan janji yang sudah diucapkan adalah bias yang perlu diwaspadai [hal. 214–215].\n4. Jawaban Pertanyaan: Q1: keputusan tidak berulang, berdampak besar, dan hasilnya tidak bisa diprediksi. Q2: misalnya mengganti konsultan pada proyek itu sementara Carpenter menjalani perawatan, atau bernegosiasi soal fee dengan klien (hasil analisis). Q3: opsi 3; pemberhentian langsung mencerminkan gaya directive, sedangkan opsi 3 memadukan kepedulian dengan syarat tertulis.\n5. Rekomendasi: Pilih opsi 3: cuti berbayar singkat, konseling, dan syarat tertulis (ikut program perawatan atau keluar bila masalah berlanjut), sambil menyiapkan pengganti untuk proyek klien dan menegosiasikan tuntutan fee. Opsi 2 tanpa syarat mengabaikan klien; opsi 1 mengabaikan pengembangan alternatif."
   },
   {
-    "type": "analysis",
-    "scope": "TM 7: Struktur & Desain Organisasi (Fungsional, Divisional, Matriks)",
+    "type": "case",
+    "scope": "TM 7: Authority, Responsibility, Accountability, dan Chain of Command",
     "difficulty": "Komprehensif",
     "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 7: Reorganisasi Struktur PT Mega Elektronik Menghadapi Ledakan Produk Baru",
-    "context": "PT Mega Elektronik berkembang pesat dari produsen radio sederhana menjadi konglomerasi yang memproduksi TV cerdas, pendingin ruangan (AC), mesin cuci pintar, dan panel surya perumahan. Struktur organisasi yang digunakan saat ini masih berupa Struktur Fungsional Tradisional (Direktur Pemasaran, Direktur Produksi, Direktur Keuangan, Direktur R&D). Akibatnya, Direktur Pemasaran kewalahan karena harus menangani strategi produk yang sangat berbeda karakteristiknya, konflik perebutan prioritas lini pabrik sering terjadi, dan peluncuran produk baru terlambat hingga 8 bulan dibandingkan pesaing.",
+    "question": "Studi Kasus 7 (Ethical Dilemma \"LionCub Toys\", Ch. 7 hal. 263): Pedoman Keselamatan Baru dan Atasan yang Diam",
+    "context": "Tom Harold, asisten quality control officer di LionCub Toys, baru bekerja setelah enam bulan menganggur dan ingin memberi kesan baik kepada atasannya, Frank Taandil. Salah satu tugasnya memastikan lini produk baru memenuhi pedoman keselamatan federal. Harold tahu ada banyak perubahan pedoman yang memengaruhi mainan baru; Taandil juga tahu, tetapi tidak bertindak. Harold tidak yakin atasannya mengharapkan ia menjalankan prosedur baru, dan tanggung jawab akhir ada pada atasannya. Ia menghindari pertanyaan dari lantai pabrik untuk melindungi atasannya, sementara musim Natal makin dekat.",
     "data": [
-      "Struktur Lama: Fungsional Terpusat (Sentralisasi di jajaran direktur fungsional).",
-      "Keragaman Produk: 4 lini produk dengan teknologi, siklus hidup, dan segmen pasar yang sangat heterogen.",
-      "Permasalahan: Silo fungsional, lambatnya koordinasi, kelebihan beban kerja di pucuk pimpinan."
+      "Opsi (1): menyiapkan memo kepada Taandil yang merangkum pedoman baru dan meminta otorisasi pelaksanaan.",
+      "Opsi (2): diam karena Taandil belum mengatakan apa-apa dan ia tidak ingin melampaui kewenangannya.",
+      "Opsi (3): mengirim salinan laporan secara anonim kepada manajer operasi, atasan Taandil.",
+      "Kerangka acuan: authority, responsibility, accountability, delegation [hal. 230–231]; chain of command dan scalar principle [hal. 230]; whistle-blowing [hal. 141]."
     ],
     "instructions": [
-      "Evaluasi mengapa struktur fungsional tidak lagi memadai bagi PT Mega Elektronik berdasarkan konsep ukuran organisasi dan diferensiasi produk.",
-      "Rancang usulan desain Struktur Organisasi Divisional (berdasarkan Lini Produk) dan gambarkan bagan alur komandonya.",
-      "Bandingkan kelebihan dan kekurangan struktur divisional usulan Anda terhadap struktur fungsional lama."
+      "Susun Case Summary dan Problem Identification.",
+      "Petakan posisi Harold dan Taandil dengan authority, responsibility, accountability, dan chain of command.",
+      "Jawab: (Q1) siapa yang memegang accountability atas kepatuhan keselamatan dan apa batas authority Harold? (Q2) apa risiko tiap opsi terhadap chain of command? (Q3) opsi mana yang Anda pilih dan apa langkah eskalasinya?",
+      "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "Evaluasi Kegagalan Struktur Fungsional",
-      "Rancangan Bagan Struktur Divisional Produk",
-      "Tabel Analisis Kelebihan vs Kekurangan Komparatif"
+      "1. Case Summary",
+      "2. Problem Identification",
+      "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
+      "4. Jawaban Pertanyaan",
+      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
-      "Ketajaman diagnosis kelemahan struktur fungsional (35%)",
-      "Kerapian rancangan pembagian divisi berbasis produk (35%)",
-      "Kelengkapan komparasi kelebihan dan kelemahan (30%)"
+      "Ketepatan memakai authority, responsibility, accountability dengan [hal. X] (40%)",
+      "Kelogisan analisis chain of command dan eskalasi (30%)",
+      "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "1. Evaluasi Struktur Fungsional:\n• Struktur fungsional sangat efisien saat organisasi masih berukuran kecil dan hanya memproduksi satu lini produk homogen.\n• Ketika keragaman lini produk meledak (TV, AC, Mesin Cuci, Panel Surya), diferensiasi horizontal antar fungsi menjadi terlalu rumit. Para manajer fungsional kehilangan fokus strategis karena harus membagi perhatian ke 4 pasar yang berbeda. Terjadi 'information overload' di puncak manajemen dan koordinasi lintas fungsi macet total.\n\n2. Usulan Struktur Divisional Berbasis Produk:\n• CEO / Direktur Utama membawahi 4 Divisi Produk Mandiri:\n  1. Divisi Consumer Electronics (TV Cerdas)\n  2. Divisi Home Appliances (AC & Mesin Cuci)\n  3. Divisi Renewable Energy (Panel Surya)\n  4. Kantor Pusat Korporat (Keuangan Terpusat & Legal)\n• Setiap Divisi Produk dipimpin oleh General Manager (Vice President) yang memiliki departemen fungsional sendiri: Pemasaran Divisi, R&D Divisi, Operasi Pabrik Divisi, dan SDM Divisi.\n\n3. Analisis Komparatif:\n• Kelebihan Struktur Divisional: Respons sangat cepat terhadap dinamika pasar masing-masing produk; akuntabilitas laba-rugi per divisi jelas; membebaskan CEO dari urusan operasional harian untuk fokus pada strategi korporasi.\n• Kelemahan: Terjadi duplikasi fungsi (setiap divisi memiliki tim pemasaran dan pabrik sendiri sehingga biaya overhead naik); berkurangnya efisiensi skala ekonomis dibandingkan fungsional tunggal."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Harold tahu pedoman keselamatan berubah dan atasannya juga tahu tetapi belum bertindak. Ia ragu melampaui kewenangannya, sementara musim penjualan Natal mendekat.\n2. Problem Identification: P1: pedoman keselamatan baru belum dijalankan. P2: kejelasan siapa berwenang bertindak. P3: bahaya bagi konsumen bila lini mainan dijual tanpa pengecekan. P4: keinginan Harold menyenangkan atasan.\n3. Analisis Kasus: Authority melekat pada posisi dan mengalir ke bawah hierarki [hal. 231]; responsibility adalah kewajiban menjalankan tugas, accountability adalah kewajiban melaporkan hasil tugas kepada atasan di chain of command, dan delegation memindahkan authority dan responsibility ke bawah [hal. 231]. Menurut scalar principle, setiap orang harus tahu kepada siapa ia melapor sampai ke puncak [hal. 230]. Responsibility Harold adalah memastikan kepatuhan; authority untuk memerintahkan perubahan ada pada atasannya (hasil analisis). Buku mencontohkan kekacauan bila tidak jelas siapa yang berwenang (Deepwater Horizon) [hal. 232] dan whistle-blower sering melapor ke pihak luar bila jalur internal tidak efektif [hal. 141].\n4. Jawaban Pertanyaan: Q1: accountability akhir ada pada Taandil sebagai atasan; Harold memegang responsibility atas tugas pengecekan tetapi authority-nya terbatas pada posisinya [hal. 231]. Q2: opsi 2 membiarkan celah accountability; opsi 3 melompati chain of command tanpa lebih dulu menyampaikan ke atasan langsung [hal. 230]. Q3: opsi 1, dengan eskalasi bertahap bila tidak ada respons.\n5. Rekomendasi: Pilih opsi 1: memo tertulis kepada Taandil yang merangkum pedoman baru dan meminta otorisasi pelaksanaan, sehingga responsibility Harold terpenuhi dan accountability atasan jelas. Bila memo tidak ditanggapi, eskalasi ke manajer operasi secara terbuka lewat chain of command sebelum menimbang laporan anonim."
   }
 ];
 
