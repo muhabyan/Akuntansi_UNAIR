@@ -6,7 +6,7 @@
 import assert from 'node:assert/strict';
 import { CANONICAL_TMS, checkOutline, checkRenderRules, checkRenderedText, loadOutline, loadReadings, loadRenderer } from './mnu108-canonical-lib.mjs';
 
-const SECTION_COUNTS = { 1: 17, 2: 18, 3: 16, 4: 17, 5: 18, 6: 18, 7: 18 };
+const SECTION_COUNTS = { 1: 17, 2: 18, 3: 16, 4: 17, 5: 18, 6: 18, 7: 18, 8: 15 };
 const readings = await loadReadings();
 const outline = await loadOutline();
 const renderer = await loadRenderer();

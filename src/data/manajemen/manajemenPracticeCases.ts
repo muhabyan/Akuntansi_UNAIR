@@ -1,5 +1,5 @@
 // src/data/manajemen/manajemenPracticeCases.ts
-// Studi Kasus Riil Pengantar Manajemen TM08-TM14 (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
+// Studi Kasus Riil Pengantar Manajemen TM09-TM14 (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
 // Berdasarkan Standar Richard L. Daft (Management 13e/14e) & Stephen P. Robbins
 // Kasus TM01 dihapus: TM01 kini memakai kasus SmartStyle Salons dari Daft & Marcic 12e Ch. 1, yang ditulis
 // langsung di modules/tm1.ts.
@@ -9,34 +9,8 @@
 // Kasus TM05 dihapus: TM05 kini memakai kasus dari Daft & Marcic 12e Ch. 5, yang ditulis langsung di modules/tm5.ts.
 // Kasus TM06 dihapus: TM06 kini memakai kasus dari Daft & Marcic 12e Ch. 6, yang ditulis langsung di modules/tm6.ts.
 // Kasus TM07 dihapus: TM07 kini memakai kasus dari Daft & Marcic 12e Ch. 7, yang ditulis langsung di modules/tm7.ts.
+// Kasus terpadu TM08 dihapus: TM08 (review UTS) kini memakai latihan dari exhibit buku Ch. 1-7, yang ditulis langsung di modules/tm8.ts.
 import type { ContentBlock } from '../../types';
-
-// TM 8
-export const CASE_UTS_MANAJEMEN_INTEGRATED: ContentBlock = {
-  kind: 'example',
-  title: 'Studi Kasus 8: Integrasi Fungsi POAC, Analisis SWOT, & Struktur Organisasi Pra-UTS',
-  blocks: [
-    {
-      kind: 'p',
-      text: '**Skenario Kasus**: Peserta ujian menghadapi soal kasus terpadu: Perusahaan retail konvensional PT Ritel Megah mengalami penurunan laba 40% akibat persaingan e-commerce dan maraknya live-shopping media sosial. Direktur baru ingin menyusun rencana strategis MBO, merumuskan matriks SWOT, dan mendesain ulang rentang kendali organisasi agar lebih responsif terhadap pelanggan.'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Pertanyaan & Solusi Pembahasan Kasus',
-      prompt: 'Susun: (1) Matriks SWOT 4 kuadran (SO, WO, ST, WT), (2) 4 Langkah Siklus Management by Objectives (MBO), dan (3) Identifikasi 3 faktor kontinjensi yang menentukan pilihan struktur organisasi mekanistik vs organik!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**1. Matriks SWOT PT Ritel Megah**:\n- *Strengths (Kekuatan)*: Jaringan toko fisik luas di lokasi premium dan merek yang terpercaya.\n- *Weaknesses (Kelemahan)*: Biaya sewa gerai tinggi dan sistem IT logistik yang tertinggal.\n- *Opportunities (Peluang)*: Pasar online shopping yang tumbuh eksponensial dan integrasi omnichannel (Click-and-Collect).\n- *Threats (Ancaman)*: Perang harga diskon e-commerce dan pergeseran perilaku belanja generasi muda.\n- *Strategi WO*: Mengembangkan platform digital e-commerce sendiri menggunakan mitra logistik pihak ketiga.',
-            '**2. Empat Langkah Siklus MBO (Peter Drucker)**:\n1. Menetapkan sasaran organisasi secara berjenjang dari pucuk pimpinan hingga level staf.\n2. Merumuskan rencana tindakan (Action Plans) bersama antara atasan dan bawahan.\n3. Meninjau kemajuan berkala (Periodic Progress Review) secara objektif.\n4. Menilai kinerja akhir dan memberikan penghargaan (Appraisal and Rewards).',
-            '**3. Faktor Kontinjensi Pilihan Struktur Organisasi**:\n- *Ketidakpastian Lingkungan*: Lingkungan yang dinamis dan bergejolak menuntut struktur **Organik** (desentralisasi, aturan fleksibel, tim lintas fungsi).\n- *Teknologi Produksi*: Produksi pesanan khusus (unit/small-batch) membutuhkan struktur organik, sedangkan produksi massal rutin cocok dengan struktur mekanistik kaku.\n- *Strategi Perusahaan*: Strategi inovasi diferensiasi memerlukan fleksibilitas organik, sedangkan strategi keunggulan biaya (cost leadership) menuntut efisiensi mekanistik.'
-          ]
-        }
-      ]
-    }
-  ]
-};
 
 // TM 9
 export const CASE_INNOVATION_CHANGE_LEWIN: ContentBlock = {

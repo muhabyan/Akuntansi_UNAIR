@@ -2,7 +2,8 @@
 // Rangkuman KOMPREHENSIF Pengantar Manajemen (MNU108; dulu dikatalogkan sebagai MNM101/MNM201)
 // Sumber TM01-TM07: Daft & Marcic, Understanding Management 12e (2023), Ch. 1-7 — buku teks resmi RPP MNU108.
 //         TM01-TM07 dibangun dari paket konten MNU108/TM01-TM07 dan hanya memuat fakta dari buku itu.
-// Sumber TM08-TM14 (belum disinkronkan ke 12e): Richard L. Daft (Management 13e/14e),
+//         TM08 (review UTS) merangkum bacaan TM01-TM07 (Quick Reference dan Exam Traps disalin dari bacaan itu).
+// Sumber TM09-TM14 (belum disinkronkan ke 12e): Richard L. Daft (Management 13e/14e),
 //         Stephen P. Robbins (Management 15e/16e), Henry Mintzberg, Peter Drucker, Michael Porter,
 //         Geert Hofstede, Herbert Simon, Kurt Lewin, Bruce Tuckman, Hackman & Oldham.
 import type { Reading } from '../../types';
