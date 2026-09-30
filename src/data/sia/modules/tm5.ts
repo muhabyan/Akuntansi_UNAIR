@@ -111,6 +111,11 @@ export const SIA_TM5: Reading = {
       { name: 'Order_Lines', detail: 'FK Order_ID' }, { name: 'Products', detail: 'PK Product_ID' },
     ], 'Orders.Order_ID → Order_Lines.Order_ID; Order_Lines.Product_ID → Products.Product_ID.'),
       altText: 'Jalur relasi tabel Customers, Orders, Order_Lines, dan Products untuk membaca JOIN melalui PK dan FK.',
+      mobileFlow: { mode: 'cards', title: 'Ikuti pasangan kunci saat JOIN', stages: [
+        { actor: 'Customers ↔ Orders', actions: ['Customers.Customer_ID = Orders.Customer_ID'] },
+        { actor: 'Orders ↔ Order_Lines', actions: ['Orders.Order_ID = Order_Lines.Order_ID'] },
+        { actor: 'Order_Lines ↔ Products', actions: ['Order_Lines.Product_ID = Products.Product_ID'], note: 'Panah menunjukkan hubungan kunci, bukan urutan transaksi.' },
+      ] },
       transcript: ['Orders.Customer_ID merujuk Customers.Customer_ID.', 'Order_Lines.Order_ID merujuk Orders.Order_ID.', 'Order_Lines.Product_ID merujuk Products.Product_ID.', 'Panah menggambarkan hubungan kunci yang dipakai JOIN, bukan urutan peristiwa bisnis.'],
       caption: 'Skema penghubung untuk memahami JOIN. Cocokkan ON dengan pasangan PK/FK; jangan menggabungkan tabel tanpa kondisi relasi.' },
     { kind: 'code', language: 'SQL', text: 'SELECT Sales.Invoice_Number, Sales.Sale_Date, Customer.Customer_Name\nFROM Sales\nINNER JOIN Customer ON Sales.Customer_ID = Customer.Customer_ID;', caption: '`INNER JOIN` mencocokkan record ketika foreign key tabel anak sama dengan primary key tabel induk. Exhibits 6.46–6.48.' },

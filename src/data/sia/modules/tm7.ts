@@ -25,6 +25,11 @@ export const SIA_TM7: Reading = {
       { name: 'Receive', detail: 'Receiving Report' }, { name: 'Pay', detail: 'Match lalu EFT' },
     ], 'Supplier mengirim invoice; Accounts Payable menguji dokumen sebelum Treasury membayar.'),
       altText: 'Urutan permintaan, purchase order, penerimaan barang, serta pencocokan dan pembayaran dengan fungsi terpisah.',
+      mobileFlow: { mode: 'cards', title: 'Procure-to-Pay: tugas dan bukti', stages: [
+        { actor: 'Request → Order', actions: ['Departemen meminta barang.', 'Buyer menerbitkan PO ke vendor yang disetujui.'] },
+        { actor: 'Receive', actions: ['Receiving menghitung barang dan membuat Receiving Report.'] },
+        { actor: 'Match → Pay', actions: ['Accounts Payable membandingkan tiga dokumen.', 'Treasury membayar setelah dokumen cocok dan disetujui.'] },
+      ] },
       transcript: ['Departemen meminta pembelian; buyer menerbitkan PO ke vendor yang disetujui.', 'Receiving menghitung barang secara independen dan membuat Receiving Report.', 'Accounts Payable mencocokkan PO, laporan penerimaan, dan invoice vendor.', 'Treasury membayar hanya setelah invoice yang cocok disetujui.'],
       caption: 'Alur konseptual TM7, bukan diagram BPMN formal. Lihat titik pemeriksaan tiga dokumen di bawah.' },
     { kind: 'ol', items: [
@@ -75,6 +80,12 @@ export const SIA_TM7: Reading = {
     { kind: 'h3', text: 'Three-Way Match' },
     { kind: 'figure', title: 'Tiga dokumen menuju satu keputusan', svg: THREE_WAY_DIAGRAM,
       altText: 'Purchase Order, Receiving Report, dan Vendor Invoice masuk ke pemeriksaan Accounts Payable. Dokumen yang cocok disetujui, selisih ditahan.',
+      mobileFlow: { mode: 'cards', title: 'Three-Way Match: tiga bukti', stages: [
+        { actor: 'PO: apa yang diizinkan?', actions: ['100 unit @ $25 per unit.'] },
+        { actor: 'Receiving Report: apa yang diterima?', actions: ['80 unit diterima baik.'] },
+        { actor: 'Invoice: apa yang ditagih?', actions: ['100 unit @ $27 per unit.'] },
+        { actor: 'Keputusan Accounts Payable', actions: ['Jumlah dan harga berbeda dari bukti yang sah.', 'Tahan invoice sampai selisih diselesaikan.'] },
+      ] },
       transcript: ['PO mengotorisasi item, jumlah, harga, dan termin.', 'Receiving Report membuktikan jumlah barang yang benar-benar diterima.', 'Vendor Invoice menyatakan jumlah dan harga yang ditagih.', 'Accounts Payable membandingkan ketiganya; pada contoh PO 100 unit @ $25, terima 80, invoice 100 @ $27, pembayaran ditahan sampai selisih selesai.'],
       caption: 'Three-Way Match adalah penerapan kontrol pembelian pada materi TM7. Ini diagram konsep, bukan salinan gambar ebook.' },
     { kind: 'table', headers: ['Dokumen', 'Sumber', 'Membuktikan', 'Informasi yang diverifikasi'], rows: [
@@ -106,6 +117,11 @@ export const SIA_TM7: Reading = {
     { kind: 'h2', text: '4. Structure Modeling: UML Class Diagrams & REA Patterns' },
     { kind: 'figure', title: 'REA penerimaan barang dan pengeluaran kas', svg: reaDiagram('REA Procure-to-Pay', 'Inventory', 'Goods Receipt', 'Cash Disbursement', 'Cash', 'Supplier'),
       altText: 'Sumber daya Inventory bertambah saat Goods Receipt; peristiwa penerimaan barang berpasangan dengan Cash Disbursement yang mengurangi kas; Supplier adalah agent eksternal.',
+      mobileFlow: { mode: 'cards', title: 'REA pembelian: resource, event, agent', stages: [
+        { actor: 'Get: Goods Receipt → Inventory', actions: ['Barang diterima; persediaan perusahaan bertambah.'] },
+        { actor: 'Give: Cash Disbursement → Cash', actions: ['Perusahaan membayar; kas berkurang.'] },
+        { actor: 'Duality dan agent', actions: ['Goods Receipt ↔ Cash Disbursement adalah dua sisi pertukaran.', 'Supplier terlibat sebagai agent eksternal.'] },
+      ] },
       transcript: ['Resource Inventory bertambah ketika barang diterima.', 'Event Goods Receipt dan Cash Disbursement berpasangan sebagai give-get (duality).', 'Resource Cash berkurang ketika perusahaan membayar supplier.', 'Supplier adalah agent eksternal; buyer, receiving, AP, dan Treasury tetap memiliki tanggung jawab internal yang terpisah.'],
       caption: 'Skema konsep REA TM7. Model buku Sunset Graphics dapat menggabungkan PO dan penerimaan karena asumsi satu PO untuk satu penerimaan; diagram ini berfokus pada peristiwa ekonomi.' },
     { kind: 'callout', variant: 'key', title: 'Asumsi khusus Sunset Graphics dalam ebook', text: 'Buku mula-mula memisahkan Purchase Orders dan Receipts/Purchases pada Exhibit 8.7. Setelah kebutuhan Sunset diklarifikasi, setiap pembelian selalu memiliki PO dan perusahaan tidak menerima pengiriman parsial. Hubungan PO–penerimaan menjadi satu-banding-satu sehingga kedua class digabung dalam model revisi Exhibit 8.8. Model terpisah di bawah adalah perluasan untuk organisasi yang menerima pengiriman parsial, bukan model revisi Sunset dalam buku. Richardson 4e, pp. 330–331.' },

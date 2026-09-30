@@ -75,6 +75,11 @@ export const SIA_TM4: Reading = {
     { kind: 'h3', text: 'Linking table untuk M:N' },
     { kind: 'figure', title: 'Mengubah relasi banyak-ke-banyak menjadi tabel', svg: RELATION_DIAGRAM,
       altText: 'Sales_Order dan Inventory terhubung melalui Order_Lines. Order_ID dan Product_ID menjadi foreign key sekaligus composite primary key pada Order_Lines.',
+      mobileFlow: { mode: 'cards', title: 'M:N: pesanan dan produk', stages: [
+        { actor: 'Sales_Order (1) → Order_Lines (N)', actions: ['Order_ID adalah PK pada Sales_Order dan FK pada setiap baris pesanan.'] },
+        { actor: 'Inventory (1) → Order_Lines (N)', actions: ['Product_ID adalah PK pada Inventory dan FK pada setiap baris pesanan.'] },
+        { actor: 'Order_Lines sebagai penghubung', actions: ['Order_ID + Product_ID menjadi kunci gabungan.', 'Quantity dan Unit_Price disimpan pada baris pesanan.'] },
+      ] },
       transcript: ['Satu Sales_Order dapat memiliki banyak Order_Lines; setiap baris memiliki satu Order_ID.', 'Satu produk Inventory dapat muncul dalam banyak Order_Lines; setiap baris memiliki satu Product_ID.', 'Pasangan Order_ID dan Product_ID menjadi composite primary key, sedangkan Quantity dan Unit_Price disimpan pada baris pesanan.'],
       caption: 'Contoh konseptual TM4. Kardinalitas bisnis dapat memerlukan kunci baris tambahan bila produk yang sama boleh muncul dua kali dalam satu order.' },
     { kind: 'p', text: 'Tabel relasional tidak dapat mengimplementasikan association M:N secara langsung sehingga M:N **tidak dapat** dipetakan menjadi satu foreign key. Richardson 4e, pp. 219–220; Exhibit 5.9.' },
