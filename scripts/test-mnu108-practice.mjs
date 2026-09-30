@@ -145,7 +145,9 @@ function checkFlashcards(data) {
 }
 
 // =============================================================== bank soal
-const STEPS = ['1. Case Summary:', '2. Problem Identification:', '3. Analisis Kasus:', '4. Jawaban Pertanyaan:', '5. Rekomendasi:'];
+// The five steps of the case presenter, named as in mekanisme_perkuliahan.txt.
+const STEPS = ['1. Ringkasan Kasus (Case Summary):', '2. Identifikasi Permasalahan (Problem Identification):', '3. Analisis Kasus:', '4. Jawaban atas Pertanyaan Kasus:', '5. Rekomendasi Manajerial:'];
+const STEP_NAMES = ['Ringkasan Kasus (Case Summary)', 'Identifikasi Permasalahan (Problem Identification)', 'Analisis Kasus', 'Jawaban atas Pertanyaan Kasus', 'Rekomendasi Manajerial'];
 function checkBank(data) {
   const bank = data.bank;
   assert.equal(bank.length, 7, 'bank: one case per TM (7)');
@@ -167,13 +169,17 @@ function checkBank(data) {
     for (const step of STEPS) {
       const found = item.answerGuide.indexOf(step);
       assert.ok(found > at2, `${at}: the answer guide must contain "${step}" in order`);
+      assert.equal(item.answerGuide[found - 1], '\n', `${at}: "${step}" starts its own line (the guide is shown with line breaks)`);
       at2 = found;
     }
+    for (const q of ['P1:', 'P2:', 'P3:', 'Q1:', 'Q2:', 'Q3:']) assert.ok(item.answerGuide.includes(`\n${q} `), `${at}: ${q} starts its own line`);
     assert.match(item.answerGuide, /^Hasil analisis/, `${at}: the answer guide opens by saying it is analysis, not the book's key`);
-    assert.match(item.answerGuide.split('5. Rekomendasi:')[1], /Pilih opsi \d/, `${at}: the recommendation names one option`);
+    assert.match(item.answerGuide.split('5. Rekomendasi Manajerial:')[1], /Pilih opsi \d/, `${at}: the recommendation names one option`);
     const options = item.data.filter((line) => /^Opsi \(\d\)/.test(line));
     assert.equal(options.length, 3, `${at}: the three options of the book's dilemma`);
     assert.ok(item.outputFormat.length === 5, `${at}: output format lists the five steps`);
+    STEP_NAMES.forEach((name, n) => assert.ok(item.outputFormat[n].startsWith(`${n + 1}. ${name}`), `${at}: output format step ${n + 1} is "${name}"`));
+    assert.ok(item.instructions[0].includes('Ringkasan Kasus (Case Summary)') && item.instructions[0].includes('Identifikasi Permasalahan (Problem Identification)'), `${at}: the first instruction names steps 1 and 2 as in the class mechanism`);
     for (const text of strings([item.question, item.context, item.data, item.instructions, item.outputFormat, item.rubric, item.answerGuide])) {
       noForbidden(at, text);
       assert.ok(!text.includes('**'), `${at}: markdown bold in plain text`);
@@ -217,8 +223,13 @@ function checkTm08(data) {
   for (const page of cited(all.replaceAll('[hal. X]', '')).pages) assert.ok(page >= lo && page <= hi, `TM08: page ${page} lies outside Ch. 1–7 (${lo}–${hi})`);
   // The five steps come from the class mechanism, not from the book, and the page says so.
   const steps = tm8.blocks.find((b) => b.kind === 'table' && b.headers.join('|') === 'Langkah|Isi');
-  assert.deepEqual(steps.rows.map((r) => r[0]), ['1. Case Summary', '2. Problem Identification', '3. Analisis Kasus', '4. Jawaban Pertanyaan', '5. Rekomendasi'], 'TM08: five steps');
+  assert.deepEqual(steps.rows.map((r) => r[0]), STEP_NAMES.map((name, n) => `${n + 1}. ${name}`), 'TM08: five steps, named as in the class mechanism');
   assert.ok(/mekanisme perkuliahan, bukan dari buku/.test(all), 'TM08: names the source of the five steps');
+  const intro13 = tm8.blocks[tm8.blocks.findIndex((b) => b.kind === 'h2' && b.text.startsWith('13.')) + 1].text;
+  assert.ok(/Presenter Kasus/.test(intro13) && /kerangka latihan/.test(intro13), 'TM08 §13: says this is the case presenter format of the class mechanism, used here as a practice framework');
+  assert.ok(/Belum tentu UTS memakai format ini/.test(intro13), 'TM08 §13: does not claim that UTS uses this format');
+  assert.ok(!/UTS (pasti|akan) memakai/i.test(all), 'TM08: never states that UTS surely uses the format');
+  assert.ok(tm8.objectives.some((o) => STEP_NAMES.slice(0, 2).every((name) => o.includes(name.split(' (')[0]))), 'TM08: the objective names the steps as in the class mechanism');
   // Ideas from the old page that are not in the book must not come back.
   assert.ok(!/Formula Sheet|10 Jebakan|Format 4 Tahap|Problem-Theory-Alternative/i.test(all), 'TM08: old-edition sections are gone');
 }
@@ -255,7 +266,12 @@ const mutations = {
   'a flashcard without a page': [(d) => { const c = d.fc.find((x) => x.tm === 2); c.back = c.back.replace(/\[hal\.[^\]]+\]/g, ''); }, /no \[hal\. X\] anchor/],
   'a flashcardCount that does not match the deck': [(d) => { d.flashcardCount = 84; }, /flashcardCount \(84\)/],
   'a bank case that recommends nothing': [(d) => { d.bank[2].answerGuide = d.bank[2].answerGuide.replace('Pilih opsi', 'Sebaiknya'); }, /names one option/],
-  'a bank case that skips a step': [(d) => { d.bank[0].answerGuide = d.bank[0].answerGuide.replace('2. Problem Identification:', 'Masalah:'); }, /2\. Problem Identification/],
+  'a bank case whose P2 sits inside a paragraph': [(d) => { d.bank[2].answerGuide = d.bank[2].answerGuide.replace('\nP2: ', ' P2: '); }, /P2: starts its own line/],
+  'a bank case whose Q1 sits inside a paragraph': [(d) => { d.bank[1].answerGuide = d.bank[1].answerGuide.replace('\nQ1: ', ' Q1: '); }, /Q1: starts its own line/],
+  'a bank case still using the old step name': [(d) => { d.bank[4].answerGuide = d.bank[4].answerGuide.replace('5. Rekomendasi Manajerial:', '5. Rekomendasi:'); }, /5\. Rekomendasi Manajerial:/],
+  'a bank output format with the old step name': [(d) => { d.bank[0].outputFormat[1] = '2. Problem Identification'; }, /step 2 is/],
+  'a TM08 section 13 that says UTS uses the format': [(d) => { const r = { ...d.readings[8] }; r.blocks = structuredClone(r.blocks); const at = r.blocks.findIndex((b) => b.kind === 'h2' && b.text.startsWith('13.')) + 1; r.blocks[at].text = r.blocks[at].text.replace('Belum tentu UTS memakai format ini', 'UTS pasti memakai format ini'); d.readings = { ...d.readings, 8: r }; d.review = { uts: r }; }, /does not claim that UTS/],
+  'a bank case that skips a step': [(d) => { d.bank[0].answerGuide = d.bank[0].answerGuide.replace('2. Identifikasi Permasalahan (Problem Identification):', 'Masalah:'); }, /2\. Identifikasi Permasalahan/],
   'a bank case with the wrong scope': [(d) => { d.bank[3].scope = 'TM 5: Goal'; }, /scope names TM 4/],
   'the old TM08 case coming back': [(d) => { d.readings = { ...d.readings, 8: { ...d.readings[8], intro: d.readings[8].intro + ' PT Ritel Megah.' } }; d.review = { uts: d.readings[8] }; }, /PT Ritel Megah/],
   'a TM08 table row without a page': [(d) => { const r = { ...d.readings[8] }; r.blocks = structuredClone(r.blocks); r.blocks.find((b) => b.kind === 'table' && b.headers[0] === 'Butir pada Exhibit 5.9').rows[0][2] = 'tanpa halaman'; d.readings = { ...d.readings, 8: r }; d.review = { uts: r }; }, /no page reference/],

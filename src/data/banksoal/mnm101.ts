@@ -19,24 +19,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: Weberian bureaucracy [hal. 28–30]; technical, human, dan conceptual skills [hal. 12–15]; things vs humanity of production [hal. 25–26]."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification dari fakta kasus.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification) dari fakta kasus.",
       "Analisis dengan Weberian bureaucracy (seleksi berdasarkan kualifikasi teknis, aturan impersonal) dan dengan keterampilan manajer (technical, human, conceptual).",
       "Jawab: (Q1) apa dasar bureaucracy untuk dan melawan setiap opsi? (Q2) keterampilan apa yang relevan bagi supervisor dan apa yang mungkin tidak terukur oleh tes tertulis? (Q3) opsi mana yang Anda pilih?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan memakai ciri bureaucracy dan tiga keterampilan dengan [hal. X] (40%)",
       "Kelogisan analisis tiap opsi (30%)",
       "Ketegasan rekomendasi dan alasannya (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Maxine harus memilih pengisi jabatan supervisor. Sheryl berpengalaman dan terbukti memimpin baik tetapi peringkat tesnya 12; seorang klerk baru berperingkat 1.\n2. Problem Identification: P1: konflik antara aturan seleksi yang berlaku sama untuk semua dan bukti kepemimpinan nyata. P2: tes tertulis mungkin hanya mengukur sebagian dari yang dibutuhkan supervisor. P3: keputusan ada pada satu orang, sehingga risiko pilih kasih atau kaku mekanis.\n3. Analisis Kasus: Bureaucracy memilih dan mempromosikan personel berdasarkan kualifikasi teknis dan menerapkan aturan yang sama untuk semua [hal. 29–30]. Weber ingin mengatasi organisasi yang dikelola secara personal [hal. 28–29]; mengabaikan tes demi orang tertentu berlawanan dengan semangat itu. Namun buku juga mengingatkan bahwa fokus pada things of production bisa mengabaikan humanity of production [hal. 26], dan pada tingkat manajer human skills makin dibutuhkan (Exh. 1.3), sedangkan technical skill hanya di urutan 8 pada perilaku manajer Google (Exh. 1.4) [hal. 12–13].\n4. Jawaban Pertanyaan: Q1: opsi 1 melanggar aturan impersonal, opsi 2 patuh aturan tetapi hanya mengukur kualifikasi teknis [hal. 29]. Q2: supervisor membutuhkan human skills (komunikasi, coaching) selain technical [hal. 13–15]; kepemimpinan yang sudah terbukti pada Sheryl adalah bukti human skills, yang belum tentu tertangkap tes tertulis (hasil analisis). Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3. Maxine tidak mengabaikan hasil tes secara sepihak dan tidak mengangkat peringkat 1 secara mekanis, tetapi mengusulkan kriteria yang memasukkan bukti kepemimpinan, sehingga aturan tetap berlaku sama untuk semua. Selama proses berjalan, Sheryl tetap pada penugasan sementaranya yang sudah sah."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): Maxine harus memilih pengisi jabatan supervisor. Sheryl berpengalaman dan terbukti memimpin baik tetapi peringkat tesnya 12; seorang klerk baru berperingkat 1.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: konflik antara aturan seleksi yang berlaku sama untuk semua dan bukti kepemimpinan nyata.\nP2: tes tertulis mungkin hanya mengukur sebagian dari yang dibutuhkan supervisor.\nP3: keputusan ada pada satu orang, sehingga risiko pilih kasih atau kaku mekanis.\n3. Analisis Kasus: Bureaucracy memilih dan mempromosikan personel berdasarkan kualifikasi teknis dan menerapkan aturan yang sama untuk semua [hal. 29–30]. Weber ingin mengatasi organisasi yang dikelola secara personal [hal. 28–29]; mengabaikan tes demi orang tertentu berlawanan dengan semangat itu. Namun buku juga mengingatkan bahwa fokus pada things of production bisa mengabaikan humanity of production [hal. 26], dan pada tingkat manajer human skills makin dibutuhkan (Exh. 1.3), sedangkan technical skill hanya di urutan 8 pada perilaku manajer Google (Exh. 1.4) [hal. 12–13].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: opsi 1 melanggar aturan impersonal, opsi 2 patuh aturan tetapi hanya mengukur kualifikasi teknis [hal. 29].\nQ2: supervisor membutuhkan human skills (komunikasi, coaching) selain technical [hal. 13–15]; kepemimpinan yang sudah terbukti pada Sheryl adalah bukti human skills, yang belum tentu tertangkap tes tertulis (hasil analisis).\nQ3: opsi 3.\n5. Rekomendasi Manajerial: Pilih opsi 3. Maxine tidak mengabaikan hasil tes secara sepihak dan tidak mengangkat peringkat 1 secara mekanis, tetapi mengusulkan kriteria yang memasukkan bukti kepemimpinan, sehingga aturan tetap berlaku sama untuk semua. Selama proses berjalan, Sheryl tetap pada penugasan sementaranya yang sudah sah."
   },
   {
     "type": "case",
@@ -52,24 +52,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: boundary spanning dan empat sumber business intelligence [hal. 64–65]; cultural leadership [hal. 77]; tiga domain tindakan dan dilema etis [hal. 119, 122]."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification).",
       "Klasifikasikan cara atasan memperoleh dokumen memakai empat sumber business intelligence, lalu nilai apakah termasuk pemindaian lingkungan yang wajar.",
       "Jawab: (Q1) apa yang dikomunikasikan tindakan atasan tentang nilai perusahaan menurut konsep cultural leadership? (Q2) mengapa hukum saja tidak cukup memutuskan kasus ini? (Q3) opsi mana yang Anda pilih?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan memakai business intelligence dan cultural leadership dengan [hal. X] (40%)",
       "Ketajaman membedakan hukum, etika, dan pilihan bebas (30%)",
       "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Miquel menerima dokumen strategis rahasia pesaing dari atasannya. Cara atasan memperolehnya dijelaskan tidak konsisten, dan tidak ada kebijakan perusahaan yang jelas.\n2. Problem Identification: P1: asal dokumen dan keabsahannya belum jelas. P2: memakai dokumen berarti Miquel ikut menanggung akibatnya. P3: tidak ada panduan perusahaan, sehingga nilai ditentukan oleh contoh atasan.\n3. Analisis Kasus: Business intelligence memindai lingkungan dari empat sumber: personal internal, personal external, organizational internal, dan organizational external [hal. 65]; boundary spanning juga mencakup upaya memengaruhi lingkungan [hal. 66]. Mengunduh dokumen dari bagian privat intranet pesaing sulit disebut pemindaian dari sumber terbuka (hasil analisis). Cultural leader memperhatikan aktivitas sehari-hari agar orang, prosedur, dan imbalan cocok dengan nilai, dan pernyataan nilai tanpa perilaku manajemen tidak bermakna [hal. 77]. Buku sendiri menyebut hukum tentang pengumpulan informasi pesaing tidak tegas dan pendapat tentang etikanya terbelah [hal. 122], dan domain etika ada di antara hukum dan pilihan bebas [hal. 119].\n4. Jawaban Pertanyaan: Q1: tindakan atasan mengajarkan bahwa hasil boleh dikejar dengan cara apa pun; ini mengarah ke kuadran A pada Exhibit 2.7 (kinerja dikejar, nilai budaya diabaikan) [hal. 75–77]. Q2: karena hukum tidak tegas, domain etika (social standard) ikut menentukan [hal. 119, 122]. Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3. Miquel tidak memakai dokumen itu sebelum mendapat nasihat hukum, lalu menemui atasan dengan dasar yang jelas. Opsi 1 membuatnya ikut menikmati hasilnya; opsi 2 tanpa nasihat hukum hanya berupa konfrontasi tanpa dasar."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): Miquel menerima dokumen strategis rahasia pesaing dari atasannya. Cara atasan memperolehnya dijelaskan tidak konsisten, dan tidak ada kebijakan perusahaan yang jelas.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: asal dokumen dan keabsahannya belum jelas.\nP2: memakai dokumen berarti Miquel ikut menanggung akibatnya.\nP3: tidak ada panduan perusahaan, sehingga nilai ditentukan oleh contoh atasan.\n3. Analisis Kasus: Business intelligence memindai lingkungan dari empat sumber: personal internal, personal external, organizational internal, dan organizational external [hal. 65]; boundary spanning juga mencakup upaya memengaruhi lingkungan [hal. 66]. Mengunduh dokumen dari bagian privat intranet pesaing sulit disebut pemindaian dari sumber terbuka (hasil analisis). Cultural leader memperhatikan aktivitas sehari-hari agar orang, prosedur, dan imbalan cocok dengan nilai, dan pernyataan nilai tanpa perilaku manajemen tidak bermakna [hal. 77]. Buku sendiri menyebut hukum tentang pengumpulan informasi pesaing tidak tegas dan pendapat tentang etikanya terbelah [hal. 122], dan domain etika ada di antara hukum dan pilihan bebas [hal. 119].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: tindakan atasan mengajarkan bahwa hasil boleh dikejar dengan cara apa pun; ini mengarah ke kuadran A pada Exhibit 2.7 (kinerja dikejar, nilai budaya diabaikan) [hal. 75–77].\nQ2: karena hukum tidak tegas, domain etika (social standard) ikut menentukan [hal. 119, 122].\nQ3: opsi 3.\n5. Rekomendasi Manajerial: Pilih opsi 3. Miquel tidak memakai dokumen itu sebelum mendapat nasihat hukum, lalu menemui atasan dengan dasar yang jelas. Opsi 1 membuatnya ikut menikmati hasilnya; opsi 2 tanpa nasihat hukum hanya berupa konfrontasi tanpa dasar."
   },
   {
     "type": "case",
@@ -85,24 +85,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: global outsourcing [hal. 97–98]; ethnocentrism [hal. 102]; lima pendekatan etika [hal. 124–126]; compensatory justice [hal. 125]."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification).",
       "Klasifikasikan usulan Albania dalam Exhibit 3.3 dan jelaskan tujuannya menurut buku.",
       "Jawab: (Q1) mengapa usulan ini termasuk global outsourcing dan apa tujuan strategi itu? (Q2) bagaimana penilaian pendekatan utilitarian, moral-rights, dan justice atas tiap opsi? (Q3) opsi mana yang Anda pilih?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan klasifikasi strategi dan pendekatan etika dengan [hal. X] (40%)",
       "Kelogisan penilaian tiap opsi (30%)",
       "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: CEO memilih antara menguji obat di Albania yang lebih murah, cepat, dan mudah atau di AS yang lebih mahal. Obat tidak akan dipasarkan di Albania, sehingga pengobatan peserta berhenti setelah uji.\n2. Problem Identification: P1: penghematan biaya vs kewajiban terhadap peserta uji. P2: pengobatan peserta berhenti begitu uji selesai. P3: hambatan hukum yang lebih ringan bisa menjadi alasan memilih lokasi, bukan hanya alasan efisiensi.\n3. Analisis Kasus: Memindahkan pekerjaan ke negara berbiaya lebih rendah adalah global outsourcing, yang bertujuan memperoleh sumber daya lebih murah, bukan mengembangkan pasar [hal. 97–98]. Dengan pendekatan utilitarian, manfaat bagi banyak orang (obat baru, biaya lebih rendah) ditimbang dengan efek pada semua pihak [hal. 124]. Dengan moral-rights, hak persetujuan bebas (free consent) peserta harus dijaga [hal. 124–125]. Compensatory justice menuntut pihak yang bertanggung jawab memberi kompensasi atas kerugian [hal. 125]. Tes practical: rela keputusan itu diberitakan dan dijelaskan kepada keluarga [hal. 126]. Pertimbangkan pula kecenderungan menilai lokasi dari sudut pandang sendiri (ethnocentrism) [hal. 102].\n4. Jawaban Pertanyaan: Q1: pekerjaan uji dipindahkan ke negara dengan hambatan lebih rendah dan biaya lebih murah, sesuai tujuan mencari sumber daya lebih murah [hal. 97–98]. Q2: utilitarian condong ke opsi 1 atau 3, moral-rights menuntut informed consent penuh, justice condong ke opsi 3 karena ada kompensasi (hasil analisis). Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3, dengan syarat program pengobatan lanjutan disepakati sebelum uji dimulai dan dikomunikasikan dalam persetujuan peserta, bukan baru dijanjikan bila obat lolos. Bila syarat itu tidak bisa dipenuhi, pilih opsi 2."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): CEO memilih antara menguji obat di Albania yang lebih murah, cepat, dan mudah atau di AS yang lebih mahal. Obat tidak akan dipasarkan di Albania, sehingga pengobatan peserta berhenti setelah uji.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: penghematan biaya vs kewajiban terhadap peserta uji.\nP2: pengobatan peserta berhenti begitu uji selesai.\nP3: hambatan hukum yang lebih ringan bisa menjadi alasan memilih lokasi, bukan hanya alasan efisiensi.\n3. Analisis Kasus: Memindahkan pekerjaan ke negara berbiaya lebih rendah adalah global outsourcing, yang bertujuan memperoleh sumber daya lebih murah, bukan mengembangkan pasar [hal. 97–98]. Dengan pendekatan utilitarian, manfaat bagi banyak orang (obat baru, biaya lebih rendah) ditimbang dengan efek pada semua pihak [hal. 124]. Dengan moral-rights, hak persetujuan bebas (free consent) peserta harus dijaga [hal. 124–125]. Compensatory justice menuntut pihak yang bertanggung jawab memberi kompensasi atas kerugian [hal. 125]. Tes practical: rela keputusan itu diberitakan dan dijelaskan kepada keluarga [hal. 126]. Pertimbangkan pula kecenderungan menilai lokasi dari sudut pandang sendiri (ethnocentrism) [hal. 102].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: pekerjaan uji dipindahkan ke negara dengan hambatan lebih rendah dan biaya lebih murah, sesuai tujuan mencari sumber daya lebih murah [hal. 97–98].\nQ2: utilitarian condong ke opsi 1 atau 3, moral-rights menuntut informed consent penuh, justice condong ke opsi 3 karena ada kompensasi (hasil analisis).\nQ3: opsi 3.\n5. Rekomendasi Manajerial: Pilih opsi 3, dengan syarat program pengobatan lanjutan disepakati sebelum uji dimulai dan dikomunikasikan dalam persetujuan peserta, bukan baru dijanjikan bila obat lolos. Bila syarat itu tidak bisa dipenuhi, pilih opsi 2."
   },
   {
     "type": "case",
@@ -118,24 +118,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: tiga domain tindakan [hal. 119]; justice dan practical approach [hal. 125–126]; komunitas sebagai stakeholder [hal. 132–133]; whistle-blowing [hal. 141]."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification).",
       "Tempatkan tindakan perusahaan pada Exhibit 4.1 dan nilai dengan justice dan practical approach serta perspektif stakeholder.",
       "Jawab: (Q1) apakah \"tidak melanggar hukum\" sama dengan etis? (Q2) siapa stakeholder yang terdampak dan apa kepentingannya? (Q3) opsi mana yang Anda pilih, dan kapan opsi 3 baru layak?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan memakai Exh. 4.1, pendekatan etika, dan stakeholder dengan [hal. X] (40%)",
       "Kelogisan urutan langkah internal sebelum eksternal (30%)",
       "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Chem-Tech dapat membuang limbah langsung ke sungai dengan sah dan menghemat biaya. Nathan keberatan, manajer pabrik menyatakan perusahaan patuh hukum, dan Nathan dicap bukan pemain tim.\n2. Problem Identification: P1: tindakan legal tetapi berpotensi merugikan komunitas. P2: konflik antara lapangan kerja dan kesehatan lingkungan. P3: risiko pribadi bagi Nathan bila bersuara.\n3. Analisis Kasus: Exhibit 4.1: hukum (codified law) hanya satu domain; domain etika punya standar sosial yang tidak diatur hukum khusus, jadi tidak melanggar hukum belum tentu etis [hal. 119]. Justice approach paling dekat dengan hukum, sedangkan practical approach mengajukan tes: diterima komunitas profesi, rela diberitakan, nyaman dijelaskan kepada keluarga dan teman [hal. 125–126]. Komunitas adalah stakeholder utama dengan kepentingan pada kepatuhan hukum, dampak sosial positif, dan perlindungan lingkungan [hal. 132–133]. Dilema limbah vs lapangan kerja adalah konflik antara kebutuhan bagian dan keseluruhan [hal. 123–124]. Triple bottom line menuntut People dan Planet ikut diukur [hal. 135–136]. Whistle-blower sering melapor ke pihak luar, tetapi perusahaan yang sehat menyediakan jalur internal [hal. 141].\n4. Jawaban Pertanyaan: Q1: tidak; ada domain etika di luar hukum [hal. 119]. Q2: komunitas sekitar sungai (kesehatan, lingkungan), karyawan (pekerjaan), pemegang saham (efisiensi), pelanggan [hal. 132–133]. Q3: opsi 1; opsi 3 baru layak bila jalur internal sudah ditempuh dan ditolak (hasil analisis).\n5. Rekomendasi: Pilih opsi 1: bicara dengan wakil presiden manufaktur dan ajukan pengurangan polusi sukarela sebagai nilai pemasaran, yang menjaga pekerjaan sekaligus melindungi komunitas. Opsi 2 gagal pada tes practical (sulit rela diberitakan); opsi 3 dipertimbangkan hanya setelah jalur internal buntu."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): Chem-Tech dapat membuang limbah langsung ke sungai dengan sah dan menghemat biaya. Nathan keberatan, manajer pabrik menyatakan perusahaan patuh hukum, dan Nathan dicap bukan pemain tim.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: tindakan legal tetapi berpotensi merugikan komunitas.\nP2: konflik antara lapangan kerja dan kesehatan lingkungan.\nP3: risiko pribadi bagi Nathan bila bersuara.\n3. Analisis Kasus: Exhibit 4.1: hukum (codified law) hanya satu domain; domain etika punya standar sosial yang tidak diatur hukum khusus, jadi tidak melanggar hukum belum tentu etis [hal. 119]. Justice approach paling dekat dengan hukum, sedangkan practical approach mengajukan tes: diterima komunitas profesi, rela diberitakan, nyaman dijelaskan kepada keluarga dan teman [hal. 125–126]. Komunitas adalah stakeholder utama dengan kepentingan pada kepatuhan hukum, dampak sosial positif, dan perlindungan lingkungan [hal. 132–133]. Dilema limbah vs lapangan kerja adalah konflik antara kebutuhan bagian dan keseluruhan [hal. 123–124]. Triple bottom line menuntut People dan Planet ikut diukur [hal. 135–136]. Whistle-blower sering melapor ke pihak luar, tetapi perusahaan yang sehat menyediakan jalur internal [hal. 141].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: tidak; ada domain etika di luar hukum [hal. 119].\nQ2: komunitas sekitar sungai (kesehatan, lingkungan), karyawan (pekerjaan), pemegang saham (efisiensi), pelanggan [hal. 132–133].\nQ3: opsi 1; opsi 3 baru layak bila jalur internal sudah ditempuh dan ditolak (hasil analisis).\n5. Rekomendasi Manajerial: Pilih opsi 1: bicara dengan wakil presiden manufaktur dan ajukan pengurangan polusi sukarela sebagai nilai pemasaran, yang menjaga pekerjaan sekaligus melindungi komunitas. Opsi 2 gagal pada tes practical (sulit rela diberitakan); opsi 3 dipertimbangkan hanya setelah jalur internal buntu."
   },
   {
     "type": "case",
@@ -151,24 +151,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: tingkatan goal (Exh. 5.1) dan goal efektif yang dikaitkan reward (Exh. 5.4) [hal. 151–154, 160–161]; MBO dan keterbatasannya [hal. 161–163]; tekanan berlebihan [hal. 165]; legal vs etis [hal. 119]."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification).",
       "Tempatkan target Marge dalam rantai goal dari strategic sampai operasional dan nilai karakteristik goal efektif serta hubungannya dengan reward.",
       "Jawab: (Q1) bagaimana target individu ini terkait strategic goal perusahaan? (Q2) apa keterbatasan MBO dan perencanaan yang tampak pada kasus? (Q3) opsi mana yang Anda pilih?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan memakai Exh. 5.1, 5.4, dan keterbatasan MBO dengan [hal. X] (40%)",
       "Kelogisan hubungan target, reward, dan cara mencapainya (30%)",
       "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Marge kurang $1.000 dari target dan bisa menutup selisih itu dengan menyumbang ke sekolah yang kemudian membeli software, sehingga ia meraih bonus $10.000.\n2. Problem Identification: P1: target ditutup lewat cara yang mengubah arti pencapaian. P2: reward besar terikat pada satu angka. P3: pembatalan penjualan berada di luar kendalinya.\n3. Analisis Kasus: Target Marge adalah operational goal yang diturunkan dari strategic goal perusahaan (Exh. 5.1) [hal. 151–154]. Goal efektif dikaitkan dengan reward [hal. 161], tetapi penekanan berlebihan pada memenuhi target dapat mengaburkan cara mencapainya sehingga orang memotong jalan atau berperilaku tidak etis demi target [hal. 163]; buku menyebut tekanan berlebihan sebagai keterbatasan perencanaan [hal. 165]. MBM (management by means) menekankan cara sama pentingnya dengan hasil [hal. 163]. Tidak ilegal belum berarti etis [hal. 119]; tes practical: rela diberitakan dan nyaman dijelaskan kepada keluarga [hal. 126].\n4. Jawaban Pertanyaan: Q1: target individu adalah operational goal yang mendukung tactical dan strategic goals (Exh. 5.1) [hal. 152–154]. Q2: tekanan berlebihan dan penekanan pada hasil di atas cara [hal. 163, 165]. Q3: opsi 3.\n5. Rekomendasi: Pilih opsi 3: tidak menyumbang untuk menutup selisih, tetapi membantu sekolah itu mencari dana lewat jalur lain, dan menerima bahwa bonus bergantung pada hasil penjualan yang sesungguhnya (opsi 2 sebagai konsekuensinya). Menyumbang agar sekolah membeli produknya untuk memenuhi target sendiri gagal pada tes practical."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): Marge kurang $1.000 dari target dan bisa menutup selisih itu dengan menyumbang ke sekolah yang kemudian membeli software, sehingga ia meraih bonus $10.000.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: target ditutup lewat cara yang mengubah arti pencapaian.\nP2: reward besar terikat pada satu angka.\nP3: pembatalan penjualan berada di luar kendalinya.\n3. Analisis Kasus: Target Marge adalah operational goal yang diturunkan dari strategic goal perusahaan (Exh. 5.1) [hal. 151–154]. Goal efektif dikaitkan dengan reward [hal. 161], tetapi penekanan berlebihan pada memenuhi target dapat mengaburkan cara mencapainya sehingga orang memotong jalan atau berperilaku tidak etis demi target [hal. 163]; buku menyebut tekanan berlebihan sebagai keterbatasan perencanaan [hal. 165]. MBM (management by means) menekankan cara sama pentingnya dengan hasil [hal. 163]. Tidak ilegal belum berarti etis [hal. 119]; tes practical: rela diberitakan dan nyaman dijelaskan kepada keluarga [hal. 126].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: target individu adalah operational goal yang mendukung tactical dan strategic goals (Exh. 5.1) [hal. 152–154].\nQ2: tekanan berlebihan dan penekanan pada hasil di atas cara [hal. 163, 165].\nQ3: opsi 3.\n5. Rekomendasi Manajerial: Pilih opsi 3: tidak menyumbang untuk menutup selisih, tetapi membantu sekolah itu mencari dana lewat jalur lain, dan menerima bahwa bonus bergantung pada hasil penjualan yang sesungguhnya (opsi 2 sebagai konsekuensinya). Menyumbang agar sekolah membeli produknya untuk memenuhi target sendiri gagal pada tes practical."
   },
   {
     "type": "case",
@@ -184,24 +184,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: nonprogrammed decision dan uncertainty [hal. 195–197]; enam langkah [hal. 205–209]; gaya behavioral vs directive [hal. 212–213]; lima pendekatan etika [hal. 124–126]. Kasus ditulis sebatas fakta; tidak ada penilaian medis."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification).",
       "Klasifikasikan keputusan (programmed atau nonprogrammed) dan kondisinya, lalu petakan ke enam langkah.",
       "Jawab: (Q1) mengapa ini nonprogrammed decision dalam kondisi uncertainty? (Q2) apa alternatif tambahan yang bisa dikembangkan di langkah 3? (Q3) opsi mana yang Anda pilih, dan gaya keputusan apa yang tercermin?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan klasifikasi keputusan, kondisi, dan enam langkah dengan [hal. X] (40%)",
       "Kelogisan penilaian alternatif dan pendekatan etika (30%)",
       "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Carpenter beberapa kali tidak hadir dan mengaku bermasalah, klien menuntut perusahaan menanggung separuh fee, dan dua pihak internal berbeda saran (beri kesempatan atau berhentikan). Moses harus memilih.\n2. Problem Identification: P1: keandalan proyek dan hubungan klien. P2: biaya $250.000 yang dituntut klien. P3: kepedulian pada karyawan vs ketegasan disiplin. P4: janji pemaafan yang sudah diucapkan.\n3. Analisis Kasus: Situasi ini unik dan berdampak penting, sehingga nonprogrammed decision [hal. 195]. Informasi tentang masa depan Carpenter tidak lengkap, jadi kondisinya uncertainty [hal. 197]. Enam langkah: recognition (ada problem), diagnosis (penyebab), pengembangan alternatif (membatasi alternatif adalah penyebab utama keputusan gagal; riset Nutt) [hal. 205–207], selection, implementation (butuh buy-in), evaluation [hal. 205–209]. Ketua tim condong ke gaya behavioral, wakil presiden operasi ke directive [hal. 212–213] (hasil analisis). Emosi dan kecenderungan membenarkan janji yang sudah diucapkan adalah bias yang perlu diwaspadai [hal. 214–215].\n4. Jawaban Pertanyaan: Q1: keputusan tidak berulang, berdampak besar, dan hasilnya tidak bisa diprediksi. Q2: misalnya mengganti konsultan pada proyek itu sementara Carpenter menjalani perawatan, atau bernegosiasi soal fee dengan klien (hasil analisis). Q3: opsi 3; pemberhentian langsung mencerminkan gaya directive, sedangkan opsi 3 memadukan kepedulian dengan syarat tertulis.\n5. Rekomendasi: Pilih opsi 3: cuti berbayar singkat, konseling, dan syarat tertulis (ikut program perawatan atau keluar bila masalah berlanjut), sambil menyiapkan pengganti untuk proyek klien dan menegosiasikan tuntutan fee. Opsi 2 tanpa syarat mengabaikan klien; opsi 1 mengabaikan pengembangan alternatif."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): Carpenter beberapa kali tidak hadir dan mengaku bermasalah, klien menuntut perusahaan menanggung separuh fee, dan dua pihak internal berbeda saran (beri kesempatan atau berhentikan). Moses harus memilih.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: keandalan proyek dan hubungan klien.\nP2: biaya $250.000 yang dituntut klien.\nP3: kepedulian pada karyawan vs ketegasan disiplin.\nP4: janji pemaafan yang sudah diucapkan.\n3. Analisis Kasus: Situasi ini unik dan berdampak penting, sehingga nonprogrammed decision [hal. 195]. Informasi tentang masa depan Carpenter tidak lengkap, jadi kondisinya uncertainty [hal. 197]. Enam langkah: recognition (ada problem), diagnosis (penyebab), pengembangan alternatif (membatasi alternatif adalah penyebab utama keputusan gagal; riset Nutt) [hal. 205–207], selection, implementation (butuh buy-in), evaluation [hal. 205–209]. Ketua tim condong ke gaya behavioral, wakil presiden operasi ke directive [hal. 212–213] (hasil analisis). Emosi dan kecenderungan membenarkan janji yang sudah diucapkan adalah bias yang perlu diwaspadai [hal. 214–215].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: keputusan tidak berulang, berdampak besar, dan hasilnya tidak bisa diprediksi.\nQ2: misalnya mengganti konsultan pada proyek itu sementara Carpenter menjalani perawatan, atau bernegosiasi soal fee dengan klien (hasil analisis).\nQ3: opsi 3; pemberhentian langsung mencerminkan gaya directive, sedangkan opsi 3 memadukan kepedulian dengan syarat tertulis.\n5. Rekomendasi Manajerial: Pilih opsi 3: cuti berbayar singkat, konseling, dan syarat tertulis (ikut program perawatan atau keluar bila masalah berlanjut), sambil menyiapkan pengganti untuk proyek klien dan menegosiasikan tuntutan fee. Opsi 2 tanpa syarat mengabaikan klien; opsi 1 mengabaikan pengembangan alternatif."
   },
   {
     "type": "case",
@@ -217,24 +217,24 @@ export const MNM101_BANK_UTS: BankSoal[] = [
       "Kerangka acuan: authority, responsibility, accountability, delegation [hal. 230–231]; chain of command dan scalar principle [hal. 230]; whistle-blowing [hal. 141]."
     ],
     "instructions": [
-      "Susun Case Summary dan Problem Identification.",
+      "Susun Ringkasan Kasus (Case Summary) dan Identifikasi Permasalahan (Problem Identification).",
       "Petakan posisi Harold dan Taandil dengan authority, responsibility, accountability, dan chain of command.",
       "Jawab: (Q1) siapa yang memegang accountability atas kepatuhan keselamatan dan apa batas authority Harold? (Q2) apa risiko tiap opsi terhadap chain of command? (Q3) opsi mana yang Anda pilih dan apa langkah eskalasinya?",
       "Tutup dengan satu rekomendasi yang tegas."
     ],
     "outputFormat": [
-      "1. Case Summary",
-      "2. Problem Identification",
+      "1. Ringkasan Kasus (Case Summary)",
+      "2. Identifikasi Permasalahan (Problem Identification)",
       "3. Analisis Kasus (dengan kerangka buku dan [hal. X])",
-      "4. Jawaban Pertanyaan",
-      "5. Rekomendasi (satu opsi, tegas, dengan alasan)"
+      "4. Jawaban atas Pertanyaan Kasus",
+      "5. Rekomendasi Manajerial (satu opsi, tegas, dengan alasan)"
     ],
     "rubric": [
       "Ketepatan memakai authority, responsibility, accountability dengan [hal. X] (40%)",
       "Kelogisan analisis chain of command dan eskalasi (30%)",
       "Ketegasan rekomendasi (30%)"
     ],
-    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Case Summary: Harold tahu pedoman keselamatan berubah dan atasannya juga tahu tetapi belum bertindak. Ia ragu melampaui kewenangannya, sementara musim penjualan Natal mendekat.\n2. Problem Identification: P1: pedoman keselamatan baru belum dijalankan. P2: kejelasan siapa berwenang bertindak. P3: bahaya bagi konsumen bila lini mainan dijual tanpa pengecekan. P4: keinginan Harold menyenangkan atasan.\n3. Analisis Kasus: Authority melekat pada posisi dan mengalir ke bawah hierarki [hal. 231]; responsibility adalah kewajiban menjalankan tugas, accountability adalah kewajiban melaporkan hasil tugas kepada atasan di chain of command, dan delegation memindahkan authority dan responsibility ke bawah [hal. 231]. Menurut scalar principle, setiap orang harus tahu kepada siapa ia melapor sampai ke puncak [hal. 230]. Responsibility Harold adalah memastikan kepatuhan; authority untuk memerintahkan perubahan ada pada atasannya (hasil analisis). Buku mencontohkan kekacauan bila tidak jelas siapa yang berwenang (Deepwater Horizon) [hal. 232] dan whistle-blower sering melapor ke pihak luar bila jalur internal tidak efektif [hal. 141].\n4. Jawaban Pertanyaan: Q1: accountability akhir ada pada Taandil sebagai atasan; Harold memegang responsibility atas tugas pengecekan tetapi authority-nya terbatas pada posisinya [hal. 231]. Q2: opsi 2 membiarkan celah accountability; opsi 3 melompati chain of command tanpa lebih dulu menyampaikan ke atasan langsung [hal. 230]. Q3: opsi 1, dengan eskalasi bertahap bila tidak ada respons.\n5. Rekomendasi: Pilih opsi 1: memo tertulis kepada Taandil yang merangkum pedoman baru dan meminta otorisasi pelaksanaan, sehingga responsibility Harold terpenuhi dan accountability atasan jelas. Bila memo tidak ditanggapi, eskalasi ke manajer operasi secara terbuka lewat chain of command sebelum menimbang laporan anonim."
+    "answerGuide": "Hasil analisis AkuntansiHub, bukan kunci dari buku (buku hanya memberi tiga opsi tanpa jawaban; kerangka dan halaman berasal dari Daft & Marcic 12e).\n1. Ringkasan Kasus (Case Summary): Harold tahu pedoman keselamatan berubah dan atasannya juga tahu tetapi belum bertindak. Ia ragu melampaui kewenangannya, sementara musim penjualan Natal mendekat.\n2. Identifikasi Permasalahan (Problem Identification):\nP1: pedoman keselamatan baru belum dijalankan.\nP2: kejelasan siapa berwenang bertindak.\nP3: bahaya bagi konsumen bila lini mainan dijual tanpa pengecekan.\nP4: keinginan Harold menyenangkan atasan.\n3. Analisis Kasus: Authority melekat pada posisi dan mengalir ke bawah hierarki [hal. 231]; responsibility adalah kewajiban menjalankan tugas, accountability adalah kewajiban melaporkan hasil tugas kepada atasan di chain of command, dan delegation memindahkan authority dan responsibility ke bawah [hal. 231]. Menurut scalar principle, setiap orang harus tahu kepada siapa ia melapor sampai ke puncak [hal. 230]. Responsibility Harold adalah memastikan kepatuhan; authority untuk memerintahkan perubahan ada pada atasannya (hasil analisis). Buku mencontohkan kekacauan bila tidak jelas siapa yang berwenang (Deepwater Horizon) [hal. 232] dan whistle-blower sering melapor ke pihak luar bila jalur internal tidak efektif [hal. 141].\n4. Jawaban atas Pertanyaan Kasus:\nQ1: accountability akhir ada pada Taandil sebagai atasan; Harold memegang responsibility atas tugas pengecekan tetapi authority-nya terbatas pada posisinya [hal. 231].\nQ2: opsi 2 membiarkan celah accountability; opsi 3 melompati chain of command tanpa lebih dulu menyampaikan ke atasan langsung [hal. 230].\nQ3: opsi 1, dengan eskalasi bertahap bila tidak ada respons.\n5. Rekomendasi Manajerial: Pilih opsi 1: memo tertulis kepada Taandil yang merangkum pedoman baru dan meminta otorisasi pelaksanaan, sehingga responsibility Harold terpenuhi dan accountability atasan jelas. Bila memo tidak ditanggapi, eskalasi ke manajer operasi secara terbuka lewat chain of command sebelum menimbang laporan anonim."
   }
 ];
 

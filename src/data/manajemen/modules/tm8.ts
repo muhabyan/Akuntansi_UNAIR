@@ -13,7 +13,7 @@ export const TM8_READING: Reading = {
     'Menghubungkan kerangka TM01–TM07 dalam satu peta.',
     'Menghafal kerangka beserta halaman rujukannya lewat ringkasan per TM.',
     'Mengenali jebakan ujian lintas bab.',
-    'Menjawab kasus dengan lima langkah: Case Summary, Problem Identification, Analisis Kasus, Jawaban Pertanyaan, Rekomendasi.',
+    'Menjawab kasus dengan lima langkah presenter kasus: Ringkasan Kasus, Identifikasi Permasalahan, Analisis Kasus, Jawaban atas Pertanyaan Kasus, Rekomendasi Manajerial.',
   ],
   blocks: [
     {
@@ -398,17 +398,17 @@ export const TM8_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Format kasus di kelas terdiri atas lima langkah. Format ini berasal dari mekanisme perkuliahan, bukan dari buku, dan sama dengan bagian kasus pada TM01–TM07 serta dengan bank soal.',
+      text: 'Menurut mekanisme perkuliahan, Kelompok Presenter Kasus memimpin pembahasan studi kasus dengan lima langkah berikut. Format ini berasal dari mekanisme perkuliahan, bukan dari buku, dan dipakai di AkuntansiHub sebagai kerangka latihan (bagian kasus TM01–TM07 dan bank soal). Belum tentu UTS memakai format ini.',
     },
     {
       kind: 'table',
       headers: ['Langkah', 'Isi'],
       rows: [
-        ['1. Case Summary', 'Ringkasan fakta kasus'],
-        ['2. Problem Identification', 'Daftar masalah beserta jenisnya'],
+        ['1. Ringkasan Kasus (Case Summary)', 'Ringkasan fakta kasus'],
+        ['2. Identifikasi Permasalahan (Problem Identification)', 'Daftar masalah beserta jenisnya'],
         ['3. Analisis Kasus', 'Hubungkan tiap masalah dengan kerangka buku dan sebut halamannya'],
-        ['4. Jawaban Pertanyaan', 'Jawab pertanyaan kasus satu per satu'],
-        ['5. Rekomendasi', 'Satu keputusan yang tegas beserta alasannya'],
+        ['4. Jawaban atas Pertanyaan Kasus', 'Jawab pertanyaan kasus satu per satu'],
+        ['5. Rekomendasi Manajerial', 'Satu keputusan yang tegas beserta alasannya'],
       ],
     },
     {
