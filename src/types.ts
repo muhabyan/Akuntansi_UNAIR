@@ -122,11 +122,14 @@ export interface FigureTranscriptSection {
   items: string[];
 }
 
-export interface FigureMobileFlow {
+interface FigureMobileFlowBase {
   title: string;
   stages: { actor: string; actions: string[]; note?: string }[];
-  messages: string[];
 }
+
+export type FigureMobileFlow =
+  | (FigureMobileFlowBase & { mode?: 'participants'; messages: string[] })
+  | (FigureMobileFlowBase & { mode: 'cards'; messages?: never });
 
 /** Blok konten. Discriminated union -> aman & mudah dirender. */
 export type ContentBlock =

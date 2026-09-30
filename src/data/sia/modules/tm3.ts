@@ -187,6 +187,11 @@ export const SIA_TM3: Reading = {
       { name: 'Shipping', detail: 'Packing Slip + BOL' }, { name: 'Billing', detail: 'Sales Invoice' },
     ], 'Contoh jejak dokumen; pelajari bentuk simbol ANSI pada tabel berikut.'),
       altText: 'Jejak dokumen Sales Order, Picking Ticket, Packing Slip dan Bill of Lading, lalu Sales Invoice.',
+      mobileFlow: { mode: 'cards', title: 'Dokumen dari order sampai tagihan', stages: [
+        { actor: 'Sales → Warehouse', actions: ['Sales Order menjadi dasar Picking Ticket.'] },
+        { actor: 'Warehouse → Shipping', actions: ['Barang yang diambil diverifikasi; Packing Slip dan BOL dibuat.'] },
+        { actor: 'Shipping → Billing', actions: ['BOL tervalidasi menjadi dasar Sales Invoice.'] },
+      ] },
       transcript: ['Sales mencatat Sales Order.', 'Warehouse mengambil barang berdasarkan Picking Ticket.', 'Shipping memverifikasi barang dan menyiapkan Packing Slip serta Bill of Lading.', 'Billing membuat Sales Invoice berdasarkan bukti pengiriman yang tervalidasi.'],
       caption: 'Skema jejak dokumen, bukan flowchart ANSI formal. Simbol dokumen dan keputusan dijelaskan pada tabel di bawah.' },
     { kind: 'table', headers: ['Simbol', 'Bentuk', 'Contoh'], rows: [
@@ -220,6 +225,11 @@ export const SIA_TM3: Reading = {
     { kind: 'p', text: 'DFD berfokus pada **aliran data logis** tanpa menyebut perangkat fisik, personel departemen, atau media penyimpanan. Notasi yang umum: Gane-Sarson dan Yourdon-DeMarco. Richardson 4e, pp. 201–205.' },
     { kind: 'figure', title: 'Contoh DFD yang dapat ditelusuri', svg: SALES_DFD,
       altText: 'DFD context dan level 0 pesanan. Customer mengirim Order Details dan menerima Order Confirmation. Pada level 0 proses 1.0 Validate Order bertukar data dengan D1 Customer Master, lalu proses 2.0 Confirm Order mengirim konfirmasi ke Customer.',
+      mobileFlow: { mode: 'cards', title: 'Baca DFD: data apa berpindah?', stages: [
+        { actor: 'Context diagram', actions: ['Customer → proses 0: Order Details', 'Proses 0 → Customer: Order Confirmation'] },
+        { actor: 'Level 0: validasi', actions: ['Customer → 1.0 Validate Order: Order Details', '1.0 ↔ D1 Customer Master: Customer Query dan Customer Record'] },
+        { actor: 'Level 0: konfirmasi', actions: ['1.0 → 2.0 Confirm Order: Validated Order', '2.0 → Customer: Order Confirmation'], note: 'Aliran masuk dan keluar eksternal sama seperti pada context diagram. Panah DFD berarti aliran data, bukan urutan waktu.' },
+      ] },
       transcriptSections: [
         { title: 'Context diagram', items: ['Customer mengirim Order Details ke proses 0 Process Order.', 'Proses 0 mengembalikan Order Confirmation ke Customer. Penyimpanan internal belum ditampilkan.'] },
         { title: 'Level-0 DFD', items: ['Order Details masuk ke 1.0 Validate Order.', 'Proses 1.0 meminta dan membaca Customer Record dari D1 Customer Master.', 'Validated Order mengalir ke 2.0 Confirm Order, yang mengirim Order Confirmation ke Customer.', 'Aliran eksternal Order Details dan Order Confirmation tetap seimbang dengan context diagram.'] },

@@ -40,8 +40,13 @@ export const SIA_TM1: Reading = {
     { kind: 'h3', text: 'Simple Information System: Input → Processing → Output, didukung Storage' },
     { kind: 'figure', title: 'Dari transaksi kopi menjadi keputusan', svg: INFORMATION_SYSTEM,
       altText: 'Alur data penjualan kopi dari input POS, pemrosesan, penyimpanan, hingga laporan untuk keputusan pemesanan bahan.',
+      mobileFlow: { mode: 'cards', title: 'SIA: dari transaksi ke keputusan', stages: [
+        { actor: 'Input → Processing', actions: ['Kasir memasukkan item, jumlah, dan harga.', 'Sistem menghitung total dan memvalidasi transaksi.'] },
+        { actor: 'Storage ↔ Processing', actions: ['Catatan POS dan stok disimpan.', 'Data tersimpan dipakai lagi oleh proses berikutnya.'] },
+        { actor: 'Output → Keputusan', actions: ['Manajer membaca laporan penjualan dan stok.', 'Informasi itu membantu menentukan pemesanan bahan.'] },
+      ] },
       transcript: ['Kasir memasukkan item, jumlah, dan harga pada POS.', 'Sistem menghitung total serta memvalidasi transaksi; catatan transaksi dan stok diperbarui.', 'Laporan penjualan dan stok menjadi dasar manajer memesan bahan. Penyimpanan juga mendukung pemrosesan transaksi berikutnya.'],
-      caption: 'Ilustrasi proses sederhana berdasarkan konsep input, processing, storage, dan output TM1. Geser di layar kecil untuk melihat gambar; urutannya tersedia dalam teks.' },
+      caption: 'Ilustrasi proses sederhana berdasarkan konsep input, processing, storage, dan output TM1. Di layar kecil, ringkasan hubungan tampil lebih dulu; diagram rinci dapat dibuka di bawahnya.' },
     { kind: 'table', headers: ['Komponen', 'Fungsi', 'Contoh Starbucks'], rows: [
       ['Input', 'Menangkap data peristiwa transaksi.', 'Barista memasukkan 1 Grande Caffe Latte $4.75, oat milk, pembayaran mobile.'],
       ['Storage', 'Menyimpan rekaman untuk retrieval, audit trail, dan laporan.', 'Tabel Sales_Orders, Order_Lines, Customer_Account, Payment_Transactions.'],

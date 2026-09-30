@@ -46,6 +46,12 @@ export const SIA_TM2: Reading = {
       { name: 'Perform', detail: 'Uji pembuat = penyetuju' }, { name: 'Share', detail: 'Laporkan pengecualian' },
     ], 'Temuan baru dapat mengubah pertanyaan; siklus AMPS kemudian diulang.'),
       altText: 'Empat tahap AMPS untuk menguji jurnal yang dibuat dan disetujui oleh orang sama.',
+      mobileFlow: { mode: 'cards', title: 'AMPS dalam satu contoh audit', stages: [
+        { actor: 'Ask', actions: ['Jurnal mana yang dibuat dan disetujui orang yang sama?'] },
+        { actor: 'Master', actions: ['Siapkan data Entered_By dan Approved_By.'] },
+        { actor: 'Perform', actions: ['Bandingkan kedua field untuk menemukan self-approval.'] },
+        { actor: 'Share → Ask lagi', actions: ['Laporkan pengecualian; temuan dapat memicu pertanyaan baru.'] },
+      ] },
       transcript: ['Ask: rumuskan pertanyaan tentang risiko self-approval.', 'Master: siapkan data pembuat dan penyetuju jurnal.', 'Perform: bandingkan Entered_By dengan Approved_By.', 'Share: laporkan pengecualian untuk ditinjau; temuan dapat memicu pertanyaan baru.'],
       caption: 'Contoh penerapan AMPS pada pengujian pemisahan tugas, bukan urutan yang berhenti permanen di Share.' },
     { kind: 'table', headers: ['Kompetensi EY', 'AMPS', 'Output tahap'], rows: [

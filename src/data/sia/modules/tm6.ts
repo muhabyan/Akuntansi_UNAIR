@@ -25,6 +25,11 @@ export const SIA_TM6: Reading = {
       { name: 'Bill', detail: 'Invoice · piutang' }, { name: 'Collect', detail: 'Remittance · kas' },
     ], 'Pengakuan pendapatan mengikuti perpindahan kendali, bukan order atau invoice semata.'),
       altText: 'Alur order, picking dan pengiriman, billing, dan penerimaan kas dengan dokumen serta titik pengakuan pendapatan.',
+      mobileFlow: { mode: 'cards', title: 'Order-to-Cash: kapan dicatat?', stages: [
+        { actor: 'Order', actions: ['Sales Order diterima dan kredit diperiksa.', 'Belum ada pendapatan.'] },
+        { actor: 'Pick & Ship', actions: ['Barang disiapkan dan bukti pengiriman dibuat.', 'Pendapatan diakui saat kendali berpindah sesuai kontrak.'] },
+        { actor: 'Bill → Collect', actions: ['Billing membuat invoice dan memelihara piutang.', 'Cashier menerima pembayaran; piutang dilunasi.'] },
+      ] },
       transcript: ['Sales Order diterima dan kredit diperiksa; belum ada pendapatan.', 'Gudang menyiapkan barang dan shipping mendokumentasikan penyerahan; akui pendapatan ketika kendali berpindah sesuai kontrak.', 'Billing menerbitkan invoice dan memelihara piutang secara terpisah dari pemegang kas.', 'Cashier menerima pembayaran dan pembayaran diterapkan ke piutang.'],
       caption: 'Ilustrasi siklus TM6; Bill of Lading adalah bukti pengiriman, sedangkan waktu perpindahan kendali mengikuti syarat kontrak.' },
     { kind: 'ol', items: [
@@ -97,6 +102,11 @@ export const SIA_TM6: Reading = {
     { kind: 'h2', text: '4. Structure Modeling: UML Class Diagrams & REA Patterns' },
     { kind: 'figure', title: 'REA penjualan dan penerimaan kas', svg: reaDiagram('REA Order-to-Cash', 'Inventory', 'Delivered Order', 'Cash Receipt', 'Cash', 'Customer'),
       altText: 'Sumber daya persediaan terkait peristiwa penyerahan pesanan, yang berpasangan secara dualitas dengan penerimaan kas; kas bertambah dan Customer berpartisipasi dalam dua peristiwa.',
+      mobileFlow: { mode: 'cards', title: 'REA penjualan: resource, event, agent', stages: [
+        { actor: 'Give: Inventory → Delivered Order', actions: ['Perusahaan menyerahkan persediaan kepada Customer.'] },
+        { actor: 'Get: Cash Receipt → Cash', actions: ['Customer membayar; kas perusahaan bertambah.'] },
+        { actor: 'Duality dan agent', actions: ['Delivered Order ↔ Cash Receipt adalah dua sisi pertukaran.', 'Customer terlibat sebagai agent eksternal.'] },
+      ] },
       transcript: ['Resource Inventory berkurang ketika pesanan diserahkan.', 'Event Delivered Order dan Cash Receipt berpasangan sebagai give-get (duality).', 'Resource Cash bertambah setelah penerimaan pembayaran.', 'Customer adalah agent eksternal; staf internal juga terlibat. Jumlah order dan pembayaran yang saling terkait mengikuti aturan multiplicity yang dijelaskan di tabel.'],
       caption: 'Skema konsep REA untuk latihan TM6. Hubungan pembayaran Sunset Graphics dalam ebook lebih terbatas daripada skema pembayaran parsial yang dibahas pada materi.' },
     { kind: 'callout', variant: 'key', title: 'Asumsi pembayaran Sunset Graphics', text: 'Pada Exhibit 7.20, satu Cash Receipt dapat melunasi satu atau beberapa Orders, tetapi setiap Order terkait paling banyak satu Cash Receipt. Artinya model Sunset pada buku tidak memodelkan cicilan parsial untuk satu order. Skema latihan di bawah menambahkan linking table agar pembayaran parsial dan penerapan satu pembayaran ke beberapa order bisa dipelajari. Richardson 4e, pp. 297–298.' },
