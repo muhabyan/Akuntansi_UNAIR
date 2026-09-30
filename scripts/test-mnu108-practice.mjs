@@ -228,6 +228,11 @@ const data = { quiz: MNM101_QUIZ_UTS, fc: MNM101_FC, bank: MNM101_BANK_UTS, read
 const checkAll = (d) => { checkQuiz(d); checkFlashcards(d); checkBank(d); checkTm08(d); };
 checkAll(data);
 
+// The generators that wrote the old data are gone: running one would overwrite this data with the old edition.
+for (const script of ['build-super-mnm101-quizzes-data', 'build-super-mnm101-flashcards-data', 'build-super-mnm101-bank-data', 'build-super-mnm101-files', 'fix-fc-categories']) {
+  assert.ok(!fs.existsSync(`scripts/${script}.mjs`), `scripts/${script}.mjs is deleted; the TS data files are the source of truth`);
+}
+
 const passes = [
   `quiz: ${data.quiz.length} questions, every explanation cites pages inside its TM's page range, keys spread ${[0, 1, 2, 3].map((p) => data.quiz.filter((q) => q.answer === p).length).join('/')}`,
   `flashcards: ${data.fc.filter((c) => c.tm <= 8).length} UTS cards (TM01-TM07 and TM08), kept ids survive, retired ids stay retired, flashcardCount = ${data.flashcardCount}`,
