@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { INFORMATION_SYSTEM } from '../visuals';
 
 export const SIA_TM1: Reading = {
   tm: 1,
@@ -37,6 +38,10 @@ export const SIA_TM1: Reading = {
       ['Information', 'Data diolah, diorganisasi, dan diberi konteks sehingga mengurangi ketidakpastian.', 'Stok SKU 11309 di Store #4 di bawah reorder point sehingga sistem memicu pemesanan kembali.'],
     ], caption: 'Richardson 4e, pp. 7–8; contoh SKU adalah ilustrasi.' },
     { kind: 'h3', text: 'Simple Information System: Input → Processing → Output, didukung Storage' },
+    { kind: 'figure', title: 'Dari transaksi kopi menjadi keputusan', svg: INFORMATION_SYSTEM,
+      altText: 'Alur data penjualan kopi dari input POS, pemrosesan, penyimpanan, hingga laporan untuk keputusan pemesanan bahan.',
+      transcript: ['Kasir memasukkan item, jumlah, dan harga pada POS.', 'Sistem menghitung total serta memvalidasi transaksi; catatan transaksi dan stok diperbarui.', 'Laporan penjualan dan stok menjadi dasar manajer memesan bahan. Penyimpanan juga mendukung pemrosesan transaksi berikutnya.'],
+      caption: 'Ilustrasi proses sederhana berdasarkan konsep input, processing, storage, dan output TM1. Geser di layar kecil untuk melihat gambar; urutannya tersedia dalam teks.' },
     { kind: 'table', headers: ['Komponen', 'Fungsi', 'Contoh Starbucks'], rows: [
       ['Input', 'Menangkap data peristiwa transaksi.', 'Barista memasukkan 1 Grande Caffe Latte $4.75, oat milk, pembayaran mobile.'],
       ['Storage', 'Menyimpan rekaman untuk retrieval, audit trail, dan laporan.', 'Tabel Sales_Orders, Order_Lines, Customer_Account, Payment_Transactions.'],

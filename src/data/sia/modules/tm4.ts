@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { RELATION_DIAGRAM } from '../visuals';
 
 export const SIA_TM4: Reading = {
   tm: 4,
@@ -72,6 +73,10 @@ export const SIA_TM4: Reading = {
     { kind: 'callout', variant: 'key', title: 'Aturan inti 1:N', text: 'Primary key class di sisi **"1" (parent)** WAJIB diposting sebagai **foreign key** di tabel sisi **"*" (many/child)**. Dengan begitu setiap baris child menyimpan tepat satu ID parent. Kebalikannya akan memaksa satu sel di tabel sisi "1" menampung sekumpulan nilai dan melanggar First Normal Form (1NF). Exhibit 5.8.' },
     { kind: 'p', text: '**Generalization:** subclass dapat dipetakan dengan strategi **single-table** (superclass dan subclass digabung dalam satu tabel) atau **joined-table** (tabel terpisah untuk superclass dan setiap subclass). Richardson 4e, p. 216.' },
     { kind: 'h3', text: 'Linking table untuk M:N' },
+    { kind: 'figure', title: 'Mengubah relasi banyak-ke-banyak menjadi tabel', svg: RELATION_DIAGRAM,
+      altText: 'Sales_Order dan Inventory terhubung melalui Order_Lines. Order_ID dan Product_ID menjadi foreign key sekaligus composite primary key pada Order_Lines.',
+      transcript: ['Satu Sales_Order dapat memiliki banyak Order_Lines; setiap baris memiliki satu Order_ID.', 'Satu produk Inventory dapat muncul dalam banyak Order_Lines; setiap baris memiliki satu Product_ID.', 'Pasangan Order_ID dan Product_ID menjadi composite primary key, sedangkan Quantity dan Unit_Price disimpan pada baris pesanan.'],
+      caption: 'Contoh konseptual TM4. Kardinalitas bisnis dapat memerlukan kunci baris tambahan bila produk yang sama boleh muncul dua kali dalam satu order.' },
     { kind: 'p', text: 'Tabel relasional tidak dapat mengimplementasikan association M:N secara langsung sehingga M:N **tidak dapat** dipetakan menjadi satu foreign key. Richardson 4e, pp. 219–220; Exhibit 5.9.' },
     { kind: 'ol', items: [
       'Buat **linking table** (junction/association table) baru.',

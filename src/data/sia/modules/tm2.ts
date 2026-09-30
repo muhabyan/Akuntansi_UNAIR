@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { processDiagram } from '../visuals';
 
 export const SIA_TM2: Reading = {
   tm: 2,
@@ -40,6 +41,13 @@ export const SIA_TM2: Reading = {
       ['Tax Accounting', 'Pencocokan kepatuhan oleh DJP/IRS, transfer pricing, proyeksi effective tax rate (ETR), dan perencanaan transaksi M&A.'],
     ], caption: 'Richardson 4e, pp. 44–47; Exhibit 2.5.' },
     { kind: 'h2', text: '2. The Analytics Mindset & The AMPS Model Architecture' },
+    { kind: 'figure', title: 'AMPS untuk keputusan audit', svg: processDiagram('AMPS: pertanyaan memandu analisis', [
+      { name: 'Ask', detail: 'Jurnal mana berisiko?' }, { name: 'Master', detail: 'Bersihkan data jurnal' },
+      { name: 'Perform', detail: 'Uji pembuat = penyetuju' }, { name: 'Share', detail: 'Laporkan pengecualian' },
+    ], 'Temuan baru dapat mengubah pertanyaan; siklus AMPS kemudian diulang.'),
+      altText: 'Empat tahap AMPS untuk menguji jurnal yang dibuat dan disetujui oleh orang sama.',
+      transcript: ['Ask: rumuskan pertanyaan tentang risiko self-approval.', 'Master: siapkan data pembuat dan penyetuju jurnal.', 'Perform: bandingkan Entered_By dengan Approved_By.', 'Share: laporkan pengecualian untuk ditinjau; temuan dapat memicu pertanyaan baru.'],
+      caption: 'Contoh penerapan AMPS pada pengujian pemisahan tugas, bukan urutan yang berhenti permanen di Share.' },
     { kind: 'table', headers: ['Kompetensi EY', 'AMPS', 'Output tahap'], rows: [
       ['Ask the right questions', 'A — Ask the Question', 'Pertanyaan spesifik, dapat dijawab, relevan dengan keputusan.'],
       ['Extract, Transform, Load data', 'M — Master the Data', 'Data relevan, dinilai, dibersihkan, dan divalidasi.'],
