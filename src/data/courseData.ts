@@ -82,15 +82,15 @@ const AKK201_REF = [
 // Kode buku panduan: MNU108 (FEB25603011). Kode lama MNM101 dan MNM201 dialiaskan di src/lib/legacyCourseCodes.ts.
 const MNU108_TM1_7 = materi([
   ['Pengantar Manajemen: Manajer & Organisasi Inovatif', 'Daft Ch. 1'],
-  ['Lingkungan Eksternal & Budaya Organisasi', 'Daft Ch. 2'],
+  ['Lingkungan Organisasi & Budaya Korporat', 'Daft Ch. 2'],
   ['Manajemen dalam Lingkungan Global', 'Daft Ch. 3'],
   ['Etika Manajerial & Tanggung Jawab Sosial Perusahaan (CSR)', 'Daft Ch. 4'],
-  ['Perencanaan Manajerial & Penetapan Sasaran SMART/MBO', 'Daft Ch. 5'],
-  ['Perumusan & Eksekusi Strategi (Porter & BCG)', 'Daft Ch. 6'],
-  ['Pengambilan Keputusan Manajerial & Desain Organisasi', 'Daft Ch. 7–8'],
+  ['Perencanaan, Penetapan Tujuan & Strategi', 'Daft Ch. 5'],
+  ['Pengambilan Keputusan Manajerial', 'Daft Ch. 6'],
+  ['Desain Struktur Organisasi', 'Daft Ch. 7'],
 ], 1);
 const MNU108_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–8'],
+  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–7'],
   ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft Ch. 9'],
   ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft Ch. 10'],
   ['Memahami Perilaku Individu, Kepribadian & Sikap Kerja', 'Daft Ch. 11'],

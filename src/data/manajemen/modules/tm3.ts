@@ -1,180 +1,824 @@
+// MNU108 TM03 — Managing in a Global Environment.
+// Isi akademik berasal dari paket konten MNU108/TM03 (05_student_learning_version.md); aturan render dari 06.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 3, hal. 84–115.
+// Cakupan mengikuti RPP Pengantar Manajemen pertemuan 3. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Jangan menambah fakta di luar paket: ubah paketnya, lalu perbarui file ini.
 import type { Reading } from '../../../types';
-import { CASE_GLOBAL_HOFSTEDE_ENTRY } from '../manajemenPracticeCases';
-
-const SVG_GLOBAL_ENTRY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad3" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="expGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="licGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="jvGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="wosGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-    <linearGradient id="trendArrow" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad3)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SPEKTRUM MODA MASUK PASAR GLOBAL: KENDALI, BIAYA, &amp; RISIKO</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ENTRY SPECTRUM</text>
-
-  <!-- 4 Ascending Cards -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="175" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#expGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="16" y="22" fill="#38bdf8" font-size="11" font-weight="800">1. EKSPOR (EXPORT)</text>
-    <text class="svg-muted" x="16" y="52" fill="#94a3b8" font-size="8" font-weight="700">Langsung / Tak Langsung</text>
-    <text class="svg-text" x="16" y="74" fill="#cbd5e1" font-size="8">• Biaya investasi: Terendah</text>
-    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• Tingkat kendali: Minimal</text>
-    <text class="svg-text" x="16" y="110" fill="#cbd5e1" font-size="8">• Risiko modal: Sangat rendah</text>
-    <text class="svg-text" x="16" y="128" fill="#cbd5e1" font-size="8">• Hambatan: Bea cukai &amp; tarif</text>
-    <rect class="svg-badge-blue" x="16" y="145" width="163" height="20" rx="6" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="97" y="159" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Tahap Awal Penetrasi</text>
-  </g>
-
-  <g transform="translate(250, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="175" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#licGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="16" y="22" fill="#34d399" font-size="11" font-weight="800">2. LISENSI &amp; WARALABA</text>
-    <text class="svg-muted" x="16" y="52" fill="#94a3b8" font-size="8" font-weight="700">Licensing &amp; Franchising</text>
-    <text class="svg-text" x="16" y="74" fill="#cbd5e1" font-size="8">• Menjual hak merek / paten</text>
-    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• Pendapatan fee royalti</text>
-    <text class="svg-text" x="16" y="110" fill="#cbd5e1" font-size="8">• Risiko mutu mitra lokal</text>
-    <text class="svg-text" x="16" y="128" fill="#cbd5e1" font-size="8">• Contoh: McDonald's, Disney</text>
-    <rect class="svg-badge-green" x="16" y="145" width="163" height="20" rx="6" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="97" y="159" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Skalabilitas Cepat</text>
-  </g>
-
-  <g transform="translate(465, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="175" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#jvGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="16" y="22" fill="#fbbf24" font-size="11" font-weight="800">3. JOINT VENTURE</text>
-    <text class="svg-muted" x="16" y="52" fill="#94a3b8" font-size="8" font-weight="700">Kemitraan Strategis</text>
-    <text class="svg-text" x="16" y="74" fill="#cbd5e1" font-size="8">• Berbagi modal &amp; risiko (50:50)</text>
-    <text class="svg-text" x="16" y="92" fill="#cbd5e1" font-size="8">• Akses jaringan mitra lokal</text>
-    <text class="svg-text" x="16" y="110" fill="#cbd5e1" font-size="8">• Rawan friksi manajemen</text>
-    <text class="svg-text" x="16" y="128" fill="#cbd5e1" font-size="8">• Kepatuhan aturan negara</text>
-    <rect class="svg-badge-amber" x="16" y="145" width="163" height="20" rx="6" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="97" y="159" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Sinergi Lokal-Global</text>
-  </g>
-
-  <g transform="translate(680, 75)">
-    <rect class="svg-card" x="0" y="0" width="185" height="175" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
-    <rect x="0" y="0" width="185" height="32" rx="12" fill="url(#wosGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-red" x="14" y="22" fill="#f87171" font-size="11" font-weight="800">4. DIRECT SUBSIDIARY</text>
-    <text class="svg-muted" x="14" y="52" fill="#94a3b8" font-size="8" font-weight="700">Greenfield / Akuisisi</text>
-    <text class="svg-text" x="14" y="74" fill="#cbd5e1" font-size="8">• Kendali operasional 100%</text>
-    <text class="svg-text" x="14" y="92" fill="#cbd5e1" font-size="8">• Biaya modal: TERTINGGI</text>
-    <text class="svg-text" x="14" y="110" fill="#cbd5e1" font-size="8">• Risiko politik &amp; pasar penuh</text>
-    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="8">• Proteksi rahasia paten</text>
-    <rect class="svg-badge-red" x="14" y="145" width="157" height="20" rx="6" fill="#dc2626" fill-opacity="0.2"/>
-    <text class="text-accent-red" x="92" y="159" fill="#f87171" font-size="8" font-weight="700" text-anchor="middle">Kendali Mutlak</text>
-  </g>
-
-  <!-- Bottom Comparison Trend Bar -->
-  <g transform="translate(35, 270)">
-    <rect class="svg-subcard" x="0" y="0" width="830" height="22" rx="11" fill="#1e293b"/>
-    <rect x="0" y="0" width="830" height="22" rx="11" fill="url(#trendArrow)" fill-opacity="0.25"/>
-    <polygon points="825,11 810,4 810,18" fill="#f87171"/>
-    <text class="text-accent-blue" x="15" y="15" fill="#38bdf8" font-size="9" font-weight="700">RENDAH</text>
-    <text class="svg-text" x="415" y="15" fill="#cbd5e1" font-size="9" font-weight="700" text-anchor="middle">KOMITMEN MODAL, TINGKAT KENDALI, &amp; RISIKO KORPORASI</text>
-    <text class="text-accent-red" x="800" y="15" fill="#f87171" font-size="9" font-weight="700" text-anchor="end">TERTINGGI</text>
-  </g>
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Semakin bergerak ke kanan, potensi keuntungan jangka panjang semakin besar namun menuntut belanja modal masif.</text>
-</svg>`;
 
 export const TM3_READING: Reading = {
   tm: 3,
-  title: 'Managing in a Global Environment: Strategi Internasional & Kecerdasan Budaya',
-  ref: 'Richard L. Daft Bab 4 | Geert Hofstede 6 Cultural Dimensions | Global Mindset & Market Entry Modes',
-  intro: 'TM 3 membahas tantangan pengelolaan bisnis melintasi batas-batas negara (Cross-Border Management): motivasi ekspansi internasional, spektrum 4 strategi masuk pasar global (Ekspor, Lisensi/Waralaba, Joint Venture, dan Greenfield / Foreign Direct Investment), 6 Dimensi Budaya Nasional Geert Hofstede (Power Distance, Individualism vs Collectivism, Masculinity vs Femininity, Uncertainty Avoidance, Long-Term Orientation, Indulgence), serta pengembangan Kecerdasan Budaya (Cultural Intelligence / CQ).',
+  title: 'Managing in a Global Environment',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 3 (hal. 84–115) · RPP Pengantar Manajemen pertemuan 3',
+  intro: '**Sub-CPMK (RPP):** mahasiswa mampu menjelaskan tantangan globalisasi dan mengevaluasi strategi organisasi untuk bersaing di pasar internasional.',
   objectives: [
-    'Mengevaluasi spektrum strategi masuk pasar global berdasarkan trade-off antara biaya investasi, tingkat risiko, dan kendali manajemen.',
-    'Menerapkan 6 Dimensi Budaya Geert Hofstede untuk menganalisis perbedaan norma kerja antar-negara.',
-    'Membedakan strategi integrasi global: Global Strategy, Transnational Strategy, dan Multi-Domestic Strategy.',
-    'Mengembangkan 3 komponen Kecerdasan Budaya (CQ: Kognitif, Emosional/Motivasional, dan Fisik/Perilaku).'
+    'Borderless World and Changing International Landscape',
+    'Multinational corporation',
+    'Global strategy',
+    'Sociocultural Challenges',
+    'International management',
+    'Menerapkan teori Chapter 3 untuk menganalisis kasus We Want More Guitars! dan merumuskan implikasi manajerial.',
   ],
   blocks: [
-    {
-      kind: 'figure',
-      caption: 'Gambar 3.1: Spektrum Strategi Masuk Pasar Global: Dari Ekspor hingga Greenfield Investment.',
-      svg: SVG_GLOBAL_ENTRY
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 3'
-    },
+    // ---------------------------------------------------------------- §0
+    { kind: 'h2', text: '0. Orientasi TM03' },
+    { kind: 'p', text: '**Sub-CPMK TM03 (RPP):** mahasiswa mampu menjelaskan tantangan globalisasi dan mengevaluasi strategi organisasi untuk bersaing di pasar internasional.' },
+    { kind: 'p', text: '**Bahan kajian RPP → bagian halaman ini:**' },
     {
       kind: 'table',
-      headers: ['Metode Masuk Pasar Global', 'Tingkat Komitmen Modal', 'Tingkat Kontrol Manajemen', 'Keunggulan Utama', 'Risiko Utama'],
+      stackOnMobile: true,
+      headers: ['Bahan kajian RPP', 'Bagian', 'Catatan'],
       rows: [
-        ['Ekspor (Exporting)', 'Paling Rendah', 'Rendah (tergantung agen)', 'Memanfaatkan kapasitas pabrik dalam negeri tanpa investasi fisik di luar negeri.', 'Biaya transportasi tinggi dan tarif bea cukai impor.'],
-        ['Lisensi & Waralaba', 'Rendah', 'Sedang', 'Pendapatan royalti stabil tanpa menanggung biaya operasional gerai.', 'Mitra lisensi berpotensi mencuri rahasia dagang dan menjadi pesaing.'],
-        ['Joint Venture (Aliansi)', 'Sedang s/d Tinggi', 'Terbagi (Shared Control)', 'Memperoleh wawasan regulasi, jaringan distribusi, dan koneksi politik mitra lokal.', 'Konflik kepentingan mengenai pembagian laba dan arah strategi.'],
-        ['Greenfield Venture (FDI)', 'Paling Tinggi', 'Paling Tinggi (100% Penuh)', 'Kontrol mutlak atas standar kualitas, teknologi mutakhir, dan seluruh laba.', 'Risiko nasionalisasi politik, regulasi ketat, dan kerugian modal masif jika gagal.']
+        ['Borderless World and Changing International Landscape', '§1–§3', ''],
+        ['Multinational corporation', '§4', ''],
+        ['Global strategy', '§5', 'Buku tidak punya subbab "global strategy"; yang dibahas adalah strategi masuk pasar internasional dan orientasi MNC'],
+        ['Sociocultural Challenges', '§7–§8', ''],
+        ['International management', '§1 (definisi), §6–§8 (tantangannya)', 'Buku tidak punya subbab sendiri'],
       ],
-      caption: 'Tabel 3.0: Matriks perbandingan strategi ekspansi global.'
     },
+    { kind: 'p', text: 'Dua bagian lain dari Chapter 3 yang tidak disebut RPP dimuat ringkas dengan label "di luar RPP": §6 (Legal–Political Challenges) dan §9 (International Trade Alliances).' },
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    { kind: 'p', text: '**Presenter Materi**' },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: 6 Dimensi Budaya Nasional Geert Hofstede'
-    },
-    {
-      kind: 'table',
-      headers: ['Dimensi Budaya Hofstede', 'Skor Tinggi (High Score)', 'Skor Rendah (Low Score)', 'Relevansi Manajemen'],
-      rows: [
-        ['Power Distance (PDI)', 'Menerima hierarki kekuasaan kaku dan kesenjangan status (contoh: Indonesia, Malaysia).', 'Menuntut kesetaraan wewenang, gaya kepemimpinan egaliter (contoh: Denmark, Belanda).', 'Menentukan apakah gaya kepemimpinan harus instruktif atau partisipatif.'],
-        ['Individualism (IDV)', 'Mengutamakan pencapaian pribadi dan hak individu (contoh: AS, Inggris).', 'Kolektivisme; loyalitas kelompok dan keharmonisan tim diutamakan (contoh: Indonesia, Jepang).', 'Menentukan apakah sistem reward berbasis kinerja individu atau bonus tim.'],
-        ['Uncertainty Avoidance (UAI)', 'Menolak ambiguitas; membutuhkan aturan formal kaku dan SOP tertulis (contoh: Jerman, Jepang).', 'Nyaman dengan ketidakpastian; fleksibel dan toleran terhadap perbedaan (contoh: Singapura).', 'Menentukan tingkat detail dan kekakuan prosedur operasi standar pabrik.'],
-        ['Long-Term Orientation (LTO)', 'Fokus pada masa depan, ketekunan, menabung, dan adaptasi (contoh: Tiongkok, Korsel).', 'Fokus pada masa kini dan tradisi masa lalu, mengejar hasil kuartalan instan (contoh: AS).', 'Memengaruhi horizon waktu perencanaan investasi strategis korporasi.']
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§9',
+        'Hubungan antar konsep → §10 Peta Konsep',
+        'Contoh penerapan di organisasi → §11 + contoh di tiap bagian',
+        'Bedah film → §12 (*American Factory*)',
+        'Kesimpulan & implikasi manajerial → §14',
       ],
-      caption: 'Tabel 3.1: Dimensi budaya Geert Hofstede dalam manajemen lintas budaya.'
     },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Negosiasi Bisnis Manajer Amerika dengan Pengusaha Indonesia',
-      prompt: 'Seorang manajer ekspatriat asal Amerika Serikat (budaya Individualis, Power Distance rendah, Low-Context Communication) merasa frustrasi karena dalam rapat bisnis di Surabaya, para mitra lokal Indonesia tersenyum dan mengangguk tetapi tidak memberikan jawaban "Ya" atau "Tidak" yang tegas. Bagaimana analisis manajemen lintas budaya menjelaskan fenomena ini?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Dimensi Komunikasi (High-Context vs Low-Context)**: Amerika adalah budaya *Low-Context* di mana kata-kata lisan bermakna harfiah dan langsung (*direct*). Indonesia adalah budaya *High-Context* di mana makna tersirat dalam bahasa tubuh, intonasi, konteks relasi, dan kesantunan (*indirect*).',
-            '**Kolektivisme & Harmoni (Muka/Face-Saving)**: Bagi pengusaha Indonesia, mengatakan "Tidak" secara terang-terangan di depan forum dianggap kasar dan mempermalukan lawan bicara. Senyuman dan anggukan berarti "Saya mendengar Anda dengan hormat", BUKAN persetujuan kontrak.',
-            '**Rekomendasi Manajer Global**: Manajer AS harus mengasah Kecerdasan Budaya (CQ): tidak memaksakan konfrontasi verbal langsung, membangun relasi informal di luar jam kerja (makan malam bersama), serta mendengarkan pesan tersirat yang disampaikan secara halus.'
-          ]
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 3'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Strategi Masuk Pasar Global', 'Analisis komparatif ekspor, lisensi, joint venture, dan FDI.', 'Mampu merekomendasikan moda ekspansi yang sesuai profil risiko perusahaan.'],
-        ['2', 'Dimensi Budaya Hofstede', 'Aplikasi 6 dimensi budaya dalam mengelola tim multinasional.', 'Mampu menganalisis gesekan budaya kerja pada kasus ekspatriat.'],
-        ['3', 'Kecerdasan Budaya (CQ)', 'Integrasi kognitif, emosional, dan perilaku dalam adaptasi global.', 'Mampu merumuskan program pelatihan lintas budaya bagi pimpinan.']
-      ],
-      caption: 'Tabel 3.2: Peta penguasaan submateri TM 3 Pengantar Manajemen.'
-    },
-    CASE_GLOBAL_HOFSTEDE_ENTRY,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
-    },
+    { kind: 'p', text: '**Presenter Kasus**' },
     {
       kind: 'ul',
       items: [
-        '**Pikirkan Global, Bertindak Lokal (Glocal)**: Keberhasilan internasional mensyaratkan standarisasi skala global (efisiensi biaya) sekaligus adaptasi produk terhadap cita rasa dan norma lokal (responsivitas pasar).',
-        '**Etnosentrisme Adalah Musuh Manajemen**: Sikap memandang budaya negara asal sendiri lebih unggul dibanding budaya negara tuan rumah akan memicu kegagalan fatal dalam negosiasi dan kepemimpinan global.',
-        '**Joint Venture Butuh Keselarasan Budaya**: Mayoritas kegagalan Joint Venture internasional bukan disebabkan oleh masalah teknis keuangan, melainkan karena perselisihan budaya kerja dan ketidakpercayaan antar-mitra.'
-      ]
-    }
-  ]
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi → §13 (We Want More Guitars!)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (Mind Map)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §10 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (pertanyaan kritis)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §15 Bank Pertanyaan Kritis',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Presentasi dinilai dari pemahaman, bukan dari membaca slide. Pakai tabel di halaman ini untuk memahami, lalu jelaskan dengan kata-katamu sendiri.',
+    },
+    // ---------------------------------------------------------------- §1
+    { kind: 'h2', text: '1. International Management dan Borderless World' },
+    { kind: 'p', text: 'Buku membuka bab dengan tiga kekeliruan perusahaan di luar negeri [hal. 86]:' },
+    {
+      kind: 'ul',
+      items: [
+        'McDonald\'s butuh lebih dari setahun untuk menyadari bahwa umat Hindu di India tidak makan daging sapi. Penjualan baru naik setelah McDonald\'s menjual burger daging domba.',
+        'Di sebagian Afrika, label botol memuat gambar isinya agar pembeli yang tidak bisa membaca tahu apa yang dibeli. Sebuah produsen makanan bayi memasang gambar bayi di labelnya, dan produknya tidak laku.',
+        'United Airlines membagikan anyelir putih saat mulai terbang dari Hong Kong, lalu mendapati bahwa bagi banyak orang Asia bunga itu melambangkan kematian dan nasib buruk.',
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti sederhana', 'Sumber'],
+      rows: [
+        ['**International management**', 'Manajemen operasi bisnis yang dijalankan di lebih dari satu negara', '[hal. 86]'],
+        ['**Borderless world**', 'Seluruh dunia adalah sumber ancaman dan peluang bisnis, sehingga setiap manajer perlu berpikir global, bahkan yang seluruh kariernya di kota asal. Isolasi dari kekuatan internasional tidak lagi mungkin', '[hal. 86–87]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Fungsi dasar manajemen, yaitu **planning, organizing, leading, controlling**, sama saja di dalam maupun di luar negeri. Yang berbeda: manajer menghadapi **kesulitan dan risiko yang lebih besar** saat menjalankannya secara internasional [hal. 86, 92].',
+    },
+    { kind: 'p', text: '**Kaitan dengan TM sebelumnya:**' },
+    {
+      kind: 'ul',
+      items: [
+        'Dimensi internasional adalah bagian yang makin penting dari lingkungan eksternal yang dibahas di Chapter 2 (TM02) [hal. 86].',
+        'Box Sunny Side Up menunjukkan eksperimen **bossless** (TM01) terjadi di banyak negara, misalnya Semco di Brasil, FAVI di Prancis, dan Mondragon di Spanyol. Menurut buku, desain bossless bisa mencerminkan budaya nasional [hal. 87].',
+      ],
+    },
+    // ---------------------------------------------------------------- §2
+    { kind: 'h2', text: '2. Globalization dan Global Mind-Set' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti sederhana', 'Sumber'],
+      rows: [
+        ['**Globalization**', 'Sejauh mana perdagangan dan investasi, informasi, gagasan sosial dan budaya, serta kerja sama politik mengalir antarnegara. Akibatnya negara, bisnis, dan orang makin saling bergantung', '[hal. 88]'],
+        ['**Global mind-set**', 'Kemampuan manajer menghargai dan memengaruhi individu, kelompok, organisasi, dan sistem yang punya karakteristik sosial, budaya, politik, institusional, intelektual, dan psikologis yang berbeda', '[hal. 90]'],
+        ['**Situational intelligence**', 'Istilah Olivier Jolivet (CEO COMO Hotels and Resorts): kemampuan menyesuaikan diri dan sikap saat berinteraksi dengan orang dari budaya berbeda', '[hal. 91]'],
+      ],
+    },
+    { kind: 'p', text: '**Walmart: sukses di dalam negeri belum tentu sukses di luar negeri** [hal. 88]. Walmart punya lebih banyak toko di luar AS daripada di dalam negeri, tetapi masih dipandang sebagai perusahaan Amerika yang hadir di luar negeri, bukan perusahaan global. Setelah sembilan tahun di Jerman, Walmart menjual tokonya kepada pesaing lokal dan keluar. Buku mencatat hambatan dan kekeliruannya di sana:' },
+    {
+      kind: 'ul',
+      items: [
+        'Jerman punya hukum yang melarang pedagang menjual di bawah biaya, sehingga salah satu strategi utama Walmart tidak bisa dipakai.',
+        'Karyawan yang menyapa dengan antusias di pintu dan menawarkan bantuan terus-menerus justru mengganggu pelanggan Jerman.',
+        'Sebagian pelanggan tersinggung ketika belanjaannya dikemasi orang asing.',
+      ],
+    },
+    { kind: 'p', text: 'Walmart kemudian berinvestasi \\$16 miliar untuk saham mayoritas Flipkart di India. Sebagai perusahaan lokal, Flipkart menghadapi lebih sedikit hambatan hukum dan regulasi, dan manajernya lebih memahami pelanggan setempat [hal. 88].' },
+    { kind: 'p', text: '**Exhibit 3.1: The Shifting Geography of Global 500 Companies** [hal. 88]' },
+    {
+      kind: 'table',
+      headers: ['Negara', '2009', '2019'],
+      rows: [
+        ['China', '37', '119'],
+        ['USA', '140', '121'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber exhibit: jumlah perusahaan di daftar *Fortune* Global 500. China hampir menyalip AS [hal. 88, 92].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Globalisasi tidak hanya membawa peluang. Buku mencatat bahwa keterhubungan global kemungkinan ikut mempercepat penyebaran COVID-19, dan kaum nasionalis menyambut larangan perjalanan serta penutupan perbatasan. Globalisasi menambah kekayaan dunia, tetapi juga **menambah risiko** yang tidak diantisipasi [hal. 88–89].',
+    },
+    { kind: 'p', text: '**Exhibit 3.2: Three Dimensions of Global Mind-Set** [hal. 90–91]' },
+    {
+      kind: 'table',
+      headers: ['Cognitive Dimension', 'Psychological Dimension', 'Social Dimension'],
+      rows: [
+      ],
+      caption: 'Global Mind-Set',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dimensi', 'Isi', 'Sumber'],
+      rows: [
+        ['**Cognitive**', 'Tahu tentang lingkungan dan bisnis global, memahami perbedaan budaya, mampu menafsirkan perubahan global yang kompleks', '[hal. 90]'],
+        ['**Psychological**', 'Aspek emosional: menyukai cara berpikir dan bertindak yang beragam, mau mengambil risiko, punya energi dan percaya diri menghadapi hal yang tidak pasti', '[hal. 90]'],
+        ['**Social**', 'Kemampuan berperilaku yang membangun hubungan saling percaya dengan orang yang berbeda dari diri sendiri', '[hal. 90–91]'],
+      ],
+    },
+    { kind: 'p', text: '**Contoh global mind-set dari buku:**' },
+    {
+      kind: 'ul',
+      items: [
+        'Manajer dengan global mind-set dapat melihat dan merespons banyak perspektif sekaligus, tidak terjebak dalam **domestic mind-set** yang melihat semuanya dari budaya sendiri [hal. 90].',
+        'Optisien Bijan Azami (TwoBillionEyes) harus berpikir di luar cara yang berhasil di negara asalnya untuk menyediakan kacamata di negara berkembang [hal. 90].',
+        'Reliance Industries, perusahaan swasta terbesar di India, mencantumkan "global mind-set" sebagai kompetensi inti manajernya [hal. 90].',
+        'Menurut Jolivet, di Jepang konsensus dibangun dari bawah ke atas dan butuh banyak waktu, sedangkan di Asia Tenggara komitmen dari atas justru lebih penting lebih dulu [hal. 91].',
+      ],
+    },
+    { kind: 'p', text: '**Cara mengembangkan global mind-set** [hal. 91]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Cara', 'Isi'],
+      rows: [
+        ['**Thinking**', 'Rasa ingin tahu yang tulus tentang orang dan budaya lain, mempelajari urusan dunia dan bisnis internasional, membuka pikiran terhadap sudut pandang berbeda'],
+        ['**Doing**', 'Membangun hubungan dengan orang lintas batas budaya dan negara. Media sosial, perjalanan internasional, studi di luar negeri, dan belajar bahasa asing adalah kegiatan kuncinya'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'tip',
+      title: 'Tips',
+      text: 'Orang yang terpapar banyak budaya dan bahasa lebih mudah mengembangkan global mind-set. Namun buku menegaskan bahwa **manajer yang mau, dari negara mana pun, dapat mengembangkannya** [hal. 91].',
+    },
+    // ---------------------------------------------------------------- §3
+    { kind: 'h2', text: '3. The Changing International Landscape: China dan India' },
+    { kind: 'p', text: 'Banyak perusahaan kini langsung masuk ke China atau India sebagai langkah pertama ke bisnis internasional. Pada saat yang sama, perusahaan di kedua negara itu tumbuh cepat sebagai penyedia produk dan jasa bagi negara maju [hal. 92].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'China Rising', 'India, the Service Giant'],
+      rows: [
+        ['Kekuatan utama', 'Manufaktur [hal. 93, 95]', 'Desain software, jasa, rekayasa presisi; pemimpin industri IT outsourcing [hal. 93]'],
+        ['Pasar', 'Kelas menengah tumbuh tercepat dalam sejarah; akan segera menyalip AS sebagai pasar ritel terbesar; sudah jadi pasar terbesar untuk mobil dan smartphone [hal. 92]', 'Populasi terbesar kedua; pasar besar yang sebagian besar belum tergarap [hal. 94]'],
+        ['Posisi global', 'Kemungkinan segera mendominasi bisnis besar global (Exh. 3.1). Pada 2011 hanya 2 dari 10 besar pembuat smartphone di China adalah perusahaan China; satu dekade kemudian 8 [hal. 92]', 'Lebih dari 1.000 pusat R&D perusahaan multinasional (mis. Unilever, Expedia, Panasonic, Ricoh); eksportir obat generik terbesar dunia [hal. 93]'],
+        ['Tantangan bagi perusahaan asing', 'Regulasi baru, pajak dan biaya naik, kendali pemerintah makin ketat; "Great Firewall" membatasi perusahaan internet asing; perang dagang AS–China dengan tarif [hal. 92–93]', 'Beroperasi di India sulit bahkan bagi perusahaan terbesar; India mengimpor hampir 70% bahan baku obat dari China [hal. 93–94]'],
+        ['Contoh', 'Xiaomi menjadi merek smartphone teratas di India dan pembuat smartphone terbesar keempat dunia [hal. 93, 95]; Amazon kesulitan bersaing dengan platform Alibaba yang lebih cocok dengan pasar dan regulasi lokal, lalu pada 2019 mengumumkan penutupan marketplace pihak ketiganya di China [hal. 93]', 'Amazon menyiapkan \\$5 miliar untuk bersaing dengan Flipkart. Lebih dari 20.000 toko kecil lokal (**kirana**) ikut program "I Have Space" sebagai titik distribusi, dan aplikasi diubah agar jalan di smartphone murah [hal. 94]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Contoh Amazon di China dan India menunjukkan pola yang sama: pemain lokal (Alibaba, Flipkart) unggul karena **lebih memahami pasar dan lingkungan regulasi setempat** [hal. 93–94]. Di India, Amazon merespons dengan beradaptasi ke cara lokal lewat kirana.',
+    },
+    // ---------------------------------------------------------------- §4
+    { kind: 'h2', text: '4. Multinational Corporations dan Bottom of the Pyramid' },
+    { kind: 'p', text: '**Multinational corporation (MNC)**: istilahnya **tidak punya definisi pasti**, tetapi MNC biasanya menerima **lebih dari 25%** total pendapatan penjualannya dari operasi di luar negara asal induknya. MNC juga disebut global corporations, stateless corporations, atau transnational corporations. MNC dapat memindahkan banyak aset antarnegara dan memengaruhi ekonomi, politik, dan budaya nasional [hal. 95].' },
+    { kind: 'p', text: '**Tiga ciri manajerial MNC** [hal. 95]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Ciri', 'Artinya'],
+      rows: [
+        ['1', 'Dikelola sebagai **sistem bisnis global yang terintegrasi**', 'Afiliasi di berbagai negara bekerja sama erat; modal, teknologi, dan orang dipindahkan antarafiliasi; bahan dan suku cadang diperoleh di mana pun paling menguntungkan'],
+        ['2', 'Dikendalikan **satu otoritas manajemen**', 'Keputusan strategis kunci untuk induk dan semua afiliasi dibuat terpusat. Ada kantor pusat binasional (mis. Royal Dutch/Shell), tetapi tetap butuh sentralisasi untuk menjaga integrasi'],
+        ['3', 'Manajer puncak **berperspektif global**', 'Seluruh dunia dipandang sebagai satu pasar untuk keputusan strategis, perolehan sumber daya, lokasi produksi, iklan, dan efisiensi pemasaran'],
+      ],
+    },
+    { kind: 'p', text: '**Filosofi manajemen MNC** (menurut sebagian peneliti) [hal. 96]:' },
+    {
+      kind: 'table',
+      headers: ['Orientasi', 'Fokus'],
+      rows: [
+        ['**Ethnocentric**', 'Menekankan negara asal'],
+        ['**Polycentric**', 'Berorientasi ke pasar masing-masing negara tuan rumah'],
+        ['**Geocentric**', 'Benar-benar berorientasi dunia; tidak mengutamakan negara tertentu'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh perusahaan yang benar-benar global adalah **Nestlé**: sebagian besar penjualannya dari luar Swiss, lebih dari separuh manajernya bukan orang Swiss, dan 308.000 karyawannya tersebar di seluruh dunia [hal. 96]. Contoh lain, McDonald\'s dulu menyalin apa yang dijual di AS ke unit internasionalnya; kini ia mencari manajer lokal yang memahami budaya dan hukum setempat, dan manajer negara bebas mengembangkan produk sesuai selera lokal, seperti Maharaja Mac di India [hal. 95].' },
+    { kind: 'p', text: '**Bottom of the pyramid (BOP)** [hal. 96–97]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Isi'],
+      rows: [
+        ['Konsep', 'Korporasi dapat **mengurangi kemiskinan** dan masalah sosial lain **sekaligus meraih laba signifikan** dengan menjual produk dan jasa kepada orang termiskin di dunia'],
+        ['Siapa', 'Lebih dari 4 miliar orang di lapisan terbawah "piramida" ekonomi dunia menurut pendapatan per kapita; berpenghasilan kurang dari US\\$1.500 per tahun, sekitar seperempatnya kurang dari US\\$1 per hari'],
+        ['Masalahnya', 'Produk dan jasa bisnis besar terlalu mahal, sulit dijangkau, dan tidak sesuai kebutuhan mereka. Akibatnya orang miskin sering membayar **lebih mahal** untuk kebutuhan dasar'],
+        ['Contoh', '**Godrej & Boyce (India):** penetrasi kulkas hanya 18%, jadi perusahaan membuat **chotuKool**, kulkas mini portabel bertenaga baterai untuk 5–6 botol air, seharga sekitar 3.250 rupee (US\\$69), sekitar 35% lebih murah dari kulkas termurah [hal. 96]. **Village Phone:** pengusaha desa, kebanyakan perempuan, memakai pinjaman mikro Grameen Bank untuk membeli ponsel dan menjual jasa telepon kepada warga desa [hal. 97]. Contoh lain: DSM, Leapfrog Investments, S.C. Johnson di Nairobi [hal. 96–97]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku mengakui bahwa MNC sering dituduh membawa dampak negatif bagi masyarakat, tetapi MNC juga punya sumber daya untuk berbuat baik. Pendukung BOP percaya perubahan positif yang bertahan lama terjadi ketika **motif laba berjalan seiring** keinginan memperbaiki hidup manusia [hal. 96–97].',
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (1/3)',
+      text: 'Di Indonesia, banyak produk kebutuhan sehari-hari seperti sampo, kopi, dan deterjen dijual dalam kemasan sachet kecil. Harga per kemasan yang rendah membuat produk itu terjangkau bagi konsumen yang tidak mampu membeli kemasan besar sekaligus. Polanya sejalan dengan logika BOP di buku: produk dirancang ulang agar terjangkau dan sesuai kebutuhan konsumen berpenghasilan rendah, seperti chotuKool [hal. 96].',
+    },
+    // ---------------------------------------------------------------- §5
+    { kind: 'h2', text: '5. Strategi Masuk Pasar Internasional (poin RPP: Global strategy)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku tidak punya subbab bernama "global strategy". Bagian ini memuat yang dibahas buku: tiga strategi untuk masuk ke arena internasional (3-4), ditambah orientasi MNC di §4. Tipologi strategi global lain dan moda masuk selain tiga strategi ini **tidak dibahas di buku**.',
+    },
+    { kind: 'p', text: 'Organisasi punya dua pilihan besar untuk terlibat di pasar internasional [hal. 97]:' },
+    {
+      kind: 'ol',
+      items: [
+        '**Mencari sumber daya yang lebih murah** di luar negeri, seperti bahan atau tenaga kerja (offshoring/global outsourcing).',
+        '**Mengembangkan pasar** untuk produk atau jasa di luar negara asal, lewat exporting dan partnerships.',
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Strategi', 'Arti', 'Kelebihan', 'Catatan', 'Sumber'],
+      rows: [
+        ['**Exporting**', 'Fasilitas produksi tetap di negara asal; produk dikirim untuk dijual di negara lain', 'Biaya sumber daya moderat, risiko terbatas; lebih murah daripada membangun pabrik di negara tuan rumah', 'Keterlibatan awal banyak perusahaan. Masalahnya: jarak fisik, regulasi pemerintah, mata uang asing, perbedaan budaya', '[hal. 97–98]'],
+        ['**Global outsourcing** (offshoring)', 'Terlibat dalam pembagian kerja internasional agar pekerjaan dilakukan di negara dengan sumber tenaga kerja dan pasokan termurah', 'Biaya tenaga kerja dan pasokan lebih rendah', 'Awalnya pekerjaan level rendah (tekstil, call center, pemrosesan kartu kredit). Internet dan biaya telekomunikasi yang turun memungkinkan pekerjaan level lebih tinggi seperti software, akuntansi, dan jasa medis', '[hal. 98]'],
+        ['**Partnerships**', 'Tingkat keterlibatan lebih tinggi. **Joint venture**: berbagi biaya dan risiko dengan perusahaan lain, biasanya di negara tuan rumah, untuk mengembangkan produk, membangun pabrik, atau jaringan penjualan dan distribusi. **Alliance networks**: kumpulan kemitraan dengan berbagai perusahaan, sering lintas negara', 'Buku menulis: "often the fastest, cheapest, and least risky way to get into the global game"', 'Lihat catatan Exh. 3.3 di bawah', '[hal. 98]'],
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 3.3: Three Strategies for Entering the International Arena** [hal. 98]' },
+    {
+      kind: 'table',
+      headers: ['Strategi', 'Cost to enter', 'Ownership of foreign operations'],
+      rows: [
+        ['Exporting', 'Rendah', 'Rendah'],
+        ['Global outsourcing', 'Menengah', 'Menengah'],
+        ['Partnerships', 'Tinggi', 'Tinggi'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Ada dua pernyataan buku yang perlu dibaca berdampingan. Teks menyebut partnership "often the **fastest, cheapest, and least risky** way to get into the global game" [hal. 98], sedangkan **Exh. 3.3** menempatkan partnerships pada **biaya dan kepemilikan tertinggi** di antara tiga strategi [hal. 98]. Buku tidak menjelaskan dibandingkan dengan apa partnership disebut termurah. Untuk soal tentang Exh. 3.3, jawab sesuai exhibit.',
+    },
+    { kind: 'p', text: '**Contoh joint venture dari buku:**' },
+    {
+      kind: 'ul',
+      items: [
+        '**Starbucks** mengandalkan mitra lokal untuk mengatasi masalah hukum dan logistik serta menyesuaikan desain toko dan menu (di India ada roti tandoori paneer dan croissant rasa kapulaga). Di China, Starbucks masuk lewat tiga mitra berbeda untuk wilayah utara, timur, dan selatan. Saat membeli bagian para mitranya pada 2017, Starbucks sudah punya sekitar 3.000 toko di 148 kota. Di India, Starbucks membentuk joint venture 50-50 dengan Tata Global Beverages [hal. 99].',
+        '**Kellogg dan Wilmar** membentuk joint venture di China: Kellogg membawa keahlian sereal dan merek global, Wilmar membawa infrastruktur, jaringan distribusi, dan pengetahuan pasar lokal [hal. 98].',
+      ],
+    },
+    { kind: 'p', text: 'Perusahaan bisa memakai salah satu atau semua strategi ini untuk memulai atau memperbesar bisnis internasionalnya [hal. 99].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (2/3)',
+      text: 'Banyak UMKM kerajinan dan mebel di Indonesia tetap berproduksi di bengkel dalam negeri, lalu mengirim produknya kepada pembeli di luar negeri. Ini pola **exporting** menurut buku: fasilitas produksi tetap di negara asal dan produk dikirim untuk dijual di negara lain, dengan biaya sumber daya moderat dan risiko terbatas [hal. 97]. Tantangan yang disebut buku tetap berlaku: jarak fisik, regulasi pemerintah, mata uang asing, dan perbedaan budaya [hal. 97–98].',
+    },
+    // ---------------------------------------------------------------- §6
+    { kind: 'h2', text: '6. Legal–Political Challenges (di luar RPP: ringkas)' },
+    { kind: 'p', text: 'Setiap negara tuan rumah punya hukum tentang pencemaran nama baik, perlindungan konsumen, informasi dan pelabelan, **ketenagakerjaan dan keselamatan kerja**, serta upah. Manajer internasional harus mempelajari dan mematuhi aturan itu, yang bisa berbeda dari negara asalnya. Pejabat dan masyarakat sering memandang perusahaan asing sebagai **outsider**, bahkan penyusup, dan curiga terhadap dampaknya pada kemandirian ekonomi dan kedaulatan politik [hal. 99].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Konsep', 'Arti', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Political risk**', 'Risiko kehilangan aset, daya menghasilkan laba, atau kendali manajerial akibat perubahan atau ketidakstabilan politik di negara tuan rumah. Mencakup konflik internal (keresahan sosial, kekerasan etnis, aktivisme, terorisme dan ancaman siber bermotif politik) dan tindakan pemerintah (perubahan hukum, pajak, regulasi)', 'GDPR Uni Eropa bisa mendenda hingga 4% pendapatan global. Marriott mengirim survei yang mencantumkan Tibet, Makau, dan Hong Kong sebagai pilihan negara; regulator China turun tangan, Marriott meminta maaf dan menangguhkan reservasi online di Greater China selama seminggu', '[hal. 100–101]'],
+        ['**Political instability**', 'Kerusuhan, revolusi, kekacauan sipil, dan pergantian pemerintahan yang sering', 'Ketegangan di Hong Kong berdampak pada Cathay Pacific dan NBA', '[hal. 101]'],
+      ],
+    },
+    { kind: 'p', text: 'Box Michelin 5-Star (Vermont Maple) menunjukkan bahwa pengusaha kecil pun harus belajar hukum dagang dan pajak impor saat memperkenalkan produk baru di Eropa [hal. 100–101].' },
+    // ---------------------------------------------------------------- §7
+    { kind: 'h2', text: '7. Sociocultural Challenges: Social Values' },
+    { kind: 'p', text: '**Budaya suatu bangsa** mencakup pengetahuan, keyakinan, dan nilai bersama, serta pola perilaku dan cara berpikir bersama anggota masyarakat. Faktor budaya kadang lebih membingungkan daripada faktor politik dan ekonomi [hal. 102].' },
+    { kind: 'p', text: '**Ethnocentrism** = kecenderungan alami orang untuk menganggap budayanya sendiri lebih unggul dan meremehkan atau mengabaikan nilai budaya lain. Etnosentrisme ada di semua negara; manajer Amerika secara khusus sering dituduh bersikap etnosentris. Sikap etnosentris yang kuat di suatu negara juga menyulitkan perusahaan asing beroperasi di sana. Salah satu cara melawan kecenderungan etnosentris adalah **memahami dan menghargai perbedaan nilai sosial** [hal. 102].' },
+    { kind: 'p', text: '**Dimensi nilai Hofstede** (riset terhadap 116.000 karyawan IBM di 40 negara) [hal. 102–103]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dimensi', 'Tinggi / kutub pertama', 'Rendah / kutub kedua', 'Contoh negara dari buku'],
+      rows: [
+        ['**Power distance**', 'Orang **menerima** ketimpangan kekuasaan antarlembaga, organisasi, dan orang', 'Orang **mengharapkan** kesetaraan kekuasaan', 'Tinggi: Malaysia, India, Filipina. Rendah: Denmark, Israel, Selandia Baru'],
+        ['**Uncertainty avoidance**', 'Tidak nyaman dengan ketidakpastian dan ambiguitas; mendukung keyakinan dan struktur yang menjanjikan kepastian dan konformitas', 'Toleransi tinggi terhadap hal yang tidak terstruktur, tidak jelas, dan tidak terduga', 'Tinggi: Yunani, Portugal, Uruguay. Rendah: Swedia, Singapura, Jamaika'],
+        ['**Individualism–collectivism**', '**Individualism**: kerangka sosial longgar; tiap orang diharapkan mengurus dirinya sendiri', '**Collectivism**: kerangka sosial erat; orang saling menjaga dan organisasi melindungi kepentingan anggotanya', 'Individualis: AS, Kanada, Inggris. Kolektivis: China, Meksiko, Brasil'],
+        ['**Masculinity–femininity**', '**Masculinity**: prestasi, heroisme, ketegasan, kerja sebagai pusat hidup (dengan stres tinggi), kesuksesan materi', '**Femininity**: hubungan, kerja sama, pengambilan keputusan kelompok, kualitas hidup', 'Maskulin: Jepang, Jerman, Italia, Meksiko. Feminin: Swedia, Kosta Rika, Norwegia, Prancis'],
+        ['**Long-term vs short-term orientation** (dimensi kelima, ditambahkan kemudian)', '**Long-term**: peduli masa depan; menghargai hemat dan ketekunan', '**Short-term**: peduli masa lalu dan kini; menghargai tradisi dan kewajiban sosial', 'Long-term: China dan negara Asia lain. Short-term: Rusia, Afrika Barat'],
+      ],
+    },
+    { kind: 'p', text: 'Pada masculinity–femininity, pria dan wanita sama-sama menganut nilai yang dominan di budayanya [hal. 102].' },
+    { kind: 'p', text: '**Exhibit 3.4: Rank Orderings of 10 Countries Along Four Dimensions of National Value Systems** [hal. 103]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Country', 'Power Distance', 'Uncertainty Avoidance', 'Individualism', 'Masculinity'],
+      rows: [
+        ['Australia', '7', '7', '2', '5'],
+        ['Costa Rica', '8 (tie)', '2 (tie)', '10', '9'],
+        ['France', '3', '2 (tie)', '4', '7'],
+        ['West Germany', '8 (tie)', '5', '5', '3'],
+        ['India', '2', '9', '6', '6'],
+        ['Japan', '5', '1', '7', '1'],
+        ['Mexico', '1', '4', '8', '2'],
+        ['Sweden', '10', '10', '3', '10'],
+        ['Thailand', '4', '6', '9', '8'],
+        ['United States', '6', '8', '1', '4'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Angka di Exh. 3.4 adalah **peringkat**, bukan skor: **1 = tertinggi**, 10 = terendah di antara 10 negara ini. Jadi Individualism AS = 1 berarti AS paling individualis, dan Masculinity Jepang = 1 berarti Jepang paling maskulin [hal. 103].',
+    },
+    { kind: 'p', text: '**GLOBE Project** memakai data dari 18.000 manajer di 62 negara dan mengidentifikasi **sembilan dimensi** perbedaan budaya. Selain dimensi Hofstede, buku menguraikan **lima** dimensi GLOBE berikut [hal. 103–104]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dimensi GLOBE', 'Tinggi', 'Rendah'],
+      rows: [
+        ['**Assertiveness**', 'Masyarakat mendorong ketangguhan, ketegasan, dan daya saing', 'Kelembutan dan kepedulian pada orang lain lebih dihargai daripada bersaing'],
+        ['**Future orientation** (mirip time orientation Hofstede)', 'Mendorong dan menghargai perencanaan masa depan', 'Mengutamakan hasil jangka pendek dan kepuasan cepat'],
+        ['**Gender differentiation**', 'Laki-laki diberi status sosial, politik, dan ekonomi lebih tinggi', 'Perempuan berstatus lebih tinggi dan berperan lebih besar dalam keputusan (mis. Denmark)'],
+        ['**Performance orientation**', 'Sangat menekankan kinerja; memberi imbalan atas perbaikan kinerja dan keunggulan', 'Lebih memperhatikan loyalitas, rasa memiliki, dan latar belakang'],
+        ['**Humane orientation**', 'Mendorong dan menghargai sikap adil, altruis, murah hati, peduli', 'Orang diharapkan mengurus diri sendiri; pengembangan dan kepuasan diri sangat penting'],
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 3.5: Examples of Country Rankings on Selected GLOBE Value Dimensions** [hal. 104]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dimension', 'Low', 'Medium', 'High'],
+      rows: [
+        ['Assertiveness', 'Sweden, Switzerland, Japan', 'Egypt, Iceland, France', 'Spain, United States, Germany'],
+        ['Future orientation', 'Russia, Italy, Kuwait', 'Slovenia, Australia, India', 'Denmark, Canada, Singapore'],
+        ['Gender differentiation', 'Sweden, Denmark, Poland', 'Italy, Brazil, Netherlands', 'South Korea, Egypt, China'],
+        ['Performance orientation', 'Russia, Greece, Venezuela', 'Israel, England, Japan', 'United States, Taiwan, Hong Kong'],
+        ['Humane orientation', 'Germany, France, Singapore', 'New Zealand, Sweden, United States', 'Indonesia, Egypt, Iceland'],
+      ],
+    },
+    { kind: 'p', text: '**Nilai sosial memengaruhi cara organisasi dikelola** [hal. 104]:' },
+    {
+      kind: 'ul',
+      items: [
+        '**Emerson Electric di Suzhou, China:** manajer Amerika menyukai horizon waktu pendek dan hasil cepat, dan memandang penugasannya sebagai batu loncatan karier. Manajer China menyukai pendekatan jangka panjang: membangun sistem dan menetapkan arah yang tepat untuk keberhasilan jangka panjang.',
+        '**Self-directed teams** ala Amerika (kekuasaan dibagi, tanpa aturan formal) sulit diterapkan di budaya dengan power distance tinggi dan toleransi rendah terhadap ketidakpastian, seperti Meksiko. Banyak pekerja di Meksiko, Prancis, dan negara Mediterania mengharapkan organisasi yang hierarkis.',
+        'Di Rusia orang pandai bekerja dalam kelompok dan suka bersaing sebagai tim. Organisasi di Jerman dan Eropa tengah cenderung ingin menjadi mesin yang impersonal dan berjalan mulus.',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'tip',
+      title: 'Tips',
+      text: 'Peter Drucker, dikutip buku: apa yang dilakukan manajer di Jerman, Inggris, AS, Jepang, atau Brasil sama persis, tetapi **cara** mereka melakukannya bisa sangat berbeda [hal. 104]. Gaya manajemen yang efektif berbeda di tiap negara, tergantung karakteristik budayanya.',
+    },
+    // ---------------------------------------------------------------- §8
+    { kind: 'h2', text: '8. Communication Challenges dan Cultural Intelligence' },
+    { kind: 'p', text: 'Potensi salah paham meningkat tajam ketika manajer berinteraksi dengan orang dari negara dan latar budaya berbeda [hal. 105].' },
+    { kind: 'p', text: '**Implicit communication** = mengirim dan menerima isyarat tak terucap, seperti nada suara atau bahasa tubuh, di samping kata-kata yang diucapkan. Di organisasi yang budayanya sama, banyak komunikasi berhasil secara implisit. Lintas budaya, isyarat tak terucap sulit ditafsirkan sehingga komunikasi implisit runtuh [hal. 105]. Contoh dari buku:' },
+    {
+      kind: 'ul',
+      items: [
+        'Ian Bickley (Coach di Jepang): harus menahan ketidaksabaran, meluangkan waktu membangun hubungan, dan belajar "membaca yang tersirat" [hal. 105].',
+        'Olivier Jolivet: di Jepang, "yes" bisa berarti "saya memahami pesannya", bukan "saya setuju" [hal. 105].',
+      ],
+    },
+    {
+      kind: 'table',
+      headers: ['Aspek', 'High-context culture', 'Low-context culture'],
+      rows: [
+        ['Fungsi komunikasi', 'Membangun hubungan sosial pribadi', 'Bertukar fakta dan informasi'],
+        ['Sumber makna', 'Konteks: setting, status, perilaku nonverbal, lebih dari kata-kata eksplisit', 'Terutama kata-kata'],
+        ['Prioritas', 'Hubungan dan kepercayaan lebih penting daripada bisnis', 'Transaksi bisnis lebih penting daripada membangun hubungan'],
+        ['Fokus', 'Kesejahteraan dan harmoni kelompok', 'Kesejahteraan dan prestasi individu'],
+        ['Contoh wilayah', 'Asia dan Arab', 'Amerika dan Eropa Utara'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 105–106].' },
+    { kind: 'p', text: '**Exhibit 3.6: High-Context and Low-Context Cultures** [hal. 106]' },
+    { kind: 'p', text: '**↑ High context**' },
+    {
+      kind: 'table',
+      headers: ['Urutan', 'Budaya'],
+      rows: [
+        ['1', 'Chinese'],
+        ['2', 'Korean'],
+        ['3', 'Japanese'],
+        ['4', 'Vietnamese'],
+        ['5', 'Arab'],
+        ['6', 'Greek'],
+        ['7', 'Spanish'],
+        ['8', 'Italian'],
+        ['9', 'English'],
+        ['10', 'North American'],
+        ['11', 'Scandinavian'],
+        ['12', 'Swiss'],
+        ['13', 'German'],
+      ],
+    },
+    { kind: 'p', text: '**↓ Low context**' },
+    { kind: 'p', text: '**Contoh perbedaan konteks** [hal. 106]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Ungkapan Amerika "The squeaky wheel gets the grease" (yang paling keras mendapat perhatian). Padanannya di China, "Quacking ducks get shot", dan di Jepang, "The nail that sticks up gets hammered down": menonjol sebagai individu justru mendapat perhatian yang tidak menyenangkan.',
+        'Saat Lenovo mengakuisisi bisnis PC IBM, eksekutif Barat frustrasi karena rekan China enggan bicara di rapat, sedangkan manajer China terganggu oleh kebiasaan orang Amerika yang "just talk and talk".',
+        'Interaksi high-context butuh lebih banyak waktu karena hubungan, kepercayaan, dan pertemanan harus dibangun lebih dulu.',
+      ],
+    },
+    { kind: 'p', text: '**Cultural intelligence (CQ)** = kemampuan memakai penalaran dan observasi untuk menafsirkan gestur dan situasi yang asing, lalu merancang respons perilaku yang tepat [hal. 106].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Komponen CQ', 'Isi'],
+      rows: [
+        ['**Cognitive**', 'Keterampilan observasi dan belajar; kemampuan menangkap petunjuk'],
+        ['**Emotional**', 'Percaya diri dan motivasi diri. Manajer harus yakin mampu memahami dan menyesuaikan diri dengan budaya lain; kesulitan menjadi pemicu untuk berusaha lebih keras, bukan alasan menyerah'],
+        ['**Physical**', 'Kemampuan menyesuaikan pola bicara, ekspresi, dan bahasa tubuh agar cocok dengan orang dari budaya lain'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 106]. Kebanyakan manajer tidak sama kuat di ketiga komponen, tetapi CQ yang maksimal membutuhkan ketiganya [hal. 106].' },
+    { kind: 'p', text: '**Jangan tertukar: global mind-set vs CQ**' },
+    {
+      kind: 'table',
+      headers: ['', 'Global mind-set (Exh. 3.2)', 'Cultural intelligence (CQ)'],
+      rows: [
+        ['Tiga unsur', 'Cognitive, **psychological**, **social**', 'Cognitive, **emotional**, **physical**'],
+        ['Cakupan', 'Kemampuan menghargai dan memengaruhi orang dan sistem yang berbeda secara luas', 'Kemampuan menafsirkan situasi budaya yang asing dan merespons dengan tepat'],
+        ['Sumber', '[hal. 90–91]', '[hal. 106]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §9
+    { kind: 'h2', text: '9. International Trade Alliances (di luar RPP: ringkas)' },
+    { kind: 'p', text: 'Perubahan besar lain di lingkungan bisnis internasional adalah berkembangnya aliansi dagang regional dan perjanjian perdagangan internasional [hal. 108].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aliansi', 'Isi utama menurut buku', 'Sumber'],
+      rows: [
+        ['**GATT dan WTO**', 'GATT (1947, 23 negara) berawal sebagai aturan nondiskriminasi, prosedur jelas, negosiasi sengketa, dan partisipasi negara berkembang. Putaran Uruguay menyerukan pembentukan WTO (1995). WTO adalah lembaga global permanen yang memantau perdagangan dan berwenang mengarbitrase sengketa; 164 anggota per Juli 2016', '[hal. 108]'],
+        ['**European Union (EU) dan euro**', 'Aliansi 27 negara yang bertujuan membentuk pasar tunggal, sehingga orang, barang, dan jasa bergerak bebas. Euro menggantikan mata uang nasional di 19 negara anggota. Inggris memilih keluar lewat referendum 2016 (Brexit) dan resmi keluar pada 31 Januari 2020', '[hal. 108–109]'],
+        ['**USMCA**', 'Revisi NAFTA oleh AS, Kanada, dan Meksiko. Arus dagang relatif tidak berubah, tetapi aturan tenaga kerja dan lingkungan lebih ketat, ada ketentuan baru soal e-commerce dan TI, dan merakit mobil murah di Meksiko jadi lebih sulit. Berlaku Juli 2020', '[hal. 109–110]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Data per buku (2023), bisa sudah berubah.',
+    },
+    // ---------------------------------------------------------------- §10
+    { kind: 'h2', text: '10. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'p', text: '**Simpul pusat:** MANAGING IN A GLOBAL ENVIRONMENT' },
+    {
+      kind: 'ul',
+      items: [
+        '**1. INTERNATIONAL MANAGEMENT & BORDERLESS WORLD**\n- Definisi: operasi bisnis di >1 negara\n- Fungsi manajemen sama; kesulitan & risiko lebih besar',
+        '**2. GLOBALIZATION & GLOBAL MIND-SET**\n- Globalization: arus dagang, investasi, informasi, ide, kerja sama politik\n- Exh. 3.1: China vs USA di Global 500\n- Global mind-set (Exh. 3.2): Cognitive · Psychological · Social\n  - Dikembangkan lewat thinking & doing',
+        '**3. LANSKAP INTERNASIONAL BARU**\n- China (manufaktur, pasar raksasa) · India (jasa, IT, R&D)',
+        '**4. MNC & BOP**\n- MNC: >25% penjualan luar negeri; 3 ciri\n- Orientasi: Ethnocentric · Polycentric · Geocentric\n- BOP: laba + mengurangi kemiskinan',
+        '**5. MASUK PASAR INTERNASIONAL (Exh. 3.3)**\n- Exporting · Global outsourcing · Partnerships (JV, alliance networks)',
+        '**6. TANTANGAN LINGKUNGAN INTERNASIONAL**\n- [di luar RPP] Legal–political: political risk, political instability\n- Sociocultural\n  - Ethnocentrism\n  - Social values: Hofstede (4 + long-term) · GLOBE (5 diuraikan)\n  - Communication: implicit, high vs low context (Exh. 3.6), CQ',
+        '**7. [di luar RPP] TRADE ALLIANCES: GATT/WTO · EU/euro · USMCA**',
+      ],
+    },
+    { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
+      rows: [
+        ['Dimensi internasional (TM02)', 'Seluruh Ch. 3', 'Dimensi internasional adalah bagian makin penting dari lingkungan eksternal', '[hal. 86]'],
+        ['Globalization', 'China rising', 'Pergeseran geografi Global 500 (Exh. 3.1) menunjukkan China hampir menyalip AS', '[hal. 88, 92]'],
+        ['Global mind-set', 'CQ', 'Sama-sama tiga unsur, tetapi unsurnya berbeda (psychological & social vs emotional & physical)', '[hal. 90–91, 106]'],
+        ['Ethnocentric company (MNC)', 'Ethnocentrism (budaya)', 'Istilah mirip; yang pertama filosofi MNC, yang kedua sikap menganggap budaya sendiri lebih unggul', '[hal. 96, 102]'],
+        ['MNC', 'BOP', 'Sumber daya MNC memungkinkan menjangkau orang termiskin', '[hal. 96–97]'],
+        ['India', 'Global outsourcing', 'Populasi berbahasa Inggris besar menjadikan India mitra alami outsourcing jasa', '[hal. 93, 98]'],
+        ['Partnerships', 'Legal–political', 'Mitra lokal membantu mengatasi masalah hukum dan logistik (Starbucks)', '[hal. 99]'],
+        ['EU (trade alliance)', 'Political risk', 'Aturan privasi EU (GDPR) menjadi political risk bagi perusahaan teknologi', '[hal. 100]'],
+        ['Social values', 'Gaya manajemen', 'Self-directed teams sulit di budaya high power distance dan low tolerance for uncertainty', '[hal. 104]'],
+        ['High-context culture', 'CQ', 'Memahami perbedaan konteks butuh CQ tinggi', '[hal. 106]'],
+        ['Sunny Side Up (bossless)', 'TM01', 'Bosslessness muncul di banyak negara; desainnya bisa mencerminkan budaya nasional', '[hal. 87]'],
+      ],
+    },
+    { kind: 'p', text: '**Kata kunci per cabang:** Borderless: *international management, same functions, greater risk* · Global: *globalization, interdependence, global mind-set, thinking & doing* · Lanskap: *China manufacturing, India services* · MNC: *25%, integrated, single authority, geocentric, BOP* · Entry: *exporting, outsourcing, joint venture, cost vs ownership* · Tantangan: *political risk, ethnocentrism, Hofstede, GLOBE, high/low context, CQ* · Aliansi: *WTO, EU, euro, Brexit, USMCA*' },
+    // ---------------------------------------------------------------- §11
+    { kind: 'h2', text: '11. Contoh Penerapan' },
+    { kind: 'p', text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):' },
+    {
+      kind: 'table',
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
+      rows: [
+        ['Kekeliruan sosiokultural', 'McDonald\'s India, label makanan bayi, anyelir putih United Airlines', '86'],
+        ['Globalisasi dan adaptasi lokal', 'Walmart keluar dari Jerman', '88'],
+        ['Global mind-set: situational intelligence', 'Olivier Jolivet (COMO Hotels and Resorts)', '91'],
+        ['China rising', 'Xiaomi', '93'],
+        ['India dan adaptasi lokal', 'Amazon dan kirana ("I Have Space")', '94'],
+        ['MNC yang menyesuaikan diri dengan pasar lokal', 'McDonald\'s di New Delhi (Maharaja Mac)', '95'],
+        ['MNC yang benar-benar global', 'Nestlé', '96'],
+        ['Bottom of the pyramid', 'Godrej & Boyce chotuKool', '96'],
+        ['Joint venture', 'Starbucks di China dan India', '99'],
+        ['Political risk *(di luar RPP)*', 'Marriott di China', '100–101'],
+        ['Nilai sosial dan orientasi waktu', 'Emerson Electric di Suzhou', '104'],
+        ['High vs low context', 'Lenovo mengakuisisi bisnis PC IBM', '106'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh lain: Village Phone dan DSM (BOP, §4), Kellogg–Wilmar (joint venture, §5), GDPR (political risk, §6), Coach di Jepang (implicit communication, §8).' },
+    { kind: 'p', text: '**Contoh di luar buku** (2 dari maksimal 3 slot terpakai): produk kemasan sachet untuk konsumen berpenghasilan rendah (§4) dan UMKM kerajinan atau mebel yang mengekspor produknya (§5).' },
+    // ---------------------------------------------------------------- §12
+    { kind: 'h2', text: '12. Bedah Film: American Factory (Ilustrasi)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Ilustrasi',
+      text: '*American Factory* (2019, dokumenter) adalah film pilihan AkuntansiHub, bukan film yang dibahas di kelas. Film ini dokumenter tentang perusahaan nyata; bagian ini hanya memuat alur besar film, tanpa dialog, adegan detail, tanggal, atau angka, dan bukan sumber fakta tentang perusahaan itu. Kaitan film dengan teori di bawah adalah analisis, bukan fakta dari buku.',
+    },
+    { kind: 'h3', text: '12.1 Sinopsis Singkat (Ilustrasi)' },
+    { kind: 'p', text: 'Sebuah pabrik mobil di Ohio, Amerika Serikat, tutup, dan banyak pekerjanya kehilangan pekerjaan. Kemudian Fuyao, produsen kaca otomotif asal Tiongkok, membuka pabrik di gedung bekas pabrik itu dan merekrut banyak pekerja lokal. Pekerja dan manajer dari Tiongkok didatangkan untuk melatih dan mendampingi pekerja Amerika.' },
+    { kind: 'p', text: 'Seiring berjalannya produksi, perbedaan cara kerja makin terasa: soal kecepatan dan target produksi, keselamatan kerja, jam kerja, dan cara berkomunikasi antara dua kelompok yang bahasanya berbeda. Sebagian staf Amerika diajak berkunjung ke perusahaan induk di Tiongkok dan melihat budaya kerja yang sangat berbeda. Di pabrik Amerika, sebagian pekerja berupaya membentuk serikat pekerja; manajemen menentangnya, dan upaya itu tidak berhasil. Film ditutup dengan gambaran pabrik yang makin mengandalkan otomatisasi.' },
+    { kind: 'h3', text: '12.2 Konsep Chapter 3 yang Muncul (Ilustrasi)' },
+    {
+      kind: 'table',
+      headers: ['Konsep Chapter 3', 'Momen alur besar di film (Ilustrasi)', 'Teori'],
+      rows: [
+        ['Globalization dan saling ketergantungan', 'Investasi perusahaan dari Tiongkok membuka lapangan kerja di sebuah kota di AS', '[hal. 88]'],
+        ['China rising', 'Perusahaan asal Tiongkok berekspansi dan bersaing di luar negaranya', '[hal. 92]'],
+        ['Ciri MNC: orang dan teknologi dipindahkan antarafiliasi', 'Pekerja dan manajer dari Tiongkok didatangkan untuk melatih pekerja lokal', '[hal. 95]'],
+        ['Orientasi MNC (ethnocentric, polycentric, geocentric)', 'Cara kerja dari perusahaan induk dibawa ke pabrik di AS', '[hal. 96]'],
+        ['Legal–political: aturan ketenagakerjaan dan keselamatan negara tuan rumah', 'Keselamatan kerja dan jam kerja menjadi sumber gesekan', '[hal. 99]'],
+        ['Ethnocentrism', 'Tiap kelompok menilai cara kerja kelompok lain dari sudut budayanya sendiri', '[hal. 102]'],
+        ['Individualism vs collectivism', 'Pertemuan budaya AS (individualis) dan Tiongkok (kolektivis) di satu pabrik', '[hal. 102–103]'],
+        ['Implicit communication dan high vs low context', 'Perbedaan bahasa dan cara berkomunikasi menyulitkan kerja sama', '[hal. 105–106]'],
+        ['Global mind-set dan CQ', 'Kunjungan staf Amerika ke perusahaan induk di Tiongkok', '[hal. 90–91, 106]'],
+      ],
+    },
+    { kind: 'h3', text: '12.3 Kaitan Adegan dengan Teori (Ilustrasi; analisis, bukan fakta buku)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Alur besar (Ilustrasi)', 'Analisis dengan teori Chapter 3'],
+      rows: [
+        ['Perusahaan dari Tiongkok membuka pabrik di AS', 'Dapat dibaca sebagai wujud **globalization** dan **China rising**: arus investasi tidak lagi satu arah [hal. 88, 92]. Arahnya kebalikan dari contoh **Emerson Electric** di Suzhou (perusahaan AS di China), tetapi pertanyaan manajerialnya serupa: bagaimana dua budaya kerja bertemu dalam satu organisasi [hal. 104]'],
+        ['Perusahaan mengoperasikan pabriknya sendiri di luar negeri', 'Model ini **tidak termasuk** tiga strategi di Exh. 3.3 (exporting, global outsourcing, partnerships) [hal. 97–98], dan buku tidak membahas moda masuk selain tiga strategi itu. Kelas bisa mendiskusikan: strategi mana yang paling dekat, dan mengapa tidak ada yang pas'],
+        ['Pekerja dan manajer dari Tiongkok melatih pekerja Amerika', 'Dapat dibaca sebagai ciri pertama MNC: modal, teknologi, dan **orang** dipindahkan antarafiliasi [hal. 95]. Kelas bisa mendiskusikan apakah pendekatannya lebih dekat ke **ethnocentric**, **polycentric**, atau **geocentric** [hal. 96]'],
+        ['Gesekan soal kecepatan kerja, target, dan jam kerja', 'Menyentuh **ethnocentrism**: kecenderungan menganggap cara sendiri sebagai yang terbaik ada di semua negara, sehingga bisa muncul di kedua pihak [hal. 102]. Juga sejalan dengan kutipan Drucker: apa yang dilakukan manajer sama, caranya bisa sangat berbeda [hal. 104]'],
+        ['Kesulitan komunikasi antara dua kelompok', 'Dapat dibaca dengan konsep **implicit communication** yang runtuh lintas budaya dan **Exh. 3.6**: Chinese di ujung high-context, North American di sisi low-context [hal. 105–106]. Polanya mirip contoh Lenovo–IBM di buku [hal. 106]'],
+        ['Keselamatan kerja menjadi sumber gesekan', 'Dapat dibaca sebagai pengingat bahwa hukum negara tuan rumah soal ketenagakerjaan dan keselamatan harus dipelajari dan dipatuhi manajer internasional [hal. 99]'],
+        ['Staf Amerika berkunjung ke perusahaan induk', 'Dapat dibaca sebagai **learning by doing** untuk global mind-set [hal. 91] dan kesempatan melatih komponen **cognitive** CQ (observasi) [hal. 106]'],
+      ],
+    },
+    { kind: 'p', text: 'Aspek serikat pekerja dan etika dalam alur film tidak dianalisis di sini, karena Chapter 3 tidak membahasnya. Aspek etika relevan untuk TM04 (Chapter 4, Managing Ethics and Social Responsibility).' },
+    { kind: 'h3', text: '12.4 Managerial Lessons Learned (Ilustrasi; analisis)' },
+    {
+      kind: 'ol',
+      items: [
+        '**Fungsinya sama, risikonya berbeda.** Planning, organizing, leading, dan controlling tetap berlaku, tetapi kesulitannya lebih besar di lintas negara [hal. 86].',
+        '**Cara di negara asal belum tentu berlaku di negara tuan rumah.** Melawan etnosentrisme dimulai dari memahami perbedaan nilai sosial [hal. 102]; Walmart di Jerman adalah contoh di buku [hal. 88].',
+        '**Komunikasi lintas budaya butuh waktu dan kepekaan konteks.** Isyarat implisit mudah salah dibaca; hubungan dan kepercayaan perlu dibangun [hal. 105–106].',
+        '**Global mind-set dibangun lewat pengalaman langsung.** Belajar lewat thinking dan doing, termasuk berinteraksi langsung dengan orang dari budaya lain [hal. 91].',
+        '**Pelajari aturan dan nilai negara tuan rumah sebelum beroperasi.** Hukum ketenagakerjaan, keselamatan, dan upah berbeda antarnegara, dan manajer wajib mematuhinya [hal. 99, 104].',
+      ],
+    },
+    // ---------------------------------------------------------------- §13
+    { kind: 'h2', text: '13. Analisis Kasus: We Want More Guitars! [hal. 113–114]' },
+    { kind: 'h3', text: '13.1 Case Summary' },
+    { kind: 'p', text: 'Fletcher Guitars, perusahaan gitar di Los Angeles yang dipimpin CEO Vincent Fletcher, ingin menambah produksi gitar akustik kelas atas karena musik Latin makin populer di dunia. Gitar itu dibuat oleh Guitarras Dominguez, perusahaan milik perajin gitar Salvador Dominguez di Paterna, Valencia, Spanyol, yang mempekerjakan lebih dari 30 perajin gitar akustik dan flamenco. Menurut Fletcher, sebagian reputasi perusahaannya bertumpu pada kualitas dan keahlian tangan Dominguez dan para pekerjanya [hal. 113–114].' },
+    { kind: 'p', text: 'Fletcher menugaskan Adam Wainwright untuk mendorong kenaikan produksi, dan mengatakan keberhasilan tugas ini bisa membuka peluang besar bagi Adam. Setelah seminggu mengamati operasi di Valencia, Adam menelepon Fletcher dan menyatakan bahwa ia tidak yakin pekerja di sana mampu menaikkan produksi bahkan sepuluh gitar per tahun [hal. 113]. Adam lalu kembali ke pabrik dan memaparkan rencananya kepada Salvador. Salvador menolak menurunkan standar keahlian demi rencana itu [hal. 114].' },
+    { kind: 'p', text: '**Fakta kunci menurut buku** [hal. 113–114]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Yang tertulis di kasus'],
+      rows: [
+        ['Pandangan Adam tentang operasi', 'Kagum pada keahlian Salvador dan timnya, tetapi frustrasi dengan tempo kerja yang lambat; tiap gitar dikerjakan sangat presisi'],
+        ['Rencana Adam', 'Membuat spesifikasi alur kerja di iPad untuk menaikkan produksi; menyebut ada ruang ekspansi dan produksi bisa hampir dua kali lipat dalam beberapa tahun; rencananya disusun dari analisis perusahaan di seluruh AS'],
+        ['Respons Salvador', 'Menertawakan spesifikasi alur kerja itu sambil berkata "You Americans"; kemudian: "here in Spain, we do not crank out product", setiap karya dibuat dengan bangga, "No two of these instruments are alike", dan tidak akan menurunkan standar keahlian'],
+        ['Keluhan Adam soal waktu', 'Pekerja kembali dari makan siang berjam-jam kemudian; di AS ia melihat alur kerja yang lancar, di sini ada "starts and stops"'],
+        ['Contoh "starts and stops" menurut Adam', 'Carlos seminggu bereksperimen dengan kayu Wenge untuk badan gitar akustik'],
+        ['Arahan Fletcher', '"They\'re Spanish! So they take two-hour lunches. They work their schedule. It\'s just not our schedule"; meminta Adam "lighten up", berbicara dengan Salvador untuk melihat apa yang cocok bagi mereka; "They\'ve increased output before and they can do it again"'],
+        ['Pikiran Fletcher tentang Adam', '"Maybe I sent the wrong guy. Nope. He has great potential in management and he has to learn to work through this and deliver"'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Kasus **tidak menjelaskan** bentuk hubungan bisnis Fletcher Guitars dengan Guitarras Dominguez (kepemilikan, kemitraan, atau pemasok), dan tidak menceritakan apa yang terjadi setelah percakapan Adam dengan Salvador. Analisis di bawah tidak mengandaikan salah satunya [hal. 113–114].',
+    },
+    { kind: 'h3', text: '13.2 Problem Identification' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Isu', 'Jenis'],
+      rows: [
+        ['P1', 'Target kenaikan produksi berbenturan dengan standar keahlian tangan yang dipegang Salvador', 'Tujuan vs nilai'],
+        ['P2', 'Rencana Adam disusun dari pengamatan operasi di AS, lalu dibawa ke pabrik di Spanyol', 'Pendekatan lintas budaya'],
+        ['P3', 'Rencana ditolak: spesifikasi alur kerja ditertawakan, dan Salvador menyatakan tidak akan menurunkan standar', 'Komunikasi dan penerimaan'],
+        ['P4', 'Adam memandang pola waktu kerja setempat (makan siang panjang, eksperimen) sebagai hambatan', 'Perbedaan nilai kerja'],
+        ['P5', 'Kedua pihak memakai generalisasi berbasis kebangsaan ("You Americans"; "They\'re Spanish!")', 'Stereotip *(hasil analisis)*'],
+        ['P6', 'Fletcher meminta Adam berbicara dengan Salvador untuk melihat apa yang cocok bagi mereka. Dalam percakapan yang tertulis, Adam memaparkan rencananya; kasus tidak menunjukkan ia menanyakan hal itu', 'Pendekatan manajerial *(hasil analisis)*'],
+      ],
+    },
+    { kind: 'h3', text: '13.3 Analisis Kasus (dengan teori Chapter 3)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
+      rows: [
+        ['**International management**', 'Tugas Adam tetap fungsi manajemen biasa (merencanakan kenaikan produksi), tetapi kesulitannya lebih besar karena dijalankan di negara lain', '86, 113'],
+        ['**Ethnocentrism**', 'Rencana disusun dari operasi di AS dan dibandingkan dengan "flow" di AS. Pola ini dekat dengan sikap yang menganggap cara sendiri sebagai cara terbaik *(hasil analisis; kasus tidak menulis pandangan Adam tentang budaya Spanyol)*', '102, 114'],
+        ['**Global mind-set**', 'Arahan Fletcher ("see what works for them") menuntut kemampuan menghargai dan memengaruhi orang yang berbeda, bukan melihat semuanya dari perspektif sendiri (domestic mind-set)', '90, 114'],
+        ['**Situational intelligence**', 'Menyesuaikan diri dan sikap dengan budaya lawan bicara, seperti contoh Jolivet', '91'],
+        ['**Social values (Exh. 3.4, 3.5)**', 'Data AS tersedia: Individualism peringkat 1, Masculinity 4 (Exh. 3.4); performance orientation High (Exh. 3.5). Spanyol tidak ada di Exh. 3.4 dan hanya muncul di Assertiveness (High, sama dengan AS) di Exh. 3.5', '103–104'],
+        ['**High vs low context (Exh. 3.6)**', '"Spanish" berada lebih ke arah high-context daripada "North American". Adam memakai rencana tertulis dan data; di budaya yang lebih high-context, hubungan dan kepercayaan dibangun lebih dulu *(hasil analisis)*', '105–106'],
+        ['**Cultural intelligence**', 'Cognitive: mengamati mengapa tiap gitar dikerjakan begitu. Emotional: tetap termotivasi saat rencana ditolak. Physical: menyesuaikan cara berbicara dengan Salvador', '106'],
+        ['**Gaya manajemen berbeda tiap negara**', 'Rencana yang cocok di satu negara belum tentu efektif di negara lain; menurut Drucker, "caranya" yang berbeda', '104'],
+      ],
+    },
+    { kind: 'h3', text: '13.4 Jawaban Pertanyaan Kasus' },
+    { kind: 'p', text: '**Q1. Seberapa akurat analisis Adam Wainwright tentang situasi di Guitarras Dominguez? Apakah menurutmu keahlian tangan tidak cocok dengan peningkatan produktivitas di perusahaan ini? Mengapa?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 3.*' },
+    { kind: 'p', text: '**Akurasi analisis Adam: sebagian akurat.**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Bagian analisis Adam', 'Penilaian', 'Dasar'],
+      rows: [
+        ['Pengamatan bahwa tempo kerja lambat dan tiap gitar dikerjakan sangat presisi', 'Sesuai fakta yang ia amati; Salvador sendiri menyatakan tiap karya dibuat dengan bangga dan tidak ada dua yang sama', '[hal. 113–114]'],
+        ['Kesimpulan bahwa pekerja tidak mampu menaikkan produksi bahkan sepuluh gitar per tahun', 'Dipertanyakan: Fletcher menyebutnya berlebihan ("Isn\'t that an exaggeration?") dan menyatakan mereka pernah menaikkan output sebelumnya', '[hal. 113–114]'],
+        ['Rencana berdasarkan operasi di AS ("flow", "streamline")', 'Memakai ukuran dari satu budaya untuk menilai operasi di budaya lain; ini ciri domestic mind-set, bukan global mind-set', '[hal. 90, 102, 114]'],
+      ],
+    },
+    { kind: 'p', text: '**Apakah keahlian tangan tidak cocok dengan produktivitas?** Kasus tidak menunjukkan bahwa keduanya pasti bertentangan. Fletcher menyatakan output pernah dinaikkan, dan Adam melihat ruang untuk ekspansi [hal. 114]. Yang tidak bisa ditawar adalah **standar keahlian**, sebagaimana ditegaskan Salvador [hal. 114]. Jadi kenaikan produksi hanya realistis bila dirancang **di dalam** batas standar itu dan bersama Salvador, bukan dengan menerapkan alur kerja dari AS. Buku menegaskan bahwa gaya manajemen yang efektif berbeda di tiap negara [hal. 104].' },
+    { kind: 'p', text: '**Q2. Nilai sosial apa di Guitarras Dominguez yang tampak berbeda dari nilai sosial AS (lihat Exhibit 3.4 dan 3.5)? Jelaskan.**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis. Perhatikan batas data exhibit di bawah.*' },
+    { kind: 'p', text: '**Batas data exhibit:**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Exhibit', 'Data AS', 'Data Spanyol', 'Kesimpulan'],
+      rows: [
+        ['Exh. 3.4', 'PD 6, UA 8, Individualism 1, Masculinity 4', '**Tidak ada**', 'Tidak bisa dibandingkan langsung [hal. 103]'],
+        ['Exh. 3.5', 'Assertiveness High; Performance orientation High; Humane orientation Medium', 'Hanya Assertiveness: **High**', 'Pada satu-satunya dimensi yang tersedia, Spanyol dan AS **sama** [hal. 104]'],
+        ['Exh. 3.6 (tidak disebut di pertanyaan)', 'North American: lebih low-context', 'Spanish: lebih ke arah high-context', 'Satu-satunya perbedaan yang terlihat dari exhibit buku [hal. 106]'],
+      ],
+    },
+    { kind: 'p', text: '**Perbedaan nilai yang tampak dari teks kasus** (dibaca dengan dimensi di buku):' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Yang tampak di kasus', 'Dimensi yang relevan', 'Catatan'],
+      rows: [
+        ['Adam menekankan volume, alur yang lancar, dan "streamline"; Salvador menekankan kebanggaan pada setiap karya dan keunikan tiap instrumen [hal. 114]', '**Performance orientation** (AS: High) [hal. 104]; **masculinity** (prestasi, kesuksesan materi; AS peringkat 4) [hal. 102–103]', 'Keduanya sama-sama mengejar keunggulan, tetapi definisinya berbeda: output vs mutu keahlian. Buku tidak memberi data Spanyol untuk dimensi ini'],
+        ['Komunikasi Adam lewat rencana tertulis dan data; respons Salvador berfokus pada kebanggaan atas setiap karya dan metode keahlian yang harus tetap sama [hal. 113–114]', '**High vs low context** [hal. 105–106]', 'Sejalan dengan posisi relatif di Exh. 3.6'],
+        ['Pola waktu kerja: makan siang panjang, eksperimen dengan bahan baru [hal. 114]', 'Buku **tidak** memetakan pola ini ke dimensi tertentu', 'Hati-hati: jangan menyimpulkan nilai nasional dari satu kebiasaan. Pernyataan "They\'re Spanish!" dan "You Americans" adalah generalisasi, bukan data'],
+      ],
+    },
+    { kind: 'p', text: 'Jadi jawaban yang jujur terhadap data buku: exhibit yang diminta pertanyaan **tidak cukup** untuk memetakan nilai Spanyol. Perbedaan yang bisa ditunjukkan berasal dari perilaku di kasus dan dari Exh. 3.6.' },
+    { kind: 'p', text: '**Q3. Apa yang kamu rekomendasikan agar Adam menaikkan produksi di lingkungan bisnis yang tampak tidak menghargai produksi tinggi?**' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Dasar teori'],
+      rows: [
+        ['Jalankan arahan Fletcher: bicara dengan Salvador lebih dulu, cari tahu apa yang cocok bagi timnya, dan tunda rencana yang sudah jadi', 'Global mind-set, social dimension: membangun hubungan saling percaya [hal. 90–91]; arahan di kasus [hal. 114]'],
+        ['Tanyakan kepada Salvador bagaimana output pernah dinaikkan sebelumnya, lalu mulai dari cara itu', 'Fakta kasus: "They\'ve increased output before" [hal. 114]; learning by doing [hal. 91]'],
+        ['Jadikan standar keahlian sebagai batas yang disepakati, lalu tetapkan target kenaikan produksi bersama Salvador', 'Gaya manajemen efektif berbeda tiap negara [hal. 104]'],
+        ['Pahami dulu peran eksperimen seperti yang dilakukan Carlos sebelum menilainya sebagai hambatan', 'CQ cognitive: observasi dan menangkap petunjuk [hal. 106]'],
+        ['Sesuaikan cara berkomunikasi: bangun hubungan sebelum membahas angka, dan hindari generalisasi tentang kebangsaan', 'High-context communication [hal. 105–106]; CQ physical [hal. 106]; melawan ethnocentrism [hal. 102]'],
+        ['Laporkan kepada Fletcher bahwa targetnya perlu disesuaikan dengan kapasitas yang disepakati bersama Salvador', 'Fungsi planning tetap sama, caranya berbeda [hal. 86, 104]'],
+      ],
+    },
+    { kind: 'h3', text: '13.5 Rekomendasi Manajerial' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis berdasarkan teori Chapter 3, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pihak', 'Rekomendasi', 'Teori pendukung'],
+      rows: [
+        ['**Adam**', 'Mulai dengan mendengarkan dan mengamati, bukan dengan rencana dari AS', 'Global mind-set; CQ [hal. 90–91, 106]'],
+        ['', 'Susun rencana kenaikan produksi bersama Salvador, dengan standar keahlian sebagai batas', 'Gaya manajemen berbeda tiap negara [hal. 104]'],
+        ['', 'Kembangkan CQ: observasi (cognitive), ketekunan saat ditolak (emotional), penyesuaian cara bicara (physical)', 'CQ [hal. 106]'],
+        ['**Fletcher**', 'Perjelas target: kenaikan produksi yang realistis tanpa mengorbankan mutu yang menjadi dasar reputasi perusahaan', 'Fakta kasus [hal. 113]; planning tetap sama [hal. 86]'],
+        ['', 'Hindari generalisasi tentang kebangsaan saat membimbing Adam', 'Melawan ethnocentrism [hal. 102]'],
+        ['**Fletcher Guitars (organisasi)**', 'Sebelum menugaskan manajer ke luar negeri, bekali dengan pemahaman tentang budaya dan cara kerja setempat', 'Global mind-set dikembangkan lewat thinking dan doing [hal. 91]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §14
+    { kind: 'h2', text: '14. Implikasi Manajerial dan Kesimpulan' },
+    {
+      kind: 'ol',
+      items: [
+        '**Tidak ada lagi bisnis yang sepenuhnya domestik.** Seluruh dunia adalah sumber ancaman dan peluang; setiap manajer perlu berpikir global [hal. 86–87].',
+        '**Fungsinya sama, risikonya lebih besar.** International management memakai planning, organizing, leading, dan controlling yang sama, dengan kesulitan yang lebih besar [hal. 86].',
+        '**Global mind-set adalah kompetensi yang bisa dikembangkan.** Tiga dimensinya (cognitive, psychological, social) dilatih lewat thinking dan doing [hal. 90–91].',
+        '**Pemain lokal sering unggul karena memahami pasar setempat.** MNC yang berhasil menyesuaikan diri dengan pasar lokal, seperti McDonald\'s di India dan Amazon dengan kirana [hal. 94–95].',
+        '**Pilihan strategi masuk menentukan biaya dan kepemilikan.** Exporting, outsourcing, dan partnerships berbeda dalam biaya masuk dan kepemilikan operasi asing (Exh. 3.3) [hal. 97–98].',
+        '**Budaya menentukan "cara", bukan "apa".** Nilai sosial (Hofstede, GLOBE) dan konteks komunikasi memengaruhi gaya manajemen yang efektif; memahami perbedaan ini adalah cara melawan etnosentrisme [hal. 102–106].',
+        '**CQ membantu manajer bekerja di budaya yang asing.** Kognisi, emosi, dan perilaku fisik harus dipakai bersama [hal. 106].',
+      ],
+    },
+    // ---------------------------------------------------------------- §15
+    { kind: 'h2', text: '15. Alat Bantu Ujian' },
+    { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Global mind-set (Exh. 3.2)', 'Cognitive, Psychological, Social', '90–91'],
+        ['Mengembangkan global mind-set', 'Thinking, Doing', '91'],
+        ['Ciri MNC (3)', 'Sistem global terintegrasi; satu otoritas manajemen; perspektif global manajer puncak', '95'],
+        ['Filosofi MNC (3)', 'Ethnocentric, Polycentric, Geocentric', '96'],
+        ['Strategi masuk (Exh. 3.3)', 'Exporting, Global outsourcing, Partnerships (joint venture, alliance networks)', '97–98'],
+        ['Tantangan legal–political *(di luar RPP)*', 'Political risk, Political instability', '100–101'],
+        ['Hofstede (4 + 1)', 'Power distance, Uncertainty avoidance, Individualism–collectivism, Masculinity–femininity; + Long-term vs short-term orientation', '102–103'],
+        ['GLOBE (5 yang diuraikan dari 9)', 'Assertiveness, Future orientation, Gender differentiation, Performance orientation, Humane orientation', '103–104'],
+        ['Konteks komunikasi (Exh. 3.6)', 'High-context, Low-context', '105–106'],
+        ['CQ (3)', 'Cognitive, Emotional, Physical', '106'],
+        ['Trade alliances *(di luar RPP)*', 'GATT/WTO, EU (euro), USMCA', '108–110'],
+      ],
+    },
+    { kind: 'h3', text: 'Exam Traps' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['International management', '"Punya fungsi manajemen khusus yang berbeda"', 'Fungsinya **sama** (planning, organizing, leading, controlling); yang berbeda adalah tingkat kesulitan dan risikonya', '86'],
+        ['Definisi MNC', '"MNC pasti punya >25% penjualan di luar negeri"', 'Buku menyebut istilah MNC **tidak punya definisi pasti**; >25% adalah ukuran yang "typically" dipakai', '95'],
+        ['Ethnocentric company vs ethnocentrism', 'Dianggap sama', '**Ethnocentric company**: filosofi MNC yang menekankan negara asal. **Ethnocentrism**: sikap menganggap budaya sendiri lebih unggul', '96, 102'],
+        ['Tujuan outsourcing', '"Strategi untuk menjual ke pasar luar negeri"', 'Outsourcing untuk **memperoleh sumber daya lebih murah**; exporting dan partnerships untuk **mengembangkan pasar**. Exh. 3.3 tetap memasukkan outsourcing ke tiga strategi masuk arena internasional', '97–98'],
+        ['Urutan Exh. 3.3', '"Partnerships paling murah"', 'Menurut **Exh. 3.3**: exporting (biaya dan kepemilikan terendah) → global outsourcing → partnerships (tertinggi). Teks hal. 98 menyebut partnership "often the fastest, cheapest, and least risky way", tetapi buku tidak menjelaskan pembandingnya. Untuk soal tentang exhibit, jawab sesuai exhibit', '98'],
+        ['BOP', '"Kegiatan amal MNC"', 'BOP = mengurangi kemiskinan **sekaligus meraih laba** signifikan', '96'],
+        ['Global mind-set vs CQ', 'Unsurnya dianggap sama', 'Global mind-set: cognitive, **psychological, social**. CQ: cognitive, **emotional, physical**', '90–91, 106'],
+        ['Membaca Exh. 3.4', '"Angka besar = nilai tinggi"', 'Angka adalah **peringkat**: **1 = tertinggi**. AS Individualism 1 = paling individualis', '103'],
+        ['Jumlah dimensi GLOBE', 'Menyebut sembilan nama dimensi GLOBE', 'Buku menyebut GLOBE mengidentifikasi **sembilan** dimensi, tetapi hanya menguraikan **lima** tambahan (assertiveness, future orientation, gender differentiation, performance orientation, humane orientation)', '103–104'],
+        ['Masculinity vs gender differentiation', 'Dianggap sama', '**Masculinity** (Hofstede): preferensi pada prestasi, ketegasan, kesuksesan materi. **Gender differentiation** (GLOBE): sejauh mana masyarakat memaksimalkan perbedaan peran gender', '102–103'],
+        ['Future orientation vs long-term orientation', '"Keduanya identik"', 'Buku menyebut future orientation (GLOBE) **mirip** time orientation Hofstede, bukan sama', '102–103'],
+        ['High-context culture', '"Komunikasinya tidak jelas"', 'Makna diambil dari **konteks** (setting, status, nonverbal); fungsinya membangun hubungan. Low-context: makna dari kata-kata, untuk bertukar fakta', '105–106'],
+        ['Political risk vs political instability *(di luar RPP)*', 'Dianggap sama', 'Political risk: risiko kehilangan aset, laba, atau kendali karena perubahan politik. Political instability: kerusuhan, revolusi, pergantian pemerintahan yang sering', '100–101'],
+      ],
+    },
+    { kind: 'h3', text: 'Bank Pertanyaan Kritis (untuk non-presenter)' },
+    { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 110–111]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Terkait bagian'],
+      rows: [
+        ['China dan India sama-sama kekuatan ekonomi yang sedang naik. Bagaimana pendekatanmu berbisnis dengan China (negara komunis) berbeda dari India (negara demokrasi berpenduduk terbesar)? Di negara mana kamu memperkirakan lebih banyak aturan dan birokrasi?', '§3'],
+        ['Realistiskah praktik bisnis BOP berdampak positif pada kemiskinan dan masalah sosial di negara berkembang? Bagaimana dampak itu bisa terjadi?', '§4'],
+        ['Apakah seseorang bisa mengembangkan global mind-set tanpa pernah tinggal di luar negaranya? Jelaskan.', '§2'],
+        ['Haruskah MNC beroperasi sebagai sistem global yang terintegrasi ketat, atau lebih efektif membiarkan tiap anak perusahaan nasional beroperasi mandiri? Mengapa?', '§4'],
+        ['Dua perusahaan AS bersaing mengambil alih pabrik besar di Ceko. Delegasi pertama bertanya soal efisiensi; delegasi kedua soal kondisi kerja dan mutu produk. Mana yang lebih mungkin berhasil mengoperasikan pabrik itu? Informasi apa yang perlu dikumpulkan?', '§7'],
+        ['Gaya komunikasi mana yang paling bermanfaat bagi keberhasilan jangka panjang perusahaan AS yang beroperasi internasional: high-context atau low-context? Mengapa?', '§8'],
+        ['Bagaimana power distance rendah vs tinggi memengaruhi caramu memimpin dan memotivasi karyawan? Bagaimana dengan performance orientation rendah vs tinggi?', '§7'],
+      ],
+    },
+    { kind: 'p', text: '*Semua `[hal. X]` merujuk ke Daft & Marcic, Understanding Management 12e (2023). Label yang dipakai: "di luar RPP" (2×: §6, §9), "Contoh di luar buku" (2×: §4, §5), "Ilustrasi" (1 bagian: §12, sinopsis dan analisis film).*' },
+  ],
 };

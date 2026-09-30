@@ -1,168 +1,909 @@
+// MNU108 TM05 — Planning and Goal Setting.
+// Isi akademik berasal dari paket konten MNU108/TM05 (05_student_learning_version.md); aturan render dari 06.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 5, hal. 148–190.
+// Cakupan mengikuti RPP Pengantar Manajemen pertemuan 5. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Jangan menambah fakta di luar paket: ubah paketnya, lalu perbarui file ini.
 import type { Reading } from '../../../types';
-import { CASE_STRATEGIC_PLANNING_PORTER } from '../manajemenPracticeCases';
-
-const SVG_BCG_MATRIX = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad5" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="starGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="qmGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="cowGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="dogGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad5)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MATRIKS PORTOFOLIO BISNIS BCG (BOSTON CONSULTING GROUP)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">BCG MATRIX</text>
-
-  <!-- Y-Axis -->
-  <text class="text-accent-blue" x="50" y="120" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">PERTUMBUHAN</text>
-  <text class="text-accent-blue" x="50" y="135" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">PASAR TINGGI</text>
-  <text class="svg-muted" x="50" y="275" fill="#94a3b8" font-size="9.5" font-weight="800" text-anchor="middle">PERTUMBUHAN</text>
-  <text class="svg-muted" x="50" y="290" fill="#94a3b8" font-size="9.5" font-weight="800" text-anchor="middle">PASAR RENDAH</text>
-
-  <!-- X-Axis -->
-  <text class="text-accent-green" x="275" y="78" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">PANGSA PASAR RELATIF TINGGI</text>
-  <text class="text-accent-red" x="685" y="78" fill="#f87171" font-size="10" font-weight="800" text-anchor="middle">PANGSA PASAR RELATIF RENDAH</text>
-
-  <!-- Quadrants -->
-  <g transform="translate(105, 92)">
-    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#starGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">★ STARS (BINTANG)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pertumbuhan pasar cepat &amp; pangsa dominan</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Arus kas seimbang / butuh reinvestasi besar</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Investasi agresif pertahankan kepemimpinan</text>
-    <rect x="250" y="88" width="100" height="18" rx="9" fill="#0284c7" fill-opacity="0.3"/>
-    <text class="text-accent-blue" x="300" y="101" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Masa Depan Korporasi</text>
-  </g>
-
-  <g transform="translate(490, 92)">
-    <rect class="svg-card" x="0" y="0" width="370" height="115" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="370" height="28" rx="12" fill="url(#qmGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="16" y="20" fill="#fbbf24" font-size="11" font-weight="800">? QUESTION MARKS (TANDA TANYA)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pasar tumbuh cepat namun pangsa pasar tertinggal</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Menguras kas besar; belum tentu sukses</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Suntik modal ubah ke Star ATAU Divestasi</text>
-    <rect x="255" y="88" width="100" height="18" rx="9" fill="#d97706" fill-opacity="0.3"/>
-    <text class="text-accent-amber" x="305" y="101" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Keputusan Kritis</text>
-  </g>
-
-  <g transform="translate(105, 218)">
-    <rect class="svg-card" x="0" y="0" width="365" height="115" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="365" height="28" rx="12" fill="url(#cowGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">CASH COWS (SAPI PERAH)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pertumbuhan lambat namun pangsa pasar terkuat</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Mesin pencetak arus kas positif melimpah</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Pertahankan posisi, perah kas untuk danai Star</text>
-    <rect x="250" y="88" width="100" height="18" rx="9" fill="#059669" fill-opacity="0.3"/>
-    <text class="text-accent-green" x="300" y="101" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Sumber Oksigen Kas</text>
-  </g>
-
-  <g transform="translate(490, 218)">
-    <rect class="svg-card" x="0" y="0" width="370" height="115" rx="12" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
-    <rect x="0" y="0" width="370" height="28" rx="12" fill="url(#dogGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-red" x="16" y="20" fill="#f87171" font-size="11" font-weight="800">DOGS (ANJING)</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8.5">• Pasar stagnan/turun &amp; pangsa pasar sangat kecil</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8.5">• Menghasilkan laba minim atau jebakan kerugian kas</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8.5">• Strategi: Panen kas (Harvesting) atau Jual (Divestasi)</text>
-    <rect x="255" y="88" width="100" height="18" rx="9" fill="#dc2626" fill-opacity="0.3"/>
-    <text class="text-accent-red" x="305" y="101" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Kandidat Divestasi</text>
-  </g>
-</svg>`;
 
 export const TM5_READING: Reading = {
   tm: 5,
-  title: 'Planning, Goal Setting, & Strategic Thinking (MBO & Porter Strategies)',
-  ref: 'Richard L. Daft Bab 6, 7, & 8 | Peter Drucker Management by Objectives | Michael Porter Competitive Advantage',
-  intro: 'TM 5 membahas proses perencanaan organisasi dari tingkat strategis hingga operasional: hierarki tujuan organisasi (Misi Organisasi, Sasaran Strategis, Sasaran Taktis, dan Sasaran Operasional), kriteria penetapan sasaran efektif SMART (Specific, Measurable, Attainable, Relevant, Time-bound), siklus Management by Objectives (MBO), analisis lingkungan SWOT, Matriks Portofolio Bisnis BCG, serta Strategi Bersaing Generik Michael Porter (Cost Leadership, Differentiation, dan Focus).',
+  title: 'Planning and Goal Setting',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 5 (hal. 148–190) · RPP Pengantar Manajemen pertemuan 5',
+  intro: '**Sub-CPMK (RPP):** mahasiswa mampu menyusun tujuan organisasi dan rencana strategis yang selaras dengan lingkungan bisnis.',
   objectives: [
-    'Menjelaskan hierarki sasaran dan rencana: Strategis (Top), Taktis (Middle), dan Operasional (First-Line).',
-    'Menerapkan 4 langkah siklus Management by Objectives (MBO) menurut Peter Drucker.',
-    'Menyusun Matriks Portofolio BCG untuk mengalokasikan arus kas korporasi multi-bisnis.',
-    'Menganalisis 3 Strategi Bersaing Generik Porter: Keunggulan Biaya, Diferensiasi, dan Fokus Pasar.'
+    'Goal setting and planning',
+    'Performance management',
+    'Planning for a turbulent environment',
+    'Thinking strategically',
+    'Strategic management',
+    'Menerapkan teori Chapter 5 untuk menganalisis kasus Central City Museum dan merumuskan implikasi manajerial.',
   ],
   blocks: [
-    {
-      kind: 'figure',
-      caption: 'Gambar 5.1: Matriks Portofolio Bisnis Boston Consulting Group (BCG Matrix).',
-      svg: SVG_BCG_MATRIX
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 5'
-    },
+    // ---------------------------------------------------------------- §0
+    { kind: 'h2', text: '0. Orientasi TM05' },
+    { kind: 'p', text: '**Sub-CPMK TM05 (RPP):** mahasiswa mampu menyusun tujuan organisasi dan rencana strategis yang selaras dengan lingkungan bisnis.' },
+    { kind: 'p', text: '**Bahan kajian RPP → bagian halaman ini:**' },
     {
       kind: 'table',
-      headers: ['Level Perencanaan', 'Aktor Penanggung Jawab', 'Horizon Waktu Rencana', 'Fokus Utama Aktivitas'],
+      stackOnMobile: true,
+      headers: ['Bahan kajian RPP', 'Bagian', 'Catatan'],
       rows: [
-        ['Rencana Strategis (Strategic Planning)', 'Top Management (Direksi / Board of Directors)', 'Jangka Panjang (3 s/d 5 tahun ke depan)', 'Visi korporasi, alokasi portofolio bisnis, ekspansi pasar baru, dan keunggulan kompetitif makro.'],
-        ['Rencana Taktis (Tactical Planning)', 'Middle Management (Kepala Divisi / Manajer Departemen)', 'Jangka Menengah (1 s/d 2 tahun)', 'Menerjemahkan rencana strategis ke dalam tindakan departemen (Pemasaran, SDM, Keuangan, Operasi).'],
-        ['Rencana Operasional (Operational Planning)', 'First-Line Management (Supervisor / Team Leader)', 'Jangka Pendek (Harian, Mingguan, Bulanan)', 'Jadwal kerja harian, standar operasi prosedur (SOP), kuota produksi, dan anggaran kas rutin.']
+        ['Goal setting and planning', '§1–§3', 'Goal, plan, tingkatan tujuan, proses perencanaan, misi, dan konflik tujuan'],
+        ['Performance management', '§4–§5', 'Kriteria tujuan efektif, KPI, MBO, OKR, MBM, standing plans'],
+        ['Planning for a turbulent environment', '§7', 'Contingency planning, scenario building, stretch goals, crisis planning'],
+        ['Thinking strategically', '§8', ''],
+        ['Strategic management', '§8–§11', 'Strategi dan keunggulan bersaing, SWOT, strategi tingkat korporat dan tingkat bisnis'],
       ],
-      caption: 'Tabel 5.0: Matriks hierarki perencanaan organisasi.'
     },
+    { kind: 'p', text: 'RPP tidak mencantumkan kuis (QUIZ) untuk pertemuan ini. Satu subbab Chapter 5, **Benefits and Limitations of Planning**, tidak disebut di bahan kajian RPP; subbab ini tetap dimuat utuh di §6 dengan label "di luar RPP" karena menjadi pengantar langsung §7.' },
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    { kind: 'p', text: '**Presenter Materi**' },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: 3 Strategi Bersaing Generik Michael Porter'
-    },
-    {
-      kind: 'table',
-      headers: ['Strategi Generik Porter', 'Keunggulan Strategis Utama', 'Target Pasar', 'Contoh Nyata di Indonesia'],
-      rows: [
-        ['Cost Leadership (Keunggulan Biaya)', 'Memproduksi barang/jasa dengan biaya terendah di industri melalui skala ekonomis raksasa.', 'Pasar Luas (Broad Market)', 'Lion Air (penerbangan berbiaya murah) dan mie instan Indomie.'],
-        ['Differentiation (Diferensiasi)', 'Menawarkan produk unik bernilai tambah tinggi yang dipersepsikan berbeda dan superior oleh konsumen.', 'Pasar Luas (Broad Market)', 'Apple iPhone, Starbucks Coffee, dan mobil BMW.'],
-        ['Focus Strategy (Fokus Biaya / Diferensiasi)', 'Melayani segmen pasar ceruk (niche market) sempit yang diabaikan oleh pesaing raksasa.', 'Pasar Sempit (Narrow / Niche Market)', 'Ferrari (supercar ultra-mewah) atau klinik kecantikan khusus pria.']
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§11',
+        'Hubungan antar konsep → §12 Peta Konsep',
+        'Contoh penerapan di organisasi → §13 + contoh di tiap bagian',
+        'Bedah film → §14 (*Ford v Ferrari*)',
+        'Kesimpulan & implikasi manajerial → §16',
       ],
-      caption: 'Tabel 5.1: Strategi bersaing generik Michael Porter.'
     },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Jebakan "Terjebak di Tengah" (Stuck in the Middle)',
-      prompt: 'Sebuah jaringan toserba mencoba bersaing dengan supermarket diskon grosir dalam hal harga murah, sekaligus ingin menawarkan suasana belanja mewah seperti butik kelas atas. Namun, toserba ini tidak berhasil menjadi yang termurah dan juga tidak berhasil menjadi yang termewah. Jelaskan risiko kondisi ini menurut Michael Porter!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Konsep Terjebak di Tengah (Stuck in the Middle)**: Michael Porter memperingatkan bahwa perusahaan yang mencoba mengejar Keunggulan Biaya dan Diferensiasi sekaligus tanpa fokus jelas akan berakhir dengan performa laba di bawah rata-rata industri.',
-            '**Penyebab Kegagalan**: Biaya operasional toserba membengkak karena dekorasi mewah (gagal Cost Leadership), namun konsumen kelas atas menganggap kualitas produknya biasa saja (gagal Diferensiasi).',
-            '**Rekomendasi Strategis**: Manajemen harus memilih secara tegas satu keunggulan bersaing utama: fokus memangkas biaya untuk menjadi pemimpin harga murah ATAU fokus meningkatkan eksklusivitas layanan untuk membebankan harga premium.'
-          ]
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 5'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Hierarki Sasaran & MBO', 'Penyusunan sasaran SMART dan 4 siklus Management by Objectives.', 'Mampu merumuskan indikator sasaran MBO yang terukur.'],
-        ['2', 'Matriks Portofolio BCG', 'Klasifikasi Stars, Cash Cows, Question Marks, dan Dogs serta arus kasnya.', 'Mampu mengalokasikan strategi kas antar-unit bisnis.'],
-        ['3', 'Strategi Generik Porter', 'Pembedaan Cost Leadership, Diferensiasi, dan Fokus Pasar.', 'Mampu menganalisis strategi keunggulan bersaing sebuah merek.']
-      ],
-      caption: 'Tabel 5.2: Peta penguasaan submateri TM 5 Pengantar Manajemen.'
-    },
-    CASE_STRATEGIC_PLANNING_PORTER,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
-    },
+    { kind: 'p', text: '**Presenter Kasus**' },
     {
       kind: 'ul',
       items: [
-        '**Sasaran Harus SMART**: Sasaran yang kabur seperti "meningkatkan penjualan" tidak memotivasi; sasaran harus spesifik: "menaikkan volume penjualan produk X sebesar 15% pada kuartal IV 2026".',
-        '**Cash Cow Mendanai Masa Depan**: Jangan mematikan unit bisnis Cash Cow yang matang; arus kas surplus darinya adalah sumber bahan bakar untuk mendanai riset produk Star di masa depan.',
-        '**Strategi Berarti Berani Memilih**: Strategi bukan tentang melakukan segalanya, melainkan tentang berani memilih apa yang TIDAK AKAN dilakukan demi mempertahankan keunggulan bersaing.'
-      ]
-    }
-  ]
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi → §15 (Central City Museum)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (Mind Map)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §12 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (pertanyaan kritis)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §17 Bank Pertanyaan Kritis',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Di halaman ini, isi buku, fakta kasus, dan analisis selalu dipisahkan; bagian analisis diberi keterangan. Contoh dari buku ditulis sesuai keadaan saat buku terbit (2023), jadi angka dan status perusahaan bisa sudah berubah.',
+    },
+    // ---------------------------------------------------------------- §1
+    { kind: 'h2', text: '1. Goal, Plan, dan Tingkatan Tujuan' },
+    { kind: 'p', text: 'Buku membuka bab dengan **Chipotle Mexican Grill** (Recipe for Success). Setelah lebih dari 200 orang sakit karena norovirus di salah satu restorannya pada 2015 dan setidaknya enam wabah lain menyusul, pelanggan menjauh. Manajer menyusun misi dengan tujuan dan rencana spesifik untuk "establish Chipotle as a leader in food safety": merekrut pakar keamanan pangan, memasang pengingat cuci tangan setiap 30 menit, memeriksa kesehatan karyawan setiap pagi, dan mencatat prosedur harian. Chipotle sudah pulih ketika krisis COVID-19 melanda [hal. 150].' },
+    { kind: 'p', text: 'Dari empat fungsi manajemen, **planning** dianggap yang **paling mendasar** (semua fungsi lain bertumpu padanya) sekaligus yang **paling kontroversial**, karena perencanaan tidak bisa membaca masa depan yang tidak pasti. Buku mengutip Colin Powell: "No battle plan survives contact with the enemy." Kesimpulan buku: tanpa rencana dan tujuan, organisasi dan karyawan terombang-ambing, tetapi rencana harus **tumbuh dan berubah** mengikuti kondisi [hal. 150]. Fitur Michelin 5-Star menceritakan pemilik Brutus Bakeshop yang belajar merencanakan dan berpivot ke penjualan online saat pandemi [hal. 150–151].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Goal**', 'Kondisi masa depan yang ingin diwujudkan organisasi. Goal menyatakan tujuan keberadaan organisasi', '[hal. 150, 154]'],
+        ['**Plan**', 'Cetak biru pencapaian goal: alokasi sumber daya, jadwal, tugas, dan tindakan lain yang diperlukan', '[hal. 150–151, 154]'],
+        ['**Planning**', 'Kegiatan menetapkan goal dan merumuskan cara mencapainya', '[hal. 151, 154]'],
+      ],
+    },
+    { kind: 'p', text: 'Ringkasnya: **goal menetapkan tujuan masa depan (ends); plan menetapkan cara hari ini (means)** [hal. 151].' },
+    { kind: 'p', text: '**Exhibit 5.1: Levels of Goals and Plans** [hal. 152]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tingkat', 'Goal', 'Plan', 'Penyusun dan cakupan', 'Sumber'],
+      rows: [
+        ['**Mission**', 'Dasar bagi semua tingkat di bawahnya; mendefinisikan tujuan dasar organisasi bagi karyawan dan pihak luar', '—', 'Puncak hierarki', '[hal. 151]'],
+        ['**Strategic**', '**Strategic goals** (disebut juga *official goals*): pernyataan luas tentang posisi organisasi di masa depan; berlaku untuk organisasi secara keseluruhan', '**Strategic plans**: langkah tindakan dan alokasi sumber daya (uang, personel, ruang, fasilitas) untuk mencapai strategic goals; umumnya jangka panjang, **dua sampai lima tahun**', 'Senior management; organisasi secara keseluruhan', '[hal. 151–152]'],
+        ['**Tactical**', '**Tactical goals**: hasil yang ingin dicapai divisi dan departemen utama agar organisasi mencapai tujuan keseluruhannya', '**Tactical plans**: membantu menjalankan strategic plan dan bagian tertentu dari strategi; horizon lebih pendek, **sekitar satu tahun**', 'Middle management (kepala divisi atau unit fungsional utama)', '[hal. 152–153]'],
+        ['**Operational**', '**Operational goals**: hasil spesifik dan terukur yang diharapkan dari departemen, kelompok kerja, dan individu', '**Operational plans**: langkah tindakan menuju operational goals dan mendukung kegiatan tactical', 'Lower management; departemen dan individu', '[hal. 153–154]'],
+      ],
+    },
+    { kind: 'p', text: '**Contoh dari buku:**' },
+    {
+      kind: 'ul',
+      items: [
+        '**Volkswagen:** strategic goal membangun 22 juta kendaraan listrik sampai 2028 dan menjadi netral karbon pada 2050. Bagian dari strategic plan yang diumumkan 2019: memangkas 7.000 pekerjaan administratif dalam lima tahun dan memakai penghematannya untuk merekrut ahli teknologi mobil listrik [hal. 151–152].',
+        '**Organisasi layanan kesehatan** [hal. 153]: misi "memberi kontribusi bagi kesehatan dan kesejahteraan komunitas dengan layanan terbaik bagi setiap pasien" → strategic goal "mendahulukan kebutuhan pasien" → tactical goals "meningkatkan mutu layanan, menekan biaya, mempromosikan kesehatan" → operational goals seperti pelatihan empati, jalur perawatan, rekam medis elektronik, pemangkasan biaya pasokan, dan program gaya hidup sehat. Buku juga memberi versi seorang dokter jantung dengan pola yang sama.',
+        '**Stonyfield Farm** (Concept Connection): setiap operational plan memuat tujuan operasi netral karbon [hal. 153].',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 5.2: The Organizational Planning Process** [hal. 153–154]' },
+    { kind: 'p', text: '**Siklus: langkah 5 kembali ke langkah 1**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Isi (Exh. 5.2)', 'Penjelasan teks'],
+      rows: [
+        ['**1. Develop the Plan**', 'Define mission, vision; Set goals; Manage goal conflict', 'Menetapkan misi dan strategic goals serta mekanisme mengelola konflik tujuan'],
+        ['**2. Translate the Plan**', 'Define tactical plans and objectives; Develop strategy map; Define contingency plans and scenarios', 'Menerjemahkan rencana menjadi tindakan, termasuk menyelesaikan konflik antar-peserta'],
+        ['**3. Plan Operations**', 'Define operational goals and plans; Select measures and targets; Set stretch goals; Crisis planning', 'Menentukan faktor operasional untuk mencapai goal'],
+        ['**4. Performance Management**', 'Use: Management by objectives; Single use plans; Standing plans', 'Alat untuk menjalankan rencana, termasuk MBO'],
+        ['**5. Monitor and Learn**', 'Hold planning reviews; Hold operational reviews', 'Meninjau rencana secara berkala, belajar dari hasil, merevisi, lalu memulai siklus perencanaan baru'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 153–154]; exhibit berbasis Kaplan dan Norton. Proses ini mencegah manajer hanya berpikir soal kegiatan sehari-hari [hal. 153].' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Goal dan plan di semua tingkat harus **selaras** (alignment), sehingga konsisten dan saling mendukung [hal. 159]. Tujuan strategis baru terwujud bila diturunkan menjadi tujuan taktis dan operasional yang terukur.',
+    },
+    // ---------------------------------------------------------------- §2
+    { kind: 'h2', text: '2. Goal Setting dan Misi Organisasi' },
+    { kind: 'p', text: '**Goals are socially constructed:** goal tidak muncul dengan sendirinya, tetapi dirumuskan oleh individu atau kelompok, dan manajer biasanya punya gagasan berbeda tentang goal yang seharusnya. Mantan CEO Procter & Gamble, A. G. Lafley, mengatakan setiap orang memilih dan menafsirkan data dengan caranya sendiri dan cenderung menganggap satu pilihan strategis sebagai jawaban yang benar. Karena itu, **peran eksekutif puncak** adalah mengajak orang berpikir sebagai tim dan **bernegosiasi** tentang goal mana yang penting [hal. 155].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Mission**', 'Alasan keberadaan organisasi, di puncak hierarki tujuan. Misi menggambarkan nilai, aspirasi, dan alasan keberadaan organisasi', '[hal. 156]'],
+        ['**Mission statement**', 'Definisi tujuan yang dirumuskan secara luas dan membedakan organisasi dari organisasi lain yang sejenis (Remember This: definisi luas tentang cakupan bisnis dan operasi dasar organisasi)', '[hal. 156, 159]'],
+      ],
+    },
+    { kind: 'p', text: '**Dua fungsi misi yang dirumuskan dengan baik** [hal. 156]:' },
+    {
+      kind: 'ol',
+      items: [
+        'Menyatakan **arah strategis** dengan jelas dan menjadi kerangka bagi goal dan plan berikutnya.',
+        '**Memotivasi dan menginspirasi** karyawan. Di perusahaan yang manajernya merumuskan dan mengomunikasikan tujuan dengan jelas, 63% karyawan menyatakan termotivasi, dibanding 31% di perusahaan lain.',
+      ],
+    },
+    { kind: 'p', text: '**Isi mission statement** [hal. 157]: biasanya kegiatan bisnis dasar dan tujuan, serta nilai yang memandu perusahaan. Sebagian juga menyebut pasar dan pelanggan yang dituju, mutu produk, lokasi fasilitas, dan sikap terhadap karyawan. **Tanpa misi yang jelas, goal dan plan bisa disusun asal-asalan** dan tidak membawa organisasi ke arah yang diperlukan.' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Contoh misi dari buku', 'Isi', 'Sumber'],
+      rows: [
+        ['**IKEA**', '"Create a better everyday life for the many people" (bukan segelintir orang kaya), dengan produk rumah tangga yang dirancang baik, fungsional, dan cukup murah agar terjangkau sebanyak mungkin orang', '[hal. 156]'],
+        ['**Henry Schein**', 'Menyediakan produk dan layanan kesehatan yang inovatif dan terintegrasi, serta menjadi penasihat tepercaya bagi praktisi medis dan gigi', '[hal. 156]'],
+        ['**Holstee** (Exh. 5.3)', 'Manifesto yang sangat luas dan inspiratif, ditulis untuk mengingatkan pendiri dan karyawan bahwa tidak ada yang lebih penting daripada mengejar passion', '[hal. 156]'],
+        ['**State Farm**', 'Misi pendek dan lugas: "to help people manage the risks of everyday life, recover from the unexpected, and realize their dreams", diikuti nilai bersama dan visi masa depan', '[hal. 157]'],
+      ],
+    },
+    { kind: 'p', text: 'Kutipan samping dari Roy M. Spence Jr. menegaskan bahwa tujuan yang nyata tidak bisa hanya berupa kata-kata di atas kertas; bila tepat, orang merasa senang dengan pekerjaannya dan jelas tentang goal-nya [hal. 157].' },
+    // ---------------------------------------------------------------- §3
+    { kind: 'h2', text: '3. Mengelola Konflik Tujuan (Goal Conflict)' },
+    { kind: 'p', text: 'Mission statement juga membantu mengelola **konflik tujuan** yang pasti terjadi. Organisasi mengejar banyak goal sekaligus; konflik muncul karena **mencapai satu goal bisa berarti goal lain tidak tercapai**, dan karena manajer kadang **tidak sepakat** goal mana yang dikejar [hal. 157].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Organisasi', 'Konflik tujuan menurut buku', 'Sumber'],
+      rows: [
+        ['**Amazon**', 'Eksekutif bisnis ritel ingin algoritma pencarian mendahulukan hasil yang lebih menguntungkan; tim pencarian ingin daftar yang paling relevan dan terlaris tampil lebih dulu', '[hal. 157]'],
+        ['**Peloton**', 'Tujuan pertumbuhan vs tujuan laba: perwakilan investor ingin memperlambat pertumbuhan, CEO ingin segera ekspansi ke Jerman', '[hal. 157]'],
+        ['**Kraft Heinz** (setelah diakuisisi 3G Capital)', 'Pemangkasan biaya vs investasi R&D untuk inovasi', '[hal. 157]'],
+        ['**Chevron, Royal Dutch Shell**, dan perusahaan minyak lain', 'Investasi energi alternatif untuk menekan emisi vs meningkatkan produksi minyak dan gas secara lebih efisien', '[hal. 157]'],
+        ['**Boeing**', 'Menurut buku, sebuah keluhan etika internal menuduh manajemen puncak lebih mementingkan tujuan biaya dan jadwal daripada keselamatan dan mutu selama pengembangan 737 MAX, yang kemudian mengalami dua kecelakaan fatal', '[hal. 158]'],
+      ],
+    },
+    { kind: 'p', text: '**Lima cara menyelesaikan konflik tujuan** [hal. 158–159]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Cara', 'Isi menurut buku', 'Contoh dari buku'],
+      rows: [
+        ['**Build a coalition**', '**Coalitional management**: membangun aliansi orang yang mendukung goal manajer dan memengaruhi orang lain agar menerima dan mengejar goal itu. Caranya berbicara dengan banyak orang di dalam dan luar organisasi, meminta pandangan karyawan dan pelanggan kunci, serta mengetahui siapa yang mendukung dan menentang arah tertentu beserta alasannya', '**Nike**: kepala produksi (biaya serendah mungkin) dan kepala bisnis berkelanjutan (khawatir praktik kerja dan keselamatan pabrik di Bangladesh) membentuk komite gabungan, meninjau pabrik langsung, lalu memutuskan menarik diri dari pabrik yang berpotensi berbahaya'],
+        ['**Modify goals by time or location**', 'Bila dua goal sama pentingnya, seimbangkan dengan menyesuaikan goal menurut **ruang** atau **waktu**, bukan memenangkan salah satu', 'Ruang: **The Beacon** memisahkan anggaran, kegiatan, rekrutmen, dan ruang kerja publikasi online dari cetak; **The Sydney Morning Herald** justru menyatukan dua ruang redaksi agar tercapai keseimbangan; **Alessi** menempatkan tim pengembangan produk dekat pabrik. Waktu: tim konsultan mendahulukan tujuan melatih anggota baru, baru kemudian mengejar kenaikan kinerja 2%'],
+        ['**Address conflicts with debate and dialogue**', 'Jangan biarkan konflik tujuan mengendap dan merugikan organisasi', '**Walmart**: setelah bertahun-tahun berdebat soal cara bersaing dengan Amazon, pemimpin puncak sepakat memusatkan energi dan sumber daya pada supercenter sebagai pusat jaringan bisnis yang memenuhi kebutuhan pelanggan'],
+        ['**Break down barriers and promote cross-silo cooperation**', 'Mendorong kerja sama lintas departemen, divisi, dan tingkat: rapat tatap muka, task force lintas departemen, prosedur penyelesaian konflik, dan nilai kolaborasi', 'Colin Powell, sebagai ketua Joint Chiefs of Staff, rutin mempertemukan kepala Angkatan Darat, Udara, Laut, dan Marinir agar saling memahami dan menyatu di sekitar goal kunci'],
+        ['**Manager departures**', 'Konflik kadang mereda atau selesai saat manajer yang mendukung goal tertentu keluar, karena keyakinannya terlalu kuat untuk berkompromi', '**Facebook**: pendiri WhatsApp keluar setelah perselisihan panjang soal perlindungan privasi pengguna vs pendapatan iklan; kepala keamanan data Facebook keluar setelah berselisih soal seberapa banyak informasi penyalahgunaan platform oleh negara lain menjelang pemilu sela AS 2018 yang diungkap ke publik'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku menyebut lima cara ini dengan urutan dan nama yang sedikit berbeda antara kalimat ringkasan dan subjudulnya. "Promoting collaboration" di kalimat ringkasan sama dengan subjudul "Break Down Barriers and Promote Cross-Silo Cooperation" [hal. 158–159]. Isi kelimanya sama.',
+    },
+    // ---------------------------------------------------------------- §4
+    { kind: 'h2', text: '4. Performance Management: Kriteria Tujuan Efektif dan KPI' },
+    { kind: 'p', text: 'Manajer memakai **operational goals** untuk mengarahkan karyawan dan sumber daya menuju hasil tertentu, sehingga organisasi berkinerja efisien dan efektif. Dua hal yang dibahas: cara menetapkan goal yang efektif, lalu pendekatan perencanaan untuk **performance management**, termasuk MBO [hal. 159].' },
+    { kind: 'p', text: '**Exhibit 5.4: Characteristics of Effective Goals** [hal. 160]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Karakteristik', 'Isi menurut buku', 'Sumber'],
+      rows: [
+        ['**Specific and measurable**', 'Syarat pertama dan terpenting. Sedapat mungkin kuantitatif, misalnya menaikkan laba 2%, nol formulir pesanan yang tidak lengkap, atau menaikkan rata-rata rating efektivitas guru dari 3,5 ke 3,7. Tidak semua goal bisa numerik, tetapi goal yang samar punya daya motivasi rendah; yang penting goal didefinisikan tepat dan kemajuannya terukur', '[hal. 160]'],
+        ['**Defined time period**', 'Ada tanggal kapan pencapaian diukur. Untuk goal dua sampai tiga tahun, tetapkan tanggal untuk bagian-bagiannya agar orang tetap di jalur', '[hal. 160]'],
+        ['**Cover key result areas**', 'Goal tidak bisa ditetapkan untuk setiap aspek perilaku atau kinerja; jumlahnya akan membuatnya tak bermakna. Sedikit goal yang dipilih cermat dengan ukuran jelas lebih memfokuskan perhatian, energi, dan sumber daya. **Kesalahan terbesar: mencoba mencapai terlalu banyak goal terlalu cepat**', '[hal. 160]'],
+        ['**Challenging but realistic**', 'Goal yang tidak realistis membuat karyawan gagal dan menurunkan moral; goal yang terlalu mudah tidak memotivasi', '[hal. 161]'],
+        ['**Linked to rewards**', 'Dampak goal bergantung pada seberapa jauh kenaikan gaji, promosi, dan penghargaan didasarkan pada pencapaian goal; karyawan memperhatikan apa yang diperhatikan dan dihargai organisasi', '[hal. 161]'],
+      ],
+    },
+    { kind: 'p', text: '**Key performance indicators (KPIs)** = ukuran yang menilai apa yang penting bagi organisasi dan seberapa baik organisasi bergerak menuju strategic goal-nya. KPI membantu manajer menetapkan goal tingkat bawah yang mendorong kinerja menuju sasaran strategis keseluruhan [hal. 161].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Contoh dari buku', 'Isi', 'Sumber'],
+      rows: [
+        ['**Brinker International** (Recipe for Success; induk Chili\'s dan Maggiano\'s)', 'Tidak satu pun eksekutif bisa menyebut seluruh 40 goal perusahaan. Tim memangkasnya menjadi 4 target spesifik dan terukur: penjualan, laba, skor Guest Experience Measurement (GEM), serta keterlibatan karyawan dan tingkat turnover. Hasilnya, same-store sales naik dua kali lipat, kepuasan pelanggan naik, dan turnover turun', '[hal. 160]'],
+        ['**Airbnb**', 'Mengaitkan bonus karyawan dengan goal keselamatan tamu dan ukuran nonfinansial lain, termasuk keberagaman gender dan ras karyawan serta pengurangan jejak karbon, agar goal yang melayani semua stakeholder tercapai', '[hal. 161]'],
+        ['**Burt\'s Bees** (Creating a Greener World)', 'Goal keberlanjutan yang spesifik, misalnya mendaur ulang kemasan 40% lebih banyak dan mempertahankan formulasi 99% alami', '[hal. 161]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (1/3)',
+      text: 'Di Indonesia, perguruan tinggi negeri dinilai dengan sejumlah **Indikator Kinerja Utama (IKU)** yang ditetapkan pemerintah, misalnya keterserapan lulusan di dunia kerja. Dalam bahasa buku, IKU adalah **KPI** yang menunjukkan kemajuan menuju tujuan strategis [hal. 161]. Kampus lalu menurunkannya menjadi target fakultas dan program studi, sama seperti pola strategic → tactical → operational di Exh. 5.1 [hal. 152].',
+    },
+    // ---------------------------------------------------------------- §5
+    { kind: 'h2', text: '5. MBO, OKR, MBM, dan Standing Plans' },
+    { kind: 'p', text: '**Management by objectives (MBO)** = sistem ketika manajer dan karyawan menetapkan goal untuk setiap departemen, proyek, dan orang, lalu memakainya untuk memantau kinerja berikutnya. MBO diperkenalkan Peter Drucker dalam *The Practice of Management* (1954). Banyak perusahaan memakainya, dan sebagian besar manajer menilainya efektif [hal. 161].' },
+    { kind: 'p', text: '**Exhibit 5.5: Model of the MBO Process** [hal. 162]' },
+    { kind: 'p', text: '**Siklus: langkah 4 kembali ke langkah 1**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Isi', 'Sumber'],
+      rows: [
+        ['1. Set goals', 'Corporate strategic goals → departmental goals → individual goals', '[hal. 162]'],
+        ['2. Develop action plans', 'Rencana tindakan untuk mencapai goal', '[hal. 162]'],
+        ['3. Review progress', 'Meninjau kemajuan dan mengambil tindakan korektif', '[hal. 162]'],
+        ['4. Appraise overall performance', 'Menilai kinerja keseluruhan; di exhibit, panah dari langkah ini kembali ke langkah 1', '[hal. 162]'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh: **Mozilla** (pembuat Firefox) memberi karyawan dua goal spesifik dan menantang: menutup 40 bug prioritas tinggi sebelum rilis beta berikutnya, dan membawa kinerja browser ke dalam jarak 20% dari skor Chrome. Menjelang akhir Agustus, programmer sudah menutup hampir 400 bug dan hampir mencapai goal kinerja [hal. 161–162].' },
+    { kind: 'p', text: '**Exhibit 5.6: MBO Benefits** [hal. 163]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Manfaat MBO'],
+      rows: [
+        ['Memfokuskan upaya manajer dan karyawan pada kegiatan yang mengarah ke pencapaian goal'],
+        ['Dapat meningkatkan kinerja di semua tingkat perusahaan'],
+        ['Meningkatkan motivasi karyawan'],
+        ['Menyelaraskan goal individu dan departemen dengan goal perusahaan'],
+      ],
+    },
+    { kind: 'p', text: '**OKR (objectives and key results)** (Sunny Side Up) [hal. 162–163]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Unsur', 'Isi menurut buku'],
+      rows: [
+        ['Asal', 'Dipopulerkan John Doerr sebagai "a collaborative, goal-setting protocol for companies, teams, and individuals". Buku membukanya dengan kutipan Andrew Grove: "Ideas are easy. Execution is everything."'],
+        ['**Objectives**', 'Apa yang ingin dicapai individu, tim, departemen, atau perusahaan; harus signifikan, inspiratif, dan spesifik'],
+        ['**Key results**', 'Cara membandingkan dan memantau kemajuan menuju objective; harus terukur, dapat diverifikasi, dan punya periode waktu'],
+        ['Contoh Google', 'Setiap karyawan menetapkan objective per kuartal dengan beberapa key result. Objective "Improve Blogger\'s Reputation" punya key result seperti berbicara di tiga acara industri dan menjangkau pengguna Blogger. Key result dinilai (grading) di akhir kuartal; OKR direvisi tiap tahun dan boleh berubah bila keadaan bergeser'],
+        ['Nilai', 'OKR di tingkat individu, tim, departemen, dan perusahaan saling terhubung sehingga upaya terfokus. Doerr: OKR adalah "guardrails, not chains or blinders"; karyawan ikut menetapkannya dan memakai penilaian sendiri untuk menyesuaikan. Fokusnya kerja tim, pemberdayaan, transparansi, dan akuntabilitas'],
+        ['**CFR**', 'Doerr mengusulkan *conversations, feedback, and recognition* sebagai sistem performance management berkelanjutan'],
+      ],
+    },
+    { kind: 'p', text: '**Keterbatasan MBO dan MBM** [hal. 163]:' },
+    {
+      kind: 'ul',
+      items: [
+        'Penekanan berlebihan pada "meeting the goals" dapat mengaburkan **cara** mencapainya: orang memotong jalan, mengabaikan masalah, atau berperilaku tidak etis demi target. Di AS, sistem ala MBO yang ketat di kepolisian kota dan sistem sekolah memicu kecurangan angka dan kebohongan soal kinerja.',
+        'MBO tidak bisa berdiri sendiri; buku menyebutnya "like training wheels on a bicycle". **Cara mencapai goal sama pentingnya dengan hasilnya.**',
+        '**Management by means (MBM)** = pendekatan sistematis yang memusatkan perhatian pada metode dan proses untuk mencapai goal. Istilah ini dari H. Thomas Johnson dan rekan dalam *Profit Beyond Measures*: bila manajer menjalankan kegiatannya dengan cara yang benar, hasil positif akan mengikuti.',
+      ],
+    },
+    { kind: 'p', text: '**Standing plans** [hal. 163–164]: buku memberi contoh berikut.' },
+    {
+      kind: 'ul',
+      items: [
+        'Kebijakan larangan merokok: **Walt Disney Company** menjadikan semua taman hiburan luar ruangannya bebas rokok; perokok harus ke zona khusus di luar area keamanan.',
+        'Kebijakan **YouTube** untuk menekan video ekstremis: video yang jelas melanggar pedoman (misalnya mempromosikan terorisme) langsung dihapus; video ofensif yang tidak memenuhi standar penghapusan diberi peringatan, tidak bisa dimonetisasi, tidak direkomendasikan, dan tidak bisa dikomentari, sehingga keterlibatannya lebih rendah dan lebih sulit ditemukan.',
+        'Kebijakan perilaku pribadi **NFL** (disebut di Remember This).',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Buku menyebut **single-use plans** dan **standing plans** sebagai alat performance management (Exh. 5.2 dan Remember This), tetapi **tidak memberi definisi** keduanya dan tidak memberi contoh single-use plan [hal. 154, 163–164]. Jangan mengutip definisi dari sumber lain seolah berasal dari buku ini.',
+    },
+    // ---------------------------------------------------------------- §6
+    { kind: 'h2', text: '6. Manfaat dan Keterbatasan Perencanaan (di luar RPP)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Subbab ini tidak disebut di bahan kajian RPP. Buku membuka subbab Planning for a Turbulent Environment (§7) dengan keterbatasan perencanaan di bawah ini, jadi bagian ini dimuat utuh sebagai pengantarnya [hal. 165].',
+    },
+    { kind: 'p', text: 'Sebagian manajer menganggap perencanaan wajib, sebagian lain menganggapnya membatasi kinerja; keduanya ada benarnya. Riset menunjukkan perencanaan **umumnya berpengaruh positif** pada kinerja perusahaan [hal. 164].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Manfaat (benefits)', 'Keterbatasan (limitations)'],
+      rows: [
+        ['**Sumber motivasi dan komitmen.** Perencanaan mengurangi ketidakpastian dan memperjelas apa yang harus dicapai; tanpa goal yang jelas, orang tidak tahu untuk apa mereka bekerja [hal. 164]', '**Tekanan berlebihan.** Tekanan untuk memenuhi goal yang terlalu ambisius dapat mendorong perilaku disfungsional atau tidak etis. Buku mengingatkan kasus Wells Fargo di Ch. 4 (rekening palsu demi target penjualan), serta bankir di bisnis valuta asingnya yang membebankan biaya berlebih kepada ratusan perusahaan demi target [hal. 165]'],
+        ['**Pedoman alokasi sumber daya.** Contoh: goal strategis membangun ulang Cadillac seperti BMW dan merek mewah lain berarti mengalokasikan lebih banyak sumber daya untuk identitas merek dan pengalaman dealer mewah [hal. 164]', '**Rasa pasti yang semu (false sense of certainty).** Semua perencanaan bertumpu pada asumsi; manajer tidak bisa tahu pasti masa depan industri, pesaing, pemasok, dan pelanggan [hal. 165]'],
+        ['**Pedoman tindakan.** Memusatkan perhatian pada target spesifik dan mengarahkan upaya ke hasil penting [hal. 164]', '**Kekakuan di lingkungan bergejolak (rigidity).** Perencanaan bisa mengunci organisasi pada goal, plan, dan jadwal yang tidak lagi sesuai; manajer yang "staying the course" sering bertahan pada rencana yang keliru walau kondisi berubah drastis [hal. 165]'],
+        ['**Standar kinerja.** Goal menetapkan kriteria untuk mengukur apakah semuanya di jalur [hal. 164]', '**Menghambat intuisi dan kreativitas.** Perencanaan rutin yang berlebihan bisa menekan kreativitas; dalam MBO, karyawan bisa memilih target yang aman, dan manajer bisa menolak ide yang tidak cocok dengan rencana [hal. 165]'],
+      ],
+    },
+    { kind: 'p', text: 'Kutipan samping dari Dwight D. Eisenhower merangkum keseimbangan ini: "In preparing for battle, I have always found that plans are useless, but planning is indispensable." [hal. 165]' },
+    // ---------------------------------------------------------------- §7
+    { kind: 'h2', text: '7. Perencanaan di Lingkungan yang Bergejolak' },
+    { kind: 'p', text: 'Menurut buku, anjloknya kegiatan bisnis akibat gangguan rantai pasok saat pandemi COVID-19 menunjukkan sebagian besar bisnis belum merencanakan peristiwa seperti itu. Buku menyebut **tiga pendekatan** yang menyiapkan organisasi menghadapi peristiwa tak terduga, yaitu **contingency planning, scenario building, dan crisis planning**; **selain itu**, **stretch goals** membangkitkan motivasi dan kinerja tinggi yang menopang organisasi di masa sulit [hal. 165].' },
+    { kind: 'h3', text: '7a. Contingency Planning' },
+    { kind: 'p', text: '**Contingency plans** = respons perusahaan yang ditetapkan untuk keadaan darurat, kemunduran (setbacks), atau kondisi tak terduga [hal. 166].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Isi', 'Sumber'],
+      rows: [
+        ['1. Identifikasi faktor lingkungan penting', 'Misalnya penurunan ekonomi, pasar menyusut, kenaikan biaya pasokan, perkembangan teknologi baru, atau masalah keselamatan', '[hal. 166]'],
+        ['2. Ramalkan beberapa respons alternatif', 'Untuk kemungkinan yang paling mungkin terjadi dan berdampak besar, dengan **fokus pada skenario terburuk**', '[hal. 166]'],
+        ['Contoh pertanyaan', 'Bila penjualan turun 20% dan harga turun 8%, apa yang akan dilakukan perusahaan? Rencananya bisa berupa PHK, anggaran darurat, upaya penjualan baru, atau pasar baru', '[hal. 166]'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh: produsen mobil Inggris **Aston Martin** menyusun contingency plan untuk kemungkinan Inggris keluar dari Uni Eropa tanpa kesepakatan (Brexit): memakai pelabuhan selain Dover, mendatangkan suku cadang lewat kargo udara, dan menimbun suku cadang agar satu-satunya pabriknya, yang ada di Inggris, tidak terganggu [hal. 166].' },
+    { kind: 'h3', text: '7b. Scenario Building' },
+    { kind: 'p', text: '**Scenario building** = perluasan contingency planning berupa teknik peramalan: melihat tren dan diskontinuitas saat ini, lalu memvisualisasikan kemungkinan masa depan. Manajer tidak hanya melihat "what has been", tetapi memikirkan "what could be". Peristiwa yang paling merusak perusahaan adalah yang tidak pernah terbayangkan [hal. 166].' },
+    {
+      kind: 'ul',
+      items: [
+        'Stephen Millett: "Scenarios are meant to expand the range of future possibilities managers should consider and prepare for." [hal. 166]',
+        'Manajer tidak bisa meramal masa depan, tetapi bisa **melatih kerangka** untuk mengelola peristiwa di masa depan. Survei Chartered Management Institute dan Business Continuity Institute menyebut peristiwa yang perlu disiapkan skenarionya: cuaca ekstrem, hilangnya sistem TI, kehilangan karyawan kunci, hilangnya akses ke kantor atau pabrik, gagalnya sistem komunikasi, dan gangguan rantai pasok [hal. 166–167].',
+        '**Abbreviated scenario thinking:** sebagian manajer memakai skenario global yang sudah dipublikasikan sebagai titik awal untuk bertanya "What if...?" [hal. 167].',
+        'Skenario seperti **cerita** yang memberi gambaran alternatif masa depan dan respons manajer. Biasanya disusun **dua sampai lima skenario** untuk tiap kumpulan faktor, dari yang paling optimistis sampai paling pesimistis. Contoh: situs berbagi video menyusun dua skenario untuk operasinya di Inggris (kenaikan regulasi konten rendah vs tinggi) dan narasi implikasinya untuk 10 tahun [hal. 167].',
+        '**Royal Dutch Shell** sudah lama menjadi pemimpin scenario building dan menyusun skenario dunia dengan harga minyak "lower forever" [hal. 167].',
+      ],
+    },
+    { kind: 'h3', text: '7c. Stretch Goals dan BHAG' },
+    { kind: 'p', text: '**Stretch goals** = goal yang masuk akal tetapi sangat ambisius, begitu jelas, memikat, dan imajinatif sehingga membakar semangat karyawan dan melahirkan keunggulan. Cirinya **kesulitan ekstrem (extreme difficulty)** dan **kebaruan ekstrem (extreme novelty)**: ekspektasinya jauh melampaui kemampuan dan kinerja saat ini, dan menuntut kegiatan serta pendekatan yang sama sekali baru [hal. 167].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Contoh', 'Isi menurut buku', 'Sumber'],
+      rows: [
+        ['**Southwest Airlines**', 'Di masa awal, mengejar waktu putar pesawat di gerbang hanya 10 menit, yang menuntut perombakan praktik kerja', '[hal. 167]'],
+        ['**Amazon Kindle**', 'Jeff Bezos meminta insinyur membuat e-reader ringan dengan akses seluler bawaan, sesuatu yang belum pernah dicoba; seorang insinyur menyebutnya "insane". Kindle lahir beberapa tahun kemudian, batch pertama habis dalam hitungan jam, dan pengembangannya membuka jalan bagi perangkat keras Amazon berikutnya', '[hal. 167]'],
+        ['**GOJO Industries** (Purell; Concept Connection)', 'BHAG menjangkau 1 miliar orang setiap hari dengan produk sanitasi tangan tanpa air, untuk mengurangi kematian akibat penyakit yang bisa dicegah di wilayah dengan air bersih terbatas', '[hal. 167]'],
+      ],
+    },
+    { kind: 'p', text: '**Big hairy audacious goal (BHAG)** (istilah James Collins dan Jerry Porras, 1996) = goal yang begitu besar, inspiratif, dan di luar paradigma yang berlaku sehingga mengubah cara orang berpikir [hal. 167]. Stretch goals dan BHAG penting karena perusahaan yang hanya mengejar perbaikan bertahap (incremental) bisa tertinggal; goal ini mendorong karyawan berpikir dengan cara baru menuju terobosan [hal. 168].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Goal harus tetap **dipandang bisa dicapai**. Bila tidak, karyawan kecewa dan kehilangan motivasi, dan sebagian bisa menempuh cara ekstrem atau tidak etis demi target [hal. 167]. Bandingkan dengan kriteria "challenging but realistic" di §4 [hal. 161].',
+    },
+    { kind: 'h3', text: '7d. Crisis Planning' },
+    { kind: 'p', text: '**Crisis planning** menyiapkan organisasi, manajer, dan karyawan menghadapi peristiwa katastrofik mendadak yang bisa menghancurkan perusahaan bila tidak ada rencana respons. Contoh buku: manajer restoran yang dibanjiri telepon karyawan, pemasok, kontraktor, dan wartawan saat pandemi bisa kewalahan, sedangkan manajer yang sudah punya rencana krisis bisa memanggil tim krisis [hal. 168].' },
+    { kind: 'p', text: 'Jenis krisis menurut buku: bencana cuaca (tornado, banjir, badai, gempa), penembakan massal di sebuah toko Walmart, tumpahan minyak BP di Teluk Meksiko, gelombang gugatan terhadap Johnson & Johnson soal keamanan bedak bayi, dan video "pink slime" yang berujung penutupan tiga pabrik Beef Products, Inc. [hal. 168].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Respons krisis', 'Yang ditulis buku', 'Sumber'],
+      rows: [
+        ['**Starbucks**: cepat', 'Dua pria kulit hitam ditangkap di gerai Philadelphia setelah manajer memanggil polisi karena mereka ditolak memakai toilet tanpa membeli. CEO segera menyebut penangkapan itu "reprehensible", manajer dipindahkan dari gerai, dan kebijakan tamu yang tidak membeli diperjelas. Respons cepat mengurangi dampak krisis', '[hal. 168]'],
+        ['**Boeing**: lambat', 'Kegagalan CEO dan pemimpin lain untuk segera tampil menenangkan publik setelah kecelakaan 737 MAX membuat krisis membesar', '[hal. 168]'],
+        ['**Indiana State Fair** (Half-Baked Management)', 'Perencanaan yang serampangan diduga ikut menyebabkan runtuhnya panggung saat badai yang menewaskan tujuh orang; tidak ada yang tahu siapa berwenang menunda atau membatalkan pertunjukan. Departemen Tenaga Kerja Indiana mendenda komisi pameran, pembangun panggung, dan serikat kru panggung', '[hal. 168]'],
+      ],
+    },
+    { kind: 'p', text: 'Rencana yang matang dan terkoordinasi dapat dipakai untuk merespons bencana apa pun, dan crisis planning **mengurangi terjadinya masalah**, seperti kunci yang baik mengurangi risiko pencurian [hal. 168].' },
+    { kind: 'p', text: '**Exhibit 5.7: Essential Stages of Crisis Planning** [hal. 169]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tahap', 'Isi menurut buku', 'Contoh', 'Sumber'],
+      rows: [
+        ['**Crisis prevention**', 'Kegiatan untuk mencegah krisis dan **mendeteksi tanda peringatan**. Bagian pentingnya adalah membangun hubungan yang terbuka dan saling percaya dengan stakeholder kunci: karyawan, pelanggan, pemasok, pemerintah, serikat pekerja, dan komunitas. Hubungan yang baik bisa mencegah krisis (misalnya mogok kerja) dan membuat respons lebih efektif', '**Basecamp**: saat alat chat Campfire terus mati-hidup, manajer segera berkomunikasi terbuka dengan pelanggan, menanggapi setiap keluhan, dan memberi layanan gratis sebulan setelah masalah beres; loyalitas pelanggan justru menguat', '[hal. 168–169]'],
+        ['**Crisis preparation**', 'Semua perencanaan rinci untuk menangani krisis saat terjadi, dalam tiga langkah: (1) menunjuk **tim manajemen krisis** (kelompok lintas fungsi) dan **juru bicara**; (2) menyusun **crisis management plan (CMP)** yang rinci; (3) membangun **sistem komunikasi** yang efektif', 'Dr. Anthony Fauci, direktur National Institute of Allergy and Infectious Diseases, menjadi juru bicara pemerintah federal AS saat krisis COVID-19', '[hal. 169]'],
+      ],
+    },
+    { kind: 'p', text: '**Crisis management plan (CMP)** = rencana tertulis rinci yang menetapkan langkah yang harus diambil, dan oleh siapa, bila krisis terjadi. CMP memuat langkah untuk bencana alam (kebakaran, gempa), masalah "normal" (krisis ekonomi, kecelakaan industri, kegagalan produk atau layanan), dan peristiwa abnormal (sabotase produk, terorisme). CMP harus menjadi **dokumen hidup** yang rutin ditinjau, dilatih, dan diperbarui [hal. 169–170].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (2/3)',
+      text: 'Bank di Indonesia diwajibkan otoritas pengawasnya memiliki **rencana keberlangsungan usaha** (*business continuity plan*) agar layanan penting tetap berjalan saat terjadi gangguan, misalnya bencana atau gangguan sistem TI, dan rencana itu harus diuji secara berkala. Rencana ini memadukan **contingency planning** (respons yang disiapkan untuk gangguan) [hal. 166] dengan **crisis preparation**, termasuk CMP sebagai dokumen hidup yang dilatih dan diperbarui [hal. 169–170]. Hilangnya sistem TI juga termasuk peristiwa yang menurut survei di buku perlu disiapkan skenarionya [hal. 166].',
+    },
+    // ---------------------------------------------------------------- §8
+    { kind: 'h2', text: '8. Berpikir Strategis dan Manajemen Strategis' },
+    { kind: 'p', text: '**Strategy formulation and execution** [hal. 171]: buku memakai kegagalan strategi pengujian COVID-19 oleh CDC di AS pada 2020. Strategi CDC adalah memakai tesnya sendiri, bukan tes WHO atau laboratorium swasta; kit awalnya bermasalah, dan aturan FDA yang ketat menghalangi laboratorium swasta. Saat AS baru menguji sekitar 82.000 orang, Korea Selatan, dengan penduduk kurang dari seperenam AS, sudah menguji hampir 275.000 orang. Menurut buku, strategi CDC gagal di **formulasi** (hanya memakai tes sendiri) dan **eksekusi** (tes awal cacat, aturan terlalu ketat, pengujian terbatas).' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Contoh lain', 'Isi menurut buku', 'Sumber'],
+      rows: [
+        ['**Starbucks**', 'Penjualan dan laba melonjak di AS dan Tiongkok berkat strategi memperlambat pembukaan gerai baru, memperbarui gerai lama, memperkuat pemesanan digital, dan menambah minuman baru', '[hal. 171]'],
+        ['**Kodak**', 'Belum pulih dari kegagalan manajer merencanakan kebangkitan fotografi digital', '[hal. 171]'],
+        ['**Hallmark Cards**', 'Terus menurun karena kesulitan menemukan strategi di dunia yang tidak lagi mengirim kartu ucapan', '[hal. 171]'],
+      ],
+    },
+    { kind: 'p', text: 'Manajemen strategis makin penting karena manajer bertanggung jawab memosisikan organisasi di dunia yang terus berubah [hal. 171]. Gary Hamel: "It\'s hard to outrun the future if you don\'t see it coming." [hal. 171]' },
+    { kind: 'p', text: '**Thinking strategically** = mengambil pandangan jangka panjang dan melihat gambaran besar, termasuk organisasi dan lingkungan persaingannya, serta bagaimana keduanya saling cocok [hal. 172].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Isi menurut buku', 'Sumber'],
+      rows: [
+        ['Bisnis vs nirlaba', 'Di perusahaan, perencanaan strategis umumnya menyangkut tindakan bersaing di pasar. Di organisasi nirlaba seperti American Red Cross atau Salvation Army, perencanaan strategis menyangkut peristiwa di lingkungan eksternal', '[hal. 172]'],
+        ['Bukti', 'Riset menunjukkan berpikir dan merencanakan secara strategis berpengaruh positif pada kinerja dan keberhasilan finansial. Survei McKinsey Quarterly: 51% eksekutif di perusahaan tanpa proses perencanaan strategis formal tidak puas dengan pengembangan strategi perusahaannya, dibanding hanya 20% di perusahaan yang punya proses formal', '[hal. 172]'],
+        ['Peran CEO', 'CEO harus aktif membuat pilihan sulit dan trade-off yang mendefinisikan strategi. Contoh: Bob Iger membangun pertumbuhan Disney sebagai CEO 2005–2020, lalu kembali terlibat saat pandemi mengganggu bisnis Disney', '[hal. 172]'],
+        ['Semua tingkat', 'Eksekutif senior ingin manajer menengah dan bawah juga berpikir strategis. Memahami konsep strategi dan tingkatan strategi adalah langkah pertama', '[hal. 172]'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Strategic management**', 'Serangkaian keputusan dan tindakan untuk merumuskan dan menjalankan strategi yang memberi kecocokan unggul antara organisasi dan lingkungannya, sehingga tujuan organisasi tercapai. Kinerja unggul bukan soal keberuntungan, tetapi hasil pilihan manajer', '[hal. 173]'],
+        ['**Strategy**', 'Rencana tindakan yang menggambarkan alokasi sumber daya dan kegiatan untuk menghadapi lingkungan, mencapai keunggulan bersaing, dan mencapai tujuan organisasi', '[hal. 173]'],
+        ['**Competitive advantage**', 'Hal yang membedakan organisasi dari yang lain dan memberinya keunggulan khas dalam memenuhi kebutuhan pelanggan di pasar', '[hal. 173]'],
+      ],
+    },
+    { kind: 'p', text: 'Pertanyaan manajer dalam manajemen strategis: perubahan dan tren apa yang terjadi di lingkungan persaingan? Siapa pesaing kita, apa kekuatan dan kelemahannya? Siapa pelanggan kita? Produk atau jasa apa yang kita tawarkan dan bagaimana paling efisien? Bagaimana masa depan industri kita, dan bagaimana kita bisa mengubah aturan mainnya? [hal. 173]' },
+    { kind: 'p', text: 'Inti merumuskan strategi adalah **memilih bagaimana organisasi akan berbeda**: melakukan kegiatan yang berbeda, atau melakukan kegiatan serupa dengan cara berbeda dari pesaing [hal. 173].' },
+    { kind: 'p', text: '**Exhibit 5.8: The Elements of Competitive Advantage** [hal. 173]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Elemen', 'Isi menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Target customers**', 'Strategi yang efektif menetapkan pelanggan dan kebutuhan mana yang dilayani. Target bisa geografis, demografis, atau cara lain (misalnya pembeli online vs pembeli di toko kecil)', '**Zipcar**: siapa saja yang sesekali perlu menyewa mobil per jam; **Hertz**: pelancong bisnis atau liburan yang menyewa per hari atau minggu. **Costco** (awalnya pelanggan relatif mampu dan berpendidikan tinggi) vs **Sam\'s Club** (awalnya pemilik usaha kecil); belakangan keduanya saling mengincar pelanggan lawan', '[hal. 173–174]'],
+        ['**Exploit core competencies**', '**Core competence** = sesuatu yang dilakukan organisasi dengan sangat baik dibanding pesaing; bisa berupa R&D unggul, keahlian teknologi, efisiensi proses, atau layanan pelanggan luar biasa', '**Family Dollar** dan **Dollar General**: efisiensi operasional untuk biaya rendah; **Teekay Shipping**: layanan andal, keahlian beragam kapal, hubungan dengan stakeholder; **Robinson Helicopter**: keahlian teknologi helikopter kecil dua kursi; **Hayes Diversified Technologies** (Concept Connection): teknologi motor berbahan bakar diesel untuk militer', '[hal. 174]'],
+        ['**Achieve synergy**', '**Synergy** terjadi bila bagian-bagian organisasi berinteraksi menghasilkan efek gabungan yang lebih besar daripada jumlah bagian yang bekerja sendiri; bisa memberi keunggulan biaya, kekuatan pasar, teknologi, atau keahlian manajemen. Synergy juga bisa dicapai lewat akuisisi, merger, dan kemitraan', '**Apple**: memadukan perangkat keras, perangkat lunak, dan layanan di sekitar iPhone, termasuk kartu kredit yang diluncurkan bersama Goldman Sachs dan Mastercard. **Kraft** membeli Cadbury untuk memakai jaringan distribusinya di pasar berkembang', '[hal. 174]'],
+        ['**Deliver value**', '**Value** = kombinasi manfaat yang diterima dan biaya yang dibayar. Manajer menciptakan value lewat strategi yang memanfaatkan core competence dan synergy. (Exhibit menulis elemen ini "Create Value")', 'Paket bundel **Charter Spectrum** dan **Comcast** (TV kabel, telepon, internet, streaming) dengan biaya lebih murah; strategi baru **J. Crew** dengan pakaian lebih murah dan ukuran lebih lengkap', '[hal. 173–175]'],
+      ],
+    },
+    { kind: 'p', text: '**Amazon** menggambarkan keempat elemen sekaligus: melayani pelanggan yang ingin harga bagus dan belanja praktis secara online, terus mengasah core competence efisiensi operasional dan distribusi unggul, serta memanfaatkan "Prime effect": menurut sebagian estimasi, pelanggan berbelanja tiga sampai empat kali lebih banyak setelah berlangganan Prime [hal. 175].' },
+    { kind: 'p', text: '**Strategic issues** (dibahas di Ch. 2) adalah faktor yang mengubah kemampuan perusahaan mencapai tujuannya. Peristiwa internal atau eksternal kadang menuntut redefinisi misi atau goal, atau strategi baru di tingkat korporat, bisnis, atau fungsional [hal. 175]. Contoh kegagalan: **Bed Bath & Beyond**, setelah 27 tahun tumbuh, tiba-tiba rugi \\$137 juta pada 2018; menurut buku, masalah terbesarnya adalah manajer yang tidak berpikir strategis untuk beradaptasi, termasuk memperlambat investasi teknologi online [hal. 176].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Tujuan pembelajaran bab ini menyebut "two levels of strategy" dan "strategic management process" [hal. 148], tetapi buku **tidak menyajikan model tahapan proses manajemen strategis**. Dua tingkat strategi yang dibahas rinci adalah **tingkat korporat** (§10) dan **tingkat bisnis** (§11); tingkat fungsional hanya disebut sekali [hal. 175].',
+    },
+    // ---------------------------------------------------------------- §9
+    { kind: 'h2', text: '9. SWOT Analysis' },
+    { kind: 'p', text: 'Merumuskan strategi dimulai dengan memahami keadaan, kekuatan, peristiwa, dan isu yang membentuk situasi persaingan organisasi. Untuk itu manajer melakukan audit faktor internal dan eksternal. **SWOT analysis** = penilaian cermat atas **strengths, weaknesses, opportunities, dan threats** yang memengaruhi kinerja organisasi [hal. 176, 179].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Unsur', 'Definisi buku', 'Sumber informasi menurut buku', 'Sumber'],
+      rows: [
+        ['**Strengths**', 'Karakteristik internal positif yang dapat dimanfaatkan untuk mencapai goal kinerja strategis', 'Laporan internal: anggaran, rasio keuangan, laporan laba rugi, survei sikap dan kepuasan karyawan, serta diskusi tatap muka dengan orang di semua tingkat hierarki. Internal audit atas fungsi pemasaran, keuangan, produksi, dan R&D, serta struktur organisasi, kompetensi dan mutu manajemen, dan karakteristik SDM', '[hal. 177–178]'],
+        ['**Weaknesses**', 'Karakteristik internal yang dapat menghambat atau membatasi kinerja organisasi', 'Sama dengan strengths (internal audit)', '[hal. 177–178]'],
+        ['**Opportunities**', 'Karakteristik lingkungan eksternal yang berpotensi membantu organisasi mencapai atau melampaui goal strategisnya', 'Pelanggan, laporan pemerintah, jurnal profesional, pemasok, bankir, kenalan di organisasi lain, konsultan, pertemuan asosiasi; banyak perusahaan juga memakai lembaga pemindai untuk kliping berita, riset internet, dan analisis tren', '[hal. 177–178]'],
+        ['**Threats**', 'Karakteristik lingkungan eksternal yang dapat menghalangi organisasi mencapai goal strategisnya', 'Sama dengan opportunities', '[hal. 178]'],
+      ],
+    },
+    { kind: 'p', text: 'Manajer menilai lingkungan eksternal berdasarkan **10 sektor yang dibahas di Ch. 2**. Sektor **task environment** paling relevan dengan perilaku strategis: perilaku pesaing, pelanggan, pemasok, dan pasokan tenaga kerja. Sektor **general environment** berpengaruh tidak langsung, tetapi tetap harus dipahami [hal. 178].' },
+    { kind: 'p', text: '**Exhibit 5.9: Sample SWOT Analysis for the Kroger Company** [hal. 178]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Strengths', 'Weaknesses'],
+      rows: [
+        ['Strong line of private-label brands', 'Slow start on digital-ordering technology'],
+        ['Broad geographic distribution', 'High debt load'],
+        ['Broad array of products and services', 'Complicated manufacturing and distribution networks'],
+        ['**Opportunities**', '**Threats**'],
+        ['Increase shelf space for private-label brands and organic foods', 'Aggressive expansion of nontraditional rivals such as Walmart, Target, and Amazon into the grocery business'],
+        ['Expand customer service experience, including online sales', 'Intense competition may push for price cuts'],
+        ['Address growing customer concerns over food waste and plastic use', 'Uncertainty caused by COVID-19 pandemic'],
+      ],
+    },
+    { kind: 'p', text: 'Penjelasan teks [hal. 177–178]: Kroger punya 2.800 toko di 34 negara bagian dan District of Columbia. Utangnya tinggi dibanding banyak pesaing, dan jaringan produksi serta distribusinya yang rumit membawa risiko gangguan logistik, kontaminasi pangan, dan publisitas buruk. Peluang yang diambil: pemesanan online, opsi pickup dan delivery, makanan Home Chef dan pilihan siap santap, serta merek Pickuliar Picks yang menjual buah dan sayur "jelek" untuk menekan biaya dan mengejar goal nol limbah pangan.' },
+    { kind: 'p', text: 'Contoh lain: pendiri **Elevate Packaging** (Recipe for Success) melihat minimnya produk kemasan yang bisa didaur ulang dan dikompos dari riset lapangannya, lalu mendirikan perusahaan kemasan berkelanjutan [hal. 177].' },
+    // ---------------------------------------------------------------- §10
+    { kind: 'h2', text: '10. Strategi Tingkat Korporat' },
+    { kind: 'p', text: 'Buku membahas tiga pendekatan untuk memahami strategi tingkat korporat: **portfolio strategy, BCG matrix, dan diversification** [hal. 179].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Strategic business unit (SBU)**', 'Divisi organisasi yang punya misi bisnis, lini produk atau jasa, pesaing, dan pasar yang unik dibanding unit lain di korporasi yang sama', '[hal. 179, 181]'],
+        ['**Portfolio strategy**', 'Bauran unit bisnis dan lini produk yang cocok satu sama lain secara logis untuk memberi synergy dan keunggulan bersaing bagi korporasi. Seperti investor yang menyeimbangkan portofolio, manajer tidak ingin terlalu bergantung pada satu bisnis', '[hal. 179]'],
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 5.10: The BCG Matrix** [hal. 180]' },
+    {
+      kind: 'table',
+      headers: ['Business growth rate / Market share', 'High', 'Low'],
+      rows: [
+        ['High', 'Stars', 'Bright Prospects'],
+        ['Low', 'Cash Cows', 'Dogs'],
+      ],
+    },
+    { kind: 'p', text: 'BCG matrix (dikembangkan Boston Consulting Group) mengelompokkan bisnis menurut dua dimensi: **business growth rate** (seberapa cepat seluruh industri tumbuh) dan **market share** (apakah pangsa pasar unit bisnis lebih besar atau lebih kecil dari pesaingnya) [hal. 180].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kategori', 'Posisi', 'Isi menurut buku', 'Tindakan (Exh. 5.10)', 'Contoh dari buku'],
+      rows: [
+        ['**Star**', 'Pangsa besar, industri tumbuh cepat', 'Punya potensi tumbuh; laba sebaiknya diinvestasikan kembali. Tetap menghasilkan laba dan arus kas positif ketika industri matang', 'Rapid growth and expansion', 'Majalah *People* (dipandang sebagai star dan calon cash cow) [hal. 181]'],
+        ['**Cash cow**', 'Pangsa besar, industri matang dan tumbuh lambat', 'Dominan di industrinya; tidak lagi perlu investasi besar untuk iklan dan ekspansi pabrik, sehingga arus kas positif bisa "diperah" untuk bisnis lain yang lebih berisiko', 'Milk to finance bright prospects and stars', '—'],
+        ['**Bright prospect**', 'Pangsa kecil, industri baru yang tumbuh cepat', 'Berisiko: bisa menjadi star atau gagal. Kas dari cash cow bisa dipakai untuk membesarkannya', 'New ventures. Risky: a few become stars, others are divested', '**Disney+** bagi Walt Disney Company: mencapai 50 juta pelanggan berbayar dalam lima bulan pertama saat pandemi [hal. 180]; *Magnolia Journal* dan *Happy Paws* bagi Meredith [hal. 181]'],
+        ['**Dog**', 'Pangsa kecil, pasar tumbuh lambat', 'Kinerja buruk, sedikit laba; bisa dijual atau dilikuidasi bila tidak bisa dipulihkan', 'No investment. Keep if some profit. Consider divestment', 'Setelah **Meredith** mengakuisisi Time Inc., *Time*, *Fortune*, dan *Money* dipandang sebagai dogs dan segera dijual [hal. 181]'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 180–181].' },
+    { kind: 'p', text: '**Diversification** = strategi masuk ke lini bisnis baru [hal. 181]. Contoh: Amazon membeli Twitch Interactive, UnitedHealth Group membeli kelompok praktik medis, Facebook membeli WhatsApp, Nestlé masuk bisnis makanan hewan dengan membeli Ralston Foods, dan Uber membeli Cornershop [hal. 181]. Tujuannya memperluas operasi dengan menawarkan produk dan jasa baru yang bernilai [hal. 181].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Bentuk', 'Arti', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Merger**', 'Dua organisasi atau lebih bergabung menjadi satu', 'Charter Communications mengakuisisi Time Warner Cable dan Bright House Networks; AB InBev membeli SABMiller menjadi perusahaan minuman \\$104 miliar', '[hal. 181]'],
+        ['**Joint venture**', 'Aliansi atau program strategis dua organisasi atau lebih; biasanya ketika proyek terlalu rumit, mahal, atau tidak pasti untuk satu perusahaan', 'Sikorsky Aircraft dan Lockheed Martin bersama mengajukan penawaran helikopter Marine One: Sikorsky membangun helikopter, Lockheed Martin menyediakan sistem khususnya', '[hal. 181]'],
+        ['**Related diversification**', 'Masuk ke bisnis baru yang **berkaitan** dengan kegiatan bisnis yang sudah ada', 'Uber dan Lyft mengakuisisi perusahaan rintisan berbagi sepeda, yang terkait dengan bisnis transportasi mereka', '[hal. 181]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §11
+    { kind: 'h2', text: '11. Strategi Tingkat Bisnis: Porter' },
+    { kind: 'p', text: 'Di tingkat SBU, pertanyaannya adalah **bagaimana bersaing**. Michael E. Porter mengusulkan bahwa strategi tingkat bisnis adalah hasil dari memahami kekuatan persaingan di lingkungan perusahaan [hal. 182].' },
+    { kind: 'p', text: '**Exhibit 5.11: Porter\'s Five Forces Affecting Industry Competition** [hal. 182–183]' },
+    { kind: 'p', text: 'Perusahaan besar dengan beberapa lini bisnis biasanya menganalisis tiap lini atau SBU secara terpisah. Contoh: **Mars, Inc.** punya empat segmen (permen, makanan dan perawatan hewan, makanan, nutrisi khusus), dan kekuatan persaingan tiap segmen berbeda [hal. 182–183].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kekuatan', 'Isi menurut buku', 'Pengaruh internet (Exh. 5.11)', 'Contoh dari buku'],
+      rows: [
+        ['**Potential new entrants**', 'Kebutuhan modal dan skala ekonomi adalah contoh hambatan masuk. Masuk ke industri mobil jauh lebih mahal daripada membuka usaha pesanan lewat pos', 'Internet reduces barriers to entry', 'Facebook, Twitter, dan Microsoft masuk ke bisnis streaming video game melawan Twitch (76% pasar di Amerika dan Eropa pada 2019); Disney+ dan Apple TV Plus menggerus Netflix'],
+        ['**Bargaining power of buyers**', 'Pelanggan yang terinformasi menjadi pelanggan yang berdaya', 'Internet shifts greater power to end consumers', 'Pembeli mobil bisa mencari harga grosir, spesifikasi, catatan perbaikan, dan riwayat kecelakaan'],
+        ['**Bargaining power of suppliers**', 'Ditentukan konsentrasi pemasok dan ketersediaan pemasok pengganti. Pengadaan lewat web memberi perusahaan kekuatan, tetapi web juga memberi pemasok akses ke lebih banyak pelanggan', 'Internet tends to increase bargaining power of suppliers', 'Pemasok tunggal mesin untuk produsen pesawat kecil punya kekuatan besar'],
+        ['**Threat of substitute products**', 'Dipengaruhi perubahan biaya atau tren (misalnya kesadaran kesehatan) yang menggeser loyalitas pembeli', 'Internet creates new substitution threats', 'Pemanis pengganti gula; kaleng aerosol ditinggalkan konsumen sadar lingkungan; tiket pesawat murah online memukul agen perjalanan; Uber dan Lyft memukul taksi'],
+        ['**Rivalry among competitors**', 'Dipengaruhi empat kekuatan lain serta biaya dan diferensiasi produk. Internet dan TI membuat perusahaan makin sulit membedakan diri, sehingga persaingan makin ketat; Porter menyebutnya "advertising slugfest"', 'Internet blurs differences among competitors', 'Uber vs Lyft; Walt Disney Animation vs Pixar (keduanya milik Disney); Facebook vs Snapchat; SpaceX vs Blue Origin; Coke vs Pepsi'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 182–183].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Teks buku menulis "As illustrated in Exhibit 5.6, rivalry among competitors is influenced by the preceding four forces" [hal. 183]. Exhibit 5.6 adalah MBO Benefits; gambar five forces adalah **Exhibit 5.11** [hal. 182]. Rujuk Exh. 5.11.',
+    },
+    { kind: 'p', text: '**Porter\'s competitive strategies:** untuk meraih keunggulan bersaing, perusahaan dapat memilih satu dari **tiga strategi**: **differentiation, cost leadership, atau focus** [hal. 183].' },
+    { kind: 'p', text: '**Exhibit 5.12: Organizational Characteristics of Porter\'s Competitive Strategies** [hal. 184]' },
+    {
+      kind: 'table',
+      headers: ['Strategic target / Source of advantage', 'Distinctiveness', 'Low Costs'],
+      rows: [
+        ['Broad', '1 Differentiation', '2 Cost Leadership'],
+        ['Narrow', '3 Focused Differentiation', '4 Focused Cost Leadership'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kuadran', 'Target strategis', 'Sumber keunggulan', 'Karakteristik organisasi (Exh. 5.12)'],
+      rows: [
+        ['**1 Differentiation**', 'Broad', 'Distinctiveness', 'Acts in a flexible, loosely knit way; strong coordination among departments · Strong capability in basic research · Creative flair, thinks "out of the box" · Strong marketing abilities · Rewards employee innovation · Corporate reputation for quality or technological leadership'],
+        ['**2 Cost Leadership**', 'Broad', 'Low costs', 'Strong central authority; tight cost controls · Maintains standard operating procedures · Easy-to-use manufacturing technologies · Highly efficient procurement and distribution systems · Close supervision; finite employee empowerment'],
+        ['**3 Focused Differentiation**', 'Narrow', 'Distinctiveness', 'Uses characteristics of differentiation strategy directed at particular target customer · Values flexibility and customer intimacy · Pushes empowerment to employees with customer contact'],
+        ['**4 Focused Cost Leadership**', 'Narrow', 'Low costs', 'Uses characteristics of cost leadership strategy directed at particular target customer · Frequent detailed control reports · Measures cost of providing product or service and maintaining customer loyalty'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 184]; posisi kuadran dicek visual.' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Strategi', 'Isi menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Differentiation**', 'Membedakan produk atau jasa dari yang lain di industri lewat iklan kreatif, fitur khas, layanan istimewa, atau teknologi baru. **Kelebihan:** mengurangi persaingan dan ancaman substitusi karena pelanggan loyal pada merek. **Konsekuensi:** butuh kegiatan mahal (riset dan desain produk, iklan besar), bagian pemasaran yang kuat, dan karyawan kreatif', 'Smartphone dan tablet Apple, mobil Tesla, kain Gore-Tex; Starbucks, Whole Foods Market, IKEA. Concept Connection: BMW dan Mercedes-Benz lama unggul lewat diferensiasi, tetapi kini tertinggal dari Tesla di mobil listrik', '[hal. 184–185]'],
+        ['**Cost leadership**', 'Agresif mencari fasilitas efisien, memangkas biaya, dan memakai kendali biaya ketat agar lebih efisien dari pesaing. **Tidak selalu berarti harga murah**, walau kebanyakan perusahaan memakainya untuk menawarkan harga lebih rendah dengan mutu sebanding dan laba wajar. Lebih menekankan stabilitas daripada inovasi, tetapi bisa membawa pertumbuhan', 'Family Dollar menjual merek besar 20–40% lebih murah daripada supermarket dan memilih lokasi murah seperti strip mall; Walmart menjadi peritel terbesar dunia', '[hal. 185]'],
+        ['**Focus**', 'Berkonsentrasi pada **pasar regional atau kelompok pembeli tertentu**, dengan pendekatan differentiation (kuadran 3) **atau** cost leadership (kuadran 4) untuk target yang sempit', '**Focused cost leadership:** Allegiant Air menerbangkan penumpang dari kota kecil yang kurang terlayani ke destinasi wisata, mengandalkan promosi dari mulut ke mulut, dan mengenakan biaya untuk hampir semua tambahan. **Focused differentiation:** toko buku independen McNally Jackson dan Short Stories Bookshop & Community Hub dengan acara pembacaan, diskusi penulis, dan ruang komunitas', '[hal. 185]'],
+      ],
+    },
+    { kind: 'p', text: 'Manajer perlu memilih dengan cermat. **Gibson Guitar** beralih ke cost leadership untuk melawan pesaing Jepang, tetapi penjualannya justru turun; perusahaan kembali ke diferensiasi setelah menyadari pelanggan membeli karena reputasi, bukan harga [hal. 185].' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Porter menemukan sebagian bisnis tidak secara sadar memilih salah satu dari tiga strategi dan akhirnya **tidak punya keunggulan strategis**; laba mereka di bawah rata-rata dibanding yang memakai differentiation, cost leadership, atau focus. Studi lima tahun "Evergreen Project" juga menemukan arah strategis yang jelas sebagai pembeda pemenang dan pecundang [hal. 185].',
+    },
+    // ---------------------------------------------------------------- §12
+    { kind: 'h2', text: '12. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'p', text: '**Simpul pusat:** PLANNING AND GOAL SETTING' },
+    {
+      kind: 'ul',
+      items: [
+        '**1. GOALS DAN PLANS**\n- Goal (ends) · Plan (means) · Planning\n- Exh. 5.1: Mission → Strategic → Tactical → Operational\n- Exh. 5.2: Develop → Translate → Plan operations → Performance mgmt → Monitor & learn',
+        '**2. MISI DAN KONFLIK TUJUAN**\n- Goals socially constructed\n- Mission; mission statement (arah + motivasi)\n- 5 cara: coalition · modify goals · debate & dialogue · cross-silo · manager departures',
+        '**3. PERFORMANCE MANAGEMENT**\n- Exh. 5.4: specific & measurable · time period · key result areas · challenging but realistic · rewards\n- KPI\n- MBO (Exh. 5.5, 5.6) · OKR + CFR · MBM\n- Standing plans (contoh); single-use plans (hanya disebut)',
+        '**4. [di luar RPP] MANFAAT DAN KETERBATASAN PERENCANAAN**\n- Manfaat: motivasi · alokasi sumber daya · pedoman tindakan · standar kinerja\n- Keterbatasan: tekanan · rasa pasti semu · kekakuan · hambat kreativitas',
+        '**5. LINGKUNGAN BERGEJOLAK**\n- Contingency planning (worst case)\n- Scenario building (2–5 skenario)\n- Stretch goals; BHAG\n- Crisis planning (Exh. 5.7): prevention · preparation (tim, CMP, komunikasi)',
+        '**6. MANAJEMEN STRATEGIS**\n- Thinking strategically\n- Strategy; competitive advantage\n- Exh. 5.8: target customers · core competence · synergy · value\n- SWOT (Exh. 5.9)',
+        '**7. STRATEGI TINGKAT KORPORAT**\n- SBU; portfolio strategy\n- BCG (Exh. 5.10): star · cash cow · bright prospect · dog\n- Diversification: merger · joint venture · related diversification',
+        '**8. STRATEGI TINGKAT BISNIS**\n- Five forces (Exh. 5.11)\n- Differentiation · Cost leadership · Focus (Exh. 5.12)',
+      ],
+    },
+    { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
+      rows: [
+        ['Mission', 'Strategic goals (Exh. 5.1)', 'Misi adalah dasar bagi strategic goals dan plans, yang lalu membentuk tingkat taktis dan operasional', '[hal. 151]'],
+        ['Mission statement', 'Goal conflict', 'Misi juga membantu mengelola konflik tujuan yang pasti terjadi', '[hal. 157]'],
+        ['Exh. 5.2 langkah 1', 'Goal conflict', '"Manage goal conflict" adalah bagian dari langkah pertama proses perencanaan', '[hal. 154]'],
+        ['Exh. 5.2 langkah 4', 'MBO dan standing plans', 'Performance management memakai MBO, single-use plans, dan standing plans', '[hal. 154, 163–164]'],
+        ['Exh. 5.2 langkah 2–3', 'Lingkungan bergejolak', 'Contingency plans dan scenarios (langkah 2), stretch goals dan crisis planning (langkah 3)', '[hal. 154, 165]'],
+        ['KPI', 'Strategic goals', 'KPI membantu menetapkan goal tingkat bawah yang mendorong kinerja menuju strategic goal', '[hal. 161]'],
+        ['"Challenging but realistic"', 'Stretch goals', 'Stretch goals sangat ambisius tetapi harus tetap dipandang bisa dicapai', '[hal. 161, 167]'],
+        ['Keterbatasan MBO', 'Keterbatasan perencanaan', 'Penekanan berlebihan pada target dapat memicu perilaku tidak etis; contoh Wells Fargo', '[hal. 163, 165]'],
+        ['Keterbatasan perencanaan', 'Lingkungan bergejolak', 'Pendekatan inovatif dipakai untuk memperoleh manfaat perencanaan sambil mengendalikan keterbatasannya', '[hal. 165]'],
+        ['Synergy (Exh. 5.8)', 'Portfolio strategy', 'Portfolio strategy memadukan unit bisnis untuk memberi synergy dan keunggulan bersaing', '[hal. 174, 179]'],
+        ['Differentiation', 'Five forces', 'Diferensiasi mengurangi persaingan dan ancaman substitusi karena loyalitas merek', '[hal. 185]'],
+        ['SWOT (opportunities, threats)', 'TM02 (lingkungan eksternal)', 'Peluang dan ancaman dinilai berdasarkan 10 sektor lingkungan di Ch. 2; task environment paling relevan', '[hal. 178]'],
+      ],
+    },
+    { kind: 'p', text: '**Kata kunci per cabang:** Goals & plans: *ends vs means, strategic–tactical–operational, alignment, planning cycle* · Misi & konflik: *socially constructed, reason for existence, coalition, cross-silo* · Performance: *specific & measurable, key result areas, KPI, MBO, OKR, CFR, means vs ends* · Manfaat & keterbatasan: *motivation, false certainty, rigidity, creativity* · Bergejolak: *worst case, what could be, extreme difficulty & novelty, BHAG, prevention & preparation, CMP living document* · Strategis: *long-term view, competitive advantage, core competence, synergy, value, SWOT* · Korporat: *SBU, BCG, bright prospect, related diversification, joint venture* · Bisnis: *five forces, differentiation, cost leadership, focus, stuck without advantage*' },
+    // ---------------------------------------------------------------- §13
+    { kind: 'h2', text: '13. Contoh Penerapan' },
+    { kind: 'p', text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):' },
+    {
+      kind: 'table',
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
+      rows: [
+        ['Strategic goal dan strategic plan', 'Volkswagen: mobil listrik dan netral karbon', '151–152'],
+        ['Mission statement', 'IKEA; State Farm', '156–157'],
+        ['Goal conflict dan coalition', 'Nike: komite gabungan soal pabrik di Bangladesh', '158'],
+        ['Tujuan efektif: sedikit goal, terukur', 'Brinker International: 40 goal menjadi 4', '160'],
+        ['MBO', 'Mozilla: goal bug dan kinerja browser', '161–162'],
+        ['OKR', 'Google: objective dan key results per kuartal', '162–163'],
+        ['Contingency planning', 'Aston Martin menghadapi Brexit', '166'],
+        ['Scenario building', 'Royal Dutch Shell: harga minyak "lower forever"', '167'],
+        ['Stretch goal', 'Amazon Kindle', '167'],
+        ['Crisis response cepat vs lambat', 'Starbucks vs Boeing', '168'],
+        ['SWOT', 'Kroger (Exh. 5.9)', '177–178'],
+        ['Focused cost leadership', 'Allegiant Air', '185'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh lain: Chipotle (§1), Amazon, Peloton, Walmart, dan Facebook (konflik tujuan, §3), Airbnb (§4), Basecamp (§7), CDC, Kodak, Hallmark, dan Bed Bath & Beyond (§8), Zipcar, Family Dollar, dan Apple (Exh. 5.8, §8), Disney+ dan Meredith (BCG, §10), serta Gibson Guitar (§11).' },
+    { kind: 'p', text: '**Contoh di luar buku** (2 dari maksimal 3 slot terpakai): Indikator Kinerja Utama perguruan tinggi negeri sebagai KPI (§4) dan rencana keberlangsungan usaha di perbankan sebagai contingency dan crisis planning (§7).' },
+    // ---------------------------------------------------------------- §14
+    { kind: 'h2', text: '14. Bedah Film: Ford v Ferrari (Ilustrasi)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Ilustrasi',
+      text: '***Ford v Ferrari* (2019) adalah film yang dibedah kelompok presenter.** Film ini drama berdasarkan kisah nyata; bagian ini hanya memuat alur besar, tanpa dialog, adegan detail, tanggal, atau angka, dan bukan sumber fakta tentang perusahaan yang digambarkan. Momen film dan konsep di bawah diambil dari slide kelompok presenter lalu dicocokkan ke buku; kaitan yang tidak didukung buku tidak dimuat.',
+    },
+    { kind: 'h3', text: '14.1 Sinopsis Singkat dan Tokoh (Ilustrasi)' },
+    { kind: 'p', text: 'Film dibuka dengan penjualan mobil keluarga Ford yang menurun, sementara generasi muda digambarkan menginginkan kecepatan dan prestise. Perusahaan mencoba membeli produsen mobil balap Ferrari, tetapi tawaran itu ditolak dan pimpinan perusahaan merasa dipermalukan. Pimpinan perusahaan lalu menetapkan tujuan baru: mengalahkan pesaingnya di ajang balap ketahanan paling bergengsi, untuk meremajakan citra perusahaan.' },
+    { kind: 'p', text: 'Untuk itu, perusahaan menggandeng seorang desainer mobil yang juga mantan pembalap dan memimpin bengkel balap kecil, bersama seorang pembalap berbakat, untuk merancang mobil balap dari nol dalam waktu singkat. Upaya awal belum berhasil, dan rencananya dirombak. Sepanjang film, tim balap dan eksekutif korporat terus berbeda pandangan tentang cara mencapai tujuan itu: tim mengejar performa di lintasan, sedangkan eksekutif mengutamakan citra perusahaan.' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tokoh (peran)', 'Posisinya dalam alur besar'],
+      rows: [
+        ['**Pimpinan perusahaan**', 'Pemimpin puncak produsen mobil Amerika; menetapkan tujuan mengalahkan pesaing'],
+        ['**Eksekutif korporat**', 'Eksekutif yang membawa kepentingan pemasaran dan citra perusahaan ke program balap'],
+        ['**Desainer mobil** (mantan pembalap)', 'Memimpin bengkel balap kecil yang digandeng perusahaan untuk merancang mobil'],
+        ['**Pembalap**', 'Pembalap berbakat yang ikut merancang dan menguji mobil'],
+        ['**Pemilik produsen pesaing**', 'Pemilik produsen mobil Italia yang menolak tawaran pembelian'],
+      ],
+    },
+    { kind: 'h3', text: '14.2 Momen Film, Konsep yang Dikaitkan Kelompok, dan Kecocokannya dengan Buku (Ilustrasi)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Momen alur besar (Ilustrasi)', 'Konsep Chapter 5 yang dikaitkan kelompok', 'Kecocokan dengan buku'],
+      rows: [
+        ['Pimpinan perusahaan menetapkan tujuan mengalahkan pesaing di ajang balap bergengsi untuk mengubah citra perusahaan', '**Strategic goal**', 'Strategic goal adalah pernyataan luas tentang posisi organisasi di masa depan, ditetapkan manajemen puncak untuk organisasi secara keseluruhan [hal. 151–152]'],
+        ['Tujuan itu diturunkan: desainer ditugasi membangun mobil yang tahan balap ketahanan; pembalap dan mekanik menyetel batas mesin, aerodinamika, dan waktu putaran', '**Levels of goals** (Exh. 5.1): tactical dan operational goals', 'Tactical goals adalah hasil yang harus dicapai unit utama; operational goals adalah hasil spesifik dan terukur dari departemen dan individu [hal. 152–154]. Catatan: di film, desainer memimpin bengkel mitra dari luar perusahaan, bukan kepala divisi'],
+        ['Perusahaan menuntut kemenangan dalam waktu singkat dengan mobil yang belum ada', '**Stretch goal / BHAG**', 'Stretch goal bercirikan kesulitan ekstrem dan kebaruan ekstrem, dan menuntut pendekatan yang sama sekali baru [hal. 167]'],
+        ['Upaya awal belum berhasil; rencana dirombak, tetapi tujuannya tetap', '**Siklus perencanaan** (Exh. 5.2)', 'Langkah Monitor and Learn: rencana ditinjau, hasil dipelajari, rencana direvisi, lalu siklus perencanaan baru dimulai [hal. 153–154]'],
+        ['Modal besar perusahaan digabung dengan kelincahan bengkel balap kecil', '**Synergy**', 'Synergy adalah efek gabungan yang lebih besar daripada jumlah bagian yang bekerja sendiri, dan bisa dicapai lewat kemitraan [hal. 174]'],
+        ['Produsen pesaing bermain di ceruk balap, dengan mobil buatan tangan dan warisan juara', '**Focused differentiation** (Exh. 5.12, kuadran 3)', 'Focus memakai pendekatan diferensiasi untuk target yang sempit [hal. 184–185]'],
+        ['Pesaing unggul dalam keahlian balap yang diasah turun-temurun; perusahaan Amerika unggul dalam rekayasa mesin bertenaga besar', '**Core competence**', 'Core competence adalah sesuatu yang dilakukan organisasi dengan sangat baik dibanding pesaing, misalnya keahlian teknologi [hal. 174]'],
+        ['Tim lintasan mengejar kemenangan murni, eksekutif korporat mengutamakan citra dan pemasaran', '**Goal conflict**', 'Konflik muncul karena mencapai satu goal bisa berarti goal lain tidak tercapai, dan karena manajer tidak sepakat goal mana yang dikejar [hal. 157–158]'],
+        ['Birokrasi yakin rencana di atas kertas pasti berhasil; protokol ruang rapat dipaksakan pada lintasan yang terus berubah', '**Keterbatasan perencanaan**: false sense of certainty dan rigidity (§6)', 'Perencanaan bisa memberi rasa pasti yang semu dan mengunci organisasi pada rencana yang tidak lagi sesuai [hal. 165]'],
+      ],
+    },
+    { kind: 'h3', text: '14.3 Managerial Lessons Learned (Ilustrasi)' },
+    {
+      kind: 'ol',
+      items: [
+        '**Selaraskan tujuan dari atas sampai ukuran operasional.** Tujuan strategis baru terwujud bila diturunkan secara konsisten sampai target operasional; goal dan plan di semua tingkat harus selaras [hal. 153–154, 159], dan MBO membantu menyelaraskan goal individu dan departemen dengan goal perusahaan [hal. 163].',
+        '**Beri ruang penilaian bagi pelaksana di lapangan.** Perencanaan rutin yang berlebihan bisa menghambat intuisi dan kreativitas [hal. 165]; OKR yang baik adalah "guardrails, not chains", dan karyawan memakai penilaian sendiri untuk menyesuaikan [hal. 163].',
+        '**Hasil dan cara sama pentingnya.** Mengejar target semata bisa mengaburkan cara mencapainya; MBM memusatkan perhatian pada metode dan proses [hal. 163].',
+        '**Adaptasi lebih penting daripada kepatuhan kaku pada rencana awal.** Rencana harus tumbuh dan berubah mengikuti kondisi [hal. 150]; kekakuan adalah salah satu keterbatasan perencanaan [hal. 165]. Seperti kata Eisenhower yang dikutip buku, rencana bisa tidak berguna, tetapi perencanaan tetap tak tergantikan [hal. 165].',
+      ],
+    },
+    // ---------------------------------------------------------------- §15
+    { kind: 'h2', text: '15. Analisis Kasus: Central City Museum [hal. 189–190]' },
+    { kind: 'h3', text: '15.1 Case Summary' },
+    { kind: 'p', text: 'Central City Museum baru selesai membangun gedung untuk pameran dan stafnya, tepat di sebelah kampus sebuah universitas swasta. Gedung dibiayai para donor lokal. Universitas menyediakan lahan dan akan menanggung biaya operasional tahunan, dengan pemahaman bahwa museum menjadi sumber belajar bagi mahasiswa. Dewan pengurus (governing board) yang baru terdiri dari donor utama serta sejumlah administrator dan dosen universitas [hal. 189].' },
+    { kind: 'p', text: 'Komite perencanaan dewan menyewa dua mahasiswa bisnis untuk mewawancarai para stakeholder tentang arah museum dalam hubungan barunya dengan universitas. Pertanyaan utamanya menyangkut **misi dan goal museum ke depan**. Para narasumber tampak sama-sama tertarik dan ingin membantu, tetapi jawaban mereka berbeda. Kamu diundang wawancara untuk posisi **direktur museum**; direktur sebelumnya pensiun dengan pemahaman bahwa direktur baru akan diangkat setelah penggalangan dana dan pembangunan gedung selesai [hal. 189–190].' },
+    { kind: 'p', text: '**Posisi empat narasumber menurut kasus** [hal. 189]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Narasumber', 'Arah yang diinginkan', 'Alasan yang disebut'],
+      rows: [
+        ['**Donor utama**', 'Museum sebagai sumber daya utama komunitas; mendorong kunjungan sekolah negeri di sekitar, terutama anak-anak pusat kota yang tidak punya akses ke pameran seni; fokus lokal', 'Ia dan istrinya menyumbang gedung dengan harapan itu; museum tidak boleh "snobbish or elitist"'],
+        ['**Administrator universitas**', 'Pameran kontemporer yang hidup untuk menarik mahasiswa dan warga dewasa, serta memberi wawasan dan dialog tentang peristiwa terkini; sesekali pameran kontroversial, "such as on Islamic art", dan pameran "that appeal to Hispanics and African Americans"', 'Pameran keliling dari museum besar menghemat biaya administrasi dan overhead dibanding membuat pameran sendiri'],
+        ['**Kepala departemen sejarah seni**', 'Museum sebagai lembaga pengajaran yang terintegrasi dengan fakultas; sumber belajar bagi mahasiswa S1 dan pascasarjana pendidikan seni dan sejarah seni, juga mahasiswa teknik, arsitektur, dan liberal arts', 'Museum tidak punya sumber daya artistik maupun finansial untuk melayani komunitas luas; peluang unik untuk membedakan misi pengajaran departemennya'],
+        ['**Dosen departemen sejarah seni**', 'Fokus pada pelatihan mahasiswa doktoral sejarah seni dan riset ilmiah; mahasiswa pascasarjana ikut merancang pameran sesuai risetnya', 'Menaikkan reputasi nasional universitas; lulusan doktoral akan dicari departemen sejarah seni di seluruh negeri; mengejar popularitas di kampus atau komunitas memboroskan sumber daya yang terbatas'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Batas fakta kasus: kasus hanya memuat **empat kutipan wawancara**. Kasus tidak menyebut anggaran, jumlah pengunjung, isi koleksi, misi resmi yang sudah ada, cara dewan mengambil keputusan, maupun pendapat mahasiswa, sekolah, atau warga. Klaim tentang keterbatasan sumber daya adalah **pendapat narasumber**, bukan data kasus [hal. 189–190].',
+    },
+    { kind: 'h3', text: '15.2 Problem Identification' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Isu', 'Jenis'],
+      rows: [
+        ['P1', 'Museum belum punya misi dan goal yang disepakati untuk hubungan barunya dengan universitas', 'Misi'],
+        ['P2', 'Empat stakeholder menginginkan arah yang berbeda: komunitas lokal, pameran kontemporer untuk kampus dan warga, lembaga pengajaran lintas fakultas, atau pendidikan doktoral dan riset', 'Konflik tujuan'],
+        ['P3', 'Dua pemberi dana sudah membawa harapan masing-masing: donor membiayai gedung demi layanan komunitas; universitas menanggung biaya operasional dengan pemahaman museum menjadi sumber belajar mahasiswa', 'Kepentingan pendanaan'],
+        ['P4', 'Dua narasumber menyebut sumber daya museum terbatas, sehingga tidak semua arah bisa dikejar sekaligus', 'Alokasi sumber daya *(berdasarkan pendapat narasumber)*'],
+        ['P5', 'Pihak yang berbeda pandangan duduk bersama di dewan pengurus yang baru, sedangkan direktur baru akan masuk ketika arah belum ditetapkan', 'Tata kelola dan kepemimpinan *(hasil analisis)*'],
+      ],
+    },
+    { kind: 'h3', text: '15.3 Analisis Kasus (dengan teori Chapter 5)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
+      rows: [
+        ['**Goals are socially constructed**', 'Setiap narasumber merumuskan goal dari posisinya sendiri dan menganggap pilihannya yang paling tepat, persis seperti gambaran Lafley di buku', '155, 189'],
+        ['**Mission**', 'Dua fungsi misi (arah strategis dan motivasi) belum terpenuhi. Buku menyatakan tanpa misi yang jelas, goal dan plan bisa disusun asal-asalan', '156–157'],
+        ['**Goal conflict**', 'Memilih fokus doktoral berarti layanan komunitas berkurang, dan sebaliknya; narasumber juga tidak sepakat goal mana yang dikejar', '157'],
+        ['**Levels of goals** (Exh. 5.1)', 'Perselisihan terjadi di tingkat paling atas (misi). Selama misi belum disepakati, strategic, tactical, dan operational goals belum bisa diturunkan', '151–154'],
+        ['**Thinking strategically di nirlaba**', 'Untuk organisasi nirlaba, perencanaan strategis menyangkut peristiwa di lingkungan eksternal; museum perlu melihat gambaran besar hubungannya dengan universitas, donor, dan komunitas', '172'],
+        ['**Target customers** (Exh. 5.8)', 'Tiap arah menetapkan target yang berbeda: anak sekolah pusat kota, mahasiswa dan warga dewasa, mahasiswa lintas fakultas, atau mahasiswa doktoral dan peneliti *(hasil analisis)*', '173–174'],
+        ['**Core competence dan competitive advantage**', 'Kepala departemen melihat peluang membedakan misi pengajaran departemennya, sejalan dengan inti strategi menurut buku: memilih bagaimana organisasi akan berbeda *(hasil analisis)*', '173–174, 189'],
+        ['**SWOT**', 'Dapat dipakai untuk menilai pilihan: kekuatan berupa gedung baru, lahan dan biaya operasional dari universitas, serta keahlian dosen; kelemahan berupa sumber daya yang menurut dua narasumber terbatas; peluang berupa sekolah di sekitar, mahasiswa berbagai fakultas, dan pameran keliling *(hasil analisis)*', '176–178, 189'],
+        ['**Coalition building**', 'Pertanyaan 3 kasus merujuk langsung ke cara ini: membangun aliansi dengan berbicara kepada banyak pihak dan memahami siapa yang mendukung atau menentang beserta alasannya', '158, 190'],
+      ],
+    },
+    { kind: 'h3', text: '15.4 Jawaban Pertanyaan Kasus' },
+    { kind: 'p', text: '**Q1. Goal atau misi apa untuk Central City Museum yang secara pribadi kamu sukai? Sebagai direktur, apakah kamu akan mencoba menerapkan arah pilihanmu? Jelaskan.**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 5. Bagian pertama pertanyaan bersifat pribadi; tabel di bawah membantu menjawabnya dengan argumen.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Arah', 'Kelebihan menurut fakta kasus', 'Kelemahan menurut fakta kasus'],
+      rows: [
+        ['Komunitas lokal (donor)', 'Sesuai harapan pemberi dana gedung; misi yang mudah dipahami dan memotivasi [hal. 156]', 'Menurut kepala departemen, sumber daya tidak cukup untuk melayani komunitas luas; kurang terkait dengan pemahaman universitas soal pendidikan mahasiswa'],
+        ['Pameran kontemporer (administrator)', 'Menjangkau mahasiswa dan warga; pameran keliling menghemat biaya', 'Bergantung pada pameran pihak luar, sehingga sulit membangun ciri khas museum sendiri *(hasil analisis)*'],
+        ['Lembaga pengajaran lintas fakultas (kepala departemen)', 'Sesuai pemahaman universitas sebagai penanggung biaya operasional; menawarkan pembeda [hal. 173]', 'Donor khawatir museum menjadi elitis dan tidak melayani komunitas'],
+        ['Pendidikan doktoral dan riset (dosen)', 'Menaikkan reputasi nasional', 'Targetnya paling sempit; paling jauh dari harapan donor dan pemanfaatan kampus secara luas'],
+      ],
+    },
+    { kind: 'p', text: '**Contoh jawaban (hasil analisis):** misi yang menjadikan museum **lembaga pengajaran universitas** sebagai inti, dengan **program terjadwal untuk sekolah di sekitar**. Alasannya, kedua pemberi dana sudah membawa harapan yang melekat pada pendanaannya (P3), dan buku menyatakan misi yang baik menjadi kerangka bagi goal berikutnya sekaligus memotivasi [hal. 156]. Fokus doktoral bisa menjadi goal jangka panjang setelah dasar pengajaran berjalan.' },
+    { kind: 'p', text: '**Apakah direktur menerapkan arah pilihannya sendiri?** Sebaiknya **tidak dengan memaksakan**. Buku menyatakan goal dibentuk secara sosial, dan peran eksekutif puncak adalah mengajak orang berpikir sebagai tim dan bernegosiasi tentang goal yang penting [hal. 155]. Direktur boleh membawa usulan, tetapi misi akhir perlu disepakati melalui dewan pengurus agar didukung pihak-pihak yang mendanai dan menjalankan museum.' },
+    { kind: 'p', text: '**Q2. Bagaimana kamu menyelesaikan konflik mendasar di antara stakeholder kunci tentang arah dan goal museum? Tindakan apa yang akan kamu ambil?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan lima cara menyelesaikan konflik tujuan di buku [hal. 158–159].*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Cara menurut buku', 'Tindakan direktur', 'Hal.'],
+      rows: [
+        ['**Build a coalition**', 'Berbicara langsung dengan setiap narasumber dan pihak lain (mahasiswa, sekolah sekitar, staf), memetakan siapa mendukung arah apa dan mengapa, lalu membangun dukungan untuk satu rumusan misi', '158'],
+        ['**Address conflicts with debate and dialogue**', 'Mengadakan sesi dewan khusus untuk membahas misi secara terbuka, dengan hasil wawancara sebagai bahan', '158–159'],
+        ['**Break down barriers and promote cross-silo cooperation**', 'Membentuk komite gabungan donor, administrator, dan dosen, seperti komite gabungan Nike yang meninjau masalah bersama sebelum memutuskan', '158–159'],
+        ['**Modify goals by time or location**', '**Waktu:** dahulukan program pengajaran dan kunjungan sekolah, lalu kembangkan program pascasarjana dan riset. **Ruang:** pisahkan ruang pameran publik dari ruang koleksi studi untuk riset *(hasil analisis)*', '158'],
+        ['**Manager departures**', 'Buku mencatat konflik kadang selesai saat pihak yang tidak bisa berkompromi keluar. Ini kemungkinan yang perlu disadari, bukan tindakan yang direncanakan', '159'],
+      ],
+    },
+    { kind: 'p', text: 'Setelah misi disepakati, direktur menyusun **mission statement**, menurunkannya menjadi goal strategis, taktis, dan operasional (Exh. 5.1) [hal. 152–154], dan memakai kriteria goal efektif: spesifik dan terukur, punya batas waktu, mencakup key result areas, menantang tetapi realistis, dan dikaitkan dengan reward [hal. 160–161]. Contohnya, KPI jumlah kunjungan sekolah per semester dan jumlah mata kuliah yang memakai museum *(hasil analisis)*.' },
+    { kind: 'p', text: '**Q3. Pelajari bagian goal conflict di chapter ini. Menurutmu, apakah membangun koalisi dan menyelesaikan perbedaan preferensi goal di antara stakeholder adalah bagian penting dari pekerjaan manajer? Mengapa?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan teori Chapter 5.*' },
+    { kind: 'p', text: '**Ya.** Alasannya menurut buku:' },
+    {
+      kind: 'ol',
+      items: [
+        'Goal dibentuk secara sosial dan manajer biasanya punya gagasan berbeda; peran eksekutif puncak adalah membuat orang bernegosiasi sebagai tim [hal. 155].',
+        'Konflik tujuan terjadi di sebagian besar organisasi, karena organisasi mengejar banyak goal sekaligus [hal. 157–158].',
+        'Manajer bisa mencapai lebih banyak dan lebih efektif sebagai bagian dari koalisi [hal. 158].',
+        'Misi hanya memotivasi bila dipahami dan diterima; buku mencatat karyawan jauh lebih termotivasi di perusahaan yang tujuannya jelas dan dikomunikasikan [hal. 156].',
+      ],
+    },
+    { kind: 'p', text: '**Batasnya:** membangun koalisi butuh waktu dan tidak selalu berhasil; buku sendiri mencatat konflik kadang baru selesai saat manajer tertentu keluar [hal. 159]. Kerangka stakeholder dari TM04 juga bisa dipakai untuk memetakan kepentingan tiap pihak [hal. 132].' },
+    { kind: 'h3', text: '15.5 Rekomendasi Manajerial' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis berdasarkan teori Chapter 5, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pihak', 'Rekomendasi', 'Teori pendukung'],
+      rows: [
+        ['**Direktur baru**', 'Mulai dengan wawancara lanjutan dan pemetaan dukungan sebelum mengusulkan misi', 'Coalition building [hal. 158]'],
+        ['', 'Usulkan misi yang memadukan fungsi pengajaran dan layanan komunitas, dengan urutan prioritas yang jelas', 'Mission [hal. 156–157]; modify goals by time [hal. 158]'],
+        ['**Dewan pengurus**', 'Sepakati mission statement tertulis sebagai dasar semua goal berikutnya', 'Exh. 5.1 [hal. 151–152]; Exh. 5.2 langkah 1 [hal. 154]'],
+        ['', 'Bentuk komite gabungan lintas kelompok untuk menyusun rencana', 'Cross-silo cooperation [hal. 159]'],
+        ['**Museum (organisasi)**', 'Susun sedikit goal terukur dengan batas waktu dan KPI', 'Exh. 5.4; KPI [hal. 160–161]'],
+        ['', 'Lakukan SWOT sebelum memilih program utama, dan tinjau rencana secara berkala', 'SWOT [hal. 176–178]; Monitor and Learn [hal. 153–154]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §16
+    { kind: 'h2', text: '16. Implikasi Manajerial dan Kesimpulan' },
+    {
+      kind: 'ol',
+      items: [
+        '**Goal menetapkan tujuan, plan menetapkan cara.** Keduanya disusun berjenjang dari misi sampai tingkat operasional, dan harus selaras [hal. 151–154, 159].',
+        '**Misi adalah jangkar.** Misi yang jelas memberi arah, memotivasi karyawan, dan membantu mengelola konflik tujuan [hal. 156–157].',
+        '**Konflik tujuan itu normal.** Manajer menanganinya dengan koalisi, penyesuaian goal menurut waktu atau ruang, dialog, kerja sama lintas unit, dan kadang pergantian manajer [hal. 157–159].',
+        '**Goal yang baik sedikit, terukur, dan dihargai.** Kriteria Exh. 5.4 dan KPI mengarahkan perhatian; MBO dan OKR menjalankannya, tetapi cara mencapai goal sama pentingnya dengan hasilnya [hal. 160–163].',
+        '**Perencanaan bermanfaat, tetapi punya batas.** Tekanan berlebihan, rasa pasti yang semu, kekakuan, dan hambatan kreativitas harus diwaspadai [hal. 164–165].',
+        '**Siapkan diri untuk yang tak terduga.** Contingency planning, scenario building, dan crisis planning, ditambah stretch goals, membantu organisasi bertahan dan unggul di lingkungan yang bergejolak [hal. 165–170].',
+        '**Strategi adalah pilihan untuk berbeda.** Keunggulan bersaing dibangun dari target pelanggan, core competence, synergy, dan value; SWOT, BCG, diversifikasi, dan strategi Porter membantu memilih di tingkat korporat dan bisnis [hal. 173–185].',
+      ],
+    },
+    // ---------------------------------------------------------------- §17
+    { kind: 'h2', text: '17. Alat Bantu Ujian' },
+    { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Tingkatan goal dan plan (Exh. 5.1)', 'Mission; Strategic (senior management); Tactical (middle management); Operational (lower management)', '151–154'],
+        ['Proses perencanaan (Exh. 5.2)', 'Develop the plan; Translate the plan; Plan operations; Performance management; Monitor and learn', '153–154'],
+        ['Fungsi misi', 'Arah strategis dan kerangka goal; motivasi dan inspirasi', '156'],
+        ['Cara menyelesaikan konflik tujuan (5)', 'Build a coalition; Modify goals by time or location; Debate and dialogue; Cross-silo cooperation; Manager departures', '158–159'],
+        ['Karakteristik goal efektif (Exh. 5.4)', 'Specific and measurable; Defined time period; Cover key result areas; Challenging but realistic; Linked to rewards', '160–161'],
+        ['Langkah MBO (Exh. 5.5)', 'Set goals; Develop action plans; Review progress; Appraise overall performance', '162'],
+        ['Manfaat MBO (Exh. 5.6)', 'Fokus upaya; kinerja di semua tingkat; motivasi; keselarasan goal', '163'],
+        ['OKR', 'Objectives; Key results; CFR (conversations, feedback, recognition)', '162–163'],
+        ['Manfaat perencanaan (4)', 'Motivasi dan komitmen; alokasi sumber daya; pedoman tindakan; standar kinerja', '164'],
+        ['Keterbatasan perencanaan (4)', 'Tekanan berlebihan; rasa pasti semu; kekakuan; hambatan intuisi dan kreativitas', '165'],
+        ['Pendekatan lingkungan bergejolak', 'Contingency planning, Scenario building, Crisis planning; ditambah Stretch goals', '165'],
+        ['Crisis planning (Exh. 5.7)', 'Prevention (build relationships; detect signals); Preparation (tim dan juru bicara; CMP; sistem komunikasi)', '168–169'],
+        ['Elemen keunggulan bersaing (Exh. 5.8)', 'Target customers; Core competence; Synergy; Value', '173–175'],
+        ['SWOT', 'Strengths, Weaknesses (internal); Opportunities, Threats (eksternal)', '176–178'],
+        ['Pendekatan strategi korporat (3)', 'Portfolio strategy; BCG matrix; Diversification', '179'],
+        ['BCG matrix (Exh. 5.10)', 'Star; Cash cow; Bright prospect; Dog', '180'],
+        ['Bentuk diversifikasi', 'Merger; Joint venture; Related diversification', '181'],
+        ['Five forces (Exh. 5.11)', 'New entrants; Buyers; Suppliers; Substitutes; Rivalry', '182–183'],
+        ['Strategi Porter (Exh. 5.12)', 'Differentiation; Cost leadership; Focus (focused differentiation atau focused cost leadership)', '183–185'],
+      ],
+    },
+    { kind: 'h3', text: 'Exam Traps' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['Goal vs plan', '"Sama saja"', 'Goal = tujuan masa depan (ends); plan = cara hari ini (means)', '151'],
+        ['Penyusun tactical goals', '"Manajemen puncak"', '**Middle management**; strategic goals oleh senior management', '152'],
+        ['Horizon rencana', '"Semua rencana satu tahun"', 'Strategic plans umumnya **dua sampai lima tahun**; tactical plans **sekitar satu tahun**', '152'],
+        ['Asal goal', '"Goal muncul objektif dari data"', 'Goal **socially constructed**, dirumuskan individu atau kelompok', '155'],
+        ['Misi vs strategic goal', '"Misi = target yang ingin dicapai"', 'Misi = **alasan keberadaan** organisasi di puncak hierarki; strategic goals diturunkan darinya', '151, 156'],
+        ['Jumlah pendekatan lingkungan bergejolak', '"Empat pendekatan"', 'Buku menyebut **tiga pendekatan** (contingency, scenario, crisis) **ditambah** stretch goals', '165'],
+        ['Contingency vs scenario', '"Sama saja"', 'Contingency: respons untuk keadaan darurat, fokus skenario terburuk. Scenario building: perluasannya, memvisualisasikan beberapa masa depan (2–5 skenario)', '166–167'],
+        ['Stretch goal vs goal tidak realistis', '"Semakin mustahil semakin baik"', 'Stretch goal sangat ambisius tetapi masuk akal dan harus **dipandang bisa dicapai**', '161, 167'],
+        ['Tahap crisis planning', '"Tiga tahap"', '**Dua tahap** (prevention, preparation); tahap preparation punya **tiga langkah**', '168–169'],
+        ['MBO vs MBM', '"MBM adalah versi MBO"', 'MBO berfokus pada **hasil**; MBM berfokus pada **metode dan proses**', '161, 163'],
+        ['Standing plans', 'Mengutip definisi dari sumber lain sebagai kutipan buku', 'Buku hanya memberi contoh standing plan; single-use plans hanya disebut', '154, 163–164'],
+        ['Sumbu BCG', '"Laba dan ukuran perusahaan"', '**Business growth rate** (pertumbuhan industri) dan **market share**', '180'],
+        ['Kuadran pangsa kecil di industri tumbuh cepat', 'Memakai istilah dari sumber lain', 'Buku menyebutnya **bright prospect**', '180'],
+        ['Cash cow', '"Perlu investasi besar"', 'Tidak perlu investasi besar; kasnya "diperah" untuk bright prospects dan stars', '180'],
+        ['Focus strategy', '"Strategi keempat yang berdiri sendiri"', 'Focus = differentiation **atau** cost leadership untuk target **sempit**; Exh. 5.12 punya empat kuadran untuk tiga strategi', '183–185'],
+        ['Cost leadership', '"Selalu harga termurah"', 'Tidak selalu harga murah; intinya biaya internal rendah', '185'],
+        ['Tidak memilih strategi', '"Aman karena fleksibel"', 'Tanpa keunggulan strategis, laba di bawah rata-rata', '185'],
+        ['Rujukan gambar five forces', '"Exhibit 5.6" (tertulis di teks)', 'Gambar five forces adalah **Exh. 5.11**; Exh. 5.6 adalah MBO Benefits', '182–183'],
+        ['Tingkatan strategi', '"Buku membahas rinci tiga tingkat"', 'Dibahas rinci: **korporat** dan **bisnis**; tingkat fungsional hanya disebut', '148, 175'],
+      ],
+    },
+    { kind: 'h3', text: 'Bank Pertanyaan Kritis (untuk non-presenter)' },
+    { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 186–187]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Terkait bagian'],
+      rows: [
+        ['Bagaimana perusahaan manufaktur kecil memakai tahap prevention dan preparation dalam crisis planning untuk menghadapi gangguan rantai pasok seperti saat pandemi COVID-19?', '§7'],
+        ['MBO dikritik terlalu menekankan hasil (ends) dan kurang memperhatikan cara (means). Apakah ini kelemahan tekniknya atau cara manajer menerapkannya? Bagaimana menyeimbangkan keduanya?', '§5'],
+        ['FedEx dan Nike mengaku tidak mengikuti rencana bisnis awal mereka dengan ketat. Apakah menyusun rencana itu buang waktu bagi perusahaan yang akhirnya sukses?', '§6'],
+        ['Mengapa dan bagaimana perusahaan seperti TikTok memakai contingency planning dan scenario planning?', '§7'],
+        ['Goal yang terlalu ambisius bisa menurunkan motivasi, tetapi stretch goals justru diusulkan untuk membakar semangat. Sebagai manajer, di mana kamu menarik garis antara stretch goal yang "baik" dan yang tidak realistis?', '§7'],
+        ['Netflix berhasil beradaptasi dengan banyak tantangan di industrinya. Peluang dan ancaman apa yang kamu lihat bagi perusahaan ini?', '§9'],
+        ['Dengan strategi bersaing Porter, bagaimana kamu menggambarkan strategi Walmart dan T.J. Maxx?', '§11'],
+      ],
+    },
+    { kind: 'p', text: '*Semua `[hal. X]` merujuk ke Daft & Marcic, Understanding Management 12e (2023). Label yang dipakai: "di luar RPP" (1×: §6), "Contoh di luar buku" (2×: §4, §7), "Ilustrasi" (1 bagian: §14, sinopsis dan bedah film). Film di §14 adalah film yang dibedah kelompok presenter.*' },
+  ],
 };

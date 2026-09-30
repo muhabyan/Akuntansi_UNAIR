@@ -1,176 +1,866 @@
+// MNU108 TM06 — Managerial Decision Making.
+// Isi akademik berasal dari paket konten MNU108/TM06 (05_student_learning_version.md); aturan render dari 06.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 6, hal. 192–225.
+// Cakupan mengikuti RPP Pengantar Manajemen pertemuan 6. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Jangan menambah fakta di luar paket: ubah paketnya, lalu perbarui file ini.
 import type { Reading } from '../../../types';
-import { CASE_DECISION_MAKING_BIAS } from '../manajemenPracticeCases';
-
-const SVG_DECISION_MODELS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad6" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="clasGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="admGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="polGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad6)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">3 MODEL PENGAMBILAN KEPUTUSAN &amp; 6 TAHAP KEPUTUSAN RASIONAL</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DECISION MODELS</text>
-
-  <!-- 3 Models -->
-  <g transform="translate(35, 70)">
-    <rect class="svg-card" x="0" y="0" width="265" height="120" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="26" rx="10" fill="url(#clasGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="14" y="18" fill="#38bdf8" font-size="10" font-weight="800">1. MODEL KLASIK / RASIONAL</text>
-    <text class="svg-text" x="14" y="44" fill="#cbd5e1" font-size="8">• Kepastian informasi lengkap 100%</text>
-    <text class="svg-text" x="14" y="60" fill="#cbd5e1" font-size="8">• Kriteria keputusan jelas &amp; terukur</text>
-    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="8">• Memaksimalkan laba ideal ekonomis</text>
-    <text class="text-accent-blue" x="14" y="96" fill="#38bdf8" font-size="8" font-weight="700">Kondisi: Kepastian (Certainty)</text>
-  </g>
-
-  <g transform="translate(315, 70)">
-    <rect class="svg-card" x="0" y="0" width="270" height="120" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="270" height="26" rx="10" fill="url(#admGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="14" y="18" fill="#34d399" font-size="10" font-weight="800">2. MODEL ADMINISTRATIF (SIMON)</text>
-    <text class="svg-text" x="14" y="44" fill="#cbd5e1" font-size="8">• Rasionalitas Terbatas (Bounded Rationality)</text>
-    <text class="svg-text" x="14" y="60" fill="#cbd5e1" font-size="8">• Memilih opsi yang "cukup baik" (Satisficing)</text>
-    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="8">• Mengandalkan intuisi &amp; pengalaman</text>
-    <text class="text-accent-green" x="14" y="96" fill="#34d399" font-size="8" font-weight="700">Kondisi: Ketidakpastian (Dunia Nyata)</text>
-  </g>
-
-  <g transform="translate(600, 70)">
-    <rect class="svg-card" x="0" y="0" width="265" height="120" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="26" rx="10" fill="url(#polGrad)" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="14" y="18" fill="#fbbf24" font-size="10" font-weight="800">3. MODEL POLITIK</text>
-    <text class="svg-text" x="14" y="44" fill="#cbd5e1" font-size="8">• Konflik tujuan antar divisi/manajer</text>
-    <text class="svg-text" x="14" y="60" fill="#cbd5e1" font-size="8">• Pembentukan koalisi kekuasaan</text>
-    <text class="svg-text" x="14" y="76" fill="#cbd5e1" font-size="8">• Kompromi, tawar-menawar, negosiasi</text>
-    <text class="text-accent-amber" x="14" y="96" fill="#fbbf24" font-size="8" font-weight="700">Kondisi: Ambiguitas &amp; Friksi Kepentingan</text>
-  </g>
-
-  <!-- 6 Decision Steps Flow -->
-  <text class="svg-muted" x="450" y="215" fill="#94a3b8" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="0.5">6 TAHAP PROSES PENGAMBILAN KEPUTUSAN RASIONAL MANAJER</text>
-  <g transform="translate(35, 230)">
-    <rect class="svg-subcard" x="0" y="0" width="130" height="90" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-    <circle cx="20" cy="18" r="10" fill="#0284c7"/><text x="20" y="22" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">1</text>
-    <text class="text-accent-blue" x="36" y="22" fill="#38bdf8" font-size="8.5" font-weight="700">Pengakuan</text><text class="svg-text" x="10" y="44" fill="#cbd5e1" font-size="7.5">Identifikasi masalah</text><text class="svg-text" x="10" y="58" fill="#cbd5e1" font-size="7.5">atau peluang baru</text>
-
-    <rect class="svg-subcard" x="140" y="0" width="130" height="90" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-    <circle cx="160" cy="18" r="10" fill="#0284c7"/><text x="160" y="22" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">2</text>
-    <text class="text-accent-blue" x="176" y="22" fill="#38bdf8" font-size="8.5" font-weight="700">Diagnosis</text><text class="svg-text" x="150" y="44" fill="#cbd5e1" font-size="7.5">Analisis akar</text><text class="svg-text" x="150" y="58" fill="#cbd5e1" font-size="7.5">penyebab masalah</text>
-
-    <rect class="svg-subcard" x="280" y="0" width="130" height="90" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
-    <circle cx="300" cy="18" r="10" fill="#059669"/><text x="300" y="22" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">3</text>
-    <text class="text-accent-green" x="316" y="22" fill="#34d399" font-size="8.5" font-weight="700">Alternatif</text><text class="svg-text" x="290" y="44" fill="#cbd5e1" font-size="7.5">Kembangkan opsi</text><text class="svg-text" x="290" y="58" fill="#cbd5e1" font-size="7.5">solusi kreatif</text>
-
-    <rect class="svg-subcard" x="420" y="0" width="130" height="90" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
-    <circle cx="440" cy="18" r="10" fill="#059669"/><text x="440" y="22" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">4</text>
-    <text class="text-accent-green" x="456" y="22" fill="#34d399" font-size="8.5" font-weight="700">Seleksi</text><text class="svg-text" x="430" y="44" fill="#cbd5e1" font-size="7.5">Pilih alternatif</text><text class="svg-text" x="430" y="58" fill="#cbd5e1" font-size="7.5">terbaik (Risk/Return)</text>
-
-    <rect class="svg-subcard" x="560" y="0" width="130" height="90" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
-    <circle cx="580" cy="18" r="10" fill="#d97706"/><text x="580" y="22" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">5</text>
-    <text class="text-accent-amber" x="596" y="22" fill="#fbbf24" font-size="8.5" font-weight="700">Eksekusi</text><text class="svg-text" x="570" y="44" fill="#cbd5e1" font-size="7.5">Implementasi rencana</text><text class="svg-text" x="570" y="58" fill="#cbd5e1" font-size="7.5">&amp; alokasi sumber daya</text>
-
-    <rect class="svg-subcard" x="700" y="0" width="130" height="90" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
-    <circle cx="720" cy="18" r="10" fill="#d97706"/><text x="720" y="22" fill="#ffffff" font-size="9" font-weight="800" text-anchor="middle">6</text>
-    <text class="text-accent-amber" x="736" y="22" fill="#fbbf24" font-size="8.5" font-weight="700">Evaluasi</text><text class="svg-text" x="710" y="44" fill="#cbd5e1" font-size="7.5">Ukur hasil riil &amp;</text><text class="svg-text" x="710" y="58" fill="#cbd5e1" font-size="7.5">umpan balik korektif</text>
-  </g>
-</svg>`;
 
 export const TM6_READING: Reading = {
   tm: 6,
-  title: 'Managerial Decision Making: Model, Proses, & Bias Kognitif',
-  ref: 'Richard L. Daft Bab 9 | Herbert Simon Bounded Rationality & Satisficing | Daniel Kahneman Cognitive Biases',
-  intro: 'TM 6 membahas seni dan sains pengambilan keputusan manajerial dalam kondisi kepastian, risiko, ketidakpastian, dan ambiguitas: perbedaan Keputusan Terprogram vs Tidak Terprogram, 3 Model Pengambilan Keputusan (Model Klasik/Rasional, Model Administratif Herbert Simon, dan Model Politik), 6 langkah proses keputusan rasional, serta identifikasi bias kognitif yang sering menjebak manajer (Sunk-Cost Fallacy, Escalation of Commitment, Confirmation Bias, Overconfidence, Framing Effect) dan teknik mitigasi Devils Advocacy.',
+  title: 'Managerial Decision Making',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 6 (hal. 192–225) · RPP Pengantar Manajemen pertemuan 6',
+  intro: '**Sub-CPMK (RPP):** mahasiswa mampu menerapkan berbagai pendekatan pengambilan keputusan manajerial untuk menyelesaikan masalah organisasi secara efektif.',
   objectives: [
-    'Membedakan situasi keputusan: Certainty, Risk, Uncertainty, dan Ambiguity.',
-    'Menganalisis konsep Rasionalitas Terbatas (Bounded Rationality) dan Keputusan Memuaskan (Satisficing).',
-    'Menerapkan 6 langkah proses pengambilan keputusan manajerial yang sistematis.',
-    'Mendeteksi dan mengatasi 6 bias kognitif umum menggunakan teknik Devils Advocacy dan Dialectical Inquiry.'
+    'Managerial Decision Making: Rational model',
+    'Types of decision and problem',
+    'Decision making model and steps',
+    'Personal decision framework',
+    'Innovative decision making',
+    'Menerapkan teori Chapter 6 untuk menganalisis kasus The Office dan merumuskan implikasi manajerial.',
   ],
   blocks: [
-    {
-      kind: 'figure',
-      caption: 'Gambar 6.1: Perbandingan Tiga Model Pengambilan Keputusan Manajerial: Klasik, Administratif, dan Politik.',
-      svg: SVG_DECISION_MODELS
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 6'
-    },
+    // ---------------------------------------------------------------- §0
+    { kind: 'h2', text: '0. Orientasi TM06' },
+    { kind: 'p', text: '**Sub-CPMK TM06 (RPP):** mahasiswa mampu menerapkan berbagai pendekatan pengambilan keputusan manajerial untuk menyelesaikan masalah organisasi secara efektif.' },
+    { kind: 'p', text: '**Bahan kajian RPP → bagian halaman ini:**' },
     {
       kind: 'table',
-      headers: ['Langkah Keputusan Manajerial', 'Aktivitas Utama Manajer', 'Kesalahan Kritis yang Sering Muncul'],
+      stackOnMobile: true,
+      headers: ['Bahan kajian RPP', 'Bagian', 'Catatan'],
       rows: [
-        ['1. Pengenalan Kebutuhan Keputusan', 'Mendeteksi adanya masalah (kesenjangan kinerja) atau peluang bisnis baru.', 'Mengobati gejala luar, bukan akar masalah utama.'],
-        ['2. Diagnosis dan Analisis Masalah', 'Menganalisis sebab-akibat yang mendasari munculnya masalah.', 'Terburu-buru menyimpulkan tanpa data faktual memadai.'],
-        ['3. Pengembangan Alternatif Solusi', 'Membuat daftar tindakan kreatif untuk memecahkan masalah.', 'Hanya membatasi diri pada opsi lama yang lazim.'],
-        ['4. Pemilihan Alternatif Terbaik', 'Mengevaluasi kelayakan, biaya, risiko, dan dampak masing-masing alternatif.', 'Terjebak bias status quo dan preferensi pribadi.'],
-        ['5. Implementasi Alternatif Terpilih', 'Menggunakan wewenang dan kepemimpinan untuk mengeksekusi tindakan.', 'Kurangnya koordinasi dan resistensi dari staf pelaksana.'],
-        ['6. Evaluasi dan Umpan Balik', 'Memantau hasil riil keputusan dan membandingkannya dengan sasaran awal.', 'Escalation of commitment (enggan mengakui kegagalan).']
+        ['Managerial Decision Making: Rational model', '§4', 'Model klasik (ideal, rasional); pengantar pengambilan keputusan di §1'],
+        ['Types of decision and problem', '§1–§3', 'Decision dan decision making, programmed vs nonprogrammed, certainty sampai ambiguity'],
+        ['Decision making model and steps', '§4–§7', 'Model klasik, administratif, dan politik; enam langkah pengambilan keputusan'],
+        ['Personal decision framework', '§8', 'Empat gaya keputusan personal'],
+        ['Innovative decision making', '§10–§11', 'Brainstorming, bukti, debat, groupthink, tahu kapan berhenti, premortem dan postmortem'],
       ],
-      caption: 'Tabel 6.0: Enam langkah proses pengambilan keputusan manajerial.'
     },
+    { kind: 'p', text: 'RPP tidak mencantumkan kuis (QUIZ) untuk pertemuan ini. Satu subbab Chapter 6, **Why Do Managers Make Bad Decisions?**, tidak disebut di bahan kajian RPP; subbab ini tetap dimuat utuh di §9 dengan label "di luar RPP" karena teknik di §10–§11 dirancang untuk menangkal bias yang dibahasnya.' },
+    { kind: 'p', text: '**Cara memakai halaman ini untuk tugas kelompok:**' },
+    { kind: 'p', text: '**Presenter Materi**' },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: 5 Bias Kognitif Berbahaya dalam Manajemen'
-    },
-    {
-      kind: 'table',
-      headers: ['Bias Kognitif', 'Mekanisme Terjadinya Bias', 'Dampak Kerugian Nyata bagi Perusahaan'],
-      rows: [
-        ['Sunk-Cost Fallacy', 'Terus menggelontorkan dana ke proyek yang merugi karena merasa sudah menginvestasikan banyak uang/waktu.', 'Kerugian membengkak hingga mengancam likuiditas korporasi.'],
-        ['Confirmation Bias', 'Hanya mencari dan mempercayai informasi yang mendukung opininya sendiri, mengabaikan data berlawanan.', 'Keputusan produk baru gagal karena riset pasar yang bias.'],
-        ['Overconfidence Bias', 'Melebih-lebihkan kemampuan diri sendiri dan meremehkan risiko eksternal pesaing.', 'Melakukan merger dan akuisisi mahal yang akhirnya hancur.'],
-        ['Framing Effect', 'Terpengaruh oleh cara suatu informasi disajikan (contoh: "peluang sukses 70%" vs "peluang gagal 30%").', 'Mengambil risiko gegabah atau menolak peluang menguntungkan.'],
-        ['Escalation of Commitment', 'Meningkatkan komitmen sumber daya pada tindakan yang gagal demi membela harga diri.', 'Pimpinan mempertahankan manajer yang tidak kompeten.']
+      kind: 'ol',
+      items: [
+        'Konsep utama chapter → §1–§11',
+        'Hubungan antar konsep → §12 Peta Konsep',
+        'Contoh penerapan di organisasi → §13 + contoh di tiap bagian',
+        'Bedah film → §14 (*Moneyball*)',
+        'Kesimpulan & implikasi manajerial → §16',
       ],
-      caption: 'Tabel 6.1: Bias kognitif dalam pengambilan keputusan.'
     },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Mencegah Groupthink dengan Teknik Devils Advocacy',
-      prompt: 'Dalam rapat komite investasi perusahaan, seluruh anggota dewan direksi menyetujui rencana akuisisi startup AI tanpa ada seorang pun yang berani mengkritik risiko tingginya harga beli (Fenomena Groupthink). Bagaimana CEO dapat menggunakan teknik Devils Advocacy untuk menguji ketangguhan keputusan tersebut?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Pengertian Groupthink**: Kecenderungan anggota kelompok yang kohesif untuk menyetujui pandangan mayoritas demi menghindari konflik, menekan pemikiran kritis independen.',
-            '**Penerapan Devils Advocacy**: CEO secara resmi menugaskan satu direktur (atau tim analis khusus) untuk berperan sebagai "Pengacara Iblis" (Devils Advocate).\nTugasnya: Menantang secara agresif setiap asumsi optimis valuasi, memaparkan skenario terburuk jika integrasi sistem gagal, dan membuktikan mengapa akuisisi tersebut bisa merugikan.',
-            '**Hasil Akhir**: Dewan direksi terhindar dari ilusi kesepakatan semu dan mampu membuat keputusan yang jauh lebih matang dan teruji secara objektif.'
-          ]
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 6'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', '3 Model Keputusan Daft', 'Karakteristik model klasik normatif, model administratif Simon, dan model politik.', 'Mampu mengidentifikasi model keputusan yang berlaku di skenario kasus.'],
-        ['2', 'Bounded Rationality & Satisficing', 'Konsep keterbatasan kognitif manusia dan pengambilan keputusan "cukup baik".', 'Mampu menjelaskan mengapa manajer tidak selalu bertindak rasional sempurna.'],
-        ['3', 'Bias Kognitif & Groupthink', 'Identifikasi sunk-cost, framing, overconfidence, dan teknik devils advocacy.', 'Mampu merancang mekanisme pengambilan keputusan yang bebas bias.']
-      ],
-      caption: 'Tabel 6.2: Peta penguasaan submateri TM 6 Pengantar Manajemen.'
-    },
-    CASE_DECISION_MAKING_BIAS,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
-    },
+    { kind: 'p', text: '**Presenter Kasus**' },
     {
       kind: 'ul',
       items: [
-        '**Satisficing Adalah Realitas Manajer**: Dalam dunia nyata yang serba cepat dan informasi tidak lengkap, manajer mencari alternatif pertama yang memenuhi kriteria minimal (*satisficing*), bukan alternatif sempurna.',
-        '**Sunk Cost Adalah Biaya Masa Lalu**: Uang yang sudah keluar di masa lalu tidak boleh memengaruhi keputusan masa depan; keputusan harus semata-mata didasarkan pada arus kas masa depan (*incremental future cash flows*).',
-        '**Intuisi Bukan Sekadar Tebakan**: Intuisi manajerial adalah pengenalan pola bawah sadar yang dibangun dari pengalaman praktis bertahun-tahun di lapangan.'
-      ]
-    }
-  ]
+        'Case Summary → Problem Identification → Analisis Kasus → Jawaban Pertanyaan → Rekomendasi → §15 (The Office)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (Mind Map)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Konsep utama, hubungan antar konsep, struktur sistematis, kata kunci → §12 (cabang, garis silang, kata kunci)',
+      ],
+    },
+    { kind: 'p', text: '**Non-presenter (pertanyaan kritis)**' },
+    {
+      kind: 'ul',
+      items: [
+        'Minimal satu pertanyaan kritis → §17 Bank Pertanyaan Kritis',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Di halaman ini, isi buku, fakta kasus, dan analisis selalu dipisahkan; bagian analisis diberi keterangan. Contoh perusahaan ditulis sesuai keadaan saat buku terbit (**Data per buku (2023)**), jadi angka dan status perusahaan bisa sudah berubah.',
+    },
+    // ---------------------------------------------------------------- §1
+    { kind: 'h2', text: '1. Keputusan dan Pengambilan Keputusan' },
+    { kind: 'p', text: 'Buku membuka bab dengan **Boeing 737 MAX**. Pada awal 2019, 737 MAX adalah model dengan pesanan terbanyak dalam sejarah Boeing; kurang dari tiga bulan kemudian, pesawat itu dilarang terbang di seluruh dunia setelah dua kecelakaan fatal. Di bawah tekanan persaingan dari jet hemat bahan bakar pesaingnya, Airbus, manajer dan eksekutif Boeing mengambil sejumlah keputusan menentukan [hal. 194]:' },
+    {
+      kind: 'ul',
+      items: [
+        'memodifikasi model 737 yang ada, karena lebih murah, lebih cepat, dan proses persetujuan regulator lebih singkat dibanding membangun pesawat baru;',
+        'menghindari tambahan komponen atau sistem yang menaikkan biaya atau mewajibkan pelatihan simulator tambahan bagi pilot maskapai pembeli;',
+        'menambahkan sistem MCAS untuk mengatasi masalah akibat mesin yang lebih besar dipindah ke depan di bawah sayap;',
+        'tidak memberi tahu maskapai dan awak kokpit tentang MCAS, dengan anggapan pilot 737 lama bisa mengatasinya dengan prosedur yang sudah ada.',
+      ],
+    },
+    { kind: 'p', text: 'Buku menegaskan manajer Boeing tidak akan sengaja mengorbankan keselamatan demi laba, tetapi hasil dari keputusan-keputusan ini, sebagaimana diberitakan media, tampaknya berujung pada kedua kecelakaan itu [hal. 194]. *Data per buku (2023).*' },
+    { kind: 'p', text: 'Setiap organisasi tumbuh, makmur, atau gagal karena keputusan manajernya. Contoh lain di pembuka bab [hal. 194]:' },
+    {
+      kind: 'ul',
+      items: [
+        '**Newark, New Jersey:** pejabat kota awalnya mengabaikan hasil uji yang menunjukkan kadar timbal mengkhawatirkan di air minum, sehingga muncul krisis lingkungan.',
+        '**JPMorgan Chase:** aplikasi bank digital Finn untuk menarik nasabah muda mengecewakan dan ditutup; perusahaan kembali memperkuat aplikasi Chase yang sudah ada.',
+        '**YouTube** pernah dijuluki "Google\'s Folly", tetapi keputusan manajernya membuat pembelian senilai \\$1,65 miliar oleh Google lebih dari sepadan.',
+        '**Caterpillar** membeli ERA Mining Machinery di Tiongkok seharga \\$700 juta, lalu kurang dari setahun kemudian menurunkan nilainya sebesar \\$580 juta; Caterpillar menyalahkan kecurangan akuntansi yang disengaja untuk membesarkan laba di unit peralatan keselamatan tambang perusahaan itu.',
+      ],
+    },
+    { kind: 'p', text: 'Mudah menunjuk keputusan yang keliru setelah kejadian, tetapi manajer sering memutuskan di tengah faktor yang terus berubah, informasi yang tidak jelas, dan pandangan yang bertentangan; **manajer bisa salah walau niatnya benar**. Keputusan menentukan cara organisasi menyelesaikan masalah, mengalokasikan sumber daya, dan mencapai tujuannya [hal. 194].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Decision**', 'Pilihan dari alternatif yang tersedia', '[hal. 195]'],
+        ['**Decision making**', 'Proses mengidentifikasi masalah dan peluang, lalu menyelesaikannya. Mencakup upaya **sebelum dan sesudah** pilihan', '[hal. 195]'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh buku: seorang manajer akuntansi memilih Colin, Tasha, atau Carlos sebagai junior auditor. Pilihannya adalah **decision**. **Decision making** mencakup lebih banyak: memastikan junior auditor memang dibutuhkan, mengecek ketersediaan kandidat, mewawancarai, memilih, lalu menindaklanjuti sosialisasi karyawan baru agar keputusan itu berhasil [hal. 195].' },
+    // ---------------------------------------------------------------- §2
+    { kind: 'h2', text: '2. Programmed vs Nonprogrammed Decisions' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Programmed decisions', 'Nonprogrammed decisions'],
+      rows: [
+        ['Definisi', 'Keputusan untuk situasi yang sudah cukup sering terjadi sehingga **aturan keputusan** bisa dikembangkan dan diterapkan di masa depan', 'Keputusan untuk situasi yang **unik**, kurang terdefinisi, sebagian besar **tidak terstruktur**, dan **berdampak penting** bagi organisasi'],
+        ['Pemicu', 'Masalah organisasi yang berulang', 'Situasi baru, ketidakpastian besar, keputusan kompleks'],
+        ['Siapa bisa memutuskan', 'Setelah aturan dibuat, bawahan dan pihak lain bisa memutuskan, sehingga manajer bebas untuk tugas lain; sebagian kini ditangani AI', 'Manajer; banyak yang terkait strategic planning'],
+        ['Contoh dari buku', 'Memesan ulang kertas dan ATK saat persediaan turun ke titik tertentu; keterampilan yang dibutuhkan untuk suatu jabatan; reorder point persediaan produksi; rute pengiriman; aturan hotel: satu pelayan per 30 tamu untuk jamuan duduk dan satu per 40 tamu untuk prasmanan', 'Mengembangkan produk atau layanan baru, mengakuisisi perusahaan, membentuk divisi baru, membangun pabrik, memasuki pasar geografis baru, memindahkan kantor pusat'],
+        ['Sumber', '[hal. 195]', '[hal. 195]'],
+      ],
+    },
+    { kind: 'p', text: '**AI untuk programmed decisions:** Royal Dutch Shell mulai memakai algoritma AI untuk menugaskan karyawan dengan keterampilan yang tepat ke berbagai proyek; penjadwalan jadi lebih efisien dan waktu manajer terbebas untuk keputusan nonprogrammed yang lebih kompleks [hal. 195].' },
+    { kind: 'p', text: '**Airbus A380** adalah contoh nonprogrammed decision. Eksekutif Airbus membangun pesawat tingkat raksasa untuk menantang Boeing 747, berdasarkan asumsi bahwa maskapai akan terus memakai bandara hub besar dan menerbangkan jet empat mesin di rute jauh. Lingkungan berubah: teknologi memungkinkan Boeing membuat 787 Dreamliner, pesawat bermesin ganda yang efisien dan bisa terbang jauh tanpa melewati bandara raksasa, dan maskapai lebih memilih pesawat seperti itu. Setelah berinvestasi \\$17 miliar, Airbus hanya mendapat 251 pesanan A380 dan mengumumkan penghentian produksi pada akhir 2021 [hal. 195]. Manajer Boeing juga menghadapi banyak nonprogrammed decision terkait 737 MAX (§1) [hal. 195]. *Data per buku (2023).*' },
+    { kind: 'p', text: 'Contoh lain dari buku: pemilik bisnis di seluruh dunia menghadapi nonprogrammed decision tentang kapan dan bagaimana membuka kembali usahanya di tengah pandemi COVID-19 pada 2020 (Concept Connection) [hal. 195]. Fitur Creating a Greener World menceritakan keputusan PepsiCo membeli jagung langsung dari 300 petani kecil di Meksiko untuk camilan Sabritas, tanpa perantara; biaya transportasi turun, hubungan dengan petani menguat, dan dalam tiga tahun program itu diperluas ke 850 petani [hal. 196].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (1/3)',
+      text: 'Dalam akuntansi, perusahaan biasanya menetapkan kebijakan penyisihan piutang tak tertagih berdasarkan umur piutang: makin lama piutang lewat jatuh tempo, makin besar persentase penyisihannya. Setelah kebijakan itu ditetapkan, staf akuntansi dapat menerapkannya setiap periode tanpa keputusan baru dari manajer. Dalam bahasa buku, ini **programmed decision**: aturan keputusan untuk situasi berulang yang bisa dijalankan orang lain sehingga manajer bebas untuk tugas lain [hal. 195].',
+    },
+    // ---------------------------------------------------------------- §3
+    { kind: 'h2', text: '3. Kondisi Keputusan: Certainty, Risk, Uncertainty, Ambiguity' },
+    { kind: 'p', text: 'Perbedaan utama programmed dan nonprogrammed decisions terletak pada tingkat ketidakpastian, risiko, atau ambiguitas yang dihadapi. Dalam dunia ideal manajer punya semua informasi, tetapi kenyataannya sebagian hal tidak bisa diketahui, sehingga sebagian keputusan akan gagal. Setiap situasi keputusan bisa ditempatkan pada skala menurut **ketersediaan informasi** dan **kemungkinan gagal** [hal. 196].' },
+    { kind: 'p', text: '**Exhibit 6.1: Conditions That Affect the Possibility of Decision Failure** [hal. 197]' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Exhibit 6.1 [hal. 197]',
+      text: '**Organizational Problem.** Possibility of Failure: **Low → High** = **Certainty → Risk → Uncertainty → Ambiguity**.\n\n**Programmed Decisions** ◄──► **Nonprogrammed Decisions**. **Problem Solution.**',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kondisi', 'Arti menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Certainty**', 'Semua informasi yang dibutuhkan tersedia penuh: kondisi operasi, biaya sumber daya, kendala, setiap tindakan dan hasilnya', 'Investasi peralatan \\$10.000 yang pasti menghemat \\$4.000 per tahun selama lima tahun memberi tingkat pengembalian sebelum pajak sekitar 40%, sehingga bisa dipilih dengan yakin dibanding alternatif yang hanya menghemat \\$3.000 per tahun. Buku mengingatkan hanya sedikit keputusan yang pasti', '[hal. 196]'],
+        ['**Risk**', 'Tujuan jelas dan informasi baik tersedia, tetapi hasil tiap alternatif mengandung peluang rugi atau gagal. Dengan informasi cukup, manajer bisa **memperkirakan probabilitas** berhasil vs gagal', 'Manajer McDonald\'s, Burger King, atau KFC memilih lokasi restoran baru dengan menganalisis demografi, arus lalu lintas, harga properti, dan lokasi pesaing, lalu menggabungkannya dengan model pendapatan dan biaya. Steve Krupp: menghindari semua risiko akan berujung pada "entropy". Manajer juga bisa memakai analisis statistik terkomputerisasi', '[hal. 196–197]'],
+        ['**Uncertainty**', 'Manajer **tahu tujuan** yang ingin dicapai, tetapi informasi tentang alternatif dan peristiwa masa depan **tidak lengkap**; manajer mungkin harus memutuskan berdasarkan asumsi', 'Airstream membangun pabrik kendaraan rekreasi baru pada akhir 2018 di tengah ketidakpastian tarif dan penjualan yang melambat. Gubernur negara bagian AS memutuskan pencabutan perintah tinggal di rumah saat COVID-19 (2020). Disney *Oz the Great and Powerful*: biaya sekitar \\$325 juta, pendapatan \\$150 juta di akhir pekan pembukaan dan total \\$495 juta; banyak film lain tidak balik modal', '[hal. 197–198]'],
+        ['**Ambiguity**', 'Tujuan atau masalah **tidak jelas**, alternatif sulit didefinisikan, dan informasi hasil tidak tersedia. Situasi keputusan **paling sulit**', 'Mahasiswa diberi tugas kelompok tanpa topik, arahan, atau pedoman. Manajer beda departemen punya prioritas berbeda; pilihan pendekatan global vs lokal (Ch. 3); misi sosial atau lingkungan vs tekanan finansial', '[hal. 198]'],
+      ],
+    },
+    { kind: 'p', text: 'Mantan Menteri Keuangan AS Robert Rubin mendefinisikan uncertainty sebagai situasi ketika **keputusan yang baik pun bisa menghasilkan hasil yang buruk**. Dalam situasi seperti ini, manajer mengandalkan kreativitas, penilaian, intuisi, dan pengalaman [hal. 197]. Petani adalah contoh sehari-hari: cuaca dan peristiwa tak terduga bisa merusak panen, tetapi petani tetap harus memutuskan berdasarkan asumsi (Concept Connection) [hal. 198].' },
+    { kind: 'p', text: '**Wicked decision problem.** Situasi yang sangat ambigu bisa menciptakan *wicked decision problem*, ketika mendefinisikan masalahnya saja sudah menjadi tugas besar. Contoh buku: Twitter punya aturan yang melarang ancaman kekerasan langsung dan sebagian ujaran kebencian, tetapi tidak ada aturan tentang tipuan atau misinformasi. Saat CEO Jack Dorsey dan timnya membahas cara menghapus "dehumanizing speech", rapat lebih dari satu jam habis hanya untuk mencari definisinya [hal. 198]. *Data per buku (2023).*' },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Wicked problem ditandai konflik tujuan dan alternatif, keadaan yang cepat berubah, informasi kabur, kaitan antarunsur yang tidak jelas, dan ketidakmampuan menilai apakah solusi akan berhasil. Untuk masalah seperti ini sering **tidak ada jawaban "benar"**, dan manajer harus menyusun skenario yang masuk akal tanpa informasi yang jelas [hal. 198].',
+    },
+    // ---------------------------------------------------------------- §4
+    { kind: 'h2', text: '4. Model Klasik (Ideal, Rasional)' },
+    { kind: 'p', text: 'Manajer biasanya memakai salah satu dari **tiga model**: **classical**, **administrative**, atau **political**. Pilihannya bergantung pada preferensi pribadi manajer, apakah keputusannya programmed atau nonprogrammed, dan tingkat ketidakpastiannya [hal. 199].' },
+    { kind: 'p', text: '**Classical model** = model keputusan yang didasarkan pada asumsi ekonomi rasional dan keyakinan manajer tentang keputusan yang ideal. Literatur manajemen sering menganjurkannya karena manajer diharapkan membuat keputusan yang masuk akal secara ekonomi dan sesuai kepentingan ekonomi terbaik organisasi [hal. 199].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Empat asumsi model klasik', 'Sumber'],
+      rows: [
+        ['Pengambil keputusan mengejar tujuan yang **diketahui dan disepakati**; masalah dirumuskan dan didefinisikan dengan tepat', '[hal. 199]'],
+        ['Pengambil keputusan berupaya mencapai **certainty** dan mengumpulkan **informasi lengkap**; semua alternatif dan potensi hasilnya dihitung', '[hal. 199]'],
+        ['Kriteria penilaian alternatif diketahui; dipilih alternatif yang **memaksimalkan hasil ekonomi** bagi organisasi', '[hal. 199]'],
+        ['Pengambil keputusan **rasional** dan memakai logika untuk memberi nilai, mengurutkan preferensi, menilai alternatif, dan memilih keputusan yang memaksimalkan pencapaian tujuan organisasi', '[hal. 199]'],
+      ],
+    },
+    { kind: 'p', text: 'Model klasik bersifat **normative**: mendefinisikan bagaimana pengambil keputusan **seharusnya** memutuskan. Model ini tidak menggambarkan cara manajer benar-benar memutuskan, tetapi memberi pedoman untuk mengejar hasil ideal. Pendekatan ini dikembangkan karena sebagian manajer terlihat tidak sistematis dan sewenang-wenang [hal. 200].' },
+    {
+      kind: 'ul',
+      items: [
+        'Charles Darwin pernah mencoba menimbang secara rasional apakah ia sebaiknya menikah, dengan daftar keuntungan tiap pilihan [hal. 200].',
+        'Model ideal ini sering **tidak tercapai** oleh orang nyata di organisasi nyata, tetapi tetap bernilai karena membantu manajer lebih rasional dan tidak semata mengikuti preferensi pribadi atau dorongan sesaat. Jeff Bezos, yang pernah berkata keputusan terbaiknya dibuat dengan hati, intuisi, dan naluri, mewajibkan siapa pun yang meminta rapat menyiapkan memo enam halaman berisi data serta pro dan kontra. Survei global McKinsey menemukan manajer yang memasukkan analisis matang ke keputusannya memperoleh hasil lebih baik [hal. 200].',
+      ],
+    },
+    { kind: 'p', text: '**Kapan model klasik berguna:** untuk **programmed decisions** dan keputusan dengan **certainty atau risiko rendah**, karena informasi relevan tersedia dan probabilitas bisa dihitung. AI dan big data (Ch. 1) memperluas pemakaiannya [hal. 200]:' },
+    {
+      kind: 'ul',
+      items: [
+        'AI mengotomatiskan programmed decisions, misalnya membekukan akun nasabah yang gagal bayar atau memilah klaim asuransi.',
+        'Kepolisian New York memetakan pola penangkapan, hari gajian, acara olahraga, konser, curah hujan, dan hari libur untuk memprediksi "hot spot" kejahatan dan menempatkan petugas.',
+        'UPS memakai sistem ORION (algoritma canggih, AI, dan machine learning) untuk mengoptimalkan 66.000 rute pengiriman di Amerika Utara dan Eropa. *Data per buku (2023).*',
+      ],
+    },
+    { kind: 'p', text: '**Dunia olahraga.** Sebagian besar manajer tim olahraga liga utama kini lebih memakai data analytics daripada intuisi untuk keputusan penting. Buku mencontohkan film *Moneyball* (2011), yang menggambarkan general manager sebuah tim bisbol yang membangun salah satu tim paling sering menang di liganya dengan salah satu anggaran terkecil. Alih-alih mengandalkan intuisi para pencari bakat, yang kadang menolak pemain hanya karena penampilannya dianggap tidak seperti pemain liga utama, ia sangat mengandalkan data dan analisis statistik. Sejak itu sebagian besar tim liga utama lain memakai teknik statistik big data; misalnya, rata-rata percobaan tembakan tiga angka di NBA naik setiap tahun antara 2009 dan 2019 karena analisis menunjukkan tembakan tiga angka bernilai 50% lebih besar daripada dua angka, dan NFL mengalami gelombang data serupa [hal. 200].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Film *Moneyball* dibedah lebih lanjut di §14. Buku memakainya untuk contoh data analytics, tetapi di §5 buku juga menegaskan bahwa manajer efektif **memadukan** analisis rasional dan intuisi [hal. 203]. Jadi, contoh ini bukan alasan untuk membuang intuisi.',
+    },
+    // ---------------------------------------------------------------- §5
+    { kind: 'h2', text: '5. Model Administratif: Bounded Rationality, Satisficing, dan Intuisi' },
+    { kind: 'p', text: '**Administrative model** bersifat **descriptive**: menggambarkan cara manajer **benar-benar** memutuskan dalam situasi kompleks, bukan cara yang seharusnya menurut teori ideal. Model ini mengakui keterbatasan manusia dan lingkungan. Dalam situasi sulit, seperti keputusan nonprogrammed, uncertainty, dan ambiguity, manajer biasanya tidak mampu membuat keputusan yang rasional secara ekonomi walaupun ingin [hal. 200–201].' },
+    { kind: 'p', text: 'Contoh buku (Michelin 5-Star): dua pendiri food truck di wilayah Washington, DC harus menutup usahanya saat pandemi, padahal tak seorang pun tahu berapa lama penutupan akan berlangsung. Mereka memutuskan mengembangkan lini dumpling beku yang sebelumnya diminta pelanggan, bergabung dengan program akselerator bisnis makanan Union Kitchen (dengan kesepakatan membayar 10% setelah untung) untuk pengemasan dan distribusi, dan menjalani tiga bulan pelatihan. Produk mereka kini ada di 20 toko [hal. 200–201].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Konsep (Herbert A. Simon)', 'Arti', 'Sumber'],
+      rows: [
+        ['**Bounded rationality**', 'Orang punya batas seberapa rasional mereka bisa bertindak. Organisasi sangat kompleks, dan manajer hanya punya waktu dan kemampuan untuk memproses informasi dalam jumlah terbatas', '[hal. 201]'],
+        ['**Satisficing**', 'Pengambil keputusan memilih **alternatif pertama** yang memenuhi **kriteria keputusan minimal**. Manajer tidak mengejar semua alternatif untuk menemukan satu solusi yang memaksimalkan hasil ekonomi, walau solusi yang lebih baik diduga ada, karena waktu dan biaya informasi lengkap tidak sepadan', '[hal. 201]'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh satisficing: manajer **Liz Claiborne** merekrut desainer Isaac Mizrahi dan menyasar konsumen muda, tetapi penjualan dan laba terus turun. Menghadapi gagalnya lini muda, pemotongan pesanan 90% dari sebuah peritel besar, pengangguran tinggi, dan ekonomi yang lemah, manajer memilih keputusan cepat: lisensi eksklusif merek Liz Claiborne di JC Penney, yang menangani seluruh produksi dan pemasaran [hal. 202].' },
+    { kind: 'p', text: '**Lima asumsi model administratif** [hal. 202]:' },
+    {
+      kind: 'ol',
+      items: [
+        'Tujuan keputusan sering **samar**, saling bertentangan, dan tidak disepakati para manajer.',
+        'Manajer sering **tidak sadar** akan masalah atau peluang yang ada di organisasi.',
+        'Prosedur rasional tidak selalu dipakai; bila dipakai, prosedur itu menyederhanakan masalah sehingga tidak menangkap kompleksitas nyata.',
+        'Pencarian alternatif **terbatas** karena kendala manusia, informasi, dan sumber daya.',
+        'Kebanyakan manajer puas dengan keputusan **satisficing**, bukan maksimal, karena informasi terbatas dan kriteria solusi maksimal yang samar.',
+      ],
+    },
+    { kind: 'p', text: '**Intuition** = pemahaman cepat atas situasi keputusan berdasarkan pengalaman masa lalu, **tanpa** pemikiran atau analisis rasional yang disengaja. Keputusan intuitif **tidak sewenang-wenang atau irasional** karena bertumpu pada latihan dan pengalaman bertahun-tahun [hal. 202].' },
+    {
+      kind: 'ul',
+      items: [
+        'Pembalap Formula One Juan Manuel Fangio mengerem mendadak saat keluar terowongan di Monaco Grand Prix dan terhindar dari kecelakaan di tikungan berikutnya. Belakangan ia menyimpulkan perasaannya dipicu perubahan warna di tribun penonton, yang biasanya menghadap pembalap tetapi saat itu menghadap ke arah lain [hal. 202].',
+        'Intuisi yang baik adalah kemampuan **mengenali pola** dengan sangat cepat; bila orang punya pengalaman dan pengetahuan mendalam di suatu bidang, keputusan yang tepat sering datang cepat dan mudah [hal. 202].',
+        'Dalam survei global, **dua pertiga CEO** mengaku pernah mengabaikan hasil analisis data atau model komputer karena bertentangan dengan intuisinya, dan hanya **35%** eksekutif puncak yang sangat percaya pada data organisasinya. Pelatih New England Patriots, Bill Belichick, mengaku lebih suka "evaluate what I see" daripada analytics [hal. 202–203].',
+      ],
+    },
+    { kind: 'p', text: '**Quasirationality** = tren baru yang menggabungkan pemikiran **intuitif dan analitis**. Studi menunjukkan manajer efektif biasanya memadukan analisis rasional dan intuisi untuk keputusan kompleks di bawah tekanan waktu. Manajer perlu menghindari dua ekstrem, yaitu keputusan sewenang-wenang tanpa kajian dan ketergantungan obsesif pada analisis. **Tidak ada yang lebih baik dari yang lain**; keduanya komponen penting keputusan yang efektif [hal. 203].' },
+    // ---------------------------------------------------------------- §6
+    { kind: 'h2', text: '6. Model Politik dan Perbandingan Tiga Model' },
+    { kind: 'p', text: '**Political model** berguna untuk keputusan **nonprogrammed** ketika kondisi tidak pasti, informasi terbatas, dan manajer **tidak sepakat** tentang tujuan atau tindakan. Sebagian besar keputusan organisasi melibatkan banyak manajer dengan tujuan berbeda yang harus saling bicara untuk berbagi informasi dan mencapai kesepakatan [hal. 203].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Coalition**', 'Aliansi informal di antara manajer yang mendukung tujuan tertentu (Remember This: "a specific goal or solution")', '[hal. 203, 205]'],
+        ['**Coalition building**', 'Proses membentuk aliansi di antara manajer. Contoh: manajer yang mendukung akuisisi berbicara informal dengan eksekutif lain dan membujuk mereka mendukungnya', '[hal. 203]'],
+      ],
+    },
+    { kind: 'p', text: 'Tanpa koalisi, individu atau kelompok yang kuat bisa menggagalkan proses keputusan. Coalition building memberi kesempatan beberapa manajer ikut berkontribusi, sehingga **komitmen** mereka pada alternatif yang akhirnya dipilih meningkat [hal. 203].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Contoh dari buku', 'Isi', 'Sumber'],
+      rows: [
+        ['**Los Angeles Rams**', 'Pemilik klub dan pimpinan lain menyusun daftar sekitar 30 kandidat pelatih, lalu melibatkan orang di seluruh organisasi untuk menilainya. Salah satu kandidat, Sean McVay yang berusia 30 tahun, membuat sebagian pimpinan ragu; wawancaranya berlangsung delapan hari dan melibatkan pemain, staf, dan manajer agar semua mendukung keputusan akhir. Dua tahun kemudian McVay membawa Rams ke Super Bowl', '[hal. 203]'],
+        ['**Hallmark Channel**', 'Iklan yang menampilkan pernikahan sesama jenis memicu banjir keluhan; setelah iklan ditarik, keluhan datang dari kelompok advokasi hak gay. Eksekutif puncak berbicara sepanjang akhir pekan, membangun koalisi, dan memutuskan membatalkan penarikan iklan (rujukan Ch. 2)', '[hal. 203]'],
+        ['**CEO industri teknologi tinggi**', 'Mereka berusaha memakai proses rasional, tetapi keputusan nyatanya bertumpu pada interaksi kompleks dengan manajer lain, bawahan, faktor lingkungan, dan peristiwa organisasi', '[hal. 203]'],
+      ],
+    },
+    { kind: 'p', text: 'Model politik **paling mirip** lingkungan nyata kebanyakan manajer. **Empat asumsi model politik** [hal. 203–204]:' },
+    {
+      kind: 'ol',
+      items: [
+        'Organisasi terdiri atas kelompok dengan **kepentingan, tujuan, dan nilai beragam**; manajer tidak sepakat soal prioritas masalah.',
+        'Informasi **ambigu dan tidak lengkap**; upaya rasional dibatasi kompleksitas masalah dan kendala pribadi serta organisasi.',
+        'Manajer tidak punya waktu, sumber daya, atau kapasitas mental untuk semua dimensi masalah, sehingga saling bicara dan bertukar pandangan untuk mengurangi ambiguitas.',
+        'Manajer terlibat tarik-ulur **debat**; keputusan adalah hasil **tawar-menawar dan diskusi** di antara anggota koalisi.',
+      ],
+    },
+    { kind: 'p', text: '**Exhibit 6.2: Characteristics of Classical, Administrative, and Political Decision-Making Models** [hal. 204]' },
+    {
+      kind: 'table',
+      headers: ['Classical Model', 'Administrative Model', 'Political Model'],
+      rows: [
+        ['Clear-cut problem and goals', 'Vague problem and goals', 'Pluralistic; conflicting goals'],
+        ['Condition of certainty', 'Condition of uncertainty', 'Condition of uncertainty or ambiguity'],
+        ['Full information about alternatives and their outcomes', 'Limited information about alternatives and their outcomes', 'Inconsistent viewpoints; ambiguous information'],
+        ['Rational choice by individual for maximizing outcomes', 'Satisficing choice for resolving problem using intuition', 'Bargaining and discussion among coalition members'],
+      ],
+    },
+    { kind: 'p', text: 'Riset menemukan prosedur rasional (klasik) terkait kinerja tinggi di **lingkungan stabil**, sedangkan prosedur administratif, politik, dan intuisi terkait kinerja tinggi di **lingkungan tidak stabil** yang menuntut keputusan cepat dalam kondisi sulit [hal. 204].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Exh. 6.2 menulis kondisi model administratif "Condition of uncertainty". Teks dan Remember This menyebut model ini menggambarkan keputusan dalam situasi **uncertainty dan ambiguity** [hal. 201, 204]. Untuk ujian, sebutkan keduanya dan tunjukkan sumbernya.',
+    },
+    // ---------------------------------------------------------------- §7
+    { kind: 'h2', text: '7. Enam Langkah Pengambilan Keputusan' },
+    { kind: 'p', text: 'Apa pun jenis keputusannya (programmed atau nonprogrammed) dan model apa pun yang dipakai (klasik, administratif, atau politik), proses keputusan yang efektif biasanya melalui **enam langkah**. Langkah-langkah ini mencerminkan upaya untuk serasional mungkin saat membuat keputusan penting [hal. 205].' },
+    { kind: 'p', text: '**Exhibit 6.3: Six Steps in the Managerial Decision-Making Process** [hal. 205]' },
+    { kind: 'p', text: '**Siklus: langkah 6 kembali ke langkah 1**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Inti menurut buku', 'Sumber'],
+      rows: [
+        ['1. Recognition of decision requirement', 'Menyadari adanya **problem** atau **opportunity**', '[hal. 205–206]'],
+        ['2. Diagnosis and analysis of causes', 'Menganalisis faktor penyebab yang mendasari situasi', '[hal. 206]'],
+        ['3. Development of alternatives', 'Menyusun alternatif solusi yang menjawab kebutuhan dan memperbaiki penyebab', '[hal. 207]'],
+        ['4. Selection of desired alternative', 'Memilih alternatif paling menjanjikan', '[hal. 207–208]'],
+        ['5. Implementation of chosen alternative', 'Memastikan alternatif terpilih benar-benar dijalankan', '[hal. 208]'],
+        ['6. Evaluation and feedback', 'Mengumpulkan informasi apakah keputusan dijalankan dengan baik dan efektif mencapai tujuannya', '[hal. 208–209]'],
+      ],
+    },
+    { kind: 'h3', text: '7a. Recognition of Decision Requirement' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Istilah', 'Arti', 'Sumber'],
+      rows: [
+        ['**Problem**', 'Pencapaian organisasi **di bawah** tujuan yang ditetapkan; ada aspek kinerja yang tidak memuaskan', '[hal. 205–206]'],
+        ['**Opportunity**', 'Manajer melihat potensi pencapaian yang **melampaui** tujuan saat ini', '[hal. 206]'],
+      ],
+    },
+    { kind: 'p', text: 'Menyadari problem atau opportunity menuntut pemantauan lingkungan internal dan eksternal. Sumbernya bisa formal (laporan keuangan dan kinerja berkala) atau informal (berbicara dengan manajer lain, meminta pendapat dan saran). Contoh: setelah lebih dari setahun berusaha menaikkan penjualan dengan menurunkan harga, manajer **Procter & Gamble** melihat dari data bahwa strategi itu tidak berhasil, lalu beralih menaikkan harga beberapa merek terbesarnya [hal. 206].' },
+    { kind: 'h3', text: '7b. Diagnosis and Analysis of Causes' },
+    { kind: 'p', text: '**Diagnosis** = langkah ketika manajer menganalisis faktor penyebab yang mendasari situasi keputusan. Sering kali **masalah sebenarnya tersembunyi di balik masalah yang dikira manajer**; melihat dari berbagai sudut membantu menemukannya, dan kadang memunculkan peluang yang tidak disadari [hal. 206].' },
+    { kind: 'p', text: 'Charles Kepner dan Benjamin Tregoe menyarankan delapan pertanyaan: apa keadaan tidak seimbang yang terjadi; kapan terjadi; di mana; bagaimana; kepada siapa; seberapa mendesak; bagaimana keterkaitan antarperistiwa; dan hasil apa berasal dari kegiatan mana [hal. 206].' },
+    { kind: 'p', text: '**5 Whys** = teknik bertanya "Why?" berulang kali untuk menemukan akar masalah. Jawaban pertama biasanya dangkal; setiap "why" berikutnya menggali lebih dalam. Charles Duhigg memakai teknik ini untuk masalah keluarganya yang jarang makan malam bersama; akar penyebabnya ternyata anak-anak terlalu lama berpakaian di pagi hari, sehingga semua jadwal hari itu mundur. Solusinya: anak memilih pakaian malam sebelumnya [hal. 206].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (2/3)',
+      text: 'Ketika auditor internal menemukan selisih antara saldo kas di buku dan kas fisik, temuan itu baru gejala. Auditor dapat bertanya "mengapa" berulang kali, misalnya mengapa ada selisih, mengapa transaksi tidak tercatat, dan mengapa bukti tidak diserahkan tepat waktu, sampai menemukan akar penyebab seperti prosedur penyerahan bukti yang tidak jelas. Ini penerapan **5 Whys** untuk **diagnosis** [hal. 206]; perbaikannya ditujukan ke akar penyebab, bukan hanya ke selisihnya.',
+    },
+    { kind: 'h3', text: '7c. Development of Alternatives' },
+    { kind: 'p', text: 'Untuk programmed decision, alternatif mudah ditemukan karena biasanya sudah ada di aturan dan prosedur. Nonprogrammed decision menuntut tindakan baru. Dalam ketidakpastian tinggi, manajer mungkin hanya menyusun satu atau dua solusi yang satisficing, padahal **membatasi pencarian alternatif adalah penyebab utama kegagalan keputusan** [hal. 207].' },
+    {
+      kind: 'ul',
+      items: [
+        '**Riset Paul Nutt:** orang yang hanya mempertimbangkan satu alternatif menilai keputusannya gagal lebih dari 50% kasus, sedangkan keputusan yang mempertimbangkan setidaknya dua alternatif dinilai berhasil dua pertiga kasus. Walau tampaknya hanya ada satu alternatif, carilah setidaknya satu lagi [hal. 207].',
+        'Alternatif adalah alat untuk memperkecil jarak antara kinerja saat ini dan kinerja yang diinginkan. Manajer yang cerdas menggali pengetahuan orang di seluruh organisasi, bahkan di luar organisasi. Contoh: **Goldcorp** tidak bisa menemukan lokasi bijih berkadar tinggi di tambang Red Lake, lalu mengadakan Goldcorp Challenge: data topografi dibuka online dengan hadiah \\$575.000. Lebih dari 1.400 ahli dari 50 negara mengusulkan alternatif, dan dua tim di Australia menemukan lokasi yang menjadikan Red Lake salah satu tambang emas terkaya [hal. 207]. *Data per buku (2023): Goldcorp kemudian merger dengan Newmont.*',
+      ],
+    },
+    { kind: 'h3', text: '7d. Selection of the Desired Alternative' },
+    { kind: 'p', text: 'Alternatif terbaik adalah yang **paling cocok dengan tujuan dan nilai organisasi** dan mencapai hasil yang diinginkan dengan **sumber daya paling sedikit**. Manajer ingin memilih alternatif dengan risiko dan ketidakpastian paling kecil; karena sebagian besar nonprogrammed decision berisiko, manajer menilai peluang berhasil tiap alternatif, antara lain dengan intuisi dan pengalaman [hal. 207].' },
+    { kind: 'p', text: '**Risk propensity** = kesediaan menanggung risiko demi peluang memperoleh imbalan yang lebih besar. Contoh: Facebook tidak akan mencapai lebih dari dua miliar pengguna tanpa pola pikir "move fast, break things" Mark Zuckerberg. Facebook terus bereksperimen dengan pengguna nyata, bahkan karyawan yang belum menyelesaikan pelatihan enam minggunya didorong bekerja di situs langsung; akibatnya situs sesekali mati, tetapi menurut Zuckerberg "the faster we learn, the better" [hal. 207]. *Data per buku (2023).*' },
+    { kind: 'p', text: '**Exhibit 6.4: Decision Alternatives with Different Levels of Risk** [hal. 208]' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Situasi', 'Alternatif 1', 'Alternatif 2'],
+      rows: [
+        ['Pelatih tim football kampus di detik terakhir pertandingan melawan rival utama', 'Strategi dengan peluang 95% menghasilkan skor seri', 'Strategi dengan peluang 30% menang, tetapi pasti kalah bila gagal'],
+        ['Presiden perusahaan manufaktur Kanada memutuskan pabrik baru', 'Pabrik di Kanada dengan peluang 90% memberi imbal hasil moderat', 'Pabrik di negara dengan sejarah politik tidak stabil: peluang gagal 40%, tetapi imbal hasil sangat besar bila berhasil'],
+        ['Mahasiswa tingkat akhir memilih langkah berikutnya', 'Sekolah kedokteran dan menjadi dokter, dengan peluang sukses 80%', 'Mengejar mimpi menjadi aktor, dengan peluang sukses sekitar 20%'],
+      ],
+    },
+    { kind: 'p', text: 'Orang dengan risk propensity **rendah** cenderung memilih imbal hasil moderat yang pasti (seri, pabrik domestik, dokter); pengambil risiko memilih kemenangan, pabrik di luar negeri, atau karier akting [hal. 207].' },
+    { kind: 'h3', text: '7e. Implementation of the Chosen Alternative' },
+    { kind: 'p', text: '**Implementation** = memakai kemampuan manajerial, administratif, dan persuasif untuk memastikan alternatif terpilih benar-benar dijalankan. Keberhasilan akhir bergantung pada apakah alternatif itu bisa diterjemahkan menjadi tindakan. Kadang alternatif tidak pernah terwujud karena manajer kekurangan sumber daya atau energi, atau **gagal melibatkan orang dan memperoleh buy-in**. Implementasi yang berhasil bisa menuntut diskusi, membangun kepercayaan, dan keterlibatan aktif orang yang terdampak; komunikasi, motivasi, dan kepemimpinan diperlukan. Bila karyawan melihat manajer menindaklanjuti keputusan, mereka lebih berkomitmen [hal. 208].' },
+    {
+      kind: 'callout',
+      variant: 'warning',
+      title: 'Perhatian',
+      text: 'Buku menulis langkah ini "similar to the idea of strategy execution described **later in this chapter**" [hal. 208]. Chapter 6 tidak membahas strategy execution; konsep formulasi dan eksekusi strategi ada di **Chapter 5** (TM05 §8) [hal. 171]. Jangan mencari pembahasannya di Chapter 6.',
+    },
+    { kind: 'h3', text: '7f. Evaluation and Feedback' },
+    { kind: 'p', text: 'Pada tahap evaluasi, pengambil keputusan mengumpulkan informasi tentang seberapa baik keputusan dijalankan dan apakah efektif mencapai tujuannya. Pendekatan "move fast, break things" berhasil di Facebook karena **feedback yang cepat**; feedback yang segera dan jelas terbukti membantu orang memperbaiki diri, dari lemparan bebas basket sampai bedah. **Keputusan adalah proses berkelanjutan** yang tidak selesai saat manajer atau dewan memutuskan ya atau tidak. Feedback dapat memicu siklus keputusan baru; banyak masalah besar diselesaikan dengan mencoba beberapa alternatif berurutan, masing-masing memberi perbaikan kecil [hal. 208–209].' },
+    { kind: 'p', text: '**Langkah keputusan dalam satu contoh: Rose Acre Farms** (Recipe for Success) [hal. 209]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Yang terjadi menurut buku'],
+      rows: [
+        ['Recognition', 'Seperti peternak lain, CEO Marcus Rust harus menjawab masalah: beragam aturan negara bagian tentang kesejahteraan ayam petelur dan kritik aktivis hak hewan. Perusahaan seperti Starbucks, Nestlé, Burger King, dan McDonald\'s menghentikan pemakaian telur dari ayam berkandang, telur cage-free lebih mahal, dan pasarnya tumbuh'],
+        ['Diagnosis', 'Buku tidak menguraikan langkah ini untuk contoh Rose Acre'],
+        ['Alternatives', 'Dua alternatif utama: membangun kandang yang lebih luas, atau berinvestasi pada fasilitas **cage-free** yang jauh lebih mahal'],
+        ['Selection', 'Rust dan manajernya bertaruh bahwa masa depan peternakan telur ada pada strategi cage-free; setiap fasilitas yang dibangun atau direnovasi tidak memakai kandang'],
+        ['Implementation', 'Di fasilitas baru di Frankfort, Indiana, 170.000 ayam bergerak bebas di kandang terbuka sepanjang 550 kaki'],
+        ['Evaluation and feedback', 'Berlangsung terus dan sudah memunculkan kebutuhan beberapa perubahan desain'],
+      ],
+    },
+    { kind: 'p', text: 'Keputusan strategis selalu mengandung risiko, tetapi feedback dan tindak lanjut membantu perusahaan tetap di jalur; saat keputusan tidak berjalan baik, manajer bisa belajar dari kesalahan dan kadang mengubah masalah menjadi peluang [hal. 209].' },
+    // ---------------------------------------------------------------- §8
+    { kind: 'h2', text: '8. Personal Decision Framework' },
+    { kind: 'p', text: 'Keputusan dipengaruhi banyak faktor yang sudah dibahas: programmed atau nonprogrammed, tingkat ketidakpastian, model klasik, administratif, atau politik, serta enam langkah. Namun manajer tidak memutuskan dengan cara yang sama. Perbedaan ini dijelaskan oleh **personal decision styles** = perbedaan antarorang dalam cara menilai masalah, menyusun alternatif, dan memilih (Remember This: "perceive problems and make choices") [hal. 210, 212–213].' },
+    { kind: 'p', text: '**Exhibit 6.5: Personal Decision Framework** [hal. 212]' },
+    { kind: 'p', text: '**Situation + Personal Decision Style → Decision Choice**' },
+    {
+      kind: 'table',
+      headers: ['Unsur', 'Isi (Exh. 6.5)'],
+      rows: [
+        ['**Situation**', 'Programmed/nonprogrammed; classical, administrative, political; decision steps'],
+        ['**Personal Decision Style**', 'Directive; Analytical; Conceptual; Behavioral'],
+        ['**Decision Choice**', 'Best solution to problem'],
+      ],
+    },
+    { kind: 'p', text: 'Sumber tabel: [hal. 212]; exhibit berbasis Rowe, Boulgaides, dan McGrath (1984) serta Rowe dan Mason (1987).' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Gaya', 'Ciri menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Directive**', 'Menyukai solusi **sederhana dan jelas**; memutuskan **cepat** karena tidak suka banyak informasi; mungkin hanya mempertimbangkan **satu atau dua alternatif**; efisien dan rasional; mengandalkan aturan atau prosedur yang ada', '**Evan Spiegel** (Snapchat) memutuskan mendesain ulang Snapchat setelah bertemu manajer aplikasi agregator berita populer di Tiongkok, lalu memerintahkan timnya menjalankannya; ia jarang berkonsultasi dan tidak suka banyak data sebelum memutuskan', '[hal. 212]'],
+        ['**Analytical**', 'Menyukai solusi **kompleks** berdasarkan **data sebanyak mungkin**; menimbang alternatif dengan cermat; memakai data objektif dan rasional dari sistem pengendalian manajemen; mencari keputusan terbaik dari informasi yang ada', '**Dawn M. Zier**, mantan CEO Nutrisystem, berlatar teknik elektro dan ilmu komputer, suka "break down a complex issue and then build it back up" dan menginginkan informasi berbasis fakta', '[hal. 212]'],
+        ['**Conceptual**', 'Juga mempertimbangkan informasi luas, tetapi **lebih berorientasi sosial** daripada analytical; suka membicarakan masalah dan alternatif dengan orang lain; mempertimbangkan banyak alternatif luas; memakai informasi dari orang dan sistem; memecahkan masalah secara **kreatif**', '**Ed Stack**, CEO Dick\'s Sporting Goods, tidak memutuskan dengan ringan penghentian permanen penjualan senapan serbu (*assault rifles*) di 850 tokonya dan larangan menjual senjata api kepada orang di bawah 21 tahun. Ia menyebutnya "long and evolutionary process", mengumpulkan pandangan manajer di seluruh perusahaan, dan melibatkan seluruh tim manajemen', '[hal. 213]'],
+        ['**Behavioral**', 'Punya **kepedulian mendalam pada orang** sebagai individu; memperhatikan pengembangan pribadi orang lain; suka berbicara satu per satu, memahami perasaan mereka tentang masalah, dan menimbang dampak keputusan pada mereka', '**Suzanne Wecker**, presiden Skyline Furniture, dan ayahnya, CEO Ted Wecker, menutup pabrik keluarga mereka dekat Chicago saat ekonomi AS terhenti karena COVID-19, tetapi tetap menggaji 300 karyawan selama dua minggu walaupun mereka sendiri berhenti menerima gaji', '[hal. 213]'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Banyak manajer punya gaya dominan, tetapi sering memakai beberapa gaya atau gabungannya. Manajer bisa memakai gaya directive untuk memilih pemasok ATK, lalu gaya conceptual untuk konflik antardepartemen atau produk baru. **Manajer paling efektif mampu berpindah gaya** sesuai situasi, dan menyadari gaya dominannya membantu menghindari kesalahan kritis [hal. 213].',
+    },
+    // ---------------------------------------------------------------- §9
+    { kind: 'h2', text: '9. Mengapa Manajer Membuat Keputusan Buruk? (di luar RPP)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Subbab ini tidak disebut di bahan kajian RPP. Buku menempatkannya tepat sebelum Innovative Decision Making karena teknik di §10–§11 dirancang untuk menangkal bias berikut [hal. 217]. Karena itu bagian ini dimuat utuh.',
+    },
+    { kind: 'p', text: 'Manajer menghadapi tuntutan keputusan tanpa henti, dan manajer terbaik pun akan salah. Riset menunjukkan banyak keputusan buruk berasal dari **kesalahan penilaian** akibat kapasitas pikiran manusia yang terbatas dan **bias alami** yang tanpa sadar muncul saat memutuskan. Menyadari enam bias berikut membantu manajer memilih dengan lebih baik [hal. 213–214].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Bias', 'Arti menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**1. Terpengaruh kesan awal** (*anchoring bias*)', 'Pikiran memberi bobot berlebihan pada informasi pertama; kesan awal, statistik, dan estimasi menjadi **jangkar** bagi pikiran dan penilaian berikutnya', 'Studi tim NBA: urutan draft paling menentukan menit bermain pemain, melebihi kinerja nyata. Manajer sering memakai penjualan tahun lalu untuk memperkirakan penjualan tahun depan; bobot berlebihan pada masa lalu bisa menghasilkan ramalan buruk', '[hal. 214]'],
+        ['**2. Takut gagal atau rugi** (*loss aversion*)', 'Terjebak membuat pilihan yang membenarkan keputusan masa lalu walau tidak lagi valid, misalnya terus mengucurkan dana ke proyek yang gagal. Salah satu penyebabnya **loss aversion**: menurut riset Daniel Kahneman dan lainnya, orang bereaksi **lebih kuat terhadap potensi rugi** daripada potensi untung yang setara', 'Studi pengembangan produk: manajer yang memulai sebuah produk baru jauh lebih mungkin terus mendanainya walau ada bukti produk itu gagal', '[hal. 214]'],
+        ['**3. Melihat yang ingin dilihat** (*confirmation bias*)', 'Terlalu menghargai bukti yang sejalan dengan keyakinan atau pandangan yang disukai, dan mengabaikan bukti yang bertentangan; memengaruhi di mana manajer mencari informasi dan cara menafsirkannya', 'Menurut buku, manajer Tokyo Electric Power Company (Tepco) dituduh terlalu lama menunda keputusan memakai air laut untuk mendinginkan reaktor Fukushima Daiichi setelah gempa dan tsunami 2011, karena air laut akan merusak reaktor. Mereka memberi bobot lebih pada informasi yang mendukung penundaan; baru setelah terjadi ledakan di pembangkit, manajer yakin air laut diperlukan', '[hal. 214]'],
+        ['**4. Mempertahankan status quo**', 'Memutuskan berdasarkan apa yang berhasil di masa lalu dan tidak menjelajahi opsi baru, informasi tambahan, atau teknologi baru', 'CEO Coca-Cola James Quincey mendorong manajernya mengambil lebih banyak risiko ("If we\'re not making mistakes, we\'re not trying hard enough") agar menjadi "total beverage company"; dalam satu tahun perusahaan meluncurkan sekitar 500 minuman baru', '[hal. 214]'],
+        ['**5. Terpengaruh emosi**', 'Keputusan saat marah, kesal, atau sangat gembira berbahaya; keputusan buruk karena emosi kuat cenderung berulang karena menjadi "cetak biru" perilaku', 'Trader berkinerja tinggi di bank investasi London lebih mampu mengatur emosinya. Dokter yang menyukai pasien cenderung tidak meresepkan prosedur yang menyakitkan; yang tidak menyukai pasien bisa menyalahkan pasien dan memberi perawatan lebih sedikit. Manajer memutuskan lebih baik bila emosi dikeluarkan dari proses sejauh mungkin', '[hal. 214–215]'],
+        ['**6. Terlalu percaya diri** (*overconfidence*)', 'Kebanyakan orang melebih-lebihkan kemampuannya meramal hasil yang tidak pasti; sangat berbahaya untuk keputusan berisiko', 'Manajer jaringan fast-food yakin turnover rendah mendorong kepuasan pelanggan dan laba, tetapi data toko menunjukkan sebagian lokasi dengan turnover tinggi justru sangat menguntungkan', '[hal. 215]'],
+      ],
+    },
+    { kind: 'p', text: '**Half-Baked Management: JPMorgan** [hal. 215]: kantor investasi utama JPMorgan Chase di London, yang dibentuk untuk melindungi bank dari volatilitas transaksi keuangan global, menjadi pusat laba dan terkenal hebat dalam trading. Sebagian manajernya menjadi terlalu percaya diri pada kemampuannya membaca dan mengelola risiko, lalu mengambil taruhan makin besar dengan strategi derivatif yang rumit. Strategi itu gagal dan menimbulkan kerugian hampir \\$6 miliar, beberapa eksekutif kunci dipecat, reputasi bank rusak, dan penyidik federal menyelidiki dugaan kecurangan pencatatan transaksi. Remember This menyebutnya "London Whale incident" sebagai contoh bahaya overconfidence dalam keputusan berisiko [hal. 215–216].' },
+    // ---------------------------------------------------------------- §10
+    { kind: 'h2', text: '10. Innovative Decision Making (1): Brainstorming, Bukti, Debat, dan Groupthink' },
+    { kind: 'p', text: 'Kemampuan membuat keputusan yang **cepat, didukung luas, dan bermutu tinggi** secara rutin adalah keterampilan kritis di organisasi yang bergerak cepat. Sulit bagi manajer melihat biasnya sendiri, tetapi mereka bisa membangun **mekanisme di tingkat organisasi** untuk menetralkan atau mengurangi kesalahan akibat bias [hal. 217]. Buku menyebut enam teknik; empat pertama dibahas di sini, dua terakhir di §11.' },
+    { kind: 'h3', text: '10a. Start with Brainstorming' },
+    { kind: 'p', text: '**Brainstorming** = kelompok tatap muka yang interaktif mengusulkan secara spontan **sebanyak mungkin ide** untuk memecahkan masalah. Teknik ini sangat efektif untuk cepat menghasilkan banyak alternatif, tetapi punya kelemahan [hal. 217]:' },
+    {
+      kind: 'ul',
+      items: [
+        'orang dalam kelompok sering ingin menyesuaikan diri dengan pendapat orang lain;',
+        'sebagian ingin menyenangkan atasan atau mengesankan rekan;',
+        'banyak orang kreatif punya hambatan sosial yang membatasi partisipasinya;',
+        'satu studi menemukan empat orang yang brainstorming **sendiri-sendiri** menghasilkan **dua kali** lebih banyak ide daripada kelompok empat orang yang brainstorming bersama.',
+      ],
+    },
+    { kind: 'p', text: '**Electronic brainstorming** = kelompok interaktif melalui **jaringan komputer**: satu anggota menulis ide, anggota lain membaca dan menambah. Studi menunjukkan cara ini menghasilkan sekitar 40% lebih banyak ide daripada individu yang brainstorming sendiri, dan 25–200% lebih banyak daripada kelompok brainstorming biasa, tergantung ukuran kelompok. Karena anonim, hambatan sosial berkurang; ide bisa langsung ditulis; dan anggota bisa berasal dari seluruh dunia sehingga alternatif makin beragam [hal. 217].' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Concept Connection di buku menyebut Six Thinking Hats, Lateral Thinking, Nominal Group Technique, dan Ideation sebagai alternatif brainstorming, tetapi **tidak menjelaskan** isinya [hal. 217]. Jangan mengutip definisinya dari sumber lain seolah berasal dari buku ini.',
+    },
+    { kind: 'h3', text: '10b. Use Hard Evidence' },
+    { kind: 'p', text: '**Evidence-based decision making** = komitmen membuat keputusan yang lebih informatif dan cerdas berdasarkan **fakta dan bukti terbaik yang tersedia**; waspada terhadap potensi bias dan memeriksa bukti dengan cermat. Bukti keras membantu mengeluarkan emosi dari proses keputusan, mencegah asumsi keliru, dan membatasi **confirmation bias** [hal. 217].' },
+    {
+      kind: 'ul',
+      items: [
+        'Dokter di Partners Health Care System memakai sistem pendukung keputusan klinis berbasis data tentang apa yang berhasil dan tidak, agar emosi tidak mengaburkan penilaian perawatan pasien [hal. 217].',
+        'Evidence-based **tidak hanya berarti data dan angka**: bukti yang baik berasal dari keahlian profesional, kepentingan stakeholder, riset akademik dan ilmiah, serta data organisasi [hal. 218].',
+        'Setelah serangkaian kesalahan fatal ketika pilot hanya mengandalkan pengalaman pribadi, banyak maskapai menerapkan **Crew Resource Management (CRM)**: setiap awak mengadakan sesi singkat untuk saling memperbarui status penerbangan, lingkungan, dan masalah keselamatan, dan pilot dilatih menindaklanjuti isu dari awak mana pun [hal. 218].',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'key',
+      title: 'Penting',
+      text: 'Buku menulis manajer berbasis bukti bersikap cermat "rather than carelessly relying on assumptions, past experience, rules of thumb, or intuition" [hal. 218]. Kata kuncinya **carelessly**: buku tetap menyatakan intuisi tidak irasional dan manajer efektif memadukan analisis dengan intuisi (quasirationality) [hal. 202–203].',
+    },
+    { kind: 'h3', text: '10c. Engage in Rigorous Debate' },
+    { kind: 'p', text: 'Manajer yang baik menyadari **konflik konstruktif** dari pandangan yang berbeda dapat memfokuskan masalah, memperjelas ide, merangsang pemikiran kreatif, **membatasi peran bias**, memperluas pemahaman isu dan alternatif, serta meningkatkan mutu keputusan [hal. 218].' },
+    {
+      kind: 'ul',
+      items: [
+        '**Netflix:** setelah keputusan buruk menaikkan harga sekaligus memecah Netflix menjadi dua bisnis terpisah, CEO Reed Hastings mengakui ia "slid into arrogance based upon past success". Walau masih sering memakai gaya directive, ia kini melibatkan lebih banyak orang untuk keputusan nonprogrammed yang sangat penting [hal. 218].',
+        '**Keragaman kelompok** (usia, gender, ras dan etnis, bidang keahlian, tingkat hierarki, pengalaman) merangsang debat. Dalam sebuah studi, juri enam orang yang beragam ras mempertimbangkan lebih banyak ide, berunding lebih lama, dan lebih cermat daripada juri yang semuanya kulit putih; riset pada kelompok mahasiswa menunjukkan efek serupa [hal. 218].',
+        '**Devil\'s advocate** = orang yang ditugasi **menantang asumsi dan pernyataan** kelompok, sehingga kelompok memikirkan ulang pendekatannya dan tidak terburu-buru menyimpulkan. Catholic Health Initiatives menunjuk devil\'s advocate di rapat manajemen senior; pendiri MicroAge, Jeffrey McKeever, kadang berganti posisi di tengah debat agar eksekutif lain tidak sekadar mengikuti pendapatnya [hal. 218].',
+      ],
+    },
+    { kind: 'h3', text: '10d. Avoid Groupthink' },
+    { kind: 'p', text: 'Sedikit perbedaan pendapat dan konflik **lebih sehat** daripada persetujuan buta. Tekanan konformitas ada di hampir semua kelompok, terutama bila anggotanya saling menyukai [hal. 218].' },
+    { kind: 'p', text: '**Groupthink** = kecenderungan orang dalam kelompok **menekan pendapat yang berlawanan**. Keinginan menjaga harmoni mengalahkan kepedulian pada mutu keputusan; anggota lebih mementingkan kesatuan daripada menguji masalah dan alternatif secara realistis, menyensor pendapat sendiri, dan enggan mengkritik pendapat orang lain [hal. 218].' },
+    { kind: 'p', text: '**Abilene paradox** (istilah Jerry Harvey): keluarga besar Harvey duduk kepanasan di beranda saat suhu 104 derajat, sekitar 50 mil dari Abilene, Texas. Seseorang mengusulkan makan di kafe di Abilene, dan semua ikut walau mobilnya tanpa AC. Semua pulang lelah dan kesal; belakangan masing-masing mengaku tidak ingin pergi dan hanya ikut karena mengira yang lain ingin [hal. 218].' },
+    { kind: 'p', text: 'Karena groupthink sangat alami dan meluas, sebagian ahli menyarankan **expert decision coach** yang memberi bantuan langsung dan feedback agar orang berlatih perilaku baru; **devil\'s advocate** juga membantu menghindari groupthink [hal. 219].' },
+    // ---------------------------------------------------------------- §11
+    { kind: 'h2', text: '11. Innovative Decision Making (2): Tahu Kapan Berhenti, Premortem, dan Postmortem' },
+    { kind: 'h3', text: '11a. Know When to Bail' },
+    { kind: 'p', text: 'Di lingkungan yang bergerak cepat, manajer yang baik mendorong pengambilan risiko dan belajar dari kesalahan, tetapi juga **tidak ragu menghentikan** sesuatu yang tidak berhasil. Riset menemukan manajer dan organisasi sering terus menanamkan waktu dan uang pada solusi walau bukti kuat menunjukkan solusi itu tidak tepat. Kecenderungan ini berasal dari **loss aversion** (§9) dan disebut **escalating commitment** [hal. 219].' },
+    {
+      kind: 'ul',
+      items: [
+        'Manajer bisa menghalangi atau memutarbalikkan informasi negatif karena tidak mau bertanggung jawab atas keputusan buruk, atau menolak menerima bahwa solusinya salah. Studi di Eropa menemukan manajer yang sangat sukses pun sering melewatkan atau mengabaikan tanda peringatan karena sudah berkomitmen dan yakin ketekunan akan membuahkan hasil [hal. 219].',
+        '**HMV**, perusahaan musik Inggris, bertahan dengan strategi membuka toko tempat pelanggan menjelajah koleksi besar dan mendengarkan lagu sebelum membeli, walau analis, penasihat, dan sebagian pelanggan memperingatkan tren jangka panjang ke pembelian online dan musik unduhan [hal. 219].',
+        '**Nokia**, yang pernah memimpin pasar ponsel global, merosot antara lain karena manajernya terus berinvestasi pada sistem operasi miliknya lama setelah Android dan iOS menguasai pasar [hal. 219].',
+      ],
+    },
+    { kind: 'p', text: 'Obatnya: menjaga **objektivitas** dan kesediaan untuk berhenti bila sesuatu tidak berhasil [hal. 219].' },
+    { kind: 'h3', text: '11b. Do a Premortem and Postmortem' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teknik', 'Arti menurut buku', 'Contoh dari buku', 'Sumber'],
+      rows: [
+        ['**Decision postmortem / after-action review**', 'Prosedur disiplin, diadopsi dari Angkatan Darat AS, ketika manajer rutin meluangkan waktu meninjau **hasil keputusan** untuk belajar. Setelah keputusan penting dijalankan, manajer bertemu menilai apa yang berhasil, apa yang tidak, dan cara memperbaikinya', '**Lenovo**: pendiri Liu Chuanzhi menekankan *fu pan* ("replaying the chessboard"), meninjau setiap langkah untuk memperbaiki langkah berikutnya, dari insiden kecil harian sampai keputusan besar', '[hal. 219]'],
+        ['**Premortem**', 'Usulan psikolog Gary Klein. Saat tim hampir mencapai keputusan penting tetapi **belum resmi berkomitmen**, anggota sengaja membayangkan keputusan itu sudah dijalankan dan **gagal total**, lalu membayangkan penyebab kegagalannya', 'Sebuah perusahaan teknologi yang merancang sistem advanced-analytics untuk program penerbangan meminta setiap anggota tim menuliskan satu alasan spesifik mengapa sistemnya gagal. Setelah tiga putaran, tim menemukan isu terbesar, seperti memperoleh sumber daya yang cukup untuk implementasi, dan menyusun rencana yang lebih baik', '[hal. 219]'],
+      ],
+    },
+    { kind: 'p', text: 'Premortem membantu mengatasi **overconfidence, confirmation bias, dan groupthink**. Kutipan samping dari CFO Lenovo, Wong Wai Ming, merangkum alasannya: "The most dangerous thing is to be successful. You then think every decision is the right one." [hal. 219]' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Contoh di luar buku (3/3)',
+      text: 'Panitia acara kampus, misalnya seminar atau lomba, biasanya mengadakan rapat evaluasi setelah acara selesai. Panitia membahas apa yang berjalan baik, apa yang tidak, dan apa yang perlu diperbaiki, lalu mencatatnya untuk panitia berikutnya. Dalam bahasa buku, ini **after-action review** atau **decision postmortem**: meninjau hasil keputusan secara disiplin untuk belajar [hal. 219].',
+    },
+    { kind: 'p', text: '**Bias dan teknik penangkalnya** (tabel ini hanya merangkum kaitan yang dinyatakan buku):' },
+    {
+      kind: 'table',
+      headers: ['Bias atau masalah', 'Teknik penangkal', 'Sumber'],
+      rows: [
+        ['Konformitas dan hambatan sosial dalam brainstorming tatap muka', 'Electronic brainstorming (anonim)', '[hal. 217]'],
+        ['Emosi, asumsi keliru, confirmation bias', 'Use hard evidence', '[hal. 217]'],
+        ['Bias secara umum', 'Rigorous debate (konflik konstruktif membatasi peran bias)', '[hal. 218]'],
+        ['Kesimpulan prematur, groupthink', 'Devil\'s advocate; expert decision coach', '[hal. 218–219]'],
+        ['Loss aversion yang memicu escalating commitment', 'Know when to bail (objektivitas)', '[hal. 219]'],
+        ['Overconfidence, confirmation bias, groupthink', 'Premortem', '[hal. 219]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §12
+    { kind: 'h2', text: '12. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'p', text: '**Simpul pusat:** MANAGERIAL DECISION MAKING' },
+    {
+      kind: 'ul',
+      items: [
+        '**1. KEPUTUSAN DAN JENISNYA**\n- Decision (pilihan) · Decision making (proses)\n- Programmed (aturan, berulang) · Nonprogrammed (unik, tidak terstruktur)',
+        '**2. KONDISI KEPUTUSAN (Exh. 6.1)**\n- Certainty → Risk → Uncertainty → Ambiguity (kemungkinan gagal naik)\n- Wicked decision problem',
+        '**3. MODEL KEPUTUSAN (Exh. 6.2)**\n- Classical: normative; 4 asumsi; AI dan big data\n- Administrative: descriptive; bounded rationality; satisficing; intuition; quasirationality\n- Political: coalition; coalition building; bargaining',
+        '**4. ENAM LANGKAH (Exh. 6.3)**\n- Recognition (problem · opportunity) → Diagnosis (Kepner–Tregoe; 5 Whys)\n- Alternatives (Nutt) → Selection (risk propensity, Exh. 6.4)\n- Implementation (buy-in) → Evaluation and feedback',
+        '**5. PERSONAL DECISION FRAMEWORK (Exh. 6.5)**\n- Directive · Analytical · Conceptual · Behavioral; berpindah gaya',
+        '**6. [di luar RPP] BIAS KEPUTUSAN**\n- Anchoring · Loss aversion · Confirmation · Status quo · Emosi · Overconfidence',
+        '**7. INNOVATIVE DECISION MAKING**\n- Brainstorming (tatap muka · elektronik)\n- Hard evidence · Rigorous debate (devil\'s advocate) · Avoid groupthink (Abilene paradox)\n- Know when to bail (escalating commitment) · Premortem · Postmortem (after-action review, fu pan)',
+      ],
+    },
+    { kind: 'p', text: '**Garis silang (hubungan antar cabang):**' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari', 'Ke', 'Hubungannya', 'Sumber'],
+      rows: [
+        ['Nonprogrammed decisions', 'Uncertainty dan ambiguity', 'Banyak situasi mengandung ketidakpastian dan menuntut nonprogrammed decisions; programmed decisions bisa dibuat dalam certainty', '[hal. 196]'],
+        ['Classical model', 'Programmed decisions dan certainty', 'Model klasik berguna untuk programmed decisions dan certainty atau risiko rendah', '[hal. 200]'],
+        ['Bounded rationality', 'Satisficing', 'Karena waktu dan kemampuan terbatas, manajer harus satisficing', '[hal. 201]'],
+        ['Satisficing (satu atau dua solusi)', 'Langkah 3 (alternatives)', 'Membatasi pencarian alternatif adalah penyebab utama kegagalan keputusan', '[hal. 207]'],
+        ['Directive style', 'Riset Nutt', 'Gaya directive mungkin hanya mempertimbangkan satu atau dua alternatif; satu alternatif sering berujung gagal', '[hal. 207, 212]'],
+        ['Coalition building', 'Langkah 5 (implementation)', 'Coalition building menaikkan komitmen; implementasi butuh buy-in dari orang yang terdampak', '[hal. 203, 208]'],
+        ['Langkah 3 (alternatives)', 'Brainstorming', 'Brainstorming cepat menghasilkan banyak alternatif', '[hal. 207, 217]'],
+        ['Confirmation bias', 'Hard evidence', 'Bukti keras membatasi confirmation bias', '[hal. 214, 217]'],
+        ['Loss aversion', 'Escalating commitment → know when to bail', 'Escalating commitment berasal dari loss aversion; obatnya objektivitas dan kesediaan berhenti', '[hal. 214, 219]'],
+        ['Overconfidence, confirmation bias, groupthink', 'Premortem', 'Premortem membantu mengatasi ketiganya', '[hal. 219]'],
+        ['Langkah 6 (evaluation and feedback)', 'Postmortem', 'Feedback memicu siklus baru; after-action review memberi feedback cepat untuk belajar', '[hal. 209, 219]'],
+        ['Langkah 5 (implementation)', 'TM05 (strategy execution)', 'Buku menyamakan implementasi dengan strategy execution, yang dibahas di Chapter 5', '[hal. 208; Ch. 5 hal. 171]'],
+      ],
+    },
+    { kind: 'p', text: '**Kata kunci per cabang:** Keputusan: *choice vs process, decision rules, unique & unstructured* · Kondisi: *information availability, possibility of failure, probability, assumptions, wicked problem* · Model: *normative vs descriptive, maximizing vs satisficing, bounded rationality, intuition, quasirationality, coalition, bargaining* · Langkah: *problem vs opportunity, root cause, 5 Whys, at least two alternatives, risk propensity, buy-in, feedback loop* · Gaya: *directive, analytical, conceptual, behavioral, style shifting* · Bias: *anchor, loss aversion, confirmation, status quo, emotions, overconfidence* · Inovatif: *brainstorming, evidence, devil\'s advocate, groupthink, Abilene paradox, escalating commitment, premortem, after-action review*' },
+    // ---------------------------------------------------------------- §13
+    { kind: 'h2', text: '13. Contoh Penerapan' },
+    { kind: 'p', text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):' },
+    {
+      kind: 'table',
+      headers: ['Konsep', 'Contoh dari buku', 'Hal.'],
+      rows: [
+        ['Programmed decision dengan AI', 'Royal Dutch Shell: algoritma menugaskan karyawan ke proyek', '195'],
+        ['Nonprogrammed decision', 'Airbus A380: asumsi pasar berubah', '195'],
+        ['Risk', 'McDonald\'s, Burger King, KFC memilih lokasi restoran', '196–197'],
+        ['Wicked decision problem', 'Twitter: mendefinisikan "dehumanizing speech"', '198'],
+        ['Classical model dan data', 'UPS ORION: optimasi rute pengiriman', '200'],
+        ['Satisficing', 'Liz Claiborne: lisensi eksklusif di JC Penney', '202'],
+        ['Political model', 'Los Angeles Rams: merekrut pelatih kepala', '203'],
+        ['Diagnosis (5 Whys)', 'Keluarga Charles Duhigg: makan malam bersama', '206'],
+        ['Development of alternatives', 'Goldcorp Challenge: ahli dari 50 negara', '207'],
+        ['Enam langkah utuh', 'Rose Acre Farms: fasilitas cage-free', '209'],
+        ['Directive style', 'Evan Spiegel: desain ulang Snapchat', '212'],
+        ['Escalating commitment', 'HMV: bertahan dengan toko musik fisik', '219'],
+      ],
+    },
+    { kind: 'p', text: 'Contoh lain: Boeing 737 MAX (§1), PepsiCo Sabritas (§2), Disney *Oz* (§3), Bezos dan NYPD (§4), Mulan Dumplings dan Fangio (§5), Hallmark Channel (§6), P&G dan Facebook (§7), Nutrisystem, Dick\'s Sporting Goods, dan Skyline Furniture (§8), Tepco, Coca-Cola, dan JPMorgan (§9), Netflix, CRM maskapai, dan Abilene paradox (§10), serta Nokia dan Lenovo (§11). *Data per buku (2023).*' },
+    { kind: 'p', text: '**Contoh di luar buku** (3 dari maksimal 3 slot terpakai): penyisihan piutang berdasarkan umur piutang sebagai programmed decision (§2), auditor internal menelusuri akar selisih kas dengan 5 Whys (§7b), dan rapat evaluasi panitia acara kampus sebagai after-action review (§11).' },
+    // ---------------------------------------------------------------- §14
+    { kind: 'h2', text: '14. Bedah Film: Moneyball (Ilustrasi)' },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Ilustrasi',
+      text: '*Moneyball* (2011) adalah **film pilihan AkuntansiHub, bukan dari kelas**. Film ini drama berdasarkan kisah nyata; bagian ini hanya memuat alur besar, tanpa dialog, adegan detail, tanggal, skor, statistik, gaji, anggaran, atau angka apa pun dari film, dan bukan sumber fakta tentang tim atau orang yang digambarkan. Buku juga memakai film ini sebagai contoh model klasik dan data analytics [hal. 200]; lihat §4. Kaitan film dengan teori di bawah adalah **analisis AkuntansiHub**, bukan fakta dari buku.',
+    },
+    { kind: 'h3', text: '14.1 Sinopsis Singkat dan Tokoh (Ilustrasi)' },
+    { kind: 'p', text: 'Film berlatar dunia bisbol profesional Amerika. General manager Oakland Athletics, sebuah tim berdana terbatas, kehilangan beberapa pemain andalannya ke tim-tim yang jauh lebih kaya. Dengan dana yang tidak cukup untuk membeli pengganti sepadan, ia sadar timnya tidak bisa bersaing dengan cara yang biasa dipakai tim lain.' },
+    { kind: 'p', text: 'Ia lalu merekrut seorang analis muda dari tim lain yang menilai pemain dengan data dan analisis statistik, bukan dengan kesan para pencari bakat. Bersama analis itu, ia membangun tim dari pemain-pemain yang diremehkan tim lain. Para pencari bakat senior menentang cara baru ini, dan manajer lapangan tidak menjalankannya sepenuhnya saat menyusun pemain. Hasil awal musim buruk, tetapi general manager bertahan dengan pendekatannya sambil mengambil langkah tegas agar pendekatan itu benar-benar dijalankan di lapangan.' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Tokoh (peran)', 'Posisinya dalam alur besar'],
+      rows: [
+        ['**General manager**', 'Pengambil keputusan utama tim; mencari cara bersaing dengan dana terbatas'],
+        ['**Analis data** (asisten general manager)', 'Analis muda dari tim lain yang menilai pemain dengan data'],
+        ['**Manajer lapangan**', 'Menentukan susunan pemain di pertandingan; awalnya tidak menjalankan pendekatan baru sepenuhnya'],
+        ['**Kepala pencari bakat dan para pencari bakat senior**', 'Menilai pemain dari pengalaman dan pengamatan; menentang pendekatan baru'],
+        ['**Pemain-pemain yang diremehkan** (kolektif)', 'Pemain yang dilewatkan tim lain lalu direkrut dengan pendekatan baru'],
+      ],
+    },
+    { kind: 'h3', text: '14.2 Momen Film dan Konsep Chapter 6 (Ilustrasi; analisis AkuntansiHub)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Momen alur besar (Ilustrasi)', 'Konsep Chapter 6', 'Analisis AkuntansiHub (kaitan dengan buku)'],
+      rows: [
+        ['Tim berdana terbatas kehilangan pemain andalan ke tim yang lebih kaya', '**Problem** (langkah 1); **nonprogrammed decision**', 'Kinerja yang diharapkan terancam turun di bawah tujuan, sesuai definisi problem [hal. 205–206]. Situasinya baru dan tidak bisa dijawab dengan aturan yang ada, ciri nonprogrammed decision [hal. 195]'],
+        ['General manager menyadari cara lama, yaitu mencari pengganti yang serupa, tidak bisa diulang dengan dana yang ada', '**Diagnosis** (langkah 2)', 'Dapat dibaca sebagai diagnosis: masalah sebenarnya sering tersembunyi di balik masalah yang tampak, dan melihat dari sudut lain membantu menemukannya [hal. 206]'],
+        ['Ia merekrut analis muda dari tim lain', '**Development of alternatives** (langkah 3); **analytical style**', 'Manajer yang cerdas menggali pengetahuan orang di dalam dan di luar organisasi untuk menemukan alternatif [hal. 207]. Cara kerja analis itu cocok dengan gaya analytical: solusi berbasis data sebanyak mungkin [hal. 212]'],
+        ['Tim beralih ke penilaian pemain berbasis data dan merekrut pemain yang diremehkan tim lain', '**Classical model**; **evidence-based decision making**', 'Buku sendiri memakai film ini untuk contoh data analytics yang menggantikan intuisi pencari bakat [hal. 200]; mengandalkan bukti untuk mengurangi asumsi keliru sesuai hard evidence [hal. 217]'],
+        ['Para pencari bakat senior tetap menilai pemain dari pengalaman dan kesan', '**Intuition**; bias **status quo** dan **kesan awal** (§9, di luar RPP)', 'Intuisi berbasis pengalaman tidak otomatis irasional [hal. 202]. Namun menilai dari kesan dan bertahan pada cara lama dapat dibaca sebagai bias kesan awal dan status quo [hal. 214]'],
+        ['General manager berselisih dengan para pencari bakat tentang cara menilai pemain', '**Political model**', 'Buku menyatakan manajer sering tidak sepakat tentang prioritas dan alternatif, dan keputusan lahir dari debat serta tawar-menawar [hal. 203–204]. Kelas bisa mendiskusikan apakah general manager membangun koalisi atau lebih memakai kewenangannya'],
+        ['Manajer lapangan tidak menjalankan pendekatan baru; general manager mengambil langkah tegas agar pendekatan itu terlaksana', '**Implementation** (langkah 5); **directive style**', 'Alternatif bisa gagal terwujud bila manajer tidak memperoleh buy-in dari orang yang menjalankannya [hal. 208]. Langkah cepat dan tegas seperti ini dapat dibaca sebagai gaya directive; buku mencontohkan Spiegel, yang memerintahkan timnya menjalankan keputusannya dan jarang berkonsultasi [hal. 212]'],
+        ['Hasil awal buruk; general manager bertahan sambil menyesuaikan; tim kemudian membaik', '**Evaluation and feedback** (langkah 6); **bahan diskusi (analisis):** escalating commitment', 'Feedback dapat memicu siklus keputusan baru, dan banyak masalah besar diselesaikan dengan mencoba beberapa alternatif berurutan [hal. 208–209]. Buku juga mengingatkan escalating commitment: terus berinvestasi pada solusi walau bukti kuat menunjukkan tidak tepat [hal. 219]. Diskusikan: kapan bertahan adalah ketekunan yang wajar, kapan menjadi escalating commitment, dan bukti apa di alur film yang bisa dipakai menilainya'],
+        ['Musim berakhir tanpa gelar juara', '**Uncertainty**', 'Menurut Rubin yang dikutip buku, dalam uncertainty keputusan yang baik pun bisa berakhir buruk [hal. 197]; hasil akhir saja tidak cukup untuk menilai mutu keputusan'],
+      ],
+    },
+    { kind: 'h3', text: '14.3 Managerial Lessons Learned (Ilustrasi; analisis)' },
+    {
+      kind: 'ol',
+      items: [
+        '**Padukan data dan intuisi.** Buku memakai film ini untuk contoh data analytics [hal. 200], tetapi juga menegaskan manajer efektif memadukan analisis rasional dan intuisi (quasirationality) [hal. 203].',
+        '**Diagnosis dulu, lalu cari lebih dari satu alternatif.** Masalah sebenarnya sering tersembunyi di balik masalah yang tampak [hal. 206], dan keputusan dengan setidaknya dua alternatif lebih sering berhasil [hal. 207].',
+        '**Keputusan belum selesai sampai dijalankan.** Implementasi menuntut buy-in dari orang yang terdampak [hal. 208].',
+        '**Waspadai kesan awal dan status quo.** Bias ini membuat manajer tidak menjelajahi opsi baru [hal. 214].',
+        '**Nilai keputusan dari prosesnya, bukan hanya hasil akhirnya.** Keputusan baik bisa berakhir buruk dalam uncertainty [hal. 197], dan feedback dipakai untuk memulai siklus keputusan berikutnya [hal. 209].',
+      ],
+    },
+    // ---------------------------------------------------------------- §15
+    { kind: 'h2', text: '15. Analisis Kasus: The Office [hal. 223–224]' },
+    { kind: 'h3', text: '15.1 Case Summary' },
+    { kind: 'p', text: 'Krista Acklen adalah "golden girl" pemerintahan sebuah kota metropolitan di Midwest. Setelah pendidikan dan karier yang cemerlang di Prancis dan New York, ia pulang ke kota asalnya untuk merawat ibunya. Kantor wali kota lalu menawarinya jabatan mengembangkan dan memimpin program seni publik kota. Dengan jaringan, semangat, dan kemampuannya, ia memperluas misinya menjadi berbagai program seni; donasi dan dana hibah mengalir melalui organisasi nirlaba pendukung taman kota yang ia dirikan. Ia dan stafnya berkantor di lantai tiga perpustakaan kota yang dulu dipakai menyimpan buku dan majalah [hal. 223–224].' },
+    { kind: 'p', text: 'Faktor anggaran baru saja memaksa pemangkasan staf dan ruang kantor di seluruh pemerintahan kota. John Mitchell, director of parks and recreation, memanggil Acklen untuk memberitahukan keputusan yang memengaruhi kelompoknya: menurut Mitchell, wali kota menginginkan separuh ruang kantor kelompok Acklen untuk proyek Greenways, dan Acklen harus menyetujuinya. Mitchell sengaja tidak membahasnya lebih dulu dan menyatakan keputusan itu final. Keduanya berdebat, Mitchell menolak menyampaikan keputusan itu kepada staf Acklen, dan Acklen kembali ke kantornya dengan marah [hal. 224].' },
+    { kind: 'p', text: '**Fakta kunci menurut buku** [hal. 223–224]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Aspek', 'Yang tertulis di kasus'],
+      rows: [
+        ['Latar Acklen', 'Lulusan terbaik SMA lokal; belajar di Prancis dan magang di *Vogue* Paris; MBA; bekerja di firma PR top di New York. Anak tunggal dari ibu tunggal; pulang saat kesehatan ibunya tiba-tiba menurun'],
+        ['Konteks kota', 'Faktor anggaran baru saja memaksa pengurangan staf dan ruang kantor di seluruh pemerintahan kota. Acklen merasa siap menghadapi keputusan apa pun karena sadar pentingnya opini publik dan perasaan karyawan serta stakeholder lain'],
+        ['Ucapan Mitchell', 'Memanggil Acklen "to learn of a decision I have made that will affect your group". Sengaja tidak membahasnya lebih dulu karena yakin Acklen akan keberatan; keberatan itu tidak akan diterima; keputusan final. "The mayor wants half of your group\'s office space for the Greenways project ... and I see no alternative except for you to agree. Her idea makes sense, and you must go along." Saat diminta memberi tahu staf Acklen: "No ... you are their immediate boss. You have to tell them. That\'s your job. Where is your team spirit, anyway?"'],
+        ['Greenways', 'Dipimpin Lisa Todd; telah mengembangkan banyak area indah di kota. Beberapa tahun terakhir menerima sebagian besar dana baru dan perhatian dari pemerintah federal; stafnya bertambah'],
+        ['Pikiran Acklen *(pikiran Acklen, bukan fakta)*', '"This people-pleasing, suck-up jerk. He will do anything to win the mayor\'s favor."'],
+        ['Ucapan Acklen', 'Tidak dikonsultasikan itu "unacceptable"; ia seharusnya dilibatkan dalam keputusan yang memengaruhi staf dan programnya; "I could have helped plan a solution that worked for everyone." Menuduh Mitchell "giving us the shaft as an easy way to please her"'],
+        ['Joanne Franklin (staf paling senior)', '"We really need all this space. Our program is growing, too." Mulai "brainstorming": "I suppose we could pair up in the offices."'],
+        ['Sikap akhir Acklen', '"We are team players. But John Mitchell and the mayor need to know that this decision was not handled in a way that shows respect for our employees." Terlalu lelah untuk memikirkannya; pembahasan ditunda ke esok hari'],
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Catatan',
+      text: 'Batas fakta kasus: kasus **tidak jelas** siapa pengambil keputusannya, karena Mitchell menyebut "a decision I have made" sekaligus "the mayor wants ... her idea". Kasus tidak menjelaskan proses Mitchell sampai pada keputusan, alternatif yang ia pertimbangkan, luas ruang, atau jumlah staf. "People-pleasing, suck-up" dan "to please her" adalah **penilaian Acklen**, bukan fakta kasus; tindakan Acklen selanjutnya juga tidak diketahui [hal. 224].',
+    },
+    { kind: 'h3', text: '15.2 Problem Identification' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['#', 'Isu', 'Jenis'],
+      rows: [
+        ['P1', 'Keputusan yang memengaruhi kelompok Acklen diambil tanpa melibatkan Acklen, dan keberatannya sudah ditolak sebelum disampaikan', 'Proses keputusan'],
+        ['P2', 'Kasus tidak menunjukkan adanya diagnosis atau pengembangan alternatif; Mitchell menyatakan "I see no alternative"', 'Proses keputusan *(berdasarkan ucapan Mitchell)*'],
+        ['P3', 'Mitchell menolak menyampaikan keputusan kepada staf yang terdampak; hubungan Mitchell–Acklen memburuk', 'Implementasi'],
+        ['P4', 'Ruang kantor terbatas di tengah pemangkasan anggaran, sementara Greenways dan program Acklen sama-sama tumbuh', 'Kelangkaan sumber daya dan konflik tujuan *(sebagian berdasarkan ucapan Joanne)*'],
+        ['P5', 'Acklen harus merespons saat dikuasai amarah, sehingga berisiko membuat keputusan yang terpengaruh emosi', 'Respons Acklen *(hasil analisis)*'],
+      ],
+    },
+    { kind: 'h3', text: '15.3 Analisis Kasus (dengan teori Chapter 6)' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Teori / konsep', 'Temuan pada kasus', 'Hal.'],
+      rows: [
+        ['**Nonprogrammed decision**', 'Pembagian ruang antarprogram di tengah pemangkasan anggaran bukan masalah rutin yang punya aturan keputusan, dan dampaknya penting bagi dua program *(hasil analisis)*', '195, 224'],
+        ['**Ambiguity and conflict**', 'Manajer di unit berbeda punya prioritas dan tujuan berbeda, yang memicu konflik tentang alternatif keputusan; kedua program sama-sama membutuhkan ruang', '198, 224'],
+        ['**Directive style**', 'Mitchell memutuskan cepat, menyatakan tidak ada alternatif, dan menutup ruang keberatan. Ciri gaya directive menurut buku: solusi sederhana dan jelas, keputusan cepat, mungkin hanya satu atau dua alternatif, dan mengandalkan aturan atau prosedur yang ada. Keputusan tanpa konsultasi mirip contoh buku, Spiegel, yang jarang berkonsultasi *(hasil analisis; dijawab di Q1)*', '212, 224'],
+        ['**Diagnosis dan development of alternatives**', 'Kasus tidak menunjukkan adanya kedua langkah ini. Buku menyatakan membatasi pencarian alternatif adalah penyebab utama kegagalan keputusan, dan keputusan dengan satu alternatif sering dinilai gagal (Nutt)', '206–207, 224'],
+        ['**Implementation**', 'Mitchell tidak memperoleh buy-in dan menyerahkan penyampaian keputusan kepada Acklen. Buku menyatakan implementasi yang berhasil menuntut diskusi, membangun kepercayaan, dan keterlibatan orang yang terdampak', '208, 224'],
+        ['**Political model**', 'Keputusan melibatkan beberapa pihak dengan kepentingan berbeda (kantor wali kota, Mitchell, Acklen, Todd). Buku menyatakan coalition building menaikkan komitmen pada alternatif yang dipilih *(hasil analisis)*', '203–204'],
+        ['**Conceptual dan behavioral style**', 'Acklen sendiri meminta cara yang lebih partisipatif ("I could have helped plan a solution that worked for everyone") dan menekankan penghormatan kepada karyawan, sejalan dengan gaya conceptual dan behavioral *(hasil analisis)*', '213, 224'],
+        ['**Bias emosi** (§9, di luar RPP)', 'Acklen marah dan menilai motif Mitchell. Buku menyatakan keputusan di bawah emosi kuat cenderung buruk; Acklen menunda pembahasan ke esok hari *(hasil analisis)*', '214–215, 224'],
+        ['**Brainstorming**', 'Kasus menyebut Joanne "started brainstorming", tetapi satu gagasan dari satu orang belum memenuhi definisi buku: kelompok tatap muka yang mengusulkan sebanyak mungkin ide', '217, 224'],
+      ],
+    },
+    { kind: 'h3', text: '15.4 Jawaban Pertanyaan Kasus' },
+    { kind: 'p', text: '**Q1. Gaya keputusan apa yang dipakai John Mitchell (Exhibit 6.5), dan kesalahan apa yang menurutmu ia buat dalam menyelesaikan masalah keterbatasan ruang kantor? Jelaskan.**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 6.*' },
+    { kind: 'p', text: '**Gaya directive.** Buktinya dari kasus:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Ciri directive dan contohnya di buku [hal. 212]', 'Bukti dari kasus [hal. 224]'],
+      rows: [
+        ['Menyukai solusi sederhana dan jelas; memutuskan cepat', 'Keputusan disampaikan sebagai final, langsung tanpa basa-basi'],
+        ['Mungkin hanya mempertimbangkan satu atau dua alternatif', '"I see no alternative except for you to agree"'],
+        ['Contoh buku, Evan Spiegel: jarang berkonsultasi dengan manajer lain dan anggota tim (perilaku dalam contoh, bukan bagian definisi)', 'Sengaja tidak membahasnya lebih dulu dengan Acklen karena yakin ia akan keberatan'],
+        ['Lebih suka mengandalkan aturan atau prosedur yang ada', 'Keputusan final dan keberatan tidak akan diterima; menunjuk kewajiban jabatan Acklen: "you are their immediate boss ... That\'s your job"'],
+      ],
+    },
+    { kind: 'p', text: '**Kesalahan Mitchell:**' },
+    {
+      kind: 'ol',
+      items: [
+        '**Tidak melibatkan pihak yang terdampak.** Acklen memimpin program yang terdampak langsung, tetapi keberatannya ditolak bahkan sebelum ia mendengar keputusannya [hal. 224].',
+        '**Kasus tidak menunjukkan adanya diagnosis atau pengembangan alternatif.** Satu-satunya pernyataan Mitchell tentang alternatif adalah "I see no alternative", dan tidak ada konsultasi dengan pihak yang paling mengenal kebutuhan ruang program itu. Buku menyatakan membatasi pencarian alternatif adalah penyebab utama kegagalan keputusan, dan walau tampaknya hanya ada satu alternatif, carilah setidaknya satu lagi [hal. 207].',
+        '**Mengabaikan implementasi.** Mitchell menolak menyampaikan keputusan kepada staf yang terdampak dan menyerahkannya kepada Acklen. Buku menyatakan alternatif bisa gagal terwujud bila manajer tidak melibatkan orang dan tidak memperoleh buy-in [hal. 208].',
+        '**Merusak hubungan kerja.** Cara penyampaiannya membuat Acklen marah dan merasa programnya tidak dihormati, padahal Mitchell justru mengandalkan Acklen untuk menyampaikan dan menjalankan keputusan itu kepada stafnya [hal. 224].',
+      ],
+    },
+    { kind: 'p', text: '**Q2. Pendekatan keputusan apa yang akan kamu pakai bila menjadi Mitchell? Mengapa?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan teori Chapter 6.*' },
+    { kind: 'p', text: '**Model politik dengan gaya conceptual, dijalankan melalui enam langkah.** Alasannya: kondisinya tidak pasti, sumber daya terbatas, dan beberapa pihak punya kepentingan berbeda, yang menurut buku adalah situasi tempat model politik berguna [hal. 203]. Coalition building memberi kesempatan beberapa manajer berkontribusi sehingga komitmen mereka pada alternatif yang dipilih meningkat [hal. 203].' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Langkah', 'Tindakan Mitchell', 'Hal.'],
+      rows: [
+        ['1. Recognition', 'Merumuskan masalahnya: ruang kantor harus dibagi ulang karena pemangkasan anggaran dan pertumbuhan Greenways', '205–206'],
+        ['2. Diagnosis', 'Memahami kebutuhan ruang nyata kedua program dan alasan kantor wali kota meminta pengalihan ruang', '206'],
+        ['3. Alternatives', 'Mengajak Acklen dan Todd menyusun beberapa alternatif, misalnya berbagi kantor, jadwal pemakaian ruang, atau pembagian ruang yang berbeda *(hasil analisis)*', '207'],
+        ['4. Selection', 'Memilih alternatif yang paling sesuai dengan tujuan kota dan memakai sumber daya paling sedikit, lewat diskusi dan tawar-menawar', '204, 207'],
+        ['5. Implementation', 'Menyampaikan keputusan sendiri kepada staf yang terdampak bersama Acklen, menjelaskan alasannya, dan menindaklanjutinya', '208'],
+        ['6. Evaluation', 'Meninjau setelah beberapa waktu apakah pembagian ruang berjalan dan memperbaikinya bila perlu', '208–209'],
+      ],
+    },
+    { kind: 'p', text: '**Batasnya:** keputusan ini tampaknya datang dari kantor wali kota, sehingga ruang gerak Mitchell mungkin terbatas; kasus tidak menjelaskannya (batas fakta 15.1). Namun keterlibatan dalam **cara** menjalankannya tetap bisa dibuka.' },
+    { kind: 'p', text: '**Q3. Apa saja opsi Krista Acklen untuk merespons keputusan Mitchell? Apa yang sebaiknya ia lakukan sekarang? Mengapa?**' },
+    { kind: 'p', text: '*Jawaban berikut adalah hasil analisis berdasarkan fakta kasus dan teori Chapter 6.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Opsi', 'Kelebihan', 'Kelemahan'],
+      rows: [
+        ['A. Menerima tanpa syarat dan menjalankan keputusan', 'Cepat; menjaga hubungan dengan Mitchell dan kantor wali kota', 'Keberatan tentang proses tidak tersampaikan; staf bisa merasa tidak dihormati'],
+        ['B. Melawan secara terbuka, misalnya langsung mengadu ke wali kota', 'Menyuarakan keberatan', 'Keputusan dinyatakan final; berisiko memperburuk hubungan dan mengesankan tidak mau bekerja sama; diambil saat marah [hal. 214–215]'],
+        ['C. Menerima keputusan, tetapi mengelola implementasinya bersama staf dan Lisa Todd, lalu menyampaikan keberatan tentang **cara** keputusan dibuat melalui Mitchell', 'Program tetap berjalan; staf dilibatkan; keberatan tersampaikan secara konstruktif', 'Butuh waktu dan kemauan pihak lain untuk bekerja sama'],
+      ],
+    },
+    { kind: 'p', text: '**Kesimpulan: pilih opsi C.** Acklen sebaiknya menjalankan keputusan itu di kelompoknya, lalu mengkritik **cara** keputusan itu dibuat. Dua hal ini dinilai terpisah. Isi keputusan dinyatakan final oleh Mitchell, jadi Acklen fokus pada pelaksanaannya. Prosesnya yang dikritik, sesuai temuan Q1: Acklen tidak dilibatkan, dan kasus tidak menunjukkan adanya diagnosis atau pengembangan alternatif. Langkahnya:' },
+    {
+      kind: 'ol',
+      items: [
+        '**Tenangkan diri dulu.** Menunda pembahasan ke esok hari sudah tepat, karena buku menyatakan keputusan di bawah emosi kuat cenderung buruk dan manajer memutuskan lebih baik bila emosi dikeluarkan dari proses [hal. 214–215].',
+        '**Sampaikan sendiri keputusan itu kepada staf** sebagai atasan langsung, lalu ajak mereka menyusun banyak alternatif penataan ruang, bukan hanya satu usulan Joanne. Ini sesuai brainstorming [hal. 217] dan riset Nutt tentang pentingnya lebih dari satu alternatif [hal. 207].',
+        '**Bangun koalisi dengan Lisa Todd** untuk menyepakati cara berbagi ruang yang bisa diterima kedua program [hal. 203].',
+        '**Sampaikan feedback kepada Mitchell, dan melalui dia kepada kantor wali kota,** setelah tenang. Kasus menggambarkan Acklen sedang marah ("fury rising", "seething", "too frazzled") dan ia sendiri menyatakan "John Mitchell and the mayor need to know" [hal. 224]. Isinya: keputusan diterima, tetapi untuk keputusan berikutnya program yang terdampak perlu dilibatkan dan beberapa alternatif perlu disusun sebelum memilih. Feedback adalah bagian dari evaluasi yang dapat memperbaiki keputusan selanjutnya [hal. 208–209].',
+      ],
+    },
+    { kind: 'p', text: 'Alasannya: keputusan dinyatakan final, sehingga melawan secara terbuka kecil peluangnya berhasil dan besar risikonya; yang masih bisa dikendalikan Acklen adalah cara keputusan itu dijalankan di kelompoknya.' },
+    { kind: 'h3', text: '15.5 Rekomendasi Manajerial' },
+    { kind: 'p', text: '*Rekomendasi berikut adalah hasil analisis berdasarkan teori Chapter 6, bukan fakta dari buku.*' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pihak', 'Rekomendasi', 'Teori pendukung'],
+      rows: [
+        ['**Krista Acklen**', 'Tunda respons sampai tidak dikuasai emosi', 'Bias emosi [hal. 214–215]'],
+        ['', 'Libatkan staf menyusun beberapa alternatif penataan ruang', 'Brainstorming [hal. 217]; Nutt [hal. 207]'],
+        ['', 'Rundingkan pembagian ruang dengan Lisa Todd', 'Coalition building [hal. 203]'],
+        ['**John Mitchell**', 'Libatkan pimpinan program yang terdampak sebelum memutuskan', 'Political model [hal. 203–204]; conceptual style [hal. 213]'],
+        ['', 'Susun setidaknya dua alternatif sebelum memilih', 'Development of alternatives [hal. 207]'],
+        ['', 'Sampaikan sendiri keputusan kepada staf yang terdampak dan tindak lanjuti', 'Implementation [hal. 208]'],
+        ['**Pemerintah kota**', 'Tetapkan prosedur pembagian ruang yang melibatkan unit terdampak di tengah pemangkasan anggaran', 'Programmed decision untuk masalah berulang [hal. 195]'],
+        ['', 'Adakan tinjauan setelah keputusan dijalankan', 'Evaluation and feedback [hal. 208–209]; after-action review [hal. 219]'],
+      ],
+    },
+    // ---------------------------------------------------------------- §16
+    { kind: 'h2', text: '16. Implikasi Manajerial dan Kesimpulan' },
+    {
+      kind: 'ol',
+      items: [
+        '**Keputusan adalah proses, bukan sekadar pilihan.** Decision making mencakup upaya sebelum dan sesudah memilih, dan tidak selesai saat keputusan dibuat [hal. 195, 209].',
+        '**Kenali jenis dan kondisi keputusan.** Programmed decisions bisa diserahkan pada aturan atau AI; nonprogrammed decisions dalam uncertainty dan ambiguity menuntut perhatian manajer [hal. 195–198].',
+        '**Pilih model sesuai situasi.** Model klasik cocok untuk lingkungan stabil dan keputusan terprogram; model administratif dan politik lebih dekat dengan lingkungan yang tidak stabil. Data dan intuisi sebaiknya dipadukan [hal. 200–204].',
+        '**Jangan lompati diagnosis dan alternatif.** Masalah sebenarnya sering tersembunyi, dan keputusan dengan setidaknya dua alternatif lebih sering berhasil [hal. 206–207].',
+        '**Rencanakan implementasi sejak awal.** Keputusan yang baik tetap gagal tanpa buy-in dari orang yang menjalankannya [hal. 208].',
+        '**Kenali gaya dan bias sendiri.** Manajer efektif berpindah gaya sesuai situasi dan waspada terhadap kesan awal, loss aversion, confirmation bias, status quo, emosi, dan overconfidence [hal. 212–215].',
+        '**Bangun mekanisme organisasi untuk keputusan yang lebih baik.** Brainstorming, bukti keras, debat, devil\'s advocate, kesediaan berhenti, premortem, dan postmortem menangkal bias yang sulit dilihat sendiri [hal. 217–219].',
+      ],
+    },
+    // ---------------------------------------------------------------- §17
+    { kind: 'h2', text: '17. Alat Bantu Ujian' },
+    { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Jenis keputusan', 'Programmed; Nonprogrammed', '195'],
+        ['Kondisi keputusan (Exh. 6.1)', 'Certainty; Risk; Uncertainty; Ambiguity (kemungkinan gagal dari rendah ke tinggi)', '196–198'],
+        ['Tiga model keputusan', 'Classical; Administrative; Political', '199'],
+        ['Asumsi model klasik (4)', 'Tujuan diketahui dan disepakati; certainty dan informasi lengkap; kriteria diketahui, maksimalkan hasil ekonomi; rasional dan logis', '199'],
+        ['Konsep model administratif (Simon)', 'Bounded rationality; Satisficing; ditambah intuition dan quasirationality', '201–203'],
+        ['Asumsi model administratif (5)', 'Tujuan samar; tidak sadar masalah; prosedur rasional terbatas; pencarian alternatif terbatas; satisficing', '202'],
+        ['Asumsi model politik (4)', 'Kelompok beragam; informasi ambigu; saling bertukar pandangan; debat dan tawar-menawar', '203–204'],
+        ['Perbandingan tiga model (Exh. 6.2)', 'Problem and goals; condition; information; choice', '204'],
+        ['Enam langkah (Exh. 6.3)', 'Recognition; Diagnosis; Alternatives; Selection; Implementation; Evaluation and feedback', '205'],
+        ['Decision requirement', 'Problem; Opportunity', '205–206'],
+        ['Alat diagnosis', 'Delapan pertanyaan Kepner–Tregoe; 5 Whys', '206'],
+        ['Kriteria alternatif terbaik', 'Cocok dengan tujuan dan nilai; sumber daya paling sedikit; risiko paling kecil', '207'],
+        ['Personal Decision Framework (Exh. 6.5)', 'Situation + Personal Decision Style → Decision Choice', '212'],
+        ['Gaya keputusan (4)', 'Directive; Analytical; Conceptual; Behavioral', '212–213'],
+        ['Bias (6)', 'Kesan awal (anchoring); Takut rugi (loss aversion); Melihat yang ingin dilihat (confirmation); Status quo; Emosi; Overconfidence', '214–215'],
+        ['Innovative decision making (6)', 'Brainstorming; Hard evidence; Rigorous debate; Avoid groupthink; Know when to bail; Premortem and postmortem', '217–219'],
+      ],
+    },
+    { kind: 'h3', text: 'Exam Traps' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['Decision vs decision making', '"Sama saja"', 'Decision = pilihan; decision making = proses sebelum dan sesudah pilihan', '195'],
+        ['Siapa membuat programmed decisions', '"Harus manajer"', 'Setelah aturan dibuat, bawahan dan pihak lain bisa memutuskan; sebagian ditangani AI', '195'],
+        ['Risk vs uncertainty', '"Sama saja"', 'Risk: probabilitas bisa diperkirakan. Uncertainty: tujuan diketahui, tetapi informasi alternatif dan masa depan tidak lengkap', '196–197'],
+        ['Uncertainty vs ambiguity', '"Ambiguity = uncertainty yang lebih berat"', 'Pada ambiguity **tujuan atau masalahnya sendiri tidak jelas**; ambiguity situasi paling sulit', '197–198'],
+        ['Normative vs descriptive', '"Model klasik menggambarkan cara manajer benar-benar memutuskan"', 'Klasik = **normative** (seharusnya); administratif = **descriptive** (kenyataannya)', '200'],
+        ['Satisficing', '"Memilih alternatif terburuk"', 'Memilih alternatif **pertama** yang memenuhi kriteria minimal', '201'],
+        ['Intuisi', '"Irasional dan sewenang-wenang"', 'Berbasis pengalaman dan pengenalan pola; tidak sewenang-wenang', '202'],
+        ['Data vs intuisi', '"Buku menganjurkan membuang intuisi dan hanya memakai data"', 'Buku menganjurkan **quasirationality**: padukan keduanya. Evidence-based menolak mengandalkan intuisi secara **careless**, bukan intuisi itu sendiri', '202–203, 218'],
+        ['Model politik', '"Manipulasi dan permainan kekuasaan"', 'Coalition building, diskusi, dan tawar-menawar untuk keputusan dengan tujuan yang bertentangan', '203–204'],
+        ['Model terbaik', '"Model klasik selalu terbaik"', 'Klasik terkait kinerja tinggi di lingkungan stabil; administratif, politik, dan intuisi di lingkungan tidak stabil', '204'],
+        ['Kondisi model administratif', 'Hanya menyebut isi Exh. 6.2 atau hanya isi teks', 'Exh. 6.2: "uncertainty"; teks dan Remember This: "uncertainty and ambiguity". Sebutkan keduanya', '201, 204'],
+        ['Cakupan enam langkah', '"Hanya untuk keputusan nonprogrammed atau model klasik"', 'Untuk programmed maupun nonprogrammed, dan untuk ketiga model', '205'],
+        ['Problem vs opportunity', '"Opportunity = problem kecil"', 'Problem: pencapaian di bawah tujuan. Opportunity: potensi pencapaian melampaui tujuan', '205–206'],
+        ['Recognition vs diagnosis', '"Sama saja"', 'Recognition: menyadari ada problem atau opportunity. Diagnosis: menganalisis penyebabnya', '205–206'],
+        ['Jumlah alternatif', '"Satu alternatif yang baik sudah cukup"', 'Satu alternatif → dinilai gagal lebih dari 50%; ≥2 alternatif → berhasil dua pertiga (Nutt)', '207'],
+        ['Rujukan strategy execution', '"Dibahas di Chapter 6" (teks: "later in this chapter")', 'Strategy execution dibahas di **Chapter 5**', '208; Ch. 5 hal. 171'],
+        ['Ciri directive', '"Directive = tidak pernah berkonsultasi"', 'Definisi buku: solusi sederhana dan jelas, cepat, satu atau dua alternatif, aturan atau prosedur yang ada. "Jarang berkonsultasi" adalah gambaran contoh Spiegel, bukan bagian definisi', '212'],
+        ['Analytical vs conceptual', '"Sama saja karena sama-sama memakai informasi luas"', 'Conceptual **lebih berorientasi sosial**, suka membahas dengan orang lain, dan kreatif', '212–213'],
+        ['Gaya keputusan', '"Setiap manajer hanya punya satu gaya"', 'Banyak manajer punya gaya dominan, tetapi manajer efektif berpindah gaya sesuai situasi', '213'],
+        ['Loss aversion vs escalating commitment', '"Sama saja"', 'Loss aversion = kecenderungan bereaksi lebih kuat pada rugi; escalating commitment = perilaku terus berinvestasi pada solusi yang gagal, yang **berasal** dari loss aversion', '214, 219'],
+        ['Brainstorming', '"Kelompok selalu menghasilkan lebih banyak ide"', 'Empat orang individu menghasilkan dua kali ide kelompok empat orang; electronic brainstorming mengatasi sebagian kelemahan', '217'],
+        ['Evidence-based', '"Hanya angka dan data"', 'Bukti juga dari keahlian profesional, kepentingan stakeholder, dan riset', '218'],
+        ['Groupthink', '"Groupthink = konflik dalam kelompok"', 'Groupthink = **menekan** pendapat berlawanan demi harmoni; konflik konstruktif justru dianjurkan', '218'],
+        ['Premortem vs postmortem', '"Sama saja"', 'Premortem: **sebelum** komit, membayangkan kegagalan. Postmortem/after-action review: **setelah** implementasi, meninjau hasil', '219'],
+      ],
+    },
+    { kind: 'h3', text: 'Bank Pertanyaan Kritis (untuk non-presenter)' },
+    { kind: 'p', text: 'Diadaptasi dari Discussion Questions [hal. 220–221]:' },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Terkait bagian'],
+      rows: [
+        ['Manajer Gap Inc. dilaporkan membuat serangkaian keputusan yang merugikan: ekspansi terlalu cepat, meniru pesaing, memotong mutu, dan berganti-ganti pendekatan mode. Teknik apa yang kamu rekomendasikan untuk memperbaiki mutu keputusan mereka?', '§10–§11'],
+        ['Jelaskan perbedaan risk dan ambiguity. Bagaimana cara memutuskan berbeda untuk situasi berisiko dibanding situasi ambigu?', '§3'],
+        ['Peluang dan masalah apa yang muncul bila ada lebih dari satu koalisi di organisasi, masing-masing mendukung arah berbeda? Langkah apa yang bisa diambil manajer agar koalisi yang bersaing menghasilkan diskusi konstruktif, bukan perpecahan?', '§6'],
+        ['Pikirkan keputusan buruk yang dibuat untuk mengoreksi atau membenarkan keputusan sebelumnya. Sebagai manajer baru, bagaimana kamu menahan dorongan memilih alternatif hanya untuk membenarkan keputusan lama?', '§9, §11'],
+        ['Para ahli menyatakan sebagian besar bencana di organisasi berasal dari serangkaian masalah atau kesalahan kecil. Sebagai manajer tingkat awal, bagaimana kamu menerapkan pemahaman ini untuk mencegah kesalahan besar?', '§7, §11'],
+        ['Apa kelebihan dan kekurangan memakai teknologi kecerdasan buatan (AI) untuk pengambilan keputusan manajerial?', '§2, §4'],
+        ['Dapatkah intuisi dan evidence-based decision making hidup berdampingan sebagai pendekatan yang sah dalam organisasi? Bagaimana manajer memadukan intuisinya dengan pendekatan rasional berbasis data?', '§5, §10'],
+      ],
+    },
+    { kind: 'p', text: '*Semua `[hal. X]` merujuk ke Daft & Marcic, Understanding Management 12e (2023). Label yang dipakai: "di luar RPP" (1×: §9), "Contoh di luar buku" (3×: §2, §7b, §11), "Ilustrasi" (1 bagian: §14, sinopsis dan bedah film). Film di §14 adalah film pilihan AkuntansiHub, bukan dari kelas.*' },
+  ],
 };

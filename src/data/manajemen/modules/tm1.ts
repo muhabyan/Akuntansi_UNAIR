@@ -23,14 +23,14 @@ const EXHIBIT_1_9_PERSPECTIVES = [
 // item, sub-cabangnya sebagai daftar markdown di dalam item yang sama. Titik penomoran di-escape supaya "1. " tidak
 // dibaca markdown sebagai penanda daftar bernomor.
 const CONCEPT_MAP_BRANCHES = [
-  `**1\\. DASAR**
+  `**1. DASAR**
 - Management (effective + efficient, lewat 4 fungsi)
 - Organization (social entity, goal-directed, deliberately structured)
 - Drucker 5 tasks`,
-  `**2\\. FUNGSI & HASIL**
+  `**2. FUNGSI & HASIL**
 - Planning → Organizing → Leading → Controlling
 - Performance = Efficiency (input) + Effectiveness (hasil)`,
-  `**3\\. MANAJER**
+  `**3. MANAJER**
 - Competencies: controller→enabler, … , stability→change
   - Bossless (Morning Star, FAVI)
 - Skills: Technical / Human / Conceptual
@@ -39,14 +39,14 @@ const CONCEPT_MAP_BRANCHES = [
 - Activities: variety, fragmentation, brevity; time mgmt ABC
 - Roles (10): Informational / Interpersonal / Decisional
 - [di luar RPP] Nonprofit`,
-  `**4\\. EVOLUSI: Things vs Humanity of Production**
+  `**4. EVOLUSI: Things vs Humanity of Production**
 - Classical: Scientific Mgmt, Bureaucracy, Admin. Principles
 - Management Science (bagian classical): OR, OM, IT
 - Humanistic: Human Relations, Human Resources (Theory X/Y), Behavioral Sciences`,
-  `**5\\. MASA DEPAN**
+  `**5. MASA DEPAN**
 - Technology-driven: Big data, IoT, Platform
 - People-driven: Radical decentralization, Employee engagement`,
-  '**6\\. AI: otomasi rutin + Nudge management**',
+  '**6. AI: otomasi rutin + Nudge management**',
 ];
 
 export const TM1_READING: Reading = {
@@ -65,7 +65,7 @@ export const TM1_READING: Reading = {
   ],
   blocks: [
     // ---------------------------------------------------------------- §0
-    { kind: 'h2', text: '0\\. Orientasi TM01' },
+    { kind: 'h2', text: '0. Orientasi TM01' },
     {
       kind: 'p',
       text: '**Sub-CPMK TM01 (RPP):** mahasiswa mampu menjelaskan konsep dasar manajemen, fungsi inti manajemen, evolusi pemikiran manajemen, dan tantangan organisasi modern dengan mengaitkannya pada praktik bisnis nyata. Sub-CPMK ini mendukung CLO 1 (menjelaskan konsep, fungsi, dan evolusi manajemen) dan CLO 4 (menerapkan teori untuk menganalisis kasus).',
@@ -112,7 +112,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §1
-    { kind: 'h2', text: '1\\. Apa itu Management dan Organization' },
+    { kind: 'h2', text: '1. Apa itu Management dan Organization' },
     {
       kind: 'table',
       stackOnMobile: true,
@@ -148,7 +148,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §2
-    { kind: 'h2', text: '2\\. Empat Fungsi Manajemen' },
+    { kind: 'h2', text: '2. Empat Fungsi Manajemen' },
     {
       kind: 'table',
       stackOnMobile: true,
@@ -182,7 +182,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §3
-    { kind: 'h2', text: '3\\. Organizational Performance' },
+    { kind: 'h2', text: '3. Organizational Performance' },
     {
       kind: 'table',
       stackOnMobile: true,
@@ -215,7 +215,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §4
-    { kind: 'h2', text: '4\\. Kompetensi Manajer Masa Kini dan Tren Bosslessness' },
+    { kind: 'h2', text: '4. Kompetensi Manajer Masa Kini dan Tren Bosslessness' },
     {
       kind: 'p',
       text: '**Mengapa kompetensi manajer berubah** [hal. 5]: teknologi (social media, mobile apps), ekonomi berbasis pengetahuan, AI, pasar global, cybercrime, dan ekspektasi karyawan serta pelanggan yang berubah. Akibatnya hierarki organisasi menurun dan pekerja makin berdaya.',
@@ -269,7 +269,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §5
-    { kind: 'h2', text: '5\\. Management Skills' },
+    { kind: 'h2', text: '5. Management Skills' },
     {
       kind: 'table',
       stackOnMobile: true,
@@ -347,7 +347,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §6
-    { kind: 'h2', text: '6\\. Tantangan Manajer Baru' },
+    { kind: 'h2', text: '6. Tantangan Manajer Baru' },
     {
       kind: 'p',
       text: 'Menjadi manajer bukan sekadar belajar skill baru, tetapi **transformasi personal identity**: melepas kebiasaan lama dan belajar cara berpikir baru (riset Linda Hill terhadap 19 manajer baru) [hal. 16].',
@@ -383,7 +383,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §7
-    { kind: 'h2', text: '7\\. Pekerjaan Manajer Sebenarnya: Activities dan Roles' },
+    { kind: 'h2', text: '7. Pekerjaan Manajer Sebenarnya: Activities dan Roles' },
     {
       kind: 'p',
       text: 'Henry Mintzberg mengikuti dan mencatat aktivitas manajer, lalu merumuskan **3 karakteristik umum** dan **10 roles** [hal. 17].',
@@ -452,7 +452,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §8
-    { kind: 'h2', text: '8\\. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)' },
+    { kind: 'h2', text: '8. Managing in Nonprofit Organizations (di luar RPP: pengayaan singkat)' },
     { kind: 'p', text: 'Fungsi, skill, dan aktivitas manajemen berlaku sama di nonprofit, tetapi konteksnya berbeda [hal. 23–24].' },
     {
       kind: 'table',
@@ -472,7 +472,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §9
-    { kind: 'h2', text: '9\\. Evolusi Pemikiran Manajemen' },
+    { kind: 'h2', text: '9. Evolusi Pemikiran Manajemen' },
     { kind: 'h3', text: '9a. The Historical Struggle: Things of Production vs Humanity of Production [hal. 25–26]' },
     { kind: 'p', text: 'Sejarah manajemen adalah tarik-menarik antara dua fokus:' },
     {
@@ -737,7 +737,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §10
-    { kind: 'h2', text: '10\\. Manajemen ke Depan: Technology-Driven dan People-Driven Workplace (ringkas)' },
+    { kind: 'h2', text: '10. Manajemen ke Depan: Technology-Driven dan People-Driven Workplace (ringkas)' },
     {
       kind: 'p',
       text: 'Survei Bain & Company mencatat lima tren: pergeseran dari hierarki ke empowered teams, pemanfaatan teknologi digital, fokus membangun budaya, penguatan relasi pelanggan, dan kontrol biaya. Tren ini kembali jatuh ke dua kategori lama, **things** dan **humanity of production** [hal. 40].',
@@ -778,7 +778,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §11
-    { kind: 'h2', text: '11\\. AI dan Historical Struggle (ringkas)' },
+    { kind: 'h2', text: '11. AI dan Historical Struggle (ringkas)' },
     {
       kind: 'ul',
       items: [
@@ -795,7 +795,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §12
-    { kind: 'h2', text: '12\\. Peta Konsep (siap dijadikan Mind Map)' },
+    { kind: 'h2', text: '12. Peta Konsep (siap dijadikan Mind Map)' },
     {
       kind: 'p',
       text: '**Simpul pusat:** LEADING EDGE MANAGEMENT. Enam cabang utama beserta sub-cabangnya, siap disalin menjadi mind map:',
@@ -826,7 +826,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §13
-    { kind: 'h2', text: '13\\. Contoh Penerapan' },
+    { kind: 'h2', text: '13. Contoh Penerapan' },
     {
       kind: 'p',
       text: '**Tabel ringkas contoh dari buku** (paling relevan untuk ujian; contoh lain ada di bagian masing-masing):',
@@ -856,7 +856,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §14
-    { kind: 'h2', text: '14\\. Analisis Kasus: SmartStyle Salons [hal. 49–50]' },
+    { kind: 'h2', text: '14. Analisis Kasus: SmartStyle Salons [hal. 49–50]' },
     { kind: 'h3', text: '14.1 Case Summary' },
     {
       kind: 'p',
@@ -999,7 +999,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §15
-    { kind: 'h2', text: '15\\. Implikasi Manajerial dan Kesimpulan' },
+    { kind: 'h2', text: '15. Implikasi Manajerial dan Kesimpulan' },
     {
       kind: 'ol',
       items: [
@@ -1014,7 +1014,7 @@ export const TM1_READING: Reading = {
     },
 
     // ---------------------------------------------------------------- §16
-    { kind: 'h2', text: '16\\. Alat Bantu Ujian' },
+    { kind: 'h2', text: '16. Alat Bantu Ujian' },
     { kind: 'h3', text: 'Quick Reference: Daftar Komponen Lengkap' },
     {
       kind: 'table',
