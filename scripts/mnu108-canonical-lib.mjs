@@ -1,13 +1,13 @@
-// Shared helpers for the MNU108 (Pengantar Manajemen) canonical reading guards, TM01..TM07.
+// Shared helpers for the MNU108 (Pengantar Manajemen) canonical reading guards, TM01..TM07 and the TM08 review.
 // Each TM has its own test-mnu108-tmNN-canonical.mjs (the numbers and sentences from the content package's 06/07);
 // the render rules every reading must follow live here and run for every TM listed in CANONICAL_TMS.
 import assert from 'node:assert/strict';
 import { build } from 'esbuild';
 
 /** TMs whose reading was rewritten from a content package (12e). Add a TM here in the commit that brings its reading. */
-export const CANONICAL_TMS = [1, 2, 3, 4, 5, 6, 7];
+export const CANONICAL_TMS = [1, 2, 3, 4, 5, 6, 7, 8];
 /** TMs whose headings and concept map carry no backslash escapes (a heading is inline markdown, "1. Title" stays a heading). */
-export const CLEAN_HEADING_TMS = [1, 2, 3, 4, 5, 6, 7];
+export const CLEAN_HEADING_TMS = [1, 2, 3, 4, 5, 6, 7, 8];
 /** Tables allowed to stay plain although they have >=4 columns or a long cell: header rows of grids read in their own scroll wrapper. */
 export const PLAIN_GRID_HEADERS = [
   ['', 'VP Finance', 'VP Engineering Applications', 'VP Manufacturing', 'VP Marketing'], // TM07 Exh. 7.6

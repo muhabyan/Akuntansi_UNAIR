@@ -20,14 +20,18 @@ const LABEL: Record<string, string> = {
   't-account': 'Akun T',
 };
 
-function DetailList({ title, items, icon }: { title: string; items?: string[]; icon?: ReactNode }) {
+/** Text written with a newline keeps its line breaks; text without one renders exactly as before. */
+const BREAKS = 'whitespace-pre-line';
+const keepsBreaks = (text: string) => text.includes('\n');
+
+function DetailList({ title, items, icon, preserveBreaks = false }: { title: string; items?: string[]; icon?: ReactNode; preserveBreaks?: boolean }) {
   if (!items || items.length === 0) return null;
   return (
     <div className="rounded-2xl border border-line bg-surface/52 p-4">
       <p className="mb-2 flex items-center gap-2 text-xs font-black uppercase tracking-[0.16em] text-accent">{icon} {title}</p>
       <ul className="list-disc space-y-1.5 pl-5 text-sm leading-7 text-secondary">
         {items.map((item, idx) => (
-          <li key={idx}>{item}</li>
+          <li key={idx} className={preserveBreaks && keepsBreaks(item) ? BREAKS : undefined}>{item}</li>
         ))}
       </ul>
     </div>
@@ -132,8 +136,8 @@ export default function EssayBank({ items, title = 'Bank Soal Esai & Kasus' }: {
                 <DetailList title="Data Kasus" items={b.data} icon={<FileText size={14} />} />
                 <DetailList title="Instruksi Pengerjaan" items={b.instructions} icon={<Target size={14} />} />
                 <DetailList title="Format Jawaban yang Diminta" items={b.outputFormat} icon={<FileText size={14} />} />
-                <DetailList title="Rubrik Ringkas" items={b.rubric} icon={<ListChecksIcon />} />
-                <div className="rounded-2xl border border-accent/22 bg-accent/10 p-4 text-sm leading-7 text-secondary">
+                <DetailList title="Rubrik Ringkas" items={b.rubric} icon={<ListChecksIcon />} preserveBreaks />
+                <div className={`rounded-2xl border border-accent/22 bg-accent/10 p-4 text-sm leading-7 text-secondary${keepsBreaks(b.answerGuide) ? ` ${BREAKS}` : ''}`}>
                   <span className="font-black text-accent">Panduan jawaban: </span>{b.answerGuide}
                 </div>
               </div>

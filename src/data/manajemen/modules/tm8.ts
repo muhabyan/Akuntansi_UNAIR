@@ -1,188 +1,428 @@
+// MNU108 TM08 — Review dan Pemantapan UTS (Chapter 1–7).
+// Ringkasan TM01–TM07: baris Quick Reference dan Exam Traps disalin dari bacaan TM01–TM07; tidak ada konsep di luar bacaan itu.
+// Sumber fakta tunggal: Daft & Marcic, Understanding Management 12e (2023), Chapter 1–7, hal. 2–265. Semua anchor [hal. X] merujuk halaman buku tercetak.
+// Format lima langkah menjawab kasus berasal dari mekanisme perkuliahan, bukan dari buku (lihat §13).
 import type { Reading } from '../../../types';
-import { CASE_UTS_MANAJEMEN_INTEGRATED } from '../manajemenPracticeCases';
-
-const SVG_UTS_MANAJEMEN_MAP = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgGrad8" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="m1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="m2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="m3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="m4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgGrad8)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PETA SINTESIS KURIKULUM PRA-UTS PENGANTAR MANAJEMEN (TM 1 - TM 7)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">ROADMAP UTS</text>
-
-  <!-- 4 Milestones Journey -->
-  <!-- Milestone 1 -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#m1)" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="14" y="21" fill="#38bdf8" font-size="10.5" font-weight="800">FONDASI &amp; LINGKUNGAN</text>
-    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-blue" x="44" y="56" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">TM 1 - TM 2</text>
-    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• 4 Fungsi POAC &amp; Efisiensi</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Keterampilan Manajerial Katz</text>
-    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• 10 Peran Manajer Mintzberg</text>
-    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• Lingkungan Umum PESTEL</text>
-    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• 4 Budaya Daft (Clan/Market)</text>
-    <rect class="svg-badge-blue" x="14" y="185" width="167" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fondasi Prinsip Dasar</text>
-  </g>
-
-  <polygon points="237,185 247,190 237,195" fill="#38bdf8"/>
-
-  <!-- Milestone 2 -->
-  <g transform="translate(250, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#m2)" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="14" y="21" fill="#34d399" font-size="10.5" font-weight="800">GLOBAL &amp; ETIKA SOSIAL</text>
-    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-green" x="44" y="56" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">TM 3 - TM 4</text>
-    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Moda Masuk Pasar Global</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Dimensi Budaya Hofstede</text>
-    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Piramida CSR 4-Tier Carroll</text>
-    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 4 Pendekatan Etika Bisnis</text>
-    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Whistleblowing &amp; Integritas</text>
-    <rect class="svg-badge-green" x="14" y="185" width="167" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Tanggung Jawab Moral</text>
-  </g>
-
-  <polygon points="452,185 462,190 452,195" fill="#34d399"/>
-
-  <!-- Milestone 3 -->
-  <g transform="translate(465, 75)">
-    <rect class="svg-card" x="0" y="0" width="195" height="225" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="32" rx="12" fill="url(#m3)" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="14" y="21" fill="#fbbf24" font-size="10.5" font-weight="800">PERENCANAAN &amp; KEPUTUSAN</text>
-    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-amber" x="44" y="56" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">TM 5 - TM 6</text>
-    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Hierarki Visi, Misi, Sasaran</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Matriks Portofolio BCG 2x2</text>
-    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Strategi Bersaing Porter</text>
-    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 3 Model Keputusan Simon</text>
-    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• 6 Tahap Keputusan Rasional</text>
-    <rect class="svg-badge-amber" x="14" y="185" width="167" height="24" rx="6" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Arah &amp; Formulasi</text>
-  </g>
-
-  <polygon points="667,185 677,190 667,195" fill="#fbbf24"/>
-
-  <!-- Milestone 4 -->
-  <g transform="translate(680, 75)">
-    <rect class="svg-card" x="0" y="0" width="185" height="225" rx="12" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="185" height="32" rx="12" fill="url(#m4)" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="14" y="21" fill="#a78bfa" font-size="10.5" font-weight="800">PENGORGANISASIAN</text>
-    <rect class="svg-subcard" x="14" y="44" width="60" height="18" rx="4" fill="#1e293b"/><text class="text-accent-purple" x="44" y="56" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">TM 7</text>
-    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="8">• Rantai Komando &amp; Wewenang</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="8">• Rentang Kendali (Span of Ctrl)</text>
-    <text class="svg-text" x="14" y="116" fill="#cbd5e1" font-size="8">• Sentralisasi vs Desentralisasi</text>
-    <text class="svg-text" x="14" y="134" fill="#cbd5e1" font-size="8">• 5 Desain Struktur (Daft)</text>
-    <text class="svg-text" x="14" y="152" fill="#cbd5e1" font-size="8">• Koordinasi Horizontal</text>
-    <rect class="svg-badge-purple" x="14" y="185" width="157" height="24" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="92" y="201" fill="#a78bfa" font-size="8" font-weight="700" text-anchor="middle">Arsitektur Eksekusi</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Penguasaan terpadu TM 1 hingga TM 7 menjamin ketajaman analisis studi kasus komprehensif pada Ujian Tengah Semester (UTS).</text>
-</svg>`;
 
 export const TM8_READING: Reading = {
   tm: 8,
-  title: 'Pemantapan & Review Ujian Tengah Semester (UTS) Pengantar Manajemen',
-  ref: 'Sintesis Komprehensif TM 1 s/d TM 7 | Kumpulan Soal Analisis Kasus UTS Terpilih | 10 Jebakan Soal Manajemen',
-  intro: 'TM 8 adalah modul pemantapan integratif Pra-UTS Pengantar Manajemen yang mengkristalisasikan seluruh materi semester paruh pertama: integrasi POAC, peran manajerial Mintzberg, keterampilan Katz, analisis lingkungan PESTEL, tipologi budaya Daft, ekspansi global Hofstede, etika dan CSR Carroll, penetapan sasaran MBO, strategi generik Porter, matriks BCG, model keputusan Herbert Simon, bias kognitif, serta 5 desain struktur organisasi.',
+  title: 'Review dan Pemantapan UTS: Sintesis Chapter 1–7',
+  ref: 'Daft & Marcic, Understanding Management 12e · Ch. 1–7 (hal. 2–265) · Review UTS (TM01–TM07)',
+  intro: 'Halaman review sebelum UTS. Ia merangkum kerangka dan halaman rujukan dari TM01 sampai TM07, menyatukan kaitan antarbab yang dinyatakan buku, dan memuat jebakan ujian serta latihan terpadu. Semua fakta berasal dari bacaan TM01–TM07.',
   objectives: [
-    'Mengintegrasikan teori-teori manajemen TM 1-7 untuk memecahkan studi kasus bisnis komprehensif.',
-    'Mendeteksi dan menghindari 10 jebakan konseptual terpopuler pada Ujian Tengah Semester Pengantar Manajemen.',
-    'Menyusun jawaban esai analitis terstruktur menggunakan kerangka kerja (framework) manajemen yang baku.',
-    'Mempersiapkan strategi manajemen waktu dalam menghadapi ujian studi kasus berbobot tinggi.'
+    'Menghubungkan kerangka TM01–TM07 dalam satu peta.',
+    'Menghafal kerangka beserta halaman rujukannya lewat ringkasan per TM.',
+    'Mengenali jebakan ujian lintas bab.',
+    'Menjawab kasus dengan lima langkah presenter kasus: Ringkasan Kasus, Identifikasi Permasalahan, Analisis Kasus, Jawaban atas Pertanyaan Kasus, Rekomendasi Manajerial.',
   ],
   blocks: [
     {
-      kind: 'figure',
-      caption: 'Gambar 8.1: Peta Sintesis Integratif Materi Pra-UTS Pengantar Manajemen.',
-      svg: SVG_UTS_MANAJEMEN_MAP
+      kind: 'h2',
+      text: '0. Orientasi TM08',
+    },
+    {
+      kind: 'p',
+      text: '**Cakupan UTS:** TM01–TM07, yaitu Daft & Marcic, Understanding Management 12e, Chapter 1–7 (hal. 2–265). Halaman ini merangkum kerangka, halaman rujukan, dan jebakan ujian dari ketujuh bacaan. Tidak ada konsep baru: semua fakta berasal dari bacaan TM01–TM07.',
+    },
+    {
+      kind: 'p',
+      text: '**Urutan memakai halaman ini:**',
+    },
+    {
+      kind: 'ol',
+      items: [
+        'Baca peta TM01–TM07 (§1) untuk melihat kerangka utama tiap bab.',
+        'Pelajari ringkasan per TM (§2–§8): tiap baris adalah satu kerangka beserta halaman bukunya.',
+        'Periksa kaitan antar-TM (§9) dan jebakan ujian (§10).',
+        'Kerjakan latihan terpadu (§11) dan kasus lintas bab (§12).',
+        'Gunakan lima langkah menjawab kasus (§13) untuk bank soal kasus (§14).',
+      ],
+    },
+    {
+      kind: 'callout',
+      variant: 'info',
+      title: 'Konvensi halaman ini',
+      text: '[hal. X] merujuk ke halaman buku tercetak 12e. Bagian bertanda "hasil analisis" adalah analisis AkuntansiHub, bukan isi buku. Format lima langkah di §13 berasal dari mekanisme perkuliahan, bukan dari buku.',
     },
     {
       kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 8: Top 5 Tipikal Soal Kasus UTS'
+      text: '1. Peta TM01–TM07',
     },
     {
       kind: 'table',
-      headers: ['Nomor Kasus UTS', 'Topik Manajemen yang Diuji', 'Konsep / Model Analisis Kunci', 'Kunci Pendekatan Jawaban Ujian'],
+      stackOnMobile: true,
+      headers: ['TM', 'Bab buku', 'Fokus', 'Kerangka utama', 'Hal.'],
       rows: [
-        ['Soal Kasus 1', 'Disfungsi Kepemimpinan & Keterampilan Manajer', 'Piramida Keterampilan Katz dan 10 Peran Mintzberg.', 'Jelaskan mengapa manajer baru gagal karena terlalu fokus teknis dan kurang keahlian manusiawi.'],
-        ['Soal Kasus 2', 'Resistensi Budaya terhadap Perubahan Pasar', '4 Tipologi Budaya Daft dan Lapisan Budaya Schein.', 'Identifikasi pergeseran dari Consistency Culture ke Adaptability Culture.'],
-        ['Soal Kasus 3', 'Dilema Ekspansi Pasar Internasional', 'Spektrum Masuk Pasar Global dan Dimensi Budaya Hofstede.', 'Bandingkan risiko Joint Venture vs Greenfield dengan analisis Power Distance dan Kolektivisme.'],
-        ['Soal Kasus 4', 'Formulasi Strategi Korporasi Multi-Bisnis', 'Matriks Portofolio BCG dan Strategi Generik Porter.', 'Petakan unit bisnis ke Cash Cow/Star dan tentukan alokasi arus kas strategis.'],
-        ['Soal Kasus 5', 'Redesain Struktur Organisasi Mengatasi Konflik', 'Struktur Fungsional vs Divisional vs Matriks.', 'Uraikan pemecahan Silo Effect dan mitigasi rantai komando ganda (Dual Authority).']
+        ['TM01', 'Ch. 1, Leading Edge Management (hal. 2–51)', 'Konsep dasar manajemen, fungsi, kompetensi manajer, evolusi pemikiran', 'Empat fungsi; efficiency dan effectiveness; tiga skills; sepuluh roles; perspektif klasik dan humanistik', '8–38'],
+        ['TM02', 'Ch. 2, The Environment and Corporate Culture (hal. 52–83)', 'Lingkungan eksternal dan internal, budaya korporat', 'Task dan general environment; uncertainty; boundary spanning; level dan tipe budaya; high-performance culture', '54–77'],
+        ['TM03', 'Ch. 3, Managing in a Global Environment (hal. 84–115)', 'Globalisasi, MNC, strategi masuk pasar, nilai budaya', 'Global mind-set; strategi masuk (Exh. 3.3); Hofstede dan GLOBE; high vs low context; CQ', '90–106'],
+        ['TM04', 'Ch. 4, Managing Ethics and Social Responsibility (hal. 116–147)', 'Etika manajerial, CSR, sustainability', 'Tiga domain; lima pendekatan etika; moral development; stakeholder; triple bottom line; organisasi etis', '118–141'],
+        ['TM05', 'Ch. 5, Planning and Goal Setting (hal. 148–190)', 'Goal, plan, MBO, perencanaan di lingkungan bergejolak, strategi', 'Tingkatan goal; goal efektif; MBO; contingency, scenario, crisis; SWOT; BCG; Porter', '151–185'],
+        ['TM06', 'Ch. 6, Managerial Decision Making (hal. 192–225)', 'Jenis dan kondisi keputusan, tiga model, enam langkah, gaya keputusan', 'Programmed dan nonprogrammed; certainty sampai ambiguity; classical, administrative, political; enam langkah; premortem', '195–219'],
+        ['TM07', 'Ch. 7, Designing Organization Structure (hal. 226–265)', 'Struktur vertikal dan horizontal, departmentalization, faktor pembentuk struktur', 'Chain of command; span; centralization; lima pendekatan struktur; koordinasi horizontal; mechanistic dan organic; Woodward', '228–260'],
       ],
-      caption: 'Tabel 8.0: Matriks 5 tipe soal kasus terpopuler UTS Pengantar Manajemen.'
     },
     {
       kind: 'h2',
-      text: 'Formula Sheet Fondasi: 10 Jebakan Terpopuler UTS Pengantar Manajemen'
-    },
-    {
-      kind: 'ul',
-      items: [
-        '**Jebakan 1 (Efisiensi vs Efektivitas)**: Mengira perusahaan yang beroperasi tanpa limbah otomatis berhasil. Efisiensi adalah cara kerja hemat input (*doing things right*), sedangkan efektivitas adalah ketepatan sasaran produk yang diminati pasar (*doing the right things*).',
-        '**Jebakan 2 (Peran Mintzberg Terbalik)**: Mengacaukan peran *Figurehead* (tokoh simbolis menghadiri upacara) dengan *Leader* (memotivasi dan mengarahkan kerja bawahan secara substantif).',
-        '**Jebakan 3 (Budaya Organisasi Hanya Slogan)**: Mengira budaya organisasi sebatas deklarasi nilai di dinding kantor (Espoused Values). Budaya sejati berakar pada asumsi dasar bawah sadar (*Underlying Assumptions*).',
-        '**Jebakan 4 (Hofstede Adalah Stereotip Individu)**: Menggunakan skor Hofstede untuk menghakimi satu orang tertentu. Hofstede adalah generalisasi rata-rata norma budaya nasional, bukan determinan mutlak kepribadian personal.',
-        '**Jebakan 5 (Legal Berarti Etis)**: Menjawab bahwa suatu tindakan otomatis etis hanya karena tidak ada pasal hukum yang melanggar. Wilayah etika jauh lebih luas dan menuntut standar moral yang lebih tinggi daripada sekadar kepatuhan hukum.',
-        '**Jebakan 6 (CSR Sekadar Donasi)**: Menganggap CSR hanya bagi-bagi uang amal (Filantropis). Tanggung jawab CSR dimulai dari pilar ekonomi (laba) dan pilar hukum (kepatuhan regulasi) sebelum filantropis.',
-        '**Jebakan 7 (MBO Bersifat Otokratis)**: Mengira sasaran MBO ditentukan sepihak oleh atasan secara sewenang-wenang. Esensi MBO adalah **kesepakatan bersama secara partisipatif** antara atasan dan bawahan.',
-        '**Jebakan 8 (Matriks BCG Cash Cow Ditinggalkan)**: Menganggap unit bisnis Cash Cow tidak penting karena pertumbuhannya rendah. Cash Cow adalah sumber oksigen arus kas vital untuk membiayai riset produk Star masa depan.',
-        '**Jebakan 9 (Model Klasik Terjadi di Dunia Nyata)**: Berasumsi manajer mengambil keputusan secara rasional sempurna. Dunia nyata beroperasi di bawah **Bounded Rationality dan Satisficing** Herbert Simon.',
-        '**Jebakan 10 (Struktur Matriks Tanpa Konflik)**: Menilai struktur matriks sempurna untuk segala kondisi. Matriks secara inheren melanggar kesatuan komando dan membutuhkan kedewasaan komunikasi tinggi untuk menangani komando ganda.'
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Kerangka Menjawab Soal Esai Studi Kasus UTS',
-      prompt: 'Bagaimana struktur kerangka jawaban esai terbaik ketika menghadapi soal studi kasus kompleks di ujian manajemen agar memperoleh nilai maksimal dari dosen?',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Gunakan Format 4 Tahap Analitis**:\n1. **Identifikasi Masalah Utama (Problem Statement)**: Definisikan dengan tegas apa akar masalah manajemen yang dihadapi (contoh: krisis kepemimpinan, konflik struktur fungsional, atau ancaman disrupsi teknologi).\n2. **Landasan Teori & Kerangka Kerja (Theoretical Framework)**: Sebutkan nama teori dan tokoh pencetusnya secara presisi (contoh: 4 Tipologi Budaya Daft, Strategi Bersaing Porter, Model Keputusan Simon).\n3. **Analisis Alternatif Solusi (Evaluation of Alternatives)**: Evaluasi pro dan kontra dari 2-3 tindakan manajerial yang dapat diambil.\n4. **Rekomendasi Rencana Aksi Konkret (Action Plan)**: Rumuskan langkah implementasi nyata terstruktur (siapa melakukan apa, kapan waktunya, dan bagaimana mengukurnya).',
-            '**Hindari Jawaban Bersifat Opini Umum**: Jangan menjawab dengan kata-kata umum seperti "manajer harus lebih bijaksana dan bekerja keras". Selalu kaitkan dengan konsep baku manajemen ilmiah.'
-          ]
-        }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 8'
+      text: '2. Ringkasan TM01: Leading Edge Management (Ch. 1, hal. 2–51)',
     },
     {
       kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
       rows: [
-        ['1', 'Sintesis Konsep Manajemen TM 1-7', 'Keterkaitan sekuensial POAC dari perumusan visi hingga desain struktur.', 'Mampu menghubungkan teori lintas modul dalam satu analisis kasus.'],
-        ['2', 'Analisis 10 Jebakan Konseptual', 'Penghindaran kekeliruan definisi dan bias pemahaman konsep.', 'Mampu menjawab soal jebakan pilihan ganda dan esai dengan presisi.'],
-        ['3', 'Metodologi Pemecahan Kasus Bisnis', 'Penerapan format Problem-Theory-Alternative-Recommendation.', 'Mampu menghasilkan esai ujian bernilai tinggi dan berbobot akademis.']
+        ['4 fungsi', 'Planning, Organizing, Leading, Controlling', '8–10'],
+        ['Performance', 'Efficiency + Effectiveness', '11–12'],
+        ['3 skills', 'Technical, Human, Conceptual', '12–15'],
+        ['10 roles', 'Informational (Monitor, Disseminator, Spokesperson); Interpersonal (Figurehead, Leader, Liaison); Decisional (Entrepreneur, Disturbance Handler, Resource Allocator, Negotiator)', '21'],
+        ['Classical: 4 subfields', 'Scientific management, Bureaucratic organizations, Administrative principles, Management science', '27'],
+        ['Weber: 6 ciri', 'Division of labor; hierarchy; rules & procedures; management terpisah dari ownership; tercatat tertulis; seleksi berdasar kualifikasi teknis', '29'],
+        ['Fayol: 5 elemen', 'Planning, Organizing, Commanding, Coordinating, Controlling', '30'],
+        ['Mgmt science: 3 subsets', 'Operations research, Operations management, Information technology', '32'],
+        ['Humanistic: 3 subfields', 'Human relations, Human resources perspective, Behavioral sciences', '34'],
+        ['Theory X / Theory Y', '3 asumsi X / 5 asumsi Y', '38'],
       ],
-      caption: 'Tabel 8.2: Peta penguasaan submateri TM 8 Pengantar Manajemen.'
     },
-    CASE_UTS_MANAJEMEN_INTEGRATED,
     {
       kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      text: '3. Ringkasan TM02: The Environment and Corporate Culture (Ch. 2, hal. 52–83)',
     },
     {
-      kind: 'ul',
-      items: [
-        '**Sebutkan Tokoh dan Tahun Teori**: Menyebutkan nama ahli (contoh: "Menurut Richard L. Daft...", "Berdasarkan Herbert Simon...", "Menggunakan model Michael Porter...") meningkatkan kredibilitas jawaban ujian Anda secara signifikan.',
-        '**Visualisasikan dengan Diagram**: Jika format ujian memungkinkan, buat sketsa bagan matriks (seperti 4 kuadran BCG atau matriks budaya Daft) untuk membuktikan pemahaman visual konseptual Anda.',
-        '**Fokus pada Solusi yang Dapat Diterapkan**: Rekomendasi manajerial yang baik harus realistis dan memperhitungkan keterbatasan anggaran kas serta kesiapan SDM perusahaan.'
-      ]
-    }
-  ]
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Task environment (4)', 'Customers, Competitors, Suppliers, Labor market', '54–57'],
+        ['General environment (6)', 'International, Technological, Sociocultural, Economic, Legal–political, Natural', '55, 58–62'],
+        ['Internal environment', 'Employees, management, culture [hal. 54–55]; culture, production technology, structure, physical facilities [hal. 67]', '54–55, 67'],
+        ['Uncertainty (Exh. 2.4)', 'Number of factors × Rate of change', '63–64'],
+        ['Boundary spanning', 'Business intelligence; Influence the environment', '64–66'],
+        ['Business intelligence (4 sumber)', 'Personal internal, Personal external, Organizational internal, Organizational external', '65'],
+        ['Levels of culture (Exh. 2.5)', 'Visible: artifacts. Invisible: expressed values; underlying assumptions', '67'],
+        ['Membentuk budaya (5)', 'Symbols, Stories, Heroes, Slogans, Ceremonies', '69–71'],
+        ['Tipe budaya (Exh. 2.6)', 'Adaptability, Achievement, Involvement, Consistency', '71–74'],
+        ['Exhibit 2.7', 'Kuadran A, B, C, D', '75–76'],
+        ['High-performance culture (3 ciri)', 'Misi kokoh; nilai adaptif bersama; karyawan ikut memiliki hasil & budaya', '77'],
+        ['Cultural leadership (2 area)', 'Mengartikulasikan visi budaya; memperhatikan aktivitas harian', '77'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '4. Ringkasan TM03: Managing in a Global Environment (Ch. 3, hal. 84–115)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Global mind-set (Exh. 3.2)', 'Cognitive, Psychological, Social', '90–91'],
+        ['Mengembangkan global mind-set', 'Thinking, Doing', '91'],
+        ['Ciri MNC (3)', 'Sistem global terintegrasi; satu otoritas manajemen; perspektif global manajer puncak', '95'],
+        ['Filosofi MNC (3)', 'Ethnocentric, Polycentric, Geocentric', '96'],
+        ['Strategi masuk (Exh. 3.3)', 'Exporting, Global outsourcing, Partnerships (joint venture, alliance networks)', '97–98'],
+        ['Hofstede (4 + 1)', 'Power distance, Uncertainty avoidance, Individualism–collectivism, Masculinity–femininity; + Long-term vs short-term orientation', '102–103'],
+        ['GLOBE (5 yang diuraikan dari 9)', 'Assertiveness, Future orientation, Gender differentiation, Performance orientation, Humane orientation', '103–104'],
+        ['Konteks komunikasi (Exh. 3.6)', 'High-context, Low-context', '105–106'],
+        ['CQ (3)', 'Cognitive, Emotional, Physical', '106'],
+      ],
+    },
+    {
+      kind: 'p',
+      text: 'Bagian legal–political (political risk dan political instability) dan trade alliances (GATT/WTO, EU, USMCA) di TM03 ditandai "di luar RPP" dan tidak diringkas di sini.',
+    },
+    {
+      kind: 'h2',
+      text: '5. Ringkasan TM04: Managing Ethics and Social Responsibility (Ch. 4, hal. 116–147)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Tiga domain tindakan (Exh. 4.1)', 'Codified law (legal standard), Ethics (social standard), Free choice (personal standard)', '119'],
+        ['Perilaku manajer etis (Exh. 4.2)', 'Honesty and integrity; Communicates and enforces ethical standards; Fair in decisions and rewards; Kindness, compassion, concern', '121'],
+        ['Lima pendekatan normatif', 'Utilitarian, Individualism, Moral-rights, Justice, Practical', '124–126'],
+        ['Tiga jenis justice', 'Distributive, Procedural, Compensatory', '125'],
+        ['Tes practical approach', 'Diterima komunitas profesi; rela diberitakan; nyaman dijelaskan kepada keluarga dan teman', '126'],
+        ['Level perkembangan moral (Exh. 4.3)', 'Preconventional, Conventional, Postconventional', '127–128'],
+        ['Area ESG (5)', 'Environment, Social capital, Human capital, Business innovation, Leadership and governance', '130'],
+        ['Stakeholder BRT (Exh. 4.4)', 'Customers, Employees, Suppliers, Communities, Shareholders', '131–132'],
+        ['Triple bottom line (Exh. 4.5)', 'People, Planet, Profit', '135–136'],
+        ['Dua cara badan usaha bermisi sosial', 'Benefit corporation (badan hukum), Certified B Corporation (sertifikasi B Lab)', '136–137'],
+        ['Jenis code of ethics', 'Principle-based, Policy-based', '139'],
+        ['Organisasi etis (Exh. 4.6)', 'Values: Ethical leadership, Volunteerism, Code of ethics, Ethics committee. Structure: Chief ethics officer, Ethics hotline, Ethics training, Support for whistle-blowers', '138'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '6. Ringkasan TM05: Planning and Goal Setting (Ch. 5, hal. 148–190)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Tingkatan goal dan plan (Exh. 5.1)', 'Mission; Strategic (senior management); Tactical (middle management); Operational (lower management)', '151–154'],
+        ['Proses perencanaan (Exh. 5.2)', 'Develop the plan; Translate the plan; Plan operations; Performance management; Monitor and learn', '153–154'],
+        ['Fungsi misi', 'Arah strategis dan kerangka goal; motivasi dan inspirasi', '156'],
+        ['Cara menyelesaikan konflik tujuan (5)', 'Build a coalition; Modify goals by time or location; Debate and dialogue; Cross-silo cooperation; Manager departures', '158–159'],
+        ['Karakteristik goal efektif (Exh. 5.4)', 'Specific and measurable; Defined time period; Cover key result areas; Challenging but realistic; Linked to rewards', '160–161'],
+        ['Langkah MBO (Exh. 5.5)', 'Set goals; Develop action plans; Review progress; Appraise overall performance', '162'],
+        ['Manfaat MBO (Exh. 5.6)', 'Fokus upaya; kinerja di semua tingkat; motivasi; keselarasan goal', '163'],
+        ['OKR', 'Objectives; Key results; CFR (conversations, feedback, recognition)', '162–163'],
+        ['Manfaat perencanaan (4)', 'Motivasi dan komitmen; alokasi sumber daya; pedoman tindakan; standar kinerja', '164'],
+        ['Keterbatasan perencanaan (4)', 'Tekanan berlebihan; rasa pasti semu; kekakuan; hambatan intuisi dan kreativitas', '165'],
+        ['Pendekatan lingkungan bergejolak', 'Contingency planning, Scenario building, Crisis planning; ditambah Stretch goals', '165'],
+        ['Crisis planning (Exh. 5.7)', 'Prevention (build relationships; detect signals); Preparation (tim dan juru bicara; CMP; sistem komunikasi)', '168–169'],
+        ['Elemen keunggulan bersaing (Exh. 5.8)', 'Target customers; Core competence; Synergy; Value', '173–175'],
+        ['SWOT', 'Strengths, Weaknesses (internal); Opportunities, Threats (eksternal)', '176–178'],
+        ['Pendekatan strategi korporat (3)', 'Portfolio strategy; BCG matrix; Diversification', '179'],
+        ['BCG matrix (Exh. 5.10)', 'Star; Cash cow; Bright prospect; Dog', '180'],
+        ['Bentuk diversifikasi', 'Merger; Joint venture; Related diversification', '181'],
+        ['Five forces (Exh. 5.11)', 'New entrants; Buyers; Suppliers; Substitutes; Rivalry', '182–183'],
+        ['Strategi Porter (Exh. 5.12)', 'Differentiation; Cost leadership; Focus (focused differentiation atau focused cost leadership)', '183–185'],
+      ],
+    },
+    {
+      kind: 'p',
+      text: 'Pada Exhibit 5.8, elemen keempat keunggulan bersaing tertulis "Create Value" di exhibit dan "Deliver value" di teks; keduanya menunjuk elemen yang sama [hal. 173–175].',
+    },
+    {
+      kind: 'h2',
+      text: '7. Ringkasan TM06: Managerial Decision Making (Ch. 6, hal. 192–225)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Jenis keputusan', 'Programmed; Nonprogrammed', '195'],
+        ['Kondisi keputusan (Exh. 6.1)', 'Certainty; Risk; Uncertainty; Ambiguity (kemungkinan gagal dari rendah ke tinggi)', '196–198'],
+        ['Tiga model keputusan', 'Classical; Administrative; Political', '199'],
+        ['Asumsi model klasik (4)', 'Tujuan diketahui dan disepakati; certainty dan informasi lengkap; kriteria diketahui, maksimalkan hasil ekonomi; rasional dan logis', '199'],
+        ['Konsep model administratif (Simon)', 'Bounded rationality; Satisficing; ditambah intuition dan quasirationality', '201–203'],
+        ['Asumsi model administratif (5)', 'Tujuan samar; tidak sadar masalah; prosedur rasional terbatas; pencarian alternatif terbatas; satisficing', '202'],
+        ['Asumsi model politik (4)', 'Kelompok beragam; informasi ambigu; saling bertukar pandangan; debat dan tawar-menawar', '203–204'],
+        ['Perbandingan tiga model (Exh. 6.2)', 'Problem and goals; condition; information; choice', '204'],
+        ['Enam langkah (Exh. 6.3)', 'Recognition; Diagnosis; Alternatives; Selection; Implementation; Evaluation and feedback', '205'],
+        ['Decision requirement', 'Problem; Opportunity', '205–206'],
+        ['Alat diagnosis', 'Delapan pertanyaan Kepner–Tregoe; 5 Whys', '206'],
+        ['Kriteria alternatif terbaik', 'Cocok dengan tujuan dan nilai; sumber daya paling sedikit; risiko paling kecil', '207'],
+        ['Personal Decision Framework (Exh. 6.5)', 'Situation + Personal Decision Style → Decision Choice', '212'],
+        ['Gaya keputusan (4)', 'Directive; Analytical; Conceptual; Behavioral', '212–213'],
+        ['Bias (6)', 'Kesan awal (anchoring); Takut rugi (loss aversion); Melihat yang ingin dilihat (confirmation); Status quo; Emosi; Overconfidence', '214–215'],
+        ['Innovative decision making (6)', 'Brainstorming; Hard evidence; Rigorous debate; Avoid groupthink; Know when to bail; Premortem and postmortem', '217–219'],
+      ],
+    },
+    {
+      kind: 'p',
+      text: 'Enam bias dan teknik penangkalnya berasal dari bagian yang ditandai "di luar RPP" di TM06 (bias), sedangkan escalating commitment, know when to bail, dan premortem berasal dari bagian inti.',
+    },
+    {
+      kind: 'h2',
+      text: '8. Ringkasan TM07: Designing Organization Structure (Ch. 7, hal. 226–265)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Kerangka', 'Komponen', 'Hal.'],
+      rows: [
+        ['Organization structure (3 unsur)', 'Tugas formal; hubungan pelaporan formal; sistem koordinasi antardepartemen', '228–229'],
+        ['Ciri vertikal struktur (4)', 'Division of labor; chain of command; span of management; centralization dan decentralization', '229–237'],
+        ['Prinsip chain of command (2)', 'Unity of command; scalar principle', '230'],
+        ['Ciri authority (3)', 'Melekat pada posisi; mengalir ke bawah; diterima bawahan', '231'],
+        ['Line vs staff authority', 'Mengarahkan dan mengendalikan vs menasihati, merekomendasikan, dan memberi konseling', '232'],
+        ['Faktor span besar (8)', 'Kerja stabil dan rutin; tugas serupa; satu lokasi; bawahan terlatih; ada aturan; ada sistem pendukung; sedikit kegiatan nonsupervisi; preferensi manajer', '233–234'],
+        ['Faktor centralization vs decentralization (3)', 'Perubahan dan ketidakpastian lingkungan; kesesuaian dengan strategi; krisis', '237'],
+        ['Pendekatan departmentalization (5; Exh. 7.3)', 'Functional; Divisional; Matrix (tradisional) · Team; Virtual network (inovatif)', '238–239'],
+        ['Peran matriks (3)', 'Two-boss employees; Matrix boss; Top leader', '244'],
+        ['Pendekatan tim (3)', 'Cross-functional teams; Permanent teams; Team-based structure', '245'],
+        ['Mekanisme koordinasi horizontal (4)', 'Task force; Teams; Project manager; Relational coordination', '252–254'],
+        ['Evolusi struktur (Exh. 7.11)', 'Traditional vertical → Cross-functional teams and project managers → Reengineering to horizontal teams', '252'],
+        ['Faktor pembentuk struktur (Exh. 7.13)', 'Strategic needs (environment, strategy, goals); Operational needs (technology, work processes)', '256–257'],
+        ['Kontinum strategi (Exh. 7.14)', 'Functional → Functional with task forces, integrators → Divisional → Horizontal teams', '258'],
+        ['Teknologi Woodward (3; Exh. 7.15)', 'Small batch (organic); Mass production (mechanistic); Continuous process (organic)', '258–260'],
+      ],
+    },
+    {
+      kind: 'p',
+      text: 'Label Exhibit 7.14 "Integrators" dan teks "project managers" menunjuk peran yang sama [hal. 253].',
+    },
+    {
+      kind: 'h2',
+      text: '9. Kaitan Antar-TM',
+    },
+    {
+      kind: 'p',
+      text: 'Tabel ini memuat hubungan antarbab yang dinyatakan buku atau bacaan. Kolom terakhir membedakan yang disebut buku dari yang merupakan hasil analisis.',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Dari dan ke', 'Hubungan', 'Hal.', 'Sumber hubungan'],
+      rows: [
+        ['Ch. 1 → Ch. 2, 3, 7', 'Organisasi tanpa bos (bossless) muncul lagi sebagai jembatan budaya, sebagai eksperimen di banyak negara, dan sebagai struktur tim', '7, 68, 87, 247', 'Buku menyebut'],
+        ['Ch. 2 → Ch. 3', 'Dimensi international adalah bagian yang makin penting dari lingkungan eksternal Ch. 2', '58, 86', 'Buku menyebut'],
+        ['Ch. 2 → Ch. 5', 'Strategic issues dari Ch. 2 kembali di Ch. 5; sepuluh sektor lingkungan Ch. 2 dipakai menilai peluang dan ancaman SWOT', '64, 175, 178', 'Buku menyebut'],
+        ['Ch. 2 → Ch. 4', 'Pengumpulan informasi pesaing lewat media sosial punya sisi etis; hukumnya tidak tegas', '65, 122', 'Hasil analisis'],
+        ['Ch. 2 → Ch. 7', 'Perubahan dan ketidakpastian lingkungan yang lebih besar terkait dengan decentralization', '63–64, 237', 'Hasil analisis'],
+        ['Ch. 3 → Ch. 6', 'Pilihan pendekatan global vs lokal adalah contoh situasi ambiguity', '198', 'Buku menyebut'],
+        ['Ch. 4 → Ch. 5 → Ch. 7', 'Kasus Wells Fargo muncul sebagai contoh tekanan target berlebihan (Ch. 5) dan desentralisasi berlebihan (Ch. 7)', '120, 165, 236–237', 'Buku menyebut'],
+        ['Ch. 5 → Ch. 7', 'Dua strategi Porter (differentiation dan cost leadership) menentukan struktur yang cocok (structure follows strategy)', '257', 'Buku menyebut'],
+        ['Ch. 1 → Ch. 6', 'AI dan big data (Ch. 1) memperluas pemakaian model keputusan klasik', '200', 'Buku menyebut'],
+        ['Ch. 5 ↔ Ch. 6', 'Strategy execution dibahas di Ch. 5, bukan Ch. 6 (teks Ch. 6 menulis "later in this chapter")', '208, 171', 'Buku menyebut'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '10. Exam Traps Lintas Bab',
+    },
+    {
+      kind: 'p',
+      text: 'Tiga jebakan terpenting per TM, disalin dari bagian Exam Traps tiap bacaan.',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['TM', 'Jebakan', 'Jawaban salah', 'Jawaban benar', 'Hal.'],
+      rows: [
+        ['TM01', 'Fungsi Fayol vs fungsi modern', '"Fayol juga memakai planning, organizing, leading, controlling"', 'Fayol: planning, organizing, **commanding, coordinating**, controlling', '30'],
+        ['TM01', 'Hasil Hawthorne', '"Terbukti uang tidak berpengaruh"', 'Tafsiran awal: human relations; reanalisis: **uang mungkin paling penting**', '35–36'],
+        ['TM01', 'Leader vs liaison role', '"Leader role makin penting di puncak"', 'Makin tinggi posisi, leader turun, liaison naik', '22'],
+        ['TM02', 'Jumlah dimensi general environment', '"Lima dimensi"', '**Enam dimensi.** Teks utama (hal. 55, 58) dan Exhibit 2.1 (hal. 54) menyebut enam; box Remember This (hal. 58) menulis "five dimensions". Untuk ujian, jawab enam.', '54, 55, 58'],
+        ['TM02', 'Sumber uncertainty', '"Cukup dilihat dari jumlah faktor"', 'Dua sumbu: jumlah faktor **dan** laju perubahan; faktor yang berubah cepat menimbulkan ketidakpastian tinggi', '63–64'],
+        ['TM02', 'High-performance culture', '"Kuadran D, karena budayanya kuat"', '**Kuadran B**. Kuadran D budayanya kuat tetapi tidak terkait hasil (LEGO 1990-an)', '75–77'],
+        ['TM03', 'Tujuan outsourcing', '"Strategi untuk menjual ke pasar luar negeri"', 'Outsourcing untuk **memperoleh sumber daya lebih murah**; exporting dan partnerships untuk **mengembangkan pasar**. Exh. 3.3 tetap memasukkan outsourcing ke tiga strategi masuk arena internasional', '97–98'],
+        ['TM03', 'Membaca Exh. 3.4', '"Angka besar = nilai tinggi"', 'Angka adalah **peringkat**: **1 = tertinggi**. AS Individualism 1 = paling individualis', '103'],
+        ['TM03', 'Global mind-set vs CQ', 'Unsurnya dianggap sama', 'Global mind-set: cognitive, **psychological, social**. CQ: cognitive, **emotional, physical**', '90–91, 106'],
+        ['TM04', 'Legal vs etis', '"Kalau tidak melanggar hukum, pasti etis"', 'Ada **tiga** domain; domain etika tidak diatur hukum khusus tetapi punya standar sosial', '119'],
+        ['TM04', 'Jumlah primary stakeholders', 'Menjawab satu angka tanpa konteks', '**BRT dan Exh. 4.4: lima** (termasuk komunitas). **Teks hal. 132: empat** primary stakeholders tanpa mereka organisasi tidak bertahan; komunitas "another important stakeholder"', '131–133'],
+        ['TM04', 'Benefit corporation vs B Corp', '"Sama saja"', 'Benefit corporation = **badan hukum** menurut undang-undang negara bagian. Certified B Corp = **sertifikasi nonlegal** oleh B Lab. Perusahaan bisa menjadi keduanya', '136–137'],
+        ['TM05', 'Jumlah pendekatan lingkungan bergejolak', '"Empat pendekatan"', 'Buku menyebut **tiga pendekatan** (contingency, scenario, crisis) **ditambah** stretch goals', '165'],
+        ['TM05', 'Contingency vs scenario', '"Sama saja"', 'Contingency: respons untuk keadaan darurat, fokus skenario terburuk. Scenario building: perluasannya, memvisualisasikan beberapa masa depan (2–5 skenario)', '166–167'],
+        ['TM05', 'Kuadran pangsa kecil di industri tumbuh cepat', 'Memakai istilah dari sumber lain', 'Buku menyebutnya **bright prospect**', '180'],
+        ['TM06', 'Uncertainty vs ambiguity', '"Ambiguity = uncertainty yang lebih berat"', 'Pada ambiguity **tujuan atau masalahnya sendiri tidak jelas**; ambiguity situasi paling sulit', '197–198'],
+        ['TM06', 'Normative vs descriptive', '"Model klasik menggambarkan cara manajer benar-benar memutuskan"', 'Klasik = **normative** (seharusnya); administratif = **descriptive** (kenyataannya)', '200'],
+        ['TM06', 'Premortem vs postmortem', '"Sama saja"', 'Premortem: **sebelum** komit, membayangkan kegagalan. Postmortem/after-action review: **setelah** implementasi, meninjau hasil', '219'],
+        ['TM07', 'Responsibility vs accountability', '"Sama saja"', 'Responsibility = kewajiban menjalankan tugas. Accountability = wajib melaporkan dan mempertanggungjawabkan hasil tugas kepada atasan di chain of command', '231'],
+        ['TM07', 'Matrix', '"Matrix tetap menjaga unity of command"', 'Matrix **melanggar** unity of command karena dua garis otoritas; two-boss employees melapor ke dua atasan', '242–243'],
+        ['TM07', 'Woodward: span', '"Span terkecil pada mass production"', 'Span **terbesar** pada mass production (48); small batch 23, continuous process 15', '259–260'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '11. Latihan Terpadu: SWOT, MBO, dan Struktur',
+    },
+    {
+      kind: 'p',
+      text: 'Tiga latihan pendek dari exhibit buku. Kolom jawaban memuat jawaban dan halamannya; bagian bertanda "hasil analisis" bukan isi buku.',
+    },
+    {
+      kind: 'h3',
+      text: '11.1 SWOT: klasifikasikan butir dari Exhibit 5.9 (Kroger)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Butir pada Exhibit 5.9', 'Jawaban', 'Alasan'],
+      rows: [
+        ['Strong line of private-label brands', 'Strength', 'Karakteristik internal positif [hal. 177–178]'],
+        ['High debt load', 'Weakness', 'Karakteristik internal yang dapat membatasi kinerja [hal. 177–178]'],
+        ['Slow start on digital-ordering technology', 'Weakness', 'Karakteristik internal yang menghambat [hal. 177–178]'],
+        ['Increase shelf space for private-label brands and organic foods', 'Opportunity', 'Karakteristik eksternal yang berpotensi membantu [hal. 178]'],
+        ['Aggressive expansion of nontraditional rivals such as Walmart, Target, and Amazon', 'Threat', 'Perilaku pesaing di task environment [hal. 178]'],
+        ['Uncertainty caused by COVID-19 pandemic', 'Threat', 'Karakteristik eksternal yang dapat menghalangi goal [hal. 178]'],
+      ],
+    },
+    {
+      kind: 'h3',
+      text: '11.2 MBO: urutkan langkah dan terapkan',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan', 'Jawaban', 'Hal.'],
+      rows: [
+        ['Sebutkan empat langkah MBO (Exhibit 5.5) secara berurutan.', 'Set goals → develop action plans → review progress → appraise overall performance → kembali ke langkah 1', '162'],
+        ['Mozilla memberi karyawan goal "menutup 40 bug prioritas tinggi sebelum rilis beta berikutnya". Karakteristik goal efektif mana yang tampak?', 'Specific and measurable (40 bug) dan defined time period (sebelum rilis beta berikutnya). Ini hasil analisis atas contoh buku.', '160–162'],
+        ['Apa keterbatasan MBO menurut buku dan apa pelengkapnya?', 'Penekanan berlebihan pada memenuhi goal dapat mengaburkan cara mencapainya; pelengkapnya management by means (MBM)', '163'],
+      ],
+    },
+    {
+      kind: 'h3',
+      text: '11.3 Struktur: pilih ujung kontinum (Exhibit 7.14)',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Situasi', 'Jawaban', 'Hal.'],
+      rows: [
+        ['Tujuan strategis: cost leadership, efisiensi, dan stabilitas', 'Ujung mechanistic: struktur fungsional (vertikal, tersentralisasi)', '257–258'],
+        ['Tujuan strategis: differentiation, inovasi, dan fleksibilitas di lingkungan yang cepat berubah', 'Ujung organic: tim horizontal (otoritas keputusan terdesentralisasi)', '257–258'],
+        ['Teknologi produksi Woodward mana yang mechanistic dengan centralization tinggi dan span supervisor terbesar?', 'Mass production (span 48); small batch dan continuous process organic', '258–260'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '12. Kasus Lintas Bab: Boeing 737 MAX',
+    },
+    {
+      kind: 'p',
+      text: 'Buku memakai Boeing 737 MAX sebagai contoh di lima bab. Tabel ini menyatukan apa yang ditulis buku, kerangka yang dipakainya, dan halamannya.',
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Bab', 'Yang ditulis buku', 'Kerangka', 'Hal.'],
+      rows: [
+        ['Ch. 1', 'CEO terlalu bergantung pada data dan nasihat hukum, sehingga ketegangan dengan pelanggan dan regulator membesar; ia gagal menjalankan peran disseminator dan spokesperson saat krisis', 'Sepuluh peran manajer (informational)', '21–22'],
+        ['Ch. 2', 'Boeing memenangkan lobi yang melemahkan peran FAA beberapa minggu sebelum dua 737 MAX jatuh; seluruh 737 MAX dilarang terbang selama setahun', 'Boundary spanning: influence the environment', '66'],
+        ['Ch. 5', 'Keluhan etika internal menuduh manajemen puncak lebih mementingkan biaya dan jadwal daripada keselamatan dan mutu; kegagalan CEO segera tampil membuat krisis membesar', 'Goal conflict; crisis response', '158, 168'],
+        ['Ch. 6', 'Memodifikasi 737 lama karena lebih murah, lebih cepat, dan persetujuan regulator lebih singkat; tidak memberi tahu maskapai dan awak kokpit tentang MCAS', 'Nonprogrammed decision', '194–195'],
+        ['Ch. 7', 'Setelah dua kecelakaan fatal, Boeing menyentralisasi pengawasan keselamatan dalam organisasi baru', 'Centralization saat krisis', '237'],
+      ],
+    },
+    {
+      kind: 'table',
+      stackOnMobile: true,
+      headers: ['Pertanyaan latihan', 'Arah jawaban', 'Hal.'],
+      rows: [
+        ['Mengapa peran disseminator dan spokesperson krusial saat krisis, dan apa akibatnya bila gagal dijalankan?', 'Keduanya menjadi krusial saat krisis; kegagalan menjalankannya membuat ketegangan dengan pelanggan dan regulator membesar', '21–22'],
+        ['Goal apa yang berkonflik pada pengembangan 737 MAX menurut keluhan etika internal?', 'Tujuan biaya dan jadwal berhadapan dengan keselamatan dan mutu; konflik tujuan muncul karena mencapai satu goal bisa berarti goal lain tidak tercapai', '157–158'],
+        ['Faktor apa yang membuat centralization dipilih setelah kecelakaan?', 'Saat krisis atau risiko kegagalan perusahaan, authority bisa disentralisasi di puncak', '237'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '13. Lima Langkah Menjawab Kasus',
+    },
+    {
+      kind: 'p',
+      text: 'Menurut mekanisme perkuliahan, Kelompok Presenter Kasus memimpin pembahasan studi kasus dengan lima langkah berikut. Format ini berasal dari mekanisme perkuliahan, bukan dari buku, dan dipakai di AkuntansiHub sebagai kerangka latihan (bagian kasus TM01–TM07 dan bank soal). Belum tentu UTS memakai format ini.',
+    },
+    {
+      kind: 'table',
+      headers: ['Langkah', 'Isi'],
+      rows: [
+        ['1. Ringkasan Kasus (Case Summary)', 'Ringkasan fakta kasus'],
+        ['2. Identifikasi Permasalahan (Problem Identification)', 'Daftar masalah beserta jenisnya'],
+        ['3. Analisis Kasus', 'Hubungkan tiap masalah dengan kerangka buku dan sebut halamannya'],
+        ['4. Jawaban atas Pertanyaan Kasus', 'Jawab pertanyaan kasus satu per satu'],
+        ['5. Rekomendasi Manajerial', 'Satu keputusan yang tegas beserta alasannya'],
+      ],
+    },
+    {
+      kind: 'h2',
+      text: '14. Alat Bantu Latihan',
+    },
+    {
+      kind: 'table',
+      headers: ['Alat', 'Isi', 'Cakupan'],
+      rows: [
+        ['Kuis Pra-UTS', 'Soal pilihan ganda; setiap penjelasan memuat halaman buku', 'TM01–TM07'],
+        ['Flashcard', 'Kartu per TM dan kartu review lintas bab', 'TM01–TM07 dan review'],
+        ['Bank Soal Pra-UTS', 'Satu kasus per TM dari Ethical Dilemma buku, dengan panduan jawaban lima langkah', 'TM01–TM07'],
+      ],
+    },
+  ],
 };

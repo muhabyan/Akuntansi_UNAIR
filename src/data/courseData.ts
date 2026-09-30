@@ -627,7 +627,7 @@ export const SEMESTERS: Semester[] = [
             code: 'MNU108', newCode: 'FEB25603011', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
             references: MNU108_REF,
             materiTM1_7: MNU108_TM1_7, materiTM8_14: MNU108_TM8_14,
-            flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            flashcardCount: 105, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'AKS201', newCode: 'FEB25603013', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',

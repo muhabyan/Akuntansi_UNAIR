@@ -1,7 +1,7 @@
 // src/data/quizzes/mnm101.ts
-// Bank Soal Kuis Pilihan Ganda Komprehensif Pengantar Manajemen (MNM101)
-// Berdasarkan Richard L. Daft (Understanding Management 12e/13e) & Stephen P. Robbins (Management 15e/16e)
-// 70 Soal Lengkap: 35 Soal Pra-UTS (TM 1-7) & 35 Soal Pra-UAS (TM 8-14)
+// Kuis pilihan ganda Pengantar Manajemen (MNU108; nama variabel dan file masih MNM101)
+// Sumber: Daft & Marcic, Understanding Management 12e (2023)
+// 56 soal Pra-UTS (TM 1-7, setiap penjelasan memuat [hal. X]) dan 35 soal Pra-UAS (TM 8-14, belum disinkronkan ke 12e)
 import type { QuizQuestion } from '../../types';
 
 export const MNM101_QUIZ_UTS: QuizQuestion[] = [
@@ -11,41 +11,41 @@ export const MNM101_QUIZ_UTS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Manajer menetapkan target penjualan tumbuh 15% untuk tahun depan dan merancang langkah pencapaiannya. Manajer tersebut sedang menjalankan fungsi...",
     "options": [
-      "Planning (Perencanaan)",
       "Organizing (Pengorganisasian)",
       "Leading (Kepemimpinan)",
-      "Controlling (Pengendalian)"
+      "Controlling (Pengendalian)",
+      "Planning (Perencanaan)"
     ],
-    "answer": 0,
-    "explanation": "Planning adalah fungsi manajemen yang mendefinisikan sasaran organisasi di masa depan dan menentukan sumber daya serta tugas yang diperlukan untuk mencapainya."
+    "answer": 3,
+    "explanation": "Planning adalah fungsi menetapkan tujuan kinerja masa depan dan cara mencapainya. Organizing menugaskan pekerjaan dan mengalokasikan sumber daya, leading memakai pengaruh untuk memotivasi karyawan, dan controlling memantau aktivitas serta melakukan koreksi [hal. 8–10]."
   },
   {
     "tm": 1,
-    "topic": "Keterampilan Manajerial Katz",
+    "topic": "Keterampilan Manajerial",
     "difficulty": "medium",
-    "q": "Menurut Robert L. Katz, keterampilan manajerial yang proporsinya PALING dominan dibutuhkan oleh seorang manajer lini pertama (first-line supervisor) adalah...",
+    "q": "Menurut Exhibit 1.3, dibandingkan dengan manajer madya, keterampilan yang porsinya PALING besar pada nonmanajer (individual contributor) adalah...",
     "options": [
-      "Conceptual Skills",
-      "Technical Skills",
-      "Human Skills",
-      "Political Skills"
+      "Technical skills",
+      "Human skills",
+      "Conceptual skills",
+      "Ketiga keterampilan sama besar"
     ],
-    "answer": 1,
-    "explanation": "Manajer lini pertama mengawasi langsung staf operasional, sehingga keahlian teknis (Technical Skills) untuk memandu metode dan prosedur kerja harian sangat dominan."
+    "answer": 0,
+    "explanation": "Exhibit 1.3: pada nonmanajer, technical skills besar, human skills sedang, dan conceptual skills kecil. Pada manajer madya, technical skills kecil sedangkan human dan conceptual skills besar [hal. 12]."
   },
   {
     "tm": 1,
     "topic": "Peran Manajerial Mintzberg",
-    "difficulty": "advanced",
-    "q": "Ketika seorang CEO menghadiri acara peresmian pabrik baru dan memberikan pidato sambutan formal mewakili perusahaan, ia sedang menjalankan peran Mintzberg dalam kategori...",
+    "difficulty": "medium",
+    "q": "Seorang CEO menyambut tamu kehormatan dan menandatangani dokumen resmi dalam sebuah upacara. Peran manajer menurut Mintzberg yang sedang ia jalankan adalah...",
     "options": [
-      "Figurehead (Interpersonal)",
-      "Spokesperson (Informational)",
-      "Disseminator (Informational)",
-      "Liaison (Interpersonal)"
+      "Spokesperson (informational)",
+      "Disseminator (informational)",
+      "Figurehead (interpersonal)",
+      "Liaison (interpersonal)"
     ],
-    "answer": 0,
-    "explanation": "Figurehead adalah peran simbolis dan seremonial di mana manajer mewakili organisasi dalam kewajiban hukum atau sosial formal."
+    "answer": 2,
+    "explanation": "Figurehead menjalankan tugas seremonial dan simbolis, misalnya menyambut tamu dan menandatangani dokumen resmi. Spokesperson menyampaikan informasi ke pihak luar lewat pidato dan laporan, disseminator meneruskan informasi ke anggota organisasi, dan liaison menjaga jalur informasi di dalam dan di luar organisasi [hal. 21]."
   },
   {
     "tm": 1,
@@ -53,279 +53,461 @@ export const MNM101_QUIZ_UTS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Suatu pabrik berhasil memproduksi 10.000 unit barang dengan biaya bahan baku sangat murah, tetapi produk tersebut tidak laku di pasaran karena tidak sesuai kebutuhan konsumen. Organisasi ini dapat dikategorikan...",
     "options": [
-      "Efisien tetapi tidak efektif",
       "Efektif tetapi tidak efisien",
+      "Efisien tetapi tidak efektif",
       "Efisien dan efektif",
       "Tidak efisien dan tidak efektif"
     ],
-    "answer": 0,
-    "explanation": "Pabrik meminimalkan biaya sumber daya (efisien), namun gagal mencapai sasaran pasar yang tepat (tidak efektif)."
+    "answer": 1,
+    "explanation": "Efisiensi menyangkut jumlah sumber daya yang dipakai untuk mencapai tujuan; efektivitas menyangkut sejauh mana tujuan tercapai dan produk yang dihasilkan dihargai pelanggan. Pabrik ini hemat sumber daya tetapi produknya tidak dihargai pasar. Buku menegaskan keduanya bisa sama-sama tinggi (Square), dan efisiensi yang berlebihan bisa merusak efektivitas (EMI) [hal. 11–12]."
   },
   {
     "tm": 1,
-    "topic": "Manajemen Kontemporer",
+    "topic": "Kompetensi Manajer Masa Kini",
     "difficulty": "basic",
-    "q": "Ciri utama dari lingkungan kerja modern (New Workplace) dibandingkan manajemen tradisional adalah...",
+    "q": "Menurut tabel kompetensi manajer masa kini (Exhibit 1.1), dalam hal \"mengawasi pekerjaan\" (overseeing work), manajer bergeser dari controller menjadi...",
     "options": [
-      "Pengawasan ketat dan hierarki komando kaku",
-      "Pemberdayaan karyawan (empowerment) dan kolaborasi tim",
-      "Fokus eksklusif pada laba jangka pendek tanpa peduli etika",
-      "Penghapusan seluruh peran manajer puncak"
+      "Inspector",
+      "Gatekeeper",
+      "Coordinator",
+      "Enabler"
     ],
-    "answer": 1,
-    "explanation": "New Workplace menekankan fleksibilitas, ketangkasan (agility), pemberdayaan staf, dan kepemimpinan yang melayani (servant leadership)."
+    "answer": 3,
+    "explanation": "Overseeing work: controller → enabler. Enabler membantu orang mendapat apa yang dibutuhkan, menyingkirkan hambatan, dan memberi kesempatan belajar, feedback, dan coaching. Baris lain pada tabel yang sama: supervising individuals → leading teams, conflict and competition → collaboration, autocratic → empowering, maintaining stability → mobilizing for change [hal. 5]."
   },
   {
-    "tm": 2,
-    "topic": "Analisis Lingkungan PESTEL",
+    "tm": 1,
+    "topic": "Perspektif Klasik: Fayol",
     "difficulty": "medium",
-    "q": "Kenaikan suku bunga acuan bank sentral dan laju inflasi nasional merupakan komponen dari lingkungan...",
+    "q": "Lima elemen manajemen menurut Henri Fayol berbeda dari empat fungsi manajemen modern karena Fayol memasukkan...",
     "options": [
-      "Lingkungan Tugas (Task Environment)",
-      "Lingkungan Umum - Dimensi Ekonomi",
-      "Lingkungan Internal Organisasi",
-      "Lingkungan Budaya Korporat"
+      "Commanding dan coordinating",
+      "Leading dan staffing",
+      "Motivating dan communicating",
+      "Directing dan budgeting"
     ],
-    "answer": 1,
-    "explanation": "Inflasi dan suku bunga adalah bagian dari Dimensi Ekonomi pada Lingkungan Umum (General Environment) yang mempengaruhi seluruh industri secara makro."
+    "answer": 0,
+    "explanation": "Fayol merumuskan lima elemen: planning, organizing, commanding, coordinating, controlling. Empat fungsi modern adalah planning, organizing, leading, controlling. Fungsi-fungsi Fayol mendasari banyak teori manajemen umum saat ini [hal. 30]."
   },
   {
     "tm": 2,
-    "topic": "Tipologi Budaya Daft",
-    "difficulty": "advanced",
-    "q": "Perusahaan rintisan (startup) teknologi yang mendorong eksperimen berisiko, fleksibilitas cepat, dan tanggap terhadap perubahan kebutuhan pasar mengadopsi tipe budaya...",
+    "topic": "Lingkungan Umum: Dimensi Ekonomi",
+    "difficulty": "basic",
+    "q": "Perubahan daya beli konsumen, tingkat pengangguran, dan suku bunga merupakan unsur dari...",
     "options": [
-      "Consistency Culture",
-      "Involvement Culture",
-      "Adaptability Culture",
-      "Achievement Culture"
+      "Lingkungan tugas (task environment)",
+      "Lingkungan umum, dimensi economic",
+      "Lingkungan internal organisasi",
+      "Lingkungan umum, dimensi sociocultural"
+    ],
+    "answer": 1,
+    "explanation": "Dimensi economic pada general environment mencakup kesehatan ekonomi negara atau wilayah, seperti daya beli, pengangguran, dan suku bunga. General environment memengaruhi organisasi secara tidak langsung dan mengenai semua organisasi kurang lebih sama [hal. 55, 60]."
+  },
+  {
+    "tm": 2,
+    "topic": "Tipe Budaya Korporat",
+    "difficulty": "advanced",
+    "q": "Perusahaan rintisan teknologi yang mendorong eksperimen berisiko, fleksibilitas cepat, dan tanggap terhadap perubahan kebutuhan pasar mengadopsi tipe budaya...",
+    "options": [
+      "Consistency culture",
+      "Involvement culture",
+      "Adaptability culture",
+      "Achievement culture"
     ],
     "answer": 2,
-    "explanation": "Adaptability Culture berorientasi pada responsivitas strategis terhadap lingkungan eksternal yang dinamis melalui inovasi dan fleksibilitas cepat."
+    "explanation": "Adaptability culture berada di kuadran external focus + flexibility (Exhibit 2.6) dan menghargai kreativitas, eksperimen, serta keberanian mengambil risiko. Buku menyebut perusahaan teknologi dan internet sebagai lingkungan yang cocok, dengan TubeMogul sebagai contoh [hal. 71–72]."
   },
   {
     "tm": 2,
-    "topic": "Tingkatan Budaya Schein",
+    "topic": "Level Budaya Korporat",
     "difficulty": "medium",
-    "q": "Pernyataan visi misi resmi yang tertera pada lobi kantor dan piagam etika kerja perusahaan diklasifikasikan oleh Edgar Schein sebagai tingkatan budaya...",
+    "q": "Pada Exhibit 2.5, nilai seperti \"The HP Way\" dan \"The Penney Idea\" termasuk level budaya...",
     "options": [
-      "Visible Artifacts",
-      "Espoused Values",
-      "Underlying Assumptions",
-      "Corporate Rituals"
+      "Artifacts (level terlihat)",
+      "Underlying assumptions and deep beliefs",
+      "Symbols (level terlihat)",
+      "Expressed values (level tak terlihat)"
     ],
-    "answer": 1,
-    "explanation": "Espoused Values adalah nilai-nilai, strategi, dan filosofi yang secara sadar dinyatakan dan diumumkan secara resmi oleh kepemimpinan organisasi."
+    "answer": 3,
+    "explanation": "Teks menyebut dua level, visible dan invisible. Exhibit 2.5 memerinci level invisible menjadi expressed values dan underlying assumptions, sehingga ada tiga butir bernomor. Artifacts (pakaian, tata kantor, simbol, slogan, seremoni) terlihat di permukaan; underlying assumptions adalah inti budaya yang tertanam sampai tak disadari [hal. 67]."
   },
   {
     "tm": 2,
     "topic": "Ketidakpastian Lingkungan",
     "difficulty": "advanced",
-    "q": "Kondisi lingkungan organisasi berada pada tingkat ketidakpastian tertinggi (highest uncertainty) apabila karakteristik lingkungannya...",
+    "q": "Menurut Exhibit 2.4, ketidakpastian lingkungan (environmental uncertainty) berada pada tingkat TERTINGGI apabila...",
     "options": [
-      "Sederhana dan Stabil",
-      "Kompleks dan Stabil",
-      "Sederhana dan Dinamis",
-      "Kompleks dan Dinamis"
+      "Faktor lingkungan banyak dan berubah cepat",
+      "Faktor lingkungan sedikit dan relatif stabil",
+      "Faktor lingkungan banyak tetapi berubah lambat",
+      "Faktor lingkungan sedikit tetapi berubah cepat"
     ],
-    "answer": 3,
-    "explanation": "Ketidakpastian tertinggi terjadi ketika jumlah faktor eksternal sangat banyak dan saling terkait (kompleks) serta faktor-faktor tersebut terus berubah cepat (dinamis)."
+    "answer": 0,
+    "explanation": "Exhibit 2.4 memakai dua sumbu: jumlah faktor dan laju perubahan faktor. High uncertainty berarti banyak faktor yang berubah cepat (contoh buku: perusahaan TV kabel menghadapi streaming); low uncertainty berarti sedikit faktor dan relatif stabil (contoh: pembotol minuman ringan) [hal. 63–64]."
   },
   {
     "tm": 2,
-    "topic": "Boundary-Spanning Roles",
+    "topic": "Boundary Spanning",
     "difficulty": "medium",
     "q": "Peran karyawan yang secara aktif mengumpulkan data pesaing dan memantau tren preferensi konsumen eksternal disebut...",
     "options": [
-      "Boundary-Spanning Roles",
-      "Internal Whistleblower",
-      "Arbitrase Manajerial",
-      "Gatekeeper Komando"
+      "Internal whistleblower",
+      "Arbitrase manajerial",
+      "Boundary-spanning roles",
+      "Gatekeeper komando"
     ],
-    "answer": 0,
-    "explanation": "Boundary-spanning menghubungkan dan mengkoordinasikan organisasi dengan elemen-elemen kunci di lingkungan eksternal melalui riset pasar dan intelijen kompetitif."
+    "answer": 2,
+    "explanation": "Boundary spanning adalah mengaitkan dan mengoordinasikan aktivitas organisasi dengan elemen kunci di lingkungan eksternal. Bentuknya business intelligence (memindai lingkungan untuk menemukan pola dan tren) dan upaya memengaruhi lingkungan, misalnya lewat lobi [hal. 64–66]."
+  },
+  {
+    "tm": 2,
+    "topic": "Task vs General Environment",
+    "difficulty": "basic",
+    "q": "Menurut Exhibit 2.1, labor market termasuk ke dalam...",
+    "options": [
+      "General environment, dimensi economic",
+      "Task environment",
+      "General environment, dimensi sociocultural",
+      "Internal environment"
+    ],
+    "answer": 1,
+    "explanation": "Task environment (memengaruhi langsung, transaksi sehari-hari) terdiri atas customers, competitors, suppliers, dan labor market. General environment (tidak langsung) terdiri atas enam dimensi: international, technological, sociocultural, economic, legal–political, dan natural [hal. 54–55, 57]."
+  },
+  {
+    "tm": 2,
+    "topic": "High-Performance Culture",
+    "difficulty": "advanced",
+    "q": "Pada Exhibit 2.7, high-performance culture berada di kuadran...",
+    "options": [
+      "Kuadran A: kinerja bisnis tinggi, nilai budaya rendah",
+      "Kuadran C: kinerja bisnis rendah, nilai budaya rendah",
+      "Kuadran B: kinerja bisnis tinggi dan nilai budaya tinggi",
+      "Kuadran D: kinerja bisnis rendah, nilai budaya tinggi"
+    ],
+    "answer": 2,
+    "explanation": "Perusahaan yang sukses di dunia turbulen menilai dan memberi imbalan atas perhatian pada nilai budaya dan kinerja bisnis sekaligus. Kuadran A sulit bertahan karena \"lem\" nilai bersama hilang; kuadran D (contoh LEGO 1990-an) punya budaya kuat tetapi tidak terkait hasil bisnis [hal. 75–77]."
   },
   {
     "tm": 3,
-    "topic": "Dimensi Budaya Hofstede",
+    "topic": "Dimensi Nilai Hofstede",
     "difficulty": "medium",
     "q": "Masyarakat di mana bawahan sangat menghormati instruksi atasan tanpa berani mendebat dan menerima ketimpangan kekuasaan memiliki skor tinggi pada dimensi...",
     "options": [
+      "Power distance (jarak kekuasaan)",
       "Individualism",
-      "Power Distance (Jarak Kekuasaan)",
-      "Uncertainty Avoidance",
+      "Uncertainty avoidance",
       "Masculinity"
     ],
-    "answer": 1,
-    "explanation": "High Power Distance mencerminkan penerimaan masyarakat terhadap distribusi kekuasaan yang tidak merata dalam institusi dan organisasi."
+    "answer": 0,
+    "explanation": "Pada power distance tinggi, orang menerima ketimpangan kekuasaan antarlembaga, organisasi, dan orang; pada power distance rendah, orang mengharapkan kesetaraan kekuasaan. Contoh buku: tinggi di Malaysia, India, dan Filipina; rendah di Denmark, Israel, dan Selandia Baru [hal. 102–103]."
   },
   {
     "tm": 3,
-    "topic": "Piramida Tanggung Jawab Sosial Carroll",
+    "topic": "Strategi Masuk Pasar Internasional",
     "difficulty": "medium",
-    "q": "Menurut Archie Carroll, fondasi paling dasar dari piramida Tanggung Jawab Sosial Perusahaan (CSR) yang menopang seluruh tanggung jawab lainnya adalah...",
+    "q": "Pada Exhibit 3.3, urutan tiga strategi masuk arena internasional dari cost to enter dan kepemilikan operasi asing yang terendah ke tertinggi adalah...",
     "options": [
-      "Tanggung Jawab Filantropis",
-      "Tanggung Jawab Etis",
-      "Tanggung Jawab Hukum",
-      "Tanggung Jawab Ekonomi"
+      "Partnerships → global outsourcing → exporting",
+      "Global outsourcing → exporting → partnerships",
+      "Exporting → partnerships → global outsourcing",
+      "Exporting → global outsourcing → partnerships"
     ],
     "answer": 3,
-    "explanation": "Tanggung jawab ekonomi (menghasilkan laba dan bertahan hidup finansial) adalah syarat dasar keberadaan organisasi sebelum dapat memenuhi tanggung jawab lainnya."
+    "explanation": "Exhibit 3.3: exporting (cost to enter dan ownership rendah), global outsourcing (menengah), partnerships (tinggi). Untuk soal tentang exhibit, jawab sesuai exhibit, walau teks menyebut partnership \"often the fastest, cheapest, and least risky way\" [hal. 97–98]."
   },
   {
     "tm": 3,
+    "topic": "Tujuan Global Outsourcing",
+    "difficulty": "medium",
+    "q": "Sebuah perusahaan memindahkan pekerjaan pusat panggilan pelanggannya ke negara dengan tenaga kerja termurah. Strategi ini termasuk...",
+    "options": [
+      "Exporting, untuk mengembangkan pasar di luar negeri",
+      "Global outsourcing (offshoring), untuk memperoleh sumber daya yang lebih murah",
+      "Joint venture, untuk berbagi biaya dan risiko",
+      "Alliance network, untuk mengembangkan pasar lewat kemitraan"
+    ],
+    "answer": 1,
+    "explanation": "Organisasi punya dua pilihan besar di pasar internasional: mencari sumber daya yang lebih murah (global outsourcing) atau mengembangkan pasar lewat exporting dan partnerships. Contoh awal outsourcing di buku: tekstil, call center, dan pemrosesan kartu kredit [hal. 97–98]."
+  },
+  {
+    "tm": 3,
+    "topic": "Global Mind-Set",
+    "difficulty": "advanced",
+    "q": "Tiga dimensi global mind-set menurut Exhibit 3.2 adalah...",
+    "options": [
+      "Cognitive, emotional, dan physical",
+      "Thinking, doing, dan socializing",
+      "Cognitive, psychological, dan social",
+      "Cognitive, psychological, dan physical"
+    ],
+    "answer": 2,
+    "explanation": "Global mind-set: cognitive, psychological, social. Cultural intelligence (CQ) berbeda: cognitive, emotional, physical. \"Thinking\" dan \"doing\" adalah cara mengembangkan global mind-set [hal. 90–91, 106]."
+  },
+  {
+    "tm": 3,
+    "topic": "Membaca Exhibit 3.4 (Hofstede)",
+    "difficulty": "advanced",
+    "q": "Pada Exhibit 3.4, Amerika Serikat berperingkat 1 pada dimensi individualism. Artinya...",
+    "options": [
+      "Amerika Serikat adalah yang paling kolektivis di antara 10 negara",
+      "Amerika Serikat adalah yang paling individualis di antara 10 negara dalam exhibit",
+      "Skor individualisme Amerika Serikat adalah yang terendah",
+      "Skor individualisme Amerika Serikat adalah 1 dari skala 100"
+    ],
+    "answer": 1,
+    "explanation": "Angka pada Exhibit 3.4 adalah peringkat dari 10 negara, dan 1 berarti tertinggi. Individualism berarti kerangka sosial longgar, tiap orang diharapkan mengurus dirinya sendiri; collectivism berarti kerangka sosial erat [hal. 102–103]."
+  },
+  {
+    "tm": 3,
+    "topic": "Komunikasi High-Context",
+    "difficulty": "medium",
+    "q": "Dalam budaya high-context, makna komunikasi terutama diambil dari...",
+    "options": [
+      "Konteks: setting, status, dan perilaku nonverbal, sehingga hubungan dan kepercayaan didahulukan",
+      "Kata-kata eksplisit, sehingga transaksi bisnis didahulukan",
+      "Dokumen tertulis dan kontrak formal",
+      "Terjemahan harfiah dari bahasa lawan bicara"
+    ],
+    "answer": 0,
+    "explanation": "High-context: komunikasi berfungsi membangun hubungan sosial pribadi, makna berasal dari konteks (setting, status, perilaku nonverbal), contoh wilayah Asia dan Arab. Low-context: komunikasi untuk bertukar fakta dan informasi, makna terutama dari kata-kata, contoh Amerika dan Eropa Utara [hal. 105–106]."
+  },
+  {
+    "tm": 3,
+    "topic": "Filosofi Manajemen MNC",
+    "difficulty": "medium",
+    "q": "Filosofi manajemen MNC yang benar-benar berorientasi dunia dan tidak mengutamakan negara tertentu disebut...",
+    "options": [
+      "Ethnocentric, yang menekankan negara asal",
+      "Polycentric, yang berorientasi pada pasar tiap negara tuan rumah",
+      "Domestic mind-set",
+      "Geocentric"
+    ],
+    "answer": 3,
+    "explanation": "Tiga orientasi MNC: ethnocentric (negara asal), polycentric (pasar masing-masing negara tuan rumah), geocentric (berorientasi dunia). Jangan tertukar dengan ethnocentrism, yaitu sikap menganggap budaya sendiri lebih unggul [hal. 96, 102]."
+  },
+  {
+    "tm": 4,
     "topic": "Pendekatan Etika Manajerial",
     "difficulty": "advanced",
     "q": "Manajer memutuskan menutup pabrik yang mencemari lingkungan karena memandang bahwa keselamatan hidup ribuan warga lebih utama daripada keuntungan 50 karyawan pabrik. Manajer ini menerapkan pendekatan...",
     "options": [
-      "Utilitarian Approach",
-      "Individualism Approach",
-      "Moral-Rights Approach",
-      "Justice Approach"
+      "Individualism",
+      "Moral-rights",
+      "Justice",
+      "Utilitarian"
     ],
-    "answer": 0,
-    "explanation": "Pendekatan Utilitarian menyatakan bahwa keputusan moral harus menghasilkan kebaikan terbesar bagi jumlah orang terbanyak (the greatest good for the greatest number)."
+    "answer": 3,
+    "explanation": "Pendekatan utilitarian menyatakan perilaku moral menghasilkan kebaikan terbesar bagi jumlah orang terbesar; pengambil keputusan menimbang efek tiap alternatif pada semua pihak dan memilih yang mengoptimalkan manfaat bagi paling banyak orang [hal. 124]."
   },
   {
-    "tm": 3,
-    "topic": "Strategi Masuk Pasar Global",
-    "difficulty": "medium",
-    "q": "Strategi ekspansi internasional dengan mendirikan fasilitas pabrik baru dari nol di negara tujuan (greenfield venture) memiliki karakteristik...",
-    "options": [
-      "Biaya dan risiko terendah",
-      "Kendali penuh atas operasional namun biaya dan risiko paling tinggi",
-      "Hanya memerlukan royalti tahunan",
-      "Tidak membutuhkan izin pemerintah lokal"
-    ],
-    "answer": 1,
-    "explanation": "Wholly-owned greenfield venture memberikan kendali kepemilikan 100%, tetapi menuntut investasi modal terbesar dan membawa risiko politik/ekonomi tertinggi."
-  },
-  {
-    "tm": 3,
-    "topic": "Konsep Keberlanjutan",
+    "tm": 4,
+    "topic": "Triple Bottom Line",
     "difficulty": "basic",
     "q": "Konsep Triple Bottom Line mengevaluasi keberhasilan organisasi bisnis berdasarkan keseimbangan antara...",
     "options": [
       "Price, Product, Promotion",
-      "Profit, People, Planet",
       "Planning, Priority, Performance",
+      "Profit, People, Planet",
       "Policies, Procedures, Programs"
     ],
-    "answer": 1,
-    "explanation": "Triple Bottom Line (3P) mengukur kinerja finansial (Profit), sosial-kemanusiaan (People), dan kelestarian ekologis (Planet)."
+    "answer": 2,
+    "explanation": "Triple bottom line mengukur kinerja sosial, lingkungan, dan keuangan organisasi; disebut juga three Ps: People, Planet, Profit. Ia mengukur kinerja, bukan sekadar donasi atau filantropi [hal. 135–136]."
   },
   {
     "tm": 4,
-    "topic": "Tingkatan Perencanaan",
+    "topic": "Tiga Domain Tindakan (Exh. 4.1)",
     "difficulty": "medium",
-    "q": "Rencana tindakan yang disusun oleh manajer tingkat menengah (Middle Managers) untuk mengalokasikan anggaran divisi selama 1 tahun ke depan dikategorikan sebagai...",
+    "q": "Seorang manajer berkata, \"Kami tidak melanggar hukum, jadi keputusan ini pasti etis.\" Menurut Exhibit 4.1, pernyataan ini keliru karena...",
     "options": [
-      "Rencana Strategis",
-      "Rencana Taktis",
-      "Rencana Operasional",
-      "Rencana Kebijakan Dasar"
+      "Etika selalu identik dengan kepatuhan pada hukum",
+      "Hukum hanya satu dari tiga domain; domain etika (social standard) tidak diatur hukum khusus tetapi punya standar perilaku dari prinsip dan nilai bersama",
+      "Domain etika hanya berlaku bagi pemerintah",
+      "Tindakan yang legal otomatis termasuk free choice"
     ],
     "answer": 1,
-    "explanation": "Rencana Taktis (Tactical Plans) dirancang oleh manajer madya untuk menerjemahkan rencana strategis menjadi rencana kerja konkret departemen dalam jangka menengah (1 tahun)."
+    "explanation": "Exhibit 4.1 memuat tiga domain: codified law (legal standard), ethics (social standard), dan free choice (personal standard). Contoh buku yang tidak ilegal tetapi merusak reputasi: Facebook memanipulasi news feed untuk studi psikologi, dan Uber memesan lalu membatalkan perjalanan palsu untuk mengganggu Lyft [hal. 118–119]."
   },
   {
     "tm": 4,
-    "topic": "Kriteria Sasaran SMART",
+    "topic": "Ethical Dilemma",
+    "difficulty": "medium",
+    "q": "Ciri utama ethical dilemma menurut buku adalah...",
+    "options": [
+      "Nilai-nilai saling bertentangan, dan benar-salah tidak dapat diidentifikasi dengan jelas (semua alternatif berpotensi berkonsekuensi negatif)",
+      "Pilihan antara tindakan yang jelas benar dan yang jelas salah",
+      "Pelanggaran hukum yang pasti dapat dituntut di pengadilan",
+      "Keputusan pribadi yang tidak melibatkan pihak lain"
+    ],
+    "answer": 0,
+    "explanation": "Buku memberi dua rumusan yang sejalan: situasi benar-salah ketika nilai-nilai saling bertentangan, dan situasi ketika semua alternatif berpotensi membawa konsekuensi negatif. Contoh: limbah pabrik yang mengancam kesehatan warga vs lapangan kerja dari pemberi kerja utama kota [hal. 122–124]."
+  },
+  {
+    "tm": 4,
+    "topic": "Jenis Justice",
+    "difficulty": "advanced",
+    "q": "Aturan dinyatakan dengan jelas serta ditegakkan secara konsisten dan tidak berpihak. Prinsip keadilan ini disebut...",
+    "options": [
+      "Distributive justice",
+      "Compensatory justice",
+      "Utilitarian justice",
+      "Procedural justice"
+    ],
+    "answer": 3,
+    "explanation": "Tiga jenis justice: distributive (perbedaan perlakuan tidak boleh didasarkan pada karakteristik sewenang-wenang), procedural (aturan dijalankan adil, jelas, konsisten), dan compensatory (pihak yang bertanggung jawab memberi kompensasi atas kerugian). Justice approach adalah pendekatan yang paling dekat dengan domain hukum [hal. 125]."
+  },
+  {
+    "tm": 4,
+    "topic": "Perkembangan Moral (Exh. 4.3)",
+    "difficulty": "medium",
+    "q": "Menurut buku, level perkembangan moral yang dicapai mayoritas manajer adalah...",
+    "options": [
+      "Preconventional",
+      "Conventional",
+      "Postconventional",
+      "Preconventional yang berubah menjadi principled"
+    ],
+    "answer": 1,
+    "explanation": "Exhibit 4.3 menampilkan versi sederhana dengan tiga level: preconventional (self-interest), conventional (societal expectations), postconventional (internal values). Mayoritas manajer berada di level conventional; hanya sekitar 20% orang dewasa Amerika mencapai postconventional [hal. 127–128]."
+  },
+  {
+    "tm": 4,
+    "topic": "Organisasi Etis (Exh. 4.6)",
+    "difficulty": "medium",
+    "q": "Pada Exhibit 4.6, code of ethics termasuk pendekatan...",
+    "options": [
+      "Structure-oriented, karena berupa mekanisme formal",
+      "Structure-oriented, bersama ethics hotline dan chief ethics officer",
+      "Values-oriented, bersama ethical leadership, volunteerism, dan ethics committee",
+      "Bukan bagian dari upaya membangun organisasi etis"
+    ],
+    "answer": 2,
+    "explanation": "Values-oriented: ethical leadership, volunteerism, code of ethics, ethics committee. Structure-oriented: chief ethics officer, ethics hotline, ethics training, support for whistle-blowers. Kode etik saja hanya sedikit berpengaruh; ia efektif bila didukung dan ditegakkan manajemen puncak [hal. 138–140]."
+  },
+  {
+    "tm": 4,
+    "topic": "Stakeholder (Exh. 4.4)",
+    "difficulty": "medium",
+    "q": "Pernyataan Business Roundtable akhir 2019 berfokus pada lima stakeholder utama. Manakah daftar yang benar?",
+    "options": [
+      "Pelanggan, karyawan, pemasok, komunitas, dan pemegang saham",
+      "Pelanggan, karyawan, pemasok, pesaing, dan pemegang saham",
+      "Pemegang saham, kreditor, auditor, regulator, dan media",
+      "Hanya pemegang saham, sebagai satu-satunya prioritas utama"
+    ],
+    "answer": 0,
+    "explanation": "BRT menyebut pemegang saham setelah komitmen pada pelanggan, karyawan, pemasok, dan komunitas. Exhibit 4.4 menampilkan lima stakeholder itu (investors and shareholders, suppliers, customers, employees, communities). Catatan buku: teks hal. 132 menyebut empat primary stakeholders dan komunitas sebagai \"another important stakeholder\" [hal. 131–133]."
+  },
+  {
+    "tm": 5,
+    "topic": "Tingkatan Goal dan Plan",
+    "difficulty": "medium",
+    "q": "Rencana tindakan yang disusun oleh manajer tingkat menengah (middle managers) untuk mengalokasikan anggaran divisi selama satu tahun ke depan dikategorikan sebagai...",
+    "options": [
+      "Strategic plan",
+      "Operational plan",
+      "Tactical plan",
+      "Mission statement"
+    ],
+    "answer": 2,
+    "explanation": "Exhibit 5.1: strategic plans disusun senior management, umumnya jangka panjang (dua sampai lima tahun); tactical plans disusun middle management dengan horizon sekitar satu tahun untuk menjalankan strategic plan; operational plans disusun lower management untuk departemen dan individu [hal. 152–154]."
+  },
+  {
+    "tm": 5,
+    "topic": "Karakteristik Goal Efektif",
     "difficulty": "basic",
-    "q": "Manakah rumusan sasaran berikut yang memenuhi seluruh kriteria SMART?",
+    "q": "Menurut Exhibit 5.4, karakteristik goal efektif yang disebut sebagai syarat pertama dan terpenting adalah...",
     "options": [
-      "Meningkatkan kepuasan pelanggan semaksimal mungkin secepatnya",
-      "Meningkatkan penjualan produk sebesar 12% di wilayah Jawa Timur pada kuartal IV 2026",
-      "Bekerja lebih giat dan mengurangi biaya operasional pabrik",
-      "Menjadi perusahaan terbaik di dunia"
+      "Linked to rewards",
+      "Specific and measurable",
+      "Defined time period",
+      "Cover as many performance areas as possible"
     ],
     "answer": 1,
-    "explanation": "Sasaran tersebut Spesifik (wilayah Jatim), Terukur (12%), Dapat Dicapai, Relevan (penjualan), dan memiliki Batasan Waktu jelas (Kuartal IV 2026)."
+    "explanation": "Lima karakteristik goal efektif: specific and measurable; defined time period; cover key result areas; challenging but realistic; linked to rewards. Buku menyebut specific and measurable sebagai yang pertama dan terpenting, dan menegaskan kesalahan terbesar adalah mencoba mencapai terlalu banyak goal terlalu cepat [hal. 160–161]."
   },
   {
-    "tm": 4,
+    "tm": 5,
     "topic": "Management by Objectives (MBO)",
     "difficulty": "medium",
     "q": "Karakteristik esensial dari metode Management by Objectives (MBO) yang membedakannya dari penetapan sasaran tradisional adalah...",
     "options": [
       "Sasaran ditentukan sepihak oleh direktur utama tanpa kompromi",
-      "Sasaran ditetapkan secara partisipatif bersama antara atasan dan bawahan",
-      "Evaluasi kerja hanya dilakukan setiap 5 tahun sekali",
-      "Meniadakan penilaian kuantitatif"
+      "Evaluasi kerja hanya dilakukan setiap lima tahun sekali",
+      "Penilaian kinerja kuantitatif ditiadakan",
+      "Sasaran ditetapkan secara partisipatif bersama antara atasan dan bawahan"
     ],
-    "answer": 1,
-    "explanation": "MBO melibatkan kolaborasi aktif di mana manajer dan karyawan bersama-sama merumuskan target kerja, sehingga membangun komitmen dan tanggung jawab internal."
+    "answer": 3,
+    "explanation": "MBO adalah sistem ketika manajer dan karyawan menetapkan goal untuk setiap departemen, proyek, dan orang, lalu memakainya untuk memantau kinerja. Empat langkah (Exh. 5.5): set goals, develop action plans, review progress, appraise overall performance, lalu kembali ke langkah 1 [hal. 161–162]."
   },
   {
-    "tm": 4,
-    "topic": "Rencana Operasional",
+    "tm": 5,
+    "topic": "Standing Plans",
     "difficulty": "medium",
-    "q": "Pedoman umum yang memberikan batasan bagi pengambilan keputusan rutin karyawan (seperti 'Perusahaan tidak menerima pengembalian barang tanpa struk belanja') merupakan contoh dari...",
+    "q": "Pedoman umum yang memberikan batasan bagi pengambilan keputusan rutin karyawan (seperti \"Perusahaan tidak menerima pengembalian barang tanpa struk belanja\") merupakan contoh dari...",
     "options": [
+      "Kebijakan (policy), sebuah standing plan",
       "Program",
       "Proyek",
-      "Kebijakan (Policy)",
-      "Anggaran (Budget)"
+      "Anggaran"
     ],
-    "answer": 2,
-    "explanation": "Kebijakan (Policy) adalah contoh Standing Plan yang memberikan panduan umum bagi anggota organisasi dalam merespons situasi yang berulang."
+    "answer": 0,
+    "explanation": "Buku memberi contoh standing plans berupa kebijakan yang berlaku terus-menerus, misalnya larangan merokok di seluruh taman hiburan Disney dan kebijakan YouTube terhadap video ekstremis. Buku hanya memberi contoh standing plan dan menyebut single-use plans sekilas [hal. 154, 163–164]."
   },
   {
-    "tm": 4,
-    "topic": "Perencanaan Skenario",
+    "tm": 5,
+    "topic": "Scenario Building",
     "difficulty": "advanced",
     "q": "Ketika manajemen menyusun simulasi dampak bisnis jika terjadi krisis geopolitik, inflasi 20%, atau lonjakan harga bahan bakar, teknik yang digunakan adalah...",
     "options": [
-      "Scenario Building",
-      "Single-use Planning",
-      "Operational Scheduling",
-      "Management by Exception"
+      "Single-use planning",
+      "Scenario building",
+      "Operational scheduling",
+      "Management by means"
+    ],
+    "answer": 1,
+    "explanation": "Scenario building adalah perluasan contingency planning: melihat tren dan diskontinuitas saat ini lalu memvisualisasikan kemungkinan masa depan, biasanya dua sampai lima skenario dari yang paling optimistis sampai paling pesimistis. Contingency planning berfokus pada respons untuk skenario terburuk [hal. 165–167]."
+  },
+  {
+    "tm": 5,
+    "topic": "Porter Five Forces",
+    "difficulty": "medium",
+    "q": "Pembeli mobil dapat mencari harga grosir, spesifikasi, catatan perbaikan, dan riwayat kecelakaan lewat internet. Menurut Exhibit 5.11, internet menggeser kekuatan persaingan ke arah...",
+    "options": [
+      "Potential new entrants",
+      "Bargaining power of suppliers",
+      "Threat of substitute products",
+      "Bargaining power of buyers"
+    ],
+    "answer": 3,
+    "explanation": "Lima kekuatan Porter: potential new entrants, bargaining power of buyers, bargaining power of suppliers, threat of substitute products, rivalry among competitors. Pelanggan yang terinformasi menjadi pelanggan yang berdaya; internet shifts greater power to end consumers [hal. 182–183]."
+  },
+  {
+    "tm": 5,
+    "topic": "Strategi Kompetitif Porter",
+    "difficulty": "medium",
+    "q": "Perusahaan membedakan produk atau jasanya dari pesaing lewat iklan kreatif, fitur khas, layanan istimewa, atau teknologi baru (contoh di buku: Apple, Tesla, Gore-Tex). Strategi Porter yang dipakai adalah...",
+    "options": [
+      "Cost leadership",
+      "Focused cost leadership",
+      "Differentiation",
+      "Related diversification"
+    ],
+    "answer": 2,
+    "explanation": "Differentiation mengurangi persaingan dan ancaman substitusi karena pelanggan loyal pada merek, tetapi butuh riset, desain, iklan, dan karyawan kreatif. Cost leadership mengejar biaya internal rendah, dan tidak selalu berarti harga termurah [hal. 184–185]."
+  },
+  {
+    "tm": 5,
+    "topic": "Matriks BCG",
+    "difficulty": "advanced",
+    "q": "Unit bisnis dengan pangsa pasar besar di industri yang matang dan tumbuh lambat, sehingga tidak lagi memerlukan investasi besar dan kasnya \"diperah\" untuk bisnis lain, dalam BCG matrix (Exhibit 5.10) disebut...",
+    "options": [
+      "Cash cow",
+      "Star",
+      "Bright prospect",
+      "Dog"
     ],
     "answer": 0,
-    "explanation": "Scenario building mengantisipasi berbagai kondisi masa depan yang mungkin terjadi dengan menyusun skenario alternatif dan respons strategis yang adaptif."
-  },
-  {
-    "tm": 5,
-    "topic": "Analisis Porter Five Forces",
-    "difficulty": "medium",
-    "q": "Jika dalam suatu industri pembeli dapat dengan sangat mudah dan murah berpindah ke merek lain (low switching cost), maka kekuatan kompetitif yang TINGGI adalah...",
-    "options": [
-      "Daya tawar pemasok",
-      "Daya tawar pembeli",
-      "Ancaman hambatan masuk",
-      "Regulasi pemerintah"
-    ],
-    "answer": 1,
-    "explanation": "Biaya peralihan yang rendah memberikan daya tawar besar bagi pembeli (Bargaining Power of Buyers) untuk menuntut harga murah atau mutu lebih tinggi."
-  },
-  {
-    "tm": 5,
-    "topic": "Strategi Generik Porter",
-    "difficulty": "medium",
-    "q": "Apple Inc. berfokus pada desain estetika premium, ekosistem perangkat lunak eksklusif, dan citra merek prestisius sehingga pelanggan bersedia membayar harga mahal. Apple menerapkan strategi...",
-    "options": [
-      "Cost Leadership",
-      "Differentiation (Diferensiasi)",
-      "Cost Focus",
-      "Diversifikasi Konglomerat"
-    ],
-    "answer": 1,
-    "explanation": "Strategi Diferensiasi membedakan produk atau layanan organisasi dari pesaing melalui inovasi, kualitas, atau fitur unik yang dinilai tinggi oleh pasar."
-  },
-  {
-    "tm": 5,
-    "topic": "Matriks Portofolio BCG",
-    "difficulty": "advanced",
-    "q": "Unit Bisnis Strategis (SBU) yang memiliki pangsa pasar relatif tinggi di industri yang tingkat pertumbuhannya sudah melambat/rendah dikategorikan dalam BCG sebagai...",
-    "options": [
-      "Stars",
-      "Cash Cows",
-      "Question Marks",
-      "Dogs"
-    ],
-    "answer": 1,
-    "explanation": "Cash Cows menghasilkan arus kas berlebih (surplus) yang dapat dialokasikan untuk mendanai riset dan pengembangan unit Question Marks atau Stars."
+    "explanation": "Sumbu BCG: business growth rate dan market share. Star (pangsa besar, industri tumbuh cepat), cash cow (pangsa besar, industri matang), bright prospect (pangsa kecil, industri baru tumbuh cepat), dog (pangsa kecil, pasar lambat). Kas cash cow dipakai untuk membiayai bright prospects dan stars [hal. 180]."
   },
   {
     "tm": 5,
@@ -339,161 +521,273 @@ export const MNM101_QUIZ_UTS: QuizQuestion[] = [
       "Threats"
     ],
     "answer": 1,
-    "explanation": "Kelemahan (Weaknesses) adalah karakteristik internal organisasi yang menghambat pencapaian kinerja kompetitif yang optimal."
-  },
-  {
-    "tm": 5,
-    "topic": "Strategi Tingkat Korporasi",
-    "difficulty": "advanced",
-    "q": "Perusahaan produsen mi instan yang mengakuisisi perkebunan gandum dan pabrik tepung terigu sedang menjalankan strategi...",
-    "options": [
-      "Integrasi Vertikal ke Belakang (Backward Vertical Integration)",
-      "Integrasi Horizontal",
-      "Diversifikasi Konglomerat",
-      "Likuidasi Aset"
-    ],
-    "answer": 0,
-    "explanation": "Backward vertical integration terjadi saat perusahaan memperluas operasinya ke arah rantai pasok hulu (memproduksi bahan bakunya sendiri)."
+    "explanation": "Strengths dan weaknesses adalah karakteristik internal (weaknesses menghambat atau membatasi kinerja); opportunities dan threats adalah karakteristik lingkungan eksternal. Sumber informasi internal antara lain internal audit atas pemasaran, keuangan, produksi, dan R&D serta karakteristik SDM [hal. 176–178]."
   },
   {
     "tm": 6,
-    "topic": "Model Keputusan Simon",
+    "topic": "Model Administratif",
     "difficulty": "medium",
-    "q": "Konsep 'Satisficing' yang dikemukakan Herbert A. Simon merujuk pada kecenderungan pengambil keputusan untuk...",
+    "q": "Konsep \"satisficing\" yang dikemukakan Herbert A. Simon merujuk pada kecenderungan pengambil keputusan untuk...",
     "options": [
       "Mencari alternatif solusi terbaik mutlak dari seluruh kemungkinan",
-      "Memilih alternatif pertama yang memenuhi kriteria minimal yang memuaskan",
       "Menyerahkan keputusan kepada undian acak",
+      "Memilih alternatif pertama yang memenuhi kriteria keputusan minimal",
       "Menunda keputusan hingga data 100% lengkap"
     ],
-    "answer": 1,
-    "explanation": "Satisficing adalah memilih solusi pertama yang cukup baik (good enough) karena adanya keterbatasan kognitif dan waktu (Bounded Rationality)."
+    "answer": 2,
+    "explanation": "Satisficing: manajer memilih alternatif pertama yang memenuhi kriteria minimal dan tidak mengejar semua alternatif, karena waktu dan biaya informasi lengkap tidak sepadan. Bounded rationality: orang punya batas seberapa rasional mereka bisa bertindak [hal. 201]."
   },
   {
     "tm": 6,
     "topic": "Kondisi Keputusan",
     "difficulty": "medium",
-    "q": "Ketika manajer memahami tujuan keputusan dengan jelas dan memiliki informasi probabilitas atas setiap kemungkinan hasil alternatif, kondisi keputusan tersebut berada dalam...",
+    "q": "Ketika manajer memahami tujuan keputusan dengan jelas dan memiliki informasi untuk memperkirakan probabilitas berhasil atau gagalnya setiap alternatif, kondisi keputusan tersebut berada dalam...",
     "options": [
-      "Kepastian (Certainty)",
-      "Risiko (Risk)",
-      "Ketidakpastian (Uncertainty)",
-      "Ambiguitas (Ambiguity)"
+      "Certainty (kepastian)",
+      "Uncertainty (ketidakpastian)",
+      "Ambiguity (ambiguitas)",
+      "Risk (risiko)"
     ],
-    "answer": 1,
-    "explanation": "Kondisi Risiko (Risk) berarti sasaran jelas dan alternatif diketahui, tetapi hasil masa depan bergantung pada estimasi probabilitas statistik."
+    "answer": 3,
+    "explanation": "Risk: tujuan jelas dan informasi baik tersedia, tetapi hasil tiap alternatif mengandung peluang rugi atau gagal, dan manajer bisa memperkirakan probabilitasnya. Pada uncertainty manajer tahu tujuan tetapi informasi tentang alternatif dan masa depan tidak lengkap [hal. 196–197]."
   },
   {
     "tm": 6,
-    "topic": "Bias Kognitif Keputusan",
+    "topic": "Escalating Commitment",
     "difficulty": "advanced",
-    "q": "Manajer bersikeras mengucurkan dana tambahan sebesar Rp 10 miliar ke proyek perangkat lunak yang sudah terbukti gagal hanya karena perusahaan telah menghabiskan Rp 50 miliar sebelumnya. Bias ini disebut...",
+    "q": "Manajer bersikeras mengucurkan dana tambahan Rp10 miliar ke proyek perangkat lunak yang sudah terbukti gagal hanya karena perusahaan telah menghabiskan Rp50 miliar sebelumnya. Perilaku terus menanamkan sumber daya pada solusi yang gagal ini disebut...",
     "options": [
-      "Sunk Cost Fallacy",
-      "Confirmation Bias",
-      "Anchoring Bias",
-      "Overconfidence Bias"
+      "Escalating commitment",
+      "Confirmation bias",
+      "Anchoring bias",
+      "Overconfidence"
     ],
     "answer": 0,
-    "explanation": "Sunk Cost Fallacy (eskalasi komitmen) adalah bias melanjutkan investasi yang merugi semata-mata karena enggan mengakui kerugian atas biaya historis yang sudah tertanam."
+    "explanation": "Escalating commitment adalah kecenderungan terus menanamkan waktu dan uang pada solusi walau bukti kuat menunjukkan solusi itu tidak tepat. Ia berasal dari loss aversion (bereaksi lebih kuat pada potensi rugi daripada potensi untung yang setara). Obatnya: menjaga objektivitas dan tahu kapan berhenti (know when to bail) [hal. 214, 219]."
   },
   {
     "tm": 6,
-    "topic": "Pengambilan Keputusan Kelompok",
+    "topic": "Keputusan Kelompok",
     "difficulty": "advanced",
     "q": "Peran anggota tim yang ditugaskan secara resmi untuk menantang asumsi mayoritas, mengkritik rencana kerja, dan mencari celah kelemahan keputusan disebut...",
     "options": [
-      "Groupthink Enforcer",
-      "Devil's Advocate",
-      "Resource Allocator",
+      "Groupthink enforcer",
+      "Resource allocator",
+      "Devil's advocate",
       "Figurehead"
     ],
-    "answer": 1,
-    "explanation": "Devil's Advocate bertugas mengkritisi pemikiran kelompok untuk mencegah timbulnya kesepakatan semu (Groupthink) dan mendorong analisis kritis mendalam."
+    "answer": 2,
+    "explanation": "Devil's advocate adalah orang yang ditugasi menantang asumsi dan pernyataan kelompok, sehingga kelompok memikirkan ulang pendekatannya dan tidak terburu-buru menyimpulkan. Ia juga membantu menghindari groupthink [hal. 218–219]."
   },
   {
     "tm": 6,
-    "topic": "Model Keputusan Politik",
+    "topic": "Model Politik",
     "difficulty": "medium",
-    "q": "Model pengambilan keputusan Politik (Political Model) paling sering digunakan dalam organisasi ketika...",
+    "q": "Model pengambilan keputusan politik (political model) paling sering digunakan dalam organisasi ketika...",
     "options": [
       "Sasaran organisasi disepakati bersama secara mutlak dan data serba lengkap",
-      "Kondisi manajer memiliki kepentingan berbeda, sasaran tidak disepakati, dan terjadi tawar-menawar koalisi",
+      "Manajer punya kepentingan berbeda, tujuan tidak disepakati, dan keputusan lahir dari tawar-menawar koalisi",
       "Keputusan diambil secara terkomputerisasi otomatis",
       "Tidak ada batasan anggaran sama sekali"
     ],
     "answer": 1,
-    "explanation": "Model politik mencerminkan lingkungan nyata di mana para manajer membentuk koalisi aliansi untuk menegosiasikan keputusan saat terjadi pertentangan tujuan."
+    "explanation": "Political model berguna untuk keputusan nonprogrammed ketika kondisi tidak pasti, informasi terbatas, dan manajer tidak sepakat tentang tujuan atau tindakan. Keputusan adalah hasil tawar-menawar dan diskusi di antara anggota koalisi [hal. 203–204]."
+  },
+  {
+    "tm": 6,
+    "topic": "Premortem dan Postmortem",
+    "difficulty": "advanced",
+    "q": "Sebuah tim hampir memutuskan hal penting tetapi belum resmi berkomitmen. Anggota sengaja membayangkan keputusan itu sudah dijalankan dan gagal total, lalu mencari penyebab kegagalannya. Teknik ini disebut...",
+    "options": [
+      "Postmortem (after-action review)",
+      "Devil's advocate",
+      "5 Whys",
+      "Premortem"
+    ],
+    "answer": 3,
+    "explanation": "Premortem (usulan Gary Klein) dilakukan sebelum resmi berkomitmen dan membantu mengatasi overconfidence, confirmation bias, dan groupthink. Postmortem atau after-action review dilakukan setelah keputusan dijalankan untuk belajar dari hasilnya [hal. 219]."
+  },
+  {
+    "tm": 6,
+    "topic": "Ambiguity",
+    "difficulty": "medium",
+    "q": "Kondisi keputusan yang PALING sulit, karena tujuan atau masalahnya sendiri tidak jelas dan informasi hasil tidak tersedia, adalah...",
+    "options": [
+      "Ambiguity",
+      "Certainty",
+      "Risk",
+      "Uncertainty"
+    ],
+    "answer": 0,
+    "explanation": "Exhibit 6.1 mengurutkan kondisi menurut kemungkinan gagal: certainty, risk, uncertainty, ambiguity. Pada ambiguity, tujuan atau masalah tidak jelas dan alternatif sulit didefinisikan; pada uncertainty manajer tahu tujuannya [hal. 196–198]."
+  },
+  {
+    "tm": 6,
+    "topic": "Normative vs Descriptive",
+    "difficulty": "medium",
+    "q": "Menurut buku, model klasik bersifat normative. Model yang bersifat descriptive dan mengakui keterbatasan manusia serta lingkungan adalah...",
+    "options": [
+      "Model klasik yang dimodifikasi",
+      "Model programmed",
+      "Model administratif",
+      "Model rasional ekonomi murni"
+    ],
+    "answer": 2,
+    "explanation": "Model klasik mendefinisikan bagaimana pengambil keputusan seharusnya memutuskan, bukan cara manajer benar-benar memutuskan. Model administratif menggambarkan cara manajer benar-benar memutuskan dalam situasi kompleks [hal. 200–201]."
+  },
+  {
+    "tm": 6,
+    "topic": "Enam Langkah Keputusan",
+    "difficulty": "medium",
+    "q": "Urutan enam langkah proses pengambilan keputusan manajerial pada Exhibit 6.3 adalah...",
+    "options": [
+      "Recognition → diagnosis → development of alternatives → selection → implementation → evaluation and feedback",
+      "Diagnosis → recognition → selection → development of alternatives → implementation → evaluation",
+      "Recognition → development of alternatives → diagnosis → selection → evaluation → implementation",
+      "Recognition → diagnosis → selection → development of alternatives → implementation → evaluation"
+    ],
+    "answer": 0,
+    "explanation": "Enam langkah berlaku untuk programmed maupun nonprogrammed decisions dan untuk ketiga model. Recognition: menyadari problem atau opportunity; diagnosis: menganalisis penyebab. Langkah 6 kembali ke langkah 1 [hal. 205–209]."
+  },
+  {
+    "tm": 6,
+    "topic": "Gaya Keputusan",
+    "difficulty": "medium",
+    "q": "Gaya keputusan yang menyukai solusi sederhana dan jelas, memutuskan cepat, dan hanya mempertimbangkan satu atau dua alternatif adalah gaya...",
+    "options": [
+      "Analytical",
+      "Conceptual",
+      "Behavioral",
+      "Directive"
+    ],
+    "answer": 3,
+    "explanation": "Empat gaya (Exhibit 6.5): directive (solusi sederhana, cepat), analytical (data sebanyak mungkin), conceptual (lebih berorientasi sosial dan kreatif), behavioral (kepedulian mendalam pada orang). Manajer efektif berpindah gaya sesuai situasi [hal. 212–213]."
   },
   {
     "tm": 7,
     "topic": "Struktur Matriks",
     "difficulty": "medium",
-    "q": "Karakteristik paling unik dari Struktur Organisasi Matriks (Matrix Structure) adalah...",
+    "q": "Karakteristik paling unik dari struktur organisasi matriks (matrix structure) adalah...",
     "options": [
       "Tidak adanya rantai komando sama sekali",
-      "Karyawan bertanggung jawab kepada dua atasan sekaligus (Dual Authority)",
+      "Karyawan melapor kepada dua atasan sekaligus (dual lines of authority)",
       "Setiap divisi berdiri sendiri tanpa koordinasi",
       "Rentang kendali tidak terbatas"
     ],
     "answer": 1,
-    "explanation": "Struktur matriks menggabungkan rantai komando fungsional vertikal dan rantai komando proyek horizontal, sehingga karyawan melapor kepada dua manajer."
+    "explanation": "Matrix menggabungkan aspek struktur functional dan divisional secara bersamaan, dengan dua garis otoritas: hierarki fungsional vertikal dan divisional horizontal. Akibatnya matrix melanggar unity of command dan menghasilkan two-boss employees [hal. 242–244]."
   },
   {
     "tm": 7,
-    "topic": "Rentang Kendali (Span of Control)",
+    "topic": "Rentang Kendali",
     "difficulty": "medium",
-    "q": "Organisasi dengan struktur datar (Flat Structure) ditandai oleh...",
+    "q": "Organisasi dengan struktur datar (flat structure) ditandai oleh...",
     "options": [
-      "Banyak tingkatan hierarki dan rentang kendali sempit",
-      "Sedikit tingkatan hierarki dan rentang kendali lebar",
+      "Banyak tingkatan hierarki dan span of management yang sempit",
       "Pengawasan ketat berjenjang",
+      "Sedikit tingkatan hierarki dan span of management yang lebar",
       "Sentralisasi wewenang mutlak di direktur utama"
     ],
-    "answer": 1,
-    "explanation": "Flat structure memiliki rentang kendali lebar (manajer membawahi banyak staf) sehingga lapisan manajemen lebih ramping dan komunikasi lebih cepat."
+    "answer": 2,
+    "explanation": "Flat structure: span lebar, tersebar secara horizontal, dan lebih sedikit level hierarki. Tall structure: span keseluruhan sempit dan lebih banyak level hierarki. Span yang lebih lebar memudahkan delegasi [hal. 233–234]."
   },
   {
     "tm": 7,
     "topic": "Struktur Fungsional",
     "difficulty": "basic",
-    "q": "Kelemahan terbesar yang sering muncul pada Struktur Organisasi Fungsional adalah...",
+    "q": "Menurut Exhibit 7.10, kelemahan struktur fungsional (functional structure) adalah...",
     "options": [
-      "Biaya operasional sangat mahal karena duplikasi departemen",
-      "Terbentuknya sekat ego-sektoral ('silo mentality') dan koordinasi lintas fungsi yang buruk",
-      "Karyawan kehilangan keahlian teknis spesialisasi",
-      "Ketiadaan aturan kerja tertulis"
+      "Duplikasi sumber daya antardivisi dan biaya tinggi",
+      "Frustrasi dan kebingungan akibat dual chain of command",
+      "Kontrol langsung yang lemah karena mitra bertindak demi kepentingannya sendiri",
+      "Komunikasi antardepartemen fungsional buruk, respons terhadap perubahan eksternal lambat, dan keputusan menumpuk di puncak"
     ],
-    "answer": 1,
-    "explanation": "Dalam struktur fungsional, anggota departemen (misal bagian produksi) cenderung memprioritaskan sasaran divisinya sendiri daripada sasaran organisasi secara menyeluruh."
+    "answer": 3,
+    "explanation": "Exhibit 7.10, functional: kelebihan berupa penggunaan sumber daya efisien, skala ekonomi, dan spesialisasi keterampilan; kelemahan berupa komunikasi antardepartemen yang buruk, respons lambat, dan keputusan menumpuk di puncak. Duplikasi adalah kelemahan divisional, dual chain of command kelemahan matrix, kurangnya kendali kelemahan virtual network [hal. 238–240, 250]."
   },
   {
     "tm": 7,
-    "topic": "Prinsip Kesatuan Komando",
+    "topic": "Kesatuan Komando",
     "difficulty": "basic",
-    "q": "Prinsip klasik organisasi yang menyatakan bahwa seorang karyawan hanya boleh menerima perintah dari dan bertanggung jawab kepada satu atasan langsung disebut...",
+    "q": "Prinsip yang menyatakan bahwa setiap karyawan bertanggung jawab kepada hanya satu atasan disebut...",
     "options": [
-      "Unity of Command (Kesatuan Komando)",
-      "Scalar Chain (Rantai Skalar)",
-      "Division of Labor",
-      "Span of Control"
+      "Unity of command (kesatuan komando)",
+      "Scalar principle",
+      "Division of labor",
+      "Span of management"
     ],
     "answer": 0,
-    "explanation": "Unity of Command menegaskan bahwa setiap individu hanya bertanggung jawab kepada satu penyelia untuk mencegah kebingungan instruksi kerja."
+    "explanation": "Chain of command didasari dua prinsip: unity of command (setiap karyawan bertanggung jawab kepada hanya satu atasan) dan scalar principle (garis otoritas yang jelas dan mencakup semua karyawan sampai ke puncak) [hal. 230]."
   },
   {
     "tm": 7,
-    "topic": "Desentralisasi Organisasi",
+    "topic": "Desentralisasi",
     "difficulty": "medium",
-    "q": "Faktor manakah yang mendorong organisasi untuk menerapkan DESENTRALISASI wewenang yang lebih luas?",
+    "q": "Faktor manakah yang mendorong organisasi menerapkan DESENTRALISASI wewenang yang lebih luas?",
     "options": [
       "Organisasi menghadapi krisis kelangsungan hidup mendesak",
-      "Lingkungan eksternal sangat dinamis, kompleks, dan menuntut respons cepat dari staf garda depan",
+      "Lingkungan eksternal sangat dinamis dan menuntut respons cepat dari staf garda depan",
       "Keputusan bersifat rutin dan tidak memiliki konsekuensi biaya besar",
       "Bawahan belum memiliki kompetensi dan tidak ingin memikul tanggung jawab"
     ],
     "answer": 1,
-    "explanation": "Desentralisasi memberikan keleluasaan bagi karyawan garis depan yang paling dekat dengan konsumen untuk segera bertindak merespons perubahan pasar."
+    "explanation": "Perubahan dan ketidakpastian lingkungan yang lebih besar biasanya terkait dengan decentralization (contoh: Mississippi Power setelah Badai Katrina). Pilihan harus sesuai strategi, dan saat krisis authority bisa disentralisasi di puncak (contoh: Boeing) [hal. 237]."
+  },
+  {
+    "tm": 7,
+    "topic": "Accountability",
+    "difficulty": "medium",
+    "q": "Kewajiban orang yang memegang authority dan responsibility untuk melaporkan dan mempertanggungjawabkan hasil tugasnya kepada atasan di chain of command disebut...",
+    "options": [
+      "Accountability",
+      "Responsibility",
+      "Delegation",
+      "Line authority"
+    ],
+    "answer": 0,
+    "explanation": "Responsibility adalah kewajiban menjalankan tugas yang diberikan (\"sisi lain dari koin authority\"). Accountability menyelaraskan authority dan responsibility. Delegation adalah proses memindahkan authority dan responsibility ke posisi di bawahnya [hal. 231]."
+  },
+  {
+    "tm": 7,
+    "topic": "Line dan Staff Authority",
+    "difficulty": "medium",
+    "q": "Departemen keuangan sebuah perusahaan manufaktur berkoordinasi dengan line departments tentang formulir akuntansi untuk pembelian peralatan. Departemen keuangan itu menjalankan...",
+    "options": [
+      "Line authority: hak mengarahkan dan mengendalikan bawahan langsung",
+      "Staff authority: hak memberi nasihat, rekomendasi, dan konseling (hubungan komunikasi)",
+      "Unity of command atas departemen line",
+      "Delegasi authority formal dari manajer line"
+    ],
+    "answer": 1,
+    "explanation": "Line authority adalah authority formal untuk mengarahkan dan mengendalikan bawahan langsung. Staff authority lebih sempit: hak memberi nasihat, rekomendasi, dan konseling di bidang keahlian staf, dan merupakan hubungan komunikasi [hal. 231–232]."
+  },
+  {
+    "tm": 7,
+    "topic": "Teknologi Woodward",
+    "difficulty": "advanced",
+    "q": "Menurut Exhibit 7.15 (Joan Woodward), teknologi produksi yang memiliki centralization tinggi dan span supervisor terbesar (48) adalah...",
+    "options": [
+      "Small batch production",
+      "Continuous process production",
+      "Ketiga tipe sama besar",
+      "Mass production"
+    ],
+    "answer": 3,
+    "explanation": "Centralization tinggi hanya pada mass production, yang overall structure-nya mechanistic. Small batch (span 23) dan continuous process (span 15) berstruktur organic dengan centralization rendah [hal. 258–260]."
+  },
+  {
+    "tm": 7,
+    "topic": "Project Manager",
+    "difficulty": "advanced",
+    "q": "Project manager berbeda dari anggota tim yang dikoordinasikannya karena ia...",
+    "options": [
+      "Anggota salah satu departemen dan menjadi atasan seluruh anggota tim",
+      "Bagian dari relational coordination yang tidak memiliki peran formal",
+      "Berada di luar departemen yang dikoordinasikan dan berwenang atas proyek, bukan atas orang-orangnya",
+      "Menggantikan line authority manajer departemen"
+    ],
+    "answer": 2,
+    "explanation": "Project manager berada di luar departemen yang dikoordinasikan; garis putus-putus pada Exhibit 7.12 menunjukkan tanggung jawab koordinasi dan komunikasi, sedangkan manajer departemen tetap memegang line authority atas karyawan fungsionalnya [hal. 253]."
   }
 ];
 
