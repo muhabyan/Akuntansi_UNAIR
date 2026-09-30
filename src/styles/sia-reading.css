@@ -1,0 +1,113 @@
+.sia-reading-document {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.sia-reading-document .course-solid-surface .course-diagram-svg {
+  display: block;
+  width: 100% !important;
+  max-width: 100%;
+  height: auto !important;
+}
+
+.sia-reading-document .sia-table-frame {
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  .sia-reading-document .sia-table-frame {
+    overflow: visible !important;
+  }
+
+  .sia-reading-document .course-solid-surface {
+    overflow-x: hidden !important;
+  }
+
+  .sia-reading-document .course-solid-surface > [class~="min-w-[1200px]"] {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .sia-reading-document .course-table-card > div:first-child > span:last-child {
+    display: none;
+  }
+
+  .sia-reading-document table.sia-responsive-table {
+    display: block;
+    width: 100% !important;
+    min-width: 0 !important;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .sia-reading-document table.sia-responsive-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .sia-reading-document table.sia-responsive-table tbody {
+    display: grid;
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  .sia-reading-document table.sia-responsive-table tbody tr {
+    display: block;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgb(226 232 240);
+    border-radius: 0.75rem;
+    background: white;
+    box-shadow: 0 1px 2px rgb(15 23 42 / 5%);
+  }
+
+  .dark .sia-reading-document table.sia-responsive-table tbody tr {
+    border-color: rgb(55 65 81);
+    background: rgb(17 24 39 / 60%);
+  }
+
+  .sia-reading-document table.sia-responsive-table tbody td {
+    display: grid;
+    grid-template-columns: minmax(5.25rem, 30%) minmax(0, 1fr);
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.7rem 0.75rem;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid rgb(241 245 249);
+  }
+
+  .dark .sia-reading-document table.sia-responsive-table tbody td {
+    border-color: rgb(55 65 81 / 70%);
+  }
+
+  .sia-reading-document table.sia-responsive-table tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  .sia-reading-document table.sia-responsive-table tbody td::before {
+    content: attr(data-label);
+    color: rgb(71 85 105);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .dark .sia-reading-document table.sia-responsive-table tbody td::before {
+    color: rgb(156 163 175);
+  }
+
+  .sia-reading-document table.sia-responsive-table caption {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    overflow-wrap: anywhere;
+  }
+}

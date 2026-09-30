@@ -3,8 +3,8 @@ import type { Reading } from '../../../types';
 export const SIA_TM2: Reading = {
   tm: 2,
   title: 'Data Analytics: Addressing Accounting Questions with Data',
-  ref: 'Richardson, Chang & Smith, AIS 4e ISE · Ch. 2, pp. 42–106',
-  intro: 'Mulai dari pertanyaan akuntansi, kuasai datanya, pilih teknik analisis, lalu komunikasikan keputusan. AMPS menjadi penghubung antara kualitas data, kontrol, dan empat jenis analitika. Lab disajikan sebagai langkah kerja dan hasil terverifikasi yang dapat dipelajari langsung di website.',
+  ref: 'RPS-SIA, minggu 2 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 2, pp. 42–106',
+  intro: 'Mulai dengan pertanyaan akuntansi, periksa datanya, pilih cara menganalisis, lalu jelaskan keputusan yang disarankan. Kerangka AMPS (Ask, Master, Perform, Share: ajukan pertanyaan, kuasai data, lakukan analisis, bagikan hasil) menghubungkan kualitas data dengan empat jenis analitika. Lab menunjukkan langkah dan hasil yang dapat dipelajari langsung di website.',
   objectives: [
     'Membedakan Big Data dan data analytics serta menjelaskan 4V.',
     'Menerapkan AMPS, penilaian data, ETL, dan Audit Data Standards.',
@@ -13,12 +13,15 @@ export const SIA_TM2: Reading = {
     'Menghubungkan hasil analisis dengan kontrol, jurnal, dan komunikasi keputusan.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari pertanyaan: tagihan mana yang terlambat?', blocks: [
+      { kind: 'p', text: 'Toko memiliki ratusan tagihan pelanggan. Manajer ingin tahu mana yang lewat lebih dari 90 hari agar tim penagihan dapat bertindak. Kita rapikan tanggal jatuh tempo dan saldo, kelompokkan umur tagihan, lalu jelaskan hasilnya. **Analitika data** berarti memakai data untuk menjawab pertanyaan akuntansi dan membantu memilih tindakan.' },
+    ] },
     { kind: 'h2', text: '1. Data Analytics Foundations & Cross-Functional Accounting Impact' },
     { kind: 'table', headers: ['Konsep', 'Makna'], rows: [
       ['Big Data', 'Lingkungan data: volume besar, cepat, kompleks, dan sering tidak terstruktur sehingga melampaui kemampuan pemrosesan database konvensional.'],
       ['Data Analytics', 'Proses komputasional dan kognitif untuk memeriksa data, menghilangkan noise, mengorganisasi, mentransformasi, serta memodelkan data guna menjawab pertanyaan dan mendukung keputusan.'],
     ], caption: 'Richardson 4e, pp. 44, 86. Data perlu dihubungkan dengan pertanyaan, model, dan tindakan agar memberi nilai.' },
-    { kind: 'callout', variant: 'info', title: 'Konteks ekonomi dalam textbook', text: 'Estimasi McKinsey yang dikutip: nilai ekonomi global \\$9.5–\\$15.4 trillion. Survei CEO PwC yang dikutip: 80% menempatkan data mining/analysis sebagai teknologi strategis kedua terpenting; 82% menekankan kebutuhan keputusan berbasis data pada skala operasi. Angka ini adalah konteks sumber kuliah, bukan statistik real-time. Richardson 4e, p. 44.' },
+    { kind: 'callout', variant: 'info', title: 'Konteks ekonomi dalam textbook', text: 'Buku mengutip estimasi McKinsey tentang potensi nilai ekonomi global \\$9.5–\\$15.4 trillion serta survei CEO PwC tentang pentingnya data dan analitika bagi keputusan bisnis. Angka dalam survei adalah konteks historis yang dikutip ebook, bukan statistik real-time. Richardson 4e, p. 44.' },
     { kind: 'table', headers: ['4V', 'Makna', 'Contoh / implikasi'], rows: [
       ['Volume', 'Besarnya data.', 'POS, RFID, clickstream, pencarian web, dan interaksi pelanggan.'],
       ['Variety', 'Keragaman format.', 'Structured, semi-structured, unstructured; sumber menyebut sekitar 80% data perusahaan tidak terstruktur.'],

@@ -3,36 +3,40 @@ import type { Reading } from '../../../types';
 export const SIA_TM7: Reading = {
   tm: 7,
   title: 'Purchases and Payments Business Process',
-  ref: 'Richardson, Chang & Smith, AIS 4e ISE · Ch. 8, pp. 322–349',
-  intro: 'Siklus Procure-to-Pay adalah cermin siklus penjualan: perusahaan memberi kas untuk memperoleh persediaan. Ikuti alurnya dari dampak akuntansi dan potongan pembelian, kolaborasi BPMN dengan supplier dan empat swimlane internal, Three-Way Match dan blind PO, pola REA dengan utang usaha yang diturunkan secara dinamis, hingga skema pembelian Sunset Graphics dan kasus Baer Belly Bikinis.',
+  ref: 'RPS-SIA, minggu 7 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 8, pp. 322–349',
+  intro: 'Procure-to-Pay (pengadaan hingga pembayaran) mengikuti perjalanan barang yang dibeli perusahaan dan uang yang dibayarkan kepada pemasok. Kita mulai dari kebutuhan barang, lalu menelusuri pesanan, penerimaan, dan pembayaran. BPMN (Business Process Model and Notation) membantu memetakan urutan kerja; REA (Resources, Events, Agents atau sumber daya, kejadian, dan pelaku) membantu memetakan hubungan datanya. Pemisahan tugas atau SoD menjadi bagian dari pengendaliannya.',
   objectives: [
-    'Menjelaskan lima aktivitas Procure-to-Pay, titik pengakuan persediaan dan utang saat penerimaan barang, potongan pembelian 2/10, net 30, dan retur dengan debit memo.',
-    'Memodelkan kolaborasi Supplier–Enterprise dengan message flow, orchestration empat swimlane, exception barang rusak, dan variasi pembelian kartu kredit.',
+    'Menjelaskan empat aktivitas inti pembelian Sunset dan pemeriksaan tagihan sebagai perluasan kontrol, titik pengakuan persediaan dan utang, potongan pembelian 2/10, net 30, serta retur.',
+    'Memodelkan kolaborasi Supplier–Enterprise dengan message flow, tiga lane Sunset Graphics, exception barang rusak, dan variasi pembelian kartu kredit.',
     'Menerapkan Three-Way Match, blind purchase order, Approved Vendor List, dan pemisahan tugas untuk mencegah shell company, kickback, dan pembayaran ganda.',
     'Menyusun model REA pembelian dan pembayaran, multiplicity, derivasi dinamis Accounts Payable, serta type image.',
-    'Membaca skema relasional pembelian Sunset Graphics dan menerapkan prinsip dualitas ekonomi pada kasus Baer Belly Bikinis.',
+    'Membedakan skema revisi Sunset Graphics dalam ebook dari skema latihan yang mempertahankan PO dan penerimaan terpisah, serta menerapkan dualitas ekonomi pada kasus Baer Belly Bikinis.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari kebutuhan barang sampai supplier dibayar', blocks: [
+      { kind: 'p', text: 'Gudang kehabisan kertas. Pegawai meminta pembelian, bagian pembelian memesan dari pemasok, petugas menerima dan menghitung barang, bagian utang memeriksa tagihan, lalu kasir membayar. Rangkaian ini disebut **Procure-to-Pay** (pengadaan hingga pembayaran). Pesanan saja belum menciptakan utang; catatan akuntansi muncul ketika barang diterima sesuai ketentuan.' },
+    ] },
     { kind: 'h2', text: '1. Operational Foundations & Financial Statement Impacts' },
-    { kind: 'p', text: '**Purchases and payments business process (Procure-to-Pay)** adalah rangkaian aktivitas bisnis berulang untuk mengidentifikasi kebutuhan material, memilih supplier yang disetujui, menerbitkan purchase order, menerima dan menginspeksi barang, memverifikasi invoice vendor, dan melakukan pengeluaran kas. Tujuannya memperoleh persediaan dan jasa berkualitas dengan harga kompetitif, mencegah belanja tanpa otorisasi, mengoptimalkan arus kas keluar agar potongan pembayaran awal diperoleh, dan mengamankan pengeluaran perusahaan. Richardson 4e, pp. 322–324.' },
+    { kind: 'p', text: '**Purchases and payments business process (Procure-to-Pay)** mencakup pencarian harga dan ketersediaan, penerbitan purchase order, penerimaan barang, serta pembayaran pemasok dalam empat langkah utama Sunset. Pemeriksaan invoice vendor sebelum pembayaran adalah perluasan kontrol yang dipelajari di bawah. Tujuannya memperoleh barang yang sesuai, mencegah belanja tanpa izin, dan menjaga kas. Richardson 4e, pp. 324–325.' },
+    { kind: 'h3', text: 'Alur barang masuk, dokumen, dan kas keluar' },
     { kind: 'ol', items: [
       '**Identify Need & Request Prices:** staf departemen membuat purchase requisition; purchasing agent meminta penawaran harga dari supplier.',
       '**Issue Purchase Order (PO):** Purchasing menyiapkan dan mengirim PO terotorisasi ke vendor berisi deskripsi barang, kuantitas, harga satuan, dan termin pembayaran.',
       '**Receive and Inspect Goods:** petugas receiving membongkar kiriman, memeriksa kondisi fisik, menghitung barang secara independen, dan membuat receiving report.',
-      '**Verify Vendor Invoice (Three-Way Match):** Accounts Payable merekonsiliasi invoice vendor dengan purchase order dan receiving report untuk memastikan ketepatan hitungan dan otorisasi.',
+      '**Verify Vendor Invoice (Three-Way Match):** bagian utang dapat mencocokkan tagihan pemasok dengan PO dan laporan penerimaan sebelum pembayaran. Pencocokan tiga dokumen ini adalah perluasan kontrol atas empat langkah utama Sunset dalam ebook.',
       '**Execute Cash Disbursement:** kasir atau subsistem perbankan otomatis membayar (cek, ACH, EFT) dalam termin kredit agar potongan pembelian diperoleh.',
     ] },
     { kind: 'table', headers: ['Peristiwa', 'Debit', 'Kredit', 'Alasan akuntansi'], rows: [
       ['Purchase order diterbitkan', 'Tidak ada', 'Tidak ada', 'Kontrak eksekutori; belum ada perpindahan hak milik.'],
-      ['Barang diterima dan ditagih (persediaan perpetual)', 'Merchandise Inventory atau Raw Materials Inventory', 'Accounts Payable', 'Aset diperoleh; liabilitas lancar diakui.'],
-      ['Kas dibayar dalam periode diskon (mis. 2/10, net 30)', 'Accounts Payable (bruto)', 'Cash (neto); Merchandise Inventory (atau Purchase Discounts)', 'Potongan mengurangi biaya perolehan persediaan yang dikapitalisasi.'],
+      ['Barang diterima dan diterima baik (persediaan perpetual)', 'Merchandise Inventory atau Raw Materials Inventory', 'Accounts Payable', 'Persediaan dan utang diakui saat penerimaan; tagihan pemasok dapat diverifikasi terpisah.'],
+      ['Kas dibayar dalam periode diskon (mis. 2/10, net 30)', 'Accounts Payable (bruto)', 'Cash (neto); Merchandise Inventory (perpetual) atau Purchase Discounts (periodik)', 'Dalam sistem perpetual potongan mengurangi biaya persediaan; dalam sistem periodik dicatat sebagai Purchase Discounts.'],
       ['Kas dibayar setelah periode diskon', 'Accounts Payable (bruto)', 'Cash (bruto)', 'Pelunasan penuh liabilitas.'],
       ['Retur atau pengurangan harga (barang rusak)', 'Accounts Payable', 'Merchandise Inventory', 'Liabilitas dikurangi melalui debit memo; aset dikurangi sebesar biaya pembelian awal.'],
-    ], caption: 'Richardson 4e, pp. 324–325; Exhibit 8.1.' },
+    ], caption: 'Pembelian kredit dan pembayaran dengan diskon mengikuti Richardson 4e, p. 324, Exhibit 8.1. Jurnal persediaan perpetual, pembayaran setelah diskon, dan retur adalah penerapan ilustratif.' },
     { kind: 'callout', variant: 'key', title: 'Titik pengakuan utang', text: 'Accounts Payable **tidak** dicatat saat PO diterbitkan. Persediaan dan utang diakui saat barang diterima dan diterima baik (atau hak milik berpindah). Potongan pembelian bukan pendapatan; dalam sistem perpetual potongan mengurangi biaya perolehan persediaan.' },
 
     { kind: 'h2', text: '2. Activity Modeling: BPMN Collaboration, Orchestration & Process Variations' },
-    { kind: 'p', text: '**Collaboration model** menggambarkan pertukaran B2B antara dua pool independen: **Supplier Pool** dan **Enterprise Pool** (mis. Sunset Graphics, Baer Belly Bikinis). Kedua pool hanya dihubungkan oleh message flow (`---▷`). Richardson 4e, pp. 325–328; Exhibits 8.2, 8.4.' },
+    { kind: 'p', text: '**Collaboration model** menggambarkan pertukaran B2B antara dua pool independen: **Supplier Pool** dan **Enterprise Pool** (mis. Sunset Graphics, Baer Belly Bikinis). Kedua pool hanya dihubungkan oleh message flow (`---▷`). Exhibit 8.4 pada buku memiliki tiga lane internal Sunset: Buyer, Receiver, dan A/P. Lane Cashier / Treasury pada tabel berikut adalah perluasan kontrol untuk memisahkan pelepasan kas dari pencatatan utang, bukan lane pada gambar buku. Richardson 4e, pp. 325–328; Exhibits 8.2, 8.4.' },
     { kind: 'ol', items: [
       'Enterprise Request for Quote → Supplier Price Quotation.',
       'Enterprise Purchase Order → Supplier Order Confirmation.',
@@ -45,7 +49,7 @@ export const SIA_TM7: Reading = {
       ['Receiving', 'Menerima kiriman, menginspeksi barang, menyiapkan receiving report, memperbarui status persediaan.'],
       ['Accounts Payable', 'Menerima invoice vendor, melakukan Three-Way Match, mencatat liabilitas.'],
       ['Cashier / Treasury', 'Meninjau paket voucher yang disetujui, menandatangani cek atau melepas pembayaran EFT.'],
-    ], caption: 'Orchestration di dalam Enterprise Pool: sequence flow (`───►`) mengalirkan aktivitas melintasi empat swimlane yang dipisahkan. Richardson 4e, Exhibit 8.4.' },
+    ], caption: 'Orchestration di dalam Enterprise Pool: tiga lane pertama mengikuti Richardson 4e, Exhibit 8.4; Cashier / Treasury adalah perluasan pemisahan tugas.' },
     { kind: 'table', headers: ['Variasi proses', 'Pemodelan', 'Dampak'], rows: [
       ['Barang diterima baik', 'Exclusive Gateway (XOR) di lane Receiving menilai kondisi kiriman.', 'Barang dipindahkan ke bin gudang; receiving report dibuat.'],
       ['Barang rusak / ditolak', 'Cabang exception dari gateway yang sama.', 'Barang dikembalikan ke supplier dengan message flow **Debit Memo** yang meminta kredit.'],
@@ -54,17 +58,18 @@ export const SIA_TM7: Reading = {
     { kind: 'callout', variant: 'warning', title: 'Aturan batas pool', text: 'Sequence flow tidak pernah menghubungkan Supplier Pool dan Enterprise Pool. Quote, PO, pengiriman, invoice, dan pembayaran antar-organisasi selalu dimodelkan sebagai message flow.' },
 
     { kind: 'h2', text: '3. Internal Control Framework & The Three-Way Match Architecture' },
+    { kind: 'p', text: 'Exhibit 8.6 pada buku menekankan pemisahan tugas, pembatasan akses, penomoran PO dan receiving report, serta range/limit checks. Three-Way Match dan daftar vendor disajikan di bawah sebagai penerapan kontrol pembelian yang diperluas; keduanya tidak digambarkan sebagai diagram tersendiri pada Exhibit 8.6.' },
     { kind: 'table', headers: ['Tipe kontrol COSO', 'Contoh dalam Procure-to-Pay'], rows: [
       ['Preventive', 'Approved Vendor List (AVL), persetujuan formal purchase requisition, blind purchase order ke receiving dock, pemisahan tugas yang ketat.'],
       ['Detective', 'Three-Way Match, rekonsiliasi statement vendor bulanan, cycle count persediaan fisik, review supervisor atas log PO terbuka.'],
       ['Corrective', 'Debit memo vendor atas kelebihan tagihan, pemulihan otomatis atas cek ganda, pelatihan ulang prosedur.'],
-    ], caption: 'Richardson 4e, Exhibit 8.6.' },
+    ], caption: 'Kerangka preventive/detective/corrective dan contoh otorisasi serta rekonsiliasi mengikuti Richardson 4e, pp. 328–329; Three-Way Match dan AVL adalah contoh penerapan tambahan.' },
     { kind: 'h3', text: 'Three-Way Match' },
     { kind: 'table', headers: ['Dokumen', 'Sumber', 'Membuktikan', 'Informasi yang diverifikasi'], rows: [
       ['Purchase Order (PO)', 'Internal: Purchasing / Buyer', 'Otorisasi pembelian', 'Barang yang diotorisasi, kuantitas dipesan, harga satuan disepakati, termin pembayaran.'],
       ['Receiving Report', 'Internal: Warehouse Receiving', 'Penerimaan fisik', 'Kuantitas fisik yang dihitung dan diterima, tanggal terima, kondisi barang.'],
       ['Vendor Invoice', 'Eksternal: Supplier', 'Jumlah yang ditagih', 'Rincian tagihan, total, termin kredit/diskon, alamat remit-to, jatuh tempo.'],
-    ], caption: 'Sebelum invoice vendor diotorisasi untuk dibayar, Accounts Payable wajib membandingkan dan merekonsiliasi ketiga dokumen secara independen. Richardson 4e, pp. 329–331.' },
+    ], caption: 'Three-Way Match adalah penerapan kontrol pembelian tambahan; Richardson 4e, pp. 328–329 membahas rekonsiliasi PO dengan penerimaan, otorisasi, dan aturan akses.' },
     { kind: 'ol', items: [
       'Accounts Payable mengumpulkan PO, receiving report, dan invoice vendor untuk transaksi yang sama.',
       'Bandingkan kuantitas: dipesan (PO), diterima (receiving report), dan ditagih (invoice).',
@@ -72,7 +77,7 @@ export const SIA_TM7: Reading = {
       'Ketiga dokumen cocok: voucher disetujui untuk dibayar oleh Cashier / Treasury.',
       'Ada selisih kuantitas (short shipment), harga (overcharge), atau termin: invoice langsung ditahan (administrative hold) sampai diselesaikan dengan supplier.',
     ] },
-    { kind: 'callout', variant: 'tip', title: 'Blind purchase order', text: 'Salinan PO yang dikirim ke **receiving dock** (bukan ke vendor) memiliki kolom kuantitas yang dihitamkan. Petugas receiving terpaksa melakukan hitung fisik sungguhan alih-alih sekadar mencentang kuantitas sehingga short shipment dari supplier tidak lolos tanpa tercatat. Richardson 4e, pp. 330–331.' },
+    { kind: 'callout', variant: 'tip', title: 'Blind purchase order', text: 'Exhibit 8.6 melarang petugas penerimaan melihat kuantitas pesanan pada PO, sehingga mereka perlu menghitung barang secara mandiri. Salinan internal untuk receiving dapat menyembunyikan kuantitas; salinan PO ke supplier tetap memuat jumlah yang dipesan. Richardson 4e, p. 329.' },
     { kind: 'table', headers: ['Fungsi', 'Diizinkan', 'Tidak boleh'], rows: [
       ['Requisitioner', 'Mengidentifikasi kebutuhan departemen.', 'Mengotorisasi pembelian, menerbitkan PO, atau memilih vendor.'],
       ['Buyer (Purchasing)', 'Menerbitkan PO dan menegosiasikan termin.', 'Memegang barang yang diterima atau menyetujui invoice vendor.'],
@@ -84,9 +89,10 @@ export const SIA_TM7: Reading = {
       ['Shell Company Invoicing', 'Karyawan tidak jujur membuat entitas vendor fiktif untuk menagih jasa yang tidak pernah ada.', 'Approved Vendor List: vendor baru memerlukan persetujuan manajemen pengadaan yang independen, verifikasi nomor pajak (TIN/NPWP), dan validasi alamat fisik.'],
       ['Purchasing Kickbacks', 'Buyer berkolusi menerima barang di bawah standar atau harga yang digelembungkan demi imbalan.', 'Pemilihan vendor dari AVL, Three-Way Match atas harga PO, dan pemisahan Purchasing dari Receiving serta Accounts Payable.'],
       ['Duplicate Payments', 'Invoice yang sama dibayar dua kali karena beberapa salinan diterima.', 'Three-Way Match per transaksi dan pemulihan pembayaran ganda secara otomatis.'],
-    ], caption: 'Richardson 4e, pp. 330–332.' },
+    ], caption: 'Ilustrasi risiko fraud dan kontrol pengadaan sebagai pengayaan atas prinsip pemisahan tugas dan pembatasan akses Richardson 4e, pp. 328–329.' },
 
     { kind: 'h2', text: '4. Structure Modeling: UML Class Diagrams & REA Patterns' },
+    { kind: 'callout', variant: 'key', title: 'Asumsi khusus Sunset Graphics dalam ebook', text: 'Buku mula-mula memisahkan Purchase Orders dan Receipts/Purchases pada Exhibit 8.7. Setelah kebutuhan Sunset diklarifikasi, setiap pembelian selalu memiliki PO dan perusahaan tidak menerima pengiriman parsial. Hubungan PO–penerimaan menjadi satu-banding-satu sehingga kedua class digabung dalam model revisi Exhibit 8.8. Model terpisah di bawah adalah perluasan untuk organisasi yang menerima pengiriman parsial, bukan model revisi Sunset dalam buku. Richardson 4e, pp. 330–331.' },
     { kind: 'table', headers: ['REA', 'Class', 'Keterangan'], rows: [
       ['Resources', 'Inventory (Raw Materials / Merchandise); Cash (Bank Accounts)', 'Aset yang diperoleh; aset yang dikeluarkan.'],
       ['Events', 'Purchase_Orders; Receipts (Goods Receipts); Cash_Disbursements', 'Commitment event yang mengotorisasi pengadaan; event perolehan fisik yang memicu liabilitas; event pelunasan liabilitas.'],
@@ -98,7 +104,7 @@ export const SIA_TM7: Reading = {
       ['Receipts includes Inventory', '(1..\\*) – (0..\\*)', 'Many-to-Many.'],
       ['Bank_Accounts draws Cash_Disbursements', '(1..1) – (0..\\*)', 'Setiap pengeluaran kas ditarik dari satu rekening bank.'],
       ['Receipts settled by Cash_Disbursements', '(0..\\*) – (0..\\*)', 'Mendukung pembayaran cicilan parsial dan satu cek yang melunasi banyak penerimaan barang.'],
-    ], caption: 'Richardson 4e, pp. 332–336.' },
+    ], caption: 'Asosiasi ilustratif untuk model yang mempertahankan PO dan Receipts terpisah. Bandingkan model awal dan model revisi Sunset pada Richardson 4e, Exhibits 8.7–8.8.' },
     { kind: 'p', text: 'Dalam database relasional REA, **Accounts Payable adalah konsep yang diturunkan secara dinamis** dan tidak disimpan sebagai saldo statis. Receipts yang sudah terjadi tetapi belum memiliki Cash_Disbursements terkait adalah liabilitas terbuka yang belum dibayar.' },
     { kind: 'formula', text: '\\text{A/P Balance} = \\sum(\\text{Goods Receipts}) - \\sum(\\text{Applied Cash Disbursements})', note: 'Utang dihitung dari penerimaan barang dikurangi pengeluaran kas yang diterapkan (Amount_Applied).' },
     { kind: 'table', headers: ['Type image', 'Fungsi'], rows: [
@@ -152,7 +158,7 @@ export const SIA_TM7: Reading = {
       ['Receipt_Disbursements (linking)', 'Disbursement_Num', 'INT', 'NOT NULL, FOREIGN KEY → Cash_Disbursements(Disbursement_Num)'],
       ['Receipt_Disbursements (linking)', 'Amount_Applied', 'DECIMAL(10,2)', 'NOT NULL'],
       ['Receipt_Disbursements (linking)', '(Receipt_Number, Disbursement_Num)', '—', 'Composite PRIMARY KEY'],
-    ], caption: 'Skema relasional pembelian Sunset Graphics. Richardson 4e, Bab 8, sekitar hlm. 332–334; Exhibits 8.9–8.10. Linking table PO_Items, Receipt_Items, dan Receipt_Disbursements menyelesaikan asosiasi M:N dengan kunci komposit.' },
+    ], caption: 'Skema latihan yang memperluas kasus Sunset Graphics untuk PO dan Receipts terpisah serta pembayaran parsial. Ini bukan salinan tabel buku; bandingkan struktur yang disederhanakan di Richardson 4e, pp. 332–334, Exhibits 8.9–8.10.' },
     { kind: 'p', text: 'Catatan: skema yang diberikan tidak memiliki tautan Receipts ke Purchase_Orders maupun tabel invoice vendor, sehingga Three-Way Match di atas tidak dapat ditelusuri seluruhnya dari tabel ini saja.' },
     { kind: 'h3', text: 'Baer Belly Bikinis dan dualitas ekonomi' },
     { kind: 'p', text: '**Baer Belly Bikinis (BBB)** didirikan Paige Baer di Santa Monica, California, dan membeli kain dari pemasok lokal untuk memproduksi pakaian renang. Dalam contoh buku, pemasok biasanya mengirim dalam dua minggu dan BBB biasanya membayar dalam sekitar dua minggu. Richardson 4e, Bab 8, hlm. 334–336. Angka dan termin potongan dalam latihan berikut adalah asumsi ilustrasi, bukan data kasus asli buku.' },

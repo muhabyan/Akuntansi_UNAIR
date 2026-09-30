@@ -3,8 +3,8 @@ import type { Reading } from '../../../types';
 export const SIA_TM1: Reading = {
   tm: 1,
   title: 'Accounting Information Systems and Firm Value',
-  ref: 'Lecturer PPT Ch. 1, slides 1–30 · Richardson, Chang & Smith, AIS 4e ISE, Ch. 1, pp. 2–26',
-  intro: 'Sistem Informasi Akuntansi menghubungkan data, proses bisnis, pengendalian, dan keputusan. Ikuti alur dari informasi yang berguna hingga dampaknya terhadap nilai perusahaan, lalu uji pemahaman melalui kasus dan Exam Toolkit.',
+  ref: 'RPS-SIA, minggu 1 · Richardson, Chang & Smith, AIS 4e ISE, Ch. 1, pp. 2–26',
+  intro: 'Sistem Informasi Akuntansi (SIA) menghubungkan catatan transaksi, pekerjaan sehari-hari, pengamanan aset, dan keputusan. Kita mulai dari transaksi sederhana, lalu ikuti bagaimana informasi membantu perusahaan bekerja dan menciptakan nilai. Setelah itu, uji pemahaman dengan kasus dan Exam Toolkit.',
   objectives: [
     'Membedakan data dan informasi serta menilai kualitas dan nilai bersih informasi.',
     'Memetakan peran akuntan, rantai nilai, dan sistem perusahaan.',
@@ -12,8 +12,11 @@ export const SIA_TM1: Reading = {
     'Mengevaluasi pemisahan tugas dan kontribusi SIA terhadap kinerja perusahaan.',
   ],
   blocks: [
+    { kind: 'example', title: 'Mulai dari transaksi sederhana: satu kopi terjual', blocks: [
+      { kind: 'p', text: 'Pelanggan membeli satu kopi dan membayar tunai. Kasir mencatat jenis kopi, jumlah, harga, waktu, dan cara bayar. Catatan mentah itu adalah **data**. Setelah sistem mengelompokkannya menjadi penjualan hari ini dan membandingkannya dengan stok, hasilnya menjadi **informasi** yang membantu manajer memesan bahan. Bab ini mengikuti perubahan dari transaksi menjadi data, informasi, keputusan, lalu nilai bagi perusahaan.' },
+    ] },
     { kind: 'h2', text: '1. System & Information Foundations' },
-    { kind: 'p', text: '**Sistem Informasi Akuntansi (SIA / AIS)** adalah sistem formal yang mencatat, memproses, merangkum, melaporkan, dan mengomunikasikan hasil ekonomi peristiwa bisnis. Informasi keuangan dan nonkeuangan mendukung keputusan serta kontrol operasi; pengendalian internal melindungi aset dan integritas data. Akuntan berperan sebagai **business analyst**, bukan hanya pencatat transaksi. Sumber: PPT slide 5, 9; Richardson 4e, pp. 4–5.' },
+    { kind: 'p', text: '**Sistem Informasi Akuntansi (SIA / AIS)** adalah sistem formal yang mencatat, memproses, merangkum, melaporkan, dan mengomunikasikan hasil ekonomi peristiwa bisnis. Informasi keuangan dan nonkeuangan mendukung keputusan serta kontrol operasi; pengendalian internal melindungi aset dan integritas data. Akuntan berperan sebagai **business analyst**, bukan hanya pencatat transaksi. Richardson 4e, pp. 4–5.' },
     { kind: 'table', headers: ['Pilar', 'Kontribusi pada AIS'], rows: [
       ['Accounting', 'Klasifikasi transaksi, double-entry, pengendalian, pelaporan IFRS/SAK atau US GAAP, pajak, dan keputusan manajerial.'],
       ['Information Systems', 'Hardware, database relasional, jaringan, logika software, pengembangan sistem, dan tata kelola TI.'],
@@ -24,22 +27,22 @@ export const SIA_TM1: Reading = {
       ['Consumer Behavior Data', 'Clickstream, keranjang ditinggalkan, durasi browsing, pencarian, penggunaan loyalty rewards.'],
       ['Product Availability & Cost Data', 'Stok gudang, biaya standar, varians bahan/tenaga kerja, lead time pemasok.'],
       ['Operational Statistics', 'Waktu operasi mesin, waktu transportasi, tingkat cacat, efisiensi tenaga kerja.'],
-    ], caption: 'PPT slides 3–4; Richardson 4e, p. 3.' },
-    { kind: 'callout', variant: 'info', title: 'Konteks data dalam sumber kuliah', text: 'Sumber menggambarkan 2.5 quintillion bytes/hari, 90% data tercipta dalam dua tahun, dan 1.7 MB/detik/orang. Survei yang dikutip mencatat 28% eksekutif memiliki sedikit/tanpa informasi andal untuk forecasting dan 54% hanya memiliki separuh informasi yang dibutuhkan. Ini adalah angka dalam sumber kuliah, bukan statistik real-time. PPT slides 3, 5; Richardson 4e, p. 3.' },
+    ], caption: 'Jenis data mengikuti Richardson 4e, p. 4; contoh pada tabel adalah ilustrasi.' },
+    { kind: 'callout', variant: 'info', title: 'Konteks data dalam ebook', text: 'Buku mengutip 2.5 quintillion bytes data per hari, 90% data dunia tercipta dalam dua tahun, dan 1.7 MB informasi baru per detik per orang. Survei yang dikutip menyebut 28% eksekutif keuangan senior memiliki sedikit atau tanpa informasi untuk memprediksi kinerja, sedangkan 54% hanya memiliki separuh informasi yang diperlukan untuk melihat kinerja. Angka tersebut adalah konteks historis yang dikutip buku, bukan statistik real-time. Richardson 4e, p. 4.' },
     { kind: 'example', title: 'Executive information gap', blocks: [
       { kind: 'formula', text: '28\\% + 54\\% = 82\\%', note: '82 dari 100 pemimpin dalam kategori survei tersebut kekurangan informasi memadai. Banyak data tidak otomatis berarti keputusan lebih baik.' },
     ] },
     { kind: 'table', headers: ['Konsep', 'Makna', 'Contoh'], rows: [
       ['Data', 'Fakta, simbol, atau pengukuran mentah tanpa konteks keputusan.', 'Barcode 7501031311309, kuantitas 42, waktu 08:14:22.'],
       ['Information', 'Data diolah, diorganisasi, dan diberi konteks sehingga mengurangi ketidakpastian.', 'Stok SKU 11309 di Store #4 di bawah reorder point sehingga sistem memicu pemesanan kembali.'],
-    ], caption: 'PPT slide 10; Richardson 4e, p. 5.' },
+    ], caption: 'Richardson 4e, pp. 7–8; contoh SKU adalah ilustrasi.' },
     { kind: 'h3', text: 'Simple Information System: Input → Processing → Output, didukung Storage' },
     { kind: 'table', headers: ['Komponen', 'Fungsi', 'Contoh Starbucks'], rows: [
       ['Input', 'Menangkap data peristiwa transaksi.', 'Barista memasukkan 1 Grande Caffe Latte $4.75, oat milk, pembayaran mobile.'],
       ['Storage', 'Menyimpan rekaman untuk retrieval, audit trail, dan laporan.', 'Tabel Sales_Orders, Order_Lines, Customer_Account, Payment_Transactions.'],
       ['Processing', 'Menjalankan aturan bisnis dan perhitungan.', 'Memperbarui loyalty stars; mengurangi stok bahan dan cup; menghitung pajak dan COGS.'],
       ['Output', 'Menghasilkan informasi untuk operasi dan keputusan.', 'E-receipt, antrean minuman, laporan penjualan per jam tenaga kerja untuk manajer.'],
-    ], caption: 'PPT slide 12; Richardson 4e, p. 6.' },
+    ], caption: 'Model sistem informasi: Richardson 4e, p. 6; rincian transaksi Starbucks adalah ilustrasi.' },
     { kind: 'h3', text: 'Kualitas informasi dan information overload' },
     { kind: 'table', headers: ['Kualitas', 'Unsur dan makna'], rows: [
       ['Relevance', 'Predictive value: membantu prediksi; confirmatory value: mengonfirmasi/mengoreksi ekspektasi; materiality: penghilangan atau salah saji dapat memengaruhi keputusan.'],
@@ -48,17 +51,17 @@ export const SIA_TM1: Reading = {
       ['Verifiability', 'Pengamat independen berpengetahuan dapat mencapai konsensus.'],
       ['Timeliness', 'Tersedia saat masih dapat memengaruhi keputusan.'],
       ['Understandability', 'Klasifikasi dan penyajian jelas serta ringkas.'],
-    ], caption: 'PPT slide 13; Richardson 4e, pp. 6–7.' },
-    { kind: 'callout', variant: 'warning', title: 'Trade-off dan risiko overload', text: 'Menunggu angka sepenuhnya diverifikasi dapat mengurangi ketepatwaktuan; estimasi cepat membutuhkan perhatian pada representasi tepat. Terlalu banyak data mentah memperlambat keputusan dan menyembunyikan sinyal penting. Gunakan exception reporting, agregasi, dashboard yang relevan, dan drill-down. PPT slides 13, 15; Richardson 4e, pp. 6–7.' },
+    ], caption: 'Richardson 4e, pp. 6–7.' },
+    { kind: 'callout', variant: 'warning', title: 'Trade-off dan risiko overload', text: 'Menunggu angka sepenuhnya diverifikasi dapat mengurangi ketepatwaktuan; estimasi cepat membutuhkan perhatian pada representasi tepat. Terlalu banyak data mentah memperlambat keputusan dan menyembunyikan sinyal penting. Gunakan exception reporting, agregasi, dashboard yang relevan, dan drill-down. Richardson 4e, pp. 6–8.' },
     { kind: 'h3', text: 'Information Value Chain' },
-    { kind: 'ol', items: ['Business need / event → tentukan keputusan yang perlu didukung.', 'Data capture melalui AIS → tangkap peristiwa relevan.', 'Information processing → olah data menjadi informasi.', 'Business decision → gunakan informasi.', 'Firm value impact → evaluasi manfaat dan biaya.'] },
-    { kind: 'formula', text: '\\displaystyle V = B - C', note: 'V = Nilai Bersih Informasi; B = manfaat (pendapatan, penghematan persediaan, berkurangnya piutang macet); C = software, hardware, integrasi, pelatihan, pemeliharaan. Discretionary: V > 0 → ACCEPT; V ≤ 0 → REJECT. Sistem mandatory tetap wajib. PPT slide 16; Richardson 4e, pp. 8–9.' },
+    { kind: 'ol', items: ['Business need → tentukan kebutuhan keputusan.', 'Business event → kenali peristiwa yang relevan.', 'Data → tangkap fakta dari peristiwa tersebut.', 'Information → olah dan beri konteks pada data.', 'Knowledge → pahami pola dan implikasi informasi.', 'Decision → gunakan pengetahuan untuk memilih tindakan dan menilai manfaatnya.'] },
+    { kind: 'formula', text: '\\displaystyle V = B - C', note: 'V = Nilai Bersih Informasi; B = manfaat (pendapatan, penghematan persediaan, berkurangnya piutang macet); C = software, hardware, integrasi, pelatihan, pemeliharaan. Discretionary: V > 0 → ACCEPT; V ≤ 0 → REJECT. Sistem mandatory tetap wajib. Richardson 4e, pp. 8–9.' },
     { kind: 'example', title: 'PT Nusantara Retail — investasi RFID', blocks: [
       { kind: 'p', text: 'Manfaat \\$150,000 dan biaya \\$40,000 untuk sistem discretionary.' },
       { kind: 'formula', text: '\\displaystyle V = 150{,}000 - 40{,}000 = 110{,}000', note: 'ACCEPT: nilai bersih $110,000 > 0.' },
     ] },
-    { kind: 'example', title: 'Walmart: logistik pisang dan nilai informasi', blocks: [
-      { kind: 'p', text: 'Pemindaian optik dan berat di kasir, EDI ke pemasok perkebunan Amerika Tengah, serta sensor suhu kontainer menghubungkan permintaan dengan logistik. Informasi menyelaraskan kematangan dan pembelian pelanggan, mengurangi stockout serta pembusukan, dan mendukung penjualan. Richardson 4e, p. 9.' },
+    { kind: 'example', title: 'Walmart: keputusan pasokan pisang', blocks: [
+      { kind: 'p', text: 'Buku memakai transaksi penjualan pisang di Walmart untuk menunjukkan perubahan peristiwa bisnis menjadi data, informasi, pengetahuan, lalu keputusan jumlah persediaan per toko. Informasi permintaan dapat membantu mengurangi kelebihan stok dan kekurangan stok. Richardson 4e, pp. 7–8, Exhibit 1.2.' },
     ] },
     { kind: 'h2', text: '2. Accountant Roles, Responsibilities & Certifications' },
     { kind: 'table', headers: ['Peran', 'Tanggung jawab', 'Batas pemisahan tugas'], rows: [
@@ -66,14 +69,14 @@ export const SIA_TM1: Reading = {
       ['Manager / Pengelola', 'Mengatur staf, tugas billing/payroll/collection, jadwal tutup buku, dan anggaran.', 'Tidak menjadi evaluator independen departemennya sendiri.'],
       ['Designer / Perancang', 'Menetapkan kebutuhan akuntansi, COA, validasi data, urutan kerja, dan kontrol akses.', 'Tidak menjadi evaluator independen sistem yang dirancang.'],
       ['Evaluator / Auditor', 'Menguji integritas, keamanan, kontrol, dan kepatuhan secara independen.', 'Tidak merancang/mengonfigurasi kontrol yang diaudit.'],
-    ], caption: 'PPT slide 14; Richardson 4e, pp. 7–8. Designer ≠ independent Evaluator untuk sistem yang sama.' },
+    ], caption: 'Richardson 4e, pp. 9–11. Designer ≠ independent Evaluator untuk sistem yang sama.' },
     { kind: 'table', headers: ['Sertifikasi', 'Penerbit', 'Fokus'], rows: [
       ['CISA — Certified Information Systems Auditor', 'ISACA', 'Audit SI, tata kelola keamanan, kontrol otomatis.'],
       ['CITP — Certified Information Technology Professional', 'AICPA', 'CPA yang berspesialisasi pada teknologi, analitika, dan arsitektur sistem.'],
       ['CIA — Certified Internal Auditor', 'IIA', 'Assurance audit internal, risiko, dan tata kelola.'],
     ] },
     { kind: 'h2', text: '3. Value Chain Architecture & Business Processes' },
-    { kind: 'p', text: '**Business value** mencakup nilai bersih, efektivitas, daya saing, dan kesejahteraan pemangku kepentingan. **Business process** adalah rangkaian aktivitas, tugas, dan data terkait yang mengubah input menjadi output. Rantai nilai menjelaskan bagaimana aktivitas tersebut menciptakan nilai. PPT slides 19–22; Richardson 4e, pp. 11–12.' },
+    { kind: 'p', text: '**Business value** mencakup nilai bersih, efektivitas, daya saing, dan kesejahteraan pemangku kepentingan. **Business process** adalah rangkaian aktivitas, tugas, dan data terkait yang mengubah input menjadi output. Rantai nilai menjelaskan bagaimana aktivitas tersebut menciptakan nilai. Richardson 4e, pp. 12–13.' },
     { kind: 'table', headers: ['Aktivitas Utama / Primary', 'Peran', 'Hubungan sistem'], rows: [
       ['Inbound Logistics', 'Menerima, menyimpan, dan menangani bahan.', 'SCM dan penerimaan persediaan.'],
       ['Operations', 'Mengubah bahan menjadi produk.', 'Shop floor, produksi, dan cost accounting.'],
@@ -86,7 +89,7 @@ export const SIA_TM1: Reading = {
       ['Human Resource Management', 'Rekrutmen, pengembangan, dan pengelolaan tenaga kerja.'],
       ['Technology Development', 'Pengembangan teknologi produk dan proses.'],
       ['Procurement', 'Pengadaan input yang dibutuhkan organisasi.'],
-    ], caption: 'PPT slides 21–22; Richardson 4e, pp. 11–12. AIS merupakan Firm Infrastructure, bukan aktivitas utama.' },
+    ], caption: 'Richardson 4e, pp. 12–13, Exhibit 1.4. AIS mendukung Firm Infrastructure dan aktivitas lain; bukan aktivitas utama tersendiri.' },
     { kind: 'callout', variant: 'tip', title: 'Batas aktivitas', text: 'Garansi pelanggan termasuk Service, bukan Outbound Logistics. Reverse logistics (retur) adalah aliran khusus dengan kontrol tersendiri. AIS menangkap data pada titik aktivitas dan menghubungkan fungsi-fungsi tersebut melalui informasi dan kontrol.' },
     { kind: 'h2', text: '4. Enterprise Systems & Process Flows' },
     { kind: 'h3', text: 'Order fulfillment: Order → Pick → Ship → Bill' },
@@ -95,12 +98,12 @@ export const SIA_TM1: Reading = {
       ['2\\. Warehouse — picking', 'Ambil barang sesuai SKU, quantity, nomor seri/batch.', 'Picking Ticket: instruksi dan bukti pengambilan.', 'Scan barcode untuk mencocokkan SKU dan kuantitas.'],
       ['3\\. Shipping — pack & dispatch', 'Bandingkan barang, sales order, dan picking ticket; kemas dan serahkan ke carrier; rekam tracking number.', 'Packing Slip: rincian isi; Bill of Lading (BOL): bukti serah terima carrier.', 'Verifikasi independen dan tanda terima carrier.'],
       ['4\\. Billing / Accounting', 'Konfirmasi shipping tervalidasi memicu invoice, AR, dan akun buku besar.', 'Sales Invoice: tagihan; pembaruan GL/AR dan persediaan.', 'Invoice hanya berdasarkan BOL tervalidasi; cegah pengiriman tanpa tagihan.'],
-    ], caption: 'PPT slide 23; Richardson 4e, pp. 12–14.' },
+    ], caption: 'Alur ERP berasal dari Richardson 4e, p. 15; dokumen dan kontrol rinci adalah ilustrasi pengantar untuk siklus penjualan pada Chapter 7.' },
     { kind: 'example', title: 'Posting terintegrasi: penjualan kredit $10,000', blocks: [
       { kind: 'p', text: 'Barang berbiaya $6,500 dikirim ke pelanggan dengan syarat 2/10, n/30. BOL mengonfirmasi serah terima; ERP menerbitkan invoice dan jurnal dalam contoh ini.' },
       { kind: 'journal', caption: 'Pengakuan pendapatan dan piutang (USD)', lines: [{ account: 'Accounts Receivable', debit: '$10,000' }, { account: 'Sales Revenue', credit: '$10,000', isCredit: true }] },
       { kind: 'journal', caption: 'COGS dan pengurangan persediaan (USD)', lines: [{ account: 'Cost of Goods Sold', debit: '$6,500' }, { account: 'Merchandise Inventory', credit: '$6,500', isCredit: true }] },
-      { kind: 'p', text: 'Gross profit = \\$10,000 − \\$6,500 = \\$3,500. Kedua jurnal seimbang dan bersumber dari event shipping yang sama. Richardson 4e, pp. 12–14; Exhibit 1.9.' },
+      { kind: 'p', text: 'Gross profit = \\$10,000 − \\$6,500 = \\$3,500. Kedua jurnal seimbang dan bersumber dari event shipping yang sama. Angka dan jurnal adalah ilustrasi pengantar, bukan transaksi pada Exhibit 1.9; alur order fulfillment diuraikan pada Richardson 4e, p. 15.' },
     ] },
     { kind: 'table', headers: ['Sistem', 'Fungsi dan integrasi'], rows: [
       ['ERP — Enterprise Resource Planning', 'Satu database relasional lintas fungsi mengurangi silo. Sales order memperbarui kebutuhan stok, produksi, dan proyeksi kas.'],
@@ -108,7 +111,7 @@ export const SIA_TM1: Reading = {
       ['HRMS — Human Resource Management System', 'Siklus karyawan, waktu kerja, payroll, dan benefit.'],
       ['SCM — Supply Chain Management', 'Pemasok/logistik eksternal, permintaan, pengadaan, dan replenishment. Feed penjualan popok Walmart–P&G mendukung pengisian kembali otomatis.'],
       ['CRM — Customer Relationship Management', 'Marketing, sales, layanan, preferensi dan histori pelanggan, customer lifetime value, serta retensi.'],
-    ], caption: 'PPT slides 24–27; Richardson 4e, pp. 12–15. ERP/FRS/HRMS mengintegrasikan fungsi internal; SCM/CRM menghubungkan pemasok dan pelanggan.' },
+    ], caption: 'Richardson 4e, pp. 15–19. ERP/FRS/HRMS mengintegrasikan fungsi internal; SCM/CRM menghubungkan pemasok dan pelanggan.' },
     { kind: 'h2', text: '5. System Integration, Controls & Firm Value Mechanics' },
     { kind: 'h3', text: 'Cost accounting sebagai titik temu data' },
     { kind: 'table', headers: ['Input sistem', 'Data biaya', 'Penggunaan'], rows: [
@@ -116,9 +119,9 @@ export const SIA_TM1: Reading = {
       ['HRMS', 'Jam kerja, upah standar, overtime.', 'Biaya tenaga kerja.'],
       ['FRS', 'Depresiasi pabrik, utilitas, overhead.', 'Alokasi overhead produksi.'],
       ['CRM', 'Layanan, pengemasan khusus, warranty/returns.', 'Cost-to-serve dan biaya pelanggan.'],
-    ], caption: 'Richardson 4e, pp. 14–16; integrasi mendukung BOM, routing, ABC, dan analisis varians.' },
-    { kind: 'example', title: 'Tesla Model 3: integrasi biaya', blocks: [
-      { kind: 'p', text: 'Tesla menggabungkan telematika manufaktur robotik (Operations), kontrak pengadaan sel lithium-ion (SCM), tenaga engineering lini baterai (HRMS), dan depresiasi pabrik (FRS) ke dalam ABC. Biaya marginal per trim kendaraan mendukung perubahan harga dinamis dan alokasi modal otomasi pabrik. Data lintas sistem menjelaskan aktivitas yang membentuk biaya, bukan hanya saldo GL.' },
+    ], caption: 'Aliran data ke sistem biaya: Richardson 4e, pp. 19–20, Exhibit 1.8; rincian BOM, routing, ABC, dan analisis varians adalah contoh penerapan.' },
+    { kind: 'example', title: 'Tesla Model 3: ilustrasi integrasi biaya', blocks: [
+      { kind: 'p', text: 'Buku menggunakan Tesla Model 3, Model X, dan Model S sebagai contoh keputusan alokasi overhead berbasis aktivitas. Sebagai ilustrasi, sistem biaya dapat menggabungkan data biaya dari FRS, jam tenaga kerja dari HRMS, material dari sistem produksi atau SCM, dan pendapatan dari CRM. Data lintas sistem membantu menjelaskan profitabilitas produk, bukan hanya saldo buku besar. Richardson 4e, pp. 8, 19–20.' },
     ] },
     { kind: 'table', headers: ['Dimensi', 'Discretionary', 'Mandatory'], rows: [
       ['Tujuan', 'Perencanaan, kontrol biaya, keputusan internal.', 'Kepatuhan hukum, pajak, dan pelaporan.'],
@@ -144,7 +147,7 @@ export const SIA_TM1: Reading = {
       ['SG&A ↓', 'Invoice matching, electronic payroll, dan self-service mengurangi kerja administratif.'],
       ['Interest expense ↓', 'Proyeksi penagihan/kas mengurangi kebutuhan pinjaman darurat.'],
       ['Net income / firm value', 'Perbaikan operasi dan margin mendukung nilai perusahaan.'],
-    ], caption: 'Richardson 4e, pp. 15–16, Exhibit 1.9.' },
+    ], caption: 'Mekanisme peningkatan profitabilitas dan nilai: Richardson 4e, pp. 21–22; rincian pos adalah ilustrasi penelusuran dampak.' },
     { kind: 'p', text: 'Bukti empiris yang dibahas: Kobelsky et al. (2008) mengaitkan belanja TI dengan ROA/ROS periode berikutnya; Hendricks et al. (2007) membahas abnormal returns/profitabilitas ERP, working capital SCM, serta manfaat pendapatan CRM ketika terintegrasi. Integrasi proses dan penggunaan informasi menjembatani investasi dengan kinerja.' },
     { kind: 'h2', text: '6. Worked Practice' },
     { kind: 'solution-reveal', title: '1. PT Jayakarta Distribution — keputusan RFID', prompt: 'Sistem barcode/RFID terintegrasi ERP bersifat discretionary. Horizon evaluasi satu tahun; penghematan \\$120,000/tahun; biaya hardware, integrasi, dan pelatihan \\$45,000. Hitung nilai bersih dan keputusan.', blocks: [

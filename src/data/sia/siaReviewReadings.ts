@@ -4,8 +4,8 @@ import type { Reading } from '../../types';
 export const SII306_REVIEW_UTS_READING: Reading = {
   tm: 0,
   title: 'Review Pra-UTS Sistem Informasi Akuntansi',
-  ref: 'Kompilasi TM 1–7 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 1, 2, 4–8',
-  intro: 'Review akhir Pra-UTS: peta materi TM 1–7, ringkasan Exam Toolkit, perbandingan siklus Order-to-Cash dan Procure-to-Pay, pengendalian lintas TM, angka kunci, common trap, dan tiga latihan terpadu. Semua isi diambil dari bacaan TM 1–7.',
+  ref: 'RPS-SIA, minggu 1–7 · Kompilasi Richardson, Chang & Smith, AIS 4e ISE · Ch. 1, 2, 4–8',
+  intro: 'Review akhir Pra-UTS: peta materi TM 1–7, ringkasan Exam Toolkit, perbandingan siklus Order-to-Cash dan Procure-to-Pay, pengendalian lintas TM, angka kunci, common trap, dan tiga latihan terpadu. Konsep mengikuti bab yang dijadwalkan; angka latihan buatan tetap dibedakan dari contoh ebook pada bacaan tiap TM.',
   objectives: [
     'Menghubungkan konsep inti TM 1–7 dalam satu peta materi.',
     'Mengingat rumus, aturan pemodelan, dan angka kunci dari worked practice setiap TM.',
@@ -20,8 +20,8 @@ export const SII306_REVIEW_UTS_READING: Reading = {
       ['TM3', 'Ch. 4', 'Accountants as Business Analysts', 'Peran dan kerangka kompetensi, SOX 404, BPMN 2.0, flowchart dan PCE, DFD, SoD pada swimlane.'],
       ['TM4', 'Ch. 5', 'Data Modeling', 'UML Class Diagram, REA, multiplicity, PK/FK, algoritma lima langkah, business rule, decision table.'],
       ['TM5', 'Ch. 6', 'Relational Databases and Enterprise Systems', 'Empat aturan tabel relasional, skema SSS, SQL, modul SAP, risiko ERP, cloud ERP.'],
-      ['TM6', 'Ch. 7', 'Sales and Collections Business Process', 'Order-to-Cash, pengakuan pendapatan, BPMN collaboration dan exception, application control, REA dan A/R dinamis, skema Sunset Graphics.'],
-      ['TM7', 'Ch. 8', 'Purchases and Payments Business Process', 'Procure-to-Pay, pengakuan utang, Three-Way Match, blind PO, AVL dan skema fraud, REA dan A/P dinamis, dualitas ekonomi.'],
+      ['TM6', 'Ch. 7', 'Sales and Collections Business Process', 'Order-to-Cash, pengakuan pendapatan, BPMN collaboration dan exception, application control, REA, asumsi pembayaran Sunset Graphics, dan skema latihan yang mendukung pembayaran parsial.'],
+      ['TM7', 'Ch. 8', 'Purchases and Payments Business Process', 'Procure-to-Pay, pengakuan utang, aturan akses dan pemisahan tugas, perluasan Three-Way Match/AVL, model REA revisi Sunset Graphics serta skema latihan yang lebih umum, dualitas ekonomi.'],
     ] },
     { kind: 'callout', variant: 'info', title: 'Cara memakai review ini', text: 'Setiap tabel merangkum Exam Toolkit dan Worked Practice TM 1–7. Detail, sumber halaman, dan pembahasan lengkap tetap berada di bacaan masing-masing TM.' },
 

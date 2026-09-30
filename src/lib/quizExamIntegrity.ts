@@ -3,6 +3,7 @@ import type { QuizQuestion } from '../types';
 export interface QuizResponse {
   pick?: number;
   multi?: number[];
+  text?: string;
   fills?: Record<string, string>;
   matches?: Record<string, string>;
   ordering?: string[];
@@ -45,6 +46,11 @@ export function normalizeQuizNumber(value: string): number | null {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
+export function normalizeQuizText(value: string): string {
+  return value.normalize('NFKC').toLocaleLowerCase('id-ID')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ').trim().replace(/\s+/g, ' ');
+}
+
 export function isQuizResponseCorrect(question: QuizQuestion, response: QuizResponse): boolean {
   if (!question.kind || question.kind === 'mcq') {
     return response.pick === question.answer;
@@ -53,6 +59,10 @@ export function isQuizResponseCorrect(question: QuizQuestion, response: QuizResp
     const selected = response.multi ?? [];
     if (selected.length !== question.answers.length) return false;
     return [...selected].sort((a, b) => a - b).join(',') === [...question.answers].sort((a, b) => a - b).join(',');
+  }
+  if (question.kind === 'short-answer') {
+    const actual = normalizeQuizText(response.text ?? '');
+    return actual.length > 0 && question.answers.some((answer) => normalizeQuizText(answer) === actual);
   }
   if (question.kind === 'report-fill') {
     const fills = response.fills ?? {};
@@ -86,6 +96,7 @@ export function getQuizDatasetFingerprint(questions: QuizQuestion[]): string {
     options: 'options' in question ? question.options : undefined,
     answer: !question.kind || question.kind === 'mcq' ? question.answer : undefined,
     answers: question.kind === 'multi-select' ? question.answers : undefined,
+    textAnswers: question.kind === 'short-answer' ? question.answers : undefined,
     blanks: question.kind === 'report-fill'
       ? question.blanks.map((blank) => ({ id: blank.id, answer: blank.answer, tolerance: blank.tolerance ?? 0 }))
       : undefined,

@@ -309,6 +309,7 @@ export interface Reading {
 export type QuizQuestion =
   | MultipleChoiceQuizQuestion
   | MultiSelectQuizQuestion
+  | ShortAnswerQuizQuestion
   | ReportFillQuizQuestion
   | AccountMatchQuizQuestion
   | OrderingQuizQuestion;
@@ -353,6 +354,14 @@ export interface MultiSelectQuizQuestion extends QuizQuestionMeta {
   /** indeks opsi benar (0-based). Semua harus dipilih agar benar penuh. */
   answers: number[];
   explanation?: string;
+}
+
+export interface ShortAnswerQuizQuestion extends QuizQuestionMeta {
+  kind: 'short-answer';
+  q: string;
+  /** Jawaban utama diikuti padanan istilah yang juga diterima. */
+  answers: string[];
+  explanation: string;
 }
 
 export interface ReportFillQuizQuestion extends QuizQuestionMeta {

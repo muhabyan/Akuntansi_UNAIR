@@ -1,17 +1,17 @@
 // src/data/flashcards/sii306.ts
-// Flashcard komprehensif Sistem Informasi Akuntansi (SII306) — 84 kartu lengkap (6 kartu per TM)
+// Flashcard Sistem Informasi Akuntansi (SII306): 9 kartu per TM Pra-UTS, 6 per TM Pra-UAS.
 // Note: card IDs keep the aks301- prefix so existing SRS review states remain unbroken.
 import type { AdvancedStudyCard } from '../../types';
 
-export const SII306_FC: AdvancedStudyCard[] = [
+const cards: AdvancedStudyCard[] = [
   {
     "id": "aks301-tm01-01",
     "phase": "pra-uts",
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "category": "Definisi",
-    "front": "Definisi Sistem Informasi Akuntansi (SIA)",
-    "back": "Sistem yang mencatat, memproses, meringkas, dan melaporkan data transaksi finansial dan nonfinansial untuk pengambilan keputusan dengan pengendalian internal memadai."
+    "front": "Apa fungsi inti sistem informasi akuntansi (SIA)?",
+    "back": "Mengubah data transaksi menjadi informasi untuk keputusan dan pelaporan, sambil menjaga pengendalian atas data dan proses."
   },
   {
     "id": "aks301-tm01-02",
@@ -19,8 +19,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
-    "front": "Data vs Informasi",
-    "back": "Data adalah fakta mentah yang belum diolah. Informasi adalah data yang telah diorganisasikan dan diproses sehingga memiliki arti dan nilai bagi pengambil keputusan."
+    "front": "Apa beda data transaksi dan informasi untuk keputusan?",
+    "back": "Data adalah fakta mentah; informasi ialah data yang diberi konteks sehingga membantu memutuskan tindakan."
   },
   {
     "id": "aks301-v2-tm01-03",
@@ -28,8 +28,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
-    "front": "Kualitas Informasi: Relevance & Faithful Representation",
-    "back": "Relevance: predictive value, confirmatory value, dan materiality. Faithful Representation: complete, neutral, dan free from error (tidak ada kesalahan material, bukan jaminan prediksi 100% tepat). Kualitas lain: comparability, verifiability, timeliness, understandability."
+    "front": "Laporan berguna untuk prediksi tetapi sengaja menghapus transaksi buruk. Kualitas apa yang gagal?",
+    "back": "Faithful representation: laporan tidak lengkap dan tidak netral, walau mungkin tetap relevan untuk prediksi."
   },
   {
     "id": "aks301-v2-tm01-04",
@@ -37,8 +37,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "category": "Mekanisme",
-    "front": "Empat Peran Akuntan dalam SIA",
-    "back": "User: input transaksi, jurnal, rekonsiliasi, closing, laporan. Manager: mengatur staf, jadwal tutup buku, anggaran. Designer: kebutuhan akuntansi, COA, validasi data, kontrol akses. Evaluator: menguji integritas, keamanan, kontrol, dan kepatuhan secara independen. Designer ≠ evaluator independen untuk sistem yang sama."
+    "front": "Akuntan yang menguji kontrol SIA secara independen berperan sebagai apa?",
+    "back": "Evaluator. Designer merancang kebutuhan dan kontrol; evaluator menguji apakah kontrol bekerja."
   },
   {
     "id": "aks301-v2-tm01-05",
@@ -46,8 +46,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
-    "front": "Rantai Nilai: Primary vs Support Activities",
-    "back": "Primary: Inbound Logistics, Operations, Outbound Logistics, Marketing & Sales, Service. Support: Firm Infrastructure (AIS, legal, manajemen eksekutif), Human Resource Management, Technology Development, Procurement. AIS berada dalam Firm Infrastructure, bukan primary activity."
+    "front": "Dalam value chain, penerimaan bahan dan procurement termasuk aktivitas apa?",
+    "back": "Penerimaan bahan = inbound logistics (primary); procurement/pengadaan = support activity."
   },
   {
     "id": "aks301-v2-tm01-06",
@@ -55,8 +55,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 1,
     "topic": "Accounting Information Systems and Firm Value",
     "category": "Konsep",
-    "front": "Sertifikasi Profesional Bidang SIA",
-    "back": "CISA (Certified Information Systems Auditor) — ISACA: audit SI, tata kelola keamanan, kontrol otomatis. CITP (Certified Information Technology Professional) — AICPA: CPA spesialis teknologi, analitika, arsitektur sistem. CIA (Certified Internal Auditor) — IIA: audit internal, risiko, tata kelola."
+    "front": "Sertifikasi apa yang secara khusus berfokus pada audit sistem informasi?",
+    "back": "CISA (Certified Information Systems Auditor), dari ISACA."
   },
   {
     "id": "aks301-v2-tm02-01",
@@ -64,8 +64,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 2,
     "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "category": "Konsep",
-    "front": "4V Big Data",
-    "back": "Volume: besarnya data. Variety: keragaman format (structured, semi-structured, unstructured; sekitar 80% data perusahaan tidak terstruktur). Velocity: kecepatan data dihasilkan, ditangkap, dan diproses. Veracity: kebenaran, akurasi, kebersihan, dan representasi data."
+    "front": "Apa empat V Big Data?",
+    "back": "Volume (jumlah), Variety (ragam), Velocity (kecepatan), dan Veracity (keandalan data)."
   },
   {
     "id": "aks301-v2-tm02-02",
@@ -73,8 +73,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 2,
     "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "category": "Prosedur",
-    "front": "Model AMPS",
-    "back": "Ask the Question → Master the Data (ETL; 50%–90% waktu proyek) → Perform the Analysis → Share the Story. Bersifat rekursif: temuan baru dapat mengembalikan proses ke Ask/Master."
+    "front": "Apa urutan empat tahap AMPS?",
+    "back": "Ask the Question → Master the Data → Perform the Analysis → Share the Story."
   },
   {
     "id": "aks301-v2-tm02-03",
@@ -82,8 +82,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 2,
     "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "category": "Pengendalian",
-    "front": "Audit Data Standards: Entered_By vs Approved_By",
-    "back": "AICPA Audit Data Standards menstandarkan field ekspor GL. Bandingkan Field 14 (Entered_By) dengan Field 17 (Approved_By); user yang sama menandai self-approval yang harus diinvestigasi. Pisahkan preparer dan approver."
+    "front": "Pada ekspor general ledger, Entered_By sama dengan Approved_By menandai risiko apa?",
+    "back": "Self-approval: pembuat jurnal menyetujui jurnal sendiri. Periksa otorisasi dan bukti sebelum menyimpulkan transaksi salah."
   },
   {
     "id": "aks301-v2-tm02-04",
@@ -91,8 +91,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 2,
     "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "category": "Klasifikasi",
-    "front": "Empat Jenis Analitika",
-    "back": "Descriptive: What happened? (aging piutang). Diagnostic: Why did it happen? (varians, audit SoD). Predictive: Will it happen? (Altman Z-score, credit scoring). Prescriptive: What should we do? (breakeven, Goal Seek)."
+    "front": "Empat jenis analytics menjawab empat pertanyaan apa?",
+    "back": "Descriptive: apa terjadi? Diagnostic: mengapa? Predictive: apa mungkin terjadi? Prescriptive: tindakan apa?"
   },
   {
     "id": "aks301-v2-tm02-05",
@@ -100,8 +100,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 2,
     "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "category": "Konsep",
-    "front": "Altman Z-Score",
-    "back": "Z = 1.2X₁ + 1.4X₂ + 3.3X₃ + 0.6X₄ + 1.0X₅. Z < 1.80 Distress Zone; 1.80 ≤ Z < 3.00 Gray Zone; Z ≥ 3.00 Safe Zone. Apple 1997 = 2.0251 (Gray Zone). Skor adalah sinyal risiko, bukan kepastian."
+    "front": "Altman Z-score termasuk predictive atau prescriptive analytics?",
+    "back": "Predictive: skor memberi sinyal risiko kesulitan keuangan, bukan kepastian bangkrut atau tindakan otomatis."
   },
   {
     "id": "aks301-v2-tm02-06",
@@ -109,8 +109,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 2,
     "topic": "Data Analytics: Addressing Accounting Questions with Data",
     "category": "Mekanisme",
-    "front": "Breakeven dengan Goal Seek",
-    "back": "Q_BE = F / (P − V); breakeven saat Net Income = 0. Jing LCC Januari: $1,600 / ($7 − $3) = 400 units; revenue $2,800. Goal Seek: Set Cell = Net Income, To Value = 0, By Changing Cell = Unit Sales. Termasuk prescriptive analytics."
+    "front": "Pada Goal Seek untuk breakeven, sel hasil, target, dan input yang diubah adalah apa?",
+    "back": "Set Cell = laba bersih; To Value = 0; By Changing Cell = jumlah unit terjual."
   },
   {
     "id": "aks301-v2-tm03-01",
@@ -118,8 +118,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 3,
     "topic": "Accountants as Business Analysts",
     "category": "Hukum",
-    "front": "Dokumentasi Proses Bisnis & SOX 404",
-    "back": "SOX Section 404 mewajibkan atestasi atas desain dan efektivitas ICFR; PCAOB AS 2201 mensyaratkan walkthrough transaksi. Model proses juga bernilai untuk Communication & Training, Process Standardization & Automation, Complexity Management, serta Continuous Improvement & BPR."
+    "front": "Mengapa swimlane membantu penilaian ICFR menurut SOX 404?",
+    "back": "Swimlane menunjukkan pelaku, urutan, dan titik kontrol sehingga transaksi dapat ditelusuri dan pemisahan tugas diperiksa."
   },
   {
     "id": "aks301-v2-tm03-02",
@@ -127,17 +127,17 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 3,
     "topic": "Accountants as Business Analysts",
     "category": "Konsep",
-    "front": "Pool vs Swimlane (Lane)",
-    "back": "Pool: entitas organisasi atau partisipan eksternal independen (Customer, Vendor, Bank). Lane: departemen, peran, atau unit sistem di dalam satu pool (Sales, Credit, Warehouse, Billing)."
+    "front": "Dalam BPMN, apa beda pool dan lane?",
+    "back": "Pool mewakili partisipan seperti perusahaan atau vendor; lane membagi peran/departemen di dalam satu pool."
   },
   {
     "id": "aks301-v2-tm03-03",
     "phase": "pra-uts",
     "tm": 3,
     "topic": "Accountants as Business Analysts",
-    "category": "Hukum",
-    "front": "Sequence Flow vs Message Flow",
-    "back": "Sequence flow (garis penuh) mengurutkan aktivitas di dalam satu pool dan boleh melintasi lane, tetapi tidak pernah melintasi batas pool. Message flow (garis putus-putus) hanya menghubungkan pool yang terpisah."
+    "category": "Perbandingan",
+    "front": "Sequence flow atau message flow untuk PO dari perusahaan ke vendor?",
+    "back": "Message flow, karena PO melintasi dua pool. Sequence flow hanya mengurutkan aktivitas di dalam satu pool."
   },
   {
     "id": "aks301-v2-tm03-04",
@@ -145,8 +145,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 3,
     "topic": "Accountants as Business Analysts",
     "category": "Konsep",
-    "front": "Exclusive Gateway (XOR)",
-    "back": "Diamond kosong atau bertanda \"X\". Split: mengevaluasi kondisi yang saling eksklusif sehingga tepat satu jalur dijalankan. Join: menggabungkan alur alternatif tanpa sinkronisasi. Cabang XOR harus mencakup semua kemungkinan logis."
+    "front": "Gateway BPMN apa yang memilih tepat satu jalur setelah cek kredit?",
+    "back": "Exclusive gateway (XOR): hanya satu cabang sesuai hasil keputusan yang dijalankan."
   },
   {
     "id": "aks301-v2-tm03-05",
@@ -154,8 +154,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 3,
     "topic": "Accountants as Business Analysts",
     "category": "Konsep",
-    "front": "Parallel Gateway (AND)",
-    "back": "Diamond bertanda \"+\". Split: token digandakan ke semua jalur keluar secara bersamaan. Join: menunggu token dari semua jalur masuk lalu menggabungkannya. Contoh: lane Barista Starbucks menyiapkan minuman secara paralel."
+    "front": "Gateway BPMN apa yang menjalankan semua cabang dan menunggu semuanya selesai?",
+    "back": "Parallel gateway (AND): split membuka semua cabang; join menunggu token dari seluruh cabang."
   },
   {
     "id": "aks301-v2-tm03-06",
@@ -163,8 +163,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 3,
     "topic": "Accountants as Business Analysts",
     "category": "Klasifikasi",
-    "front": "Jebakan DFD: Black Hole, Miracle, Gray Hole",
-    "back": "Black Hole: proses menerima data flow masuk tanpa data flow keluar. Miracle: proses menghasilkan data flow keluar tanpa data flow masuk. Gray Hole: output melampaui cakupan input, mis. Customer Zip Code saja menghasilkan riwayat kredit lengkap."
+    "front": "DFD menerima input tetapi tidak menghasilkan output. Apa nama kesalahannya?",
+    "back": "Black hole. Miracle adalah output tanpa input; gray hole menghasilkan output yang tidak didukung inputnya."
   },
   {
     "id": "aks301-v2-tm04-01",
@@ -172,8 +172,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 4,
     "topic": "Data Modeling",
     "category": "Konsep",
-    "front": "UML Class Diagram (Structure Model)",
-    "back": "Structure model statis yang menggambarkan class, atribut, dan association; activity model (BPMN, flowchart) bersifat dinamis. Kompartemen class: Class Name, Attributes, Operations (Operations biasanya dihilangkan dalam desain konseptual database SIA)."
+    "front": "Apa yang dijawab UML class diagram, berbeda dari BPMN?",
+    "back": "UML class diagram menunjukkan class, atribut, dan relasi data; BPMN menunjukkan urutan aktivitas proses."
   },
   {
     "id": "aks301-tm04-02",
@@ -181,8 +181,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 4,
     "topic": "Data Modeling",
     "category": "Definisi",
-    "front": "Foreign Key (Kunci Tamu)",
-    "back": "Atribut dalam suatu tabel yang merupakan Primary Key di tabel lain; berfungsi untuk menghubungkan kedua tabel secara logis."
+    "front": "Apa fungsi foreign key pada tabel anak?",
+    "back": "Merujuk primary key tabel induk agar baris di kedua tabel terhubung secara logis."
   },
   {
     "id": "aks301-v2-tm04-03",
@@ -190,26 +190,26 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 4,
     "topic": "Data Modeling",
     "category": "Klasifikasi",
-    "front": "Tiga Kategori REA",
-    "back": "Resources: aset ekonomi bernilai yang dimiliki/dikendalikan (Cash, Merchandise_Inventory). Events: transaksi bisnis dan kejadian operasional (Purchase_Order, Sales_Invoice). Agents: individu internal dan entitas eksternal yang berpartisipasi (Employee, Customer, Vendor). Pola REA dikembangkan William McCarthy."
+    "front": "Dalam REA, Inventory, Sale, dan Customer masing-masing tergolong apa?",
+    "back": "Inventory = resource; Sale = event; Customer = agent."
   },
   {
     "id": "aks301-v2-tm04-04",
     "phase": "pra-uts",
     "tm": 4,
     "topic": "Data Modeling",
-    "category": "Hukum",
-    "front": "Multiplicity Minimum (0 vs 1)",
-    "back": "Batas minimum menyatakan partisipasi opsional (0) atau wajib (1): 0..1 dan 0..* opsional; 1..1 dan 1..* wajib. Contoh Full-Time Fitness: Instructors (1..1) teach Fitness_Classes (0..5); instruktur baru boleh belum mengajar kelas."
+    "category": "Konsep",
+    "front": "Dalam multiplicity UML, apa beda minimum 0 dan 1?",
+    "back": "Minimum 0 berarti hubungan boleh belum ada; minimum 1 berarti hubungan wajib ada."
   },
   {
     "id": "aks301-v2-tm04-05",
     "phase": "pra-uts",
     "tm": 4,
     "topic": "Data Modeling",
-    "category": "Hukum",
-    "front": "Multiplicity Maksimum & Tipe Relasi",
-    "back": "Batas maksimum: 1 atau * (banyak). Kombinasi maksimum kedua sisi menentukan relasi 1:1, 1:N, atau M:N, yang dipetakan pada Step 3, Step 4, dan Step 5 algoritma lima langkah."
+    "category": "Konsep",
+    "front": "Dari multiplicity maksimum kedua sisi, bagaimana mengenali relasi M:N?",
+    "back": "Kedua sisi berakhir dengan banyak (*); satu instance tiap class dapat terkait banyak instance class lain."
   },
   {
     "id": "aks301-v2-tm04-06",
@@ -217,26 +217,26 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 4,
     "topic": "Data Modeling",
     "category": "Mekanisme",
-    "front": "Linking Table untuk Relasi M:N",
-    "back": "M:N tidak dapat diwakili satu foreign key. Buat linking table dengan composite primary key gabungan PK kedua tabel dan simpan atribut relasi di dalamnya, mis. Class_Enrollments (Class_ID, Member_ID) dengan Enrollment_Date dan Payment_Status."
+    "front": "Relasi Order–Product bersifat M:N. Di mana Qty per produk disimpan?",
+    "back": "Pada linking table Order_Line bersama Order_ID dan Product_ID; Qty milik pasangan order dan produk."
   },
   {
     "id": "aks301-v2-tm05-01",
     "phase": "pra-uts",
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
-    "category": "Hukum",
-    "front": "Primary Key & Entity Integrity",
-    "back": "Primary key: atribut atau kombinasi atribut minimal yang mengidentifikasi setiap record secara unik. Entity integrity: primary key tidak pernah null (NOT NULL) dan unik (UNIQUE); contoh pelanggaran: Invoice# kosong atau duplikat."
+    "category": "Konsep",
+    "front": "Invoice_ID kosong atau duplikat melanggar aturan integritas apa?",
+    "back": "Entity integrity: primary key harus unik dan tidak boleh null."
   },
   {
     "id": "aks301-v2-tm05-02",
     "phase": "pra-uts",
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
-    "category": "Hukum",
-    "front": "Referential Integrity",
-    "back": "Nilai foreign key harus cocok dengan primary key yang ada di tabel induk, atau null bila partisipasi opsional. Pelanggaran: orphan record, mis. Sales dengan Customer_ID yang tidak ada di tabel Customer."
+    "category": "Konsep",
+    "front": "Invoice menunjuk Customer_ID yang tidak ada. Integritas apa yang dilanggar?",
+    "back": "Referential integrity: foreign key harus merujuk primary key induk yang ada, kecuali null diizinkan."
   },
   {
     "id": "aks301-v2-tm05-03",
@@ -244,8 +244,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
     "category": "Konsep",
-    "front": "Atomic Attribute (1NF)",
-    "back": "Setiap sel berisi tepat satu nilai skalar; repeating group, atribut bernilai banyak, dan array dalam satu sel dilarang. Contoh pelanggaran: beberapa nomor telepon dalam satu field."
+    "front": "Satu sel berisi tiga nomor telepon. Aturan relasional apa yang dilanggar?",
+    "back": "Atomic attribute atau 1NF: satu sel menyimpan satu nilai, bukan daftar nilai."
   },
   {
     "id": "aks301-v2-tm05-04",
@@ -253,8 +253,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
     "category": "Perbandingan",
-    "front": "WHERE vs HAVING",
-    "back": "WHERE menyaring baris individual sebelum agregasi; HAVING menyaring kelompok setelah GROUP BY. Setiap kolom non-agregat di SELECT wajib ada di GROUP BY. HAVING SUM(Amount) > 200.00 tidak meloloskan total tepat 200.00."
+    "front": "Untuk pelanggan dengan SUM(pembayaran) di atas batas, gunakan WHERE atau HAVING?",
+    "back": "HAVING menyaring hasil kelompok setelah GROUP BY; WHERE menyaring baris sebelum agregasi."
   },
   {
     "id": "aks301-v2-tm05-05",
@@ -262,8 +262,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
     "category": "Klasifikasi",
-    "front": "Modul SAP S/4HANA",
-    "back": "FI (Financial Accounting), CO (Controlling), MM (Materials Management), SD (Sales and Distribution), PP (Production Planning), HR/PT (Human Resources & Personnel Time Management). Goods receipt di MM memicu posting otomatis di FI."
+    "front": "Goods receipt dicatat di modul ERP apa dan berdampak pada modul apa?",
+    "back": "MM (Materials Management) mencatat penerimaan; FI (Financial Accounting) menerima dampak akuntansinya."
   },
   {
     "id": "aks301-v2-tm05-06",
@@ -271,8 +271,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 5,
     "topic": "Relational Databases and Enterprise Systems",
     "category": "Perbandingan",
-    "front": "Cloud ERP (SaaS): Keunggulan & Risiko",
-    "back": "Keunggulan: CapEx menjadi OpEx langganan, deployment lebih cepat, upgrade dan patch keamanan otomatis oleh vendor. Risiko: internet dependency, data sovereignty & privacy (GDPR, OJK), vendor lock-in."
+    "front": "Apa satu risiko khas Cloud ERP dibanding sistem yang dikelola sendiri?",
+    "back": "Ketergantungan pada vendor dan koneksi internet; akses dapat terganggu bila layanan tidak tersedia."
   },
   {
     "id": "aks301-v2-tm06-01",
@@ -280,8 +280,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 6,
     "topic": "Sales and Collections Business Process",
     "category": "Prosedur",
-    "front": "Lima Aktivitas Order-to-Cash",
-    "back": "(1) Provide Quote, (2) Receive Sales Order, (3) Prepare Products (Pick & Pack), (4) Deliver Products & Issue Invoice, (5) Receive Payment & Deposit Cash. Quote dan sales order tidak dijurnal."
+    "front": "Apa urutan inti order-to-cash dari penawaran sampai kas diterima?",
+    "back": "Quote → sales order → pick/pack → kirim dan tagih → terima serta setor kas."
   },
   {
     "id": "aks301-v2-tm06-02",
@@ -289,8 +289,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 6,
     "topic": "Sales and Collections Business Process",
     "category": "Pengendalian",
-    "front": "Pemisahan Tugas Sales & Collections",
-    "back": "Sales Order Entry tidak menyetujui batas kredit; Credit Department tidak memulai penjualan atau menangani kas; Warehouse/Shipping tidak memperbarui catatan penagihan; Billing/AR tidak menangani kas; Cashier/Mailroom tidak memposting kredit ke akun piutang pelanggan."
+    "front": "Mengapa staf Sales tidak boleh menyetujui batas kredit pelanggannya sendiri?",
+    "back": "Agar pembuat order tidak sekaligus mengotorisasi risiko kredit; persetujuan kredit perlu fungsi independen."
   },
   {
     "id": "aks301-v2-tm06-03",
@@ -298,8 +298,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 6,
     "topic": "Sales and Collections Business Process",
     "category": "Konsep",
-    "front": "Titik Pengakuan Pendapatan",
-    "back": "Pendapatan dan COGS diakui saat barang diserahkan dan kewajiban kinerja terpenuhi: Dr Accounts Receivable, Cr Sales Revenue; Dr COGS, Cr Merchandise Inventory. Bukan saat sales order ditandatangani."
+    "front": "Pada penjualan barang kredit, kapan pendapatan diakui: saat order atau penyerahan?",
+    "back": "Saat kendali barang berpindah dan kewajiban kinerja terpenuhi; order saja belum cukup."
   },
   {
     "id": "aks301-v2-tm06-04",
@@ -307,8 +307,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 6,
     "topic": "Sales and Collections Business Process",
     "category": "Mekanisme",
-    "front": "Sales Discounts (2/10, net 30)",
-    "back": "Dibayar dalam periode diskon: Dr Cash (neto), Dr Sales Discounts, Cr Accounts Receivable (bruto). Sunset Graphics: invoice $1,200.00 → potongan $24.00, kas $1,176.00. Sales Discounts adalah akun kontra-pendapatan."
+    "front": "Pelanggan membayar dalam termin 2/10. Piutang dihapus sebesar bruto atau neto?",
+    "back": "Bruto; selisihnya dicatat sebagai Sales Discounts, akun kontra-pendapatan."
   },
   {
     "id": "aks301-v2-tm06-05",
@@ -316,8 +316,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 6,
     "topic": "Sales and Collections Business Process",
     "category": "Klasifikasi",
-    "front": "Enam Application Control",
-    "back": "Field Check (tipe data), Validity Check (ada di file master), Limit Check (batas satu sisi), Range Check (batas dua sisi), Reasonableness Check (logika antar-field), Completeness Check (field wajib, NOT NULL)."
+    "front": "Customer_ID harus ada di master; tanggal kirim tak boleh sebelum order. Kontrol apa masing-masing?",
+    "back": "Validity check untuk Customer_ID; reasonableness check untuk hubungan dua tanggal."
   },
   {
     "id": "aks301-v2-tm06-06",
@@ -325,8 +325,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 6,
     "topic": "Sales and Collections Business Process",
     "category": "Konsep",
-    "front": "Accounts Receivable dalam REA",
-    "back": "A/R diturunkan secara dinamis: Σ Delivered Orders − Σ Applied Cash Receipts. Pesanan terkirim tanpa Cash_Receipts terkait adalah piutang terbuka; tidak ada saldo statis di tabel master pelanggan."
+    "front": "Dalam REA, dari peristiwa apa saldo piutang pelanggan diturunkan?",
+    "back": "Penjualan yang sudah ditagih dikurangi kas yang dialokasikan dan penyesuaian seperti retur atau diskon."
   },
   {
     "id": "aks301-v2-tm07-01",
@@ -334,8 +334,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "category": "Prosedur",
-    "front": "Lima Aktivitas Procure-to-Pay",
-    "back": "(1) Identify Need & Request Prices, (2) Issue Purchase Order (PO), (3) Receive and Inspect Goods, (4) Verify Vendor Invoice (Three-Way Match), (5) Execute Cash Disbursement. Purchase order tidak dijurnal."
+    "front": "Apa urutan inti procure-to-pay dari kebutuhan hingga pembayaran?",
+    "back": "Ajukan kebutuhan → terbitkan PO → terima/periksa barang → cocokkan invoice → bayar pemasok."
   },
   {
     "id": "aks301-v2-tm07-02",
@@ -343,8 +343,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "category": "Pengendalian",
-    "front": "Blind Purchase Order",
-    "back": "Salinan PO yang dikirim ke receiving dock (bukan ke vendor) dengan kolom kuantitas dihitamkan, sehingga petugas receiving melakukan hitung fisik sungguhan dan short shipment tidak lolos tanpa tercatat."
+    "front": "Mengapa kuantitas disembunyikan pada blind PO untuk petugas receiving?",
+    "back": "Agar petugas menghitung barang secara mandiri, bukan menyalin jumlah pesanan."
   },
   {
     "id": "aks301-v2-tm07-03",
@@ -352,8 +352,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "category": "Pengendalian",
-    "front": "Three-Way Match",
-    "back": "Accounts Payable mencocokkan Purchase Order (otorisasi pembelian), Receiving Report (penerimaan fisik), dan Vendor Invoice (jumlah yang ditagih) sebelum pembayaran. Selisih kuantitas, harga, atau termin → invoice ditahan (administrative hold)."
+    "front": "Dokumen apa yang dicocokkan AP dalam three-way match?",
+    "back": "Purchase order, receiving report, dan vendor invoice sebelum pembayaran disetujui."
   },
   {
     "id": "aks301-v2-tm07-04",
@@ -361,8 +361,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "category": "Pengendalian",
-    "front": "Mencegah Purchasing Kickbacks",
-    "back": "Kickback: buyer berkolusi menerima barang di bawah standar atau harga yang digelembungkan demi imbalan. Kontrol: pemilihan vendor dari Approved Vendor List, Three-Way Match atas harga PO, dan pemisahan Purchasing dari Receiving serta Accounts Payable."
+    "front": "Mengapa pemilihan vendor perlu ditinjau pihak independen dari buyer?",
+    "back": "Untuk mengurangi risiko kickback: buyer memilih vendor demi imbalan, bukan mutu dan harga yang wajar."
   },
   {
     "id": "aks301-v2-tm07-05",
@@ -370,8 +370,8 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "category": "Konsep",
-    "front": "Economic Duality",
-    "back": "Setiap event ekonomi berpasangan dengan event timbal baliknya. Sales and Collections: give Inventory, get Cash. Purchases and Payments: give Cash, get Inventory."
+    "front": "Dalam REA pembelian, apa pasangan get dan give?",
+    "back": "Get Inventory saat barang diterima; give Cash saat pemasok dibayar. Waktunya boleh berbeda."
   },
   {
     "id": "aks301-v2-tm07-06",
@@ -379,8 +379,134 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "tm": 7,
     "topic": "Purchases and Payments Business Process",
     "category": "Mekanisme",
-    "front": "Jurnal Procure-to-Pay",
-    "back": "Barang diterima: Dr Inventory, Cr Accounts Payable. Bayar dalam periode diskon: Dr Accounts Payable (bruto), Cr Cash (neto), Cr Inventory/Purchase Discounts. Baer Belly Bikinis: $5,000.00 → potongan $100.00, kas $4,900.00."
+    "front": "Dalam sistem persediaan perpetual, apa jurnal saat barang kredit diterima?",
+    "back": "Dr Inventory; Cr Accounts Payable. PO yang baru diterbitkan belum menimbulkan jurnal ini."
+  },
+  {
+    "id": "aks301-v3-tm01-07", "phase": "pra-uts", "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value", "category": "Prosedur",
+    "front": "Apa urutan information value chain dari data menuju keputusan?",
+    "back": "Data → information → knowledge → decision. Pengetahuan memberi makna pada informasi untuk memilih tindakan."
+  },
+  {
+    "id": "aks301-v3-tm01-08", "phase": "pra-uts", "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value", "category": "Pengendalian",
+    "front": "Laporan penuh data mentah menutupi stok kritis. Teknik pelaporan apa membantu?",
+    "back": "Exception reporting: tampilkan penyimpangan yang perlu tindakan, misalnya stok di bawah reorder point."
+  },
+  {
+    "id": "aks301-v3-tm01-09", "phase": "pra-uts", "tm": 1,
+    "topic": "Accounting Information Systems and Firm Value", "category": "Konsep",
+    "front": "Kapan investasi informasi discretionary memberi nilai bersih positif?",
+    "back": "Saat manfaat yang diharapkan melebihi biaya: value of information = benefit − cost > 0."
+  },
+  {
+    "id": "aks301-v3-tm02-07", "phase": "pra-uts", "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data", "category": "Prosedur",
+    "front": "Apa urutan ETL saat Master the Data?",
+    "back": "Extract → Transform → Load: ambil data, bersihkan/seragamkan, lalu muat ke tempat analisis."
+  },
+  {
+    "id": "aks301-v3-tm02-08", "phase": "pra-uts", "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data", "category": "Perbandingan",
+    "front": "Banyak file berbeda format adalah Variety; kode pelanggan salah berulang adalah V apa?",
+    "back": "Veracity, yaitu keandalan dan ketepatan data; masalahnya perlu dibersihkan sebelum analisis."
+  },
+  {
+    "id": "aks301-v3-tm02-09", "phase": "pra-uts", "tm": 2,
+    "topic": "Data Analytics: Addressing Accounting Questions with Data", "category": "Konsep",
+    "front": "Apa arti Gray Zone pada Altman Z-score?",
+    "back": "Sinyal risiko yang belum pasti: perlu telaah lanjutan, bukan vonis bangkrut atau aman."
+  },
+  {
+    "id": "aks301-v3-tm03-07", "phase": "pra-uts", "tm": 3,
+    "topic": "Accountants as Business Analysts", "category": "Perbandingan",
+    "front": "Gateway apa yang dapat membuka satu atau beberapa cabang yang kondisinya benar?",
+    "back": "Inclusive gateway (OR). XOR membuka tepat satu; AND membuka semua cabang."
+  },
+  {
+    "id": "aks301-v3-tm03-08", "phase": "pra-uts", "tm": 3,
+    "topic": "Accountants as Business Analysts", "category": "Konsep",
+    "front": "Dalam BPMN, simbol apa menahan alur sampai tanggal tertentu?",
+    "back": "Intermediate timer event; proses berlanjut setelah waktu yang ditentukan tiba."
+  },
+  {
+    "id": "aks301-v3-tm03-09", "phase": "pra-uts", "tm": 3,
+    "topic": "Accountants as Business Analysts", "category": "Pengendalian",
+    "front": "Satu swimlane menyetujui PO sekaligus menyimpan barang. Konflik tugas apa terlihat?",
+    "back": "Authorization dan custody digabung; pemegang barang tidak seharusnya menyetujui pembeliannya sendiri."
+  },
+  {
+    "id": "aks301-v3-tm04-07", "phase": "pra-uts", "tm": 4,
+    "topic": "Data Modeling", "category": "Mekanisme",
+    "front": "Pada relasi Department 1:N Employee, di tabel mana Department_ID menjadi foreign key?",
+    "back": "Di Employee, yaitu sisi banyak; setiap karyawan menunjuk departemen induknya."
+  },
+  {
+    "id": "aks301-v3-tm04-08", "phase": "pra-uts", "tm": 4,
+    "topic": "Data Modeling", "category": "Konsep",
+    "front": "Customer–Orders bertanda 0..* di sisi Orders. Bolehkah customer belum punya order?",
+    "back": "Boleh. Minimum 0 berarti customer dapat ada sebelum pesanan pertamanya."
+  },
+  {
+    "id": "aks301-v3-tm04-09", "phase": "pra-uts", "tm": 4,
+    "topic": "Data Modeling", "category": "Perbandingan",
+    "front": "Invoice_Line tidak dapat ada tanpa Invoice. Composition atau aggregation?",
+    "back": "Composition: bagian bergantung pada induk; di UML diamond hitam berada di sisi Invoice."
+  },
+  {
+    "id": "aks301-v3-tm05-07", "phase": "pra-uts", "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems", "category": "Prosedur",
+    "front": "Dalam SQL, klausa apa memilih tabel asal dan apa menyaring baris?",
+    "back": "FROM memilih tabel asal; WHERE menyaring baris sebelum hasil ditampilkan atau diagregasi."
+  },
+  {
+    "id": "aks301-v3-tm05-08", "phase": "pra-uts", "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems", "category": "Konsep",
+    "front": "Saat goods receipt diposting sebelum invoice datang, untuk apa akun GR/IR?",
+    "back": "Akun sementara penghubung penerimaan barang dan invoice pemasok yang kelak dicocokkan."
+  },
+  {
+    "id": "aks301-v3-tm05-09", "phase": "pra-uts", "tm": 5,
+    "topic": "Relational Databases and Enterprise Systems", "category": "Mekanisme",
+    "front": "Receipt hanya menyimpan Invoice_Number. Bagaimana mengambil nama Customer pemilik invoice?",
+    "back": "JOIN Receipt ke Invoice lewat Invoice_Number, lalu ke Customer lewat Customer_ID."
+  },
+  {
+    "id": "aks301-v3-tm06-07", "phase": "pra-uts", "tm": 6,
+    "topic": "Sales and Collections Business Process", "category": "Dokumen",
+    "front": "Apa beda packing slip dan bill of lading saat barang dikirim?",
+    "back": "Packing slip merinci isi kiriman; bill of lading membuktikan penyerahan barang kepada carrier."
+  },
+  {
+    "id": "aks301-v3-tm06-08", "phase": "pra-uts", "tm": 6,
+    "topic": "Sales and Collections Business Process", "category": "Dokumen",
+    "front": "Pelanggan mengembalikan barang yang sudah ditagih. Dokumen apa mengurangi piutangnya?",
+    "back": "Credit memo yang merujuk invoice asal, setelah retur disetujui."
+  },
+  {
+    "id": "aks301-v3-tm06-09", "phase": "pra-uts", "tm": 6,
+    "topic": "Sales and Collections Business Process", "category": "Mekanisme",
+    "front": "Satu cash receipt melunasi dua invoice. Di mana Amount_Applied per invoice disimpan?",
+    "back": "Di linking table antara receipt dan invoice/penjualan; setiap baris menyimpan alokasinya."
+  },
+  {
+    "id": "aks301-v3-tm07-07", "phase": "pra-uts", "tm": 7,
+    "topic": "Purchases and Payments Business Process", "category": "Dokumen",
+    "front": "Barang dari vendor rusak dan nilai utang harus dikurangi. Dokumen apa diterbitkan pembeli?",
+    "back": "Debit memo: pemberitahuan pengurangan jumlah yang terutang kepada vendor."
+  },
+  {
+    "id": "aks301-v3-tm07-08", "phase": "pra-uts", "tm": 7,
+    "topic": "Purchases and Payments Business Process", "category": "Pengendalian",
+    "front": "Kontrol apa menangkap dua invoice bernomor sama dari vendor yang sama?",
+    "back": "Cek keunikan Vendor_ID + Invoice_Number serta status pembayarannya sebelum invoice disetujui."
+  },
+  {
+    "id": "aks301-v3-tm07-09", "phase": "pra-uts", "tm": 7,
+    "topic": "Purchases and Payments Business Process", "category": "Konsep",
+    "front": "Dalam REA pembelian, dari event apa saldo utang usaha diturunkan?",
+    "back": "Pembelian/barang diterima yang menimbulkan tagihan, dikurangi pembayaran dan penyesuaian yang diterapkan."
   },
   {
     "id": "aks301-tm08-01",
@@ -761,5 +887,7 @@ export const SII306_FC: AdvancedStudyCard[] = [
     "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian."
   }
 ];
+
+export const SII306_FC = cards.sort((left, right) => left.tm - right.tm);
 
 export const AKS301_FC = SII306_FC;
