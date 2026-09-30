@@ -144,7 +144,7 @@ export type ContentBlock =
   | { kind: 'journal'; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
   | { kind: 'code'; text: string; language?: string; caption?: string } // teks literal (mis. SQL), tidak diproses markdown
-  | { kind: 'figure'; title?: string; svg?: string; url?: string; overview?: FigureOverview; transcript?: string[]; transcriptSections?: FigureTranscriptSection[]; mobileFlow?: FigureMobileFlow; caption?: string; altText?: string }
+  | { kind: 'figure'; title?: string; svg?: string; mobileSvg?: string; url?: string; overview?: FigureOverview; transcript?: string[]; transcriptSections?: FigureTranscriptSection[]; mobileFlow?: FigureMobileFlow; caption?: string; altText?: string }
   | { kind: 'example'; title: string; blocks: ContentBlock[] }
   | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[]; revealLabel?: string }
   // ---- Bacaan berlapis (Reading.layout 'layered') ----
