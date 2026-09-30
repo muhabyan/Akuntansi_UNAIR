@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { THREE_WAY_DIAGRAM, processDiagram, reaDiagram } from '../visuals';
 
 export const SIA_TM7: Reading = {
   tm: 7,
@@ -19,6 +20,13 @@ export const SIA_TM7: Reading = {
     { kind: 'h2', text: '1. Operational Foundations & Financial Statement Impacts' },
     { kind: 'p', text: '**Purchases and payments business process (Procure-to-Pay)** mencakup pencarian harga dan ketersediaan, penerbitan purchase order, penerimaan barang, serta pembayaran pemasok dalam empat langkah utama Sunset. Pemeriksaan invoice vendor sebelum pembayaran adalah perluasan kontrol yang dipelajari di bawah. Tujuannya memperoleh barang yang sesuai, mencegah belanja tanpa izin, dan menjaga kas. Richardson 4e, pp. 324–325.' },
     { kind: 'h3', text: 'Alur barang masuk, dokumen, dan kas keluar' },
+    { kind: 'figure', title: 'Urutan Procure-to-Pay', svg: processDiagram('Procure-to-Pay: tugas terpisah', [
+      { name: 'Request', detail: 'Purchase Requisition' }, { name: 'Order', detail: 'PO oleh buyer' },
+      { name: 'Receive', detail: 'Receiving Report' }, { name: 'Pay', detail: 'Match lalu EFT' },
+    ], 'Supplier mengirim invoice; Accounts Payable menguji dokumen sebelum Treasury membayar.'),
+      altText: 'Urutan permintaan, purchase order, penerimaan barang, serta pencocokan dan pembayaran dengan fungsi terpisah.',
+      transcript: ['Departemen meminta pembelian; buyer menerbitkan PO ke vendor yang disetujui.', 'Receiving menghitung barang secara independen dan membuat Receiving Report.', 'Accounts Payable mencocokkan PO, laporan penerimaan, dan invoice vendor.', 'Treasury membayar hanya setelah invoice yang cocok disetujui.'],
+      caption: 'Alur konseptual TM7, bukan diagram BPMN formal. Lihat titik pemeriksaan tiga dokumen di bawah.' },
     { kind: 'ol', items: [
       '**Identify Need & Request Prices:** staf departemen membuat purchase requisition; purchasing agent meminta penawaran harga dari supplier.',
       '**Issue Purchase Order (PO):** Purchasing menyiapkan dan mengirim PO terotorisasi ke vendor berisi deskripsi barang, kuantitas, harga satuan, dan termin pembayaran.',
@@ -65,6 +73,10 @@ export const SIA_TM7: Reading = {
       ['Corrective', 'Debit memo vendor atas kelebihan tagihan, pemulihan otomatis atas cek ganda, pelatihan ulang prosedur.'],
     ], caption: 'Kerangka preventive/detective/corrective dan contoh otorisasi serta rekonsiliasi mengikuti Richardson 4e, pp. 328–329; Three-Way Match dan AVL adalah contoh penerapan tambahan.' },
     { kind: 'h3', text: 'Three-Way Match' },
+    { kind: 'figure', title: 'Tiga dokumen menuju satu keputusan', svg: THREE_WAY_DIAGRAM,
+      altText: 'Purchase Order, Receiving Report, dan Vendor Invoice masuk ke pemeriksaan Accounts Payable. Dokumen yang cocok disetujui, selisih ditahan.',
+      transcript: ['PO mengotorisasi item, jumlah, harga, dan termin.', 'Receiving Report membuktikan jumlah barang yang benar-benar diterima.', 'Vendor Invoice menyatakan jumlah dan harga yang ditagih.', 'Accounts Payable membandingkan ketiganya; pada contoh PO 100 unit @ $25, terima 80, invoice 100 @ $27, pembayaran ditahan sampai selisih selesai.'],
+      caption: 'Three-Way Match adalah penerapan kontrol pembelian pada materi TM7. Ini diagram konsep, bukan salinan gambar ebook.' },
     { kind: 'table', headers: ['Dokumen', 'Sumber', 'Membuktikan', 'Informasi yang diverifikasi'], rows: [
       ['Purchase Order (PO)', 'Internal: Purchasing / Buyer', 'Otorisasi pembelian', 'Barang yang diotorisasi, kuantitas dipesan, harga satuan disepakati, termin pembayaran.'],
       ['Receiving Report', 'Internal: Warehouse Receiving', 'Penerimaan fisik', 'Kuantitas fisik yang dihitung dan diterima, tanggal terima, kondisi barang.'],
@@ -92,6 +104,10 @@ export const SIA_TM7: Reading = {
     ], caption: 'Ilustrasi risiko fraud dan kontrol pengadaan sebagai pengayaan atas prinsip pemisahan tugas dan pembatasan akses Richardson 4e, pp. 328–329.' },
 
     { kind: 'h2', text: '4. Structure Modeling: UML Class Diagrams & REA Patterns' },
+    { kind: 'figure', title: 'REA penerimaan barang dan pengeluaran kas', svg: reaDiagram('REA Procure-to-Pay', 'Inventory', 'Goods Receipt', 'Cash Disbursement', 'Cash', 'Supplier'),
+      altText: 'Sumber daya Inventory bertambah saat Goods Receipt; peristiwa penerimaan barang berpasangan dengan Cash Disbursement yang mengurangi kas; Supplier adalah agent eksternal.',
+      transcript: ['Resource Inventory bertambah ketika barang diterima.', 'Event Goods Receipt dan Cash Disbursement berpasangan sebagai give-get (duality).', 'Resource Cash berkurang ketika perusahaan membayar supplier.', 'Supplier adalah agent eksternal; buyer, receiving, AP, dan Treasury tetap memiliki tanggung jawab internal yang terpisah.'],
+      caption: 'Skema konsep REA TM7. Model buku Sunset Graphics dapat menggabungkan PO dan penerimaan karena asumsi satu PO untuk satu penerimaan; diagram ini berfokus pada peristiwa ekonomi.' },
     { kind: 'callout', variant: 'key', title: 'Asumsi khusus Sunset Graphics dalam ebook', text: 'Buku mula-mula memisahkan Purchase Orders dan Receipts/Purchases pada Exhibit 8.7. Setelah kebutuhan Sunset diklarifikasi, setiap pembelian selalu memiliki PO dan perusahaan tidak menerima pengiriman parsial. Hubungan PO–penerimaan menjadi satu-banding-satu sehingga kedua class digabung dalam model revisi Exhibit 8.8. Model terpisah di bawah adalah perluasan untuk organisasi yang menerima pengiriman parsial, bukan model revisi Sunset dalam buku. Richardson 4e, pp. 330–331.' },
     { kind: 'table', headers: ['REA', 'Class', 'Keterangan'], rows: [
       ['Resources', 'Inventory (Raw Materials / Merchandise); Cash (Bank Accounts)', 'Aset yang diperoleh; aset yang dikeluarkan.'],

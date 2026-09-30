@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { processDiagram, reaDiagram } from '../visuals';
 
 export const SIA_TM6: Reading = {
   tm: 6,
@@ -19,6 +20,13 @@ export const SIA_TM6: Reading = {
     { kind: 'h2', text: '1. Operational Foundations & Financial Statement Impacts' },
     { kind: 'p', text: '**Sales and collections business process (Order-to-Cash)** adalah rangkaian aktivitas operasional terkoordinasi yang mencakup pemberian penawaran harga, penerimaan sales order, verifikasi persediaan dan kredit, pengiriman ke pelanggan, penerbitan invoice, penagihan pembayaran, dan penyetoran kas. Tujuannya menyediakan barang dan jasa secara efisien sambil mengamankan aset piutang usaha, memastikan pendapatan diakui secara lengkap, dan mengoptimalkan arus kas operasi. Richardson 4e, pp. 282–284.' },
     { kind: 'h3', text: 'Alur barang, dokumen, dan uang' },
+    { kind: 'figure', title: 'Titik kontrol dalam Order-to-Cash', svg: processDiagram('Order-to-Cash: dokumen dan pengakuan', [
+      { name: 'Order', detail: 'Sales Order · cek kredit' }, { name: 'Pick & Ship', detail: 'BOL · bukti penyerahan' },
+      { name: 'Bill', detail: 'Invoice · piutang' }, { name: 'Collect', detail: 'Remittance · kas' },
+    ], 'Pengakuan pendapatan mengikuti perpindahan kendali, bukan order atau invoice semata.'),
+      altText: 'Alur order, picking dan pengiriman, billing, dan penerimaan kas dengan dokumen serta titik pengakuan pendapatan.',
+      transcript: ['Sales Order diterima dan kredit diperiksa; belum ada pendapatan.', 'Gudang menyiapkan barang dan shipping mendokumentasikan penyerahan; akui pendapatan ketika kendali berpindah sesuai kontrak.', 'Billing menerbitkan invoice dan memelihara piutang secara terpisah dari pemegang kas.', 'Cashier menerima pembayaran dan pembayaran diterapkan ke piutang.'],
+      caption: 'Ilustrasi siklus TM6; Bill of Lading adalah bukti pengiriman, sedangkan waktu perpindahan kendali mengikuti syarat kontrak.' },
     { kind: 'ol', items: [
       '**Provide Quote:** staf penjualan memberi calon pembeli spesifikasi produk, harga, dan estimasi pengiriman. Pada alur Sunset, quote masih berupa penawaran sehingga belum ada penjualan yang dijurnal.',
       '**Receive Sales Order:** pelanggan menerima quote atau memesan. Sales order menjadi dasar penyiapan barang, tetapi **belum** memicu pengakuan pendapatan.',
@@ -87,6 +95,10 @@ export const SIA_TM6: Reading = {
     { kind: 'p', text: '**Automated input capture:** barcode scanner optik, UPC, dan RFID reader mengotomatiskan picking dan verifikasi pengiriman, menghilangkan kesalahan ketik manual, dan memperbarui catatan persediaan perpetual seketika. Richardson 4e, p. 299.' },
 
     { kind: 'h2', text: '4. Structure Modeling: UML Class Diagrams & REA Patterns' },
+    { kind: 'figure', title: 'REA penjualan dan penerimaan kas', svg: reaDiagram('REA Order-to-Cash', 'Inventory', 'Delivered Order', 'Cash Receipt', 'Cash', 'Customer'),
+      altText: 'Sumber daya persediaan terkait peristiwa penyerahan pesanan, yang berpasangan secara dualitas dengan penerimaan kas; kas bertambah dan Customer berpartisipasi dalam dua peristiwa.',
+      transcript: ['Resource Inventory berkurang ketika pesanan diserahkan.', 'Event Delivered Order dan Cash Receipt berpasangan sebagai give-get (duality).', 'Resource Cash bertambah setelah penerimaan pembayaran.', 'Customer adalah agent eksternal; staf internal juga terlibat. Jumlah order dan pembayaran yang saling terkait mengikuti aturan multiplicity yang dijelaskan di tabel.'],
+      caption: 'Skema konsep REA untuk latihan TM6. Hubungan pembayaran Sunset Graphics dalam ebook lebih terbatas daripada skema pembayaran parsial yang dibahas pada materi.' },
     { kind: 'callout', variant: 'key', title: 'Asumsi pembayaran Sunset Graphics', text: 'Pada Exhibit 7.20, satu Cash Receipt dapat melunasi satu atau beberapa Orders, tetapi setiap Order terkait paling banyak satu Cash Receipt. Artinya model Sunset pada buku tidak memodelkan cicilan parsial untuk satu order. Skema latihan di bawah menambahkan linking table agar pembayaran parsial dan penerapan satu pembayaran ke beberapa order bisa dipelajari. Richardson 4e, pp. 297–298.' },
     { kind: 'table', headers: ['REA', 'Class', 'Keterangan'], rows: [
       ['Resources', 'Products (Inventory); Cash (Bank Accounts)', 'Barang jadi dan produk custom yang dijual; rekening bank yang menerima setoran pelanggan.'],

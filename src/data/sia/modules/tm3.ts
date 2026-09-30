@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { SALES_DFD, processDiagram } from '../visuals';
 
 // Skema belajar dari Problem 1, Richardson 4e halaman buku 207; bukan gambar terbitan.
 const STARBUCKS_FLOW = `<svg class="course-diagram-svg course-diagram-bpmn" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
@@ -181,6 +182,13 @@ export const SIA_TM3: Reading = {
 
     { kind: 'h2', text: '4. Alternative Process Documentation Techniques' },
     { kind: 'h3', text: 'System dan document flowchart (ANSI X3.5)' },
+    { kind: 'figure', title: 'Jejak dokumen pada order fulfillment', svg: processDiagram('Ikuti bukti dari pesanan hingga invoice', [
+      { name: 'Sales', detail: 'Sales Order' }, { name: 'Warehouse', detail: 'Picking Ticket' },
+      { name: 'Shipping', detail: 'Packing Slip + BOL' }, { name: 'Billing', detail: 'Sales Invoice' },
+    ], 'Contoh jejak dokumen; pelajari bentuk simbol ANSI pada tabel berikut.'),
+      altText: 'Jejak dokumen Sales Order, Picking Ticket, Packing Slip dan Bill of Lading, lalu Sales Invoice.',
+      transcript: ['Sales mencatat Sales Order.', 'Warehouse mengambil barang berdasarkan Picking Ticket.', 'Shipping memverifikasi barang dan menyiapkan Packing Slip serta Bill of Lading.', 'Billing membuat Sales Invoice berdasarkan bukti pengiriman yang tervalidasi.'],
+      caption: 'Skema jejak dokumen, bukan flowchart ANSI formal. Simbol dokumen dan keputusan dijelaskan pada tabel di bawah.' },
     { kind: 'table', headers: ['Simbol', 'Bentuk', 'Contoh'], rows: [
       ['Document', 'Persegi panjang dengan dasar bergelombang', 'Purchase Order, Bill of Lading.'],
       ['Manual Operation', 'Trapesium', 'Menandatangani cek secara manual, memeriksa barang.'],
@@ -210,6 +218,13 @@ export const SIA_TM3: Reading = {
     ] },
     { kind: 'h3', text: 'Data Flow Diagram (DFD)' },
     { kind: 'p', text: 'DFD berfokus pada **aliran data logis** tanpa menyebut perangkat fisik, personel departemen, atau media penyimpanan. Notasi yang umum: Gane-Sarson dan Yourdon-DeMarco. Richardson 4e, pp. 201–205.' },
+    { kind: 'figure', title: 'Contoh DFD yang dapat ditelusuri', svg: SALES_DFD,
+      altText: 'DFD context dan level 0 pesanan. Customer mengirim Order Details dan menerima Order Confirmation. Pada level 0 proses 1.0 Validate Order bertukar data dengan D1 Customer Master, lalu proses 2.0 Confirm Order mengirim konfirmasi ke Customer.',
+      transcriptSections: [
+        { title: 'Context diagram', items: ['Customer mengirim Order Details ke proses 0 Process Order.', 'Proses 0 mengembalikan Order Confirmation ke Customer. Penyimpanan internal belum ditampilkan.'] },
+        { title: 'Level-0 DFD', items: ['Order Details masuk ke 1.0 Validate Order.', 'Proses 1.0 meminta dan membaca Customer Record dari D1 Customer Master.', 'Validated Order mengalir ke 2.0 Confirm Order, yang mengirim Order Confirmation ke Customer.', 'Aliran eksternal Order Details dan Order Confirmation tetap seimbang dengan context diagram.'] },
+      ],
+      caption: 'Ilustrasi orisinal. Persegi = entitas eksternal, lingkaran = proses, dua garis = data store, dan panah berlabel = data. DFD menunjukkan data yang bergerak, bukan waktu atau perpindahan barang.' },
     { kind: 'table', headers: ['Simbol DFD', 'Bentuk', 'Contoh'], rows: [
       ['External Entity (source/sink)', 'Persegi', 'Customer, Bank, Vendor.'],
       ['Data Flow', 'Garis/panah berarah berlabel kata benda data', 'Payment Data, Shipping Notice.'],

@@ -1,4 +1,5 @@
 import type { Reading } from '../../../types';
+import { processDiagram } from '../visuals';
 
 export const SIA_TM5: Reading = {
   tm: 5,
@@ -105,6 +106,13 @@ export const SIA_TM5: Reading = {
     { kind: 'code', language: 'SQL', text: 'SELECT Item_Number, Description, Unit_Price\nFROM Inventory\nWHERE Unit_Price >= 100.00;', caption: '`SELECT` menentukan kolom output; `FROM` menyebut tabel sumber; `WHERE` membatasi baris dengan kondisi boolean. Exhibits 6.42–6.43.' },
     { kind: 'p', text: '`SELECT *` mengambil semua atribut tanpa menyebut kolom satu per satu dan berguna untuk eksplorasi data awal. Dalam pelaporan keuangan formal dan audit SOX, kolom disebut eksplisit agar format laporan terjaga dan field sensitif tidak ikut terungkap. Exhibits 6.44–6.45.' },
     { kind: 'h3', text: 'INNER JOIN: kueri multi-tabel' },
+    { kind: 'figure', title: 'Jalur foreign key saat membaca SQL JOIN', svg: processDiagram('JOIN mengikuti kunci yang saling merujuk', [
+      { name: 'Customers', detail: 'PK Customer_ID' }, { name: 'Orders', detail: 'FK Customer_ID' },
+      { name: 'Order_Lines', detail: 'FK Order_ID' }, { name: 'Products', detail: 'PK Product_ID' },
+    ], 'Orders.Order_ID → Order_Lines.Order_ID; Order_Lines.Product_ID → Products.Product_ID.'),
+      altText: 'Jalur relasi tabel Customers, Orders, Order_Lines, dan Products untuk membaca JOIN melalui PK dan FK.',
+      transcript: ['Orders.Customer_ID merujuk Customers.Customer_ID.', 'Order_Lines.Order_ID merujuk Orders.Order_ID.', 'Order_Lines.Product_ID merujuk Products.Product_ID.', 'Panah menggambarkan hubungan kunci yang dipakai JOIN, bukan urutan peristiwa bisnis.'],
+      caption: 'Skema penghubung untuk memahami JOIN. Cocokkan ON dengan pasangan PK/FK; jangan menggabungkan tabel tanpa kondisi relasi.' },
     { kind: 'code', language: 'SQL', text: 'SELECT Sales.Invoice_Number, Sales.Sale_Date, Customer.Customer_Name\nFROM Sales\nINNER JOIN Customer ON Sales.Customer_ID = Customer.Customer_ID;', caption: '`INNER JOIN` mencocokkan record ketika foreign key tabel anak sama dengan primary key tabel induk. Exhibits 6.46–6.48.' },
     { kind: 'table', headers: ['Operator filter', 'Contoh', 'Makna'], rows: [
       ['Perbandingan', '`=`, `<>`, `>`, `<`, `>=`, `<=`', 'Membandingkan nilai kolom dengan konstanta atau kolom lain.'],
