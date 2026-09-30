@@ -1,5 +1,5 @@
 import type { Reading } from '../../../types';
-import { THREE_WAY_DIAGRAM, processDiagram, reaDiagram } from '../visuals';
+import { THREE_WAY_DIAGRAM, THREE_WAY_MOBILE, processDiagram, reaDiagram } from '../visuals';
 
 export const SIA_TM7: Reading = {
   tm: 7,
@@ -78,16 +78,10 @@ export const SIA_TM7: Reading = {
       ['Corrective', 'Debit memo vendor atas kelebihan tagihan, pemulihan otomatis atas cek ganda, pelatihan ulang prosedur.'],
     ], caption: 'Kerangka preventive/detective/corrective dan contoh otorisasi serta rekonsiliasi mengikuti Richardson 4e, pp. 328–329; Three-Way Match dan AVL adalah contoh penerapan tambahan.' },
     { kind: 'h3', text: 'Three-Way Match' },
-    { kind: 'figure', title: 'Tiga dokumen menuju satu keputusan', svg: THREE_WAY_DIAGRAM,
-      altText: 'Purchase Order, Receiving Report, dan Vendor Invoice masuk ke pemeriksaan Accounts Payable. Dokumen yang cocok disetujui, selisih ditahan.',
-      mobileFlow: { mode: 'cards', title: 'Three-Way Match: tiga bukti', stages: [
-        { actor: 'PO: apa yang diizinkan?', actions: ['100 unit @ $25 per unit.'] },
-        { actor: 'Receiving Report: apa yang diterima?', actions: ['80 unit diterima baik.'] },
-        { actor: 'Invoice: apa yang ditagih?', actions: ['100 unit @ $27 per unit.'] },
-        { actor: 'Keputusan Accounts Payable', actions: ['Jumlah dan harga berbeda dari bukti yang sah.', 'Tahan invoice sampai selisih diselesaikan.'] },
-      ] },
+    { kind: 'figure', title: 'Tiga dokumen menuju satu keputusan', svg: THREE_WAY_DIAGRAM, mobileSvg: THREE_WAY_MOBILE,
+      altText: 'Tiga simbol dokumen bergelombang, Purchase Order, Receiving Report, dan Vendor Invoice, menjadi bukti bagi task Accounts Payable. Gateway belah ketupat menanyakan apakah jumlah dan harga cocok. Cabang ya menyetujui pembayaran, cabang tidak menahan invoice untuk penyelesaian.',
       transcript: ['PO mengotorisasi item, jumlah, harga, dan termin.', 'Receiving Report membuktikan jumlah barang yang benar-benar diterima.', 'Vendor Invoice menyatakan jumlah dan harga yang ditagih.', 'Accounts Payable membandingkan ketiganya; pada contoh PO 100 unit @ $25, terima 80, invoice 100 @ $27, pembayaran ditahan sampai selisih selesai.'],
-      caption: 'Three-Way Match adalah penerapan kontrol pembelian pada materi TM7. Ini diagram konsep, bukan salinan gambar ebook.' },
+      caption: 'Tiga dokumen ditampilkan dengan dasar bergelombang, aktivitas pencocokan dengan kotak membulat, dan keputusan dengan belah ketupat. Skema kontrol ini bukan diagram BPMN formal atau salinan gambar ebook.' },
     { kind: 'table', headers: ['Dokumen', 'Sumber', 'Membuktikan', 'Informasi yang diverifikasi'], rows: [
       ['Purchase Order (PO)', 'Internal: Purchasing / Buyer', 'Otorisasi pembelian', 'Barang yang diotorisasi, kuantitas dipesan, harga satuan disepakati, termin pembayaran.'],
       ['Receiving Report', 'Internal: Warehouse Receiving', 'Penerimaan fisik', 'Kuantitas fisik yang dihitung dan diterima, tanggal terima, kondisi barang.'],

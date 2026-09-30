@@ -1,6 +1,10 @@
 /** Small, original teaching diagrams. Labels are authored here rather than copied from the textbook. */
 const xml = (value: string) => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/** A document is identified by its wavy lower edge, not by its fill colour. */
+const documentShape = (x: number, y: number, width: number, height: number, fill = '#eff6ff') =>
+  `<path d="M${x} ${y} H${x + width} V${y + height - 12} Q${x + width * .75} ${y + height - 24} ${x + width * .5} ${y + height - 12} Q${x + width * .25} ${y + height} ${x} ${y + height - 12} Z" fill="${fill}" stroke="#0369a1" stroke-width="2"/>`;
+
 export function processDiagram(title: string, steps: { name: string; detail: string }[], note: string): string {
   const width = 920;
   const boxWidth = (width - 80 - (steps.length - 1) * 32) / steps.length;
@@ -21,6 +25,30 @@ export function processDiagram(title: string, steps: { name: string; detail: str
   </svg>`;
 }
 
+export const DOCUMENT_TRAIL = `<svg class="course-diagram-svg" viewBox="0 0 1000 325" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
+  <defs><marker id="doc-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#0369a1" stroke-width="1.5"/></marker></defs>
+  <rect x="1" y="1" width="998" height="323" rx="18" fill="#fff" stroke="#cbd5e1"/>
+  <text x="30" y="39" fill="#0f172a" font-size="20" font-weight="700">Bukti pesanan sampai tagihan</text>
+  <g fill="#475569" font-size="14" font-weight="700"><text x="40" y="78">Sales</text><text x="280" y="78">Warehouse</text><text x="520" y="78">Shipping</text><text x="760" y="78">Billing</text></g>
+  ${documentShape(40, 110, 190, 88)}${documentShape(280, 110, 190, 88)}${documentShape(520, 85, 190, 88)}${documentShape(520, 190, 190, 88)}${documentShape(760, 110, 190, 88)}
+  <g fill="#0f172a" font-size="15" font-weight="700"><text x="55" y="142">Sales Order</text><text x="295" y="142">Picking Ticket</text><text x="535" y="117">Packing Slip</text><text x="535" y="222">Bill of Lading</text><text x="775" y="142">Sales Invoice</text></g>
+  <g fill="#334155" font-size="12"><text x="55" y="163">Pesanan dicatat</text><text x="295" y="163">Barang diambil</text><text x="535" y="138">Menyertai barang</text><text x="535" y="243">Bukti pengiriman</text><text x="775" y="163">Tagihan dibuat</text></g>
+  <g fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#doc-arrow)"><path d="M230 150 H274"/><path d="M470 135 H493 V126 H514"/><path d="M470 162 H493 V230 H514"/><path d="M710 230 H735 V150 H754"/></g>
+  <text x="30" y="303" fill="#475569" font-size="13">Dasar bergelombang = dokumen. Billing menggunakan bukti pengiriman yang tervalidasi.</text>
+</svg>`;
+
+export const DOCUMENT_TRAIL_MOBILE = `<svg class="course-diagram-svg" viewBox="0 0 360 585" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
+  <defs><marker id="doc-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="none" stroke="#0369a1" stroke-width="1.5"/></marker></defs>
+  <rect x="1" y="1" width="358" height="583" rx="14" fill="#fff" stroke="#cbd5e1"/>
+  <text x="16" y="29" fill="#0f172a" font-size="18" font-weight="700">Jejak dokumen</text>
+  <g fill="#475569" font-size="12" font-weight="700"><text x="60" y="57">Sales</text><text x="60" y="159">Warehouse</text><text x="18" y="269">Shipping</text><text x="60" y="448">Billing</text></g>
+  ${documentShape(60, 65, 240, 70)}${documentShape(60, 167, 240, 70)}${documentShape(18, 277, 152, 80)}${documentShape(190, 277, 152, 80)}${documentShape(60, 455, 240, 70)}
+  <g fill="#0f172a" font-size="15" font-weight="700"><text x="75" y="91">Sales Order</text><text x="75" y="193">Picking Ticket</text><text x="33" y="304" font-size="13">Packing Slip</text><text x="204" y="304" font-size="13">Bill of Lading</text><text x="75" y="481">Sales Invoice</text></g>
+  <g fill="#334155" font-size="11"><text x="75" y="111">Pesanan dicatat</text><text x="75" y="213">Barang diambil</text><text x="33" y="323">Menyertai barang</text><text x="204" y="323">Bukti pengiriman</text><text x="75" y="501">Tagihan dibuat</text></g>
+  <g fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#doc-mobile-arrow)"><path d="M180 135 V160"/><path d="M180 237 V252 H94 V271"/><path d="M180 252 H266 V271"/><path d="M266 357 V414 H180 V449"/></g>
+  <text x="16" y="560" fill="#475569" font-size="11">Dasar bergelombang menandai dokumen.</text>
+</svg>`;
+
 export const INFORMATION_SYSTEM = `<svg class="course-diagram-svg" viewBox="0 0 820 285" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
   <defs><marker id="is-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#0369a1" stroke-width="1.5"/></marker></defs>
   <rect x="1" y="1" width="818" height="283" rx="18" fill="#fff" stroke="#cbd5e1"/>
@@ -29,9 +57,10 @@ export const INFORMATION_SYSTEM = `<svg class="course-diagram-svg" viewBox="0 0 
   <g fill="#0f172a" font-size="17" font-weight="700"><text x="47" y="105">Input</text><text x="322" y="105">Processing</text><text x="597" y="105">Output</text></g>
   <g fill="#334155" font-size="13"><text x="47" y="129">Item, jumlah, harga</text><text x="322" y="129">Hitung dan validasi</text><text x="597" y="129">Laporan untuk manajer</text></g>
   <g stroke="#0369a1" stroke-width="2" marker-end="url(#is-arrow)"><path d="M239 112 H299"/><path d="M514 112 H574"/></g>
-  <rect x="305" y="197" width="205" height="55" rx="12" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
-  <text x="322" y="221" fill="#7c2d12" font-size="16" font-weight="700">Storage</text>
-  <text x="322" y="239" fill="#7c2d12" font-size="13">Catatan POS dan stok</text>
+  <path d="M305 210 V245 C305 263 510 263 510 245 V210" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <ellipse cx="407.5" cy="210" rx="102.5" ry="13" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="322" y="235" fill="#7c2d12" font-size="16" font-weight="700">Storage</text>
+  <text x="322" y="253" fill="#7c2d12" font-size="13">Catatan POS dan stok</text>
   <path d="M389 153 V190 M426 193 V156" stroke="#0369a1" stroke-width="2" marker-end="url(#is-arrow)"/>
   <text x="30" y="273" fill="#475569" font-size="12">Storage menyimpan hasil dan menyediakan data untuk pemrosesan berikutnya.</text>
 </svg>`;
@@ -103,20 +132,44 @@ export const RELATION_DIAGRAM = `<svg class="course-diagram-svg" viewBox="0 0 80
   <text x="28" y="225" fill="#475569" font-size="14">Quantity dan Unit_Price milik baris pesanan, disimpan di Order_Lines.</text>
 </svg>`;
 
-export const THREE_WAY_DIAGRAM = `<svg class="course-diagram-svg" viewBox="0 0 850 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
+export const THREE_WAY_DIAGRAM = `<svg class="course-diagram-svg" viewBox="0 0 1080 365" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
   <defs><marker id="match-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#0369a1" stroke-width="1.5"/></marker></defs>
-  <rect x="1" y="1" width="848" height="348" rx="18" fill="#fff" stroke="#cbd5e1"/>
+  <rect x="1" y="1" width="1078" height="363" rx="18" fill="#fff" stroke="#cbd5e1"/>
   <text x="28" y="39" fill="#0f172a" font-size="20" font-weight="700">Three-Way Match sebelum pembayaran</text>
-  <g fill="#eff6ff" stroke="#0369a1" stroke-width="2"><rect x="30" y="80" width="215" height="65" rx="12"/><rect x="30" y="166" width="215" height="65" rx="12"/><rect x="30" y="252" width="215" height="65" rx="12"/></g>
-  <g fill="#0f172a" font-size="16" font-weight="700"><text x="48" y="108">Purchase Order</text><text x="48" y="194">Receiving Report</text><text x="48" y="280">Vendor Invoice</text></g>
-  <g fill="#475569" font-size="13"><text x="48" y="128">Izin beli, jumlah, harga</text><text x="48" y="214">Jumlah fisik diterima</text><text x="48" y="300">Jumlah dan harga ditagih</text></g>
-  <g fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#match-arrow)"><path d="M245 112 H352 V192 H392"/><path d="M245 199 H392"/><path d="M245 285 H352 V207 H392"/></g>
-  <rect x="395" y="156" width="200" height="88" rx="16" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
-  <text x="495" y="189" text-anchor="middle" fill="#064e3b" font-size="17" font-weight="700">Accounts Payable</text>
-  <text x="495" y="216" text-anchor="middle" fill="#064e3b" font-size="14">cocokkan 3 dokumen</text>
-  <path d="M595 199 H635" stroke="#0369a1" stroke-width="2" marker-end="url(#match-arrow)"/>
-  <rect x="640" y="153" width="178" height="94" rx="14" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
-  <text x="659" y="184" fill="#7c2d12" font-size="15" font-weight="700">Cocok: setujui</text>
-  <text x="659" y="209" fill="#7c2d12" font-size="15" font-weight="700">Selisih: tahan</text>
-  <text x="30" y="337" fill="#475569" font-size="12">Kasus latihan TM7: PO 100 unit @ $25, diterima 80 unit, ditagih 100 unit @ $27 → tahan invoice.</text>
+  ${documentShape(30, 75, 225, 72)}${documentShape(30, 161, 225, 72)}${documentShape(30, 247, 225, 72)}
+  <g fill="#0f172a" font-size="16" font-weight="700"><text x="48" y="104">Purchase Order</text><text x="48" y="190">Receiving Report</text><text x="48" y="276">Vendor Invoice</text></g>
+  <g fill="#475569" font-size="13"><text x="48" y="125">Izin beli, jumlah, harga</text><text x="48" y="211">Jumlah fisik diterima</text><text x="48" y="297">Jumlah dan harga ditagih</text></g>
+  <g fill="none" stroke="#0369a1" stroke-width="2" stroke-dasharray="5 4"><path d="M255 105 H330 V191 H393"/><path d="M255 191 H393"/><path d="M255 277 H330 V207 H393"/></g>
+  <rect x="395" y="153" width="210" height="92" rx="14" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <text x="500" y="190" text-anchor="middle" fill="#064e3b" font-size="17" font-weight="700">Accounts Payable</text>
+  <text x="500" y="217" text-anchor="middle" fill="#064e3b" font-size="14">cocokkan 3 dokumen</text>
+  <path d="M605 199 H671" stroke="#0369a1" stroke-width="2" marker-end="url(#match-arrow)"/>
+  <path d="M750 126 L824 199 L750 272 L676 199 Z" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="750" y="194" text-anchor="middle" fill="#7c2d12" font-size="17" font-weight="700">Cocok?</text>
+  <text x="750" y="216" text-anchor="middle" fill="#7c2d12" font-size="13">jumlah &amp; harga</text>
+  <g fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#match-arrow)"><path d="M824 199 H847 V150 H871"/><path d="M824 199 H847 V262 H871"/></g>
+  <rect x="875" y="117" width="177" height="68" rx="13" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <rect x="875" y="229" width="177" height="68" rx="13" fill="#fff1f2" stroke="#be123c" stroke-width="2"/>
+  <g fill="#0f172a" font-size="15" font-weight="700" text-anchor="middle"><text x="963" y="146">Ya: setujui</text><text x="963" y="166">pembayaran</text><text x="963" y="258">Tidak: tahan</text><text x="963" y="278">dan selesaikan</text></g>
+  <text x="30" y="348" fill="#475569" font-size="12">Kasus TM7: PO 100 unit @ $25, diterima 80, ditagih 100 @ $27 → selisih, tahan invoice.</text>
+</svg>`;
+
+export const THREE_WAY_MOBILE = `<svg class="course-diagram-svg" viewBox="0 0 360 710" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
+  <defs><marker id="match-mobile-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="none" stroke="#0369a1" stroke-width="1.5"/></marker></defs>
+  <rect x="1" y="1" width="358" height="708" rx="14" fill="#fff" stroke="#cbd5e1"/>
+  <text x="16" y="29" fill="#0f172a" font-size="18" font-weight="700">Tiga bukti, satu keputusan</text>
+  ${documentShape(50, 50, 260, 72)}${documentShape(50, 140, 260, 72)}${documentShape(50, 230, 260, 72)}
+  <g fill="#0f172a" font-size="15" font-weight="700"><text x="65" y="78">Purchase Order</text><text x="65" y="168">Receiving Report</text><text x="65" y="258">Vendor Invoice</text></g>
+  <g fill="#475569" font-size="12"><text x="65" y="98">100 unit @ $25</text><text x="65" y="188">80 unit diterima</text><text x="65" y="278">100 unit @ $27 ditagih</text></g>
+  <path d="M310 85 H326 V366 M310 175 H326 M310 265 H326" fill="none" stroke="#0369a1" stroke-width="2" stroke-dasharray="5 4"/>
+  <path d="M326 366 H315" fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#match-mobile-arrow)"/>
+  <rect x="50" y="330" width="260" height="72" rx="13" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+  <text x="180" y="359" text-anchor="middle" fill="#064e3b" font-size="16" font-weight="700">Accounts Payable</text><text x="180" y="382" text-anchor="middle" fill="#064e3b" font-size="13">cocokkan jumlah dan harga</text>
+  <path d="M180 402 V425" fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#match-mobile-arrow)"/>
+  <path d="M180 432 L247 500 L180 568 L113 500 Z" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="180" y="494" text-anchor="middle" fill="#7c2d12" font-size="17" font-weight="700">Cocok?</text><text x="180" y="515" text-anchor="middle" fill="#7c2d12" font-size="12">jumlah &amp; harga</text>
+  <g fill="none" stroke="#0369a1" stroke-width="2" marker-end="url(#match-mobile-arrow)"><path d="M113 500 H89 V590"/><path d="M247 500 H271 V590"/></g>
+  <rect x="16" y="598" width="148" height="66" rx="12" fill="#ecfdf5" stroke="#047857" stroke-width="2"/><rect x="196" y="598" width="148" height="66" rx="12" fill="#fff1f2" stroke="#be123c" stroke-width="2"/>
+  <g fill="#0f172a" font-size="13" font-weight="700" text-anchor="middle"><text x="90" y="625">Ya: setujui</text><text x="90" y="644">pembayaran</text><text x="270" y="625">Tidak: tahan</text><text x="270" y="644">invoice</text></g>
+  <text x="16" y="692" fill="#475569" font-size="11">Contoh ini selisih → invoice ditahan.</text>
 </svg>`;

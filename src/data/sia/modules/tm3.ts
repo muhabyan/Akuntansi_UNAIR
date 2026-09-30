@@ -1,16 +1,19 @@
 import type { Reading } from '../../../types';
-import { SALES_DFD, processDiagram } from '../visuals';
+import { BPMN_SYMBOLS, BPMN_SYMBOLS_MOBILE } from '../bpmnSymbols';
+import { FLOWCHART_SYMBOLS, FLOWCHART_SYMBOLS_MOBILE } from '../flowchartSymbols';
+import { DOCUMENT_TRAIL, DOCUMENT_TRAIL_MOBILE, SALES_DFD } from '../visuals';
 
 // Skema belajar dari Problem 1, Richardson 4e halaman buku 207; bukan gambar terbitan.
-const STARBUCKS_FLOW = `<svg class="course-diagram-svg course-diagram-bpmn" viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
-  <rect x="2" y="2" width="1196" height="356" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
+const STARBUCKS_FLOW = `<svg class="course-diagram-svg course-diagram-bpmn" viewBox="0 0 1300 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
+  <rect x="2" y="2" width="1296" height="356" rx="16" fill="#f8fafc" stroke="#cbd5e1"/>
   <text x="22" y="30" font-size="18" font-weight="700" fill="#0f172a">Starbucks Drive-Through — alur dasar pada soal buku</text>
   <line x1="790" y1="25" x2="824" y2="25" stroke="#0369a1" stroke-width="3"/><polygon points="830,25 822,20 822,30" fill="#0369a1"/><text x="840" y="30" font-size="13" fill="#334155">sequence flow</text>
-  <path d="M970 25 h8 m5 0 h8 m5 0 h8" fill="none" stroke="#b45309" stroke-width="3"/><polygon points="1010,25 1002,20 1002,30" fill="#b45309"/><text x="1020" y="30" font-size="13" fill="#334155">message flow</text>
-  <rect x="18" y="50" width="1164" height="118" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <circle cx="970" cy="25" r="3.5" fill="#fff" stroke="#b45309" stroke-width="2"/><path d="M974 25 H1003" fill="none" stroke="#b45309" stroke-width="2.5" stroke-dasharray="5 4"/><polygon points="1010,25 1002,20 1002,30" fill="#fff" stroke="#b45309" stroke-width="2"/><text x="1020" y="30" font-size="13" fill="#334155">message flow</text>
+  <rect x="18" y="50" width="1264" height="118" rx="12" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
   <text x="32" y="72" font-size="15" font-weight="700" fill="#9a3412">Pool Customer</text>
-  <rect x="18" y="182" width="1164" height="158" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <rect x="18" y="182" width="1264" height="158" rx="12" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
   <text x="32" y="204" font-size="15" font-weight="700" fill="#1e3a8a">Pool Starbucks · lane Barista</text>
+  <g transform="translate(55 0)">
   <g fill="#fff" stroke="#cbd5e1" stroke-width="1.5">
     <rect x="48" y="100" width="145" height="47" rx="8"/><rect x="236" y="100" width="145" height="47" rx="8"/><rect x="424" y="100" width="145" height="47" rx="8"/><rect x="612" y="100" width="145" height="47" rx="8"/><rect x="800" y="100" width="145" height="47" rx="8"/><rect x="988" y="100" width="145" height="47" rx="8"/>
     <rect x="236" y="245" width="145" height="49" rx="8"/><rect x="424" y="245" width="145" height="49" rx="8"/><rect x="612" y="245" width="145" height="49" rx="8"/><rect x="800" y="245" width="145" height="49" rx="8"/><rect x="988" y="245" width="145" height="49" rx="8"/>
@@ -35,8 +38,14 @@ const STARBUCKS_FLOW = `<svg class="course-diagram-svg course-diagram-bpmn" view
     <path d="M872 150 v8 M872 164 v8 M872 178 v8 M872 192 v8 M872 206 v8 M872 220 v8 M872 234 v5"/>
     <path d="M1060 237 v-8 M1060 223 v-8 M1060 209 v-8 M1060 195 v-8 M1060 181 v-8 M1060 167 v-8 M1060 153 v-5"/>
   </g>
-  <g fill="#b45309"><polygon points="308,244 303,236 313,236"/><polygon points="684,148 679,156 689,156"/><polygon points="872,244 867,236 877,236"/><polygon points="1060,148 1055,156 1065,156"/></g>
-  <text x="600" y="324" font-size="12" text-anchor="middle" fill="#475569">Panah utuh berada dalam pool; panah putus-putus melintasi batas Customer–Starbucks.</text>
+  <g fill="#fff" stroke="#b45309" stroke-width="2"><circle cx="308" cy="150" r="3.5"/><circle cx="684" cy="237" r="3.5"/><circle cx="872" cy="150" r="3.5"/><circle cx="1060" cy="237" r="3.5"/><polygon points="308,244 303,236 313,236"/><polygon points="684,148 679,156 689,156"/><polygon points="872,244 867,236 877,236"/><polygon points="1060,148 1055,156 1065,156"/></g>
+  </g>
+  <circle cx="70" cy="123" r="18" fill="#fff" stroke="#9a3412" stroke-width="2.5"/>
+  <circle cx="1243" cy="123" r="18" fill="#fff" stroke="#9a3412" stroke-width="5"/>
+  <path d="M89 123 H100 M1188 123 H1221" fill="none" stroke="#0369a1" stroke-width="2.5"/>
+  <g fill="#0369a1"><polygon points="105,123 97,118 97,128"/><polygon points="1227,123 1219,118 1219,128"/></g>
+  <text x="70" y="160" text-anchor="middle" font-size="11" fill="#7c2d12">Mulai</text><text x="1243" y="160" text-anchor="middle" font-size="11" fill="#7c2d12">Selesai</text>
+  <text x="650" y="324" font-size="12" text-anchor="middle" fill="#475569">Lingkaran = event awal/akhir; kotak bersudut bulat = task; panah putus-putus = pesan antar-pool.</text>
 </svg>`;
 
 export const SIA_TM3: Reading = {
@@ -115,6 +124,10 @@ export const SIA_TM3: Reading = {
 
     { kind: 'h2', text: '3. Activity Modeling with Business Process Model and Notation (BPMN 2.0)' },
     { kind: 'p', text: '**BPMN 2.0** dipelihara oleh Object Management Group (OMG) sebagai standar global pemodelan proses bisnis. Tujuannya menyediakan notasi seragam yang mudah dipahami analis bisnis, pengembang teknis, dan pemangku kepentingan bisnis. Richardson 4e, pp. 180–183.' },
+    { kind: 'figure', title: 'Bentuk dasar BPMN yang perlu dikenali', svg: BPMN_SYMBOLS, mobileSvg: BPMN_SYMBOLS_MOBILE,
+      altText: 'Event berupa lingkaran, task berupa persegi panjang bersudut bulat, gateway berupa belah ketupat, data object berupa dokumen bersudut terlipat, data store berupa silinder. Sequence flow adalah panah penuh, message flow adalah garis putus-putus.',
+      transcript: ['Lingkaran tipis menandai start event; lingkaran tebal menandai end event.', 'Persegi panjang bersudut bulat menandai task; belah ketupat menandai gateway percabangan atau penggabungan.', 'Data object bersudut terlipat berbeda dari data store berbentuk silinder.', 'Panah penuh adalah sequence flow di dalam satu pool; garis putus-putus adalah message flow antar-pool.'],
+      caption: 'Panduan bentuk dasar BPMN 2.0. Penanda gateway dan aturan hubungan lengkap dijelaskan pada tabel berikut.' },
     { kind: 'table', headers: ['Elemen', 'Simbol', 'Fungsi dan aturan eksekusi'], rows: [
       ['Start Event', 'Lingkaran bergaris tipis', 'Menandai dimulainya instance proses dan membuat token awal. Tidak memiliki sequence flow masuk.'],
       ['Intermediate Event', 'Lingkaran bergaris ganda', 'Peristiwa di tengah alur (mis. timer delay, pesan diterima/dikirim); memengaruhi alur tanpa mengakhirinya.'],
@@ -182,18 +195,14 @@ export const SIA_TM3: Reading = {
 
     { kind: 'h2', text: '4. Alternative Process Documentation Techniques' },
     { kind: 'h3', text: 'System dan document flowchart (ANSI X3.5)' },
-    { kind: 'figure', title: 'Jejak dokumen pada order fulfillment', svg: processDiagram('Ikuti bukti dari pesanan hingga invoice', [
-      { name: 'Sales', detail: 'Sales Order' }, { name: 'Warehouse', detail: 'Picking Ticket' },
-      { name: 'Shipping', detail: 'Packing Slip + BOL' }, { name: 'Billing', detail: 'Sales Invoice' },
-    ], 'Contoh jejak dokumen; pelajari bentuk simbol ANSI pada tabel berikut.'),
+    { kind: 'figure', title: 'Jejak dokumen pada order fulfillment', svg: DOCUMENT_TRAIL, mobileSvg: DOCUMENT_TRAIL_MOBILE,
       altText: 'Jejak dokumen Sales Order, Picking Ticket, Packing Slip dan Bill of Lading, lalu Sales Invoice.',
-      mobileFlow: { mode: 'cards', title: 'Dokumen dari order sampai tagihan', stages: [
-        { actor: 'Sales → Warehouse', actions: ['Sales Order menjadi dasar Picking Ticket.'] },
-        { actor: 'Warehouse → Shipping', actions: ['Barang yang diambil diverifikasi; Packing Slip dan BOL dibuat.'] },
-        { actor: 'Shipping → Billing', actions: ['BOL tervalidasi menjadi dasar Sales Invoice.'] },
-      ] },
       transcript: ['Sales mencatat Sales Order.', 'Warehouse mengambil barang berdasarkan Picking Ticket.', 'Shipping memverifikasi barang dan menyiapkan Packing Slip serta Bill of Lading.', 'Billing membuat Sales Invoice berdasarkan bukti pengiriman yang tervalidasi.'],
-      caption: 'Skema jejak dokumen, bukan flowchart ANSI formal. Simbol dokumen dan keputusan dijelaskan pada tabel di bawah.' },
+      caption: 'Skema jejak bukti yang disederhanakan, bukan flowchart ANSI formal. Setiap dokumen diberi simbol dasar bergelombang; bentuk simbol lain dijelaskan pada tabel di bawah.' },
+    { kind: 'figure', title: 'Kenali simbol flowchart dari bentuknya', svg: FLOWCHART_SYMBOLS, mobileSvg: FLOWCHART_SYMBOLS_MOBILE,
+      altText: 'Simbol flowchart: dokumen dengan dasar bergelombang, operasi manual trapesium, pemrosesan komputer persegi panjang, konektor halaman lain pentagon, konektor halaman sama lingkaran kecil, dan penyimpanan file segitiga terbalik.',
+      transcript: ['Dasar bergelombang berarti dokumen; trapesium berarti operasi manual; persegi panjang berarti pemrosesan komputer.', 'Pentagon menunjuk sambungan ke halaman lain; lingkaran kecil berhuruf menyambung alur pada halaman yang sama.', 'Segitiga terbalik menunjukkan file atau arsip; N, A, dan C dapat menunjukkan urutan pengarsipan.'],
+      caption: 'Panduan bentuk simbol flowchart sistem dan dokumen yang dibahas pada bagian ini. Simbol proses komputer tetap berbentuk persegi panjang karena itulah notasinya.' },
     { kind: 'table', headers: ['Simbol', 'Bentuk', 'Contoh'], rows: [
       ['Document', 'Persegi panjang dengan dasar bergelombang', 'Purchase Order, Bill of Lading.'],
       ['Manual Operation', 'Trapesium', 'Menandatangani cek secara manual, memeriksa barang.'],

@@ -751,7 +751,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 const isDetailedDiagram = /course-diagram-(sml|bpmn|agency)/.test(block.svg);
                 const isSmlDiagram = block.svg.includes('course-diagram-sml');
                 const isAgencyDiagram = block.svg.includes('course-diagram-agency');
-                const hasMobileOverview = isSmlDiagram || isAgencyDiagram || Boolean(block.mobileFlow);
+                const hasMobileOverview = isSmlDiagram || isAgencyDiagram || Boolean(block.mobileFlow || block.mobileSvg);
                 const processedSvg = hasDiagramClass
                   ? block.svg
                   : block.svg.replace('<svg', '<svg class="course-diagram-svg"');
@@ -761,6 +761,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                     {isSmlDiagram && <SmlMobileOverview />}
                     {isAgencyDiagram && <AgencyMobileOverview />}
                     {block.mobileFlow && <MobileParticipantFlow flow={block.mobileFlow} />}
+                    {block.mobileSvg && (
+                      <div className="course-solid-surface mb-3 overflow-hidden rounded-xl border border-gray-200/80 bg-white p-2 dark:border-gray-800 dark:bg-gray-900/80 md:hidden" role="img" aria-label={block.altText ?? block.title ?? 'Visual materi pada layar kecil'}>
+                        <div dangerouslySetInnerHTML={{ __html: block.mobileSvg }} />
+                      </div>
+                    )}
                     <div
                       className={`course-solid-surface akbi-table-scroll overflow-x-auto rounded-xl border border-gray-200/80 bg-white p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900/80 md:p-4 ${hasMobileOverview ? 'hidden md:block' : ''}`}
                       role="img"
