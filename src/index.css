@@ -1316,3 +1316,8 @@ html.dark body .driver-popover.driverjs-theme .driver-popover-navigation-btns bu
 @media (prefers-reduced-motion: reduce) {
   .phase2-quiz :is(button, select, input) { transition-duration: 0ms; }
 }
+/* Report totals are underlined on the amount cell, never on ordinary class balances. */
+.report-rule-top { border-top: 1px solid currentColor; }
+.report-rule-double { border-top: 3px double currentColor; }
+.report-rule-bottom-double { border-bottom: 3px double currentColor; }
+.akk203-diagram { color: rgb(var(--text-primary)); }

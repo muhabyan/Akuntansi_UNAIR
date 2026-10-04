@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2, Calculator, PencilLine, LineChart } from 'lucide-react';
+import ReportTable from './ReportTable';
 import type { ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
@@ -133,6 +134,7 @@ function SolutionRevealCard({
   enableEditorialReading?: boolean;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const panelId = useId();
 
   return (
     <section className="course-solution-surface mb-8 overflow-hidden rounded-[1.7rem] border border-emerald-500/30 dark:border-emerald-500/25 bg-emerald-500/10 dark:bg-emerald-500/5">
@@ -142,8 +144,11 @@ function SolutionRevealCard({
         </div>
         <h3 className="font-display text-base font-black leading-snug text-slate-900 dark:text-slate-100 md:text-lg md:leading-snug">{block.title}</h3>
         {block.prompt && <div className="reading-ink mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-400">{renderText(block.prompt)}</div>}
+        {block.promptBlocks && <InsideBoxContext.Provider value>{block.promptBlocks.map((nestedBlock, index) => <CourseBlockCard key={index} block={nestedBlock} isSimulation={isSimulation} enableLegalStyling={enableLegalStyling} enableEconomicStyling={enableEconomicStyling} enableEditorialReading={enableEditorialReading} />)}</InsideBoxContext.Provider>}
         <button
           type="button"
+          aria-expanded={isOpen}
+          aria-controls={panelId}
           onClick={() => setIsOpen((open) => !open)}
           className="mt-4 inline-flex items-center gap-2 rounded-xl border border-emerald-500/40 dark:border-emerald-500/30 bg-emerald-500/15 dark:bg-emerald-500/10 px-4 py-2.5 text-xs font-black text-emerald-800 dark:text-emerald-300 transition hover:bg-emerald-500/20"
         >
@@ -151,6 +156,7 @@ function SolutionRevealCard({
           {isOpen ? 'Sembunyikan pembahasan' : block.revealLabel ?? 'Tampilkan pembahasan langkah demi langkah'}
         </button>
       </div>
+      <div id={panelId} hidden={!isOpen}>
       {isOpen && (
         <div className="p-4 md:p-6">
           {/* Only read by layered readings: a table or callout in here renders flat. */}
@@ -161,6 +167,7 @@ function SolutionRevealCard({
           </InsideBoxContext.Provider>
         </div>
       )}
+      </div>
     </section>
   );
 }
@@ -371,6 +378,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       );
     }
     case 'table': {
+      if (block.reportHeader || block.rowRules?.length) return <ReportTable block={block} />;
       const warning = blockContainsManualWarning(block);
       const tableText = `${block.headers.join(' ')} ${block.rows.flat().join(' ')}`;
       const isLegalTable = enableLegalStyling && isLegalContent(tableText);
@@ -564,6 +572,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="bg-slate-50 dark:bg-navy-800/70 text-[11px] uppercase tracking-wider text-slate-700 dark:text-slate-400">
+                  {block.lines.some((line) => line.date !== undefined) && <th className="px-4 py-3 text-left">Tanggal</th>}
                   <th className="px-4 py-3 text-left">Akun</th>
                   <th className="w-36 px-4 py-3 text-right">Debit</th>
                   <th className="w-36 px-4 py-3 text-right">Kredit</th>
@@ -572,6 +581,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               <tbody>
                 {block.lines.map((l, i) => (
                   <tr key={i} className="border-t border-navy-500/15 dark:border-navy-500/35">
+                    {block.lines.some((line) => line.date !== undefined) && <td className="px-4 py-2.5 text-slate-800 dark:text-slate-300">{l.date ?? ''}</td>}
                     <td className={`px-4 py-2.5 text-slate-800 dark:text-slate-300 ${l.isCredit ? 'pl-10 font-medium text-slate-600 dark:text-slate-400' : 'font-semibold text-slate-900 dark:text-slate-100'}`}>
                       {l.account}
                     </td>
@@ -720,15 +730,19 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               <h3 className="max-w-[65ch] text-lg font-bold leading-snug text-slate-900 dark:text-slate-100">{overview.heading}</h3>
               {overview.badge && <span className="rounded-full bg-sky-100 px-3 py-1 text-sm font-bold text-sky-800 dark:bg-sky-950 dark:text-sky-200">{overview.badge}</span>}
             </div>
-            <div className="grid grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-5">
+            {block.svg && <>
+              <div className="hidden md:block"><CourseBlockCard block={{ ...block, overview: undefined, caption: undefined }} isSimulation={isSimulation} /></div>
+              <details className="m-3 rounded-xl border border-line p-3 md:hidden"><summary className="cursor-pointer text-sm font-bold">Perbesar diagram rinci</summary><CourseBlockCard block={{ ...block, overview: undefined, caption: undefined }} isSimulation={isSimulation} /></details>
+            </>}
+            <div className={`grid grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-5 ${block.svg ? 'md:hidden' : ''}`} role="group" aria-label={block.altText ?? overview.heading}>
               {overview.cards.map((card, index) => (
                 <section key={index} className={`min-w-0 rounded-xl border p-4 ${accents[index % accents.length]}`}>
                   <h4 className="text-base font-bold leading-snug text-slate-900 dark:text-slate-100">{card.title}</h4>
-                  <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-700 dark:text-slate-300">{card.subtitle}</p>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-slate-800 marker:text-slate-600 dark:text-slate-200 dark:marker:text-slate-400 sm:text-base">
+                  {card.subtitle && <p className="mt-2 text-sm font-semibold leading-relaxed text-slate-700 dark:text-slate-300">{card.subtitle}</p>}
+                  {card.items.length > 0 && <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-slate-800 marker:text-slate-600 dark:text-slate-200 dark:marker:text-slate-400 sm:text-base">
                     {card.items.map((item, itemIndex) => <li key={itemIndex} className="break-words">{item}</li>)}
-                  </ul>
-                  <p className="mt-4 border-t border-slate-300/70 pt-3 text-sm font-semibold leading-relaxed text-slate-700 dark:border-slate-600 dark:text-slate-300">{card.takeaway}</p>
+                  </ul>}
+                  {card.takeaway && <p className="mt-4 border-t border-slate-300/70 pt-3 text-sm font-semibold leading-relaxed text-slate-700 dark:border-slate-600 dark:text-slate-300">{card.takeaway}</p>}
                 </section>
               ))}
             </div>

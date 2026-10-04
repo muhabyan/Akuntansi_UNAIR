@@ -6,6 +6,11 @@ const root = process.cwd();
 const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 
 const standardTasks = [
+  ['akk203_renderer', 'scripts/test-akk203-renderer.mjs'],
+  ['akk203_tm01_canonical', 'scripts/test-akk203-tm01-canonical.mjs'],
+  ['akk203_tm02_canonical', 'scripts/test-akk203-tm02-canonical.mjs'],
+  ['akk203_tm03_canonical', 'scripts/test-akk203-tm03-canonical.mjs'],
+  ['akk203_render_rules', 'scripts/test-akk203-render-rules.mjs'],
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
   ['aks301_alignment', 'scripts/test-aks301-alignment.mjs'],
@@ -141,7 +146,8 @@ function runTask([id, script, extraEnv = {}]) {
     env: { ...process.env, ...extraEnv },
     timeout: timeoutMs,
     killSignal: 'SIGKILL',
-    stdio: 'ignore',
+    stdio: ['ignore', 'pipe', 'pipe'],
+    maxBuffer: 16 * 1024 * 1024,
   });
   const durationMs = Date.now() - start;
   const timedOut = result.error?.code === 'ETIMEDOUT' || result.signal === 'SIGTERM' || result.signal === 'SIGKILL';

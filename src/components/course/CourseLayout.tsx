@@ -78,20 +78,21 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
     case 'table':
       return [
         ...(block.caption ? [block.caption] : []),
+        ...Object.values(block.reportHeader ?? {}),
         ...block.headers,
         ...block.rows.flat(),
       ].some((text) => text.toLowerCase().includes(query));
     case 'journal':
       return [
         ...(block.caption ? [block.caption] : []),
-        ...block.lines.flatMap((line) => [line.account, line.debit, line.credit].filter(Boolean) as string[]),
+        ...block.lines.flatMap((line) => [line.date, line.account, line.debit, line.credit].filter(Boolean) as string[]),
       ].some((text) => text.toLowerCase().includes(query));
     case 'figure':
       return [block.title, block.caption].filter(Boolean).some((text) => text!.toLowerCase().includes(query));
     case 'example':
       return block.title.toLowerCase().includes(query) || block.blocks.some((nested) => blockContainsQuery(nested, query));
     case 'solution-reveal':
-      return [block.title, block.prompt].filter(Boolean).some((text) => text!.toLowerCase().includes(query)) || block.blocks.some((nested) => blockContainsQuery(nested, query));
+      return [block.title, block.prompt].filter(Boolean).some((text) => text!.toLowerCase().includes(query)) || [...(block.promptBlocks ?? []), ...block.blocks].some((nested) => blockContainsQuery(nested, query));
     case 'section':
     case 'pendalaman':
       return Boolean(block.title?.toLowerCase().includes(query)) || block.blocks.some((nested) => blockContainsQuery(nested, query));

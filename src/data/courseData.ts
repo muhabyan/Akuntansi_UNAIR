@@ -638,7 +638,7 @@ export const SEMESTERS: Semester[] = [
             code: 'SII306', newCode: 'FEB25603016', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
             references: SII306_REF,
             materiTM1_7: SII306_TM1_7, materiTM8_14: SII306_TM8_14,
-            flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            flashcardCount: 105, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'PJK301', newCode: 'FEB25603015', name: 'Perpajakan II', sks: 3, iconKey: 'file', prasyarat: 'PJK201 (L)',
