@@ -110,9 +110,12 @@ const hasNotationStarPair = (text) => {
 // Inline code spans are literal in markdown, so "$" inside backticks is safe and must stay unescaped.
 const unescapedDollars = (text) => (text.replace(/`[^`]*`/g, '').match(/(?<!\\)\$/g) ?? []).length;
 const renderedStrings = (block) => {
+  // Figure labels, cards, transcripts, and SVG are plain React/SVG text; only caption is Markdown.
+  if (block.kind === 'figure') return block.caption ? [block.caption] : [];
   const values = [];
   for (const [key, value] of Object.entries(block)) {
-    if (['kind', 'blocks', 'lines', 'variant'].includes(key)) continue;
+    // SVG and image URLs bypass MarkdownContent; their literal currency symbols are safe.
+    if (['kind', 'blocks', 'lines', 'variant', 'svg', 'mobileSvg', 'url', 'altText'].includes(key)) continue;
     if ((block.kind === 'formula' || block.kind === 'code') && key === 'text') continue;
     if (typeof value === 'string') values.push(value);
     if (Array.isArray(value)) values.push(...value.flat().filter((item) => typeof item === 'string'));

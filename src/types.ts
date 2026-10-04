@@ -102,6 +102,7 @@ export type CalloutVariant = 'info' | 'tip' | 'warning' | 'key' | 'gist' | 'note
 
 /** Satu baris jurnal. Baris kredit diberi indentasi otomatis saat render. */
 export interface JournalLine {
+  date?: string;
   account: string;
   debit?: string;
   credit?: string;
@@ -140,13 +141,15 @@ export type ContentBlock =
   | { kind: 'ol'; items: string[] }
   | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string; compact?: boolean }
   | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
-      /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null> }
+      /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null>;
+      reportHeader?: { entity: string; title: string; period?: string; unit?: string; note?: string };
+      rowRules?: { row: number; columns: number[]; bottom: 'double' }[] }
   | { kind: 'journal'; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
   | { kind: 'code'; text: string; language?: string; caption?: string } // teks literal (mis. SQL), tidak diproses markdown
   | { kind: 'figure'; title?: string; svg?: string; mobileSvg?: string; url?: string; overview?: FigureOverview; transcript?: string[]; transcriptSections?: FigureTranscriptSection[]; mobileFlow?: FigureMobileFlow; caption?: string; altText?: string }
   | { kind: 'example'; title: string; blocks: ContentBlock[] }
-  | { kind: 'solution-reveal'; title: string; prompt?: string; blocks: ContentBlock[]; revealLabel?: string }
+  | { kind: 'solution-reveal'; title: string; prompt?: string; promptBlocks?: ContentBlock[]; blocks: ContentBlock[]; revealLabel?: string }
   // ---- Bacaan berlapis (Reading.layout 'layered') ----
   /** Satu section sebagai kartu. layer: 'fondasi' dan 'main' dihitung dalam waktu baca, 'latihan' tidak. */
   | { kind: 'section'; title?: string; layer: 'fondasi' | 'main' | 'latihan'; source?: string; blocks: ContentBlock[] }
@@ -180,6 +183,7 @@ export interface StatementLine {
   bold?: boolean;
   /** Garis atas tunggal (subtotal) / ganda (total akhir). */
   rule?: 'top' | 'double' | 'none';
+  bottomRule?: 'double';
   /** Perilaku di builder:
    *  - 'header'   : judul bagian, tanpa angka
    *  - 'given'    : angka sudah diberikan (tidak bisa diedit)
@@ -204,6 +208,8 @@ export interface StatementSpec {
   period: string;
   /** Prefiks mata uang, default "Rp". */
   currency?: string;
+  unit?: string;
+  note?: string;
   lines: StatementLine[];
 }
 

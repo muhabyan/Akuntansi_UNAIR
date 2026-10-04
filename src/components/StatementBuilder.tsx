@@ -32,6 +32,8 @@ function Header({ spec, compact = false }: { spec: StatementSpec; compact?: bool
         {spec.partial && <span className="font-semibold text-muted">{spec.partial}</span>}
       </div>
       <div className="mt-1 text-xs font-semibold text-slate-500">{spec.period}</div>
+      {spec.unit && <div className="mt-1 text-xs text-muted">{spec.unit}</div>}
+      {spec.note && <div className="mt-1 text-xs text-muted">{spec.note}</div>}
       {spec.currency && <div className="mt-1 text-[11px] font-bold uppercase tracking-wider text-slate-500">dalam {spec.currency}</div>}
     </div>
   );
@@ -74,10 +76,10 @@ export function StatementFull({ spec }: { spec: StatementSpec }) {
         </div>
       </div>
 
-      <div className="akbi-table-scroll overflow-x-auto p-4 md:p-6">
-        <div className="report-paper mx-auto min-w-[680px] max-w-[920px] rounded-[1.45rem] border p-5 shadow-sm md:p-7">
+      <div className="report-paper mx-4 my-4 min-w-0 max-w-full rounded-[1.45rem] border p-4 shadow-sm md:mx-6 md:p-7">
           <Header spec={spec} />
-          <table className="report-table w-full text-sm">
+        <div className="akbi-table-scroll max-w-full overflow-x-auto" role="region" aria-label={spec.title} tabIndex={0}>
+          <table className="report-table w-full min-w-[520px] text-sm">
             <tbody>
               {spec.lines.map((line, index) => {
                 const isHeader = line.kind === 'header';
@@ -86,7 +88,7 @@ export function StatementFull({ spec }: { spec: StatementSpec }) {
                     <td className="report-label py-2.5 pr-4" style={pad(line.indent)}>
                       {isHeader ? <span>{line.label}</span> : line.label}
                     </td>
-                    <td className={`report-amount py-2.5 text-right font-mono tabular-nums ${ruleClass(line.rule)}`}>
+                    <td className={`report-amount py-2.5 text-right font-mono tabular-nums ${ruleClass(line.rule)} ${line.bottomRule === 'double' ? 'report-rule-bottom-double' : ''}`}>
                       {isHeader ? '' : fmt(line.amount, line.bracket)}
                     </td>
                   </tr>

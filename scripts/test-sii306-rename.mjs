@@ -70,9 +70,9 @@ const content = await loadCourseContent('SII306');
 assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), Array.from({ length: 14 }, (_, i) => i + 1));
 assert.deepEqual(Object.keys(content.reviews).sort(), ['uas', 'uts']);
 const cards = getFlashcards('SII306');
-assert.equal(cards.length, 84);
+assert.equal(cards.length, 105);
 assert.equal(sia[0].flashcardCount, cards.length, 'catalog flashcardCount matches the deck');
-for (const card of cards) assert.match(card.id, /^aks301-(?:v2-)?tm\d{2}-\d{2}$/, 'flashcard ids keep the legacy prefix');
+for (const card of cards) assert.match(card.id, /^aks301-(?:v\d+-)?tm\d{2}-\d{2}$/, 'flashcard ids keep the legacy prefix across deck versions');
 assert.deepEqual(getQuizSets('SII306').map((set) => set.id), ['uts', 'uas', 'all']);
 assert.ok(getQuizSets('SII306').every((set) => set.items.length > 0) && getQuiz('SII306').length > 0);
 assert.deepEqual(getBankSoalSets('SII306').map((set) => set.id), ['uts', 'uas', 'all']);
@@ -81,7 +81,7 @@ assert.ok(getBankSoalSets('SII306').every((set) => set.items.length > 0) && getB
 // Legacy access also works via compatibility layer
 const legacyContent = await loadCourseContent('AKS301');
 assert.equal(Object.keys(legacyContent.readings).length, 14);
-assert.equal(getFlashcards('AKS301').length, 84);
+assert.equal(getFlashcards('AKS301').length, cards.length);
 assert.equal(getQuiz('AKS301').length, getQuiz('SII306').length);
 assert.equal(getBankSoal('AKS301').length, getBankSoal('SII306').length);
 
