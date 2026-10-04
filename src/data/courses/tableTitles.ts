@@ -43,6 +43,7 @@ export function withTableTitles(reading: Reading): Reading {
     let section = parent;
     let mainSection = parent;
     let lead: string | undefined;
+    let exhibit: string | undefined;
     const named = blocks.map((block): ContentBlock => {
       if (block.kind === 'h2' || block.kind === 'h3') {
         const heading = subject(block.text);
@@ -50,10 +51,18 @@ export function withTableTitles(reading: Reading): Reading {
         section = isGeneric(heading) ? `${context} — ${heading}` : heading;
         if (block.kind === 'h2') mainSection = section;
         lead = undefined;
+        exhibit = undefined;
       } else if (block.kind === 'p') {
         // Only standalone labels, not the bold first word of a definition paragraph.
-        const label = block.text.match(/^\*\*([^*\n]+)\*\*(?:\s*\[hal\.[^\]]*\])?[.:]?$/)?.[1];
-        if (label) lead = subject(label);
+        const label = block.text.match(/^\*\*([^*\n]+)\*\*(?:\s*\[hal\.[^\]]*\])?[.:]?$/)?.[1]
+          // A short colon-ended introduction is often more precise than the full case question.
+          ?? block.text.match(/^([^*\n]{8,160}):\s*$/)?.[1];
+        if (label) {
+          lead = subject(label);
+          exhibit = lead.match(/^(Exhibit\s+[\d.]+)\s*:/i)?.[1];
+        }
+        const part = block.text.match(/^\(([a-z])\)\s+([^.!?\n]+)[.!?](?:\s|$)/i)?.[2];
+        if (part) lead = `${exhibit ? `${exhibit} — ` : ''}${subject(part)}`;
       }
       if (block.kind === 'table') {
         const title = block.title || block.reportHeader?.title || captionTitle(block.caption) || lead || section;

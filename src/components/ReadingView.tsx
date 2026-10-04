@@ -1,3 +1,4 @@
+import TableHeading from './course/TableHeading';
 import { getTableTitle, withTableTitles } from '../data/courses/tableTitles';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import {
@@ -228,7 +229,7 @@ function Block({ block }: { block: ContentBlock }) {
       return (
         <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
           <table className="w-full min-w-[720px] text-[14px] text-left text-gray-800 dark:text-gray-200 border-collapse">
-            <caption className="bg-gray-50 px-4 py-3 text-left text-[15px] font-bold leading-snug text-blue-800 dark:bg-gray-800 dark:text-blue-300">{getTableTitle(block)}</caption>
+            <caption className="text-left"><TableHeading title={getTableTitle(block)} /></caption>
             <thead className="text-[12.5px] font-bold uppercase tracking-wider bg-gray-50/95 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-700">
               <tr>
                 {block.headers.map((h, i) => (

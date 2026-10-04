@@ -84,6 +84,12 @@ try {
     counts[code] = count;
   }
 
+  const management = await loadCourseContent('MNU108');
+  const managementTables = flatten(withTableTitles(management.readings[7]).blocks).filter((block) => block.kind === 'table');
+  assert.ok(managementTables.some((table) => table.title === 'Gambaran struktur awal (dalam bentuk tabel hubungan lapor)'), 'use the existing introduction instead of repeating the complete Q1');
+  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur lama (tall)'), 'name the old organization chart');
+  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur baru (flat)'), 'distinguish the new organization chart');
+
   // Check both layouts, including a table inside an expanded disclosure.
   const table = tables[0];
   const html = renderToStaticMarkup(React.createElement(SharedFrameContext.Provider, { value: true },

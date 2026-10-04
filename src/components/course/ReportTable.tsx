@@ -1,3 +1,4 @@
+import TableHeading from './TableHeading';
 import { getTableTitle } from '../../data/courses/tableTitles';
 import type { ContentBlock } from '../../types';
 import { renderText } from './MarkdownContent';
@@ -7,7 +8,7 @@ export default function ReportTable({ block }: { block: Extract<ContentBlock, { 
   const header = block.reportHeader;
   return (
     <section className="akk203-report-table my-5 min-w-0 max-w-full rounded-xl border border-line bg-surface p-3 text-ink">
-      {!header && <p className="course-table-title mb-3 text-[15px] font-bold leading-snug">{getTableTitle(block)}</p>}
+      {!header && <TableHeading title={getTableTitle(block)} flat />}
       {header && <header className="mb-4 text-center leading-relaxed">
         <p className="font-bold">{header.entity}</p>
         <p className="font-bold">{header.title}</p>

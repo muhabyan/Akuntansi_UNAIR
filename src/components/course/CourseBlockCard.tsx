@@ -1,6 +1,7 @@
 import { useId, useState } from 'react';
 import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2, Calculator, PencilLine, LineChart } from 'lucide-react';
 import ReportTable from './ReportTable';
+import TableHeading from './TableHeading';
 import type { ContentBlock } from '../../types';
 import { getTableTitle } from '../../data/courses/tableTitles';
 import { renderText } from './MarkdownContent';
@@ -389,12 +390,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const flatTable = layered && insideBox;
         const tableCard = (
           <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
-            <div className={`flex items-start justify-between gap-3 border-b border-gray-200/80 dark:border-gray-700/60 ${flatTable ? 'py-3' : 'px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50'}`}>
-              <div className="course-table-title flex min-w-0 items-start gap-2 text-[15px] font-bold leading-snug text-blue-800 dark:text-blue-300">
-                <Table2 size={16} className="mt-0.5 shrink-0" aria-hidden="true" /> <span>{tableLabel}</span>
-              </div>
-              <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
-            </div>
+            <TableHeading title={tableLabel} flat={flatTable} hint={
+              <span className="md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
+            } />
             {isFinancialGlossary && (
               <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">
                 {block.rows.map((row, index) => (
@@ -490,15 +488,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       }
       return (
         <div className="course-table-card course-economic-table mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
-          <div className="course-solid-head flex flex-wrap items-center justify-between gap-2 border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
-            <div className="course-table-title flex min-w-0 items-start gap-2 text-[15px] font-bold leading-snug text-blue-800 dark:text-blue-300">
-              <Table2 size={16} className="mt-0.5 shrink-0" aria-hidden="true" /> <span>{tableLabel}</span>
-            </div>
-            <div className="text-right text-xs font-medium text-slate-600 dark:text-slate-400">
-              {block.rows.length} baris · {block.headers.length} kolom
-              <span className="block text-[11px] md:hidden">geser untuk kolom lain →</span>
-            </div>
-          </div>
+          <TableHeading title={tableLabel} hint={
+            <>{block.rows.length} baris · {block.headers.length} kolom<span className="block md:hidden">Geser untuk kolom lain →</span></>
+          } />
           <div 
             className="akbi-table-scroll w-full overflow-x-auto" 
             role="region" 

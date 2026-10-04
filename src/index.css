@@ -1323,4 +1323,41 @@ html.dark body .driver-popover.driverjs-theme .driver-popover-navigation-btns bu
 .akk203-diagram { color: rgb(var(--text-primary)); }
 
 /* Descriptive table titles wrap naturally in cards and narrow layouts. */
-.course-table-title { overflow-wrap: anywhere; text-transform: none; letter-spacing: normal; }
+/* Keep the descriptive title separate from column labels; reuse the site's palette. */
+.course-table-heading {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: .75rem;
+  padding: .95rem 1.1rem;
+  border-bottom: 1px solid rgb(var(--border));
+  background: rgb(var(--surface-elevated));
+}
+.course-table-heading--flat { padding-inline: 0; background: transparent; }
+.course-table-heading-icon { margin-top: 1.05rem; color: rgb(var(--accent)); }
+.course-table-eyebrow {
+  margin-bottom: .25rem;
+  color: rgb(var(--accent));
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.course-table-title {
+  overflow-wrap: anywhere;
+  color: rgb(var(--text-primary));
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.course-table-hint { align-self: end; color: rgb(var(--text-secondary)); font-size: 11px; line-height: 1.5; }
+.course-table-hint:has(> .md\:hidden) { display: none; }
+@media (max-width: 767px) {
+  .course-table-heading { grid-template-columns: 18px minmax(0, 1fr); gap: .6rem; padding: .85rem 1rem; }
+  .course-table-heading--flat { padding-inline: 0; }
+  .course-table-hint { grid-column: 2; }
+  .course-table-hint:has(> .md\:hidden) { display: block; }
+}
