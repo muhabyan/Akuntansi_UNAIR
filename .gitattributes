@@ -1,0 +1,4 @@
+# Preserve source-package fingerprints on Windows and Linux checkouts.
+scripts/fixtures/akk203/tm01.md -text
+scripts/fixtures/akk203/tm02.md -text
+scripts/fixtures/akk203/tm03.md -text

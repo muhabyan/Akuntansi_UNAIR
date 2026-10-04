@@ -1,0 +1,66 @@
+{
+  "src/data/asp/aspData.ts": {
+    "worktree": "d946420b70457616b511e57d267706b0acca164b0485579742147827a4f788f4",
+    "repository": "97ab66f72693da0b34a7f66a24e9ca09b56789f8099f6fc0872b8fa6881d6af3"
+  },
+  "src/data/asp/aspPracticeCases.ts": {
+    "worktree": "3951b301c98829d8505b90e67a85b7a054f28767123d48afbe9cbd8aee3325d9",
+    "repository": "105394f20495d78117e79502ec50d2abf9de0edff24d38ba8fce16622571e9c8"
+  },
+  "src/data/asp/modules/tm10.ts": {
+    "worktree": "5dc319e4e8594c7be20076e652b8ba177f500aa2cd991b0f60123b8cbf22a873",
+    "repository": "daaf7ec676d40f1fdf5dcd83d26ece01de1d5a3f31822768d17cbf0abe2d0cfc"
+  },
+  "src/data/asp/modules/tm11.ts": {
+    "worktree": "4da3e01f81912c17bd3e1035337ec2d9ced1b6398e5a55c592b26e1638120b95",
+    "repository": "27051ba4ecc07285f2324a7e72a9753912265b01ea19250ea03f95b01a6cd38d"
+  },
+  "src/data/asp/modules/tm12.ts": {
+    "worktree": "d5f1ec26689a4daeea688fce2528deb6344f6e16f7601bf54f1ea043dd2e84ed",
+    "repository": "03f8078fe312685d043c694ac90e9ed6eafa6a347f8c41ef06a6457c703f9149"
+  },
+  "src/data/asp/modules/tm13.ts": {
+    "worktree": "c49d692df66404da197f5e53328db1d735865fda8faba53d4f63cc18c2ce80fc",
+    "repository": "0492a98cc6a97d5f757cacdd1ad28fd4c5a13582da1edac72d53b364798514da"
+  },
+  "src/data/asp/modules/tm14.ts": {
+    "worktree": "279213ceb1582dbf3f447f1eb28b28d929dacb6d94b0422e30894dacf4971705",
+    "repository": "9664e65329cbbe1081ca1fae32394816ea9ab7f45a24dd2ee9c21eef6e12c584"
+  },
+  "src/data/asp/modules/tm4.ts": {
+    "worktree": "e5eb1f81b49781b01f8bc6e57525191c9b8b3e17ba973e979722139111f2f98c",
+    "repository": "52a3ee5bd95cddd7ceacfd48fe075cbc9b090e72964ff43b190b0d3e0f3bfc4f"
+  },
+  "src/data/asp/modules/tm5.ts": {
+    "worktree": "f7c913d707e299054141a0b116be0e4ecfc6b7d2b986452e5470574edb453269",
+    "repository": "6e34a901c60844ff4242f8e6f9e80e984f7a935836bb0bb5ee9a62c247086df5"
+  },
+  "src/data/asp/modules/tm6.ts": {
+    "worktree": "6a578304838cf839aa83776e46b7dfe9f8989e3a53a803106484089f22513b77",
+    "repository": "f7ed3c4f1d90b8899f1d6fd5ab8312760d898fafd6d140385633e7e88c0e1fdf"
+  },
+  "src/data/asp/modules/tm7.ts": {
+    "worktree": "49af53bc6b7b33a0aa215234627627a629c7a330bb3da346ea852c8f4e43fe33",
+    "repository": "c4f2107dc3fdca08398c2509a7af7356cfe5ae1013fcf06d3d6cc8ef44718a5d"
+  },
+  "src/data/asp/modules/tm8.ts": {
+    "worktree": "c712639ca841f23007f44028b6e57512ffd51ee8ccde56b7eab1d7ea7f7c0f7d",
+    "repository": "9de11931e5cdbea2fd9fa6b58b1ef252ef8ca1ec5890819e5ec916c54035ed12"
+  },
+  "src/data/asp/modules/tm9.ts": {
+    "worktree": "1f05278c12a5504793cca5d6c9fd76a4e581685d62d9df16fb410e4e2376314e",
+    "repository": "df50f6e199869b3e50e0a06d5e9e9cc434c4e4f9f7eaee5e01fdcf3e5f78156f"
+  },
+  "src/data/banksoal/aks201.ts": {
+    "worktree": "37789c06e1df93271b6954295e3d59b1b534b06b86c1629d70e0e1549f993add",
+    "repository": "03c811dbdd255bec587ecd84214a036a8851b620ada4139261fd4b3c9b9b5fd5"
+  },
+  "src/data/quizzes/aks201.ts": {
+    "worktree": "93858cba4b2dfe5a392947d665332ceaf15b447c8eebd1af471203791f632e0d",
+    "repository": "13248ef0a8cb1d90fb9fd946dc8573a6785ec38b0a8944fb68225983fc004dc5"
+  },
+  "src/data/flashcards/aks201.ts": {
+    "worktree": "2638e994216ec22b56cbf4de26ebb0ab4b360432b409b0687f45df615527e761",
+    "repository": "9b9a854495871b286c3d748ba4e8dfbf8437398aaf2e722fa9a81e4590be508d"
+  }
+}
