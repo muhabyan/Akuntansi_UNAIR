@@ -16,6 +16,7 @@ export const TM1_READING: Reading = {
     "Informasi yang baik harus relevan, andal, dapat dibandingkan, dan dapat dipahami. [KK par.35]"
   ],
   "layout": "layered",
+  "coreReadingMinutes": 20,
   "blocks": [
     {
       "kind": "p",

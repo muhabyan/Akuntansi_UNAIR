@@ -5,6 +5,7 @@ import type { Reading } from '../../types';
 import { renderText } from './MarkdownContent';
 import { BackToTopButton, estimateLayeredReading, InlineMarkdown, isSourceOnly, SourceLine } from './LayeredBlocks';
 import { getReadingBlockId } from './ReadingOutline';
+import { getReadingSubtitle } from './readingPresentation';
 
 interface CourseHeaderProps {
   courseName: string;
@@ -56,8 +57,8 @@ function LayeredEntry({ courseName, reading, onBack, badge, phase }: { courseNam
         </span>
         <span className="ml-auto flex items-center gap-2 text-xs">
           <span className="rounded-md bg-blue-50 px-2 py-1 font-bold text-blue-700 dark:bg-blue-950/45 dark:text-blue-300">{badge}</span>
-          <span className="inline-flex items-center gap-1 text-gray-500 dark:text-gray-400" title={`${readingTime.words} kata di Fondasi dan isi utama, 180 kata per menit`}>
-            <Clock size={13} aria-hidden="true" /> Sekitar {readingTime.minutes} menit baca
+          <span className="inline-flex items-center gap-1 text-gray-500 dark:text-gray-400" title={reading.coreReadingMinutes ? 'Estimasi Inti dari paket bacaan, termasuk visual dan self-check' : `${readingTime.words} kata di Fondasi dan isi utama, 180 kata per menit`}>
+            <Clock size={13} aria-hidden="true" /> Sekitar {reading.coreReadingMinutes ?? readingTime.minutes} menit baca
           </span>
         </span>
       </div>
@@ -68,7 +69,7 @@ function LayeredEntry({ courseName, reading, onBack, badge, phase }: { courseNam
       {isSourceOnly(reading.intro) ? (
         <div className="mt-2 max-w-[70ch]"><SourceLine text={reading.intro} /></div>
       ) : (
-        <div className="mt-3 max-w-[720px] text-base leading-[1.65] text-secondary md:text-[18px]">{renderText(reading.intro)}</div>
+        <div className="mt-3 max-w-[720px] text-base leading-[1.65] text-secondary md:text-[18px]">{renderText(getReadingSubtitle(reading))}</div>
       )}
 
       {reading.objectives.length > 0 ? (

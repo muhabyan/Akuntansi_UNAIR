@@ -17,6 +17,7 @@ export const TM3_READING: Reading = {
     "Tahun penetapan standar dapat berbeda dari tahun penerapannya."
   ],
   "layout": "layered",
+  "coreReadingMinutes": 25,
   "blocks": [
     {
       "kind": "section",
