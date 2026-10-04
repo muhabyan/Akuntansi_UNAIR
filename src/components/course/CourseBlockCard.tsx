@@ -1,7 +1,9 @@
 import { useId, useState } from 'react';
 import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2, Calculator, PencilLine, LineChart } from 'lucide-react';
 import ReportTable from './ReportTable';
+import TableHeading from './TableHeading';
 import type { ContentBlock } from '../../types';
+import { getTableTitle } from '../../data/courses/tableTitles';
 import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
@@ -71,10 +73,6 @@ function isEconomicMechanism(text: string): boolean {
 
 function isEconomicAssumption(text: string): boolean {
   return /asumsi|ceteris paribus|dengan syarat|selama kapasitas|jika v stabil|jangka pendek|jangka panjang/i.test(text);
-}
-
-function isEconomicComparison(text: string): boolean {
-  return /perbandingan|dibanding|versus|\bvs\b|nominal.*riil|tertutup.*terbuka|demand-pull.*cost-push/i.test(text);
 }
 
 function splitEconomicFormula(text: string): { title?: string; body: string } {
@@ -380,12 +378,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     case 'table': {
       if (block.reportHeader || block.rowRules?.length) return <ReportTable block={block} />;
       const warning = blockContainsManualWarning(block);
-      const tableText = `${block.headers.join(' ')} ${block.rows.flat().join(' ')}`;
-      const isLegalTable = enableLegalStyling && isLegalContent(tableText);
-      const isComparisonTable = enableLegalStyling && isRegulationComparison(tableText);
 
       if (!enableEconomicStyling) {
-        const tableLabel = isComparisonTable ? 'Tabel Perbandingan Regulasi' : isLegalTable ? 'Tabel Hukum Pajak' : 'Tabel Materi';
+        const tableLabel = getTableTitle(block);
         const isFinancialGlossary = block.headers.length === 4 && block.headers.includes('Nama Finansial');
         // In a layered reading a "Sumber" column is a source reference: small and muted.
         const mutedColumns = block.headers.map((header) => layered && /^sumber$/i.test(header.trim()));
@@ -395,12 +390,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const flatTable = layered && insideBox;
         const tableCard = (
           <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
-            <div className={`${flatTable ? 'hidden' : 'flex'} items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50`}>
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
-                <Table2 size={15} /> {tableLabel}
-              </div>
-              <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
-            </div>
+            <TableHeading title={tableLabel} flat={flatTable} hint={
+              <span className="md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
+            } />
             {isFinancialGlossary && (
               <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">
                 {block.rows.map((row, index) => (
@@ -429,6 +421,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               onTouchEnd={(e) => e.stopPropagation()}
             >
               <table className={`w-full border-collapse text-left ${isFinancialGlossary ? 'min-w-[840px]' : ''}`}>
+                <caption className="sr-only">{tableLabel}</caption>
                 <thead>
                   <tr className="course-table-head">
                     {block.headers.map((h, i) => (
@@ -482,8 +475,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         );
       }
 
-      const economicComparison = isEconomicComparison(`${block.caption ?? ''} ${tableText}`);
-      const tableLabel = economicComparison ? 'Tabel Perbandingan Ekonomi' : 'Tabel Data & Konsep Ekonomi';
+      const tableLabel = getTableTitle(block);
       if (warning) {
         return (
           <div className="course-manual-warning mb-7 rounded-2xl border border-amber-500/40 bg-amber-50 dark:bg-amber-500/10 p-5 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
@@ -496,15 +488,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       }
       return (
         <div className="course-table-card course-economic-table mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
-          <div className="course-solid-head flex flex-wrap items-center justify-between gap-2 border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
-              <Table2 size={15} /> {tableLabel}
-            </div>
-            <div className="text-right text-xs font-medium text-slate-600 dark:text-slate-400">
-              {block.rows.length} baris · {block.headers.length} kolom
-              <span className="block text-[11px] md:hidden">geser untuk kolom lain →</span>
-            </div>
-          </div>
+          <TableHeading title={tableLabel} hint={
+            <>{block.rows.length} baris · {block.headers.length} kolom<span className="block md:hidden">Geser untuk kolom lain →</span></>
+          } />
           <div 
             className="akbi-table-scroll w-full overflow-x-auto" 
             role="region" 
@@ -515,7 +501,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             onTouchEnd={(e) => e.stopPropagation()}
           >
             <table className="w-full border-collapse text-left">
-              <caption className="sr-only">{block.caption ?? tableLabel}</caption>
+              <caption className="sr-only">{tableLabel}</caption>
               <thead>
                 <tr className="course-table-head">
                   {block.headers.map((h, i) => (

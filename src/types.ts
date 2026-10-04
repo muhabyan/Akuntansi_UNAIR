@@ -140,7 +140,7 @@ export type ContentBlock =
   | { kind: 'ul'; items: string[] }
   | { kind: 'ol'; items: string[] }
   | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string; compact?: boolean }
-  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
+  | { kind: 'table'; /** Judul isi tabel; caption untuk sumber atau catatan. */ title?: string; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
       /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null>;
       reportHeader?: { entity: string; title: string; period?: string; unit?: string; note?: string };
       rowRules?: { row: number; columns: number[]; bottom: 'double' }[] }

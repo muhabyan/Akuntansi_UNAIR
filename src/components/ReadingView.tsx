@@ -1,3 +1,5 @@
+import TableHeading from './course/TableHeading';
+import { getTableTitle, withTableTitles } from '../data/courses/tableTitles';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import {
   ArrowLeft, ChevronLeft, ChevronRight, Check,
@@ -227,6 +229,7 @@ function Block({ block }: { block: ContentBlock }) {
       return (
         <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
           <table className="w-full min-w-[720px] text-[14px] text-left text-gray-800 dark:text-gray-200 border-collapse">
+            <caption className="text-left"><TableHeading title={getTableTitle(block)} /></caption>
             <thead className="text-[12.5px] font-bold uppercase tracking-wider bg-gray-50/95 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-700">
               <tr>
                 {block.headers.map((h, i) => (
@@ -369,7 +372,10 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
     return () => { isActive = false; };
   }, [course.code]);
 
-  const reading = courseContent?.readings[tm];
+  const reading = useMemo(() => {
+    const source = courseContent?.readings[tm];
+    return source ? withTableTitles(source) : undefined;
+  }, [courseContent, tm]);
   const outlineItems = useMemo(() => reading ? buildReadingOutline(reading.blocks) : [], [reading]);
   const tms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
   const idx = tms.indexOf(tm);
