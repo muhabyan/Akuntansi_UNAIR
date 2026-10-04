@@ -16,6 +16,7 @@ export const TM2_READING: Reading = {
     "Audit, reviu, dan asurans lain adalah jenis jasa yang berbeda. Permintaan reviu tidak menggantikan kewajiban audit. [UU5/2011 Ps3; UU Yayasan Ps52(3)]"
   ],
   "layout": "layered",
+  "coreReadingMinutes": 22,
   "blocks": [
     {
       "kind": "p",

@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import { comparisonIds, prBModels, prBComparisonCards } from './akk203-pr-b-visuals.mjs';
 
-export const TMS = [1, 2, 3];
+export const TMS = [1, 2, 3, 4, 5];
 export const sourcePath = (tm) => `scripts/fixtures/akk203/tm${String(tm).padStart(2, '0')}.md`;
 export const sourceHash = (tm) => createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
 const clean = (s) => s.replace(/\[TOTAL-AKHIR\]/g, '').trim();
@@ -11,6 +12,7 @@ const escape = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replace
 // Explicit row/edge topology: rows are parallel choices, edges carry direction.
 // A backward edge is feedback, while an undirected edge is a concept relationship.
 const models = {
+  ...prBModels,
   'V-TM01-01': { rows: [['Organisasi sektor publik'], ['Pemerintahan', 'Nonpemerintahan nonlaba'], ['Sumber daya'], ['Layanan'], ['Informasi akuntansi'], ['Pengguna laporan'], ['Keputusan']], edges: [[0,1],[0,2],[1,3],[2,3],[3,4],[4,5],[5,6],[6,7],[7,3,'Umpan balik']] },
   'V-TM01-03': { rows: ['Identifikasi','Pencatatan','Pengukuran','Pengklasifikasian','Pengikhtisaran','Penyajian laporan','Penginterpretasian','Pengguna','Keputusan'].map((s)=>[s]), edges: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,0,'Umpan balik ke pengelolaan']] },
   'V-TM01-04': { rows: [['Informasi untuk keputusan'], ['Relevan: umpan balik, prediktif, tepat waktu, lengkap','Andal: jujur, dapat diverifikasi, netral'], ['Dapat dibandingkan: periode/entitas dan kebijakan','Dapat dipahami: bentuk/istilah/pengguna']], edges: [[0,1,'',false],[0,2,'',false],[0,3,'',false],[0,4,'',false]] },
@@ -40,17 +42,21 @@ function wrap(s, width) {
 
 function diagram(spec) {
   const model = models[spec.id];
-  if (!model) return undefined; // D3: TM01-02 is a comparison already present as a full table.
+  if (!model) {
+    if (comparisonIds.includes(spec.id)) return undefined;
+    throw Error(`Missing visual topology: ${spec.id}`);
+  }
   const nodes = [];
   let y = 70;
   for (const row of model.rows) {
     const w = (780 - (row.length - 1) * 35) / row.length;
-    const lines = row.map((s) => wrap(s, Math.floor((w - 30) / 8.5)));
+    const lines = row.map((s) => wrap(prBModels[spec.id] ? s.replaceAll('/', '/ ') : s, Math.floor((w - 30) / 8.5)));
     const h = Math.max(...lines.map((s) => s.length)) * 23 + 34;
     row.forEach((text, i) => nodes.push({ text, x: 90 + i * (w + 35), y, w, h, lines: lines[i] }));
     y += h + 65;
   }
   const arrow = `${spec.id}-arrow`;
+  const usedLabels = new Map();
   const edges = model.edges.map(([a,b,label='',directed=true], i) => {
     const n = nodes[a], m = nodes[b];
     let d;
@@ -60,17 +66,27 @@ function diagram(spec) {
       const lane = 20 + (i % 5) * 12;
       d = `M${n.x} ${n.y+n.h/2} H${lane} V${m.y+m.h/2} H${m.x}`;
     }
-    return `<path d="${d}" fill="none" stroke="currentColor" stroke-width="2" ${directed ? `marker-end="url(#${arrow})"` : ''}/>${label ? `<text class="svg-muted" x="${n.x+n.w/2}" y="${n.y+n.h+23}" text-anchor="middle" font-size="12">${escape(label)}</text>` : ''}`;
+    const labelX = prBModels[spec.id] && m.y > n.y ? (n.x+n.w/2+m.x+m.w/2)/2 : n.x+n.w/2;
+    let labelY = n.y+n.h+23, showLabel = Boolean(label);
+    if (prBModels[spec.id] && label) {
+      const key = `${labelX},${labelY}`, labels = usedLabels.get(key) ?? [];
+      showLabel = !labels.includes(label);
+      labelY += labels.length * 18;
+      if (showLabel) { labels.push(label); usedLabels.set(key,labels); }
+    }
+    return `<path d="${d}" fill="none" stroke="currentColor" stroke-width="2" ${directed ? `marker-end="url(#${arrow})"` : ''}/>${showLabel ? `<text class="svg-muted" x="${labelX}" y="${labelY}" text-anchor="middle" font-size="12">${escape(label)}</text>` : ''}`;
   }).join('');
   return `<svg class="course-diagram-svg akk203-diagram" viewBox="0 0 960 ${y+20}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,sans-serif"><title>${escape(spec.judul)}</title><desc>${escape(spec['alt text'])}</desc><defs><marker id="${arrow}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="currentColor"/></marker></defs><rect class="svg-bg" width="960" height="${y+20}" rx="16"/><text class="svg-title" x="480" y="35" text-anchor="middle" font-size="21" font-weight="700">${escape(spec.judul)}</text>${edges}${nodes.map((n) => `<rect class="svg-card" x="${n.x}" y="${n.y}" width="${n.w}" height="${n.h}" rx="10"/><text class="svg-text" x="${n.x+n.w/2}" y="${n.y+29}" text-anchor="middle" font-size="17">${n.lines.map((l,i)=>`<tspan x="${n.x+n.w/2}" dy="${i?23:0}">${escape(l)}</tspan>`).join('')}</text>`).join('')}</svg>`;
 }
 
 function figure(spec, adjacentTable) {
   let cards;
-  if (spec.id === 'V-TM01-02') {
+  if (spec.id === 'V-TM04-03' || spec.id === 'V-TM04-06') {
+    cards = prBComparisonCards(spec.id, adjacentTable);
+  } else if (spec.id === 'V-TM01-02' || spec.id === 'V-TM05-02' || models[spec.id]?.tableCards) {
     cards = adjacentTable.rows.map((r) => ({ title: plain(r[0]), subtitle: '', items: r.slice(1).map((v,i)=>`${plain(adjacentTable.headers[i+1])}: ${plain(v)}`), takeaway: '' }));
   } else {
-    cards = models[spec.id].rows.flat().map((s)=>({ title: s, subtitle: '', items: [], takeaway: '' }));
+    cards = models[spec.id].cards ?? models[spec.id].rows.flat().map((s)=>({ title: s, subtitle: '', items: [], takeaway: '' }));
   }
   return { kind: 'figure', title: spec.judul, svg: diagram(spec), overview: { heading: spec.judul, cards, footer: spec.hubungan }, caption: `${spec['pesan utama']} [${spec.sumber}]`, altText: spec['alt text'] };
 }
@@ -173,7 +189,10 @@ export function buildReading(tm) {
   const kilat=blocks.find((b)=>b.layer==='fondasi');
   const intro=kilat.blocks.find((b)=>b.kind==='callout')?.text ?? '';
   const objectives=kilat.blocks.find((b)=>b.kind==='ul'||b.kind==='ol')?.items ?? [];
-  return {tm,title,ref:'Akuntansi Sektor Publik',intro,objectives,layout:'layered',blocks};
+  const coreReadingMinutes = blocks.filter((b)=>b.kind==='section'&&b.layer==='main')
+    .reduce((sum,b)=>sum+Number(b.title.match(/\((\d+) menit\)/)?.[1]??0),0);
+  if (!coreReadingMinutes) throw Error(`TM${tm}: missing Inti reading minutes`);
+  return {tm,title,ref:'Akuntansi Sektor Publik',intro,objectives,layout:'layered',coreReadingMinutes,blocks};
 }
 
 export function flatten(blocks) { return blocks.flatMap((b)=>[b,...flatten(b.blocks??[]),...flatten(b.promptBlocks??[]),...flatten(b.answer??[])]); }

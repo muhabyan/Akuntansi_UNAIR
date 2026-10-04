@@ -26,6 +26,7 @@ import CourseSidebar from './CourseSidebar';
 import CourseHeader from './CourseHeader';
 import CourseBlockCard from './CourseBlockCard';
 import { renderText } from './MarkdownContent';
+import { getReadingSubtitle } from './readingPresentation';
 import ProgressCheckbox from './ProgressCheckbox';
 import QuizCard from './QuizCard';
 import PteQuizCard from './PteQuizCard';
@@ -645,7 +646,7 @@ function MaterialCard({
           {reading.title}
         </h3>
         <div className="mt-1 line-clamp-1 text-xs leading-relaxed text-gray-500 dark:text-gray-400 md:text-sm">
-          {renderText(reading.intro)}
+          {renderText(getReadingSubtitle(reading))}
         </div>
       </button>
 

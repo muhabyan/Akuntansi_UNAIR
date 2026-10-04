@@ -304,6 +304,8 @@ export interface Reading {
   title: string;
   ref?: string;
   intro: string;
+  /** Approved Inti duration, including diagrams and self checks; excludes optional depth and practice. */
+  coreReadingMinutes?: number;
   objectives: string[];
   blocks: ContentBlock[];
   /** 'layered': Pintu masuk, Fondasi, section terbuka (tanpa kartu), pendalaman tertutup, latihan tersembunyi. */
