@@ -734,7 +734,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               <div className="hidden md:block"><CourseBlockCard block={{ ...block, overview: undefined, caption: undefined }} isSimulation={isSimulation} /></div>
               <details className="m-3 rounded-xl border border-line p-3 md:hidden"><summary className="cursor-pointer text-sm font-bold">Perbesar diagram rinci</summary><CourseBlockCard block={{ ...block, overview: undefined, caption: undefined }} isSimulation={isSimulation} /></details>
             </>}
-            <div className={`grid grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-5 ${block.svg ? 'md:hidden' : ''}`} role="group" aria-label={block.altText ?? overview.heading}>
+              <div className={`grid grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-5 ${block.svg && !block.sourceImages ? 'md:hidden' : ''}`} role="group" aria-label={block.altText ?? overview.heading}>
               {overview.cards.map((card, index) => (
                 <section key={index} className={`min-w-0 rounded-xl border p-4 ${accents[index % accents.length]}`}>
                   <h4 className="text-base font-bold leading-snug text-slate-900 dark:text-slate-100">{card.title}</h4>
@@ -745,7 +745,19 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                   {card.takeaway && <p className="mt-4 border-t border-slate-300/70 pt-3 text-sm font-semibold leading-relaxed text-slate-700 dark:border-slate-600 dark:text-slate-300">{card.takeaway}</p>}
                 </section>
               ))}
-            </div>
+              </div>
+              {block.sourceImages && <div className="grid min-w-0 grid-cols-1 gap-4 p-4 lg:grid-cols-2" aria-label="Cuplikan laporan asli">
+                {block.sourceImages.map((source) => <section key={source.url} className="min-w-0 rounded-xl border border-line p-3">
+                  <h4 className="font-bold">{source.title}</h4>
+                  <a href={source.sourceUrl} target="_blank" rel="noopener noreferrer" className="my-3 inline-flex rounded-lg border border-line px-3 py-2 text-sm font-bold text-blue-700 dark:text-blue-300">Buka PDF asli ↗</a>
+                  <details>
+                    <summary className="cursor-pointer text-sm font-bold">Perbesar cuplikan asli</summary>
+                    <div className="akbi-table-scroll mt-3 max-w-full overflow-x-auto" role="region" aria-label={source.altText} tabIndex={0}>
+                      <img src={source.url} alt={source.altText} loading="lazy" className="h-auto w-[900px] max-w-none bg-white" />
+                    </div>
+                  </details>
+                </section>)}
+              </div>}
             {overview.footer && <p className="border-t border-slate-200 px-5 py-3 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:text-slate-300">{overview.footer}</p>}
             {block.caption && <figcaption className="border-t border-slate-200 bg-slate-50 px-5 py-3 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800/50 dark:text-slate-300">{renderText(block.caption)}</figcaption>}
           </figure>

@@ -25,7 +25,7 @@ try {
   cdp=new Cdp(targets.find((t)=>t.type==='page').webSocketDebuggerUrl);await cdp.open();await cdp.send('Page.enable');await cdp.send('Runtime.enable');
   await cdp.send('Page.addScriptToEvaluateOnNewDocument',{source:"try { localStorage.setItem('aks1_has_seen_tour','true'); } catch {}"});
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:375,height:844,deviceScaleFactor:1,mobile:true});
-  for(const tm of [1,2,3,4,5]) for(const theme of ['light','dark']) {
+  for(const tm of [1,2,3,4,5,6,7]) for(const theme of ['light','dark']) {
     await cdp.send('Page.navigate',{url:`http://127.0.0.1:${port}/course/AKS201`});
     for(let i=0;i<100;i++){if(await cdp.eval(`Boolean(document.querySelector('button[aria-label^="Buka TM ${tm}:"]'))`))break;await sleep(100);}
     const cardSubtitle=await cdp.eval(`document.querySelector('button[aria-label^="Buka TM ${tm}:"]').closest('article').querySelector('.line-clamp-1').innerText`);
@@ -37,7 +37,7 @@ try {
     assert.equal(state.overflow,0,`TM${tm} ${theme}: default page overflow`);assert.equal(state.solutions.length,20);assert.ok(state.solutions.every((s)=>s==='false'),'solutions default closed');
     assert.ok(state.pendalaman.every((s)=>s==='false'),'depth default closed');
     const entry=await cdp.eval(`({text:document.querySelector('.reading-header').innerText,subtitle:document.querySelector('.reading-header .text-secondary').innerText})`);
-    assert.match(entry.text,new RegExp('Sekitar '+({1:20,2:22,3:25,4:25,5:22}[tm])+' menit baca'),'approved Inti minutes shown');
+    assert.match(entry.text,new RegExp('Sekitar '+({1:20,2:22,3:25,4:25,5:22,6:25,7:25}[tm])+' menit baca'),'approved Inti minutes shown');
     assert.match(entry.subtitle,/^\p{Lu}/u,'subtitle starts with a capital');
     await cdp.eval("[...document.querySelectorAll('button')].filter(b=>b.textContent.includes('Buka pendalaman:')||b.textContent.includes('Tampilkan penyelesaian dan jawaban akhir')||b.textContent.includes('Saya sudah mencoba')).forEach(b=>b.click())");
     await sleep(150);await cdp.eval("[...document.querySelectorAll('button')].filter(b=>b.textContent.includes('Lihat contoh jawaban')).forEach(b=>b.click())");await sleep(200);
@@ -48,9 +48,14 @@ try {
       const totals=[...document.querySelectorAll('.reading-document td')].filter(e=>visible(e)&&getComputedStyle(e).borderBottomStyle==='double').map(e=>({text:e.innerText,width:getComputedStyle(e).borderBottomWidth}));
       return {overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,figures:figures.length,tables,totals,text:document.querySelector('.reading-document').innerText,solutions:[...document.querySelectorAll('.course-solution-surface button[aria-expanded]')].map(b=>({expanded:b.getAttribute('aria-expanded'),panel:!!document.getElementById(b.getAttribute('aria-controls'))}))};
     })()`);
-    assert.equal(state.overflow,0,`TM${tm} ${theme}: expanded overflow`);assert.equal(state.figures,{1:4,2:5,3:8,4:8,5:9}[tm]);assert.ok(state.tables.every((t)=>Math.abs(t.scroll-t.max)<=1),'local tables reach last column');assert.ok(state.solutions.every((s)=>s.expanded==='true'&&s.panel));
+    assert.equal(state.overflow,0,`TM${tm} ${theme}: expanded overflow`);assert.equal(state.figures,{1:4,2:5,3:8,4:8,5:9,6:9,7:8}[tm]);assert.ok(state.tables.every((t)=>Math.abs(t.scroll-t.max)<=1),'local tables reach last column');assert.ok(state.solutions.every((s)=>s.expanded==='true'&&s.panel));
     assert.doesNotMatch(state.text,/\*\*|\|--|```|:::|\[TOTAL-AKHIR\]|\b(?:BELUM|TERVERIFIKASI)\b/);
-    assert.equal(state.totals.length,{1:0,2:4,3:4,4:3,5:5}[tm],`TM${tm}: total cells`);assert.ok(state.totals.every((t)=>t.width==='3px'));
+    assert.equal(state.totals.length,{1:0,2:4,3:4,4:3,5:5,6:8,7:10}[tm],`TM${tm}: total cells`);assert.ok(state.totals.every((t)=>t.width==='3px'));
+    if(tm>=6) {
+      for(const amount of ['1.450.000','52.650.000','73.000.000','23.120.000','291.740.000','318.940.000']) assert.ok(state.text.includes(amount),`dataset amount rendered: ${amount}`);
+      assert.equal(await cdp.eval("document.querySelectorAll('.reading-document .course-journal-card').length"),tm===6?29:43);
+      assert.ok(!state.totals.some((t)=>t.text==='n/a'||t.text.includes('%')),'only nominal cells receive double underline');
+    }
     if(tm===2) assert.ok(!state.totals.some((t)=>/^(735|315)$/.test(t.text)),'ordinary class amounts have no double rule');
     const count=state.figures;
     for(let i=0;i<count;i++) {
@@ -66,18 +71,23 @@ try {
     }
     const details=await cdp.eval(`(()=>{document.querySelectorAll('.reading-document figure details').forEach(e=>e.open=true);const areas=[...document.querySelectorAll('.reading-document .akbi-table-scroll')].filter(e=>e.checkVisibility()).map(e=>{e.scrollLeft=e.scrollWidth;return {scroll:e.scrollLeft,max:e.scrollWidth-e.clientWidth};});return {overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,areas};})()`);
     assert.equal(details.overflow,0,'expanded diagram overflow');assert.ok(details.areas.every(e=>Math.abs(e.scroll-e.max)<=1),'detailed SVG reaches right edge');
+    if(tm===7) {
+      const sourceImages=await cdp.eval(`(async()=>{const images=[...document.querySelectorAll('.reading-document img[src^="/assets/akk203/"]')];for(const img of images){img.scrollIntoView({block:'center'});await img.decode();}return images.map(img=>({width:img.naturalWidth,alt:img.alt,link:img.closest('section').querySelector('a').href}));})()`);
+      assert.equal(sourceImages.length,2);assert.ok(sourceImages.every((s)=>s.width>500&&s.alt&&/\.pdf#page=(19|47)$/.test(s.link)),'original LPSAL images load with PDF page links');
+      assert.equal(await cdp.eval('document.documentElement.scrollWidth-document.documentElement.clientWidth'),0,'original source pages scroll locally');
+    }
     report.push({tm,theme,width:375,overflow:state.overflow,figures:state.figures,scrollAreas:state.tables.length,totalCells:state.totals,entry,cardSubtitle,diagramScrollAreas:details.areas.length});
     console.log(`TM${tm} ${theme} 375px PASS: ${state.figures} figures, ${state.tables.length} scroll areas, overflow 0`);
   }
   await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:900,deviceScaleFactor:1,mobile:false});
-  const desktop=await cdp.eval("({svgs:[...document.querySelectorAll('.reading-document .akk203-diagram')].filter(e=>e.getClientRects().length).length,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth})");assert.equal(desktop.svgs,8);assert.equal(desktop.overflow,0);
-  for(const tm of [4,5]) {
+  const desktop=await cdp.eval("({svgs:[...document.querySelectorAll('.reading-document .akk203-diagram')].filter(e=>e.getClientRects().length).length,overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth})");assert.equal(desktop.svgs,7);assert.equal(desktop.overflow,0);
+  for(const tm of [4,5,6,7]) {
     await cdp.send('Page.navigate',{url:`http://127.0.0.1:${port}/course/AKS201`});
     for(let i=0;i<100;i++){if(await cdp.eval(`Boolean(document.querySelector('button[aria-label^="Buka TM ${tm}:"]'))`))break;await sleep(100);}
     await cdp.eval(`document.querySelector('button[aria-label^="Buka TM ${tm}:"]').click()`);
     for(let i=0;i<100;i++){if(await cdp.eval("Boolean(document.querySelector('.reading-document .layered-section'))"))break;await sleep(100);}
     await cdp.eval("[...document.querySelectorAll('button')].filter(b=>b.textContent.includes('Buka pendalaman:')).forEach(b=>b.click())");await sleep(300);
-    const svgs=await cdp.eval("[...document.querySelectorAll('.reading-document .akk203-diagram')].filter(e=>e.checkVisibility()).length");assert.equal(svgs,{4:6,5:8}[tm]);
+    const svgs=await cdp.eval("[...document.querySelectorAll('.reading-document .akk203-diagram')].filter(e=>e.checkVisibility()).length");assert.equal(svgs,{4:6,5:8,6:8,7:7}[tm]);
     const clipped=await cdp.eval(`(()=>{const issues=[];for(const svg of [...document.querySelectorAll('.reading-document .akk203-diagram')].filter(e=>e.checkVisibility()))for(const text of svg.querySelectorAll('text.svg-text')){const box=text.previousElementSibling.getBBox(),label=text.getBBox();if(label.x<box.x-1||label.x+label.width>box.x+box.width+1||label.y<box.y-1||label.y+label.height>box.y+box.height+1)issues.push(text.textContent);}return issues;})()`);
     assert.deepEqual(clipped,[],`TM${tm}: all SVG node labels fit their cards`);
     for(let i=0;i<svgs;i++) {
