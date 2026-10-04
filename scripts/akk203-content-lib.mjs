@@ -1,8 +1,10 @@
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
-import { comparisonIds, prBModels, prBComparisonCards } from './akk203-pr-b-visuals.mjs';
+import { comparisonIds as prBComparisonIds, prBModels, prBComparisonCards } from './akk203-pr-b-visuals.mjs';
+import { prCModels, prCComparisonIds } from './akk203-pr-c-visuals.mjs';
 
-export const TMS = [1, 2, 3, 4, 5];
+export const TMS = [1, 2, 3, 4, 5, 6, 7];
+export const comparisonIds = [...prBComparisonIds, ...prCComparisonIds];
 export const sourcePath = (tm) => `scripts/fixtures/akk203/tm${String(tm).padStart(2, '0')}.md`;
 export const sourceHash = (tm) => createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
 const clean = (s) => s.replace(/\[TOTAL-AKHIR\]/g, '').trim();
@@ -13,6 +15,7 @@ const escape = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replace
 // A backward edge is feedback, while an undirected edge is a concept relationship.
 const models = {
   ...prBModels,
+  ...prCModels,
   'V-TM01-01': { rows: [['Organisasi sektor publik'], ['Pemerintahan', 'Nonpemerintahan nonlaba'], ['Sumber daya'], ['Layanan'], ['Informasi akuntansi'], ['Pengguna laporan'], ['Keputusan']], edges: [[0,1],[0,2],[1,3],[2,3],[3,4],[4,5],[5,6],[6,7],[7,3,'Umpan balik']] },
   'V-TM01-03': { rows: ['Identifikasi','Pencatatan','Pengukuran','Pengklasifikasian','Pengikhtisaran','Penyajian laporan','Penginterpretasian','Pengguna','Keputusan'].map((s)=>[s]), edges: [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,0,'Umpan balik ke pengelolaan']] },
   'V-TM01-04': { rows: [['Informasi untuk keputusan'], ['Relevan: umpan balik, prediktif, tepat waktu, lengkap','Andal: jujur, dapat diverifikasi, netral'], ['Dapat dibandingkan: periode/entitas dan kebijakan','Dapat dipahami: bentuk/istilah/pengguna']], edges: [[0,1,'',false],[0,2,'',false],[0,3,'',false],[0,4,'',false]] },
@@ -50,7 +53,7 @@ function diagram(spec) {
   let y = 70;
   for (const row of model.rows) {
     const w = (780 - (row.length - 1) * 35) / row.length;
-    const lines = row.map((s) => wrap(prBModels[spec.id] ? s.replaceAll('/', '/ ') : s, Math.floor((w - 30) / 8.5)));
+    const lines = row.map((s) => wrap(prBModels[spec.id] || prCModels[spec.id] ? s.replaceAll('/', '/ ') : s, Math.floor((w - 30) / 8.5)));
     const h = Math.max(...lines.map((s) => s.length)) * 23 + 34;
     row.forEach((text, i) => nodes.push({ text, x: 90 + i * (w + 35), y, w, h, lines: lines[i] }));
     y += h + 65;
@@ -64,11 +67,15 @@ function diagram(spec) {
     else if (m.y > n.y && m.y - n.y < n.h + 90) d = `M${n.x+n.w/2} ${n.y+n.h} L${m.x+m.w/2} ${m.y}`;
     else {
       const lane = 20 + (i % 5) * 12;
-      d = `M${n.x} ${n.y+n.h/2} H${lane} V${m.y+m.h/2} H${m.x}`;
+      // Route PR-C branches through row gaps so a line cannot imply a connection
+      // to an unrelated card crossed on the way to its actual endpoint.
+      d = prCModels[spec.id]
+        ? `M${n.x+n.w/2} ${n.y+n.h} V${n.y+n.h+45} H${lane} V${m.y-15} H${m.x+m.w/2} V${m.y}`
+        : `M${n.x} ${n.y+n.h/2} H${lane} V${m.y+m.h/2} H${m.x}`;
     }
-    const labelX = prBModels[spec.id] && m.y > n.y ? (n.x+n.w/2+m.x+m.w/2)/2 : n.x+n.w/2;
+    const labelX = (prBModels[spec.id] || prCModels[spec.id]) && m.y > n.y ? (n.x+n.w/2+m.x+m.w/2)/2 : n.x+n.w/2;
     let labelY = n.y+n.h+23, showLabel = Boolean(label);
-    if (prBModels[spec.id] && label) {
+    if ((prBModels[spec.id] || prCModels[spec.id]) && label) {
       const key = `${labelX},${labelY}`, labels = usedLabels.get(key) ?? [];
       showLabel = !labels.includes(label);
       labelY += labels.length * 18;
@@ -83,12 +90,19 @@ function figure(spec, adjacentTable) {
   let cards;
   if (spec.id === 'V-TM04-03' || spec.id === 'V-TM04-06') {
     cards = prBComparisonCards(spec.id, adjacentTable);
-  } else if (spec.id === 'V-TM01-02' || spec.id === 'V-TM05-02' || models[spec.id]?.tableCards) {
+  } else if (spec.id === 'V-TM01-02' || spec.id === 'V-TM05-02' || prCComparisonIds.includes(spec.id) || models[spec.id]?.tableCards) {
     cards = adjacentTable.rows.map((r) => ({ title: plain(r[0]), subtitle: '', items: r.slice(1).map((v,i)=>`${plain(adjacentTable.headers[i+1])}: ${plain(v)}`), takeaway: '' }));
+    if(spec.id==='V-TM07-07') {
+      const labels=Object.fromEntries(spec.isi.split(';').map((s)=>{const i=s.indexOf(':');return [s.slice(0,i).trim(),s.slice(i+1).trim()];}));
+      cards=cards.map((c)=>({...c,items:[`Format: ${labels[c.title]}`,...c.items]}));
+    }
   } else {
     cards = models[spec.id].cards ?? models[spec.id].rows.flat().map((s)=>({ title: s, subtitle: '', items: [], takeaway: '' }));
   }
-  return { kind: 'figure', title: spec.judul, svg: diagram(spec), overview: { heading: spec.judul, cards, footer: spec.hubungan }, caption: `${spec['pesan utama']} [${spec.sumber}]`, altText: spec['alt text'] };
+  return { kind: 'figure', title: spec.judul, svg: diagram(spec), overview: { heading: spec.judul, cards, footer: spec.hubungan }, caption: `${spec['pesan utama']} [${spec.sumber}]`, altText: spec['alt text'], ...(spec.id==='V-TM07-08'?{sourceImages:[
+    {title:'LKPP 2025 · PDF 47 / cetak 4',url:'/assets/akk203/lkpp2025-lpsal-pdf47.png',altText:'LPSAL LKPP 2025 audited, halaman asli; SiLPA, SAL akhir dan CaLK C.1–C.6 dijelaskan dalam teks di atas.',sourceUrl:'https://www.bpk.go.id/assets/files/lkpp/2025/lkpp_2025_1784028222.pdf#page=47'},
+    {title:'Berau 2025 · PDF 19',url:'/assets/akk203/berau2025-lpsal-pdf19.png',altText:'LPSAL Kabupaten Berau 2025 audited, halaman asli; SiLPA, SAL akhir dan CaLK 5.2.1–5.2.5 dijelaskan dalam teks di atas.',sourceUrl:'https://beraukab.go.id/storage/img/CALK%2022%20mei%202026%20final%20%281%29_compressed.pdf#page=19'},
+  ]}: {}) };
 }
 
 function table(lines, header) {
@@ -96,9 +110,14 @@ function table(lines, header) {
   const rawHeaders = cells(lines[0]);
   const align = cells(lines[1]).map((s)=>s.endsWith(':') ? s.startsWith(':') ? 'center' : 'right' : 'left');
   const rows = lines.slice(2).map(cells);
+  if (/^Tanggal$/i.test(plain(rawHeaders[0])) && /^Akun$/i.test(plain(rawHeaders[1])) && /^Debit/.test(rawHeaders[2]) && /^Kredit/.test(rawHeaders[3])) {
+    return {kind:'journal', ...(rawHeaders.some((s)=>/Rp/.test(s))?{caption:rawHeaders.join(' / ')}:{}), lines:rows.map(([date,account,debit,credit])=>({date:plain(date),account:plain(account),debit:plain(debit),credit:plain(credit),...(debit==='0'&&credit!=='0'?{isCredit:true}:{})}))};
+  }
+  const nominal = (s) => /^\(?-?\d[\d.,]*\)?$/.test(plain(s));
+  if(header?.period) rawHeaders.forEach((_,c)=>{if(c>0&&rows.some((r)=>nominal(r[c]))) align[c]='right';});
   const finalColumn=rawHeaders.findIndex((s)=>s.includes('[TOTAL-AKHIR]'));
   const amountColumns=rawHeaders.map((_,c)=>c).filter((c)=>c>0 && align[c]==='right');
-  const rowRules = rows.flatMap((row,i)=>row.some((s)=>s.includes('[TOTAL-AKHIR]')) ? [{ row: i, columns: finalColumn>=0 ? [finalColumn] : amountColumns.length?amountColumns:[rawHeaders.length-1], bottom: 'double' }] : []);
+  const rowRules = rows.flatMap((row,i)=>row.some((s)=>s.includes('[TOTAL-AKHIR]')) ? [{ row: i, columns: finalColumn>=0 ? [finalColumn] : header?.period ? row.flatMap((v,c)=>c>0&&nominal(v)?[c]:[]) : amountColumns.length?amountColumns:[rawHeaders.length-1], bottom: 'double' }] : []);
   const block = { kind: 'table', headers: rawHeaders.map(clean), rows: rows.map((r)=>r.map(clean)), align };
   if (rowRules.length) block.rowRules = rowRules;
   if (header) block.reportHeader = header;
@@ -117,6 +136,10 @@ export function parseBlocks(lines) {
       i++;
       if(type==='self-check') blocks.push({kind:'self-check',question:values.question,answer:[{kind:'p',text:values.answer}],signal:values.signal});
       else if(type==='visual') blocks.push({kind:'visual-spec',spec:values});
+      else if(type==='pendalaman') {
+        const start=i; while(i<lines.length&&!/^```pendalaman/.test(lines[i].trim())) i++;
+        blocks.push({kind:'pendalaman',title:values.judul,blocks:parseBlocks(lines.slice(start,i))});
+      }
       else throw Error(`Unsupported fence ${type}`);
       continue;
     }
@@ -127,18 +150,20 @@ export function parseBlocks(lines) {
     }
     if (line.startsWith('|') && /^\s*\|[- :|]+\|?\s*$/.test(lines[i+1]??'')) {
       const start=i++; while(i<lines.length && lines[i].trim().startsWith('|')) i++;
-      // Report headers consist of three consecutive bold lines directly before the grid.
+      // Four-line headers include a period; legacy three-line excerpts omit it.
       let header;
       const previous=blocks.at(-1);
       if(previous?.kind==='p') {
         const h=previous.text.split('\n');
-        if(h.length===3 && h.every((s)=>/^\*\*/.test(s))) {
-          header={entity:plain(h[0]),title:plain(h[1]),unit:plain(h[2])}; blocks.pop();
+        if([3,4].includes(h.length) && h.every((s)=>/^\*\*/.test(s))) {
+          header={entity:plain(h[0]),title:plain(h[1]),...(h.length===4?{period:plain(h[2])}:{}),unit:plain(h.at(-1))}; blocks.pop();
         }
       }
+      if(!header&&previous?.kind==='table'&&previous.reportHeader?.title==='Neraca') header=previous.reportHeader;
       const grid=table(lines.slice(start,i),header);
-      if(header?.title.startsWith('Cuplikan Laporan Posisi Keuangan') && grid.headers.length===2) {
-        blocks.push({kind:'statement',spec:{entity:header.entity,title:header.title,period:'',unit:header.unit,lines:grid.rows.map((row,index)=>({label:plain(row[0]),amount:Number(row[1].replaceAll('.','')), ...(grid.rowRules?.some((rule)=>rule.row===index)?{bottomRule:'double'}:{})}))}});
+      if(grid.kind==='journal') { blocks.push(grid); continue; }
+      if((header?.title.startsWith('Cuplikan Laporan Posisi Keuangan') || header?.period) && grid.headers.length===2 && grid.rows.every((r)=>/^-?\d[\d.]*$/.test(r[1]))) {
+        blocks.push({kind:'statement',spec:{entity:header.entity,title:header.title,period:header.period??'',unit:header.unit,lines:grid.rows.map((row,index)=>({label:plain(row[0]),amount:Number(row[1].replaceAll('.','')), ...(grid.rowRules?.some((rule)=>rule.row===index)?{bottomRule:'double'}:{})}))}});
       } else blocks.push(grid);
       continue;
     }
@@ -157,7 +182,8 @@ export function parseBlocks(lines) {
     if(line.startsWith('**Kalau cuma sempat ingat satu hal:')) { blocks.push({kind:'callout',variant:'gist',compact:true,title:'Kalau cuma sempat ingat satu hal:',text:line.replace(/^\*\*Kalau cuma sempat ingat satu hal:\*\*\s*/, '')});i++;continue; }
     const paragraph=[line]; i++;
     while(i<lines.length && lines[i].trim() && !/^(?:\||>|#|:::|```|[-*] |\d+\. )/.test(lines[i].trim())) paragraph.push(lines[i++].trim());
-    blocks.push({kind:'p',text:paragraph.join('\n')});
+    // Repair the approved package's unclosed period bold in the CaLK header too.
+    blocks.push({kind:'p',text:paragraph.map((s)=>s.startsWith('**')&&(s.match(/\*\*/g)??[]).length===1?`${s}**`:s).join('\n')});
   }
   // Resolve specs only after adjacent source tables are known; preserve the source position.
   return blocks.map((b,i)=>b.kind==='visual-spec'?figure(b.spec, [...blocks.slice(0,i).reverse(),...blocks.slice(i+1)].find((x)=>x.kind==='table')):b);
@@ -176,13 +202,13 @@ export function buildReading(tm) {
       sections.forEach((s,i)=>blocks.push({kind:'section',layer:'main',title:lines[s].replace(/^### /,''),blocks:parseBlocks(lines.slice(s+1,sections[i+1]??end))}));
     } else if(heading==='Pendalaman') blocks.push(...parseBlocks(lines.slice(start+1,end)));
     else if(heading==='Persiapan ujian') {
-      const exercises=lines.slice(start+1,end).flatMap((s,i)=>/^#### [ETL]\d+\./.test(s)?[start+1+i]:[]);
+      const exercises=lines.slice(start+1,end).flatMap((s,i)=>/^#{3,4} [ETL]\d+\./.test(s)?[start+1+i]:[]);
       blocks.push({kind:'section',layer:'latihan',title:heading,blocks:parseBlocks(lines.slice(start+1,exercises[0]))});
       exercises.forEach((s,i)=>{
         const body=lines.slice(s+1,exercises[i+1]??end);
-        const solution=body.findIndex((l)=>/^\*\*(Penyelesaian[^*]*|Jawaban):\*\*/.test(l.trim()));
+        const solution=body.findIndex((l)=>/^\*\*(Penyelesaian[^*]*|Jawaban)[:.]\*\*/.test(l.trim()));
         if(solution<0) throw Error(`No solution ${lines[s]}`);
-        blocks.push({kind:'solution-reveal',title:lines[s].replace(/^#### /,''),promptBlocks:parseBlocks(body.slice(0,solution)),blocks:parseBlocks(body.slice(solution)),revealLabel:'Tampilkan penyelesaian dan jawaban akhir'});
+        blocks.push({kind:'solution-reveal',title:lines[s].replace(/^#{3,4} /,''),promptBlocks:parseBlocks(body.slice(0,solution)),blocks:parseBlocks(body.slice(solution)),revealLabel:'Tampilkan penyelesaian dan jawaban akhir'});
       });
     } else blocks.push({kind:'section',layer:'fondasi',title:heading,blocks:parseBlocks(lines.slice(start+1,end))});
   }
@@ -190,7 +216,7 @@ export function buildReading(tm) {
   const intro=kilat.blocks.find((b)=>b.kind==='callout')?.text ?? '';
   const objectives=kilat.blocks.find((b)=>b.kind==='ul'||b.kind==='ol')?.items ?? [];
   const coreReadingMinutes = blocks.filter((b)=>b.kind==='section'&&b.layer==='main')
-    .reduce((sum,b)=>sum+Number(b.title.match(/\((\d+) menit\)/)?.[1]??0),0);
+    .reduce((sum,b)=>sum+Number(b.title.match(/(?:\(|· )(\d+) menit/)?.[1]??0),0);
   if (!coreReadingMinutes) throw Error(`TM${tm}: missing Inti reading minutes`);
   return {tm,title,ref:'Akuntansi Sektor Publik',intro,objectives,layout:'layered',coreReadingMinutes,blocks};
 }

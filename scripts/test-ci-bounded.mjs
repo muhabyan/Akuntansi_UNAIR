@@ -12,6 +12,8 @@ const standardTasks = [
   ['akk203_tm03_canonical', 'scripts/test-akk203-tm03-canonical.mjs'],
   ['akk203_tm04_canonical', 'scripts/test-akk203-tm04-canonical.mjs'],
   ['akk203_tm05_canonical', 'scripts/test-akk203-tm05-canonical.mjs'],
+  ['akk203_tm06_canonical', 'scripts/test-akk203-tm06-canonical.mjs'],
+  ['akk203_tm07_canonical', 'scripts/test-akk203-tm07-canonical.mjs'],
   ['akk203_render_rules', 'scripts/test-akk203-render-rules.mjs'],
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],

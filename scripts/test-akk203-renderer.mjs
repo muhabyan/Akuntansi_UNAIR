@@ -17,6 +17,12 @@ let toggle=tree.root.findAllByType('button').find((n)=>n.props['aria-controls'])
 renderer.act(()=>toggle.props.onClick());toggle=tree.root.findAllByType('button').find((n)=>n.props['aria-controls']);assert.equal(toggle.props['aria-expanded'],true);assert.ok(text(tree.toJSON()).includes('Jawaban rahasia'));assert.ok(tree.root.findAllByProps({id:toggle.props['aria-controls']}).length);
 renderer.act(()=>tree.update(React.createElement(Card,{isSimulation:false,block:{kind:'journal',lines:[{date:'5 Januari 2026',account:'Kas',debit:'0'},{account:'Piutang',credit:'47.650.000',isCredit:true}]}})));
 assert.ok(text(tree.toJSON()).includes('Tanggal'));assert.ok(text(tree.toJSON()).includes('5 Januari 2026'));assert.ok(text(tree.toJSON()).includes('0'));
+assert.deepEqual(tree.root.findAllByType('th').map((n)=>text(n.toJSON?.()??{children:n.children})),['Tanggal','Akun','Debit','Kredit']);
+renderer.act(()=>tree.update(React.createElement(Card,{block:{kind:'figure',overview:{heading:'LPSAL asli',cards:[{title:'LKPP',subtitle:'',items:['SAL akhir 438.265.568.897.532'],takeaway:''}]},sourceImages:[{title:'LKPP 2025',url:'/assets/akk203/lkpp2025-lpsal-pdf47.png',altText:'LPSAL asli, PDF 47',sourceUrl:'https://www.bpk.go.id/lkpp.pdf#page=47'}]}})));
+assert.ok(text(tree.toJSON()).includes('SAL akhir 438.265.568.897.532'));
+assert.equal(tree.root.findByType('img').props.alt,'LPSAL asli, PDF 47');
+assert.equal(tree.root.findByType('a').props.href,'https://www.bpk.go.id/lkpp.pdf#page=47');
+assert.equal(tree.root.findByType('a').props.rel,'noopener noreferrer');
 renderer.act(()=>tree.update(React.createElement(Card,{isSimulation:false,block:{kind:'table',headers:['Kelas','Saldo awal','Saldo akhir'],rows:[['Tanpa pembatasan','690','735'],['Total','990','1.050']],rowRules:[{row:1,columns:[2],bottom:'double'}]}})));
 const cells=tree.root.findAllByType('td');assert.equal(cells.filter((n)=>n.props.style.borderBottom==='3px double currentColor').length,1);assert.equal(cells[2].props.style.borderBottom,undefined,'735 has no rule');
 renderer.act(()=>tree.update(React.createElement(StatementFull,{spec:{entity:'Entitas',title:'Neraca',period:'2025',unit:'Satuan: rupiah',note:'Ilustrasi',lines:[{label:'Total',amount:0,bottomRule:'double'}]}})));
