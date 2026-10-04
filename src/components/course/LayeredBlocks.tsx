@@ -266,6 +266,7 @@ export function StackedTable({ headers, rows, label, caption, warning = false, s
   if (flat) {
     return (
       <div className={hideAbove}>
+        <div className="course-table-title py-3 text-[15px] font-bold leading-snug text-blue-800 dark:text-blue-300">{label}</div>
         {list}
         {footer}
       </div>
@@ -273,8 +274,8 @@ export function StackedTable({ headers, rows, label, caption, warning = false, s
   }
   return (
     <div className={`layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 ${hideAbove}`}>
-      <div className="flex items-center gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-400">
-        <Table2 size={15} aria-hidden="true" /> {label}
+      <div className="course-table-title flex items-start gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-[15px] font-bold leading-snug text-blue-800 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-300">
+        <Table2 size={16} className="mt-0.5 shrink-0" aria-hidden="true" /> <span>{label}</span>
       </div>
       {list}
       {footer}

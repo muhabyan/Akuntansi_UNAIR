@@ -1321,3 +1321,6 @@ html.dark body .driver-popover.driverjs-theme .driver-popover-navigation-btns bu
 .report-rule-double { border-top: 3px double currentColor; }
 .report-rule-bottom-double { border-bottom: 3px double currentColor; }
 .akk203-diagram { color: rgb(var(--text-primary)); }
+
+/* Descriptive table titles wrap naturally in cards and narrow layouts. */
+.course-table-title { overflow-wrap: anywhere; text-transform: none; letter-spacing: normal; }

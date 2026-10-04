@@ -6,6 +6,7 @@ const root = process.cwd();
 const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 
 const standardTasks = [
+  ['table_titles', 'scripts/test-table-titles.mjs'],
   ['akk203_renderer', 'scripts/test-akk203-renderer.mjs'],
   ['akk203_tm01_canonical', 'scripts/test-akk203-tm01-canonical.mjs'],
   ['akk203_tm02_canonical', 'scripts/test-akk203-tm02-canonical.mjs'],
@@ -59,6 +60,7 @@ const standardTasks = [
 ];
 
 const extendedTasks = [
+  ['table_titles', 'scripts/test-table-titles.mjs'],
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
   ['aks301_alignment', 'scripts/test-aks301-alignment.mjs'],

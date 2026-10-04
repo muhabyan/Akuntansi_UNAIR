@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useStudyProgress, materialKey } from '../../hooks/useStudyProgress';
 import { loadCourseContent, type LoadedCourseContent, type ReviewReadingKey } from '../../data/courses/courseRegistry';
+import { withTableTitles } from '../../data/courses/tableTitles';
 import type { ContentBlock, Course, CourseTabId, Reading } from '../../types';
 import { getArsipFiles } from '../../data/arsipRegistry';
 import ArsipViewerTab from '../ArsipViewerTab';
@@ -78,6 +79,7 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
       return [block.title, block.text].filter(Boolean).some((text) => text!.toLowerCase().includes(query));
     case 'table':
       return [
+        ...(block.title ? [block.title] : []),
         ...(block.caption ? [block.caption] : []),
         ...Object.values(block.reportHeader ?? {}),
         ...block.headers,
@@ -169,7 +171,7 @@ function isWideLearningBlock(block: ContentBlock) {
 
 // ----------------- DETAIL BACAAN TATAP MUKA -----------------
 function ReadingPanel({
-  reading,
+  reading: sourceReading,
   onBack,
   onPrev,
   onNext,
@@ -191,6 +193,7 @@ function ReadingPanel({
   isDone: (key: string) => boolean;
   toggle: (key: string) => void;
 }) {
+  const reading = useMemo(() => withTableTitles(sourceReading), [sourceReading]);
   const readingDocumentRef = useRef<HTMLDivElement>(null);
   const key = materialKey(courseCode, reading.tm);
   useEscapeToBack(reading.layout === 'layered', onBack);
@@ -1079,7 +1082,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
               {activeTab === 'referensi' && !searchQuery && (
                 <div className="space-y-6">
                   {(() => {
-                    const customRef = courseContent.customReferensi;
+                    const customRef = courseContent.customReferensi && withTableTitles({ tm: 0, title: 'Referensi mata kuliah', intro: '', objectives: [], blocks: courseContent.customReferensi }).blocks;
                     if (customRef && customRef.length > 0) {
                       return (
                         <div className="mb-8 border-b border-navy-700/60 pb-6">
