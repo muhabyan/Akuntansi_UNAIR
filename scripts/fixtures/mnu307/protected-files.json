@@ -24,8 +24,8 @@
     "repository": "86c9128a52efca9a2dde5cd794312d870d431122003c6dafa13f401198998ec1"
   },
   "src/components/course/CourseLayout.tsx": {
-    "worktree": "fca5f5a6566373a7ff4ef5f6d4741bdcab0fefb93c49011ddd96bd30dd4dd138",
-    "repository": "a6153ecd145e60c8422021a8495202a31eaeffb392994305265b98bdb7dab036"
+    "worktree": "045c72e2d8b5ac5b0377921a75e57ec611b3e994a454c3db3a35488a24e10ea2",
+    "repository": "fd01fcecf8e0a455d245931eca5dee0361465bff2d2f7b6a8612793da27cc919"
   },
   "src/components/course/CourseSidebar.tsx": {
     "worktree": "f69a879c34ae9b93b92e848e6d328ab44f0a7123eae099136eb0df7f47323b57",

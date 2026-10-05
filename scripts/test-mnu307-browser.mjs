@@ -48,11 +48,49 @@ try {
     await sleep(200);await cdp.eval("[...document.querySelectorAll('button')].filter(b=>b.textContent.includes('Lihat contoh jawaban')).forEach(b=>b.click())");await sleep(200);
   }
   async function screenshot(element,file,width){
-    await cdp.eval(`(${element}).scrollIntoView({block:'start',behavior:'instant'})`);
+    await cdp.eval(`(${element}).scrollIntoView({block:'start',behavior:'instant'});window.scrollBy({top:-160,behavior:'instant'})`);
     await sleep(150);
     const clip=await cdp.eval(`(()=>{const r=(${element}).getBoundingClientRect();return {x:Math.max(0,r.x+scrollX),y:Math.max(0,r.y+scrollY),width:Math.min(${width},r.width),height:r.height,scale:1};})()`);
     const shot=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:true,clip});fs.writeFileSync(path.join(output,file),Buffer.from(shot.data,'base64'));
   }
+  async function transitionState(tm,label,theme,width) {
+    const state=await cdp.eval(`({tm:document.querySelector('.reading-header').innerText,open:[...document.querySelectorAll('.course-solution-surface button[aria-expanded=true]')].length,solutions:document.querySelectorAll('.course-solution-surface button[aria-expanded]').length,drafts:[...document.querySelectorAll('.layered-self-check textarea')].map(t=>t.value),selfAnswers:document.querySelectorAll('.layered-self-check > .border-t').length,locked:[...document.querySelectorAll('.layered-self-check button')].filter(b=>b.textContent.includes('Lihat contoh jawaban')).every(b=>b.disabled),overflow:Math.max(document.documentElement.scrollWidth,document.body.scrollWidth)-document.documentElement.clientWidth})`);
+    assert.equal(state.solutions,counts[tm].solutions,label);assert.equal(state.open,0,label);assert.equal(state.selfAnswers,0,label);assert.ok(state.drafts.every(d=>d===''),label);assert.ok(state.locked,label);assert.equal(state.overflow,0,label);
+    report.push({transition:label,tm,theme,width,...state});
+    return state;
+  }
+  async function attemptCase(tm) {
+    const label=tm===3?'Atlas':'Panasonic';
+    await cdp.eval(`(()=>{const s=[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('${label}'));s.querySelector('button[aria-expanded]').click();const self=document.querySelector('.layered-self-check'),t=self.querySelector('textarea');Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value').set.call(t,'Draft ${label} hanya untuk materi ini');t.dispatchEvent(new Event('input',{bubbles:true}));})()`);
+    await sleep(100);
+    assert.equal(await cdp.eval("document.querySelector('.layered-self-check textarea').value"),`Draft ${label} hanya untuk materi ini`);
+    await cdp.eval("[...document.querySelector('.layered-self-check').querySelectorAll('button')].find(b=>b.textContent.includes('Lihat contoh jawaban')).click()");
+    await sleep(100);
+    assert.equal(await cdp.eval("document.querySelectorAll('.course-solution-surface button[aria-expanded=true]').length"),1);
+    assert.equal(await cdp.eval("document.querySelectorAll('.layered-self-check > .border-t').length"),1);
+  }
+  async function step(tm,direction) {
+    await cdp.eval(`[...document.querySelectorAll('main button')].find(b=>b.textContent.trim()==='${direction}').click()`);
+    for(let i=0;i<100;i++){if(await cdp.eval(`window.history.state?.akuntansihub_tm===${tm}&&document.querySelectorAll('.course-solution-surface button[aria-expanded]').length===${counts[tm].solutions}`))break;await sleep(100);}
+    await sleep(100);
+  }
+  for(const width of [375,1280])for(const theme of ['light','dark'])for(const start of [3,4]) {
+    const dest=start===3?4:3;
+    await open(start,theme,width);
+    await transitionState(start,`fresh TM0${start}`,theme,width);
+    await attemptCase(start);
+    await step(dest,start===3?'Berikutnya':'Sebelumnya');
+    await transitionState(dest,`TM0${start} → TM0${dest}`,theme,width);
+    if(width===375) {
+      await screenshot("[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('"+(dest===4?'Panasonic':'Atlas')+"'))",`transition-tm0${start}-tm0${dest}-${theme}-closed-case.png`,375);
+      await screenshot("document.querySelector('.layered-self-check')",`transition-tm0${start}-tm0${dest}-${theme}-empty-draft.png`,375);
+    }
+    await attemptCase(dest);
+    await step(start,dest===3?'Berikutnya':'Sebelumnya');
+    await transitionState(start,`return TM0${dest} → TM0${start}`,theme,width);
+    console.log(`Reading transitions ${width}px ${theme}, fresh TM0${start}, next/previous PASS: closed solutions and empty drafts`);
+  }
+
   for(const tm of targets)for(const theme of ['light','dark']) {
     const cardSubtitle=await open(tm,theme,375);
     const before=await cdp.eval(`({overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,solutions:[...document.querySelectorAll('.course-solution-surface button[aria-expanded]')].map(b=>b.getAttribute('aria-expanded')),depth:[...document.querySelectorAll('.layered-pendalaman button')].map(b=>b.getAttribute('aria-expanded')),header:document.querySelector('.reading-header').innerText,subtitle:document.querySelector('.reading-header .text-secondary').innerText})`);
