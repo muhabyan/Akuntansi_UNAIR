@@ -110,8 +110,8 @@ const MNS301_TM1_7 = materi([
   ['Membaca lingkungan dan kemampuan perusahaan', 'DMEL Ch. 2–4'],
   ['Memilih cara bersaing dan bisnis yang layak dimiliki', 'DMEL Ch. 5–6'],
   ['Menilai ekspansi internasional dan respons persaingan', 'DMEL Ch. 7–8'],
-  ['Corporate-Level Strategy & International Strategy', 'DMEL Ch. 6–7'],
-  ['Entrepreneurial Strategy, Strategic Control, & Corporate Governance', 'DMEL Ch. 8–9'],
+  ['Mengendalikan pelaksanaan strategi dan memilih desain organisasi', 'DMEL Ch. 9–10'],
+  ['Memimpin pembelajaran, menjaga etika, dan mengelola inovasi', 'DMEL Ch. 11–12'],
   ['Organizational Design, Strategic Leadership, & Corporate Entrepreneurship', 'DMEL Ch. 10–12'],
 ], 1);
 const MNS301_TM8_14 = materi([

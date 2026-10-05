@@ -3,4 +3,6 @@ await testCanonical(1);
 await testCanonical(2);
 await testCanonical(3);
 await testCanonical(4);
+await testCanonical(5);
+await testCanonical(6);
 testProtected();

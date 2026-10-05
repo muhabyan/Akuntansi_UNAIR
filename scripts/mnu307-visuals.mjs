@@ -1,7 +1,8 @@
+import { figurePR3, svgIdsPR3 } from './mnu307-pr3-visuals.mjs';
 import { figurePR2, svgIdsPR2 } from './mnu307-pr2-visuals.mjs';
 const escape = s => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 const card = (title, ...items) => ({ title, subtitle: '', items, takeaway: '' });
-export const svgIds = ['V-TM01-01','V-TM01-02','V-TM01-03','V-TM01-04','V-TM01-05','V-TM01-07','V-TM01-11','V-TM02-01','V-TM02-04','V-TM02-05','V-TM02-06','V-TM02-07','V-TM02-08','V-TM02-13','V-TM02-15','V-TM02-16','V-TM02-17','V-TM02-18','V-TM02-20', ...svgIdsPR2];
+export const svgIds = ['V-TM01-01','V-TM01-02','V-TM01-03','V-TM01-04','V-TM01-05','V-TM01-07','V-TM01-11','V-TM02-01','V-TM02-04','V-TM02-05','V-TM02-06','V-TM02-07','V-TM02-08','V-TM02-13','V-TM02-15','V-TM02-16','V-TM02-17','V-TM02-18','V-TM02-20', ...svgIdsPR2, ...svgIdsPR3];
 const cards2 = {
   1: [card('External environment','General environment','Competitive environment','Opportunities / Threats'),card('Internal environment','Value chain','Resources and capabilities','Intellectual assets','Strengths / Weaknesses'),card('SWOT','Kesesuaian strategi: sintesis pengajaran'),card('Performance'),card('Dynamic capabilities')],
   2: [card('Environmental scanning'),card('Environmental monitoring'),card('Competitive intelligence'),card('Forecasts'),card('Scenario analysis','PPG: moderate/stable energy + fast/strong growth → pursue opportunities','PPG: high energy + weak/slow growth → change strategic direction','PPG: volatile energy + high growth → efficient processes','PPG: moderate/stable energy + weak/slow growth → new products/capture market share')],
@@ -201,6 +202,7 @@ function scene(spec, cards) {
 
 export function figure(spec) {
   const tm=Number(spec.id.slice(4,6)),index=Number(spec.id.slice(-2));
+  if (tm >= 5) return figurePR3(spec);
   if (tm >= 3) return figurePR2(spec);
   const cards=tm===1?cards1(spec):cards2[index];
   if(!cards?.length||!footer[spec.id])throw Error(`Incomplete figure ${spec.id}`);
