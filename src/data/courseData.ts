@@ -108,8 +108,8 @@ const MNU108_REF = [
 const MNS301_TM1_7 = materi([
   ['Strategic Management', 'DMEL Ch. 1'],
   ['Membaca lingkungan dan kemampuan perusahaan', 'DMEL Ch. 2–4'],
-  ['Analisis Lingkungan Internal, Value Chain, & VRIO Framework', 'DMEL Ch. 3–4'],
-  ['Business-Level Strategy: Keunggulan Bersaing & Siklus Hidup', 'DMEL Ch. 5'],
+  ['Memilih cara bersaing dan bisnis yang layak dimiliki', 'DMEL Ch. 5–6'],
+  ['Menilai ekspansi internasional dan respons persaingan', 'DMEL Ch. 7–8'],
   ['Corporate-Level Strategy & International Strategy', 'DMEL Ch. 6–7'],
   ['Entrepreneurial Strategy, Strategic Control, & Corporate Governance', 'DMEL Ch. 8–9'],
   ['Organizational Design, Strategic Leadership, & Corporate Entrepreneurship', 'DMEL Ch. 10–12'],
