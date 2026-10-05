@@ -1,0 +1,482 @@
+{
+  "src/components/course/AkbiCourseDashboardShell.tsx": {
+    "worktree": "5c97741ed573b5dfee4f4a343b80991934621922a2bcfa275807ba7bf3ef2506",
+    "repository": "5fed74058cb0e876ab1852d3e9873665abf8a337797f96461c76f99bd6127a58"
+  },
+  "src/components/course/AkbiFlashcardWorkspace.tsx": {
+    "worktree": "bad194ad0169e9696471db74f1c7cd7303d4be746e7cb3e0a09a0b2b65d5d8c8",
+    "repository": "23488afe5eaad94e9c034788ded9d957573be90e38fad9b5c6c985198f1c985a"
+  },
+  "src/components/course/AkbiReadingShell.tsx": {
+    "worktree": "fab5f154212404a74047e8f55e391bb181e51c276dc5ed1547355917755f3af8",
+    "repository": "de32cc1751d506e33e1815e6e6bc6794aca360f88f4a3bf484f4abe496013d51"
+  },
+  "src/components/course/BankQuestionList.tsx": {
+    "worktree": "389bfb02b6429156088609fe35aae0cd0bc43784da273c9aa93181d8833ac174",
+    "repository": "47373c5343e62fac330342dfc3a0205737b250e1fd914c8e05c56b029c849950"
+  },
+  "src/components/course/CourseBlockCard.tsx": {
+    "worktree": "c11f475fbda700e647bb3459bfd568bb2d95e47af19eefb7ab09e74678386679",
+    "repository": "f6c633c82e441a28e2cd5489bb5957cbb4be719d298ac16d00df58e70f68fca7"
+  },
+  "src/components/course/CourseHeader.tsx": {
+    "worktree": "c01901f53aa28fe05f09bf1e303a750dee82fc343f20cf8e0aa9f6a3d297987c",
+    "repository": "86c9128a52efca9a2dde5cd794312d870d431122003c6dafa13f401198998ec1"
+  },
+  "src/components/course/CourseLayout.tsx": {
+    "worktree": "fca5f5a6566373a7ff4ef5f6d4741bdcab0fefb93c49011ddd96bd30dd4dd138",
+    "repository": "a6153ecd145e60c8422021a8495202a31eaeffb392994305265b98bdb7dab036"
+  },
+  "src/components/course/CourseSidebar.tsx": {
+    "worktree": "f69a879c34ae9b93b92e848e6d328ab44f0a7123eae099136eb0df7f47323b57",
+    "repository": "e2cfb46b3cc9da7a8d39305ccccab2f216351fe6bcb0a8db8a40858e432ab0c9"
+  },
+  "src/components/course/CourseTabs.tsx": {
+    "worktree": "21887a18cc6af1aafcd8ae7d34630435b278ffd384708ba592e2931f3906d042",
+    "repository": "78d0bb9781fc707702c4c9b55f62c9d9e342bb6120536b5696da65862040580b"
+  },
+  "src/components/course/EconDiagrams.tsx": {
+    "worktree": "c4ffacda9190e4b08ef37bf65f6f5aab75ca2b4b80e6418545e792ade056213c",
+    "repository": "b420538f6d4291f0bade22a2917237eb954946535dcfea8e61e93d5cdc1fef9d"
+  },
+  "src/components/course/FlashcardGrid.tsx": {
+    "worktree": "2e09c14d1d79461961dd57e87b85761490d672ac9f4e02373ff9c7fbc2442cfe",
+    "repository": "6e3b4e631350bc140a0dc536853c1c918dd2297de28b9a41d9069dd3681f4851"
+  },
+  "src/components/course/LayeredBlocks.tsx": {
+    "worktree": "3d80d94bad2aacd23b581344ce538ad62a03438b7b5f8d01f97ada5f8d0136ad",
+    "repository": "df41e88353f60f7c9ceb669aaef37cb3c7daae116724b90d78389446f2d2df2e"
+  },
+  "src/components/course/MarkdownContent.tsx": {
+    "worktree": "43cfd50f17f3d717c27ef86d21076b42e497334d23b18508ac70a65fd9971b8a",
+    "repository": "f02b88a77d7ad4338c7580c97aa439fa2102725c6faa6856141b0b55789f6ace"
+  },
+  "src/components/course/MobileDiagramOverviews.tsx": {
+    "worktree": "80e84222dbb4e000fb02d17818a5cb9087ea124010983e4ca2cc8330042d42db",
+    "repository": "8ce4376316751400b4dc1d53aeef9cfcbad9d2a5d4e882e6471c932d54b7fcd7"
+  },
+  "src/components/course/PracticeReportCard.tsx": {
+    "worktree": "86836f5253053db69f8a3e6faa83c36a5fb00023378aab353b5b810b88fc9d8a",
+    "repository": "12c11500a52ac8f03125ce27417249f5d35cf4a3d60f7f7423d1b211773fdc4c"
+  },
+  "src/components/course/PrepReadingList.tsx": {
+    "worktree": "8ea03aa5242a5f6cfa72548b9062972ea0d33da9e803c65ad4dc2d72361dc46f",
+    "repository": "8792ad3a0956980df7c8b4d1c5f26ba6bad1a4e04ede48821a3906d0a708342c"
+  },
+  "src/components/course/ProgressCheckbox.tsx": {
+    "worktree": "e1020a37a5204db46a6cce13df396ba419515aca70a72493a6e3ea2eaf718d1e",
+    "repository": "553f0fd500aeb052c67e0bcc2336102473f22e1e67ee45c5ba0cf66ce1502f69"
+  },
+  "src/components/course/PteQuizCard.tsx": {
+    "worktree": "b4f7b3ed1cc2b68f6dc2d61d2ba022370da89ca5737e6e660bf4f552ad8de61d",
+    "repository": "2f8b74bc585e999a3b93690df00a4a1911dde4af7eaad29ed808dd4bfa64bf4e"
+  },
+  "src/components/course/QuizCard.tsx": {
+    "worktree": "2a7a30e7b9dfdc3f486e0227f4f1889d7c105f4921486e52fcbcb34fe24f6602",
+    "repository": "c129818c66fd88d30c1876f82f18bf524eda85bddd9984a19add91811ad0b6b6"
+  },
+  "src/components/course/ReadingOutline.tsx": {
+    "worktree": "6dd9f4eb9c8e0b3667c2a30b93144dfdd0812eea4a9408658eee6c410915684e",
+    "repository": "d2accc69e79a7d155c03ffcc3fd026a2f5bfcc289fefd83a8fa2f89d95c6c48f"
+  },
+  "src/components/course/ReportTable.tsx": {
+    "worktree": "b75d77343709c5ed68d8ed43c9df24a06f9c725dec07c97f7c8c1a853024fb47",
+    "repository": "5f3cb93d988cb7f101dc8a158adb23908d9a0f115a005ae281c5887b350dde40"
+  },
+  "src/components/course/escapeToBack.ts": {
+    "worktree": "ba767d9679bd8d5ae670b133dd7c37b81b0e4823e41c7c877b65717555c125c8",
+    "repository": "07ba2fe12bae5f283361d3bbaad0855e24753aeb697248778997cd4bc11b777a"
+  },
+  "src/components/course/layeredContext.ts": {
+    "worktree": "8598f9119a5ca77aa6d6b69ec4bb34aa9d550a08f6e1959bf7630b990743709b",
+    "repository": "38e6202c35f6d2079f95651dd56063c9e125119ded133f4ebcf92d6c30e641f8"
+  },
+  "src/components/course/readingFrame.ts": {
+    "worktree": "17bbd5ebae5e82a11a3fa4ded4f07858b037c7f655f3ec0c828de7390910bd30",
+    "repository": "cc3d91bdb6307df70ca6b0270685067dac8f68dcaa55eced7c934e670ad64224"
+  },
+  "src/components/course/readingPresentation.ts": {
+    "worktree": "0326b86388294296738b90b7fba586e983269cb8b279cbb09751ffa69699abcc",
+    "repository": "be7ce9d6b6d997c0f682c79ea41c3d39eb80e1b2febdb40109c070be2587d973"
+  },
+  "src/data/banksoal/aka103.ts": {
+    "worktree": "93c00712a71369fee3fde393793f81a23ecbe87149c963822fb41f9cdbb31614",
+    "repository": "9ca0148083385e420cc577816e1a616bb1484b4c081b383d75b1d19c63a30a58"
+  },
+  "src/data/banksoal/aka201.ts": {
+    "worktree": "5101c292bcc407c27a083f6a5da456d5f95774b496fc51e6ed80bf44e43d266c",
+    "repository": "9a69a46a9476577f657189cec71454c15a931e3aff6aa2ed70eafe13daca5b55"
+  },
+  "src/data/banksoal/akk201.ts": {
+    "worktree": "0eeab1d538d41c1b67498363d532ecd885920385a91eb0dadf10e4496cce23fa",
+    "repository": "53723f9dec8d425c5438632f260b8b4a85a210d8194d43a12528d5331fed9adf"
+  },
+  "src/data/banksoal/akk202.ts": {
+    "worktree": "2369570e880d3eed1c30f4ecfbc19987543e47ff59e352de3d816326dc8e2f48",
+    "repository": "6eebba1a1b2f87386f2580f75d3cb84686e9c2d7f0ae9eab68ae13c3853f264c"
+  },
+  "src/data/banksoal/akm201.ts": {
+    "worktree": "1dfb3f3786400ac9c246bb5ac370836e2f3cc5b6eef0be8d53186937fc0c8003",
+    "repository": "fea915d7210b9a0ea4672e8c85b1758c308c41134158b8490734957826bf5d64"
+  },
+  "src/data/banksoal/akm202.ts": {
+    "worktree": "bb17ab4910e70573995fb566e74563269d59798d350f6b7baf7bb9e7f05b0642",
+    "repository": "ca3f5ce3435ef42c33443727708bfba64fb735941a6b37923e285933069f00db"
+  },
+  "src/data/banksoal/aks201.ts": {
+    "worktree": "37789c06e1df93271b6954295e3d59b1b534b06b86c1629d70e0e1549f993add",
+    "repository": "03c811dbdd255bec587ecd84214a036a8851b620ada4139261fd4b3c9b9b5fd5"
+  },
+  "src/data/banksoal/ekt109Bank.ts": {
+    "worktree": "532afe817cc68f7a37e49f7ef7f5f1f3fe0ec068396381d18b41b8888a5370d6",
+    "repository": "f870ff29600c9a8b7370d5b790860419e677219a6c400ea2a606c14648e7a349"
+  },
+  "src/data/banksoal/index.ts": {
+    "worktree": "6df1fd14a7a733e543372b564f386277b7831ce06815d552bf26cb221c85c29a",
+    "repository": "3ccc1c96cd3fd3efcfb7e62e2e921b2d03b234642d53bebe94e98c80ff6adbed"
+  },
+  "src/data/banksoal/mas122.ts": {
+    "worktree": "1bc52b0b1794419392c7be4e08edab7b80153f7920082cb4acb76410828d8212",
+    "repository": "323f283f9498de495bcb3d89f45c369ffccf55ddad841757f43a40d08d9fa653"
+  },
+  "src/data/banksoal/mnk201.ts": {
+    "worktree": "40e23bd86c26fe6b930d12a6c78dd6efedd6ae0c818158fc444a1b08db111863",
+    "repository": "95fa9ff1d9c5ad705723ebc399086fb78a6dd262a047f3b0f19ef8e243cb63d5"
+  },
+  "src/data/banksoal/mnm101.ts": {
+    "worktree": "a93e61def445a1efd58f5413e014f7aeb03d9de4a5661885b71d164251a6c747",
+    "repository": "bac3409a81eef9cfe47253d21f7b5b1dffaeaaabbb84d9978da4c1493f244b43"
+  },
+  "src/data/banksoal/mnu101.ts": {
+    "worktree": "1586f9929bb28ce4fdf89b69cc8cac7dac5330c769766e296e7d850a9d6ed869",
+    "repository": "3cfb29c991a7cc68753b2f1ea265372d6e15197f97e010cccf3e5183db73d5ea"
+  },
+  "src/data/banksoal/nonPte.ts": {
+    "worktree": "8be50ea652e44d4d4cef73eec80e9170fe57f60f69d577d50eef3ecf83eadd54",
+    "repository": "b63d26df45a862e99d1c3ce76a1ce428c214957f774ce31c2160402f08e9de6d"
+  },
+  "src/data/banksoal/pjk201.ts": {
+    "worktree": "3a2ed56a45867986b458fca611de7b410c9dc359431cad15328f0dc4de0c3e10",
+    "repository": "563acf2fdf72a5ab1992976d1eec3295cf1a7488410b1d39a6387a807d8d0a66"
+  },
+  "src/data/banksoal/pjk301.ts": {
+    "worktree": "5da485f30dece4108b6a1845b0bb120e42ca54cf8d3a6765bd5a660a12da4059",
+    "repository": "8039ee015dac750e8109d9603196dae333b6a7d1df7baa30175c339ffe505ab6"
+  },
+  "src/data/banksoal/sii306.ts": {
+    "worktree": "5eca2952e3848c514be436a9f6371ed60b5b6f493d3b4d767693d2916322167a",
+    "repository": "3f2ccda6897abdceb8fcb68c170f2c6e66706ee8a9a8b83594f2c93969c81479"
+  },
+  "src/data/flashcards/agx101.ts": {
+    "worktree": "f7a6b166190a1f439d1a02d29702078aab111dbd2ce9452bc30fdabf0309e7c6",
+    "repository": "1f0d3870e70571e1db9a33db89a89beed449470ce1ea237ad3a462c79023f9f3"
+  },
+  "src/data/flashcards/aka103.ts": {
+    "worktree": "ea2c4aa4f41dc247595284aa130a47029ec26dfb6cb32bb91a767f45caf700b0",
+    "repository": "d9cc0485ca1a20430c80890ecd6e55421e6358736bf059cd43658e59e48bf8be"
+  },
+  "src/data/flashcards/aka201.ts": {
+    "worktree": "1477adc35a4a31f4fe1b3c1b353d3119549845fd200ed9dc6e5e79177c7768a4",
+    "repository": "a59c975c518d15597ae6203045ac626ff1af6f42df421600e820730ee4cf5339"
+  },
+  "src/data/flashcards/akk106.ts": {
+    "worktree": "5f3b2be1b0c2f4770ad2a6e682c6990d36c7b76fa8bfe0fb1bbfea596667f1a5",
+    "repository": "9e8a8c105f7ba1c227e294c31ffc9bc9ee6881a29dfd571996c64ecc458ad3e4"
+  },
+  "src/data/flashcards/akk201.ts": {
+    "worktree": "d08436d5a71196aae9902269a9056424db3a3a47dc6574111da9de7612f3e111",
+    "repository": "d9005942a1d41944d59ddafb8d6abf66edd90d962f78ec7a5317ad047938b040"
+  },
+  "src/data/flashcards/akk202.ts": {
+    "worktree": "1dffe519ca051f5188289af40832a8b394068efaf438dfe6de1b2ef599e415b0",
+    "repository": "89ecdacb715706501b95dba955b882fe890c9f0c849225a5760ac90491070dc9"
+  },
+  "src/data/flashcards/akm201.ts": {
+    "worktree": "64c6e74b49e183ed80de02d7c6a1231b156fc7a03e4a1d45e604bafb545bb7cb",
+    "repository": "e81135a922bec45f9a139817dc482bf529c78f273d93aadf043bad003a226532"
+  },
+  "src/data/flashcards/akm202.ts": {
+    "worktree": "0f24e20ef2d8a2e2f5678b474c5a497c15aaca9230a2df9663ac6329f1bf3690",
+    "repository": "3d6140f0afe6380912a081d4c1db48e4490e7be042e9ddfb6710952265d06018"
+  },
+  "src/data/flashcards/aks201.ts": {
+    "worktree": "2638e994216ec22b56cbf4de26ebb0ab4b360432b409b0687f45df615527e761",
+    "repository": "9b9a854495871b286c3d748ba4e8dfbf8437398aaf2e722fa9a81e4590be508d"
+  },
+  "src/data/flashcards/bai101.ts": {
+    "worktree": "c25cf63567ed37e05eb1d591ed5e121789701c34dbd713df6b32af5509c18322",
+    "repository": "37edfbf9941ef338a9b5907466fd806f998414d30cbcb6a5b045ca0dcf8d9b47"
+  },
+  "src/data/flashcards/ekt109.ts": {
+    "worktree": "e9e4b6a88b9d19e4ddde8dee2f0e0bb51028adee4dfc321cfca9a0360f310a76",
+    "repository": "144768416dabbadfe37cdb2ea11a2b22ed500e7690b0ec6678a110a6e0fd479f"
+  },
+  "src/data/flashcards/index.ts": {
+    "worktree": "defb5c059b0310dee5974697a6346c0d14e387ff8bac078de8a068eacbc96393",
+    "repository": "28f2fb2bd34837243634d07838807c25f1a2612a5d56ce9c710724f3c525c6e8"
+  },
+  "src/data/flashcards/mas122.ts": {
+    "worktree": "243c4880e39d8571a2816188a108248a7d681372332d36b955dab86c5f31b90c",
+    "repository": "685bbb7c09081823e67aab7250f1b433b53b766cfa25f2bb90a37501377571b6"
+  },
+  "src/data/flashcards/mnk201.ts": {
+    "worktree": "2e88740bf40484f712668eaa8b6ef5433352ef56e8459ee35672c0e37abd9af9",
+    "repository": "9005c46f1edf1ec75c7c5a8a2df5d8959dce6fb8c7c22cae4f4414dda19492e0"
+  },
+  "src/data/flashcards/mnm101.ts": {
+    "worktree": "063e834237218fd9bdf5e1d9e56fc0c644a36abb9e71933e18a0b4a48301cdcb",
+    "repository": "00757f6dd375cad670c742c91a89873b75e3763b71d46fb52cbc09d4e9a5ec26"
+  },
+  "src/data/flashcards/mnm106.ts": {
+    "worktree": "194b9237f6033fead2f59ee6ccf41428849cbda438cf12c68c9aade6acfdfa83",
+    "repository": "9de9e8d4b93213fd849fe900092ebb0fa9bf690da6a869eec7b4703223a7a764"
+  },
+  "src/data/flashcards/mnm107.ts": {
+    "worktree": "1f229970683048bbd478952158db8b520c738b957b47bfdebbacf6a038ecaab2",
+    "repository": "553558a2aa39c95b7a5ce3eac424f167f0bbdfe038a5ec6d850594cec40e9ceb"
+  },
+  "src/data/flashcards/mnu101.ts": {
+    "worktree": "c6f7ed033facaff6d4ff9f31fc45c7f12aede777d6c883fb7f3b992013ae79e6",
+    "repository": "5041d96c1bb44c3be69e8a44ca176420c7097f8a1a468ab6699f30871db4e7c6"
+  },
+  "src/data/flashcards/nonPte.ts": {
+    "worktree": "6b76ec367ab98cd3fcaecf9c8553afeb4835b6b2f1ee05ef39d34037697b47e0",
+    "repository": "7b2c9afb44cd835358dff9fe1c4a8af4cc6cdfa0e3b69e07a0f1b1c196fda720"
+  },
+  "src/data/flashcards/nop103.ts": {
+    "worktree": "eea6f8ea030021fa8906145b02039e4fb7407d5f15d1ce62714f92e5484dc298",
+    "repository": "739d7a8db00995388f56402dea54555b79096d71f5cb04e31daaaa835c1c2c7f"
+  },
+  "src/data/flashcards/nop104.ts": {
+    "worktree": "e27048be662c5c3be02f433d302e08850267983cb92d0bfec0cb0525512e70db",
+    "repository": "0ffde0bd839c132e45a0f39916e259dd29be248d01f08248e7dc49ce1f846134"
+  },
+  "src/data/flashcards/php103.ts": {
+    "worktree": "06d8fe17f2495400daed50cc8c8af7cd9024c65c917b940736bf85cc3505c0ca",
+    "repository": "b1cc7df7adcc29c78c0705ec450e7f44d5906e1a5a3fdd02bb9223af2d667158"
+  },
+  "src/data/flashcards/pjk201.ts": {
+    "worktree": "72384ecdeccc9c1fdffae3118a45cb2f7ca74cdd0223489821ec6233023c9b7a",
+    "repository": "c4ad0f40bc247878d3a4e13782af53ae419a251555f85e7e262b129423456a3a"
+  },
+  "src/data/flashcards/pjk301.ts": {
+    "worktree": "f2316be43fb1b352c1b0bf5b72f9b0b4216fcd8bcb6b43b6c2e412acd6c74b55",
+    "repository": "633c19a50742891057f8fbb73849fa1b13c1721870deac7fc8d34ef3dfe2103b"
+  },
+  "src/data/flashcards/registry.ts": {
+    "worktree": "7c01a417d0061f156f8ab7145310e48ae4592ce0e1505341bb66c5dac4f13bce",
+    "repository": "1856c9f4465e151e5243863faf68dab74df0505831b12459325e637079aea0f4"
+  },
+  "src/data/flashcards/sii306.ts": {
+    "worktree": "ecc3d34b90ec871e7e493d4cf61e0d334b81b2ddcdfddab58a3b1abb78fd3dd4",
+    "repository": "9ffb26fe8bf3a57e92602f6a13ecd36327d15946f5acd30b4e87cfb1df834d7d"
+  },
+  "src/data/flashcards/sip107.ts": {
+    "worktree": "ce37b290b19487bf08fa7efd81f08afdb16e0c7251fd0ba91a02eec40ba01dcd",
+    "repository": "a3a18e2481a4b90bf88efac4abe52bebde3c7a55d9a05a805017cf1594f4a4fc"
+  },
+  "src/data/manstrat/manstratData.ts": {
+    "worktree": "93cd877da76b18e7a39e948fff6c245e6cf07d82cb4992b5f8eac3d4fdefb345",
+    "repository": "b92518f3f412e35e39e515f875ac66ff43786535eca658cba86412dc234b1680"
+  },
+  "src/data/manstrat/manstratPracticeCases.ts": {
+    "worktree": "1c539f2a0961a1b87db760ee86aae564186d99afc682466b3a9710a32eee3ed0",
+    "repository": "9f89bd603686d22697dbfb991ccd2a342755ecbdaac90e0d233195d03c97af49"
+  },
+  "src/data/manstrat/modules/tm10.ts": {
+    "worktree": "5db937e076a21ff5115b369aced49ac3a04c364c22c9789ebfb08f94f885c088",
+    "repository": "0efbea10244e2ef1da840b505d42f98e416d6bdd86dce912f3e6b7d2b525f6a5"
+  },
+  "src/data/manstrat/modules/tm11.ts": {
+    "worktree": "9f86ea3e3e74d552166e642706d08eed235d8b48eb0b008cc32aaca16e8c3c78",
+    "repository": "ffbcac3727859aa30b02cb2356f6c200c304b4a01b0448e9496c8fcbe642243e"
+  },
+  "src/data/manstrat/modules/tm12.ts": {
+    "worktree": "97017a4a145da4fdc73e0218b1253f84f4c6a70d5f1d9ee80a15767d86db2131",
+    "repository": "314364c819c015a8b5406dd078c70d31fa471f6757b66f8f573b8cc4df7c9b5f"
+  },
+  "src/data/manstrat/modules/tm13.ts": {
+    "worktree": "aec2e0e9cb72f108207d8baebd91cffdf22a49abe551d83ec35cefdb62a3e273",
+    "repository": "cd5715fa7b9278698eab19b7f48feacda04fc9a09e7d7f780e00016095775f07"
+  },
+  "src/data/manstrat/modules/tm14.ts": {
+    "worktree": "4f71383d999e01146f7e2c6f057ae0029995ce66c0df7e2110f350337968fdb1",
+    "repository": "2b3f1d8ce61be4ed5bfe9d54c8dbfe073b9bfe78a17f06dfdff149b7938ad5f6"
+  },
+  "src/data/manstrat/modules/tm3.ts": {
+    "worktree": "9ff58cec5cfbc9208ce632374839824bfc3d012082e5cd2ccea48d9a9ea46208",
+    "repository": "01d172c8467db329eaf3f273c05a9c76a5cb2e8f476902e1a7436524c1a2b3b7"
+  },
+  "src/data/manstrat/modules/tm4.ts": {
+    "worktree": "28bb5a61c47775ed9049284b7d776a557cec0c970df66000db04140c43bc5aa9",
+    "repository": "a5f25e2edef47a3a7035fdb32effd89ab8584f81a38f7f7130cf65d642191a71"
+  },
+  "src/data/manstrat/modules/tm5.ts": {
+    "worktree": "fdf9a683e4f162e0cc929427f0d5d0e6c4bb2c428488f5e979ffbc04b75d13e7",
+    "repository": "a2aa3334fb577f8455984564edd1725292fff42ccda69b75ae50c042bbd6069e"
+  },
+  "src/data/manstrat/modules/tm6.ts": {
+    "worktree": "b0993bb599c0bcab73bf473863b5b701d140c8cc654662a74387cabde22aff01",
+    "repository": "c31d93176808912553fe5a1f8ba76399d93bb00847f1a6b2f339de0d0b846936"
+  },
+  "src/data/manstrat/modules/tm7.ts": {
+    "worktree": "583f24c5b244efbfefe286fdab8e891018aa516173bf28e2bdc7011b7fdcf1cf",
+    "repository": "eedce7f259bb4da52fe086e78862656b4ae0f2f0522cce8f8e1c937edc1c206e"
+  },
+  "src/data/manstrat/modules/tm8.ts": {
+    "worktree": "1d7603f5fb651762c33184b94444ece06a8ea03296eb1e496425629c7c610be4",
+    "repository": "b2bdce767f095aa32c9d0c58416847e9b2cbd6d374c71364d90dae3a6afc4520"
+  },
+  "src/data/manstrat/modules/tm9.ts": {
+    "worktree": "488946c2cd431e2f02d1a422fc352457819cc54c0c4096d49599b169cc502aba",
+    "repository": "0c219cc49a57df3a5314dc160506250534e4bcb04e294917d1435e5d3cc236ed"
+  },
+  "src/data/quizzes/agx101.ts": {
+    "worktree": "4e34487f5bdb73946fe2598436c8371bb233f5abfd28690af705995629529560",
+    "repository": "12d9ffd0f2dbdf673e67d3a5131b98ab5fc66a9ba289f4dc2df7f0a5640898c0"
+  },
+  "src/data/quizzes/aka103.ts": {
+    "worktree": "f0e00b22420604dd4bf84df7b37023a07b374cdaef7831afa90d6e73ed94021c",
+    "repository": "f9ac45f00bd814d210c8b42ac88e6241cad382eff15974a30b485b15f84d96e7"
+  },
+  "src/data/quizzes/aka103UasSimulator.ts": {
+    "worktree": "8c501e586eae508fea9744681475be76a1847215d5aa2236326200f15f16c76e",
+    "repository": "938a6f036dd4822d321bc926dd734811f7698dd9f154de5497806b2f3320f7bd"
+  },
+  "src/data/quizzes/aka103UtsSimulator.ts": {
+    "worktree": "cc55b8a997c32540c085d2b7dd75a00f9475429768824563b798cd6cba2f425b",
+    "repository": "ded5ff4de26e27fd1d2cecccc4868609948dd5ad26b42d2210f664a7e2b31cb3"
+  },
+  "src/data/quizzes/aka201.ts": {
+    "worktree": "6e54b563ac6ab0e1761b48465cac3ab1d1e7fbdf679dc4ad9930e48e0e6a0875",
+    "repository": "c9c008c7a67657c4086b0c648f93dbacd773802d6a6a4ac7ddc25bd777372715"
+  },
+  "src/data/quizzes/akbiPraUasInteractive.ts": {
+    "worktree": "2c67ee3cf7c6b2c0278a2b865886de84e608232a01d87cfa653a5faa776c78bb",
+    "repository": "e0b1f1fd8bcc37dbe2ca94e91c94f38bd50f2a578226e4ee9c09086526442aac"
+  },
+  "src/data/quizzes/akk106.ts": {
+    "worktree": "036a653c65ca8db21f18636739165ad3d81c938df3782b43ef8f9d8e10ced18f",
+    "repository": "de23e3a5f5ea7e123f9a6583b04306c74379225fae7dee0ce5ec39a5adda3bc7"
+  },
+  "src/data/quizzes/akk201.ts": {
+    "worktree": "342abf6e08e340b878551604b86aa5c860f1be4c2e145b35529fb8cb62f68725",
+    "repository": "fc59d7e1a48c88a3957565700ab71495f3f16d5994d85d621d8072eae13b6deb"
+  },
+  "src/data/quizzes/akk201UasSimulator.ts": {
+    "worktree": "d94e9c43dcd5606555d022c63382a6aec9c4217a3539bbb3fbd672cf5a1ecfa5",
+    "repository": "9bfacb3865e43e2df8783bec06bdeffe291bc49f1db2654cf9bf7623705cceab"
+  },
+  "src/data/quizzes/akk201UtsSimulator.ts": {
+    "worktree": "b2e7aa512859323c89429f790286d192d2915f96d9540980f3194910ec49097c",
+    "repository": "761638d924ae69368628842e7ca7b6672425bcd37904069d3ca3981c2ab00235"
+  },
+  "src/data/quizzes/akk202.ts": {
+    "worktree": "09c15831a9618998cd099ec583b9237ca0c53c259021f2f8a539d9279dcf81b7",
+    "repository": "71b9c485bab0d204d5a183ba20fed0ba83cf0399bfda736fcf6fb78d373a36a4"
+  },
+  "src/data/quizzes/akm201.ts": {
+    "worktree": "aeb4a4b4469ff667b6279b364111318bd49befcdc2135da8ab29587d1d23b1ef",
+    "repository": "477474bf7892dfb846531222ee080a6af19b405a02aa8978b33adbde13d625e4"
+  },
+  "src/data/quizzes/akm202.ts": {
+    "worktree": "7bfc5a3fdcf8275bbb5b6e520e5a30056e465f952ace3cae1eedd8eb3000fcd3",
+    "repository": "83ad44b23a94febbdefeeda02a23f2b39e0f3609f451c0eeafa2b060383f6c68"
+  },
+  "src/data/quizzes/aks201.ts": {
+    "worktree": "93858cba4b2dfe5a392947d665332ceaf15b447c8eebd1af471203791f632e0d",
+    "repository": "13248ef0a8cb1d90fb9fd946dc8573a6785ec38b0a8944fb68225983fc004dc5"
+  },
+  "src/data/quizzes/bai101.ts": {
+    "worktree": "a43e3d93503f74d934b4c81e0b3cb6febfe4bddbaae8b0780e1c9bee96416077",
+    "repository": "8c0490c5a2408fc4c6e5aff3dff5ab63ba222cbc7492f1d8af044b002a2672f1"
+  },
+  "src/data/quizzes/ekt109.ts": {
+    "worktree": "a820c6f8456dfe0d92d5e3387040b131a6af7e08f0fd162137d93307e1a12689",
+    "repository": "e675668c3f010a06edfa4d9b30d64c807feca2464bd00f153676201ddfc4b67b"
+  },
+  "src/data/quizzes/ekt109Simulator.ts": {
+    "worktree": "fd210e33252dec6190115f5813894877d0049a79e6c18dd39d3d65bdbdeb9384",
+    "repository": "e6550a88d710fb557e140a117831342018186a57c318aeb1e0ed629ddd74f75d"
+  },
+  "src/data/quizzes/ekt109UasSimulator.ts": {
+    "worktree": "6d3424c54b85262f80d41578690d265607fd2b25d93d9c55e902a024b3b5599a",
+    "repository": "d65cab7e10e79b97f5d30b5f1eba71649ad3ebcdfc54ffae56fd0a42aae4dc20"
+  },
+  "src/data/quizzes/index.ts": {
+    "worktree": "b42d365a4e5dd420b094392b044c6bf299d06563a4ae83c207d9a383d89bd7a0",
+    "repository": "23d8db7ed10489bdd9135dfb595e18f10d8e533f26999b02f5515b3a18954d00"
+  },
+  "src/data/quizzes/mas122.ts": {
+    "worktree": "3a9bd626d36e3864eb7ff19d55781880adc2f062d95fdaee43dcb0fddd8d098e",
+    "repository": "dae39aeb8d33dc170029666b555c5db440a8b050671c7ade7772d2c0079bda29"
+  },
+  "src/data/quizzes/mnk201.ts": {
+    "worktree": "6a2a3aa66181afb5df6d7b6cec35f1eedd4d346e36110dfd353d385f479c0635",
+    "repository": "eb8af6b33b2d45dfd7fe442486ca34c04a1e3ccfd691e2a1e4958006d462665d"
+  },
+  "src/data/quizzes/mnm101.ts": {
+    "worktree": "be8826c26bd275935988c2cf16ca2606393c6d71daf924551e314f5b77a19b83",
+    "repository": "ae8400c4879497ec361d8826ad1d4d86776056fa6a7313a5c4e85708b6823adf"
+  },
+  "src/data/quizzes/mnm106.ts": {
+    "worktree": "b096223e97922091fb5cffa13ea1463e57ffefb16bdf1a529c4374692ad730a4",
+    "repository": "b31ee57396a9473223c4a0dbe915ae6ac8517132e2ae6de1c882e5bd5c5f069d"
+  },
+  "src/data/quizzes/mnm107.ts": {
+    "worktree": "7bcf7cb94f8759db2b8a5a48ad5b88bc498ab940b61874ad3f5a0f7fa3082c42",
+    "repository": "855c763e89c5b549a974e24feb8f51241ef8f2d5d0d77c07df03d8298d9c8b30"
+  },
+  "src/data/quizzes/mnu101.ts": {
+    "worktree": "8e5f33e15653564299586fa73f4d9046d38e084c3987004c0f78badd9598cff7",
+    "repository": "db29a5d22bb47e1067cd38152a6281ab0c2e15ad119f532ac44a929516c3ce15"
+  },
+  "src/data/quizzes/mnu101UasSimulator.ts": {
+    "worktree": "89bb1f8b793e40158aeef17affbacecebbbd1d7ddf82ee6e46e570644a728af2",
+    "repository": "19a1a41179cbdbfebcc6611abb56e2c39853046037988f9f338a5c56e12127d5"
+  },
+  "src/data/quizzes/mnu101UtsSimulator.ts": {
+    "worktree": "94082491ec6c0437b473e0ad77b56c3db592c4e04dfb47fd99e9eecf03c37fdb",
+    "repository": "81b5f3588285440cb8134e4f6f64ee24d90e8b230bed5359456993948bc67fa0"
+  },
+  "src/data/quizzes/nop103.ts": {
+    "worktree": "2356469566af6df97c08d4be5adb91126953ff3f79b96021047a951b447103c3",
+    "repository": "8d14f0a67871c420506502a9b61336a195e84c54e91e703f4118e6255ac18049"
+  },
+  "src/data/quizzes/nop104.ts": {
+    "worktree": "2ac021d947506464997722e0a1868251ff0d1786c063b5a2b0ffe74e7ebe0c8f",
+    "repository": "6373ecc66f865ff7cf96edfd420c0869d66fde7680ee6170f040c05346878d2c"
+  },
+  "src/data/quizzes/php103.ts": {
+    "worktree": "f16afdd05cec1d5d7cb9a3c3e8072e36442dacad9309085156365d6b097950da",
+    "repository": "78d7ba091e09b6228c09b82d2291e7f4c20cd5046cee38c00ed1ca4dff488b47"
+  },
+  "src/data/quizzes/pjk201UasSimulator.ts": {
+    "worktree": "e77d3207420775f5ad78f8d086eb854c606416660b7f0e1992dfef0a2f325b97",
+    "repository": "45ce1a576d0b1d16334fe0b346e3b35f490b3e476e4ec90c1208b238d9b94b0e"
+  },
+  "src/data/quizzes/pjk201UtsSimulator.ts": {
+    "worktree": "bd2da2b1bd35b331c499ca08dda84d45d346940569f732e0b1ddbb68969bbce5",
+    "repository": "adfb2aac0ef67abea276f399cdb648719ec3b155ebcaa7653282bcdcb10caa40"
+  },
+  "src/data/quizzes/pjk301.ts": {
+    "worktree": "2f32ccf3bee329664f1bae6f0647e69fbd32e24cbba202184d718296a264c72c",
+    "repository": "1a16dbfccac94c1bd13a1a2283741d514d50331bd9b360249201cd160a5b8503"
+  },
+  "src/data/quizzes/siaUtsSupplement.ts": {
+    "worktree": "86bd139c4fae2af514259f1085eb48c22e9d5130a029e6de172b55390eb49fc6",
+    "repository": "78a6e12839fe15066878a7d9345613432ea8eabdf31022ec5b0478a60b9d6ae2"
+  },
+  "src/data/quizzes/sii306.ts": {
+    "worktree": "fb2c039dadc902889245e1d74ff0bb78feac4ca439206899b4f5fd90e2a8e3ad",
+    "repository": "e9213f32888d5e8db15736bee13a7bc24564d93711621d5ae1185bb7e8c8b46f"
+  },
+  "src/data/quizzes/sip107.ts": {
+    "worktree": "c9970701c7fca7f833659a7fb8bb795d50a12382f43224ba72619437a41f5b51",
+    "repository": "ada94f20971c63e12be0710819f5090f77743bc536f61132c1898c7866269128"
+  },
+  "src/types.ts": {
+    "worktree": "6b74bfd46a6f93281dc38a99ace8e6e633b8d9383f76926087619897b029e2a9",
+    "repository": "05a0227f8c845dd47cb3b907b8e6c3159f2da75c1a1d19275e86ddc97eff99e7"
+  }
+}

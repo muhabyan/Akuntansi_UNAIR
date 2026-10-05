@@ -106,8 +106,8 @@ const MNU108_REF = [
 // --- MNS301 / MNU307 / MNM301 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
 // Sumber: RPP Resmi Manajemen Stratejik, Departemen Akuntansi FEB UNAIR.
 const MNS301_TM1_7 = materi([
-  ['Strategic Management: Creating Competitive Advantages', 'DMEL Ch. 1'],
-  ['Analisis Lingkungan Eksternal (PESTEL, Five Forces, Strategic Groups)', 'DMEL Ch. 2'],
+  ['Strategic Management', 'DMEL Ch. 1'],
+  ['Membaca lingkungan dan kemampuan perusahaan', 'DMEL Ch. 2–4'],
   ['Analisis Lingkungan Internal, Value Chain, & VRIO Framework', 'DMEL Ch. 3–4'],
   ['Business-Level Strategy: Keunggulan Bersaing & Siklus Hidup', 'DMEL Ch. 5'],
   ['Corporate-Level Strategy & International Strategy', 'DMEL Ch. 6–7'],
