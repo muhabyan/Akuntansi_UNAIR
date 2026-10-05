@@ -34,18 +34,18 @@ function scene(spec){
     note('Management mengelola korporasi bagi pemilik',800,950);
     note('Mekanisme internal dan eksternal saling melengkapi',800,1090);
   }else if(id==='V-TM05-07'){
-    height=1110;note('Principal–Agent Conflicts',400,60,26);note('Principal–Principal Conflicts',1200,60,26);
+    width=2200;height=1110;note('Principal–Agent Conflicts',400,60,26);note('Principal–Principal Conflicts',1570,60,26);
     node('Minority Shareholders',130,190,540);node('Professional Managers',130,780,540);edge(0,1,true);
-    node('Minority Shareholders',930,190,540);node('Family Managers',930,780,540);edge(2,3,true);
-    node('Controlling Shareholders',930,460,540);edge(4,3,true,'',true);note('penunjukan oleh pengendali',1200,720,20);
+    node('Minority Shareholders',1000,190,540);node('Family Managers',1000,780,540);edge(2,3,true);
+    node('Controlling Shareholders',1650,460,500);edge(4,3,true,'M1900 580 V840 H1540',true);note('penunjukan oleh pengendali',1700,700,20);
   }else if(id==='V-TM05-08'){
     width=2400;height=1540;
     [['Simple Structure',980,50],['Functional Structure (growth)',980,310],['Holding Company Structure',100,650],['Divisional Structure',980,950],['Functional Structure (vertical integration)',1860,650],['Worldwide Holding Company Structure',100,1200],['Worldwide Functional Structure',1860,1200],['International Structures',980,1340]].forEach(([s,x,y])=>node(s,x,y,440,150));
-    edge(0,1,false,'',false,true);edge(1,2);edge(1,3,false,'M980 385 H870 V1025 H980');edge(1,4,false,'',false,true);
-    edge(2,3);edge(2,5);edge(4,3,false,'',false,true);edge(4,6);edge(3,7,false,'',false,true);edge(5,7);edge(6,7);
-    note('growth in revenues/employees',1200,270,20);note('unrelated diversification',400,540,20);note('related products/markets',640,875,20);note('vertical integration',1950,540,20);
-    note('increase relatedness',380,860,20);note('related diversification',1850,890,20);
-    note('international expansion',320,1120,20);note('international expansion',2080,1120,20);note('international expansion',1460,1270,20);
+    edge(0,1,false,'',false,true);edge(1,2);edge(1,3,false,'M980 385 H800 V975 H980');edge(1,4,false,'',false,true);
+    edge(2,3,false,'M540 725 H660 V1140 H1060 V1100');edge(2,5);edge(4,3,false,'',false,true);edge(4,6);edge(3,7,false,'',false,true);edge(5,7);edge(6,7);
+    note('growth in revenues/employees',1050,230,20);note('unrelated diversification',650,520,20);note('related products/markets',950,650,20);note('vertical integration',1820,540,20);
+    note('increase relatedness',790,1115,20);note('related diversification',1850,890,20);
+    note('international expansion',180,1050,20);note('international expansion',2220,1050,20);note('international expansion',1350,1180,20);
     note('increase relatedness',580,1460,20);note('related diversification',1820,1460,20);
   }else if(id==='V-TM05-09'){
     width=2400;height=1330;

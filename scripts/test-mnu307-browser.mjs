@@ -1,3 +1,4 @@
+import { auditDiagram } from './mnu307-diagram-geometry.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -16,7 +17,7 @@ class Cdp {
 }
 let preview,chrome,cdp;
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'mnu307-pr3-'));
-const report=[];
+const report=[],routingReport=[];
 const targets=(process.env.MNU307_QA_TMS??'5,6').split(',').map(Number);
 const counts={1:{solutions:9,depth:13,self:11,figures:11,svg:7,minutes:14},2:{solutions:24,depth:11,self:10,figures:20,svg:12,minutes:23},3:{solutions:17,depth:9,self:8,figures:18,svg:10,minutes:18},4:{solutions:18,depth:7,self:7,figures:18,svg:12,minutes:20},5:{solutions:21,depth:7,self:7,figures:17,svg:11,minutes:19},6:{solutions:20,depth:7,self:7,figures:18,svg:12,minutes:20}};
 try {
@@ -113,6 +114,11 @@ try {
     await screenshot("document.querySelector('.reading-header')",`tm0${tm}-${theme}-header.png`,375);
     for(let i=0;i<state.figures;i++)await screenshot(`[...document.querySelectorAll('.reading-document figure')].filter(e=>e.checkVisibility()&&!e.parentElement.closest('figure'))[${i}]`,`tm0${tm}-${theme}-figure${i+1}.png`,375);
     const detail=await cdp.eval(`(()=>{document.querySelectorAll('.reading-document figure details').forEach(e=>e.open=true);const areas=[...document.querySelectorAll('.reading-document .akbi-table-scroll')].filter(e=>e.checkVisibility()).map(e=>{e.scrollLeft=e.scrollWidth;return {scroll:e.scrollLeft,max:e.scrollWidth-e.clientWidth};});return {overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,areas};})()`);
+
+    if(tm===5)for(const id of ['V-TM05-07','V-TM05-08']){
+      const result=await cdp.eval('('+auditDiagram.toString()+')([...document.querySelectorAll(".reading-document svg.mnu307-diagram")].find(s=>s.checkVisibility()&&s.querySelector("marker[id='+id+'-arrow]")))');
+      assert.deepEqual(result.issues,[],id+': live UI box routing, stroke separation and label-edge association');routingReport.push({width:375,theme,...result});
+    }
     assert.equal(detail.overflow,0);assert.ok(detail.areas.every(e=>Math.abs(e.scroll-e.max)<=1));
     report.push({tm,theme,width:375,overflow:state.overflow,figures:state.figures,exercises:state.solutions.length,depth:before.depth.length,scrollAreas:state.tables.length,detailScrollAreas:detail.areas.length,header:before.header,cardSubtitle});
     console.log(`MNU307 TM0${tm} ${theme} 375px PASS: ${state.figures} figures, all reveals open, overflow 0`);
@@ -120,6 +126,11 @@ try {
   for(const tm of targets)for(const theme of ['light','dark']) {
     await open(tm,theme,1280);await expand();
     const svgs=await cdp.eval("[...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility()).length");assert.equal(svgs,counts[tm].svg);
+
+    if(tm===5)for(const id of ['V-TM05-07','V-TM05-08']){
+      const result=await cdp.eval('('+auditDiagram.toString()+')([...document.querySelectorAll(".reading-document svg.mnu307-diagram")].find(s=>s.checkVisibility()&&s.querySelector("marker[id='+id+'-arrow]")))');
+      assert.deepEqual(result.issues,[],id+': live UI box routing, stroke separation and label-edge association');routingReport.push({width:1280,theme,...result});
+    }
     const clipped=await cdp.eval(`(()=>{const issues=[];for(const svg of [...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility()))for(const text of svg.querySelectorAll('text.svg-text')){const box=text.previousElementSibling.getBBox(),label=text.getBBox();if(label.x<box.x-1||label.x+label.width>box.x+box.width+1||label.y<box.y-1||label.y+label.height>box.y+box.height+1)issues.push(text.textContent);}return issues;})()`);
     const overlappingLabels=await cdp.eval('(()=>{const issues=[];for(const svg of [...document.querySelectorAll(".reading-document .mnu307-diagram")].filter(e=>e.checkVisibility())){const labels=[...svg.querySelectorAll("text")];for(let a=0;a<labels.length;a++)for(let b=a+1;b<labels.length;b++){const x=labels[a].getBBox(),y=labels[b].getBBox();if(Math.min(x.x+x.width,y.x+y.width)-Math.max(x.x,y.x)>2&&Math.min(x.y+x.height,y.y+y.height)-Math.max(x.y,y.y)>2)issues.push([labels[a].textContent,labels[b].textContent]);}}return issues;})()');
     assert.deepEqual(overlappingLabels,[],'diagram labels do not overlap');
@@ -127,5 +138,6 @@ try {
     for(let i=0;i<svgs;i++)await screenshot(`[...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility())[${i}]`,`tm0${tm}-${theme}-desktop-svg${i+1}.png`,1280);
     report.push({tm,theme,width:1280,svgs,overflow:0});console.log(`MNU307 TM0${tm} ${theme} desktop PASS: ${svgs} SVGs, labels fit`);
   }
+  fs.writeFileSync(path.join(output,'diagram-routing-report.json'),JSON.stringify(routingReport,null,2));
   fs.writeFileSync(path.join(output,'browser-report.json'),JSON.stringify(report,null,2));
 }finally{cdp?.ws.close();chrome?.kill();preview?.kill();}
