@@ -1,9 +1,10 @@
+import { auditDiagram } from './mnu307-diagram-geometry.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
-const root=process.cwd(),output=path.join(root,process.env.MNU307_QA_OUTPUT??'qa-mnu307-pr2.local');
+const root=process.cwd(),output=path.join(root,process.env.MNU307_QA_OUTPUT??'qa-mnu307-pr3.local');
 fs.mkdirSync(output,{recursive:true});
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 const port=Number(process.env.MNU307_PREVIEW_PORT??4186),cdpPort=Number(process.env.MNU307_CDP_PORT??9346);
@@ -15,10 +16,10 @@ class Cdp {
   async eval(expression){const result=await this.send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(result.exceptionDetails)throw Error(JSON.stringify(result.exceptionDetails));return result.result.value;}
 }
 let preview,chrome,cdp;
-const profile=fs.mkdtempSync(path.join(os.tmpdir(),'mnu307-pr2-'));
-const report=[];
-const targets=(process.env.MNU307_QA_TMS??'3,4').split(',').map(Number);
-const counts={1:{solutions:9,depth:13,self:11,figures:11,svg:7,minutes:14},2:{solutions:24,depth:11,self:10,figures:20,svg:12,minutes:23},3:{solutions:17,depth:9,self:8,figures:18,svg:10,minutes:18},4:{solutions:18,depth:7,self:7,figures:18,svg:12,minutes:20}};
+const profile=fs.mkdtempSync(path.join(os.tmpdir(),'mnu307-pr3-'));
+const report=[],routingReport=[];
+const targets=(process.env.MNU307_QA_TMS??'5,6').split(',').map(Number);
+const counts={1:{solutions:9,depth:13,self:11,figures:11,svg:7,minutes:14},2:{solutions:24,depth:11,self:10,figures:20,svg:12,minutes:23},3:{solutions:17,depth:9,self:8,figures:18,svg:10,minutes:18},4:{solutions:18,depth:7,self:7,figures:18,svg:12,minutes:20},5:{solutions:21,depth:7,self:7,figures:17,svg:11,minutes:19},6:{solutions:20,depth:7,self:7,figures:18,svg:12,minutes:20}};
 try {
   preview=spawn(process.execPath,[path.join(root,'node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd:root,stdio:'ignore',windowsHide:true});
   await waitFor(`http://127.0.0.1:${port}`);
@@ -60,7 +61,7 @@ try {
     return state;
   }
   async function attemptCase(tm) {
-    const label=tm===3?'Atlas':'Panasonic';
+    const label=({3:'Atlas',4:'Panasonic',5:'McDonald',6:'Nissan'})[tm];
     await cdp.eval(`(()=>{const s=[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('${label}'));s.querySelector('button[aria-expanded]').click();const self=document.querySelector('.layered-self-check'),t=self.querySelector('textarea');Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value').set.call(t,'Draft ${label} hanya untuk materi ini');t.dispatchEvent(new Event('input',{bubbles:true}));})()`);
     await sleep(100);
     assert.equal(await cdp.eval("document.querySelector('.layered-self-check textarea').value"),`Draft ${label} hanya untuk materi ini`);
@@ -74,21 +75,22 @@ try {
     for(let i=0;i<100;i++){if(await cdp.eval(`window.history.state?.akuntansihub_tm===${tm}&&document.querySelectorAll('.course-solution-surface button[aria-expanded]').length===${counts[tm].solutions}`))break;await sleep(100);}
     await sleep(100);
   }
-  for(const width of [375,1280])for(const theme of ['light','dark'])for(const start of [3,4]) {
-    const dest=start===3?4:3;
-    await open(start,theme,width);
-    await transitionState(start,`fresh TM0${start}`,theme,width);
-    await attemptCase(start);
-    await step(dest,start===3?'Berikutnya':'Sebelumnya');
-    await transitionState(dest,`TM0${start} → TM0${dest}`,theme,width);
-    if(width===375) {
-      await screenshot("[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('"+(dest===4?'Panasonic':'Atlas')+"'))",`transition-tm0${start}-tm0${dest}-${theme}-closed-case.png`,375);
-      await screenshot("document.querySelector('.layered-self-check')",`transition-tm0${start}-tm0${dest}-${theme}-empty-draft.png`,375);
+  for(const width of [375,1280])for(const theme of ['light','dark'])for(const chain of [[3,4,3],[4,5,6,5,4],[6,5,4,5,6]]) {
+    const start=chain[0];await open(start,theme,width);
+    await cdp.eval('window.__readingLifecycleToken='+JSON.stringify(chain.join('-')));
+    await transitionState(start,'fresh TM0'+start,theme,width);
+    for(let i=1;i<chain.length;i++){
+      const previous=chain[i-1],dest=chain[i];await attemptCase(previous);
+      await step(dest,dest>previous?'Berikutnya':'Sebelumnya');
+      assert.equal(await cdp.eval('window.__readingLifecycleToken'),chain.join('-'),'no reload across TM transitions');
+      await transitionState(dest,'TM0'+previous+' → TM0'+dest,theme,width);
+      if(width===375){
+        const label=({3:'Atlas',4:'Panasonic',5:'McDonald',6:'Nissan'})[dest];
+        await screenshot("[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('"+label+"'))",'transition-tm0'+previous+'-tm0'+dest+'-'+theme+'-closed-case.png',375);
+        await screenshot("document.querySelector('.layered-self-check')",'transition-tm0'+previous+'-tm0'+dest+'-'+theme+'-empty-draft.png',375);
+      }
     }
-    await attemptCase(dest);
-    await step(start,dest===3?'Berikutnya':'Sebelumnya');
-    await transitionState(start,`return TM0${dest} → TM0${start}`,theme,width);
-    console.log(`Reading transitions ${width}px ${theme}, fresh TM0${start}, next/previous PASS: closed solutions and empty drafts`);
+    console.log('Reading transitions '+width+'px '+theme+' '+chain.join(' ↔ ')+' PASS: closed solutions and empty drafts without reload');
   }
 
   for(const tm of targets)for(const theme of ['light','dark']) {
@@ -112,6 +114,11 @@ try {
     await screenshot("document.querySelector('.reading-header')",`tm0${tm}-${theme}-header.png`,375);
     for(let i=0;i<state.figures;i++)await screenshot(`[...document.querySelectorAll('.reading-document figure')].filter(e=>e.checkVisibility()&&!e.parentElement.closest('figure'))[${i}]`,`tm0${tm}-${theme}-figure${i+1}.png`,375);
     const detail=await cdp.eval(`(()=>{document.querySelectorAll('.reading-document figure details').forEach(e=>e.open=true);const areas=[...document.querySelectorAll('.reading-document .akbi-table-scroll')].filter(e=>e.checkVisibility()).map(e=>{e.scrollLeft=e.scrollWidth;return {scroll:e.scrollLeft,max:e.scrollWidth-e.clientWidth};});return {overflow:document.documentElement.scrollWidth-document.documentElement.clientWidth,areas};})()`);
+
+    if(tm===5)for(const id of ['V-TM05-07','V-TM05-08']){
+      const result=await cdp.eval('('+auditDiagram.toString()+')([...document.querySelectorAll(".reading-document svg.mnu307-diagram")].find(s=>s.checkVisibility()&&s.querySelector("marker[id='+id+'-arrow]")))');
+      assert.deepEqual(result.issues,[],id+': live UI box routing, stroke separation and label-edge association');routingReport.push({width:375,theme,...result});
+    }
     assert.equal(detail.overflow,0);assert.ok(detail.areas.every(e=>Math.abs(e.scroll-e.max)<=1));
     report.push({tm,theme,width:375,overflow:state.overflow,figures:state.figures,exercises:state.solutions.length,depth:before.depth.length,scrollAreas:state.tables.length,detailScrollAreas:detail.areas.length,header:before.header,cardSubtitle});
     console.log(`MNU307 TM0${tm} ${theme} 375px PASS: ${state.figures} figures, all reveals open, overflow 0`);
@@ -119,10 +126,18 @@ try {
   for(const tm of targets)for(const theme of ['light','dark']) {
     await open(tm,theme,1280);await expand();
     const svgs=await cdp.eval("[...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility()).length");assert.equal(svgs,counts[tm].svg);
+
+    if(tm===5)for(const id of ['V-TM05-07','V-TM05-08']){
+      const result=await cdp.eval('('+auditDiagram.toString()+')([...document.querySelectorAll(".reading-document svg.mnu307-diagram")].find(s=>s.checkVisibility()&&s.querySelector("marker[id='+id+'-arrow]")))');
+      assert.deepEqual(result.issues,[],id+': live UI box routing, stroke separation and label-edge association');routingReport.push({width:1280,theme,...result});
+    }
     const clipped=await cdp.eval(`(()=>{const issues=[];for(const svg of [...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility()))for(const text of svg.querySelectorAll('text.svg-text')){const box=text.previousElementSibling.getBBox(),label=text.getBBox();if(label.x<box.x-1||label.x+label.width>box.x+box.width+1||label.y<box.y-1||label.y+label.height>box.y+box.height+1)issues.push(text.textContent);}return issues;})()`);
+    const overlappingLabels=await cdp.eval('(()=>{const issues=[];for(const svg of [...document.querySelectorAll(".reading-document .mnu307-diagram")].filter(e=>e.checkVisibility())){const labels=[...svg.querySelectorAll("text")];for(let a=0;a<labels.length;a++)for(let b=a+1;b<labels.length;b++){const x=labels[a].getBBox(),y=labels[b].getBBox();if(Math.min(x.x+x.width,y.x+y.width)-Math.max(x.x,y.x)>2&&Math.min(x.y+x.height,y.y+y.height)-Math.max(x.y,y.y)>2)issues.push([labels[a].textContent,labels[b].textContent]);}}return issues;})()');
+    assert.deepEqual(overlappingLabels,[],'diagram labels do not overlap');
     assert.deepEqual(clipped,[],`TM0${tm}: node labels fit`);assert.equal(await cdp.eval('document.documentElement.scrollWidth-document.documentElement.clientWidth'),0);
     for(let i=0;i<svgs;i++)await screenshot(`[...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility())[${i}]`,`tm0${tm}-${theme}-desktop-svg${i+1}.png`,1280);
     report.push({tm,theme,width:1280,svgs,overflow:0});console.log(`MNU307 TM0${tm} ${theme} desktop PASS: ${svgs} SVGs, labels fit`);
   }
+  fs.writeFileSync(path.join(output,'diagram-routing-report.json'),JSON.stringify(routingReport,null,2));
   fs.writeFileSync(path.join(output,'browser-report.json'),JSON.stringify(report,null,2));
 }finally{cdp?.ws.close();chrome?.kill();preview?.kill();}

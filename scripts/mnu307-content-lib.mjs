@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { figure } from './mnu307-visuals.mjs';
 
-export const TMS = [1, 2, 3, 4];
-export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20 };
+export const TMS = [1, 2, 3, 4, 5, 6];
+export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20, 5: 19, 6: 20 };
 export const sourcePath = tm => `scripts/fixtures/mnu307/tm${String(tm).padStart(2, '0')}.md`;
 export const sourceHash = tm => createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
 export function visualSpecs(source) {
@@ -80,7 +80,7 @@ function examBlocks(lines, tm) {
       result.push({ kind: 'solution-reveal', title: block.text, promptBlocks: [question], blocks: [answer], revealLabel: 'Tampilkan penyelesaian dan jawaban akhir' });
       continue;
     }
-    if (tm >= 3 && block.kind === 'p' && /^\*\*Kasus \d+:/.test(block.text)) {
+    if (tm >= 3 && block.kind === 'p' && /^\*\*(?:Kasus\b|Exhibit \d+)/.test(block.text)) {
       const split = block.text.indexOf('**Pokok jawaban:**');
       const question = split < 0 ? block : { ...block, text: block.text.slice(0, split).trim() };
       const answer = split < 0 ? parsed[++i] : { kind: 'p', text: block.text.slice(split).trim() };
@@ -111,7 +111,9 @@ export function buildReading(tm) {
   const practice = examBlocks(lines.slice(exam + 1), tm);
   const firstExercise = practice.findIndex(b => b.kind === 'solution-reveal');
   blocks.push({ kind: 'section', layer: 'latihan', title: lines[exam].slice(3), blocks: practice.slice(0, firstExercise) }, ...practice.slice(firstExercise));
+  // Escape literal currency for the existing Markdown/math renderer, preserving visible source text.
+  if(tm>=5)for(const block of flatten(blocks))if(block.kind==='p')block.text=block.text.replace(/US\$(?=\d)/g,()=> 'US\\$');
   const memory = foundation.blocks.find(b => b.kind === 'callout' && b.variant === 'gist');
-  return { tm, title: lines[0].replace(/^# MNU307 TM\d+:\s*/, '').replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), ref: 'Dess dkk., Strategic Management: Text and Cases, 11th ed.' + ({1:' · Chapter 1 [hal. 2–33]',2:' · Chapters 2–4 [hal. 36–134]',3:' · Chapters 5–6 [hal. 142–202]',4:' · Chapters 7–8 [hal. 207–267]'}[tm]), intro: memory.text.replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), objectives: foundation.blocks.find(b => ['ul', 'ol'].includes(b.kind)).items, layout: 'layered', coreReadingMinutes: minutes[tm], blocks };
+  return { tm, title: lines[0].replace(/^# MNU307 TM\d+:\s*/, '').replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), ref: 'Dess dkk., Strategic Management: Text and Cases, 11th ed.' + ({1:' · Chapter 1 [hal. 2–33]',2:' · Chapters 2–4 [hal. 36–134]',3:' · Chapters 5–6 [hal. 142–202]',4:' · Chapters 7–8 [hal. 207–267]',5:' · Chapters 9–10 [hal. 271–330]',6:' · Chapters 11–12 [hal. 337–390]'}[tm]), intro: memory.text.replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), objectives: foundation.blocks.find(b => ['ul', 'ol'].includes(b.kind)).items, layout: 'layered', coreReadingMinutes: minutes[tm], blocks };
 }
 export const flatten = blocks => blocks.flatMap(b => [b, ...flatten(b.blocks ?? []), ...flatten(b.promptBlocks ?? []), ...flatten(b.answer ?? [])]);

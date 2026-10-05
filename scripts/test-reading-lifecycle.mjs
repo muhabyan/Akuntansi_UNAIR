@@ -104,6 +104,15 @@ try {
   await historyTo({ akuntansihub_tm: 4 });
   closed('TM03 → TM04 via history', 18);
 
+  await attempt('Panasonic');
+  await click(button('Berikutnya')); closed('TM04 → TM05 via Berikutnya',21);
+  await attempt('McDonald');
+  await click(button('Berikutnya')); closed('TM05 → TM06 via Berikutnya',20);
+  await attempt('Nissan');
+  await click(button('Sebelumnya')); closed('TM06 → TM05 via Sebelumnya',21);
+  await attempt('McDonald');
+  await click(button('Sebelumnya')); closed('TM05 → TM04 via Sebelumnya',18);
+
   // In-memory test fixtures only: review/simulation with the SAME TM and block
   // indices as a normal reading, plus two distinct review keys with that TM.
   // This isolates the identity boundary; no course source is written or changed.
