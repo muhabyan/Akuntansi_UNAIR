@@ -24,8 +24,8 @@
     "repository": "86c9128a52efca9a2dde5cd794312d870d431122003c6dafa13f401198998ec1"
   },
   "src/components/course/CourseLayout.tsx": {
-    "worktree": "fca5f5a6566373a7ff4ef5f6d4741bdcab0fefb93c49011ddd96bd30dd4dd138",
-    "repository": "a6153ecd145e60c8422021a8495202a31eaeffb392994305265b98bdb7dab036"
+    "worktree": "045c72e2d8b5ac5b0377921a75e57ec611b3e994a454c3db3a35488a24e10ea2",
+    "repository": "fd01fcecf8e0a455d245931eca5dee0361465bff2d2f7b6a8612793da27cc919"
   },
   "src/components/course/CourseSidebar.tsx": {
     "worktree": "f69a879c34ae9b93b92e848e6d328ab44f0a7123eae099136eb0df7f47323b57",
@@ -303,14 +303,6 @@
     "worktree": "4f71383d999e01146f7e2c6f057ae0029995ce66c0df7e2110f350337968fdb1",
     "repository": "2b3f1d8ce61be4ed5bfe9d54c8dbfe073b9bfe78a17f06dfdff149b7938ad5f6"
   },
-  "src/data/manstrat/modules/tm3.ts": {
-    "worktree": "9ff58cec5cfbc9208ce632374839824bfc3d012082e5cd2ccea48d9a9ea46208",
-    "repository": "01d172c8467db329eaf3f273c05a9c76a5cb2e8f476902e1a7436524c1a2b3b7"
-  },
-  "src/data/manstrat/modules/tm4.ts": {
-    "worktree": "28bb5a61c47775ed9049284b7d776a557cec0c970df66000db04140c43bc5aa9",
-    "repository": "a5f25e2edef47a3a7035fdb32effd89ab8584f81a38f7f7130cf65d642191a71"
-  },
   "src/data/manstrat/modules/tm5.ts": {
     "worktree": "fdf9a683e4f162e0cc929427f0d5d0e6c4bb2c428488f5e979ffbc04b75d13e7",
     "repository": "a2aa3334fb577f8455984564edd1725292fff42ccda69b75ae50c042bbd6069e"
@@ -478,5 +470,13 @@
   "src/types.ts": {
     "worktree": "6b74bfd46a6f93281dc38a99ace8e6e633b8d9383f76926087619897b029e2a9",
     "repository": "05a0227f8c845dd47cb3b907b8e6c3159f2da75c1a1d19275e86ddc97eff99e7"
+  },
+  "src/data/manstrat/modules/tm1.ts": {
+    "worktree": "40417389340329d8744d50e165fcd0ffd522bab140b3614dd7b86bfdb65c6545",
+    "repository": "40417389340329d8744d50e165fcd0ffd522bab140b3614dd7b86bfdb65c6545"
+  },
+  "src/data/manstrat/modules/tm2.ts": {
+    "worktree": "78081c5ab71e018123d1a06a6215aae04444cc3c34937b3138a21cf7689eb617",
+    "repository": "78081c5ab71e018123d1a06a6215aae04444cc3c34937b3138a21cf7689eb617"
   }
 }

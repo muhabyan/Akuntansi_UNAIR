@@ -943,6 +943,8 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
         <main className="relative min-w-0 flex-1 pb-10">
           {currentReading ? (
             <ReadingPanel
+              // Reset transient answers/drafts when the course, TM, or review changes.
+              key={`${course.code}:${selectedReviewKey !== null ? `review:${selectedReviewKey}` : `reading:${selectedMeetingTm}`}`}
               reading={currentReading}
               courseCode={course.code}
               courseName={course.name}

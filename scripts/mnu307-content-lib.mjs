@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { figure } from './mnu307-visuals.mjs';
 
-export const TMS = [1, 2];
+export const TMS = [1, 2, 3, 4];
+export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20 };
 export const sourcePath = tm => `scripts/fixtures/mnu307/tm${String(tm).padStart(2, '0')}.md`;
 export const sourceHash = tm => createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
 export function visualSpecs(source) {
@@ -70,7 +71,23 @@ export function parseBlocks(lines) {
 
 function examBlocks(lines, tm) {
   const result = [];
-  for (const block of parseBlocks(lines)) {
+  const parsed = parseBlocks(lines);
+  for (let i = 0; i < parsed.length; i++) {
+    const block = parsed[i];
+    if (tm >= 3 && block.kind === 'h3' && /^SRQ-TM/.test(block.text)) {
+      const question = parsed[++i], answer = parsed[++i];
+      if (question?.kind !== 'p' || answer?.kind !== 'p' || !answer.text.startsWith('**Pokok jawaban:**')) throw Error('Incomplete SRQ');
+      result.push({ kind: 'solution-reveal', title: block.text, promptBlocks: [question], blocks: [answer], revealLabel: 'Tampilkan penyelesaian dan jawaban akhir' });
+      continue;
+    }
+    if (tm >= 3 && block.kind === 'p' && /^\*\*Kasus \d+:/.test(block.text)) {
+      const split = block.text.indexOf('**Pokok jawaban:**');
+      const question = split < 0 ? block : { ...block, text: block.text.slice(0, split).trim() };
+      const answer = split < 0 ? parsed[++i] : { kind: 'p', text: block.text.slice(split).trim() };
+      if (answer?.kind !== 'p' || !answer.text.startsWith('**Pokok jawaban:**')) throw Error('Incomplete case');
+      result.push({ kind: 'solution-reveal', title: question.text.match(/^\*\*([^*]+)\*\*/)[1], promptBlocks: [question], blocks: [answer], revealLabel: 'Tampilkan penyelesaian dan jawaban akhir' });
+      continue;
+    }
     if (block.kind === 'self-check') {
       result.push({ kind: 'solution-reveal', title: /^\d+\./.test(block.question) ? `Summary Review Question ${block.question.match(/^\d+/)[0]}` : block.question.split('. ')[0], promptBlocks: [{ kind: 'p', text: block.question }], blocks: [...block.answer, { kind: 'p', text: block.signal }], revealLabel: 'Tampilkan penyelesaian dan jawaban akhir' });
     } else if (tm === 2 && block.kind === 'table' && block.headers[0] === 'ID') {
@@ -95,6 +112,6 @@ export function buildReading(tm) {
   const firstExercise = practice.findIndex(b => b.kind === 'solution-reveal');
   blocks.push({ kind: 'section', layer: 'latihan', title: lines[exam].slice(3), blocks: practice.slice(0, firstExercise) }, ...practice.slice(firstExercise));
   const memory = foundation.blocks.find(b => b.kind === 'callout' && b.variant === 'gist');
-  return { tm, title: lines[0].replace(/^# MNU307 TM\d+:\s*/, '').replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), ref: 'Dess dkk., Strategic Management: Text and Cases, 11th ed.' + (tm === 1 ? ' · Chapter 1 [hal. 2–33]' : ' · Chapters 2–4 [hal. 36–134]'), intro: memory.text.replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), objectives: foundation.blocks.find(b => ['ul', 'ol'].includes(b.kind)).items, layout: 'layered', coreReadingMinutes: tm === 1 ? 14 : 23, blocks };
+  return { tm, title: lines[0].replace(/^# MNU307 TM\d+:\s*/, '').replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), ref: 'Dess dkk., Strategic Management: Text and Cases, 11th ed.' + ({1:' · Chapter 1 [hal. 2–33]',2:' · Chapters 2–4 [hal. 36–134]',3:' · Chapters 5–6 [hal. 142–202]',4:' · Chapters 7–8 [hal. 207–267]'}[tm]), intro: memory.text.replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), objectives: foundation.blocks.find(b => ['ul', 'ol'].includes(b.kind)).items, layout: 'layered', coreReadingMinutes: minutes[tm], blocks };
 }
 export const flatten = blocks => blocks.flatMap(b => [b, ...flatten(b.blocks ?? []), ...flatten(b.promptBlocks ?? []), ...flatten(b.answer ?? [])]);
