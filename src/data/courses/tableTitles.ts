@@ -1,4 +1,5 @@
 import type { ContentBlock, Reading } from '../../types';
+import { reviewedTableTitle } from './tableTitleOverrides';
 
 /** Remove source anchors and heading numbers, keeping the actual subject intact. */
 function subject(text: string): string {
@@ -8,6 +9,7 @@ function subject(text: string): string {
     .replace(/[*_`]/g, '')
     .replace(/^\d+[a-z]?(?:\.\d+)*[.)]?\s+/i, '')
     .replace(/\s*\(\d+\s*menit\)/gi, '')
+    .replace(/\s*·\s*\d+\s*menit/gi, '')
     .replace(/\s*·\s*Konsep buku ASP/gi, '')
     .replace(/\s+/g, ' ')
     .replace(/[:.]$/, '')
@@ -17,11 +19,16 @@ function subject(text: string): string {
 /** Numbered captions in finance/tax data already contain a descriptive table name. */
 function captionTitle(caption?: string): string | undefined {
   const match = caption?.match(/^Tabel\s+(?:Solusi\s+Kasus\s+)?[\d.]+[a-z]?:\s*([^\n]+)/i);
-  return match ? subject(match[1].split(/;|\.\s/)[0]) : undefined;
+  // Do not cut at arbitrary periods or semicolons: s.d. 2025 and qualifiers carry meaning.
+  return match ? subject(match[1].split(/\s+(?:Sumber|Rujukan):/i)[0]) : undefined;
 }
 
 function isGeneric(text: string): boolean {
-  return /^(?:exam toolkit|alat bantu ujian|quick reference.*|daftar komponen lengkap|kesalahpahaman umum|jangan tertukar|jawaban pertanyaan kasus|ringkasan kasus|ringkasan konsep|kekeliruan umum saat ujian|pertanyaan untuk diskusi|orientasi.*|orientation.*|pembahasan|jawaban|analisis|ringkasan|exam traps)$/i.test(text);
+  return /^(?:exam toolkit|alat bantu ujian|quick reference.*|daftar komponen lengkap|kesalahpahaman umum|jangan tertukar|jawaban pertanyaan kasus|ringkasan kasus|ringkasan konsep|kekeliruan umum saat ujian|pertanyaan untuk diskusi|orientasi.*|orientation.*|pembahasan|jawaban|penyelesaian|analisis|ringkasan|prinsip|exam traps)$/i.test(text);
+}
+
+function isTableLabel(text: string): boolean {
+  return text.split(/\s+/).length <= 18 && !/[?]|^(?:Q\d+\b|sumber\b|rujukan\b|buku\b|lihat\b|geser\b|klik\b|tampilkan\b)/i.test(text);
 }
 
 function columnSubject(headers: string[]): string {
@@ -39,12 +46,13 @@ export function getTableTitle(block: Extract<ContentBlock, { kind: 'table' }>): 
  * Source captions stay in the footer; they are never substituted for the subject.
  */
 export function withTableTitles(reading: Reading): Reading {
-  function nameBlocks(blocks: ContentBlock[], parent: string): ContentBlock[] {
+  function nameBlocks(blocks: ContentBlock[], parent: string, prefix: string): ContentBlock[] {
     let section = parent;
     let mainSection = parent;
     let lead: string | undefined;
     let exhibit: string | undefined;
-    const named = blocks.map((block): ContentBlock => {
+    const named = blocks.map((block, index): ContentBlock => {
+      const at = `${prefix}[${index}]`;
       if (block.kind === 'h2' || block.kind === 'h3') {
         const heading = subject(block.text);
         const context = block.kind === 'h2' ? parent : mainSection;
@@ -57,27 +65,28 @@ export function withTableTitles(reading: Reading): Reading {
         const label = block.text.match(/^\*\*([^*\n]+)\*\*(?:\s*\[hal\.[^\]]*\])?[.:]?$/)?.[1]
           // A short colon-ended introduction is often more precise than the full case question.
           ?? block.text.match(/^([^*\n]{8,160}):\s*$/)?.[1];
-        if (label) {
+        if (label && isTableLabel(label)) {
           lead = subject(label);
           exhibit = lead.match(/^(Exhibit\s+[\d.]+)\s*:/i)?.[1];
         }
         const part = block.text.match(/^\(([a-z])\)\s+([^.!?\n]+)[.!?](?:\s|$)/i)?.[2];
-        if (part) lead = `${exhibit ? `${exhibit} — ` : ''}${subject(part)}`;
+        if (part && isTableLabel(part)) lead = `${exhibit ? `${exhibit} — ` : ''}${subject(part)}`;
       }
       if (block.kind === 'table') {
-        const title = block.title || block.reportHeader?.title || captionTitle(block.caption) || lead || section;
+        const title = block.title || block.reportHeader?.title || reviewedTableTitle(reading, at, block) || captionTitle(block.caption) || lead || section;
         lead = undefined;
         return { ...block, title };
       }
       if ('blocks' in block) {
-        const context = block.title ? subject(block.title) : section;
-        const nested = { ...block, blocks: nameBlocks(block.blocks, context) };
+        const label = block.title ? subject(block.title) : undefined;
+        const context = label ? (isGeneric(label) ? `${section} — ${label}` : label) : section;
+        const nested = { ...block, blocks: nameBlocks(block.blocks, context, `${at}.blocks`) };
         if (nested.kind === 'solution-reveal' && nested.promptBlocks) {
-          return { ...nested, promptBlocks: nameBlocks(nested.promptBlocks, context) };
+          return { ...nested, promptBlocks: nameBlocks(nested.promptBlocks, context, `${at}.promptBlocks`) };
         }
         return nested;
       }
-      if (block.kind === 'self-check') return { ...block, answer: nameBlocks(block.answer, section) };
+      if (block.kind === 'self-check') return { ...block, answer: nameBlocks(block.answer, section, `${at}.answer`) };
       return block;
     });
     // When several tables share a topic, their columns explain which part each shows.
@@ -85,9 +94,17 @@ export function withTableTitles(reading: Reading): Reading {
     named.forEach((block) => {
       if (block.kind === 'table' && block.title) counts.set(block.title, (counts.get(block.title) ?? 0) + 1);
     });
-    return named.map((block, index) => block.kind === 'table' && !block.reportHeader && blocks[index].kind === 'table' && !(blocks[index] as Extract<ContentBlock, { kind: 'table' }>).title && (counts.get(block.title ?? '') ?? 0) > 1
+    return named.map((block, index) => block.kind === 'table' && !block.reportHeader && blocks[index].kind === 'table' && !(blocks[index] as Extract<ContentBlock, { kind: 'table' }>).title && !reviewedTableTitle(reading, `${prefix}[${index}]`, block) && (counts.get(block.title ?? '') ?? 0) > 1
       ? { ...block, title: `${block.title} — ${columnSubject(block.headers)}` }
       : block);
   }
-  return { ...reading, blocks: nameBlocks(reading.blocks, subject(reading.title)) };
+  return { ...reading, blocks: nameBlocks(reading.blocks, subject(reading.title), 'blocks') };
+}
+
+/** Keep aligned amounts and side-by-side comparisons together at narrow widths. */
+export function keepTableColumns(block: Extract<ContentBlock, { kind: 'table' }>): boolean {
+  return Boolean(block.reportHeader || block.rowRules?.length || block.align?.includes('right')
+    || block.rows.some(row => row.slice(1).some(cell => /(?:\b(?:Rp|IDR|USD|EUR)\s*\d|[$€£]\s*\d|\d\s*%|^-?\d[\d.,]*(?:\s*[×x])?$)/.test(cell.trim())))
+    || (block.headers.length >= 3 && block.headers.slice(1).filter(header => !/^(?:sumber|hal\.?|rujukan)$/i.test(header.trim())).length >= 2
+      && block.headers.slice(1).filter(header => !/^(?:sumber|hal\.?|rujukan)$/i.test(header.trim())).every(header => !/arti|makna|contoh|rumus|penjelasan|catatan|implikasi|perlakuan|pertanyaan/i.test(header))));
 }

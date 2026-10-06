@@ -3,7 +3,7 @@ import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBran
 import ReportTable from './ReportTable';
 import TableHeading from './TableHeading';
 import type { ContentBlock } from '../../types';
-import { getTableTitle } from '../../data/courses/tableTitles';
+import { getTableTitle, keepTableColumns } from '../../data/courses/tableTitles';
 import { renderText } from './MarkdownContent';
 import PracticeReportCard from './PracticeReportCard';
 import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
@@ -382,6 +382,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       if (!enableEconomicStyling) {
         const tableLabel = getTableTitle(block);
         const isFinancialGlossary = block.headers.length === 4 && block.headers.includes('Nama Finansial');
+        const keepColumns = !isFinancialGlossary && keepTableColumns(block);
         // In a layered reading a "Sumber" column is a source reference: small and muted.
         const mutedColumns = block.headers.map((header) => layered && /^sumber$/i.test(header.trim()));
         // Column alignment from the source table (e.g. right-aligned amounts); desktop table only, phone cards ignore it.
@@ -391,7 +392,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const tableCard = (
           <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
             <TableHeading title={tableLabel} flat={flatTable} hint={
-              <span className="md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
+              keepColumns ? <span className="md:hidden">Geser untuk membandingkan kolom →</span> : undefined
             } />
             {isFinancialGlossary && (
               <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">
@@ -420,7 +421,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               onTouchMove={(e) => e.stopPropagation()}
               onTouchEnd={(e) => e.stopPropagation()}
             >
-              <table className={`w-full border-collapse text-left ${isFinancialGlossary ? 'min-w-[840px]' : ''}`}>
+              <table className={`w-full border-collapse text-left ${isFinancialGlossary ? 'min-w-[840px]' : keepColumns ? 'min-w-[520px]' : ''}`}>
                 <caption className="sr-only">{tableLabel}</caption>
                 <thead>
                   <tr className="course-table-head">
@@ -461,11 +462,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           </div>
         );
         // Where the stacked view takes over from the table:
-        // - the shared reading frame (layered readings, PJK301) stacks every table below 1024px, because its desktop
-        //   table needs 42rem and the frame is narrower than that from 1024px down;
+        // - the shared reading frame stacks prose tables below 1024px;
+        // - numeric and comparison tables keep their columns in a local scroll region;
         // - any other reading opts a single table in with stackOnMobile, and only phones get the stacked view. A table
         //   that fits a phone stays a table, so the reader still sees the comparison side by side.
-        const stackBelow = sharedFrame ? 'lg' : block.stackOnMobile ? 'sm' : null;
+        const stackBelow = keepColumns || isFinancialGlossary ? null : sharedFrame ? 'lg' : block.stackOnMobile ? 'sm' : null;
         if (!stackBelow) return tableCard;
         return (
           <>

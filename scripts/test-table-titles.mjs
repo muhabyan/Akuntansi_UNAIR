@@ -7,10 +7,9 @@ import { createServer } from 'vite';
 
 const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'silent' });
 try {
-  const [{ withTableTitles }, { loadCourseContent }, { SEMESTERS }, { default: Card }, { SharedFrameContext }, { LayeredContext, InsideBoxContext }] = await Promise.all([
+  const [{ withTableTitles, keepTableColumns }, { loadCourseContent }, { default: Card }, { SharedFrameContext }, { LayeredContext, InsideBoxContext }] = await Promise.all([
     server.ssrLoadModule('/src/data/courses/tableTitles.ts'),
     server.ssrLoadModule('/src/data/courses/courseRegistry.ts'),
-    server.ssrLoadModule('/src/data/courseData.ts'),
     server.ssrLoadModule('/src/components/course/CourseBlockCard.tsx'),
     server.ssrLoadModule('/src/components/course/readingFrame.ts'),
     server.ssrLoadModule('/src/components/course/layeredContext.ts'),
@@ -59,7 +58,8 @@ try {
   assert.equal(tables[0].caption, snapshot.blocks[1].caption, 'source notes stay intact');
 
   const counts = {};
-  for (const { code } of SEMESTERS.find((semester) => semester.number === 3).groups.flatMap((group) => group.courses)) {
+  // Manjik is a semester-5 course read by the semester-3 audience. Catalog groups do not define this scope.
+  for (const code of ['MNU108', 'MNK201', 'AKA201', 'AKK202', 'PJK301', 'SII306', 'AKS201', 'MNS301']) {
     const content = await loadCourseContent(code);
     let count = 0;
     for (const reading of [...Object.values(content.readings), ...Object.values(content.reviews)]) {
@@ -90,6 +90,49 @@ try {
   assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur lama (tall)'), 'name the old organization chart');
   assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur baru (flat)'), 'distinguish the new organization chart');
 
+  const finance = await loadCourseContent('MNK201');
+  assert.equal(withTableTitles(finance.readings[3]).blocks[4].title, 'Arti simbol pada rumus TVM');
+  const projectTables = flatten(withTableTitles(finance.readings[6]).blocks).filter(b => b.kind === 'table');
+  assert.ok(projectTables.some(b => b.title === 'Arus kas Project X dan Project Y'));
+  const methods = projectTables.find(b => b.title === 'Hasil lima metode evaluasi Project X dan Project Y pada WACC 12%');
+  assert.equal(methods.rows.length, 5, 'the summary covers five methods, not just discounted payback');
+  assert.equal(methods.rows[0][0], 'Net Present Value (NPV)');
+  assert.equal(keepTableColumns(methods), true, 'project results remain comparable on phones');
+  const stale = structuredClone(finance.readings[3]);
+  stale.blocks[4].headers[0] = 'Pengganti simbol';
+  assert.notEqual(withTableTitles(stale).blocks[4].title, 'Arti simbol pada rumus TVM', 'a stale override cannot name a structurally changed table');
+
+  const strategy = await loadCourseContent('MNS301');
+  const governance = withTableTitles(strategy.readings[5]).blocks[6].blocks;
+  assert.equal(governance[3].title, 'Peran shareholders, management, dan board');
+  assert.equal(governance[6].title, 'Agency problem dan risk sharing');
+  assert.equal(governance[17].title, 'Principal–agent dan principal–principal conflicts');
+  const leadership = withTableTitles(strategy.readings[6]).blocks[5].blocks[9];
+  assert.equal(leadership.title, 'Enam basis kekuasaan pemimpin');
+  assert.equal(leadership.rows.length, 6, 'information power is preserved');
+
+  const tax = await loadCourseContent('PJK301');
+  const schedule = withTableTitles(tax.readings[4]).blocks[25].blocks[0];
+  assert.match(schedule.title, /2022 s\.d\. 2026/, 'do not truncate the period at an abbreviation');
+  const asp = await loadCourseContent('AKS201');
+  assert.equal(withTableTitles(asp.readings[4]).blocks[16].blocks[1].title, 'Fungsi anggaran dan penekanannya', 'name an answer table by what it contains');
+  const aspReport = withTableTitles(asp.readings[7]).blocks[24].blocks[5];
+  assert.equal(aspReport.title, aspReport.reportHeader.title, 'report headers remain authoritative');
+  assert.equal(keepTableColumns(aspReport), true);
+  const comparison = { kind: 'table', headers: ['Aspek', 'Red ocean strategy', 'Blue ocean strategy', 'Sumber'], rows: [['Pasar', 'Ada', 'Baru', 'Buku']] };
+  assert.equal(keepTableColumns(comparison), true, 'a source column does not break a side-by-side comparison');
+  assert.equal(keepTableColumns(tables[0]), false, 'prose tables may use phone cards');
+  const ambiguous = withTableTitles({ tm: 0, title: 'Tinjauan audit', intro: '', objectives: [], blocks: [
+    { kind: 'h2', text: 'Bukti audit' },
+    { kind: 'p', text: 'Sumber: Arens, p. 7:' },
+    { kind: 'table', headers: ['Bukti', 'Arti'], rows: [['Fisik', 'Pengamatan']] },
+    { kind: 'solution-reveal', title: 'L1. Risiko audit', blocks: [
+      { kind: 'h3', text: 'Jawaban' }, { kind: 'table', headers: ['Risiko', 'Dampak'], rows: [['Deteksi', 'Tidak ditemukan']] },
+    ] },
+  ] });
+  assert.equal(ambiguous.blocks[2].title, 'Bukti audit', 'source strings cannot become a table title');
+  assert.equal(ambiguous.blocks[3].blocks[1].title, 'L1. Risiko audit — Jawaban', 'generic nested headings retain their case context');
+
   // Check both layouts, including a table inside an expanded disclosure.
   const table = tables[0];
   const html = renderToStaticMarkup(React.createElement(SharedFrameContext.Provider, { value: true },
@@ -99,6 +142,15 @@ try {
   assert.equal(dom.window.document.querySelector('caption').textContent, table.title);
   assert.equal(dom.window.document.querySelectorAll('.course-table-title').length, 2, 'desktop and mobile both show a title inside disclosures');
   assert.ok(dom.window.document.querySelector('.lg\\:hidden').textContent.includes(table.title));
+  const amountHtml = renderToStaticMarkup(React.createElement(SharedFrameContext.Provider, { value: true }, React.createElement(Card, { block: methods })));
+  const amountDom = new JSDOM(amountHtml);
+  assert.equal(amountDom.window.document.querySelectorAll('.course-table-title').length, 1, 'comparable numbers use one visible title and one table');
+  assert.ok(amountDom.window.document.querySelector('table').className.includes('min-w-[520px]'));
+  const reportHtml = renderToStaticMarkup(React.createElement(Card, { block: aspReport }));
+  const reportDom = new JSDOM(reportHtml);
+  assert.equal(reportDom.window.document.querySelectorAll('.course-table-title').length, 0, 'a report has its own single title hierarchy');
+  assert.ok(reportDom.window.document.querySelector('header').textContent.includes(aspReport.reportHeader.entity));
+  assert.ok(reportDom.window.document.querySelector('header').textContent.includes(aspReport.reportHeader.period));
 
   const { window } = new JSDOM('<div id="root"></div>', { url: 'http://localhost' });
   const document = window.document;
