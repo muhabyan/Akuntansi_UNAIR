@@ -106,13 +106,13 @@ const MNU108_REF = [
 // --- MNS301 / MNU307 / MNM301 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
 // Sumber: RPP Resmi Manajemen Stratejik, Departemen Akuntansi FEB UNAIR.
 const MNS301_TM1_7 = materi([
-  ['Strategic Management: Creating Competitive Advantages', 'DMEL Ch. 1'],
-  ['Analisis Lingkungan Eksternal (PESTEL, Five Forces, Strategic Groups)', 'DMEL Ch. 2'],
-  ['Analisis Lingkungan Internal, Value Chain, & VRIO Framework', 'DMEL Ch. 3–4'],
-  ['Business-Level Strategy: Keunggulan Bersaing & Siklus Hidup', 'DMEL Ch. 5'],
-  ['Corporate-Level Strategy & International Strategy', 'DMEL Ch. 6–7'],
-  ['Entrepreneurial Strategy, Strategic Control, & Corporate Governance', 'DMEL Ch. 8–9'],
-  ['Organizational Design, Strategic Leadership, & Corporate Entrepreneurship', 'DMEL Ch. 10–12'],
+  ['Strategic Management', 'DMEL Ch. 1'],
+  ['Membaca lingkungan dan kemampuan perusahaan', 'DMEL Ch. 2–4'],
+  ['Memilih cara bersaing dan bisnis yang layak dimiliki', 'DMEL Ch. 5–6'],
+  ['Menilai ekspansi internasional dan respons persaingan', 'DMEL Ch. 7–8'],
+  ['Mengendalikan pelaksanaan strategi dan memilih desain organisasi', 'DMEL Ch. 9–10'],
+  ['Memimpin pembelajaran, menjaga etika, dan mengelola inovasi', 'DMEL Ch. 11–12'],
+  ['Blue Ocean Strategy dan Strategy Maps', 'Kim & Mauborgne (2005) · Kaplan & Norton (2004)'],
 ], 1);
 const MNS301_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'DMEL Ch. 1–12'],

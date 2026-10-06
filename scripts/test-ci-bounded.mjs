@@ -7,6 +7,16 @@ const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 
 const standardTasks = [
   ['table_titles', 'scripts/test-table-titles.mjs'],
+  ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
+  ['mnu307_tm01_canonical', 'scripts/test-mnu307-tm01-canonical.mjs'],
+  ['mnu307_tm02_canonical', 'scripts/test-mnu307-tm02-canonical.mjs'],
+  ['mnu307_tm03_canonical', 'scripts/test-mnu307-tm03-canonical.mjs'],
+  ['mnu307_tm04_canonical', 'scripts/test-mnu307-tm04-canonical.mjs'],
+  ['mnu307_tm05_canonical', 'scripts/test-mnu307-tm05-canonical.mjs'],
+  ['mnu307_tm06_canonical', 'scripts/test-mnu307-tm06-canonical.mjs'],
+  ['mnu307_tm07_canonical', 'scripts/test-mnu307-tm07-canonical.mjs'],
+  ['mnu307_pr4_text_paths', 'scripts/test-mnu307-pr4-text-paths.mjs'],
+  ['mnu307_render_rules', 'scripts/test-mnu307-render-rules.mjs'],
   ['akk203_renderer', 'scripts/test-akk203-renderer.mjs'],
   ['akk203_tm01_canonical', 'scripts/test-akk203-tm01-canonical.mjs'],
   ['akk203_tm02_canonical', 'scripts/test-akk203-tm02-canonical.mjs'],
@@ -61,6 +71,7 @@ const standardTasks = [
 
 const extendedTasks = [
   ['table_titles', 'scripts/test-table-titles.mjs'],
+  ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
   ['aks301_alignment', 'scripts/test-aks301-alignment.mjs'],
