@@ -1,3 +1,4 @@
+import { auditTM7 } from './mnu307-pr4-geometry.mjs';
 import { auditDiagram } from './mnu307-diagram-geometry.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -19,7 +20,7 @@ let preview,chrome,cdp;
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'mnu307-pr3-'));
 const report=[],routingReport=[];
 const targets=(process.env.MNU307_QA_TMS??'5,6').split(',').map(Number);
-const counts={1:{solutions:9,depth:13,self:11,figures:11,svg:7,minutes:14},2:{solutions:24,depth:11,self:10,figures:20,svg:12,minutes:23},3:{solutions:17,depth:9,self:8,figures:18,svg:10,minutes:18},4:{solutions:18,depth:7,self:7,figures:18,svg:12,minutes:20},5:{solutions:21,depth:7,self:7,figures:17,svg:11,minutes:19},6:{solutions:20,depth:7,self:7,figures:18,svg:12,minutes:20}};
+const counts={1:{solutions:9,depth:13,self:11,figures:11,svg:7,minutes:14},2:{solutions:24,depth:11,self:10,figures:20,svg:12,minutes:23},3:{solutions:17,depth:9,self:8,figures:18,svg:10,minutes:18},4:{solutions:18,depth:7,self:7,figures:18,svg:12,minutes:20},5:{solutions:21,depth:7,self:7,figures:17,svg:11,minutes:19},6:{solutions:20,depth:7,self:7,figures:18,svg:12,minutes:20},7:{solutions:14,depth:16,self:13,figures:30,svg:30,minutes:37}};
 try {
   preview=spawn(process.execPath,[path.join(root,'node_modules/vite/bin/vite.js'),'preview','--host','127.0.0.1','--port',String(port),'--strictPort'],{cwd:root,stdio:'ignore',windowsHide:true});
   await waitFor(`http://127.0.0.1:${port}`);
@@ -61,7 +62,7 @@ try {
     return state;
   }
   async function attemptCase(tm) {
-    const label=({3:'Atlas',4:'Panasonic',5:'McDonald',6:'Nissan'})[tm];
+    const label=({3:'Atlas',4:'Panasonic',5:'McDonald',6:'Nissan',7:'L-01'})[tm];
     await cdp.eval(`(()=>{const s=[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('${label}'));s.querySelector('button[aria-expanded]').click();const self=document.querySelector('.layered-self-check'),t=self.querySelector('textarea');Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value').set.call(t,'Draft ${label} hanya untuk materi ini');t.dispatchEvent(new Event('input',{bubbles:true}));})()`);
     await sleep(100);
     assert.equal(await cdp.eval("document.querySelector('.layered-self-check textarea').value"),`Draft ${label} hanya untuk materi ini`);
@@ -75,7 +76,7 @@ try {
     for(let i=0;i<100;i++){if(await cdp.eval(`window.history.state?.akuntansihub_tm===${tm}&&document.querySelectorAll('.course-solution-surface button[aria-expanded]').length===${counts[tm].solutions}`))break;await sleep(100);}
     await sleep(100);
   }
-  for(const width of [375,1280])for(const theme of ['light','dark'])for(const chain of [[3,4,3],[4,5,6,5,4],[6,5,4,5,6]]) {
+  for(const width of [375,1280])for(const theme of ['light','dark'])for(const chain of [[3,4,3],[4,5,6,5,4],[6,5,4,5,6],[6,7,6],[7,6,7]]) {
     const start=chain[0];await open(start,theme,width);
     await cdp.eval('window.__readingLifecycleToken='+JSON.stringify(chain.join('-')));
     await transitionState(start,'fresh TM0'+start,theme,width);
@@ -85,7 +86,7 @@ try {
       assert.equal(await cdp.eval('window.__readingLifecycleToken'),chain.join('-'),'no reload across TM transitions');
       await transitionState(dest,'TM0'+previous+' → TM0'+dest,theme,width);
       if(width===375){
-        const label=({3:'Atlas',4:'Panasonic',5:'McDonald',6:'Nissan'})[dest];
+        const label=({3:'Atlas',4:'Panasonic',5:'McDonald',6:'Nissan',7:'L-01'})[dest];
         await screenshot("[...document.querySelectorAll('.course-solution-surface')].find(s=>s.querySelector('h3').textContent.includes('"+label+"'))",'transition-tm0'+previous+'-tm0'+dest+'-'+theme+'-closed-case.png',375);
         await screenshot("document.querySelector('.layered-self-check')",'transition-tm0'+previous+'-tm0'+dest+'-'+theme+'-empty-draft.png',375);
       }
@@ -119,6 +120,7 @@ try {
       const result=await cdp.eval('('+auditDiagram.toString()+')([...document.querySelectorAll(".reading-document svg.mnu307-diagram")].find(s=>s.checkVisibility()&&s.querySelector("marker[id='+id+'-arrow]")))');
       assert.deepEqual(result.issues,[],id+': live UI box routing, stroke separation and label-edge association');routingReport.push({width:375,theme,...result});
     }
+    if(tm===7)for(const result of await cdp.eval('[...document.querySelectorAll(".reading-document svg[data-figure]")].filter(s=>s.checkVisibility()).map('+auditTM7.toString()+')')){assert.deepEqual(result.issues,[],result.id+' mobile SVG routing/text');routingReport.push({width:375,theme,...result});}
     assert.equal(detail.overflow,0);assert.ok(detail.areas.every(e=>Math.abs(e.scroll-e.max)<=1));
     report.push({tm,theme,width:375,overflow:state.overflow,figures:state.figures,exercises:state.solutions.length,depth:before.depth.length,scrollAreas:state.tables.length,detailScrollAreas:detail.areas.length,header:before.header,cardSubtitle});
     console.log(`MNU307 TM0${tm} ${theme} 375px PASS: ${state.figures} figures, all reveals open, overflow 0`);
@@ -131,10 +133,21 @@ try {
       const result=await cdp.eval('('+auditDiagram.toString()+')([...document.querySelectorAll(".reading-document svg.mnu307-diagram")].find(s=>s.checkVisibility()&&s.querySelector("marker[id='+id+'-arrow]")))');
       assert.deepEqual(result.issues,[],id+': live UI box routing, stroke separation and label-edge association');routingReport.push({width:1280,theme,...result});
     }
+
+    if(tm===7){
+      for(const result of await cdp.eval('['+'...document.querySelectorAll(".reading-document svg[data-figure]")].filter(s=>s.checkVisibility()).map('+auditTM7.toString()+')')){assert.deepEqual(result.issues,[],result.id+' live SVG routing');routingReport.push({theme,...result});}
+      const toc=await cdp.eval('(()=>{const items=[...document.querySelectorAll(".reading-outline--desktop a")];return items.map(a=>({label:a.textContent,id:a.getAttribute("href").slice(1),exists:!!document.getElementById(a.getAttribute("href").slice(1))}));})()');
+      assert.ok(toc.length);assert.ok(toc.every(x=>x.exists));assert.equal(new Set(toc.map(x=>x.id)).size,toc.length);assert.ok(toc.some(x=>x.label.includes('A ·'))&&toc.some(x=>x.label.includes('B ·')));
+      for(const part of ['Bagian B','Bagian A']){const item=toc.find(x=>x.label.includes(part));assert.ok(item);await cdp.eval('[...document.querySelectorAll(".reading-outline--desktop a")].find(a=>a.getAttribute("href")==='+JSON.stringify('#'+item.id)+').click()');await sleep(400);const position=await cdp.eval('document.getElementById('+JSON.stringify(item.id)+').getBoundingClientRect().top');assert.ok(position>=0&&position<400,part+' TOC reaches correct section');}
+      report.push({tm,theme,toc,anchorsUnique:true,partJumps:true});
+    }
+
     const clipped=await cdp.eval(`(()=>{const issues=[];for(const svg of [...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility()))for(const text of svg.querySelectorAll('text.svg-text')){const box=text.previousElementSibling.getBBox(),label=text.getBBox();if(label.x<box.x-1||label.x+label.width>box.x+box.width+1||label.y<box.y-1||label.y+label.height>box.y+box.height+1)issues.push(text.textContent);}return issues;})()`);
     const overlappingLabels=await cdp.eval('(()=>{const issues=[];for(const svg of [...document.querySelectorAll(".reading-document .mnu307-diagram")].filter(e=>e.checkVisibility())){const labels=[...svg.querySelectorAll("text")];for(let a=0;a<labels.length;a++)for(let b=a+1;b<labels.length;b++){const x=labels[a].getBBox(),y=labels[b].getBBox();if(Math.min(x.x+x.width,y.x+y.width)-Math.max(x.x,y.x)>2&&Math.min(x.y+x.height,y.y+y.height)-Math.max(x.y,y.y)>2)issues.push([labels[a].textContent,labels[b].textContent]);}}return issues;})()');
+    if(overlappingLabels.length)fs.writeFileSync(path.join(output,'label-collisions.json'),JSON.stringify(overlappingLabels,null,2));
     assert.deepEqual(overlappingLabels,[],'diagram labels do not overlap');
     assert.deepEqual(clipped,[],`TM0${tm}: node labels fit`);assert.equal(await cdp.eval('document.documentElement.scrollWidth-document.documentElement.clientWidth'),0);
+    await cdp.send('Emulation.setDeviceMetricsOverride',{width:1280,height:2000,deviceScaleFactor:1,mobile:false});
     for(let i=0;i<svgs;i++)await screenshot(`[...document.querySelectorAll('.reading-document .mnu307-diagram')].filter(e=>e.checkVisibility())[${i}]`,`tm0${tm}-${theme}-desktop-svg${i+1}.png`,1280);
     report.push({tm,theme,width:1280,svgs,overflow:0});console.log(`MNU307 TM0${tm} ${theme} desktop PASS: ${svgs} SVGs, labels fit`);
   }

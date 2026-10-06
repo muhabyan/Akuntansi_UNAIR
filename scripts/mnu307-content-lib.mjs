@@ -1,11 +1,12 @@
+import { buildTM7, hashTM7 } from './mnu307-pr4-content.mjs';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { figure } from './mnu307-visuals.mjs';
 
-export const TMS = [1, 2, 3, 4, 5, 6];
-export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20, 5: 19, 6: 20 };
+export const TMS = [1, 2, 3, 4, 5, 6, 7];
+export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20, 5: 19, 6: 20, 7: 37 };
 export const sourcePath = tm => `scripts/fixtures/mnu307/tm${String(tm).padStart(2, '0')}.md`;
-export const sourceHash = tm => createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
+export const sourceHash = tm => tm === 7 ? hashTM7() : createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
 export function visualSpecs(source) {
   return [...source.matchAll(/```visual\r?\n([\s\S]*?)```/g)].map(match => {
     const spec = {}; let key;
@@ -102,6 +103,7 @@ function examBlocks(lines, tm) {
 }
 
 export function buildReading(tm) {
+  if (tm === 7) return buildTM7(parseBlocks);
   const lines = fs.readFileSync(sourcePath(tm), 'utf8').split(/\r?\n/);
   const kilat = lines.findIndex(s => s === '## Kilat'), inti = lines.findIndex(s => s === '## Inti');
   const exam = lines.findIndex(s => /^## Persiapan [Uu]jian/.test(s));

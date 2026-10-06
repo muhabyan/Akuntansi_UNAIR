@@ -112,7 +112,7 @@ const MNS301_TM1_7 = materi([
   ['Menilai ekspansi internasional dan respons persaingan', 'DMEL Ch. 7–8'],
   ['Mengendalikan pelaksanaan strategi dan memilih desain organisasi', 'DMEL Ch. 9–10'],
   ['Memimpin pembelajaran, menjaga etika, dan mengelola inovasi', 'DMEL Ch. 11–12'],
-  ['Organizational Design, Strategic Leadership, & Corporate Entrepreneurship', 'DMEL Ch. 10–12'],
+  ['Blue Ocean Strategy dan Strategy Maps', 'Kim & Mauborgne (2005) · Kaplan & Norton (2004)'],
 ], 1);
 const MNS301_TM8_14 = materi([
   ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'DMEL Ch. 1–12'],
