@@ -109,6 +109,10 @@ try {
   await attempt('McDonald');
   await click(button('Berikutnya')); closed('TM05 → TM06 via Berikutnya',20);
   await attempt('Nissan');
+  await click(button('Berikutnya')); closed('TM06 → TM07 via Berikutnya',14);
+  await attempt('L-01');
+  await click(button('Sebelumnya')); closed('TM07 → TM06 via Sebelumnya',20);
+  await attempt('Nissan');
   await click(button('Sebelumnya')); closed('TM06 → TM05 via Sebelumnya',21);
   await attempt('McDonald');
   await click(button('Sebelumnya')); closed('TM05 → TM04 via Sebelumnya',18);

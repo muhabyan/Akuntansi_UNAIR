@@ -303,10 +303,6 @@
     "worktree": "4f71383d999e01146f7e2c6f057ae0029995ce66c0df7e2110f350337968fdb1",
     "repository": "2b3f1d8ce61be4ed5bfe9d54c8dbfe073b9bfe78a17f06dfdff149b7938ad5f6"
   },
-  "src/data/manstrat/modules/tm7.ts": {
-    "worktree": "583f24c5b244efbfefe286fdab8e891018aa516173bf28e2bdc7011b7fdcf1cf",
-    "repository": "eedce7f259bb4da52fe086e78862656b4ae0f2f0522cce8f8e1c937edc1c206e"
-  },
   "src/data/manstrat/modules/tm8.ts": {
     "worktree": "1d7603f5fb651762c33184b94444ece06a8ea03296eb1e496425629c7c610be4",
     "repository": "b2bdce767f095aa32c9d0c58416847e9b2cbd6d374c71364d90dae3a6afc4520"
@@ -478,5 +474,13 @@
   "src/data/manstrat/modules/tm4.ts": {
     "worktree": "3b0b20e5ebb986b43ef5b88aeab134df5f41643e661bc84b0b3561bb8dd3da44",
     "repository": "3b0b20e5ebb986b43ef5b88aeab134df5f41643e661bc84b0b3561bb8dd3da44"
+  },
+  "src/data/manstrat/modules/tm5.ts": {
+    "worktree": "e77db92eb46009da985d8a7897edced728ab0bb1f45828bf738bae6c162f40b8",
+    "repository": "e77db92eb46009da985d8a7897edced728ab0bb1f45828bf738bae6c162f40b8"
+  },
+  "src/data/manstrat/modules/tm6.ts": {
+    "worktree": "3a8d0d7e9ffd9831a13d60f342891ace0a2a3502bb3d3e8ee3edb56b2225dc18",
+    "repository": "3a8d0d7e9ffd9831a13d60f342891ace0a2a3502bb3d3e8ee3edb56b2225dc18"
   }
 }

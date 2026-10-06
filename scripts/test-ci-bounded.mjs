@@ -13,6 +13,7 @@ const standardTasks = [
   ['mnu307_tm04_canonical', 'scripts/test-mnu307-tm04-canonical.mjs'],
   ['mnu307_tm05_canonical', 'scripts/test-mnu307-tm05-canonical.mjs'],
   ['mnu307_tm06_canonical', 'scripts/test-mnu307-tm06-canonical.mjs'],
+  ['mnu307_tm07_canonical', 'scripts/test-mnu307-tm07-canonical.mjs'],
   ['mnu307_render_rules', 'scripts/test-mnu307-render-rules.mjs'],
   ['akk203_renderer', 'scripts/test-akk203-renderer.mjs'],
   ['akk203_tm01_canonical', 'scripts/test-akk203-tm01-canonical.mjs'],
