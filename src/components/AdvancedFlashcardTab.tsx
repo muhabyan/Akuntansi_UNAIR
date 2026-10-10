@@ -80,7 +80,7 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
                 Flashcard {course.name}
               </h3>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-gray-600 dark:text-gray-400">
-                Gunakan filter fase, pertemuan, dan kategori untuk mengulang materi secara spesifik. Tersedia total {cards.length} kartu untuk di-review.
+                Gunakan filter fase, pertemuan, dan kategori untuk mengulang materi secara spesifik.
               </p>
             </div>
 

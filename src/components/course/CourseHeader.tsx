@@ -156,8 +156,7 @@ export default function CourseHeader({ courseName, reading, onBack, showZenContr
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
-          <span className="rounded-md bg-blue-50 px-2 py-1 font-bold text-blue-700 dark:bg-blue-950/45 dark:text-blue-300">{context.badge}</span>
-          <span className="text-muted">{reading.blocks.length} blok materi</span>
+          <span className="rounded-md bg-blue-50 px-2 py-1 font-bold text-blue-700 dark:bg-blue-950/45 dark:text-blue-300">{context.badge}</span>
         </div>
         {reading.ref && <div className="mt-1 max-w-[70ch]"><SourceLine text={`Sumber: ${reading.ref}`} /></div>}
 

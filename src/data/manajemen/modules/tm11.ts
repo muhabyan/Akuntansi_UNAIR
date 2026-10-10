@@ -70,7 +70,7 @@ export const TM11_READING: Reading = {
   tm: 11,
   title: 'Understanding Individual Behavior: Sikap Kerja, Persepsi, Big Five, EQ, & Stres',
   ref: 'Richard L. Daft Bab 15 | Stephen P. Robbins Organizational Behavior | Daniel Goleman Emotional Intelligence',
-  intro: 'TM 11 membahas perilaku manusia dalam organisasi: sikap kerja (Kepuasan Kerja / Job Satisfaction dan Komitmen Organisasi), proses persepsi dan bias distorsi (Stereotyping, Halo Effect, Perceptual Defense), Teori Atribusi (Internal vs External Attribution dan Fundamental Attribution Error), Model 5 Faktor Kepribadian Big Five (OCEAN), 4 dimensi Kecerdasan Emosional (EQ) Daniel Goleman, serta dinamika stres kerja dan strategi manajemen stres.',
+  intro: 'TM 11 membahas perilaku manusia dalam organisasi. Topiknya sikap kerja (Job Satisfaction dan Komitmen Organisasi), persepsi dan bias yang mengubahnya (Stereotyping, Halo Effect, Perceptual Defense), Teori Atribusi (Internal vs External Attribution dan Fundamental Attribution Error), model kepribadian Big Five (OCEAN), empat dimensi Kecerdasan Emosional (EQ) menurut Daniel Goleman, serta stres kerja dan cara mengelolanya.',
   objectives: [
     'Menganalisis keterkaitan antara kepuasan kerja dan komitmen organisasi dengan retensi karyawan.',
     'Mendeteksi distorsi persepsi dalam interaksi kerja: Stereotyping, Halo Effect, dan Attributional Bias.',

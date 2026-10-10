@@ -70,7 +70,7 @@ export const TM14_READING: Reading = {
   tm: 14,
   title: 'Topik Kontemporer & Tren Riset Akuntansi Sektor Publik (Digital Governance, Green Budgeting, Anti-Fraud)',
   ref: 'Permendagri 70/2019 SIPD | Kebijakan Climate Budget Tagging Kemenkeu | Tren Tata Kelola Publik Digital',
-  intro: 'TM 14 membahas lanskap masa depan akuntansi sektor publik: integrasi sistem informasi digital berbasis cloud (Sistem Informasi Pemerintahan Daerah / SIPD-RI dan Sistem Perbendaharaan dan Anggaran Negara / SPAN), standarisasi Bagan Akun Standar (BAS), implementasi Green Budgeting (Climate Budget Tagging dan Green Sukuk), akuntabilitas keberlanjutan sosial (SDGs), serta strategi pencegahan kecurangan anggaran menggunakan Whistleblowing System (WBS) dan audit investigatif forensik digital.',
+  intro: 'TM 14 membahas arah akuntansi sektor publik ke depan. Topiknya sistem informasi digital berbasis cloud (SIPD-RI: Sistem Informasi Pemerintahan Daerah, dan SPAN: Sistem Perbendaharaan dan Anggaran Negara), standarisasi Bagan Akun Standar (BAS), Green Budgeting (Climate Budget Tagging dan Green Sukuk), akuntabilitas keberlanjutan sosial (SDGs), serta pencegahan kecurangan anggaran lewat Whistleblowing System (WBS) dan audit investigatif forensik digital.',
   objectives: [
     'Menganalisis dampak penerapan SIPD-RI terhadap konsistensi dokumen perencanaan dan pencegahan ghost budgeting.',
     'Menjelaskan konsep Climate Budget Tagging (Green Budgeting) dalam struktur APBN dan APBD.',

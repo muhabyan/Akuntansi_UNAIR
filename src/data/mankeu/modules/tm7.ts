@@ -76,7 +76,7 @@ export const TM7_READING: Reading = {
   tm: 7,
   title: 'Cash Flow Estimation, Tax Shield Depreciation, & Project Risk Analysis',
   ref: 'Brigham & Houston Ch. 11 | Brigham & Ehrhardt Ch. 11 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR',
-  intro: 'Di TM 6 kita belajar mengevaluasi NPV jika deretan angka arus kas sudah tersedia. Namun di dunia nyata dan lembar ujian komprehensif, angka-angka arus kas tersebut harus Anda rakit sendiri dari nol! TM 7 membahas proses perakitan arus kas inkremental yang relevan melalui 3 fase hidup proyek: Pengeluaran Investasi Awal (Initial Outlay t=0), Arus Kas Operasi Tahunan (Operating Cash Flow t=1..N), dan Arus Kas Terminal Penutupan (Terminal Cash Flow t=N). Modul ini juga membedah pembedaan biaya hangus (Sunk Cost), biaya kesempatan (Opportunity Cost), efek kanibalisasi, serta metode analisis risiko proyek (Sensitivitas dan Skenario).',
+  intro: 'Di TM 6 kita mengevaluasi NPV dengan arus kas yang sudah tersedia. Di dunia nyata dan di soal ujian komprehensif, arus kas itu harus dirakit sendiri dari nol. TM 7 membahas cara merakit arus kas inkremental yang relevan lewat tiga fase proyek: pengeluaran investasi awal (Initial Outlay, t=0), arus kas operasi tahunan (t=1..N), dan arus kas terminal di akhir proyek (t=N). Modul ini juga membedakan biaya hangus (Sunk Cost), biaya kesempatan (Opportunity Cost), dan efek kanibalisasi, lalu menutup dengan analisis risiko proyek (Sensitivitas dan Skenario).',
   objectives: [
     'Membedah kamus istilah estimasi arus kas (Initial Outlay, OCF, TCF, NWC, Sunk Cost, Opportunity Cost, Cannibalization, Salvage Value).',
     'Menghitung Initial Outlay (CF0) untuk proyek baru maupun proyek penggantian mesin lama (Replacement Project).',

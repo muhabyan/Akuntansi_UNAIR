@@ -57,7 +57,7 @@ export const TM14_READING: Reading = {
   tm: 14,
   title: 'Restitusi PPN, Pemungut PPN (WAPU), Pajak Karbon, & Perdagangan Emisi',
   ref: 'UU KUP Pasal 17C/17D | PMK 209/2021 Restitusi Dipercepat | UU HPP Bab VI Pajak Karbon',
-  intro: 'TM 14 membahas instrumen penutup hukum pajak pertambahan nilai dan pemajakan lingkungan: hak Pengembalian Kelebihan Pembayaran Pajak (Restitusi PPN) melalui mekanisme pemeriksaan reguler Pasal 17B (12 bulan) vs Pengembalian Pendahuluan Pasal 17C/17D (1 bulan untuk PKP Berisiko Rendah), mekanisme pemungutan PPN oleh Wajib Pungut (WAPU: Bendahara Pemerintah dan BUMN), serta tinjauan yuridis dan komputasi skema Pajak Karbon (Carbon Tax) menurut Bab VI UU HPP.',
+  intro: 'TM 14 menutup pembahasan PPN dan pajak lingkungan. Pertama, hak atas pengembalian kelebihan pembayaran pajak (restitusi PPN) lewat pemeriksaan reguler Pasal 17B (12 bulan) atau pengembalian pendahuluan Pasal 17C/17D (1 bulan untuk PKP Berisiko Rendah). Kedua, pemungutan PPN oleh Wajib Pungut (WAPU: Bendahara Pemerintah dan BUMN). Ketiga, tinjauan hukum dan hitungan Pajak Karbon (Carbon Tax) menurut Bab VI UU HPP.',
   objectives: [
     'Membedakan prosedur Restitusi PPN Reguler (Pasal 17B KUP) vs Restitusi Dipercepat (Pasal 17C & 17D KUP).',
     'Menjelaskan mekanisme pemungutan PPN oleh WAPU Instansi Pemerintah dan BUMN (Kode Faktur 02 dan 03).',

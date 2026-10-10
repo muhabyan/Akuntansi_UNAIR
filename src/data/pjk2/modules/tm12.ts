@@ -57,7 +57,7 @@ export const TM12_READING: Reading = {
   tm: 12,
   title: 'Dasar Hukum PPN & PPnBM, Karakteristik, Pengusaha Kena Pajak (PKP), & Objek BKP/JKP',
   ref: 'UU PPN No. 8/1983 jo UU HPP No. 7/2021 | PMK 197/2013 Batasan PKP 4,8 M | Tarif PPN 11% (12%)',
-  intro: 'TM 12 membahas arsitektur Pajak Pertambahan Nilai (PPN) dan Pajak Penjualan atas Barang Mewah (PPnBM) di Indonesia: karakteristik PPN sebagai pajak objektif, tidak langsung, multi-stage non-kumulatif dengan credit method, kriteria pengukuhan Pengusaha Kena Pajak (PKP threshold omzet > Rp 4,8 Miliar), klasifikasi Barang Kena Pajak (BKP) dan Jasa Kena Pajak (JKP), fasilitas PPN Dibebaskan vs Tidak Dipungut, serta struktur tarif PPN (11% menuju 12%).',
+  intro: 'TM 12 membahas struktur Pajak Pertambahan Nilai (PPN) dan Pajak Penjualan atas Barang Mewah (PPnBM) di Indonesia. PPN bersifat objektif, tidak langsung, dan multi-stage non-kumulatif dengan credit method. Topik lainnya kriteria pengukuhan Pengusaha Kena Pajak (PKP, ambang omzet > Rp 4,8 Miliar), klasifikasi Barang Kena Pajak (BKP) dan Jasa Kena Pajak (JKP), fasilitas PPN Dibebaskan vs Tidak Dipungut, serta struktur tarif PPN (11% menuju 12%).',
   objectives: [
     'Menjelaskan karakteristik PPN: Pajak Tidak Langsung, Pajak Objektif, Multi-Stage, dan Destination Principle.',
     'Menganalisis batasan peredaran bruto pengukuhan Pengusaha Kena Pajak (PKP) sebesar Rp 4,8 Miliar.',

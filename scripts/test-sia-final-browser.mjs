@@ -147,7 +147,7 @@ try {
       check(`${width} material TM${tm} tables`, data.tables.every((table) => table.mobileClass && table.labeledCells === table.cells && (width !== 390 || table.bodyDisplay === 'grid')), data.tables);
       if (width === 390 && tm === 4) { await run(() => document.querySelector('.sia-reading-document table')?.scrollIntoView({ block: 'center', behavior: 'instant' })); await screenshot('tm4-table-390.png'); }
       if (width === 390 && tm === 3) {
-        const mobileFlow = await run(() => { const flow = document.querySelector('section[aria-label="Alur Starbucks di layar sempit"]'); flow?.scrollIntoView({ block: 'center', behavior: 'instant' }); return Boolean(flow) && getComputedStyle(flow).display !== 'none'; });
+        const mobileFlow = await run(() => { const flow = document.querySelector('section[aria-label="Alur Starbucks"]'); flow?.scrollIntoView({ block: 'center', behavior: 'instant' }); return Boolean(flow) && getComputedStyle(flow).display !== 'none'; });
         check('390 TM3 diagram mobile flow', mobileFlow);
         await screenshot('tm3-diagram-390.png');
       }

@@ -16,7 +16,6 @@ export default function ReportTable({ block }: { block: Extract<ContentBlock, { 
         {header.unit && <p className="text-sm">{header.unit}</p>}
         {header.note && <p className="text-sm">{header.note}</p>}
       </header>}
-      <p className="mb-2 text-xs text-muted sm:hidden">Geser untuk membaca seluruh kolom →</p>
       <div className="akbi-table-scroll max-w-full overflow-x-auto" role="region" aria-label={getTableTitle(block)} tabIndex={0}>
         <table className="w-full min-w-[520px] border-collapse text-sm">
           <caption className="sr-only">{getTableTitle(block)}</caption>

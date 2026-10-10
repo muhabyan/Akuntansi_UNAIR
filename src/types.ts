@@ -144,7 +144,7 @@ export type ContentBlock =
       /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null>;
       reportHeader?: { entity: string; title: string; period?: string; unit?: string; note?: string };
       rowRules?: { row: number; columns: number[]; bottom: 'double' }[] }
-  | { kind: 'journal'; caption?: string; lines: JournalLine[] }
+  | { kind: 'journal'; title?: string; caption?: string; lines: JournalLine[] }
   | { kind: 'formula'; text: string; note?: string }
   | { kind: 'code'; text: string; language?: string; caption?: string } // teks literal (mis. SQL), tidak diproses markdown
   | { kind: 'figure'; title?: string; svg?: string; mobileSvg?: string; url?: string; overview?: FigureOverview; sourceImages?: { title: string; url: string; altText: string; sourceUrl: string }[]; transcript?: string[]; transcriptSections?: FigureTranscriptSection[]; mobileFlow?: FigureMobileFlow; caption?: string; altText?: string }

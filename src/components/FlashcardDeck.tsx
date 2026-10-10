@@ -440,10 +440,6 @@ export default function FlashcardDeck({ cards, courseCode, variant = 'default' }
               <Dices size={17} className={isSpinning ? 'animate-spin' : ''} /> {isSpinning ? 'Mengacak...' : 'Acak kartu'}
             </button>
           </div>
-
-          <div className="inline-flex items-center gap-2 rounded-full border border-line bg-elevated px-3 py-2 text-xs font-bold text-secondary">
-            <Layers3 size={14} className="text-gold" /> Geser kartu, gunakan panah, atau ketuk
-          </div>
         </div>
       </section>
 

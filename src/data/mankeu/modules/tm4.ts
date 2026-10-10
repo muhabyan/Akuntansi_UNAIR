@@ -81,7 +81,7 @@ export const TM4_READING: Reading = {
   tm: 4,
   title: 'Risk and Rates of Return, Portfolio Theory, & Capital Asset Pricing Model (CAPM)',
   ref: 'Brigham & Houston Ch. 8 | Brigham & Ehrhardt Ch. 6 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR',
-  intro: 'TM 4 membahas prinsip paling fundamental dalam dunia investasi dan pasar modal: "High Risk, High Return" bukan sekadar slogan, melainkan hukum matematika keseimbangan harga. Modul ini mengajarkan Anda membedakan risiko yang bisa dihilangkan (Unsystematic Risk) vs risiko yang tidak bisa dihilangkan (Market Risk), memahami mengapa memegang portofolio jauh lebih aman daripada 1 saham sendirian, menghitung koefisien Beta, serta menguasai rumus keramat CAPM dan kurva Security Market Line (SML).',
+  intro: 'TM 4 membahas prinsip dasar investasi dan pasar modal: High Risk, High Return. Prinsip ini muncul dari cara pasar menyeimbangkan harga dengan risiko. Modul ini menjelaskan perbedaan risiko yang bisa dihilangkan (Unsystematic Risk) dan yang tidak bisa (Market Risk), alasan portofolio lebih aman daripada satu saham saja, cara menghitung koefisien Beta, serta rumus CAPM dan kurva Security Market Line (SML).',
   objectives: [
     'Membedah kamus simbol dan notasi risiko pasar (r-hat, r_RF, r_M, RPM, Beta, Sigma, CV, Koefisien Korelasi).',
     'Menghitung return investasi satu periode (Dividen Yield + Capital Gain Yield) serta statistik risiko aset tunggal (Expected Return, Standar Deviasi, dan Koefisien Variasi).',

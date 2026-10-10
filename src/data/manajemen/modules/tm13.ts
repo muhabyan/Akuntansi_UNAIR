@@ -76,7 +76,7 @@ export const TM13_READING: Reading = {
   tm: 13,
   title: 'Motivating Employees: Teori Kebutuhan, Proses, & Job Characteristics Model',
   ref: 'Richard L. Daft Bab 17 | Maslow, Herzberg, McClelland | Vroom Expectancy Theory & Hackman-Oldham JCM',
-  intro: 'TM 13 membahas kekuatan psikologis yang mendorong arah, intensitas, dan ketekunan usaha kerja manusia: Teori Kebutuhan Konten (Hierarki Kebutuhan Maslow, Teori Dua Faktor Herzberg / Motivator-Hygiene, dan Teori Kebutuhan Dipelajari McClelland: Achievement, Affiliation, Power), Teori Proses Motivasi (Teori Harapan Vroom: Expectancy, Instrumentality, Valence; Teori Keadilan J. Stacy Adams; Teori Penetapan Sasaran Edwin Locke), serta rekayasa desain pekerjaan melalui Job Characteristics Model (JCM) untuk menghidupkan motivasi intrinsik.',
+  intro: 'TM 13 membahas daya dorong psikologis yang menentukan arah, intensitas, dan ketekunan seseorang dalam bekerja. Teori kebutuhan mencakup hierarki Maslow, Dua Faktor Herzberg (Motivator-Hygiene), dan kebutuhan yang dipelajari menurut McClelland (Achievement, Affiliation, Power). Teori proses mencakup Teori Harapan Vroom (Expectancy, Instrumentality, Valence), Teori Keadilan J. Stacy Adams, dan Teori Penetapan Sasaran Edwin Locke. Terakhir, Job Characteristics Model (JCM) menunjukkan bagaimana desain pekerjaan bisa menumbuhkan motivasi intrinsik.',
   objectives: [
     'Membedakan pemicu motivasi intrinsik (kepuasan internal tugas) vs motivasi ekstrinsik (imbalan kas/hukuman).',
     'Menganalisis Teori Dua Faktor Herzberg: Faktor Hygiene (pencegah ketidakpuasan) vs Motivator (pemicu kepuasan).',

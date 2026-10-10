@@ -87,7 +87,7 @@ export const TM8_READING: Reading = {
   tm: 8,
   title: 'Pemantapan & Review Ujian Tengah Semester (UTS) Manajemen Strategik',
   ref: 'Sintesis Komprehensif TM 1 s/d TM 7 | Kumpulan Soal Analisis Kasus UTS Strategik Terpilih | 10 Jebakan Soal Strategik',
-  intro: 'TM 8 adalah modul peninjauan komprehensif Pra-UTS Manajemen Strategik yang mensintesiskan konsep-konsep analitis paruh pertama semester: penciptaan keunggulan bersaing, simbiosis pemangku kepentingan, model 5 kekuatan Porter, pemetaan kelompok strategis, rantai nilai (Value Chain), pengujian VRIO atas sumber daya internal, 3 strategi generik Porter, siklus hidup industri, diversifikasi korporasi dan M&A, model berlian Porter, 4 strategi global Bartlett & Ghoshal, sistem pengendalian strategik, tata kelola keagenan, serta desain organisasi ambidextrous.',
+  intro: 'TM 8 adalah modul tinjauan Pra-UTS Manajemen Strategik. Modul ini merangkum konsep analitis paruh pertama semester: keunggulan bersaing, hubungan dengan pemangku kepentingan, model 5 kekuatan Porter, pemetaan kelompok strategis, rantai nilai (Value Chain), pengujian VRIO atas sumber daya internal, tiga strategi generik Porter, siklus hidup industri, diversifikasi korporasi dan M&A, model berlian Porter, empat strategi global Bartlett & Ghoshal, sistem pengendalian strategik, tata kelola keagenan, dan desain organisasi ambidextrous.',
   objectives: [
     'Mengintegrasikan analisis eksternal industri (Five Forces) dan internal kapabilitas (VRIO) ke dalam matriks SWOT terapan.',
     'Menyelesaikan soal studi kasus korporasi multi-divisi menggunakan kerangka kerja manajemen strategik yang presisi.',

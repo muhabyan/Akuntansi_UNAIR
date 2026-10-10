@@ -77,7 +77,7 @@ export const TM5_READING: Reading = {
   tm: 5,
   title: 'The Cost of Capital & Weighted Average Cost of Capital (WACC)',
   ref: 'Brigham & Houston Ch. 9 | Brigham & Ehrhardt Ch. 9 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR',
-  intro: 'Sebelum perusahaan memutuskan untuk membangun pabrik, membeli mesin, atau meluncurkan produk baru (Capital Budgeting), perusahaan harus tahu berapa "ongkos sewa uang" yang harus dibayar kepada para penyedia modal (bank, pemegang obligasi, dan pemegang saham). Angka batas minimal keuntungan tersebut disebut Biaya Modal Rata-rata Tertimbang (Weighted Average Cost of Capital / WACC). Modul ini mengupas tuntas cara menghitung biaya utang setelah pajak, biaya saham preferen, 3 cara menghitung biaya saham biasa, penyesuaian biaya emisi (Flotation Costs), titik patah laba ditahan (Breakpoint), serta kalkulasi WACC.',
+  intro: 'Sebelum membangun pabrik, membeli mesin, atau meluncurkan produk baru (Capital Budgeting), perusahaan perlu tahu berapa "ongkos sewa uang" yang harus dibayar ke penyedia modalnya: bank, pemegang obligasi, dan pemegang saham. Batas keuntungan minimal itu disebut Biaya Modal Rata-rata Tertimbang (Weighted Average Cost of Capital / WACC). Modul ini membahas biaya utang setelah pajak, biaya saham preferen, tiga cara menghitung biaya saham biasa, penyesuaian biaya emisi (Flotation Costs), titik patah laba ditahan (Breakpoint), dan perhitungan WACC.',
   objectives: [
     'Membedah kamus simbol biaya modal (WACC, r_d, T, r_d(1-T), r_p, r_s, r_e, F, w_d, w_p, w_e, BP).',
     'Menjelaskan mengapa biaya utang mendapatkan fasilitas penghematan pajak (Interest Tax Shield) sedangkan dividen saham tidak.',
@@ -409,7 +409,7 @@ export const TM5_READING: Reading = {
     },
     {
       kind: 'p',
-      text: 'Setelah seluruh komponen biaya dan bobot sasaran diketahui, gabungkan ke dalam persamaan sakti WACC:'
+      text: 'Setelah seluruh komponen biaya dan bobot sasaran diketahui, gabungkan ke dalam persamaan WACC:'
     },
     {
       kind: 'formula',

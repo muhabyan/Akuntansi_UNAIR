@@ -24,7 +24,6 @@ export function AgencyMobileOverview() {
         </div>
       </div>
       <p className="agency-conflict-note mt-3 rounded-lg px-3 py-2 text-sm leading-relaxed"><strong>Pengurang konflik:</strong> insentif berbasis saham dan pengawasan untuk manajer; debt covenants untuk melindungi kreditor.</p>
-      <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">Uraian tiap hubungan tersedia dalam “Isi diagram dalam teks” di bawah.</p>
     </section>
   );
 }
@@ -65,7 +64,6 @@ export function MobileParticipantFlow({ flow }: { flow: FigureMobileFlow }) {
     return (
       <section aria-label={flow.title} className="mb-3 rounded-xl border border-slate-200 bg-white p-3 text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 md:hidden">
         <h4 className="text-base font-bold leading-snug">{flow.title}</h4>
-        <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">Ringkasan diagram untuk layar kecil. Diagram lengkap dapat dibuka di bawah.</p>
         <div className="mt-3 space-y-2.5">
           {flow.stages.map((stage, index) => (
             <div key={index} className={`rounded-xl border p-3 ${index % 2 === 0 ? 'border-sky-200 bg-sky-50 dark:border-sky-800 dark:bg-sky-950/40' : 'border-emerald-200 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/30'}`}>

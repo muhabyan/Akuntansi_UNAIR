@@ -76,7 +76,7 @@ export const TM9_READING: Reading = {
   tm: 9,
   title: 'Konsep Pemotongan PPh 21/26 Terbaru (PP 58/2023 & PMK 168/2023) & Pajak Natura (PMK 66/2023)',
   ref: 'PP 58/2023 | PMK 168/2023 Petunjuk Teknis PPh 21 | PMK 66/2023 Pemajakan Natura & Kenikmatan',
-  intro: 'TM 9 membahas reformasi regulasi pemotongan PPh Pasal 21 yang berlaku efektif 2024: pengenalan metode Tarif Efektif Rata-Rata (TER) Bulanan (Kategori A, B, dan C) serta TER Harian untuk mempermudah pemotongan masa pajak Januari sampai November, rekalkulasi menggunakan tarif Pasal 17 ayat (1) huruf a UU HPP pada masa pajak Desember, serta pergeseran paradigma pemajakan imbalan non-tunai (Natura dan Kenikmatan) menurut PMK No. 66/2023.',
+  intro: 'TM 9 membahas reformasi pemotongan PPh Pasal 21 yang berlaku sejak 2024. Metode Tarif Efektif Rata-Rata (TER) Bulanan (Kategori A, B, dan C) dan TER Harian dipakai untuk masa pajak Januari sampai November, lalu Desember direkalkulasi dengan tarif Pasal 17 ayat (1) huruf a UU HPP. Materi ini juga membahas perubahan pemajakan imbalan non-tunai (Natura dan Kenikmatan) menurut PMK No. 66/2023.',
   objectives: [
     'Mengklasifikasikan status PTKP karyawan ke dalam TER Kategori A, Kategori B, atau Kategori C.',
     'Menerapkan skema pemotongan TER bulanan pada masa Januari s/d November (PPh 21 = Bruto × % TER).',

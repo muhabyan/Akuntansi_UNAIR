@@ -70,7 +70,7 @@ export const TM12_READING: Reading = {
   tm: 12,
   title: 'Akuntansi & Pelaporan Keuangan Organisasi Nirlaba Khusus (LSM, Parpol, & Yayasan)',
   ref: 'UU 16/2001 jo UU 28/2004 Yayasan | UU 2/2011 Partai Politik | Permendagri 78/2020 | ISAK 35',
-  intro: 'TM 12 membahas penerapan akuntansi pada entitas nirlaba khusus yang memiliki regulasi spesifik di Indonesia: Yayasan Pendidikan dan Sosial (UU Yayasan, pembatasan remunerasi pengurus, dan audit publik), Lembaga Swadaya Masyarakat / NGO (manajemen dana hibah donor asing dan transparansi proyek), serta Akuntansi Partai Politik (bantuan keuangan negara APBN/APBD, proporsi 60% pendidikan politik, dan audit kepatuhan oleh BPK RI).',
+  intro: 'TM 12 membahas akuntansi untuk entitas nirlaba khusus yang punya aturan sendiri di Indonesia. Ada yayasan pendidikan dan sosial (UU Yayasan, pembatasan remunerasi pengurus, audit publik), lembaga swadaya masyarakat / NGO (pengelolaan dana hibah donor asing dan transparansi proyek), serta akuntansi partai politik (bantuan keuangan dari APBN/APBD, porsi 60% untuk pendidikan politik, dan audit kepatuhan oleh BPK RI).',
   objectives: [
     'Menerapkan ISAK 35 pada yayasan pendidikan dan lembaga kemasyarakatan.',
     'Menjelaskan larangan pengalihan kekayaan yayasan kepada pembina, pengurus, dan pengawas.',

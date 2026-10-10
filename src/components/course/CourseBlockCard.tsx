@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2, Calculator, PencilLine, LineChart } from 'lucide-react';
 import ReportTable from './ReportTable';
 import TableHeading from './TableHeading';
@@ -27,6 +27,40 @@ interface CourseBlockCardProps {
   enableEconomicStyling?: boolean;
   /** Aktifkan affordance tabel/formula dan propagasi surface untuk reading shell editorial AKBI. */
   enableEditorialReading?: boolean;
+}
+
+/**
+ * Diagram canvas for phones. A wide diagram sits in a sideways-scrolling frame; when its labels would shrink below a
+ * readable size (about 9px on screen), the frame is made wide enough to keep them at that size instead.
+ */
+const MIN_LABEL_PX_PHONE = 9;
+/** Wider screens keep the whole diagram in view; only phones get a scrollable canvas. */
+const MAX_CANVAS_PX = 1800;
+function DiagramCanvas({ className, html }: { className: string; html: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    const svg = el?.querySelector('svg');
+    if (!el || !svg) return;
+    const viewBoxWidth = svg.viewBox?.baseVal?.width;
+    if (!viewBoxWidth) return;
+    let smallest = Infinity;
+    svg.querySelectorAll('text').forEach((node) => {
+      if (!node.textContent?.trim()) return;
+      const size = parseFloat(getComputedStyle(node).fontSize);
+      if (size > 0 && size < smallest) smallest = size;
+    });
+    if (!Number.isFinite(smallest)) return;
+    const apply = () => {
+      if (window.innerWidth >= 640) { el.style.minWidth = ''; return; }
+      const needed = Math.min(MAX_CANVAS_PX, Math.ceil((viewBoxWidth * MIN_LABEL_PX_PHONE) / smallest));
+      el.style.minWidth = needed > 620 ? `${needed}px` : '';
+    };
+    apply();
+    window.addEventListener('resize', apply);
+    return () => window.removeEventListener('resize', apply);
+  }, [html]);
+  return <div ref={ref} className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
 /**
@@ -258,9 +292,6 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
     case 'h2':
       return (
         <div className="group mt-8 mb-3 scroll-mt-28">
-          {!isSimulation && (
-            <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">Bagian Materi</div>
-          )}
           {/* Inline markdown only: a heading such as "1. Pendahuluan" is a title, not a one-item ordered list, and
               the heading keeps its own colour, size and leading instead of the body paragraph's. */}
           <h2 className="font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl md:leading-tight">
@@ -391,11 +422,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const flatTable = layered && insideBox;
         const tableCard = (
           <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
-            <TableHeading title={tableLabel} flat={flatTable} hint={
-              !isFinancialGlossary && (keepColumns || (!sharedFrame && !block.stackOnMobile))
-                ? <span className="md:hidden">Geser untuk membandingkan kolom →</span>
-                : undefined
-            } />
+            <TableHeading title={tableLabel} flat={flatTable} />
             {isFinancialGlossary && (
               <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">
                 {block.rows.map((row, index) => (
@@ -491,9 +518,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
       }
       return (
         <div className="course-table-card course-economic-table mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
-          <TableHeading title={tableLabel} hint={
-            <>{block.rows.length} baris · {block.headers.length} kolom<span className="block md:hidden">Geser untuk kolom lain →</span></>
-          } />
+          <TableHeading title={tableLabel} />
           <div 
             className="akbi-table-scroll w-full overflow-x-auto" 
             role="region" 
@@ -542,23 +567,28 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         </div>
       );
     }
-    case 'journal':
+    case 'journal': {
+      // A journal is a table too: its name sits at the top where the reader looks first, and the same text names the table for screen readers.
+      const journalTitle = block.title ?? (block.caption && block.caption.length <= 160 && !block.caption.includes('\n') ? block.caption : undefined);
+      const journalNote = block.caption && block.caption !== journalTitle ? block.caption : undefined;
+      const journalLabel = (journalTitle ?? 'Jurnal akuntansi').replace(/[*_`]/g, '');
       return (
         <div className="course-journal-card mb-7 overflow-hidden rounded-2xl border border-emerald-500/30 dark:border-emerald-500/25">
           <div className="flex items-center justify-between gap-3 border-b border-emerald-500/20 dark:border-emerald-500/15 bg-emerald-500/10 px-4 py-3 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800 dark:text-emerald-300">
             <span className="flex items-center gap-2"><FileText size={15} /> Jurnal Akuntansi</span>
-            {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
           </div>
+          {journalTitle && <div className="course-journal-title border-b border-emerald-500/15 px-4 py-3 text-[15px] font-bold leading-snug text-slate-900 dark:text-slate-100">{renderText(journalTitle)}</div>}
           <div 
             className="akbi-table-scroll w-full overflow-x-auto" 
             role={enableEditorialReading ? 'region' : undefined} 
-            aria-label={enableEditorialReading ? 'Jurnal akuntansi. Geser horizontal untuk membaca seluruh kolom.' : undefined} 
+            aria-label={enableEditorialReading ? `${journalLabel}. Geser horizontal untuk membaca seluruh kolom.` : undefined} 
             tabIndex={enableEditorialReading ? 0 : undefined}
             onTouchStart={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
             onTouchEnd={(e) => e.stopPropagation()}
           >
             <table className="w-full border-collapse text-sm">
+              <caption className="sr-only">{journalLabel}</caption>
               <thead>
                 <tr className="bg-slate-50 dark:bg-navy-800/70 text-[11px] uppercase tracking-wider text-slate-700 dark:text-slate-400">
                   {block.lines.some((line) => line.date !== undefined) && <th className="px-4 py-3 text-left">Tanggal</th>}
@@ -581,11 +611,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               </tbody>
             </table>
           </div>
-          {block.caption && (
-            <div className="border-t border-emerald-500/10 dark:border-emerald-500/15 px-4 py-3 text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(block.caption)}</div>
+          {journalNote && (
+            <div className="border-t border-emerald-500/10 dark:border-emerald-500/15 px-4 py-3 text-xs italic leading-relaxed text-slate-600 dark:text-slate-500">{renderText(journalNote)}</div>
           )}
         </div>
       );
+    }
     case 'formula': {
       const matrix = isMatrixContent(block.text);
       const warning = hasManualWarning(block.text) || hasManualWarning(block.note);
@@ -596,7 +627,6 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           <div className="course-matrix-card mb-6 overflow-hidden rounded-2xl border border-navy-500/15 dark:border-transparent">
             <div className="flex items-center justify-between gap-3 border-b border-navy-500/20 dark:border-navy-500/60 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-2"><Table2 size={15} /> Format Teks Terstruktur</span>
-              {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
             </div>
             <div 
               className="akbi-table-scroll w-full overflow-x-auto px-5 py-4" 
@@ -644,7 +674,6 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
             <span className="flex items-center gap-2">
               {warning ? <AlertTriangle size={15} /> : <Sigma size={15} />} {formulaTitle}
             </span>
-            {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
           </div>
           <div 
             className="akbi-table-scroll overflow-x-auto px-5 py-4" 
@@ -688,7 +717,6 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         <figure className="course-code-card mb-6 max-w-full overflow-hidden rounded-2xl border border-slate-300 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-950">
           <div className="flex items-center justify-between gap-3 border-b border-slate-200 dark:border-navy-500/60 px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.18em] text-slate-600 dark:text-slate-400">
             <span>{block.language ?? 'Kode'}</span>
-            {enableEditorialReading && <span className="reading-scroll-cue md:hidden">Geser bila perlu</span>}
           </div>
           <div
             className="akbi-table-scroll w-full overflow-x-auto"
@@ -787,14 +815,13 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                       aria-label={block.altText ?? block.title ?? 'Visual materi'}
                       tabIndex={isDetailedDiagram ? 0 : undefined}
                     >
-                      <div className={diagramWidth} dangerouslySetInnerHTML={{ __html: processedSvg }} />
+                      <DiagramCanvas className={diagramWidth} html={processedSvg} />
                     </div>
                     {hasMobileOverview && (
                       <details className="rounded-xl border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900 md:hidden">
                         <summary className="cursor-pointer text-sm font-bold text-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 dark:text-blue-200">Perbesar diagram rinci</summary>
-                        <p className="my-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">Geser ke samping untuk memeriksa bagian diagram. Ringkasan utuh tersedia di atas.</p>
                         <div className="akbi-table-scroll overflow-x-auto rounded-lg border border-slate-200 dark:border-slate-700" role="img" aria-label={block.altText ?? block.title ?? 'Diagram rinci'} tabIndex={0}>
-                          <div className={diagramWidth} dangerouslySetInnerHTML={{ __html: processedSvg }} />
+                          <DiagramCanvas className={diagramWidth} html={processedSvg} />
                         </div>
                       </details>
                     )}
@@ -804,7 +831,6 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 <img src={block.url} alt={block.altText ?? block.title ?? 'Visual materi'} className="w-full h-auto rounded-xl object-contain bg-white dark:bg-navy-800/40" />
               ) : null}
             </div>
-            {block.svg && /course-diagram-(sml|bpmn|agency)/.test(block.svg) && <p className="hidden px-5 pb-2 text-xs text-slate-600 dark:text-slate-300 md:block xl:hidden">Geser diagram ke samping untuk melihat seluruh alur. Versi teks tersedia di bawah.</p>}
             {(block.transcript || block.transcriptSections) && (
               <section aria-label="Isi diagram dalam teks" className="border-t border-slate-200 bg-slate-50/70 px-5 py-4 dark:border-slate-700 dark:bg-slate-800/40">
                 <h4 className="text-base font-bold text-slate-900 dark:text-slate-100">Isi diagram dalam teks</h4>
@@ -836,7 +862,6 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
           {block.title && (
             <figcaption id={`${blockId}-title`} className="flex flex-wrap items-center justify-between gap-2 border-b border-navy-500/20 dark:border-navy-500/60 bg-slate-50 dark:bg-navy-900/40 px-5 py-3 text-xs font-black uppercase tracking-[0.18em] text-gold-700 dark:text-gold">
               <span className="flex items-center gap-2"><Sparkles size={14} /> {block.title}</span>
-              <span className="text-[10px] font-semibold normal-case tracking-normal text-slate-500 md:hidden">geser grafik bila label terlalu kecil</span>
             </figcaption>
           )}
           <div className="p-3 md:p-5">

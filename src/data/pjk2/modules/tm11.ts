@@ -91,7 +91,7 @@ export const TM11_READING: Reading = {
   tm: 11,
   title: 'Rekonsiliasi Fiskal & Penyusunan SPT Tahunan PPh Wajib Pajak Badan (Formulir 1771)',
   ref: 'PER-19/PJ/2014 jo PER-30/PJ/2017 Format SPT 1771 | Lampiran I s/d VI | Kertas Kerja Beda Tetap & Beda Waktu',
-  intro: 'TM 11 membahas teknik penyusunan Surat Pemberitahuan (SPT) Tahunan PPh Wajib Pajak Badan (Formulir 1771): konseptualisasi Beda Tetap (Permanent Differences) dan Beda Waktu (Timing Differences), penyusunan Kertas Kerja Rekonsiliasi Fiskal pada Lampiran I (1771-I), penataan elemen HPP pada Lampiran II, perincian kredit pajak pada Lampiran III, pemisahan pos PPh Final pada Lampiran IV, hingga penentuan status PPh Kurang Bayar (Pasal 29) di Induk SPT.',
+  intro: 'TM 11 membahas penyusunan SPT Tahunan PPh Badan (Formulir 1771). Dimulai dari Beda Tetap (Permanent Differences) dan Beda Waktu (Timing Differences), lalu Kertas Kerja Rekonsiliasi Fiskal di Lampiran I (1771-I), HPP di Lampiran II, perincian kredit pajak di Lampiran III, pos PPh Final di Lampiran IV, dan penentuan status PPh Kurang Bayar (Pasal 29) di Induk SPT.',
   objectives: [
     'Menyusun kertas kerja rekonsiliasi fiskal komprehensif dari Laba Komersial ke Penghasilan Kena Pajak.',
     'Membedakan pengaruh Beda Tetap (tidak menimbulkan pajak tangguhan) vs Beda Waktu (PSAK 46).',

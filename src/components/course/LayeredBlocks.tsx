@@ -78,7 +78,7 @@ export function InlineMarkdown({ text, unwrapParagraph = false }: { text: string
 /** One body size for all layered reading text. */
 export const LAYERED_BODY = 'text-base leading-[1.7] md:text-[16.5px]';
 
-const EYEBROW: Record<'fondasi' | 'main' | 'latihan', string> = { fondasi: 'Fondasi', main: 'Bagian Materi', latihan: 'Latihan' };
+const EYEBROW: Record<'fondasi' | 'main' | 'latihan', string> = { fondasi: 'Fondasi', main: '', latihan: 'Latihan' };
 
 /** A section laid out like the other course readings (PJK301): no card, an eyebrow label and a numbered heading. */
 export function LayeredSection({ title, layer, source, children }: { title?: string; layer: 'fondasi' | 'main' | 'latihan'; source?: string; children: ReactNode }) {
@@ -86,7 +86,7 @@ export function LayeredSection({ title, layer, source, children }: { title?: str
   const [, number, text] = /^(\d+\.)\s+([\s\S]*)$/.exec(title) ?? [title, '', title];
   return (
     <section className={`layered-section layered-section--${layer} pt-4 md:pt-6`}>
-      <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">{EYEBROW[layer]}</div>
+      {EYEBROW[layer] && <div className="mb-1 text-[10.5px] font-black uppercase tracking-[0.24em] text-gold-600 dark:text-gold/80">{EYEBROW[layer]}</div>}
       <h2 className="flex gap-2 font-display text-xl font-black leading-tight text-slate-900 dark:text-slate-100 md:text-2xl md:leading-tight">
         {number && <span className="shrink-0 text-blue-500 dark:text-blue-400">{number}</span>}
         <span className="min-w-0">{text}</span>

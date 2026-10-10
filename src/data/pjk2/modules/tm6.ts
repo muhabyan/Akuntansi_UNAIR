@@ -58,7 +58,7 @@ export const TM6_READING: Reading = {
   tm: 6,
   title: 'Pemotongan Pajak Penghasilan Bersifat Final (PPh Pasal 4 ayat 2, PPh Pasal 15, Dividen Wajib Pajak Orang Pribadi)',
   ref: 'UU No. 7/2021 (UU HPP) · PMK No. 81/2024 (Pasal 191 s.d. 203) · PP No. 9/2022 · PP No. 34/2017 · PP No. 20/2026',
-  intro: 'Membahas rezim pemajakan Pajak Penghasilan Bersifat Final: dasar filosofis pengenaan pajak rampung seketika, konsekuensi fiskal terhadap biaya non-deductible dan ketiadaan hak kredit pajak, matriks komprehensif 23 objek PPh Pasal 4 ayat (2), tata cara validasi SSP dan SPT Masa Unifikasi PHTB pada PMK 81/2024, serta Norma Penghitungan Khusus PPh Pasal 15 untuk sektor pelayaran dan penerbangan.',
+  intro: 'TM 6 membahas PPh yang bersifat final. Dasarnya adalah filosofi pajak yang dianggap selesai saat dipotong. Konsekuensinya bagi biaya non-deductible dan tidak adanya hak kredit pajak ikut dibahas, beserta matriks 23 objek PPh Pasal 4 ayat (2), tata cara validasi SSP dan SPT Masa Unifikasi PHTB menurut PMK 81/2024, dan Norma Penghitungan Khusus PPh Pasal 15 untuk pelayaran dan penerbangan.',
   objectives: [
     'Mengidentifikasi karakteristik yuridis dan konsekuensi fiskal pemajakan PPh Bersifat Final (tidak dapat dikreditkan dan biaya non-deductible).',
     'Menentukan Dasar Pengenaan Pajak (DPP) dan tarif PPh Final Pasal 4 ayat (2) atas 23 ragam objek penghasilan (deposito, obligasi, simpanan koperasi, hadiah undian, saham bursa, PHTB, sewa tanah/bangunan, dan jasa konstruksi).',

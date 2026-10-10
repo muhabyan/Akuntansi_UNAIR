@@ -171,7 +171,7 @@ export const SIA_TM3: Reading = {
     { kind: 'example', title: 'Starbucks Drive-Through: model proses', blocks: [
       { kind: 'p', text: '**Pool Customer:** partisipan eksternal yang datang, memesan, menerima pesanan, membayar, dan menerima kartu serta struk. **Pool Starbucks:** lane Barista yang mencatat pesanan di kasir, menyiapkan kopi dan muffin, menyerahkan pesanan, lalu mencatat pembayaran. Dasarnya adalah **Problem 1, Richardson 4e, hlm. buku 207**. Exhibit 4.10 pada hlm. 186 membahas jenis gateway, bukan diagram Starbucks.' },
       { kind: 'figure', svg: STARBUCKS_FLOW, altText: 'Skema soal Starbucks drive-through: pool Customer dan pool Starbucks dengan lane Barista. Panah utuh mengurutkan tugas dalam pool; panah putus-putus menunjukkan pertukaran pesanan, barang, pembayaran, serta kartu dan struk antar-pool.', mobileFlow: {
-        title: 'Alur Starbucks di layar sempit',
+        title: 'Alur Starbucks',
         stages: [
           { actor: 'Customer', actions: ['Tiba dan melihat menu', 'Memesan kopi dan muffin'] },
           { actor: 'Starbucks · Barista', actions: ['Mencatat pesanan di kasir', 'Menyiapkan kopi dan muffin', 'Menyerahkan pesanan'], note: 'Pada waktu yang sama, Customer bergerak ke jendela.' },

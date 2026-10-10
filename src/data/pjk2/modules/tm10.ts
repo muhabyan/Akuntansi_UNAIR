@@ -83,7 +83,7 @@ export const TM10_READING: Reading = {
   tm: 10,
   title: 'Kalkulasi Komprehensif PPh Pasal 21: Pegawai Tetap, Tidak Tetap, Bukan Pegawai, & Pesangon',
   ref: 'PMK 168/2023 | PP 68/2009 PPh Final Pesangon | Tarif Pasal 17 UU HPP No. 7/2021',
-  intro: 'TM 10 membahas aplikasi matematis komprehensif pemotongan PPh Pasal 21 atas berbagai subjek penerima penghasilan: siklus lengkap Pegawai Tetap (TER Januari-November vs Rekalkulasi Masa Pajak Terakhir Desember), Pegawai Tidak Tetap (Upah harian vs upah bulanan), Tenaga Ahli / Bukan Pegawai (Dasar Pengenaan Pajak 50% dari bruto dikalikan tarif progresif Pasal 17 tanpa kumulatif), serta pemajakan PPh Final atas Uang Pesangon yang dibayarkan sekaligus.',
+  intro: 'TM 10 membahas penerapan hitungan pemotongan PPh Pasal 21 untuk berbagai penerima penghasilan. Pegawai tetap: siklus lengkapnya, yaitu TER Januari sampai November lalu rekalkulasi di masa pajak terakhir (Desember). Pegawai tidak tetap: upah harian vs upah bulanan. Tenaga ahli / bukan pegawai: Dasar Pengenaan Pajak 50% dari bruto dikalikan tarif progresif Pasal 17 tanpa kumulatif. Terakhir, PPh Final atas uang pesangon yang dibayarkan sekaligus.',
   objectives: [
     'Menghitung PPh Pasal 21 pegawai tetap setahun penuh termasuk tunjangan, lembur, dan bonus akhir tahun.',
     'Melakukan rekalkulasi masa pajak Desember dan menentukan PPh 21 kurang bayar atau lebih bayar.',

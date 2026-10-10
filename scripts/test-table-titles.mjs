@@ -22,7 +22,7 @@ try {
   const removeGeneratedTitles = (original, displayed) => {
     original.forEach((block, index) => {
       const copy = displayed[index];
-      if (block.kind === 'table' && !Object.hasOwn(block, 'title')) delete copy.title;
+      if ((block.kind === 'table' || block.kind === 'journal') && !Object.hasOwn(block, 'title')) delete copy.title;
       if ('blocks' in block) removeGeneratedTitles(block.blocks, copy.blocks);
       if (block.kind === 'solution-reveal' && block.promptBlocks) removeGeneratedTitles(block.promptBlocks, copy.promptBlocks);
       if (block.kind === 'self-check') removeGeneratedTitles(block.answer, copy.answer);
@@ -69,7 +69,7 @@ try {
       assert.equal(JSON.stringify(reading), before, `${code}: presentation leaves the source intact`);
       const restored = structuredClone(presented);
       removeGeneratedTitles(reading.blocks, restored.blocks);
-      assert.deepEqual(restored, reading, `${code}: only table titles may change, including all reading text and table metadata`);
+      assert.deepEqual(restored, reading, `${code}: only table and journal titles may change, including all reading text and table metadata`);
       const originalTables = flatten(reading.blocks).filter((block) => block.kind === 'table');
       const displayedTables = flatten(presented.blocks).filter((block) => block.kind === 'table');
       assert.equal(displayedTables.length, originalTables.length, `${code}: no table disappears`);
@@ -100,8 +100,8 @@ try {
   assert.equal(organizationQuestions.title, 'Pertanyaan kritis desain struktur organisasi dan bagian rujukannya', 'a discussion-source attribution must not replace the subject of the structure questions');
   const managementTables = flatten(withTableTitles(management.readings[7]).blocks).filter((block) => block.kind === 'table');
   assert.ok(managementTables.some((table) => table.title === 'Gambaran struktur awal (dalam bentuk tabel hubungan lapor)'), 'use the existing introduction instead of repeating the complete Q1');
-  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur lama (tall)'), 'name the old organization chart');
-  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur baru (flat)'), 'distinguish the new organization chart');
+  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2: Struktur lama (tall)'), 'name the old organization chart');
+  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2: Struktur baru (flat)'), 'distinguish the new organization chart');
 
   const finance = await loadCourseContent('MNK201');
   assert.equal(withTableTitles(finance.readings[3]).blocks[4].title, 'Arti simbol pada rumus TVM');
@@ -144,7 +144,7 @@ try {
     ] },
   ] });
   assert.equal(ambiguous.blocks[2].title, 'Bukti audit', 'source strings cannot become a table title');
-  assert.equal(ambiguous.blocks[3].blocks[1].title, 'L1. Risiko audit — Jawaban', 'generic nested headings retain their case context');
+  assert.equal(ambiguous.blocks[3].blocks[1].title, 'L1. Risiko audit: Jawaban', 'generic nested headings retain their case context');
 
   // Check both layouts, including a table inside an expanded disclosure.
   const table = tables[0];

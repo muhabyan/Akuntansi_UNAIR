@@ -552,7 +552,7 @@ export const AKK202_QUIZ_UTS: QuizQuestion[] = [
       "Dikreditkan ke Interest Expense sepanjang umur obligasi"
     ],
     "answer": 1,
-    "explanation": "Biaya penerbitan mengurangi kas bersih dan nilai tercatat awal liabilitas; biaya itu tidak dicatat sebagai aset tangguhan (Kieso p. 1118). Karena nilai tercatat awal lebih kecil, tarif efektif yang dipakai untuk amortisasi menjadi lebih tinggi."
+    "explanation": "Biaya penerbitan mengurangi kas bersih dan nilai tercatat awal liabilitas; biaya itu tidak dicatat sebagai aset tangguhan (Kieso p. 1171, catatan kaki 3). Karena nilai tercatat awal lebih kecil, tarif efektif yang dipakai untuk amortisasi menjadi lebih tinggi."
   },
   {
     "tm": 7,
@@ -566,7 +566,7 @@ export const AKK202_QUIZ_UTS: QuizQuestion[] = [
       "Tidak ada jurnal sampai utang baru jatuh tempo"
     ],
     "answer": 0,
-    "explanation": "Selisih 10% atau lebih berarti modifikasi substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar, dengan gain atau loss di laba rugi. Bila selisihnya di bawah 10%, utang tetap dan nilai tercatatnya disesuaikan (Kieso p. 1133)."
+    "explanation": "Selisih 10% atau lebih (atau perubahan fundamental syarat dan ketentuan) berarti modifikasi substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar, dengan gain atau loss di laba rugi. Bila selisihnya di bawah 10% dan syarat serta ketentuannya tidak berubah secara fundamental, utang lama tetap: selisihnya ditangguhkan lalu diamortisasi selama sisa umur utang pada tarif efektif historis (Kieso pp. 1129–1131 dan catatan kaki 14 di p. 1173)."
   }
 ];
 

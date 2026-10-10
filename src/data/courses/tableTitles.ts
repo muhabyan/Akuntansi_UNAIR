@@ -1,6 +1,11 @@
 import type { ContentBlock, Reading } from '../../types';
 import { reviewedTableTitle } from './tableTitleOverrides';
 
+/** Joins a section name and a detail without a dash; falls back to a dot when either part already has a colon. */
+function joinTitle(context: string, detail: string): string {
+  return /:/.test(`${context}${detail}`) ? `${context} · ${detail}` : `${context}: ${detail}`;
+}
+
 /** Remove source anchors and heading numbers, keeping the actual subject intact. */
 function subject(text: string): string {
   return text
@@ -56,7 +61,7 @@ export function withTableTitles(reading: Reading): Reading {
       if (block.kind === 'h2' || block.kind === 'h3') {
         const heading = subject(block.text);
         const context = block.kind === 'h2' ? parent : mainSection;
-        section = isGeneric(heading) ? `${context} — ${heading}` : heading;
+        section = isGeneric(heading) ? joinTitle(context, heading) : heading;
         if (block.kind === 'h2') mainSection = section;
         lead = undefined;
         exhibit = undefined;
@@ -70,16 +75,21 @@ export function withTableTitles(reading: Reading): Reading {
           exhibit = lead.match(/^(Exhibit\s+[\d.]+)\s*:/i)?.[1];
         }
         const part = block.text.match(/^\(([a-z])\)\s+([^.!?\n]+)[.!?](?:\s|$)/i)?.[2];
-        if (part && isTableLabel(part)) lead = `${exhibit ? `${exhibit} — ` : ''}${subject(part)}`;
+        if (part && isTableLabel(part)) lead = (exhibit ? joinTitle(exhibit, subject(part)) : subject(part));
       }
       if (block.kind === 'table') {
         const title = block.title || block.reportHeader?.title || reviewedTableTitle(reading, at, block) || captionTitle(block.caption) || lead || section;
         lead = undefined;
         return { ...block, title };
       }
+      if (block.kind === 'journal' && !block.title && !block.caption) {
+        const title = lead || section;
+        lead = undefined;
+        return { ...block, title };
+      }
       if ('blocks' in block) {
         const label = block.title ? subject(block.title) : undefined;
-        const context = label ? (isGeneric(label) ? `${section} — ${label}` : label) : section;
+        const context = label ? (isGeneric(label) ? joinTitle(section, label) : label) : section;
         const nested = { ...block, blocks: nameBlocks(block.blocks, context, `${at}.blocks`) };
         if (nested.kind === 'solution-reveal' && nested.promptBlocks) {
           return { ...nested, promptBlocks: nameBlocks(nested.promptBlocks, context, `${at}.promptBlocks`) };
@@ -95,7 +105,7 @@ export function withTableTitles(reading: Reading): Reading {
       if (block.kind === 'table' && block.title) counts.set(block.title, (counts.get(block.title) ?? 0) + 1);
     });
     return named.map((block, index) => block.kind === 'table' && !block.reportHeader && blocks[index].kind === 'table' && !(blocks[index] as Extract<ContentBlock, { kind: 'table' }>).title && !reviewedTableTitle(reading, `${prefix}[${index}]`, block) && (counts.get(block.title ?? '') ?? 0) > 1
-      ? { ...block, title: `${block.title} — ${columnSubject(block.headers)}` }
+      ? { ...block, title: joinTitle(block.title ?? '', columnSubject(block.headers)) }
       : block);
   }
   return { ...reading, blocks: nameBlocks(reading.blocks, subject(reading.title), 'blocks') };

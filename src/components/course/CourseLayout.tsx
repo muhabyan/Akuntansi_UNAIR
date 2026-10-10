@@ -1001,7 +1001,6 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
                     </div>
                     {(activeTab === 'pra_uts' || activeTab === 'pra_uas') && (
                       <div className="flex items-center gap-2">
-                        <span className="hidden text-xs font-semibold text-gray-500 dark:text-gray-400 sm:inline">{filteredTms.length} materi</span>
                         <button type="button" onClick={() => setIsSortedAsc(!isSortedAsc)} className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-gray-200 text-gray-500 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 dark:border-gray-700 dark:text-gray-400 dark:hover:border-blue-800 dark:hover:bg-blue-950/35 dark:hover:text-blue-300" aria-label={`Urutkan materi ${isSortedAsc ? 'menurun' : 'menaik'}`} title={`Urutan ${isSortedAsc ? 'TM awal ke akhir' : 'TM akhir ke awal'}`}>
                           <ArrowUpDown size={17} />
                         </button>

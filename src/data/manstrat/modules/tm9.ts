@@ -76,7 +76,7 @@ export const TM9_READING: Reading = {
   tm: 9,
   title: 'Blue Ocean Strategy: Value Innovation, Strategy Canvas, & Kerangka Kerja ERRC',
   ref: 'W. Chan Kim & Renée Mauborgne (Blue Ocean Strategy) | Harvard Business Review | Inovasi Nilai vs Red Ocean',
-  intro: 'TM 9 membahas paradigma revolusioner Blue Ocean Strategy karya W. Chan Kim & Renée Mauborgne: perbandingan Samudra Merah (Red Ocean yang berdarah-darah akibat perang harga di ruang pasar yang sudah padat) vs Samudra Biru (Blue Ocean yang menciptakan ruang pasar baru tanpa pesaing), fondasi Inovasi Nilai (Value Innovation yang mengejar diferensiasi dan biaya rendah secara simultan), alat diagnostik Kanvas Strategi (Strategy Canvas) dan Kurva Nilai (Value Curve), Kerangka Kerja 4 Tindakan (Four Actions Framework: Eliminate, Reduce, Raise, Create / ERRC), serta 6 Jalur Menembus Batas Pasar (Six Paths Framework).',
+  intro: 'TM 9 membahas Blue Ocean Strategy karya W. Chan Kim & Renée Mauborgne. Samudra Merah (Red Ocean) adalah pasar padat yang penuh perang harga, sedangkan Samudra Biru (Blue Ocean) adalah ruang pasar baru tanpa pesaing langsung. Dari situ kita masuk ke Inovasi Nilai (Value Innovation: diferensiasi dan biaya rendah sekaligus), Kanvas Strategi (Strategy Canvas) dan Kurva Nilai (Value Curve), Kerangka Empat Tindakan (Four Actions Framework: Eliminate, Reduce, Raise, Create / ERRC), serta enam jalur menembus batas pasar (Six Paths Framework).',
   objectives: [
     'Membedakan logika strategis Samudra Merah (Red Ocean) vs Samudra Biru (Blue Ocean).',
     'Menjelaskan konsep Inovasi Nilai (Value Innovation) dalam mematahkan trade-off biaya vs diferensiasi.',
