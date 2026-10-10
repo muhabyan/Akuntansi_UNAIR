@@ -696,7 +696,7 @@ export const SEMESTERS: Semester[] = [
             code: 'MNS301', newCode: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
             references: MNS301_REF,
             materiTM1_7: MNS301_TM1_7, materiTM8_14: MNS301_TM8_14,
-            featureBadge: 'Modul Interaktif + 7 Kasus Global',
+            flashcardCount: 176, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           { code: 'AKA306', name: 'Pengantar Praktik Pengauditan', sks: 3, iconKey: 'award', prasyarat: 'AKA202 (T)', materiTM1_7: [], materiTM8_14: [] },
           // Kode resmi panduan: AKS301. Kode itu masih dipakai sebagai alias lama Sistem Informasi Akuntansi (lihat src/lib/legacyCourseCodes.ts),

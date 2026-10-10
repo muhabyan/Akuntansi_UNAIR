@@ -56,6 +56,11 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
     'pra-uas': cards.filter((card) => card.phase === 'pra-uas').length,
   }), [cards]);
 
+  const tmRange = useMemo(() => {
+    const all = cards.map((card) => card.tm);
+    return all.length ? `${Math.min(...all)}–${Math.max(...all)}` : '1–14';
+  }, [cards]);
+
   const handlePhaseChange = (nextPhase: 'all' | FlashcardPhase) => {
     setPhase(nextPhase);
     if (tm !== 'all') {
@@ -72,7 +77,7 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
         <div className="bg-surface px-5 py-5 md:px-6 md:py-6">
           <div className="flex flex-wrap items-start justify-between gap-5">
             <div className="max-w-3xl">
-              <div className="mb-2 text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Flashcard Terstruktur TM 1–14</div>
+              <div className="mb-2 text-[10px] font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">Flashcard Terstruktur TM {tmRange}</div>
               <h3 className="flex items-center gap-3 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
                   <BookOpenCheck size={22} />
@@ -87,7 +92,7 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
             <div className="grid min-w-[220px] gap-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 p-4 text-sm shadow-sm">
               <div className="flex justify-between gap-8"><span className="text-gray-500 dark:text-gray-400">Total kartu</span><span className="font-bold text-gray-900 dark:text-white">{phaseCounts.all}</span></div>
               <div className="flex justify-between gap-8"><span className="text-gray-500 dark:text-gray-400">Pra-UTS</span><span className="font-bold text-blue-600 dark:text-blue-400">{phaseCounts['pra-uts']}</span></div>
-              <div className="flex justify-between gap-8"><span className="text-gray-500 dark:text-gray-400">Pra-UAS</span><span className="font-bold text-emerald-600 dark:text-emerald-400">{phaseCounts['pra-uas']}</span></div>
+              {phaseCounts['pra-uas'] > 0 && <div className="flex justify-between gap-8"><span className="text-gray-500 dark:text-gray-400">Pra-UAS</span><span className="font-bold text-emerald-600 dark:text-emerald-400">{phaseCounts['pra-uas']}</span></div>}
             </div>
           </div>
         </div>
@@ -105,7 +110,7 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
                 onChange={(event) => handlePhaseChange(event.target.value as 'all' | FlashcardPhase)}
                 className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2.5 text-sm font-semibold text-gray-900 dark:text-white outline-none transition focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               >
-                {PHASE_OPTIONS.map((option) => (
+                {PHASE_OPTIONS.filter((option) => option.value === 'all' || phaseCounts[option.value] > 0).map((option) => (
                   <option key={option.value} value={option.value}>
                     {option.label} ({phaseCounts[option.value]})
                   </option>

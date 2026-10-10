@@ -36,6 +36,7 @@ import { PJK301_QUIZ, PJK301_QUIZ_UTS, PJK301_QUIZ_UAS } from './pjk301';
 import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
 import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
 import { SII306_QUIZ, SII306_QUIZ_UTS, SII306_QUIZ_UAS } from './sii306';
+import { MNS301_QUIZ, MNS301_QUIZ_UTS } from './mns301';
 
 const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK106: AKK106_QUIZ,
@@ -66,6 +67,8 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   AKA201: AKA201_QUIZ,
   SII306: SII306_QUIZ,
   AKS301: SII306_QUIZ,
+  MNS301: MNS301_QUIZ,
+  MNU307: MNS301_QUIZ,
 };
 
 export function getQuiz(courseCode: string): QuizQuestion[] {
@@ -128,7 +131,7 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
   if (courseCode === 'MNU108' || courseCode === 'MNM101' || courseCode === 'MNM201') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Pengantar Manajemen (TM 1–7)', items: MNM101_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengantar Manajemen (TM 8–14)', items: MNM101_QUIZ_UAS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengantar Manajemen (TM 9–14)', items: MNM101_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap Pengantar Manajemen (14 TM)', items: MNM101_QUIZ },
     ];
   }
@@ -156,21 +159,21 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
   if (courseCode === 'PJK301') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Perpajakan II (TM 1–7)', items: PJK301_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 8–14)', items: PJK301_QUIZ_UAS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 9–14)', items: PJK301_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (14 TM)', items: PJK301_QUIZ },
     ];
   }
   if (courseCode === 'MNK201') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Manajemen Keuangan (TM 1–7)', items: MNK201_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Manajemen Keuangan (TM 8–14)', items: MNK201_QUIZ_UAS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Manajemen Keuangan (TM 9–14)', items: MNK201_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap Manajemen Keuangan (14 TM)', items: MNK201_QUIZ },
     ];
   }
   if (courseCode === 'AKA201') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Pengauditan Berbasis Risiko I (TM 1–7)', items: AKA201_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengauditan Berbasis Risiko I (TM 8–14)', items: AKA201_QUIZ_UAS },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Pengauditan Berbasis Risiko I (TM 9–14)', items: AKA201_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap Pengauditan I (14 TM)', items: AKA201_QUIZ },
     ];
   }
@@ -179,6 +182,15 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Sistem Informasi Akuntansi (TM 1–7)', items: SII306_QUIZ_UTS },
       { id: 'uas', label: 'Kuis Praktik Pra-UAS Sistem Informasi Akuntansi (TM 8–14)', items: SII306_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap SIA (14 TM)', items: SII306_QUIZ },
+    ];
+  }
+  if (courseCode === 'MNS301' || courseCode === 'MNU307') {
+    const byTm = (from: number, to: number) => MNS301_QUIZ_UTS.filter((q) => (q.tm ?? 0) >= from && (q.tm ?? 0) <= to);
+    return [
+      { id: 'tm1-3', label: 'Kuis Praktik Manajemen Stratejik TM 1–3', items: byTm(1, 3) },
+      { id: 'tm4-5', label: 'Kuis Praktik Manajemen Stratejik TM 4–5', items: byTm(4, 5) },
+      { id: 'tm6-7', label: 'Kuis Praktik Manajemen Stratejik TM 6–7', items: byTm(6, 7) },
+      { id: 'uts', label: 'Kompilasi Kuis Pra-UTS Manajemen Stratejik (TM 1–7)', items: MNS301_QUIZ_UTS },
     ];
   }
   const items = getQuiz(courseCode);
