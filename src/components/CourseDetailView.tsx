@@ -60,6 +60,37 @@ export default function CourseDetailView({ course, onBack, activeTab, setActiveT
   const allMaterials = [...(course.materiTM1_7 ?? []), ...(course.materiTM8_14 ?? [])];
   const completedCount = countDone(allMaterials.map((material) => materialKey(course.code, material.tm)));
   const progressPercent = allMaterials.length > 0 ? Math.round((completedCount / allMaterials.length) * 100) : 0;
+  // Mata kuliah yang materinya belum terbit: tampilkan satu keadaan kosong yang jujur, bukan kartu TM bayangan.
+  if (allMaterials.length === 0) {
+    return (
+      <div className="-mt-12 mx-auto max-w-5xl px-4 md:mt-0 md:px-8">
+        <button type="button" onClick={onBack} className="mb-4 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-gray-500 md:-mt-3 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-300">
+          <ArrowLeft size={16} /> Kembali
+        </button>
+        <header className="relative mb-6 overflow-hidden rounded-2xl border border-blue-100 bg-white/90 shadow-sm shadow-blue-950/5 dark:border-blue-900/45 dark:bg-gray-900/90">
+          <div className="absolute inset-y-0 left-0 w-1 bg-accent" />
+          <div className="flex min-w-0 gap-4 px-5 py-5 md:px-6">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-white dark:bg-accent dark:text-gray-950">
+              <CourseIcon iconKey={course.iconKey} size={21} />
+            </div>
+            <div className="min-w-0">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-blue-600 dark:text-blue-400">
+                {semester ? `Semester ${semester.number} · ` : ''}{course.code} · {course.sks} SKS
+              </p>
+              <h1 className="mt-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-2xl md:leading-tight">{course.name}</h1>
+              {course.prasyarat && <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">Prasyarat: {course.prasyarat}</p>}
+            </div>
+          </div>
+        </header>
+        <section className="flex flex-col items-center justify-center rounded-xl border border-dashed border-gray-300 px-6 py-16 text-center dark:border-gray-700">
+          <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-gray-100 text-gray-400 dark:bg-gray-800"><LayoutDashboard size={28} /></div>
+          <h2 className="text-lg font-bold text-gray-700 dark:text-gray-200">Materi sedang disiapkan</h2>
+          <p className="mt-2 max-w-md text-sm text-gray-500 dark:text-gray-400">Materi, flashcard, kuis, dan bank soal {course.name} akan dibuka setelah selesai disusun dan diperiksa.</p>
+        </section>
+      </div>
+    );
+  }
+
   const learningTabs = visibleTabs.filter((tab) => tab.id === 'tm1-7' || tab.id === 'tm8-14');
   const supportingTabs = visibleTabs.filter((tab) => tab.id !== 'tm1-7' && tab.id !== 'tm8-14');
 

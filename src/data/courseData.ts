@@ -16,15 +16,6 @@ function materi(items: Array<[string, string?]>, startTm = 1): Material[] {
   }));
 }
 
-/** Placeholder cepat untuk mata kuliah yang belum ada silabusnya. */
-function makeMateri(prefix: string, from: number, to: number): Material[] {
-  const out: Material[] = [];
-  for (let tm = from; tm <= to; tm++) {
-    out.push({ tm, title: `${prefix} — Tatap Muka ${tm}` });
-  }
-  return out;
-}
-
 // =====================================================================
 // MATERI RESMI PER MATA KULIAH
 // =====================================================================
@@ -663,8 +654,8 @@ export const SEMESTERS: Semester[] = [
     id: 'sem4',
     number: 4,
     title: 'Semester 4',
-    desc: 'Akuntansi Manajemen, Audit II, Internal Audit, Hukum Bisnis & Lanjutan',
-    totalSks: 18,
+    desc: 'Akuntansi Manajemen, Akuntansi Keuangan Lanjutan, Audit, Pasar Modal & Sistem Informasi Manajemen',
+    totalSks: 21,
     locked: false,
     groups: [
       {
@@ -676,11 +667,12 @@ export const SEMESTERS: Semester[] = [
             references: AKM202_REF,
             materiTM1_7: AKM202_TM1_7, materiTM8_14: AKM202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
-          { code: 'AKK203', name: 'Akuntansi Keuangan Menengah III', sks: 3, iconKey: 'calculator', materiTM1_7: makeMateri('AKM III', 1, 7), materiTM8_14: makeMateri('AKM III', 8, 14) },
-          { code: 'AKA202', name: 'Pengauditan Berbasis Risiko II', sks: 3, iconKey: 'award', materiTM1_7: makeMateri('Audit II', 1, 7), materiTM8_14: makeMateri('Audit II', 8, 14) },
-          { code: 'AKA203', name: 'Internal Audit', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Internal Audit', 1, 7), materiTM8_14: makeMateri('Internal Audit', 8, 14) },
-          { code: 'HUK201', name: 'Hukum Bisnis dan Perusahaan', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('Hukum Bisnis', 1, 7), materiTM8_14: makeMateri('Hukum Bisnis', 8, 14) },
-          { code: 'MNK202', name: 'Pengantar Pasar Modal', sks: 3, iconKey: 'chart', materiTM1_7: makeMateri('Pasar Modal', 1, 7), materiTM8_14: makeMateri('Pasar Modal', 8, 14) },
+          { code: 'MNK314', newCode: 'FEB25603018', name: 'Pengantar Pasar Modal', sks: 3, iconKey: 'chart', prasyarat: 'MNK102 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKK207', newCode: 'FEB25603019', name: 'Akuntansi Keuangan Menengah III', sks: 3, iconKey: 'calculator', prasyarat: 'AKK106 (L)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'SII203', newCode: 'FEB25603021', name: 'Sistem Informasi Manajemen', sks: 3, iconKey: 'book', prasyarat: 'SII306 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKA304', newCode: 'FEB25603022', name: 'Internal Audit', sks: 3, iconKey: 'file', prasyarat: 'SII306 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKA202', newCode: 'FEB25603023', name: 'Pengauditan Berbasis Risiko II', sks: 3, iconKey: 'award', prasyarat: 'AKA201 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKK304', newCode: 'FEB25603024', name: 'Akuntansi Keuangan Lanjutan I: Konsep dan Penerapan', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (T)', materiTM1_7: [], materiTM8_14: [] },
         ],
       },
     ],
@@ -689,22 +681,28 @@ export const SEMESTERS: Semester[] = [
     id: 'sem5',
     number: 5,
     title: 'Semester 5',
-    desc: 'Metodologi Penelitian & Mata Kuliah Pilihan',
-    totalSks: 15,
+    desc: 'Praktik Perpajakan, Akuntansi Keuangan Lanjutan II, Teori Akuntansi, Manajemen Stratejik & Metode Penelitian',
+    totalSks: 21,
     locked: false,
     groups: [
       {
         title: 'Mata Kuliah Keahlian',
         highlight: true,
         courses: [
-          { code: 'AKP301', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', materiTM1_7: makeMateri('Metopen', 1, 7), materiTM8_14: makeMateri('Metopen', 8, 14) },
+          { code: 'PJK302', newCode: 'FEB25603025', name: 'Praktik Perpajakan', sks: 3, iconKey: 'file', prasyarat: 'PJK301 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKK305', newCode: 'FEB25603026', name: 'Akuntansi Keuangan Lanjutan II: Konsep dan Penerapan', sks: 3, iconKey: 'calculator', prasyarat: 'AKK202 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKK401', name: 'Teori Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'AKK201 (T)', materiTM1_7: [], materiTM8_14: [] },
           {
             code: 'MNS301', newCode: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
             references: MNS301_REF,
             materiTM1_7: MNS301_TM1_7, materiTM8_14: MNS301_TM8_14,
             featureBadge: 'Modul Interaktif + 7 Kasus Global',
           },
-          { code: 'AKS302', name: 'Akuntansi Syariah', sks: 3, iconKey: 'file', materiTM1_7: makeMateri('Akuntansi Syariah', 1, 7), materiTM8_14: makeMateri('Akuntansi Syariah', 8, 14) },
+          { code: 'AKA306', name: 'Pengantar Praktik Pengauditan', sks: 3, iconKey: 'award', prasyarat: 'AKA202 (T)', materiTM1_7: [], materiTM8_14: [] },
+          // Kode resmi panduan: AKS301. Kode itu masih dipakai sebagai alias lama Sistem Informasi Akuntansi (lihat src/lib/legacyCourseCodes.ts),
+          // jadi sementara memakai ADA301 sampai alias lama dicabut.
+          { code: 'ADA301', name: 'Accounting Data Analytics', sks: 3, iconKey: 'chart', prasyarat: 'SII203 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'PNE402', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'MAS122 (T)', materiTM1_7: [], materiTM8_14: [] },
         ],
       },
     ],

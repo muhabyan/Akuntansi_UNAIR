@@ -77,6 +77,7 @@ export default function SemesterView({ semester, onBack, onCourseClick }: Semest
                     const total = allTms.length;
                     const pct = total > 0 ? Math.round((done / total) * 100) : 0;
                     const flashcardCount = course.flashcardCount ?? course.flashcards?.length ?? 0;
+                    const preparing = total === 0;
 
                     return (
                       <button
@@ -89,7 +90,7 @@ export default function SemesterView({ semester, onBack, onCourseClick }: Semest
                           <span className="text-xs font-bold uppercase tracking-wider text-accent">
                             {course.code} · {course.sks} SKS
                           </span>
-                          <span className="text-xs font-medium text-muted">{done} dari {total} selesai</span>
+                          {!preparing && <span className="text-xs font-medium text-muted">{done} dari {total} selesai</span>}
                         </div>
 
                         {/* Title */}
@@ -99,7 +100,7 @@ export default function SemesterView({ semester, onBack, onCourseClick }: Semest
 
                         {/* Features */}
                         <div className="mb-4 flex flex-wrap gap-2 text-xs text-muted">
-                          <span className="flex items-center gap-1"><BookOpen size={12} /> {total} TM</span>
+                          <span className="flex items-center gap-1"><BookOpen size={12} /> {preparing ? 'Materi sedang disiapkan' : `${total} TM`}</span>
                           {flashcardCount > 0 && <span>{flashcardCount} flashcard</span>}
                           {course.featureBadge && <span className="font-semibold text-accent">{course.featureBadge}</span>}
                         </div>
