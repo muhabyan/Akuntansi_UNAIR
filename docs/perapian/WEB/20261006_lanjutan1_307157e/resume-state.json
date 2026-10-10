@@ -1,0 +1,1855 @@
+{
+  "date": "2026-10-06",
+  "timezone": "Asia/Bangkok",
+  "capturedAt": "2026-10-06T13:06:13.381Z",
+  "mainHead": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+  "workHead": "307157ec5ff1194833520a8dc0f0b84931e80e8f",
+  "localBranch": "audit/pr45-perapian-20261006",
+  "remote": {
+    "baseRefName": "main",
+    "baseRefOid": "529e5d4e4f2cab3c351ba30701e24c09f2e34c3b",
+    "headRefName": "fix/semester3-reading-clarity",
+    "headRefOid": "20557e0463779f3d730929822dd0a41a158850a8",
+    "mergeable": "CONFLICTING",
+    "number": 45,
+    "state": "OPEN",
+    "statusCheckRollup": [
+      {
+        "__typename": "StatusContext",
+        "context": "Vercel",
+        "startedAt": "2026-10-04T16:58:39Z",
+        "state": "SUCCESS",
+        "targetUrl": "https://vercel.com/muhabyans-projects/akuntansi-unair/553C7GXhXWpEVjK4Ko5GQqMNijBp"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-04T16:58:40Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://vercel.com/github",
+        "name": "Vercel Preview Comments",
+        "startedAt": "2026-10-04T16:58:40Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      }
+    ],
+    "title": "Perjelas judul dan tampilan tabel semester 3",
+    "url": "https://github.com/muhabyan/Akuntansi_UNAIR/pull/45"
+  },
+  "pushed": false,
+  "merged": false,
+  "newSourceCodeChanges": false,
+  "baselinePreview": {
+    "origin": "http://127.0.0.1:5186",
+    "root": "C:/cek/.worktrees/perapian-baseline",
+    "head": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+    "buildResult": "logs/baseline-build-retry2.result.json",
+    "serverStarted": true,
+    "serverStoppedByOwner": true
+  },
+  "browserAttempts": [
+    {
+      "afterJsReset": true,
+      "afterUserConfirmedRestart": false,
+      "origin": "http://127.0.0.1:5186/course/MNU108",
+      "result": "SAVED_PERMISSION_DENIAL"
+    },
+    {
+      "afterJsReset": true,
+      "afterUserConfirmedRestart": true,
+      "origin": "http://127.0.0.1:5186/course/MNU108",
+      "result": "SAVED_PERMISSION_DENIAL"
+    }
+  ],
+  "exactBrowserMessage": "Browser Use rejected this action due to browser security policy. Reason: A saved user permission setting blocks this action. Browser use cannot access http://127.0.0.1:5186 because the user has a saved preference that blocks it. The agent must not attempt to achieve the same outcome via workaround, indirect execution, raw CDP or browser commands, alternate browser surfaces, or policy circumvention. Proceed only with a materially safer alternative that does not require this blocked browser action; if none exists, stop and request user input.",
+  "localOriginPreference": {
+    "access": "allow",
+    "downloads": "allow",
+    "evidence": "source-details.json"
+  },
+  "completedWholeTmAudits": 0,
+  "tmInventoryFromPriorRun": 56,
+  "websiteCapturesCurrentChat": 0,
+  "sourceExamplesChecked": [
+    {
+      "course": "AKK202",
+      "tm": 1,
+      "example": "Shalla borrowing costs",
+      "sourceSlides": [
+        34,
+        35,
+        36,
+        37
+      ],
+      "sourceImagesVisuallyInspected": [
+        35,
+        37
+      ]
+    }
+  ],
+  "e2e": {
+    "run": false,
+    "reason": "Browser tool security-policy denial persists after user-confirmed restart"
+  },
+  "fullCheck": {
+    "run": false,
+    "skipEnabledByAgent": false,
+    "reason": "Mandatory actual-browser tasks blocked; running shell Chrome/CDP would bypass explicit browser-tool denial"
+  },
+  "reviewerScreenshot": {
+    "path": "provided-reviewer-access.png",
+    "originalPath": "C:/Users/Lenovo/Documents/Codex/2026-10-05/kamu/outputs/cek_akses_browser_PR45_20261006.png",
+    "sha256": "eef8e74b59f869b56dda6254b4475f480dd637694bb1502003e3189942bf88de",
+    "providedByUser": true,
+    "inspected": true,
+    "kind": "Reviewer website viewport evidence supplied by user; not current audit capture",
+    "limits": "Shows course home/onboarding only; does not certify baseline, current head/build, TM semantic audit, mobile QA or E2E."
+  },
+  "actualUiEvidence": {
+    "viewport": [],
+    "cropInspection": [],
+    "elementCapture": [],
+    "standaloneSVG": [],
+    "previewQA": [],
+    "localBuildQA": []
+  },
+  "builds": [
+    {
+      "kind": "baseline",
+      "root": "C:/cek/.worktrees/perapian-baseline",
+      "sourceHead": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+      "sourceStatus": "",
+      "result": "logs/baseline-build-retry2.result.json",
+      "distFiles": [
+        {
+          "path": "dist/aks1-logo.png",
+          "bytes": 119992,
+          "sha256": "b5356e934921c2cfcaf2f3f3c19c06a4eac964cd80d9143b843068898ffcab70"
+        },
+        {
+          "path": "dist/aks1-logo.svg",
+          "bytes": 160228,
+          "sha256": "0b1abc3a5e736aaa030db86348869cffb6e25f1649cf098cdaee1b47d3d44613"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/JAWABAN KUIS PRA-UAS AKUNTANSI BIAYA.pdf",
+          "bytes": 177840,
+          "sha256": "422e4409a69c3be621f22c317b15cc918b86461921448d603ee38fb2e3681ce7"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/PEMBAHASAN KUIS PRA UAS AKBI.pdf",
+          "bytes": 200594,
+          "sha256": "48a798ab5f8aa64c889d8433faadc70132cd14cd3709b6ba79d07a5a75eb9275"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/SOAL KUIS PRA-UAS AKUNTANSI BIAYA .pdf",
+          "bytes": 145749,
+          "sha256": "cbd2ea99e65cca8c03aff277b886eb27413222154a86869477eee05a1881eaae"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/UAS 2022.xlsx",
+          "bytes": 18874,
+          "sha256": "6885b12adde6b3806bfadef848fb3e5e3b2805255e677b4c52c93a697279aa6c"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/UAS AKBI 2021.pdf",
+          "bytes": 174449,
+          "sha256": "8eff58dc850a8731d1e38fc28882b9edd73cf71621b72df3e1ce99751980affd"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/uas sem 3 akbi.pdf",
+          "bytes": 300167,
+          "sha256": "581ffb726bab563da16607153835176a00e45fada214f466d83fa48311b03afd"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/Bahas Soal UAS AKM 1(coretan).pdf",
+          "bytes": 5126812,
+          "sha256": "04ad4f0a0d94e2d8cec607b6948d8aea3d9c07d29f1c9659fe149a3ccf55f430"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/ES x HMA UNAIR - AKM I (UAS).pptx",
+          "bytes": 6506059,
+          "sha256": "372dd532c991b4ce2d70c06d4caa8f94751bb0c03489e42e435857a760240dc7"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/KUIS PRA UAS AKM 1 2024.pdf",
+          "bytes": 189447,
+          "sha256": "8cbdb26637ba88ffe7de441fc12ea62d796cf7ece25cdf06713b08a642ca0297"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/KUIS PRA UAS AKM 1.pdf",
+          "bytes": 522363,
+          "sha256": "23c3b87d8e2f4d3fc41df44e05a8473fee19d3b801b308701c00b3bafaa0a72f"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/SOAL KUIS PRA UAS AKM 1.pdf",
+          "bytes": 230832,
+          "sha256": "3b8314efeff610ba8c38eb07c3988a2c4a6783121d9c62b6ab43bd5b89b96e7b"
+        },
+        {
+          "path": "dist/arsip-uas/ETIKA/Etika.pdf",
+          "bytes": 180683,
+          "sha256": "970593520233bd233ed41ec1035bca44f99af4a0ed9803fbe5374d81ed67d686"
+        },
+        {
+          "path": "dist/arsip-uas/ETIKA/UAS ETIKA.pdf",
+          "bytes": 3634705,
+          "sha256": "fc14520e8c4d3bdbb0aa445e8ae9a8ec0f7d9dfd7fdc69a93a3931afbc72cea2"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/Latihan quiz uas pajak.docx",
+          "bytes": 11484,
+          "sha256": "36d4fa500bd0c6f7e304a6526d8669ffbf525c38b5cc6b80f0d9a83afda2f58b"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/Latihan UAS PAJAK.docx",
+          "bytes": 205736,
+          "sha256": "f29a45af2a57f852fd9e0d0003223fdb895062eb168714025d79c08166d89b05"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/PRE UAS KUIS PAJAK.pdf",
+          "bytes": 308557,
+          "sha256": "8a656ec3d022108fe70fe6b0e4006334a86e5c95fcd8d35bfba058e9272c0e80"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/QUIZ UAS PAJAK.docx",
+          "bytes": 198797,
+          "sha256": "6afea21d14f3a418f3ff1ecd7a2105de861a55e677859558599772906af191af"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/pdf-p-classtruncatedtext-module-lineclamped-85ulhh-style-max-lines5kelompok-5-soal-perencanaan-dan-strategi-pemasaran-p_compress.pdf",
+          "bytes": 33802,
+          "sha256": "d07d4fb4cf3bf349aab918a1565bc43ca570e08c45b138b5ca71d4ef409d8774"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/pengbis uas.pdf",
+          "bytes": 413715,
+          "sha256": "9149e4fe1e33ab0ab4d0678a36ec0d6adb8cee278b07fc7d494bd01ea949cf2a"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/UAS PENGBIS.docx",
+          "bytes": 26821,
+          "sha256": "473169510b9218d625e3aefa21622a443b4c644931cfa9ca388189bfec8eb540"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/_UAS PENGBIS - Google Dokumen.docx.pdf",
+          "bytes": 147652,
+          "sha256": "924e62abab5e7d9129062c6243a6c0a9d139f93103787caa3fe2baa4f5700acd"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/LATIHAN SOAL UAS.pdf",
+          "bytes": 2221155,
+          "sha256": "6cfac8084c3a03e483c9b3110f8faea496b1f2060d4b52822239080370e3160c"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/Modul_Final_UAS_PTE_Makro_PJMK.pdf",
+          "bytes": 2209198,
+          "sha256": "a56b9e1d589ad6e32c58fd062e25218fc3a39fa911480defb76bc1515ca4a2c6"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/SOAL LATIHAN UTS.pdf",
+          "bytes": 2560764,
+          "sha256": "d6f81fc35e708cc0f75c5a1e5675679fbcda6c0ffb7610cab8d3313c9888a22f"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/UAS_PTE_SAKURA-Copy.pdf",
+          "bytes": 6944038,
+          "sha256": "6d49efe0646552d869909a841cc2dad833330754ce679adf21d20647c865bb75"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/UAS_PTE_SAKURA.pdf",
+          "bytes": 6087751,
+          "sha256": "f1ecda1e7647de39a52c817f4b3c1901688bca732777d218609a894010317e04"
+        },
+        {
+          "path": "dist/arsip-uas/STATIS/UAS STATIS 2024.pdf",
+          "bytes": 4203409,
+          "sha256": "40d7ea414a71a14cb0596af3b8bb7ff5a66f524874eb1038e86e6f9f96b33c41"
+        },
+        {
+          "path": "dist/assets/akbiData-Ysub2-OT.js",
+          "bytes": 537467,
+          "sha256": "b8932da2a8be5c0ab08fe5128c8f57de4af69e3833fdab3fa3c7f2937a31055e"
+        },
+        {
+          "path": "dist/assets/AkbiManagementReportsView-LEk3CDDb.js",
+          "bytes": 14530,
+          "sha256": "e112e91ec2125a521e39401dc07423de49049bb532515104b58b904af5e677f4"
+        },
+        {
+          "path": "dist/assets/akdasPraUTS-CweIp3pU.js",
+          "bytes": 85092,
+          "sha256": "7e4b3c5d5bdecebd4ebf453231108a6f332517cb44ede4dc8345a3a2e3b06734"
+        },
+        {
+          "path": "dist/assets/akk203/berau2025-lpsal-pdf19.png",
+          "bytes": 77625,
+          "sha256": "e4f10bc0f0d34a8ab533485a2994453edeb025bee56063025f60eeb5467a4369"
+        },
+        {
+          "path": "dist/assets/akk203/lkpp2025-lpsal-pdf47.png",
+          "bytes": 67905,
+          "sha256": "6abecd2d0158f21f898744d8da7f462f446197e1834a84ddd9761d28068c0759"
+        },
+        {
+          "path": "dist/assets/akm1Data-Cc9hRTZR.js",
+          "bytes": 234066,
+          "sha256": "64ebd8200cb9c0493046bea34f1294d27f4e4c0013c61ebf18d61ac1b517c4da"
+        },
+        {
+          "path": "dist/assets/Akm1FinancialReportsView-DHQ9LNi1.js",
+          "bytes": 14643,
+          "sha256": "464793495d48027747d8d9c7ec968a70a189b163f603ca04904725fdf63ae40c"
+        },
+        {
+          "path": "dist/assets/akm2Data-CPIC4nGx.js",
+          "bytes": 385188,
+          "sha256": "af4922f9c118e570aa212f4085190270f99523785b195280edac25b0c463a07f"
+        },
+        {
+          "path": "dist/assets/akmenData-DmoMHG8R.js",
+          "bytes": 67799,
+          "sha256": "f9f8181b45ba18bad332eb16340a776db67c0975158a9b7e758908cdbcb114fd"
+        },
+        {
+          "path": "dist/assets/arsipRegistry-DZ5gPe20.js",
+          "bytes": 2727,
+          "sha256": "957501e4f0ef0fc7f10b93a728a394ae67ebb602f94aeab5fed67d2e5443a52f"
+        },
+        {
+          "path": "dist/assets/ArsipViewerTab-BFcHawO6.js",
+          "bytes": 4257,
+          "sha256": "60a87f8e8f1d3eb980e4ed2294016754f6148c5e151b12b8017c98029eee2c4a"
+        },
+        {
+          "path": "dist/assets/aspData-epnkJucC.js",
+          "bytes": 636012,
+          "sha256": "53997edd86a1b4e38ac9a93800581428756e67fadf6e936b51cbba94387cd472"
+        },
+        {
+          "path": "dist/assets/BankSoalTab-D-R3Ckeb.js",
+          "bytes": 535270,
+          "sha256": "ae91da1c45a6e56040eef7c2555c7d5f2d4336225961a7602243af5324bbb757"
+        },
+        {
+          "path": "dist/assets/CourseBlockCard-B80aiF86.js",
+          "bytes": 61388,
+          "sha256": "1054ac429af698c1af47b04e0cb5b3397056212438c71d35e384c7afa2c4fcbe"
+        },
+        {
+          "path": "dist/assets/CourseDetailView-Fup4dvnS.js",
+          "bytes": 16917,
+          "sha256": "3843a253cd8b5eb6a5a5fadb75b5e5538956d688c4eabfb49560a7ae527e9fea"
+        },
+        {
+          "path": "dist/assets/CourseHeader-fiOGl_-i.js",
+          "bytes": 15638,
+          "sha256": "ca71faac12abad7dc73c9b36f86c659ab279a7a2bd2318c421f32e174cb39a71"
+        },
+        {
+          "path": "dist/assets/CourseLayout-CPh97wAG.css",
+          "bytes": 2105,
+          "sha256": "a45611fffc73cd07d0a6066b3fc5350b968d02ed30450fcbdee24bf44a94cc30"
+        },
+        {
+          "path": "dist/assets/CourseLayout-D1fYzfYF.js",
+          "bytes": 45990,
+          "sha256": "04da7778a32e343b09503e348d300e945025f7b205ec94875b5d303d8e82534c"
+        },
+        {
+          "path": "dist/assets/courseRegistry-CdScYTZr.js",
+          "bytes": 12954,
+          "sha256": "17c260a754fa5123d5714db3e645d35c10b48be34b613c444d98817819175904"
+        },
+        {
+          "path": "dist/assets/ekpaReadings-BV8iu9Qa.js",
+          "bytes": 28159,
+          "sha256": "bc1b644498ac4beb91cea87dc694d6406de4cef8b109d74d91393457bc24d66f"
+        },
+        {
+          "path": "dist/assets/ekt109Bank-_1LmexYC.js",
+          "bytes": 105620,
+          "sha256": "0478364c73d078fddb4667d5bb843bef9a6be142599e93613d143ce4fd2574df"
+        },
+        {
+          "path": "dist/assets/FlashcardTab-cL4VzBD0.js",
+          "bytes": 489086,
+          "sha256": "1133de67836da88e6ee60b54d87ab0e13a6aa25e09c27c38a60e84b00a7cfe7f"
+        },
+        {
+          "path": "dist/assets/GuideView-Cy7JvNsH.js",
+          "bytes": 15926,
+          "sha256": "aebff9be887b3ac97b3c486b769f8a2822c451a60e46b360a05f717b6dc3dabe"
+        },
+        {
+          "path": "dist/assets/index-BLOKSsYS.js",
+          "bytes": 355423,
+          "sha256": "6d657d813971690e44ae8973b3106f27a5d501a5e0178bc4c934481c8d6f501b"
+        },
+        {
+          "path": "dist/assets/index-Ct5y5Vmr.css",
+          "bytes": 165052,
+          "sha256": "b374608209065c0b52f14ad95ea48dbff5b32dfb746fa40c3b4222a472f90f1a"
+        },
+        {
+          "path": "dist/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2",
+          "bytes": 28076,
+          "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+        },
+        {
+          "path": "dist/assets/KaTeX_AMS-Regular-DMm9YOAa.woff",
+          "bytes": 33516,
+          "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+        },
+        {
+          "path": "dist/assets/KaTeX_AMS-Regular-DRggAlZN.ttf",
+          "bytes": 63632,
+          "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf",
+          "bytes": 12368,
+          "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff",
+          "bytes": 7716,
+          "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2",
+          "bytes": 6912,
+          "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff",
+          "bytes": 7656,
+          "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2",
+          "bytes": 6908,
+          "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf",
+          "bytes": 12344,
+          "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf",
+          "bytes": 19584,
+          "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff",
+          "bytes": 13296,
+          "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2",
+          "bytes": 11348,
+          "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Regular-CB_wures.ttf",
+          "bytes": 19572,
+          "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2",
+          "bytes": 11316,
+          "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff",
+          "bytes": 13208,
+          "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Bold-Cx986IdX.woff2",
+          "bytes": 25324,
+          "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Bold-Jm3AIy58.woff",
+          "bytes": 29912,
+          "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Bold-waoOVXN0.ttf",
+          "bytes": 51336,
+          "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2",
+          "bytes": 16780,
+          "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf",
+          "bytes": 32968,
+          "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff",
+          "bytes": 19412,
+          "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Italic-3WenGoN9.ttf",
+          "bytes": 33580,
+          "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Italic-BMLOBm91.woff",
+          "bytes": 19676,
+          "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2",
+          "bytes": 16988,
+          "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "bytes": 26272,
+          "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Regular-Dr94JaBh.woff",
+          "bytes": 30772,
+          "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Regular-ypZvNtVU.ttf",
+          "bytes": 53580,
+          "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf",
+          "bytes": 31196,
+          "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2",
+          "bytes": 16400,
+          "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff",
+          "bytes": 18668,
+          "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-Italic-DA0__PXp.woff",
+          "bytes": 18748,
+          "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-Italic-flOr_0UB.ttf",
+          "bytes": 31308,
+          "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "bytes": 16440,
+          "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf",
+          "bytes": 24504,
+          "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2",
+          "bytes": 12216,
+          "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff",
+          "bytes": 14408,
+          "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2",
+          "bytes": 12028,
+          "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff",
+          "bytes": 14112,
+          "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf",
+          "bytes": 22364,
+          "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf",
+          "bytes": 19436,
+          "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff",
+          "bytes": 12316,
+          "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2",
+          "bytes": 10344,
+          "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+        },
+        {
+          "path": "dist/assets/KaTeX_Script-Regular-C5JkGWo-.ttf",
+          "bytes": 16648,
+          "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+        },
+        {
+          "path": "dist/assets/KaTeX_Script-Regular-D3wIWfF6.woff2",
+          "bytes": 9644,
+          "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Script-Regular-D5yQViql.woff",
+          "bytes": 10588,
+          "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size1-Regular-C195tn64.woff",
+          "bytes": 6496,
+          "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf",
+          "bytes": 12228,
+          "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2",
+          "bytes": 5468,
+          "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf",
+          "bytes": 11508,
+          "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2",
+          "bytes": 5208,
+          "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size2-Regular-oD1tc_U0.woff",
+          "bytes": 6188,
+          "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size3-Regular-CTq5MqoE.woff",
+          "bytes": 4420,
+          "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf",
+          "bytes": 7588,
+          "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size4-Regular-BF-4gkZK.woff",
+          "bytes": 5980,
+          "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2",
+          "bytes": 4928,
+          "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size4-Regular-DWFBv043.ttf",
+          "bytes": 10364,
+          "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+        },
+        {
+          "path": "dist/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff",
+          "bytes": 16028,
+          "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+        },
+        {
+          "path": "dist/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2",
+          "bytes": 13568,
+          "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf",
+          "bytes": 27556,
+          "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+        },
+        {
+          "path": "dist/assets/LayeredBlocks-DCieziG8.js",
+          "bytes": 38302,
+          "sha256": "50da0143ed34f69bd280f8dfe7c52f425c72bdb5d4cb303ed27f1f50b0925349"
+        },
+        {
+          "path": "dist/assets/manajemenData-Ckh2BZke.js",
+          "bytes": 681076,
+          "sha256": "3862c66b5bd4b4228e167be495a33e2f7a8b33bcda578e3d508065efefdbab99"
+        },
+        {
+          "path": "dist/assets/mankeuData-CTIT8QPe.js",
+          "bytes": 330179,
+          "sha256": "f48be79b49f8d2f51bf853686771142d39ff08e51011b0042cd8d85e906f3c65"
+        },
+        {
+          "path": "dist/assets/manstratData-DDtKwv_7.js",
+          "bytes": 1103129,
+          "sha256": "090daf3c929da5c0db65a2e855325cdc2a908222732e20e4bfc337826148e605"
+        },
+        {
+          "path": "dist/assets/MarkdownContent-C8-uEe69.js",
+          "bytes": 3342,
+          "sha256": "d2d25a08a108ee9971ad80f8274933691ca310413307bbd10fd1782124473cc8"
+        },
+        {
+          "path": "dist/assets/pbriData-CK9gc1a1.js",
+          "bytes": 320358,
+          "sha256": "e294081f08575bdcd39305529888f79985cac7a5cbca0e4f6415363b2c30300f"
+        },
+        {
+          "path": "dist/assets/pdbReadings-DFgf-Bkp.js",
+          "bytes": 54508,
+          "sha256": "f7f30b21d89b00fc59e38a0d480ae197000aa39f317b7f43bffa5708d861ace9"
+        },
+        {
+          "path": "dist/assets/Pengantar_Bisnis_Pra_UAS-CQjkXVvD.js",
+          "bytes": 98682,
+          "sha256": "3a2db123f389013c962a93f6d2b2c186d21964b742bc537590e59fc1cdcd933a"
+        },
+        {
+          "path": "dist/assets/pengbisData-BN6c0wS6.js",
+          "bytes": 15046,
+          "sha256": "e7ad2dbd2cb8552998540689461be1c677706bda8156ba69a5e8dfc73ab06483"
+        },
+        {
+          "path": "dist/assets/pengbis_CASE_DAN_LATIHAN-BkcqVC3a.js",
+          "bytes": 9905,
+          "sha256": "8bafbc73a4438444271b0c85cfcd251ca3a47fc030aaf1d0c04707982fa8fdb2"
+        },
+        {
+          "path": "dist/assets/pengbis_GLOSSARY_CHEATSHEET-BU2_CVA0.js",
+          "bytes": 4083,
+          "sha256": "b44ab51f92bc9e7565a2e020abe5a94d5b110127350bc3b6286df2a038656fbb"
+        },
+        {
+          "path": "dist/assets/pengbis_PRA_UAS_TM8-14_PRIORITAS-YNMidqn-.js",
+          "bytes": 57626,
+          "sha256": "8a4ea752ff7c2d28d0b6f194ba6e26605424e64263c0b76d1edbd356bbd012c1"
+        },
+        {
+          "path": "dist/assets/perpajakanPraUAS-Cm5f8big.js",
+          "bytes": 193834,
+          "sha256": "813b7d7e33248b93d5fcb7a62f2dff58b1dfbae95daea2f15ca61936418c4ab8"
+        },
+        {
+          "path": "dist/assets/perpajakanPraUTS-DsO2bIsf.js",
+          "bytes": 115970,
+          "sha256": "eeedbe3f1699d608229c16c392dd37fa138f06298b859bdd1bff4d98772f009f"
+        },
+        {
+          "path": "dist/assets/pjk2Data--yaWEO-O.js",
+          "bytes": 293284,
+          "sha256": "73e162200d3c6d33d8c3eed7f0645a03cfd8a201291132ad5a2ed30aef762e0d"
+        },
+        {
+          "path": "dist/assets/pjkReviewReadings-BSQJ0bAB.js",
+          "bytes": 4672,
+          "sha256": "a6d6f04a9e81a63fcec5f8a5292d4d4a790251db6a6c4265e53535c5108603b8"
+        },
+        {
+          "path": "dist/assets/pte/slide06_consumption_function.jpg",
+          "bytes": 65601,
+          "sha256": "b2c4c6577d49966a605e38ed81f8a5369792ae9781051c19722a75b428370ee5"
+        },
+        {
+          "path": "dist/assets/pte/slide07_saving_function.jpg",
+          "bytes": 53999,
+          "sha256": "42b429a18c3e646500873cefb968f19eec9bf47ba88fe197866eef2a8944f0d3"
+        },
+        {
+          "path": "dist/assets/pte/slide09_mpc_mps_table.jpg",
+          "bytes": 88271,
+          "sha256": "f1ce156022e038c2faeea7cdcba2908032d7992c3faaeb69a8cdc8d9cf8acb87"
+        },
+        {
+          "path": "dist/assets/pte/slide10_mpc_slope.jpg",
+          "bytes": 62855,
+          "sha256": "d128d32af4faed7efb34ef920480809f609261a6a591a07bd93951226721367a"
+        },
+        {
+          "path": "dist/assets/pte/slide11_consumption_curve_diagram.png",
+          "bytes": 65932,
+          "sha256": "6f387a922b5f265d9aef4aea69849f2c6bec03b20b1ea28866227b8c00dc7ccd"
+        },
+        {
+          "path": "dist/assets/pte/slide11_consumption_formula.png",
+          "bytes": 48552,
+          "sha256": "372523b2fbd024bcb2ccc89a2486ee3b58313c0482a697bd0bc439446f2b4413"
+        },
+        {
+          "path": "dist/assets/pte/slide11_mpc_formula.png",
+          "bytes": 12144,
+          "sha256": "837454204ae4c733c12fc33b5621b3f7580c9a6a896025adcdd287224df39222"
+        },
+        {
+          "path": "dist/assets/pte/slide11_mps_formula.png",
+          "bytes": 65902,
+          "sha256": "af8145daf1567b2e71cb75f0163bd1498d0cf65d889ec68f4e7e36014f32ae0b"
+        },
+        {
+          "path": "dist/assets/pte/slide12_consumption_saving_combined.png",
+          "bytes": 188246,
+          "sha256": "327955db1b36835c2b5da8c3f62a45b25da18d5c0f5422c724b10eb5caf40b8f"
+        },
+        {
+          "path": "dist/assets/pte/slide21_present_value_formula.png",
+          "bytes": 1866,
+          "sha256": "e7045f77b012195f3e96a830e7932ff5d6d04753b68baca9b776755693cddd1e"
+        },
+        {
+          "path": "dist/assets/pte/slide25_investment_profitability_table.jpg",
+          "bytes": 77630,
+          "sha256": "b73fd07091bec6404e6b264bcc767c38ca2319c01bb8e54ad586a3f892fe3eb9"
+        },
+        {
+          "path": "dist/assets/pte/slide26_investment_demand_schedule.jpg",
+          "bytes": 55791,
+          "sha256": "520aabab60b14e386cec62ae4bb4e4823abc704529783aa8614486137651994f"
+        },
+        {
+          "path": "dist/assets/pte/slide27_investment_demand_shift.jpg",
+          "bytes": 72217,
+          "sha256": "cc60ae857ad6f2b04a95616a04e6f53750f0d6c99304db2999d00465770fa50c"
+        },
+        {
+          "path": "dist/assets/pte/slide28_equilibrium_y_ci_graph_lightmode.jpg",
+          "bytes": 95155,
+          "sha256": "2ecaa2494f65079d868bdcc136183d9bfa6108b2c59d723ff89b6c0679421827"
+        },
+        {
+          "path": "dist/assets/pte/slide29_equilibrium_si_graph_lightmode.jpg",
+          "bytes": 65966,
+          "sha256": "12aa5764ff647f119dae50e004cdc98716e5e43a1324dd92da77b4cdf59741e4"
+        },
+        {
+          "path": "dist/assets/pte/slide30_gdp_determination_table.jpg",
+          "bytes": 94585,
+          "sha256": "04cd7b2f1ffb9fa879eabc15eec8056307691b799bf1d049cb47de88dd53b226"
+        },
+        {
+          "path": "dist/assets/pte/slide33_multiplier_arithmetic_table_lightmode.jpg",
+          "bytes": 142400,
+          "sha256": "24c2626927e2c51f112d2ac8d1c43f2067ccc4561a92ca311b85edb45c214470"
+        },
+        {
+          "path": "dist/assets/pte/slide39_government_purchases_graph.jpg",
+          "bytes": 91847,
+          "sha256": "b101dff4484ea33d19f7ea0e1a22efe3aca21268bd3676e1186c2ecf13625392"
+        },
+        {
+          "path": "dist/assets/pte/slide40_government_spending_table.jpg",
+          "bytes": 87886,
+          "sha256": "2581504ef2e58480f162f13f290c847a7535b1b0b0c8787a5641e529bf0c582f"
+        },
+        {
+          "path": "dist/assets/pte/slide41_lump_sum_tax_formula_lightmode.png",
+          "bytes": 5396,
+          "sha256": "83f50e42136ca5672f4e8e53f291e462d6b3286aa688f9df938fbf15c69b85d3"
+        },
+        {
+          "path": "dist/assets/pte/slide43_multiplier_g_formula_lightmode.png",
+          "bytes": 6692,
+          "sha256": "862f5c46b6be7c64bbb2e86a442811413e4fd4d227f7a5fed04bfc6628173698"
+        },
+        {
+          "path": "dist/assets/pte/slide44_tax_rate_example_image.png",
+          "bytes": 167632,
+          "sha256": "f98ba18d7b80e955db24505dd8983c70c1f76fe76dd0dc8168e34aaee6ff2168"
+        },
+        {
+          "path": "dist/assets/PteBankSoalTab-DjL5RCDf.js",
+          "bytes": 22982,
+          "sha256": "ca50dad6e039f19e76802cdaa86b96b6cfe03c6111862686cdea3d534fcef6b8"
+        },
+        {
+          "path": "dist/assets/pteData-2WohHsU2.js",
+          "bytes": 113819,
+          "sha256": "2b3219d0e324982fc4d5fe87d39b4de126723e7a1c6bb387bffa3353c0274112"
+        },
+        {
+          "path": "dist/assets/PteSimulatorTab-CMgTwmBO.js",
+          "bytes": 38799,
+          "sha256": "0e4947db4a7bdbd8726d1cf2a0c0db0346b05a8127cff217ad7a6db1927ab71e"
+        },
+        {
+          "path": "dist/assets/QuizView-BHtY8k7r.js",
+          "bytes": 913679,
+          "sha256": "c06e60e6e0e5015d1fb59926f6f5fbcc7f6ffd4be9403480dc7416da59edf9ed"
+        },
+        {
+          "path": "dist/assets/ReadingView-B7Ys8KTa.js",
+          "bytes": 22829,
+          "sha256": "32603faa213eda70b6984f0b6d76a9c129e65160802ccf436c414fcd79923121"
+        },
+        {
+          "path": "dist/assets/rolldown-runtime-QTnfLwEv.js",
+          "bytes": 694,
+          "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75"
+        },
+        {
+          "path": "dist/assets/siaReadings-DwA6S1eo.js",
+          "bytes": 313767,
+          "sha256": "782e5f6fc0d57053853b8ea60e836f3ba082cddbfbf8551fc464980c6afca96f"
+        },
+        {
+          "path": "dist/assets/statistikData-B2IoNzdX.js",
+          "bytes": 76836,
+          "sha256": "1892076f6862bf8d9aa1589ffb3f08ad4c567221ccaf024783cdbc39f00a99ac"
+        },
+        {
+          "path": "dist/assets/vendor-ClH4xHIZ.js",
+          "bytes": 831733,
+          "sha256": "9f30ec0634140076ac04e49e944d952399f0e105b5dc697a2d7c5dfd988e1232"
+        },
+        {
+          "path": "dist/assets/vendor-DSqX1rp2.css",
+          "bytes": 32595,
+          "sha256": "8ea00872316f1eb1818b92dce7d1ba76a7747851837a160d548e34125aba348b"
+        },
+        {
+          "path": "dist/assets/vendor-icons-DhJJy7LL.js",
+          "bytes": 24253,
+          "sha256": "9859017cd47306841956370af79e041ecdf5e2b1a1f51a43d5fdcad69d5088bd"
+        },
+        {
+          "path": "dist/assets/vendor-react-X61k24Md.js",
+          "bytes": 135348,
+          "sha256": "12a63e51f44bf22c1172ab8978076b0f7f38fc62cc5061434f72ea0405c7d3e6"
+        },
+        {
+          "path": "dist/favicon.svg",
+          "bytes": 552,
+          "sha256": "95bb4532493fb9d15bfcd959dae7b4d66eedd54aa425ecbffbe324b43fcf08d0"
+        },
+        {
+          "path": "dist/index.html",
+          "bytes": 1453,
+          "sha256": "f2766a291871cf1c295e6f0ff16f9420b1d0b87977ef552fa97d7820968e8cec"
+        },
+        {
+          "path": "dist/logo_test.html",
+          "bytes": 2390,
+          "sha256": "6c8f6fb061a027daac3d49507f8ca26942f87b3fa49ed69d3ba9dbd8c06e7469"
+        },
+        {
+          "path": "dist/manifest.webmanifest",
+          "bytes": 453,
+          "sha256": "bbd8dd7d4de02acf5aa17a1bfa9aa16f9b4467f0c1c9a03da48b984dfaef0c44"
+        },
+        {
+          "path": "dist/pwa-192x192.png",
+          "bytes": 4734,
+          "sha256": "23247efc48209cdde340b82369f938967fa904eaafdb6af916316c57843392fb"
+        },
+        {
+          "path": "dist/pwa-512x512.png",
+          "bytes": 10968,
+          "sha256": "7c2c2d77739cc90ed53502a408f3249c317fccd92512af9e53d4953cedfa81a1"
+        },
+        {
+          "path": "dist/scatter.svg",
+          "bytes": 1727,
+          "sha256": "841e714ad187caa82185417a2a5d0ac40696582237eb07a9c57e6ec7919d27d0"
+        },
+        {
+          "path": "dist/sw.js",
+          "bytes": 4109,
+          "sha256": "af51514f6e7bbc07eee48ee561d2f6a0f09c7281a2eb3799b7c051d07790eed4"
+        },
+        {
+          "path": "dist/workbox-9c191d2f.js",
+          "bytes": 15112,
+          "sha256": "04b086f1b2f4215ee4b659a7bc9c76162894abdb43fa876247bc7c0bd6fd1c37"
+        }
+      ]
+    },
+    {
+      "kind": "PR45",
+      "root": "C:/cek/.worktrees/perapian-pr45",
+      "sourceHead": "307157ec5ff1194833520a8dc0f0b84931e80e8f",
+      "sourceStatus": "?? docs/perapian/",
+      "result": "logs/pr45-build.result.json",
+      "distFiles": [
+        {
+          "path": "dist/aks1-logo.png",
+          "bytes": 119992,
+          "sha256": "b5356e934921c2cfcaf2f3f3c19c06a4eac964cd80d9143b843068898ffcab70"
+        },
+        {
+          "path": "dist/aks1-logo.svg",
+          "bytes": 160228,
+          "sha256": "0b1abc3a5e736aaa030db86348869cffb6e25f1649cf098cdaee1b47d3d44613"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/JAWABAN KUIS PRA-UAS AKUNTANSI BIAYA.pdf",
+          "bytes": 177840,
+          "sha256": "422e4409a69c3be621f22c317b15cc918b86461921448d603ee38fb2e3681ce7"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/PEMBAHASAN KUIS PRA UAS AKBI.pdf",
+          "bytes": 200594,
+          "sha256": "48a798ab5f8aa64c889d8433faadc70132cd14cd3709b6ba79d07a5a75eb9275"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/SOAL KUIS PRA-UAS AKUNTANSI BIAYA .pdf",
+          "bytes": 145749,
+          "sha256": "cbd2ea99e65cca8c03aff277b886eb27413222154a86869477eee05a1881eaae"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/UAS 2022.xlsx",
+          "bytes": 18874,
+          "sha256": "6885b12adde6b3806bfadef848fb3e5e3b2805255e677b4c52c93a697279aa6c"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/UAS AKBI 2021.pdf",
+          "bytes": 174449,
+          "sha256": "8eff58dc850a8731d1e38fc28882b9edd73cf71621b72df3e1ce99751980affd"
+        },
+        {
+          "path": "dist/arsip-uas/AKBI/uas sem 3 akbi.pdf",
+          "bytes": 300167,
+          "sha256": "581ffb726bab563da16607153835176a00e45fada214f466d83fa48311b03afd"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/Bahas Soal UAS AKM 1(coretan).pdf",
+          "bytes": 5126812,
+          "sha256": "04ad4f0a0d94e2d8cec607b6948d8aea3d9c07d29f1c9659fe149a3ccf55f430"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/ES x HMA UNAIR - AKM I (UAS).pptx",
+          "bytes": 6506059,
+          "sha256": "372dd532c991b4ce2d70c06d4caa8f94751bb0c03489e42e435857a760240dc7"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/KUIS PRA UAS AKM 1 2024.pdf",
+          "bytes": 189447,
+          "sha256": "8cbdb26637ba88ffe7de441fc12ea62d796cf7ece25cdf06713b08a642ca0297"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/KUIS PRA UAS AKM 1.pdf",
+          "bytes": 522363,
+          "sha256": "23c3b87d8e2f4d3fc41df44e05a8473fee19d3b801b308701c00b3bafaa0a72f"
+        },
+        {
+          "path": "dist/arsip-uas/AKM1/SOAL KUIS PRA UAS AKM 1.pdf",
+          "bytes": 230832,
+          "sha256": "3b8314efeff610ba8c38eb07c3988a2c4a6783121d9c62b6ab43bd5b89b96e7b"
+        },
+        {
+          "path": "dist/arsip-uas/ETIKA/Etika.pdf",
+          "bytes": 180683,
+          "sha256": "970593520233bd233ed41ec1035bca44f99af4a0ed9803fbe5374d81ed67d686"
+        },
+        {
+          "path": "dist/arsip-uas/ETIKA/UAS ETIKA.pdf",
+          "bytes": 3634705,
+          "sha256": "fc14520e8c4d3bdbb0aa445e8ae9a8ec0f7d9dfd7fdc69a93a3931afbc72cea2"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/Latihan quiz uas pajak.docx",
+          "bytes": 11484,
+          "sha256": "36d4fa500bd0c6f7e304a6526d8669ffbf525c38b5cc6b80f0d9a83afda2f58b"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/Latihan UAS PAJAK.docx",
+          "bytes": 205736,
+          "sha256": "f29a45af2a57f852fd9e0d0003223fdb895062eb168714025d79c08166d89b05"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/PRE UAS KUIS PAJAK.pdf",
+          "bytes": 308557,
+          "sha256": "8a656ec3d022108fe70fe6b0e4006334a86e5c95fcd8d35bfba058e9272c0e80"
+        },
+        {
+          "path": "dist/arsip-uas/PAJAK/QUIZ UAS PAJAK.docx",
+          "bytes": 198797,
+          "sha256": "6afea21d14f3a418f3ff1ecd7a2105de861a55e677859558599772906af191af"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/pdf-p-classtruncatedtext-module-lineclamped-85ulhh-style-max-lines5kelompok-5-soal-perencanaan-dan-strategi-pemasaran-p_compress.pdf",
+          "bytes": 33802,
+          "sha256": "d07d4fb4cf3bf349aab918a1565bc43ca570e08c45b138b5ca71d4ef409d8774"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/pengbis uas.pdf",
+          "bytes": 413715,
+          "sha256": "9149e4fe1e33ab0ab4d0678a36ec0d6adb8cee278b07fc7d494bd01ea949cf2a"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/UAS PENGBIS.docx",
+          "bytes": 26821,
+          "sha256": "473169510b9218d625e3aefa21622a443b4c644931cfa9ca388189bfec8eb540"
+        },
+        {
+          "path": "dist/arsip-uas/PENGBIS/_UAS PENGBIS - Google Dokumen.docx.pdf",
+          "bytes": 147652,
+          "sha256": "924e62abab5e7d9129062c6243a6c0a9d139f93103787caa3fe2baa4f5700acd"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/LATIHAN SOAL UAS.pdf",
+          "bytes": 2221155,
+          "sha256": "6cfac8084c3a03e483c9b3110f8faea496b1f2060d4b52822239080370e3160c"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/Modul_Final_UAS_PTE_Makro_PJMK.pdf",
+          "bytes": 2209198,
+          "sha256": "a56b9e1d589ad6e32c58fd062e25218fc3a39fa911480defb76bc1515ca4a2c6"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/SOAL LATIHAN UTS.pdf",
+          "bytes": 2560764,
+          "sha256": "d6f81fc35e708cc0f75c5a1e5675679fbcda6c0ffb7610cab8d3313c9888a22f"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/UAS_PTE_SAKURA-Copy.pdf",
+          "bytes": 6944038,
+          "sha256": "6d49efe0646552d869909a841cc2dad833330754ce679adf21d20647c865bb75"
+        },
+        {
+          "path": "dist/arsip-uas/PTE/UAS_PTE_SAKURA.pdf",
+          "bytes": 6087751,
+          "sha256": "f1ecda1e7647de39a52c817f4b3c1901688bca732777d218609a894010317e04"
+        },
+        {
+          "path": "dist/arsip-uas/STATIS/UAS STATIS 2024.pdf",
+          "bytes": 4203409,
+          "sha256": "40d7ea414a71a14cb0596af3b8bb7ff5a66f524874eb1038e86e6f9f96b33c41"
+        },
+        {
+          "path": "dist/assets/akbiData-Ysub2-OT.js",
+          "bytes": 537467,
+          "sha256": "b8932da2a8be5c0ab08fe5128c8f57de4af69e3833fdab3fa3c7f2937a31055e"
+        },
+        {
+          "path": "dist/assets/AkbiManagementReportsView-CVgnC1Sg.js",
+          "bytes": 14530,
+          "sha256": "49935b1e4fc91840740cab37b7d77c1266ac70c78866d51ee88cad178d21f11c"
+        },
+        {
+          "path": "dist/assets/akdasPraUTS-CweIp3pU.js",
+          "bytes": 85092,
+          "sha256": "7e4b3c5d5bdecebd4ebf453231108a6f332517cb44ede4dc8345a3a2e3b06734"
+        },
+        {
+          "path": "dist/assets/akk203/berau2025-lpsal-pdf19.png",
+          "bytes": 77625,
+          "sha256": "e4f10bc0f0d34a8ab533485a2994453edeb025bee56063025f60eeb5467a4369"
+        },
+        {
+          "path": "dist/assets/akk203/lkpp2025-lpsal-pdf47.png",
+          "bytes": 67905,
+          "sha256": "6abecd2d0158f21f898744d8da7f462f446197e1834a84ddd9761d28068c0759"
+        },
+        {
+          "path": "dist/assets/akm1Data-CKvWkvZH.js",
+          "bytes": 234066,
+          "sha256": "c6546d0ab4176dfdee50083e9438242a252c616168edd0a7fc5c202e4d6cedb4"
+        },
+        {
+          "path": "dist/assets/Akm1FinancialReportsView-CHHCa_qW.js",
+          "bytes": 14643,
+          "sha256": "ab9d7e5e4e4c8c5b142e6def1844f5aa0280f7f265c68e5dc53941486bc5ec53"
+        },
+        {
+          "path": "dist/assets/akm2Data-CPIC4nGx.js",
+          "bytes": 385188,
+          "sha256": "af4922f9c118e570aa212f4085190270f99523785b195280edac25b0c463a07f"
+        },
+        {
+          "path": "dist/assets/akmenData-DmoMHG8R.js",
+          "bytes": 67799,
+          "sha256": "f9f8181b45ba18bad332eb16340a776db67c0975158a9b7e758908cdbcb114fd"
+        },
+        {
+          "path": "dist/assets/arsipRegistry-DZ5gPe20.js",
+          "bytes": 2727,
+          "sha256": "957501e4f0ef0fc7f10b93a728a394ae67ebb602f94aeab5fed67d2e5443a52f"
+        },
+        {
+          "path": "dist/assets/ArsipViewerTab-DBvGSrag.js",
+          "bytes": 4257,
+          "sha256": "0311fb613296162f17867e4d498cfdaba3c0b2520dcee61d6213dad309c0529f"
+        },
+        {
+          "path": "dist/assets/aspData-epnkJucC.js",
+          "bytes": 636012,
+          "sha256": "53997edd86a1b4e38ac9a93800581428756e67fadf6e936b51cbba94387cd472"
+        },
+        {
+          "path": "dist/assets/BankSoalTab-BCcVZzo-.js",
+          "bytes": 535270,
+          "sha256": "b8347a4df8f9ca5e1e18e474c2d828a35a868f477e79d5ab4051680ef2f4d3fb"
+        },
+        {
+          "path": "dist/assets/CourseBlockCard-BtGkKRZ_.js",
+          "bytes": 60274,
+          "sha256": "b3dab2ae6fd30a0d62c6891204b6322530cf9254e4666e03005c664b99b4ca97"
+        },
+        {
+          "path": "dist/assets/CourseDetailView-Ev1VAj4P.js",
+          "bytes": 16917,
+          "sha256": "70b03152aa74f57f7f511ddccbff20e50b812037149f38dda903c4cac0b6018b"
+        },
+        {
+          "path": "dist/assets/CourseHeader-BR2iPGQC.js",
+          "bytes": 15638,
+          "sha256": "4c3018ab7d3d3ca2fbd943ec57a10a30d3fae9936fa87dcae113e54b20e3f298"
+        },
+        {
+          "path": "dist/assets/CourseLayout-CPh97wAG.css",
+          "bytes": 2105,
+          "sha256": "a45611fffc73cd07d0a6066b3fc5350b968d02ed30450fcbdee24bf44a94cc30"
+        },
+        {
+          "path": "dist/assets/CourseLayout-M1lVWJFO.js",
+          "bytes": 46186,
+          "sha256": "d837ca0d8e509961f49765c3c905f601eb7465066d0307dab79ed78a4695b306"
+        },
+        {
+          "path": "dist/assets/courseRegistry-CZQY95BU.js",
+          "bytes": 12954,
+          "sha256": "6587443473543cc663b2f1b159598fa41f8f7a1343d6e0591a7193748ee8f1f2"
+        },
+        {
+          "path": "dist/assets/ekpaReadings-BV8iu9Qa.js",
+          "bytes": 28159,
+          "sha256": "bc1b644498ac4beb91cea87dc694d6406de4cef8b109d74d91393457bc24d66f"
+        },
+        {
+          "path": "dist/assets/ekt109Bank-_1LmexYC.js",
+          "bytes": 105620,
+          "sha256": "0478364c73d078fddb4667d5bb843bef9a6be142599e93613d143ce4fd2574df"
+        },
+        {
+          "path": "dist/assets/FlashcardTab-DGyPAi9z.js",
+          "bytes": 489086,
+          "sha256": "de5c3e5a9b111114f0a0ab21575a23e7a7bf8b749b95be13ae21d3050e701609"
+        },
+        {
+          "path": "dist/assets/GuideView-4dQIVvyz.js",
+          "bytes": 15926,
+          "sha256": "e71ad1e1d3c743b0dad692df07e3649ce6172a5d33dc9dab5776037656fa1ebd"
+        },
+        {
+          "path": "dist/assets/index-BfMlbaxT.css",
+          "bytes": 166054,
+          "sha256": "511f6b4ba9d2a03e7343cc2764c9390f7fc3d6fec50c9925f6b63efcef4a9a5a"
+        },
+        {
+          "path": "dist/assets/index-UM7SLhMx.js",
+          "bytes": 355423,
+          "sha256": "bb5ff4afa8bdd41c6974cc3284bda2754ca0e1c0cf2ac541a63a589925d15c58"
+        },
+        {
+          "path": "dist/assets/KaTeX_AMS-Regular-BQhdFMY1.woff2",
+          "bytes": 28076,
+          "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308"
+        },
+        {
+          "path": "dist/assets/KaTeX_AMS-Regular-DMm9YOAa.woff",
+          "bytes": 33516,
+          "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251"
+        },
+        {
+          "path": "dist/assets/KaTeX_AMS-Regular-DRggAlZN.ttf",
+          "bytes": 63632,
+          "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Bold-ATXxdsX0.ttf",
+          "bytes": 12368,
+          "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Bold-BEiXGLvX.woff",
+          "bytes": 7716,
+          "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Bold-Dq_IR9rO.woff2",
+          "bytes": 6912,
+          "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Regular-CTRA-rTL.woff",
+          "bytes": 7656,
+          "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Regular-Di6jR-x-.woff2",
+          "bytes": 6908,
+          "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Caligraphic-Regular-wX97UBjC.ttf",
+          "bytes": 12344,
+          "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Bold-BdnERNNW.ttf",
+          "bytes": 19584,
+          "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Bold-BsDP51OF.woff",
+          "bytes": 13296,
+          "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Bold-CL6g_b3V.woff2",
+          "bytes": 11348,
+          "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Regular-CB_wures.ttf",
+          "bytes": 19572,
+          "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Regular-CTYiF6lA.woff2",
+          "bytes": 11316,
+          "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc"
+        },
+        {
+          "path": "dist/assets/KaTeX_Fraktur-Regular-Dxdc4cR9.woff",
+          "bytes": 13208,
+          "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Bold-Cx986IdX.woff2",
+          "bytes": 25324,
+          "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Bold-Jm3AIy58.woff",
+          "bytes": 29912,
+          "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Bold-waoOVXN0.ttf",
+          "bytes": 51336,
+          "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-BoldItalic-DxDJ3AOS.woff2",
+          "bytes": 16780,
+          "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-BoldItalic-DzxPMmG6.ttf",
+          "bytes": 32968,
+          "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-BoldItalic-SpSLRI95.woff",
+          "bytes": 19412,
+          "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Italic-3WenGoN9.ttf",
+          "bytes": 33580,
+          "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Italic-BMLOBm91.woff",
+          "bytes": 19676,
+          "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Italic-NWA7e6Wa.woff2",
+          "bytes": 16988,
+          "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Regular-B22Nviop.woff2",
+          "bytes": 26272,
+          "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Regular-Dr94JaBh.woff",
+          "bytes": 30772,
+          "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc"
+        },
+        {
+          "path": "dist/assets/KaTeX_Main-Regular-ypZvNtVU.ttf",
+          "bytes": 53580,
+          "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-BoldItalic-B3XSjfu4.ttf",
+          "bytes": 31196,
+          "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-BoldItalic-CZnvNsCZ.woff2",
+          "bytes": 16400,
+          "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-BoldItalic-iY-2wyZ7.woff",
+          "bytes": 18668,
+          "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-Italic-DA0__PXp.woff",
+          "bytes": 18748,
+          "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-Italic-flOr_0UB.ttf",
+          "bytes": 31308,
+          "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a"
+        },
+        {
+          "path": "dist/assets/KaTeX_Math-Italic-t53AETM-.woff2",
+          "bytes": 16440,
+          "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Bold-CFMepnvq.ttf",
+          "bytes": 24504,
+          "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Bold-D1sUS0GD.woff2",
+          "bytes": 12216,
+          "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Bold-DbIhKOiC.woff",
+          "bytes": 14408,
+          "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Italic-C3H0VqGB.woff2",
+          "bytes": 12028,
+          "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Italic-DN2j7dab.woff",
+          "bytes": 14112,
+          "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Italic-YYjJ1zSn.ttf",
+          "bytes": 22364,
+          "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Regular-BNo7hRIc.ttf",
+          "bytes": 19436,
+          "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Regular-CS6fqUqJ.woff",
+          "bytes": 12316,
+          "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605"
+        },
+        {
+          "path": "dist/assets/KaTeX_SansSerif-Regular-DDBCnlJ7.woff2",
+          "bytes": 10344,
+          "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342"
+        },
+        {
+          "path": "dist/assets/KaTeX_Script-Regular-C5JkGWo-.ttf",
+          "bytes": 16648,
+          "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67"
+        },
+        {
+          "path": "dist/assets/KaTeX_Script-Regular-D3wIWfF6.woff2",
+          "bytes": 9644,
+          "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Script-Regular-D5yQViql.woff",
+          "bytes": 10588,
+          "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size1-Regular-C195tn64.woff",
+          "bytes": 6496,
+          "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size1-Regular-Dbsnue_I.ttf",
+          "bytes": 12228,
+          "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size1-Regular-mCD8mA8B.woff2",
+          "bytes": 5468,
+          "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size2-Regular-B7gKUWhC.ttf",
+          "bytes": 11508,
+          "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size2-Regular-Dy4dx90m.woff2",
+          "bytes": 5208,
+          "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size2-Regular-oD1tc_U0.woff",
+          "bytes": 6188,
+          "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size3-Regular-CTq5MqoE.woff",
+          "bytes": 4420,
+          "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size3-Regular-DgpXs0kz.ttf",
+          "bytes": 7588,
+          "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size4-Regular-BF-4gkZK.woff",
+          "bytes": 5980,
+          "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size4-Regular-Dl5lxZxV.woff2",
+          "bytes": 4928,
+          "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0"
+        },
+        {
+          "path": "dist/assets/KaTeX_Size4-Regular-DWFBv043.ttf",
+          "bytes": 10364,
+          "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877"
+        },
+        {
+          "path": "dist/assets/KaTeX_Typewriter-Regular-C0xS9mPB.woff",
+          "bytes": 16028,
+          "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7"
+        },
+        {
+          "path": "dist/assets/KaTeX_Typewriter-Regular-CO6r4hn1.woff2",
+          "bytes": 13568,
+          "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+        },
+        {
+          "path": "dist/assets/KaTeX_Typewriter-Regular-D3Ib7_Hf.ttf",
+          "bytes": 27556,
+          "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa"
+        },
+        {
+          "path": "dist/assets/LayeredBlocks-Cg3NQLz5.js",
+          "bytes": 72579,
+          "sha256": "5b5a9dcb7e2981a9e332887f52ac2ba02f020e56d2fe78eb89679ba9aa8bf285"
+        },
+        {
+          "path": "dist/assets/manajemenData-Ckh2BZke.js",
+          "bytes": 681076,
+          "sha256": "3862c66b5bd4b4228e167be495a33e2f7a8b33bcda578e3d508065efefdbab99"
+        },
+        {
+          "path": "dist/assets/mankeuData-CTIT8QPe.js",
+          "bytes": 330179,
+          "sha256": "f48be79b49f8d2f51bf853686771142d39ff08e51011b0042cd8d85e906f3c65"
+        },
+        {
+          "path": "dist/assets/manstratData-DDtKwv_7.js",
+          "bytes": 1103129,
+          "sha256": "090daf3c929da5c0db65a2e855325cdc2a908222732e20e4bfc337826148e605"
+        },
+        {
+          "path": "dist/assets/MarkdownContent-kP_FdWxb.js",
+          "bytes": 3342,
+          "sha256": "cc80a5fd6d959fcb2da161969d554326e6ca9e72a437cb1d03fbd23d86c2f53d"
+        },
+        {
+          "path": "dist/assets/pbriData-CK9gc1a1.js",
+          "bytes": 320358,
+          "sha256": "e294081f08575bdcd39305529888f79985cac7a5cbca0e4f6415363b2c30300f"
+        },
+        {
+          "path": "dist/assets/pdbReadings-DFgf-Bkp.js",
+          "bytes": 54508,
+          "sha256": "f7f30b21d89b00fc59e38a0d480ae197000aa39f317b7f43bffa5708d861ace9"
+        },
+        {
+          "path": "dist/assets/Pengantar_Bisnis_Pra_UAS-CQjkXVvD.js",
+          "bytes": 98682,
+          "sha256": "3a2db123f389013c962a93f6d2b2c186d21964b742bc537590e59fc1cdcd933a"
+        },
+        {
+          "path": "dist/assets/pengbisData-BN6c0wS6.js",
+          "bytes": 15046,
+          "sha256": "e7ad2dbd2cb8552998540689461be1c677706bda8156ba69a5e8dfc73ab06483"
+        },
+        {
+          "path": "dist/assets/pengbis_CASE_DAN_LATIHAN-BkcqVC3a.js",
+          "bytes": 9905,
+          "sha256": "8bafbc73a4438444271b0c85cfcd251ca3a47fc030aaf1d0c04707982fa8fdb2"
+        },
+        {
+          "path": "dist/assets/pengbis_GLOSSARY_CHEATSHEET-BU2_CVA0.js",
+          "bytes": 4083,
+          "sha256": "b44ab51f92bc9e7565a2e020abe5a94d5b110127350bc3b6286df2a038656fbb"
+        },
+        {
+          "path": "dist/assets/pengbis_PRA_UAS_TM8-14_PRIORITAS-YNMidqn-.js",
+          "bytes": 57626,
+          "sha256": "8a4ea752ff7c2d28d0b6f194ba6e26605424e64263c0b76d1edbd356bbd012c1"
+        },
+        {
+          "path": "dist/assets/perpajakanPraUAS-Cm5f8big.js",
+          "bytes": 193834,
+          "sha256": "813b7d7e33248b93d5fcb7a62f2dff58b1dfbae95daea2f15ca61936418c4ab8"
+        },
+        {
+          "path": "dist/assets/perpajakanPraUTS-DsO2bIsf.js",
+          "bytes": 115970,
+          "sha256": "eeedbe3f1699d608229c16c392dd37fa138f06298b859bdd1bff4d98772f009f"
+        },
+        {
+          "path": "dist/assets/pjk2Data--yaWEO-O.js",
+          "bytes": 293284,
+          "sha256": "73e162200d3c6d33d8c3eed7f0645a03cfd8a201291132ad5a2ed30aef762e0d"
+        },
+        {
+          "path": "dist/assets/pjkReviewReadings-CdcIKWCd.js",
+          "bytes": 4672,
+          "sha256": "d0e2390164c81d3828ac2920f4b7b4fdcea0833e09ef807379ded95db9bcafd6"
+        },
+        {
+          "path": "dist/assets/pte/slide06_consumption_function.jpg",
+          "bytes": 65601,
+          "sha256": "b2c4c6577d49966a605e38ed81f8a5369792ae9781051c19722a75b428370ee5"
+        },
+        {
+          "path": "dist/assets/pte/slide07_saving_function.jpg",
+          "bytes": 53999,
+          "sha256": "42b429a18c3e646500873cefb968f19eec9bf47ba88fe197866eef2a8944f0d3"
+        },
+        {
+          "path": "dist/assets/pte/slide09_mpc_mps_table.jpg",
+          "bytes": 88271,
+          "sha256": "f1ce156022e038c2faeea7cdcba2908032d7992c3faaeb69a8cdc8d9cf8acb87"
+        },
+        {
+          "path": "dist/assets/pte/slide10_mpc_slope.jpg",
+          "bytes": 62855,
+          "sha256": "d128d32af4faed7efb34ef920480809f609261a6a591a07bd93951226721367a"
+        },
+        {
+          "path": "dist/assets/pte/slide11_consumption_curve_diagram.png",
+          "bytes": 65932,
+          "sha256": "6f387a922b5f265d9aef4aea69849f2c6bec03b20b1ea28866227b8c00dc7ccd"
+        },
+        {
+          "path": "dist/assets/pte/slide11_consumption_formula.png",
+          "bytes": 48552,
+          "sha256": "372523b2fbd024bcb2ccc89a2486ee3b58313c0482a697bd0bc439446f2b4413"
+        },
+        {
+          "path": "dist/assets/pte/slide11_mpc_formula.png",
+          "bytes": 12144,
+          "sha256": "837454204ae4c733c12fc33b5621b3f7580c9a6a896025adcdd287224df39222"
+        },
+        {
+          "path": "dist/assets/pte/slide11_mps_formula.png",
+          "bytes": 65902,
+          "sha256": "af8145daf1567b2e71cb75f0163bd1498d0cf65d889ec68f4e7e36014f32ae0b"
+        },
+        {
+          "path": "dist/assets/pte/slide12_consumption_saving_combined.png",
+          "bytes": 188246,
+          "sha256": "327955db1b36835c2b5da8c3f62a45b25da18d5c0f5422c724b10eb5caf40b8f"
+        },
+        {
+          "path": "dist/assets/pte/slide21_present_value_formula.png",
+          "bytes": 1866,
+          "sha256": "e7045f77b012195f3e96a830e7932ff5d6d04753b68baca9b776755693cddd1e"
+        },
+        {
+          "path": "dist/assets/pte/slide25_investment_profitability_table.jpg",
+          "bytes": 77630,
+          "sha256": "b73fd07091bec6404e6b264bcc767c38ca2319c01bb8e54ad586a3f892fe3eb9"
+        },
+        {
+          "path": "dist/assets/pte/slide26_investment_demand_schedule.jpg",
+          "bytes": 55791,
+          "sha256": "520aabab60b14e386cec62ae4bb4e4823abc704529783aa8614486137651994f"
+        },
+        {
+          "path": "dist/assets/pte/slide27_investment_demand_shift.jpg",
+          "bytes": 72217,
+          "sha256": "cc60ae857ad6f2b04a95616a04e6f53750f0d6c99304db2999d00465770fa50c"
+        },
+        {
+          "path": "dist/assets/pte/slide28_equilibrium_y_ci_graph_lightmode.jpg",
+          "bytes": 95155,
+          "sha256": "2ecaa2494f65079d868bdcc136183d9bfa6108b2c59d723ff89b6c0679421827"
+        },
+        {
+          "path": "dist/assets/pte/slide29_equilibrium_si_graph_lightmode.jpg",
+          "bytes": 65966,
+          "sha256": "12aa5764ff647f119dae50e004cdc98716e5e43a1324dd92da77b4cdf59741e4"
+        },
+        {
+          "path": "dist/assets/pte/slide30_gdp_determination_table.jpg",
+          "bytes": 94585,
+          "sha256": "04cd7b2f1ffb9fa879eabc15eec8056307691b799bf1d049cb47de88dd53b226"
+        },
+        {
+          "path": "dist/assets/pte/slide33_multiplier_arithmetic_table_lightmode.jpg",
+          "bytes": 142400,
+          "sha256": "24c2626927e2c51f112d2ac8d1c43f2067ccc4561a92ca311b85edb45c214470"
+        },
+        {
+          "path": "dist/assets/pte/slide39_government_purchases_graph.jpg",
+          "bytes": 91847,
+          "sha256": "b101dff4484ea33d19f7ea0e1a22efe3aca21268bd3676e1186c2ecf13625392"
+        },
+        {
+          "path": "dist/assets/pte/slide40_government_spending_table.jpg",
+          "bytes": 87886,
+          "sha256": "2581504ef2e58480f162f13f290c847a7535b1b0b0c8787a5641e529bf0c582f"
+        },
+        {
+          "path": "dist/assets/pte/slide41_lump_sum_tax_formula_lightmode.png",
+          "bytes": 5396,
+          "sha256": "83f50e42136ca5672f4e8e53f291e462d6b3286aa688f9df938fbf15c69b85d3"
+        },
+        {
+          "path": "dist/assets/pte/slide43_multiplier_g_formula_lightmode.png",
+          "bytes": 6692,
+          "sha256": "862f5c46b6be7c64bbb2e86a442811413e4fd4d227f7a5fed04bfc6628173698"
+        },
+        {
+          "path": "dist/assets/pte/slide44_tax_rate_example_image.png",
+          "bytes": 167632,
+          "sha256": "f98ba18d7b80e955db24505dd8983c70c1f76fe76dd0dc8168e34aaee6ff2168"
+        },
+        {
+          "path": "dist/assets/PteBankSoalTab-DflHD7k9.js",
+          "bytes": 22982,
+          "sha256": "e882d76b57be0f559661e455daafe7c0f7c74585f9bbb0df71eb5d71e10ed8cd"
+        },
+        {
+          "path": "dist/assets/pteData-2WohHsU2.js",
+          "bytes": 113819,
+          "sha256": "2b3219d0e324982fc4d5fe87d39b4de126723e7a1c6bb387bffa3353c0274112"
+        },
+        {
+          "path": "dist/assets/PteSimulatorTab-CLnH6S6u.js",
+          "bytes": 38799,
+          "sha256": "c7544f2401ca31fabca903b3bf79b8461156ceff9a7dc572c6e24f60d9579e77"
+        },
+        {
+          "path": "dist/assets/QuizView-ZB7JA3rR.js",
+          "bytes": 913679,
+          "sha256": "2f1125e777199c93da605a1aeb39c57e6feafae3b50937f8655a90bcb1c492d2"
+        },
+        {
+          "path": "dist/assets/ReadingView-S1MgGXRL.js",
+          "bytes": 23073,
+          "sha256": "0093ca99e59959070d2c0ee94da92a4db9d6e511e974e23b384e36a1f917dbe4"
+        },
+        {
+          "path": "dist/assets/rolldown-runtime-QTnfLwEv.js",
+          "bytes": 694,
+          "sha256": "5db5ba82eef00d1dee7e86e663098c9427d01183a88d357437daff295aec3e75"
+        },
+        {
+          "path": "dist/assets/siaReadings-DwA6S1eo.js",
+          "bytes": 313767,
+          "sha256": "782e5f6fc0d57053853b8ea60e836f3ba082cddbfbf8551fc464980c6afca96f"
+        },
+        {
+          "path": "dist/assets/statistikData-B2IoNzdX.js",
+          "bytes": 76836,
+          "sha256": "1892076f6862bf8d9aa1589ffb3f08ad4c567221ccaf024783cdbc39f00a99ac"
+        },
+        {
+          "path": "dist/assets/vendor-DSqX1rp2.css",
+          "bytes": 32595,
+          "sha256": "8ea00872316f1eb1818b92dce7d1ba76a7747851837a160d548e34125aba348b"
+        },
+        {
+          "path": "dist/assets/vendor-Du0VI6zm.js",
+          "bytes": 831733,
+          "sha256": "0abc55fb09f3df57faaf0993ca5db0a8d298b71c7b529344ad401876b892c511"
+        },
+        {
+          "path": "dist/assets/vendor-icons-BTdm5rPS.js",
+          "bytes": 24253,
+          "sha256": "eac291164ebd6c3ab68ea6168878e30d706f1dcd046cf9c4a08fb57c78574edc"
+        },
+        {
+          "path": "dist/assets/vendor-react-Cmbtxb-z.js",
+          "bytes": 135348,
+          "sha256": "e818e712695614ee9224ba429ba1ec6e2d17c212bbd7d8f036973f5fdcb7b76c"
+        },
+        {
+          "path": "dist/favicon.svg",
+          "bytes": 552,
+          "sha256": "95bb4532493fb9d15bfcd959dae7b4d66eedd54aa425ecbffbe324b43fcf08d0"
+        },
+        {
+          "path": "dist/index.html",
+          "bytes": 1453,
+          "sha256": "ae229f09273f0171f0c0e7a19e1286345930d519e853fb9d9be33310a19eda2c"
+        },
+        {
+          "path": "dist/logo_test.html",
+          "bytes": 2390,
+          "sha256": "6c8f6fb061a027daac3d49507f8ca26942f87b3fa49ed69d3ba9dbd8c06e7469"
+        },
+        {
+          "path": "dist/manifest.webmanifest",
+          "bytes": 453,
+          "sha256": "bbd8dd7d4de02acf5aa17a1bfa9aa16f9b4467f0c1c9a03da48b984dfaef0c44"
+        },
+        {
+          "path": "dist/pwa-192x192.png",
+          "bytes": 4734,
+          "sha256": "23247efc48209cdde340b82369f938967fa904eaafdb6af916316c57843392fb"
+        },
+        {
+          "path": "dist/pwa-512x512.png",
+          "bytes": 10968,
+          "sha256": "7c2c2d77739cc90ed53502a408f3249c317fccd92512af9e53d4953cedfa81a1"
+        },
+        {
+          "path": "dist/scatter.svg",
+          "bytes": 1727,
+          "sha256": "841e714ad187caa82185417a2a5d0ac40696582237eb07a9c57e6ec7919d27d0"
+        },
+        {
+          "path": "dist/sw.js",
+          "bytes": 4109,
+          "sha256": "402fd9fdc04932ad797975e9b31adeb13175686e69e12bd96d2e808005e86c1d"
+        },
+        {
+          "path": "dist/workbox-9c191d2f.js",
+          "bytes": 15112,
+          "sha256": "04b086f1b2f4215ee4b659a7bc9c76162894abdb43fa876247bc7c0bd6fd1c37"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+
+> e-learning-akuntansi-feb-unair@1.0.0 lint
+> eslint src scripts --max-warnings=0 && node scripts/lint-source.mjs
+
+Source lint PASS (358 TypeScript/TSX files)

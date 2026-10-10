@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "checks": [
+    "new visit TM03",
+    "TM03 → TM04 via Berikutnya",
+    "TM04 → TM03 via Sebelumnya",
+    "TM03 → TM04 via history",
+    "TM04 → TM05 via Berikutnya",
+    "TM05 → TM06 via Berikutnya",
+    "TM06 → TM07 via Berikutnya",
+    "TM07 → TM06 via Sebelumnya",
+    "TM06 → TM05 via Sebelumnya",
+    "TM05 → TM04 via Sebelumnya",
+    "normal TM03 → review uts with tm=3",
+    "review uts → review uas with tm=3",
+    "review uas → normal TM03",
+    "course switch back to MNS301 TM03",
+    "new visit TM04",
+    "new visit TM04 → TM03 via Sebelumnya"
+  ],
+  "persistence": [
+    "study progress",
+    "outline preference",
+    "theme"
+  ]
+}
+Supabase URL or Anon Key is missing. Check your environment variables.

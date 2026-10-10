@@ -1,0 +1,1120 @@
+[
+  {
+    "id": "MNU108-TM01",
+    "title": "Leading Edge Management",
+    "code": "MNU108",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM01.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNU108-TM02",
+    "title": "The Environment and Corporate Culture",
+    "code": "MNU108",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM02.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNU108-TM03",
+    "title": "Managing in a Global Environment",
+    "code": "MNU108",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM03.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNU108-TM04",
+    "title": "Managing Ethics and Social Responsibility",
+    "code": "MNU108",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM04.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNU108-TM05",
+    "title": "Planning and Goal Setting",
+    "code": "MNU108",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM05.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNU108-TM06",
+    "title": "Managerial Decision Making",
+    "code": "MNU108",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM06.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNU108-TM07",
+    "title": "Designing Organization Structure",
+    "code": "MNU108",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNU108-TM07.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNK201-TM01",
+    "title": "An Overview of Financial Management, Corporate Goals, & Agency Theory",
+    "code": "MNK201",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM01.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "MNK201-TM02",
+    "title": "Analysis of Financial Statements, Financial Ratio Systems, & The DuPont Identity",
+    "code": "MNK201",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM02.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "MNK201-TM03",
+    "title": "Time Value of Money (TVM), Cash Flow Mechanics, & Loan Amortization",
+    "code": "MNK201",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM03.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "MNK201-TM04",
+    "title": "Risk and Rates of Return, Portfolio Theory, & Capital Asset Pricing Model (CAPM)",
+    "code": "MNK201",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM04.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "MNK201-TM05",
+    "title": "The Cost of Capital & Weighted Average Cost of Capital (WACC)",
+    "code": "MNK201",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM05.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "MNK201-TM06",
+    "title": "The Basics of Capital Budgeting: NPV, IRR, MIRR, PI, & Payback Period",
+    "code": "MNK201",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM06.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "MNK201-TM07",
+    "title": "Cash Flow Estimation, Tax Shield Depreciation, & Project Risk Analysis",
+    "code": "MNK201",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNK201-TM07.md",
+    "newSourceProgress": "Contract15e and local16e identified, chapter crosswalk/gaps recorded; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "source-assets-and-contract.json",
+      "source-details.json",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "AKA201-TM01",
+    "title": "Mengapa Audit Ada: Asurans, Auditing, dan Jenis Auditor",
+    "code": "AKA201",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM01.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKA201-TM02",
+    "title": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "code": "AKA201",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM02.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKA201-TM03",
+    "title": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "code": "AKA201",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM03.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKA201-TM04",
+    "title": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "code": "AKA201",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM04.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKA201-TM05",
+    "title": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "code": "AKA201",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM05.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKA201-TM06",
+    "title": "Laporan Auditor dan Jenis Opini",
+    "code": "AKA201",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM06.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKA201-TM07",
+    "title": "Materialitas Perencanaan dan Pelaksanaan",
+    "code": "AKA201",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKA201-TM07.md",
+    "newSourceProgress": "Archive/inbox bytes equal; this TM source conversion equals runtime; full source-page/semantic audit pending",
+    "sourceEvidence": [
+      "aka201-runtime-reconciliation.json",
+      "source-reconciliation.json"
+    ]
+  },
+  {
+    "id": "AKK202-TM01",
+    "title": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "code": "AKK202",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM01.md",
+    "newSourceProgress": "RPP, lecturer deck and shared textbook identified; Shalla source35/37 inspected and matched; full TM audit pending",
+    "sourceEvidence": [
+      "source-details.json",
+      "source-inspection/AKK202-slide35-image17.jpeg",
+      "source-inspection/AKK202-slide37-image18.png",
+      "_report_rekonsiliasi_sumber_lanjutan1.md"
+    ]
+  },
+  {
+    "id": "AKK202-TM02",
+    "title": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "code": "AKK202",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM02.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKK202-TM03",
+    "title": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "code": "AKK202",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM03.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKK202-TM04",
+    "title": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "code": "AKK202",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM04.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKK202-TM05",
+    "title": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "code": "AKK202",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM05.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKK202-TM06",
+    "title": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "code": "AKK202",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM06.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKK202-TM07",
+    "title": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "code": "AKK202",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKK202-TM07.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM01",
+    "title": "Ketentuan Umum Pajak Penghasilan (PPh Umum) dan PPh Wajib Pajak Orang Pribadi",
+    "code": "PJK301",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM01.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM02",
+    "title": "Perolehan Harta, Penilaian Persediaan, dan Norma Penghitungan Penghasilan Neto (NPPN)",
+    "code": "PJK301",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM02.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM03",
+    "title": "Hubungan Istimewa, Instrumen Pencegahan Penghindaran Pajak, dan Kesepakatan Harga Transfer (APA)",
+    "code": "PJK301",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM03.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM04",
+    "title": "Penyusutan Harta Berwujud, Amortisasi Harta Tak Berwujud, dan Revaluasi Aset Tetap",
+    "code": "PJK301",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM04.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM05",
+    "title": "Pemungutan PPh Pasal 22, Pemotongan PPh Pasal 23/26, Pemungut Marketplace, dan Skema PPh Final UMKM",
+    "code": "PJK301",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM05.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM06",
+    "title": "Pemotongan Pajak Penghasilan Bersifat Final (PPh Pasal 4 ayat 2, PPh Pasal 15, Dividen Wajib Pajak Orang Pribadi)",
+    "code": "PJK301",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM06.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "PJK301-TM07",
+    "title": "Kredit Pajak Luar Negeri (PPh 24), Angsuran PPh 25 & WP OPPT, Insentif PPh Pasal 31A & 31E",
+    "code": "PJK301",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/PJK301-TM07.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM01",
+    "title": "Accounting Information Systems and Firm Value",
+    "code": "SII306",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM01.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM02",
+    "title": "Data Analytics: Addressing Accounting Questions with Data",
+    "code": "SII306",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM02.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM03",
+    "title": "Accountants as Business Analysts",
+    "code": "SII306",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM03.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM04",
+    "title": "Data Modeling",
+    "code": "SII306",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM04.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM05",
+    "title": "Relational Databases and Enterprise Systems",
+    "code": "SII306",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM05.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM06",
+    "title": "Sales and Collections Business Process",
+    "code": "SII306",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM06.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "SII306-TM07",
+    "title": "Purchases and Payments Business Process",
+    "code": "SII306",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/SII306-TM07.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM01",
+    "title": "Mengapa organisasi publik membutuhkan akuntansi?",
+    "code": "AKS201",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM01.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM02",
+    "title": "Aturan badan, laporan keuangan, dan pekerjaan auditor",
+    "code": "AKS201",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM02.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM03",
+    "title": "Regulasi dan standar pemerintahan",
+    "code": "AKS201",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM03.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM04",
+    "title": "Perencanaan dan anggaran organisasi sektor publik (1)",
+    "code": "AKS201",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM04.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM05",
+    "title": "Lima pendekatan penganggaran sektor publik",
+    "code": "AKS201",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM05.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM06",
+    "title": "Kapan transaksi dicatat, dan apa yang dilaporkan?",
+    "code": "AKS201",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM06.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "AKS201-TM07",
+    "title": "Tujuh laporan keuangan pemerintah",
+    "code": "AKS201",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/AKS201-TM07.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM01",
+    "title": "Strategic Management",
+    "code": "MNS301",
+    "tm": 1,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM01.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM02",
+    "title": "Membaca lingkungan dan kemampuan perusahaan",
+    "code": "MNS301",
+    "tm": 2,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM02.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM03",
+    "title": "Memilih cara bersaing dan bisnis yang layak dimiliki",
+    "code": "MNS301",
+    "tm": 3,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM03.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM04",
+    "title": "Menilai ekspansi internasional dan respons persaingan",
+    "code": "MNS301",
+    "tm": 4,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM04.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM05",
+    "title": "Mengendalikan pelaksanaan strategi dan memilih desain organisasi",
+    "code": "MNS301",
+    "tm": 5,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM05.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM06",
+    "title": "Memimpin pembelajaran, menjaga etika, dan mengelola inovasi",
+    "code": "MNS301",
+    "tm": 6,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM06.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  },
+  {
+    "id": "MNS301-TM07",
+    "title": "Blue Ocean Strategy dan Strategy Maps",
+    "code": "MNS301",
+    "tm": 7,
+    "wholeTmAuditComplete": false,
+    "semanticAuditComplete": false,
+    "sourcePageAuditComplete": false,
+    "ui": {
+      "mobile375Light": false,
+      "mobile375Dark": false,
+      "desktop": false,
+      "websiteScreenshots": [],
+      "blocker": "Saved permission denial persists after confirmed app restart"
+    },
+    "priorDossier": "../20261006/coverage/MNS301-TM07.md",
+    "newSourceProgress": "No complete new source/semantic assessment",
+    "sourceEvidence": []
+  }
+]

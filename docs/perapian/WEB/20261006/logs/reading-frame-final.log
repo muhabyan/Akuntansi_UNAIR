@@ -1,0 +1,11 @@
+command: node scripts/test-reading-frame.mjs
+exitCode: 0
+Supabase URL or Anon Key is missing. Check your environment variables.
+{
+  "pass": true,
+  "checks": 91,
+  "passed": 91,
+  "failed": 0,
+  "failures": []
+}
+

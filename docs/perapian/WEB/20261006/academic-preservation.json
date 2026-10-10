@@ -1,0 +1,75 @@
+{
+  "pass": true,
+  "baselineMain": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+  "roots": [
+    "C:\\cek\\.worktrees\\perapian-baseline",
+    "C:\\cek\\.worktrees\\perapian-pr45"
+  ],
+  "courses": [
+    {
+      "code": "MNU108",
+      "deepEqual": true,
+      "baselineSha256": "76f7d444504d963e19b4246c41c4c83991d057c52e1af1cd6c7a953c2a74c430",
+      "workingSha256": "76f7d444504d963e19b4246c41c4c83991d057c52e1af1cd6c7a953c2a74c430",
+      "readings": 14,
+      "reviews": 2
+    },
+    {
+      "code": "MNK201",
+      "deepEqual": true,
+      "baselineSha256": "6df7cbfc00f37d0666cebf0522a39aaf8b0ad16d77f4cd0fe7d88c4836c962f6",
+      "workingSha256": "6df7cbfc00f37d0666cebf0522a39aaf8b0ad16d77f4cd0fe7d88c4836c962f6",
+      "readings": 14,
+      "reviews": 2
+    },
+    {
+      "code": "AKA201",
+      "deepEqual": true,
+      "baselineSha256": "57c6a4baf89bfdd368916bbccc3d81a89608237a3c63165353ed30438af67938",
+      "workingSha256": "57c6a4baf89bfdd368916bbccc3d81a89608237a3c63165353ed30438af67938",
+      "readings": 14,
+      "reviews": 5
+    },
+    {
+      "code": "AKK202",
+      "deepEqual": true,
+      "baselineSha256": "2d96ae53f5281a1ec236693f52a57c72d7208a7d475c37132db11abb089cc08e",
+      "workingSha256": "2d96ae53f5281a1ec236693f52a57c72d7208a7d475c37132db11abb089cc08e",
+      "readings": 13,
+      "reviews": 1
+    },
+    {
+      "code": "PJK301",
+      "deepEqual": true,
+      "baselineSha256": "76f0fa2f61e1ee642f9390d89907be18aa785302f272dfc1eaf5f07f3f214c83",
+      "workingSha256": "76f0fa2f61e1ee642f9390d89907be18aa785302f272dfc1eaf5f07f3f214c83",
+      "readings": 14,
+      "reviews": 2
+    },
+    {
+      "code": "SII306",
+      "deepEqual": true,
+      "baselineSha256": "59137fc1663f1dbf12f432a8c27f707b2b1f8bf673ed9bb47f01b194cb2a638b",
+      "workingSha256": "59137fc1663f1dbf12f432a8c27f707b2b1f8bf673ed9bb47f01b194cb2a638b",
+      "readings": 14,
+      "reviews": 2
+    },
+    {
+      "code": "AKS201",
+      "deepEqual": true,
+      "baselineSha256": "61fc4c21a05d43c2392fde5bb307ff960389c551a045476bba2754e6662e08fe",
+      "workingSha256": "61fc4c21a05d43c2392fde5bb307ff960389c551a045476bba2754e6662e08fe",
+      "readings": 14,
+      "reviews": 2
+    },
+    {
+      "code": "MNS301",
+      "deepEqual": true,
+      "baselineSha256": "021f2a9eb1245b1dce3a3b3cf559f8f582b6231858530688ac3e3f0d0e34d46e",
+      "workingSha256": "021f2a9eb1245b1dce3a3b3cf559f8f582b6231858530688ac3e3f0d0e34d46e",
+      "readings": 14,
+      "reviews": 2
+    }
+  ],
+  "scope": "All raw course content, not only TM01–TM07; withTableTitles presentation preservation separately tested by scripts/test-table-titles.mjs."
+}

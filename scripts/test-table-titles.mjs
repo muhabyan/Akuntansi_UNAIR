@@ -85,6 +85,19 @@ try {
   }
 
   const management = await loadCourseContent('MNU108');
+  const foundation = withTableTitles(management.readings[1]);
+  assert.equal(foundation.blocks[96].title, 'Sisi positif dan negatif birokrasi Weber', 'a preceding exhibit label must not name an unrelated pros/cons table');
+  assert.ok(foundation.blocks[43].title.includes('conceptual'), 'the title must not omit the third skill when describing the skill comparison');
+  assert.notEqual(foundation.blocks[41].title, foundation.blocks[43].title, 'skill definitions and skill distribution have separate purposes');
+  assert.equal(foundation.blocks[173].title, 'Pertanyaan kritis manajemen dan bagian bacaan yang terkait', 'an adaptation/source label cannot substitute for the discussion table subject');
+  assert.equal(foundation.blocks[168].title, 'Komponen kerangka manajemen dan halaman rujukannya', 'a component index must not promise definitions it does not contain');
+  const environment = withTableTitles(management.readings[2]);
+  assert.equal(environment.blocks[33].title, 'Lingkungan eksternal Costco: ringkasan sektor dan contohnya', 'a long intervening Costco paragraph must not leave the prior labor-market label on its table');
+  assert.equal(environment.blocks[173].title, 'Pertanyaan kritis lingkungan dan budaya beserta bagian rujukan', 'discussion attribution is not the subject of the environment questions');
+  assert.notEqual(environment.blocks[84].title, environment.blocks[85].title, 'the culture matrix and its value/example explanation need separate titles');
+  assert.notEqual(environment.blocks[95].title, environment.blocks[96].title, 'the performance matrix and its consequences/examples need separate titles');
+  const organizationQuestions = withTableTitles(management.readings[7]).blocks[244];
+  assert.equal(organizationQuestions.title, 'Pertanyaan kritis desain struktur organisasi dan bagian rujukannya', 'a discussion-source attribution must not replace the subject of the structure questions');
   const managementTables = flatten(withTableTitles(management.readings[7]).blocks).filter((block) => block.kind === 'table');
   assert.ok(managementTables.some((table) => table.title === 'Gambaran struktur awal (dalam bentuk tabel hubungan lapor)'), 'use the existing introduction instead of repeating the complete Q1');
   assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur lama (tall)'), 'name the old organization chart');

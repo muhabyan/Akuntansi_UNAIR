@@ -392,7 +392,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
         const tableCard = (
           <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
             <TableHeading title={tableLabel} flat={flatTable} hint={
-              keepColumns ? <span className="md:hidden">Geser untuk membandingkan kolom →</span> : undefined
+              !isFinancialGlossary && (keepColumns || (!sharedFrame && !block.stackOnMobile))
+                ? <span className="md:hidden">Geser untuk membandingkan kolom →</span>
+                : undefined
             } />
             {isFinancialGlossary && (
               <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">

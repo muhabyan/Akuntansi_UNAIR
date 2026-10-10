@@ -1,0 +1,951 @@
+diff --git a/scripts/fixtures/mnu307/protected-files.json b/scripts/fixtures/mnu307/protected-files.json
+index 29b4778..0f21ad9 100644
+--- a/scripts/fixtures/mnu307/protected-files.json
++++ b/scripts/fixtures/mnu307/protected-files.json
+@@ -16,16 +16,16 @@
+     "repository": "47373c5343e62fac330342dfc3a0205737b250e1fd914c8e05c56b029c849950"
+   },
+   "src/components/course/CourseBlockCard.tsx": {
+-    "worktree": "c11f475fbda700e647bb3459bfd568bb2d95e47af19eefb7ab09e74678386679",
+-    "repository": "f6c633c82e441a28e2cd5489bb5957cbb4be719d298ac16d00df58e70f68fca7"
++    "worktree": "da8d3770d2b79be94e447760a28c0cb295a76e3645293bea32b932af3066b0ce",
++    "repository": "47263e100cb90224d8fb6f53b158b92f6099a2d08a6c7cd6f3c57310831ea858"
+   },
+   "src/components/course/CourseHeader.tsx": {
+     "worktree": "c01901f53aa28fe05f09bf1e303a750dee82fc343f20cf8e0aa9f6a3d297987c",
+     "repository": "86c9128a52efca9a2dde5cd794312d870d431122003c6dafa13f401198998ec1"
+   },
+   "src/components/course/CourseLayout.tsx": {
+-    "worktree": "045c72e2d8b5ac5b0377921a75e57ec611b3e994a454c3db3a35488a24e10ea2",
+-    "repository": "fd01fcecf8e0a455d245931eca5dee0361465bff2d2f7b6a8612793da27cc919"
++    "worktree": "64bf97728b29c5db3d90d7a87843e1700ea59988a97eb8dfa6063883fbd697d1",
++    "repository": "bbbf8e3d41308a9a838ba64873854c193e68256458cad3c6e89e2ad177dc5b5d"
+   },
+   "src/components/course/CourseSidebar.tsx": {
+     "worktree": "f69a879c34ae9b93b92e848e6d328ab44f0a7123eae099136eb0df7f47323b57",
+@@ -44,8 +44,8 @@
+     "repository": "6e3b4e631350bc140a0dc536853c1c918dd2297de28b9a41d9069dd3681f4851"
+   },
+   "src/components/course/LayeredBlocks.tsx": {
+-    "worktree": "3d80d94bad2aacd23b581344ce538ad62a03438b7b5f8d01f97ada5f8d0136ad",
+-    "repository": "df41e88353f60f7c9ceb669aaef37cb3c7daae116724b90d78389446f2d2df2e"
++    "worktree": "f89de282995a0b2dba2b49b5bdac5237dd68fa97c83d452b112328140cf8b5c1",
++    "repository": "0c43c542b904258e3e1b8bb017266aa1daa55ff6c015f382dddb89553e92afcb"
+   },
+   "src/components/course/MarkdownContent.tsx": {
+     "worktree": "43cfd50f17f3d717c27ef86d21076b42e497334d23b18508ac70a65fd9971b8a",
+@@ -80,8 +80,8 @@
+     "repository": "d2accc69e79a7d155c03ffcc3fd026a2f5bfcc289fefd83a8fa2f89d95c6c48f"
+   },
+   "src/components/course/ReportTable.tsx": {
+-    "worktree": "b75d77343709c5ed68d8ed43c9df24a06f9c725dec07c97f7c8c1a853024fb47",
+-    "repository": "5f3cb93d988cb7f101dc8a158adb23908d9a0f115a005ae281c5887b350dde40"
++    "worktree": "bbc9982a1dee158d7a9f0dd6bfd55ca7f9aaa73489b2358e9259594fd0070a46",
++    "repository": "12004f830f0b54613e2175340479b18dbb034b2286ebe289a49e42f75c49399e"
+   },
+   "src/components/course/escapeToBack.ts": {
+     "worktree": "ba767d9679bd8d5ae670b133dd7c37b81b0e4823e41c7c877b65717555c125c8",
+@@ -456,8 +456,8 @@
+     "repository": "ada94f20971c63e12be0710819f5090f77743bc536f61132c1898c7866269128"
+   },
+   "src/types.ts": {
+-    "worktree": "6b74bfd46a6f93281dc38a99ace8e6e633b8d9383f76926087619897b029e2a9",
+-    "repository": "05a0227f8c845dd47cb3b907b8e6c3159f2da75c1a1d19275e86ddc97eff99e7"
++    "worktree": "5bb49cd638df2ee99f9e50d24a48ee6dd3716aeb3de4585e46bcc6a9d08023ac",
++    "repository": "f7030e09965f015e1ba242fcb7bafd5d2afaac1281f7fda6e5ff15876efb83e8"
+   },
+   "src/data/manstrat/modules/tm1.ts": {
+     "worktree": "40417389340329d8744d50e165fcd0ffd522bab140b3614dd7b86bfdb65c6545",
+diff --git a/scripts/test-ci-bounded.mjs b/scripts/test-ci-bounded.mjs
+index ce1727c..9c6dd15 100644
+--- a/scripts/test-ci-bounded.mjs
++++ b/scripts/test-ci-bounded.mjs
+@@ -6,6 +6,7 @@ const root = process.cwd();
+ const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
+ 
+ const standardTasks = [
++  ['table_titles', 'scripts/test-table-titles.mjs'],
+   ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
+   ['mnu307_tm01_canonical', 'scripts/test-mnu307-tm01-canonical.mjs'],
+   ['mnu307_tm02_canonical', 'scripts/test-mnu307-tm02-canonical.mjs'],
+@@ -69,6 +70,7 @@ const standardTasks = [
+ ];
+ 
+ const extendedTasks = [
++  ['table_titles', 'scripts/test-table-titles.mjs'],
+   ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
+   ['data_validation', 'scripts/validate-data.mjs'],
+   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],
+diff --git a/scripts/test-reading-frame.mjs b/scripts/test-reading-frame.mjs
+index 0c338a7..275accd 100644
+--- a/scripts/test-reading-frame.mjs
++++ b/scripts/test-reading-frame.mjs
+@@ -1,7 +1,8 @@
+ // Shared reading frame (src/components/course/readingFrame.ts): layered readings (AKA201) and PJK301 keep their text
+-// clear of the floating launchers between 768 and 1375px and stack their tables below 1024px. Renders the real
++// clear of the floating launchers between 768 and 1375px. Prose tables stack below 1024px; numeric/comparison
++// tables retain their columns. Renders the real
+ // CourseLayout with real course data in jsdom (which has no layout), so it checks the contract the browser relies on:
+-// the frame class on the reading layout, the CSS rules keyed to it, and a stacked view next to every desktop table
++// the frame class on the reading layout, the CSS rules keyed to it, and a stacked or column-preserving view
+ // that keeps every header, cell and caption. A course outside the frame must not change.
+ import fs from 'node:fs';
+ import os from 'node:os';
+@@ -82,7 +83,7 @@ try {
+   check(frame.usesSharedFrame({ layout: 'layered' }, 'ANY'), 'Every layered reading uses the shared frame');
+   check(!frame.usesSharedFrame({}, 'SII306'), 'Other readings keep their layout');
+ 
+-  // --- Real course pages: frame class and one stacked view per table ---
++  // --- Real course pages: prose cards or retained comparable columns ---
+   const openReading = async (code, tm) => {
+     if (root) await act(async () => root.unmount());
+     root = createRoot(document.getElementById('root'));
+@@ -96,6 +97,7 @@ try {
+       frame: layout?.classList.contains(frame.SHARED_FRAME_CLASS) ?? false,
+       tables: tables.length,
+       desktopHiddenBelowLg: tables.filter((t) => t.closest('.hidden.lg\\:block')).length,
++      retainedColumns: tables.filter((t) => !t.closest('.hidden.lg\\:block') && (t.classList.contains('min-w-[520px]') || t.classList.contains('min-w-[840px]')) && t.closest('.akbi-table-scroll')).length,
+       stacked: document.querySelectorAll('.layered-stacked-table').length,
+       stackedHiddenFromLg: [...document.querySelectorAll('.layered-stacked-table')].filter((s) => s.closest('.lg\\:hidden')).length,
+     };
+@@ -107,8 +109,8 @@ try {
+     const at = `${code} TM${tm}`;
+     check(state.frame, `${at}: reading layout carries the shared frame class`);
+     check(state.tables > 0 || code === 'PJK301', `${at}: has tables to check`, JSON.stringify(state));
+-    check(state.desktopHiddenBelowLg === state.tables, `${at}: every desktop table is hidden below 1024px`, JSON.stringify(state));
+-    check(state.stacked === state.tables && state.stackedHiddenFromLg === state.stacked, `${at}: every table has a stacked view, hidden from 1024px`, JSON.stringify(state));
++    check(state.desktopHiddenBelowLg + state.retainedColumns === state.tables, `${at}: every table has prose cards or retained columns in a local scroll region`, JSON.stringify(state));
++    check(state.stacked === state.desktopHiddenBelowLg && state.stackedHiddenFromLg === state.stacked, `${at}: every hidden desktop table has phone cards, hidden from 1024px`, JSON.stringify(state));
+     // Stacked cards: labels shaped differently from values, a bolder title, values and prose marked as ink text.
+     const has = (el, ...classes) => classes.every((c) => el.classList.contains(c));
+     const labels = [...document.querySelectorAll('.layered-stacked-table dt')];
+@@ -127,7 +129,7 @@ try {
+     check(!state.frame && state.stacked === 0, 'SII306 (outside the frame): no frame class and no stacked tables', JSON.stringify(state));
+   }
+ 
+-  // --- Stacked view keeps all table text: every PJK301 table, headers, cells and caption ---
++  // --- Both phone presentations keep every PJK301 header, cell and caption ---
+   const pjk = await loadCourseContent('PJK301');
+   const tables = [];
+   const collect = (blocks, inBox) => blocks.forEach((block) => {
+@@ -145,14 +147,15 @@ try {
+     await act(async () => {
+       tableRoot.render(React.createElement(frame.SharedFrameContext.Provider, { value: true }, React.createElement(CourseBlockCard, { block, enableLegalStyling: true, enableEditorialReading: true })));
+     });
+-    const stacked = host.querySelector('.layered-stacked-table')?.parentElement;
+-    const text = squash(stacked?.textContent ?? '');
++    const presentation = host.querySelector('.layered-stacked-table')?.parentElement ?? host.querySelector('.course-table-card, .akk203-report-table');
++    check(Boolean(presentation), 'PJK301: a complete phone presentation exists for this table');
++    const text = squash(presentation?.textContent ?? '');
+     for (const raw of [...block.headers, ...block.rows.flat(), block.caption ?? '']) {
+       const piece = decodeEntities(raw); // e.g. &le; renders as ≤
+       if (squash(piece) && !text.includes(squash(piece))) { lost += 1; if (examples.length < 3) examples.push(piece.slice(0, 50)); }
+     }
+   }
+-  check(lost === 0, 'PJK301 stacked tables keep every header, cell and caption', `${lost} missing, e.g. ${JSON.stringify(examples)}`);
++  check(lost === 0, 'PJK301 phone cards or retained columns keep every header, cell and caption', `${lost} missing, e.g. ${JSON.stringify(examples)}`);
+   await act(async () => tableRoot.unmount());
+ } catch (error) {
+   failures.push(`crashed: ${error?.stack ?? error}`);
+diff --git a/scripts/test-table-titles.mjs b/scripts/test-table-titles.mjs
+new file mode 100644
+index 0000000..47a67f4
+--- /dev/null
++++ b/scripts/test-table-titles.mjs
+@@ -0,0 +1,172 @@
++import assert from 'node:assert/strict';
++import React, { act } from 'react';
++import { renderToStaticMarkup } from 'react-dom/server';
++import { createRoot } from 'react-dom/client';
++import { JSDOM } from 'jsdom';
++import { createServer } from 'vite';
++
++const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom', logLevel: 'silent' });
++try {
++  const [{ withTableTitles, keepTableColumns }, { loadCourseContent }, { default: Card }, { SharedFrameContext }, { LayeredContext, InsideBoxContext }] = await Promise.all([
++    server.ssrLoadModule('/src/data/courses/tableTitles.ts'),
++    server.ssrLoadModule('/src/data/courses/courseRegistry.ts'),
++    server.ssrLoadModule('/src/components/course/CourseBlockCard.tsx'),
++    server.ssrLoadModule('/src/components/course/readingFrame.ts'),
++    server.ssrLoadModule('/src/components/course/layeredContext.ts'),
++  ]);
++  const flatten = (blocks) => blocks.flatMap((block) => [block,
++    ...('blocks' in block ? flatten(block.blocks) : []),
++    ...(block.kind === 'solution-reveal' ? flatten(block.promptBlocks ?? []) : []),
++    ...(block.kind === 'self-check' ? flatten(block.answer) : []),
++  ]);
++  const removeGeneratedTitles = (original, displayed) => {
++    original.forEach((block, index) => {
++      const copy = displayed[index];
++      if (block.kind === 'table' && !Object.hasOwn(block, 'title')) delete copy.title;
++      if ('blocks' in block) removeGeneratedTitles(block.blocks, copy.blocks);
++      if (block.kind === 'solution-reveal' && block.promptBlocks) removeGeneratedTitles(block.promptBlocks, copy.promptBlocks);
++      if (block.kind === 'self-check') removeGeneratedTitles(block.answer, copy.answer);
++    });
++  };
++  const sample = {
++    tm: 1, title: 'Audit laporan keuangan', intro: '', objectives: [], blocks: [
++      { kind: 'h2', text: '1. Risiko informasi' },
++      { kind: 'table', headers: ['Penyebab', 'Dampak'], rows: [['Jarak', 'Sulit diverifikasi']], caption: 'Sumber: Arens, p. 7.' },
++      { kind: 'table', headers: ['Cara', 'Biaya'], rows: [['Audit', 'Honorarium']] },
++      { kind: 'pendalaman', title: 'Kasus perusahaan A', blocks: [
++        { kind: 'table', title: 'Hasil evaluasi pengendalian', headers: ['Area', 'Temuan'], rows: [['Kas', 'Selisih']] },
++      ] },
++      { kind: 'self-check', question: 'Mengapa audit diperlukan?', answer: [
++        { kind: 'h3', text: 'Kesalahpahaman umum' },
++        { kind: 'table', headers: ['Keliru', 'Koreksi'], rows: [['Pasti', 'Memadai']] },
++      ] },
++      { kind: 'h2', text: '2. Pembagian kerja' },
++      { kind: 'p', text: '**Exhibit 7.1: Bagan organisasi pabrik** [hal. 229]' },
++      { kind: 'p', text: 'Empat kepala departemen melapor kepada direktur.' },
++      { kind: 'table', headers: ['Departemen', 'Bawahan'], rows: [['Produksi', 'Supervisor']] },
++    ],
++  };
++  const snapshot = structuredClone(sample);
++  const named = withTableTitles(sample);
++  assert.deepEqual(sample, snapshot, 'naming tables must not mutate academic source data');
++  const tables = flatten(named.blocks).filter((block) => block.kind === 'table');
++  assert.match(tables[0].title, /Risiko informasi.*Penyebab/);
++  assert.match(tables[1].title, /Risiko informasi.*Cara/);
++  assert.equal(tables[2].title, 'Hasil evaluasi pengendalian', 'authored names win');
++  assert.match(tables[3].title, /Risiko informasi.*Kesalahpahaman/);
++  assert.equal(tables[4].title, 'Exhibit 7.1: Bagan organisasi pabrik', 'an explanatory sentence does not erase a table lead-in');
++  assert.equal(tables[0].caption, snapshot.blocks[1].caption, 'source notes stay intact');
++
++  const counts = {};
++  // Manjik is a semester-5 course read by the semester-3 audience. Catalog groups do not define this scope.
++  for (const code of ['MNU108', 'MNK201', 'AKA201', 'AKK202', 'PJK301', 'SII306', 'AKS201', 'MNS301']) {
++    const content = await loadCourseContent(code);
++    let count = 0;
++    for (const reading of [...Object.values(content.readings), ...Object.values(content.reviews)]) {
++      if (!reading) continue;
++      const before = JSON.stringify(reading);
++      const presented = withTableTitles(reading);
++      assert.equal(JSON.stringify(reading), before, `${code}: presentation leaves the source intact`);
++      const restored = structuredClone(presented);
++      removeGeneratedTitles(reading.blocks, restored.blocks);
++      assert.deepEqual(restored, reading, `${code}: only table titles may change, including all reading text and table metadata`);
++      const originalTables = flatten(reading.blocks).filter((block) => block.kind === 'table');
++      const displayedTables = flatten(presented.blocks).filter((block) => block.kind === 'table');
++      assert.equal(displayedTables.length, originalTables.length, `${code}: no table disappears`);
++      displayedTables.forEach((table, index) => {
++        count++;
++        assert.ok(table.title.trim() && !/^Tabel Materi$/i.test(table.title), `${code}: meaningful table title`);
++        assert.deepEqual(table.headers, originalTables[index].headers);
++        assert.equal(table.caption, originalTables[index].caption);
++        assert.deepEqual(table.rows, originalTables[index].rows);
++      });
++    }
++    counts[code] = count;
++  }
++
++  const management = await loadCourseContent('MNU108');
++  const managementTables = flatten(withTableTitles(management.readings[7]).blocks).filter((block) => block.kind === 'table');
++  assert.ok(managementTables.some((table) => table.title === 'Gambaran struktur awal (dalam bentuk tabel hubungan lapor)'), 'use the existing introduction instead of repeating the complete Q1');
++  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur lama (tall)'), 'name the old organization chart');
++  assert.ok(managementTables.some((table) => table.title === 'Exhibit 7.2 — Struktur baru (flat)'), 'distinguish the new organization chart');
++
++  const finance = await loadCourseContent('MNK201');
++  assert.equal(withTableTitles(finance.readings[3]).blocks[4].title, 'Arti simbol pada rumus TVM');
++  const projectTables = flatten(withTableTitles(finance.readings[6]).blocks).filter(b => b.kind === 'table');
++  assert.ok(projectTables.some(b => b.title === 'Arus kas Project X dan Project Y'));
++  const methods = projectTables.find(b => b.title === 'Hasil lima metode evaluasi Project X dan Project Y pada WACC 12%');
++  assert.equal(methods.rows.length, 5, 'the summary covers five methods, not just discounted payback');
++  assert.equal(methods.rows[0][0], 'Net Present Value (NPV)');
++  assert.equal(keepTableColumns(methods), true, 'project results remain comparable on phones');
++  const stale = structuredClone(finance.readings[3]);
++  stale.blocks[4].headers[0] = 'Pengganti simbol';
++  assert.notEqual(withTableTitles(stale).blocks[4].title, 'Arti simbol pada rumus TVM', 'a stale override cannot name a structurally changed table');
++
++  const strategy = await loadCourseContent('MNS301');
++  const governance = withTableTitles(strategy.readings[5]).blocks[6].blocks;
++  assert.equal(governance[3].title, 'Peran shareholders, management, dan board');
++  assert.equal(governance[6].title, 'Agency problem dan risk sharing');
++  assert.equal(governance[17].title, 'Principal–agent dan principal–principal conflicts');
++  const leadership = withTableTitles(strategy.readings[6]).blocks[5].blocks[9];
++  assert.equal(leadership.title, 'Enam basis kekuasaan pemimpin');
++  assert.equal(leadership.rows.length, 6, 'information power is preserved');
++
++  const tax = await loadCourseContent('PJK301');
++  const schedule = withTableTitles(tax.readings[4]).blocks[25].blocks[0];
++  assert.match(schedule.title, /2022 s\.d\. 2026/, 'do not truncate the period at an abbreviation');
++  const asp = await loadCourseContent('AKS201');
++  assert.equal(withTableTitles(asp.readings[4]).blocks[16].blocks[1].title, 'Fungsi anggaran dan penekanannya', 'name an answer table by what it contains');
++  const aspReport = withTableTitles(asp.readings[7]).blocks[24].blocks[5];
++  assert.equal(aspReport.title, aspReport.reportHeader.title, 'report headers remain authoritative');
++  assert.equal(keepTableColumns(aspReport), true);
++  const comparison = { kind: 'table', headers: ['Aspek', 'Red ocean strategy', 'Blue ocean strategy', 'Sumber'], rows: [['Pasar', 'Ada', 'Baru', 'Buku']] };
++  assert.equal(keepTableColumns(comparison), true, 'a source column does not break a side-by-side comparison');
++  assert.equal(keepTableColumns(tables[0]), false, 'prose tables may use phone cards');
++  const ambiguous = withTableTitles({ tm: 0, title: 'Tinjauan audit', intro: '', objectives: [], blocks: [
++    { kind: 'h2', text: 'Bukti audit' },
++    { kind: 'p', text: 'Sumber: Arens, p. 7:' },
++    { kind: 'table', headers: ['Bukti', 'Arti'], rows: [['Fisik', 'Pengamatan']] },
++    { kind: 'solution-reveal', title: 'L1. Risiko audit', blocks: [
++      { kind: 'h3', text: 'Jawaban' }, { kind: 'table', headers: ['Risiko', 'Dampak'], rows: [['Deteksi', 'Tidak ditemukan']] },
++    ] },
++  ] });
++  assert.equal(ambiguous.blocks[2].title, 'Bukti audit', 'source strings cannot become a table title');
++  assert.equal(ambiguous.blocks[3].blocks[1].title, 'L1. Risiko audit — Jawaban', 'generic nested headings retain their case context');
++
++  // Check both layouts, including a table inside an expanded disclosure.
++  const table = tables[0];
++  const html = renderToStaticMarkup(React.createElement(SharedFrameContext.Provider, { value: true },
++    React.createElement(LayeredContext.Provider, { value: true },
++      React.createElement(InsideBoxContext.Provider, { value: true }, React.createElement(Card, { block: table })))));
++  const dom = new JSDOM(html);
++  assert.equal(dom.window.document.querySelector('caption').textContent, table.title);
++  assert.equal(dom.window.document.querySelectorAll('.course-table-title').length, 2, 'desktop and mobile both show a title inside disclosures');
++  assert.ok(dom.window.document.querySelector('.lg\\:hidden').textContent.includes(table.title));
++  const amountHtml = renderToStaticMarkup(React.createElement(SharedFrameContext.Provider, { value: true }, React.createElement(Card, { block: methods })));
++  const amountDom = new JSDOM(amountHtml);
++  assert.equal(amountDom.window.document.querySelectorAll('.course-table-title').length, 1, 'comparable numbers use one visible title and one table');
++  assert.ok(amountDom.window.document.querySelector('table').className.includes('min-w-[520px]'));
++  const reportHtml = renderToStaticMarkup(React.createElement(Card, { block: aspReport }));
++  const reportDom = new JSDOM(reportHtml);
++  assert.equal(reportDom.window.document.querySelectorAll('.course-table-title').length, 0, 'a report has its own single title hierarchy');
++  assert.ok(reportDom.window.document.querySelector('header').textContent.includes(aspReport.reportHeader.entity));
++  assert.ok(reportDom.window.document.querySelector('header').textContent.includes(aspReport.reportHeader.period));
++
++  const { window } = new JSDOM('<div id="root"></div>', { url: 'http://localhost' });
++  const document = window.document;
++  Object.assign(globalThis, { window, document: window.document, HTMLElement: window.HTMLElement, IS_REACT_ACT_ENVIRONMENT: true });
++  const root = createRoot(document.getElementById('root'));
++  const guidance = named.blocks.find((block) => block.kind === 'pendalaman');
++  await act(async () => root.render(React.createElement(Card, { block: guidance })));
++  const button = document.querySelector('button');
++  assert.equal(button.getAttribute('aria-expanded'), 'false');
++  assert.equal(document.querySelector('table'), null, 'tables inside a closed disclosure remain hidden');
++  await act(async () => button.click());
++  assert.equal(button.getAttribute('aria-expanded'), 'true');
++  assert.ok(document.querySelector('table'), 'opening the disclosure exposes the titled table');
++  assert.ok(document.querySelector('.course-table-title').textContent.includes('Hasil evaluasi pengendalian'));
++  await act(async () => root.unmount());
++  console.log(JSON.stringify({ pass: true, tableCounts: counts, checks: 'context, preservation, desktop/mobile titles, disclosure interaction' }));
++} finally {
++  await server.close();
++}
+diff --git a/src/components/ReadingView.tsx b/src/components/ReadingView.tsx
+index f27e702..47c4d76 100644
+--- a/src/components/ReadingView.tsx
++++ b/src/components/ReadingView.tsx
+@@ -1,3 +1,5 @@
++import TableHeading from './course/TableHeading';
++import { getTableTitle, withTableTitles } from '../data/courses/tableTitles';
+ import { useEffect, useMemo, useState, type ReactNode } from 'react';
+ import {
+   ArrowLeft, ChevronLeft, ChevronRight, Check,
+@@ -225,8 +227,11 @@ function Block({ block }: { block: ContentBlock }) {
+     }
+     case 'table':
+       return (
+-        <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
++        <div className="my-8 min-w-0 max-w-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
++          <TableHeading title={getTableTitle(block)} />
++          <div className="max-w-full overflow-x-auto">
+           <table className="w-full min-w-[720px] text-[14px] text-left text-gray-800 dark:text-gray-200 border-collapse">
++            <caption className="sr-only">{getTableTitle(block)}</caption>
+             <thead className="text-[12.5px] font-bold uppercase tracking-wider bg-gray-50/95 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-700">
+               <tr>
+                 {block.headers.map((h, i) => (
+@@ -248,6 +253,7 @@ function Block({ block }: { block: ContentBlock }) {
+               ))}
+             </tbody>
+           </table>
++          </div>
+           {block.caption && <div className="px-4 py-2.5 bg-gray-50/60 dark:bg-gray-800/40 border-t border-gray-200 dark:border-gray-700/80 text-xs text-gray-500 dark:text-gray-400 italic">{renderText(block.caption)}</div>}
+         </div>
+       );
+@@ -369,7 +375,10 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
+     return () => { isActive = false; };
+   }, [course.code]);
+ 
+-  const reading = courseContent?.readings[tm];
++  const reading = useMemo(() => {
++    const source = courseContent?.readings[tm];
++    return source ? withTableTitles(source) : undefined;
++  }, [courseContent, tm]);
+   const outlineItems = useMemo(() => reading ? buildReadingOutline(reading.blocks) : [], [reading]);
+   const tms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
+   const idx = tms.indexOf(tm);
+diff --git a/src/components/course/CourseBlockCard.tsx b/src/components/course/CourseBlockCard.tsx
+index ac3ba1c..c952e23 100644
+--- a/src/components/course/CourseBlockCard.tsx
++++ b/src/components/course/CourseBlockCard.tsx
+@@ -1,7 +1,9 @@
+ import { useId, useState } from 'react';
+ import { AlertTriangle, BookOpen, ChevronDown, ChevronUp, Eye, FileText, GitBranch, Gavel, Lightbulb, Scale, Sigma, Sparkles, Square, Table2, Calculator, PencilLine, LineChart } from 'lucide-react';
+ import ReportTable from './ReportTable';
++import TableHeading from './TableHeading';
+ import type { ContentBlock } from '../../types';
++import { getTableTitle, keepTableColumns } from '../../data/courses/tableTitles';
+ import { renderText } from './MarkdownContent';
+ import PracticeReportCard from './PracticeReportCard';
+ import { InteractiveMatchBuilder, JournalBuilder, TAccountBuilder, TableFillBuilder } from '../InteractivePracticeBuilders';
+@@ -73,10 +75,6 @@ function isEconomicAssumption(text: string): boolean {
+   return /asumsi|ceteris paribus|dengan syarat|selama kapasitas|jika v stabil|jangka pendek|jangka panjang/i.test(text);
+ }
+ 
+-function isEconomicComparison(text: string): boolean {
+-  return /perbandingan|dibanding|versus|\bvs\b|nominal.*riil|tertutup.*terbuka|demand-pull.*cost-push/i.test(text);
+-}
+-
+ function splitEconomicFormula(text: string): { title?: string; body: string } {
+   const [first, ...rest] = text.split('\n');
+   const secondIsBlank = rest[0]?.trim() === '';
+@@ -380,13 +378,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+     case 'table': {
+       if (block.reportHeader || block.rowRules?.length) return <ReportTable block={block} />;
+       const warning = blockContainsManualWarning(block);
+-      const tableText = `${block.headers.join(' ')} ${block.rows.flat().join(' ')}`;
+-      const isLegalTable = enableLegalStyling && isLegalContent(tableText);
+-      const isComparisonTable = enableLegalStyling && isRegulationComparison(tableText);
+ 
+       if (!enableEconomicStyling) {
+-        const tableLabel = isComparisonTable ? 'Tabel Perbandingan Regulasi' : isLegalTable ? 'Tabel Hukum Pajak' : 'Tabel Materi';
++        const tableLabel = getTableTitle(block);
+         const isFinancialGlossary = block.headers.length === 4 && block.headers.includes('Nama Finansial');
++        const keepColumns = !isFinancialGlossary && keepTableColumns(block);
+         // In a layered reading a "Sumber" column is a source reference: small and muted.
+         const mutedColumns = block.headers.map((header) => layered && /^sumber$/i.test(header.trim()));
+         // Column alignment from the source table (e.g. right-aligned amounts); desktop table only, phone cards ignore it.
+@@ -395,12 +391,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+         const flatTable = layered && insideBox;
+         const tableCard = (
+           <div className={flatTable ? 'course-table-flat overflow-hidden border-y border-gray-200 dark:border-gray-700/70' : 'course-table-card mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm'}>
+-            <div className={`${flatTable ? 'hidden' : 'flex'} items-center justify-between border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50`}>
+-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
+-                <Table2 size={15} /> {tableLabel}
+-              </div>
+-              <span className="text-[11px] font-semibold text-gray-500 dark:text-gray-400 md:hidden">{isFinancialGlossary ? 'Kartu istilah' : 'Geser tabel bila perlu →'}</span>
+-            </div>
++            <TableHeading title={tableLabel} flat={flatTable} hint={
++              keepColumns ? <span className="md:hidden">Geser untuk membandingkan kolom →</span> : undefined
++            } />
+             {isFinancialGlossary && (
+               <div className="grid gap-3 p-3 md:hidden" aria-label="Kamus istilah keuangan dalam kartu">
+                 {block.rows.map((row, index) => (
+@@ -428,7 +421,8 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+               onTouchMove={(e) => e.stopPropagation()}
+               onTouchEnd={(e) => e.stopPropagation()}
+             >
+-              <table className={`w-full border-collapse text-left ${isFinancialGlossary ? 'min-w-[840px]' : ''}`}>
++              <table className={`w-full border-collapse text-left ${isFinancialGlossary ? 'min-w-[840px]' : keepColumns ? 'min-w-[520px]' : ''}`}>
++                <caption className="sr-only">{tableLabel}</caption>
+                 <thead>
+                   <tr className="course-table-head">
+                     {block.headers.map((h, i) => (
+@@ -468,11 +462,11 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+           </div>
+         );
+         // Where the stacked view takes over from the table:
+-        // - the shared reading frame (layered readings, PJK301) stacks every table below 1024px, because its desktop
+-        //   table needs 42rem and the frame is narrower than that from 1024px down;
++        // - the shared reading frame stacks prose tables below 1024px;
++        // - numeric and comparison tables keep their columns in a local scroll region;
+         // - any other reading opts a single table in with stackOnMobile, and only phones get the stacked view. A table
+         //   that fits a phone stays a table, so the reader still sees the comparison side by side.
+-        const stackBelow = sharedFrame ? 'lg' : block.stackOnMobile ? 'sm' : null;
++        const stackBelow = keepColumns || isFinancialGlossary ? null : sharedFrame ? 'lg' : block.stackOnMobile ? 'sm' : null;
+         if (!stackBelow) return tableCard;
+         return (
+           <>
+@@ -482,8 +476,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+         );
+       }
+ 
+-      const economicComparison = isEconomicComparison(`${block.caption ?? ''} ${tableText}`);
+-      const tableLabel = economicComparison ? 'Tabel Perbandingan Ekonomi' : 'Tabel Data & Konsep Ekonomi';
++      const tableLabel = getTableTitle(block);
+       if (warning) {
+         return (
+           <div className="course-manual-warning mb-7 rounded-2xl border border-amber-500/40 bg-amber-50 dark:bg-amber-500/10 p-5 text-sm leading-relaxed text-amber-900 dark:text-amber-200">
+@@ -496,15 +489,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+       }
+       return (
+         <div className="course-table-card course-economic-table mb-7 overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-700/70 bg-white dark:bg-gray-900/90 shadow-sm">
+-          <div className="course-solid-head flex flex-wrap items-center justify-between gap-2 border-b border-gray-200/80 dark:border-gray-700/60 px-5 py-3.5 bg-gray-50/70 dark:bg-gray-800/50">
+-            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:text-blue-400">
+-              <Table2 size={15} /> {tableLabel}
+-            </div>
+-            <div className="text-right text-xs font-medium text-slate-600 dark:text-slate-400">
+-              {block.rows.length} baris · {block.headers.length} kolom
+-              <span className="block text-[11px] md:hidden">geser untuk kolom lain →</span>
+-            </div>
+-          </div>
++          <TableHeading title={tableLabel} hint={
++            <>{block.rows.length} baris · {block.headers.length} kolom<span className="block md:hidden">Geser untuk kolom lain →</span></>
++          } />
+           <div 
+             className="akbi-table-scroll w-full overflow-x-auto" 
+             role="region" 
+@@ -515,7 +502,7 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
+             onTouchEnd={(e) => e.stopPropagation()}
+           >
+             <table className="w-full border-collapse text-left">
+-              <caption className="sr-only">{block.caption ?? tableLabel}</caption>
++              <caption className="sr-only">{tableLabel}</caption>
+               <thead>
+                 <tr className="course-table-head">
+                   {block.headers.map((h, i) => (
+diff --git a/src/components/course/CourseLayout.tsx b/src/components/course/CourseLayout.tsx
+index 2d7c04f..1fdaa5f 100644
+--- a/src/components/course/CourseLayout.tsx
++++ b/src/components/course/CourseLayout.tsx
+@@ -18,6 +18,7 @@ import {
+ } from 'lucide-react';
+ import { useStudyProgress, materialKey } from '../../hooks/useStudyProgress';
+ import { loadCourseContent, type LoadedCourseContent, type ReviewReadingKey } from '../../data/courses/courseRegistry';
++import { withTableTitles } from '../../data/courses/tableTitles';
+ import type { ContentBlock, Course, CourseTabId, Reading } from '../../types';
+ import { getArsipFiles } from '../../data/arsipRegistry';
+ import ArsipViewerTab from '../ArsipViewerTab';
+@@ -78,6 +79,7 @@ function blockContainsQuery(block: ContentBlock, query: string): boolean {
+       return [block.title, block.text].filter(Boolean).some((text) => text!.toLowerCase().includes(query));
+     case 'table':
+       return [
++        ...(block.title ? [block.title] : []),
+         ...(block.caption ? [block.caption] : []),
+         ...Object.values(block.reportHeader ?? {}),
+         ...block.headers,
+@@ -169,7 +171,7 @@ function isWideLearningBlock(block: ContentBlock) {
+ 
+ // ----------------- DETAIL BACAAN TATAP MUKA -----------------
+ function ReadingPanel({
+-  reading,
++  reading: sourceReading,
+   onBack,
+   onPrev,
+   onNext,
+@@ -191,6 +193,7 @@ function ReadingPanel({
+   isDone: (key: string) => boolean;
+   toggle: (key: string) => void;
+ }) {
++  const reading = useMemo(() => withTableTitles(sourceReading), [sourceReading]);
+   const readingDocumentRef = useRef<HTMLDivElement>(null);
+   const key = materialKey(courseCode, reading.tm);
+   useEscapeToBack(reading.layout === 'layered', onBack);
+@@ -1081,7 +1084,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
+               {activeTab === 'referensi' && !searchQuery && (
+                 <div className="space-y-6">
+                   {(() => {
+-                    const customRef = courseContent.customReferensi;
++                    const customRef = courseContent.customReferensi && withTableTitles({ tm: 0, title: 'Referensi mata kuliah', intro: '', objectives: [], blocks: courseContent.customReferensi }).blocks;
+                     if (customRef && customRef.length > 0) {
+                       return (
+                         <div className="mb-8 border-b border-navy-700/60 pb-6">
+diff --git a/src/components/course/LayeredBlocks.tsx b/src/components/course/LayeredBlocks.tsx
+index 8867eaf..7acf5e5 100644
+--- a/src/components/course/LayeredBlocks.tsx
++++ b/src/components/course/LayeredBlocks.tsx
+@@ -3,9 +3,10 @@
+ // estimate. Every text shown here comes from the data unchanged; only the button labels and hints are written here.
+ import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
+ import { createPortal } from 'react-dom';
+-import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Lightbulb, PencilLine, Table2 } from 'lucide-react';
++import { AlertTriangle, ArrowUp, ChevronDown, ChevronUp, Eye, Info, Layers, Lightbulb, PencilLine } from 'lucide-react';
+ import type { CalloutVariant, ContentBlock } from '../../types';
+ import { renderText } from './MarkdownContent';
++import TableHeading from './TableHeading';
+ import { InsideBoxContext, useInsideBox, useLayered } from './layeredContext';
+ 
+ /** A paragraph that is only a source reference: `(ARENS p.3)`, *Sumber: ...*, or one opening with a bold
+@@ -266,6 +267,7 @@ export function StackedTable({ headers, rows, label, caption, warning = false, s
+   if (flat) {
+     return (
+       <div className={hideAbove}>
++        <TableHeading title={label} flat />
+         {list}
+         {footer}
+       </div>
+@@ -273,9 +275,7 @@ export function StackedTable({ headers, rows, label, caption, warning = false, s
+   }
+   return (
+     <div className={`layered-table-box overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700/70 dark:bg-gray-900/90 ${hideAbove}`}>
+-      <div className="flex items-center gap-2 border-b border-gray-200/80 bg-gray-50/70 px-4 py-3 text-xs font-bold uppercase tracking-[0.16em] text-blue-700 dark:border-gray-700/60 dark:bg-gray-800/50 dark:text-blue-400">
+-        <Table2 size={15} aria-hidden="true" /> {label}
+-      </div>
++      <TableHeading title={label} />
+       {list}
+       {footer}
+     </div>
+diff --git a/src/components/course/ReportTable.tsx b/src/components/course/ReportTable.tsx
+index 26ae7ca..da16320 100644
+--- a/src/components/course/ReportTable.tsx
++++ b/src/components/course/ReportTable.tsx
+@@ -1,3 +1,5 @@
++import TableHeading from './TableHeading';
++import { getTableTitle } from '../../data/courses/tableTitles';
+ import type { ContentBlock } from '../../types';
+ import { renderText } from './MarkdownContent';
+ 
+@@ -6,6 +8,7 @@ export default function ReportTable({ block }: { block: Extract<ContentBlock, {
+   const header = block.reportHeader;
+   return (
+     <section className="akk203-report-table my-5 min-w-0 max-w-full rounded-xl border border-line bg-surface p-3 text-ink">
++      {!header && <TableHeading title={getTableTitle(block)} flat />}
+       {header && <header className="mb-4 text-center leading-relaxed">
+         <p className="font-bold">{header.entity}</p>
+         <p className="font-bold">{header.title}</p>
+@@ -14,9 +17,9 @@ export default function ReportTable({ block }: { block: Extract<ContentBlock, {
+         {header.note && <p className="text-sm">{header.note}</p>}
+       </header>}
+       <p className="mb-2 text-xs text-muted sm:hidden">Geser untuk membaca seluruh kolom →</p>
+-      <div className="akbi-table-scroll max-w-full overflow-x-auto" role="region" aria-label={header?.title ?? block.caption ?? 'Tabel dengan total akhir'} tabIndex={0}>
++      <div className="akbi-table-scroll max-w-full overflow-x-auto" role="region" aria-label={getTableTitle(block)} tabIndex={0}>
+         <table className="w-full min-w-[520px] border-collapse text-sm">
+-          <caption className="sr-only">{header?.title ?? block.caption ?? 'Tabel dengan total akhir'}</caption>
++          <caption className="sr-only">{getTableTitle(block)}</caption>
+           <thead><tr>{block.headers.map((cell, column) => <th key={column} className="border-b border-line px-3 py-3 text-left" style={{ textAlign: block.align?.[column] ?? undefined }}>{renderText(cell)}</th>)}</tr></thead>
+           <tbody>{block.rows.map((row, index) => <tr key={index}>{row.map((cell, column) => <td key={column} className="border-b border-line px-3 py-3 align-top" style={{ textAlign: block.align?.[column] ?? undefined, borderBottom: block.rowRules?.some((rule) => rule.row === index && rule.columns.includes(column)) ? '3px double currentColor' : undefined }}>{renderText(cell)}</td>)}</tr>)}</tbody>
+         </table>
+diff --git a/src/components/course/TableHeading.tsx b/src/components/course/TableHeading.tsx
+new file mode 100644
+index 0000000..e6f7e5e
+--- /dev/null
++++ b/src/components/course/TableHeading.tsx
+@@ -0,0 +1,16 @@
++import type { ReactNode } from 'react';
++import { Table2 } from 'lucide-react';
++
++/** The same title hierarchy for desktop tables, phone cards and nested tables. */
++export default function TableHeading({ title, flat = false, hint }: { title: string; flat?: boolean; hint?: ReactNode }) {
++  return (
++    <div className={`course-table-heading${flat ? ' course-table-heading--flat' : ''}`}>
++      <Table2 className="course-table-heading-icon" size={18} aria-hidden="true" />
++      <div className="min-w-0">
++        <div className="course-table-eyebrow">Tabel</div>
++        <div className="course-table-title">{title}</div>
++      </div>
++      {hint && <div className="course-table-hint">{hint}</div>}
++    </div>
++  );
++}
+diff --git a/src/data/courses/tableTitleOverrides.ts b/src/data/courses/tableTitleOverrides.ts
+new file mode 100644
+index 0000000..20d8178
+--- /dev/null
++++ b/src/data/courses/tableTitleOverrides.ts
+@@ -0,0 +1,145 @@
++import type { ContentBlock, Reading } from '../../types';
++
++// Reviewed against the table's columns and rows. Never override an authored name/report header.
++// The structural signature prevents a changed reading from receiving a stale title.
++const overrides = [
++  {"tm":1,"reading":"Leading Edge Management","at":"blocks[152]","headers":["Skill","Positif","Negatif"],"first":"**Technical**","rows":3,"title":"Keisha: perilaku positif dan negatif menurut tiga management skills"},
++  {"tm":1,"reading":"Leading Edge Management","at":"blocks[160]","headers":["Orang","Yang terjadi","Penanganan yang disarankan","Dasar teori"],"first":"**Marianne** (resepsionis)","rows":3,"title":"Pilihan penanganan insiden Marianne, Carol Jean, dan Victoria"},
++  {"tm":1,"reading":"Leading Edge Management","at":"blocks[168]","headers":["Kerangka","Komponen","Hal."],"first":"4 fungsi","rows":10,"title":"Komponen utama manajemen dan artinya"},
++  {"tm":1,"reading":"Leading Edge Management","at":"blocks[170]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"Posisi management science","rows":12,"title":"Jebakan ujian tentang konsep manajemen"},
++  {"tm":2,"reading":"The Environment and Corporate Culture","at":"blocks[148]","headers":["Pemicu di kasus","Sektor lingkungan","Teori"],"first":"\"An increasingly younger workforce\"","rows":3,"title":"Tiga pemicu perubahan lingkungan pada kasus Cam"},
++  {"tm":2,"reading":"The Environment and Corporate Culture","at":"blocks[152]","headers":["Sumber","Investigasi yang disarankan","Tujuan"],"first":"**Personal internal**","rows":4,"title":"Investigasi tambahan untuk memahami kinerja Cam"},
++  {"tm":2,"reading":"The Environment and Corporate Culture","at":"blocks[157]","headers":["Sumbu Exhibit 2.7","Bukti di kasus","Posisi"],"first":"Attention to business performance","rows":2,"title":"Posisi Cam pada matriks culture dan performance"},
++  {"tm":2,"reading":"The Environment and Corporate Culture","at":"blocks[168]","headers":["Kerangka","Komponen","Hal."],"first":"Task environment (4)","rows":12,"title":"Komponen lingkungan dan corporate culture"},
++  {"tm":2,"reading":"The Environment and Corporate Culture","at":"blocks[170]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"Jumlah dimensi general environment","rows":14,"title":"Jebakan ujian lingkungan dan corporate culture"},
++  {"tm":3,"reading":"Managing in a Global Environment","at":"blocks[94]","headers":["Urutan","Budaya"],"first":"1","rows":13,"title":"Urutan negara dari high context ke low context"},
++  {"tm":3,"reading":"Managing in a Global Environment","at":"blocks[152]","headers":["Yang tampak di kasus","Dimensi yang relevan","Catatan"],"first":"Adam menekankan volume, alur yang lancar, dan \"streamline\"; Salvador menekankan kebanggaan pada setiap karya dan keunikan tiap instrumen [hal. 114]","rows":3,"title":"Tantangan produksi dalam kasus We Want More Guitars"},
++  {"tm":3,"reading":"Managing in a Global Environment","at":"blocks[156]","headers":["Langkah","Dasar teori"],"first":"Jalankan arahan Fletcher: bicara dengan Salvador lebih dulu, cari tahu apa yang cocok bagi timnya, dan tunda rencana yang sudah jadi","rows":6,"title":"Rekomendasi peningkatan produksi untuk Adam"},
++  {"tm":3,"reading":"Managing in a Global Environment","at":"blocks[164]","headers":["Kerangka","Komponen","Hal."],"first":"Global mind-set (Exh. 3.2)","rows":11,"title":"Komponen utama manajemen global"},
++  {"tm":3,"reading":"Managing in a Global Environment","at":"blocks[166]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"International management","rows":13,"title":"Jebakan ujian manajemen global"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[38]","headers":["Rumusan","Isi","Sumber"],"first":"Teks subbab 4-1c","rows":2,"title":"Dua rumusan ethical dilemma dalam buku"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[77]","headers":["Stakeholder","Kepentingannya menurut buku","Sumber"],"first":"Investors and shareholders","rows":5,"title":"Stakeholder dan tuntutannya terhadap perusahaan"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[88]","headers":["P","Yang diukur","Sumber"],"first":"**People**","rows":3,"title":"Hubungan people, planet, dan profit dalam sustainability"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[154]","headers":["Cara","Bukti di kasus"],"first":"Rekrutmen","rows":4,"title":"Budaya penjualan Pace Technologies dan ethical leadership Ken Bodine"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[161]","headers":["Pilihan Ali","Dinilai dengan teori","Catatan"],"first":"Diam dan membiarkan Cody presentasi","rows":5,"title":"Pilihan tindakan Ali Sloan dan alasannya"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[166]","headers":["Pendekatan","Pertanyaan yang harus diajukan Cody","Arah keputusannya"],"first":"**Utilitarian** [hal. 124]","rows":3,"title":"Keputusan Cody menurut utilitarian, individualism, dan practical approach"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[175]","headers":["Kerangka","Komponen","Hal."],"first":"Tiga domain tindakan (Exh. 4.1)","rows":12,"title":"Komponen managerial ethics dan tanggung jawab sosial"},
++  {"tm":4,"reading":"Managing Ethics and Social Responsibility","at":"blocks[177]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"Legal vs etis","rows":15,"title":"Jebakan ujian etika dan tanggung jawab sosial"},
++  {"tm":5,"reading":"Planning and Goal Setting","at":"blocks[26]","headers":["Langkah","Isi (Exh. 5.2)","Penjelasan teks"],"first":"**1. Develop the Plan**","rows":5,"title":"Lima langkah perencanaan dan umpan baliknya"},
++  {"tm":5,"reading":"Planning and Goal Setting","at":"blocks[54]","headers":["Langkah","Isi","Sumber"],"first":"1. Set goals","rows":4,"title":"Empat langkah management by objectives dan umpan baliknya"},
++  {"tm":5,"reading":"Planning and Goal Setting","at":"blocks[175]","headers":["Arah","Kelebihan menurut fakta kasus","Kelemahan menurut fakta kasus"],"first":"Komunitas lokal (donor)","rows":4,"title":"Pilihan arah dan misi Central City Museum"},
++  {"tm":5,"reading":"Planning and Goal Setting","at":"blocks[180]","headers":["Cara menurut buku","Tindakan direktur","Hal."],"first":"**Build a coalition**","rows":5,"title":"Pilihan penyelesaian konflik stakeholder museum"},
++  {"tm":5,"reading":"Planning and Goal Setting","at":"blocks[194]","headers":["Kerangka","Komponen","Hal."],"first":"Tingkatan goal dan plan (Exh. 5.1)","rows":19,"title":"Komponen utama goal setting dan planning"},
++  {"tm":5,"reading":"Planning and Goal Setting","at":"blocks[196]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"Goal vs plan","rows":19,"title":"Jebakan ujian goal setting dan planning"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[22]","headers":["Istilah","Arti","Sumber"],"first":"**Decision**","rows":2,"title":"Arti decision dan decision making"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[73]","headers":["Langkah","Inti menurut buku","Sumber"],"first":"1. Recognition of decision requirement","rows":6,"title":"Enam langkah pengambilan keputusan dan umpan baliknya"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[103]","headers":["Unsur","Isi (Exh. 6.5)"],"first":"**Situation**","rows":3,"title":"Hubungan situasi, gaya pribadi, dan pilihan keputusan"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[178]","headers":["Ciri directive dan contohnya di buku [hal. 212]","Bukti dari kasus [hal. 224]"],"first":"Menyukai solusi sederhana dan jelas; memutuskan cepat","rows":4,"title":"Gaya dan kesalahan keputusan John Mitchell"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[184]","headers":["Langkah","Tindakan Mitchell","Hal."],"first":"1. Recognition","rows":6,"title":"Pilihan pendekatan keputusan untuk masalah Mitchell"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[188]","headers":["Opsi","Kelebihan","Kelemahan"],"first":"A. Menerima tanpa syarat dan menjalankan keputusan","rows":3,"title":"Opsi respons Krista Acklen terhadap keputusan Mitchell"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[199]","headers":["Kerangka","Komponen","Hal."],"first":"Jenis keputusan","rows":16,"title":"Komponen utama managerial decision making"},
++  {"tm":6,"reading":"Managerial Decision Making","at":"blocks[201]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"Decision vs decision making","rows":24,"title":"Jebakan ujian managerial decision making"},
++  {"tm":7,"reading":"Designing Organization Structure","at":"blocks[227]","headers":["Struktur","Kelebihan (Exh. 7.10)","Kekurangan (Exh. 7.10)","Yang terlihat di kasus"],"first":"**Awal (functional)**","rows":2,"title":"Kelebihan dan kekurangan struktur functional dan divisional pada kasus"},
++  {"tm":7,"reading":"Designing Organization Structure","at":"blocks[239]","headers":["Kerangka","Komponen","Hal."],"first":"Organization structure (3 unsur)","rows":15,"title":"Komponen utama desain struktur organisasi"},
++  {"tm":7,"reading":"Designing Organization Structure","at":"blocks[241]","headers":["Jebakan","Jawaban salah","Jawaban benar","Hal."],"first":"Division of labor","rows":22,"title":"Jebakan ujian desain struktur organisasi"},
++  {"tm":3,"reading":"Time Value of Money (TVM), Cash Flow Mechanics, & Loan Amortization","at":"blocks[4]","headers":["Simbol","Nama Finansial","Bahasa Manusia (Maksud Aslinya)","Contoh Konkret di Soal"],"first":"$PV$","rows":8,"title":"Arti simbol pada rumus TVM"},
++  {"tm":6,"reading":"The Basics of Capital Budgeting: NPV, IRR, MIRR, PI, & Payback Period","at":"blocks[12].blocks[1]","headers":["Tahun (t)","Project X (Cepat Panen)","Project Y (Anuitas Merata)"],"first":"0 (Modal Awal)","rows":6,"title":"Arus kas Project X dan Project Y"},
++  {"tm":6,"reading":"The Basics of Capital Budgeting: NPV, IRR, MIRR, PI, & Payback Period","at":"blocks[13].blocks[10]","headers":["Metode Evaluasi","Project X","Project Y","Pemenang (WACC = 12%)"],"first":"Net Present Value (NPV)","rows":5,"title":"Hasil lima metode evaluasi Project X dan Project Y pada WACC 12%"},
++  {"tm":1,"reading":"Mengapa Audit Ada: Asurans, Auditing, dan Jenis Auditor","at":"blocks[7].blocks[3]","headers":["Komponen","Arti","Dipengaruhi audit?"],"first":"Risk-free interest rate","rows":3,"title":"Tiga komponen suku bunga pinjaman bank"},
++  {"tm":6,"reading":"Laporan Auditor dan Jenis Opini","at":"blocks[7].blocks[3]","headers":["Prinsip","Dasar"],"first":"Opini ditentukan oleh bukti dan standar, bukan hasil negosiasi","rows":6,"title":"Prinsip komunikasi dan respons terhadap ancaman ganti auditor"},
++  {"tm":3,"reading":"Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi","at":"blocks[24]","headers":["Komponen","Isi","Perlakuan"],"first":"Biaya akuisisi","rows":6,"title":"Komponen dasar deplesi sumber daya alam"},
++  {"tm":6,"reading":"Liabilitas Jangka Pendek, Provisi, dan Kontinjensi","at":"blocks[38].blocks[15]","headers":["31 Desember","Warranty Liability (jaminan)","Unearned Warranty Revenue (jasa)","Warranty Revenue tahun berjalan"],"first":"2025","rows":6,"title":"Saldo garansi jaminan dan jasa per 31 Desember"},
++  {"tm":3,"reading":"Regulasi dan standar pemerintahan","at":"blocks[16].blocks[1]","headers":["Jenis","Arah","Keluaran"],"first":"Keuangan","rows":3,"title":"Jenis pemeriksaan dan keluaran laporan hasil pemeriksaan"},
++  {"tm":3,"reading":"Regulasi dan standar pemerintahan","at":"blocks[24].blocks[2]","headers":["Transaksi A saja","TA 2025","TA 2026"],"first":"Pendapatan-LO","rows":3,"title":"Perlakuan transaksi A pada TA 2025 dan TA 2026"},
++  {"tm":4,"reading":"Perencanaan dan anggaran organisasi sektor publik (1)","at":"blocks[16].blocks[1]","headers":["Fungsi","Penekanan"],"first":"Alokasi","rows":2,"title":"Fungsi anggaran dan penekanannya"},
++  {"tm":4,"reading":"Perencanaan dan anggaran organisasi sektor publik (1)","at":"blocks[18].blocks[1]","headers":["Dimensi","Regulasi","Buku"],"first":"Dasar/jumlah","rows":3,"title":"Fungsi anggaran menurut regulasi dan buku"},
++  {"tm":4,"reading":"Perencanaan dan anggaran organisasi sektor publik (1)","at":"blocks[26].blocks[1]","headers":["Konsep","Yang dinilai","Data tambahan A"],"first":"Ekonomi","rows":3,"title":"Konsep penilaian layanan dan kebutuhan data tambahan"},
++  {"tm":5,"reading":"Lima pendekatan penganggaran sektor publik","at":"blocks[14].blocks[1]","headers":["Dimensi","Penerapan"],"first":"Bentuk pos","rows":2,"title":"Penerapan dimensi pendekatan anggaran"},
++  {"tm":5,"reading":"Lima pendekatan penganggaran sektor publik","at":"blocks[18].blocks[1]","headers":["Unsur","Contoh"],"first":"Input","rows":3,"title":"Unsur pendekatan anggaran dan contohnya"},
++  {"tm":5,"reading":"Lima pendekatan penganggaran sektor publik","at":"blocks[24].blocks[1]","headers":["Dimensi","PPBS","ZBB"],"first":"Titik awal","rows":3,"title":"Perbedaan PPBS dan ZBB"},
++  {"tm":5,"reading":"Lima pendekatan penganggaran sektor publik","at":"blocks[26].blocks[1]","headers":["Dasar","Penekanan"],"first":"Standar harga","rows":2,"title":"Dasar dan penekanan pendekatan anggaran"},
++  {"tm":7,"reading":"Tujuh laporan keuangan pemerintah","at":"blocks[24].promptBlocks[3]","headers":["Pos DPA/anggaran","Rupiah"],"first":"Retribusi","rows":5,"title":"Anggaran DPA pada dataset tujuh laporan"},
++  {"tm":1,"reading":"Strategic Management","at":"blocks[6].blocks[8].blocks[1]","headers":["Perilaku","Contoh dari buku"],"first":"Meluangkan waktu dan waspada pada peluang di luar batas pekerjaannya","rows":4,"title":"Perilaku kewirausahaan dan contoh dari buku"},
++  {"tm":1,"reading":"Strategic Management","at":"blocks[7].blocks[12].blocks[1]","headers":["Bab","Isi menurut teks buku"],"first":"Ch.1 Analyzing Organizational Goals and Objectives","rows":13,"title":"Cakupan Chapter 1 sampai Chapter 13"},
++  {"tm":1,"reading":"Strategic Management","at":"blocks[14].blocks[12].blocks[1]","headers":["Jenis","Tujuan","Perusahaan"],"first":"Finansial","rows":6,"title":"Contoh strategic objectives finansial dan nonfinansial"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[4].blocks[4]","headers":["Kegiatan","Arti sehari-hari","Pertanyaan yang dibantu"],"first":"Environmental scanning","rows":4,"title":"Scanning, monitoring, competitive intelligence, dan forecasting"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[5].blocks[3]","headers":["Segmen","Yang diperiksa","Contoh dalam buku"],"first":"Demographic","rows":6,"title":"Enam segmen general environment dan contoh"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[6].blocks[3]","headers":["Force","Tekanan yang perlu dijelaskan"],"first":"Threat of new entrants","rows":5,"title":"Five Forces dan tekanan terhadap laba industri"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[6].blocks[11].blocks[0]","headers":["Buyer kuat ketika","Supplier kuat ketika"],"first":"Terkonsentrasi atau membeli volume besar","rows":6,"title":"Kondisi buyer power dan supplier power"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[8].blocks[3]","headers":["Primary activity","Kontribusi kegiatan"],"first":"Inbound logistics","rows":5,"title":"Primary activities dalam value chain"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[8].blocks[13].blocks[0]","headers":["Support activity","Cakupan"],"first":"General administration","rows":4,"title":"Support activities dalam value chain"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[9].blocks[3]","headers":["Kelompok","Komponen atau artinya"],"first":"Tangible resources","rows":3,"title":"Kelompok sumber daya dan capabilities"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[9].blocks[13].blocks[0]","headers":["Valuable","Rare","Difficult to imitate","Without substitutes","Implikasi Exhibit 3.7"],"first":"No","rows":4,"title":"Empat profil sumber daya pada Exhibit 3.7"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[10].blocks[3]","headers":["Kelompok","Pertanyaan analisis"],"first":"Short-term solvency / liquidity","rows":5,"title":"Kelompok rasio dan pertanyaan analisis kinerja"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[10].blocks[6]","headers":["Langkah","Perhitungan","Hasil"],"first":"Samakan satuan","rows":3,"title":"Contoh penghitungan current ratio"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[10].blocks[14].blocks[0]","headers":["ID","Kelompok","Formula","Rumus","Satuan"],"first":"F-01","rows":20,"title":"Dua puluh formula rasio pada Exhibit 3.8"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[10].blocks[14].blocks[2]","headers":["Variabel","Arti"],"first":"Current assets / Current liabilities","rows":14,"title":"Arti variabel pada formula rasio"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[11].blocks[6]","headers":["Jenis pengetahuan","Arti","Implikasi pengelolaan"],"first":"Explicit knowledge","rows":2,"title":"Explicit knowledge dan tacit knowledge"},
++  {"tm":2,"reading":"Membaca lingkungan dan kemampuan perusahaan","at":"blocks[12].blocks[11].blocks[0]","headers":["Argumen diversity","Manfaat yang dijelaskan buku"],"first":"Cost","rows":6,"title":"Argumen manfaat diversity menurut buku"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[4].blocks[7]","headers":["Pengingat dari Chapter 1 (topik PPT4)","Arti"],"first":"Operational effectiveness","rows":2,"title":"Operational effectiveness dan strategic positioning"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[5].blocks[6]","headers":["Tekanan","Cost leadership","Differentiation"],"first":"Rivalry","rows":5,"title":"Cost leadership dan differentiation menghadapi Five Forces"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[5].blocks[10]","headers":["Enam pitfalls biaya rendah","Apa yang harus kamu periksa"],"first":"Fokus hanya pada sedikit kegiatan","rows":6,"title":"Enam pitfalls cost leadership"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[6].blocks[4]","headers":["Enam pitfalls diferensiasi","Masalah yang muncul"],"first":"Keunikan tidak bernilai","rows":6,"title":"Enam pitfalls differentiation"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[6].blocks[8]","headers":["Pitfall focus","Risiko dalam segmen"],"first":"Keunggulan biaya terkikis","rows":3,"title":"Pitfalls focus strategy"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[8].blocks[4].blocks[1]","headers":["Simbol","Arti menurut presentasi kelas"],"first":"V (Perceived Value)","rows":3,"title":"Arti V, C, dan V − C pada presentasi kelas"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[8].blocks[4].blocks[4]","headers":["Jenis","Arti menurut catatan kuliah"],"first":"Same-side effects","rows":2,"title":"Same-side effects dan cross-side effects menurut catatan kelas"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[8].blocks[13].blocks[0]","headers":["Faktor","Introduction","Growth","Maturity","Decline"],"first":"Generic strategies","rows":8,"title":"Delapan faktor pada empat tahap industry life cycle"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[9].blocks[13].blocks[0]","headers":["Manfaat Exhibit 6.4","Risiko Exhibit 6.4"],"first":"Sumber input atau kanal distribusi terjamin","rows":4,"title":"Manfaat dan risiko vertical integration"},
++  {"tm":3,"reading":"Memilih cara bersaing dan bisnis yang layak dimiliki","at":"blocks[11].blocks[3]","headers":["Cara","Manfaat","Risiko/batas"],"first":"Mergers and acquisitions","rows":3,"title":"Mergers and acquisitions, alliances, dan internal development"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[4].blocks[4]","headers":["Determinan","Arti dan hubungan strategis"],"first":"Factor endowments","rows":4,"title":"Empat determinan national competitive advantage"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[5].blocks[2]","headers":["Enam motivasi","Mekanisme dan contoh buku"],"first":"Increase market size","rows":6,"title":"Enam motivasi ekspansi internasional"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[5].blocks[9]","headers":["Dimensi","Pertanyaan","Kemungkinan"],"first":"Outsourcing","rows":2,"title":"Perbedaan outsourcing dan offshoring"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[5].blocks[13]","headers":["Biaya tersembunyi","Mengapa muncul"],"first":"Total wage costs","rows":7,"title":"Biaya tersembunyi outsourcing dan offshoring"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[6].blocks[3]","headers":["Strategi","Kombinasi tekanan","Pengaturan utama"],"first":"International","rows":4,"title":"Empat strategi menurut tekanan biaya dan adaptasi lokal"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[6].blocks[9]","headers":["Strategi / exhibit","Seluruh strengths","Seluruh limitations"],"first":"International / 7.4","rows":4,"title":"Strengths dan limitations empat strategi internasional"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[8].blocks[6]","headers":["Kriteria","Pertanyaan yang kamu jawab"],"first":"Attractive","rows":4,"title":"Empat kriteria entrepreneurial opportunity"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[8].blocks[14]","headers":["Perbedaan yang dilaporkan","Arti dalam buku"],"first":"Higher core self-evaluation","rows":5,"title":"Perbedaan perilaku entrepreneur yang dilaporkan buku"},
++  {"tm":4,"reading":"Menilai ekspansi internasional dan respons persaingan","at":"blocks[10].blocks[16].blocks[0]","headers":["Jenis/kategori","Seluruh contoh Exhibit 8.5"],"first":"Strategic: entering markets","rows":8,"title":"Contoh strategic actions dan tactical actions"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[4].blocks[7]","headers":["Aspek","Traditional","Contemporary"],"first":"Hubungan kegiatan","rows":4,"title":"Traditional control dan contemporary control"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[4].blocks[10]","headers":["Ciri","Artinya"],"first":"Strategically important changing information","rows":4,"title":"Ciri informational control yang efektif"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[5].blocks[5]","headers":["Enam ciri sistem efektif","Yang perlu kamu periksa"],"first":"Clear and accepted objectives","rows":6,"title":"Enam ciri reward system yang efektif"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[5].blocks[9]","headers":["Batas dalam action plans","Syarat yang dipertahankan"],"first":"Short-term objectives","rows":4,"title":"Syarat short-term objectives dan action plans"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[5].blocks[12]","headers":["Pendekatan Exhibit 9.5","Seluruh faktor situasional"],"first":"Culture","rows":3,"title":"Faktor situasional culture, rewards, dan boundaries"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[6].blocks[3]","headers":["Pihak","Peran menurut buku"],"first":"Shareholders","rows":3,"title":"Peran shareholders, management, dan board"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[6].blocks[6]","headers":["Dua masalah agency","Mekanisme masalah"],"first":"Agency problem","rows":2,"title":"Agency problem dan risk sharing"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[6].blocks[9]","headers":["Insentif eksekutif: tiga kebijakan buku","Tujuan"],"first":"Substantial stock ownership","rows":3,"title":"Tiga kebijakan insentif eksekutif"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[6].blocks[12]","headers":["Pandangan duality","Manfaat yang ditekankan","Masalah yang harus diuji"],"first":"Unity of command","rows":2,"title":"Unity of command dan agency theory pada CEO duality"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[6].blocks[13]","headers":["Lima kelompok mekanisme eksternal","Fungsi dan batas"],"first":"Market for corporate control","rows":5,"title":"Lima kelompok mekanisme governance eksternal"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[6].blocks[17]","headers":["Dimensi Exhibit 9.6","Principal–agent","Principal–principal"],"first":"Goal incongruence","rows":4,"title":"Principal–agent dan principal–principal conflicts"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[7].blocks[5]","headers":["Struktur","Pengelompokan dan kendali","Trade-off utama"],"first":"Simple","rows":6,"title":"Struktur simple, functional, divisional, dan matrix"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[7].blocks[12].blocks[0]","headers":["Exhibit 10.5","Seluruh advantages","Seluruh disadvantages"],"first":"Functional","rows":3,"title":"Advantages dan disadvantages struktur tradisional"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[8].blocks[3]","headers":["Alternatif struktur","Kebutuhan yang dijelaskan buku"],"first":"International division","rows":6,"title":"Alternatif struktur untuk operasi internasional"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[9].blocks[3]","headers":["Jenis","Fokus hubungan","Kendali dan batas"],"first":"Barrier-free","rows":3,"title":"Barrier-free, modular, dan virtual organizations"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[9].blocks[15]","headers":["Empat alat integrasi","Cara bekerja"],"first":"Common culture and shared values","rows":4,"title":"Empat alat integrasi boundaryless organization"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[9].blocks[17].blocks[0]","headers":["Exhibit","Seluruh pros","Seluruh cons"],"first":"10.6 Barrier-free","rows":3,"title":"Pros dan cons boundaryless organizations"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[10].blocks[3]","headers":["Kebutuhan","Exploitation/alignment","Exploration/adaptability"],"first":"Tugas","rows":4,"title":"Exploitation dan exploration dalam ambidexterity"},
++  {"tm":5,"reading":"Mengendalikan pelaksanaan strategi dan memilih desain organisasi","at":"blocks[10].blocks[7].blocks[0]","headers":["Desain dalam studi","Jumlah dari 35 upaya","Pengaturan"],"first":"Functional","rows":4,"title":"Empat desain organisasi dalam studi ambidexterity"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[4].blocks[4]","headers":["Kegiatan","Apa yang dikerjakan","Mengapa dibutuhkan"],"first":"Setting a direction","rows":3,"title":"Tiga kegiatan strategic leadership"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[4].blocks[8]","headers":["Pilihan strategi","Implikasi desain menurut buku"],"first":"Overall low-cost","rows":3,"title":"Implikasi pilihan strategi terhadap desain organisasi"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[5].blocks[3]","headers":["Hambatan","Mekanisme"],"first":"Vested interests in the status quo","rows":5,"title":"Hambatan perubahan organisasi"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[5].blocks[9]","headers":["Basis","Arti sehari-hari"],"first":"Legitimate","rows":6,"title":"Enam basis kekuasaan pemimpin"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[6].blocks[3]","headers":["Komponen","Definisi pada exhibit dan body"],"first":"Self-awareness","rows":5,"title":"Lima komponen emotional intelligence"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[6].blocks[6]","headers":["Kemampuan yang berguna","Risiko bila penerapannya berlebihan"],"first":"Empathy","rows":4,"title":"Manfaat dan risiko penerapan emotional intelligence"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[6].blocks[10]","headers":["Unsur","Praktik yang dijelaskan buku"],"first":"Mission/purpose","rows":5,"title":"Unsur learning organization"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[6].blocks[13]","headers":["Bentuk","Tempat mencari","Kebutuhan yang cocok"],"first":"Competitive benchmarking","rows":2,"title":"Competitive benchmarking dan functional benchmarking"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[7].blocks[4]","headers":["Karakteristik lengkap Exhibit 11.5","Compliance-based","Integrity-based"],"first":"Ethos","rows":5,"title":"Compliance-based dan integrity-based ethics programs"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[7].blocks[9]","headers":["Unsur","Yang harus kamu periksa"],"first":"Role models","rows":4,"title":"Unsur ethical organization"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[8].blocks[4]","headers":["Cara klasifikasi","Pembeda dan batas"],"first":"Product / process","rows":3,"title":"Klasifikasi innovation dan batas pembedanya"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[8].blocks[10]","headers":["Trait","Arti dan contoh sumber"],"first":"Associating","rows":5,"title":"Lima discovery skills inovator"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[8].blocks[13]","headers":["Lima dilema","Trade-off yang harus dijelaskan"],"first":"Seeds / weeds","rows":5,"title":"Lima dilema pengelolaan innovation"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[9].blocks[3]","headers":["Langkah","Apa yang diperiksa"],"first":"Redefine","rows":4,"title":"Langkah pemanfaatan kapabilitas untuk corporate entrepreneurship"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[9].blocks[6]","headers":["Aspek","Focused","Dispersed"],"first":"Tempat kegiatan","rows":4,"title":"Focused dan dispersed corporate entrepreneurship"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[9].blocks[12]","headers":["Penilaian","Pertanyaan sumber"],"first":"Market acceptance","rows":3,"title":"Kriteria evaluasi venture"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[9].blocks[15]","headers":["Aspek","Product champion","Exit champion"],"first":"Fokus","rows":4,"title":"Product champion dan exit champion"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[10].blocks[3]","headers":["Pilihan","Makna keputusan"],"first":"Grow/accelerate","rows":4,"title":"Pilihan keputusan real options"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[10].blocks[7]","headers":["Tiga kelompok pitfalls","Mekanisme risiko"],"first":"Back-solver dilemma","rows":3,"title":"Tiga kelompok pitfalls real options"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[10].blocks[11]","headers":["Dimensi lengkap Exhibit 12.3","Arti","Batas dalam body"],"first":"Autonomy","rows":5,"title":"Lima dimensi entrepreneurial orientation"},
++  {"tm":6,"reading":"Memimpin pembelajaran, menjaga etika, dan mengelola inovasi","at":"blocks[10].blocks[14]","headers":["Jenis risiko","Yang dipertaruhkan"],"first":"Business","rows":3,"title":"Business risk, financial risk, dan personal risk"},
++  {"tm":7,"reading":"Blue Ocean Strategy dan Strategy Maps","at":"blocks[31].blocks[15].blocks[0]","headers":["Sifat","Arti","Contoh atau akibat menurut buku"],"first":"Indirect","rows":4,"title":"Empat sifat penciptaan nilai intangible assets"}
++];
++
++export function reviewedTableTitle(reading: Reading, at: string, block: Extract<ContentBlock, { kind: 'table' }>): string | undefined {
++  return overrides.find(item => item.tm === reading.tm && item.reading === reading.title && item.at === at
++    && item.rows === block.rows.length && item.first === block.rows[0]?.[0]
++    && JSON.stringify(item.headers) === JSON.stringify(block.headers))?.title;
++}
+diff --git a/src/data/courses/tableTitles.ts b/src/data/courses/tableTitles.ts
+new file mode 100644
+index 0000000..50f53de
+--- /dev/null
++++ b/src/data/courses/tableTitles.ts
+@@ -0,0 +1,110 @@
++import type { ContentBlock, Reading } from '../../types';
++import { reviewedTableTitle } from './tableTitleOverrides';
++
++/** Remove source anchors and heading numbers, keeping the actual subject intact. */
++function subject(text: string): string {
++  return text
++    .replace(/\[hal\.[^\]]*\]/gi, '')
++    .replace(/\\([.*_()])/g, '$1')
++    .replace(/[*_`]/g, '')
++    .replace(/^\d+[a-z]?(?:\.\d+)*[.)]?\s+/i, '')
++    .replace(/\s*\(\d+\s*menit\)/gi, '')
++    .replace(/\s*·\s*\d+\s*menit/gi, '')
++    .replace(/\s*·\s*Konsep buku ASP/gi, '')
++    .replace(/\s+/g, ' ')
++    .replace(/[:.]$/, '')
++    .trim();
++}
++
++/** Numbered captions in finance/tax data already contain a descriptive table name. */
++function captionTitle(caption?: string): string | undefined {
++  const match = caption?.match(/^Tabel\s+(?:Solusi\s+Kasus\s+)?[\d.]+[a-z]?:\s*([^\n]+)/i);
++  // Do not cut at arbitrary periods or semicolons: s.d. 2025 and qualifiers carry meaning.
++  return match ? subject(match[1].split(/\s+(?:Sumber|Rujukan):/i)[0]) : undefined;
++}
++
++function isGeneric(text: string): boolean {
++  return /^(?:exam toolkit|alat bantu ujian|quick reference.*|daftar komponen lengkap|kesalahpahaman umum|jangan tertukar|jawaban pertanyaan kasus|ringkasan kasus|ringkasan konsep|kekeliruan umum saat ujian|pertanyaan untuk diskusi|orientasi.*|orientation.*|pembahasan|jawaban|penyelesaian|analisis|ringkasan|prinsip|exam traps)$/i.test(text);
++}
++
++function isTableLabel(text: string): boolean {
++  return text.split(/\s+/).length <= 18 && !/[?]|^(?:Q\d+\b|sumber\b|rujukan\b|buku\b|lihat\b|geser\b|klik\b|tampilkan\b)/i.test(text);
++}
++
++function columnSubject(headers: string[]): string {
++  return headers.map(subject).filter((header) => header && !/^(?:sumber|hal\.?|rujukan|no\.?|#)$/i.test(header)).slice(0, 3).join(' · ');
++}
++
++/** Also gives an independently rendered table a useful name. */
++export function getTableTitle(block: Extract<ContentBlock, { kind: 'table' }>): string {
++  return block.title || block.reportHeader?.title || captionTitle(block.caption) || columnSubject(block.headers) || 'Rincian data';
++}
++
++/**
++ * Resolve missing names from the section/lead-in that authors already supplied.
++ * Works on nested cases, disclosures, answers and review pages without changing source data.
++ * Source captions stay in the footer; they are never substituted for the subject.
++ */
++export function withTableTitles(reading: Reading): Reading {
++  function nameBlocks(blocks: ContentBlock[], parent: string, prefix: string): ContentBlock[] {
++    let section = parent;
++    let mainSection = parent;
++    let lead: string | undefined;
++    let exhibit: string | undefined;
++    const named = blocks.map((block, index): ContentBlock => {
++      const at = `${prefix}[${index}]`;
++      if (block.kind === 'h2' || block.kind === 'h3') {
++        const heading = subject(block.text);
++        const context = block.kind === 'h2' ? parent : mainSection;
++        section = isGeneric(heading) ? `${context} — ${heading}` : heading;
++        if (block.kind === 'h2') mainSection = section;
++        lead = undefined;
++        exhibit = undefined;
++      } else if (block.kind === 'p') {
++        // Only standalone labels, not the bold first word of a definition paragraph.
++        const label = block.text.match(/^\*\*([^*\n]+)\*\*(?:\s*\[hal\.[^\]]*\])?[.:]?$/)?.[1]
++          // A short colon-ended introduction is often more precise than the full case question.
++          ?? block.text.match(/^([^*\n]{8,160}):\s*$/)?.[1];
++        if (label && isTableLabel(label)) {
++          lead = subject(label);
++          exhibit = lead.match(/^(Exhibit\s+[\d.]+)\s*:/i)?.[1];
++        }
++        const part = block.text.match(/^\(([a-z])\)\s+([^.!?\n]+)[.!?](?:\s|$)/i)?.[2];
++        if (part && isTableLabel(part)) lead = `${exhibit ? `${exhibit} — ` : ''}${subject(part)}`;
++      }
++      if (block.kind === 'table') {
++        const title = block.title || block.reportHeader?.title || reviewedTableTitle(reading, at, block) || captionTitle(block.caption) || lead || section;
++        lead = undefined;
++        return { ...block, title };
++      }
++      if ('blocks' in block) {
++        const label = block.title ? subject(block.title) : undefined;
++        const context = label ? (isGeneric(label) ? `${section} — ${label}` : label) : section;
++        const nested = { ...block, blocks: nameBlocks(block.blocks, context, `${at}.blocks`) };
++        if (nested.kind === 'solution-reveal' && nested.promptBlocks) {
++          return { ...nested, promptBlocks: nameBlocks(nested.promptBlocks, context, `${at}.promptBlocks`) };
++        }
++        return nested;
++      }
++      if (block.kind === 'self-check') return { ...block, answer: nameBlocks(block.answer, section, `${at}.answer`) };
++      return block;
++    });
++    // When several tables share a topic, their columns explain which part each shows.
++    const counts = new Map<string, number>();
++    named.forEach((block) => {
++      if (block.kind === 'table' && block.title) counts.set(block.title, (counts.get(block.title) ?? 0) + 1);
++    });
++    return named.map((block, index) => block.kind === 'table' && !block.reportHeader && blocks[index].kind === 'table' && !(blocks[index] as Extract<ContentBlock, { kind: 'table' }>).title && !reviewedTableTitle(reading, `${prefix}[${index}]`, block) && (counts.get(block.title ?? '') ?? 0) > 1
++      ? { ...block, title: `${block.title} — ${columnSubject(block.headers)}` }
++      : block);
++  }
++  return { ...reading, blocks: nameBlocks(reading.blocks, subject(reading.title), 'blocks') };
++}
++
++/** Keep aligned amounts and side-by-side comparisons together at narrow widths. */
++export function keepTableColumns(block: Extract<ContentBlock, { kind: 'table' }>): boolean {
++  return Boolean(block.reportHeader || block.rowRules?.length || block.align?.includes('right')
++    || block.rows.some(row => row.slice(1).some(cell => /(?:\b(?:Rp|IDR|USD|EUR)\s*\d|[$€£]\s*\d|\d\s*%|^-?\d[\d.,]*(?:\s*[×x])?$)/.test(cell.trim())))
++    || (block.headers.length >= 3 && block.headers.slice(1).filter(header => !/^(?:sumber|hal\.?|rujukan)$/i.test(header.trim())).length >= 2
++      && block.headers.slice(1).filter(header => !/^(?:sumber|hal\.?|rujukan)$/i.test(header.trim())).every(header => !/arti|makna|contoh|rumus|penjelasan|catatan|implikasi|perlakuan|pertanyaan/i.test(header))));
++}
+diff --git a/src/index.css b/src/index.css
+index a074816..41acf63 100644
+--- a/src/index.css
++++ b/src/index.css
+@@ -1321,3 +1321,43 @@ html.dark body .driver-popover.driverjs-theme .driver-popover-navigation-btns bu
+ .report-rule-double { border-top: 3px double currentColor; }
+ .report-rule-bottom-double { border-bottom: 3px double currentColor; }
+ .akk203-diagram { color: rgb(var(--text-primary)); }
++
++/* Descriptive table titles wrap naturally in cards and narrow layouts. */
++/* Keep the descriptive title separate from column labels; reuse the site's palette. */
++.course-table-heading {
++  display: grid;
++  grid-template-columns: 18px minmax(0, 1fr) auto;
++  align-items: start;
++  gap: .75rem;
++  padding: .95rem 1.1rem;
++  border-bottom: 1px solid rgb(var(--border));
++  background: rgb(var(--surface-elevated));
++}
++.course-table-heading--flat { padding-inline: 0; background: transparent; }
++.course-table-heading-icon { margin-top: 1.05rem; color: rgb(var(--accent)); }
++.course-table-eyebrow {
++  margin-bottom: .25rem;
++  color: rgb(var(--accent));
++  font-size: 10px;
++  font-weight: 700;
++  line-height: 1.25;
++  letter-spacing: .1em;
++  text-transform: uppercase;
++}
++.course-table-title {
++  overflow-wrap: anywhere;
++  color: rgb(var(--text-primary));
++  font-size: 16px;
++  font-weight: 700;
++  line-height: 1.45;
++  text-transform: none;
++  letter-spacing: normal;
++}
++.course-table-hint { align-self: end; color: rgb(var(--text-secondary)); font-size: 11px; line-height: 1.5; }
++.course-table-hint:has(> .md\:hidden) { display: none; }
++@media (max-width: 767px) {
++  .course-table-heading { grid-template-columns: 18px minmax(0, 1fr); gap: .6rem; padding: .85rem 1rem; }
++  .course-table-heading--flat { padding-inline: 0; }
++  .course-table-hint { grid-column: 2; }
++  .course-table-hint:has(> .md\:hidden) { display: block; }
++}
+diff --git a/src/types.ts b/src/types.ts
+index afb2729..6a569ff 100644
+--- a/src/types.ts
++++ b/src/types.ts
+@@ -140,7 +140,7 @@ export type ContentBlock =
+   | { kind: 'ul'; items: string[] }
+   | { kind: 'ol'; items: string[] }
+   | { kind: 'callout'; variant: CalloutVariant; title?: string; text: string; compact?: boolean }
+-  | { kind: 'table'; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
++  | { kind: 'table'; /** Judul isi tabel; caption untuk sumber atau catatan. */ title?: string; headers: string[]; rows: string[][]; caption?: string; /** Di ponsel: satu baris = satu kartu. */ stackOnMobile?: boolean;
+       /** Perataan kolom di tabel desktop (dari penanda markdown `---:`); null = bawaan. */ align?: Array<'left' | 'center' | 'right' | null>;
+       reportHeader?: { entity: string; title: string; period?: string; unit?: string; note?: string };
+       rowRules?: { row: number; columns: number[]; bottom: 'double' }[] }

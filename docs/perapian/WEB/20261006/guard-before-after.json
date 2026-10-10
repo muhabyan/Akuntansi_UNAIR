@@ -1,0 +1,98 @@
+[
+  {
+    "file": "src/components/course/CourseBlockCard.tsx",
+    "before": {
+      "worktree": "c11f475fbda700e647bb3459bfd568bb2d95e47af19eefb7ab09e74678386679",
+      "repository": "f6c633c82e441a28e2cd5489bb5957cbb4be719d298ac16d00df58e70f68fca7"
+    },
+    "after": {
+      "worktree": "da8d3770d2b79be94e447760a28c0cb295a76e3645293bea32b932af3066b0ce",
+      "repository": "47263e100cb90224d8fb6f53b158b92f6099a2d08a6c7cd6f3c57310831ea858"
+    },
+    "reason": "Reviewed title/phone-table presentation diff; no figure or lifecycle changes"
+  },
+  {
+    "file": "src/components/course/CourseLayout.tsx",
+    "before": {
+      "worktree": "045c72e2d8b5ac5b0377921a75e57ec611b3e994a454c3db3a35488a24e10ea2",
+      "repository": "fd01fcecf8e0a455d245931eca5dee0361465bff2d2f7b6a8612793da27cc919"
+    },
+    "after": {
+      "worktree": "64bf97728b29c5db3d90d7a87843e1700ea59988a97eb8dfa6063883fbd697d1",
+      "repository": "bbbf8e3d41308a9a838ba64873854c193e68256458cad3c6e89e2ad177dc5b5d"
+    },
+    "reason": "Reviewed title/phone-table presentation diff; no figure or lifecycle changes"
+  },
+  {
+    "file": "src/components/course/LayeredBlocks.tsx",
+    "before": {
+      "worktree": "3d80d94bad2aacd23b581344ce538ad62a03438b7b5f8d01f97ada5f8d0136ad",
+      "repository": "df41e88353f60f7c9ceb669aaef37cb3c7daae116724b90d78389446f2d2df2e"
+    },
+    "after": {
+      "worktree": "f89de282995a0b2dba2b49b5bdac5237dd68fa97c83d452b112328140cf8b5c1",
+      "repository": "0c43c542b904258e3e1b8bb017266aa1daa55ff6c015f382dddb89553e92afcb"
+    },
+    "reason": "Reviewed title/phone-table presentation diff; no figure or lifecycle changes"
+  },
+  {
+    "file": "src/components/course/ReportTable.tsx",
+    "before": {
+      "worktree": "b75d77343709c5ed68d8ed43c9df24a06f9c725dec07c97f7c8c1a853024fb47",
+      "repository": "5f3cb93d988cb7f101dc8a158adb23908d9a0f115a005ae281c5887b350dde40"
+    },
+    "after": {
+      "worktree": "bbc9982a1dee158d7a9f0dd6bfd55ca7f9aaa73489b2358e9259594fd0070a46",
+      "repository": "12004f830f0b54613e2175340479b18dbb034b2286ebe289a49e42f75c49399e"
+    },
+    "reason": "Reviewed title/phone-table presentation diff; no figure or lifecycle changes"
+  },
+  {
+    "file": "src/types.ts",
+    "before": {
+      "worktree": "6b74bfd46a6f93281dc38a99ace8e6e633b8d9383f76926087619897b029e2a9",
+      "repository": "05a0227f8c845dd47cb3b907b8e6c3159f2da75c1a1d19275e86ddc97eff99e7"
+    },
+    "after": {
+      "worktree": "5bb49cd638df2ee99f9e50d24a48ee6dd3716aeb3de4585e46bcc6a9d08023ac",
+      "repository": "f7030e09965f015e1ba242fcb7bafd5d2afaac1281f7fda6e5ff15876efb83e8"
+    },
+    "reason": "Optional presentation-only table title field"
+  },
+  {
+    "file": "src/data/manstrat/modules/tm1.ts",
+    "action": "Restore existing guarded LF checkout bytes; no guard entry or academic string changed",
+    "beforeSha256": "9f2ffef9ee144a44b7daee2af876f441d07f193dde362fe377393524bd6a805f",
+    "afterSha256": "40417389340329d8744d50e165fcd0ffd522bab140b3614dd7b86bfdb65c6545"
+  },
+  {
+    "file": "src/data/manstrat/modules/tm2.ts",
+    "action": "Restore existing guarded LF checkout bytes; no guard entry or academic string changed",
+    "beforeSha256": "a1a17574da84e9680d9439b7f77ca6e6a9cd08d4d53a4ee3f4c33d3cc0b23dda",
+    "afterSha256": "78081c5ab71e018123d1a06a6215aae04444cc3c34937b3138a21cf7689eb617"
+  },
+  {
+    "file": "src/data/manstrat/modules/tm3.ts",
+    "action": "Restore existing guarded LF checkout bytes; no guard entry or academic string changed",
+    "beforeSha256": "5da4b56879bd65cf197949e122250b3f66359df8b113c48bf8ac4a962ab5dafb",
+    "afterSha256": "c60f5dad16e1b6496fd648f153b8c7834690274c2113903004a50ad6aaedc383"
+  },
+  {
+    "file": "src/data/manstrat/modules/tm4.ts",
+    "action": "Restore existing guarded LF checkout bytes; no guard entry or academic string changed",
+    "beforeSha256": "924d87900866c2a8ff39d113659d38a077e8484f1016670ceffb558ebbb82af5",
+    "afterSha256": "3b0b20e5ebb986b43ef5b88aeab134df5f41643e661bc84b0b3561bb8dd3da44"
+  },
+  {
+    "file": "src/data/manstrat/modules/tm5.ts",
+    "action": "Restore existing guarded LF checkout bytes; no guard entry or academic string changed",
+    "beforeSha256": "5fb5a3ce4f2b7f1fc8abb4e17b8d85fc6e5e057f5b11379bf3599056d7b7b773",
+    "afterSha256": "e77db92eb46009da985d8a7897edced728ab0bb1f45828bf738bae6c162f40b8"
+  },
+  {
+    "file": "src/data/manstrat/modules/tm6.ts",
+    "action": "Restore existing guarded LF checkout bytes; no guard entry or academic string changed",
+    "beforeSha256": "232b406882724fc7321f5f17183714d08b22e1f5a1cd1d5fb7a7526426e599cc",
+    "afterSha256": "3a8d0d7e9ffd9831a13d60f342891ace0a2a3502bb3d3e8ee3edb56b2225dc18"
+  }
+]

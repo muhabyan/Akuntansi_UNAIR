@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "checks": 25,
+  "passed": 25,
+  "failed": 0,
+  "failures": []
+}
+Supabase URL or Anon Key is missing. Check your environment variables.

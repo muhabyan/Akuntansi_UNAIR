@@ -1,0 +1,2380 @@
+{
+  "scope": "929 preUTS tables; before old PR45 inference, after local WIP",
+  "changed": 144,
+  "entries": [
+    {
+      "code": "MNU108",
+      "tm": 1,
+      "at": "blocks[152]",
+      "before": "Q1. Karakteristik manajerial positif dan negatif apa yang dimiliki Keisha? Bagaimana kaitannya dengan technical, human, dan conceptual skills?",
+      "after": "Keisha: perilaku positif dan negatif menurut tiga management skills",
+      "headers": [
+        "Skill",
+        "Positif",
+        "Negatif"
+      ],
+      "first": [
+        "**Technical**",
+        "Penata rambut terbaik dengan banyak pelanggan setia; paham operasi salon [hal. 49]",
+        "Masih mengandalkan cara kerja \"mengerjakan sendiri\""
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 1,
+      "at": "blocks[160]",
+      "before": "Q3. Bagaimana kamu menangani insiden dengan Marianne, Carol Jean, dan Victoria?",
+      "after": "Pilihan penanganan insiden Marianne, Carol Jean, dan Victoria",
+      "headers": [
+        "Orang",
+        "Yang terjadi",
+        "Penanganan yang disarankan",
+        "Dasar teori"
+      ],
+      "first": [
+        "**Marianne** (resepsionis)",
+        "Dijadikan penyampai ancaman ke Carol Jean; menyaksikan kemarahan",
+        "Berterima kasih atas informasinya; minta ia fokus menjadwal ulang pelanggan; **Keisha sendiri** yang menghubungi Carol Jean",
+        "Komunikasi langsung (Exh. 1.5 #1); disturbance handler adalah peran manajer [hal. 15, 21]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 1,
+      "at": "blocks[168]",
+      "before": "Leading Edge Management — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen utama manajemen dan artinya",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "4 fungsi",
+        "Planning, Organizing, Leading, Controlling",
+        "8–10"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 1,
+      "at": "blocks[170]",
+      "before": "Leading Edge Management — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian tentang konsep manajemen",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "Posisi management science",
+        "\"Perspektif ketiga yang terpisah dari classical\"",
+        "Menurut buku, management science adalah **subbidang ke-4 classical perspective** (hal. 27). RPP mendaftarnya berdampingan dengan classical dan humanistic; kalau ditanya klasifikasinya, pakai versi buku.",
+        "27"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 2,
+      "at": "blocks[148]",
+      "before": "Ya. Buku menyebut langsung tiga pemicunya , dan ketiganya adalah sektor lingkungan eksternal di Chapter 2",
+      "after": "Tiga pemicu perubahan lingkungan pada kasus Cam",
+      "headers": [
+        "Pemicu di kasus",
+        "Sektor lingkungan",
+        "Teori"
+      ],
+      "first": [
+        "\"An increasingly younger workforce\"",
+        "**Labor market** (task environment); buku menyebut masuknya Gen Z sebagai tren labor market",
+        "[hal. 57]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 2,
+      "at": "blocks[152]",
+      "before": "Q2. Investigasi tambahan apa yang bisa dilakukan Wheeling dan Zeitland sebelum menetapkan rencana tindakan untuk Cam?",
+      "after": "Investigasi tambahan untuk memahami kinerja Cam",
+      "headers": [
+        "Sumber",
+        "Investigasi yang disarankan",
+        "Tujuan"
+      ],
+      "first": [
+        "**Personal internal**",
+        "Berbicara dengan anggota tim Cam untuk memahami arti skor \"neutral\"",
+        "Menjawab hal yang ingin Wheeling gali (\"flesh that one out\") [hal. 82]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 2,
+      "at": "blocks[157]",
+      "before": "Q3. Di kuadran mana Exhibit 2.7 kamu menempatkan Cam? Langkah apa yang kamu rekomendasikan agar Cam lebih terhubung dengan bawahannya?",
+      "after": "Posisi Cam pada matriks culture dan performance",
+      "headers": [
+        "Sumbu Exhibit 2.7",
+        "Bukti di kasus",
+        "Posisi"
+      ],
+      "first": [
+        "Attention to business performance",
+        "Tim berkinerja setara divisi lain; follow-through mencapai tujuan perusahaan dinilai cukup baik; Cam sangat task-oriented [hal. 82]",
+        "Tinggi"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 2,
+      "at": "blocks[168]",
+      "before": "The Environment and Corporate Culture — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen lingkungan dan corporate culture",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "Task environment (4)",
+        "Customers, Competitors, Suppliers, Labor market",
+        "54–57"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 2,
+      "at": "blocks[170]",
+      "before": "The Environment and Corporate Culture — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian lingkungan dan corporate culture",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "Jumlah dimensi general environment",
+        "\"Lima dimensi\"",
+        "**Enam dimensi.** Teks utama (hal. 55, 58) dan Exhibit 2.1 (hal. 54) menyebut enam; box Remember This (hal. 58) menulis \"five dimensions\". Untuk ujian, jawab enam.",
+        "54, 55, 58"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 3,
+      "at": "blocks[18]",
+      "before": "Buku membuka bab dengan tiga kekeliruan perusahaan di luar negeri",
+      "after": "International Management dan Borderless World",
+      "headers": [
+        "Istilah",
+        "Arti sederhana",
+        "Sumber"
+      ],
+      "first": [
+        "**International management**",
+        "Manajemen operasi bisnis yang dijalankan di lebih dari satu negara",
+        "[hal. 86]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 3,
+      "at": "blocks[94]",
+      "before": "↑ High context",
+      "after": "Urutan negara dari high context ke low context",
+      "headers": [
+        "Urutan",
+        "Budaya"
+      ],
+      "first": [
+        "1",
+        "Chinese"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 3,
+      "at": "blocks[152]",
+      "before": "Analisis Kasus: We Want More Guitars! — Jawaban Pertanyaan Kasus",
+      "after": "Tantangan produksi dalam kasus We Want More Guitars",
+      "headers": [
+        "Yang tampak di kasus",
+        "Dimensi yang relevan",
+        "Catatan"
+      ],
+      "first": [
+        "Adam menekankan volume, alur yang lancar, dan \"streamline\"; Salvador menekankan kebanggaan pada setiap karya dan keunikan tiap instrumen [hal. 114]",
+        "**Performance orientation** (AS: High) [hal. 104]; **masculinity** (prestasi, kesuksesan materi; AS peringkat 4) [hal. 102–103]",
+        "Keduanya sama-sama mengejar keunggulan, tetapi definisinya berbeda: output vs mutu keahlian. Buku tidak memberi data Spanyol untuk dimensi ini"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 3,
+      "at": "blocks[156]",
+      "before": "Q3. Apa yang kamu rekomendasikan agar Adam menaikkan produksi di lingkungan bisnis yang tampak tidak menghargai produksi tinggi?",
+      "after": "Rekomendasi peningkatan produksi untuk Adam",
+      "headers": [
+        "Langkah",
+        "Dasar teori"
+      ],
+      "first": [
+        "Jalankan arahan Fletcher: bicara dengan Salvador lebih dulu, cari tahu apa yang cocok bagi timnya, dan tunda rencana yang sudah jadi",
+        "Global mind-set, social dimension: membangun hubungan saling percaya [hal. 90–91]; arahan di kasus [hal. 114]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 3,
+      "at": "blocks[164]",
+      "before": "Managing in a Global Environment — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen utama manajemen global",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "Global mind-set (Exh. 3.2)",
+        "Cognitive, Psychological, Social",
+        "90–91"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 3,
+      "at": "blocks[166]",
+      "before": "Managing in a Global Environment — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian manajemen global",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "International management",
+        "\"Punya fungsi manajemen khusus yang berbeda\"",
+        "Fungsinya **sama** (planning, organizing, leading, controlling); yang berbeda adalah tingkat kesulitan dan risikonya",
+        "86"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[38]",
+      "before": "Menjadi etis selalu berkaitan dengan mengambil keputusan . Buku memberi dua rumusan ethical dilemma",
+      "after": "Dua rumusan ethical dilemma dalam buku",
+      "headers": [
+        "Rumusan",
+        "Isi",
+        "Sumber"
+      ],
+      "first": [
+        "Teks subbab 4-1c",
+        "Situasi tentang benar atau salah ketika **nilai-nilai saling bertentangan**; benar dan salah tidak dapat diidentifikasi dengan jelas",
+        "[hal. 122]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[77]",
+      "before": "Corporation (pusat)",
+      "after": "Stakeholder dan tuntutannya terhadap perusahaan",
+      "headers": [
+        "Stakeholder",
+        "Kepentingannya menurut buku",
+        "Sumber"
+      ],
+      "first": [
+        "Investors and shareholders",
+        "Efisiensi manajerial: penggunaan sumber daya untuk mencapai laba",
+        "[hal. 132]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[88]",
+      "before": "Sustainability = irisan ketiganya",
+      "after": "Hubungan people, planet, dan profit dalam sustainability",
+      "headers": [
+        "P",
+        "Yang diukur",
+        "Sumber"
+      ],
+      "first": [
+        "**People**",
+        "Kinerja sosial: praktik kerja yang adil, diversitas, hubungan dengan pemasok, perlakuan terhadap karyawan, kontribusi pada komunitas",
+        "[hal. 135–136]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[154]",
+      "before": "Q1. Bagaimana Ken Bodine membentuk budaya penjualan di Pace Technologies? Apakah ia menunjukkan ethical leadership? Jelaskan. Menurutmu, budaya ini berada di level perkembangan etis preconventional, conventional, atau postconventional? Mengapa?",
+      "after": "Budaya penjualan Pace Technologies dan ethical leadership Ken Bodine",
+      "headers": [
+        "Cara",
+        "Bukti di kasus"
+      ],
+      "first": [
+        "Rekrutmen",
+        "Merekrut lulusan terbaik dari dua sekolah bisnis dengan gaji tinggi"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[161]",
+      "before": "Q2. Apa yang sebaiknya dilakukan Ali Sloan? Apa yang benar-benar akan kamu lakukan bila berada di posisinya? Jelaskan",
+      "after": "Pilihan tindakan Ali Sloan dan alasannya",
+      "headers": [
+        "Pilihan Ali",
+        "Dinilai dengan teori",
+        "Catatan"
+      ],
+      "first": [
+        "Diam dan membiarkan Cody presentasi",
+        "Tidak lolos tes practical approach: sulit dijelaskan kepada keluarga atau diumumkan di berita malam [hal. 126]. Buku juga menyebut organisasi bergantung pada orang yang mau bersuara [hal. 141]",
+        "Menghindari risiko pribadi, tetapi membiarkan masalah berlanjut"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[166]",
+      "before": "Q3. Bagaimana keputusan Cody Rudisell bisa berbeda bila ia memakai utilitarian approach, individualism approach, atau practical approach? Pendekatan mana yang tampaknya ia pakai?",
+      "after": "Keputusan Cody menurut utilitarian, individualism, dan practical approach",
+      "headers": [
+        "Pendekatan",
+        "Pertanyaan yang harus diajukan Cody",
+        "Arah keputusannya"
+      ],
+      "first": [
+        "**Utilitarian** [hal. 124]",
+        "Apa dampaknya bagi **semua** pihak: Raleigh-Tech, calon klien, Pace (reputasi dan risiko hukum), Ali, dan pasar?",
+        "Keuntungan untuk Cody dan mungkin Pace dalam jangka pendek harus ditimbang dengan kerugian bagi banyak pihak lain; kemungkinan besar tidak memakai map itu"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[175]",
+      "before": "Managing Ethics and Social Responsibility — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen managerial ethics dan tanggung jawab sosial",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "Tiga domain tindakan (Exh. 4.1)",
+        "Codified law (legal standard), Ethics (social standard), Free choice (personal standard)",
+        "119"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 4,
+      "at": "blocks[177]",
+      "before": "Managing Ethics and Social Responsibility — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian etika dan tanggung jawab sosial",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "Legal vs etis",
+        "\"Kalau tidak melanggar hukum, pasti etis\"",
+        "Ada **tiga** domain; domain etika tidak diatur hukum khusus tetapi punya standar sosial",
+        "119"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 5,
+      "at": "blocks[26]",
+      "before": "Siklus: langkah 5 kembali ke langkah 1",
+      "after": "Lima langkah perencanaan dan umpan baliknya",
+      "headers": [
+        "Langkah",
+        "Isi (Exh. 5.2)",
+        "Penjelasan teks"
+      ],
+      "first": [
+        "**1. Develop the Plan**",
+        "Define mission, vision; Set goals; Manage goal conflict",
+        "Menetapkan misi dan strategic goals serta mekanisme mengelola konflik tujuan"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 5,
+      "at": "blocks[54]",
+      "before": "Siklus: langkah 4 kembali ke langkah 1",
+      "after": "Empat langkah management by objectives dan umpan baliknya",
+      "headers": [
+        "Langkah",
+        "Isi",
+        "Sumber"
+      ],
+      "first": [
+        "1. Set goals",
+        "Corporate strategic goals → departmental goals → individual goals",
+        "[hal. 162]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 5,
+      "at": "blocks[175]",
+      "before": "Q1. Goal atau misi apa untuk Central City Museum yang secara pribadi kamu sukai? Sebagai direktur, apakah kamu akan mencoba menerapkan arah pilihanmu? Jelaskan",
+      "after": "Pilihan arah dan misi Central City Museum",
+      "headers": [
+        "Arah",
+        "Kelebihan menurut fakta kasus",
+        "Kelemahan menurut fakta kasus"
+      ],
+      "first": [
+        "Komunitas lokal (donor)",
+        "Sesuai harapan pemberi dana gedung; misi yang mudah dipahami dan memotivasi [hal. 156]",
+        "Menurut kepala departemen, sumber daya tidak cukup untuk melayani komunitas luas; kurang terkait dengan pemahaman universitas soal pendidikan mahasiswa"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 5,
+      "at": "blocks[180]",
+      "before": "Q2. Bagaimana kamu menyelesaikan konflik mendasar di antara stakeholder kunci tentang arah dan goal museum? Tindakan apa yang akan kamu ambil?",
+      "after": "Pilihan penyelesaian konflik stakeholder museum",
+      "headers": [
+        "Cara menurut buku",
+        "Tindakan direktur",
+        "Hal."
+      ],
+      "first": [
+        "**Build a coalition**",
+        "Berbicara langsung dengan setiap narasumber dan pihak lain (mahasiswa, sekolah sekitar, staf), memetakan siapa mendukung arah apa dan mengapa, lalu membangun dukungan untuk satu rumusan misi",
+        "158"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 5,
+      "at": "blocks[194]",
+      "before": "Planning and Goal Setting — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen utama goal setting dan planning",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "Tingkatan goal dan plan (Exh. 5.1)",
+        "Mission; Strategic (senior management); Tactical (middle management); Operational (lower management)",
+        "151–154"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 5,
+      "at": "blocks[196]",
+      "before": "Planning and Goal Setting — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian goal setting dan planning",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "Goal vs plan",
+        "\"Sama saja\"",
+        "Goal = tujuan masa depan (ends); plan = cara hari ini (means)",
+        "151"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[22]",
+      "before": "Setiap organisasi tumbuh, makmur, atau gagal karena keputusan manajernya. Contoh lain di pembuka bab",
+      "after": "Arti decision dan decision making",
+      "headers": [
+        "Istilah",
+        "Arti",
+        "Sumber"
+      ],
+      "first": [
+        "**Decision**",
+        "Pilihan dari alternatif yang tersedia",
+        "[hal. 195]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[73]",
+      "before": "Siklus: langkah 6 kembali ke langkah 1",
+      "after": "Enam langkah pengambilan keputusan dan umpan baliknya",
+      "headers": [
+        "Langkah",
+        "Inti menurut buku",
+        "Sumber"
+      ],
+      "first": [
+        "1. Recognition of decision requirement",
+        "Menyadari adanya **problem** atau **opportunity**",
+        "[hal. 205–206]"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[103]",
+      "before": "Situation + Personal Decision Style → Decision Choice",
+      "after": "Hubungan situasi, gaya pribadi, dan pilihan keputusan",
+      "headers": [
+        "Unsur",
+        "Isi (Exh. 6.5)"
+      ],
+      "first": [
+        "**Situation**",
+        "Programmed/nonprogrammed; classical, administrative, political; decision steps"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[178]",
+      "before": "Q1. Gaya keputusan apa yang dipakai John Mitchell (Exhibit 6.5), dan kesalahan apa yang menurutmu ia buat dalam menyelesaikan masalah keterbatasan ruang kantor? Jelaskan",
+      "after": "Gaya dan kesalahan keputusan John Mitchell",
+      "headers": [
+        "Ciri directive dan contohnya di buku [hal. 212]",
+        "Bukti dari kasus [hal. 224]"
+      ],
+      "first": [
+        "Menyukai solusi sederhana dan jelas; memutuskan cepat",
+        "Keputusan disampaikan sebagai final, langsung tanpa basa-basi"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[184]",
+      "before": "Q2. Pendekatan keputusan apa yang akan kamu pakai bila menjadi Mitchell? Mengapa?",
+      "after": "Pilihan pendekatan keputusan untuk masalah Mitchell",
+      "headers": [
+        "Langkah",
+        "Tindakan Mitchell",
+        "Hal."
+      ],
+      "first": [
+        "1. Recognition",
+        "Merumuskan masalahnya: ruang kantor harus dibagi ulang karena pemangkasan anggaran dan pertumbuhan Greenways",
+        "205–206"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[188]",
+      "before": "Q3. Apa saja opsi Krista Acklen untuk merespons keputusan Mitchell? Apa yang sebaiknya ia lakukan sekarang? Mengapa?",
+      "after": "Opsi respons Krista Acklen terhadap keputusan Mitchell",
+      "headers": [
+        "Opsi",
+        "Kelebihan",
+        "Kelemahan"
+      ],
+      "first": [
+        "A. Menerima tanpa syarat dan menjalankan keputusan",
+        "Cepat; menjaga hubungan dengan Mitchell dan kantor wali kota",
+        "Keberatan tentang proses tidak tersampaikan; staf bisa merasa tidak dihormati"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[199]",
+      "before": "Managerial Decision Making — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen utama managerial decision making",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "Jenis keputusan",
+        "Programmed; Nonprogrammed",
+        "195"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 6,
+      "at": "blocks[201]",
+      "before": "Managerial Decision Making — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian managerial decision making",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "Decision vs decision making",
+        "\"Sama saja\"",
+        "Decision = pilihan; decision making = proses sebelum dan sesudah pilihan",
+        "195"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 7,
+      "at": "blocks[227]",
+      "before": "Kelebihan dan kekurangan diambil dari baris Functional dan Divisional di Exh. 7.10 , lalu dicocokkan dengan kasus",
+      "after": "Kelebihan dan kekurangan struktur functional dan divisional pada kasus",
+      "headers": [
+        "Struktur",
+        "Kelebihan (Exh. 7.10)",
+        "Kekurangan (Exh. 7.10)",
+        "Yang terlihat di kasus"
+      ],
+      "first": [
+        "**Awal (functional)**",
+        "Efficient use of resources; economies of scale · In-depth skill specialization and development · Top manager direction and control",
+        "Poor communication across functional departments · Slow response to external changes; lagging innovation · Decisions concentrated at the top of hierarchy, creating delay",
+        "Fakta kasus: struktur ini \"provided excellent quality control\". Kekurangan \"poor communication across functional departments\" terlihat pada konflik ruang saat promosi Coke dan koordinasi yang \"terrible\""
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 7,
+      "at": "blocks[239]",
+      "before": "Designing Organization Structure — Alat Bantu Ujian — Quick Reference: Daftar Komponen Lengkap",
+      "after": "Komponen utama desain struktur organisasi",
+      "headers": [
+        "Kerangka",
+        "Komponen",
+        "Hal."
+      ],
+      "first": [
+        "Organization structure (3 unsur)",
+        "Tugas formal; hubungan pelaporan formal; sistem koordinasi antardepartemen",
+        "228–229"
+      ]
+    },
+    {
+      "code": "MNU108",
+      "tm": 7,
+      "at": "blocks[241]",
+      "before": "Designing Organization Structure — Alat Bantu Ujian — Exam Traps",
+      "after": "Jebakan ujian desain struktur organisasi",
+      "headers": [
+        "Jebakan",
+        "Jawaban salah",
+        "Jawaban benar",
+        "Hal."
+      ],
+      "first": [
+        "Division of labor",
+        "\"Makin tinggi spesialisasi makin baik\"",
+        "Efisien, tetapi spesialisasi berlebihan mengisolasi karyawan dan menghambat koordinasi",
+        "230"
+      ]
+    },
+    {
+      "code": "MNK201",
+      "tm": 3,
+      "at": "blocks[4]",
+      "before": "Kamus simbol matematis dan tombol kalkulator TVM",
+      "after": "Arti simbol pada rumus TVM",
+      "headers": [
+        "Simbol",
+        "Nama Finansial",
+        "Bahasa Manusia (Maksud Aslinya)",
+        "Contoh Konkret di Soal"
+      ],
+      "first": [
+        "$PV$",
+        "Present Value",
+        "**Nilai Sekarang / Modal Awal**. Jumlah uang tunai hari ini di tangan ($t=0$).",
+        "Uang tabungan awal Rp 10.000.000 yang Anda setorkan ke bank hari ini."
+      ]
+    },
+    {
+      "code": "MNK201",
+      "tm": 6,
+      "at": "blocks[12].blocks[1]",
+      "before": "Soal Asistensi 2: Analisis 5 Kriteria & Konflik WACC Project X vs Project Y",
+      "after": "Arus kas Project X dan Project Y",
+      "headers": [
+        "Tahun (t)",
+        "Project X (Cepat Panen)",
+        "Project Y (Anuitas Merata)"
+      ],
+      "first": [
+        "0 (Modal Awal)",
+        "-$10.000",
+        "-$10.000"
+      ]
+    },
+    {
+      "code": "MNK201",
+      "tm": 6,
+      "at": "blocks[13].blocks[10]",
+      "before": "Perhitungan Discounted Payback Period (Waktu Balik Modal Terdiskon)",
+      "after": "Hasil lima metode evaluasi Project X dan Project Y pada WACC 12%",
+      "headers": [
+        "Metode Evaluasi",
+        "Project X",
+        "Project Y",
+        "Pemenang (WACC = 12%)"
+      ],
+      "first": [
+        "Net Present Value (NPV)",
+        "+966,01",
+        "+630,72",
+        "**Project X**"
+      ]
+    },
+    {
+      "code": "AKA201",
+      "tm": 1,
+      "at": "blocks[7].blocks[3]",
+      "before": "Bayangkan manajer bank yang akan memberi pinjaman. Suku bunganya ditentukan terutama oleh",
+      "after": "Tiga komponen suku bunga pinjaman bank",
+      "headers": [
+        "Komponen",
+        "Arti",
+        "Dipengaruhi audit?"
+      ],
+      "first": [
+        "Risk-free interest rate",
+        "Kira-kira imbal hasil surat utang pemerintah jangka yang sama",
+        "Tidak"
+      ]
+    },
+    {
+      "code": "AKA201",
+      "tm": 6,
+      "at": "blocks[7].blocks[3]",
+      "before": "Prinsip",
+      "after": "Prinsip komunikasi dan respons terhadap ancaman ganti auditor",
+      "headers": [
+        "Prinsip",
+        "Dasar"
+      ],
+      "first": [
+        "Opini ditentukan oleh bukti dan standar, bukan hasil negosiasi",
+        "ISA705 paras. 6–9; TM04 (pertimbangan profesional)"
+      ]
+    },
+    {
+      "code": "AKK202",
+      "tm": 3,
+      "at": "blocks[24]",
+      "before": "Sumber daya alam mencakup minyak bumi, gas alam, mineral tambang, dan kayu hutan (Kieso pp. 857–862). Dasar deplesi disusun dari komponen berikut",
+      "after": "Komponen dasar deplesi sumber daya alam",
+      "headers": [
+        "Komponen",
+        "Isi",
+        "Perlakuan"
+      ],
+      "first": [
+        "Biaya akuisisi",
+        "Harga perolehan hak properti atau hak sewa untuk mencari dan mengekstraksi sumber daya alam",
+        "Masuk dasar deplesi"
+      ]
+    },
+    {
+      "code": "AKK202",
+      "tm": 6,
+      "at": "blocks[38].blocks[15]",
+      "before": "Tahun yang tidak ditampilkan Kieso",
+      "after": "Saldo garansi jaminan dan jasa per 31 Desember",
+      "headers": [
+        "31 Desember",
+        "Warranty Liability (jaminan)",
+        "Unearned Warranty Revenue (jasa)",
+        "Warranty Revenue tahun berjalan"
+      ],
+      "first": [
+        "2025",
+        "€200",
+        "€900",
+        "—"
+      ]
+    },
+    {
+      "code": "PJK301",
+      "tm": 1,
+      "at": "blocks[5]",
+      "before": "Saat mulai dan berakhirnya kewajiban pajak subjektif menurut Pasal 2A UU PPh",
+      "after": "Saat mulai dan berakhirnya kewajiban pajak subjektif menurut Pasal 2A UU PPh; identifikasi jenis subjek sebelum memilih jawaban",
+      "headers": [
+        "Jenis subjek",
+        "Mulai kewajiban pajak subjektif",
+        "Berakhir kewajiban pajak subjektif"
+      ],
+      "first": [
+        "Orang pribadi dalam negeri",
+        "Saat dilahirkan, berada, atau berniat bertempat tinggal di Indonesia sesuai kriteria SPDN",
+        "Saat meninggal dunia atau meninggalkan Indonesia untuk selama-lamanya"
+      ]
+    },
+    {
+      "code": "PJK301",
+      "tm": 4,
+      "at": "blocks[12]",
+      "before": "Perbandingan KEP-220/PJ/2002 yang dicabut PER-8/PJ/2025 dengan rezim UU HPP dan PMK 66/2023",
+      "after": "Perbandingan KEP-220/PJ/2002 yang dicabut PER-8/PJ/2025 dengan rezim UU HPP dan PMK 66/2023. Pembebanan pemberi kerja dan PPh penerima adalah dua pengujian berbeda",
+      "headers": [
+        "Aspek Evaluasi",
+        "Posisi Historis (KEP-220/PJ/2002)",
+        "Posisi Positif Mutakhir (PP 55/2022 & PMK 66/2023)"
+      ],
+      "first": [
+        "Telepon Seluler (HP) Karyawan",
+        "KEP-220/PJ/2002 membatasi pembebanan HP dan pulsa tertentu sebesar 50%.",
+        "KEP-220/PJ/2002 dicabut oleh PER-8/PJ/2025 Pasal 147 angka 26. Biaya HP dan pulsa dinas dapat dikurangkan sepanjang terbukti terkait kegiatan 3M; penyusutan berlaku untuk aset dengan masa manfaat lebih dari satu tahun."
+      ]
+    },
+    {
+      "code": "PJK301",
+      "tm": 4,
+      "at": "blocks[25].blocks[0]",
+      "before": "Skedul penyusutan saldo menurun mesin Kelompok 1 periode 2022 s.d",
+      "after": "Skedul penyusutan saldo menurun mesin Kelompok 1 periode 2022 s.d. 2026",
+      "headers": [
+        "Tahun Pajak",
+        "Bulan Prorata",
+        "Tarif Saldo Menurun",
+        "Dasar Perhitungan (NSB Awal)",
+        "Beban Penyusutan",
+        "Nilai Sisa Buku (NSB) Akhir"
+      ],
+      "first": [
+        "2022",
+        "6 Bulan (Juli-Desember)",
+        "50%",
+        "Rp100.000.000 (Perolehan)",
+        "Rp25.000.000 [(6/12) x 50% x 100 Jt]",
+        "Rp75.000.000"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 3,
+      "at": "blocks[16].blocks[1]",
+      "before": "Jawaban",
+      "after": "Jenis pemeriksaan dan keluaran laporan hasil pemeriksaan",
+      "headers": [
+        "Jenis",
+        "Arah",
+        "Keluaran"
+      ],
+      "first": [
+        "Keuangan",
+        "LK",
+        "Opini"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 3,
+      "at": "blocks[24].blocks[2]",
+      "before": "Penyelesaian",
+      "after": "Perlakuan transaksi A pada TA 2025 dan TA 2026",
+      "headers": [
+        "Transaksi A saja",
+        "TA 2025",
+        "TA 2026"
+      ],
+      "first": [
+        "Pendapatan-LO",
+        "Rp 47.650.000",
+        "Rp 0"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 4,
+      "at": "blocks[16].blocks[1]",
+      "before": "Jawaban",
+      "after": "Fungsi anggaran dan penekanannya",
+      "headers": [
+        "Fungsi",
+        "Penekanan"
+      ],
+      "first": [
+        "Alokasi",
+        "Mengurangi pengangguran/pemborosan dan meningkatkan efisiensi/efektivitas perekonomian"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 4,
+      "at": "blocks[18].blocks[1]",
+      "before": "Jawaban",
+      "after": "Fungsi anggaran menurut regulasi dan buku",
+      "headers": [
+        "Dimensi",
+        "Regulasi",
+        "Buku"
+      ],
+      "first": [
+        "Dasar/jumlah",
+        "UU 17 Ps.3(4), PP 12 Ps.23(3); enam",
+        "Konsep buku ASP; delapan"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 4,
+      "at": "blocks[26].blocks[1]",
+      "before": "Jawaban",
+      "after": "Konsep penilaian layanan dan kebutuhan data tambahan",
+      "headers": [
+        "Konsep",
+        "Yang dinilai",
+        "Data tambahan A"
+      ],
+      "first": [
+        "Ekonomi",
+        "Perolehan input dengan biaya wajar dan mutu sesuai kebutuhan",
+        "Harga dan spesifikasi aktual"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 5,
+      "at": "blocks[14].blocks[1]",
+      "before": "Jawaban",
+      "after": "Penerapan dimensi pendekatan anggaran",
+      "headers": [
+        "Dimensi",
+        "Penerapan"
+      ],
+      "first": [
+        "Bentuk pos",
+        "Bahan, jasa, perjalanan"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 5,
+      "at": "blocks[18].blocks[1]",
+      "before": "Jawaban",
+      "after": "Unsur pendekatan anggaran dan contohnya",
+      "headers": [
+        "Unsur",
+        "Contoh"
+      ],
+      "first": [
+        "Input",
+        "Dana dan petugas"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 5,
+      "at": "blocks[24].blocks[1]",
+      "before": "Jawaban",
+      "after": "Perbedaan PPBS dan ZBB",
+      "headers": [
+        "Dimensi",
+        "PPBS",
+        "ZBB"
+      ],
+      "first": [
+        "Titik awal",
+        "Tujuan dan arah rencana",
+        "Justifikasi ulang kegiatan"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 5,
+      "at": "blocks[26].blocks[1]",
+      "before": "Jawaban",
+      "after": "Dasar dan penekanan pendekatan anggaran",
+      "headers": [
+        "Dasar",
+        "Penekanan"
+      ],
+      "first": [
+        "Standar harga",
+        "Harga operasi, kebutuhan, kepatutan, kewajaran; termasuk pengaturan tunjangan"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[3].blocks[1]",
+      "before": "Laporan mana yang kamu perlukan? · 3 menit",
+      "after": "Laporan mana yang kamu perlukan?",
+      "headers": [
+        "Laporan",
+        "Pertanyaan yang dijawab",
+        "Basis atau sifat informasi",
+        "Waktu"
+      ],
+      "first": [
+        "LRA",
+        "Berapa anggaran dan realisasinya?",
+        "Basis anggaran, kas pada contoh ini",
+        "Satu periode"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[4].blocks[1]",
+      "before": "LRA dan LPSAL: hasil tahun ini versus saldo kumulatif · 5 menit",
+      "after": "LRA dan LPSAL: hasil tahun ini versus saldo kumulatif",
+      "headers": [
+        "Langkah",
+        "Rumus",
+        "Arti"
+      ],
+      "first": [
+        "Surplus/defisit-LRA",
+        "Pendapatan-LRA − belanja − transfer keluar",
+        "Selisih di luar pembiayaan; transfer dihitung satu kali sesuai penyajian"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[5].blocks[2]",
+      "before": "LO dan LPE: hak, konsumsi, dan perubahan ekuitas · 5 menit",
+      "after": "LO dan LPE: hak, konsumsi, dan perubahan ekuitas",
+      "headers": [
+        "Peristiwa pada dataset",
+        "LRA 2025",
+        "LO 2025",
+        "Neraca akhir"
+      ],
+      "first": [
+        "Retribusi diterima Rp118.650.000",
+        "Pendapatan-LRA",
+        "Pendapatan-LO",
+        "Kas setelah seluruh arus"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[6].blocks[3]",
+      "before": "Neraca: posisi setelah penyesuaian · 4 menit",
+      "after": "Neraca: posisi setelah penyesuaian",
+      "headers": [
+        "Kelompok",
+        "Batas klasifikasi",
+        "Contoh dataset"
+      ],
+      "first": [
+        "Aset lancar",
+        "Akan direalisasi/dipakai dalam 12 bulan atau berupa kas/setara kas",
+        "Kas, piutang retribusi, persediaan"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[7].blocks[1]",
+      "before": "LAK: ikuti pergerakan uangnya · 4 menit — Aktivitas LAK · Batasnya · Contoh dataset",
+      "after": "LAK: ikuti pergerakan uangnya — Aktivitas LAK · Batasnya · Contoh dataset",
+      "headers": [
+        "Aktivitas LAK",
+        "Batasnya",
+        "Contoh dataset"
+      ],
+      "first": [
+        "Operasi",
+        "Penerimaan/pengeluaran kegiatan operasional",
+        "Retribusi, pembayaran persediaan dan jasa"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[7].blocks[5]",
+      "before": "LAK: ikuti pergerakan uangnya · 4 menit — Metode untuk aktivitas operasi · Cara penyajian",
+      "after": "LAK: ikuti pergerakan uangnya — Metode untuk aktivitas operasi · Cara penyajian",
+      "headers": [
+        "Metode untuk aktivitas operasi",
+        "Cara penyajian"
+      ],
+      "first": [
+        "Langsung",
+        "Kelompok utama penerimaan dan pengeluaran kas bruto"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[8].blocks[3]",
+      "before": "CaLK dan pemeriksaan hubungan laporan · 4 menit",
+      "after": "CaLK dan pemeriksaan hubungan laporan",
+      "headers": [
+        "Jalur",
+        "Pemeriksaan",
+        "Hasil pada dataset"
+      ],
+      "first": [
+        "LRA ke LPSAL",
+        "SiLPA yang dipindahkan sama",
+        "Rp1.450.000"
+      ]
+    },
+    {
+      "code": "AKS201",
+      "tm": 7,
+      "at": "blocks[24].promptBlocks[3]",
+      "before": "L1. Menyusun tujuh laporan dari satu dataset",
+      "after": "Anggaran DPA pada dataset tujuh laporan",
+      "headers": [
+        "Pos DPA/anggaran",
+        "Rupiah"
+      ],
+      "first": [
+        "Retribusi",
+        "130.850.000"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 1,
+      "at": "blocks[6].blocks[8].blocks[1]",
+      "before": "P-03. Contoh tiga paradoks dan Strategy Spotlight 1.1",
+      "after": "Perilaku kewirausahaan dan contoh dari buku",
+      "headers": [
+        "Perilaku",
+        "Contoh dari buku"
+      ],
+      "first": [
+        "Meluangkan waktu dan waspada pada peluang di luar batas pekerjaannya",
+        "Manajer penjualan perusahaan komputer menyusun business case untuk modul perangkat lunak yang belum ditawarkan siapa pun, lalu mengerjakannya penuh waktu"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 1,
+      "at": "blocks[7].blocks[12].blocks[1]",
+      "before": "P-04. Contoh Superdry, rincian Ch.1-13, dan kutipan",
+      "after": "Cakupan Chapter 1 sampai Chapter 13",
+      "headers": [
+        "Bab",
+        "Isi menurut teks buku"
+      ],
+      "first": [
+        "Ch.1 Analyzing Organizational Goals and Objectives",
+        "Vision, mission, dan strategic objectives membentuk hierarki tujuan dari pernyataan luas hingga sasaran terukur"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 1,
+      "at": "blocks[14].blocks[12].blocks[1]",
+      "before": "P-12. Rincian mission, Exhibit 1.8, manfaat objectives, dan caveat",
+      "after": "Contoh strategic objectives finansial dan nonfinansial",
+      "headers": [
+        "Jenis",
+        "Tujuan",
+        "Perusahaan"
+      ],
+      "first": [
+        "Finansial",
+        "Increase sales growth 6 percent to 8 percent and accelerate core net earnings growth from 13 percent to 15 percent per share in each of the next 5 years",
+        "Procter & Gamble"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[4].blocks[4]",
+      "before": "Mengapa ramalan yang rapi bisa tetap salah?",
+      "after": "Scanning, monitoring, competitive intelligence, dan forecasting",
+      "headers": [
+        "Kegiatan",
+        "Arti sehari-hari",
+        "Pertanyaan yang dibantu"
+      ],
+      "first": [
+        "Environmental scanning",
+        "Mencari tanda awal perubahan di lingkungan",
+        "Perubahan apa yang baru muncul?"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[5].blocks[3]",
+      "before": "Apakah satu tren selalu menjadi peluang?",
+      "after": "Enam segmen general environment dan contoh",
+      "headers": [
+        "Segmen",
+        "Yang diperiksa",
+        "Contoh dalam buku"
+      ],
+      "first": [
+        "Demographic",
+        "Komposisi dan persebaran penduduk",
+        "Penuaan penduduk; perubahan tingkat pendapatan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[6].blocks[3]",
+      "before": "Mengapa pasar yang ramai belum tentu menguntungkan?",
+      "after": "Five Forces dan tekanan terhadap laba industri",
+      "headers": [
+        "Force",
+        "Tekanan yang perlu dijelaskan"
+      ],
+      "first": [
+        "Threat of new entrants",
+        "Pemain baru dapat mengikis laba perusahaan yang sudah ada."
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[6].blocks[11].blocks[0]",
+      "before": "P-03. Seluruh kondisi buyer, supplier, dan rivalry",
+      "after": "Kondisi buyer power dan supplier power",
+      "headers": [
+        "Buyer kuat ketika",
+        "Supplier kuat ketika"
+      ],
+      "first": [
+        "Terkonsentrasi atau membeli volume besar",
+        "Jumlah pemasok sedikit dan lebih terkonsentrasi daripada industri pembeli"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[8].blocks[3]",
+      "before": "Bagian mana yang sebenarnya membuat pelanggan mau membayar?",
+      "after": "Primary activities dalam value chain",
+      "headers": [
+        "Primary activity",
+        "Kontribusi kegiatan"
+      ],
+      "first": [
+        "Inbound logistics",
+        "Menerima, menyimpan, dan mendistribusikan input."
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[8].blocks[13].blocks[0]",
+      "before": "P-05. Kegiatan pendukung dan contoh buku",
+      "after": "Support activities dalam value chain",
+      "headers": [
+        "Support activity",
+        "Cakupan"
+      ],
+      "first": [
+        "General administration",
+        "Perencanaan, manajemen umum, keuangan, akuntansi, hukum, dan hubungan pemerintahan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[9].blocks[3]",
+      "before": "Mengapa sumber daya yang mahal belum tentu unggul?",
+      "after": "Kelompok sumber daya dan capabilities",
+      "headers": [
+        "Kelompok",
+        "Komponen atau artinya"
+      ],
+      "first": [
+        "Tangible resources",
+        "Financial, physical, technological, organizational."
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[9].blocks[13].blocks[0]",
+      "before": "P-06. Empat profil dan pembagian rents",
+      "after": "Empat profil sumber daya pada Exhibit 3.7",
+      "headers": [
+        "Valuable",
+        "Rare",
+        "Difficult to imitate",
+        "Without substitutes",
+        "Implikasi Exhibit 3.7"
+      ],
+      "first": [
+        "No",
+        "No",
+        "No",
+        "No",
+        "Competitive disadvantage"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[10].blocks[3]",
+      "before": "Laba naik, tetapi apakah kondisinya lebih baik? — Kelompok · Pertanyaan analisis",
+      "after": "Kelompok rasio dan pertanyaan analisis kinerja",
+      "headers": [
+        "Kelompok",
+        "Pertanyaan analisis"
+      ],
+      "first": [
+        "Short-term solvency / liquidity",
+        "Bagaimana kemampuan menghadapi kewajiban jangka pendek?"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[10].blocks[6]",
+      "before": "Laba naik, tetapi apakah kondisinya lebih baik? — Langkah · Perhitungan · Hasil",
+      "after": "Contoh penghitungan current ratio",
+      "headers": [
+        "Langkah",
+        "Perhitungan",
+        "Hasil"
+      ],
+      "first": [
+        "Samakan satuan",
+        "Rp150 juta dan Rp100 juta",
+        "Keduanya rupiah juta"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[10].blocks[14].blocks[0]",
+      "before": "P-07. 20 formula Exhibit 3.8 — ID · Kelompok · Formula",
+      "after": "Dua puluh formula rasio pada Exhibit 3.8",
+      "headers": [
+        "ID",
+        "Kelompok",
+        "Formula",
+        "Rumus",
+        "Satuan"
+      ],
+      "first": [
+        "F-01",
+        "Liquidity",
+        "Current ratio",
+        "Current assets / Current liabilities",
+        "kali"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[10].blocks[14].blocks[2]",
+      "before": "P-07. 20 formula Exhibit 3.8 — Variabel · Arti",
+      "after": "Arti variabel pada formula rasio",
+      "headers": [
+        "Variabel",
+        "Arti"
+      ],
+      "first": [
+        "Current assets / Current liabilities",
+        "Aset lancar / liabilitas lancar"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[11].blocks[6]",
+      "before": "Pengetahuan milik orang bisa menjadi nilai bagi perusahaan?",
+      "after": "Explicit knowledge dan tacit knowledge",
+      "headers": [
+        "Jenis pengetahuan",
+        "Arti",
+        "Implikasi pengelolaan"
+      ],
+      "first": [
+        "Explicit knowledge",
+        "Dapat didokumentasikan, disebarkan, dan direplikasi.",
+        "Simpan serta bagikan agar bisa dipakai ulang."
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 2,
+      "at": "blocks[12].blocks[11].blocks[0]",
+      "before": "P-10. Diversity dan risiko war for talent",
+      "after": "Argumen manfaat diversity menurut buku",
+      "headers": [
+        "Argumen diversity",
+        "Manfaat yang dijelaskan buku"
+      ],
+      "first": [
+        "Cost",
+        "Pengelolaan diversity yang efektif memberi keunggulan biaya."
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[4].blocks[7]",
+      "before": "Produk laku, tetapi unggul karena apa?",
+      "after": "Operational effectiveness dan strategic positioning",
+      "headers": [
+        "Pengingat dari Chapter 1 (topik PPT4)",
+        "Arti"
+      ],
+      "first": [
+        "Operational effectiveness",
+        "Melakukan aktivitas serupa dengan lebih baik"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[5].blocks[6]",
+      "before": "Harga rendah ditopang biaya rendah atau mengorbankan mutu? — Tekanan · Cost leadership · Differentiation",
+      "after": "Cost leadership dan differentiation menghadapi Five Forces",
+      "headers": [
+        "Tekanan",
+        "Cost leadership",
+        "Differentiation"
+      ],
+      "first": [
+        "Rivalry",
+        "Biaya rendah memberi ruang bertahan saat harga ditekan",
+        "Loyalitas mengurangi sensitivitas harga"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[5].blocks[10]",
+      "before": "Harga rendah ditopang biaya rendah atau mengorbankan mutu? — Enam pitfalls biaya rendah · Apa yang harus kamu periksa",
+      "after": "Enam pitfalls cost leadership",
+      "headers": [
+        "Enam pitfalls biaya rendah",
+        "Apa yang harus kamu periksa"
+      ],
+      "first": [
+        "Fokus hanya pada sedikit kegiatan",
+        "Biaya total dan hubungan antaraktivitas"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[6].blocks[4]",
+      "before": "Keunikan yang kamu banggakan dianggap bernilai oleh siapa? — Enam pitfalls diferensiasi · Masalah yang muncul",
+      "after": "Enam pitfalls differentiation",
+      "headers": [
+        "Enam pitfalls diferensiasi",
+        "Masalah yang muncul"
+      ],
+      "first": [
+        "Keunikan tidak bernilai",
+        "Pembeli tidak menghargai perbedaan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[6].blocks[8]",
+      "before": "Keunikan yang kamu banggakan dianggap bernilai oleh siapa? — Pitfall focus · Risiko dalam segmen",
+      "after": "Pitfalls focus strategy",
+      "headers": [
+        "Pitfall focus",
+        "Risiko dalam segmen"
+      ],
+      "first": [
+        "Keunggulan biaya terkikis",
+        "Pesaing luas dapat menawarkan biaya yang sebanding"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[8].blocks[4].blocks[1]",
+      "before": "P-09. Dari presentasi kelas (bukan dari buku) — Simbol · Arti menurut presentasi kelas",
+      "after": "Arti V, C, dan V − C pada presentasi kelas",
+      "headers": [
+        "Simbol",
+        "Arti menurut presentasi kelas"
+      ],
+      "first": [
+        "V (Perceived Value)",
+        "Nilai atau manfaat yang dirasakan pembeli"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[8].blocks[4].blocks[4]",
+      "before": "P-09. Dari presentasi kelas (bukan dari buku) — Jenis · Arti menurut catatan kuliah",
+      "after": "Same-side effects dan cross-side effects menurut catatan kelas",
+      "headers": [
+        "Jenis",
+        "Arti menurut catatan kuliah"
+      ],
+      "first": [
+        "Same-side effects",
+        "Pengguna memperoleh manfaat dari bertambahnya pengguna pada kelompok yang sama"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[8].blocks[13].blocks[0]",
+      "before": "P-05. Delapan faktor lengkap siklus industri",
+      "after": "Delapan faktor pada empat tahap industry life cycle",
+      "headers": [
+        "Faktor",
+        "Introduction",
+        "Growth",
+        "Maturity",
+        "Decline"
+      ],
+      "first": [
+        "Generic strategies",
+        "Differentiation",
+        "Differentiation",
+        "Differentiation; overall cost leadership",
+        "Overall cost leadership; focus"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[9].blocks[13].blocks[0]",
+      "before": "P-06. Integrasi vertikal: empat manfaat, empat risiko, lima pertanyaan",
+      "after": "Manfaat dan risiko vertical integration",
+      "headers": [
+        "Manfaat Exhibit 6.4",
+        "Risiko Exhibit 6.4"
+      ],
+      "first": [
+        "Sumber input atau kanal distribusi terjamin",
+        "Overhead dan belanja modal naik"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 3,
+      "at": "blocks[11].blocks[3]",
+      "before": "Bagaimana masuk bisnis baru tanpa membayar terlalu mahal?",
+      "after": "Mergers and acquisitions, alliances, dan internal development",
+      "headers": [
+        "Cara",
+        "Manfaat",
+        "Risiko/batas"
+      ],
+      "first": [
+        "Mergers and acquisitions",
+        "Cepat memperoleh sumber daya, pasar, sinergi, atau konsolidasi",
+        "Premi, imitasi manfaat, ego, benturan budaya"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[4].blocks[4]",
+      "before": "Mengapa industri negara tertentu kuat di pasar dunia?",
+      "after": "Empat determinan national competitive advantage",
+      "headers": [
+        "Determinan",
+        "Arti dan hubungan strategis"
+      ],
+      "first": [
+        "Factor endowments",
+        "Tenaga ahli, modal, sumber daya, dan infrastruktur; kecepatan pemakaian juga dinilai"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[5].blocks[2]",
+      "before": "Apa yang diperoleh dari ekspansi, dan apa yang dapat hilang? — Enam motivasi · Mekanisme dan contoh buku",
+      "after": "Enam motivasi ekspansi internasional",
+      "headers": [
+        "Enam motivasi",
+        "Mekanisme dan contoh buku"
+      ],
+      "first": [
+        "Increase market size",
+        "Pasar lebih luas menyebar biaya; Boeing dan Microsoft menjual lintas negara"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[5].blocks[9]",
+      "before": "Apa yang diperoleh dari ekspansi, dan apa yang dapat hilang? — Dimensi · Pertanyaan · Kemungkinan",
+      "after": "Perbedaan outsourcing dan offshoring",
+      "headers": [
+        "Dimensi",
+        "Pertanyaan",
+        "Kemungkinan"
+      ],
+      "first": [
+        "Outsourcing",
+        "Siapa yang mengerjakan?",
+        "Perusahaan lain, domestik atau asing"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[5].blocks[13]",
+      "before": "Apa yang diperoleh dari ekspansi, dan apa yang dapat hilang? — Biaya tersembunyi · Mengapa muncul",
+      "after": "Biaya tersembunyi outsourcing dan offshoring",
+      "headers": [
+        "Biaya tersembunyi",
+        "Mengapa muncul"
+      ],
+      "first": [
+        "Total wage costs",
+        "Produktivitas rendah dapat menambah jam dan pekerja"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[6].blocks[3]",
+      "before": "Harus murah di seluruh dunia atau cocok untuk pelanggan lokal? — Strategi · Kombinasi tekanan · Pengaturan utama",
+      "after": "Empat strategi menurut tekanan biaya dan adaptasi lokal",
+      "headers": [
+        "Strategi",
+        "Kombinasi tekanan",
+        "Pengaturan utama"
+      ],
+      "first": [
+        "International",
+        "Tekanan biaya rendah; tekanan adaptasi rendah",
+        "Sebarkan pengetahuan/kompetensi induk; penyesuaian terbatas"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[6].blocks[9]",
+      "before": "Harus murah di seluruh dunia atau cocok untuk pelanggan lokal? — Strategi / exhibit · Seluruh strengths · Seluruh limitations",
+      "after": "Strengths dan limitations empat strategi internasional",
+      "headers": [
+        "Strategi / exhibit",
+        "Seluruh strengths",
+        "Seluruh limitations"
+      ],
+      "first": [
+        "International / 7.4",
+        "Sebarkan pengetahuan/kompetensi induk; biaya lebih rendah karena penyesuaian terbatas",
+        "Adaptasi lokal terbatas; sulit memakai ide/inovasi pasar lokal"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[8].blocks[6]",
+      "before": "Ide bagus dapat gagal bila kemampuan pelaksanaannya tidak cocok — Kriteria · Pertanyaan yang kamu jawab",
+      "after": "Empat kriteria entrepreneurial opportunity",
+      "headers": [
+        "Kriteria",
+        "Pertanyaan yang kamu jawab"
+      ],
+      "first": [
+        "Attractive",
+        "Adakah permintaan pasar?"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[8].blocks[14]",
+      "before": "Ide bagus dapat gagal bila kemampuan pelaksanaannya tidak cocok — Perbedaan yang dilaporkan · Arti dalam buku",
+      "after": "Perbedaan perilaku entrepreneur yang dilaporkan buku",
+      "headers": [
+        "Perbedaan yang dilaporkan",
+        "Arti dalam buku"
+      ],
+      "first": [
+        "Higher core self-evaluation",
+        "Kepercayaan diri dan penilaian kendali atas nasib lebih tinggi"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 4,
+      "at": "blocks[10].blocks[16].blocks[0]",
+      "before": "P-07. Seluruh contoh strategic/tactical actions",
+      "after": "Contoh strategic actions dan tactical actions",
+      "headers": [
+        "Jenis/kategori",
+        "Seluruh contoh Exhibit 8.5"
+      ],
+      "first": [
+        "Strategic: entering markets",
+        "Geographic expansion; neglected markets; rivals’ markets; new demographics"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[4].blocks[7]",
+      "before": "Target tercapai, tetapi arah perusahaan masih tepat? — Aspek · Traditional · Contemporary",
+      "after": "Traditional control dan contemporary control",
+      "headers": [
+        "Aspek",
+        "Traditional",
+        "Contemporary"
+      ],
+      "first": [
+        "Hubungan kegiatan",
+        "Berurutan, dengan feedback ke formulation",
+        "Interaktif selama formulation, implementation, dan control"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[4].blocks[10]",
+      "before": "Target tercapai, tetapi arah perusahaan masih tepat? — Ciri · Artinya",
+      "after": "Ciri informational control yang efektif",
+      "headers": [
+        "Ciri",
+        "Artinya"
+      ],
+      "first": [
+        "Strategically important changing information",
+        "Fokus pada informasi berubah yang berpengaruh pada strategi"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[5].blocks[5]",
+      "before": "Bonus menaikkan penjualan, tetapi merusak kerja sama? — Enam ciri sistem efektif · Yang perlu kamu periksa",
+      "after": "Enam ciri reward system yang efektif",
+      "headers": [
+        "Enam ciri sistem efektif",
+        "Yang perlu kamu periksa"
+      ],
+      "first": [
+        "Clear and accepted objectives",
+        "Sasaran jelas, dipahami, dan diterima luas"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[5].blocks[9]",
+      "before": "Bonus menaikkan penjualan, tetapi merusak kerja sama? — Batas dalam action plans · Syarat yang dipertahankan",
+      "after": "Syarat short-term objectives dan action plans",
+      "headers": [
+        "Batas dalam action plans",
+        "Syarat yang dipertahankan"
+      ],
+      "first": [
+        "Short-term objectives",
+        "Spesifik dan terukur; tenggat jelas; dapat dicapai sekaligus menantang"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[5].blocks[12]",
+      "before": "Bonus menaikkan penjualan, tetapi merusak kerja sama? — Pendekatan Exhibit 9.5 · Seluruh faktor situasional",
+      "after": "Faktor situasional culture, rewards, dan boundaries",
+      "headers": [
+        "Pendekatan Exhibit 9.5",
+        "Seluruh faktor situasional"
+      ],
+      "first": [
+        "Culture",
+        "Organisasi profesional; otonomi tinggi; norma mendasari perilaku"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[6].blocks[3]",
+      "before": "Siapa mengawasi orang yang menggunakan modal pemilik? — Pihak · Peran menurut buku",
+      "after": "Peran shareholders, management, dan board",
+      "headers": [
+        "Pihak",
+        "Peran menurut buku"
+      ],
+      "first": [
+        "Shareholders",
+        "Menyediakan modal, ikut dalam hasil, dan memilih dewan; keterlibatan operasi terbatas"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[6].blocks[6]",
+      "before": "Siapa mengawasi orang yang menggunakan modal pemilik? — Dua masalah agency · Mekanisme masalah",
+      "after": "Agency problem dan risk sharing",
+      "headers": [
+        "Dua masalah agency",
+        "Mekanisme masalah"
+      ],
+      "first": [
+        "Agency problem",
+        "Tujuan berbeda dan pemilik sulit memverifikasi tindakan manajer; muncul peluang opportunism"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[6].blocks[9]",
+      "before": "Siapa mengawasi orang yang menggunakan modal pemilik? — Insentif eksekutif: tiga kebijakan buku · Tujuan",
+      "after": "Tiga kebijakan insentif eksekutif",
+      "headers": [
+        "Insentif eksekutif: tiga kebijakan buku",
+        "Tujuan"
+      ],
+      "first": [
+        "Substantial stock ownership",
+        "Eksekutif ikut merasakan perubahan nilai perusahaan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[6].blocks[12]",
+      "before": "Siapa mengawasi orang yang menggunakan modal pemilik? — Pandangan duality · Manfaat yang ditekankan · Masalah yang harus diuji",
+      "after": "Unity of command dan agency theory pada CEO duality",
+      "headers": [
+        "Pandangan duality",
+        "Manfaat yang ditekankan",
+        "Masalah yang harus diuji"
+      ],
+      "first": [
+        "Unity of command",
+        "Kesatuan arah dan operasi; lebih sedikit konflik CEO–chair",
+        "Pengawasan orang yang memimpin rapat dewan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[6].blocks[13]",
+      "before": "Siapa mengawasi orang yang menggunakan modal pemilik? — Lima kelompok mekanisme eksternal · Fungsi dan batas",
+      "after": "Lima kelompok mekanisme governance eksternal",
+      "headers": [
+        "Lima kelompok mekanisme eksternal",
+        "Fungsi dan batas"
+      ],
+      "first": [
+        "Market for corporate control",
+        "Ancaman takeover dapat mendisiplinkan manajer; poison pills/greenmail/golden parachutes dapat melemahkannya"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[6].blocks[17]",
+      "before": "Siapa mengawasi orang yang menggunakan modal pemilik? — Dimensi Exhibit 9.6 · Principal–agent · Principal–principal",
+      "after": "Principal–agent dan principal–principal conflicts",
+      "headers": [
+        "Dimensi Exhibit 9.6",
+        "Principal–agent",
+        "Principal–principal"
+      ],
+      "first": [
+        "Goal incongruence",
+        "Pemilik versus manajer profesional dengan saham relatif kecil",
+        "Pengendali versus minoritas"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[7].blocks[5]",
+      "before": "Perusahaan membesar, siapa mengoordinasikan pekerjaan?",
+      "after": "Struktur simple, functional, divisional, dan matrix",
+      "headers": [
+        "Struktur",
+        "Pengelompokan dan kendali",
+        "Trade-off utama"
+      ],
+      "first": [
+        "Simple",
+        "Owner-manager mengambil banyak keputusan; aturan dan spesialisasi sedikit",
+        "Cepat/informal, tetapi tanggung jawab dan jalur karier terbatas"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[7].blocks[12].blocks[0]",
+      "before": "P-04. Seluruh keuntungan dan batas struktur tradisional",
+      "after": "Advantages dan disadvantages struktur tradisional",
+      "headers": [
+        "Exhibit 10.5",
+        "Seluruh advantages",
+        "Seluruh disadvantages"
+      ],
+      "first": [
+        "Functional",
+        "Pooling specialists memperbaiki coordination/control; centralized decisions memberi perspektif organisasi; penggunaan talenta efisien; career/professional development",
+        "Orientasi fungsi menghambat komunikasi; perspektif sempit/jangka pendek; konflik membebani pimpinan; standar kinerja seragam sulit"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[8].blocks[3]",
+      "before": "Pasar luar negeri membutuhkan keputusan yang sama di setiap negara?",
+      "after": "Alternatif struktur untuk operasi internasional",
+      "headers": [
+        "Alternatif struktur",
+        "Kebutuhan yang dijelaskan buku"
+      ],
+      "first": [
+        "International division",
+        "Unit internasional khusus; termasuk pilihan multidomestic"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[9].blocks[3]",
+      "before": "Batas kerja terlalu kaku, atau kendali justru terlepas? — Jenis · Fokus hubungan · Kendali dan batas",
+      "after": "Barrier-free, modular, dan virtual organizations",
+      "headers": [
+        "Jenis",
+        "Fokus hubungan",
+        "Kendali dan batas"
+      ],
+      "first": [
+        "Barrier-free",
+        "Membuka batas internal, eksternal, dan geografis; teams sebagai building block",
+        "Perbedaan keterampilan/kewenangan tetap ada; perlu trust serta common goals"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[9].blocks[15]",
+      "before": "Batas kerja terlalu kaku, atau kendali justru terlepas? — Empat alat integrasi · Cara bekerja",
+      "after": "Empat alat integrasi boundaryless organization",
+      "headers": [
+        "Empat alat integrasi",
+        "Cara bekerja"
+      ],
+      "first": [
+        "Common culture and shared values",
+        "Tujuan bersama, trust, dan insentif yang selaras"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[9].blocks[17].blocks[0]",
+      "before": "P-06. Seluruh pros dan cons boundaryless",
+      "after": "Pros dan cons boundaryless organizations",
+      "headers": [
+        "Exhibit",
+        "Seluruh pros",
+        "Seluruh cons"
+      ],
+      "first": [
+        "10.6 Barrier-free",
+        "Talenta semua pekerja; cooperation/coordination/information sharing lintas unit/pihak; respons pasar dengan single-goal focus; win–win dengan pemasok/pelanggan/mitra",
+        "Batas politik/kuasa sulit; leadership/visi lemah mengganggu koordinasi; proses demokratis lambat/sulit; trust rendah mengganggu kinerja"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[10].blocks[3]",
+      "before": "Operasi sekarang lancar, tetapi siapa mencari masa depan?",
+      "after": "Exploitation dan exploration dalam ambidexterity",
+      "headers": [
+        "Kebutuhan",
+        "Exploitation/alignment",
+        "Exploration/adaptability"
+      ],
+      "first": [
+        "Tugas",
+        "Memperbaiki operasi serta layanan yang sudah ada",
+        "Mengembangkan peluang dan breakthrough baru"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 5,
+      "at": "blocks[10].blocks[7].blocks[0]",
+      "before": "P-07. Empat desain dan dua ukuran dalam studi ambidexterity",
+      "after": "Empat desain organisasi dalam studi ambidexterity",
+      "headers": [
+        "Desain dalam studi",
+        "Jumlah dari 35 upaya",
+        "Pengaturan"
+      ],
+      "first": [
+        "Functional",
+        "7",
+        "Proyek menyatu dengan struktur/manajemen rutin"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[4].blocks[4]",
+      "before": "Arah sudah jelas, mengapa orang masih sulit bekerja bersama? — Kegiatan · Apa yang dikerjakan · Mengapa dibutuhkan",
+      "after": "Tiga kegiatan strategic leadership",
+      "headers": [
+        "Kegiatan",
+        "Apa yang dikerjakan",
+        "Mengapa dibutuhkan"
+      ],
+      "first": [
+        "Setting a direction",
+        "Membaca stakeholders dan lingkungan; menyusun pilihan serta visi",
+        "Arah masa depan, kerangka mission/goals, komunikasi dan komitmen"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[4].blocks[8]",
+      "before": "Arah sudah jelas, mengapa orang masih sulit bekerja bersama? — Pilihan strategi · Implikasi desain menurut buku",
+      "after": "Implikasi pilihan strategi terhadap desain organisasi",
+      "headers": [
+        "Pilihan strategi",
+        "Implikasi desain menurut buku"
+      ],
+      "first": [
+        "Overall low-cost",
+        "Pemantauan biaya rinci dan prosedur kontrol keuangan formal"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[5].blocks[3]",
+      "before": "Penolakan muncul karena orang malas atau sistemnya menghambat? — Hambatan · Mekanisme",
+      "after": "Hambatan perubahan organisasi",
+      "headers": [
+        "Hambatan",
+        "Mekanisme"
+      ],
+      "first": [
+        "Vested interests in the status quo",
+        "Orang berkepentingan mempertahankan keadaan lama; sulit mengakui keputusan gagal"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[5].blocks[9]",
+      "before": "Penolakan muncul karena orang malas atau sistemnya menghambat? — Basis · Arti sehari-hari",
+      "after": "Enam basis kekuasaan pemimpin",
+      "headers": [
+        "Basis",
+        "Arti sehari-hari"
+      ],
+      "first": [
+        "Legitimate",
+        "Kewenangan keputusan yang diberikan jabatan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[6].blocks[3]",
+      "before": "Pemimpin pandai membaca emosi, apakah keputusan pasti membaik? — Komponen · Definisi pada exhibit dan body",
+      "after": "Lima komponen emotional intelligence",
+      "headers": [
+        "Komponen",
+        "Definisi pada exhibit dan body"
+      ],
+      "first": [
+        "Self-awareness",
+        "Mengenali emosi, dorongan, nilai, tujuan, kekuatan/kelemahan serta dampaknya pada orang"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[6].blocks[6]",
+      "before": "Pemimpin pandai membaca emosi, apakah keputusan pasti membaik? — Kemampuan yang berguna · Risiko bila penerapannya berlebihan",
+      "after": "Manfaat dan risiko penerapan emotional intelligence",
+      "headers": [
+        "Kemampuan yang berguna",
+        "Risiko bila penerapannya berlebihan"
+      ],
+      "first": [
+        "Empathy",
+        "Terlalu mengidentifikasi diri dengan orang sehingga keputusan sulit tidak dibuat"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[6].blocks[10]",
+      "before": "Pemimpin pandai membaca emosi, apakah keputusan pasti membaik? — Unsur · Praktik yang dijelaskan buku",
+      "after": "Unsur learning organization",
+      "headers": [
+        "Unsur",
+        "Praktik yang dijelaskan buku"
+      ],
+      "first": [
+        "Mission/purpose",
+        "Tujuan bersama memberi arti serta komitmen terhadap perubahan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[6].blocks[13]",
+      "before": "Pemimpin pandai membaca emosi, apakah keputusan pasti membaik? — Bentuk · Tempat mencari · Kebutuhan yang cocok",
+      "after": "Competitive benchmarking dan functional benchmarking",
+      "headers": [
+        "Bentuk",
+        "Tempat mencari",
+        "Kebutuhan yang cocok"
+      ],
+      "first": [
+        "Competitive benchmarking",
+        "Pesaing",
+        "Praktik atau standar khusus industri"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[7].blocks[4]",
+      "before": "Pekerjanya baik, mengapa pelanggaran masih berulang? — Karakteristik lengkap Exhibit 11.5 · Compliance-based · Integrity-based",
+      "after": "Compliance-based dan integrity-based ethics programs",
+      "headers": [
+        "Karakteristik lengkap Exhibit 11.5",
+        "Compliance-based",
+        "Integrity-based"
+      ],
+      "first": [
+        "Ethos",
+        "Sesuai standar yang ditetapkan dari luar",
+        "Self-governance menurut standar yang dipilih"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[7].blocks[9]",
+      "before": "Pekerjanya baik, mengapa pelanggaran masih berulang? — Unsur · Yang harus kamu periksa",
+      "after": "Unsur ethical organization",
+      "headers": [
+        "Unsur",
+        "Yang harus kamu periksa"
+      ],
+      "first": [
+        "Role models",
+        "Kata dan tindakan konsisten; tanggung jawab pemimpin terhadap kelemahan sistem"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[8].blocks[4]",
+      "before": "Ide baru tampak menarik, tetapi perubahan apa yang sebenarnya dibuat? — Cara klasifikasi · Pembeda dan batas",
+      "after": "Klasifikasi innovation dan batas pembedanya",
+      "headers": [
+        "Cara klasifikasi",
+        "Pembeda dan batas"
+      ],
+      "first": [
+        "Product / process",
+        "Product mengubah tawaran bagi pengguna; process meningkatkan efisiensi proses/operasi"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[8].blocks[10]",
+      "before": "Ide baru tampak menarik, tetapi perubahan apa yang sebenarnya dibuat? — Trait · Arti dan contoh sumber",
+      "after": "Lima discovery skills inovator",
+      "headers": [
+        "Trait",
+        "Arti dan contoh sumber"
+      ],
+      "first": [
+        "Associating",
+        "Menghubungkan hal yang tampak tidak terkait; eBay mengaitkan pasar efisien, koleksi Pez, dan kelemahan iklan lokal"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[8].blocks[13]",
+      "before": "Ide baru tampak menarik, tetapi perubahan apa yang sebenarnya dibuat? — Lima dilema · Trade-off yang harus dijelaskan",
+      "after": "Lima dilema pengelolaan innovation",
+      "headers": [
+        "Lima dilema",
+        "Trade-off yang harus dijelaskan"
+      ],
+      "first": [
+        "Seeds / weeds",
+        "Memilih ide menjanjikan sebelum semua manfaat terlihat"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[9].blocks[3]",
+      "before": "Ide pekerja menjanjikan, siapa membantu ide itu menjadi bisnis? — Langkah · Apa yang diperiksa",
+      "after": "Langkah pemanfaatan kapabilitas untuk corporate entrepreneurship",
+      "headers": [
+        "Langkah",
+        "Apa yang diperiksa"
+      ],
+      "first": [
+        "Redefine",
+        "Jelaskan kemampuan umum, bukan hanya kegunaan produk sekarang"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[9].blocks[6]",
+      "before": "Ide pekerja menjanjikan, siapa membantu ide itu menjadi bisnis? — Aspek · Focused · Dispersed",
+      "after": "Focused dan dispersed corporate entrepreneurship",
+      "headers": [
+        "Aspek",
+        "Focused",
+        "Dispersed"
+      ],
+      "first": [
+        "Tempat kegiatan",
+        "Unit relatif mandiri terpisah dari operasi utama",
+        "Tersebar pada berbagai bagian dan anggota organisasi"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[9].blocks[12]",
+      "before": "Ide pekerja menjanjikan, siapa membantu ide itu menjadi bisnis? — Penilaian · Pertanyaan sumber",
+      "after": "Kriteria evaluasi venture",
+      "headers": [
+        "Penilaian",
+        "Pertanyaan sumber"
+      ],
+      "first": [
+        "Market acceptance",
+        "Apakah produk/jasa diterima dan membuka pasar atau venture lain?"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[9].blocks[15]",
+      "before": "Ide pekerja menjanjikan, siapa membantu ide itu menjadi bisnis? — Aspek · Product champion · Exit champion",
+      "after": "Product champion dan exit champion",
+      "headers": [
+        "Aspek",
+        "Product champion",
+        "Exit champion"
+      ],
+      "first": [
+        "Fokus",
+        "Dukungan, pasar, sumber daya, momentum",
+        "Kelayakan serta bukti alasan penghentian"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[10].blocks[3]",
+      "before": "Harus membayar seluruh investasi sebelum tahu peluangnya? — Pilihan · Makna keputusan",
+      "after": "Pilihan keputusan real options",
+      "headers": [
+        "Pilihan",
+        "Makna keputusan"
+      ],
+      "first": [
+        "Grow/accelerate",
+        "Tambah dana atau percepat kegiatan ketika bukti mendukung"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[10].blocks[7]",
+      "before": "Harus membayar seluruh investasi sebelum tahu peluangnya? — Tiga kelompok pitfalls · Mekanisme risiko",
+      "after": "Tiga kelompok pitfalls real options",
+      "headers": [
+        "Tiga kelompok pitfalls",
+        "Mekanisme risiko"
+      ],
+      "first": [
+        "Back-solver dilemma",
+        "Manajer membalik model untuk mencari estimasi variance yang menghasilkan nilai persetujuan"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[10].blocks[11]",
+      "before": "Harus membayar seluruh investasi sebelum tahu peluangnya? — Dimensi lengkap Exhibit 12.3 · Arti · Batas dalam body",
+      "after": "Lima dimensi entrepreneurial orientation",
+      "headers": [
+        "Dimensi lengkap Exhibit 12.3",
+        "Arti",
+        "Batas dalam body"
+      ],
+      "first": [
+        "Autonomy",
+        "Individu/tim mandiri membawa konsep sampai selesai",
+        "Kurang koordinasi, duplikasi, proyek tidak layak; tetap dimonitor"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 6,
+      "at": "blocks[10].blocks[14]",
+      "before": "Harus membayar seluruh investasi sebelum tahu peluangnya? — Jenis risiko · Yang dipertaruhkan",
+      "after": "Business risk, financial risk, dan personal risk",
+      "headers": [
+        "Jenis risiko",
+        "Yang dipertaruhkan"
+      ],
+      "first": [
+        "Business",
+        "Pasar atau teknologi belum teruji dan peluang sukses belum diketahui"
+      ]
+    },
+    {
+      "code": "MNS301",
+      "tm": 7,
+      "at": "blocks[31].blocks[15].blocks[0]",
+      "before": "B · P-01. Mengapa nilai intangible sulit dinilai sendiri?",
+      "after": "Empat sifat penciptaan nilai intangible assets",
+      "headers": [
+        "Sifat",
+        "Arti",
+        "Contoh atau akibat menurut buku"
+      ],
+      "first": [
+        "Indirect",
+        "Kontribusi melalui rantai proses dan pelanggan",
+        "Pelatihan mutu memperbaiki proses, kepuasan, loyalitas, kemudian hasil keuangan"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Daftar Isi guard passed (6 groups):
+  - stripMarkdownEscapes: removes markdown escapes and leaves plain text alone
+  - MNU108 TM01: badges 0..16 come from the headings, labels drop the number
+  - MNU108 TM01: no label carries a backslash or a leftover number
+  - MNU108 TM01: 14.1-14.5 sit under badge 14 and keep their numbering
+  - other courses: 76 readings start at 1, 7 fall back to the counter, none shows an escape
+  - unnumbered headings keep the counted badge

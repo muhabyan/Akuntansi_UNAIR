@@ -1,0 +1,9 @@
+{
+  "main": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+  "pr45Original": "20557e0463779f3d730929822dd0a41a158850a8",
+  "logicalReadings": 56,
+  "preUtsTables": 929,
+  "runtimeSha256": "f0026b44672e3ed4124ede8cbe9e79462217105967a50692ec73d8d39886882c",
+  "capturedAt": "2026-10-06T10:45:42.969Z",
+  "origin": "Vite SSR from isolated merged working tree; academic data to be compared to frozen main"
+}

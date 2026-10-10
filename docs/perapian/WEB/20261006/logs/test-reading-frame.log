@@ -1,0 +1,18 @@
+{
+  "pass": false,
+  "checks": 39,
+  "passed": 30,
+  "failed": 9,
+  "failures": [
+    "AKA201 TM1: every desktop table is hidden below 1024px: {\"frame\":true,\"tables\":12,\"desktopHiddenBelowLg\":8,\"stacked\":8,\"stackedHiddenFromLg\":8}",
+    "AKA201 TM1: every table has a stacked view, hidden from 1024px: {\"frame\":true,\"tables\":12,\"desktopHiddenBelowLg\":8,\"stacked\":8,\"stackedHiddenFromLg\":8}",
+    "PJK301 TM1: every desktop table is hidden below 1024px: {\"frame\":true,\"tables\":5,\"desktopHiddenBelowLg\":0,\"stacked\":0,\"stackedHiddenFromLg\":0}",
+    "PJK301 TM1: every table has a stacked view, hidden from 1024px: {\"frame\":true,\"tables\":5,\"desktopHiddenBelowLg\":0,\"stacked\":0,\"stackedHiddenFromLg\":0}",
+    "PJK301 TM8: every desktop table is hidden below 1024px: {\"frame\":true,\"tables\":2,\"desktopHiddenBelowLg\":1,\"stacked\":1,\"stackedHiddenFromLg\":1}",
+    "PJK301 TM8: every table has a stacked view, hidden from 1024px: {\"frame\":true,\"tables\":2,\"desktopHiddenBelowLg\":1,\"stacked\":1,\"stackedHiddenFromLg\":1}",
+    "PJK301 TM14: every desktop table is hidden below 1024px: {\"frame\":true,\"tables\":2,\"desktopHiddenBelowLg\":0,\"stacked\":0,\"stackedHiddenFromLg\":0}",
+    "PJK301 TM14: every table has a stacked view, hidden from 1024px: {\"frame\":true,\"tables\":2,\"desktopHiddenBelowLg\":0,\"stacked\":0,\"stackedHiddenFromLg\":0}",
+    "PJK301 stacked tables keep every header, cell and caption: 1616 missing, e.g. [\"Kategori Yuridis\",\"Dasar Regulasi Positif\",\"Cakupan Subjek / Objek\"]"
+  ]
+}
+Supabase URL or Anon Key is missing. Check your environment variables.

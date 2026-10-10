@@ -1,0 +1,13 @@
+{
+  "capturedAt": "2026-10-06T12:08:40.865Z",
+  "worktree": "C:\\cek\\.worktrees\\perapian-pr45",
+  "localBranch": "audit/pr45-perapian-20261006",
+  "localHead": "307157ec5ff1194833520a8dc0f0b84931e80e8f",
+  "mergeCommit": "54b92d57e61e660b758f32556a69c4c1a32272cd",
+  "main": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+  "remotePRHead": "20557e0463779f3d730929822dd0a41a158850a8",
+  "pushed": false,
+  "prMerged": false,
+  "readyForReview": false,
+  "reason": "Website QA, source/semantic audit and npm run check still incomplete due browser setting denial."
+}

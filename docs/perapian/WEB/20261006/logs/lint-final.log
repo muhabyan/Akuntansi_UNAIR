@@ -1,0 +1,4 @@
+command: npm.cmd run lint
+exitCode: 0
+Source lint PASS (358 TypeScript/TSX files)
+

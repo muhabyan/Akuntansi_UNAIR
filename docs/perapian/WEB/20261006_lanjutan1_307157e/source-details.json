@@ -1,0 +1,103 @@
+{
+  "purpose": "Source identity and exact local permission-setting read; no browser workaround or source edit.",
+  "pptx": [
+    {
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\128574361X_577634 (2).pptx",
+      "sha256": "1e9a22f684aea96fdf67b2e66b057f0e45f2890b29d0cbce9b3d7cab4cdac051",
+      "slides": 101,
+      "selectedSlides": {
+        "1": "CHAPTER\n \n17\nFinancial Statement Analysis\nAccounting\n26e\nWarren\nReeve\nDuchac",
+        "2": "Learning Objectives\nLO1\n: \nDescribe basic financial statement analytical methods.\nLO2\n: \nUse financial statement analysis to assess the solvency of a business\n.\nLO3\n: \nUse financial statement analysis to assess the profitability of a business\n.\nLO4\n: \nDescribe the contents of corporate annual reports\n.\n©2016 Cengage Learning. All Rights Reserved. May not be scanned, copied or duplicated, or posted to a publicly accessible website, in whole or in part. "
+      },
+      "kind": "PPTX text extraction, not visual inspection"
+    },
+    {
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\FFM_CH4.pptx",
+      "sha256": "195e4f20e8229c2a1220164553a052c597dc7ce5a1a0971519c092a32e36b224",
+      "slides": 36,
+      "selectedSlides": {
+        "1": "Chapter 4\nAnalysis of Financial Statements\nBrigham & Houston, \nFundamentals of Financial Management\n, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, copied or duplicated, or posted to a publicly accessible website, in whole or in part.",
+        "2": "Overview\nRatio Analysis\nDuPont Equation\nEffects of Improving Ratios\nLimitations of Ratio Analysis\nQualitative Factors"
+      },
+      "kind": "PPTX text extraction, not visual inspection"
+    },
+    {
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\FMM_CH10.pptx",
+      "sha256": "8db8045f0041130dd8f3cb20bce2b0f67014b9221ff919ba5a8a22218d8162f8",
+      "slides": 30,
+      "selectedSlides": {
+        "1": "Chapter 10\nThe Cost of Capital\nBrigham & Houston, \nFundamentals of Financial Management\n, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, copied or duplicated, or posted to a publicly accessible website, in whole or in part.",
+        "2": "Overview\nSources of Capital\nComponent Costs\nAdjusting for Flotation Costs\nWACC\nAdjusting for Risk"
+      },
+      "kind": "PPTX text extraction, not visual inspection"
+    },
+    {
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\FMM_CH5.pptx",
+      "sha256": "e220933efb54511ddc001b1630ca396dda0d09cfeb474af6a256b4e604abcc25",
+      "slides": 45,
+      "selectedSlides": {
+        "1": "Chapter 5\nTime Value of Money\nBrigham & Houston, \nFundamentals of Financial Management\n, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, copied or duplicated, or posted to a publicly accessible website, in whole or in part.",
+        "2": "Overview\nFuture Value\nPresent Value\nFinding I and N\nAnnuities\nRates of Return\nAmortization"
+      },
+      "kind": "PPTX text extraction, not visual inspection"
+    },
+    {
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\FMM_CH8.pptx",
+      "sha256": "bdc4ee08f866c0c69484b431309b282d53cd64b36e228eb9ae9039a0cd176c6b",
+      "slides": 51,
+      "selectedSlides": {
+        "1": "Chapter 8\nRisk and Rates of Return\nBrigham & Houston, \nFundamentals of Financial Management\n, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, copied or duplicated, or posted to a publicly accessible website, in whole or in part.",
+        "2": "Overview\nStand Alone Risk\nPortfolio Risk\nRisk and Return: CAPM/SML"
+      },
+      "kind": "PPTX text extraction, not visual inspection"
+    },
+    {
+      "path": "C:\\cek\\AKM II\\Materi\\IA_IFRS_Ch9.pptx",
+      "sha256": "66ab304e04eb9fe220ff5de231292a5eabe140643272c8f049bd25c9dc47b757",
+      "slides": 99,
+      "selectedSlides": {
+        "1": "Intermediate Accounting \nIFRS Edition\nKieso, Weygandt, Warfield\nFifth Edition\nChapter 9\nAcquisition and Disposition of Property, Plant, and Equipment\nThis slide deck contains animations. Please disable animations if they cause issues with your device.\nCopyright ©2024 John Wiley & Sons, Inc.",
+        "2": "Learning Objectives\nAfter studying this chapter, you should be able to:\nL\n \nO 1 \nIdentify property, plant, and equipment and its related costs.\nL\n \nO 2 \nDiscuss the accounting problems associated with the  capitalization of borrowing costs.\nL\n \nO 3 \nExplain accounting issues related to acquiring and valuing plant assets.\nL\n \nO 4 \nDescribe the accounting treatment for costs subsequent to acquisition.\nL\n \nO 5 \nDescribe the accounting treatment for the disposal of property, plant, and equipment.\nCopyright ©2024 John Wiley & Sons, Inc.\n2",
+        "33": "Comprehensive Example \nDecember 31, Journal Entry\nAll of the other entries presented in a previous slide would be the same except for the interest entries on December 31, which would be as follows.\nDecember 31\nBuildings (Capitalized Borrowing Cost)\n91,840\nInterest Expense ($280,000 − $91,840)\n188,160\nCash\n280,000\nL\n \nO 2\nCopyright ©2024 John Wiley & Sons, Inc.\n33",
+        "34": "Comprehensive Example\nProject Funded by a Blend of Specific Debt and General Debt \nSpecific Construction Debt\n15%, $750,000, 3-year note payable to finance purchase construction of the building, dated December 31, 2024, with interest payable annually on December 31. Idle funds from this borrowing were invested during early 2025 and earned $40,000 in investment income.\nOther Debt\n10%, $500,000, 5-year note payable, dated December 31, 2021, with interest payable annually on December 31.\n12%, $1,500,000, 10-year bonds issued December 31, 2020, with interest payable annually on December 31.\nIn this case, the expenditures are first allocated to the specific debt to the extent possible. Then, the remainder of the expenditures are allocated to the general debt.\nL\n \nO 2\nCopyright ©2024 John Wiley & Sons, Inc.\n34",
+        "35": "Comprehensive Example\nProject Funded by a Blend of Specific Debt and General Debt—Allocation of Expenditures \nILLUSTRATION 9.4 \nAllocation of Expenditures\nL\n \nO 2\nCopyright ©2024 John Wiley & Sons, Inc.\n35",
+        "36": "Comprehensive Example\nProject Funded by a Blend of Specific Debt and General Debt—Summary of Borrowing Costs \nThe borrowing costs of the specific debt for this project is $72,500 based on the borrowing costs of $112,500 ($1,500,000 x .15) less the investment income of $40,000.\nThe capitalization rate on the general debt is 11.5% [(.10 x ($500,000 ÷ $2,000,000)] + [.12 x ($1,500,000 ÷ $2,000,000)]. This results in a potential amount of borrowing costs to be capitalized of $23,000 ($200,000 x .115). Since this amount is lower than the actual borrowing costs of the general debt of $230,000 [($500,000 x .10) + ($1,500,000 x .12)], $23,000 will be capitalized from the general borrowings.\nL\n \nO 2\nCopyright ©2024 John Wiley & Sons, Inc.\n36",
+        "37": "Comprehensive Example\nProject Funded by a Blend of Specific Debt and General Debt—Summary of Borrowing Costs \nILLUSTRATION 9.5 \nSummary of Borrowing Costs\nL\n \nO 2\nCopyright ©2024 John Wiley & Sons, Inc.\n37",
+        "54": "Meaning of Commercial Substance\nExchange has \ncommercial substance\n if the future cash flows change as a result of the transaction. That is, if the two parties’ \neconomic positions change,\n the transaction has commercial substance.\nILLUSTRATION 9.8 \nAccounting for Exchanges\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n54",
+        "55": "Exchanges of Non-Monetary Assets\nLoss Situation (Has Commercial Substance)\nCompanies recognize a loss if the exchange has commercial substance.\nRationale:\n Companies should not value assets at more than their cash equivalent price. If the loss were deferred, assets would be overstated.\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n55",
+        "56": "Loss Situation (Has Commercial Substance)\nIllustration:\n Information Processing SA trades its used machine for a new model at Jerrod Business Solutions N V. The exchange has commercial substance. The used machine has a book value of €8,000 (original cost €12,000 less €4,000 accumulated depreciation) and a fair value of €6,000. The new model lists for €16,000. Jerrod gives Information Processing a trade-in allowance of €9,000 for the used machine. \nInformation Processing computes the cost of the new asset as shown in the next slide.\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n56",
+        "57": "Loss Situation (Has Commercial Substance)\nInformation Processing computes the cost of the new asset as follows:\nILLUSTRATION 9.9 \nComputation of Cost of New Machine\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n57",
+        "58": "Loss Situation (Has Commercial Substance) \nJournal Entry and Computation of Loss\nIllustration: \nInformation Processing records this transaction as follows:\nEquipment\n13,000\nAccumulated Depreciation—Equipment\n  4,000\nLoss on Disposal of Equipment\n  2,000\nEquipment\n12,000\nCash\n 7,000\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n58",
+        "59": "Loss Situation (Has Commercial Substance) \nJournal Entry and Computation of Loss\nLoss on Disposal\nILLUSTRATION 9.10 \nComputation of \nLoss on Disposal of Used Machine\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n59",
+        "60": "Exchange of Non-Monetary Assets\nGain Situation (Has Commercial Substance)\nCompany usually records the cost of a non-monetary asset acquired in exchange for another non-monetary asset at the \nfair value of the asset given up, \nand immediately recognizes a gain. \nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n60",
+        "61": "Gain Situation (Has Commercial Substance)\nIllustration: \nInterstate Transportation Company exchanged a number of used trucks plus cash for a semi-truck. The used trucks have a combined book value of $42,000 (cost $64,000 less $22,000 accumulated depreciation). Interstate’s purchasing agent, experienced in the secondhand market, indicates that the used trucks have a fair market value of $49,000. In addition to the trucks, Interstate must pay $11,000 cash for the semi-truck. \nInterstate computes the cost of the semi-truck as shown in the next slide.\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n61",
+        "62": "Gain Situation (Has Commercial Substance)\nILLUSTRATION 9.11 \nComputation of Semi-Truck Cost\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n62",
+        "63": "Gain Situation (Has Commercial Substance)\nJournal Entry and Computation of Gain\nIllustration: \nInterstate records the exchange transaction as follows:\nTruck (semi)\n60,000\nAccumulated Depreciation—Trucks\n22,000\nTrucks (used)\n64,000\nGain on Disposal of Trucks\n7,000\nCash\n11,000\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n63",
+        "64": "Gain Situation (Has Commercial Substance)\nJournal Entry and Computation of Gain\nGain on Disposal\nILLUSTRATION 9.12 \nComputation of \nGain on Disposal of Used Trucks\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n64",
+        "65": "Exchanges of Non-Monetary Assets\nLacks Commercial Substance\nNow assume that Interstate Transportation Company exchange lacks commercial substance. The economic position of Interstate did not change significantly as a result of this exchange.\nInterstate defers the gain of $7,000 and reduces the basis of the semi-truck.\nIllustration in the next shows two different but acceptable computations to illustrate this reduction:\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n65",
+        "66": "Exchanges of Non-Monetary Assets\nLacks Commercial Substance\nILLUSTRATION 9.13 \nBasis of Semi-Truck—Fair\n \nValue vs. Book Value\nL\n \nO 3\nCopyright ©2024 John Wiley & Sons, Inc.\n66"
+      },
+      "kind": "PPTX text extraction, not visual inspection"
+    }
+  ],
+  "akk202Book": {
+    "path": "C:\\AkuntansiHub-Content-Agent\\course-sources\\AKK202\\shared\\assigned-textbook\\Intermediate Accounting IFRS 5th Edition (Donald Kieso) (z-library.sk, 1lib.sk, z-lib.sk)_compressed.pdf",
+    "sha256": "4d67dfa141c522a22a0594ec5a4cc3138e7dc8c39535792b9ccfc80bcf30a1e4",
+    "pdfPages": 2484,
+    "identityPdfPages": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "localOriginPreference": {
+    "path": "C:\\Users\\Lenovo\\.codex\\config.toml",
+    "origin": "http://127.0.0.1:5186",
+    "value": {
+      "access": "allow",
+      "downloads": "allow"
+    }
+  }
+}

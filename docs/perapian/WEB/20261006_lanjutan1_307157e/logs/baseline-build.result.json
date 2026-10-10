@@ -1,0 +1,9 @@
+{
+  "task": "baseline-build",
+  "cwd": "C:/cek/.worktrees/perapian-baseline",
+  "command": "npm.cmd run build",
+  "startedAt": "2026-10-06T12:33:02.220Z",
+  "finishedAt": "2026-10-06T12:33:02.276Z",
+  "exitCode": 1,
+  "rawLog": "logs/baseline-build.log"
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "name": "test-table-titles",
+    "exitCode": 0
+  },
+  {
+    "name": "test-reading-lifecycle",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm01-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm02-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm03-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm04-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm05-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm06-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-tm07-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm01-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm02-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm03-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm04-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm05-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm06-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-tm07-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm01-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm02-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm03-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm04-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm05-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm06-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-tm07-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu307-render-rules",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-renderer",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk203-render-rules",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-render-rules",
+    "exitCode": 0
+  },
+  {
+    "name": "test-mnu108-practice",
+    "exitCode": 0
+  },
+  {
+    "name": "test-sia-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-aks301-alignment",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk202-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-akk202-alignment",
+    "exitCode": 0
+  },
+  {
+    "name": "test-pjk301-canonical",
+    "exitCode": 0
+  },
+  {
+    "name": "test-pjk301-alignment",
+    "exitCode": 0
+  },
+  {
+    "name": "test-aka201-layered",
+    "exitCode": 0
+  },
+  {
+    "name": "test-aka201-practice",
+    "exitCode": 0
+  },
+  {
+    "name": "test-aka201-reading-nav",
+    "exitCode": 0
+  },
+  {
+    "name": "test-reading-frame",
+    "exitCode": 1
+  },
+  {
+    "name": "test-reading-outline",
+    "exitCode": 0
+  },
+  {
+    "name": "test-render-s1",
+    "exitCode": 0
+  }
+]

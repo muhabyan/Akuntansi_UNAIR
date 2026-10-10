@@ -1,0 +1,10 @@
+{
+  "task": "baseline-build",
+  "attempt": "retry1",
+  "cwd": "C:/cek/.worktrees/perapian-baseline",
+  "command": "npm.cmd run build",
+  "startedAt": "2026-10-06T12:33:27.499Z",
+  "finishedAt": "2026-10-06T12:33:27.551Z",
+  "exitCode": 1,
+  "rawLog": "logs/baseline-build-retry1.log"
+}
