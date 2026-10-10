@@ -68,7 +68,7 @@ for (const pathname of ['/course/SII306', '/course/FEB25603016', '/course/AKS301
 // ---- The renamed data: content is served under SII306 and legacy AKS301
 const content = await loadCourseContent('SII306');
 assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), Array.from({ length: 14 }, (_, i) => i + 1));
-assert.deepEqual(Object.keys(content.reviews).sort(), ['uas', 'uts']);
+assert.deepEqual(Object.keys(content.reviews).sort(), ['uts']); // TM14 sudah TM biasa, tidak lagi ditiru sebagai kartu Review UAS
 const cards = getFlashcards('SII306');
 assert.equal(cards.length, 105);
 assert.equal(sia[0].flashcardCount, cards.length, 'catalog flashcardCount matches the deck');

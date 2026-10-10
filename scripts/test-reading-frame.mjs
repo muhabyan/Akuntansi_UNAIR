@@ -102,7 +102,7 @@ try {
       stackedHiddenFromLg: [...document.querySelectorAll('.layered-stacked-table')].filter((s) => s.closest('.lg\\:hidden')).length,
     };
   };
-  for (const [code, tm] of [['AKA201', 1], ['PJK301', 1], ['PJK301', 8], ['PJK301', 14]]) {
+  for (const [code, tm] of [['AKA201', 1], ['PJK301', 1], ['PJK301', 9], ['PJK301', 14]]) {
     if (!(await openReading(code, tm))) continue;
     await settle(80);
     const state = layoutState();

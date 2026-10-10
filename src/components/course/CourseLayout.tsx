@@ -19,6 +19,7 @@ import {
 import { useStudyProgress, materialKey } from '../../hooks/useStudyProgress';
 import { loadCourseContent, type LoadedCourseContent, type ReviewReadingKey } from '../../data/courses/courseRegistry';
 import { withTableTitles } from '../../data/courses/tableTitles';
+import { getPostUtsRange, inPostUtsRange, postUtsLabel, REVIEW_UAS_TM, REVIEW_UTS_TM } from '../../lib/postUts';
 import type { ContentBlock, Course, CourseTabId, Reading } from '../../types';
 import { getArsipFiles } from '../../data/arsipRegistry';
 import ArsipViewerTab from '../ArsipViewerTab';
@@ -177,6 +178,8 @@ function ReadingPanel({
   onNext,
   courseCode,
   courseName,
+  postUtsLabel: postLabel,
+  reviewKind,
   isFirst,
   isLast,
   isDone,
@@ -188,6 +191,8 @@ function ReadingPanel({
   onNext: () => void;
   courseCode: string;
   courseName: string;
+  postUtsLabel: string;
+  reviewKind?: 'uts' | 'uas';
   isFirst: boolean;
   isLast: boolean;
   isDone: (key: string) => boolean;
@@ -199,7 +204,7 @@ function ReadingPanel({
   useEscapeToBack(reading.layout === 'layered', onBack);
   const sharedFrame = usesSharedFrame(reading, courseCode);
   const done = isDone(key);
-  const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === 0 || reading.tm === 15;
+  const isSimulation = reading.title === 'Simulasi UTS' || reading.title === 'Simulasi UAS' || reading.tm === REVIEW_UTS_TM || reading.tm === REVIEW_UAS_TM;
   const outlineItems = useMemo(() => buildReadingOutline(reading.blocks), [reading.blocks]);
   const activeOutlineId = useReadingOutlineActive(outlineItems);
   const activeOutlineItem = outlineItems.find((item) => item.id === activeOutlineId) ?? outlineItems[0];
@@ -400,7 +405,7 @@ function ReadingPanel({
           </button>
         </div>
 
-        <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} />
+        <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} postUtsLabel={postLabel} reviewKind={reviewKind} />
 
         <SharedFrameContext.Provider value={sharedFrame}>
           <div ref={readingDocumentRef} className={`reading-document akbi-reading-flow min-w-0${courseCode === 'AKS301' || courseCode === 'SII306' ? ' sia-reading-document' : ''}`}>
@@ -613,6 +618,18 @@ function PtePraUasToolkit({
   );
 }
 
+function PendingMaterialCard({ tmNum, title }: { tmNum: number; title: string }) {
+  return (
+    <article className="grid grid-cols-[2.75rem_minmax(0,1fr)] items-start gap-3 border-b border-gray-200 bg-gray-50/70 px-3 py-3.5 last:border-b-0 dark:border-gray-700 dark:bg-gray-900/30 md:items-center md:px-4">
+      <span aria-hidden="true" className="mt-0.5 flex h-11 w-11 items-center justify-center rounded-lg border border-dashed border-gray-300 text-[10px] font-bold text-gray-400 dark:border-gray-600 dark:text-gray-500">TM {tmNum}</span>
+      <div className="min-w-0">
+        <div className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">TM {tmNum} · Sedang disiapkan</div>
+        <h3 className="text-sm font-bold leading-snug text-gray-600 dark:text-gray-300 md:text-base md:leading-snug">{title}</h3>
+      </div>
+    </article>
+  );
+}
+
 function MaterialCard({
   tmNum,
   reading,
@@ -719,8 +736,10 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
   const isPteCourse = course.code === 'EKT109';
 
   const availableTms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
+  const postUtsRange = useMemo(() => getPostUtsRange(course), [course]);
+  const postLabel = postUtsLabel(postUtsRange);
   const utsTms = useMemo(() => availableTms.filter((t) => t >= 1 && t <= 7), [availableTms]);
-  const uasTms = useMemo(() => availableTms.filter((t) => t >= 8 && t <= 14), [availableTms]);
+  const uasTms = useMemo(() => availableTms.filter((t) => inPostUtsRange(t, postUtsRange)), [availableTms, postUtsRange]);
 
   const reviewUtsReading = courseContent?.reviews.uts;
   const reviewUasReading = courseContent?.reviews.uas;
@@ -753,12 +772,21 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     return [...list].sort((a, b) => (isSortedAsc ? a - b : b - a));
   }, [activeTab, utsTms, uasTms, searchQuery, allReadings, availableTms, isSortedAsc]);
 
+  // TM yang ada di katalog tetapi bacaannya belum terbit tampil sebagai "sedang disiapkan" dan ikut dihitung di progres.
+  const pendingTms = useMemo(() => {
+    if (!courseContent) return [];
+    const catalog = activeTab === 'pra_uts' ? course.materiTM1_7 : activeTab === 'pra_uas' ? course.materiTM8_14 : undefined;
+    return (catalog ?? []).filter((item) => !courseContent.readings[item.tm]);
+  }, [activeTab, course, courseContent]);
+
   const stats = useMemo(() => {
-    const total = availableTms.length;
+    const expected = new Set<number>(availableTms);
+    [...(course.materiTM1_7 ?? []), ...(course.materiTM8_14 ?? [])].forEach((item) => expected.add(item.tm));
+    const total = expected.size;
     const completed = availableTms.filter((t) => isDone(materialKey(course.code, t))).length;
     const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
     return { total, completed, percent };
-  }, [availableTms, course.code, isDone]);
+  }, [availableTms, course.code, course.materiTM1_7, course.materiTM8_14, isDone]);
 
   const nextTm = useMemo(() => {
     return availableTms.find((t) => !isDone(materialKey(course.code, t))) ?? availableTms[0] ?? null;
@@ -778,7 +806,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
       },
       {
         id: 'pra_uas',
-        label: 'TM 8–14',
+        label: postLabel,
         icon: <Award size={16} />,
         count: uasTms.length,
       },
@@ -795,7 +823,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
     }
     
     return list;
-  }, [course, utsTms.length, uasTms.length]);
+  }, [course, utsTms.length, uasTms.length, postLabel]);
 
   const normalizedSearchQuery = searchQuery.trim().toLowerCase();
   const pteToolkitMetrics = useMemo(() => {
@@ -951,6 +979,8 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
               reading={currentReading}
               courseCode={course.code}
               courseName={course.name}
+              postUtsLabel={postLabel}
+              reviewKind={selectedReviewKey === 'uts' || selectedReviewKey === 'uas' ? selectedReviewKey : undefined}
               onBack={handleBackFromReading}
               isFirst={selectedReviewKey !== null || currentIdx === 0}
               isLast={selectedReviewKey !== null || currentIdx === availableTms.length - 1}
@@ -1029,15 +1059,20 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
               {(activeTab === 'pra_uts' || activeTab === 'pra_uas' || searchQuery) && (
                 <div>
                   <div className="overflow-hidden rounded-xl border border-gray-200 bg-white/70 dark:border-gray-700 dark:bg-gray-800/55">
-                    {filteredTms.length === 0 && filteredSpecialReviewCount === 0 && filteredToolkitCount === 0 ? (
+                    {filteredTms.length === 0 && pendingTms.length === 0 && filteredSpecialReviewCount === 0 && filteredToolkitCount === 0 ? (
                       <div className="bg-gray-50 py-12 text-center text-sm text-gray-500 dark:bg-gray-800/50 dark:text-gray-400">Tidak ada materi yang cocok.</div>
                     ) : (
-                      filteredTms.map((tmNum) => {
+                      [...filteredTms, ...(searchQuery ? [] : pendingTms.map((item) => item.tm))]
+                        .sort((a, b) => (isSortedAsc ? a - b : b - a))
+                        .map((tmNum) => {
                         const reading = courseContent.readings[tmNum];
                         const key = materialKey(course.code, tmNum);
                         const checked = isDone(key);
 
-                        if (!reading) return null;
+                        if (!reading) {
+                          const pending = pendingTms.find((item) => item.tm === tmNum);
+                          return pending ? <PendingMaterialCard key={`pending-${tmNum}`} tmNum={tmNum} title={pending.title} /> : null;
+                        }
 
                         return (
                           <MaterialCard
@@ -1050,7 +1085,7 @@ export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm =
                             onOpen={() => navigateToMeeting(tmNum)}
                           />
                         );
-                      })
+                        })
                     )}
                   </div>
 

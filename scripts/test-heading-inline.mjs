@@ -28,8 +28,8 @@ if (!courseList) throw new Error('UNIVERSAL_COURSES not found in src/App.tsx');
 const courseCodes = [...courseList[1].replace(/\/\/.*$/gm, '').matchAll(/'([A-Z0-9]+)'/g)].map((match) => match[1]);
 
 // Numbered h2/h3 found by the audit that led to this change (565 of the 576 broken headings; the other 11 are HTML
-// comments, a separate bug). A floor, not an exact count: content may grow, but never drop these courses to zero.
-const NUMBERED_FLOOR = { MNU101: 183, AKK202: 121, SII306: 58, PJK201: 54, PJK301: 51, AKM201: 39, AKK106: 34, MNK201: 23, EKT109: 2 };
+// comments, a separate bug). A floor, not an exact count (PJK301 46: TM14 tidak lagi dihitung dua kali sebagai ulasan UAS): content may grow, but never drop these courses to zero.
+const NUMBERED_FLOOR = { MNU101: 183, AKK202: 121, SII306: 58, PJK201: 54, PJK301: 46, AKM201: 39, AKK106: 34, MNK201: 23, EKT109: 2 };
 const NUMBERED = /^\s*\d{1,9}\\?[.)]\s/;
 
 // Daftar Isi labels taken from main before this change (buildReadingOutline + readingOutlineLabel).

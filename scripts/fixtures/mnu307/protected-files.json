@@ -20,12 +20,12 @@
     "repository": "419ea38ebebfee8c212d98d3307f16e845514dbcdf0e6f920309a13d5bc77161"
   },
   "src/components/course/CourseHeader.tsx": {
-    "worktree": "db8477512504984429b5de140e85e7f35e5569f8813dca73e4169abb2a534642",
-    "repository": "04970bc6f1ff6998eca5b3da9545ef087d46bba3963433cc8d95ea507b4e5ffc"
+    "worktree": "4e619b9bcb4fc1267306f05027b60a1438c7d9db32d37d15ef4607c432fbf24c",
+    "repository": "01959369d2b9b19177b4d0a7c2e2a4ba002021bb08414d04577576b4f96fb5e9"
   },
   "src/components/course/CourseLayout.tsx": {
-    "worktree": "a2cf49088298f8c24897ed94d47f58cf9d0e3c876b25cc032dd23a4c168d1d48",
-    "repository": "86b8a9567aa65f3b1805b18445c600ebde414366ca32dcf6961fcfec04ae2de2"
+    "worktree": "689dd0e87d23f500377dc9fc76431350cbd1b32ec00d7e4c1cc81012badd770f",
+    "repository": "9f01d343078eb50cc2db28895db96beb4d2ff35b21fdb75b5a6e909af6672ada"
   },
   "src/components/course/CourseSidebar.tsx": {
     "worktree": "f69a879c34ae9b93b92e848e6d328ab44f0a7123eae099136eb0df7f47323b57",

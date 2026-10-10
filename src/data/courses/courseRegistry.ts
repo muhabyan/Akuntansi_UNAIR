@@ -4,6 +4,7 @@
 // Batch 8: hanya data course yang sedang dibuka yang diunduh/diparse.
 // =============================================================
 import type { Reading, ContentBlock, CalloutVariant } from '../../types';
+import { REVIEW_UAS_TM, REVIEW_UTS_TM } from '../../lib/postUts';
 
 /** 'prep:<slug>' keys are the "Persiapan UTS" pages; they live in `reviews` and are listed, in order, by `prep`. */
 export type ReviewReadingKey = 'uts' | 'uas' | `prep:${string}`;
@@ -702,12 +703,76 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
   }
 }
 
+const UTS_REVIEW_TITLE = /(review|pemantapan).*(uts|ujian tengah)/i;
+
+// Kunci: objek `readings` asli, supaya alias kode (mis. AKS301 dan SII306) tetap berbagi objek yang sama.
+const normalizedByInput = new WeakMap<object, LoadedCourseContent>();
+
+/**
+ * Merapikan kunci bacaan setelah UTS tanpa mengubah isinya:
+ * - Bacaan "review UTS" yang dulu ditaruh di TM8 dipindah ke ulasan UTS (tidak lagi menjadi kartu TM).
+ * - Ulasan UAS yang hanya salinan sebuah TM biasa (mis. TM14) dibuang, supaya TM itu tidak menyamar sebagai ulasan.
+ * - Ulasan UAS sungguhan memakai nomor 16, supaya nomor 15 bebas untuk TM biasa.
+ */
+export function normalizePostUtsContent(content: LoadedCourseContent): LoadedCourseContent {
+  const known = normalizedByInput.get(content.readings);
+  if (known) return known;
+  const result = normalizeOnce(content);
+  normalizedByInput.set(content.readings, result);
+  return result;
+}
+
+function normalizeOnce(content: LoadedCourseContent): LoadedCourseContent {
+  let readings = content.readings;
+  let reviews = content.reviews;
+  let readingsCopied = false;
+  let reviewsCopied = false;
+  const editReadings = () => {
+    if (readingsCopied) return;
+    readings = { ...readings };
+    readingsCopied = true;
+  };
+  const editReviews = () => {
+    if (reviewsCopied) return;
+    reviews = { ...reviews };
+    reviewsCopied = true;
+  };
+
+  const tm8 = readings[8];
+  if (tm8 && (reviews.uts?.title === tm8.title || (!reviews.uts && UTS_REVIEW_TITLE.test(tm8.title)))) {
+    editReadings();
+    editReviews();
+    if (!reviews.uts) reviews.uts = tm8;
+    delete readings[8];
+  }
+
+  // Ulasan UTS yang nomornya bentrok dengan TM biasa (mis. ASP: TM 8 = materi pertama setelah UTS) dipindah ke nomor khusus.
+  const uts = reviews.uts;
+  if (uts && uts.tm !== REVIEW_UTS_TM && readings[uts.tm]) {
+    editReviews();
+    reviews.uts = { ...uts, tm: REVIEW_UTS_TM };
+  }
+
+  const uas = reviews.uas;
+  if (uas) {
+    if (readings[uas.tm]?.title === uas.title) {
+      editReviews();
+      delete reviews.uas;
+    } else if (uas.tm === 15) {
+      editReviews();
+      reviews.uas = { ...uas, tm: REVIEW_UAS_TM };
+    }
+  }
+
+  return readingsCopied || reviewsCopied ? { ...content, readings, reviews } : content;
+}
+
 const contentCache = new Map<string, Promise<LoadedCourseContent>>();
 
 export function loadCourseContent(courseCode: string): Promise<LoadedCourseContent> {
   const cached = contentCache.get(courseCode);
   if (cached) return cached;
-  const promise = resolveCourseContent(courseCode).catch((error: unknown) => {
+  const promise = resolveCourseContent(courseCode).then(normalizePostUtsContent).catch((error: unknown) => {
     contentCache.delete(courseCode);
     throw error;
   });

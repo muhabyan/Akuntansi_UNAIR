@@ -90,14 +90,14 @@ const MNU108_TM1_7 = materi([
   ['Desain Struktur Organisasi', 'Daft Ch. 7'],
 ], 1);
 const MNU108_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Daft Ch. 1–7'],
   ['Mengelola Inovasi & Perubahan Organisasi (Lewin)', 'Daft Ch. 9'],
   ['Manajemen Sumber Daya Manusia & Keragaman Inklusif (DEI)', 'Daft Ch. 10'],
   ['Memahami Perilaku Individu, Kepribadian & Sikap Kerja', 'Daft Ch. 11'],
   ['Kepemimpinan Manajerial (Situational & Grid)', 'Daft Ch. 12'],
   ['Memotivasi Karyawan (Maslow, Herzberg, Vroom)', 'Daft Ch. 13'],
-  ['Mengelola Tim Kerja & Sistem Pengendalian Kualitas (TQM)', 'Daft Ch. 14–15'],
-], 8);
+  ['Komunikasi dan Tim Kerja yang Berkinerja Tinggi', 'Daft Ch. 14'],
+  ['Mengelola Mutu & Kinerja: Sistem Pengendalian dan TQM', 'Daft Ch. 15'],
+], 9);
 const MNU108_REF = [
   'Daft, R.L. & Marcic, D. (2023). Understanding Management (12th ed.). Cengage Learning.',
   'Silabus & RPP Resmi Pengantar Manajemen, FEB Universitas Airlangga.',
@@ -115,14 +115,14 @@ const MNS301_TM1_7 = materi([
   ['Blue Ocean Strategy dan Strategy Maps', 'Kim & Mauborgne (2005) · Kaplan & Norton (2004)'],
 ], 1);
 const MNS301_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'DMEL Ch. 1–12'],
-  ['Blue Ocean Strategy: Value Innovation, Strategy Canvas, & ERRC', 'Kim & Mauborgne'],
-  ['Strategy Maps: Mengubah Aset Tak Berwujud Menjadi Hasil Finansial', 'Kaplan & Norton'],
-  ['Studi Kasus I: Platform Business & Digital Ecosystems (Alibaba)', 'Kasus RPP UNAIR'],
-  ['Studi Kasus II: Fast Fashion vs Luxury Strategy (H&M vs LVMH)', 'Kasus RPP UNAIR'],
-  ['Studi Kasus III: Global Aviation & Premium Hub (Emirates Airline)', 'Kasus RPP UNAIR'],
-  ['Studi Kasus IV: Technology Leadership & Multi-Brand (Samsung & P&G)', 'Kasus RPP UNAIR'],
-], 8);
+  ['Studi Kasus: THEORYBRIDGE.COM', 'Kasus RPP UNAIR'],
+  ['Studi Kasus: H&M\'s Dilemma', 'Kasus RPP UNAIR'],
+  ['Studi Kasus: Louis Vuitton', 'Kasus RPP UNAIR'],
+  ['Studi Kasus: Emirates Airline', 'Kasus RPP UNAIR'],
+  ['Studi Kasus: Samsung Electronics', 'Kasus RPP UNAIR'],
+  ['Studi Kasus: Alibaba Group', 'Kasus RPP UNAIR'],
+  ['Studi Kasus: Procter & Gamble', 'Kasus RPP UNAIR'],
+], 9);
 const MNS301_REF = [
   'Dess, G., McNamara, G., Eisner, A., & Lee, S.H. (2024). Strategic Management: Text and Cases (11th ed.). McGraw-Hill. (DMEL)',
   'Kim, W.C. & Mauborgne, R. (2005). Blue Ocean Strategy: How to Create Uncontested Market Space and Make the Competition Irrelevant. Harvard Business School Press.',
@@ -142,14 +142,14 @@ const PJK301_TM1_7 = materi([
   ['Kredit Pajak LN (PPh 24), Angsuran PPh 25 / OPPT, & Insentif 31A/31E', 'UU PPh Pasal 24, 25, 31A, 31E | PMK 81/2024 | PP 78/2019'],
 ], 1);
 const PJK301_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'UU PPh jo. UU HPP | Kompilasi TM 1-7'],
   ['Konsep PPh 21/26 Terbaru (TER PP 58/2023 & Natura)', 'PP 58/2023 | PMK 168/2023 | PMK 66/2023'],
   ['Kalkulasi Komprehensif PPh 21 (Tetap, Lepas, Ahli)', 'PMK 168/2023 | PP 68/2009 Pesangon'],
   ['Rekonsiliasi Fiskal & SPT Tahunan PPh Badan 1771', 'Formulir 1771 DJP | PSAK 46'],
   ['Dasar Hukum PPN & PPnBM, PKP, BKP/JKP, & Fasilitas', 'UU PPN jo. UU HPP | PMK 197/2013'],
-  ['Mekanisme e-Faktur Pajak, DPP Nilai Lain, & PM', 'PER-03/PJ/2022 | PMK 71/2022'],
-  ['Restitusi PPN, PPN WAPU, & Pajak Karbon UU HPP', 'UU HPP Bab VI | PMK 59/2022 WAPU'],
-], 8);
+  ['Faktur Pajak, e-Faktur, DPP Nilai Lain & Pengkreditan PM', 'PER-03/PJ/2022 | PMK 71/2022'],
+  ['Restitusi PPN, PPN WAPU, Fasilitas & Pelaporan', 'UU KUP Pasal 17C/17D | PMK 59/2022 WAPU'],
+  ['Pajak Karbon dan Perdagangan Karbon', 'UU HPP Bab VI'],
+], 9);
 const PJK301_REF = [
   'Republik Indonesia. UU No. 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah diubah terakhir dengan UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP). (Wajib)',
   'Republik Indonesia. UU No. 8 Tahun 1983 tentang Pajak Pertambahan Nilai dan PPnBM sebagaimana telah diubah terakhir dengan UU HPP. (Wajib)',
@@ -178,13 +178,13 @@ const AKS201_TM1_7 = materi([
   ['Laporan Keuangan Pemerintah Berbasis Akrual (PP 71/2010)', 'PSAP 01 s.d 12 | PP 71/2010 Lampiran I'],
 ], 1);
 const AKS201_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'PP 71/2010 | Kompilasi TM 1-7'],
-  ['Sistem Akuntansi Pemerintah Pusat (SAPP) & Daerah (SAPD)', 'Permendagri 77/2020 | Permendagri 64/2013'],
+  ['Sistem Akuntansi Pemerintah Pusat & Daerah', 'Permendagri 77/2020 | Permendagri 64/2013'],
   ['Pengukuran Kinerja Pemerintah & Value for Money (3E)', 'Mardiasmo Bab 8 | SAKIP PermenPAN-RB'],
   ['Audit Sektor Publik: Pengawasan APIP & Pemeriksaan BPK', 'UU 15/2004 | Standar SPKN BPK'],
-  ['Akuntansi & Pelaporan Keuangan Nirlaba (LSM & Parpol)', 'ISAK 35 | UU 2/2011 Partai Politik'],
+  ['Laporan Keuangan Organisasi Nirlaba Berbasis SAK: LSM', 'ISAK 35 | UU 16/2001 Yayasan'],
+  ['Laporan Keuangan Organisasi Nirlaba Berbasis SAK: Partai Politik', 'ISAK 35 | UU 2/2011 Partai Politik'],
   ['Pengelolaan Keuangan BLU & BLUD (Rumah Sakit)', 'PP 23/2005 | PSAP 13 Pelaporan BLU'],
-  ['Topik Riset Kontemporer & Tren Akuntansi Sektor Publik', 'Jurnal ASP | Isu Keuangan Desa & SPBE'],
+  ['Topik Riset Kontemporer Akuntansi Sektor Publik', 'Jurnal ASP | Isu Keuangan Desa & SPBE'],
 ], 8);
 const AKS201_REF = [
   'Komite Standar Akuntansi Pemerintahan (KSAP). PP No. 71 Tahun 2010 tentang Standar Akuntansi Pemerintahan (Berbasis Akrual). (Wajib)',
@@ -207,14 +207,14 @@ const MNK201_TM1_7 = materi([
   ['Cash Flow Estimation and Project Risk Analysis', 'Brigham & Houston Ch. 12'],
 ], 1);
 const MNK201_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Brigham & Houston Ch. 1-12 | Kompilasi TM 1-7'],
   ['Capital Structure, Leverage, & Modigliani-Miller', 'Brigham & Houston Ch. 14'],
   ['Distributions to Shareholders: Dividends & Repurchases', 'Brigham & Houston Ch. 15'],
   ['Working Capital Management - Part I: Cash & Receivables', 'Brigham & Houston Ch. 16'],
   ['Working Capital Management - Part II: Inventory & Financing', 'Brigham & Houston Ch. 16'],
   ['Multinational Financial Management & Currency Risk', 'Brigham & Houston Ch. 19'],
-  ['Mergers, Acquisitions, & Corporate Failure Analysis', 'Brigham & Houston Ch. 21 & Artikel'],
-], 8);
+  ['Mergers and Acquisitions', 'Brigham & Houston Ch. 21'],
+  ['Corporate Failure: Kebangkrutan dan Likuidasi', 'Artikel'],
+], 9);
 const MNK201_REF = [
   'Brigham, E. F., & Houston, J. F. (2019/2022). Fundamentals of Financial Management (15th/16th ed.). Cengage Learning. (Wajib)',
   'Departemen Akuntansi FEB UNAIR. Kontrak Perkuliahan & Silabus Manajemen Keuangan Gasal 2026/2027.',
@@ -232,14 +232,14 @@ const AKA201_TM1_7 = materi([
   ['Materialitas Perencanaan dan Pelaksanaan', 'Ch.6 Arens (pp.199–211) · SA/ISA 320'],
 ], 1);
 const AKA201_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Arens Ch. 1-9 | Kompilasi TM 1-7'],
-  ['Perencanaan Audit Menyeluruh & Pemahaman Bisnis Klien', 'Arens Ch. 8 | SA 300, SA 315'],
-  ['Model Risiko Audit (Audit Risk Model) & Risiko Signifikan', 'Arens Ch. 9 | SA 315 Revisi'],
-  ['Pertimbangan Risiko Kecurangan (Fraud Risk & Triangle)', 'Arens Ch. 11 | SA 240'],
-  ['Pengendalian Internal COSO & General IT Controls (GITC)', 'Arens Ch. 10, 12 | COSO 2013'],
-  ['Pengujian Pengendalian (TOC) & Pengujian Substantif', 'Arens Ch. 13 | SA 330, SA 265'],
-  ['Teknik Audit Berbantuan Komputer (CAATs) & Program Audit', 'Arens Ch. 13 | IAASB Tech Guide'],
-], 8);
+  ['Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien', 'Arens | SA 300, SA 315'],
+  ['Bukti Audit dan Prosedur Analitis', 'Arens | SA 500, SA 520'],
+  ['Dokumentasi Audit dan Kertas Kerja', 'Arens | SA 230'],
+  ['Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan', 'Arens | SA 315, SA 240'],
+  ['Pengendalian Internal COSO & Pengendalian Teknologi Informasi', 'Arens | COSO 2013'],
+  ['Pengujian Pengendalian (TOC) & Pengujian Substantif', 'Arens | SA 330'],
+  ['CAATs dan Perancangan Program Audit', 'Arens | SA 330'],
+], 9);
 const AKA201_REF = [
   'Arens dkk., Auditing: The Art and Science of Assurance Engagements, 15th Canadian ed. (page numbers match those cited in the RPS)',
   'Institut Akuntan Publik Indonesia (IAPI). Standar Profesional Akuntan Publik (SPAP) & Standar Audit (SA 200 s.d SA 706).',
@@ -265,14 +265,14 @@ const AKK202_TM1_7 = materi([
   ['Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar', 'Kieso IFRS 5e Ch. 13 | IFRS 9'],
 ], 1);
 const AKK202_TM8_14 = materi([
-  ['Review & Pemantapan Ujian Tengah Semester (UTS)', 'Kieso IFRS 5e Ch. 10–13 | PSAK 16, 48, 19, 57'],
-  ['Liabilitas Jangka Panjang: Obligasi & Metode Suku Bunga Efektif', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
-  ['Pelunasan Dini Obligasi, Wesel Bayar & Restrukturisasi Utang', 'Kieso IFRS 5e Ch. 14 | PSAK 71, IFRIC 19'],
+  ['Liabilitas Jangka Panjang: Obligasi dan Metode Suku Bunga Efektif', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
+  ['Wesel Bayar Jangka Panjang, Pelunasan Dini Obligasi & Restrukturisasi Utang', 'Kieso IFRS 5e Ch. 14 | PSAK 71, IFRIC 19'],
   ['Ekuitas Pemegang Saham, Saham Treasuri & Kebijakan Dividen', 'Kieso IFRS 5e Ch. 15 | PSAK 50, UU PT'],
-  ['Sekuritas Dilutif, Obligasi Konversi & Kompensasi Saham', 'Kieso IFRS 5e Ch. 16 | PSAK 50, 53, 71'],
-  ['Laba Per Saham (Earnings Per Share - Basic & Diluted EPS)', 'Kieso IFRS 5e Ch. 16 | PSAK 56, IAS 33'],
-  ['Akuntansi Investasi: Efek Utang, Efek Ekuitas & Metode Ekuitas', 'Kieso IFRS 5e Ch. 17 | PSAK 71, PSAK 15'],
-], 8);
+  ['Sekuritas Dilutif: Obligasi Konversi, Waran Saham & Kompensasi Saham', 'Kieso IFRS 5e Ch. 16 | PSAK 50, 53, 71'],
+  ['Laba Per Saham (Earnings Per Share): Basic & Diluted', 'Kieso IFRS 5e Ch. 16 | PSAK 56, IAS 33'],
+  ['Akuntansi Investasi I: Efek Utang (Biaya Perolehan Diamortisasi & Nilai Wajar)', 'Kieso IFRS 5e Ch. 17 | PSAK 71'],
+  ['Akuntansi Investasi II: Efek Ekuitas, Entitas Asosiasi & Metode Ekuitas', 'Kieso IFRS 5e Ch. 17 | PSAK 15, 71'],
+], 9);
 const AKK202_REF = [
   'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. (2024). Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons. (Wajib)',
   'Ikatan Akuntan Indonesia (IAI). SAK Indonesia, penomoran efektif 1 Januari 2024: PSAK 216 (aset tetap), 240 (properti investasi), 223 (biaya pinjaman), 236 (penurunan nilai), 238 (aset takberwujud), 237 (provisi), dan 109 (instrumen keuangan).',

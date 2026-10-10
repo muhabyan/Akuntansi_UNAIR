@@ -99,7 +99,8 @@ assert.ok(Object.values(readings).every((reading) => reading !== review), 'revie
 assert.equal(review, mod.SII306_REVIEW_READINGS.uts);
 assert.equal(review, mod.AKS301_REVIEW_READINGS.uts);
 assert.equal(review.tm, 0, 'review uses tm 0 so its progress key does not collide with TM07');
-assert.equal(content.reviews.uas, readings[14], 'UAS review is unchanged');
+assert.equal(content.reviews.uas, undefined, 'TM14 is a normal TM; it is no longer duplicated as a separate UAS review card');
+assert.equal(mod.SII306_REVIEW_READINGS.uas, readings[14], 'module data keeps its original UAS pointer');
 assert.equal(content.readings, readings);
 assertNoOldTopics('review', review);
 const reviewBlocks = flatten(review.blocks);
