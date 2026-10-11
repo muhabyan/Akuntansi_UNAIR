@@ -1,7 +1,7 @@
 // src/data/quizzes/aka201.ts
 // Kuis pilihan ganda Pengauditan Berbasis Risiko I (AKA201).
-// TM01–TM07: converted verbatim from each TM's 06_implementation_brief.md in the content package (IDs from 06, answer keys
-// follow the key spread in 06 and 07). TM08–TM14: the earlier items, unchanged until that half is rebuilt.
+// TM01-TM07 mengikuti paket pra-UTS yang sudah ada. TM09-TM15 disusun dari 04 dan 05.
+// Rujukan 04 ditampilkan dalam pembahasan; jejak sumber ada di scripts/fixtures/aka201-practice-sources.json.
 // Edited by hand, not by the Semester 3 generators (see scripts/test-sem3-generators.mjs).
 import type { QuizQuestion } from '../../types';
 
@@ -972,102 +972,1094 @@ export const AKA201_QUIZ_UTS: QuizQuestion[] = [
 
 export const AKA201_QUIZ_UAS: QuizQuestion[] = [
   {
-    "tm": 8,
-    "topic": "Perencanaan Audit & Pemahaman Klien",
-    "difficulty": "medium",
-    "q": "Surat tertulis resmi antara Kantor Akuntan Publik dan klien yang mendokumentasikan tujuan perikatan, ruang lingkup tanggung jawab, dan dasar penetapan honorarium disebut...",
-    "options": [
-      "Management Representation Letter",
-      "Audit Engagement Letter (Surat Perikatan Audit)",
-      "Management Letter",
-      "Comfort Letter"
-    ],
-    "answer": 1,
-    "explanation": "Engagement letter mengonfirmasi penerimaan penugasan dan mencegah kesalahpahaman antara auditor dan manajemen klien."
-  },
-  {
+    "id": "aka201-tm09-q01",
     "tm": 9,
-    "topic": "Model Risiko Audit (SA 200)",
-    "difficulty": "medium",
-    "q": "Jika auditor menilai Inherent Risk (IR) dan Control Risk (CR) klien sangat TINGGI, maka untuk mempertahankan Acceptable Audit Risk (AAR) pada tingkat yang rendah, Planned Detection Risk (PDR) harus ditetapkan...",
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "basic",
+    "q": "Apa fungsi overall audit strategy (strategi audit menyeluruh)?",
     "options": [
-      "Sangat Tinggi, sehingga pengujian substantif dikurangi",
-      "Rendah, sehingga bukti audit substantif yang dikumpulkan harus LEBIH BANYAK dan meyakinkan",
-      "Tidak berubah, karena risiko pengendalian tidak memengaruhi risiko deteksi",
-      "Nol mutlak tanpa pengujian sampel"
+      "Menetapkan seluruh langkah rinci pengujian piutang",
+      "Menetapkan hasil konfirmasi sebelum pelaksanaan audit",
+      "Menetapkan cakupan, waktu, dan arah audit",
+      "Menetapkan tanggung jawab penyusunan laporan klien"
     ],
-    "answer": 1,
-    "explanation": "PDR = AAR / (IR × CR). Jika IR dan CR tinggi, PDR harus rendah, yang mewajibkan auditor memperluas pengujian substantif."
+    "answer": 2,
+    "explanation": "Overall audit strategy menetapkan cakupan, waktu, dan arah audit serta menjadi pegangan audit plan, yaitu rencana audit. Rujukan 04 TM09: C-020 (ARENS p.185; ISA300 para. 7).",
+    "sourceRef": "Rujukan 04 TM09: C-020 (ARENS p.185; ISA300 para. 7).",
+    "sourceAnchors": [
+      "C-020"
+    ]
   },
   {
-    "tm": 10,
-    "topic": "Pertimbangan Fraud (SA 240)",
-    "difficulty": "medium",
-    "q": "Tiga kondisi yang membentuk Segitiga Kecurangan (Fraud Triangle) menurut Donald Cressey adalah...",
+    "id": "aka201-tm09-q02",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "basic",
+    "q": "Komponen mana yang termasuk audit plan (rencana audit)?",
     "options": [
-      "Peluang, Keserakahan, dan Kebodohan",
-      "Tekanan/Insentif, Peluang (Opportunity), dan Rasionalisasi/Sikap",
-      "Kolusi, Kurangnya Pengawasan, dan Kompensasi Rendah",
-      "Pemberontakan, Ketiadaan Dokumen, dan Otorisasi Ganda"
+      "Sifat, waktu, luas prosedur penilaian risiko",
+      "Sifat, waktu, luas strategi pemasaran klien",
+      "Sifat, waktu, luas target penjualan klien",
+      "Sifat, waktu, luas produksi persediaan klien"
     ],
-    "answer": 1,
-    "explanation": "Fraud triangle terdiri dari Pressure/Incentive, Opportunity (kelemahan kontrol), dan Rationalization (pembenaran diri)."
+    "answer": 0,
+    "explanation": "Audit plan merinci nature, timing, extent, yaitu sifat, waktu, dan luas prosedur penilaian risiko, prosedur tambahan terkait asersi, serta prosedur lain untuk memenuhi standar. Rujukan 04 TM09: C-023 (ARENS p.177; ISA300 paras. 9, A15).",
+    "sourceRef": "Rujukan 04 TM09: C-023 (ARENS p.177; ISA300 paras. 9, A15).",
+    "sourceAnchors": [
+      "C-023"
+    ]
   },
   {
-    "tm": 11,
-    "topic": "Pengendalian Internal COSO & Pemisahan Tugas",
-    "difficulty": "medium",
-    "q": "Untuk mencegah terjadinya kecurangan dan kesalahan, fungsi-fungsi berikut HARUS dipisahkan satu sama lain, KECUALI...",
+    "id": "aka201-tm09-q03",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "basic",
+    "q": "Dalam perencanaan, apa arti engagement risk (risiko perikatan)?",
     "options": [
-      "Fungsi Otorisasi Transaksi",
-      "Fungsi Pencatatan Akuntansi",
-      "Fungsi Penyimpanan Fisik Aset (Custody)",
-      "Fungsi Penyusunan Anggaran Operasional dan Perencanaan Strategis Pemasaran"
+      "Risiko entitas gagal mencapai tujuan bisnis",
+      "Risiko yang mau ditanggung firma audit",
+      "Risiko laporan salah saji sebelum diaudit",
+      "Risiko prosedur gagal mendeteksi salah saji"
+    ],
+    "answer": 1,
+    "explanation": "Engagement risk adalah tingkat risiko yang mau ditanggung firma saat menerima atau melanjutkan klien. Client business risk menyangkut tujuan entitas; risk of material misstatement menyangkut salah saji sebelum audit. Risiko kegagalan prosedur dijelaskan di TM12. Rujukan 04 TM09: C-010 (ARENS pp.176–177); C-011 (ARENS pp.176–177); C-012 (ARENS pp.176–177).",
+    "sourceRef": "Rujukan 04 TM09: C-010 (ARENS pp.176–177); C-011 (ARENS pp.176–177); C-012 (ARENS pp.176–177).",
+    "sourceAnchors": [
+      "C-010",
+      "C-011",
+      "C-012"
+    ]
+  },
+  {
+    "id": "aka201-tm09-q04",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "basic",
+    "q": "Apa langkah auditor penerus sebelum menghubungi predecessor auditor (auditor pendahulu)?",
+    "options": [
+      "Memperoleh seluruh kertas kerja tanpa izin",
+      "Meminta pendahulu menetapkan opini tahun berjalan",
+      "Memperoleh izin klien untuk komunikasi tersebut",
+      "Meminta manajemen menghapus perselisihan tahun lalu"
+    ],
+    "answer": 2,
+    "explanation": "Predecessor auditor adalah auditor pendahulu. Penerus memulai komunikasi setelah izin klien karena kerahasiaan; penolakan izin atau jawaban tidak memadai menjadi alasan serius mempertimbangkan penolakan perikatan. Rujukan 04 TM09: C-035 (ARENS p.180).",
+    "sourceRef": "Rujukan 04 TM09: C-035 (ARENS p.180).",
+    "sourceAnchors": [
+      "C-035"
+    ]
+  },
+  {
+    "id": "aka201-tm09-q05",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "basic",
+    "q": "Apa preconditions (syarat awal) audit menurut ISA 210?",
+    "options": [
+      "Kerangka diterima, auditor menyusun laporan keuangan",
+      "Kerangka diterima, auditor menjamin ketiadaan fraud",
+      "Kerangka diterima, manajemen menentukan opini auditor",
+      "Kerangka diterima, manajemen mengakui tanggung jawabnya"
     ],
     "answer": 3,
-    "explanation": "Pemisahan tugas kunci (Segregation of Duties) mewajibkan pemisahan antara: Otorisasi, Pencatatan, Kustodi aset, dan Rekonsiliasi independen."
+    "explanation": "Preconditions mencakup kerangka pelaporan yang dapat diterima dan pengakuan manajemen atas tanggung jawab laporan, pengendalian internal, serta akses auditor. Catatan sumber: rumusan pengakuan mengikuti ISA 210. Rujukan 04 TM09: C-040 (ARENS p.181; ISA210 paras. 6, 10).",
+    "sourceRef": "Rujukan 04 TM09: C-040 (ARENS p.181; ISA210 paras. 6, 10).",
+    "sourceAnchors": [
+      "C-040"
+    ]
   },
   {
+    "id": "aka201-tm09-q06",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "basic",
+    "q": "Saat memakai auditor expert (spesialis auditor), siapa memegang tanggung jawab audit?",
+    "options": [
+      "Auditor tetap memegang tanggung jawab audit",
+      "Spesialis mengambil seluruh tanggung jawab audit",
+      "Manajemen mengambil seluruh tanggung jawab audit",
+      "Auditor internal mengambil tanggung jawab audit"
+    ],
+    "answer": 0,
+    "explanation": "Auditor expert adalah spesialis dengan keahlian yang dibutuhkan auditor. Kualifikasi dan objektivitasnya dinilai; penggunaan spesialis tidak memindahkan tanggung jawab auditor. Rujukan 04 TM09: C-051 (ARENS p.187).",
+    "sourceRef": "Rujukan 04 TM09: C-051 (ARENS p.187).",
+    "sourceAnchors": [
+      "C-051"
+    ]
+  },
+  {
+    "id": "aka201-tm09-q07",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "medium",
+    "q": "Apa tujuan risk assessment procedures (prosedur penilaian risiko)?",
+    "options": [
+      "Menetapkan opini tanpa menjalankan prosedur lanjutan",
+      "Menilai risiko dan merancang prosedur lanjutan",
+      "Menggantikan seluruh bukti pengujian tingkat asersi",
+      "Membuktikan seluruh rasio janggal merupakan fraud"
+    ],
+    "answer": 1,
+    "explanation": "Risk assessment procedures memberi dasar identifikasi dan penilaian risiko serta rancangan prosedur lanjutan. Inquiry, analitis, observasi dan inspeksi dipakai; hasilnya belum menjadi dasar opini. Rujukan 04 TM09: C-070 (ISA315 para. 13; ARENS p.192); C-071 (ISA315 para. 14; ARENS p.193).",
+    "sourceRef": "Rujukan 04 TM09: C-070 (ISA315 para. 13; ARENS p.192); C-071 (ISA315 para. 14; ARENS p.193).",
+    "sourceAnchors": [
+      "C-070",
+      "C-071"
+    ]
+  },
+  {
+    "id": "aka201-tm09-q08",
+    "tm": 9,
+    "topic": "Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien",
+    "difficulty": "medium",
+    "q": "Rasio aktivitas Hillsburg mengarahkan perhatian pada valuation (penilaian) akun mana?",
+    "options": [
+      "Kas bank dan modal saham biasa",
+      "Utang usaha dan beban bunga pinjaman",
+      "Aset tetap dan pendapatan penjualan aset",
+      "Piutang usaha dan persediaan barang dagang"
+    ],
+    "answer": 3,
+    "explanation": "Valuation adalah asersi penilaian saldo. Perputaran piutang dan persediaan Hillsburg di bawah industri; auditor menilai risiko tinggi pada kedua akun dan menambah upaya audit. Rujukan 04 TM09: C-082 (ARENS p.197, Table 6-5); C-083 (ARENS p.197).",
+    "sourceRef": "Rujukan 04 TM09: C-082 (ARENS p.197, Table 6-5); C-083 (ARENS p.197).",
+    "sourceAnchors": [
+      "C-082",
+      "C-083"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q01",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "basic",
+    "q": "Apa arti sufficiency (kecukupan) audit evidence?",
+    "options": [
+      "Kualitas bukti yang diperoleh oleh auditor",
+      "Ketepatan waktu pelaksanaan seluruh prosedur auditor",
+      "Kuantitas bukti yang diperoleh oleh auditor",
+      "Hubungan logis prosedur dengan asersi tertentu"
+    ],
+    "answer": 2,
+    "explanation": "Sufficiency menyangkut kuantitas bukti. Appropriateness adalah ketepatan kualitas berupa relevance (relevansi) dan reliability (keandalan). Rujukan 04 TM10: C-020 (ARENS pp.130, 133); C-025 (ARENS p.132; ISA500 para. A8).",
+    "sourceRef": "Rujukan 04 TM10: C-020 (ARENS pp.130, 133); C-025 (ARENS p.132; ISA500 para. A8).",
+    "sourceAnchors": [
+      "C-020",
+      "C-025"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q02",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "basic",
+    "q": "Untuk completeness (kelengkapan) penjualan, arah tracing yang relevan adalah?",
+    "options": [
+      "Dari dokumen pengiriman menuju faktur penjualan",
+      "Dari faktur penjualan menuju dokumen pengiriman",
+      "Dari jurnal penjualan menuju faktur penjualan",
+      "Dari saldo piutang menuju faktur penjualan"
+    ],
+    "answer": 0,
+    "explanation": "Tracing menelusuri dokumen sumber ke catatan untuk menguji completeness. Memulai dari faktur lalu ke pengiriman menguji occurrence (keterjadian). Rujukan 04 TM10: C-021 (ARENS p.130); C-034 (ARENS p.136).",
+    "sourceRef": "Rujukan 04 TM10: C-021 (ARENS p.130); C-034 (ARENS p.136).",
+    "sourceAnchors": [
+      "C-021",
+      "C-034"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q03",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "basic",
+    "q": "Apa yang langsung dibuktikan physical inspection (inspeksi fisik) aset berwujud?",
+    "options": [
+      "Valuation, yaitu ketepatan nilai aset berwujud",
+      "Existence, yaitu keberadaan fisik aset berwujud",
+      "Rights, yaitu kepemilikan hukum aset berwujud",
+      "Completeness, yaitu kelengkapan pencatatan aset berwujud"
+    ],
+    "answer": 1,
+    "explanation": "Physical inspection membuktikan existence, yaitu keberadaan fisik. Inspeksi fisik sendiri tidak membuktikan valuation (penilaian) atau rights (hak atas aset), misalnya barang konsinyasi. Rujukan 04 TM10: C-032 (ARENS p.135; ISA500 paras. A18, A20).",
+    "sourceRef": "Rujukan 04 TM10: C-032 (ARENS p.135; ISA500 paras. A18, A20).",
+    "sourceAnchors": [
+      "C-032"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q04",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "basic",
+    "q": "Apa yang membedakan recalculation (penghitungan ulang) dari reperformance?",
+    "options": [
+      "Mengerjakan ulang pengendalian selain perhitungan matematis",
+      "Meminta penjelasan manajemen tentang transaksi tertentu",
+      "Memeriksa ulang ketepatan perhitungan matematis tertentu",
+      "Mengamati pelaksanaan pengendalian pada saat tertentu"
+    ],
+    "answer": 2,
+    "explanation": "Recalculation memeriksa ulang hitungan seperti harga dikali kuantitas atau footing (penjumlahan kolom). Reperformance mengerjakan ulang prosedur atau pengendalian selain hitungan. Rujukan 04 TM10: C-040 (ARENS pp.138, 142; ISA500 paras. A23, A24).",
+    "sourceRef": "Rujukan 04 TM10: C-040 (ARENS pp.138, 142; ISA500 paras. A23, A24).",
+    "sourceAnchors": [
+      "C-040"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q05",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "basic",
+    "q": "Apa keterbatasan observation (observasi) sebagai bukti audit?",
+    "options": [
+      "Meliputi seluruh periode, perilaku pasti tetap",
+      "Menjamin seluruh asersi, perilaku pasti benar",
+      "Menghapus kebutuhan pengujian, perilaku selalu konsisten",
+      "Terbatas saat diamati, perilaku bisa berubah"
+    ],
+    "answer": 3,
+    "explanation": "Observation adalah pengamatan pelaksanaan proses. Bukti terbatas pada saat observasi; kehadiran auditor dapat mengubah perilaku sehingga observasi jarang cukup sendirian. Rujukan 04 TM10: C-036 (ARENS p.136; ISA500 para. A21).",
+    "sourceRef": "Rujukan 04 TM10: C-036 (ARENS p.136; ISA500 para. A21).",
+    "sourceAnchors": [
+      "C-036"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q06",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "basic",
+    "q": "Setelah selisih signifikan ditemukan dalam substantive analytical procedures, apa langkah berikutnya?",
+    "options": [
+      "Menyelidiki selisih dengan bukti penguat penjelasan",
+      "Menerima penjelasan lisan tanpa bukti penguat",
+      "Mengubah ekspektasi agar sesuai angka tercatat",
+      "Mengabaikan selisih karena analitis sudah selesai"
+    ],
+    "answer": 0,
+    "explanation": "Substantive analytical procedures adalah prosedur analitis substantif. Selisih signifikan diselidiki; inquiry (permintaan keterangan) kepada manajemen saja tidak cukup. Rujukan 04 TM10: C-070 (ARENS p.148; ISA520 paras. 5, 7).",
+    "sourceRef": "Rujukan 04 TM10: C-070 (ARENS p.148; ISA520 paras. 5, 7).",
+    "sourceAnchors": [
+      "C-070"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q07",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "medium",
+    "q": "Menurut koreksi canonical spec atas Figure 5-2, berapa total interest expectation Hillsburg?",
+    "options": [
+      "2.408.326, dengan selisih terhadap buku besar 316",
+      "2.406.326, dengan selisih terhadap buku besar 2.316",
+      "2.408.642, dengan selisih terhadap buku besar nol",
+      "2.152.200, dengan selisih terhadap buku besar 256.442"
+    ],
+    "answer": 1,
+    "explanation": "Interest expectation (ekspektasi beban bunga) adalah 254.126 ditambah 2.152.200, menjadi 2.406.326. Buku besar 2.408.642 memberi selisih 2.316. Catatan sumber: teks buku salah ketik 2.408.326. Rujukan 04 TM10: C-072 (ARENS pp.148–149).",
+    "sourceRef": "Rujukan 04 TM10: C-072 (ARENS pp.148–149).",
+    "sourceAnchors": [
+      "C-072"
+    ]
+  },
+  {
+    "id": "aka201-tm10-q08",
+    "tm": 10,
+    "topic": "Bukti Audit dan Prosedur Analitis",
+    "difficulty": "medium",
+    "q": "Apa arti false positive pada audit data analytics (ADA)?",
+    "options": [
+      "Item ditandai dengan salah saji terbukti",
+      "Item terlewat dengan salah saji terbukti",
+      "Item terlewat karena data belum diakses",
+      "Item ditandai tetapi tanpa masalah nyata"
+    ],
+    "answer": 3,
+    "explanation": "False positive adalah item ditandai alat tetapi tidak mencerminkan risiko atau masalah nyata. Pengecualian ADA harus ditafsirkan dan ditindaklanjuti. Rujukan 04 TM10: C-082 (ARENS p.153).",
+    "sourceRef": "Rujukan 04 TM10: C-082 (ARENS p.153).",
+    "sourceAnchors": [
+      "C-082"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q01",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "basic",
+    "q": "Menurut ISA 230, siapa pembaca tolok ukur audit documentation (dokumentasi audit)?",
+    "options": [
+      "Auditor penyusun dengan keterlibatan sebelumnya dalam audit",
+      "Manajemen klien dengan keterlibatan penyusunan laporan keuangan",
+      "Auditor berpengalaman tanpa keterkaitan sebelumnya dengan audit",
+      "Staf klien dengan keterlibatan pemrosesan transaksi harian"
+    ],
+    "answer": 2,
+    "explanation": "Dokumentasi harus memungkinkan experienced auditor (auditor berpengalaman) tanpa keterkaitan sebelumnya memahami prosedur, hasil, bukti, hal signifikan, kesimpulan, serta pertimbangan profesional. Rujukan 04 TM11: C-005 (ISA230 paras. 8, 6(c)).",
+    "sourceRef": "Rujukan 04 TM11: C-005 (ISA230 paras. 8, 6(c)).",
+    "sourceAnchors": [
+      "C-005"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q02",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "basic",
+    "q": "Apa peran oral explanation (penjelasan lisan) terhadap dokumentasi audit?",
+    "options": [
+      "Menjernihkan dokumentasi, sendiri belum menjadi dukungan memadai",
+      "Menggantikan dokumentasi, sendiri selalu menjadi dukungan memadai",
+      "Menghapus dokumentasi, sendiri selalu menjadi bukti tertulis",
+      "Menunda dokumentasi, sendiri selalu menjamin akurasi catatan"
+    ],
+    "answer": 0,
+    "explanation": "Oral explanation dapat menjernihkan isi dokumentasi. Penjelasan lisan saja belum mendukung pekerjaan dan kesimpulan auditor secara memadai; dokumentasi disusun tepat waktu. Rujukan 04 TM11: C-007 (ISA230 para. 7, A1, A4, A5, A7).",
+    "sourceRef": "Rujukan 04 TM11: C-007 (ISA230 para. 7, A1, A4, A5, A7).",
+    "sourceAnchors": [
+      "C-007"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q03",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "basic",
+    "q": "Dokumen mana lazim masuk permanent file (berkas permanen)?",
+    "options": [
+      "Program audit dan memorandum strategi tahunan",
+      "Akta pendirian dan perjanjian obligasi klien",
+      "Ringkasan selisih dan analitis akhir tahunan",
+      "Kertas penyelesaian dan hasil pengujian tahunan"
+    ],
+    "answer": 1,
+    "explanation": "Permanent file memuat informasi berkelanjutan seperti akta pendirian dan perjanjian obligasi. Current file memuat dokumentasi tahun audit termasuk perencanaan, respons risiko, dan penyelesaian. Rujukan 04 TM11: C-021 (ARENS p.157, Table 5-8).",
+    "sourceRef": "Rujukan 04 TM11: C-021 (ARENS p.157, Table 5-8).",
+    "sourceAnchors": [
+      "C-021"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q04",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "basic",
+    "q": "Apa fungsi lead schedule (skedul utama)?",
+    "options": [
+      "Menggantikan seluruh catatan transaksi pada buku klien",
+      "Menghapus seluruh kebutuhan referensi silang kertas kerja",
+      "Merinci akun pembentuk total working trial balance",
+      "Menetapkan seluruh opini sebelum bukti audit terkumpul"
+    ],
+    "answer": 2,
+    "explanation": "Lead schedule merinci akun buku besar yang membentuk total suatu pos pada working trial balance (neraca saldo kerja). Rujukan 04 TM11: C-031 (ARENS p.158).",
+    "sourceRef": "Rujukan 04 TM11: C-031 (ARENS p.158).",
+    "sourceAnchors": [
+      "C-031"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q05",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "basic",
+    "q": "Pada kertas kerja C-1, apa arti tick mark @?",
+    "options": [
+      "Wesel dikonfirmasi positif oleh auditor pada skedul",
+      "Wesel diinspeksi fisik oleh auditor pada skedul",
+      "Saldo ditelusuri auditor ke neraca saldo kerja",
+      "Bunga dihitung ulang oleh auditor pada skedul"
+    ],
+    "answer": 3,
+    "explanation": "Tick mark adalah tanda pekerjaan yang harus dijelaskan. Pada C-1, @ berarti bunga dihitung ulang; p berarti konfirmasi positif, x inspeksi dokumen wesel, dan t/b penelusuran ke trial balance. Rujukan 04 TM11: C-033 (ARENS p.159).",
+    "sourceRef": "Rujukan 04 TM11: C-033 (ARENS p.159).",
+    "sourceAnchors": [
+      "C-033"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q06",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "basic",
+    "q": "Bagaimana ISA 230 A21 menyatakan batas final file assembly (perakitan berkas akhir)?",
+    "options": [
+      "Umumnya tidak lebih dari enam puluh hari",
+      "Umumnya tidak kurang dari enam puluh hari",
+      "Selalu tepat enam puluh hari tanpa pengecualian",
+      "Selalu selesai sebelum tanggal laporan auditor diterbitkan"
+    ],
+    "answer": 0,
+    "explanation": "Final file assembly adalah perakitan berkas audit akhir. Catatan sumber: ISA 230 A21 menyatakan batas yang sesuai umumnya tidak lebih dari 60 hari; buku menyebut 60 hari setelah tanggal laporan auditor. Rujukan 04 TM11: C-040 (ARENS pp.156–157; ISA230 para. A21).",
+    "sourceRef": "Rujukan 04 TM11: C-040 (ARENS pp.156–157; ISA230 para. A21).",
+    "sourceAnchors": [
+      "C-040"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q07",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "medium",
+    "q": "Mana contoh administrative assembly (perakitan administratif) yang diperbolehkan setelah laporan?",
+    "options": [
+      "Melaksanakan prosedur baru tanpa mencatat alasan perubahan",
+      "Mengurutkan dokumen dan melengkapi referensi silang berkas",
+      "Membuat kesimpulan baru tanpa menilai dampak laporan",
+      "Menghapus bukti final sebelum berakhirnya masa retensi"
+    ],
+    "answer": 1,
+    "explanation": "Administrative assembly dapat merapikan, mengurutkan, dan melengkapi cross-reference (referensi silang). Prosedur atau kesimpulan baru memerlukan dokumentasi substantif sesuai ISA 230; dokumen tidak dihapus sebelum masa retensi berakhir. Rujukan 04 TM11: C-041 (ISA230 paras. 13–16, A20–A24).",
+    "sourceRef": "Rujukan 04 TM11: C-041 (ISA230 paras. 13–16, A20–A24).",
+    "sourceAnchors": [
+      "C-041"
+    ]
+  },
+  {
+    "id": "aka201-tm11-q08",
+    "tm": 11,
+    "topic": "Dokumentasi Audit dan Kertas Kerja",
+    "difficulty": "medium",
+    "q": "Apa yang mendorong professional skepticism (skeptisisme profesional) lebih tinggi?",
+    "options": [
+      "Bukti selalu konsisten dan transaksi yang rutin",
+      "Risiko dinilai rendah tanpa indikator fraud teridentifikasi",
+      "Transaksi selalu rutin tanpa kesalahan yang ditemukan",
+      "Bukti tidak konsisten dan pertimbangan yang kompleks"
+    ],
+    "answer": 3,
+    "explanation": "Professional skepticism disesuaikan dengan risiko. Bukti tidak konsisten, pertimbangan kompleks, indikator fraud, dan kesalahan meningkatkan kebutuhan bukti serta dokumentasi. Cara evaluasi bukti dan pertimbangannya dicatat. Rujukan 04 TM11: C-051 (ARENS pp.160–161, Figure 5-5); C-052 (ISA230 para. A7).",
+    "sourceRef": "Rujukan 04 TM11: C-051 (ARENS pp.160–161, Figure 5-5); C-052 (ISA230 para. A7).",
+    "sourceAnchors": [
+      "C-051",
+      "C-052"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q01",
     "tm": 12,
-    "topic": "Pengujian Pengendalian (TOC) vs Substantif",
-    "difficulty": "medium",
-    "q": "Jika hasil pengujian pengendalian (Tests of Controls) membuktikan bahwa sistem pengendalian internal klien beroperasi sangat efektif sepanjang tahun, maka auditor dapat...",
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "basic",
+    "q": "Komponen audit risk (risiko audit) mana yang dikendalikan auditor?",
     "options": [
-      "Menaikkan penilaian risiko pengendalian (Control Risk) ke tingkat maksimum",
-      "Mengurangi luas pengujian rincian saldo substantif (Tests of Details of Balances)",
-      "Menerbitkan laporan opini wajar dengan pengecualian",
-      "Menghilangkan seluruh prosedur audit kelangsungan usaha"
+      "Inherent risk melalui pengendalian yang dirancang auditor",
+      "Control risk melalui pencatatan yang dilakukan auditor",
+      "Detection risk melalui prosedur yang dirancang auditor",
+      "Business risk melalui penjualan yang dilakukan auditor"
     ],
-    "answer": 1,
-    "explanation": "TOC yang memuaskan menurunkan Control Risk, menaikkan batas PDR, sehingga auditor dapat membatasi ukuran sampel pengujian substantif."
+    "answer": 2,
+    "explanation": "Detection risk adalah risiko prosedur auditor tidak mendeteksi salah saji. Inherent risk (kerentanan sebelum pengendalian) dan control risk (risiko kegagalan pengendalian) milik klien dan ada tanpa audit. Rujukan 04 TM12: C-001 (ARENS p.223; ISA200 para. 13(c)); C-004 (ARENS p.225; ISA200 para. 13(e), 13(n)).",
+    "sourceRef": "Rujukan 04 TM12: C-001 (ARENS p.223; ISA200 para. 13(c)); C-004 (ARENS p.225; ISA200 para. 13(e), 13(n)).",
+    "sourceAnchors": [
+      "C-001",
+      "C-004"
+    ]
   },
   {
+    "id": "aka201-tm12-q02",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "basic",
+    "q": "Dengan audit risk yang dituju tetap, apa akibat RMM meningkat?",
+    "options": [
+      "Detection risk turun, bukti perlu lebih meyakinkan",
+      "Detection risk naik, bukti perlu lebih sedikit",
+      "Inherent risk turun, pengujian substantif selalu dihapus",
+      "Control risk turun, pengujian pengendalian selalu dihapus"
+    ],
+    "answer": 0,
+    "explanation": "RMM adalah risk of material misstatement, yaitu risiko salah saji material. Hubungannya terbalik dengan detection risk; kenaikan RMM menuntut risiko deteksi lebih rendah dan bukti lebih meyakinkan. Model bersifat konseptual. Rujukan 04 TM12: C-005 (ARENS p.225; ISA200 para. A44); C-006 (ARENS pp.225–226).",
+    "sourceRef": "Rujukan 04 TM12: C-005 (ARENS p.225; ISA200 para. A44); C-006 (ARENS pp.225–226).",
+    "sourceAnchors": [
+      "C-005",
+      "C-006"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q03",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "basic",
+    "q": "Apa penilaian control risk bila auditor tidak merencanakan tests of controls?",
+    "options": [
+      "RMM dinilai sama dengan tingkat detection risk",
+      "RMM dinilai sama dengan tingkat inherent risk",
+      "RMM dinilai nol karena kontrol belum diuji",
+      "RMM dinilai rendah karena audit belum selesai"
+    ],
+    "answer": 1,
+    "explanation": "Tests of controls adalah pengujian pengendalian. Tanpa rencana pengujian, ISA 315 para. 34 membuat penilaian control risk menghasilkan RMM sama dengan inherent risk. Rujukan 04 TM12: C-007 (ISA315 para. 34).",
+    "sourceRef": "Rujukan 04 TM12: C-007 (ISA315 para. 34).",
+    "sourceAnchors": [
+      "C-007"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q04",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "basic",
+    "q": "Kapan relevant assertion (asersi relevan) ditentukan?",
+    "options": [
+      "Setelah seluruh pengendalian terbukti efektif sepanjang periode",
+      "Setelah seluruh prosedur substantif selesai tanpa pengecualian",
+      "Sebelum mempertimbangkan pengendalian atas risiko salah saji",
+      "Sebelum memahami entitas dan kerangka pelaporan keuangan"
+    ],
+    "answer": 2,
+    "explanation": "Relevant assertion memiliki risiko salah saji yang teridentifikasi dan ditentukan sebelum mempertimbangkan pengendalian. Rujukan 04 TM12: C-010 (ARENS p.226; ISA315 para. 12(h), A9).",
+    "sourceRef": "Rujukan 04 TM12: C-010 (ARENS p.226; ISA315 para. 12(h), A9).",
+    "sourceAnchors": [
+      "C-010"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q05",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "basic",
+    "q": "Mengapa kas swalayan dengan likelihood tinggi belum tentu significant risk?",
+    "options": [
+      "Magnitude selalu tinggi sehingga kombinasi pasti signifikan",
+      "Likelihood menggantikan magnitude sehingga saldo selalu signifikan",
+      "Likelihood selalu nol sehingga kas bebas risiko",
+      "Magnitude sangat rendah sehingga kombinasi belum signifikan"
+    ],
+    "answer": 3,
+    "explanation": "Significant risk adalah risiko signifikan. Likelihood (kemungkinan) dan magnitude (besarnya dampak) dinilai bersama; ISA 315 A220 memberi contoh kas dengan kemungkinan tinggi namun dampak sangat rendah. Rujukan 04 TM12: C-032 (ISA315 paras. 31, A208–A214; ARENS p.232 (Figure 7-5)); C-034 (ISA315 para. A220).",
+    "sourceRef": "Rujukan 04 TM12: C-032 (ISA315 paras. 31, A208–A214; ARENS p.232 (Figure 7-5)); C-034 (ISA315 para. A220).",
+    "sourceAnchors": [
+      "C-032",
+      "C-034"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q06",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "basic",
+    "q": "Bagaimana presumsi fraud atas revenue recognition (pengakuan pendapatan) diperlakukan?",
+    "options": [
+      "Nilai risiko; jika presumsi dibantah, dokumentasikan alasan",
+      "Abaikan risiko; jika presumsi dibantah, hapus dokumentasi",
+      "Tetapkan fraud; jika pendapatan naik, nyatakan terbukti",
+      "Hapus risiko; jika manajemen jujur, hentikan pengujian"
+    ],
+    "answer": 0,
+    "explanation": "Revenue recognition dipresumsikan berisiko fraud. Risiko fraud yang dinilai diperlakukan signifikan; bila presumsi tidak berlaku, alasannya didokumentasikan. Presumsi belum membuktikan fraud. Rujukan 04 TM12: C-036 (ARENS p.234; ISA550 para. 18; ISA240 paras. 27, 28, 48).",
+    "sourceRef": "Rujukan 04 TM12: C-036 (ARENS p.234; ISA550 para. 18; ISA240 paras. 27, 28, 48).",
+    "sourceAnchors": [
+      "C-036"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q07",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "medium",
+    "q": "Apa tiga sisi fraud triangle (segitiga kecurangan)?",
+    "options": [
+      "Insentif atau tekanan, peluang, penghitungan atau konfirmasi",
+      "Insentif atau tekanan, peluang, sikap atau rasionalisasi",
+      "Insentif atau tekanan, observasi, klasifikasi atau penyajian",
+      "Insentif atau tekanan, dokumentasi, penilaian atau alokasi"
+    ],
+    "answer": 1,
+    "explanation": "Fraud triangle memuat insentif atau tekanan, peluang, sikap atau rasionalisasi. Fraud risk factors atau tanda risiko belum membuktikan fraud. Rujukan 04 TM12: C-057 (ARENS pp.238–239; ISA240 paras. 12(b), 25); C-058 (ARENS p.240); C-059 (ARENS pp.239–240).",
+    "sourceRef": "Rujukan 04 TM12: C-057 (ARENS pp.238–239; ISA240 paras. 12(b), 25); C-058 (ARENS p.240); C-059 (ARENS pp.239–240).",
+    "sourceAnchors": [
+      "C-057",
+      "C-058",
+      "C-059"
+    ]
+  },
+  {
+    "id": "aka201-tm12-q08",
+    "tm": 12,
+    "topic": "Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan",
+    "difficulty": "medium",
+    "q": "Apa tiga prosedur wajib untuk management override (pengabaian pengendalian oleh manajemen)?",
+    "options": [
+      "Uji jurnal, review biaya audit, evaluasi anggaran pemasaran tahunan",
+      "Uji jurnal, review seluruh pajak, evaluasi strategi produksi tahunan",
+      "Uji jurnal, review harga saham, evaluasi keputusan dividen tahunan",
+      "Uji jurnal, review bias estimasi, evaluasi transaksi tidak biasa"
+    ],
+    "answer": 3,
+    "explanation": "Management override ada pada semua entitas sebagai risiko signifikan. Auditor menguji jurnal dan penyesuaian, menilai bias estimasi termasuk retrospective review (review retrospektif), dan mengevaluasi rasional bisnis transaksi tidak biasa. Rujukan 04 TM12: C-063 (ISA240 paras. 32–33; ARENS pp.242–244).",
+    "sourceRef": "Rujukan 04 TM12: C-063 (ISA240 paras. 32–33; ARENS pp.242–244).",
+    "sourceAnchors": [
+      "C-063"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q01",
     "tm": 13,
-    "topic": "Teknik Audit Berbantuan Komputer (CAATs)",
-    "difficulty": "medium",
-    "q": "Teknik audit sistem informasi di mana auditor memproses data transaksi uji buatan (mengandung kesalahan terencana) ke dalam program komputer klien untuk menguji kontrol aplikasi disebut...",
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "basic",
+    "q": "Apa yang dibuktikan design evaluation dan implementation pengendalian?",
     "options": [
-      "Parallel Simulation",
-      "Test Data Approach",
-      "Integrated Test Facility (ITF)",
-      "Embedded Audit Module"
+      "Operasi selalu efektif selama seluruh periode audit",
+      "Semua asersi benar selama seluruh periode audit",
+      "Rancangan memadai dan pengendalian benar diterapkan entitas",
+      "Semua fraud tercegah selama seluruh periode audit"
     ],
-    "answer": 1,
-    "explanation": "Test data approach menguji apakah kontrol validasi aplikasi klien mampu mendeteksi dan menolak data uji yang tidak valid."
+    "answer": 2,
+    "explanation": "Design evaluation menilai rancangan; implementation menentukan pengendalian benar diterapkan. Keduanya berbeda dari operating effectiveness, yaitu efektivitas operasi sepanjang periode. Rujukan 04 TM13: C-002 (ISA315 paras. 26(a), A162, A163, A180); C-057 (ISA315 paras. 26(a), 26(d), A175–A177, A180; ISA330).",
+    "sourceRef": "Rujukan 04 TM13: C-002 (ISA315 paras. 26(a), A162, A163, A180); C-057 (ISA315 paras. 26(a), 26(d), A175–A177, A180; ISA330).",
+    "sourceAnchors": [
+      "C-002",
+      "C-057"
+    ]
   },
   {
-    "tm": 14,
-    "topic": "Review UAS Pengauditan I",
-    "difficulty": "medium",
-    "q": "Konfirmasi positif saldo piutang usaha yang dikirimkan auditor kepada debitur klien meminta responden untuk membalas...",
+    "id": "aka201-tm13-q02",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "basic",
+    "q": "Menurut ISA 315 dan COSO 2013, apa tiga tujuan internal control?",
     "options": [
-      "Hanya jika debitur tidak setuju dengan saldo piutang yang tercantum",
-      "Baik jika setuju maupun jika tidak setuju dengan informasi saldo yang tercantum",
-      "Hanya jika debitur telah melunasi seluruh kewajibannya",
-      "Kepada manajemen klien secara langsung bukan ke auditor"
+      "Pelaporan, operasi, kepatuhan sebagai kategori tujuan pengendalian",
+      "Pelaporan, operasi, strategi sebagai kategori tujuan pengendalian",
+      "Pelaporan, strategi, pemasaran sebagai kategori tujuan pengendalian",
+      "Pelaporan, kepatuhan, pemasaran sebagai kategori tujuan pengendalian"
+    ],
+    "answer": 0,
+    "explanation": "Internal control adalah pengendalian internal. Catatan sumber: ISA 315 dan COSO 2013 memakai pelaporan, operasi, kepatuhan; buku mencantumkan strategic sebagai tujuan keempat. Rujukan 04 TM13: C-003 (ARENS pp.256–258; ISA315 para. 12(m); COSO13).",
+    "sourceRef": "Rujukan 04 TM13: C-003 (ARENS pp.256–258; ISA315 para. 12(m); COSO13).",
+    "sourceAnchors": [
+      "C-003"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q03",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "basic",
+    "q": "Apa inherent limitations (batas bawaan) pengendalian internal?",
+    "options": [
+      "Kesalahan manusia, inspeksi auditor, konfirmasi, pertimbangan biaya-manfaat",
+      "Kesalahan manusia, override manajemen, kolusi, pertimbangan biaya-manfaat",
+      "Kesalahan manusia, pencatatan otomatis, dokumentasi, pertimbangan biaya-manfaat",
+      "Kesalahan manusia, rekonsiliasi rutin, otorisasi, pertimbangan biaya-manfaat"
     ],
     "answer": 1,
-    "explanation": "Konfirmasi Positif mensyaratkan balasan dalam kondisi apapun (setuju atau tidak setuju). Konfirmasi Negatif hanya dibalas jika ada selisih."
+    "explanation": "Inherent limitations mencakup kesalahan manusia, management override (pengabaian pengendalian oleh manajemen), collusion (kolusi), dan biaya-manfaat. Pengendalian memberi keyakinan memadai. Rujukan 04 TM13: C-008 (ARENS pp.257–258; ISA315 App.3 paras. 22–24).",
+    "sourceRef": "Rujukan 04 TM13: C-008 (ARENS pp.257–258; ISA315 App.3 paras. 22–24).",
+    "sourceAnchors": [
+      "C-008"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q04",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "basic",
+    "q": "Dalam penomoran COSO 2013, prinsip control activities (aktivitas pengendalian) bernomor?",
+    "options": [
+      "15 sampai 17 dalam dokumen COSO 2013",
+      "13 sampai 15 dalam dokumen COSO 2013",
+      "10 sampai 12 dalam dokumen COSO 2013",
+      "16 sampai 17 dalam dokumen COSO 2013"
+    ],
+    "answer": 2,
+    "explanation": "Control activities adalah aktivitas pengendalian. Catatan sumber: COSO 2013 menomori 10-12; Table 8-1 buku menomori aktivitas 15-17. Nomor sumber tidak disatukan. Rujukan 04 TM13: C-011 (ARENS p.261; COSO13).",
+    "sourceRef": "Rujukan 04 TM13: C-011 (ARENS p.261; COSO13).",
+    "sourceAnchors": [
+      "C-011"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q05",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "basic",
+    "q": "Mana direct control (pengendalian langsung) terhadap completeness pendapatan?",
+    "options": [
+      "Mereview ringkasan penjualan wilayah secara sangat agregat",
+      "Mereview kode etik karyawan pada tingkat entitas",
+      "Menetapkan budaya jujur manajemen pada tingkat entitas",
+      "Mencocokkan dokumen pengiriman dengan penagihan secara langsung"
+    ],
+    "answer": 3,
+    "explanation": "Direct control cukup tepat menangani risiko asersi. Pencocokan pengiriman dengan penagihan lebih langsung pada completeness (kelengkapan) daripada review ringkasan wilayah yang tidak langsung. Rujukan 04 TM13: C-012 (ARENS p.259; ISA315 para. A96); C-014 (ISA315 para. A149).",
+    "sourceRef": "Rujukan 04 TM13: C-012 (ARENS p.259; ISA315 para. A96); C-014 (ISA315 para. A149).",
+    "sourceAnchors": [
+      "C-012",
+      "C-014"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q06",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "basic",
+    "q": "Pasangan mana perlu dipisahkan dalam segregation of duties (pemisahan tugas)?",
+    "options": [
+      "Kustodi aset dari pencatatan akuntansi aset terkait",
+      "Kustodi aset dari pengamanan fisik aset terkait",
+      "Pencatatan akuntansi dari penyimpanan catatan transaksi terkait",
+      "Otorisasi transaksi dari penetapan batas transaksi terkait"
+    ],
+    "answer": 0,
+    "explanation": "Segregation of duties memisahkan tugas tidak kompatibel, termasuk kustodi dari akuntansi, otorisasi dari kustodi, operasi dari pencatatan, rekonsiliasi dari entri data, serta TI dari pengguna. Rujukan 04 TM13: C-035 (ARENS pp.270–271; ISA315 App.3 para. 20).",
+    "sourceRef": "Rujukan 04 TM13: C-035 (ARENS pp.270–271; ISA315 App.3 para. 20).",
+    "sourceAnchors": [
+      "C-035"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q07",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "medium",
+    "q": "Apa hubungan IT general controls dengan application controls?",
+    "options": [
+      "Kontrol aplikasi menghapus kebutuhan kontrol umum TI",
+      "Kontrol aplikasi bergantung efektivitas kontrol umum TI",
+      "Kontrol umum menjamin seluruh saldo tanpa pengujian",
+      "Kontrol umum selalu terpisah dari risiko aplikasi"
+    ],
+    "answer": 1,
+    "explanation": "IT general controls adalah pengendalian umum TI. Application controls atau pengendalian aplikasi mungkin efektif hanya bila kontrol umum efektif; kontrol aplikasi mencakup input, processing, output. Rujukan 04 TM13: C-039 (ARENS p.273; ISA315 paras. 12(d), A108, App.5 para. 8); C-040 (ARENS pp.273–276); C-041 (ARENS p.276).",
+    "sourceRef": "Rujukan 04 TM13: C-039 (ARENS p.273; ISA315 paras. 12(d), A108, App.5 para. 8); C-040 (ARENS pp.273–276); C-041 (ARENS p.276).",
+    "sourceAnchors": [
+      "C-039",
+      "C-040",
+      "C-041"
+    ]
+  },
+  {
+    "id": "aka201-tm13-q08",
+    "tm": 13,
+    "topic": "Pengendalian Internal COSO & Pengendalian Teknologi Informasi",
+    "difficulty": "medium",
+    "q": "Pada contoh lima faktur, apa hash total (total kode) yang benar?",
+    "options": [
+      "50.000.000, penjumlahan nilai uang seluruh lima faktur",
+      "5, penjumlahan jumlah record seluruh lima faktur",
+      "4102, penjumlahan nomor akun seluruh lima faktur",
+      "21.014, penjumlahan nomor akun seluruh lima faktur"
+    ],
+    "answer": 3,
+    "explanation": "Hash total 4102 + 4215 + 4102 + 4380 + 4215 = 21.014, tidak bermakna sebagai uang. Financial total (total keuangan) Rp50.000.000; record count (jumlah record) 5. Angka contoh adalah buatan penulis dalam 04. Rujukan 04 TM13: C-042 (ARENS p.277); C-045 (ARENS p.277).",
+    "sourceRef": "Rujukan 04 TM13: C-042 (ARENS p.277); C-045 (ARENS p.277).",
+    "sourceAnchors": [
+      "C-042",
+      "C-045"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q01",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "basic",
+    "q": "Apa tujuan tests of controls (TOC)?",
+    "options": [
+      "Mendeteksi salah saji material pada seluruh asersi",
+      "Menyusun catatan akuntansi sebagai tanggung jawab auditor",
+      "Mengevaluasi efektivitas operasi pengendalian selama periode ketergantungan",
+      "Menetapkan tujuan bisnis sebagai tanggung jawab auditor"
+    ],
+    "answer": 2,
+    "explanation": "Tests of controls mengevaluasi efektivitas operasi pengendalian. Substantive procedures (prosedur substantif) mendeteksi salah saji material pada tingkat asersi. Rujukan 04 TM14: C-001 (ISA330 para. 4(a)–(b)); C-036 (ARENS p.314).",
+    "sourceRef": "Rujukan 04 TM14: C-001 (ISA330 para. 4(a)–(b)); C-036 (ARENS p.314).",
+    "sourceAnchors": [
+      "C-001",
+      "C-036"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q02",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "basic",
+    "q": "Apa yang ditunjukkan walk-through (penelusuran transaksi) menurut buku?",
+    "options": [
+      "Desain dan implementasi, belum efektivitas sepanjang periode",
+      "Seluruh asersi benar, tanpa prosedur substantif tambahan",
+      "Seluruh kontrol efektif, tanpa bukti periode tambahan",
+      "Seluruh fraud terdeteksi, tanpa prosedur lanjutan tambahan"
+    ],
+    "answer": 0,
+    "explanation": "Walk-through menelusuri transaksi dari asal sampai tercatat memakai dokumen serta TI klien. Bukti menunjukkan desain dan implementasi; belum membuktikan operating effectiveness sepanjang periode. Rujukan 04 TM14: C-007 (ARENS p.298).",
+    "sourceRef": "Rujukan 04 TM14: C-007 (ARENS p.298).",
+    "sourceAnchors": [
+      "C-007"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q03",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "basic",
+    "q": "Kapan TOC wajib dilakukan menurut ISA 330 para. 8?",
+    "options": [
+      "Saat semua transaksi kecil atau manajemen dianggap jujur",
+      "Saat kontrol diandalkan atau substantif saja tidak cukup",
+      "Saat biaya audit rendah atau laporan belum diterbitkan",
+      "Saat saldo tidak material atau risiko dinilai rendah"
+    ],
+    "answer": 1,
+    "explanation": "TOC wajib ketika kontrol diandalkan sebagai dasar nature, timing, extent prosedur substantif, atau saat substantif saja tidak memberi bukti cukup dan tepat. Rujukan 04 TM14: C-019 (ARENS pp.305–306); C-031 (ARENS p.312; ISA330 paras. 8(b), A24); C-034 (ARENS p.302).",
+    "sourceRef": "Rujukan 04 TM14: C-019 (ARENS pp.305–306); C-031 (ARENS p.312; ISA330 paras. 8(b), A24); C-034 (ARENS p.302).",
+    "sourceAnchors": [
+      "C-019",
+      "C-031",
+      "C-034"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q04",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "basic",
+    "q": "Bagaimana inquiry (permintaan keterangan) digunakan dalam TOC?",
+    "options": [
+      "Dipakai sendirian untuk membuktikan efektivitas sepanjang periode",
+      "Dipakai sendirian untuk menggantikan semua bukti tertulis",
+      "Digabung inspeksi, observasi, atau reperformance sebagai penguat",
+      "Digabung estimasi fee untuk membuktikan semua asersi"
+    ],
+    "answer": 2,
+    "explanation": "Inquiry saja tidak cukup. Inquiry ditambah inspeksi atau reperformance (pengerjaan ulang) lebih kuat daripada ditambah observasi. Auditor menilai kapan kontrol berjalan, konsistensi, dan pelaksananya. Rujukan 04 TM14: C-038 (ARENS pp.314–316; ISA330 paras. 10(a), A26–A27).",
+    "sourceRef": "Rujukan 04 TM14: C-038 (ARENS pp.314–316; ISA330 paras. 10(a), A26–A27).",
+    "sourceAnchors": [
+      "C-038"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q05",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "basic",
+    "q": "Bagaimana bukti tahun lalu digunakan untuk kontrol atas significant risk?",
+    "options": [
+      "Uji kontrol terkait sekali dalam tiga audit",
+      "Uji kontrol terkait hanya saat personel berubah",
+      "Uji kontrol terkait hanya saat sistem berubah",
+      "Uji kontrol terkait pada setiap periode berjalan"
+    ],
+    "answer": 3,
+    "explanation": "Significant risk adalah risiko signifikan. Kontrol yang diandalkan atas risiko ini diuji pada periode berjalan. Aturan sekali dalam tiga audit untuk kontrol tidak berubah tidak menggantikan ketentuan tersebut. Rujukan 04 TM14: C-044 (ARENS p.317; ISA330 paras. 11–15, A33–A40).",
+    "sourceRef": "Rujukan 04 TM14: C-044 (ARENS p.317; ISA330 paras. 11–15, A33–A40).",
+    "sourceAnchors": [
+      "C-044"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q06",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "basic",
+    "q": "Apa arti tidak ditemukan salah saji bagi operating effectiveness?",
+    "options": [
+      "Belum membuktikan bahwa pengendalian beroperasi secara efektif",
+      "Selalu membuktikan bahwa pengendalian beroperasi secara efektif",
+      "Selalu membuktikan bahwa pengendalian tidak pernah diterapkan",
+      "Selalu menghapus seluruh kewajiban pelaksanaan prosedur substantif"
+    ],
+    "answer": 0,
+    "explanation": "Operating effectiveness adalah efektivitas operasi pengendalian. Tidak ditemukan salah saji bukan bukti kontrol efektif; deviasi diselidiki dan dasar ketergantungan dinilai. Rujukan 04 TM14: C-046 (ISA330 paras. 16–17, A41–A42, A63; ARENS p.314).",
+    "sourceRef": "Rujukan 04 TM14: C-046 (ISA330 paras. 16–17, A41–A42, A63; ARENS p.314).",
+    "sourceAnchors": [
+      "C-046"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q07",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "medium",
+    "q": "Apa tambahan laporan Type 2 dibanding Type 1 pada service organization?",
+    "options": [
+      "Desain kontrol pada tanggal tanpa uraian tes",
+      "Efektivitas operasi selama periode serta uraian tes",
+      "Opini laporan keuangan pengguna serta uraian tes",
+      "Jaminan semua transaksi benar tanpa uraian tes"
+    ],
+    "answer": 1,
+    "explanation": "Service organization adalah organisasi jasa. Type 1 memuat deskripsi dan desain pada tanggal tertentu; Type 2 menambah efektivitas operasi selama periode serta uraian pengujian. Rujukan 04 TM14: C-049 (ARENS p.310; ISA402 para. 8(b)–(c)).",
+    "sourceRef": "Rujukan 04 TM14: C-049 (ARENS p.310; ISA402 para. 8(b)–(c)).",
+    "sourceAnchors": [
+      "C-049"
+    ]
+  },
+  {
+    "id": "aka201-tm14-q08",
+    "tm": 14,
+    "topic": "Pengujian Pengendalian (TOC) & Pengujian Substantif",
+    "difficulty": "medium",
+    "q": "Bagaimana dual-purpose test (pengujian dua tujuan) dievaluasi?",
+    "options": [
+      "Tujuan pengendalian menghapus seluruh kebutuhan evaluasi substantif",
+      "Tujuan substantif menghapus seluruh kebutuhan evaluasi pengendalian",
+      "Kedua tujuan otomatis terbukti dari satu persetujuan",
+      "Tujuan pengendalian dan substantif dievaluasi secara terpisah"
+    ],
+    "answer": 3,
+    "explanation": "Dual-purpose test memakai transaksi sama untuk TOC dan test of detail (uji rinci). Desain serta evaluasi dilakukan untuk tiap tujuan; deviasi pengendalian berbeda dari salah saji angka. Rujukan 04 TM14: C-058 (ARENS pp.316, 340; ISA330 para. A23).",
+    "sourceRef": "Rujukan 04 TM14: C-058 (ARENS pp.316, 340; ISA330 para. A23).",
+    "sourceAnchors": [
+      "C-058"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q01",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "basic",
+    "q": "Apa fungsi audit program (program audit) dibanding strategi dan rencana?",
+    "options": [
+      "Menetapkan tujuan penjualan untuk pelaksanaan operasi klien",
+      "Menetapkan opini final sebelum pelaksanaan pengumpulan bukti",
+      "Memuat langkah audit untuk pelaksanaan pengumpulan bukti",
+      "Menggantikan pertimbangan auditor sebelum pelaksanaan pengumpulan bukti"
+    ],
+    "answer": 2,
+    "explanation": "Audit program memuat langkah audit; overall audit strategy menetapkan cakupan, waktu, arah, sementara audit plan memuat nature, timing, extent prosedur penilaian risiko dan lanjutan. Rujukan 04 TM15: C-001 (ARENS pp.331–332, 335, 350; ISA300 paras. 7, 9); C-002 (ARENS pp.332, 335, 350; ISA300 para. A15).",
+    "sourceRef": "Rujukan 04 TM15: C-001 (ARENS pp.331–332, 335, 350; ISA300 paras. 7, 9); C-002 (ARENS pp.332, 335, 350; ISA300 para. A15).",
+    "sourceAnchors": [
+      "C-001",
+      "C-002"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q02",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "basic",
+    "q": "Dengan saldo awal piutang 96, penjualan 660, penerimaan 590, berapa saldo akhirnya?",
+    "options": [
+      "166, dari saldo awal ditambah penjualan dikurangi penerimaan",
+      "26, dari saldo awal ditambah penerimaan dikurangi penjualan",
+      "756, dari saldo awal ditambah penjualan tanpa pengurangan",
+      "1.346, dari saldo awal ditambah penjualan ditambah penerimaan"
+    ],
+    "answer": 0,
+    "explanation": "Roll-forward (rekonsiliasi perubahan saldo) Figure 10-7: 96 + 660 - 590 = 166. Catatan sumber: satuan tidak dinyatakan, sehingga angka tidak diberi mata uang. Rujukan 04 TM15: C-016 (ARENS pp.341–342).",
+    "sourceRef": "Rujukan 04 TM15: C-016 (ARENS pp.341–342).",
+    "sourceAnchors": [
+      "C-016"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q03",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "basic",
+    "q": "Apa prinsip pemilihan combined approach (pendekatan gabungan)?",
+    "options": [
+      "Pilih semua akun identik, abaikan hasil pengujian",
+      "Pilih per akun dan asersi, pertimbangkan efisiensi",
+      "Pilih semua kontrol diuji, abaikan risiko inheren",
+      "Pilih seluruh analitis dihapus, abaikan karakteristik transaksi"
+    ],
+    "answer": 1,
+    "explanation": "Pendekatan gabungan mengandalkan kontrol yang diuji bersama substantif. Pilihan dapat berbeda per akun dan asersi; kontrol kuat dengan inherent risk rendah belum tentu efisien diuji. Rujukan 04 TM15: C-017 (ARENS pp.342–343; ISA330 paras. A4, A18); C-021 (ARENS pp.345–346).",
+    "sourceRef": "Rujukan 04 TM15: C-017 (ARENS pp.342–343; ISA330 paras. A4, A18); C-021 (ARENS pp.345–346).",
+    "sourceAnchors": [
+      "C-017",
+      "C-021"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q04",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "basic",
+    "q": "Pada Audit 4 Figure 10-8, apa pemicu peralihan menuju substantive approach?",
+    "options": [
+      "Kontrol terbukti efektif dan tidak ada deviasi",
+      "Biaya kontrol rendah dan saldo tidak material",
+      "Deviasi kontrol banyak dan salah saji signifikan",
+      "Program standar tersedia dan entitas tidak berubah"
+    ],
+    "answer": 2,
+    "explanation": "Substantive approach adalah pendekatan substantif. Audit 4 awalnya gabungan; deviasi banyak serta salah saji signifikan memicu peralihan ke substantif penuh dengan biaya lebih tinggi. Rujukan 04 TM15: C-020 (ARENS p.344; ISA330 paras. 8, 17).",
+    "sourceRef": "Rujukan 04 TM15: C-020 (ARENS p.344; ISA330 paras. 8, 17).",
+    "sourceAnchors": [
+      "C-020"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q05",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "basic",
+    "q": "Dalam tabel teknik di 05, bagaimana test data approach bekerja?",
+    "options": [
+      "Data nyata klien diproses melalui aplikasi buatan auditor",
+      "Data nyata klien diabaikan melalui estimasi biaya auditor",
+      "Data uji auditor dihapus sebelum aplikasi milik klien",
+      "Data uji auditor diproses melalui aplikasi milik klien"
+    ],
+    "answer": 3,
+    "explanation": "Test data approach (pendekatan data uji) memasukkan transaksi yang seharusnya diterima dan ditolak ke program klien, lalu membandingkan keluaran aktual dengan harapan. Rincian teknik mengikuti tabel CAATs di 05. Rujukan 04 TM15: C-034 (ARENS pp.151–153, 316, 349–350, 395–397; JAKSIC); C-036 (ARENS pp.316, 341, 349, 396; JAKSIC).",
+    "sourceRef": "Rujukan 04 TM15: C-034 (ARENS pp.151–153, 316, 349–350, 395–397; JAKSIC); C-036 (ARENS pp.316, 341, 349, 396; JAKSIC).",
+    "sourceAnchors": [
+      "C-034",
+      "C-036"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q06",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "basic",
+    "q": "Teknik CAATs mana dalam 04 dan 05 diperkenalkan dari satu sumber Jakšić?",
+    "options": [
+      "ITF, parallel simulation, dan online audit monitor",
+      "ITF, external confirmation, dan substantive analytical procedures",
+      "ITF, physical inspection, dan substantive analytical procedures",
+      "ITF, bank reconciliation, dan substantive analytical procedures"
+    ],
+    "answer": 0,
+    "explanation": "ITF (integrated test facility), parallel simulation (simulasi paralel), dan online audit monitor (monitor audit daring) diperkenalkan dari Jakšić. Catatan sumber: menyamakan monitor dengan embedded audit module adalah pembacaan penulis, bukan istilah yang dipakai artikel. Rujukan 04 TM15: C-034 (ARENS pp.151–153, 316, 349–350, 395–397; JAKSIC); C-035 (JAKSIC; ARENS p.316).",
+    "sourceRef": "Rujukan 04 TM15: C-034 (ARENS pp.151–153, 316, 349–350, 395–397; JAKSIC); C-035 (JAKSIC; ARENS p.316).",
+    "sourceAnchors": [
+      "C-034",
+      "C-035"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q07",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "medium",
+    "q": "Apa batas ADA terhadap sampling risk dan nonsampling risk?",
+    "options": [
+      "Sampling risk tetap pada cakupan seluruh populasi; nonsampling hilang",
+      "Sampling risk hilang pada cakupan seluruh populasi; nonsampling tetap",
+      "Sampling risk hilang pada sampel terbatas; nonsampling juga hilang",
+      "Sampling risk tetap pada sampel terbatas; nonsampling selalu hilang"
+    ],
+    "answer": 1,
+    "explanation": "Sampling risk adalah risiko akibat pemilihan sampel; cakupan seluruh populasi dapat menghilangkannya. Nonsampling risk (risiko selain sampling), seperti kesalahan pelaksanaan atau interpretasi, tetap ada; big data tidak menggantikan pertimbangan. Rujukan 04 TM15: C-037 (ARENS p.395); C-039 (ARENS p.396).",
+    "sourceRef": "Rujukan 04 TM15: C-037 (ARENS p.395); C-039 (ARENS p.396).",
+    "sourceAnchors": [
+      "C-037",
+      "C-039"
+    ]
+  },
+  {
+    "id": "aka201-tm15-q08",
+    "tm": 15,
+    "topic": "CAATs dan Perancangan Program Audit",
+    "difficulty": "medium",
+    "q": "Bagaimana standard audit program (program audit standar) digunakan?",
+    "options": [
+      "Salin seluruh tahun lalu, abaikan perubahan entitas",
+      "Salin seluruh klien lain, abaikan karakteristik transaksi",
+      "Tetapkan sebelum penilaian risiko, abaikan bukti bertentangan",
+      "Sesuaikan dengan risiko, hindari penyalinan tahun lalu"
+    ],
+    "answer": 3,
+    "explanation": "Program standar dapat meningkatkan efisiensi namun tidak menggantikan pertimbangan. SALY (same as last year, sama seperti tahun lalu) dan anchoring (terpaku pada penilaian awal) menjadi jebakan yang dibahas buku. Rujukan 04 TM15: C-046 (ARENS pp.350–351; ISA300 para. A20); C-047 (ARENS p.352).",
+    "sourceRef": "Rujukan 04 TM15: C-046 (ARENS pp.350–351; ISA300 para. A20); C-047 (ARENS p.352).",
+    "sourceAnchors": [
+      "C-046",
+      "C-047"
+    ]
   }
 ];
 

@@ -1,0 +1,987 @@
+{
+  "authority": "04_canonical_spec.md; supporting examples only from 05_student_learning_version.md",
+  "baseline": {
+    "quiz": "1cc3edb837bce79b9b659bef89d18324ac8629b393656075878cebb731e9ade2",
+    "cards": "f6bcc8a6bebb5a8dff2477bdc738345ca5770527587fc77bafb59213d9874c1e",
+    "bank": "10a35782fad63e94dc0375f8732ede4de377648df7dee75f5e274bf897d0cfda"
+  },
+  "tms": {
+    "9": {
+      "canonicalSha256": "7abeed4098aefa8903c606bda76156911c702e2acdea1e2f3d2aeb869034363b",
+      "studentSha256": "863a03da17513fce457d8a8ec9f159d55574dec32ea1c7e78f20f3292f2f4607",
+      "claims": {
+        "C-002": {
+          "title": "Tiga alasan perencanaan.",
+          "text": "(1) Auditor memperoleh bukti yang cukup dan tepat; (2) biaya audit wajar; (3) salah paham dengan klien terhindari (contoh janji selesai sebelum 30 Juni, baru selesai Agustus). `ARENS p.175`",
+          "ref": "ARENS p.175"
+        },
+        "C-003": {
+          "title": "Perencanaan berulang.",
+          "text": "Perencanaan bukan tahap sekali jalan; ia berlangsung sejak audit sebelumnya selesai sampai audit berjalan selesai, dan strategi serta rencana diperbarui bila keadaan berubah. `ISA300 paras. 10, A3`",
+          "ref": "ISA300 paras. 10, A3"
+        },
+        "C-004": {
+          "title": "Keterlibatan partner.",
+          "text": "Partner dan anggota kunci tim terlibat dalam perencanaan; partner mereview strategi dan rencana; keduanya, bersama perubahan signifikan dan alasannya, masuk dokumentasi. `ISA300 paras. 5, 11, 12`",
+          "ref": "ISA300 paras. 5, 11, 12"
+        },
+        "C-010": {
+          "title": "Client business risk.",
+          "text": "Risiko entitas gagal mencapai tujuan atau menjalankan strategi. Contoh buku: pandemi menurunkan penjualan dan membuat piutang sulit ditagih. `ARENS pp.176–177`",
+          "ref": "ARENS pp.176–177"
+        },
+        "C-011": {
+          "title": "Engagement risk.",
+          "text": "Tingkat risiko yang mau ditanggung firma saat menerima atau melanjutkan klien (risk tolerance firma). Contoh: klien terus rugi bisa bangkrut dan menaikkan risiko gugatan atas auditor. `ARENS pp.176–177`",
+          "ref": "ARENS pp.176–177"
+        },
+        "C-012": {
+          "title": "Risk of material misstatement.",
+          "text": "Risiko laporan keuangan salah saji material sebelum diaudit, karena fraud atau error. Menentukan jumlah dan kekuatan bukti serta pengalaman staf. `ARENS pp.176–177`",
+          "ref": "ARENS pp.176–177"
+        },
+        "C-020": {
+          "title": "Definisi dan isi strategi.",
+          "text": "Overall audit strategy menentukan cakupan, waktu, dan arah audit dan menjadi pegangan untuk audit plan. Buku merincinya jadi jenis dan alokasi sumber daya untuk area tertentu, waktu prosedur, dan materialitas. `ARENS p.185; ISA300 para. 7`",
+          "ref": "ARENS p.185; ISA300 para. 7"
+        },
+        "C-021": {
+          "title": "Lima pertimbangan menyusun strategi.",
+          "text": "(1) Ciri perikatan; (2) tujuan pelaporan, waktu, dan komunikasi; (3) faktor penting menurut pertimbangan profesional; (4) hasil kegiatan pendahuluan dan pengetahuan dari perikatan lain milik partner; (5) sifat, waktu, dan jumlah sumber daya. `ISA300 para. 8`",
+          "ref": "ISA300 para. 8"
+        },
+        "C-023": {
+          "title": "Tiga komponen audit plan.",
+          "text": "(1) Sifat, waktu, dan luas prosedur penilaian risiko; (2) sifat, waktu, dan luas prosedur tambahan terkait asersi; (3) prosedur lain agar audit sesuai standar. `ARENS p.177; ISA300 paras. 9, A15`",
+          "ref": "ARENS p.177; ISA300 paras. 9, A15"
+        },
+        "C-024": {
+          "title": "Pembahasan dengan manajemen.",
+          "text": "Auditor boleh membahas unsur perencanaan dengan manajemen, tetapi strategi dan rencana tetap tanggung jawab auditor; membuka sifat dan waktu prosedur rinci dapat membuat prosedur mudah ditebak. `ISA300 para. A4`",
+          "ref": "ISA300 para. A4"
+        },
+        "C-031": {
+          "title": "Kebijakan pengendalian mutu.",
+          "text": "Firma hanya menerima perikatan yang mampu dikerjakan (kemampuan, waktu, sumber daya), bisa dikerjakan sesuai etika, dan sudah mempertimbangkan integritas klien. `ARENS p.178`",
+          "ref": "ARENS p.178"
+        },
+        "C-032": {
+          "title": "Tiga faktor engagement risk.",
+          "text": "Ketergantungan pengguna eksternal (sebaran kepemilikan, jumlah liabilitas); kemampuan going concern (likuiditas, laba rugi tahun lalu, cara membiayai pertumbuhan, sifat operasi, kompetensi manajemen); integritas manajemen. `ARENS pp.178–179`",
+          "ref": "ARENS pp.178–179"
+        },
+        "C-033": {
+          "title": "Indikator integritas (Table 6-1).",
+          "text": "Riwayat tidak patuh hukum (suap, penggelapan pajak); reputasi jujur atau etika buruk; dugaan keterlibatan kejahatan (pencucian uang); transaksi kompleks tanpa tujuan bisnis jelas; tone at the top buruk; enggan memberi informasi; riwayat tidak mengungkap informasi penting. Tanda lain: perselisihan berulang dengan auditor pendahulu, perputaran staf kunci keuangan dan internal audit tinggi, konflik berkelanjutan dengan serikat pekerja. `ARENS p.179, Table 6-1`",
+          "ref": "ARENS p.179, Table 6-1"
+        },
+        "C-035": {
+          "title": "Komunikasi dengan auditor pendahulu.",
+          "text": "Penerus memulai setelah ada izin klien (kerahasiaan). Pendahulu wajib menjawab; bila ada sengketa hukum jawaban boleh dibatasi menjadi pernyataan tidak ada informasi yang diberikan. Penolakan izin atau jawaban tidak memadai membuat auditor serius mempertimbangkan menolak. `ARENS p.180`",
+          "ref": "ARENS p.180"
+        },
+        "C-040": {
+          "title": "Syarat awal audit (preconditions).",
+          "text": "(a) Kerangka pelaporan dapat diterima (contoh IFRS, ASPE); (b) manajemen mengakui dan memahami tanggung jawab menyusun laporan sesuai kerangka, merancang pengendalian internal, dan memberi akses. Buku merumuskan (b) sebagai kesepakatan dengan manajemen dan TCWG; ISA 210 para. 6(b) merumuskannya sebagai pengakuan tanggung jawab, dan para. 10 meminta syarat dicatat dalam surat penugasan. `ARENS p.181; ISA210 paras. 6, 10`",
+          "ref": "ARENS p.181; ISA210 paras. 6, 10"
+        },
+        "C-041": {
+          "title": "Bila syarat tidak ada.",
+          "text": "Auditor membahas dengan manajemen dan tidak menerima perikatan kecuali hukum mewajibkan; hal sama bila pembatasan cakupan yang dikenakan manajemen akan membuat auditor menyatakan tidak memberi opini. `ISA210 paras. 7–8`",
+          "ref": "ISA210 paras. 7–8"
+        },
+        "C-043": {
+          "title": "Isi surat penugasan.",
+          "text": "Sembilan unsur menurut buku: tujuan, cakupan, dan keterbatasan; tanggung jawab auditor; tanggung jawab manajemen; kerangka pelaporan; bentuk dan isi laporan; pembatasan pekerjaan auditor; tenggat; bantuan klien; bantuan internal audit. Minimal menurut ISA 210: tujuan dan cakupan, tanggung jawab auditor, tanggung jawab manajemen, kerangka pelaporan, rujukan bentuk dan isi laporan, pernyataan bahwa laporan bisa berbeda. `ARENS p.181; ISA210 para. 10`",
+          "ref": "ARENS p.181; ISA210 para. 10"
+        },
+        "C-046": {
+          "title": "Table 6-2: tujuh batasan cakupan.",
+          "text": "Tenggat tidak realistis; catatan atau dokumen diragukan ketersediaan atau keandalannya; akses orang dibatasi; akses lokasi dibatasi; integritas manajemen diragukan; manajemen menolak staf pilihan firma; manajemen berniat tidak menandatangani representasi tertulis. `ARENS p.184, Table 6-2`",
+          "ref": "ARENS p.184, Table 6-2"
+        },
+        "C-050": {
+          "title": "Staf.",
+          "text": "Kompetensi dan pengalaman sepadan risiko; sistem informasi kompleks, perubahan sistem besar, atau bukti hanya elektronik berarti perlu spesialis TI; kesinambungan membantu tetapi terlalu akrab mengancam independensi. `ARENS p.186`",
+          "ref": "ARENS p.186"
+        },
+        "C-051": {
+          "title": "Spesialis (SA 620).",
+          "text": "Contoh: ahli berlian, aktuaris, pengacara, penilai bisnis. Auditor cukup paham bisnis untuk tahu kapan perlu, menilai kualifikasi dan objektivitas, memahami tujuan dan cakupan kerja. Tanggung jawab tidak berpindah; laporan tidak merujuk spesialis kecuali opini dimodifikasi. `ARENS p.187`",
+          "ref": "ARENS p.187"
+        },
+        "C-052": {
+          "title": "Auditor internal (SA 610).",
+          "text": "Hasil kerja bisa dipakai atau bantuan langsung diminta; umum di bank, perusahaan terbuka besar, universitas, rumah sakit. Auditor menilai kompetensi, integritas, objektivitas; makin tinggi risiko, makin terbatas pekerjaan yang diserahkan; bantuan langsung diawasi dan direview, dengan persetujuan tertulis wakil entitas dan komitmen kerahasiaan. `ARENS p.187`",
+          "ref": "ARENS p.187"
+        },
+        "C-053": {
+          "title": "Auditor komponen (SA 600).",
+          "text": "Untuk banyak lokasi atau anak perusahaan. Auditor grup memastikan kompeten, independen, dan di lingkungan yang diawasi regulator; menentukan pekerjaan, mengomunikasikan persyaratan, memberi pedoman materialitas pelaksanaan. `ARENS pp.187–188`",
+          "ref": "ARENS pp.187–188"
+        },
+        "C-070": {
+          "title": "Tujuan.",
+          "text": "Memperoleh bukti sebagai dasar mengidentifikasi dan menilai risiko salah saji material (tingkat laporan dan asersi) dan merancang prosedur lanjutan (SA 330); tidak boleh condong ke bukti penguat. Bukan dasar opini. `ISA315 para. 13; ARENS p.192`",
+          "ref": "ISA315 para. 13; ARENS p.192"
+        },
+        "C-071": {
+          "title": "Tiga prosedur.",
+          "text": "Inquiry kepada manajemen dan pihak lain di dalam entitas; prosedur analitis; observasi dan inspeksi. `ISA315 para. 14; ARENS p.193`",
+          "ref": "ISA315 para. 14; ARENS p.193"
+        },
+        "C-080": {
+          "title": "Tujuan.",
+          "text": "Memahami bisnis dan industri, menilai business risk, menemukan jumlah, rasio, atau tren tidak biasa. Data agregat, jadi hanya indikasi kasar. `ARENS pp.194, 196`",
+          "ref": "ARENS pp.194, 196"
+        },
+        "C-082": {
+          "title": "Table 6-5 (rasio terpilih).",
+          "text": "Hillsburg 2020 / industri 2020 / Hillsburg 2019 / industri 2019. Quick ratio 1,50 / 3,10 / 1,45 / 3,00. Current ratio 3,86 / 5,20 / 4,04 / 5,10. Perputaran piutang 7,59 / 12,15 / 7,61 / 12,25. Hari penagihan piutang 48,11 / 30,04 / 47,96 / 29,80. Perputaran persediaan 3,36 / 5,20 / 3,02 / 4,90. Hari penjualan persediaan 108,65 / 70,19 / 120,86 / 74,49. Debt-to-equity 1,73 / 2,51 / 1,98 / 2,53. Gross profit percent 27,85 / 31,00 / 27,70 / 32,00. ROA 0,13 / 0,09 / 0,12 / 0,09. `ARENS p.197, Table 6-5`",
+          "ref": "ARENS p.197, Table 6-5"
+        },
+        "C-083": {
+          "title": "Kesimpulan Hillsburg.",
+          "text": "Rasio aktivitas jadi fokus; risiko salah saji material tinggi pada piutang dan persediaan, asersi valuation; upaya audit ditambah. `ARENS p.197`",
+          "ref": "ARENS p.197"
+        },
+        "C-085": {
+          "title": "Tiga pos yang dikejar dari analisis vertikal.",
+          "text": "Iklan naik (kampanye baru?); beban piutang tak tertagih turun padahal penagihan melambat (valuation, cadangan terlalu rendah); perbaikan dan pemeliharaan naik (kemungkinan seharusnya dikapitalisasi, allocation). `ARENS p.198`",
+          "ref": "ARENS p.198"
+        }
+      }
+    },
+    "10": {
+      "canonicalSha256": "82ba38dae0ffb70231496b0a2d22836b7738a98d032b94350a63e3e88d084381",
+      "studentSha256": "e33adc8a86475ba8918f8c48dd2259ffdab2d7fd7200414ae6fff7611d8c50d7",
+      "claims": {
+        "C-003": {
+          "title": "Definisi audit evidence.",
+          "text": "Informasi yang dipakai auditor untuk menyimpulkan dasar opini, mencakup catatan akuntansi dan sumber lain. Buku menambah: sumber dari auditor, pihak ketiga, klien; mendukung maupun bertentangan; ketiadaan informasi juga bukti; menimbang kritis adalah inti skeptisisme profesional. `ISA500 para. 5(c); ARENS p.127`",
+          "ref": "ISA500 para. 5(c); ARENS p.127"
+        },
+        "C-010": {
+          "title": "Nature, extent, timing.",
+          "text": "Nature: tujuan (risk assessment, test of controls, substantive) dan jenis prosedur. Extent: semua item, item tertentu, audit sampling, atau kombinasi. Timing: dari awal periode sampai lama setelah akhir periode. `ARENS pp.128–129; ISA500 para. 10`",
+          "ref": "ARENS pp.128–129; ISA500 para. 10"
+        },
+        "C-011": {
+          "title": "Audit procedure dan empat pertanyaan.",
+          "text": "Prosedur yang baik menjawab asersi atau pengendalian yang diuji (alasan), waktu, langkah, dan item yang dipilih. Contoh occurrence pengeluaran kas: interim, laporan pengeluaran kas dibandingkan dengan cek yang dibatalkan, sampel acak 40 nomor cek. `ARENS pp.129–130`",
+          "ref": "ARENS pp.129–130"
+        },
+        "C-020": {
+          "title": "Definisi dan Table 5-1.",
+          "text": "Persuasiveness = keyakinan bahwa bukti mendukung opini; penentu: appropriateness (relevance, reliability), sufficiency, timeliness. Nature ↔ appropriateness; extent ↔ sufficiency; timing ↔ timeliness. `ARENS pp.130, 133`",
+          "ref": "ARENS pp.130, 133"
+        },
+        "C-021": {
+          "title": "Relevance.",
+          "text": "Hubungan logis prosedur dengan asersi; sampel faktur ditelusuri ke dokumen pengiriman menguji occurrence, bukan completeness; untuk completeness ambil dokumen pengiriman lalu cocokkan ke faktur. `ARENS p.130`",
+          "ref": "ARENS p.130"
+        },
+        "C-023": {
+          "title": "Enam faktor reliability.",
+          "text": "(1) Diperoleh langsung oleh auditor; (2) independensi sumber (polis lebih andal dari purchase requisition); (3) kualifikasi sumber (berlian dan kaca); (4) konsistensi banyak sumber (Hillsburg, kardus berdebu); (5) keefektifan pengendalian internal (juga risiko management override); (6) objektivitas (objektif: konfirmasi piutang dan bank, hitung fisik surat berharga dan kas, footing; subjektif: pendapat pengacara klien, keusangan persediaan, jawaban kepala kredit). `ARENS pp.130–131`",
+          "ref": "ARENS pp.130–131"
+        },
+        "C-024": {
+          "title": "Generalisasi ISA 500.",
+          "text": "Dokumen asli lebih andal dari fotokopi atau hasil digitalisasi; tertulis lebih andal dari lisan; ada pengecualian penting. `ISA500 para. A35`",
+          "ref": "ISA500 para. A35"
+        },
+        "C-025": {
+          "title": "Sufficiency.",
+          "text": "Kuantitas; sampel 100 umumnya lebih cukup dari 50; prosedur analitis ditentukan presisi. Faktor: ekspektasi kesalahan dan keefektifan pengendalian (Lau Computer Parts: keusangan tinggi, sampel lebih besar; pengendalian PP&E efektif, sampel lebih kecil). `ARENS p.132; ISA500 para. A8`",
+          "ref": "ARENS p.132; ISA500 para. A8"
+        },
+        "C-030": {
+          "title": "Tiga kategori.",
+          "text": "Risk assessment (tidak cukup untuk opini), tests of controls (proses), substantive procedures (asersi; tests of details dan prosedur analitis). `ARENS pp.134–135; ISA500 paras. A14, A15`",
+          "ref": "ARENS pp.134–135; ISA500 paras. A14, A15"
+        },
+        "C-031": {
+          "title": "Tujuh jenis.",
+          "text": "Inspeksi, observasi, konfirmasi eksternal, recalculation, reperformance, prosedur analitis, inquiry. `ISA500 para. A6`",
+          "ref": "ISA500 para. A6"
+        },
+        "C-032": {
+          "title": "Inspeksi aset berwujud.",
+          "text": "Verifikasi existence langsung; sangat andal; valuation dan rights tidak terbukti (konsinyasi). `ARENS p.135; ISA500 paras. A18, A20`",
+          "ref": "ARENS p.135; ISA500 paras. A18, A20"
+        },
+        "C-034": {
+          "title": "Vouching dan tracing.",
+          "text": "Vouching: catatan ke dokumen, menguji occurrence. Tracing: dokumen ke catatan, menguji completeness. `ARENS p.136`",
+          "ref": "ARENS p.136"
+        },
+        "C-036": {
+          "title": "Observasi.",
+          "text": "Terbatas pada saat observasi, keberadaan auditor dapat mengubah perilaku; jarang cukup sendirian. `ARENS p.136; ISA500 para. A21`",
+          "ref": "ARENS p.136; ISA500 para. A21"
+        },
+        "C-037": {
+          "title": "Konfirmasi eksternal.",
+          "text": "Jawaban tertulis pihak ketiga independen; permintaan lewat klien tetapi jawaban langsung ke auditor; kelemahan: responden lalai atau tidak kompeten, tidak memegang informasi benar, berelasi, konfirmasi palsu. Faktor keandalan: kendali auditor, ciri responden, pembatasan manajemen, kerumitan, hubungan dengan entitas. Penambahan aset tetap jarang dikonfirmasi. `ARENS pp.136–138; ISA500 para. A22`",
+          "ref": "ARENS pp.136–138; ISA500 para. A22"
+        },
+        "C-040": {
+          "title": "Recalculation dan reperformance.",
+          "text": "Recalculation: periksa ulang hitungan (harga × kuantitas, footing, amortisasi, biaya dibayar di muka). Reperformance: kerjakan ulang prosedur atau pengendalian selain hitungan (harga vs daftar harga, bank reconciliation, pemindahan informasi). `ARENS pp.138, 142; ISA500 paras. A23, A24`",
+          "ref": "ARENS pp.138, 142; ISA500 paras. A23, A24"
+        },
+        "C-052": {
+          "title": "Tiga fase.",
+          "text": "Perencanaan: wajib. Respons risiko: boleh sebagai substantive procedure, ekspektasi didokumentasikan. Penyelesaian: wajib, final review. `ARENS p.144; ISA315 para. 14(b); ISA520 paras. 5, 6`",
+          "ref": "ARENS p.144; ISA315 para. 14(b); ISA520 paras. 5, 6"
+        },
+        "C-070": {
+          "title": "Empat langkah.",
+          "text": "Ekspektasi independen (evaluasi data sumber, presisi); selisih yang dapat diterima; hitung selisih; selidiki selisih signifikan (inquiry saja tidak cukup). Penentuan kecocokan lebih dulu. `ARENS p.148; ISA520 paras. 5, 7`",
+          "ref": "ARENS p.148; ISA520 paras. 5, 7"
+        },
+        "C-072": {
+          "title": "Figure 5-2 (Hillsburg, N-3).",
+          "text": "Saldo akhir pinjaman jangka pendek 12 bulan total 29.043.000, rata-rata 2.420.250; bunga 10,5 persen = 254.126. Jangka panjang (26.520.000 + 24.120.000) / 2 = 25.320.000; 8,5 persen = 2.152.200. Total ekspektasi 2.406.326; buku besar 2.408.642; selisih 2.316 dinilai tidak signifikan. Teks buku menulis 2 408 326 (salah ketik). `ARENS pp.148–149`",
+          "ref": "ARENS pp.148–149"
+        },
+        "C-073": {
+          "title": "Empat faktor presisi.",
+          "text": "Disagregasi data; keandalan data; kewajaran dan keterprediksian hubungan; jenis prosedur (tren lebih lemah). Prosedur analitis disebut \"kompas\". Contoh iklan Hillsburg. `ARENS pp.148–150`",
+          "ref": "ARENS pp.148–150"
+        },
+        "C-081": {
+          "title": "Figure 5-3.",
+          "text": "Enam langkah: tentukan ketepatan; akses data; bersihkan data; evaluasi relevansi dan keandalan; tafsirkan hasil dan tindak lanjuti pengecualian; dokumentasikan. Teks buku menyebut lima langkah kunci. `ARENS pp.151–153`",
+          "ref": "ARENS pp.151–153"
+        },
+        "C-082": {
+          "title": "False positive.",
+          "text": "Item yang ditandai tetapi bukan risiko atau masalah nyata. `ARENS p.153`",
+          "ref": "ARENS p.153"
+        },
+        "C-083": {
+          "title": "Informasi buatan entitas.",
+          "text": "Auditor menilai akurasi dan kelengkapan serta presisi dan rincian yang memadai. `ISA500 para. 9`",
+          "ref": "ISA500 para. 9"
+        }
+      }
+    },
+    "11": {
+      "canonicalSha256": "f12c25c22a6ef3918fcecc88288cf848a68338793f854d3712a80533dcebe5eb",
+      "studentSha256": "ba8fb732cc916f5281c6a785bafa28bb2b8926d2e7f442af1485ef3013df6e19",
+      "claims": {
+        "C-001": {
+          "title": "Definisi dokumentasi.",
+          "text": "Catatan prosedur yang dikerjakan, bukti yang diperoleh, dan kesimpulan; disebut working papers atau workpapers; kini umumnya elektronik. Isinya semua informasi yang menurut auditor perlu untuk melaksanakan audit secara memadai dan mendukung laporan. `ARENS p.156; ISA230 paras. 6(a), 8`",
+          "ref": "ARENS p.156; ISA230 paras. 6(a), 8"
+        },
+        "C-002": {
+          "title": "Dua fungsi utama.",
+          "text": "Bukti dasar kesimpulan auditor atas pencapaian tujuan keseluruhan; bukti bahwa audit direncanakan dan dilaksanakan sesuai standar dan ketentuan hukum. `ISA230 para. 2`",
+          "ref": "ISA230 para. 2"
+        },
+        "C-005": {
+          "title": "Auditor berpengalaman.",
+          "text": "Tolok ukur: dokumentasi cukup agar auditor berpengalaman tanpa keterkaitan sebelumnya memahami sifat, waktu, luas prosedur; hasil dan bukti; hal signifikan, kesimpulan, dan pertimbangan profesional signifikan. Auditor berpengalaman = pengalaman praktis dan pemahaman memadai tentang proses audit, ISA dan hukum, lingkungan bisnis entitas, isu industri. `ISA230 paras. 8, 6(c)`",
+          "ref": "ISA230 paras. 8, 6(c)"
+        },
+        "C-007": {
+          "title": "Tepat waktu dan lisan.",
+          "text": "Dokumentasi disusun tepat waktu karena yang dibuat belakangan cenderung kurang akurat. Penjelasan lisan saja bukan dukungan memadai; boleh menjernihkan isi dokumentasi. Tidak perlu mendokumentasikan setiap pertimbangan; draf yang digantikan dan duplikat tidak perlu disimpan. `ISA230 para. 7, A1, A4, A5, A7`",
+          "ref": "ISA230 para. 7, A1, A4, A5, A7"
+        },
+        "C-010": {
+          "title": "Ciri item yang diuji.",
+          "text": "Contoh: PO (tanggal, nomor); entri jurnal di atas jumlah tertentu (lingkup dan populasi); sampel sistematis (sumber, titik awal, interval; contoh laporan pengiriman 1 April sampai 30 September, mulai nomor 12345, tiap ke-125). `ISA230 paras. 9(a), A12`",
+          "ref": "ISA230 paras. 9(a), A12"
+        },
+        "C-011": {
+          "title": "Pelaksana dan tanggal.",
+          "text": "Inquiry: tanggal, nama, jabatan. Observasi: proses, orang, tempat, waktu. `ISA230 paras. 9(b), A12`",
+          "ref": "ISA230 paras. 9(b), A12"
+        },
+        "C-012": {
+          "title": "Reviewer.",
+          "text": "Dicatat pekerjaan apa yang direview, siapa, kapan; tidak setiap kertas kerja memuat tanda review. `ISA230 paras. 9(c), A13`",
+          "ref": "ISA230 paras. 9(c), A13"
+        },
+        "C-013": {
+          "title": "Diskusi, inkonsistensi, penyimpangan.",
+          "text": "Diskusi hal signifikan dicatat sifat, waktu, pihak (notulen boleh disiapkan entitas dan disetujui auditor). Informasi tidak konsisten: cara penanganan, dokumen salah tidak perlu disimpan. Penyimpangan dari persyaratan: prosedur alternatif dan alasan, hanya keadaan luar biasa; persyaratan tidak relevan tidak perlu dicatat. `ISA230 paras. 10–12, A14, A15, A18–A19`",
+          "ref": "ISA230 paras. 10–12, A14, A15, A18–A19"
+        },
+        "C-020": {
+          "title": "Permanent file dan current file.",
+          "text": "Satu set permanent file dan satu set current file per tahun audit. `ARENS p.157`",
+          "ref": "ARENS p.157"
+        },
+        "C-021": {
+          "title": "Table 5-8.",
+          "text": "Permanent: akta pendirian, anggaran dasar, perjanjian obligasi, kontrak signifikan, dokumentasi tata kelola. Current perencanaan: analitis, risiko pengendalian, flowchart, program awal, notulen dan memorandum strategi. Current respons risiko: supporting schedules tahun berjalan dan multi-tahun. Current penyelesaian: kertas kerja penyelesaian, ringkasan selisih audit, final analytical review. `ARENS p.157, Table 5-8`",
+          "ref": "ARENS p.157, Table 5-8"
+        },
+        "C-030": {
+          "title": "Lima ciri.",
+          "text": "Identifikasi (klien, periode, deskripsi, penyusun, tanggal, indeks); indeks dan cross-reference (contoh A-1, A-2 sampai A-4); bukti pekerjaan (memorandum, inisial di program, notasi, tick mark dijelaskan di bawah); informasi cukup (cocok dengan buku besar dan trial balance); kesimpulan jelas. `ARENS pp.158–159`",
+          "ref": "ARENS pp.158–159"
+        },
+        "C-031": {
+          "title": "Lead schedule.",
+          "text": "Rincian akun buku besar yang membentuk satu total pos pada working trial balance. `ARENS p.158`",
+          "ref": "ARENS p.158"
+        },
+        "C-032": {
+          "title": "Figure 5-4 (C-1).",
+          "text": "Wesel tagih per 30 November 2020, disusun J.B. 23 Desember 2020. Tujuh baris: Graham Metal Works 12%, 150.000, 2.850,00; Lopez Hardware 14%, 89.000, 519,17; Boise Hinge 11%, 200.000, 3.177,78; Eastam Mfg. 15%, 72.000, 600,00; Toledo Fabricators 14%, 125.000, 486,11; Manor Appliance 13%, 56.000, 808,89; Commercial Copper 12%, 170.000, 1.756,67. Total 862.000 dan 10.198,62. `ARENS p.159, Figure 5-4`",
+          "ref": "ARENS p.159, Figure 5-4"
+        },
+        "C-033": {
+          "title": "Tick mark C-1.",
+          "text": "x (cocok dengan dokumen wesel, inspeksi); p (konfirmasi positif, C-2); @ (bunga dihitung ulang); f (footed); t/b (ditelusuri ke trial balance). `ARENS p.159`",
+          "ref": "ARENS p.159"
+        },
+        "C-034": {
+          "title": "Kesimpulan C-1.",
+          "text": "Saldo tampak disajikan wajar; J.B. membahas tertagihnya wesel dengan controller dan berpendapat tidak perlu cadangan. `ARENS p.159`",
+          "ref": "ARENS p.159"
+        },
+        "C-035": {
+          "title": "Hitung ulang bunga.",
+          "text": "Hari dari tanggal terbit sampai 30 November 2020: 57, 15, 52, 20, 10, 40, 31. Bunga = nominal × tingkat × hari / 360, semua cocok sampai dua desimal; total 862.000 dan 10.198,62. Basis 360 hari adalah hasil hitung ulang, bukan teks buku. `turunan dari ARENS p.159`",
+          "ref": "turunan dari ARENS p.159"
+        },
+        "C-036": {
+          "title": "Interpretasi.",
+          "text": "Kesimpulan atas tertagihnya wesel bersandar pada inquiry ke controller; menurut prinsip TM10 inquiry saja tidak cukup. `turunan penulis; ARENS p.159; ARENS p.139`",
+          "ref": "turunan penulis; ARENS p.159; ARENS p.139"
+        },
+        "C-040": {
+          "title": "Perakitan.",
+          "text": "Buku: versi akhir dirakit dalam 60 hari setelah tanggal laporan auditor; \"file freeze\"; tambahan sesudahnya dipisah di depan berkas dan dinilai pengaruhnya. ISA 230 A21: batas yang sesuai umumnya tidak lebih dari 60 hari. `ARENS pp.156–157; ISA230 para. A21`",
+          "ref": "ARENS pp.156–157; ISA230 para. A21"
+        },
+        "C-041": {
+          "title": "Ketentuan ISA setelah laporan.",
+          "text": "Merakit tepat waktu (para. 14); perubahan administratif yang boleh (membuang dokumen yang digantikan, mengurutkan, cross-reference, checklist, bukti yang sudah disepakati sebelum tanggal laporan) dan tidak boleh (prosedur atau kesimpulan baru) (A22); tidak menghapus sebelum masa retensi, umumnya tidak kurang dari lima tahun (para. 15, A23); perubahan setelah perakitan dicatat alasan, waktu, pelaku, reviewer (para. 16, A24); prosedur atau kesimpulan baru setelah tanggal laporan dicatat keadaan, prosedur, bukti, kesimpulan, dampak (para. 13, A20). `ISA230 paras. 13–16, A20–A24`",
+          "ref": "ISA230 paras. 13–16, A20–A24"
+        },
+        "C-042": {
+          "title": "Kepemilikan.",
+          "text": "Kertas kerja milik auditor, termasuk yang disiapkan klien; pihak lain hanya bila subpoena pengadilan atau diminta organisasi profesi (disiplin, inspeksi praktik); disimpan di kantor atau tempat aman di luar lokasi. `ARENS pp.159–160`",
+          "ref": "ARENS pp.159–160"
+        },
+        "C-043": {
+          "title": "Kerahasiaan.",
+          "text": "Etika melarang membuka informasi rahasia tanpa persetujuan klien kecuali diwajibkan pengadilan atau asosiasi profesi; contoh informasi: gaji pejabat, harga produk, rencana iklan, data biaya; karyawan tak berhak bisa mengubah isi; kertas kerja dilindungi setiap saat. `ARENS p.160`",
+          "ref": "ARENS p.160"
+        },
+        "C-044": {
+          "title": "Akses.",
+          "text": "Tim audit: ya; karyawan klien tak berhak dan pihak luar: tidak tanpa izin tertulis klien; firma lain termasuk pembeli praktik: izin tertulis klien; pengadilan dan organisasi profesi: tanpa izin, auditor biasanya berkonsultasi dengan pengacara dan memberi tahu klien. `ARENS pp.159–160`",
+          "ref": "ARENS pp.159–160"
+        },
+        "C-051": {
+          "title": "Figure 5-5.",
+          "text": "Lebih sedikit: risiko rendah, tanpa indikator fraud, tanpa kesalahan, rutin, bukti konsisten. Lebih banyak: risiko tinggi, indikator fraud, kesalahan ditemukan, pertimbangan kompleks, bukti tidak konsisten. Kolom kiri berlaku setelah prosedur penilaian risiko yang tepat. Complete trust di luar skeptisisme; complete doubt = pola pikir forensik; neutral = tidak menganggap manajemen tidak jujur dan tidak pasti jujur. `ARENS pp.160–161, Figure 5-5`",
+          "ref": "ARENS pp.160–161, Figure 5-5"
+        },
+        "C-052": {
+          "title": "Dokumentasi skeptisisme.",
+          "text": "Tidak ada cara baku; dokumentasi tetap bukti skeptisisme, mis. estimasi akuntansi dengan bukti sebagian menguatkan dan sebagian bertentangan; catat cara mengevaluasi dan pertimbangannya. `ISA230 para. A7`",
+          "ref": "ISA230 para. A7"
+        }
+      }
+    },
+    "12": {
+      "canonicalSha256": "a268126892b54d0dfe6f7f19f802e29a073e21470c81a0901fb1db404abc616a",
+      "studentSha256": "241dd510931c56695d4089e44ddadba236e98c52cdc625a34f6c888b056263a6",
+      "claims": {
+        "C-001": {
+          "title": "Definisi audit risk.",
+          "text": "Risiko auditor menyatakan opini tidak tepat saat laporan keuangan salah saji material; fungsi dari RMM dan detection risk; berkaitan dengan proses audit, bukan risiko bisnis auditor (litigasi, publisitas). `ARENS p.223; ISA200 para. 13(c)`",
+          "ref": "ARENS p.223; ISA200 para. 13(c)"
+        },
+        "C-002": {
+          "title": "Mengurangi audit risk.",
+          "text": "Tidak bisa dihilangkan; auditor memperoleh bukti cukup dan tepat untuk menurunkannya ke tingkat rendah yang dapat diterima. `ARENS p.223; ISA200 para. 17`",
+          "ref": "ARENS p.223; ISA200 para. 17"
+        },
+        "C-004": {
+          "title": "Komponen.",
+          "text": "IR (kerentanan asersi sebelum pengendalian), CR (pengendalian tidak mencegah atau mendeteksi dan mengoreksi tepat waktu), DR (prosedur tidak mendeteksi). IR dan CR milik klien dan ada tanpa audit; DR satu-satunya yang dikendalikan auditor. `ARENS p.225; ISA200 para. 13(e), 13(n)`",
+          "ref": "ARENS p.225; ISA200 para. 13(e), 13(n)"
+        },
+        "C-005": {
+          "title": "Model.",
+          "text": "AR = IR × CR × DR; alat konseptual, bukan rumus presisi; penilaian boleh kuantitatif atau nonkuantitatif. `ARENS p.225; ISA200 para. A44`",
+          "ref": "ARENS p.225; ISA200 para. A44"
+        },
+        "C-006": {
+          "title": "Hubungan terbalik.",
+          "text": "RMM tinggi, DR rendah, bukti lebih meyakinkan. Hubungan CR dengan bukti searah; CR rendah berarti auditor berencana mengandalkan pengendalian dan wajib mengujinya; hasil mendukung maka uji substantif bisa dikurangi. `ARENS pp.225–226`",
+          "ref": "ARENS pp.225–226"
+        },
+        "C-007": {
+          "title": "Tanpa uji pengendalian.",
+          "text": "Penilaian CR dibuat sehingga RMM sama dengan IR. `ISA315 para. 34`",
+          "ref": "ISA315 para. 34"
+        },
+        "C-010": {
+          "title": "Relevant assertion.",
+          "text": "Asersi dengan risiko salah saji teridentifikasi; ditentukan sebelum pengendalian. Dalam contoh buku valuasi relevan, kelengkapan tidak. `ARENS p.226; ISA315 para. 12(h), A9`",
+          "ref": "ARENS p.226; ISA315 para. 12(h), A9"
+        },
+        "C-011": {
+          "title": "Substantif tetap wajib.",
+          "text": "Apa pun risikonya, prosedur substantif untuk setiap kelas transaksi, saldo, dan pengungkapan yang material. `ISA330 para. 18`",
+          "ref": "ISA330 para. 18"
+        },
+        "C-012": {
+          "title": "Table 7-2.",
+          "text": "Nature: bukti eksternal, uji rinci plus analitis substantif, alat otomatis. Extent: sampel besar, performance materiality lebih rendah, 100 persen populasi. Timing: akhir tahun dan bukan interim. `ARENS p.227`",
+          "ref": "ARENS p.227"
+        },
+        "C-022": {
+          "title": "Tingkat laporan keuangan.",
+          "text": "Pervasif, berpotensi memengaruhi banyak asersi; tidak selalu terkait satu asersi. Contoh: jaringan toko serba ada (going concern, basis likuidasi), lingkungan TI dikelola buruk. `ARENS p.224; ISA315 para. A195`",
+          "ref": "ARENS p.224; ISA315 para. A195"
+        },
+        "C-024": {
+          "title": "Tingkat asersi.",
+          "text": "Kelas transaksi, saldo, pengungkapan; contoh kurs penjualan luar negeri memengaruhi accuracy dan valuation pendapatan dan piutang. `ARENS p.225`",
+          "ref": "ARENS p.225"
+        },
+        "C-025": {
+          "title": "Inherent risk factors.",
+          "text": "Complexity, subjectivity, change, uncertainty, management bias atau fraud-risk factors; kualitatif atau kuantitatif; dinilai bersama dan saling berkaitan. Tambahan ISA: signifikansi, volume atau ketidakseragaman. `ARENS pp.229–230; ISA315 paras. 12(f), A7, A8`",
+          "ref": "ARENS pp.229–230; ISA315 paras. 12(f), A7, A8"
+        },
+        "C-026": {
+          "title": "Contoh per faktor.",
+          "text": "Complexity: rebat ritel bahan makanan (Loblaws, Sobeys), aset biologis kanabis. Subjectivity: cadangan piutang saat COVID-19. Change: pembatasan pandemi memengaruhi provisi dan impairment. Uncertainty: impairment (nilai wajar, arus kas). Bias: tujuan menurunkan pajak memengaruhi kelengkapan pendapatan dan keterjadian beban. `ARENS p.230`",
+          "ref": "ARENS p.230"
+        },
+        "C-032": {
+          "title": "Spectrum.",
+          "text": "IR adalah pertimbangan dalam rentang; kombinasi likelihood dan magnitude; kemungkinan rendah dengan magnitude sangat besar bisa tinggi; boleh dikategorikan. `ISA315 paras. 31, A208–A214; ARENS p.232 (Figure 7-5)`",
+          "ref": "ISA315 paras. 31, A208–A214; ARENS p.232 (Figure 7-5)"
+        },
+        "C-033": {
+          "title": "Significant risk.",
+          "text": "Definisi buku dan ISA (dekat ujung atas atau diwajibkan ISA lain); berbeda per entitas dan periode; pertimbangan profesional. `ARENS p.233; ISA315 paras. 12(l), A219, A220`",
+          "ref": "ARENS p.233; ISA315 paras. 12(l), A219, A220"
+        },
+        "C-034": {
+          "title": "Contoh A220.",
+          "text": "Kas swalayan: kemungkinan tinggi, magnitude sangat rendah, tidak signifikan. Goodwill saat negosiasi jual segmen: signifikan. `ISA315 para. A220`",
+          "ref": "ISA315 para. A220"
+        },
+        "C-036": {
+          "title": "Dua risiko yang ditetapkan.",
+          "text": "Transaksi pihak berelasi signifikan di luar kegiatan normal (ISA 550 para. 18; alasan: pengungkapan, tidak arm's-length); presumsi fraud pada pendapatan (ISA 240 para. 27; fraud yang dinilai diperlakukan signifikan, para. 28; dokumentasi bila presumsi tidak berlaku, para. 48). `ARENS p.234; ISA550 para. 18; ISA240 paras. 27, 28, 48`",
+          "ref": "ARENS p.234; ISA550 para. 18; ISA240 paras. 27, 28, 48"
+        },
+        "C-040": {
+          "title": "Substantif saja tidak cukup.",
+          "text": "Pengendalian atas risiko tersebut wajib diidentifikasi dan diuji; contoh telekomunikasi. `ISA315 paras. 33, A222–A224; ISA330 para. 8(b)`",
+          "ref": "ISA315 paras. 33, A222–A224; ISA330 para. 8(b)"
+        },
+        "C-041": {
+          "title": "Dua lapis respons.",
+          "text": "Keseluruhan (overall audit strategy) dan prosedur lanjutan. `ARENS pp.234–236; ISA330 paras. 5, 6`",
+          "ref": "ARENS pp.234–236; ISA330 paras. 5, 6"
+        },
+        "C-042": {
+          "title": "Contoh respons keseluruhan.",
+          "text": "Skeptisisme, staf berpengalaman atau ahli, arahan, supervisi, dan review, ketidakterdugaan, perubahan strategi (performance materiality, uji pengendalian, substantif di dekat tanggal laporan). `ISA330 para. A1; ARENS pp.235–236`",
+          "ref": "ISA330 para. A1; ARENS pp.235–236"
+        },
+        "C-050": {
+          "title": "Fraud dan error.",
+          "text": "Niat; dua jenis; auditor tidak membuat penetapan hukum; tanggung jawab pencegahan pada TCWG dan manajemen; auditor beryakinan memadai atas fraud atau error. `ISA240 paras. 2–5, 12(a)`",
+          "ref": "ISA240 paras. 2–5, 12(a)"
+        },
+        "C-051": {
+          "title": "Sulit dideteksi.",
+          "text": "Skema canggih, pemalsuan, kolusi; fraud manajemen lebih sulit; prosedur untuk error belum tentu efektif untuk fraud; faktor kemampuan mendeteksi. `ARENS p.236; ISA240 paras. 6–8`",
+          "ref": "ARENS p.236; ISA240 paras. 6–8"
+        },
+        "C-057": {
+          "title": "Fraud triangle.",
+          "text": "Insentif atau tekanan, peluang, sikap atau rasionalisasi; fraud risk factors (red flags) = peristiwa atau kondisi yang menunjukkan insentif, tekanan, atau peluang; belum tentu fraud. `ARENS pp.238–239; ISA240 paras. 12(b), 25`",
+          "ref": "ARENS pp.238–239; ISA240 paras. 12(b), 25"
+        },
+        "C-058": {
+          "title": "Table 7-4.",
+          "text": "Tiga baris per kolom (stabilitas terancam, tekanan pihak ketiga atau covenant, kekayaan pribadi; estimasi subjektif, pengawasan tidak efektif, pergantian staf; komunikasi nilai, riwayat pelanggaran, prakiraan agresif). `ARENS p.240`",
+          "ref": "ARENS p.240"
+        },
+        "C-059": {
+          "title": "Narasi pelaporan curang.",
+          "text": "Insentif (prospek, pembiayaan, analis, covenant, harga saham, reputasi, opsi saham); peluang (industri berestimasi, persediaan beragam, pergantian, komite audit); sikap (tone at the top). `ARENS pp.239–240`",
+          "ref": "ARENS pp.239–240"
+        },
+        "C-061": {
+          "title": "Tiga tingkat respons fraud.",
+          "text": "Keseluruhan (ISA para. 30; buku: personel, spesialis, skeptisisme, kebijakan akuntansi, ketidakterdugaan, uji penyalahgunaan walau tidak material); asersi (para. 31; cutoff dan channel stuffing); override. `ARENS p.242; ISA240 paras. 29–32`",
+          "ref": "ARENS p.242; ISA240 paras. 29–32"
+        },
+        "C-063": {
+          "title": "Management override.",
+          "text": "Posisi unik, ada di semua entitas, risiko signifikan; tiga prosedur wajib: jurnal (inquiry, akhir periode, sepanjang periode), estimasi (bias, retrospective review), transaksi tidak biasa (rasional bisnis). `ISA240 paras. 32–33; ARENS pp.242–244`",
+          "ref": "ISA240 paras. 32–33; ARENS pp.242–244"
+        },
+        "C-064": {
+          "title": "Jurnal (AIA 7-4).",
+          "text": "Debit pendapatan ke akun selain kas atau piutang, beban dikredit dan aset didebit, waktu tidak biasa; top-side adjustments; machine learning (MindBridge); entri akhir pekan rendah risiko pada operasi 24/7. `ARENS pp.243–244`",
+          "ref": "ARENS pp.243–244"
+        }
+      }
+    },
+    "13": {
+      "canonicalSha256": "1270d328a99e4ca7e596ae079a8eccc241d04e87db88c113a65c41afbc44a32a",
+      "studentSha256": "2e248d57b6c4078d4a596d25d7340d9f0952fd5b347cb5f500d897c7a87aad56",
+      "claims": {
+        "C-001": {
+          "title": "Definisi.",
+          "text": "System of internal control dirancang, diterapkan, dan dipelihara oleh pihak yang bertanggung jawab atas tata kelola, manajemen, dan personel lain untuk memberi keyakinan memadai bahwa tujuan entitas tercapai. Controls adalah kebijakan atau prosedur yang ditetapkan untuk mencapai tujuan pengendalian. `ARENS p.256; ISA315 paras. 12(c), 12(m)`",
+          "ref": "ARENS p.256; ISA315 paras. 12(c), 12(m)"
+        },
+        "C-002": {
+          "title": "Memahami berbeda dari menguji.",
+          "text": "Memahami pengendalian wajib di setiap audit. Mengevaluasi desain dan menentukan implementasi tidak sama dengan menguji efektivitas operasi. `ISA315 paras. 26(a), A162, A163, A180`",
+          "ref": "ISA315 paras. 26(a), A162, A163, A180"
+        },
+        "C-003": {
+          "title": "Tujuan pengendalian.",
+          "text": "Buku menyebut empat: strategic, reliability of financial reporting, efficiency and effectiveness of operations, compliance. ISA 315 para. 12(m) dan COSO13 menyebut tiga. Untuk audit laporan keuangan yang paling sering relevan adalah pelaporan keuangan; operasi relevan bila informasinya dipakai untuk analitis atau pengungkapan; kepatuhan relevan bila berefek material. `ARENS pp.256–258; ISA315 para. 12(m); COSO13`",
+          "ref": "ARENS pp.256–258; ISA315 para. 12(m); COSO13"
+        },
+        "C-005": {
+          "title": "Tiga tingkat pengendalian atas pelaporan keuangan.",
+          "text": "Entity-level controls, IT general controls, business process controls. `ARENS p.257`",
+          "ref": "ARENS p.257"
+        },
+        "C-006": {
+          "title": "Reasonable assurance dan biaya-manfaat.",
+          "text": "Reasonable assurance menyisakan kemungkinan kecil salah saji material tidak tercegah atau tidak terdeteksi tepat waktu; manajemen menimbang biaya dan manfaat. `ARENS pp.257–258; ISA315 App.3 para. 24`",
+          "ref": "ARENS pp.257–258; ISA315 App.3 para. 24"
+        },
+        "C-008": {
+          "title": "Batas bawaan.",
+          "text": "Kesalahan manusia, management override, collusion, dan pertimbangan biaya-manfaat. `ARENS pp.257–258; ISA315 App.3 paras. 22–24`",
+          "ref": "ARENS pp.257–258; ISA315 App.3 paras. 22–24"
+        },
+        "C-010": {
+          "title": "Lima komponen.",
+          "text": "Lingkungan pengendalian, penilaian risiko oleh entitas, pemantauan, sistem informasi dan komunikasi, aktivitas pengendalian. Entitas boleh memakai istilah lain asal kelima komponen tercakup. `ARENS pp.259–260; ISA315 paras. 21–27, A91, A92`",
+          "ref": "ARENS pp.259–260; ISA315 paras. 21–27, A91, A92"
+        },
+        "C-011": {
+          "title": "17 prinsip dan penomoran.",
+          "text": "Jumlah prinsip: lingkungan pengendalian 5, penilaian risiko 4, aktivitas pengendalian 3, informasi dan komunikasi 3, pemantauan 2. Table 8-1 menomori pemantauan 10–11, informasi dan komunikasi 12–14, aktivitas 15–17; COSO 2013 menomori aktivitas 10–12, informasi dan komunikasi 13–15, pemantauan 16–17. `ARENS p.261; COSO13`",
+          "ref": "ARENS p.261; COSO13"
+        },
+        "C-012": {
+          "title": "Direct dan indirect controls.",
+          "text": "Direct cukup tepat menangani risiko asersi. Indirect mendukung direct controls dan memengaruhi kemungkinan salah saji terdeteksi atau tercegah tepat waktu. `ARENS p.259; ISA315 para. A96`",
+          "ref": "ARENS p.259; ISA315 para. A96"
+        },
+        "C-014": {
+          "title": "Keefektifan menurun makin tidak langsung.",
+          "text": "Contoh review ringkasan penjualan per wilayah (tidak langsung terhadap kelengkapan pendapatan) dibanding mencocokkan dokumen pengiriman dengan penagihan (lebih langsung). `ISA315 para. A149`",
+          "ref": "ISA315 para. A149"
+        },
+        "C-015": {
+          "title": "Kewajiban evaluasi.",
+          "text": "Auditor mengevaluasi apakah manajemen, dengan pengawasan pihak tata kelola, membangun dan memelihara budaya jujur dan etis, dan apakah lingkungan pengendalian menjadi dasar komponen lain. `ISA315 paras. 21, 21(b); ARENS pp.260–261`",
+          "ref": "ISA315 paras. 21, 21(b); ARENS pp.260–261"
+        },
+        "C-017": {
+          "title": "Jebakan: buku dan ISA.",
+          "text": "Buku p.263 menyatakan karyawan yang kompeten dan tepercaya dapat menutup ketiadaan pengendalian lain, sedangkan karyawan tidak kompeten atau tidak jujur merusak berapa pun pengendalian. ISA A107 mengingatkan bahwa lingkungan pengendalian yang sesuai tidak otomatis menjadi penangkal fraud, sehingga kesimpulan bahwa lingkungan yang baik cukup tidak boleh ditarik. `ARENS p.263; ISA315 para. A107`",
+          "ref": "ARENS p.263; ISA315 para. A107"
+        },
+        "C-024": {
+          "title": "Dua bentuk pemantauan.",
+          "text": "Evaluasi berkelanjutan dan terpisah. `ARENS p.265; ISA315 App.3 para. 10, para. A119, para. 24`",
+          "ref": "ARENS p.265; ISA315 App.3 para. 10, para. A119, para. 24"
+        },
+        "C-025": {
+          "title": "Review bukan otomatis pemantauan.",
+          "text": "Pengendalian terkait sistem informasi menjawab risiko tertentu, aktivitas pemantauan menilai apakah pengendalian di lima komponen berjalan. `ISA315 App.3 para. 13; para. A120`",
+          "ref": "ISA315 App.3 para. 13; para. A120"
+        },
+        "C-031": {
+          "title": "Lima aktivitas buku (Figure 8-4).",
+          "text": "Otorisasi dan persetujuan; dokumen dan catatan memadai; kontrol fisik dan logis atas aset dan catatan; segregasi tugas; pemeriksaan independen. `ARENS p.268`",
+          "ref": "ARENS p.268"
+        },
+        "C-035": {
+          "title": "Lima pemisahan tugas.",
+          "text": "Kustodi dari akuntansi; otorisasi dari kustodi; operasional dari pencatatan; rekonsiliasi dari entri data; fungsi TI dari pengguna. Pengendalian pengganti bila pemisahan tidak praktis. `ARENS pp.270–271; ISA315 App.3 para. 20`",
+          "ref": "ARENS pp.270–271; ISA315 App.3 para. 20"
+        },
+        "C-039": {
+          "title": "Dua kategori.",
+          "text": "General controls dan application controls; application controls mungkin efektif hanya bila general controls efektif. `ARENS p.273; ISA315 paras. 12(d), A108, App.5 para. 8`",
+          "ref": "ARENS p.273; ISA315 paras. 12(d), A108, App.5 para. 8"
+        },
+        "C-040": {
+          "title": "Enam general controls (Table 8-3).",
+          "text": "IT governance; separation of IT duties; system development and change; physical and online security; backup and contingency planning; hardware controls. `ARENS pp.273–276`",
+          "ref": "ARENS pp.273–276"
+        },
+        "C-041": {
+          "title": "Tiga application controls.",
+          "text": "Input, processing, output. `ARENS p.276`",
+          "ref": "ARENS p.276"
+        },
+        "C-042": {
+          "title": "Batch input controls (Table 8-4).",
+          "text": "Financial total, hash total, record count. `ARENS p.277`",
+          "ref": "ARENS p.277"
+        },
+        "C-045": {
+          "title": "Contoh batch totals (penulis).",
+          "text": "Lima faktur: F-101 4102 / 12.500.000; F-102 4215 / 8.750.000; F-103 4102 / 3.250.000; F-104 4380 / 20.000.000; F-105 4215 / 5.500.000. Total keuangan 50.000.000; hash total 21.014; record count 5. Lima skenario kesalahan dihitung di 07. `ARENS p.277`",
+          "ref": "ARENS p.277"
+        },
+        "C-046": {
+          "title": "General IT controls menurut ISA 315.",
+          "text": "Empat lapisan (aplikasi, basis data, sistem operasi, jaringan) dan tiga proses TI (mengelola akses, perubahan, operasi). `ISA315 para. 12(g)(iii); App.6 paras. 1, 2`",
+          "ref": "ISA315 para. 12(g)(iii); App.6 paras. 1, 2"
+        },
+        "C-048": {
+          "title": "Pengaruh general IT controls pada rencana audit.",
+          "text": "Efektif: kontrol otomatis dapat diuji lewat general IT controls; tidak efektif: control risk lebih tinggi dan prosedur substantif diperluas; laporan buatan sistem diuji. `ISA315 paras. A150, A166, A180; App.5 para. 10`",
+          "ref": "ISA315 paras. A150, A166, A180; App.5 para. 10"
+        },
+        "C-057": {
+          "title": "Empat pertanyaan pada satu pengendalian.",
+          "text": "Identifikasi, desain, implementasi, efektivitas operasi. `ISA315 paras. 26(a), 26(d), A175–A177, A180; ISA330`",
+          "ref": "ISA315 paras. 26(a), 26(d), A175–A177, A180; ISA330"
+        }
+      }
+    },
+    "14": {
+      "canonicalSha256": "6e68ad54c2629bc9c5a6c845a1e12eb297a10ce10ed7c110a0e52d1449e6c2ff",
+      "studentSha256": "32334bb75e1702702549308fb689b2f4bde07d89a558481f35c4465efcf62bde",
+      "claims": {
+        "C-001": {
+          "title": "Definisi.",
+          "text": "Substantive procedure: prosedur yang dirancang mendeteksi salah saji material pada tingkat asersi; terdiri dari tests of details dan substantive analytical procedures. Test of controls: prosedur yang dirancang mengevaluasi efektivitas operasi kontrol. `ISA330 para. 4(a)–(b)`",
+          "ref": "ISA330 para. 4(a)–(b)"
+        },
+        "C-007": {
+          "title": "Walk-through.",
+          "text": "Menelusuri transaksi dari asal sampai tercatat, memakai dokumen dan TI yang sama; jenis reperformance; bukti desain dan implementasi, bukan efektivitas; sekaligus menilai kompetensi dan pernah tidaknya diminta override. `ARENS p.298`",
+          "ref": "ARENS p.298"
+        },
+        "C-008": {
+          "title": "Tiga cara dokumentasi.",
+          "text": "Narasi, flowchart, ICQ; boleh digabung; narasi cukup untuk sistem sederhana. `ARENS p.298`",
+          "ref": "ARENS p.298"
+        },
+        "C-019": {
+          "title": "Dua kategori kontrol yang diuji.",
+          "text": "Risiko yang tidak bisa dijawab substantif saja; kontrol yang diandalkan menentukan nature, timing, extent substantif. `ARENS pp.305–306`",
+          "ref": "ARENS pp.305–306"
+        },
+        "C-021": {
+          "title": "Definisi dan urutan.",
+          "text": "Assessment of control risk adalah ukuran ekspektasi bahwa kontrol tidak mencegah atau mendeteksi dan mengoreksi salah saji tingkat asersi. Urutan: komponen tidak langsung, general IT controls, control activities per asersi. `ARENS p.311`",
+          "ref": "ARENS p.311"
+        },
+        "C-023": {
+          "title": "Key controls dan Table 9-2.",
+          "text": "Matriks hanya memuat key controls. Delapan pasangan kurang efektif lawan lebih efektif. `ARENS pp.306, 308`",
+          "ref": "ARENS pp.306, 308"
+        },
+        "C-026": {
+          "title": "Empat pertanyaan dan Figure 9-7.",
+          "text": "Kontrol kompensasi; potensi salah saji; signifikansi; kemungkinan. D1: tanpa kompensasi, penjualan ganda, berpotensi material, audit software cari nomor ganda dan analitis penjualan serta gross margin. D2: dikompensasi tinjauan mingguan, sisanya tidak berlaku. `ARENS p.308`",
+          "ref": "ARENS p.308"
+        },
+        "C-027": {
+          "title": "Inkonsistensi buku.",
+          "text": "Teks pp.308–309 mengaitkan faktur tidak dipertanggungjawabkan dengan cutoff high dan menyimpulkan defisiensi signifikan; Figure 9-6 menempatkan D1 pada occurrence (medium) dan D2 pada cutoff (high) yang punya kompensasi di Figure 9-7. Bacaan mengikuti gambar dan menandai selisih. `ARENS pp.307–309`",
+          "ref": "ARENS pp.307–309"
+        },
+        "C-031": {
+          "title": "TOC saja.",
+          "text": "Transaksi sangat otomatis, bukti hanya elektronik; contoh telekomunikasi dan platform kripto. `ARENS p.312; ISA330 paras. 8(b), A24`",
+          "ref": "ARENS p.312; ISA330 paras. 8(b), A24"
+        },
+        "C-032": {
+          "title": "Catatan sumber TOC saja.",
+          "text": "Buku menyebut substantif wajib untuk risiko signifikan dan juga pendekatan TOC saja; ISA 330 para. 18 dan A44 mengatur substantif per kelas material dan tidak semua asersi wajib diuji. Pembacaan selaras adalah susunan penulis. `ARENS pp.312, 339; ISA330 paras. 18, 21, A44`",
+          "ref": "ARENS pp.312, 339; ISA330 paras. 18, 21, A44"
+        },
+        "C-034": {
+          "title": "Dua pertimbangan mengandalkan kontrol.",
+          "text": "Efisiensi; keharusan. `ARENS p.302`",
+          "ref": "ARENS p.302"
+        },
+        "C-036": {
+          "title": "Tujuan TOC.",
+          "text": "Bukti bahwa kontrol berjalan sepanjang periode; fokus pada kontrol bukan salah saji; contoh persetujuan kontroler atas ringkasan gaji. `ARENS p.314`",
+          "ref": "ARENS p.314"
+        },
+        "C-038": {
+          "title": "Jenis prosedur.",
+          "text": "Inquiry (tidak sendirian), inspeksi, observasi, reperformance; tiga hal yang dipertimbangkan (kapan, konsistensi, oleh siapa). Inquiry plus inspeksi atau reperformance lebih kuat daripada plus observasi. `ARENS pp.314–316; ISA330 paras. 10(a), A26–A27`",
+          "ref": "ARENS pp.314–316; ISA330 paras. 10(a), A26–A27"
+        },
+        "C-043": {
+          "title": "Extent.",
+          "text": "Tingkat ketergantungan; frekuensi; lama periode; perkiraan deviasi; relevansi bukti; bukti tes lain; kontrol otomatis bisa satu transaksi bila ITGC efektif. `ARENS p.317; ISA330 paras. 9, A28–A29`",
+          "ref": "ARENS p.317; ISA330 paras. 9, A28–A29"
+        },
+        "C-044": {
+          "title": "Timing.",
+          "text": "Periode ketergantungan; interim (perubahan setelah interim, bukti tambahan); bukti tahun lalu (faktor, inquiry plus observasi atau inspeksi, bila berubah uji, bila tidak sekali dalam tiga audit dan sebagian tiap tahun); risiko signifikan diuji tiap periode; faktor memperpendek periode. `ARENS p.317; ISA330 paras. 11–15, A33–A40`",
+          "ref": "ARENS p.317; ISA330 paras. 11–15, A33–A40"
+        },
+        "C-046": {
+          "title": "Evaluasi deviasi.",
+          "text": "Inquiry spesifik; tiga pilihan (dasar ketergantungan, tes tambahan, substantif); penyebab deviasi (personel, musiman, kesalahan manusia); salah saji tertemukan adalah indikator kontrol tidak efektif; ketiadaan salah saji bukan bukti kontrol efektif; kejadian tidak diasumsikan terisolasi. `ISA330 paras. 16–17, A41–A42, A63; ARENS p.314`",
+          "ref": "ISA330 paras. 16–17, A41–A42, A63; ARENS p.314"
+        },
+        "C-047": {
+          "title": "Contoh PT Maju Bersama (penulis).",
+          "text": "40 pesanan, ekspektasi 2,5 persen (1 pesanan), ditemukan 4 (10 persen); penyebab manajer cuti; pilihan para. 17(a)–(c). `ISA330 paras. 17, A42, A48`",
+          "ref": "ISA330 paras. 17, A42, A48"
+        },
+        "C-049": {
+          "title": "Type 1 dan Type 2.",
+          "text": "Type 1: deskripsi dan desain kontrol pada tanggal tertentu. Type 2: ditambah efektivitas operasi selama periode dan uraian tes. CSAE 3416 untuk auditor layanan; CAS 402 untuk auditor pengguna. `ARENS p.310; ISA402 para. 8(b)–(c)`",
+          "ref": "ARENS p.310; ISA402 para. 8(b)–(c)"
+        },
+        "C-050": {
+          "title": "Tiga sumber bukti.",
+          "text": "Laporan Type 2; tes kontrol pengguna atas aktivitas organisasi jasa; pengujian langsung di organisasi jasa; syarat kompetensi, independensi, periode, relevansi. `ARENS p.310; ISA402 paras. 13, 16, 17`",
+          "ref": "ARENS p.310; ISA402 paras. 13, 16, 17"
+        },
+        "C-055": {
+          "title": "Prosedur wajib.",
+          "text": "Setiap kelas material (para. 18); risiko signifikan dengan tests of details bila hanya substantif (para. 21); konfirmasi dipertimbangkan (para. 19); penutupan laporan keuangan (para. 20); penyajian (para. 24). `ARENS p.339; ISA330 paras. 18–21, 24, A43–A44, A50–A55`",
+          "ref": "ARENS p.339; ISA330 paras. 18–21, 24, A43–A44, A50–A55"
+        },
+        "C-058": {
+          "title": "Dual-purpose.",
+          "text": "TOC dan test of detail pada transaksi yang sama; didesain dan dievaluasi per tujuan; contoh three-way match; angka contoh (25 faktur, 2 deviasi, Rp1.200.000) adalah susunan penulis. `ARENS pp.316, 340; ISA330 para. A23`",
+          "ref": "ARENS pp.316, 340; ISA330 para. A23"
+        },
+        "C-060": {
+          "title": "Interim substantif.",
+          "text": "Kewajiban menutup sisa periode; risiko naik dengan sisa periode; faktor; salah saji tak terduga; bukti tahun lalu umumnya kecil. `ISA330 paras. 22–23, A56–A60`",
+          "ref": "ISA330 paras. 22–23, A56–A60"
+        },
+        "C-061": {
+          "title": "Tiga tingkat.",
+          "text": "Buku: control deficiency, significant deficiency, material weakness. ISA 265 para. 6: hanya deficiency dan significant deficiency. Catatan sumber; ISA 265 A9–A11 tentang istilah hukum. `ARENS p.302; ISA265 paras. 6, A9–A11`",
+          "ref": "ARENS p.302; ISA265 paras. 6, A9–A11"
+        },
+        "C-063": {
+          "title": "Kemungkinan dan signifikansi.",
+          "text": "Dua dimensi; lebih dari kemungkinan beralasan salah saji material berarti bisa material weakness; material weakness bukan salah saji sudah terjadi; defisiensi signifikan bisa ada walau tidak ada salah saji. `ARENS pp.302–303; ISA265 para. A5`",
+          "ref": "ARENS pp.302–303; ISA265 para. A5"
+        },
+        "C-065": {
+          "title": "Penerima, waktu, bentuk.",
+          "text": "Defisiensi signifikan tertulis ke pihak tata kelola dan manajemen; lisan dahulu boleh; berkas audit akhir dalam 60 hari; tidak langsung ke manajemen bila integritas dipertanyakan; defisiensi lain boleh lisan; ulang bila belum diperbaiki; biaya tidak menghapus kewajiban. Buku: audit committee atau yang setara. `ARENS p.319; ISA265 paras. 9–10, A12–A24`",
+          "ref": "ARENS p.319; ISA265 paras. 9–10, A12–A24"
+        },
+        "C-066": {
+          "title": "Isi komunikasi.",
+          "text": "Uraian dan dampak (tidak perlu dikuantifikasi); tiga pernyataan konteks; saran, tanggapan manajemen, verifikasi; Figure 9-9 (Weakness, Implication, Recommendation; rotasi kata sandi enam sampai sembilan bulan). `ARENS pp.319–320; ISA265 paras. 11, A28–A30`",
+          "ref": "ARENS pp.319–320; ISA265 paras. 11, A28–A30"
+        },
+        "C-070": {
+          "title": "Empat kasus (penulis, klien fiktif).",
+          "text": "Kasus 1 PT Lintas Nusa Telekom (pendekatan per area). Kasus 2 CV Berkah Tekstil (matriks; penjualan Rp2 miliar per bulan; materialitas Rp150 juta; perkiraan Rp500 juta per minggu adalah pembagian rata). Kasus 3 PT Sentosa Distribusi (60 retur, 5 deviasi, 8,3 persen; kontrol otomatis; interim; bukti tahun lalu). Kasus 4 PT Karya Logam (40 faktur, 3 deviasi, 7,5 persen, salah saji Rp4,5 juta; jurnal manual; kata sandi). `ISA330 paras. 14, 17, 18, 21, A23, A29; ISA265 paras. A7, A17`",
+          "ref": "ISA330 paras. 14, 17, 18, 21, A23, A29; ISA265 paras. A7, A17"
+        }
+      }
+    },
+    "15": {
+      "canonicalSha256": "b3b6ddda446d4b4b6fc808b9be30a4511e09d47878eb895be6022fa2e7100a33",
+      "studentSha256": "edeee39f0a891e847866a8ed50965852691a52554ad9166fa849fcdd9b80dbaa",
+      "claims": {
+        "C-001": {
+          "title": "Tiga lapis.",
+          "text": "Overall audit strategy, audit plan, audit program; CAATs sebagai alat. `ARENS pp.331–332, 335, 350; ISA300 paras. 7, 9`",
+          "ref": "ARENS pp.331–332, 335, 350; ISA300 paras. 7, 9"
+        },
+        "C-002": {
+          "title": "Definisi.",
+          "text": "Strategi menetapkan cakupan, waktu, dan arah; plan memuat nature, timing, extent prosedur penilaian risiko dan lanjutan pada tingkat asersi; program memuat langkah audit. `ARENS pp.332, 335, 350; ISA300 para. A15`",
+          "ref": "ARENS pp.332, 335, 350; ISA300 para. A15"
+        },
+        "C-005": {
+          "title": "Dua tingkat respons.",
+          "text": "Tingkat laporan keuangan dijawab respons menyeluruh; tingkat asersi dijawab prosedur lanjutan. `ARENS pp.331–332; ISA330 paras. 5–6`",
+          "ref": "ARENS pp.331–332; ISA330 paras. 5–6"
+        },
+        "C-006": {
+          "title": "Respons menyeluruh.",
+          "text": "Skeptisisme, staf berpengalaman atau pakar, supervisi dan reviu, ketidakterdugaan; lingkungan pengendalian efektif memungkinkan sebagian prosedur di interim, yang lemah mendorong prosedur akhir periode dan bukti lebih luas; mempengaruhi pilihan substantif atau gabungan. `ARENS p.332; ISA330 paras. A1–A3`",
+          "ref": "ARENS p.332; ISA330 paras. A1–A3"
+        },
+        "C-009": {
+          "title": "Inkonsistensi Hillsburg.",
+          "text": "(1) Figure 10-2 menyebut cutoff pendapatan, valuasi piutang, dan area persediaan sebagai risiko signifikan, sedangkan Figure 10-4 dan 10-5 menilainya moderate. (2) Tanggal pada contoh tidak seragam (30 April 2020, 14 September 2018, 14 Maret 2020). (3) Fran disebut manajer di satu tempat dan senior di tempat lain. (4) Rujukan silang Figure 10-5 dan 10-2 tidak cocok. `ARENS pp.333–335`",
+          "ref": "ARENS pp.333–335"
+        },
+        "C-011": {
+          "title": "Isi rencana.",
+          "text": "Nature, timing, extent prosedur penilaian risiko dan lanjutan; arahan dan supervisi; prosedur lain yang wajib (ISA 300). Prosedur lanjutan yang spesifik bergantung pada hasil penilaian risiko. `ARENS p.335; ISA300 para. 9`",
+          "ref": "ARENS p.335; ISA300 para. 9"
+        },
+        "C-016": {
+          "title": "Figure 10-7.",
+          "text": "Saldo awal 96 (diaudit tahun lalu), penjualan 660, penerimaan kas 590, saldo akhir 166; 96 + 660 − 590 = 166; satuan tidak dinyatakan. `ARENS pp.341–342`",
+          "ref": "ARENS pp.341–342"
+        },
+        "C-017": {
+          "title": "Tiga pendekatan dan entitas kecil.",
+          "text": "Tests of controls saja, gabungan, substantif; pendekatan per akun dan asersi. Buku: organisasi kecil boleh mengambil keputusan menyeluruh gabungan; ISA 330 A18: entitas sangat kecil biasanya hanya sedikit kontrol dan prosedur substantif lebih efisien. Dibaca sebagai kemungkinan. `ARENS pp.342–343; ISA330 paras. A4, A18`",
+          "ref": "ARENS pp.342–343; ISA330 paras. A4, A18"
+        },
+        "C-019": {
+          "title": "Figure 10-8.",
+          "text": "Audit 1 gabungan: luas, sedikit, luas, sedikit. Audit 2 gabungan: sedang, sedang, luas, sedang. Audit 3 substantif: tidak ada, luas, sedang, luas. Audit 4 substantif setelah beralih: sedang, luas, luas, luas. Urutan kolom: tests of controls, tests of details transaksi, analitis substantif, tests of details saldo. `ARENS pp.343–344`",
+          "ref": "ARENS pp.343–344"
+        },
+        "C-020": {
+          "title": "Audit 4.",
+          "text": "Rencana awal Audit 2; deviasi banyak dan salah saji signifikan; beralih ke substantif penuh; biaya lebih tinggi; pada organisasi besar yang otomatis, audit kemungkinan tidak dapat dilaksanakan. `ARENS p.344; ISA330 paras. 8, 17`",
+          "ref": "ARENS p.344; ISA330 paras. 8, 17"
+        },
+        "C-021": {
+          "title": "Still Confused (Fran, AJ, Mitch).",
+          "text": "Auditor tidak wajib menguji kontrol tiap audit; analogi alarm rumah; strategi sebagai rencana tingkat tinggi; aset tetap Hillsburg sebagai pengecualian (kontrol kuat, inherent risk rendah, tidak diuji). `ARENS pp.345–346`",
+          "ref": "ARENS pp.345–346"
+        },
+        "C-024": {
+          "title": "Table 10-3.",
+          "text": "Tests of controls: Ya untuk inspection, observation, inquiry, recalculation, reperformance; Tidak untuk confirmation dan analytical. Tests of details: Ya untuk inspection, inquiry, confirmation, recalculation, reperformance. Substantive analytical: Ya untuk inquiry dan analytical. Catatan sumber terhadap ISA 500 A15 dan A21. `ARENS p.348; ISA500 paras. A15, A21`",
+          "ref": "ARENS p.348; ISA500 paras. A15, A21"
+        },
+        "C-025": {
+          "title": "Relevansi dan keandalan.",
+          "text": "Bukti untuk asersi berisiko tinggi harus sangat meyakinkan; jenis bukti berbeda dikumpulkan. `ARENS pp.347–348; ISA330 para. A51`",
+          "ref": "ARENS pp.347–348; ISA330 para. A51"
+        },
+        "C-028": {
+          "title": "Timing.",
+          "text": "Continuous auditing; roll forward; faktor ISA 330 A11–A14; prosedur substantif interim dengan penutupan sisa periode. `ARENS p.349; ISA330 paras. 22–23, A11–A14`",
+          "ref": "ARENS p.349; ISA330 paras. 22–23, A11–A14"
+        },
+        "C-029": {
+          "title": "Extent.",
+          "text": "Tests of controls ditentukan perkiraan deviasi dan frekuensi; substantif ditentukan RMM; boleh 100 persen; ISA 330 A15. `ARENS p.349; ISA330 para. A15`",
+          "ref": "ARENS p.349; ISA330 para. A15"
+        },
+        "C-030": {
+          "title": "Prosedur penutupan.",
+          "text": "Mencocokkan laporan keuangan dengan catatan dan memeriksa jurnal serta penyesuaian material. `ARENS p.349; ISA330 paras. 20, A54`",
+          "ref": "ARENS p.349; ISA330 paras. 20, A54"
+        },
+        "C-031": {
+          "title": "Definisi.",
+          "text": "CAATs: penerapan prosedur audit dengan komputer sebagai alat (glosarium IAASB). Buku memakai automated tools and techniques; ADA: seni dan ilmu menemukan dan menganalisis pola, anomali, dan informasi. `ISA glossary; ARENS pp.150–151`",
+          "ref": "ISA glossary; ARENS pp.150–151"
+        },
+        "C-032": {
+          "title": "Standar tentang CAATs.",
+          "text": "ISA 330 A16 (extent, populasi penuh), ISA 240 A38 (fraud), ISA 330 A27 (kontrol otomatis), ISA 300 Appendix (strategi), ISA 500 A16–A17 (ketersediaan data). `ISA330 paras. A16, A27; ISA240 para. A38; ISA300 Appendix; ISA500 paras. A16–A17`",
+          "ref": "ISA330 paras. A16, A27; ISA240 para. A38; ISA300 Appendix; ISA500 paras. A16–A17"
+        },
+        "C-033": {
+          "title": "ADA di seluruh siklus.",
+          "text": "Penilaian risiko (analisis teks, analitis perencanaan), tests of controls, analitis substantif, tests of details atas saldo (100 persen), pengujian jurnal (Halo). Enam langkah ADA di TM10; GAS dan test data di TM14. `ARENS pp.151–153, 316, 341, 349–350`",
+          "ref": "ARENS pp.151–153, 316, 341, 349–350"
+        },
+        "C-034": {
+          "title": "Enam teknik.",
+          "text": "ADA; generalized audit software; test data approach; integrated test facility; parallel simulation; online audit monitor. Tiga yang terakhir dari Jakšić (2009). `ARENS pp.151–153, 316, 349–350, 395–397; JAKSIC`",
+          "ref": "ARENS pp.151–153, 316, 349–350, 395–397; JAKSIC"
+        },
+        "C-035": {
+          "title": "Catatan sumber teknik.",
+          "text": "Artikel Jakšić memakai istilah online audit monitor dan tidak memakai embedded audit module; menyamakannya adalah pembacaan penulis; satu sumber saja. `JAKSIC; ARENS p.316`",
+          "ref": "JAKSIC; ARENS p.316"
+        },
+        "C-036": {
+          "title": "Pemetaan tujuan ke teknik.",
+          "text": "Susunan penulis dari C-031 sampai C-034. `ARENS pp.316, 341, 349, 396; JAKSIC`",
+          "ref": "ARENS pp.316, 341, 349, 396; JAKSIC"
+        },
+        "C-037": {
+          "title": "ADA dan sampling.",
+          "text": "Syarat: data relevan (paling cocok accuracy dan cutoff), andal, dapat diakses dan bersih; ADA menghilangkan sampling risk; dapat menjadi dual-purpose (three-way match di ERP). `ARENS p.395`",
+          "ref": "ARENS p.395"
+        },
+        "C-039": {
+          "title": "Auditing in Action 11-5.",
+          "text": "Studi ICAEW 2016: big data tidak menggantikan pertimbangan; ratusan atau ribuan pengecualian; nonsampling risk; stratifikasi dan sampel pengecualian dibanding tindak lanjut penuh; standar belum mengejar perkembangan. `ARENS p.396`",
+          "ref": "ARENS p.396"
+        },
+        "C-040": {
+          "title": "Syarat dan batas.",
+          "text": "Akses data, pembersihan, keandalan, tindak lanjut pengecualian, kontrol manual tanpa bukti elektronik, general IT controls, ketersediaan, kompetensi spesialis. `ARENS pp.151–153, 333, 397; ISA330 paras. A29, A36; ISA500 para. A17`",
+          "ref": "ARENS pp.151–153, 333, 397; ISA330 paras. A29, A36; ISA500 para. A17"
+        },
+        "C-041": {
+          "title": "Tiga bagian.",
+          "text": "Tests of controls dan tests of details transaksi; analitis substantif; tests of details saldo. `ARENS p.350`",
+          "ref": "ARENS p.350"
+        },
+        "C-042": {
+          "title": "Table 10-4 (delapan langkah).",
+          "text": "1 daftar umur (20 item, acak, interim, completeness). 2 penyisihan dan beban piutang tak tertagih (semua, akhir tahun, existence, completeness, accuracy, valuation, presentation). 3 konfirmasi (100: 30 terbesar, 70 acak, interim, existence, rights, completeness, accuracy, allocation, presentation). 4 akun kontrol (akhir tahun, existence, rights, accuracy, allocation, presentation). 5 piutang dialihkan atau didiskontokan (semua, rights, presentation). 6 kolektibilitas (valuation). 7 pihak berelasi, saldo kredit, wesel tagih lebih dari satu tahun (semua, existence, presentation). 8 cutoff (30 transaksi, 10 credit memo, 50 persen sebelum dan sesudah, akhir tahun, allocation). `ARENS p.351`",
+          "ref": "ARENS p.351"
+        },
+        "C-045": {
+          "title": "Catatan sumber Table 10-4.",
+          "text": "(1) Teks p.350 merujuk Table 10-2 dan Auditing in Actions 1 dan 2, yang dimaksud Table 10-4 serta Auditing in Action 10-1 dan 10-2. (2) Kolom asersi berbeda dari ISA 315 A190 (accuracy, valuation, allocation digabung; cutoff sebagai kelas transaksi; classification). (3) Table 10-4 menjadwalkan konfirmasi piutang di interim, sedangkan Figure 10-3 menaruh konfirmasi pada tanggal neraca 30 Juni 2020; keduanya contoh terpisah dan tidak disatukan. `ARENS pp.334, 350–351; ISA315 paras. A189, A190`",
+          "ref": "ARENS pp.334, 350–351; ISA315 paras. A189, A190"
+        },
+        "C-046": {
+          "title": "Program standar.",
+          "text": "Firma besar punya program sendiri; firma kecil membeli; dapat menaikkan efisiensi, tidak menggantikan pertimbangan; ISA 300 A20 dokumentasi dan program standar pada entitas kecil. `ARENS pp.350–351; ISA300 para. A20`",
+          "ref": "ARENS pp.350–351; ISA300 para. A20"
+        },
+        "C-047": {
+          "title": "Auditing in Action 10-3.",
+          "text": "SALY dan anchoring; tiga pertanyaan; contoh resesi dan valuasi; alat bantu khusus firma mengurangi jebakan. `ARENS p.352`",
+          "ref": "ARENS p.352"
+        },
+        "C-048": {
+          "title": "Pemicu perubahan.",
+          "text": "Deviasi kontrol melampaui harapan; salah saji tak terduga di interim; salah saji dari prosedur substantif; bukti bertentangan; satu kasus fraud atau kesalahan tidak terisolasi. `ARENS pp.331, 334, 344; ISA330 paras. 17, 23, A41, A48, A60, A62, A63; ISA300 para. A18`",
+          "ref": "ARENS pp.331, 334, 344; ISA330 paras. 17, 23, A41, A48, A60, A62, A63; ISA300 para. A18"
+        },
+        "C-049": {
+          "title": "Evaluasi akhir.",
+          "text": "Menilai penilaian risiko tingkat asersi, menyimpulkan kecukupan bukti, mempertimbangkan bukti yang mendukung dan bertentangan; opini dengan pengecualian atau tidak memberikan opini bila bukti tidak dapat diperoleh; faktor A64. `ISA330 paras. 25–27, A64`",
+          "ref": "ISA330 paras. 25–27, A64"
+        },
+        "C-050": {
+          "title": "Dokumentasi.",
+          "text": "Strategi, rencana, dan perubahan signifikan beserta alasan; respons menyeluruh; nature, timing, extent; hubungan dengan risiko; hasil. `ISA300 para. 12; ISA330 para. 28`",
+          "ref": "ISA300 para. 12; ISA330 para. 28"
+        },
+        "C-051": {
+          "title": "Empat kasus (penulis, klien fiktif).",
+          "text": "Kasus 1 PT Arunika Retail (klien baru, 40 toko, ERP baru, CFO baru, bonus; respons menyeluruh dan timing). Kasus 2 CV Sumber Pangan (piutang dalam jutaan rupiah: 240 + 1.800 − 1.650 = 390; 9 dari 50 = 18 persen; 6 dari 50 = 12 persen; beralih ke substantif seperti Audit 4). Kasus 3 PT Bumi Tekstil (120.000 faktur, 3.400 pengecualian sekitar 2,8 persen; empat tujuan dan teknik). Kasus 4 KD Prima Furnitur (SALY, tiga pelanggan sekitar 30 persen saldo, marketplace, sistem baru Agustus).",
+          "ref": "04_canonical_spec.md paragraf C-051; kasus latihan penulis"
+        }
+      }
+    }
+  }
+}
