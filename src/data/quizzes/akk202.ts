@@ -701,12 +701,12 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 10,
     "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "difficulty": "medium",
-    "q": "Turtle Cove receives $7,721.80 for a three-year, $10,000 zero-interest-bearing note with a 9% implicit annual rate. What first-year interest expense should be recognized? Source: Kieso IFRS 5e, PDF pages 1118-1119.",
+    "q": "Turtle Cove receives USD 7,721.80 for a three-year, USD 10,000 zero-interest-bearing note with a 9% implicit annual rate. What first-year interest expense should be recognized? Source: Kieso IFRS 5e, PDF pages 1118-1119.",
     "options": [
-      "$694.96",
-      "$900.00",
-      "$757.51",
-      "$2,278.20"
+      "USD 694.96",
+      "USD 900.00",
+      "USD 757.51",
+      "USD 2,278.20"
     ],
     "answer": 0,
     "explanation": "Interest expense (beban bunga) = USD7.721,80 × 9% = USD694,96. Tanpa kas kupon, beban ini menambah Notes Payable. Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119."
@@ -771,15 +771,15 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 10,
     "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "difficulty": "advanced",
-    "q": "Turtle Cove's zero-interest-bearing note starts at $7,721.80. First-year interest is $694.96, no coupon is paid, and the effective annual rate remains 9%. What is second-year interest expense, rounded to cents? Source: Kieso IFRS 5e, PDF pages 1118-1119.",
+    "q": "Turtle Cove's zero-interest-bearing note starts at USD 7,721.80. First-year interest is USD 694.96, no coupon is paid, and the effective annual rate remains 9%. What is second-year interest expense, rounded to cents? Source: Kieso IFRS 5e, PDF pages 1118-1119.",
     "options": [
-      "$694.96",
-      "$900.00",
-      "$757.51",
-      "$1,452.47"
+      "USD 694.96",
+      "USD 900.00",
+      "USD 757.51",
+      "USD 1,452.47"
     ],
     "answer": 2,
-    "explanation": "Saldo awal tahun kedua $8.416,76. Effective interest (bunga efektif) = $8.416,76 × 9% = $757,5084, dibulatkan $757,51; nominal $10.000 bukan dasar bunga periode tersebut. Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119."
+    "explanation": "Saldo awal tahun kedua USD 8.416,76. Effective interest (bunga efektif) = USD 8.416,76 × 9% = USD 757,5084, dibulatkan USD 757,51; nominal USD 10.000 bukan dasar bunga periode tersebut. Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119."
   },
   {
     "tm": 10,
@@ -827,12 +827,12 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 11,
     "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
     "difficulty": "medium",
-    "q": "Pacific resells 1,000 treasury shares for $8 each; their cost is $11 each. Share Premium - Treasury has a $1,000 credit balance before the resale. What debit to Retained Earnings is required? Source: Kieso IFRS 5e, PDF pages 1193.",
+    "q": "Pacific resells 1,000 treasury shares for USD 8 each; their cost is USD 11 each. Share Premium - Treasury has a USD 1,000 credit balance before the resale. What debit to Retained Earnings is required? Source: Kieso IFRS 5e, PDF pages 1193.",
     "options": [
-      "$1,000",
-      "$2,000",
-      "$3,000",
-      "$8,000"
+      "USD 1,000",
+      "USD 2,000",
+      "USD 3,000",
+      "USD 8,000"
     ],
     "answer": 1,
     "explanation": "Selisih biaya dan kas USD3.000 memakai saldo agio treasuri USD1.000 dahulu, lalu retained earnings USD2.000. Transaksi tidak menghasilkan rugi laba rugi. Rujukan: Kieso IFRS 5e, halaman PDF 1193."
@@ -855,12 +855,12 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 11,
     "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
     "difficulty": "medium",
-    "q": "Tsen declares a property dividend using an investment carried at HK$1,250,000 with a HK$2,000,000 fair value. What gain must be recognized before declaring the dividend liability? Source: Kieso IFRS 5e, PDF pages 1201.",
+    "q": "Tsen declares a property dividend using an investment carried at HKD 1,250,000 with a HKD 2,000,000 fair value. What gain must be recognized before declaring the dividend liability? Source: Kieso IFRS 5e, PDF pages 1201.",
     "options": [
-      "HK$1,250,000",
-      "HK$2,000,000",
-      "HK$750,000",
-      "HK$3,250,000"
+      "HKD 1,250,000",
+      "HKD 2,000,000",
+      "HKD 750,000",
+      "HKD 3,250,000"
     ],
     "answer": 2,
     "explanation": "Nilai wajar lebih tinggi HKD750.000. Liabilitas dividen berikutnya dicatat sebesar nilai wajar HKD2.000.000. Rujukan: Kieso IFRS 5e, halaman PDF 1201."
@@ -911,7 +911,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 11,
     "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
     "difficulty": "advanced",
-    "q": "Tsen has remeasured the investment distributed as a property dividend to HK$2,000,000. Which entry records the declaration before any asset is distributed? Source: Kieso IFRS 5e, PDF pages 1201.",
+    "q": "Tsen has remeasured the investment distributed as a property dividend to HKD 2,000,000. Which entry records the declaration before any asset is distributed? Source: Kieso IFRS 5e, PDF pages 1201.",
     "options": [
       "Debit Dividends Payable; credit Equity Investments",
       "Debit Retained Earnings; credit Dividends Payable",
@@ -1093,7 +1093,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 13,
     "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
     "difficulty": "medium",
-    "q": "Martin's basic EPS is $2.10. Assuming conversion of its bonds would produce $2.24 EPS. What treatment of these bonds is appropriate in diluted EPS? Source: Kieso IFRS 5e, PDF pages 1299-1300.",
+    "q": "Martin's basic EPS is USD 2.10. Assuming conversion of its bonds would produce USD 2.24 EPS. What treatment of these bonds is appropriate in diluted EPS? Source: Kieso IFRS 5e, PDF pages 1299-1300.",
     "options": [
       "Include bonds because they are dilutive",
       "Include bonds because they are material",
@@ -1401,7 +1401,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
     "tm": 15,
     "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
     "difficulty": "advanced",
-    "q": "Meredith's assistant credits Dividend Revenue for its 25% share of Pirates' £20,000 dividend, after recording its share of Pirates' profit. How should the dividend entry be corrected under the equity method? Source: Kieso IFRS 5e, PDF pages 1391-1392, 1452.",
+    "q": "Meredith's assistant credits Dividend Revenue for its 25% share of Pirates' £20,000 dividend, after recording its share of Pirates' profit. Which credit should replace Dividend Revenue in the dividend-receipt entry under the equity method? Source: Kieso IFRS 5e, PDF pages 1391-1392, 1452.",
     "options": [
       "Credit Dividend Revenue for £5,000",
       "Credit Equity Investments for £20,000",
@@ -1409,7 +1409,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
       "Debit Investment Expense for £5,000"
     ],
     "answer": 2,
-    "explanation": "Cash dividend (dividen kas) investor = 25% × £20.000 = £5.000. Kredit Equity Investments mengurangi investasi karena bagian laba telah diakui; mengkredit pendapatan dividen akan menghitung laba dua kali. Rujukan: Kieso IFRS 5e, halaman PDF 1391-1392, 1452."
+    "explanation": "Cash dividend (dividen kas) investor = 25% × £20.000 = £5.000. Jurnal penerimaan yang benar: debit Cash dan kredit Equity Investments £5.000. Jika jurnal keliru sudah dibukukan, jurnal koreksi adalah debit Dividend Revenue dan kredit Equity Investments £5.000; kas tidak dicatat ulang. Bagian laba sudah diakui, sehingga pendapatan dividen akan menghitung laba dua kali. Rujukan: Kieso IFRS 5e, halaman PDF 1391-1392, 1452."
   }
 ];
 

@@ -172,7 +172,7 @@ if (process.env.AKK202_VERIFY_LOCAL_SOURCES === '1') {
 const euro = n => '€' + rounded(n).toLocaleString('en-US');
 const gbp = n => '£' + rounded(n).toLocaleString('en-US');
 const yen = n => '¥' + rounded(n).toLocaleString('en-US');
-const usd = n => '$' + rounded(n, 2).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const usd = n => 'USD ' + rounded(n, 2).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 const key = (tm, ordinal) => { const q = quizzes.filter(q => q.tm === tm)[ordinal - 1]; return q.options[q.answer]; };
 assert.equal(key(9, 7), euro(92892 + rounded(92892 * .05) - 4000));
 assert.equal(key(9, 9), euro(100000 * .74409 + 4000 * 8.53020));
@@ -211,3 +211,5 @@ const q5 = structuredClone(quizzes); q5[0].answer = (q5[0].answer + 1) % 4; reje
 const q6 = structuredClone(quizzes[0]); q6.q = 'Hitung bunga? Source: Kieso IFRS 5e, PDF pages 1112.'; reject(() => validateQuiz(q6));
 const j = structuredClone(flat(readings[9].blocks).find(b => b.kind === 'journal')); j.lines[0].debit = '€1'; reject(() => validateJournal(j));
 console.log(`AKK202 post-UTS PASS: seven readings; ${journalCount} balanced journals; ${formulaCount} KaTeX formulas; 60 English quizzes, 42 cards, 14 English cases; unchanged UTS; ${mutationCount} rejected mutations.`);
+
+await import('./test-akk202-practice-render.mjs');

@@ -36,7 +36,7 @@
       "title": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
       "chapter": 13,
       "readingSha256": "2d4517af193f5c00742d0fcf2b2488c80b245a2b59a2a60a8a6e71a4809df816",
-      "quizSha256": "063652b25ab6bb9a3a8350e9562b1c5afdf7d208a2c2ef817d2aa5fab62da7e7",
+      "quizSha256": "c5e95387b33bbb6f315038c298714602ebe7a74635eb66a6591ab4e452cf3758",
       "cardsSha256": "ac283ebe5bba40ab479626f227283aca56435fdb36001f8e469145478887c145",
       "bankSha256": "84d8193857d8a86d2de5cffadf16a91340c3dee998de9652a2ae58e330ba37e2"
     },
@@ -45,7 +45,7 @@
       "title": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
       "chapter": 14,
       "readingSha256": "81148f1871c4336e9059613f13d03c49d901502b0daf5254c1045c38b0badc8b",
-      "quizSha256": "25403c65529ef812e9fa9819eca68b8bbf4e8b5be773e64e4d1ad1796657ae07",
+      "quizSha256": "631e639f6fbba4cf38659b52637346b3a392eb25b5409f3cfef2440e9dc4ac7c",
       "cardsSha256": "5acb5470c7c3055aa2074d6ca1bdabd43d5d73963af2f1667c5a5680ca9a24ac",
       "bankSha256": "143970321ec676b1c734886926d43b768190988fe1d500898f881fc908355ec4"
     },
@@ -63,7 +63,7 @@
       "title": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
       "chapter": 15,
       "readingSha256": "fa001c52bb24113ae4a07c918d5ab5ddc45d68fd33c644de798d36e9c4ebf4cb",
-      "quizSha256": "1d159711369c063320a24374ad081c4367b7a6f1f5f1c392658aa694de08781c",
+      "quizSha256": "4896a2a2f7a87d577374dcc56db878cc62fcc17b1177639515d58610e721a2a6",
       "cardsSha256": "af52a1a3ecdd8acf0d308087fddeda46f4484e134593d33e9317cc6f4f20d828",
       "bankSha256": "8cd196a20defee1ec0b9aeafa1574d2e13c6eaedf52d5c8b5f82b5632ec0ec37"
     },
@@ -81,7 +81,7 @@
       "title": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
       "chapter": 16,
       "readingSha256": "e8bced201eb33f2877b1d7ae373ab18ce312b17f3fb1f5f36da71a6260ed8246",
-      "quizSha256": "2ab5108546e3c1971fca513f6fad7012a8ded73e4b182801a3ece765dfa517ba",
+      "quizSha256": "e268de2e168f188937f4353bfe733991c722efd81bb9ad02bb165f843a274b4a",
       "cardsSha256": "dc7a9de94fa2bda51f0423bfcf51a199e07334334e4254919eaaaf714165422e",
       "bankSha256": "81fdd2b6819944e210b393f776beb1f57439f17c78d8029895afeaad84cd8499"
     }
@@ -176,7 +176,7 @@
         "tm": 10,
         "ordinal": 1,
         "skill": "calculation",
-        "correct": "$694.96",
+        "correct": "USD 694.96",
         "pages": "1118-1119"
       },
       {
@@ -211,7 +211,7 @@
         "tm": 10,
         "ordinal": 6,
         "skill": "calculation",
-        "correct": "$757.51",
+        "correct": "USD 757.51",
         "pages": "1118-1119"
       },
       {
@@ -239,7 +239,7 @@
         "tm": 11,
         "ordinal": 2,
         "skill": "calculation",
-        "correct": "$2,000",
+        "correct": "USD 2,000",
         "pages": "1193"
       },
       {
@@ -253,7 +253,7 @@
         "tm": 11,
         "ordinal": 4,
         "skill": "calculation",
-        "correct": "HK$750,000",
+        "correct": "HKD 750,000",
         "pages": "1201"
       },
       {
