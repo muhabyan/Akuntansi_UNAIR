@@ -1,5 +1,5 @@
 // src/data/manstrat/manstratData.ts
-// Rangkuman KOMPREHENSIF Manajemen Strategik (MNS301)
+// Rangkuman KOMPREHENSIF Manajemen Strategik (MNU307)
 // Sumber: Gregory G. Dess, G.T. Lumpkin, Alan B. Eisner, Gerry McNamara
 //         Michael Porter, Jay Barney, Bartlett & Ghoshal, Robert S. Kaplan,
 //         David P. Norton, W. Chan Kim, Renée Mauborgne.

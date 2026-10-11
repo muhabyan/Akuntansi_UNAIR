@@ -36,7 +36,7 @@ import { PJK301_QUIZ, PJK301_QUIZ_UTS, PJK301_QUIZ_UAS } from './pjk301';
 import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
 import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
 import { SII306_QUIZ, SII306_QUIZ_UTS, SII306_QUIZ_UAS } from './sii306';
-import { MNS301_QUIZ, MNS301_QUIZ_UTS } from './mns301';
+import { MNU307_QUIZ, MNU307_QUIZ_UTS } from './mnu307';
 
 const REGISTRY: Record<string, QuizQuestion[]> = {
   AKK106: AKK106_QUIZ,
@@ -67,8 +67,7 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   AKA201: AKA201_QUIZ,
   SII306: SII306_QUIZ,
   AKS301: SII306_QUIZ,
-  MNS301: MNS301_QUIZ,
-  MNU307: MNS301_QUIZ,
+  MNU307: MNU307_QUIZ,
 };
 
 export function getQuiz(courseCode: string): QuizQuestion[] {
@@ -184,13 +183,13 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'all', label: 'Kompilasi Kuis Lengkap SIA (14 TM)', items: SII306_QUIZ },
     ];
   }
-  if (courseCode === 'MNS301' || courseCode === 'MNU307') {
-    const byTm = (from: number, to: number) => MNS301_QUIZ_UTS.filter((q) => (q.tm ?? 0) >= from && (q.tm ?? 0) <= to);
+  if (courseCode === 'MNU307') {
+    const byTm = (from: number, to: number) => MNU307_QUIZ_UTS.filter((q) => (q.tm ?? 0) >= from && (q.tm ?? 0) <= to);
     return [
       { id: 'tm1-3', label: 'Kuis Praktik Manajemen Stratejik TM 1–3', items: byTm(1, 3) },
       { id: 'tm4-5', label: 'Kuis Praktik Manajemen Stratejik TM 4–5', items: byTm(4, 5) },
       { id: 'tm6-7', label: 'Kuis Praktik Manajemen Stratejik TM 6–7', items: byTm(6, 7) },
-      { id: 'uts', label: 'Kompilasi Kuis Pra-UTS Manajemen Stratejik (TM 1–7)', items: MNS301_QUIZ_UTS },
+      { id: 'uts', label: 'Kompilasi Kuis Pra-UTS Manajemen Stratejik (TM 1–7)', items: MNU307_QUIZ_UTS },
     ];
   }
   const items = getQuiz(courseCode);

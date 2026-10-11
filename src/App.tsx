@@ -42,7 +42,7 @@ const UNIVERSAL_COURSES = [
   // Semester 3 & 4
   'AKK202', 'AKM202', 'AKA201', 'MNK201', 'AKS201', 'PJK301', 'SII306',
   // Semester 5
-  'MNS301', 'MNU307', 'MNM301'
+  'MNU307'
 ];
 
 type CourseRouteResolution = {
