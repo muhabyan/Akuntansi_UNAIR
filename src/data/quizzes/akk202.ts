@@ -784,7 +784,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 10,
     "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Bonn settles €20,000,000 debt by issuing 320,000 ordinary shares with €10 par value and €16,000,000 total fair value. What amount is credited to Share Premium? Source: Kieso IFRS 5e, PDF pages 1128-1129.",
     "options": [
       "€16,800,000",
@@ -882,7 +882,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 11,
     "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Vine has £50,000 retained earnings and 100,000 £1-par shares before declaring a 10% share dividend. Under the source treatment, what retained earnings balance remains after the transfer? Source: Kieso IFRS 5e, PDF pages 1202-1204.",
     "options": [
       "£50,000",
@@ -1008,7 +1008,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 12,
     "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Chen's executives exercise 2,000 of 10,000 vested options. Total option equity is ¥22,000,000. What amount is debited to Share Premium - Share Options on exercise? Source: Kieso IFRS 5e, PDF pages 1275-1276.",
     "options": [
       "¥4,400,000",
@@ -1120,7 +1120,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 13,
     "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Mayfield has £210,000 net income, no preference dividends, and 100,000 weighted-average ordinary shares before considering its convertible debt. What basic EPS is reported? Source: Kieso IFRS 5e, PDF pages 1293-1295.",
     "options": [
       "£1.97",
@@ -1148,7 +1148,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 13,
     "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Mayfield's second convertible series is issued on April 1 and would convert into 32,000 ordinary shares. How many weighted incremental shares are added under the if-converted method for that year? Source: Kieso IFRS 5e, PDF pages 1293-1295.",
     "options": [
       "32,000 shares",
@@ -1162,7 +1162,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 13,
     "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Under the treasury-share method, 1,500 options have a €30 exercise price and a €50 average market price. How many shares could the assumed exercise proceeds repurchase? Source: Kieso IFRS 5e, PDF pages 1297.",
     "options": [
       "600 shares",
@@ -1274,7 +1274,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 14,
     "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Graff's debt investment produces first- and second-half-year effective interest revenue of £4,324 and £4,297. Its year-end fair-value decrease is £1,732. What interest revenue belongs in annual profit before any impairment? Source: Kieso IFRS 5e, PDF pages 1376-1378.",
     "options": [
       "£10,000",
@@ -1372,7 +1372,7 @@ export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 15,
     "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
-    "difficulty": "advanced",
+    "difficulty": "medium",
     "q": "Republic buys Hawthorne shares for €20,750, receives €450 dividends, and elects non-trading OCI presentation. Their year-end fair value is €24,000. What fair-value gain is recognized in OCI? Source: Kieso IFRS 5e, PDF pages 1387-1389.",
     "options": [
       "€3,250",

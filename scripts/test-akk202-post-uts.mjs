@@ -131,7 +131,7 @@ const checkKeys = data => tms.forEach(tm => {
 assert.equal(fixture.practiceBlueprint.quizAudit.length, 60);
 assert.equal(fixture.practiceBlueprint.quizAudit.filter(q => q.skill === 'calculation').length, 33);
 assert.equal(fixture.practiceBlueprint.quizAudit.filter(q => q.skill === 'journal').length, 8);
-assert.equal(quizzes.filter(q => q.difficulty === 'advanced').length, 25);
+assert.equal(quizzes.filter(q => q.difficulty === 'advanced').length, 17);
 for (const position of [0, 1, 2, 3]) assert.equal(quizzes.filter(q => q.answer === position).length, 15, 'Answer positions balanced');
 checkKeys(quizzes);
 
