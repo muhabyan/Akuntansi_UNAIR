@@ -15,7 +15,7 @@ export const TM10_READING: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Cakupan, sumber, dan tahun kasus",
-      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
       "kind": "callout",
@@ -41,10 +41,24 @@ export const TM10_READING: Reading = {
         "Tentukan status subjektif dan masa kerja terlebih dahulu. Bedakan berhenti bekerja dengan berakhirnya kewajiban subjektif.",
         "Jumlahkan bruto aktual uang dan natura objek untuk periode yang sesuai. Pisahkan penghasilan yang dikecualikan.",
         "Kurangi biaya jabatan sesuai jumlah bulan dan batasnya, iuran yang memenuhi syarat, serta zakat melalui pemberi kerja bila memenuhi aturan.",
-        "Kurangi PTKP yang berlaku. Untuk PKP positif, bulatkan ke bawah ke ribuan rupiah penuh. PKP negatif tidak menghasilkan pajak negatif.",
-        "Hitung pajak dengan lapisan Pasal 17, lalu kurangi seluruh potongan masa sebelumnya. TER bulanan sebelumnya merupakan potongan, bukan pajak tambahan di atas hasil tahunan.",
+        "Untuk subjektif yang baru dimulai atau berakhir dalam tahun, lakukan penyetahunan neto menurut cabang aturan yang sesuai. Kurangi PTKP dan bulatkan PKP positif ke bawah ke ribuan penuh. PKP negatif tidak menghasilkan pajak negatif.",
+        "Hitung lapisan Pasal 17; untuk cabang bagian tahun subjektif, proporsikan pajak menurut jumlah bulan. Kurangi potongan terdahulu. TER bulanan sebelumnya merupakan potongan dari hasil tahunan/bagian tahun.",
         "Catat kurang atau lebih potong. Cocokkan bukti potong akhir dan tindak lanjut pengembalian. Rujukan: PMK 168/2023, halaman PDF 10-17 dan 21, Pasal 8-16 dan 21; UU HPP, halaman PDF 56-57, Pasal 17 UU PPh."
       ]
+    },
+    {
+      "kind": "h2",
+      "text": "Masuk pertengahan tahun dan awal kewajiban subjektif"
+    },
+    {
+      "kind": "p",
+      "text": "Pegawai yang sudah SPDN sejak Januari tetapi baru bekerja September memakai neto aktual, tanpa otomatis dikali 12/4. Jika kewajiban subjektif baru mulai September, neto bagian tahun disetahunkan 12/4, dikurangi PTKP, dibulatkan ribuan, lalu tarif Pasal 17; hasil pajak dikali 4/12 sebelum mengurangi potongan terdahulu. Faktor bulan mengikuti keadaan subjektif, tidak cukup tanggal kontrak. Rujukan: PMK 168/2023, halaman PDF 37-38, Lampiran Bagian Kedua I.2.1.2 (paragraf subjektif dimulai setelah awal tahun, penyetahunan, dan proporsi bagian tahun)."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Koreksi salah cetak pada buku DJP",
+      "text": "DJP Cermat PDF 68 mencetak tahun 2014 dan potongan Rp3.225.000. Tabel PDF 67 menjumlah Rp3.255.000; PMK 168/2023 PDF 37-38 memakai tahun 2024 dan Rp3.255.000. Gunakan Rp3.835.000 - Rp3.255.000 = Rp580.000. Salah cetak ini tidak mengubah metode atau tarif. Rujukan: DJP Cermat (2024), halaman PDF 67-68; PMK 168/2023, halaman PDF 37-38, Lampiran I.2.1.2."
     },
     {
       "kind": "h2",
@@ -199,6 +213,21 @@ export const TM10_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[DJP Cermat PPh 21/26 (2024)](https://www.pajak.go.id/sites/default/files/2024-01/Buku%20Cermat%20Pemotongan%20PPh%20Pasal%2021.pdf#page=58): PDF 58-68 pegawai tetap, 82-85 pensiun, 88-94 tidak tetap, 96-102 bukan pegawai, 104-107 kegiatan/lainnya, 110-112 SPLN.",
+        "[DJP contoh BP21 dalam Coretax (2025)](https://pajak.go.id/sites/default/files/2025-02/Buku%20Manual%20Coretax%202024%20-%20Seri%20Bukti%20Potong%20PPh.pdf#page=6): PDF 6-8 prosedur bukti potong selain pegawai tetap."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Baca hanya cabang yang sesuai penerima dan pola pembayaran. Pesangon tetap memakai PP 68/2009; buku ini tidak dipakai sebagai pengganti aturan pesangon final."
+    },
+    {
+      "kind": "h2",
       "text": "Rujukan yang dapat ditelusuri"
     },
     {
@@ -219,7 +248,7 @@ export const TM10_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
     }
   ]
 };

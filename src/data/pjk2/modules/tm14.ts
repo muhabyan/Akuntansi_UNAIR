@@ -15,7 +15,7 @@ export const TM14_READING: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Cakupan, sumber, dan tahun kasus",
-      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
       "kind": "callout",
@@ -172,6 +172,24 @@ export const TM14_READING: Reading = {
       "revealLabel": "Buka langkah hitung dan analisis"
     },
     {
+      "kind": "p",
+      "text": "Ilustrasi pelaporan dari manual DJP: cocokkan daftar PK dan PM dengan kertas kerja, pilih status normal atau pembetulan, lalu kompensasi atau jalur pengembalian yang memenuhi syarat. Draf tersimpan atau kode billing terbentuk belum membuktikan SPT sudah terkirim. Periksa pembayaran, status penyampaian, dan bukti penerimaan. Rujukan: DJP Manual SPT Masa PPN, edisi 20240909, halaman PDF 52-60 (paragraf konsep SPT, kurang/lebih bayar, lampiran, pembayaran dan status)."
+    },
+    {
+      "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[DJP manual SPT Masa PPN (edisi 20240909)](https://pajak.go.id/sites/default/files/2025-04/Buku%20Manual%20SPT%20Masa%20PPN.pdf#page=21): PDF 21-24 PM/pemungut, 52-60 SPT, kompensasi, pengembalian, pembayaran dan status."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Menu Credit Invoice berarti mengkreditkan faktur; Carry Forward berarti mengompensasikan lebih bayar; normal/fast refund berarti pengembalian biasa/pendahuluan. Pilihan menu harus sesuai syarat UU, bukan jaminan kredit atau pencairan. Tampilan edisi ini dapat berbeda dari aplikasi pada tahun berikutnya."
+    },
+    {
       "kind": "h2",
       "text": "Rujukan yang dapat ditelusuri"
     },
@@ -198,7 +216,7 @@ export const TM14_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
     }
   ]
 };

@@ -332,7 +332,7 @@ export const PJK301_FC_UAS: AdvancedStudyCard[] = [
     "topic": "Pajak Karbon dan Analisis Perdagangan Karbon",
     "category": "Definisi",
     "front": "Apa arti CO2e, cap, dan offset dalam analisis pajak karbon?",
-    "back": "CO2e adalah karbon dioksida ekuivalen, satuan penyetaraan dampak gas rumah kaca. Cap adalah batas emisi. Offset berarti pengimbangan emisi melalui pengurangan yang diakui. Pengakuan pengurangan untuk pajak memerlukan aturan; sertifikat tidak otomatis menjadi kredit nominal. Rujukan: UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3)."
+    "back": "CO2e adalah karbon dioksida ekuivalen, satuan penyetaraan dampak gas rumah kaca. Cap adalah batas emisi. Offset berarti pengimbangan emisi melalui pengurangan yang diakui. Pengakuan pengurangan untuk pajak memerlukan aturan; sertifikat tidak otomatis menjadi kredit nominal. Rujukan: UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3). Sumber konsep: Buku OJK Perdagangan Karbon, edisi Juli 2025, halaman PDF 43-49 dan 90-96."
   },
   {
     "id": "pjk301-uas-v3-tm15-02",
@@ -377,6 +377,6 @@ export const PJK301_FC_UAS: AdvancedStudyCard[] = [
     "topic": "Pajak Karbon dan Analisis Perdagangan Karbon",
     "category": "Prosedur",
     "front": "Apa yang harus diverifikasi sebelum menilai perdagangan karbon dan pajaknya?",
-    "back": "Pisahkan pajak atas emisi, penghasilan dari perdagangan unit, dan PPN transaksi. Verifikasi jenis unit, pihak, tahun, rezim/fasilitas, tarif, dan aturan pelaksanaan. Landasan UU HPP serta tanggal normatif tidak cukup membuktikan seluruh kewajiban operasional telah berjalan. Rujukan: UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3)."
+    "back": "Pisahkan pajak atas emisi, penghasilan dari perdagangan unit, dan PPN transaksi. Verifikasi jenis unit, pihak, tahun, rezim/fasilitas, tarif, dan aturan pelaksanaan. Landasan UU HPP serta tanggal normatif tidak cukup membuktikan seluruh kewajiban operasional telah berjalan. Rujukan: UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3). MRV berarti pengukuran, pelaporan, dan verifikasi emisi. Rujukan tambahan: Buku OJK Perdagangan Karbon, edisi Juli 2025, halaman PDF 60-65 (paragraf MRV dan keterlacakan unit); buku edukatif ini tidak menetapkan pengurangan pajak."
   }
 ];

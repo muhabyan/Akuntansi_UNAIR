@@ -101,3 +101,25 @@ Browser baseline pada port bawaan gagal karena target CDP mengarah ke halaman Le
 Snapshot guard lintas mata kuliah diperbarui untuk lima berkas PJK301/registri bersama yang berubah secara sah, serta katalog yang hanya berubah pada blok PJK301 pasca-UTS. Pemeriksaan terpisah memastikan katalog selain blok itu identik dengan `f15d1be`. Hash berkas Manajemen Strategik tetap. Hash TM01 setelah normalisasi LF cocok dengan snapshot; hash byte CRLF checkout Windows memicu kegagalan baseline yang masih tersisa.
 
 Area yang dilarang tidak diubah: PR45/worktree `perapian-pr45`, `src/data/manstrat`, `src/components/UpdateNotifier.tsx`, `src/index.css`. Checkout `C:\cek` yang berisi perubahan agen lain tidak dipakai untuk menulis materi.
+
+## Pencarian bacaan terbuka dan pemeriksaan isi sumber
+
+Permintaan pencarian internet ditindaklanjuti dengan [peta bacaan tujuh TM](pjk301-bacaan-terbuka.md). Tujuh PDF DJP, UT dan OJK berhasil diunduh serta bagian yang dirujuk diperiksa. Akses penuh ditemukan untuk buku DJP Cermat PPh 21/26 (115 halaman), manual DJP PPN (220 halaman termasuk lampiran), panduan NPPN (26 halaman), panduan bukti potong (9 halaman), dan buku OJK perdagangan karbon (156 halaman). UT menyediakan Modul 1 PPN/PPnBM (52 halaman) serta Modul 1 PPh II (37 halaman), belum seluruh buku. Setiap bacaan TM09-TM15 sekarang mempunyai tautan PDF, jangkar halaman, edisi dan batas penggunaan. SHA-256 unduhan dan halaman terkait tercatat pada manifest sumber.
+
+Katalog penerbit Waluyo edisi 13 Buku 1 dan Siti Resmi edisi 11 Buku 1 diperiksa; isi penuh belum diakses. FAQ penerbit menjelaskan akun dan kode buku untuk suplemen. Buku fisik Waluyo pada katalog UNAIR tidak diperlakukan sebagai PDF terbuka. Buku utama RPP tetap memiliki batas akses, sementara sumber alternatif yang dapat dibaca tersedia. Tidak dibuat kutipan halaman buku yang belum dibaca.
+
+Temuan yang mengubah atau memperjelas bacaan:
+
+- TM10 menambah cabang penyetahunan saat kewajiban subjektif baru dimulai/berakhir, terpisah dari mulai/berhenti bekerja. Buku DJP Cermat PDF 68 salah mencetak tahun 2014 dan Rp3.225.000; tabel PDF 67 dan PMK 168 PDF 37-38 mengonfirmasi 2024, Rp3.255.000 dan selisih Rp580.000. Salah cetak diverifikasi pada gambar halaman.
+- TM11 menegaskan pembukuan badan serta pengecualian NPPN/PTKP hanya untuk OP yang memenuhi syarat. Ketentuan dividen dan natura dalam modul UT 2015 ditandai sebagai bahan lama, dibandingkan dengan HPP/PMK 66.
+- TM12 menambah sejarah PPn/PPN dari modul UT, dengan pemisahan tarif 10% historis dari tahun latihan. Tanggal mulai PPN 1 April 1985 dicek pada PDF 32 dan gambar halaman.
+- TM13-TM14 menyediakan jalur baca faktur/retur/pengganti/batal dan kredit/pelaporan. Manual pada direktori 2025 tetap beredisi 20240909 di sampul; tidak dianggap tampilan terbaru 2026. Draf, kode billing dan permohonan pengembalian dibedakan dari status terkirim serta hak yang memenuhi aturan.
+- TM15 memperjelas pasar wajib/sukarela, unit, pasar primer/sekunder dan MRV dari buku OJK Juli 2025. Perubahan SRUK/jenis unit menurut POJK 10/2026 disajikan terpisah. Flashcard konsep/prosedur memperoleh sumber konsep tambahan. Pengakuan pengurangan pajak karbon tetap belum dibuktikan hanya dari buku perdagangan.
+
+Jumlah latihan, kunci kuis dan isi pra-UTS tetap. Tes PJK301 kini memeriksa kecocokan tautan PDF dengan sumber yang diperiksa, batas nomor halaman, hitungan bagian tahun yang dikoreksi, serta pelestarian tautan/jangkar melalui komponen aplikasi. Lint, TypeScript, build, runtime, tes komponen dan 88 pemeriksaan reading frame lulus setelah perubahan. Seluruh 62 tugas standar dieksekusi; hasil akhir 61 lulus dan satu guard baseline Manajemen Strategik gagal. `npm test` tetap gagal pada guard baseline tersebut.
+
+Pada putaran awal, profil browser sementara di dalam folder repo menyebabkan satu kegagalan tambahan `reading_frame` karena Vite mencoba mengawasi cookie terkunci (EBUSY). Profil tugas itu dibersihkan dan pengujian browser berikutnya memakai folder sementara di luar repo. Tes reading frame diulang dan lulus 88/88; hasil awal dan hasil ulang disimpan pada log kerja. Ini gangguan lingkungan pengujian yang telah diselesaikan.
+
+Pemeriksaan browser PJK301 pada build terakhir membuka bacaan TM12 dan memeriksa tautan sumber, rumus serta tangkapan layar desktop 1440 × 1000 dan ponsel 390 × 844. Lebar dokumen ponsel 390 piksel sesuai viewport dan tidak ada galat KaTeX. Screenshot ini melengkapi tes DOM/event semua tujuh TM; tidak diklaim sebagai inspeksi visual semua halaman. Tangkapan layar kerja tidak dimasukkan ke repo.
+
+Browser standar EKT109/PJK201 juga diulang pada build terakhir dengan port 9345/4275 dan lulus. Tidak ada kegagalan baru yang tersisa setelah pengulangan tes yang terdampak gangguan profil browser.

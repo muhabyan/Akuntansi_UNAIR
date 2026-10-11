@@ -15,7 +15,7 @@ export const TM15_READING: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Cakupan, sumber, dan tahun kasus",
-      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
       "kind": "callout",
@@ -70,6 +70,18 @@ export const TM15_READING: Reading = {
     {
       "kind": "p",
       "text": "UU HKPD membedakan pajak provinsi dan kabupaten/kota. Kerangka PKB memakai nilai jual dikalikan bobot yang mencerminkan kerusakan jalan/pencemaran, lalu tarif Perda; bobot lingkungan memberi dasar analisis kebijakan. Tarif PKB/opsen baru mempunyai transisi Pasal 191 sehingga tidak langsung dipakai pada contoh 2024. Untuk menilai insentif daerah, peroleh wilayah, Perda, aturan nilai jual, pengecualian kendaraan, dan tahun efektif. Rujukan: UU 1/2022 HKPD, halaman PDF 12-17 dan 99, Pasal 4, 9-11 dan 191 (paragraf kewenangan pajak, bobot lingkungan, tarif Perda, dan masa mulai berlaku)."
+    },
+    {
+      "kind": "h2",
+      "text": "Mekanisme pasar dan bukti unit karbon"
+    },
+    {
+      "kind": "p",
+      "text": "Dalam buku OJK edisi Juli 2025, pasar wajib (compliance market) menguji kepatuhan terhadap kuota emisi; pasar sukarela (voluntary market) melayani pengimbangan secara sukarela. PTBAE-PU adalah Persetujuan Teknis Batas Atas Emisi Pelaku Usaha, sedangkan SPE membuktikan pengurangan emisi. Pasar primer terkait penerbitan/alokasi pertama; pasar sekunder memperdagangkan unit yang sudah diterbitkan. MRV berarti pengukuran, pelaporan, dan verifikasi: bukti hasil emisi diperlukan sebelum unit diakui. Rujukan: Buku OJK Perdagangan Karbon (Juli 2025), halaman PDF 43-49 dan 60-65."
+    },
+    {
+      "kind": "p",
+      "text": "Pembaruan bursa 2026: POJK 10/2026 mengubah registri menjadi Sistem Registri Unit Karbon (SRUK) dan jenis unit menjadi Kuota Emisi GRK, SPE GRK, dan non-SPE GRK. Ketentuan bursa ini tidak menetapkan pengurangan pajak simulasi 2024. Periksa aturan sektor dan pengakuan pajak sesuai tahun. Rujukan: POJK 10/2026, halaman PDF 2-4 dan 7, Pasal I perubahan Pasal 1, 3, 5 dan Pasal II (paragraf SRUK, jenis unit, dan tanggal berlaku). [Teks resmi POJK 10/2026](https://ojk.go.id/id/regulasi/Pages/POJK-10-Tahun-2026-Perubahan-Atas-POJK-14-Tahun-2023-tentang-Perdagangan-Karbon-Melalui-Bursa-Karbon.aspx)."
     },
     {
       "kind": "h2",
@@ -182,6 +194,20 @@ export const TM15_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[OJK buku perdagangan karbon (Juli 2025)](https://ojk.go.id/id/Publikasi/Roadmap-dan-Pedoman/Pasar-Modal/Documents/Buku%20Mengenal%20dan%20Memahami%20Perdagangan%20Karbon%20bagi%20SJK.pdf#page=43): PDF 43-49 mekanisme pasar, 60-65 MRV/registri, 90-96 istilah."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Buku penuh terbuka dan bersifat edukatif. Pelaksanaan perdagangan dalam edisi 2025 dibaca sesuai tahunnya. Dasar tarif pajak tetap UU HPP; pembaruan bursa 2026 dijelaskan terpisah di bawah dan tidak mengubah simulasi 2024."
+    },
+    {
+      "kind": "h2",
       "text": "Rujukan yang dapat ditelusuri"
     },
     {
@@ -205,7 +231,7 @@ export const TM15_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian. Hitungan karbon merupakan simulasi pendidikan; kewajiban operasional memerlukan verifikasi tambahan."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian. Hitungan karbon merupakan simulasi pendidikan; kewajiban operasional memerlukan verifikasi tambahan."
     }
   ]
 };

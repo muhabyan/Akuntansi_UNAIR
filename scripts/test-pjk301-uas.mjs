@@ -18,6 +18,19 @@ const quiz = m.PJK301_QUIZ_UAS;
 const cards = m.PJK301_FC.filter(c => c.phase === 'pra-uas');
 const banks = m.PJK301_BANK_UAS;
 const tms = [9, 10, 11, 12, 13, 14, 15];
+const sourceManifest = JSON.parse(readFileSync('scripts/fixtures/pjk301-uas-sources.json', 'utf8'));
+const openSources = sourceManifest.openLearningSources;
+assert.equal(openSources.length, 7);
+for (const source of openSources) {
+  const url = new URL(source.url);
+  assert.ok(['pajak.go.id', 'www.pajak.go.id', 'repository.ut.ac.id', 'ojk.go.id'].includes(url.hostname));
+  assert.match(source.sha256, /^[a-f0-9]{64}$/);
+  assert.ok(source.edition && source.limitation && source.pages > 0);
+  for (const [tm, pages] of Object.entries(source.reviewedPagesByTm)) {
+    assert.ok(tms.includes(+tm));
+    assert.ok(pages.every(page => Number.isInteger(page) && page > 0 && page <= source.pages));
+  }
+}
 const count = (xs, tm, field = 'tm') => xs.filter(x => field === 'scope' ? x.scope.startsWith(`TM ${tm}:`) : x.tm === tm).length;
 assert.deepEqual(tms.map(tm => count(quiz, tm)), [10, 10, 10, 8, 8, 8, 6]);
 assert.deepEqual(tms.map(tm => count(cards, tm)), tms.map(() => 6));
@@ -77,10 +90,25 @@ assert.match(key(15,6),/Belum pasti/);
 
 for (const tm of tms) {
   const r = m.PJK301_READINGS[tm]; assert.equal(r.tm,tm);
+  const guideIndex = r.blocks.findIndex(b => b.kind === 'h2' && b.text === 'Bacaan terbuka sesuai RPP');
+  assert.ok(guideIndex >= 0, 'Every TM has an accessible reading path');
+  for (const item of r.blocks[guideIndex + 1].items) {
+    const link = item.match(/\]\((https:[^)]+)\)/)?.[1];
+    assert.ok(link, 'Reading source is a clickable PDF');
+    const url = new URL(link);
+    const page = Number(url.hash.replace('#page=', ''));
+    url.hash = '';
+    const source = openSources.find(s => s.url === url.href);
+    assert.ok(source?.reviewedPagesByTm[tm], 'PDF is inspected for this TM');
+    assert.ok(page > 0 && page <= source.pages, 'PDF page anchor exists');
+  }
   assert.equal(r.blocks.filter(b=>b.kind==='solution-reveal').length,2);
   assert.match(JSON.stringify(r),/Perkiraan fokus UAS/);
   for (const b of r.blocks.filter(b=>b.kind==='formula')) assert.doesNotThrow(()=>katex.renderToString(b.text,{throwOnError:true,strict:'error'}));
 }
+const annualizedPph = pph(56.9e6 * 12 / 4 - 54e6) * 4 / 12;
+assert.equal(Math.round(annualizedPph - 3 * 15.5e6 * .07), 580000);
+assert.ok(JSON.stringify(m.PJK301_READINGS[10]).includes('Rp3.835.000 - Rp3.255.000 = Rp580.000'), 'Source typo is corrected using the official regulation');
 assert.match(m.PJK301_REVIEW_READINGS.uas.title,/TM09-TM15/);
 const course = m.ALL_COURSES.find(x=>x.course.code==='PJK301').course;
 assert.deepEqual(course.materiTM8_14.map(x=>x.tm),tms);

@@ -15,7 +15,7 @@ export const TM12_READING: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Cakupan, sumber, dan tahun kasus",
-      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
       "kind": "callout",
@@ -34,6 +34,10 @@ export const TM12_READING: Reading = {
     {
       "kind": "p",
       "text": "PPN menggantikan pajak penjualan dengan sistem pengenaan pertambahan nilai pada mata rantai transaksi. PPN merupakan pajak konsumsi dalam daerah pabean, bersifat tidak langsung dan objektif. Multi stage berarti dikenakan pada beberapa tahap; credit method berarti PK dikurangi PM sah, sehingga tidak cukup menghitung pajak atas laba akuntansi. PPN atas impor serta pemanfaatan hak/jasa luar negeri perlu diuji tersendiri. Ekspor BKP berwujud oleh PKP tarif 0% tetap merupakan penyerahan terutang pajak. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9."
+    },
+    {
+      "kind": "p",
+      "text": "Sejarah pada UT PDF 28-32 membedakan Pajak Penjualan 1951 (PPn) dari PPN yang mulai diberlakukan 1 April 1985. Pengenaan bertahap dan kredit berbasis faktur menghindari beban pajak bertumpuk sepanjang produksi/distribusi. PPn dalam sejarah berbeda dari PPnBM atas barang mewah. Contoh angka 10% dalam modul 2014 tidak menjadi tarif kasus 2024. Rujukan: UT PAJA3232-M1 (2014), halaman PDF 19-21 dan 28-32; UU HPP, halaman PDF 67-69, perubahan Pasal 7 dan 9 UU PPN."
     },
     {
       "kind": "h2",
@@ -181,6 +185,20 @@ export const TM12_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[UT PPN dan PPnBM, Modul 1 (2014)](https://repository.ut.ac.id/4451/1/PAJA3232-M1.pdf#page=6): PDF 6-21 karakter/mekanisme kredit, 28-32 sejarah PPn dan PPN."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Modul 1 terbuka, belum seluruh bab PPN/PPnBM. Contoh 10% adalah ketentuan lama; untuk kasus 2024 gunakan tarif 11% HPP, dan untuk 2025 pilih dasar PMK 131/2024 sesuai klasifikasi transaksi."
+    },
+    {
+      "kind": "h2",
       "text": "Rujukan yang dapat ditelusuri"
     },
     {
@@ -205,7 +223,7 @@ export const TM12_READING: Reading = {
     },
     {
       "kind": "p",
-      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
     }
   ]
 };

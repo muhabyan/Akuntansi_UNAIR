@@ -98,6 +98,13 @@ try {
     assert.ok(container.querySelector('.katex'),'Actual renderer displays the TM formula');
     for (const block of readings[tm].blocks) {
       if (block.kind === 'p' && !block.text.includes('[')) assert.ok(container.textContent.includes(block.text), 'Reading paragraph remains visible: TM' + tm);
+      for (const text of [block.text, ...(block.items ?? [])].filter(Boolean)) {
+        for (const [, label, url] of text.matchAll(/\[([^\]]+)\]\((https:[^)]+)\)/g)) {
+          const anchor = [...container.querySelectorAll('a')].find(a => a.textContent === label && a.getAttribute('href') === url);
+          assert.ok(anchor, 'Source link and PDF page survive the actual renderer: TM' + tm);
+          assert.ok(!container.textContent.includes('](' + url + ')'), 'Raw Markdown is not displayed');
+        }
+      }
       if (block.kind === 'table') {
         for (const cell of [...block.headers, ...block.rows.flat()]) assert.ok(container.textContent.includes(cell), 'Reading table cell remains visible: TM' + tm);
       }

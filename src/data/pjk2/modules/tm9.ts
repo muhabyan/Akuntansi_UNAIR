@@ -15,7 +15,7 @@ export const TM9_READING: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Cakupan, sumber, dan tahun kasus",
-      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
       "kind": "callout",
@@ -180,6 +180,21 @@ export const TM9_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[DJP Cermat PPh 21/26 (2024)](https://www.pajak.go.id/sites/default/files/2024-01/Buku%20Cermat%20Pemotongan%20PPh%20Pasal%2021.pdf#page=14): PDF 14-17 pemotong/hak, 22-28 penerima/objek, 32-44 dasar/tarif, 46-51 PTKP, 78-79 natura.",
+        "[DJP Bukti Potong Coretax (versi 1.0, 2025)](https://pajak.go.id/sites/default/files/2025-02/Buku%20Manual%20Coretax%202024%20-%20Seri%20Bukti%20Potong%20PPh.pdf#page=4): PDF 4-8 alur dan penerima bukti potong."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Mulai dari klasifikasi penerima, objek, lalu tabel tarif. Buku 2024 membantu membaca aturan hitungan; tenggat kasus Mei 2025 tetap mengikuti PMK 81/2024 yang dirujuk latihan."
+    },
+    {
+      "kind": "h2",
       "text": "Rujukan yang dapat ditelusuri"
     },
     {
@@ -201,7 +216,7 @@ export const TM9_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
     }
   ]
 };

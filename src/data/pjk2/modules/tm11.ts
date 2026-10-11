@@ -15,7 +15,7 @@ export const TM11_READING: Reading = {
       "kind": "callout",
       "variant": "info",
       "title": "Cakupan, sumber, dan tahun kasus",
-      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
       "kind": "callout",
@@ -42,6 +42,10 @@ export const TM11_READING: Reading = {
     {
       "kind": "p",
       "text": "Contoh PTKP dalam paket: TK/0 Rp54 juta, K/0 Rp58,5 juta, K/1 Rp63 juta. Tambahan Rp54 juta untuk penghasilan istri yang digabung mempunyai persyaratan tersendiri; jangan memberikan tambahan itu otomatis kepada semua WP kawin. Norma neto 40% tidak menentukan status PKP PPN atau persentase kredit PM. Rujukan: PMK 101/2016, Pasal 1 (paragraf PTKP diri sendiri, kawin, istri digabung, dan tanggungan); UU PPh Pasal 8 dan 14."
+    },
+    {
+      "kind": "p",
+      "text": "Badan wajib menyelenggarakan pembukuan dan tidak memakai PTKP pribadi atau NPPN OP. Modul UT PDF 20 menyebut dua metode secara umum; pengecualian pencatatan pada paragraf berikutnya ditujukan kepada OP yang memenuhi syarat. Untuk badan, telusuri laporan laba, biaya fiskal, rugi sah, lalu PKP. Rujukan: UU KUP Pasal 28 ayat (1)-(2) (paragraf kewajiban pembukuan dan pengecualian OP); UU PPh Pasal 14; UT PAJA3331-M1 (2015), halaman PDF 20-21."
     },
     {
       "kind": "h2",
@@ -174,6 +178,21 @@ export const TM11_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[UT Pajak Penghasilan II, Modul 1 (2015)](https://repository.ut.ac.id/4461/1/PAJA3331-M1.pdf#page=17): PDF 17-21 neto, rugi, pembukuan/pencatatan.",
+        "[DJP panduan pemberitahuan NPPN (2025)](https://pajak.go.id/sites/default/files/2025-03/Panduan%20Pemberitahuan%20Penggunaan%20NPPN.pdf#page=10): PDF 10-23 prosedur dan bukti pemberitahuan."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "UT menyediakan Modul 1, belum seluruh buku. Dividen PDF 11 dan natura PDF 24 masih memuat ketentuan lama. Cocokkan dengan HPP serta PMK 66 untuk kasus 2024; penghitungan OP/badan dan kredit mengikuti rujukan aturan pada bacaan ini."
+    },
+    {
+      "kind": "h2",
       "text": "Rujukan yang dapat ditelusuri"
     },
     {
@@ -193,7 +212,7 @@ export const TM11_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
     }
   ]
 };
