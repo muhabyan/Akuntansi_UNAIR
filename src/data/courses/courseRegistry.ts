@@ -537,9 +537,7 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
 
 async function resolveCourseContent(courseCode: string): Promise<LoadedCourseContent> {
   switch (courseCode) {
-    case 'MNS301':
-    case 'MNU307':
-    case 'MNM301': {
+    case 'MNU307': {
       const module = await import('../manstrat/manstratData');
       return { readings: module.MANSTRAT_READINGS, reviews: module.MANSTRAT_REVIEW_READINGS };
     }

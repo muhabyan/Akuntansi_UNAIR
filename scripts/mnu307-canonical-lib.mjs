@@ -138,7 +138,7 @@ export function testProtected() {
   const snapshot=JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/protected-files.json','utf8'));
   for(const [file,hash] of Object.entries(snapshot))assert.ok([hash.worktree,hash.repository].includes(createHash('sha256').update(fs.readFileSync(file)).digest('hex')),`protected file changed: ${file} (Git checkout EOL variants explicitly recorded)`);
   // Only the seventh Manstrat card is editable; every preceding and subsequent byte is guarded.
-  const course=fs.readFileSync('src/data/courseData.ts','utf8').replace(/\r\n/g,'\n').replace(/const MNS301_TM1_7 = materi\(\[\n((?:[^\n]*\n){6})(?:[^\n]*\n)/,'const MNS301_TM1_7 = materi([\n$1');
+  const course=fs.readFileSync('src/data/courseData.ts','utf8').replace(/\r\n/g,'\n').replace(/const MNU307_TM1_7 = materi\(\[\n((?:[^\n]*\n){6})(?:[^\n]*\n)/,'const MNU307_TM1_7 = materi([\n$1');
   assert.equal(createHash('sha256').update(course).digest('hex'),JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/course-catalog-guard.json','utf8')).sha256);
   console.log(`MNU307 shared render rules PASS: ${Object.keys(snapshot).length} protected files and catalog outside TM07 unchanged`);
 }

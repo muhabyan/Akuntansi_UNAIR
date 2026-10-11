@@ -16,7 +16,7 @@ import { AKS201_FC } from './aks201';
 import { PJK301_FC } from './pjk301';
 import { MNK201_FC } from './mnk201';
 import { AKA201_FC } from './aka201';
-import { MNS301_FC } from './mns301';
+import { MNU307_FC } from './mnu307';
 
 import { AGX101_FC } from './agx101';
 import { NOP103_FC } from './nop103';
@@ -55,8 +55,7 @@ const FLASHCARD_REGISTRY: Record<string, AdvancedStudyCard[]> = {
   PJK301: PJK301_FC as AdvancedStudyCard[],
   MNK201: MNK201_FC as AdvancedStudyCard[],
   AKA201: AKA201_FC as AdvancedStudyCard[],
-  MNS301: MNS301_FC as AdvancedStudyCard[],
-  MNU307: MNS301_FC as AdvancedStudyCard[],
+  MNU307: MNU307_FC as AdvancedStudyCard[],
 };
 
 export function getFlashcards(code: string): AdvancedStudyCard[] {
