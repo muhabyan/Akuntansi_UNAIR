@@ -96,6 +96,12 @@ try {
     await mount(React.createElement('div',null,...readings[tm].blocks.map((block,i)=>React.createElement(CourseBlockCard,{key:i,block,enableLegalStyling:true}))));
     assert.equal(container.querySelector('.katex-error'),null,'No formula rendering errors');
     assert.ok(container.querySelector('.katex'),'Actual renderer displays the TM formula');
+    for (const block of readings[tm].blocks) {
+      if (block.kind === 'p' && !block.text.includes('[')) assert.ok(container.textContent.includes(block.text), 'Reading paragraph remains visible: TM' + tm);
+      if (block.kind === 'table') {
+        for (const cell of [...block.headers, ...block.rows.flat()]) assert.ok(container.textContent.includes(cell), 'Reading table cell remains visible: TM' + tm);
+      }
+    }
     const buttons = [...container.querySelectorAll('button[aria-expanded="false"]')];
     assert.equal(buttons.length,2,'Two examples initially closed');
     await React.act(async () => buttons.forEach(click));

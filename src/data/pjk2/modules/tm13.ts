@@ -4,11 +4,11 @@ export const TM13_READING: Reading = {
   "tm": 13,
   "title": "PPnBM, Saat Terutang, Faktur, dan Retur",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. PPnBM, Saat Terutang, Faktur, dan Retur. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Menghitung PPN serta PPnBM dengan saat, tempat, klasifikasi, dan tahun transaksi yang jelas. Membedakan faktur biasa, gabungan, pengganti, pembatalan, serta dokumen yang dipersamakan. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan PPnBM, Saat Terutang, Faktur, dan Retur.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Menghitung PPN serta PPnBM dengan saat, tempat, klasifikasi, dan tahun transaksi yang jelas.",
+    "Membedakan faktur biasa, gabungan, pengganti, pembatalan, serta dokumen yang dipersamakan.",
+    "Menentukan dampak kurs, retur, pembatalan jasa, dan sanksi berdasarkan dokumen."
   ],
   "blocks": [
     {
@@ -57,11 +57,19 @@ export const TM13_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Alur faktur pada kasus tahun 2024"
+    },
+    {
+      "kind": "p",
+      "text": "Faktur gabungan mengelompokkan penyerahan kepada pembeli yang sama selama satu bulan, dibuat paling lambat akhir bulan penyerahan dan tunduk pengecualian fasilitas serta kode transaksi. Salah isi faktur dengan transaksi tetap berlangsung ditangani melalui faktur pengganti. Transaksi dibatalkan atau seharusnya tidak dibuatkan faktur memerlukan pembatalan faktur. Jika faktur asal sudah dilaporkan, penjual dan pembeli yang telah melaporkannya membetulkan SPT masa bersangkutan selama pembetulan masih diperbolehkan. Simpan hubungan faktur asal, pengganti, bukti pembatalan, dan SPT. Alur ini merujuk e-Faktur 2024; prosedur elektronik 2025 perlu aturan tahun tersebut. Rujukan: PER-03/PJ/2022, Pasal 4 dan 22-24 serta Lampiran J-K (paragraf faktur gabungan, penggantian, pembatalan, dan pembetulan SPT)."
+    },
+    {
+      "kind": "h2",
       "text": "Valuta asing, retur, dan pembatalan"
     },
     {
       "kind": "p",
-      "text": "Untuk transaksi selain rupiah, PP 44/2022 Pasal 21 menggunakan kurs Menteri Keuangan saat faktur/dokumen seharusnya dibuat. Kurs bank atau akhir bulan akuntansi tidak menggantikan kurs pajak tersebut. Retur BKP dengan nota sah mengurangi PPN/PPnBM pada masa retur; pembatalan JKP dengan dokumen sah mengurangi PPN masa pembatalan menurut Pasal 5A UU PPN. Pihak pembeli menyesuaikan PM terkait. Nilai asal, tarif, dan dokumen harus dapat ditelusuri lintas masa. Rujukan: PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan)."
+      "text": "Untuk transaksi selain rupiah, PP 44/2022 Pasal 21 menggunakan kurs Menteri Keuangan saat faktur/dokumen seharusnya dibuat. Kurs bank atau akhir bulan akuntansi tidak menggantikan kurs pajak tersebut. Retur BKP dengan nota sah mengurangi PPN/PPnBM pada masa retur; pembatalan JKP dengan dokumen sah mengurangi PPN masa pembatalan menurut Pasal 5A UU PPN. Pihak pembeli menyesuaikan PM terkait. Nilai asal, tarif, dan dokumen harus dapat ditelusuri lintas masa. Rujukan: PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan). Dasar retur dan pembatalan: UU PPN Pasal 5A ayat (1)-(2) (paragraf penurunan PPN/PPnBM karena retur BKP dan pembatalan JKP)."
     },
     {
       "kind": "table",
@@ -174,7 +182,8 @@ export const TM13_READING: Reading = {
         "UU PPN Pasal 5, 8 dan 10 (paragraf satu kali pengenaan, tarif, serta larangan pengkreditan PPnBM); PMK 131/2024 Pasal 2 dan 5.",
         "UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material).",
         "UU HPP, halaman PDF 14-16, perubahan Pasal 14 ayat (1) huruf d-e dan ayat (4) UU KUP.",
-        "PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan)."
+        "PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan).",
+        "PER-03/PJ/2022, Pasal 4 dan 22-24 serta Lampiran J-K (paragraf faktur gabungan, penggantian, pembatalan, dan pembetulan SPT)."
       ]
     },
     {
@@ -182,10 +191,14 @@ export const TM13_READING: Reading = {
       "text": "Sumber resmi untuk memeriksa paragraf: [PP 44/2022](https://pajak.go.id/id/peraturan/penerapan-terhadap-pajak-pertambahan-nilai-barang-dan-jasa-dan-pajak-penjualan-atas). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
     },
     {
+      "kind": "p",
+      "text": "Sumber resmi tambahan: [PER-03/PJ/2022](https://pajak.go.id/index.php/id/peraturan/faktur-pajak)."
+    },
+    {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
     }
   ]
 };

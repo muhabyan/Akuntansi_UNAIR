@@ -4,11 +4,11 @@ export const TM10_READING: Reading = {
   "tm": 10,
   "title": "Penghitungan PPh 21/26 Berbagai Penerima",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. Penghitungan PPh 21/26 Berbagai Penerima. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Memilih metode untuk pegawai tetap, tidak tetap, bukan pegawai, pensiunan, peserta kegiatan, pesangon, dan SPLN. Menghitung bruto, neto, PTKP, PKP, pajak per lapisan, dan selisih masa terakhir. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan Penghitungan PPh 21/26 Berbagai Penerima.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Memilih metode untuk pegawai tetap, tidak tetap, bukan pegawai, pensiunan, peserta kegiatan, pesangon, dan SPLN.",
+    "Menghitung bruto, neto, PTKP, PKP, pajak per lapisan, dan selisih masa terakhir.",
+    "Menindaklanjuti lebih potong dan merekonsiliasi bukti untuk pelaporan PPh Pasal 21/26."
   ],
   "blocks": [
     {
@@ -30,6 +30,21 @@ export const TM10_READING: Reading = {
     {
       "kind": "p",
       "text": "Kumpulkan seluruh bruto aktual, termasuk bonus dan natura objek. Biaya jabatan 5% bruto dibatasi Rp500.000/bulan atau Rp6 juta/tahun; iuran pensiun/hari tua pegawai yang dibayar melalui pemberi kerja kepada lembaga sah dapat dikurangkan. Zakat wajib melalui pemberi kerja kepada lembaga yang memenuhi syarat diuji tersendiri. Kurangi PTKP sesuai status awal tahun, lalu bulatkan PKP ke bawah ribuan penuh. Tarif 5%, 15%, 25%, 30%, 35% dikenakan per lapisan, bukan satu tarif atas seluruh PKP. Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16."
+    },
+    {
+      "kind": "h2",
+      "text": "Urutan kertas kerja masa terakhir"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Tentukan status subjektif dan masa kerja terlebih dahulu. Bedakan berhenti bekerja dengan berakhirnya kewajiban subjektif.",
+        "Jumlahkan bruto aktual uang dan natura objek untuk periode yang sesuai. Pisahkan penghasilan yang dikecualikan.",
+        "Kurangi biaya jabatan sesuai jumlah bulan dan batasnya, iuran yang memenuhi syarat, serta zakat melalui pemberi kerja bila memenuhi aturan.",
+        "Kurangi PTKP yang berlaku. Untuk PKP positif, bulatkan ke bawah ke ribuan rupiah penuh. PKP negatif tidak menghasilkan pajak negatif.",
+        "Hitung pajak dengan lapisan Pasal 17, lalu kurangi seluruh potongan masa sebelumnya. TER bulanan sebelumnya merupakan potongan, bukan pajak tambahan di atas hasil tahunan.",
+        "Catat kurang atau lebih potong. Cocokkan bukti potong akhir dan tindak lanjut pengembalian. Rujukan: PMK 168/2023, halaman PDF 10-17 dan 21, Pasal 8-16 dan 21; UU HPP, halaman PDF 56-57, Pasal 17 UU PPh."
+      ]
     },
     {
       "kind": "h2",
@@ -204,7 +219,7 @@ export const TM10_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
     }
   ]
 };

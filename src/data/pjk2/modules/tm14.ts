@@ -4,11 +4,11 @@ export const TM14_READING: Reading = {
   "tm": 14,
   "title": "Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Memilih mekanisme PM aktual, PM bersama, pedoman sebelum PKP, atau besaran tertentu. Menghitung kredit awal, penghitungan kembali, serta saldo setelah pungutan pihak pemungut. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Memilih mekanisme PM aktual, PM bersama, pedoman sebelum PKP, atau besaran tertentu.",
+    "Menghitung kredit awal, penghitungan kembali, serta saldo setelah pungutan pihak pemungut.",
+    "Menentukan fasilitas, pilihan restitusi, tenggat, dan dokumen untuk SPT Masa PPN."
   ],
   "blocks": [
     {
@@ -41,6 +41,18 @@ export const TM14_READING: Reading = {
     },
     {
       "kind": "h2",
+      "text": "Pedoman lama dan besaran tertentu: baca tahun soal"
+    },
+    {
+      "kind": "p",
+      "text": "Sebagai pembanding historis sebelum perubahan HPP, PMK 74/2010 menetapkan syarat peredaran sampai Rp1,8 miliar, pemberitahuan, serta kredit PM 60% dari PK untuk JKP atau 70% untuk BKP. Jika PK jasa Rp10 juta dalam skenario lama yang memenuhi syarat, PM pedoman Rp6 juta dan setor Rp4 juta, tanpa menambah kredit faktur aktual. HPP menghapus Pasal 9 ayat (7)-(7b) dan menambahkan Pasal 9A tentang PPN besaran tertentu dengan PM terkait tidak dapat dikreditkan. NPPN untuk PPh tidak otomatis memberi hak memakai pedoman PPN lama pada 2024/2025. Rujukan: PMK 74/2010, Pasal 2-7 (paragraf syarat dan persentase PM pedoman); UU HPP, halaman PDF 73 dan 76, Pasal 9 ayat (7)-(7b) dan Pasal 9A UU PPN."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh aktual masa 2024: pedagang PKP menjual kendaraan bekas sebagai persediaan, harga Rp200 juta. PMK 65/2022 memakai besaran tertentu 1,1% × Rp200 juta = Rp2,2 juta yang dipungut dan disetor; PM yang berhubungan dengan penyerahan itu tidak dikreditkan. Ini berbeda dari menjual aktiva Pasal 16D atau dari PM bersama PMK 186/2022. PMK 65 mencabut pedoman usaha tertentu PMK 79/2010. Rumus 2024 ini tidak dipindahkan otomatis ke 2025 sesudah perubahan nilai lain/besaran tertentu. Rujukan: PMK 65/2022, halaman PDF 4-7, Pasal 2, 4-7 (paragraf besaran tertentu, larangan kredit, dan pencabutan pedoman lama)."
+    },
+    {
+      "kind": "h2",
       "text": "Penghitungan kembali aset dan penyesuaian"
     },
     {
@@ -53,7 +65,7 @@ export const TM14_READING: Reading = {
     },
     {
       "kind": "p",
-      "text": "Pasal 16A menempatkan pemungutan pada pemungut PPN untuk transaksi yang memenuhi aturan; bukti pungut diperlukan agar PKP tidak menyetor pajak yang sama dua kali. Pasal 16B membedakan tidak dipungut dan dibebaskan: PM terkait tidak dipungut dapat dikreditkan jika sah; PM terkait dibebaskan tidak dapat dikreditkan. Pemerintah, BUMN, dan pihak tertentu memiliki pengaturan penunjukan serta mekanisme masing-masing. Soal menetapkan pihak pemerintah sebagai pemungut dan pajak telah dipungut; jangan menganggap semua pembeli pemerintah selalu memenuhi pengecualian/ambang yang sama. Rujukan: UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan)."
+      "text": "Pasal 16A menempatkan pemungutan pada pemungut PPN untuk transaksi yang memenuhi aturan; bukti pungut diperlukan agar PKP tidak menyetor pajak yang sama dua kali. Pasal 16B membedakan tidak dipungut dan dibebaskan: PM terkait tidak dipungut dapat dikreditkan jika sah; PM terkait dibebaskan tidak dapat dikreditkan. Pemerintah, BUMN, dan pihak tertentu memiliki pengaturan penunjukan serta mekanisme masing-masing. Soal menetapkan pihak pemerintah sebagai pemungut dan pajak telah dipungut; jangan menganggap semua pembeli pemerintah selalu memenuhi pengecualian/ambang yang sama. Rujukan: UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan). Dasar pemungut: UU PPN Pasal 16A ayat (1)-(2) (paragraf pemungutan dan penyetoran oleh pemungut PPN)."
     },
     {
       "kind": "h2",
@@ -169,7 +181,9 @@ export const TM14_READING: Reading = {
         "UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c).",
         "PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian).",
         "UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan).",
-        "UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D."
+        "UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D.",
+        "PMK 74/2010, Pasal 2-7 (paragraf syarat dan persentase PM pedoman); UU HPP, halaman PDF 73 dan 76, Pasal 9 ayat (7)-(7b) dan Pasal 9A UU PPN.",
+        "PMK 65/2022, halaman PDF 4-7, Pasal 2, 4-7 (paragraf besaran tertentu, larangan kredit, dan pencabutan pedoman lama)."
       ]
     },
     {
@@ -177,10 +191,14 @@ export const TM14_READING: Reading = {
       "text": "Sumber resmi untuk memeriksa paragraf: [PMK 186/2022](https://jdih.kemenkeu.go.id/api/download/2fbbf7e4-26e6-4a89-bb99-0ba876196196/186~PMK.03~2022.pdf). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
     },
     {
+      "kind": "p",
+      "text": "Sumber resmi tambahan: [PMK 74/2010, pembanding historis](https://pajak.go.id/en/node/62013); [PMK 65/2022](https://jdih.kemenkeu.go.id/api/download/77a0009c-d125-41c4-b020-635d14500c0b/65~PMK.03~2022Per.pdf)."
+    },
+    {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
     }
   ]
 };

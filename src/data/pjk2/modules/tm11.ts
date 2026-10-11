@@ -4,11 +4,11 @@ export const TM11_READING: Reading = {
   "tm": 11,
   "title": "PPh Orang Pribadi dan Rekonsiliasi Fiskal Badan",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. PPh Orang Pribadi dan Rekonsiliasi Fiskal Badan. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Menghitung PPh orang pribadi melalui pembukuan atau NPPN dengan syarat masing-masing. Menyusun rekonsiliasi fiskal badan, fasilitas Pasal 31E, serta kredit pajak reguler. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan PPh Orang Pribadi dan Rekonsiliasi Fiskal Badan.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Menghitung PPh orang pribadi melalui pembukuan atau NPPN dengan syarat masing-masing.",
+    "Menyusun rekonsiliasi fiskal badan, fasilitas Pasal 31E, serta kredit pajak reguler.",
+    "Menjelaskan arah koreksi, batas kompensasi rugi, dan posisi kurang atau lebih bayar."
   ],
   "blocks": [
     {
@@ -38,6 +38,10 @@ export const TM11_READING: Reading = {
     {
       "kind": "p",
       "text": "Pisahkan penghasilan reguler dari final dan nonobjek. Pada pembukuan, kompensasi rugi fiskal sah dikurangkan dari neto sebelum PTKP. PTKP dasar Rp54 juta, tambahan kawin Rp4,5 juta, dan tiap tanggungan maksimal tiga Rp4,5 juta menurut PMK 101/2016. Hitung PKP nonnegatif dan bulatkan ke bawah ribuan penuh. Tarif Pasal 17 bertingkat: sampai Rp60 juta 5%; bagian di atas Rp60 juta sampai Rp250 juta 15%; sampai Rp500 juta 25%; sampai Rp5 miliar 30%; sisanya 35%. Rujukan: UU HPP, halaman PDF 56-57, perubahan Pasal 17 ayat (1) dan (4) UU PPh."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh PTKP dalam paket: TK/0 Rp54 juta, K/0 Rp58,5 juta, K/1 Rp63 juta. Tambahan Rp54 juta untuk penghasilan istri yang digabung mempunyai persyaratan tersendiri; jangan memberikan tambahan itu otomatis kepada semua WP kawin. Norma neto 40% tidak menentukan status PKP PPN atau persentase kredit PM. Rujukan: PMK 101/2016, Pasal 1 (paragraf PTKP diri sendiri, kawin, istri digabung, dan tanggungan); UU PPh Pasal 8 dan 14."
     },
     {
       "kind": "h2",
@@ -189,7 +193,7 @@ export const TM11_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
     }
   ]
 };

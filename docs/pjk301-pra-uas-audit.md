@@ -70,6 +70,28 @@ Prioritas merupakan perkiraan dari RPP serta contoh resmi, karena arsip UAS PJK3
 
 ## Pemeriksaan
 
+### Audit isi kedua setelah pertanyaan kejelasan dan kelengkapan
+
+Pemeriksaan kedua mencocokkan semua subtopik RPP PDF 3-4 dengan bacaan. Ditemukan uraian yang terlalu ringkas pada pemilihan TER, alur faktur, pedoman PM historis, serta kebijakan penurunan emisi. Bacaan diperluas tanpa mengubah jumlah latihan atau materi pra-UTS.
+
+| TM | Subtopik RPP yang diperiksa | Penguatan kejelasan |
+| --- | --- | --- |
+| 09 | Dasar, penerima/objek/pemotong, hak/kewajiban, administrasi, natura, TER | Arti singkatan, pengecualian pemotong/penerima, tabel kategori A/B/C dan langkah memilih TER |
+| 10 | Pegawai tetap/tidak tetap, bukan pegawai, pensiun, kegiatan, pesangon, SPLN, pelaporan, TER | Enam langkah kertas kerja masa terakhir, pemisahan potongan sebelumnya dari pajak tahunan |
+| 11 | OP pembukuan/NPPN; badan rekonsiliasi dan PPh | Contoh PTKP dan batas tambahan penghasilan istri; norma PPh dipisahkan dari kredit PM |
+| 12 | Latar belakang, dasar, karakter/mekanisme, subjek/objek/pengecualian/tarif, kewajiban PKP | Arti PM/PK/DPP/PKP dan rujukan definisi nilai impor |
+| 13 | Pembukuan, PPnBM, saat/tempat, jenis/kewajiban/penggantian faktur, valas, retur, sanksi | Prosedur faktur gabungan/pengganti/batal dan pembetulan SPT dalam skenario 2024; rujukan retur ditambahkan |
+| 14 | Kredit/penghitungan kembali/pedoman PM, restitusi, pemungut, fasilitas, pelaporan | Pedoman historis 60%/70% dibandingkan Pasal 9A dan contoh kendaraan bekas 2024; rujukan pemungut diperjelas |
+| 15 | Dasar, subjek/objek/pengecualian, DPP/tarif/hitung/saat, PPN/PPnBM/daerah, perdagangan | Contoh PPN DTP kendaraan listrik 2024, PPnBM DTP bersyarat, kerangka HKPD dan transisi tahun |
+
+Sumber tambahan primer: [PER-03/PJ/2022](https://pajak.go.id/index.php/id/peraturan/faktur-pajak) Pasal 4/22-24 dan Lampiran J-K; [PMK 74/2010](https://pajak.go.id/en/node/62013) Pasal 2-7 untuk pembanding historis; [PMK 65/2022](https://jdih.kemenkeu.go.id/api/download/77a0009c-d125-41c4-b020-635d14500c0b/65~PMK.03~2022Per.pdf) PDF 4-7; [PMK 8/2024](https://fiskal.kemenkeu.go.id/files/peraturan/file/1710981062_pmk_8.pdf) PDF 4-6; [PMK 9/2024](https://pajak.go.id/en/node/105003) Pasal 2-5; [UU HKPD](https://jdih.kemenkeu.go.id/api/download/770ecf1d-664b-48a1-88f4-8849b8ca7258/1TAHUN2022UU.pdf) PDF 12-17/99.
+
+Konflik yang harus dibaca hati-hati: halaman edukasi DJP tentang *Deemed Tax* masih menampilkan pedoman lama, sedangkan HPP lokal PDF 73 menghapus Pasal 9 ayat (7)-(7b) dan PDF 76 menambahkan Pasal 9A. Pedoman lama disajikan sebagai pembanding historis, tanpa klaim otomatis berlaku untuk kasus 2024/2025. Frasa metadata JDIH "s.d. Dicabut" sendiri tidak membuktikan pencabutan suatu aturan. Catatan pemeriksaan ini menggunakan isi pasal dan aturan pengganti, bukan frasa metadata tersebut.
+
+Seluruh subtopik utama RPP sekarang memiliki uraian atau contoh yang ditandai tahunnya. Kedalaman setara seluruh bab Waluyo/Resmi dan kesesuaian dengan soal UAS dosen belum dapat dijamin. Pengecualian operasional karbon, pengakuan unit, PPN perdagangan unit, serta tarif/fasilitas daerah tertentu tetap memerlukan sumber pelaksana yang sesuai kasus; batas ini dipertahankan dalam bacaan dan latihan.
+
+Sesudah penguatan ini, lint, TypeScript, build, tes komponen PJK301, dan 88 pemeriksaan reading frame kembali lulus. Seluruh 62 tugas standar kembali dieksekusi: 61 lulus dan satu kegagalan baseline Manajemen Strategik yang sama. Tes komponen kini memeriksa pelestarian seluruh paragraf tanpa tautan Markdown dan semua sel tabel bacaan, selain alur latihan sebelumnya.
+
 Lint, TypeScript, build, runtime, tes PJK301, dan browser standar lulus. Seluruh 62 tugas standar dieksekusi satu per satu agar tes setelah kegagalan tetap berjalan: 61 lulus; satu kegagalan sama dengan baseline, `mnu307_render_rules`, pada hash berkas Manajemen Strategik/varian akhir baris checkout Windows. Baseline sebelum perubahan mempunyai 60 tugas: 59 lulus dan kegagalan yang sama. Area Manajemen Strategik tidak diubah. Perintah `npm test` tetap gagal pada guard baseline tersebut karena runner standar berhenti ketika ada kegagalan; tidak disembunyikan atau dikecualikan.
 
 Tes komponen memakai komponen aplikasi nyata: pelestarian 360 bidang teks kuis, KaTeX, pengacakan opsi, jawaban benar/salah, skor ujian 60/60, pembukaan 14 bank soal dan 14 contoh, filter serta flip flashcard TM15. JSDOM memeriksa DOM dan event; tidak menghasilkan pengukuran CSS atau tangkapan layar. Tes shared reading frame memeriksa penyajian tabel ponsel serta pelestarian seluruh sel dan rujukan.

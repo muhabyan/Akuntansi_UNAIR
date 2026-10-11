@@ -4,11 +4,11 @@ export const TM9_READING: Reading = {
   "tm": 9,
   "title": "Konsep PPh 21/26, TER, dan Natura",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. Konsep PPh 21/26, TER, dan Natura. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Membedakan penerima, objek, pemotong, serta dasar PPh Pasal 21 dan 26. Memilih kategori TER dan menilai natura dengan batas serta bukti yang tepat. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan Konsep PPh 21/26, TER, dan Natura.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Membedakan penerima, objek, pemotong, serta dasar PPh Pasal 21 dan 26.",
+    "Memilih kategori TER dan menilai natura dengan batas serta bukti yang tepat.",
+    "Menjelaskan hak penerima, kewajiban pemotong, serta perbedaan administrasi 2024 dan 2025."
   ],
   "blocks": [
     {
@@ -29,7 +29,15 @@ export const TM9_READING: Reading = {
     },
     {
       "kind": "p",
-      "text": "PPh Pasal 21 memotong penghasilan OP dalam negeri sehubungan pekerjaan, jasa, atau kegiatan. PPh Pasal 26 dalam konteks ini terkait OP luar negeri. Identifikasi hubungan kerja, jenis pembayaran, status pajak penerima, dan pemotong sebelum memilih tarif. Pemberi kerja, instansi pemerintah, dana pensiun, pembayar jasa, serta penyelenggara kegiatan memiliki peran sesuai kategori dalam PMK 168/2023. Kewarganegaraan saja tidak menentukan SPDN/SPLN. Penghasilan bruto mencakup uang serta natura/kenikmatan yang merupakan objek; pengecualian perlu bukti. Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16."
+      "text": "PPh Pasal 21 memotong penghasilan OP dalam negeri sehubungan pekerjaan, jasa, atau kegiatan. PPh Pasal 26 dalam konteks ini terkait OP luar negeri. Identifikasi hubungan kerja, jenis pembayaran, status pajak penerima, dan pemotong sebelum memilih tarif. Pemberi kerja, instansi pemerintah, dana pensiun, pembayar jasa, serta penyelenggara kegiatan memiliki peran sesuai kategori dalam PMK 168/2023. Kewarganegaraan saja tidak menentukan SPDN/SPLN. Penghasilan bruto mencakup uang serta natura/kenikmatan yang merupakan objek; pengecualian perlu bukti. Rujukan: PMK 168/2023, halaman PDF 2-9, Pasal 1-6."
+    },
+    {
+      "kind": "h2",
+      "text": "Singkatan dan pengecualian pemotongan"
+    },
+    {
+      "kind": "p",
+      "text": "OP = orang pribadi; WP = wajib pajak; SPDN = subjek pajak dalam negeri; SPLN = subjek pajak luar negeri. PTKP = Penghasilan Tidak Kena Pajak; PKP pada pembahasan PPh = Penghasilan Kena Pajak. Pada materi PPN, PKP berarti Pengusaha Kena Pajak. Pemberi kerja rumah tangga yang memenuhi pengecualian Pasal 2 ayat (3) tidak disamakan dengan pemberi kerja usaha. Pejabat diplomatik dan pejabat organisasi internasional hanya dikecualikan bila seluruh syarat Pasal 4 dipenuhi. Rujukan: PMK 168/2023, halaman PDF 5-7, Pasal 2-4."
     },
     {
       "kind": "h2",
@@ -38,6 +46,42 @@ export const TM9_READING: Reading = {
     {
       "kind": "p",
       "text": "Tarif efektif rata-rata atau TER menyederhanakan potongan bulanan atas bruto. Pegawai tetap dan pensiunan memakai TER pada setiap masa selain masa terakhir; masa terakhir memakai tarif Pasal 17 atas PKP tahunan/bagian tahun dikurangi seluruh potongan sebelumnya. Desember adalah masa terakhir bagi pegawai yang bekerja penuh tahun. Saat berhenti pada Juni, Juni dapat menjadi masa terakhir. Jika kewajiban subjektif sudah ada sepanjang tahun, penghasilan aktual tidak otomatis disetahunkan; jika kewajiban subjektif mulai atau berakhir dalam tahun, uji Pasal 15 ayat (3). Rujukan: PMK 168/2023, halaman PDF 15-16 dan 21, Pasal 15 ayat (1)-(3) dan Pasal 21 ayat (1)-(2)."
+    },
+    {
+      "kind": "h2",
+      "text": "Cara memilih TER bulanan"
+    },
+    {
+      "kind": "table",
+      "title": "Kategori TER menurut status PTKP",
+      "headers": [
+        "Kategori",
+        "Status pada awal tahun",
+        "PTKP setahun"
+      ],
+      "rows": [
+        [
+          "A",
+          "TK/0, TK/1, K/0",
+          "Rp54 juta; Rp58,5 juta; Rp58,5 juta"
+        ],
+        [
+          "B",
+          "TK/2, TK/3, K/1, K/2",
+          "Rp63 juta; Rp67,5 juta; Rp63 juta; Rp67,5 juta"
+        ],
+        [
+          "C",
+          "K/3",
+          "Rp72 juta"
+        ]
+      ],
+      "caption": "Rujukan: PP 58/2023, Pasal 2 dan Lampiran A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "p",
+      "text": "TK berarti tidak kawin, K berarti kawin, dan angka setelah garis miring menunjukkan jumlah tanggungan yang diakui, maksimal tiga. Tentukan status yang memenuhi aturan, pilih kategori, jumlahkan bruto masa itu, lalu cari rentang bruto dalam Lampiran A. TER dikenakan pada bruto penuh dengan satu tarif rentang; TER tidak dihitung per lapisan. PTKP tidak dikurangkan lagi dari bruto bulanan karena sudah diperhitungkan dalam tabel TER. Contoh kategori A: bruto Rp10 juta memakai 2%, sehingga potongan Rp200.000. Jika tunjangan pajak menambah bruto, uji ulang rentangnya saat menghitung gross-up, yaitu tunjangan yang membuat penerimaan bersih sesuai target. Rujukan: PP 58/2023, Pasal 2 dan Lampiran A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23."
     },
     {
       "kind": "h2",
@@ -70,34 +114,6 @@ export const TM9_READING: Reading = {
     {
       "kind": "p",
       "text": "Tarif domestik PPh 26 terkait pekerjaan/jasa/kegiatan 20% atas bruto, atau ketentuan P3B bila syaratnya terpenuhi. P3B adalah persetujuan penghindaran pajak berganda; tax treaty berarti perjanjian pajak tersebut. Bukti domisili dan syarat perjanjian harus diuji. Kasus pada paket ini menegaskan tanpa P3B, sehingga tidak mengarang tarif negara tertentu. Jika SPLN berubah SPDN, uji perubahan sifat final dan kredit pajak Pasal 14 ayat (3). Rujukan: PMK 168/2023, halaman PDF 15, Pasal 14 ayat (1)-(3)."
-    },
-    {
-      "kind": "table",
-      "title": "Pemilihan TER berdasarkan PTKP",
-      "headers": [
-        "Kategori",
-        "Status PTKP",
-        "Penggunaan"
-      ],
-      "rows": [
-        [
-          "A",
-          "TK/0, TK/1, K/0",
-          "Bruto masa menentukan lapisan TER"
-        ],
-        [
-          "B",
-          "TK/2, TK/3, K/1, K/2",
-          "Bruto masa menentukan lapisan TER"
-        ],
-        [
-          "C",
-          "K/3",
-          "Bruto masa menentukan lapisan TER"
-        ]
-      ],
-      "caption": "Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16.",
-      "stackOnMobile": true
     },
     {
       "kind": "formula",
@@ -185,7 +201,7 @@ export const TM9_READING: Reading = {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
     }
   ]
 };

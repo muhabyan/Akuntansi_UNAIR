@@ -4,11 +4,11 @@ export const TM15_READING: Reading = {
   "tm": 15,
   "title": "Pajak Karbon dan Analisis Perdagangan Karbon",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. Pajak Karbon dan Analisis Perdagangan Karbon. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Menjelaskan subjek, objek, saat terutang, tarif, dan batas penerapan pajak karbon. Menghitung simulasi emisi dengan satuan konsisten serta membandingkan biaya pengurangan. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan Pajak Karbon dan Analisis Perdagangan Karbon.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Menjelaskan subjek, objek, saat terutang, tarif, dan batas penerapan pajak karbon.",
+    "Menghitung simulasi emisi dengan satuan konsisten serta membandingkan biaya pengurangan.",
+    "Menganalisis perdagangan karbon dan membedakan insentif PPN, PPnBM, serta pajak daerah."
   ],
   "blocks": [
     {
@@ -54,6 +54,22 @@ export const TM15_READING: Reading = {
     {
       "kind": "p",
       "text": "Pengurangan emisi dapat dinilai dari pajak simulasi yang dihemat dibanding biaya proyek/sertifikat, lalu dipadukan manfaat dan risiko lain. RPP juga meminta ketentuan PPN/PPnBM dan pajak daerah yang dapat mendukung penurunan emisi. Contoh insentif kendaraan listrik memerlukan klasifikasi produk, tahun anggaran serta syarat insentif; jangan menganggap seluruh kendaraan listrik bebas PPN atau PPnBM. Pajak daerah kendaraan mengikuti UU HKPD dan Perda serta tahun berlakunya. Instrumen tersebut dipisahkan dari pajak karbon nasional; tarif atau fasilitas aktual belum diberikan dalam soal. Rujukan: UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3)."
+    },
+    {
+      "kind": "h2",
+      "text": "Contoh kebijakan penurunan emisi pada 2024"
+    },
+    {
+      "kind": "p",
+      "text": "Contoh PPN DTP, yaitu ditanggung pemerintah: mobil listrik baru yang ditetapkan memenuhi TKDN minimal 40% dan seluruh dokumen PMK 8/2024, harga jual Rp500 juta pada September 2024. PPN 11% = Rp55 juta; pemerintah menanggung 10% harga = Rp50 juta; pembeli menanggung Rp5 juta. Untuk bus dengan TKDN 20% sampai kurang dari 40%, DTP 5% harga. Periode Januari-Desember 2024 dan bukti fasilitas harus diperiksa. Insentif ini mengurangi beban pembelian; kaitannya dengan penurunan emisi merupakan analisis kebijakan yang perlu bukti penggunaan dan sumber energi. Rujukan: PMK 8/2024, halaman PDF 4-6, Pasal 2-6 (paragraf kendaraan baru, TKDN, PPN terutang, DTP, periode, dan dokumen)."
+    },
+    {
+      "kind": "p",
+      "text": "PPnBM DTP berbeda dari PPN DTP. PMK 9/2024 menanggung 100% PPnBM terutang untuk impor kendaraan listrik utuh atau penyerahan hasil produksi kendaraan terurai tertentu, dengan pelaku PKP, persetujuan insentif investasi, dokumen, dan periode 2024 yang memenuhi syarat. Utuh berarti completely built-up (CBU); terurai lengkap berarti completely knocked-down (CKD). Persentase 100% dikenakan pada PPnBM terutang, bukan pada harga kendaraan; tarif dasar mengikuti klasifikasi sah. Rujukan: PMK 9/2024, Pasal 2-5 (paragraf persetujuan insentif, PPnBM DTP, periode, dan dokumen)."
+    },
+    {
+      "kind": "p",
+      "text": "UU HKPD membedakan pajak provinsi dan kabupaten/kota. Kerangka PKB memakai nilai jual dikalikan bobot yang mencerminkan kerusakan jalan/pencemaran, lalu tarif Perda; bobot lingkungan memberi dasar analisis kebijakan. Tarif PKB/opsen baru mempunyai transisi Pasal 191 sehingga tidak langsung dipakai pada contoh 2024. Untuk menilai insentif daerah, peroleh wilayah, Perda, aturan nilai jual, pengecualian kendaraan, dan tahun efektif. Rujukan: UU 1/2022 HKPD, halaman PDF 12-17 dan 99, Pasal 4, 9-11 dan 191 (paragraf kewenangan pajak, bobot lingkungan, tarif Perda, dan masa mulai berlaku)."
     },
     {
       "kind": "h2",
@@ -171,7 +187,10 @@ export const TM15_READING: Reading = {
     {
       "kind": "ul",
       "items": [
-        "UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3)."
+        "UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3).",
+        "PMK 8/2024, halaman PDF 4-6, Pasal 2-6 (paragraf kendaraan baru, TKDN, PPN terutang, DTP, periode, dan dokumen).",
+        "PMK 9/2024, Pasal 2-5 (paragraf persetujuan insentif, PPnBM DTP, periode, dan dokumen).",
+        "UU 1/2022 HKPD, halaman PDF 12-17 dan 99, Pasal 4, 9-11 dan 191 (paragraf kewenangan pajak, bobot lingkungan, tarif Perda, dan masa mulai berlaku)."
       ]
     },
     {
@@ -179,10 +198,14 @@ export const TM15_READING: Reading = {
       "text": "Sumber resmi untuk memeriksa paragraf: [UU HPP](https://www.pajak.go.id/index.php/id/peraturan/harmonisasi-peraturan-perpajakan). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
     },
     {
+      "kind": "p",
+      "text": "Sumber resmi tambahan: [PMK 8/2024](https://fiskal.kemenkeu.go.id/files/peraturan/file/1710981062_pmk_8.pdf); [PMK 9/2024](https://pajak.go.id/en/node/105003); [UU HKPD](https://jdih.kemenkeu.go.id/api/download/770ecf1d-664b-48a1-88f4-8849b8ca7258/1TAHUN2022UU.pdf)."
+    },
+    {
       "kind": "callout",
       "variant": "warning",
       "title": "Batas sumber dan penerapan",
-      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian. Hitungan karbon merupakan simulasi pendidikan; kewajiban operasional memerlukan verifikasi tambahan."
     }
   ]
 };

@@ -4,11 +4,11 @@ export const TM12_READING: Reading = {
   "tm": 12,
   "title": "Dasar PPN, PKP, Objek, dan Tarif",
   "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
-  "intro": "Perpajakan II PJK301. Dasar PPN, PKP, Objek, dan Tarif. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "intro": "Mengidentifikasi objek, pengecualian, status PKP, dan karakter pemungutan PPN. Memilih DPP dan tarif menurut tahun, termasuk harga sudah mengandung PPN dan impor. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
   "objectives": [
-    "Menentukan klasifikasi dan dasar aturan Dasar PPN, PKP, Objek, dan Tarif.",
-    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
-    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
+    "Mengidentifikasi objek, pengecualian, status PKP, dan karakter pemungutan PPN.",
+    "Memilih DPP dan tarif menurut tahun, termasuk harga sudah mengandung PPN dan impor.",
+    "Menghubungkan PK, PM, faktur, penyetoran, dan kewajiban pelaporan PKP."
   ],
   "blocks": [
     {
@@ -22,6 +22,10 @@ export const TM12_READING: Reading = {
       "variant": "tip",
       "title": "Perkiraan fokus UAS",
       "text": "Perkiraan berdasarkan capaian RPP dan contoh sumber: Dasar PPN, PKP, Objek, dan Tarif. Latih keputusan aturan sebelum hitungan, langkah per lapisan, dokumentasi, dan koreksi kesalahan. Tidak ada arsip UAS lokal yang mengonfirmasi bobot topik atau bentuk soal. RPP menyebut studi kasus komprehensif; latihan berbahasa Indonesia mengikuti materi lokal."
+    },
+    {
+      "kind": "p",
+      "text": "PM = Pajak Masukan, yaitu PPN atas perolehan atau impor yang diuji pengkreditannya. PK = Pajak Keluaran, yaitu PPN yang wajib dipungut PKP atas penyerahannya. DPP = Dasar Pengenaan Pajak, nilai yang menjadi dasar mengalikan tarif. PKP di bagian ini berarti Pengusaha Kena Pajak. PK dan PM berupa jumlah pajak; DPP berupa nilai transaksi menurut skema yang dipakai. Rujukan: UU PPN Pasal 1 angka 15, 17, 24 dan 25 (paragraf PKP, DPP, PM, dan PK)."
     },
     {
       "kind": "h2",
@@ -69,7 +73,7 @@ export const TM12_READING: Reading = {
     },
     {
       "kind": "p",
-      "text": "Nilai impor meliputi CIF, bea masuk serta pungutan kepabeanan yang masuk definisi; CIF berarti biaya barang, asuransi, dan angkut. PPh 22 tidak menjadi PM PPN. PPN impor yang sah dan terkait usaha dapat menjadi PM dengan dokumen yang memenuhi ketentuan. PK lebih besar dari PM menghasilkan kurang bayar; PM lebih besar menghasilkan lebih bayar yang umumnya dikompensasikan dengan opsi pengembalian sesuai syarat. PM tidak sama dengan harga barang dan tidak dipotong langsung dari omzet. Rujukan: UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c)."
+      "text": "Nilai impor meliputi CIF, bea masuk serta pungutan kepabeanan yang masuk definisi; CIF berarti biaya barang, asuransi, dan angkut. PPh 22 tidak menjadi PM PPN. PPN impor yang sah dan terkait usaha dapat menjadi PM dengan dokumen yang memenuhi ketentuan. PK lebih besar dari PM menghasilkan kurang bayar; PM lebih besar menghasilkan lebih bayar yang umumnya dikompensasikan dengan opsi pengembalian sesuai syarat. PM tidak sama dengan harga barang dan tidak dipotong langsung dari omzet. Rujukan: UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c). Dasar definisi nilai impor: UU PPN Pasal 1 angka 20 (paragraf nilai dasar bea masuk ditambah pungutan kepabeanan dan cukai, tanpa PPN/PPnBM)."
     },
     {
       "kind": "h2",
@@ -201,7 +205,7 @@ export const TM12_READING: Reading = {
     },
     {
       "kind": "p",
-      "text": "Sumber resmi pengukuhan PKP: [PMK 164/2023](https://jdih.kemenkeu.go.id/api/download/a99b8e80-9694-46ab-8de1-63c2484aa636/2023pmkeuangan164.pdf), halaman PDF 16-18."
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum tersedia untuk membandingkan kedalaman pembahasan dan pola ujian."
     }
   ]
 };
