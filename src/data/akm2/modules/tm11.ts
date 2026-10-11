@@ -1,213 +1,370 @@
+// AKK202 TM11: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
 import type { Reading } from '../../../types';
-import {
-  CASE_TREASURY_DIVIDENDS,
-  CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION } from '../akm2PracticeCases';
-
-const SVG_EQUITY_STRUCTURE = `
-<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">STRUKTUR EKUITAS PEMEGANG SAHAM (PSAK 1 &amp; PSAK 50)</text>
-
-  <rect class="svg-card" x="30" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-blue" x="102" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. MODAL DISETOR</text>
-  <line class="svg-divider" x1="40" y1="90" x2="165" y2="90" stroke="#334155"/>
-  <text class="svg-text" x="102" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Saham Biasa (Par)</text>
-  <text class="svg-text" x="102" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Saham Preferen (Par)</text>
-  <text class="text-accent-blue" x="102" y="146" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Biasa</text>
-  <text class="text-accent-blue" x="102" y="164" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Preferen</text>
-  <text class="text-accent-blue" x="102" y="182" fill="#38bdf8" font-size="9" text-anchor="middle">• Agio Saham Treasuri</text>
-
-  <rect class="svg-card" x="190" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text class="text-accent-green" x="262" y="78" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">2. LABA DITAHAN</text>
-  <line class="svg-divider" x1="200" y1="90" x2="325" y2="90" stroke="#334155"/>
-  <text class="svg-text" x="262" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Akumulasi Laba Bersih</text>
-  <text class="text-accent-red" x="262" y="128" fill="#f87171" font-size="9" text-anchor="middle">(-) Akumulasi Rugi</text>
-  <text class="text-accent-red" x="262" y="146" fill="#f87171" font-size="9" text-anchor="middle">(-) Pembagian Dividen</text>
-  <text class="text-accent-amber" x="262" y="164" fill="#f59e0b" font-size="9" text-anchor="middle">• Laba Ditahan Dibatasi</text>
-  <text class="text-accent-green" x="262" y="182" fill="#34d399" font-size="9" text-anchor="middle">• Laba Ditahan Bebas</text>
-
-  <rect class="svg-card" x="350" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text class="text-accent-purple" x="422" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. AKUMULASI OCI</text>
-  <line class="svg-divider" x1="360" y1="90" x2="485" y2="90" stroke="#334155"/>
-  <text class="svg-text" x="422" y="110" fill="#cbd5e1" font-size="9" text-anchor="middle">• Surplus Revaluasi Aset</text>
-  <text class="svg-text" x="422" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Unrealized Gain FVOCI</text>
-  <text class="svg-text" x="422" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Keuntungan Aktuaria</text>
-  <text class="svg-text" x="422" y="164" fill="#cbd5e1" font-size="9" text-anchor="middle">• Selisih Kurs Translasi</text>
-  <text class="text-accent-purple" x="422" y="182" fill="#a855f7" font-size="9" text-anchor="middle">(Pos OCI Komprehensif)</text>
-
-  <rect class="svg-card" x="510" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text class="text-accent-red" x="582" y="78" fill="#f43f5e" font-size="11" font-weight="700" text-anchor="middle">4. SAHAM TREASURI</text>
-  <line class="svg-divider" x1="520" y1="90" x2="645" y2="90" stroke="#334155"/>
-  <text class="text-accent-red" x="582" y="110" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">KONTRA-EKUITAS</text>
-  <text class="svg-text" x="582" y="130" fill="#cbd5e1" font-size="9" text-anchor="middle">Saham dibeli kembali</text>
-  <text class="text-accent-red" x="582" y="148" fill="#f87171" font-size="9" text-anchor="middle">MENGURANGI</text>
-  <text class="text-accent-red" x="582" y="166" fill="#f87171" font-size="9" text-anchor="middle">Total Nilai Ekuitas</text>
-  <text class="svg-muted" x="582" y="184" fill="#64748b" font-size="8.5" text-anchor="middle">(Cost Method / Nilai Kos)</text>
-</svg>`;
 
 export const TM11_READING: Reading = {
-  tm: 11,
-  title: 'Ekuitas Pemegang Saham (Stockholders Equity), Saham Treasuri, dan Kebijakan Dividen',
-  ref: `Kieso IFRS 5e Ch. 15 | PSAK 50, PSAK 55, UU PT`,
-  intro: `TM 11 membedah komponen Ekuitas Pemegang Saham: penerbitan saham biasa & preferen (lump-sum & non-kas), akuntansi Saham Treasuri metode biaya (Cost Method), perlakuan penjualan kembali saham treasuri di atas/bawah harga perolehan, berbagai bentuk dividen (Tunai, Properti, Likuidasi, Saham), serta pemecahan saham (Stock Split).`,
-  objectives: [
-    `Mengidentifikasi komponen utama Ekuitas (Modal Saham, Agio Saham/Share Premium, Laba Ditahan, OCI, dan Saham Treasuri).`,
-    `Menjurnal perolehan dan penjualan kembali Saham Treasuri menggunakan Metode Biaya (Cost Method).`,
-    `Memahami larangan pengakuan Keuntungan atau Kerugian Laba Rugi dari transaksi saham sendiri (Saham Treasuri).`,
-    `Menghitung dan menjurnal Dividen Tunai, Dividen Properti (penyesuaian nilai wajar), dan Dividen Likuidasi.`,
-    `Membedakan Dividen Saham Kecil (< 20% nilai wajar) vs Dividen Saham Besar (> 20% nilai nominal) vs Pemecahan Saham (Stock Split).`
+  "tm": 11,
+  "title": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+  "ref": "Kieso IFRS 5e Ch. 14 | RPP AKM II, halaman PDF 3",
+  "intro": "TM11 membahas equity (ekuitas), penerbitan saham, treasury shares (saham treasuri), dan dividend policy (kebijakan dividen). Jurnal memakai aturan IFRS yang dijelaskan buku, termasuk dividen saham pada nilai nominal.",
+  "objectives": [
+    "Membedakan contributed capital (modal disetor) dan retained earnings (saldo laba).",
+    "Mencatat transaksi treasuri dengan cost method (metode biaya).",
+    "Menjelaskan dividen kas, properti, likuidasi, dan saham.",
+    "Memisahkan hibah pemerintah dari transaksi pemilik."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      title: `Struktur Komponen Ekuitas Pemegang Saham`,
-      svg: SVG_EQUITY_STRUCTURE,
-      caption: `Gambar 11.1: Pemisahan modal disetor, laba ditahan, akumulasi OCI, dan saham treasuri.`
+      "kind": "h2",
+      "text": "1. Orientation / Quick Map"
     },
     {
-      kind: 'h2',
-      text: `Alur Belajar Cepat TM 11`
-    },
-    {
-      kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
-      rows: [
-        ['1', 'Penerbitan Saham', 'Berapa nilai nominal vs kelebihan kas yang diterima (Agio Saham/Share Premium)?', 'Menjurnal penerbitan saham biasa dan saham preferen.'],
-        ['2', 'Pembelian Saham Treasuri', 'Bagaimana mencatat penarikan kembali saham sendiri menggunakan Cost Method?', 'Mendebit akun Saham Treasuri sebagai akun kontra-ekuitas.'],
-        ['3', 'Penjualan Saham Treasuri', 'Apakah saham treasuri dijual di atas atau di bawah harga beli perolehannya?', 'Mencatat Agio Saham Treasuri atau mengurangkan Laba Ditahan jika agio habis.'],
-        ['4', 'Deklarasi Dividen', 'Kapan kewajiban liabilitas dividen timbul (Declaration Date vs Payment Date)?', 'Menjurnal utang dividen pada tanggal pengumuman resmi direksi.'],
-        ['5', 'Dividen Saham vs Stock Split', 'Apakah penerbitan saham bonus mengubah total nilai ekuitas perusahaan?', `Reklasifikasi internal laba ditahan ke modal saham vs perubahan nominal per lembar.`]
+      "kind": "figure",
+      "title": "Peta konsep TM11",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 340\" role=\"img\" aria-label=\"Peta analisis TM11\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\"><rect x=\"8\" y=\"8\" width=\"664\" height=\"324\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\"/><text x=\"28\" y=\"34\" font-size=\"16\" fill=\"#38bdf8\" font-weight=\"700\">Peta analisis TM11</text><rect x=\"24\" y=\"48\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"70\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">1. Modal</text><text x=\"40\" y=\"90\" font-size=\"12\" fill=\"#e2e8f0\">Pisahkan nominal saham, agio, saldo laba, dan OCI.</text><rect x=\"24\" y=\"116\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"138\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">2. Treasuri</text><text x=\"40\" y=\"158\" font-size=\"12\" fill=\"#e2e8f0\">Gunakan biaya perolehan dan urutan saldo agio.</text><rect x=\"24\" y=\"184\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"206\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">3. Dividen</text><text x=\"40\" y=\"226\" font-size=\"12\" fill=\"#e2e8f0\">Tentukan jenis dan tanggal pengakuan.</text><rect x=\"24\" y=\"252\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"274\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">4. Penyajian</text><text x=\"40\" y=\"294\" font-size=\"12\" fill=\"#e2e8f0\">Rekonsiliasi perubahan setiap komponen ekuitas.</text></svg>",
+      "overview": {
+        "heading": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+        "cards": [
+          {
+            "title": "Modal",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Pisahkan nominal saham, agio, saldo laba, dan OCI."
+            ],
+            "takeaway": "Pisahkan nominal saham, agio, saldo laba, dan OCI."
+          },
+          {
+            "title": "Treasuri",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Gunakan biaya perolehan dan urutan saldo agio."
+            ],
+            "takeaway": "Gunakan biaya perolehan dan urutan saldo agio."
+          },
+          {
+            "title": "Dividen",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Tentukan jenis dan tanggal pengakuan."
+            ],
+            "takeaway": "Tentukan jenis dan tanggal pengakuan."
+          },
+          {
+            "title": "Penyajian",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Rekonsiliasi perubahan setiap komponen ekuitas."
+            ],
+            "takeaway": "Rekonsiliasi perubahan setiap komponen ekuitas."
+          }
+        ],
+        "footer": "RPP AKM II, halaman PDF 3; Kieso IFRS 5e Ch. 14."
+      },
+      "transcript": [
+        "Modal: Pisahkan nominal saham, agio, saldo laba, dan OCI.",
+        "Treasuri: Gunakan biaya perolehan dan urutan saldo agio.",
+        "Dividen: Tentukan jenis dan tanggal pengakuan.",
+        "Penyajian: Rekonsiliasi perubahan setiap komponen ekuitas."
       ],
-      caption: `Tabel 11.0: Roadmap belajar ekuitas, saham treasuri, dan dividen.`
+      "caption": "Peta pembelajaran mengikuti RPP AKM II, halaman PDF 3, dengan bab disesuaikan ke Kieso IFRS 5e Ch. 14."
     },
     {
-      kind: 'h2',
-      text: `Formula Sheet Fondasi TM 11`
+      "kind": "h2",
+      "text": "2. Komponen ekuitas dan penerbitan saham"
     },
     {
-      kind: 'formula',
-      text: `\\text{Total Ekuitas} = \\text{Modal Saham} + \\text{Agio Saham} + \\text{Laba Ditahan} + \\text{Akumulasi OCI} - \\text{Saham Treasuri}`,
-      note: `Saham Treasuri adalah akun kontra-ekuitas yang disajikan mengurangi total ekuitas di neraca.`
+      "kind": "p",
+      "text": "Equity merupakan hak residual atas aset setelah liabilitas. Contributed capital berasal dari setoran pemegang saham, sedangkan earned capital tercermin dalam retained earnings. Share premium (agio saham) adalah setoran di atas nominal. Nilai nominal tidak menunjukkan nilai wajar saham. (Kieso IFRS 5e, halaman PDF 1179-1181.)"
     },
     {
-      kind: 'formula',
-      text: `\\text{Dividen Saham Kecil (< 20\\%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Wajar Pasar Saham}`,
-      note: `Laba ditahan didebit sebesar NILAI WAJAR pasar saham pada tanggal pengumuman.`
+      "kind": "table",
+      "title": "Penerbitan dan komponen ekuitas",
+      "headers": [
+        "Komponen",
+        "Makna",
+        "Pencatatan"
+      ],
+      "rows": [
+        [
+          "Share capital",
+          "Modal saham",
+          "Nilai nominal saham yang diterbitkan"
+        ],
+        [
+          "Share premium",
+          "Agio saham",
+          "Setoran di atas nominal"
+        ],
+        [
+          "Retained earnings",
+          "Saldo laba",
+          "Laba yang ditahan dalam perusahaan"
+        ],
+        [
+          "AOCI",
+          "Akumulasi OCI",
+          "Akumulasi penghasilan komprehensif lain"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1179-1181.",
+      "stackOnMobile": true
     },
     {
-      kind: 'formula',
-      text: `\\text{Dividen Saham Besar (> 20\\%)} = \\text{Jumlah Lembar Saham Baru} \\times \\text{Nilai Nominal (Par Value)}`,
-      note: `Laba ditahan didebit hanya sebesar NILAI NOMINAL saham yang diterbitkan.`
+      "kind": "p",
+      "text": "Untuk penerbitan gabungan beberapa kelas saham, buku membedakan proportional method (alokasi nilai wajar relatif ketika keduanya diketahui) dan incremental method (alokasi dahulu ke instrumen yang nilai wajarnya diketahui). Aturan ini dibahas untuk lump-sum share issuance; obligasi dengan waran pada TM12 menggunakan metode residual. (Kieso IFRS 5e, halaman PDF 1182-1184.)"
     },
     {
-      kind: 'example',
-      title: `Contoh Mini Numerik: Transaksi Saham Treasuri PT Unilever Indonesia Tbk`,
-      blocks: [
+      "kind": "h2",
+      "text": "3. Saham preferen dan saham treasuri"
+    },
+    {
+      "kind": "p",
+      "text": "Cumulative preference shares menuntut penyelesaian dividen tertunggak sebelum dividen saham biasa. Dividends in arrears (dividen tertunggak) diungkapkan dan belum menjadi liabilitas sebelum deklarasi. Participating preference shares dapat memperoleh bagian tambahan menurut kontrak. Saham preferen dengan kewajiban penebusan memerlukan perhatian pada klasifikasi liabilitas. (Kieso IFRS 5e, halaman PDF 1186-1188.)"
+    },
+    {
+      "kind": "p",
+      "text": "Treasury shares adalah saham sendiri yang dibeli kembali. Akun ini mengurangi ekuitas dan jumlah saham beredar. Pada cost method, biaya perolehan menjadi nilai debit ketika dibeli dan kredit ketika diterbitkan kembali. Selisih transaksi treasuri dicatat dalam ekuitas. (Kieso IFRS 5e, halaman PDF 1190-1193.)"
+    },
+    {
+      "kind": "h2",
+      "text": "4. Kasus Pacific: penerbitan kembali treasuri"
+    },
+    {
+      "kind": "example",
+      "title": "Pacific: transaksi treasuri dengan cost method",
+      "blocks": [
         {
-          kind: 'p',
-          text: `PT Unilever membeli kembali 10.000 lembar saham biasa (nominal Rp 1.000) seharga Rp 4.500/lembar secara tunai (Cost Method). Beberapa bulan kemudian:
-1. Menjual 4.000 lembar saham treasuri seharga Rp 5.000/lembar.
-2. Menjual 6.000 lembar sisa saham treasuri seharga Rp 4.000/lembar.`
+          "kind": "p",
+          "text": "Pacific membeli 10.000 saham sendiri pada USD11 per saham. Selanjutnya Pacific menjual 1.000 saham pada USD15, lalu 1.000 saham pada USD8, dan 1.000 saham lagi pada USD8. Ikuti urutan transaksi karena saldo agio treasuri berubah. (Kieso IFRS 5e, halaman PDF 1191-1193.)"
         },
         {
-          kind: 'formula',
-          text: `Beli Treasuri = 10.000 × Rp 4.500 = Rp 45.000.000
-
-Penjualan 1 (Untung):
-• Kas Diterima (4.000 × Rp 5.000) = Rp 20.000.000
-• Kos Treasuri (4.000 × Rp 4.500) = Rp 18.000.000
-• Agio Saham Treasuri = Rp 2.000.000
-
-Penjualan 2 (Rugi):
-• Kas Diterima (6.000 × Rp 4.000) = Rp 24.000.000
-• Kos Treasuri (6.000 × Rp 4.500) = Rp 27.000.000
-• Defisit Penjualan = Rp 3.000.000 (Tutup ke Agio Treasuri Rp 2 jt, sisanya Rp 1 jt ke Laba Ditahan!)`
-        },
-        {
-          kind: 'callout',
-          variant: 'key',
-          title: `Jurnal Akuntansi PT Unilever`,
-          text: `1. Pembelian Treasuri:
-Debit: Saham Treasuri Rp 45.000.000 | Kredit: Kas Rp 45.000.000
-
-2. Penjualan 1:
-Debit: Kas Rp 20.000.000 | Kredit: Saham Treasuri Rp 18.000.000 | Kredit: Agio Saham Treasuri Rp 2.000.000
-
-3. Penjualan 2:
-Debit: Kas Rp 24.000.000
-Debit: Agio Saham Treasuri Rp 2.000.000
-Debit: Laba Ditahan Rp 1.000.000
-Kredit: Saham Treasuri Rp 27.000.000`
-        }
-      ]
-    },
-    {
-      kind: 'solution-reveal',
-      title: `Latihan Aktif: Dividen Properti (Penyesuaian Nilai Wajar)`,
-      prompt: `PT Sentosa mengumumkan dividen properti berupa investasi saham PT X (Nilai buku Rp 100 jt, Nilai wajar pada tanggal pengumuman Rp 140 jt). Buat jurnal pada tanggal pengumuman dan tanggal pembagian dividen!`,
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            `**Tahap 1: Sesuaikan Nilai Investasi ke Nilai Wajar (Tanggal Pengumuman)**:
-Debit: Investasi Saham PT X Rp 40.000.000
-Kredit: Keuntungan Kenaikan Nilai Wajar Investasi (Laba Rugi) Rp 40.000.000`,
-            `**Tahap 2: Catat Kewajiban Dividen Properti (Tanggal Pengumuman)**:
-Debit: Laba Ditahan Rp 140.000.000
-Kredit: Utang Dividen Properti Rp 140.000.000`,
-            `**Tahap 3: Pembagian Dividen Properti (Tanggal Pembayaran)**:
-Debit: Utang Dividen Properti Rp 140.000.000
-Kredit: Investasi Saham PT X Rp 140.000.000`
+          "kind": "journal",
+          "title": "Penjualan pertama di atas biaya",
+          "caption": "Kieso IFRS 5e, halaman PDF 1192.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "USD15.000"
+            },
+            {
+              "account": "Treasury Shares",
+              "credit": "USD11.000",
+              "isCredit": true
+            },
+            {
+              "account": "Share Premium - Treasury",
+              "credit": "USD4.000",
+              "isCredit": true
+            }
           ]
         },
         {
-          kind: 'callout',
-          variant: 'warning',
-          title: `Jebakan UAS Dividen Properti`,
-          text: `Sebelum membagikan dividen properti, aset non-kas yang akan dibagikan **WAJIB DIREVALUASI KE NILAI WAJAR TERKININYA** pada tanggal pengumuman, dan keuntungan/kerugian revaluasi diakui di Laba Rugi periode berjalan!`
+          "kind": "journal",
+          "title": "Penjualan kedua di bawah biaya",
+          "caption": "Kieso IFRS 5e, halaman PDF 1192.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "USD8.000"
+            },
+            {
+              "account": "Share Premium - Treasury",
+              "debit": "USD3.000"
+            },
+            {
+              "account": "Treasury Shares",
+              "credit": "USD11.000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "title": "Penjualan ketiga setelah saldo agio berkurang",
+          "caption": "Kieso IFRS 5e, halaman PDF 1193.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "USD8.000"
+            },
+            {
+              "account": "Share Premium - Treasury",
+              "debit": "USD1.000"
+            },
+            {
+              "account": "Retained Earnings",
+              "debit": "USD2.000"
+            },
+            {
+              "account": "Treasury Shares",
+              "credit": "USD11.000",
+              "isCredit": true
+            }
+          ]
         }
       ]
     },
     {
-      kind: 'h2',
-      text: `Peta Submateri & Target Penguasaan TM 11`
+      "kind": "h2",
+      "text": "5. Dividen kas, properti, dan saham"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Penerbitan Saham & Agio', 'Penerbitan saham biasa/preferen secara tunai, lump-sum, dan non-kas.', 'Menjurnal akun modal saham dan agio saham terkait.'],
-        ['2', 'Akuntansi Saham Treasuri', 'Metode Biaya (Cost Method) dan eliminasi saldo agio treasuri.', 'Menjurnal pembelian dan penjualan kembali saham treasuri.'],
-        ['3', 'Dividen Tunai & Properti', 'Pencatatan 3 tanggal dividen dan penyesuaian nilai wajar dividen properti.', 'Menjurnal pengumuman dan pembagian dividen non-kas.'],
-        ['4', 'Dividen Saham vs Stock Split', 'Diferensiasi dividen saham kecil (FV) vs besar (Par) vs pemecahan saham.', 'Mencatat kapitalisasi laba ditahan ke modal saham.'],
-        ['5', 'Penyajian Laporan Perubahan Ekuitas', 'Penyusunan format resmi Statement of Changes in Equity sesuai PSAK 1.', `Menyajikan rekonsiliasi saldo awal ke saldo akhir ekuitas.`]
-      ],
-      caption: `Tabel 11.1: Matriks kompetensi komprehensif materi TM 11 AKM II.`
+      "kind": "p",
+      "text": "Cash dividend (dividen kas) menjadi liabilitas pada declaration date (tanggal deklarasi). Record date (tanggal pencatatan pemegang saham) tidak memerlukan jurnal. Saham treasuri tidak menerima dividen kas. Property dividend (dividen properti) memakai nilai wajar aset pada tanggal deklarasi dan mengakui penyesuaian aset terlebih dahulu. (Kieso IFRS 5e, halaman PDF 1196-1197, dividen properti pada halaman PDF 1200-1201.)"
     },
-    { kind: 'h2', text: `1. Transaksi Saham Treasuri & Kebijakan Dividen` },
     {
-      kind: 'p',
-      text: `==Saham treasuri adalah saham entitas yang telah diterbitkan dan dibeli kembali oleh entitas tetapi tidak dibatalkan. Transaksi pembelian dan penjualan saham treasuri tidak pernah menghasilkan laba atau rugi di laporan laba rugi.==`
-    },
-    CASE_TREASURY_DIVIDENDS,
-    { kind: 'h2', text: "2. Pembagian Dividen Saham Preferen Kumulatif & Berpartisipasi Penuh" },
-    {
-      kind: 'p',
-      text: "==Saham preferen kumulatif berhak menerima seluruh tunggakan dividen tahun-tahun sebelumnya (dividends in arrears) sebelum dividen saham biasa dibagikan. Jika bersifat berpartisipasi penuh, sisa dana dividen setelah dividen persentase dasar dibagikan secara proporsional berdasarkan rasio nilai nominal saham.=="
-    },
-    CASE_PREFERRED_STOCK_DIVIDEND_ALLOCATION,
-    { kind: 'h2', text: `2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)` },
-    {
-      kind: 'ul',
-      items: [
-        `**Saham Treasuri Cost Method**: Didebit sebesar kas yang dibayarkan, disajikan mengurangi total ekuitas.`,
-        `**Defisit Jual Treasuri**: Menghabiskan saldo Agio Saham Treasuri terlebih dahulu, sisanya mengurangi Laba Ditahan.`,
-        `**Dividen Saham Kecil (<20%)**: Laba ditahan didebit sebesar Nilai Wajar.`,
-        `**Dividen Saham Besar (>20%)**: Laba ditahan didebit sebesar Nilai Nominal.`,
-        `**Stock Split**: TIDAK ADA JURNAL, hanya memo perubahan jumlah lembar dan nilai nominal per lembar.`
+      "kind": "example",
+      "title": "Vine plc: dividen saham 10%",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Vine memiliki 100.000 saham nominal £1, retained earnings £50.000, dan menyatakan dividen saham 10%. Nilai pasar £8 per saham tidak dipakai sebagai dasar transfer. Dividen saham sebesar £10.000 direklasifikasi dari saldo laba ke ekuitas modal saham. (Kieso IFRS 5e, halaman PDF 1202-1204, Illustration 14.13.)"
+        },
+        {
+          "kind": "journal",
+          "title": "Deklarasi dividen saham Vine",
+          "caption": "Kieso IFRS 5e, halaman PDF 1203.",
+          "lines": [
+            {
+              "account": "Retained Earnings",
+              "debit": "£10.000"
+            },
+            {
+              "account": "Ordinary Share Dividend Distributable",
+              "credit": "£10.000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "title": "Distribusi dividen saham Vine",
+          "caption": "Kieso IFRS 5e, halaman PDF 1203.",
+          "lines": [
+            {
+              "account": "Ordinary Share Dividend Distributable",
+              "debit": "£10.000"
+            },
+            {
+              "account": "Share Capital - Ordinary",
+              "credit": "£10.000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Dasar pengukuran dividen saham",
+          "text": "Buku IFRS memakai par value (nilai nominal) untuk dividen saham. Rumusan dividen saham kecil pada nilai pasar berasal dari pembahasan lain dan tidak dipakai untuk kasus Vine. (Kieso IFRS 5e, halaman PDF 1203.)",
+          "variant": "warning"
+        }
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Liquidating dividend (dividen likuidasi) mengembalikan modal. Share split (pemecahan saham) mengubah jumlah saham dan nominal per saham, tanpa mengubah total ekuitas. (Kieso IFRS 5e, halaman PDF 1201-1205.)"
+    },
+    {
+      "kind": "h2",
+      "text": "6. Hibah pemerintah dan analisis ekuitas"
+    },
+    {
+      "kind": "p",
+      "text": "Government grant (hibah pemerintah) terkait pemenuhan kondisi kegiatan usaha. Dalam pembahasan Kieso, income approach (pendekatan pendapatan) mengakui hibah secara sistematis bersama biaya terkait. Untuk aset, hibah dapat disajikan sebagai deferred grant revenue (pendapatan hibah ditangguhkan) atau pengurang nilai tercatat aset. Pemerintah bukan pemegang saham pada transaksi hibah ini. (Kieso IFRS 5e, halaman PDF 774-775, Ch. 9, topik tambahan yang dicantumkan RPP.)"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Return on ordinary equity}=\\frac{\\text{Net income}-\\text{Preference dividends}}{\\text{Average ordinary equity}}",
+      "note": "Ukuran imbal hasil untuk pemegang saham biasa. Kieso IFRS 5e, halaman PDF 1211."
+    },
+    {
+      "kind": "p",
+      "text": "Statement of changes in equity (laporan perubahan ekuitas) memisahkan kontribusi pemilik, distribusi, laba, OCI, dan saldo setiap komponen ekuitas. Analisis dividen perlu melihat laba dan ketersediaan kas secara terpisah. (Kieso IFRS 5e, halaman PDF 1195-1196, penyajian pada halaman PDF 1209-1210.)"
+    },
+    {
+      "kind": "h2",
+      "text": "7. Latihan dan uji pemahaman"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan Tsen: dividen properti",
+      "prompt": "Tsen mendeklarasikan dividen berupa investasi bernilai buku HKD1.250.000 dan nilai wajar HKD2.000.000. Tentukan penyesuaian aset serta liabilitas dividen. Rujukan: Kieso IFRS 5e, halaman PDF 1201, Illustration 14.11.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\displaystyle \\text{Gain}=2000000-1250000=750000\\qquad\\text{Dividend payable}=2000000",
+          "note": "Kieso IFRS 5e, halaman PDF 1201."
+        },
+        {
+          "kind": "journal",
+          "title": "Penyesuaian investasi ke nilai wajar",
+          "caption": "Kieso IFRS 5e, halaman PDF 1201.",
+          "lines": [
+            {
+              "account": "Equity Investments",
+              "debit": "HKD750.000"
+            },
+            {
+              "account": "Unrealized Holding Gain - Income",
+              "credit": "HKD750.000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "title": "Deklarasi dividen properti",
+          "caption": "Kieso IFRS 5e, halaman PDF 1201.",
+          "lines": [
+            {
+              "account": "Retained Earnings",
+              "debit": "HKD2.000.000"
+            },
+            {
+              "account": "Property Dividends Payable",
+              "credit": "HKD2.000.000",
+              "isCredit": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "8. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "title": "Alur penyelesaian TM11",
+      "headers": [
+        "Langkah",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Modal",
+          "Pisahkan nominal saham, agio, saldo laba, dan OCI."
+        ],
+        [
+          "Treasuri",
+          "Gunakan biaya perolehan dan urutan saldo agio."
+        ],
+        [
+          "Dividen",
+          "Tentukan jenis dan tanggal pengakuan."
+        ],
+        [
+          "Penyajian",
+          "Rekonsiliasi perubahan setiap komponen ekuitas."
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1179-1181.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "callout",
+      "title": "Batas sumber dan penomoran",
+      "text": "RPP menggunakan nomor bab dan beberapa rujukan lokal dari susunan lama. Materi ini mengikuti topik pertemuan di RPP dan isi Kieso IFRS edisi kelima. Angka contoh berasal dari buku; hasil hitungan tambahan diberi label Interpretasi. Pembandingan SAK ETAP memerlukan bacaan dosen tersendiri. (Kieso IFRS 5e, halaman PDF 1174.)",
+      "variant": "info"
     }
   ]
 };

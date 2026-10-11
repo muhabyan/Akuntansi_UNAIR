@@ -1,178 +1,407 @@
+// AKK202 TM14: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
 import type { Reading } from '../../../types';
-import {
-  CASE_EQUITY_METHOD_INVESTMENT,
-  CASE_DEBT_INVESTMENTS_FVOCI_RECYCLING } from '../akm2PracticeCases';
-
-const SVG_INVESTMENTS = `
-<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KLASIFIKASI ASET KEUANGAN INVESTASI (PSAK 71 &amp; PSAK 15)</text>
-
-  <rect class="svg-card" x="30" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-blue" x="102" y="78" fill="#38bdf8" font-size="10.5" font-weight="700" text-anchor="middle">AMORTIZED COST</text>
-  <text class="svg-muted" x="102" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">Efek Utang (Hold to Collect)</text>
-  <line class="svg-divider" x1="40" y1="108" x2="165" y2="108" stroke="#334155"/>
-  <text class="svg-text" x="102" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Suku Bunga Efektif</text>
-  <text class="svg-text" x="102" y="146" fill="#cbd5e1" font-size="9" text-anchor="middle">• Fair Value diabaikan</text>
-  <text class="text-accent-green" x="102" y="164" fill="#34d399" font-size="9" font-weight="600" text-anchor="middle">Pendapatan Bunga</text>
-  <text class="text-accent-green" x="102" y="182" fill="#34d399" font-size="9" font-weight="600" text-anchor="middle">di Laba Rugi</text>
-
-  <rect class="svg-card" x="190" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1.5"/>
-  <text class="text-accent-green" x="262" y="78" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">FVOCI</text>
-  <text class="svg-muted" x="262" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">Utang (Collect &amp; Sell) / Ekuitas</text>
-  <line class="svg-divider" x1="200" y1="108" x2="325" y2="108" stroke="#334155"/>
-  <text class="svg-text" x="262" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Dinilai di Fair Value</text>
-  <text class="text-accent-purple" x="262" y="146" fill="#a855f7" font-size="9" text-anchor="middle">• Unrealized Gain/Loss</text>
-  <text class="text-accent-purple" x="262" y="164" fill="#a855f7" font-size="9" font-weight="700" text-anchor="middle">MASUK OCI</text>
-  <text class="svg-text" x="262" y="182" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Ekuitas Komprehensif)</text>
-
-  <rect class="svg-card" x="350" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text class="text-accent-red" x="422" y="78" fill="#f43f5e" font-size="10.5" font-weight="700" text-anchor="middle">FVPL</text>
-  <text class="svg-muted" x="422" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">Trading / Spekulasi Cepat</text>
-  <line class="svg-divider" x1="360" y1="108" x2="485" y2="108" stroke="#334155"/>
-  <text class="svg-text" x="422" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Dinilai di Fair Value</text>
-  <text class="text-accent-red" x="422" y="146" fill="#f87171" font-size="9" text-anchor="middle">• Unrealized Gain/Loss</text>
-  <text class="text-accent-red" x="422" y="164" fill="#f87171" font-size="9" font-weight="700" text-anchor="middle">MASUK LABA RUGI</text>
-  <text class="svg-text" x="422" y="182" fill="#cbd5e1" font-size="8.5" text-anchor="middle">(Profit or Loss Berjalan)</text>
-
-  <rect class="svg-card" x="510" y="55" width="145" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text class="text-accent-amber" x="582" y="78" fill="#f59e0b" font-size="10.5" font-weight="700" text-anchor="middle">EQUITY METHOD</text>
-  <text class="svg-muted" x="582" y="96" fill="#94a3b8" font-size="9" text-anchor="middle">Kepemilikan 20% - 50%</text>
-  <line class="svg-divider" x1="520" y1="108" x2="645" y2="108" stroke="#334155"/>
-  <text class="svg-text" x="582" y="128" fill="#cbd5e1" font-size="9" text-anchor="middle">• Pengaruh Signifikan</text>
-  <text class="text-accent-blue" x="582" y="146" fill="#38bdf8" font-size="9" text-anchor="middle">• Akui % Laba Asosiasi</text>
-  <text class="text-accent-red" x="582" y="164" fill="#f87171" font-size="9" text-anchor="middle">• Dividen Mengurangi Kos</text>
-  <text class="svg-muted" x="582" y="182" fill="#64748b" font-size="8.5" text-anchor="middle">(PSAK 15 Entitas Asosiasi)</text>
-</svg>`;
 
 export const TM14_READING: Reading = {
-  tm: 14,
-  title: 'Akuntansi Investasi: Efek Utang, Efek Ekuitas, dan Metode Ekuitas (Equity Method)',
-  ref: 'Kieso IFRS 5e Ch. 17 | PSAK 71, PSAK 15',
-  intro: 'TM 14 membedah tuntas klasifikasi aset keuangan dan investasi sesuai PSAK 71 dan PSAK 15: evaluasi Model Bisnis & Karakteristik Arus Kas Kontraktual (SPPI Test), akuntansi Biaya Diamortisasi (Amortized Cost), Nilai Wajar melalui OCI (FVOCI dengan dan tanpa recycling), Nilai Wajar melalui Laba Rugi (FVPL), serta Metode Ekuitas (Equity Method) untuk entitas asosiasi (20%-50% kepemilikan).',
-  objectives: [
-    'Menganalisis 2 uji klasifikasi instrumen keuangan PSAK 71: Business Model Test dan SPPI Test (Solely Payments of Principal and Interest).',
-    'Menghitung dan menjurnal investasi Efek Utang pada Biaya Diamortisasi, FVOCI, dan FVPL.',
-    'Membedakan perlakuan keuntungan/kerugian nilai wajar yang belum terealisasi (Unrealized Holding Gain/Loss) pada pos OCI vs Laba Rugi.',
-    'Menerapkan Metode Ekuitas (Equity Method - PSAK 15): pengakuan bagian laba/rugi asosiasi, perlakuan dividen kas, dan amortisasi kelebihan nilai wajar atas aset neto.',
-    'Menjurnal penurunan nilai investasi (ECL Model - Expected Credit Loss) sesuai PSAK 71.'
+  "tm": 14,
+  "title": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+  "ref": "Kieso IFRS 5e Ch. 16 | RPP AKM II, halaman PDF 3",
+  "intro": "TM14 membahas debt investments (investasi efek utang), pemilihan kategori pengukuran, pendapatan bunga efektif, perubahan nilai wajar, dan expected credit loss (kerugian kredit ekspektasian). TM15 melanjutkan investasi ekuitas dan metode ekuitas.",
+  "objectives": [
+    "Menghubungkan business model (model bisnis) dan contractual cash flows (arus kas kontraktual).",
+    "Mencatat amortized cost, FVOCI, dan FVPL untuk efek utang.",
+    "Membedakan perubahan nilai wajar dari kerugian kredit.",
+    "Menjelaskan recycling (reklasifikasi OCI ke laba rugi), perubahan kategori, dan hierarki nilai wajar."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      title: 'Klasifikasi Aset Keuangan Investasi Sesuai PSAK 71 & PSAK 15',
-      svg: SVG_INVESTMENTS,
-      caption: 'Gambar 14.1: Pemisahan 4 kategori perlakuan akuntansi investasi efek utang dan ekuitas.'
+      "kind": "h2",
+      "text": "1. Orientation / Quick Map"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat TM 14'
-    },
-    {
-      kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
-      rows: [
-        ['1', 'Uji Model Bisnis & SPPI', 'Apakah investasi utang ditujukan semata-mata untuk mengumpulkan arus kas pokok & bunga?', 'Mengklasifikasikan ke Amortized Cost vs FVOCI vs FVPL.'],
-        ['2', 'Pencatatan Penyesuaian Nilai Wajar', 'Kemana selisih penyesuaian nilai wajar akhir tahun dicatat (Laba Rugi vs OCI)?', 'Menjurnal Akun Penyesuaian Nilai Wajar dan Akumulasi OCI.'],
-        ['3', 'Metode Ekuitas (20%-50%)', 'Bagaimana mencatat pengumuman laba bersih dan dividen oleh entitas asosiasi?', 'Mendebit Investasi saat ada laba, dan mengkredit Investasi saat dividen diterima.'],
-        ['4', 'Amortisasi Selisih Nilai Wajar', 'Berapa kelebihan harga beli atas aset tetap asosiasi yang harus diamortisasi?', 'Mengurangi pendapatan investasi tahunan atas beban amortisasi diferensial.'],
-        ['5', 'Pelepasan Investasi', 'Bagaimana menjurnal penjualan saham/obligasi dan mendaur ulang OCI (jika efek utang)?', 'Menghitung laba rugi terealisasi pelepasan investasi.']
+      "kind": "figure",
+      "title": "Peta konsep TM14",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 340\" role=\"img\" aria-label=\"Peta analisis TM14\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\"><rect x=\"8\" y=\"8\" width=\"664\" height=\"324\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\"/><text x=\"28\" y=\"34\" font-size=\"16\" fill=\"#38bdf8\" font-weight=\"700\">Peta analisis TM14</text><rect x=\"24\" y=\"48\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"70\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">1. Klasifikasi</text><text x=\"40\" y=\"90\" font-size=\"12\" fill=\"#e2e8f0\">Periksa tujuan pengelolaan dan arus kas kontraktual.</text><rect x=\"24\" y=\"116\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"138\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">2. Bunga</text><text x=\"40\" y=\"158\" font-size=\"12\" fill=\"#e2e8f0\">Hitung dengan nilai tercatat dan bunga efektif.</text><rect x=\"24\" y=\"184\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"206\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">3. Penilaian</text><text x=\"40\" y=\"226\" font-size=\"12\" fill=\"#e2e8f0\">Pisahkan perubahan pasar dan kerugian kredit.</text><rect x=\"24\" y=\"252\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"274\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">4. Pelepasan</text><text x=\"40\" y=\"294\" font-size=\"12\" fill=\"#e2e8f0\">Periksa recycling serta pengungkapan nilai wajar.</text></svg>",
+      "overview": {
+        "heading": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+        "cards": [
+          {
+            "title": "Klasifikasi",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Periksa tujuan pengelolaan dan arus kas kontraktual."
+            ],
+            "takeaway": "Periksa tujuan pengelolaan dan arus kas kontraktual."
+          },
+          {
+            "title": "Bunga",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Hitung dengan nilai tercatat dan bunga efektif."
+            ],
+            "takeaway": "Hitung dengan nilai tercatat dan bunga efektif."
+          },
+          {
+            "title": "Penilaian",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Pisahkan perubahan pasar dan kerugian kredit."
+            ],
+            "takeaway": "Pisahkan perubahan pasar dan kerugian kredit."
+          },
+          {
+            "title": "Pelepasan",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Periksa recycling serta pengungkapan nilai wajar."
+            ],
+            "takeaway": "Periksa recycling serta pengungkapan nilai wajar."
+          }
+        ],
+        "footer": "RPP AKM II, halaman PDF 3; Kieso IFRS 5e Ch. 16."
+      },
+      "transcript": [
+        "Klasifikasi: Periksa tujuan pengelolaan dan arus kas kontraktual.",
+        "Bunga: Hitung dengan nilai tercatat dan bunga efektif.",
+        "Penilaian: Pisahkan perubahan pasar dan kerugian kredit.",
+        "Pelepasan: Periksa recycling serta pengungkapan nilai wajar."
       ],
-      caption: 'Tabel 14.0: Roadmap belajar investasi efek utang dan ekuitas.'
+      "caption": "Peta pembelajaran mengikuti RPP AKM II, halaman PDF 3, dengan bab disesuaikan ke Kieso IFRS 5e Ch. 16."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi TM 14'
+      "kind": "h2",
+      "text": "2. Klasifikasi efek utang"
     },
     {
-      kind: 'formula',
-      text: '\\text{Pendapatan Bunga (Amortized Cost)} = \\text{Carrying Amount Awal Periode} \\times i_{\\text{efektif}}',
-      note: 'Investasi obligasi pada Amortized Cost tidak disesuaikan terhadap fluktuasi harga pasar wajar akhir tahun.'
+      "kind": "p",
+      "text": "Klasifikasi memakai tujuan pengelolaan dan karakteristik arus kas. Held-for-collection (HFC) bertujuan menagih arus kas kontraktual pokok dan bunga. Held-for-collection and selling (HFCS) bertujuan menagih sekaligus menjual. Trading investments dikelola untuk nilai wajar dan perdagangan. (Kieso IFRS 5e, halaman PDF 1370-1372.)"
     },
     {
-      kind: 'formula',
-      text: '\\text{Bagian Laba Bersih (Equity Method)} = (\\% \\text{ Kepemilikan} \\times \\text{Laba Bersih Asosiasi}) - \\text{Amortisasi Kelebihan Nilai Wajar Aset}',
-      note: 'Dividen kas dari asosiasi dicatat: Debit Kas | Kredit Investasi pada Entitas Asosiasi (mengurangi nilai investasi, BUKAN pendapatan dividen!).'
+      "kind": "table",
+      "title": "Kategori investasi efek utang",
+      "headers": [
+        "Model dan arus kas",
+        "Pengukuran",
+        "Perubahan nilai wajar"
+      ],
+      "rows": [
+        [
+          "Menagih pokok dan bunga",
+          "Amortized cost",
+          "Tidak dicatat sebagai penyesuaian pasar rutin"
+        ],
+        [
+          "Menagih pokok dan bunga serta menjual",
+          "FVOCI: nilai wajar melalui OCI",
+          "OCI; recycling ketika dijual"
+        ],
+        [
+          "Trading atau tidak memenuhi kategori lain",
+          "FVPL: nilai wajar melalui laba rugi",
+          "Laba rugi"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1371-1372, Illustrations 16.1-16.2.",
+      "stackOnMobile": true
     },
     {
-      kind: 'example',
-      title: 'Contoh Mini Numerik: Penerapan Metode Ekuitas PT Indika Energy Tbk',
-      blocks: [
+      "kind": "callout",
+      "title": "Jebakan intensi jatuh tempo",
+      "text": "Keinginan memegang sampai jatuh tempo saja belum cukup. Periksa business model dan arus kas yang semata-mata berupa pembayaran pokok dan bunga (SPPI). (Kieso IFRS 5e, halaman PDF 1370-1372.)",
+      "variant": "warning"
+    },
+    {
+      "kind": "h2",
+      "text": "3. Bunga efektif dan amortized cost"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Interest revenue}=\\text{Opening carrying amount}\\times i\\qquad B_t=B_{t-1}+\\text{Interest revenue}-\\text{Cash coupon}",
+      "note": "Pada investor, diskonto menambah dan premi mengurangi nilai tercatat investasi. Kieso IFRS 5e, halaman PDF 1373-1374."
+    },
+    {
+      "kind": "example",
+      "title": "Robinson: investor dalam obligasi Evermaster",
+      "blocks": [
         {
-          kind: 'p',
-          text: 'Pada 1 Januari 2026, PT Indika Energy membeli 30% saham biasa PT Petro Energi seharga Rp 600.000.000 tunai (memberikan pengaruh signifikan). Pada tanggal akuisisi, nilai buku aset neto PT Petro adalah Rp 1.600.000.000. Selisih harga beli disebabkan oleh peralatan pabrik yang nilai wajarnya lebih tinggi Rp 400 jt dari nilai buku (sisa umur 10 tahun). Sepanjang 2026:\n• PT Petro melaporkan Laba Bersih Rp 300.000.000.\n• PT Petro mendeklarasikan dan membayar Dividen Kas Rp 100.000.000.'
+          "kind": "p",
+          "text": "Robinson membeli nominal €100.000 dengan harga €92.278, kupon 8%, yield 10%, dan bunga semesteran. Semester pertama menghasilkan interest revenue €4.614, kas €4.000, dan amortisasi diskonto €614. Nilai tercatat menjadi €92.892. (Kieso IFRS 5e, halaman PDF 1372-1374.)"
         },
         {
-          kind: 'formula',
-          text: 'Porsi Laba Bersih (30% × 300 jt) = Rp 90.000.000\nAmortisasi Kelebihan Nilai Wajar Peralatan (30% × 400 jt / 10 thn) = (Rp 12.000.000)\nPendapatan Investasi Neto di Laba Rugi = 90 jt - 12 jt = Rp 78.000.000\n\nPorsi Dividen Kas Diterima (30% × 100 jt) = Rp 30.000.000 (Mengurangi saldo investasi)\nSaldo Akhir Akun Investasi per 31 Des 2026 = 600 jt + 78 jt - 30 jt = Rp 648.000.000'
-        },
-        {
-          kind: 'callout',
-          variant: 'key',
-          title: 'Jurnal Akuntansi PT Indika Energy',
-          text: '1. Pengakuan Bagian Laba Bersih:\nDebit: Investasi pada Entitas Asosiasi Rp 78.000.000\nKredit: Pendapatan dari Entitas Asosiasi (Laba Rugi) Rp 78.000.000\n\n2. Penerimaan Dividen Kas:\nDebit: Kas Rp 30.000.000\nKredit: Investasi pada Entitas Asosiasi Rp 30.000.000'
+          "kind": "journal",
+          "title": "Bunga pertama Robinson",
+          "caption": "Kieso IFRS 5e, halaman PDF 1374.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "€4.000"
+            },
+            {
+              "account": "Debt Investments",
+              "debit": "€614"
+            },
+            {
+              "account": "Interest Revenue",
+              "credit": "€4.614",
+              "isCredit": true
+            }
+          ]
         }
       ]
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Aktif: Perbandingan Perlakuan Fair Value FVPL vs FVOCI',
-      prompt: 'PT Makmur membeli saham PT ABC seharga Rp 100 jt pada 1 Maret 2026. Per 31 Desember 2026, nilai wajar saham melonjak menjadi Rp 135 jt. Bandingkan jurnal penyesuaian akhir tahun jika investasi diklasifikasikan sebagai FVPL vs FVOCI!',
-      blocks: [
+      "kind": "h2",
+      "text": "4. Kasus Graff: bunga dan FVOCI"
+    },
+    {
+      "kind": "example",
+      "title": "Graff plc: investasi HFCS",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Klasifikasi FVPL (Trading)**:\nDebit: Penyesuaian Nilai Wajar Saham Rp 35.000.000\nKredit: Keuntungan Kenaikan Nilai Wajar Belum Terealisasi (**LABA RUGI**) Rp 35.000.000\n*(Laba bersih tahun berjalan meningkat Rp 35 jt)*.',
-            '**Klasifikasi FVOCI (Strategis / Non-Trading)**:\nDebit: Penyesuaian Nilai Wajar Saham Rp 35.000.000\nKredit: Keuntungan Kenaikan Nilai Wajar Belum Terealisasi (**PENGHASILAN KOMPREHENSIF LAIN / OCI**) Rp 35.000.000\n*(Laba bersih TIDAK terpengaruh, ekuitas OCI meningkat Rp 35 jt)*.'
+          "kind": "p",
+          "text": "Graff membeli nominal £100.000, kupon 10%, yield 8%, dan bunga semesteran, dengan harga £108.111. Setelah dua semester, amortized cost £106.732. Nilai wajar akhir tahun £105.000. (Kieso IFRS 5e, halaman PDF 1376-1377.)"
+        },
+        {
+          "kind": "table",
+          "title": "Amortisasi premi Graff tahun pertama",
+          "headers": [
+            "Periode",
+            "Kas",
+            "Pendapatan bunga",
+            "Amortisasi premi",
+            "Amortized cost"
+          ],
+          "rows": [
+            [
+              "Semester 1",
+              "£5.000",
+              "£4.324",
+              "£676",
+              "£107.435"
+            ],
+            [
+              "Semester 2",
+              "£5.000",
+              "£4.297",
+              "£703",
+              "£106.732"
+            ]
+          ],
+          "caption": "Kieso IFRS 5e, halaman PDF 1377, Illustration 16.6.",
+          "stackOnMobile": true
+        },
+        {
+          "kind": "journal",
+          "title": "Bunga semester pertama Graff",
+          "caption": "Kieso IFRS 5e, halaman PDF 1377.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "£5.000"
+            },
+            {
+              "account": "Debt Investments",
+              "credit": "£676",
+              "isCredit": true
+            },
+            {
+              "account": "Interest Revenue",
+              "credit": "£4.324",
+              "isCredit": true
+            }
           ]
         },
         {
-          kind: 'callout',
-          variant: 'warning',
-          title: 'Jebakan UAS Investasi Ekuitas',
-          text: 'Untuk investasi saham (ekuitas) yang dipilih opsi FVOCI tanpa daur ulang, keuntungan/kerugian nilai wajar di OCI **DILARANG DIRECYCLE KE LABA RUGI** saat saham dijual di masa depan! Selisih keuntungan langsung dipindahkan ke Laba Ditahan.'
+          "kind": "journal",
+          "title": "Penyesuaian nilai wajar Graff pada akhir tahun",
+          "caption": "Kieso IFRS 5e, halaman PDF 1377-1378.",
+          "lines": [
+            {
+              "account": "Unrealized Holding Loss - OCI",
+              "debit": "£1.732"
+            },
+            {
+              "account": "Fair Value Adjustment",
+              "credit": "£1.732",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Pendapatan bunga tahun pertama £8.621 masuk laba rugi. Penurunan nilai wajar terhadap amortized cost £1.732 masuk OCI. Fair Value Adjustment (penyesuaian nilai wajar) memisahkan basis amortized cost dari nilai wajar laporan posisi keuangan. (Kieso IFRS 5e, halaman PDF 1377-1378.)"
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan TM 14'
+      "kind": "h2",
+      "text": "5. Kerugian kredit ekspektasian"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Klasifikasi Aset Keuangan PSAK 71', 'Kriteria Business Model Test dan SPPI Test untuk efek utang & ekuitas.', 'Mengelompokkan portofolio investasi ke 3 kategori utama.'],
-        ['2', 'Akuntansi Amortized Cost & FVPL', 'Pencatatan pendapatan bunga efektif vs pengakuan keuntungan nilai wajar di laba rugi.', 'Menjurnal penyesuaian akhir tahun.'],
-        ['3', 'Akuntansi FVOCI & Recycling', 'Mekanisme pencatatan OCI dan daur ulang saat instrumen utang dijual.', 'Menyusun rekonsiliasi cadangan OCI di ekuitas.'],
-        ['4', 'Metode Ekuitas PSAK 15', 'Pengakuan bagian laba, perlakuan dividen pengurang kos, dan amortisasi diferensial.', 'Menyusun mutasi buku besar akun Investasi pada Asosiasi.'],
-        ['5', 'Penurunan Nilai Investasi (ECL)', 'Model Kerugian Kredit Ekspektasian 12-bulan vs Lifetime ECL.', 'Menjurnal cadangan penurunan nilai piutang obligasi.']
+      "kind": "table",
+      "title": "Tiga tahap expected credit loss",
+      "headers": [
+        "Tahap",
+        "Kondisi kredit",
+        "Cadangan",
+        "Dasar bunga"
       ],
-      caption: 'Tabel 14.1: Matriks kompetensi komprehensif materi TM 14 AKM II.'
+      "rows": [
+        [
+          "Stage 1",
+          "Belum meningkat signifikan",
+          "12-month ECL",
+          "Gross carrying amount"
+        ],
+        [
+          "Stage 2",
+          "Meningkat signifikan",
+          "Lifetime ECL",
+          "Gross carrying amount"
+        ],
+        [
+          "Stage 3",
+          "Credit-impaired",
+          "Lifetime ECL",
+          "Net carrying amount"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1396-1397, Illustration 16.22.",
+      "stackOnMobile": true
     },
-    { kind: 'h2', text: '1. Penerapan Metode Ekuitas (Equity Method - PSAK 15)' },
     {
-      kind: 'p',
-      text: '==Metode ekuitas adalah metode akuntansi di mana investasi pada awalnya dicatat sebesar biaya perolehan dan selanjutnya disesuaikan untuk mengakui bagian investor atas laba atau rugi dan OCI entitas asosiasi setelah tanggal perolehan.=='
+      "kind": "p",
+      "text": "12-month ECL adalah kerugian sepanjang umur yang ditimbang dengan probabilitas peristiwa gagal bayar dalam dua belas bulan berikutnya. Angka ini berbeda dari sekadar arus kas yang kurang diterima selama dua belas bulan. ECL didiskontokan dengan bunga efektif awal. (Kieso IFRS 5e, halaman PDF 1396-1397.)"
     },
-    CASE_EQUITY_METHOD_INVESTMENT,
-    { kind: 'h2', text: "2. Efek Utang FVOCI, Amortisasi Bunga, dan Daur Ulang (Recycling PSAK 71)" },
     {
-      kind: 'p',
-      text: "==Pada Efek Utang FVOCI, pendapatan bunga dihitung menggunakan metode suku bunga efektif di laba rugi, sementara fluktuasi nilai wajar pasar dicatat di OCI. Saat efek utang dijual, seluruh saldo akumulasi keuntungan/kerugian OCI WAJIB direklasifikasi (recycled) ke Laba Rugi periode berjalan.=="
-    },
-    CASE_DEBT_INVESTMENTS_FVOCI_RECYCLING,
-    { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
-    {
-      kind: 'ul',
-      items: [
-        '**Amortized Cost**: Efek utang dengan intensi dikuasai hingga jatuh tempo, dinilai pada biaya perolehan diamortisasi.',
-        '**FVPL**: Keuntungan/kerugian nilai wajar masuk Laba Rugi periode berjalan.',
-        '**FVOCI**: Keuntungan/kerugian nilai wajar masuk OCI (Ekuitas).',
-        `**Metode Ekuitas (20%-50%)**: Dividen yang diterima MENGURANGI nilai investasi di neraca, BUKAN diakui sebagai pendapatan dividen.`
+      "kind": "example",
+      "title": "Mayhew dan Bao: nilai kini cash shortfalls",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Buku menyajikan seluruh jumlah contoh ini dalam ribuan yen. Nilai tercatat ¥200.000, bunga kontraktual 10%, dan empat tahun tersisa. Kas bunga yang diperkirakan diterima hanya ¥16.000 per tahun, dengan pokok ¥200.000 pada akhir tahun keempat. Kenaikan risiko kredit signifikan menjadi alasan memakai lifetime ECL. (Kieso IFRS 5e, halaman PDF 1399.)"
+        },
+        {
+          "kind": "formula",
+          "text": "\\displaystyle PV=200000(0.68301)+16000(3.16986)\\approx187320\\qquad ECL=200000-187320=12680",
+          "note": "Satuan tetap ribuan yen; angka mengikuti pembulatan Illustration 16.24. Kieso IFRS 5e, halaman PDF 1399."
+        },
+        {
+          "kind": "journal",
+          "title": "Kerugian kredit Mayhew, dalam ribuan yen",
+          "caption": "Kieso IFRS 5e, halaman PDF 1399-1400, sumber berbeda dalam penyebutan tahun jurnal; fokus contoh adalah pengukuran.",
+          "lines": [
+            {
+              "account": "Loss on Impairment",
+              "debit": "¥12.680"
+            },
+            {
+              "account": "Allowance for Impaired Debt Investments",
+              "credit": "¥12.680",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Pisahkan risiko kredit dari pasar",
+          "text": "Pada efek utang FVOCI, kerugian kredit dilaporkan dalam laba rugi dan perubahan nilai wajar yang tersisa masuk OCI. Nilai investasi pada laporan posisi keuangan tetap mengikuti nilai wajar. (Kieso IFRS 5e, halaman PDF 1400-1402.)",
+          "variant": "warning"
+        }
       ]
+    },
+    {
+      "kind": "h2",
+      "text": "6. Recycling, reklasifikasi, dan hierarki"
+    },
+    {
+      "kind": "p",
+      "text": "Pada penjualan efek utang FVOCI, accumulated OCI direklasifikasi ke laba rugi agar keuntungan atau kerugian tidak dihitung dua kali dalam comprehensive income. Perubahan kategori efek utang memerlukan perubahan business model dan diterapkan secara prospektif; keputusan menjual satu aset saja tidak otomatis mengubah seluruh kategori. (Kieso IFRS 5e, halaman PDF 1376, recycling dan reklasifikasi pada halaman PDF 1404-1407.)"
+    },
+    {
+      "kind": "table",
+      "title": "Fair value hierarchy",
+      "headers": [
+        "Level",
+        "Dasar penilaian"
+      ],
+      "rows": [
+        [
+          "Level 1",
+          "Harga kuotasian pasar aktif untuk aset atau liabilitas identik"
+        ],
+        [
+          "Level 2",
+          "Input lain yang dapat diobservasi, termasuk instrumen serupa"
+        ],
+        [
+          "Level 3",
+          "Input signifikan yang tidak dapat diobservasi"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1429-1430, Appendix 16B.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "p",
+      "text": "Pengungkapan Level 3 menyertakan rekonsiliasi saldo awal, keuntungan atau kerugian, pembelian, penyelesaian, transfer, dan saldo akhir. Level menunjukkan sifat input pengukuran, bukan kategori HFC, HFCS, atau trading. (Kieso IFRS 5e, halaman PDF 1430-1431.)"
+    },
+    {
+      "kind": "h2",
+      "text": "7. Latihan dan uji pemahaman"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan nilai wajar Graff",
+      "prompt": "Amortized cost investasi Graff £106.732 dan nilai wajar £105.000. Pendapatan bunga dua semester £4.324 dan £4.297. Hitung pendapatan bunga tahunan dan perubahan OCI. Rujukan: Kieso IFRS 5e, halaman PDF 1377-1378.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\displaystyle \\text{Interest revenue}=4324+4297=8621\\qquad\\text{OCI loss}=106732-105000=1732",
+          "note": "Kieso IFRS 5e, halaman PDF 1377-1378."
+        },
+        {
+          "kind": "p",
+          "text": "Bunga efektif masuk laba rugi; penurunan pasar pada contoh HFCS ini masuk OCI. Jangan memakai kas kupon £10.000 sebagai pendapatan bunga tahunan. (Kieso IFRS 5e, halaman PDF 1377-1378.)"
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "8. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "title": "Alur penyelesaian TM14",
+      "headers": [
+        "Langkah",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Klasifikasi",
+          "Periksa tujuan pengelolaan dan arus kas kontraktual."
+        ],
+        [
+          "Bunga",
+          "Hitung dengan nilai tercatat dan bunga efektif."
+        ],
+        [
+          "Penilaian",
+          "Pisahkan perubahan pasar dan kerugian kredit."
+        ],
+        [
+          "Pelepasan",
+          "Periksa recycling serta pengungkapan nilai wajar."
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1371-1372.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "callout",
+      "title": "Batas sumber dan penomoran",
+      "text": "RPP menggunakan nomor bab dan beberapa rujukan lokal dari susunan lama. Materi ini mengikuti topik pertemuan di RPP dan isi Kieso IFRS edisi kelima. Angka contoh berasal dari buku; hasil hitungan tambahan diberi label Interpretasi. Pembandingan SAK ETAP memerlukan bacaan dosen tersendiri. (Kieso IFRS 5e, halaman PDF 1368.)",
+      "variant": "info"
     }
   ]
 };

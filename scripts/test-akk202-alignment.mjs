@@ -21,6 +21,7 @@ const bundle = await build({
       "export { TM11_READING } from './src/data/akm2/modules/tm11.ts';",
       "export { TM12_READING } from './src/data/akm2/modules/tm12.ts';",
       "export { TM13_READING } from './src/data/akm2/modules/tm13.ts';",
+      "export { TM15_READING } from './src/data/akm2/modules/tm15.ts';",
       "export { TM14_READING } from './src/data/akm2/modules/tm14.ts';",
       "export { AKK202_QUIZ, AKK202_QUIZ_UTS, AKK202_QUIZ_UAS } from './src/data/quizzes/akk202.ts';",
       "export { AKK202_FC } from './src/data/flashcards/akk202.ts';",
@@ -96,9 +97,9 @@ const countByTm = (items) => items.reduce((map, item) => map.set(item.tm, (map.g
 // ---------------------------------------------------------------- Quiz TM1–TM7 (markdown via renderText)
 const quiz = mod.AKK202_QUIZ_UTS;
 assert.equal(mod.AKK202_QUIZ.length, quiz.length + mod.AKK202_QUIZ_UAS.length);
-// The five stale TM8 items (old UTS review) were removed; TM9–TM14 items are unchanged.
-assert.equal(mod.AKK202_QUIZ_UAS.length, 30, 'TM9–TM14 quiz unchanged in count');
-assert.ok(mod.AKK202_QUIZ_UAS.every((item) => item.tm >= 9 && item.tm <= 14), 'UAS quiz keeps TM9–TM14 only');
+// The five stale TM8 items (old UTS review) were removed; TM9–TM15 items are rebuilt from Kieso.
+assert.equal(mod.AKK202_QUIZ_UAS.length, 60, 'TM9–TM15 quiz covers seven post-UTS meetings');
+assert.ok(mod.AKK202_QUIZ_UAS.every((item) => item.tm >= 9 && item.tm <= 15), 'UAS quiz keeps TM9–TM15 only');
 const quizCounts = countByTm(quiz);
 assert.deepEqual([...quizCounts.keys()].sort((a, b) => a - b), PRA_UTS_TMS, 'quiz UTS covers exactly TM1–TM7');
 // TM6 carries a sixth item (the service-type warranty question that replaced the removed TM8 item) and four items
@@ -144,7 +145,7 @@ const flashcards = mod.AKK202_FC;
 const ids = flashcards.map((card) => card.id);
 assert.equal(new Set(ids).size, ids.length, 'flashcard ids are unique');
 for (const card of flashcards) {
-  const match = /^akk202-(?:v2-)?tm(\d{2})-(\d{2})$/.exec(card.id);
+  const match = /^akk202-(?:v[23]-)?tm(\d{2})-(\d{2})$/.exec(card.id);
   assert.ok(match, `flashcard id pattern: ${card.id}`);
   assert.equal(Number(match[1]), card.tm, `flashcard id matches its tm: ${card.id} (tm ${card.tm})`);
   assert.equal(card.phase, card.tm <= 7 ? 'pra-uts' : 'pra-uas', `flashcard phase: ${card.id}`);
@@ -161,9 +162,9 @@ assert.ok(/bukan Warranty Liability/.test(praUtsCards.find((card) => card.id ===
 // FlashcardDeck shows the answer on a fixed-height face that clips overflow; 281 characters (akk202-v2-tm06-05) is the
 // longest back verified in the browser to fit, so a longer back would hide its last sentence.
 for (const card of praUtsCards) assert.ok(card.back.length <= 281, `${card.id}: back has ${card.back.length} characters, over the 281 that fit the card face`);
-// The six stale TM8 cards were removed; TM9–TM14 cards are unchanged.
+// The six stale TM8 cards were removed; TM9–TM15 cards are rebuilt from Kieso.
 assert.ok(flashcards.every((card) => card.tm !== 8), 'no TM8 flashcards');
-assert.equal(flashcards.length - praUtsCards.length, 36, 'TM9–TM14 flashcards unchanged in count');
+assert.equal(flashcards.length - praUtsCards.length, 42, 'TM9–TM15 flashcards covers seven post-UTS meetings');
 // Only the four cards whose content did not change keep their original ids; every other TM1–TM7 card is v2,
 // so old SRS/star entries never attach to different content.
 const keptIds = ['akk202-tm01-04', 'akk202-tm02-05', 'akk202-tm04-05', 'akk202-tm05-01'];
@@ -189,9 +190,9 @@ const bank = mod.AKK202_BANK_UTS;
 const BANK_UTS_CASES = [[1, '1'], [2, '2'], [3, '3'], [4, '4'], [5, '5'], [6, '6'], [6, '6B'], [7, '7']];
 assert.equal(bank.length, BANK_UTS_CASES.length, 'bank soal UTS: one case per TM plus Studi Kasus 6B');
 assert.equal(mod.AKK202_BANK.length, bank.length + mod.AKK202_BANK_UAS.length);
-// The stale TM8 case was removed; the TM9–TM14 cases are unchanged.
-assert.equal(mod.AKK202_BANK_UAS.length, 6, 'TM9–TM14 bank soal unchanged in count');
-assert.deepEqual(mod.AKK202_BANK_UAS.map((item) => Number(/^TM (\d+):/.exec(item.scope)?.[1])), [9, 10, 11, 12, 13, 14], 'UAS bank soal covers TM9–TM14 only');
+// The stale TM8 case was removed; the TM9–TM15 cases are rebuilt from Kieso.
+assert.equal(mod.AKK202_BANK_UAS.length, 14, 'TM9–TM15 bank soal covers seven post-UTS meetings');
+assert.deepEqual(mod.AKK202_BANK_UAS.map((item) => Number(/^TM (\d+):/.exec(item.scope)?.[1])), [9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15], 'UAS bank soal covers TM9–TM15 only');
 assertNoOldTopics('bank soal UTS', bank);
 const plainTextFields = ['question', 'scope', 'difficulty', 'context', 'answerGuide'];
 const listFields = ['data', 'instructions', 'outputFormat', 'rubric'];
@@ -228,10 +229,10 @@ bank.forEach((item, index) => {
 }
 
 // ---------------------------------------------------------------- TM8 reading withheld
-// The stale TM8 reading is not loaded until it is rebuilt after UTS; the catalog lists TM1–TM7 and TM9–TM14.
-assert.deepEqual(Object.keys(readings).map(Number), [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14], 'AKK202 readings skip TM8');
+// The stale TM8 reading is not loaded until it is rebuilt after UTS; the catalog lists TM1–TM7 and TM9–TM15.
+assert.deepEqual(Object.keys(readings).map(Number), [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15], 'AKK202 readings skip TM8');
 assert.equal(readings[8], undefined, 'TM8 reading is not reachable');
-for (const tm of [9, 10, 11, 12, 13, 14]) assert.equal(readings[tm], mod[`TM${tm}_READING`], `TM${tm} reading object unchanged`);
+for (const tm of [9, 10, 11, 12, 13, 14, 15]) assert.equal(readings[tm], mod[`TM${tm}_READING`], `TM${tm} reading object unchanged`);
 
 // ---------------------------------------------------------------- UTS review
 const content = await mod.loadCourseContent('AKK202');

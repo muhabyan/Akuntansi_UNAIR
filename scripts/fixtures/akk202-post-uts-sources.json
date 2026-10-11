@@ -1,0 +1,534 @@
+{
+  "version": 1,
+  "citationConvention": "One-based PDF pages, not printed page labels.",
+  "baselineUts": {
+    "readings": "ccc85a9836d3a749730585987a95dc124118bcdf9cefbe900baa00b5158b8970",
+    "quiz": "0fa1f3eb76e2e17998228d4d5c89c12b5870eed49ad9839c08a79cecfebed9fd",
+    "cards": "edee6d8d791303219f6e248557282222c69467893cdbc1f4d4cd1d341a45a64e",
+    "bank": "6c04e513134c226a9fafd6afd056bfe1c90e4a8a0c439eac7122d454bc5338cf"
+  },
+  "sources": [
+    {
+      "name": "Kieso IFRS 5e",
+      "path": "C:/cek/AKM I/Intermediate Accounting IFRS 5th Edition (Donald Kieso) (z-library.sk, 1lib.sk, z-lib.sk)_compressed.pdf",
+      "sha256": "4d67dfa141c522a22a0594ec5a4cc3138e7dc8c39535792b9ccfc80bcf30a1e4",
+      "pages": 2484
+    },
+    {
+      "name": "RPP AKM II",
+      "path": "C:/cek/AKM II/Materi/RPP AKM II.pdf",
+      "sha256": "c5335aaf674a75bb9b6561c9807cb9b6b93e9f99b88fa1a29d5f4033e89358fa",
+      "pages": 4
+    }
+  ],
+  "modules": [
+    {
+      "tm": 9,
+      "title": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+      "chapter": 13,
+      "readingSha256": "ca592e02e0ba1928cdb18f7504f2d962f3873904068669b68915aa371050a65e",
+      "quizSha256": "c97862c2ad8e97531e2afa715d271ccb128d3f3c222cdfcdeda5447c6d4e78dd",
+      "cardsSha256": "b1dd67f16142e5a68c8b2cf452ba3309bbe04440de44d3758aeafe9df69e4e55",
+      "bankSha256": "578e3c7235300bec29591dcc13d3e3a8220b50487f0d7cbfd26640ab5a11ee91"
+    },
+    {
+      "tm": 10,
+      "title": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+      "chapter": 13,
+      "readingSha256": "2d4517af193f5c00742d0fcf2b2488c80b245a2b59a2a60a8a6e71a4809df816",
+      "quizSha256": "c5e95387b33bbb6f315038c298714602ebe7a74635eb66a6591ab4e452cf3758",
+      "cardsSha256": "ac283ebe5bba40ab479626f227283aca56435fdb36001f8e469145478887c145",
+      "bankSha256": "84d8193857d8a86d2de5cffadf16a91340c3dee998de9652a2ae58e330ba37e2"
+    },
+    {
+      "tm": 11,
+      "title": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+      "chapter": 14,
+      "readingSha256": "81148f1871c4336e9059613f13d03c49d901502b0daf5254c1045c38b0badc8b",
+      "quizSha256": "631e639f6fbba4cf38659b52637346b3a392eb25b5409f3cfef2440e9dc4ac7c",
+      "cardsSha256": "5acb5470c7c3055aa2074d6ca1bdabd43d5d73963af2f1667c5a5680ca9a24ac",
+      "bankSha256": "143970321ec676b1c734886926d43b768190988fe1d500898f881fc908355ec4"
+    },
+    {
+      "tm": 12,
+      "title": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+      "chapter": 15,
+      "readingSha256": "4589c0ba79a1f9e934cbcb49923a36ee788730037d8772c27421f7cdb0a2e09e",
+      "quizSha256": "7f7d7fddf77e41ffd4e6677abbc9f4e577814a6ad0c2b901dc48a606a9d8db6d",
+      "cardsSha256": "2ef6d6cd4647a0b0b2f7c0f6943de404ad7e3cbb4472219557b55b6a302b29a0",
+      "bankSha256": "3e0785b66db57c42ee53e5a030f5418f165ef04bf945312f40237d9c9bc7b16a"
+    },
+    {
+      "tm": 13,
+      "title": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+      "chapter": 15,
+      "readingSha256": "fa001c52bb24113ae4a07c918d5ab5ddc45d68fd33c644de798d36e9c4ebf4cb",
+      "quizSha256": "4896a2a2f7a87d577374dcc56db878cc62fcc17b1177639515d58610e721a2a6",
+      "cardsSha256": "af52a1a3ecdd8acf0d308087fddeda46f4484e134593d33e9317cc6f4f20d828",
+      "bankSha256": "8cd196a20defee1ec0b9aeafa1574d2e13c6eaedf52d5c8b5f82b5632ec0ec37"
+    },
+    {
+      "tm": 14,
+      "title": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+      "chapter": 16,
+      "readingSha256": "99e9d546ea5d8392eb50c1885484af81c974bb947a8183a4ec09864e292a215c",
+      "quizSha256": "79616dddd346c414622f2a6bc404b7d0b7315013a62724a7bb262d08fceaba4c",
+      "cardsSha256": "3b33c3f1e6a28c2d7d872d566a807acb131e494c624fd7b46140b91a90961cbc",
+      "bankSha256": "99624f141fd8a1f3d79474b15ae8be70686aadbe58dd09b388160ee44a107ebf"
+    },
+    {
+      "tm": 15,
+      "title": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+      "chapter": 16,
+      "readingSha256": "e8bced201eb33f2877b1d7ae373ab18ce312b17f3fb1f5f36da71a6260ed8246",
+      "quizSha256": "e268de2e168f188937f4353bfe733991c722efd81bb9ad02bb165f843a274b4a",
+      "cardsSha256": "dc7a9de94fa2bda51f0423bfcf51a199e07334334e4254919eaaaf714165422e",
+      "bankSha256": "81fdd2b6819944e210b393f776beb1f57439f17c78d8029895afeaad84cd8499"
+    }
+  ],
+  "caveats": [
+    "RPP chapter numbers refer to an earlier sequence; local fifth-edition chapter names determine references.",
+    "Non-substantial debt modification wording in Kieso note 14 is not adopted as a general current-standard journal rule.",
+    "Evermaster, Roche, Graff and Mayhew numbers retain source rounding.",
+    "Mayhew unit is thousands of yen; source prose and journal disagree on the year.",
+    "SAK ETAP comparison and local-law extensions require separately assigned lecturer sources."
+  ],
+  "practiceBlueprint": {
+    "quizCount": 60,
+    "bankCount": 14,
+    "countsByTm": {
+      "9": 9,
+      "10": 8,
+      "11": 8,
+      "12": 9,
+      "13": 10,
+      "14": 8,
+      "15": 8
+    },
+    "stemLanguage": "English",
+    "explanationLanguage": "Indonesian",
+    "priorityBasis": "Inference from RPP PDF 3 topic coverage, PDF 4 comprehensive-case UAS description, and assigned Kieso worked examples; no past exam archive supplied.",
+    "quizAudit": [
+      {
+        "tm": 9,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "€4,614",
+        "pages": "1110-1112"
+      },
+      {
+        "tm": 9,
+        "ordinal": 2,
+        "skill": "application",
+        "correct": "Ten periods at 5%",
+        "pages": "1111, 1172"
+      },
+      {
+        "tm": 9,
+        "ordinal": 3,
+        "skill": "calculation",
+        "correct": "€107,786",
+        "pages": "1112-1113"
+      },
+      {
+        "tm": 9,
+        "ordinal": 4,
+        "skill": "calculation",
+        "correct": "€1,333",
+        "pages": "1114-1115"
+      },
+      {
+        "tm": 9,
+        "ordinal": 5,
+        "skill": "application",
+        "correct": "Reduce carrying amount; increase yield",
+        "pages": "1171-1172"
+      },
+      {
+        "tm": 9,
+        "ordinal": 6,
+        "skill": "journal",
+        "correct": "Credit Bonds Payable €614",
+        "pages": "1111-1112"
+      },
+      {
+        "tm": 9,
+        "ordinal": 7,
+        "skill": "calculation",
+        "correct": "€93,537",
+        "pages": "1111-1112"
+      },
+      {
+        "tm": 9,
+        "ordinal": 8,
+        "skill": "journal",
+        "correct": "Interest Payable €4,000; Bonds Payable €645",
+        "pages": "1112"
+      },
+      {
+        "tm": 9,
+        "ordinal": 9,
+        "skill": "calculation",
+        "correct": "€108,530",
+        "pages": "1112-1113"
+      },
+      {
+        "tm": 10,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "USD 694.96",
+        "pages": "1118-1119"
+      },
+      {
+        "tm": 10,
+        "ordinal": 2,
+        "skill": "calculation",
+        "correct": "€6,075",
+        "pages": "1127-1128"
+      },
+      {
+        "tm": 10,
+        "ordinal": 3,
+        "skill": "calculation",
+        "correct": "Asset loss €5,000,000; debt gain €4,000,000",
+        "pages": "1128-1129"
+      },
+      {
+        "tm": 10,
+        "ordinal": 4,
+        "skill": "application",
+        "correct": "Recognize €20,000 gain in OCI",
+        "pages": "1131-1132"
+      },
+      {
+        "tm": 10,
+        "ordinal": 5,
+        "skill": "application",
+        "correct": "The original effective interest rate",
+        "pages": "1173"
+      },
+      {
+        "tm": 10,
+        "ordinal": 6,
+        "skill": "calculation",
+        "correct": "USD 757.51",
+        "pages": "1118-1119"
+      },
+      {
+        "tm": 10,
+        "ordinal": 7,
+        "skill": "calculation",
+        "correct": "€12,800,000",
+        "pages": "1128-1129"
+      },
+      {
+        "tm": 10,
+        "ordinal": 8,
+        "skill": "journal",
+        "correct": "Bonds Payable €94,925; Loss €6,075",
+        "pages": "1127-1128"
+      },
+      {
+        "tm": 11,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "£10,000",
+        "pages": "1202-1204"
+      },
+      {
+        "tm": 11,
+        "ordinal": 2,
+        "skill": "calculation",
+        "correct": "USD 2,000",
+        "pages": "1193"
+      },
+      {
+        "tm": 11,
+        "ordinal": 3,
+        "skill": "application",
+        "correct": "Disclose arrears; recognize no liability",
+        "pages": "1187"
+      },
+      {
+        "tm": 11,
+        "ordinal": 4,
+        "skill": "calculation",
+        "correct": "HKD 750,000",
+        "pages": "1201"
+      },
+      {
+        "tm": 11,
+        "ordinal": 5,
+        "skill": "application",
+        "correct": "Recognize income over related costs",
+        "pages": "774-775"
+      },
+      {
+        "tm": 11,
+        "ordinal": 6,
+        "skill": "calculation",
+        "correct": "£40,000",
+        "pages": "1202-1204"
+      },
+      {
+        "tm": 11,
+        "ordinal": 7,
+        "skill": "journal",
+        "correct": "Debit Retained Earnings account",
+        "pages": "1192-1193"
+      },
+      {
+        "tm": 11,
+        "ordinal": 8,
+        "skill": "journal",
+        "correct": "Debit Retained Earnings; credit Dividends Payable",
+        "pages": "1201"
+      },
+      {
+        "tm": 12,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "€194,374",
+        "pages": "1258"
+      },
+      {
+        "tm": 12,
+        "ordinal": 2,
+        "skill": "calculation",
+        "correct": "€492,148",
+        "pages": "1268-1269"
+      },
+      {
+        "tm": 12,
+        "ordinal": 3,
+        "skill": "application",
+        "correct": "Recognize no conversion gain or loss",
+        "pages": "1260-1261"
+      },
+      {
+        "tm": 12,
+        "ordinal": 4,
+        "skill": "calculation",
+        "correct": "¥11,000,000",
+        "pages": "1275"
+      },
+      {
+        "tm": 12,
+        "ordinal": 5,
+        "skill": "application",
+        "correct": "Keep expense; transfer option equity",
+        "pages": "1276"
+      },
+      {
+        "tm": 12,
+        "ordinal": 6,
+        "skill": "calculation",
+        "correct": "€1,588,838",
+        "pages": "1260-1261"
+      },
+      {
+        "tm": 12,
+        "ordinal": 7,
+        "skill": "calculation",
+        "correct": "¥4,400,000",
+        "pages": "1275-1276"
+      },
+      {
+        "tm": 12,
+        "ordinal": 8,
+        "skill": "calculation",
+        "correct": "¥16,200,000",
+        "pages": "1276"
+      },
+      {
+        "tm": 12,
+        "ordinal": 9,
+        "skill": "application",
+        "correct": "Measure debt first; allocate residual equity",
+        "pages": "1268-1269"
+      },
+      {
+        "tm": 13,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "103,000 shares",
+        "pages": "1286"
+      },
+      {
+        "tm": 13,
+        "ordinal": 2,
+        "skill": "calculation",
+        "correct": "£1.97",
+        "pages": "1294-1295"
+      },
+      {
+        "tm": 13,
+        "ordinal": 3,
+        "skill": "calculation",
+        "correct": "600 shares",
+        "pages": "1297"
+      },
+      {
+        "tm": 13,
+        "ordinal": 4,
+        "skill": "application",
+        "correct": "Exclude bonds because they are antidilutive",
+        "pages": "1299-1300"
+      },
+      {
+        "tm": 13,
+        "ordinal": 5,
+        "skill": "application",
+        "correct": "The current-year cumulative preference dividend",
+        "pages": "1285"
+      },
+      {
+        "tm": 13,
+        "ordinal": 6,
+        "skill": "calculation",
+        "correct": "£2.10",
+        "pages": "1293-1295"
+      },
+      {
+        "tm": 13,
+        "ordinal": 7,
+        "skill": "calculation",
+        "correct": "£36,000",
+        "pages": "1293-1295"
+      },
+      {
+        "tm": 13,
+        "ordinal": 8,
+        "skill": "calculation",
+        "correct": "24,000 shares",
+        "pages": "1293-1295"
+      },
+      {
+        "tm": 13,
+        "ordinal": 9,
+        "skill": "calculation",
+        "correct": "900 shares",
+        "pages": "1297"
+      },
+      {
+        "tm": 13,
+        "ordinal": 10,
+        "skill": "application",
+        "correct": "Income from continuing operations",
+        "pages": "1317-1318, 1367"
+      },
+      {
+        "tm": 14,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "£1,732",
+        "pages": "1377-1378"
+      },
+      {
+        "tm": 14,
+        "ordinal": 2,
+        "skill": "application",
+        "correct": "Lifetime ECL; gross carrying amount",
+        "pages": "1396-1397"
+      },
+      {
+        "tm": 14,
+        "ordinal": 3,
+        "skill": "calculation",
+        "correct": "€4,614",
+        "pages": "1372-1374"
+      },
+      {
+        "tm": 14,
+        "ordinal": 4,
+        "skill": "application",
+        "correct": "Collection business model; principal-and-interest cash flows",
+        "pages": "1370-1372"
+      },
+      {
+        "tm": 14,
+        "ordinal": 5,
+        "skill": "calculation",
+        "correct": "¥12,680",
+        "pages": "1399"
+      },
+      {
+        "tm": 14,
+        "ordinal": 6,
+        "skill": "journal",
+        "correct": "Debit Debt Investments €614",
+        "pages": "1372-1374"
+      },
+      {
+        "tm": 14,
+        "ordinal": 7,
+        "skill": "calculation",
+        "correct": "£8,621",
+        "pages": "1376-1378"
+      },
+      {
+        "tm": 14,
+        "ordinal": 8,
+        "skill": "application",
+        "correct": "Lifetime ECL; net carrying amount",
+        "pages": "1396-1398"
+      },
+      {
+        "tm": 15,
+        "ordinal": 1,
+        "skill": "calculation",
+        "correct": "£215,000",
+        "pages": "1391-1392, 1452"
+      },
+      {
+        "tm": 15,
+        "ordinal": 2,
+        "skill": "journal",
+        "correct": "Debit Cash; credit Equity Investments",
+        "pages": "1391-1392"
+      },
+      {
+        "tm": 15,
+        "ordinal": 3,
+        "skill": "application",
+        "correct": "Retain within equity without profit recycling",
+        "pages": "1389, 1396"
+      },
+      {
+        "tm": 15,
+        "ordinal": 4,
+        "skill": "application",
+        "correct": "Assess actual evidence of significant influence",
+        "pages": "1390-1391"
+      },
+      {
+        "tm": 15,
+        "ordinal": 5,
+        "skill": "application",
+        "correct": "Power, variable returns, linkage between both",
+        "pages": "1173, 1393-1394"
+      },
+      {
+        "tm": 15,
+        "ordinal": 6,
+        "skill": "calculation",
+        "correct": "€3,250",
+        "pages": "1387-1389"
+      },
+      {
+        "tm": 15,
+        "ordinal": 7,
+        "skill": "journal",
+        "correct": "Debit OCI loss €1,500",
+        "pages": "1388-1389"
+      },
+      {
+        "tm": 15,
+        "ordinal": 8,
+        "skill": "application",
+        "correct": "Credit Equity Investments for £5,000",
+        "pages": "1391-1392, 1452"
+      }
+    ]
+  }
+}

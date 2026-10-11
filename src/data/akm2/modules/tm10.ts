@@ -1,176 +1,323 @@
+// AKK202 TM10: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
 import type { Reading } from '../../../types';
-import {
-  CASE_EXTINGUISHMENT_BONDS,
-  CASE_TROUBLED_DEBT_RESTRUCTURING } from '../akm2PracticeCases';
-
-const SVG_EXTINGUISHMENT = `
-<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MEKANISME PELUNASAN DINI OBLIGASI (PSAK 71)</text>
-
-  <rect class="svg-card" x="30" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-blue" x="120" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. CARRYING VALUE</text>
-  <text class="svg-muted" x="120" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Nilai Buku Bersih Obligasi</text>
-  <line class="svg-divider" x1="40" y1="110" x2="200" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="120" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Nominal Obligasi</text>
-  <text class="text-accent-red" x="120" y="148" fill="#f87171" font-size="9.5" text-anchor="middle">(-) Unamortized Discount</text>
-  <text class="text-accent-green" x="120" y="166" fill="#34d399" font-size="9.5" text-anchor="middle">(+) Unamortized Premium</text>
-  <text class="svg-muted" x="120" y="184" fill="#64748b" font-size="8.5" text-anchor="middle">(Tepat per tgl pelunasan)</text>
-
-  <text class="text-accent-amber" x="235" y="130" fill="#f59e0b" font-size="16" font-weight="800" text-anchor="middle">VS</text>
-
-  <rect class="svg-card" x="260" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text class="text-accent-amber" x="350" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. REACQUISITION</text>
-  <text class="svg-muted" x="350" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Harga Beli Kembali (Kas)</text>
-  <line class="svg-divider" x1="270" y1="110" x2="430" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="350" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga Kurs Beli (%)</text>
-  <text class="text-accent-amber" x="350" y="148" fill="#f59e0b" font-size="9.5" text-anchor="middle">(+) Biaya Penarikan</text>
-  <text class="svg-text" x="350" y="166" fill="#cbd5e1" font-size="9.5" text-anchor="middle">(Belum termasuk bunga)</text>
-
-  <rect class="svg-card" x="470" y="55" width="180" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text class="text-accent-purple" x="560" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. LABA / (RUGI)</text>
-  <text class="svg-muted" x="560" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Penghentian Liabilitas</text>
-  <line class="svg-divider" x1="480" y1="110" x2="640" y2="110" stroke="#334155"/>
-  <text class="text-accent-green" x="560" y="130" fill="#34d399" font-size="9.5" font-weight="700" text-anchor="middle">Carrying &gt; Kas = UNTUNG</text>
-  <text class="text-accent-red" x="560" y="150" fill="#f87171" font-size="9.5" font-weight="700" text-anchor="middle">Carrying &lt; Kas = RUGI</text>
-  <text class="svg-text" x="560" y="175" fill="#f1f5f9" font-size="9" text-anchor="middle">Diakui di Laba Rugi Berjalan</text>
-</svg>`;
 
 export const TM10_READING: Reading = {
-  tm: 10,
-  title: 'Pelunasan Dini Obligasi, Wesel Bayar Jangka Panjang, dan Restrukturisasi Utang',
-  ref: 'Kieso IFRS 5e Ch. 14 | PSAK 71, PSAK 50',
-  intro: 'TM 10 memfokuskan pada penghentian pengakuan liabilitas keuangan (Derecognition of Financial Liabilities): pelunasan dini obligasi sebelum jatuh tempo (Early Extinguishment), pembaharuan amortisasi per tanggal transaksi, kalkulasi untung/rugi pelunasan, wesel bayar jangka panjang untuk properti/jasa, serta restrukturisasi utang bermasalah (Troubled Debt Restructuring).',
-  objectives: [
-    'Menghitung nilai tercatat bersih obligasi pada tanggal pelunasan dini (termasuk amortisasi bunga parsial).',
-    'Menghitung dan menjurnal Keuntungan atau Kerugian Pelunasan Dini Obligasi (Gain/Loss on Extinguishment).',
-    'Menilai dan mencatat wesel bayar jangka panjang yang diterbitkan untuk memperoleh aset tetap/jasa pada suku bunga pasar wajar.',
-    'Memahami perlakuan akuntansi Restrukturisasi Utang Bermasalah (Modifikasi Persyaratan Signifikan vs Transfer Aset/Ekuitas sesuai PSAK 71).'
+  "tm": 10,
+  "title": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+  "ref": "Kieso IFRS 5e Ch. 13 | RPP AKM II, halaman PDF 3",
+  "intro": "TM10 membahas long-term notes payable (wesel bayar jangka panjang), extinguishment (penghentian utang), modifikasi persyaratan, dan fair value option (opsi nilai wajar). Bedakan penghapusan utang dari pembayaran bunga dan pelepasan aset.",
+  "objectives": [
+    "Menilai wesel berbunga dan tanpa kupon menggunakan nilai kini.",
+    "Memisahkan laba rugi pelepasan aset dan penghentian utang.",
+    "Memeriksa modifikasi substansial secara kuantitatif dan kualitatif.",
+    "Menjelaskan perubahan nilai wajar akibat pasar dan risiko kredit sendiri."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      title: 'Mekanisme Penentuan Laba/Rugi Pelunasan Dini Obligasi',
-      svg: SVG_EXTINGUISHMENT,
-      caption: 'Gambar 10.1: Perbandingan Nilai Buku Bersih (Carrying Value) vs Harga Perolehan Kembali (Reacquisition Price).'
+      "kind": "h2",
+      "text": "1. Orientation / Quick Map"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat TM 10'
-    },
-    {
-      kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
-      rows: [
-        ['1', 'Update Amortisasi', 'Apakah amortisasi diskonto/premi sudah dimutakhirkan hingga tanggal pelunasan persis?', 'Memperbarui saldo nilai tercatat buku (carrying amount) obligasi.'],
-        ['2', 'Hitung Kas Pembelian', 'Berapa kurs beli kembali (reacquisition price) ditambah bunga berjalan yang dibayar?', 'Menghitung total pengeluaran kas pelunasan.'],
-        ['3', 'Hitung Gain / Loss', 'Apakah Nilai Tercatat Buku lebih besar (Gain) atau lebih kecil (Loss) dari Kas Pokok Pelunasan?', 'Menentukan laba rugi penghentian liabilitas di Laba Rugi.'],
-        ['4', 'Wesel Bayar Aset/Jasa', 'Berapa nilai wajar aset yang diterima atau present value wesel jika tanpa bunga?', 'Mencatat perolehan aset dan diskonto wesel bayar jangka panjang.'],
-        ['5', 'Restrukturisasi Utang', 'Apakah modifikasi arus kas utang melampaui ambang batas 10% (Substantial Modification)?', 'Menghapus utang lama dan mengakui liabilitas baru pada nilai wajar.']
+      "kind": "figure",
+      "title": "Peta konsep TM10",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 340\" role=\"img\" aria-label=\"Peta analisis TM10\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\"><rect x=\"8\" y=\"8\" width=\"664\" height=\"324\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\"/><text x=\"28\" y=\"34\" font-size=\"16\" fill=\"#38bdf8\" font-weight=\"700\">Peta analisis TM10</text><rect x=\"24\" y=\"48\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"70\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">1. Wesel</text><text x=\"40\" y=\"90\" font-size=\"12\" fill=\"#e2e8f0\">Hitung nilai kini dan bunga efektif.</text><rect x=\"24\" y=\"116\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"138\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">2. Pelunasan</text><text x=\"40\" y=\"158\" font-size=\"12\" fill=\"#e2e8f0\">Mutakhirkan nilai tercatat sebelum menghitung laba rugi.</text><rect x=\"24\" y=\"184\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"206\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">3. Imbalan</text><text x=\"40\" y=\"226\" font-size=\"12\" fill=\"#e2e8f0\">Pisahkan aset atau saham yang diserahkan.</text><rect x=\"24\" y=\"252\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"274\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">4. Pelaporan</text><text x=\"40\" y=\"294\" font-size=\"12\" fill=\"#e2e8f0\">Bedakan amortized cost, nilai wajar, dan OCI.</text></svg>",
+      "overview": {
+        "heading": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+        "cards": [
+          {
+            "title": "Wesel",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Hitung nilai kini dan bunga efektif."
+            ],
+            "takeaway": "Hitung nilai kini dan bunga efektif."
+          },
+          {
+            "title": "Pelunasan",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Mutakhirkan nilai tercatat sebelum menghitung laba rugi."
+            ],
+            "takeaway": "Mutakhirkan nilai tercatat sebelum menghitung laba rugi."
+          },
+          {
+            "title": "Imbalan",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Pisahkan aset atau saham yang diserahkan."
+            ],
+            "takeaway": "Pisahkan aset atau saham yang diserahkan."
+          },
+          {
+            "title": "Pelaporan",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Bedakan amortized cost, nilai wajar, dan OCI."
+            ],
+            "takeaway": "Bedakan amortized cost, nilai wajar, dan OCI."
+          }
+        ],
+        "footer": "RPP AKM II, halaman PDF 3; Kieso IFRS 5e Ch. 13."
+      },
+      "transcript": [
+        "Wesel: Hitung nilai kini dan bunga efektif.",
+        "Pelunasan: Mutakhirkan nilai tercatat sebelum menghitung laba rugi.",
+        "Imbalan: Pisahkan aset atau saham yang diserahkan.",
+        "Pelaporan: Bedakan amortized cost, nilai wajar, dan OCI."
       ],
-      caption: 'Tabel 10.0: Roadmap belajar pelunasan dini obligasi dan restrukturisasi utang.'
+      "caption": "Peta pembelajaran mengikuti RPP AKM II, halaman PDF 3, dengan bab disesuaikan ke Kieso IFRS 5e Ch. 13."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi TM 10'
+      "kind": "h2",
+      "text": "2. Wesel dan pengukuran awal"
     },
     {
-      kind: 'formula',
-      text: '\\text{Laba / (Rugi) Pelunasan Dini} = \\text{Net Carrying Amount Obligasi} - \\text{Reacquisition Price (Pokok)}',
-      note: 'Net Carrying Amount = Nominal Obligasi - Sisa Diskonto Belum Diamortisasi (atau + Sisa Premi Belum Diamortisasi).'
+      "kind": "p",
+      "text": "Long-term notes payable memiliki jatuh tempo dan bunga eksplisit atau implisit. Nilai awalnya adalah nilai kini kas pokok dan bunga. Zero-interest-bearing note (wesel tanpa kupon) tetap memiliki beban bunga implisit apabila kas awal lebih rendah daripada nominal yang dibayar nanti. (Kieso IFRS 5e, halaman PDF 1117-1120.)"
     },
     {
-      kind: 'formula',
-      text: '\\text{Uji Modifikasi 10\\% PSAK 71} = \\left| \\frac{\\text{PV Arus Kas Syarat Baru} - \\text{Carrying Amount Utang Lama}}{\\text{Carrying Amount Utang Lama}} \\right| \\ge 10\\%',
-      note: 'Jika selisih PV >= 10%, modifikasi dianggap substansial (utang lama dihapus, utang baru diakui pada nilai wajar, selisih masuk Laba Rugi).'
+      "kind": "table",
+      "title": "Wesel pada nilai pari dan diskonto",
+      "headers": [
+        "Kondisi",
+        "Pengukuran",
+        "Beban bunga"
+      ],
+      "rows": [
+        [
+          "Kupon = bunga efektif",
+          "Nilai nominal",
+          "Kupon kontraktual"
+        ],
+        [
+          "Kupon di bawah bunga efektif",
+          "Nilai kini di bawah nominal",
+          "Nilai tercatat awal × bunga efektif"
+        ],
+        [
+          "Tanpa kupon",
+          "Kas diterima atau nilai kini transaksi",
+          "Pertambahan nilai tercatat tiap periode"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1118-1120.",
+      "stackOnMobile": true
     },
     {
-      kind: 'example',
-      title: 'Contoh Mini Numerik: Pelunasan Dini Obligasi PT Barito Pacific Tbk',
-      blocks: [
+      "kind": "h2",
+      "text": "3. Nilai kini dan penghentian utang"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle PV=\\frac{F}{(1+i)^n}\\qquad E_t=B_{t-1}i",
+      "note": "Untuk wesel tanpa kupon, seluruh beban bunga menambah nilai tercatat. Kieso IFRS 5e, halaman PDF 1118-1119."
+    },
+    {
+      "kind": "p",
+      "text": "Pada pelunasan sebelum jatuh tempo, mutakhirkan amortisasi dan bunga akrual hingga tanggal transaksi. Reacquisition price adalah harga untuk memperoleh kembali utang. Selisih terhadap carrying amount diakui sebagai laba atau rugi penghentian utang. (Kieso IFRS 5e, halaman PDF 1126-1128, catatan 12 pada halaman PDF 1173.)"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Gain on extinguishment}=\\text{Carrying amount}-\\text{Reacquisition price}",
+      "note": "Hasil negatif menunjukkan loss (rugi). Kieso IFRS 5e, halaman PDF 1128."
+    },
+    {
+      "kind": "h2",
+      "text": "4. Kasus wesel dan pelunasan Evermaster"
+    },
+    {
+      "kind": "example",
+      "title": "Turtle Cove: wesel tanpa kupon tiga tahun",
+      "blocks": [
         {
-          kind: 'p',
-          text: 'PT Barito Pacific memiliki obligasi nominal Rp 500.000.000 dengan carrying value per 1 Juli 2026 sebesar Rp 480.000.000 (sisa diskonto Rp 20.000.000). Pada tanggal tersebut, PT Barito melunasi seluruh obligasi dengan membeli kembali di pasar pada kurs 102% ditambah biaya transaksi penarikan Rp 5.000.000.'
+          "kind": "p",
+          "text": "Turtle Cove menerbitkan wesel nominal USD10.000 dan menerima USD7.721,80 dengan bunga implisit 9%. Jadwal buku menunjukkan beban bunga tahun pertama USD694,96, tahun kedua USD757,51, dan tahun ketiga USD825,73. Angka terakhir mencakup penyesuaian pembulatan lima sen. (Kieso IFRS 5e, halaman PDF 1118-1119, Illustration 13.15.)"
         },
         {
-          kind: `formula`,
-          text: `Net Carrying Amount = Rp 480.000.000
-Reacquisition Price = (102% × 500.000.000) + 5.000.000 = Rp 515.000.000
-Rugi Pelunasan Dini (Loss on Extinguishment) = 480.000.000 - 515.000.000 = (Rp 35.000.000)`
-        },
-        {
-          kind: 'callout',
-          variant: 'key',
-          title: `Jurnal Pelunasan Dini oleh PT Barito Pacific`,
-          text: `Debit: Utang Obligasi (Net Carrying Amount) Rp 480.000.000
-Debit: Rugi Pelunasan Dini Obligasi (Laba Rugi) Rp 35.000.000
-Kredit: Kas Rp 515.000.000`
-        }
-      ]
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Aktif: Pelunasan Obligasi yang Memiliki Premi',
-      prompt: 'Jika obligasi PT Barito Pacific di atas memiliki nilai tercatat Rp 525.000.000 (Premi Rp 25.000.000) dan dibeli kembali pada kurs 99% (Kas = Rp 495.000.000), hitung untung/rugi pelunasan dan buat jurnalnya!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Net Carrying Amount**: Rp 525.000.000.',
-            '**Reacquisition Price**: 99% × 500 jt = **Rp 495.000.000**.',
-            `**Keuntungan Pelunasan Dini (Gain on Extinguishment)**: 525 jt - 495 jt = **Rp 30.000.000** (Untung karena entitas melunasi utang Rp 525 jt hanya dengan membayar kas Rp 495 jt).`,
-            `**Jurnal Akuntansi**:
-Debit: Utang Obligasi Rp 525.000.000
-Kredit: Kas Rp 495.000.000
-Kredit: Keuntungan Pelunasan Dini Obligasi (Laba Rugi) Rp 30.000.000`
+          "kind": "journal",
+          "title": "Penerbitan wesel",
+          "caption": "Kieso IFRS 5e, halaman PDF 1119.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "USD7.721,80"
+            },
+            {
+              "account": "Notes Payable",
+              "credit": "USD7.721,80",
+              "isCredit": true
+            }
           ]
         },
         {
-          kind: 'callout',
-          variant: 'warning',
-          title: 'Jebakan UAS Pelunasan Dini',
-          text: 'Pastikan bunga akrual berjalan (jika ada) dipisahkan dari harga beli pokok kembali. Pembayaran bunga berjalan didebit ke Beban Bunga / Utang Bunga, BUKAN dimasukkan ke dalam perhitungan Gain/Loss on Extinguishment!'
+          "kind": "journal",
+          "title": "Bunga tahun pertama",
+          "caption": "Kieso IFRS 5e, halaman PDF 1119.",
+          "lines": [
+            {
+              "account": "Interest Expense",
+              "debit": "USD694,96"
+            },
+            {
+              "account": "Notes Payable",
+              "credit": "USD694,96",
+              "isCredit": true
+            }
+          ]
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan TM 10'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Penghentian Liabilitas Keuangan', 'Kriteria derecognition sesuai PSAK 71 saat kewajiban dibatalkan atau kedaluwarsa.', 'Menghapus liabilitas dari laporan posisi keuangan.'],
-        ['2', 'Kalkulasi Gain/Loss Extinguishment', 'Membandingkan carrying value terkini dengan reacquisition price kas.', 'Menghitung dan menjurnal laba rugi pelunasan dini.'],
-        ['3', 'Wesel Bayar Jangka Panjang Non-Kas', 'Penetapan nilai tunai PV wesel yang diterbitkan untuk tanah/gedung/mesin.', 'Menyusun tabel amortisasi wesel jangka panjang.'],
-        ['4', 'Restrukturisasi Utang Bermasalah', 'Uji 10% modifikasi persyaratan vs pelunasan via penyerahan aset/saham.', 'Menjurnal restrukturisasi utang dari sisi debitur.']
-      ],
-      caption: 'Tabel 10.1: Matriks kompetensi komprehensif materi TM 10 AKM II.'
-    },
-    { kind: 'h2', text: '1. Pelunasan Dini Obligasi (Early Extinguishment of Debt)' },
-    {
-      kind: 'p',
-      text: '==Penghentian pengakuan liabilitas keuangan terjadi ketika liabilitas tersebut dipadamkan (extinguished), yaitu ketika kewajiban yang ditentukan dalam kontrak dilepaskan, dibatalkan, atau kedaluwarsa.=='
-    },
-    CASE_EXTINGUISHMENT_BONDS,
-    { kind: 'h2', text: "2. Restrukturisasi Utang Bermasalah (Debt-for-Equity Swap & IFRIC 19)" },
-    {
-      kind: 'p',
-      text: "==Berdasarkan IFRIC 19 / ISAK 28, ketika debitur melunasi kewajiban utang dengan menerbitkan instrumen ekuitas, saham diukur pada nilai wajarnya. Selisih antara nilai tercatat utang yang dihentikan pengakuannya dan nilai wajar saham yang diterbitkan diakui sebagai Keuntungan Pelunasan Utang di Laporan Laba Rugi.=="
-    },
-    CASE_TROUBLED_DEBT_RESTRUCTURING,
-    { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
-    {
-      kind: 'ul',
-      items: [
-        '**Carrying Amount**: Wajib dimutakhirkan dengan amortisasi parsial hingga tanggal pelunasan.',
-        '**Gain on Extinguishment**: Terjadi saat Carrying Amount > Kas yang Dibayarkan.',
-        '**Loss on Extinguishment**: Terjadi saat Carrying Amount < Kas yang Dibayarkan.',
-        `**Restrukturisasi Modifikasi 10%**: Jika selisih PV >= 10%, hapus utang lama dan akui laba rugi restrukturisasi.`
+      "kind": "example",
+      "title": "Evermaster: penebusan pada 101",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Pada 1 Januari 2027, nilai tercatat obligasi Evermaster €94.925. Harga tebus 101% dari nominal €100.000 adalah €101.000, sehingga loss on extinguishment sebesar €6.075. (Kieso IFRS 5e, halaman PDF 1127-1128, Illustration 13.22.)"
+        },
+        {
+          "kind": "journal",
+          "title": "Penghapusan obligasi dan rugi pelunasan",
+          "caption": "Kieso IFRS 5e, halaman PDF 1128.",
+          "lines": [
+            {
+              "account": "Bonds Payable",
+              "debit": "€94.925"
+            },
+            {
+              "account": "Loss on Extinguishment of Debt",
+              "debit": "€6.075"
+            },
+            {
+              "account": "Cash",
+              "credit": "€101.000",
+              "isCredit": true
+            }
+          ]
+        }
       ]
+    },
+    {
+      "kind": "h2",
+      "text": "5. Pelunasan aset, saham, dan modifikasi"
+    },
+    {
+      "kind": "p",
+      "text": "Bonn Mortgage melunasi utang €20.000.000 dengan real estate bernilai buku €21.000.000 dan nilai wajar €16.000.000. Loss on disposal (rugi pelepasan aset) €5.000.000 terpisah dari gain on extinguishment (laba penghentian utang) €4.000.000. (Kieso IFRS 5e, halaman PDF 1128-1129.)"
+    },
+    {
+      "kind": "journal",
+      "title": "Bonn Mortgage: transfer real estate",
+      "caption": "Kieso IFRS 5e, halaman PDF 1128-1129.",
+      "lines": [
+        {
+          "account": "Notes Payable",
+          "debit": "€20.000.000"
+        },
+        {
+          "account": "Loss on Disposal of Real Estate",
+          "debit": "€5.000.000"
+        },
+        {
+          "account": "Real Estate",
+          "credit": "€21.000.000",
+          "isCredit": true
+        },
+        {
+          "account": "Gain on Extinguishment of Debt",
+          "credit": "€4.000.000",
+          "isCredit": true
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Sebagai alternatif, Bonn menerbitkan 320.000 ordinary shares (saham biasa), par €10 dan nilai wajar total €16.000.000. Modal saham €3.200.000, agio €12.800.000, dan laba penghentian utang tetap €4.000.000. (Kieso IFRS 5e, halaman PDF 1129.)"
+    },
+    {
+      "kind": "p",
+      "text": "Catatan 14 buku memakai uji selisih sekurangnya 10% dengan suku bunga efektif historis atau perubahan fundamental persyaratan untuk menilai modifikasi substansial. Jadi, perubahan pokok saja belum cukup. Kasus Resorts Development yang dihentikan pengakuannya memakai nilai wajar utang baru ¥7.201.336 dan laba ¥3.298.664. (Kieso IFRS 5e, halaman PDF 1129-1131, catatan 14 pada halaman PDF 1173.)"
+    },
+    {
+      "kind": "callout",
+      "title": "Batas pembahasan modifikasi",
+      "text": "Contoh Resorts Development adalah modifikasi yang diperlakukan sebagai penghentian utang. Rumusan catatan 14 tentang modifikasi non-substansial tidak dijadikan aturan umum atau latihan jurnal baru; penerapannya perlu dicocokkan dengan bacaan standar yang ditetapkan dosen. (Kieso IFRS 5e, halaman PDF 1173.)",
+      "variant": "warning"
+    },
+    {
+      "kind": "h2",
+      "text": "6. Opsi nilai wajar dan rasio utang"
+    },
+    {
+      "kind": "p",
+      "text": "Fair value option mengukur liabilitas pada nilai wajar tiap tanggal pelaporan. Buku membedakan perubahan akibat kondisi pasar yang masuk profit or loss (laba rugi) dari perubahan risiko kredit entitas sendiri yang masuk OCI (penghasilan komprehensif lain), dengan pengecualian liabilitas held for trading yang dibahas sumber. (Kieso IFRS 5e, halaman PDF 1131-1132.)"
+    },
+    {
+      "kind": "p",
+      "text": "Edmonds memiliki utang €500.000 yang turun nilai wajarnya menjadi €480.000. Perubahan €20.000 masuk laba rugi apabila berasal dari perubahan bunga pasar; contoh alternatif karena penurunan kualitas kredit sendiri memasukkannya ke OCI. (Kieso IFRS 5e, halaman PDF 1131-1132.)"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Debt to assets}=\\frac{\\text{Total liabilities}}{\\text{Total assets}}\\qquad\\text{Times interest earned}=\\frac{\\text{Income before tax}+\\text{Interest expense}}{\\text{Interest expense}}",
+      "note": "Rasio pertama menilai proporsi pendanaan utang; rasio kedua menilai kemampuan menutup bunga. Kieso IFRS 5e, halaman PDF 1139."
+    },
+    {
+      "kind": "h2",
+      "text": "7. Latihan dan uji pemahaman"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan Bonn Mortgage",
+      "prompt": "Utang Bonn €20.000.000 dilunasi dengan aset bernilai buku €21.000.000 dan nilai wajar €16.000.000. Hitung kedua laba rugi secara terpisah dan jelaskan mengapa keduanya muncul. Rujukan: Kieso IFRS 5e, halaman PDF 1128-1129.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\displaystyle \\text{Loss on disposal}=21000000-16000000=5000000\\\\\\text{Gain on extinguishment}=20000000-16000000=4000000",
+          "note": "Kieso IFRS 5e, halaman PDF 1128-1129."
+        },
+        {
+          "kind": "p",
+          "text": "Aset dilepas dibandingkan dengan nilai wajarnya; utang yang dihapus dibandingkan dengan nilai wajar imbalan pelunasan. Keduanya mengukur transaksi yang berbeda. (Kieso IFRS 5e, halaman PDF 1128-1129.)"
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "8. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "title": "Alur penyelesaian TM10",
+      "headers": [
+        "Langkah",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Wesel",
+          "Hitung nilai kini dan bunga efektif."
+        ],
+        [
+          "Pelunasan",
+          "Mutakhirkan nilai tercatat sebelum menghitung laba rugi."
+        ],
+        [
+          "Imbalan",
+          "Pisahkan aset atau saham yang diserahkan."
+        ],
+        [
+          "Pelaporan",
+          "Bedakan amortized cost, nilai wajar, dan OCI."
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1118-1120.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "callout",
+      "title": "Batas sumber dan penomoran",
+      "text": "RPP menggunakan nomor bab dan beberapa rujukan lokal dari susunan lama. Materi ini mengikuti topik pertemuan di RPP dan isi Kieso IFRS edisi kelima. Angka contoh berasal dari buku; hasil hitungan tambahan diberi label Interpretasi. Pembandingan SAK ETAP memerlukan bacaan dosen tersendiri. (Kieso IFRS 5e, halaman PDF 1101.)",
+      "variant": "info"
     }
   ]
 };

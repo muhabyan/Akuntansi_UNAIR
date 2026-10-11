@@ -2,7 +2,7 @@
 // src/data/banksoal/akk202.ts
 // Bank Soal Esai & Kasus Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI.
-// 14 Kasus (8 Kasus Pra-UTS, TM 6 memuat Studi Kasus 6 dan 6B, & 6 Kasus Pra-UAS TM 9-14); kasus TM 8 (review UTS lama) dihapus.
+// 15 kasus: 8 Pra-UTS dan 7 Pra-UAS TM09-TM15; sumber pasca-UTS Kieso IFRS 5e dan RPP lokal.
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { BankSoal } from '../../types';
@@ -274,181 +274,453 @@ export const AKK202_BANK_UTS: BankSoal[] = [
 
 export const AKK202_BANK_UAS: BankSoal[] = [
   {
-    "type": "calculation",
-    "scope": "TM 9: Amortisasi Suku Bunga Efektif & Bunga Berjalan PSAK 71",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 9: Amortisasi Obligasi Diskonto & Penjualan di Antara Tanggal Bunga",
-    "context": "Pada 1 Maret 2026, PT Telkom menerbitkan obligasi 9% senilai nominal Rp 2.000.000.000 yang bertanggal 1 Januari 2026 dan jatuh tempo 5 tahun. Bunga kupon dibayarkan semesteran setiap 1 Juli dan 1 Januari. Obligasi diterbitkan pada harga 98 ditambah bunga berjalan (accrued interest) 2 bulan. Suku bunga pasar efektif adalah 10%. Biaya penerbitan obligasi dibayar tunai Rp 20.000.000.",
-    "data": [
-      "Nominal: Rp 2.000.000.000. Kupon 9% per tahun (Rp 90 jt per semester).",
-      "Harga Kurs Pokok: 98% × Rp 2 M = Rp 1.960.000.000.",
-      "Bunga Berjalan 2 bulan (Jan-Feb): Rp 2 M × 9% × (2/12) = Rp 30.000.000.",
-      "Biaya Penerbitan: Rp 20.000.000 (mengurangi carrying amount awal sesuai PSAK 71)."
-    ],
-    "instructions": [
-      "Hitung total kas yang diterima dari investor pada 1 Maret 2026.",
-      "Buat ayat jurnal penerbitan obligasi pada 1 Maret 2026.",
-      "Buat ayat jurnal pembayaran kupon bunga pertama pada 1 Juli 2026."
-    ],
-    "outputFormat": [
-      "Kalkulasi Kas Diterima & Bunga Berjalan",
-      "Jurnal Penerbitan 1 Maret 2026",
-      "Jurnal Pembayaran Bunga 1 Juli 2026"
-    ],
-    "rubric": [
-      "Kalkulasi bunga berjalan 2 bulan (30%)",
-      "Pencatatan biaya emisi yang menambah diskonto/mengurangi nilai tercatat (35%)",
-      "Jurnal pembayaran bunga kupon semester 1 Juli (35%)"
-    ],
-    "answerGuide": "1. Kalkulasi Kas Diterima (1 Maret 2026):\nHarga Jual Pokok Obligasi (98%) = Rp 1.960.000.000\nBunga Berjalan (2 bulan) = Rp 2.000.000.000 × 9% × (2/12) = Rp 30.000.000\nTotal Kas Diterima dari Pembeli = Rp 1.990.000.000\nDikurangi Biaya Penerbitan Obligasi = (Rp 20.000.000)\nKas Bersih yang Diterima Perusahaan = Rp 1.970.000.000.\n\n2. Jurnal Penerbitan Obligasi (1 Maret 2026):\nDiskonto Awal = Nominal (Rp 2 M) - Harga Jual (Rp 1.960 jt) = Rp 40.000.000.\nDitambah Biaya Penerbitan = Rp 20.000.000 -> Total Diskonto Bersih = Rp 60.000.000.\n(D) Kas .................................. Rp 1.970.000.000\n(D) Diskonto Utang Obligasi .............. Rp 60.000.000\n    (K) Utang Obligasi (Face Value) ................... Rp 2.000.000.000\n    (K) Beban Bunga Obligasi (Bunga Berjalan) ......... Rp 30.000.000\n\n3. Jurnal Pembayaran Kupon Bunga Pertama (1 Juli 2026):\nKupon Bunga 6 Bulan Penuh = Rp 2.000.000.000 × 9% × (6/12) = Rp 90.000.000.\n(D) Beban Bunga Obligasi .................. Rp 90.000.000\n    (K) Kas ........................................... Rp 90.000.000\n(Beban bunga bersih riil perusahaan untuk 4 bulan pemakaian dana = Rp 90 jt - Rp 30 jt = Rp 60 jt!)."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 10: Pelunasan Dini Obligasi & Restrukturisasi Utang Swap IFRIC 19",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 10: Pelunasan Dini Obligasi Kurs 103 & Debt-for-Equity Swap",
-    "context": "PT Adhi Karya memiliki obligasi beredar nominal Rp 1.000.000.000 dengan saldo diskonto yang belum diamortisasi sebesar Rp 45.000.000 (Carrying value = Rp 955.000.000). Pada 1 Juli 2026, perusahaan melunasi seluruh obligasi pada kurs 103 tunai. Di samping itu, PT Adhi Karya menyelesaikan utang wesel bank macet Rp 1.500.000.000 dengan menerbitkan 100.000 lembar saham biasa (par Rp 5.000, nilai wajar pasar Rp 11.000/lembar).",
-    "data": [
-      "Obligasi: Nominal Rp 1.000.000.000, Diskonto Belum Diamortisasi Rp 45.000.000, Kurs Beli Kembali 103 (Rp 1.030.000.000).",
-      "Debt-for-Equity Swap: Utang Bank Rp 1.500.000.000, Saham Diterbitkan 100.000 lembar @ Nilai Wajar Rp 11.000 (Rp 1.100.000.000)."
-    ],
-    "instructions": [
-      "Hitung keuntungan/kerugian pelunasan dini obligasi dan buat ayat jurnalnya.",
-      "Hitung keuntungan restrukturisasi utang saham dan buat ayat jurnal swap sesuai IFRIC 19."
-    ],
-    "outputFormat": [
-      "Kalkulasi Gain/Loss Pelunasan Obligasi & Jurnal",
-      "Kalkulasi Gain on Debt Restructuring & Jurnal"
-    ],
-    "rubric": [
-      "Perhitungan rugi pelunasan dini obligasi (1.030 jt - 955 jt = 75 jt) (50%)",
-      "Perhitungan laba swap utang saham (1.500 jt - 1.100 jt = 400 jt) (50%)"
-    ],
-    "answerGuide": "1. Pelunasan Dini Obligasi:\nHarga Beli Kembali (Reacquisition Price: 103% × Rp 1 M) = Rp 1.030.000.000\nNilai Tercatat Bersih (Carrying Value: Rp 1 M - Rp 45 jt) = Rp 955.000.000\nKerugian Pelunasan Dini Obligasi (Loss on Extinguishment) = Rp 75.000.000.\n\nJurnal Pelunasan Obligasi:\n(D) Utang Obligasi (Nominal) .............. Rp 1.000.000.000\n(D) Rugi Pelunasan Dini Obligasi .......... Rp 75.000.000\n    (K) Diskonto Utang Obligasi ....................... Rp 45.000.000\n    (K) Kas ........................................... Rp 1.030.000.000\n\n2. Penyelesaian Utang dengan Saham (Debt-for-Equity Swap - IFRIC 19):\nNilai Wajar Saham Diterbitkan (100.000 × Rp 11.000) = Rp 1.100.000.000\nModal Saham Biasa (100.000 × Rp 5.000 par) = Rp 500.000.000\nAgio Saham Biasa = Rp 1.100 jt - Rp 500 jt = Rp 600.000.000\nKeuntungan Restrukturisasi Utang = Rp 1.500 jt - Rp 1.100 jt = Rp 400.000.000.\n\nJurnal Swap Utang ke Saham:\n(D) Utang Wesel Bank ...................... Rp 1.500.000.000\n    (K) Modal Saham Biasa ............................. Rp 500.000.000\n    (K) Agio Saham Biasa .............................. Rp 600.000.000\n    (K) Keuntungan Pelunasan Utang (Laba Rugi) ........ Rp 400.000.000"
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 11: Saham Treasuri (Cost Method) & Dividen Properti PSAK 50",
+    "type": "case",
+    "scope": "TM 9: Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "difficulty": "Menengah",
-    "estimatedTime": "25–35 menit",
-    "question": "Studi Kasus 11: Siklus Transaksi Saham Treasuri & Penyesuaian Nilai Wajar Dividen Properti",
-    "context": "PT Indah Kiat membeli kembali 20.000 lembar saham biasa (par Rp 1.000) seharga Rp 4.000/lembar (Cost Method). Selanjutnya: (1) Menjual 8.000 lembar seharga Rp 4.800/lembar tunai; (2) Menjual 10.000 lembar seharga Rp 3.200/lembar tunai; (3) Mengumumkan dividen properti berupa surat berharga saham PT ABC (nilai buku Rp 80 jt, nilai wajar pada tanggal pengumuman Rp 110 jt).",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 9A: Effective interest: discount versus premium (Source: Kieso IFRS 5e, PDF pages 1110-1113.)",
+    "context": "Fokus utama: menghitung bunga, amortisasi, dan jurnal dari dua yield; topik eksplisit TM09–TM10. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
     "data": [
-      "Beli Treasuri: 20.000 lembar × Rp 4.000 = Rp 80.000.000.",
-      "Jual 1 (Untung): 8.000 lembar × Rp 4.800 (Kos = Rp 4.000/lembar).",
-      "Jual 2 (Defisit): 10.000 lembar × Rp 3.200 (Kos = Rp 4.000/lembar).",
-      "Dividen Properti: Nilai buku Rp 80 jt, Nilai wajar Rp 110 jt."
+      "Evermaster: €100,000 principal, 8% annual coupon, semiannual payments, five-year maturity, issued January 1, 2025.",
+      "Discount alternative: 10% annual yield and €92,278 issue price.",
+      "Premium alternative: 6% annual yield and €108,530 issue price. Treat the alternatives separately."
     ],
     "instructions": [
-      "Buat ayat jurnal pembelian saham treasuri.",
-      "Buat ayat jurnal penjualan pertama dan penjualan kedua saham treasuri.",
-      "Buat ayat jurnal pengumuman dan pembagian dividen properti."
+      "Prepare the initial entry for each alternative.",
+      "Calculate the first coupon, effective interest, and discount or premium amortization.",
+      "Calculate the carrying amount after the first payment for each alternative.",
+      "Prepare both first-payment entries.",
+      "Explain why coupon cash is identical although interest expense and carrying amounts differ."
     ],
     "outputFormat": [
-      "Jurnal Pembelian & Penjualan Treasuri",
-      "Jurnal Dividen Properti 2 Tahap"
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
     ],
     "rubric": [
-      "Pencatatan Agio Saham Treasuri pada penjualan untung (30%)",
-      "Pengurangan Agio Treasuri dan sisa ke Laba Ditahan saat defisit (35%)",
-      "Revaluasi nilai wajar sebelum dividen properti diakui (35%)"
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
     ],
-    "answerGuide": "1. Jurnal Pembelian Saham Treasuri:\n(D) Saham Treasuri ........................ Rp 80.000.000\n    (K) Kas ........................................... Rp 80.000.000\n\n2. Jurnal Penjualan 1 (8.000 lembar @ Rp 4.800, Kos Rp 4.000):\nKas = Rp 38.400.000; Kos Treasuri = Rp 32.000.000; Agio Treasuri = Rp 6.400.000.\n(D) Kas .................................. Rp 38.400.000\n    (K) Saham Treasuri ................................ Rp 32.000.000\n    (K) Agio Saham Treasuri ........................... Rp 6.400.000\n\n3. Jurnal Penjualan 2 (10.000 lembar @ Rp 3.200, Kos Rp 4.000):\nKas = Rp 32.000.000; Kos Treasuri = Rp 40.000.000; Defisit = Rp 8.000.000.\nTutup saldo Agio Treasuri yang ada (Rp 6.400.000), sisa defisit Rp 1.600.000 didebit ke Laba Ditahan!\n(D) Kas .................................. Rp 32.000.000\n(D) Agio Saham Treasuri .................. Rp 6.400.000\n(D) Laba Ditahan .......................... Rp 1.600.000\n    (K) Saham Treasuri ................................ Rp 40.000.000\n\n4. Jurnal Dividen Properti:\n• Tahap A (Penyesuaian Nilai Wajar Tanggal Pengumuman):\n(D) Investasi Saham PT ABC ................ Rp 30.000.000\n    (K) Keuntungan Kenaikan Nilai Wajar (Laba Rugi) ... Rp 30.000.000\n• Tahap B (Pencatatan Utang Dividen Properti):\n(D) Laba Ditahan .......................... Rp 110.000.000\n    (K) Utang Dividen Properti ........................ Rp 110.000.000\n• Tahap C (Pembagian):\n(D) Utang Dividen Properti ................ Rp 110.000.000\n    (K) Investasi Saham PT ABC ........................ Rp 110.000.000"
+    "answerGuide": "Penerbitan: debit Cash dan kredit Bonds Payable masing-masing sebesar hasil emisi. Diskonto: kas €4.000, bunga efektif €4.614, amortisasi €614, saldo €92.892; debit Interest Expense €4.614, kredit Cash €4.000 dan Bonds Payable €614. Premi: bunga €3.256, amortisasi €744, saldo €107.786; debit Interest Expense €3.256 dan Bonds Payable €744, kredit Cash €4.000. Effective interest (bunga efektif) memakai nilai tercatat dan yield, sedangkan cash coupon (kas kupon) memakai nominal serta tarif kupon. Pembulatan mengikuti tabel sumber. Rujukan: Kieso IFRS 5e, halaman PDF 1110-1113."
   },
   {
-    "type": "calculation",
-    "scope": "TM 12: Obligasi Konversi (Compound Instrument) & Waran Saham PSAK 50",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 12: Pemisahan Komponen Obligasi Konversi & Metode Buku Konversi",
-    "context": "Pada 1 Januari 2026, PT Elang Mahkota menerbitkan 2.000 lembar obligasi konversi 5 tahun bernilai nominal Rp 1.000.000 per lembar (Total nominal Rp 2.000.000.000) dengan bunga kupon 7% dibayar tahunan tiap 31 Desember. Setiap lembar obligasi dapat dikonversi menjadi 200 lembar saham biasa (par Rp 1.000). Tingkat bunga pasar untuk obligasi non-konversi serupa adalah 9%. PV Single Sum (5 thn, 9%) = 0,64993; PV Annuity (5 thn, 9%) = 3,88965. Pada 31 Desember 2027 (setelah bunga tahun ke-2 dibayar), seluruh obligasi dikonversi menjadi saham biasa saat carrying value obligasi adalah Rp 1.897.400.000.",
+    "type": "case",
+    "scope": "TM 9: Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 9B: Year-end accrual and an issue between interest dates (Source: Kieso IFRS 5e, PDF pages 1111-1115.)",
+    "context": "Fokus lanjutan: membedakan periode peminjaman, tanggal pembayaran, dan bunga berjalan. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
     "data": [
-      "Nominal: Rp 2.000.000.000. Kupon: 7% per tahun (Rp 140 jt/tahun). Suku Bunga Pasar: 9%.",
-      "PV Komponen Liabilitas = (Rp 2 M × 0,64993) + (Rp 140 jt × 3,88965) = Rp 1.299.860.000 + Rp 544.551.000 = Rp 1.844.411.000.",
-      "Komponen Ekuitas (Opsi Konversi) = Nilai Terbit (Rp 2 M) - PV Liabilitas (Rp 1.844.411.000) = Rp 155.589.000.",
-      "Konversi 31 Des 2027: Carrying Value Obligasi = Rp 1.897.400.000. Saham diterbitkan = 2.000 × 200 = 400.000 lembar."
+      "Discount case: Evermaster starts at €92,278, pays €4,000 semiannually, and has a 5% semiannual effective rate. The first carrying amount is €92,892; first interest expense is €4,614.",
+      "Its second coupon is payable January 1, 2026, after the December 31, 2025 reporting date.",
+      "Separate at-par case: Evermaster issues on May 1, collects €2,667 accrued interest, and pays the full €4,000 coupon on July 1."
     ],
     "instructions": [
-      "Hitung pemisahan nilai komponen liabilitas dan komponen ekuitas pada tanggal penerbitan 1 Januari 2026.",
-      "Buat ayat jurnal penerbitan obligasi konversi 1 Januari 2026.",
-      "Buat ayat jurnal konversi obligasi menjadi saham biasa per 31 Desember 2027 menggunakan Metode Nilai Buku (Book Value Method)."
+      "Calculate second-period interest and discount amortization, rounding interest to whole euros.",
+      "Prepare the December 31 accrual and reconcile the closing Bonds Payable balance.",
+      "Prepare the January 1 coupon payment entry and distinguish it from amortization.",
+      "Calculate the issuer's two-month interest expense in the separate at-par case.",
+      "Explain how using the full July coupon as May-June expense would distort period allocation."
     ],
     "outputFormat": [
-      "Kalkulasi Pemisahan Residual Method",
-      "Jurnal Penerbitan 1 Jan 2026",
-      "Jurnal Konversi 31 Des 2027"
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
     ],
     "rubric": [
-      "Penentuan PV liabilitas pada suku bunga pasar non-konversi 9% (35%)",
-      "Pengalokasian nilai residual ke Agio Saham - Opsi Konversi (35%)",
-      "Jurnal konversi metode nilai buku tanpa pengakuan laba/rugi (30%)"
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
     ],
-    "answerGuide": "1. Pemisahan Komponen Instrumen Majemuk (Residual Method):\nPV Pokok Obligasi (Rp 2.000.000.000 × 0,64993) = Rp 1.299.860.000\nPV Kupon Bunga (Rp 140.000.000 × 3,88965) = Rp 544.551.000\nNilai Wajar Komponen Liabilitas (PV Utang Obligasi) = Rp 1.844.411.000.\nDiskonto Obligasi = Rp 2.000.000.000 - Rp 1.844.411.000 = Rp 155.589.000.\nKomponen Ekuitas (Agio Saham - Opsi Konversi) = Rp 155.589.000.\n\n2. Jurnal Penerbitan Obligasi Konversi (1 Jan 2026):\n(D) Kas .................................. Rp 2.000.000.000\n(D) Diskonto Utang Obligasi .............. Rp 155.589.000\n    (K) Utang Obligasi (Nominal) ...................... Rp 2.000.000.000\n    (K) Agio Saham - Opsi Konversi (Ekuitas) .......... Rp 155.589.000\n\n3. Jurnal Konversi Saham (Book Value Method - 31 Des 2027):\nNilai Tercatat Bersih Obligasi = Rp 1.897.400.000 (Diskonto tersisa = 2 M - 1.897.400.000 = Rp 102.600.000).\nAgio Saham Opsi Konversi ditransfer = Rp 155.589.000.\nModal Saham Biasa Baru (400.000 lembar × Rp 1.000 par) = Rp 400.000.000.\nAgio Saham Biasa = Rp 1.897.400.000 + Rp 155.589.000 - Rp 400.000.000 = Rp 1.652.989.000.\n\n(D) Utang Obligasi ....................... Rp 2.000.000.000\n(D) Agio Saham - Opsi Konversi ........... Rp 155.589.000\n    (K) Diskonto Utang Obligasi ....................... Rp 102.600.000\n    (K) Modal Saham Biasa ............................. Rp 400.000.000\n    (K) Agio Saham Biasa .............................. Rp 1.652.989.000"
+    "answerGuide": "Diskonto: €92.892 × 5% dibulatkan €4.645; amortisasi €645 dan saldo Bonds Payable €93.537. Akrual: debit Interest Expense €4.645, kredit Interest Payable €4.000 dan Bonds Payable €645. Pada 1 Januari debit Interest Payable dan kredit Cash €4.000; amortisasi telah dicatat. Kasus terpisah at par: beban dua bulan €4.000 - €2.667 = €1.333 menurut pembulatan buku. Accrued interest (bunga berjalan) diterima mencakup periode sebelum penerbitan sehingga perlu dipisahkan dari beban atas jasa utang setelah penerbitan. Rujukan: Kieso IFRS 5e, halaman PDF 1111-1115."
   },
   {
-    "type": "calculation",
-    "scope": "TM 13: Laba Per Saham (Basic & Diluted EPS) PSAK 56 / IAS 33",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "30–40 menit",
-    "question": "Studi Kasus 13: Perhitungan WASO Retrospektif, Basic EPS, dan Diluted EPS",
-    "context": "PT Mayora Indah mencatat Laba Bersih tahun 2026 sebesar Rp 1.800.000.000. Saham preferen kumulatif 10% non-konversi nominal Rp 500.000.000 (dividen Rp 50 jt). Mutasi saham biasa: 1 Jan 400.000 lembar; 1 Mei terbit 120.000 lembar; 1 Juli stock split 2-for-1; 1 Nov beli treasuri 40.000 lembar. Sekuritas dilutif: Opsi saham 60.000 lembar @ eksekusi Rp 4.000 (harga pasar rata-rata Rp 5.000).",
+    "type": "case",
+    "scope": "TM 10: Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "difficulty": "Menengah",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 10A: Debt settlement with real estate or ordinary shares (Source: Kieso IFRS 5e, PDF pages 1128-1129.)",
+    "context": "Fokus utama: memisahkan rugi pelepasan aset, laba penghentian utang, dan unsur ekuitas. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
     "data": [
-      "Laba Bersih: Rp 1.800.000.000. Dividen Saham Preferen: Rp 50.000.000.",
-      "Laba Bersih untuk Pemegang Saham Biasa = Rp 1.750.000.000.",
-      "Opsi Saham: 60.000 lembar @ Rp 4.000. Harga Pasar Rata-rata: Rp 5.000."
+      "Bonn owes Hamburg Bank €20,000,000.",
+      "Asset alternative: real estate has €21,000,000 carrying amount and €16,000,000 fair value.",
+      "Share alternative: issue 320,000 €10-par ordinary shares with €16,000,000 aggregate fair value. The alternatives are independent."
     ],
     "instructions": [
-      "Hitung Weighted Average Shares Outstanding (WASO) tahun 2026 dengan penyesuaian retrospektif stock split.",
-      "Hitung Laba Per Saham Dasar (Basic EPS).",
-      "Hitung efek tambahan saham dari opsi menggunakan Treasury Stock Method.",
-      "Hitung Laba Per Saham Dilusian (Diluted EPS)."
+      "Calculate the disposal gain or loss and debt-extinguishment gain or loss for the asset alternative.",
+      "Prepare the asset-settlement entry with both results shown separately.",
+      "Calculate share capital and share premium for the share alternative.",
+      "Prepare the share-settlement entry.",
+      "Explain why the debt result uses fair value of consideration while the asset result compares fair value with the asset's carrying amount."
     ],
     "outputFormat": [
-      "Tabel Kalkulasi WASO",
-      "Kalkulasi Basic EPS",
-      "Kalkulasi Treasury Stock Method Opsi",
-      "Kalkulasi Diluted EPS"
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
     ],
     "rubric": [
-      "Penerapan faktor retrospektif stock split 2-for-1 ke seluruh transaksi sebelumnya (35%)",
-      "Kalkulasi Basic EPS yang tepat (25%)",
-      "Penerapan Treasury Stock Method pada opsi saham (25%)",
-      "Kalkulasi Diluted EPS (15%)"
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
     ],
-    "answerGuide": "1. Perhitungan WASO 2026:\n• 1 Jan s.d. 1 Mei (4 bln): 400.000 × 2 (split) × 4/12 = 266.667 lembar\n• 1 Mei s.d. 1 Nov (6 bln): (400.000 + 120.000 = 520.000) × 2 (split) × 6/12 = 520.000 lembar\n• 1 Nov s.d. 31 Des (2 bln): (1.040.000 - 40.000 = 1.000.000) × 2/12 = 166.667 lembar\nTotal WASO = 266.667 + 520.000 + 166.667 = 953.334 lembar.\n\n2. Basic EPS:\nBasic EPS = (Laba Bersih Rp 1.800 jt - Dividen Preferen Rp 50 jt) / 953.334 lembar\nBasic EPS = Rp 1.750.000.000 / 953.334 = Rp 1.835,66 per lembar.\n\n3. Tambahan Saham Opsi (Treasury Stock Method):\nKas Diterima dari Eksekusi = 60.000 × Rp 4.000 = Rp 240.000.000\nSaham Dibeli Kembali di Pasar = Rp 240.000.000 / Rp 5.000 = 48.000 lembar\nTambahan Lembar Saham Inkremental = 60.000 - 48.000 = 12.000 lembar.\n\n4. Diluted EPS:\nPenyebut Baru = 953.334 + 12.000 = 965.334 lembar.\nDiluted EPS = Rp 1.750.000.000 / 965.334 lembar = Rp 1.812,84 per lembar."
+    "answerGuide": "Aset: debit Notes Payable €20.000.000 dan Loss on Disposal €5.000.000; kredit Real Estate €21.000.000 dan Gain on Extinguishment €4.000.000. Saham: debit Notes Payable €20.000.000; kredit Share Capital €3.200.000, Share Premium €12.800.000, dan Gain on Extinguishment €4.000.000. Fair value (nilai wajar) imbalan €16.000.000 menjadi pembanding utang dalam kedua alternatif. Rujukan: Kieso IFRS 5e, halaman PDF 1128-1129."
   },
   {
-    "type": "calculation",
-    "scope": "TM 14: Investasi Efek Utang FVOCI (Recycling) & Metode Ekuitas PSAK 71 & 15",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35–45 menit",
-    "question": "Studi Kasus 14: Efek Utang FVOCI Amortisasi & Penjualan dengan Daur Ulang (Recycling)",
-    "context": "Pada 1 Januari 2026, PT Saratoga membeli obligasi 7% PT Indika nominal Rp 1.000.000.000 seharga Rp 922.780.000 (yield 9%). Bunga dibayar tahunan tiap 31 Desember. Klasifikasi: FVOCI Efek Utang. Pada 31 Des 2026, kupon diterima Rp 70 jt, beban bunga efektif Rp 83.050.000 (amortisasi diskonto Rp 13.050.000). Nilai wajar pasar per 31 Des 2026 adalah Rp 945.000.000. Pada 1 April 2027, seluruh obligasi dijual seharga Rp 960.000.000.",
+    "type": "case",
+    "scope": "TM 10: Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 10B: Implicit interest, early extinguishment, and own-credit OCI (Source: Kieso IFRS 5e, PDF pages 1118-1119, 1127-1128, 1131-1132.)",
+    "context": "Fokus lanjutan: tiga kasus terpisah menguji nilai tercatat dan tempat pengakuan laba rugi. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
     "data": [
-      "Harga Beli Awal 1 Jan 2026: Rp 922.780.000.",
-      "Kupon Bunga 31 Des 2026: Rp 70.000.000. Pendapatan Bunga Efektif: Rp 83.050.000.",
-      "Nilai Buku sebelum Penyesuaian Nilai Wajar: Rp 935.830.000.",
-      "Nilai Wajar Pasar 31 Des 2026: Rp 945.000.000 (Gain OCI = Rp 9.170.000).",
-      "Harga Jual 1 April 2027: Rp 960.000.000."
+      "Turtle Cove: three-year $10,000 zero-interest-bearing note, $7,721.80 initial carrying amount, 9% implicit annual rate, no interim cash coupon.",
+      "Evermaster: updated debt carrying amount €94,925 and reacquisition price €101,000; accrued interest is settled separately.",
+      "Edmonds: a €500,000 liability under the fair value option falls to €480,000 solely because of its own credit risk in the source example."
     ],
     "instructions": [
-      "Buat jurnal penerimaan bunga dan amortisasi suku bunga efektif per 31 Desember 2026.",
-      "Buat jurnal penyesuaian nilai wajar obligasi ke OCI per 31 Desember 2026.",
-      "Buat ayat jurnal penjualan obligasi pada 1 April 2027 dan RECYCLING saldo OCI ke Laba Rugi."
+      "Calculate Turtle Cove's first two annual interest expenses and closing carrying amounts.",
+      "Prepare Turtle Cove's first-year interest entry and explain why zero coupon does not mean zero interest expense.",
+      "Calculate Evermaster's extinguishment result and prepare its entry.",
+      "Prepare Edmonds' fair-value change entry and identify its presentation category.",
+      "Explain why an extinguishment gain or loss and the own-credit fair-value change follow different recognition paths in these examples."
     ],
     "outputFormat": [
-      "Jurnal Bunga & Amortisasi 2026",
-      "Jurnal Penyesuaian Nilai Wajar OCI",
-      "Jurnal Penjualan & Daur Ulang OCI"
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
     ],
     "rubric": [
-      "Kalkulasi pendapatan bunga efektif di laba rugi (30%)",
-      "Pencatatan keuntungan belum terealisasi di pos OCI (35%)",
-      "Pencatatan daur ulang (recycling) akumulasi OCI saat pelepasan (35%)"
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
     ],
-    "answerGuide": "1. Jurnal Bunga & Amortisasi Efektif (31 Des 2026):\n(D) Kas .................................. Rp 70.000.000\n(D) Investasi Efek Utang - FVOCI .......... Rp 13.050.000\n    (K) Pendapatan Bunga (Laba Rugi) .................. Rp 83.050.000\n\n2. Jurnal Penyesuaian Nilai Wajar FVOCI (31 Des 2026):\nNilai Tercatat Baru = Rp 922.780.000 + Rp 13.050.000 = Rp 935.830.000.\nNilai Wajar Pasar = Rp 945.000.000.\nKeuntungan Belum Terealisasi (OCI) = Rp 945 jt - Rp 935.830.000 = Rp 9.170.000.\n(D) Penyesuaian Nilai Wajar - FVOCI ........ Rp 9.170.000\n    (K) Keuntungan Belum Terealisasi - OCI ............ Rp 9.170.000\n\n3. Jurnal Penjualan & Daur Ulang (Recycling - 1 April 2027):\nKas Diterima = Rp 960.000.000.\nNilai Buku Terakhir = Rp 945.000.000.\nKeuntungan Penjualan yang Diakui di Laba Rugi = (960 jt - 945 jt) + Tutup OCI (9.170.000) = Rp 24.170.000!\n\n(D) Kas .................................. Rp 960.000.000\n(D) Keuntungan Belum Terealisasi - OCI ... Rp 9.170.000\n    (K) Investasi Efek Utang - FVOCI .................. Rp 945.000.000\n    (K) Keuntungan Penjualan Investasi (Laba Rugi) .... Rp 24.170.000"
+    "answerGuide": "Turtle Cove: bunga tahun pertama $694,96, saldo $8.416,76; tahun kedua $757,51, saldo $9.174,27. Tahun pertama debit Interest Expense dan kredit Notes Payable $694,96. Evermaster: debit Bonds Payable €94.925 dan Loss on Extinguishment €6.075; kredit Cash €101.000. Edmonds: debit Bonds Payable €20.000 dan kredit Unrealized Holding Gain - OCI €20.000 sesuai contoh own credit risk (risiko kredit sendiri). Implicit interest (bunga implisit) mengakui imbalan waktu melalui amortisasi; tidak ada pembayaran kupon pada wesel Turtle Cove. Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119, 1127-1128, 1131-1132."
+  },
+  {
+    "type": "case",
+    "scope": "TM 11: Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "difficulty": "Menengah",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 11A: Share dividends and property dividends (Source: Kieso IFRS 5e, PDF pages 1201-1204.)",
+    "context": "Fokus utama: deklarasi dan distribusi, dasar nominal dividen saham, serta pengukuran aset. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Vine: 100,000 ordinary shares, £1 par value, £50,000 retained earnings, 10% share dividend, £8 market price.",
+      "Tsen: the investment distributed has HK$1,250,000 carrying amount and HK$2,000,000 fair value at declaration."
+    ],
+    "instructions": [
+      "Calculate Vine's new share count and the retained-earnings transfer.",
+      "Prepare Vine's declaration and distribution entries, then calculate remaining retained earnings.",
+      "Calculate Tsen's asset-remeasurement gain and prepare that entry.",
+      "Prepare Tsen's declaration and subsequent distribution entries, using the source's stated value.",
+      "Explain the effect of each dividend on total equity and identify why Vine's £8 market price is not the transfer basis in this source."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Vine: 10.000 saham baru, transfer £10.000, saldo laba £40.000. Deklarasi debit Retained Earnings dan kredit Ordinary Share Dividend Distributable £10.000; distribusi debit Distributable dan kredit Share Capital £10.000. Total ekuitas tetap. Tsen: debit Equity Investments dan kredit Unrealized Holding Gain - Income HKD750.000; deklarasi debit Retained Earnings dan kredit Property Dividends Payable HKD2.000.000; distribusi debit liabilitas dan kredit Equity Investments HKD2.000.000. Share dividend (dividen saham) mereklasifikasi ekuitas pada nominal; property dividend (dividen properti) mendistribusikan aset. Tsen mengakui laba aset HKD750.000 sebelum pengurangan saldo laba HKD2.000.000 akibat deklarasi, sehingga ekuitas bersih turun HKD1.250.000. Distribusi berikutnya menghapus aset dan liabilitas tanpa pengurangan ekuitas kedua. Rujukan: Kieso IFRS 5e, halaman PDF 1201-1204."
+  },
+  {
+    "type": "case",
+    "scope": "TM 11: Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 11B: Treasury shares: contra equity and below-cost resale (Source: Kieso IFRS 5e, PDF pages 1191-1193.)",
+    "context": "Fokus lanjutan: memahami shares issued versus outstanding, agio treasuri, dan larangan laba rugi transaksi saham sendiri. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Pacific: 100,000 $1-par shares issued; Share Premium - Ordinary $900,000; Retained Earnings $300,000 before the repurchase.",
+      "Pacific buys 10,000 own shares at $11 each using the cost method.",
+      "Separate later resale: 1,000 treasury shares cost $11 each and are resold at $8 each; Share Premium - Treasury has a $1,000 credit balance immediately before this resale."
+    ],
+    "instructions": [
+      "Prepare the repurchase entry and calculate treasury-share cost.",
+      "Calculate issued shares, outstanding shares, and total equity immediately after the repurchase.",
+      "Prepare the separate below-cost resale entry, showing the use of treasury premium and retained earnings.",
+      "Explain why the resale shortfall is not a disposal loss in profit.",
+      "Explain why the repurchase changes outstanding shares while leaving the original Share Capital - Ordinary balance unchanged."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Pembelian: debit Treasury Shares dan kredit Cash $110.000. Saham diterbitkan 100.000, beredar 90.000, total ekuitas $1.190.000 dari awal $1.300.000. Resale terpisah: debit Cash $8.000, Share Premium - Treasury $1.000, Retained Earnings $2.000; kredit Treasury Shares $11.000. Treasury shares (saham treasuri) adalah contra equity (pengurang ekuitas), bukan aset investasi. Cost method (metode biaya) mempertahankan modal saham awal dan membebankan kekurangan setelah agio treasuri habis ke saldo laba. Saldo keseluruhan setelah resale tidak dihitung dari saldo pembelian awal karena transaksi antara kedua tanggal tidak diberikan. Rujukan: Kieso IFRS 5e, halaman PDF 1191-1193."
+  },
+  {
+    "type": "case",
+    "scope": "TM 12: Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "Menengah",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 12A: Convertible debt versus debt issued with warrants (Source: Kieso IFRS 5e, PDF pages 1258-1261, 1268-1269.)",
+    "context": "Fokus utama: mengukur liabilitas lebih dahulu, menghitung ekuitas residual, dan mencatat konversi normal. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Roche: €2,000,000 issue proceeds and €1,805,626 liability component; on normal conversion at the end of 2026, debt carrying amount is €1,894,464 and ordinary shares issued have €500,000 aggregate par value.",
+      "Siemens: €10,200,000 issue proceeds and €9,707,852 debt component without the warrants."
+    ],
+    "instructions": [
+      "Calculate Roche's initial conversion equity and prepare the issue entry.",
+      "Calculate Share Premium on normal conversion and prepare the conversion entry.",
+      "Calculate Siemens' residual warrant equity and prepare a combined issue entry.",
+      "Explain why liability is measured first under the with-and-without method.",
+      "Explain why Roche's normal conversion does not generate a gain or loss, and why proportional allocation is not used for Siemens in this source."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Roche: ekuitas €194.374. Penerbitan mendebit Cash €2.000.000 dan mengkredit Bonds Payable €1.805.626 serta Conversion Equity €194.374. Konversi mendebit utang €1.894.464 dan ekuitas konversi €194.374; kredit Share Capital €500.000 dan Share Premium €1.588.838, tanpa laba rugi. Siemens: ekuitas €492.148; debit Cash €10.200.000, kredit Bonds Payable €9.707.852 dan Share Premium - Share Warrants €492.148. With-and-without method mengukur liabilitas dahulu dan mengalokasikan sisanya ke ekuitas. Rujukan: Kieso IFRS 5e, halaman PDF 1258-1261, 1268-1269."
+  },
+  {
+    "type": "case",
+    "scope": "TM 12: Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 12B: Employee options from grant through exercise and expiry (Source: Kieso IFRS 5e, PDF pages 1275-1276.)",
+    "context": "Fokus lanjutan: satu rangkaian kasus menghubungkan masa jasa, beban, pelaksanaan, dan kedaluwarsa. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Chen grants 10,000 equity-settled options on January 1, 2025. The two-year service period begins on that date; total grant-date compensation is ¥22,000,000.",
+      "Exercise price is ¥6,000 per share; ordinary-share par value is ¥100.",
+      "On June 1, 2028, 2,000 vested options are exercised. The other 8,000 expire unexercised on January 1, 2035. Services are completed as expected."
+    ],
+    "instructions": [
+      "Allocate compensation cost to 2025 and 2026 and prepare both expense entries.",
+      "Calculate cash received, option equity transferred, and share capital on the 2,000-option exercise.",
+      "Calculate ordinary share premium and prepare the exercise entry.",
+      "Calculate remaining option equity and prepare the expiry entry.",
+      "Explain why expiry after vesting does not reverse expense for services already received."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Beban masing-masing tahun ¥11.000.000: debit Compensation Expense, kredit Share Premium - Share Options. Pelaksanaan: kas ¥12.000.000, agio opsi dipindahkan ¥4.400.000, modal saham ¥200.000, agio biasa ¥16.200.000. Debit Cash dan agio opsi; kredit Share Capital serta Share Premium - Ordinary. Sisa agio opsi ¥17.600.000 dipindahkan saat expiry: debit agio opsi dan kredit Share Premium - Expired Share Options. Grant-date fair value (nilai wajar tanggal hibah) dialokasikan selama service period (masa jasa). Vested options (opsi yang haknya telah diperoleh) kedaluwarsa tidak membatalkan jasa yang sudah diterima. Rujukan: Kieso IFRS 5e, halaman PDF 1275-1276."
+  },
+  {
+    "type": "case",
+    "scope": "TM 13: Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "Menengah",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 13A: Basic and diluted EPS with two convertible bond series (Source: Kieso IFRS 5e, PDF pages 1293-1295, 1299-1300, 1314-1316.)",
+    "context": "Fokus utama: penyesuaian pembilang setelah pajak, tanggal penerbitan, dan pengujian dilusi. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Mayfield: £210,000 net income, no preference dividends, 100,000 weighted-average ordinary shares, and a 40% tax rate.",
+      "First series: outstanding all year, £62,000 current-year effective interest, convertible into 20,000 shares.",
+      "Second series: issued April 1, £80,000 full-year effective interest, convertible into 32,000 shares."
+    ],
+    "instructions": [
+      "Calculate basic EPS.",
+      "Calculate after-tax interest adjustments and weighted incremental shares for each series.",
+      "Calculate each series' incremental EPS and sequence inclusion from the more dilutive series.",
+      "Reconcile the adjusted numerator and denominator, then calculate diluted EPS.",
+      "Explain why effective interest on the liability component and the April 1 issue date affect the answer."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Basic EPS £2,10. Seri pertama: bunga setelah pajak £37.200, saham 20.000, incremental EPS £1,86. Seri kedua: bunga £36.000, saham 24.000, incremental EPS £1,50. Masukkan seri kedua dahulu: £246.000 / 124.000 = sekitar £1,9839; seri pertama £1,86 masih menurunkan EPS. Akhir: pembilang £283.200, penyebut 144.000, diluted EPS £1,97. If-converted method (metode asumsi konversi) menghilangkan bunga efektif setelah pajak dan membobot sejak awal tahun atau tanggal emisi yang lebih akhir. Urutan ini merupakan interpretasi pengujian dilusi dari data Mayfield dan pembahasan sumber. Rujukan: Kieso IFRS 5e, halaman PDF 1293-1295, 1299-1300, 1314-1316."
+  },
+  {
+    "type": "case",
+    "scope": "TM 13: Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 13B: Weighted shares, treasury-share dilution, and antidilution (Source: Kieso IFRS 5e, PDF pages 1286, 1297, 1299-1300, 1317-1318.)",
+    "context": "Fokus lanjutan: tiga perhitungan terpisah menguji penyebut EPS dan keputusan mengecualikan instrumen. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Franks: 90,000 shares for three months, 120,000 for three months, 81,000 for four months, and 141,000 for two months; no share split.",
+      "Separate option example: 1,500 options outstanding all year, €30 exercise price, €50 average market price.",
+      "Separate Martin example: $210,000 earnings, 100,000 weighted shares, $60,000 effective bond interest, 40% tax, and 10,000 shares on conversion."
+    ],
+    "instructions": [
+      "Calculate Franks' weighted-average ordinary shares with each time weight shown.",
+      "Calculate option proceeds, assumed shares repurchased, and net incremental shares.",
+      "Calculate Martin's basic EPS, adjusted earnings, and EPS assuming conversion.",
+      "Calculate Martin's incremental EPS and decide whether to include its bonds.",
+      "Explain why antidilutive securities cannot offset other dilutive instruments, and identify the earnings control number when discontinued operations exist."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Franks: 22.500 + 30.000 + 27.000 + 23.500 = 103.000 saham tertimbang. Opsi: kas asumsi €45.000, pembelian kembali 900 saham, tambahan neto 600. Martin: basic EPS $2,10; bunga setelah pajak $36.000; pembilang $246.000 dan penyebut 110.000; EPS asumsi $2,24. Incremental EPS $3,60 melebihi basic EPS, sehingga obligasi antidilutive (menaikkan EPS) dikeluarkan. Antidilution tidak dipakai mengimbangi efek dilutif. Control number (angka pengendali) adalah laba dari operasi berkelanjutan yang disesuaikan untuk dividen preferen. Rujukan: Kieso IFRS 5e, halaman PDF 1286, 1297, 1299-1300, 1317-1318."
+  },
+  {
+    "type": "case",
+    "scope": "TM 14: Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "Menengah",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 14A: Debt-investment OCI versus expected credit losses (Source: Kieso IFRS 5e, PDF pages 1376-1378, 1399-1400.)",
+    "context": "Fokus utama: memisahkan pendapatan bunga, perubahan nilai wajar, dan kerugian kredit; angka Mayhew tetap dalam ribuan yen. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Graff: £100,000 principal, 10% annual coupon, 8% annual yield, £108,111 initial price, £4,324 first-half-year interest and £4,297 second-half-year interest.",
+      "Graff's year-end amortized cost is £106,732 and fair value is £105,000; it is held for collection and selling.",
+      "Separate Mayhew example, all amounts in thousands of yen: ¥200,000 carrying amount, four years remaining, 10% original effective interest, ¥16,000 expected annual interest cash receipts, and ¥200,000 expected principal at maturity.",
+      "PV factors at 10% for four years: principal 0.68301 and annuity 3.16986."
+    ],
+    "instructions": [
+      "Calculate Graff's annual interest revenue and total coupon cash; reconcile the amortization with year-end amortized cost.",
+      "Calculate and journalize Graff's fair-value adjustment, separating profit from OCI.",
+      "Calculate Mayhew's expected cash-flow PV and ECL, stating the source units.",
+      "Prepare Mayhew's impairment entry and calculate net carrying amount.",
+      "Explain why a market-price decline and an expected cash-flow shortfall are distinct measurements."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Graff: bunga £8.621, kas £10.000, amortisasi premi £1.379; £108.111 - £1.379 = £106.732. Penyesuaian nilai wajar: debit Unrealized Holding Loss - OCI dan kredit Fair Value Adjustment £1.732. Mayhew: PV dibulatkan ¥187.320; ECL ¥12.680, semuanya ribuan yen. Debit Loss on Impairment dan kredit Allowance for Impaired Debt Investments ¥12.680; net carrying amount ¥187.320. Expected credit loss (kerugian kredit ekspektasian) mendiskontokan kekurangan kas dengan bunga efektif asal. Perbedaan tahun narasi dan jurnal Mayhew tidak dijadikan tanggal kasus. Rujukan: Kieso IFRS 5e, halaman PDF 1376-1378, 1399-1400."
+  },
+  {
+    "type": "case",
+    "scope": "TM 14: Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 14B: Amortized cost and a two-year HFCS portfolio (Source: Kieso IFRS 5e, PDF pages 1372-1374, 1378-1379.)",
+    "context": "Fokus lanjutan: menghitung bunga efektif dan menyesuaikan saldo cadangan nilai wajar yang telah ada. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Separate Robinson example: €92,278 purchase price, 10% annual effective yield, €4,000 semiannual coupon.",
+      "Webb's 2025 HFCS portfolio: Watson amortized cost €93,537 and fair value €103,600; Anacomp amortized cost €200,000 and fair value €180,400. Opening Fair Value Adjustment is zero.",
+      "At the end of 2026, only Anacomp remains: amortized cost €200,000, fair value €195,000, and the existing Fair Value Adjustment credit balance before the year-end entry is €9,537. Treat these provided balances as the starting point for the 2026 adjustment."
+    ],
+    "instructions": [
+      "Calculate and journalize Robinson's first coupon receipt and discount amortization.",
+      "Calculate each 2025 unrealized gain or loss and the portfolio's net adjustment.",
+      "Prepare Webb's 2025 fair-value entry and state total reported portfolio value.",
+      "Calculate the required closing 2026 adjustment balance and the entry needed from the existing balance.",
+      "Explain why recording a fresh €5,000 credit in 2026 would be incorrect and why the HFCS unrealized change is reported in OCI."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Robinson: bunga €4.614, amortisasi €614; debit Cash €4.000 dan Debt Investments €614, kredit Interest Revenue €4.614. Webb 2025: Watson gain €10.063, Anacomp loss €19.600, net loss €9.537; debit Unrealized Holding Loss - OCI dan kredit Fair Value Adjustment €9.537; nilai portofolio €284.000. Tahun 2026 saldo akhir allowance perlu kredit €5.000. Dari kredit €9.537, debit Fair Value Adjustment €4.537 dan kredit Unrealized Holding Gain - OCI €4.537. Penyesuaian memakai selisih saldo yang diperlukan, sehingga tidak menggandakan allowance (akun penyesuaian). Rujukan: Kieso IFRS 5e, halaman PDF 1372-1374, 1378-1379."
+  },
+  {
+    "type": "case",
+    "scope": "TM 15: Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "Menengah",
+    "estimatedTime": "25-35 menit",
+    "question": "Case 15A: Equity method compared with non-trading OCI (Source: Kieso IFRS 5e, PDF pages 1387-1389, 1391-1392, 1396, 1452.)",
+    "context": "Fokus utama: membedakan bagian laba investee, dividen, dan perubahan nilai wajar. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Meredith: buys 25% of Pirates for £200,000 and has significant influence; Pirates reports £80,000 profit and £20,000 dividends. No other exercise adjustments.",
+      "Separate Republic example: buys Hawthorne for €20,750, receives €450 ordinary dividends, elects non-trading OCI, and measures fair value at €24,000 at the end of 2025.",
+      "Republic sells Hawthorne for €22,500 in 2026."
+    ],
+    "instructions": [
+      "Calculate Meredith's share of profit, dividend cash, and closing investment balance; prepare the entries.",
+      "Calculate Republic's dividend income and 2025 OCI adjustment; prepare both entries.",
+      "Calculate and journalize Republic's remeasurement immediately before disposal.",
+      "Prepare the disposal entry and reconcile cumulative OCI from acquisition to disposal.",
+      "Explain why Meredith's dividend reduces investment while Republic's ordinary dividend enters income, and why Hawthorne's OCI is not recycled to profit."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Meredith: debit Equity Investments dan kredit Investment Revenue £20.000; debit Cash dan kredit investasi £5.000; saldo akhir £215.000. Republic: debit Cash dan kredit Dividend Revenue €450; debit Equity Investments dan kredit OCI gain €3.250. Sebelum dijual: debit OCI loss dan kredit investasi €1.500; lalu debit Cash dan kredit investasi €22.500. Kumulatif OCI €3.250 - €1.500 = €1.750 tetap dalam ekuitas tanpa recycling. Equity method (metode ekuitas) mengakui laba saat investee menghasilkan laba; dividen menurunkan investasi. Pilihan non-trading OCI (penghasilan komprehensif lain) untuk ekuitas memiliki jalur perubahan nilai wajar tersendiri. Rujukan: Kieso IFRS 5e, halaman PDF 1387-1389, 1391-1392, 1396, 1452."
+  },
+  {
+    "type": "case",
+    "scope": "TM 15: Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "Lanjutan",
+    "estimatedTime": "35-45 menit",
+    "question": "Case 15B: Review and correct investment-accounting proposals (Source: Kieso IFRS 5e, PDF pages 1173, 1388-1394, 1396, 1452.)",
+    "context": "Fokus lanjutan: mengoreksi kesalahan dan menjelaskan bukti pengaruh atau pengendalian dengan data contoh yang telah diberikan. Prioritas latihan merupakan perkiraan dari cakupan RPP halaman PDF 3 dan bentuk UAS studi kasus pada halaman PDF 4, bukan kepastian soal ujian.",
+    "data": [
+      "Meredith's 25% Pirates investment costs £200,000; Pirates earns £80,000 and declares £20,000 dividends. Significant influence exists and no other exercise adjustments apply.",
+      "Proposal 1: record Meredith's share of profit correctly, then credit Dividend Revenue for the dividend received.",
+      "Republic's Hawthorne investment uses non-trading OCI, cost €20,750, and carrying value €24,000 before its €22,500 disposal.",
+      "Proposal 2: record a €1,500 disposal loss in profit and recycle all accumulated Hawthorne OCI into profit.",
+      "Proposal 3: conclude that any 20% holding automatically requires consolidation."
+    ],
+    "instructions": [
+      "Correct Proposal 1 and calculate the resulting investment balance and investment income.",
+      "Quantify the income and investment-balance overstatement caused by Proposal 1.",
+      "Replace Proposal 2 with the proper remeasurement and disposal entries, explaining the OCI treatment.",
+      "Explain why a 20% holding creates a significant-influence presumption rather than automatic control; name two evidence types described in the source.",
+      "State the elements of control and distinguish equity-method recognition from consolidation."
+    ],
+    "outputFormat": [
+      "Show calculations with dates, units, and rounding.",
+      "Present balanced journal entries or a complete EPS reconciliation, as applicable.",
+      "Explain the accounting rationale and the effect on profit, OCI, and equity where relevant."
+    ],
+    "rubric": [
+      "40 poin: dasar pengukuran, bobot periode, dan perhitungan tepat.",
+      "30 poin: jurnal atau rekonsiliasi EPS lengkap, akun dan arah perubahan tepat.",
+      "20 poin: alasan perlakuan menggunakan istilah Inggris dengan penjelasan Indonesia.",
+      "10 poin: satuan, pembulatan, serta pemeriksaan jawaban akhir konsisten."
+    ],
+    "answerGuide": "Proposal 1: dividen £5.000 seharusnya mengkredit Equity Investments. Income dan investasi masing-masing terlalu tinggi £5.000 jika proposal dipakai; koreksi debit Dividend Revenue dan kredit investasi £5.000. Income benar £20.000, investasi £215.000. Proposal 2: debit OCI loss €1.500 dan kredit investasi; kemudian debit Cash dan kredit investasi €22.500; tidak ada disposal loss atau recycling ke profit. Proposal 3: 20% adalah praduga significant influence (pengaruh signifikan), diuji antara lain lewat representasi direksi dan partisipasi kebijakan. Control (pengendalian) mencakup power, variable returns, dan kemampuan menghubungkan power dengan returns; consolidation (konsolidasi) melaporkan kelompok sebagai satu entitas ekonomi. Pengantar ini tidak meminta worksheet eliminasi yang datanya tidak tersedia. Rujukan: Kieso IFRS 5e, halaman PDF 1173, 1388-1394, 1396, 1452."
   }
 ];
 

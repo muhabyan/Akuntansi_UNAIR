@@ -112,8 +112,8 @@
     "repository": "53723f9dec8d425c5438632f260b8b4a85a210d8194d43a12528d5331fed9adf"
   },
   "src/data/banksoal/akk202.ts": {
-    "worktree": "778d54dab9a21408603361367d9c9aaace2fe8b7765a8e89898d559f78f2c034",
-    "repository": "b701374e8fd71df590abf46a72e94f54a7150ecd4feafa7ebaa8932a3e49fa7c"
+    "worktree": "58643dbe14050a7e5722f13c19dc601c49e129a8a250dcaf96864e0840ab7230",
+    "repository": "cc82b6262d3bdad496806c1f993c1fcd2d2650c6d9f6ada9b941b8c68b64512e"
   },
   "src/data/banksoal/akm201.ts": {
     "worktree": "1dfb3f3786400ac9c246bb5ac370836e2f3cc5b6eef0be8d53186937fc0c8003",
@@ -188,8 +188,8 @@
     "repository": "d9005942a1d41944d59ddafb8d6abf66edd90d962f78ec7a5317ad047938b040"
   },
   "src/data/flashcards/akk202.ts": {
-    "worktree": "bcefc1802c87884a5abcdc4d0d825c285aad7227750f158ab0603fe2585de65a",
-    "repository": "8ac350d23db7ae5bc3012069de22bcb22bec98216bffa760010572384c228d4c"
+    "worktree": "3dac1178c73b3f24b0686b72e6531085d6f106c6a0ed7efece621b637c68ce63",
+    "repository": "2aca2a12cbba5a424611e6572843dde237baf269326c0094d647cbb748307bc1"
   },
   "src/data/flashcards/akm201.ts": {
     "worktree": "64c6e74b49e183ed80de02d7c6a1231b156fc7a03e4a1d45e604bafb545bb7cb",
@@ -352,8 +352,8 @@
     "repository": "761638d924ae69368628842e7ca7b6672425bcd37904069d3ca3981c2ab00235"
   },
   "src/data/quizzes/akk202.ts": {
-    "worktree": "634c503eb3ed131394dd47b288507b6caa1cbc9b2ed0aae42c69ecfe23afb073",
-    "repository": "c79724cd9feb5050447d631ab4e515c2f8ac0baae00d1e125b2735864bb2f14c"
+    "worktree": "b58c398d7da40dd477a31b11099af3c232706ca5d8b45b05fec00a6d7d981c07",
+    "repository": "5f75b6319fe602dffb4b197fd28849c3f0419ec585065ca9318c75caa3b4765a"
   },
   "src/data/quizzes/akm201.ts": {
     "worktree": "aeb4a4b4469ff667b6279b364111318bd49befcdc2135da8ab29587d1d23b1ef",
@@ -384,8 +384,8 @@
     "repository": "d65cab7e10e79b97f5d30b5f1eba71649ad3ebcdfc54ffae56fd0a42aae4dc20"
   },
   "src/data/quizzes/index.ts": {
-    "worktree": "d7d657a905acf962a238db75ad6522cb33fa381e4a2b66e3618285178847f612",
-    "repository": "ca116cb02e9719c5c8d232b1427fa061b2baa459de178967e0435b4e423f63cd"
+    "worktree": "9d35bc0f82c9dd2f3547ffef0e2c9b9d0dfa55603912cac99583050847b3ed91",
+    "repository": "60d9ec67871168b02d70fd2038a8599226ce8cb7d6d7dbe9b2a3bbef4582f5ee"
   },
   "src/data/quizzes/mas122.ts": {
     "worktree": "3a9bd626d36e3864eb7ff19d55781880adc2f062d95fdaee43dcb0fddd8d098e",

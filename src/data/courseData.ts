@@ -256,13 +256,13 @@ const AKK202_TM1_7 = materi([
   ['Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar', 'Kieso IFRS 5e Ch. 13 | IFRS 9'],
 ], 1);
 const AKK202_TM8_14 = materi([
-  ['Liabilitas Jangka Panjang: Obligasi dan Metode Suku Bunga Efektif', 'Kieso IFRS 5e Ch. 14 | PSAK 71'],
-  ['Wesel Bayar Jangka Panjang, Pelunasan Dini Obligasi & Restrukturisasi Utang', 'Kieso IFRS 5e Ch. 14 | PSAK 71, IFRIC 19'],
-  ['Ekuitas Pemegang Saham, Saham Treasuri & Kebijakan Dividen', 'Kieso IFRS 5e Ch. 15 | PSAK 50, UU PT'],
-  ['Sekuritas Dilutif: Obligasi Konversi, Waran Saham & Kompensasi Saham', 'Kieso IFRS 5e Ch. 16 | PSAK 50, 53, 71'],
-  ['Laba Per Saham (Earnings Per Share): Basic & Diluted', 'Kieso IFRS 5e Ch. 16 | PSAK 56, IAS 33'],
-  ['Akuntansi Investasi I: Efek Utang (Biaya Perolehan Diamortisasi & Nilai Wajar)', 'Kieso IFRS 5e Ch. 17 | PSAK 71'],
-  ['Akuntansi Investasi II: Efek Ekuitas, Entitas Asosiasi & Metode Ekuitas', 'Kieso IFRS 5e Ch. 17 | PSAK 15, 71'],
+  ["Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif", "Kieso IFRS 5e Ch. 13 | RPP AKM II, halaman PDF 3"],
+  ["Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar", "Kieso IFRS 5e Ch. 13 | RPP AKM II, halaman PDF 3"],
+  ["Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen", "Kieso IFRS 5e Ch. 14 | RPP AKM II, halaman PDF 3"],
+  ["Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham", "Kieso IFRS 5e Ch. 15 | RPP AKM II, halaman PDF 3"],
+  ["Earnings Per Share: EPS Dasar dan EPS Dilusian", "Kieso IFRS 5e Ch. 15 | RPP AKM II, halaman PDF 3"],
+  ["Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit", "Kieso IFRS 5e Ch. 16 | RPP AKM II, halaman PDF 3"],
+  ["Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi", "Kieso IFRS 5e Ch. 16 | RPP AKM II, halaman PDF 3"],
 ], 9);
 const AKK202_REF = [
   'Kieso, D. E., Weygandt, J. J., & Warfield, T. D. (2024). Intermediate Accounting: IFRS Edition (5th ed.). John Wiley & Sons. (Wajib)',
@@ -612,7 +612,7 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'AKK202', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (L)',
             references: AKK202_REF,
-            materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 82, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 88, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'MNU108', newCode: 'FEB25603011', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
