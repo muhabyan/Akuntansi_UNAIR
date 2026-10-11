@@ -1,3 +1,4 @@
+import { PJK301_QUIZ_UAS } from './pjk301Uas';
 // src/data/quizzes/pjk301.ts
 // Bank Soal Kuis Pilihan Ganda Komprehensif Perpajakan II (PJK301)
 import type { QuizQuestion } from '../../types';
@@ -135,105 +136,6 @@ export const PJK301_QUIZ_UTS: QuizQuestion[] = [
     2, 'Pasal 31E: PKP fasilitas Rp480.000.000 dikenai 11% dan sisa Rp2.520.000.000 dikenai 22%, sehingga PPh terutang Rp607.200.000. Setelah kredit pihak ketiga Rp300.000.000 dan PPh 25 Rp240.000.000, PPh 29 = Rp67.200.000.'),
 ];
 
-export const PJK301_QUIZ_UAS: QuizQuestion[] = [
-  {
-    "tm": 8,
-    "topic": "Fasilitas PPh Badan Pasal 31E",
-    "difficulty": "medium",
-    "q": "PT Makmur memiliki peredaran bruto setahun Rp 4.000.000.000 dengan Penghasilan Kena Pajak Rp 300.000.000. Berapakah PPh Badan terutang PT Makmur?",
-    "options": [
-      "Rp 66.000.000",
-      "Rp 33.000.000",
-      "Rp 20.000.000",
-      "Rp 15.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Karena omzet < Rp 4,8 Miliar, seluruh PKP mendapat fasilitas pengurangan tarif 50%: Tarif efektif = 50% × 22% = 11%. PPh terutang = 11% × Rp 300.000.000 = Rp 33.000.000."
-  },
-  {
-    "tm": 9,
-    "topic": "PPh 21 Skema TER (PP 58/2023)",
-    "difficulty": "medium",
-    "q": "Berdasarkan PP No. 58/2023 dan PMK 168/2023, pemotongan PPh 21 untuk pegawai tetap pada masa pajak Januari hingga November dihitung dengan cara...",
-    "options": [
-      "Mengalikan penghasilan neto disetahunkan dengan tarif progresif Pasal 17",
-      "Mengalikan penghasilan bruto bulanan secara langsung dengan Tarif Efektif Rata-Rata (TER)",
-      "Memotong tarif flat 5% dari seluruh penghasilan kotor pegawai",
-      "Mengurangi PTKP bulanan lalu dikalikan tarif 15%"
-    ],
-    "answer": 1,
-    "explanation": "Skema TER mempermudah administrasi masa pajak bulanan Jan-Nov: PPh 21 = Penghasilan Bruto Bulanan × Tarif TER yang sesuai status PTKP."
-  },
-  {
-    "tm": 10,
-    "topic": "Natura & Kenikmatan (PMK 66/2023)",
-    "difficulty": "medium",
-    "q": "Manakah fasilitas natura yang DIKECUALIKAN dari objek PPh Pasal 21 bagi karyawan berdasarkan PMK 66/2023?",
-    "options": [
-      "Mobil dinas mewah yang dibawa pulang untuk keperluan pribadi",
-      "Penyediaan makanan dan minuman bagi seluruh pegawai di tempat kerja secara cuma-cuma",
-      "Keanggotaan klub golf eksekutif",
-      "Tiket liburan keluarga pegawai ke luar negeri"
-    ],
-    "answer": 1,
-    "explanation": "Makanan/minuman bagi seluruh pegawai di tempat kerja, fasilitas kerja di daerah tertentu, dan peralatan keselamatan kerja dikecualikan dari objek PPh 21."
-  },
-  {
-    "tm": 11,
-    "topic": "Rekonsiliasi Fiskal SPT 1771",
-    "difficulty": "medium",
-    "q": "Dalam laporan laba rugi komersial terdapat Beban Sumbangan HUT RI sebesar Rp 15.000.000 dan Pendapatan Bunga Deposito sebesar Rp 20.000.000. Penyesuaian fiskal yang tepat adalah...",
-    "options": [
-      "Koreksi Positif Rp 15 jt dan Koreksi Negatif Rp 20 jt",
-      "Koreksi Negatif Rp 15 jt dan Koreksi Positif Rp 20 jt",
-      "Koreksi Positif Rp 35 jt",
-      "Koreksi Negatif Rp 35 jt"
-    ],
-    "answer": 0,
-    "explanation": "Sumbangan non-bencana dikoreksi POSITIF (menambah laba fiskal karena non-deductible). Bunga deposito dikoreksi NEGATIF (mengurangi laba fiskal karena sudah dikenakan PPh Final)."
-  },
-  {
-    "tm": 12,
-    "topic": "Konsep PPN & Tarif UU HPP",
-    "difficulty": "medium",
-    "q": "Berdasarkan UU Harmonisasi Peraturan Perpajakan, tarif umum Pajak Pertambahan Nilai (PPN) yang berlaku saat ini adalah...",
-    "options": [
-      "10%",
-      "11%",
-      "12%",
-      "15%"
-    ],
-    "answer": 1,
-    "explanation": "Tarif PPN adalah 11% (berlaku sejak 1 April 2022) sesuai ketentuan UU HPP."
-  },
-  {
-    "tm": 13,
-    "topic": "Mekanisme Pengkreditan Pajak Masukan PPN",
-    "difficulty": "medium",
-    "q": "Pengusaha Kena Pajak (PKP) pada masa pajak Mei memiliki Pajak Keluaran Rp 85.000.000 dan Pajak Masukan yang dapat dikreditkan Rp 95.000.000. Posisi PPN pada SPT Masa Mei adalah...",
-    "options": [
-      "PPN Kurang Bayar Rp 10.000.000",
-      "PPN Lebih Bayar Rp 10.000.000 (dapat dikompensasikan atau direstitusi)",
-      "PPN Nihil",
-      "Dikenakan sanksi denda administrasi keterlambatan"
-    ],
-    "answer": 1,
-    "explanation": "Pajak Masukan (95 jt) > Pajak Keluaran (85 jt) = Lebih Bayar Rp 10.000.000 yang dapat dikompensasi ke masa pajak berikutnya atau direstitusi."
-  },
-  {
-    "tm": 14,
-    "topic": "Pemungut PPN (WAPU)",
-    "difficulty": "medium",
-    "q": "Ketika PKP rekanan menjual alat kantor senilai Rp 50.000.000 (belum PPN) kepada Dinas Pendidikan (Instansi Pemerintah WAPU), maka kas riil yang diterima rekanan dari dinas adalah...",
-    "options": [
-      "Rp 55.500.000 (termasuk PPN 11%)",
-      "Rp 50.000.000 (karena PPN 11% dipungut dan disetor langsung oleh bendahara instansi)",
-      "Rp 44.500.000",
-      "Rp 49.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Bendahara Instansi Pemerintah selaku WAPU memungut langsung PPN Rp 5,5 juta dan menyetorkannya ke kas negara, sehingga rekanan menerima pembayaran neto DPP Rp 50.000.000."
-  }
-];
+export { PJK301_QUIZ_UAS } from './pjk301Uas';
 
 export const PJK301_QUIZ: QuizQuestion[] = [...PJK301_QUIZ_UTS, ...PJK301_QUIZ_UAS];

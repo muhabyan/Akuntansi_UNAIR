@@ -1,157 +1,229 @@
 import type { Reading } from '../../../types';
-import { CASE_VAT_PKP_OBJECTS } from '../pjk2PracticeCases';
-
-const SVG_VAT_MECHANISM = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="pkGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="pmGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk12)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">MEKANISME PENGKREDITAN PAJAK PERTAMBAHAN NILAI: PAJAK KELUARAN (PK) VS PAJAK MASUKAN (PM)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">MEKANISME PPN</text>
-
-  <!-- Left: Pajak Keluaran (Penjualan) -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="150" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="395" height="28" rx="10" fill="url(#pkGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="16" y="19" fill="#38bdf8" font-size="10.5" font-weight="800">1. PAJAK KELUARAN (PK) - PENYERAHAN BKP / JKP</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8">• PPN 11% (UU HPP) yang dipungut PKP Penjual saat menjual barang/jasa</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8">• Menerbitkan Faktur Pajak Elektronik (e-Faktur) kode 010 / 020 / 030 / 040</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8">• Merupakan utang titipan kas dari pembeli yang wajib disetor ke kas negara</text>
-    <rect class="svg-badge-blue" x="16" y="105" width="363" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="197" y="121" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Kewajiban Setor Pajak Pertambahan Nilai</text>
-  </g>
-
-  <!-- Right: Pajak Masukan (Pembelian) -->
-  <g transform="translate(470, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="150" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="395" height="28" rx="10" fill="url(#pmGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="16" y="19" fill="#34d399" font-size="10.5" font-weight="800">2. PAJAK MASUKAN (PM) - PEROLEHAN BKP / JKP</text>
-    <text class="svg-text" x="16" y="48" fill="#cbd5e1" font-size="8">• PPN 11% yang telah dibayar PKP saat membeli bahan baku / barang dagang</text>
-    <text class="svg-text" x="16" y="66" fill="#cbd5e1" font-size="8">• Menerima Faktur Pajak Masukan sah &amp; tervalidasi di sistem e-Faktur DJP</text>
-    <text class="svg-text" x="16" y="84" fill="#cbd5e1" font-size="8">• Berfungsi sebagai kredit pajak pengurang atas Pajak Keluaran</text>
-    <rect class="svg-badge-green" x="16" y="105" width="363" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="197" y="121" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Hak Kredit Pajak Pengurang (Prepaid Tax)</text>
-  </g>
-
-  <!-- Bottom Outcomes (Kurang Bayar vs Lebih Bayar) -->
-  <g transform="translate(35, 238)">
-    <rect class="svg-subcard" x="0" y="0" width="395" height="75" rx="8" fill="#1e293b" stroke="#f87171"/>
-    <text class="text-accent-red" x="14" y="20" fill="#f87171" font-size="9.5" font-weight="800">KONDISI A: PAJAK KELUARAN &gt; PAJAK MASUKAN (PK &gt; PM)</text>
-    <text class="text-accent-red" x="14" y="38" fill="#f87171" font-size="8.5" font-weight="700">STATUS: PPN KURANG BAYAR</text>
-    <text class="svg-text" x="14" y="54" fill="#cbd5e1" font-size="7.5">Selisih wajib disetor ke kas negara via Kode Billing sebelum SPT Masa PPN 1111 dilaporkan pada akhir bulan berikutnya.</text>
-
-    <rect class="svg-subcard" x="435" y="0" width="395" height="75" rx="8" fill="#1e293b" stroke="#34d399"/>
-    <text class="text-accent-green" x="449" y="20" fill="#34d399" font-size="9.5" font-weight="800">KONDISI B: PAJAK KELUARAN &lt; PAJAK MASUKAN (PK &lt; PM)</text>
-    <text class="text-accent-green" x="449" y="38" fill="#34d399" font-size="8.5" font-weight="700">STATUS: PPN LEBIH BAYAR</text>
-    <text class="svg-text" x="449" y="54" fill="#cbd5e1" font-size="7.5">PKP berhak memilih: (1) Dikompensasikan ke masa pajak berikutnya (Default), atau (2) Diajukan Permohonan Restitusi pengembalian kas.</text>
-  </g>
-</svg>`;
 
 export const TM12_READING: Reading = {
-  tm: 12,
-  title: 'Dasar Hukum PPN & PPnBM, Karakteristik, Pengusaha Kena Pajak (PKP), & Objek BKP/JKP',
-  ref: 'UU PPN No. 8/1983 jo UU HPP No. 7/2021 | PMK 197/2013 Batasan PKP 4,8 M | Tarif PPN 11% (12%)',
-  intro: 'TM 12 membahas struktur Pajak Pertambahan Nilai (PPN) dan Pajak Penjualan atas Barang Mewah (PPnBM) di Indonesia. PPN bersifat objektif, tidak langsung, dan multi-stage non-kumulatif dengan credit method. Topik lainnya kriteria pengukuhan Pengusaha Kena Pajak (PKP, ambang omzet > Rp 4,8 Miliar), klasifikasi Barang Kena Pajak (BKP) dan Jasa Kena Pajak (JKP), fasilitas PPN Dibebaskan vs Tidak Dipungut, serta struktur tarif PPN (11% menuju 12%).',
-  objectives: [
-    'Menjelaskan karakteristik PPN: Pajak Tidak Langsung, Pajak Objektif, Multi-Stage, dan Destination Principle.',
-    'Menganalisis batasan peredaran bruto pengukuhan Pengusaha Kena Pajak (PKP) sebesar Rp 4,8 Miliar.',
-    'Membedakan fasilitas PPN: Dibebaskan (Pajak Masukan tidak dapat dikreditkan) vs Tidak Dipungut (PM dapat dikreditkan).',
-    'Menghitung PPN dan PPnBM atas penyerahan barang mewah kendaraan bermotor dan hunian mewah.'
+  "tm": 12,
+  "title": "Dasar PPN, PKP, Objek, dan Tarif",
+  "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
+  "intro": "Mengidentifikasi objek, pengecualian, status PKP, dan karakter pemungutan PPN. Memilih DPP dan tarif menurut tahun, termasuk harga sudah mengandung PPN dan impor. Contoh dan latihan di bawah menyatakan tahun kasus, dasar aturan, satuan, dan pembulatan.",
+  "objectives": [
+    "Mengidentifikasi objek, pengecualian, status PKP, dan karakter pemungutan PPN.",
+    "Memilih DPP dan tarif menurut tahun, termasuk harga sudah mengandung PPN dan impor.",
+    "Menghubungkan PK, PM, faktur, penyetoran, dan kewajiban pelaporan PKP."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 12.1: Mekanisme Pengkreditan PPN: Pajak Keluaran dikurangi Pajak Masukan (Credit Method).',
-      svg: SVG_VAT_MECHANISM
+      "kind": "callout",
+      "variant": "info",
+      "title": "Cakupan, sumber, dan tahun kasus",
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi menggunakan RPP, slide dosen, peraturan primer, serta bacaan terbuka bertanda edisi dan halaman pada bagian Bacaan terbuka sesuai RPP. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 1 angka 2, Pasal 3A, Pasal 4, & Pasal 7 UU PPN s.t.d.t.d UU HPP',
-      text: '"Pasal 1 angka 2: Barang Kena Pajak (BKP) adalah barang berwujud atau tidak berwujud yang dikenai pajak berdasarkan Undang-Undang ini.\n\nPasal 3A ayat (1): Pengusaha yang melakukan penyerahan BKP/JKP wajib melaporkan usahanya untuk dikukuhkan sebagai Pengusaha Kena Pajak (PKP) dan wajib memungut, menyetor, dan melaporkan PPN/PPnBM, kecuali pengusaha kecil dengan omzet tahunan di bawah Rp 4,8 Miliar.\n\nPasal 4 ayat (1): PPN dikenakan atas penyerahan BKP/JKP di dalam Daerah Pabean oleh Pengusaha, impor BKP, pemanfaatan BKP Tidak Berwujud/JKP dari luar Daerah Pabean, dan ekspor BKP/JKP oleh PKP.\n\nPasal 7 ayat (1): Tarif Pajak Pertambahan Nilai yaitu: a. sebesar 11% yang mulai berlaku pada tanggal 1 April 2022; b. sebesar 12% yang mulai berlaku paling lambat pada tanggal 1 Januari 2025; c. tarif 0% diterapkan atas ekspor BKP Berwujud, BKP Tidak Berwujud, dan JKP."'
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Perkiraan fokus UAS",
+      "text": "Perkiraan berdasarkan capaian RPP dan contoh sumber: Dasar PPN, PKP, Objek, dan Tarif. Latih keputusan aturan sebelum hitungan, langkah per lapisan, dokumentasi, dan koreksi kesalahan. Tidak ada arsip UAS lokal yang mengonfirmasi bobot topik atau bentuk soal. RPP menyebut studi kasus komprehensif; latihan berbahasa Indonesia mengikuti materi lokal."
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 12'
+      "kind": "p",
+      "text": "PM = Pajak Masukan, yaitu PPN atas perolehan atau impor yang diuji pengkreditannya. PK = Pajak Keluaran, yaitu PPN yang wajib dipungut PKP atas penyerahannya. DPP = Dasar Pengenaan Pajak, nilai yang menjadi dasar mengalikan tarif. PKP di bagian ini berarti Pengusaha Kena Pajak. PK dan PM berupa jumlah pajak; DPP berupa nilai transaksi menurut skema yang dipakai. Rujukan: UU PPN Pasal 1 angka 15, 17, 24 dan 25 (paragraf PKP, DPP, PM, dan PK)."
     },
     {
-      kind: 'table',
-      headers: ['Aspek PPN & PPnBM', 'Ketentuan Regulasi UU HPP', 'Implikasi Finansial bagi PKP', 'Dampak bagi Konsumen Akhir'],
-      rows: [
-        ['Tarif PPN Penyerahan DN', 'Tarif tunggal 11% (berlaku sejak 1 April 2022, menuju 12%).', 'Dipungut sebagai Pajak Keluaran (PK) pada saat faktur terbit.', 'Menjadi penambah harga beli riil yang dibayar konsumen.'],
-        ['Tarif PPN Ekspor', 'Tarif 0% atas ekspor BKP berwujud, BKP tidak berwujud, & JKP.', 'Pajak Keluaran nol, tetapi Pajak Masukan terkait tetap dapat dikreditkan/restitusi.', 'Komoditas ekspor Indonesia berdaya saing bebas beban PPN.'],
-        ['Fasilitas PPN Dibebaskan', 'Diberikan untuk barang kebutuhan pokok, vaksin, air bersih, jasa medis/pendidikan.', 'Pajak Masukan yang dibayar TIDAK DAPAT DIKREDITKAN (dibiayakan).', 'Masyarakat memperoleh kebutuhan pokok tanpa tambahan PPN.'],
-        ['Fasilitas PPN Tidak Dipungut', 'Diberikan di Kawasan Bebas (FTZ Batam), Kawasan Berikat, KEK.', 'Pajak Masukan yang dibayar TETAP DAPAT DIKREDITKAN.', 'Mendorong arus investasi industri manufaktur berorientasi ekspor.'],
-        ['Karakteristik PPnBM', 'Pungutan satu kali saja di tingkat pabrikan atau saat impor barang mewah (10% s/d 200%).', 'PPnBM BUKAN Pajak Masukan dan MUTLAK TIDAK DAPAT DIKREDITKAN.', 'Menangkal konsumsi barang mewah yang mencolok.']
+      "kind": "h2",
+      "text": "Latar belakang dan karakter PPN"
+    },
+    {
+      "kind": "p",
+      "text": "PPN menggantikan pajak penjualan dengan sistem pengenaan pertambahan nilai pada mata rantai transaksi. PPN merupakan pajak konsumsi dalam daerah pabean, bersifat tidak langsung dan objektif. Multi stage berarti dikenakan pada beberapa tahap; credit method berarti PK dikurangi PM sah, sehingga tidak cukup menghitung pajak atas laba akuntansi. PPN atas impor serta pemanfaatan hak/jasa luar negeri perlu diuji tersendiri. Ekspor BKP berwujud oleh PKP tarif 0% tetap merupakan penyerahan terutang pajak. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9."
+    },
+    {
+      "kind": "p",
+      "text": "Sejarah pada UT PDF 28-32 membedakan Pajak Penjualan 1951 (PPn) dari PPN yang mulai diberlakukan 1 April 1985. Pengenaan bertahap dan kredit berbasis faktur menghindari beban pajak bertumpuk sepanjang produksi/distribusi. PPn dalam sejarah berbeda dari PPnBM atas barang mewah. Contoh angka 10% dalam modul 2014 tidak menjadi tarif kasus 2024. Rujukan: UT PAJA3232-M1 (2014), halaman PDF 19-21 dan 28-32; UU HPP, halaman PDF 67-69, perubahan Pasal 7 dan 9 UU PPN."
+    },
+    {
+      "kind": "h2",
+      "text": "PKP, objek, dan pengecualian"
+    },
+    {
+      "kind": "p",
+      "text": "PKP adalah Pengusaha Kena Pajak. BKP berarti Barang Kena Pajak; JKP berarti Jasa Kena Pajak. Identifikasi penyerahan di daerah pabean dalam kegiatan usaha, impor, pemanfaatan dari luar pabean, serta ekspor sesuai syarat UU PPN. Makanan/minuman restoran yang menjadi objek pajak daerah berada di luar PPN menurut Pasal 4A. Barang/jasa tertentu lain dapat mendapat fasilitas dibebaskan atau tidak dipungut dan bukan semuanya kehilangan status objek. Ambang pengusaha kecil serta saat pengukuhan memakai aturan administrasi yang sesuai tahun; jangan menentukan status PKP hanya dari satu faktur. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9."
+    },
+    {
+      "kind": "h2",
+      "text": "Ambang PKP dan tahun mulai kewajiban"
+    },
+    {
+      "kind": "p",
+      "text": "Dalam skenario tahun buku kalender 2024, pengusaha yang melebihi ambang pengusaha kecil Rp4,8 miliar wajib melaporkan usaha untuk pengukuhan PKP paling lambat akhir tahun buku, yaitu 31 Desember 2024. Jika melapor tepat waktu dengan jalur umum Pasal 17-18, kewajiban mulai masa pertama tahun buku berikutnya, Januari 2025. Pengusaha kecil dapat memilih menjadi PKP; pengukuhan lebih awal serta pelaporan terlambat mengikuti cabang aturan tersendiri Pasal 19-20. Tenggat akhir bulan berikutnya pada PMK 197/2013 lama perlu dibedakan dari aturan ini. Rujukan: PMK 164/2023, halaman PDF 16-18, Pasal 17-20 (paragraf ambang pengusaha kecil, batas pelaporan, awal kewajiban, dan pengukuhan lebih awal)."
+    },
+    {
+      "kind": "h2",
+      "text": "Tarif formal dan tahun transaksi"
+    },
+    {
+      "kind": "p",
+      "text": "Pada April 2022 sampai 2024 tarif umum PPN 11%. Mulai 1 Januari 2025 tarif UU 12%; PMK 131/2024 mengatur nonmewah biasa dengan DPP nilai lain 11/12 harga jual, penggantian, atau nilai impor, sehingga hasil efektif 11%. BKP mewah yang dikenai PPnBM memakai harga/nilai impor penuh sesuai Pasal 2. Penjualan eceran mewah kepada konsumen akhir memiliki transisi Januari 2025; soal Maret menghindari transisi itu. Nilai lain khusus dan besaran tertentu di luar skema ini mengikuti Pasal 4 dan aturan sektoral, termasuk perubahan PMK 11/2025 jo. 53/2025; jangan memakai satu rumus untuk seluruh transaksi. Rujukan: PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN."
+    },
+    {
+      "kind": "h2",
+      "text": "DPP dan harga termasuk pajak"
+    },
+    {
+      "kind": "p",
+      "text": "DPP bisa harga jual, penggantian, nilai impor, nilai ekspor, atau nilai lain. Pada transaksi nonmewah biasa 2025, pisahkan harga jual dari DPP nilai lain. Harga Rp200 juta memberi DPP 11/12 × Rp200 juta dan PPN Rp22 juta. Jika total Rp222 juta sudah termasuk PPN, harga Rp222 juta/1,11 = Rp200 juta. Jangan mengurangi total langsung 11% atau memakai pembagi 1,12 untuk skema ini. Pertahankan presisi pecahan selama hitung, lalu tulis hasil dan konvensi pembulatan. Rujukan: PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN."
+    },
+    {
+      "kind": "h2",
+      "text": "Impor dan mekanisme kredit"
+    },
+    {
+      "kind": "p",
+      "text": "Nilai impor meliputi CIF, bea masuk serta pungutan kepabeanan yang masuk definisi; CIF berarti biaya barang, asuransi, dan angkut. PPh 22 tidak menjadi PM PPN. PPN impor yang sah dan terkait usaha dapat menjadi PM dengan dokumen yang memenuhi ketentuan. PK lebih besar dari PM menghasilkan kurang bayar; PM lebih besar menghasilkan lebih bayar yang umumnya dikompensasikan dengan opsi pengembalian sesuai syarat. PM tidak sama dengan harga barang dan tidak dipotong langsung dari omzet. Rujukan: UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c). Dasar definisi nilai impor: UU PPN Pasal 1 angka 20 (paragraf nilai dasar bea masuk ditambah pungutan kepabeanan dan cukai, tanpa PPN/PPnBM)."
+    },
+    {
+      "kind": "h2",
+      "text": "Kewajiban PKP dan kontrol dokumen"
+    },
+    {
+      "kind": "p",
+      "text": "PKP memungut, membuat faktur tepat waktu dan benar, mencatat transaksi, menguji kredit PM, menyetor serta melapor. Faktur harus memenuhi formal dan material, artinya identitas/isi serta transaksi sebenarnya sesuai. Pengembalian barang, pembatalan jasa, transaksi valas dan penyerahan kepada pemungut memerlukan dokumen penghubung. Data buku pembantu penjualan, pembelian, persediaan, uang muka dan faktur digunakan untuk rekonsiliasi masa. Rujukan: UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material)."
+    },
+    {
+      "kind": "table",
+      "title": "Tahun dan skema PPN transaksi biasa",
+      "headers": [
+        "Transaksi",
+        "Tarif dan dasar",
+        "Batas cakupan"
       ],
-      caption: 'Tabel 12.0: Matriks karakteristik dan tarif PPN serta PPnBM di Indonesia.'
+      "rows": [
+        [
+          "BKP/JKP biasa tahun 2024",
+          "11% × harga/penggantian",
+          "Tanpa fasilitas atau skema khusus"
+        ],
+        [
+          "BKP nonmewah/JKP biasa mulai 2025",
+          "12% × 11/12 × harga/penggantian",
+          "Pasal 3 PMK 131/2024"
+        ],
+        [
+          "BKP mewah yang dikenai PPnBM, Maret 2025",
+          "12% × harga penuh",
+          "Uji klasifikasi, tanpa insentif"
+        ],
+        [
+          "Ekspor BKP berwujud oleh PKP",
+          "0% × nilai ekspor",
+          "PM sah masih dapat dikreditkan"
+        ]
+      ],
+      "caption": "Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9; PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN.",
+      "stackOnMobile": true
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Mekanisme Pajak Keluaran - Masukan'
+      "kind": "formula",
+      "text": "\\mathrm{PPN}_{nonmewah,2025}=12\\%\\times\\frac{11}{12}\\times\\mathrm{Harga}",
+      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
     },
     {
-      kind: 'formula',
-      text: `\\text{Pajak Keluaran (PK)} = \\text{Dasar Pengenaan Pajak (DPP)} \\times 11\\%
-\\text{Pajak Masukan (PM)} = \\text{PPN yang Telah Dibayar saat Beli Bahan Baku / Impor}
-\\text{Status SPT Masa PPN 1111}: \\quad \\begin{cases}
-PK - PM > 0 & \\implies \\text{PPN Kurang Bayar (Wajib Setor Akhir Bulan Berikutnya)} \\\\
-PK - PM < 0 & \\implies \\text{PPN Lebih Bayar (Kompensasi ke Bulan Depan / Restitusi)}
-\\end{cases}`,
-      note: 'Pengusaha yang omzetnya belum mencapai Rp 4,8 Miliar dikategorikan sebagai Pengusaha Kecil yang tidak wajib dikukuhkan sebagai PKP dan dilarang menerbitkan Faktur Pajak.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Penyerahan BKP Mewah Dikenai PPN dan PPnBM',
-      prompt: 'Pabrikan mobil PT Otomotif Prima menyerahkan mobil sedan mewah dengan harga jual (DPP) Rp 1.000.000.000 kepada konsumen. Berdasarkan peraturan perpajakan, mobil tersebut dikenai PPN 11% dan PPnBM tarif 40%. Hitung total harga yang harus dibayar konsumen!',
-      blocks: [
+      "kind": "solution-reveal",
+      "title": "Kasus 12A: Tarif lintas tahun dan harga termasuk pajak",
+      "prompt": "PKP menyerahkan BKP nonmewah biasa dengan harga sebelum PPN Rp200 juta pada September 2024 dan Maret 2025. Faktur lain Maret 2025 senilai Rp222 juta sudah termasuk PPN. Semua transaksi tanpa fasilitas atau skema khusus. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9; PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN.",
+      "promptBlocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Perhitungan PPN (11%)**: 11% × Rp 1.000.000.000 = **Rp 110.000.000**.',
-            '**Perhitungan PPnBM (40%)**: 40% × Rp 1.000.000.000 = **Rp 400.000.000**.',
-            '**Total yang Wajib Dibayar Konsumen**:\nHarga Jual (1.000.000.000) + PPN (110.000.000) + PPnBM (400.000.000) = **Rp 1.510.000.000**.',
-            '**Catatan Finansial**: Konsumen pembeli tidak dapat mengkreditkan PPnBM Rp 400 Jt tersebut; PPnBM dikapitalisasi menambah harga perolehan aset mobil.'
+          "kind": "ul",
+          "items": [
+            "Tarif 2024 11%; sejak 2025 tarif formal 12% dengan nilai lain 11/12 untuk transaksi kasus.",
+            "Harga termasuk pajak tidak mencakup PPnBM."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung DPP dan PPN kedua transaksi lintas tahun.",
+            "Pisahkan harga jual dan DPP nilai lain pada faktur 2025.",
+            "Uraikan harga sebelum pajak faktur Rp222 juta dan koreksi usulan membaginya dengan 1,12."
           ]
         }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 12'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Karakteristik & Subjek PKP', 'Threshold omzet Rp 4,8 Miliar dan hak/kewajiban pengukuhan PKP.', 'Mampu mengidentifikasi status kewajiban PKP suatu entitas.'],
-        ['2', 'Objek BKP dan JKP', 'Pengecualian objek dan fasilitas PPN Dibebaskan vs Tidak Dipungut.', 'Mampu membedakan barang kebutuhan pokok bebas PPN vs BKP umum.'],
-        ['3', 'Kalkulasi PPN & PPnBM', 'Perhitungan Pajak Keluaran, Pajak Masukan, dan PPnBM satu kali pungut.', 'Mampu menghitung tagihan faktur penjualan komprehensif.']
       ],
-      caption: 'Tabel 12.2: Peta penguasaan submateri TM 12 Perpajakan II.'
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "2024: DPP harga jual Rp200 juta, PPN 11% = Rp22 juta. Maret 2025: harga Rp200 juta, DPP nilai lain 11/12 × Rp200 juta = Rp183.333.333,3333, PPN 12% = Rp22 juta. Total faktur masing-masing Rp222 juta. Faktur inklusif: harga = Rp222 juta/1,11 = Rp200 juta, DPP nilai lain Rp183.333.333,3333, PPN Rp22 juta. Pembagi 1,12 mengabaikan nilai lain. Jangan membulatkan pecahan antara sebelum mengalikan tarif; hasil akhir rupiah bulat. Persamaan efektif 11% tidak mengganti tarif formal. Untuk barang mewah atau DPP khusus, tentukan dasar berbeda dari sumbernya. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9; PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
-    CASE_VAT_PKP_OBJECTS,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "solution-reveal",
+      "title": "Kasus 12B: Impor, penjualan domestik, ekspor, dan kredit",
+      "prompt": "April 2025 PKP mengimpor bahan nonmewah biasa dengan CIF Rp500 juta serta bea masuk Rp50 juta. Perusahaan menjual domestik Rp800 juta sebelum PPN dan mengekspor BKP berwujud Rp300 juta. Tidak ada fasilitas atau skema khusus. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9; PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN; UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c).",
+      "promptBlocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Pungutan kepabeanan lain nihil; PPN impor dibayar dengan dokumen sah dan terkait usaha.",
+            "PM domestik tambahan Rp11 juta sah; tanpa kompensasi masa sebelumnya."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung nilai impor dan PPN impor.",
+            "Hitung PK domestik serta ekspor.",
+            "Hitung saldo masa dan jelaskan status PM impor serta bukti pendukung."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Nilai impor Rp550 juta. PPN impor = 12% × 11/12 × Rp550 juta = Rp60.500.000. PK domestik = 12% × 11/12 × Rp800 juta = Rp88.000.000. Ekspor BKP berwujud tarif 0% memberi PK Rp0. Kredit PM = Rp60,5 juta + Rp11 juta = Rp71,5 juta. Setoran sendiri Rp88 juta - Rp71,5 juta = Rp16.500.000. Dokumen impor, bukti pembayaran PPN impor, faktur domestik dan bukti ekspor perlu cocok; PPh 22 tidak ditambahkan pada PM PPN. Pertahankan pecahan DPP hingga akhir, satuan rupiah, hasil bulat. Rujukan: UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9; PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN; UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c)."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
     {
-      kind: 'ul',
-      items: [
-        '**PPN Adalah Beban Konsumen Akhir**: Bagi PKP yang berada di tengah rantai distribusi, PPN bukanlah beban biaya karena Pajak Masukan yang dibayar dapat dikurangkan dari Pajak Keluaran.',
-        '**Perbedaan Dibebaskan vs Tidak Dipungut**: Fasilitas Dibebaskan melarang pengkreditan Pajak Masukan (PM hangus/menjadi beban); Fasilitas Tidak Dipungut MEMBOLEHKAN pengkreditan Pajak Masukan.',
-        '**Batas Waktu Pelaporan SPT PPN**: SPT Masa PPN 1111 wajib dilaporkan paling lambat akhir bulan berikutnya setelah berakhirnya masa pajak berkenaan.'
+      "kind": "h2",
+      "text": "Bacaan terbuka sesuai RPP"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "[UT PPN dan PPnBM, Modul 1 (2014)](https://repository.ut.ac.id/4451/1/PAJA3232-M1.pdf#page=6): PDF 6-21 karakter/mekanisme kredit, 28-32 sejarah PPn dan PPN."
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Modul 1 terbuka, belum seluruh bab PPN/PPnBM. Contoh 10% adalah ketentuan lama; untuk kasus 2024 gunakan tarif 11% HPP, dan untuk 2025 pilih dasar PMK 131/2024 sesuai klasifikasi transaksi."
+    },
+    {
+      "kind": "h2",
+      "text": "Rujukan yang dapat ditelusuri"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9.",
+        "PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN.",
+        "UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c).",
+        "UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material).",
+        "PMK 164/2023, halaman PDF 16-18, Pasal 17-20 (paragraf ambang pengusaha kecil, batas pelaporan, awal kewajiban, dan pengukuhan lebih awal)."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Sumber resmi untuk memeriksa paragraf: [UU PPN Pasal 4 ayat (1)](https://www.pajak.go.id/index.php/id/peraturan/harmonisasi-peraturan-perpajakan); [PMK 131/2024](https://www.pajak.go.id/id/peraturan/perlakuan-pajak-pertambahan-nilai-atas-impor-barang-kena-pajak-penyerahan-barang-kena). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Batas sumber dan penerapan",
+      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
+    },
+    {
+      "kind": "p",
+      "text": "Materi memakai tahun kasus yang disebutkan. Aturan khusus memerlukan klasifikasi, dokumen, dan ketentuan pelaksana yang sesuai. Katalog Waluyo/Resmi sudah ditelusuri, tetapi isi bukunya belum diakses. Bacaan terbuka tersedia pada bagian di atas. Arsip UAS Perpajakan II belum ditemukan untuk mengonfirmasi bobot dan bentuk ujian."
     }
   ]
 };

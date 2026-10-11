@@ -19,6 +19,8 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { TM15_READING } from './modules/tm15';
+import { PJK301_UAS_REVIEW } from './modules/reviewUas';
 
 export const PJK301_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -35,9 +37,10 @@ export const PJK301_READINGS: Record<number, Reading> = {
   12: TM12_READING,
   13: TM13_READING,
   14: TM14_READING,
+  15: TM15_READING,
 };
 
 export const PJK301_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
-  uas: TM14_READING,
+  uas: PJK301_UAS_REVIEW,
 };

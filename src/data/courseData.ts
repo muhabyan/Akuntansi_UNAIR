@@ -133,13 +133,13 @@ const PJK301_TM1_7 = materi([
   ['Kredit Pajak LN (PPh 24), Angsuran PPh 25 / OPPT, & Insentif 31A/31E', 'UU PPh Pasal 24, 25, 31A, 31E | PMK 81/2024 | PP 78/2019'],
 ], 1);
 const PJK301_TM8_14 = materi([
-  ['Konsep PPh 21/26 Terbaru (TER PP 58/2023 & Natura)', 'PP 58/2023 | PMK 168/2023 | PMK 66/2023'],
-  ['Kalkulasi Komprehensif PPh 21 (Tetap, Lepas, Ahli)', 'PMK 168/2023 | PP 68/2009 Pesangon'],
-  ['Rekonsiliasi Fiskal & SPT Tahunan PPh Badan 1771', 'Formulir 1771 DJP | PSAK 46'],
-  ['Dasar Hukum PPN & PPnBM, PKP, BKP/JKP, & Fasilitas', 'UU PPN jo. UU HPP | PMK 197/2013'],
-  ['Faktur Pajak, e-Faktur, DPP Nilai Lain & Pengkreditan PM', 'PER-03/PJ/2022 | PMK 71/2022'],
-  ['Restitusi PPN, PPN WAPU, Fasilitas & Pelaporan', 'UU KUP Pasal 17C/17D | PMK 59/2022 WAPU'],
-  ['Pajak Karbon dan Perdagangan Karbon', 'UU HPP Bab VI'],
+  ['Konsep PPh 21/26, TER, dan Natura', 'PP 58/2023 | PMK 168/2023 | PMK 66/2023'],
+  ['Penghitungan PPh 21/26 Berbagai Penerima', 'PMK 168/2023 | PP 68/2009'],
+  ['PPh Orang Pribadi dan Rekonsiliasi Fiskal Badan', 'UU PPh Pasal 6, 7, 14, 17, 31E | Slide dosen PPh OP'],
+  ['Dasar PPN, PKP, Objek, dan Tarif', 'UU PPN jo. HPP | PMK 131/2024 (kasus 2025)'],
+  ['PPnBM, Saat Terutang, Faktur, dan Retur', 'UU PPN | PP 44/2022 | PMK 131/2024'],
+  ['Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas', 'UU PPN Pasal 9, 16A, 16B | PMK 186/2022 | UU KUP'],
+  ['Pajak Karbon dan Analisis Perdagangan Karbon', 'UU HPP Pasal 13 | Simulasi dengan asumsi eksplisit'],
 ], 9);
 const PJK301_REF = [
   'Republik Indonesia. UU No. 7 Tahun 1983 tentang Pajak Penghasilan sebagaimana telah diubah terakhir dengan UU No. 7 Tahun 2021 tentang Harmonisasi Peraturan Perpajakan (UU HPP). (Wajib)',

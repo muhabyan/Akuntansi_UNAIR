@@ -1,0 +1,271 @@
+{
+  "checkedOn": "2026-10-11",
+  "yearPolicy": "Historical 2024 cases; named ordinary 2025 cases; carbon simulations only",
+  "references": {
+    "rpp": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
+    "pph21": "PMK 168/2023, halaman PDF 10-17, Pasal 8-16",
+    "last": "PMK 168/2023, halaman PDF 15-16 dan 21, Pasal 15 ayat (1)-(3) dan Pasal 21 ayat (1)-(2)",
+    "example": "PMK 168/2023, halaman PDF 35-36, Lampiran Bagian Kedua I.2.1.1",
+    "other": "PMK 168/2023, halaman PDF 13-17, Pasal 12 ayat (2)-(9) dan Pasal 16",
+    "ter": "PP 58/2023, Lampiran A tabel TER kategori A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23",
+    "daily": "PP 58/2023, Pasal 2 dan Lampiran B; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9 dan 18",
+    "natura": "PMK 66/2023, halaman PDF 16-17, Pasal 22; halaman PDF 21-23, Lampiran A angka 1-10; halaman PDF 49, contoh fasilitas apartemen",
+    "vehicle": "PMK 66/2023, halaman PDF 22, Lampiran A angka 8; halaman PDF 48-49, contoh kendaraan",
+    "26": "PMK 168/2023, halaman PDF 15, Pasal 14 ayat (1)-(3)",
+    "admin": "PMK 81/2024, halaman PDF 78-79 dan 138-139, Pasal 94 ayat (2) dan Pasal 171",
+    "pesangon": "PP 68/2009, Pasal 2, 4-6 (paragraf tarif pesangon, pensiun sekaligus, dan pembayaran tahun ketiga)",
+    "op": "UU PPh Pasal 6, 7, 14 dan 17; slide dosen PPh orang pribadi, halaman PDF 21, 23, 48 dan 51; UU HPP, halaman PDF 56-57",
+    "rate": "UU HPP, halaman PDF 56-57, perubahan Pasal 17 ayat (1) dan (4) UU PPh",
+    "recon": "UU PPh Pasal 4, 6, 9 dan 31E; slide dosen PPh orang pribadi, halaman PDF 48 dan 51; UU HPP, halaman PDF 38-49; UU PPh Pasal 28 ayat (1), 28A dan 29 (paragraf kredit reguler, lebih bayar, dan kurang bayar)",
+    "31e": "UU PPh Pasal 31E ayat (1) (paragraf pengurangan tarif atas bagian peredaran bruto Rp4,8 miliar); UU HPP, halaman PDF 56-57, Pasal 17; UU PPh Pasal 28 ayat (1), 28A dan 29 (paragraf kredit reguler, lebih bayar, dan kurang bayar)",
+    "vat": "UU PPN Pasal 4 ayat (1), 7 dan 8A; UU HPP, halaman PDF 63-69, perubahan Pasal 4A, 7 dan 9",
+    "vat25": "PMK 131/2024, Pasal 2-6 (paragraf BKP mewah, nilai lain 11/12, pengecualian skema khusus, dan mulai berlaku); UU PPN Pasal 1 angka 17-20 (paragraf DPP, harga jual, penggantian, dan nilai impor); UU HPP, halaman PDF 63-69, Pasal 7 UU PPN",
+    "pm": "UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c)",
+    "fp": "UU PPN Pasal 11 dan 13 ayat (1a), (5), (9) (paragraf saat terutang, pembuatan faktur, syarat formal dan material)",
+    "ppnbm": "UU PPN Pasal 5, 8 dan 10 (paragraf satu kali pengenaan, tarif, serta larangan pengkreditan PPnBM); PMK 131/2024 Pasal 2 dan 5",
+    "retur": "UU PPN Pasal 5A ayat (1)-(2) (paragraf retur BKP dan pembatalan JKP)",
+    "kurs": "PP 44/2022, Pasal 21 (paragraf konversi valuta asing dengan kurs Menteri Keuangan)",
+    "sanksi": "UU HPP, halaman PDF 14-16, perubahan Pasal 14 ayat (1) huruf d-e dan ayat (4) UU KUP",
+    "mixed": "PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian)",
+    "fasilitas": "UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan)",
+    "wapu": "UU PPN Pasal 16A ayat (1)-(2) (paragraf pemungutan dan penyetoran oleh pemungut PPN)",
+    "restitusi": "UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D",
+    "carbon": "UU HPP, halaman PDF 95-97, Pasal 13 ayat (5)-(15); halaman PDF 103, Pasal 17 ayat (3)",
+    "pkp": "PMK 164/2023, halaman PDF 16-18, Pasal 17-20 (paragraf ambang pengusaha kecil, batas pelaporan, awal kewajiban, dan pengukuhan lebih awal)",
+    "faktur2024": "PER-03/PJ/2022, Pasal 4 dan 22-24 serta Lampiran J-K (paragraf faktur gabungan, penggantian, pembatalan, dan pembetulan SPT)",
+    "pedomanHistoris": "PMK 74/2010, Pasal 2-7 (paragraf syarat dan persentase PM pedoman); UU HPP, halaman PDF 73 dan 76, Pasal 9 ayat (7)-(7b) dan Pasal 9A UU PPN",
+    "besaran2024": "PMK 65/2022, halaman PDF 4-7, Pasal 2, 4-7 (paragraf besaran tertentu, larangan kredit, dan pencabutan pedoman lama)",
+    "ev2024": "PMK 8/2024, halaman PDF 4-6, Pasal 2-6 (paragraf kendaraan baru, TKDN, PPN terutang, DTP, periode, dan dokumen)",
+    "evlux2024": "PMK 9/2024, Pasal 2-5 (paragraf persetujuan insentif, PPnBM DTP, periode, dan dokumen)",
+    "hkpd": "UU 1/2022 HKPD, halaman PDF 12-17 dan 99, Pasal 4, 9-11 dan 191 (paragraf kewenangan pajak, bobot lingkungan, tarif Perda, dan masa mulai berlaku)",
+    "subjectiveYear": "PMK 168/2023, halaman PDF 37-38, Lampiran Bagian Kedua I.2.1.2 (paragraf subjektif dimulai setelah awal tahun, penyetahunan, dan proporsi bagian tahun)",
+    "carbonLearning": "Buku OJK Perdagangan Karbon, edisi Juli 2025, halaman PDF 43-49 dan 60-65 (paragraf mekanisme pasar, MRV, dan registri)",
+    "carbon2026": "POJK 10/2026, halaman PDF 2-4 dan 7, Pasal I perubahan Pasal 1, 3, 5 dan Pasal II (paragraf SRUK, jenis unit, dan tanggal berlaku)"
+  },
+  "missing": [
+    "Canonical 04/05 TM09-TM15",
+    "Local Waluyo/Resmi books",
+    "Confirmed Perpajakan II UAS archive"
+  ],
+  "localSources": [
+    {
+      "path": "C:\\cek\\Perpajakan II\\lecturer-material\\RPS Perpajakan II.pdf",
+      "sha256": "ee1a3797182221d306acb72e7cfef32074c1b52ffbaa10d10be2087a56c11315"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\lecturer-material\\slide-dosen-natura-PMK-66-2023.pdf",
+      "sha256": "f98f54b6eb4397fffb2e5ce5cb870f55c733522c50f3ed47f072b08ae0698c25"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\lecturer-material\\slide-dosen-PPh-orang-pribadi.pdf",
+      "sha256": "2f5926468723080f1f9f2ba6c01bb99424f775855f2b548b76629330ba57a8ed"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-01-2026-perubahan-keempat-PMK-81-2024.pdf",
+      "sha256": "d2a1ffe926a020c178e88348e974a9199e6fc746ef7884bb72e12a5cbc29a2af"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-101-2016.pdf",
+      "sha256": "ea52e03ca58e46a0d8348c5b4761c3dd13a0bf8b0318ec4c2684a35378d9b184"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-168-2023-PPh21-TER.pdf",
+      "sha256": "925d6ec9fc73502cc990f2e797877b5bf3846f2a54b96c1277ae324cf8b351af"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-53-2025-nilai-lain-PPN.pdf",
+      "sha256": "8e01b291898f145c1b87649b9dbf53308a8e3cb75537eb954202c4afde1ebce5"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-54-2025-perubahan-ketiga-PMK-81-2024.pdf",
+      "sha256": "77857b932602e5c46431155b82d3ebcfc3111e9289927b218f4316445a09b3f0"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-66-2023-natura-kenikmatan.pdf",
+      "sha256": "900d79cf2079c8f2cdf46d9bfc1445b82fe74c371428fa975fedc4c472d5c75b"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\PMK-81-2024-coretax.pdf",
+      "sha256": "f87235ea88aab4024dcc52c944b4de5481e82fdcc18e0431783538bcfb9d7b6d"
+    },
+    {
+      "path": "C:\\cek\\Perpajakan II\\regulation\\UU-07-2021-HPP.pdf",
+      "sha256": "ad45e199a739e081e2a1ffb4dfdf7283d59bc29f257215f69fa830dc43a2ea78"
+    }
+  ],
+  "openLearningSources": [
+    {
+      "id": "djp-cermat-pph21-2024",
+      "url": "https://www.pajak.go.id/sites/default/files/2024-01/Buku%20Cermat%20Pemotongan%20PPh%20Pasal%2021.pdf",
+      "pages": 115,
+      "sha256": "f587be03b24405fd5a16694fbbf8c34fff3e9c712ed624f37b8df75cb6767838",
+      "title": "Cermat Pemotongan PPh Pasal 21/26, DJP",
+      "edition": "Januari 2024",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "9": [
+          14,
+          17,
+          22,
+          28,
+          32,
+          44,
+          46,
+          51,
+          78,
+          79
+        ],
+        "10": [
+          58,
+          68,
+          82,
+          85,
+          88,
+          94,
+          96,
+          102,
+          104,
+          107,
+          110,
+          112
+        ]
+      },
+      "limitation": "Buku penuh. Administrasi 2025 memakai PMK 81, bukan tanggal unggah buku. Salah cetak PDF 68 diperiksa terhadap PMK 168 PDF 37-38."
+    },
+    {
+      "id": "ut-pph2-2015-m1",
+      "url": "https://repository.ut.ac.id/4461/1/PAJA3331-M1.pdf",
+      "pages": 37,
+      "sha256": "26019bf29b953039cb085832176ae3eb1bc0dbff13f3e913946efd2a4147d0e5",
+      "title": "Pajak Penghasilan II, PAJA3331 Modul 1, UT",
+      "edition": "2015",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "11": [
+          17,
+          21
+        ]
+      },
+      "limitation": "Hanya Modul 1 terbuka. Ketentuan dividen PDF 11 dan natura PDF 24 masih sebelum HPP; tidak diterapkan pada kasus 2024."
+    },
+    {
+      "id": "djp-nppn-2025",
+      "url": "https://pajak.go.id/sites/default/files/2025-03/Panduan%20Pemberitahuan%20Penggunaan%20NPPN.pdf",
+      "pages": 26,
+      "sha256": "c7c904d526d35b9453aecc1344f221d6cf7e036df386fcb072d1ea2c097390fa",
+      "title": "Panduan Pemberitahuan Penggunaan NPPN, DJP",
+      "edition": "Berkas pada direktori Maret 2025; tanpa nomor edisi pada sampul",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "11": [
+          10,
+          23
+        ]
+      },
+      "limitation": "Panduan prosedur Coretax. Syarat hukum dan persentase norma tetap UU PPh Pasal 14/PER terkait; tidak menentukan norma 40% semua usaha."
+    },
+    {
+      "id": "ut-ppn-2014-m1",
+      "url": "https://repository.ut.ac.id/4451/1/PAJA3232-M1.pdf",
+      "pages": 52,
+      "sha256": "d4e363ec00e08ba779182fdba0bb17c8de49fe5eabd455c4ea1a98753ce8bd5d",
+      "title": "PPN dan PPnBM, PAJA3232 Modul 1, UT",
+      "edition": "2014",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "12": [
+          6,
+          21,
+          28,
+          32
+        ]
+      },
+      "limitation": "Hanya Modul 1 terbuka. Contoh 10% untuk pembanding historis; kasus 2024 memakai HPP, kasus 2025 memakai PMK 131."
+    },
+    {
+      "id": "djp-coretax-ppn-2025",
+      "url": "https://pajak.go.id/sites/default/files/2025-04/Buku%20Manual%20SPT%20Masa%20PPN.pdf",
+      "pages": 220,
+      "sha256": "5595a0e06bbce9f269581a506345b9e243490d5adbcb93c39d8951d80620e110",
+      "title": "Buku Manual Pelaporan SPT Masa PPN, DJP",
+      "edition": "20240909; berkas di direktori April 2025",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "13": [
+          9,
+          20,
+          25,
+          27,
+          39,
+          51
+        ],
+        "14": [
+          21,
+          24,
+          52,
+          60
+        ]
+      },
+      "limitation": "Buku penuh 220 halaman termasuk lampiran. Edisi pada sampul 20240909; panduan proses aplikasi, tidak menetapkan tarif atau hak kredit. Tidak diasumsikan sebagai tampilan terbaru 2026."
+    },
+    {
+      "id": "djp-bupot-2025",
+      "url": "https://pajak.go.id/sites/default/files/2025-02/Buku%20Manual%20Coretax%202024%20-%20Seri%20Bukti%20Potong%20PPh.pdf",
+      "pages": 9,
+      "sha256": "d83c0fbea7bdbb49c3b09664bc14e0d541deb55a5bb280f6b0dae81d17bb41e1",
+      "title": "Bukti Potong PPh dalam Coretax DJP",
+      "edition": "Versi 1.0, 3 Februari 2025",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "9": [
+          4,
+          8
+        ],
+        "10": [
+          6,
+          8
+        ]
+      },
+      "limitation": "Panduan penuh 9 halaman, contoh BP21 selain pegawai tetap. Ringkasan PTKP bulanan PDF 5 tidak menggantikan kategori/status PTKP dan penghitungan tahunan."
+    },
+    {
+      "id": "ojk-karbon-2025",
+      "url": "https://ojk.go.id/id/Publikasi/Roadmap-dan-Pedoman/Pasar-Modal/Documents/Buku%20Mengenal%20dan%20Memahami%20Perdagangan%20Karbon%20bagi%20SJK.pdf",
+      "pages": 156,
+      "sha256": "b3df9dd7bb03a9ce4d141a600af34ae0cf6a6be441136e4e2c4bb13315809416",
+      "title": "Mengenal dan Memahami Perdagangan Karbon bagi Sektor Jasa Keuangan, OJK",
+      "edition": "Edisi pertama, Juli 2025",
+      "access": "public PDF downloaded and inspected",
+      "reviewedPagesByTm": {
+        "15": [
+          25,
+          29,
+          43,
+          49,
+          60,
+          65,
+          90,
+          96
+        ]
+      },
+      "limitation": "Buku penuh. PDF 5 menyatakan tujuan edukatif. Kerangka SRN/jenis unit edisi 2025 dibedakan dari POJK 10/2026; tidak membuktikan pengakuan pengurangan pajak atau pungutan karbon aktual."
+    }
+  ],
+  "bookAccess": [
+    {
+      "title": "Waluyo dan Nanda Ayu Wijayanti, Perpajakan Indonesia Edisi ke-13 Buku 1",
+      "url": "https://penerbitsalemba.com/buku/03-perpajakan-indonesia-e13-1-waluyo-wijayanti",
+      "access": "Public catalog and chapter list inspected; full book not accessed"
+    },
+    {
+      "title": "Siti Resmi, Perpajakan: Teori dan Kasus Edisi ke-11 Buku 1",
+      "url": "https://penerbitsalemba.com/buku/03-0143-perpajakan-teori--kasus-edisi-11--buku-1",
+      "access": "Public catalog and chapter list inspected; full book not accessed"
+    },
+    {
+      "title": "Salemba FAQ, suplemen umum dan e-learning",
+      "url": "https://penerbitsalemba.com/faq",
+      "access": "Public FAQ inspected; supplement requires account and book code"
+    }
+  ]
+}

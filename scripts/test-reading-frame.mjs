@@ -137,7 +137,8 @@ try {
     for (const nested of [block.blocks, block.answer]) if (Array.isArray(nested)) collect(nested, inBox || block.kind === 'solution-reveal');
   });
   Object.values(pjk.readings).forEach((reading) => collect(reading.blocks, false));
-  check(tables.length >= 50, 'PJK301 tables found in all TMs', String(tables.length));
+  check(tables.length >= 45, 'PJK301 tables found in all TMs, including rebuilt TM09-TM15', String(tables.length));
+  for (const tm of [9, 10, 11, 12, 13, 14, 15]) check(pjk.readings[tm].blocks.some(block => block.kind === 'table'), `PJK301 TM${tm}: comparison table present`);
   const host = document.createElement('div');
   document.body.appendChild(host);
   const tableRoot = createRoot(host);
