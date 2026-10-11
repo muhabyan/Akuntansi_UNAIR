@@ -1,160 +1,186 @@
 import type { Reading } from '../../../types';
-import { CASE_VAT_REFUND_CARBON_TAX } from '../pjk2PracticeCases';
-
-const SVG_RESTITUSI_CARBON = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="resGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="carbGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk14)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">PROSEDUR RESTITUSI PPN &amp; PENGENALAN PAJAK KARBON (UU HPP NO. 7/2021)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">RESTITUSI &amp; CARBON</text>
-
-  <!-- Left: Restitusi PPN -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#resGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="10.5" font-weight="800">1. JALUR RESTITUSI PPN (LEBIH BAYAR)</text>
-    
-    <text class="text-accent-blue" x="14" y="52" fill="#38bdf8" font-size="8.5" font-weight="700">A. Jalur Pemeriksaan Rutin (Pasal 17B UU KUP):</text>
-    <text class="svg-text" x="14" y="66" fill="#cbd5e1" font-size="7.5">• Melalui audit pemeriksaan lengkap kantor pajak jangka waktu maks 12 bulan</text>
-    <text class="svg-text" x="14" y="80" fill="#cbd5e1" font-size="7.5">• Berisiko terbit SKPKB jika ditemukan koreksi pembukuan</text>
-
-    <text class="text-accent-green" x="14" y="104" fill="#34d399" font-size="8.5" font-weight="700">B. Pengembalian Pendahuluan (Pasal 17C &amp; 17D UU KUP):</text>
-    <text class="svg-text" x="14" y="118" fill="#cbd5e1" font-size="7.5">• Jalur Cepat (Golden Taxpayer / PKP Berisiko Rendah)</text>
-    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="7.5">• Restitusi cair dalam tempo <tspan class="text-accent-green" fill="#34d399" font-weight="700">1 BULAN</tspan> tanpa pemeriksaan awal</text>
-    <text class="svg-text" x="14" y="146" fill="#cbd5e1" font-size="7.5">• Syarat: Eksportir, kepatuhan tepat waktu lapor SPT 3 tahun</text>
-
-    <rect class="svg-badge-blue" x="14" y="175" width="367" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="197" y="191" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Pengembalian Kelebihan Saldo Kas dari Kas Negara</text>
-  </g>
-
-  <!-- Right: Pajak Karbon UU HPP -->
-  <g transform="translate(470, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#carbGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="10.5" font-weight="800">2. PAJAK KARBON (CARBON TAX - UU HPP BAB VI)</text>
-    
-    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Tarif Minimum:</tspan> Rp 30 per kilogram CO2 ekuivalen (CO2e)</text>
-    <text class="svg-text" x="14" y="70" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Subjek Pajak:</tspan> Orang Pribadi atau Badan yang membeli barang yang mengandung karbon atau melakukan aktivitas yang menghasilkan emisi karbon</text>
-    <text class="svg-text" x="14" y="100" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Sektor Pilot Project:</tspan> Pembangkit Listrik Tenaga Uap (PLTU) Batubara</text>
-    <text class="svg-text" x="14" y="118" fill="#cbd5e1" font-size="8">• Mekanisme Cap-and-Tax (Batas emisi &amp; sertifikat izin emisi)</text>
-    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Mendorong transisi energi hijau &amp; penurunan emisi Gas Rumah Kaca</text>
-    
-    <rect class="svg-badge-green" x="14" y="175" width="367" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="197" y="191" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Instrumen Fiskal Pengendalian Perubahan Iklim</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Pajak Karbon selaras dengan komitmen Net Zero Emission Indonesia pada Nationally Determined Contribution (NDC) global.</text>
-</svg>`;
 
 export const TM14_READING: Reading = {
-  tm: 14,
-  title: 'Restitusi PPN, Pemungut PPN (WAPU), Pajak Karbon, & Perdagangan Emisi',
-  ref: 'UU KUP Pasal 17C/17D | PMK 209/2021 Restitusi Dipercepat | UU HPP Bab VI Pajak Karbon',
-  intro: 'TM 14 menutup pembahasan PPN dan pajak lingkungan. Pertama, hak atas pengembalian kelebihan pembayaran pajak (restitusi PPN) lewat pemeriksaan reguler Pasal 17B (12 bulan) atau pengembalian pendahuluan Pasal 17C/17D (1 bulan untuk PKP Berisiko Rendah). Kedua, pemungutan PPN oleh Wajib Pungut (WAPU: Bendahara Pemerintah dan BUMN). Ketiga, tinjauan hukum dan hitungan Pajak Karbon (Carbon Tax) menurut Bab VI UU HPP.',
-  objectives: [
-    'Membedakan prosedur Restitusi PPN Reguler (Pasal 17B KUP) vs Restitusi Dipercepat (Pasal 17C & 17D KUP).',
-    'Menjelaskan mekanisme pemungutan PPN oleh WAPU Instansi Pemerintah dan BUMN (Kode Faktur 02 dan 03).',
-    'Menjelaskan konsep pemajakan lingkungan: Prinsip Cap-and-Tax dan Cap-and-Trade pada Pajak Karbon.',
-    'Menghitung estimasi Pajak Karbon terutang berdasarkan tarif minimum Rp 30 per kilogram CO2e (UU HPP).'
+  "tm": 14,
+  "title": "Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas",
+  "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
+  "intro": "Perpajakan II PJK301. Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "objectives": [
+    "Menentukan klasifikasi dan dasar aturan Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas.",
+    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
+    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 14.1: Mekanisme Restitusi PPN, Pemungut PPN (WAPU), dan Skema Pemajakan Karbon (UU HPP).',
-      svg: SVG_RESTITUSI_CARBON
+      "kind": "callout",
+      "variant": "info",
+      "title": "Cakupan, sumber, dan tahun kasus",
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 17B, 17C, 17D UU KUP s.t.d.t.d UU HPP (Mekanisme Restitusi Pajak)',
-      text: '"1. Pasal 17B UU KUP (Restitusi Melalui Pemeriksaan Normal):\n   Direktur Jenderal Pajak setelah melakukan pemeriksaan atas permohonan pengembalian kelebihan pembayaran pajak menerbitkan surat ketetapan pajak paling lama 12 (dua belas) bulan sejak surat permohonan diterima secara lengkap.\n\n2. Pasal 17C UU KUP (Pengembalian Pendahuluan WP Kriteria Tertentu / Golden Taxpayer):\n   Diberikan kepada WP Patuh (tidak pernah terlambat SPT, tidak punya tunggakan pajak, LK diaudit WTP 3 tahun berturut-turut). SKPPKP terbit paling lama 1 bulan untuk PPN atau 3 bulan untuk PPh tanpa pemeriksaan awal.\n\n3. Pasal 17D UU KUP jo PMK 209/2021 (Pengembalian Pendahuluan WP Persyaratan Tertentu):\n   Diberikan untuk lebih bayar skala tertentu: WP Orang Pribadi non-usaha s/d Rp 100 Juta; WP OP pengusaha s/d Rp 100 Juta; WP Badan s/d Rp 1 Miliar; PKP PPN s/d Rp 5 Miliar. SKPPKP terbit dalam waktu 1 bulan tanpa pemeriksaan awal."'
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Perkiraan fokus UAS",
+      "text": "Perkiraan berdasarkan capaian RPP dan contoh sumber: Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas. Latih keputusan aturan sebelum hitungan, langkah per lapisan, dokumentasi, dan koreksi kesalahan. Tidak ada arsip UAS lokal yang mengonfirmasi bobot topik atau bentuk soal. RPP menyebut studi kasus komprehensif; latihan berbahasa Indonesia mengikuti materi lokal."
     },
     {
-      kind: 'callout',
-      variant: 'info',
-      title: '📜 Dasar Hukum Otentik: UU No. 7 Tahun 2021 (UU HPP) Bab VI Pasal 13 (Pajak Karbon)',
-      text: '"Pasal 13 ayat (1) & (2): Pajak Karbon dikenakan atas emisi karbon yang memberikan dampak negatif bagi lingkungan hidup. Subjek pajak karbon adalah orang pribadi atau badan yang membeli barang yang mengandung karbon dan/atau melakukan aktivitas yang menghasilkan emisi karbon.\n\nPasal 13 ayat (8) & (9): Tarif pajak karbon ditetapkan paling rendah Rp 30,00 (tiga puluh rupiah) per kilogram karbon dioksida ekuivalen (CO2e) atau satuan yang setara. Prinsip pengenaan pajak karbon mengadopsi mekanisme Cap and Tax dan Cap and Trade yang diselaraskan dengan pasar karbon (carbon market)."'
+      "kind": "h2",
+      "text": "Pengkreditan dan larangan PM"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 14'
+      "kind": "p",
+      "text": "PM dikreditkan pada masa yang sama dengan PK bila faktur/dokumen serta hubungan usaha memenuhi syarat. PM yang belum dikreditkan dapat digunakan pada paling lama tiga masa berikutnya, sepanjang belum menjadi biaya atau dikapitalisasi dan syarat lain terpenuhi. PM tidak terkait usaha atau faktur yang tidak memenuhi syarat tidak langsung dikreditkan. Pasal 9 ayat (9a) menyediakan pedoman 80% PK seharusnya untuk mekanisme sebelum pengukuhan, dengan pengujian tersendiri; jangan menganggap semua faktur sebelum PKP selalu boleh kredit penuh. Rujukan: UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c)."
     },
     {
-      kind: 'table',
-      headers: ['Topik Perpajakan Lanjutan', 'Dasar Regulasi Pokok', 'Prosedur Administrasi', 'Kriteria Kelayakan / Tarif'],
-      rows: [
-        ['Restitusi PPN Reguler', 'Pasal 17B UU KUP', 'Melalui proses pemeriksaan lapangan mendalam (Pemeriksaan Lengkap).', 'Batas waktu SKPLB maksimal 12 bulan sejak permohonan lengkap.'],
-        ['Restitusi Pengembalian Pendahuluan', 'Pasal 17C / 17D jo PMK 209/2021', 'Tanpa pemeriksaan di depan; penerbitan SKPPKP hanya melalui penelitian formal.', 'Batas waktu 1 bulan; diberikan bagi PKP Berisiko Rendah & WP Patuh.'],
-        ['Pemungut PPN Bendaharawan', 'PMK 231/PMK.03/2019', 'PPN tidak dibayarkan ke rekanan tetapi disetor langsung ke Kas Negara.', 'Kode faktur 02; transaksi di atas Rp 2.000.000.'],
-        ['Pemungut PPN BUMN Tertentu', 'PMK 8/PMK.03/2021', 'BUMN (Pertamina, PLN, Telkom, Bank Mandiri) memungut PPN rekanan.', 'Kode faktur 03; transaksi penyerahan BKP/JKP di atas Rp 10.000.000.'],
-        ['Pajak Karbon (Carbon Tax)', 'UU No. 7 Tahun 2021 Bab VI', 'Dikenakan atas emisi karbon yang melebihi batas batas emisi (Cap).', 'Tarif minimum Rp 30 per kg CO2e (Rp 30.000 per ton CO2e).']
+      "kind": "h2",
+      "text": "Identifikasi langsung dan PM bersama"
+    },
+    {
+      "kind": "p",
+      "text": "Jika PM dapat ditelusuri langsung ke penyerahan yang mendukung kredit, gunakan jumlahnya; PM langsung pada penyerahan dibebaskan tidak dikreditkan. Bila PM bersama tidak dapat diidentifikasi, pedoman PMK 186/2022 memakai perkiraan proporsi penyerahan yang mendukung kredit terhadap seluruh penyerahan. Penghitungan kembali menggunakan realisasi tahunan. Ini berbeda dari pedoman PPN besaran tertentu sektoral yang dapat membatasi kredit PM; tarif lama NPPN tidak disalin sebagai pedoman universal setelah perubahan HPP. Rujukan: PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian)."
+    },
+    {
+      "kind": "h2",
+      "text": "Penghitungan kembali aset dan penyesuaian"
+    },
+    {
+      "kind": "p",
+      "text": "P awal = PM × Z perkiraan. P′ tahunan = PM/T × Z′ realisasi. Penyesuaian = P′ - P/T. T = 1 untuk barang/jasa masa manfaat sampai satu tahun, 4 untuk selain tanah/bangunan atau jasa dengan masa manfaat lebih satu tahun, dan 10 untuk tanah/bangunan menurut pedoman. Penyesuaian positif menambah PM; negatif mengurangi. Lakukan selama masa manfaat sesuai aturan dan paling lambat masa ketiga tahun penghitungan kembali; contoh realisasi 2024 dilaporkan paling lambat Maret 2025. Jangan membalik selisih seluruh PM awal sekaligus untuk aset T = 4. Rujukan: PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian)."
+    },
+    {
+      "kind": "h2",
+      "text": "Pemungut dan fasilitas"
+    },
+    {
+      "kind": "p",
+      "text": "Pasal 16A menempatkan pemungutan pada pemungut PPN untuk transaksi yang memenuhi aturan; bukti pungut diperlukan agar PKP tidak menyetor pajak yang sama dua kali. Pasal 16B membedakan tidak dipungut dan dibebaskan: PM terkait tidak dipungut dapat dikreditkan jika sah; PM terkait dibebaskan tidak dapat dikreditkan. Pemerintah, BUMN, dan pihak tertentu memiliki pengaturan penunjukan serta mekanisme masing-masing. Soal menetapkan pihak pemerintah sebagai pemungut dan pajak telah dipungut; jangan menganggap semua pembeli pemerintah selalu memenuhi pengecualian/ambang yang sama. Rujukan: UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan)."
+    },
+    {
+      "kind": "h2",
+      "text": "Restitusi, jangka penyelesaian, dan SPT masa"
+    },
+    {
+      "kind": "p",
+      "text": "Lebih bayar umumnya dikompensasikan; pengembalian pada akhir tahun buku atau per masa bagi kategori Pasal 9 ayat (4b), seperti eksportir, perlu permohonan. Jalur pemeriksaan Pasal 17B umumnya keputusan paling lama 12 bulan sejak permohonan lengkap; pengembalian pendahuluan 17C/17D memiliki kriteria dan jangka tersendiri. Jangan menjanjikan semua restitusi cair tiga bulan. Rekonsiliasi PK, PK yang dipungut pemungut, PM sah, kompensasi, penyesuaian, retur dan fasilitas sebelum melapor. UU PPN Pasal 15A mengatur PKP setor sebelum lapor serta lapor akhir bulan berikutnya; administrasi khusus mengikuti tahun dan peraturan yang berlaku. Rujukan: UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D."
+    },
+    {
+      "kind": "table",
+      "title": "Pisahkan fasilitas dan kredit PM",
+      "headers": [
+        "Penyerahan",
+        "PK dipungut dari pembeli",
+        "PM terkait"
       ],
-      caption: 'Tabel 14.0: Matriks restitusi PPN, pemungut WAPU, dan skema pajak karbon.'
+      "rows": [
+        [
+          "Biasa kena pajak",
+          "Sesuai tarif/skema",
+          "Dapat dikreditkan bila sah"
+        ],
+        [
+          "Ekspor BKP berwujud",
+          "Tarif 0%",
+          "Dapat dikreditkan bila sah"
+        ],
+        [
+          "PPN tidak dipungut",
+          "Tidak dipungut sesuai fasilitas",
+          "Dapat dikreditkan bila sah"
+        ],
+        [
+          "PPN dibebaskan",
+          "Dibebaskan sesuai fasilitas",
+          "Tidak dapat dikreditkan"
+        ]
+      ],
+      "caption": "Rujukan: UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan).",
+      "stackOnMobile": true
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Pajak Karbon & Transaksi WAPU'
+      "kind": "formula",
+      "text": "P=PM\\times Z,\\quad P^{\\prime}=\\frac{PM}{T}\\times Z^{\\prime},\\quad\\Delta P=P^{\\prime}-\\frac{P}{T}",
+      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
     },
     {
-      kind: 'formula',
-      text: `\\text{Pajak Karbon Terutang} = \\max(0, \\text{Emisi Riil} - \\text{Cap Emisi yang Ditetapkan}) \\times \\text{Tarif Pajak Karbon (Min Rp 30 / kg CO2e)}
-\\text{Transaksi Rekanan ke Bendaharawan (WAPU Kode 02)}:
-\\text{Kas yang Diterima Rekanan} = \\text{Harga Jual Tanpa PPN} - \\text{PPh 22 Terpotong } (1{,}5\\%) \\quad (\\text{PPN } 11\\% \\text{ Disetor Langsung oleh KPPN})`,
-      note: 'Penyerahan kepada Pemungut WAPU tidak menghasilkan kas penerimaan PPN bagi rekanan penjual; rekanan hanya menerima harga pokok barang dikurangi PPh 22.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Transaksi Penjualan Komputer ke Dinas Pendidikan (WAPU)',
-      prompt: 'PT Komputer Nusantara (PKP) menjual 10 unit laptop seharga Rp 100.000.000 (tidak termasuk PPN) kepada Dinas Pendidikan Kabupaten yang didanai APBD. Berapa PPN yang dipungut bendahara dinas, berapa PPh 22 yang dipotong, dan berapa kas bersih yang diterima PT Komputer Nusantara?',
-      blocks: [
+      "kind": "solution-reveal",
+      "title": "Kasus 14A: PM langsung, bersama, dan penghitungan kembali",
+      "prompt": "Tahun 2024 PKP memiliki PM langsung Rp11 juta untuk penyerahan kena pajak dan PM langsung Rp5 juta untuk penyerahan dibebaskan. Mesin untuk kegiatan bersama diperoleh dengan PM Rp44 juta, tidak dapat dipisahkan dari pembukuan. Porsi perkiraan penyerahan yang mendukung kredit 80%, realisasi 2024 70%. Rujukan: PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian); UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan); UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c).",
+      "promptBlocks": [
         {
-          kind: 'ul',
-          items: [
-            '**PPN Terutang (Kode Faktur 02 - WAPU)**: 11% × Rp 100.000.000 = **Rp 11.000.000** (PPN ini disetor langsung oleh Bendahara Dinas ke Kas Negara menggunakan NTPN; PT Komputer Nusantara TIDAK menerima uang PPN ini).',
-            '**Pemotongan PPh Pasal 22 Bendaharawan**: 1,5% × Rp 100.000.000 = **Rp 1.500.000**.',
-            '**Kas Bersih yang Diterima PT Komputer Nusantara**:\nHarga Jual (Rp 100.000.000) - PPh 22 (Rp 1.500.000) = **Rp 98.500.000**.',
-            '**Catatan Faktur**: Faktur Pajak diterbitkan dengan kode transaksi **020.000-XX.XXXXXXXX**.'
+          "kind": "ul",
+          "items": [
+            "Masa manfaat mesin menurut pedoman empat tahun; semua faktur sah.",
+            "PPN langsung dibebaskan tidak dapat dikreditkan; mesin dicatat terpisah dalam daftar PM bersama."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung kredit PM awal 2024.",
+            "Hitung penghitungan kembali dan penyesuaian yang paling lambat dilaporkan Maret 2025.",
+            "Jelaskan dampak jika penyerahan berfasilitas memperoleh tidak dipungut, serta bukti yang harus dipisahkan."
           ]
         }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 14'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Restitusi 17B vs 17C KUP', 'Pembedaan jangka waktu 12 bulan (pemeriksaan) vs 1 bulan (pendahuluan).', 'Mampu mengevaluasi syarat kelayakan restitusi dipercepat.'],
-        ['2', 'Pemungut PPN WAPU', 'Mekanisme kas dan pembuatan kode faktur 02 (pemerintah) dan 03 (BUMN).', 'Mampu menghitung kas bersih transaksi penjualan ke instansi negara.'],
-        ['3', 'Skema Pajak Karbon UU HPP', 'Prinsip Cap and Tax, batas ambang batas emisi, dan integrasi IDXCarbon.', 'Mampu mengkalkulasi kewajiban pajak karbon korporasi.']
       ],
-      caption: 'Tabel 14.2: Peta penguasaan submateri TM 14 Perpajakan II.'
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Kredit langsung Rp11 juta; PM terkait dibebaskan Rp5 juta tidak dikreditkan. Kredit mesin awal P = 80% × Rp44 juta = Rp35,2 juta. Total kredit awal Rp46,2 juta. Alokasi P/T = Rp8,8 juta; P′ = Rp44 juta/4 × 70% = Rp7,7 juta. Penyesuaian = Rp7,7 juta - Rp8,8 juta = minus Rp1,1 juta, pengurang PM paling lambat masa Maret 2025. Kredit awal mesin tidak seluruhnya dibalik Rp4,4 juta sekaligus. Fasilitas tidak dipungut memungkinkan PM langsung Rp5 juta dikreditkan bila sah; perubahan proporsi bersama perlu dihitung ulang dari data penyerahan yang sesuai. Pisahkan bukti fasilitas, PM langsung, PM bersama, dan daftar penggunaan aset. Rupiah bulat. Rujukan: PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian); UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan); UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c)."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
-    CASE_VAT_REFUND_CARBON_TAX,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "solution-reveal",
+      "title": "Kasus 14B: Pemungut, saldo lebih bayar, dan permohonan",
+      "prompt": "Masa Oktober 2024 PKP menjual kepada swasta dengan DPP Rp100 juta serta pemerintah pemungut dengan DPP Rp200 juta. PPN 11% pemerintah sudah dipungut dan disetor. PM sah Rp16,5 juta; tidak ada kompensasi. Terpisah, eksportir pada November mempunyai PK Rp0 dan PM sah Rp55 juta. Rujukan: UU PPN Pasal 16A ayat (1)-(2) (paragraf pemungutan dan penyetoran oleh pemungut PPN); UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D; UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c).",
+      "promptBlocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Bukti pungut pemerintah lengkap; PM usaha dan seluruh syarat faktur sah.",
+            "Eksportir ingin restitusi per masa, tetapi status untuk pengembalian pendahuluan belum diketahui."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung PK total serta saldo yang diperhitungkan sendiri dan cegah setor ganda.",
+            "Tentukan apakah eksportir boleh mengajukan per masa dan apakah pencairan otomatis.",
+            "Bedakan jalur pemeriksaan dan pengembalian pendahuluan serta informasi yang masih perlu diperoleh."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "PK swasta Rp11 juta; pemerintah Rp22 juta; total Rp33 juta. Kurangi bagian dipungut pemerintah Rp22 juta dan PM Rp16,5 juta: minus Rp5,5 juta lebih bayar untuk posisi sendiri. Rekonsiliasi faktur dan bukti pungut; jangan menyetor kembali Rp22 juta. Eksportir lebih bayar Rp55 juta dan dapat mengajukan per masa menurut Pasal 9 ayat (4b). Jalur pemeriksaan Pasal 17B umumnya keputusan paling lama 12 bulan sejak permohonan lengkap; jalur pendahuluan 17C/17D mempunyai syarat tersendiri. Status risiko, kelengkapan permohonan, dan kriteria WP harus diperoleh sebelum menjanjikan jalur atau tanggal cair. Hak mengajukan tidak menjamin pencairan otomatis. Hasil rupiah bulat. Rujukan: UU PPN Pasal 16A ayat (1)-(2) (paragraf pemungutan dan penyetoran oleh pemungut PPN); UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D; UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c)."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
     {
-      kind: 'ul',
-      items: [
-        '**Sanksi Kenaikan Jika Restitusi Dipercepat Salah**: Jika di kemudian hari dilakukan pemeriksaan dan diterbitkan SKPKB atas kelebihan restitusi Pasal 17C/17D, Wajib Pajak dikenai sanksi kenaikan bunga per bulan sesuai suku bunga acuan Menkeu.',
-        '**Faktur WAPU Tidak Menghasilkan Utang PPN**: Bagi PKP penjual, penyerahan dengan kode 02 dan 03 tidak menimbulkan kewajiban setor PPN karena PPN-nya disetor langsung oleh pemungut kasda/kppn.',
-        '**Pajak Karbon dan Sertifikat SPE**: Pembayar pajak karbon dapat mengurangi kewajiban pajaknya dengan membeli Sertifikat Pengurangan Emisi (SPE) dari bursa karbon resmi Indonesia.'
+      "kind": "h2",
+      "text": "Rujukan yang dapat ditelusuri"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "UU HPP, halaman PDF 69-76, Pasal 9 UU PPN ayat (2)-(9c).",
+        "PMK 186/2022, halaman PDF 3-6, Pasal 3-8 dan Lampiran (paragraf identifikasi, perkiraan, realisasi, dan penyesuaian).",
+        "UU PPN Pasal 16B ayat (2)-(3) (paragraf Pajak Masukan untuk PPN tidak dipungut dan PPN dibebaskan).",
+        "UU HPP, halaman PDF 69-71, Pasal 9 ayat (4)-(4f) UU PPN; UU KUP Pasal 17B ayat (1), 17C dan 17D."
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Sumber resmi untuk memeriksa paragraf: [PMK 186/2022](https://jdih.kemenkeu.go.id/api/download/2fbbf7e4-26e6-4a89-bb99-0ba876196196/186~PMK.03~2022.pdf). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Batas sumber dan penerapan",
+      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
     }
   ]
 };

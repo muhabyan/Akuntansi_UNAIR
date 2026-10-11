@@ -1,183 +1,191 @@
 import type { Reading } from '../../../types';
-import { CASE_NATURA_TER_CONCEPT } from '../pjk2PracticeCases';
-
-const SVG_TER_CATEGORIES = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="terA" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="terB" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="terC" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk9)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SKEMA TARIF EFEKTIF RATA-RATA (TER) PPH PASAL 21 TERBARU (PP 58/2023 &amp; PMK 168/2023)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SKEMA TER PPH 21</text>
-
-  <!-- 3 TER Categories Grid -->
-  <!-- 1. TER A -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#terA)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10.5" font-weight="800" text-anchor="middle">TER KATEGORI A</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Status PTKP: TK/0, TK/1, K/0</text>
-    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• TK/0 (Rp 54 jt), TK/1 &amp; K/0 (Rp 58,5 jt)</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="7.5">• Gaji s.d. Rp 5,4 Juta/bln →<tspan class="text-accent-green" fill="#34d399" font-weight="700">Tarif TER 0%</tspan></text>
-    <text class="svg-text" x="14" y="114" fill="#cbd5e1" font-size="7.5">• Tarif berjenjang 0,25% s.d. 34% sesuai tabel</text>
-    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="7.5">• Diterapkan masa Januari s.d. November</text>
-    <rect class="svg-badge-blue" x="14" y="142" width="237" height="22" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="157" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">PPh 21 Bln = Penghasilan Bruto × Tarif TER</text>
-  </g>
-
-  <!-- 2. TER B -->
-  <g transform="translate(318, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#terB)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10.5" font-weight="800" text-anchor="middle">TER KATEGORI B</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Status PTKP: TK/2, TK/3, K/1, K/2</text>
-    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• TK/2 &amp; K/1 (Rp 63 jt), TK/3 &amp; K/2 (Rp 67,5 jt)</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="7.5">• Gaji s.d. Rp 6,2 Juta/bln →<tspan class="text-accent-green" fill="#34d399" font-weight="700">Tarif TER 0%</tspan></text>
-    <text class="svg-text" x="14" y="114" fill="#cbd5e1" font-size="7.5">• Tarif berjenjang 0,25% s.d. 34% sesuai tabel</text>
-    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="7.5">• Menampung pegawai berkeluarga tanggungan 1-2</text>
-    <rect class="svg-badge-green" x="14" y="142" width="237" height="22" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="157" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Simulasi Sederhana Slip Gaji Bulanan</text>
-  </g>
-
-  <!-- 3. TER C -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#terC)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="132" y="20" fill="#a78bfa" font-size="10.5" font-weight="800" text-anchor="middle">TER KATEGORI C</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="24" rx="4" fill="#1e293b"/>
-    <text class="text-accent-purple" x="132" y="56" fill="#a78bfa" font-size="8.5" font-weight="700" text-anchor="middle">Status PTKP: K/3 (Maksimal)</text>
-    <text class="svg-text" x="14" y="82" fill="#cbd5e1" font-size="7.5">• K/3 Kawin Tanggungan 3 (Rp 72 Juta)</text>
-    <text class="svg-text" x="14" y="98" fill="#cbd5e1" font-size="7.5">• Gaji s.d. Rp 6,6 Juta/bln →<tspan class="text-accent-green" fill="#34d399" font-weight="700">Tarif TER 0%</tspan></text>
-    <text class="svg-text" x="14" y="114" fill="#cbd5e1" font-size="7.5">• Tarif berjenjang 0,25% s.d. 34% sesuai tabel</text>
-    <text class="svg-text" x="14" y="128" fill="#cbd5e1" font-size="7.5">• Batas PTKP tanggungan penuh kepala keluarga</text>
-    <rect class="svg-badge-purple" x="14" y="142" width="237" height="22" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="132" y="157" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Tunjangan PTKP Maksimum</text>
-  </g>
-
-  <!-- Bottom December True-Up Banner -->
-  <g transform="translate(35, 260)">
-    <rect class="svg-subcard" x="0" y="0" width="830" height="52" rx="8" fill="#1e293b" stroke="#fbbf24"/>
-    <text class="text-accent-amber" x="14" y="20" fill="#fbbf24" font-size="9" font-weight="800">MEKANISME PERHITUNGAN MASA PAJAK DESEMBER (TRUE-UP AKHIR TAHUN):</text>
-    <text class="svg-text" x="14" y="38" fill="#cbd5e1" font-size="7.5">
-      Khusus masa Desember, hitung PPh 21 Setahun menggunakan Tarif Progresif Pasal 17 ayat (1) huruf a UU PPh (5% s.d. 35%), lalu dikurangi total PPh 21 yang sudah dipotong masa Jan-Nov dengan TER.
-    </text>
-  </g>
-</svg>`;
 
 export const TM9_READING: Reading = {
-  tm: 9,
-  title: 'Konsep Pemotongan PPh 21/26 Terbaru (PP 58/2023 & PMK 168/2023) & Pajak Natura (PMK 66/2023)',
-  ref: 'PP 58/2023 | PMK 168/2023 Petunjuk Teknis PPh 21 | PMK 66/2023 Pemajakan Natura & Kenikmatan',
-  intro: 'TM 9 membahas reformasi pemotongan PPh Pasal 21 yang berlaku sejak 2024. Metode Tarif Efektif Rata-Rata (TER) Bulanan (Kategori A, B, dan C) dan TER Harian dipakai untuk masa pajak Januari sampai November, lalu Desember direkalkulasi dengan tarif Pasal 17 ayat (1) huruf a UU HPP. Materi ini juga membahas perubahan pemajakan imbalan non-tunai (Natura dan Kenikmatan) menurut PMK No. 66/2023.',
-  objectives: [
-    'Mengklasifikasikan status PTKP karyawan ke dalam TER Kategori A, Kategori B, atau Kategori C.',
-    'Menerapkan skema pemotongan TER bulanan pada masa Januari s/d November (PPh 21 = Bruto × % TER).',
-    'Menjelaskan pengecualian objek pajak natura (makanan bersama, daerah tertentu, bingkisan hari raya).',
-    'Menghitung nilai kenikmatan fasilitas mobil dinas dan perumahan yang menjadi objek PPh Pasal 21.'
+  "tm": 9,
+  "title": "Konsep PPh 21/26, TER, dan Natura",
+  "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
+  "intro": "Perpajakan II PJK301. Konsep PPh 21/26, TER, dan Natura. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "objectives": [
+    "Menentukan klasifikasi dan dasar aturan Konsep PPh 21/26, TER, dan Natura.",
+    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
+    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 9.1: Klasifikasi Tarif Efektif Rata-Rata (TER) PPh 21 berdasarkan Status PTKP (PP 58/2023).',
-      svg: SVG_TER_CATEGORIES
+      "kind": "callout",
+      "variant": "info",
+      "title": "Cakupan, sumber, dan tahun kasus",
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: '📜 Dasar Hukum Otentik: Bunyi Asli Pasal 21 ayat (1) & (5) UU PPh s.t.d.t.d UU HPP',
-      text: '"Pasal 21 ayat (1): Pemotongan pajak atas penghasilan sehubungan dengan pekerjaan, jasa, atau kegiatan dengan nama dan dalam bentuk apa pun yang diterima atau diperoleh Wajib Pajak orang pribadi dalam negeri wajib dilakukan oleh pemberi kerja, bendahara pemerintah, dana pensiun, badan, dan penyelenggara kegiatan.\n\nPasal 21 ayat (5): Tarif pemotongan atas penghasilan sebagaimana dimaksud pada ayat (1) adalah tarif pajak sebagaimana dimaksud dalam Pasal 17 ayat (1) huruf a, kecuali diatur lain dengan Peraturan Pemerintah (menjadi dasar berlakunya skema TER PP No. 58 Tahun 2023)."'
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Perkiraan fokus UAS",
+      "text": "Perkiraan berdasarkan capaian RPP dan contoh sumber: Konsep PPh 21/26, TER, dan Natura. Latih keputusan aturan sebelum hitungan, langkah per lapisan, dokumentasi, dan koreksi kesalahan. Tidak ada arsip UAS lokal yang mengonfirmasi bobot topik atau bentuk soal. RPP menyebut studi kasus komprehensif; latihan berbahasa Indonesia mengikuti materi lokal."
     },
     {
-      kind: 'callout',
-      variant: 'info',
-      title: '📜 Ketentuan Regulasi: PP No. 58 Tahun 2023 & PMK No. 168/2023 (Skema TER PPh 21)',
-      text: '"PP 58/2023 menetapkan Tarif Efektif Rata-Rata (TER) PPh 21 untuk menghitung pemotongan pajak masa Januari s.d. November:\n• TER Kategori A (PTKP TK/0, TK/1, K/0): Penghasilan bruto s/d Rp 5.400.000 tarif 0%, hingga 44 lapisan tarif (maks 34%);\n• TER Kategori B (PTKP TK/2, TK/3, K/1, K/2): Penghasilan bruto s/d Rp 6.200.000 tarif 0%, hingga 40 lapisan tarif (maks 34%);\n• TER Kategori C (PTKP K/3): Penghasilan bruto s/d Rp 6.600.000 tarif 0%, hingga 41 lapisan tarif (maks 34%).\nMasa Pajak Desember: Dilakukan rekalkulasi setahun menggunakan tarif progresif normal Pasal 17 ayat (1) huruf a UU HPP dikurangi seluruh PPh 21 yang telah dipotong pada masa Jan-Nov."'
+      "kind": "h2",
+      "text": "Dasar pemotongan, subjek, dan objek"
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: '📜 Ketentuan Regulasi: PMK No. 66/PMK.03/2023 (Perlakuan Pajak atas Natura & Kenikmatan)',
-      text: '"Berdasarkan UU HPP & PMK 66/2023, natura dan/atau kenikmatan merupakan objek PPh bagi penerima dan biaya pengurang bruto (deductible) bagi pemberi kerja, KECUALI 5 kelompok natura non-objek:\n1. Makanan dan minuman bagi seluruh pegawai di tempat kerja tanpa batasan nilai;\n2. Natura/kenikmatan di daerah tertentu (sarana tempat tinggal, kesehatan, pendidikan, transportasi);\n3. Natura/kenikmatan keharusan pelaksanaan pekerjaan (pakaian seragam, APD keselamatan, fasilitas cuci/laundry);\n4. Natura yang bersumber dari APBN, APBD, dan/atau APBDes;\n5. Natura dengan jenis dan batasan tertentu: bingkisan hari raya keagamaan (tanpa batas); bingkisan selain hari raya s.d. Rp 3 jt/tahun; peralatan kerja komputer/laptop/ponsel/pulsa (tanpa batas); fasilitas tempat tinggal bersama komunal (tanpa batas); fasilitas kendaraan bagi non-pemegang saham s.d. omzet rata-rata."'
+      "kind": "p",
+      "text": "PPh Pasal 21 memotong penghasilan OP dalam negeri sehubungan pekerjaan, jasa, atau kegiatan. PPh Pasal 26 dalam konteks ini terkait OP luar negeri. Identifikasi hubungan kerja, jenis pembayaran, status pajak penerima, dan pemotong sebelum memilih tarif. Pemberi kerja, instansi pemerintah, dana pensiun, pembayar jasa, serta penyelenggara kegiatan memiliki peran sesuai kategori dalam PMK 168/2023. Kewarganegaraan saja tidak menentukan SPDN/SPLN. Penghasilan bruto mencakup uang serta natura/kenikmatan yang merupakan objek; pengecualian perlu bukti. Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16."
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 9'
+      "kind": "h2",
+      "text": "TER dan masa pajak terakhir"
     },
     {
-      kind: 'table',
-      headers: ['Kategori TER Bulanan', 'Status Penghasilan Tidak Kena Pajak (PTKP)', 'Batas Penghasilan Bruto Tarif 0%', 'Jumlah Lapisan Tarif'],
-      rows: [
-        ['TER Kategori A', 'TK/0 (Rp 54 Jt), TK/1 (Rp 58,5 Jt), K/0 (Rp 58,5 Jt).', 'Gaji bruto s/d Rp 5.400.000 per bulan.', '44 Lapisan Tarif (0% s/d 34%).'],
-        ['TER Kategori B', 'TK/2 (Rp 63 Jt), K/1 (Rp 63 Jt), TK/3 (Rp 67,5 Jt), K/2 (Rp 67,5 Jt).', 'Gaji bruto s/d Rp 6.200.000 per bulan.', '40 Lapisan Tarif (0% s/d 34%).'],
-        ['TER Kategori C', 'K/3 (Rp 72 Jt - Menikah + 3 Tanggungan Anak/Orang Tua).', 'Gaji bruto s/d Rp 6.600.000 per bulan.', '41 Lapisan Tarif (0% s/d 34%).'],
-        ['TER Harian', 'Pegawai tidak tetap dengan upah harian / borongan.', 'Upah s/d Rp 450.000 per hari bebas pajak (0%).', 'Upah > 450 rb s/d 2,5 jt = 0,5%; Upah > 2,5 jt = Tarif Ps 17.']
+      "kind": "p",
+      "text": "Tarif efektif rata-rata atau TER menyederhanakan potongan bulanan atas bruto. Pegawai tetap dan pensiunan memakai TER pada setiap masa selain masa terakhir; masa terakhir memakai tarif Pasal 17 atas PKP tahunan/bagian tahun dikurangi seluruh potongan sebelumnya. Desember adalah masa terakhir bagi pegawai yang bekerja penuh tahun. Saat berhenti pada Juni, Juni dapat menjadi masa terakhir. Jika kewajiban subjektif sudah ada sepanjang tahun, penghasilan aktual tidak otomatis disetahunkan; jika kewajiban subjektif mulai atau berakhir dalam tahun, uji Pasal 15 ayat (3). Rujukan: PMK 168/2023, halaman PDF 15-16 dan 21, Pasal 15 ayat (1)-(3) dan Pasal 21 ayat (1)-(2)."
+    },
+    {
+      "kind": "h2",
+      "text": "Natura, kenikmatan, dan batas yang harus diuji"
+    },
+    {
+      "kind": "p",
+      "text": "Natura adalah imbalan dalam bentuk barang selain uang; kenikmatan berupa hak pemanfaatan fasilitas. Untuk 2024, nilai natura umumnya memakai nilai pasar dan kenikmatan memakai biaya yang dikeluarkan atau seharusnya dikeluarkan pemberi. Pengecualian mencakup makanan/minuman seluruh pegawai, daerah tertentu, keharusan pekerjaan, sumber APBN/APBD/APBDes, dan jenis dengan batas tertentu. Bingkisan hari raya keagamaan bagi seluruh pegawai, laptop kerja, serta tempat tinggal komunal memiliki pengecualian tersendiri. Apartemen individual dibatasi Rp2 juta/bulan; bingkisan di luar hari raya Rp3 juta/tahun. Nilai di atas batas menjadi objek sesuai ketentuan. Rujukan: PMK 66/2023, halaman PDF 16-17, Pasal 22; halaman PDF 21-23, Lampiran A angka 1-10; halaman PDF 49, contoh fasilitas apartemen."
+    },
+    {
+      "kind": "h2",
+      "text": "Fasilitas kendaraan dan pembuktian"
+    },
+    {
+      "kind": "p",
+      "text": "Pengecualian fasilitas kendaraan mensyaratkan pegawai tanpa penyertaan modal dan rata-rata bruto 12 bulan terakhir sampai Rp100 juta per bulan. Rata-rata mencakup uang, natura, dan fasilitas dari pemberi kerja. Nilai tepat pada batas memenuhi syarat. Klaim fasilitas mobil selalu bebas atau hanya 50% taxable tidak didukung aturan ini. Taxable berarti menjadi objek pajak; deductible berarti biaya dapat dikurangkan pemberi, dengan syarat hubungan usaha dan dasar aturan yang sesuai. Rujukan: PMK 66/2023, halaman PDF 22, Lampiran A angka 8; halaman PDF 48-49, contoh kendaraan."
+    },
+    {
+      "kind": "h2",
+      "text": "Hak, kewajiban, dan administrasi lintas tahun"
+    },
+    {
+      "kind": "p",
+      "text": "Pemotong membuat kertas kerja, memotong, menyetor, melapor, dan memberikan bukti potong; penerima berhak atas bukti serta pengembalian lebih potong sesuai PMK 168/2023 Pasal 20-22. Untuk kasus masa biasa 2025 tanpa relaksasi, setor tanggal 15 dan lapor tanggal 20 bulan berikutnya. Ketentuan administrasi lama tanggal 10 tidak diterapkan pada masa 2025. Cek hari libur serta pengumuman khusus sebelum menyatakan tanggal aktual; contoh kalender soal mengecualikannya. Rujukan: PMK 81/2024, halaman PDF 78-79 dan 138-139, Pasal 94 ayat (2) dan Pasal 171."
+    },
+    {
+      "kind": "h2",
+      "text": "PPh 26 dan perjanjian pajak"
+    },
+    {
+      "kind": "p",
+      "text": "Tarif domestik PPh 26 terkait pekerjaan/jasa/kegiatan 20% atas bruto, atau ketentuan P3B bila syaratnya terpenuhi. P3B adalah persetujuan penghindaran pajak berganda; tax treaty berarti perjanjian pajak tersebut. Bukti domisili dan syarat perjanjian harus diuji. Kasus pada paket ini menegaskan tanpa P3B, sehingga tidak mengarang tarif negara tertentu. Jika SPLN berubah SPDN, uji perubahan sifat final dan kredit pajak Pasal 14 ayat (3). Rujukan: PMK 168/2023, halaman PDF 15, Pasal 14 ayat (1)-(3)."
+    },
+    {
+      "kind": "table",
+      "title": "Pemilihan TER berdasarkan PTKP",
+      "headers": [
+        "Kategori",
+        "Status PTKP",
+        "Penggunaan"
       ],
-      caption: 'Tabel 9.0: Matriks pengelompokan TER PPh 21 menurut PP No. 58 Tahun 2023.'
+      "rows": [
+        [
+          "A",
+          "TK/0, TK/1, K/0",
+          "Bruto masa menentukan lapisan TER"
+        ],
+        [
+          "B",
+          "TK/2, TK/3, K/1, K/2",
+          "Bruto masa menentukan lapisan TER"
+        ],
+        [
+          "C",
+          "K/3",
+          "Bruto masa menentukan lapisan TER"
+        ]
+      ],
+      "caption": "Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16.",
+      "stackOnMobile": true
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Mekanisme TER PPh 21 Jan-Nov vs Des'
+      "kind": "formula",
+      "text": "\\mathrm{PPh}_{21,\\,masa}=\\mathrm{Bruto}_{objek}\\times\\mathrm{TER}",
+      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
     },
     {
-      kind: 'formula',
-      text: `\\text{Masa Pajak Januari s/d November}: \\quad \\text{PPh 21 Bulanan} = \\text{Penghasilan Bruto Sebulan} \\times \\% \\text{TER (Tabel PP 58/2023)}
-\\text{Masa Pajak Desember (Rekalkulasi Setahun)}:
-\\text{PPh 21 Desember} = [\\text{Tarif Progresif Pasal 17} \\times \\text{Penghasilan Kena Pajak Setahun}] - \\sum_{t=1}^{11} \\text{PPh 21 Terpotong Jan-Nov}`,
-      note: 'TER bukan tarif pajak baru yang menambah beban pajak setahun; total PPh 21 yang dipotong dalam satu tahun pajak tetap SAMA PERSIS dengan perhitungan tarif normal Pasal 17 UU HPP.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Penentuan Kategori TER dan PPh 21 Karyawan Baru',
-      prompt: 'Seorang karyawan memiliki status K/0 (Menikah, belum memiliki anak) dengan penghasilan bruto Rp 8.000.000 per bulan. Tentukan kategori TER dan hitung pemotongan PPh 21 bulan Januari jika tarif TER untuk rentang Rp 7.500.001 - Rp 8.550.000 adalah 1,5%!',
-      blocks: [
+      "kind": "solution-reveal",
+      "title": "Kasus 09A: Audit bruto TER dan fasilitas pegawai",
+      "prompt": "Januari 2024 PT Latihan Mandiri memberi pegawai TK/0 gaji Rp10 juta, apartemen individual Rp4 juta, makan bersama semua pegawai Rp1 juta, dan laptop kerja Rp15 juta. Auditor menemukan potongan Rp1,2 juta dari mengalikan 4% atas seluruh Rp30 juta. Rujukan: PP 58/2023, Lampiran A tabel TER kategori A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23; PMK 66/2023, halaman PDF 16-17, Pasal 22; halaman PDF 21-23, Lampiran A angka 1-10; halaman PDF 49, contoh fasilitas apartemen.",
+      "promptBlocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Penentuan Kategori TER**: Status K/0 (PTKP Rp 58.500.000) masuk dalam **TER Kategori A**.',
-            '**Perhitungan PPh 21 Bulan Januari**: Penghasilan Bruto × % TER = Rp 8.000.000 × 1,5% = **Rp 120.000**.',
-            '**Efisiensi Administrasi**: Bagian payroll tidak perlu lagi menghitung biaya jabatan dan PTKP bulanan pada masa Januari s/d November; perhitungan tersebut baru dilakukan pada masa pajak Desember.'
+          "kind": "ul",
+          "items": [
+            "TER A bruto Rp12 juta adalah 4%; apartemen individual dikecualikan sampai Rp2 juta/bulan.",
+            "Laptop menunjang pekerjaan; makanan disediakan di tempat kerja bagi semua pegawai."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Klasifikasikan setiap imbalan dan hitung bruto objek serta PPh 21.",
+            "Bandingkan dengan potongan auditor dan hitung koreksi.",
+            "Sebutkan bukti yang diperlukan untuk tiap pengecualian."
           ]
         }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 9'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Klasifikasi TER Kategori A, B, C', 'Penetapan kategori berdasarkan status kawin dan jumlah tanggungan PTKP.', 'Mampu mengkategorikan status TER pegawai dengan tepat.'],
-        ['2', 'Skema Natura PMK 66/2023', 'Daftar natura yang dikecualikan dari objek pajak PPh 21.', 'Mampu membedakan natura kena pajak vs bebas pajak.'],
-        ['3', 'Logika Pemajakan TER vs Pasal 17', 'Memahami bahwa TER adalah alat bantu pemotongan bulanan bukan tarif final.', 'Mampu menjelaskan sinkronisasi penghitungan tahunan PPh 21.']
       ],
-      caption: 'Tabel 9.2: Peta penguasaan submateri TM 9 Perpajakan II.'
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Gaji objek Rp10 juta. Apartemen objek Rp4 juta - Rp2 juta = Rp2 juta. Makan bersama serta laptop kerja dikecualikan. Bruto objek Rp12 juta; PPh = 4% × Rp12 juta = Rp480.000. Potongan auditor Rp1.200.000 berlebih Rp720.000. Kekeliruan terjadi karena fasilitas dikecualikan ikut bruto. Simpan daftar penerima, dokumen fasilitas, nilai biaya apartemen, dan bukti penggunaan laptop untuk pekerjaan. Seluruh hasil rupiah bulat; batas bulanan diuji sebelum memilih TER. Rujukan: PP 58/2023, Lampiran A tabel TER kategori A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23; PMK 66/2023, halaman PDF 16-17, Pasal 22; halaman PDF 21-23, Lampiran A angka 1-10; halaman PDF 49, contoh fasilitas apartemen."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
-    CASE_NATURA_TER_CONCEPT,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "solution-reveal",
+      "title": "Kasus 09B: Gross-up, SPLN, dan kalender pemotongan",
+      "prompt": "Masa Mei 2025, perusahaan menjanjikan pegawai TK/0 gaji bersih Rp10 juta setelah PPh 21 saja. Tenaga ahli OP SPLN juga menerima honor bruto Rp250 juta tanpa P3B. Tidak ada insentif, relaksasi, atau hari libur pada tanggal tenggat dalam asumsi kalender soal. Rujukan: PP 58/2023, Lampiran A tabel TER kategori A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23; PMK 168/2023, halaman PDF 15, Pasal 14 ayat (1)-(3); PMK 81/2024, halaman PDF 78-79 dan 138-139, Pasal 94 ayat (2) dan Pasal 171.",
+      "promptBlocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "TER A 2% sampai bruto Rp10.050.000; 2,25% di atas itu sampai Rp10.350.000.",
+            "Tunjangan pajak menjadi penghasilan; SPLN tetap SPLN."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung bruto dan tunjangan pajak dengan pengujian ulang lapisan TER.",
+            "Hitung potongan SPLN dan jumlah pajak kedua penerima.",
+            "Tentukan tenggat setor dan lapor masa Mei serta bukti yang harus diberikan."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Gross-up berarti pemberi kerja memberi tunjangan pajak agar neto target tercapai. Uji 2% memberi Rp10.204.081,63 sehingga keluar lapisan. Bruto pada 2,25% = Rp10 juta/0,9775 = Rp10.230.179,03; dalam lapisan. Untuk simulasi, bulatkan bruto Rp10.230.179 dan potongan Rp230.179, sehingga neto Rp10 juta. PPh 26 = 20% × Rp250 juta = Rp50 juta final. Total Rp50.230.179. Setor paling lambat 15 Juni 2025, lapor 20 Juni 2025 menurut administrasi 2025. Terbitkan bukti potong dan simpan kertas kerja; syarat P3B perlu dokumen sebelum menurunkan tarif. Data TER bersumber tabel yang berlaku sejak 2024 dan tetap dipakai pada kasus 2025 tanpa fasilitas khusus. Rujukan: PP 58/2023, Lampiran A tabel TER kategori A; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9-10 dan 23; PMK 168/2023, halaman PDF 15, Pasal 14 ayat (1)-(3); PMK 81/2024, halaman PDF 78-79 dan 138-139, Pasal 94 ayat (2) dan Pasal 171."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
     {
-      kind: 'ul',
-      items: [
-        '**PP 58/2023 Menyederhanakan Payroll**: Menghilangkan kerumitan kalkulasi biaya jabatan dan iuran pensiun setiap bulan di Jan-Nov; cukup mengalikan penghasilan bruto dengan persentase tabel TER.',
-        '**Bingkisan Hari Raya Bebas Pajak**: Parsel lebaran, natal, atau tahun baru keagamaan untuk seluruh pegawai dikecualikan dari objek PPh 21 tanpa batasan nominal.',
-        '**Fasilitas Tempat Tinggal Individual Kena Pajak**: Fasilitas sewa apartemen pribadi direksi/manajer merupakan objek PPh 21 natura yang dinilai berdasarkan harga sewa pasar wajar.'
+      "kind": "h2",
+      "text": "Rujukan yang dapat ditelusuri"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "PMK 168/2023, halaman PDF 10-17, Pasal 8-16.",
+        "PMK 168/2023, halaman PDF 15-16 dan 21, Pasal 15 ayat (1)-(3) dan Pasal 21 ayat (1)-(2).",
+        "PMK 66/2023, halaman PDF 16-17, Pasal 22; halaman PDF 21-23, Lampiran A angka 1-10; halaman PDF 49, contoh fasilitas apartemen.",
+        "PMK 66/2023, halaman PDF 22, Lampiran A angka 8; halaman PDF 48-49, contoh kendaraan.",
+        "PMK 81/2024, halaman PDF 78-79 dan 138-139, Pasal 94 ayat (2) dan Pasal 171.",
+        "PMK 168/2023, halaman PDF 15, Pasal 14 ayat (1)-(3)."
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Sumber resmi untuk memeriksa paragraf: [PMK 168/2023](https://www.pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1); [PMK 66/2023](https://jdih.kemenkeu.go.id/dok/pmk-66-tahun-2023/overview); [PMK 81/2024](https://www.pajak.go.id/en/node/113110). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Batas sumber dan penerapan",
+      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
     }
   ]
 };

@@ -1,186 +1,210 @@
 import type { Reading } from '../../../types';
-import { CASE_PPH21_TER_DECEMBER_CALC } from '../pjk2PracticeCases';
-
-const SVG_PPH21_SCENARIOS = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPjk10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="sc1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="sc2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="sc3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
-    <linearGradient id="sc4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPjk10)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">4 KATEGORI PENERIMA PENGHASILAN PPH 21 (PMK 168/2023)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">SUBJEK PPH 21</text>
-
-  <!-- 4 Subject Categories Grid -->
-  <g transform="translate(35, 75)">
-    <!-- 1. Pegawai Tetap -->
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc1)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="97" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">1. PEGAWAI TETAP</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="97" y="53" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">Skema: TER Bulanan + Ps 17 Des</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Menerima gaji teratur bulanan</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Berhak: Biaya Jabatan (5% maks Rp 500rb/bln atau Rp 6jt/thn)</text>
-    <text class="svg-text" x="10" y="112" fill="#cbd5e1" font-size="7.5">• Berhak: Pengurang iuran pensiun</text>
-    <text class="svg-text" x="10" y="126" fill="#cbd5e1" font-size="7.5">• Bukti Potong: Form 1721-A1</text>
-    <rect class="svg-badge-blue" x="10" y="185" width="175" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="97" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Karyawan Kontrak &amp; Organik</text>
-  </g>
-
-  <g transform="translate(245, 75)">
-    <!-- 2. Pegawai Tidak Tetap -->
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc2)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="97" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">2. PEGAWAI TIDAK TETAP</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="97" y="53" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">Skema: TER Harian / Bulanan</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Upah harian, mingguan, borongan</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Upah &lt; Rp 450rb/hari →TER 0%</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Upah Rp 450rb - Rp 2,5jt/hari →TER 0,5%</text>
-    <text class="svg-text" x="10" y="124" fill="#cbd5e1" font-size="7.5">• Upah &gt; Rp 2,5 jt/hari →Tarif Ps 17</text>
-    <rect class="svg-badge-green" x="10" y="185" width="175" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="97" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Pekerja Lepas / Buruh Harian</text>
-  </g>
-
-  <g transform="translate(455, 75)">
-    <!-- 3. Bukan Pegawai -->
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc3)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="97" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">3. BUKAN PEGAWAI</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="97" y="53" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">Skema: Tarif Ps 17 × (50% × Bruto)</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Dokter, Notaris, Pengacara, Artis</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Dasar Pengenaan Pajak (DPP):</text>
-    <text class="text-accent-amber" x="10" y="106" fill="#fbbf24" font-size="7.5" font-weight="700">  50% × Penghasilan Bruto</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• PMK 168: Dihitung per transaksi tanpa kumulatif berjenjang bulanan</text>
-    <rect class="svg-badge-amber" x="10" y="185" width="175" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="97" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Tenaga Ahli &amp; Profesional Lepas</text>
-  </g>
-
-  <g transform="translate(665, 75)">
-    <!-- 4. Dewan Komisaris / Peserta Kegiatan -->
-    <rect class="svg-card" x="0" y="0" width="195" height="235" rx="10" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="195" height="30" rx="10" fill="url(#sc4)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="97" y="20" fill="#a78bfa" font-size="10" font-weight="800" text-anchor="middle">4. DEWAN KOMISARIS / LAIN</text>
-    <rect class="svg-subcard" x="10" y="38" width="175" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-purple" x="97" y="53" fill="#a78bfa" font-size="8" font-weight="800" text-anchor="middle">Skema: Tarif Ps 17 × Bruto</text>
-    <text class="svg-text" x="10" y="78" fill="#cbd5e1" font-size="7.5">• Honorarium Komisaris Non-Pegawai</text>
-    <text class="svg-text" x="10" y="92" fill="#cbd5e1" font-size="7.5">• Peserta kegiatan seminar / workshop</text>
-    <text class="svg-text" x="10" y="108" fill="#cbd5e1" font-size="7.5">• Mantan pegawai terima bonus jasa</text>
-    <text class="svg-text" x="10" y="122" fill="#cbd5e1" font-size="7.5">• Penarikan dana pensiun pegawai</text>
-    <rect class="svg-badge-purple" x="10" y="185" width="175" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="97" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Penghasilan Tidak Berkesinambungan</text>
-  </g>
-</svg>`;
 
 export const TM10_READING: Reading = {
-  tm: 10,
-  title: 'Kalkulasi Komprehensif PPh Pasal 21: Pegawai Tetap, Tidak Tetap, Bukan Pegawai, & Pesangon',
-  ref: 'PMK 168/2023 | PP 68/2009 PPh Final Pesangon | Tarif Pasal 17 UU HPP No. 7/2021',
-  intro: 'TM 10 membahas penerapan hitungan pemotongan PPh Pasal 21 untuk berbagai penerima penghasilan. Pegawai tetap: siklus lengkapnya, yaitu TER Januari sampai November lalu rekalkulasi di masa pajak terakhir (Desember). Pegawai tidak tetap: upah harian vs upah bulanan. Tenaga ahli / bukan pegawai: Dasar Pengenaan Pajak 50% dari bruto dikalikan tarif progresif Pasal 17 tanpa kumulatif. Terakhir, PPh Final atas uang pesangon yang dibayarkan sekaligus.',
-  objectives: [
-    'Menghitung PPh Pasal 21 pegawai tetap setahun penuh termasuk tunjangan, lembur, dan bonus akhir tahun.',
-    'Melakukan rekalkulasi masa pajak Desember dan menentukan PPh 21 kurang bayar atau lebih bayar.',
-    'Menghitung PPh 21 Bukan Pegawai / Tenaga Ahli (DPP 50% × Bruto × Tarif Pasal 17).',
-    'Menghitung PPh Final Uang Pesangon yang dibayarkan sekaligus menggunakan tarif berjenjang PP 68/2009.'
+  "tm": 10,
+  "title": "Penghitungan PPh 21/26 Berbagai Penerima",
+  "ref": "RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus",
+  "intro": "Perpajakan II PJK301. Penghitungan PPh 21/26 Berbagai Penerima. Gunakan dasar aturan, tahun transaksi, satuan, dan bukti yang dapat ditelusuri untuk menyelesaikan kasus.",
+  "objectives": [
+    "Menentukan klasifikasi dan dasar aturan Penghitungan PPh 21/26 Berbagai Penerima.",
+    "Menghitung kasus bertahap dengan tarif, satuan, dan pembulatan yang dinyatakan.",
+    "Menganalisis kesalahan, asumsi, serta bukti dan ketidakpastian penerapan."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 10.1: Skema Penghitungan PPh 21 untuk Pegawai Tetap, Pegawai Tidak Tetap, Bukan Pegawai, dan Pesangon.',
-      svg: SVG_PPH21_SCENARIOS
+      "kind": "callout",
+      "variant": "info",
+      "title": "Cakupan, sumber, dan tahun kasus",
+      "text": "RPP lokal menetapkan TM09-TM15 setelah UTS pada TM08. Paket kanonis 04/05 lokal baru tersedia untuk TM01-TM07. Materi ini menggunakan RPP, slide dosen yang tersedia, serta peraturan primer untuk mengisi cakupan pasca-UTS. Kasus menyebut tahun 2024 atau masa 2025 secara eksplisit; angka norma/PPnBM tertentu diberikan sebagai input soal. Buku Waluyo/Resmi dan arsip UAS Perpajakan II belum ditemukan dalam inventaris lokal. Rujukan: RPP Perpajakan II, halaman PDF 3-5, baris pertemuan 9-15 dan catatan UAS studi kasus."
     },
     {
-      kind: 'callout',
-      variant: 'key',
-      title: '📜 Dasar Hukum Otentik: PMK No. 168/PMK.03/2023 Pasal 10 & 11 (Bukan Pegawai & Pegawai Tidak Tetap)',
-      text: '"1. Bukan Pegawai (Tenaga Ahli, Pengajar, Penulis, Agen Iklan, dll.):\n   Dasar Pengenaan Pajak (DPP) = 50% dari Penghasilan Bruto (Dihitung per transaksi dan tidak berlaku kumulatif berkesinambungan).\n   PPh 21 Terutang = Tarif Progresif Pasal 17 ayat (1) huruf a x (50% x Penghasilan Bruto).\n\n2. Pegawai Tidak Tetap / Tenaga Kerja Lepas Harian:\n   • Upah harian s/d Rp 450.000: TER Harian 0% (Bebas PPh 21);\n   • Upah harian > Rp 450.000 s/d Rp 2.500.000: TER Harian 0,5% dari Penghasilan Bruto Harian;\n   • Upah harian > Rp 2.500.000: Tarif Pasal 17 x (Upah Bruto Harian - [PTKP Tahunan / 360]);\n   • Apabila kumulatif upah sebulan > Rp 2.500.000 s/d Rp 10.000.000: PPh 21 = Tarif Pasal 17 x (Penghasilan Bruto Kumulatif - PTKP Kumulatif);\n   • Apabila kumulatif upah sebulan > Rp 10.000.000: Diterapkan TER Bulanan Kategori A/B/C sesuai status PTKP."'
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Perkiraan fokus UAS",
+      "text": "Perkiraan berdasarkan capaian RPP dan contoh sumber: Penghitungan PPh 21/26 Berbagai Penerima. Latih keputusan aturan sebelum hitungan, langkah per lapisan, dokumentasi, dan koreksi kesalahan. Tidak ada arsip UAS lokal yang mengonfirmasi bobot topik atau bentuk soal. RPP menyebut studi kasus komprehensif; latihan berbahasa Indonesia mengikuti materi lokal."
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 10'
+      "kind": "h2",
+      "text": "Pegawai tetap: dari bruto sampai selisih masa terakhir"
     },
     {
-      kind: 'table',
-      headers: ['Kategori Penerima Penghasilan', 'Dasar Pengenaan Pajak (DPP)', 'Tarif Pajak yang Dikenakan', 'Sifat Pemotongan Pajak'],
-      rows: [
-        ['Pegawai Tetap (Jan - Nov)', 'Penghasilan Bruto Bulanan.', 'Tarif Efektif Rata-Rata (TER Kategori A/B/C).', 'Tidak Final (Kredit Pajak).'],
-        ['Pegawai Tetap (Desember)', 'Penghasilan Kena Pajak (Bruto - Biaya Jabatan - PTKP).', 'Tarif Progresif Pasal 17 UU HPP (5% s/d 35%).', 'Rekalkulasi Pajak Setahun.'],
-        ['Bukan Pegawai (Dokter/Konsultan)', '50% dari Jumlah Penghasilan Bruto.', 'Tarif Progresif Pasal 17 UU HPP.', 'Tidak Final per Transaksi.'],
-        ['Pesangon Dibayar Sekaligus', 'Jumlah Bruto Uang Pesangon.', 'Lapisan Tarif Final PP 68/2009 (0%, 5%, 15%, 25%).', 'Final Selesai (Tidak Masuk SPT Tahunan).'],
-        ['Dewan Komisaris Non-Pegawai', 'Jumlah Honorarium Bruto.', 'Tarif Efektif Rata-Rata (TER Bulanan).', 'Tidak Final.']
+      "kind": "p",
+      "text": "Kumpulkan seluruh bruto aktual, termasuk bonus dan natura objek. Biaya jabatan 5% bruto dibatasi Rp500.000/bulan atau Rp6 juta/tahun; iuran pensiun/hari tua pegawai yang dibayar melalui pemberi kerja kepada lembaga sah dapat dikurangkan. Zakat wajib melalui pemberi kerja kepada lembaga yang memenuhi syarat diuji tersendiri. Kurangi PTKP sesuai status awal tahun, lalu bulatkan PKP ke bawah ribuan penuh. Tarif 5%, 15%, 25%, 30%, 35% dikenakan per lapisan, bukan satu tarif atas seluruh PKP. Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16."
+    },
+    {
+      "kind": "h2",
+      "text": "Pensiunan berkala dan penerima tidak teratur"
+    },
+    {
+      "kind": "p",
+      "text": "Pensiun berkala memakai TER pada masa selain masa terakhir serta tarif Pasal 17 pada masa terakhir. Biaya pensiun 5% bruto dibatasi Rp200.000/bulan atau Rp2,4 juta/tahun. Komisaris/pengawas dengan penghasilan tidak teratur memakai TER bulanan atas bruto menurut Pasal 16 ayat (1); jangan otomatis mengubahnya menjadi pegawai tetap. Mantan pegawai yang menerima bonus serta peserta program pensiun yang masih pegawai mengikuti tarif Pasal 17 atas dasar yang ditentukan Pasal 12 dan 16. Rujukan: PMK 168/2023, halaman PDF 10-17, Pasal 8-16."
+    },
+    {
+      "kind": "h2",
+      "text": "Pegawai tidak tetap dan pola pembayaran"
+    },
+    {
+      "kind": "p",
+      "text": "Untuk 2024, pembayaran harian atau bukan bulanan dengan rata-rata bruto per hari sampai Rp450.000 menggunakan TER harian 0%; di atas Rp450.000 sampai Rp2.500.000 menggunakan 0,5% atas bruto penuh. Pembayaran mingguan/borongan ditentukan dari rata-rata bruto sehari menurut jumlah hari. Bila lebih Rp2.500.000 sehari, gunakan tarif Pasal 17 atas 50% bruto. Bila diterima bulanan, gunakan TER bulanan atas bruto. Pola bayar dan batas bruto menentukan cabang aturan, sehingga pengurangan Rp450.000 dari metode lama tidak diterapkan. Rujukan: PP 58/2023, Pasal 2 dan Lampiran B; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9 dan 18."
+    },
+    {
+      "kind": "h2",
+      "text": "Bukan pegawai, peserta kegiatan, dan SPLN"
+    },
+    {
+      "kind": "p",
+      "text": "Tenaga ahli atau jasa OP SPDN tanpa hubungan pegawai memakai tarif Pasal 17 atas 50% bruto. Untuk dokter, bruto yang dibayar pasien melalui rumah sakit sebelum bagi hasil perlu ditelusuri menurut Pasal 12. Penggantian bahan, pekerja, atau pihak ketiga memerlukan kontrak serta bukti sesuai aturan; jangan mengurangi sembarang reimbursable cost, yaitu biaya yang dibayar kembali. Peserta kegiatan memakai bruto penuh. SPLN tanpa P3B menggunakan tarif 20% bruto menurut Pasal 14 dan Pasal 16 ayat (7). Rujukan: PMK 168/2023, halaman PDF 13-17, Pasal 12 ayat (2)-(9) dan Pasal 16."
+    },
+    {
+      "kind": "h2",
+      "text": "Pesangon, manfaat pensiun sekaligus, dan tahun kalender"
+    },
+    {
+      "kind": "p",
+      "text": "Pisahkan pensiun berkala dari manfaat pensiun sekaligus. PP 68/2009 menetapkan pesangon final 0%, 5%, 15%, 25% per lapisan Rp50 juta, Rp100 juta, Rp500 juta. Manfaat pensiun/JHT/THT sekaligus memakai 0% sampai Rp50 juta dan 5% sisanya. Pembayaran dalam paling lama dua tahun kalender masuk pengertian sekaligus. Bagian tahun ketiga dan selanjutnya memakai tarif Pasal 17 atas bruto dan nonfinal; jangan memakai hitungan 24 bulan sebagai pengganti tahun kalender. Rujukan: PP 68/2009, Pasal 2, 4-6 (paragraf tarif pesangon, pensiun sekaligus, dan pembayaran tahun ketiga)."
+    },
+    {
+      "kind": "h2",
+      "text": "Lebih potong dan audit bukti"
+    },
+    {
+      "kind": "p",
+      "text": "Contoh resmi pegawai yang masuk September tetapi sudah SPDN sejak awal tahun menghasilkan lebih potong pada Desember. Selisih negatif wajib ditindaklanjuti menurut aturan pengembalian, bukan dinolkan tanpa jejak. Cocokkan penghasilan empat bulan, biaya jabatan sesuai empat bulan, iuran, PTKP, pajak terutang, potongan TER terdahulu, dan bukti potong akhir. True-up berarti penyesuaian akhir agar pemotongan sesuai pajak tahunan/bagian tahun. Rujukan: PMK 168/2023, halaman PDF 35-36, Lampiran Bagian Kedua I.2.1.1."
+    },
+    {
+      "kind": "table",
+      "title": "Pilih dasar menurut penerima pada 2024",
+      "headers": [
+        "Penerima",
+        "Dasar dan tarif",
+        "Catatan"
       ],
-      caption: 'Tabel 10.0: Matriks penghitungan PPh 21 menurut subjek penerima.'
+      "rows": [
+        [
+          "Pegawai tetap/pensiunan",
+          "TER atas bruto; masa terakhir Pasal 17 atas PKP",
+          "Uji biaya jabatan atau pensiun"
+        ],
+        [
+          "Tidak tetap harian sampai Rp450.000",
+          "TER harian 0% × bruto",
+          "Batas inklusif"
+        ],
+        [
+          "Tidak tetap harian di atas Rp450.000 sampai Rp2.500.000",
+          "TER harian 0,5% × bruto",
+          "Tanpa pengurangan Rp450.000"
+        ],
+        [
+          "Tidak tetap harian di atas Rp2.500.000",
+          "Pasal 17 × 50% bruto",
+          "Pola bayar bukan bulanan"
+        ],
+        [
+          "Bukan pegawai SPDN",
+          "Pasal 17 × 50% bruto",
+          "Uji komponen bruto"
+        ],
+        [
+          "Peserta kegiatan SPDN",
+          "Pasal 17 × bruto penuh",
+          "Tidak memakai dasar 50%"
+        ],
+        [
+          "OP SPLN tanpa P3B",
+          "20% × bruto",
+          "Uji status dan treaty"
+        ]
+      ],
+      "caption": "Rujukan: PMK 168/2023, halaman PDF 13-17, Pasal 12 ayat (2)-(9) dan Pasal 16.",
+      "stackOnMobile": true
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Lapisan Tarif Pasal 17 UU HPP & Pesangon'
+      "kind": "formula",
+      "text": "\\mathrm{PPh}_{21,\\,terakhir}=\\mathrm{PPh}_{tahunan}-\\mathrm{Potongan}_{sebelumnya}",
+      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
     },
     {
-      kind: 'formula',
-      text: `\\text{Tarif Progresif Orang Pribadi (Pasal 17 ayat 1a UU HPP)}:
-\\begin{cases}
-5\\% & \\text{untuk PKP s/d Rp 60.000.000} \\\\
-15\\% & \\text{untuk PKP di atas Rp 60.000.000 s/d Rp 250.000.000} \\\\
-25\\% & \\text{untuk PKP di atas Rp 250.000.000 s/d Rp 500.000.000} \\\\
-30\\% & \\text{untuk PKP di atas Rp 500.000.000 s/d Rp 5.000.000.000} \\\\
-35\\% & \\text{untuk PKP di atas Rp 5.000.000.000}
-\\end{cases}
-\\text{PPh 21 Bukan Pegawai (PMK 168/2023)} = \\text{Tarif Pasal 17} \\times (50\\% \\times \\text{Penghasilan Bruto})`,
-      note: 'Sesuai PMK 168/2023, dasar pengenaan pajak Bukan Pegawai dihitung 50% dari bruto per transaksi tanpa kumulatif, menyederhanakan perhitungan honorarium pembicara/dokter.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: PPh 21 Jasa Dokter Spesialis Non-Pegawai',
-      prompt: 'dr. Hendra, Sp.A (Bukan Pegawai tetap RS) menerima fee jasa medis pasien dari Rumah Sakit Husada sebesar Rp 40.000.000 dalam satu bulan. Berapa PPh Pasal 21 yang dipotong Rumah Sakit Husada?',
-      blocks: [
+      "kind": "solution-reveal",
+      "title": "Kasus 10A: Pegawai masuk September dan pengembalian TER",
+      "prompt": "Tuan B merupakan SPDN sejak awal 2024, baru bekerja September pada satu pemberi kerja, TK/0. Ia menerima Rp15,5 juta per bulan selama September-Desember dan membayar iuran pensiun sah Rp100.000 per bulan. TER A bruto ini 7%. Rujukan: PMK 168/2023, halaman PDF 15-16 dan 21, Pasal 15 ayat (1)-(3) dan Pasal 21 ayat (1)-(2); PMK 168/2023, halaman PDF 35-36, Lampiran Bagian Kedua I.2.1.1.",
+      "promptBlocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Dasar Pengenaan Pajak (DPP)**: 50% × Penghasilan Bruto = 50% × Rp 40.000.000 = **Rp 20.000.000**.',
-            '**Perhitungan PPh Pasal 21**: DPP masuk lapisan pertama tarif Pasal 17 (s/d Rp 60 Jt) tarif 5%:\nPPh 21 = 5% × Rp 20.000.000 = **Rp 1.000.000**.',
-            '**Kas yang Dibayarkan ke dr. Hendra**: Rp 40.000.000 - Rp 1.000.000 = **Rp 39.000.000** (Rumah Sakit wajib menerbitkan Bukti Potong Formulir 1721-VIII/BP-Bukan Pegawai).'
+          "kind": "ul",
+          "items": [
+            "Bruto empat bulan Rp62 juta; potongan September-November masing-masing Rp1.085.000.",
+            "Batas biaya jabatan Rp500.000/bulan; PTKP Rp54 juta."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung PKP, PPh empat bulan, serta selisih pada masa terakhir.",
+            "Jelaskan apakah penghasilan perlu disetahunkan.",
+            "Hitung pajak neto pada bukti potong dan tenggat pengembalian kelebihan."
           ]
         }
-      ]
-    },
-    {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 10'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Kalkulasi Pegawai Tetap Setahun', 'Penghitungan gaji, tunjangan, premi, bonus, biaya jabatan, dan PTKP.', 'Mampu menyusun Formulir 1721-A1 pegawai tetap.'],
-        ['2', 'Rekalkulasi Masa Desember', 'Perhitungan selisih pajak setahun dikurangi potongan Jan-Nov.', 'Mampu menyelesaikan kasus kurang bayar/lebih bayar Desember.'],
-        ['3', 'Bukan Pegawai & Tenaga Ahli', 'Kalkulasi DPP 50% × Bruto × Tarif Pasal 17.', 'Mampu menghitung potongan PPh 21 dokter, arsitek, dan pengacara.'],
-        ['4', 'PPh Final Pesangon PP 68/2009', 'Penerapan tarif berjenjang pesangon sekaligus (0%, 5%, 15%, 25%).', 'Mampu menghitung pajak pesangon karyawan pensiun.']
       ],
-      caption: 'Tabel 10.2: Peta penguasaan submateri TM 10 Perpajakan II.'
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Neto = Rp62 juta - min(5% × Rp62 juta, 4 × Rp500.000) - 4 × Rp100.000 = Rp59,6 juta. PKP = Rp59,6 juta - Rp54 juta = Rp5,6 juta, ribuan penuh. PPh = 5% × Rp5,6 juta = Rp280.000. Pajak terdahulu Rp3.255.000. Selisih Desember Rp280.000 - Rp3.255.000 = minus Rp2.975.000. Kelebihan dikembalikan beserta bukti potong paling lambat akhir Januari 2025. Penghasilan tidak disetahunkan karena kewajiban subjektif sudah ada sejak Januari. Bukti potong neto Rp280.000, bukan Rp3.255.000. Hasil rupiah bulat; contoh mengikuti Lampiran PMK 168/2023. Rujukan: PMK 168/2023, halaman PDF 15-16 dan 21, Pasal 15 ayat (1)-(3) dan Pasal 21 ayat (1)-(2); PMK 168/2023, halaman PDF 35-36, Lampiran Bagian Kedua I.2.1.1."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
-    CASE_PPH21_TER_DECEMBER_CALC,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "solution-reveal",
+      "title": "Kasus 10B: Empat penerima, empat dasar pemotongan",
+      "prompt": "Pada 2024 perusahaan membayar tenaga ahli SPDN Rp200 juta, upah mingguan Rp3 juta untuk enam hari, hadiah peserta kegiatan Rp80 juta, dan pesangon sekaligus Rp600 juta kepada empat orang berbeda. Rujukan: PMK 168/2023, halaman PDF 13-17, Pasal 12 ayat (2)-(9) dan Pasal 16; PP 58/2023, Pasal 2 dan Lampiran B; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9 dan 18; PP 68/2009, Pasal 2, 4-6 (paragraf tarif pesangon, pensiun sekaligus, dan pembayaran tahun ketiga).",
+      "promptBlocks": [
+        {
+          "kind": "ul",
+          "items": [
+            "Honor seluruhnya jasa tenaga ahli; upah tidak dibayar bulanan.",
+            "Pesangon dibayar seluruhnya pada tahun kalender pertama; penerima SPDN."
+          ]
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Hitung pajak tiap penerima dan jumlah potongan.",
+            "Pisahkan final dan nonfinal.",
+            "Uji usulan staf memakai 5% atas seluruh pembayaran dan terangkan dua kesalahannya."
+          ]
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Tenaga ahli: dasar 50% × Rp200 juta = Rp100 juta, pajak 5% × Rp60 juta + 15% × Rp40 juta = Rp9 juta nonfinal. Upah: Rp3 juta/6 = Rp500.000/hari, 0,5% × Rp500.000 × 6 = Rp15.000 nonfinal. Kegiatan: 5% × Rp60 juta + 15% × Rp20 juta = Rp6 juta nonfinal. Pesangon: 0% × Rp50 juta + 5% × Rp50 juta + 15% × Rp400 juta + 25% × Rp100 juta = Rp87,5 juta final. Total Rp102.515.000; nonfinal Rp15.015.000 dan final Rp87.500.000. Staf salah menyamakan dasar dan mengabaikan lapisan serta sifat final. Tarif dikalikan rupiah, satuan harian dikalikan jumlah hari; seluruh nilai bulat. Rujukan: PMK 168/2023, halaman PDF 13-17, Pasal 12 ayat (2)-(9) dan Pasal 16; PP 58/2023, Pasal 2 dan Lampiran B; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9 dan 18; PP 68/2009, Pasal 2, 4-6 (paragraf tarif pesangon, pensiun sekaligus, dan pembayaran tahun ketiga)."
+        }
+      ],
+      "revealLabel": "Buka langkah hitung dan analisis"
     },
     {
-      kind: 'ul',
-      items: [
-        '**Biaya Jabatan Maksimum Rp 6 Juta/Tahun**: Besarnya biaya jabatan adalah 5% dari penghasilan bruto, dibatasi setinggi-tingginya Rp 500.000 per bulan atau Rp 6.000.000 per tahun.',
-        '**Bukan Pegawai Tanpa Kumulatif**: Sejak 2024 (PMK 168/2023), perhitungan Bukan Pegawai tidak lagi mengakumulasikan penghasilan sebelumnya; setiap transaksi langsung dikalikan 50% x tarif lapisannya.',
-        '**Pesangon Lebih dari 2 Tahun Jadi PPh 21 Normal**: Jika uang pesangon dicicil pembayarannya melewati tahun ke-2, cicilan tahun ke-3 dan seterusnya tidak lagi dikenai tarif final PP 68/2009 melainkan tarif PPh 21 reguler.'
+      "kind": "h2",
+      "text": "Rujukan yang dapat ditelusuri"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "PMK 168/2023, halaman PDF 10-17, Pasal 8-16.",
+        "PP 58/2023, Pasal 2 dan Lampiran B; bahan sosialisasi DJP PMK 168/2023, halaman PDF 9 dan 18.",
+        "PMK 168/2023, halaman PDF 13-17, Pasal 12 ayat (2)-(9) dan Pasal 16.",
+        "PP 68/2009, Pasal 2, 4-6 (paragraf tarif pesangon, pensiun sekaligus, dan pembayaran tahun ketiga).",
+        "PMK 168/2023, halaman PDF 35-36, Lampiran Bagian Kedua I.2.1.1."
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Sumber resmi untuk memeriksa paragraf: [PMK 168/2023](https://www.pajak.go.id/id/peraturan/petunjuk-pelaksanaan-pemotongan-pajak-atas-penghasilan-sehubungan-dengan-pekerjaan-jasa-1); [PP 68/2009](https://jdih.kemenkeu.go.id/api/download/fulltext/2009/68TAHUN2009PP.htm). Halaman PDF dihitung dari awal berkas, bukan nomor slide yang dapat berbeda satu halaman."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Batas sumber dan penerapan",
+      "text": "Materi kuliah dan pembaruan aturan disajikan dengan tahun kasusnya. Untuk ketentuan khusus yang tidak diberi tarif atau klasifikasi sah, cari aturan pelaksana dan bukti transaksi lebih dahulu. Kasus karbon merupakan simulasi; tidak menyatakan kewajiban operasional seluruh sektor pada 2026. Ketidakpastian lebih rinci dicatat pada audit sumber di PR."
     }
   ]
 };

@@ -159,9 +159,9 @@ const course = mod.SEMESTERS.flatMap(s => s.groups.flatMap(g => g.courses)).find
 assert.equal(course.flashcardCount, mod.AKK202_FC.length);
 assert.deepEqual(course.materiTM8_14.map(m => m.tm), tms);
 course.materiTM8_14.forEach(m => assert.equal(m.title, readings[m.tm].title));
-assert.equal(mod.RELEASES[0].version, 'v1.3.3');
-assert.equal(mod.RELEASES[1].version, 'v1.3.2');
-assert.equal(mod.RELEASES[2].version, 'v1.3.1');
+const akkReleaseIndex = mod.RELEASES.findIndex(release => release.version === 'v1.3.3');
+assert.ok(akkReleaseIndex >= 0, 'AKM II release remains in history when later releases are prepended');
+assert.deepEqual(mod.RELEASES.slice(akkReleaseIndex, akkReleaseIndex + 3).map(release => release.version), ['v1.3.3', 'v1.3.2', 'v1.3.1']);
 
 // Optional local provenance check: portable CI needs no access to the private source folder.
 if (process.env.AKK202_VERIFY_LOCAL_SOURCES === '1') {

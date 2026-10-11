@@ -159,8 +159,8 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
   if (courseCode === 'PJK301') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Perpajakan II (TM 1–7)', items: PJK301_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 9–14)', items: PJK301_QUIZ_UAS },
-      { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (14 TM)', items: PJK301_QUIZ },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Perpajakan II (TM 9-15)', items: PJK301_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (TM 1-7 dan TM 9-15)', items: PJK301_QUIZ },
     ];
   }
   if (courseCode === 'MNK201') {

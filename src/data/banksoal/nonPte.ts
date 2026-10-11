@@ -90,8 +90,8 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
   if (code === 'PJK301') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Perpajakan II (TM 1–7)', items: PJK301_BANK_UTS },
-      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Perpajakan II (TM 9–14)', items: PJK301_BANK_UAS },
-      { id: 'all', label: 'Kompilasi Seluruh Kasus Perpajakan II (14 TM)', items: PJK301_BANK },
+      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Perpajakan II (TM 9-15)', items: PJK301_BANK_UAS },
+      { id: 'all', label: 'Kompilasi Seluruh Kasus Perpajakan II (TM 1-7 dan TM 9-15)', items: PJK301_BANK },
     ];
   }
   if (code === 'MNK201') {

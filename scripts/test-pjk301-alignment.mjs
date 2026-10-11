@@ -1,7 +1,5 @@
 // PJK301 Pra-UTS practice must follow canonical TM01–TM07 and each UI render path.
 import assert from 'node:assert/strict';
-import { createHash } from 'node:crypto';
-import { readFileSync } from 'node:fs';
 import { build } from 'esbuild';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -49,34 +47,12 @@ const assertNoStale = (label, value) => {
   for (const pattern of stalePatterns) assert.ok(!pattern.test(JSON.stringify(value)), label + ': stale rule ' + pattern);
 };
 
-// Hash normalized source text, so any edit to protected TM08–TM14 entries fails independently of git state.
-const source = (file) => readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
-const sha256 = (value) => createHash('sha256').update(value).digest('hex');
-const quizSource = source('src/data/quizzes/pjk301.ts');
-const cardSource = source('src/data/flashcards/pjk301.ts');
-const bankSource = source('src/data/banksoal/pjk301.ts');
-const protectedSections = {
-  quiz: quizSource.slice(quizSource.indexOf('export const PJK301_QUIZ_UAS:'), quizSource.indexOf('export const PJK301_QUIZ:')),
-  cards: cardSource.slice(cardSource.indexOf('    "id": "pjk202-tm08-01"') - 6, cardSource.lastIndexOf('\n];')),
-  bank: bankSource.slice(bankSource.indexOf('export const PJK301_BANK_UAS:'), bankSource.indexOf('export const PJK301_BANK:')),
-};
-for (const [name, value] of Object.entries(protectedSections)) assert.ok(value.length > 100, name + ' protected source found');
-const protectedHashes = Object.fromEntries(Object.entries(protectedSections).map(([name, value]) => [name, sha256(value)]));
-if (process.argv.includes('--print-protected-hashes')) {
-  console.log(protectedHashes);
-  process.exit(0);
-}
-assert.deepEqual(protectedHashes, {
-  quiz: '4006f2d6e88f10f3e55382dc14ca1d65253ae54ca4ab03bf626455f5d5fef7b2',
-  cards: '1aff7fef89ce79164ffba4086a3b37efbeb8b8d1735b1673183a8aec7abc5859',
-  bank: '18acd887ae7ec56714416d93e39005ff976593009f3204466afff55232799dd3',
-}, 'TM08–TM14 practice source unchanged');
-
+// This task authorizes rebuilding Pra-UAS. Keep the original Pra-UTS contract.
 assert.equal(mod.PJK301_QUIZ.length, quiz.length + mod.PJK301_QUIZ_UAS.length);
 assert.equal(mod.PJK301_BANK.length, bank.length + mod.PJK301_BANK_UAS.length);
-assert.deepEqual(mod.PJK301_QUIZ_UAS.map((item) => item.tm), [8, 9, 10, 11, 12, 13, 14]);
-assert.equal(mod.PJK301_BANK_UAS.length, 1);
-assert.equal(cards.filter((card) => card.tm >= 8).length, 42);
+assert.equal(mod.PJK301_QUIZ_UAS.length, 60);
+assert.equal(mod.PJK301_BANK_UAS.length, 14);
+assert.equal(cards.filter((card) => card.phase === 'pra-uas').length, 42);
 
 const markdown = unified().use(remarkParse).use(remarkGfm).use(remarkMath);
 const badMarkdownNodes = new Set(['inlineMath', 'math', 'emphasis', 'delete', 'list', 'html', 'heading', 'blockquote']);
@@ -134,7 +110,7 @@ assert.ok(utsCards.some((card) => card.tm === 1 && /183 hari.*niat menetap/.test
 assert.ok(utsCards.some((card) => card.tm === 5 && /Rp2\.000\.000.*Rp10\.000\.000/.test(card.back)), 'TM05 card distinguishes collector thresholds');
 assert.ok(utsCards.some((card) => card.tm === 5 && /cleaning service.*sewa gedung/i.test(card.back)), 'TM05 card distinguishes service and rent categories');
 for (const card of cards) {
-  const pattern = card.tm <= 7 ? /^pjk202-v2-tm(\d{2})-(\d{2})$/ : /^pjk202-tm(\d{2})-(\d{2})$/;
+  const pattern = card.tm <= 7 ? /^pjk202-v2-tm(\d{2})-(\d{2})$/ : /^pjk301-uas-v3-tm(\d{2})-(\d{2})$/;
   const match = pattern.exec(card.id);
   assert.ok(match, card.id + ': id namespace for SRS migration');
   assert.equal(Number(match[1]), card.tm, card.id + ': id and tm agree');
@@ -177,4 +153,4 @@ for (const [tm, pattern] of [
   [6, /PHTB|PPh final/i], [7, /31E|PPh 24|PPh 25|PPh Pasal 29/i],
 ]) assert.match(JSON.stringify(bank[tm - 1]), pattern, 'bank TM' + tm + ': canonical theme');
 
-console.log('PASS: PJK301 Pra-UTS alignment — 35 quiz, 42 flashcards, 7 cases; numeric, rendering, SRS, and protected UAS checks.');
+console.log('PASS: PJK301 Pra-UTS alignment: 35 quiz, 42 flashcards, 7 cases; numeric, rendering, SRS, and pre-UTS checks.');

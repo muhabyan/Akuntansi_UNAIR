@@ -12,6 +12,15 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.4',
+    date: '11 Oktober 2026',
+    headline: 'Materi dan latihan pra-UAS Perpajakan II',
+    notes: [
+      'Perpajakan II PJK301 mencakup TM 9 sampai TM 15 sesuai RPP: 60 kuis, 42 flashcard, dan 14 kasus dengan rujukan halaman atau paragraf serta pembahasan hitungan bertahap.',
+      'Contoh membedakan aturan tahun 2024 dan 2025, termasuk TER, natura, PPh OP/badan, PPN, serta simulasi pajak karbon dengan asumsi dan batas sumber yang dijelaskan.',
+    ],
+  },
+  {
     version: 'v1.3.3',
     date: '11 Oktober 2026',
     headline: 'Latihan UAS AKM II dalam bahasa Inggris',

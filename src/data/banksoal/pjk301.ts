@@ -1,3 +1,4 @@
+import { PJK301_BANK_UAS } from './pjk301Uas';
 // src/data/banksoal/pjk301.ts
 // Bank Soal Esai & Studi Kasus Perpajakan II (PJK301)
 import type { BankSoal } from '../../types';
@@ -96,35 +97,6 @@ export const PJK301_BANK_UTS: BankSoal[] = [
   },
 ];
 
-export const PJK301_BANK_UAS: BankSoal[] = [
-  {
-    "type": "calculation",
-    "scope": "TM 11: Rekonsiliasi Fiskal & SPT 1771",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35–45 menit",
-    "question": "Penyusunan Kertas Kerja Rekonsiliasi Fiskal & Perhitungan PPh Badan Terutang",
-    "context": "PT Sejahtera Abadi (peredaran bruto tahun 2024 sebesar Rp 20.000.000.000) membukukan laba bersih komersial sebelum pajak sebesar Rp 2.500.000.000. Dalam laporan keuangan komersial terdapat pos-pos berikut:\n1. Beban jamuan makan relasi tanpa daftar nominatif: Rp 40.000.000.\n2. Beban sanksi denda administrasi pajak: Rp 15.000.000.\n3. Beban penyusutan aset tetap komersial Rp 300.000.000 (sedangkan penyusutan menurut aturan fiskal adalah Rp 360.000.000).\n4. Pendapatan bunga deposito (telah dipotong PPh Final 20%): Rp 50.000.000.\n5. Pembagian dividen dari PT Anak (kepemilikan saham 30%): Rp 80.000.000.\n6. Kredit pajak yang telah dipotong pihak lain: PPh 22 Rp 25 jt, PPh 23 Rp 35 jt, angsuran PPh 25 Rp 180 jt.",
-    "data": [
-      "Peredaran Bruto: Rp 20.000.000.000 (Memperoleh fasilitas Pasal 31E proporsional).",
-      "Laba Bersih Komersial Sebelum Pajak: Rp 2.500.000.000.",
-      "Kredit Pajak: PPh 22 (25 jt) + PPh 23 (35 jt) + PPh 25 (180 jt) = Rp 240.000.000."
-    ],
-    "instructions": [
-      "Susun kertas kerja rekonsiliasi fiskal untuk menentukan Penghasilan Kena Pajak (PKP).",
-      "Hitung PPh Badan terutang dengan fasilitas Pasal 31E UU PPh.",
-      "Hitung PPh Kurang/Lebih Bayar (Pasal 29/28A) pada SPT Tahunan 1771."
-    ],
-    "outputFormat": [
-      "Tabel koreksi fiskal positif dan negatif",
-      "Kalkulasi fasilitas 31E dan PPh Pasal 29"
-    ],
-    "rubric": [
-      "Ketepatan identifikasi koreksi positif & negatif (40%)",
-      "Kalkulasi proporsi fasilitas Pasal 31E (35%)",
-      "Ketepatan perhitungan PPh Pasal 29 (25%)"
-    ],
-    "answerGuide": "1. Kertas Kerja Rekonsiliasi Fiskal 2024:\nLaba Bersih Komersial Sebelum Pajak .................. Rp 2.500.000.000\n\nKoreksi Fiskal Positif:\n- Jamuan tanpa daftar nominatif (non-deductible) ...... Rp 40.000.000\n- Sanksi denda pajak (Pasal 9 ayat 1k) ................ Rp 15.000.000\nTotal Koreksi Positif ................................. Rp 55.000.000\n\nKoreksi Fiskal Negatif:\n- Selisih penyusutan fiskal (Fiskal 360 jt - Kom 300 jt) (Rp 60.000.000)\n- Pendapatan bunga deposito (PPh Final) ............... (Rp 50.000.000)\n- Dividen dari anak usaha (Non-Objek UU HPP) .......... (Rp 80.000.000)\nTotal Koreksi Negatif ................................. (Rp 190.000.000)\n\nPenghasilan Kena Pajak (PKP) .......................... Rp 2.365.000.000\n\n2. Perhitungan PPh Badan Terutang (Fasilitas Pasal 31E):\nOmzet = Rp 20.000.000.000 (antara Rp 4,8 M s.d Rp 50 M).\n- Bagian PKP yang mendapat fasilitas tarif 11% (diskon 50% dari 22%):\n  PKP Fasilitas = (Rp 4.800.000.000 / Rp 20.000.000.000) × Rp 2.365.000.000\n  PKP Fasilitas = 24% × Rp 2.365.000.000 = Rp 567.600.000.\n  PPh Fasilitas = 11% × Rp 567.600.000 = Rp 62.436.000.\n\n- Bagian PKP yang TIDAK mendapat fasilitas (tarif normal 22%):\n  PKP Non-Fasilitas = Rp 2.365.000.000 - Rp 567.600.000 = Rp 1.797.400.000.\n  PPh Non-Fasilitas = 22% × Rp 1.797.400.000 = Rp 395.428.000.\n\n- Total PPh Badan Terutang = Rp 62.436.000 + Rp 395.428.000 = Rp 457.864.000.\n\n3. PPh Kurang Bayar (PPh Pasal 29):\nTotal PPh Terutang .................................... Rp 457.864.000\nKredit Pajak:\n- PPh Pasal 22 .......................... Rp 25.000.000\n- PPh Pasal 23 .......................... Rp 35.000.000\n- Angsuran PPh Pasal 25 ................. Rp 180.000.000\nTotal Kredit Pajak .................................... (Rp 240.000.000)\nPPh Kurang Bayar (PPh Pasal 29) ....................... Rp 217.864.000"
-  }
-];
+export { PJK301_BANK_UAS } from './pjk301Uas';
 
 export const PJK301_BANK: BankSoal[] = [...PJK301_BANK_UTS, ...PJK301_BANK_UAS];

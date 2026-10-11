@@ -112,7 +112,7 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
               >
                 {PHASE_OPTIONS.filter((option) => option.value === 'all' || phaseCounts[option.value] > 0).map((option) => (
                   <option key={option.value} value={option.value}>
-                    {option.label} ({phaseCounts[option.value]})
+                    {course.code === 'PJK301' && option.value === 'pra-uas' ? 'Pra-UAS · TM 9-15' : option.label} ({phaseCounts[option.value]})
                   </option>
                 ))}
               </select>
