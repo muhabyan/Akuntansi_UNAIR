@@ -104,8 +104,8 @@
     "repository": "9ca0148083385e420cc577816e1a616bb1484b4c081b383d75b1d19c63a30a58"
   },
   "src/data/banksoal/aka201.ts": {
-    "worktree": "5101c292bcc407c27a083f6a5da456d5f95774b496fc51e6ed80bf44e43d266c",
-    "repository": "9a69a46a9476577f657189cec71454c15a931e3aff6aa2ed70eafe13daca5b55"
+    "worktree": "73196523327338df339e4fc06dc407bed1c1890c3826711f7d67ab0c577026a3",
+    "repository": "eb78219d2e0aec3a0214ef0f7900bc54858e730f0978918dc47d76d205ff003d"
   },
   "src/data/banksoal/akk201.ts": {
     "worktree": "0eeab1d538d41c1b67498363d532ecd885920385a91eb0dadf10e4496cce23fa",
@@ -176,8 +176,8 @@
     "repository": "d9cc0485ca1a20430c80890ecd6e55421e6358736bf059cd43658e59e48bf8be"
   },
   "src/data/flashcards/aka201.ts": {
-    "worktree": "1477adc35a4a31f4fe1b3c1b353d3119549845fd200ed9dc6e5e79177c7768a4",
-    "repository": "a59c975c518d15597ae6203045ac626ff1af6f42df421600e820730ee4cf5339"
+    "worktree": "ec5ed084309543d740408c36b057e8484f5f8209a6930efe503b358d27dae01d",
+    "repository": "d612be3e2f665df4790de00df7932e914c0267f30952d6eec236d3316fbe4904"
   },
   "src/data/flashcards/akk106.ts": {
     "worktree": "5f3b2be1b0c2f4770ad2a6e682c6990d36c7b76fa8bfe0fb1bbfea596667f1a5",
@@ -328,8 +328,8 @@
     "repository": "ded5ff4de26e27fd1d2cecccc4868609948dd5ad26b42d2210f664a7e2b31cb3"
   },
   "src/data/quizzes/aka201.ts": {
-    "worktree": "6e54b563ac6ab0e1761b48465cac3ab1d1e7fbdf679dc4ad9930e48e0e6a0875",
-    "repository": "c9c008c7a67657c4086b0c648f93dbacd773802d6a6a4ac7ddc25bd777372715"
+    "worktree": "1ad71ef0e3d28b61852b2e4403f079f4427e1d43e5458cf46852e8022d993bfe",
+    "repository": "faa297f7297fbbfa8ff2f207ef7b14ce7b34aa5ca12f6e27baa3c1290e26306a"
   },
   "src/data/quizzes/akbiPraUasInteractive.ts": {
     "worktree": "2c67ee3cf7c6b2c0278a2b865886de84e608232a01d87cfa653a5faa776c78bb",

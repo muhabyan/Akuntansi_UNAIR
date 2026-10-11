@@ -12,6 +12,15 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.1',
+    date: '11 Oktober 2026',
+    headline: 'Latihan pasca-UTS Pengauditan Berbasis Risiko I',
+    notes: [
+      'AKA201 TM 9 sampai TM 15 mendapat 56 soal kuis, 84 flashcard, dan 21 soal esai serta hitungan di bank soal. Topik dan penomoran mengikuti materi pasca-UTS.',
+      'Pembahasan latihan memuat rujukan halaman atau paragraf sumber, istilah Inggris dengan penjelasan Indonesia, serta catatan pada angka dan rumusan yang berbeda dalam sumber.',
+    ],
+  },
+  {
     version: 'v1.3.0',
     date: '11 Oktober 2026',
     headline: 'Materi pasca-UTS dan penataan tampilan',
