@@ -10,18 +10,21 @@ export async function loadReading(tm) {
   const result = await build({entryPoints:[`src/data/manstrat/modules/tm${tm}.ts`],bundle:true,write:false,platform:'node',format:'esm'});
   return (await import(`data:text/javascript;base64,${Buffer.from(result.outputFiles[0].text).toString('base64')}`))[`TM${tm}_READING`];
 }
+// Expected structure of the case readings TM10-TM15 (sections, pendalaman, figures, self-checks, reveals; top-level anchors).
+const caseExpected=JSON.parse(fs.readFileSync('scripts/fixtures/mnu307/case-expected.json','utf8'));
+export const CASE_EXPECT={counts:Object.fromEntries(Object.entries(caseExpected).map(([k,v])=>[k,v.counts])),anchors:Object.fromEntries(Object.entries(caseExpected).map(([k,v])=>[k,v.anchors])),hashes:Object.fromEntries(Object.entries(caseExpected).map(([k,v])=>[k,v.sha256]))};
 export async function testCanonical(tm) {
   const source = fs.readFileSync(sourcePath(tm),'utf8'), reading = await loadReading(tm);
-  const approvedHashes={6:'9e675ac56c86d05916686b03ea383b2ddf7504e4307f97d2ff91dae83c672c89',5:'ad080d7d1f2398313d042d9b8258dd01aaf2141a23ff7360248b8535843aebc8',3:'10af476b9e3b12c390742634d28f22a90ed2b3075ac26bb57ff043e98b52b12b',4:'f49c6efaa4933ca5aa9f07cd8b67b892414ad4801f530f4f64fca5ef8cf6e5d6'};
+  const approvedHashes={...CASE_EXPECT.hashes,9:'8d707718df18ec5817a40f16526c9687b65176aa2f30eeb61e31a5acec2c4459',6:'9e675ac56c86d05916686b03ea383b2ddf7504e4307f97d2ff91dae83c672c89',5:'ad080d7d1f2398313d042d9b8258dd01aaf2141a23ff7360248b8535843aebc8',3:'10af476b9e3b12c390742634d28f22a90ed2b3075ac26bb57ff043e98b52b12b',4:'f49c6efaa4933ca5aa9f07cd8b67b892414ad4801f530f4f64fca5ef8cf6e5d6'};
   if(tm>=3)assert.equal(sourceHash(tm),approvedHashes[tm],'approved inbox source bytes');
   assert.deepEqual(reading,JSON.parse(JSON.stringify(buildReading(tm))),'generated data drift');
   assert.ok(fs.readFileSync(`src/data/manstrat/modules/tm${tm}.ts`,'utf8').includes(sourceHash(tm)),'source fingerprint');
   const all=flatten(reading.blocks), kinds=kind=>all.filter(b=>b.kind===kind);
   assert.equal(reading.layout,'layered'); assert.equal(reading.coreReadingMinutes,minutes[tm]);
-  assert.equal(reading.objectives.length,tm<=2?7:6);assert.match(reading.intro,/^\p{Lu}/u);
+  assert.equal(reading.objectives.length,tm<=2||tm>=9?7:6);assert.match(reading.intro,/^\p{Lu}/u);
   const counts=[all.filter(b=>b.kind==='section'&&b.layer==='main').length,kinds('pendalaman').length,kinds('figure').length,kinds('self-check').length,kinds('solution-reveal').length];
-  assert.deepEqual(counts,({1:[11,13,11,11,9],2:[10,11,20,10,24],3:[8,9,18,8,17],4:[7,7,18,7,18],5:[7,7,17,7,21],6:[7,7,18,7,20]}[tm]));
-  assert.equal(kinds('solution-reveal').filter(b=>reading.blocks.includes(b)).length,({1:9,2:24,3:17,4:18,5:21,6:20}[tm]),'top-level exercise anchors');
+  assert.deepEqual(counts,({1:[11,13,11,11,9],2:[10,11,20,10,24],3:[8,9,18,8,17],4:[7,7,18,7,18],5:[7,7,17,7,21],6:[7,7,18,7,20],9:[8,8,9,8,15],...CASE_EXPECT.counts}[tm]));
+  assert.equal(kinds('solution-reveal').filter(b=>reading.blocks.includes(b)).length,({1:9,2:24,3:17,4:18,5:21,6:20,9:15,...CASE_EXPECT.anchors}[tm]),'top-level exercise anchors');
   const text=normalize(strings(reading).join('\n'));
   let fence='';
   for(let line of source.split(/\r?\n/)) {
@@ -51,7 +54,7 @@ export async function testCanonical(tm) {
   for(const b of kinds('self-check'))assert.ok(b.question&&b.answer.length&&b.signal);
   for(const b of kinds('solution-reveal'))assert.ok(b.promptBlocks.length&&b.blocks.length&&b.revealLabel);
   if(tm>=3){
-    assert.equal(kinds('solution-reveal').filter(b=>b.title.startsWith('SRQ-TM')).length,tm===5?16:tm===6?15:13);
+    assert.equal(kinds('solution-reveal').filter(b=>b.title.startsWith('SRQ-TM')).length,tm===5?16:tm===6?15:tm>=9?10:13);
     for(const b of kinds('solution-reveal'))assert.doesNotMatch(strings(b.promptBlocks).join(' '),/Pokok jawaban/,'solution stays outside question');
     // Independent acceptance checks for the source's most error-prone spatial relationships.
     const node=(svg,label)=>{
@@ -94,7 +97,7 @@ export async function testCanonical(tm) {
       assert.equal((figs[10].svg.match(/data-node="functional participants"/g)??[]).length,16,'four projects × four functions');
       assert.equal((figs[10].svg.match(/stroke-dasharray=/g)??[]).length,16,'each participant has project reporting');
       assert.equal((figs[8].svg.match(/data-node="Manager /g)??[]).length,6,'all functional managers');
-    }else{
+    }else if(tm===6){
       assert.equal((figs[1].svg.match(/marker-start=/g)??[]).length,3,'leadership: all three pairs bidirectional');
       const power=figs[3].svg;
       for(const label of ['Legitimate Power','Reward Power','Coercive Power','Information Power'])assert.ok(power.includes('data-edge="Organizational → '+label+'"'));
