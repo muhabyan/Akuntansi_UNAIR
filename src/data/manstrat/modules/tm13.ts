@@ -1,155 +1,1978 @@
+// Generated from the approved 05 package by scripts/build-mnu307-content.mjs.
+// Source SHA-256: c758963a66e0d41879332d31b84e1aafd455459e97e8ef22262461ae91b56690
 import type { Reading } from '../../../types';
-import { CASE_EMIRATES_AIRLINE_STRATEGY } from '../manstratPracticeCases';
-
-const SVG_AIRLINE_STRATEGY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgMns13" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns13)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRATEGI JARINGAN PENERBANGAN: HUB-AND-SPOKE (EMIRATES) VS POINT-TO-POINT (LCC)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">AVIATION MODEL</text>
-
-  <!-- Left: HUB-AND-SPOKE (EMIRATES) -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="245" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <text class="text-accent-blue" x="197" y="22" fill="#38bdf8" font-size="11" font-weight="800" text-anchor="middle">HUB-AND-SPOKE (EMIRATES / QATAR / SQ)</text>
-    <!-- Visual Hub Chart -->
-    <circle cx="197" cy="78" r="22" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
-    <text x="197" y="78" fill="#ffffff" font-size="7.5" font-weight="800" text-anchor="middle">MEGA HUB</text>
-    <text x="197" y="89" fill="#ffffff" font-size="6.5" text-anchor="middle">(DXB)</text>
-    <!-- Spokes -->
-    <circle cx="95" cy="55" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="95" y="58" fill="#cbd5e1" font-size="6" text-anchor="middle">London</text>
-    <circle cx="95" cy="105" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="95" y="108" fill="#cbd5e1" font-size="6" text-anchor="middle">NY</text>
-    <circle cx="300" cy="55" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="300" y="58" fill="#cbd5e1" font-size="6" text-anchor="middle">Tokyo</text>
-    <circle cx="300" cy="105" r="12" fill="#1e293b" stroke="#38bdf8"/><text class="svg-text" x="300" y="108" fill="#cbd5e1" font-size="6" text-anchor="middle">Sydney</text>
-    <line x1="107" y1="58" x2="175" y2="72" stroke="#38bdf8" stroke-width="1.5"/>
-    <line x1="107" y1="102" x2="175" y2="84" stroke="#38bdf8" stroke-width="1.5"/>
-    <line x1="288" y1="58" x2="219" y2="72" stroke="#38bdf8" stroke-width="1.5"/>
-    <line x1="288" y1="102" x2="219" y2="84" stroke="#38bdf8" stroke-width="1.5"/>
-
-    <text class="svg-text" x="14" y="145" fill="#cbd5e1" font-size="8">• Menghubungkan ribuan kombinasi kota dunia lewat 1 mega transfer hub</text>
-    <text class="svg-text" x="14" y="162" fill="#cbd5e1" font-size="8">• Armada pesawat berbadan lebar (A380, B777) →Maksimalkan penumpang</text>
-    <text class="svg-text" x="14" y="179" fill="#cbd5e1" font-size="8">• Layanan premium full-service (First/Business class &amp; inflight lounge mewah)</text>
-    <rect class="svg-badge-blue" x="14" y="195" width="367" height="22" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="197" y="210" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Konektivitas Global Maksimal Antar-Benua</text>
-  </g>
-
-  <!-- Right: POINT-TO-POINT (LCC) -->
-  <g transform="translate(470, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="245" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <text class="text-accent-amber" x="197" y="22" fill="#fbbf24" font-size="11" font-weight="800" text-anchor="middle">POINT-TO-POINT DIRECT (AIRASIA / RYANAIR)</text>
-    <!-- Visual P2P Chart -->
-    <circle cx="100" cy="65" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="100" y="68" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota A</text>
-    <circle cx="295" cy="65" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="295" y="68" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota B</text>
-    <circle cx="100" cy="105" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="100" y="108" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota C</text>
-    <circle cx="295" cy="105" r="14" fill="#1e293b" stroke="#fbbf24"/><text class="svg-text" x="295" y="108" fill="#cbd5e1" font-size="6.5" text-anchor="middle">Kota D</text>
-    <line x1="114" y1="65" x2="281" y2="65" stroke="#fbbf24" stroke-width="2"/>
-    <line x1="114" y1="105" x2="281" y2="105" stroke="#fbbf24" stroke-width="2"/>
-    <text class="text-accent-amber" x="197" y="88" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Penerbangan Langsung Tanpa Transit</text>
-
-    <text class="svg-text" x="14" y="145" fill="#cbd5e1" font-size="8">• Rute langsung antar bandara sekunder (Biaya landing fee bandara murah)</text>
-    <text class="svg-text" x="14" y="162" fill="#cbd5e1" font-size="8">• Satu tipe pesawat seragam (A320/B737) →Efisiensi mekanik &amp; pilot</text>
-    <text class="svg-text" x="14" y="179" fill="#cbd5e1" font-size="8">• Waktu putar pesawat cepat di darat (Turnaround time 25 menit) →Utilisasi 14 jam</text>
-    <rect class="svg-badge-amber" x="14" y="195" width="367" height="22" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="197" y="210" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Struktur Biaya Operasional Per Kursi Terendah (CASK)</text>
-  </g>
-</svg>`;
 
 export const TM13_READING: Reading = {
-  tm: 13,
-  title: 'Studi Kasus Strategik III: Penerbangan Global & Inovasi Layanan Premium (Emirates Airline vs LCCs)',
-  ref: 'Michael Porter Strategy and the Aviation Industry | Kasus Emirates Airline & Model Southwest/Ryanair | Hub Economics',
-  intro: 'TM 13 adalah studi kasus industri penerbangan komersial internasional. Dua model jaringan dibandingkan: Hub-and-Spoke (Emirates di Dubai) dan Point-to-Point Low-Cost Carrier (LCC: Southwest, Ryanair, AirAsia). Topik lainnya pemanfaatan lokasi geografis, skala ekonomis pesawat berbadan besar (Airbus A380 dan Boeing 777), pengalaman penumpang premium (In-Flight Entertainment ICE, Shower Spa, Private Suites), ukuran biaya industri (CASK: Cost per Available Seat Kilometer vs RASK: Revenue per Available Seat Kilometer), dan lindung nilai bahan bakar (Fuel Hedging) saat geopolitik tidak stabil.',
-  objectives: [
-    'Menganalisis efisiensi ekonomi jaringan Hub-and-Spoke terpusat dibandingkan model Point-to-Point.',
-    'Menghitung dan membandingkan metrik kinerja industri penerbangan: CASK, RASK, dan Passenger Load Factor.',
-    'Mengevaluasi strategi diferensiasi premium Emirates dalam merebut segmen pelancong bisnis bernilai tinggi.',
-    'Menganalisis strategi unbundling layanan pada maskapai berbiaya hemat (LCC) dalam menekan struktur biaya pokok.',
-    'Merumuskan strategi manajemen risiko bahan bakar avtur dan mitigasi risiko geopolitik global.'
+  "tm": 13,
+  "title": "Samsung Electronics dan perpindahan dari harga murah ke merek premium, inovasi cepat, dan sumber pertumbuhan baru",
+  "ref": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Case 21 [hal. C189–C192], Chapters 1, 4, 5, 6, 9, 12 dan Appendix 1 Chapter 13 [hal. 422–430]",
+  "intro": "Samsung membuktikan bahwa perpindahan dari harga rendah ke diferensiasi menuntut perubahan orang, merek, kecepatan, dan desain sekaligus, tetapi kasus tidak memberi data margin per divisi, jadi rekomendasi pertumbuhan harus berani menunjuk arah dan jujur menandai data yang belum ada.",
+  "objectives": [
+    "Pada Februari 2021 pemimpin de facto Samsung, Lee Jae-yong, dikembalikan ke penjara atas tuduhan menyuap mantan presiden Korea Selatan, di tengah perlambatan pertumbuhan. [hal. C189]",
+    "Yun Jong Yong menjadi CEO pada 1996; krisis Asia 1997 membuat Samsung menumpuk utang, memberhentikan sekitar 30.000 karyawan, dan menjual bisnis sekitar USD 2 miliar. [hal. C190]",
+    "Yun mengubah Samsung menjadi merek premium lewat produk \"wow\", pelatihan boot camp, kenaikan jabatan berdasarkan prestasi, satu agensi iklan global, dan toko khusus. [hal. C190–C191]",
+    "Kecepatan datang dari lapisan persetujuan yang lebih sedikit, riset dan pengembangan hampir USD 19 miliar pada 2021, C-Lab, dan pusat VIP yang memangkas waktu produk menjadi lima bulan. [hal. C191]",
+    "Proses desain memakai lebih dari 1.500 desainer dan 35 pusat riset, dan Samsung membuat sendiri sebagian besar komponennya. [hal. C189, C191]",
+    "Pendapatan 2021 adalah KRW 279.604 miliar dan laba operasi KRW 51.633 miliar, dan pendapatan divisi semikonduktor naik sekitar 29% pada 2021 menurut hitungan dari Exhibit 4. [hal. C189]",
+    "Jawaban kasus: rumuskan masalah, bandingkan alternatif, lalu beri rekomendasi yang bisa diukur. [hal. 400–405]"
   ],
-  blocks: [
+  "layout": "layered",
+  "coreReadingMinutes": 25,
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 13.1: Perbandingan Model Jaringan Penerbangan Hub-and-Spoke Terpusat vs Point-to-Point Desentralisasi.',
-      svg: SVG_AIRLINE_STRATEGY
+      "kind": "p",
+      "text": "Dess 11e, Case 21 Samsung Electronics (hal. C189–C192), dengan alat dari Chapter 1, 4, 5, 6, 9, 12, lima langkah Chapter 13, dan rasio keuangan Appendix 1 Chapter 13 (hal. 422–430). Rujukan mengikuti halaman cetak buku. Kasus menggambarkan Samsung sampai awal 2022, dan Exhibit 1 sampai 4 memuat angka dalam miliar atau triliun won Korea (KRW)."
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 13'
-    },
-    {
-      kind: 'table',
-      headers: ['Dimensi Operasional', 'Model Maskapai Jaringan Hub-and-Spoke (Emirates)', 'Model Maskapai Bertarif Rendah LCC (Ryanair / AirAsia)'],
-      rows: [
-        ['Struktur Jaringan Rute', 'Menghubungkan ratusan kota dunia melalui satu bandara mega-hub sentral (Dubai).', 'Rute langsung antar kota padat (Point-to-Point) tanpa fasilitas transfer bagasi.'],
-        ['Komposisi Armada Pesawat', 'Armada ganda berbadan lebar (Airbus A380 dan Boeing 777) untuk rute jarak jauh.', 'Satu tipe pesawat tunggal berbadan sempit (hanya Boeing 737 atau Airbus A320).'],
-        ['Waktu Perputaran di Darat', 'Lama (2-3 jam) untuk pembersihan kabin mewah dan transfer ribuan koper transit.', 'Sangat cepat (25-30 menit) untuk memaksimalkan jam terbang harian pesawat.'],
-        ['Struktur Pendapatan', 'Bundled: Tiket mencakup bagasi gratis, makanan berkelas, dan hiburan multimedia.', 'Unbundled: Tiket dasar murah; penumpang membayar ekstra untuk kursi, bagasi, dan air minum.'],
-        ['Target Segmen Pasar', 'Pelancong bisnis korporasi global, turis jarak jauh, dan penerbangan antar-benua.', 'Pelancong sensitif harga yang bepergian jarak pendek dengan anggaran hemat.']
-      ],
-      caption: 'Tabel 13.0: Komparasi strategis industri penerbangan dunia.'
-    },
-    {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Metrik Kunci Kinerja Keuangan Maskapai Penerbangan'
-    },
-    {
-      kind: 'formula',
-      text: `\\mathbf{\\text{Metrik Efisiensi Biaya (CASK)}}: \\quad \\text{CASK} = \\frac{\\text{Total Biaya Operasi Penerbangan}}{\\text{Available Seat Kilometers (ASK)}}
-\\mathbf{\\text{Metrik Efisiensi Pendapatan (RASK)}}: \\quad \\text{RASK} = \\frac{\\text{Total Pendapatan Operasional}}{\\text{Available Seat Kilometers (ASK)}}
-\\mathbf{\\text{Tingkat Keterisian Penumpang (Load Factor)}}: \\quad \\text{PLF} = \\frac{\\text{Revenue Passenger Kilometers (RPK)}}{\\text{Available Seat Kilometers (ASK)}} \\times 100\\%
-\\text{Keuntungan Operasional Tercipta jika } \\mathbf{\\text{RASK} > \\text{CASK}}`,
-      note: 'Maskapai LCC memenangkan persaingan dengan menekan CASK serendah mungkin, sedangkan maskapai premium seperti Emirates memenangkan persaingan dengan mendongkrak RASK setinggi mungkin melalui penjualan tiket kelas bisnis/first-class.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Mengapa Model Armada Tunggal LCC Sangat Efisien?',
-      prompt: 'Mengapa maskapai penerbangan bertarif rendah (LCC) seperti Southwest Airlines dan Ryanair bersikeras hanya mengoperasikan satu jenis tipe pesawat saja (Boeing 737)? Efisiensi biaya apa saja yang tercipta dari pilihan strategi ini?',
-      blocks: [
+      "kind": "section",
+      "layer": "fondasi",
+      "title": "Kilat",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Efisiensi Pelatihan Pilot & Kru**: Semua pilot dan pramugari memiliki satu lisensi tipe (*type rating*) yang sama; maskapai dapat menjadwalkan kru mana saja ke pesawat mana saja tanpa batasan sertifikasi.',
-            '**Penghematan Suku Cadang Gudang**: Maskapai hanya perlu menyimpan satu set suku cadang cadangan di bengkel (tidak perlu membeli suku cadang berbeda untuk berbagai mesin), memangkas modal kerja persediaan secara drastis.',
-            '**Daya Tawar Pembelian Massal (Purchasing Power)**: Memesan ratusan pesawat dari satu pabrikan (Boeing saja) memberikan diskon volume raksasa hingga 40-50% dari harga katalog resmi.',
-            '**Efisiensi Mekanik Perawatan**: Teknisi darat menjadi sangat ahli memperbaiki satu tipe pesawat, mempercepat waktu inspeksi berkala di apron.'
+          "kind": "p",
+          "text": "TM13 memakai Samsung untuk satu pertanyaan: bagaimana pembuat peralatan murah berubah menjadi produsen chip, layar, dan ponsel terkemuka, dan ke mana ia harus tumbuh ketika pemimpin de facto-nya dipenjara dan penjualan ponsel unggulannya turun? Kasus ini tidak mengajukan pertanyaan keputusan, jadi kamu merumuskannya sendiri dengan lima langkah Chapter 13. [hal. C189]"
+        },
+        {
+          "kind": "figure",
+          "title": "Samsung Electronics: Case Map",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1800 900\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Samsung Electronics: Case Map</title><desc>Peta satu induk dan enam cabang: lima bagian kasus Samsung ditambah analisis dan rekomendasi.</desc><defs><marker id=\"V-TM13-01-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1800\" height=\"900\" rx=\"16\"/><path data-edge=\"Samsung Electronics (Case 21) → Discarding a Failing Strategy\" d=\"M580 450 H710 V110 H840\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-01-arrow)\" /><path data-edge=\"Samsung Electronics (Case 21) → Developing a Premium Brand\" d=\"M580 450 H710 V246 H840\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-01-arrow)\" /><path data-edge=\"Samsung Electronics (Case 21) → Speeding Up New Product Development\" d=\"M580 450 H710 V382 H840\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-01-arrow)\" /><path data-edge=\"Samsung Electronics (Case 21) → Perfecting a Design Process\" d=\"M580 450 H710 V518 H840\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-01-arrow)\" /><path data-edge=\"Samsung Electronics (Case 21) → Creating a Sustainable Model?\" d=\"M580 450 H710 V654 H840\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-01-arrow)\" /><path data-edge=\"Samsung Electronics (Case 21) → Analisis dan Rekomendasi\" d=\"M580 450 H710 V790 H840\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-01-arrow)\" /><rect class=\"svg-card\" data-node=\"Discarding a Failing Strategy\" x=\"840\" y=\"60\" width=\"900\" height=\"100\" rx=\"12\"/><text class=\"svg-text\" x=\"1290\" y=\"118\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1290\" dy=\"0\">Discarding a Failing Strategy</tspan></text><rect class=\"svg-card\" data-node=\"Developing a Premium Brand\" x=\"840\" y=\"196\" width=\"900\" height=\"100\" rx=\"12\"/><text class=\"svg-text\" x=\"1290\" y=\"254\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1290\" dy=\"0\">Developing a Premium Brand</tspan></text><rect class=\"svg-card\" data-node=\"Speeding Up New Product Development\" x=\"840\" y=\"332\" width=\"900\" height=\"100\" rx=\"12\"/><text class=\"svg-text\" x=\"1290\" y=\"390\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1290\" dy=\"0\">Speeding Up New Product Development</tspan></text><rect class=\"svg-card\" data-node=\"Perfecting a Design Process\" x=\"840\" y=\"468\" width=\"900\" height=\"100\" rx=\"12\"/><text class=\"svg-text\" x=\"1290\" y=\"526\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1290\" dy=\"0\">Perfecting a Design Process</tspan></text><rect class=\"svg-card\" data-node=\"Creating a Sustainable Model?\" x=\"840\" y=\"604\" width=\"900\" height=\"100\" rx=\"12\"/><text class=\"svg-text\" x=\"1290\" y=\"662\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1290\" dy=\"0\">Creating a Sustainable Model?</tspan></text><rect class=\"svg-card\" data-node=\"Analisis dan Rekomendasi\" x=\"840\" y=\"740\" width=\"900\" height=\"100\" rx=\"12\"/><text class=\"svg-text\" x=\"1290\" y=\"798\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1290\" dy=\"0\">Analisis dan Rekomendasi</tspan></text><rect class=\"svg-card\" data-node=\"Samsung Electronics (Case 21)\" x=\"60\" y=\"370\" width=\"520\" height=\"160\" rx=\"12\"/><text class=\"svg-text\" x=\"320\" y=\"458\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"320\" dy=\"0\">Samsung Electronics (Case 21)</tspan></text></svg>",
+          "overview": {
+            "heading": "Samsung Electronics: Case Map",
+            "cards": [
+              {
+                "title": "Samsung Electronics (Case 21)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Discarding a Failing Strategy",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Developing a Premium Brand",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Speeding Up New Product Development",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Perfecting a Design Process",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Creating a Sustainable Model?",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Analisis dan Rekomendasi",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Samsung Electronics (Case 21) bercabang ke lima bagian kasus sesuai urutan judul di buku, lalu ke Analisis dan Rekomendasi. Pembukaan kasus sebelum judul pertama memuat krisis kepemimpinan, Exhibit 1 sampai 4, dan tekanan pertumbuhan; cabang terakhir adalah sintesis pengajaran, bukan judul bagian buku."
+          },
+          "caption": "Kasus Samsung berjalan dari strategi harga rendah yang gagal ke merek premium, kecepatan, desain, lalu pertanyaan keberlanjutan, dan kamu menutupnya dengan rekomendasi. disusun dari hal. C189–C192 dan hal. 400–405",
+          "altText": "Peta satu induk dan enam cabang: lima bagian kasus Samsung ditambah analisis dan rekomendasi."
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Pada Februari 2021 pemimpin de facto Samsung, Lee Jae-yong, dikembalikan ke penjara atas tuduhan menyuap mantan presiden Korea Selatan, di tengah perlambatan pertumbuhan. [hal. C189]",
+            "Yun Jong Yong menjadi CEO pada 1996; krisis Asia 1997 membuat Samsung menumpuk utang, memberhentikan sekitar 30.000 karyawan, dan menjual bisnis sekitar USD 2 miliar. [hal. C190]",
+            "Yun mengubah Samsung menjadi merek premium lewat produk \"wow\", pelatihan boot camp, kenaikan jabatan berdasarkan prestasi, satu agensi iklan global, dan toko khusus. [hal. C190–C191]",
+            "Kecepatan datang dari lapisan persetujuan yang lebih sedikit, riset dan pengembangan hampir USD 19 miliar pada 2021, C-Lab, dan pusat VIP yang memangkas waktu produk menjadi lima bulan. [hal. C191]",
+            "Proses desain memakai lebih dari 1.500 desainer dan 35 pusat riset, dan Samsung membuat sendiri sebagian besar komponennya. [hal. C189, C191]",
+            "Pendapatan 2021 adalah KRW 279.604 miliar dan laba operasi KRW 51.633 miliar, dan pendapatan divisi semikonduktor naik sekitar 29% pada 2021 menurut hitungan dari Exhibit 4. [hal. C189]",
+            "Jawaban kasus: rumuskan masalah, bandingkan alternatif, lalu beri rekomendasi yang bisa diukur. [hal. 400–405]"
           ]
+        },
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "title": "Kalau cuma sempat ingat satu hal:",
+          "text": "Samsung membuktikan bahwa perpindahan dari harga rendah ke diferensiasi menuntut perubahan orang, merek, kecepatan, dan desain sekaligus, tetapi kasus tidak memberi data margin per divisi, jadi rekomendasi pertumbuhan harus berani menunjuk arah dan jujur menandai data yang belum ada.",
+          "compact": true
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 13'
+      "kind": "h2",
+      "text": "Inti"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Ekonomi Jaringan Hub-and-Spoke', 'Analisis keterhubungan rute transit global vs keterbatasan point-to-point.', 'Mampu membandingkan keunggulan struktur jaringan maskapai.'],
-        ['2', 'Diferensiasi Layanan Premium', 'Penciptaan nilai first-class dan loyalitas pelancong korporat bernilai tinggi.', 'Mampu mengevaluasi sumber keunggulan diferensiasi rute jarak jauh.'],
-        ['3', 'Metrik Kinerja Aviasi (CASK/RASK)', 'Kalkulasi efisiensi biaya kursi kilometer dan break-even load factor.', 'Mampu menghitung indikator profitabilitas operasional maskapai.']
+      "kind": "p",
+      "text": "Baca tiap bagian sampai cek pemahamannya. Rincian tambahan tersedia pada blok Pendalaman yang dapat kamu buka sesuai kebutuhan."
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "1. Samsung 2021: raksasa yang diguncang kepemimpinan",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Apa situasi Samsung di awal kasus?"
+        },
+        {
+          "kind": "p",
+          "text": "Pada Februari 2021 Lee Jae-yong, pemimpin de facto Samsung Electronics, dikembalikan ke penjara atas tuduhan menyuap mantan presiden Korea Selatan. Ia memberi arahan dewan sejak ayahnya, Lee Kun-hee, tidak mampu bekerja setelah serangan jantung pada 2014. Di bawah Kun-hee, Samsung naik dari pembuat peralatan murah menjadi produsen utama chip memori, layar datar, dan ponsel. Hukuman tambahan satu setengah tahun bagi Jae-yong menimbulkan kekhawatiran tentang nasib salah satu kerajaan bisnis terbesar dunia. [hal. C189]"
+        },
+        {
+          "kind": "p",
+          "text": "Kasus mencatat bahwa masalah kepemimpinan belum mengurangi status Samsung sebagai kekuatan inovatif yang sangat menguntungkan menurut Exhibit 1 sampai 3, dan Samsung disebut pembuat produk elektronik terbesar dunia setelah merilis generasi baru chip mutakhir. Namun pertumbuhan keseluruhan melambat, dan Samsung mencari jalur ekspansi baru karena penjualan ponsel unggulannya turun dalam beberapa tahun terakhir. [hal. C189]"
+        },
+        {
+          "kind": "figure",
+          "title": "Samsung's Shift from Low Price to Premium",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1600 910\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Samsung's Shift from Low Price to Premium</title><desc>Empat kotak berurutan dari strategi harga rendah ke krisis Asia, langkah penyelamatan, dan merek premium, dengan catatan angka dari kasus.</desc><defs><marker id=\"V-TM13-02-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1600\" height=\"910\" rx=\"16\"/><path data-edge=\"Low-Price Appliances and Components (Before 1997) → Asian Crisis and Losses (1997 to 1998)\" d=\"M680 190 L680 280\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-02-arrow)\" /><path data-edge=\"Asian Crisis and Losses (1997 to 1998) → Layoffs, Factory Closures, and Asset Sales\" d=\"M680 410 L680 500\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-02-arrow)\" /><path data-edge=\"Layoffs, Factory Closures, and Asset Sales → Premium Brand and Wow Products\" d=\"M680 630 L680 720\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-02-arrow)\" /><rect class=\"svg-card\" data-node=\"Low-Price Appliances and Components (Before 1997)\" x=\"300\" y=\"60\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"114\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Low-Price Appliances and Components (Before</tspan><tspan x=\"680\" dy=\"38\">1997)</tspan></text><rect class=\"svg-card\" data-node=\"Asian Crisis and Losses (1997 to 1998)\" x=\"300\" y=\"280\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"353\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Asian Crisis and Losses (1997 to 1998)</tspan></text><rect class=\"svg-card\" data-node=\"Layoffs, Factory Closures, and Asset Sales\" x=\"300\" y=\"500\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"573\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Layoffs, Factory Closures, and Asset Sales</tspan></text><rect class=\"svg-card\" data-node=\"Premium Brand and Wow Products\" x=\"300\" y=\"720\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"793\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Premium Brand and Wow Products</tspan></text><text class=\"svg-muted\" x=\"1237.05\" y=\"118\" text-anchor=\"middle\" font-size=\"22\">bersaing lewat harga,</text><text class=\"svg-muted\" x=\"1237.05\" y=\"148\" text-anchor=\"middle\" font-size=\"22\">teknologi pihak lain</text><text class=\"svg-muted\" x=\"1200.75\" y=\"338\" text-anchor=\"middle\" font-size=\"22\">utang besar,</text><text class=\"svg-muted\" x=\"1200.75\" y=\"368\" text-anchor=\"middle\" font-size=\"22\">rugi tiap bulan</text><text class=\"svg-muted\" x=\"1255.2\" y=\"558\" text-anchor=\"middle\" font-size=\"22\">sekitar 30.000 karyawan,</text><text class=\"svg-muted\" x=\"1255.2\" y=\"588\" text-anchor=\"middle\" font-size=\"22\">pabrik tutup dua bulan</text><text class=\"svg-muted\" x=\"1231\" y=\"778\" text-anchor=\"middle\" font-size=\"22\">desain dan teknologi</text><text class=\"svg-muted\" x=\"1231\" y=\"808\" text-anchor=\"middle\" font-size=\"22\">buatan sendiri</text></svg>",
+          "overview": {
+            "heading": "Samsung's Shift from Low Price to Premium",
+            "cards": [
+              {
+                "title": "Low-Price Appliances and Components (Before 1997)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Asian Crisis and Losses (1997 to 1998)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Layoffs, Factory Closures, and Asset Sales",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Premium Brand and Wow Products",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Empat tahap berurutan dari atas ke bawah: strategi harga rendah, krisis, langkah penyelamatan, lalu merek premium. Tidak ada panah kembali karena kasus tidak menunjukkan Samsung kembali ke strategi lama."
+          },
+          "caption": "Samsung meninggalkan strategi harga rendah setelah krisis 1997 sampai 1998 memperlihatkan bahayanya, lalu membangun merek premium. hal. C190",
+          "altText": "Empat kotak berurutan dari strategi harga rendah ke krisis Asia, langkah penyelamatan, dan merek premium, dengan catatan angka dari kasus."
+        },
+        {
+          "kind": "p",
+          "text": "Tekanan datang dari dalam (pengunduran Kwon dan penggantian tiga co-CEO) dan dari pasar (ketergantungan pada perangkat keras); uraian dan pembelaan eksekutif ada di Pendalaman P-01. [hal. C189]"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: ada dua lapisan masalah yang kasus campur dalam satu bagian pembuka. Lapisan pertama adalah tata kelola dan kepemimpinan (penahanan Jae-yong, pengunduran Kwon, penggantian tiga co-CEO). Lapisan kedua adalah strategi dan pasar (ketergantungan pada perangkat keras, penjualan ponsel turun, pesaing berbasis perangkat lunak). Chapter 1 mendefinisikan tata kelola korporasi sebagai hubungan pemegang saham, manajemen yang dipimpin CEO, dan dewan direksi, dengan dewan sebagai wakil terpilih pemegang saham yang memastikan kepentingan manajemen sejalan dengan pemilik. Kasus tidak menguraikan susunan dewan Samsung, sehingga kamu tidak boleh menilai kualitas tata kelolanya dari tiga peristiwa itu. [hal. 16–17, C189]"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "P-01. Exhibit 3, tekanan di pembukaan kasus, dan lima kekuatan Porter",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Exhibit 3 memuat pangsa pasar ponsel dunia (sumber: Statista dan perkiraan penulis). Teks kasus menyebut ponsel Samsung \"market-leading\", tetapi eksibit menunjukkan Apple lebih tinggi pada ketiga tahun. [hal. C189]"
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Merek",
+                "2021",
+                "2020",
+                "2019"
+              ],
+              "rows": [
+                [
+                  "Samsung",
+                  "19,0%",
+                  "19,1%",
+                  "18,8%"
+                ],
+                [
+                  "Apple",
+                  "23,4%",
+                  "23,4%",
+                  "20%"
+                ],
+                [
+                  "Huawei",
+                  "5%",
+                  "8,4%",
+                  "15,2%"
+                ],
+                [
+                  "Xiaomi",
+                  "12,4%",
+                  "11,2%",
+                  "8,9%"
+                ],
+                [
+                  "OPPO",
+                  "8,3%",
+                  "8,8%",
+                  "8,3%"
+                ],
+                [
+                  "Others",
+                  "29%",
+                  "29,1%",
+                  "28,7%"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left",
+                "left"
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "Hitungan ilustrasi: jumlah kolom 2021 adalah 97,1%, bukan 100%, sedangkan kolom 2020 berjumlah 100,0% dan 2019 berjumlah 99,9%. Kasus tidak menjelaskan selisih 2,9 poin pada 2021. Hasil analisis: Samsung stabil di sekitar 19% selama tiga tahun, Xiaomi naik dari 8,9% ke 12,4%, dan Huawei jatuh dari 15,2% ke 5%. Kasus tidak menjelaskan sebab perubahan Huawei, jadi jangan menyimpulkannya. \"Market-leading\" bisa merujuk pada ukuran lain, tetapi kasus tidak mendefinisikannya. [hal. C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Tekanan dan pembelaan di pembukaan kasus."
+            },
+            {
+              "kind": "p",
+              "text": "Tekanan lain datang dari dalam dan dari pasar. Beberapa tahun sebelumnya ketua dewan Kwon Oh-hyun tiba-tiba mengumumkan pengunduran diri dan menyatakan Samsung perlu beralih ke generasi pemimpin yang lebih muda untuk mencari mesin pertumbuhan baru dengan mempelajari tren masa depan. Samsung kemudian mengganti ketiga co-chief executive yang memimpin lini utamanya: mobile, komponen elektronik, dan elektronik konsumen. Analis menyebut tekanan kuat karena Samsung sangat bergantung pada persaingan lewat perangkat keras, sementara pesaing dari Apple sampai Xiaomi menawarkan perangkat lunak dan layanan internet yang hanya berjalan di perangkat mereka. Samsung memperkenalkan sistem operasi Tizen, tetapi kecil kemungkinan Tizen menantang sistem seperti Android milik Google. [hal. C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Eksekutif Samsung membela strateginya: kekuatan perusahaan ada pada lini produk yang beragam, antara lain televisi, kamera, laptop, dan mesin cuci. Ponsel menyumbang sampai dua pertiga laba, tetapi pendapatan dari produk lain bisa naik, dan Samsung membuat sendiri sebagian besar komponennya sehingga menurut mereka produknya lebih baik dengan biaya lebih rendah. Mereka juga mengklaim Samsung bisa untung walau margin beberapa produk terus turun. Perlakukan ini sebagai klaim eksekutif, karena kasus tidak memberi margin per produk atau per divisi. [hal. C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Lima kekuatan Porter pada kasus."
+            },
+            {
+              "kind": "p",
+              "text": "Di lingkungan persaingan, lima kekuatan Porter menilai ancaman pendatang baru, kekuatan pemasok dan pembeli, substitusi, dan rivalitas. Hasil analisis dari bukti kasus: rivalitas terlihat pada Exhibit 3 dan pada penyebutan Apple dan Xiaomi; pesaing berbiaya lebih rendah dari China disebut ketika kasus membahas ponsel lipat; calon pendatang disebut di bidang kendaraan otonom (\"beberapa pesaing yang ada dan calon pendatang\"); kekuatan pembeli dan pemasok tidak dibahas kasus kecuali bahwa Samsung membeli sebagian filter warna dari pemasok luar. [hal. 53–57, C191–C192]"
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Pisahkan dua peristiwa kepemimpinan dari dua ukuran kinerja 2021 pada pembukaan kasus Samsung, dan sebut satu hal yang kasus tidak jelaskan.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Peristiwa: Lee Jae-yong kembali dipenjara pada Februari 2021, dan Kwon Oh-hyun mundur sebagai ketua dewan beberapa tahun sebelumnya. Ukuran: pendapatan KRW 279.604 miliar dan laba operasi KRW 51.633 miliar (Exhibit 1). Kasus tidak menguraikan susunan dewan atau tata kelola Samsung. [hal. 16–17, C189]"
+            }
+          ],
+          "signal": "Kamu bisa membedakan peristiwa tata kelola dari ukuran kinerja dan menandai batas bukti."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Jelaskan situasi Samsung di awal kasus dan tekanan yang ia hadapi.\nPisahkan masalah kepemimpinan dari masalah strategi dan pasar, sebut angka Exhibit 1, dan jangan menilai tata kelola tanpa data dewan."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "2. Meninggalkan strategi yang gagal: dari harga rendah ke premium",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Mengapa Yun menolak strategi harga rendah, dan apa yang terjadi?"
+        },
+        {
+          "kind": "p",
+          "text": "Pada 1996 Yun Jong Yong diangkat sebagai presiden dan CEO, dan perubahan arah yang dikehendaki Lee Kun-hee tidak mungkin terjadi tanpa usahanya yang tanpa henti. Saat itu Samsung masih memperoleh sebagian besar laba dari peralatan berharga rendah yang dibeli konsumen yang tidak sanggup membeli merek lebih mahal seperti Sony atau Mitsubishi. Samsung juga pemasok komponen berbiaya rendah bagi produsen yang lebih besar dan lebih terkenal. Yun khawatir karena strategi persaingan harga itu memakai teknologi yang dikembangkan pihak lain, dan keberhasilannya bergantung pada kemampuan terus mencari lokasi pabrik berbiaya rendah sambil menjaga pesanan tetap tinggi. Ia juga khawatir pada pesaing berbiaya rendah dari negara lain seperti China. [hal. C190]"
+        },
+        {
+          "kind": "p",
+          "text": "Kekhawatiran itu terbukti dalam setahun. Krisis ekonomi Asia 1997 membuat permintaan turun dan harga banyak barang elektronik jatuh, dan Samsung meninggalkan utang besar. Samsung terus mempertahankan rekor produksi dan penjualan meski banyak produknya menumpuk tak terjual di gudang. Pada Juli 1998 Samsung Electronics merugi jutaan dolar per bulan, dan Yun mengingat bahwa tanpa perubahan perusahaan bisa bangkrut dalam tiga atau empat tahun. Ia mengurung diri sehari di kamar hotel bersama sembilan manajer senior, dan semuanya menulis surat pengunduran diri yang akan berlaku bila gagal. [hal. C190]"
+        },
+        {
+          "kind": "p",
+          "text": "Langkah mereka: memberhentikan sekitar 30.000 karyawan, lebih dari sepertiga tenaga kerja; menutup banyak pabrik selama dua bulan untuk menghabiskan persediaan; dan menjual bisnis senilai sekitar USD 2 miliar, seperti pager dan pembuat kopi listrik, yang dinilai kurang penting bagi masa depan. Setelah kerugian terhenti, Yun mendorong Samsung mengembangkan produk sendiri, bukan meniru produk perusahaan lain, dengan desain menarik dan teknologi canggih agar bisa menjadi merek premium yang boleh mematok harga lebih tinggi. [hal. C190]"
+        },
+        {
+          "kind": "p",
+          "text": "Perbandingan sebelum dan sesudah perubahan ada di Pendalaman P-02. [hal. C190]"
+        },
+        {
+          "kind": "p",
+          "text": "Chapter 5 mendefinisikan overall cost leadership sebagai strategi yang menekan biaya di semua aktivitas rantai nilai dan differentiation sebagai strategi menciptakan perbedaan lewat citra yang dipersepsikan unik dan bernilai oleh pelanggan. Buku mendaftar jebakan cost leadership, salah satunya basis keunggulan biaya yang menjadi usang ketika pihak lain menemukan cara memangkas biaya lebih rendah. Hasil analisis: kekhawatiran Yun pada pesaing berbiaya rendah dari China sesuai dengan jebakan itu, tetapi kasus tidak memakai istilah buku. Chapter 5 juga mencantumkan telepon seluler di antara produk konsumen yang berada pada tahap maturity siklus hidup industri, ketika permintaan agregat melunak, persaingan harga menguat, dan keunggulan efisiensi proses lebih penting. Kasus tidak menyebut tahap itu untuk Samsung, jadi pakai sebagai alat analisis, bukan sebagai pernyataan kasus. [hal. 143, 146–147, 164, C190, C192]"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: kasus menunjukkan perpindahan yang bertahap dan berbiaya. Pemberhentian 30.000 karyawan dan penutupan pabrik dua bulan adalah biaya perpindahan yang dibayar sebelum merek premium terbentuk, dan kasus tidak memberi data laba atau margin pada tahun-tahun itu. Kasus juga tidak membuktikan bahwa keputusan menjual pager dan pembuat kopi benar. Ia hanya mencatat bahwa bisnis itu dinilai bernilai marginal. [hal. C190]"
+        },
+        {
+          "kind": "self-check",
+          "question": "Sebut tiga langkah penyelamatan Samsung pada 1998 dan satu dimensi strategi yang berubah sesudahnya, dengan satu hal yang kasus tidak berikan.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Memberhentikan sekitar 30.000 karyawan, menutup banyak pabrik dua bulan untuk menghabiskan persediaan, dan menjual bisnis sekitar USD 2 miliar. Dimensi yang berubah: dasar persaingan dari harga rendah ke desain dan teknologi, atau sumber produk dari teknologi pihak lain ke produk sendiri. Kasus tidak memberi laba atau margin pada tahun-tahun itu. [hal. C190]"
+            }
+          ],
+          "signal": "Kamu bisa menyebut langkah dengan angka yang tepat dan satu perubahan strategi, serta menandai data yang tidak ada."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Jelaskan mengapa Samsung meninggalkan strategi harga rendah dengan konsep Chapter 5.\nSebut tiga langkah penyelamatan, perbedaan cost leadership dan differentiation, jebakan keunggulan biaya yang usang sebagai hasil analisis, dan batas bukti kasus."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "3. Membangun merek premium: produk, saluran, dan orang",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Bagaimana Yun membangun merek premium?"
+        },
+        {
+          "kind": "p",
+          "text": "Yun merekrut manajer dan insinyur baru, banyak yang berpengalaman di Amerika Serikat. Mereka dibentuk lewat boot camp empat minggu berisi latihan bela diri saat fajar dan pendakian gunung seharian. Untuk memberi insentif bagi tenaga baru itu, Yun membuang sistem kenaikan jabatan berbasis senioritas yang kaku dan menggantinya dengan sistem berbasis prestasi. Samsung mulai meluncurkan produk yang dirancang membuat kesan besar: televisi layar datar terbesar, ponsel dengan kamera dan PDA, notebook yang makin tipis, dan semikonduktor yang lebih cepat dan kaya. Samsung menyebutnya \"wow products\", dan tujuannya mengangkat Samsung seperti Trinitron dan Walkman menanamkan Sony di benak konsumen. [hal. C190]"
+        },
+        {
+          "kind": "p",
+          "text": "Yun juga menggaet Eric Kim untuk membuat citra yang lebih mewah. Kim memindahkan iklan dari 55 agensi di seluruh dunia ke satu perusahaan, Foote, Cone and Belding Worldwide dari Madison Avenue, untuk citra global yang konsisten. Kim menarik Samsung dari jaringan diskon besar seperti Walmart dan Kmart ke toko khusus seperti Best Buy dan Circuit City. Yun bekerja dekat dengan peritel untuk mengetahui kebutuhan calon konsumen, dan Samsung bersama Best Buy membuat Samsung Experience Shop, toko di dalam toko yang memungkinkan pelanggan mencoba produk terbaru dan mendapat pelatihan atas produk seluler yang sudah mereka miliki. Kim Hyun-Suk, wakil presiden eksekutif, mengatakan, \"Kami mendapat sebagian besar gagasan dari pasar.\" [hal. C190–C191]"
+        },
+        {
+          "kind": "figure",
+          "title": "Building the Premium Brand",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1920 586\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Building the Premium Brand</title><desc>Satu induk merek premium dengan empat cabang: produk wow, satu agensi global, toko khusus, dan kenaikan jabatan berbasis prestasi, dengan bukti kasus di bawah masing-masing.</desc><defs><marker id=\"V-TM13-03-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1920\" height=\"586\" rx=\"16\"/><path data-edge=\"Building the Premium Brand → Wow Products\" d=\"M960 170 V255 H270 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-03-arrow)\" /><path data-edge=\"Building the Premium Brand → One Global Agency\" d=\"M960 170 V255 H730 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-03-arrow)\" /><path data-edge=\"Building the Premium Brand → Upscale Specialty Stores\" d=\"M960 170 V255 H1190 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-03-arrow)\" /><path data-edge=\"Building the Premium Brand → Merit-Based Advancement\" d=\"M960 170 V255 H1650 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-03-arrow)\" /><rect class=\"svg-card\" data-node=\"Building the Premium Brand\" x=\"680\" y=\"50\" width=\"560\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"960\" y=\"118\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"960\" dy=\"0\">Building the Premium Brand</tspan></text><rect class=\"svg-card\" data-node=\"Wow Products\" x=\"60\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"270\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"270\" dy=\"0\">Wow Products</tspan></text><rect class=\"svg-card\" data-node=\"One Global Agency\" x=\"520\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"730\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"730\" dy=\"0\">One Global Agency</tspan></text><rect class=\"svg-card\" data-node=\"Upscale Specialty Stores\" x=\"980\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"1190\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1190\" dy=\"0\">Upscale Specialty Stores</tspan></text><rect class=\"svg-card\" data-node=\"Merit-Based Advancement\" x=\"1440\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"1650\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1650\" dy=\"0\">Merit-Based Advancement</tspan></text><text class=\"svg-muted\" x=\"270\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">televisi terbesar, ponsel</text><text class=\"svg-muted\" x=\"270\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">berkamera, notebook tipis</text><text class=\"svg-muted\" x=\"730\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">55 agensi diganti</text><text class=\"svg-muted\" x=\"730\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">satu agensi global</text><text class=\"svg-muted\" x=\"1190\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">keluar dari Walmart,</text><text class=\"svg-muted\" x=\"1190\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">masuk Best Buy</text><text class=\"svg-muted\" x=\"1650\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">senioritas diganti</text><text class=\"svg-muted\" x=\"1650\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">sistem prestasi</text></svg>",
+          "overview": {
+            "heading": "Building the Premium Brand",
+            "cards": [
+              {
+                "title": "Building the Premium Brand",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Wow Products",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "One Global Agency",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Upscale Specialty Stores",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Merit-Based Advancement",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Building the Premium Brand bercabang ke empat unsur sejajar tanpa urutan wajib: produk, promosi, saluran, dan orang. Di bawah tiap unsur ada bukti dari kasus; pengelompokan ke empat unsur adalah hasil analisis."
+          },
+          "caption": "Perpindahan ke merek premium dilakukan Samsung pada produk, promosi, saluran, dan sistem prestasi sekaligus, tidak pada satu hal saja. hal. C190–C191",
+          "altText": "Satu induk merek premium dengan empat cabang: produk wow, satu agensi global, toko khusus, dan kenaikan jabatan berbasis prestasi, dengan bukti kasus di bawah masing-masing."
+        },
+        {
+          "kind": "p",
+          "text": "Chapter 5 menyebut differentiation dapat berbentuk antara lain prestise atau citra merek, kualitas, dan layanan pelanggan. Hasil analisis: Samsung bekerja pada citra merek (satu agensi, toko khusus), kualitas dan fitur (wow products), dan pengalaman layanan (Experience Shop). Kasus tidak melaporkan apakah konsumen bersedia membayar harga lebih tinggi, jadi klaim \"premium\" di sini adalah tujuan yang disebut kasus, bukan hasil yang terbukti dari data harga. [hal. 147, C190–C191]"
+        },
+        {
+          "kind": "p",
+          "text": "Chapter 9 membahas behavioral control lewat tiga elemen: culture, rewards and incentives, serta boundaries and constraints. Exhibit 9.5 mengaitkan tiap elemen dengan situasi. Tabel berikut adalah penerapan hasil analisis. [hal. 274–275, 277–281]"
+        },
+        {
+          "kind": "p",
+          "text": "Bukti untuk tiga elemen itu ada di tabel Pendalaman P-02. [hal. 274, 281, C190–C191]"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "P-02. Human capital menurut Chapter 4, perubahan strategi, dan behavioral control",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Chapter 4 membahas human capital lewat tiga tahap: attracting (hal. 108), developing (hal. 111), dan retaining (hal. 113). Tabel berikut adalah penerapan hasil analisis, dan kasus tidak memberi data turnover, gaji, atau hasil pelatihan. [hal. 108–113]"
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Tahap (Chapter 4)",
+                "Bukti dari kasus",
+                "Pertanyaan yang kasus tidak jawab"
+              ],
+              "rows": [
+                [
+                  "Attracting",
+                  "Merekrut manajer dan insinyur berpengalaman di Amerika Serikat [hal. C190]",
+                  "Berapa jumlah dan dari perusahaan mana mereka direkrut"
+                ],
+                [
+                  "Developing",
+                  "Boot camp empat minggu [hal. C190]",
+                  "Apakah boot camp mengubah kinerja"
+                ],
+                [
+                  "Retaining",
+                  "Sistem kenaikan jabatan berbasis prestasi [hal. C190]",
+                  "Apakah karyawan tetap bertahan, dan seberapa banyak yang keluar saat 30.000 orang diberhentikan"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left"
+              ]
+            },
+            {
+              "kind": "p",
+              "text": "[hal. 108–113, C190]"
+            },
+            {
+              "kind": "p",
+              "text": "Kasus juga tidak membahas dampak boot camp bermodel bela diri pada kesejahteraan karyawan. Penilaian itu adalah hasil analisis bila kamu memakainya dan tidak boleh disajikan sebagai fakta kasus. [hal. C190]"
+            },
+            {
+              "kind": "p",
+              "text": "Perubahan strategi Samsung sebelum dan sesudah Yun."
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Dimensi",
+                "Sebelum perubahan",
+                "Sesudah perubahan",
+                "Sumber"
+              ],
+              "rows": [
+                [
+                  "Dasar persaingan",
+                  "Harga rendah",
+                  "Desain menarik dan teknologi canggih",
+                  "[hal. C190]"
+                ],
+                [
+                  "Sumber produk",
+                  "Teknologi yang dikembangkan pihak lain",
+                  "Produk yang dikembangkan sendiri",
+                  "[hal. C190]"
+                ],
+                [
+                  "Citra merek",
+                  "Pilihan konsumen yang tidak sanggup membeli Sony atau Mitsubishi",
+                  "Citra lebih mewah, tujuan merek premium",
+                  "[hal. C190]"
+                ],
+                [
+                  "Saluran penjualan",
+                  "Jaringan diskon besar seperti Walmart dan Kmart",
+                  "Toko khusus yang lebih mewah seperti Best Buy dan Circuit City",
+                  "[hal. C190]"
+                ],
+                [
+                  "Promosi",
+                  "55 agensi iklan di seluruh dunia",
+                  "Satu agensi untuk citra merek global yang konsisten",
+                  "[hal. C190]"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left",
+                "left"
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "[hal. C190]"
+            },
+            {
+              "kind": "p",
+              "text": "Behavioral control menurut Chapter 9 pada kasus Samsung."
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Elemen (Chapter 9)",
+                "Bukti dari kasus",
+                "Batas bukti"
+              ],
+              "rows": [
+                [
+                  "Culture",
+                  "Boot camp empat minggu; manajer, insinyur, dan desainer bekerja siang malam di pusat VIP [hal. C190–C191]",
+                  "Kasus tidak mengukur budaya atau semangat karyawan"
+                ],
+                [
+                  "Rewards and incentives",
+                  "Sistem berbasis prestasi menggantikan senioritas [hal. C190]",
+                  "Kasus tidak memberi bentuk imbalan, bonus, atau data retensi"
+                ],
+                [
+                  "Boundaries and constraints",
+                  "Unit internal dipaksa bersaing dengan pemasok luar [hal. C191]",
+                  "Hasil analisis: ini tekanan kinerja, dan kasus tidak menguraikan aturan atau batas formal"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left"
+              ]
+            },
+            {
+              "kind": "p",
+              "text": "[hal. 274, 281, C190–C191]"
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Pasangkan tiga elemen behavioral control dengan bukti Samsung, dan sebut satu bukti yang kasus tidak berikan.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Culture dengan boot camp dan kerja siang malam di pusat VIP; rewards and incentives dengan sistem berbasis prestasi yang menggantikan senioritas; boundaries and constraints dengan persaingan paksa antara unit internal dan pemasok luar (hasil analisis). Kasus tidak memberi bentuk imbalan atau data retensi. [hal. 274, 281, C190–C191]"
+            }
+          ],
+          "signal": "Kamu bisa memakai Exhibit 9.5 untuk memasangkan elemen dan bukti dan menandai bukti yang tidak ada."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Jelaskan bagaimana Samsung membangun merek premium dan mengontrol perilaku karyawan.\nSebut empat unsur merek, tiga elemen behavioral control dengan bukti, dan data yang kasus tidak berikan (harga, retensi, imbalan)."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "4. Kecepatan, inovasi, dan corporate entrepreneurship",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Bagaimana Samsung mempercepat produk baru?"
+        },
+        {
+          "kind": "p",
+          "text": "Yun tahu margin lebih tinggi hanya bertahan selama Samsung meluncurkan produk baru jauh sebelum rival mapan. Manajer Samsung yang pernah bekerja di pesaing besar menyebut bahwa kini mereka melewati jauh lebih sedikit lapisan birokrasi untuk mendapat persetujuan produk, anggaran, dan rencana pemasaran. Yun juga memanfaatkan peralihan ke teknologi digital dan berinvestasi besar pada teknologi kunci dari semikonduktor sampai layar LCD. Samsung terus mengeluarkan dana riset dan pengembangan lebih besar daripada rivalnya, hampir USD 19 miliar pada 2021, dengan banyak desainer dan insinyur di beberapa pusat riset dunia. Samsung juga memulai C-Lab di kantor pusat, pusat inkubasi internal yang mendorong karyawan membangun dan mengembangkan gagasan bisnis mereka sendiri. [hal. C191]"
+        },
+        {
+          "kind": "p",
+          "text": "Yun memaksa unit internal bersaing dengan pihak luar. Pada bisnis liquid-crystal-display, Samsung membeli setengah filter warnanya dari Sumitomo Chemical Jepang dan menyumbernya sendiri untuk setengah lainnya, sehingga keduanya diadu. Samsung mengklaim waktu dari konsep sampai peluncuran menjadi serendah lima bulan, dibanding lebih dari setahun pada 2000. Manajer puncak, insinyur, dan desainer bekerja siang malam di pusat VIP lima lantai di kompleks industri Suwon, dengan asrama dan kamar mandi untuk istirahat singkat. Kyunghan Jung, manajer senior pusat itu, mengatakan, \"Tujuh puluh sampai delapan puluh persen kualitas, biaya, dan waktu pengiriman ditentukan pada tahap awal pengembangan produk.\" Perlakukan angka lima bulan dan tujuh puluh sampai delapan puluh persen sebagai klaim Samsung dan kutipan seorang manajer. Kasus tidak memberi data waktu pengembangan per produk. [hal. C191]"
+        },
+        {
+          "kind": "p",
+          "text": "Samsung memperkenalkan ponsel pertama dengan aktivasi suara, ponsel dengan pemutar MP3, dan ponsel berkamera yang mengirim foto secara digital lewat jaringan GSM. Sebagai contoh kecepatan, Charles Golvin dari Forrester Research menyebut kemampuan Samsung membuat empat spesifikasi Galaxy S untuk empat jenis jaringan nirkabel di dunia dan mengirimkannya serentak. [hal. C191]"
+        },
+        {
+          "kind": "figure",
+          "title": "Types of Innovation Applied to Samsung (Chapter 12)",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1920 586\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Types of Innovation Applied to Samsung (Chapter 12)</title><desc>Satu induk jenis inovasi dengan empat cabang: produk, proses, inkremental, dan radikal, dengan bukti Samsung di bawah masing-masing.</desc><defs><marker id=\"V-TM13-04-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1920\" height=\"586\" rx=\"16\"/><path data-edge=\"Types of Innovation at Samsung → Product Innovation\" d=\"M960 170 V255 H270 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-04-arrow)\" /><path data-edge=\"Types of Innovation at Samsung → Process Innovation\" d=\"M960 170 V255 H730 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-04-arrow)\" /><path data-edge=\"Types of Innovation at Samsung → Incremental Innovation\" d=\"M960 170 V255 H1190 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-04-arrow)\" /><path data-edge=\"Types of Innovation at Samsung → Radical Innovation\" d=\"M960 170 V255 H1650 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-04-arrow)\" /><rect class=\"svg-card\" data-node=\"Types of Innovation at Samsung\" x=\"650\" y=\"50\" width=\"620\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"960\" y=\"118\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"960\" dy=\"0\">Types of Innovation at Samsung</tspan></text><rect class=\"svg-card\" data-node=\"Product Innovation\" x=\"60\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"270\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"270\" dy=\"0\">Product Innovation</tspan></text><rect class=\"svg-card\" data-node=\"Process Innovation\" x=\"520\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"730\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"730\" dy=\"0\">Process Innovation</tspan></text><rect class=\"svg-card\" data-node=\"Incremental Innovation\" x=\"980\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"1190\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1190\" dy=\"0\">Incremental Innovation</tspan></text><rect class=\"svg-card\" data-node=\"Radical Innovation\" x=\"1440\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"1650\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1650\" dy=\"0\">Radical Innovation</tspan></text><text class=\"svg-muted\" x=\"270\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">ponsel lipat,</text><text class=\"svg-muted\" x=\"270\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">Galaxy Note</text><text class=\"svg-muted\" x=\"730\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">pusat VIP, lima bulan,</text><text class=\"svg-muted\" x=\"730\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">lapisan lebih sedikit</text><text class=\"svg-muted\" x=\"1190\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">empat spesifikasi</text><text class=\"svg-muted\" x=\"1190\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">Galaxy S serentak</text><text class=\"svg-muted\" x=\"1650\" y=\"510\" text-anchor=\"middle\" font-size=\"24\">kasus tidak melabeli</text><text class=\"svg-muted\" x=\"1650\" y=\"546\" text-anchor=\"middle\" font-size=\"24\">inovasi radikal</text></svg>",
+          "overview": {
+            "heading": "Types of Innovation Applied to Samsung (Chapter 12)",
+            "cards": [
+              {
+                "title": "Types of Innovation at Samsung",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Product Innovation",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Process Innovation",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Incremental Innovation",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Radical Innovation",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Types of Innovation at Samsung bercabang ke empat jenis sejajar tanpa urutan wajib. Di bawah tiap jenis ada bukti atau batas dari kasus; penempatan adalah hasil analisis, dan kasus tidak melabeli inovasi Samsung dengan istilah buku."
+          },
+          "caption": "Kasus memuat bukti inovasi produk dan proses, tetapi tidak memberi dasar untuk menyebut inovasi Samsung radikal atau inkremental. hal. 366–369, diterapkan pada hal. C191–C192",
+          "altText": "Satu induk jenis inovasi dengan empat cabang: produk, proses, inkremental, dan radikal, dengan bukti Samsung di bawah masing-masing."
+        },
+        {
+          "kind": "p",
+          "text": "Chapter 12 mendefinisikan innovation sebagai penggunaan pengetahuan baru untuk mengubah proses organisasi atau menciptakan produk dan layanan yang layak secara komersial. Product innovation membuat desain produk dan penerapan teknologi untuk pengguna akhir, lebih umum pada tahap awal siklus hidup industri, dan sering dikaitkan dengan differentiation. Process innovation memperbaiki efisiensi proses, terutama manufaktur, lebih mungkin pada tahap lanjut siklus hidup, dan sering dikaitkan dengan cost leadership. Pada kontinum, inovasi radikal membuat perubahan mendasar dan inovasi inkremental memperbaiki praktik yang ada. Christensen juga membedakan sustaining dan disruptive innovation. [hal. 366–369]"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: ponsel lipat, Galaxy Note, dan ponsel pertama dengan aktivasi suara adalah inovasi produk; pusat VIP, rivalitas internal dengan pemasok luar, dan pemangkasan lapisan persetujuan memperpendek waktu pengembangan dan lebih dekat ke inovasi proses; empat spesifikasi Galaxy S untuk empat jaringan mirip penyesuaian inkremental atas satu platform. Kasus tidak melabeli satu pun inovasi Samsung sebagai radikal atau disruptif, jadi tulis label itu hanya sebagai hasil analisis dengan alasan yang eksplisit. [hal. 366–369, C191–C192]"
+        },
+        {
+          "kind": "self-check",
+          "question": "Klasifikasikan dua inovasi Samsung dari kasus sebagai inovasi produk atau proses, dan sebut batas klaim klasifikasinya.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Ponsel lipat atau Galaxy Note adalah inovasi produk; pusat VIP yang memperpendek waktu konsep ke peluncuran menjadi lima bulan lebih dekat ke inovasi proses. Ini hasil analisis, dan kasus tidak memakai istilah buku atau memberi data hasil komersial tiap inovasi. [hal. 366–368, C191–C192]"
+            }
+          ],
+          "signal": "Kamu bisa memakai definisi buku untuk mengklasifikasikan bukti dan menandai klasifikasi sebagai hasil analisis."
+        },
+        {
+          "kind": "h3",
+          "text": "C-Lab: bagaimana corporate entrepreneurship muncul di Samsung?"
+        },
+        {
+          "kind": "p",
+          "text": "Chapter 12 menyebut corporate entrepreneurship (CE) punya dua tujuan: mengejar peluang usaha baru dan pembaruan strategis. Buku membedakan pendekatan focused, ketika kegiatan CE dipisahkan dari operasi utama dan dikerjakan unit independen, dan dispersed, ketika seluruh bagian organisasi terlibat. Contoh pendekatan focused adalah new venture group dan business incubator, yang menyediakan dana, ruang fisik, layanan bisnis, mentoring, dan jejaring. Pendekatan dispersed bersandar pada budaya wirausaha, alokasi sumber daya seperti waktu dan dana, dan product champion. [hal. 377–381]"
+        },
+        {
+          "kind": "figure",
+          "title": "Corporate Entrepreneurship at Samsung (Chapter 12)",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1760 587\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Corporate Entrepreneurship at Samsung (Chapter 12)</title><desc>Satu induk corporate entrepreneurship dengan tiga cabang: inkubasi C-Lab, gagasan dari pasar, dan desainer di jabatan manajemen, dengan bukti kasus di bawah masing-masing.</desc><defs><marker id=\"V-TM13-05-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1760\" height=\"587\" rx=\"16\"/><path data-edge=\"Corporate Entrepreneurship at Samsung → Focused: C-Lab Incubation Center\" d=\"M880 170 V255 H320 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-05-arrow)\" /><path data-edge=\"Corporate Entrepreneurship at Samsung → Dispersed: Ideas from the Market\" d=\"M880 170 V255 H880 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-05-arrow)\" /><path data-edge=\"Corporate Entrepreneurship at Samsung → Product Champions: Designers in Management\" d=\"M880 170 V255 H1440 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-05-arrow)\" /><rect class=\"svg-card\" data-node=\"Corporate Entrepreneurship at Samsung\" x=\"500\" y=\"50\" width=\"760\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"880\" y=\"118\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"880\" dy=\"0\">Corporate Entrepreneurship at Samsung</tspan></text><rect class=\"svg-card\" data-node=\"Focused: C-Lab Incubation Center\" x=\"60\" y=\"340\" width=\"520\" height=\"121\" rx=\"12\"/><text class=\"svg-text\" x=\"320\" y=\"389.5\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"320\" dy=\"0\">Focused: C-Lab Incubation</tspan><tspan x=\"320\" dy=\"38\">Center</tspan></text><rect class=\"svg-card\" data-node=\"Dispersed: Ideas from the Market\" x=\"620\" y=\"340\" width=\"520\" height=\"121\" rx=\"12\"/><text class=\"svg-text\" x=\"880\" y=\"389.5\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"880\" dy=\"0\">Dispersed: Ideas from the</tspan><tspan x=\"880\" dy=\"38\">Market</tspan></text><rect class=\"svg-card\" data-node=\"Product Champions: Designers in Management\" x=\"1180\" y=\"340\" width=\"520\" height=\"121\" rx=\"12\"/><text class=\"svg-text\" x=\"1440\" y=\"389.5\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1440\" dy=\"0\">Product Champions: Designers in</tspan><tspan x=\"1440\" dy=\"38\">Management</tspan></text><text class=\"svg-muted\" x=\"320\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">pusat inkubasi internal,</text><text class=\"svg-muted\" x=\"320\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">gagasan bisnis karyawan</text><text class=\"svg-muted\" x=\"880\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">gagasan dari pasar,</text><text class=\"svg-muted\" x=\"880\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">Experience Shop</text><text class=\"svg-muted\" x=\"1440\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">desainer diangkat ke</text><text class=\"svg-muted\" x=\"1440\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">jabatan manajemen</text></svg>",
+          "overview": {
+            "heading": "Corporate Entrepreneurship at Samsung (Chapter 12)",
+            "cards": [
+              {
+                "title": "Corporate Entrepreneurship at Samsung",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Focused: C-Lab Incubation Center",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Dispersed: Ideas from the Market",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Product Champions: Designers in Management",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Corporate Entrepreneurship at Samsung bercabang ke tiga bentuk sejajar tanpa urutan wajib. Di bawah tiap bentuk ada bukti dari kasus; pemetaan ke istilah buku adalah hasil analisis, dan kasus tidak memakai istilah corporate entrepreneurship."
+          },
+          "caption": "Kasus memberi petunjuk tentang C-Lab, aliran gagasan dari pasar, dan desainer yang dipromosikan, tetapi tidak memberi hasil usaha dari kegiatan itu. hal. 378–382, diterapkan pada hal. C191–C192",
+          "altText": "Satu induk corporate entrepreneurship dengan tiga cabang: inkubasi C-Lab, gagasan dari pasar, dan desainer di jabatan manajemen, dengan bukti kasus di bawah masing-masing."
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: C-Lab yang mendorong karyawan membangun gagasan bisnis sendiri di pusat inkubasi internal mirip business incubator dalam pendekatan focused. Kutipan \"kami mendapat sebagian besar gagasan dari pasar\" dan penunjukan desainer ke jabatan manajemen agar gagasan mereka sampai ke eksekutif puncak mirip unsur dispersed dan product champion. Kasus tidak memberi jumlah usaha yang lahir dari C-Lab, dana, hasil, atau kapan usaha dihentikan. Buku mencatat bahwa sedikit lebih dari 50% usaha korporasi mencapai profit (ROI) dalam enam tahun dan menyarankan menilai CE dengan tiga pertanyaan (penerimaan pasar, kontribusi pada kompetensi internal, keberlanjutan keunggulan), serta dengan exit champion yang berani mempertanyakan kelayakan usaha dan real options yang membuat investasi bertahap. [hal. 379–384, C191–C192]"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "P-03. Lima dilema inovasi dan strategic envelope Samsung",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Chapter 12 menyebut lima dilema inovasi pada hal. 369 dan 370. Tabel berikut adalah penerapan hasil analisis, dan kasus tidak memberi bukti untuk tiap dilema. [hal. 369–370]"
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Dilema (Chapter 12)",
+                "Bukti dari kasus",
+                "Batas bukti"
+              ],
+              "rows": [
+                [
+                  "Seeds versus weeds",
+                  "C-Lab memberi karyawan ruang mengembangkan gagasan [hal. C191]",
+                  "Kasus tidak menjelaskan cara memilih gagasan"
+                ],
+                [
+                  "Experience versus initiative",
+                  "Desainer ditunjuk ke jabatan manajemen agar gagasan sampai ke atas [hal. C191]",
+                  "Kasus tidak membahas peran manajer senior dalam proyek"
+                ],
+                [
+                  "Internal versus external staffing",
+                  "Merekrut manajer dan insinyur dari luar, banyak berpengalaman di Amerika Serikat [hal. C190]",
+                  "Kasus tidak menilai hasil perekrutan luar"
+                ],
+                [
+                  "Building capabilities versus collaborating",
+                  "Setengah filter warna dibeli dari Sumitomo dan setengah dibuat sendiri [hal. C191]",
+                  "Kasus tidak menjelaskan kerja sama riset"
+                ],
+                [
+                  "Incremental versus preemptive launch",
+                  "Empat spesifikasi Galaxy S dikirim serentak untuk empat jenis jaringan [hal. C191]",
+                  "Kasus tidak memberi skala atau waktu peluncuran"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left"
+              ]
+            },
+            {
+              "kind": "p",
+              "text": "[hal. 369–370, C190–C191]"
+            },
+            {
+              "kind": "p",
+              "text": "Strategic envelope pada kasus Samsung."
+            },
+            {
+              "kind": "p",
+              "text": "Chapter 12 membahas strategic envelope, yaitu ruang lingkup upaya inovasi perusahaan agar tidak terbuang pada proyek di luar domainnya, dan menyarankan fokus pada teknologi umum atau tema pasar. Chapter 12 juga menyarankan perusahaan mengajukan pertanyaan tentang biaya, peluang komersial, nilai, dan hal yang dipelajari bila gagal. Hasil analisis: tema pasar Samsung terlihat sebagai pengalaman perangkat yang saling terhubung (\"digital home\"), dan kasus menyebut Samsung memamerkan tablet, kamera, televisi 3-D, dan lantai LED interaktif di ruang pamer kantor pusatnya di Seoul. Kasus tidak menyebut strategic envelope atau menguraikan cara Samsung memilih proyek. Penghargaan desain juga bukan ukuran penjualan, dan kasus tidak memberi data hubungan keduanya. [hal. 373–374, C191–C192]"
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Jelaskan C-Lab dengan konsep Chapter 12 dan sebut tiga data yang kasus tidak berikan.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Hasil analisis: C-Lab sebagai pusat inkubasi internal yang mendorong karyawan mengembangkan gagasan bisnis sendiri mirip business incubator dalam pendekatan focused. Kasus tidak memberi jumlah usaha, dana, atau hasilnya, sehingga kamu tidak bisa menilai keberhasilannya dengan kriteria CE buku. [hal. 379–382, C191]"
+            }
+          ],
+          "signal": "Kamu bisa memetakan bukti pada jenis CE buku dan menyebut data yang diperlukan untuk menilai hasil."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Analisis bagaimana Samsung mengelola inovasi dan corporate entrepreneurship dengan Chapter 12.\nSebut inovasi produk dan proses, pendekatan focused dan dispersed, C-Lab sebagai hasil analisis, dan data hasil yang tidak tersedia."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "5. Desain, komponen sendiri, dan keberlanjutan model",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Bagaimana proses desain Samsung bekerja?"
+        },
+        {
+          "kind": "p",
+          "text": "Sementara membangun merek, Yun memposisikan Samsung untuk bersaing lewat desain produk yang sulit ditolak, dari peralatan rumah tangga sampai komputer genggam dan televisi layar datar yang pada akhirnya saling terhubung. Samsung memakai pengetahuan lebih dari 1.500 desainer dengan latar psikologi, sosiologi, ekonomi, dan teknik. Para desainer itu memakai informasi yang dikumpulkan lebih dari 60.000 staf di 35 pusat riset di kota seperti San Francisco, London, Tokyo, Mumbai, dan Shanghai, tempat desainer mengamati cara konsumen memakai produk. Ponsel Galaxy Note yang lebar, misalnya, lahir dari tanggapan kelompok fokus yang menginginkan perangkat baik untuk menulis tangan, menggambar, dan berbagi catatan, dan konsumen Asia merasa lebih mudah menulis karakter dengan pena daripada mengetik. [hal. C191]"
+        },
+        {
+          "kind": "p",
+          "text": "Samsung mengirim desainernya beberapa bulan ke rumah mode, desainer furnitur, dan ahli kosmetik untuk mengikuti tren industri lain, dan desainer Galaxy terbaru mengambil inspirasi dari reruntuhan di Kamboja, pemandangan Helsinki, pameran Salvador Dali di London, dan perjalanan balon di Afrika. Samsung juga mengangkat desainer ke jabatan manajemen agar gagasan mereka sampai ke eksekutif puncak. Pada 2015 Samsung merekrut Lee Don-Tae, mantan eksekutif puncak agensi desain Inggris, yang bergabung dengan Chang Don-Hoon, kepala tim strategi desain yang mengawasi desain produk di semua lini. Pada 2018 Samsung memenangkan 49 IDEA Design Awards, jumlah terbanyak dalam satu tahun sejauh itu. [hal. C191]"
+        },
+        {
+          "kind": "figure",
+          "title": "Samsung's Design Process",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1600 1130\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Samsung's Design Process</title><desc>Lima kotak berurutan dari pengamatan konsumen di 35 pusat riset ke desainer, konsep produk Galaxy Note, tim strategi desain, dan penghargaan desain.</desc><defs><marker id=\"V-TM13-06-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1600\" height=\"1130\" rx=\"16\"/><path data-edge=\"Observe Consumers in 35 Research Centers → More Than 1,500 Designers Interpret Findings\" d=\"M680 190 L680 280\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-06-arrow)\" /><path data-edge=\"More Than 1,500 Designers Interpret Findings → Product Concept (Example: Galaxy Note)\" d=\"M680 410 L680 500\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-06-arrow)\" /><path data-edge=\"Product Concept (Example: Galaxy Note) → Design Strategy Team Oversees All Product Lines\" d=\"M680 630 L680 720\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-06-arrow)\" /><path data-edge=\"Design Strategy Team Oversees All Product Lines → Design Awards and Brand Image\" d=\"M680 850 L680 940\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-06-arrow)\" /><rect class=\"svg-card\" data-node=\"Observe Consumers in 35 Research Centers\" x=\"300\" y=\"60\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"133\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Observe Consumers in 35 Research Centers</tspan></text><rect class=\"svg-card\" data-node=\"More Than 1,500 Designers Interpret Findings\" x=\"300\" y=\"280\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"353\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">More Than 1,500 Designers Interpret Findings</tspan></text><rect class=\"svg-card\" data-node=\"Product Concept (Example: Galaxy Note)\" x=\"300\" y=\"500\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"573\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Product Concept (Example: Galaxy Note)</tspan></text><rect class=\"svg-card\" data-node=\"Design Strategy Team Oversees All Product Lines\" x=\"300\" y=\"720\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"793\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Design Strategy Team Oversees All Product Lines</tspan></text><rect class=\"svg-card\" data-node=\"Design Awards and Brand Image\" x=\"300\" y=\"940\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"1013\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Design Awards and Brand Image</tspan></text><text class=\"svg-muted\" x=\"1243.1\" y=\"133\" text-anchor=\"middle\" font-size=\"22\">lebih dari 60.000 staf</text><text class=\"svg-muted\" x=\"1237.05\" y=\"338\" text-anchor=\"middle\" font-size=\"22\">psikologi, sosiologi,</text><text class=\"svg-muted\" x=\"1237.05\" y=\"368\" text-anchor=\"middle\" font-size=\"22\">ekonomi, teknik</text><text class=\"svg-muted\" x=\"1231\" y=\"558\" text-anchor=\"middle\" font-size=\"22\">kelompok fokus ingin</text><text class=\"svg-muted\" x=\"1231\" y=\"588\" text-anchor=\"middle\" font-size=\"22\">menulis dengan pena</text><text class=\"svg-muted\" x=\"1249.15\" y=\"793\" text-anchor=\"middle\" font-size=\"22\">dipimpin Chang Don-Hoon</text><text class=\"svg-muted\" x=\"1194.7\" y=\"998\" text-anchor=\"middle\" font-size=\"22\">49 IDEA Awards</text><text class=\"svg-muted\" x=\"1194.7\" y=\"1028\" text-anchor=\"middle\" font-size=\"22\">pada 2018</text></svg>",
+          "overview": {
+            "heading": "Samsung's Design Process",
+            "cards": [
+              {
+                "title": "Observe Consumers in 35 Research Centers",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "More Than 1,500 Designers Interpret Findings",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Product Concept (Example: Galaxy Note)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Design Strategy Team Oversees All Product Lines",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Design Awards and Brand Image",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Lima tahap berurutan dari atas ke bawah. Urutan ini hasil analisis dari unsur yang disebut kasus, dan kasus tidak menyajikan tahap resmi proses desain. Tidak ada panah kembali karena kasus tidak menjelaskan umpan balik dari penghargaan ke riset."
+          },
+          "caption": "Desain Samsung dibangun dari pengamatan konsumen yang luas, tim desainer lintas disiplin, dan jabatan manajemen untuk desainer, tetapi kasus tidak memberi data dampaknya pada penjualan. hal. C191",
+          "altText": "Lima kotak berurutan dari pengamatan konsumen di 35 pusat riset ke desainer, konsep produk Galaxy Note, tim strategi desain, dan penghargaan desain."
+        },
+        {
+          "kind": "p",
+          "text": "Chapter 12 membahas strategic envelope, yaitu ruang lingkup upaya inovasi perusahaan agar tidak terbuang pada proyek di luar domainnya; penerapannya pada Samsung ada di Pendalaman P-03. [hal. 373–374]"
+        },
+        {
+          "kind": "h3",
+          "text": "Apa untung dan ruginya membuat komponen sendiri?"
+        },
+        {
+          "kind": "p",
+          "text": "Kasus menyebut Samsung, tidak seperti rivalnya, membuat sendiri sebagian besar komponennya sehingga bisa menawarkan produk lebih baik dengan biaya lebih rendah. Chapter 6 mendefinisikan vertical integration sebagai kondisi ketika perusahaan menjadi pemasok atau distributornya sendiri, ke belakang menuju bahan baku atau ke depan menuju konsumen. Exhibit 6.4 mendaftar manfaat (sumber pasokan yang aman, perlindungan dan kontrol atas aset berharga, akses eksklusif ke teknologi baru, prosedur pengadaan yang lebih sederhana) dan risiko (biaya dan belanja modal lebih besar, hilangnya fleksibilitas, kapasitas yang tidak seimbang di sepanjang rantai nilai, dan biaya administrasi tambahan). [hal. 182–183, C189]"
+        },
+        {
+          "kind": "figure",
+          "title": "Vertical Integration Applied to Samsung (Exhibit 6.4)",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1920 587\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>Vertical Integration Applied to Samsung (Exhibit 6.4)</title><desc>Satu induk integrasi vertikal dengan empat butir: pasokan dan kontrol, akses teknologi, biaya dan belanja modal, dan hilangnya fleksibilitas, dengan bukti Samsung di bawah masing-masing.</desc><defs><marker id=\"V-TM13-07-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1920\" height=\"587\" rx=\"16\"/><path data-edge=\"Vertical Integration at Samsung (Exhibit 6.4) → Secure Supply and Control\" d=\"M960 170 V255 H270 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-07-arrow)\" /><path data-edge=\"Vertical Integration at Samsung (Exhibit 6.4) → Proprietary Technology Access\" d=\"M960 170 V255 H730 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-07-arrow)\" /><path data-edge=\"Vertical Integration at Samsung (Exhibit 6.4) → Overhead and Capital Spending\" d=\"M960 170 V255 H1190 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-07-arrow)\" /><path data-edge=\"Vertical Integration at Samsung (Exhibit 6.4) → Loss of Flexibility\" d=\"M960 170 V255 H1650 V340\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-07-arrow)\" /><rect class=\"svg-card\" data-node=\"Vertical Integration at Samsung (Exhibit 6.4)\" x=\"560\" y=\"50\" width=\"800\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"960\" y=\"118\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"960\" dy=\"0\">Vertical Integration at Samsung (Exhibit 6.4)</tspan></text><rect class=\"svg-card\" data-node=\"Secure Supply and Control\" x=\"60\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"270\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"270\" dy=\"0\">Secure Supply and Control</tspan></text><rect class=\"svg-card\" data-node=\"Proprietary Technology Access\" x=\"520\" y=\"340\" width=\"420\" height=\"121\" rx=\"12\"/><text class=\"svg-text\" x=\"730\" y=\"389.5\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"730\" dy=\"0\">Proprietary Technology</tspan><tspan x=\"730\" dy=\"38\">Access</tspan></text><rect class=\"svg-card\" data-node=\"Overhead and Capital Spending\" x=\"980\" y=\"340\" width=\"420\" height=\"121\" rx=\"12\"/><text class=\"svg-text\" x=\"1190\" y=\"389.5\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1190\" dy=\"0\">Overhead and Capital</tspan><tspan x=\"1190\" dy=\"38\">Spending</tspan></text><rect class=\"svg-card\" data-node=\"Loss of Flexibility\" x=\"1440\" y=\"340\" width=\"420\" height=\"120\" rx=\"12\"/><text class=\"svg-text\" x=\"1650\" y=\"408\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"1650\" dy=\"0\">Loss of Flexibility</tspan></text><text class=\"svg-muted\" x=\"270\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">komponen buatan sendiri</text><text class=\"svg-muted\" x=\"270\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">(klaim eksekutif)</text><text class=\"svg-muted\" x=\"730\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">investasi chip dan LCD,</text><text class=\"svg-muted\" x=\"730\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">pemimpin chip 2017</text><text class=\"svg-muted\" x=\"1190\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">riset hampir</text><text class=\"svg-muted\" x=\"1190\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">USD 19 miliar</text><text class=\"svg-muted\" x=\"1650\" y=\"511\" text-anchor=\"middle\" font-size=\"24\">setengah filter LCD</text><text class=\"svg-muted\" x=\"1650\" y=\"547\" text-anchor=\"middle\" font-size=\"24\">dari pemasok luar</text></svg>",
+          "overview": {
+            "heading": "Vertical Integration Applied to Samsung (Exhibit 6.4)",
+            "cards": [
+              {
+                "title": "Vertical Integration at Samsung (Exhibit 6.4)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Secure Supply and Control",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Proprietary Technology Access",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Overhead and Capital Spending",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Loss of Flexibility",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Vertical Integration at Samsung bercabang ke empat butir dari Exhibit 6.4 yang paling dekat dengan bukti kasus: dua manfaat dan dua risiko, sejajar tanpa urutan wajib. Di bawah tiap butir ada bukti atau batas dari kasus menurut hasil analisis; empat butir lain di buku tidak dipakai karena kasus tidak memberi bukti."
+          },
+          "caption": "Kasus memberi klaim manfaat dari komponen buatan sendiri, tetapi tidak memberi data biaya atau fleksibilitas yang dibutuhkan untuk menimbang risikonya. hal. 182–184, diterapkan pada hal. C189 dan C191",
+          "altText": "Satu induk integrasi vertikal dengan empat butir: pasokan dan kontrol, akses teknologi, biaya dan belanja modal, dan hilangnya fleksibilitas, dengan bukti Samsung di bawah masing-masing."
+        },
+        {
+          "kind": "p",
+          "text": "Empat butir Exhibit 6.4 dan bukti kasusnya ada di tabel Pendalaman P-04. [hal. 183, C189, C191–C192]"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: kasus menunjukkan pola yang berbeda dari integrasi penuh pada satu contoh. Pada filter warna LCD, Samsung memakai pemasok luar untuk setengah kebutuhan dan unit sendiri untuk setengahnya, dan presiden Sumitomo menyatakan Samsung sungguh-sungguh menekan departemen-departemen itu agar bersaing. Kasus tidak menyebut apakah pola serupa berlaku untuk komponen lain, jadi jangan memperluasnya. Chapter 6 juga mengaitkan integrasi vertikal dengan kebutuhan kompetensi dan kestabilan permintaan, dan kasus tidak memberi data kestabilan permintaan komponen Samsung. [hal. 183–184, C191]"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "P-04. Lima pertanyaan keputusan integrasi vertikal dan Exhibit 6.4",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Chapter 6 mendaftar lima isu dalam keputusan integrasi vertikal pada hal. 183 dan 184. Tabel berikut adalah daftar pertanyaan hasil analisis, bukan jawaban, karena kasus tidak memberi data cukup. [hal. 183–184]"
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Isu (Chapter 6)",
+                "Pertanyaan untuk Samsung",
+                "Data kasus"
+              ],
+              "rows": [
+                [
+                  "Kepuasan pada pemasok dan distributor sekarang",
+                  "Apakah pemasok luar memenuhi kualitas yang Samsung butuhkan?",
+                  "Hanya Sumitomo disebut, dan hasil pembandingannya tidak diberikan [hal. C191]"
+                ],
+                [
+                  "Aktivitas yang dialihdayakan tetapi menguntungkan",
+                  "Aktivitas mana di rantai nilai yang masih diserahkan ke pihak lain padahal laba besar?",
+                  "Tidak ada [hal. 184]"
+                ],
+                [
+                  "Stabilitas permintaan",
+                  "Seberapa stabil permintaan chip dan layar?",
+                  "Exhibit 4 menunjukkan semikonduktor turun 24,8% (2019), naik 12,3% (2020), dan naik 29,2% (2021), hitungan ilustrasi [hal. C189]"
+                ],
+                [
+                  "Kompetensi untuk menjalankan integrasi",
+                  "Apakah Samsung punya kompetensi yang dibutuhkan?",
+                  "Chip pemimpin dunia sejak 2017 [hal. C192]"
+                ],
+                [
+                  "Dampak pada pemangku kepentingan",
+                  "Bagaimana pesaing yang membeli komponen dari Samsung bereaksi?",
+                  "Tidak ada [hal. 184]"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left"
+              ]
+            },
+            {
+              "kind": "p",
+              "text": "[hal. 183–184, C189, C191–C192]"
+            },
+            {
+              "kind": "p",
+              "text": "Isu ketiga paling berguna untuk Samsung karena divisi semikonduktor berayun di Exhibit 4, dan Chapter 6 menyatakan permintaan yang berfluktuasi lebar dapat membebani sumber daya saat tinggi dan meninggalkan kapasitas menganggur saat rendah. Kasus tidak membahas kapasitas menganggur, jadi ini pertanyaan, bukan temuan. [hal. 184, C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Exhibit 6.4 pada kasus Samsung."
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Butir (Exhibit 6.4)",
+                "Bukti dari kasus",
+                "Batas bukti"
+              ],
+              "rows": [
+                [
+                  "Pasokan dan kontrol atas aset berharga",
+                  "Samsung membuat sendiri sebagian besar komponennya [hal. C189]",
+                  "Klaim eksekutif; kasus tidak memberi pangsa komponen internal"
+                ],
+                [
+                  "Akses ke teknologi baru",
+                  "Investasi besar pada semikonduktor dan LCD [hal. C191]; pemimpin chip dunia sejak 2017 [hal. C192]",
+                  "Kasus tidak memberi laba divisi chip"
+                ],
+                [
+                  "Biaya dan belanja modal",
+                  "Riset dan pengembangan hampir USD 19 miliar pada 2021 [hal. C191]",
+                  "Kasus tidak memberi belanja modal pabrik"
+                ],
+                [
+                  "Hilangnya fleksibilitas",
+                  "Setengah filter warna LCD dibeli dari Sumitomo dan setengah dibuat sendiri [hal. C191]",
+                  "Hasil analisis: pola ini dapat mengurangi ketergantungan pada unit internal; kasus tidak membahasnya sebagai keputusan integrasi dan tidak memberi data fleksibilitas"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left"
+              ]
+            },
+            {
+              "kind": "p",
+              "text": "[hal. 183, C189, C191–C192]"
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Apakah model Samsung berkelanjutan?"
+        },
+        {
+          "kind": "p",
+          "text": "Kasus menutup dengan pertanyaan keberlanjutan. Samsung mencoba mengatasi kemunduran akibat penahanan pemimpin de facto-nya terhadap reputasinya membangun produk inovatif. Meski ada keraguan tentang pertumbuhan, Samsung yakin pada investasi chip bertahun-tahun, dan pada 2017 ia melampaui Intel sebagai produsen semikonduktor terbesar dunia. Posisi itu, menurut kasus, memungkinkan Samsung masuk bidang pertumbuhan baru seperti kecerdasan buatan, kendaraan otonom, dan aplikasi berbasis internet. Marcello Ahn, manajer dana, mengatakan Samsung bisa maju ke bidang baru dengan memanfaatkan kekuatan bisnis chip yang ada. [hal. C192]"
+        },
+        {
+          "kind": "p",
+          "text": "Di bisnis ponsel, Samsung meluncurkan ponsel berlayar lipat yang terbuka seperti buku menjadi ukuran tablet. Dua iterasi baru sejak 2019 melaporkan penjualan 1,02 juta unit di Amerika Serikat pada 2019 dan 2020, dan penjualan itu dilaporkan melampaui lini non-lipat reguler. Harapannya, penawaran baru membantu Samsung bersaing dengan pertumbuhan rival China berbiaya lebih rendah dan mendorong konsumen keluar dari tren menahan ponsel lebih lama. Samsung juga membangun reputasi keberlanjutan: produk makin hemat energi, dan inisiatif Galaxy Upcycling mengubah ponsel Galaxy yang tidak dipakai menjadi perangkat pintar seperti TV, konsol gim, dan komputer pribadi. [hal. C192]"
+        },
+        {
+          "kind": "p",
+          "text": "Samsung paling optimistis pada kendaraan otonom. Peter Yu dari BNP Paribas mengatakan kendaraan otonom membutuhkan daya pemrosesan data besar, dan Samsung dapat menyediakan komponen penting seperti sensor, chip penyimpanan, kamera, dan layar. Di bidang itu Samsung menghadapi persaingan dari beberapa pendatang yang ada dan calon pendatang, dan analis percaya keberhasilannya bergantung pada kemampuan mengubah keahlian satu jenis teknologi seluler ke teknologi lain. Kasus menutup dengan kutipan Lee Kun-hee kepada karyawan: \"Ubah segalanya kecuali istri dan anak-anak Anda.\" [hal. C192]"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: Chapter 6 menyebut leveraging core competencies sebagai sumber nilai pada related diversification, dan sharing activities sebagai sumber lain. Pernyataan Ahn dan Yu cocok dengan pola itu, yaitu kompetensi chip, sensor, dan layar dipakai di bidang baru, tetapi kasus tidak memberi bukti biaya, margin, atau pesanan di bidang baru itu. Penjualan ponsel lipat 1,02 juta unit juga tidak bisa dibandingkan dengan total ponsel Samsung karena kasus tidak memberi unit total. [hal. 178–180, C192]"
+        },
+        {
+          "kind": "self-check",
+          "question": "Sebut dua manfaat dan dua risiko integrasi vertikal menurut Exhibit 6.4 yang paling dekat dengan Samsung, dan satu data yang kasus tidak berikan untuk menimbangnya.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Manfaat: akses ke teknologi baru dan kontrol atas aset berharga. Risiko: biaya dan belanja modal yang besar, dan hilangnya fleksibilitas. Kasus tidak memberi belanja modal pabrik atau pangsa komponen internal, dan klaim komponen buatan sendiri adalah klaim eksekutif. Pemetaan ini hasil analisis. [hal. 183, C189, C191]"
+            }
+          ],
+          "signal": "Kamu bisa memakai Exhibit 6.4 dan memperlakukan klaim eksekutif sebagai klaim, bukan bukti."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Nilai apakah model desain, komponen sendiri, dan pertumbuhan baru Samsung berkelanjutan.\nSebut proses desain, manfaat dan risiko integrasi vertikal dengan bukti, core competencies pada bidang baru sebagai hasil analisis, dan data yang tidak ada."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "6. Membaca angka Samsung dengan rasio Appendix 1",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Apa yang dikatakan Exhibit 1 sampai 4 tentang kinerja Samsung?"
+        },
+        {
+          "kind": "p",
+          "text": "Exhibit 1 memuat laporan laba rugi dalam miliar won Korea (KRW) untuk tahun yang berakhir 31 Desember. Ringkasan berikut memakai angka tercetak. [hal. C189]"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Ukuran (KRW miliar)",
+            "2021",
+            "2020",
+            "2019",
+            "2018"
+          ],
+          "rows": [
+            [
+              "Revenue",
+              "279.604",
+              "236.806",
+              "239.400",
+              "243.771"
+            ],
+            [
+              "Gross profit",
+              "113.193",
+              "92.318",
+              "83.161",
+              "111.377"
+            ],
+            [
+              "Operating profit",
+              "51.633",
+              "35.993",
+              "27.768",
+              "61.159"
+            ],
+            [
+              "Net income",
+              "39.907",
+              "26.407",
+              "21.738",
+              "43.890"
+            ]
+          ],
+          "align": [
+            "left",
+            "left",
+            "left",
+            "left",
+            "left"
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "[hal. C189]"
+        },
+        {
+          "kind": "p",
+          "text": "Hitungan ilustrasi: pendapatan 2021 naik sekitar 18,1% dari 2020 dan laba operasi naik sekitar 43,5%, sedangkan pendapatan 2020 turun sekitar 1,1% dan 2019 turun sekitar 1,8%. Laba operasi 2019 turun sekitar 54,6% dari 2018. Pendapatan 2021 sekitar 14,7% di atas 2018, tetapi marjin operasi 2021 (18,5%) masih di bawah 2018 (25,1%). Rangkaian ini sesuai dengan pernyataan kasus tentang perlambatan pertumbuhan dan sesuai juga dengan klaim bahwa Samsung sangat menguntungkan, dan keduanya bergantung pada tahun yang kamu pilih. [hal. C189]"
+        },
+        {
+          "kind": "figure",
+          "title": "From Revenue to Net Income in 2021",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1600 910\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>From Revenue to Net Income in 2021</title><desc>Empat kotak berurutan dari pendapatan 279.604 miliar won ke laba kotor, laba operasi, dan laba bersih 2021 dengan persentase terhadap pendapatan.</desc><defs><marker id=\"V-TM13-08-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1600\" height=\"910\" rx=\"16\"/><path data-edge=\"Revenue KRW 279.604 Billion → Gross Profit KRW 113.193 Billion (40,5%)\" d=\"M680 190 L680 280\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-08-arrow)\" /><path data-edge=\"Gross Profit KRW 113.193 Billion (40,5%) → Operating Profit KRW 51.633 Billion (18,5%)\" d=\"M680 410 L680 500\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-08-arrow)\" /><path data-edge=\"Operating Profit KRW 51.633 Billion (18,5%) → Net Income KRW 39.907 Billion (14,3%)\" d=\"M680 630 L680 720\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-08-arrow)\" /><rect class=\"svg-card\" data-node=\"Revenue KRW 279.604 Billion\" x=\"300\" y=\"60\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"133\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Revenue KRW 279.604 Billion</tspan></text><rect class=\"svg-card\" data-node=\"Gross Profit KRW 113.193 Billion (40,5%)\" x=\"300\" y=\"280\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"353\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Gross Profit KRW 113.193 Billion (40,5%)</tspan></text><rect class=\"svg-card\" data-node=\"Operating Profit KRW 51.633 Billion (18,5%)\" x=\"300\" y=\"500\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"573\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Operating Profit KRW 51.633 Billion (18,5%)</tspan></text><rect class=\"svg-card\" data-node=\"Net Income KRW 39.907 Billion (14,3%)\" x=\"300\" y=\"720\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"793\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Net Income KRW 39.907 Billion (14,3%)</tspan></text><text class=\"svg-muted\" x=\"1231\" y=\"133\" text-anchor=\"middle\" font-size=\"22\">naik 18,1% dari 2020</text><text class=\"svg-muted\" x=\"1231\" y=\"573\" text-anchor=\"middle\" font-size=\"22\">naik 43,5% dari 2020</text></svg>",
+          "overview": {
+            "heading": "From Revenue to Net Income in 2021",
+            "cards": [
+              {
+                "title": "Revenue KRW 279.604 Billion",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Gross Profit KRW 113.193 Billion (40,5%)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Operating Profit KRW 51.633 Billion (18,5%)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Net Income KRW 39.907 Billion (14,3%)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Empat kotak berurutan dari atas ke bawah yang membaca satu rantai laba rugi 2021: pendapatan, laba kotor, laba operasi, dan laba bersih, dengan persentase terhadap pendapatan. Persentase adalah hasil analisis dari angka eksibit."
+          },
+          "caption": "Dari tiap 100 won pendapatan 2021, sekitar 40,5 won menjadi laba kotor, sekitar 18,5 won laba operasi, dan sekitar 14,3 won laba bersih. Exhibit 1 [hal. C189]; persentase hasil hitungan",
+          "altText": "Empat kotak berurutan dari pendapatan 279.604 miliar won ke laba kotor, laba operasi, dan laba bersih 2021 dengan persentase terhadap pendapatan."
+        },
+        {
+          "kind": "p",
+          "text": "Rumus tiap rasio ada di kolom pertama tabel dan mengikuti Appendix 1; definisi lengkapnya ada di Pendalaman P-05. Gross margin dan operating margin tidak didefinisikan Appendix 1, jadi dua baris itu hitungan tambahan dengan pola yang sama. Tabel berikut hitungan ilustrasi dari Exhibit 1 dan 2. [hal. 422–429]"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Rasio (hitungan ilustrasi)",
+            "2021",
+            "2020",
+            "2019",
+            "2018"
+          ],
+          "rows": [
+            [
+              "Gross margin (laba kotor : pendapatan)",
+              "40,5%",
+              "39,0%",
+              "34,7%",
+              "45,7%"
+            ],
+            [
+              "Operating margin (laba operasi : pendapatan)",
+              "18,5%",
+              "15,2%",
+              "11,6%",
+              "25,1%"
+            ],
+            [
+              "Profit margin (laba bersih : pendapatan)",
+              "14,3%",
+              "11,2%",
+              "9,1%",
+              "18,0%"
+            ],
+            [
+              "Return on assets (laba bersih : total aset)",
+              "9,4%",
+              "7,0%",
+              "6,2%",
+              "12,9%"
+            ],
+            [
+              "Return on equity (laba bersih : total ekuitas)",
+              "13,1%",
+              "9,6%",
+              "8,8%",
+              "18,3%"
+            ],
+            [
+              "Total debt ratio ((aset dikurangi ekuitas) : aset)",
+              "28,5%",
+              "27,0%",
+              "29,7%",
+              "29,3%"
+            ],
+            [
+              "Total asset turnover (pendapatan : total aset)",
+              "0,66 kali",
+              "0,63 kali",
+              "0,68 kali",
+              "0,72 kali"
+            ]
+          ],
+          "align": [
+            "left",
+            "left",
+            "left",
+            "left",
+            "left"
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "[hal. 426–429, C189]"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil analisis: ROE selalu di atas ROA, dan Appendix 1 menyebut selisih itu mencerminkan penggunaan financial leverage. Rasio yang tidak bisa dihitung (current ratio, quick ratio, cash ratio, times interest earned, inventory turnover) dan rasio tambahan ada di Pendalaman P-05. Catat definisi dan angka akhir tahun yang kamu pakai, sebagaimana diminta Appendix 1. [hal. 423, 426–429, C189]"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "P-05. Definisi dan rasio tambahan, Exhibit 4, dan baris eksibit yang tidak menjumlah",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Definisi Appendix 1 yang dipakai pada tabel rasio: profit margin sebagai laba bersih dibagi penjualan, return on assets (ROA) sebagai laba bersih dibagi total aset, return on equity (ROE) sebagai laba bersih dibagi total ekuitas, total debt ratio sebagai (total aset dikurangi total ekuitas) dibagi total aset, debt-equity ratio sebagai total debt dibagi total ekuitas, equity multiplier sebagai total aset dibagi total ekuitas, total asset turnover sebagai penjualan dibagi total aset, dan capital intensity sebagai kebalikannya. Appendix 1 tidak mendefinisikan gross margin dan operating margin, jadi dua baris itu hitungan tambahan dengan pola yang sama. [hal. 422–429]"
+            },
+            {
+              "kind": "p",
+              "text": "Tiga rasio lain yang tidak masuk tabel di bagian Inti (hitungan ilustrasi)."
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Rasio (hitungan ilustrasi)",
+                "2021",
+                "2020",
+                "2019",
+                "2018"
+              ],
+              "rows": [
+                [
+                  "Debt-equity ratio (total debt : ekuitas)",
+                  "0,40 kali",
+                  "0,37 kali",
+                  "0,42 kali",
+                  "0,41 kali"
+                ],
+                [
+                  "Equity multiplier (aset : ekuitas)",
+                  "1,40 kali",
+                  "1,37 kali",
+                  "1,42 kali",
+                  "1,41 kali"
+                ],
+                [
+                  "Capital intensity (total aset : pendapatan)",
+                  "1,53",
+                  "1,60",
+                  "1,47",
+                  "1,39"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left",
+                "left",
+                "left"
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "[hal. 426–429, C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Hasil analisis: equity multiplier Samsung hanya sekitar 1,4 kali sehingga utang total berukuran sedang menurut eksibit. Perputaran aset turun dari 0,72 kali (2018) ke 0,66 kali (2021), artinya Samsung membutuhkan sedikit lebih banyak aset per won pendapatan. Current ratio, quick ratio, cash ratio, times interest earned, dan inventory turnover tidak bisa dihitung karena kasus tidak memberi aset lancar, kewajiban lancar, kas, beban bunga, dan persediaan. [hal. 423, 426–429, C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Exhibit 4 memuat pendapatan menurut divisi dalam triliun KRW. Satu triliun sama dengan seribu miliar, jadi pendapatan 2021 pada Exhibit 1 (279.604 miliar) sama dengan 279,6 triliun. [hal. C189]"
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Divisi (KRW triliun)",
+                "2021",
+                "2020",
+                "2019",
+                "2018",
+                "Perubahan 2021 lawan 2020"
+              ],
+              "rows": [
+                [
+                  "Semiconductor",
+                  "94,2",
+                  "72,9",
+                  "64,9",
+                  "86,3",
+                  "sekitar naik 29,2%"
+                ],
+                [
+                  "Display Panel",
+                  "31,7",
+                  "30,6",
+                  "31,1",
+                  "32,5",
+                  "sekitar naik 3,6%"
+                ],
+                [
+                  "IT and Mobile Communication",
+                  "109,3",
+                  "99,6",
+                  "107,3",
+                  "100,7",
+                  "sekitar naik 9,7%"
+                ],
+                [
+                  "Consumer Electronics",
+                  "55,8",
+                  "48,2",
+                  "45,3",
+                  "42,1",
+                  "sekitar naik 15,8%"
+                ]
+              ],
+              "align": [
+                "left",
+                "left",
+                "left",
+                "left",
+                "left",
+                "left"
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "[hal. C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Hasil analisis: pada 2021 semikonduktor naik paling cepat, dan IT and Mobile Communication tetap divisi terbesar menurut pendapatan. Pendapatan semikonduktor berayun: turun 24,8% (2019), naik 12,3% (2020), dan naik 29,2% (2021). Kasus tidak memberi laba per divisi, jadi klaim bahwa ponsel menyumbang sampai dua pertiga laba tidak dapat diuji dari eksibit. [hal. C189]"
+            },
+            {
+              "kind": "p",
+              "text": "Tiga catatan angka. Pertama, jumlah empat divisi melebihi pendapatan Exhibit 1 pada tiap tahun: 291,0 lawan 279,6 triliun (selisih 11,4) pada 2021, 251,3 lawan 236,8 (14,5) pada 2020, 248,6 lawan 239,4 (9,2) pada 2019, dan 261,6 lawan 243,8 (17,8) pada 2018. Kasus tidak menjelaskan selisih itu, jadi pakai Exhibit 1 untuk total dan Exhibit 4 untuk arah antardivisi. Kedua, Exhibit 2 memuat total kewajiban 91.604 untuk 2019 dan 2018, dan jumlah kewajiban dan ekuitas tercetak tidak sama dengan total aset pada 2019 (339.357 lawan 352.564, selisih 13.207) dan 2018 (331.672 lawan 339.357, selisih 7.685), sedangkan 2021 berbeda 1 dan 2020 cocok. Rasio utang 2019 dan 2018 di atas memakai total aset dikurangi ekuitas sesuai Appendix 1; bila memakai total kewajiban tercetak, total debt ratio menjadi sekitar 26,0% dan 27,0%. Ketiga, kolom 2021 pada Exhibit 3 berjumlah 97,1%. [hal. 426, C189]"
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Exhibit 2 mencetak total kewajiban 91.604 untuk 2019 dan 2018 dan tidak menjumlah ke total aset. Apa yang kamu lakukan dengan rasio utang kedua tahun itu?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Pakai total aset dikurangi total ekuitas sesuai rumus total debt ratio Appendix 1 (sekitar 29,7% pada 2019 dan 29,3% pada 2018), catat bahwa total kewajiban tercetak memberi sekitar 26,0% dan 27,0%, dan jangan menebak baris yang salah. Tandai sebagai catatan kualitas data. [hal. 426, C189]"
+            }
+          ],
+          "signal": "Kamu bisa memeriksa footing, memilih definisi yang terdokumentasi, dan melaporkan selisihnya tanpa menebak."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Hitung dan tafsirkan dua rasio Samsung dengan rumus Appendix 1.\nTulis rumus, angka sumber, hasil, tafsiran berlabel hasil analisis, dan sebut satu catatan kualitas data eksibit."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "main",
+      "title": "7. Menjawab kasus: dari gejala ke rekomendasi",
+      "blocks": [
+        {
+          "kind": "h3",
+          "text": "Apa masalah dasarnya, dan apa langkah pertamanya?"
+        },
+        {
+          "kind": "p",
+          "text": "Kasus Samsung tidak mengajukan pertanyaan keputusan, jadi langkah pertama Chapter 13 adalah merumuskan sendiri masalahnya. Pakai lima langkah yang kamu pelajari di TM09. Setiap kalimat analisis berlabel, dan kasus tidak dipakai untuk menebak niat siapa pun, termasuk niat pimpinan Samsung dalam kasus hukum. [hal. 400–405]"
+        },
+        {
+          "kind": "figure",
+          "title": "From Samsung's Growth Pressures to a Recommendation",
+          "svg": "<svg class=\"course-diagram-svg mnu307-diagram\" viewBox=\"0 0 1600 1130\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,sans-serif\"><title>From Samsung's Growth Pressures to a Recommendation</title><desc>Alur dari tekanan pertumbuhan Samsung ke rumusan masalah, alternatif, rekomendasi, pengukuran, dan panah kembali ke rumusan masalah.</desc><defs><marker id=\"V-TM13-09-arrow\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0 0 L10 5 L0 10 Z\" fill=\"currentColor\"/></marker></defs><rect class=\"svg-bg\" width=\"1600\" height=\"1130\" rx=\"16\"/><path data-edge=\"Growth Pressures at Samsung (Symptom) → Problem Statement\" d=\"M680 190 L680 280\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-09-arrow)\" /><path data-edge=\"Problem Statement → Alternatives\" d=\"M680 410 L680 500\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-09-arrow)\" /><path data-edge=\"Alternatives → Recommendation\" d=\"M680 630 L680 720\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-09-arrow)\" /><path data-edge=\"Recommendation → Measures and Review\" d=\"M680 850 L680 940\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-09-arrow)\" /><path data-edge=\"Measures and Review → Problem Statement\" d=\"M1060 1005 H1170 V345 H1060\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" marker-end=\"url(#V-TM13-09-arrow)\" stroke-dasharray=\"8 6\"/><rect class=\"svg-card\" data-node=\"Growth Pressures at Samsung (Symptom)\" x=\"300\" y=\"60\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"133\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Growth Pressures at Samsung (Symptom)</tspan></text><rect class=\"svg-card\" data-node=\"Problem Statement\" x=\"300\" y=\"280\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"353\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Problem Statement</tspan></text><rect class=\"svg-card\" data-node=\"Alternatives\" x=\"300\" y=\"500\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"573\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Alternatives</tspan></text><rect class=\"svg-card\" data-node=\"Recommendation\" x=\"300\" y=\"720\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"793\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Recommendation</tspan></text><rect class=\"svg-card\" data-node=\"Measures and Review\" x=\"300\" y=\"940\" width=\"760\" height=\"130\" rx=\"12\"/><text class=\"svg-text\" x=\"680\" y=\"1013\" text-anchor=\"middle\" font-size=\"28\"><tspan x=\"680\" dy=\"0\">Measures and Review</tspan></text><text class=\"svg-muted\" x=\"1361.25\" y=\"669\" text-anchor=\"middle\" font-size=\"22\">hasil ukur dapat mengubah</text><text class=\"svg-muted\" x=\"1361.25\" y=\"701\" text-anchor=\"middle\" font-size=\"22\">rumusan masalah</text></svg>",
+          "overview": {
+            "heading": "From Samsung's Growth Pressures to a Recommendation",
+            "cards": [
+              {
+                "title": "Growth Pressures at Samsung (Symptom)",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Problem Statement",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Alternatives",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Recommendation",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Measures and Review",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Growth Pressures at Samsung menuju Problem Statement, lalu Alternatives, lalu Recommendation, lalu Measures and Review. Panah putus-putus dari Measures and Review kembali ke Problem Statement karena hasil ukur dapat mengubah rumusan masalah. Diagram ini hasil analisis, bukan isi kasus."
+          },
+          "caption": "Rekomendasi untuk Samsung adalah langkah yang bisa diukur dan hasilnya dipakai menilai ulang masalah. hasil analisis; langkah mengikuti hal. 400–405",
+          "altText": "Alur dari tekanan pertumbuhan Samsung ke rumusan masalah, alternatif, rekomendasi, pengukuran, dan panah kembali ke rumusan masalah."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Langkah",
+            "Hasil analisis untuk Samsung"
+          ],
+          "rows": [
+            [
+              "1. Become familiar",
+              "Susun fakta per bagian kasus; catat data yang tidak ada: laba per divisi, unit ponsel global, bukti harga premium, hasil C-Lab, susunan dewan, kas dan beban bunga"
+            ],
+            [
+              "2. Identify problems",
+              "Gejala: penjualan ponsel turun, pertumbuhan melambat, kekosongan kepemimpinan, ketergantungan pada perangkat keras. Masalah dasar: Samsung bertumpu pada basis ponsel yang ketat persaingannya dan pada divisi chip yang pendapatannya berayun, dan perlu menentukan sumber pertumbuhan berikutnya"
+            ],
+            [
+              "3. Conduct strategic analyses",
+              "Lingkungan persaingan (Chapter 2), human capital dan behavioral control (Chapter 4 dan 9), differentiation dan siklus hidup (Chapter 5), integrasi vertikal dan core competencies (Chapter 6), inovasi dan CE (Chapter 12), rasio Appendix 1"
+            ],
+            [
+              "4. Propose alternatives",
+              "Lihat tabel di bawah"
+            ],
+            [
+              "5. Make recommendations",
+              "Lihat rekomendasi di bawah"
+            ]
+          ],
+          "align": [
+            "left",
+            "left"
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "[hal. 400–405, 422–430, C189–C192]"
+        },
+        {
+          "kind": "p",
+          "text": "**Rumusan masalah (hasil analisis).** Samsung bertumpu pada ponsel di pasar yang persaingannya ketat dan pada divisi semikonduktor yang pendapatannya berayun, sementara kepemimpinan puncaknya tidak stabil dan pesaingnya mengunci pelanggan lewat perangkat lunak. Ia perlu memilih sumber pertumbuhan berikutnya dan menjaga kecepatan serta budaya inovasinya berjalan. Rumusan ini boleh berubah setelah ukuran masuk. [hal. 402, C189, C191–C192]"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Alternatif (hasil analisis)",
+            "Didukung kasus oleh",
+            "Belum diketahui"
+          ],
+          "rows": [
+            [
+              "A. Perdalam chip dan komponen sebagai mesin pertumbuhan ke kecerdasan buatan, kendaraan otonom, dan aplikasi internet",
+              "Pemimpin chip dunia sejak 2017; semikonduktor naik sekitar 29,2% pada 2021; pernyataan Ahn dan Yu",
+              "Laba divisi chip; belanja modal; kekuatan pendatang baru"
+            ],
+            [
+              "B. Pertahankan ponsel lewat produk baru seperti ponsel lipat",
+              "Penjualan lipat 1,02 juta unit di Amerika Serikat; konsumen menahan ponsel lebih lama; rival China berbiaya rendah",
+              "Unit global, margin, dan harga"
+            ],
+            [
+              "C. Bangun ekosistem perangkat lunak dan layanan",
+              "Analis menyebut ketergantungan pada perangkat keras; Tizen kecil kemungkinan menantang Android",
+              "Investasi, minat pelanggan, hubungan dengan Android"
+            ],
+            [
+              "D. Perkuat tata kelola dan regenerasi kepemimpinan",
+              "Kwon mundur; tiga co-CEO diganti; Jae-yong dipenjara",
+              "Susunan dan kerja dewan"
+            ]
+          ],
+          "align": [
+            "left",
+            "left",
+            "left"
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Uji tiap alternatif dengan enam pertanyaan langkah 4: afford, respons pesaing, karyawan, pemangku kepentingan lain, kecocokan dengan visi, dan perubahan budaya. Hasil ujinya untuk Samsung ada di Pendalaman P-06. [hal. 403–404]"
+        },
+        {
+          "kind": "p",
+          "text": "**Rekomendasi (hasil analisis).** Pilih A sebagai arah pertumbuhan utama, pertahankan B sebagai basis kas dan merek, uji C secara kecil lewat C-Lab, dan jadikan D syarat yang dipantau. Langkah terdekat: (1) minta laba dan belanja modal divisi chip, lalu tetapkan target pertumbuhan pendapatan chip per kuartal dengan acuan kenaikan 2021 sebesar 29,2% dan ukur ayunannya sebagai bagian risiko; (2) pantau pangsa ponsel Exhibit 3 (19,0% pada 2021) dan unit serta margin ponsel lipat sebelum menambah investasi ponsel; (3) pilih satu atau dua gagasan perangkat lunak dari C-Lab dan danai bertahap dengan logika real options, dengan exit champion yang menilai tiap tahap; (4) laporkan tiap kuartal perkembangan kepemimpinan dan susunan dewan sebagai ukuran D. Rekomendasi ini bergantung pada data yang kasus tidak berikan. [hal. 382–384, 404–405, C189–C192]"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "P-06. Uji enam pertanyaan dan tiga peran presentasi menurut RPP",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "RPP menyebut tiap minggu tiga kelompok presentasi dengan tiga peran: Board of Directors, Board of Commissioners, dan Consultants. Chapter 13 hanya membahas board of directors dan outside consultant. Peran komisaris tidak diuraikan buku, jadi ikuti arahan dosen untuk definisi kelas. [RPP; hal. 399–400]"
+            },
+            {
+              "kind": "table",
+              "headers": [
+                "Peran",
+                "Pertanyaan yang cocok untuk Samsung (hasil analisis)"
+              ],
+              "rows": [
+                [
+                  "Board of Directors",
+                  "Keputusan apa yang perlu disetujui sekarang, misalnya arah investasi chip dan susunan kepemimpinan, dan apakah ruang finansial cukup?"
+                ],
+                [
+                  "Consultants",
+                  "Apa masalah dasar, alternatif mana yang paling seimbang, dan langkah awal apa yang bisa diukur?"
+                ],
+                [
+                  "Board of Commissioners",
+                  "Ikuti definisi dosen; buku tidak menguraikan peran ini"
+                ]
+              ],
+              "align": [
+                "left",
+                "left"
+              ]
+            },
+            {
+              "kind": "p",
+              "text": "[RPP; hal. 399–400]"
+            },
+            {
+              "kind": "p",
+              "text": "Uji tiap alternatif dengan enam pertanyaan langkah 4. Afford: total debt ratio 28,5% dan ekuitas KRW 304.899 miliar pada 2021 dengan laba operasi KRW 51.633 miliar, tetapi kasus tidak memberi kas, jadi ruang finansial tampak luas dan belum terbukti. Respons pesaing: Apple dan Xiaomi bersaing lewat perangkat lunak, dan rival China lewat harga. Karyawan dan pemasok: budaya prestasi dan boot camp, dan pemasok luar seperti Sumitomo diadu dengan unit internal. Kecocokan dengan visi dan budaya: kasus mengutip Lee Kun-hee yang menuntut perubahan besar, sejalan dengan budaya yang mau berubah tetapi tidak memilih satu alternatif. [hal. 403–404, C190–C192]"
+            }
+          ]
+        },
+        {
+          "kind": "self-check",
+          "question": "Rumuskan masalah dasar Samsung dalam satu kalimat dan sebut dua alternatif yang kamu uji.",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Hasil analisis: Samsung bertumpu pada ponsel yang persaingannya ketat dan divisi chip yang pendapatannya berayun, dengan kepemimpinan yang tidak stabil, dan perlu memilih sumber pertumbuhan berikutnya. Alternatif contoh: perdalam chip (A) dan pertahankan ponsel lewat produk baru (B). Rekomendasi bergantung pada data yang kasus tidak berikan. [hal. 400–405, C189–C192]"
+            }
+          ],
+          "signal": "Kamu bisa merumuskan masalah dari angka kasus, menyusun alternatif, dan menandai semuanya sebagai hasil analisis."
+        },
+        {
+          "kind": "callout",
+          "variant": "tip",
+          "title": "Kalau ditanya di ujian",
+          "text": "Susun jawaban kasus Samsung dengan lima langkah Chapter 13.\nTulis rumusan masalah, dua alternatif, rekomendasi yang bisa diukur, dan tandai data yang tidak ada. Bagi jawaban 10–20% latar, 60–75% analisis, 10–20% rekomendasi."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "layer": "latihan",
+      "title": "Persiapan ujian",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Format soal ujian belum ditetapkan dalam sumber. Pola jawaban berikut melatih penjelasan konsep dan analisis kasus. Case 21 tidak memuat daftar pertanyaan, jadi soal berikut disusun dari isi sumber dan bukan soal dari buku. Pembagian jawaban analisis (latar 10–20%, analisis 60–75%, rekomendasi 10–20%) ada di Exhibit 13.2 [hal. 405]."
+        },
+        {
+          "kind": "h3",
+          "text": "Latihan kasus: pokok jawaban adalah hasil analisis"
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Kasus footing Exhibit 2.",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "**Kasus footing Exhibit 2.** Total aset 2019 tercetak 352.564, total kewajiban 91.604, dan total ekuitas 247.753. Apa yang kamu temukan?"
+        }
       ],
-      caption: 'Tabel 13.2: Peta penguasaan submateri TM 13 Manajemen Strategik.'
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** kewajiban ditambah ekuitas adalah 339.357, selisih 13.207 dari total aset. Pada 2018 jumlahnya 331.672 lawan 339.357, selisih 7.685, dan total kewajiban 91.604 sama pada kedua tahun. Kasus tidak menjelaskan, jadi catat sebagai catatan kualitas data dan tulis definisi yang dipakai untuk rasio utang. [hal. C189]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
     },
-    CASE_EMIRATES_AIRLINE_STRATEGY,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "solution-reveal",
+      "title": "Kasus pangsa ponsel.",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "**Kasus pangsa ponsel.** Teks kasus menyebut ponsel Samsung \"market-leading\". Apa yang Exhibit 3 tunjukkan?"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** Apple 23,4% lawan Samsung 19,0% pada 2021, dan Apple juga lebih tinggi pada 2020 dan 2019. Kolom 2021 berjumlah 97,1%. Kasus tidak mendefinisikan \"market-leading\", jadi jangan menyimpulkan ukuran yang dimaksud. [hal. C189]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
     },
     {
-      kind: 'ul',
-      items: [
-        '**Geografi Adalah Takdir Keunggulan**: Lokasi sentral Dubai memungkinkan Emirates menghubungkan kota-kota yang sebelumnya tidak pernah memiliki rute penerbangan langsung.',
-        '**First Class Membayar Penerbangan**: Penumpang kelas bisnis dan utama (hanya 15% dari total kursi) menyumbang lebih dari 50% dari total pendapatan tiket penerbangan Emirates.',
-        '**Hindari Terjebak di Antara (Avoid the Middle)**: Maskapai yang terjebak di tengah (tidak semurah LCC dan tidak semewah Emirates) adalah yang paling rentan mengalami kebangkrutan.'
+      "kind": "solution-reveal",
+      "title": "Kasus perpindahan strategi.",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "**Kasus perpindahan strategi.** Jelaskan perubahan Samsung dari harga rendah ke premium dengan konsep Chapter 5."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** dasar persaingan berpindah dari harga rendah ke desain dan teknologi, sumber produk dari teknologi pihak lain ke produk sendiri, dan saluran dari jaringan diskon ke toko khusus. Hasil analisis: itu perpindahan dari cost leadership ke differentiation, dan kasus tidak memberi data harga premium. [hal. 143, 147, C190]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Kasus C-Lab.",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "**Kasus C-Lab.** Petakan C-Lab pada pendekatan corporate entrepreneurship dan sebut data yang tidak ada."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** hasil analisis: mirip business incubator dalam pendekatan focused. Tidak ada jumlah usaha, dana, atau hasil, sehingga keberhasilannya tidak bisa dinilai dengan tiga pertanyaan CE di buku. [hal. 379–383, C191]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Kasus rekomendasi.",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "**Kasus rekomendasi.** Rumuskan masalah dan tiga langkah awal untuk Samsung."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** hasil analisis: basis ponsel yang ketat persaingannya dan chip yang berayun, dengan kepemimpinan tidak stabil. Langkah: data laba dan belanja modal chip dengan target pertumbuhan per kuartal, pemantauan pangsa dan margin ponsel lipat, dan gagasan perangkat lunak dari C-Lab yang didanai bertahap. [hal. 404–405, C189–C192]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "h3",
+      "text": "Jebakan dan jangan tertukar"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Jebakan",
+        "Penjelasan yang tepat",
+        "Sumber"
+      ],
+      "rows": [
+        [
+          "Samsung terbukti pemimpin pasar ponsel menurut eksibit",
+          "Exhibit 3 menempatkan Apple lebih tinggi pada tiga tahun",
+          "[hal. C189]"
+        ],
+        [
+          "Kolom Exhibit 3 selalu berjumlah 100%",
+          "Kolom 2021 berjumlah 97,1%",
+          "[hal. C189]"
+        ],
+        [
+          "Exhibit 4 menjumlah ke pendapatan Exhibit 1",
+          "Jumlah divisi lebih besar, misalnya 291,0 lawan 279,6 triliun pada 2021",
+          "[hal. C189]"
+        ],
+        [
+          "Kewajiban ditambah ekuitas selalu sama dengan total aset di Exhibit 2",
+          "Tidak cocok pada 2019 dan 2018",
+          "[hal. C189]"
+        ],
+        [
+          "Ponsel menyumbang dua pertiga laba terbukti oleh Exhibit 4",
+          "Exhibit 4 hanya memuat pendapatan, bukan laba",
+          "[hal. C189]"
+        ],
+        [
+          "Satu triliun sama dengan satu miliar",
+          "Satu triliun sama dengan seribu miliar; Exhibit 1 dalam miliar dan Exhibit 4 dalam triliun",
+          "[hal. C189]"
+        ],
+        [
+          "Samsung kembali ke strategi harga rendah",
+          "Kasus menunjukkan pergeseran ke premium dan tidak menunjukkan kembali",
+          "[hal. C190]"
+        ],
+        [
+          "Pemberhentian 30.000 karyawan membuktikan strategi baru berhasil",
+          "Itu langkah penyelamatan 1998; kasus tidak memberi laba tahun itu",
+          "[hal. C190]"
+        ],
+        [
+          "Premium sama dengan harga lebih tinggi yang dibayar konsumen",
+          "Premium adalah tujuan yang kasus sebut, tanpa data harga",
+          "[hal. C190]"
+        ],
+        [
+          "Lima bulan pengembangan adalah fakta terverifikasi",
+          "Klaim Samsung; kasus tidak memberi data per produk",
+          "[hal. C191]"
+        ],
+        [
+          "C-Lab adalah usaha yang sukses",
+          "Kasus hanya menyebut tujuannya, tanpa hasil",
+          "[hal. C191]"
+        ],
+        [
+          "Komponen buatan sendiri membuktikan biaya lebih rendah",
+          "Klaim eksekutif tanpa data biaya",
+          "[hal. C189]"
+        ],
+        [
+          "Penghargaan desain membuktikan penjualan tinggi",
+          "Penghargaan bukan ukuran penjualan",
+          "[hal. C191]"
+        ],
+        [
+          "Inovasi Samsung radikal atau disruptif",
+          "Kasus tidak melabeli; label hanya boleh sebagai hasil analisis",
+          "[hal. 366–369, C191–C192]"
+        ],
+        [
+          "Ponsel lipat melampaui total ponsel Samsung",
+          "Dilaporkan melampaui lini non-lipat reguler di Amerika Serikat; unit total tidak diberikan",
+          "[hal. C192]"
+        ],
+        [
+          "Rasio dihitung dengan satu cara tunggal",
+          "Appendix 1 meminta kamu mencatat definisi karena sumber berbeda",
+          "[hal. 423]"
+        ]
+      ],
+      "align": [
+        "left",
+        "left",
+        "left"
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "Soal latihan: sepuluh pertanyaan dari sumber"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-01 (Case 21)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Jelaskan situasi Samsung di awal kasus dan dua lapisan masalahnya."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** Lee Jae-yong kembali dipenjara pada Februari 2021, Kwon mundur, dan tiga co-CEO diganti (kepemimpinan); penjualan ponsel turun, pertumbuhan melambat, dan pesaing berbasis perangkat lunak (strategi dan pasar). Susunan dewan tidak diuraikan. [hal. 16–17, C189]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-02 (Case 21)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Sebut tiga langkah penyelamatan Samsung pada 1998."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** memberhentikan sekitar 30.000 karyawan, menutup banyak pabrik dua bulan untuk menghabiskan persediaan, dan menjual bisnis sekitar USD 2 miliar seperti pager dan pembuat kopi listrik. [hal. C190]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-03 (Chapter 5)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Bedakan cost leadership dan differentiation dan terapkan pada perpindahan Samsung."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** cost leadership menekan biaya di semua aktivitas rantai nilai; differentiation menciptakan citra unik dan bernilai. Samsung berpindah dari harga rendah ke desain dan teknologi. Jebakan basis biaya yang usang cocok dengan kekhawatiran Yun pada pesaing China sebagai hasil analisis. [hal. 143, 146–147, C190]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-04 (Chapter 5)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Bagaimana Chapter 5 menempatkan ponsel pada siklus hidup industri, dan apa akibatnya untuk Samsung?"
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** buku menyebut telepon seluler pada tahap maturity, ketika permintaan agregat melunak, persaingan harga menguat, dan efisiensi proses lebih penting. Kasus tidak menyebut tahap itu untuk Samsung; pakai sebagai alat analisis. [hal. 164, C192]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-05 (Chapter 9)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Pasangkan culture, rewards, dan boundaries dengan bukti Samsung."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** culture dengan boot camp dan kerja di pusat VIP; rewards dengan sistem berbasis prestasi; boundaries dengan persaingan paksa unit internal melawan pemasok luar sebagai hasil analisis. Bentuk imbalan tidak dijelaskan. [hal. 274, 281, C190–C191]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-06 (Chapter 12)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Klasifikasikan inovasi Samsung sebagai produk dan proses dengan bukti."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** produk: ponsel lipat, Galaxy Note, ponsel aktivasi suara; proses: pusat VIP, rivalitas dengan pemasok luar, lapisan persetujuan lebih sedikit. Klasifikasi adalah hasil analisis; kasus tidak melabeli. [hal. 366–368, C191–C192]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-07 (Chapter 12)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Petakan C-Lab dan penunjukan desainer pada konsep corporate entrepreneurship."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** C-Lab mirip business incubator (focused); penunjukan desainer ke jabatan manajemen mirip product champion (dispersed). Hasil analisis; hasil usaha tidak tersedia. [hal. 379–381, C191]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-08 (Chapter 6)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Jelaskan manfaat dan risiko integrasi vertikal Samsung menurut Exhibit 6.4."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** manfaat: akses teknologi dan kontrol aset; risiko: biaya dan belanja modal, serta hilangnya fleksibilitas. Klaim komponen buatan sendiri adalah klaim eksekutif tanpa data biaya. [hal. 183, C189]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-09 (Appendix 1)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Hitung ROE dan total debt ratio Samsung 2021 dengan rumus Appendix 1."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** ROE 39.907 : 304.899, sekitar 13,1%; total debt ratio (426.621 minus 304.899) : 426.621, sekitar 28,5%. Catat definisi dan angka akhir tahun. [hal. 426, 429, C189]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "SRQ-TM13-10 (Chapter 13)",
+      "promptBlocks": [
+        {
+          "kind": "p",
+          "text": "Rumuskan masalah, dua alternatif, dan rekomendasi awal untuk Samsung."
+        }
+      ],
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pokok jawaban:** hasil analisis: ponsel yang persaingannya ketat dan chip yang berayun dengan kepemimpinan tidak stabil. Alternatif: perdalam chip (A) atau pertahankan ponsel lewat produk baru (B). Rekomendasi awal: data laba chip dengan target per kuartal, pantau pangsa dan margin ponsel lipat, dan danai gagasan perangkat lunak secara bertahap. [hal. 400–405, C189–C192]"
+        }
+      ],
+      "revealLabel": "Tampilkan penyelesaian dan jawaban akhir"
+    },
+    {
+      "kind": "h3",
+      "text": "Indeks Pendalaman"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "P-01: Exhibit 3, tekanan di pembukaan kasus, dan lima kekuatan Porter (terletak di bagian Inti terkait).",
+        "P-02: Human capital menurut Chapter 4, perubahan strategi, dan behavioral control (terletak di bagian Inti terkait).",
+        "P-03: Lima dilema inovasi dan strategic envelope Samsung (terletak di bagian Inti terkait).",
+        "P-04: Lima pertanyaan keputusan integrasi vertikal dan Exhibit 6.4 (terletak di bagian Inti terkait).",
+        "P-05: Definisi dan rasio tambahan, Exhibit 4, dan baris eksibit yang tidak menjumlah (terletak di bagian Inti terkait).",
+        "P-06: Uji enam pertanyaan dan tiga peran presentasi menurut RPP (terletak di bagian Inti terkait)."
       ]
     }
   ]

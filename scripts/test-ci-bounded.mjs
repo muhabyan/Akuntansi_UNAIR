@@ -15,6 +15,8 @@ const standardTasks = [
   ['mnu307_tm05_canonical', 'scripts/test-mnu307-tm05-canonical.mjs'],
   ['mnu307_tm06_canonical', 'scripts/test-mnu307-tm06-canonical.mjs'],
   ['mnu307_tm07_canonical', 'scripts/test-mnu307-tm07-canonical.mjs'],
+  ['mnu307_tm09_canonical', 'scripts/test-mnu307-tm09-canonical.mjs'],
+  ['mnu307_cases_canonical', 'scripts/test-mnu307-cases-canonical.mjs'],
   ['mnu307_pr4_text_paths', 'scripts/test-mnu307-pr4-text-paths.mjs'],
   ['mnu307_render_rules', 'scripts/test-mnu307-render-rules.mjs'],
   ['akk203_renderer', 'scripts/test-akk203-renderer.mjs'],
