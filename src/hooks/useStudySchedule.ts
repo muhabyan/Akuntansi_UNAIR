@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
+import { canonicalCourseCode } from '../lib/legacyCourseCodes';
 
 export interface StudySchedule {
   id: string;
@@ -37,7 +38,7 @@ export function useStudySchedule() {
           .order('time', { ascending: true });
 
         if (error) throw error;
-        setSchedules(data || []);
+        setSchedules((data || []).map(s => ({ ...s, course_code: canonicalCourseCode(s.course_code) })));
       } catch (err: any) {
         console.error('Error fetching schedules:', err);
         setError(err.message);
@@ -61,6 +62,7 @@ export function useStudySchedule() {
         .insert(
           newSchedules.map(s => ({
             ...s,
+            course_code: canonicalCourseCode(s.course_code),
             user_id: user.id,
             is_done: false
           }))

@@ -553,10 +553,12 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       const module = await import('../pjk2/pjk2Data');
       return { readings: module.PJK301_READINGS, reviews: module.PJK301_REVIEW_READINGS };
     }
+    case 'AKK203':
     case 'AKS201': {
       const module = await import('../asp/aspData');
       return { readings: module.AKS201_READINGS, reviews: module.AKS201_REVIEW_READINGS };
     }
+    case 'MNK102':
     case 'MNK201': {
       const module = await import('../mankeu/mankeuData');
       return { readings: module.MNK201_READINGS, reviews: module.MNK201_REVIEW_READINGS };

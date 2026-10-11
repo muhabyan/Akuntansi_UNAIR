@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calendar, Plus, Clock, BookOpen, CheckCircle2, ChevronRight, Trash2 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { canonicalCourseCode } from '../lib/legacyCourseCodes';
 import { useStudySchedule } from '../hooks/useStudySchedule';
 import { ALL_COURSES } from '../data/courseData';
 import { CourseIcon } from '../lib/icons';
@@ -20,7 +21,7 @@ function normalizeCourseCode(code: string) {
   if (normalized === 'stat' || normalized === 'statistik') return 'MAS122';
   if (normalized === 'etika') return 'AKA103';
   if (normalized === 'akd' || normalized === 'dasar') return 'AKK106';
-  return code.toUpperCase();
+  return canonicalCourseCode(code.toUpperCase());
 }
 
 function getActivityLabel(activityId: string) {

@@ -12,6 +12,15 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.5',
+    date: '11 Oktober 2026',
+    headline: 'Koreksi kode mata kuliah Semester III',
+    notes: [
+      'Kode Semester III mengikuti tabel panduan: MNU108, MNK102, AKK202, AKK203, PJK301, SII306, dan AKA201, beserta kode FEB25603011 sampai FEB25603017 dan prasyaratnya.',
+      'Tautan lama ASP dan Manajemen Keuangan tetap membuka materi yang sama. Progres bacaan, flashcard, sesi kuis, dan jadwal dengan kode lama tetap dikenali.',
+    ],
+  },
+  {
     version: 'v1.3.4',
     date: '11 Oktober 2026',
     headline: 'Materi dan latihan pra-UAS Perpajakan II',

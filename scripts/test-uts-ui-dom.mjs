@@ -7,7 +7,7 @@ import React, { act } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createServer } from 'vite';
 
-const codes = ['AKK202', 'PJK301', 'SII306', 'MNK201'];
+const codes = ['AKK202', 'PJK301', 'SII306', 'MNK102'];
 const cacheDir = fs.mkdtempSync(path.join(os.tmpdir(), 'aks-uts-ui-dom-'));
 const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/' });
 const { window } = dom;
@@ -146,7 +146,7 @@ try {
       check(Boolean(window.document.querySelector('main')), `${width}px DOM: ${code} TM1 reading renders`);
       const readingToolbar = window.document.querySelector('.reading-toolbar');
       check(Boolean(readingToolbar?.classList.contains('sticky') && readingToolbar.className.includes('top-[calc(4rem+env(safe-area-inset-top))]') && readingToolbar.classList.contains('bg-white')), `${width}px DOM: reading outline toolbar is sticky below navbar with opaque surface`);
-      if (code === 'MNK201') {
+      if (code === 'MNK102') {
         const agency = window.document.querySelector('section[aria-label="Ringkasan visual teori keagenan pada layar sempit"]');
         const agencyText = window.document.querySelector('section[aria-label="Isi diagram dalam teks"]');
         check(Boolean(agency?.textContent.includes('Pemegang saham') && agency.textContent.includes('Manajemen') && agency.textContent.includes('Kreditor') && agency.textContent.includes('Konflik 1') && agency.textContent.includes('Konflik 2') && agency.textContent.includes('debt covenants') && window.document.querySelector('.course-diagram-agency') && [...window.document.querySelectorAll('details summary')].some((item) => item.textContent.includes('Perbesar diagram'))), `${width}px DOM: MNK201 TM1 whole agency overview precedes optional detailed diagram`);
@@ -154,7 +154,7 @@ try {
         const callouts = [...window.document.querySelectorAll('.course-callout-compact')];
         check(callouts.length >= 2 && callouts[0].textContent.includes('Nilai Intrinsik vs Laba Akuntansi') && callouts[1].textContent.includes('Fokus Latihan TM1') && callouts[1].textContent.includes('belum terverifikasi'), `${width}px DOM: MNK201 TM1 callouts use compact spacing and cautious exam label`);
       }
-      if (code === 'PJK301' || code === 'MNK201') {
+      if (code === 'PJK301' || code === 'MNK102') {
         await render(React.createElement(CourseLayout, { key: `${width}-${code}-visual`, course, initialTm: 4, onBack() {} }));
         await waitFor(() => window.document.body.textContent.includes('Selesai membaca?'), `${code} TM4 reading`);
         if (code === 'PJK301') {
@@ -198,7 +198,7 @@ try {
       await click(reviewLabel?.closest('.group')?.querySelector('button'), `${code} UTS review`);
       await waitFor(() => window.document.body.textContent.includes('Selesai membaca?'), `${code} review body`);
       check(Boolean(window.document.querySelector('main')), `${width}px DOM: ${code} UTS review opens`);
-      if (code === 'MNK201') {
+      if (code === 'MNK102') {
         check(window.document.querySelector('section[aria-label="Isi diagram dalam teks"]')?.querySelectorAll('li').length >= 30, `${width}px DOM: MNK201 UTS review diagram has a text version`);
       }
 

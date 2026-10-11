@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { supabase } from '../lib/supabase';
+import { canonicalCourseCode, LEGACY_COURSE_CODES } from '../lib/legacyCourseCodes';
 
 const STORAGE_KEY = 'akuntansi-feb-unair:study-progress';
 
@@ -36,7 +37,7 @@ export function useStudyProgress() {
         if (!error && data && isMounted) {
           const dbProgress: ProgressMap = {};
           data.forEach((row) => {
-            const key = `${row.course_code}:tm${row.chapter_id}`;
+            const key = materialKey(row.course_code, row.chapter_id);
             dbProgress[key] = true;
           });
           
@@ -91,7 +92,8 @@ export function useStudyProgress() {
           await supabase
             .from('user_progress')
             .delete()
-            .match({ user_id: user.id, course_code, chapter_id });
+            .match({ user_id: user.id, chapter_id })
+            .in('course_code', [course_code, ...Object.keys(LEGACY_COURSE_CODES).filter(code => LEGACY_COURSE_CODES[code] === course_code)]);
         } else {
           await supabase
             .from('user_progress')
@@ -114,6 +116,7 @@ export function useStudyProgress() {
 
 /** Kunci unik per materi: konsisten dipakai di seluruh app. */
 export function materialKey(courseCode: string, tm: number | string): string {
+  courseCode = canonicalCourseCode(courseCode);
   return `${courseCode}:tm${tm}`;
 }
 

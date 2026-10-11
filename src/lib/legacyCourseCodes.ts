@@ -11,12 +11,16 @@
  * - Sistem Informasi Akuntansi: the faculty handbook code is SII306 (FEB25603016).
  * - Pengantar Manajemen: the faculty handbook code is MNU108 (FEB25603011). It was catalogued as MNM101 with MNM201 as
  *   its alternative code, so both open the course and both carry their saved data over.
+ * - Akuntansi Sektor Publik: AKK203 (FEB25603014), previously catalogued as AKS201.
+ * - Manajemen Keuangan: MNK102 (FEB25603012), previously catalogued as MNK201.
  */
 export const LEGACY_COURSE_CODES: Readonly<Record<string, string>> = {
   PJK202: 'PJK301',
   AKS301: 'SII306',
   MNM101: 'MNU108',
   MNM201: 'MNU108',
+  AKS201: 'AKK203',
+  MNK201: 'MNK102',
 };
 
 /** The current code for a possibly renamed course code (any letter case). Any other code is returned unchanged. */

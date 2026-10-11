@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useStudySchedule } from '../hooks/useStudySchedule';
 import { useAuth } from '../contexts/AuthContext';
+import { canonicalCourseCode } from '../lib/legacyCourseCodes';
 
 export default function AICommandHandler() {
   const { addSchedules, deleteSchedule, markDone, schedules } = useStudySchedule();
@@ -27,7 +28,7 @@ export default function AICommandHandler() {
           if (c === 'stat' || c === 'statistik') return 'MAS122';
           if (c === 'etika') return 'AKA103';
           if (c === 'akd' || c === 'dasar') return 'AKK106';
-          return code.toUpperCase();
+          return canonicalCourseCode(code.toUpperCase());
         };
 
         const normalizedCode = normalizeCourseCode(detail.courseCode);

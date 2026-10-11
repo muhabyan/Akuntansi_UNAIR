@@ -28,7 +28,7 @@ check(navbar.includes('className="stage9-mobile-toggle lg:hidden"') && navbar.in
 check(navbar.includes("import { LogoMark, Wordmark } from './brand/AkuntansiHubLogo';") && navbar.includes('<LogoMark ') && navbar.includes('<Wordmark ') && navbar.includes('<span className="sr-only">AkuntansiHub</span>'), 'Current navbar renders the site brand');
 check(sidebar.includes('role="progressbar"') && sidebar.includes('aria-valuenow={percent}') && sidebar.includes('style={{ width: `${percent}%` }}'), 'Course progress uses an accessible bar with dynamic width');
 check(app.includes('<CourseLayout course={selectedCourse}') && app.includes('<CourseDetailView'), 'Course route chooses the registered layout');
-check(['AKK202', 'PJK301', 'SII306', 'MNK201'].every((code) => app.includes(`'${code}'`)), 'All four UTS courses use the active course layout');
+check(['AKK202', 'PJK301', 'SII306', 'MNK102'].every((code) => app.includes(`'${code}'`)), 'All four UTS courses use the active course layout');
 check(home.includes('onSelectSemester(semester.id)') && home.includes('disabled={isLocked}') && home.includes('aria-label={isLocked'), 'Home semester entry excludes locked semesters');
 check(navbar.includes("event.key === 'Escape'") && navbar.includes("document.addEventListener('mousedown', onClick)") && navbar.includes('closeMenus();'), 'Active navbar has Escape, outside-click, and selection close paths');
 check(navbar.includes("activeMenu === 'materi' && <MegaMenu") && navbar.includes("activeMenu === 'quiz' && <QuizMegaMenu") && navbar.includes("activeMenu === 'laporan' &&"), 'Active navbar mounts all three menus outside the clipped button row');

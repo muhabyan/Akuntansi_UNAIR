@@ -27,8 +27,10 @@ const REGISTRY: Record<string, BankSoal[]> = {
   MNM201: MNM101_BANK,
   AKK202: AKK202_BANK,
   AKM202: AKM202_BANK,
+  AKK203: AKS201_BANK,
   AKS201: AKS201_BANK,
   PJK301: PJK301_BANK,
+  MNK102: MNK201_BANK,
   MNK201: MNK201_BANK,
   AKA201: AKA201_BANK,
   SII306: SII306_BANK,
@@ -80,7 +82,7 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
       { id: 'all', label: 'Kompilasi Seluruh Kasus Akuntansi Manajemen (14 TM)', items: AKM202_BANK },
     ];
   }
-  if (code === 'AKS201') {
+  if (code === 'AKK203' || code === 'AKS201') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Akuntansi Sektor Publik (TM 1–7)', items: AKS201_BANK_UTS },
       { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Akuntansi Sektor Publik (TM 8–14)', items: AKS201_BANK_UAS },
@@ -94,7 +96,7 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
       { id: 'all', label: 'Kompilasi Seluruh Kasus Perpajakan II (TM 1-7 dan TM 9-15)', items: PJK301_BANK },
     ];
   }
-  if (code === 'MNK201') {
+  if (code === 'MNK102' || code === 'MNK201') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Manajemen Keuangan (TM 1–7)', items: MNK201_BANK_UTS },
       { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Manajemen Keuangan (TM 9–14)', items: MNK201_BANK_UAS },

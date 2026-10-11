@@ -61,7 +61,7 @@ for (const route of ['SII306', 'AKS301', 'aks301', 'FEB25603016']) assert.equal(
 // ---- The URL rewrite: /course/AKS301 rewrites to /course/SII306
 assert.equal(canonicalCoursePath('/course/AKS301'), '/course/SII306');
 assert.equal(canonicalCoursePath('/course/aks301/'), '/course/SII306/');
-for (const pathname of ['/course/SII306', '/course/FEB25603016', '/course/AKS3010', '/course/AKS201', '/', '/guide']) {
+for (const pathname of ['/course/SII306', '/course/FEB25603016', '/course/AKS3010', '/course/AKK203', '/', '/guide']) {
   assert.equal(canonicalCoursePath(pathname), null, `${pathname} must not be rewritten`);
 }
 
