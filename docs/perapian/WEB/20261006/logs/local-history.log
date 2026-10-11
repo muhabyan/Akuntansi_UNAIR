@@ -1,0 +1,43 @@
+commit 307157ec5ff1194833520a8dc0f0b84931e80e8f
+Author:     Mahasiswa <mahasiswa@example.com>
+AuthorDate: Tue Oct 6 19:07:30 2026 +0700
+Commit:     Mahasiswa <mahasiswa@example.com>
+CommitDate: Tue Oct 6 19:07:30 2026 +0700
+
+    WIP: refine table names and comparison layouts pending browser QA
+
+commit 54b92d57e61e660b758f32556a69c4c1a32272cd
+Merge: 20557e0 639be11
+Author:     Mahasiswa <mahasiswa@example.com>
+AuthorDate: Tue Oct 6 19:02:02 2026 +0700
+Commit:     Mahasiswa <mahasiswa@example.com>
+CommitDate: Tue Oct 6 19:02:02 2026 +0700
+
+    Merge current main into PR45 worktree without discarding existing changes
+
+commit 639be11424eb9d6ba4621a3104d0c26f768f63c4
+Merge: a7691eb 261ab2b
+Author:     muhabyan <94155214+muhabyan@users.noreply.github.com>
+AuthorDate: Tue Oct 6 16:31:28 2026 +0700
+Commit:     GitHub <noreply@github.com>
+CommitDate: Tue Oct 6 16:31:28 2026 +0700
+
+    Merge pull request #49 from muhabyan/content/mnu307-tm07
+    
+    content: MNU307 PR-4 TM07 Blue Ocean Strategy dan Strategy Maps
+
+commit 261ab2b898dfa42b8667ac8d1f30208d05f6de5b
+Author:     Mahasiswa <mahasiswa@example.com>
+AuthorDate: Tue Oct 6 12:52:14 2026 +0700
+Commit:     Mahasiswa <mahasiswa@example.com>
+CommitDate: Tue Oct 6 12:52:14 2026 +0700
+
+    fix: clarify TM07 curve legends and support labels
+
+commit f3b544b4293e13842a5fbab8d9a81a067bbb1461
+Author:     Mahasiswa <mahasiswa@example.com>
+AuthorDate: Tue Oct 6 11:58:31 2026 +0700
+Commit:     Mahasiswa <mahasiswa@example.com>
+CommitDate: Tue Oct 6 11:58:31 2026 +0700
+
+    content: implement MNU307 TM07 Blue Ocean Strategy and Strategy Maps

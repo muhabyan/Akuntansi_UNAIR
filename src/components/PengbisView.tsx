@@ -561,9 +561,6 @@ export default function PengbisView({ course, onBack }: PengbisViewProps) {
                 <h1 className="text-2xl md:text-3xl font-display font-black text-slate-100 mt-1">
                   {TABS.find(t => t.id === activeTab)?.label}
                 </h1>
-                <p className="text-slate-400 text-xs mt-1">
-                  Menampilkan {filteredBlocks.length} materi terurut berdasarkan prioritas silabus.
-                </p>
               </div>
             )}
           </div>

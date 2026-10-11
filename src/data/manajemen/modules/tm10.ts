@@ -81,7 +81,7 @@ export const TM10_READING: Reading = {
   tm: 10,
   title: 'Managing Human Talent and Diversity/Inclusion: Strategi MSDM & Keberagaman',
   ref: 'Richard L. Daft Bab 13 & 14 | Strategic Human Resource Management (SHRM) | 360-Degree Feedback & DE&I',
-  intro: 'TM 10 membahas pengelolaan modal manusia (Human Capital) dan keberagaman tempat kerja sebagai sumber keunggulan kompetitif berkelanjutan: 3 pilar Strategic HRM (Menarik, Mengembangkan, dan Mempertahankan talenta unggul), analisis pekerjaan (Job Description vs Job Specification), teknik seleksi dan Realistic Job Preview (RJP), evaluasi kinerja multi-sumber (360-Degree Feedback) dan mitigasi bias penilai, serta pengelolaan keberagaman dan inklusi (Diversity, Equity, and Inclusion / DE&I) untuk menembus fenomena Glass Ceiling.',
+  intro: 'TM 10 membahas pengelolaan modal manusia (Human Capital) dan keberagaman tempat kerja sebagai sumber keunggulan kompetitif yang bertahan lama. Isinya tiga pilar Strategic HRM (menarik, mengembangkan, dan mempertahankan talenta unggul), analisis pekerjaan (Job Description vs Job Specification), teknik seleksi dan Realistic Job Preview (RJP), serta evaluasi kinerja dari banyak sumber (360-Degree Feedback) beserta cara menekan bias penilai. Bagian akhir membahas keberagaman dan inklusi (Diversity, Equity, and Inclusion / DE&I) dan fenomena Glass Ceiling.',
   objectives: [
     'Menjelaskan bagaimana Manajemen SDM Strategis (SHRM) menyelaraskan kebutuhan talenta dengan strategi korporasi.',
     'Membedakan komponen Deskripsi Pekerjaan (Job Description) vs Spesifikasi Pekerjaan (Job Specification).',

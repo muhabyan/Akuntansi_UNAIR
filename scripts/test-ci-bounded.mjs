@@ -6,6 +6,7 @@ const root = process.cwd();
 const timeoutMs = Number(process.env.CI_TEST_TIMEOUT_MS ?? 120_000);
 
 const standardTasks = [
+  ['table_titles', 'scripts/test-table-titles.mjs'],
   ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
   ['mnu307_tm01_canonical', 'scripts/test-mnu307-tm01-canonical.mjs'],
   ['mnu307_tm02_canonical', 'scripts/test-mnu307-tm02-canonical.mjs'],
@@ -69,6 +70,7 @@ const standardTasks = [
 ];
 
 const extendedTasks = [
+  ['table_titles', 'scripts/test-table-titles.mjs'],
   ['reading_lifecycle', 'scripts/test-reading-lifecycle.mjs'],
   ['data_validation', 'scripts/validate-data.mjs'],
   ['sia_canonical_readings', 'scripts/test-sia-canonical.mjs'],

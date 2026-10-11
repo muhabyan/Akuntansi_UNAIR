@@ -73,7 +73,7 @@ export const TM14_READING: Reading = {
   tm: 14,
   title: 'Studi Kasus Strategik IV: Kepemimpinan Teknologi & Portofolio Konsumer (Samsung Electronics & Procter & Gamble)',
   ref: 'Brandenburger & Nalebuff (Co-opetition) | Gary Pisano (You Need an Innovation Strategy) | Portofolio P&G & Samsung',
-  intro: 'TM 14 menyajikan studi kasus puncak penutup kurikulum manajemen strategik yang membedah kepemimpinan teknologi tinggi dan arsitektur portofolio global: dinamika Bekerja Sama Sekaligus Bersaing (Co-opetition antara Samsung Electronics dan Apple Inc.), perbandingan Model Integrasi Vertikal Produsen Perangkat Terpadu (Integrated Device Manufacturer / IDM) vs Model Ekosistem Tanpa Pabrik (Fabless & Outsourcing), manajemen portofolio multi-produk peredam siklus ekonomi, serta kepemimpinan merek global fast-moving consumer goods (P&G Brand Management).',
+  intro: 'TM 14 adalah studi kasus penutup mata kuliah Manajemen Strategik tentang kepemimpinan teknologi tinggi dan portofolio global. Isinya hubungan kerja sama sekaligus persaingan (Co-opetition) antara Samsung Electronics dan Apple Inc., perbandingan model Integrated Device Manufacturer (IDM) dengan model tanpa pabrik (Fabless dan Outsourcing), pengelolaan portofolio multi-produk untuk meredam siklus ekonomi, serta kepemimpinan merek global di fast-moving consumer goods (P&G Brand Management).',
   objectives: [
     'Menerapkan konsep Co-opetition (Brandenburger & Nalebuff) dalam menganalisis persaingan teknologi tinggi.',
     'Membandingkan keuntungan dan risiko model integrasi vertikal IDM (Samsung) vs model outsourcing fabless (Apple).',

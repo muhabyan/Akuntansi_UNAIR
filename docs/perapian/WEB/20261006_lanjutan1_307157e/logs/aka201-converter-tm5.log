@@ -1,0 +1,5 @@
+TM05/05_student_learning_version.md -> C:\cek\.worktrees\perapian-pr45\docs\perapian\WEB\20261006_lanjutan1_307157e\source-inspection\AKA201-generated\tm5.ts
+  title: Siklus, Asersi Manajemen, dan Gambaran Proses Audit (removed "TM05: "); objectives 5; sections 10
+  pendalaman 1, self-check 4, cases 3, tables 12, callouts 10
+  note: section "6. Gambaran proses audit" wrapped in pendalaman: rendered as one closed pendalaman block, heading kept as its title
+  note: leading-space line rendered as its own paragraph: `(ARENS p.115)`

@@ -160,7 +160,7 @@ const SCHULTZ_LIABILITY_ENTRIES_CASE: ContentBlock = {
       kind: 'callout',
       variant: 'warning',
       title: 'Interpretasi — PPN pembelian truk (P12.2 transaksi 3)',
-      text: 'Soal tidak menyatakan apakah PPN 5% atas truk dapat dikreditkan. Kedua alternatif berikut sama-sama membayar kas €126.000.\n\n**Alternatif A — kapitalisasi penuh:** mengikuti practice problem solution Kieso p. 1066 (Trucks = 120.000 × 1,05 = 126.000); PPN diperlakukan sebagai bagian cost truk.\n\n**Alternatif B — PPN masukan dapat dikreditkan:** mengikuti mekanisme PPN Kieso pp. 1027–1028; truk dicatat €120.000 dan PPN €6.000 dicatat sebagai VAT Taxes Recoverable.'
+      text: 'Soal tidak menyatakan apakah PPN 5% atas truk dapat dikreditkan. Kedua alternatif berikut sama-sama membayar kas €126.000.\n\n**Alternatif A — kapitalisasi penuh:** mengikuti practice problem solution Kieso p. 1067 (Trucks = 120.000 × 1,05 = 126.000); PPN diperlakukan sebagai bagian cost truk.\n\n**Alternatif B — PPN masukan dapat dikreditkan:** mengikuti mekanisme PPN Kieso pp. 1027–1028; truk dicatat €120.000 dan PPN €6.000 dicatat sebagai VAT Taxes Recoverable.'
     },
     {
       kind: 'journal',
@@ -203,7 +203,7 @@ const BALANCE_SHEET_CLASSIFICATION_CASE: ContentBlock = {
       kind: 'table',
       headers: ['Pos', 'Item', 'Pelaporan', 'Alasan'],
       rows: [
-        ['a', 'Accrued vacation pay', 'Liabilitas jangka pendek', 'Hak cuti berbayar yang terakumulasi dan diselesaikan dalam 12 bulan (p. 1029)'],
+        ['a', 'Accrued vacation pay', 'Liabilitas jangka pendek', 'Hak cuti berbayar yang terakumulasi dan diselesaikan dalam 12 bulan (pp. 1031–1032)'],
         ['b', 'Income taxes payable', 'Liabilitas jangka pendek', 'Pajak penghasilan periode berjalan yang wajib disetor (p. 1028)'],
         ['c', 'Service-type warranties on appliance sales', 'Liabilitas jangka pendek dan jangka panjang', 'Unearned Warranty Revenue; porsi 12 bulan ke depan lancar, sisanya tidak lancar (p. 1042)'],
         ['d', 'Social security taxes payable', 'Liabilitas jangka pendek', 'Potongan karyawan dan bagian pemberi kerja yang belum disetor (p. 1028)'],
@@ -563,7 +563,7 @@ const FLUFFY_PREMIUM_CASE: ContentBlock = {
 export const TM6_READING: Reading = {
   tm: 6,
   title: 'Liabilitas Jangka Pendek, Provisi, dan Kontinjensi',
-  ref: 'Kieso IFRS 5e Ch. 12 (pp. 1015–1092) | IAS 1, IAS 37',
+  ref: 'Kieso IFRS 5e Ch. 12 (pp. 1015–1100) | IAS 1, IAS 37',
   intro: 'TM6 membahas seluruh Kieso Bab 12: definisi dan klasifikasi liabilitas jangka pendek, utang usaha dan wesel bayar, pembiayaan kembali, dividen dan pendapatan diterima di muka, PPN, liabilitas karyawan, provisi, kontinjensi, serta penyajian dan analisis likuiditas. Soal dosen E12.1, E12.2, P12.1, dan P12.2 serta contoh Kieso Illustration 12.2 (rantai PPN) dan Example 12.6–12.8 (garansi dan premi) dibahas langkah demi langkah.',
   objectives: [
     'Menjelaskan tiga karakteristik liabilitas dan kriteria klasifikasi liabilitas jangka pendek.',
@@ -641,7 +641,7 @@ export const TM6_READING: Reading = {
     },
     {
       kind: 'p',
-      text: '**Wesel berbunga (interest-bearing):** dicatat sebesar nilai nominal; bunga yang terutang tetapi belum dibayar diakrualkan pada akhir periode. **Wesel tanpa bunga (zero-interest-bearing):** peminjam menerima kas sebesar nilai kini yang lebih kecil dari nominal; selisihnya dicatat di akun kontra-liabilitas Discount on Notes Payable dan diamortisasi ke beban bunga (Kieso pp. 1019–1020).'
+      text: '**Wesel berbunga (interest-bearing):** dicatat sebesar nilai nominal; bunga yang terutang tetapi belum dibayar diakrualkan pada akhir periode. **Wesel tanpa bunga (zero-interest-bearing):** peminjam menerima kas sebesar nilai kini yang lebih kecil dari nominal; selisihnya diamortisasi ke beban bunga. Kieso (pp. 1019–1020) mencatat wesel pada nilai kini lalu menambah Notes Payable sebesar bunga yang diakrualkan; akun kontra-liabilitas Discount on Notes Payable di modul ini adalah penyajian alternatif (gross) dengan angka akhir yang sama.'
     },
     { kind: 'formula', text: '\\text{Bunga akrual}=\\text{Nominal}\\times\\text{Tarif}\\times\\frac{\\text{Bulan berjalan}}{12}\\qquad\\text{Liabilitas neto}=\\text{Notes Payable}-\\text{Diskonto belum diamortisasi}' },
     DARBY_NOTES_CASE,
@@ -694,7 +694,7 @@ export const TM6_READING: Reading = {
       headers: ['Liabilitas', 'Perlakuan', 'Kieso'],
       rows: [
         ['Potongan gaji yang belum disetor', 'Pajak penghasilan karyawan dan iuran jaminan sosial yang dipotong entitas sebagai pemungut; liabilitas jangka pendek sampai disetor', 'p. 1028'],
-        ['Cuti berbayar (compensated absences)', 'Diakrualkan saat karyawan memberikan jasa bila hak cuti berakumulasi atau vested, pembayarannya probable, dan jumlahnya dapat diestimasi', 'pp. 1029–1030'],
+        ['Cuti berbayar (compensated absences)', 'Hak cuti yang vested wajib diakrualkan saat karyawan memberikan jasa; hak accumulating yang belum vested tetap diakrualkan dengan penyesuaian forfeiture; hak non-accumulating (misalnya cuti melahirkan) diakui saat cuti diambil', 'pp. 1031–1032'],
         ['Bonus', 'Diakrualkan sebagai beban kompensasi dan liabilitas jangka pendek (Bonus Payable) atas kinerja periode berjalan', 'p. 1031']
       ]
     },
@@ -773,7 +773,7 @@ export const TM6_READING: Reading = {
         ['Possible', 'Liabilitas kontinjensi: **diungkapkan dalam catatan**, tidak diakui', 'Tidak diakui dan tidak diungkapkan'],
         ['Remote', 'Tidak diakui dan tidak diungkapkan', 'Tidak diakui dan tidak diungkapkan']
       ],
-      caption: 'Kieso pp. 1057–1059.'
+      caption: 'Kieso pp. 1058–1060.'
     },
     {
       kind: 'callout',
@@ -803,7 +803,7 @@ export const TM6_READING: Reading = {
         ['Ambang probable', 'Lebih mungkin terjadi daripada tidak (>50%) (p. 1034)', 'Likely to occur: ambang lebih tinggi'],
         ['Rentang estimasi tanpa titik terbaik', 'Titik tengah rentang (p. 1036)', 'Ujung bawah rentang'],
         ['Kewajiban restorasi', 'Kewajiban hukum dan konstruktif (p. 1045)', 'Hanya kewajiban hukum'],
-        ['Diskonto wesel bayar', 'Akun kontra-liabilitas pengurang nominal (p. 1019)', 'Sama']
+        ['Diskonto wesel bayar', 'Akun kontra-liabilitas pengurang nominal (penyajian alternatif; Kieso pp. 1019–1020 memakai nilai kini)', 'Sama']
       ]
     },
 
@@ -820,7 +820,7 @@ export const TM6_READING: Reading = {
         ['Tunggakan dividen preferen', 'Mencatat Dividends Payable', 'Bukan liabilitas; ungkapkan dalam catatan', 'p. 1023; E12.1(o)'],
         ['Biaya restorasi', 'Mendebit Restoration Expense €84.000', 'Kapitalisasi ke Land Improvements; kredit provisi', 'p. 1049; P12.2'],
         ['PPN inklusif', '€798.000 × 5% = €39.900', 'Penjualan €798.000 ÷ 1,05 = €760.000; PPN €38.000', 'pp. 1027–1029; P12.2'],
-        ['Kontinjensi', 'Mengakui liabilitas kontinjensi atau aset kontinjensi yang baru probable', 'Liabilitas kontinjensi hanya diungkapkan; aset baru diakui bila virtually certain', 'pp. 1057–1059'],
+        ['Kontinjensi', 'Mengakui liabilitas kontinjensi atau aset kontinjensi yang baru probable', 'Liabilitas kontinjensi hanya diungkapkan; aset baru diakui bila virtually certain', 'pp. 1058–1060'],
         ['PPN dalam rantai pasok', 'Setiap entitas menyetor seluruh PPN keluaran (total €540)', 'Setor PPN keluaran − PPN masukan; total disetor €240', 'p. 1029; Illustration 12.2'],
         ['Biaya garansi jaminan tahun penjualan', 'Mendebit Warranty Liability \\$4.000', 'Debit Warranty Expense \\$4.000; liabilitas dibentuk lewat penyesuaian \\$16.000', 'p. 1042; Example 12.6'],
         ['Garansi jasa dijual terpisah', 'Mengakui €900 sebagai pendapatan saat penjualan', 'Kredit Unearned Warranty Revenue; akui €300 per tahun selama 2028–2030', 'p. 1044; Example 12.7'],

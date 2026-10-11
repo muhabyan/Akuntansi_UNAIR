@@ -1,0 +1,991 @@
+{
+  "version": "lanjutan1",
+  "mainHead": "639be11424eb9d6ba4621a3104d0c26f768f63c4",
+  "workHead": "307157ec5ff1194833520a8dc0f0b84931e80e8f",
+  "remoteHead": "20557e0463779f3d730929822dd0a41a158850a8",
+  "files": [
+    {
+      "path": "aka201-runtime-reconciliation.json",
+      "bytes": 1595,
+      "sha256": "ad2cd5d2b0578b234081c30164162c791fe3718a13efaf58cded448f07155ad9",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "coverage-state.json",
+      "bytes": 37363,
+      "sha256": "62cf50b0c6c0f6b1550ea92dfa53ecf9f8a92ba4bdc56a94a2be79ee630381c8",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "coverage-state.md",
+      "bytes": 9744,
+      "sha256": "a1a7e39944f0d8555bb842df71a03fb638f1e70762d850c63a6331001fb75f22",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "extract-source-assets.py",
+      "bytes": 2323,
+      "sha256": "22d320421458070d3f85026e5fdde2137182ac44b2ee9f591b7263d2f0718c21",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "finalize-resume-evidence.mjs",
+      "bytes": 12331,
+      "sha256": "14d9fcdb0f163499e68ae6eee3ddd977b2f5971e5a23a14e1c84efb5172f138c",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "inspect-source-details.py",
+      "bytes": 2572,
+      "sha256": "de2d7de208153e06e36b4d59e3e78357932a62a005364178f9424fdd304140fc",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "logs/aka201-converter-tm1.log",
+      "bytes": 529,
+      "sha256": "5cb2725139375426481cc34c247f5152906919dd57bdbc147e3ee3a6c1b9d2a9",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/aka201-converter-tm2.log",
+      "bytes": 568,
+      "sha256": "5c24b3933106c29c5b308e9f33dddc74e2dc90d893af8e3e83b4e9a47e2aa894",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/aka201-converter-tm3.log",
+      "bytes": 562,
+      "sha256": "c49a0096392cc4b25b750d960385e33d3adbe4ce02bdeae1f60a2da7bdb85f60",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/aka201-converter-tm4.log",
+      "bytes": 452,
+      "sha256": "13fe11cf01661eb63fa873b6d83e60fd5bf2bc991a0ddf05cb27f829a5e23cc4",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/aka201-converter-tm5.log",
+      "bytes": 534,
+      "sha256": "187de4dc7aa9709cb16a876676850c543ee06237b24ba10239039bc8a5ecd6e4",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/aka201-converter-tm6.log",
+      "bytes": 579,
+      "sha256": "f8412f9cb2ec144b10a4b33eddc4cf358f0310c0622fa8d43690c686e0eb33bc",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/aka201-converter-tm7.log",
+      "bytes": 389,
+      "sha256": "ab9b4efb06f266a93ec8352deaf545c4dd3b0117aa811881ef9f0af939e7389a",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/baseline-build-retry1.log",
+      "bytes": 41,
+      "sha256": "6bf64187472dcd64b7055e5ee036702be3e6b457f7461defd9dc473d481b11ab",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/baseline-build-retry1.result.json",
+      "bytes": 285,
+      "sha256": "5b95395a37b0d6df1c933dcab40dab2799829e1fbd0598ef9190ae0c1a8f469d",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/baseline-build-retry2.log",
+      "bytes": 9891,
+      "sha256": "18a38745beaefc4b9c76b4dbb0b25dfc39686b91e0e6d61d60707f4249ef172e",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/baseline-build-retry2.result.json",
+      "bytes": 285,
+      "sha256": "d3823fbb033aeb8bfaae14ec6e84e42cad399f3cd7ce1f38aa1e4c15933c482d",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/baseline-build.log",
+      "bytes": 41,
+      "sha256": "6bf64187472dcd64b7055e5ee036702be3e6b457f7461defd9dc473d481b11ab",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/baseline-build.result.json",
+      "bytes": 255,
+      "sha256": "f096a85c92f4d741c16bb60fc47c6aea4c040e37bd780356b7a5e2940bc1b7ff",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/diff-vs-main.patch",
+      "bytes": 84542,
+      "sha256": "b3db26c8e87a3f5f545e9db4614ceaaed114e1fad884be3a1f7b344a3c0fb245",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/git-status.log",
+      "bytes": 18,
+      "sha256": "cff4f9cf06532565ff7bbdf8b9464d310c06ab72f68520221ed5b01e546da648",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/pr45-build.log",
+      "bytes": 9896,
+      "sha256": "85c2a5a9e7e59d5c637c2512ba115e748af4d52829545f736fbf5615fd5bc59f",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/pr45-build.result.json",
+      "bytes": 260,
+      "sha256": "d868cc3b2e7b1c919aa7ba49a2385857a7a7f07341dcaa297dd170378f50c934",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/pr45-lint.log",
+      "bytes": 160,
+      "sha256": "936c61c8b981fd4fc566d6009b9d61e0b085fb50a3da6923b7e67a5d55218289",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/pr45-lint.result.json",
+      "bytes": 257,
+      "sha256": "50ee068e8fe73a8ca4b735d5a9c7414a0d31116dbcfb27abda3bccc1c85e96c2",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/pr45-runtime.log",
+      "bytes": 791,
+      "sha256": "56a27a0e3bc3b7478e740825e4052b633b1544f0deb6f4e8478f34ff066c895a",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "logs/pr45-runtime.result.json",
+      "bytes": 271,
+      "sha256": "73df02fc423dcdf62fa15b7eb225b9f404276ad1ed2e64d19e3b54be88cf5f92",
+      "kind": "Raw command output/result or Git evidence"
+    },
+    {
+      "path": "provided-reviewer-access.png",
+      "bytes": 71906,
+      "sha256": "eef8e74b59f869b56dda6254b4475f480dd637694bb1502003e3189942bf88de",
+      "kind": "User-provided reviewer website screenshot, not current audit"
+    },
+    {
+      "path": "reconcile-aka-runtime.mjs",
+      "bytes": 2087,
+      "sha256": "6f162a5abe1c6db5949c4c63467b786f8f7a7fab144589f859a892ecfb127ed8",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "reconcile-local-sources.py",
+      "bytes": 2401,
+      "sha256": "e41d16a062aa9f22f80e3c4b6f0aa2a77aa40c415598583080f389dafb2f3f5f",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "remote-pr45.json",
+      "bytes": 805,
+      "sha256": "df3f6724f9d5d782941f952761e05a601e1bf06014c36cfc1368267dca62a045",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "resume-state.json",
+      "bytes": 73052,
+      "sha256": "ce9fc1e746bbfd8d9b3968f443e00a343cc6d6e4f2aaac658383265d8cf2831d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "run-task.mjs",
+      "bytes": 1748,
+      "sha256": "628ff3dc494cd852306c2efcb9d35d526c90b2a0caf554d4a298ddef9c4b903c",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-assets-and-contract.json",
+      "bytes": 34564,
+      "sha256": "539aee7aa373e97ce2fcf30ce6099ef7b44ceb170f976f477262ff67499b14b9",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-details.json",
+      "bytes": 12722,
+      "sha256": "6d2be21d2a75bfe7a20babc627b0202843092e0eca66905fc0c413359d5d91d5",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/128574361X_577634 (2)-slide001.txt",
+      "bytes": 84,
+      "sha256": "1f3a61bb60ed573d0ac3fb7a56514642cc240ffd2a62197bfff4b958cd7d1dc6",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/128574361X_577634 (2)-slide002.txt",
+      "bytes": 473,
+      "sha256": "ae59af328bb0f498675fe8c406a3efa58be67f128e1884543a83d19e59e4ac97",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF001.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF002.txt",
+      "bytes": 2680,
+      "sha256": "c23a1fe5d30227dbbe8671296ce252f63bba037d51649449e018a0da4791c808",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF003.txt",
+      "bytes": 3883,
+      "sha256": "bb55adc6192949221d88e79ac01eb73b2bac9ca900e775560f7ddcbbf9d50ce4",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF004.txt",
+      "bytes": 3751,
+      "sha256": "8f015737b7d44a5b806708de5073d20e825a69485973d5b8c88f1f3459ac8fda",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF005.txt",
+      "bytes": 3113,
+      "sha256": "5d293141b56fbb049a4cfe1c7a39bc0acf77d5a01f8c6b3785820f42b7a06b27",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF006.txt",
+      "bytes": 4108,
+      "sha256": "0242ac32c447c868705a18d1552ff9d8532bc9ddf347caf75b66718e7c07e7a8",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF007.txt",
+      "bytes": 4858,
+      "sha256": "ec91d8aa0f6bf7ff34fa026ab65bd3d7b8a5afdebd7a9b50d9f3050cb51ff0ed",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF008.txt",
+      "bytes": 4555,
+      "sha256": "61b7c17b56f5591aa5b0ac80bf067c3c7b0d99c8b703a705679efe137d3216c8",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF009.txt",
+      "bytes": 5112,
+      "sha256": "6a4aef0173439b83f05003baab158536258642cc1c65cf3e87cfe210ef6ada0c",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF010.txt",
+      "bytes": 4802,
+      "sha256": "2c7229e89b0beb16573b8916058603b11975ff361d517e91e3275c3642267ee5",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF011.txt",
+      "bytes": 1184,
+      "sha256": "66bdd4433cc3ffc6c7f252c159f06a35b9b4b3bf9ee2d44188cc910d2be9d568",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF012.txt",
+      "bytes": 1461,
+      "sha256": "e637e9c9615ffd76efc60c2252b1b020726e75a161f2db153d2d453a2ec26348",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF013.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF014.txt",
+      "bytes": 2893,
+      "sha256": "b387d073b76e6f58b3cc1c1d01709b82bdeecf8074b6543b63e176cbd29a8cee",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF015.txt",
+      "bytes": 3418,
+      "sha256": "429606d87aca33b1f179d64c117282d9c9e23f681b883ad6247f35acae64806f",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF016.txt",
+      "bytes": 4634,
+      "sha256": "c07e1ce38e98ded11fe85c5a4565f9a4312699fa337fdbf12174530508818355",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF017.txt",
+      "bytes": 4027,
+      "sha256": "fcaafa48a5d2ba4656297fe0c708f02621541328e9183d01e8021ef9acd298b0",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF018.txt",
+      "bytes": 3967,
+      "sha256": "232447218193d1866a00fa6ddc6423963acd267220646cb7d3dc3cb14bad75cb",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF019.txt",
+      "bytes": 4216,
+      "sha256": "f26df7e6394d94e4139d83a930b861120cf50f96ead6146196cf11482ce8f8ff",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF020.txt",
+      "bytes": 4083,
+      "sha256": "6dca2161bdcd4432540d130f3cc3178b858458a5fb7d55bfdadfecbb6bc44653",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF021.txt",
+      "bytes": 3885,
+      "sha256": "c3742bdef7da386cf1e3e13bc262a90f6b737d1de5baea8609951b242c2e031f",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-Arens-PDF022.txt",
+      "bytes": 4806,
+      "sha256": "4b24c68757a3eec5758c6db5b178926be2b9f92336bbd5fd5bf23de0f5140a9a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm1.ts",
+      "bytes": 51242,
+      "sha256": "97e6a3e51481384969ffa80fa8d7f33785db5d9db56948567b0fb68f65215a87",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm2.ts",
+      "bytes": 37118,
+      "sha256": "2d5702d682ae7af051186c0f5d470af40d0a57e996cd82904e770effb80f6087",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm3.ts",
+      "bytes": 34693,
+      "sha256": "c9d9500fb84c2e6206662e6c8241e7d495891c08cdfa66095b9dbeffd00cb59a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm4.ts",
+      "bytes": 33061,
+      "sha256": "42557e6d78828aa745850ac7e3169ee26636f5a582eca738a81fe57a9258e0a9",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm5.ts",
+      "bytes": 36201,
+      "sha256": "42361e8ae8a5274d93e6e49ec08312f767d1b564c2e0097756af8ebac8589ec8",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm6.ts",
+      "bytes": 36412,
+      "sha256": "53dc05e27810c6993ef040903cc099b65cef1530b68a7cbecf057c5b34dc1907",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-generated/tm7.ts",
+      "bytes": 30925,
+      "sha256": "9d6632b443f0530ca767a354fb97dfa873df0cf45badab9cde874cf41a626199",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF001.txt",
+      "bytes": 295,
+      "sha256": "2ba628c2020040acf8510e1f72fcd2a708ef0e2e470870aa1c283eb1c3aa6258",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF002.txt",
+      "bytes": 123,
+      "sha256": "057e4acd6ff13551e75463dc0001715fc28e750f730946c1734fe58066a6fd73",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF003.txt",
+      "bytes": 2627,
+      "sha256": "58e1aef903a44b8d79450851d4e9e97468dabef72861981f8efcd3ae869c786d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF004.txt",
+      "bytes": 680,
+      "sha256": "bd272671caf50bbbb1173187fd751c32b94591b1c836ac5e299f105a09d35e5d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF005.txt",
+      "bytes": 4702,
+      "sha256": "c9ebf9e77a3f4993d1c942128e220970bf47bd14ed22a820102fc0bc64f066d2",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF006.txt",
+      "bytes": 4593,
+      "sha256": "90c3b7c02114a7fac6e163527f07814cfce9d985f735f391e86ee63ac6162fa0",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF007.txt",
+      "bytes": 41,
+      "sha256": "ae60a2a8c94ffab2e9bee75fc6d7509e9cc8d2371ea10c91dafbed4052ebaacd",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF008.txt",
+      "bytes": 3787,
+      "sha256": "ad8469aacfb5380b90e8adaef1320c336b2fed47d896714668293a1705edd61a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF009.txt",
+      "bytes": 3191,
+      "sha256": "f3195b1273a4638d5b25bfbf83dced8e5cb6b76846d559e3b1cd9130bff98248",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF010.txt",
+      "bytes": 4208,
+      "sha256": "28812cf323ac6a7ef0c82eae23b7040602f9e7dccb4632e4df2b3f8f85141e8f",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF011.txt",
+      "bytes": 3788,
+      "sha256": "d293140509c452b6824605dcb12ce7f2fde881cad796ae80677ae99cf1e5322c",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF012.txt",
+      "bytes": 873,
+      "sha256": "39d7c2be40d202a6336b761fd44fc0b721e07e6f882b31dcb7fa64c76c2f569b",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF013.txt",
+      "bytes": 2912,
+      "sha256": "b4476584a98e5d42a72f0ada03423f58a4d3ffbddeeea4a8253fbe3158299da5",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF014.txt",
+      "bytes": 4347,
+      "sha256": "7f85528065ca3ddcec818697eefe0897505416a9fbb485bb9de3fbdced3865cf",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF015.txt",
+      "bytes": 4468,
+      "sha256": "dd6e57f31ed8461cc01379dc663e334833341e708fab932e1b761714b7fed993",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF016.txt",
+      "bytes": 1444,
+      "sha256": "9489b5adf86600e17dce4af4110cec9e592b702b91948f2b9c6cbe20fbe71de4",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF017.txt",
+      "bytes": 4098,
+      "sha256": "a8f3ea52d6898d82dda6db18075f2b5ca9d50049b8bf69067067857e0f65c824",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF018.txt",
+      "bytes": 4825,
+      "sha256": "e34f73fbdb99a7fba61ecdb467d13bb7b2bc3e9eecb20c83e82ccc01d83c8abe",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF019.txt",
+      "bytes": 4717,
+      "sha256": "2177b73241a39f376171f6bf1ac0a756e5f10652f2118c71e1f71bd4f0998d1d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF020.txt",
+      "bytes": 5077,
+      "sha256": "d64e0b5197a4cfc085a28735673848a69bebe646301c27f06f31023899cf049b",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF021.txt",
+      "bytes": 4031,
+      "sha256": "0e7ba28546c5d7de7b1568f073f2f7d4404fcf0ae5f54dfa23bac555d7d03c9e",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKA201-ISA-PDF022.txt",
+      "bytes": 4888,
+      "sha256": "272795e5f408c5aa1ef7407cd832ef1b81f76aa3e171b95e0beb60ae726dc88d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-Kieso-identity-PDF001.txt",
+      "bytes": 54,
+      "sha256": "619bad8502d41335cc50d80d0ba4321b9d69e3769c6ca9f7d7a60bb0a2394ade",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-Kieso-identity-PDF002.txt",
+      "bytes": 1349,
+      "sha256": "7617c02c7f079a343116fd7236229e1457878bf58e4a5971486cfc85cf5ad98f",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-Kieso-identity-PDF003.txt",
+      "bytes": 1778,
+      "sha256": "9fefd408106706d1ca1534fadeffc478894e0ae4f179dddcfe569da934b12d7a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-Kieso-identity-PDF004.txt",
+      "bytes": 1077,
+      "sha256": "4a568be21e15ac64a0d0e92f4d968499896d06f732407ed90c2dfe35beb7375c",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-Kieso-identity-PDF005.txt",
+      "bytes": 974,
+      "sha256": "a4fbf3fe5cfd49d696207448b492baa4fd53944d3678902cb6ecec98dfea5908",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-RPP-PDF001.txt",
+      "bytes": 4104,
+      "sha256": "007267bc91218b30dd758af346bbaba46ead5f27ba4167e9e785b9fbd2348b69",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-RPP-PDF002.txt",
+      "bytes": 3733,
+      "sha256": "f4a9a537d95c0304ddfb54a869ce1c146ac7984ed3553c560b2c7373e5a4f4c4",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-RPP-PDF003.txt",
+      "bytes": 2533,
+      "sha256": "a79ab760acc62419eafe8aa95fd533d0e63c8709cdc74154f132a0467d5e30c1",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-RPP-PDF004.txt",
+      "bytes": 2451,
+      "sha256": "0b8ce1103ac06122e3880114a5f897a4bec4599f4951e1932cac4c479d970fc2",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/AKK202-slide35-image17.jpeg",
+      "bytes": 55428,
+      "sha256": "a7a2126016d828e2c98a7f112413e515fa451827bcff94c083aab891c97796a3",
+      "kind": "Original PPTX embedded source image, inspected"
+    },
+    {
+      "path": "source-inspection/AKK202-slide37-image18.png",
+      "bytes": 18909,
+      "sha256": "f6ab1979560fe39780c46307805339a04c10b19395a6cb5639629d6e9ca647e6",
+      "kind": "Original PPTX embedded source image, inspected"
+    },
+    {
+      "path": "source-inspection/FFM_CH4-slide001.txt",
+      "bytes": 269,
+      "sha256": "e1d9626f8616559d0ec027f086e0d954ddc62a8558f0bb1e76c900d72d99da39",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FFM_CH4-slide002.txt",
+      "bytes": 122,
+      "sha256": "4bd3f7af910e0cd7b43dae77d23ee9761eb0d5981db75520e62fd48e597722f6",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FMM_CH10-slide001.txt",
+      "bytes": 257,
+      "sha256": "c56b09ca30c90062fab1f95874662bbd34a8aac2d297045d9d87851a5809c6cb",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FMM_CH10-slide002.txt",
+      "bytes": 102,
+      "sha256": "cbbaae84d0c98574b0214ba9efea4c3075b0a35ce9c523ba36d0ea4ef8f0db9e",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FMM_CH5-slide001.txt",
+      "bytes": 256,
+      "sha256": "5324de524ae3c276c6f1bea9e1dd94f91ee3b38bddaa5e2864f52c5620c7caef",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FMM_CH5-slide002.txt",
+      "bytes": 96,
+      "sha256": "ebc49fbf0d57d5b5b28d6d1ec2546c28e5d67e2e9b4db343e5225a9bcf153838",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FMM_CH8-slide001.txt",
+      "bytes": 261,
+      "sha256": "1a91372b36f2fc74564413c95df15fc2de4f1f34edd8da0368afe74519ce07de",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/FMM_CH8-slide002.txt",
+      "bytes": 69,
+      "sha256": "bbe8aaea880e1af089c801b8c93c470c0f86c95f81fa09f6d87a5ff157666624",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide001.txt",
+      "bytes": 299,
+      "sha256": "d729b8fae398b074e2bb5c51b52e4191b4e7f97f7ddb190c1aa90153e9e9079d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide002.txt",
+      "bytes": 563,
+      "sha256": "851c52949811e2eb95eb185a5618010dfa466f8fd3dd52a3fdfaa89876b4cf56",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide033.txt",
+      "bytes": 382,
+      "sha256": "28886f4740455e80b94a7b3d2d14c3072f5a50f2108e1946bbf3e0e35c097407",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide034.txt",
+      "bytes": 828,
+      "sha256": "b2eb81c0f8e878df26615afd645f4827e2428a61fafa6c4c1bca9592ba78e3a3",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide035.txt",
+      "bytes": 216,
+      "sha256": "e612ab814055fa1029d9870324f026492f1f8a8d5e946c599a91e02b7c37fb26",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide036.txt",
+      "bytes": 755,
+      "sha256": "86cf176655f8568a846e516a6d8dc2da7f4952eaf0da77db0d888394699b546e",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide037.txt",
+      "bytes": 216,
+      "sha256": "95f6b126afbab332ce832ed4d0868df60b80676da8b47538626978040543b53e",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide054.txt",
+      "bytes": 340,
+      "sha256": "3f708bac97b6ac07ddcc89d0c8b6ca774d472cd15ebf0aeddd1d6bfca96ab8ea",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide055.txt",
+      "bytes": 347,
+      "sha256": "174f88ce6fb28c794ee4b931fcaa1bb40c4e88084cc0563b1f64124e13d93ca2",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide056.txt",
+      "bytes": 609,
+      "sha256": "8ce041c5cfecaa1737564659d2c42609aa81e3783c9368b324ef4eda79e9becc",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide057.txt",
+      "bytes": 224,
+      "sha256": "919b3a92bb57e6c4fe1be63fcaf7a9739adece4abbb0c3ea9a4556900d058f9d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide058.txt",
+      "bytes": 354,
+      "sha256": "c13a5d93fdeba68ac3ac57479097197b3fd2c69c405fd983322cf248638bd50b",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide059.txt",
+      "bytes": 227,
+      "sha256": "6865728c97c495477d837e80fae33f541f42cce3333763b740eb8e1bd5921904",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide060.txt",
+      "bytes": 322,
+      "sha256": "44b2ad618aaf52e497b91caf28049c6d48c93237789fd8bf249f66128991e606",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide061.txt",
+      "bytes": 615,
+      "sha256": "204b95df23132b9603f1c4ae3f1ddfba7b20669cc9800cae73deb1c5fb17a74a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide062.txt",
+      "bytes": 150,
+      "sha256": "379ff92d9db06435b0b772bbeede10839672d47e2d256ed5d39772dc42620015",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide063.txt",
+      "bytes": 347,
+      "sha256": "f2205583424349ac5402454f4cf5f41ef1569856f3a31f5f009c55172352f6b9",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide064.txt",
+      "bytes": 225,
+      "sha256": "cbcefd0eb07d6d5e2dd5cd287fa540c7d79f57ab6e0c35e4660e5f71be5e6134",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide065.txt",
+      "bytes": 483,
+      "sha256": "db5aafbcae7f4edd675ede209e7b888056f969dd310505086f1862d200818ea1",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/IA_IFRS_Ch9-slide066.txt",
+      "bytes": 190,
+      "sha256": "190be2cc0326426f7e567dd68997d6ce90d7cd984cb46b6277ff588be7556dd3",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF001.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF002.txt",
+      "bytes": 690,
+      "sha256": "542c6f95d08bb2cb5d09a9f9630b981e4b424bd02344cdc5af98fbf108d643a7",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF003.txt",
+      "bytes": 1224,
+      "sha256": "5c2faa177367767042aef74a677bac98868126b8d75d8c6f2b0eb9a9a70506c1",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF004.txt",
+      "bytes": 2428,
+      "sha256": "cb040c0bc485fd6760d0b46fc0bb738dc575a25af08fdf1d9f6182e64b7f662c",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF005.txt",
+      "bytes": 1733,
+      "sha256": "6897d82f9dffb734a6ff9ed17f81934d20da5d9abffc4a0fdd64a68110ea5a21",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF006.txt",
+      "bytes": 1170,
+      "sha256": "a891ff0819a90d26dd09f8c789eb3308b8202f71f66e4b6d85a9ec8ea0c285b0",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF007.txt",
+      "bytes": 1175,
+      "sha256": "3e2b26d5a57503dedae00c694f32d0e3c4f299ef51bc73f695682b13955b0de4",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF008.txt",
+      "bytes": 1987,
+      "sha256": "20c5848400f1b55b4e55717bac185ba93d5b3a77b920a421bdb4a84d54e9e89a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF009.txt",
+      "bytes": 1470,
+      "sha256": "e12f9c3d804eb7a4d1c7c7b2297ce3ca484cbe84dc3e3de4cf63b4a1d5cafa14",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF010.txt",
+      "bytes": 952,
+      "sha256": "0bd2f79a021a19a8862bd608349de8ab9c1ac2a526c6b8dff10f4b1754691dbc",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF011.txt",
+      "bytes": 1035,
+      "sha256": "72e03853535698f2d16cb7f885f428b02cef37742bc3251830b8c9d2a3153299",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF012.txt",
+      "bytes": 1105,
+      "sha256": "965477fc63298ece14ca49c38146d017fd21d2c68e9acc8f1e75b44c76ae018d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF013.txt",
+      "bytes": 755,
+      "sha256": "eb7cfe92a1937ee0fc226c8c2ba888fda41f62a94f7eefaf8a8f3428527c75ed",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF014.txt",
+      "bytes": 1924,
+      "sha256": "c71f90e112985a8e8d6e4f3f91a37d91966be2324afb509462d33526b5133921",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF015.txt",
+      "bytes": 1481,
+      "sha256": "74f9ea7d515e06ba6ed0778ea4d552f18f8718c94f81c5cd17f54892e1d1f94f",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF016.txt",
+      "bytes": 1474,
+      "sha256": "a2a6dc3c5eec15c21e78976a244def60760cf1792f0d030bdb10f0a6c58c61cd",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF017.txt",
+      "bytes": 1587,
+      "sha256": "7d407a55c372da77cbc8ef6f03fb7e02f46859debcf6b722a88224c28c85289e",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF018.txt",
+      "bytes": 1748,
+      "sha256": "d3ef8b61b535ac68980da4ff49ec30ac1b84ec8ae6e430e93bd742e3531328d6",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF019.txt",
+      "bytes": 1957,
+      "sha256": "048dc811b7842f0165d9e65d4d1ac6bbe1dafe9ba0193cab59ee3f046d7f8462",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF020.txt",
+      "bytes": 836,
+      "sha256": "b79c8dbd1e8fc9e7775d4f81a5e2f93f67631681fbb874526fc0aec0194fda26",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF021.txt",
+      "bytes": 3273,
+      "sha256": "71d0ca0443e9a0322992cb95790838a30b393cd3529477340ef32441cff315ed",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-book-PDF022.txt",
+      "bytes": 3744,
+      "sha256": "bfad249e260ba1b0f6b182e2ed1e282b3e67e4e0994cb05099b26f42d077ceb4",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF001.txt",
+      "bytes": 504,
+      "sha256": "01b87d730d447f85be20c2cd079b3415a6743a23730a8d7f47eecdbb9a13e02d",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF002.txt",
+      "bytes": 376,
+      "sha256": "a3bf655690686e1c3383e97b68001fbe14be97d21c95fefc683ed91f3f25e7f4",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF003.txt",
+      "bytes": 227,
+      "sha256": "d31152218b6c9eb3bd87b55caccfa84b67d793d46b7a9fe83d7e469ac475c8bd",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF004.txt",
+      "bytes": 227,
+      "sha256": "bb4ae97f169d633e22470266c5f46b29445db0335e721a6a6fc5f954c78b33c9",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF005.txt",
+      "bytes": 484,
+      "sha256": "94bb5d41b46ccfe911af04d4bc2427b30a859a9185e067355f0f948029a17106",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF006.txt",
+      "bytes": 241,
+      "sha256": "5c572e69498a4998f3c1243ecaab298a2e3a8cf490692545a4c62e36befb7341",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF007.txt",
+      "bytes": 670,
+      "sha256": "0f43ad00d58f16c95d3ac967f3755e80967a584b42358938811f0b0d0035b845",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF008.txt",
+      "bytes": 280,
+      "sha256": "a4959a2d64e37d24c3c4c56b054bd133655f49f9247cb1a98eaf6fe6baccd78a",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF009.txt",
+      "bytes": 227,
+      "sha256": "99c45d66566ddc2c5ba87d54df73f8fff3213338ca4bd4211a540acc8f94ad33",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF010.txt",
+      "bytes": 228,
+      "sha256": "b67b3f08aede8afb7a1df7d4350fb77fc24d223093a224814e520b26ead6e75b",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-inspection/MNK201-lecturer-CH1-PDF011.txt",
+      "bytes": 228,
+      "sha256": "b84791ee56ecaced538d4e57edab21478bc2043d7b605eb415f14c3db18500b7",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "source-reconciliation.json",
+      "bytes": 58258,
+      "sha256": "92fd93d65d1b0e66e3d131ff9174e30ddf80533c9cdf6c9e15b85f7b810c17ef",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "_report_lanjutan1.md",
+      "bytes": 5218,
+      "sha256": "351dcd6f7c212ff0897ec907a7a8424f900691db9cc3cd7103723a2f219bd10e",
+      "kind": "Source inspection/report/metadata"
+    },
+    {
+      "path": "_report_rekonsiliasi_sumber_lanjutan1.md",
+      "bytes": 6557,
+      "sha256": "12fc8f5d60bd5929893c1f25a4a07bc226cf70728b6f2149dc8d7a4ebd0ada49",
+      "kind": "Source inspection/report/metadata"
+    }
+  ],
+  "websiteCapturesCurrentChat": 0,
+  "wholeTmAuditsComplete": 0,
+  "checkPassed": false,
+  "e2ePassed": false,
+  "blockedAfterRestart": true
+}

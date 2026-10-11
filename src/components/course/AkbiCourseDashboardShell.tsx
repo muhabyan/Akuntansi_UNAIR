@@ -182,7 +182,6 @@ export default function AkbiCourseDashboardShell({
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
               <div>
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white">Tatap Muka {materialPhase === 'pra_uts' ? '1–7' : '8–14'}</h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{visibleTms.length} materi tersedia</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <div className="flex rounded-lg bg-gray-100 dark:bg-gray-800 p-1">

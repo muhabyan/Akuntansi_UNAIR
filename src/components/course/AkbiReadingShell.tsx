@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type MutableRefObject, type ReactNode, type RefObject } from 'react';
 import {
-  ArrowLeft, BookOpen, Check, ChevronLeft, ChevronRight, List, PanelRight, Table2, Sigma, X,
+  ArrowLeft, Check, ChevronLeft, ChevronRight, List, PanelRight, X,
 } from 'lucide-react';
 import type { ContentBlock, Course, Reading } from '../../types';
 import CourseBlockCard from './CourseBlockCard';
@@ -27,14 +27,6 @@ function slugifyHeading(text: string) {
 
 function headingId(text: string, blockIndex: number) {
   return `${slugifyHeading(text)}-${blockIndex + 1}`;
-}
-
-function countBlocks(blocks: ContentBlock[], kinds: ContentBlock['kind'][]): number {
-  return blocks.reduce((total, block) => {
-    const own = kinds.includes(block.kind) ? 1 : 0;
-    if (block.kind === 'example' || block.kind === 'solution-reveal') return total + own + countBlocks(block.blocks, kinds);
-    return total + own;
-  }, 0);
 }
 
 function getDrawerFocusable(panel: HTMLDivElement) {
@@ -147,9 +139,6 @@ export default function AkbiReadingShell({ course, reading, done, isFirst, isLas
   const utilityPanelRef = useRef<HTMLDivElement>(null);
   const restoreFocusRef = useRef(true);
 
-  const formulaCount = useMemo(() => countBlocks(reading.blocks, ['formula']), [reading.blocks]);
-  const tableCount = useMemo(() => countBlocks(reading.blocks, ['table', 'journal']), [reading.blocks]);
-  const practiceCount = useMemo(() => countBlocks(reading.blocks, ['builder', 'interactive-match', 'journal-builder', 'solution-reveal', 'statement', 't-account-builder', 'table-fill']), [reading.blocks]);
 
   useEffect(() => { setActiveHeadingId(headings[0]?.id ?? ''); setDrawer(null); }, [headings, reading.tm]);
 
@@ -358,26 +347,6 @@ export default function AkbiReadingShell({ course, reading, done, isFirst, isLas
             ) : (
               <p className="text-sm text-gray-500 italic">Ikuti alur materi dan contoh pada halaman ini.</p>
             )}
-          </section>
-          <section>
-            <h3 className="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4 border-b border-gray-200 dark:border-gray-800 pb-2">Peta konten</h3>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 flex flex-col items-center justify-center text-center">
-                <Sigma size={20} className="text-indigo-500 mb-1" />
-                <span className="text-2xl font-black text-gray-900 dark:text-white">{formulaCount}</span>
-                <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">Formula</span>
-              </div>
-              <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 flex flex-col items-center justify-center text-center">
-                <Table2 size={20} className="text-cyan-500 mb-1" />
-                <span className="text-2xl font-black text-gray-900 dark:text-white">{tableCount}</span>
-                <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">Tabel</span>
-              </div>
-              <div className="col-span-2 bg-gray-50 dark:bg-gray-800 rounded-lg p-3 flex flex-col items-center justify-center text-center">
-                <BookOpen size={20} className="text-violet-500 mb-1" />
-                <span className="text-2xl font-black text-gray-900 dark:text-white">{practiceCount}</span>
-                <span className="text-xs text-gray-500 uppercase tracking-widest mt-1">Latihan & Praktik</span>
-              </div>
-            </div>
           </section>
         </div>
       </Drawer>

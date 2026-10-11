@@ -104,7 +104,7 @@
     color: rgb(156 163 175);
   }
 
-  .sia-reading-document table.sia-responsive-table caption {
+  .sia-reading-document table.sia-responsive-table caption:not(.sr-only) {
     display: block;
     width: 100%;
     padding: 0.65rem 0.75rem;

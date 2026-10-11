@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { ArrowDown, ArrowLeft, BookOpen, Check, Clock, Maximize, Minimize, Target } from 'lucide-react';
 import type { Reading } from '../../types';
+import { REVIEW_UAS_TM, REVIEW_UTS_TM } from '../../lib/postUts';
 import { renderText } from './MarkdownContent';
 import { BackToTopButton, estimateLayeredReading, InlineMarkdown, isSourceOnly, SourceLine } from './LayeredBlocks';
 import { getReadingBlockId } from './ReadingOutline';
@@ -12,16 +13,20 @@ interface CourseHeaderProps {
   reading: Reading;
   onBack: () => void;
   showZenControl?: boolean;
+  /** Label blok kedua mata kuliah ini, mis. "TM 9–15" atau "TM 8–14" (mengikuti kontrak). */
+  postUtsLabel?: string;
+  /** Diisi bila halaman ini ulasan (Review UTS atau Review UAS), bukan TM biasa. */
+  reviewKind?: 'uts' | 'uas';
 }
 
-function getReadingContext(reading: Reading) {
+function getReadingContext(reading: Reading, postUtsLabel: string, reviewKind?: 'uts' | 'uas') {
   // Pages with their own badge are the Persiapan UTS pages of a layered course.
   if (reading.badge) return { badge: reading.badge, phase: 'TM 1–7 / Pra-UTS', isReview: false };
-  if (reading.tm === 0) return { badge: 'Review UTS', phase: 'TM 1–7 / Pra-UTS', isReview: true };
-  if (reading.tm === 15) return { badge: 'Review UAS', phase: 'TM 8–14 / Pra-UAS', isReview: true };
+  if (reviewKind === 'uts' || reading.tm === REVIEW_UTS_TM) return { badge: 'Review UTS', phase: 'TM 1–7 / Pra-UTS', isReview: true };
+  if (reviewKind === 'uas' || reading.tm === REVIEW_UAS_TM) return { badge: 'Review UAS', phase: `${postUtsLabel} / Pra-UAS`, isReview: true };
   return {
     badge: `TM ${reading.tm}`,
-    phase: reading.tm <= 7 ? 'TM 1–7 / Pra-UTS' : 'TM 8–14 / Pra-UAS',
+    phase: reading.tm <= 7 ? 'TM 1–7 / Pra-UTS' : `${postUtsLabel} / Pra-UAS`,
     isReview: false,
   };
 }
@@ -96,9 +101,9 @@ function LayeredEntry({ courseName, reading, onBack, badge, phase }: { courseNam
   );
 }
 
-export default function CourseHeader({ courseName, reading, onBack, showZenControl = true }: CourseHeaderProps) {
+export default function CourseHeader({ courseName, reading, onBack, showZenControl = true, postUtsLabel = 'TM 8–14', reviewKind }: CourseHeaderProps) {
   const [zenMode, setZenMode] = useState(false);
-  const context = getReadingContext(reading);
+  const context = getReadingContext(reading, postUtsLabel, reviewKind);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -156,8 +161,7 @@ export default function CourseHeader({ courseName, reading, onBack, showZenContr
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs">
-          <span className="rounded-md bg-blue-50 px-2 py-1 font-bold text-blue-700 dark:bg-blue-950/45 dark:text-blue-300">{context.badge}</span>
-          <span className="text-muted">{reading.blocks.length} blok materi</span>
+          <span className="rounded-md bg-blue-50 px-2 py-1 font-bold text-blue-700 dark:bg-blue-950/45 dark:text-blue-300">{context.badge}</span>
         </div>
         {reading.ref && <div className="mt-1 max-w-[70ch]"><SourceLine text={`Sumber: ${reading.ref}`} /></div>}
 

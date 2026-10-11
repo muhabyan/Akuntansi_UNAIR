@@ -73,8 +73,8 @@ assert.equal(appSource.match(/(?<!function )replaceLegacyCourseUrl\(\);/g)?.leng
 
 // ---- The renamed data: everything is served under PJK301 and nothing under the old code.
 const content = await loadCourseContent('PJK301');
-assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), Array.from({ length: 14 }, (_, i) => i + 1));
-assert.deepEqual(Object.keys(content.reviews).sort(), ['uas', 'uts']);
+assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14]); // TM 8 = UTS (jadi ulasan), materi baru mulai TM 9 sesuai kontrak
+assert.deepEqual(Object.keys(content.reviews).sort(), ['uts']); // TM14 sudah TM biasa, tidak lagi ditiru sebagai kartu Review UAS
 const cards = getFlashcards('PJK301');
 assert.equal(cards.length, 84);
 assert.equal(perpajakan[0].flashcardCount, cards.length, 'catalog flashcardCount matches the deck');

@@ -60,7 +60,7 @@ export const TM12_READING: Reading = {
   tm: 12,
   title: 'Studi Kasus Strategik II: Fast Fashion vs Luxury Strategy (H&M Dilemma & Louis Vuitton LVMH)',
   ref: 'Ferdows, Lewis, & Machuca (Rapid-Fire Fulfillment - Zara) | Jean-Noel Kapferer (The Luxury Strategy) | Kasus Inditex vs LVMH',
-  intro: 'TM 12 menyajikan studi kasus komparatif dua kutub strategi industri fashion dunia: Model Respon Cepat Fast Fashion (Inditex Zara) vs Strategi Kemewahan Murni (LVMH Louis Vuitton): arsitektur rantai pasok berbasis waktu (Time-Based Competition), kedekatan lokasi manufaktur (Near-Shoring vs Far-Shoring), pengelolaan kelangkaan buatan (Artificial Scarcity), minimalisasi potongan harga (Markdown Avoidance), serta logika anti-hukum ekonomi tradisional pada strategi barang mewah Veblen (The Anti-Laws of Marketing).',
+  intro: 'TM 12 membandingkan dua kutub strategi industri fashion lewat studi kasus: respons cepat fast fashion (Inditex Zara) dan kemewahan murni (LVMH Louis Vuitton). Topiknya rantai pasok berbasis waktu (Time-Based Competition), lokasi manufaktur dekat vs jauh (Near-Shoring vs Far-Shoring), kelangkaan buatan (Artificial Scarcity), upaya menghindari potongan harga (Markdown Avoidance), dan logika barang mewah Veblen yang berlawanan dengan hukum ekonomi biasa (The Anti-Laws of Marketing).',
   objectives: [
     'Menganalisis sistem rantai pasok Quick Response Zara yang memangkas siklus desain ke rak toko menjadi 15 hari.',
     'Menjelaskan mengapa Zara mempertahankan fasilitas manufaktur di Eropa berupah tinggi (Near-Shoring) demi fleksibilitas.',

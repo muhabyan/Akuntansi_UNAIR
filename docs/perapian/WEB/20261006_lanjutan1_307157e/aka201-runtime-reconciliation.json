@@ -1,0 +1,49 @@
+{
+  "pass": true,
+  "source": "existing inbox, matched 42 archive files byte for byte",
+  "scope": "All seven original raw reading objects; generated files are evidence only, no production file written",
+  "results": [
+    {
+      "tm": 1,
+      "input": "C:/cek/.content-inbox/AKA201/TM01/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm1.ts",
+      "deepEqual": true
+    },
+    {
+      "tm": 2,
+      "input": "C:/cek/.content-inbox/AKA201/TM02/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm2.ts",
+      "deepEqual": true
+    },
+    {
+      "tm": 3,
+      "input": "C:/cek/.content-inbox/AKA201/TM03/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm3.ts",
+      "deepEqual": true
+    },
+    {
+      "tm": 4,
+      "input": "C:/cek/.content-inbox/AKA201/TM04/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm4.ts",
+      "deepEqual": true
+    },
+    {
+      "tm": 5,
+      "input": "C:/cek/.content-inbox/AKA201/TM05/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm5.ts",
+      "deepEqual": true
+    },
+    {
+      "tm": 6,
+      "input": "C:/cek/.content-inbox/AKA201/TM06/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm6.ts",
+      "deepEqual": true
+    },
+    {
+      "tm": 7,
+      "input": "C:/cek/.content-inbox/AKA201/TM07/05_student_learning_version.md",
+      "output": "source-inspection/AKA201-generated/tm7.ts",
+      "deepEqual": true
+    }
+  ]
+}

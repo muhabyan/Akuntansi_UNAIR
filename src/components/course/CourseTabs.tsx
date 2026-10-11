@@ -46,9 +46,6 @@ export default function CourseTabs({ tabs, activeTab, onTabChange, searchQuery }
                 <span className={active ? 'text-blue-600 dark:text-blue-400' : 'text-gray-400'}>{tab.icon}</span>
                 <span className="min-w-0">
                   <span className="block text-sm font-bold leading-tight">{tab.label}</span>
-                  {tab.count !== undefined && (
-                    <span className="mt-0.5 block text-[11px] font-medium text-gray-500 dark:text-gray-400">{tab.count} materi</span>
-                  )}
                 </span>
                 {active && <span className="absolute inset-x-3 bottom-0 h-0.5 rounded-full bg-blue-600 dark:bg-blue-400" />}
               </button>

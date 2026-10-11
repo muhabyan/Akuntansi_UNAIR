@@ -1,0 +1,10 @@
+{
+  "task": "pr45-runtime",
+  "attempt": "",
+  "cwd": "C:/cek/.worktrees/perapian-pr45",
+  "command": "npm.cmd run test:runtime",
+  "startedAt": "2026-10-06T12:37:20.370Z",
+  "finishedAt": "2026-10-06T12:37:27.463Z",
+  "exitCode": 0,
+  "rawLog": "logs/pr45-runtime.log"
+}

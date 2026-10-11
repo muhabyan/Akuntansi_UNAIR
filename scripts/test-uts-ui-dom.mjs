@@ -174,7 +174,7 @@ try {
         await waitFor(() => Boolean(window.document.querySelector('.course-diagram-bpmn')), `${code} TM3 flow diagram`);
         const diagram = window.document.querySelector('.course-diagram-bpmn');
         check(Boolean(diagram?.textContent.includes('Pool Customer') && diagram.textContent.includes('lane Barista') && diagram.textContent.includes('message flow') && diagram.querySelector('path[d*="M308 150 v8"]') && diagram.querySelectorAll('polygon').length >= 14), `${width}px DOM: SII306 TM3 shows both pools, Barista lane, and explicit message-flow dashes and arrowheads`);
-        const mobileFlow = window.document.querySelector('section[aria-label="Alur Starbucks di layar sempit"]');
+        const mobileFlow = window.document.querySelector('section[aria-label="Alur Starbucks"]');
         check(Boolean(mobileFlow?.querySelectorAll('li > div.rounded-xl').length === 5 && mobileFlow.querySelectorAll('div.border-dashed').length === 4 && mobileFlow.textContent.includes('Customer bergerak ke jendela')), `${width}px DOM: SII306 TM3 mobile flow shows ordered actor stages and message exchanges`);
       }
       await render(React.createElement(CourseLayout, { key: `${width}-${code}-tools`, course, onBack() {} }));

@@ -77,7 +77,7 @@ export const TM3_READING: Reading = {
   tm: 3,
   title: 'Time Value of Money (TVM), Cash Flow Mechanics, & Loan Amortization',
   ref: 'Brigham & Ehrhardt Ch. 5 | Brigham & Houston Ch. 5 | Standar Matematika Keuangan FEB UNAIR',
-  intro: 'TM 3 adalah fondasi inti dari seluruh keputusan keuangan korporasi. Seluruh teknik penilaian obligasi, valuasi saham, analisis kelayakan investasi modal (NPV/IRR), hingga restrukturisasi utang perbankan berakar pada konsep Time Value of Money (TVM). Modul ini disusun dengan pendekatan ramah pemula: membedah setiap simbol, menjabarkan arti angka per angka, mengupas skedul amortisasi pinjaman, serta menyajikan latihan bertahap sesuai standar ujian FEB UNAIR.',
+  intro: 'TM 3 adalah fondasi dari hampir semua keputusan keuangan korporasi. Penilaian obligasi, valuasi saham, analisis kelayakan investasi (NPV/IRR), sampai restrukturisasi utang bank semuanya berakar pada Time Value of Money (TVM). Modul ini dibuat ramah pemula: setiap simbol dijelaskan, angka dibahas satu per satu, skedul amortisasi pinjaman dibedah, dan latihannya bertahap mengikuti standar ujian FEB UNAIR.',
   objectives: [
     'Memahami intuisi fundamental TVM dan menerjemahkan simbol-simbol matematis (PV, FV, PMT, I/Y, N, EAR, APR) ke bahasa praktis.',
     'Menghitung Present Value (PV) dan Future Value (FV) arus kas tunggal, anuitas biasa, anuitas jatuh tempo, perpetuitas, dan arus kas tidak merata.',

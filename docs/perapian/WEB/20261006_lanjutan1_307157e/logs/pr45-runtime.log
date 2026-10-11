@@ -1,0 +1,16 @@
+
+> e-learning-akuntansi-feb-unair@1.0.0 test:runtime
+> node scripts/runtime-smoke.mjs
+
+Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>.
+    at p
+    at components.p (C:/cek/.worktrees/perapian-pr45/src/components/course/MarkdownContent.tsx:102:24)
+    at Markdown (file:///C:/cek/.worktrees/perapian-pr45/node_modules/react-markdown/lib/index.js:176:21)
+    at p
+    at div
+    at article
+    at QuestionFrame (C:/cek/.worktrees/perapian-pr45/src/components/QuizView.tsx:139:26)
+    at div
+    at div
+    at QuizView (C:/cek/.worktrees/perapian-pr45/src/components/QuizView.tsx:332:21)
+Runtime smoke PASS: 7 assets, SPA routes, malformed-route guard, 404 source, timed-exam behaviour, dataset fingerprint, exam-session persistence behaviour, and persistence hooks

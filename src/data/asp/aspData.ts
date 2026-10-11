@@ -20,6 +20,14 @@ import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
 
+/**
+ * Kontrak ASP menomori pertemuan 1 sampai 14 berurutan (UTS dan UAS tidak diberi nomor).
+ * Materi setelah UTS karena itu dimulai di TM 8: SAPP/SAPD (TM 8), kinerja (TM 9), audit (TM 10), nirlaba (TM 11),
+ * BLU/BLUD (TM 13), dan topik riset (TM 14). TM 12 (laporan keuangan partai politik) masih disiapkan sebagai bacaan tersendiri;
+ * ringkasannya sementara ada di TM 11.
+ */
+const withTm = (reading: Reading, tm: number): Reading => ({ ...reading, tm });
+
 export const AKS201_READINGS: Record<number, Reading> = {
   1: TM1_READING,
   2: TM2_READING,
@@ -28,16 +36,14 @@ export const AKS201_READINGS: Record<number, Reading> = {
   5: TM5_READING,
   6: TM6_READING,
   7: TM7_READING,
-  8: TM8_READING,
-  9: TM9_READING,
-  10: TM10_READING,
-  11: TM11_READING,
-  12: TM12_READING,
-  13: TM13_READING,
+  8: withTm(TM9_READING, 8),
+  9: withTm(TM10_READING, 9),
+  10: withTm(TM11_READING, 10),
+  11: withTm(TM12_READING, 11),
+  13: withTm(TM13_READING, 13),
   14: TM14_READING,
 };
 
 export const AKS201_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
-  uas: TM14_READING,
 };

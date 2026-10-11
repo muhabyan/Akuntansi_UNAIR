@@ -22,14 +22,14 @@ function renderSymbols(mobile: boolean): string {
       <rect x="0" y="0" width="${tileWidth}" height="${tileHeight}" rx="13" fill="#f8fafc" stroke="#cbd5e1"/>
       <g transform="translate(0 ${iconY})">${symbol.path}</g>
       <text x="119" y="${mobile ? 39 : 48}" fill="#0f172a" font-size="${fontSize}" font-weight="700">${symbol.name}</text>
-      <text x="119" y="${mobile ? 64 : 74}" fill="#475569" font-size="12">${symbol.description}</text>
+      <text x="119" y="${mobile ? 64 : 74}" fill="#475569" font-size="${mobile ? 13 : 12}">${symbol.description}</text>
     </g>`;
   }).join('');
   return `<svg class="course-diagram-svg" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,Arial,sans-serif">
     <rect x="1" y="1" width="${width - 2}" height="${height - 2}" rx="16" fill="#fff" stroke="#cbd5e1"/>
     <text x="${mobile ? 16 : 28}" y="${mobile ? 31 : 39}" fill="#0f172a" font-size="${mobile ? 18 : 20}" font-weight="700">${mobile ? 'Simbol flowchart' : 'Simbol flowchart punya fungsi berbeda'}</text>
     ${tiles}
-    <text x="${mobile ? 16 : 28}" y="${height - 13}" fill="#475569" font-size="${mobile ? 10 : 12}">Baca bentuk lalu ikuti arah aliran dokumen dan proses.</text>
+    <text x="${mobile ? 16 : 28}" y="${height - 13}" fill="#475569" font-size="12">Baca bentuk lalu ikuti arah aliran dokumen dan proses.</text>
   </svg>`;
 }
 

@@ -1,0 +1,2667 @@
+[
+  {
+    "id": "MNU108-TM01",
+    "code": "MNU108",
+    "tm": 1,
+    "title": "Leading Edge Management",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 103,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 38,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 4,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 1 (hal. 2–51) · RPP Pengantar Manajemen pertemuan 1",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM01/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM01"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM01.json",
+      "flattened": "readings/MNU108-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNU108-TM02",
+    "code": "MNU108",
+    "tm": 2,
+    "title": "The Environment and Corporate Culture",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 20,
+    "objectives": 7,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[135]",
+        "words": 94
+      }
+    ],
+    "tables": 32,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 5,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 2 (hal. 52–83) · RPP Pengantar Manajemen pertemuan 2",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM02/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM02"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM02.json",
+      "flattened": "readings/MNU108-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNU108-TM03",
+    "code": "MNU108",
+    "tm": 3,
+    "title": "Managing in a Global Environment",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 16,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 38,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 5,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 3 (hal. 84–115) · RPP Pengantar Manajemen pertemuan 3",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM03/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM03"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM03.json",
+      "flattened": "readings/MNU108-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNU108-TM04",
+    "code": "MNU108",
+    "tm": 4,
+    "title": "Managing Ethics and Social Responsibility",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 18,
+    "objectives": 7,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[63]",
+        "words": 89
+      },
+      {
+        "at": "blocks[155]",
+        "words": 82
+      }
+    ],
+    "tables": 39,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 8,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 4 (hal. 116–147) · RPP Pengantar Manajemen pertemuan 4",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM04/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM04"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM04.json",
+      "flattened": "readings/MNU108-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNU108-TM05",
+    "code": "MNU108",
+    "tm": 5,
+    "title": "Planning and Goal Setting",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 15,
+    "objectives": 6,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[94]",
+        "words": 82
+      },
+      {
+        "at": "blocks[145]",
+        "words": 99
+      }
+    ],
+    "tables": 45,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 6,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 5 (hal. 148–190) · RPP Pengantar Manajemen pertemuan 5",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM05/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM05"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM05.json",
+      "flattened": "readings/MNU108-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNU108-TM06",
+    "code": "MNU108",
+    "tm": 6,
+    "title": "Managerial Decision Making",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 16,
+    "objectives": 6,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[27]",
+        "words": 98
+      },
+      {
+        "at": "blocks[46]",
+        "words": 121
+      },
+      {
+        "at": "blocks[95]",
+        "words": 81
+      },
+      {
+        "at": "blocks[111]",
+        "words": 91
+      },
+      {
+        "at": "blocks[147]",
+        "words": 88
+      },
+      {
+        "at": "blocks[165]",
+        "words": 87
+      }
+    ],
+    "tables": 32,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 8,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 6 (hal. 192–225) · RPP Pengantar Manajemen pertemuan 6",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM06/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM06"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM06.json",
+      "flattened": "readings/MNU108-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNU108-TM07",
+    "code": "MNU108",
+    "tm": 7,
+    "title": "Designing Organization Structure",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 16,
+    "objectives": 7,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[16]",
+        "words": 86
+      },
+      {
+        "at": "blocks[17]",
+        "words": 123
+      },
+      {
+        "at": "blocks[40]",
+        "words": 102
+      },
+      {
+        "at": "blocks[58]",
+        "words": 113
+      },
+      {
+        "at": "blocks[79]",
+        "words": 114
+      },
+      {
+        "at": "blocks[108]",
+        "words": 110
+      },
+      {
+        "at": "blocks[116]",
+        "words": 106
+      },
+      {
+        "at": "blocks[148]",
+        "words": 117
+      },
+      {
+        "at": "blocks[151]",
+        "words": 89
+      },
+      {
+        "at": "blocks[154]",
+        "words": 82
+      },
+      {
+        "at": "blocks[182]",
+        "words": 87
+      },
+      {
+        "at": "blocks[201]",
+        "words": 91
+      }
+    ],
+    "tables": 51,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 3,
+    "runtimeReference": "Daft & Marcic, Understanding Management 12e · Ch. 7 (hal. 226–265) · RPP Pengantar Manajemen pertemuan 7",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU108/TM07/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU108/TM07"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNU108-TM07.json",
+      "flattened": "readings/MNU108-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM01",
+    "code": "MNK201",
+    "tm": 1,
+    "title": "An Overview of Financial Management, Corporate Goals, & Agency Theory",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 43,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 3,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Brigham & Houston (Fundamentals of Financial Management 16e/2022 Ch. 1) | Silabus FEB UNAIR 2026 | Jensen & Meckling (1976)",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM01.json",
+      "flattened": "readings/MNK201-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM02",
+    "code": "MNK201",
+    "tm": 2,
+    "title": "Analysis of Financial Statements, Financial Ratio Systems, & The DuPont Identity",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 69,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 9,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Brigham & Houston (Fundamentals of Financial Management 16e/2022 Ch. 3 & Ch. 4) | Silabus FEB UNAIR 2026",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM02.json",
+      "flattened": "readings/MNK201-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM03",
+    "code": "MNK201",
+    "tm": 3,
+    "title": "Time Value of Money (TVM), Cash Flow Mechanics, & Loan Amortization",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 61,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 6,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 1,
+    "runtimeReference": "Brigham & Ehrhardt Ch. 5 | Brigham & Houston Ch. 5 | Standar Matematika Keuangan FEB UNAIR",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM03.json",
+      "flattened": "readings/MNK201-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM04",
+    "code": "MNK201",
+    "tm": 4,
+    "title": "Risk and Rates of Return, Portfolio Theory, & Capital Asset Pricing Model (CAPM)",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 68,
+    "objectives": 5,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[29]",
+        "words": 88
+      },
+      {
+        "at": "blocks[51].blocks[0]",
+        "words": 84
+      }
+    ],
+    "tables": 6,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Brigham & Houston Ch. 8 | Brigham & Ehrhardt Ch. 6 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM04.json",
+      "flattened": "readings/MNK201-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM05",
+    "code": "MNK201",
+    "tm": 5,
+    "title": "The Cost of Capital & Weighted Average Cost of Capital (WACC)",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 83,
+    "objectives": 5,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[35].blocks[0]",
+        "words": 105
+      }
+    ],
+    "tables": 1,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Brigham & Houston Ch. 9 | Brigham & Ehrhardt Ch. 9 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM05.json",
+      "flattened": "readings/MNK201-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM06",
+    "code": "MNK201",
+    "tm": 6,
+    "title": "The Basics of Capital Budgeting: NPV, IRR, MIRR, PI, & Payback Period",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 77,
+    "objectives": 5,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[9].blocks[0]",
+        "words": 88
+      },
+      {
+        "at": "blocks[12].blocks[2]",
+        "words": 85
+      },
+      {
+        "at": "blocks[15].blocks[0]",
+        "words": 104
+      }
+    ],
+    "tables": 3,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 2,
+    "runtimeReference": "Brigham & Houston Ch. 10 | Brigham & Ehrhardt Ch. 10 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM06.json",
+      "flattened": "readings/MNK201-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNK201-TM07",
+    "code": "MNK201",
+    "tm": 7,
+    "title": "Cash Flow Estimation, Tax Shield Depreciation, & Project Risk Analysis",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 93,
+    "objectives": 5,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[13].blocks[0]",
+        "words": 117
+      },
+      {
+        "at": "blocks[18].blocks[0]",
+        "words": 89
+      }
+    ],
+    "tables": 2,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Brigham & Houston Ch. 11 | Brigham & Ehrhardt Ch. 11 | Silabus Ujian Tengah Semester (UTS) FEB UNAIR",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket content-pipeline belum ditemukan. Runtime src/data/mankeu/modules/tmN.ts dan C:/cek/Manajemen Keuangan/Materi ditemukan. Edisi/halaman yang berlaku belum direkonsiliasi.",
+    "evidence": {
+      "reading": "readings/MNK201-TM07.json",
+      "flattened": "readings/MNK201-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM01",
+    "code": "AKA201",
+    "tm": 1,
+    "title": "Mengapa Audit Ada: Asurans, Auditing, dan Jenis Auditor",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 26,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 13,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 1,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM01.json",
+      "flattened": "readings/AKA201-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM02",
+    "code": "AKA201",
+    "tm": 2,
+    "title": "Profesi Akuntan Publik, Standar Audit, dan Manajemen Mutu",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 34,
+    "objectives": 5,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[7].blocks[0].blocks[0]",
+        "words": 85
+      }
+    ],
+    "tables": 15,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM02.json",
+      "flattened": "readings/AKA201-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM03",
+    "code": "AKA201",
+    "tm": 3,
+    "title": "Etika Profesi, Independensi, dan Lingkungan Hukum Auditor",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 24,
+    "objectives": 5,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[4].blocks[3]",
+        "words": 84
+      }
+    ],
+    "tables": 10,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM03.json",
+      "flattened": "readings/AKA201-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM04",
+    "code": "AKA201",
+    "tm": 4,
+    "title": "Tujuan Audit, Tanggung Jawab, dan Skeptisisme Profesional",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 20,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 12,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM04.json",
+      "flattened": "readings/AKA201-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM05",
+    "code": "AKA201",
+    "tm": 5,
+    "title": "Siklus, Asersi Manajemen, dan Gambaran Proses Audit",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 17,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 12,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM05.json",
+      "flattened": "readings/AKA201-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM06",
+    "code": "AKA201",
+    "tm": 6,
+    "title": "Laporan Auditor dan Jenis Opini",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 24,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 8,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 1,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM06.json",
+      "flattened": "readings/AKA201-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKA201-TM07",
+    "code": "AKA201",
+    "tm": 7,
+    "title": "Materialitas Perencanaan dan Pelaksanaan",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 15,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 9,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "C:/cek/.content-inbox/AKA201 dan converter C:/Users/Lenovo/aka201-converter/convert-aka201.mjs ditemukan. Ekstraksi Downloads/AKA201 (7).zip tersedia di packages/AKA201; kecocokan arsip dengan inbox/runtime belum dituntaskan. Jangan menetapkan arsip terbaru sebagai canonical hanya dari nomor filename.",
+    "evidence": {
+      "reading": "readings/AKA201-TM07.json",
+      "flattened": "readings/AKA201-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM01",
+    "code": "AKK202",
+    "tm": 1,
+    "title": "Akuntansi Aset Tetap, Properti Investasi, dan Tanah",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 37,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 19,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Lecturer PPT IA IFRS Ch. 9 | Kieso IFRS 5e Ch. 9–10 | PSAK 216, 220, 223, 240; ISAK 336",
+    "packageAnchors": [],
+    "sourceFolders": [],
+    "note": "Paket TM01 tidak ada pada content-pipeline yang ditemukan; runtime lama dibekukan dan dilindungi. Belum menetapkan sumber pengganti.",
+    "evidence": {
+      "reading": "readings/AKK202-TM01.json",
+      "flattened": "readings/AKK202-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM02",
+    "code": "AKK202",
+    "tm": 2,
+    "title": "Kos setelah Akuisisi, Disposisi, dan Pertukaran Aset Nonmoneter",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 44,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 10,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Kieso IFRS 5e Ch. 9 (pp. 766–819), CA9.1, CA9.2, E9.19 | IAS 16, IAS 37",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM02/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK202/TM02"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKK202-TM02.json",
+      "flattened": "readings/AKK202-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM03",
+    "code": "AKK202",
+    "tm": 3,
+    "title": "Depresiasi, Deplesi, Penurunan Nilai Aset, dan Akuntansi Revaluasi",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 55,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 15,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 1,
+    "runtimeReference": "Kieso IFRS 5e Ch. 10 (pp. 838–916) & Appendix 10A | IAS 16, IAS 36, IFRS 6, IAS 37",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM03/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK202/TM03"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKK202-TM03.json",
+      "flattened": "readings/AKK202-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM04",
+    "code": "AKK202",
+    "tm": 4,
+    "title": "Impairment CGU, Aset Dilepas, Revaluasi Multi-Periode, dan Latihan UTS",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 43,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 9,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Kieso IFRS 5e Ch. 10 (pp. 852–866) & Appendix 10A; E10.20, E10.29, P10.9 | Latsol UTS AKM II | IAS 16, IAS 36, IFRS 5",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM04/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK202/TM04"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKK202-TM04.json",
+      "flattened": "readings/AKK202-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM05",
+    "code": "AKK202",
+    "tm": 5,
+    "title": "Aset Tidak Berwujud, Goodwill, dan Riset & Pengembangan",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 52,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 15,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Kieso IFRS 5e Ch. 11 (pp. 941–1002) | IAS 38, IAS 36, IFRS 3",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM05/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK202/TM05"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKK202-TM05.json",
+      "flattened": "readings/AKK202-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM06",
+    "code": "AKK202",
+    "tm": 6,
+    "title": "Liabilitas Jangka Pendek, Provisi, dan Kontinjensi",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 59,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 17,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 1,
+    "runtimeReference": "Kieso IFRS 5e Ch. 12 (pp. 1015–1092) | IAS 1, IAS 37",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM06/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK202/TM06"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKK202-TM06.json",
+      "flattened": "readings/AKK202-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKK202-TM07",
+    "code": "AKK202",
+    "tm": 7,
+    "title": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 61,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 11,
+    "figureBlocks": 0,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Kieso IFRS 5e Ch. 13 (pp. 1100–1170) | IFRS 9, IAS 1, IFRIC 19",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK202/TM07/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK202/TM07"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKK202-TM07.json",
+      "flattened": "readings/AKK202-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM01",
+    "code": "PJK301",
+    "tm": 1,
+    "title": "Ketentuan Umum Pajak Penghasilan (PPh Umum) dan PPh Wajib Pajak Orang Pribadi",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 87,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 5,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU No. 7/2021 (UU HPP) | PP No. 55/2022 | PP No. 20/2026 | PMK No. 66/2023 | PMK No. 114/2025 | PMK No. 168/2023",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM01/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM01"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM01.json",
+      "flattened": "readings/PJK301-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM02",
+    "code": "PJK301",
+    "tm": 2,
+    "title": "Perolehan Harta, Penilaian Persediaan, dan Norma Penghitungan Penghasilan Neto (NPPN)",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 81,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 11,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU PPh Pasal 10, 14, 6(2), 17, 31E | UU No. 7/2021 HPP | PP 55/2022 | PMK 81/2024 jo. PMK 01/2026",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM02/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM02"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM02.json",
+      "flattened": "readings/PJK301-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM03",
+    "code": "PJK301",
+    "tm": 3,
+    "title": "Hubungan Istimewa, Instrumen Pencegahan Penghindaran Pajak, dan Kesepakatan Harga Transfer (APA)",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 140,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 7,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU PPh Pasal 18 & 32A | UU No. 7/2021 HPP | PP 55/2022 Bab VI | PMK 172/2023 | PMK 169/2015",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM03/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM03"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM03.json",
+      "flattened": "readings/PJK301-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM04",
+    "code": "PJK301",
+    "tm": 4,
+    "title": "Penyusutan Harta Berwujud, Amortisasi Harta Tak Berwujud, dan Revaluasi Aset Tetap",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 79,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 8,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU PPh Pasal 11 & 11A | UU No. 7/2021 HPP | PP 55/2022 | PMK 72/2023 | PMK 66/2023 | PMK 79/2008",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM04/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM04"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM04.json",
+      "flattened": "readings/PJK301-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM05",
+    "code": "PJK301",
+    "tm": 5,
+    "title": "Pemungutan PPh Pasal 22, Pemotongan PPh Pasal 23/26, Pemungut Marketplace, dan Skema PPh Final UMKM",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 53,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 3,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU No. 7/2021 (UU HPP) · PMK No. 81/2024 s.t.d.t.d. PMK 54/2025 · PMK No. 51/2025 · PMK No. 37/2025 · PP No. 20/2026",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM05/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM05"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM05.json",
+      "flattened": "readings/PJK301-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM06",
+    "code": "PJK301",
+    "tm": 6,
+    "title": "Pemotongan Pajak Penghasilan Bersifat Final (PPh Pasal 4 ayat 2, PPh Pasal 15, Dividen Wajib Pajak Orang Pribadi)",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 56,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 2,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU No. 7/2021 (UU HPP) · PMK No. 81/2024 (Pasal 191 s.d. 203) · PP No. 9/2022 · PP No. 34/2017 · PP No. 20/2026",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM06/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM06"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM06.json",
+      "flattened": "readings/PJK301-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "PJK301-TM07",
+    "code": "PJK301",
+    "tm": 7,
+    "title": "Kredit Pajak Luar Negeri (PPh 24), Angsuran PPh 25 & WP OPPT, Insentif PPh Pasal 31A & 31E",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 90,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 2,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "UU PPh jo. UU HPP No. 7/2021 | PMK 81/2024 Pasal 226–237 (PPh 25 & OPPT) & Pasal 407–424 (Pasal 31A) | PP 78/2019 | SE-02/PJ/2015",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/PJK301/TM07/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/PJK301/TM07"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/PJK301-TM07.json",
+      "flattened": "readings/PJK301-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM01",
+    "code": "SII306",
+    "tm": 1,
+    "title": "Accounting Information Systems and Firm Value",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 37,
+    "objectives": 4,
+    "paragraphsOver80Words": [],
+    "tables": 18,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 1 · Richardson, Chang & Smith, AIS 4e ISE, Ch. 1, pp. 2–26",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM01/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM01"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM01.json",
+      "flattened": "readings/SII306-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM02",
+    "code": "SII306",
+    "tm": 2,
+    "title": "Data Analytics: Addressing Accounting Questions with Data",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 46,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 20,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 2 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 2, pp. 42–106",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM02/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM02"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM02.json",
+      "flattened": "readings/SII306-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM03",
+    "code": "SII306",
+    "tm": 3,
+    "title": "Accountants as Business Analysts",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 39,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 26,
+    "figureBlocks": 5,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 3 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 4, pp. 174–209",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM03/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM03"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM03.json",
+      "flattened": "readings/SII306-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM04",
+    "code": "SII306",
+    "tm": 4,
+    "title": "Data Modeling",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 54,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 21,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 4 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 5, pp. 210–235",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM04/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM04"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM04.json",
+      "flattened": "readings/SII306-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM05",
+    "code": "SII306",
+    "tm": 5,
+    "title": "Relational Databases and Enterprise Systems",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 45,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 23,
+    "figureBlocks": 1,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 5 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 6, pp. 236–281",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM05/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM05"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM05.json",
+      "flattened": "readings/SII306-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM06",
+    "code": "SII306",
+    "tm": 6,
+    "title": "Sales and Collections Business Process",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 62,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 18,
+    "figureBlocks": 2,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 6 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 7, pp. 282–321",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM06/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM06"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM06.json",
+      "flattened": "readings/SII306-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "SII306-TM07",
+    "code": "SII306",
+    "tm": 7,
+    "title": "Purchases and Payments Business Process",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 59,
+    "objectives": 5,
+    "paragraphsOver80Words": [],
+    "tables": 18,
+    "figureBlocks": 3,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "RPS-SIA, minggu 7 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 8, pp. 322–349",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKS301/TM07/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKS301/TM07"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/SII306-TM07.json",
+      "flattened": "readings/SII306-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM01",
+    "code": "AKS201",
+    "tm": 1,
+    "title": "Mengapa organisasi publik membutuhkan akuntansi?",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 14,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 9,
+    "figureBlocks": 4,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM01/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM01"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM01.json",
+      "flattened": "readings/AKS201-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM02",
+    "code": "AKS201",
+    "tm": 2,
+    "title": "Aturan badan, laporan keuangan, dan pekerjaan auditor",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 13,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 11,
+    "figureBlocks": 5,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM02/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM02"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM02.json",
+      "flattened": "readings/AKS201-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM03",
+    "code": "AKS201",
+    "tm": 3,
+    "title": "Regulasi dan standar pemerintahan",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 9,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 21,
+    "figureBlocks": 8,
+    "reviewedTitleOverrides": 2,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM03/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM03"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM03.json",
+      "flattened": "readings/AKS201-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM04",
+    "code": "AKS201",
+    "tm": 4,
+    "title": "Perencanaan dan anggaran organisasi sektor publik (1)",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 9,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 20,
+    "figureBlocks": 8,
+    "reviewedTitleOverrides": 3,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM04/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM04"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM04.json",
+      "flattened": "readings/AKS201-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM05",
+    "code": "AKS201",
+    "tm": 5,
+    "title": "Lima pendekatan penganggaran sektor publik",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 13,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 14,
+    "figureBlocks": 9,
+    "reviewedTitleOverrides": 4,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM05/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM05"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM05.json",
+      "flattened": "readings/AKS201-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM06",
+    "code": "AKS201",
+    "tm": 6,
+    "title": "Kapan transaksi dicatat, dan apa yang dilaporkan?",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 15,
+    "objectives": 7,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[16].blocks[0]",
+        "words": 82
+      },
+      {
+        "at": "blocks[29].promptBlocks[0]",
+        "words": 86
+      }
+    ],
+    "tables": 11,
+    "figureBlocks": 9,
+    "reviewedTitleOverrides": 0,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM06/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM06"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM06.json",
+      "flattened": "readings/AKS201-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "AKS201-TM07",
+    "code": "AKS201",
+    "tm": 7,
+    "title": "Tujuh laporan keuangan pemerintah",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 8,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 22,
+    "figureBlocks": 8,
+    "reviewedTitleOverrides": 1,
+    "runtimeReference": "Akuntansi Sektor Publik",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/AKK203/TM07/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/AKK203/TM07"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/AKS201-TM07.json",
+      "flattened": "readings/AKS201-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM01",
+    "code": "MNS301",
+    "tm": 1,
+    "title": "Strategic Management",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 28,
+    "objectives": 7,
+    "paragraphsOver80Words": [
+      {
+        "at": "blocks[25].blocks[0]",
+        "words": 92
+      }
+    ],
+    "tables": 19,
+    "figureBlocks": 11,
+    "reviewedTitleOverrides": 3,
+    "runtimeReference": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Chapter 1 [hal. 2–33]",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM01/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU307/TM01"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM01.json",
+      "flattened": "readings/MNS301-TM01.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM02",
+    "code": "MNS301",
+    "tm": 2,
+    "title": "Membaca lingkungan dan kemampuan perusahaan",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 14,
+    "objectives": 7,
+    "paragraphsOver80Words": [],
+    "tables": 16,
+    "figureBlocks": 20,
+    "reviewedTitleOverrides": 14,
+    "runtimeReference": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Chapters 2–4 [hal. 36–134]",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM02/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU307/TM02"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM02.json",
+      "flattened": "readings/MNS301-TM02.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM03",
+    "code": "MNS301",
+    "tm": 3,
+    "title": "Memilih cara bersaing dan bisnis yang layak dimiliki",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 14,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 13,
+    "figureBlocks": 18,
+    "reviewedTitleOverrides": 10,
+    "runtimeReference": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Chapters 5–6 [hal. 142–202]",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM03/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU307/TM03"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM03.json",
+      "flattened": "readings/MNS301-TM03.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM04",
+    "code": "MNS301",
+    "tm": 4,
+    "title": "Menilai ekspansi internasional dan respons persaingan",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 13,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 13,
+    "figureBlocks": 18,
+    "reviewedTitleOverrides": 9,
+    "runtimeReference": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Chapters 7–8 [hal. 207–267]",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM04/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU307/TM04"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM04.json",
+      "flattened": "readings/MNS301-TM04.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM05",
+    "code": "MNS301",
+    "tm": 5,
+    "title": "Mengendalikan pelaksanaan strategi dan memilih desain organisasi",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 11,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 20,
+    "figureBlocks": 17,
+    "reviewedTitleOverrides": 19,
+    "runtimeReference": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Chapters 9–10 [hal. 271–330]",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM05/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU307/TM05"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM05.json",
+      "flattened": "readings/MNS301-TM05.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM06",
+    "code": "MNS301",
+    "tm": 6,
+    "title": "Memimpin pembelajaran, menjaga etika, dan mengelola inovasi",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 13,
+    "objectives": 6,
+    "paragraphsOver80Words": [],
+    "tables": 22,
+    "figureBlocks": 18,
+    "reviewedTitleOverrides": 21,
+    "runtimeReference": "Dess dkk., Strategic Management: Text and Cases, 11th ed. · Chapters 11–12 [hal. 337–390]",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM06/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [
+      "C:/AkuntansiHub-Content-Agent/course-sources/MNU307/TM06"
+    ],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM06.json",
+      "flattened": "readings/MNS301-TM06.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  },
+  {
+    "id": "MNS301-TM07",
+    "code": "MNS301",
+    "tm": 7,
+    "title": "Blue Ocean Strategy dan Strategy Maps",
+    "status": "INVENTARIS_KODE; AUDIT_SEMANTIK_SUMBER_DAN_UI_BELUM_SELESAI",
+    "directlyInspectedWebsite": false,
+    "sourcePageVerified": false,
+    "introWords": 13,
+    "objectives": 12,
+    "paragraphsOver80Words": [],
+    "tables": 56,
+    "figureBlocks": 30,
+    "reviewedTitleOverrides": 1,
+    "runtimeReference": "Bagian A: Kim & Mauborgne, Blue Ocean Strategy (2005) · Bagian B: Kaplan & Norton, Strategy Maps (2004)",
+    "packageAnchors": [
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07A/07_qa_manifest.md"
+      },
+      {
+        "folder": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B",
+        "sourceInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B/01_source_inventory.md",
+        "coverageInventory": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B/02_coverage_inventory.md",
+        "canonical": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B/04_canonical_spec.md",
+        "studentVersion": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B/05_student_learning_version.md",
+        "implementation": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B/06_implementation_brief.md",
+        "qa": "C:/AkuntansiHub-Content-Agent/content-pipeline/MNU307/TM07B/07_qa_manifest.md"
+      }
+    ],
+    "sourceFolders": [],
+    "note": "Paket dan lokasi sumber ditemukan; belum diverifikasi halaman demi halaman pada audit ini.",
+    "evidence": {
+      "reading": "readings/MNS301-TM07.json",
+      "flattened": "readings/MNS301-TM07.md",
+      "figures": "inventory.json",
+      "beforeNames": "table-name-review.json",
+      "afterNames": "table-name-review-after.json",
+      "manualTitleReview": "reviewed-override-evidence.json",
+      "websiteScreenshots": []
+    },
+    "pending": [
+      "Baca bacaan utuh dan paket final; cocokkan fakta/contoh/rumus ke halaman sumber asli.",
+      "Nilai pembuka, repetisi tujuan/Kilat, arti istilah pertama dan penjelasan yang terputus secara semantik.",
+      "Tentukan Inti wajib dan rincian Pendalaman berdasarkan hubungan sebab/contoh; angka panjang hanya indikator.",
+      "Nilai seluruh nama tabel, dua tabel berdekatan, header/kolom/angka pada website 375px terang/gelap dan desktop.",
+      "Rekonsiliasi setiap framework/diagram sumber, termasuk Markdown/gambar/sourceImages; nilai label/arrow/branch/matrix/legend serta pengulangan overview/transkrip pada UI.",
+      "Tentukan jenis masalah, prioritas dan proposal final setelah bukti langsung tersedia."
+    ]
+  }
+]

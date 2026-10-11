@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "checks": 5,
+  "passes": [
+    "quiz: 56 questions, every explanation cites pages inside its TM's page range, keys spread 14/14/14/14",
+    "flashcards: 69 UTS cards (TM01-TM07 and TM08), kept ids survive, retired ids stay retired, flashcardCount = 105",
+    "bank soal: 7 cases, five-step answer guides, one option chosen",
+    "TM08 review page: sections, pages on every row, five steps sourced to the class mechanism",
+    "mutation check: 21 broken copies of the data are rejected"
+  ]
+}

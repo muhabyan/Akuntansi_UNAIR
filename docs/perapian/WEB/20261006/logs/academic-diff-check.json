@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "academicFilesChanged": [],
+  "allChangedFiles": [
+    "scripts/fixtures/mnu307/protected-files.json",
+    "scripts/test-ci-bounded.mjs",
+    "scripts/test-reading-frame.mjs",
+    "scripts/test-table-titles.mjs",
+    "src/components/ReadingView.tsx",
+    "src/components/course/CourseBlockCard.tsx",
+    "src/components/course/CourseLayout.tsx",
+    "src/components/course/LayeredBlocks.tsx",
+    "src/components/course/ReportTable.tsx",
+    "src/components/course/TableHeading.tsx",
+    "src/data/courses/tableTitleOverrides.ts",
+    "src/data/courses/tableTitles.ts",
+    "src/index.css",
+    "src/types.ts"
+  ]
+}

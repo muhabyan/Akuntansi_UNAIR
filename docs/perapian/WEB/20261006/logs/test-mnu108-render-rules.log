@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "checks": 10,
+  "passes": [
+    "TM01: render rules, Daftar Isi and the visible text of every block",
+    "TM02: render rules, Daftar Isi and the visible text of every block",
+    "TM03: render rules, Daftar Isi and the visible text of every block",
+    "TM04: render rules, Daftar Isi and the visible text of every block",
+    "TM05: render rules, Daftar Isi and the visible text of every block",
+    "TM06: render rules, Daftar Isi and the visible text of every block",
+    "TM07: render rules, Daftar Isi and the visible text of every block",
+    "TM08: render rules, Daftar Isi and the visible text of every block",
+    "mutation check: 10 broken copies of TM01 are rejected",
+    "mutation check: 4 broken copies of TM01 are rejected by the visible-text rule"
+  ]
+}

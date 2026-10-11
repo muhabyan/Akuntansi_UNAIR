@@ -1,3 +1,5 @@
+import TableHeading from './course/TableHeading';
+import { getTableTitle, withTableTitles } from '../data/courses/tableTitles';
 import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import {
   ArrowLeft, ChevronLeft, ChevronRight, Check,
@@ -225,8 +227,11 @@ function Block({ block }: { block: ContentBlock }) {
     }
     case 'table':
       return (
-        <div className="my-8 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
+        <div className="my-8 min-w-0 max-w-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white dark:bg-gray-900/60 shadow-xs">
+          <TableHeading title={getTableTitle(block)} />
+          <div className="max-w-full overflow-x-auto">
           <table className="w-full min-w-[720px] text-[14px] text-left text-gray-800 dark:text-gray-200 border-collapse">
+            <caption className="sr-only">{getTableTitle(block)}</caption>
             <thead className="text-[12.5px] font-bold uppercase tracking-wider bg-gray-50/95 dark:bg-gray-800/90 text-gray-700 dark:text-gray-200 border-b-2 border-gray-200 dark:border-gray-700">
               <tr>
                 {block.headers.map((h, i) => (
@@ -248,6 +253,7 @@ function Block({ block }: { block: ContentBlock }) {
               ))}
             </tbody>
           </table>
+          </div>
           {block.caption && <div className="px-4 py-2.5 bg-gray-50/60 dark:bg-gray-800/40 border-t border-gray-200 dark:border-gray-700/80 text-xs text-gray-500 dark:text-gray-400 italic">{renderText(block.caption)}</div>}
         </div>
       );
@@ -369,7 +375,10 @@ export default function ReadingView({ course, tm, onBack, onSelectTm }: ReadingV
     return () => { isActive = false; };
   }, [course.code]);
 
-  const reading = courseContent?.readings[tm];
+  const reading = useMemo(() => {
+    const source = courseContent?.readings[tm];
+    return source ? withTableTitles(source) : undefined;
+  }, [courseContent, tm]);
   const outlineItems = useMemo(() => reading ? buildReadingOutline(reading.blocks) : [], [reading]);
   const tms = useMemo(() => Object.keys(courseContent?.readings ?? {}).map(Number).sort((a, b) => a - b), [courseContent]);
   const idx = tms.indexOf(tm);

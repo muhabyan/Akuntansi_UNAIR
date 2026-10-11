@@ -57,7 +57,7 @@ export const TM11_READING: Reading = {
   tm: 11,
   title: 'Audit Sektor Publik: Pengawasan Intern (APIP), Pemeriksaan Eksternal (BPK RI), & LHP',
   ref: 'UU 15/2004 | UU 15/2006 BPK RI | Standar Pemeriksaan Keuangan Negara (SPKN) | Jenis Opini Audit BPK',
-  intro: 'TM 11 membahas ekosistem pemeriksaan dan pengawasan keuangan negara di Indonesia: peran aparat pengawasan intern pemerintah (APIP: BPKP dan Inspektorat) dalam reviu laporan keuangan, kewenangan konstitusional Badan Pemeriksa Keuangan (BPK RI), Standar Pemeriksaan Keuangan Negara (SPKN), 3 jenis pemeriksaan (Audit Keuangan, Audit Kinerja, dan Audit Dengan Tujuan Tertentu / ADTT), 4 opini audit keuangan BPK, serta batas waktu yuridis tindak lanjut temuan LHP.',
+  intro: 'TM 11 membahas bagaimana keuangan negara diperiksa dan diawasi di Indonesia. Topiknya peran aparat pengawasan intern pemerintah (APIP: BPKP dan Inspektorat) dalam reviu laporan keuangan, kewenangan konstitusional Badan Pemeriksa Keuangan (BPK RI), Standar Pemeriksaan Keuangan Negara (SPKN), tiga jenis pemeriksaan (Audit Keuangan, Audit Kinerja, dan Audit Dengan Tujuan Tertentu / ADTT), empat opini audit keuangan BPK, serta batas waktu tindak lanjut temuan LHP.',
   objectives: [
     'Membedakan peran, fungsi, dan independensi APIP (Internal) vs BPK RI (Eksternal).',
     'Menguasai 3 jenis pemeriksaan BPK menurut UU No. 15 Tahun 2004.',

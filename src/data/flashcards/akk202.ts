@@ -407,7 +407,7 @@ export const AKK202_FC: AdvancedStudyCard[] = [
     "topic": "Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar",
     "category": "Hukum",
     "front": "Penghentian dan Modifikasi Utang",
-    "back": "Gain (loss) = nilai tercatat bersih − harga penebusan, ke laba rugi. Pertukaran utang dengan saham (IFRIC 19): saham pada nilai wajar. Modifikasi dengan selisih nilai kini 10% atau lebih bersifat substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar."
+    "back": "Selisih tercatat − harga penebusan ke laba rugi. Utang ditukar saham (IFRIC 19): saham pada nilai wajar. Modifikasi substansial (selisih nilai kini ≥ 10% atau syarat berubah fundamental): utang lama dihentikan. Non-substansial: selisih ditangguhkan, diamortisasi."
   },
   {
     "id": "akk202-v2-tm07-06",

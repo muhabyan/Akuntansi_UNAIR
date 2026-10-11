@@ -1,0 +1,901 @@
+{
+  "tm": 1,
+  "title": "Accounting Information Systems and Firm Value",
+  "ref": "RPS-SIA, minggu 1 · Richardson, Chang & Smith, AIS 4e ISE, Ch. 1, pp. 2–26",
+  "intro": "Sistem Informasi Akuntansi (SIA) menghubungkan catatan transaksi, pekerjaan sehari-hari, pengamanan aset, dan keputusan. Kita mulai dari transaksi sederhana, lalu ikuti bagaimana informasi membantu perusahaan bekerja dan menciptakan nilai. Setelah itu, uji pemahaman dengan kasus dan Exam Toolkit.",
+  "objectives": [
+    "Membedakan data dan informasi serta menilai kualitas dan nilai bersih informasi.",
+    "Memetakan peran akuntan, rantai nilai, dan sistem perusahaan.",
+    "Menelusuri aktor, dokumen, data, risiko, kontrol, dan jurnal dalam order fulfillment.",
+    "Mengevaluasi pemisahan tugas dan kontribusi SIA terhadap kinerja perusahaan."
+  ],
+  "blocks": [
+    {
+      "kind": "example",
+      "title": "Mulai dari transaksi sederhana: satu kopi terjual",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Pelanggan membeli satu kopi dan membayar tunai. Kasir mencatat jenis kopi, jumlah, harga, waktu, dan cara bayar. Catatan mentah itu adalah **data**. Setelah sistem mengelompokkannya menjadi penjualan hari ini dan membandingkannya dengan stok, hasilnya menjadi **informasi** yang membantu manajer memesan bahan. Bab ini mengikuti perubahan dari transaksi menjadi data, informasi, keputusan, lalu nilai bagi perusahaan."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "1. System & Information Foundations"
+    },
+    {
+      "kind": "p",
+      "text": "**Sistem Informasi Akuntansi (SIA / AIS)** adalah sistem formal yang mencatat, memproses, merangkum, melaporkan, dan mengomunikasikan hasil ekonomi peristiwa bisnis. Informasi keuangan dan nonkeuangan mendukung keputusan serta kontrol operasi; pengendalian internal melindungi aset dan integritas data. Akuntan berperan sebagai **business analyst**, bukan hanya pencatat transaksi. Richardson 4e, pp. 4–5."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pilar",
+        "Kontribusi pada AIS"
+      ],
+      "rows": [
+        [
+          "Accounting",
+          "Klasifikasi transaksi, double-entry, pengendalian, pelaporan IFRS/SAK atau US GAAP, pajak, dan keputusan manajerial."
+        ],
+        [
+          "Information Systems",
+          "Hardware, database relasional, jaringan, logika software, pengembangan sistem, dan tata kelola TI."
+        ]
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "Data perusahaan dan kesenjangan informasi"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Jenis data",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Transactional Data",
+          "Sales order, POS, pembayaran elektronik, purchase order, penerimaan persediaan."
+        ],
+        [
+          "Consumer Behavior Data",
+          "Clickstream, keranjang ditinggalkan, durasi browsing, pencarian, penggunaan loyalty rewards."
+        ],
+        [
+          "Product Availability & Cost Data",
+          "Stok gudang, biaya standar, varians bahan/tenaga kerja, lead time pemasok."
+        ],
+        [
+          "Operational Statistics",
+          "Waktu operasi mesin, waktu transportasi, tingkat cacat, efisiensi tenaga kerja."
+        ]
+      ],
+      "caption": "Jenis data mengikuti Richardson 4e, p. 4; contoh pada tabel adalah ilustrasi."
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Konteks data dalam ebook",
+      "text": "Buku mengutip 2.5 quintillion bytes data per hari, 90% data dunia tercipta dalam dua tahun, dan 1.7 MB informasi baru per detik per orang. Survei yang dikutip menyebut 28% eksekutif keuangan senior memiliki sedikit atau tanpa informasi untuk memprediksi kinerja, sedangkan 54% hanya memiliki separuh informasi yang diperlukan untuk melihat kinerja. Angka tersebut adalah konteks historis yang dikutip buku, bukan statistik real-time. Richardson 4e, p. 4."
+    },
+    {
+      "kind": "example",
+      "title": "Executive information gap",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "28\\% + 54\\% = 82\\%",
+          "note": "82 dari 100 pemimpin dalam kategori survei tersebut kekurangan informasi memadai. Banyak data tidak otomatis berarti keputusan lebih baik."
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Konsep",
+        "Makna",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Data",
+          "Fakta, simbol, atau pengukuran mentah tanpa konteks keputusan.",
+          "Barcode 7501031311309, kuantitas 42, waktu 08:14:22."
+        ],
+        [
+          "Information",
+          "Data diolah, diorganisasi, dan diberi konteks sehingga mengurangi ketidakpastian.",
+          "Stok SKU 11309 di Store #4 di bawah reorder point sehingga sistem memicu pemesanan kembali."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 7–8; contoh SKU adalah ilustrasi."
+    },
+    {
+      "kind": "h3",
+      "text": "Simple Information System: Input → Processing → Output, didukung Storage"
+    },
+    {
+      "kind": "figure",
+      "title": "Dari transaksi kopi menjadi keputusan",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 820 285\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <defs><marker id=\"is-arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0 L8 4 L0 8\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"1.5\"/></marker></defs>\n  <rect x=\"1\" y=\"1\" width=\"818\" height=\"283\" rx=\"18\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n  <text x=\"30\" y=\"40\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">SIA: peristiwa menjadi keputusan</text>\n  <g stroke=\"#0369a1\" stroke-width=\"2\"><rect x=\"30\" y=\"75\" width=\"205\" height=\"75\" rx=\"12\" fill=\"#eff6ff\"/><rect x=\"305\" y=\"75\" width=\"205\" height=\"75\" rx=\"12\" fill=\"#ecfdf5\"/><rect x=\"580\" y=\"75\" width=\"205\" height=\"75\" rx=\"12\" fill=\"#eff6ff\"/></g>\n  <g fill=\"#0f172a\" font-size=\"17\" font-weight=\"700\"><text x=\"47\" y=\"105\">Input</text><text x=\"322\" y=\"105\">Processing</text><text x=\"597\" y=\"105\">Output</text></g>\n  <g fill=\"#334155\" font-size=\"13\"><text x=\"47\" y=\"129\">Item, jumlah, harga</text><text x=\"322\" y=\"129\">Hitung dan validasi</text><text x=\"597\" y=\"129\">Laporan untuk manajer</text></g>\n  <g stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#is-arrow)\"><path d=\"M239 112 H299\"/><path d=\"M514 112 H574\"/></g>\n  <path d=\"M305 210 V245 C305 263 510 263 510 245 V210\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/>\n  <ellipse cx=\"407.5\" cy=\"210\" rx=\"102.5\" ry=\"13\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/>\n  <text x=\"322\" y=\"235\" fill=\"#7c2d12\" font-size=\"16\" font-weight=\"700\">Storage</text>\n  <text x=\"322\" y=\"253\" fill=\"#7c2d12\" font-size=\"13\">Catatan POS dan stok</text>\n  <path d=\"M389 153 V190 M426 193 V156\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#is-arrow)\"/>\n  <text x=\"30\" y=\"273\" fill=\"#475569\" font-size=\"12\">Storage menyimpan hasil dan menyediakan data untuk pemrosesan berikutnya.</text>\n</svg>",
+      "altText": "Alur data penjualan kopi dari input POS, pemrosesan, penyimpanan, hingga laporan untuk keputusan pemesanan bahan.",
+      "mobileFlow": {
+        "mode": "cards",
+        "title": "SIA: dari transaksi ke keputusan",
+        "stages": [
+          {
+            "actor": "Input → Processing",
+            "actions": [
+              "Kasir memasukkan item, jumlah, dan harga.",
+              "Sistem menghitung total dan memvalidasi transaksi."
+            ]
+          },
+          {
+            "actor": "Storage ↔ Processing",
+            "actions": [
+              "Catatan POS dan stok disimpan.",
+              "Data tersimpan dipakai lagi oleh proses berikutnya."
+            ]
+          },
+          {
+            "actor": "Output → Keputusan",
+            "actions": [
+              "Manajer membaca laporan penjualan dan stok.",
+              "Informasi itu membantu menentukan pemesanan bahan."
+            ]
+          }
+        ]
+      },
+      "transcript": [
+        "Kasir memasukkan item, jumlah, dan harga pada POS.",
+        "Sistem menghitung total serta memvalidasi transaksi; catatan transaksi dan stok diperbarui.",
+        "Laporan penjualan dan stok menjadi dasar manajer memesan bahan. Penyimpanan juga mendukung pemrosesan transaksi berikutnya."
+      ],
+      "caption": "Ilustrasi proses sederhana berdasarkan konsep input, processing, storage, dan output TM1. Di layar kecil, ringkasan hubungan tampil lebih dulu; diagram rinci dapat dibuka di bawahnya."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Komponen",
+        "Fungsi",
+        "Contoh Starbucks"
+      ],
+      "rows": [
+        [
+          "Input",
+          "Menangkap data peristiwa transaksi.",
+          "Barista memasukkan 1 Grande Caffe Latte $4.75, oat milk, pembayaran mobile."
+        ],
+        [
+          "Storage",
+          "Menyimpan rekaman untuk retrieval, audit trail, dan laporan.",
+          "Tabel Sales_Orders, Order_Lines, Customer_Account, Payment_Transactions."
+        ],
+        [
+          "Processing",
+          "Menjalankan aturan bisnis dan perhitungan.",
+          "Memperbarui loyalty stars; mengurangi stok bahan dan cup; menghitung pajak dan COGS."
+        ],
+        [
+          "Output",
+          "Menghasilkan informasi untuk operasi dan keputusan.",
+          "E-receipt, antrean minuman, laporan penjualan per jam tenaga kerja untuk manajer."
+        ]
+      ],
+      "caption": "Model sistem informasi: Richardson 4e, p. 6; rincian transaksi Starbucks adalah ilustrasi."
+    },
+    {
+      "kind": "h3",
+      "text": "Kualitas informasi dan information overload"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kualitas",
+        "Unsur dan makna"
+      ],
+      "rows": [
+        [
+          "Relevance",
+          "Predictive value: membantu prediksi; confirmatory value: mengonfirmasi/mengoreksi ekspektasi; materiality: penghilangan atau salah saji dapat memengaruhi keputusan."
+        ],
+        [
+          "Faithful Representation / Representasi Tepat",
+          "Complete: konteks penting lengkap; neutral: tanpa bias; free from error: tidak ada kesalahan material dalam deskripsi/perhitungan, bukan jaminan prediksi 100% tepat."
+        ],
+        [
+          "Comparability",
+          "Memungkinkan perbandingan antarperusahaan dan antarperiode."
+        ],
+        [
+          "Verifiability",
+          "Pengamat independen berpengetahuan dapat mencapai konsensus."
+        ],
+        [
+          "Timeliness",
+          "Tersedia saat masih dapat memengaruhi keputusan."
+        ],
+        [
+          "Understandability",
+          "Klasifikasi dan penyajian jelas serta ringkas."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 6–7."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Trade-off dan risiko overload",
+      "text": "Menunggu angka sepenuhnya diverifikasi dapat mengurangi ketepatwaktuan; estimasi cepat membutuhkan perhatian pada representasi tepat. Terlalu banyak data mentah memperlambat keputusan dan menyembunyikan sinyal penting. Gunakan exception reporting, agregasi, dashboard yang relevan, dan drill-down. Richardson 4e, pp. 6–8."
+    },
+    {
+      "kind": "h3",
+      "text": "Information Value Chain"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Business need → tentukan kebutuhan keputusan.",
+        "Business event → kenali peristiwa yang relevan.",
+        "Data → tangkap fakta dari peristiwa tersebut.",
+        "Information → olah dan beri konteks pada data.",
+        "Knowledge → pahami pola dan implikasi informasi.",
+        "Decision → gunakan pengetahuan untuk memilih tindakan dan menilai manfaatnya."
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle V = B - C",
+      "note": "V = Nilai Bersih Informasi; B = manfaat (pendapatan, penghematan persediaan, berkurangnya piutang macet); C = software, hardware, integrasi, pelatihan, pemeliharaan. Discretionary: V > 0 → ACCEPT; V ≤ 0 → REJECT. Sistem mandatory tetap wajib. Richardson 4e, pp. 8–9."
+    },
+    {
+      "kind": "example",
+      "title": "PT Nusantara Retail — investasi RFID",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Manfaat \\$150,000 dan biaya \\$40,000 untuk sistem discretionary."
+        },
+        {
+          "kind": "formula",
+          "text": "\\displaystyle V = 150{,}000 - 40{,}000 = 110{,}000",
+          "note": "ACCEPT: nilai bersih $110,000 > 0."
+        }
+      ]
+    },
+    {
+      "kind": "example",
+      "title": "Walmart: keputusan pasokan pisang",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Buku memakai transaksi penjualan pisang di Walmart untuk menunjukkan perubahan peristiwa bisnis menjadi data, informasi, pengetahuan, lalu keputusan jumlah persediaan per toko. Informasi permintaan dapat membantu mengurangi kelebihan stok dan kekurangan stok. Richardson 4e, pp. 7–8, Exhibit 1.2."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "2. Accountant Roles, Responsibilities & Certifications"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Peran",
+        "Tanggung jawab",
+        "Batas pemisahan tugas"
+      ],
+      "rows": [
+        [
+          "User / Pengguna",
+          "Input transaksi, jurnal, rekonsiliasi, closing, dan laporan.",
+          "Tidak mengubah kode database atau melewati access controls."
+        ],
+        [
+          "Manager / Pengelola",
+          "Mengatur staf, tugas billing/payroll/collection, jadwal tutup buku, dan anggaran.",
+          "Tidak menjadi evaluator independen departemennya sendiri."
+        ],
+        [
+          "Designer / Perancang",
+          "Menetapkan kebutuhan akuntansi, COA, validasi data, urutan kerja, dan kontrol akses.",
+          "Tidak menjadi evaluator independen sistem yang dirancang."
+        ],
+        [
+          "Evaluator / Auditor",
+          "Menguji integritas, keamanan, kontrol, dan kepatuhan secara independen.",
+          "Tidak merancang/mengonfigurasi kontrol yang diaudit."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 9–11. Designer ≠ independent Evaluator untuk sistem yang sama."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Sertifikasi",
+        "Penerbit",
+        "Fokus"
+      ],
+      "rows": [
+        [
+          "CISA — Certified Information Systems Auditor",
+          "ISACA",
+          "Audit SI, tata kelola keamanan, kontrol otomatis."
+        ],
+        [
+          "CITP — Certified Information Technology Professional",
+          "AICPA",
+          "CPA yang berspesialisasi pada teknologi, analitika, dan arsitektur sistem."
+        ],
+        [
+          "CIA — Certified Internal Auditor",
+          "IIA",
+          "Assurance audit internal, risiko, dan tata kelola."
+        ]
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "3. Value Chain Architecture & Business Processes"
+    },
+    {
+      "kind": "p",
+      "text": "**Business value** mencakup nilai bersih, efektivitas, daya saing, dan kesejahteraan pemangku kepentingan. **Business process** adalah rangkaian aktivitas, tugas, dan data terkait yang mengubah input menjadi output. Rantai nilai menjelaskan bagaimana aktivitas tersebut menciptakan nilai. Richardson 4e, pp. 12–13."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Aktivitas Utama / Primary",
+        "Peran",
+        "Hubungan sistem"
+      ],
+      "rows": [
+        [
+          "Inbound Logistics",
+          "Menerima, menyimpan, dan menangani bahan.",
+          "SCM dan penerimaan persediaan."
+        ],
+        [
+          "Operations",
+          "Mengubah bahan menjadi produk.",
+          "Shop floor, produksi, dan cost accounting."
+        ],
+        [
+          "Outbound Logistics",
+          "Menyimpan dan mendistribusikan barang jadi.",
+          "ERP logistics dan shipping."
+        ],
+        [
+          "Marketing & Sales",
+          "Promosi, penjualan, dan penetapan harga.",
+          "CRM dan sales orders."
+        ],
+        [
+          "Service",
+          "Dukungan dan garansi setelah penjualan.",
+          "CRM support."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Aktivitas Pendukung / Support",
+        "Peran"
+      ],
+      "rows": [
+        [
+          "Firm Infrastructure",
+          "AIS, legal, manajemen eksekutif: menopang seluruh aktivitas."
+        ],
+        [
+          "Human Resource Management",
+          "Rekrutmen, pengembangan, dan pengelolaan tenaga kerja."
+        ],
+        [
+          "Technology Development",
+          "Pengembangan teknologi produk dan proses."
+        ],
+        [
+          "Procurement",
+          "Pengadaan input yang dibutuhkan organisasi."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 12–13, Exhibit 1.4. AIS mendukung Firm Infrastructure dan aktivitas lain; bukan aktivitas utama tersendiri."
+    },
+    {
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Batas aktivitas",
+      "text": "Garansi pelanggan termasuk Service, bukan Outbound Logistics. Reverse logistics (retur) adalah aliran khusus dengan kontrol tersendiri. AIS menangkap data pada titik aktivitas dan menghubungkan fungsi-fungsi tersebut melalui informasi dan kontrol."
+    },
+    {
+      "kind": "h2",
+      "text": "4. Enterprise Systems & Process Flows"
+    },
+    {
+      "kind": "h3",
+      "text": "Order fulfillment: Order → Pick → Ship → Bill"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tahap / aktor",
+        "Aktivitas dan data",
+        "Dokumen / tujuan",
+        "Kontrol"
+      ],
+      "rows": [
+        [
+          "1\\. Sales — order entry",
+          "Terima pesanan; validasi Customer ID, SKU, quantity, unit price, stok, credit limit, dan shipping address.",
+          "Sales Order: dasar permintaan barang dan pemenuhan.",
+          "Blokir kredit terlampaui atau pelanggan menunggak."
+        ],
+        [
+          "2\\. Warehouse — picking",
+          "Ambil barang sesuai SKU, quantity, nomor seri/batch.",
+          "Picking Ticket: instruksi dan bukti pengambilan.",
+          "Scan barcode untuk mencocokkan SKU dan kuantitas."
+        ],
+        [
+          "3\\. Shipping — pack & dispatch",
+          "Bandingkan barang, sales order, dan picking ticket; kemas dan serahkan ke carrier; rekam tracking number.",
+          "Packing Slip: rincian isi; Bill of Lading (BOL): bukti serah terima carrier.",
+          "Verifikasi independen dan tanda terima carrier."
+        ],
+        [
+          "4\\. Billing / Accounting",
+          "Konfirmasi shipping tervalidasi memicu invoice, AR, dan akun buku besar.",
+          "Sales Invoice: tagihan; pembaruan GL/AR dan persediaan.",
+          "Invoice hanya berdasarkan BOL tervalidasi; cegah pengiriman tanpa tagihan."
+        ]
+      ],
+      "caption": "Alur ERP berasal dari Richardson 4e, p. 15; dokumen dan kontrol rinci adalah ilustrasi pengantar untuk siklus penjualan pada Chapter 7."
+    },
+    {
+      "kind": "example",
+      "title": "Posting terintegrasi: penjualan kredit $10,000",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Barang berbiaya $6,500 dikirim ke pelanggan dengan syarat 2/10, n/30. BOL mengonfirmasi serah terima; ERP menerbitkan invoice dan jurnal dalam contoh ini."
+        },
+        {
+          "kind": "journal",
+          "caption": "Pengakuan pendapatan dan piutang (USD)",
+          "lines": [
+            {
+              "account": "Accounts Receivable",
+              "debit": "$10,000"
+            },
+            {
+              "account": "Sales Revenue",
+              "credit": "$10,000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "caption": "COGS dan pengurangan persediaan (USD)",
+          "lines": [
+            {
+              "account": "Cost of Goods Sold",
+              "debit": "$6,500"
+            },
+            {
+              "account": "Merchandise Inventory",
+              "credit": "$6,500",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Gross profit = \\$10,000 − \\$6,500 = \\$3,500. Kedua jurnal seimbang dan bersumber dari event shipping yang sama. Angka dan jurnal adalah ilustrasi pengantar, bukan transaksi pada Exhibit 1.9; alur order fulfillment diuraikan pada Richardson 4e, p. 15."
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Sistem",
+        "Fungsi dan integrasi"
+      ],
+      "rows": [
+        [
+          "ERP — Enterprise Resource Planning",
+          "Satu database relasional lintas fungsi mengurangi silo. Sales order memperbarui kebutuhan stok, produksi, dan proyeksi kas."
+        ],
+        [
+          "FRS — Financial Reporting System",
+          "Subledger, COA, jurnal penyesuaian, closing, laporan keuangan dan pajak."
+        ],
+        [
+          "HRMS — Human Resource Management System",
+          "Siklus karyawan, waktu kerja, payroll, dan benefit."
+        ],
+        [
+          "SCM — Supply Chain Management",
+          "Pemasok/logistik eksternal, permintaan, pengadaan, dan replenishment. Feed penjualan popok Walmart–P&G mendukung pengisian kembali otomatis."
+        ],
+        [
+          "CRM — Customer Relationship Management",
+          "Marketing, sales, layanan, preferensi dan histori pelanggan, customer lifetime value, serta retensi."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 15–19. ERP/FRS/HRMS mengintegrasikan fungsi internal; SCM/CRM menghubungkan pemasok dan pelanggan."
+    },
+    {
+      "kind": "h2",
+      "text": "5. System Integration, Controls & Firm Value Mechanics"
+    },
+    {
+      "kind": "h3",
+      "text": "Cost accounting sebagai titik temu data"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Input sistem",
+        "Data biaya",
+        "Penggunaan"
+      ],
+      "rows": [
+        [
+          "SCM",
+          "Bahan, freight, diskon/rebate pemasok.",
+          "Biaya material aktual."
+        ],
+        [
+          "HRMS",
+          "Jam kerja, upah standar, overtime.",
+          "Biaya tenaga kerja."
+        ],
+        [
+          "FRS",
+          "Depresiasi pabrik, utilitas, overhead.",
+          "Alokasi overhead produksi."
+        ],
+        [
+          "CRM",
+          "Layanan, pengemasan khusus, warranty/returns.",
+          "Cost-to-serve dan biaya pelanggan."
+        ]
+      ],
+      "caption": "Aliran data ke sistem biaya: Richardson 4e, pp. 19–20, Exhibit 1.8; rincian BOM, routing, ABC, dan analisis varians adalah contoh penerapan."
+    },
+    {
+      "kind": "example",
+      "title": "Tesla Model 3: ilustrasi integrasi biaya",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Buku menggunakan Tesla Model 3, Model X, dan Model S sebagai contoh keputusan alokasi overhead berbasis aktivitas. Sebagai ilustrasi, sistem biaya dapat menggabungkan data biaya dari FRS, jam tenaga kerja dari HRMS, material dari sistem produksi atau SCM, dan pendapatan dari CRM. Data lintas sistem membantu menjelaskan profitabilitas produk, bukan hanya saldo buku besar. Richardson 4e, pp. 8, 19–20."
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Dimensi",
+        "Discretionary",
+        "Mandatory"
+      ],
+      "rows": [
+        [
+          "Tujuan",
+          "Perencanaan, kontrol biaya, keputusan internal.",
+          "Kepatuhan hukum, pajak, dan pelaporan."
+        ],
+        [
+          "Pengguna",
+          "Board, CFO, plant controller, dan sales manager.",
+          "Otoritas pajak/regulator, lenders, dan investor publik."
+        ],
+        [
+          "Aturan ekonomi",
+          "B > C diperlukan untuk keputusan investasi.",
+          "Tetap wajib meski manfaat terukur lebih kecil dari biaya."
+        ],
+        [
+          "Pengawasan",
+          "Diskresi manajemen.",
+          "IFRS/SAK, US GAAP, OJK, DJP, SEC sesuai kewajiban."
+        ],
+        [
+          "Contoh",
+          "Cost accounting, CRM, BI dashboard.",
+          "FRS dan sistem pelaporan pajak."
+        ],
+        [
+          "Output",
+          "Dapat disesuaikan dengan kebutuhan manajer.",
+          "Mengikuti format/ketentuan pelaporan."
+        ]
+      ],
+      "caption": "Richardson 4e, p. 8. Jangan menggunakan ROI negatif sebagai alasan mengabaikan kewajiban."
+    },
+    {
+      "kind": "h3",
+      "text": "Risk → Control → Objective → Segregation of Duties"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tahap / risiko",
+        "Kontrol",
+        "Tujuan",
+        "Batas SoD"
+      ],
+      "rows": [
+        [
+          "Order: pelanggan fiktif / kredit tidak tertagih.",
+          "Validasi identitas dan blok credit limit.",
+          "Preventive: penjualan sah dan tertagih.",
+          "Sales tidak mengubah credit limit atau menyetujui pengecualian kredit."
+        ],
+        [
+          "Picking: pencurian / barang salah.",
+          "Keamanan gudang dan barcode matching.",
+          "Preventive: melindungi aset; kuantitas akurat.",
+          "Warehouse tidak menyesuaikan perpetual inventory records."
+        ],
+        [
+          "Shipping: pengiriman tanpa otorisasi.",
+          "Cocokkan barang, order, picking ticket; BOL ditandatangani.",
+          "Preventive: pengiriman sah dan lengkap.",
+          "Shipping tidak membuat order/invoice."
+        ],
+        [
+          "Billing: pengiriman tidak ditagih / invoice palsu / skimming.",
+          "BOL memicu invoice; dual authorization pada ledger postings.",
+          "Detective / preventive: kelengkapan pendapatan dan ketepatan laporan.",
+          "Billing tidak memegang kas atau mengubah credit file."
+        ],
+        [
+          "System administration: perubahan master data tanpa izin.",
+          "RBAC, MFA, dan immutable audit logs.",
+          "Preventive / detective: integritas, non-repudiation, dan auditability.",
+          "Designer tidak memiliki hak production admin/journal posting."
+        ]
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Pisahkan tiga fungsi",
+      "text": "Custody: Warehouse/Shipping memegang barang. Authorization: Credit/Sales menjalankan otorisasi sesuai kewenangan. Recording: Billing/GL mencatat. Jangan menempatkan custody, authorization, dan recording yang saling bertentangan pada satu orang; auditor mengevaluasi secara independen."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pos laporan laba rugi",
+        "Mekanisme penciptaan nilai"
+      ],
+      "rows": [
+        [
+          "Revenue ↑",
+          "SCM mengurangi stockout; CRM/ketepatan fulfillment mendukung retensi dan repeat orders."
+        ],
+        [
+          "COGS ↓",
+          "Pengadaan dan pelacakan persediaan mengurangi biaya bahan, holding cost, dan scrap."
+        ],
+        [
+          "Gross profit ↑",
+          "Dampak gabungan revenue dan COGS."
+        ],
+        [
+          "SG&A ↓",
+          "Invoice matching, electronic payroll, dan self-service mengurangi kerja administratif."
+        ],
+        [
+          "Interest expense ↓",
+          "Proyeksi penagihan/kas mengurangi kebutuhan pinjaman darurat."
+        ],
+        [
+          "Net income / firm value",
+          "Perbaikan operasi dan margin mendukung nilai perusahaan."
+        ]
+      ],
+      "caption": "Mekanisme peningkatan profitabilitas dan nilai: Richardson 4e, pp. 21–22; rincian pos adalah ilustrasi penelusuran dampak."
+    },
+    {
+      "kind": "p",
+      "text": "Bukti empiris yang dibahas: Kobelsky et al. (2008) mengaitkan belanja TI dengan ROA/ROS periode berikutnya; Hendricks et al. (2007) membahas abnormal returns/profitabilitas ERP, working capital SCM, serta manfaat pendapatan CRM ketika terintegrasi. Integrasi proses dan penggunaan informasi menjembatani investasi dengan kinerja."
+    },
+    {
+      "kind": "h2",
+      "text": "6. Worked Practice"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "1. PT Jayakarta Distribution — keputusan RFID",
+      "prompt": "Sistem barcode/RFID terintegrasi ERP bersifat discretionary. Horizon evaluasi satu tahun; penghematan \\$120,000/tahun; biaya hardware, integrasi, dan pelatihan \\$45,000. Hitung nilai bersih dan keputusan.",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Langkah",
+            "Hasil"
+          ],
+          "rows": [
+            [
+              "Manfaat B",
+              "$120,000"
+            ],
+            [
+              "Biaya C",
+              "$45,000"
+            ],
+            [
+              "V = B − C",
+              "$75,000"
+            ],
+            [
+              "Keputusan",
+              "ACCEPT AND IMPLEMENT: V > 0."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "2. Apex Industrial Equipment — proses dan jurnal",
+      "prompt": "5 pompa dijual kredit \\$25,000, syarat 2/10, n/30; biaya \\$16,000. Barang telah diambil, diverifikasi, dikemas, dan dikirim. Carrier mengonfirmasi BOL. Tentukan jurnal dan gross margin.",
+      "blocks": [
+        {
+          "kind": "journal",
+          "caption": "Billing module (USD)",
+          "lines": [
+            {
+              "account": "Accounts Receivable",
+              "debit": "$25,000"
+            },
+            {
+              "account": "Sales Revenue",
+              "credit": "$25,000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "caption": "Inventory / cost module (USD)",
+          "lines": [
+            {
+              "account": "Cost of Goods Sold",
+              "debit": "$16,000"
+            },
+            {
+              "account": "Merchandise Inventory",
+              "credit": "$16,000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "text": "\\text{Gross profit}=25{,}000-16{,}000=9{,}000\\\\\\text{Gross margin}=9{,}000/25{,}000=36\\%",
+          "note": "ERP mencegah billing tanpa referensi BOL elektronik."
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "3. Rendi — temukan konflik kewenangan",
+      "prompt": "Rendi (Sales) dapat membuat pelanggan, menetapkan credit limit, memasukkan sales order, dan menerbitkan credit memo penghapusan invoice. Identifikasi risiko, tujuan kontrol, dan perbaikannya.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Risiko: pelanggan fiktif memperoleh kredit $50,000, barang dikirim ke rekan pelaku, lalu saldo dihapus lewat credit memo. Tujuan kontrol: mencegah penjualan tanpa otorisasi, kerugian piutang, dan pencurian persediaan."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Cabut persetujuan kredit dan penerbitan credit memo dari peran Sales.",
+            "Alihkan persetujuan limit kepada Credit Manager independen.",
+            "Credit memo di atas $1,000 membutuhkan Finance Director dan Controller.",
+            "Terapkan pemisahan otomatis melalui RBAC."
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "7. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Quick reference",
+        "Ingat"
+      ],
+      "rows": [
+        [
+          "Nilai informasi",
+          "V = B − C; discretionary: accept jika positif, reject jika tidak. Mandatory tetap wajib."
+        ],
+        [
+          "Executive gap",
+          "28% sedikit/tanpa informasi + 54% separuh informasi = 82%."
+        ],
+        [
+          "Simple IS",
+          "Input → Processing → Output, didukung Storage."
+        ],
+        [
+          "Kualitas",
+          "Relevance dan Faithful Representation; comparability, verifiability, timeliness, understandability."
+        ],
+        [
+          "Peran / sertifikasi",
+          "User, Manager, Designer, Evaluator; CISA–ISACA, CITP–AICPA, CIA–IIA."
+        ],
+        [
+          "Primary",
+          "Inbound, Operations, Outbound, Marketing & Sales, Service."
+        ],
+        [
+          "Support",
+          "Firm Infrastructure (AIS), HR, Technology Development, Procurement."
+        ],
+        [
+          "Fulfillment",
+          "Order → Pick → Ship → Bill; Sales Order → Picking Ticket → Packing Slip/BOL → Invoice."
+        ],
+        [
+          "Sistem",
+          "ERP: database terpusat; FRS: GL/laporan; HRMS: tenaga kerja; SCM: pemasok; CRM: pelanggan."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Common trap",
+        "Koreksi"
+      ],
+      "rows": [
+        [
+          "Designer mengaudit kontrol buatannya sendiri.",
+          "Evaluator harus independen; hindari self-review."
+        ],
+        [
+          "Lebih banyak data mentah selalu lebih baik.",
+          "Filter, agregasi, konteks, dan exception reporting mengatasi overload."
+        ],
+        [
+          "AIS hanya FRS.",
+          "AIS mencakup data nonkeuangan dan sistem manajerial/operasional."
+        ],
+        [
+          "Hentikan pelaporan mandatory karena ROI negatif.",
+          "Kewajiban hukum tidak bergantung pada B > C."
+        ],
+        [
+          "AIS adalah primary activity / Technology Development.",
+          "AIS berada dalam Firm Infrastructure dan mengintegrasikan seluruh aktivitas."
+        ]
+      ]
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Decision aid investasi: apakah wajib secara hukum? Ya → implementasikan; tidak → hitung V = B − C dan uji V > 0.",
+        "Decision aid SoD: tandai custody, authorization, recording. Periksa kombinasi yang bertentangan pada orang yang sama dan independensi evaluator."
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Batas TM1",
+      "text": "Alur proses dibahas secara konseptual. Notasi formal BPMN, pengujian COSO/SOX mendalam, ITGC, dan normalisasi database berada di luar TM ini."
+    }
+  ]
+}

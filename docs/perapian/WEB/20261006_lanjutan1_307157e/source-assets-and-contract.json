@@ -1,0 +1,1591 @@
+{
+  "sourceImages": [
+    {
+      "slide": 35,
+      "member": "ppt/media/image17.jpeg",
+      "path": "source-inspection/AKK202-slide35-image17.jpeg",
+      "sha256": "a7a2126016d828e2c98a7f112413e515fa451827bcff94c083aab891c97796a3",
+      "kind": "Original PPTX embedded source image; not website screenshot"
+    },
+    {
+      "slide": 37,
+      "member": "ppt/media/image18.png",
+      "path": "source-inspection/AKK202-slide37-image18.png",
+      "sha256": "f6ab1979560fe39780c46307805339a04c10b19395a6cb5639629d6e9ca647e6",
+      "kind": "Original PPTX embedded source image; not website screenshot"
+    }
+  ],
+  "contractXlsx": {
+    "path": "C:\\cek\\Manajemen Keuangan\\Materi\\Kontrak MK 2026.xlsx",
+    "sha256": "15722434339fe7737378990eff2a412a79dcf61461c56ee90383588e823c8e52",
+    "note": "XML cells only, no formula evaluation or visual review",
+    "rows": [
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "1",
+        "cells": [
+          {
+            "cell": "B1",
+            "value": "            Syllabus"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "2",
+        "cells": [
+          {
+            "cell": "B2",
+            "value": "Course"
+          },
+          {
+            "cell": "C2",
+            "value": "FINANCIAL MANAGEMENT"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "3",
+        "cells": [
+          {
+            "cell": "B3",
+            "value": "Lecturer"
+          },
+          {
+            "cell": "C3",
+            "value": "Yani Permatasari, S.Ak., MBA., Ak., CA (YPS)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "4",
+        "cells": [
+          {
+            "cell": "C4",
+            "value": "Prof. Ardianto (ARDI)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "5",
+        "cells": [
+          {
+            "cell": "C5",
+            "value": "Anna Retnawati,Dr., SE., M.Acc. (ANR)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "6",
+        "cells": [
+          {
+            "cell": "C6",
+            "value": "Puput Tri Komalasari, Dr., SE., M.Si., MM. (PTK)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "7",
+        "cells": [
+          {
+            "cell": "C7",
+            "value": "Santi Novita, Dr., SE., MM., Ak., CA., BKP. (SAN)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "8",
+        "cells": [
+          {
+            "cell": "C8",
+            "value": "Dewi Sriani, S.A., M.S.Ak., M.Sc (DSA)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "9",
+        "cells": [
+          {
+            "cell": "C9",
+            "value": "La Ode Sabaruddin, Dr., SE., M.Si. (LOS)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "10",
+        "cells": [
+          {
+            "cell": "C10",
+            "value": "Sandra Sukma Embuningtyas, SE., M.Akun. (SSE)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "11",
+        "cells": [
+          {
+            "cell": "C11",
+            "value": "Elsa Yustika Putri, SM., MSM (EYP)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "12",
+        "cells": [
+          {
+            "cell": "C12",
+            "value": "Tantri Sun Estuning Dasih, S.A., MA. (TSE)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "13",
+        "cells": [
+          {
+            "cell": "C13",
+            "value": "Zahrin Haznina Qalby, SM., MSF. (ZHQ)"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "14",
+        "cells": [
+          {
+            "cell": "B14",
+            "value": "Text Book"
+          },
+          {
+            "cell": "C14",
+            "value": "Brigham, Eugene F. and Houston Joel F, Fundamentals of Financial Management 15th Ed., Cengage Learning, 2019."
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "16",
+        "cells": [
+          {
+            "cell": "A16",
+            "value": "W"
+          },
+          {
+            "cell": "B16",
+            "value": "Topic"
+          },
+          {
+            "cell": "E16",
+            "value": "Chapter"
+          },
+          {
+            "cell": "F16",
+            "value": "Date"
+          },
+          {
+            "cell": "G16",
+            "value": "IUP"
+          },
+          {
+            "cell": "H16",
+            "value": "L"
+          },
+          {
+            "cell": "I16",
+            "value": "M"
+          },
+          {
+            "cell": "J16",
+            "value": "N"
+          },
+          {
+            "cell": "K16",
+            "value": "O"
+          },
+          {
+            "cell": "L16",
+            "value": "P"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "17",
+        "cells": [
+          {
+            "cell": "G17",
+            "value": "Fri, 07.00, 204"
+          },
+          {
+            "cell": "H17",
+            "value": "Tue, 07.00, EF-2.7 "
+          },
+          {
+            "cell": "I17",
+            "value": "Mon, 12.40, EF-2.7"
+          },
+          {
+            "cell": "J17",
+            "value": "Wed, 09.50, EF-2.7"
+          },
+          {
+            "cell": "K17",
+            "value": "Fri, 15.30, 322"
+          },
+          {
+            "cell": "L17",
+            "value": "Thu, 07.00, EF-3.10"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "18",
+        "cells": [
+          {
+            "cell": "A18",
+            "value": "1.0"
+          },
+          {
+            "cell": "B18",
+            "value": "An Overview of Financial Management"
+          },
+          {
+            "cell": "E18",
+            "value": "Ch.1"
+          },
+          {
+            "cell": "F18",
+            "value": "10-14 Aug"
+          },
+          {
+            "cell": "G18",
+            "value": "YPS"
+          },
+          {
+            "cell": "H18",
+            "value": "TSE"
+          },
+          {
+            "cell": "I18",
+            "value": "YPS"
+          },
+          {
+            "cell": "J18",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K18",
+            "value": "ANR"
+          },
+          {
+            "cell": "L18",
+            "value": "SSE"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "19",
+        "cells": [
+          {
+            "cell": "A19",
+            "value": "2.0"
+          },
+          {
+            "cell": "B19",
+            "value": "Analysis of Financial Statements"
+          },
+          {
+            "cell": "E19",
+            "value": "Ch.4"
+          },
+          {
+            "cell": "F19",
+            "value": "17-21 Aug"
+          },
+          {
+            "cell": "G19",
+            "value": "YPS"
+          },
+          {
+            "cell": "H19",
+            "value": "TSE"
+          },
+          {
+            "cell": "I19",
+            "value": "YPS"
+          },
+          {
+            "cell": "J19",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K19",
+            "value": "ANR"
+          },
+          {
+            "cell": "L19",
+            "value": "SSE"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "20",
+        "cells": [
+          {
+            "cell": "A20",
+            "value": "3.0"
+          },
+          {
+            "cell": "B20",
+            "value": "Time Value of Money"
+          },
+          {
+            "cell": "E20",
+            "value": "Ch.5"
+          },
+          {
+            "cell": "F20",
+            "value": "24-28 Aug"
+          },
+          {
+            "cell": "G20",
+            "value": "YPS"
+          },
+          {
+            "cell": "H20",
+            "value": "TSE"
+          },
+          {
+            "cell": "I20",
+            "value": "YPS"
+          },
+          {
+            "cell": "J20",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K20",
+            "value": "ANR"
+          },
+          {
+            "cell": "L20",
+            "value": "SSE"
+          },
+          {
+            "cell": "M20",
+            "value": "Quiz 1 pre"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "21",
+        "cells": [
+          {
+            "cell": "A21",
+            "value": "4.0"
+          },
+          {
+            "cell": "B21",
+            "value": "Risk and Rates of Return"
+          },
+          {
+            "cell": "E21",
+            "value": "Ch.8"
+          },
+          {
+            "cell": "F21",
+            "value": "31Aug - 4  Sept"
+          },
+          {
+            "cell": "G21",
+            "value": "YPS"
+          },
+          {
+            "cell": "H21",
+            "value": "TSE"
+          },
+          {
+            "cell": "I21",
+            "value": "YPS"
+          },
+          {
+            "cell": "J21",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K21",
+            "value": "ANR"
+          },
+          {
+            "cell": "L21",
+            "value": "SSE"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "22",
+        "cells": [
+          {
+            "cell": "A22",
+            "value": "5.0"
+          },
+          {
+            "cell": "B22",
+            "value": "The Cost of Capital"
+          },
+          {
+            "cell": "E22",
+            "value": "Ch.10"
+          },
+          {
+            "cell": "F22",
+            "value": "7-11 Sept"
+          },
+          {
+            "cell": "G22",
+            "value": "YPS"
+          },
+          {
+            "cell": "H22",
+            "value": "TSE"
+          },
+          {
+            "cell": "I22",
+            "value": "YPS"
+          },
+          {
+            "cell": "J22",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K22",
+            "value": "ANR"
+          },
+          {
+            "cell": "L22",
+            "value": "SSE"
+          },
+          {
+            "cell": "M22",
+            "value": "Quiz 2 pre"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "23",
+        "cells": [
+          {
+            "cell": "A23",
+            "value": "6.0"
+          },
+          {
+            "cell": "B23",
+            "value": "The Basics of Capital Budgeting"
+          },
+          {
+            "cell": "E23",
+            "value": "Ch.11"
+          },
+          {
+            "cell": "F23",
+            "value": "14-18 Sept"
+          },
+          {
+            "cell": "G23",
+            "value": "YPS"
+          },
+          {
+            "cell": "H23",
+            "value": "TSE"
+          },
+          {
+            "cell": "I23",
+            "value": "YPS"
+          },
+          {
+            "cell": "J23",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K23",
+            "value": "ANR"
+          },
+          {
+            "cell": "L23",
+            "value": "SSE"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "24",
+        "cells": [
+          {
+            "cell": "A24",
+            "value": "7.0"
+          },
+          {
+            "cell": "B24",
+            "value": "Cash Flow Estimation and Risk Analysis"
+          },
+          {
+            "cell": "E24",
+            "value": "Ch.12"
+          },
+          {
+            "cell": "F24",
+            "value": "21-25 Sept"
+          },
+          {
+            "cell": "G24",
+            "value": "SAN"
+          },
+          {
+            "cell": "H24",
+            "value": "TSE"
+          },
+          {
+            "cell": "I24",
+            "value": "YPS"
+          },
+          {
+            "cell": "J24",
+            "value": "ZHQ"
+          },
+          {
+            "cell": "K24",
+            "value": "ANR"
+          },
+          {
+            "cell": "L24",
+            "value": "SSE"
+          },
+          {
+            "cell": "M24",
+            "value": "Quiz 3 post"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "25",
+        "cells": [
+          {
+            "cell": "A25",
+            "value": "8.0"
+          },
+          {
+            "cell": "B25",
+            "value": "UTS"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "26",
+        "cells": [
+          {
+            "cell": "A26",
+            "value": "9.0"
+          },
+          {
+            "cell": "B26",
+            "value": "Capital Structure and Leverage"
+          },
+          {
+            "cell": "E26",
+            "value": "Ch.14"
+          },
+          {
+            "cell": "F26",
+            "value": "12-16 Oct"
+          },
+          {
+            "cell": "G26",
+            "value": "SAN"
+          },
+          {
+            "cell": "H26",
+            "value": "LOS"
+          },
+          {
+            "cell": "I26",
+            "value": "PTK"
+          },
+          {
+            "cell": "J26",
+            "value": "SAN"
+          },
+          {
+            "cell": "K26",
+            "value": "EYP"
+          },
+          {
+            "cell": "L26",
+            "value": "DSA"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "27",
+        "cells": [
+          {
+            "cell": "A27",
+            "value": "10.0"
+          },
+          {
+            "cell": "B27",
+            "value": "Distributions to Shareholders"
+          },
+          {
+            "cell": "E27",
+            "value": "Ch.15"
+          },
+          {
+            "cell": "F27",
+            "value": "19-23 Oct"
+          },
+          {
+            "cell": "G27",
+            "value": "SAN"
+          },
+          {
+            "cell": "H27",
+            "value": "LOS"
+          },
+          {
+            "cell": "I27",
+            "value": "PTK"
+          },
+          {
+            "cell": "J27",
+            "value": "SAN"
+          },
+          {
+            "cell": "K27",
+            "value": "EYP"
+          },
+          {
+            "cell": "L27",
+            "value": "DSA"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "28",
+        "cells": [
+          {
+            "cell": "A28",
+            "value": "11.0"
+          },
+          {
+            "cell": "B28",
+            "value": "Working Capital Management (part I)"
+          },
+          {
+            "cell": "E28",
+            "value": "Ch.16"
+          },
+          {
+            "cell": "F28",
+            "value": "26-30 Oct"
+          },
+          {
+            "cell": "G28",
+            "value": "SAN"
+          },
+          {
+            "cell": "H28",
+            "value": "LOS"
+          },
+          {
+            "cell": "I28",
+            "value": "PTK"
+          },
+          {
+            "cell": "J28",
+            "value": "SAN"
+          },
+          {
+            "cell": "K28",
+            "value": "EYP"
+          },
+          {
+            "cell": "L28",
+            "value": "DSA"
+          },
+          {
+            "cell": "M28",
+            "value": "Quiz 4 pre"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "29",
+        "cells": [
+          {
+            "cell": "A29",
+            "value": "12.0"
+          },
+          {
+            "cell": "B29",
+            "value": "Working Capital Management (part II)"
+          },
+          {
+            "cell": "E29",
+            "value": "Ch.16"
+          },
+          {
+            "cell": "F29",
+            "value": "2-6 Nov"
+          },
+          {
+            "cell": "G29",
+            "value": "SAN"
+          },
+          {
+            "cell": "H29",
+            "value": "LOS"
+          },
+          {
+            "cell": "I29",
+            "value": "PTK"
+          },
+          {
+            "cell": "J29",
+            "value": "SAN"
+          },
+          {
+            "cell": "K29",
+            "value": "EYP"
+          },
+          {
+            "cell": "L29",
+            "value": "DSA"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "30",
+        "cells": [
+          {
+            "cell": "A30",
+            "value": "13.0"
+          },
+          {
+            "cell": "B30",
+            "value": "Multinational Financial Management"
+          },
+          {
+            "cell": "E30",
+            "value": "Ch.19"
+          },
+          {
+            "cell": "F30",
+            "value": "9-13 Nov"
+          },
+          {
+            "cell": "G30",
+            "value": "SAN"
+          },
+          {
+            "cell": "H30",
+            "value": "LOS"
+          },
+          {
+            "cell": "I30",
+            "value": "PTK"
+          },
+          {
+            "cell": "J30",
+            "value": "SAN"
+          },
+          {
+            "cell": "K30",
+            "value": "EYP"
+          },
+          {
+            "cell": "L30",
+            "value": "DSA"
+          },
+          {
+            "cell": "M30",
+            "value": "Quiz 5 pre"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "31",
+        "cells": [
+          {
+            "cell": "A31",
+            "value": "14.0"
+          },
+          {
+            "cell": "B31",
+            "value": "Mergers and Acquisitions"
+          },
+          {
+            "cell": "E31",
+            "value": "Ch.21"
+          },
+          {
+            "cell": "F31",
+            "value": "16-20 Nov"
+          },
+          {
+            "cell": "G31",
+            "value": "ARDI"
+          },
+          {
+            "cell": "H31",
+            "value": "LOS"
+          },
+          {
+            "cell": "I31",
+            "value": "PTK"
+          },
+          {
+            "cell": "J31",
+            "value": "SAN"
+          },
+          {
+            "cell": "K31",
+            "value": "EYP"
+          },
+          {
+            "cell": "L31",
+            "value": "DSA"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "32",
+        "cells": [
+          {
+            "cell": "A32",
+            "value": "15.0"
+          },
+          {
+            "cell": "B32",
+            "value": "Corporate Failure"
+          },
+          {
+            "cell": "E32",
+            "value": "Artikel"
+          },
+          {
+            "cell": "F32",
+            "value": "23-27 Nov"
+          },
+          {
+            "cell": "G32",
+            "value": "ARDI"
+          },
+          {
+            "cell": "H32",
+            "value": "LOS"
+          },
+          {
+            "cell": "I32",
+            "value": "PTK"
+          },
+          {
+            "cell": "J32",
+            "value": "SAN"
+          },
+          {
+            "cell": "K32",
+            "value": "EYP"
+          },
+          {
+            "cell": "L32",
+            "value": "DSA"
+          },
+          {
+            "cell": "M32",
+            "value": "Quiz 6 post"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "33",
+        "cells": [
+          {
+            "cell": "A33",
+            "value": "16.0"
+          },
+          {
+            "cell": "B33",
+            "value": "UAS"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "35",
+        "cells": [
+          {
+            "cell": "A35",
+            "value": "No"
+          },
+          {
+            "cell": "B35",
+            "value": "Aktivitas Penilaian"
+          },
+          {
+            "cell": "C35",
+            "value": "Bobot"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "36",
+        "cells": [
+          {
+            "cell": "A36",
+            "value": "1.0"
+          },
+          {
+            "cell": "B36",
+            "value": "Kegiatan Partisipatif"
+          },
+          {
+            "cell": "C36",
+            "value": "0.2"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "37",
+        "cells": [
+          {
+            "cell": "A37",
+            "value": "2.0"
+          },
+          {
+            "cell": "B37",
+            "value": "Hasil Proyek"
+          },
+          {
+            "cell": "C37",
+            "value": "0.15"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "38",
+        "cells": [
+          {
+            "cell": "A38",
+            "value": "3.0"
+          },
+          {
+            "cell": "B38",
+            "value": "Tugas"
+          },
+          {
+            "cell": "C38",
+            "value": "0.1"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "39",
+        "cells": [
+          {
+            "cell": "A39",
+            "value": "4.0"
+          },
+          {
+            "cell": "B39",
+            "value": "Quiz"
+          },
+          {
+            "cell": "C39",
+            "value": "0.15"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "40",
+        "cells": [
+          {
+            "cell": "A40",
+            "value": "5.0"
+          },
+          {
+            "cell": "B40",
+            "value": "UTS"
+          },
+          {
+            "cell": "C40",
+            "value": "0.2"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet1.xml",
+        "row": "41",
+        "cells": [
+          {
+            "cell": "A41",
+            "value": "6.0"
+          },
+          {
+            "cell": "B41",
+            "value": "UAS"
+          },
+          {
+            "cell": "C41",
+            "value": "0.2"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "2",
+        "cells": [
+          {
+            "cell": "A2",
+            "value": "1.0"
+          },
+          {
+            "cell": "B2",
+            "value": "An Overview of Financial Management"
+          },
+          {
+            "cell": "E2",
+            "value": "Ch.1"
+          },
+          {
+            "cell": "F2",
+            "value": "WFE"
+          },
+          {
+            "cell": "G2",
+            "value": "8.0"
+          },
+          {
+            "cell": "H2",
+            "value": "theory"
+          },
+          {
+            "cell": "I2",
+            "value": "22"
+          },
+          {
+            "cell": "J2",
+            "value": "53"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "3",
+        "cells": [
+          {
+            "cell": "A3",
+            "value": "2.0"
+          },
+          {
+            "cell": "B3",
+            "value": "Financial Markets and Institutions"
+          },
+          {
+            "cell": "E3",
+            "value": "Ch.2"
+          },
+          {
+            "cell": "F3",
+            "value": "OCA"
+          },
+          {
+            "cell": "G3",
+            "value": "7.0"
+          },
+          {
+            "cell": "H3",
+            "value": "theory"
+          },
+          {
+            "cell": "I3",
+            "value": "31"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "4",
+        "cells": [
+          {
+            "cell": "A4",
+            "value": "3.0"
+          },
+          {
+            "cell": "B4",
+            "value": "Analysis of Financial Statements"
+          },
+          {
+            "cell": "E4",
+            "value": "Ch.4"
+          },
+          {
+            "cell": "F4",
+            "value": "OCA"
+          },
+          {
+            "cell": "G4",
+            "value": "11.0"
+          },
+          {
+            "cell": "H4",
+            "value": "teknik"
+          },
+          {
+            "cell": "I4",
+            "value": "39"
+          },
+          {
+            "cell": "J4",
+            "value": "81"
+          },
+          {
+            "cell": "K4",
+            "value": "Q1"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "5",
+        "cells": [
+          {
+            "cell": "A5",
+            "value": "4.0"
+          },
+          {
+            "cell": "B5",
+            "value": "Time Value of Money"
+          },
+          {
+            "cell": "E5",
+            "value": "Ch.5"
+          },
+          {
+            "cell": "F5",
+            "value": "DSA"
+          },
+          {
+            "cell": "G5",
+            "value": "18.0"
+          },
+          {
+            "cell": "H5",
+            "value": "teknik"
+          },
+          {
+            "cell": "I5",
+            "value": "42"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "6",
+        "cells": [
+          {
+            "cell": "A6",
+            "value": "5.0"
+          },
+          {
+            "cell": "B6",
+            "value": "Risk and Rates of Return"
+          },
+          {
+            "cell": "E6",
+            "value": "Ch.8"
+          },
+          {
+            "cell": "F6",
+            "value": "DSA"
+          },
+          {
+            "cell": "G6",
+            "value": "6.0"
+          },
+          {
+            "cell": "H6",
+            "value": "teknik"
+          },
+          {
+            "cell": "I6",
+            "value": "42"
+          },
+          {
+            "cell": "K6",
+            "value": "Q2"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "7",
+        "cells": [
+          {
+            "cell": "A7",
+            "value": "6.0"
+          },
+          {
+            "cell": "B7",
+            "value": "The Basics of Capital Budgeting"
+          },
+          {
+            "cell": "E7",
+            "value": "Ch.11"
+          },
+          {
+            "cell": "F7",
+            "value": "YEN"
+          },
+          {
+            "cell": "G7",
+            "value": "10.0"
+          },
+          {
+            "cell": "H7",
+            "value": "teknik"
+          },
+          {
+            "cell": "I7",
+            "value": "30"
+          },
+          {
+            "cell": "J7",
+            "value": "60"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "8",
+        "cells": [
+          {
+            "cell": "A8",
+            "value": "7.0"
+          },
+          {
+            "cell": "B8",
+            "value": "Cash Flow Estimation and Risk Analysis"
+          },
+          {
+            "cell": "E8",
+            "value": "Ch.12"
+          },
+          {
+            "cell": "F8",
+            "value": "YEN"
+          },
+          {
+            "cell": "G8",
+            "value": "7.0"
+          },
+          {
+            "cell": "H8",
+            "value": "teknik"
+          },
+          {
+            "cell": "I8",
+            "value": "30"
+          },
+          {
+            "cell": "K8",
+            "value": "Q3"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "9",
+        "cells": [
+          {
+            "cell": "A9",
+            "value": "8.0"
+          },
+          {
+            "cell": "B9",
+            "value": "Capital Structure and Leverage"
+          },
+          {
+            "cell": "E9",
+            "value": "Ch.14"
+          },
+          {
+            "cell": "F9",
+            "value": "DNS"
+          },
+          {
+            "cell": "G9",
+            "value": "6.0"
+          },
+          {
+            "cell": "H9",
+            "value": "theory"
+          },
+          {
+            "cell": "I9",
+            "value": "39"
+          },
+          {
+            "cell": "J9",
+            "value": "70"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "10",
+        "cells": [
+          {
+            "cell": "A10",
+            "value": "9.0"
+          },
+          {
+            "cell": "B10",
+            "value": "Distributions to Shareholders"
+          },
+          {
+            "cell": "E10",
+            "value": "Ch.15"
+          },
+          {
+            "cell": "F10",
+            "value": "DNS"
+          },
+          {
+            "cell": "G10",
+            "value": "7.0"
+          },
+          {
+            "cell": "H10",
+            "value": "theory"
+          },
+          {
+            "cell": "I10",
+            "value": "31"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "11",
+        "cells": [
+          {
+            "cell": "A11",
+            "value": "10.0"
+          },
+          {
+            "cell": "B11",
+            "value": "Working Capital Management"
+          },
+          {
+            "cell": "E11",
+            "value": "Ch.16"
+          },
+          {
+            "cell": "F11",
+            "value": "SAN"
+          },
+          {
+            "cell": "G11",
+            "value": "7.0"
+          },
+          {
+            "cell": "H11",
+            "value": "teknik"
+          },
+          {
+            "cell": "I11",
+            "value": "19.0"
+          },
+          {
+            "cell": "J11",
+            "value": "37"
+          },
+          {
+            "cell": "K11",
+            "value": "Q4"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "12",
+        "cells": [
+          {
+            "cell": "A12",
+            "value": "11.0"
+          },
+          {
+            "cell": "B12",
+            "value": "Working Capital Management"
+          },
+          {
+            "cell": "E12",
+            "value": "Ch.16"
+          },
+          {
+            "cell": "F12",
+            "value": "SAN"
+          },
+          {
+            "cell": "G12",
+            "value": "6.0"
+          },
+          {
+            "cell": "H12",
+            "value": "teknik"
+          },
+          {
+            "cell": "I12",
+            "value": "18.0"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "13",
+        "cells": [
+          {
+            "cell": "A13",
+            "value": "12.0"
+          },
+          {
+            "cell": "B13",
+            "value": "Multinational Financial Management"
+          },
+          {
+            "cell": "E13",
+            "value": "Ch.19"
+          },
+          {
+            "cell": "F13",
+            "value": "LOS"
+          },
+          {
+            "cell": "G13",
+            "value": "12.0"
+          },
+          {
+            "cell": "H13",
+            "value": "theory"
+          },
+          {
+            "cell": "I13",
+            "value": "34"
+          },
+          {
+            "cell": "J13",
+            "value": "60"
+          },
+          {
+            "cell": "K13",
+            "value": "Q5"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "14",
+        "cells": [
+          {
+            "cell": "A14",
+            "value": "13.0"
+          },
+          {
+            "cell": "B14",
+            "value": "Mergers and Acquisitions"
+          },
+          {
+            "cell": "E14",
+            "value": "Ch.21"
+          },
+          {
+            "cell": "F14",
+            "value": "LOS"
+          },
+          {
+            "cell": "G14",
+            "value": "10.0"
+          },
+          {
+            "cell": "H14",
+            "value": "theory"
+          },
+          {
+            "cell": "I14",
+            "value": "26"
+          }
+        ]
+      },
+      {
+        "sheet": "xl/worksheets/sheet2.xml",
+        "row": "15",
+        "cells": [
+          {
+            "cell": "A15",
+            "value": "14.0"
+          },
+          {
+            "cell": "B15",
+            "value": "Corporate Bankruptcy and Liquidation"
+          },
+          {
+            "cell": "E15",
+            "value": "Artikel"
+          },
+          {
+            "cell": "F15",
+            "value": "YPS"
+          },
+          {
+            "cell": "H15",
+            "value": "theory"
+          },
+          {
+            "cell": "K15",
+            "value": "Q6"
+          }
+        ]
+      }
+    ]
+  }
+}

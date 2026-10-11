@@ -57,7 +57,7 @@ const SPENCER_AMORTIZATION_SCHEDULE_CASE: ContentBlock = {
     {
       kind: 'formula',
       text: 'i=12\\%:\\quad\\text{£3.000.000}\\times 0{,}56743+\\text{£300.000}\\times 3{,}60478=\\text{£1.702.290}+\\text{£1.081.434}=\\text{£2.783.724}',
-      note: 'Harga di bawah nominal berarti tarif efektif di atas 10%. Dengan faktor tabel nilai kini 5 desimal seperti Kieso, 12% menghasilkan tepat harga jual.'
+      note: 'Harga di bawah nominal berarti tarif efektif di atas 10%. Dengan faktor tabel nilai kini 5 desimal seperti Kieso, 12% menghasilkan harga jual tersebut (selisih pembulatan tabel diserap amortisasi terakhir).'
     },
     { kind: 'h3', text: 'Langkah 2 — skedul amortisasi' },
     {
@@ -78,7 +78,7 @@ const SPENCER_AMORTIZATION_SCHEDULE_CASE: ContentBlock = {
       kind: 'callout',
       variant: 'info',
       title: 'Pembulatan tahun terakhir',
-      text: 'Amortisasi tahun terakhir (£3.000.000 − £2.946.445 = £53.555) menyerap selisih pembulatan, sehingga beban bunga 2029 menjadi £353.555 dan nilai tercatat tepat £3.000.000 saat jatuh tempo (Kieso p. 1113).'
+      text: 'Amortisasi tahun terakhir (£3.000.000 − £2.946.445 = £53.555) menyerap selisih pembulatan, sehingga beban bunga 2029 menjadi £353.555 dan nilai tercatat tepat £3.000.000 saat jatuh tempo (Kieso p. 1150 untuk data soal).'
     },
     { kind: 'h3', text: 'Langkah 3 — jurnal terkait' },
     {
@@ -108,10 +108,11 @@ const SPENCER_AMORTIZATION_SCHEDULE_CASE: ContentBlock = {
     },
     {
       kind: 'journal',
-      caption: '1 Januari 2030 — pelunasan pokok saat jatuh tempo',
+      caption: '1 Januari 2030 — pelunasan pokok dan kupon terakhir saat jatuh tempo (kupon £300.000 berasal dari akrual 31 Desember 2029)',
       lines: [
         { account: 'Bonds Payable', debit: '£3.000.000' },
-        { account: 'Cash', credit: '£3.000.000', isCredit: true }
+        { account: 'Interest Payable', debit: '£300.000' },
+        { account: 'Cash', credit: '£3.300.000', isCredit: true }
       ]
     }
   ]
@@ -120,7 +121,7 @@ const SPENCER_AMORTIZATION_SCHEDULE_CASE: ContentBlock = {
 export const TM7_READING: Reading = {
   tm: 7,
   title: 'Liabilitas Jangka Panjang: Obligasi dan Wesel Bayar',
-  ref: 'Kieso IFRS 5e Ch. 13 (pp. 1100–1170) | IFRS 9, IAS 1, IFRIC 19',
+  ref: 'Kieso IFRS 5e Ch. 13 (pp. 1101–1173) | IFRS 9 dan IAS 1 (rujukan di Kieso); IFRIC 19 (label dari luar buku, isinya sesuai Kieso p. 1129)',
   intro: 'TM7 membahas Kieso Bab 13: karakteristik dan jenis obligasi, penilaian dengan nilai kini, metode bunga efektif, akrual akhir tahun, penerbitan di antara tanggal bunga dan biaya penerbitan, wesel bayar jangka panjang, penghentian utang, opsi nilai wajar, serta penyajian dan analisis solvabilitas. Latihan buku E13.5 (dengan data E13.4) dan E13.6 dibahas langkah demi langkah. Cakupan obligasi untuk UTS kelas ini belum terkonfirmasi.',
   objectives: [
     'Menjelaskan perjanjian obligasi, jenis-jenis obligasi, dan hubungan tarif kupon dengan tarif efektif.',
@@ -155,7 +156,7 @@ export const TM7_READING: Reading = {
     { kind: 'h2', text: '2. Nature of Non-Current Liabilities & Bond Types' },
     {
       kind: 'p',
-      text: 'Liabilitas jangka panjang adalah kewajiban kini yang penyelesaiannya tidak diharapkan dalam 12 bulan setelah periode pelaporan atau dalam siklus operasi normal (Kieso p. 1101). Penerbitan obligasi diatur oleh **perjanjian obligasi (bond indenture)** yang memuat jumlah nominal yang diizinkan, tarif kupon, tanggal pembayaran bunga, tanggal jatuh tempo, ketentuan penebusan atau konversi, dan kovenan pembatas.'
+      text: 'Liabilitas jangka panjang adalah kewajiban kini yang penyelesaiannya tidak diharapkan dalam 12 bulan setelah periode pelaporan atau dalam siklus operasi normal (Kieso p. 1102). Penerbitan obligasi diatur oleh **perjanjian obligasi (bond indenture)** yang memuat jumlah nominal yang diizinkan, tarif kupon, tanggal pembayaran bunga, tanggal jatuh tempo, ketentuan penebusan atau konversi, dan kovenan pembatas.'
     },
     {
       kind: 'table',
@@ -189,7 +190,7 @@ export const TM7_READING: Reading = {
     { kind: 'h2', text: '4. Effective-Interest Method' },
     {
       kind: 'p',
-      text: 'Di bawah IFRS 9, diskonto dan premi **wajib** diamortisasi dengan metode bunga efektif, sehingga beban bunga merupakan persentase konstan dari nilai tercatat (Kieso p. 1109). IFRS mencatat obligasi **secara neto**: diskonto atau premi tidak dicatat di akun terpisah, melainkan langsung menambah atau mengurangi Bonds Payable (Kieso p. 1112).'
+      text: 'Di bawah IFRS 9, diskonto dan premi **wajib** diamortisasi dengan metode bunga efektif, sehingga beban bunga merupakan persentase konstan dari nilai tercatat (Kieso p. 1110). IFRS mencatat obligasi **secara neto**: diskonto atau premi tidak dicatat di akun terpisah, melainkan langsung menambah atau mengurangi Bonds Payable (Kieso p. 1112).'
     },
     {
       kind: 'formula',
@@ -207,8 +208,8 @@ export const TM7_READING: Reading = {
       headers: ['Situasi', 'Perlakuan', 'Kieso'],
       rows: [
         ['Akhir tahun di antara tanggal bunga', 'Debit Interest Expense (nilai tercatat × tarif efektif × bulan/12); kredit Interest Payable (kupon berjalan) dan Bonds Payable (amortisasi diskonto) atau debit Bonds Payable (amortisasi premi)', 'pp. 1114–1115'],
-        ['Penerbitan di antara tanggal bunga', 'Pembeli membayar harga obligasi ditambah bunga berjalan sejak tanggal bunga terakhir; kas didebit sebesar keduanya, Bonds Payable dikredit sebesar harga, dan bunga berjalan dikredit ke Interest Expense (atau Interest Payable)', 'pp. 1115–1117'],
-        ['Biaya penerbitan', 'Mengurangi kas bersih dan nilai tercatat awal Bonds Payable; tidak dicatat sebagai aset tangguhan; menaikkan tarif efektif', 'pp. 1118–1119']
+        ['Penerbitan di antara tanggal bunga', 'Pembeli membayar harga obligasi ditambah bunga berjalan sejak tanggal bunga terakhir; kas didebit sebesar keduanya, Bonds Payable dikredit sebesar harga, dan bunga berjalan dikredit ke Interest Expense (atau Interest Payable)', 'pp. 1114–1116'],
+        ['Biaya penerbitan', 'Mengurangi kas bersih dan nilai tercatat awal Bonds Payable; tidak dicatat sebagai aset tangguhan; menaikkan tarif efektif', 'pp. 1144, 1171']
       ]
     },
     FOREMAN_BOND_DISCOUNT_CASE,
@@ -218,10 +219,10 @@ export const TM7_READING: Reading = {
       kind: 'table',
       headers: ['Jenis wesel', 'Pengukuran', 'Kieso'],
       rows: [
-        ['Wesel tanpa bunga', 'Nilai kini arus kas (kas yang diterima); selisih dengan nominal adalah diskonto yang diamortisasi ke beban bunga', 'p. 1122'],
-        ['Wesel dengan bunga tidak realistis', 'Didiskontokan pada tarif pasar (imputed interest rate); diskonto atau premi diamortisasi', 'pp. 1122–1124'],
-        ['Wesel untuk properti, barang, atau jasa', 'Nilai wajar barang/jasa atau nilai wajar wesel, mana yang lebih andal; bila tidak ada, gunakan tarif imputasi', 'p. 1124'],
-        ['Wesel hipotek (mortgage notes)', 'Dijamin properti; setiap angsuran memuat bunga dan pelunasan pokok', 'p. 1128']
+        ['Wesel tanpa bunga', 'Nilai kini arus kas (kas yang diterima); selisih dengan nominal adalah diskonto yang diamortisasi ke beban bunga', 'pp. 1118–1119'],
+        ['Wesel dengan bunga tidak realistis', 'Didiskontokan pada tarif pasar (imputed interest rate); diskonto atau premi diamortisasi', 'pp. 1118–1123'],
+        ['Wesel untuk properti, barang, atau jasa', 'Nilai wajar barang/jasa atau nilai wajar wesel, mana yang lebih andal; bila tidak ada, gunakan tarif imputasi', 'pp. 1122–1123'],
+        ['Wesel hipotek (mortgage notes)', 'Dijamin properti; setiap angsuran memuat bunga dan pelunasan pokok', 'pp. 1125–1126']
       ]
     },
 
@@ -229,15 +230,15 @@ export const TM7_READING: Reading = {
     {
       kind: 'formula',
       text: '\\text{Gain (loss) penghentian}=\\text{Nilai tercatat bersih}-\\text{Harga penebusan}',
-      note: 'Nilai tercatat bersih mencakup nominal yang disesuaikan dengan sisa diskonto/premi dan biaya penerbitan; gain atau loss diakui di laba rugi (Kieso p. 1129).'
+      note: 'Nilai tercatat bersih mencakup nominal yang disesuaikan dengan sisa diskonto/premi dan biaya penerbitan; gain atau loss diakui di laba rugi (Kieso pp. 1127–1128).'
     },
     {
       kind: 'table',
       headers: ['Cara penghentian', 'Perlakuan', 'Kieso'],
       rows: [
-        ['Pelunasan dengan kas sebelum jatuh tempo', 'Selisih nilai tercatat bersih dan harga penebusan ke laba rugi', 'p. 1129'],
-        ['Pertukaran utang dengan saham (IFRIC 19)', 'Saham diukur pada nilai wajarnya; selisih dengan nilai tercatat utang ke laba rugi', 'p. 1131'],
-        ['Modifikasi persyaratan', 'Bandingkan nilai kini arus kas baru (didiskontokan dengan tarif efektif awal) dengan nilai tercatat; selisih ≥ 10% berarti substansial: utang lama dihentikan dan utang baru dicatat pada nilai wajar. Selisih < 10%: utang tetap, nilai tercatat disesuaikan dan gain/loss ke laba rugi', 'p. 1133']
+        ['Pelunasan dengan kas sebelum jatuh tempo', 'Selisih nilai tercatat bersih dan harga penebusan ke laba rugi', 'pp. 1127–1128'],
+        ['Pertukaran utang dengan saham (IFRIC 19)', 'Saham diukur pada nilai wajarnya; selisih dengan nilai tercatat utang ke laba rugi', 'p. 1129'],
+        ['Modifikasi persyaratan', 'Bandingkan nilai kini arus kas baru (didiskontokan dengan tarif efektif awal) dengan nilai tercatat. Modifikasi substansial bila selisih ≥ 10% atau ada perubahan fundamental syarat dan ketentuan: utang lama dihentikan dan utang baru dicatat pada nilai wajar. Bila tidak substansial, utang tetap dan selisihnya (gain) ditangguhkan lalu diamortisasi selama sisa umur utang pada tarif efektif historis (catatan kaki 14)', 'pp. 1129–1131, 1173']
       ]
     },
 
@@ -245,7 +246,7 @@ export const TM7_READING: Reading = {
     {
       kind: 'ul',
       items: [
-        '**Opsi nilai wajar:** liabilitas keuangan boleh diukur pada nilai wajar; perubahan akibat **risiko kredit entitas sendiri** ke OCI, sisanya ke laba rugi (Kieso p. 1137).',
+        '**Opsi nilai wajar:** liabilitas keuangan boleh diukur pada nilai wajar; perubahan akibat **risiko kredit entitas sendiri** ke OCI, sisanya ke laba rugi (Kieso pp. 1131–1132).',
         '**Penyajian:** bagian yang jatuh tempo dalam 12 bulan dipindahkan ke liabilitas jangka pendek.',
         '**Pengungkapan:** sifat liabilitas, tarif, jatuh tempo, ketentuan penebusan dan konversi, kovenan, aset yang dijaminkan, dan jatuh tempo pokok lima tahun ke depan.'
       ]
@@ -253,7 +254,7 @@ export const TM7_READING: Reading = {
     {
       kind: 'formula',
       text: '\\text{Debt to assets}=\\frac{\\text{Total liabilitas}}{\\text{Total aset}}\\qquad\\text{Times interest earned}=\\frac{\\text{Laba sebelum pajak dan beban bunga}}{\\text{Beban bunga}}',
-      note: 'Kieso pp. 1142–1143.'
+      note: 'Kieso pp. 1139–1140.'
     },
 
     { kind: 'h2', text: '9. Standards Comparison' },
@@ -287,11 +288,11 @@ export const TM7_READING: Reading = {
       kind: 'table',
       headers: ['Jebakan', 'Kesalahan umum', 'Perlakuan benar', 'Kieso'],
       rows: [
-        ['Tarif untuk beban bunga', 'Nilai tercatat × tarif kupon', 'Beban bunga = nilai tercatat × tarif efektif; kas = nominal × tarif kupon', 'p. 1109'],
-        ['Arah amortisasi', 'Mengurangkan amortisasi diskonto dari nilai tercatat', 'Diskonto menambah nilai tercatat; premi mengurangi', 'p. 1113'],
-        ['Biaya penerbitan', 'Mencatat Deferred Bond Issue Costs sebagai aset', 'Kurangi kas bersih dan nilai tercatat awal liabilitas', 'p. 1118'],
-        ['Bunga semesteran', 'Memakai tarif tahunan penuh', 'Bagi tarif kupon dan tarif efektif dengan 2 (E13.5: 5% dan 6%)', 'E13.5'],
-        ['Opsi nilai wajar', 'Seluruh perubahan nilai wajar ke laba rugi', 'Porsi risiko kredit sendiri ke OCI', 'p. 1137']
+        ['Tarif untuk beban bunga', 'Nilai tercatat × tarif kupon', 'Beban bunga = nilai tercatat × tarif efektif; kas = nominal × tarif kupon', 'p. 1110'],
+        ['Arah amortisasi', 'Mengurangkan amortisasi diskonto dari nilai tercatat', 'Diskonto menambah nilai tercatat; premi mengurangi', 'pp. 1111, 1113'],
+        ['Biaya penerbitan', 'Mencatat Deferred Bond Issue Costs sebagai aset', 'Kurangi kas bersih dan nilai tercatat awal liabilitas', 'p. 1171 (catatan kaki 3)'],
+        ['Bunga semesteran', 'Memakai tarif tahunan penuh', 'Bagi tarif kupon dan tarif efektif dengan 2 (E13.5: 5% dan 6%)', 'Kieso p. 1150'],
+        ['Opsi nilai wajar', 'Seluruh perubahan nilai wajar ke laba rugi', 'Porsi risiko kredit sendiri ke OCI', 'pp. 1131–1132']
       ]
     },
     { kind: 'h3', text: 'Quick Review' },

@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "tm": 7,
+  "checks": 10,
+  "passes": [
+    "AT-001: 18 sections and 20 subsections in order",
+    "labels: di luar RPP, 3 numbered outside-the-book boxes",
+    "film section: info opener titled Ilustrasi, label only there, no film numbers",
+    "case: five lecturer-format subheadings and Q1-Q3",
+    "exam traps: 22 rows in order",
+    "51 table shapes and row counts, 2 exact grids",
+    "AT-012/AT-013: anchors kept, callouts short",
+    "10 required sentences and exceptions",
+    "13 verified values",
+    "6 forbidden statements absent"
+  ]
+}

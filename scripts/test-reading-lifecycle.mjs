@@ -70,11 +70,12 @@ async function historyTo(state) {
 }
 try {
   server = await createServer({ root: process.cwd(), cacheDir: path.join(os.tmpdir(), `reading-lifecycle-${process.pid}`), appType: 'custom', server: { middlewareMode: true }, optimizeDeps: { noDiscovery: true }, logLevel: 'silent' });
-  const [{ default: CourseLayout }, { SEMESTERS }, { MANSTRAT_READINGS, MANSTRAT_REVIEW_READINGS }, { DESKTOP_OUTLINE_STORAGE_KEY }] = await Promise.all([
+  const [{ default: CourseLayout }, { SEMESTERS }, { MANSTRAT_READINGS }, { DESKTOP_OUTLINE_STORAGE_KEY }, { loadCourseContent }] = await Promise.all([
     server.ssrLoadModule('/src/components/course/CourseLayout.tsx'),
     server.ssrLoadModule('/src/data/courseData.ts'),
     server.ssrLoadModule('/src/data/manstrat/manstratData.ts'),
     server.ssrLoadModule('/src/components/course/ReadingOutline.tsx'),
+    server.ssrLoadModule('/src/data/courses/courseRegistry.ts'),
   ]);
   const courses = SEMESTERS.flatMap(s => s.groups.flatMap(g => g.courses));
   const course = courses.find(c => c.code === 'MNS301');
@@ -120,8 +121,9 @@ try {
   // In-memory test fixtures only: review/simulation with the SAME TM and block
   // indices as a normal reading, plus two distinct review keys with that TM.
   // This isolates the identity boundary; no course source is written or changed.
-  MANSTRAT_REVIEW_READINGS.uts = { ...MANSTRAT_READINGS[3], title: 'Simulasi UTS' };
-  MANSTRAT_REVIEW_READINGS.uas = { ...MANSTRAT_READINGS[3], title: 'Simulasi UAS' };
+  const loadedMnS = await loadCourseContent('MNS301'); // isi yang sama dengan yang dibaca CourseLayout (sudah dinormalkan)
+  loadedMnS.reviews.uts = { ...MANSTRAT_READINGS[3], title: 'Simulasi UTS' };
+  loadedMnS.reviews.uas = { ...MANSTRAT_READINGS[3], title: 'Simulasi UAS' };
   await historyTo({ akuntansihub_tm: 3 });
   await attempt('Atlas');
   await historyTo({ akuntansihub_review: 'uts' });

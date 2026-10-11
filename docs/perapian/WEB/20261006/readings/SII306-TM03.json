@@ -1,0 +1,1176 @@
+{
+  "tm": 3,
+  "title": "Accountants as Business Analysts",
+  "ref": "RPS-SIA, minggu 3 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 4, pp. 174–209",
+  "intro": "Akuntan modern juga memetakan dan memperbaiki cara kerja perusahaan. Kita mulai dari alur pesanan, lalu belajar menggambarkannya dengan BPMN (Business Process Model and Notation, notasi untuk memetakan proses), flowchart (bagan alir), dan DFD (Data Flow Diagram, diagram perpindahan data).",
+  "objectives": [
+    "Menjelaskan pergeseran peran akuntan dari stewardship ke business analyst beserta kerangka IMA, CGMA, IFAC, dan CPA Evolution.",
+    "Menghubungkan dokumentasi proses bisnis dengan SOX Section 404 dan PCAOB AS 2201.",
+    "Membaca dan menyusun model BPMN 2.0: event, activity, gateway, token, pool, lane, sequence flow, dan message flow.",
+    "Menggunakan flowchart, opportunity flowchart (PCE), dan DFD serta mendeteksi Black Hole, Miracle, dan Gray Hole.",
+    "Membandingkan BPMN, flowchart, dan DFD serta memetakan Segregation of Duties pada swimlane."
+  ],
+  "blocks": [
+    {
+      "kind": "example",
+      "title": "Mulai dari proses: pesanan masuk sampai barang dikirim",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Pelanggan memesan barang. Bagian penjualan memeriksa data pelanggan dan persetujuan kredit; gudang mengambil barang; bagian pengiriman mengirimkannya; lalu bagian penagihan membuat invoice (tagihan). **Model proses** adalah gambar atau uraian langkah, pelaku, keputusan, dan serah terima tersebut. Kita gunakan alur sederhana ini sebelum membaca contoh Starbucks dalam ebook."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "1. Changing Roles of Accountants & Professional Competency Frameworks"
+    },
+    {
+      "kind": "p",
+      "text": "Secara tradisional fungsi akuntansi berpusat pada **stewardship**: mencatat transaksi historis, memelihara buku besar, menyusun laporan berkala, menghitung pajak, dan mematuhi audit. Digitalisasi, ERP, dan data analytics mengotomatiskan pencatatan rutin sehingga akuntan bergeser menjadi **business analyst** dan penasihat strategis. Richardson 4e, pp. 176–177."
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Menganalisis pemicu operasional, administratif, dan ekonomi atas biaya dan pendapatan.",
+        "Memetakan, mengevaluasi, dan merekayasa ulang proses bisnis untuk meningkatkan efisiensi siklus.",
+        "Merancang dan menerapkan Internal Control over Financial Reporting (ICFR).",
+        "Menyusun kebutuhan bisnis teknis bagi spesialis TI dan perancang database."
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tingkat operasional",
+        "Cakupan"
+      ],
+      "rows": [
+        [
+          "Stewardship and Reporting",
+          "Kepatuhan statutori, pelaporan regulator (SEC, OJK, DJP), akuntansi keuangan."
+        ],
+        [
+          "Accounting/Finance Operations",
+          "Eksekusi siklus transaksi: Procure-to-Pay, Order-to-Cash, Record-to-Report, Payroll, Treasury."
+        ],
+        [
+          "Business Management Support",
+          "Informasi manajemen, analitik kinerja operasi, pengurangan biaya strategis, capital budgeting, process reengineering."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 176–177; Exhibit 4.1."
+    },
+    {
+      "kind": "h3",
+      "text": "Kerangka kompetensi IMA dan CGMA"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Domain IMA",
+        "Fokus"
+      ],
+      "rows": [
+        [
+          "Strategy, Planning & Performance",
+          "Arah strategis, budgeting, penetapan target, analisis varians, perencanaan jangka panjang."
+        ],
+        [
+          "Reporting & Control",
+          "Kepatuhan regulasi dan standar akuntansi; merancang dan mengevaluasi pengendalian internal."
+        ],
+        [
+          "Technology & Analytics",
+          "Navigasi ERP, otomasi proses bisnis, RPA, ekstraksi data, predictive analytics."
+        ],
+        [
+          "Business Acumen & Operations",
+          "Model operasi perusahaan, logistik rantai pasok, lanskap kompetitif, continuous improvement."
+        ],
+        [
+          "Leadership",
+          "Manajemen proyek lintas fungsi, motivasi tim, change management, keselarasan eksekutif."
+        ],
+        [
+          "Professional Ethics & Values",
+          "Prinsip etika, objektivitas, skeptisisme profesional, kerahasiaan."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 176–177; Exhibit 4.3. IMA merumuskan enam domain kompetensi."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pilar CGMA",
+        "Cakupan"
+      ],
+      "rows": [
+        [
+          "Technical Skills",
+          "Akuntansi keuangan, akuntansi biaya, perpajakan korporat, pengukuran kinerja, kepatuhan."
+        ],
+        [
+          "Business Skills",
+          "Analisis strategis, analisis pasar, manajemen proses, manajemen risiko."
+        ],
+        [
+          "People Skills",
+          "Komunikasi efektif, negosiasi, pengaruh, membangun konsensus pemangku kepentingan."
+        ],
+        [
+          "Leadership Skills",
+          "Visi strategis, manajemen tim organisasi, mendorong transformasi digital."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 177–178; Exhibit 4.4. Dibentuk bersama AICPA dan CIMA; keempat pilar berlandaskan etika, integritas, dan profesionalisme."
+    },
+    {
+      "kind": "h3",
+      "text": "Peran IFAC dalam SIA dan CPA Evolution"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Peran IFAC",
+        "Aktivitas"
+      ],
+      "rows": [
+        [
+          "User",
+          "Memasukkan jurnal, memproses invoice pelanggan, menyetujui pembayaran vendor, menarik laporan keuangan, mengoperasikan antarmuka ERP."
+        ],
+        [
+          "Manager",
+          "Mengarahkan operasi akuntansi, merencanakan alur kerja departemen, mengalokasikan staf, meninjau pengendalian internal."
+        ],
+        [
+          "Designer",
+          "Menerjemahkan regulasi dan kebutuhan kontrol menjadi spesifikasi sistem; merancang Chart of Accounts, aturan validasi database, dan alur proses bisnis."
+        ],
+        [
+          "Evaluator",
+          "Menilai kesesuaian sistem dengan tujuan dan regulasi; menguji ICFR, mengaudit IT General Controls (ITGC), menilai pengamanan siber."
+        ]
+      ],
+      "caption": "Richardson 4e, p. 178."
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "**Core (wajib semua kandidat):** Accounting, Auditing, dan Taxation dengan kompetensi teknologi yang terintegrasi di setiap area.",
+        "**Pilih satu Discipline Track:** Information Systems and Controls (ISC) — infrastruktur TI, tata kelola, SOC engagement, kontrol sistem; Business Analysis and Reporting (BAR) — data analytics, technical accounting, analisis keuangan; Tax Compliance and Planning (TCP) — perencanaan pajak lanjutan, entitas korporat, teknologi pajak."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Model **CPA Evolution** AICPA/NASBA memodernisasi struktur lisensi CPA sebagai respons atas perubahan teknologi. Richardson 4e, p. 178."
+    },
+    {
+      "kind": "h2",
+      "text": "2. Business Process Documentation Mandates & The Strategic Value of Models"
+    },
+    {
+      "kind": "p",
+      "text": "**Business process** adalah rangkaian aktivitas dan tugas terkoordinasi yang dijalankan orang, teknologi, dan unit organisasi untuk mengubah input menjadi output yang bernilai ekonomi bagi pelanggan atau pemangku kepentingan. **Business process model** adalah representasi grafis atas aktivitas berurutan, keputusan bisnis, aliran data, dokumen, dan aktor dalam proses tersebut. Richardson 4e, pp. 178–180."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Siklus transaksi",
+        "Aktivitas utama"
+      ],
+      "rows": [
+        [
+          "Purchases and Payments (Procure-to-Pay)",
+          "Permintaan pembelian, pemesanan ke vendor, penerimaan barang, pencatatan invoice, pengeluaran kas."
+        ],
+        [
+          "Sales and Collections (Order-to-Cash)",
+          "Order entry, otorisasi kredit, pengiriman, penagihan pelanggan, penerimaan kas."
+        ],
+        [
+          "Human Resources and Payroll",
+          "Onboarding karyawan, pencatatan waktu, perhitungan gaji, pemotongan, pembayaran."
+        ],
+        [
+          "Conversion",
+          "Pengeluaran bahan baku, pelacakan work-in-process, inspeksi barang jadi, alokasi biaya standar."
+        ],
+        [
+          "Financing and Treasury",
+          "Perolehan modal, pelunasan utang, transaksi ekuitas, pembagian dividen."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 178–179."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Nilai model proses",
+        "Manfaat bagi akuntansi dan manajemen"
+      ],
+      "rows": [
+        [
+          "Communication & Training",
+          "Menyederhanakan alur multi-departemen menjadi narasi visual yang jelas bagi eksekutif, auditor, dan staf garis depan."
+        ],
+        [
+          "Process Standardization & Automation",
+          "Menjadi kebutuhan teknis formal untuk desain ERP dan Robotic Process Automation (RPA)."
+        ],
+        [
+          "Complexity Management",
+          "Memungkinkan dekomposisi top-down operasi rumit menjadi subproses modular."
+        ],
+        [
+          "Continuous Improvement & BPR",
+          "Mengungkap bottleneck, gerbang persetujuan berulang, perpindahan kertas berlebihan, dan penundaan yang tidak menambah nilai."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 179–180."
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "SOX Section 404 dan PCAOB AS 2201",
+      "text": "Section 404 Sarbanes-Oxley Act 2002 mewajibkan manajemen dan auditor eksternal independen memberikan atestasi atas desain dan efektivitas operasi **ICFR**. PCAOB AS 2201 mengharuskan auditor melakukan **walkthrough** yang menelusuri transaksi dari awal, melalui catatan perusahaan, hingga laporan keuangan. Tanpa dokumentasi proses yang mutakhir (process map, swimlane diagram, flowchart), manajemen tidak dapat menunjukkan desain kontrol yang efektif sehingga berisiko scope limitation, pengungkapan material weakness, dan ketidakpatuhan. Richardson 4e, pp. 179–180."
+    },
+    {
+      "kind": "h2",
+      "text": "3. Activity Modeling with Business Process Model and Notation (BPMN 2.0)"
+    },
+    {
+      "kind": "p",
+      "text": "**BPMN 2.0** dipelihara oleh Object Management Group (OMG) sebagai standar global pemodelan proses bisnis. Tujuannya menyediakan notasi seragam yang mudah dipahami analis bisnis, pengembang teknis, dan pemangku kepentingan bisnis. Richardson 4e, pp. 180–183."
+    },
+    {
+      "kind": "figure",
+      "title": "Bentuk dasar BPMN yang perlu dikenali",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 960 365\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <rect x=\"1\" y=\"1\" width=\"958\" height=\"363\" rx=\"18\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n  <text x=\"28\" y=\"38\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">Baca bentuk sebelum membaca label</text>\n  <g fill=\"#f8fafc\" stroke=\"#cbd5e1\"><rect x=\"24\" y=\"64\" width=\"292\" height=\"126\" rx=\"14\"/><rect x=\"334\" y=\"64\" width=\"292\" height=\"126\" rx=\"14\"/><rect x=\"644\" y=\"64\" width=\"292\" height=\"126\" rx=\"14\"/><rect x=\"24\" y=\"206\" width=\"292\" height=\"126\" rx=\"14\"/><rect x=\"334\" y=\"206\" width=\"292\" height=\"126\" rx=\"14\"/><rect x=\"644\" y=\"206\" width=\"292\" height=\"126\" rx=\"14\"/></g>\n  <circle cx=\"80\" cy=\"116\" r=\"23\" fill=\"#fff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <rect x=\"365\" y=\"94\" width=\"82\" height=\"45\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <path d=\"M700 91 L725 116 L700 141 L675 116 Z\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2.5\"/>\n  <path d=\"M52 229 H94 L109 244 V290 H52 Z M94 229 V244 H109\" fill=\"#fff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <path d=\"M365 243 V280 Q406 297 447 280 V243\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/><ellipse cx=\"406\" cy=\"243\" rx=\"41\" ry=\"11\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <path d=\"M671 245 H746\" stroke=\"#0369a1\" stroke-width=\"2.5\" fill=\"none\"/><path d=\"M671 275 H746\" stroke=\"#b45309\" stroke-width=\"2.5\" stroke-dasharray=\"6 5\"/><path d=\"M746 245 l-9 -6 v12 z\" fill=\"#0369a1\"/><circle cx=\"671\" cy=\"275\" r=\"3.5\" fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"/><path d=\"M746 275 l-8 -5 v10 z\" fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"/>\n  <g fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\"><text x=\"120\" y=\"107\">Event</text><text x=\"463\" y=\"107\">Task</text><text x=\"743\" y=\"107\">Gateway</text><text x=\"124\" y=\"248\">Data Object</text><text x=\"463\" y=\"248\">Data Store</text><text x=\"766\" y=\"247\">Sequence</text><text x=\"766\" y=\"278\">Message</text></g>\n  <g fill=\"#475569\" font-size=\"13\"><text x=\"120\" y=\"130\">Sesuatu terjadi</text><text x=\"463\" y=\"130\">Pekerjaan dilakukan</text><text x=\"743\" y=\"130\">Alur bercabang</text><text x=\"124\" y=\"272\">Data saat proses</text><text x=\"463\" y=\"272\">Data tersimpan</text><text x=\"766\" y=\"302\">Solid / putus-putus</text></g>\n  <text x=\"28\" y=\"351\" fill=\"#475569\" font-size=\"12\">Start = lingkaran tipis; end = lingkaran tebal. Jenis gateway diberi penanda X, O, atau +.</text>\n</svg>",
+      "mobileSvg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 360 682\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <rect x=\"1\" y=\"1\" width=\"358\" height=\"680\" rx=\"14\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n  <text x=\"16\" y=\"30\" fill=\"#0f172a\" font-size=\"18\" font-weight=\"700\">Bentuk punya arti</text>\n  <g fill=\"#f8fafc\" stroke=\"#cbd5e1\"><rect x=\"12\" y=\"46\" width=\"336\" height=\"94\" rx=\"12\"/><rect x=\"12\" y=\"149\" width=\"336\" height=\"94\" rx=\"12\"/><rect x=\"12\" y=\"252\" width=\"336\" height=\"94\" rx=\"12\"/><rect x=\"12\" y=\"355\" width=\"336\" height=\"94\" rx=\"12\"/><rect x=\"12\" y=\"458\" width=\"336\" height=\"94\" rx=\"12\"/><rect x=\"12\" y=\"561\" width=\"336\" height=\"94\" rx=\"12\"/></g>\n  <circle cx=\"66\" cy=\"93\" r=\"21\" fill=\"#fff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <rect x=\"35\" y=\"178\" width=\"64\" height=\"36\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <path d=\"M66 276 L90 300 L66 324 L42 300 Z\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2.5\"/>\n  <path d=\"M40 377 H77 L91 391 V426 H40 Z M77 377 V391 H91\" fill=\"#fff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <path d=\"M35 487 V518 Q66 532 97 518 V487\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/><ellipse cx=\"66\" cy=\"487\" rx=\"31\" ry=\"9\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <path d=\"M34 591 H100\" stroke=\"#0369a1\" stroke-width=\"2.5\"/><path d=\"M34 621 H100\" stroke=\"#b45309\" stroke-width=\"2.5\" stroke-dasharray=\"5 4\"/><path d=\"M100 591 l-8 -5 v10 z\" fill=\"#0369a1\"/><circle cx=\"34\" cy=\"621\" r=\"3\" fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"/><path d=\"M100 621 l-8 -5 v10 z\" fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"/>\n  <g fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\"><text x=\"120\" y=\"85\">Event</text><text x=\"120\" y=\"188\">Task</text><text x=\"120\" y=\"291\">Gateway</text><text x=\"120\" y=\"394\">Data Object</text><text x=\"120\" y=\"497\">Data Store</text><text x=\"120\" y=\"599\">Sequence / Message</text></g>\n  <g fill=\"#475569\" font-size=\"13\"><text x=\"120\" y=\"108\">Mulai / selesai</text><text x=\"120\" y=\"211\">Pekerjaan dilakukan</text><text x=\"120\" y=\"314\">Cabang atau gabung</text><text x=\"120\" y=\"417\">Data selama proses</text><text x=\"120\" y=\"520\">Data tersimpan</text><text x=\"120\" y=\"625\">Solid / putus-putus</text></g>\n  <text x=\"16\" y=\"672\" fill=\"#475569\" font-size=\"11\">End event bergaris tebal; gateway memakai X, O, atau +.</text>\n</svg>",
+      "altText": "Event berupa lingkaran, task berupa persegi panjang bersudut bulat, gateway berupa belah ketupat, data object berupa dokumen bersudut terlipat, data store berupa silinder. Sequence flow adalah panah penuh, message flow adalah garis putus-putus.",
+      "transcript": [
+        "Lingkaran tipis menandai start event; lingkaran tebal menandai end event.",
+        "Persegi panjang bersudut bulat menandai task; belah ketupat menandai gateway percabangan atau penggabungan.",
+        "Data object bersudut terlipat berbeda dari data store berbentuk silinder.",
+        "Panah penuh adalah sequence flow di dalam satu pool; garis putus-putus adalah message flow antar-pool."
+      ],
+      "caption": "Panduan bentuk dasar BPMN 2.0. Penanda gateway dan aturan hubungan lengkap dijelaskan pada tabel berikut."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Elemen",
+        "Simbol",
+        "Fungsi dan aturan eksekusi"
+      ],
+      "rows": [
+        [
+          "Start Event",
+          "Lingkaran bergaris tipis",
+          "Menandai dimulainya instance proses dan membuat token awal. Tidak memiliki sequence flow masuk."
+        ],
+        [
+          "Intermediate Event",
+          "Lingkaran bergaris ganda",
+          "Peristiwa di tengah alur (mis. timer delay, pesan diterima/dikirim); memengaruhi alur tanpa mengakhirinya."
+        ],
+        [
+          "End Event",
+          "Lingkaran bergaris tebal",
+          "Menandai selesainya instance proses dan mengonsumsi token."
+        ],
+        [
+          "Activity (Task)",
+          "Persegi panjang bersudut bulat",
+          "Unit kerja oleh aktor atau sistem otomatis. Nama berformat **Active Verb + Noun**, mis. Verify Customer Credit."
+        ],
+        [
+          "Subprocess",
+          "Persegi bersudut bulat dengan tanda [+]",
+          "Aktivitas yang alur detailnya dimodelkan pada diagram anak terpisah."
+        ],
+        [
+          "Sequence Flow",
+          "Panah garis penuh",
+          "Urutan eksekusi aktivitas **di dalam satu pool**. Boleh melintasi lane dalam pool yang sama, tetapi tidak pernah melintasi batas pool."
+        ],
+        [
+          "Message Flow",
+          "Panah putus-putus dengan kepala terbuka",
+          "Komunikasi atau pertukaran dokumen antara **dua partisipan berbeda (pool terpisah)**. Tidak pernah menghubungkan elemen dalam pool yang sama."
+        ],
+        [
+          "Association",
+          "Garis titik-titik",
+          "Menghubungkan data object, data store, atau anotasi ke aktivitas/event tanpa menyatakan alur eksekusi."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 180–187; Exhibits 4.5–4.6."
+    },
+    {
+      "kind": "h3",
+      "text": "Konsep token dan mekanika eksekusi"
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "**Start Event** membuat token.",
+        "Token bergerak melalui sequence flow keluar; activity memproses lalu melepaskan token setelah pekerjaan selesai.",
+        "Pada **gateway**, token dirutekan, digandakan, atau disinkronkan.",
+        "**End Event** mengonsumsi token yang masuk. Instance proses selesai ketika tidak ada token aktif yang tersisa di diagram."
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Token adalah penanda eksekusi teoretis yang menelusuri sequence flow suatu instance proses. Richardson 4e, p. 181."
+    },
+    {
+      "kind": "h3",
+      "text": "Gateway: logika percabangan"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Gateway",
+        "Simbol",
+        "Divergensi (split)",
+        "Konvergensi (join)"
+      ],
+      "rows": [
+        [
+          "Exclusive (XOR)",
+          "Diamond kosong atau diamond dengan \"X\"",
+          "Mengevaluasi kondisi yang saling eksklusif; tepat **satu** jalur yang kondisinya benar yang dijalankan.",
+          "Menggabungkan alur alternatif tanpa sinkronisasi; token yang masuk langsung diteruskan."
+        ],
+        [
+          "Parallel (AND)",
+          "Diamond dengan \"+\"",
+          "Menggandakan token ke **semua** jalur keluar secara bersamaan.",
+          "Menunggu token dari **semua** jalur masuk, lalu menggabungkannya menjadi satu token keluar."
+        ],
+        [
+          "Inclusive (OR)",
+          "Diamond dengan \"O\"",
+          "Kondisi tidak saling eksklusif; **satu, beberapa, atau semua** jalur yang benar dijalankan.",
+          "Menyinkronkan hanya cabang yang benar-benar aktif pada instance tersebut."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 180–187; Exhibit 4.7."
+    },
+    {
+      "kind": "h3",
+      "text": "Pool, swimlane, dan aturan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Partisi",
+        "Makna",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Pool",
+          "Seluruh entitas organisasi, partisipan eksternal independen, atau entitas korporat berbeda; memuat alur prosesnya sendiri.",
+          "Customer, Vendor, Bank, Starbucks Corporation."
+        ],
+        [
+          "Swimlane (Lane)",
+          "Departemen, peran, atau unit sistem di dalam satu organisasi (satu pool).",
+          "Sales, Credit, Warehouse, Billing di dalam pool perusahaan."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 183–187; Exhibit 4.8."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Aturan batas BPMN yang tidak boleh dilanggar",
+      "text": "**Aturan 1 — intra-pool:** sequence flow boleh melintasi lane di dalam pool yang sama, tetapi **tidak pernah** melintasi dari satu pool ke pool lain; gunakan message flow antar-pool. **Aturan 2 — inter-pool:** message flow merepresentasikan pertukaran eksternal dan **hanya** menghubungkan pool yang terpisah; message flow **tidak pernah** menghubungkan elemen di dalam pool yang sama; gunakan sequence flow. Richardson 4e, pp. 183–184."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Elemen data",
+        "Simbol",
+        "Makna dan contoh"
+      ],
+      "rows": [
+        [
+          "Data Object",
+          "Dokumen dengan sudut terlipat",
+          "Informasi/dokumen yang dibuat, diubah, atau dirujuk selama aktivitas: Sales Order, Vendor Invoice, Paper Receipt."
+        ],
+        [
+          "Data Store",
+          "Ikon silinder database",
+          "Repositori persisten yang bertahan melampaui umur instance proses: General Ledger Database, Customer Accounts Master."
+        ]
+      ],
+      "caption": "Dihubungkan ke aktivitas dengan association titik-titik; arah panah menunjukkan operasi baca atau tulis."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "4V kualitas model",
+        "Kriteria"
+      ],
+      "rows": [
+        [
+          "Valid",
+          "Mematuhi sintaks OMG BPMN 2.0, aturan koneksi, dan batasan gateway."
+        ],
+        [
+          "Clear",
+          "Intuitif, tidak berantakan, mengalir logis dari kiri ke kanan, penamaan standar (Active Verb + Noun)."
+        ],
+        [
+          "Complete",
+          "Mencakup lingkup end-to-end: inisiasi, hasil keputusan, data store, dan kondisi terminasi."
+        ],
+        [
+          "Accurate",
+          "Mencerminkan alur kerja, kebijakan, dan struktur kontrol yang sebenarnya tanpa penghilangan atau rekaan."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 187–188. Model yang memenuhi 4V dapat menjadi dokumentasi audit dan cetak biru desain teknis."
+    },
+    {
+      "kind": "example",
+      "title": "Starbucks Drive-Through: model proses",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Pool Customer:** partisipan eksternal yang datang, memesan, menerima pesanan, membayar, dan menerima kartu serta struk. **Pool Starbucks:** lane Barista yang mencatat pesanan di kasir, menyiapkan kopi dan muffin, menyerahkan pesanan, lalu mencatat pembayaran. Dasarnya adalah **Problem 1, Richardson 4e, hlm. buku 207**. Exhibit 4.10 pada hlm. 186 membahas jenis gateway, bukan diagram Starbucks."
+        },
+        {
+          "kind": "figure",
+          "svg": "<svg class=\"course-diagram-svg course-diagram-bpmn\" viewBox=\"0 0 1300 360\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <rect x=\"2\" y=\"2\" width=\"1296\" height=\"356\" rx=\"16\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n  <text x=\"22\" y=\"30\" font-size=\"18\" font-weight=\"700\" fill=\"#0f172a\">Starbucks Drive-Through — alur dasar pada soal buku</text>\n  <line x1=\"790\" y1=\"25\" x2=\"824\" y2=\"25\" stroke=\"#0369a1\" stroke-width=\"3\"/><polygon points=\"830,25 822,20 822,30\" fill=\"#0369a1\"/><text x=\"840\" y=\"30\" font-size=\"13\" fill=\"#334155\">sequence flow</text>\n  <circle cx=\"970\" cy=\"25\" r=\"3.5\" fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"/><path d=\"M974 25 H1003\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"2.5\" stroke-dasharray=\"5 4\"/><polygon points=\"1010,25 1002,20 1002,30\" fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"1020\" y=\"30\" font-size=\"13\" fill=\"#334155\">message flow</text>\n  <rect x=\"18\" y=\"50\" width=\"1264\" height=\"118\" rx=\"12\" fill=\"#fff7ed\" stroke=\"#fdba74\" stroke-width=\"2\"/>\n  <text x=\"32\" y=\"72\" font-size=\"15\" font-weight=\"700\" fill=\"#9a3412\">Pool Customer</text>\n  <rect x=\"18\" y=\"182\" width=\"1264\" height=\"158\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#93c5fd\" stroke-width=\"2\"/>\n  <text x=\"32\" y=\"204\" font-size=\"15\" font-weight=\"700\" fill=\"#1e3a8a\">Pool Starbucks · lane Barista</text>\n  <g transform=\"translate(55 0)\">\n  <g fill=\"#fff\" stroke=\"#cbd5e1\" stroke-width=\"1.5\">\n    <rect x=\"48\" y=\"100\" width=\"145\" height=\"47\" rx=\"8\"/><rect x=\"236\" y=\"100\" width=\"145\" height=\"47\" rx=\"8\"/><rect x=\"424\" y=\"100\" width=\"145\" height=\"47\" rx=\"8\"/><rect x=\"612\" y=\"100\" width=\"145\" height=\"47\" rx=\"8\"/><rect x=\"800\" y=\"100\" width=\"145\" height=\"47\" rx=\"8\"/><rect x=\"988\" y=\"100\" width=\"145\" height=\"47\" rx=\"8\"/>\n    <rect x=\"236\" y=\"245\" width=\"145\" height=\"49\" rx=\"8\"/><rect x=\"424\" y=\"245\" width=\"145\" height=\"49\" rx=\"8\"/><rect x=\"612\" y=\"245\" width=\"145\" height=\"49\" rx=\"8\"/><rect x=\"800\" y=\"245\" width=\"145\" height=\"49\" rx=\"8\"/><rect x=\"988\" y=\"245\" width=\"145\" height=\"49\" rx=\"8\"/>\n  </g>\n  <g fill=\"#0f172a\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">\n    <text x=\"120\" y=\"119\"><tspan x=\"120\">Tiba, lihat</tspan><tspan x=\"120\" dy=\"17\">menu</tspan></text>\n    <text x=\"308\" y=\"119\"><tspan x=\"308\">Pesan kopi</tspan><tspan x=\"308\" dy=\"17\">dan muffin</tspan></text>\n    <text x=\"496\" y=\"128\">Ke jendela</text><text x=\"684\" y=\"119\"><tspan x=\"684\">Terima kopi</tspan><tspan x=\"684\" dy=\"17\">dan muffin</tspan></text><text x=\"872\" y=\"119\"><tspan x=\"872\">Bayar dengan</tspan><tspan x=\"872\" dy=\"17\">gift card</tspan></text><text x=\"1060\" y=\"119\"><tspan x=\"1060\">Terima kartu</tspan><tspan x=\"1060\" dy=\"17\">dan struk</tspan></text>\n    <text x=\"308\" y=\"264\"><tspan x=\"308\">Catat pesanan</tspan><tspan x=\"308\" dy=\"17\">di kasir</tspan></text><text x=\"496\" y=\"264\"><tspan x=\"496\">Siapkan kopi</tspan><tspan x=\"496\" dy=\"17\">dan muffin</tspan></text><text x=\"684\" y=\"264\"><tspan x=\"684\">Serahkan</tspan><tspan x=\"684\" dy=\"17\">pesanan</tspan></text><text x=\"872\" y=\"264\"><tspan x=\"872\">Catat</tspan><tspan x=\"872\" dy=\"17\">pembayaran</tspan></text><text x=\"1060\" y=\"264\"><tspan x=\"1060\">Kembalikan</tspan><tspan x=\"1060\" dy=\"17\">kartu, struk</tspan></text>\n  </g>\n  <g fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2.5\">\n    <path d=\"M193 123 H225 M381 123 H413 M569 123 H601 M757 123 H789 M945 123 H977\"/>\n    <path d=\"M381 269 H413 M569 269 H601 M757 269 H789 M945 269 H977\"/>\n  </g>\n  <g fill=\"#0369a1\">\n    <polygon points=\"231,123 223,118 223,128\"/><polygon points=\"419,123 411,118 411,128\"/><polygon points=\"607,123 599,118 599,128\"/><polygon points=\"795,123 787,118 787,128\"/><polygon points=\"983,123 975,118 975,128\"/>\n    <polygon points=\"419,269 411,264 411,274\"/><polygon points=\"607,269 599,264 599,274\"/><polygon points=\"795,269 787,264 787,274\"/><polygon points=\"983,269 975,264 975,274\"/>\n  </g>\n  <g fill=\"none\" stroke=\"#b45309\" stroke-width=\"2.5\">\n    <path d=\"M308 150 v8 M308 164 v8 M308 178 v8 M308 192 v8 M308 206 v8 M308 220 v8 M308 234 v5\"/>\n    <path d=\"M684 237 v-8 M684 223 v-8 M684 209 v-8 M684 195 v-8 M684 181 v-8 M684 167 v-8 M684 153 v-5\"/>\n    <path d=\"M872 150 v8 M872 164 v8 M872 178 v8 M872 192 v8 M872 206 v8 M872 220 v8 M872 234 v5\"/>\n    <path d=\"M1060 237 v-8 M1060 223 v-8 M1060 209 v-8 M1060 195 v-8 M1060 181 v-8 M1060 167 v-8 M1060 153 v-5\"/>\n  </g>\n  <g fill=\"#fff\" stroke=\"#b45309\" stroke-width=\"2\"><circle cx=\"308\" cy=\"150\" r=\"3.5\"/><circle cx=\"684\" cy=\"237\" r=\"3.5\"/><circle cx=\"872\" cy=\"150\" r=\"3.5\"/><circle cx=\"1060\" cy=\"237\" r=\"3.5\"/><polygon points=\"308,244 303,236 313,236\"/><polygon points=\"684,148 679,156 689,156\"/><polygon points=\"872,244 867,236 877,236\"/><polygon points=\"1060,148 1055,156 1065,156\"/></g>\n  </g>\n  <circle cx=\"70\" cy=\"123\" r=\"18\" fill=\"#fff\" stroke=\"#9a3412\" stroke-width=\"2.5\"/>\n  <circle cx=\"1243\" cy=\"123\" r=\"18\" fill=\"#fff\" stroke=\"#9a3412\" stroke-width=\"5\"/>\n  <path d=\"M89 123 H100 M1188 123 H1221\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2.5\"/>\n  <g fill=\"#0369a1\"><polygon points=\"105,123 97,118 97,128\"/><polygon points=\"1227,123 1219,118 1219,128\"/></g>\n  <text x=\"70\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#7c2d12\">Mulai</text><text x=\"1243\" y=\"160\" text-anchor=\"middle\" font-size=\"11\" fill=\"#7c2d12\">Selesai</text>\n  <text x=\"650\" y=\"324\" font-size=\"12\" text-anchor=\"middle\" fill=\"#475569\">Lingkaran = event awal/akhir; kotak bersudut bulat = task; panah putus-putus = pesan antar-pool.</text>\n</svg>",
+          "altText": "Skema soal Starbucks drive-through: pool Customer dan pool Starbucks dengan lane Barista. Panah utuh mengurutkan tugas dalam pool; panah putus-putus menunjukkan pertukaran pesanan, barang, pembayaran, serta kartu dan struk antar-pool.",
+          "mobileFlow": {
+            "title": "Alur Starbucks di layar sempit",
+            "stages": [
+              {
+                "actor": "Customer",
+                "actions": [
+                  "Tiba dan melihat menu",
+                  "Memesan kopi dan muffin"
+                ]
+              },
+              {
+                "actor": "Starbucks · Barista",
+                "actions": [
+                  "Mencatat pesanan di kasir",
+                  "Menyiapkan kopi dan muffin",
+                  "Menyerahkan pesanan"
+                ],
+                "note": "Pada waktu yang sama, Customer bergerak ke jendela."
+              },
+              {
+                "actor": "Customer",
+                "actions": [
+                  "Menerima kopi dan muffin",
+                  "Membayar dengan gift card"
+                ]
+              },
+              {
+                "actor": "Starbucks · Barista",
+                "actions": [
+                  "Mencatat pembayaran",
+                  "Mengembalikan gift card dan struk"
+                ]
+              },
+              {
+                "actor": "Customer",
+                "actions": [
+                  "Menerima kartu dan struk"
+                ]
+              }
+            ],
+            "messages": [
+              "Pesanan dikirim ke barista",
+              "Kopi dan muffin diserahkan ke customer",
+              "Pembayaran gift card disampaikan ke barista",
+              "Kartu dan struk dikembalikan ke customer"
+            ]
+          },
+          "caption": "Rekonstruksi alur dasar Problem 1 Richardson 4e hlm. 207; bukan gambar buku. Penyempurnaan loop persiapan tiap item dan cabang menunggu kopi pada bagian (d) soal tidak digambar di skema dasar ini."
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Customer masuk drive-through dan melihat menu, lalu memesan Venti coffee of the day dan blueberry muffin kepada barista (**message flow** antar-pool).",
+            "Barista mencatat pesanan di cash register (**sequence flow** di pool Starbucks).",
+            "Saat customer bergerak ke jendela, barista mengisi cangkir kopi, menutupnya, dan mengambil serta membungkus muffin.",
+            "Barista menyerahkan kopi dan muffin kepada customer (**message flow**).",
+            "Customer memilih cara bayar; pada narasi buku ia membayar dengan gift card (**message flow**).",
+            "Barista mencatat pembayaran dan mengembalikan kartu bersama struk kepada customer (**message flow**).",
+            "Proses dasar selesai. Bagian (d) soal meminta pengembangan terpisah untuk loop setiap item serta kondisi kopi belum siap dan timer lima menit."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Perhatikan: panah utuh di lane Barista menunjukkan sequence flow di dalam pool Starbucks. Pertukaran dengan Customer melintasi batas pool, sehingga memakai message flow. Buku menyebut satu barista pada kasus dasar ini; pemisahan cashier dan barista atau eksekusi paralel bukan fakta dari narasi Problem 1."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "4. Alternative Process Documentation Techniques"
+    },
+    {
+      "kind": "h3",
+      "text": "System dan document flowchart (ANSI X3.5)"
+    },
+    {
+      "kind": "figure",
+      "title": "Jejak dokumen pada order fulfillment",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 1000 325\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <defs><marker id=\"doc-arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0 L8 4 L0 8\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"1.5\"/></marker></defs>\n  <rect x=\"1\" y=\"1\" width=\"998\" height=\"323\" rx=\"18\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n  <text x=\"30\" y=\"39\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">Bukti pesanan sampai tagihan</text>\n  <g fill=\"#475569\" font-size=\"14\" font-weight=\"700\"><text x=\"40\" y=\"78\">Sales</text><text x=\"280\" y=\"78\">Warehouse</text><text x=\"520\" y=\"78\">Shipping</text><text x=\"760\" y=\"78\">Billing</text></g>\n  <path d=\"M40 110 H230 V186 Q182.5 174 135 186 Q87.5 198 40 186 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M280 110 H470 V186 Q422.5 174 375 186 Q327.5 198 280 186 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M520 85 H710 V161 Q662.5 149 615 161 Q567.5 173 520 161 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M520 190 H710 V266 Q662.5 254 615 266 Q567.5 278 520 266 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M760 110 H950 V186 Q902.5 174 855 186 Q807.5 198 760 186 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n  <g fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\"><text x=\"55\" y=\"142\">Sales Order</text><text x=\"295\" y=\"142\">Picking Ticket</text><text x=\"535\" y=\"117\">Packing Slip</text><text x=\"535\" y=\"222\">Bill of Lading</text><text x=\"775\" y=\"142\">Sales Invoice</text></g>\n  <g fill=\"#334155\" font-size=\"12\"><text x=\"55\" y=\"163\">Pesanan dicatat</text><text x=\"295\" y=\"163\">Barang diambil</text><text x=\"535\" y=\"138\">Menyertai barang</text><text x=\"535\" y=\"243\">Bukti pengiriman</text><text x=\"775\" y=\"163\">Tagihan dibuat</text></g>\n  <g fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#doc-arrow)\"><path d=\"M230 150 H274\"/><path d=\"M470 135 H493 V126 H514\"/><path d=\"M470 162 H493 V230 H514\"/><path d=\"M710 230 H735 V150 H754\"/></g>\n  <text x=\"30\" y=\"303\" fill=\"#475569\" font-size=\"13\">Dasar bergelombang = dokumen. Billing menggunakan bukti pengiriman yang tervalidasi.</text>\n</svg>",
+      "mobileSvg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 360 585\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <defs><marker id=\"doc-mobile-arrow\" markerWidth=\"7\" markerHeight=\"7\" refX=\"6\" refY=\"3.5\" orient=\"auto\"><path d=\"M0 0 L7 3.5 L0 7\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"1.5\"/></marker></defs>\n  <rect x=\"1\" y=\"1\" width=\"358\" height=\"583\" rx=\"14\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n  <text x=\"16\" y=\"29\" fill=\"#0f172a\" font-size=\"18\" font-weight=\"700\">Jejak dokumen</text>\n  <g fill=\"#475569\" font-size=\"12\" font-weight=\"700\"><text x=\"60\" y=\"57\">Sales</text><text x=\"60\" y=\"159\">Warehouse</text><text x=\"18\" y=\"269\">Shipping</text><text x=\"60\" y=\"448\">Billing</text></g>\n  <path d=\"M60 65 H300 V123 Q240 111 180 123 Q120 135 60 123 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M60 167 H300 V225 Q240 213 180 225 Q120 237 60 225 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M18 277 H170 V345 Q132 333 94 345 Q56 357 18 345 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M190 277 H342 V345 Q304 333 266 345 Q228 357 190 345 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M60 455 H300 V513 Q240 501 180 513 Q120 525 60 513 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n  <g fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\"><text x=\"75\" y=\"91\">Sales Order</text><text x=\"75\" y=\"193\">Picking Ticket</text><text x=\"33\" y=\"304\" font-size=\"13\">Packing Slip</text><text x=\"204\" y=\"304\" font-size=\"13\">Bill of Lading</text><text x=\"75\" y=\"481\">Sales Invoice</text></g>\n  <g fill=\"#334155\" font-size=\"11\"><text x=\"75\" y=\"111\">Pesanan dicatat</text><text x=\"75\" y=\"213\">Barang diambil</text><text x=\"33\" y=\"323\">Menyertai barang</text><text x=\"204\" y=\"323\">Bukti pengiriman</text><text x=\"75\" y=\"501\">Tagihan dibuat</text></g>\n  <g fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#doc-mobile-arrow)\"><path d=\"M180 135 V160\"/><path d=\"M180 237 V252 H94 V271\"/><path d=\"M180 252 H266 V271\"/><path d=\"M266 357 V414 H180 V449\"/></g>\n  <text x=\"16\" y=\"560\" fill=\"#475569\" font-size=\"11\">Dasar bergelombang menandai dokumen.</text>\n</svg>",
+      "altText": "Jejak dokumen Sales Order, Picking Ticket, Packing Slip dan Bill of Lading, lalu Sales Invoice.",
+      "transcript": [
+        "Sales mencatat Sales Order.",
+        "Warehouse mengambil barang berdasarkan Picking Ticket.",
+        "Shipping memverifikasi barang dan menyiapkan Packing Slip serta Bill of Lading.",
+        "Billing membuat Sales Invoice berdasarkan bukti pengiriman yang tervalidasi."
+      ],
+      "caption": "Skema jejak bukti yang disederhanakan, bukan flowchart ANSI formal. Setiap dokumen diberi simbol dasar bergelombang; bentuk simbol lain dijelaskan pada tabel di bawah."
+    },
+    {
+      "kind": "figure",
+      "title": "Kenali simbol flowchart dari bentuknya",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 960 440\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n    <rect x=\"1\" y=\"1\" width=\"958\" height=\"438\" rx=\"16\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n    <text x=\"28\" y=\"39\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">Simbol flowchart punya fungsi berbeda</text>\n    <g transform=\"translate(24 65)\">\n      <rect x=\"0\" y=\"0\" width=\"446\" height=\"108\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 4)\"><path d=\"M38 25 H94 V73 Q80 66 66 73 Q52 80 38 73 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"48\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Document</text>\n      <text x=\"119\" y=\"74\" fill=\"#475569\" font-size=\"12\">Bukti dengan dasar bergelombang</text>\n    </g><g transform=\"translate(490 65)\">\n      <rect x=\"0\" y=\"0\" width=\"446\" height=\"108\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 4)\"><path d=\"M34 27 H98 L88 75 H44 Z\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"48\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Manual Operation</text>\n      <text x=\"119\" y=\"74\" fill=\"#475569\" font-size=\"12\">Pekerjaan yang dilakukan manual</text>\n    </g><g transform=\"translate(24 185)\">\n      <rect x=\"0\" y=\"0\" width=\"446\" height=\"108\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 4)\"><rect x=\"36\" y=\"27\" width=\"60\" height=\"48\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"48\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Computer Processing</text>\n      <text x=\"119\" y=\"74\" fill=\"#475569\" font-size=\"12\">Pengolahan oleh sistem</text>\n    </g><g transform=\"translate(490 185)\">\n      <rect x=\"0\" y=\"0\" width=\"446\" height=\"108\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 4)\"><path d=\"M39 25 H93 V59 L66 78 L39 59 Z\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"48\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Off-Page Connector</text>\n      <text x=\"119\" y=\"74\" fill=\"#475569\" font-size=\"12\">Lanjut ke halaman lain</text>\n    </g><g transform=\"translate(24 305)\">\n      <rect x=\"0\" y=\"0\" width=\"446\" height=\"108\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 4)\"><circle cx=\"66\" cy=\"51\" r=\"26\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"66\" y=\"57\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#7c2d12\">A</text></g>\n      <text x=\"119\" y=\"48\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">On-Page Connector</text>\n      <text x=\"119\" y=\"74\" fill=\"#475569\" font-size=\"12\">Sambung alur di halaman sama</text>\n    </g><g transform=\"translate(490 305)\">\n      <rect x=\"0\" y=\"0\" width=\"446\" height=\"108\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 4)\"><path d=\"M35 27 H97 L66 79 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"66\" y=\"55\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#0f172a\">N</text></g>\n      <text x=\"119\" y=\"48\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">File / Storage</text>\n      <text x=\"119\" y=\"74\" fill=\"#475569\" font-size=\"12\">Arsip menurut kode N, A, atau C</text>\n    </g>\n    <text x=\"28\" y=\"427\" fill=\"#475569\" font-size=\"12\">Baca bentuk lalu ikuti arah aliran dokumen dan proses.</text>\n  </svg>",
+      "mobileSvg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 360 687\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n    <rect x=\"1\" y=\"1\" width=\"358\" height=\"685\" rx=\"16\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n    <text x=\"16\" y=\"31\" fill=\"#0f172a\" font-size=\"18\" font-weight=\"700\">Simbol flowchart</text>\n    <g transform=\"translate(12 49)\">\n      <rect x=\"0\" y=\"0\" width=\"336\" height=\"96\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 -1)\"><path d=\"M38 25 H94 V73 Q80 66 66 73 Q52 80 38 73 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"39\" fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\">Document</text>\n      <text x=\"119\" y=\"64\" fill=\"#475569\" font-size=\"12\">Bukti dengan dasar bergelombang</text>\n    </g><g transform=\"translate(12 152)\">\n      <rect x=\"0\" y=\"0\" width=\"336\" height=\"96\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 -1)\"><path d=\"M34 27 H98 L88 75 H44 Z\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"39\" fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\">Manual Operation</text>\n      <text x=\"119\" y=\"64\" fill=\"#475569\" font-size=\"12\">Pekerjaan yang dilakukan manual</text>\n    </g><g transform=\"translate(12 255)\">\n      <rect x=\"0\" y=\"0\" width=\"336\" height=\"96\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 -1)\"><rect x=\"36\" y=\"27\" width=\"60\" height=\"48\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"39\" fill=\"#0f172a\" font-size=\"14\" font-weight=\"700\">Computer Processing</text>\n      <text x=\"119\" y=\"64\" fill=\"#475569\" font-size=\"12\">Pengolahan oleh sistem</text>\n    </g><g transform=\"translate(12 358)\">\n      <rect x=\"0\" y=\"0\" width=\"336\" height=\"96\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 -1)\"><path d=\"M39 25 H93 V59 L66 78 L39 59 Z\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/></g>\n      <text x=\"119\" y=\"39\" fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\">Off-Page Connector</text>\n      <text x=\"119\" y=\"64\" fill=\"#475569\" font-size=\"12\">Lanjut ke halaman lain</text>\n    </g><g transform=\"translate(12 461)\">\n      <rect x=\"0\" y=\"0\" width=\"336\" height=\"96\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 -1)\"><circle cx=\"66\" cy=\"51\" r=\"26\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"66\" y=\"57\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"700\" fill=\"#7c2d12\">A</text></g>\n      <text x=\"119\" y=\"39\" fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\">On-Page Connector</text>\n      <text x=\"119\" y=\"64\" fill=\"#475569\" font-size=\"12\">Sambung alur di halaman sama</text>\n    </g><g transform=\"translate(12 564)\">\n      <rect x=\"0\" y=\"0\" width=\"336\" height=\"96\" rx=\"13\" fill=\"#f8fafc\" stroke=\"#cbd5e1\"/>\n      <g transform=\"translate(0 -1)\"><path d=\"M35 27 H97 L66 79 Z\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"66\" y=\"55\" text-anchor=\"middle\" font-size=\"15\" font-weight=\"700\" fill=\"#0f172a\">N</text></g>\n      <text x=\"119\" y=\"39\" fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\">File / Storage</text>\n      <text x=\"119\" y=\"64\" fill=\"#475569\" font-size=\"12\">Arsip menurut kode N, A, atau C</text>\n    </g>\n    <text x=\"16\" y=\"674\" fill=\"#475569\" font-size=\"10\">Baca bentuk lalu ikuti arah aliran dokumen dan proses.</text>\n  </svg>",
+      "altText": "Simbol flowchart: dokumen dengan dasar bergelombang, operasi manual trapesium, pemrosesan komputer persegi panjang, konektor halaman lain pentagon, konektor halaman sama lingkaran kecil, dan penyimpanan file segitiga terbalik.",
+      "transcript": [
+        "Dasar bergelombang berarti dokumen; trapesium berarti operasi manual; persegi panjang berarti pemrosesan komputer.",
+        "Pentagon menunjuk sambungan ke halaman lain; lingkaran kecil berhuruf menyambung alur pada halaman yang sama.",
+        "Segitiga terbalik menunjukkan file atau arsip; N, A, dan C dapat menunjukkan urutan pengarsipan."
+      ],
+      "caption": "Panduan bentuk simbol flowchart sistem dan dokumen yang dibahas pada bagian ini. Simbol proses komputer tetap berbentuk persegi panjang karena itulah notasinya."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Simbol",
+        "Bentuk",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Document",
+          "Persegi panjang dengan dasar bergelombang",
+          "Purchase Order, Bill of Lading."
+        ],
+        [
+          "Manual Operation",
+          "Trapesium",
+          "Menandatangani cek secara manual, memeriksa barang."
+        ],
+        [
+          "Computer Processing",
+          "Persegi panjang polos",
+          "Batch posting ke ledger."
+        ],
+        [
+          "Off-Page Connector",
+          "Pentagon/perisai",
+          "Alur berlanjut di halaman lain."
+        ],
+        [
+          "On-Page Connector",
+          "Lingkaran kecil berhuruf/berangka",
+          "Lompatan alur di halaman yang sama."
+        ],
+        [
+          "File/Storage",
+          "Segitiga terbalik",
+          "N = numerical file, A = alphabetical, C = chronological."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 196–200."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Jenis flowchart",
+        "Fokus"
+      ],
+      "rows": [
+        [
+          "Document Flowchart",
+          "Menelusuri aliran fisik dokumen sumber akuntansi antar-departemen dari awal hingga pengarsipan akhir."
+        ],
+        [
+          "System Flowchart",
+          "Menggambarkan konfigurasi teknologi: input, program komputer, media penyimpanan, dan laporan output."
+        ],
+        [
+          "Deployment (Swimlane) Flowchart",
+          "Menyusun langkah proses dalam kolom atau lajur yang mewakili departemen."
+        ],
+        [
+          "Opportunity Flowchart",
+          "Memisahkan aktivitas yang menambah nilai bagi pelanggan dari aktivitas yang hanya menambah biaya."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kategori waktu",
+        "Makna",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Value-Added",
+          "Langsung mengubah barang atau memberikan layanan yang bersedia dibayar pelanggan.",
+          "Merakit produk, memanggang makanan."
+        ],
+        [
+          "Cost-Added-Only",
+          "Pengawasan administratif, antrean, pencatatan ganda, atau inspeksi akibat kebutuhan kontrol atau sistem yang tidak efisien.",
+          "Menunggu persetujuan kredit, antrean transit, waktu menganggur."
+        ]
+      ]
+    },
+    {
+      "kind": "formula",
+      "text": "\\text{PCE} = \\frac{T_{\\text{VA}}}{T_{\\text{Total}}} \\times 100\\%",
+      "note": "Process Cycle Efficiency: T_VA = value-added time; T_Total = total cycle time = value-added time + cost-added-only time. Richardson 4e, p. 200."
+    },
+    {
+      "kind": "example",
+      "title": "Order fulfillment: PCE dan keputusan BPR",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Komponen",
+            "Menit"
+          ],
+          "rows": [
+            [
+              "Value-added (pengemasan pesanan, inspeksi kualitas, perakitan mesin)",
+              "40"
+            ],
+            [
+              "Cost-added-only (menunggu persetujuan kredit, antrean transit, waktu menganggur)",
+              "80"
+            ],
+            [
+              "Total cycle time",
+              "120"
+            ]
+          ]
+        },
+        {
+          "kind": "formula",
+          "text": "\\text{PCE} = \\frac{40\\text{ min}}{120\\text{ min}} \\times 100\\% = 33.33\\%",
+          "note": "Dua pertiga (66.67%) waktu operasi menambah biaya tanpa nilai bagi pelanggan. BPR menargetkan pemeriksaan kredit otomatis untuk menghilangkan penundaan 80 menit. Richardson 4e, p. 200."
+        }
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "Data Flow Diagram (DFD)"
+    },
+    {
+      "kind": "p",
+      "text": "DFD berfokus pada **aliran data logis** tanpa menyebut perangkat fisik, personel departemen, atau media penyimpanan. Notasi yang umum: Gane-Sarson dan Yourdon-DeMarco. Richardson 4e, pp. 201–205."
+    },
+    {
+      "kind": "figure",
+      "title": "Contoh DFD yang dapat ditelusuri",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 920 555\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n  <defs><marker id=\"dfd-arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0 L8 4 L0 8\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"1.5\"/></marker></defs>\n  <rect x=\"1\" y=\"1\" width=\"918\" height=\"553\" rx=\"18\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n  <text x=\"30\" y=\"38\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">DFD pesanan: context dan level 0</text>\n  <text x=\"30\" y=\"68\" fill=\"#475569\" font-size=\"14\">CONTEXT DIAGRAM · satu proses mewakili seluruh sistem</text>\n  <rect x=\"45\" y=\"110\" width=\"165\" height=\"64\" rx=\"4\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/>\n  <text x=\"127\" y=\"148\" text-anchor=\"middle\" fill=\"#7c2d12\" font-size=\"17\" font-weight=\"700\">Customer</text>\n  <circle cx=\"465\" cy=\"142\" r=\"74\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n  <text x=\"465\" y=\"135\" text-anchor=\"middle\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">0</text>\n  <text x=\"465\" y=\"157\" text-anchor=\"middle\" fill=\"#0f172a\" font-size=\"15\">Process Order</text>\n  <path d=\"M210 124 H385\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"295\" y=\"112\" text-anchor=\"middle\" fill=\"#334155\" font-size=\"13\">Order Details</text>\n  <path d=\"M390 167 H220\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"305\" y=\"192\" text-anchor=\"middle\" fill=\"#334155\" font-size=\"13\">Order Confirmation</text>\n  <path d=\"M465 216 v30\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-dasharray=\"5 5\"/>\n  <text x=\"485\" y=\"235\" fill=\"#475569\" font-size=\"13\">dekomposisi, aliran eksternal tetap sama</text>\n  <text x=\"30\" y=\"283\" fill=\"#475569\" font-size=\"14\">LEVEL-0 DFD · proses dipecah, data store menjadi terlihat</text>\n  <rect x=\"45\" y=\"352\" width=\"150\" height=\"62\" rx=\"4\" fill=\"#fff7ed\" stroke=\"#b45309\" stroke-width=\"2\"/>\n  <text x=\"120\" y=\"389\" text-anchor=\"middle\" fill=\"#7c2d12\" font-size=\"16\" font-weight=\"700\">Customer</text>\n  <circle cx=\"382\" cy=\"383\" r=\"65\" fill=\"#eff6ff\" stroke=\"#0369a1\" stroke-width=\"2\"/>\n  <text x=\"382\" y=\"378\" text-anchor=\"middle\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">1.0</text>\n  <text x=\"382\" y=\"399\" text-anchor=\"middle\" fill=\"#0f172a\" font-size=\"14\">Validate Order</text>\n  <circle cx=\"696\" cy=\"383\" r=\"65\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"2\"/>\n  <text x=\"696\" y=\"378\" text-anchor=\"middle\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">2.0</text>\n  <text x=\"696\" y=\"399\" text-anchor=\"middle\" fill=\"#0f172a\" font-size=\"14\">Confirm Order</text>\n  <path d=\"M195 361 H310\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"255\" y=\"345\" text-anchor=\"middle\" fill=\"#334155\" font-size=\"13\">Order Details</text>\n  <path d=\"M447 383 H625\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"535\" y=\"369\" text-anchor=\"middle\" fill=\"#334155\" font-size=\"13\">Validated Order</text>\n  <path d=\"M696 318 V307 H120 V345\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"505\" y=\"302\" text-anchor=\"middle\" fill=\"#334155\" font-size=\"13\">Order Confirmation</text>\n  <path d=\"M320 503 h175 M320 542 h175\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"2\"/>\n  <text x=\"407\" y=\"529\" text-anchor=\"middle\" fill=\"#334155\" font-size=\"13\">D1 · Customer Master</text>\n  <path d=\"M345 445 v52\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"220\" y=\"480\" fill=\"#334155\" font-size=\"12\">Customer Query</text>\n  <path d=\"M465 498 V458 H419\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\" marker-end=\"url(#dfd-arrow)\"/>\n  <text x=\"500\" y=\"477\" fill=\"#334155\" font-size=\"12\">Customer Record</text>\n</svg>",
+      "altText": "DFD context dan level 0 pesanan. Customer mengirim Order Details dan menerima Order Confirmation. Pada level 0 proses 1.0 Validate Order bertukar data dengan D1 Customer Master, lalu proses 2.0 Confirm Order mengirim konfirmasi ke Customer.",
+      "mobileFlow": {
+        "mode": "cards",
+        "title": "Baca DFD: data apa berpindah?",
+        "stages": [
+          {
+            "actor": "Context diagram",
+            "actions": [
+              "Customer → proses 0: Order Details",
+              "Proses 0 → Customer: Order Confirmation"
+            ]
+          },
+          {
+            "actor": "Level 0: validasi",
+            "actions": [
+              "Customer → 1.0 Validate Order: Order Details",
+              "1.0 ↔ D1 Customer Master: Customer Query dan Customer Record"
+            ]
+          },
+          {
+            "actor": "Level 0: konfirmasi",
+            "actions": [
+              "1.0 → 2.0 Confirm Order: Validated Order",
+              "2.0 → Customer: Order Confirmation"
+            ],
+            "note": "Aliran masuk dan keluar eksternal sama seperti pada context diagram. Panah DFD berarti aliran data, bukan urutan waktu."
+          }
+        ]
+      },
+      "transcriptSections": [
+        {
+          "title": "Context diagram",
+          "items": [
+            "Customer mengirim Order Details ke proses 0 Process Order.",
+            "Proses 0 mengembalikan Order Confirmation ke Customer. Penyimpanan internal belum ditampilkan."
+          ]
+        },
+        {
+          "title": "Level-0 DFD",
+          "items": [
+            "Order Details masuk ke 1.0 Validate Order.",
+            "Proses 1.0 meminta dan membaca Customer Record dari D1 Customer Master.",
+            "Validated Order mengalir ke 2.0 Confirm Order, yang mengirim Order Confirmation ke Customer.",
+            "Aliran eksternal Order Details dan Order Confirmation tetap seimbang dengan context diagram."
+          ]
+        }
+      ],
+      "caption": "Ilustrasi orisinal. Persegi = entitas eksternal, lingkaran = proses, dua garis = data store, dan panah berlabel = data. DFD menunjukkan data yang bergerak, bukan waktu atau perpindahan barang."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Simbol DFD",
+        "Bentuk",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "External Entity (source/sink)",
+          "Persegi",
+          "Customer, Bank, Vendor."
+        ],
+        [
+          "Data Flow",
+          "Garis/panah berarah berlabel kata benda data",
+          "Payment Data, Shipping Notice."
+        ],
+        [
+          "Process",
+          "Lingkaran atau persegi bersudut bulat, berlabel frasa kerja dan nomor hierarki",
+          "1.0 Process Payment."
+        ],
+        [
+          "Data Store",
+          "Persegi terbuka atau dua garis sejajar",
+          "Accounts Receivable Ledger."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tingkat dekomposisi",
+        "Isi"
+      ],
+      "rows": [
+        [
+          "Context Diagram",
+          "Diagram lingkup tingkat tinggi: seluruh sistem sebagai satu proses pusat (0) yang berinteraksi dengan external entity."
+        ],
+        [
+          "Level-0 DFD",
+          "Memecah proses sistem tunggal menjadi modul operasi utama: 1.0, 2.0, 3.0."
+        ],
+        [
+          "Level-1 DFD",
+          "Memecah satu modul menjadi proses anak yang lebih rinci: 1.1, 1.2, 1.3."
+        ]
+      ],
+      "caption": "Hierarki: Context Diagram → Level-0 DFD → Level-1 DFD."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Jebakan logika DFD",
+        "Ciri",
+        "Remediasi"
+      ],
+      "rows": [
+        [
+          "Black Hole",
+          "Proses menerima data flow masuk tetapi tidak menghasilkan data flow keluar.",
+          "Tambahkan output yang menjadi tujuan transformasi data, atau hapus proses yang tidak berfungsi."
+        ],
+        [
+          "Miracle",
+          "Proses menghasilkan data flow keluar tanpa menerima data flow masuk.",
+          "Identifikasi dan gambarkan input yang dibutuhkan untuk menghasilkan output tersebut."
+        ],
+        [
+          "Gray Hole",
+          "Output melampaui cakupan atau kemampuan input (mis. input hanya Customer ID, output rincian pajak per item).",
+          "Tambahkan input yang memadai atau sesuaikan output dengan data yang benar-benar tersedia."
+        ]
+      ],
+      "caption": "Richardson 4e, p. 203. Setiap proses DFD harus memiliki minimal satu aliran masuk, minimal satu aliran keluar, dan input yang cukup untuk menghasilkan output."
+    },
+    {
+      "kind": "h2",
+      "text": "5. Comparative Evaluation & Cross-Framework Integration"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Dimensi",
+        "BPMN 2.0",
+        "System & Document Flowchart",
+        "Data Flow Diagram"
+      ],
+      "rows": [
+        [
+          "Fokus utama",
+          "Alur kerja end-to-end, urutan berbasis event, penanganan pengecualian.",
+          "Perpindahan fisik dokumen, custody manual vs otomatis, jenis media.",
+          "Pergerakan dan transformasi data logis antar-proses dan data store."
+        ],
+        [
+          "Standar",
+          "OMG (standar terbuka global).",
+          "ANSI X3.5 dan ISO 5807.",
+          "Metodologi Gane-Sarson / Yourdon-DeMarco."
+        ],
+        [
+          "Urutan & waktu",
+          "Eksplisit melalui sequence flow, token, dan intermediate timer.",
+          "Eksplisit melalui flowline berarah.",
+          "Implisit (ketersediaan data); tanpa batasan waktu, durasi, atau urutan."
+        ],
+        [
+          "Konteks organisasi",
+          "Eksplisit melalui pool (entitas) dan swimlane (peran/departemen).",
+          "Eksplisit melalui kolom atau swimlane departemen.",
+          "Tidak ada; aktor hanya muncul sebagai external entity di tepi diagram."
+        ],
+        [
+          "Implementasi sistem",
+          "Dapat dieksekusi di Business Process Management Suite (BPMS) dan RPA.",
+          "Cetak biru pemrograman prosedural dan jejak audit manual.",
+          "Cetak biru skema database relasional dan arsitektur data."
+        ]
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "Pemetaan pengendalian internal: Segregation of Duties"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Fungsi yang dipisahkan",
+        "Contoh lane"
+      ],
+      "rows": [
+        [
+          "Authorization — menyetujui transaksi",
+          "Credit Manager"
+        ],
+        [
+          "Custody — memegang aset fisik atau kas",
+          "Warehouse / Cashier"
+        ],
+        [
+          "Recording — memposting jurnal atau memperbarui ledger",
+          "General Accounting"
+        ],
+        [
+          "Reconciliation — mencocokkan catatan dengan aset fisik",
+          "Internal Audit"
+        ]
+      ],
+      "caption": "Diagram proses adalah instrumen utama untuk memverifikasi SoD di bawah kerangka COSO dan SOX."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Sinyal kelemahan kontrol",
+      "text": "Kelemahan pengendalian terlihat secara visual ketika satu swimlane menjalankan **custody dan recording**, atau **authorization dan custody** sekaligus. Contoh: Authorize Credit dan Ship Goods berada dalam lane yang sama."
+    },
+    {
+      "kind": "p",
+      "text": "**Audit Data Standards (ADS):** model aktivitas menentukan pemicu event bisnis tempat data transaksi terstandar harus dicatat. AICPA ADS mendefinisikan format field seragam untuk siklus Procure-to-Pay, Order-to-Cash, dan General Ledger; model proses menunjukkan di mana data yang sesuai ADS dihasilkan untuk continuous auditing."
+    },
+    {
+      "kind": "h2",
+      "text": "6. Worked Practice"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "1. Process Cycle Efficiency — order fulfillment manufaktur",
+      "prompt": "Siklus pemenuhan pesanan: verifikasi desain teknis 15 menit; menunggu antrean persetujuan kredit supervisor 50 menit; picking dan pengemasan persediaan otomatis 25 menit; menunggu staging transit dock pengiriman 30 menit. Klasifikasikan aktivitas, hitung total cycle time dan PCE, lalu beri rekomendasi.",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Aktivitas",
+            "Klasifikasi",
+            "Menit"
+          ],
+          "rows": [
+            [
+              "Verifikasi desain teknis",
+              "Value-Added",
+              "15"
+            ],
+            [
+              "Antrean persetujuan kredit",
+              "Cost-Added-Only",
+              "50"
+            ],
+            [
+              "Picking dan pengemasan persediaan",
+              "Value-Added",
+              "25"
+            ],
+            [
+              "Staging transit pengiriman",
+              "Cost-Added-Only",
+              "30"
+            ]
+          ]
+        },
+        {
+          "kind": "formula",
+          "text": "T_{\\text{VA}} = 15 + 25 = 40\nT_{\\text{CA}} = 50 + 30 = 80\nT_{\\text{Total}} = 40 + 80 = 120\n\\text{PCE} = \\frac{40}{120} \\times 100\\% = 33.33\\%",
+          "note": "Satuan menit."
+        },
+        {
+          "kind": "p",
+          "text": "Hanya 33.33% waktu proses menciptakan nilai; 66.67% adalah penundaan administratif. Terapkan credit scoring otomatis untuk menghilangkan bottleneck persetujuan kredit 50 menit."
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "2. Starbucks Drive-Through — trace BPMN dan jurnal",
+      "prompt": "Latihan turunan dengan angka asumsi, bukan angka Problem 1 buku: pelanggan memesan kopi dan muffin seharga \\$8.50 di drive-through dan membayar dengan Starbucks Gift Card. Asumsikan biaya persediaan \\$2.75. Telusuri interaksi BPMN dan susun jurnalnya.",
+      "blocks": [
+        {
+          "kind": "ol",
+          "items": [
+            "Pool Customer mengirim pesanan melalui message flow ke lane Barista di pool Starbucks.",
+            "Barista mencatat pesanan di cash register, kemudian menyiapkan kopi dan muffin (sequence flow dalam pool).",
+            "Barista menyerahkan pesanan; setelah itu customer menyerahkan gift card (dua message flow antar-pool).",
+            "Barista mencatat pembayaran, lalu mengembalikan kartu dan struk melalui message flow."
+          ]
+        },
+        {
+          "kind": "journal",
+          "caption": "Pengakuan pendapatan atas redemption gift card (USD)",
+          "lines": [
+            {
+              "account": "Unearned Gift Card Revenue (Pendapatan Diterima di Muka - Kartu Hadiah)",
+              "debit": "$8.50"
+            },
+            {
+              "account": "Sales Revenue (Pendapatan Penjualan)",
+              "credit": "$8.50",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "caption": "Beban pokok penjualan dan pengurangan persediaan (USD)",
+          "lines": [
+            {
+              "account": "Cost of Goods Sold (Beban Pokok Penjualan)",
+              "debit": "$2.75"
+            },
+            {
+              "account": "Merchandise Inventory (Persediaan Barang Dagang)",
+              "credit": "$2.75",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Dengan asumsi gift card telah dibayar sebelumnya, penukaran kartu mengurangi liabilitas pendapatan diterima di muka, bukan mendebit kas lagi. Nominal, biaya persediaan, dan jurnal di atas adalah asumsi latihan; Problem 1 Richardson 4e hlm. 207 hanya memberikan narasi proses."
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "3. Identifikasi jebakan DFD",
+      "prompt": "Auditor memeriksa tiga proses DFD: (2.1) menerima Employee Timecard dan memperbarui Employee Master File, tetapi tidak memiliki data flow keluar ke payroll atau laporan; (2.2) menghasilkan Vendor Disbursement Check dan Remittance Advice tanpa data flow masuk dari invoice, purchase order, atau catatan bank; (2.3) menerima Customer Zip Code dan menghasilkan Full Customer Credit History & FICO Score.",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Proses",
+            "Jebakan",
+            "Alasan"
+          ],
+          "rows": [
+            [
+              "2.1",
+              "Black Hole",
+              "Data input \"ditelan\" tanpa menghasilkan output."
+            ],
+            [
+              "2.2",
+              "Miracle",
+              "Menghasilkan pengeluaran keuangan tanpa input apa pun."
+            ],
+            [
+              "2.3",
+              "Gray Hole",
+              "Kode pos saja tidak mungkin menghasilkan riwayat kredit pribadi seseorang."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "7. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Aturan emas BPMN 2.0",
+        "Penjelasan"
+      ],
+      "rows": [
+        [
+          "Jangan melintasi pool dengan sequence flow.",
+          "Panah garis penuh yang melintasi batas pool adalah pelanggaran notasi; gunakan message flow."
+        ],
+        [
+          "Jangan menghubungkan elemen dalam satu pool dengan message flow.",
+          "Panah putus-putus khusus untuk komunikasi eksternal antar-pool."
+        ],
+        [
+          "Gunakan \"Active Verb + Noun\" untuk nama activity.",
+          "Validate Purchase Order, bukan Purchase Order Validation."
+        ],
+        [
+          "Cabang Exclusive Gateway harus mencakup semua kemungkinan.",
+          "Setiap XOR split memerlukan jalur keluar yang berbeda untuk seluruh kontingensi logis."
+        ],
+        [
+          "Token digandakan pada parallel split dan digabung pada parallel join.",
+          "Jangan menggunakan exclusive gateway untuk menggabungkan cabang paralel."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Fitur",
+        "BPMN 2.0",
+        "ANSI Flowchart",
+        "DFD"
+      ],
+      "rows": [
+        [
+          "Standar",
+          "OMG BPMN 2.0",
+          "ANSI X3.5 / ISO 5807",
+          "Gane-Sarson / Yourdon"
+        ],
+        [
+          "Fokus",
+          "Alur kerja temporal & aktivitas",
+          "Dokumen fisik & operasi",
+          "Pergerakan data logis"
+        ],
+        [
+          "Aktor",
+          "Pool & swimlane",
+          "Kolom / swimlane",
+          "Hanya external entity"
+        ],
+        [
+          "Waktu",
+          "Eksplisit (sequence flow/token)",
+          "Eksplisit (flowline)",
+          "Tidak ada (hanya ketersediaan data)"
+        ],
+        [
+          "Peran sistem",
+          "Dapat dieksekusi di BPMS / RPA",
+          "Cetak biru jejak audit",
+          "Cetak biru desain database"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Quick reference",
+        "Ingat"
+      ],
+      "rows": [
+        [
+          "IMA / CGMA / IFAC",
+          "6 domain / 4 pilar (Technical, Business, People, Leadership) / 4 peran (User, Manager, Designer, Evaluator)."
+        ],
+        [
+          "CPA Evolution",
+          "Core (Accounting, Auditing, Tax + teknologi) + satu track: ISC, BAR, atau TCP."
+        ],
+        [
+          "Gateway",
+          "XOR = tepat satu jalur; AND = semua jalur bersamaan; OR = satu atau lebih jalur."
+        ],
+        [
+          "PCE",
+          "T_VA / T_Total × 100%; 40 / 120 = 33.33%."
+        ],
+        [
+          "DFD",
+          "Context Diagram → Level-0 → Level-1; jebakan: Black Hole, Miracle, Gray Hole."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Common trap",
+        "Koreksi"
+      ],
+      "rows": [
+        [
+          "Sequence flow digambar melintasi batas pool.",
+          "Aturan OMG: sequence flow hanya di dalam satu pool; antar-pool gunakan message flow."
+        ],
+        [
+          "Message flow dipakai di dalam satu pool (mis. Sales Lane → Accounting Lane dalam pool Company).",
+          "Hubungkan task internal dengan sequence flow; message flow hanya untuk komunikasi antar-organisasi."
+        ],
+        [
+          "Menyamakan pool dan lane.",
+          "Pool = entitas (Company, Vendor); lane = departemen internal (Sales, Accounting)."
+        ],
+        [
+          "SoD dilanggar dalam alokasi swimlane (Authorize Credit dan Ship Goods di lane yang sama).",
+          "Authorization, custody, dan recording tidak boleh dijalankan aktor/lane yang sama."
+        ],
+        [
+          "DFD mengandung Black Hole, Miracle, atau Gray Hole.",
+          "Setiap proses minimal punya satu aliran masuk, satu aliran keluar, dan input yang cukup untuk output-nya."
+        ],
+        [
+          "Mencampur logis dan fisik dalam DFD.",
+          "DFD tidak menampilkan lemari arsip, truk pos, atau jabatan; hanya data flow, process, data store, dan external entity."
+        ]
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Batas TM3",
+      "text": "File biner alat CASE (Visio, Signavio, Lucidchart) tidak disertakan; notasi, aturan token, gateway, dan checkpoint kontrol disajikan dalam teks dan tabel. Data modeling dengan REA dan UML Class Diagram dibahas pada TM4. Sumber utama: Richardson, Chang & Smith, AIS 4e ISE, Chapter 4, pp. 174–209."
+    }
+  ]
+}

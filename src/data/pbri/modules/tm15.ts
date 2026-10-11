@@ -1,0 +1,2404 @@
+// AKA201 TM15/05_student_learning_version.md, converted by C:\Users\Lenovo\aka201-converter\convert-aka201-v2.mjs.
+// The text is verbatim from the content package; figures come from aka201-fig-*.mjs. Change those and re-run the converter instead of editing here.
+import type { Reading } from '../../../types';
+
+export const TM15_READING: Reading = {
+  "tm": 15,
+  "title": "CAATs dan Perancangan Program Audit",
+  "intro": "**Sumber utama:** Arens dkk., Ch.10, pp.330–337 dan pp.340–352; Ch.9, p.316; Ch.5, pp.150–153; Ch.11, pp.395–397. **Standar:** SA/ISA 300 paras. 7–12 dan A9–A23 beserta Appendix; SA/ISA 330 paras. 5–7, 18–25 dan A1–A16, A62–A64; SA/ISA 500 paras. A15–A28; SA/ISA 240 para. A38. **Sumber luar buku:** Jakšić (2009) untuk integrated test facility, parallel simulation, dan online audit monitor.",
+  "objectives": [
+    "Menjelaskan hubungan overall audit strategy, audit plan, dan audit program, serta cara risiko tingkat laporan keuangan dan tingkat asersi dijawab.",
+    "Menyusun bauran tests of controls, tests of details, dan substantive analytical procedures yang sesuai dengan pendekatan audit tiap akun dan asersi.",
+    "Menentukan nature, timing, dan extent prosedur lanjutan dengan mempertimbangkan relevansi, keandalan, dan biaya bukti.",
+    "Menjelaskan fungsi dan batas computer-assisted audit techniques (CAATs) dan audit data analytics (ADA) dalam menguji kontrol dan saldo.",
+    "Merancang audit program yang tersambung ke risiko dan asersi, termasuk menyesuaikan program standar dengan keadaan klien."
+  ],
+  "layout": "layered",
+  "blocks": [
+    {
+      "kind": "section",
+      "title": "0. Fondasi: teknologi klien mengubah strategi, dan strategi menentukan program",
+      "layer": "fondasi",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** auditor menjawab risiko dalam tiga lapis. Overall audit strategy menjawab risiko yang menyebar di seluruh laporan keuangan. Audit plan menjawab risiko pada tiap asersi lewat prosedur lanjutan yang dipilih. Audit program menurunkan rencana itu menjadi langkah kerja yang bisa dikerjakan staf. CAATs adalah alat yang mengubah ongkos dan jangkauan banyak langkah di lapis ketiga. `(ARENS pp.331–332, 350; ISA300 paras. 7–9)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan cakupan.** TM09 membahas strategi dan rencana audit dari sisi Ch.6, TM14 membahas tests of controls dan prosedur substantif yang wajib. TM ini memakai keduanya dan berfokus pada Ch.10: cara strategi menjadi bauran prosedur, cara menimbang nature, timing, dan extent, peran CAATs dan ADA, serta cara menulis audit program. Ukuran sampel (Ch.11) tidak diuraikan di sini. `(ARENS pp.331, 337–340)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Peta TM15: dari strategi sampai audit program",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 780\" width=\"100%\" role=\"img\" aria-labelledby=\"f15-peta-t f15-peta-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f15-peta-t\">Peta TM15: dari strategi sampai audit program</title><desc id=\"f15-peta-d\">Enam kartu berurutan dari strategi audit sampai pelaksanaan dan revisi.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"780\" rx=\"14\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"20\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">1. Strategi audit menyeluruh</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Arah, jadwal, area kunci, sumber daya,</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">pendekatan, respons menyeluruh.</text><rect class=\"svg-title\" x=\"238.5\" y=\"122\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 133 L240 146 L248 133 Z\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"148\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"178\" font-size=\"19\" font-weight=\"800\">2. Rencana audit</text><text class=\"svg-text\" x=\"34\" y=\"206\" font-size=\"18\">Nature, timing, extent prosedur</text><text class=\"svg-text\" x=\"34\" y=\"230\" font-size=\"18\">penilaian risiko dan prosedur lanjutan.</text><rect class=\"svg-title\" x=\"238.5\" y=\"250\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 261 L240 274 L248 261 Z\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"276\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"306\" font-size=\"19\" font-weight=\"800\">3. Pendekatan dan bauran prosedur</text><text class=\"svg-text\" x=\"34\" y=\"334\" font-size=\"18\">Substantif atau gabungan, per akun dan</text><text class=\"svg-text\" x=\"34\" y=\"358\" font-size=\"18\">asersi.</text><rect class=\"svg-title\" x=\"238.5\" y=\"378\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 389 L240 402 L248 389 Z\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"404\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"434\" font-size=\"19\" font-weight=\"800\">4. Nature, timing, extent</text><text class=\"svg-text\" x=\"34\" y=\"462\" font-size=\"18\">Tipe bukti, kapan dilakukan, berapa</text><text class=\"svg-text\" x=\"34\" y=\"486\" font-size=\"18\">banyak item. CAATs dan ADA bila cocok.</text><rect class=\"svg-title\" x=\"238.5\" y=\"506\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 517 L240 530 L248 517 Z\"/><rect class=\"svg-badge-amber\" x=\"20\" y=\"532\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"562\" font-size=\"19\" font-weight=\"800\">5. Audit program</text><text class=\"svg-text\" x=\"34\" y=\"590\" font-size=\"18\">Langkah per akun: prosedur, sampel,</text><text class=\"svg-text\" x=\"34\" y=\"614\" font-size=\"18\">item, timing, asersi.</text><rect class=\"svg-title\" x=\"238.5\" y=\"634\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 645 L240 658 L248 645 Z\"/><rect class=\"svg-badge-purple\" x=\"20\" y=\"660\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"690\" font-size=\"19\" font-weight=\"800\">6. Pelaksanaan dan revisi</text><text class=\"svg-text\" x=\"34\" y=\"718\" font-size=\"18\">Bukti yang bertentangan mengubah</text><text class=\"svg-text\" x=\"34\" y=\"742\" font-size=\"18\">penilaian risiko dan rencana.</text></svg>",
+          "overview": {
+            "heading": "Peta TM15: dari strategi sampai audit program",
+            "cards": [
+              {
+                "title": "1. Strategi audit menyeluruh",
+                "subtitle": "",
+                "items": [
+                  "Arah, jadwal, area kunci, sumber daya, pendekatan, respons menyeluruh"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "2. Rencana audit",
+                "subtitle": "",
+                "items": [
+                  "Nature, timing, extent prosedur penilaian risiko dan prosedur lanjutan"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "3. Pendekatan dan bauran prosedur",
+                "subtitle": "",
+                "items": [
+                  "Substantif atau gabungan, per akun dan asersi"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "4. Nature, timing, extent",
+                "subtitle": "",
+                "items": [
+                  "Tipe bukti, kapan dilakukan, berapa banyak item",
+                  "CAATs dan ADA bila cocok"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "5. Audit program",
+                "subtitle": "",
+                "items": [
+                  "Langkah per akun: prosedur, sampel, item, timing, asersi"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "6. Pelaksanaan dan revisi",
+                "subtitle": "",
+                "items": [
+                  "Bukti yang bertentangan mengubah penilaian risiko dan rencana"
+                ],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumber: Figure 10-1 (ARENS p.331); ISA300 paras. 7, 9; ISA330 paras. 5–7."
+          },
+          "caption": "Gambar 15.1: Peta TM15 dari strategi sampai audit program. Disusun dari Figure 10-1 (ARENS p.331), ISA300 paras. 7, 9, dan ISA330 paras. 5–7.",
+          "altText": "Enam langkah berurutan: strategi audit menyeluruh, rencana audit, pendekatan dan bauran prosedur, nature timing dan extent termasuk CAATs, audit program, serta pelaksanaan dan revisi ketika bukti mengubah penilaian risiko dan rencana."
+        },
+        {
+          "kind": "callout",
+          "variant": "quote",
+          "text": "**Definisi.** Overall audit strategy menetapkan cakupan, waktu, dan arah audit, dan menjadi pegangan untuk menyusun audit plan. Audit plan lebih rinci karena memuat nature, timing, dan extent prosedur penilaian risiko dan prosedur lanjutan pada tingkat asersi yang dikerjakan anggota tim. Audit program memuat langkah-langkah audit yang menjadi respons auditor atas risiko yang teridentifikasi. `(ARENS pp.332, 335, 350; ISA300 paras. 7, 9, A15)`"
+        },
+        {
+          "kind": "p",
+          "text": "Buku membuka bab ini dengan dua auditor yang membandingkan klien mereka. Klien Jared sedang memasang software enterprise resource planning (ERP), yang menggabungkan beberapa proses lintas fungsi ke dalam satu proses transaksi dengan satu basis data. ERP berpotensi menaikkan efisiensi audit, tetapi auditor harus sadar bahwa risiko pengendalian dan risiko inheren juga naik pada masa adopsi. `(ARENS p.330)`"
+        },
+        {
+          "kind": "p",
+          "text": "Pemasangan di klien Jared tidak dikelola dengan baik. Kesalahan pemrograman membuat work order barang dalam proses menjadi nol saat konversi. Pesanan baru tertangani dengan benar, tetapi sekitar 3.000 pekerjaan terdampak. Kesalahan baru terlihat sekitar dua minggu kemudian, ketika siklus penagihan selesai dan rekonsiliasi persediaan terhadap biaya pekerjaan tidak cocok. Hasil keuangan akhir tahun terlambat hampir dua bulan. Jared dan stafnya menghabiskan banyak jam menelaah rencana konversi data dan membandingkan data lama dengan data baru. `(ARENS pp.330–331)`"
+        },
+        {
+          "kind": "p",
+          "text": "Akibatnya, klien menanggung biaya tambahan 2 juta dolar dan mencantumkan material weakness dalam laporan sertifikasi pengendalian internalnya. Klien juga terlambat menyampaikan laporan ke Ontario Securities Commission, sehingga perdagangan sahamnya dihentikan sebulan dan terancam dikeluarkan dari bursa. `(ARENS p.331)`"
+        },
+        {
+          "kind": "p",
+          "text": "Klien Gabrielle, produsen pakaian, menerapkan mass customization. Perangkat lunak dan perangkat kerasnya menghubungkan pesanan dengan sistem produksi dan menyederhanakan mata rantai pemesanan, produksi, dan pengiriman, sehingga persediaan barang dalam proses dan barang jadi turun. Sistem informasinya terbukti andal, jadi Gabrielle menilai control risk rendah dan melakukan prosedur substantif lebih sedikit. Karena persediaan akhir tahun turun, ia hanya memakai dua staf pada penghitungan persediaan. Ia kini menghabiskan lebih banyak waktu menguji kontrol, tetapi pekerjaan lapangan atas persediaan turun sekitar 30 persen. `(ARENS p.331)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "info",
+          "text": "**Interpretasi.** Dua klien memakai teknologi yang sama jenisnya, tetapi akibatnya pada strategi audit berlawanan. Pada klien Jared, perubahan sistem yang gagal menaikkan risiko dan menambah pekerjaan auditor di titik konversi. Pada klien Gabrielle, sistem yang andal memungkinkan pendekatan gabungan dengan control risk rendah dan prosedur substantif yang lebih sedikit. Auditor menjawab perbedaan itu pada dua lapis: respons menyeluruh (siapa yang mengerjakan, seberapa skeptis, seberapa dalam supervisi) dan respons per asersi (apa yang diuji). Pemetaan ini susunan penulis. `(ARENS pp.330–332)`"
+        },
+        {
+          "kind": "p",
+          "text": "Buku menambahkan bahwa perubahan lingkungan pengendalian, misalnya pergantian manajemen, atau perubahan risiko bisnis, misalnya penurunan penjualan tak terduga, juga berdampak besar pada strategi dan pendekatan audit. `(ARENS p.331)`"
+        },
+        {
+          "kind": "p",
+          "text": "Cara membaca TM ini: section 1 membahas strategi dan working paper Hillsburg. Section 2 membahas rencana audit dan prosedur lanjutan. Section 3 membahas bauran prosedur dan pendekatan. Section 4 membahas cara menimbang nature, timing, dan extent. Section 5 membahas CAATs dan ADA. Section 6 membahas audit program, dan section 7 membahas cara bukti baru mengubah rencana."
+        },
+        {
+          "kind": "h3",
+          "text": "Kesalahpahaman umum"
+        },
+        {
+          "kind": "table",
+          "title": "Kesalahpahaman umum tentang strategi, bauran prosedur, CAATs, dan program audit",
+          "headers": [
+            "Anggapan yang keliru",
+            "Yang benar",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "\"Overall audit strategy dan audit plan adalah dokumen yang sama.\"",
+              "Strategi menetapkan cakupan, waktu, dan arah. Rencana lebih rinci karena memuat nature, timing, dan extent prosedur yang dikerjakan anggota tim.",
+              "ARENS pp.332, 335; ISA300 para. A15"
+            ],
+            [
+              "\"Audit program ditulis sebelum penilaian risiko selesai.\"",
+              "Audit program disusun setelah penilaian risiko dan penentuan risk of material misstatement tiap asersi. Prosedur lanjutan yang spesifik bergantung pada hasil prosedur penilaian risiko.",
+              "ARENS p.350; ISA300 para. A15"
+            ],
+            [
+              "\"Strategi dan rencana tidak berubah sampai audit selesai.\"",
+              "Strategi dan rencana diperbarui bila bukti baru bertentangan dengan penilaian risiko. Proses audit bersifat iteratif.",
+              "ARENS p.331; ISA300 para. 10, A18"
+            ],
+            [
+              "\"Satu pendekatan audit berlaku untuk seluruh akun klien.\"",
+              "Pilihan antara pendekatan substantif dan gabungan dibuat per akun dan per asersi. KPMG memakai dua pendekatan berbeda untuk dua kelompok akun yang sama-sama berisiko rendah.",
+              "ARENS pp.342–343, 346"
+            ],
+            [
+              "\"Pendekatan gabungan berarti semua kontrol diuji.\"",
+              "Pendekatan gabungan berlaku untuk akun atau siklus tertentu. Di Hillsburg, auditor mengandalkan kontrol untuk penjualan dan piutang serta pembelian dan pembayaran, dan memakai pendekatan substantif untuk akun lain.",
+              "ARENS pp.333–334"
+            ],
+            [
+              "\"Kontrol yang efektif selalu layak diuji.\"",
+              "Bila inherent risk rendah dan transaksi sedikit dan sederhana, seperti aset tetap Hillsburg, pengujian substantif lebih masuk akal walaupun kontrolnya kuat.",
+              "ARENS p.346"
+            ],
+            [
+              "\"Pengujian 100 persen dengan ADA menghilangkan risiko dan kebutuhan pertimbangan.\"",
+              "ADA menghilangkan sampling risk, tetapi menimbulkan nonsampling risk, misalnya ratusan pengecualian palsu atau data yang tidak lengkap. Hasilnya hanya sebaik data yang dianalisis.",
+              "ARENS pp.153, 396–397"
+            ],
+            [
+              "\"Program audit standar cukup dipakai apa adanya.\"",
+              "Program standar menaikkan efisiensi bila dipakai dengan benar, tetapi tidak menggantikan pertimbangan profesional dan hampir selalu perlu ditambah, diubah, atau dikurangi.",
+              "ARENS p.351; ISA300 para. A20"
+            ]
+          ],
+          "stackOnMobile": true
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "1. Strategi audit menyeluruh dan working paper-nya",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** risiko pada tingkat laporan keuangan dijawab dengan respons menyeluruh yang mengubah cara audit dijalankan. Risiko pada tingkat asersi dijawab dengan prosedur lanjutan. Keduanya tercatat di working paper strategi, yang menjadi peta jalan untuk rencana yang lebih rinci."
+        },
+        {
+          "kind": "h3",
+          "text": "Dua tingkat respons"
+        },
+        {
+          "kind": "p",
+          "text": "Buku memakai Figure 10-1 untuk menunjukkan di mana tahap respons berada. Auditor sudah mengumpulkan bukti lewat perencanaan dan menilai risk of material misstatement pada tingkat laporan keuangan dan tingkat asersi. Sesudah itu auditor mengembangkan respons pada dua tingkat tersebut, melakukan respons itu, menyimpulkan, dan melaporkan. `(ARENS pp.331–332)`"
+        },
+        {
+          "kind": "table",
+          "title": "Dua tingkat respons terhadap risk of material misstatement",
+          "headers": [
+            "Tingkat risiko",
+            "Respons",
+            "Contoh",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Laporan keuangan secara menyeluruh (pervasive)",
+              "Overall response: mengubah cara audit dijalankan, bukan menyasar satu akun",
+              "Penugasan dan supervisi staf yang tepat, kewaspadaan skeptis, bukti penguat yang lebih banyak atas penjelasan manajemen, prosedur fraud yang tidak dapat diprediksi",
+              "ARENS p.332; ISA330 para. 5"
+            ],
+            [
+              "Asersi",
+              "Further audit procedures: tests of controls bila mengandalkan kontrol atau bila prosedur substantif tidak cukup, dan prosedur substantif yang wajib untuk kelas transaksi, saldo, dan pengungkapan yang material",
+              "Uji penerimaan kas, konfirmasi piutang, prosedur analitis atas beban",
+              "ARENS p.332; ISA330 para. 6"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Risiko yang tersebar di banyak asersi mencakup going-concern, kelemahan signifikan pada lingkungan pengendalian, general controls yang lemah, dan fraud risk yang tinggi. Respons auditor atas risiko itu tidak berfokus pada satu akun. Auditor menyesuaikan pelaksanaan audit, misalnya lewat penugasan dan supervisi personel yang tepat, kebutuhan skeptisisme profesional, tingkat bukti penguat atas penjelasan atau representasi manajemen, dan prosedur untuk risiko fraud, termasuk prosedur yang tidak dapat diprediksi. Auditing in Action 7-2 memberi contoh respons menyeluruh untuk Livent, perusahaan dengan risiko pelaporan yang menyebar akibat bias manajemen dan kebijakan akuntansi yang agresif. `(ARENS p.332)`"
+        },
+        {
+          "kind": "p",
+          "text": "ISA 330 merinci respons menyeluruh itu dan menunjukkan bagaimana kondisi lingkungan pengendalian menggerakkannya. `(ISA330 paras. A1–A3)`"
+        },
+        {
+          "kind": "table",
+          "title": "Contoh respons menyeluruh dan pengaruh lingkungan pengendalian menurut ISA 330",
+          "headers": [
+            "Pertanyaan",
+            "Jawaban menurut standar",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Apa saja bentuk respons menyeluruh?",
+              "Menekankan skeptisisme profesional kepada tim. Menugaskan staf yang lebih berpengalaman atau berkeahlian khusus, atau memakai pakar. Mengubah sifat, waktu, dan luas arahan, supervisi, dan reviu. Menambah unsur ketidakterdugaan dalam memilih prosedur lanjutan. Mengubah strategi audit atau prosedur terencana, termasuk performance materiality, rencana menguji kontrol, dan sifat, waktu, dan luas prosedur substantif.",
+              "ISA330 para. A1"
+            ],
+            [
+              "Apa yang terjadi bila lingkungan pengendalian efektif?",
+              "Auditor lebih percaya pada pengendalian internal dan pada keandalan bukti yang dihasilkan di dalam entitas, sehingga sebagian prosedur boleh dilakukan pada tanggal interim, bukan pada akhir periode.",
+              "ISA330 para. A2"
+            ],
+            [
+              "Apa yang terjadi bila lingkungan pengendalian lemah?",
+              "Auditor dapat melakukan lebih banyak prosedur pada akhir periode, mengumpulkan bukti substantif yang lebih luas, atau menambah lokasi yang masuk cakupan audit.",
+              "ISA330 para. A2"
+            ],
+            [
+              "Bagaimana pengaruhnya pada pendekatan umum?",
+              "Pertimbangan di atas sangat memengaruhi pilihan antara penekanan pada prosedur substantif (pendekatan substantif) dan pendekatan yang memakai tests of controls bersama prosedur substantif (pendekatan gabungan).",
+              "ISA330 para. A3"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "figure",
+          "title": "Tiga lapis perencanaan dan respons menyeluruh",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 732\" width=\"100%\" role=\"img\" aria-labelledby=\"f15-strategi-t f15-strategi-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f15-strategi-t\">Tiga lapis perencanaan dan respons menyeluruh</title><desc id=\"f15-strategi-d\">Tiga kartu lapisan perencanaan, satu kartu respons menyeluruh, dan satu kartu akibat lingkungan pengendalian yang lemah.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"732\" rx=\"14\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"20\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Strategi audit</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Rencana tingkat tinggi</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">Jadwal, area kunci, tim, anggaran,</text><text class=\"svg-text\" x=\"34\" y=\"126\" font-size=\"18\">pendekatan</text><rect class=\"svg-title\" x=\"238.5\" y=\"146\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 157 L240 170 L248 157 Z\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"172\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"202\" font-size=\"19\" font-weight=\"800\">Rencana audit</text><text class=\"svg-text\" x=\"34\" y=\"230\" font-size=\"18\">Nature, timing, extent prosedur</text><text class=\"svg-text\" x=\"34\" y=\"254\" font-size=\"18\">Penilaian risiko dan prosedur lanjutan</text><rect class=\"svg-title\" x=\"238.5\" y=\"274\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 285 L240 298 L248 285 Z\"/><rect class=\"svg-badge-amber\" x=\"20\" y=\"300\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"330\" font-size=\"19\" font-weight=\"800\">Audit program</text><text class=\"svg-text\" x=\"34\" y=\"358\" font-size=\"18\">Langkah rinci per akun atau siklus</text><text class=\"svg-text\" x=\"34\" y=\"382\" font-size=\"18\">Sampel, item, timing, asersi</text><rect class=\"svg-title\" x=\"238.5\" y=\"402\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 413 L240 426 L248 413 Z\"/><rect class=\"svg-subcard\" x=\"20\" y=\"428\" width=\"440\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"458\" font-size=\"19\" font-weight=\"800\">Respons menyeluruh untuk risiko</text><text class=\"svg-title\" x=\"34\" y=\"482\" font-size=\"19\" font-weight=\"800\">pervasif</text><text class=\"svg-text\" x=\"34\" y=\"510\" font-size=\"18\">Skeptisisme profesional ditekankan</text><text class=\"svg-text\" x=\"34\" y=\"534\" font-size=\"18\">Staf berpengalaman atau spesialis</text><text class=\"svg-text\" x=\"34\" y=\"558\" font-size=\"18\">Supervisi dan reviu lebih ketat</text><text class=\"svg-text\" x=\"34\" y=\"582\" font-size=\"18\">Unsur ketidakterdugaan dalam prosedur</text><rect class=\"svg-badge-red\" x=\"20\" y=\"612\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"642\" font-size=\"19\" font-weight=\"800\">Lingkungan pengendalian lemah</text><text class=\"svg-text\" x=\"34\" y=\"670\" font-size=\"18\">Lebih banyak prosedur di akhir periode,</text><text class=\"svg-text\" x=\"34\" y=\"694\" font-size=\"18\">bukti substantif lebih luas</text></svg>",
+          "overview": {
+            "heading": "Tiga lapis perencanaan dan respons menyeluruh",
+            "cards": [
+              {
+                "title": "Strategi audit",
+                "subtitle": "",
+                "items": [
+                  "Rencana tingkat tinggi",
+                  "Jadwal, area kunci, tim, anggaran, pendekatan"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Rencana audit",
+                "subtitle": "",
+                "items": [
+                  "Nature, timing, extent prosedur",
+                  "Penilaian risiko dan prosedur lanjutan"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Audit program",
+                "subtitle": "",
+                "items": [
+                  "Langkah rinci per akun atau siklus",
+                  "Sampel, item, timing, asersi"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Respons menyeluruh untuk risiko pervasif",
+                "subtitle": "",
+                "items": [
+                  "Skeptisisme profesional ditekankan",
+                  "Staf berpengalaman atau spesialis",
+                  "Supervisi dan reviu lebih ketat",
+                  "Unsur ketidakterdugaan dalam prosedur"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Lingkungan pengendalian lemah",
+                "subtitle": "",
+                "items": [
+                  "Lebih banyak prosedur di akhir periode"
+                ],
+                "takeaway": "Bukti substantif dibuat lebih luas."
+              }
+            ],
+            "footer": "Sumber: Figure 10-2 (ARENS p.333); ARENS pp.332, 335, 350; ISA330 paras. 5, A1–A3."
+          },
+          "caption": "Gambar 15.2: Tiga lapis perencanaan dan respons menyeluruh. Disusun dari Figure 10-2 (ARENS p.333), ARENS pp.332, 335, 350, dan ISA330 paras. 5, A1–A3.",
+          "altText": "Tiga kartu berurutan: strategi audit sebagai rencana tingkat tinggi, rencana audit yang memuat nature timing dan extent, dan audit program berisi langkah rinci per akun. Di bawahnya kartu respons menyeluruh untuk risiko pervasif: skeptisisme, staf berpengalaman atau spesialis, supervisi dan reviu lebih ketat, dan unsur ketidakterdugaan. Kartu terakhir: bila lingkungan pengendalian lemah, lebih banyak prosedur dilakukan di akhir periode dengan bukti substantif lebih luas."
+        },
+        {
+          "kind": "h3",
+          "text": "Working paper strategi Hillsburg (Figure 10-2)"
+        },
+        {
+          "kind": "p",
+          "text": "Buku membedah working paper strategi Hillsburg (WP 430) sebagai peta jalan untuk rencana yang lebih rinci. Sebagian besar isinya berasal dari pemahaman entitas dan lingkungannya serta penilaian risiko inheren (Ch.6 dan 7), dan dari pemahaman dan evaluasi sistem pengendalian (Ch.8 dan 9). `(ARENS pp.333–334)`"
+        },
+        {
+          "kind": "table",
+          "title": "Isi working paper strategi audit Hillsburg (Figure 10-2)",
+          "headers": [
+            "Faktor",
+            "Isi untuk Hillsburg",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "1. Persyaratan pelaporan",
+              "Kerangka pelaporan ASPE. Tidak ada persyaratan khusus industri.",
+              "ARENS p.333"
+            ],
+            [
+              "2. Waktu",
+              "Jadwal audit di Figure 10-3. Pertemuan pendahuluan dan pemaparan rencana audit sudah dilakukan. Partner akan menyampaikan hasil audit kepada Board pada Oktober.",
+              "ARENS p.333"
+            ],
+            [
+              "3. Area kunci",
+              "Materialitas keseluruhan 441.000 dolar dan performance materiality 331.000 dolar. Risiko signifikan: cutoff pendapatan, valuasi piutang, completeness dan occurrence serta valuasi persediaan. Selain override manajemen dan fraud pengakuan pendapatan, pengembalian dana pelanggan dinilai fraud risk moderate.",
+              "ARENS p.333"
+            ],
+            [
+              "3b. Perubahan besar",
+              "Kepala akuntan diganti oleh Erma Swanson, CPA berpengalaman di industri, dan ada pergantian sebagian personel akuntansi. Manajemen menilai personel akuntansi cukup kompeten dan sangat dapat dipercaya.",
+              "ARENS p.333"
+            ],
+            [
+              "3d. Masalah audit lalu",
+              "Karena pernah ada kesalahan cutoff pendapatan, persediaan, dan harga pokok penjualan, performance materiality untuk akun-akun itu disesuaikan. Tidak ada riwayat override manajemen.",
+              "ARENS p.333"
+            ],
+            [
+              "3f. Pakar",
+              "Perlu spesialis sistem informasi untuk membantu dokumentasi dan evaluasi general dan application controls dan merancang tests of controls atas proses otomatis.",
+              "ARENS p.333"
+            ],
+            [
+              "3g. Organisasi jasa",
+              "Tidak ada organisasi jasa yang dipakai.",
+              "ARENS p.333"
+            ],
+            [
+              "4 dan 5. Tim dan anggaran",
+              "Susunan tim di Figure 10-3, anggaran rinci di WP 431.",
+              "ARENS p.333"
+            ],
+            [
+              "6. Strategi audit",
+              "Mengandalkan kontrol untuk penjualan dan piutang serta pembelian dan pembayaran. Prosedur substantif untuk area lain. Substantif saja tidak cukup, sehingga tests of controls wajib untuk order entry processing, transaksi electronic data interchange, dan pembayaran otomatis.",
+              "ARENS p.333"
+            ],
+            [
+              "7. Perubahan strategi berikutnya",
+              "Belum diisi. Perubahan bisa muncul dari perubahan di bisnis atau dari bukti prosedur lanjutan yang tidak mendukung hasil penilaian risiko, misalnya kontrol pendapatan yang ternyata kurang efektif.",
+              "ARENS pp.333–334"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Hitungan penulis: performance materiality 331.000 dolar adalah sekitar 75 persen dari materialitas keseluruhan 441.000 dolar. Angka 75 persen tidak dinyatakan buku. `(ARENS p.333)`"
+        },
+        {
+          "kind": "p",
+          "text": "Dokumen pendukung di buku punya fungsi masing-masing. Figure 10-3 adalah jadwal dan susunan sumber daya, Figure 10-4 adalah ikhtisar pemahaman entitas Hillsburg, dan Figure 10-5 adalah catatan rapat perencanaan tim yang merangkum diskusi risiko signifikan. `(ARENS pp.334–335)`"
+        },
+        {
+          "kind": "table",
+          "title": "Dokumen pendukung working paper strategi Hillsburg",
+          "headers": [
+            "Dokumen",
+            "Isi",
+            "Dipakai untuk",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Figure 10-3 (jadwal dan sumber daya)",
+              "Partner Joe Anthony, manajer Leslie Nagan, senior Fran Moore, asisten Mitch Bray dan Audit Junior (AJ), ditambah spesialis sistem informasi. Penilaian risiko selesai 30 April 2020, tests of controls 15 Mei 2020, tanggal neraca 30 Juni 2020, pembukuan ditutup 7 Juli 2020, pekerjaan lapangan 1 sampai 21 September 2020, pelaporan 10 Oktober 2020.",
+              "Item 2 dan 4 pada working paper strategi",
+              "ARENS p.334"
+            ],
+            [
+              "Figure 10-4 (pemahaman entitas)",
+              "Distributor perkakas di Kanada Atlantik, perusahaan tertutup, manajemen kompeten, audit committee aktif, tidak ada transaksi pihak berelasi. Risiko pada tingkat laporan keuangan rendah. Pada tingkat asersi: valuasi piutang, valuasi persediaan, cutoff pendapatan, dan existence serta cutoff persediaan berisiko moderate.",
+              "Item 3: area kunci dan risiko signifikan",
+              "ARENS pp.335–336"
+            ],
+            [
+              "Figure 10-5 (rapat perencanaan)",
+              "Fraud: override manajemen dan pengakuan pendapatan diasumsikan berisiko, pengembalian dana pelanggan moderate. Error: valuasi dan cutoff piutang, cutoff pendapatan, serta valuasi, existence, dan accuracy persediaan moderate. Respons: uji jurnal, reviu retrospektif estimasi, tests of controls dan tests of details atas pengembalian dana, serta performance materiality yang lebih rendah.",
+              "Item 3 dan 6: respons terhadap risiko signifikan",
+              "ARENS p.337"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Beberapa angka dan istilah pada contoh Hillsburg di buku tidak sepenuhnya selaras. (1) Figure 10-2 menyebut cutoff pendapatan, valuasi piutang, dan area persediaan sebagai risiko signifikan, sedangkan Figure 10-4 dan 10-5 menilainya moderate. Bacaan ini memakai istilah tiap gambar dan tidak menyimpulkan bahwa moderate sama dengan significant. (2) Tanggal pada contoh tidak seluruhnya cocok dengan periode yang berakhir 30 Juni 2020: Figure 10-2 mencantumkan batas waktu laporan keuangan 4/10/20, dan Figure 10-5 ditandatangani 14 September 2018 untuk rapat 14 Maret 2020. Bacaan memakai jadwal Figure 10-3. (3) Teks menyebut Fran sebagai audit manager, sedangkan Figure 10-3 menyebut Leslie Nagan manajer dan Fran Moore senior. (4) Teks di p.342 merujuk strategi Hillsburg ke Figure 10-5, padahal pendekatan gabungan tercatat di Figure 10-2. `(ARENS pp.333–337, 342)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Catatan rapat perencanaan Hillsburg: dari fraud risk ke respons yang spesifik",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Rapat perencanaan tim Hillsburg memisahkan dua pertanyaan. Pertama, seberapa rentan laporan keuangan terhadap salah saji karena fraud. Kedua, seberapa rentan terhadap salah saji karena kesalahan. Tiap pertanyaan dijawab dengan faktor yang diketahui, lalu respons tim, lalu kesimpulan menyeluruh. `(ARENS p.337)`"
+            },
+            {
+              "kind": "p",
+              "text": "Pada fraud, tim menetapkan risiko override manajemen dan risiko fraud pengakuan pendapatan sesuai CAS 240, dan menilai pengembalian dana pelanggan moderate. Buku mencatat bahwa pengembalian dana pelanggan biasanya area fraud berisiko tinggi di industri ritel, tetapi kualitas kontrol Hillsburg menurunkannya menjadi moderate. Responsnya mencakup pengujian area pengakuan pendapatan yang signifikan dan jurnal, prosedur override manajemen berupa pengujian jurnal dan reviu retrospektif estimasi, serta tests of controls dan tests of details untuk pengembalian dana. `(ARENS p.337)`"
+            },
+            {
+              "kind": "p",
+              "text": "Pada kesalahan, valuasi dan cutoff piutang, cutoff pendapatan, serta valuasi, existence, dan accuracy persediaan dinilai moderate, sedangkan area lain rendah. Tim memakai data historis dan data berjalan untuk menilai penyisihan piutang tak tertagih dan valuasi persediaan, serta menurunkan performance materiality untuk pendapatan dan persediaan karena kesalahan cutoff dan penghitungan persediaan di masa lalu. `(ARENS p.337)`"
+            },
+            {
+              "kind": "p",
+              "text": "Kesimpulannya, risiko pada tingkat laporan keuangan terbatas karena bisnis terkendali dan tidak ada pihak berelasi. Perhatikan bentuk respons: sebagian bersifat menyeluruh (performance materiality yang disesuaikan, uji jurnal), sebagian spesifik per asersi (tests of controls dan tests of details untuk pengembalian dana). Pemilahan ini susunan penulis. `(ARENS p.337)`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "2. Rencana audit dan prosedur lanjutan",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** audit plan memuat nature, timing, dan extent prosedur penilaian risiko dan prosedur lanjutan pada tingkat asersi. Prosedur lanjutan yang spesifik baru bisa dirancang setelah hasil penilaian risiko keluar, dan makin tinggi risikonya, makin meyakinkan bukti yang dicari. Risiko signifikan tertentu menuntut prosedur khusus pada semua audit."
+        },
+        {
+          "kind": "h3",
+          "text": "Isi rencana audit"
+        },
+        {
+          "kind": "p",
+          "text": "Rencana audit lebih rinci daripada strategi karena memuat prosedur yang akan dikerjakan anggota tim. Buku menyebut dua komponen: nature, timing, dan extent prosedur penilaian risiko, serta nature, timing, dan extent prosedur lanjutan pada tingkat asersi. ISA 300 menambah dua hal: arahan dan supervisi anggota tim beserta reviu hasil kerja mereka, dan prosedur lain yang wajib supaya perikatan sesuai standar. `(ARENS p.335; ISA300 para. 9)`"
+        },
+        {
+          "kind": "p",
+          "text": "Perencanaan prosedur penilaian risiko terjadi di awal audit, sedangkan nature, timing, dan extent prosedur lanjutan yang spesifik bergantung pada hasil prosedur penilaian risiko itu. Auditor boleh mulai mengerjakan prosedur lanjutan untuk sebagian kelas transaksi, saldo akun, dan pengungkapan sebelum seluruh prosedur sisanya direncanakan. Pengungkapan juga direncanakan sejak awal, karena rentang informasinya luas dan sebagian berasal dari luar buku besar dan buku pembantu. `(ISA300 paras. A15–A17)`"
+        },
+        {
+          "kind": "p",
+          "text": "Prosedur penilaian risiko dibahas di TM09, TM12, dan TM13. Ringkasnya, auditor memahami entitas dan lingkungannya, mengidentifikasi faktor risiko inheren dan menilai inherent risk, lalu memahami dan mengevaluasi sistem pengendalian untuk menilai control risk pada tingkat asersi. Bukti dari observasi, wawancara, kuesioner, control matrix, dan bentuk bukti lain menjadi dasar dua penilaian risiko: pada tingkat laporan keuangan dan pada tingkat asersi. `(ARENS pp.337–338)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Prosedur lanjutan dan model risiko"
+        },
+        {
+          "kind": "p",
+          "text": "Prosedur lanjutan (further audit procedures) disebut \"lanjutan\" karena dilakukan sesudah prosedur penilaian risiko. Ia terdiri dari prosedur substantif (tests of details dan substantive analytical procedures) dan tests of controls. Figure 10-6 menghubungkan ketiga jenis prosedur dengan model risiko audit, dan TM14 sudah membahas pertimbangan umum merancangnya (Table 10-1). Prinsip yang dipakai di TM ini: makin tinggi risk of material misstatement, makin meyakinkan bukti yang dibutuhkan, sehingga prosedur analitis substantif saja tidak memadai untuk risiko signifikan. `(ARENS p.338; ISA330 para. 7(b))`"
+        },
+        {
+          "kind": "h3",
+          "text": "Prosedur khusus untuk risiko yang wajib dijawab"
+        },
+        {
+          "kind": "p",
+          "text": "Standar audit mewajibkan, pada semua audit, prosedur khusus untuk risiko fraud akibat potensi override manajemen dan untuk anggapan risiko fraud pada pengakuan pendapatan. Buku juga menyebut risiko signifikan lain yang menuntut auditor mempertimbangkan prosedur khusus. `(ARENS p.340)`"
+        },
+        {
+          "kind": "table",
+          "title": "Risiko signifikan yang dijawab dengan prosedur khusus pada semua audit",
+          "headers": [
+            "Risiko",
+            "Alasan",
+            "Pembahasan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Override manajemen",
+              "Risiko fraud yang diasumsikan ada di semua entitas",
+              "Pengujian jurnal dan reviu retrospektif estimasi, serta unsur ketidakterdugaan",
+              "ARENS pp.337, 340; ISA330 para. A1"
+            ],
+            [
+              "Fraud pengakuan pendapatan",
+              "Auditor wajib menganggap risikonya tinggi",
+              "Prosedur khusus atas pendapatan, termasuk konfirmasi dan pengujian kontrol yang diandalkan",
+              "ARENS pp.339–341"
+            ],
+            [
+              "Transaksi pihak berelasi nonrutin, estimasi, ketidakpatuhan hukum dan regulasi, going-concern",
+              "Risiko signifikan lain yang wajib dipertimbangkan",
+              "Dibahas di Ch.6 dan 7 sebagai bagian pemahaman entitas dan penilaian risiko inheren",
+              "ARENS p.340"
+            ],
+            [
+              "Subsequent events",
+              "Risiko signifikan yang diatur terpisah",
+              "Dibahas di Ch.17",
+              "ARENS p.340"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Ketidakterdugaan (unpredictability) adalah salah satu respons terhadap fraud risk. Contoh di buku adalah kunjungan tanpa pemberitahuan ke penghitungan persediaan. Ketidakterdugaan juga menyangkut seberapa banyak informasi tentang prosedur terencana dan waktunya disampaikan kepada manajemen. ISA 300 A4 mengingatkan bahwa membahas sifat dan waktu prosedur rinci dengan manajemen dapat membuat prosedur terlalu mudah ditebak. `(ARENS p.339; ISA300 para. A4)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Contoh nyata: rencana audit untuk Toronto Transit Commission"
+        },
+        {
+          "kind": "p",
+          "text": "Auditing in Action 10-1 mengutip rencana audit PricewaterhouseCoopers (PwC) untuk Toronto Transit Commission (TTC), tahun yang berakhir 31 Desember 2019, yang disajikan kepada audit committee. Rencana itu menjelaskan dua risiko signifikan, respons manajemen, dan pendekatan auditor. Sistem PRESTO adalah sistem tarif milik badan provinsi Metrolinx yang menjadi cara utama penumpang membayar. `(ARENS pp.340–341)`"
+        },
+        {
+          "kind": "table",
+          "title": "Respons manajemen dan pendekatan audit PwC atas dua risiko signifikan di TTC (Auditing in Action 10-1)",
+          "headers": [
+            "Risiko signifikan",
+            "Respons manajemen",
+            "Pendekatan audit",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Override manajemen: risiko fraud inheren di semua entitas, risiko signifikan yang diwajibkan standar Kanada",
+              "Pemisahan tugas yang tepat. Komunikasi kode etik dan tone at the top yang kuat. Persetujuan atas semua jurnal manual yang signifikan.",
+              "Memahami penilaian risiko oleh manajemen dan lingkungan pengendalian, termasuk tone. Memakai alat analitik data Halo untuk memperoleh daftar seluruh jurnal dan memastikan kelengkapannya, lalu menguji sebagian jurnal yang lebih berisiko pada periode yang lebih berisiko. Menguji secara tak terduga saldo tertentu yang tidak material atau biasanya tidak diuji. Memfokuskan pekerjaan rinci pada area yang rawan fraud atau yang pemisahan tugasnya kurang.",
+              "ARENS p.341"
+            ],
+            [
+              "Fraud pada pengakuan pendapatan: anggapan standar bahwa risikonya signifikan di semua bisnis",
+              "Tone at the top yang kuat. Kontrol atas pengakuan pendapatan. Proses lain agar pendapatan diakui dan diukur dengan tepat.",
+              "Memahami risiko fraud dan error pendapatan. Menguji efektivitas operasi kontrol atas pendapatan yang akan diandalkan. Memperoleh laporan auditor layanan untuk PRESTO dan menguji kontrol pengguna yang relevan di TTC. Menguji kontrol PRESTO yang tidak tercakup laporan itu. Meminta konfirmasi dari City of Toronto atas subsidi modal dan operasi dan menelusurinya ke dokumen. Meminta konfirmasi pendapatan PRESTO dan merekonsiliasinya. Menguji aliran pendapatan yang signifikan dengan prosedur analitis substantif dan tests of details.",
+              "ARENS p.341"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Buku menandai bahwa PwC memakai berbagai jenis prosedur, memakai alat analitik data untuk menguji jurnal yang lebih berisiko, memasukkan ketidakterdugaan, dan mengandalkan bukti yang lebih meyakinkan berupa konfirmasi untuk aliran pendapatan berisiko tinggi. Implementasi kartu PRESTO sebelumnya bermasalah dan completeness pendapatan menjadi asersi berisiko tinggi. Karena auditor juga merencanakan tests of controls, pendekatannya gabungan. `(ARENS p.342)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Mengelompokkan prosedur PwC: prosedur penilaian risiko, tests of controls, tests of details, atau analitis substantif",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Concept check C10-4 meminta kamu mengelompokkan prosedur di kolom pendekatan audit ke empat jenis. Latihan ini melatih pemisahan nature (tujuan dan tipe) prosedur. Pengelompokan berikut susunan penulis, bukan jawaban resmi buku. `(ARENS p.340)`"
+            },
+            {
+              "kind": "p",
+              "text": "Prosedur penilaian risiko: memahami penilaian risiko oleh manajemen, lingkungan pengendalian, dan tone; memahami risiko fraud dan error pendapatan. Keduanya bertujuan memahami, bukan menguji. `(ARENS p.341)`"
+            },
+            {
+              "kind": "p",
+              "text": "Tests of controls: menguji efektivitas operasi kontrol pendapatan yang akan diandalkan, memperoleh laporan auditor layanan untuk PRESTO dan menguji kontrol pengguna yang melengkapinya di TTC, serta menguji kontrol PRESTO yang tidak tercakup laporan itu. Sasarannya kontrol, bukan angka. `(ARENS p.341)`"
+            },
+            {
+              "kind": "p",
+              "text": "Tests of details: menguji jurnal terpilih, menguji saldo tertentu secara tak terduga, memfokuskan pekerjaan pada area rawan fraud, serta konfirmasi dan penelusuran subsidi dan pendapatan PRESTO. Daftar seluruh jurnal dari Halo adalah persiapan populasi untuk pengujian jurnal. `(ARENS p.341)`"
+            },
+            {
+              "kind": "p",
+              "text": "Substantive analytical procedures: pengujian aliran pendapatan signifikan dengan analitis. Langkah terakhir dalam daftar itu menggabungkan analitis substantif dan tests of details. `(ARENS p.341)`"
+            },
+            {
+              "kind": "p",
+              "text": "Perhatikan bahwa satu risiko dijawab dengan kombinasi jenis prosedur. Karena pendapatan berisiko signifikan, analitis substantif saja tidak akan cukup, dan PwC menambah konfirmasi eksternal sebagai bukti yang lebih meyakinkan. `(ARENS pp.339–342; ISA330 paras. 21, A55)`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "3. Bauran prosedur dan pendekatan audit",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** bauran prosedur adalah kombinasi tests of controls, tests of details (transaksi dan saldo), dan substantive analytical procedures untuk satu akun. Pendekatan audit, yaitu substantif atau gabungan, mendorong bauran itu. Pendekatan ditetapkan per akun dan asersi, dan bisa berubah di tengah audit bila hasil pengujian tidak seperti yang diharapkan."
+        },
+        {
+          "kind": "h3",
+          "text": "Hal yang dipertimbangkan saat menyusun bauran"
+        },
+        {
+          "kind": "p",
+          "text": "Buku menyebut beberapa hal yang dipertimbangkan auditor ketika merencanakan bauran prosedur untuk menjawab risiko yang teridentifikasi: strategi dan pendekatan audit secara menyeluruh, jadwal audit, diskusi tim audit termasuk kemungkinan fraud dan key audit matters, serta prosedur penilaian risiko yang direncanakan. Akun yang material wajib diuji secara substantif, dan bila akunnya signifikan, prosedur analitis substantif saja tidak memadai. `(ARENS pp.340–341)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Bauran untuk piutang usaha Hillsburg (Figure 10-7)"
+        },
+        {
+          "kind": "p",
+          "text": "Figure 10-7 memperlihatkan pendekatan audit atas piutang usaha Hillsburg dengan empat jenis prosedur lanjutan. Auditor menilai kontrol efektif untuk beberapa asersi pada dua kelas transaksi, yaitu penjualan dan penerimaan kas. Karena itu auditor merencanakan tests of controls dan mengurangi pengujian substantif yang rinci. `(ARENS p.341)`"
+        },
+        {
+          "kind": "table",
+          "title": "Sumber keyakinan pada piutang usaha menurut Figure 10-7",
+          "headers": [
+            "Bagian akun",
+            "Angka di gambar",
+            "Sumber keyakinan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Saldo awal",
+              "96",
+              "Sudah diaudit tahun lalu",
+              "ARENS p.342"
+            ],
+            [
+              "Penjualan",
+              "660",
+              "Tests of controls, tests of details (dilakukan bersama tests of controls sebagai dual-purpose tests), dan prosedur analitis",
+              "ARENS pp.341–342"
+            ],
+            [
+              "Penerimaan kas",
+              "590",
+              "Tests of controls, tests of details, dan prosedur analitis",
+              "ARENS pp.341–342"
+            ],
+            [
+              "Saldo akhir",
+              "166",
+              "Tests of details atas saldo dan prosedur analitis",
+              "ARENS pp.341–342"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Rumus saldonya: 96 ditambah 660 dikurangi 590 sama dengan 166. Gambar memakai simbol dolar dan tidak menyatakan satuan jumlah. Tests of details dilakukan bersama tests of controls untuk memverifikasi transaksi yang tercatat di jurnal dan diposting ke buku besar. Prosedur analitis menekankan kewajaran keseluruhan transaksi dan saldo buku besar, dan tests of details lain menekankan saldo akhir. Dengan menggabungkannya, auditor memperoleh keyakinan atas saldo piutang yang lebih tinggi daripada keyakinan dari satu jenis pengujian. `(ARENS pp.341–342)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Sumber keyakinan atas piutang usaha Hillsburg",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 660\" width=\"100%\" role=\"img\" aria-labelledby=\"f15-piutang-t f15-piutang-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f15-piutang-t\">Sumber keyakinan atas piutang usaha Hillsburg</title><desc id=\"f15-piutang-d\">Empat kartu bagian akun piutang dari saldo awal sampai saldo akhir, ditambah kartu rumus saldo.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"660\" rx=\"14\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"20\" width=\"440\" height=\"76\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Saldo awal: 96</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Sudah diaudit tahun lalu</text><rect class=\"svg-badge-green\" x=\"20\" y=\"108\" width=\"440\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"138\" font-size=\"19\" font-weight=\"800\">Ditambah penjualan: 660</text><text class=\"svg-text\" x=\"34\" y=\"166\" font-size=\"18\">Tests of controls</text><text class=\"svg-text\" x=\"34\" y=\"190\" font-size=\"18\">Tests of details bersama tests of</text><text class=\"svg-text\" x=\"34\" y=\"214\" font-size=\"18\">controls (dual-purpose)</text><text class=\"svg-text\" x=\"34\" y=\"238\" font-size=\"18\">Prosedur analitis</text><rect class=\"svg-badge-green\" x=\"20\" y=\"268\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"298\" font-size=\"19\" font-weight=\"800\">Dikurangi penerimaan kas: 590</text><text class=\"svg-text\" x=\"34\" y=\"326\" font-size=\"18\">Tests of controls</text><text class=\"svg-text\" x=\"34\" y=\"350\" font-size=\"18\">Tests of details</text><text class=\"svg-text\" x=\"34\" y=\"374\" font-size=\"18\">Prosedur analitis</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"404\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"434\" font-size=\"19\" font-weight=\"800\">Sama dengan saldo akhir: 166</text><text class=\"svg-text\" x=\"34\" y=\"462\" font-size=\"18\">Tests of details atas saldo</text><text class=\"svg-text\" x=\"34\" y=\"486\" font-size=\"18\">Prosedur analitis</text><rect class=\"svg-subcard\" x=\"20\" y=\"516\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"546\" font-size=\"19\" font-weight=\"800\">Rumus saldo</text><text class=\"svg-text\" x=\"34\" y=\"574\" font-size=\"18\">96 + 660 - 590 = 166</text><text class=\"svg-text\" x=\"34\" y=\"598\" font-size=\"18\">Gambar buku tidak menyatakan satuan</text><text class=\"svg-text\" x=\"34\" y=\"622\" font-size=\"18\">jumlah.</text></svg>",
+          "overview": {
+            "heading": "Sumber keyakinan atas piutang usaha Hillsburg",
+            "cards": [
+              {
+                "title": "Saldo awal: 96",
+                "subtitle": "",
+                "items": [
+                  "Sudah diaudit tahun lalu"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Ditambah penjualan: 660",
+                "subtitle": "",
+                "items": [
+                  "Tests of controls",
+                  "Tests of details bersama tests of controls (dual-purpose)",
+                  "Prosedur analitis"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Dikurangi penerimaan kas: 590",
+                "subtitle": "",
+                "items": [
+                  "Tests of controls",
+                  "Tests of details",
+                  "Prosedur analitis"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Sama dengan saldo akhir: 166",
+                "subtitle": "",
+                "items": [
+                  "Tests of details atas saldo",
+                  "Prosedur analitis"
+                ],
+                "takeaway": "96 + 660 - 590 = 166. Gambar buku tidak menyatakan satuan jumlah."
+              }
+            ],
+            "footer": "Sumber: Figure 10-7 (ARENS p.341); ARENS pp.341–342."
+          },
+          "caption": "Gambar 15.4: Sumber keyakinan atas piutang usaha Hillsburg. Disusun dari Figure 10-7 (ARENS p.341) dan teks ARENS pp.341–342.",
+          "altText": "Empat kartu bagian akun piutang usaha. Saldo awal 96, sudah diaudit tahun lalu. Penjualan 660, diuji dengan tests of controls, tests of details bersama tests of controls sebagai dual-purpose, dan prosedur analitis. Penerimaan kas 590, diuji dengan tests of controls, tests of details, dan prosedur analitis. Saldo akhir 166, diuji dengan tests of details atas saldo dan prosedur analitis. Rumusnya 96 ditambah 660 dikurangi 590 sama dengan 166. Gambar buku tidak menyatakan satuan jumlah."
+        },
+        {
+          "kind": "h3",
+          "text": "Tiga pendekatan, dipilih per akun dan asersi"
+        },
+        {
+          "kind": "p",
+          "text": "Dari Ch.9, auditor punya tiga pilihan untuk respons pada tingkat asersi: hanya tests of controls bila sistem sangat otomatis dan prosedur substantif tidak mungkin, pendekatan gabungan bila auditor berencana mengandalkan kontrol dan menguji efektivitas operasinya, atau pendekatan substantif bila tidak mengandalkan kontrol karena tidak efektif atau karena tidak efisien menguji. TM14 membahas pilihan itu dan syaratnya. Di Hillsburg dan TTC, pendekatan untuk siklus pendapatan adalah gabungan. `(ARENS p.342; ISA330 para. A4)`"
+        },
+        {
+          "kind": "p",
+          "text": "Buku menyatakan bahwa pada organisasi yang lebih kecil auditor boleh mengambil keputusan menyeluruh untuk memakai pendekatan gabungan dan menerapkannya ke semua kelas transaksi, saldo, dan pengungkapan, tetapi memilih antara substantif dan gabungan tetap dipertimbangkan pada tingkat akun dan asersi. `(ARENS pp.342–343)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Kalimat buku tentang organisasi kecil di atas membandingkannya dengan Hillsburg dan TTC dan menyebut pendekatan gabungan sebagai keputusan menyeluruh yang mungkin. ISA 330 A18 menambahkan arah lain: pada entitas yang sangat kecil biasanya hanya sedikit kontrol yang dapat diidentifikasi, dan dokumentasinya terbatas, sehingga prosedur lanjutan yang terutama substantif sering lebih efisien. Dalam kasus yang jarang, tiadanya kontrol bahkan membuat bukti yang cukup mustahil diperoleh. Bacaan ini menjadikan kalimat buku sebagai kemungkinan, bukan aturan, dan mengikuti A18 untuk entitas yang sangat kecil. `(ARENS pp.342–343; ISA330 para. A18)`"
+        },
+        {
+          "kind": "p",
+          "text": "Auditing in Action 10-2 menunjukkan bahwa dua kelompok akun dengan risk of material misstatement sama-sama rendah sebelum mempertimbangkan pengendalian internal bisa diaudit dengan pendekatan berbeda. KPMG (rencana audit 2014 untuk Regional Municipality of York) mengidentifikasi 12 risiko pelaporan signifikan, lalu menyajikan dua kelompok akun. `(ARENS p.343)`"
+        },
+        {
+          "kind": "table",
+          "title": "Dua pendekatan berbeda untuk risiko inheren yang sama-sama rendah di Regional Municipality of York (Auditing in Action 10-2)",
+          "headers": [
+            "Kelompok akun",
+            "RMM sebelum pengendalian",
+            "Pendekatan",
+            "Prosedur terencana",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Development charges (pendapatan dan beban)",
+              "Rendah",
+              "Substantif",
+              "Menguji penerimaan dengan vouching ke bukti kas dan memastikan klasifikasi. Menguji kewajaran bunga atas development charges. Memvouching pengeluaran ke dokumen pendukung dan memastikan terkait program yang tepat. Menganalisis proyek yang anggarannya berlebih.",
+              "ARENS p.343"
+            ],
+            [
+              "Utang usaha, akrual, dan beban",
+              "Rendah",
+              "Gabungan untuk penggajian, substantif untuk nonpenggajian",
+              "Mengevaluasi desain dan implementasi kontrol atas beban gaji, lalu menguji efektivitas operasinya. Menguji rincian beban nonpenggajian. Mencari kewajiban yang tidak tercatat. Memeriksa keakuratan dan kelengkapan akrual.",
+              "ARENS p.343"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Buku menyimpulkan bahwa meski kedua akun dinilai berisiko rendah, auditor memilih dua pendekatan dan jenis prosedur yang berbeda. Section 4 di TM14 menjelaskan alasannya: mengandalkan kontrol dipilih bila kontrolnya ada dan efisien untuk diuji, sehingga tingkat risiko saja belum menentukan pendekatan. `(ARENS p.343)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Empat audit, empat bauran (Figure 10-8)"
+        },
+        {
+          "kind": "p",
+          "text": "Figure 10-8 membandingkan bauran prosedur untuk empat audit secara ringkas. Audit 1 adalah perusahaan besar, dan Audit 2 sampai 4 adalah perusahaan menengah seperti Hillsburg. Buku menandai bahwa gambar ini penyederhanaan karena pendekatan dapat berbeda per siklus atau akun. `(ARENS p.343)`"
+        },
+        {
+          "kind": "table",
+          "title": "Variasi bauran bukti pada empat audit (Figure 10-8)",
+          "headers": [
+            "Audit",
+            "Pendekatan",
+            "Tests of controls",
+            "Tests of details atas transaksi",
+            "Prosedur analitis substantif",
+            "Tests of details atas saldo",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "1. Pengendalian internal canggih (perusahaan besar)",
+              "Gabungan",
+              "Luas",
+              "Sedikit",
+              "Luas",
+              "Sedikit",
+              "ARENS pp.343–344"
+            ],
+            [
+              "2. Menengah, ada beberapa kontrol",
+              "Gabungan",
+              "Sedang",
+              "Sedang",
+              "Luas",
+              "Sedang",
+              "ARENS pp.343–344"
+            ],
+            [
+              "3. Menengah, kontrol sedikit",
+              "Substantif",
+              "Tidak ada",
+              "Luas",
+              "Sedang",
+              "Luas",
+              "ARENS p.344"
+            ],
+            [
+              "4. Rencana menguji kontrol, tetapi kontrol tidak efektif",
+              "Substantif (setelah beralih dari rencana gabungan)",
+              "Sedang",
+              "Luas",
+              "Luas",
+              "Luas",
+              "ARENS p.344"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "figure",
+          "title": "Empat audit, empat bauran prosedur",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 976\" width=\"100%\" role=\"img\" aria-labelledby=\"f15-bauran-t f15-bauran-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f15-bauran-t\">Empat audit, empat bauran prosedur</title><desc id=\"f15-bauran-d\">Empat kartu bertumpuk, satu per audit, memuat pendekatan dan tingkat pengujian untuk tests of controls, tests of details atas transaksi, analitis substantif, dan tests of details atas saldo.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"976\" rx=\"14\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"20\" width=\"440\" height=\"196\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Audit 1: kontrol canggih (perusahaan</text><text class=\"svg-title\" x=\"34\" y=\"74\" font-size=\"19\" font-weight=\"800\">besar)</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">Pendekatan gabungan</text><text class=\"svg-text\" x=\"34\" y=\"126\" font-size=\"18\">Tests of controls: luas</text><text class=\"svg-text\" x=\"34\" y=\"150\" font-size=\"18\">Tests of details transaksi: sedikit</text><text class=\"svg-text\" x=\"34\" y=\"174\" font-size=\"18\">Analitis substantif: luas</text><text class=\"svg-text\" x=\"34\" y=\"198\" font-size=\"18\">Tests of details saldo: sedikit</text><rect class=\"svg-badge-blue\" x=\"20\" y=\"228\" width=\"440\" height=\"196\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"258\" font-size=\"19\" font-weight=\"800\">Audit 2: menengah, ada beberapa</text><text class=\"svg-title\" x=\"34\" y=\"282\" font-size=\"19\" font-weight=\"800\">kontrol</text><text class=\"svg-text\" x=\"34\" y=\"310\" font-size=\"18\">Pendekatan gabungan</text><text class=\"svg-text\" x=\"34\" y=\"334\" font-size=\"18\">Tests of controls: sedang</text><text class=\"svg-text\" x=\"34\" y=\"358\" font-size=\"18\">Tests of details transaksi: sedang</text><text class=\"svg-text\" x=\"34\" y=\"382\" font-size=\"18\">Analitis substantif: luas</text><text class=\"svg-text\" x=\"34\" y=\"406\" font-size=\"18\">Tests of details saldo: sedang</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"436\" width=\"440\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"466\" font-size=\"19\" font-weight=\"800\">Audit 3: menengah, kontrol sedikit</text><text class=\"svg-text\" x=\"34\" y=\"494\" font-size=\"18\">Pendekatan substantif</text><text class=\"svg-text\" x=\"34\" y=\"518\" font-size=\"18\">Tests of controls: tidak ada</text><text class=\"svg-text\" x=\"34\" y=\"542\" font-size=\"18\">Tests of details transaksi: luas</text><text class=\"svg-text\" x=\"34\" y=\"566\" font-size=\"18\">Analitis substantif: sedang</text><text class=\"svg-text\" x=\"34\" y=\"590\" font-size=\"18\">Tests of details saldo: luas</text><rect class=\"svg-badge-red\" x=\"20\" y=\"620\" width=\"440\" height=\"220\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"650\" font-size=\"19\" font-weight=\"800\">Audit 4: rencana gabungan, kontrol</text><text class=\"svg-title\" x=\"34\" y=\"674\" font-size=\"19\" font-weight=\"800\">gagal</text><text class=\"svg-text\" x=\"34\" y=\"702\" font-size=\"18\">Beralih ke pendekatan substantif</text><text class=\"svg-text\" x=\"34\" y=\"726\" font-size=\"18\">Tests of controls: sedang (sudah</text><text class=\"svg-text\" x=\"34\" y=\"750\" font-size=\"18\">dikerjakan)</text><text class=\"svg-text\" x=\"34\" y=\"774\" font-size=\"18\">Tests of details transaksi: luas</text><text class=\"svg-text\" x=\"34\" y=\"798\" font-size=\"18\">Analitis substantif: luas</text><text class=\"svg-text\" x=\"34\" y=\"822\" font-size=\"18\">Tests of details saldo: luas</text><rect class=\"svg-subcard\" x=\"20\" y=\"856\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"886\" font-size=\"19\" font-weight=\"800\">Cara membaca</text><text class=\"svg-text\" x=\"34\" y=\"914\" font-size=\"18\">Gambar buku menyederhanakan: pendekatan</text><text class=\"svg-text\" x=\"34\" y=\"938\" font-size=\"18\">bisa berbeda per siklus atau akun.</text></svg>",
+          "overview": {
+            "heading": "Empat audit, empat bauran prosedur",
+            "cards": [
+              {
+                "title": "Audit 1: kontrol canggih (perusahaan besar)",
+                "subtitle": "Pendekatan gabungan",
+                "items": [
+                  "Tests of controls: luas",
+                  "Tests of details transaksi: sedikit",
+                  "Analitis substantif: luas",
+                  "Tests of details saldo: sedikit"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Audit 2: menengah, ada beberapa kontrol",
+                "subtitle": "Pendekatan gabungan",
+                "items": [
+                  "Tests of controls: sedang",
+                  "Tests of details transaksi: sedang",
+                  "Analitis substantif: luas",
+                  "Tests of details saldo: sedang"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Audit 3: menengah, kontrol sedikit",
+                "subtitle": "Pendekatan substantif",
+                "items": [
+                  "Tests of controls: tidak ada",
+                  "Tests of details transaksi: luas",
+                  "Analitis substantif: sedang",
+                  "Tests of details saldo: luas"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Audit 4: rencana gabungan, kontrol gagal",
+                "subtitle": "Beralih ke pendekatan substantif",
+                "items": [
+                  "Tests of controls: sedang (sudah dikerjakan)",
+                  "Tests of details transaksi: luas",
+                  "Analitis substantif: luas",
+                  "Tests of details saldo: luas"
+                ],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumber: Figure 10-8 (ARENS pp.343–344). Gambar buku menyederhanakan karena pendekatan bisa berbeda per siklus atau akun."
+          },
+          "caption": "Gambar 15.3: Empat audit, empat bauran prosedur. Disusun dari Figure 10-8 (ARENS pp.343–344).",
+          "altText": "Empat kartu audit. Audit 1, perusahaan besar dengan kontrol canggih, pendekatan gabungan: tests of controls luas, tests of details transaksi sedikit, analitis substantif luas, tests of details saldo sedikit. Audit 2, menengah dengan beberapa kontrol, gabungan: sedang, sedang, luas, sedang. Audit 3, menengah dengan kontrol sedikit, substantif: tests of controls tidak ada, tests of details transaksi luas, analitis sedang, tests of details saldo luas. Audit 4, rencana gabungan tetapi kontrol gagal, beralih ke substantif: tests of controls sedang yang sudah dikerjakan, lalu luas, luas, luas. Gambar buku menyederhanakan karena pendekatan bisa berbeda per siklus atau akun."
+        },
+        {
+          "kind": "p",
+          "text": "Alasan tiap bauran di buku: pada Audit 1, kontrol efektif memungkinkan auditor mengandalkannya untuk mengurangi tests of details, dan prosedur analitis substantif dilakukan secara luas. Pada Audit 2, auditor memilih pengujian sedang untuk semua jenis kecuali prosedur analitis yang dilakukan luas, dan akan menambah pengujian bila ditemukan faktor risiko inheren tertentu. Pada Audit 3, kontrol sedikit dan risiko salah saji signifikan, dan manajemen memutuskan memperbaiki kontrol tidak hemat biaya, sehingga tidak ada tests of controls. Penekanannya pada tests of details atas saldo dan analitis terbatas karena tidak cukup mengidentifikasi salah saji, dan biaya audit cenderung tinggi. `(ARENS pp.343–344)`"
+        },
+        {
+          "kind": "p",
+          "text": "Audit 4 awalnya mengikuti rencana Audit 2. Auditor menemukan banyak deviasi pengujian kontrol dan salah saji signifikan lewat dual-purpose tests dan prosedur analitis, lalu menyimpulkan kontrol tidak efektif dan beralih ke pendekatan substantif penuh. Biayanya lebih tinggi karena tests of controls dan dual-purpose tests sudah dikerjakan tetapi tidak bisa dipakai untuk mengurangi tests of details atas saldo. Buku juga menegaskan bahwa bila situasi seperti Audit 4 terjadi pada organisasi besar dengan transaksi sangat banyak dan otomatisasi tinggi, seperti Audit 1, auditor kemungkinan tidak dapat melaksanakan audit, karena hampir mustahil mengaudit secara substantif organisasi yang memproses ratusan ribu transaksi atau lebih per hari. `(ARENS p.344)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** Pendekatan gabungan tidak sama dengan melakukan semua jenis pengujian sebanyak-banyaknya. Audit 1 memakai tests of controls yang luas justru untuk mengurangi tests of details. Audit 4 menunjukkan sisi lain: bila kontrol gagal, tests of controls yang sudah dikerjakan tidak mengurangi pekerjaan substantif. Soal yang meminta alasan beralih dari gabungan ke substantif menguji apakah kamu menyebut hasil pengujian kontrol sebagai pemicunya. `(ARENS p.344; ISA330 para. 17)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Combined atau substantive? Percakapan Fran, AJ, dan Mitch (Still Confused)",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "AJ dan Mitch berselisih apakah kontrol harus diuji di setiap audit. Fran menyatakan Mitch benar: auditor tidak wajib menguji kontrol di setiap audit. Alasannya, membangun pengendalian internal adalah tanggung jawab manajemen, dan tidak ada hukum yang memaksa manajemen membangun kontrol yang kuat. Kontrol memerlukan biaya. Hillsburg harus menambah staf untuk memisahkan tugas di bagian pembelian dan membayar orang untuk meninjau dan menyetujui transaksi. Perusahaan kecil, terutama yang pemiliknya terlibat langsung dalam operasi harian, mungkin tidak menganggap kontrol formal hemat biaya. `(ARENS p.345)`"
+            },
+            {
+              "kind": "p",
+              "text": "Mitch memakai analogi alarm rumah. Bertanya apakah AJ punya alarm rumah sama dengan memahami lingkungan pengendalian. Hanya bila jawabannya ya, masuk akal menguji apakah alarm itu bekerja. Bila tidak ada alarm, tidak ada yang diuji. Fran menekankan bahwa memahami lingkungan pengendalian sangat berbeda dari menguji kontrol, karena menguji berarti memeriksa apakah kontrol benar-benar bekerja. `(ARENS p.345)`"
+            },
+            {
+              "kind": "p",
+              "text": "Fran lalu menjelaskan strategi sebagai rencana tingkat tinggi. Tujuannya mengidentifikasi di mana risk of material misstatement berada dan menyusun rencana untuk menjawabnya. Auditor menilai kontrol tingkat tinggi, yaitu lingkungan pengendalian, cara manajemen menilai dan menanggapi risiko bisnis, dan pemantauan. Bila kontrol di sini lemah, auditor menyesuaikan respons menyeluruh: siapa yang masuk tim, memastikan semua anggota waspada dan skeptis, dan mereviu pekerjaan dengan cermat. Auditor juga memperdalam pemahaman tentang pemrosesan transaksi lewat flowchart dan kuesioner. Berdasarkan pemahaman itu, auditor memutuskan pendekatan terbaik untuk memperoleh bukti pada akun dan asersi tertentu. `(ARENS p.345)`"
+            },
+            {
+              "kind": "p",
+              "text": "Tests of controls dilakukan di area tertentu karena prosedur substantif tidak bisa dilakukan, yaitu proses yang sangat otomatis tanpa dokumen untuk diperiksa. Selain itu standar tetap mewajibkan prosedur substantif. Bila kontrol efektif, auditor memakai pendekatan gabungan, dan menguji kontrol masuk akal karena manajemen sudah berinvestasi membangunnya. Bila kontrol buruk atau inherent risk akun rendah, cukup prosedur substantif. `(ARENS pp.345–346)`"
+            },
+            {
+              "kind": "p",
+              "text": "Fran menambahkan satu pengecualian yang penting. Kadang kontrol efektif tetapi tidak masuk akal menguji. Contohnya aset tetap Hillsburg: kontrolnya kuat dan akunnya material, tetapi tambahan dan pelepasan sedikit dan transaksinya sederhana, sehingga inherent risk rendah. Auditor cukup meminta dokumen pendukung, mencocokkan rinciannya ke buku besar, dan tidak repot dengan tests of controls. Itu sebabnya prosedurnya disebut tests of details. Kesimpulan AJ: pendekatan ditentukan oleh seberapa efektif kontrol untuk akun dan asersi tertentu. `(ARENS p.346)`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "4. Merancang prosedur lanjutan yang efektif: nature, timing, dan extent",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** prosedur lanjutan yang efektif memahami risiko yang dinilai dan memilih prosedur yang menjawabnya. Auditor menentukan tiga hal: nature (tujuan dan tipe prosedur), timing (kapan dan untuk periode apa), dan extent (berapa banyak). Pilihannya dibatasi performance materiality, relevansi dan keandalan bukti, serta biaya."
+        },
+        {
+          "kind": "h3",
+          "text": "Pertimbangan dasar"
+        },
+        {
+          "kind": "table",
+          "title": "Pertimbangan dasar dalam merancang prosedur lanjutan yang efektif (Table 10-2)",
+          "headers": [
+            "Faktor",
+            "Pertanyaan yang diajukan auditor",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Performance materiality",
+              "Saldo akun, kelas transaksi, atau pengungkapan mana yang material? Apa pun penilaian risikonya, prosedur substantif wajib untuk setiap yang material.",
+              "ARENS p.347; ISA330 para. 18"
+            ],
+            [
+              "Penilaian risiko",
+              "Berapa risk of material misstatement pada tingkat laporan keuangan dan asersi? Adakah risiko signifikan yang butuh perhatian khusus, seperti override manajemen dan pengakuan pendapatan? Bisakah sebagian prosedur dilakukan sebelum akhir periode? Apakah penilaian risiko mengandaikan kontrol efektif, dan bila ya, apakah kontrol itu diuji? Adakah area yang tidak bisa dijawab prosedur substantif saja?",
+              "ARENS p.347; ISA330 para. 7"
+            ],
+            [
+              "Nature, extent, dan timing",
+              "Asersi mana yang dijawab? Kapan prosedur dilakukan, sebelum atau sesudah akhir periode? Cukupkah respons untuk risiko signifikan? Untuk prosedur analitis substantif dan estimasi, apakah akurasi dan kelengkapan sumber informasinya sudah ditangani? Apakah semua prosedur menjawab risiko? Apakah laporan keuangan sudah dicocokkan ke catatan akuntansi, dan jurnal serta penyesuaian material sudah diperiksa?",
+              "ARENS p.347"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Performance materiality menentukan akun mana yang perlu prosedur substantif. Penilaian risiko inheren dan control risk menyoroti kelas transaksi, saldo, dan pengungkapan mana yang signifikan. Bila pendekatan terencananya menguji kontrol, tests of controls dan sebagian prosedur substantif boleh dilakukan pada tanggal interim. Apa pun penilaian control risk-nya, ada area yang prosedur substantif tidak mungkin dilakukan, dan di sana tests of controls wajib. `(ARENS pp.346–347)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Nature: tujuan dan tipe prosedur"
+        },
+        {
+          "kind": "p",
+          "text": "Nature suatu prosedur adalah tujuannya (tests of controls atau prosedur substantif) dan tipenya (inspection, observation, inquiry, confirmation, recalculation, reperformance, atau analytical procedure). Dalam merespons risiko yang dinilai, nature adalah faktor yang paling penting. `(ARENS p.347; ISA330 para. A5)`"
+        },
+        {
+          "kind": "p",
+          "text": "Tipe-tipe prosedur itu dapat dipakai sebagai prosedur penilaian risiko, tests of controls, atau prosedur substantif, bergantung pada konteks pemakaiannya. ISA 500 mendefinisikan tiap tipe dan menandai batasnya. `(ISA500 paras. A15, A18–A28)`"
+        },
+        {
+          "kind": "table",
+          "title": "Tipe prosedur audit, definisi, dan batas bukti menurut ISA 500",
+          "headers": [
+            "Tipe",
+            "Definisi",
+            "Batas atau catatan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Inspection",
+              "Memeriksa catatan atau dokumen, internal atau eksternal, dalam bentuk kertas, elektronik, atau media lain, atau pemeriksaan fisik aset",
+              "Keandalan dokumen bergantung pada sifat dan sumbernya, dan untuk dokumen internal pada efektivitas kontrol atas pembuatannya. Inspeksi aset berwujud andal untuk existence, tetapi tidak selalu untuk rights and obligations atau valuasi.",
+              "ISA500 paras. A18–A20"
+            ],
+            [
+              "Observation",
+              "Melihat suatu proses atau prosedur yang dikerjakan pihak lain, misalnya penghitungan persediaan atau pelaksanaan kontrol",
+              "Hanya berlaku pada titik waktu observasi, dan keadaan diamati dapat memengaruhi cara proses dijalankan",
+              "ISA500 para. A21"
+            ],
+            [
+              "External confirmation",
+              "Bukti berupa jawaban tertulis langsung kepada auditor dari pihak ketiga, dalam bentuk kertas, elektronik, atau media lain",
+              "Relevan untuk saldo dan unsur-unsurnya, tetapi juga untuk syarat perjanjian dan untuk memastikan tidak adanya kondisi tertentu, misalnya side agreement yang memengaruhi pengakuan pendapatan",
+              "ISA500 para. A22"
+            ],
+            [
+              "Recalculation",
+              "Memeriksa ketepatan matematis dokumen atau catatan",
+              "Dapat dilakukan manual atau elektronik",
+              "ISA500 para. A23"
+            ],
+            [
+              "Reperformance",
+              "Eksekusi independen auditor atas prosedur atau kontrol yang semula dikerjakan sebagai bagian pengendalian internal entitas",
+              "Cocok untuk kontrol yang tidak meninggalkan dokumen",
+              "ISA500 para. A24; ARENS p.316"
+            ],
+            [
+              "Analytical procedures",
+              "Evaluasi informasi keuangan lewat analisis hubungan yang masuk akal antara data keuangan dan nonkeuangan, termasuk penyelidikan atas fluktuasi yang tidak konsisten",
+              "Hasil analisis perlu ditindaklanjuti bila menyimpang dari nilai yang diharapkan secara signifikan",
+              "ISA500 para. A25"
+            ],
+            [
+              "Inquiry",
+              "Mencari informasi dari orang yang berpengetahuan, di dalam atau di luar entitas",
+              "Dipakai luas, tetapi jawaban perlu diperkuat dengan bukti lain bila penting, dan untuk niat manajemen informasi pendukungnya bisa terbatas",
+              "ISA500 paras. A26–A28"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Table 10-3 buku merangkum pasangan umum antara tujuan prosedur dan tipe bukti."
+        },
+        {
+          "kind": "table",
+          "title": "Hubungan antara tujuan prosedur lanjutan dan tipe bukti (Table 10-3)",
+          "headers": [
+            "Tujuan prosedur",
+            "Inspection",
+            "Observation",
+            "Inquiry",
+            "Confirmation",
+            "Recalculation",
+            "Reperformance",
+            "Analytical"
+          ],
+          "rows": [
+            [
+              "Tests of controls",
+              "Ya",
+              "Ya",
+              "Ya",
+              "Tidak",
+              "Ya",
+              "Ya",
+              "Tidak"
+            ],
+            [
+              "Tests of details",
+              "Ya",
+              "Tidak",
+              "Ya",
+              "Ya",
+              "Ya",
+              "Ya",
+              "Tidak"
+            ],
+            [
+              "Substantive analytical procedures",
+              "Tidak",
+              "Tidak",
+              "Ya",
+              "Tidak",
+              "Tidak",
+              "Tidak",
+              "Ya"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.348)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Table 10-3 menunjukkan pasangan yang lazim, sedangkan ISA 500 A15 menegaskan bahwa tipe-tipe prosedur dapat dipakai untuk tujuan yang berbeda menurut konteks. ISA 500 A21 sendiri memberi contoh observasi atas penghitungan persediaan oleh personel entitas, yang dalam praktik lazim berfungsi sebagai bukti substantif, dan contoh observasi atas pelaksanaan kontrol. Bacaan ini memakai Table 10-3 sebagai pegangan umum dan tidak membacanya sebagai larangan memakai tipe lain. `(ARENS p.348; ISA500 paras. A15, A21)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Mencocokkan prosedur dengan asersi dan risiko"
+        },
+        {
+          "kind": "p",
+          "text": "Prosedur efektif bila buktinya relevan dan andal untuk menguji asersi. Relevansi adalah hubungan logis antara bukti dan asersi yang diuji, sedangkan keandalan adalah tingkat bukti dapat dipercaya. Keandalan dipengaruhi sumber dan sifat bukti serta keadaan ketika bukti diperoleh, misalnya kontrol internal klien. Prosedur analitis substantif lebih andal bila kontrol efektif dan sudah diuji, karena informasi yang dipakai auditor untuk menyusun ekspektasi bisa dipercaya. Relevansi dan keandalan harus dipertimbangkan bersamaan. Bukti yang dikumpulkan auditor secara langsung umumnya sangat andal, tetapi itu bergantung pada kompetensi auditor menilainya. `(ARENS p.347)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** Bukti yang relevan belum tentu andal, dan sebaliknya. Konfirmasi dari pihak ketiga andal tetapi kurang relevan untuk recoverability piutang dibanding untuk existence. Soal yang meminta \"bukti terbaik\" menguji apakah kamu menyebut kedua kriteria bersama dengan asersi yang ditanyakan. `(ARENS p.347; ISA330 para. A51)`"
+        },
+        {
+          "kind": "p",
+          "text": "Untuk asersi yang paling berisiko mengandung salah saji material, bukti harus sangat meyakinkan. Selain cukup dan tepat, bukti perlu berkualitas tinggi, dan kemungkinan besar tests of details diperlukan sedangkan prosedur analitis substantif saja tidak cukup. Auditor juga mengumpulkan jenis bukti yang berbeda untuk menguji asersi. `(ARENS p.348)`"
+        },
+        {
+          "kind": "table",
+          "title": "Cara alasan penilaian risiko membentuk nature prosedur (ISA 330)",
+          "headers": [
+            "Keadaan",
+            "Akibat pada nature",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Risiko dinilai tinggi",
+              "Auditor mencari bukti yang lebih meyakinkan: menambah jumlah bukti, atau memilih bukti yang lebih relevan dan andal, misalnya bukti pihak ketiga atau bukti pendukung dari beberapa sumber independen. Contohnya mengonfirmasi kelengkapan syarat kontrak dengan pihak lawan, selain memeriksa dokumennya.",
+              "ISA330 paras. 7(b), A9, A19"
+            ],
+            [
+              "Prosedur berbeda cocok untuk asersi berbeda",
+              "Pada pendapatan, tests of controls dapat paling responsif untuk completeness, sedangkan prosedur substantif paling responsif untuk occurrence.",
+              "ISA330 para. A9"
+            ],
+            [
+              "Risiko rendah karena karakteristik kelas transaksi, tanpa menghitung kontrol",
+              "Prosedur analitis substantif saja dapat memberi bukti yang cukup.",
+              "ISA330 para. A10"
+            ],
+            [
+              "Risiko rendah karena auditor berencana menguji kontrol dan memakainya sebagai dasar prosedur substantif",
+              "Auditor wajib melakukan tests of controls itu.",
+              "ISA330 paras. 8(a), A10"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Biaya relatif"
+        },
+        {
+          "kind": "p",
+          "text": "Biaya adalah pertimbangan praktis yang ikut menentukan pendekatan mana yang lebih efisien dalam keadaan tertentu. Buku mengurutkan jenis prosedur lanjutan dari yang termurah: prosedur analitis substantif, tests of controls, lalu tests of details. `(ARENS p.348)`"
+        },
+        {
+          "kind": "table",
+          "title": "Biaya relatif jenis prosedur lanjutan menurut buku",
+          "headers": [
+            "Jenis",
+            "Biaya relatif",
+            "Alasan di buku",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Prosedur analitis substantif",
+              "Paling rendah",
+              "Perhitungan dan pembandingan mudah, dan sering sudah memberi banyak informasi dari membandingkan dua atau tiga angka untuk mencari hubungan yang tidak biasa",
+              "ARENS p.348"
+            ],
+            [
+              "Tests of controls",
+              "Rendah",
+              "Auditor melakukan inquiry dan observasi, memeriksa paraf pada dokumen dan tanda lahiriah kontrol lain, serta reperformance, rekalkulasi, dan penelusuran. Sering bisa dilakukan pada banyak item dalam beberapa menit, terutama bila berbasis komputer seperti test data. Kontrol yang sudah diuji tahun lalu dapat diuji bergilir tiga tahunan bila tidak signifikan dan tidak ada perubahan signifikan.",
+              "ARENS p.348"
+            ],
+            [
+              "Tests of details",
+              "Sering jauh lebih mahal",
+              "Memerlukan lebih banyak waktu dan upaya auditor, misalnya mengirim konfirmasi dan menghitung aset. Karena mahalnya tests of details atas saldo, auditor berusaha meminimalkannya dan memusatkannya pada saldo berisiko tinggi dan material.",
+              "ARENS p.348"
+            ],
+            [
+              "Konfirmasi eksternal",
+              "Prosedur termahal",
+              "Perlu prosedur cermat untuk menyiapkan, mengirim, menerima, dan menindaklanjuti tidak adanya jawaban serta pengecualian. Konfirmasi berbasis cloud mengurangi proses manual yang intensif dan menaikkan tingkat jawaban.",
+              "ARENS p.348"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Buku menegaskan bahwa urutan itu generalisasi, dan biaya tiap jenis bukti berubah menurut keadaan, terutama dengan makin luasnya alat dan teknik otomatis. Contohnya drone dapat mengurangi kebutuhan kehadiran auditor sehingga biaya inspeksi turun dan akurasi naik. `(ARENS p.348)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "info",
+          "text": "**Interpretasi.** Urutan biaya buku dipakai untuk memilih di antara prosedur yang sama-sama menjawab risiko, bukan untuk memilih prosedur termurah. Karena analitis substantif saja tidak memadai untuk risiko signifikan, auditor tidak boleh mengganti tests of details dengan analitis hanya karena lebih murah. Pembacaan ini susunan penulis dari ARENS p.339 dan ISA330 paras. 21, A45. `(ARENS pp.339, 348; ISA330 paras. 21, A45)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Timing: kapan prosedur dilakukan"
+        },
+        {
+          "kind": "p",
+          "text": "Prosedur audit dapat dilakukan sepanjang tahun, atau untuk audit kecil dalam satu periode terkonsentrasi. Di Hillsburg, tests of details atas saldo biasanya dikerjakan paling akhir. Hasil tests of controls dan dual-purpose tests adalah penentu utama extent tests of details atas saldo, sehingga sering dilakukan dua atau tiga bulan sebelum tanggal neraca. Dengan begitu auditor dapat merevisi program tests of details atas saldo bila ada hasil tak terduga, dan menyelesaikan audit secepat mungkin setelah tanggal neraca. `(ARENS p.349)`"
+        },
+        {
+          "kind": "table",
+          "title": "Pertimbangan timing prosedur lanjutan",
+          "headers": [
+            "Keadaan",
+            "Arah keputusan timing",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Sistem komputerisasi klien sangat canggih",
+              "Auditor sering melakukan tests of controls dan tests of details atas transaksi sepanjang tahun untuk mengenali transaksi signifikan atau tidak biasa dan perubahan pada sistem klien. Pendekatan ini disebut continuous auditing.",
+              "ARENS p.349"
+            ],
+            [
+              "Klien ingin menerbitkan laporan segera setelah tanggal neraca",
+              "Tests of details atas saldo yang memakan waktu dilakukan pada tanggal interim, dengan pekerjaan tambahan untuk roll forward saldo interim ke akhir tahun. Roll forward adalah pekerjaan substantif atas jurnal dan transaksi dari tanggal sebelum neraca sampai akhir tahun.",
+              "ARENS p.349"
+            ],
+            [
+              "Tests of details atas saldo sebelum akhir tahun",
+              "Memberi keyakinan lebih rendah dan biasanya tidak dilakukan kecuali kontrol internal efektif.",
+              "ARENS p.349"
+            ],
+            [
+              "Risk of material misstatement lebih tinggi",
+              "Auditor lebih mungkin melakukan prosedur substantif dekat atau pada akhir periode, atau tanpa pemberitahuan atau pada waktu tak terduga, terutama untuk risiko fraud. Bila ada risiko manipulasi yang disengaja, prosedur untuk memperluas kesimpulan dari interim ke akhir periode mungkin tidak efektif.",
+              "ISA330 para. A11"
+            ],
+            [
+              "Ingin mengenali masalah lebih awal",
+              "Prosedur sebelum akhir periode membantu mengidentifikasi hal signifikan lebih dini dan menyelesaikannya bersama manajemen atau menyusun pendekatan yang efektif.",
+              "ISA330 para. A12"
+            ],
+            [
+              "Prosedur yang hanya mungkin pada atau setelah akhir periode",
+              "Mencocokkan atau merekonsiliasi laporan keuangan dengan catatan, memeriksa penyesuaian saat menyusun laporan, dan prosedur atas risiko kontrak penjualan yang tidak patut atau transaksi yang belum final pada akhir periode.",
+              "ISA330 para. A13"
+            ],
+            [
+              "Faktor lain",
+              "Lingkungan pengendalian, ketersediaan informasi (berkas elektronik dapat tertimpa, atau prosedur yang diamati hanya terjadi pada waktu tertentu), sifat risiko, periode yang dicakup bukti, dan waktu penyusunan laporan keuangan terutama untuk pengungkapan penjelas.",
+              "ISA330 para. A14"
+            ],
+            [
+              "Prosedur substantif dilakukan di interim",
+              "Sisa periode ditutup dengan prosedur substantif yang digabung tests of controls untuk periode antara, atau bila auditor menilai cukup, prosedur substantif saja. Salah saji tak terduga pada interim memerlukan evaluasi apakah penilaian risiko dan prosedur sisa periode perlu diubah.",
+              "ISA330 paras. 22–23"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Extent: berapa banyak"
+        },
+        {
+          "kind": "p",
+          "text": "Extent adalah jumlah item yang dipilih. Untuk tests of controls, extent ditentukan perkiraan tingkat deviasi, yang berasal dari control risk, dan seberapa sering kontrol dijalankan, yaitu harian, mingguan, atau bulanan (Ch.9). Untuk prosedur substantif, risk of material misstatement atas asersi tertentu menjadi dasar extent: makin tinggi risikonya, umumnya makin luas pengujiannya. Auditor boleh menguji 100 persen populasi, memilih sampel, atau berfokus pada item tertentu seperti item bernilai besar atau item dengan risiko salah saji lebih tinggi, seperti PwC yang berfokus pada jurnal yang \"lebih berisiko\". `(ARENS p.349)`"
+        },
+        {
+          "kind": "p",
+          "text": "Pengujian 100 persen biasanya lebih mahal, tetapi dengan alat dan teknik otomatis auditor dapat menguji seluruh populasi secara efisien lalu memusatkan pengujian pada item yang berpotensi salah. ISA 330 A15 menambahkan bahwa extent dipertimbangkan dari materialitas, risiko yang dinilai, dan tingkat keyakinan yang direncanakan. Bila satu tujuan dipenuhi lewat gabungan prosedur, extent tiap prosedur dipertimbangkan sendiri-sendiri. Menambah extent hanya efektif bila prosedurnya sendiri relevan dengan risiko spesifik. Dalam tests of details, extent lazimnya dipikirkan sebagai ukuran sampel, tetapi cara selektif lain bisa lebih efektif. `(ARENS p.349; ISA330 paras. A15, A49)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Prosedur penutupan laporan keuangan"
+        },
+        {
+          "kind": "p",
+          "text": "Proses pelaporan keuangan akhir periode mencakup memasukkan total transaksi ke buku besar, memilih dan menerapkan kebijakan akuntansi, memulai, mengotorisasi, mencatat, dan memproses jurnal ke buku besar, serta mencatat penyesuaian berulang dan tidak berulang. Apa pun strategi auditnya, auditor wajib melakukan dua prosedur: mencocokkan atau merekonsiliasi laporan keuangan dengan catatan akuntansi yang mendasarinya, dan memeriksa jurnal material serta penyesuaian lain yang dibuat saat menyusun laporan keuangan. Sifat dan extent prosedur ini bergantung pada sifat dan kompleksitas proses pelaporan keuangan dan risiko terkait. Dokumentasi audit harus menunjukkan bahwa informasi di laporan keuangan cocok atau terekonsiliasi dengan catatan. `(ARENS p.349; ISA330 paras. 20, 30, A54)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "5. CAATs dan audit data analytics",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** CAATs adalah penerapan prosedur audit dengan komputer sebagai alat. Buku membahas audit data analytics (ADA), generalized audit software, dan test data approach. Integrated test facility, parallel simulation, dan modul audit tertanam tidak ada di buku maupun di ISA yang dibaca, dan dijelaskan di sini dari satu sumber luar. CAATs memperluas jangkauan pengujian dan menurunkan biayanya, tetapi hasilnya hanya sebaik data dan kontrol di belakangnya."
+        },
+        {
+          "kind": "h3",
+          "text": "Apa itu CAATs dan apa kata standar"
+        },
+        {
+          "kind": "p",
+          "text": "Glosarium IAASB mendefinisikan computer-assisted audit techniques sebagai penerapan prosedur audit dengan memakai komputer sebagai alat audit. Buku memakai istilah automated tools and techniques, yang mencakup audit data analytics dan teknologi canggih, dan mendefinisikan ADA sebagai seni dan ilmu menemukan dan menganalisis pola, mengidentifikasi anomali, dan mengekstrak informasi berguna dari data yang mendasari atau berkaitan dengan pokok audit, lewat analisis, pemodelan, dan visualisasi untuk merencanakan atau melaksanakan audit. `(ISA glossary; ARENS pp.150–151)`"
+        },
+        {
+          "kind": "table",
+          "title": "Apa yang dikatakan standar tentang CAATs",
+          "headers": [
+            "Standar",
+            "Isi",
+            "Pemakaian"
+          ],
+          "rows": [
+            [
+              "ISA 330 para. A16",
+              "CAATs dapat memungkinkan pengujian yang lebih luas atas transaksi elektronik dan berkas akun, berguna saat auditor mengubah extent pengujian, misalnya untuk menjawab risiko salah saji karena fraud. Teknik ini dapat memilih sampel dari berkas elektronik kunci, mengurutkan transaksi dengan ciri tertentu, atau menguji seluruh populasi sebagai ganti sampel.",
+              "Extent"
+            ],
+            [
+              "ISA 240 para. A38",
+              "Rumusan yang sama dipakai untuk respons atas risiko fraud pada tingkat asersi: auditor dapat memakai CAATs untuk mengumpulkan lebih banyak bukti tentang data di akun signifikan atau berkas transaksi elektronik.",
+              "Fraud"
+            ],
+            [
+              "ISA 330 para. A27",
+              "Bila dokumentasi pelaksanaan kontrol tidak ada, misalnya pada kontrol otomatis, bukti efektivitas operasi dapat diperoleh lewat inquiry yang digabung observasi atau CAATs.",
+              "Tests of controls"
+            ],
+            [
+              "ISA 300 Appendix",
+              "Dalam strategi, auditor mempertimbangkan pengaruh teknologi informasi pada prosedur audit, termasuk ketersediaan data dan rencana pemakaian CAATs.",
+              "Strategi"
+            ],
+            [
+              "ISA 500 paras. A16–A17",
+              "Sebagian data hanya tersedia secara elektronik atau pada waktu tertentu, dan informasi elektronik bisa tidak dapat diambil lagi setelah jangka waktu tertentu. Auditor mungkin perlu meminta klien menyimpan data atau melakukan prosedur saat data masih ada.",
+              "Timing"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ISA330 paras. A16, A27; ISA240 para. A38; ISA300 Appendix; ISA500 paras. A16–A17)`"
+        },
+        {
+          "kind": "h3",
+          "text": "ADA di seluruh siklus audit"
+        },
+        {
+          "kind": "p",
+          "text": "Bab 10 menempatkan ADA di dua tahap. Dalam prosedur penilaian risiko, analisis teks atas dokumen, laporan yang diajukan, dan bahan berbasis teks dapat menandai frasa dan kata kunci yang mungkin menunjukkan risiko salah saji material, dan ADA memperdalam serta memperluas prosedur analitis perencanaan. Dalam prosedur lanjutan, auditor memakai ADA untuk menguji kontrol otomatis dan, dengan perkembangan teknologi, juga kontrol manual yang tercermin di berkas elektronik. `(ARENS pp.349–350)`"
+        },
+        {
+          "kind": "table",
+          "title": "Pemakaian ADA pada tahap audit menurut Ch.10 dan Ch.11",
+          "headers": [
+            "Tahap",
+            "Pemakaian ADA",
+            "Catatan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Prosedur penilaian risiko",
+              "Analisis teks atas dokumen dan bahan berbasis teks. Prosedur analitis perencanaan yang lebih dalam dan luas.",
+              "Membantu menemukan area risiko sebelum prosedur lanjutan dirancang",
+              "ARENS pp.349–350"
+            ],
+            [
+              "Tests of controls",
+              "Menguji kontrol otomatis dan kontrol manual yang tercermin di berkas elektronik",
+              "Hanya bila kontrol meninggalkan bukti elektronik",
+              "ARENS pp.316, 350, 396–397"
+            ],
+            [
+              "Prosedur analitis substantif",
+              "Filter dan analisis lebih banyak data dengan cara terpilah (disaggregated) dan lebih cepat. Visualisasi menandai fluktuasi yang tidak biasa dan menyampaikan temuan.",
+              "Memperkuat wawasan dari prosedur analitis substantif",
+              "ARENS p.350"
+            ],
+            [
+              "Tests of details atas saldo",
+              "Memeriksa 100 persen saldo akun, bukan hanya sampel",
+              "Auditor lalu memusatkan pekerjaan pada item yang berpotensi salah",
+              "ARENS pp.349–350"
+            ],
+            [
+              "Pengujian jurnal",
+              "Mengambil daftar seluruh jurnal, memastikan kelengkapannya, lalu menguji jurnal yang lebih berisiko",
+              "Contoh PwC di TTC memakai alat analitik data bernama Halo",
+              "ARENS p.341"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "TM10 membahas enam langkah merencanakan dan menjalankan ADA (Figure 5-3), dan TM14 membahas generalized audit software dan test data approach sebagai alat menguji kontrol. TM ini tidak mengulang keduanya, dan memakainya untuk memilih teknik. `(ARENS pp.151–153, 316)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Teknik CAATs: yang ada di buku dan yang dari sumber luar"
+        },
+        {
+          "kind": "table",
+          "title": "Enam teknik CAATs, cara kerja, dan batasnya",
+          "headers": [
+            "Teknik",
+            "Cara kerja",
+            "Cocok untuk",
+            "Batas atau catatan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Audit data analytics (ADA)",
+              "Menganalisis data besar dan kompleks, kadang 100 persen populasi, lintas platform TI, dengan visualisasi",
+              "Prosedur penilaian risiko, tests of controls, prosedur substantif, dan kesimpulan",
+              "Hasil hanya sebaik data. Dapat menghasilkan banyak pengecualian palsu.",
+              "ARENS pp.151–153, 349–350, 395–397"
+            ],
+            [
+              "Generalized audit software",
+              "Perangkat lunak umum yang membaca dan menguji data klien dengan modul ekstraksi, sampling, dan grafik",
+              "Menghitung ulang algoritma klien, mencari pengecualian pada kontrol manual yang tercatat elektronik",
+              "Auditor tetap menguji kontrol akses yang memastikan hanya pihak berwenang yang menyetujui",
+              "ARENS p.316"
+            ],
+            [
+              "Test data approach",
+              "Auditor memproses data ujinya sendiri melalui komputer dan program aplikasi klien. Data memuat transaksi yang seharusnya diterima dan ditolak, lalu keluaran aktual dibandingkan dengan yang diharapkan.",
+              "Menguji kontrol otomatis pada program aplikasi",
+              "Program klien bisa berubah selama periode. Jakšić menyarankan kunjungan tanpa pemberitahuan dan menyalin program klien untuk diperiksa kemudian.",
+              "ARENS p.316; Jakšić (2009)"
+            ],
+            [
+              "Integrated test facility (ITF)",
+              "Lingkungan uji yang dibangun di dalam sistem, terutama untuk sistem daring besar di banyak lokasi. Variasi test data: catatan simulasi diproses bersama data klien yang nyata, dan hasilnya dibandingkan dengan harapan.",
+              "Sistem besar yang terus berjalan",
+              "Risiko mencemari data nyata, sehingga prosedur pemisahan dan penarikan kembali data uji ditetapkan sebelumnya dan dijalankan setelah pengujian",
+              "Jakšić (2009)"
+            ],
+            [
+              "Parallel simulation",
+              "Auditor memproses data klien yang nyata dengan program klien dan dengan program buatan auditor, lalu membandingkan dan memvalidasi hasilnya",
+              "Memverifikasi perhitungan seperti penyusutan, bunga, pajak, dan gaji. Program auditor dapat memuat kontrol tambahan sehingga dampak kontrol yang tidak ada dapat dinilai.",
+              "Biaya menulis program audit yang khusus untuk satu klien tinggi",
+              "Jakšić (2009)"
+            ],
+            [
+              "Online audit monitor (padanan modul audit tertanam)",
+              "Kode audit disisipkan ke aplikasi transaksi klien lewat \"audit hooks\". Bila transaksi memenuhi kriteria yang ditetapkan, modul membuat entri log audit atau menandai transaksi itu.",
+              "Sistem yang memproses transaksi seketika, tanpa mengganggu pemrosesan normal",
+              "Sumber tidak menyebut batas secara tegas",
+              "Jakšić (2009)"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Buku Arens dan ISA yang dibaca hanya menyebut CAATs secara umum, tidak menjelaskan ITF, parallel simulation, atau modul audit tertanam. Ketiganya dijelaskan di sini dari satu artikel jurnal, yaitu Dejan Jakšić, \"Implementation of Computer Assisted Audit Techniques in Application Controls Testing\", Management Information Systems, Vol. 4 No. 1 (2009), hlm. 9 sampai 12. Satu sumber saja, jadi uraian ini pengantar, bukan definisi standar. Artikel itu memakai istilah online audit monitor dan tidak memakai istilah embedded audit module. Menyamakan keduanya adalah pembacaan penulis TM ini. Ujian di kelas mungkin hanya menguji istilah buku. `(Jakšić 2009; ARENS p.316)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Memilih teknik menurut tujuan"
+        },
+        {
+          "kind": "figure",
+          "title": "Memilih teknik CAATs menurut tujuan auditor",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 910\" width=\"100%\" role=\"img\" aria-labelledby=\"f15-caats-t f15-caats-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f15-caats-t\">Memilih teknik CAATs menurut tujuan auditor</title><desc id=\"f15-caats-d\">Lima kartu pasangan tujuan dan teknik dengan asal sumbernya, ditambah satu kartu tentang kontrol manual yang tidak bisa diuji dengan ADA.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"910\" rx=\"14\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"20\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Menghitung ulang populasi atau</text><text class=\"svg-title\" x=\"34\" y=\"74\" font-size=\"19\" font-weight=\"800\">mencari pengecualian</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">ADA atau generalized audit software</text><text class=\"svg-text\" x=\"34\" y=\"126\" font-size=\"18\">Asal: buku</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"154\" width=\"440\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"184\" font-size=\"19\" font-weight=\"800\">Menguji kontrol otomatis menolak</text><text class=\"svg-title\" x=\"34\" y=\"208\" font-size=\"19\" font-weight=\"800\">transaksi tidak valid</text><text class=\"svg-text\" x=\"34\" y=\"236\" font-size=\"18\">Test data approach</text><text class=\"svg-text\" x=\"34\" y=\"260\" font-size=\"18\">Integrated test facility untuk sistem</text><text class=\"svg-text\" x=\"34\" y=\"284\" font-size=\"18\">daring besar</text><text class=\"svg-text\" x=\"34\" y=\"308\" font-size=\"18\">Asal: buku dan sumber luar</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"336\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"366\" font-size=\"19\" font-weight=\"800\">Memverifikasi perhitungan kompleks</text><text class=\"svg-text\" x=\"34\" y=\"394\" font-size=\"18\">Reperformance dengan audit software</text><text class=\"svg-text\" x=\"34\" y=\"418\" font-size=\"18\">Parallel simulation</text><text class=\"svg-text\" x=\"34\" y=\"442\" font-size=\"18\">Asal: buku dan sumber luar</text><rect class=\"svg-badge-purple\" x=\"20\" y=\"470\" width=\"440\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"500\" font-size=\"19\" font-weight=\"800\">Menandai transaksi tertentu</text><text class=\"svg-title\" x=\"34\" y=\"524\" font-size=\"19\" font-weight=\"800\">sepanjang periode</text><text class=\"svg-text\" x=\"34\" y=\"552\" font-size=\"18\">Online audit monitor, bersama continuous</text><text class=\"svg-text\" x=\"34\" y=\"576\" font-size=\"18\">auditing</text><text class=\"svg-text\" x=\"34\" y=\"600\" font-size=\"18\">Asal: sumber luar dan buku</text><rect class=\"svg-badge-green\" x=\"20\" y=\"628\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"658\" font-size=\"19\" font-weight=\"800\">Menyeleksi jurnal berisiko</text><text class=\"svg-text\" x=\"34\" y=\"686\" font-size=\"18\">ADA untuk daftar dan penyaringan, sampel</text><text class=\"svg-text\" x=\"34\" y=\"710\" font-size=\"18\">untuk sisanya</text><text class=\"svg-text\" x=\"34\" y=\"734\" font-size=\"18\">Asal: buku</text><rect class=\"svg-badge-red\" x=\"20\" y=\"766\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"796\" font-size=\"19\" font-weight=\"800\">Di luar jangkauan ADA</text><text class=\"svg-text\" x=\"34\" y=\"824\" font-size=\"18\">Kontrol manual tanpa bukti elektronik,</text><text class=\"svg-text\" x=\"34\" y=\"848\" font-size=\"18\">misalnya tanda tangan di kertas. Pakai</text><text class=\"svg-text\" x=\"34\" y=\"872\" font-size=\"18\">inspeksi atau observasi.</text></svg>",
+          "overview": {
+            "heading": "Memilih teknik CAATs menurut tujuan auditor",
+            "cards": [
+              {
+                "title": "Menghitung ulang populasi atau mencari pengecualian",
+                "subtitle": "",
+                "items": [
+                  "ADA atau generalized audit software",
+                  "Asal: buku"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Menguji kontrol otomatis menolak transaksi tidak valid",
+                "subtitle": "",
+                "items": [
+                  "Test data approach",
+                  "Integrated test facility untuk sistem daring besar",
+                  "Asal: buku dan sumber luar"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Memverifikasi perhitungan kompleks",
+                "subtitle": "",
+                "items": [
+                  "Reperformance dengan audit software",
+                  "Parallel simulation",
+                  "Asal: buku dan sumber luar"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Menandai transaksi tertentu sepanjang periode",
+                "subtitle": "",
+                "items": [
+                  "Online audit monitor, bersama continuous auditing",
+                  "Asal: sumber luar dan buku"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Menyeleksi jurnal berisiko",
+                "subtitle": "",
+                "items": [
+                  "ADA untuk daftar dan penyaringan, sampel untuk sisanya",
+                  "Asal: buku"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Di luar jangkauan ADA",
+                "subtitle": "",
+                "items": [
+                  "Kontrol manual tanpa bukti elektronik, misalnya tanda tangan di kertas"
+                ],
+                "takeaway": "Pakai inspeksi atau observasi."
+              }
+            ],
+            "footer": "Sumber: pemetaan penulis dari ARENS pp.316, 341, 349, 395–397 dan Jakšić (2009)."
+          },
+          "caption": "Gambar 15.5: Memilih teknik CAATs menurut tujuan auditor. Pemetaan susunan penulis dari ARENS pp.316, 341, 349, 395–397 dan Jakšić (2009).",
+          "altText": "Lima kartu tujuan auditor beserta teknik yang cocok. Menghitung ulang populasi atau mencari pengecualian: ADA atau generalized audit software, dari buku. Menguji kontrol otomatis menolak transaksi tidak valid: test data approach dari buku, integrated test facility dari sumber luar. Memverifikasi perhitungan kompleks: reperformance dengan audit software dari buku, parallel simulation dari sumber luar. Menandai transaksi tertentu sepanjang periode: online audit monitor dari sumber luar, bersama continuous auditing dari buku. Menyeleksi jurnal berisiko: ADA untuk daftar dan penyaringan, sampel untuk sisanya, dari buku. Kartu terakhir: kontrol manual tanpa bukti elektronik di luar jangkauan ADA, diuji dengan inspeksi atau observasi."
+        },
+        {
+          "kind": "table",
+          "title": "Memilih teknik CAATs menurut tujuan auditor",
+          "headers": [
+            "Tujuan auditor",
+            "Teknik yang cocok",
+            "Alasan",
+            "Asal"
+          ],
+          "rows": [
+            [
+              "Menghitung ulang seluruh populasi, atau mencari pengecualian pada kriteria kontrol",
+              "ADA atau generalized audit software",
+              "Memeriksa setiap transaksi, dan auditor menindaklanjuti item yang menyimpang",
+              "Buku"
+            ],
+            [
+              "Menguji apakah kontrol otomatis menolak transaksi tidak valid",
+              "Test data approach, atau ITF untuk sistem daring besar",
+              "Hasil aktual dibandingkan dengan keluaran yang diharapkan",
+              "Buku untuk test data, sumber luar untuk ITF"
+            ],
+            [
+              "Memverifikasi perhitungan kompleks (cadangan piutang, penyusutan, bunga, pajak, gaji)",
+              "Reperformance dengan generalized audit software, atau parallel simulation",
+              "Algoritma klien dihitung ulang dengan program independen",
+              "Buku untuk software, sumber luar untuk parallel simulation"
+            ],
+            [
+              "Menandai transaksi tertentu sepanjang periode secara terus-menerus",
+              "Online audit monitor, bersama continuous auditing",
+              "Transaksi yang memenuhi kriteria ditandai saat terjadi",
+              "Sumber luar untuk monitor, buku untuk continuous auditing (p.349)"
+            ],
+            [
+              "Menyeleksi jurnal berisiko untuk diuji",
+              "ADA untuk daftar dan penyaringan, lalu sampel representatif untuk sisanya",
+              "Efisien bila volume jurnal besar",
+              "Buku (TTC, p.341; p.396)"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Pemetaan tujuan ke teknik di atas susunan penulis dari sumber-sumber yang disebut di tabel sebelumnya. `(ARENS pp.316, 341, 349, 396; Jakšić 2009)`"
+        },
+        {
+          "kind": "h3",
+          "text": "ADA dan sampling"
+        },
+        {
+          "kind": "p",
+          "text": "Bab 11 membandingkan ADA dengan sampling. ADA dapat dipakai untuk tests of controls, prosedur substantif, dan prosedur analitis substantif. Auditor memakai ADA bila data relevan untuk asersi atau atribut yang diuji (ADA paling cocok untuk asersi accuracy dan cutoff), data andal (dari klien dengan kontrol kuat, atau dari sumber eksternal yang andal), dan data dapat diakses dan sudah dibersihkan dari kesalahan. `(ARENS p.395)`"
+        },
+        {
+          "kind": "p",
+          "text": "ADA mengeliminasi sampling risk. Pada tests of details, ADA dapat melakukan rekalkulasi atas seluruh populasi, bukan hanya sampel. ADA juga dapat menjadi dual-purpose test. Contoh buku: ADA membandingkan harga dan kuantitas di faktur penjualan dengan pesanan penjualan dan dokumen pengiriman di sistem ERP. Itu menguji bahwa kontrol three-way match diterapkan (tests of controls) dan bahwa transaksinya benar (rekalkulasi sebagai tests of details). `(ARENS p.395)`"
+        },
+        {
+          "kind": "p",
+          "text": "Perbedaan utama dengan sampling representatif ada pada pemilihan item. ADA menguji setiap transaksi, lalu auditor memeriksa item yang menjadi pengecualian atau deviasi kontrol. Pada sampel representatif, tidak semua transaksi diperiksa, dan tingkat pengecualian yang direncanakan sudah masuk dalam ukuran sampel. `(ARENS p.395)`"
+        },
+        {
+          "kind": "table",
+          "title": "Contoh merancang ADA untuk tests of controls (Table 11-20)",
+          "headers": [
+            "Aktivitas kontrol",
+            "Metode seleksi ADA",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Semua pengeluaran di atas batas disetujui dua manajer",
+              "Mengekstrak semua transaksi yang disetujui kurang dari dua orang. Untuk transaksi yang punya dua penyetuju, mencocokkan penyetuju dengan daftar manajer untuk memastikan mereka berwenang dan mengikuti batas.",
+              "ARENS p.396"
+            ],
+            [
+              "Faktur pembelian di atas 100.000 dolar disetujui CEO",
+              "Mengekstrak semua faktur pembelian di atas 100.000 dolar yang penyetujunya tidak mencakup CEO",
+              "ARENS p.396"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Auditor merancang ADA untuk mengidentifikasi pengecualian atau item berisiko tinggi, dan dapat memakainya untuk stratifikasi atau profil populasi guna menemukan item signifikan. Banyak yang memperkirakan bahwa sampling tidak lagi relevan, tetapi auditor sering memakai ADA dan sampling bersama. Contohnya PwC di TTC memakai alat analitik data untuk menandai jurnal berisiko, lalu memakai sampel representatif untuk menguji jurnal lainnya. Pola ini menaikkan efisiensi dan efektivitas ketika volume transaksi tinggi. `(ARENS pp.341, 396)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Menguji 100 persen dan banjir pengecualian (Auditing in Action 11-5)",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Auditing in Action 11-5 mengutip studi Institute of Chartered Accountants in England and Wales (ICAEW) tahun 2016. Studi itu menyimpulkan bahwa big data bukan pengganti pertimbangan dan skeptisisme profesional auditor, dan sampling tetap relevan. `(ARENS p.396)`"
+            },
+            {
+              "kind": "p",
+              "text": "Menguji seluruh populasi menghilangkan sampling risk, tetapi menimbulkan masalah lain bila tidak hati-hati. Ratusan, kadang ribuan, \"pengecualian\" dapat muncul. Bila setelah diselidiki ternyata banyak yang bukan pengecualian, penyebabnya bisa pengujian yang dikonfigurasi salah, atau populasi yang sebenarnya dua kelompok dengan prosedur kontrol berbeda dan tidak homogen. Risiko seperti ini disebut nonsampling risk di buku, dan ada ketika menguji 100 persen populasi. `(ARENS p.396)`"
+            },
+            {
+              "kind": "p",
+              "text": "Sebagian firma yang menghadapi ribuan pengecualian akan menstratifikasi dan mengambil sampel dari pengecualian itu untuk menentukan mana yang asli. Firma lain berpendapat bahwa bila pengujian dirancang dengan benar sejak awal, situasi itu tidak muncul. Standar mengharuskan semua pengecualian ditindaklanjuti. Pihak yang mengambil sampel pengecualian berargumen bahwa bila sejak awal mereka memakai sampel, mereka hanya akan menemukan pengecualian yang sangat sedikit dan tidak perlu menindaklanjuti tiap pengecualian kecil secara rinci, asalkan semua pengecualian sudah dipertimbangkan dan respons risiko yang sesuai disusun. `(ARENS p.396)`"
+            },
+            {
+              "kind": "p",
+              "text": "Kesimpulan studi: standar audit tidak melarang data analytics tetapi juga tidak memfasilitasinya secara memadai, dan hal-hal seperti pengujian 100 persen dan efek yang lebih luas dari interogasi data tidak dibahas dengan baik. Karena standar belum mengejar kemajuan itu, beberapa pembuat standar sedang menjalankan proyek data analytics, dan perubahan standar yang diperlukan belum jelas. Bacaan ini hanya melaporkan isi kotak buku, bukan perkembangan standar sesudah 2016. `(ARENS p.396)`"
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Syarat dan batas pemakaian"
+        },
+        {
+          "kind": "table",
+          "title": "Syarat dan batas pemakaian CAATs dan ADA",
+          "headers": [
+            "Hal",
+            "Penjelasan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Akses ke data",
+              "Sistem TI klien sangat beragam, dan tidak ada format data standar. Auditor menilai kemampuannya mengakses data lintas platform. Manajemen bisa enggan karena khawatir data berubah atau terhapus tanpa sengaja, atau keamanan TI terbuka, sehingga masalah ini dibahas jauh sebelum ADA dipakai.",
+              "ARENS p.152"
+            ],
+            [
+              "Pembersihan data",
+              "Data sering memuat bidang kosong atau format tidak konsisten, misalnya tanggal MM/DD/YYYY dan DD/MM/YYYY. Sebagian data bahkan tidak dapat diaudit sebelum manajemen memperbaiki kesalahan di data sumber.",
+              "ARENS p.151"
+            ],
+            [
+              "Relevansi dan keandalan data",
+              "Data internal perlu dinilai dari siapa yang mengendalikannya, yaitu personel akuntansi atau pihak di luar proses pelaporan keuangan. Bila proses pembuatan dan penyimpanan datanya berkontrol lemah, data bisa salah atau tidak lengkap. Data eksternal, misalnya dari internet, bisa lebih andal karena tidak terkena bias manajemen, tetapi keandalannya tetap perlu dinilai.",
+              "ARENS pp.152–153"
+            ],
+            [
+              "Tindak lanjut pengecualian",
+              "Pengecualian dapat menandai risiko lebih tinggi, defisiensi kontrol, salah saji nyata, atau false positive. Auditor dapat mengulang ADA dengan data yang sudah dibersihkan atau menganalisis subkelompok.",
+              "ARENS p.153"
+            ],
+            [
+              "Kontrol manual tanpa bukti elektronik",
+              "ADA tidak bisa dipakai bila kontrolnya manual dan tidak ada bukti elektronik pelaksanaannya, misalnya tanda tangan.",
+              "ARENS p.397"
+            ],
+            [
+              "Kontrol otomatis dan general IT controls",
+              "Kontrol otomatis berfungsi konsisten kecuali aplikasinya berubah. Setelah memastikan kontrol berfungsi, auditor menguji bahwa ia tetap berfungsi, misalnya lewat pengujian general IT controls atas aplikasi, atau lewat inquiry dan pemeriksaan log perubahan.",
+              "ISA330 paras. A29, A36"
+            ],
+            [
+              "Ketersediaan data",
+              "Data elektronik dapat tertimpa atau tidak dapat diambil lagi setelah periode tertentu, sehingga auditor perlu meminta penyimpanan data atau menyesuaikan waktu prosedur.",
+              "ISA500 para. A17"
+            ],
+            [
+              "Kompetensi",
+              "Klien yang sistemnya kompleks membutuhkan spesialis sistem informasi di tim. Hillsburg memasukkannya untuk dokumentasi dan evaluasi general dan application controls serta merancang tests of controls atas proses otomatis.",
+              "ARENS p.333"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** Pengujian seluruh populasi bukan jaminan bebas kesalahan. Soal yang menyebut \"ADA menguji 100 persen sehingga tidak ada risiko\" menguji apakah kamu membedakan sampling risk dari nonsampling risk: data tidak andal, konfigurasi salah, dan pengecualian palsu tetap bisa membuat kesimpulan keliru. `(ARENS pp.153, 396–397)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "6. Merancang audit program",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** audit program memuat langkah audit yang menjadi respons auditor atas risiko yang teridentifikasi. Tiap langkah menyatakan prosedur, ukuran sampel, item yang dipilih, timing, dan asersi yang dijawab. Program disusun setelah risiko dinilai, dan program standar harus disesuaikan, bukan disalin."
+        },
+        {
+          "kind": "h3",
+          "text": "Tiga bagian program"
+        },
+        {
+          "kind": "p",
+          "text": "Audit program untuk sebagian besar audit dirancang dalam tiga bagian, dan biasanya ada program tersendiri untuk tiap siklus transaksi. `(ARENS p.350)`"
+        },
+        {
+          "kind": "table",
+          "title": "Tiga bagian audit program",
+          "headers": [
+            "Bagian",
+            "Isi",
+            "Bila auditor tidak mengandalkan kontrol",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "1. Tests of controls dan tests of details atas transaksi",
+              "Menguji kontrol dan memeriksa rincian transaksi",
+              "Hanya tests of details substantif atas transaksi",
+              "ARENS p.350"
+            ],
+            [
+              "2. Prosedur analitis substantif",
+              "Membandingkan jumlah aktual dengan ekspektasi yang dapat diprediksi",
+              "Tetap ada sesuai penilaian risiko",
+              "ARENS p.350"
+            ],
+            [
+              "3. Tests of details atas saldo",
+              "Menguji saldo akhir akun, misalnya konfirmasi piutang",
+              "Tetap ada sesuai penilaian risiko",
+              "ARENS p.350"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Program tests of details atas saldo piutang usaha (Table 10-4)"
+        },
+        {
+          "kind": "p",
+          "text": "Table 10-4 menunjukkan bagian ketiga program untuk piutang usaha. Hampir semua langkah menguji lebih dari satu asersi, dan untuk asersi yang relevan dipakai lebih dari satu prosedur. Program ini disusun sesudah penilaian risk of material misstatement tiap asersi. Ia memuat tipe tests of details (inspeksi, konfirmasi, reperformance, rekalkulasi), extent (kolom sampel dan item yang dipilih), dan timing (akhir tahun atau interim). Semua keputusan nature, timing, dan extent itu berdasar penilaian risiko inheren dan evaluasi kontrol atas saldo piutang. `(ARENS p.350)`"
+        },
+        {
+          "kind": "table",
+          "title": "Program tests of details atas saldo piutang usaha (Table 10-4)",
+          "headers": [
+            "No",
+            "Langkah",
+            "Ukuran sampel",
+            "Item yang dipilih",
+            "Timing",
+            "Asersi yang dijawab"
+          ],
+          "rows": [
+            [
+              "1",
+              "Memperoleh daftar umur piutang. Menelusuri item terbuka ke rincian faktur pendukung, menjumlah jadwal, dan menelusuri ke buku besar.",
+              "Telusuri 20 item. Jumlah 2 halaman dan semua subtotal.",
+              "Acak",
+              "Interim",
+              "Completeness"
+            ],
+            [
+              "2",
+              "Memperoleh analisis penyisihan piutang tak tertagih dan beban piutang tak tertagih: menguji akurasi, memeriksa otorisasi penghapusan, dan menelusuri ke buku besar.",
+              "Semua",
+              "Semua",
+              "Akhir tahun",
+              "Existence, completeness, accuracy, valuation, presentation"
+            ],
+            [
+              "3",
+              "Memperoleh konfirmasi langsung piutang dan melakukan prosedur alternatif untuk yang tidak menjawab.",
+              "100",
+              "30 terbesar, 70 acak",
+              "Interim",
+              "Existence, rights, completeness, accuracy, allocation, presentation"
+            ],
+            [
+              "4",
+              "Menelaah akun kontrol piutang untuk periode itu. Menyelidiki sifat dan dukungan entri besar atau tidak biasa atau yang tidak berasal dari jurnal normal, serta kenaikan atau penurunan penjualan yang signifikan menjelang akhir tahun.",
+              "Tidak berlaku",
+              "Tidak berlaku",
+              "Akhir tahun",
+              "Existence, rights, accuracy, allocation, presentation"
+            ],
+            [
+              "5",
+              "Menelaah piutang yang dialihkan atau didiskontokan.",
+              "Semua",
+              "Semua",
+              "Akhir tahun",
+              "Rights, presentation"
+            ],
+            [
+              "6",
+              "Menyelidiki kolektibilitas saldo akun.",
+              "Tidak berlaku",
+              "Tidak berlaku",
+              "Akhir tahun",
+              "Valuation"
+            ],
+            [
+              "7",
+              "Menelaah daftar saldo untuk jumlah dari pihak berelasi atau karyawan, saldo kredit, item tidak biasa, dan wesel tagih yang jatuh tempo lebih dari satu tahun.",
+              "Semua",
+              "Semua",
+              "Akhir tahun",
+              "Existence, presentation"
+            ],
+            [
+              "8",
+              "Memastikan prosedur cutoff yang tepat pada tanggal neraca agar penjualan, penerimaan kas, dan credit memo tercatat pada periode yang benar.",
+              "30 transaksi untuk penjualan dan penerimaan kas, 10 untuk credit memo",
+              "50 persen sebelum dan 50 persen sesudah akhir tahun",
+              "Akhir tahun",
+              "Allocation"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.351)`"
+        },
+        {
+          "kind": "p",
+          "text": "Hitungan penulis dari kolom asersi di atas: jumlah tanda keseluruhannya 23, dan jumlah langkah yang menjawab tiap asersi berbeda."
+        },
+        {
+          "kind": "table",
+          "title": "Jumlah langkah Table 10-4 yang menjawab tiap asersi piutang (hitungan penulis)",
+          "headers": [
+            "Asersi",
+            "Langkah yang menjawab",
+            "Jumlah"
+          ],
+          "rows": [
+            [
+              "Existence",
+              "2, 3, 4, 7",
+              "4"
+            ],
+            [
+              "Rights",
+              "3, 4, 5",
+              "3"
+            ],
+            [
+              "Completeness",
+              "1, 2, 3",
+              "3"
+            ],
+            [
+              "Accuracy",
+              "2, 3, 4",
+              "3"
+            ],
+            [
+              "Valuation",
+              "2, 6",
+              "2"
+            ],
+            [
+              "Allocation",
+              "3, 4, 8",
+              "3"
+            ],
+            [
+              "Presentation",
+              "2, 3, 4, 5, 7",
+              "5"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.351)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Anatomi satu langkah audit program",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 772\" width=\"100%\" role=\"img\" aria-labelledby=\"f15-program-t f15-program-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f15-program-t\">Anatomi satu langkah audit program</title><desc id=\"f15-program-d\">Satu kartu contoh langkah, empat kartu kolom program yaitu ukuran sampel, item yang dipilih, timing, dan asersi, serta satu catatan.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"772\" rx=\"14\"/><rect class=\"svg-badge-purple\" x=\"20\" y=\"20\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Contoh: langkah 8 Table 10-4</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Memastikan prosedur cutoff yang tepat</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">pada tanggal neraca.</text><rect class=\"svg-title\" x=\"238.5\" y=\"122\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 133 L240 146 L248 133 Z\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"148\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"178\" font-size=\"19\" font-weight=\"800\">Ukuran sampel</text><text class=\"svg-text\" x=\"34\" y=\"206\" font-size=\"18\">30 transaksi untuk penjualan dan</text><text class=\"svg-text\" x=\"34\" y=\"230\" font-size=\"18\">penerimaan kas</text><text class=\"svg-text\" x=\"34\" y=\"254\" font-size=\"18\">10 untuk credit memo</text><rect class=\"svg-badge-blue\" x=\"20\" y=\"284\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"314\" font-size=\"19\" font-weight=\"800\">Item yang dipilih</text><text class=\"svg-text\" x=\"34\" y=\"342\" font-size=\"18\">50 persen sebelum dan 50 persen sesudah</text><text class=\"svg-text\" x=\"34\" y=\"366\" font-size=\"18\">akhir tahun</text><rect class=\"svg-badge-green\" x=\"20\" y=\"396\" width=\"440\" height=\"76\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"426\" font-size=\"19\" font-weight=\"800\">Timing</text><text class=\"svg-text\" x=\"34\" y=\"454\" font-size=\"18\">Akhir tahun</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"484\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"514\" font-size=\"19\" font-weight=\"800\">Asersi yang dijawab</text><text class=\"svg-text\" x=\"34\" y=\"542\" font-size=\"18\">Allocation, menurut kolom buku. ISA 315</text><text class=\"svg-text\" x=\"34\" y=\"566\" font-size=\"18\">A190 menempatkan cutoff pada kelas</text><text class=\"svg-text\" x=\"34\" y=\"590\" font-size=\"18\">transaksi.</text><rect class=\"svg-subcard\" x=\"20\" y=\"628\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"658\" font-size=\"19\" font-weight=\"800\">Setiap langkah menjawab risiko</text><text class=\"svg-text\" x=\"34\" y=\"686\" font-size=\"18\">Program disusun setelah risiko dinilai,</text><text class=\"svg-text\" x=\"34\" y=\"710\" font-size=\"18\">lalu disesuaikan tiap tahun, bukan</text><text class=\"svg-text\" x=\"34\" y=\"734\" font-size=\"18\">disalin.</text></svg>",
+          "overview": {
+            "heading": "Anatomi satu langkah audit program",
+            "cards": [
+              {
+                "title": "Contoh: langkah 8 Table 10-4",
+                "subtitle": "",
+                "items": [
+                  "Memastikan prosedur cutoff yang tepat pada tanggal neraca"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Ukuran sampel",
+                "subtitle": "",
+                "items": [
+                  "30 transaksi untuk penjualan dan penerimaan kas",
+                  "10 untuk credit memo"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Item yang dipilih",
+                "subtitle": "",
+                "items": [
+                  "50 persen sebelum dan 50 persen sesudah akhir tahun"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Timing",
+                "subtitle": "",
+                "items": [
+                  "Akhir tahun"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Asersi yang dijawab",
+                "subtitle": "",
+                "items": [
+                  "Allocation, menurut kolom buku",
+                  "ISA 315 A190 menempatkan cutoff pada kelas transaksi"
+                ],
+                "takeaway": "Program disusun setelah risiko dinilai dan disesuaikan tiap tahun."
+              }
+            ],
+            "footer": "Sumber: Table 10-4, langkah 8 (ARENS p.351); ISA315 para. A190."
+          },
+          "caption": "Gambar 15.6: Anatomi satu langkah audit program. Disusun dari Table 10-4, langkah 8 (ARENS p.351), dan ISA315 para. A190.",
+          "altText": "Contoh langkah 8 Table 10-4: memastikan prosedur cutoff yang tepat pada tanggal neraca. Ukuran sampel 30 transaksi untuk penjualan dan penerimaan kas dan 10 untuk credit memo. Item yang dipilih 50 persen sebelum dan 50 persen sesudah akhir tahun. Timing akhir tahun. Asersi yang dijawab allocation menurut kolom buku, sedangkan ISA 315 A190 menempatkan cutoff pada kelas transaksi. Program disusun setelah risiko dinilai dan disesuaikan tiap tahun, bukan disalin."
+        },
+        {
+          "kind": "callout",
+          "variant": "info",
+          "text": "**Interpretasi.** Penilaian risiko Hillsburg memberi dua petunjuk untuk membaca program ini. Valuasi piutang dan cutoff dinilai moderate (Figure 10-4 dan 10-5). Valuasi dijawab langkah 2 dan 6, sedangkan cutoff dijawab langkah 8, dengan 30 transaksi yang dipilih 50 persen sebelum dan 50 persen sesudah akhir tahun, dan langkah 4 yang menyelidiki penjualan menjelang akhir tahun. Valuasi menjadi asersi dengan jumlah langkah paling sedikit di tabel, sehingga auditor perlu menilai apakah dua langkah itu cukup untuk risiko moderate. Konfirmasi (langkah 3) dan penelusuran daftar umur (langkah 1) dijadwalkan di interim, selaras dengan pendekatan gabungan Hillsburg untuk penjualan dan piutang, karena tests of details atas saldo sebelum akhir tahun lazimnya hanya wajar bila kontrol efektif. Pembacaan ini susunan penulis. `(ARENS pp.336–337, 349, 351)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Tiga hal pada Table 10-4 perlu dibaca hati-hati. (1) Teks buku di p.350 merujuk \"Table 10-2\" dan \"Auditing in Actions 1 and 2\" untuk program ini, padahal yang dimaksud Table 10-4 dan Auditing in Action 10-1 dan 10-2. (2) Kolom asersi tabel memecah accuracy, valuation, dan allocation menjadi tiga kolom, memuat cutoff di bawah kolom allocation, dan tidak memuat classification. ISA 315 A190 menggabungkan accuracy, valuation and allocation untuk saldo akun, mencantumkan cutoff sebagai asersi kelas transaksi, dan memuat classification. A189 memperbolehkan auditor menyatakan asersi dengan cara berbeda asalkan semua aspeknya tercakup. (3) Table 10-4 menjadwalkan konfirmasi piutang di interim, sedangkan jadwal Hillsburg di Figure 10-3 menaruh konfirmasi piutang pada tanggal neraca 30 Juni 2020. Keduanya contoh terpisah dan tidak disatukan di sini. `(ARENS pp.334, 350–351; ISA315 paras. A189, A190)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Program standar"
+        },
+        {
+          "kind": "p",
+          "text": "Sebagian besar firma audit besar menyusun program audit standar sendiri menurut industri, sering dihubungkan lewat asersi ke basis data yang memuat daftar kontrol yang diharapkan dan pengujian audit yang mungkin. Firma kecil sering membeli program serupa dari pihak luar. Program standar biasanya terkomputerisasi dan mudah diubah sesuai keadaan tiap perikatan. Buku memberi contoh Professional Engagement Guide dari CPA Canada. `(ARENS pp.350–351)`"
+        },
+        {
+          "kind": "p",
+          "text": "Program standar, baik yang dibuat sendiri maupun dibeli, dapat menaikkan efisiensi secara dramatis bila dipakai dengan benar. Ia tidak boleh menggantikan pertimbangan profesional auditor. Karena tidak ada dua audit yang sama, hampir selalu perlu menambah, mengubah, atau menghapus langkah di program standar agar bukti yang dikumpulkan cukup dan tepat. `(ARENS p.351)`"
+        },
+        {
+          "kind": "p",
+          "text": "ISA 300 menyatakan hal yang sejalan. Dokumentasi rencana audit mencatat nature, timing, dan extent prosedur penilaian risiko dan prosedur lanjutan sebagai respons atas risiko yang dinilai, sekaligus menjadi catatan bahwa audit sudah direncanakan dengan benar dan dapat direviu dan disetujui sebelum dikerjakan. Auditor boleh memakai program standar atau daftar periksa penyelesaian audit yang disesuaikan. Pada entitas kecil, program standar yang disusun dengan anggapan kontrol sedikit boleh dipakai bila disesuaikan dengan keadaan perikatan, termasuk penilaian risiko auditor. `(ISA300 paras. A20, A23)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** \"Program standar menjamin audit yang cukup\" adalah anggapan yang keliru. Program standar adalah titik awal. Auditor tetap menilai apakah tiap langkah menjawab risiko klien tahun ini, dan menambah langkah bila risiko baru muncul. Soal yang menyebut klien mengalami perubahan besar dan program tahun lalu dipakai tanpa diubah menguji apakah kamu mengenali anchoring. `(ARENS pp.351–352; ISA300 para. A20)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Customized Risk-Based Audits dan jebakan 'sama seperti tahun lalu' (Auditing in Action 10-3)",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Auditor sering mengira audit tahun ini sebagian besar tidak berubah dari tahun lalu, sehingga dapat jatuh ke jebakan penilaian anchoring bila mengikuti pola \"same as last year\" (SALY). Salah satu cara mengatasinya adalah memakai praktik terbaik penilaian risiko dan mulai dari anggapan bahwa ada hal yang berubah. Prioritas pertama audit tahun berjalan adalah mengidentifikasi perubahan dan pengaruhnya pada risiko. `(ARENS p.352)`"
+            },
+            {
+              "kind": "p",
+              "text": "Buku memberi tiga pertanyaan untuk dipakai. Apa yang berubah pada entitas dan lingkungan operasinya sejak audit terakhir? Bagaimana risiko inheren berubah akibat perubahan itu? Perubahan pengendalian internal apa yang perlu dilakukan untuk menjawab perubahan lingkungan dan risiko inheren? `(ARENS p.352)`"
+            },
+            {
+              "kind": "p",
+              "text": "Contoh di kotak: lingkungan ekonomi resesi dapat menimbulkan risiko inheren signifikan pada asersi valuasi untuk akun seperti persediaan dan piutang. Akibatnya perusahaan mungkin memasang kontrol baru atau merevisi kontrol yang ada. Bila auditor memakai program tahun lalu tanpa bertanya, kontrol dan risiko baru itu terlewat. `(ARENS p.352)`"
+            },
+            {
+              "kind": "p",
+              "text": "Buku juga menyebut bahwa banyak firma memakai program audit standar dan alat bantu praktik dari pihak luar. Program standar mungkin tidak mendorong auditor menerapkan tingkat skeptisisme yang tepat dan dapat mendorong apa yang disebut sebagian orang sebagai mentalitas \"daftar periksa\". Firma yang mengembangkan alat bantu praktik yang khusus untuk firma itu, yang mencerminkan sifat praktik auditnya dan dibangun di atas pengetahuannya, lebih kecil kemungkinannya jatuh ke jebakan penilaian umum, dan itu akan menghasilkan audit yang lebih efektif dan efisien. `(ARENS p.352)`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "7. Ketika bukti mengubah rencana",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** audit adalah proses kumulatif dan iteratif. Hasil prosedur yang sudah dikerjakan bisa memaksa auditor mengubah penilaian risiko dan prosedur yang tersisa. Perubahan itu dicatat bersama alasannya, dan sebelum audit ditutup auditor menilai apakah bukti sudah cukup dan tepat."
+        },
+        {
+          "kind": "p",
+          "text": "Buku menandai bahwa Figure 10-1 menggambarkan proses yang tampak linear, padahal proses audit iteratif. Bila hasil tests of controls tidak mendukung penilaian awal control risk, pendekatan audit disesuaikan. Bila hasil prosedur analitis substantif tidak seperti yang diharapkan, auditor melakukan lebih banyak tests of details. Itu sebabnya item 7 working paper strategi Hillsburg dibiarkan kosong sampai ada perubahan. `(ARENS pp.331, 334)`"
+        },
+        {
+          "kind": "table",
+          "title": "Pemicu perubahan rencana audit dan akibatnya",
+          "headers": [
+            "Pemicu",
+            "Akibat pada rencana",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Deviasi kontrol melebihi harapan, dan kontrol tidak dapat diandalkan",
+              "Auditor beralih ke pendekatan substantif dan memperluas prosedur substantif, seperti Audit 4. Memperluas hanya efektif bila prosedurnya relevan dengan risiko.",
+              "ARENS p.344; ISA330 paras. 17, A48"
+            ],
+            [
+              "Salah saji tak terduga pada tanggal interim",
+              "Auditor menilai apakah penilaian risiko dan nature, timing, extent prosedur untuk sisa periode perlu diubah, misalnya dengan memperluas atau mengulang prosedur interim pada akhir periode.",
+              "ISA330 para. 23, A60"
+            ],
+            [
+              "Salah saji yang ditemukan prosedur substantif",
+              "Menjadi petunjuk kuat adanya defisiensi signifikan pada pengendalian internal dan dapat mengubah penilaian risiko.",
+              "ISA330 paras. A41, A62"
+            ],
+            [
+              "Bukti bertentangan dengan penilaian risiko",
+              "Auditor mengevaluasi kembali prosedur terencana. Contohnya selisih di catatan akuntansi, bukti yang bertentangan atau hilang, atau prosedur analitis pada reviu akhir yang menunjukkan risiko yang sebelumnya tidak dikenali.",
+              "ISA300 para. A18; ISA330 para. A62"
+            ],
+            [
+              "Satu kasus fraud atau kesalahan ditemukan",
+              "Tidak boleh dianggap kejadian yang terisolasi, sehingga dampaknya pada penilaian risiko dievaluasi dengan serius.",
+              "ISA330 para. A63"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Sebelum audit selesai, auditor wajib menilai apakah penilaian risiko pada tingkat asersi masih tepat, menyimpulkan apakah bukti yang cukup dan tepat sudah diperoleh, dan mempertimbangkan semua bukti yang relevan, baik yang tampak mendukung maupun yang bertentangan dengan asersi di laporan keuangan. Bila bukti yang cukup dan tepat atas asersi yang relevan tidak dapat diperoleh, auditor menyatakan opini wajar dengan pengecualian atau menyatakan tidak memberikan opini. `(ISA330 paras. 25–27)`"
+        },
+        {
+          "kind": "table",
+          "title": "Faktor yang memengaruhi pertimbangan bukti yang cukup dan tepat (ISA 330 A64)",
+          "headers": [
+            "Faktor",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Signifikansi potensi salah saji pada asersi dan kemungkinannya berdampak material, sendiri atau digabung dengan salah saji lain",
+              "ISA330 para. A64"
+            ],
+            [
+              "Efektivitas respons dan kontrol manajemen atas risiko",
+              "ISA330 para. A64"
+            ],
+            [
+              "Pengalaman dari audit sebelumnya atas potensi salah saji yang serupa",
+              "ISA330 para. A64"
+            ],
+            [
+              "Hasil prosedur audit, termasuk apakah prosedur itu mengidentifikasi kasus fraud atau kesalahan tertentu",
+              "ISA330 para. A64"
+            ],
+            [
+              "Sumber dan keandalan informasi yang tersedia",
+              "ISA330 para. A64"
+            ],
+            [
+              "Kemampuan bukti meyakinkan",
+              "ISA330 para. A64"
+            ],
+            [
+              "Pemahaman tentang entitas dan lingkungannya, kerangka pelaporan, dan sistem pengendalian internal",
+              "ISA330 para. A64"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Perubahan dan alasannya wajib terdokumentasi. Dokumentasi audit mencakup strategi audit, rencana audit, dan setiap perubahan signifikan atas keduanya beserta alasannya. Dokumentasi juga memuat respons menyeluruh atas risiko tingkat laporan keuangan, nature, timing, dan extent prosedur lanjutan yang dikerjakan, hubungan prosedur itu dengan risiko yang dinilai pada tingkat asersi, serta hasil prosedur beserta kesimpulannya bila tidak jelas dengan sendirinya. `(ISA300 para. 12; ISA330 para. 28)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Kasus latihan",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 1: Respons menyeluruh untuk klien baru.",
+          "prompt": "PT Arunika Retail adalah klien baru dengan 40 toko. Dalam setahun terakhir perusahaan memasang ERP baru pada kuartal ketiga, mengganti CFO, dan dua kali mengganti manajer akuntansi. Manajemen menerima bonus bila laba mencapai target yang ketat. Auditor menilai lingkungan pengendalian lemah: jurnal manual tidak direviu dan hak akses ERP longgar. Rencana awal tim adalah mengerjakan sebagian besar tests of details pada tanggal interim, supaya pekerjaan akhir tahun ringan. Tentukan respons menyeluruh yang tepat, pengaruh kondisi ini pada timing dan pendekatan, dan di mana keputusan dicatat.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Sifat risikonya.** Lingkungan pengendalian yang lemah, pergantian manajemen, dan insentif bonus memengaruhi laporan keuangan sebagai satu kesatuan, jadi jawabannya respons menyeluruh. Menambah konfirmasi piutang saja tidak menjawab risiko yang tersebar di banyak asersi. `(ARENS p.332; ISA330 para. 5)`",
+                "**Bentuk respons menyeluruh.** Tim menekankan skeptisisme profesional, menugaskan staf berpengalaman, memasukkan spesialis sistem informasi karena ERP baru, memperketat supervisi dan reviu, dan menambah unsur ketidakterdugaan dalam memilih prosedur. Hillsburg memasukkan spesialis dengan alasan serupa. `(ARENS pp.332–333; ISA330 paras. 5, A1)`",
+                "**Pengaruh pada timing.** Rencana mengerjakan sebagian besar prosedur di interim bertentangan dengan keadaan ini. Standar menyebut lingkungan pengendalian yang lemah mendorong lebih banyak prosedur pada akhir periode dan bukti substantif yang lebih luas. Risiko fraud yang lebih tinggi juga mendorong prosedur dekat akhir periode atau pada waktu yang tak terduga. `(ISA330 paras. A2, A11)`",
+                "**Pengaruh pada pendekatan.** Kontrol yang lemah menggeser pilihan ke pendekatan substantif untuk sebagian besar akun. Tests of controls hanya masuk akal untuk area yang bukti substantifnya tidak mungkin diperoleh sendirian, misalnya proses yang sangat otomatis. `(ISA330 paras. 8(b), A3; ARENS pp.345–346)`",
+                "**Yang tidak berubah.** Respons menyeluruh tidak menggantikan prosedur lanjutan. Prosedur substantif atas kelas transaksi, saldo, dan pengungkapan yang material tetap wajib. `(ISA330 paras. 6, 18)`",
+                "**Pencatatan.** Respons menyeluruh dan pendekatan dicatat di working paper strategi, mengikuti pola item 6 Hillsburg. Item 7 dibiarkan terbuka untuk perubahan strategi bila bukti kemudian tidak mendukung penilaian risiko. Perubahan signifikan atas strategi atau rencana dicatat beserta alasannya. `(ARENS pp.333–334; ISA300 para. 12)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 2: Bauran piutang dan beralih pendekatan.",
+          "prompt": "CV Sumber Pangan adalah distributor. Dalam jutaan rupiah, saldo awal piutang usaha 240, penjualan kredit 1.800, dan penerimaan kas 1.650. Saldo awal sudah diaudit tahun lalu. Auditor menilai kontrol penjualan dan penerimaan kas efektif secara desain, lalu merencanakan pendekatan gabungan seperti piutang Hillsburg, dengan dual-purpose tests atas transaksi. Dari 50 faktur yang diuji, 9 tidak memiliki bukti persetujuan kredit dan 6 mengandung salah saji harga. Prosedur analitis juga menunjukkan margin kotor turun tanpa penjelasan. Hitung saldo akhir, uraikan sumber keyakinan tiap bagian, evaluasi hasil pengujian, dan tentukan akibatnya pada rencana.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Saldo akhir dan sumber keyakinan.** Saldo akhir adalah 240 ditambah 1.800 dikurangi 1.650, yaitu 390 juta rupiah (susunan penulis). Saldo awal bersandar pada audit tahun lalu. Penjualan dan penerimaan kas bersandar pada tests of controls, tests of details yang dikerjakan bersama tests of controls, dan prosedur analitis. Saldo akhir bersandar pada tests of details atas saldo dan prosedur analitis. `(ARENS pp.341–342)`",
+                "**Evaluasi hasil.** Tingkat deviasi persetujuan kredit adalah 9 dibagi 50, yaitu 18 persen, dan tingkat salah saji harga 6 dibagi 50, yaitu 12 persen (hitungan penulis). Angka sebesar ini jauh melampaui tingkat deviasi yang lazim diharapkan pada kontrol yang akan diandalkan. Auditor bertanya spesifik tentang penyebabnya, lalu memutuskan apakah tes memberi dasar mengandalkan kontrol. `(ISA330 paras. 17, A48)`",
+                "**Keputusan.** Kontrol tidak dapat diandalkan, sehingga pendekatan beralih ke substantif. Situasinya sama dengan Audit 4: rencana awal gabungan, lalu banyak deviasi dan salah saji signifikan, lalu pendekatan substantif penuh. Salah saji dari prosedur substantif juga menjadi petunjuk kuat adanya defisiensi signifikan pada pengendalian internal. `(ARENS p.344; ISA330 paras. A41, A62)`",
+                "**Akibat pada prosedur.** Tests of details atas saldo diperluas, misalnya lebih banyak konfirmasi dan pengujian cutoff yang lebih luas. Perluasan hanya berguna bila prosedurnya menjawab risiko yang sebenarnya, jadi penurunan margin yang tak terjelaskan diselidiki secara spesifik, dan jumlah sampel saja belum menjawabnya. `(ARENS pp.331, 344; ISA330 para. A48)`",
+                "**Biaya.** Biaya audit naik karena tests of controls dan dual-purpose tests sudah dikerjakan tetapi tidak dapat dipakai untuk mengurangi tests of details atas saldo. `(ARENS p.344)`",
+                "**Pencatatan.** Item 7 working paper strategi diisi, dengan alasan perubahan pendekatan dan penilaian ulang risiko. `(ARENS pp.333–334; ISA300 para. 12)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 3: Memilih teknik CAATs.",
+          "prompt": "PT Bumi Tekstil memproses 120.000 faktur penjualan setahun di ERP. Auditor memiliki empat tujuan. (1) Memastikan faktur di atas batas tertentu disetujui dua manajer yang berwenang. (2) Memastikan sistem menolak penjualan yang melampaui limit kredit pelanggan. (3) Menghitung ulang penyusutan aset tetap dan penyisihan piutang tak tertagih. (4) Menguji kontrol tanda tangan basah kepala gudang pada surat jalan kertas. ADA atas seluruh 120.000 faktur untuk tujuan 1 menghasilkan 3.400 pengecualian. Pilih teknik untuk tiap tujuan, tentukan langkah atas 3.400 pengecualian itu, dan sebut syarat yang harus dipenuhi datanya.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Tujuan 1: ADA.** Pola Table 11-20 cocok: ekstrak semua faktur yang disetujui kurang dari dua orang, lalu cocokkan penyetuju pada faktur lain dengan daftar manajer yang berwenang dan batasnya. Seluruh populasi diperiksa, dan auditor menindaklanjuti pengecualiannya. `(ARENS pp.395–396)`",
+                "**Tujuan 2: test data approach.** Auditor memproses transaksi uji yang seharusnya diterima dan ditolak melalui aplikasi klien, lalu membandingkan keluaran aktual dengan yang diharapkan. Karena kontrolnya otomatis, auditor juga memastikan programnya tidak berubah selama periode lewat general IT controls atau log perubahan. Untuk sistem daring besar, integrated test facility adalah varian dari sumber luar, bukan istilah buku. `(ARENS p.316; ISA330 paras. A29, A36; Jakšić 2009)`",
+                "**Tujuan 3: reperformance.** Generalized audit software menghitung ulang algoritma klien. Parallel simulation, dari sumber luar, memproses data nyata dengan program buatan auditor sebagai pembanding. `(ARENS p.316; Jakšić 2009)`",
+                "**Tujuan 4: CAATs tidak berlaku.** Tanda tangan basah pada kertas tidak meninggalkan bukti elektronik, jadi auditor memakai inspeksi atas sampel surat jalan, ditambah inquiry dan observasi bila perlu. `(ARENS p.397; ISA500 paras. A18–A21)`",
+                "**Tindak lanjut 3.400 pengecualian.** Angka itu sekitar 2,8 persen dari 120.000 (hitungan penulis). Standar mengharuskan semua pengecualian ditindaklanjuti, tetapi tidak semuanya salah saji. Penyebabnya bisa false positive, pengujian yang dikonfigurasi salah, populasi yang sebenarnya terdiri atas dua kelompok dengan prosedur kontrol berbeda, defisiensi kontrol, atau salah saji nyata. Auditor menstratifikasi, menyelidiki, dan dapat mengulang ADA dengan data yang sudah dibersihkan. Bila pengecualian yang asli adalah deviasi kontrol, evaluasinya mengikuti aturan tests of controls. `(ARENS pp.153, 396; ISA330 para. 17)`",
+                "**Syarat data.** Auditor menilai akses ke data lintas platform, membersihkan data, dan menilai keandalannya dari siapa yang mengendalikannya dan seberapa kuat kontrol pembuatannya. Data elektronik bisa tertimpa, sehingga auditor meminta klien menyimpannya atau menyesuaikan waktu prosedur. Langkah tambahan seperti mencocokkan total ekstraksi ke buku besar adalah saran penulis. `(ARENS pp.151–153; ISA500 paras. A16–A17)`",
+                "**Batas.** Menguji 100 persen menghapus sampling risk, tetapi nonsampling risk tetap ada. `(ARENS p.396)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 4: Menyusun program piutang dan menghindari \"sama seperti tahun lalu\".",
+          "prompt": "KD Prima Furnitur adalah klien lama. Program piutang tahun lalu memuat delapan langkah mirip Table 10-4. Tahun ini terjadi resesi, tiga pelanggan besar menguasai sekitar 30 persen saldo piutang dan mulai terlambat membayar, klien mulai menjual lewat marketplace dengan retur yang tinggi, dan sistem akuntansi diganti pada bulan Agustus. Asisten audit mengusulkan menyalin program tahun lalu karena \"bisnisnya sama\". Jelaskan mengapa itu keliru, pertanyaan apa yang dipakai, dan perubahan apa yang dibuat pada program, termasuk kolom sampel, item, timing, dan asersi.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Jebakannya.** Anggapan audit tahun ini sama dengan tahun lalu adalah jebakan anchoring. Cara mengatasinya adalah mulai dari anggapan bahwa ada hal yang berubah. `(ARENS p.352)`",
+                "**Tiga pertanyaan.** Apa yang berubah pada entitas dan lingkungannya? Bagaimana risiko inheren berubah? Perubahan pengendalian apa yang perlu dilakukan untuk menjawabnya? Di sini jawabannya: resesi dan konsentrasi pelanggan menaikkan risiko valuasi, marketplace menambah retur dan potensi cutoff, dan sistem baru menaikkan risiko data dan kontrol. `(ARENS p.352)`",
+                "**Valuasi diperkuat.** Pada Table 10-4 valuasi hanya dijawab langkah 2 dan 6. Dengan risiko yang naik, langkah kolektibilitas diperluas, misalnya menelaah korespondensi dan pembayaran dari tiga pelanggan besar. Penambahan langkah ini susunan penulis. `(ARENS pp.350–351)`",
+                "**Konfirmasi dan timing.** Langkah konfirmasi di Table 10-4 memilih 30 saldo terbesar dan 70 acak pada interim. Dalam kasus ini ketiga pelanggan besar dikonfirmasi seluruhnya. Karena sistem berganti pada Agustus dan kontrol lebih lemah, pelaksanaan dekat akhir tahun atau dengan roll forward lebih aman daripada murni interim. `(ARENS pp.349, 351; ISA330 paras. A2, A11)`",
+                "**Cutoff dan credit memo.** Retur marketplace membuat cutoff credit memo lebih berisiko, sehingga ukuran sampel credit memo (10 pada Table 10-4) dinaikkan. Angkanya pertimbangan untuk latihan. `(ARENS p.351)`",
+                "**Data dari sistem baru.** Daftar umur dari sistem baru dinilai keandalannya sebelum dipakai, termasuk konversi data dari sistem lama. `(ARENS pp.152–153)`",
+                "**Peran program standar.** Program tahun lalu tetap menjadi titik awal yang efisien, tetapi langkah ditambah, diubah, atau dihapus agar bukti cukup dan tepat. Perubahan dicatat sebagai bagian dari rencana audit. `(ARENS p.351; ISA300 paras. A20, 12)`"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Uji pemahaman",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jawab dulu tanpa melihat catatan, dengan kata-katamu sendiri."
+        },
+        {
+          "kind": "self-check",
+          "question": "**1. Bedakan overall audit strategy, audit plan, dan audit program, lalu jelaskan bagaimana risiko tingkat laporan keuangan dan tingkat asersi dijawab.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* strategi adalah rencana tingkat tinggi yang menetapkan arah audit, antara lain jadwal, sumber daya, area kunci, dan pendekatan, dan dicatat di working paper strategi. Plan lebih rinci: nature, timing, dan extent prosedur penilaian risiko dan prosedur lanjutan. Program memuat langkah per akun atau siklus beserta sampel, item, timing, dan asersi. Risiko tingkat laporan keuangan dijawab respons menyeluruh yang mengubah cara audit dijalankan, sedangkan risiko tingkat asersi dijawab prosedur lanjutan. `(ARENS pp.331–332, 335, 350; ISA300 paras. 7, 9; ISA330 paras. 5–6)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyebut strategi sebagai daftar prosedur, atau menjawab risiko pervasif dengan menambah sampel di satu akun."
+        },
+        {
+          "kind": "self-check",
+          "question": "**2. Mengapa audit atas bank besar dengan kontrol yang tidak efektif mungkin tidak dapat dilakukan, dan apa bedanya dengan Audit 4 di buku?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* bank memproses ratusan ribu transaksi atau lebih per hari dengan otomatisasi tinggi, sehingga hampir mustahil mengaudit secara substantif bila kontrolnya gagal. Pada Audit 4, perusahaan menengah dapat beralih ke pendekatan substantif penuh dengan biaya lebih tinggi karena tests of controls yang sudah dikerjakan tidak mengurangi tests of details. Pada organisasi besar yang otomatis, pendekatan itu bukan pilihan, dan tests of controls menjadi wajib bila prosedur substantif saja tidak memberi bukti yang cukup. `(ARENS p.344; ISA330 para. 8)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menjawab bahwa bank selalu bisa diaudit dengan memperbesar sampel substantif."
+        },
+        {
+          "kind": "self-check",
+          "question": "**3. Jelaskan nature, timing, dan extent prosedur lanjutan dengan satu contoh untuk masing-masing, dan kapan prosedur dilakukan lebih dekat ke akhir periode.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* nature adalah tujuan dan tipe prosedur, misalnya konfirmasi eksternal untuk existence piutang, dan merupakan faktor terpenting dalam menjawab risiko. Timing adalah kapan dan untuk periode apa, misalnya konfirmasi interim dengan roll forward ke akhir tahun. Extent adalah jumlah item, yang dibatasi performance materiality dan naik bersama risiko. Prosedur dilakukan lebih dekat ke akhir periode bila risiko lebih tinggi, terutama risiko fraud, atau bila lingkungan pengendalian lemah. `(ARENS pp.347–349; ISA330 paras. A2, A5, A11, A15)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyamakan nature dengan jumlah sampel, atau menganggap bukti interim otomatis berlaku sampai akhir tahun."
+        },
+        {
+          "kind": "self-check",
+          "question": "**4. Apa yang dapat dilakukan CAATs dan ADA, teknik apa yang cocok untuk menguji kontrol otomatis, dan mengapa menguji 100 persen populasi tidak membebaskan auditor dari risiko?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* CAATs memungkinkan pengujian lebih luas atas transaksi elektronik, termasuk seluruh populasi sebagai ganti sampel. ADA mengekstrak pengecualian, misalnya faktur yang tidak memiliki dua penyetuju. Kontrol otomatis diuji dengan test data approach, atau integrated test facility pada sistem daring besar menurut sumber luar. Menguji seluruh populasi menghapus sampling risk, tetapi data tidak andal, konfigurasi keliru, dan pengecualian palsu tetap menimbulkan nonsampling risk, dan semua pengecualian tetap ditindaklanjuti. `(ISA330 para. A16; ARENS pp.316, 395–396; Jakšić 2009)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menjawab bahwa ADA membuktikan kontrol manual berjalan, atau bahwa 100 persen berarti nol risiko."
+        },
+        {
+          "kind": "self-check",
+          "question": "**5. Apa saja isi audit program, dan mengapa program tahun lalu tidak boleh disalin tanpa dinilai ulang?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* tiap langkah memuat prosedur, ukuran sampel, item yang dipilih, timing, dan asersi yang dijawab, disusun setelah risiko dinilai. Program standar menaikkan efisiensi tetapi tidak menggantikan pertimbangan. Menyalin program lama menimbulkan anchoring, karena perubahan pada entitas, risiko inheren, dan pengendalian terlewat. Auditor memulai dengan tiga pertanyaan tentang apa yang berubah, lalu menambah, mengubah, atau menghapus langkah. `(ARENS pp.350–352; ISA300 para. A20)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyatakan program standar menjamin audit yang cukup, atau bahwa pemakaian ulang program menghemat waktu tanpa risiko."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Exam toolkit",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Kerangka jawaban soal merancang respons dan bauran untuk satu akun**"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Pisahkan tingkat risikonya. Risiko pervasif dijawab respons menyeluruh (staf, supervisi, skeptisisme, ketidakterdugaan). Risiko asersi dijawab prosedur lanjutan.",
+            "Tentukan pendekatan per akun dan asersi dengan alasan: kontrol efektif dan efisien diuji (gabungan), kontrol lemah atau akun sederhana (substantif), atau proses otomatis tanpa dokumen (tests of controls wajib).",
+            "Susun bauran: tests of controls, tests of details atas transaksi, prosedur analitis substantif, dan tests of details atas saldo, dengan intensitas yang sejalan dengan pendekatan (Figure 10-8).",
+            "Rancang nature, timing, dan extent: tipe bukti yang relevan dan andal, interim atau akhir periode (dengan roll forward), dan jumlah item menurut risiko dan performance materiality.",
+            "Tutup dengan hal yang tetap wajib dan pemicu perubahan: prosedur substantif atas kelas yang material, prosedur khusus atas risiko signifikan, penutupan laporan keuangan, serta penyesuaian rencana bila hasil pengujian tidak seperti yang diharapkan."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Kerangka jawaban soal CAATs, ADA, dan audit program**"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Sebut tujuan auditor (menguji kontrol, menghitung ulang, mencari pengecualian, memilih jurnal berisiko) dan asersi yang dijawab.",
+            "Pilih teknik sesuai tujuan: ADA atau generalized audit software untuk populasi dan pengecualian, test data untuk kontrol otomatis, parallel simulation untuk perhitungan kompleks. Tandai teknik yang berasal dari sumber luar.",
+            "Periksa syarat data: akses, pembersihan, keandalan sumber, dan ketersediaan. Sebut bahwa kontrol manual tanpa bukti elektronik tidak bisa diuji dengan ADA.",
+            "Jelaskan tindak lanjut pengecualian: semua ditelusuri, dibedakan antara false positive, deviasi kontrol, dan salah saji, lalu dievaluasi.",
+            "Hubungkan ke program: tiap langkah menyatakan prosedur, sampel, item, timing, dan asersi, disesuaikan dengan perubahan tahun ini dan bukan disalin."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Pasangan yang sering tertukar**"
+        },
+        {
+          "kind": "table",
+          "title": "Pasangan istilah yang sering tertukar di TM15",
+          "headers": [
+            "Pasangan",
+            "Pembeda"
+          ],
+          "rows": [
+            [
+              "Overall audit strategy vs audit plan vs audit program",
+              "Arah dan sumber daya tingkat tinggi vs nature, timing, extent prosedur vs langkah rinci per akun dengan sampel, item, timing, dan asersi"
+            ],
+            [
+              "Respons menyeluruh vs prosedur lanjutan",
+              "Mengubah cara audit dijalankan untuk risiko pervasif vs prosedur yang menyasar asersi tertentu"
+            ],
+            [
+              "Bauran prosedur vs pendekatan audit",
+              "Kombinasi empat jenis pengujian untuk satu akun vs pilihan substantif atau gabungan yang mendorong bauran itu"
+            ],
+            [
+              "Audit 1 vs Audit 4",
+              "Kontrol efektif sehingga tests of details sedikit vs kontrol gagal sehingga semua tests of details diperluas"
+            ],
+            [
+              "Nature vs timing vs extent",
+              "Tujuan dan tipe prosedur vs kapan dilakukan dan untuk periode apa vs berapa banyak item"
+            ],
+            [
+              "Relevansi vs keandalan bukti",
+              "Hubungan logis bukti dengan asersi vs tingkat bukti dapat dipercaya"
+            ],
+            [
+              "Tests of details atas transaksi vs atas saldo",
+              "Memeriksa rincian transaksi di jurnal dan buku besar vs memeriksa saldo akhir akun"
+            ],
+            [
+              "Roll forward vs continuous auditing",
+              "Pekerjaan substantif atas periode antara tanggal interim dan akhir tahun vs pengujian transaksi sepanjang tahun pada sistem canggih"
+            ],
+            [
+              "Test data vs integrated test facility vs parallel simulation",
+              "Data uji auditor diproses lewat program klien vs lingkungan uji di dalam sistem daring besar vs data nyata diproses dengan program buatan auditor (dua yang terakhir dari sumber luar)"
+            ],
+            [
+              "ADA vs sampling representatif",
+              "Menguji setiap transaksi lalu menindaklanjuti pengecualian vs memeriksa sebagian item dengan tingkat pengecualian yang sudah masuk ukuran sampel"
+            ],
+            [
+              "Sampling risk vs nonsampling risk",
+              "Risiko karena hanya sebagian item diperiksa vs risiko dari data tidak andal atau pengujian yang salah konfigurasi, tetap ada pada 100 persen"
+            ],
+            [
+              "Pengecualian vs salah saji",
+              "Item yang menyimpang dari kriteria pengujian vs salah saji nyata setelah diselidiki, karena pengecualian bisa false positive"
+            ],
+            [
+              "Program standar vs program yang disesuaikan",
+              "Titik awal yang efisien vs program yang sudah menambah, mengubah, atau menghapus langkah menurut keadaan klien"
+            ]
+          ],
+          "stackOnMobile": true
+        }
+      ]
+    }
+  ]
+};

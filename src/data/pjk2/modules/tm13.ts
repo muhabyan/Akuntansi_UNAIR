@@ -50,7 +50,7 @@ export const TM13_READING: Reading = {
   tm: 13,
   title: 'Mekanisme Faktur Pajak Elektronik (e-Faktur), DPP Nilai Lain, & Pengkreditan Pajak Masukan',
   ref: 'PER-03/PJ/2022 jo PER-11/PJ/2022 e-Faktur | Pasal 9 ayat (8) UU PPN | PMK DPP Nilai Lain',
-  intro: 'TM 13 membahas tata kelola administrasi dan pengkreditan PPN: mekanisme penerbitan Faktur Pajak Elektronik (e-Faktur) menggunakan Nomor Seri Faktur Pajak (NSFP) resmi dari DJP, ketentuan Faktur Pajak Pengganti dan Pembatalan, jenis-jenis Dasar Pengenaan Pajak (DPP Nilai Lain: Pemakaian Sendiri, Pemberian Cuma-cuma, Jasa Ekspedisi/Kargo), serta rincian larangan pengkreditan Pajak Masukan menurut Pasal 9 ayat (8) UU PPN.',
+  intro: 'TM 13 membahas administrasi dan pengkreditan PPN. Isinya penerbitan Faktur Pajak Elektronik (e-Faktur) dengan Nomor Seri Faktur Pajak (NSFP) resmi dari DJP, ketentuan Faktur Pajak Pengganti dan pembatalan, jenis Dasar Pengenaan Pajak Nilai Lain (pemakaian sendiri, pemberian cuma-cuma, jasa ekspedisi/kargo), dan daftar larangan pengkreditan Pajak Masukan menurut Pasal 9 ayat (8) UU PPN.',
   objectives: [
     'Menerapkan ketentuan formal dan material pembuatan e-Faktur menurut PER-03/PJ/2022.',
     'Menghitung PPN dengan Dasar Pengenaan Pajak (DPP) Nilai Lain (Pemberian Cuma-cuma & Jasa Pengiriman).',

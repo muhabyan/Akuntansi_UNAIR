@@ -1,0 +1,722 @@
+{
+  "purpose": "Source identity reconciliation; not website evidence or complete 56-TM source audit.",
+  "aka201ArchiveVsInbox": {
+    "files": [
+      {
+        "relative": "shared/benang_merah_TM01-07.md",
+        "inboxSha256": "d64fbcf3105dbbef34bc757f541796f8c5ace9964d5ba4eb085c68896636fb76",
+        "archiveSha256": "d64fbcf3105dbbef34bc757f541796f8c5ace9964d5ba4eb085c68896636fb76",
+        "bytesEqual": true
+      },
+      {
+        "relative": "shared/latihan_penyelesaian_masalah_SCPMK2.md",
+        "inboxSha256": "4544a0506dcbdf474c43a212fee9b1355eafd186d22aa3474ec306d2b903b9ca",
+        "archiveSha256": "4544a0506dcbdf474c43a212fee9b1355eafd186d22aa3474ec306d2b903b9ca",
+        "bytesEqual": true
+      },
+      {
+        "relative": "shared/latihan_skenario_UTS.md",
+        "inboxSha256": "48ebb0ebda30be0755aca09a92c1e0edee68b6c2493c4a750c8c358fcaea10fc",
+        "archiveSha256": "48ebb0ebda30be0755aca09a92c1e0edee68b6c2493c4a750c8c358fcaea10fc",
+        "bytesEqual": true
+      },
+      {
+        "relative": "shared/panduan_menjawab_kasus.md",
+        "inboxSha256": "b3d178f95bf4b1d6e71b1b058126adbc1cc92839c2c2ea98dd55fcbb2812cd5a",
+        "archiveSha256": "b3d178f95bf4b1d6e71b1b058126adbc1cc92839c2c2ea98dd55fcbb2812cd5a",
+        "bytesEqual": true
+      },
+      {
+        "relative": "shared/panduan_tampilan_dan_bahasa.md",
+        "inboxSha256": "4cbf082dcc88c9e6d59b81ec3ed7e4d7a639fbc3beb7e4487d0872332f525508",
+        "archiveSha256": "4cbf082dcc88c9e6d59b81ec3ed7e4d7a639fbc3beb7e4487d0872332f525508",
+        "bytesEqual": true
+      },
+      {
+        "relative": "shared/README.md",
+        "inboxSha256": "bb0b228bc642b31d3360a0eac4bdcc912f8023ba11c29954bcf6a048e6b5f798",
+        "archiveSha256": "bb0b228bc642b31d3360a0eac4bdcc912f8023ba11c29954bcf6a048e6b5f798",
+        "bytesEqual": true
+      },
+      {
+        "relative": "shared/source_inventory.md",
+        "inboxSha256": "4ada4fb951d8b24a0d82c06e6e2dc38972c202363a5ed5d00ecf1e9b288768ec",
+        "archiveSha256": "4ada4fb951d8b24a0d82c06e6e2dc38972c202363a5ed5d00ecf1e9b288768ec",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM01/00_status.md",
+        "inboxSha256": "f544592cec13065bd3a304c6eb3b446faf0da7a963034c6b29cd542756819160",
+        "archiveSha256": "f544592cec13065bd3a304c6eb3b446faf0da7a963034c6b29cd542756819160",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM01/04_canonical_spec.md",
+        "inboxSha256": "d8876ede36fdf591699e7d6484e5d1f938a4c45b515c88d3cbb66b1994e27903",
+        "archiveSha256": "d8876ede36fdf591699e7d6484e5d1f938a4c45b515c88d3cbb66b1994e27903",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM01/05_student_learning_version.md",
+        "inboxSha256": "5fe8604b9f38553b2503033066f2f9e46caade9b506effbebc07c2526a80793e",
+        "archiveSha256": "5fe8604b9f38553b2503033066f2f9e46caade9b506effbebc07c2526a80793e",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM01/06_implementation_brief.md",
+        "inboxSha256": "42b850fe6ac4fb4346f7a7a070674fb335179ae8bcbc53060a04d81e71056263",
+        "archiveSha256": "42b850fe6ac4fb4346f7a7a070674fb335179ae8bcbc53060a04d81e71056263",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM01/07_qa_manifest.md",
+        "inboxSha256": "e1b32b6ce5c55db7286af14ebe0f3d078c5d87e6a7ce627f363bb571ba72e3c0",
+        "archiveSha256": "e1b32b6ce5c55db7286af14ebe0f3d078c5d87e6a7ce627f363bb571ba72e3c0",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM02/00_status.md",
+        "inboxSha256": "57cbf5ff3a00a97be40b3cd83d3627a44befe076448207b219208707140c8a97",
+        "archiveSha256": "57cbf5ff3a00a97be40b3cd83d3627a44befe076448207b219208707140c8a97",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM02/04_canonical_spec.md",
+        "inboxSha256": "9c14e89f13a81b27eeacf897dcee4dc508a2532e620f43c11982ced3c0ed6ebc",
+        "archiveSha256": "9c14e89f13a81b27eeacf897dcee4dc508a2532e620f43c11982ced3c0ed6ebc",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM02/05_student_learning_version.md",
+        "inboxSha256": "8fe8bcfa6a75f5f46e21a918da1f28c6277a8b98dcb9e4c38dd35e3519698cf0",
+        "archiveSha256": "8fe8bcfa6a75f5f46e21a918da1f28c6277a8b98dcb9e4c38dd35e3519698cf0",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM02/06_implementation_brief.md",
+        "inboxSha256": "1766eedaf464123f817307a4ddd98f3b7a61ce95371b186e2b33a5a154610ed7",
+        "archiveSha256": "1766eedaf464123f817307a4ddd98f3b7a61ce95371b186e2b33a5a154610ed7",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM02/07_qa_manifest.md",
+        "inboxSha256": "55d96514cbe5ee84816a1f6c862955636707a7bde09035da119c6641331aac0a",
+        "archiveSha256": "55d96514cbe5ee84816a1f6c862955636707a7bde09035da119c6641331aac0a",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM03/00_status.md",
+        "inboxSha256": "c540fd462308b05adbfa6b276a096053684304b0d047ff76f1821d02c33a6b3e",
+        "archiveSha256": "c540fd462308b05adbfa6b276a096053684304b0d047ff76f1821d02c33a6b3e",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM03/04_canonical_spec.md",
+        "inboxSha256": "8678e640fb78f8261abe88613379f286256711563f9be6ed8ce958e4cccab327",
+        "archiveSha256": "8678e640fb78f8261abe88613379f286256711563f9be6ed8ce958e4cccab327",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM03/05_student_learning_version.md",
+        "inboxSha256": "74704c49b79ceec66f5b35ee7d93dc51d64451e3de191acb75c54e5e7d71d894",
+        "archiveSha256": "74704c49b79ceec66f5b35ee7d93dc51d64451e3de191acb75c54e5e7d71d894",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM03/06_implementation_brief.md",
+        "inboxSha256": "be348caaa0cc30222b18894fabab9868665d089368a4e96f1fceca469bf75fc4",
+        "archiveSha256": "be348caaa0cc30222b18894fabab9868665d089368a4e96f1fceca469bf75fc4",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM03/07_qa_manifest.md",
+        "inboxSha256": "05f6b83c879263ca272a0e9fb2f371bff59888b8e1aac2b446b26cf8f16f11aa",
+        "archiveSha256": "05f6b83c879263ca272a0e9fb2f371bff59888b8e1aac2b446b26cf8f16f11aa",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM04/00_status.md",
+        "inboxSha256": "76a0579cf51f2d614db63c5f8853bb541775583772b50057b2597aad54d84c4b",
+        "archiveSha256": "76a0579cf51f2d614db63c5f8853bb541775583772b50057b2597aad54d84c4b",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM04/04_canonical_spec.md",
+        "inboxSha256": "42388fb36f099c505f57d370dfc6893950fad9fae7a5ee3222e9fe0f1032b66d",
+        "archiveSha256": "42388fb36f099c505f57d370dfc6893950fad9fae7a5ee3222e9fe0f1032b66d",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM04/05_student_learning_version.md",
+        "inboxSha256": "a5f4f35646e9d5d81b8403f168eafd2a527435b286cc1f8cb995954cf54f3c1b",
+        "archiveSha256": "a5f4f35646e9d5d81b8403f168eafd2a527435b286cc1f8cb995954cf54f3c1b",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM04/06_implementation_brief.md",
+        "inboxSha256": "d7a52ad92fee4865f6ff3f26ddcd6c04a144bb87a44329b657c3d6abdce15e1f",
+        "archiveSha256": "d7a52ad92fee4865f6ff3f26ddcd6c04a144bb87a44329b657c3d6abdce15e1f",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM04/07_qa_manifest.md",
+        "inboxSha256": "a6dc585582de636f1bc6752fdc663b023cd0f79aa45cbdfa5b700163f229a1cb",
+        "archiveSha256": "a6dc585582de636f1bc6752fdc663b023cd0f79aa45cbdfa5b700163f229a1cb",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM05/00_status.md",
+        "inboxSha256": "e6ae67b3997248e300b45253aabde9f68a375c5b3b1ba7058359ff37210b54be",
+        "archiveSha256": "e6ae67b3997248e300b45253aabde9f68a375c5b3b1ba7058359ff37210b54be",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM05/04_canonical_spec.md",
+        "inboxSha256": "afe85f38044ec1d8bf7798fc5c7969ba5379f3e46b4769a3d8104bd101d0c9b4",
+        "archiveSha256": "afe85f38044ec1d8bf7798fc5c7969ba5379f3e46b4769a3d8104bd101d0c9b4",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM05/05_student_learning_version.md",
+        "inboxSha256": "ec9ecd47b4db4b4f0ce897836857635553556ec418d0bb49e43dd235bd043b1e",
+        "archiveSha256": "ec9ecd47b4db4b4f0ce897836857635553556ec418d0bb49e43dd235bd043b1e",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM05/06_implementation_brief.md",
+        "inboxSha256": "5cbcba577b08175b82d7941fb846d883fa368974dca524167837233e70c376c2",
+        "archiveSha256": "5cbcba577b08175b82d7941fb846d883fa368974dca524167837233e70c376c2",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM05/07_qa_manifest.md",
+        "inboxSha256": "e309b6e572d68b8ef976c535a23f9c91f2302cb07ac5dca60e5c3255b8f1cc54",
+        "archiveSha256": "e309b6e572d68b8ef976c535a23f9c91f2302cb07ac5dca60e5c3255b8f1cc54",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM06/00_status.md",
+        "inboxSha256": "706030569f480e768c4b1eaa1e79713a9175af285d467733a120dbcbc722a111",
+        "archiveSha256": "706030569f480e768c4b1eaa1e79713a9175af285d467733a120dbcbc722a111",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM06/04_canonical_spec.md",
+        "inboxSha256": "73efd413788315938bb2228fc58d098757718948c68835611a24f038978ac8d6",
+        "archiveSha256": "73efd413788315938bb2228fc58d098757718948c68835611a24f038978ac8d6",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM06/05_student_learning_version.md",
+        "inboxSha256": "e9129892a718b1d95539f7baa7c497378aa76622a1e9f4540c6c0d5d113c62af",
+        "archiveSha256": "e9129892a718b1d95539f7baa7c497378aa76622a1e9f4540c6c0d5d113c62af",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM06/06_implementation_brief.md",
+        "inboxSha256": "6f387cfcfa803f88e1f031c7b8c42e59b8abdcffd7e592910153f620ee4d0d13",
+        "archiveSha256": "6f387cfcfa803f88e1f031c7b8c42e59b8abdcffd7e592910153f620ee4d0d13",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM06/07_qa_manifest.md",
+        "inboxSha256": "3651e5657064785710d672de6e1f579884cfeb6f77cc61cd578c7e958c252fbc",
+        "archiveSha256": "3651e5657064785710d672de6e1f579884cfeb6f77cc61cd578c7e958c252fbc",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM07/00_status.md",
+        "inboxSha256": "840fd0e181360e4ab777359946ef567748ffc9ffdbffc35946ddf6383b2c5f4e",
+        "archiveSha256": "840fd0e181360e4ab777359946ef567748ffc9ffdbffc35946ddf6383b2c5f4e",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM07/04_canonical_spec.md",
+        "inboxSha256": "f4e0208047a7ce056ab94300064d37d8486dce70c3e7b765df9fad98778aa5ad",
+        "archiveSha256": "f4e0208047a7ce056ab94300064d37d8486dce70c3e7b765df9fad98778aa5ad",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM07/05_student_learning_version.md",
+        "inboxSha256": "ad40a7b6d5e6b13a1db9f8625a424be05e3ad6874fe4aa2b44eb01ac4acbeef3",
+        "archiveSha256": "ad40a7b6d5e6b13a1db9f8625a424be05e3ad6874fe4aa2b44eb01ac4acbeef3",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM07/06_implementation_brief.md",
+        "inboxSha256": "12a6dfd4776847f21dc0dd72ea77b8eeb0d405b04ad500a1b0fe4cc39450cd85",
+        "archiveSha256": "12a6dfd4776847f21dc0dd72ea77b8eeb0d405b04ad500a1b0fe4cc39450cd85",
+        "bytesEqual": true
+      },
+      {
+        "relative": "TM07/07_qa_manifest.md",
+        "inboxSha256": "df9137d8d9ff792a5819687f9cddf21ef5bf299735d466bc46ccec310b5179b3",
+        "archiveSha256": "df9137d8d9ff792a5819687f9cddf21ef5bf299735d466bc46ccec310b5179b3",
+        "bytesEqual": true
+      }
+    ],
+    "all42Match": true
+  },
+  "pdfs": [
+    {
+      "id": "MNK201-book",
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\Fundamentals of Financial Management 2022.pdf",
+      "sha256": "b84d525bdc951e810ccd9a0121332f7b3df03ba39460bea88c52d198e4cf0ff9",
+      "pages": 866,
+      "metadata": {
+        "format": "PDF 1.7",
+        "title": "Fundamentals of Financial Management",
+        "author": "Brigham, Eugene F.;Houston, Joel F.;",
+        "subject": "",
+        "keywords": "WCN: 02-300",
+        "creator": "Adobe InDesign CS5.5 (7.5)",
+        "producer": "Adobe PDF Library 9.9",
+        "creationDate": "D:20201230191756+05'30'",
+        "modDate": "D:20210202194255+05'30'",
+        "trapped": "",
+        "encryption": null
+      },
+      "identityPagesExtracted": 22,
+      "selected": [
+        {
+          "pdfPage": 1,
+          "textFile": "source-inspection/MNK201-book-PDF001.txt",
+          "snippet": ""
+        },
+        {
+          "pdfPage": 2,
+          "textFile": "source-inspection/MNK201-book-PDF002.txt",
+          "snippet": "16e\nEugEnE F. Brigham \nUniversity of Florida \nJoEl F. houston\nUniversity of Florida \nFundamentals of \nFinanCial \nmanagEmEnt\nAustralia ● Brazil ● Canada ● Mexico ● Singapore ● United Kingdom ● United States\nCopyright 2022 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eChapter(s).\nEditorial review has deemed that any suppressed content does not materia"
+        },
+        {
+          "pdfPage": 3,
+          "textFile": "source-inspection/MNK201-book-PDF003.txt",
+          "snippet": "This is an electronic version of the print textbook. Due to electronic rights restrictions,\nsome third party content may be suppressed. Editorial review has deemed that any suppressed \ncontent does not materially affect the overall learning experience. The publisher reserves the right \nto remove content from this title at any time if subsequent rights restrictions require it. For\nvaluable information on pricing, previous editions, changes to current editions, and alternate \nformats, please visit"
+        },
+        {
+          "pdfPage": 4,
+          "textFile": "source-inspection/MNK201-book-PDF004.txt",
+          "snippet": "Printed in the United States of America\nPrint Number: 01  Print Year: 2021\nFundamentals of Financial Management, \nsixteenth edition\neugene F. Brigham and Joel F. Houston\nSVP, Higher Education & Skills Product:  \n Erin Joyner\nVP, Higher Education & Skills Product:  \n Michael Schenk \nProduct Director: Jason Fremder\nSr. Product Manager: Aaron Arnsparger\nProduct Assistant: Margaret Russo\nLearning Designer: Brandon Foltz\nContent Manager: Christopher Valentine\nSr. Digital Delivery Lead: Mark Hopkinson"
+        },
+        {
+          "pdfPage": 5,
+          "textFile": "source-inspection/MNK201-book-PDF005.txt",
+          "snippet": "iii\nMindTap for Fundamentals \nof Financial Management\nMindTap, featuring all-new Excel Online integration powered by Microsoft, is a complete \ndigital solution for the corporate finance course. It has enhancements that take students \nfrom learning basic financial concepts to actively engaging in critical-thinking applications, \nwhile learning valuable Excel skills for their future careers.\nEvErything you nEEd in onE placE. \nCut prep time with MindTap preloaded, organized course materials. Teach "
+        },
+        {
+          "pdfPage": 6,
+          "textFile": "source-inspection/MNK201-book-PDF006.txt",
+          "snippet": "iv\npracticE problEms\nAll of the end-of-chapter problems are available in algorithmic format for either student practice \nof applying content presented in the chapter or alternative graded assignment. MindTap is a \nhighly customizable assessment delivery platform, so you can pick and choose from a large bank \nof algorithmic problem sets to assign to your students.\nbluEprint practicE problEms\nBlueprint Practice Problems combine conceptual and \napplication-driven problems with a tutorial emphasis. "
+        },
+        {
+          "pdfPage": 7,
+          "textFile": "source-inspection/MNK201-book-PDF007.txt",
+          "snippet": "v\ngradEd homEwork\nMindTap offers an assignable, algorithmic \nhomework tool that is based on our \nproven and popular Aplia product for \nFinance. These homework problems \ninclude rich explanations and instant \ngrading, with opportunities to try \nanother algorithmic version of the \nproblem to bolster \nconfidence with \nproblem solving.\nFinancE in action casEs\nMindTap offers a series of Finance  \nin Action analytical cases that assess \nstudents’ ability to perform higher- \nlevel problem solving  \nand"
+        },
+        {
+          "pdfPage": 8,
+          "textFile": "source-inspection/MNK201-book-PDF008.txt",
+          "snippet": "Cengage Learning and Microsoft have partnered in MindTap to provide students with a \nuniform, authentic Excel assignment experience. It provides instant feedback, built-in video \ntips, and easily accessible spreadsheet work. These features allow you to spend more time \nteaching finance applications and less time teaching and troubleshooting Excel. \nThese new algorithmic activities offer pre-populated data directly in Microsoft Excel Online,  \nwhich runs seamlessly on all major platforms and brow"
+        },
+        {
+          "pdfPage": 9,
+          "textFile": "source-inspection/MNK201-book-PDF009.txt",
+          "snippet": "ExcEl vidEo tips\nEach activity includes a walk-\nthrough video of a similar problem \nbeing worked in Excel Online to \noffer suggested formulas to use for \nsolving the problem. It also offers \ntips and strategies, which assist \nin understanding the underlying \nfinancial concepts while working \nwithin Excel.\ncalculation  \nstEps and  \nExcEl solutions\nEach activity offers \nconfigurable displays \nthat include the correct \nanswers, the manual \ncalculation steps, and \nan Excel solution (with \nsuggested "
+        },
+        {
+          "pdfPage": 10,
+          "textFile": "source-inspection/MNK201-book-PDF010.txt",
+          "snippet": "viii\nEncouraging those ‘aha!’ moments with all new\nExploring Finance visualizations\nAll-new in MindTap for Fundamentals of Financial Management, 16e, Exploring Finance \nactivities offer instructors and students interactive visualizations that engage with  \n“lean forward” interactivity. Exploring Finance activities provide instructors visual, \ninteractive tools that can be used to help students “see” the statistical concept being \npresented directly within MindTap.\nCopyright 2022 Cengage Learning"
+        },
+        {
+          "pdfPage": 11,
+          "textFile": "source-inspection/MNK201-book-PDF011.txt",
+          "snippet": "ix\nExploring Finance visualizations are \nfound at the chapter level of the \nMindTap learning path for easy retrieval \nin class to show on projector screens. \nExploring Finance visualizations have a pre-built activity in the learning path within MindTap \nthat allows students to manipulate the values and then respond to questions that reinforce \ntheir understanding of the concept being \nconveyed. These activities can be assigned \nas practice or for a grade and often offer an \ninteractive, conceptu"
+        },
+        {
+          "pdfPage": 12,
+          "textFile": "source-inspection/MNK201-book-PDF012.txt",
+          "snippet": "x\nadaptivE whErE  \nit counts\nThe new Adaptive \nTest Prep App helps \nstudents prepare \nfor test success by \nallowing them to \ngenerate multiple \npractice tests across \nchapters until they \nhave confidence \nthey have mastered \nthe material.\nThe adaptive test program grades \npractice tests and indicates the areas \nthat have or have not been mastered. \nStudents are presented with an \nAdaptive Study \nPlan that takes \nthem directly \nto the pertinent \npages in the text \nwhere the practice \nquestion mat"
+        },
+        {
+          "pdfPage": 13,
+          "textFile": "source-inspection/MNK201-book-PDF013.txt",
+          "snippet": "xi\nFEEdback is kEy\nStudents also receive robust explanations of the problems to assist in further understanding. \nMany of the quantitative test questions feature video feedback that offers students step-by-\nstep instruction to reinforce their understanding and bolster their confidence.\nCopyright 2022 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some third party content may be suppressed from the eBook and/or eCha"
+        },
+        {
+          "pdfPage": 14,
+          "textFile": "source-inspection/MNK201-book-PDF014.txt",
+          "snippet": "xii\ngetting Down the Basics \nis important\nIn order for you to take students further into the applications of finance, it’s important \nthat they have a firm handle on the basic concepts and methods used. In MindTap for \nFundamentals of Financial Management, we provide students with just-in-time tools  \nthat—coupled with your guidance—ensure that \nthey build a solid foundation.\nprEparing For FinancE\nStudents are more confident and prepared when they \nhave the opportunity to brush up on their knowl"
+        },
+        {
+          "pdfPage": 15,
+          "textFile": "source-inspection/MNK201-book-PDF015.txt",
+          "snippet": "xiii\nproblEm walk-through vidEos\nEmbedded in the interactive MindTap \nReader and linked to select problems \nin MindTap, Problem Walk-Through \nVideos provide step-by-step instructions \ndesigned to walk students through \nsolving a problem from start to finish. \nStudents can play and replay the \ntutorials as they work through homework \nassignments or prepare for quizzes and \ntests—almost as though they had you \nby their side the whole time. Ideal for \nhomework, study outside the classroom, \nor dist"
+        },
+        {
+          "pdfPage": 16,
+          "textFile": "source-inspection/MNK201-book-PDF016.txt",
+          "snippet": "xiv\nCustomizable Course and \n                         mobile on-the-go study tools  \n                    based on Your needs\nMindTap for Fundamentals of Financial Management, 16e offers features that allow you to \ncustomize your course based on the topics you cover.\nlEarning path \ncustomization\nThe learning path is structured \nby chapter so you can easily \nhide activities you wish to not \ncover, or change the order \nto better align with your \ncourse syllabus. RSS feeds and \nYouTube links can eas"
+        },
+        {
+          "pdfPage": 17,
+          "textFile": "source-inspection/MNK201-book-PDF017.txt",
+          "snippet": "xv\nthE gradEbook\nKeep Students Motivated\nStudents can instantly see their grades \nand how they are doing in the course. \nIf they didn’t do well on an assignment, \nthey can implement the flashcards and \npractice quizzes for that chapter.\nnotiFications\nKeep Students Connected\nStudents want their smartphones to help them \nremember important dates and milestones—\nfor both the social and academic parts of their \nlives. The MindTap Mobile App pushes course \nnotifications directly to them, making them "
+        },
+        {
+          "pdfPage": 18,
+          "textFile": "source-inspection/MNK201-book-PDF018.txt",
+          "snippet": "xvi\ncrEatE a sEamlEss usEr ExpEriEncE\nWith LMS Integration, your students are ready to learn on the first day of class. In just a few \nsimple steps, both you and your students can access Cengage resources using a LMS login.\ncontEnt customization with dEEp linking\nFocus student attention on what matters most. Use our Content Selector to create a unique \nlearning path that blends your content with links to learning activities, assignments, and more.\nautomatic gradE synchronization*\nNeed to have yo"
+        },
+        {
+          "pdfPage": 19,
+          "textFile": "source-inspection/MNK201-book-PDF019.txt",
+          "snippet": "Brief Contents\nxvii\nPreface \nxxviii\nAbout the Authors \nxxxix\nPart 1 \nIntroduction to Financial Management \n1\nChapter 1 \nAn Overview of Financial Management \n2\nChapter 2 \nFinancial Markets and Institutions \n29\nPart 2 \nFundamental Concepts in Financial Management \n63\nChapter 3 \nFinancial Statements, Cash Flow,  \nand Taxes \n64\nChapter 4 \nAnalysis of Financial Statements \n108\nChapter 5 \nTime Value of Money \n151\nPart 3 \nFinancial Assets \n195\nChapter 6 \nInterest Rates \n196\nChapter 7 \nBonds and Their V"
+        },
+        {
+          "pdfPage": 20,
+          "textFile": "source-inspection/MNK201-book-PDF020.txt",
+          "snippet": "xviii\nBrief Contents\nChapter 20 \nHybrid Financing: Preferred Stock,  \nLeasing, Warrants, and Convertibles \n708\nChapter 21 \nMergers and Acquisitions \n740\nAppendixes\nAPPENDIX A \nSolutions to Self-Test Questions  \nand Problems \nA-1\nAPPENDIX B \nAnswers to Selected  \nEnd-of-Chapter Problems \nB-1\nAPPENDIX C \nSelected Equations and Tables \nC-1\nIndex \nI-1\nCopyright 2022 Cengage Learning. All Rights Reserved. May not be copied, scanned, or duplicated, in whole or in part. Due to electronic rights, some t"
+        },
+        {
+          "pdfPage": 21,
+          "textFile": "source-inspection/MNK201-book-PDF021.txt",
+          "snippet": "xix\nContents\nPreface xxviii\nAbout the Authors xxxix\nPart 1\nIntroduction to Financial  \nManagement 1\nChaPtEr 1\nan overview of Financial management 2\nStriking the Right Balance 2\nPUTTING THINGS IN PERSPECTIVE 4\n1-1 \nWhat is Finance? 4\n1-1A Areas of Finance 4\n1-1B Finance Within an Organization 5\n1-1C  Finance Versus Economics and \nAccounting 5\n1-2 \nJobs in Finance 6\n1-3 \nForms of Business Organization 7\n1-4 \nThe Main Financial Goal: Creating Value \nfor Investors 9\n1-4A Determinants of Value 9\n1-4B"
+        },
+        {
+          "pdfPage": 22,
+          "textFile": "source-inspection/MNK201-book-PDF022.txt",
+          "snippet": "xx\nContents\n3-4 \nStatement of Cash Flows 77\n3-5 \nStatement of Stockholders’ Equity 80\n3-6 \n Uses and Limitations of Financial \nStatements 81\n3-7 \nFree Cash Flow 82\nFree Cash Flow Is Important for Businesses  \nBoth Small and Large 85\n3-8 \nMVA and EVA 85\n3-9 \nIncome Taxes 87\nCongress Passes Sweeping Tax Reform Act in \n2017 87\n3-9A Individual Taxes 89\n3-9B Corporate Taxes 92\nCorporate Tax Rates Around the World 92\nTYING IT ALL TOGETHER 96\nintEgratED CasE D’leon inc., Part i 103\ntaking a Closer look"
+        }
+      ]
+    },
+    {
+      "id": "MNK201-lecturer-CH1",
+      "path": "C:\\cek\\Manajemen Keuangan\\Materi\\FFM_CH1.pdf",
+      "sha256": "6427f39acc1fa0b2adb317f8acebd4a5e47c8fd5bdba8c9fd7a72f8859dabd4e",
+      "pages": 11,
+      "metadata": {
+        "format": "PDF 1.7",
+        "title": "Fundamentals of Financial Management, Sixteenth Edition",
+        "author": "Brigham & Houston",
+        "subject": "Chapter 4: Analysis of Financial Statements",
+        "keywords": "",
+        "creator": "",
+        "producer": "",
+        "creationDate": "D:20260809195428+00'00'",
+        "modDate": "D:20260809195428+00'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "identityPagesExtracted": 11,
+      "selected": [
+        {
+          "pdfPage": 1,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF001.txt",
+          "snippet": "1\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n1\nChapter 1\nAn Overview of \nFinancial Management\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n"
+        },
+        {
+          "pdfPage": 2,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF002.txt",
+          "snippet": "2\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\nOverview\n•\nRatio Analysis\n•\nDuPont Equation\n•\nEffects of Improving Ratios\n•\nLimitations of Ratio Analysis\n•\nQualitative Factors\n"
+        },
+        {
+          "pdfPage": 3,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF003.txt",
+          "snippet": "3\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n"
+        },
+        {
+          "pdfPage": 4,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF004.txt",
+          "snippet": "4\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n"
+        },
+        {
+          "pdfPage": 5,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF005.txt",
+          "snippet": "5\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\nProprietorships and Partnerships\n• Advantages\n−Ease of formation\n−Subject to few regulations\n−No double income taxes\n• Disadvantages\n−Difficult to raise\n−Capital Unlimited\n−Liability limited life\n−Often set up through LLCs/ LLPs\n"
+        },
+        {
+          "pdfPage": 6,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF006.txt",
+          "snippet": "6\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\nCorporations\n"
+        },
+        {
+          "pdfPage": 7,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF007.txt",
+          "snippet": "7\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\nStock Prices and Intrinsic Value\n• In equilibrium, a stock’s price should equal its “true” or intrinsic value.\n• Intrinsic value is a long-run concept.\n• To the extent that investor perceptions are incorrect, a stock’s price in the short \nrun may deviate from its intrinsic val"
+        },
+        {
+          "pdfPage": 8,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF008.txt",
+          "snippet": "8\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\nDeterminants of Intrinsic Values and Stock \nPrices\n"
+        },
+        {
+          "pdfPage": 9,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF009.txt",
+          "snippet": "9\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n"
+        },
+        {
+          "pdfPage": 10,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF010.txt",
+          "snippet": "10\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n"
+        },
+        {
+          "pdfPage": 11,
+          "textFile": "source-inspection/MNK201-lecturer-CH1-PDF011.txt",
+          "snippet": "11\nBrigham & Houston, Fundamentals of Financial Management, Sixteenth Edition. © 2022 Cengage. All Rights Reserved. May not be scanned, \ncopied or duplicated, or posted to a publicly accessible website, in whole or in part.\n"
+        }
+      ]
+    },
+    {
+      "id": "AKA201-Arens",
+      "path": "C:\\cek\\PBR I\\Materi\\Auditing The Art and Science of Assurance Engagements (Alvin Arens, Alvin A Arens, Randal J Elder etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf",
+      "sha256": "cf3eca311d404f8baa417297e8784822ac7d8546162970a0c18ab631004390d2",
+      "pages": 743,
+      "metadata": {
+        "format": "PDF 1.6",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "",
+        "producer": "",
+        "creationDate": "",
+        "modDate": "",
+        "trapped": "",
+        "encryption": null
+      },
+      "identityPagesExtracted": 22,
+      "selected": [
+        {
+          "pdfPage": 1,
+          "textFile": "source-inspection/AKA201-Arens-PDF001.txt",
+          "snippet": ""
+        },
+        {
+          "pdfPage": 2,
+          "textFile": "source-inspection/AKA201-Arens-PDF002.txt",
+          "snippet": "v\nContents\nPreface  ix\n\t 1\t The Demand for Audit and Other \nAssurance Services  1\nLEARNING OBJECTIVES  1\nWhat are Assurance Engagements?  2\nWhat is Auditing?  3\nWhy are Audits and Other Assurance Engagements \nNeeded?  7\nCommon Types of Assurance Engagements  10\nTypes of Auditors  11\nAccounting vs. Auditing  14\nAssurance and Nonassurance Services Offered  \nby Public Accountants  15\nSummary  19\nReview Questions  19\nMultiple Choice Questions  20\nDiscussion Questions and Problems  21\nProfessional Ju"
+        },
+        {
+          "pdfPage": 3,
+          "textFile": "source-inspection/AKA201-Arens-PDF003.txt",
+          "snippet": "vi\nCONTENTS\nTypes of Audit Procedures  134\nDesign Analytical Procedures  143\nUse of Audit Data Analytics and Advanced \nTechnologies  150\nDocumentation  156\nProfessional Skepticism, Evidence, and Documentation  160\nAPPENDIX 5A: Common Financial Ratios  162\nSummary  164\nReview Questions  164\nMultiple Choice Questions and Task-Based Simulations  165\nDiscussion Questions and Problems  168\nProfessional Judgment Problems and Cases  171\nApplying Your Professional Judgment to Hillsburg Hardware  172\n\t 6"
+        },
+        {
+          "pdfPage": 4,
+          "textFile": "source-inspection/AKA201-Arens-PDF004.txt",
+          "snippet": "vii\nCONTENTS\n\t11\t Audit Sampling Concepts  362\nLEARNING OBJECTIVES  362\nSelecting Items to Test and Sampling  363\nRepresentative Sampling and Its Risks  364\nStatistical vs. Nonstatistical Sampling and Probabilistic \nvs. Nonprobabilistic Sample Selection  365\nSample Selection Methods  367\nAn Overview of the Audit Sampling Process  370\nUsing Sampling for Tests of Controls  372\nStatistical Sampling for Tests of Controls  382\nUsing Sampling for Substantive Tests of Details     384\nNonstatistical Sam"
+        },
+        {
+          "pdfPage": 5,
+          "textFile": "source-inspection/AKA201-Arens-PDF005.txt",
+          "snippet": "viii\nCONTENTS\n\t16\t Audit of Cash and Cash \nEquivalents  559\nLEARNING OBJECTIVES  559\nOverview of Cash Accounts  561\nIdentify Inherent Risk Factors and Determine  \nSignificant Risks  562\nUnderstand Key Controls and Assess Control Risk  563\nDesign Substantive Procedures  565\nDesign Fraud Procedures for Cash  570\nSummary  574\nReview Questions  575\nMultiple Choice Questions and Task-Based Simulations  576\nDiscussion Questions and Problems  577\nProfessional Judgment Problems and Cases  579\nApplying Y"
+        },
+        {
+          "pdfPage": 6,
+          "textFile": "source-inspection/AKA201-Arens-PDF006.txt",
+          "snippet": "ix\nAuditing: The Art and Science of Assurance Engagements \nis an introduction to auditing and assurance services. It \nis intended for use in an introductory auditing course, \nfor one-semester or two-semester instruction at the \nundergraduate or graduate level. The book’s primary \nemphasis is on the auditor’s decision-making process in \na financial statement audit and, to a lesser degree, other \ntypes of audits and assurance engagements.\nTo offer a deeper learning experience, we \n­recommend pairi"
+        },
+        {
+          "pdfPage": 7,
+          "textFile": "source-inspection/AKA201-Arens-PDF007.txt",
+          "snippet": "x\nPREFACE\nx\nan entirely new dataset that includes different files of \ntransaction data related to the sales and collection cycle \nfor a hypothetical company, JA Tire Manufacturing. \nThis dataset, which students can access from MyLab \nAccounting, includes different sub-files that contain \ntransaction data related to JA Tire Manufacturing’s \nsales orders, bills of lading, invoices, cash receipts, cus-\ntomer master file, and product master file (an excerpt \nof a summary of the sub-files is shown be"
+        },
+        {
+          "pdfPage": 8,
+          "textFile": "source-inspection/AKA201-Arens-PDF008.txt",
+          "snippet": "xi\nPREFACE\ncontrols and have developed several diagrams to illus-\ntrate the underlying logic of the control risk assessment \nand its connection with risk of material misstatement. \nConsistent with the CAS 315 (Revised), we include \nmuch more on information technology, particularly \ngeneral controls.\nChapter 10 brings the discussion together in its \nfocus on overall audit strategy and approach. The subse-\nquent chapters that address the transaction cycles have \nbeen revised to be consistent with "
+        },
+        {
+          "pdfPage": 9,
+          "textFile": "source-inspection/AKA201-Arens-PDF009.txt",
+          "snippet": "xii\nPREFACE\nChapter 4 explains auditors’ and management’s \nresponsibilities as well as assertions, provides a frame-\nwork for professional judgment, and introduces the \naudit process. The remaining chapters focus on the \nactivities related to planning—in particular, risk assess-\nment and developing an appropriate risk response.\nTo understand how auditing is done in practice, it \nis important to understand how auditing concepts are \napplied to specific auditing areas. Chapter 11 focuses \non the s"
+        },
+        {
+          "pdfPage": 10,
+          "textFile": "source-inspection/AKA201-Arens-PDF010.txt",
+          "snippet": "xiii\nPREFACE\nlearning for each student, including a personalized \nstudy plan.\nMyLab Accounting for the Fifteenth Canadian \nEdition of Auditing: The Art and Science of Assurance \nEngagements includes many valuable assessments and \nstudy tools to help students practise and understand key \nconcepts from the text. Students can practise and be \nassessed on an expanded number of select end-of-chapter \nquestions (an assignment map is available within the \ninstructor resources tab on the MyLab), data an"
+        },
+        {
+          "pdfPage": 11,
+          "textFile": "source-inspection/AKA201-Arens-PDF011.txt",
+          "snippet": "xiv\nPREFACE\npeer-reviewed journals. Joanne is an active reviewer for \nseveral academic journals and currently serves as an \neditor for Issues in Accounting Education and is an asso-\nciate editor at Accounting Perspectives. Prior to earning \nher PhD, she worked for several years as an external \nauditor with KPMG and as the associate director of \neducation with the Institute of Chartered Accountants \nof Ontario (now CPA Ontario).\nBartosz Amerski, CPA, CA, LL.M.\nWe are again pleased to have Bartosz"
+        },
+        {
+          "pdfPage": 12,
+          "textFile": "source-inspection/AKA201-Arens-PDF012.txt",
+          "snippet": "xv\nPREFACE\nClient\nAcceptance\nAudit\nPlanning\nAssess Risk\nof Material\nMisstatement\nDevelop\nRisk\nResponse\nPerform Risk\nResponses\nConclusion\nReporting\nChapter 19\n• Complete ﬁnal evidence gathering\n• Evaluate results of tests completed\n• Conclude if gathered evidence is suﬃcient, reliable,\n  and appropriate\nChapter 18\n• Engagement acceptance risk\n• Independence threat analysis\n• Competence\n• Engagement letter\nChapters 3 and 6\nChapters 6 and 8\n• Understanding the entity and its environment\n   + Unders"
+        },
+        {
+          "pdfPage": 14,
+          "textFile": "source-inspection/AKA201-Arens-PDF014.txt",
+          "snippet": "1\ncontinued >\n1\nC H A P T E R\nTHE DEMAND FOR AUDIT \nAND OTHER ASSURANCE \nSERVICES\nBrown Goes Green\nUnited Parcel Service (UPS) is one of the largest shipment and logistics companies in \nthe world, delivering more than 15 million packages a day in more than 220 ­countries. \nAt the peak of the holiday season, UPS delivers 34 million packages daily. That’s \na lot of packages moved by planes and delivery trucks, and it obviously comes \nwith a large carbon footprint. The UPS company nickname is “Brow"
+        },
+        {
+          "pdfPage": 16,
+          "textFile": "source-inspection/AKA201-Arens-PDF016.txt",
+          "snippet": "CHAPTER 1 I THE DEMAND FOR AUDIT AND OTHER ASSURANCE SERVICES\n3\nLevels of Assurance\nAssurance engagements can be either moderate or high assurance, which directly \nimpacts what is judged to be sufficient and appropriate evidence needed to make the \nappropriate conclusion. To help understand what this means, think about assurance \nin terms of the degree of confidence that the auditors have on the reliability of the \nsubject matter. Assurance is what the auditor aims to obtain in order to express "
+        },
+        {
+          "pdfPage": 21,
+          "textFile": "source-inspection/AKA201-Arens-PDF021.txt",
+          "snippet": "CHAPTER 1 I THE DEMAND FOR AUDIT AND OTHER ASSURANCE SERVICES\n8\nreduced. For example, assume that a large company has total interest-bearing debt of \napproximately $1 billion. If the interest rate on that debt is reduced by only 1 percent, \nthe annual savings in interest is $10 million. Many lenders such as banks require \nannual audits for companies with large bank loans outstanding.\nCauses of Information Risk\nAs society becomes more complex, there is an increased likelihood that unreliable \ninf"
+        }
+      ]
+    },
+    {
+      "id": "AKK202-RPP",
+      "path": "C:\\cek\\AKM II\\Materi\\RPP AKM II.pdf",
+      "sha256": "c5335aaf674a75bb9b6561c9807cb9b6b93e9f99b88fa1a29d5f4033e89358fa",
+      "pages": 4,
+      "metadata": {
+        "format": "PDF 1.7",
+        "title": "RPP OBE Akuntansi Keuangan Menengah II_Manual.xlsx",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "",
+        "producer": "Microsoft: Print To PDF",
+        "creationDate": "D:20260915164749+07'00'",
+        "modDate": "D:20260915164749+07'00'",
+        "trapped": "",
+        "encryption": null
+      },
+      "identityPagesExtracted": 4,
+      "selected": [
+        {
+          "pdfPage": 1,
+          "textFile": "source-inspection/AKK202-RPP-PDF001.txt",
+          "snippet": "KaDept\nFAKULTAS: FEB\nJenis (M/E)\nM\nLevel (I/R/M)\nR\nCapaian Pembelajaran Lulusan\nProfil Lulusan : Graduates become competent accounting professionals who apply accounting and business knowledge, ethical judgment, analytical problem-solving, and effective communication to address \naccounting and business challenges in national and global contexts.\nCG1 - Graduates possess and apply accounting and business knowledge in line with national and international standards.\nLO1-1 :  Mahasiswa mampu menganal"
+        },
+        {
+          "pdfPage": 2,
+          "textFile": "source-inspection/AKK202-RPP-PDF002.txt",
+          "snippet": "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n1\nMengidentifikasi dan menjelaskan \nAkuntansi Aset Tetap, Properti \nInvestasi, dan Tanah\nAkuisisi Aset Tetap/Properti \nInvestasi/Tanah\nPenilaian aktiva Tetap/Properti \nInvestasi/Tanah\nModel Akuntansi Aset Tetap/Properti \nInvestasi: Model Biaya & Revaluasi\nKuliah\nPraktika\n2,4\nLCD, \nLAPTOP, \naudio sound \nsystem\n500\nPenguasaan Materi\nPenguasaan \nMateri\n5%\nKW Ch. 10\nPSAK No. 13, \n16, 26, 48, dan \n58\n2\nMengidentifikasi dan menjelaskan \nAkuntansi Aset Tetap, Properti \nInvest"
+        },
+        {
+          "pdfPage": 3,
+          "textFile": "source-inspection/AKK202-RPP-PDF003.txt",
+          "snippet": "9 dan 10\nMengidentifikasi dan menjelaskan \nLong Term Liabilities\nBonds Payable:\nIssuing Bonds\nTypes and Ratings of Bonds\nValuation of Bonds\nEffective interest method\nLong Term Notes Payable:\nNotes issued & not issued at face \nvalue\nSpecial notes payable situation \nSpecial issues:\n-Extinguishment of non-current \nliabilities\n-Fair value option\nPresentation and Analysis \nSAK ETAP related to long term \nliabilities\nKuliah\nPraktika, Presentasi \nMateri dan Kasus\n2,4\nLCD, \nLAPTOP, \naudio sound \nsystem\n1"
+        },
+        {
+          "pdfPage": 4,
+          "textFile": "source-inspection/AKK202-RPP-PDF004.txt",
+          "snippet": "3\n4\n4\n4\n5\n4\n6\n4\n0\n1.\n2.\nPeriode\n1 & 2\n1 & 2\n1 & 2\n1 & 2\n1\n2\n1.\n2.\n3.\n4.\n5.\n6.\n7.\n8.\n9.\n10.\n11.\n12.\n13.\n14.\n15.\n16.\nOkta Sindhu Hartadinata, SE.,M.A.,Ak.\nFandi Prasetya S.E., Ak., M.Akun.\nDeddy Kurniawansyah S.E.,M.A\nRizqy Aiddha Yuniawati, S.A., Ak., M.Acc\nNining Islamiyah, S.A., M.Sc\nDina Indriana, S.A., M.A\nDamara Ardelia Kusuma Wardani, S.A., M.A.\nDosen Pengampu (Detail -- hingga 16 dosen) / Instructor List (Detail -- up to 16 lecturers)\nPilih hingga 16 dosen dari daftar. Sel D27 di atas akan"
+        }
+      ]
+    },
+    {
+      "id": "AKA201-ISA",
+      "path": "C:\\cek\\PBR I\\Materi\\IAASB-2025-Handbook-Volume-1.pdf",
+      "sha256": "1bf35810b49715252bd52373fe7be0352a4fea10b1ce2367aeb82e2fd327282d",
+      "pages": 1046,
+      "metadata": {
+        "format": "PDF 1.7",
+        "title": "",
+        "author": "",
+        "subject": "",
+        "keywords": "",
+        "creator": "Acrobat PDFMaker 25 for Word",
+        "producer": "Adobe PDF Library 25.1.163",
+        "creationDate": "D:20250904140836-04'00'",
+        "modDate": "D:20250917142905-04'00'",
+        "trapped": "",
+        "encryption": "Standard V5 R6 256-bit AES"
+      },
+      "identityPagesExtracted": 22,
+      "selected": [
+        {
+          "pdfPage": 1,
+          "textFile": "source-inspection/AKA201-ISA-PDF001.txt",
+          "snippet": " \n  \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \nHandbook of International \nQuality Management, \nAuditing, Review, Other \nAssurance, and Related \nServices Pronouncements \n2025 EDITION  |  Volume 1 \nCOPYRIGHT OF: \n"
+        },
+        {
+          "pdfPage": 2,
+          "textFile": "source-inspection/AKA201-ISA-PDF002.txt",
+          "snippet": " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n"
+        },
+        {
+          "pdfPage": 3,
+          "textFile": "source-inspection/AKA201-ISA-PDF003.txt",
+          "snippet": "The International Foundation for Ethics and AuditTM (IFEATM), the International Auditing and Assurance Standards Board (IAASB ®) and the \nInternational Federation of Accountants ® (IFAC ®) do not accept responsibility for loss caused to any person who acts or refrains from acting in \nreliance on the material in this publication, whether such loss is caused by negligence or otherwise. \nInternational Standards on Auditing, the International Standard on Auditing for Audits of Financial Statements o"
+        },
+        {
+          "pdfPage": 4,
+          "textFile": "source-inspection/AKA201-ISA-PDF004.txt",
+          "snippet": " \n \nTrademarks and Registered Trademarks and Service Marks \nInternational Auditing and Assurance Standards Board® \nIAASB® \n \n \n \nInternational Standards on Auditing® \nInternational Standard on Auditing for Audits of Financial Statements \nof Less Complex EntitiesTM \nInternational Standard on Sustainability AssuranceTM \nInternational Standards on Assurance EngagementsTM \nInternational Standards on Review EngagementsTM \nInternational Standards on Related ServicesTM \nInternational Standards on Quali"
+        },
+        {
+          "pdfPage": 5,
+          "textFile": "source-inspection/AKA201-ISA-PDF005.txt",
+          "snippet": "CONTENTS PART I \n \n \nHANDBOOK OF INTERNATIONAL QUALITY MANAGEMENT, AUDITING, REVIEW,  \nOTHER ASSURANCE, AND RELATED SERVICES PRONOUNCEMENTS \nPART I \nCONTENTS \nPage \nChanges of Substance from the 2023–2024 Edition of the Handbook and Recent Developments  .........................  \n1–3 \nAbout the IAASB, IFEA and IFAC ..........................................................................................................................  \n4 \nStructure of Pronouncements Issued by the Internationa"
+        },
+        {
+          "pdfPage": 6,
+          "textFile": "source-inspection/AKA201-ISA-PDF006.txt",
+          "snippet": "HANDBOOK OF INTERNATIONAL QUALITY MANAGEMENT, AUDITING, REVIEW, \nOTHER ASSURANCE, AND RELATED SERVICES PRONOUNCEMENTS \nPART I \n \n \nCONTENTS PART I \nINTERNATIONAL STANDARDS ON AUDITING AND QUALITY MANAGEMENT PART I \nISA 520, Analytical Procedures  ..............................................................................................................................  \n402–406 \nISA 530, Audit Sampling  .........................................................................................."
+        },
+        {
+          "pdfPage": 8,
+          "textFile": "source-inspection/AKA201-ISA-PDF008.txt",
+          "snippet": " \n \n1 \nCHANGES \nCHANGES \nCHANGES OF SUBSTANCE FROM THE 2023–2024 EDITION OF THE HANDBOOK \nAND RECENT DEVELOPMENTS \nReferences \nStandards Issued by the International Accounting Standards Board (IASB) \nConsistent with the 2023–2024 edition of the IAASB Handbook, this handbook contains references to International Accounting \nStandards (IASs) and International Financial Reporting Standards (IFRSs) issued by the IASB. The IASB is an independent \nstandard-setting body of the IFRS Foundation, a not-for"
+        },
+        {
+          "pdfPage": 9,
+          "textFile": "source-inspection/AKA201-ISA-PDF009.txt",
+          "snippet": "CHANGES \n2 \nPart II of the 2025 Edition of the IAASB Handbook \nThe following final pronouncement has been incorporated into Volume II of the 2025 edition of the IAASB Handbook: \n• \nThe ISA for LCE, which is effective for audits of financial statements of less complex entities for periods beginning on or \nafter December 15, 2025. This standard was presented on pages 1‒120 in Volume II of the 2023‒2024 edition of the IAASB \nHandbook.  \nPart IV of the 2025 Edition of the IAASB Handbook \nISRE 2400 ("
+        },
+        {
+          "pdfPage": 10,
+          "textFile": "source-inspection/AKA201-ISA-PDF010.txt",
+          "snippet": " \n \n3 \nCHANGES \nCHANGES \no \nISA 700 (Revised), Forming an Opinion and Reporting on Financial Statements, paragraph A36 and Appendix, \nIllustration 1 ─ added and updated footnotes for the relevant references to the IESBA Code. \n• \nPart IV \no \nISAE 3420, Assurance Engagements to Report on the Compilation of Pro Forma Financial Information Included in \na Prospectus, paragraph A10 ─ in the first sentence, updated the phrase “professional knowledge and skill” to \n“professional knowledge and skills.” "
+        },
+        {
+          "pdfPage": 11,
+          "textFile": "source-inspection/AKA201-ISA-PDF011.txt",
+          "snippet": "ABOUT THE IAASB, IFEA, AND IFAC \n4 \nABOUT THE IAASB, IFEA, AND IFAC \nABOUT THE INTERNATIONAL AUDITING AND ASSURANCE STANDARDS BOARD® \nThe International Auditing and Assurance Standards Board (IAASB®) is an independent global standard-setting board. The IAASB \nserves the public interest by setting high-quality international standards for auditing and assurance, quality management, reviews \nand related services, and by facilitating the convergence of international and national standards. In doing "
+        },
+        {
+          "pdfPage": 13,
+          "textFile": "source-inspection/AKA201-ISA-PDF013.txt",
+          "snippet": "PREFACE  \n6 \nPREFACE TO THE INTERNATIONAL QUALITY MANAGEMENT, AUDITING, REVIEW, \nOTHER ASSURANCE, AND RELATED SERVICES PRONOUNCEMENTS \n(Effective as of December 15, 2011) \nCONTENTS \nParagraph \nIntroduction  ...................................................................................................................................................................  \n1–2 \nThe IAASB’s Pronouncements  .............................................................................................."
+        },
+        {
+          "pdfPage": 15,
+          "textFile": "source-inspection/AKA201-ISA-PDF015.txt",
+          "snippet": "PREFACE TO THE INTERNATIONAL QUALITY MANAGEMENT, AUDITING, REVIEW, \nOTHER ASSURANCE, AND RELATED SERVICES PRONOUNCEMENTS \nPREFACE \n8 \nInternational Standards on Quality Management \n13. \nISQMs are written to apply to firms in respect of all their services falling under the IAASB’s Engagement Standards. The \nauthority of ISQMs is set out in the introduction to each ISQM.3  \nOther International Standards \n14. \nSome International Standards identified in paragraphs 6–8 contain: objectives, requiremen"
+        },
+        {
+          "pdfPage": 16,
+          "textFile": "source-inspection/AKA201-ISA-PDF016.txt",
+          "snippet": "PREFACE TO THE INTERNATIONAL QUALITY MANAGEMENT, AUDITING, REVIEW, \nOTHER ASSURANCE, AND RELATED SERVICES PRONOUNCEMENTS \n \n9 \nPREFACE \nPREFACE \n• \nObtaining an understanding of the circumstances of the entity, and in making judgments about the identification and \nassessment of risks of material misstatement;  \n• \nMaking judgments about how to respond to assessed risks, including judgments about procedures that may be \nappropriate in the circumstances; or  \n• \nAddressing reporting considerations"
+        },
+        {
+          "pdfPage": 17,
+          "textFile": "source-inspection/AKA201-ISA-PDF017.txt",
+          "snippet": "GLOSSARY \n10 \nGLOSSARY OF TERMS1 \n(2025 Edition) \nAccess controls—Procedures designed to restrict access to on-line terminal devices, programs and data. Access controls consist of \n“user authentication” and “user authorization.” “User authentication” typically attempts to identify a user through unique logon \nidentifications, passwords, access cards or biometric data. “User authorization” consists of access rules to determine the computer \nresources each user may access. Specifically, such proce"
+        },
+        {
+          "pdfPage": 18,
+          "textFile": "source-inspection/AKA201-ISA-PDF018.txt",
+          "snippet": "GLOSSARY OF TERMS \n \n11 \nGLOSSARY \nGLOSSARY \nApplicable criteria (in the context of ISAE 34203)—The criteria used by the responsible party when compiling the pro forma \nfinancial information. Criteria may be established by an authorized or recognized standard-setting organization or by law or \nregulation. Where established criteria do not exist, they will be developed by the responsible party. \n*Applicable financial reporting framework—The financial reporting framework adopted by management and,"
+        },
+        {
+          "pdfPage": 19,
+          "textFile": "source-inspection/AKA201-ISA-PDF019.txt",
+          "snippet": "GLOSSARY OF TERMS \nGLOSSARY \n12 \nb. \nLimited assurance engagement―An assurance engagement in which the practitioner reduces engagement risk to a \nlevel that is acceptable in the circumstances of the engagement but where that risk is greater than for a reasonable \nassurance engagement as the basis for expressing a conclusion in a form that conveys whether, based on the procedures \nperformed and evidence obtained, a matter(s) has come to the practitioner’s attention to cause the practitioner to \nb"
+        },
+        {
+          "pdfPage": 21,
+          "textFile": "source-inspection/AKA201-ISA-PDF021.txt",
+          "snippet": "GLOSSARY OF TERMS \nGLOSSARY \n14 \n*Component performance materiality—An amount set by the group auditor to reduce aggregation risk to an appropriately low level \nfor purposes of planning and performing audit procedures in relation to a component. \nComputer-assisted audit techniques—Applications of auditing procedures using the computer as an audit tool (also known as \nCAATs). \n*Controls—Policies or procedures that an entity establishes to achieve the control objectives of management or those char"
+        },
+        {
+          "pdfPage": 22,
+          "textFile": "source-inspection/AKA201-ISA-PDF022.txt",
+          "snippet": "GLOSSARY OF TERMS \n \n15 \nGLOSSARY \nGLOSSARY \n(iii) \nA response, or combination of responses, does not reduce to an acceptably low level the likelihood of a related quality risk \noccurring because the response(s) is not properly designed, implemented or operating effectively; or \n(iv) \nAn other aspect of the system of quality management is absent, or not properly designed, implemented or operating \neffectively, such that a requirement of this ISQM has not been addressed.  \n*Detection risk—The ris"
+        }
+      ]
+    }
+  ]
+}

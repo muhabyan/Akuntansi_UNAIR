@@ -74,7 +74,7 @@ export const TM11_READING: Reading = {
   tm: 11,
   title: 'Studi Kasus Strategik I: Model Bisnis Platform & Ekosistem Digital (TheoryBridge.com & Alibaba Group)',
   ref: 'Parker, Van Alstyne, & Choudary (Platform Revolution) | David S. Evans Multi-Sided Platforms | Rantai Pasok Linear vs Platform',
-  intro: 'TM 11 menyajikan studi kasus strategis komprehensif pertama: pergeseran radikal dari bisnis pipa linier (Linear Pipeline Business) menuju Model Bisnis Platform (Platform Business Models): dinamika pasar bersisi banyak (Two-Sided / Multi-Sided Markets), efek jaringan langsung dan tidak langsung (Direct vs Indirect Network Effects), mengatasi masalah peluncuran awal (Chicken-and-Egg Launch Strategy), arsitektur pencocokan (Matchmaking Algorithm), tata kelola ekosistem (Ecosystem Governance), serta strategi monetisasi (Take Rate, Iklan, Layanan Finansial Terintegrasi).',
+  intro: 'TM 11 adalah studi kasus strategis pertama: pergeseran dari bisnis pipa linier (Linear Pipeline Business) ke model bisnis platform (Platform Business Models). Topiknya pasar bersisi banyak (Two-Sided / Multi-Sided Markets), efek jaringan langsung dan tidak langsung (Direct vs Indirect Network Effects), masalah ayam-dan-telur saat peluncuran (Chicken-and-Egg Launch Strategy), algoritma pencocokan (Matchmaking Algorithm), tata kelola ekosistem (Ecosystem Governance), dan strategi monetisasi (Take Rate, iklan, layanan finansial terintegrasi).',
   objectives: [
     'Membedakan logika penciptaan nilai model pipa linier konvensional vs model platform ekosistem digital.',
     'Menganalisis interaksi Efek Jaringan Langsung (Same-Side) dan Efek Jaringan Tidak Langsung (Cross-Side).',

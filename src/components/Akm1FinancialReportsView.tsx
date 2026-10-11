@@ -90,7 +90,6 @@ export default function Akm1FinancialReportsView({ reportId, onBack }: Akm1Finan
   const selectedMenuNumber = selectedIndex >= 0 ? selectedIndex + 1 : 1;
   const totalReports = AKM1_FINANCIAL_REPORTS.length;
   const totalInteractive = AKM1_FINANCIAL_REPORTS.filter((report) => report.practiceMode !== 'template').length;
-  const blockCount = selectedReport?.blocks.length ?? 0;
 
   const navigateRelative = (direction: -1 | 1) => {
     if (!selectedReport || totalReports === 0) return;
@@ -278,10 +277,6 @@ export default function Akm1FinancialReportsView({ reportId, onBack }: Akm1Finan
                   </div>
 
                   <div className="grid gap-2 rounded-[1.5rem] border border-navy-500/10 dark:border-navy-500/70 bg-slate-50 dark:bg-navy-900/35 p-3">
-                    <div className="flex items-center justify-between rounded-2xl bg-white dark:bg-navy-950/35 px-3 py-2 shadow-sm dark:shadow-none">
-                      <span className="text-xs font-bold text-slate-500">Jumlah blok</span>
-                      <span className="font-black text-slate-900 dark:text-slate-100">{blockCount}</span>
-                    </div>
                     <div className="flex items-center justify-between rounded-2xl bg-white dark:bg-navy-950/35 px-3 py-2 shadow-sm dark:shadow-none">
                       <span className="text-xs font-bold text-slate-500">Mode</span>
                       <span className="font-black text-gold-700 dark:text-gold">{modeLabel[selectedReport.practiceMode]}</span>

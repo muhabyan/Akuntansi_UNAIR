@@ -386,7 +386,6 @@ export default function AkdasView({ course, onBack }: { course: Course; onBack: 
                         </div>
                         <p className="text-xs text-slate-500 mt-1 truncate">{m.topicGroup}</p>
                         <div className="flex flex-wrap gap-2 mt-2 text-[11px] text-slate-500">
-                          <Pill>{m.sections.length} bagian</Pill><Pill>{m.workedExamples.length} contoh</Pill>
                           <Pill>{m.quiz.length} quiz</Pill><Pill>{m.flashcards.length} flashcard</Pill><Pill>{m.bankQuestions.length} bank soal</Pill>
                         </div>
                       </button>

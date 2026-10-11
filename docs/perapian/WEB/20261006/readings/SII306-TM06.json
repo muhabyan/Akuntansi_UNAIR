@@ -1,0 +1,1099 @@
+{
+  "tm": 6,
+  "title": "Sales and Collections Business Process",
+  "ref": "RPS-SIA, minggu 6 · Richardson, Chang & Smith, AIS 4e ISE · Ch. 7, pp. 282–321",
+  "intro": "Order-to-Cash (pesanan hingga penerimaan kas) mengikuti perjalanan barang yang dijual dan uang yang dibayar pelanggan. Kita mulai dari satu pesanan, lalu memeriksa kapan pendapatan dicatat, bagaimana alurnya dimodelkan dengan BPMN (Business Process Model and Notation), bagaimana risiko dikendalikan dengan SoD (pemisahan tugas), dan bagaimana data penjualan serta penerimaan kas disusun dalam model REA (Resources, Events, Agents atau sumber daya, kejadian, dan pelaku).",
+  "objectives": [
+    "Menjelaskan lima aktivitas Order-to-Cash, titik pengakuan pendapatan saat penyerahan barang, dan akuntansi potongan tunai 2/10, net 30.",
+    "Membedakan collaboration dan orchestration BPMN serta memodelkan stockout, error boundary event, timer boundary event, dan looping task.",
+    "Menerapkan pengendalian preventif, detektif, korektif, pemisahan tugas, business rule ECA, dan enam application control.",
+    "Menyusun model REA penjualan dan penerimaan kas, multiplicity, derivasi dinamis Accounts Receivable, serta type image.",
+    "Membedakan tabel Sunset Graphics dalam ebook dari skema latihan 12 tabel yang mendukung pembayaran parsial, serta membaca linking table berkunci komposit dan form/subform sales order."
+  ],
+  "blocks": [
+    {
+      "kind": "example",
+      "title": "Mulai dari pesanan sampai pembayaran pelanggan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Toko menerima pesanan meja, memeriksa stok, mengirim meja, menerbitkan tagihan, lalu menerima transfer pelanggan. Rangkaian dari penjualan sampai uang diterima disebut **Order-to-Cash** (pesanan hingga penerimaan kas). Pesanan belum otomatis menjadi pendapatan; waktu penyerahan barang menentukan kapan penjualan dicatat."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "1. Operational Foundations & Financial Statement Impacts"
+    },
+    {
+      "kind": "p",
+      "text": "**Sales and collections business process (Order-to-Cash)** adalah rangkaian aktivitas operasional terkoordinasi yang mencakup pemberian penawaran harga, penerimaan sales order, verifikasi persediaan dan kredit, pengiriman ke pelanggan, penerbitan invoice, penagihan pembayaran, dan penyetoran kas. Tujuannya menyediakan barang dan jasa secara efisien sambil mengamankan aset piutang usaha, memastikan pendapatan diakui secara lengkap, dan mengoptimalkan arus kas operasi. Richardson 4e, pp. 282–284."
+    },
+    {
+      "kind": "h3",
+      "text": "Alur barang, dokumen, dan uang"
+    },
+    {
+      "kind": "figure",
+      "title": "Titik kontrol dalam Order-to-Cash",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 920 230\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n    <defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0 L8 4 L0 8\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"1.5\"/></marker></defs>\n    <rect x=\"1\" y=\"1\" width=\"918\" height=\"228\" rx=\"18\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n    <text x=\"40\" y=\"43\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">Order-to-Cash: dokumen dan pengakuan</text>\n    <rect x=\"40\" y=\"72\" width=\"186\" height=\"103\" rx=\"14\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"53\" y=\"102\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Order</text>\n      <text x=\"53\" y=\"130\" fill=\"#334155\" font-size=\"13\">Sales Order · cek kredit</text>\n      <path d=\"M230 123 h24\" stroke=\"#0369a1\" stroke-width=\"2.5\" marker-end=\"url(#arrow)\"/><rect x=\"258\" y=\"72\" width=\"186\" height=\"103\" rx=\"14\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"271\" y=\"102\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Pick &amp; Ship</text>\n      <text x=\"271\" y=\"130\" fill=\"#334155\" font-size=\"13\">BOL · bukti penyerahan</text>\n      <path d=\"M448 123 h24\" stroke=\"#0369a1\" stroke-width=\"2.5\" marker-end=\"url(#arrow)\"/><rect x=\"476\" y=\"72\" width=\"186\" height=\"103\" rx=\"14\" fill=\"#eff6ff\" stroke=\"#94a3b8\"/>\n      <text x=\"489\" y=\"102\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Bill</text>\n      <text x=\"489\" y=\"130\" fill=\"#334155\" font-size=\"13\">Invoice · piutang</text>\n      <path d=\"M666 123 h24\" stroke=\"#0369a1\" stroke-width=\"2.5\" marker-end=\"url(#arrow)\"/><rect x=\"694\" y=\"72\" width=\"186\" height=\"103\" rx=\"14\" fill=\"#ecfdf5\" stroke=\"#94a3b8\"/>\n      <text x=\"707\" y=\"102\" fill=\"#0f172a\" font-size=\"16\" font-weight=\"700\">Collect</text>\n      <text x=\"707\" y=\"130\" fill=\"#334155\" font-size=\"13\">Remittance · kas</text>\n      \n    <text x=\"40\" y=\"205\" fill=\"#475569\" font-size=\"13\">Pengakuan pendapatan mengikuti perpindahan kendali, bukan order atau invoice semata.</text>\n  </svg>",
+      "altText": "Alur order, picking dan pengiriman, billing, dan penerimaan kas dengan dokumen serta titik pengakuan pendapatan.",
+      "mobileFlow": {
+        "mode": "cards",
+        "title": "Order-to-Cash: kapan dicatat?",
+        "stages": [
+          {
+            "actor": "Order",
+            "actions": [
+              "Sales Order diterima dan kredit diperiksa.",
+              "Belum ada pendapatan."
+            ]
+          },
+          {
+            "actor": "Pick & Ship",
+            "actions": [
+              "Barang disiapkan dan bukti pengiriman dibuat.",
+              "Pendapatan diakui saat kendali berpindah sesuai kontrak."
+            ]
+          },
+          {
+            "actor": "Bill → Collect",
+            "actions": [
+              "Billing membuat invoice dan memelihara piutang.",
+              "Cashier menerima pembayaran; piutang dilunasi."
+            ]
+          }
+        ]
+      },
+      "transcript": [
+        "Sales Order diterima dan kredit diperiksa; belum ada pendapatan.",
+        "Gudang menyiapkan barang dan shipping mendokumentasikan penyerahan; akui pendapatan ketika kendali berpindah sesuai kontrak.",
+        "Billing menerbitkan invoice dan memelihara piutang secara terpisah dari pemegang kas.",
+        "Cashier menerima pembayaran dan pembayaran diterapkan ke piutang."
+      ],
+      "caption": "Ilustrasi siklus TM6; Bill of Lading adalah bukti pengiriman, sedangkan waktu perpindahan kendali mengikuti syarat kontrak."
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "**Provide Quote:** staf penjualan memberi calon pembeli spesifikasi produk, harga, dan estimasi pengiriman. Pada alur Sunset, quote masih berupa penawaran sehingga belum ada penjualan yang dijurnal.",
+        "**Receive Sales Order:** pelanggan menerima quote atau memesan. Sales order menjadi dasar penyiapan barang, tetapi **belum** memicu pengakuan pendapatan.",
+        "**Prepare Products (Pick & Pack):** staf gudang mengambil barang dari bin penyimpanan dan mengemasnya untuk dikirim.",
+        "**Deliver Products & Issue Invoice:** barang dikirim atau diserahkan sesuai syarat penjualan. Pendapatan diakui ketika kendali barang berpindah kepada pelanggan dan kewajiban kinerja terpenuhi; invoice kemudian dikirim.",
+        "**Receive Payment & Deposit Cash:** kas, cek, atau electronic funds transfer (EFT) diterima, diterapkan ke piutang pelanggan, dan disetor ke rekening bank perusahaan."
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pemicu transaksi",
+        "Debit",
+        "Kredit",
+        "Dampak laporan keuangan"
+      ],
+      "rows": [
+        [
+          "Penyerahan barang (penjualan kredit)",
+          "Accounts Receivable",
+          "Sales Revenue; Sales Tax Payable (bila ada)",
+          "Aset piutang naik; pendapatan operasi naik; liabilitas lancar pajak penjualan naik."
+        ],
+        [
+          "Biaya pemenuhan pesanan",
+          "Cost of Goods Sold",
+          "Merchandise Inventory",
+          "Beban naik; aset persediaan turun (matching)."
+        ],
+        [
+          "Pembayaran diterima dalam periode diskon (mis. 2/10, net 30)",
+          "Cash (neto); Sales Discounts",
+          "Accounts Receivable (bruto)",
+          "Sales Discounts adalah akun kontra-pendapatan yang mengurangi Net Sales."
+        ],
+        [
+          "Pembayaran diterima setelah periode diskon",
+          "Cash (bruto)",
+          "Accounts Receivable (bruto)",
+          "Konversi aset langsung dari piutang ke kas."
+        ]
+      ],
+      "caption": "Penjualan kredit, pajak, COGS, dan penerimaan kas mengikuti Richardson 4e, p. 284, Exhibit 7.1. Potongan tunai 2/10, net 30 pada dua baris terakhir adalah ilustrasi tambahan."
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Titik pengakuan pendapatan",
+      "text": "Pendapatan dan COGS diakui saat **barang diserahkan dan kewajiban kinerja terpenuhi**, bukan saat sales order ditandatangani. Quote dan sales order tidak dijurnal. Sales discount dicatat saat pelanggan membayar dalam periode diskon, bukan saat invoice diterbitkan."
+    },
+    {
+      "kind": "h2",
+      "text": "2. Activity Modeling: BPMN Collaboration, Orchestration & Exception Handling"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Aspek",
+        "Orchestration",
+        "Collaboration"
+      ],
+      "rows": [
+        [
+          "Fokus",
+          "Alur kerja internal di dalam **satu pool**, mis. Sunset Graphics mengalirkan pesanan antar-lane Sales, Warehouse, dan Accounting.",
+          "Pertukaran pesan eksternal antara **pool yang terpisah**, biasanya Customer Pool dan Enterprise Pool."
+        ],
+        [
+          "Konektor",
+          "Sequence Flow (`───►`)",
+          "Message Flow (`---▷`)"
+        ],
+        [
+          "Aturan",
+          "Sequence flow hanya menghubungkan elemen dalam pool yang sama.",
+          "Sequence flow **tidak pernah** menghubungkan elemen di pool berbeda; antar-pool hanya message flow."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 285–288; Exhibit 7.4."
+    },
+    {
+      "kind": "ol",
+      "items": [
+        "Customer Request for Quote → Enterprise Quotation.",
+        "Customer Purchase Order → Enterprise Order Acknowledgment.",
+        "Physical Goods Delivery with Packing Slip → Customer Goods Receiving.",
+        "Enterprise Billing Invoice → Customer Payment Approval.",
+        "Customer Remittance Advice & Payment → Enterprise Cash Receipt."
+      ]
+    },
+    {
+      "kind": "h3",
+      "text": "Exception handling dalam Order-to-Cash"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Elemen BPMN",
+        "Penempatan",
+        "Alur normal",
+        "Alur exception"
+      ],
+      "rows": [
+        [
+          "Exclusive Gateway (XOR)",
+          "Setelah pesanan diterima, menilai ketersediaan persediaan.",
+          "Persediaan cukup: subprocess packing dan shipping dimulai.",
+          "Stockout: dialihkan ke subprocess pembelian bahan, atau pelanggan diberi tahu untuk membatalkan atau menerima backorder."
+        ],
+        [
+          "Intermediate Error Boundary Event",
+          "Menempel di batas task/subprocess, mis. Credit Card Authorization.",
+          "Card processor menyetujui charge: sequence flow keluar menuju pemenuhan pesanan.",
+          "Otorisasi gagal: error event mencegat alur dan mengarahkan token ke Request Alternate Payment atau Cancel Order."
+        ],
+        [
+          "Intermediate Timer Boundary Event",
+          "Menempel pada task Await Customer Payment untuk menegakkan termin kredit.",
+          "Pembayaran tiba dalam 30 hari: alur penerimaan kas normal.",
+          "Timer 30 hari habis tanpa pembayaran: Generate Dunning Notice dan Escalate Past-Due Account."
+        ],
+        [
+          "Looping Task (penjualan internet)",
+          "Entri pembayaran oleh pelanggan melalui web browser.",
+          "Pelanggan dapat mengoreksi salah ketik pada data pembayaran.",
+          "Batas percobaan `{Retry_Count <= 3}` mencegah serangan brute-force kartu; melampaui batas memicu error event yang mengakhiri sesi."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 288–293; Exhibits 7.6–7.9."
+    },
+    {
+      "kind": "callout",
+      "variant": "warning",
+      "title": "Aturan batas pool",
+      "text": "Pool mewakili entitas terpisah, lane mewakili departemen internal. Customer dan Enterprise hanya boleh berinteraksi melalui **message flow**; sequence flow yang melintasi batas pool adalah kesalahan pemodelan BPMN."
+    },
+    {
+      "kind": "h2",
+      "text": "3. Internal Control Framework & Application Controls"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tipe kontrol COSO",
+        "Contoh dalam Sales & Collections"
+      ],
+      "rows": [
+        [
+          "Preventive",
+          "Persetujuan kredit sebelum order entry, lookup harga dari master price list, pemisahan tugas yang ketat, invoice penjualan bernomor urut tercetak."
+        ],
+        [
+          "Detective",
+          "Laporan rekening bulanan ke pelanggan, review berkala aging schedule piutang, cycle count persediaan fisik, rekonsiliasi bank independen."
+        ],
+        [
+          "Corrective",
+          "Pembalikan entri penagihan yang salah, penyesuaian saldo invoice yang disengketakan melalui credit memo terotorisasi, penyelesaian sengketa oleh customer service."
+        ]
+      ],
+      "caption": "Richardson 4e, Exhibit 7.10."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Fungsi",
+        "Tanggung jawab",
+        "Tidak boleh"
+      ],
+      "rows": [
+        [
+          "Sales Order Entry",
+          "Menerima dan memasukkan pesanan pelanggan.",
+          "Menyetujui batas kredit pelanggan."
+        ],
+        [
+          "Credit Department",
+          "Menyetujui kredit pelanggan.",
+          "Memulai penjualan atau menangani kas."
+        ],
+        [
+          "Warehouse / Shipping",
+          "Custody fisik persediaan dan pengiriman.",
+          "Memperbarui catatan penagihan atau akun buku besar."
+        ],
+        [
+          "Billing / Accounts Receivable",
+          "Memelihara catatan akuntansi piutang.",
+          "Menangani penerimaan kas atau memegang barang fisik."
+        ],
+        [
+          "Cashier / Mailroom",
+          "Menangani kas dan cek.",
+          "Memposting kredit ke akun piutang masing-masing pelanggan."
+        ]
+      ],
+      "caption": "Pemisahan tugas mencegah pencurian persediaan yang ditutupi pengiriman tanpa tagihan dan lapping piutang. Richardson 4e, pp. 294–295."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Business rule (ECA)",
+        "Aturan"
+      ],
+      "rows": [
+        [
+          "Quote Rule",
+          "Quote di atas \\$10,000 memerlukan persetujuan partner."
+        ],
+        [
+          "Order Rule",
+          "Pesanan tidak dapat diterima dari pelanggan dengan saldo tertunggak lebih dari 60 hari."
+        ],
+        [
+          "Shipping Rule",
+          "Barang hanya dikeluarkan bila ada sales order yang disetujui dan picking list yang cocok."
+        ],
+        [
+          "Cash Receipt Rule",
+          "Semua cek segera diendors \"For Deposit Only\" dan disetor utuh setiap hari."
+        ]
+      ],
+      "caption": "Business rule ditegakkan dengan logika Event-Condition-Action. Richardson 4e, Exhibit 7.11."
+    },
+    {
+      "kind": "h3",
+      "text": "Enam application control dalam desain database"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Application control",
+        "Fungsi",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Field Check",
+          "Menegakkan tipe data yang valid.",
+          "Hanya data numerik di `Quantity_Ordered`."
+        ],
+        [
+          "Validity Check",
+          "Memastikan kode yang dimasukkan ada di tabel master.",
+          "`Customer_Number` harus ada di tabel `Customers`."
+        ],
+        [
+          "Limit Check",
+          "Menguji nilai terhadap satu batas.",
+          "Diskon tidak boleh melebihi 20%."
+        ],
+        [
+          "Range Check",
+          "Menguji nilai di antara batas bawah dan batas atas.",
+          "Kuantitas pesanan antara 1 dan 10,000 unit."
+        ],
+        [
+          "Reasonableness Check",
+          "Mengevaluasi logika kontekstual antar-field.",
+          "`Delivery_Date` tidak boleh lebih awal dari `Order_Date`."
+        ],
+        [
+          "Completeness Check",
+          "Mewajibkan field penting terisi sebelum disimpan.",
+          "Constraint `NOT NULL`."
+        ]
+      ],
+      "caption": "Richardson 4e, pp. 297–299; Exhibits 7.12–7.17."
+    },
+    {
+      "kind": "p",
+      "text": "**Automated input capture:** barcode scanner optik, UPC, dan RFID reader mengotomatiskan picking dan verifikasi pengiriman, menghilangkan kesalahan ketik manual, dan memperbarui catatan persediaan perpetual seketika. Richardson 4e, p. 299."
+    },
+    {
+      "kind": "h2",
+      "text": "4. Structure Modeling: UML Class Diagrams & REA Patterns"
+    },
+    {
+      "kind": "figure",
+      "title": "REA penjualan dan penerimaan kas",
+      "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 850 290\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\">\n    <rect x=\"1\" y=\"1\" width=\"848\" height=\"288\" rx=\"18\" fill=\"#fff\" stroke=\"#cbd5e1\"/>\n    <text x=\"28\" y=\"40\" fill=\"#0f172a\" font-size=\"20\" font-weight=\"700\">REA Order-to-Cash</text>\n    <g stroke-width=\"2\"><rect x=\"30\" y=\"83\" width=\"180\" height=\"70\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#0369a1\"/><rect x=\"240\" y=\"83\" width=\"180\" height=\"70\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#047857\"/><rect x=\"450\" y=\"83\" width=\"180\" height=\"70\" rx=\"12\" fill=\"#ecfdf5\" stroke=\"#047857\"/><rect x=\"660\" y=\"83\" width=\"160\" height=\"70\" rx=\"12\" fill=\"#eff6ff\" stroke=\"#0369a1\"/></g>\n    <g fill=\"#0f172a\" font-size=\"15\" font-weight=\"700\"><text x=\"45\" y=\"112\">Inventory</text><text x=\"255\" y=\"112\">Delivered Order</text><text x=\"465\" y=\"112\">Cash Receipt</text><text x=\"675\" y=\"112\">Cash</text></g>\n    <g fill=\"#475569\" font-size=\"12\"><text x=\"45\" y=\"136\">Resource</text><text x=\"255\" y=\"136\">Event</text><text x=\"465\" y=\"136\">Event</text><text x=\"675\" y=\"136\">Resource</text></g>\n    <g fill=\"none\" stroke=\"#64748b\" stroke-width=\"2\"><path d=\"M210 118 H240\"/><path d=\"M420 118 H450\"/><path d=\"M630 118 H660\"/><path d=\"M330 153 V205 H540 V153\"/></g>\n    <text x=\"435\" y=\"191\" text-anchor=\"middle\" fill=\"#475569\" font-size=\"13\">duality: dua sisi pertukaran ekonomi</text>\n    <rect x=\"287\" y=\"224\" width=\"276\" height=\"42\" rx=\"12\" fill=\"#fff7ed\" stroke=\"#b45309\"/>\n    <path d=\"M287 245 H224 V132 H240 M563 245 H646 V132 H630\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"1.5\"/>\n    <text x=\"425\" y=\"251\" text-anchor=\"middle\" fill=\"#7c2d12\" font-size=\"14\" font-weight=\"700\">Agent eksternal: Customer</text>\n    <text x=\"28\" y=\"283\" fill=\"#475569\" font-size=\"12\">Skema konsep REA; asosiasi dan multiplicity lengkap dijelaskan pada tabel materi.</text>\n  </svg>",
+      "altText": "Sumber daya persediaan terkait peristiwa penyerahan pesanan, yang berpasangan secara dualitas dengan penerimaan kas; kas bertambah dan Customer berpartisipasi dalam dua peristiwa.",
+      "mobileFlow": {
+        "mode": "cards",
+        "title": "REA penjualan: resource, event, agent",
+        "stages": [
+          {
+            "actor": "Give: Inventory → Delivered Order",
+            "actions": [
+              "Perusahaan menyerahkan persediaan kepada Customer."
+            ]
+          },
+          {
+            "actor": "Get: Cash Receipt → Cash",
+            "actions": [
+              "Customer membayar; kas perusahaan bertambah."
+            ]
+          },
+          {
+            "actor": "Duality dan agent",
+            "actions": [
+              "Delivered Order ↔ Cash Receipt adalah dua sisi pertukaran.",
+              "Customer terlibat sebagai agent eksternal."
+            ]
+          }
+        ]
+      },
+      "transcript": [
+        "Resource Inventory berkurang ketika pesanan diserahkan.",
+        "Event Delivered Order dan Cash Receipt berpasangan sebagai give-get (duality).",
+        "Resource Cash bertambah setelah penerimaan pembayaran.",
+        "Customer adalah agent eksternal; staf internal juga terlibat. Jumlah order dan pembayaran yang saling terkait mengikuti aturan multiplicity yang dijelaskan di tabel."
+      ],
+      "caption": "Skema konsep REA untuk latihan TM6. Hubungan pembayaran Sunset Graphics dalam ebook lebih terbatas daripada skema pembayaran parsial yang dibahas pada materi."
+    },
+    {
+      "kind": "callout",
+      "variant": "key",
+      "title": "Asumsi pembayaran Sunset Graphics",
+      "text": "Pada Exhibit 7.20, satu Cash Receipt dapat melunasi satu atau beberapa Orders, tetapi setiap Order terkait paling banyak satu Cash Receipt. Artinya model Sunset pada buku tidak memodelkan cicilan parsial untuk satu order. Skema latihan di bawah menambahkan linking table agar pembayaran parsial dan penerapan satu pembayaran ke beberapa order bisa dipelajari. Richardson 4e, pp. 297–298."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "REA",
+        "Class",
+        "Keterangan"
+      ],
+      "rows": [
+        [
+          "Resources",
+          "Products (Inventory); Cash (Bank Accounts)",
+          "Barang jadi dan produk custom yang dijual; rekening bank yang menerima setoran pelanggan."
+        ],
+        [
+          "Events",
+          "Quotes; Orders (Sales); Cash_Receipts",
+          "Komitmen harga tidak mengikat; purchase order pelanggan yang mengikat; transaksi pembayaran pelanggan."
+        ],
+        [
+          "Agents",
+          "Customers (eksternal); Employees (internal)",
+          "Pembeli yang memesan dan membayar; salesperson, staf gudang, dan kasir."
+        ]
+      ],
+      "caption": "Richardson 4e, Exhibits 7.18–7.21."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Asosiasi",
+        "Multiplicity",
+        "Logika bisnis"
+      ],
+      "rows": [
+        [
+          "Customers places Orders",
+          "(1..1) – (0..\\*)",
+          "Setiap pesanan terhubung ke tepat satu pelanggan; pelanggan dapat memiliki nol atau banyak pesanan."
+        ],
+        [
+          "Orders includes Products",
+          "(1..\\*) – (0..\\*)",
+          "Pesanan memuat minimal satu baris produk; produk dapat muncul di banyak pesanan (Many-to-Many)."
+        ],
+        [
+          "Bank_Accounts deposits Cash_Receipts",
+          "(1..1) – (0..\\*)",
+          "Setiap penerimaan kas disetor ke tepat satu rekening bank."
+        ],
+        [
+          "Orders settled by Cash_Receipts",
+          "(0..1) receipt per Order; (1..\\*) Orders per Receipt",
+          "Asumsi Sunset pada Exhibit 7.20: order yang sudah lunas berhubungan dengan satu penerimaan kas; satu cek pelanggan dapat melunasi beberapa order."
+        ]
+      ],
+      "caption": "Asosiasi Sunset pada Richardson 4e, pp. 297–299, Exhibits 7.20–7.21. Pembayaran parsial di skema latihan Bagian 5 adalah perluasan."
+    },
+    {
+      "kind": "p",
+      "text": "Secara konsep REA, **Accounts Receivable dapat dihitung dari penjualan yang sudah diserahkan dikurangi kas yang diterapkan**. Exhibit 7.24 pada buku tetap mencantumkan `Customer_balance` pada tabel pelanggan; nilai itu perlu disinkronkan dengan transaksi agar tidak menjadi saldo yang bertentangan. Skema latihan di bawah memilih derivasi dinamis melalui linking table."
+    },
+    {
+      "kind": "formula",
+      "text": "\\text{A/R} = \\sum \\text{Delivered Orders} - \\sum \\text{Applied Cash Receipts}",
+      "note": "Piutang dihitung dari pesanan terkirim dikurangi penerimaan kas yang diterapkan (Amount_Applied), bukan disimpan sebagai angka statis."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Type image",
+        "Fungsi di Sunset Graphics"
+      ],
+      "rows": [
+        [
+          "Product_Category",
+          "Mengklasifikasikan produk (Vinyl Banners, Embroidered Caps, Screen-printed Shirts) dan menugaskan tanggung jawab manajemen persediaan kepada partner yang ditunjuk."
+        ],
+        [
+          "Order_Status",
+          "Melacak tahap pesanan: Under Review, Approved, In Production, Shipped, Invoiced, Closed."
+        ]
+      ],
+      "caption": "Type image adalah class yang mengategorikan entitas bisnis inti untuk menetapkan kebijakan, memantau status, dan mengalokasikan tanggung jawab manajemen tanpa menduplikasi skema tabel. Richardson 4e, Exhibit 7.21."
+    },
+    {
+      "kind": "h2",
+      "text": "5. Relational Database Implementation & Sunset Graphics Case Study"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tabel",
+        "Kolom",
+        "Tipe",
+        "Kunci / constraint"
+      ],
+      "rows": [
+        [
+          "Customers",
+          "Customer_Number",
+          "INT",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Customers",
+          "Customer_Name",
+          "VARCHAR(100)",
+          "NOT NULL"
+        ],
+        [
+          "Customers",
+          "Billing_Address",
+          "VARCHAR(150)",
+          "—"
+        ],
+        [
+          "Customers",
+          "Credit_Limit",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Employees",
+          "Employee_Number",
+          "INT",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Employees",
+          "Employee_Name",
+          "VARCHAR(100)",
+          "NOT NULL"
+        ],
+        [
+          "Employees",
+          "Job_Title",
+          "VARCHAR(50)",
+          "NOT NULL"
+        ],
+        [
+          "Product_Category",
+          "Category_Code",
+          "VARCHAR(10)",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Product_Category",
+          "Category_Name",
+          "VARCHAR(50)",
+          "NOT NULL"
+        ],
+        [
+          "Product_Category",
+          "Manager_Employee#",
+          "INT",
+          "FOREIGN KEY → Employees(Employee_Number)"
+        ],
+        [
+          "Products",
+          "Product_Number",
+          "INT",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Products",
+          "Description",
+          "VARCHAR(100)",
+          "NOT NULL"
+        ],
+        [
+          "Products",
+          "Category_Code",
+          "VARCHAR(10)",
+          "FOREIGN KEY → Product_Category(Category_Code)"
+        ],
+        [
+          "Products",
+          "Unit_Price",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Products",
+          "Unit_Cost",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Products",
+          "Quantity_On_Hand",
+          "INT",
+          "NOT NULL"
+        ],
+        [
+          "Order_Status",
+          "Status_Code",
+          "VARCHAR(10)",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Order_Status",
+          "Status_Description",
+          "VARCHAR(50)",
+          "NOT NULL"
+        ],
+        [
+          "Orders",
+          "Order_Number",
+          "INT",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Orders",
+          "Order_Date",
+          "DATE",
+          "NOT NULL"
+        ],
+        [
+          "Orders",
+          "Customer_Number",
+          "INT",
+          "FOREIGN KEY → Customers(Customer_Number)"
+        ],
+        [
+          "Orders",
+          "Employee_Number",
+          "INT",
+          "FOREIGN KEY → Employees(Employee_Number)"
+        ],
+        [
+          "Orders",
+          "Status_Code",
+          "VARCHAR(10)",
+          "FOREIGN KEY → Order_Status(Status_Code)"
+        ],
+        [
+          "Order_Items (linking)",
+          "Order_Number",
+          "INT",
+          "NOT NULL, FOREIGN KEY → Orders(Order_Number)"
+        ],
+        [
+          "Order_Items (linking)",
+          "Product_Number",
+          "INT",
+          "NOT NULL, FOREIGN KEY → Products(Product_Number)"
+        ],
+        [
+          "Order_Items (linking)",
+          "Quantity_Ordered",
+          "INT",
+          "NOT NULL"
+        ],
+        [
+          "Order_Items (linking)",
+          "Selling_Price",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Order_Items (linking)",
+          "(Order_Number, Product_Number)",
+          "—",
+          "Composite PRIMARY KEY"
+        ],
+        [
+          "Quotes",
+          "Quote_Number",
+          "INT",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Quotes",
+          "Quote_Date",
+          "DATE",
+          "NOT NULL"
+        ],
+        [
+          "Quotes",
+          "Customer_Number",
+          "INT",
+          "FOREIGN KEY → Customers(Customer_Number)"
+        ],
+        [
+          "Quotes",
+          "Employee_Number",
+          "INT",
+          "FOREIGN KEY → Employees(Employee_Number)"
+        ],
+        [
+          "Quote_Items (linking)",
+          "Quote_Number",
+          "INT",
+          "NOT NULL, FOREIGN KEY → Quotes(Quote_Number)"
+        ],
+        [
+          "Quote_Items (linking)",
+          "Product_Number",
+          "INT",
+          "NOT NULL, FOREIGN KEY → Products(Product_Number)"
+        ],
+        [
+          "Quote_Items (linking)",
+          "Quantity_Quoted",
+          "INT",
+          "NOT NULL"
+        ],
+        [
+          "Quote_Items (linking)",
+          "Quoted_Price",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Quote_Items (linking)",
+          "(Quote_Number, Product_Number)",
+          "—",
+          "Composite PRIMARY KEY"
+        ],
+        [
+          "Bank_Accounts",
+          "Account_Number",
+          "VARCHAR(20)",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Bank_Accounts",
+          "Bank_Name",
+          "VARCHAR(50)",
+          "NOT NULL"
+        ],
+        [
+          "Bank_Accounts",
+          "Account_Balance",
+          "DECIMAL(12,2)",
+          "NOT NULL"
+        ],
+        [
+          "Cash_Receipts",
+          "Receipt_Number",
+          "INT",
+          "PRIMARY KEY, NOT NULL"
+        ],
+        [
+          "Cash_Receipts",
+          "Receipt_Date",
+          "DATE",
+          "NOT NULL"
+        ],
+        [
+          "Cash_Receipts",
+          "Receipt_Amount",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Cash_Receipts",
+          "Customer_Number",
+          "INT",
+          "FOREIGN KEY → Customers(Customer_Number)"
+        ],
+        [
+          "Cash_Receipts",
+          "Employee_Number",
+          "INT",
+          "FOREIGN KEY → Employees(Employee_Number)"
+        ],
+        [
+          "Cash_Receipts",
+          "Account_Number",
+          "VARCHAR(20)",
+          "FOREIGN KEY → Bank_Accounts(Account_Number)"
+        ],
+        [
+          "Order_Cash_Receipts (linking)",
+          "Order_Number",
+          "INT",
+          "NOT NULL, FOREIGN KEY → Orders(Order_Number)"
+        ],
+        [
+          "Order_Cash_Receipts (linking)",
+          "Receipt_Number",
+          "INT",
+          "NOT NULL, FOREIGN KEY → Cash_Receipts(Receipt_Number)"
+        ],
+        [
+          "Order_Cash_Receipts (linking)",
+          "Amount_Applied",
+          "DECIMAL(10,2)",
+          "NOT NULL"
+        ],
+        [
+          "Order_Cash_Receipts (linking)",
+          "(Order_Number, Receipt_Number)",
+          "—",
+          "Composite PRIMARY KEY"
+        ]
+      ],
+      "caption": "Skema latihan 12 tabel yang memperluas Sunset Graphics dengan Order_Cash_Receipts untuk pembayaran parsial; bukan salinan Exhibit 7.24. Buku memuat 11 tabel dan menghubungkan Orders dengan Receipt_number. Bandingkan Richardson 4e, hlm. 301–305, Exhibits 7.24–7.29."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kelompok tabel",
+        "Tabel"
+      ],
+      "rows": [
+        [
+          "Master",
+          "Customers, Employees, Products, Bank_Accounts"
+        ],
+        [
+          "Transaksi (event)",
+          "Quotes, Orders, Cash_Receipts"
+        ],
+        [
+          "Type image",
+          "Product_Category, Order_Status"
+        ],
+        [
+          "Linking (M:N)",
+          "Quote_Items (Quote_Number, Product_Number); Order_Items (Order_Number, Product_Number); Order_Cash_Receipts (Order_Number, Receipt_Number)"
+        ]
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "tip",
+      "title": "Form dan subform sales order",
+      "text": "**Main form** menampilkan header `Orders` (Order Number, Order Date, Customer, Employee, Status). **Subform** tertanam terikat ke `Order_Items` dan menghitung total baris (`Quantity_Ordered * Selling_Price`) serta total invoice secara dinamis. **Dropdown combo box** membatasi input hanya pada primary key yang sudah ada di `Customers`, `Employees`, dan `Products` sehingga referential integrity ditegakkan sejak entri data."
+    },
+    {
+      "kind": "h2",
+      "text": "6. Worked Practice"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "1. Ilustrasi Sunset Graphics: banner custom dan potongan tunai",
+      "prompt": "Sebagai latihan buatan berdasarkan alur Sunset Graphics dalam Richardson 4e Bab 7 (hlm. 284–305), andaikan ada pesanan 10 vinyl event banner seharga \\$120.00 per unit; biaya standar \\$45.00 per unit; termin 2/10, net 30. Banner diserahkan dan ditagih pada 5 Oktober, lalu dibayar pada 12 Oktober. Susun seluruh jurnalnya. Jumlah, harga, dan tanggal ini adalah asumsi latihan.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\text{Gross Invoice} = 10 \\times 120.00 = 1{,}200.00\n\\text{Total COGS} = 10 \\times 45.00 = 450.00\n\\text{Cash Discount (2\\%)} = 1{,}200.00 \\times 0.02 = 24.00\n\\text{Cash Received} = 1{,}200.00 - 24.00 = 1{,}176.00",
+          "note": "Satuan USD. Pembayaran 12 Oktober masih dalam periode diskon 10 hari sejak invoice 5 Oktober."
+        },
+        {
+          "kind": "journal",
+          "caption": "5 Oktober: penyerahan dan invoice 10 banner (USD)",
+          "lines": [
+            {
+              "account": "Accounts Receivable (Piutang Usaha)",
+              "debit": "$1,200.00"
+            },
+            {
+              "account": "Sales Revenue (Pendapatan Penjualan)",
+              "credit": "$1,200.00",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "caption": "5 Oktober: pengurangan persediaan pada standard cost 10 × 45.00 (USD)",
+          "lines": [
+            {
+              "account": "Cost of Goods Sold (Beban Pokok Penjualan)",
+              "debit": "$450.00"
+            },
+            {
+              "account": "Merchandise Inventory (Persediaan Barang Dagang)",
+              "credit": "$450.00",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "caption": "12 Oktober: penagihan dikurangi potongan tunai 2% (USD)",
+          "lines": [
+            {
+              "account": "Cash (Kas)",
+              "debit": "$1,176.00"
+            },
+            {
+              "account": "Sales Discounts (Potongan Penjualan, kontra-pendapatan)",
+              "debit": "$24.00"
+            },
+            {
+              "account": "Accounts Receivable (Piutang Usaha)",
+              "credit": "$1,200.00",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Piutang dihapus penuh sebesar \\$1,200.00, kas bertambah \\$1,176.00, dan \\$24.00 dicatat sebagai potongan kontra-pendapatan. Total debit = total kredit = \\$1,650.00 pada 5 Oktober dan \\$1,200.00 pada 12 Oktober."
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "2. Pelanggaran pemisahan tugas",
+      "prompt": "Audit menemukan bahwa di Company X shipping manager memiliki hak sistem untuk menghapus saldo piutang pelanggan di bawah \\$1,000 sebagai \"uncollectible\" tanpa persetujuan kedua. Evaluasi kontrolnya.",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Aspek",
+            "Evaluasi"
+          ],
+          "rows": [
+            [
+              "Defek kontrol",
+              "Pelanggaran berat Segregation of Duties."
+            ],
+            [
+              "Risiko",
+              "Custody barang fisik (shipping) digabung dengan otorisasi penyesuaian catatan piutang. Shipping manager dapat mencuri persediaan, mengirimnya ke kaki tangan, membuat piutang fiktif, lalu menghapusnya sebagai uncollectible sehingga pencurian tertutup sepenuhnya."
+            ],
+            [
+              "Remediasi",
+              "Cabut hak penghapusan piutang dari staf shipping. Batasi otorisasi penghapusan piutang pada CFO atau credit manager yang independen dari penanganan kas dan pengiriman."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "3. Klasifikasi application control",
+      "prompt": "Cocokkan setiap validasi dengan jenis application control: (a) karyawan tidak dapat memasukkan 30 Februari sebagai tanggal pesanan; (b) kuantitas invoice tidak boleh negatif atau melebihi 10,000 unit; (c) nomor telepon pelanggan harus tepat 10 digit tanpa huruf; (d) tanggal pengiriman tidak boleh sebelum tanggal sales order; (e) nomor identifikasi pajak (NPWP) pelanggan tidak boleh kosong.",
+      "blocks": [
+        {
+          "kind": "table",
+          "headers": [
+            "Validasi",
+            "Application control",
+            "Alasan"
+          ],
+          "rows": [
+            [
+              "(a) 30 Februari ditolak",
+              "Field Check",
+              "Nilai tidak memenuhi tipe data DATE yang valid; bukan validity check karena tidak ada kode yang dicocokkan ke tabel master."
+            ],
+            [
+              "(b) Kuantitas 1 sampai 10,000",
+              "Range Check",
+              "Batas bawah dan batas atas sekaligus."
+            ],
+            [
+              "(c) Tepat 10 digit numerik",
+              "Field Check",
+              "Tipe dan format data."
+            ],
+            [
+              "(d) Tanggal kirim ≥ tanggal pesanan",
+              "Reasonableness Check",
+              "Logika hubungan antar-field."
+            ],
+            [
+              "(e) NPWP wajib terisi",
+              "Completeness Check",
+              "Field wajib NOT NULL."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "7. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Peristiwa Order-to-Cash",
+        "Jurnal"
+      ],
+      "rows": [
+        [
+          "Sales order diterima",
+          "Tidak ada jurnal."
+        ],
+        [
+          "Barang diserahkan dan ditagih",
+          "Dr Accounts Receivable, Cr Sales Revenue; Dr COGS, Cr Merchandise Inventory."
+        ],
+        [
+          "Kas diterima dalam periode diskon",
+          "Dr Cash (neto), Dr Sales Discounts, Cr Accounts Receivable (bruto)."
+        ],
+        [
+          "Kas diterima setelah periode diskon",
+          "Dr Cash (bruto), Cr Accounts Receivable (bruto)."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Aturan BPMN",
+        "Ingat"
+      ],
+      "rows": [
+        [
+          "Sequence flow (`───►`)",
+          "Tidak pernah melintasi batas pool."
+        ],
+        [
+          "Message flow (`---▷`)",
+          "Hanya menghubungkan pool yang terpisah."
+        ],
+        [
+          "Pool vs lane",
+          "Pool = entitas terpisah; lane = departemen internal."
+        ],
+        [
+          "Boundary event",
+          "Error event untuk kegagalan otorisasi; timer event untuk pembayaran lewat jatuh tempo."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Control",
+        "Fungsi",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Field Check",
+          "Kebenaran tipe data",
+          "Hanya angka di Quantity_Ordered."
+        ],
+        [
+          "Validity Check",
+          "Ada di file master",
+          "Customer_Number ada di tabel Customers."
+        ],
+        [
+          "Limit Check",
+          "Batas satu sisi",
+          "Diskon ≤ 20%."
+        ],
+        [
+          "Range Check",
+          "Batas dua sisi",
+          "1 ≤ Quantity ≤ 10,000."
+        ],
+        [
+          "Reasonableness Check",
+          "Logika kontekstual",
+          "Delivery_Date ≥ Order_Date."
+        ],
+        [
+          "Completeness Check",
+          "Kehadiran wajib",
+          "Customer_Name tidak boleh NULL."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Common trap",
+        "Koreksi"
+      ],
+      "rows": [
+        [
+          "Mengakui pendapatan saat sales order ditandatangani.",
+          "Pendapatan diakui saat barang diserahkan dan kewajiban kinerja terpenuhi."
+        ],
+        [
+          "Menyimpan saldo piutang statis di tabel master pelanggan.",
+          "Dalam REA, piutang diturunkan dari pesanan terkirim yang terbuka dikurangi penerimaan kas."
+        ],
+        [
+          "Mengizinkan staf penjualan menyetujui kredit pelanggannya.",
+          "Persetujuan kredit dipisahkan dari pembuatan sales order."
+        ],
+        [
+          "Sequence flow menghubungkan pool Customer dan Enterprise.",
+          "Antar-pool hanya message flow."
+        ],
+        [
+          "Menyamakan sales discount dengan trade discount.",
+          "Trade discount mengurangi harga daftar saat invoice tanpa jurnal terpisah; sales discount (potongan tunai) dicatat saat pembayaran awal di akun kontra-pendapatan."
+        ]
+      ]
+    },
+    {
+      "kind": "callout",
+      "variant": "info",
+      "title": "Batas TM6",
+      "text": "File biner Microsoft Access dan diagram (.accdb, .vsdx) tidak disertakan; alur BPMN, model REA, skema 12 tabel, kunci, application control, dan jurnal disajikan dalam teks dan tabel. Siklus Purchases and Payments (Procure-to-Pay) dibahas pada TM7. Sumber utama: Richardson, Chang & Smith, AIS 4e ISE, Chapter 7, pp. 282–321."
+    }
+  ]
+}

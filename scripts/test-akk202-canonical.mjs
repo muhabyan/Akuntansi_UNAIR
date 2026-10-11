@@ -466,7 +466,7 @@ const tm5 = checkReading(5, [
 // ---------------------------------------------------------------- TM06
 const tm6 = checkReading(6, [
   'E12.1', 'E12.2', 'P12.1', 'P12.2', 'Purchase Discounts Lost', 'Discount on Notes Payable', 'Refundable Deposits',
-  'Interpretasi — PPN pembelian truk', 'Alternatif A', 'Alternatif B', 'Kieso p. 1066', 'pp. 1027–1028',
+  'Interpretasi — PPN pembelian truk', 'Alternatif A', 'Alternatif B', 'Kieso p. 1067', 'pp. 1027–1028',
   'more likely than not', 'tidak pernah diakui', 'Environmental Restoration Provision', 'Standards Comparison',
 ]);
 {

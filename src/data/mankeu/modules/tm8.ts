@@ -80,7 +80,7 @@ export const TM8_READING: Reading = {
   tm: 8,
   title: 'Master Review & Cheatsheet Pra-UTS (TM 1 s.d. TM 7) Manajemen Keuangan',
   ref: 'Kompilasi Standar Ujian Tengah Semester (UTS) FEB UNAIR | Brigham & Houston Ch. 1, 3, 4, 5, 8, 9, 10, 11',
-  intro: 'Modul ini adalah panduan pamungkas persiapan Ujian Tengah Semester (UTS) Manajemen Keuangan (MNK201). Modul ini menyatukan benang merah seluruh konsep TM 1 hingga TM 7 ke dalam satu kerangka kerja pengambilan keputusan finansial: mulai dari tujuan memaksimalkan kekayaan pemegang saham, dekomposisi laporan keuangan DuPont, nilai waktu dari uang (TVM), risiko dan imbal hasil CAPM, biaya modal rata-rata tertimbang (WACC), hingga evaluasi penganggaran modal (Capital Budgeting) dan estimasi arus kas inkremental.',
+  intro: 'Modul ini adalah panduan persiapan Ujian Tengah Semester (UTS) Manajemen Keuangan (MNK201). Isinya merangkum TM 1 sampai TM 7 dalam satu kerangka keputusan keuangan: tujuan memaksimalkan kekayaan pemegang saham, dekomposisi laporan keuangan dengan DuPont, nilai waktu uang (TVM), risiko dan imbal hasil lewat CAPM, biaya modal rata-rata tertimbang (WACC), sampai penganggaran modal (Capital Budgeting) dan estimasi arus kas inkremental.',
   objectives: [
     'Menguasai peta komprehensif seluruh rumus dan konsep inti TM 1 sampai TM 7 dalam satu lembar cheatsheet terpadu.',
     'Memahami 7 prinsip emas logika finansial yang selalu menjadi kunci jawaban soal ujian pilihan ganda dan analisis kasus.',

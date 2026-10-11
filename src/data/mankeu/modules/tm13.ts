@@ -71,7 +71,7 @@ export const TM13_READING: Reading = {
   tm: 13,
   title: 'Multinational Financial Management, Currency Risk, & International Parity',
   ref: 'Brigham & Ehrhardt Ch. 17 | Teori Paritas Valas (IRP, PPP, IFE) | Lindung Nilai (Hedging) Valuta Asing',
-  intro: 'TM 13 membahas manajemen keuangan internasional bagi perusahaan multinasional (MNC): struktur pasar valas (Spot vs Forward Market), kuotasi mata uang (Direct vs Indirect Quotation, Cross Rates), teori paritas internasional (Interest Rate Parity / IRP, Purchasing Power Parity / PPP, International Fisher Effect / IFE), serta strategi lindung nilai (Forward Contract, Money Market Hedge, dan Currency Options).',
+  intro: 'TM 13 membahas manajemen keuangan internasional untuk perusahaan multinasional (MNC). Topiknya struktur pasar valas (Spot vs Forward Market), kuotasi mata uang (Direct vs Indirect Quotation, Cross Rates), teori paritas internasional (Interest Rate Parity / IRP, Purchasing Power Parity / PPP, International Fisher Effect / IFE), dan strategi lindung nilai (Forward Contract, Money Market Hedge, Currency Options).',
   objectives: [
     'Menghitung kurs silang (Cross Exchange Rates) dan mengidentifikasi peluang Triangular Arbitrage.',
     'Menerapkan Teori Interest Rate Parity (IRP) untuk menentukan kurs forward yang wajar.',

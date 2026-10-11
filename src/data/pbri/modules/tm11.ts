@@ -1,154 +1,1110 @@
+// AKA201 TM11/05_student_learning_version.md, converted by C:\Users\Lenovo\aka201-converter\convert-aka201-v2.mjs.
+// The text is verbatim from the content package; figures come from aka201-fig-*.mjs. Change those and re-run the converter instead of editing here.
 import type { Reading } from '../../../types';
-import { CASE_COSO_INTERNAL_CONTROL } from '../pbriPracticeCases';
-
-const SVG_COSO_CUBE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPb11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="c4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="c5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb11)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 KOMPONEN PENGENDALIAN INTERNAL COSO FRAMEWORK &amp; 17 PRINSIP (SA 315)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">COSO FRAMEWORK</text>
-
-  <!-- 5 Horizontal Stepped Layers Cascade (Bottom to Top) -->
-  <!-- 5. Monitoring (Top) -->
-  <g transform="translate(45, 68)">
-    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c5)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="14" y="13" fill="#34d399" font-size="8.5" font-weight="800">5. PEMANTAUAN (MONITORING ACTIVITIES) - 2 Prinsip</text>
-    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Evaluasi berkelanjutan oleh Internal Audit &amp; Komite Audit; pelaporan defisiensi kepada Dewan Direksi &amp; Komisaris.</text>
-  </g>
-
-  <!-- 4. Information & Communication -->
-  <g transform="translate(45, 116)">
-    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c4)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="14" y="13" fill="#fbbf24" font-size="8.5" font-weight="800">4. INFORMASI DAN KOMUNIKASI (INFORMATION &amp; COMMUNICATION) - 3 Prinsip</text>
-    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Sistem informasi akuntansi yang andal, saluran pelaporan pelanggaran (Whistleblowing System), komunikasi eksternal regulator.</text>
-  </g>
-
-  <!-- 3. Control Activities -->
-  <g transform="translate(45, 164)">
-    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c3)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="14" y="13" fill="#38bdf8" font-size="8.5" font-weight="800">3. AKTIVITAS PENGENDALIAN (CONTROL ACTIVITIES) - 3 Prinsip</text>
-    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Pemisahan tugas (Segregation of Duties), otorisasi bertingkat, verifikasi berkas, rekonsiliasi bank, &amp; kontrol fisik aset.</text>
-  </g>
-
-  <!-- 2. Risk Assessment -->
-  <g transform="translate(45, 212)">
-    <rect class="svg-card" x="0" y="0" width="810" height="42" rx="6" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
-    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c2)" fill-opacity="0.25"/>
-    <text class="text-accent-red" x="14" y="13" fill="#f87171" font-size="8.5" font-weight="800">2. PENILAIAN RISIKO (RISK ASSESSMENT) - 4 Prinsip</text>
-    <text class="svg-text" x="14" y="30" fill="#cbd5e1" font-size="7.5">Identifikasi risiko bisnis makro, penilaian signifikansi risiko kecurangan (Fraud Risk Assessment), &amp; respon risiko perubahan.</text>
-  </g>
-
-  <!-- 1. Control Environment (Foundation) -->
-  <g transform="translate(45, 260)">
-    <rect class="svg-card" x="0" y="0" width="810" height="48" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="2"/>
-    <rect x="0" y="0" width="810" height="16" rx="6" fill="url(#c1)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="14" y="13" fill="#a78bfa" font-size="8.5" font-weight="800">1. LINGKUNGAN PENGENDALIAN (CONTROL ENVIRONMENT) - FONDASI 5 Prinsip</text>
-    <text class="svg-text" x="14" y="32" fill="#cbd5e1" font-size="7.5">Integritas &amp; etika, "Tone at the Top" dari direksi, independensi Dewan Komisaris, struktur organisasi hierarki, komitmen kompetensi SDM.</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle">Lingkungan Pengendalian adalah fondasi penentu: Jika "Tone at the Top" rusak, 4 komponen di atasnya tidak akan efektif.</text>
-</svg>`;
 
 export const TM11_READING: Reading = {
-  tm: 11,
-  title: 'Pengendalian Internal COSO 2013, 17 Prinsip, & Segregasi Tugas (CARP)',
-  ref: 'Arens 16e Ch. 11 & 12 | COSO Internal Control 2013 | SA 315, SA 265',
-  intro: 'TM 11 membahas evaluasi pengendalian internal: 5 komponen dan 17 prinsip kerangka COSO 2013, pemisahan tugas mutlak (Segregation of Duties CARP), teknik pendokumentasian kontrol (Flowchart, Kuesioner Pengendalian Internal/ICQ, Naratif), serta klasifikasi defisiensi kontrol menurut SA 265 (Control Deficiency, Significant Deficiency, Material Weakness).',
-  objectives: [
-    'Mengidentifikasi 5 komponen dan 17 prinsip COSO Internal Control Framework 2013.',
-    'Menerapkan prinsip segregasi tugas CARP (Custody, Authorization, Recording, Periodic Reconciliation).',
-    'Menilai efektivitas rancangan pengendalian (Design Effectiveness) vs efektivitas operasi (Operating Effectiveness).',
-    'Mengklasifikasikan defisiensi kontrol dan menyusun Surat Manajemen (Management Letter SA 265).'
+  "tm": 11,
+  "title": "Dokumentasi Audit dan Kertas Kerja",
+  "intro": "**Sumber utama:** Arens dkk., Ch.5, pp.156–161. **Standar:** SA/ISA 230 (dokumentasi audit). Bagian akhir juga menyinggung skeptisisme profesional, yang di buku dikaitkan dengan Ch.3.",
+  "objectives": [
+    "Menjelaskan tujuan dokumentasi audit dan tolok ukur \"auditor berpengalaman yang belum pernah terlibat\".",
+    "Membedakan permanent file dan current file, serta menyebut isi tiap kategori kertas kerja.",
+    "Menilai apakah sebuah kertas kerja memenuhi ciri kertas kerja yang baik dan membaca tick mark.",
+    "Menjelaskan perakitan berkas akhir, kepemilikan, dan kerahasiaan kertas kerja.",
+    "Menghubungkan tingkat skeptisisme profesional dengan banyaknya bukti dan dokumentasi."
   ],
-  blocks: [
+  "layout": "layered",
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 11.1: 5 Komponen Pengendalian Internal menurut COSO Framework 2013.',
-      svg: SVG_COSO_CUBE
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 11'
-    },
-    {
-      kind: 'table',
-      headers: ['5 Komponen COSO', 'Prinsip Kunci Terkait', 'Aktivitas Pengendalian Riil', 'Dampak Jika Kontrol Lemah'],
-      rows: [
-        ['Lingkungan Pengendalian', 'Tone at the top, independensi dewan komisaris, struktur organisasi.', 'Kode etik karyawan ditegakkan dan sanksi tegas atas pelanggaran.', 'Budaya kerja korup, risiko fraud pelaporan keuangan sangat tinggi.'],
-        ['Penilaian Risiko', 'Identifikasi dan analisis risiko bisnis dan risiko kecurangan.', 'Pemetaan berkala risiko fluktuasi harga bahan baku dan kurs.', 'Klien rentan mengalami kerugian tak terduga tanpa mitigasi.'],
-        ['Aktivitas Pengendalian', 'Segregasi tugas, otorisasi, dokumen bernomor urut cetak, pengamanan fisik.', 'Pemisahan kasir (penyimpan kas) dari akuntan (pencatat jurnal).', 'Risiko penggelapan aset (lapping, kiting, ghost employees).'],
-        ['Informasi & Komunikasi', 'Penggunaan sistem informasi akurat dan saluran whistleblowing.', 'Sistem ERP memvalidasi otomatis 3-way matching PO-GR-Invoice.', 'Laporan keuangan memuat salah saji data transaksi ganda/keliru.'],
-        ['Pemantauan (Monitoring)', 'Evaluasi berkelanjutan dan fungsi audit internal independen.', 'Internal Audit menguji kepatuhan operasional seluruh cabang.', 'Kelemahan kontrol berlangsung bertahun-tahun tanpa perbaikan.']
-      ],
-      caption: 'Tabel 11.0: Matriks 5 komponen COSO dan implikasi auditnya.'
-    },
-    {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Matriks Segregasi Tugas CARP'
-    },
-    {
-      kind: 'formula',
-      text: `\\text{Segregasi Tugas Mutlak (CARP)}:
-\\mathbf{C} - \\text{Custody (Penyimpanan Fisik)} \\quad \\neq \\quad \\mathbf{A} - \\text{Authorization (Otorisasi Transaksi)}
-\\neq \\quad \\mathbf{R} - \\text{Recording (Pencatatan Pembukuan)} \\quad \\neq \\quad \\mathbf{P} - \\text{Periodic Reconciliation (Rekonsiliasi Periodik)}`,
-      note: 'Jika satu orang memegang 2 fungsi sekaligus (misalnya Custody + Recording), potensi pencurian aset dan penyembunyian manipulasi jurnal terbuka lebar.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Klasifikasi Defisiensi Kontrol SA 265',
-      prompt: 'Di sebuah perusahaan dagang, staf pembuat pesanan pembelian (PO) juga berwenang menandatangani cek pembayaran ke pemasok. Tidak ada reviu independen atas pencairan cek. Klasifikasikan defisiensi ini (Control Deficiency, Significant Deficiency, atau Material Weakness) dan jelaskan dampaknya!',
-      blocks: [
+      "kind": "section",
+      "title": "0. Fondasi: yang tidak tercatat sulit dibuktikan pernah dikerjakan",
+      "layer": "fondasi",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Klasifikasi SA 265**: Kelemahan Material (Material Weakness).',
-            '**Justifikasi**: Terjadi pelanggaran segregasi tugas fatal antara Otorisasi Pembelian (Authorization) dan Pengeluaran Kas (Custody/Disbursement). Hal ini membuka peluang bagi staf untuk menerbitkan PO fiktif ke rekening pribadi dan mencairkan cek tanpa deteksi, yang dapat menimbulkan salah saji material terhadap kas dan beban perusahaan.'
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** audit documentation adalah catatan prosedur yang dikerjakan, bukti yang diperoleh, dan kesimpulan yang diambil. Catatan itu harus cukup jelas bagi auditor berpengalaman yang tidak pernah ikut audit tersebut. `(ARENS p.156; ISA230 paras. 6(a), 8)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan cakupan.** TM10 membahas bukti audit. TM ini membahas bagaimana bukti dan hasil pengujian dicatat, disusun, disimpan, dan dilindungi. Pada audit berjalan, dokumentasi dibuat di setiap fase, jadi isinya akan terasa lebih konkret setelah kamu mempelajari risiko, pengendalian, dan pengujian di TM12 sampai TM15. `(ARENS pp.156–161)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Alur dokumentasi audit dari pembuatan sampai penyimpanan",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 660\" width=\"100%\" role=\"img\" aria-labelledby=\"f11-peta-t f11-peta-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f11-peta-t\">Alur dokumentasi audit</title><desc id=\"f11-peta-d\">Empat kartu berurutan dari dokumentasi tepat waktu sampai penyimpanan, dengan catatan tentang perubahan setelah perakitan berkas.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"660\" rx=\"14\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"20\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">1. Dokumentasikan tepat waktu</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Catat prosedur, bukti, dan kesimpulan</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">saat pekerjaan dilakukan</text><rect class=\"svg-title\" x=\"238.5\" y=\"122\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 133 L240 146 L248 133 Z\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"148\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"178\" font-size=\"19\" font-weight=\"800\">2. Review</text><text class=\"svg-text\" x=\"34\" y=\"206\" font-size=\"18\">Catat pekerjaan yang direview, siapa,</text><text class=\"svg-text\" x=\"34\" y=\"230\" font-size=\"18\">dan kapan</text><rect class=\"svg-title\" x=\"238.5\" y=\"250\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 261 L240 274 L248 261 Z\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"276\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"306\" font-size=\"19\" font-weight=\"800\">3. Rakit berkas akhir</text><text class=\"svg-text\" x=\"34\" y=\"334\" font-size=\"18\">Umumnya tidak lebih dari 60 hari setelah</text><text class=\"svg-text\" x=\"34\" y=\"358\" font-size=\"18\">tanggal laporan auditor</text><rect class=\"svg-title\" x=\"238.5\" y=\"378\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 389 L240 402 L248 389 Z\"/><rect class=\"svg-badge-amber\" x=\"20\" y=\"404\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"434\" font-size=\"19\" font-weight=\"800\">4. Simpan</text><text class=\"svg-text\" x=\"34\" y=\"462\" font-size=\"18\">Tidak ada yang dihapus sebelum masa</text><text class=\"svg-text\" x=\"34\" y=\"486\" font-size=\"18\">retensi berakhir</text><rect class=\"svg-subcard\" x=\"20\" y=\"516\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"546\" font-size=\"19\" font-weight=\"800\">Ada perubahan setelah perakitan?</text><text class=\"svg-text\" x=\"34\" y=\"574\" font-size=\"18\">Tambahan diletakkan terpisah di depan</text><text class=\"svg-text\" x=\"34\" y=\"598\" font-size=\"18\">berkas. Catat alasan, kapan, dan oleh</text><text class=\"svg-text\" x=\"34\" y=\"622\" font-size=\"18\">siapa.</text></svg>",
+          "overview": {
+            "heading": "Alur dokumentasi audit",
+            "cards": [
+              {
+                "title": "1. Dokumentasikan tepat waktu",
+                "subtitle": "",
+                "items": [
+                  "Prosedur, bukti, kesimpulan"
+                ],
+                "takeaway": "Dokumentasi yang dibuat belakangan cenderung kurang akurat."
+              },
+              {
+                "title": "2. Review",
+                "subtitle": "",
+                "items": [
+                  "Pekerjaan apa yang direview",
+                  "Siapa dan kapan"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "3. Rakit berkas akhir",
+                "subtitle": "",
+                "items": [
+                  "Umumnya tidak lebih dari 60 hari setelah tanggal laporan"
+                ],
+                "takeaway": "Setelah itu berkas dibekukan (file archive)."
+              },
+              {
+                "title": "4. Simpan",
+                "subtitle": "",
+                "items": [
+                  "Tidak ada yang dihapus sebelum masa retensi berakhir"
+                ],
+                "takeaway": "Perubahan setelah perakitan dicatat alasan, waktu, dan pelakunya."
+              }
+            ]
+          },
+          "caption": "Gambar 11.1: Alur dokumentasi audit. Disusun dari ARENS pp.156–157 dan ISA230 paras. 7, 9, 14–16, A21–A23.",
+          "altText": "Empat tahap: dokumentasikan tepat waktu, review, rakit berkas akhir dalam waktu umumnya 60 hari setelah tanggal laporan, simpan sampai masa retensi berakhir. Perubahan setelah perakitan ditaruh terpisah di depan berkas dengan catatan alasan, waktu, dan pelaku."
+        },
+        {
+          "kind": "p",
+          "text": "Dokumentasi juga disebut working papers atau workpapers, dan sekarang umumnya disimpan dalam berkas elektronik. Isinya mencakup semua informasi yang menurut auditor perlu untuk melaksanakan audit secara memadai dan mendukung laporan auditor. `(ARENS p.156; ISA230 para. 6(a))`"
+        },
+        {
+          "kind": "p",
+          "text": "Standar menyebut dua fungsi utama. Dokumentasi menjadi bukti dasar kesimpulan auditor atas pencapaian tujuan keseluruhannya, dan bukti bahwa audit direncanakan serta dilaksanakan sesuai standar dan ketentuan hukum yang berlaku. `(ISA230 para. 2)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Kesalahpahaman umum"
+        },
+        {
+          "kind": "table",
+          "title": "Kesalahpahaman umum tentang dokumentasi audit",
+          "headers": [
+            "Anggapan yang keliru",
+            "Yang benar",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "\"Penjelasan lisan auditor sudah cukup sebagai bukti pekerjaan.\"",
+              "Penjelasan lisan saja bukan dukungan yang memadai. Ia hanya boleh dipakai untuk menerangkan atau menjernihkan isi dokumentasi.",
+              "ISA230 para. A5"
+            ],
+            [
+              "\"Semua yang dipikirkan auditor harus ditulis.\"",
+              "Tidak perlu dan tidak praktis mendokumentasikan setiap hal yang dipertimbangkan. Draf yang sudah digantikan, catatan pemikiran awal, dan duplikat tidak perlu disimpan.",
+              "ISA230 paras. A4, A7"
+            ],
+            [
+              "\"Kertas kerja adalah milik klien karena datanya dari klien.\"",
+              "Kertas kerja milik auditor. Klien memiliki datanya, jadi pihak lain hanya bisa melihatnya dengan izin tertulis klien, kecuali ada subpoena atau pemeriksaan badan profesi.",
+              "ARENS pp.159–160"
+            ],
+            [
+              "\"Setelah laporan terbit, berkas boleh dirapikan sesuka hati.\"",
+              "Perakitan akhir adalah proses administratif. Perubahan substantif setelahnya harus dicatat alasan, waktu, dan pelakunya.",
+              "ISA230 paras. 14–16, A22"
+            ],
+            [
+              "\"Skeptisisme berarti curiga sama kuatnya pada semua akun.\"",
+              "Tingkat skeptisisme disesuaikan dengan risiko. Makin tinggi risikonya, makin banyak bukti dan dokumentasi.",
+              "ARENS p.160"
+            ]
+          ],
+          "stackOnMobile": true
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "1. Tujuan dokumentasi audit",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** dokumentasi dipakai untuk merencanakan, mencatat bukti, menentukan jenis laporan, dan mereview pekerjaan. Ia juga bukti di hadapan regulator dan pengadilan bahwa audit memenuhi standar."
+        },
+        {
+          "kind": "table",
+          "title": "Tujuan dokumentasi audit",
+          "headers": [
+            "Tujuan",
+            "Isi atau manfaat",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Dasar perencanaan",
+              "Kesimpulan analisis risiko klien, informasi tentang pengendalian internal, anggaran waktu tiap area, program audit, dan hasil audit tahun lalu",
+              "ARENS p.156"
+            ],
+            [
+              "Catatan bukti dan hasil pengujian",
+              "Bukti bagi regulator dan pengadilan bahwa audit direncanakan dan disupervisi dengan baik, bukti yang dikumpulkan cukup, tepat, dan tepat waktu, dan laporan auditor sesuai hasil pemeriksaan",
+              "ARENS p.156"
+            ],
+            [
+              "Dasar menentukan jenis laporan",
+              "Sumber informasi untuk menilai kecukupan lingkup audit dan kewajaran laporan keuangan",
+              "ARENS p.156"
+            ],
+            [
+              "Dasar review",
+              "Acuan bagi supervisor menilai apakah bukti yang terkumpul cukup untuk membenarkan laporan auditor",
+              "ARENS p.156; ISA230 para. 3"
+            ],
+            [
+              "Tujuan tambahan",
+              "Dasar SPT pajak dan laporan ke regulator, bahan komunikasi ke komite audit dan manajemen tentang kelemahan pengendalian, bahan pelatihan staf, dan perencanaan audit berikutnya",
+              "ARENS p.156"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "ISA 230 menambahkan fungsi akuntabilitas tim, catatan hal yang penting untuk audit mendatang, dan dukungan untuk engagement quality review serta pemeriksaan eksternal. `(ISA230 para. 3)`"
+        },
+        {
+          "kind": "p",
+          "text": "**Tolok ukur isi dokumentasi.** Auditor menyusun dokumentasi yang cukup agar auditor berpengalaman tanpa keterkaitan sebelumnya dengan audit itu bisa memahami tiga hal: sifat, waktu, dan luas prosedur yang dikerjakan; hasil prosedur dan bukti yang diperoleh; serta hal signifikan yang muncul, kesimpulannya, dan pertimbangan profesional signifikan di baliknya. `(ISA230 para. 8)` Auditor berpengalaman adalah orang yang punya pengalaman audit praktis dan pemahaman memadai tentang proses audit, ISA dan ketentuan hukum, lingkungan bisnis entitas, serta isu audit dan pelaporan yang relevan bagi industrinya. `(ISA230 para. 6(c))`"
+        },
+        {
+          "kind": "p",
+          "text": "Bentuk, isi, dan luas dokumentasi bergantung pada ukuran dan kompleksitas entitas, sifat prosedur, risiko salah saji material yang teridentifikasi, signifikansi bukti, sifat dan luas pengecualian, kebutuhan mencatat dasar kesimpulan, serta metodologi dan alat audit. `(ISA230 para. A2)` Contoh bentuknya: program audit, analisis, memorandum isu, ringkasan hal signifikan, surat konfirmasi dan representasi, checklist, dan korespondensi termasuk surel. Dokumentasi audit bukan pengganti catatan akuntansi entitas. `(ISA230 para. A3)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** Waktu pembuatan dokumentasi juga diuji. Standar meminta dokumentasi disusun tepat waktu, karena dokumentasi yang dibuat setelah pekerjaan selesai cenderung kurang akurat. `(ISA230 para. 7, A1)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "2. Apa yang wajib dicatat",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** auditor mencatat apa yang diuji, siapa yang mengerjakan dan kapan, siapa yang mereview dan kapan, serta hal signifikan beserta penanganannya."
+        },
+        {
+          "kind": "table",
+          "title": "Unsur dokumentasi yang diwajibkan ISA 230",
+          "headers": [
+            "Unsur",
+            "Isi yang dicatat",
+            "Contoh dari standar",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Ciri khas item yang diuji",
+              "Identitas item atau hal yang diuji",
+              "Uji rinci purchase order: tanggal dan nomor PO. Prosedur atas semua entri jurnal di atas jumlah tertentu: lingkup prosedur dan populasinya. Sampel sistematis: sumber, titik awal, dan interval (misalnya laporan pengiriman 1 April sampai 30 September, mulai nomor 12345, tiap laporan ke-125)",
+              "ISA230 paras. 9(a), A12"
+            ],
+            [
+              "Pelaksana dan tanggal",
+              "Siapa yang mengerjakan dan kapan selesai",
+              "Untuk inquiry: tanggal dan nama serta jabatan orang yang ditanya. Untuk observasi: proses yang diamati, orangnya, dan tempat serta waktunya",
+              "ISA230 paras. 9(b), A12"
+            ],
+            [
+              "Reviewer dan tanggal",
+              "Siapa yang mereview, kapan, dan seberapa jauh",
+              "Tidak berarti setiap kertas kerja memuat tanda review. Yang dicatat: pekerjaan apa yang direview, siapa, dan kapan",
+              "ISA230 paras. 9(c), A13"
+            ],
+            [
+              "Diskusi hal signifikan",
+              "Sifat hal yang dibahas, kapan, dan dengan siapa",
+              "Bisa memakai notulen yang disiapkan pihak entitas dan disetujui auditor",
+              "ISA230 paras. 10, A14"
+            ],
+            [
+              "Informasi yang tidak konsisten",
+              "Cara auditor menangani informasi yang bertentangan dengan kesimpulan akhir atas hal signifikan",
+              "Tidak perlu menyimpan dokumen yang salah atau sudah digantikan",
+              "ISA230 paras. 11, A15"
+            ],
+            [
+              "Penyimpangan dari persyaratan",
+              "Prosedur alternatif yang mencapai tujuan persyaratan dan alasan penyimpangan (hanya pada keadaan luar biasa)",
+              "Persyaratan yang tidak relevan, misalnya entitas tanpa fungsi internal audit, tidak memerlukan catatan penyimpangan",
+              "ISA230 paras. 12, A18–A19"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Contoh hal signifikan menurut standar: `(ISA230 para. A8)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "hal yang menimbulkan risiko signifikan,",
+            "hasil prosedur yang menunjukkan laporan keuangan bisa salah saji material atau perlunya merevisi penilaian risiko,",
+            "kesulitan besar menjalankan prosedur,",
+            "temuan yang bisa mengubah opini atau menambah emphasis of matter paragraph."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Dasar dari pertimbangan profesional yang signifikan harus dicatat, karena catatan itu menjelaskan kesimpulan dan memperkuat mutu pertimbangan. `(ISA230 paras. A9, A10)` Untuk audit besar, completion memorandum yang meringkas hal signifikan dan penanganannya membantu review dan inspeksi. `(ISA230 para. A11)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "3. Isi dan organisasi berkas audit",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** berkas dibagi menjadi permanent file (informasi berkelanjutan tentang klien) dan current file (khusus tahun yang diaudit). Isinya diatur mengikuti fase audit dan pos laporan keuangan."
+        },
+        {
+          "kind": "p",
+          "text": "Tiap firma punya pendekatan sendiri, tetapi ada logika yang sama. Berkas tiap klien terdiri dari satu set **permanent file** dan satu set **current file** untuk setiap tahun audit. `(ARENS p.157)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Struktur berkas audit: permanent file dan current file",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 706\" width=\"100%\" role=\"img\" aria-labelledby=\"f11-berkas-t f11-berkas-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f11-berkas-t\">Struktur berkas audit</title><desc id=\"f11-berkas-d\">Kartu berkas audit satu klien dengan empat cabang: permanent file, dan tiga bagian current file (perencanaan, respons risiko, penyelesaian).</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"706\" rx=\"14\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"20\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Berkas audit satu klien</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Satu permanent file, ditambah satu</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">current file untuk tiap tahun audit</text><rect class=\"svg-card\" x=\"60\" y=\"144\" width=\"400\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"174\" font-size=\"19\" font-weight=\"800\">Permanent file</text><text class=\"svg-text\" x=\"74\" y=\"202\" font-size=\"18\">Informasi historis dan</text><text class=\"svg-text\" x=\"74\" y=\"226\" font-size=\"18\">berkelanjutan: akta pendirian,</text><text class=\"svg-text\" x=\"74\" y=\"250\" font-size=\"18\">anggaran dasar, perjanjian obligasi,</text><text class=\"svg-text\" x=\"74\" y=\"274\" font-size=\"18\">kontrak signifikan</text><rect class=\"svg-title\" x=\"34\" y=\"170.5\" width=\"26\" height=\"3\"/><rect class=\"svg-card\" x=\"60\" y=\"306\" width=\"400\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"336\" font-size=\"19\" font-weight=\"800\">Current file: perencanaan</text><text class=\"svg-text\" x=\"74\" y=\"364\" font-size=\"18\">Penilaian risiko, jadwal staf,</text><text class=\"svg-text\" x=\"74\" y=\"388\" font-size=\"18\">memorandum strategi, program audit</text><text class=\"svg-text\" x=\"74\" y=\"412\" font-size=\"18\">awal</text><rect class=\"svg-title\" x=\"34\" y=\"332.5\" width=\"26\" height=\"3\"/><rect class=\"svg-card\" x=\"60\" y=\"444\" width=\"400\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"474\" font-size=\"19\" font-weight=\"800\">Current file: respons risiko</text><text class=\"svg-text\" x=\"74\" y=\"502\" font-size=\"18\">Supporting schedules per akun: tests</text><text class=\"svg-text\" x=\"74\" y=\"526\" font-size=\"18\">of controls, tests of details,</text><text class=\"svg-text\" x=\"74\" y=\"550\" font-size=\"18\">prosedur analitis</text><rect class=\"svg-title\" x=\"34\" y=\"470.5\" width=\"26\" height=\"3\"/><rect class=\"svg-card\" x=\"60\" y=\"582\" width=\"400\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"612\" font-size=\"19\" font-weight=\"800\">Current file: penyelesaian</text><text class=\"svg-text\" x=\"74\" y=\"640\" font-size=\"18\">Ringkasan selisih audit dan final</text><text class=\"svg-text\" x=\"74\" y=\"664\" font-size=\"18\">analytical review</text><rect class=\"svg-title\" x=\"34\" y=\"608.5\" width=\"26\" height=\"3\"/><rect class=\"svg-title\" x=\"32.5\" y=\"120\" width=\"3\" height=\"491.5\"/></svg>",
+          "overview": {
+            "heading": "Struktur berkas audit",
+            "cards": [
+              {
+                "title": "Permanent file",
+                "subtitle": "",
+                "items": [
+                  "Satu set per klien",
+                  "Akta pendirian, anggaran dasar, perjanjian obligasi, kontrak signifikan"
+                ],
+                "takeaway": "Informasi berkelanjutan dari tahun ke tahun."
+              },
+              {
+                "title": "Current file: perencanaan",
+                "subtitle": "",
+                "items": [
+                  "Penilaian risiko dan jadwal staf",
+                  "Memorandum strategi, program audit awal"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Current file: respons risiko",
+                "subtitle": "",
+                "items": [
+                  "Supporting schedules per akun",
+                  "Tests of controls, tests of details, prosedur analitis"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Current file: penyelesaian",
+                "subtitle": "",
+                "items": [
+                  "Ringkasan selisih audit",
+                  "Final analytical review"
+                ],
+                "takeaway": "Satu set current file untuk tiap tahun audit."
+              }
+            ],
+            "footer": "Sumber: Table 5-8 (ARENS p.157)."
+          },
+          "caption": "Gambar 11.2: Struktur berkas audit. Disusun dari Table 5-8 (ARENS p.157).",
+          "altText": "Berkas audit satu klien terdiri dari satu permanent file dan, untuk tiap tahun audit, satu current file yang dibagi menjadi perencanaan, respons risiko, dan penyelesaian."
+        },
+        {
+          "kind": "table",
+          "title": "Kategori kertas kerja dan isinya (Table 5-8)",
+          "headers": [
+            "Kategori",
+            "Tujuan",
+            "Contoh isi"
+          ],
+          "rows": [
+            [
+              "Permanent file",
+              "Informasi historis dan berkelanjutan tentang bisnis",
+              "Ekstrak atau salinan dokumen klien yang penting dari tahun ke tahun: akta pendirian, anggaran dasar, perjanjian obligasi, kontrak signifikan (misalnya remunerasi eksekutif dan utang jangka panjang), dokumentasi proses tata kelola"
+            ],
+            [
+              "Current file: perencanaan",
+              "Penilaian risiko dan penjadwalan staf",
+              "Prosedur analitis tahun lalu dan tahun ini; analisis dan kesimpulan atas risiko pengendalian menyeluruh; flowchart dan dokumentasi pengendalian internal; program audit awal; notulen rapat perencanaan dan memorandum strategi audit"
+            ],
+            [
+              "Current file: respons risiko",
+              "Supporting schedules per bagian (tahun berjalan dan multi-tahun)",
+              "Tahun berjalan: prosedur analitis, analisis risiko pengendalian per asersi, program audit yang sudah dikerjakan, tests of controls dan tests of details per akun, salinan polis asuransi atau faktur penambahan aset tetap besar yang diperiksa. Multi-tahun: kontrak khusus akun, utang jangka panjang, ekuitas, PP&E dan amortisasi, wesel bayar (analisis tahun lalu dan sekarang)"
+            ],
+            [
+              "Current file: penyelesaian",
+              "Kesimpulan dan tinjauan analitis akhir",
+              "Kertas kerja penyelesaian audit, termasuk ringkasan selisih audit dan final analytical review"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.157)`"
+        },
+        {
+          "kind": "p",
+          "text": "Kertas kerja disusun menurut kelompok akun yang sesuai dengan satu pos laporan keuangan, misalnya satu bagian untuk kas dan satu untuk piutang usaha. Karena laporan keuangan disusun dari buku besar, saldo buku besar menjadi titik fokus pemeriksaan. Sedini mungkin setelah tanggal neraca, auditor meminta laporan keuangan dan salinan akun buku besar beserta saldo akhir tahun, biasanya elektronik, yang disebut **trial balance**. `(ARENS p.158)`"
+        },
+        {
+          "kind": "p",
+          "text": "Berkas elektronik fleksibel. Dokumentasi pengendalian internal siklus pendapatan, misalnya, bisa ditempatkan di bagian perencanaan atau di bagian supporting schedule penjualan, asalkan ada cross-reference agar mudah ditemukan. Current file dibangun dari roll-forward berkas tahun lalu, basis data dan standar firma, dan pekerjaan lapangan tahun ini. `(ARENS p.157)`"
+        },
+        {
+          "kind": "p",
+          "text": "Beberapa fitur perangkat lunak yang disebut buku: `(ARENS p.158)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "Berkas dilindungi kata sandi sehingga hanya anggota tim audit yang bisa mengakses. Setelah staf menyelesaikan dokumen, ia tidak bisa mengubahnya lagi. Perubahan oleh staf, supervisor, manajer, atau partner dicatat.",
+            "Status pengerjaan dan review tiap area terlacak. Tick mark dan catatan reviewer bisa dimasukkan langsung.",
+            "Data dapat diimpor dan diekspor. Contohnya buku besar klien diunduh, atau informasi pajak diekspor ke aplikasi pajak.",
+            "Engagement management software menyusun trial balance, lead schedule, kertas kerja pendukung, dan laporan keuangan, serta menghitung rasio. Bila ada jurnal penyesuaian, semua rasio terdampak, misalnya karena perubahan persediaan dan HPP, dihitung ulang seketika."
           ]
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 11'
+      "kind": "section",
+      "title": "4. Menyusun kertas kerja yang baik",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** kertas kerja yang baik bisa ditelusuri, menunjukkan pekerjaan yang dilakukan, memuat informasi yang cukup, dan menyatakan kesimpulan dengan jelas."
+        },
+        {
+          "kind": "p",
+          "text": "Rancangan kertas kerja bergantung pada tujuannya, tetapi buku menyebut ciri yang harus ada. `(ARENS p.158)`"
+        },
+        {
+          "kind": "table",
+          "title": "Ciri kertas kerja yang baik",
+          "headers": [
+            "Ciri",
+            "Isi",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "Identifikasi",
+              "Nama klien, periode, deskripsi isi, nama penyusun, tanggal penyusunan, dan kode indeks",
+              "Perangkat lunak bisa mengisi bagian ini otomatis"
+            ],
+            [
+              "Indeks dan cross-reference",
+              "Kertas kerja diberi indeks supaya mudah diorganisasi dan dicari",
+              "Lead schedule kas diberi kode A-1, kertas kerja pendukung rincian akun kas A-2 sampai A-4, dan seterusnya"
+            ],
+            [
+              "Bukti pekerjaan yang dilakukan",
+              "Terlihat jelas lewat memorandum tertulis, inisial atau nama di samping prosedur pada program audit, dan notasi langsung pada kertas kerja",
+              "Notasi berupa tick mark atau simbol di samping rincian, dan harus dijelaskan di bagian bawah kertas kerja"
+            ],
+            [
+              "Informasi yang cukup",
+              "Memuat informasi sesuai tujuannya",
+              "Kertas kerja yang menyajikan rincian saldo, misalnya biaya dibayar di muka asuransi, harus cocok dengan akun buku besar dan trial balance"
+            ],
+            [
+              "Kesimpulan",
+              "Kesimpulan atas segmen audit itu dinyatakan jelas",
+              "Kalimat kesimpulan di akhir kertas kerja"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS pp.158–159)`"
+        },
+        {
+          "kind": "p",
+          "text": "**Lead schedule** memuat rincian akun buku besar yang membentuk satu total pos pada working trial balance. `(ARENS p.158)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Anatomi kertas kerja C-1: wesel tagih Renaldo Machine Co.",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 620\" width=\"100%\" role=\"img\" aria-labelledby=\"f11-kertas-t f11-kertas-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f11-kertas-t\">Anatomi kertas kerja C-1</title><desc id=\"f11-kertas-d\">Lima kartu bertingkat: kepala, isi rincian, tick mark, legenda, dan kesimpulan.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"620\" rx=\"14\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"20\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Kepala kertas kerja</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Klien, area audit, tanggal neraca, kode</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">C-1, paraf penyusun, tanggal disusun</text><rect class=\"svg-badge-blue\" x=\"20\" y=\"134\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"164\" font-size=\"19\" font-weight=\"800\">Isi: rincian wesel tagih</text><text class=\"svg-text\" x=\"34\" y=\"192\" font-size=\"18\">Tujuh pelanggan dengan bunga, tanggal</text><text class=\"svg-text\" x=\"34\" y=\"216\" font-size=\"18\">terbit dan jatuh tempo, nilai nominal,</text><text class=\"svg-text\" x=\"34\" y=\"240\" font-size=\"18\">bunga akrual</text><rect class=\"svg-badge-green\" x=\"20\" y=\"272\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"302\" font-size=\"19\" font-weight=\"800\">Tick mark pada angka</text><text class=\"svg-text\" x=\"34\" y=\"330\" font-size=\"18\">x, p, dan @ di samping baris; f dan t/b</text><text class=\"svg-text\" x=\"34\" y=\"354\" font-size=\"18\">pada total</text><rect class=\"svg-badge-green\" x=\"20\" y=\"386\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"416\" font-size=\"19\" font-weight=\"800\">Legenda tick mark</text><text class=\"svg-text\" x=\"34\" y=\"444\" font-size=\"18\">Arti tiap tanda dijelaskan di bagian</text><text class=\"svg-text\" x=\"34\" y=\"468\" font-size=\"18\">bawah kertas kerja</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"500\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"530\" font-size=\"19\" font-weight=\"800\">Kesimpulan auditor</text><text class=\"svg-text\" x=\"34\" y=\"558\" font-size=\"18\">Saldo tampak disajikan wajar,</text><text class=\"svg-text\" x=\"34\" y=\"582\" font-size=\"18\">ditandatangani dengan inisial</text></svg>",
+          "overview": {
+            "heading": "Anatomi kertas kerja C-1",
+            "cards": [
+              {
+                "title": "Kepala kertas kerja",
+                "subtitle": "",
+                "items": [
+                  "Klien, area audit, tanggal neraca",
+                  "Kode C-1, paraf penyusun, tanggal"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Isi",
+                "subtitle": "",
+                "items": [
+                  "Rincian tujuh wesel tagih",
+                  "Nilai nominal 862.000, bunga akrual 10.198,62"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Tick mark dan legenda",
+                "subtitle": "",
+                "items": [
+                  "x, p, @ pada baris; f dan t/b pada total",
+                  "Arti tiap tanda dijelaskan di bagian bawah"
+                ],
+                "takeaway": "Tanda tanpa penjelasan tidak bisa dibaca reviewer."
+              },
+              {
+                "title": "Kesimpulan auditor",
+                "subtitle": "",
+                "items": [
+                  "Saldo tampak disajikan wajar",
+                  "Ditandatangani dengan inisial"
+                ],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumber: Figure 5-4 (ARENS p.159)."
+          },
+          "caption": "Gambar 11.3: Bagian-bagian kertas kerja yang baik. Disusun dari Figure 5-4 (ARENS p.159).",
+          "altText": "Lima bagian kertas kerja C-1: kepala kertas kerja, rincian wesel tagih, tick mark pada angka, legenda tick mark di bawah, dan kesimpulan auditor."
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Contoh kertas kerja: wesel tagih Renaldo Machine Co. (Figure 5-4)",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Kertas kerja C-1 memuat wesel tagih per 30 November 2020, disusun oleh J.B. pada 23 Desember 2020. Angka dalam mata uang yang sama dengan buku. `(ARENS p.159)`"
+            },
+            {
+              "kind": "table",
+              "title": "Wesel tagih Renaldo Machine Co. per 30 November 2020 (Figure 5-4, kertas kerja C-1)",
+              "headers": [
+                "Pelanggan",
+                "Bunga",
+                "Diterbitkan",
+                "Jatuh tempo",
+                "Nilai nominal",
+                "Bunga akrual"
+              ],
+              "rows": [
+                [
+                  "Graham Metal Works",
+                  "12%",
+                  "4 Okt 2020",
+                  "3 Des 2020",
+                  "150.000",
+                  "2.850,00"
+                ],
+                [
+                  "Lopez Hardware Co.",
+                  "14%",
+                  "15 Nov 2020",
+                  "7 Jan 2021",
+                  "89.000",
+                  "519,17"
+                ],
+                [
+                  "Boise Hinge",
+                  "11%",
+                  "9 Okt 2020",
+                  "8 Des 2020",
+                  "200.000",
+                  "3.177,78"
+                ],
+                [
+                  "Eastam Mfg. Co.",
+                  "15%",
+                  "10 Nov 2020",
+                  "2 Jan 2021",
+                  "72.000",
+                  "600,00"
+                ],
+                [
+                  "Toledo Fabricators",
+                  "14%",
+                  "20 Nov 2020",
+                  "12 Jan 2021",
+                  "125.000",
+                  "486,11"
+                ],
+                [
+                  "Manor Appliance Co.",
+                  "13%",
+                  "21 Okt 2020",
+                  "20 Des 2020",
+                  "56.000",
+                  "808,89"
+                ],
+                [
+                  "Commercial Copper",
+                  "12%",
+                  "30 Okt 2020",
+                  "29 Des 2020",
+                  "170.000",
+                  "1.756,67"
+                ],
+                [
+                  "Total",
+                  "",
+                  "",
+                  "",
+                  "862.000",
+                  "10.198,62"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "`(ARENS p.159)`"
+            },
+            {
+              "kind": "p",
+              "text": "Setiap baris memiliki tiga tanda: x, p, dan @. Total nilai nominal dan total bunga akrual diberi f dan t/b. Legenda di bawah kertas kerja menjelaskan semuanya. `(ARENS p.159)`"
+            },
+            {
+              "kind": "table",
+              "title": "Tick mark pada kertas kerja C-1",
+              "headers": [
+                "Tanda",
+                "Arti",
+                "Jenis prosedur"
+              ],
+              "rows": [
+                [
+                  "x",
+                  "Nilai nominal, tingkat bunga, tanggal terbit dan jatuh tempo dicocokkan dengan dokumen wesel tagih",
+                  "Inspeksi"
+                ],
+                [
+                  "p",
+                  "Konfirmasi positif diterima. Tidak ada pengecualian material pada nominal, tanggal, bunga, dan bunga akrual (kertas kerja C-2)",
+                  "Konfirmasi eksternal"
+                ],
+                [
+                  "@",
+                  "Bunga akrual dihitung ulang. Tidak ada pengecualian",
+                  "Recalculation"
+                ],
+                [
+                  "f",
+                  "Dijumlah (footed)",
+                  "Recalculation"
+                ],
+                [
+                  "t/b",
+                  "Ditelusuri dan dicocokkan ke trial balance",
+                  "Tracing"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "`(ARENS p.159)`"
+            },
+            {
+              "kind": "p",
+              "text": "Hitung ulang kami atas baris pertama: 150.000 dikali 12 persen dikali 57 hari (4 Oktober sampai 30 November) dibagi 360 menghasilkan 2.850,00, sama dengan kertas kerja. Ketujuh baris cocok dengan basis 360 hari. Total nilai nominal 862.000 dan total bunga akrual 10.198,62 juga cocok dengan penjumlahan baris. Buku tidak menyebut basis hari, jadi basis 360 hari adalah hasil hitung ulang di sini."
+            },
+            {
+              "kind": "p",
+              "text": "Kesimpulan di kertas kerja: saldo wesel tagih per 30 November 2020 tampak disajikan wajar. Soal tertagihnya wesel, J.B. membahasnya dengan controller dan berpendapat tidak perlu cadangan kerugian. `(ARENS p.159)`"
+            },
+            {
+              "kind": "callout",
+              "variant": "info",
+              "text": "**Interpretasi.** Bagian kesimpulan tentang tertagihnya wesel bersandar pada jawaban controller, yaitu inquiry. Dengan prinsip TM10, inquiry saja belum cukup. Untuk menilai tertagihnya wesel auditor perlu bukti penguat lain. Contoh kertas kerja ini bagus dalam hal bentuk dan keterlacakan, tetapi kalimat terakhirnya menunjukkan mengapa isi kesimpulan juga perlu dikritisi."
+            }
+          ]
+        }
+      ]
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', '5 Komponen & 17 Prinsip COSO', 'Penerapan kerangka COSO 2013 pada entitas bisnis.', 'Mampu menganalisis efektivitas sistem pengendalian internal entitas.'],
-        ['2', 'Matriks Segregasi CARP', 'Pemisahan 4 fungsi operasional akuntansi.', 'Mampu mendeteksi perangkapan tugas ilegal pada siklus bisnis.'],
-        ['3', 'Klasifikasi SA 265', 'Kriteria Defisiensi, Significant Deficiency, dan Material Weakness.', 'Mampu menyusun Management Letter dan laporan ke Komite Audit.']
-      ],
-      caption: 'Tabel 11.2: Peta penguasaan submateri TM 11 PBR I.'
+      "kind": "section",
+      "title": "5. Berkas akhir, kepemilikan, dan kerahasiaan",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** setelah laporan terbit, berkas dirakit dan dibekukan dalam waktu yang ditetapkan. Berkas itu milik auditor, tetapi isinya rahasia klien, sehingga akses ke pihak lain sangat dibatasi."
+        },
+        {
+          "kind": "h3",
+          "text": "Perakitan berkas akhir"
+        },
+        {
+          "kind": "p",
+          "text": "Buku menyatakan versi akhir berkas audit dirakit dalam 60 hari setelah tanggal laporan auditor. Pada saat itu firma melakukan \"file freeze\" atau file archive. Informasi yang ditambahkan sesudahnya diidentifikasi terpisah dan ditempatkan di bagian depan berkas, bukan tersebar di seluruh kertas kerja, dan dinilai agar tidak memengaruhi kesimpulan audit. Cara ini menjaga integritas kesimpulan audit. `(ARENS pp.156–157)` ISA 230 menyatakan batas waktu perakitan yang sesuai umumnya tidak lebih dari 60 hari setelah tanggal laporan auditor. `(ISA230 para. A21)`"
+        },
+        {
+          "kind": "table",
+          "title": "Ketentuan ISA 230 setelah laporan auditor terbit",
+          "headers": [
+            "Situasi",
+            "Yang dilakukan auditor",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Merakit berkas akhir",
+              "Merakit dokumentasi dalam audit file dan menyelesaikan proses administratifnya tepat waktu setelah tanggal laporan",
+              "ISA230 para. 14"
+            ],
+            [
+              "Perubahan administratif saat perakitan",
+              "Boleh: membuang dokumen yang sudah digantikan, mengurutkan dan memberi cross-reference, menandatangani checklist perakitan, mendokumentasikan bukti yang sudah diperoleh dan disepakati tim sebelum tanggal laporan. Tidak boleh: prosedur baru atau kesimpulan baru",
+              "ISA230 para. A22"
+            ],
+            [
+              "Setelah perakitan selesai",
+              "Tidak boleh menghapus atau membuang dokumentasi apa pun sebelum masa retensi berakhir. Masa retensi umumnya tidak kurang dari lima tahun sejak tanggal laporan auditor",
+              "ISA230 paras. 15, A23"
+            ],
+            [
+              "Perlu mengubah atau menambah dokumentasi setelah perakitan",
+              "Mencatat alasan yang spesifik, kapan dan oleh siapa perubahan dibuat serta direview. Contoh: klarifikasi atas komentar dari kegiatan monitoring atau inspeksi eksternal",
+              "ISA230 paras. 16, A24"
+            ],
+            [
+              "Prosedur atau kesimpulan baru setelah tanggal laporan (keadaan luar biasa)",
+              "Mencatat keadaannya, prosedur baru, bukti, kesimpulan dan dampaknya pada laporan, serta kapan dan oleh siapa perubahan dibuat dan direview",
+              "ISA230 paras. 13, A20"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Kepemilikan"
+        },
+        {
+          "kind": "p",
+          "text": "Kertas kerja yang dibuat selama perikatan, termasuk yang disiapkan klien untuk auditor, adalah milik auditor. Pihak lain, termasuk klien, hanya punya hak hukum memeriksanya bila kertas kerja di-subpoena pengadilan sebagai bukti hukum, atau diminta organisasi profesi akuntan publik dalam proses disiplin atau inspeksi praktik. Setelah perikatan, kertas kerja disimpan di kantor firma atau dikirim ke tempat penyimpanan aman di luar lokasi. `(ARENS pp.159–160)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Kerahasiaan"
+        },
+        {
+          "kind": "p",
+          "text": "Aturan etika profesi melarang anggota membuka informasi rahasia yang diperoleh selama perikatan tanpa persetujuan klien, kecuali diwajibkan pengadilan atau asosiasi profesi. Auditor mengetahui banyak informasi rahasia, seperti gaji pejabat, harga produk, rencana iklan, dan data biaya produk. Membocorkannya merusak hubungan dengan manajemen. Karyawan yang tidak berhak mengakses juga bisa mengubah informasi di kertas kerja. Karena itu kertas kerja dilindungi setiap saat. `(ARENS p.160)`"
+        },
+        {
+          "kind": "table",
+          "title": "Siapa boleh mengakses kertas kerja",
+          "headers": [
+            "Pihak",
+            "Akses",
+            "Dasar"
+          ],
+          "rows": [
+            [
+              "Anggota tim audit",
+              "Ya, dengan kata sandi atau kontrol akses",
+              "ARENS p.158"
+            ],
+            [
+              "Karyawan klien yang tidak berhak, atau pihak luar",
+              "Tidak, kecuali ada izin tertulis klien",
+              "ARENS p.160"
+            ],
+            [
+              "Firma lain, termasuk pembeli praktik auditor",
+              "Hanya dengan izin tertulis klien, karena klien memiliki datanya",
+              "ARENS p.160"
+            ],
+            [
+              "Pengadilan (subpoena)",
+              "Tanpa izin klien. Auditor biasanya berkonsultasi dengan pengacara dan memberi tahu klien",
+              "ARENS p.160"
+            ],
+            [
+              "Organisasi profesi (disiplin, inspeksi praktik)",
+              "Tanpa izin klien. Auditor biasanya berkonsultasi dengan pengacara dan memberi tahu klien",
+              "ARENS pp.159–160"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Rujukan hukum di buku adalah Kanada (CAS, provincial securities commissions, subpoena pengadilan). Untuk ujian, pakai konsepnya, dan rujuk ISA 230 bila soal menyebut standar internasional."
+        }
+      ]
     },
-    CASE_COSO_INTERNAL_CONTROL,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "section",
+      "title": "6. Skeptisisme profesional, bukti, dan dokumentasi",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** auditor menyesuaikan banyaknya bukti dan dokumentasi dengan tingkat skeptisisme yang dibutuhkan, berdasarkan risiko salah saji material dan apakah bukti konsisten dengan penilaian risiko awal."
+        },
+        {
+          "kind": "p",
+          "text": "Buku mengingatkan kontinum skeptisisme profesional dari Ch.3. Skeptisisme adalah sikap yang mencakup pikiran yang selalu bertanya. Dengan memandangnya sebagai kontinum, auditor tidak memakai sikap yang sama sepanjang audit. Ia mencocokkan jumlah bukti dan dokumentasi dengan keadaan tiap area dan asersi. `(ARENS pp.160–161)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Kontinum skeptisisme profesional dan jumlah bukti",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 648\" width=\"100%\" role=\"img\" aria-labelledby=\"f11-skeptis-t f11-skeptis-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f11-skeptis-t\">Kontinum skeptisisme profesional</title><desc id=\"f11-skeptis-d\">Empat kartu berurutan dari complete trust sampai complete doubt, dengan catatan bahwa bukti dan dokumentasi bertambah seiring tingkat skeptisisme.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"648\" rx=\"14\"/><rect class=\"svg-subcard\" x=\"20\" y=\"20\" width=\"440\" height=\"76\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Complete trust</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Di luar skeptisisme profesional</text><rect class=\"svg-title\" x=\"238.5\" y=\"98\" width=\"3\" height=\"10\"/><path class=\"svg-title\" d=\"M232 105 L240 118 L248 105 Z\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"120\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"150\" font-size=\"19\" font-weight=\"800\">Neutral</text><text class=\"svg-text\" x=\"34\" y=\"178\" font-size=\"18\">Tidak menganggap manajemen tidak jujur,</text><text class=\"svg-text\" x=\"34\" y=\"202\" font-size=\"18\">juga tidak menganggapnya pasti jujur</text><rect class=\"svg-title\" x=\"238.5\" y=\"222\" width=\"3\" height=\"10\"/><path class=\"svg-title\" d=\"M232 229 L240 242 L248 229 Z\"/><rect class=\"svg-badge-amber\" x=\"20\" y=\"244\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"274\" font-size=\"19\" font-weight=\"800\">Presumptive doubt</text><text class=\"svg-text\" x=\"34\" y=\"302\" font-size=\"18\">Lebih curiga daripada neutral. Buku</text><text class=\"svg-text\" x=\"34\" y=\"326\" font-size=\"18\">tidak merinci definisinya.</text><rect class=\"svg-title\" x=\"238.5\" y=\"346\" width=\"3\" height=\"10\"/><path class=\"svg-title\" d=\"M232 353 L240 366 L248 353 Z\"/><rect class=\"svg-badge-red\" x=\"20\" y=\"368\" width=\"440\" height=\"76\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"398\" font-size=\"19\" font-weight=\"800\">Complete doubt</text><text class=\"svg-text\" x=\"34\" y=\"426\" font-size=\"18\">Auditor beralih ke pola pikir forensik</text><rect class=\"svg-subcard\" x=\"20\" y=\"456\" width=\"440\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"486\" font-size=\"19\" font-weight=\"800\">Makin ke bawah, makin banyak bukti</text><text class=\"svg-title\" x=\"34\" y=\"510\" font-size=\"19\" font-weight=\"800\">dan dokumentasi</text><text class=\"svg-text\" x=\"34\" y=\"538\" font-size=\"18\">Pendorongnya: risiko tinggi, indikator</text><text class=\"svg-text\" x=\"34\" y=\"562\" font-size=\"18\">fraud, kesalahan terdeteksi,</text><text class=\"svg-text\" x=\"34\" y=\"586\" font-size=\"18\">pertimbangan kompleks, bukti tidak</text><text class=\"svg-text\" x=\"34\" y=\"610\" font-size=\"18\">konsisten</text></svg>",
+          "overview": {
+            "heading": "Kontinum skeptisisme profesional",
+            "cards": [
+              {
+                "title": "Complete trust",
+                "subtitle": "",
+                "items": [
+                  "Di luar skeptisisme profesional"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Neutral",
+                "subtitle": "",
+                "items": [
+                  "Tidak menganggap manajemen tidak jujur, juga tidak pasti jujur"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Presumptive doubt",
+                "subtitle": "",
+                "items": [
+                  "Lebih curiga daripada neutral",
+                  "Buku tidak merinci definisinya"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Complete doubt",
+                "subtitle": "",
+                "items": [
+                  "Beralih ke pola pikir forensik"
+                ],
+                "takeaway": "Makin tinggi skeptisisme, makin banyak bukti dan dokumentasi."
+              }
+            ],
+            "footer": "Sumber: Figure 5-5 (ARENS p.161)."
+          },
+          "caption": "Gambar 11.4: Kontinum skeptisisme profesional dan hubungannya dengan bukti serta dokumentasi. Disusun dari Figure 5-5 (ARENS p.161).",
+          "altText": "Kontinum dari complete trust (di luar skeptisisme profesional), neutral, presumptive doubt, sampai complete doubt (pola pikir forensik). Makin tinggi tingkat skeptisisme, makin banyak bukti dan dokumentasi yang dibutuhkan."
+        },
+        {
+          "kind": "p",
+          "text": "Akun yang tidak material tidak membutuhkan bukti melebihi yang diperoleh pada tahap penilaian risiko. Akun material berisiko tinggi yang punya indikator fraud, sudah ditemukan kesalahan, melibatkan pertimbangan kompleks, atau punya bukti yang tidak konsisten membutuhkan skeptisisme lebih tinggi, sehingga bukti dan dokumentasinya luas. `(ARENS p.160)`"
+        },
+        {
+          "kind": "table",
+          "title": "Faktor yang menggeser jumlah bukti dan dokumentasi (Figure 5-5)",
+          "headers": [
+            "Bukti dan dokumentasi lebih sedikit",
+            "Bukti dan dokumentasi lebih banyak"
+          ],
+          "rows": [
+            [
+              "Risiko dan kerentanan salah saji material lebih rendah",
+              "Risiko dan kerentanan salah saji material lebih tinggi"
+            ],
+            [
+              "Tidak ada indikator fraud",
+              "Ada indikator fraud"
+            ],
+            [
+              "Tidak ditemukan kesalahan",
+              "Ditemukan kesalahan"
+            ],
+            [
+              "Rutin, sedikit pertimbangan",
+              "Pertimbangan kompleks"
+            ],
+            [
+              "Bukti konsisten dengan penilaian risiko awal",
+              "Bukti tidak konsisten atau bertentangan dengan penilaian risiko awal"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.161)`"
+        },
+        {
+          "kind": "p",
+          "text": "Kolom kiri berlaku setelah prosedur penilaian risiko yang tepat dilakukan. Skeptisisme profesional tidak mencakup area complete trust. Pada ujung complete doubt, auditor beralih ke pola pikir forensik. Titik neutral berarti tidak menganggap manajemen tidak jujur dan juga tidak menganggapnya pasti jujur. `(ARENS p.161)`"
+        },
+        {
+          "kind": "p",
+          "text": "ISA 230 menegaskan bahwa tidak ada satu cara baku mendokumentasikan skeptisisme. Dokumentasi bisa tetap menjadi bukti skeptisisme, misalnya pada estimasi akuntansi dengan bukti yang sebagian menguatkan dan sebagian bertentangan dengan asersi manajemen. Auditor mencatat cara ia mengevaluasi bukti itu dan pertimbangan yang membawanya ke kesimpulan tentang kecukupan dan ketepatan bukti. `(ISA230 para. A7)`"
+        }
+      ]
     },
     {
-      kind: 'ul',
-      items: [
-        '**Material Weakness**: Merupakan defisiensi kontrol internal yang sedemikian rupa sehingga terdapat kemungkinan wajar bahwa salah saji material tidak akan tercegah atau terdeteksi tepat waktu.',
-        '**Komunikasi Tertulis SA 265**: Significant Deficiency dan Material Weakness WAJIB dikomunikasikan secara tertulis kepada Komite Audit dan Dewan Komisaris (TCWG).',
-        '**Keterbatasan Inheren Kontrol**: Pengendalian internal sebaik apapun tidak dapat mencegah Kolusi antar-karyawan dan Pengabaian oleh Manajemen (Management Override).'
+      "kind": "section",
+      "title": "Kasus latihan",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 1: Menilai kertas kerja.",
+          "prompt": "Seorang staf menyerahkan kertas kerja daftar piutang usaha per pelanggan. Di atasnya tertulis \"Piutang\" tanpa nama klien, periode, kode indeks, atau nama penyusun. Beberapa angka bertanda tanpa penjelasan, dan kesimpulannya hanya \"OK\". Nilai kertas kerja itu dan perbaiki.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Identifikasi:** tidak ada nama klien, periode, indeks, penyusun, dan tanggal. Lengkapi unsur itu. `(ARENS p.158)`",
+                "**Indeks dan cross-reference:** beri kode, misalnya lead schedule piutang dan kertas kerja pendukung berurutan, supaya bisa ditelusuri. `(ARENS p.158)`",
+                "**Bukti pekerjaan:** tanda tanpa penjelasan tidak bisa dibaca reviewer. Jelaskan setiap tick mark di bagian bawah, dan catat inisial di program audit. `(ARENS p.158)`",
+                "**Informasi yang cukup:** rincian saldo harus cocok dengan buku besar dan trial balance. `(ARENS p.159)`",
+                "**Kesimpulan:** \"OK\" tidak menyatakan apa yang disimpulkan. Tulis kesimpulan tentang kewajaran saldo piutang, berdasarkan prosedur yang tercatat. `(ARENS p.159)`",
+                "**Tolok ukur ISA:** auditor berpengalaman tanpa keterkaitan sebelumnya harus bisa memahami prosedur, hasil, dan kesimpulannya dari berkas itu. `(ISA230 para. 8)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 2: Perubahan setelah berkas dibekukan.",
+          "prompt": "Dua minggu setelah berkas akhir dirakit, seorang staf menemukan satu surat konfirmasi piutang yang belum masuk berkas. Ia ingin menyisipkannya di bagian piutang. Staf lain ingin membuang beberapa draf kertas kerja yang sudah lama tidak dipakai agar berkas tampak rapi. Tentukan jawabanmu.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Surat konfirmasi:** tambahkan sebagai tambahan terpisah di bagian depan berkas, nilai apakah memengaruhi kesimpulan audit, dan catat alasan serta kapan dan oleh siapa tambahan dibuat dan direview. `(ARENS pp.156–157; ISA230 para. 16)`",
+                "**Membuang draf:** tidak boleh. Setelah perakitan selesai, tidak ada dokumentasi yang boleh dihapus atau dibuang sebelum masa retensi berakhir. Pembuangan dokumen yang sudah digantikan hanya boleh sebagai bagian proses perakitan administratif. `(ISA230 paras. 15, A22)`",
+                "Perubahan ini tidak boleh menjadi prosedur atau kesimpulan baru. Itu jalur lain dengan persyaratan sendiri. `(ISA230 paras. 13, A22)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 3: Permintaan akses.",
+          "prompt": "Tiga permintaan masuk ke firma audit. (a) Seorang karyawan bagian keuangan klien, yang tidak punya akses ke data gaji direksi, ingin melihat kertas kerja audit gaji. (b) Firma lain yang membeli praktik auditor tersebut meminta seluruh kertas kerja klien. (c) Pengadilan mengeluarkan subpoena atas kertas kerja klien. Tentukan jawabanmu.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**(a) Tolak.** Karyawan tanpa akses tidak boleh melihat informasi rahasia, dan akses semacam itu membuka peluang mengubah informasi di kertas kerja. `(ARENS p.160)`",
+                "**(b) Perlu izin tertulis klien.** Klien memiliki data di kertas kerja, termasuk saat praktik dijual ke firma lain. `(ARENS p.160)`",
+                "**(c) Wajib dipenuhi tanpa izin klien.** Auditor biasanya berkonsultasi dengan pengacara dan memberi tahu klien. `(ARENS p.160)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 4: Skeptisisme dan dokumentasi.",
+          "prompt": "Dalam satu audit ada dua akun. Kas kecil nilainya sangat kecil, transaksinya rutin, dan tidak ada kesalahan ditemukan. Pendapatan lisensi bernilai besar, manajemen memakai pertimbangan rumit dalam mengakuinya, dua kesalahan cutoff ditemukan pada sampel awal, dan jawaban manajemen tidak cocok dengan kontrak yang diperiksa. Tentukan tingkat bukti dan dokumentasi untuk keduanya.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Kas kecil:** akun tidak material dan risiko rendah, jadi tidak membutuhkan bukti melebihi yang diperoleh pada penilaian risiko. Dokumentasinya ringkas. `(ARENS p.160)`",
+                "**Pendapatan lisensi:** akun material dengan pertimbangan kompleks, kesalahan terdeteksi, dan bukti yang tidak konsisten. Keempat faktor ke arah bukti lebih banyak, jadi skeptisisme lebih tinggi, bukti lebih luas, dan dokumentasi lebih rinci. `(ARENS p.161)`",
+                "Catat cara auditor menangani ketidakcocokan jawaban manajemen dengan kontrak, serta pertimbangan profesional yang membawa ke kesimpulan akhir. `(ISA230 paras. 8(c), 11, A9)`"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Uji pemahaman",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jawab dulu tanpa melihat catatan, dengan kata-katamu sendiri."
+        },
+        {
+          "kind": "self-check",
+          "question": "**1. Apa tolok ukur utama isi dokumentasi audit menurut ISA 230, dan mengapa penjelasan lisan saja tidak cukup?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* dokumentasi harus cukup agar auditor berpengalaman yang tidak pernah terlibat bisa memahami prosedur, hasil, bukti, hal signifikan, dan pertimbangan profesional di baliknya. Penjelasan lisan saja bukan dukungan memadai, tetapi boleh dipakai menjernihkan isi dokumentasi. `(ISA230 paras. 8, A5)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyebut dokumentasi sebagai \"catatan untuk diri sendiri\" tanpa menyebut pembaca yang belum terlibat."
+        },
+        {
+          "kind": "self-check",
+          "question": "**2. Bedakan permanent file dan current file, lalu beri dua contoh isi masing-masing.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* permanent file memuat informasi historis dan berkelanjutan, misalnya akta pendirian dan perjanjian obligasi. Current file hanya untuk tahun yang diaudit, misalnya program audit dan memorandum strategi (perencanaan) serta ringkasan selisih audit dan final analytical review (penyelesaian). `(ARENS p.157)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* mengira permanent file berisi semua dokumen yang tidak akan dibuang."
+        },
+        {
+          "kind": "self-check",
+          "question": "**3. Sebut empat dari lima ciri kertas kerja yang baik, lalu tunjukkan salah satunya pada kertas kerja C-1.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* identifikasi, indeks dan cross-reference, bukti pekerjaan, informasi cukup, dan kesimpulan. Pada C-1, kode C-1, nama klien Renaldo Machine Co., tanggal neraca, paraf J.B., tick mark yang dijelaskan di bawah, dan kalimat kesimpulan tampak jelas. `(ARENS pp.158–159)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyebut tick mark tanpa kewajiban menjelaskannya di kertas kerja."
+        },
+        {
+          "kind": "self-check",
+          "question": "**4. Berapa lama batas perakitan berkas akhir, dan apa yang terjadi bila ada tambahan setelahnya?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* 60 hari setelah tanggal laporan auditor. Setelah itu berkas dibekukan. Tambahan dipisahkan, ditempatkan di bagian depan, dinilai dampaknya terhadap kesimpulan, dan dicatat alasan serta kapan dan oleh siapa. `(ARENS pp.156–157; ISA230 paras. 14, 16, A21)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyebut berkas boleh diubah bebas karena laporan sudah terbit."
+        },
+        {
+          "kind": "self-check",
+          "question": "**5. Mengapa auditor tidak memperlakukan semua akun dengan tingkat skeptisisme dan dokumentasi yang sama?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* tingkat skeptisisme disesuaikan dengan risiko salah saji material dan konsistensi bukti dengan penilaian risiko awal. Akun berisiko tinggi, dengan indikator fraud, kesalahan terdeteksi, pertimbangan kompleks, atau bukti tidak konsisten butuh bukti dan dokumentasi lebih banyak. Akun tidak material dan rutin tidak butuh bukti melebihi penilaian risiko. `(ARENS pp.160–161)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menjawab \"supaya hemat waktu\" tanpa menyebut risiko dan indikator."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Exam toolkit",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Kerangka jawaban soal menilai kertas kerja**"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Periksa identifikasi: klien, periode, penyusun, tanggal, indeks.",
+            "Periksa cross-reference ke lead schedule dan kertas kerja lain.",
+            "Periksa bukti pekerjaan: inisial pada program, tick mark yang dijelaskan, memorandum.",
+            "Periksa kecukupan informasi: rincian cocok dengan buku besar dan trial balance.",
+            "Periksa kesimpulan: jelas, relevan dengan tujuan, dan didukung bukti yang memadai."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Kerangka jawaban soal perubahan setelah laporan terbit**"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Tentukan apakah ini perakitan administratif atau perubahan substantif.",
+            "Bila administratif: boleh merapikan dan melengkapi, tetapi tanpa prosedur atau kesimpulan baru.",
+            "Bila substantif setelah perakitan: catat alasan, waktu, pelaku, dan reviewer.",
+            "Bila prosedur atau kesimpulan baru setelah tanggal laporan: dokumentasikan keadaan, prosedur, bukti, dampak pada laporan.",
+            "Ingat: tidak ada penghapusan sebelum masa retensi berakhir."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Pasangan yang sering tertukar**"
+        },
+        {
+          "kind": "table",
+          "title": "Pasangan istilah yang sering tertukar di TM11",
+          "headers": [
+            "Pasangan",
+            "Pembeda"
+          ],
+          "rows": [
+            [
+              "Permanent file vs current file",
+              "Informasi berkelanjutan tentang klien vs dokumentasi khusus tahun yang diaudit"
+            ],
+            [
+              "Lead schedule vs supporting schedule",
+              "Total pos laporan keuangan dari rincian akun vs kertas kerja rincian di bawahnya"
+            ],
+            [
+              "Pemilik kertas kerja vs pemilik data",
+              "Auditor memiliki kertas kerja, klien memiliki data di dalamnya"
+            ],
+            [
+              "Perakitan administratif vs perubahan substantif",
+              "Merapikan dan melengkapi berkas vs menambah atau mengubah isi dengan catatan alasan"
+            ],
+            [
+              "Tick mark vs cross-reference",
+              "Tanda pekerjaan pada angka vs kode penunjuk ke kertas kerja lain"
+            ],
+            [
+              "Skeptisisme sesuai risiko vs complete trust",
+              "Tingkat skeptisisme disesuaikan dengan risiko vs sikap percaya penuh yang tidak termasuk skeptisisme"
+            ]
+          ],
+          "stackOnMobile": true
+        }
       ]
     }
   ]

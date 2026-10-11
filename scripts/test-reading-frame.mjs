@@ -1,7 +1,8 @@
 // Shared reading frame (src/components/course/readingFrame.ts): layered readings (AKA201) and PJK301 keep their text
-// clear of the floating launchers between 768 and 1375px and stack their tables below 1024px. Renders the real
+// clear of the floating launchers between 768 and 1375px. Prose tables stack below 1024px; numeric/comparison
+// tables retain their columns. Renders the real
 // CourseLayout with real course data in jsdom (which has no layout), so it checks the contract the browser relies on:
-// the frame class on the reading layout, the CSS rules keyed to it, and a stacked view next to every desktop table
+// the frame class on the reading layout, the CSS rules keyed to it, and a stacked or column-preserving view
 // that keeps every header, cell and caption. A course outside the frame must not change.
 import fs from 'node:fs';
 import os from 'node:os';
@@ -82,7 +83,7 @@ try {
   check(frame.usesSharedFrame({ layout: 'layered' }, 'ANY'), 'Every layered reading uses the shared frame');
   check(!frame.usesSharedFrame({}, 'SII306'), 'Other readings keep their layout');
 
-  // --- Real course pages: frame class and one stacked view per table ---
+  // --- Real course pages: prose cards or retained comparable columns ---
   const openReading = async (code, tm) => {
     if (root) await act(async () => root.unmount());
     root = createRoot(document.getElementById('root'));
@@ -96,19 +97,20 @@ try {
       frame: layout?.classList.contains(frame.SHARED_FRAME_CLASS) ?? false,
       tables: tables.length,
       desktopHiddenBelowLg: tables.filter((t) => t.closest('.hidden.lg\\:block')).length,
+      retainedColumns: tables.filter((t) => !t.closest('.hidden.lg\\:block') && (t.classList.contains('min-w-[520px]') || t.classList.contains('min-w-[840px]')) && t.closest('.akbi-table-scroll')).length,
       stacked: document.querySelectorAll('.layered-stacked-table').length,
       stackedHiddenFromLg: [...document.querySelectorAll('.layered-stacked-table')].filter((s) => s.closest('.lg\\:hidden')).length,
     };
   };
-  for (const [code, tm] of [['AKA201', 1], ['PJK301', 1], ['PJK301', 8], ['PJK301', 14]]) {
+  for (const [code, tm] of [['AKA201', 1], ['PJK301', 1], ['PJK301', 9], ['PJK301', 14]]) {
     if (!(await openReading(code, tm))) continue;
     await settle(80);
     const state = layoutState();
     const at = `${code} TM${tm}`;
     check(state.frame, `${at}: reading layout carries the shared frame class`);
     check(state.tables > 0 || code === 'PJK301', `${at}: has tables to check`, JSON.stringify(state));
-    check(state.desktopHiddenBelowLg === state.tables, `${at}: every desktop table is hidden below 1024px`, JSON.stringify(state));
-    check(state.stacked === state.tables && state.stackedHiddenFromLg === state.stacked, `${at}: every table has a stacked view, hidden from 1024px`, JSON.stringify(state));
+    check(state.desktopHiddenBelowLg + state.retainedColumns === state.tables, `${at}: every table has prose cards or retained columns in a local scroll region`, JSON.stringify(state));
+    check(state.stacked === state.desktopHiddenBelowLg && state.stackedHiddenFromLg === state.stacked, `${at}: every hidden desktop table has phone cards, hidden from 1024px`, JSON.stringify(state));
     // Stacked cards: labels shaped differently from values, a bolder title, values and prose marked as ink text.
     const has = (el, ...classes) => classes.every((c) => el.classList.contains(c));
     const labels = [...document.querySelectorAll('.layered-stacked-table dt')];
@@ -127,7 +129,7 @@ try {
     check(!state.frame && state.stacked === 0, 'SII306 (outside the frame): no frame class and no stacked tables', JSON.stringify(state));
   }
 
-  // --- Stacked view keeps all table text: every PJK301 table, headers, cells and caption ---
+  // --- Both phone presentations keep every PJK301 header, cell and caption ---
   const pjk = await loadCourseContent('PJK301');
   const tables = [];
   const collect = (blocks, inBox) => blocks.forEach((block) => {
@@ -145,14 +147,15 @@ try {
     await act(async () => {
       tableRoot.render(React.createElement(frame.SharedFrameContext.Provider, { value: true }, React.createElement(CourseBlockCard, { block, enableLegalStyling: true, enableEditorialReading: true })));
     });
-    const stacked = host.querySelector('.layered-stacked-table')?.parentElement;
-    const text = squash(stacked?.textContent ?? '');
+    const presentation = host.querySelector('.layered-stacked-table')?.parentElement ?? host.querySelector('.course-table-card, .akk203-report-table');
+    check(Boolean(presentation), 'PJK301: a complete phone presentation exists for this table');
+    const text = squash(presentation?.textContent ?? '');
     for (const raw of [...block.headers, ...block.rows.flat(), block.caption ?? '']) {
       const piece = decodeEntities(raw); // e.g. &le; renders as ≤
       if (squash(piece) && !text.includes(squash(piece))) { lost += 1; if (examples.length < 3) examples.push(piece.slice(0, 50)); }
     }
   }
-  check(lost === 0, 'PJK301 stacked tables keep every header, cell and caption', `${lost} missing, e.g. ${JSON.stringify(examples)}`);
+  check(lost === 0, 'PJK301 phone cards or retained columns keep every header, cell and caption', `${lost} missing, e.g. ${JSON.stringify(examples)}`);
   await act(async () => tableRoot.unmount());
 } catch (error) {
   failures.push(`crashed: ${error?.stack ?? error}`);

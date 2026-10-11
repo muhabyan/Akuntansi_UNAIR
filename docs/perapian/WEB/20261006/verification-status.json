@@ -1,0 +1,215 @@
+{
+  "nonBrowserTaskCount": 40,
+  "nonBrowserFinalPass": true,
+  "tasks": [
+    {
+      "name": "test-table-titles",
+      "exitCode": 0
+    },
+    {
+      "name": "test-reading-lifecycle",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm01-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm02-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm03-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm04-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm05-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm06-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-tm07-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm01-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm02-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm03-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm04-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm05-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm06-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-tm07-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm01-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm02-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm03-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm04-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm05-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm06-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-tm07-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu307-render-rules",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-renderer",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk203-render-rules",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-render-rules",
+      "exitCode": 0
+    },
+    {
+      "name": "test-mnu108-practice",
+      "exitCode": 0
+    },
+    {
+      "name": "test-sia-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-aks301-alignment",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk202-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-akk202-alignment",
+      "exitCode": 0
+    },
+    {
+      "name": "test-pjk301-canonical",
+      "exitCode": 0
+    },
+    {
+      "name": "test-pjk301-alignment",
+      "exitCode": 0
+    },
+    {
+      "name": "test-aka201-layered",
+      "exitCode": 0
+    },
+    {
+      "name": "test-aka201-practice",
+      "exitCode": 0
+    },
+    {
+      "name": "test-aka201-reading-nav",
+      "exitCode": 0
+    },
+    {
+      "name": "test-reading-frame",
+      "exitCode": 0,
+      "originalExitCode": 1,
+      "finalLog": "logs/reading-frame-final.log",
+      "note": "Kegagalan awal asumsi semua tabel kartu disimpan dalam log awal; kontrak disesuaikan untuk tabel angka/pembanding yang mempertahankan kolom, kemudian 91/91 lulus."
+    },
+    {
+      "name": "test-reading-outline",
+      "exitCode": 0
+    },
+    {
+      "name": "test-render-s1",
+      "exitCode": 0
+    }
+  ],
+  "lint": {
+    "exitCode": 0,
+    "log": "logs/lint-final.log"
+  },
+  "build": {
+    "exitCode": 0,
+    "typescript": true,
+    "rawLogCaptured": false,
+    "provenance": "Tool exec npm.cmd run build pada sesi ini; output 2252 modules dan precache 57. Tidak mengklaim log lengkap tersedia."
+  },
+  "runtimeSmoke": {
+    "exitCode": 0,
+    "browser": false,
+    "rawLogCaptured": false,
+    "warning": "Supabase URL/Anon Key tidak tersedia; JSDOM juga mencatat nesting p pada QuizView. Tidak menguji login Supabase."
+  },
+  "fullNpmCheck": {
+    "run": false,
+    "pass": false,
+    "reason": "Browser permission denial blocks mandatory actual-browser tasks; no skip enabled."
+  },
+  "actualBrowser": {
+    "websiteCaptures": 0,
+    "mobileLight": false,
+    "mobileDark": false,
+    "desktop": false,
+    "lifecycleQA": false,
+    "e2e": false,
+    "mnu307TextPathR1R2": false
+  },
+  "blocker": {
+    "action": "Browser access to http://127.0.0.1:5186/course/MNU108",
+    "message": "A saved user permission setting blocks this action",
+    "userAuthorized": true,
+    "userReportedSettingChanged": true,
+    "retryStillBlocked": true,
+    "bypassAttempted": false
+  },
+  "screenshots": {
+    "websiteViewport": [],
+    "cropInspection": [],
+    "elementCapture": [],
+    "standaloneSVG": [],
+    "previewQA": [],
+    "localBuildQA": []
+  }
+}

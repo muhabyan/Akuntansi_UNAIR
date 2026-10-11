@@ -84,8 +84,8 @@ for (const pathname of ['/course/MNU108', '/course/FEB25603011', '/course/MNM101
 
 // ---- The renamed data: content is served under MNU108 and the legacy codes
 const content = await loadCourseContent('MNU108');
-assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), Array.from({ length: 14 }, (_, i) => i + 1));
-assert.deepEqual(Object.keys(content.reviews).sort(), ['uas', 'uts']);
+assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14]); // TM 8 = UTS (jadi ulasan), materi baru mulai TM 9 sesuai kontrak
+assert.deepEqual(Object.keys(content.reviews).sort(), ['uts']); // TM14 sudah TM biasa, tidak lagi ditiru sebagai kartu Review UAS
 const cards = getFlashcards('MNU108');
 assert.ok(cards.length > 0, 'the deck is served under MNU108');
 assert.equal(pengantarManajemen[0].flashcardCount, cards.length, 'catalog flashcardCount matches the deck');
@@ -98,7 +98,7 @@ assert.ok(getBankSoalSets('MNU108').every((set) => set.items.length > 0) && getB
 // Legacy access also works via the compatibility layer
 for (const legacy of ['MNM101', 'MNM201']) {
   const legacyContent = await loadCourseContent(legacy);
-  assert.equal(Object.keys(legacyContent.readings).length, 14, `${legacy} readings`);
+  assert.equal(Object.keys(legacyContent.readings).length, 13, `${legacy} readings`);
   assert.equal(getFlashcards(legacy).length, cards.length, `${legacy} flashcards`);
   assert.equal(getQuiz(legacy).length, getQuiz('MNU108').length, `${legacy} quiz`);
   assert.deepEqual(getQuizSets(legacy).map((set) => set.id), ['uts', 'uas', 'all'], `${legacy} quiz sets`);

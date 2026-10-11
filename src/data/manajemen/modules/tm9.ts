@@ -70,7 +70,7 @@ export const TM9_READING: Reading = {
   tm: 9,
   title: 'Managing Innovation and Change: Model Ambidextrous & Manajemen Perubahan',
   ref: 'Richard L. Daft Bab 12 | Kurt Lewin 3-Step Change Model | John Kotter 8-Step Leading Change',
-  intro: 'TM 9 membahas bagaimana organisasi bertahan dan bertumbuh di tengah disrupsi industri melalui inovasi dan manajemen perubahan: inovasi produk vs teknologi proses, model Organisasi Ambidextrous (Ambidextrous Organization yang menyeimbangkan eksploitasi bisnis inti dengan eksplorasi inovasi baru), 3 peran pendorong inovasi internal (Idea Champion, Sponsor, Critic), Model 3 Tahap Perubahan Kurt Lewin (Unfreezing, Changing, Refreezing), analisis medan kekuatan (Force Field Analysis), serta 5 taktik mengatasi resistensi perubahan karyawan.',
+  intro: 'TM 9 membahas bagaimana organisasi bertahan dan tumbuh saat industrinya terganggu, lewat inovasi dan manajemen perubahan. Isinya inovasi produk vs inovasi proses teknologi, organisasi ambidextrous (menyeimbangkan eksploitasi bisnis inti dengan eksplorasi inovasi baru), tiga peran pendorong inovasi internal (Idea Champion, Sponsor, Critic), model tiga tahap perubahan Kurt Lewin (Unfreezing, Changing, Refreezing), Force Field Analysis, dan lima taktik menghadapi resistensi karyawan terhadap perubahan.',
   objectives: [
     'Menerapkan konsep Organisasi Ambidextrous dalam mengelola inovasi dan efisiensi secara simultan.',
     'Menjelaskan 3 peran kunci pendorong inovasi: Idea Champion, Sponsor, dan Critic.',

@@ -71,7 +71,7 @@ export const TM12_READING: Reading = {
   tm: 12,
   title: 'Leadership in Organizations: Teori Perilaku, Kontinjensi, & Kepemimpinan Transformasional',
   ref: 'Richard L. Daft Bab 16 | Hersey-Blanchard Situational Leadership | Bernard Bass Transformational Leadership',
-  intro: 'TM 12 membahas evolusi teori kepemimpinan dalam organisasi: pergeseran dari Teori Sifat (Trait Theory) ke Teori Perilaku (Blake & Mouton Leadership Grid), Teori Kontinjensi (Model Kontinjensi Fiedler dan Kepemimpinan Situasional Hersey-Blanchard), perbandingan Kepemimpinan Transaksional vs Kepemimpinan Transformasional (The 4 Is: Idealized Influence, Inspirational Motivation, Intellectual Stimulation, Individualized Consideration), Kepemimpinan Karismatik, serta filosofi Kepemimpinan Pelayan (Servant Leadership).',
+  intro: 'TM 12 membahas bagaimana teori kepemimpinan berkembang. Kita mulai dari Teori Sifat (Trait Theory), lalu Teori Perilaku (Blake & Mouton Leadership Grid) dan Teori Kontinjensi (Model Fiedler serta Kepemimpinan Situasional Hersey-Blanchard). Setelah itu ada perbandingan Kepemimpinan Transaksional dan Transformasional (The 4 Is: Idealized Influence, Inspirational Motivation, Intellectual Stimulation, Individualized Consideration), Kepemimpinan Karismatik, dan Servant Leadership (Kepemimpinan Pelayan).',
   objectives: [
     'Membedakan peran Manajemen (menciptakan keteraturan dan stabilitas) vs Kepemimpinan (menciptakan perubahan dan visi).',
     'Menerapkan Model Kepemimpinan Situasional Hersey-Blanchard sesuai tingkat kesiapan pengikut (R1 s/d R4).',

@@ -212,7 +212,6 @@ export default function ReadingOutline({ items, variant, activeId: controlledAct
             <div className="flex min-h-14 shrink-0 items-center justify-between gap-3 border-b border-gray-200 px-4 dark:border-gray-700">
               <div>
                 <h2 id="reading-outline-mobile-title" className="text-sm font-bold text-gray-900 dark:text-white">Daftar Isi</h2>
-                <p className="text-[11px] font-medium text-gray-500 dark:text-gray-400">{items.length} bagian materi</p>
               </div>
               <button
                 ref={closeButtonRef}
@@ -236,7 +235,6 @@ export default function ReadingOutline({ items, variant, activeId: controlledAct
       <details className="reading-outline mb-6 rounded-xl border border-gray-200 bg-white/70 dark:border-gray-700 dark:bg-gray-900/55 lg:hidden">
         <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-4 py-2.5 text-sm font-bold text-gray-800 dark:text-gray-200">
           <span className="flex items-center gap-2"><ListTree size={17} className="text-blue-500" /> Daftar isi</span>
-          <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{items.length} bagian</span>
         </summary>
         <div className="border-t border-gray-200 p-2 dark:border-gray-700"><OutlineLinks items={items} activeId={activeId} /></div>
       </details>

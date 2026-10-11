@@ -19,6 +19,8 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { TM15_READING } from './modules/tm15';
+import { LEGACY_UAS } from './legacyPasca';
 import { BENANG_MERAH_READING } from './prep/benangMerah';
 import { PANDUAN_MENJAWAB_KASUS_READING } from './prep/panduanMenjawabKasus';
 import { LATIHAN_SKENARIO_UTS_READING } from './prep/latihanSkenarioUts';
@@ -39,12 +41,13 @@ export const AKA201_READINGS: Record<number, Reading> = {
   12: TM12_READING,
   13: TM13_READING,
   14: TM14_READING,
+  15: TM15_READING,
 };
 
 // No 'uts' entry: the old TM8 "Simulasi UTS" card is hidden now that the Persiapan UTS pages replace it
 // (TM8 itself stays in the TM 8–14 list until that half is rebuilt).
 export const AKA201_REVIEW_READINGS: Record<string, Reading> = {
-  uas: TM14_READING,
+  uas: LEGACY_UAS,
   'prep:benang-merah': BENANG_MERAH_READING,
   'prep:panduan-menjawab-kasus': PANDUAN_MENJAWAB_KASUS_READING,
   'prep:latihan-skenario-uts': LATIHAN_SKENARIO_UTS_READING,

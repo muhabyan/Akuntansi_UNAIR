@@ -80,7 +80,7 @@ export const TM2_READING: Reading = {
   tm: 2,
   title: 'Analysis of Financial Statements, Financial Ratio Systems, & The DuPont Identity',
   ref: 'Brigham & Houston (Fundamentals of Financial Management 16e/2022 Ch. 3 & Ch. 4) | Silabus FEB UNAIR 2026',
-  intro: 'TM 2 ini tentang cara "membaca" kesehatan keuangan perusahaan lewat 4 laporan keuangan utama, menghitung Free Cash Flow (FCF), dan menguasai 5 kelompok rasio keuangan (Likuiditas, Manajemen Aset, Utang, Profitabilitas, Nilai Pasar). Yang paling penting dan paling sering keluar ujian: Sistem DuPont 3-langkah dan 5-langkah buat membongkar dari mana ROE perusahaan sebenarnya berasal. Plus, kamu juga harus tahu trik window dressing yang sering dipakai perusahaan buat mempercantik laporan keuangannya.',
+  intro: 'TM 2 mengajarkan cara membaca kesehatan keuangan perusahaan dari empat laporan keuangan utama, menghitung Free Cash Flow (FCF), dan memakai lima kelompok rasio (Likuiditas, Manajemen Aset, Utang, Profitabilitas, Nilai Pasar). Bagian yang paling penting dan paling sering keluar di ujian adalah Sistem DuPont 3-langkah dan 5-langkah, yang membongkar dari mana ROE perusahaan sebenarnya berasal. Kamu juga akan mengenal trik window dressing, yaitu cara perusahaan mempercantik laporan keuangannya.',
   objectives: [
     'Paham 4 laporan keuangan utama (Neraca, Laba Rugi, Arus Kas, Ekuitas) dan hubungannya satu sama lain.',
     'Bisa hitung NOPAT, NOWC, dan Free Cash Flow (FCF) — bedain mana kas operasional, mana kas pendanaan.',
