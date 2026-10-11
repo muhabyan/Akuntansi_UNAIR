@@ -10,7 +10,7 @@ const { AKA201_READINGS, AKA201_REVIEW_READINGS, AKA201_PREP } = await import(
   `data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`
 );
 
-const LAYERED_TMS = [1, 2, 3, 4, 5, 6, 7];
+const LAYERED_TMS = [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15];
 const CALLOUT_VARIANTS = new Set(['gist', 'warning', 'info', 'note', 'quote']);
 // Figures and infographics: at least 12 px text at 390 px, where a box inside a section (pendalaman, self-check) leaves about 320 px of width.
 // (The browser check in the converter harness also verifies that nothing overflows sideways.)

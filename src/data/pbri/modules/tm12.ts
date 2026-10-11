@@ -1,176 +1,2092 @@
+// AKA201 TM12/05_student_learning_version.md, converted by C:\Users\Lenovo\aka201-converter\convert-aka201-v2.mjs.
+// The text is verbatim from the content package; figures come from aka201-fig-*.mjs. Change those and re-run the converter instead of editing here.
 import type { Reading } from '../../../types';
-import { CASE_AUDIT_TESTING_MIX } from '../pbriPracticeCases';
-
-const SVG_AUDIT_TESTING_MIX = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgPb12" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="t1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="t2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
-    <linearGradient id="t3" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-    <linearGradient id="t4" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-    <linearGradient id="t5" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgPb12)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">5 JENIS PENGUJIAN AUDIT &amp; KOMPOSISI STRATEGI AUDIT (AUDIT TESTING MIX)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">TESTING MIX</text>
-
-  <!-- 5 Columns Cards Grid -->
-  <g transform="translate(35, 75)">
-    <!-- 1. Risk Assessment -->
-    <rect class="svg-card" x="0" y="0" width="158" height="235" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="158" height="28" rx="8" fill="url(#t1)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="79" y="19" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">1. RISK ASSESS</text>
-    <text class="svg-text" x="8" y="44" fill="#cbd5e1" font-size="7">• Memahami bisnis klien &amp; industri</text>
-    <text class="svg-text" x="8" y="60" fill="#cbd5e1" font-size="7">• Menilai desain SPI (Walkthrough)</text>
-    <text class="svg-text" x="8" y="76" fill="#cbd5e1" font-size="7">• Identifikasi akun berisiko tinggi</text>
-    <text class="svg-text" x="8" y="92" fill="#cbd5e1" font-size="7">• Dilakukan saat tahap perencanaan</text>
-    <rect class="svg-badge-blue" x="8" y="185" width="142" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="79" y="201" fill="#38bdf8" font-size="7.5" font-weight="700" text-anchor="middle">Perencanaan SA 315</text>
-  </g>
-
-  <g transform="translate(201, 75)">
-    <!-- 2. Test of Controls -->
-    <rect class="svg-card" x="0" y="0" width="158" height="235" rx="8" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
-    <rect x="0" y="0" width="158" height="28" rx="8" fill="url(#t2)" fill-opacity="0.25"/>
-    <text class="text-accent-purple" x="79" y="19" fill="#a78bfa" font-size="8.5" font-weight="800" text-anchor="middle">2. UJI KENDALI (TOC)</text>
-    <text class="svg-text" x="8" y="44" fill="#cbd5e1" font-size="7">• Menguji efektivitas operasi SPI</text>
-    <text class="svg-text" x="8" y="60" fill="#cbd5e1" font-size="7">• Memeriksa tanda tangan otorisasi</text>
-    <text class="svg-text" x="8" y="76" fill="#cbd5e1" font-size="7">• Uji password &amp; hak akses TI</text>
-    <text class="svg-text" x="8" y="92" fill="#cbd5e1" font-size="7">• Bila TOC efektif →Uji Substantif dapat dikurangi</text>
-    <rect class="svg-badge-purple" x="8" y="185" width="142" height="24" rx="4" fill="#7c3aed" fill-opacity="0.2"/>
-    <text class="text-accent-purple" x="79" y="201" fill="#a78bfa" font-size="7.5" font-weight="700" text-anchor="middle">Uji Efektivitas SPI</text>
-  </g>
-
-  <g transform="translate(367, 75)">
-    <!-- 3. Substantive Analytical -->
-    <rect class="svg-card" x="0" y="0" width="158" height="235" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="158" height="28" rx="8" fill="url(#t3)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="79" y="19" fill="#fbbf24" font-size="8.5" font-weight="800" text-anchor="middle">3. PROSEDUR ANALITIS</text>
-    <text class="svg-text" x="8" y="44" fill="#cbd5e1" font-size="7">• Perbandingan rasio &amp; tren akun</text>
-    <text class="svg-text" x="8" y="60" fill="#cbd5e1" font-size="7">• Analisis regresi beban gaji vs headcount</text>
-    <text class="svg-text" x="8" y="76" fill="#cbd5e1" font-size="7">• Uji kelayakan beban bunga utang</text>
-    <text class="svg-text" x="8" y="92" fill="#cbd5e1" font-size="7">• Efisien untuk populasi besar</text>
-    <rect class="svg-badge-amber" x="8" y="185" width="142" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="79" y="201" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="middle">Efisiensi Bukti Makro</text>
-  </g>
-
-  <g transform="translate(533, 75)">
-    <!-- 4. TODT -->
-    <rect class="svg-card" x="0" y="0" width="158" height="235" rx="8" fill="#0f172a" stroke="#f87171" stroke-width="1.5"/>
-    <rect x="0" y="0" width="158" height="28" rx="8" fill="url(#t4)" fill-opacity="0.25"/>
-    <text class="text-accent-red" x="79" y="19" fill="#f87171" font-size="8.5" font-weight="800" text-anchor="middle">4. RINCIAN TRANSAKSI</text>
-    <text class="svg-text" x="8" y="44" fill="#cbd5e1" font-size="7">• Vouching faktur penjualan ke jurnal</text>
-    <text class="svg-text" x="8" y="60" fill="#cbd5e1" font-size="7">• Tracing surat jalan ke faktur</text>
-    <text class="svg-text" x="8" y="76" fill="#cbd5e1" font-size="7">• Uji pisah batas (Cut-off testing)</text>
-    <text class="svg-text" x="8" y="92" fill="#cbd5e1" font-size="7">• Memverifikasi aliran debit/kredit akun</text>
-    <rect class="svg-badge-red" x="8" y="185" width="142" height="24" rx="4" fill="#dc2626" fill-opacity="0.2"/>
-    <text class="text-accent-red" x="79" y="201" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Uji Jurnal &amp; Pisah Batas</text>
-  </g>
-
-  <g transform="translate(699, 75)">
-    <!-- 5. TODB -->
-    <rect class="svg-card" x="0" y="0" width="165" height="235" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="165" height="28" rx="8" fill="url(#t5)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="82" y="19" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">5. RINCIAN SALDO (TODB)</text>
-    <text class="svg-text" x="8" y="44" fill="#cbd5e1" font-size="7">• Konfirmasi saldo bank &amp; piutang</text>
-    <text class="svg-text" x="8" y="60" fill="#cbd5e1" font-size="7">• Observasi fisik persediaan (Stock Opname)</text>
-    <text class="svg-text" x="8" y="76" fill="#cbd5e1" font-size="7">• Rekalkulasi beban penyusutan</text>
-    <text class="svg-text" x="8" y="92" fill="#cbd5e1" font-size="7">• Biaya pengujian paling mahal namun bukti paling kuat</text>
-    <rect class="svg-badge-green" x="8" y="185" width="149" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="82" y="201" fill="#34d399" font-size="7.5" font-weight="700" text-anchor="middle">Uji Saldo Akhir Neraca</text>
-  </g>
-</svg>`;
 
 export const TM12_READING: Reading = {
-  tm: 12,
-  title: 'Pengujian Pengendalian (TOC), Uji Substantif Transaksi (STOT), & Uji Rinci Saldo (TOD)',
-  ref: 'Arens 16e Ch. 13 | SA 330, SA 500 | 5 Types of Audit Tests',
-  intro: 'TM 12 membahas integrasi 5 jenis pengujian audit (Audit Testing Mix): Prosedur Penilaian Risiko, Pengujian Pengendalian (TOC), Pengujian Substantif Transaksi (STOT), Prosedur Analitis Substantif (SAP), dan Pengujian Rinci Saldo (TOD). Serta strategi efisiensi biaya audit melalui pengandalan kontrol internal yang efektif.',
-  objectives: [
-    'Membedakan tujuan, prosedur pelaksanaan, dan biaya relatif dari 5 jenis pengujian audit.',
-    'Menjelaskan trade-off antara Pengujian Pengendalian (TOC) dan Pengujian Rinci Saldo (TOD).',
-    'Menentukan saat yang tepat untuk melaksanakan pengujian interim (Interim Testing) vs akhir tahun (Year-End Testing).',
-    'Merancang bauran pengujian audit optimal berbasis risiko dan tingkat efisiensi anggaran perikatan.'
+  "tm": 12,
+  "title": "Model Risiko Audit, Penilaian Risiko, dan Risiko Kecurangan",
+  "intro": "**Sumber utama:** Arens dkk., Ch.7, pp.222–244. **Standar:** SA/ISA 315 (Revised 2019), SA/ISA 240, SA/ISA 330, dan SA/ISA 200 sebagai dasar definisi.",
+  "objectives": [
+    "Menjelaskan audit risk model dan hubungan terbalik antara risk of material misstatement dan detection risk.",
+    "Menilai inherent risk dengan inherent risk factors dan spectrum of inherent risk, lalu menentukan significant risk.",
+    "Membedakan risiko tingkat laporan keuangan dari tingkat asersi, serta respons keseluruhan dari respons tingkat asersi.",
+    "Memakai fraud triangle untuk mengenali fraud risk factors pada pelaporan keuangan dan penyalahgunaan aset.",
+    "Merancang respons terhadap risiko fraud, termasuk tiga prosedur atas management override yang wajib di setiap audit."
   ],
-  blocks: [
+  "layout": "layered",
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 12.1: Bauran 5 Jenis Pengujian Audit (SA 330 & SA 500).',
-      svg: SVG_AUDIT_TESTING_MIX
-    },
-    {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 12'
-    },
-    {
-      kind: 'table',
-      headers: ['Jenis Pengujian Audit', 'Fokus yang Diuji', 'Bukti yang Dihasilkan', 'Dampak Hasil Pengujian'],
-      rows: [
-        ['Test of Controls (TOC)', 'Efektivitas operasi kontrol (apakah prosedur otorisasi dijalankan konsisten).', 'Paraf otorisasi, log akses IT, hasil reperformance.', 'Jika TOC efektif -> Control Risk Dinilai Rendah -> Ukuran sampel TOD dapat ditekan signifikan!'],
-        ['Substantive Test of Transactions (STOT)', 'Akurasi moneter pencatatan transaksi individual.', 'Faktur, voucher kas, dokumen pengiriman.', 'Menguji apakah rupiah transaksi laba rugi dicatat benar.'],
-        ['Substantive Analytical Procedures (SAP)', 'Kewajaran menyeluruh saldo akun melalui hubungan logis data.', 'Hasil perhitungan Proof in Total dan rasio industri.', 'Jika SAP tidak menemukan anomali -> Keyakinan substantif meningkat tanpa uji dokumen manual banyak.'],
-        ['Test of Details of Balances (TOD)', 'Kewajaran moneter saldo akhir akun neraca per 31 Desember.', 'Konfirmasi bank/piutang, hasil stock opname fisik, rekening koran subsequent.', 'Memberikan bukti paling meyakinkan (Direct Evidence), namun biayanya paling mahal.']
-      ],
-      caption: 'Tabel 12.0: Perbandingan 4 pengujian audit respon risiko.'
-    },
-    {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Trade-Off Biaya & Bukti Audit'
-    },
-    {
-      kind: 'formula',
-      text: `\\text{Efisiensi Bauran Audit}:
-\\text{TOC Efektif (Kontrol Kuat)} \\longrightarrow \\text{Control Risk (CR) Rendah} \\longrightarrow \\text{Planned Detection Risk (PDR) Tinggi}
-\\longrightarrow \\mathbf{\\text{Pengujian Rinci Saldo (TOD) Minimal (Hemat Waktu \\& Biaya!)}}`,
-      note: 'Jika hasil TOC menunjukkan kontrol klien gagal/tidak efektif, auditor WAJIB membatalkan pengandalan kontrol dan memperluas sampel TOD hingga 100% populasi saldo akun material.'
-    },
-    {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Strategi Pengujian Akun Piutang Usaha',
-      prompt: 'Klien e-commerce memiliki 500.000 transaksi penjualan per bulan yang diproses otomatis oleh sistem ERP. Bagaimana auditor merancang bauran pengujian (TOC vs TOD) yang paling efektif dan efisien?',
-      blocks: [
+      "kind": "section",
+      "title": "0. Fondasi: risiko audit menentukan di mana bukti dikumpulkan",
+      "layer": "fondasi",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Fokus Utama pada Automated TOC**: Karena volume transaksi masif (500.000/bulan), memeriksa dokumen satu per satu (TOD manual) sangat tidak efisien. Auditor menguji efektivitas Automated Application Controls (validasi limit kredit dan matching otomatis faktur dengan gateway pembayaran).',
-            '**Dampak terhadap TOD**: Jika Automated TOC terbukti beroperasi konsisten sepanjang tahun, auditor cukup mengirim sampel konfirmasi piutang dalam jumlah moderat dan melakukan prosedur analitis substantif atas penerimaan kas.'
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** audit risk adalah risiko auditor menyatakan opini yang tidak tepat padahal laporan keuangan salah saji material. Auditor menekannya dengan menilai risiko salah saji material, lalu mengatur prosedur supaya risiko tidak terdeteksi cukup rendah. `(ARENS p.223; ISA200 paras. 13(c), 17)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan cakupan.** TM09 membahas prosedur penilaian risiko dan pemahaman entitas (Ch.6). TM ini memakai hasil pemahaman itu untuk menilai risiko. Control risk hanya dikenalkan sebagai komponen model. Pengendalian internal dibahas di TM13, dan pengujiannya di TM14. `(ARENS p.226)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Alur dari pemahaman entitas sampai respons risiko",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 932\" width=\"100%\" role=\"img\" aria-labelledby=\"f12-peta-t f12-peta-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f12-peta-t\">Alur dari pemahaman entitas sampai respons risiko</title><desc id=\"f12-peta-d\">Empat kartu berurutan yang bercabang menjadi respons keseluruhan dan prosedur lanjutan, dengan catatan tentang risiko fraud.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"932\" rx=\"14\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"20\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">1. Pahami entitas dan kerangka</text><text class=\"svg-title\" x=\"34\" y=\"74\" font-size=\"19\" font-weight=\"800\">pelaporan</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">Hasil prosedur penilaian risiko (TM09)</text><rect class=\"svg-title\" x=\"238.5\" y=\"122\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 133 L240 146 L248 133 Z\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"148\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"178\" font-size=\"19\" font-weight=\"800\">2. Identifikasi risiko salah saji</text><text class=\"svg-title\" x=\"34\" y=\"202\" font-size=\"19\" font-weight=\"800\">material</text><text class=\"svg-text\" x=\"34\" y=\"230\" font-size=\"18\">Tingkat laporan keuangan dan tingkat</text><text class=\"svg-text\" x=\"34\" y=\"254\" font-size=\"18\">asersi</text><rect class=\"svg-title\" x=\"238.5\" y=\"274\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 285 L240 298 L248 285 Z\"/><rect class=\"svg-badge-green\" x=\"20\" y=\"300\" width=\"440\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"330\" font-size=\"19\" font-weight=\"800\">3. Nilai risikonya</text><text class=\"svg-text\" x=\"34\" y=\"358\" font-size=\"18\">Laporan keuangan: seberapa menyeluruh</text><text class=\"svg-text\" x=\"34\" y=\"382\" font-size=\"18\">dampaknya</text><text class=\"svg-text\" x=\"34\" y=\"406\" font-size=\"18\">Asersi: inherent risk, dan control risk</text><text class=\"svg-text\" x=\"34\" y=\"430\" font-size=\"18\">bila pengendalian akan diuji</text><rect class=\"svg-title\" x=\"238.5\" y=\"450\" width=\"3\" height=\"14\"/><path class=\"svg-title\" d=\"M232 461 L240 474 L248 461 Z\"/><rect class=\"svg-badge-amber\" x=\"20\" y=\"476\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"506\" font-size=\"19\" font-weight=\"800\">4. Tentukan risiko signifikan</text><text class=\"svg-text\" x=\"34\" y=\"534\" font-size=\"18\">Inherent risk dekat ujung atas spectrum,</text><text class=\"svg-text\" x=\"34\" y=\"558\" font-size=\"18\">atau diwajibkan standar lain</text><rect class=\"svg-title\" x=\"124.5\" y=\"586\" width=\"3\" height=\"22\"/><path class=\"svg-title\" d=\"M118 605 L126 618 L134 605 Z\"/><rect class=\"svg-title\" x=\"352.5\" y=\"586\" width=\"3\" height=\"22\"/><path class=\"svg-title\" d=\"M346 605 L354 618 L362 605 Z\"/><rect class=\"svg-badge-blue\" x=\"20\" y=\"620\" width=\"212\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"650\" font-size=\"19\" font-weight=\"800\">Respons</text><text class=\"svg-title\" x=\"34\" y=\"674\" font-size=\"19\" font-weight=\"800\">keseluruhan</text><text class=\"svg-text\" x=\"34\" y=\"702\" font-size=\"18\">Untuk risiko</text><text class=\"svg-text\" x=\"34\" y=\"726\" font-size=\"18\">tingkat laporan</text><text class=\"svg-text\" x=\"34\" y=\"750\" font-size=\"18\">keuangan</text><rect class=\"svg-badge-blue\" x=\"248\" y=\"620\" width=\"212\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"262\" y=\"650\" font-size=\"19\" font-weight=\"800\">Prosedur</text><text class=\"svg-title\" x=\"262\" y=\"674\" font-size=\"19\" font-weight=\"800\">lanjutan</text><text class=\"svg-text\" x=\"262\" y=\"702\" font-size=\"18\">Untuk risiko</text><text class=\"svg-text\" x=\"262\" y=\"726\" font-size=\"18\">tingkat asersi:</text><text class=\"svg-text\" x=\"262\" y=\"750\" font-size=\"18\">nature, timing,</text><text class=\"svg-text\" x=\"262\" y=\"774\" font-size=\"18\">extent</text><rect class=\"svg-subcard\" x=\"20\" y=\"812\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"842\" font-size=\"19\" font-weight=\"800\">Risiko fraud (ISA 240)</text><text class=\"svg-text\" x=\"34\" y=\"870\" font-size=\"18\">Dinilai di tingkat laporan keuangan dan</text><text class=\"svg-text\" x=\"34\" y=\"894\" font-size=\"18\">asersi, dan diperbarui sepanjang audit</text></svg>",
+          "overview": {
+            "heading": "Alur dari pemahaman entitas sampai respons risiko",
+            "cards": [
+              {
+                "title": "1. Pahami entitas dan kerangka pelaporan",
+                "subtitle": "",
+                "items": [
+                  "Hasil prosedur penilaian risiko dari TM09"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "2. Identifikasi risiko salah saji material",
+                "subtitle": "",
+                "items": [
+                  "Tingkat laporan keuangan",
+                  "Tingkat asersi"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "3. Nilai risikonya",
+                "subtitle": "",
+                "items": [
+                  "Laporan keuangan: seberapa menyeluruh dampaknya",
+                  "Asersi: inherent risk, dan control risk bila pengendalian akan diuji"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "4. Tentukan risiko signifikan",
+                "subtitle": "",
+                "items": [
+                  "Inherent risk dekat ujung atas spectrum, atau diwajibkan standar lain"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Dua respons",
+                "subtitle": "",
+                "items": [
+                  "Respons keseluruhan untuk risiko tingkat laporan keuangan",
+                  "Prosedur lanjutan (nature, timing, extent) untuk risiko tingkat asersi"
+                ],
+                "takeaway": "Risiko fraud dinilai di kedua tingkat dan diperbarui sepanjang audit."
+              }
+            ],
+            "footer": "Sumber: Figure 7-1 dan 7-4 (ARENS pp.224, 229); ISA315 paras. 28–34."
+          },
+          "caption": "Gambar 12.1: Alur dari pemahaman entitas sampai respons risiko. Disusun dari Figure 7-1 dan Figure 7-4 (ARENS pp.224, 229) dan ISA315 paras. 28–34.",
+          "altText": "Empat tahap berurutan: pahami entitas dan kerangka pelaporan, identifikasi risiko salah saji material, nilai risikonya, tentukan risiko signifikan. Dari sana dua respons: respons keseluruhan untuk risiko tingkat laporan keuangan dan prosedur lanjutan untuk risiko tingkat asersi. Risiko fraud dinilai di kedua tingkat dan diperbarui sepanjang audit."
+        },
+        {
+          "kind": "callout",
+          "variant": "quote",
+          "text": "**Definisi.** Audit risk adalah risiko bahwa auditor menyatakan opini yang tidak tepat ketika laporan keuangan salah saji material. Audit risk merupakan fungsi dari risiko salah saji material dan detection risk. `(ISA200 para. 13(c))`"
+        },
+        {
+          "kind": "p",
+          "text": "Audit risk tidak bisa dihilangkan. Standar meminta auditor memperoleh bukti audit yang cukup dan tepat untuk menurunkannya ke tingkat rendah yang dapat diterima, dan itulah dasar kesimpulan yang wajar untuk opini. `(ARENS p.223; ISA200 para. 17)` Audit risk berkaitan dengan proses audit. Kerugian akibat litigasi atau publisitas buruk adalah risiko bisnis auditor, dan bukan bagian dari audit risk. `(ARENS p.223)`"
+        },
+        {
+          "kind": "p",
+          "text": "Penilaian risiko berfungsi sebagai alat perencanaan. Hasilnya menentukan area yang mendapat perhatian lebih, jenis bukti yang dicari, dan siapa yang mengerjakannya. Section 1 sampai 4 membahas model risiko dan responsnya. Section 5 sampai 7 menambahkan satu lapisan khusus, yaitu risiko kecurangan, yang dinilai di tingkat laporan keuangan maupun tingkat asersi dan terus diperbarui sepanjang audit. `(ARENS p.236)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Kesalahpahaman umum"
+        },
+        {
+          "kind": "table",
+          "title": "Kesalahpahaman umum tentang risiko audit",
+          "headers": [
+            "Anggapan yang keliru",
+            "Yang benar",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "\"Audit risk berarti risiko auditor digugat atau reputasinya rusak.\"",
+              "Audit risk berkaitan dengan proses audit, yaitu opini yang tidak tepat. Kerugian litigasi dan publisitas buruk adalah risiko bisnis auditor.",
+              "ARENS p.223"
+            ],
+            [
+              "\"Klien yang untung berarti tidak ada risiko.\"",
+              "Auditor tidak menilai apakah klien untung atau rugi. Yang dinilai adalah seberapa sulit informasi diperiksa dan insentif yang bisa membuat laporan salah.",
+              "ARENS p.228"
+            ],
+            [
+              "\"Auditor mengatur semua komponen audit risk.\"",
+              "Inherent risk dan control risk milik klien dan ada tanpa audit. Hanya detection risk yang dikendalikan auditor.",
+              "ARENS p.225"
+            ],
+            [
+              "\"AR = IR × CR × DR adalah rumus yang hasilnya pasti.\"",
+              "Model ini alat konseptual untuk merencanakan respons, dan bukan rumus yang presisi.",
+              "ARENS p.225; ISA200 para. A44"
+            ],
+            [
+              "\"Kas selalu berisiko rendah.\"",
+              "Kas sering dinilai rendah karena sederhana dan dikendalikan baik, tetapi beberapa fraud besar, termasuk Parmalat, melibatkan kas.",
+              "ARENS p.233"
+            ],
+            [
+              "\"Fraud dan error sama sulitnya dideteksi.\"",
+              "Risiko tidak mendeteksi salah saji karena fraud lebih tinggi daripada karena error, karena fraud bisa disusun rapi dan disembunyikan.",
+              "ARENS p.236; ISA240 para. 6"
+            ],
+            [
+              "\"Risiko signifikan itu sama untuk semua klien dan semua tahun.\"",
+              "Risiko signifikan berbeda antarentitas dan bisa berubah dari tahun ke tahun.",
+              "ARENS p.233; ISA315 para. A219"
+            ]
+          ],
+          "stackOnMobile": true
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "1. Model risiko audit",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** audit risk terdiri dari risk of material misstatement dan detection risk. Risk of material misstatement milik klien dan hanya bisa dinilai auditor. Detection risk dikendalikan auditor lewat sifat, saat, dan luas prosedur. Keduanya berhubungan terbalik."
+        },
+        {
+          "kind": "h3",
+          "text": "Komponen model"
+        },
+        {
+          "kind": "p",
+          "text": "Risk of material misstatement (RMM) ada bila terdapat kemungkinan wajar bahwa salah saji terjadi (likelihood), atau salah saji itu material bila terjadi (magnitude). RMM berada di dua tingkat: laporan keuangan secara keseluruhan, dan asersi pada kelas transaksi, saldo akun, serta pengungkapan. `(ARENS p.223)` Pada tingkat asersi, RMM terdiri dari inherent risk dan control risk. `(ARENS p.225; ISA200 para. 13(n))`"
+        },
+        {
+          "kind": "table",
+          "title": "Tiga komponen model risiko audit",
+          "headers": [
+            "Komponen",
+            "Arti",
+            "Siapa yang mengendalikan",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Inherent risk (IR)",
+              "Kerentanan sebuah asersi terhadap salah saji yang bisa material, sebelum mempertimbangkan pengendalian terkait",
+              "Tidak ada. Ia ada di klien tanpa audit, dan auditor hanya menilainya",
+              "ARENS p.225; ISA200 para. 13(n)(i)"
+            ],
+            [
+              "Control risk (CR)",
+              "Risiko salah saji pada asersi tidak dicegah, atau tidak dideteksi dan dikoreksi tepat waktu, oleh pengendalian entitas",
+              "Tidak ada. Ia melekat pada sistem pengendalian klien, dan auditor hanya menilainya",
+              "ARENS p.225; ISA200 para. 13(n)(ii)"
+            ],
+            [
+              "Detection risk (DR)",
+              "Risiko prosedur auditor tidak mendeteksi salah saji yang ada dan bisa material",
+              "Auditor, melalui nature, timing, dan extent prosedur lanjutan",
+              "ARENS p.225; ISA200 para. 13(e)"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Model dituliskan sebagai AR = IR × CR × DR. Buku menegaskan bahwa ini alat konseptual untuk merencanakan respons dan bukan rumus yang presisi. `(ARENS p.225)` Standar menambahkan bahwa penilaian bisa dinyatakan dalam persentase atau dalam bentuk nonkuantitatif, dan yang lebih penting adalah penilaian yang tepat. `(ISA200 para. A44)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Audit risk model: AR = IR × CR × DR",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 728\" width=\"100%\" role=\"img\" aria-labelledby=\"f12-model-t f12-model-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f12-model-t\">Audit risk model</title><desc id=\"f12-model-d\">Kartu audit risk di atas, sama dengan kartu RMM (inherent risk dikali control risk) dikali kartu detection risk, dengan catatan hubungan terbalik.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"728\" rx=\"14\"/><rect class=\"svg-badge-red\" x=\"20\" y=\"20\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Audit risk (AR)</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Risiko opini tidak tepat saat laporan</text><text class=\"svg-text\" x=\"34\" y=\"102\" font-size=\"18\">keuangan salah saji material. Dijaga</text><text class=\"svg-text\" x=\"34\" y=\"126\" font-size=\"18\">rendah.</text><text class=\"svg-title\" x=\"240\" y=\"180\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">=</text><rect class=\"svg-subcard\" x=\"20\" y=\"196\" width=\"440\" height=\"76\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"226\" font-size=\"19\" font-weight=\"800\">Risk of material misstatement (RMM)</text><text class=\"svg-text\" x=\"34\" y=\"254\" font-size=\"18\">Milik klien. Auditor hanya menilai.</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"284\" width=\"204\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"314\" font-size=\"19\" font-weight=\"800\">Inherent risk</text><text class=\"svg-title\" x=\"34\" y=\"338\" font-size=\"19\" font-weight=\"800\">(IR)</text><text class=\"svg-text\" x=\"34\" y=\"366\" font-size=\"18\">Sebelum</text><text class=\"svg-text\" x=\"34\" y=\"390\" font-size=\"18\">pengendalian</text><rect class=\"svg-badge-amber\" x=\"256\" y=\"284\" width=\"204\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"270\" y=\"314\" font-size=\"19\" font-weight=\"800\">Control risk</text><text class=\"svg-title\" x=\"270\" y=\"338\" font-size=\"19\" font-weight=\"800\">(CR)</text><text class=\"svg-text\" x=\"270\" y=\"366\" font-size=\"18\">Pengendalian</text><text class=\"svg-text\" x=\"270\" y=\"390\" font-size=\"18\">gagal mencegah</text><text class=\"svg-text\" x=\"270\" y=\"414\" font-size=\"18\">atau mendeteksi</text><text class=\"svg-title\" x=\"240\" y=\"336\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">×</text><text class=\"svg-title\" x=\"240\" y=\"472\" font-size=\"30\" font-weight=\"800\" text-anchor=\"middle\">×</text><rect class=\"svg-badge-green\" x=\"20\" y=\"486\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"516\" font-size=\"19\" font-weight=\"800\">Detection risk (DR)</text><text class=\"svg-text\" x=\"34\" y=\"544\" font-size=\"18\">Dikendalikan auditor lewat nature,</text><text class=\"svg-text\" x=\"34\" y=\"568\" font-size=\"18\">timing, dan extent prosedur</text><rect class=\"svg-subcard\" x=\"20\" y=\"608\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"638\" font-size=\"19\" font-weight=\"800\">Hubungan terbalik</text><text class=\"svg-text\" x=\"34\" y=\"666\" font-size=\"18\">RMM naik, DR turun, bukti harus lebih</text><text class=\"svg-text\" x=\"34\" y=\"690\" font-size=\"18\">banyak dan meyakinkan</text></svg>",
+          "overview": {
+            "heading": "Audit risk model",
+            "cards": [
+              {
+                "title": "Audit risk (AR)",
+                "subtitle": "",
+                "items": [
+                  "Risiko opini tidak tepat saat laporan keuangan salah saji material"
+                ],
+                "takeaway": "Dijaga pada tingkat rendah yang dapat diterima."
+              },
+              {
+                "title": "Inherent risk (IR)",
+                "subtitle": "Bagian dari RMM",
+                "items": [
+                  "Kerentanan asersi sebelum pengendalian"
+                ],
+                "takeaway": "Milik klien; auditor hanya menilai."
+              },
+              {
+                "title": "Control risk (CR)",
+                "subtitle": "Bagian dari RMM",
+                "items": [
+                  "Pengendalian entitas gagal mencegah atau mendeteksi salah saji tepat waktu"
+                ],
+                "takeaway": "Milik klien; auditor hanya menilai."
+              },
+              {
+                "title": "Detection risk (DR)",
+                "subtitle": "",
+                "items": [
+                  "Prosedur auditor gagal mendeteksi salah saji yang ada"
+                ],
+                "takeaway": "Satu-satunya komponen yang dikendalikan auditor."
+              },
+              {
+                "title": "Hubungan terbalik",
+                "subtitle": "",
+                "items": [
+                  "RMM naik, DR diturunkan",
+                  "Bukti harus lebih banyak dan meyakinkan"
+                ],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumber: Figure 7-2 (ARENS p.225); ISA200 para. 13."
+          },
+          "caption": "Gambar 12.2: Audit risk model. Disusun dari Figure 7-2 (ARENS p.225) dan ISA200 para. 13.",
+          "altText": "Audit risk sama dengan risk of material misstatement dikali detection risk. Risk of material misstatement terdiri dari inherent risk dikali control risk, keduanya milik klien. Detection risk dikendalikan auditor. Bila RMM naik, detection risk diturunkan."
+        },
+        {
+          "kind": "p",
+          "text": "Karena AR dijaga rendah, hubungan RMM dan DR berbalik. RMM yang tinggi pada sebuah asersi membuat auditor menetapkan detection risk rendah, sehingga bukti yang dikumpulkan harus lebih meyakinkan. `(ARENS pp.225–226)`"
+        },
+        {
+          "kind": "p",
+          "text": "**Control risk dan arah bukti.** Hubungan control risk dengan jumlah bukti searah: pengendalian yang efektif membuat auditor boleh menaikkan detection risk yang direncanakan. Menilai control risk rendah berarti auditor berencana mengandalkan pengendalian, sehingga ia wajib menguji pengendalian itu. Bila hasil pengujian mendukung, uji substantif bisa dikurangi. `(ARENS p.226)` Bila auditor tidak berencana menguji pengendalian, penilaian control risk dibuat sedemikian rupa sehingga RMM sama dengan inherent risk. `(ISA315 para. 34)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Penerapan pada piutang usaha (Table 7-1)"
+        },
+        {
+          "kind": "p",
+          "text": "Buku memakai dua asersi pada saldo piutang usaha untuk menunjukkan cara kerja model. Valuasi adalah asersi berisiko tinggi, dan kelengkapan adalah asersi berisiko rendah. `(ARENS p.226)`"
+        },
+        {
+          "kind": "table",
+          "title": "Penerapan audit risk model pada piutang usaha (Table 7-1)",
+          "headers": [
+            "Asersi",
+            "Audit risk",
+            "Inherent risk",
+            "Control risk",
+            "Detection risk",
+            "Bukti yang dibutuhkan"
+          ],
+          "rows": [
+            [
+              "Valuasi",
+              "Rendah",
+              "Tinggi",
+              "Tinggi",
+              "Rendah",
+              "Tinggi (banyak dan meyakinkan)"
+            ],
+            [
+              "Kelengkapan",
+              "Rendah",
+              "Rendah",
+              "Rendah",
+              "Tinggi",
+              "Rendah (lebih sedikit)"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.226)`"
+        },
+        {
+          "kind": "p",
+          "text": "Pada **valuasi**, inherent risk tinggi karena dampak COVID-19 terhadap kemampuan pelanggan membayar. Control risk tinggi karena praktik persetujuan kredit lemah: pemeriksaan kredit dan latar belakang pelanggan baru tidak memadai. Karena itu detection risk dibuat rendah, dan auditor menyusun uji substantif yang menghasilkan bukti lebih meyakinkan untuk menilai kewajaran cadangan kerugian piutang. `(ARENS p.226)`"
+        },
+        {
+          "kind": "p",
+          "text": "Pada **kelengkapan**, tidak ada faktor yang menunjukkan asersi ini terancam, sehingga inherent risk rendah. Klien punya pengendalian IT yang kuat atas kelengkapan pendapatan dari pengiriman dan penagihan, dan buku pembantu piutang direkonsiliasi rutin dengan buku besar. Setelah auditor menguji pengendalian itu dan hasilnya mendukung control risk rendah, bukti substantif yang dibutuhkan tidak harus sekuat pada valuasi. `(ARENS p.226)`"
+        },
+        {
+          "kind": "p",
+          "text": "Buku menyebut valuasi sebagai relevant assertion, dan kelengkapan bukan. Relevant assertion adalah asersi yang memiliki risiko salah saji material yang teridentifikasi, dan penentuannya dilakukan sebelum mempertimbangkan pengendalian, jadi berdasarkan inherent risk. `(ARENS p.226; ISA315 para. 12(h))`"
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** Asersi yang tidak relevan tidak berarti tidak diuji. Apa pun hasil penilaian risikonya, auditor tetap merancang prosedur substantif untuk setiap kelas transaksi, saldo akun, dan pengungkapan yang material. `(ISA330 para. 18)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Mengelola detection risk (Table 7-2)"
+        },
+        {
+          "kind": "p",
+          "text": "Penilaian RMM per asersi menentukan di mana auditor memusatkan usaha, dan seberapa ketat nature, timing, dan extent prosedur. Bila detection risk tinggi, pengujian boleh lebih ringan: sampel lebih kecil, bukti lebih bergantung pada dokumen klien, dan jenis prosedur lebih terbatas. Bila detection risk rendah, ketiga dimensi itu diperluas. `(ARENS pp.226–227)`"
+        },
+        {
+          "kind": "table",
+          "title": "Cara mengelola detection risk saat RMM tinggi (Table 7-2)",
+          "headers": [
+            "Dimensi respons",
+            "Contoh saat RMM pada asersi tinggi"
+          ],
+          "rows": [
+            [
+              "Nature (sifat)",
+              "Memakai bukti berkualitas tinggi, yaitu informasi dari sumber eksternal dan bukan hasil produksi klien. Menjalankan uji rinci sekaligus prosedur analitis substantif. Memakai alat dan teknik otomatis seperti audit data analytics."
+            ],
+            [
+              "Extent (luas)",
+              "Memakai sampel lebih besar. Menurunkan performance materiality untuk akun itu. Memakai alat otomatis untuk menguji 100 persen populasi."
+            ],
+            [
+              "Timing (saat)",
+              "Menjalankan prosedur pada akhir tahun dan bukan pada tanggal interim."
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.227)`"
+        },
+        {
+          "kind": "p",
+          "text": "Model risiko hanya mengatur prosedur lanjutan. Auditor juga mengelola detection risk dengan menugaskan staf yang lebih berpengalaman pada area itu dan mereview hasil pengujiannya lebih teliti. Contohnya, bila inherent risk keusangan persediaan sangat tinggi, tugas itu diberikan kepada staf berpengalaman dan pekerjaannya direview lebih ketat. `(ARENS p.227)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Dua perusahaan, risiko inheren sama, strategi berbeda (Figure 7-3)",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Buku membandingkan saldo persediaan dua perusahaan. Keduanya punya persediaan mahal yang mudah dicuri, sehingga inherent risk atas existence tinggi pada keduanya. Bayangkan titik-titik yang jatuh dari atas sebagai potensi salah saji material. `(ARENS p.227)`"
+            },
+            {
+              "kind": "table",
+              "title": "Perbandingan Company A dan Company B pada persediaan (Figure 7-3)",
+              "headers": [
+                "Aspek",
+                "Company A",
+                "Company B"
+              ],
+              "rows": [
+                [
+                  "Inherent risk existence",
+                  "Tinggi",
+                  "Tinggi"
+                ],
+                [
+                  "Sistem pengendalian",
+                  "Kuat, mampu mencegah atau mendeteksi sebagian besar salah saji",
+                  "Lemah, salah saji terus lolos"
+                ],
+                [
+                  "Control risk",
+                  "Rendah",
+                  "Tinggi"
+                ],
+                [
+                  "Strategi auditor",
+                  "Berencana mengandalkan pengendalian, jadi wajib menguji pengendalian",
+                  "Tidak mengandalkan pengendalian"
+                ],
+                [
+                  "Prosedur lanjutan",
+                  "Uji substantif tetap dilakukan untuk mendeteksi dan mengukur salah saji",
+                  "Uji substantif tetap dilakukan untuk mendeteksi dan mengukur salah saji"
+                ],
+                [
+                  "Detection risk yang direncanakan (menurut logika model)",
+                  "Lebih tinggi",
+                  "Lebih rendah"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "`(ARENS pp.227–228)`"
+            },
+            {
+              "kind": "p",
+              "text": "Jika inherent risk dan control risk dinilai tepat, audit risk terjaga rendah pada kedua perusahaan. Yang berbeda hanya cara auditor mengelola detection risk. `(ARENS p.228)`"
+            },
+            {
+              "kind": "callout",
+              "variant": "note",
+              "text": "**Catatan sumber.** Teks buku menulis bahwa pada Company A detection risk rendah sehingga auditor memakai \"mangkuk\" yang lebih kecil. Menurut logika model, control risk Company A yang rendah membuat detection risk yang direncanakan lebih tinggi daripada Company B, dan prosedur yang diperlukan lebih ringan. Bacaan di atas mengikuti logika model, yaitu detection risk Company A lebih tinggi. Bila soal ujian memakai kalimat buku, tulis jawaban dengan alasan model: control risk rendah menaikkan detection risk yang boleh diterima."
+            }
+          ]
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Mengapa staf baru sering ditugaskan pada kas",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Dalam percakapan di buku, Leslie menjelaskan kepada AJ bahwa auditor eksternal tidak menilai apakah Hillsburg untung atau rugi. Yang dinilai adalah seberapa sulit sebuah informasi diperiksa. Estimasi manajemen seperti cadangan kerugian piutang dan kewajiban pembongkaran aset bergantung pada banyak asumsi dan sulit diperiksa, sehingga berisiko tinggi. Saldo kas adalah \"angka keras\" yang bisa dicek lewat konfirmasi bank, sehingga cocok untuk staf baru. Penugasan seperti ini adalah salah satu cara mengelola detection risk. `(ARENS p.228)`"
+            },
+            {
+              "kind": "callout",
+              "variant": "info",
+              "text": "**Interpretasi.** Contoh ini memperlihatkan dua pengaturan detection risk dengan alat berbeda: staf berpengalaman pada area sulit, dan prosedur yang menghasilkan bukti lebih meyakinkan pada asumsi estimasi. Penugasan staf baru pada kas wajar, tetapi section 3 menunjukkan jebakannya: kas yang dianggap aman tidak boleh lolos dari skeptisisme."
+            }
+          ]
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Ilustrasi angka: arah hubungan IR, CR, dan DR",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Persentase di bawah dibuat penulis untuk memperlihatkan arah hubungan model. Buku memakai kategori tinggi dan rendah (Table 7-1), dan menegaskan bahwa model bersifat konseptual. `(ARENS pp.225–226)` Hitungannya memakai DR = AR ÷ (IR × CR)."
+            },
+            {
+              "kind": "table",
+              "title": "Ilustrasi angka untuk detection risk yang direncanakan",
+              "headers": [
+                "Skenario",
+                "AR yang dituju",
+                "IR",
+                "CR",
+                "RMM = IR × CR",
+                "DR yang direncanakan"
+              ],
+              "rows": [
+                [
+                  "1. Pengendalian diuji dan efektif",
+                  "5%",
+                  "50%",
+                  "50%",
+                  "25%",
+                  "20%"
+                ],
+                [
+                  "2. Pengendalian tidak diandalkan",
+                  "5%",
+                  "50%",
+                  "100%",
+                  "50%",
+                  "10%"
+                ],
+                [
+                  "3. Inherent risk lebih tinggi, pengendalian tidak diandalkan",
+                  "5%",
+                  "80%",
+                  "100%",
+                  "80%",
+                  "6,25%"
+                ],
+                [
+                  "4. Skenario 1 dengan AR yang dituju lebih rendah",
+                  "2%",
+                  "50%",
+                  "50%",
+                  "25%",
+                  "8%"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "Dari skenario 1 ke 2, control risk dibuat 100 persen karena auditor tidak mengandalkan pengendalian, sehingga RMM sama dengan inherent risk (ISA 315 para. 34). RMM naik dari 25 persen ke 50 persen dan detection risk turun dari 20 persen ke 10 persen: bukti harus lebih meyakinkan. Dari skenario 1 ke 4, auditor menginginkan audit risk lebih rendah, dan detection risk ikut turun dari 20 persen ke 8 persen. `(ISA315 para. 34)`"
+            },
+            {
+              "kind": "callout",
+              "variant": "info",
+              "text": "**Interpretasi.** Angka ini hanya menunjukkan arah. Dalam praktik, auditor menilai tinggi, sedang, atau rendah dan menerjemahkannya ke nature, timing, dan extent prosedur, seperti pada Table 7-2. Soal ujian yang meminta perhitungan akan menyebut rumus dan angkanya."
+            }
           ]
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 12'
+      "kind": "section",
+      "title": "2. Dari pemahaman entitas ke penilaian risiko",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** auditor memakai hasil prosedur penilaian risiko untuk mengidentifikasi risiko salah saji material di dua tingkat, yaitu laporan keuangan dan asersi. Inherent risk factors membantu menilai seberapa rentan sebuah asersi sebelum pengendalian dipertimbangkan."
+        },
+        {
+          "kind": "p",
+          "text": "Figure 7-4 meringkas proses penilaian inherent risk menurut CAS 315 (Revised). Informasi dari prosedur penilaian risiko dipakai untuk memahami bagaimana informasi itu berhubungan dengan laporan keuangan dan apa yang bisa salah. Sasarannya adalah mengidentifikasi RMM di tingkat laporan keuangan dan tingkat asersi. Auditor lalu mengevaluasi sifat dan signifikansi risiko itu untuk merancang respons keseluruhan dan prosedur lanjutan. `(ARENS p.229)`"
+        },
+        {
+          "kind": "table",
+          "title": "Langkah penilaian risiko menurut ISA 315 (Revised 2019)",
+          "headers": [
+            "Langkah",
+            "Yang dilakukan auditor",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "1",
+              "Memahami entitas, lingkungannya, dan kerangka pelaporan keuangan yang berlaku, termasuk bagaimana inherent risk factors memengaruhi kerentanan asersi",
+              "ARENS p.229; ISA315 para. 19"
+            ],
+            [
+              "2",
+              "Mengidentifikasi risiko salah saji material dan menentukan apakah risiko itu ada di tingkat laporan keuangan atau tingkat asersi",
+              "ISA315 para. 28"
+            ],
+            [
+              "3",
+              "Menentukan relevant assertions dan significant classes of transactions, account balances, and disclosures",
+              "ARENS p.232; ISA315 para. 29"
+            ],
+            [
+              "4",
+              "Untuk risiko tingkat laporan keuangan: menentukan apakah memengaruhi risiko tingkat asersi dan mengevaluasi sifat serta luas dampak menyeluruhnya",
+              "ARENS pp.229–230; ISA315 para. 30"
+            ],
+            [
+              "5",
+              "Untuk risiko tingkat asersi: menilai inherent risk dari likelihood dan magnitude, dan menilai control risk bila berencana menguji pengendalian",
+              "ISA315 paras. 31, 34"
+            ],
+            [
+              "6",
+              "Menentukan significant risks dan risiko yang tidak bisa dicakup prosedur substantif saja",
+              "ISA315 paras. 32, 33"
+            ],
+            [
+              "7",
+              "Menentukan respons keseluruhan dan respons tingkat asersi",
+              "ARENS p.229"
+            ],
+            [
+              "8",
+              "Mengevaluasi bukti dari penilaian risiko dan merevisi penilaian bila ada informasi baru",
+              "ISA315 paras. 35, 37"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Risiko tingkat laporan keuangan"
+        },
+        {
+          "kind": "p",
+          "text": "Risiko tingkat laporan keuangan menyangkut laporan keuangan secara keseluruhan dan berpotensi memengaruhi banyak asersi. Risiko jenis ini tidak selalu bisa dikaitkan dengan satu akun atau satu asersi, dan lebih tepat dipahami sebagai keadaan yang menaikkan risiko di banyak asersi sekaligus. `(ARENS p.224; ISA315 para. A195)`"
+        },
+        {
+          "kind": "p",
+          "text": "Buku memberi contoh jaringan toko serba ada kelas atas yang kesulitan bersaing dengan pesaing daring dan terpukul pandemi. Arus kasnya tertekan, dana darurat pemerintah sudah diperoleh, dan sumber kas lain habis. Auditor kemungkinan menyimpulkan bahwa dasar going concern adalah risiko tingkat laporan keuangan. Dampaknya meluas ke valuasi persediaan dan klasifikasi utang jangka panjang, dan kerangka pelaporan bisa berubah menjadi basis likuidasi yang memengaruhi semua asersi. `(ARENS p.224)`"
+        },
+        {
+          "kind": "table",
+          "title": "Contoh risiko yang berdampak menyeluruh pada laporan keuangan",
+          "headers": [
+            "Kondisi",
+            "Mengapa berdampak menyeluruh",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Staf akuntansi kurang terlatih atau tidak berpengalaman",
+              "Meningkatkan kemungkinan banyak kesalahan terjadi",
+              "ARENS p.232"
+            ],
+            [
+              "Defisiensi signifikan pada pengendalian tingkat entitas",
+              "Membuka peluang management override. Pembahasannya ada di Ch.8 dan Ch.9 (TM13 dan TM14)",
+              "ARENS p.232"
+            ],
+            [
+              "Riwayat rugi dan masalah likuiditas",
+              "Membuat dasar going concern diragukan",
+              "ARENS pp.224, 232"
+            ],
+            [
+              "Riwayat salah saji atau banyak penyesuaian akhir tahun",
+              "Menunjukkan salah saji akan terus terjadi. Hasil audit tahun lalu menjadi informasinya",
+              "ARENS p.232"
+            ],
+            [
+              "Insentif kuat bagi manajemen mencapai ekspektasi laba yang terlalu agresif",
+              "Risiko fraud sangat relevan di tingkat laporan keuangan dan memengaruhi banyak akun dan asersi",
+              "ARENS p.232; ISA315 para. A197"
+            ],
+            [
+              "Kekhawatiran atas integritas manajemen",
+              "Bisa begitu serius sampai auditor menyimpulkan audit tidak dapat dilakukan",
+              "ARENS p.232; ISA315 para. A198"
+            ],
+            [
+              "Perubahan lingkungan TI dikelola buruk dengan sedikit pengawasan",
+              "Catatan akuntansi menjadi tidak andal, dan bukti yang cukup untuk opini tanpa modifikasi mungkin tidak tersedia",
+              "ARENS p.224; ISA315 para. A198"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Bila risiko berdampak menyeluruh, auditor wajib menyesuaikan respons keseluruhannya (section 4). `(ARENS p.232)` Standar juga meminta auditor menentukan apakah risiko itu memengaruhi penilaian di tingkat asersi. `(ISA315 para. 30)` Bila laporan keuangan akan dipakai untuk memperoleh pembiayaan, auditor dapat menyimpulkan kerentanan terhadap fraud lebih besar, misalnya aset dan pendapatan dilebihsajikan agar pembiayaan cair. `(ISA315 para. A197)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Risiko tingkat asersi"
+        },
+        {
+          "kind": "p",
+          "text": "Risiko tingkat asersi menyangkut kelas transaksi, saldo akun, dan pengungkapan tertentu. Contohnya penjualan ke luar negeri: transaksi bisa dicatat dengan kurs yang salah pada tanggal transaksi, sehingga pendapatan dan piutang usaha, khususnya asersi accuracy dan valuation, terancam. `(ARENS p.225)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Inherent risk factors"
+        },
+        {
+          "kind": "p",
+          "text": "Inherent risk factors adalah karakteristik peristiwa atau kondisi yang memengaruhi kerentanan sebuah asersi terhadap salah saji, baik karena fraud maupun error, sebelum pengendalian dipertimbangkan. Faktornya bisa kuantitatif atau kualitatif. `(ARENS p.229; ISA315 para. 12(f))` Auditor tidak menilai relevansi tiap faktor satu per satu. Faktor-faktor itu saling berkaitan, jadi dinilai bersama. `(ARENS pp.229–230)`"
+        },
+        {
+          "kind": "table",
+          "title": "Lima inherent risk factors dan contohnya",
+          "headers": [
+            "Faktor",
+            "Arti",
+            "Contoh dari buku",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Complexity",
+              "Transaksi rumit karena baru bagi klien, pemrosesannya kompleks, standar akuntansinya rumit, atau kontraknya kompleks",
+              "Perusahaan ritel bahan makanan dengan syarat komersial berbeda per pemasok membuat penghitungan provisi rebat sangat rumit. Perusahaan kanabis memakai banyak sumber data untuk menaksir nilai aset biologis",
+              "ARENS p.230"
+            ],
+            [
+              "Subjectivity",
+              "Keterbatasan inheren dalam menyusun informasi secara objektif karena pengetahuan atau data yang ada",
+              "Cadangan kerugian piutang memakai model historis, yang tidak lagi relevan saat COVID-19. Manajemen perlu banyak pertimbangan dan beberapa skenario",
+              "ARENS p.230"
+            ],
+            [
+              "Change",
+              "Perubahan pada kerangka akuntansi, model bisnis, atau lingkungan (ekonomi, pasar, regulasi)",
+              "Pembatasan akibat pandemi mengganggu operasi dan memengaruhi berbagai provisi dan penurunan nilai aset",
+              "ARENS p.230"
+            ],
+            [
+              "Uncertainty",
+              "Estimasi disusun dari data yang tidak tepat atau tidak lengkap karena faktor di luar kendali manajemen",
+              "Penurunan nilai aset tidak lancar bergantung pada nilai wajar dan arus kas masa depan yang sulit diprediksi",
+              "ARENS p.230"
+            ],
+            [
+              "Susceptibility to management bias or fraud-risk factors",
+              "Kondisi yang membuat manajemen sengaja atau tidak sengaja tidak netral saat menyusun informasi akuntansi",
+              "Tujuan menurunkan pajak penghasilan dapat menaikkan inherent risk atas kelengkapan pendapatan dan keterjadian beban",
+              "ARENS p.230"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Standar menambahkan dua faktor lain yang memengaruhi kerentanan asersi: signifikansi kuantitatif atau kualitatif sebuah kelas transaksi, saldo, atau pengungkapan, serta volume atau ketidakseragaman item yang diproses. `(ISA315 para. A8)`"
+        },
+        {
+          "kind": "table",
+          "title": "Peristiwa dan kondisi yang mengindikasikan risiko pada tingkat asersi (Table 7-3)",
+          "headers": [
+            "Faktor",
+            "Contoh peristiwa atau kondisi"
+          ],
+          "rows": [
+            [
+              "Complexity",
+              "Regulatory: operasi tunduk pada regulasi yang kompleks. Business model: aliansi dan joint venture yang kompleks. Kerangka pelaporan: pengukuran akuntansi melibatkan proses kompleks. Transaksi: pembiayaan kompleks seperti off-balance-sheet financing"
+            ],
+            [
+              "Subjectivity",
+              "Kerangka pelaporan: rentang kriteria pengukuran estimasi yang lebar, misalnya pengakuan amortisasi"
+            ],
+            [
+              "Change",
+              "Kondisi ekonomi: operasi di wilayah yang tidak stabil. Kehilangan pelanggan: masalah going concern dan likuiditas, termasuk kehilangan pelanggan signifikan. Industri: perubahan besar seperti pada industri penerbangan. Business model: perubahan rantai pasok atau masuk lini bisnis baru. Kerangka pelaporan: standar akuntansi baru. Regulasi: dampak legislasi baru terkait COVID-19"
+            ],
+            [
+              "Uncertainty",
+              "Pelaporan: peristiwa atau transaksi dengan ketidakpastian pengukuran signifikan, atau legislasi yang tertunda dan liabilitas kontinjensi"
+            ],
+            [
+              "Management bias atau fraud-risk factors",
+              "Pelaporan: peluang bagi manajemen dan karyawan melakukan pelaporan keuangan yang curang. Transaksi: transaksi pihak berelasi yang signifikan, serta transaksi nonrutin atau tidak sistematis yang signifikan"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.231)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Dari berita industri ke asersi: contoh Hillsburg",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Dalam percakapan di buku, Leslie menjelaskan bahwa inherent risk factors lebih mudah dipahami lewat peristiwa dan kondisi yang bisa menandakan salah saji. Penurunan sektor konstruksi dapat membuat sebagian pelanggan Hillsburg bangkrut atau terlambat membayar, sehingga auditor memeriksa apakah manajemen mempertimbangkan penyesuaian cadangan kerugian piutang. Pesaing, Orvill, membuka pusat distribusi di New Brunswick untuk melayani Quebec dan Atlantik. Hillsburg ternyata memberi diskon besar pada sebagian peralatan dan menjualnya di bawah biaya kepada pelanggan bernama Kenny. Karena itu Leslie dan timnya menghabiskan waktu lebih banyak memeriksa valuasi persediaan, untuk memastikan manajemen mencatat keputusan menjual di bawah biaya itu dengan benar. `(ARENS p.231)`"
+            },
+            {
+              "kind": "table",
+              "title": "Pemetaan peristiwa Hillsburg ke inherent risk factors (disusun dari uraian buku)",
+              "headers": [
+                "Peristiwa",
+                "Faktor yang paling berperan",
+                "Akun dan asersi yang terdampak"
+              ],
+              "rows": [
+                [
+                  "Penurunan sektor konstruksi, pelanggan bangkrut atau terlambat bayar",
+                  "Change dan uncertainty",
+                  "Valuasi piutang usaha dan cadangan kerugian piutang"
+                ],
+                [
+                  "Pesaing membuka pusat distribusi, Hillsburg menjual di bawah biaya",
+                  "Change",
+                  "Valuasi persediaan"
+                ],
+                [
+                  "Manajemen bisa mengubah angka demi bonus",
+                  "Management bias atau fraud-risk factors",
+                  "Banyak asersi, direspons dalam rencana audit"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "Penugasan faktor pada tiap peristiwa adalah pemetaan penulis. Buku hanya menyebut akun yang diperhatikan auditor dan alasannya. `(ARENS p.231)`"
+            }
+          ]
+        }
+      ]
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', '5 Jenis Pengujian Audit', 'Diferensiasi Risk Assessment, TOC, STOT, SAP, dan TOD.', 'Mampu mengelompokkan prosedur audit spesifik ke dalam 5 jenis pengujian.'],
-        ['2', 'Trade-off TOC vs TOD', 'Analisis hubungan efisiensi biaya dan pengandalan kontrol.', 'Mampu merancang bauran pengujian berbasis kondisi kontrol internal klien.'],
-        ['3', 'Interim vs Year-End Testing', 'Penentuan waktu pengujian pengendalian dan substantif.', 'Menguasai risiko roll-forward periode interim ke tanggal neraca.']
-      ],
-      caption: 'Tabel 12.2: Peta penguasaan submateri TM 12 PBR I.'
+      "kind": "section",
+      "title": "3. Menilai inherent risk dan menentukan risiko signifikan",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** auditor menempatkan tiap risiko pada spectrum of inherent risk dari kombinasi likelihood dan magnitude. Risiko yang mendekati ujung atas spectrum menjadi significant risk dan mendapat respons khusus."
+        },
+        {
+          "kind": "h3",
+          "text": "Relevant assertions dan kelas yang signifikan"
+        },
+        {
+          "kind": "p",
+          "text": "Agar bisa merancang respons di tingkat asersi, auditor lebih dulu menentukan kelas transaksi, saldo akun, dan pengungkapan yang signifikan. Penentuannya mengacu ke materialitas dan inherent risk factors. Setelah risikonya teridentifikasi, auditor menentukan asersi yang relevan. `(ARENS p.232)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "quote",
+          "text": "**Definisi.** Relevant assertion adalah asersi tentang kelas transaksi, saldo akun, atau pengungkapan yang memiliki risiko salah saji material teridentifikasi. Penentuannya dilakukan sebelum mempertimbangkan pengendalian terkait. Significant class of transactions, account balance, or disclosure adalah yang memiliki satu atau lebih relevant assertion. `(ISA315 para. 12(h), 12(k))`"
+        },
+        {
+          "kind": "p",
+          "text": "Satu risiko bisa berkaitan dengan lebih dari satu asersi, dan semua asersi itu menjadi relevan. Asersi tanpa risiko teridentifikasi tidak relevan. `(ISA315 para. A9)` Kategori asersi yang dipakai standar adalah sebagai berikut. `(ISA315 para. A190)`"
+        },
+        {
+          "kind": "table",
+          "title": "Kategori asersi menurut ISA 315 (A190)",
+          "headers": [
+            "Asersi",
+            "Pada kelas transaksi dan peristiwa (periode berjalan)",
+            "Pada saldo akun (akhir periode)"
+          ],
+          "rows": [
+            [
+              "Occurrence / Existence",
+              "Transaksi dan peristiwa yang dicatat atau diungkapkan benar-benar terjadi dan milik entitas",
+              "Aset, liabilitas, dan ekuitas ada"
+            ],
+            [
+              "Rights and obligations",
+              "Tidak ada pasangan",
+              "Entitas memiliki atau menguasai hak atas aset, dan liabilitas adalah kewajiban entitas"
+            ],
+            [
+              "Completeness",
+              "Semua transaksi dan peristiwa yang seharusnya dicatat sudah dicatat, beserta pengungkapannya",
+              "Semua aset, liabilitas, dan ekuitas yang seharusnya dicatat sudah dicatat, beserta pengungkapannya"
+            ],
+            [
+              "Accuracy / Valuation and allocation",
+              "Jumlah dan data transaksi dicatat dengan tepat, pengungkapan diukur dan diuraikan dengan tepat",
+              "Dicantumkan pada jumlah yang tepat, dengan penyesuaian valuasi atau alokasi yang tepat"
+            ],
+            [
+              "Cutoff",
+              "Dicatat pada periode akuntansi yang benar",
+              "Tidak ada pasangan"
+            ],
+            [
+              "Classification",
+              "Dicatat pada akun yang tepat",
+              "Dicatat pada akun yang tepat"
+            ],
+            [
+              "Presentation",
+              "Diagregasi atau didisagregasi dan diuraikan dengan jelas, pengungkapan relevan dan dapat dipahami",
+              "Sama seperti kolom kiri, untuk aset, liabilitas, dan ekuitas"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Spectrum of inherent risk"
+        },
+        {
+          "kind": "p",
+          "text": "Inherent risk yang dinilai pada sebuah asersi adalah pertimbangan dalam rentang dari rendah ke tinggi. Posisi dalam rentang itu ditentukan oleh kombinasi dua hal. `(ISA315 paras. 31, A208–A209)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "**Likelihood:** kemungkinan salah saji terjadi, berdasarkan inherent risk factors. `(ISA315 para. A210)`",
+            "**Magnitude:** besarnya salah saji, dari sisi kuantitatif dan kualitatif. Salah saji bisa material karena ukuran, sifat, atau keadaannya. `(ISA315 para. A211)`"
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Makin tinggi kombinasi keduanya, makin tinggi inherent risk. Risiko yang dinilai tinggi tidak mengharuskan likelihood dan magnitude sama-sama tinggi. Kemungkinan rendah dengan magnitude sangat besar pun bisa menghasilkan inherent risk tinggi. `(ISA315 paras. A212–A213)` Auditor boleh mengelompokkan risiko ke dalam kategori sepanjang spectrum, asalkan prosedur lanjutan responsif terhadap penilaian dan alasannya. `(ISA315 para. A214)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Spectrum of inherent risk",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 648\" width=\"100%\" role=\"img\" aria-labelledby=\"f12-spektrum-t f12-spektrum-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f12-spektrum-t\">Spectrum of inherent risk</title><desc id=\"f12-spektrum-d\">Grafik kemungkinan terhadap besarnya salah saji dengan daerah risiko signifikan di sudut kanan atas dan dua titik contoh, dilengkapi dua kartu penjelasan.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"648\" rx=\"14\"/><path class=\"svg-badge-red\" d=\"M290 40 C300 130 360 180 450 190 L450 40 Z\" stroke-width=\"1.5\"/><rect class=\"svg-title\" x=\"108.5\" y=\"52\" width=\"3\" height=\"248\"/><path class=\"svg-title\" d=\"M102 55 L110 40 L118 55 Z\"/><rect class=\"svg-title\" x=\"110\" y=\"298.5\" width=\"334\" height=\"3\"/><path class=\"svg-title\" d=\"M441 292 L454 300 L441 308 Z\"/><text class=\"svg-text\" x=\"280\" y=\"342\" font-size=\"18\" text-anchor=\"middle\">Kemungkinan (likelihood)</text><text class=\"svg-text\" x=\"110\" y=\"322\" font-size=\"18\">Rendah</text><text class=\"svg-text\" x=\"450\" y=\"322\" font-size=\"18\" text-anchor=\"end\">Tinggi</text><text class=\"svg-text\" transform=\"rotate(-90 26 170)\" x=\"26\" y=\"170\" font-size=\"18\" text-anchor=\"middle\">Besarnya (magnitude)</text><text class=\"svg-text\" x=\"100\" y=\"52\" font-size=\"18\" text-anchor=\"end\">Tinggi</text><text class=\"svg-text\" x=\"100\" y=\"296\" font-size=\"18\" text-anchor=\"end\">Rendah</text><text class=\"text-accent-red\" x=\"390\" y=\"66\" font-size=\"18\" text-anchor=\"middle\">Risiko</text><text class=\"text-accent-red\" x=\"390\" y=\"88\" font-size=\"18\" text-anchor=\"middle\">signifikan</text><text class=\"svg-text\" x=\"128\" y=\"246\" font-size=\"18\">Risiko lebih</text><text class=\"svg-text\" x=\"128\" y=\"268\" font-size=\"18\">rendah</text><circle class=\"svg-badge-amber\" cx=\"395\" cy=\"262\" r=\"15\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"395\" y=\"268\" font-size=\"18\" font-weight=\"800\" text-anchor=\"middle\">1</text><circle class=\"svg-badge-amber\" cx=\"395\" cy=\"140\" r=\"15\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"395\" y=\"146\" font-size=\"18\" font-weight=\"800\" text-anchor=\"middle\">2</text><rect class=\"svg-card\" x=\"20\" y=\"366\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"396\" font-size=\"19\" font-weight=\"800\">1. Kas toko swalayan</text><text class=\"svg-text\" x=\"34\" y=\"424\" font-size=\"18\">Kemungkinan salah saji tinggi, tetapi</text><text class=\"svg-text\" x=\"34\" y=\"448\" font-size=\"18\">besarnya sangat kecil. Belum tentu</text><text class=\"svg-text\" x=\"34\" y=\"472\" font-size=\"18\">signifikan.</text><rect class=\"svg-card\" x=\"20\" y=\"504\" width=\"440\" height=\"124\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"534\" font-size=\"19\" font-weight=\"800\">2. Goodwill saat segmen akan dijual</text><text class=\"svg-text\" x=\"34\" y=\"562\" font-size=\"18\">Kemungkinan dan besarnya lebih tinggi</text><text class=\"svg-text\" x=\"34\" y=\"586\" font-size=\"18\">karena subjectivity, uncertainty, dan</text><text class=\"svg-text\" x=\"34\" y=\"610\" font-size=\"18\">potensi bias. Bisa signifikan.</text></svg>",
+          "overview": {
+            "heading": "Spectrum of inherent risk",
+            "cards": [
+              {
+                "title": "Dua sumbu penilaian",
+                "subtitle": "",
+                "items": [
+                  "Kemungkinan (likelihood) salah saji",
+                  "Besarnya (magnitude) salah saji"
+                ],
+                "takeaway": "Risiko tinggi tidak mengharuskan keduanya tinggi."
+              },
+              {
+                "title": "Kas toko swalayan",
+                "subtitle": "",
+                "items": [
+                  "Kemungkinan salah saji tinggi",
+                  "Besarnya sangat kecil"
+                ],
+                "takeaway": "Belum tentu menjadi significant risk."
+              },
+              {
+                "title": "Goodwill saat segmen akan dijual",
+                "subtitle": "",
+                "items": [
+                  "Kemungkinan dan besarnya lebih tinggi",
+                  "Pendorong: subjectivity, uncertainty, potensi bias"
+                ],
+                "takeaway": "Bisa menjadi significant risk."
+              }
+            ],
+            "footer": "Sumber: Figure 7-5 (ARENS p.232); ISA315 paras. A208–A213, A220."
+          },
+          "caption": "Gambar 12.3: Spectrum of inherent risk dengan dua contoh dari standar. Disusun dari Figure 7-5 (ARENS p.232) dan ISA315 paras. A208–A213, A220.",
+          "altText": "Grafik dengan sumbu kemungkinan salah saji (mendatar) dan besarnya salah saji (tegak). Sudut kanan atas adalah risiko signifikan. Kas toko swalayan berada di kanan bawah: kemungkinan tinggi, besarnya sangat kecil, belum tentu signifikan. Goodwill saat segmen akan dijual berada di kanan atas: kemungkinan dan besarnya tinggi, bisa signifikan."
+        },
+        {
+          "kind": "p",
+          "text": "Pada contoh standar, kas di swalayan biasanya punya kemungkinan salah saji tinggi karena kas bisa diselewengkan, tetapi besarnya sangat kecil karena kas fisik di toko sedikit. Kombinasi itu kecil kemungkinannya menjadikan existence kas sebagai significant risk. Sebaliknya, entitas yang sedang bernegosiasi menjual sebuah segmen bisnis menghadapi risiko penurunan nilai goodwill dengan kemungkinan dan magnitude yang lebih tinggi, karena subjectivity, uncertainty, dan potensi management bias. Risiko itu dapat dinilai signifikan. `(ISA315 para. A220)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Significant risk"
+        },
+        {
+          "kind": "callout",
+          "variant": "quote",
+          "text": "**Definisi.** Significant risk adalah risiko salah saji material yang teridentifikasi dan dinilai, yang menurut pertimbangan profesional auditor membutuhkan perhatian audit khusus. Menurut ISA 315, risiko itu mempunyai inherent risk yang dinilai mendekati ujung atas spectrum, atau harus diperlakukan sebagai signifikan menurut ISA lain. `(ARENS p.233; ISA315 para. 12(l))`"
+        },
+        {
+          "kind": "p",
+          "text": "Apakah sebuah risiko mendekati ujung atas spectrum berbeda dari entitas ke entitas dan tidak selalu sama dari periode ke periode. Dampak pandemi, misalnya, berbeda menurut industri dan perusahaan. `(ARENS p.233; ISA315 para. A219)` Penentuannya adalah pertimbangan profesional, kecuali risikonya jenis yang oleh ISA lain wajib diperlakukan sebagai signifikan. `(ISA315 para. A220)`"
+        },
+        {
+          "kind": "p",
+          "text": "Hal-hal yang cenderung menghasilkan risiko tinggi dan berpotensi signifikan: `(ARENS p.234; ISA315 para. A221)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "transaksi dengan beberapa perlakuan akuntansi yang dapat diterima, sehingga ada subjektivitas;",
+            "estimasi akuntansi dengan estimation uncertainty tinggi atau model kompleks, misalnya akuntansi nilai wajar atas transaksi lindung nilai yang unik dan material;",
+            "saldo akun atau pengungkapan kuantitatif yang melibatkan perhitungan kompleks;",
+            "prinsip akuntansi yang dapat ditafsirkan berbeda;",
+            "perubahan bisnis entitas yang membawa perubahan akuntansi, misalnya merger dan akuisisi."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Daftar di standar memuat satu butir tambahan, yaitu kompleksitas pengumpulan dan pemrosesan data yang mendukung saldo akun. `(ISA315 para. A221)`"
+        },
+        {
+          "kind": "p",
+          "text": "Dua risiko secara khusus ditetapkan standar sebagai signifikan. `(ARENS p.234)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "**Transaksi pihak berelasi nonrutin.** Transaksi signifikan dengan pihak berelasi di luar kegiatan normal entitas diperlakukan sebagai risiko signifikan. Alasannya ada dua: persyaratan pengungkapan, dan kurangnya independensi antarpihak, sehingga transaksi belum tentu bernilai sama dengan transaksi pihak independen (bukan arm's-length). `(ARENS p.234; ISA550 para. 18)`",
+            "**Presumsi fraud pada pengakuan pendapatan.** Auditor menganggap ada risiko fraud pada pengakuan pendapatan dan mengevaluasi jenis pendapatan, transaksi, atau asersi yang menimbulkannya. Risiko fraud yang dinilai diperlakukan sebagai risiko signifikan. Bila auditor menyimpulkan presumsi itu tidak berlaku, ia wajib mendokumentasikannya. `(ARENS p.234; ISA240 paras. 27, 28, 48)`"
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Transaksi nonrutin cenderung berisiko karena lebih banyak intervensi manajemen, lebih bergantung pada pengolahan manual, bisa memuat perhitungan kompleks atau prinsip akuntansi tidak lazim, dan jarang tercakup pengendalian efektif karena jarang terjadi. `(ARENS p.234)`"
+        },
+        {
+          "kind": "p",
+          "text": "**Mengapa penetapan risiko signifikan penting.** Penetapan ini memicu respons yang diwajibkan standar. `(ISA315 para. A218)`"
+        },
+        {
+          "kind": "table",
+          "title": "Konsekuensi menetapkan sebuah risiko sebagai signifikan",
+          "headers": [
+            "Konsekuensi",
+            "Isinya",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Pengendalian atas risiko itu diidentifikasi",
+              "Auditor mengevaluasi desain pengendalian dan menentukan apakah sudah diimplementasikan",
+              "ISA315 paras. 26(a)(i), 26(d)"
+            ],
+            [
+              "Pengujian pengendalian pada periode berjalan",
+              "Bila auditor ingin mengandalkan pengendalian atas risiko signifikan, ia menguji pengendalian itu pada periode berjalan",
+              "ISA330 para. 15"
+            ],
+            [
+              "Prosedur substantif yang spesifik",
+              "Prosedur harus responsif terhadap risiko itu. Bila pendekatannya hanya substantif, prosedurnya harus mencakup uji rinci",
+              "ISA330 para. 21"
+            ],
+            [
+              "Bukti lebih meyakinkan",
+              "Makin tinggi risiko yang dinilai, makin meyakinkan bukti yang dicari",
+              "ISA330 para. 7(b)"
+            ],
+            [
+              "Komunikasi dan pelaporan",
+              "Risiko signifikan dikomunikasikan kepada pihak yang bertanggung jawab atas tata kelola dan dipertimbangkan dalam menentukan key audit matters",
+              "ISA315 para. A218"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Perangkap pertimbangan: kas dan Parmalat",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Buku mengingatkan bahwa penilaian risiko membutuhkan banyak pertimbangan profesional, dan pertimbangan itu bisa terjebak. Sedikitnya kesalahan di masa lalu, misalnya, mudah membuat auditor menyimpulkan inherent risk rendah. Bila auditor menggeneralisasi dari pengalaman dengan bisnis serupa, audit lain, atau klien yang sama (misalnya sedikit penyesuaian di masa lalu), ia jatuh ke jebakan availability bias dan bisa menilai risiko terlalu rendah. `(ARENS p.233)`"
+            },
+            {
+              "kind": "p",
+              "text": "Kas menjadi contoh. Kas biasanya dinilai berisiko rendah karena tidak kompleks (inherent risk rendah) dan kebanyakan perusahaan punya pengendalian baik (control risk rendah). Namun fraud besar seperti Parmalat, perusahaan susu Italia, melibatkan kas. Selama 10 tahun Parmalat menggelembungkan akun kas fiktif hingga hampir 5 miliar dolar untuk menjual utang publik dan memenuhi syarat memperoleh fasilitas kredit. Seorang mantan auditor mencatat bahwa kas dan aset jangka pendek adalah satu baris neraca yang tidak dipertanyakan siapa pun, dan di situlah fraud ini diarahkan. Pelajarannya, jangan terlalu bersandar pada generalisasi dan tetap bersikap skeptis, terutama saat menilai risiko yang berkaitan dengan bias dan insentif manajemen. `(ARENS p.233)`"
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Risiko yang tidak bisa dicakup uji substantif saja"
+        },
+        {
+          "kind": "p",
+          "text": "Pada sebagian risiko, satu-satunya cara memperoleh bukti yang cukup dan tepat adalah menguji efektivitas operasi pengendalian. Karena itu auditor wajib mengidentifikasi risiko jenis ini, dan pengendalian atas risiko itu wajib diuji. `(ISA315 paras. 33, A222–A223; ISA330 para. 8(b))` Hal ini terjadi bila transaksi rutin diproses sangat otomatis dengan sedikit intervensi manual, dan informasi diprakarsai, dicatat, diproses, atau dilaporkan hanya dalam bentuk elektronik. Bukti hanya ada secara elektronik, dan kecukupannya bergantung pada efektivitas pengendalian atas keakuratan dan kelengkapannya. `(ISA315 para. A224)`"
+        },
+        {
+          "kind": "p",
+          "text": "Contoh standar: pendapatan perusahaan telekomunikasi umumnya tidak dapat didukung prosedur substantif saja, karena bukti aktivitas panggilan atau data tidak ada dalam bentuk yang bisa diamati. Pengujian pengendalian dilakukan untuk memastikan awal dan akhir panggilan serta aktivitas data tercatat benar di sistem penagihan. `(ISA315 para. A224)` Topik pengendalian TI dibahas di TM13."
+        }
+      ]
     },
-    CASE_AUDIT_TESTING_MIX,
     {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "section",
+      "title": "4. Respons terhadap risiko: keseluruhan dan tingkat asersi",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** dari penilaian RMM, auditor menyusun dua lapis respons. Respons keseluruhan menjawab risiko yang menyeluruh. Prosedur lanjutan menjawab risiko pada asersi tertentu lewat nature, timing, dan extent."
+        },
+        {
+          "kind": "table",
+          "title": "Respons keseluruhan dan respons tingkat asersi",
+          "headers": [
+            "Aspek",
+            "Respons keseluruhan",
+            "Respons tingkat asersi (prosedur lanjutan)"
+          ],
+          "rows": [
+            [
+              "Menjawab risiko pada",
+              "Tingkat laporan keuangan, yang berdampak menyeluruh",
+              "Kelas transaksi, saldo akun, dan pengungkapan tertentu"
+            ],
+            [
+              "Nama lain di buku",
+              "Overall audit strategy",
+              "Further audit procedures, yaitu prosedur di luar prosedur penilaian risiko"
+            ],
+            [
+              "Bentuknya",
+              "Pemilihan dan supervisi staf, sikap skeptis, perubahan strategi audit",
+              "Tests of controls bila relevan, dan prosedur substantif untuk asersi yang relevan"
+            ],
+            [
+              "Kaitan dengan detection risk",
+              "Memengaruhi pendekatan secara umum, termasuk penugasan staf dan review",
+              "Mengatur detection risk lewat nature, timing, dan extent"
+            ],
+            [
+              "Dasar standar",
+              "ISA330 para. 5, A1",
+              "ISA330 paras. 6, 7"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS pp.234–236)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Respons keseluruhan"
+        },
+        {
+          "kind": "p",
+          "text": "Contoh respons keseluruhan menurut standar: `(ISA330 para. A1; ARENS pp.235–236)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "menekankan kepada tim perlunya skeptisisme profesional;",
+            "menugaskan staf yang lebih berpengalaman atau berkeahlian khusus, atau memakai ahli;",
+            "mengubah sifat, waktu, dan luas arahan, supervisi, dan review pekerjaan tim;",
+            "menambah unsur ketidakterdugaan dalam memilih prosedur lanjutan;",
+            "mengubah strategi audit atau prosedur yang direncanakan, termasuk performance materiality, rencana menguji pengendalian, dan sifat, waktu, serta luas prosedur substantif. Misalnya, prosedur substantif dilakukan di dekat tanggal laporan keuangan saat risiko dinilai lebih tinggi."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Pemahaman atas lingkungan pengendalian memengaruhi respons keseluruhan. Lingkungan pengendalian yang efektif membuat auditor lebih percaya pada pengendalian dan bukti internal, sehingga sebagian prosedur boleh dilakukan pada tanggal interim. Defisiensi pada lingkungan pengendalian berdampak sebaliknya: lebih banyak prosedur pada akhir periode, bukti substantif lebih luas, dan lebih banyak lokasi dimasukkan ke lingkup audit. `(ISA330 para. A2)` Pertimbangan ini memengaruhi pendekatan umum, yaitu pendekatan substantif atau pendekatan kombinasi uji pengendalian dan prosedur substantif. `(ISA330 para. A3)`"
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Contoh penilaian risiko dan respons keseluruhan: audit Livent",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Buku memakai memorandum perencanaan audit Livent. Komite disiplin ICAO (kini CPA Ontario) menyimpulkan bahwa tiga dari empat partner yang terlibat gagal memenuhi standar perilaku profesional. Meski begitu, komite mengakui tim audit sudah mengidentifikasi risiko dan menyusun respons keseluruhan yang tepat. `(ARENS p.235)`"
+            },
+            {
+              "kind": "table",
+              "title": "Penilaian risiko dalam memorandum perencanaan Livent",
+              "headers": [
+                "Penilaian risiko",
+                "Tingkat",
+                "Catatan dari buku"
+              ],
+              "rows": [
+                [
+                  "Entitas publik terdaftar di SEC dan OSC. Laporan dan manajemen mendapat sorotan tinggi, dan manajemen sensitif terhadap laba bersih",
+                  "Laporan keuangan",
+                  "Risiko menyeluruh: sensitivitas manajemen terhadap laba bersih"
+                ],
+                [
+                  "Valuasi biaya praproduksi bergantung pada estimasi manajemen dan proyeksi keuangan. Amortisasi atau penghapusannya berdampak signifikan pada laba",
+                  "Asersi (valuasi)",
+                  "Risiko signifikan"
+                ],
+                [
+                  "Transaksi pendapatan yang material dan unik. Pemilihan metode pelaporan oleh manajemen mungkin agresif",
+                  "Laporan keuangan (kebijakan akuntansi agresif) dan asersi (keterjadian pendapatan)",
+                  "Keterjadian pendapatan adalah risiko signifikan"
+                ],
+                [
+                  "Risiko bisnis internal dan eksternal dari keberhasilan produksi teater dan kesehatan pasar teater hidup",
+                  "Laporan keuangan",
+                  "Model bisnis berisiko tinggi"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "table",
+              "title": "Respons keseluruhan dalam memorandum perencanaan Livent",
+              "headers": [
+                "Respons keseluruhan",
+                "Keterangan di memorandum"
+              ],
+              "rows": [
+                [
+                  "Memastikan partner dan staf punya pengalaman, keterampilan, dan keahlian yang dibutuhkan",
+                  "Tim memuat partner senior firma dengan keahlian yang diperlukan"
+                ],
+                [
+                  "Meningkatkan skeptisisme profesional seluruh personel",
+                  "Disampaikan kepada staf audit"
+                ],
+                [
+                  "Meningkatkan keterlibatan manajemen perikatan di semua tahap",
+                  "Partner dan senior audit manager terlibat dalam semua isu audit dan pelaporan keuangan signifikan sejak perencanaan"
+                ]
+              ],
+              "stackOnMobile": true
+            },
+            {
+              "kind": "p",
+              "text": "`(ARENS p.235)`"
+            },
+            {
+              "kind": "callout",
+              "variant": "info",
+              "text": "**Interpretasi.** Memorandum yang baik menunjukkan risiko sudah dikenali dan responsnya dirancang. Buku tidak merinci pelanggaran yang membuat tiga partner dinilai gagal, jadi pelajaran yang aman diambil adalah penilaian risiko di atas kertas baru bernilai bila prosedur yang menyusul benar-benar dikerjakan."
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Respons tingkat asersi"
+        },
+        {
+          "kind": "p",
+          "text": "Prosedur lanjutan mencakup tests of controls bila relevan dan prosedur substantif untuk asersi pada kelas transaksi, saldo, dan pengungkapan yang relevan. `(ARENS p.236)` Standar meminta nature, timing, dan extent prosedur didasarkan pada dan responsif terhadap risiko yang dinilai, sehingga ada keterkaitan yang jelas antara prosedur dan penilaian risiko. `(ISA330 paras. 6, A8)` Tiga dimensi itu didefinisikan sebagai berikut. `(ISA330 paras. A5–A7)`"
+        },
+        {
+          "kind": "table",
+          "title": "Nature, timing, dan extent prosedur lanjutan",
+          "headers": [
+            "Dimensi",
+            "Arti",
+            "Contoh dari standar"
+          ],
+          "rows": [
+            [
+              "Nature",
+              "Tujuan prosedur (uji pengendalian atau prosedur substantif) dan jenisnya (inspeksi, observasi, inquiry, konfirmasi, recalculation, reperformance, prosedur analitis)",
+              "Untuk risiko tinggi atas pendapatan, auditor dapat mengonfirmasi kelengkapan syarat kontrak dengan pihak lawan, selain memeriksa dokumen"
+            ],
+            [
+              "Timing",
+              "Kapan prosedur dilakukan, atau periode atau tanggal yang dicakup bukti",
+              "Makin tinggi risiko, makin mungkin prosedur dilakukan dekat atau pada akhir periode, atau tanpa pemberitahuan"
+            ],
+            [
+              "Extent",
+              "Banyaknya prosedur",
+              "Ukuran sampel atau jumlah observasi atas suatu pengendalian"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Contoh nature berasal dari ISA330 A9, dan contoh timing dari A11. `(ISA330 paras. A9, A11)`"
+        },
+        {
+          "kind": "p",
+          "text": "Prosedur lanjutan dibahas lebih rinci di TM14 (pengujian pengendalian dan pengujian substantif) dan TM15 (program audit)."
+        },
+        {
+          "kind": "p",
+          "text": "Penilaian risiko tidak berhenti setelah perencanaan. Bila auditor memperoleh informasi baru yang tidak konsisten dengan bukti yang menjadi dasar penilaian awal, ia merevisi identifikasi atau penilaiannya. Sebelum menyimpulkan audit, ia mengevaluasi apakah penilaian risiko di tingkat asersi masih tepat. `(ISA315 para. 37; ISA330 para. 25)`"
+        }
+      ]
     },
     {
-      kind: 'ul',
-      items: [
-        '**TOC Tidak Menghasilkan Rupiah Salah Saji**: TOC hanya menguji apakah kontrol berjalan efektif, sedangkan salah saji moneter hanya diukur oleh STOT, SAP, dan TOD.',
-        '**Pengujian Ganda (Dual-Purpose Test)**: Satu prosedur audit dapat berfungsi ganda sebagai TOC sekaligus STOT (contoh: memeriksa faktur penjualan untuk melihat paraf otorisasi sekaligus mencocokkan harga).',
-        '**Roll-Forward Period**: Jika TOC dilakukan pada bulan Oktober (interim), auditor wajib melakukan pengujian tambahan atas sisa 2 bulan (November-Desember) untuk memastikan kontrol tidak berubah.'
+      "kind": "section",
+      "title": "5. Risiko kecurangan: konsep dan penilaian",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** salah saji bisa berasal dari fraud atau error, dan pembedanya adalah niat. Risiko tidak mendeteksi fraud lebih tinggi daripada error, sehingga auditor menilai risiko fraud di tingkat laporan keuangan dan tingkat asersi, dan memperbaruinya sepanjang audit."
+        },
+        {
+          "kind": "callout",
+          "variant": "note",
+          "text": "**Catatan sumber.** Buku memakai CAS (standar Kanada). Nomor dan isi CAS 315 (Revised), CAS 240, dan CAS 330 sejajar dengan ISA yang dirujuk di TM ini. Handbook IAASB 2025 memuat dua versi ISA 240: versi yang berlaku sekarang (efektif sejak 2009) dan ISA 240 (Revised) yang berlaku untuk audit periode yang dimulai pada atau setelah 15 Desember 2026. TM ini memakai versi yang berlaku sekarang bersama buku. Bila soal menyebut ISA 240 (Revised), rujuk teks revisi itu. `(ISA240 para. 10; ISA240R para. 16)`"
+        },
+        {
+          "kind": "table",
+          "title": "Fraud dan tanggung jawab auditor menurut ISA 240",
+          "headers": [
+            "Hal",
+            "Isinya",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Pembeda fraud dan error",
+              "Apakah tindakan yang menyebabkan salah saji disengaja atau tidak disengaja",
+              "ISA240 para. 2"
+            ],
+            [
+              "Definisi fraud",
+              "Tindakan disengaja oleh satu atau lebih individu di antara manajemen, pihak yang bertanggung jawab atas tata kelola, karyawan, atau pihak ketiga, yang memakai tipu daya untuk memperoleh keuntungan yang tidak adil atau ilegal",
+              "ISA240 para. 12(a)"
+            ],
+            [
+              "Dua jenis yang relevan",
+              "Pelaporan keuangan yang curang (fraudulent financial reporting) dan penyalahgunaan aset (misappropriation of assets)",
+              "ISA240 para. 3"
+            ],
+            [
+              "Penetapan hukum",
+              "Auditor bisa mencurigai atau, dalam kasus langka, mengidentifikasi fraud, tetapi tidak membuat penetapan hukum apakah fraud benar terjadi",
+              "ISA240 para. 3"
+            ],
+            [
+              "Pencegahan dan pendeteksian",
+              "Tanggung jawab utama ada pada pihak yang bertanggung jawab atas tata kelola dan manajemen",
+              "ISA240 para. 4"
+            ],
+            [
+              "Tanggung jawab auditor",
+              "Memperoleh keyakinan memadai bahwa laporan keuangan bebas dari salah saji material, baik karena fraud maupun error",
+              "ISA240 para. 5"
+            ],
+            [
+              "Mengapa fraud lebih sulit dideteksi",
+              "Skema bisa canggih dan terorganisir, misalnya pemalsuan, sengaja tidak mencatat transaksi, atau pernyataan palsu kepada auditor. Kolusi dapat membuat bukti tampak meyakinkan padahal palsu",
+              "ARENS p.236; ISA240 para. 6"
+            ],
+            [
+              "Fraud manajemen dan fraud karyawan",
+              "Fraud manajemen lebih sulit dideteksi karena manajemen sering dapat memanipulasi catatan atau mengesampingkan pengendalian",
+              "ISA240 para. 7"
+            ],
+            [
+              "Prosedur yang efektif untuk error",
+              "Belum tentu efektif untuk fraud",
+              "ISA240 para. 8"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Kemampuan mendeteksi fraud bergantung pada keahlian pelaku, frekuensi dan luas manipulasi, derajat kolusi, ukuran relatif jumlah yang dimanipulasi, dan senioritas pihak yang terlibat. Auditor mungkin bisa mengenali peluang fraud, tetapi sulit menentukan apakah salah saji pada area pertimbangan seperti estimasi akuntansi disebabkan fraud atau error. `(ISA240 para. 6)`"
+        },
+        {
+          "kind": "p",
+          "text": "Tiga sikap yang diminta ISA 240 sepanjang audit: `(ISA240 paras. 13–15)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "menjaga skeptisisme profesional dan menyadari bahwa salah saji karena fraud mungkin ada, meskipun pengalaman masa lalu menunjukkan manajemen jujur dan berintegritas;",
+            "boleh menerima catatan dan dokumen sebagai asli kecuali ada alasan untuk percaya sebaliknya, dan menyelidiki lebih lanjut bila ada kondisi yang membuat keaslian atau syarat dokumen diragukan;",
+            "menyelidiki jawaban manajemen atau pihak tata kelola yang tidak konsisten."
+          ]
+        },
+        {
+          "kind": "pendalaman",
+          "title": "Fraud besar yang lolos: Madoff dan Fairfield Sentry",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Pada 12 Maret 2009 Bernie Madoff mengaku bersalah atas skema Ponzi, penipuan investor terbesar yang pernah ada, dengan kerugian diperkirakan hampir 21 miliar dolar. Sebagai pembanding, fraud di WorldCom sekitar 11 miliar dolar. Dalam skema Ponzi, investor tergiur imbal hasil di atas pasar yang dibayar dari dana investor baru dan bukan dari keuntungan investasi nyata. Skema itu runtuh karena bergantung pada pasokan investor baru yang terus datang, dan terbongkar saat anjloknya pasar 2008 memicu penarikan dana. `(ARENS p.237)`"
+            },
+            {
+              "kind": "p",
+              "text": "Fairfield Sentry, dana feeder terbesar yang berbasis di Kanada, menempatkan 7,2 miliar dolar dana investor pada Madoff. Auditornya, PwC Canada, menghadapi beberapa gugatan yang menyatakan PwC seharusnya waspada terhadap red flag, terutama fakta bahwa Madoff adalah agen eksekusi strategi investasi Fairfield sekaligus kustodian uangnya. Peran ganda itu memungkinkan ia menyembunyikan kekurangan akibat kerugiannya. Pada 7 Januari 2016 PwC menyetujui penyelesaian 55 juta dolar tanpa mengakui kesalahan. `(ARENS p.237)`"
+            },
+            {
+              "kind": "callout",
+              "variant": "info",
+              "text": "**Interpretasi.** Pemisahan peran adalah pertahanan utama terhadap penyalahgunaan aset. Ketika satu pihak memegang eksekusi sekaligus kustodi, tidak ada pihak independen yang bisa menguji angka yang dilaporkan. Kasus ini memperlihatkan nilai mengenali fraud risk factors seperti peran ganda, dan mencari bukti dari pihak yang independen."
+            }
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Prosedur untuk mengidentifikasi risiko fraud"
+        },
+        {
+          "kind": "p",
+          "text": "Buku merangkum empat hal yang diminta CAS 240: diskusi tim, inquiry kepada manajemen dan pihak lain, evaluasi hubungan yang tidak biasa pada prosedur analitis, serta evaluasi risiko fraud pendapatan dan management override. `(ARENS p.236)` Standar merincinya sebagai berikut. `(ISA240 paras. 16–25)`"
+        },
+        {
+          "kind": "table",
+          "title": "Prosedur penilaian risiko fraud menurut ISA 240",
+          "headers": [
+            "Prosedur",
+            "Isi",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Diskusi tim perikatan",
+              "Menekankan bagaimana dan di mana laporan keuangan rentan terhadap fraud, termasuk bagaimana fraud bisa terjadi, dengan menyingkirkan anggapan tim bahwa manajemen dan pihak tata kelola jujur dan berintegritas",
+              "ISA240 para. 16"
+            ],
+            [
+              "Inquiry kepada manajemen",
+              "Penilaian manajemen atas risiko fraud (sifat, luas, frekuensi), proses mengidentifikasi dan merespons risiko fraud, komunikasi kepada pihak tata kelola dan karyawan, serta pengetahuan tentang fraud yang aktual, dicurigai, atau dituduhkan",
+              "ISA240 paras. 18–19"
+            ],
+            [
+              "Inquiry kepada internal audit",
+              "Pengetahuan tentang fraud dan pandangan tentang risiko fraud, bila ada fungsi internal audit",
+              "ISA240 para. 20"
+            ],
+            [
+              "Pihak tata kelola",
+              "Memahami bagaimana mereka mengawasi proses manajemen dan menanyakan pengetahuan mereka tentang fraud. Inquiry ini menguatkan jawaban manajemen",
+              "ISA240 paras. 21–22"
+            ],
+            [
+              "Hubungan tidak biasa",
+              "Mengevaluasi apakah hubungan tidak biasa atau tidak terduga dalam prosedur analitis, termasuk akun pendapatan, mengindikasikan risiko fraud",
+              "ISA240 para. 23"
+            ],
+            [
+              "Informasi lain",
+              "Mempertimbangkan informasi lain yang diperoleh auditor",
+              "ISA240 para. 24"
+            ],
+            [
+              "Faktor risiko fraud",
+              "Mengevaluasi apakah informasi yang terkumpul menunjukkan ada satu atau lebih fraud risk factors",
+              "ISA240 para. 25"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Diskusi tim membahas empat hal: `(ARENS p.237)`"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "bagaimana dan di mana laporan keuangan rentan terhadap salah saji karena fraud, termasuk faktor eksternal dan internal yang menimbulkan insentif atau tekanan, memberi peluang, atau menandakan budaya yang memungkinkan rasionalisasi;",
+            "bagaimana manajemen bisa melakukan dan menyembunyikan pelaporan keuangan yang curang;",
+            "bagaimana siapa pun bisa menyalahgunakan aset entitas;",
+            "bagaimana auditor akan merespons kerentanan itu."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Inquiry kepada manajemen mencakup pengetahuan tentang fraud atau dugaan fraud, proses penilaian risiko fraud dan frekuensinya, sifat risiko yang teridentifikasi, pengendalian yang dibuat, dan informasi yang dilaporkan kepada komite audit. `(ARENS pp.237–238)` Inquiry tidak berhenti di bagian keuangan. Saat bertemu manajer gudang atau agen pembelian, auditor dapat menanyakan adanya fraud atau kecurigaan. Bila jawabannya tidak konsisten, auditor mencari bukti tambahan untuk menyelesaikan ketidakkonsistenan dan menguatkan atau menggugurkan penilaian awal. `(ARENS p.238; ISA240 para. 15)`"
+        },
+        {
+          "kind": "p",
+          "text": "Alat bantu otomatis dipakai untuk mencari tanda fraud. Contohnya mencari nomor faktur penjualan ganda, merekonsiliasi basis data faktur dengan catatan pengiriman agar semua penjualan didukung bukti pengiriman, dan mencari putusnya urutan dokumen yang bisa menandakan salah saji pada kelengkapan liabilitas dan beban. Spreadsheet dasar juga dapat menyortir transaksi di atas ukuran tertentu atau yang punya ciri tidak biasa, seperti nomor akun tidak standar atau jumlah bulat (yang tidak lazim pada industri tertentu). Analisis juga dapat dirinci per lokasi, produk, dan bulan karena tren yang tidak tampak pada tingkat agregat bisa terlihat pada tingkat rinci. `(ARENS p.238)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "6. Fraud triangle dan faktor risiko fraud",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** fraud terjadi bila tiga kondisi bertemu: insentif atau tekanan, peluang, dan sikap atau rasionalisasi. Fraud risk factors adalah tanda adanya kondisi itu. Keberadaannya tidak membuktikan fraud, tetapi sering ada ketika fraud terjadi."
+        },
+        {
+          "kind": "figure",
+          "title": "Fraud triangle: tiga kondisi fraud",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 582\" width=\"100%\" role=\"img\" aria-labelledby=\"f12-segitiga-t f12-segitiga-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f12-segitiga-t\">Fraud triangle</title><desc id=\"f12-segitiga-d\">Tiga kartu dihubungkan membentuk segitiga: insentif atau tekanan, peluang, sikap atau rasionalisasi, dengan catatan tentang fraud risk factors.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"582\" rx=\"14\"/><polygon class=\"svg-title\" points=\"148.6 191.6 118.6 291.6 121.4 292.4 151.4 192.4\"/><polygon class=\"svg-title\" points=\"328.6 192.4 358.6 292.4 361.4 291.6 331.4 191.6\"/><rect class=\"svg-title\" x=\"220\" y=\"330.5\" width=\"40\" height=\"3\"/><text class=\"svg-muted\" x=\"240\" y=\"248\" font-size=\"18\" text-anchor=\"middle\">Fraud triangle</text><rect class=\"svg-badge-red\" x=\"115\" y=\"20\" width=\"250\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"240\" y=\"50\" font-size=\"19\" font-weight=\"800\" text-anchor=\"middle\">Insentif atau</text><text class=\"svg-title\" x=\"240\" y=\"74\" font-size=\"19\" font-weight=\"800\" text-anchor=\"middle\">tekanan</text><text class=\"svg-text\" x=\"240\" y=\"102\" font-size=\"18\" text-anchor=\"middle\">Alasan melakukan</text><text class=\"svg-text\" x=\"240\" y=\"126\" font-size=\"18\" text-anchor=\"middle\">fraud: target laba,</text><text class=\"svg-text\" x=\"240\" y=\"150\" font-size=\"18\" text-anchor=\"middle\">covenant utang, beban</text><text class=\"svg-text\" x=\"240\" y=\"174\" font-size=\"18\" text-anchor=\"middle\">keuangan pribadi</text><rect class=\"svg-badge-amber\" x=\"20\" y=\"292\" width=\"200\" height=\"150\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"322\" font-size=\"19\" font-weight=\"800\">Peluang</text><text class=\"svg-text\" x=\"34\" y=\"350\" font-size=\"18\">Celah: pengawasan</text><text class=\"svg-text\" x=\"34\" y=\"374\" font-size=\"18\">lemah, aset mudah</text><text class=\"svg-text\" x=\"34\" y=\"398\" font-size=\"18\">dicuri, pemisahan</text><text class=\"svg-text\" x=\"34\" y=\"422\" font-size=\"18\">tugas kurang</text><rect class=\"svg-badge-blue\" x=\"260\" y=\"292\" width=\"200\" height=\"150\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"274\" y=\"322\" font-size=\"19\" font-weight=\"800\">Sikap atau</text><text class=\"svg-title\" x=\"274\" y=\"346\" font-size=\"19\" font-weight=\"800\">rasionalisasi</text><text class=\"svg-text\" x=\"274\" y=\"374\" font-size=\"18\">Pembenaran: tone</text><text class=\"svg-text\" x=\"274\" y=\"398\" font-size=\"18\">at the top buruk,</text><text class=\"svg-text\" x=\"274\" y=\"422\" font-size=\"18\">merasa berhak</text><rect class=\"svg-subcard\" x=\"20\" y=\"462\" width=\"440\" height=\"100\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"492\" font-size=\"19\" font-weight=\"800\">Fraud risk factors</text><text class=\"svg-text\" x=\"34\" y=\"520\" font-size=\"18\">Tanda ketiga sisi ini. Ada tanda belum</text><text class=\"svg-text\" x=\"34\" y=\"544\" font-size=\"18\">berarti fraud terbukti.</text></svg>",
+          "overview": {
+            "heading": "Fraud triangle",
+            "cards": [
+              {
+                "title": "Insentif atau tekanan",
+                "subtitle": "",
+                "items": [
+                  "Target laba, covenant utang, kekayaan pribadi manajemen",
+                  "Kewajiban keuangan pribadi karyawan"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Peluang",
+                "subtitle": "",
+                "items": [
+                  "Estimasi subjektif, pengawasan komite audit lemah",
+                  "Aset kecil dan bernilai, pemisahan tugas kurang"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Sikap atau rasionalisasi",
+                "subtitle": "",
+                "items": [
+                  "Tone at the top yang buruk",
+                  "Merasa berhak atau menganggap wajar"
+                ],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumber: Figure 7-6 (ARENS p.239). Fraud risk factors adalah tanda, bukan bukti fraud."
+          },
+          "caption": "Gambar 12.4: Fraud triangle. Disusun dari Figure 7-6 (ARENS p.239).",
+          "altText": "Segitiga dengan tiga sisi: insentif atau tekanan di atas, peluang di kiri bawah, sikap atau rasionalisasi di kanan bawah. Fraud risk factors adalah tanda ketiga sisi ini dan belum berarti fraud terbukti."
+        },
+        {
+          "kind": "table",
+          "title": "Tiga kondisi fraud (fraud triangle)",
+          "headers": [
+            "Kondisi",
+            "Arti",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Incentives / pressures",
+              "Manajemen atau karyawan punya insentif atau tekanan untuk melakukan fraud",
+              "ARENS pp.238–239"
+            ],
+            [
+              "Opportunities",
+              "Keadaan memberi manajemen atau karyawan peluang untuk melakukan fraud",
+              "ARENS p.239"
+            ],
+            [
+              "Attitudes / rationalization",
+              "Sikap, karakter, atau nilai etika yang memungkinkan tindakan tidak jujur secara sengaja, atau lingkungan yang menekan hingga pelaku merasionalisasi tindakannya",
+              "ARENS p.239"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Fraud risk factors didefinisikan sebagai peristiwa atau kondisi yang menunjukkan adanya insentif atau tekanan untuk melakukan fraud, atau yang memberi peluang melakukannya. Buku menyebutnya juga red flags. `(ISA240 para. 12(b); ARENS p.239)` Faktor ini belum tentu menandakan fraud, tetapi sering ada pada keadaan saat fraud terjadi, sehingga auditor mengevaluasi apakah informasi yang terkumpul menunjukkan keberadaannya. `(ISA240 para. 25)`"
+        },
+        {
+          "kind": "callout",
+          "variant": "warning",
+          "text": "**Jebakan ujian.** Jangan menjawab \"ada red flag berarti ada fraud\". Faktor risiko fraud menaikkan penilaian risiko dan mengubah respons auditor. Penetapan bahwa fraud benar terjadi adalah penetapan hukum yang bukan wewenang auditor. `(ISA240 paras. 3, 25)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Pelaporan keuangan yang curang"
+        },
+        {
+          "kind": "table",
+          "title": "Contoh faktor risiko pelaporan keuangan yang curang (Table 7-4)",
+          "headers": [
+            "Incentives / pressures",
+            "Opportunities",
+            "Attitudes / rationalization"
+          ],
+          "rows": [
+            [
+              "Stabilitas keuangan atau profitabilitas terancam oleh kondisi ekonomi, industri, atau operasi entitas, misalnya penurunan permintaan pelanggan yang signifikan dan meningkatnya kegagalan bisnis",
+              "Estimasi akuntansi signifikan melibatkan pertimbangan subjektif atau ketidakpastian yang sulit diverifikasi",
+              "Komunikasi dan dukungan atas nilai-nilai entitas yang tidak tepat atau tidak efektif"
+            ],
+            [
+              "Tekanan berlebihan pada manajemen untuk memenuhi persyaratan atau ekspektasi pihak ketiga, seperti persyaratan covenant utang",
+              "Pengawasan dewan direksi atau komite audit atas pelaporan keuangan tidak efektif",
+              "Riwayat pelanggaran hukum sekuritas atau hukum dan peraturan lain"
+            ],
+            [
+              "Kekayaan pribadi manajemen atau dewan terancam secara material oleh kinerja keuangan entitas",
+              "Pergantian tinggi atau ketidakefektifan staf akuntansi, internal audit, atau TI",
+              "Praktik manajemen membuat prakiraan yang terlalu agresif atau tidak realistis kepada analis, kreditor, dan pihak ketiga"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.240)`"
+        },
+        {
+          "kind": "p",
+          "text": "Penjelasan buku untuk tiap kondisi: `(ARENS pp.239–240)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "**Insentif dan tekanan.** Penurunan prospek keuangan dapat mengancam kemampuan memperoleh pembiayaan dan melanjutkan going concern. Perusahaan juga bisa memanipulasi laba untuk memenuhi prakiraan analis, memenuhi batasan covenant utang, atau menjaga dan menaikkan harga saham. Sebagian manajemen memanipulasi laba demi reputasi, dan manajemen yang kekayaannya banyak tertanam pada opsi saham punya insentif menaikkan harga saham.",
+            "**Peluang.** Semua laporan keuangan berpotensi dimanipulasi, tetapi risikonya lebih besar pada industri yang banyak memakai pertimbangan dan estimasi. Valuasi persediaan lebih berisiko bila persediaan beragam di banyak lokasi atau bisa usang. Peluang bertambah bila ada pergantian personel akuntansi atau kelemahan proses akuntansi dan informasi. Pada banyak kasus, komite audit dan pengawasan dewan tidak efektif.",
+            "**Sikap dan rasionalisasi.** Sikap manajemen puncak terhadap pelaporan keuangan, yang disebut tone at the top, adalah faktor risiko kritis. Tone at the top yang buruk menaikkan risiko fraud dan menghasilkan lingkungan pengendalian internal yang buruk. Bila CEO atau manajer puncak lain meremehkan proses pelaporan, misalnya terus menerbitkan prakiraan terlalu optimistis atau terlalu sibuk memenuhi prakiraan analis, pelaporan yang curang lebih mungkin terjadi."
+          ]
+        },
+        {
+          "kind": "h3",
+          "text": "Penyalahgunaan aset"
+        },
+        {
+          "kind": "p",
+          "text": "Tiga kondisi yang sama berlaku pada penyalahgunaan aset, tetapi penekanannya lebih besar pada insentif dan peluang pencurian oleh individu. `(ARENS p.240)`"
+        },
+        {
+          "kind": "table",
+          "title": "Contoh faktor risiko penyalahgunaan aset (Table 7-5)",
+          "headers": [
+            "Incentives / pressures",
+            "Opportunities",
+            "Attitudes / rationalization"
+          ],
+          "rows": [
+            [
+              "Kewajiban keuangan pribadi menekan pihak yang punya akses ke kas atau aset lain yang mudah dicuri",
+              "Kas dalam jumlah besar, atau persediaan yang kecil, bernilai tinggi, atau banyak diminati",
+              "Mengabaikan kebutuhan memantau atau mengurangi risiko penyalahgunaan aset"
+            ],
+            [
+              "Hubungan buruk antara manajemen dan karyawan yang punya akses ke aset, misalnya rencana PHK, atau promosi dan kompensasi yang tidak sesuai harapan",
+              "Pengendalian internal atas aset kurang memadai: tidak ada pemisahan tugas atau pemeriksaan independen, tidak ada penyaringan pelamar untuk fungsi pengendalian kunci, tidak ada cuti wajib bagi karyawan yang mengakses aset",
+              "Mengabaikan pengendalian internal dengan meng-override pengendalian yang ada atau tidak memperbaiki defisiensi yang sudah diketahui"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.241)`"
+        },
+        {
+          "kind": "p",
+          "text": "Penjelasan buku untuk tiap kondisi: `(ARENS pp.240–241)`"
+        },
+        {
+          "kind": "ul",
+          "items": [
+            "**Insentif dan tekanan.** Karyawan dengan kewajiban keuangan berlebihan, atau yang bermasalah dengan narkoba atau judi, bisa mencuri untuk memenuhi kebutuhan pribadi. Karyawan yang tidak puas bisa mencuri karena merasa berhak atau sebagai bentuk serangan kepada perusahaan. Pemeriksaan latar belakang dilakukan untuk semua calon karyawan, dan pemeriksaan kredit dapat ditambahkan untuk yang akan mengakses aset.",
+            "**Peluang.** Peluang pencurian ada di semua perusahaan, lebih besar bila ada kas atau persediaan yang mudah diakses, kecil, atau mudah dibawa. Pencurian laptop, misalnya, jauh lebih sering daripada desktop. Kasino mengelola banyak kas dengan catatan formal minim, sehingga memakai pengawasan video dan manusia secara luas. Sebuah jaringan makanan cepat saji di Kanada memasang tanda pada mesin kasir bahwa pembeli tanpa struk mendapat makanan gratis, pengendalian tanpa biaya yang membuat tiap pembeli ikut mengawasi pencatatan penjualan. Pemisahan tugas yang tidak memadai nyaris menjadi izin untuk mencuri. Bila karyawan gudang juga memegang catatan persediaan, mereka mudah mengambil barang dan menutupnya dengan menyesuaikan catatan.",
+            "**Sikap dan rasionalisasi.** Bila manajemen menipu pelanggan, misalnya menagih berlebihan atau memakai taktik penjualan yang menekan, karyawan bisa merasa wajar berbuat serupa dengan memanipulasi laporan biaya atau laporan jam kerja."
+          ]
+        },
+        {
+          "kind": "table",
+          "title": "Perbandingan dua jenis fraud pada fraud triangle",
+          "headers": [
+            "Aspek",
+            "Pelaporan keuangan yang curang",
+            "Penyalahgunaan aset"
+          ],
+          "rows": [
+            [
+              "Insentif dan tekanan yang khas",
+              "Prospek keuangan menurun, ekspektasi analis, covenant utang, harga saham",
+              "Kewajiban keuangan pribadi, masalah judi atau narkoba, ketidakpuasan kerja"
+            ],
+            [
+              "Peluang yang khas",
+              "Estimasi subjektif, pengawasan komite audit lemah, pergantian staf akuntansi",
+              "Aset kecil, bernilai, mudah dibawa, pemisahan tugas lemah"
+            ],
+            [
+              "Sikap yang khas",
+              "Tone at the top yang buruk",
+              "Manajemen yang tidak jujur menjadi contoh bagi karyawan"
+            ],
+            [
+              "Penekanan penilaian",
+              "Dampak ke laporan keuangan dan asersi",
+              "Insentif dan peluang pencurian oleh individu"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS pp.239–241)`"
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "7. Respons terhadap risiko fraud",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "callout",
+          "variant": "gist",
+          "text": "**Intinya:** bila ada risiko salah saji material karena fraud, auditor merespons di tiga tingkat: respons keseluruhan, respons pada asersi, dan prosedur atas management override yang wajib di setiap audit."
+        },
+        {
+          "kind": "p",
+          "text": "Risiko salah saji karena fraud yang dinilai diperlakukan sebagai risiko signifikan. Auditor mengidentifikasi pengendalian entitas atas risiko itu, mengevaluasi desainnya, dan menentukan apakah sudah diimplementasikan. `(ISA240 para. 28)`"
+        },
+        {
+          "kind": "figure",
+          "title": "Tiga tingkat respons terhadap risiko fraud",
+          "svg": "<svg class=\"course-diagram-svg aka201-diagram\" viewBox=\"0 0 480 688\" width=\"100%\" role=\"img\" aria-labelledby=\"f12-respons-fraud-t f12-respons-fraud-d\" style=\"max-width:480px;display:block;margin:0 auto\" xmlns=\"http://www.w3.org/2000/svg\"><title id=\"f12-respons-fraud-t\">Tiga tingkat respons terhadap risiko fraud</title><desc id=\"f12-respons-fraud-d\">Kartu risiko fraud di atas dengan tiga cabang: respons keseluruhan, respons pada asersi, dan management override.</desc><rect class=\"svg-bg\" x=\"0\" y=\"0\" width=\"480\" height=\"688\" rx=\"14\"/><rect class=\"svg-badge-red\" x=\"20\" y=\"20\" width=\"440\" height=\"76\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"34\" y=\"50\" font-size=\"19\" font-weight=\"800\">Risiko salah saji karena fraud</text><text class=\"svg-text\" x=\"34\" y=\"78\" font-size=\"18\">Direspons di tiga tingkat</text><rect class=\"svg-badge-blue\" x=\"60\" y=\"120\" width=\"400\" height=\"196\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"150\" font-size=\"19\" font-weight=\"800\">Respons keseluruhan</text><text class=\"svg-text\" x=\"74\" y=\"178\" font-size=\"18\">Staf berpengalaman atau spesialis</text><text class=\"svg-text\" x=\"74\" y=\"202\" font-size=\"18\">fraud, skeptisisme lebih tinggi</text><text class=\"svg-text\" x=\"74\" y=\"226\" font-size=\"18\">Evaluasi kebijakan akuntansi untuk</text><text class=\"svg-text\" x=\"74\" y=\"250\" font-size=\"18\">manajemen laba</text><text class=\"svg-text\" x=\"74\" y=\"274\" font-size=\"18\">Unsur ketidakterdugaan dalam</text><text class=\"svg-text\" x=\"74\" y=\"298\" font-size=\"18\">prosedur</text><rect class=\"svg-title\" x=\"34\" y=\"146.5\" width=\"26\" height=\"3\"/><rect class=\"svg-badge-green\" x=\"60\" y=\"330\" width=\"400\" height=\"148\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"360\" font-size=\"19\" font-weight=\"800\">Respons pada asersi</text><text class=\"svg-text\" x=\"74\" y=\"388\" font-size=\"18\">Ubah nature, timing, extent</text><text class=\"svg-text\" x=\"74\" y=\"412\" font-size=\"18\">Contoh: periksa aset secara fisik,</text><text class=\"svg-text\" x=\"74\" y=\"436\" font-size=\"18\">bukti akhir tahun, uji 100 persen</text><text class=\"svg-text\" x=\"74\" y=\"460\" font-size=\"18\">jurnal</text><rect class=\"svg-title\" x=\"34\" y=\"356.5\" width=\"26\" height=\"3\"/><rect class=\"svg-badge-amber\" x=\"60\" y=\"492\" width=\"400\" height=\"172\" rx=\"12\" stroke-width=\"1.5\"/><text class=\"svg-title\" x=\"74\" y=\"522\" font-size=\"19\" font-weight=\"800\">Management override</text><text class=\"svg-text\" x=\"74\" y=\"550\" font-size=\"18\">Wajib di setiap audit:</text><text class=\"svg-text\" x=\"74\" y=\"574\" font-size=\"18\">1. Uji jurnal dan penyesuaian lain</text><text class=\"svg-text\" x=\"74\" y=\"598\" font-size=\"18\">2. Review estimasi untuk bias</text><text class=\"svg-text\" x=\"74\" y=\"622\" font-size=\"18\">3. Evaluasi rasional bisnis</text><text class=\"svg-text\" x=\"74\" y=\"646\" font-size=\"18\">transaksi tidak biasa</text><rect class=\"svg-title\" x=\"34\" y=\"518.5\" width=\"26\" height=\"3\"/><rect class=\"svg-title\" x=\"32.5\" y=\"96\" width=\"3\" height=\"425.5\"/></svg>",
+          "overview": {
+            "heading": "Tiga tingkat respons terhadap risiko fraud",
+            "cards": [
+              {
+                "title": "Respons keseluruhan",
+                "subtitle": "",
+                "items": [
+                  "Staf berpengalaman atau spesialis fraud",
+                  "Skeptisisme lebih tinggi",
+                  "Evaluasi kebijakan akuntansi dan unsur ketidakterdugaan"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Respons pada asersi",
+                "subtitle": "",
+                "items": [
+                  "Ubah nature, timing, dan extent",
+                  "Periksa aset secara fisik, bukti akhir tahun, uji seluruh jurnal"
+                ],
+                "takeaway": ""
+              },
+              {
+                "title": "Management override",
+                "subtitle": "",
+                "items": [
+                  "Uji jurnal dan penyesuaian lain",
+                  "Review estimasi akuntansi untuk bias",
+                  "Evaluasi rasional bisnis transaksi tidak biasa"
+                ],
+                "takeaway": "Wajib di setiap audit, apa pun penilaian risikonya."
+              }
+            ],
+            "footer": "Sumber: ARENS pp.242–244; ISA240 paras. 29–33."
+          },
+          "caption": "Gambar 12.5: Tiga tingkat respons terhadap risiko fraud. Disusun dari ARENS pp.242–244 dan ISA240 paras. 29–33.",
+          "altText": "Risiko salah saji karena fraud direspons di tiga tingkat: respons keseluruhan, respons pada asersi dengan mengubah nature, timing, dan extent, serta tiga prosedur wajib atas management override di setiap audit, yaitu uji jurnal, review estimasi untuk bias, dan evaluasi rasional bisnis transaksi tidak biasa."
+        },
+        {
+          "kind": "table",
+          "title": "Tiga tingkat respons terhadap risiko fraud",
+          "headers": [
+            "Tingkat",
+            "Respons",
+            "Contoh dari buku",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Keseluruhan",
+              "Menugaskan dan mengawasi personel sesuai pengetahuan, keterampilan, dan kemampuan serta penilaian risiko fraud. Mengevaluasi pemilihan dan penerapan kebijakan akuntansi, terutama pengukuran subjektif dan transaksi kompleks, yang bisa menandakan upaya manajemen mengelola laba. Menambah unsur ketidakterdugaan pada nature, timing, dan extent prosedur",
+              "Menugaskan personel yang lebih berpengalaman atau spesialis fraud. Lebih banyak skeptisisme dan lebih banyak penguatan (corroboration) atas penjelasan manajemen. Mengunjungi lokasi persediaan atau menguji akun yang tidak diuji pada periode sebelumnya. Mempertimbangkan pengujian penyalahgunaan aset walaupun jumlahnya biasanya tidak material",
+              "ISA240 paras. 29–30; ARENS p.242"
+            ],
+            [
+              "Asersi",
+              "Merancang prosedur lanjutan yang nature, timing, dan extent-nya responsif terhadap risiko fraud pada asersi",
+              "Bila ada kekhawatiran cutoff atau channel stuffing, review jurnal penjualan menjelang akhir periode dan syarat penjualan",
+              "ISA240 para. 31; ARENS p.242"
+            ],
+            [
+              "Management override",
+              "Tiga prosedur wajib di setiap audit, apa pun penilaian risiko override",
+              "Jurnal dan penyesuaian, bias estimasi, transaksi tidak biasa",
+              "ISA240 paras. 32–33; ARENS p.242"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "h3",
+          "text": "Respons pada tingkat asersi (Table 7-6)"
+        },
+        {
+          "kind": "p",
+          "text": "Respons pada asersi mengatur detection risk dengan mengubah nature, timing, dan extent. `(ARENS p.242)`"
+        },
+        {
+          "kind": "table",
+          "title": "Contoh respons terhadap risiko fraud pada tingkat asersi (Table 7-6)",
+          "headers": [
+            "Respons",
+            "Alasan",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "Mengubah atau menambah prosedur (nature)",
+              "Memperoleh bukti yang lebih meyakinkan",
+              "Risiko penyalahgunaan aset tinggi pada asersi existence, sehingga auditor memeriksa aset secara fisik dan tidak bersandar pada inspeksi dokumen"
+            ],
+            [
+              "Mengubah waktu prosedur (timing)",
+              "Bukti akhir tahun lebih andal daripada bukti interim",
+              "Mengumpulkan sebagian besar bukti substantif pada akhir tahun dan memusatkan pengujian pada saldo akhir tahun"
+            ],
+            [
+              "Mengubah luas prosedur (extent)",
+              "Memperoleh bukti yang cukup",
+              "Memakai data analytics dan atau machine learning untuk menguji 100 persen entri jurnal dan mengidentifikasi transaksi tidak biasa"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "`(ARENS p.243)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Management override: tiga prosedur wajib"
+        },
+        {
+          "kind": "p",
+          "text": "Manajemen berada dalam posisi unik untuk melakukan fraud karena dapat memanipulasi catatan akuntansi dan menyusun laporan keuangan yang curang dengan meng-override pengendalian yang tampak berjalan efektif. Tingkat risikonya berbeda antarentitas, tetapi risikonya ada di semua entitas, dan karena caranya tidak bisa diduga, risiko ini dianggap risiko fraud dan karenanya risiko signifikan. `(ISA240 para. 32; ARENS p.242)` Apa pun penilaian risiko override, tiga prosedur berikut wajib dikerjakan. `(ISA240 para. 33)`"
+        },
+        {
+          "kind": "table",
+          "title": "Tiga prosedur wajib atas management override",
+          "headers": [
+            "Prosedur",
+            "Yang dilakukan",
+            "Penerapan dalam buku",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Menguji jurnal dan penyesuaian lain",
+              "Menanyakan individu dalam proses pelaporan keuangan tentang aktivitas tidak patut atau tidak biasa. Memilih jurnal dan penyesuaian di akhir periode. Mempertimbangkan perlunya menguji jurnal sepanjang periode",
+              "Memahami proses pelaporan keuangan dan pengendalian atas jurnal lebih dulu. Mewaspadai top-side adjustments pada spreadsheet. Mencari entri tidak biasa: pendapatan dikredit dengan debit selain kas atau piutang usaha, beban dikredit dengan aset didebit (indikasi kapitalisasi beban), serta entri akhir pekan, akhir periode, atau oleh orang yang biasanya tidak membuat jurnal",
+              "ISA240 para. 33(a); ARENS pp.242–243"
+            ],
+            [
+              "Mereview estimasi akuntansi untuk bias",
+              "Mengevaluasi apakah pertimbangan manajemen, meski masing-masing wajar, menunjukkan kemungkinan bias, lalu mengevaluasi ulang estimasi secara keseluruhan. Menelaah ke belakang (retrospective review) asumsi estimasi signifikan tahun lalu",
+              "Estimasi tahun lalu bisa mengumpul di ujung atas rentang yang dapat diterima, dan tahun ini di ujung bawah, sebagai indikasi bias",
+              "ISA240 para. 33(b); ARENS p.244"
+            ],
+            [
+              "Mengevaluasi rasional bisnis transaksi signifikan yang tidak biasa",
+              "Menilai apakah rasional bisnis (atau ketiadaannya) menunjukkan transaksi dibuat untuk pelaporan curang atau menutupi penyalahgunaan aset",
+              "Memahami tujuan transaksi, termasuk pembiayaan yang dibuat agar liabilitas tidak tampak di neraca. Menentukan apakah perlakuan akuntansinya tepat dan pengungkapannya memadai",
+              "ISA240 para. 33(c); ARENS p.244"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "Auditing in Action 7-4 menunjukkan pemakaian audit data analytics untuk menguji jurnal. Dengan akses ke seluruh jurnal klien, auditor mengidentifikasi entri tidak biasa dari kombinasi akun yang tidak terduga. Platform machine learning buatan perusahaan Kanada, MindBridge, menggabungkan algoritma berbasis aturan dan komponen machine learning, dan kriterianya dapat disesuaikan dengan praktik bisnis tiap klien. Entri akhir pekan berisiko rendah untuk perusahaan yang beroperasi 24 jam sehari, 7 hari seminggu, tetapi mencurigakan untuk perusahaan lain. `(ARENS p.243)`"
+        },
+        {
+          "kind": "h3",
+          "text": "Setelah ada indikasi fraud"
+        },
+        {
+          "kind": "table",
+          "title": "Evaluasi bukti dan langkah setelah ada indikasi fraud",
+          "headers": [
+            "Situasi",
+            "Yang dilakukan auditor",
+            "Sumber"
+          ],
+          "rows": [
+            [
+              "Prosedur analitis menjelang akhir audit",
+              "Mengevaluasi apakah hasilnya menunjukkan risiko fraud yang sebelumnya belum dikenali",
+              "ISA240 para. 35"
+            ],
+            [
+              "Menemukan salah saji",
+              "Mengevaluasi apakah salah saji itu mengindikasikan fraud, dan dampaknya pada keandalan representasi manajemen. Fraud jarang terjadi sekali saja",
+              "ISA240 para. 36"
+            ],
+            [
+              "Salah saji diduga akibat fraud yang melibatkan manajemen",
+              "Menilai ulang risiko fraud dan dampaknya pada nature, timing, dan extent prosedur, serta mempertimbangkan kemungkinan kolusi",
+              "ISA240 para. 37"
+            ],
+            [
+              "Fraud terkonfirmasi, atau auditor tidak bisa menyimpulkan",
+              "Mengevaluasi implikasinya bagi audit",
+              "ISA240 para. 38"
+            ],
+            [
+              "Keadaan luar biasa yang mempertanyakan kemampuan melanjutkan audit",
+              "Menentukan tanggung jawab profesional dan hukum, termasuk pelaporan, dan mempertimbangkan mundur dari perikatan bila hukum membolehkan",
+              "ISA240 para. 39"
+            ]
+          ],
+          "stackOnMobile": true
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Kasus latihan",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 1: Dua asersi piutang usaha.",
+          "prompt": "PT Mitra Lestari menjual suku cadang alat berat. Empat puluh persen penjualannya ke satu kontraktor yang proyeknya melambat dan pembayarannya makin terlambat. Cadangan kerugian piutang dihitung kepala keuangan di spreadsheet dari rata-rata historis, tanpa review pihak lain. Di sisi lain, pengiriman dan penagihan berjalan dalam satu sistem, dan buku pembantu piutang direkonsiliasi dengan buku besar tiap bulan oleh staf yang bukan kasir. Auditor menetapkan audit risk yang dituju 5 persen. (a) Nilai inherent risk, control risk, detection risk, dan kebutuhan bukti untuk asersi valuasi dan kelengkapan piutang. (b) Sebut inherent risk factors yang berperan pada valuasi. (c) Untuk valuasi, anggap inherent risk 80 persen dan auditor tidak mengandalkan pengendalian. Hitung detection risk yang direncanakan.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**Valuasi.** Inherent risk tinggi. Control risk tinggi, karena estimasi dihitung manual oleh satu orang tanpa review independen, jadi tidak ada pengendalian yang mencegah atau mendeteksi salah saji. Detection risk dibuat rendah dan bukti harus banyak serta meyakinkan: bukti dari sumber eksternal, prosedur di akhir tahun, dan sampel lebih besar. `(ARENS pp.226–227)`",
+                "**Faktor risiko inheren pada valuasi.** Subjectivity: rata-rata historis tidak menangkap perlambatan proyek. Uncertainty dan change: kemampuan bayar kontraktor bergantung pada kondisi sektor. Konsentrasi 40 persen pada satu pelanggan memperbesar magnitude bila pelanggan itu gagal bayar. `(ARENS p.230; ISA315 paras. A8, A211)`",
+                "**Kelengkapan.** Tidak ada faktor yang mengancam, jadi inherent risk rendah. Sistem terintegrasi dan rekonsiliasi bulanan mendukung control risk rendah, dengan syarat auditor menguji pengendalian itu. Bila pengujian mendukung, detection risk boleh tinggi dan bukti substantif lebih sedikit. `(ARENS p.226)`",
+                "**Relevant assertion.** Valuasi relevan karena ada risiko teridentifikasi. Kelengkapan tidak relevan, tetapi prosedur substantif tetap dirancang karena saldo piutang material. `(ISA315 para. 12(h); ISA330 para. 18)`",
+                "**(c) Hitungan.** RMM = 80% × 100% = 80%. Detection risk = 5% ÷ 80% = 6,25%. Angka ini ilustrasi arah hubungan model, bukan angka yang dipakai dalam praktik. `(ARENS p.225; ISA200 para. A44)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 2: Tingkat risiko dan risiko signifikan.",
+          "prompt": "Pada audit PT Karya Baja, auditor mencatat enam kondisi: (1) rugi tiga tahun berturut-turut dan kas hampir habis; (2) hampir semua staf akuntansi baru dan pergantian staf tinggi; (3) provisi garansi produk baru diestimasi dengan model kompleks berdasarkan data historis yang sedikit; (4) penjualan khusus kepada perusahaan milik direktur utama di luar kegiatan normal; (5) kas kecil di brankas pabrik dengan saldo sangat kecil; (6) standar akuntansi baru atas sewa mulai berlaku tahun ini. Tentukan tingkat tiap risiko dan apakah tergolong significant risk.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**(1) Tingkat laporan keuangan.** Riwayat rugi dan masalah likuiditas membuat dasar going concern diragukan, dan dampaknya meluas ke banyak asersi. Respons keseluruhan perlu disesuaikan. `(ARENS pp.224, 232)`",
+                "**(2) Tingkat laporan keuangan.** Staf yang kurang berpengalaman menaikkan kemungkinan banyak kesalahan. Ini berdampak menyeluruh, dan auditor menilai dampaknya pada asersi. `(ARENS p.232; ISA315 para. 30)`",
+                "**(3) Tingkat asersi, valuasi provisi garansi.** Estimasi dengan model kompleks dan data terbatas memuat subjectivity dan uncertainty. Ini tipe yang cenderung signifikan. `(ARENS p.234; ISA315 para. A221)`",
+                "**(4) Tingkat asersi, significant risk.** Transaksi pihak berelasi signifikan di luar kegiatan normal wajib diperlakukan sebagai risiko signifikan. `(ARENS p.234; ISA550 para. 18)`",
+                "**(5) Tingkat asersi, bukan significant risk.** Kemungkinan salah saji pada kas cukup tinggi, tetapi besarnya sangat kecil. Kombinasi itu kecil kemungkinannya menjadi risiko signifikan. `(ISA315 para. A220)`",
+                "**(6) Tingkat asersi, bergantung pertimbangan.** Standar baru adalah faktor change, dan perubahan bisnis yang membawa perubahan akuntansi termasuk hal yang cenderung signifikan. Signifikansinya ditentukan dari seberapa kompleks penerapan standar dan seberapa besar akun sewa. `(ARENS pp.231, 234; ISA315 para. A221)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 3: Fraud triangle dan respons.",
+          "prompt": "PT Samudra Retail memberi bonus kepada manajer regional berdasarkan pertumbuhan penjualan. Dua bulan sebelum akhir tahun, target dinaikkan karena bank mensyaratkan rasio tertentu dalam perjanjian kredit. Kepala akuntansi mengundurkan diri bulan lalu dan belum ada penggantinya. Komite audit rapat dua kali setahun dan tidak membahas estimasi akuntansi. Direktur utama sering mengatakan angka kuartal harus tercapai bagaimanapun caranya. Penjualan Desember melonjak, dan sebagian barang baru dikirim setelah tanggal neraca. (a) Petakan ke fraud triangle. (b) Tentukan jenis fraud dan asersi yang terancam. (c) Rancang respons di tiga tingkat.",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**(a) Fraud triangle.** Insentif dan tekanan: bonus berbasis penjualan dan persyaratan covenant. Peluang: pengawasan komite audit tidak efektif dan pergantian staf akuntansi. Sikap dan rasionalisasi: tone at the top yang menekankan angka tercapai apa pun caranya. `(ARENS pp.239–240)`",
+                "**(b) Jenis fraud dan asersi.** Pelaporan keuangan yang curang melalui pendapatan. Asersi yang terancam: occurrence dan cutoff pendapatan, dengan dampak pada keberadaan piutang. Pendapatan sudah merupakan area yang diasumsikan berisiko fraud. `(ISA240 para. 27; ISA315 para. A190)`",
+                "**(c) Respons keseluruhan.** Tugaskan personel berpengalaman, bila perlu spesialis fraud. Tingkatkan skeptisisme dan penguatan atas penjelasan manajemen. Evaluasi kebijakan pengakuan pendapatan. Tambahkan ketidakterdugaan, misalnya mengunjungi toko yang tidak diuji sebelumnya. `(ARENS p.242; ISA240 para. 30)`",
+                "**Respons tingkat asersi.** Review jurnal penjualan menjelang akhir periode, syarat penjualan, dan dokumen pengiriman sekitar tanggal neraca. Kumpulkan bukti substantif utama pada akhir tahun, dan pertimbangkan alat analitik untuk menguji seluruh transaksi penjualan akhir periode. `(ARENS pp.242–243)`",
+                "**Management override.** Tiga prosedur wajib tetap dikerjakan: jurnal, bias estimasi, dan transaksi tidak biasa. `(ISA240 para. 33)`"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Kasus 4: Memilih entri jurnal untuk diuji.",
+          "prompt": "Auditor menerima seluruh entri jurnal PT Bintang Logistik. Beberapa entri menarik perhatian: (A) hari Minggu pukul 23.40, dibuat controller yang biasanya tidak memposting jurnal, debit Piutang lain-lain dan kredit Pendapatan penjualan, tanggal 31 Desember; (B) jurnal penyusutan bulanan otomatis; (C) 30 Desember, kredit Beban pemeliharaan dan debit Aset tetap dalam penyelesaian; (D) jurnal gaji bulanan rutin; (E) penyesuaian akhir tahun dengan jumlah bulat yang mengurangi cadangan kerugian piutang, dibuat kepala keuangan lewat spreadsheet; (F) entri hari Sabtu di unit pergudangan yang beroperasi 24 jam sehari, 7 hari seminggu. (a) Entri mana yang diprioritaskan dan mengapa? (b) Apa yang wajib dilakukan terlepas dari penilaian risiko override? (c) Perlukah menguji entri sepanjang tahun?",
+          "revealLabel": "Lihat pembahasan",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "*Pembahasan.*"
+            },
+            {
+              "kind": "ul",
+              "items": [
+                "**(a) Prioritas tinggi: A, C, E.** A mengredit pendapatan dengan debit selain kas atau piutang usaha, dibuat di akhir periode, pada waktu dan oleh orang yang tidak lazim. C mengredit beban dan mendebit aset, yang bisa berarti kapitalisasi beban. E adalah top-side adjustment pada spreadsheet dengan jumlah bulat di akhir periode atas estimasi, sehingga terkait juga dengan review bias estimasi. `(ARENS pp.238, 243, 244)`",
+                "**Prioritas rendah: B, D, F.** B dan D rutin dan otomatis. Entri akhir pekan pada operasi 24 jam sehari, 7 hari seminggu berisiko rendah, berbeda dengan perusahaan lain tempat entri akhir pekan mencurigakan. `(ARENS p.243)`",
+                "**(b) Kewajiban.** Pengujian jurnal dan penyesuaian wajib di setiap audit. Auditor menanyakan individu dalam proses pelaporan keuangan tentang aktivitas tidak patut, memilih entri di akhir periode, dan mempertimbangkan pengujian sepanjang periode. `(ISA240 para. 33(a))`",
+                "**(c) Sepanjang tahun.** Ya, perlu dipertimbangkan, karena manipulasi bisa terjadi kapan saja. Alat analitik memungkinkan pengujian seluruh entri. `(ISA240 para. 33(a)(iii); ARENS p.243)`"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Uji pemahaman",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Jawab dulu tanpa melihat catatan, dengan kata-katamu sendiri."
+        },
+        {
+          "kind": "self-check",
+          "question": "**1. Mengapa detection risk satu-satunya komponen audit risk yang dikendalikan auditor, dan apa yang terjadi pada detection risk saat RMM naik?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* inherent risk dan control risk ada di klien tanpa audit, jadi auditor hanya menilainya. Detection risk bergantung pada prosedur auditor, yang diatur lewat nature, timing, dan extent. Saat RMM naik, audit risk tetap dijaga rendah, sehingga detection risk diturunkan dan bukti harus lebih banyak serta meyakinkan. `(ARENS p.225; ISA200 para. 13)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyebut auditor bisa mengurangi inherent risk dengan prosedur tambahan."
+        },
+        {
+          "kind": "self-check",
+          "question": "**2. Bedakan risiko salah saji material tingkat laporan keuangan dari tingkat asersi. Beri satu contoh masing-masing dan respons yang sesuai.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* tingkat laporan keuangan berdampak menyeluruh, misalnya keraguan going concern, dan direspons dengan respons keseluruhan seperti staf lebih berpengalaman dan skeptisisme lebih tinggi. Tingkat asersi menyangkut kelas transaksi, saldo, atau pengungkapan tertentu, misalnya penjualan luar negeri dengan kurs yang salah, dan direspons dengan prosedur lanjutan yang nature, timing, dan extent-nya disesuaikan. `(ARENS pp.224–225, 234–236)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menjawab bahwa tingkat laporan keuangan hanya berarti total laporan lebih besar."
+        },
+        {
+          "kind": "self-check",
+          "question": "**3. Apa yang membuat sebuah risiko menjadi significant risk, dan mengapa kas toko belum tentu signifikan?**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* significant risk adalah risiko dengan inherent risk mendekati ujung atas spectrum, dari kombinasi likelihood dan magnitude, atau yang diwajibkan standar lain. Kas toko kemungkinan salah sajinya tinggi tetapi besarnya sangat kecil, sehingga kombinasi keduanya kecil kemungkinannya signifikan. `(ISA315 paras. 12(l), A220)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menyamakan significant risk dengan akun yang saldonya besar."
+        },
+        {
+          "kind": "self-check",
+          "question": "**4. Sebut tiga kondisi fraud triangle dan satu faktor risiko tiap kondisi pada pelaporan keuangan yang curang.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* insentif atau tekanan, misalnya covenant utang yang menekan manajemen. Peluang, misalnya pengawasan komite audit tidak efektif. Sikap atau rasionalisasi, misalnya praktik membuat prakiraan terlalu agresif. `(ARENS pp.239–240)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menjawab bahwa adanya satu faktor risiko berarti fraud sudah terbukti."
+        },
+        {
+          "kind": "self-check",
+          "question": "**5. Sebut tiga prosedur wajib atas management override dan mengapa wajib di setiap audit.**",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "*Contoh jawaban:* menguji jurnal dan penyesuaian lain, mereview estimasi akuntansi untuk bias, dan mengevaluasi rasional bisnis transaksi signifikan yang tidak biasa. Wajib karena manajemen dapat meng-override pengendalian yang tampak efektif, risikonya ada di semua entitas, dan caranya tidak bisa diduga. `(ISA240 paras. 32–33; ARENS p.242)`"
+            }
+          ],
+          "signal": "*Tanda belum paham:* menganggap prosedur ini hanya dikerjakan bila risiko fraud dinilai tinggi."
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "Exam toolkit",
+      "layer": "latihan",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "**Kerangka jawaban soal audit risk model**"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Identifikasi asersi dan akunnya, lalu nilai inherent risk dengan inherent risk factors (complexity, subjectivity, change, uncertainty, management bias atau fraud-risk factors).",
+            "Nilai control risk dari pengendalian yang ada, dan ingat bahwa menilainya rendah berarti harus menguji pengendalian itu.",
+            "Simpulkan RMM, lalu tentukan detection risk berlawanan arah dengan RMM.",
+            "Terjemahkan ke respons: nature, timing, extent, plus staf dan review.",
+            "Periksa apakah risikonya signifikan, dan apakah prosedur substantif tetap wajib untuk saldo material."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Kerangka jawaban soal skenario fraud**"
+        },
+        {
+          "kind": "ol",
+          "items": [
+            "Petakan fakta ke tiga sisi fraud triangle.",
+            "Tentukan jenis fraud (pelaporan keuangan atau penyalahgunaan aset) dan asersi yang terancam.",
+            "Tulis respons di tiga tingkat: keseluruhan, asersi, management override.",
+            "Sebut tiga prosedur wajib atas management override.",
+            "Bedakan faktor risiko dari bukti fraud."
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "**Pasangan yang sering tertukar**"
+        },
+        {
+          "kind": "table",
+          "title": "Pasangan istilah yang sering tertukar di TM12",
+          "headers": [
+            "Pasangan",
+            "Pembeda"
+          ],
+          "rows": [
+            [
+              "Inherent risk vs control risk",
+              "Kerentanan asersi sebelum pengendalian vs risiko pengendalian tidak mencegah atau mendeteksi salah saji"
+            ],
+            [
+              "RMM vs detection risk",
+              "Risiko salah saji milik klien vs risiko prosedur auditor tidak mendeteksi"
+            ],
+            [
+              "Risiko tingkat laporan keuangan vs tingkat asersi",
+              "Berdampak menyeluruh pada banyak asersi vs terkait kelas transaksi, saldo, atau pengungkapan tertentu"
+            ],
+            [
+              "Relevant assertion vs significant risk",
+              "Ada risiko salah saji teridentifikasi vs inherent risk dekat ujung atas spectrum"
+            ],
+            [
+              "Respons keseluruhan vs prosedur lanjutan",
+              "Penugasan, skeptisisme, strategi vs tests of controls dan prosedur substantif"
+            ],
+            [
+              "Fraud vs error",
+              "Disengaja vs tidak disengaja"
+            ],
+            [
+              "Fraud risk factor vs fraud",
+              "Tanda insentif, peluang, atau sikap vs tindakan yang terbukti, yang penetapan hukumnya bukan wewenang auditor"
+            ],
+            [
+              "Pelaporan keuangan curang vs penyalahgunaan aset",
+              "Memanipulasi laporan vs mencuri aset"
+            ]
+          ],
+          "stackOnMobile": true
+        }
       ]
     }
   ]

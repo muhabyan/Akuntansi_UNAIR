@@ -223,13 +223,13 @@ const AKA201_TM1_7 = materi([
   ['Materialitas Perencanaan dan Pelaksanaan', 'Ch.6 Arens (pp.199–211) · SA/ISA 320'],
 ], 1);
 const AKA201_TM8_14 = materi([
-  ['Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien', 'Arens | SA 300, SA 315'],
-  ['Bukti Audit dan Prosedur Analitis', 'Arens | SA 500, SA 520'],
-  ['Dokumentasi Audit dan Kertas Kerja', 'Arens | SA 230'],
-  ['Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan', 'Arens | SA 315, SA 240'],
-  ['Pengendalian Internal COSO & Pengendalian Teknologi Informasi', 'Arens | COSO 2013'],
-  ['Pengujian Pengendalian (TOC) & Pengujian Substantif', 'Arens | SA 330'],
-  ['CAATs dan Perancangan Program Audit', 'Arens | SA 330'],
+  ['Perencanaan Audit, Strategi Audit Menyeluruh & Pemahaman Bisnis Klien', 'Ch.6 Arens (pp.174–198) · SA/ISA 300, 210, 315 (Revised 2019)'],
+  ['Bukti Audit dan Prosedur Analitis', 'Ch.5 Arens (pp.126–155, App. 5A) · SA/ISA 500, 520'],
+  ['Dokumentasi Audit dan Kertas Kerja', 'Ch.5 Arens (pp.156–161) · SA/ISA 230'],
+  ['Model Risiko Audit, Penilaian Risiko & Risiko Kecurangan', 'Ch.7 Arens (pp.222–244) · SA/ISA 315, 240, 330'],
+  ['Pengendalian Internal COSO & Pengendalian Teknologi Informasi', 'Ch.8 Arens (pp.255–286) · SA/ISA 315 · COSO 2013'],
+  ['Pengujian Pengendalian (TOC) & Pengujian Substantif', 'Ch.9–10 Arens (pp.294–321, 337–340) · SA/ISA 330, 265'],
+  ['CAATs dan Perancangan Program Audit', 'Ch.10–11 Arens (pp.330–352, 395–397) · SA/ISA 300, 330, 500'],
 ], 9);
 const AKA201_REF = [
   'Arens dkk., Auditing: The Art and Science of Assurance Engagements, 15th Canadian ed. (page numbers match those cited in the RPS)',
