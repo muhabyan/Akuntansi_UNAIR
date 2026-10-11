@@ -94,9 +94,9 @@ const MNU108_REF = [
   'Silabus & RPP Resmi Pengantar Manajemen, FEB Universitas Airlangga.',
 ];
 
-// --- MNS301 / MNU307 / MNM301 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
+// --- MNU307 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
 // Sumber: RPP Resmi Manajemen Stratejik, Departemen Akuntansi FEB UNAIR.
-const MNS301_TM1_7 = materi([
+const MNU307_TM1_7 = materi([
   ['Strategic Management', 'DMEL Ch. 1'],
   ['Membaca lingkungan dan kemampuan perusahaan', 'DMEL Ch. 2–4'],
   ['Memilih cara bersaing dan bisnis yang layak dimiliki', 'DMEL Ch. 5–6'],
@@ -105,7 +105,7 @@ const MNS301_TM1_7 = materi([
   ['Memimpin pembelajaran, menjaga etika, dan mengelola inovasi', 'DMEL Ch. 11–12'],
   ['Blue Ocean Strategy dan Strategy Maps', 'Kim & Mauborgne (2005) · Kaplan & Norton (2004)'],
 ], 1);
-const MNS301_TM8_14 = materi([
+const MNU307_TM8_14 = materi([
   ['Studi Kasus: THEORYBRIDGE.COM', 'Kasus RPP UNAIR'],
   ['Studi Kasus: H&M\'s Dilemma', 'Kasus RPP UNAIR'],
   ['Studi Kasus: Louis Vuitton', 'Kasus RPP UNAIR'],
@@ -114,7 +114,7 @@ const MNS301_TM8_14 = materi([
   ['Studi Kasus: Alibaba Group', 'Kasus RPP UNAIR'],
   ['Studi Kasus: Procter & Gamble', 'Kasus RPP UNAIR'],
 ], 9);
-const MNS301_REF = [
+const MNU307_REF = [
   'Dess, G., McNamara, G., Eisner, A., & Lee, S.H. (2024). Strategic Management: Text and Cases (11th ed.). McGraw-Hill. (DMEL)',
   'Kim, W.C. & Mauborgne, R. (2005). Blue Ocean Strategy: How to Create Uncontested Market Space and Make the Competition Irrelevant. Harvard Business School Press.',
   'Kaplan, R.S. & Norton, D.P. (2004). Strategy Maps: Converting Intangible Assets into Tangible Outcomes. Harvard Business School Press.',
@@ -693,9 +693,9 @@ export const SEMESTERS: Semester[] = [
           { code: 'AKK305', newCode: 'FEB25603026', name: 'Akuntansi Keuangan Lanjutan II: Konsep dan Penerapan', sks: 3, iconKey: 'calculator', prasyarat: 'AKK202 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'AKK401', name: 'Teori Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'AKK201 (T)', materiTM1_7: [], materiTM8_14: [] },
           {
-            code: 'MNS301', newCode: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
-            references: MNS301_REF,
-            materiTM1_7: MNS301_TM1_7, materiTM8_14: MNS301_TM8_14,
+            code: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
+            references: MNU307_REF,
+            materiTM1_7: MNU307_TM1_7, materiTM8_14: MNU307_TM8_14,
             flashcardCount: 176, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           { code: 'AKA306', name: 'Pengantar Praktik Pengauditan', sks: 3, iconKey: 'award', prasyarat: 'AKA202 (T)', materiTM1_7: [], materiTM8_14: [] },

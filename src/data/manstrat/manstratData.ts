@@ -1,5 +1,5 @@
 // src/data/manstrat/manstratData.ts
-// Rangkuman KOMPREHENSIF Manajemen Strategik (MNS301)
+// Rangkuman KOMPREHENSIF Manajemen Strategik (MNU307)
 // Sumber: Gregory G. Dess, G.T. Lumpkin, Alan B. Eisner, Gerry McNamara
 //         Michael Porter, Jay Barney, Bartlett & Ghoshal, Robert S. Kaplan,
 //         David P. Norton, W. Chan Kim, Renée Mauborgne.
@@ -18,6 +18,8 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { TM15_READING } from './modules/tm15';
+import { LEGACY_UAS } from './legacyPasca';
 
 export const MANSTRAT_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -34,9 +36,10 @@ export const MANSTRAT_READINGS: Record<number, Reading> = {
   12: TM12_READING,
   13: TM13_READING,
   14: TM14_READING,
+  15: TM15_READING,
 };
 
 export const MANSTRAT_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
-  uas: TM14_READING,
+  uas: LEGACY_UAS,
 };

@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client';
 import { Simulate } from 'react-dom/test-utils';
 import { createServer } from 'vite';
 
-const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/course/MNS301' });
+const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/course/MNU307' });
 const { window } = dom;
 const { document, localStorage } = window;
 for (const key of ['window', 'document', 'HTMLElement', 'SVGElement', 'Node', 'Event', 'CustomEvent', 'MouseEvent', 'PopStateEvent', 'localStorage', 'sessionStorage', 'MutationObserver', 'Element']) globalThis[key] = window[key];
@@ -78,7 +78,7 @@ try {
     server.ssrLoadModule('/src/data/courses/courseRegistry.ts'),
   ]);
   const courses = SEMESTERS.flatMap(s => s.groups.flatMap(g => g.courses));
-  const course = courses.find(c => c.code === 'MNS301');
+  const course = courses.find(c => c.code === 'MNU307');
   root = createRoot(document.getElementById('root'));
   const render = async (target, initialTm = null) => {
     await act(async () => { root.render(React.createElement(CourseLayout, { course: target, initialTm, onBack() {} })); await pause(); });
@@ -99,7 +99,7 @@ try {
   await click(button('Sebelumnya'));
   closed('TM04 → TM03 via Sebelumnya');
   assert.ok(button('Sudah dipelajari'), 'TM03 progress survives navigation');
-  assert.equal(JSON.parse(localStorage.getItem('akuntansi-feb-unair:study-progress'))['MNS301:tm3'], true);
+  assert.equal(JSON.parse(localStorage.getItem('akuntansi-feb-unair:study-progress'))['MNU307:tm3'], true);
   assert.equal(localStorage.getItem('theme'), 'dark', 'theme survives navigation');
   await attempt('Atlas');
   await historyTo({ akuntansihub_tm: 4 });
@@ -121,7 +121,7 @@ try {
   // In-memory test fixtures only: review/simulation with the SAME TM and block
   // indices as a normal reading, plus two distinct review keys with that TM.
   // This isolates the identity boundary; no course source is written or changed.
-  const loadedMnS = await loadCourseContent('MNS301'); // isi yang sama dengan yang dibaca CourseLayout (sudah dinormalkan)
+  const loadedMnS = await loadCourseContent('MNU307'); // isi yang sama dengan yang dibaca CourseLayout (sudah dinormalkan)
   loadedMnS.reviews.uts = { ...MANSTRAT_READINGS[3], title: 'Simulasi UTS' };
   loadedMnS.reviews.uas = { ...MANSTRAT_READINGS[3], title: 'Simulasi UAS' };
   await historyTo({ akuntansihub_tm: 3 });
@@ -139,7 +139,7 @@ try {
   assert.ok([...document.querySelectorAll('.layered-self-check textarea')].every(t => t.value === ''), 'another course receives no draft');
   assert.equal(document.querySelectorAll('.course-solution-surface button[aria-expanded="true"]').length, 0, 'another course receives no open solution');
   await render(course, 3);
-  closed('course switch back to MNS301 TM03');
+  closed('course switch back to MNU307 TM03');
   assert.ok(button('Sudah dipelajari'), 'progress survives course switch');
   await act(async () => { root.unmount(); await pause(); });
   root = createRoot(document.getElementById('root'));
