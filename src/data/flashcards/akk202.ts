@@ -1,5 +1,5 @@
 // src/data/flashcards/akk202.ts
-// Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) — 82 kartu (6 kartu per TM, TM 6 memuat 10 kartu; kartu TM 8 lama dihapus)
+// Flashcard komprehensif Akuntansi Keuangan Menengah II (AKK202) - 88 kartu (6 kartu per TM, TM 6 memuat 10 kartu; kartu TM 8 lama dihapus)
 // Kartu TM 1-7 mengikuti bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts; kartu yang isinya berubah memakai id akk202-v2-tmXX-YY.
 import type { AdvancedStudyCard } from '../../types';
 
@@ -419,327 +419,381 @@ export const AKK202_FC: AdvancedStudyCard[] = [
     "back": "Dengan opsi nilai wajar, perubahan akibat risiko kredit entitas sendiri masuk OCI dan sisanya laba rugi. Bagian yang jatuh tempo dalam 12 bulan dipindahkan ke liabilitas jangka pendek. Solvabilitas: debt to assets dan times interest earned."
   },
   {
-    "id": "akk202-tm09-01",
+    "id": "akk202-v3-tm09-01",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
-    "category": "Definisi",
-    "front": "Metode Bunga Efektif (Effective Interest Method)",
-    "back": "Metode amortisasi yang menghasilkan tingkat suku bunga periodik yang konstan terhadap nilai tercatat liabilitas obligasi."
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+    "category": "Konsep",
+    "front": "Bond indenture (perjanjian obligasi) (Rujukan: Kieso IFRS 5e, halaman PDF 1104-1105.)",
+    "back": "Kontrak menetapkan pokok, kupon, jatuh tempo, dan covenant atau pembatasan penerbit. Rujukan: Kieso IFRS 5e, halaman PDF 1104-1105."
   },
   {
-    "id": "akk202-tm09-02",
+    "id": "akk202-v3-tm09-02",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "category": "Rumus",
-    "front": "Formula Beban Bunga Periodik",
-    "back": "Beban Bunga = Nilai Tercatat Awal Periode (Carrying Amount) × Suku Bunga Pasar Efektif saat penerbitan."
+    "front": "Present value (nilai kini) dan periode (Rujukan: Kieso IFRS 5e, halaman PDF 1107-1111.)",
+    "back": "Harga obligasi adalah nilai kini pokok ditambah kupon. Pembayaran semesteran memakai jumlah periode dua kali tahun dan bunga tahunan dibagi dua. Rujukan: Kieso IFRS 5e, halaman PDF 1107-1111."
   },
   {
-    "id": "akk202-tm09-03",
+    "id": "akk202-v3-tm09-03",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
-    "category": "Rumus",
-    "front": "Formula Kas Pembayaran Bunga Kupon",
-    "back": "Kas Bunga = Nilai Nominal Obligasi (Par Value) × Suku Bunga Kupon Kontraktual per periode."
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+    "category": "Konsep",
+    "front": "Discount dan premium (diskonto dan premi) (Rujukan: Kieso IFRS 5e, halaman PDF 1108-1113.)",
+    "back": "Kupon di bawah yield menghasilkan diskonto; kupon di atas yield menghasilkan premi. Beban bunga efektif memakai nilai tercatat awal. Rujukan: Kieso IFRS 5e, halaman PDF 1108-1113."
   },
   {
-    "id": "akk202-tm09-04",
+    "id": "akk202-v3-tm09-04",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
-    "category": "Mekanisme",
-    "front": "Amortisasi Diskonto Obligasi",
-    "back": "Amortisasi Diskonto = Beban Bunga Efektif - Kas Bunga Kupon; nilai ini menambah nilai tercatat obligasi menuju nilai nominal saat jatuh tempo."
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+    "category": "Contoh",
+    "front": "Evermaster: amortisasi diskonto pertama (Rujukan: Kieso IFRS 5e, halaman PDF 1111-1112.)",
+    "back": "Kas €4.000, interest expense €4.614, amortisasi €614, dan carrying amount €92.892. Angka dibulatkan mengikuti buku. Rujukan: Kieso IFRS 5e, halaman PDF 1111-1112."
   },
   {
-    "id": "akk202-tm09-05",
+    "id": "akk202-v3-tm09-05",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
-    "category": "Mekanisme",
-    "front": "Amortisasi Premium Obligasi",
-    "back": "Amortisasi Premium = Kas Bunga Kupon - Beban Bunga Efektif; nilai ini mengurangi nilai tercatat obligasi menuju nilai nominal saat jatuh tempo."
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+    "category": "Konsep",
+    "front": "Accrued interest (bunga berjalan) (Rujukan: Kieso IFRS 5e, halaman PDF 1114-1115.)",
+    "back": "Pada penerbitan antar-tanggal, pisahkan harga obligasi dan bunga berjalan. Contoh at par Evermaster memberi beban dua bulan €1.333 setelah kupon €4.000 dikurangi bunga diterima €2.667. Rujukan: Kieso IFRS 5e, halaman PDF 1114-1115."
   },
   {
-    "id": "akk202-tm09-06",
+    "id": "akk202-v3-tm09-06",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "category": "Konsep",
-    "front": "Wesel Bayar Jangka Panjang Diterbitkan Kas & Aset",
-    "back": "Dicatat pada nilai wajar kas atau nilai wajar aset non-kas yang diserahkan/diterima, menggunakan tingkat bunga pasar yang wajar."
+    "front": "Bond issue costs (biaya penerbitan) (Rujukan: Kieso IFRS 5e, halaman PDF 1171-1172.)",
+    "back": "Untuk amortized cost, biaya emisi mengurangi nilai awal liabilitas dan diamortisasi melalui penyesuaian bunga efektif. Rujukan: Kieso IFRS 5e, halaman PDF 1171-1172."
   },
   {
-    "id": "akk202-tm10-01",
+    "id": "akk202-v3-tm10-01",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Ekuitas: Modal Saham & Saham Treasuri",
-    "category": "Definisi",
-    "front": "Komponen Utama Ekuitas Pemegang Saham",
-    "back": "Modal Disetor (Saham Biasa, Saham Preferen, Agio Saham/Additional Paid-in Capital), Saldo Laba (Retained Earnings), dan OCI Terakumulasi."
-  },
-  {
-    "id": "akk202-tm10-02",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Ekuitas: Modal Saham & Saham Treasuri",
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "category": "Konsep",
-    "front": "Hak Istimewa Saham Preferen",
-    "back": "Prioritas pembagian dividen tetap sebelum saham biasa dan prioritas klaim atas aset perusahaan saat likuidasi."
+    "front": "Zero-interest-bearing note (wesel tanpa kupon) (Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119.)",
+    "back": "Tidak adanya kupon kas tetap dapat disertai bunga implisit. Selisih nominal dan nilai awal diamortisasi sebagai Interest Expense. Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119."
   },
   {
-    "id": "akk202-tm10-03",
+    "id": "akk202-v3-tm10-02",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Ekuitas: Modal Saham & Saham Treasuri",
-    "category": "Mekanisme",
-    "front": "Saham Preferen Kumulatif",
-    "back": "Jika dividen tidak dibagikan pada tahun tertentu (dividends in arrears), dividen tersebut terakumulasi dan wajib dilunasi sebelum saham biasa menerima dividen."
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "category": "Contoh",
+    "front": "Turtle Cove: bunga efektif pertama (Rujukan: Kieso IFRS 5e, halaman PDF 1119.)",
+    "back": "USD7.721,80 × 9% = USD694,96. Carrying amount menjadi USD8.416,76, tanpa pembayaran kupon. Rujukan: Kieso IFRS 5e, halaman PDF 1119."
   },
   {
-    "id": "akk202-tm10-04",
+    "id": "akk202-v3-tm10-03",
     "phase": "pra-uas",
     "tm": 10,
-    "topic": "Ekuitas: Modal Saham & Saham Treasuri",
-    "category": "Jurnal",
-    "front": "Metode Biaya Saham Treasuri (Cost Method)",
-    "back": "Pembelian kembali saham sendiri didebit ke akun Saham Treasuri (kontra ekuitas) sebesar kas yang dibayarkan, tanpa membatalkan nilai nominal saham."
-  },
-  {
-    "id": "akk202-tm10-05",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Ekuitas: Modal Saham & Saham Treasuri",
-    "category": "Jurnal",
-    "front": "Penjualan Kembali Saham Treasuri di Atas Biaya",
-    "back": "Kelebihan kas atas harga perolehan treasuri dikreditkan ke Agio Saham Treasuri (Share Premium - Treasury Shares), BUKAN Laba Bersih."
-  },
-  {
-    "id": "akk202-tm10-06",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Ekuitas: Modal Saham & Saham Treasuri",
-    "category": "Jurnal",
-    "front": "Penjualan Kembali Saham Treasuri di Bawah Biaya",
-    "back": "Defisit didebit ke Agio Saham Treasuri hingga saldo habis, sisanya didebit ke Saldo Laba (Retained Earnings)."
-  },
-  {
-    "id": "akk202-tm11-01",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kebijakan Dividen & Pemecahan Saham",
-    "category": "Prosedur",
-    "front": "Tiga Tanggal Kunci Dividen Kas",
-    "back": "(1) Declaration Date (terbentuk liabilitas Utang Dividen), (2) Record Date (pencatatan pemegang saham yang berhak), (3) Payment Date (kas dibayarkan)."
-  },
-  {
-    "id": "akk202-tm11-02",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kebijakan Dividen & Pemecahan Saham",
-    "category": "Jurnal",
-    "front": "Jurnal Tanggal Pengumuman Dividen",
-    "back": "Debit: Saldo Laba (Retained Earnings); Kredit: Utang Dividen (Dividends Payable). Tidak ada jurnal pada tanggal pencatatan."
-  },
-  {
-    "id": "akk202-tm11-03",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kebijakan Dividen & Pemecahan Saham",
-    "category": "Hukum",
-    "front": "Dividen Saham Kecil (Small Stock Dividend < 20%)",
-    "back": "Saldo Laba didebit sebesar NILAI WAJAR pasar saham pada tanggal pengumuman dividen saham."
-  },
-  {
-    "id": "akk202-tm11-04",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kebijakan Dividen & Pemecahan Saham",
-    "category": "Hukum",
-    "front": "Dividen Saham Besar (Large Stock Dividend ≥ 20-25%)",
-    "back": "Saldo Laba didebit sebesar NILAI NOMINAL (Par Value) saham yang diterbitkan."
-  },
-  {
-    "id": "akk202-tm11-05",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kebijakan Dividen & Pemecahan Saham",
-    "category": "Mekanisme",
-    "front": "Pemecahan Saham (Stock Split 2-for-1)",
-    "back": "Jumlah saham beredar bertambah dua kali lipat, nilai nominal per saham berkurang setengahnya; TIDAK ADA jurnal akuntansi."
-  },
-  {
-    "id": "akk202-tm11-06",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Kebijakan Dividen & Pemecahan Saham",
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "category": "Konsep",
-    "front": "Pembatasan Saldo Laba (Appropriation of Retained Earnings)",
-    "back": "Mengalokasikan saldo laba untuk tujuan spesifik (ekspansi pabrik, cadangan hukum) sehingga tidak dapat dibagikan sebagai dividen kas."
+    "front": "Early extinguishment (pelunasan dini) (Rujukan: Kieso IFRS 5e, halaman PDF 1126-1128, 1173.)",
+    "back": "Mutakhirkan amortisasi dan bunga akrual. Harga tebus di atas nilai tercatat memberi loss; harga tebus di bawah nilai tercatat memberi gain. Rujukan: Kieso IFRS 5e, halaman PDF 1126-1128, 1173."
   },
   {
-    "id": "akk202-tm12-01",
+    "id": "akk202-v3-tm10-04",
     "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Sekuritas Dilutif & Kompensasi Saham (PSAK 56 & 71)",
-    "category": "Definisi",
-    "front": "Definisi Sekuritas Dilutif",
-    "back": "Instrumen keuangan yang dapat dikonversi menjadi saham biasa dan berpotensi mengurangi Laba Per Saham (misal: Obligasi Konversi, Opsi Saham)."
-  },
-  {
-    "id": "akk202-tm12-02",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Sekuritas Dilutif & Kompensasi Saham (PSAK 56 & 71)",
-    "category": "Hukum",
-    "front": "Akuntansi Pemisahan Obligasi Konversi",
-    "back": "Pendekatan Komponen Ganda (Split Accounting): Pisahkan nilai komponen liabilitas (PV bunga + pokok) dan sisanya diakui sebagai ekuitas konversi."
-  },
-  {
-    "id": "akk202-tm12-03",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Sekuritas Dilutif & Kompensasi Saham (PSAK 56 & 71)",
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "category": "Konsep",
-    "front": "Kompensasi Berbasis Saham (Share-Based Payments - PSAK 53)",
-    "back": "Beban kompensasi diukur pada Nilai Wajar opsi saham pada Tanggal Pemberian (Grant Date) dan diamortisasi selama Masa Kerja (Vesting Period)."
+    "front": "Bonn: pelepasan aset dan pelunasan (Rujukan: Kieso IFRS 5e, halaman PDF 1128-1129.)",
+    "back": "Utang €20.000.000, aset bernilai buku €21.000.000, nilai wajar €16.000.000. Rugi aset €5.000.000 terpisah dari laba utang €4.000.000. Rujukan: Kieso IFRS 5e, halaman PDF 1128-1129."
   },
   {
-    "id": "akk202-tm12-04",
+    "id": "akk202-v3-tm10-05",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "category": "Konsep",
+    "front": "Substantial modification (modifikasi substansial) (Rujukan: Kieso IFRS 5e, halaman PDF 1173.)",
+    "back": "Catatan 14 memakai bunga efektif historis untuk uji selisih arus kas sekurangnya 10%, atau perubahan fundamental persyaratan. Rumusan modifikasi non-substansial perlu dikonfirmasi sebelum dijadikan aturan jurnal umum. Rujukan: Kieso IFRS 5e, halaman PDF 1173."
+  },
+  {
+    "id": "akk202-v3-tm10-06",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "category": "Konsep",
+    "front": "Fair value option (opsi nilai wajar) (Rujukan: Kieso IFRS 5e, halaman PDF 1131-1132.)",
+    "back": "Pada contoh Edmonds, perubahan akibat bunga pasar masuk laba rugi. Perubahan risiko kredit sendiri masuk OCI, dengan batasan held for trading pada sumber. Rujukan: Kieso IFRS 5e, halaman PDF 1131-1132."
+  },
+  {
+    "id": "akk202-v3-tm11-01",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "category": "Konsep",
+    "front": "Contributed capital dan retained earnings (Rujukan: Kieso IFRS 5e, halaman PDF 1179-1181.)",
+    "back": "Contributed capital (modal disetor) berasal dari pemegang saham; retained earnings (saldo laba) berasal dari laba yang ditahan. Rujukan: Kieso IFRS 5e, halaman PDF 1179-1181."
+  },
+  {
+    "id": "akk202-v3-tm11-02",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "category": "Konsep",
+    "front": "Treasury shares (saham treasuri) (Rujukan: Kieso IFRS 5e, halaman PDF 1190-1193.)",
+    "back": "Saham sendiri yang dibeli kembali mengurangi ekuitas. Cost method mencatat biaya perolehan, dan selisih penerbitan kembali tetap dalam ekuitas. Rujukan: Kieso IFRS 5e, halaman PDF 1190-1193."
+  },
+  {
+    "id": "akk202-v3-tm11-03",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "category": "Konsep",
+    "front": "Dividends in arrears (dividen tertunggak) (Rujukan: Kieso IFRS 5e, halaman PDF 1186-1187.)",
+    "back": "Saham preferen kumulatif membawa hak dividen tertunggak. Sebelum deklarasi, hak ini diungkapkan dan tidak diakui sebagai liabilitas dividen. Rujukan: Kieso IFRS 5e, halaman PDF 1186-1187."
+  },
+  {
+    "id": "akk202-v3-tm11-04",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "category": "Konsep",
+    "front": "Share dividend (dividen saham) Vine (Rujukan: Kieso IFRS 5e, halaman PDF 1202-1204.)",
+    "back": "Tambahan 10.000 saham nominal £1 memindahkan £10.000 dari retained earnings ke modal saham. Nilai pasar £8 per saham tidak menjadi dasar transfer. Rujukan: Kieso IFRS 5e, halaman PDF 1202-1204."
+  },
+  {
+    "id": "akk202-v3-tm11-05",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "category": "Konsep",
+    "front": "Property dividend (dividen properti) (Rujukan: Kieso IFRS 5e, halaman PDF 1201.)",
+    "back": "Pada Tsen, penyesuaian aset HKD750.000 dilakukan sebelum mencatat liabilitas dividen pada nilai wajar HKD2.000.000. Rujukan: Kieso IFRS 5e, halaman PDF 1201."
+  },
+  {
+    "id": "akk202-v3-tm11-06",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "category": "Konsep",
+    "front": "Government grant (hibah pemerintah) (Rujukan: Kieso IFRS 5e, halaman PDF 774-775.)",
+    "back": "Income approach mengakui hibah secara sistematis sesuai biaya terkait. Hibah aset dapat berupa pendapatan ditangguhkan atau pengurang nilai tercatat aset. Rujukan: Kieso IFRS 5e, halaman PDF 774-775."
+  },
+  {
+    "id": "akk202-v3-tm12-01",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Sekuritas Dilutif & Kompensasi Saham (PSAK 56 & 71)",
-    "category": "Jurnal",
-    "front": "Jurnal Beban Opsi Saham Tahunan",
-    "back": "Debit: Beban Kompensasi (Laba Rugi); Kredit: Modal Saham - Opsi Saham (Ekuitas)."
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "category": "Konsep",
+    "front": "With-and-without method (metode residual) (Rujukan: Kieso IFRS 5e, halaman PDF 1257-1258.)",
+    "back": "Komponen utang = nilai kini kas kontraktual dengan yield utang tanpa konversi; komponen ekuitas = hasil emisi dikurangi komponen utang. Rujukan: Kieso IFRS 5e, halaman PDF 1257-1258."
   },
   {
-    "id": "akk202-tm12-05",
+    "id": "akk202-v3-tm12-02",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Sekuritas Dilutif & Kompensasi Saham (PSAK 56 & 71)",
-    "category": "Jurnal",
-    "front": "Pelaksanaan Opsi Saham (Exercise of Stock Options)",
-    "back": "Debit: Kas (harga eksekusi) + Opsi Saham; Kredit: Modal Saham Biasa + Agio Saham Biasa."
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "category": "Konsep",
+    "front": "Roche: komponen utang dan ekuitas (Rujukan: Kieso IFRS 5e, halaman PDF 1258.)",
+    "back": "Hasil €2.000.000 dipisahkan menjadi Bonds Payable €1.805.626 dan conversion equity €194.374. Rujukan: Kieso IFRS 5e, halaman PDF 1258."
   },
   {
-    "id": "akk202-tm12-06",
+    "id": "akk202-v3-tm12-03",
     "phase": "pra-uas",
     "tm": 12,
-    "topic": "Sekuritas Dilutif & Kompensasi Saham (PSAK 56 & 71)",
-    "category": "Mekanisme",
-    "front": "Waran Saham yang Dapat Dipisahkan (Detachable Warrants)",
-    "back": "Hasil penerbitan obligasi dialokasikan antara utang obligasi dan waran menggunakan metode nilai wajar proporsional atau incremental."
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "category": "Konsep",
+    "front": "Book value method (metode nilai buku) (Rujukan: Kieso IFRS 5e, halaman PDF 1260-1261.)",
+    "back": "Konversi normal memindahkan nilai tercatat utang dan ekuitas konversi ke modal serta agio saham. Laba rugi konversi tidak diakui. Rujukan: Kieso IFRS 5e, halaman PDF 1260-1261."
   },
   {
-    "id": "akk202-tm13-01",
+    "id": "akk202-v3-tm12-04",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "category": "Konsep",
+    "front": "Siemens: share warrants (waran) (Rujukan: Kieso IFRS 5e, halaman PDF 1268-1269.)",
+    "back": "Ekuitas waran €492.148 adalah selisih hasil emisi €10.200.000 dan nilai komponen utang €9.707.852. Buku IFRS memakai residual. Rujukan: Kieso IFRS 5e, halaman PDF 1268-1269."
+  },
+  {
+    "id": "akk202-v3-tm12-05",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "category": "Konsep",
+    "front": "Grant date dan service period (Rujukan: Kieso IFRS 5e, halaman PDF 1274-1276.)",
+    "back": "Equity-settled options diukur pada nilai wajar tanggal hibah, kemudian dibebankan selama masa jasa. Harga saham sesudah hibah tidak mengukur ulang nilai wajar opsi. Rujukan: Kieso IFRS 5e, halaman PDF 1274-1276."
+  },
+  {
+    "id": "akk202-v3-tm12-06",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "category": "Konsep",
+    "front": "Conversion dibandingkan repurchase (Rujukan: Kieso IFRS 5e, halaman PDF 1261-1263.)",
+    "back": "Konversi normal memakai nilai buku. Pembelian kembali sebelum jatuh tempo memisahkan imbalan ke liabilitas dan ekuitas; laba rugi dihitung atas komponen liabilitas. Rujukan: Kieso IFRS 5e, halaman PDF 1261-1263."
+  },
+  {
+    "id": "akk202-v3-tm13-01",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Laba Per Saham (Basic & Diluted EPS - PSAK 56)",
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
     "category": "Rumus",
-    "front": "Formula Laba Per Saham Dasar (Basic EPS)",
-    "back": "Basic EPS = (Laba Bersih - Dividen Saham Preferen) / Rata-Rata Tertimbang Jumlah Saham Biasa Beredar (WANOS)."
+    "front": "Basic EPS (EPS dasar) (Rujukan: Kieso IFRS 5e, halaman PDF 1285.)",
+    "back": "Laba tersedia bagi saham biasa dibagi saham biasa rata-rata tertimbang. Dividen preferen kumulatif tahun berjalan tetap diperhitungkan walaupun belum dideklarasikan. Rujukan: Kieso IFRS 5e, halaman PDF 1285."
   },
   {
-    "id": "akk202-tm13-02",
+    "id": "akk202-v3-tm13-02",
     "phase": "pra-uas",
     "tm": 13,
-    "topic": "Laba Per Saham (Basic & Diluted EPS - PSAK 56)",
-    "category": "Mekanisme",
-    "front": "Perhitungan WANOS dengan Dividen Saham",
-    "back": "Dividen saham dan pemecahan saham diperlakukan secara retrospektif seolah-olah telah beredar sejak awal tahun berjalan."
-  },
-  {
-    "id": "akk202-tm13-03",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Laba Per Saham (Basic & Diluted EPS - PSAK 56)",
-    "category": "Hukum",
-    "front": "Pengujian Efek Antidilutif",
-    "back": "Jika konversi sekuritas justru MENAIKKAN EPS atau memperkecil rugi per saham, sekuritas tersebut bersifat antidilutif dan WAJIB DIABAIKAN dari Diluted EPS."
-  },
-  {
-    "id": "akk202-tm13-04",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Laba Per Saham (Basic & Diluted EPS - PSAK 56)",
-    "category": "Rumus",
-    "front": "Metode Jika Dikonversi (If-Converted Method)",
-    "back": "Untuk Obligasi Konversi: Pembilang ditambah Penghematan Beban Bunga Setelah Pajak; Penyebut ditambah Saham Konversi."
-  },
-  {
-    "id": "akk202-tm13-05",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Laba Per Saham (Basic & Diluted EPS - PSAK 56)",
-    "category": "Rumus",
-    "front": "Metode Saham Treasuri (Treasury Stock Method)",
-    "back": "Untuk Opsi/Waran: Diasumsikan kas dari eksekusi opsi digunakan untuk membeli kembali saham treasuri di harga pasar rata-rata tahun berjalan."
-  },
-  {
-    "id": "akk202-tm13-06",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Laba Per Saham (Basic & Diluted EPS - PSAK 56)",
-    "category": "Rumus",
-    "front": "Tambahan Saham Tambahan Opsi Treasuri",
-    "back": "Saham Inkremental = Saham Diterbitkan dari Opsi - [(Saham Opsi × Strike Price) / Rata-Rata Harga Pasar Saham]."
-  },
-  {
-    "id": "akk202-tm14-01",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Investasi Efek Utang & Ekuitas (PSAK 71)",
-    "category": "Hukum",
-    "front": "Tiga Klasifikasi Aset Keuangan Efek Utang",
-    "back": "(1) Amortised Cost (AC), (2) Fair Value through Other Comprehensive Income (FVOCI), (3) Fair Value through Profit or Loss (FVTPL)."
-  },
-  {
-    "id": "akk202-tm14-02",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Investasi Efek Utang & Ekuitas (PSAK 71)",
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
     "category": "Konsep",
-    "front": "Uji Model Bisnis & Karakteristik Arus Kas (SPPI)",
-    "back": "Klasifikasi AC/FVOCI mensyaratkan arus kas instrumen semata-mata berasal dari pokok dan bunga (Solely Payments of Principal and Interest)."
+    "front": "Weighted-average shares (saham tertimbang) (Rujukan: Kieso IFRS 5e, halaman PDF 1286-1287.)",
+    "back": "Terbit dan beli kembali untuk kas dibobot menurut waktu. Share dividend dan share split menyajikan kembali saham sebelum peristiwa. Rujukan: Kieso IFRS 5e, halaman PDF 1286-1287."
   },
   {
-    "id": "akk202-tm14-03",
+    "id": "akk202-v3-tm13-03",
     "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Investasi Efek Utang & Ekuitas (PSAK 71)",
-    "category": "Hukum",
-    "front": "Efek Ekuitas Non-Trading (Pilihan FVOCI)",
-    "back": "Entitas dapat memilih opsi FVOCI yang tidak dapat dibatalkan (irrevocable); keuntungan/kerugian nilai wajar di OCI TIDAK PERNAH direklasifikasi ke laba rugi."
-  },
-  {
-    "id": "akk202-tm14-04",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Investasi Efek Utang & Ekuitas (PSAK 71)",
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
     "category": "Konsep",
-    "front": "Metode Ekuitas (Equity Method - PSAK 15)",
-    "back": "Diterapkan saat investor memiliki Pengaruh Signifikan (Significant Influence), umumnya kepemilikan saham 20% hingga 50% hak suara."
+    "front": "If-converted method (metode jika dikonversi) (Rujukan: Kieso IFRS 5e, halaman PDF 1293-1294.)",
+    "back": "Tambahkan beban bunga setelah pajak pada pembilang dan saham konversi berbobot waktu pada penyebut. Gunakan beban efektif, bukan hanya kupon kas. Rujukan: Kieso IFRS 5e, halaman PDF 1293-1294."
   },
   {
-    "id": "akk202-tm14-05",
+    "id": "akk202-v3-tm13-04",
     "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Investasi Efek Utang & Ekuitas (PSAK 71)",
-    "category": "Jurnal",
-    "front": "Jurnal Laba Asosiasi pada Metode Ekuitas",
-    "back": "Debit: Investasi pada Entitas Asosiasi; Kredit: Bagian Laba atas Entitas Asosiasi (diakui proporsional sebesar % kepemilikan)."
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "category": "Konsep",
+    "front": "Treasury-share method untuk EPS (Rujukan: Kieso IFRS 5e, halaman PDF 1296-1298.)",
+    "back": "Kas asumsi pelaksanaan opsi membeli kembali saham pada harga pasar rata-rata. Hanya selisih neto yang menambah penyebut; tidak ada jurnal pembelian treasuri aktual. Rujukan: Kieso IFRS 5e, halaman PDF 1296-1298."
   },
   {
-    "id": "akk202-tm14-06",
+    "id": "akk202-v3-tm13-05",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "category": "Konsep",
+    "front": "Antidilutive (antidilutif) (Rujukan: Kieso IFRS 5e, halaman PDF 1299-1300, 1314-1318.)",
+    "back": "Instrumen yang menaikkan EPS atau memperkecil rugi per saham dikeluarkan. Uji instrumen berurutan, dimulai dari incremental EPS terendah. Rujukan: Kieso IFRS 5e, halaman PDF 1299-1300, 1314-1318."
+  },
+  {
+    "id": "akk202-v3-tm13-06",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "category": "Konsep",
+    "front": "Share dividend dan EPS (Rujukan: Kieso IFRS 5e, halaman PDF 1287.)",
+    "back": "Contoh Vijay dengan 100.000 saham dan dividen saham 25% pada Juni memakai rata-rata 125.000 saham setelah restatement (penyajian kembali). Rujukan: Kieso IFRS 5e, halaman PDF 1287."
+  },
+  {
+    "id": "akk202-v3-tm14-01",
     "phase": "pra-uas",
     "tm": 14,
-    "topic": "Investasi Efek Utang & Ekuitas (PSAK 71)",
-    "category": "Jurnal",
-    "front": "Jurnal Dividen yang Diterima pada Metode Ekuitas",
-    "back": "Debit: Kas; Kredit: Investasi pada Entitas Asosiasi (dividen mengurangi nilai tercatat investasi, bukan pendapatan dividen)."
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "category": "Konsep",
+    "front": "Business model dan SPPI (Rujukan: Kieso IFRS 5e, halaman PDF 1370-1372.)",
+    "back": "Periksa tujuan menagih atau menagih serta menjual, kemudian arus kas yang semata berupa pokok dan bunga. Keduanya menentukan kategori efek utang. Rujukan: Kieso IFRS 5e, halaman PDF 1370-1372."
+  },
+  {
+    "id": "akk202-v3-tm14-02",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "category": "Konsep",
+    "front": "Amortized cost (biaya diamortisasi) (Rujukan: Kieso IFRS 5e, halaman PDF 1372-1375.)",
+    "back": "Pendapatan bunga efektif memakai nilai tercatat awal. Diskonto menambah investasi dan premi menguranginya. Fluktuasi pasar rutin tidak langsung mengubah basis kategori ini. Rujukan: Kieso IFRS 5e, halaman PDF 1372-1375."
+  },
+  {
+    "id": "akk202-v3-tm14-03",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "category": "Konsep",
+    "front": "FVOCI untuk efek utang (Rujukan: Kieso IFRS 5e, halaman PDF 1376-1380.)",
+    "back": "Bunga efektif masuk laba rugi, perubahan nilai wajar pasar masuk OCI, dan saldo OCI direklasifikasi ke laba rugi saat pelepasan. Rujukan: Kieso IFRS 5e, halaman PDF 1376-1380."
+  },
+  {
+    "id": "akk202-v3-tm14-04",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "category": "Konsep",
+    "front": "12-month ECL dan lifetime ECL (Rujukan: Kieso IFRS 5e, halaman PDF 1396-1397.)",
+    "back": "Stage 1 memakai 12-month ECL; Stage 2 dan Stage 3 memakai lifetime ECL. Bunga Stage 1 dan 2 berbasis bruto, Stage 3 berbasis neto. Rujukan: Kieso IFRS 5e, halaman PDF 1396-1397."
+  },
+  {
+    "id": "akk202-v3-tm14-05",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "category": "Contoh",
+    "front": "Mayhew: satuan dan nilai kini (Rujukan: Kieso IFRS 5e, halaman PDF 1399.)",
+    "back": "Jumlah disajikan dalam ribuan yen. Nilai tercatat ¥200.000 dikurangi PV ekspektasian ¥187.320 menghasilkan ECL ¥12.680. Rujukan: Kieso IFRS 5e, halaman PDF 1399."
+  },
+  {
+    "id": "akk202-v3-tm14-06",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "category": "Konsep",
+    "front": "Fair value hierarchy (hierarki nilai wajar) (Rujukan: Kieso IFRS 5e, halaman PDF 1429-1431.)",
+    "back": "Level 1 memakai harga aktif instrumen identik, Level 2 input lain yang dapat diobservasi, dan Level 3 input tidak dapat diobservasi. Kategori pengukuran investasi berbeda dari level input. Rujukan: Kieso IFRS 5e, halaman PDF 1429-1431."
+  },
+  {
+    "id": "akk202-v3-tm15-01",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "category": "Konsep",
+    "front": "Significant influence (pengaruh signifikan) (Rujukan: Kieso IFRS 5e, halaman PDF 1390-1391.)",
+    "back": "Kepemilikan 20% atau lebih memberi praduga yang dapat diuji. Representasi direksi, kebijakan, transaksi material, dan hubungan manajemen dapat menjadi bukti. Rujukan: Kieso IFRS 5e, halaman PDF 1390-1391."
+  },
+  {
+    "id": "akk202-v3-tm15-02",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "category": "Konsep",
+    "front": "Non-trading equity OCI (Rujukan: Kieso IFRS 5e, halaman PDF 1387-1389, 1396.)",
+    "back": "Pilihan non-trading menempatkan perubahan nilai wajar dalam OCI per investasi. Pada pelepasan, kumulatifnya tidak direklasifikasi ke laba rugi. Rujukan: Kieso IFRS 5e, halaman PDF 1387-1389, 1396."
+  },
+  {
+    "id": "akk202-v3-tm15-03",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "category": "Konsep",
+    "front": "Dividend Revenue dibandingkan equity method (Rujukan: Kieso IFRS 5e, halaman PDF 1388, 1391-1392.)",
+    "back": "Contoh pasif Republic mengakui dividen sebagai pendapatan. Pada equity method, dividen mengurangi investasi karena bagian laba telah diakui. Rujukan: Kieso IFRS 5e, halaman PDF 1388, 1391-1392."
+  },
+  {
+    "id": "akk202-v3-tm15-04",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "category": "Contoh",
+    "front": "Meredith dan Pirates: mutasi investasi (Rujukan: Kieso IFRS 5e, halaman PDF 1452.)",
+    "back": "Interpretasi E16.20: £200.000 + 25% × £80.000 - 25% × £20.000 = £215.000. Investment Revenue £20.000 dan kas dividen £5.000. Rujukan: Kieso IFRS 5e, halaman PDF 1452."
+  },
+  {
+    "id": "akk202-v3-tm15-05",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "category": "Konsep",
+    "front": "Control (pengendalian) (Rujukan: Kieso IFRS 5e, halaman PDF 1173, 1393-1394.)",
+    "back": "Periksa kekuasaan atas investee, hak atau eksposur atas imbal hasil variabel, dan kemampuan memakai kekuasaan untuk memengaruhi imbal hasil. Persentase saham saja belum menyelesaikan analisis. Rujukan: Kieso IFRS 5e, halaman PDF 1173, 1393-1394."
+  },
+  {
+    "id": "akk202-v3-tm15-06",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "category": "Konsep",
+    "front": "Investee losses (rugi entitas investasi) (Rujukan: Kieso IFRS 5e, halaman PDF 1393.)",
+    "back": "Jika bagian rugi melebihi nilai tercatat, buku umumnya menghentikan pengakuan rugi lebih lanjut. Periksa jaminan atau komitmen dukungan tambahan sebelum menyimpulkan batasnya. Rujukan: Kieso IFRS 5e, halaman PDF 1393."
   }
 ];

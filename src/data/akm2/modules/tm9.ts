@@ -1,184 +1,352 @@
+// AKK202 TM9: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
 import type { Reading } from '../../../types';
-import {
-  CASE_BONDS_AMORTIZATION,
-  CASE_BONDS_BETWEEN_DATES_ISSUE_COSTS } from '../akm2PracticeCases';
-
-const SVG_BONDS = `
-<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">MEKANISME PENERBITAN OBLIGASI (PSAK 71 / IFRS 9)</text>
-
-  <rect class="svg-card" x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-blue" x="125" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">PAR (AT PAR)</text>
-  <text class="text-accent-green" x="125" y="98" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">Kupon = Pasar</text>
-  <line class="svg-divider" x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga Terbit = 100% Par</text>
-  <text class="svg-text" x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Kas = Nilai Nominal</text>
-  <text class="svg-muted" x="125" y="168" fill="#94a3b8" font-size="9.5" text-anchor="middle">Tidak Ada Amortisasi</text>
-
-  <rect class="svg-card" x="245" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-  <text class="text-accent-red" x="340" y="78" fill="#f43f5e" font-size="11.5" font-weight="700" text-anchor="middle">DISKONTO (DISCOUNT)</text>
-  <text class="text-accent-red" x="340" y="98" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="middle">Kupon &lt; Pasar</text>
-  <line class="svg-divider" x1="260" y1="110" x2="420" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="340" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga Terbit &lt; 100% Par</text>
-  <text class="svg-text" x="340" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Kas &lt; Nilai Nominal</text>
-  <text class="text-accent-amber" x="340" y="168" fill="#f59e0b" font-size="9.5" text-anchor="middle">Amortisasi Menambah Carrying</text>
-
-  <rect class="svg-card" x="460" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-  <text class="text-accent-green" x="555" y="78" fill="#10b981" font-size="11.5" font-weight="700" text-anchor="middle">PREMI (PREMIUM)</text>
-  <text class="text-accent-green" x="555" y="98" fill="#34d399" font-size="10.5" font-weight="700" text-anchor="middle">Kupon &gt; Pasar</text>
-  <line class="svg-divider" x1="475" y1="110" x2="635" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="555" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga Terbit &gt; 100% Par</text>
-  <text class="svg-text" x="555" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Kas &gt; Nilai Nominal</text>
-  <text class="text-accent-blue" x="555" y="168" fill="#38bdf8" font-size="9.5" text-anchor="middle">Amortisasi Mengurangi Carrying</text>
-</svg>`;
 
 export const TM9_READING: Reading = {
-  tm: 9,
-  title: 'Liabilitas Jangka Panjang, Penentuan Harga Obligasi, dan Metode Suku Bunga Efektif',
-  ref: 'Kieso IFRS 5e Ch. 14 | PSAK 71, PSAK 50',
-  intro: 'TM 9 mengupas valuasi dan akuntansi Liabilitas Jangka Panjang: penentuan harga pasar penerbitan obligasi berbasis Nilai Sekarang (PV Pokok + PV Anuitas Kupon), penyusunan skedul amortisasi diskonto/premi metode suku bunga efektif, serta pencatatan biaya penerbitan obligasi.',
-  objectives: [
-    'Menghitung harga penerbitan obligasi (Present Value of Principal + PV of Ordinary Annuity of Interest).',
-    'Menjelaskan hubungan Suku Bunga Kupon (Stated Rate) vs Suku Bunga Pasar (Effective/Yield Rate) terhadap pembentukan diskonto dan premi.',
-    'Menyusun Skedul Amortisasi Obligasi menggunakan Metode Suku Bunga Efektif (Effective-Interest Method) sesuai PSAK 71.',
-    'Menjurnal penerbitan obligasi pada tanggal pembayaran bunga maupun di antara tanggal bunga (Accrued Interest).',
-    'Memperlakukan Biaya Penerbitan Obligasi (Bond Issue Costs) sebagai pengurang nilai tercatat awal liabilitas.'
+  "tm": 9,
+  "title": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+  "ref": "Kieso IFRS 5e Ch. 13 | RPP AKM II, halaman PDF 3",
+  "intro": "TM09 melanjutkan fondasi liabilitas dengan penilaian obligasi, amortisasi diskonto dan premi, serta penerbitan di antara tanggal bunga. Fokusnya adalah memisahkan kas kupon dari beban bunga efektif.",
+  "objectives": [
+    "Menjelaskan bond indenture (perjanjian obligasi) dan jenis obligasi.",
+    "Menghitung present value (nilai kini) pokok dan kupon dengan periode yang konsisten.",
+    "Menyusun amortisasi serta jurnal penerbit dan bunga akrual.",
+    "Memisahkan accrued interest (bunga berjalan) dari harga obligasi."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      title: 'Kondisi Penerbitan Obligasi: Par, Diskonto, dan Premi',
-      svg: SVG_BONDS,
-      caption: 'Gambar 9.1: Hubungan suku bunga kupon dan suku bunga pasar terhadap harga penerbitan obligasi.'
+      "kind": "h2",
+      "text": "1. Orientation / Quick Map"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat TM 9'
-    },
-    {
-      kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
-      rows: [
-        ['1', 'Hitung PV Penerbitan', 'Berapa PV Nominal (FV × PVF) + PV Kupon Bunga (Anuitas × PVFA)?', 'Menetapkan harga jual obligasi (kas yang diterima).'],
-        ['2', 'Identifikasi Diskonto/Premi', 'Apakah suku bunga kupon lebih kecil atau lebih besar dari suku bunga efektif pasar?', 'Menentukan saldo diskonto atau premi obligasi awal.'],
-        ['3', 'Skedul Bunga Efektif', 'Berapa Kas Kupon Dibayar vs Beban Bunga Riil (Carrying Amount × Suku Bunga Efektif)?', 'Menyusun tabel amortisasi dan memperbarui nilai tercatat obligasi.'],
-        ['4', 'Penerbitan Antar-Tanggal', 'Apakah obligasi dijual di antara dua tanggal kupon resmi?', 'Menghitung dan menjurnal utang bunga berjalan (accrued interest) saat penerbitan.'],
-        ['5', 'Biaya Penerbitan (PSAK 71)', 'Bagaimana perlakuan biaya penjamin emisi (underwriting fee) dan legal?', 'Mengurangkan biaya emisi dari kas penerbitan sehingga menaikkan suku bunga efektif.']
+      "kind": "figure",
+      "title": "Peta konsep TM9",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 340\" role=\"img\" aria-label=\"Peta analisis TM9\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\"><rect x=\"8\" y=\"8\" width=\"664\" height=\"324\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\"/><text x=\"28\" y=\"34\" font-size=\"16\" fill=\"#38bdf8\" font-weight=\"700\">Peta analisis TM9</text><rect x=\"24\" y=\"48\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"70\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">1. Kontrak</text><text x=\"40\" y=\"90\" font-size=\"12\" fill=\"#e2e8f0\">Tentukan pokok, kupon, jadwal, dan yield.</text><rect x=\"24\" y=\"116\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"138\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">2. Penilaian</text><text x=\"40\" y=\"158\" font-size=\"12\" fill=\"#e2e8f0\">Diskontokan kupon dan pokok dalam periode yang sama.</text><rect x=\"24\" y=\"184\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"206\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">3. Amortisasi</text><text x=\"40\" y=\"226\" font-size=\"12\" fill=\"#e2e8f0\">Bandingkan beban efektif dengan kas kupon.</text><rect x=\"24\" y=\"252\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"274\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">4. Jurnal</text><text x=\"40\" y=\"294\" font-size=\"12\" fill=\"#e2e8f0\">Pisahkan liabilitas obligasi dari bunga akrual.</text></svg>",
+      "overview": {
+        "heading": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+        "cards": [
+          {
+            "title": "Kontrak",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Tentukan pokok, kupon, jadwal, dan yield."
+            ],
+            "takeaway": "Tentukan pokok, kupon, jadwal, dan yield."
+          },
+          {
+            "title": "Penilaian",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Diskontokan kupon dan pokok dalam periode yang sama."
+            ],
+            "takeaway": "Diskontokan kupon dan pokok dalam periode yang sama."
+          },
+          {
+            "title": "Amortisasi",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Bandingkan beban efektif dengan kas kupon."
+            ],
+            "takeaway": "Bandingkan beban efektif dengan kas kupon."
+          },
+          {
+            "title": "Jurnal",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Pisahkan liabilitas obligasi dari bunga akrual."
+            ],
+            "takeaway": "Pisahkan liabilitas obligasi dari bunga akrual."
+          }
+        ],
+        "footer": "RPP AKM II, halaman PDF 3; Kieso IFRS 5e Ch. 13."
+      },
+      "transcript": [
+        "Kontrak: Tentukan pokok, kupon, jadwal, dan yield.",
+        "Penilaian: Diskontokan kupon dan pokok dalam periode yang sama.",
+        "Amortisasi: Bandingkan beban efektif dengan kas kupon.",
+        "Jurnal: Pisahkan liabilitas obligasi dari bunga akrual."
       ],
-      caption: 'Tabel 9.0: Roadmap belajar penerbitan obligasi dan amortisasi suku bunga efektif.'
+      "caption": "Peta pembelajaran mengikuti RPP AKM II, halaman PDF 3, dengan bab disesuaikan ke Kieso IFRS 5e Ch. 13."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi TM 9'
+      "kind": "h2",
+      "text": "2. Kontrak, jenis, dan risiko obligasi"
     },
     {
-      kind: 'formula',
-      text: '\\text{Harga Obligasi (PV)} = \\left( \\text{Nominal} \\times \\frac{1}{(1+i)^n} \\right) + \\left( \\text{Kupon Bunga} \\times \\frac{1 - (1+i)^{-n}}{i} \\right)',
-      note: 'i = Suku Bunga Efektif Pasar per periode, n = Total periode pembayaran kupon.'
+      "kind": "p",
+      "text": "Bond indenture adalah kontrak yang menetapkan nominal, bunga, jatuh tempo, dan covenant atau pembatasan bagi penerbit. Secured bonds memakai agunan; debentures tidak memakai agunan khusus. Term bonds jatuh tempo serentak, serial bonds bertahap, dan callable bonds dapat ditebus penerbit sesuai kontrak. (Kieso IFRS 5e, halaman PDF 1104-1105.)"
     },
     {
-      kind: 'formula',
-      text: '\\text{Beban Bunga Riil} = \\text{Carrying Amount Awal Periode} \\times i_{\\text{efektif}}',
-      note: 'Kas Kupon Dibayar = Nilai Nominal × Suku Bunga Kupon. Selisihnya adalah jumlah amortisasi diskonto/premi.'
+      "kind": "table",
+      "title": "Komponen penilaian obligasi",
+      "headers": [
+        "Istilah",
+        "Makna Indonesia",
+        "Penggunaan"
+      ],
+      "rows": [
+        [
+          "Face value",
+          "Nilai nominal",
+          "Pokok yang dilunasi saat jatuh tempo"
+        ],
+        [
+          "Stated rate",
+          "Suku bunga kupon",
+          "Menentukan kas bunga kontraktual"
+        ],
+        [
+          "Effective rate",
+          "Suku bunga efektif pasar",
+          "Mendiskontokan arus kas dan mengukur beban bunga"
+        ],
+        [
+          "Carrying amount",
+          "Nilai tercatat",
+          "Dasar beban bunga tiap periode"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1107-1110.",
+      "stackOnMobile": true
     },
     {
-      kind: 'example',
-      title: 'Contoh Mini Numerik: Penerbitan Obligasi Diskonto PT Telkom Indonesia Tbk',
-      blocks: [
+      "kind": "h2",
+      "text": "3. Penilaian dan konsistensi periode"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle PV=F(1+i)^{-n}+C\\frac{1-(1+i)^{-n}}{i}",
+      "note": "F = pokok; C = kupon per periode; i = bunga efektif per periode; n = jumlah periode. Kieso IFRS 5e, halaman PDF 1107-1111."
+    },
+    {
+      "kind": "p",
+      "text": "Untuk bunga semesteran, gunakan suku bunga tahunan dibagi dua dan jumlah tahun dikali dua. Kupon di bawah yield menghasilkan discount (diskonto); kupon di atas yield menghasilkan premium (premi). Pada penerbitan at par (nilai pari), keduanya sama. (Kieso IFRS 5e, halaman PDF 1107-1112.)"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle E_t=B_{t-1}i\\qquad A_t=E_t-C\\qquad B_t=B_{t-1}+A_t",
+      "note": "E = beban bunga; B = nilai tercatat; A positif untuk amortisasi diskonto dan negatif untuk premi. Kieso IFRS 5e, halaman PDF 1110-1113."
+    },
+    {
+      "kind": "h2",
+      "text": "4. Kasus Evermaster: diskonto dan premi"
+    },
+    {
+      "kind": "example",
+      "title": "Evermaster AG: obligasi diskonto, Illustrations 13.6-13.7",
+      "blocks": [
         {
-          kind: 'p',
-          text: 'PT Telkom menerbitkan obligasi 5 tahun senilai nominal Rp 1.000.000.000 pada 1 Januari 2026 dengan kupon bunga 8% dibayar tahunan setiap 31 Desember. Suku bunga pasar saat penerbitan adalah 10%.'
+          "kind": "p",
+          "text": "Pada 1 Januari 2025 Evermaster menerbitkan obligasi nominal €100.000, kupon 8%, umur lima tahun, dengan bunga setiap 1 Juli dan 1 Januari. Yield tahunan 10%. Buku membulatkan harga ke €92.278. (Kieso IFRS 5e, halaman PDF 1110-1111.)"
         },
         {
-          kind: `formula`,
-          text: `PV Pokok = 1.000.000.000 × PVIF(10%, 5 thn: 0,62092) = Rp 620.920.000
-PV Kupon (80 jt/thn) = 80.000.000 × PVIFA(10%, 5 thn: 3,79079) = Rp 303.263.200
-Total Harga Jual Obligasi = 620.920.000 + 303.263.200 = Rp 924.183.200 (Diskonto Rp 75.816.800)
-
-Amortisasi Tahun 1 (2026):
-• Beban Bunga (924.183.200 × 10%) = Rp 92.418.320
-• Kas Kupon Dibayar (1 M × 8%) = Rp 80.000.000
-• Amortisasi Diskonto = 92.418.320 - 80.000.000 = Rp 12.418.320
-• Carrying Amount per 31 Des 2026 = 924.183.200 + 12.418.320 = Rp 936.601.520`
+          "kind": "table",
+          "title": "Dua periode awal amortisasi diskonto",
+          "headers": [
+            "Tanggal",
+            "Kas kupon",
+            "Beban bunga",
+            "Amortisasi",
+            "Nilai tercatat"
+          ],
+          "rows": [
+            [
+              "1 Januari 2025",
+              "€0",
+              "€0",
+              "€0",
+              "€92.278"
+            ],
+            [
+              "1 Juli 2025",
+              "€4.000",
+              "€4.614",
+              "€614",
+              "€92.892"
+            ],
+            [
+              "1 Januari 2026",
+              "€4.000",
+              "€4.645",
+              "€645",
+              "€93.537"
+            ]
+          ],
+          "caption": "Kieso IFRS 5e, halaman PDF 1111, Illustration 13.7.",
+          "stackOnMobile": true
         },
         {
-          kind: 'callout',
-          variant: 'key',
-          title: `Jurnal Transaksi PT Telkom`,
-          text: `1 Jan 2026 (Penerbitan):
-Debit: Kas Rp 924.183.200
-Kredit: Utang Obligasi Rp 924.183.200 (Berdasarkan IFRS / Net Method)
-
-31 Des 2026 (Bunga & Amortisasi):
-Debit: Beban Bunga Rp 92.418.320
-Kredit: Utang Obligasi (Amortisasi Diskonto) Rp 12.418.320
-Kredit: Kas Rp 80.000.000`
-        }
-      ]
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Aktif: Penerbitan Obligasi dengan Premi',
-      prompt: 'Jika dalam kasus PT Telkom di atas suku bunga pasar adalah 6% (lebih rendah dari kupon 8%), hitung harga penerbitan obligasi dan tentukan apakah obligasi terbit pada diskonto atau premi!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**PV Pokok (6%, 5 thn: 0,74726)**: Rp 747.260.000.',
-            '**PV Kupon (80 jt × PVIFA 6%, 5 thn: 4,21236)**: Rp 336.988.800.',
-            '**Total Harga Jual**: 747.260.000 + 336.988.800 = **Rp 1.084.248.800**.',
-            '**Status**: Terbit pada **PREMI** sebesar **Rp 84.248.800** (karena kupon 8% > pasar 6%).',
-            '**Amortisasi Tahun 1**: Beban Bunga (1.084.248.800 × 6% = Rp 65.054.928), Kas Dibayar (Rp 80.000.000), Amortisasi Premi = **Rp 14.945.072** (mengurangi carrying amount obligasi).'
+          "kind": "journal",
+          "title": "Penerbitan diskonto: net method (metode nilai neto)",
+          "caption": "Kieso IFRS 5e, halaman PDF 1112.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "€92.278"
+            },
+            {
+              "account": "Bonds Payable",
+              "credit": "€92.278",
+              "isCredit": true
+            }
           ]
         },
         {
-          kind: 'callout',
-          variant: 'warning',
-          title: 'Jebakan UTS Amortisasi Premi',
-          text: 'Amortisasi Premi **MENGURANGI** nilai tercatat obligasi setiap tahun hingga tepat mencapai nilai nominal Rp 1.000.000.000 pada saat jatuh tempo.'
+          "kind": "journal",
+          "title": "Bunga pertama, 1 Juli 2025",
+          "caption": "Kieso IFRS 5e, halaman PDF 1112.",
+          "lines": [
+            {
+              "account": "Interest Expense",
+              "debit": "€4.614"
+            },
+            {
+              "account": "Bonds Payable",
+              "credit": "€614",
+              "isCredit": true
+            },
+            {
+              "account": "Cash",
+              "credit": "€4.000",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "journal",
+          "title": "Akrual bunga pada 31 Desember 2025",
+          "caption": "Kieso IFRS 5e, halaman PDF 1112.",
+          "lines": [
+            {
+              "account": "Interest Expense",
+              "debit": "€4.645"
+            },
+            {
+              "account": "Interest Payable",
+              "credit": "€4.000",
+              "isCredit": true
+            },
+            {
+              "account": "Bonds Payable",
+              "credit": "€645",
+              "isCredit": true
+            }
+          ]
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan TM 9'
-    },
-    {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Valuasi & Penentuan Harga Obligasi', 'Kalkulasi PV Pokok dan PV Anuitas Kupon pada suku bunga pasar.', 'Menghitung harga pasar penerbitan obligasi secara tepat.'],
-        ['2', 'Metode Suku Bunga Efektif PSAK 71', 'Mekanisme penyusunan tabel amortisasi diskonto dan premi.', 'Menyusun tabel 5 kolom: Tanggal, Kas, Beban Bunga, Amortisasi, Carrying Amount.'],
-        ['3', 'Jurnal Penerbitan & Penyesuaian', 'Pencatatan metode neto sesuai IFRS/PSAK 71.', 'Menjurnal penerbitan, penyesuaian bunga berjalan akhir tahun, dan pembayaran kupon.'],
-        ['4', 'Biaya Penerbitan Obligasi', 'Perlakuan underwriting fee sebagai pengurang nilai carrying awal.', 'Menyesuaikan suku bunga efektif obligasi.'],
-        ['5', 'Penerbitan Antar-Tanggal Kupon', 'Perhitungan piutang/utang bunga berjalan saat pembeli membayar bunga akrual.', 'Menjurnal penerbitan obligasi di tengah periode kupon.']
-      ],
-      caption: 'Tabel 9.1: Matriks kompetensi komprehensif materi TM 9 AKM II.'
-    },
-    { kind: 'h2', text: '1. Amortisasi Obligasi Suku Bunga Efektif' },
-    {
-      kind: 'p',
-      text: '==PSAK 71 mewajibkan penggunaan metode suku bunga efektif untuk amortisasi diskonto dan premi obligasi, yang menghasilkan persentase beban bunga konstan terhadap nilai tercatat obligasi setiap periode.=='
-    },
-    CASE_BONDS_AMORTIZATION,
-    { kind: 'h2', text: "2. Penerbitan Obligasi di Antara Tanggal Bunga & Biaya Emisi Bersih (PSAK 71)" },
-    {
-      kind: 'p',
-      text: "==Ketika obligasi diterbitkan di antara tanggal pembayaran bunga kupon, pembeli membayar harga obligasi ditambah bunga berjalan sejak tanggal bunga terakhir. PSAK 71 mewajibkan biaya penerbitan obligasi mengurangi nilai tercatat awal liabilitas, sehingga meningkatkan suku bunga efektif yang diamortisasi.=="
-    },
-    CASE_BONDS_BETWEEN_DATES_ISSUE_COSTS,
-    { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
-    {
-      kind: 'ul',
-      items: [
-        '**Harga Terbit**: PV Nominal + PV Kupon Bunga pada suku bunga pasar.',
-        '**Amortisasi Diskonto**: Menambah Carrying Amount hingga sama dengan Nominal saat jatuh tempo.',
-        '**Amortisasi Premi**: Mengurangi Carrying Amount hingga sama dengan Nominal saat jatuh tempo.',
-        `**Beban Bunga Tahunan**: Carrying Amount Awal × Suku Bunga Efektif Pasar.`
+      "kind": "example",
+      "title": "Evermaster: yield 6% dan penerbitan premi",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Dengan kontrak yang sama dan yield tahunan 6%, harga pada buku €108.530. Bunga efektif semester pertama €3.256, kas kupon €4.000, amortisasi premi €744, dan nilai tercatat akhir €107.786. Pembulatan tabel buku dipertahankan. (Kieso IFRS 5e, halaman PDF 1112-1113.)"
+        },
+        {
+          "kind": "journal",
+          "title": "Bunga pertama pada obligasi premi",
+          "caption": "Kieso IFRS 5e, halaman PDF 1113.",
+          "lines": [
+            {
+              "account": "Interest Expense",
+              "debit": "€3.256"
+            },
+            {
+              "account": "Bonds Payable",
+              "debit": "€744"
+            },
+            {
+              "account": "Cash",
+              "credit": "€4.000",
+              "isCredit": true
+            }
+          ]
+        }
       ]
+    },
+    {
+      "kind": "h2",
+      "text": "5. Penerbitan antar-tanggal dan biaya emisi"
+    },
+    {
+      "kind": "p",
+      "text": "Pada penerbitan at par tanggal 1 Mei, Evermaster menerima harga pokok €100.000 dan accrued interest empat bulan €2.667. Pembayaran kupon 1 Juli tetap €4.000. Beban bunga dua bulan setelah penerbitan adalah €1.333. Buku mengkredit Interest Expense atas bunga yang diterima; Interest Payable juga disebut sebagai alternatif. (Kieso IFRS 5e, halaman PDF 1114-1115.)"
+    },
+    {
+      "kind": "p",
+      "text": "Pada obligasi premi yang diterbitkan antar-tanggal, harga pokok dan amortisasi parsial harus dihitung terpisah dari bunga berjalan. Untuk liabilitas pada amortized cost (biaya perolehan diamortisasi), bond issue costs (biaya penerbitan obligasi) mengurangi nilai tercatat awal dan menaikkan suku bunga efektif. (Kieso IFRS 5e, halaman PDF 1115-1117, catatan 3 pada halaman PDF 1171-1172.)"
+    },
+    {
+      "kind": "h2",
+      "text": "6. Penyajian dan analisis"
+    },
+    {
+      "kind": "p",
+      "text": "Diskonto atau premi diamortisasi hingga jatuh tempo, walaupun kontrak memiliki call provision atau hak penebusan awal. Penggunaan bunga efektif menjaga hubungan beban bunga dengan nilai tercatat. Kas kupon tetap mengikuti kontrak. (Kieso IFRS 5e, halaman PDF 1110-1113, catatan 5 pada halaman PDF 1172.)"
+    },
+    {
+      "kind": "callout",
+      "title": "Jebakan periode dan pembulatan",
+      "text": "Kupon tahunan 8% dengan dua pembayaran berarti 4% per semester. Yield tahunan 10% berarti 5% per semester. Harga dan tabel Evermaster dibulatkan ke euro; perhitungan tanpa pembulatan dapat berbeda kecil. (Kieso IFRS 5e, halaman PDF 1111-1113.)",
+      "variant": "warning"
+    },
+    {
+      "kind": "h2",
+      "text": "7. Latihan dan uji pemahaman"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan diskonto Evermaster",
+      "prompt": "Dengan data Evermaster nominal €100.000, kupon 8%, yield 10%, bunga semesteran, dan harga €92.278, hitung kupon, beban bunga semester pertama, amortisasi, dan nilai tercatat akhir. Rujukan: Kieso IFRS 5e, halaman PDF 1110-1112.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\displaystyle C=100000(0.08)/2=4000\\qquad E_1\\approx92278(0.10)/2=4614\\\\A_1=4614-4000=614\\qquad B_1=92278+614=92892",
+          "note": "Angka dibulatkan mengikuti buku. Kieso IFRS 5e, halaman PDF 1111."
+        },
+        {
+          "kind": "p",
+          "text": "Diskonto meningkat melalui kredit Bonds Payable. Untuk premi, selisih kas yang melebihi beban bunga mengurangi Bonds Payable melalui debit. (Kieso IFRS 5e, halaman PDF 1112-1113.)"
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "8. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "title": "Alur penyelesaian TM9",
+      "headers": [
+        "Langkah",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Kontrak",
+          "Tentukan pokok, kupon, jadwal, dan yield."
+        ],
+        [
+          "Penilaian",
+          "Diskontokan kupon dan pokok dalam periode yang sama."
+        ],
+        [
+          "Amortisasi",
+          "Bandingkan beban efektif dengan kas kupon."
+        ],
+        [
+          "Jurnal",
+          "Pisahkan liabilitas obligasi dari bunga akrual."
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1107-1110.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "callout",
+      "title": "Batas sumber dan penomoran",
+      "text": "RPP menggunakan nomor bab dan beberapa rujukan lokal dari susunan lama. Materi ini mengikuti topik pertemuan di RPP dan isi Kieso IFRS edisi kelima. Angka contoh berasal dari buku; hasil hitungan tambahan diberi label Interpretasi. Pembandingan SAK ETAP memerlukan bacaan dosen tersendiri. (Kieso IFRS 5e, halaman PDF 1101.)",
+      "variant": "info"
     }
   ]
 };

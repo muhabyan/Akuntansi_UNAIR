@@ -2,7 +2,7 @@
 // src/data/quizzes/akk202.ts
 // Bank Soal Kuis Pilihan Ganda Komprehensif Akuntansi Keuangan Menengah II (AKK202)
 // Berdasarkan Kieso Intermediate Accounting IFRS 5e & PSAK/ISAK IAI
-// 70 Soal: 40 Soal Pra-UTS (TM 1-7; TM 6 memuat 10 soal) & 30 Soal Pra-UAS (TM 9-14); soal TM 8 (review UTS lama) dihapus.
+// 75 soal: 40 Pra-UTS dan 35 Pra-UAS TM09-TM15; sumber pasca-UTS Kieso IFRS 5e dan RPP lokal.
 // Pra-UTS (TM 1-7) hanya memakai bacaan kanonik src/data/akm2/modules/tm1.ts-tm7.ts.
 // =============================================================
 import type { QuizQuestion } from '../../types';
@@ -573,423 +573,493 @@ export const AKK202_QUIZ_UTS: QuizQuestion[] = [
 export const AKK202_QUIZ_UAS: QuizQuestion[] = [
   {
     "tm": 9,
-    "topic": "Penentuan Harga Obligasi",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "difficulty": "medium",
-    "q": "Jika tingkat suku bunga kupon obligasi (stated rate) adalah 8% per tahun, sedangkan suku bunga efektif pasar adalah 10% per tahun, maka obligasi tersebut akan diterbitkan pada...",
+    "q": "Evermaster menerbitkan nominal €100.000, kupon tahunan 8%, yield 10%, bunga semesteran, dengan harga €92.278. Berapa interest expense (beban bunga efektif) semester pertama setelah pembulatan buku? Rujukan: Kieso IFRS 5e, halaman PDF 1110-1112.",
     "options": [
-      "Nilai nominal (par value)",
-      "Nilai diskonto (discount)",
-      "Nilai premium",
-      "Nilai jatuh tempo tanpa amortisasi"
+      "€4.000",
+      "€5.000",
+      "€4.614",
+      "€9.228"
     ],
-    "answer": 1,
-    "explanation": "Jika stated rate (8%) < market rate (10%), investor menuntut imbal hasil lebih tinggi sehingga obligasi dijual di bawah nilai nominal (diskonto)."
+    "answer": 2,
+    "explanation": "Beban bunga adalah €92.278 × 10% × 6/12 = €4.613,90, dibulatkan €4.614. Cash coupon (kas kupon) €4.000 berbeda dari beban efektif. Rujukan: Kieso IFRS 5e, halaman PDF 1110-1112."
   },
   {
     "tm": 9,
-    "topic": "Amortisasi Bunga Efektif Obligasi",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "difficulty": "medium",
-    "q": "Obligasi bernilai nominal Rp 1.000.000.000 diterbitkan pada harga Rp 950.000.000. Kupon kontraktual 8% dibayar tahunan. Tingkat bunga efektif pasar 9%. Berapakah beban bunga pada tahun pertama?",
+    "q": "Yield tahunan 10% dan umur lima tahun dengan pembayaran semesteran memakai kombinasi periode yang mana dalam present value (nilai kini)? Rujukan: Kieso IFRS 5e, halaman PDF 1111, 1172.",
     "options": [
-      "Rp 80.000.000",
-      "Rp 85.500.000",
-      "Rp 90.000.000",
-      "Rp 76.000.000"
+      "Sepuluh periode; bunga 5%",
+      "Lima periode; bunga 10%",
+      "Sepuluh periode; bunga 10%",
+      "Lima periode; bunga 5%"
     ],
-    "answer": 1,
-    "explanation": "Beban bunga efektif = Nilai tercatat awal obligasi × Suku bunga efektif pasar = Rp 950.000.000 × 9% = Rp 85.500.000."
+    "answer": 0,
+    "explanation": "Semesteran berarti dua periode setiap tahun. Lima tahun menjadi sepuluh periode dan bunga efektif tiap semester 5%. Rujukan: Kieso IFRS 5e, halaman PDF 1111, 1172."
   },
   {
     "tm": 9,
-    "topic": "Obligasi Diterbitkan Antara Tanggal Bunga",
-    "difficulty": "advanced",
-    "q": "Obligasi kupon 12% nominal Rp 500 jt bertanggal 1 Januari diterbitkan pada 1 April pada kurs 100 ditambah bunga berjalan. Berapakah kas bunga berjalan yang dibayar pembeli kepada penerbit saat transaksi?",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+    "difficulty": "medium",
+    "q": "Kupon Evermaster 8% dan yield 6% menghasilkan harga €108.530. Carrying amount (nilai tercatat) setelah bunga semester pertama menurut tabel buku adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1112-1113.",
     "options": [
-      "Rp 0",
-      "Rp 15.000.000",
-      "Rp 30.000.000",
-      "Rp 60.000.000"
+      "€108.530",
+      "€109.274",
+      "€104.530",
+      "€107.786"
     ],
-    "answer": 1,
-    "explanation": "Bunga berjalan 3 bulan (Jan - Mar) = Rp 500.000.000 × 12% × (3/12) = Rp 15.000.000."
+    "answer": 3,
+    "explanation": "Beban bunga €3.256, kas €4.000, dan amortisasi premium (premi) €744. Nilai tercatat berkurang €108.530 - €744 = €107.786. Rujukan: Kieso IFRS 5e, halaman PDF 1112-1113."
   },
   {
     "tm": 9,
-    "topic": "Biaya Penerbitan Obligasi (PSAK 71)",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "difficulty": "medium",
-    "q": "Berdasarkan PSAK 71, biaya penerbitan obligasi (seperti biaya jasa legal, akuntan, penjamin emisi) diperlakukan dengan cara...",
+    "q": "Evermaster menerbitkan obligasi at par pada 1 Mei. Accrued interest (bunga berjalan) diterima €2.667 dan kupon 1 Juli €4.000. Beban bunga dua bulan setelah penerbitan menurut buku adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1114-1115.",
     "options": [
-      "Dibebankan langsung ke laba rugi saat penerbitan",
-      "Mengurangi nilai tercatat awal liabilitas obligasi dan diamortisasi menggunakan suku bunga efektif",
-      "Dicatat sebagai aset tidak berwujud",
-      "Ditambahkan ke agio saham"
+      "€2.667",
+      "€1.333",
+      "€4.000",
+      "€6.667"
     ],
     "answer": 1,
-    "explanation": "PSAK 71 mensyaratkan biaya transaksi mengurangi nilai tercatat awal liabilitas keuangan, yang secara otomatis meningkatkan tingkat suku bunga efektif (effective interest rate) sepanjang masa utang."
+    "explanation": "Kas kupon mencakup enam bulan, sedangkan penerbitan berlangsung setelah empat bulan berlalu. Beban dua bulan = €4.000 - €2.667 = €1.333. Rujukan: Kieso IFRS 5e, halaman PDF 1114-1115."
   },
   {
     "tm": 9,
-    "topic": "Amortisasi Premi Obligasi",
+    "topic": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
     "difficulty": "medium",
-    "q": "Sepanjang masa berlakunya obligasi yang diterbitkan pada nilai premi, bagaimanakah tren nilai tercatat (carrying amount) dan beban bunga periodik obligasi tersebut?",
+    "q": "Untuk bond issue costs (biaya emisi obligasi) pada liabilitas amortized cost, bagaimana pengaruhnya menurut buku? Rujukan: Kieso IFRS 5e, halaman PDF 1171-1172.",
     "options": [
-      "Nilai tercatat naik, beban bunga naik",
-      "Nilai tercatat turun mendekati nilai nominal, beban bunga turun",
-      "Nilai tercatat konstan, beban bunga naik",
-      "Nilai tercatat turun, beban bunga konstan"
-    ],
-    "answer": 1,
-    "explanation": "Pada obligasi premi, amortisasi mengurangi nilai tercatat obligasi menuju nilai nominal saat jatuh tempo. Karena nilai tercatat turun, beban bunga efektif (Carrying Amount × Market Rate) juga terus menurun."
-  },
-  {
-    "tm": 10,
-    "topic": "Pelunasan Dini Obligasi (Extinguishment)",
-    "difficulty": "medium",
-    "q": "Obligasi bernilai nominal Rp 500.000.000 dengan premi belum diamortisasi Rp 20.000.000 dilunasi sebelum jatuh tempo pada kurs 102. Berapakah laba atau rugi pelunasan dini obligasi?",
-    "options": [
-      "Rugi Rp 10.000.000",
-      "Laba Rp 10.000.000",
-      "Rugi Rp 20.000.000",
-      "Laba Rp 20.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Nilai tercatat = Rp 500 jt + Rp 20 jt = Rp 520.000.000. Harga beli kembali = 102% × Rp 500 jt = Rp 510.000.000. Karena nilai tercatat > harga beli kembali, diakui Keuntungan (Laba) Pelunasan Dini = Rp 10.000.000."
-  },
-  {
-    "tm": 10,
-    "topic": "Restrukturisasi Utang Bermasalah (IFRIC 19)",
-    "difficulty": "advanced",
-    "q": "Berdasarkan IFRIC 19 / ISAK 28, jika debitur menyelesaikan kewajiban utang dengan menerbitkan saham sendiri kepada kreditur (Debt-for-Equity Swap), saham tersebut diukur pada...",
-    "options": [
-      "Nilai nominal saham yang diterbitkan",
-      "Nilai tercatat utang yang dilunasi",
-      "Nilai wajar instrumen ekuitas yang diterbitkan",
-      "Nilai buku ekuitas historis"
-    ],
-    "answer": 2,
-    "explanation": "IFRIC 19 menetapkan instrumen ekuitas yang diterbitkan untuk menyelesaikan liabilitas keuangan diukur pada NILAI WAJARNYA pada tanggal penyelesaian. Selisihnya diakui sebagai keuntungan pelunasan utang di Laba Rugi."
-  },
-  {
-    "tm": 10,
-    "topic": "Uji Modifikasi 10% (PSAK 71)",
-    "difficulty": "advanced",
-    "q": "Dalam restrukturisasi utang melalui modifikasi persyaratan (modification of terms), restrukturisasi dianggap substansial (extinguishment) jika nilai tunai arus kas berdasarkan persyaratan baru berbeda minimal...",
-    "options": [
-      "5% dari nilai tunai sisa arus kas utang awal",
-      "10% dari nilai tunai sisa arus kas utang awal",
-      "20% dari nilai tercatat utang",
-      "50% dari nilai nominal utang"
-    ],
-    "answer": 1,
-    "explanation": "Uji 10% (10% test) PSAK 71: Jika nilai sekarang arus kas persyaratan baru berbeda minimal 10% dari nilai sekarang sisa arus kas liabilitas keuangan semula, maka modifikasi dianggap substansial dan dicatat sebagai penghentian utang lama."
-  },
-  {
-    "tm": 10,
-    "topic": "Penyelesaian Utang dengan Aset Non-Kas",
-    "difficulty": "medium",
-    "q": "Debitur melunasi utang Rp 1.000 jt dengan menyerahkan tanah (Nilai buku Rp 600 jt, Nilai wajar Rp 850 jt). Berapakah keuntungan pelepasan tanah dan keuntungan restrukturisasi utang?",
-    "options": [
-      "Laba tanah Rp 250 jt; Laba restrukturisasi utang Rp 150 jt",
-      "Laba tanah Rp 400 jt; Laba restrukturisasi utang Rp 0",
-      "Laba tanah Rp 0; Laba restrukturisasi utang Rp 400 jt",
-      "Laba tanah Rp 150 jt; Laba restrukturisasi utang Rp 250 jt"
+      "Mengurangi nilai awal; yield meningkat",
+      "Menambah nilai awal; yield menurun",
+      "Mengurangi nilai awal; yield menurun",
+      "Menambah nilai awal; yield meningkat"
     ],
     "answer": 0,
-    "explanation": "Tahap 1: Laba pelepasan aset = Nilai wajar (850 jt) - Nilai buku (600 jt) = Rp 250.000.000. Tahap 2: Laba pelunasan utang = Nilai tercatat utang (1.000 jt) - Nilai wajar aset (850 jt) = Rp 150.000.000."
+    "explanation": "Biaya emisi mengurangi carrying amount awal, sehingga bunga efektif yang menghubungkan hasil neto dengan pembayaran kontraktual meningkat. Rujukan: Kieso IFRS 5e, halaman PDF 1171-1172."
   },
   {
     "tm": 10,
-    "topic": "Wesel Bayar dengan Hak Istimewa",
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "difficulty": "medium",
-    "q": "Ketika perusahaan menerbitkan wesel bayar tanpa bunga dan memberikan hak istimewa kepada penerima wesel untuk membeli barang dengan harga diskon, nilai nominal wesel harus dialokasikan antara...",
+    "q": "Turtle Cove menerima USD7.721,80 untuk zero-interest-bearing note (wesel tanpa kupon), nominal USD10.000, tiga tahun, bunga implisit 9%. Beban bunga tahun pertama menurut buku adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119.",
     "options": [
-      "Utang wesel dan beban operasional",
-      "Nilai sekarang liabilitas wesel bayar dan pendapatan diterima di muka (unearned revenue)",
-      "Modal saham dan agio obligasi",
-      "Seluruhnya ke utang bunga berjalan"
-    ],
-    "answer": 1,
-    "explanation": "Nilai nominal wesel dialokasikan antara nilai wajar liabilitas wesel (diukur dari PV arus kas) dan sisa diskonto yang mencerminkan pendapatan diterima di muka atas hak istimewa pembelian barang."
-  },
-  {
-    "tm": 11,
-    "topic": "Metode Biaya Saham Treasuri (Cost Method)",
-    "difficulty": "medium",
-    "q": "PT Berlian membeli kembali 1.000 lembar sahamnya (nilai nominal Rp 1.000) seharga Rp 5.000 per lembar menggunakan metode biaya. Jurnal yang benar adalah...",
-    "options": [
-      "Debit Saham Biasa Rp 1.000.000, Debit Agio Saham Rp 4.000.000, Kredit Kas Rp 5.000.000",
-      "Debit Saham Treasuri Rp 5.000.000, Kredit Kas Rp 5.000.000",
-      "Debit Investasi Saham Rp 5.000.000, Kredit Kas Rp 5.000.000",
-      "Debit Laba Ditahan Rp 5.000.000, Kredit Kas Rp 5.000.000"
-    ],
-    "answer": 1,
-    "explanation": "Pada Cost Method, akun Saham Treasuri didebit sebesar harga perolehan pembelian kembali (1.000 × Rp 5.000 = Rp 5.000.000) tanpa memperhatikan nilai nominal."
-  },
-  {
-    "tm": 11,
-    "topic": "Penjualan Saham Treasuri di Bawah Kos",
-    "difficulty": "advanced",
-    "q": "Saham treasuri dibeli pada harga Rp 5.000/lembar, lalu dijual kembali seharga Rp 3.500/lembar. Defisit sebesar Rp 1.500/lembar pertama kali didebit ke pos...",
-    "options": [
-      "Rugi Penjualan Saham Treasuri di Laporan Laba Rugi",
-      "Agio Saham - Saham Treasuri (sampai saldonya habis), lalu sisanya ke Laba Ditahan",
-      "Modal Saham Biasa",
-      "Akumulasi Penghasilan Komprehensif Lain (OCI)"
-    ],
-    "answer": 1,
-    "explanation": "Transaksi saham treasuri tidak pernah menghasilkan laba atau rugi di Laporan Laba Rugi. Defisit penjualan didebit ke Agio Saham Treasuri hingga nol, dan setiap sisa defisit didebit ke Laba Ditahan."
-  },
-  {
-    "tm": 11,
-    "topic": "Dividen Properti",
-    "difficulty": "medium",
-    "q": "Sebelum membagikan dividen properti (non-kas) kepada pemegang saham, entitas WAJIB...",
-    "options": [
-      "Menilai kembali aset properti tersebut ke nilai wajarnya dan mengakui laba/rugi revaluasi di Laba Rugi",
-      "Membebankan seluruh nilai aset ke akun modal saham",
-      "Menjual aset properti tersebut ke pihak berelasi",
-      "Mengabaikan perubahan nilai pasar aset"
-    ],
-    "answer": 0,
-    "explanation": "Berdasarkan IFRIC 17 / PSAK 55, pada tanggal pengumuman dividen properti, aset yang akan dibagikan harus disesuaikan ke nilai wajarnya dengan mengakui keuntungan/kerugian di Laba Rugi periode berjalan."
-  },
-  {
-    "tm": 11,
-    "topic": "Dividen Saham vs Pemecahan Saham (Stock Split)",
-    "difficulty": "medium",
-    "q": "Pernyataan manakah yang BENAR membedakan Dividen Saham dan Pemecahan Saham (Stock Split)?",
-    "options": [
-      "Stock split memerlukan ayat jurnal formal yang memindahkan saldo laba ditahan ke modal saham",
-      "Dividen saham tidak mengubah total ekuitas tetapi mereklasifikasi laba ditahan ke modal saham, sedangkan stock split tidak memerlukan ayat jurnal dan tidak mengubah saldo laba ditahan",
-      "Dividen saham menurunkan nilai nominal per lembar saham",
-      "Stock split meningkatkan total saldo ekuitas pemegang saham"
-    ],
-    "answer": 1,
-    "explanation": "Dividen saham memindahkan sebagian saldo Laba Ditahan ke Modal Saham (kapitalisasi laba ditahan). Sebaliknya, stock split hanya menambah jumlah lembar dan menurunkan nilai nominal per lembar tanpa ada ayat jurnal formal dan tanpa mengubah saldo akun apa pun."
-  },
-  {
-    "tm": 11,
-    "topic": "Saham Preferen Kumulatif (Dividends in Arrears)",
-    "difficulty": "medium",
-    "q": "Dividen saham preferen kumulatif yang belum diumumkan pada tahun-tahun sebelumnya (dividends in arrears) harus...",
-    "options": [
-      "Dicatat sebagai Utang Dividen di neraca",
-      "Diungkapkan dalam Catatan atas Laporan Keuangan (CALK) dan bukan merupakan liabilitas sampai diumumkan",
-      "Dihapusbukukan dari ekuitas",
-      "Dibebankan sebagai kerugian penurunan modal"
-    ],
-    "answer": 1,
-    "explanation": "Dividen menunggak (in arrears) BUKAN liabilitas karena belum ada kewajiban hukum pembayaran sebelum dewan direksi mendeklarasikannya. Namun, pos ini wajib diungkapkan di CALK."
-  },
-  {
-    "tm": 12,
-    "topic": "Obligasi Konversi (With-and-Without Method)",
-    "difficulty": "advanced",
-    "q": "Ketika entitas menerbitkan obligasi konversi, PSAK 50 mensyaratkan pemisahan komponen liabilitas dan ekuitas menggunakan metode...",
-    "options": [
-      "Metode Nilai Nominal Proporsional",
-      "Metode Residual (With-and-Without Method): Nilai liabilitas diukur lebih dulu sebesar PV arus kas pasar, sisanya dialokasikan ke Ekuitas",
-      "Metode Nilai Wajar Ekuitas Murni",
-      "Seluruh nilai terbit diakui sebagai Liabilitas penuh hingga konversi terjadi"
-    ],
-    "answer": 1,
-    "explanation": "Berdasarkan PSAK 50, instrumen majemuk dipisahkan dengan mengukur komponen liabilitas terlebih dahulu (nilai tunai kupon dan pokok menggunakan diskonto obligasi serupa tanpa hak konversi), dan nilai residualnya dialokasikan ke komponen ekuitas."
-  },
-  {
-    "tm": 12,
-    "topic": "Konversi Obligasi (Book Value Method)",
-    "difficulty": "medium",
-    "q": "Ketika pemegang obligasi konversi mengeksekusi hak konversinya menjadi saham biasa menggunakan Metode Nilai Buku (Book Value Method), jurnal pencatatan konversi tersebut...",
-    "options": [
-      "Mengakui laba atau rugi konversi di Laporan Laba Rugi",
-      "Tidak mengakui laba atau rugi, melainkan mengalokasikan nilai tercatat bersih obligasi dan opsi konversi ke Modal Saham dan Agio Saham Biasa",
-      "Menghapus seluruh nilai ekuitas pemegang saham",
-      "Mencatat selisihnya ke laba komprehensif lain (OCI)"
-    ],
-    "answer": 1,
-    "explanation": "Pada Book Value Method, tidak ada laba atau rugi yang diakui. Seluruh nilai buku liabilitas obligasi beserta komponen ekuitas opsi konversi ditransfer menjadi Modal Saham Biasa dan Agio Saham Biasa."
-  },
-  {
-    "tm": 12,
-    "topic": "Waran Saham Terpisah (Detachable Warrants)",
-    "difficulty": "advanced",
-    "q": "Obligasi diterbitkan bersama waran saham yang dapat dipisahkan (detachable). Jika nilai wajar obligasi tanpa waran dan nilai wajar waran di pasar sekunder keduanya diketahui andal, alokasi hasil emisi menggunakan metode...",
-    "options": [
-      "Metode Inkremental",
-      "Metode Proporsional berdasarkan Nilai Wajar Relatif",
-      "Metode Nilai Nominal Bersih",
-      "Metode Residual 100% ke Waran"
-    ],
-    "answer": 1,
-    "explanation": "Jika nilai wajar kedua instrumen dapat ditentukan secara andal, PSAK mensyaratkan alokasi hasil penerbitan berbasis Metode Proporsional (relatif fair value method)."
-  },
-  {
-    "tm": 12,
-    "topic": "Kompensasi Opsi Saham (PSAK 53 / IFRS 2)",
-    "difficulty": "medium",
-    "q": "Berdasarkan PSAK 53, total beban kompensasi atas program opsi saham karyawan (employee share options) diukur berdasarkan...",
-    "options": [
-      "Nilai wajar opsi pada tanggal hibah (Grant Date) menggunakan model penetapan harga opsi",
-      "Nilai intrinsik opsi pada tanggal eksekusi (Exercise Date)",
-      "Nilai nominal saham pada saat jatuh tempo vesting",
-      "Harga pasar saham pada setiap tanggal akhir tahun pelaporan"
-    ],
-    "answer": 0,
-    "explanation": "PSAK 53 mewajibkan transaksi pembayaran berbasis saham yang diselesaikan dengan instrumen ekuitas diukur pada NILAI WAJAR PADA TANGGAL HIBAH (Grant Date Fair Value) dan tidak disesuaikan kembali akibat fluktuasi harga pasar saham."
-  },
-  {
-    "tm": 12,
-    "topic": "Alokasi Beban Kompensasi Selama Vesting Period",
-    "difficulty": "medium",
-    "q": "Total nilai wajar opsi saham pada tanggal hibah adalah Rp 90.000.000 dengan periode masa bakti kerja (vesting period) 3 tahun. Berapakah beban kompensasi yang diakui pada akhir tahun pertama jika tidak ada karyawan yang keluar?",
-    "options": [
-      "Rp 90.000.000",
-      "Rp 45.000.000",
-      "Rp 30.000.000",
-      "Rp 0 (diakui sekaligus di akhir tahun ke-3)"
+      "USD900,00",
+      "USD757,51",
+      "USD694,96",
+      "USD2.278,20"
     ],
     "answer": 2,
-    "explanation": "Beban kompensasi diakui secara proporsional sepanjang periode vesting: Rp 90.000.000 / 3 tahun = Rp 30.000.000 per tahun."
+    "explanation": "Interest expense (beban bunga) = USD7.721,80 × 9% = USD694,96. Tanpa kas kupon, beban ini menambah Notes Payable. Rujukan: Kieso IFRS 5e, halaman PDF 1118-1119."
   },
   {
-    "tm": 13,
-    "topic": "Laba Per Saham Dasar (Basic EPS)",
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "difficulty": "medium",
-    "q": "PT Makmur melaporkan Laba Bersih Rp 500.000.000. Entitas memiliki 10.000 lembar saham preferen kumulatif 10% bernilai nominal Rp 50.000 yang beredar sepanjang tahun (belum diumumkan dividennya). Rata-rata tertimbang saham biasa beredar adalah 100.000 lembar. Berapakah Basic EPS?",
+    "q": "Carrying amount (nilai tercatat) Evermaster €94.925 dan reacquisition price (harga tebus) €101.000. Berapa loss on extinguishment (rugi penghentian utang)? Rujukan: Kieso IFRS 5e, halaman PDF 1127-1128.",
     "options": [
-      "Rp 5.000 per lembar",
-      "Rp 4.500 per lembar",
-      "Rp 4.800 per lembar",
-      "Rp 4.000 per lembar"
-    ],
-    "answer": 1,
-    "explanation": "Dividen saham preferen kumulatif = 10.000 × Rp 50.000 × 10% = Rp 50.000.000 (harus tetap dikurangkan meskipun belum diumumkan!). Laba untuk saham biasa = Rp 500 jt - Rp 50 jt = Rp 450 jt. Basic EPS = Rp 450 jt / 100.000 lembar = Rp 4.500 per lembar."
-  },
-  {
-    "tm": 13,
-    "topic": "Weighted Average Shares (WASO) & Dividen Saham",
-    "difficulty": "advanced",
-    "q": "Saldo awal saham biasa 100.000 lembar. Pada 1 Mei diterbitkan 30.000 lembar. Pada 1 Juli dibagikan Dividen Saham 20%. Berapakah Weighted Average Shares Outstanding (WASO) untuk tahun tersebut?",
-    "options": [
-      "120.000 lembar",
-      "144.000 lembar",
-      "136.000 lembar",
-      "156.000 lembar"
-    ],
-    "answer": 1,
-    "explanation": "Dividen saham diperlakukan retrospektif seolah-olah terjadi sejak awal tahun: (1 Jan s.d. 1 Mei = 100.000 × 1,20 × 4/12 = 40.000) + (1 Mei s.d. 31 Des = 130.000 × 1,20 × 8/12 = 104.000). Total WASO = 40.000 + 104.000 = 144.000 lembar."
-  },
-  {
-    "tm": 13,
-    "topic": "If-Converted Method (Obligasi Konversi)",
-    "difficulty": "advanced",
-    "q": "Dalam menghitung Diluted EPS dengan metode If-Converted untuk obligasi konversi, penyesuaian yang dilakukan pada bagian PEMBILANG (Numerator) adalah...",
-    "options": [
-      "Mengurangkan seluruh nilai nominal obligasi",
-      "Menambahkan kembali beban bunga obligasi dikurangi dampak pajak [Bunga × (1 - Tarif Pajak)]",
-      "Menambahkan dividen saham preferen",
-      "Mengurangkan beban bunga kotor tanpa memperhatikan pajak"
-    ],
-    "answer": 1,
-    "explanation": "Karena diasumsikan obligasi telah dikonversi sejak awal tahun, perusahaan tidak perlu membayar bunga obligasi. Maka laba bersih disesuaikan ke atas sebesar beban bunga yang dihemat dikurangi penghematan pajaknya: Bunga × (1 - Tarif Pajak)."
-  },
-  {
-    "tm": 13,
-    "topic": "Treasury Stock Method (Opsi Saham)",
-    "difficulty": "advanced",
-    "q": "Entitas memiliki 10.000 opsi saham dengan harga eksekusi Rp 20.000. Rata-rata harga pasar saham biasa sepanjang tahun adalah Rp 25.000. Menggunakan Treasury Stock Method, berapakah tambahan lembar saham inkremental untuk penyebut Diluted EPS?",
-    "options": [
-      "10.000 lembar",
-      "8.000 lembar",
-      "2.000 lembar",
-      "0 lembar"
-    ],
-    "answer": 2,
-    "explanation": "Kas dari eksekusi = 10.000 × Rp 20.000 = Rp 200.000.000. Saham yang dibeli kembali di pasar = Rp 200.000.000 / Rp 25.000 = 8.000 lembar. Tambahan lembar inkremental = 10.000 - 8.000 = 2.000 lembar."
-  },
-  {
-    "tm": 13,
-    "topic": "Uji Anti-Dilutif (Anti-dilution Test)",
-    "difficulty": "medium",
-    "q": "Suatu sekuritas berpotensi saham biasa dikategorikan sebagai ANTI-DILUTIF jika efek konversinya...",
-    "options": [
-      "Menurunkan Laba Per Saham atau meningkatkan Rugi Per Saham",
-      "Meningkatkan Laba Per Saham atau menurunkan Rugi Per Saham dari operasi berlanjut",
-      "Menyebabkan ekuitas negatif",
-      "Memiliki harga pasar di atas nilai nominal"
-    ],
-    "answer": 1,
-    "explanation": "Sesuai PSAK 56, sekuritas anti-dilutif adalah sekuritas yang konversinya akan meningkatkan EPS atau menurunkan Rugi Per Saham. Sekuritas anti-dilutif DILARANG dimasukkan dalam perhitungan Diluted EPS."
-  },
-  {
-    "tm": 14,
-    "topic": "Klasifikasi Instrumen Keuangan (PSAK 71 / IFRS 9)",
-    "difficulty": "medium",
-    "q": "Investasi pada obligasi yang dimiliki dalam model bisnis yang bertujuan HANYA untuk mengoleksi arus kas kontraktual (pokok dan bunga) diklasifikasikan sebagai...",
-    "options": [
-      "Biaya Perolehan Diamortisasi (Amortised Cost)",
-      "Nilai Wajar melalui Penghasilan Komprehensif Lain (FVOCI)",
-      "Nilai Wajar melalui Laba Rugi (FVTPL)",
-      "Aset Keuangan Derivatif"
+      "€6.075",
+      "€1.000",
+      "€5.075",
+      "€7.722"
     ],
     "answer": 0,
-    "explanation": "Jika lolos SPPI test dan model bisnisnya murni 'hold to collect contractual cash flows', efek utang diklasifikasikan pada Amortised Cost."
+    "explanation": "Rugi = €101.000 - €94.925 = €6.075. Jurnal menghapus nilai tercatat, mengakui rugi, dan membayar kas. Rujukan: Kieso IFRS 5e, halaman PDF 1127-1128."
   },
   {
-    "tm": 14,
-    "topic": "Metode Ekuitas (PSAK 15)",
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
     "difficulty": "medium",
-    "q": "Investasi pada saham entitas lain sebesar 30% hak suara yang memberikan pengaruh signifikan harus dicatat menggunakan...",
+    "q": "Bonn menyerahkan aset bernilai buku €21.000.000, nilai wajar €16.000.000, untuk melunasi utang €20.000.000. Kombinasi hasilnya adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1128-1129.",
     "options": [
-      "Metode Nilai Wajar melalui Laba Rugi (FVTPL)",
-      "Metode Biaya Perolehan Diamortisasi (Amortised Cost)",
-      "Metode Ekuitas (Equity Method - PSAK 15)",
-      "Konsolidasi penuh sebagai entitas anak"
+      "Laba aset €5.000.000; rugi utang €4.000.000",
+      "Rugi aset €4.000.000; laba utang €5.000.000",
+      "Laba aset €4.000.000; rugi utang €5.000.000",
+      "Rugi aset €5.000.000; laba utang €4.000.000"
+    ],
+    "answer": 3,
+    "explanation": "Loss on disposal (rugi pelepasan) membandingkan nilai buku aset dengan nilai wajarnya. Gain on extinguishment (laba penghentian) membandingkan utang dengan nilai wajar imbalan. Rujukan: Kieso IFRS 5e, halaman PDF 1128-1129."
+  },
+  {
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "difficulty": "medium",
+    "q": "Edmonds memakai fair value option (opsi nilai wajar). Utang turun dari €500.000 ke €480.000 khusus karena risiko kredit sendiri. Jalur perubahan pada contoh sumber adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1131-1132.",
+    "options": [
+      "Laba nilai wajar melalui pendapatan",
+      "Laba nilai wajar melalui OCI",
+      "Rugi nilai wajar melalui OCI",
+      "Rugi nilai wajar melalui pendapatan"
+    ],
+    "answer": 1,
+    "explanation": "Utang berkurang €20.000. Dalam contoh risiko kredit sendiri, perubahan masuk OCI, yaitu penghasilan komprehensif lain. Rujukan: Kieso IFRS 5e, halaman PDF 1131-1132."
+  },
+  {
+    "tm": 10,
+    "topic": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+    "difficulty": "medium",
+    "q": "Catatan 14 Kieso menilai substantial modification (modifikasi substansial) melalui uji kuantitatif atau perubahan fundamental. Bunga untuk uji selisih arus kas yang disebut sumber adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1173.",
+    "options": [
+      "Suku bunga efektif historis",
+      "Suku bunga kupon baru",
+      "Suku bunga pasar baru",
+      "Suku bunga bebas risiko"
+    ],
+    "answer": 0,
+    "explanation": "Uji selisih sekurangnya 10% memakai historical effective-interest rate (bunga efektif historis). Perubahan fundamental persyaratan juga dapat relevan. Ini berbeda dari pengukuran nilai wajar utang baru setelah penghentian. Rujukan: Kieso IFRS 5e, halaman PDF 1173."
+  },
+  {
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "difficulty": "medium",
+    "q": "Vine memiliki 100.000 saham nominal £1 dan menyatakan share dividend (dividen saham) 10%; nilai pasar £8. Transfer saldo laba menurut buku IFRS adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1202-1204.",
+    "options": [
+      "£80.000",
+      "£100.000",
+      "£10.000",
+      "£8.000"
     ],
     "answer": 2,
-    "explanation": "Kepemilikan saham antara 20% hingga 50% menimbulkan pengaruh signifikan (significant influence) dan wajib menggunakan Metode Ekuitas (PSAK 15)."
+    "explanation": "Dividen saham 10.000 lembar × par value (nominal) £1 = £10.000. Buku memakai nilai nominal dan mereklasifikasi komponen ekuitas. Rujukan: Kieso IFRS 5e, halaman PDF 1202-1204."
   },
   {
-    "tm": 14,
-    "topic": "Penerimaan Dividen pada Metode Ekuitas",
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
     "difficulty": "medium",
-    "q": "Ketika investor yang menerapkan Metode Ekuitas menerima dividen tunai dari entitas asosiasi, jurnal yang dicatat oleh investor adalah...",
+    "q": "Pacific menjual kembali 1.000 saham treasuri pada USD8, biaya USD11 per saham, ketika Share Premium - Treasury tersisa USD1.000. Debit Retained Earnings (saldo laba) adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1193.",
     "options": [
-      "Debit Kas, Kredit Pendapatan Dividen di Laba Rugi",
-      "Debit Kas, Kredit Investasi pada Entitas Asosiasi (mengurangi saldo investasi)",
-      "Debit Kas, Kredit Ekuitas Modal Saham",
-      "Debit Kas, Kredit Keuntungan Belum Direalisasi OCI"
+      "USD2.000",
+      "USD1.000",
+      "USD3.000",
+      "USD8.000"
+    ],
+    "answer": 0,
+    "explanation": "Selisih biaya dan kas USD3.000 memakai saldo agio treasuri USD1.000 dahulu, lalu retained earnings USD2.000. Transaksi tidak menghasilkan rugi laba rugi. Rujukan: Kieso IFRS 5e, halaman PDF 1193."
+  },
+  {
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "difficulty": "medium",
+    "q": "Dividends in arrears (dividen preferen kumulatif tertunggak) sebelum deklarasi diperlakukan sebagai? Rujukan: Kieso IFRS 5e, halaman PDF 1187.",
+    "options": [
+      "Diakui sebagai liabilitas lancar",
+      "Diakui sebagai aset lancar",
+      "Dicatat sebagai beban bunga",
+      "Diungkapkan tanpa pengakuan liabilitas"
+    ],
+    "answer": 3,
+    "explanation": "Kewajiban dividen baru dicatat ketika direksi mendeklarasikannya. Sebelum itu, dividen tertunggak diungkapkan dalam catatan. Rujukan: Kieso IFRS 5e, halaman PDF 1187."
+  },
+  {
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "difficulty": "medium",
+    "q": "Tsen mendeklarasikan property dividend (dividen properti) berupa investasi bernilai buku HKD1.250.000 dan nilai wajar HKD2.000.000. Penyesuaian aset sebelum deklarasi adalah laba sebesar? Rujukan: Kieso IFRS 5e, halaman PDF 1201.",
+    "options": [
+      "HKD1.250.000",
+      "HKD750.000",
+      "HKD2.000.000",
+      "HKD3.250.000"
     ],
     "answer": 1,
-    "explanation": "Pada Metode Ekuitas, dividen dipandang sebagai penarikan kembali modal investasi, sehingga mendebit Kas dan MENGKREDIT (MENGURANGI) akun Investasi pada Entitas Asosiasi."
+    "explanation": "Nilai wajar lebih tinggi HKD750.000. Liabilitas dividen berikutnya dicatat sebesar nilai wajar HKD2.000.000. Rujukan: Kieso IFRS 5e, halaman PDF 1201."
+  },
+  {
+    "tm": 11,
+    "topic": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+    "difficulty": "medium",
+    "q": "Government grant (hibah pemerintah) untuk aset menurut pembahasan Kieso memakai pendekatan yang mana? Rujukan: Kieso IFRS 5e, halaman PDF 774-775.",
+    "options": [
+      "Pendapatan sistematis sepanjang biaya terkait",
+      "Modal disetor sepanjang biaya terkait",
+      "Pendapatan sekaligus sebelum biaya terkait",
+      "Liabilitas permanen sepanjang biaya terkait"
+    ],
+    "answer": 0,
+    "explanation": "Income approach mengakui hibah bersama biaya terkait. Untuk aset, buku menjelaskan deferred grant revenue atau pengurang nilai tercatat aset. Rujukan: Kieso IFRS 5e, halaman PDF 774-775."
+  },
+  {
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "medium",
+    "q": "Roche menerima €2.000.000 atas convertible bonds (obligasi konversi) dan mengukur komponen utang €1.805.626. Komponen conversion equity (ekuitas konversi) adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1258.",
+    "options": [
+      "€1.805.626",
+      "€2.000.000",
+      "€194.374",
+      "€388.766"
+    ],
+    "answer": 2,
+    "explanation": "With-and-without method mengukur liabilitas dahulu. Ekuitas residual = €2.000.000 - €1.805.626 = €194.374. Rujukan: Kieso IFRS 5e, halaman PDF 1258."
+  },
+  {
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "medium",
+    "q": "Siemens menerima €10.200.000 untuk obligasi dengan waran. Nilai kini utang tanpa waran €9.707.852. Alokasi ekuitas menurut with-and-without method adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1268-1269.",
+    "options": [
+      "€492.148",
+      "€9.707.852",
+      "€10.200.000",
+      "€292.148"
+    ],
+    "answer": 0,
+    "explanation": "Komponen waran residual = €10.200.000 - €9.707.852 = €492.148. Share warrants (waran saham) diukur sebagai sisa setelah liabilitas. Rujukan: Kieso IFRS 5e, halaman PDF 1268-1269."
+  },
+  {
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "medium",
+    "q": "Roche melakukan conversion (konversi) normal sebelum jatuh tempo memakai book value method. Perlakuan laba rugi konversinya adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1260-1261.",
+    "options": [
+      "Selalu mengakui laba pasar konversi",
+      "Selalu mengakui rugi pasar konversi",
+      "Mengakui seluruh ekuitas sebagai pendapatan",
+      "Tidak mengakui laba rugi konversi"
+    ],
+    "answer": 3,
+    "explanation": "Nilai tercatat liabilitas dan conversion equity dipindahkan ke share capital serta share premium. Repurchase (pembelian kembali) memiliki pengukuran terpisah. Rujukan: Kieso IFRS 5e, halaman PDF 1260-1261."
+  },
+  {
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "medium",
+    "q": "Chen mempunyai grant-date compensation (nilai kompensasi tanggal hibah) ¥22.000.000 dan masa jasa dua tahun. Beban kompensasi tahunan pada contoh buku adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1275.",
+    "options": [
+      "¥22.000.000",
+      "¥11.000.000",
+      "¥4.400.000",
+      "¥17.600.000"
+    ],
+    "answer": 1,
+    "explanation": "Service period (masa jasa) dua tahun membagi beban ¥22.000.000 menjadi ¥11.000.000 per tahun. Rujukan: Kieso IFRS 5e, halaman PDF 1275."
+  },
+  {
+    "tm": 12,
+    "topic": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+    "difficulty": "medium",
+    "q": "Opsi Chen yang sudah vested kedaluwarsa tanpa pelaksanaan. Bagaimana kompensasi atas jasa yang sudah diterima diperlakukan? Rujukan: Kieso IFRS 5e, halaman PDF 1276.",
+    "options": [
+      "Beban tetap; agio dipindahkan",
+      "Beban dibalik; agio dipindahkan",
+      "Beban tetap; liabilitas ditambahkan",
+      "Beban dibalik; pendapatan ditambahkan"
+    ],
+    "answer": 0,
+    "explanation": "Kedaluwarsa opsi tidak membatalkan jasa yang telah diberikan. Share premium (agio opsi) dipindahkan ke akun agio opsi kedaluwarsa. Rujukan: Kieso IFRS 5e, halaman PDF 1276."
+  },
+  {
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "medium",
+    "q": "Franks memiliki saham 90.000 selama tiga bulan, 120.000 selama tiga bulan, 81.000 selama empat bulan, dan 141.000 selama dua bulan. Weighted-average shares (saham tertimbang) adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1286.",
+    "options": [
+      "141.000 saham",
+      "108.000 saham",
+      "103.000 saham",
+      "90.000 saham"
+    ],
+    "answer": 2,
+    "explanation": "Bobotnya menghasilkan 22.500 + 30.000 + 27.000 + 23.500 = 103.000 saham. Saldo akhir berbeda dari weighted average. Rujukan: Kieso IFRS 5e, halaman PDF 1286."
+  },
+  {
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "medium",
+    "q": "Mayfield mempunyai laba disesuaikan £283.200 dan saham potensial tertimbang 144.000. Diluted EPS (EPS dilusian) dibulatkan menjadi? Rujukan: Kieso IFRS 5e, halaman PDF 1294-1295.",
+    "options": [
+      "£1,97",
+      "£2,10",
+      "£1,46",
+      "£2,83"
+    ],
+    "answer": 0,
+    "explanation": "If-converted method menghasilkan £283.200 / 144.000 = £1,9667, dibulatkan £1,97 per saham. Rujukan: Kieso IFRS 5e, halaman PDF 1294-1295."
+  },
+  {
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "medium",
+    "q": "Ada 1.500 opsi dengan exercise price €30 dan average market price €50. Incremental shares (tambahan saham neto) melalui treasury-share method adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1297.",
+    "options": [
+      "900 saham",
+      "1.500 saham",
+      "2.400 saham",
+      "600 saham"
+    ],
+    "answer": 3,
+    "explanation": "Kas asumsi €45.000 membeli kembali 900 saham. Tambahan neto = 1.500 - 900 = 600 saham. Rujukan: Kieso IFRS 5e, halaman PDF 1297."
+  },
+  {
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "medium",
+    "q": "Martin memiliki basic EPS USD2,10. Asumsi konversi obligasi menghasilkan EPS USD2,24. Perlakuan obligasi dalam diluted EPS adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1299-1300.",
+    "options": [
+      "Dimasukkan karena efeknya dilutif",
+      "Dikeluarkan karena efeknya antidilutif",
+      "Dimasukkan karena jumlahnya material",
+      "Dikeluarkan karena kuponnya kumulatif"
+    ],
+    "answer": 1,
+    "explanation": "Antidilutive berarti asumsi konversi menaikkan EPS atau mengurangi rugi per saham. Instrumen tersebut dikeluarkan dari diluted EPS. Rujukan: Kieso IFRS 5e, halaman PDF 1299-1300."
+  },
+  {
+    "tm": 13,
+    "topic": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+    "difficulty": "medium",
+    "q": "Pada basic EPS, cumulative preference dividends (dividen preferen kumulatif) yang belum dideklarasikan memengaruhi pembilang sebesar? Rujukan: Kieso IFRS 5e, halaman PDF 1285.",
+    "options": [
+      "Dividen preferen tahun berjalan",
+      "Seluruh tunggakan tahun sebelumnya",
+      "Seluruh nilai nominal saham",
+      "Seluruh nilai pasar saham"
+    ],
+    "answer": 0,
+    "explanation": "Dividen kumulatif tahun berjalan dikurangkan walaupun belum dideklarasikan. Tunggakan tahun sebelumnya telah diperhitungkan dalam EPS periode sebelumnya. Rujukan: Kieso IFRS 5e, halaman PDF 1285."
   },
   {
     "tm": 14,
-    "topic": "Daur Ulang (Recycling) OCI Efek Utang vs Efek Ekuitas",
-    "difficulty": "advanced",
-    "q": "Bagaimanakah perbedaan perlakuan daur ulang (recycling) keuntungan belum terealisasi di OCI saat instrumen dijual antara Efek Utang FVOCI dan Efek Ekuitas FVOCI?",
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "medium",
+    "q": "Graff mempunyai amortized cost £106.732 dan fair value £105.000 untuk efek utang HFCS. Rugi perubahan nilai wajar dalam OCI adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1377-1378.",
     "options": [
-      "Keduanya wajib direklasifikasi (recycled) ke Laba Rugi",
-      "Efek Utang FVOCI direklasifikasi ke Laba Rugi, sedangkan Efek Ekuitas FVOCI dilarang direklasifikasi ke Laba Rugi (hanya boleh ditransfer ke Laba Ditahan)",
-      "Efek Utang dilarang direklasifikasi, sedangkan Efek Ekuitas wajib direklasifikasi",
-      "Keduanya dilarang direklasifikasi dan harus tetap berada di OCI selamanya"
+      "£8.621",
+      "£10.000",
+      "£1.732",
+      "£3.111"
     ],
-    "answer": 1,
-    "explanation": "Aturan emas PSAK 71: Akumulasi OCI Efek Utang FVOCI wajib di-recycle ke Laba Rugi saat dijual. Sebaliknya, akumulasi OCI Efek Ekuitas FVOCI (pilihan irrevocable) DILARANG KERAS di-recycle ke Laba Rugi."
+    "answer": 2,
+    "explanation": "Nilai wajar berada £1.732 di bawah amortized cost. Penurunan pada contoh ini masuk OCI, terpisah dari interest revenue. Rujukan: Kieso IFRS 5e, halaman PDF 1377-1378."
   },
   {
     "tm": 14,
-    "topic": "Model Kerugian Kredit Ekspektasian (ECL Model)",
-    "difficulty": "advanced",
-    "q": "Menurut PSAK 71, model penurunan nilai aset keuangan berbasis kerugian kredit ekspektasian (Expected Credit Loss - ECL) mengharuskan pengakuan penyisihan kerugian pada Tahap 1 (Stage 1 - risiko kredit belum meningkat signifikan) sebesar...",
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "medium",
+    "q": "Pada Stage 2 expected credit loss (kerugian kredit ekspektasian), pasangan cadangan dan dasar pendapatan bunga adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1396-1397.",
     "options": [
-      "100% kerugian kredit sepanjang umur aset (lifetime ECL)",
-      "ECL 12 bulan (12-month expected credit losses)",
-      "Nol penyisihan hingga terjadi gagal bayar aktual",
-      "Rata-rata suku bunga pasar historis"
+      "Lifetime ECL; nilai tercatat bruto",
+      "12-month ECL; nilai tercatat bruto",
+      "Lifetime ECL; nilai tercatat neto",
+      "12-month ECL; nilai tercatat neto"
+    ],
+    "answer": 0,
+    "explanation": "Risiko kredit meningkat signifikan memakai lifetime ECL (kerugian sepanjang umur), tetapi bunga dihitung pada gross carrying amount (nilai tercatat bruto). Rujukan: Kieso IFRS 5e, halaman PDF 1396-1397."
+  },
+  {
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "medium",
+    "q": "Robinson membeli obligasi €92.278 dengan yield tahunan 10% dan kupon semesteran €4.000. Interest revenue (pendapatan bunga efektif) semester pertama menurut buku adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1372-1374.",
+    "options": [
+      "€4.000",
+      "€614",
+      "€9.228",
+      "€4.614"
+    ],
+    "answer": 3,
+    "explanation": "Pendapatan bunga €92.278 × 10% × 6/12, dibulatkan €4.614. Diskonto €614 menambah Debt Investments. Rujukan: Kieso IFRS 5e, halaman PDF 1372-1374."
+  },
+  {
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "medium",
+    "q": "Untuk menentukan amortized cost (biaya perolehan diamortisasi) pada efek utang, analisis awal menggabungkan apa? Rujukan: Kieso IFRS 5e, halaman PDF 1370-1372.",
+    "options": [
+      "Harga pasar dan harga nominal",
+      "Model bisnis dan arus kas",
+      "Jumlah saham dan jumlah pemegang",
+      "Harga beli dan kebijakan dividen"
     ],
     "answer": 1,
-    "explanation": "Pada Tahap 1 (Stage 1), entitas mengukur penyisihan kerugian sebesar 12-month ECL (bagian dari lifetime ECL yang timbul dari peristiwa gagal bayar yang mungkin terjadi dalam 12 bulan setelah tanggal pelaporan)."
+    "explanation": "Business model (tujuan pengelolaan) dan contractual cash flows (arus kas kontraktual pokok dan bunga) menentukan kelayakan kategori. Rujukan: Kieso IFRS 5e, halaman PDF 1370-1372."
+  },
+  {
+    "tm": 14,
+    "topic": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+    "difficulty": "medium",
+    "q": "Dalam contoh Mayhew, seluruh jumlah dinyatakan dalam ribuan yen. Investasi tercatat ¥200.000 dan PV kas yang diharapkan ¥187.320. Expected credit loss adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1399.",
+    "options": [
+      "¥12.680",
+      "¥16.000",
+      "¥20.000",
+      "¥187.320"
+    ],
+    "answer": 0,
+    "explanation": "ECL = ¥200.000 - ¥187.320 = ¥12.680 dalam ribuan yen. Kerugian diukur dengan nilai kini, sehingga berbeda dari cash shortfalls tanpa diskonto. Rujukan: Kieso IFRS 5e, halaman PDF 1399."
+  },
+  {
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "medium",
+    "q": "Meredith membeli 25% saham Pirates seharga £200.000. Laba Pirates £80.000 dan dividen £20.000. Ending investment (saldo investasi akhir) menurut equity method adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1391-1392, 1452.",
+    "options": [
+      "£220.000",
+      "£205.000",
+      "£215.000",
+      "£200.000"
+    ],
+    "answer": 2,
+    "explanation": "Interpretasi E16.20: bagian laba £20.000 menambah investasi; dividen £5.000 mengurangi investasi. Saldo £215.000. Rujukan: Kieso IFRS 5e, halaman PDF 1391-1392, 1452."
+  },
+  {
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "medium",
+    "q": "Pada equity method (metode ekuitas), dividen yang diterima investor dari investee dicatat bagaimana? Rujukan: Kieso IFRS 5e, halaman PDF 1391-1392.",
+    "options": [
+      "Kas bertambah; investasi berkurang",
+      "Kas bertambah; pendapatan bertambah",
+      "Kas berkurang; investasi bertambah",
+      "Kas berkurang; pendapatan berkurang"
+    ],
+    "answer": 0,
+    "explanation": "Bagian laba sudah diakui sebagai Investment Revenue. Dividen mendistribusikan aset neto investee sehingga mengurangi carrying amount investasi. Rujukan: Kieso IFRS 5e, halaman PDF 1391-1392."
+  },
+  {
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "medium",
+    "q": "Republic menjual investasi ekuitas Hawthorne yang menggunakan pilihan non-trading OCI. Perlakuan kumulatif perubahan nilai wajarnya adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1389, 1396.",
+    "options": [
+      "Dipindahkan ke pendapatan melalui recycling",
+      "Dihapus melalui beban bunga langsung",
+      "Dipindahkan ke utang melalui recycling",
+      "Tetap dalam ekuitas tanpa recycling"
+    ],
+    "answer": 3,
+    "explanation": "Pilihan OCI efek ekuitas tidak melakukan recycling (reklasifikasi ke laba rugi). Efek utang FVOCI memakai aturan pelepasan yang berbeda. Rujukan: Kieso IFRS 5e, halaman PDF 1389, 1396."
+  },
+  {
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "medium",
+    "q": "Kepemilikan 20% atau lebih menjadi praduga significant influence (pengaruh signifikan). Cara memperlakukan praduga tersebut adalah? Rujukan: Kieso IFRS 5e, halaman PDF 1390-1391.",
+    "options": [
+      "Anggap selalu sebagai pengendalian penuh",
+      "Uji dengan bukti hubungan aktual",
+      "Anggap selalu sebagai investasi pasif",
+      "Uji berdasarkan dividen kas saja"
+    ],
+    "answer": 1,
+    "explanation": "Buku memberi contoh representasi direksi, partisipasi kebijakan, dan transaksi material. Bukti yang bertentangan dapat mengubah kesimpulan pengaruh. Rujukan: Kieso IFRS 5e, halaman PDF 1390-1391."
+  },
+  {
+    "tm": 15,
+    "topic": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+    "difficulty": "medium",
+    "q": "Pengantar consolidation (konsolidasi) pada buku dan catatan pengendalian menilai apa? Rujukan: Kieso IFRS 5e, halaman PDF 1173, 1393-1394.",
+    "options": [
+      "Kekuasaan dan pengaruh atas imbalan",
+      "Nominal saham dan harga penerbitan",
+      "Dividen tunai dan harga nominal",
+      "Kupon obligasi dan bunga implisit"
+    ],
+    "answer": 0,
+    "explanation": "Control (pengendalian) melibatkan power, eksposur atas variable returns, dan kemampuan menggunakan power untuk memengaruhi imbal hasil. Mayoritas saham menjadi indikator awal, bukan satu-satunya bukti. Rujukan: Kieso IFRS 5e, halaman PDF 1173, 1393-1394."
   }
 ];
 

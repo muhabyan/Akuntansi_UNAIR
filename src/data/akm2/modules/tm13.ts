@@ -1,167 +1,290 @@
+// AKK202 TM13: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
 import type { Reading } from '../../../types';
-import {
-  CASE_EPS_COMPLEX,
-  CASE_COMPREHENSIVE_DILUTED_EPS_RANKING } from '../akm2PracticeCases';
-
-const SVG_EPS_STRUCTURE = `
-<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">KERANGKA PERHITUNGAN LABA PER SAHAM (EPS - PSAK 56)</text>
-
-  <rect class="svg-card" x="30" y="55" width="290" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-blue" x="175" y="78" fill="#38bdf8" font-size="11.5" font-weight="700" text-anchor="middle">1. EPS DASAR (BASIC EPS)</text>
-  <line class="svg-divider" x1="45" y1="90" x2="305" y2="90" stroke="#334155"/>
-  <text class="svg-text" x="175" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Laba Bersih - Dividen Saham Preferen</text>
-  <line x1="60" y1="125" x2="290" y2="125" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-green" x="175" y="145" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Rata-Rata Tertimbang Saham Beredar (WASC)</text>
-  <text class="svg-muted" x="175" y="175" fill="#94a3b8" font-size="9" text-anchor="middle">(Wajib disajikan di Wajah Laporan Laba Rugi)</text>
-
-  <rect class="svg-card" x="360" y="55" width="290" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text class="text-accent-amber" x="505" y="78" fill="#f59e0b" font-size="11.5" font-weight="700" text-anchor="middle">2. EPS DILUSIAN (DILUTED EPS)</text>
-  <line class="svg-divider" x1="375" y1="90" x2="635" y2="90" stroke="#334155"/>
-  <text class="svg-text" x="505" y="115" fill="#f1f5f9" font-size="10.5" font-weight="600" text-anchor="middle">Laba Dasar + Bunga Obligasi Konversi (Net Pajak)</text>
-  <line x1="375" y1="125" x2="635" y2="125" stroke="#f59e0b" stroke-width="1.5"/>
-  <text class="text-accent-green" x="505" y="145" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">WASC + Saham Tambahan Konversi &amp; Opsi</text>
-  <text class="text-accent-red" x="505" y="175" fill="#f87171" font-size="9" text-anchor="middle">(Hanya disajikan jika Dilutif: Diluted EPS &lt; Basic EPS)</text>
-</svg>`;
 
 export const TM13_READING: Reading = {
-  tm: 13,
-  title: 'Laba Per Saham (Earnings Per Share - Basic & Diluted EPS)',
-  ref: 'Kieso IFRS 5e Ch. 16 | PSAK 56 (IAS 33)',
-  intro: 'TM 13 membedah indikator kinerja keuangan terpenting bagi investor publik: perhitungan Laba Per Saham Dasar (Basic EPS) dengan pembobotan WASC dan perlakuan retrospektif dividen saham/stock split, dividen saham preferen kumulatif vs non-kumulatif, serta perhitungan EPS Dilusian (Diluted EPS) menggunakan Metode If-Converted dan Treasury Stock Method beserta uji antidilutif.',
-  objectives: [
-    'Menghitung Rata-Rata Tertimbang Jumlah Saham Beredar (Weighted-Average Shares Outstanding - WASC).',
-    'Menerapkan perlakuan retrospektif atas Dividen Saham dan Pemecahan Saham (Stock Split) seolah-olah terjadi sejak awal periode.',
-    'Menghitung Laba Bersih yang Tersedia untuk Pemegang Saham Biasa dengan mengurangkan Dividen Saham Preferen (Kumulatif vs Non-Kumulatif).',
-    'Menerapkan Metode If-Converted untuk Obligasi Konversi (penyesuaian beban bunga neto pajak) dan Saham Preferen Konversi.',
-    'Menerapkan Treasury Stock Method untuk Opsi Saham dan Waran (asumsi kas hasil eksekusi dipakai beli saham treasuri pada harga pasar rata-rata).',
-    'Menguji efek Antidilutif (Antidilutive Test) untuk memastikan hanya sekuritas yang menurunkan EPS yang dimasukkan ke Diluted EPS.'
+  "tm": 13,
+  "title": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+  "ref": "Kieso IFRS 5e Ch. 15 | RPP AKM II, halaman PDF 3",
+  "intro": "TM13 menghitung basic earnings per share (EPS dasar) dan diluted earnings per share (EPS dilusian). Penyelesaian dimulai dari laba untuk saham biasa dan rata-rata tertimbang saham, lalu menguji setiap instrumen potensial.",
+  "objectives": [
+    "Menghitung laba yang tersedia untuk saham biasa.",
+    "Menyusun weighted-average shares (saham rata-rata tertimbang).",
+    "Menerapkan if-converted method dan treasury-share method.",
+    "Mengecualikan instrumen antidilutive (yang menaikkan EPS atau memperkecil rugi per saham)."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      title: 'Kerangka Penghitungan EPS Dasar vs EPS Dilusian',
-      svg: SVG_EPS_STRUCTURE,
-      caption: 'Gambar 13.1: Formula fundamental penentuan EPS Dasar dan EPS Dilusian sesuai PSAK 56.'
+      "kind": "h2",
+      "text": "1. Orientation / Quick Map"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat TM 13'
-    },
-    {
-      kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
-      rows: [
-        ['1', 'Hitung WASC Dasar', 'Berapa lembar saham beredar dikalikan bobot bulan beredar + efek retrospektif stock split?', 'Menetapkan angka penyebut (denominator) EPS Dasar.'],
-        ['2', 'Laba untuk Saham Biasa', 'Apakah saham preferen bersifat kumulatif (kurangkan meski belum deklarasi) atau non-kumulatif?', 'Menetapkan angka pembilang (numerator) EPS Dasar.'],
-        ['3', 'If-Converted Method', 'Berapa beban bunga obligasi konversi neto pajak yang dihemat jika obligasi dikonversi?', 'Menyesuaikan pembilang dan penyebut untuk efek obligasi konversi.'],
-        ['4', 'Treasury Stock Method', 'Berapa lembar saham inkremental dari opsi (Saham Terbit - Saham Dibeli Kembali)?', 'Menambahkan lembar saham tambahan dari opsi saham ke penyebut.'],
-        ['5', 'Uji Antidilutif', 'Apakah EPS Dilusian akhir lebih kecil daripada EPS Dasar?', 'Jika hasil lebih besar (antidilutif), abaikan sekuritas tersebut.']
+      "kind": "figure",
+      "title": "Peta konsep TM13",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 340\" role=\"img\" aria-label=\"Peta analisis TM13\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\"><rect x=\"8\" y=\"8\" width=\"664\" height=\"324\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\"/><text x=\"28\" y=\"34\" font-size=\"16\" fill=\"#38bdf8\" font-weight=\"700\">Peta analisis TM13</text><rect x=\"24\" y=\"48\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"70\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">1. Pembilang</text><text x=\"40\" y=\"90\" font-size=\"12\" fill=\"#e2e8f0\">Pisahkan laba untuk saham biasa dan dividen preferen.</text><rect x=\"24\" y=\"116\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"138\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">2. Penyebut</text><text x=\"40\" y=\"158\" font-size=\"12\" fill=\"#e2e8f0\">Bobot saham berdasarkan waktu dan restatement.</text><rect x=\"24\" y=\"184\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"206\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">3. Potensi saham</text><text x=\"40\" y=\"226\" font-size=\"12\" fill=\"#e2e8f0\">Gunakan if-converted atau treasury-share method.</text><rect x=\"24\" y=\"252\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"274\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">4. Antidilusi</text><text x=\"40\" y=\"294\" font-size=\"12\" fill=\"#e2e8f0\">Uji pengaruh tiap instrumen sebelum digabungkan.</text></svg>",
+      "overview": {
+        "heading": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+        "cards": [
+          {
+            "title": "Pembilang",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Pisahkan laba untuk saham biasa dan dividen preferen."
+            ],
+            "takeaway": "Pisahkan laba untuk saham biasa dan dividen preferen."
+          },
+          {
+            "title": "Penyebut",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Bobot saham berdasarkan waktu dan restatement."
+            ],
+            "takeaway": "Bobot saham berdasarkan waktu dan restatement."
+          },
+          {
+            "title": "Potensi saham",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Gunakan if-converted atau treasury-share method."
+            ],
+            "takeaway": "Gunakan if-converted atau treasury-share method."
+          },
+          {
+            "title": "Antidilusi",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Uji pengaruh tiap instrumen sebelum digabungkan."
+            ],
+            "takeaway": "Uji pengaruh tiap instrumen sebelum digabungkan."
+          }
+        ],
+        "footer": "RPP AKM II, halaman PDF 3; Kieso IFRS 5e Ch. 15."
+      },
+      "transcript": [
+        "Pembilang: Pisahkan laba untuk saham biasa dan dividen preferen.",
+        "Penyebut: Bobot saham berdasarkan waktu dan restatement.",
+        "Potensi saham: Gunakan if-converted atau treasury-share method.",
+        "Antidilusi: Uji pengaruh tiap instrumen sebelum digabungkan."
       ],
-      caption: 'Tabel 13.0: Roadmap belajar Laba Per Saham Dasar dan Dilusian.'
+      "caption": "Peta pembelajaran mengikuti RPP AKM II, halaman PDF 3, dengan bab disesuaikan ke Kieso IFRS 5e Ch. 15."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi TM 13'
+      "kind": "h2",
+      "text": "2. Pembilang dan penyebut EPS dasar"
     },
     {
-      kind: 'formula',
-      text: '\\text{Basic EPS} = \\frac{\\text{Laba Bersih} - \\text{Dividen Saham Preferen}}{\\text{WASC (Weighted-Average Shares)}}',
-      note: 'Dividen Preferen Kumulatif SELALU dikurangkan 1 tahun penuh (meskipun direksi tidak mendeklarasikan dividen tahun ini).'
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Basic EPS}=\\frac{\\text{Net income}-\\text{Preference dividends}}{\\text{Weighted-average ordinary shares}}",
+      "note": "Dividen preferen kumulatif tahun berjalan diperhitungkan meskipun belum dideklarasikan; tunggakan tahun sebelumnya tidak dihitung dua kali. Kieso IFRS 5e, halaman PDF 1285."
     },
     {
-      kind: 'formula',
-      text: '\\text{Penyesuaian If-Converted} = \\text{Beban Bunga Obligasi yang Dihemat} \\times (1 - \\text{Tarif Pajak})',
-      note: 'Ditambahkan kembali ke Laba Bersih di pembilang, sedangkan jumlah lembar saham hasil konversi ditambahkan ke penyebut.'
+      "kind": "p",
+      "text": "Simple capital structure (struktur modal sederhana) tidak memiliki instrumen saham potensial yang dilutif. Complex capital structure (struktur modal kompleks) memerlukan perhatian pada EPS dasar dan dilusian. Jika terdapat rugi, pengurangan dividen preferen memperbesar rugi yang tersedia bagi saham biasa. (Kieso IFRS 5e, halaman PDF 1284-1285.)"
     },
     {
-      kind: 'formula',
-      text: '\\text{Saham Tambahan Opsi} = \\text{Jumlah Opsi Dieksekusi} - \\left( \\frac{\\text{Jumlah Opsi} \\times \\text{Harga Eksekusi}}{\\text{Harga Pasar Rata-Rata Saham}} \\right)',
-      note: 'Hanya bersifat dilutif jika Harga Pasar Rata-Rata Saham > Harga Eksekusi Opsi (In-the-Money).'
+      "kind": "table",
+      "title": "Dasar penghitungan saham tertimbang",
+      "headers": [
+        "Peristiwa",
+        "Perlakuan"
+      ],
+      "rows": [
+        [
+          "Penerbitan saham untuk kas",
+          "Bobot sejak penerbitan"
+        ],
+        [
+          "Pembelian treasuri",
+          "Kurangi saham beredar sejak pembelian"
+        ],
+        [
+          "Share dividend",
+          "Restatement saham sebelum dividen"
+        ],
+        [
+          "Share split",
+          "Restatement saham sebelum pemecahan"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1286-1287.",
+      "stackOnMobile": true
     },
     {
-      kind: 'example',
-      title: 'Contoh Mini Numerik: Perhitungan EPS PT Astra Otoparts Tbk',
-      blocks: [
+      "kind": "h2",
+      "text": "3. Kasus Franks: pembobotan saham"
+    },
+    {
+      "kind": "example",
+      "title": "Franks Inc.: Illustrations 15.15-15.16",
+      "blocks": [
         {
-          kind: 'p',
-          text: 'PT Astra Otoparts membukukan Laba Bersih Rp 1.500.000.000 pada tahun 2026. Data modal:\n• 1.000.000 lembar saham biasa beredar sejak 1 Jan 2026.\n• 100.000 lembar saham preferen 8% kumulatif (nominal Rp 10.000/lbr).\n• Obligasi konversi 7% nominal Rp 500.000.000 (dapat dikonversi menjadi 50.000 lembar saham biasa). Beban bunga obligasi 2026 = Rp 35.000.000. Tarif pajak 20%.\n• 40.000 lembar opsi saham dengan harga eksekusi Rp 2.000/lbr (Harga pasar rata-rata saham 2026 = Rp 2.500/lbr).'
+          "kind": "p",
+          "text": "Franks memiliki 90.000 saham pada awal tahun, menerbitkan 30.000 saham untuk kas pada 1 April, membeli 39.000 saham pada 1 Juli, dan menerbitkan 60.000 saham pada 1 November. (Kieso IFRS 5e, halaman PDF 1286.)"
         },
         {
-          kind: 'formula',
-          text: 'Dividen Saham Preferen = 100.000 × Rp 10.000 × 8% = Rp 80.000.000\nLaba Bersih untuk Saham Biasa = 1.500.000.000 - 80.000.000 = Rp 1.420.000.000\nBasic EPS = 1.420.000.000 / 1.000.000 lembar = Rp 1.420 per lembar\n\nPenyesuaian Diluted EPS:\n• Penghematan Bunga Obligasi (Net Pajak) = 35.000.000 × (1 - 0,20) = Rp 28.000.000\n• Tambahan Saham Obligasi = 50.000 lembar\n• Kas Hasil Opsi (40.000 × Rp 2.000) = Rp 80.000.000\n• Saham Dibeli Kembali (80 jt / Rp 2.500) = 32.000 lembar\n• Tambahan Saham Opsi (40.000 - 32.000) = 8.000 lembar\n\nDiluted EPS = (1.420.000.000 + 28.000.000) / (1.000.000 + 50.000 + 8.000)\nDiluted EPS = 1.448.000.000 / 1.058.000 lembar = Rp 1.368,62 per lembar'
+          "kind": "table",
+          "title": "Perhitungan saham rata-rata tertimbang Franks",
+          "headers": [
+            "Periode",
+            "Saham beredar",
+            "Bobot",
+            "Saham tertimbang"
+          ],
+          "rows": [
+            [
+              "Januari-Maret",
+              "90.000",
+              "3/12",
+              "22.500"
+            ],
+            [
+              "April-Juni",
+              "120.000",
+              "3/12",
+              "30.000"
+            ],
+            [
+              "Juli-Oktober",
+              "81.000",
+              "4/12",
+              "27.000"
+            ],
+            [
+              "November-Desember",
+              "141.000",
+              "2/12",
+              "23.500"
+            ],
+            [
+              "Total",
+              "Saham akhir 141.000",
+              "Satu tahun",
+              "103.000"
+            ]
+          ],
+          "caption": "Kieso IFRS 5e, halaman PDF 1286.",
+          "stackOnMobile": true
         },
         {
-          kind: 'callout',
-          variant: 'key',
-          title: 'Kesimpulan Uji Dilusi',
-          text: 'Karena Diluted EPS (Rp 1.368,62) lebih kecil dari Basic EPS (Rp 1.420), seluruh sekuritas bersifat DILUTIF dan wajib disajikan berdampingan di laporan laba rugi.'
+          "kind": "p",
+          "text": "Saldo akhir 141.000 berbeda dari rata-rata tertimbang 103.000. Pada contoh Vijay, 100.000 saham awal dengan share dividend 25% pada Juni menghasilkan rata-rata 125.000 karena saham sebelum dividen disajikan kembali. (Kieso IFRS 5e, halaman PDF 1286-1287.)"
         }
       ]
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Aktif: Efek Stock Split dan Dividen Saham pada WASC',
-      prompt: 'PT Cemerlang memulai tahun 2026 dengan 200.000 lembar saham. Transaksi:\n• 1 Mei: Menerbitkan 60.000 lembar saham baru secara tunai.\n• 1 Agustus: Mengumumkan Stock Split 2-for-1.\n• 1 November: Membeli kembali 20.000 lembar saham treasuri.\nHitunglah WASC tahun 2026!',
-      blocks: [
+      "kind": "h2",
+      "text": "4. If-converted method untuk obligasi"
+    },
+    {
+      "kind": "p",
+      "text": "If-converted method (metode jika dikonversi) mengasumsikan konversi pada awal periode atau tanggal penerbitan jika lebih akhir. Interest expense net of tax (beban bunga setelah pajak) ditambahkan ke pembilang; saham hasil konversi berbobot waktu ditambahkan ke penyebut. Gunakan beban bunga komponen liabilitas, bukan kas kupon semata. (Kieso IFRS 5e, halaman PDF 1293-1294.)"
+    },
+    {
+      "kind": "example",
+      "title": "Mayfield: dua seri obligasi konversi",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Periode 1 Jan - 1 Mei (4 bulan)**: 200.000 lembar × **2 (Stock Split)** × 4/12 = **133.333 lembar**.',
-            '**Periode 1 Mei - 1 Nov (6 bulan)**: (200.000 + 60.000 = 260.000 lembar) × **2 (Stock Split)** × 6/12 = **260.000 lembar**.',
-            '**Periode 1 Nov - 31 Des (2 bulan)**: (520.000 - 20.000 treasuri = 500.000 lembar) × 2/12 = **83.333 lembar**.',
-            '**Total WASC Tahun 2026**: 133.333 + 260.000 + 83.333 = **476.666 lembar**.'
-          ]
+          "kind": "p",
+          "text": "Laba Mayfield £210.000 dan saham tertimbang 100.000. Seri pertama beredar sepanjang tahun: beban bunga £62.000 dan 20.000 saham konversi. Seri kedua diterbitkan 1 April: beban bunga setahun penuh £80.000 dan 32.000 saham konversi. Tarif pajak 40%. (Kieso IFRS 5e, halaman PDF 1293-1294.)"
         },
         {
-          kind: 'callout',
-          variant: 'warning',
-          title: 'Jebakan UAS WASC',
-          text: 'Stock split dan dividen saham diberlakukan secara **RETROSPEKTIF** ke seluruh saldo saham yang ada sebelum tanggal split terjadi (dikalikan faktor split untuk seluruh bulan sebelum tanggal split)!'
+          "kind": "formula",
+          "text": "\\displaystyle N=210000+62000(1-0.40)+80000\\frac{9}{12}(1-0.40)=283200\\\\D=100000+20000+32000\\frac{9}{12}=144000\\\\\\text{Basic EPS}=2.10\\qquad\\text{Diluted EPS}=\\frac{283200}{144000}\\approx1.97",
+          "note": "Hasil akhir dalam pound per saham mengikuti buku. Kieso IFRS 5e, halaman PDF 1294-1295."
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan TM 13'
+      "kind": "h2",
+      "text": "5. Opsi, waran, dan antidilusi"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Perhitungan WASC Dasar', 'Pembobotan waktu dan penyesuaian retrospektif stock split/dividen saham.', 'Menghitung penyebut WASC secara akurat.'],
-        ['2', 'Dividen Saham Preferen', 'Perlakuan dividen preferen kumulatif vs non-kumulatif.', 'Menghitung pembilang laba bersih untuk pemegang saham biasa.'],
-        ['3', 'Metode If-Converted Obligasi', 'Penyesuaian bunga bersih pajak di pembilang dan saham konversi di penyebut.', 'Menghitung efek dilutif obligasi konversi.'],
-        ['4', 'Treasury Stock Method Opsi', 'Asumsi penerimaan kas eksekusi untuk membeli kembali saham di harga pasar.', 'Menghitung lembar saham tambahan inkremental opsi.'],
-        ['5', 'Penyajian Resmi di Wajah Laba Rugi', 'Penyajian Basic EPS dan Diluted EPS untuk laba operasi dan laba bersih.', 'Menyajikan angka EPS sesuai ketentuan PSAK 56.']
-      ],
-      caption: 'Tabel 13.1: Matriks kompetensi komprehensif materi TM 13 AKM II.'
+      "kind": "p",
+      "text": "Treasury-share method (metode saham treasuri untuk EPS) mengasumsikan hasil pelaksanaan opsi dipakai membeli kembali saham pada average market price (harga pasar rata-rata). Hanya incremental shares (saham tambahan neto) yang menambah penyebut. Metode ini adalah asumsi EPS, sehingga tidak membuat jurnal treasuri aktual. (Kieso IFRS 5e, halaman PDF 1296-1298.)"
     },
-    { kind: 'h2', text: '1. Perhitungan Komprehensif Laba Per Saham' },
     {
-      kind: 'p',
-      text: '==Laba per saham (EPS) menunjukkan porsi laba bersih entitas yang dapat diatribusikan kepada setiap lembar saham biasa yang beredar selama periode pelaporan.=='
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Incremental shares}=Q-\\frac{QX}{M}",
+      "note": "Q = opsi; X = harga pelaksanaan; M = harga pasar rata-rata. Gunakan hanya bila hasilnya dilutif. Kieso IFRS 5e, halaman PDF 1297."
     },
-    CASE_EPS_COMPLEX,
-    { kind: 'h2', text: "2. Perhitungan WASO Komprehensif & Uji Anti-Dilutif Bertingkat (PSAK 56)" },
     {
-      kind: 'p',
-      text: "==Dalam menghitung Weighted Average Shares Outstanding (WASO), dividen saham dan pemecahan saham diperlakukan secara retrospektif seolah-olah terjadi sejak awal tahun. Pada Diluted EPS, setiap sekuritas berpotensi dilutif diuji efek inkrementalnya dari yang paling dilutif hingga berpotensi anti-dilutif.=="
+      "kind": "p",
+      "text": "Contoh 1.500 opsi dengan harga pelaksanaan €30 dan harga pasar rata-rata €50 memberi kas asumsi €45.000, pembelian kembali 900 saham, dan saham tambahan neto 600. Instrumen antidilutif dikeluarkan dan tidak dipakai mengimbangi instrumen dilutif. (Kieso IFRS 5e, halaman PDF 1297, uji antidilusi pada halaman PDF 1299-1300.)"
     },
-    CASE_COMPREHENSIVE_DILUTED_EPS_RANKING,
-    { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
     {
-      kind: 'ul',
-      items: [
-        '**Stock Split / Stock Dividend**: Diberlakukan retrospektif sejak awal periode untuk perhitungan WASC.',
-        '**Dividen Preferen Kumulatif**: Selalu dikurangkan dari laba bersih, terlepas dari apakah dideklarasikan atau tidak.',
-        '**If-Converted Method**: Tambahkan kembali Beban Bunga × (1 - Tax) ke laba, tambahkan saham konversi ke WASC.',
-        '**Treasury Stock Method**: Saham tambahan = Saham Opsi - (Kas Eksekusi / Harga Pasar Rata-Rata).',
-        `**Antidilutif**: Jika Diluted EPS > Basic EPS, abaikan efek dilusi dan laporkan EPS Dasar.`
+      "kind": "p",
+      "text": "Martin memiliki laba USD210.000, saham 100.000, bunga obligasi konversi USD60.000, pajak 40%, dan 10.000 saham hasil konversi. EPS sebelum konversi USD2,10. EPS asumsi setelah konversi USD2,24 lebih tinggi, sehingga obligasi dikeluarkan. (Kieso IFRS 5e, halaman PDF 1300, Illustration 15.29.)"
+    },
+    {
+      "kind": "h2",
+      "text": "6. Penyajian, urutan, dan saham kontinjensi"
+    },
+    {
+      "kind": "p",
+      "text": "EPS dari continuing operations (operasi berkelanjutan) menjadi titik uji dilusi. Urutkan instrumen dari incremental EPS terendah; opsi atau waran tidak menambah pembilang dan diperiksa dahulu. Tambahkan instrumen satu per satu dan hentikan pemasukan instrumen yang meningkatkan EPS. Contingently issuable shares (saham yang diterbitkan bersyarat) dianalisis menurut pemenuhan kondisi pada akhir periode. (Kieso IFRS 5e, halaman PDF 1298-1299, urutan dan angka kontrol pada Appendix 15B, halaman PDF 1314-1318.)"
+    },
+    {
+      "kind": "callout",
+      "title": "Jebakan pembilang konversi",
+      "text": "Kupon tunai berbeda dari interest expense berdasarkan bunga efektif untuk utang konversi. Pada konversi saham preferen, dividen yang dipulihkan tidak diberi faktor pajak seperti bunga utang. (Kieso IFRS 5e, halaman PDF 1293-1296.)",
+      "variant": "warning"
+    },
+    {
+      "kind": "h2",
+      "text": "7. Latihan dan uji pemahaman"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan opsi dan waran",
+      "prompt": "Ada 1.500 opsi beredar dengan exercise price €30 dan average market price €50. Hitung jumlah saham yang secara asumsi dapat dibeli kembali dan tambahan saham neto. Rujukan: Kieso IFRS 5e, halaman PDF 1297, Illustration 15.27.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\displaystyle \\text{Repurchased shares}=1500(30)/50=900\\qquad\\text{Incremental shares}=1500-900=600",
+          "note": "Kieso IFRS 5e, halaman PDF 1297."
+        },
+        {
+          "kind": "p",
+          "text": "Saham tambahan neto 600 masuk pengujian diluted EPS. Pembilang tidak bertambah karena pelaksanaan opsi tidak menghapus beban bunga. (Kieso IFRS 5e, halaman PDF 1296-1298.)"
+        }
       ]
+    },
+    {
+      "kind": "h2",
+      "text": "8. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "title": "Alur penyelesaian TM13",
+      "headers": [
+        "Langkah",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Pembilang",
+          "Pisahkan laba untuk saham biasa dan dividen preferen."
+        ],
+        [
+          "Penyebut",
+          "Bobot saham berdasarkan waktu dan restatement."
+        ],
+        [
+          "Potensi saham",
+          "Gunakan if-converted atau treasury-share method."
+        ],
+        [
+          "Antidilusi",
+          "Uji pengaruh tiap instrumen sebelum digabungkan."
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1286-1287.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "callout",
+      "title": "Batas sumber dan penomoran",
+      "text": "RPP menggunakan nomor bab dan beberapa rujukan lokal dari susunan lama. Materi ini mengikuti topik pertemuan di RPP dan isi Kieso IFRS edisi kelima. Angka contoh berasal dari buku; hasil hitungan tambahan diberi label Interpretasi. Pembandingan SAK ETAP memerlukan bacaan dosen tersendiri. (Kieso IFRS 5e, halaman PDF 1252.)",
+      "variant": "info"
     }
   ]
 };

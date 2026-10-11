@@ -12,6 +12,15 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.2',
+    date: '11 Oktober 2026',
+    headline: 'Perbaikan materi dan latihan AKM II pasca-UTS',
+    notes: [
+      'AKM II TM 9 sampai TM 15 diperiksa terhadap buku Kieso IFRS edisi kelima dan RPP lokal. Rujukan bab, dividen saham, waran, EPS, serta investasi utang dan ekuitas diperbaiki.',
+      'TM 15 kini memuat investasi ekuitas dan metode ekuitas. Latihan pasca-UTS berisi 35 kuis, 42 flashcard, dan 7 kasus esai serta hitungan dengan rujukan halaman PDF buku.',
+    ],
+  },
+  {
     version: 'v1.3.1',
     date: '11 Oktober 2026',
     headline: 'Latihan pasca-UTS Pengauditan Berbasis Risiko I',

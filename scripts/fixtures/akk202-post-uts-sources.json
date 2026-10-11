@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "citationConvention": "One-based PDF pages, not printed page labels.",
+  "baselineUts": {
+    "readings": "ccc85a9836d3a749730585987a95dc124118bcdf9cefbe900baa00b5158b8970",
+    "quiz": "0fa1f3eb76e2e17998228d4d5c89c12b5870eed49ad9839c08a79cecfebed9fd",
+    "cards": "edee6d8d791303219f6e248557282222c69467893cdbc1f4d4cd1d341a45a64e",
+    "bank": "6c04e513134c226a9fafd6afd056bfe1c90e4a8a0c439eac7122d454bc5338cf"
+  },
+  "sources": [
+    {
+      "name": "Kieso IFRS 5e",
+      "path": "C:/cek/AKM I/Intermediate Accounting IFRS 5th Edition (Donald Kieso) (z-library.sk, 1lib.sk, z-lib.sk)_compressed.pdf",
+      "sha256": "4d67dfa141c522a22a0594ec5a4cc3138e7dc8c39535792b9ccfc80bcf30a1e4",
+      "pages": 2484
+    },
+    {
+      "name": "RPP AKM II",
+      "path": "C:/cek/AKM II/Materi/RPP AKM II.pdf",
+      "sha256": "c5335aaf674a75bb9b6561c9807cb9b6b93e9f99b88fa1a29d5f4033e89358fa",
+      "pages": 4
+    }
+  ],
+  "modules": [
+    {
+      "tm": 9,
+      "title": "Liabilitas Jangka Panjang: Harga Obligasi dan Suku Bunga Efektif",
+      "chapter": 13,
+      "readingSha256": "ca592e02e0ba1928cdb18f7504f2d962f3873904068669b68915aa371050a65e",
+      "quizSha256": "af802358e655f48235a8ca0e0494e4033d7c3160b180c47abacb1487eec1648d",
+      "cardsSha256": "b1dd67f16142e5a68c8b2cf452ba3309bbe04440de44d3758aeafe9df69e4e55",
+      "bankSha256": "c91e3d79345fba85903e40ca2cefb54e1b83f4d8e2f7afc31bc06322d97c13be"
+    },
+    {
+      "tm": 10,
+      "title": "Wesel Jangka Panjang, Pelunasan Utang, dan Opsi Nilai Wajar",
+      "chapter": 13,
+      "readingSha256": "2d4517af193f5c00742d0fcf2b2488c80b245a2b59a2a60a8a6e71a4809df816",
+      "quizSha256": "5da0c1aea5fd180d19dee21eafc98c6db0385f93b065427c3163aee22b0544de",
+      "cardsSha256": "ac283ebe5bba40ab479626f227283aca56435fdb36001f8e469145478887c145",
+      "bankSha256": "5d465ca8de73966bde1da6fca1ba9c09bb5e8889cb8913eb20666281fbfae476"
+    },
+    {
+      "tm": 11,
+      "title": "Ekuitas Pemegang Saham, Saham Treasuri, dan Dividen",
+      "chapter": 14,
+      "readingSha256": "81148f1871c4336e9059613f13d03c49d901502b0daf5254c1045c38b0badc8b",
+      "quizSha256": "de1b24e46e0c42dbe445cfbb7c8c4854640771a053049bfd98d240cb96747104",
+      "cardsSha256": "5acb5470c7c3055aa2074d6ca1bdabd43d5d73963af2f1667c5a5680ca9a24ac",
+      "bankSha256": "33ccc6f14b29e0e7ffdaf819cd45dd952c75846fcc84bc24816effe9677b3a1d"
+    },
+    {
+      "tm": 12,
+      "title": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+      "chapter": 15,
+      "readingSha256": "4589c0ba79a1f9e934cbcb49923a36ee788730037d8772c27421f7cdb0a2e09e",
+      "quizSha256": "429bf88e7ff12e13ca856e8ec8721b3209753467ea63bfcd047574d6a23bf3a9",
+      "cardsSha256": "2ef6d6cd4647a0b0b2f7c0f6943de404ad7e3cbb4472219557b55b6a302b29a0",
+      "bankSha256": "2ab0e94d2ba180e3aeaba1cfdd064427ba2135e7072f2ce791bdb594a3fc3965"
+    },
+    {
+      "tm": 13,
+      "title": "Earnings Per Share: EPS Dasar dan EPS Dilusian",
+      "chapter": 15,
+      "readingSha256": "fa001c52bb24113ae4a07c918d5ab5ddc45d68fd33c644de798d36e9c4ebf4cb",
+      "quizSha256": "c5cf0ac1f7c8589bf2a6bea16676bb1a65d90ade4f0ce5879a576d61bf688ee1",
+      "cardsSha256": "af52a1a3ecdd8acf0d308087fddeda46f4484e134593d33e9317cc6f4f20d828",
+      "bankSha256": "2d830e43f6118db633ab09ad40a78f3e020f1de589ba841659ef9474283076a6"
+    },
+    {
+      "tm": 14,
+      "title": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
+      "chapter": 16,
+      "readingSha256": "99e9d546ea5d8392eb50c1885484af81c974bb947a8183a4ec09864e292a215c",
+      "quizSha256": "a181d154113b438e97cf542930d7c693cbf7cbfd83c0c46e0f9191dcd4cac53c",
+      "cardsSha256": "3b33c3f1e6a28c2d7d872d566a807acb131e494c624fd7b46140b91a90961cbc",
+      "bankSha256": "2c3adccc563bc2675191d68616ea19fa2048f13e7f5d5fe1e9e31d61e8224832"
+    },
+    {
+      "tm": 15,
+      "title": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
+      "chapter": 16,
+      "readingSha256": "e8bced201eb33f2877b1d7ae373ab18ce312b17f3fb1f5f36da71a6260ed8246",
+      "quizSha256": "933fea9a727292dc365e32bacf73eba6bed07566a4a398ab7fecdd446a169028",
+      "cardsSha256": "dc7a9de94fa2bda51f0423bfcf51a199e07334334e4254919eaaaf714165422e",
+      "bankSha256": "8b3e2dafa9ff1e6bd07b2c8e1ddf2961f4aeec27707133171e8d9861830020c5"
+    }
+  ],
+  "caveats": [
+    "RPP chapter numbers refer to an earlier sequence; local fifth-edition chapter names determine references.",
+    "Non-substantial debt modification wording in Kieso note 14 is not adopted as a general current-standard journal rule.",
+    "Evermaster, Roche, Graff and Mayhew numbers retain source rounding.",
+    "Mayhew unit is thousands of yen; source prose and journal disagree on the year.",
+    "SAK ETAP comparison and local-law extensions require separately assigned lecturer sources."
+  ]
+}

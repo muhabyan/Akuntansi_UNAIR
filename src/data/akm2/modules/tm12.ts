@@ -1,173 +1,336 @@
+// AKK202 TM12: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
 import type { Reading } from '../../../types';
-import {
-  CASE_CONVERTIBLE_BONDS,
-  CASE_STOCK_OPTIONS_SHARE_BASED_PAYMENT } from '../akm2PracticeCases';
-
-const SVG_CONVERTIBLES = `
-<svg class="course-diagram-svg" viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <rect class="svg-bg" x="10" y="10" width="660" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="660" height="38" rx="12" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="48" x2="670" y2="48" stroke="#334155" stroke-width="1"/>
-  <text class="svg-title" x="340" y="34" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">PEMISAHAN INSTRUMEN KEUANGAN MAJEMUK (PSAK 50 / IAS 32)</text>
-
-  <rect class="svg-card" x="30" y="55" width="190" height="145" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-  <text class="text-accent-blue" x="125" y="78" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">1. TOTAL PROCEEDS</text>
-  <text class="svg-muted" x="125" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Total Kas Penerbitan</text>
-  <line class="svg-divider" x1="45" y1="110" x2="205" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="125" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Harga jual gabungan</text>
-  <text class="svg-text" x="125" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">obligasi + hak konversi</text>
-  <text class="text-accent-green" x="125" y="168" fill="#34d399" font-size="9.5" font-weight="600" text-anchor="middle">Kas yang Diterima (100%)</text>
-
-  <text class="text-accent-amber" x="235" y="130" fill="#f59e0b" font-size="16" font-weight="800" text-anchor="middle">=</text>
-
-  <rect class="svg-card" x="255" y="55" width="185" height="145" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
-  <text class="text-accent-amber" x="347" y="78" fill="#f59e0b" font-size="11" font-weight="700" text-anchor="middle">2. KOMPONEN LIABILITAS</text>
-  <text class="svg-muted" x="347" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">PV Obligasi Tanpa Konversi</text>
-  <line class="svg-divider" x1="265" y1="110" x2="430" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="347" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Dihitung dari PV kupon +</text>
-  <text class="svg-text" x="347" y="148" fill="#cbd5e1" font-size="9.5" text-anchor="middle">PV pokok pada yield pasar</text>
-  <text class="text-accent-amber" x="347" y="168" fill="#f59e0b" font-size="9.5" font-weight="600" text-anchor="middle">Utang Obligasi</text>
-
-  <text class="text-accent-amber" x="455" y="130" fill="#f59e0b" font-size="16" font-weight="800" text-anchor="middle">+</text>
-
-  <rect class="svg-card" x="475" y="55" width="175" height="145" rx="8" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
-  <text class="text-accent-purple" x="562" y="78" fill="#a855f7" font-size="11" font-weight="700" text-anchor="middle">3. KOMPONEN EKUITAS</text>
-  <text class="svg-muted" x="562" y="98" fill="#94a3b8" font-size="9.5" text-anchor="middle">Nilai Residu Opsi Konversi</text>
-  <line class="svg-divider" x1="485" y1="110" x2="640" y2="110" stroke="#334155"/>
-  <text class="svg-text" x="562" y="130" fill="#cbd5e1" font-size="9.5" text-anchor="middle">Total Kas Diterima</text>
-  <text class="text-accent-red" x="562" y="148" fill="#f87171" font-size="9.5" text-anchor="middle">(-) Komponen Liabilitas</text>
-  <text class="text-accent-purple" x="562" y="168" fill="#a855f7" font-size="9.5" font-weight="600" text-anchor="middle">Premi Konversi Ekuitas</text>
-</svg>`;
 
 export const TM12_READING: Reading = {
-  tm: 12,
-  title: 'Sekuritas Dilutif, Obligasi Konversi, Waran Saham, dan Kompensasi Saham',
-  ref: 'Kieso IFRS 5e Ch. 16 | PSAK 50, PSAK 53 (IFRS 2), PSAK 71',
-  intro: 'TM 12 mengupas sekuritas yang berpotensi mengurangi kepemilikan pemegang saham lama (Sekuritas Dilutif): pemisahan komponen Liabilitas dan Ekuitas pada Obligasi Konversi (Metode Residu PSAK 50), akuntansi konversi saham, insentif konversi (Sweetener), waran saham terpisah vs melekat, serta opsi saham karyawan (Share-Based Payment - PSAK 53).',
-  objectives: [
-    'Menerapkan Metode Residu (With-and-Without Method) untuk memisahkan Komponen Liabilitas dan Komponen Ekuitas pada Obligasi Konversi sesuai PSAK 50.',
-    'Menjurnal pelaksanaan hak konversi obligasi menjadi saham biasa menggunakan Metode Nilai Buku (Book Value Method).',
-    'Menghitung dan mencatat Biaya Tambahan Pemanis Konversi (Sweetener Expense) untuk mempercepat konversi.',
-    'Membedakan perlakuan Waran Saham yang Dapat Dipisahkan (Detachable Warrants) vs Waran Melekat.',
-    'Menghitung Beban Kompensasi Opsi Saham Karyawan (PSAK 53) sepanjang Periode Jasa (Vesting Period) berdasarkan Nilai Wajar Model Black-Scholes.'
+  "tm": 12,
+  "title": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+  "ref": "Kieso IFRS 5e Ch. 15 | RPP AKM II, halaman PDF 3",
+  "intro": "TM12 membedakan convertible debt (utang konversi), share warrants (waran saham), dan share compensation (kompensasi saham). Fokusnya pada pemisahan liabilitas dan ekuitas serta pengakuan jasa karyawan selama masa vesting.",
+  "objectives": [
+    "Memisahkan komponen utang dan hak konversi dengan with-and-without method.",
+    "Membedakan conversion (konversi) dan repurchase (pembelian kembali).",
+    "Mencatat obligasi dengan waran dan pelaksanaan waran.",
+    "Mengukur kompensasi opsi pada grant date (tanggal hibah) dan mengalokasikannya selama service period (masa jasa)."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      title: 'Pemisahan Komponen Liabilitas & Ekuitas Instrumen Keuangan Majemuk',
-      svg: SVG_CONVERTIBLES,
-      caption: 'Gambar 12.1: Metode residu (with-and-without) pemisahan obligasi konversi sesuai PSAK 50.'
+      "kind": "h2",
+      "text": "1. Orientation / Quick Map"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat TM 12'
-    },
-    {
-      kind: 'table',
-      headers: ['Tahap', 'Fokus Analisis', 'Pertanyaan Kunci Mahasiswa', 'Output yang Dikuasai'],
-      rows: [
-        ['1', 'Hitung PV Liabilitas Murni', 'Berapa PV pokok dan bunga jika obligasi diterbitkan tanpa hak konversi?', 'Menetapkan nilai wajar komponen Utang Obligasi.'],
-        ['2', 'Hitung Residu Ekuitas', 'Berapa selisih Total Kas Diterima dikurangi PV Liabilitas Murni?', 'Mencatat Agio Saham - Opsi Konversi (Ekuitas).'],
-        ['3', 'Konversi Menjadi Saham', 'Bagaimana memindahkan carrying value utang dan opsi konversi ke modal saham biasa?', 'Menjurnal konversi metode nilai buku tanpa mengakui gain/loss.'],
-        ['4', 'Insentif Sweetener', 'Berapa kas tambahan yang dibayar perusahaan untuk membujuk investor segera konversi?', 'Mendebit Beban Konversi (Sweetener Expense) di Laba Rugi.'],
-        ['5', 'Opsi Saham PSAK 53', 'Berapa nilai wajar opsi pada grant date dan berapa tahun periode vesting?', 'Menjurnal beban kompensasi tahunan ke Agio Saham - Opsi Saham.']
+      "kind": "figure",
+      "title": "Peta konsep TM12",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 680 340\" role=\"img\" aria-label=\"Peta analisis TM12\" style=\"width:100%;height:auto;font-family:Inter,Arial,sans-serif\"><rect x=\"8\" y=\"8\" width=\"664\" height=\"324\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\"/><text x=\"28\" y=\"34\" font-size=\"16\" fill=\"#38bdf8\" font-weight=\"700\">Peta analisis TM12</text><rect x=\"24\" y=\"48\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"70\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">1. Klasifikasi</text><text x=\"40\" y=\"90\" font-size=\"12\" fill=\"#e2e8f0\">Baca hak konversi dan kewajiban penebusan.</text><rect x=\"24\" y=\"116\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"138\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">2. Pemisahan</text><text x=\"40\" y=\"158\" font-size=\"12\" fill=\"#e2e8f0\">Ukur liabilitas dahulu dan ekuitas residual.</text><rect x=\"24\" y=\"184\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"206\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">3. Penyelesaian</text><text x=\"40\" y=\"226\" font-size=\"12\" fill=\"#e2e8f0\">Bedakan konversi, pembelian kembali, dan waran.</text><rect x=\"24\" y=\"252\" width=\"632\" height=\"58\" rx=\"8\" fill=\"#1e293b\" stroke=\"#475569\"/><text x=\"40\" y=\"274\" font-size=\"14\" fill=\"#38bdf8\" font-weight=\"700\">4. Kompensasi</text><text x=\"40\" y=\"294\" font-size=\"12\" fill=\"#e2e8f0\">Ukur grant date dan alokasikan selama masa jasa.</text></svg>",
+      "overview": {
+        "heading": "Sekuritas Dilutif: Konversi, Waran, dan Kompensasi Saham",
+        "cards": [
+          {
+            "title": "Klasifikasi",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Baca hak konversi dan kewajiban penebusan."
+            ],
+            "takeaway": "Baca hak konversi dan kewajiban penebusan."
+          },
+          {
+            "title": "Pemisahan",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Ukur liabilitas dahulu dan ekuitas residual."
+            ],
+            "takeaway": "Ukur liabilitas dahulu dan ekuitas residual."
+          },
+          {
+            "title": "Penyelesaian",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Bedakan konversi, pembelian kembali, dan waran."
+            ],
+            "takeaway": "Bedakan konversi, pembelian kembali, dan waran."
+          },
+          {
+            "title": "Kompensasi",
+            "subtitle": "Langkah analisis",
+            "items": [
+              "Ukur grant date dan alokasikan selama masa jasa."
+            ],
+            "takeaway": "Ukur grant date dan alokasikan selama masa jasa."
+          }
+        ],
+        "footer": "RPP AKM II, halaman PDF 3; Kieso IFRS 5e Ch. 15."
+      },
+      "transcript": [
+        "Klasifikasi: Baca hak konversi dan kewajiban penebusan.",
+        "Pemisahan: Ukur liabilitas dahulu dan ekuitas residual.",
+        "Penyelesaian: Bedakan konversi, pembelian kembali, dan waran.",
+        "Kompensasi: Ukur grant date dan alokasikan selama masa jasa."
       ],
-      caption: 'Tabel 12.0: Roadmap belajar sekuritas dilutif dan kompensasi saham.'
+      "caption": "Peta pembelajaran mengikuti RPP AKM II, halaman PDF 3, dengan bab disesuaikan ke Kieso IFRS 5e Ch. 15."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi TM 12'
+      "kind": "h2",
+      "text": "2. Instrumen majemuk dan metode residual"
     },
     {
-      kind: 'formula',
-      text: '\\text{Komponen Ekuitas (Opsi Konversi)} = \\text{Total Kas Penerbitan} - \\text{PV Liabilitas Tanpa Opsi Konversi}',
-      note: 'PV Liabilitas dihitung menggunakan suku bunga pasar untuk obligasi non-konversi yang serupa risikonya.'
+      "kind": "p",
+      "text": "Convertible debt memberi pemegang hak mengubah utang menjadi saham. Compound instrument (instrumen majemuk) memiliki komponen liabilitas dan ekuitas. With-and-without method (metode residual) mengukur liabilitas sebagai nilai kini arus kas dengan yield utang serupa tanpa konversi; sisanya adalah conversion equity (ekuitas konversi). (Kieso IFRS 5e, halaman PDF 1256-1258.)"
     },
     {
-      kind: 'formula',
-      text: '\\text{Beban Kompensasi Tahunan} = \\frac{\\text{Total Estimasi Opsi yang Vested} \\times \\text{Nilai Wajar Opsi pada Grant Date}}{\\text{Jumlah Tahun Periode Jasa (Vesting Period)}}',
-      note: 'Nilai wajar opsi dikunci pada Grant Date (tanggal pemberian) dan tidak disesuaikan lagi terhadap fluktuasi harga pasar saham.'
+      "kind": "table",
+      "title": "Konversi dan waran",
+      "headers": [
+        "Instrumen",
+        "Pembayaran ketika menjadi saham",
+        "Pengukuran penerbitan"
+      ],
+      "rows": [
+        [
+          "Convertible bond",
+          "Pemegang menyerahkan hak tagih utang",
+          "Liabilitas dahulu, ekuitas residual"
+        ],
+        [
+          "Bond with warrants",
+          "Pemegang membayar exercise price (harga pelaksanaan)",
+          "Liabilitas dahulu, ekuitas residual"
+        ],
+        [
+          "Convertible preference shares",
+          "Pemegang menukar saham preferen",
+          "Ekuitas, kecuali ada kewajiban penebusan"
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1264, waran pada halaman PDF 1267-1270.",
+      "stackOnMobile": true
     },
     {
-      kind: 'example',
-      title: 'Contoh Mini Numerik: Penerbitan Obligasi Konversi PT Bank Central Asia Tbk',
-      blocks: [
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Conversion equity}=\\text{Issue proceeds}-PV(\\text{liability cash flows})",
+      "note": "Kupon kontraktual tetap berbeda dari yield pengukuran liabilitas. Kieso IFRS 5e, halaman PDF 1257-1258."
+    },
+    {
+      "kind": "h2",
+      "text": "3. Pengukuran Roche dan amortisasi liabilitas"
+    },
+    {
+      "kind": "example",
+      "title": "Roche Group: penerbitan obligasi konversi",
+      "blocks": [
         {
-          kind: 'p',
-          text: 'PT Bank Central Asia menerbitkan 2.000 lembar obligasi konversi 5 tahun (nominal Rp 1.000.000/lembar, total nominal Rp 2.000.000.000) pada harga par 100%. Kupon bunga 6% dibayar tahunan. Obligasi non-konversi serupa memiliki suku bunga pasar 9%.'
+          "kind": "p",
+          "text": "Roche menerbitkan 2.000 obligasi nominal €1.000 per obligasi, kupon tahunan 6%, dan umur empat tahun. Hasil penerbitan €2.000.000. Yield utang tanpa konversi 9%. Setiap obligasi dapat dikonversi menjadi 250 saham biasa nominal €1. (Kieso IFRS 5e, halaman PDF 1258.)"
         },
         {
-          kind: 'formula',
-          text: 'PV Pokok (9%, 5 thn: 0,64993) = 2.000.000.000 × 0,64993 = Rp 1.299.860.000\nPV Kupon (120 jt × PVIFA 9%, 5 thn: 3,88965) = Rp 466.758.000\nTotal Nilai Wajar Komponen Liabilitas = 1.299.860.000 + 466.758.000 = Rp 1.766.618.000\n\nKomponen Ekuitas (Opsi Konversi) = 2.000.000.000 - 1.766.618.000 = Rp 233.382.000'
+          "kind": "table",
+          "title": "Pemisahan hasil emisi Roche",
+          "headers": [
+            "Komponen",
+            "Jumlah"
+          ],
+          "rows": [
+            [
+              "PV pokok: €2.000.000 × 0,70843",
+              "€1.416.860"
+            ],
+            [
+              "PV kupon: €120.000 × 3,23972, dibulatkan",
+              "€388.766"
+            ],
+            [
+              "Liability component (komponen utang)",
+              "€1.805.626"
+            ],
+            [
+              "Conversion equity (ekuitas residual)",
+              "€194.374"
+            ]
+          ],
+          "caption": "Kieso IFRS 5e, halaman PDF 1258, Illustrations 15.3-15.4.",
+          "stackOnMobile": true
         },
         {
-          kind: 'callout',
-          variant: 'key',
-          title: 'Jurnal Penerbitan oleh PT BCA',
-          text: 'Debit: Kas Rp 2.000.000.000\nKredit: Utang Obligasi (Komponen Liabilitas) Rp 1.766.618.000\nKredit: Premi Saham - Opsi Konversi (Ekuitas) Rp 233.382.000'
-        }
-      ]
-    },
-    {
-      kind: 'solution-reveal',
-      title: 'Latihan Aktif: Pelaksanaan Konversi Obligasi Menjadi Saham',
-      prompt: 'Jika pada akhir tahun ke-2 seluruh obligasi PT BCA di atas dikonversi menjadi 200.000 lembar saham biasa (nominal Rp 5.000/lbr), dan pada tanggal konversi carrying value utang obligasi adalah Rp 1.847.000.000, buat jurnal konversinya menggunakan Book Value Method!',
-      blocks: [
-        {
-          kind: 'ul',
-          items: [
-            '**Hapus Liabilitas Obligasi**: Debit Utang Obligasi sebesar **Rp 1.847.000.000**.',
-            '**Hapus Opsi Konversi Ekuitas**: Debit Premi Saham - Opsi Konversi sebesar **Rp 233.382.000**.',
-            '**Terbitkan Modal Saham Biasa**: 200.000 lembar × Rp 5.000 nominal = **Rp 1.000.000.000**.',
-            '**Agio Saham Biasa (Penyama Seimbang)**: (1.847.000.000 + 233.382.000) - 1.000.000.000 = **Rp 1.080.382.000**.',
-            '**Jurnal Akuntansi**:\nDebit: Utang Obligasi Rp 1.847.000.000\nDebit: Premi Saham - Opsi Konversi Rp 233.382.000\nKredit: Modal Saham Biasa Rp 1.000.000.000\nKredit: Premi Saham - Biasa Rp 1.080.382.000'
+          "kind": "journal",
+          "title": "Penerbitan Roche",
+          "caption": "Kieso IFRS 5e, halaman PDF 1258-1259.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "€2.000.000"
+            },
+            {
+              "account": "Bonds Payable",
+              "credit": "€1.805.626",
+              "isCredit": true
+            },
+            {
+              "account": "Share Premium - Conversion Equity",
+              "credit": "€194.374",
+              "isCredit": true
+            }
           ]
         },
         {
-          kind: 'callout',
-          variant: 'warning',
-          title: 'Jebakan UAS Book Value Method',
-          text: 'Pada Metode Nilai Buku, **DILARANG MENGAKUI KEUNTUNGAN ATAU KERUGIAN (NO GAIN/LOSS)** pada saat konversi obligasi dilakukan! Seluruh nilai buku dialihkan ke ekuitas saham biasa.'
+          "kind": "p",
+          "text": "Tabel amortisasi buku memberi beban bunga tahun 2025 €162.506, kas kupon €120.000, amortisasi €42.506, dan nilai tercatat €1.848.132. Setelah periode 2026, nilai tercatat liabilitas €1.894.464. (Kieso IFRS 5e, halaman PDF 1260, Illustration 15.5.)"
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan TM 12'
+      "kind": "h2",
+      "text": "4. Konversi, pembelian kembali, dan inducement"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Pemisahan Instrumen Majemuk PSAK 50', 'Metode Residu untuk obligasi konversi dan waran saham.', 'Menghitung PV liabilitas dan saldo ekuitas opsi konversi.'],
-        ['2', 'Konversi Obligasi (Book Value Method)', 'Penghapusan akun utang obligasi dan pemindahan ke modal saham.', 'Menjurnal transaksi konversi tanpa gain/loss.'],
-        ['3', 'Insentif Konversi (Sweetener)', 'Perlakuan kas pemanis konversi sebagai beban periode berjalan.', 'Menjurnal beban konversi di laba rugi.'],
-        ['4', 'Waran Saham Terpisah vs Melekat', 'Metode Penambahan (Incremental) vs Proporsional untuk penerbitan waran.', 'Mencatat ekuitas waran saham.'],
-        ['5', 'Opsi Saham Karyawan (PSAK 53)', 'Model Nilai Wajar pada Grant Date dan amortisasi sepanjang Vesting Period.', 'Menjurnal beban kompensasi dan penerbitan saham saat opsi dieksekusi.']
-      ],
-      caption: 'Tabel 12.1: Matriks kompetensi komprehensif materi TM 12 AKM II.'
-    },
-    { kind: 'h2', text: '1. Akuntansi Sekuritas Dilutif & Obligasi Konversi' },
-    {
-      kind: 'p',
-      text: '==Sekuritas dilutif adalah instrumen keuangan yang memberikan hak kepada pemegangnya untuk memperoleh saham biasa, yang jika dieksekusi akan menurunkan laba per saham (EPS) pemegang saham yang ada.=='
-    },
-    CASE_CONVERTIBLE_BONDS,
-    { kind: 'h2', text: "2. Kompensasi Berbasis Saham (Opsi Saham Karyawan - PSAK 53 / IFRS 2)" },
-    {
-      kind: 'p',
-      text: "==PSAK 53 mewajibkan nilai wajar opsi saham diukur pada tanggal hibah (Grant Date) menggunakan model penetapan harga opsi (Black-Scholes). Nilai wajar tersebut diakui sebagai Beban Kompensasi secara bertahap sepanjang masa bakti (Vesting Period) dengan kredit ke akun Ekuitas Modal Saham - Opsi Saham.=="
-    },
-    CASE_STOCK_OPTIONS_SHARE_BASED_PAYMENT,
-    { kind: 'h2', text: '2. Rangkuman & Kunci Penguasaan Ujian (Key Takeaways)' },
-    {
-      kind: 'ul',
-      items: [
-        '**Pemisahan Obligasi Konversi**: Total Kas - PV Liabilitas Murni = Komponen Ekuitas.',
-        '**Konversi Book Value**: Tidak ada laba atau rugi yang diakui.',
-        '**Sweetener Expense**: Kas insentif tambahan langsung dibebankan ke Laba Rugi.',
-        `**PSAK 53 Opsi Saham**: Nilai wajar dikunci pada Grant Date dan diamortisasi sepanjang Vesting Period.`
+      "kind": "journal",
+      "title": "Roche: konversi pada akhir 2026",
+      "caption": "Kieso IFRS 5e, halaman PDF 1260-1261.",
+      "lines": [
+        {
+          "account": "Share Premium - Conversion Equity",
+          "debit": "€194.374"
+        },
+        {
+          "account": "Bonds Payable",
+          "debit": "€1.894.464"
+        },
+        {
+          "account": "Share Capital - Ordinary",
+          "credit": "€500.000",
+          "isCredit": true
+        },
+        {
+          "account": "Share Premium - Ordinary",
+          "credit": "€1.588.838",
+          "isCredit": true
+        }
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Book value method (metode nilai buku) memindahkan nilai tercatat liabilitas dan komponen ekuitas konversi ke modal serta agio saham tanpa laba rugi konversi. Pada repurchase sebelum jatuh tempo, imbalan dipisahkan ke komponen liabilitas dan ekuitas; laba rugi hanya dihitung atas bagian liabilitas. Induced conversion (konversi yang didorong insentif) membebankan nilai tambahan sweetener (insentif) pada periode berjalan. (Kieso IFRS 5e, halaman PDF 1261-1263.)"
+    },
+    {
+      "kind": "p",
+      "text": "Convertible preference shares tanpa mandatory redemption (penebusan wajib) dijelaskan sebagai ekuitas. Konversinya memakai nilai buku. Ketentuan penebusan wajib harus diperiksa sebelum menggunakan kesimpulan klasifikasi ini. (Kieso IFRS 5e, halaman PDF 1264-1265.)"
+    },
+    {
+      "kind": "h2",
+      "text": "5. Waran dan kompensasi berbasis saham"
+    },
+    {
+      "kind": "example",
+      "title": "Siemens: obligasi dengan waran",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Hasil penerbitan obligasi dengan waran Siemens €10.200.000. Nilai kini komponen liabilitas €9.707.852. With-and-without method menghasilkan Share Premium - Share Warrants €492.148. Pengukuran ini mengikuti residual yang digunakan buku IFRS. (Kieso IFRS 5e, halaman PDF 1268-1269, Illustration 15.8.)"
+        },
+        {
+          "kind": "journal",
+          "title": "Penerbitan gabungan, Interpretasi penggabungan dua jurnal buku",
+          "caption": "Kieso IFRS 5e, halaman PDF 1269.",
+          "lines": [
+            {
+              "account": "Cash",
+              "debit": "€10.200.000"
+            },
+            {
+              "account": "Bonds Payable",
+              "credit": "€9.707.852",
+              "isCredit": true
+            },
+            {
+              "account": "Share Premium - Share Warrants",
+              "credit": "€492.148",
+              "isCredit": true
+            }
+          ]
+        },
+        {
+          "kind": "callout",
+          "title": "Bedakan dua konteks alokasi",
+          "text": "Proportional method pada TM11 dipakai untuk penerbitan gabungan kelas saham. Untuk obligasi dengan waran dalam pembahasan IFRS Ch.15, gunakan komponen liabilitas dahulu dan ekuitas residual. (Kieso IFRS 5e, halaman PDF 1268-1269.)",
+          "variant": "warning"
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Equity-settled share options (opsi yang diselesaikan dengan ekuitas) diukur pada nilai wajar grant date. Beban dialokasikan selama service period yang umumnya sama dengan vesting period. Perubahan harga saham sesudah hibah tidak mengukur ulang nilai wajar opsi tersebut. Estimasi jumlah yang memenuhi service condition (syarat jasa) dapat disesuaikan. (Kieso IFRS 5e, halaman PDF 1274-1276.)"
+    },
+    {
+      "kind": "p",
+      "text": "Chen memiliki nilai kompensasi opsi ¥22.000.000 dan masa jasa dua tahun. Beban dialokasikan ¥11.000.000 tiap tahun. Ketika opsi yang sudah vested kedaluwarsa tanpa pelaksanaan, saldo agio dipindahkan dalam ekuitas; beban jasa yang sudah diterima tidak dibalik. (Kieso IFRS 5e, halaman PDF 1275-1276.)"
+    },
+    {
+      "kind": "h2",
+      "text": "6. Penyajian dan hubungan dengan EPS"
+    },
+    {
+      "kind": "p",
+      "text": "Hak konversi, waran, dan opsi dapat menambah jumlah saham biasa. Pengukuran akuntansi penerbitan pada TM12 perlu dibedakan dari asumsi penghitungan diluted EPS (EPS dilusian) pada TM13. Pemisahan debt and equity (utang dan ekuitas) menjelaskan sumber nilai instrumen. (Kieso IFRS 5e, halaman PDF 1256-1257, hubungan EPS pada halaman PDF 1292-1293.)"
+    },
+    {
+      "kind": "formula",
+      "text": "\\displaystyle \\text{Annual compensation}=\\frac{\\text{Grant-date compensation cost}}{\\text{Service years}}",
+      "note": "Formula alokasi rata ini mengikuti contoh Chen dengan masa jasa dua tahun. Kieso IFRS 5e, halaman PDF 1275."
+    },
+    {
+      "kind": "h2",
+      "text": "7. Latihan dan uji pemahaman"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Latihan komponen ekuitas Siemens",
+      "prompt": "Siemens menerima €10.200.000 dan mengukur komponen liabilitas €9.707.852. Hitung komponen ekuitas waran dan jelaskan urutan pengukurannya. Rujukan: Kieso IFRS 5e, halaman PDF 1269, Illustration 15.8.",
+      "blocks": [
+        {
+          "kind": "formula",
+          "text": "\\displaystyle \\text{Warrant equity}=10200000-9707852=492148",
+          "note": "Kieso IFRS 5e, halaman PDF 1269."
+        },
+        {
+          "kind": "p",
+          "text": "Liabilitas diukur terlebih dahulu sebagai nilai kini utang tanpa hak waran. Sisa hasil penerbitan dialokasikan ke ekuitas waran. (Kieso IFRS 5e, halaman PDF 1269.)"
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "8. Exam Toolkit"
+    },
+    {
+      "kind": "table",
+      "title": "Alur penyelesaian TM12",
+      "headers": [
+        "Langkah",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Klasifikasi",
+          "Baca hak konversi dan kewajiban penebusan."
+        ],
+        [
+          "Pemisahan",
+          "Ukur liabilitas dahulu dan ekuitas residual."
+        ],
+        [
+          "Penyelesaian",
+          "Bedakan konversi, pembelian kembali, dan waran."
+        ],
+        [
+          "Kompensasi",
+          "Ukur grant date dan alokasikan selama masa jasa."
+        ]
+      ],
+      "caption": "Kieso IFRS 5e, halaman PDF 1264.",
+      "stackOnMobile": true
+    },
+    {
+      "kind": "callout",
+      "title": "Batas sumber dan penomoran",
+      "text": "RPP menggunakan nomor bab dan beberapa rujukan lokal dari susunan lama. Materi ini mengikuti topik pertemuan di RPP dan isi Kieso IFRS edisi kelima. Angka contoh berasal dari buku; hasil hitungan tambahan diberi label Interpretasi. Pembandingan SAK ETAP memerlukan bacaan dosen tersendiri. (Kieso IFRS 5e, halaman PDF 1252.)",
+      "variant": "info"
     }
   ]
 };
