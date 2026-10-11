@@ -12,6 +12,15 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.3',
+    date: '11 Oktober 2026',
+    headline: 'Latihan UAS AKM II dalam bahasa Inggris',
+    notes: [
+      'Kuis pra-UAS AKM II diperluas menjadi 60 soal berbahasa Inggris, dengan pembahasan Indonesia, rujukan halaman buku, dan pengecoh yang menguji kesalahan hitungan atau pencatatan.',
+      'Bank soal pra-UAS berisi 14 kasus dengan tugas hitungan, jurnal, analisis, dan koreksi kesalahan. Prioritas latihan mengikuti RPP dan contoh Kieso sebagai perkiraan fokus ujian.',
+    ],
+  },
+  {
     version: 'v1.3.2',
     date: '11 Oktober 2026',
     headline: 'Perbaikan materi dan latihan AKM II pasca-UTS',

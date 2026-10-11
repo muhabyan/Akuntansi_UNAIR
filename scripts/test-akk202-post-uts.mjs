@@ -28,7 +28,7 @@ const tms = [9, 10, 11, 12, 13, 14, 15];
 const flat = blocks => blocks.flatMap(block => [block, ...(block.blocks ? flat(block.blocks) : [])]);
 const strings = value => typeof value === 'string' ? [value] : Array.isArray(value) ? value.flatMap(strings) : value && typeof value === 'object' ? Object.values(value).flatMap(strings) : [];
 const money = text => text ? Number(text.replace(/[^\d.,-]/g, '').replace(/\./g, '').replace(',', '.')) : 0;
-const pages = /(?:halaman PDF|PDF) (\d+)(?:-(\d+))?/g;
+const pages = /(?:halaman PDF|PDF pages|PDF) (\d+)(?:-(\d+))?/g;
 const checkText = value => {
   for (const text of strings(value)) {
     assert.ok(!text.includes('\u2014'), `Em dash in ${text.slice(0, 70)}`);
@@ -40,10 +40,12 @@ const checkText = value => {
     }
   }
 };
-const hasSource = text => /Kieso IFRS 5e, halaman PDF \d+/.test(text);
+const hasSource = text => /Kieso IFRS 5e, (?:halaman PDF|PDF pages) \d+/.test(text);
 const validateQuiz = item => {
   checkText(item);
   assert.ok(hasSource(item.q) && hasSource(item.explanation), 'Quiz source must be visible in prompt and explanation');
+  assert.match(item.q, /\b(?:What|Which|How)\b/i, 'English question asks for a definite accounting decision');
+  assert.ok(!/\b(?:Hitung|Berapa|Bagaimana|Jelaskan|menghasilkan|dicatat)\b/i.test(item.q), 'Quiz stem is English');
   assert.equal(item.options.length, 4);
   assert.equal(new Set(item.options).size, 4);
   assert.ok(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < 4);
@@ -67,7 +69,7 @@ assert.equal(sha(JSON.stringify(mod.AKK202_FC.filter(c => c.tm <= 7))), fixture.
 assert.equal(sha(JSON.stringify(mod.AKK202_BANK_UTS)), fixture.baselineUts.bank);
 assert.equal(readings[8], undefined);
 assert.deepEqual(Object.keys(readings).map(Number), [1, 2, 3, 4, 5, 6, 7, ...tms]);
-assert.equal(quizzes.length, 35); assert.equal(cards.length, 42); assert.equal(banks.length, 7);
+assert.equal(quizzes.length, 60); assert.equal(cards.length, 42); assert.equal(banks.length, 14);
 let journalCount = 0, formulaCount = 0;
 for (const source of fixture.modules) {
   const { tm, chapter, title } = source;
@@ -96,7 +98,7 @@ for (const source of fixture.modules) {
     }
     if (block.kind === 'solution-reveal') assert.ok(hasSource(block.prompt), 'Practice source visible before opening solution');
   }
-  const qs = quizzes.filter(q => q.tm === tm); assert.equal(qs.length, 5);
+  const qs = quizzes.filter(q => q.tm === tm); assert.equal(qs.length, fixture.practiceBlueprint.countsByTm[tm]);
   qs.forEach(validateQuiz);
   assert.equal(new Set(qs.map(q => q.answer)).size, 4, 'Keys cover all four options');
   const cs = cards.filter(c => c.tm === tm); assert.equal(cs.length, 6);
@@ -106,26 +108,31 @@ for (const source of fixture.modules) {
     assert.match(card.id, new RegExp(`^akk202-v3-tm${String(tm).padStart(2, '0')}-0[1-6]$`));
     assert.equal(card.phase, 'pra-uas'); assert.equal(card.topic, title);
   }
-  const bs = banks.filter(b => b.scope.startsWith(`TM ${tm}:`)); assert.equal(bs.length, 1);
+  const bs = banks.filter(b => b.scope.startsWith(`TM ${tm}:`)); assert.equal(bs.length, 2);
   checkText(bs);
   for (const item of bs) {
     assert.ok(hasSource(item.question) && hasSource(item.answerGuide));
-    assert.ok(item.instructions.length >= 4);
+    assert.equal(item.instructions.length, 5);
+    assert.match(item.question, /^Case \d+[AB]:/);
+    assert.ok(item.instructions.every(s => /^(Calculate|Prepare|Explain|Correct|Quantify|Replace|State|Allocate|Reconcile)/.test(s)), 'Case instructions are English and require application');
+    assert.equal(item.rubric.length, 4);
+    assert.equal(item.rubric.reduce((n, s) => n + Number(s.match(/^\d+/)[0]), 0), 100, 'Case rubric totals 100');
+    assert.ok(item.context.includes('perkiraan') && item.context.includes('RPP'), 'Priorities are an inference from the assigned syllabus');
     assert.ok(strings(item).every(s => !/\n|\*\*|\\[$*.]|`/.test(s)), 'EssayBank fields render as plain text');
   }
 }
 assert.equal(new Set(cards.map(c => c.id)).size, cards.length);
 assert.equal(new Set(quizzes.map(q => q.q)).size, quizzes.length);
-const expectedKeys = {
-  9: ['€4.614', 'Sepuluh periode; bunga 5%', '€107.786', '€1.333', 'Mengurangi nilai awal; yield meningkat'],
-  10: ['USD694,96', '€6.075', 'Rugi aset €5.000.000; laba utang €4.000.000', 'Laba nilai wajar melalui OCI', 'Suku bunga efektif historis'],
-  11: ['£10.000', 'USD2.000', 'Diungkapkan tanpa pengakuan liabilitas', 'HKD750.000', 'Pendapatan sistematis sepanjang biaya terkait'],
-  12: ['€194.374', '€492.148', 'Tidak mengakui laba rugi konversi', '¥11.000.000', 'Beban tetap; agio dipindahkan'],
-  13: ['103.000 saham', '£1,97', '600 saham', 'Dikeluarkan karena efeknya antidilutif', 'Dividen preferen tahun berjalan'],
-  14: ['£1.732', 'Lifetime ECL; nilai tercatat bruto', '€4.614', 'Model bisnis dan arus kas', '¥12.680'],
-  15: ['£215.000', 'Kas bertambah; investasi berkurang', 'Tetap dalam ekuitas tanpa recycling', 'Uji dengan bukti hubungan aktual', 'Kekuasaan dan pengaruh atas imbalan'],
-};
-const checkKeys = data => tms.forEach(tm => assert.deepEqual(data.filter(q => q.tm === tm).map(q => q.options[q.answer]), expectedKeys[tm], `TM${tm}: audited keys`));
+const checkKeys = data => tms.forEach(tm => {
+  const actual = data.filter(q => q.tm === tm).map(q => q.options[q.answer]);
+  const expected = fixture.practiceBlueprint.quizAudit.filter(q => q.tm === tm).map(q => q.correct);
+  assert.deepEqual(actual, expected, `TM${tm}: reviewed source-based keys`);
+});
+assert.equal(fixture.practiceBlueprint.quizAudit.length, 60);
+assert.equal(fixture.practiceBlueprint.quizAudit.filter(q => q.skill === 'calculation').length, 33);
+assert.equal(fixture.practiceBlueprint.quizAudit.filter(q => q.skill === 'journal').length, 8);
+assert.equal(quizzes.filter(q => q.difficulty === 'advanced').length, 25);
+for (const position of [0, 1, 2, 3]) assert.equal(quizzes.filter(q => q.answer === position).length, 15, 'Answer positions balanced');
 checkKeys(quizzes);
 
 // Independent recalculation of the errors this change addresses and the worked examples.
@@ -152,13 +159,48 @@ const course = mod.SEMESTERS.flatMap(s => s.groups.flatMap(g => g.courses)).find
 assert.equal(course.flashcardCount, mod.AKK202_FC.length);
 assert.deepEqual(course.materiTM8_14.map(m => m.tm), tms);
 course.materiTM8_14.forEach(m => assert.equal(m.title, readings[m.tm].title));
-assert.equal(mod.RELEASES[0].version, 'v1.3.2');
-assert.equal(mod.RELEASES[1].version, 'v1.3.1');
+assert.equal(mod.RELEASES[0].version, 'v1.3.3');
+assert.equal(mod.RELEASES[1].version, 'v1.3.2');
+assert.equal(mod.RELEASES[2].version, 'v1.3.1');
 
 // Optional local provenance check: portable CI needs no access to the private source folder.
 if (process.env.AKK202_VERIFY_LOCAL_SOURCES === '1') {
   for (const source of fixture.sources) assert.equal(sha(readFileSync(source.path)), source.sha256, `${source.name}: source fingerprint`);
 }
+
+// Recalculate new numerical keys from source facts; compare with the selected answer.
+const euro = n => '€' + rounded(n).toLocaleString('en-US');
+const gbp = n => '£' + rounded(n).toLocaleString('en-US');
+const yen = n => '¥' + rounded(n).toLocaleString('en-US');
+const usd = n => '$' + rounded(n, 2).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const key = (tm, ordinal) => { const q = quizzes.filter(q => q.tm === tm)[ordinal - 1]; return q.options[q.answer]; };
+assert.equal(key(9, 7), euro(92892 + rounded(92892 * .05) - 4000));
+assert.equal(key(9, 9), euro(100000 * .74409 + 4000 * 8.53020));
+assert.equal(key(10, 6), usd((7721.8 + 694.96) * .09));
+assert.equal(key(10, 7), euro(16000000 - 320000 * 10));
+assert.equal(key(11, 6), gbp(50000 - 100000 * .10));
+assert.equal(key(12, 6), euro(1894464 + 194374 - 500000));
+assert.equal(key(12, 7), yen(22000000 * 2000 / 10000));
+assert.equal(key(12, 8), yen(2000 * 6000 + 4400000 - 2000 * 100));
+assert.equal(key(13, 6), '£' + (210000 / 100000).toFixed(2));
+assert.equal(key(13, 7), gbp(80000 * 9 / 12 * (1 - .4)));
+assert.equal(key(13, 8), (32000 * 9 / 12).toLocaleString('en-US') + ' shares');
+assert.equal(key(13, 9), (1500 * 30 / 50).toLocaleString('en-US') + ' shares');
+assert.equal(key(14, 7), gbp(4324 + 4297));
+assert.equal(key(15, 6), euro(24000 - 20750));
+assert.equal(1190000, 100000 + 900000 + 300000 - 10000 * 11);
+assert.equal(284000, 103600 + 180400);
+assert.equal(4537, (200000 - 180400 - (103600 - 93537)) - (200000 - 195000));
+assert.equal(16200000, 2000 * 6000 + .2 * 22000000 - 2000 * 100);
+assert.equal(17600000, .8 * 22000000);
+assert.ok(36000 / 24000 < 37200 / 20000, 'Second Mayfield series has lower incremental EPS');
+assert.ok(37200 / 20000 < 246000 / 124000, 'First Mayfield series remains dilutive after including the second');
+assert.equal(1750, (24000 - 20750) - (24000 - 22500));
+for (const [tm, terms] of [[9, ['93.537', '1.333']], [10, ['9.174,27', 'Bonds Payable']], [11, ['1.190.000', 'Share Premium - Treasury']], [12, ['16.200.000', '17.600.000']], [13, ['1,86', '1,50', '3,60']], [14, ['9.537', '4.537']], [15, ['1.750', 'terlalu tinggi £5.000']]]) {
+  const guides = banks.filter(b => b.scope.startsWith('TM ' + tm + ':')).map(b => b.answerGuide).join(' ');
+  terms.forEach(term => assert.ok(guides.includes(term), 'Bank worked answer includes independently recalculated result: ' + term));
+}
+
 let mutationCount = 0;
 const reject = fn => { assert.throws(fn); mutationCount++; };
 const q1 = structuredClone(quizzes[0]); q1.options[0] += ' tambahan'; reject(() => validateQuiz(q1));
@@ -166,5 +208,6 @@ const q2 = structuredClone(quizzes[0]); q2.explanation = 'Tanpa rujukan'; reject
 const q3 = structuredClone(quizzes[0]); q3.q += '\u2014'; reject(() => validateQuiz(q3));
 const q4 = structuredClone(quizzes[0]); q4.explanation += ' bukan salah melainkan benar'; reject(() => validateQuiz(q4));
 const q5 = structuredClone(quizzes); q5[0].answer = (q5[0].answer + 1) % 4; reject(() => checkKeys(q5));
+const q6 = structuredClone(quizzes[0]); q6.q = 'Hitung bunga? Source: Kieso IFRS 5e, PDF pages 1112.'; reject(() => validateQuiz(q6));
 const j = structuredClone(flat(readings[9].blocks).find(b => b.kind === 'journal')); j.lines[0].debit = '€1'; reject(() => validateJournal(j));
-console.log(`AKK202 post-UTS PASS: seven readings; ${journalCount} balanced journals; ${formulaCount} KaTeX formulas; 35 quizzes, 42 cards, 7 cases; unchanged UTS; ${mutationCount} rejected mutations.`);
+console.log(`AKK202 post-UTS PASS: seven readings; ${journalCount} balanced journals; ${formulaCount} KaTeX formulas; 60 English quizzes, 42 cards, 14 English cases; unchanged UTS; ${mutationCount} rejected mutations.`);

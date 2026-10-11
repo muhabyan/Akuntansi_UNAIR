@@ -98,7 +98,7 @@ const countByTm = (items) => items.reduce((map, item) => map.set(item.tm, (map.g
 const quiz = mod.AKK202_QUIZ_UTS;
 assert.equal(mod.AKK202_QUIZ.length, quiz.length + mod.AKK202_QUIZ_UAS.length);
 // The five stale TM8 items (old UTS review) were removed; TM9–TM15 items are rebuilt from Kieso.
-assert.equal(mod.AKK202_QUIZ_UAS.length, 35, 'TM9–TM15 quiz covers seven post-UTS meetings');
+assert.equal(mod.AKK202_QUIZ_UAS.length, 60, 'TM9–TM15 quiz covers seven post-UTS meetings');
 assert.ok(mod.AKK202_QUIZ_UAS.every((item) => item.tm >= 9 && item.tm <= 15), 'UAS quiz keeps TM9–TM15 only');
 const quizCounts = countByTm(quiz);
 assert.deepEqual([...quizCounts.keys()].sort((a, b) => a - b), PRA_UTS_TMS, 'quiz UTS covers exactly TM1–TM7');
@@ -191,8 +191,8 @@ const BANK_UTS_CASES = [[1, '1'], [2, '2'], [3, '3'], [4, '4'], [5, '5'], [6, '6
 assert.equal(bank.length, BANK_UTS_CASES.length, 'bank soal UTS: one case per TM plus Studi Kasus 6B');
 assert.equal(mod.AKK202_BANK.length, bank.length + mod.AKK202_BANK_UAS.length);
 // The stale TM8 case was removed; the TM9–TM15 cases are rebuilt from Kieso.
-assert.equal(mod.AKK202_BANK_UAS.length, 7, 'TM9–TM15 bank soal covers seven post-UTS meetings');
-assert.deepEqual(mod.AKK202_BANK_UAS.map((item) => Number(/^TM (\d+):/.exec(item.scope)?.[1])), [9, 10, 11, 12, 13, 14, 15], 'UAS bank soal covers TM9–TM15 only');
+assert.equal(mod.AKK202_BANK_UAS.length, 14, 'TM9–TM15 bank soal covers seven post-UTS meetings');
+assert.deepEqual(mod.AKK202_BANK_UAS.map((item) => Number(/^TM (\d+):/.exec(item.scope)?.[1])), [9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15], 'UAS bank soal covers TM9–TM15 only');
 assertNoOldTopics('bank soal UTS', bank);
 const plainTextFields = ['question', 'scope', 'difficulty', 'context', 'answerGuide'];
 const listFields = ['data', 'instructions', 'outputFormat', 'rubric'];
