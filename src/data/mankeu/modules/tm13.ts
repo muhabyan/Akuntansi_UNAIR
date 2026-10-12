@@ -1,158 +1,181 @@
 import type { Reading } from '../../../types';
-import { CASE_MULTINATIONAL_FX_RISK } from '../mankeuPracticeCases';
-
-const SVG_FX_PARITY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgMk13" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk13)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">TRIANGLE HUBUNGAN PARITAS KEUANGAN INTERNASIONAL (PPP, IFE, &amp; IRP)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">FOREX PARITY</text>
-
-  <!-- Left: Parity Triangle Graphic (Width 450px) -->
-  <g transform="translate(50, 75)">
-    <!-- Top Apex: Diferensial Inflasi (Inflation Differential) -->
-    <rect class="svg-card" x="110" y="0" width="220" height="50" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <text class="text-accent-blue" x="220" y="22" fill="#38bdf8" font-size="9.5" font-weight="800" text-anchor="middle">DIFERENSIAL INFLASI (Δi)</text>
-    <text class="svg-text" x="220" y="38" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Selisih Inflasi Domestik vs Asing</text>
-
-    <!-- Bottom Left: Diferensial Suku Bunga (Interest Rate Differential) -->
-    <rect class="svg-card" x="0" y="170" width="200" height="50" rx="8" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <text class="text-accent-amber" x="100" y="192" fill="#fbbf24" font-size="9.5" font-weight="800" text-anchor="middle">DIFERENSIAL SUKU BUNGA (Δr)</text>
-    <text class="svg-text" x="100" y="208" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Selisih Bunga BI vs The Fed</text>
-
-    <!-- Bottom Right: Perubahan Kurs Spot / Forward (Exchange Rate) -->
-    <rect class="svg-card" x="240" y="170" width="200" height="50" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <text class="text-accent-green" x="340" y="192" fill="#34d399" font-size="9.5" font-weight="800" text-anchor="middle">PERUBAHAN KURS (ΔS / F)</text>
-    <text class="svg-text" x="340" y="208" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Depresiasi / Apresiasi Rupiah</text>
-
-    <!-- Triangle Side 1: PPP (Top to Bottom Right) -->
-    <line x1="280" y1="50" x2="360" y2="170" stroke="#38bdf8" stroke-width="2"/>
-    <rect class="svg-subcard" x="310" y="95" width="80" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="350" y="110" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">TEORI PPP</text>
-
-    <!-- Triangle Side 2: Fisher Effect (Top to Bottom Left) -->
-    <line x1="160" y1="50" x2="80" y2="170" stroke="#fbbf24" stroke-width="2"/>
-    <rect class="svg-subcard" x="50" y="95" width="95" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="97" y="110" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">FISHER EFFECT</text>
-
-    <!-- Triangle Side 3: IRP / IFE (Bottom Horizontal) -->
-    <line x1="200" y1="195" x2="240" y2="195" stroke="#34d399" stroke-width="2"/>
-    <rect class="svg-subcard" x="185" y="225" width="70" height="22" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="220" y="240" fill="#34d399" font-size="8" font-weight="800" text-anchor="middle">IRP / IFE</text>
-  </g>
-
-  <!-- Right: 3 Parity Theorems Cards -->
-  <g transform="translate(520, 75)">
-    <rect class="svg-subcard" x="0" y="0" width="345" height="70" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
-    <text class="text-accent-blue" x="14" y="20" fill="#38bdf8" font-size="9.5" font-weight="800">1. PURCHASING POWER PARITY (PPP)</text>
-    <text class="svg-text" x="14" y="38" fill="#cbd5e1" font-size="8">Mata uang negara dengan inflasi lebih tinggi akan terdepresiasi</text>
-    <text class="svg-text" x="14" y="52" fill="#cbd5e1" font-size="8">sebesar selisih inflasi agar daya beli barang setara (Law of One Price).</text>
-
-    <rect class="svg-subcard" x="0" y="80" width="345" height="70" rx="8" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
-    <text class="text-accent-amber" x="14" y="100" fill="#fbbf24" font-size="9.5" font-weight="800">2. INTEREST RATE PARITY (IRP)</text>
-    <text class="svg-text" x="14" y="118" fill="#cbd5e1" font-size="8">Premi kurs forward mencerminkan selisih suku bunga kedua negara</text>
-    <text class="svg-text" x="14" y="132" fill="#cbd5e1" font-size="8">sehingga investor tidak dapat melakukan Covered Interest Arbitrage.</text>
-
-    <rect class="svg-subcard" x="0" y="160" width="345" height="70" rx="8" fill="#1e293b" stroke="#34d399" stroke-width="1"/>
-    <text class="text-accent-green" x="14" y="180" fill="#34d399" font-size="9.5" font-weight="800">3. INTERNATIONAL FISHER EFFECT (IFE)</text>
-    <text class="svg-text" x="14" y="198" fill="#cbd5e1" font-size="8">Mata uang dengan suku bunga nominal tinggi akan terdepresiasi</text>
-    <text class="svg-text" x="14" y="212" fill="#cbd5e1" font-size="8">karena suku bunga tinggi mengindikasikan ekspektasi inflasi tinggi.</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Jika kondisi paritas terpenuhi secara sempurna di pasar bebas modal, laba arbitrase lintas mata uang menjadi nol.</text>
-</svg>`;
-
 export const TM13_READING: Reading = {
-  tm: 13,
-  title: 'Multinational Financial Management, Currency Risk, & International Parity',
-  ref: 'Brigham & Ehrhardt Ch. 17 | Teori Paritas Valas (IRP, PPP, IFE) | Lindung Nilai (Hedging) Valuta Asing',
-  intro: 'TM 13 membahas manajemen keuangan internasional untuk perusahaan multinasional (MNC). Topiknya struktur pasar valas (Spot vs Forward Market), kuotasi mata uang (Direct vs Indirect Quotation, Cross Rates), teori paritas internasional (Interest Rate Parity / IRP, Purchasing Power Parity / PPP, International Fisher Effect / IFE), dan strategi lindung nilai (Forward Contract, Money Market Hedge, Currency Options).',
-  objectives: [
-    'Menghitung kurs silang (Cross Exchange Rates) dan mengidentifikasi peluang Triangular Arbitrage.',
-    'Menerapkan Teori Interest Rate Parity (IRP) untuk menentukan kurs forward yang wajar.',
-    'Membedakan 3 jenis eksposur valuta asing: Transaksi, Translasi/Akuntansi, dan Ekonomi/Operasi.',
-    'Merancang strategi Forward Market Hedge dan Money Market Hedge untuk melindungi piutang/utang impor-ekspor.'
+  "tm": 13,
+  "title": "Manajemen Keuangan Multinasional",
+  "ref": "Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)",
+  "intro": "Menggunakan kontrak, buku lokal dan sumber yang disebutkan untuk menyelesaikan keputusan manajemen keuangan multinasional secara bertahap.",
+  "objectives": [
+    "Menjelaskan konsep dan asumsi manajemen keuangan multinasional.",
+    "Menghitung hasil dengan satuan, tenor dan pembulatan yang tepat.",
+    "Menilai keputusan serta batas model dan rujukannya."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 13.1: Hubungan Teori Paritas Kurs Valas dan Manajemen Risiko Internasional.',
-      svg: SVG_FX_PARITY
+      "kind": "h2",
+      "text": "Pintu masuk: cakupan dan sumber"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 13'
+      "kind": "p",
+      "text": "TM13 mengikuti Kontrak MK2026 Sheet 1 baris 30. Fokus: Manajemen Keuangan Multinasional. Buku kontrak edisi 15 dipetakan ke buku lokal edisi 16 berdasarkan topik, dengan nomor halaman cetak dan PDF yang dapat ditelusuri. Angka latihan adalah skenario hipotetis, bukan harga pasar atau ketentuan pajak terbaru. Rujukan utama: Brigham & Houston, FFM16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
     },
     {
-      kind: 'table',
-      headers: ['Teori Paritas Valas', 'Hubungan Variabel Finansial', 'Formula Keseimbangan', 'Kondisi Jika Paritas Terganggu'],
-      rows: [
-        ['Interest Rate Parity (IRP)', 'Selisih Suku Bunga Domestik vs Asing dengan Forward Premium/Discount.', '$F_t = S_0 \\times \\frac{1 + r_{\\text{home}}}{1 + r_{\\text{foreign}}}$', 'Memicu Covered Interest Arbitrage oleh bank investasi internasional.'],
-        ['Purchasing Power Parity (PPP)', 'Perbedaan Tingkat Inflasi dengan Ekspektasi Perubahan Kurs Spot.', '$E(S_t) = S_0 \\times \\frac{1 + I_{\\text{home}}}{1 + I_{\\text{foreign}}}$', 'Mata uang negara dengan inflasi tinggi akan terdepresiasi sebesar selisih inflasi.'],
-        ['International Fisher Effect (IFE)', 'Selisih Suku Bunga Nominal dengan Perubahan Kurs Spot Masa Depan.', '$\\frac{S_t - S_0}{S_0} \\approx r_{\\text{home}} - r_{\\text{foreign}}$', 'Suku bunga nominal tinggi mencerminkan ekspektasi depresiasi mata uang.'],
-        ['Cross Exchange Rate', 'Penentuan kurs antara dua mata uang non-USD melalui kurs acuan USD.', '$\\text{Kurs } (A/B) = \\frac{\\text{Kurs } (A/USD)}{\\text{Kurs } (B/USD)}$', 'Penyimpangan antar pasar valas memicu Triangular Arbitrage instan.']
-      ],
-      caption: 'Tabel 13.0: Ringkasan teori paritas nilai tukar internasional.'
+      "kind": "p",
+      "text": "Paket TM ini mempunyai 8 kuis, enam flashcard, dan dua kasus bank soal. Dugaan prioritas ujian berasal dari kontrak dan contoh pembahasan lokal; tidak ada arsip ujian untuk memastikan bentuk soal. Kerjakan dengan rumus, langkah antara, satuan, periode bunga, pembulatan akhir dan alasan keputusan."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: IRP & Forward Hedging'
+      "kind": "h2",
+      "text": "1. Lokasi lintas negara menambah dimensi keputusan"
     },
     {
-      kind: 'formula',
-      text: `\\text{Interest Rate Parity (IRP)}: \\quad \\frac{F_t - S_0}{S_0} = \\frac{r_{\\text{home}} - r_{\\text{foreign}}}{1 + r_{\\text{foreign}}} \\approx r_{\\text{home}} - r_{\\text{foreign}}
-\\text{Cross Exchange Rate}: \\quad \\left(\\frac{\\text{IDR}}{\\text{JPY}}\\right) = \\frac{\\text{IDR/USD}}{\\text{JPY/USD}}
-\\text{Penghematan Forward Hedge vs Unhedged}: \\quad \\Delta \\text{Kas} = |\\text{Nilai Valas} \\times F| - |\\text{Nilai Valas} \\times S_{\\text{actual}}|`,
-      note: 'Jika suku bunga dalam negeri ($r_h$) lebih tinggi dibanding suku bunga luar negeri ($r_f$), mata uang asing WAJIB diperdagangkan dengan status Forward Premium ($F > S_0$).'
+      "kind": "p",
+      "text": "Multinational financial management menangani perusahaan dengan operasi lintas negara. Di samping kas dan risiko bisnis, keputusan mencakup mata uang, perbedaan praktik hukum/pajak, hambatan pemulangan dana, risiko negara dan perubahan hubungan perdagangan. Kontrak kuliah menulis Bab 19 untuk topik ini pada edisi 15; buku lokal edisi 16 memindahkannya ke Bab 18. Bab 19 buku lokal membahas derivatif, sehingga rujukan di sini memakai nama topik dan halaman buku yang benar. [hal. cetak 625-635; PDF667-677; Kontrak MK2026 Sheet 1 B30:E30]"
     },
     {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
+      "kind": "h2",
+      "text": "2. Arah kurs dan kurs silang"
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Perhitungan Cross Exchange Rate IDR/JPY',
-      prompt: 'Di pasar valas Jakarta dan Tokyo berlaku kuotasi: USD/IDR = Rp 16.000 dan USD/JPY = JPY 160. Hitung kurs silang (Cross Rate) IDR per 1 JPY dan tentukan nilai rupiah untuk transaksi impor sebesar JPY 10.000.000!',
-      blocks: [
+      "kind": "p",
+      "text": "Kuotasi IDR p er USD menyebut rupiah yang diperlukan untuk USD1. Untuk utang USD, kalikan jumlah dolar dengan IDR/USD; untuk menukar rupiah ke USD, bagi rupiah dengan kurs yang sama. Kurs silang dibuat dengan menghapus satuan mata uang perantara: (IDR/USD)/(JPY/USD)=IDR/JPY. Pada praktiknya harga beli dan jual dapat berbeda, tetapi soal harus menyatakan apakah spread dan biaya diabaikan. [hal. cetak 636-638; PDF678-680]"
+    },
+    {
+      "kind": "formula",
+      "text": "S_{IDR/JPY}=\\frac{S_{IDR/USD}}{S_{JPY/USD}}",
+      "note": "16.000 IDR/USD dibagi160 JPY/USD menghasilkan100 IDR/JPY. Rujukan: hal. cetak636-638, PDF678-680."
+    },
+    {
+      "kind": "h2",
+      "text": "3. Spot, forward, dan paritas suku bunga"
+    },
+    {
+      "kind": "p",
+      "text": "Spot adalah pertukaran dengan penyelesaian sesuai mekanisme transaksi spot; forward adalah kontrak untuk pertukaran pada tanggal mendatang dengan kurs yang disepakati kini. Covered interest parity menghubungkan bunga dan forward ketika investasi lintas mata uang dilindungi dari perubahan kurs. Bunga wajib sesuai tenor. Tarif tahunan sederhana 6% dan 4% menjadi 3% dan 2% untuk enam bulan, bukan tetap 6% dan 4%. [hal. cetak 638-642; PDF680-684]"
+    },
+    {
+      "kind": "formula",
+      "text": "F_{h/f}=S_{h/f}\\frac{1+r_h}{1+r_f}",
+      "note": "Kuotasi mata uang domestik per mata uang asing; rh dan rf adalah bunga setenor. Spot16.000 dan bunga6%/4% setahun memberiF16.307,69 IDR/USD. Rujukan: hal. cetak640-642, PDF682-684."
+    },
+    {
+      "kind": "p",
+      "text": "Paritas merupakan kondisi model tanpa friksi; akses bunga, spread, risiko lawan transaksi dan batas modal dapat menjelaskan perbedaan dengan penawaran bank. Forward paritas tidak sama dengan ramalan spot yang pasti terjadi. Arbitrase tertutup dalam model perlu transaksi sebanding dan fasilitas dana yang benar-benar tersedia. [hal. cetak 640-642; PDF682-684]"
+    },
+    {
+      "kind": "h2",
+      "text": "4. PPP dan inflasi sebagai model proyeksi"
+    },
+    {
+      "kind": "formula",
+      "text": "E(S_1)=S_0\\frac{1+\\pi_h}{1+\\pi_f}",
+      "note": "PPP relatif dengan kuotasi domestik per asing. Inflasi8%/3% dan spot16.000 memberi16.776,70. Ini proyeksi model, bukan kurs kontrak terjamin. Rujukan: hal. cetak642-646, PDF684-688."
+    },
+    {
+      "kind": "p",
+      "text": "Purchasing power parity, paritas daya beli, memakai perbedaan inflasi dan harga barang. Hambatan perdagangan, biaya distribusi, perbedaan produk dan perubahan harga dapat membuat hubungan tidak tepat pada jangka pendek. Hubungan bunga nominal dan inflasi juga perlu mempertimbangkan bunga riil serta premi risiko. Gunakan asumsi inflasi yang dinyatakan, tanpa menyajikan angka latihan sebagai inflasi atau kurs aktual. [hal. cetak 642-647; PDF684-689]"
+    },
+    {
+      "kind": "h2",
+      "text": "5. Lindung nilai dan penilaian proyek"
+    },
+    {
+      "kind": "p",
+      "text": "Piutang valas membuat eksportir menjual valas forward; utang valas membuat importir membeli valas forward. Hedge mengunci kas sekaligus melepaskan keuntungan dari pergerakan spot yang menguntungkan. Transaction exposure adalah dampak transaksi valas tertentu, translation exposure berkaitan pelaporan/konsolidasi, dan economic exposure adalah dampak perubahan kurs pada kemampuan menghasilkan kas bisnis. Tidak semua risiko dapat dihilangkan oleh satu kontrak. [hal. cetak 638-655; PDF680-697]"
+    },
+    {
+      "kind": "p",
+      "text": "Dalam penilaian rupiah, konversikan kas valas ke IDR pada kurs asumsi tanggal kas lalu diskontokan dengan biaya modal IDR yang sesuai risiko. Alternatif penilaian dalam mata uang asing memerlukan diskonto asing yang konsisten. Proyek USD10.000 dengan kursakhir 17.000 dan diskonto IDR10% mempunyaiPV170 juta/1,10=154,545455 juta. Dengan investasi 150 juta, NPV4,545455 juta; kurs 15.000 justru memberi NPV minus 13,636364 juta. Uji pembatasan kas, risiko negara dan skenario kurs sebelum menyimpulkan kelayakan. [hal. cetak 649-655; PDF691-697]"
+    },
+    {
+      "kind": "h2",
+      "text": "Latihan kasus 1: Mata uang, tenor, dan biaya lindung nilai"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Utang importir USD100.000, jatuh tempo enam bulan. Spot IDR16.000/USD.",
+        "Bunga tahunan sederhana IDR6% dan USD4%; penawaran forward enam bulan IDR16.300/USD.",
+        "Skenario spot jatuh tempo IDR17.000 atau IDR15.500 per USD; tanpa biaya dan risiko gagal bayar kontrak."
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Hitung forward paritas enam bulan dan selisih terhadap penawaran. Hitung pembayaran dengan forward dan tanpa hedge pada dua skenario. Jelaskan arah hedge serta perbedaan paritas, kurs kontrak, dan proyeksi spot. Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model.",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Perhitungan Cross Rate IDR/JPY**:\n$\\text{Kurs (IDR/JPY)} = \\frac{\\text{USD/IDR}}{\\text{USD/JPY}} = \\frac{Rp 16.000}{JPY 160} = \\mathbf{Rp 100 / JPY}$.',
-            '**Total Nilai Rupiah Transaksi**:\nTotal Rupiah = JPY 10.000.000 × Rp 100/JPY = **Rp 1.000.000.000** (1 Miliar Rupiah).'
-          ]
+          "kind": "p",
+          "text": "Langkah 1. Bunga enam bulan domestik 3%, asing 2%. F paritas = 16.000 × 1,03/1,02 = 16.156,862745 IDR/USD. Penawaran bank lebih tinggi 143,137255 IDR/USD; friksi dan akses bunga perlu diperiksa sebelum menyebut peluang arbitrase."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 2. Kontrak mengunci pembayaran Rp 1.630 juta. Spot 17.000 membuat pembayaran tanpa hedge Rp 1.700 juta, sehingga forward menghemat Rp 70 juta. Spot 15.500 membuat pembayaran tanpa hedge Rp 1.550 juta; forward menimbulkan biaya peluang Rp 80 juta."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 3. Importir membeli USD forward karena mempunyai kewajiban USD. Hedge mengurangi ketidakpastian kas, tanpa menjamin selalu lebih murah. Bunga wajib setenor; forward paritas adalah hubungan model tanpa friksi dan berbeda dari ramalan kurs spot yang pasti terjadi."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-646 (PDF 678-688)."
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 13'
+      "kind": "h2",
+      "text": "Latihan kasus 2: Kurs silang dan penilaian proyek luar negeri"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Pasar Valas & Cross Rates', 'Konversi direct vs indirect quote dan perhitungan cross rate.', 'Mampu menghitung kurs silang mata uang asing tanpa bias.'],
-        ['2', 'Teori Paritas IRP & PPP', 'Kalkulasi forward rate teoritis dan ekspektasi pergeseran kurs spot.', 'Mampu mengidentifikasi kondisi disequilibrium dan arbitrase.'],
-        ['3', '3 Jenis Eksposur & Hedging', 'Strategi mitigasi Transaction, Translation, dan Economic Exposure.', 'Mampu merancang instrumen lindung nilai kontrak forward dan money market.']
-      ],
-      caption: 'Tabel 13.2: Peta penguasaan submateri TM 13 Manajemen Keuangan.'
-    },
-    CASE_MULTINATIONAL_FX_RISK,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "ul",
+      "items": [
+        "Spot IDR16.000/USD dan JPY160/USD; tanpa spread.",
+        "Investasi sekarang Rp 150 juta; arus kas akhir tahun pertama USD10.000, kemudian proyek berakhir.",
+        "Proyeksi kurs IDR17.000/USD atau skenario IDR15.000/USD; diskonto IDR10% sesuai risiko."
+      ]
     },
     {
-      kind: 'ul',
-      items: [
-        '**Transaction vs Economic Exposure**: Transaction exposure terkait dengan kontrak piutang/utang valas yang sudah disepakati; Economic exposure adalah dampak perubahan kurs terhadap daya saing dan arus kas jangka panjang.',
-        '**Forward Contract adalah Komitmen Pasti**: Kontrak forward mengunci kurs pasti di masa depan dan wajib dieksekusi, berbeda dengan opsi valas (Currency Option) yang memberi hak tanpa kewajiban.',
-        '**Country Risk Analysis**: Investasi di negara berkembang menuntut premi risiko tambahan atas ancaman nasionalisasi aset, pembatasan transfer valas, dan ketidakstabilan politik.'
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Hitung kurs silang IDR/JPY dan nilai JPY100.000 dalam rupiah. Hitung NPV IDR dalam kedua skenario kurs. Jelaskan konsistensi mata uang, diskonto, dan risiko kas lintas negara. Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Langkah 1. Kurs silang = 16.000/160 = IDR100/JPY. JPY100.000 setara Rp 10 juta; satuan USD saling menghilangkan."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 2. Kurs 17.000: kas akhir Rp 170 juta; PV = 170/1,10 = Rp 154,545455 juta; NPV = Rp 4,545455 juta. Kurs 15.000: kas Rp 150 juta; PV = Rp 136,363636 juta; NPV = minus Rp 13,636364 juta. Kelayakan berubah karena kurs yang diasumsikan."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 3. Kas sudah dikonversi ke rupiah sebelum memakai diskonto rupiah. Alternatif valuasi USD memerlukan tingkat USD yang sepadan dengan risiko. Periksa pembatasan pemulangan laba, pajak sesuai yurisdiksi, risiko negara, dan sensitivitas kurs. Kasus ini sengaja tidak menetapkan aturan pajak atau repatriasi tertentu; angka bukan kurs pasar tahun berjalan."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 649-655 (PDF 691-697)."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Cek pemahaman sebelum berpindah TM"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Arah kuotasi kurs: IDR16.000/USD berarti Rp 16.000 untuk USD1. Utang USD100.000 membutuhkan Rp 1,6 miliar. Selalu tulis unit pembilang dan penyebut sebelum mengalikan atau membagi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703).",
+        "Kurs silang: IDR/USD dibagi JPY/USD menghasilkan IDR/JPY. 16.000/160 = Rp 100 per JPY, dengan asumsi tanpa spread/biaya. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703).",
+        "Covered interest parity: F = S(1+rh)/(1+rf) untuk kuotasi mata uang domestik per asing. Spot 16.000, bunga 6% dan 4% setahun memberi 16.307,69 IDR/USD. Tenor bunga harus cocok. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703).",
+        "PPP relatif: E(S1) = S0(1+inflasi domestik)/(1+inflasi asing). Ini proyeksi model daya beli, berbeda dari kontrak forward yang dapat dikunci; biaya transaksi dan hambatan perdagangan dapat mengubah hasil. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703).",
+        "Arah hedge eksportir dan importir: Piutang valas: jual valas forward. Utang valas: beli valas forward. Hedge mengurangi ketidakpastian kas tetapi dapat mengorbankan keuntungan bila spot kemudian bergerak menguntungkan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703).",
+        "Mata uang arus kas dan diskonto: Konversikan kas USD ke proyeksi IDR sebelum memakai tingkat diskonto IDR. Alternatif penilaian USD memerlukan tingkat USD yang konsisten; jangan mencampur mata uang dan risiko. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
       ]
     }
   ]

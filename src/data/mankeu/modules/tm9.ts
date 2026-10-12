@@ -1,158 +1,206 @@
 import type { Reading } from '../../../types';
-import { CASE_CAPITAL_STRUCTURE_LEVERAGE } from '../mankeuPracticeCases';
-
-const SVG_CAPITAL_STRUCTURE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgMk9" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="mm1" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="mm2" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-    <linearGradient id="toGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d97706"/><stop offset="100%" stop-color="#fbbf24"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk9)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">EVOLUSI TEORI STRUKTUR MODAL: MODIGLIANI-MILLER HINGGA TRADE-OFF THEORY</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">CAPITAL STRUCTURE</text>
-
-  <!-- 3 Evolution Stages -->
-  <!-- Stage 1: MM Without Tax (1958) -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#mm1)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="132" y="20" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">MM TANPA PAJAK (1958)</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
-    <text class="text-accent-blue" x="132" y="56" fill="#38bdf8" font-size="8.5" font-weight="700" text-anchor="middle">Proposisi 1: V_L = V_U (Irrelevan)</text>
-    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Asumsi pasar modal sempurna tanpa gesekan</text>
-    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Tidak ada pajak, biaya transaksi, &amp; kebangkrutan</text>
-    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Nilai perusahaan ditentukan oleh aset riil</text>
-    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Rasio utang tidak memengaruhi nilai korporasi</text>
-    <rect class="svg-badge-blue" x="14" y="175" width="237" height="24" rx="4" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="132" y="191" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Fondasi Awal Teori Finansial Modern</text>
-  </g>
-
-  <!-- Stage 2: MM With Tax (1963) -->
-  <g transform="translate(318, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#mm2)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">MM DENGAN PAJAK (1963)</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
-    <text class="text-accent-green" x="132" y="56" fill="#34d399" font-size="8.5" font-weight="700" text-anchor="middle">Proposisi 1: V_L = V_U + (Tc × D)</text>
-    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Pengakuan bunga utang sebagai pengurang pajak</text>
-    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• <tspan class="text-accent-green" fill="#34d399" font-weight="700">Tax Shield Bunga</tspan> meningkatkan arus kas</text>
-    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Nilai perusahaan meningkat seiring porsi utang</text>
-    <text class="svg-text" x="14" y="136" fill="#cbd5e1" font-size="8">• Implikasi ekstrem teoretis: Utang 100% optimal</text>
-    <rect class="svg-badge-green" x="14" y="175" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="132" y="191" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Penghematan Pajak Mendorong Nilai</text>
-  </g>
-
-  <!-- Stage 3: Trade-Off Theory (Myers, 1984) -->
-  <g transform="translate(600, 75)">
-    <rect class="svg-card" x="0" y="0" width="265" height="225" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5"/>
-    <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#toGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="10" font-weight="800" text-anchor="middle">TRADE-OFF THEORY (REALISTIS)</text>
-    <rect class="svg-subcard" x="14" y="40" width="237" height="26" rx="4" fill="#1e293b"/>
-    <text class="text-accent-amber" x="132" y="56" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">V_L = V_U + PV(Tax Shield) - PV(Distress)</text>
-    <text class="svg-text" x="14" y="85" fill="#cbd5e1" font-size="8">• Menyeimbangkan tax shield vs risiko kebangkrutan</text>
-    <text class="svg-text" x="14" y="102" fill="#cbd5e1" font-size="8">• Utang berlebih memicu Biaya Financial Distress</text>
-    <text class="svg-text" x="14" y="119" fill="#cbd5e1" font-size="8">• Terdapat titik struktur modal optimal (D*)</text>
-    <text class="text-accent-amber" x="14" y="136" fill="#fbbf24" font-size="8">• Pada titik optimal, WACC mencapai titik terendah</text>
-    <rect class="svg-badge-amber" x="14" y="175" width="237" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
-    <text class="text-accent-amber" x="132" y="191" fill="#fbbf24" font-size="8" font-weight="700" text-anchor="middle">Struktur Modal Optimal di Dunia Nyata</text>
-  </g>
-
-  <text class="svg-muted" x="450" y="325" fill="#94a3b8" font-size="8.5" font-style="italic" text-anchor="middle">Titik struktur modal optimal tercapai saat manfaat marjinal tax shield tepat diimbangi oleh kenaikan marjinal biaya kebangkrutan.</text>
-</svg>`;
-
 export const TM9_READING: Reading = {
-  tm: 9,
-  title: 'Capital Structure Decisions, Financial Leverage, & Modigliani-Miller Theories',
-  ref: 'Brigham & Ehrhardt Ch. 13 | Teori Struktur Modal MM (1958 & 1963) | Trade-Off Theory & Persamaan Hamada',
-  intro: 'TM 9 membahas pilihan bauran pendanaan utang vs ekuitas: Teori Modigliani-Miller tanpa pajak (Struktur Modal Tidak Relevan) dan dengan pajak (Manfaat Tax Shield Bunga), Teori Trade-Off (Keseimbangan Penghematan Pajak vs Biaya Kebangkrutan / Financial Distress), Teori Pecking Order, Teori Sinyal (Signaling), serta Persamaan Hamada untuk menghitung kenaikan risiko ekuitas (Levered Beta).',
-  objectives: [
-    'Menganalisis Proposisi MM I & II (tanpa pajak dan dengan pajak korporasi).',
-    'Menghitung nilai perusahaan ter-leverage ($V_L = V_U + T \\times D$) dan penghematan pajak bunga.',
-    'Menerapkan Persamaan Hamada untuk mengkonversi Unlevered Beta ($\\beta_U$) menjadi Levered Beta ($\\beta_L$).',
-    'Menjelaskan hierarki pendanaan Teori Pecking Order (Internal Funds $\\r→$ Debt $\\r→$ External Equity).'
+  "tm": 9,
+  "title": "Struktur Modal dan Leverage",
+  "ref": "Brigham & Houston, FFM 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)",
+  "intro": "Menggunakan kontrak, buku lokal dan sumber yang disebutkan untuk menyelesaikan keputusan struktur modal dan leverage secara bertahap.",
+  "objectives": [
+    "Menjelaskan konsep dan asumsi struktur modal dan leverage.",
+    "Menghitung hasil dengan satuan, tenor dan pembulatan yang tepat.",
+    "Menilai keputusan serta batas model dan rujukannya."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 9.1: Evolusi Teori Struktur Modal: Dari MM hingga Trade-Off dan Pecking Order.',
-      svg: SVG_CAPITAL_STRUCTURE
+      "kind": "h2",
+      "text": "Pintu masuk: cakupan dan sumber"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 9'
+      "kind": "p",
+      "text": "TM9 mengikuti Kontrak MK2026 Sheet 1 baris 26. Fokus: Struktur Modal dan Leverage. Buku kontrak edisi 15 dipetakan ke buku lokal edisi 16 berdasarkan topik, dengan nomor halaman cetak dan PDF yang dapat ditelusuri. Angka latihan adalah skenario hipotetis, bukan harga pasar atau ketentuan pajak terbaru. Rujukan utama: Brigham & Houston, FFM16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
     },
     {
-      kind: 'table',
-      headers: ['Teori Struktur Modal', 'Asumsi Dasar', 'Implikasi terhadap Nilai Perusahaan ($V_L$)', 'Implikasi terhadap WACC'],
-      rows: [
-        ['MM Tanpa Pajak (1958)', 'Pasar modal sempurna, tanpa pajak, tanpa biaya kebangkrutan.', '$V_L = V_U$ (Struktur modal sama sekali TIDAK memengaruhi nilai).', 'WACC konstan pada seluruh rentang rasio utang.'],
-        ['MM Dengan Pajak (1963)', 'Bunga utang dapat dikurangkan dari pajak penghasilan korporasi.', '$V_L = V_U + (T \\times D)$ (Nilai bertambah sebesar present value tax shield).', 'WACC turun terus mendekati biaya utang; modal optimal 100% utang.'],
-        ['Trade-Off Theory (Static Trade-off)', 'Ada penghematan pajak bunga DAN ada biaya kebangkrutan (Financial Distress Costs).', '$V_L = V_U + (T \\times D) - PV(\\text{Distress Costs})$.', 'WACC berbentuk kurva U; titik minimum kurva adalah Struktur Modal Optimal.'],
-        ['Pecking Order Theory', 'Asimetri informasi antara manajer (insider) dan investor publik.', 'Tidak ada target rasio D/E tetap; struktur modal mengikuti kebutuhan kas.', 'Pendanaan diprioritaskan: 1. Kas Internal, 2. Utang, 3. Saham Baru.']
+      "kind": "p",
+      "text": "Paket TM ini mempunyai 12 kuis, enam flashcard, dan dua kasus bank soal. Dugaan prioritas ujian berasal dari kontrak dan contoh pembahasan lokal; tidak ada arsip ujian untuk memastikan bentuk soal. Kerjakan dengan rumus, langkah antara, satuan, periode bunga, pembulatan akhir dan alasan keputusan."
+    },
+    {
+      "kind": "h2",
+      "text": "1. Pisahkan risiko operasi dari risiko pendanaan"
+    },
+    {
+      "kind": "p",
+      "text": "Capital structure adalah bauran utang dan ekuitas yang mendanai perusahaan. Risiko bisnis berasal dari ketidakpastian penjualan, harga input, teknologi, persaingan, dan biaya tetap operasi. Risiko itu tetap ada pada perusahaan tanpa utang. Financial risk adalah tambahan risiko bagi pemegang saham karena bunga dan pembayaran utang harus dipenuhi sebelum sisa kas tersedia bagi ekuitas. Dua perusahaan dengan operasi sama dapat mempunyai risiko bisnis sama dan risiko ekuitas berbeda. [hal. cetak 483-494; PDF 525-536]"
+    },
+    {
+      "kind": "p",
+      "text": "Operating leverage, pengungkit operasi, membuat EBIT atau laba sebelum bunga dan pajak peka terhadap penjualan. Rumus DOL menggunakan margin kontribusi dibagi EBIT pada tingkat penjualan tertentu. Jika EBIT mendekati nol, DOL dapat sangat besar; jika EBIT nol, rasionya tidak terdefinisi. Perubahan DOL tidak boleh ditafsirkan sebagai probabilitas bangkrut. Financial leverage, pengungkit keuangan, menambahkan kepekaan laba bersih melalui bunga. ROIC memakai laba operasi setelah pajak dan modal operasi, sedangkan ROE memakai laba bersih dan ekuitas. [hal. cetak 484-493; PDF 526-535]"
+    },
+    {
+      "kind": "formula",
+      "text": "\\operatorname{DOL}=\\frac{S-VC}{EBIT}\\qquad ROIC=\\frac{EBIT(1-T)}{IC}\\qquad ROE=\\frac{(EBIT-I)(1-T)}{E}",
+      "note": "S penjualan; VC biaya variabel; IC modal operasi; I bunga; E ekuitas. DOL tanpa satuan, ROIC dan ROE dalam persen per periode. Rujukan: hal. cetak 484-493 (PDF 526-535); W9 Case Study, PDF 9-18."
+    },
+    {
+      "kind": "h2",
+      "text": "2. Cari nilai maksimum, lalu periksa EPS"
+    },
+    {
+      "kind": "p",
+      "text": "Struktur optimal mendukung nilai perusahaan atau harga saham maksimum. Dengan arus kas operasi tetap, bauran itu juga menghasilkan WACC minimum. EPS, laba per saham, dapat meningkat ketika utang dipakai membeli kembali saham, tetapi bunga dan risiko ekuitas naik. Jangan memilih utang tertinggi hanya karena EPS tertinggi. Tabel alternatif perlu menyajikan bobot pasar, bunga utang, biaya ekuitas, WACC, kapasitas pembayaran dan nilai. [hal. cetak 494-498; PDF 536-540]"
+    },
+    {
+      "kind": "formula",
+      "text": "\\beta_L=\\beta_U\\left[1+(1-T)\\frac{D}{E}\\right]\\qquad r_s=r_{RF}+\\beta_L RP_M",
+      "note": "Hamada memakai D/E. Beta tanpa satuan; rRF dan premi risiko pasar dalam periode yang sama. Rujukan: hal. cetak 495-497 (PDF 537-539)."
+    },
+    {
+      "kind": "formula",
+      "text": "WACC=w_Dr_D(1-T)+w_Er_E\\qquad w_D+w_E=1",
+      "note": "Gunakan bobot nilai pasar target. Perisai pajak hanya pada biaya utang jika manfaat pajak dapat digunakan. Rujukan: hal. cetak 494-498 (PDF 536-540)."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kesalahan",
+        "Perbaikan"
       ],
-      caption: 'Tabel 9.0: Ringkasan 4 teori utama struktur modal korporasi.'
+      "rows": [
+        [
+          "Memasukkan bobot utang 40% langsung ke Hamada",
+          "Ubah menjadi D/E = 40/60 = 0,6667."
+        ],
+        [
+          "Mengalikan seluruh WACC dengan (1-T)",
+          "Pajak model diterapkan pada bunga utang, bukan biaya ekuitas."
+        ],
+        [
+          "Menganggap EPS naik berarti harga pasti naik",
+          "Nilai juga mencerminkan risiko dan kas masa depan."
+        ],
+        [
+          "Menganggap ROIC berubah hanya karena buyback",
+          "Pisahkan operasi dari perubahan pendanaan."
+        ]
+      ],
+      "caption": "Rujukan: hal. cetak 480-498, PDF 522-540."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Modigliani-Miller & Persamaan Hamada'
+      "kind": "h2",
+      "text": "3. MM, biaya distress, informasi dan fleksibilitas"
     },
     {
-      kind: 'formula',
-      text: `\\text{MM with Taxes (Proposisi I)}: \\quad V_L = V_U + (T \\times D)
-\\text{Persamaan Hamada (Levered Beta)}: \\quad \\beta_L = \\beta_U \\left[1 + (1 - T)\\left(\\frac{D}{S}\\right)\\right]
-\\text{Unlevered Beta (Asset Beta)}: \\quad \\beta_U = \\frac{\\beta_L}{1 + (1 - T)(D/S)}
-\\text{Cost of Equity under MM II with Taxes}: \\quad r_{sL} = r_{sU} + (r_{sU} - r_d)(1 - T)\\left(\\frac{D}{S}\\right)`,
-      note: 'Penambahan utang meningkatkan risiko finansial yang ditanggung pemegang saham biasa, sehingga menaikkan Beta ($\\beta_L$) dan biaya ekuitas ($r_{sL}$).'
+      "kind": "p",
+      "text": "MM tanpa pajak memakai pasar ideal: cara membagi klaim pendanaan tidak mengubah nilai operasi. Dalam model sederhana dengan pajak perusahaan dan utang permanen, nilai sekarang perisai bunga dapat ditulis TD. Hasil ini memerlukan bunga yang dapat mengurangi pajak dan manfaat yang benar-benar dapat digunakan. Trade-off memasukkan biaya kesulitan keuangan: biaya legal, gangguan pemasok, hilangnya pelanggan dan keputusan investasi yang terganggu. Kesimpulan model pajak sederhana tidak menjadi anjuran utang 100% pada perusahaan nyata. [hal. cetak 500-505; PDF 542-547]"
     },
     {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
+      "kind": "p",
+      "text": "Signaling menjelaskan bagaimana emisi saham atau pilihan utang dapat ditafsirkan pasar ketika informasi manajemen dan investor berbeda. Pecking order adalah kecenderungan memakai dana internal, lalu utang, lalu ekuitas baru ketika informasi dan biaya emisi berperan. Fleksibilitas mempertahankan kemampuan memperoleh dana saat peluang atau guncangan muncul. Target struktur modal perlu mempertimbangkan stabilitas kas, jaminan, kendali, keadaan pasar, serta kemampuan membayar pada skenario buruk. [hal. cetak 503-510; PDF 545-552]"
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Persamaan Hamada & Efek Perubahan Rasio D/E',
-      prompt: 'PT Cemerlang saat ini 100% ekuitas dengan $\\beta_U = 0,80$. Tarif pajak $T = 22\\%$. Perusahaan ingin mengubah struktur modal menjadi $D/S = 50\\%$ (Debt-to-Equity = 0,50). Jika $r_{RF} = 5,5\\%$ dan Market Risk Premium = 6,0%, berapa Levered Beta dan Biaya Ekuitas baru perusahaan?',
-      blocks: [
+      "kind": "formula",
+      "text": "V_L=V_U+TD",
+      "note": "Hanya untuk model MM dengan utang permanen dan tanpa biaya distress. TD adalah nilai sekarang, sedangkan TrDD adalah manfaat bunga setahun. Rujukan: hal. cetak 500-503 (PDF 542-545)."
+    },
+    {
+      "kind": "h2",
+      "text": "4. Kerangka pengerjaan kasus"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Susun EBIT dan NOPAT dengan unit mata uang yang konsisten.",
+        "Hitung saham dibeli, saham tersisa, bunga, laba bersih dan EPS.",
+        "Ubah rasio total modal menjadi D/E sebelum menghitung beta.",
+        "Bandingkan WACC serta nilai pada arus kas yang dinyatakan.",
+        "Uji penurunan EBIT, kenaikan bunga dan keterbatasan manfaat pajak. Semua tarif adalah asumsi kasus."
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Latihan kasus 1: Rekapitalisasi dan risiko: evaluasi angka serta keputusan"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Penjualan USD1.100.000; biaya variabel 60%; biaya tetap USD40.000.",
+        "Saham 80.000; harga buyback tetap USD25; utang baru USD400.000 berbunga 10%; pajak model 25%.",
+        "Beta U=1,25; rRF=7,5%; premi pasar=6%; nilai pasar ekuitas sebelum pendanaan USD2.000.000. Setelah buyback diasumsikan USD1.600.000 untuk perhitungan bobot."
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Hitung EBIT, DOL, ROIC, laba bersih dan EPS sebelum/sesudah utang. Hitung D/E, beta L, biaya ekuitas dan WACC menggunakan bobot yang diberikan. Jelaskan mengapa kenaikan EPS tidak cukup membuktikan struktur optimal; uji EBIT turun 20%. Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil.",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Perhitungan Levered Beta ($\\beta_L$)**:\n$\\beta_L = 0,80 \\left[1 + (1 - 0,22)(0,50)\\right] = 0,80 [1 + 0,78(0,50)] = 0,80(1 + 0,39) = 0,80 \\times 1,39 = \\mathbf{1,112}$.',
-            '**Perhitungan Biaya Ekuitas Baru ($r_{sL}$ via CAPM)**:\n$r_{sL} = 5,5\\% + 1,112(6,0\\%) = 5,5\\% + 6,672\\% = \\mathbf{12,172\\% \\approx 12,17\\%}$.',
-            '**Kenaikan Biaya Ekuitas**: Biaya ekuitas naik dari $10,30\\%$ ($5,5\\% + 0,80 \\times 6\\%$) menjadi $12,17\\%$ sebagai kompensasi atas risiko penambahan beban utang 50% D/E.'
-          ]
+          "kind": "p",
+          "text": "Langkah 1. EBIT = 1.100.000 - 660.000 - 40.000 = USD400.000; DOL=440.000/400.000=1,10. NOPAT=300.000; ROIC=300.000/2.000.000=15%."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 2. Tanpa utang NI=300.000; EPS=300.000/80.000=USD3,75. Saham dibeli=400.000/25=16.000; tersisa 64.000. Bunga=40.000; NI=(400.000-40.000)×75%=270.000; EPS=USD4,21875 atau 4,22."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 3. D/E=400.000/1.600.000=0,25; beta L=1,25[1+0,75×0,25]=1,484375. rs=7,5%+1,484375×6%=16,40625%. WACC=0,20×10%×75%+0,80×16,40625%=14,625%. Bobot model menahan ekuitas pada angka asumsi, sehingga belum menyelesaikan harga pasar endogen."
+        },
+        {
+          "kind": "p",
+          "text": "Langkah 4. EBIT turun 20% menjadi 320.000. NI tanpa utang 240.000; EPS3,00. NI berutang 210.000; EPS3,28125. EPS berutang turun 22,2222% dari 4,21875, lebih peka daripada EPS tanpa utang yang turun 20%. Manfaat pajak disertai sensitivitas laba, risiko pembiayaan ulang, serta biaya ekuitas. Penilaian alternatif perlu kas operasi dan biaya modal yang konsisten, bukan sekadar EPS tertinggi."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 484-498 (PDF 526-540). Rujukan lokal: W9_Case_Study_Kelompok_7.pdf, halaman PDF 7-18."
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 9'
+      "kind": "h2",
+      "text": "Latihan kasus 2: Memilih bauran pendanaan ketika risiko dan biaya utang berubah"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Teori MM Tanpa & Dengan Pajak', 'Kalkulasi $V_L$, penghematan pajak, dan biaya modal.', 'Mampu menganalisis dampak restrukturisasi modal pada nilai perusahaan.'],
-        ['2', 'Persamaan Hamada', 'Konversi $\\beta_U$ ke $\\beta_L$ dan sebaliknya.', 'Mampu menghitung perubahan beta akibat perubahan rasio D/E.'],
-        ['3', 'Trade-off vs Pecking Order', 'Analisis Trade-Off Theory, Financial Distress, dan Signaling.', 'Mampu menjelaskan fenomena pemilihan sumber dana korporasi riil.']
-      ],
-      caption: 'Tabel 9.2: Peta penguasaan submateri TM 9 Manajemen Keuangan.'
-    },
-    CASE_CAPITAL_STRUCTURE_LEVERAGE,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "ul",
+      "items": [
+        "Model A: bobot utang 0%; rd 0%; rs 12%; EPS Rp 4.",
+        "B: utang 40%; rd 9%; rs 14%; EPS Rp 4,50. C: utang 60%; rd 13%; rs 18%; EPS Rp 5.",
+        "Pajak model 25%; FCF operasi tetap Rp 12 miliar/tahun tanpa pertumbuhan; nilai=FCF/WACC."
+      ]
     },
     {
-      kind: 'ul',
-      items: [
-        '**Interest Tax Shield**: Merupakan nilai tambah utama dari penggunaan utang ($T \\times D$), namun dibatasi oleh potensi biaya kebangkrutan.',
-        '**Business Risk vs Financial Risk**: Business Risk melekat pada operasional aset ($\\beta_U$); Financial Risk timbul dari keputusan mendanai aset dengan utang ($\\beta_L - \\beta_U$).',
-        '**Signaling Theory**: Pengumuman penerbitan saham baru sering dipandang pasar sebagai sinyal negatif bahwa saham sedang overvalued, memicu penurunan harga saham.'
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Hitung WACC ketiga alternatif memakai biaya utang setelah pajak. Hitung nilai operasi dan pilih bauran berdasarkan nilai. Bandingkan dengan pilihan berdasarkan EPS; jelaskan sensitivitas jika FCF C turun menjadi Rp 10 miliar. Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "A: WACC=12%; nilai 12/0,12=Rp 100 miliar. B:0,40×9%×75%+0,60×14%=11,10%; nilai 12/0,111=Rp 108,108108 miliar. C:0,60×13%×75%+0,40×18%=13,05%; nilai 12/0,1305=Rp 91,954023 miliar. B memaksimalkan nilai meski EPS C tertinggi. Asumsi kas tetap membuat perbandingan diskonto jelas; biaya ekuitas dan utang sudah mencerminkan peningkatan risiko. Jika FCF C menjadi 10, nilainya 10/0,1305=Rp 76,628352 miliar. Model perpetuitas tidak mempunyai pertumbuhan dan memerlukan WACC positif. Bobot adalah nilai pasar target dan biaya modal harus cocok dengan risiko masing-masing. Perisai pajak hanya dikenakan pada biaya utang; mengalikan seluruh WACC dengan 75% akan menurunkan nilai biaya modal secara keliru."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-503 (PDF 536-545)."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Cek pemahaman sebelum berpindah TM"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "DOL: kepekaan EBIT: DOL = (penjualan - biaya variabel)/EBIT. Contoh USD440.000/USD400.000 = 1,10 kali. Berlaku pada struktur harga dan biaya yang diasumsikan tetap. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559).",
+        "ROIC dibanding ROE: ROIC = EBIT(1-T)/modal operasi; ROE = laba bersih/ekuitas. Bunga memengaruhi ROE, sedangkan ROIC memisahkan operasi dari pendanaan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559).",
+        "D/total modal menjadi D/E: Jika bobot utang 40% dan ekuitas 60%, D/E = 0,40/0,60 = 0,6667. Bobot WACC memakai total modal; Hamada memakai ekuitas sebagai penyebut. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559).",
+        "Hamada dan CAPM: Beta L = beta U[1+(1-T)D/E]; rs = rRF + beta L × premi pasar. Beta 1,45, rRF 5%, premi 6% memberi rs 13,70% per tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559).",
+        "EPS maksimum dan struktur optimal: EPS dapat naik karena saham berkurang, bersama kenaikan risiko. Dengan arus kas tetap, pilih nilai maksimum/WACC minimum; EPS maksimum sendiri tidak cukup. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559).",
+        "MM dengan pajak: VL = VU + TD mengasumsikan manfaat pajak utang permanen dapat dipakai dan biaya distress diabaikan. TD merupakan PV, sedangkan TrdD merupakan perisai pajak satu tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
       ]
     }
   ]

@@ -1,8 +1,5 @@
-// src/data/mankeu/mankeuData.ts
-// Rangkuman KOMPREHENSIF Manajemen Keuangan (MNK201)
-// Sumber: Brigham & Ehrhardt (Financial Management: Theory & Practice 15e/16e),
-//         Ross, Westerfield, Jaffe (Corporate Finance), Modigliani-Miller (1958/1963),
-//         Markowitz Portfolio Theory, Sharpe CAPM, Altman Z-Score Model.
+// MNK102 Financial Management: Kontrak MK 2026, Brigham & Houston FFM15e/16e.
+// Internal MNK201 exports retain route/data compatibility; TM08 is the UTS review.
 import type { Reading } from '../../types';
 import { TM1_READING } from './modules/tm1';
 import { TM2_READING } from './modules/tm2';
@@ -18,6 +15,7 @@ import { TM11_READING } from './modules/tm11';
 import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
+import { TM15_READING } from './modules/tm15';
 
 export const MNK201_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -34,9 +32,9 @@ export const MNK201_READINGS: Record<number, Reading> = {
   12: TM12_READING,
   13: TM13_READING,
   14: TM14_READING,
+  15: TM15_READING,
 };
 
 export const MNK201_REVIEW_READINGS: Record<string, Reading> = {
   uts: TM8_READING,
-  uas: TM14_READING,
 };

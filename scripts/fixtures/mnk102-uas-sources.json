@@ -1,0 +1,108 @@
+{
+  "base": "41d745602dd4adadd78ee0431a25a034e0d62450",
+  "sources": [
+    {
+      "id": "contract",
+      "file": "Kontrak MK 2026.xlsx",
+      "sha256": "15722434339fe7737378990eff2a412a79dcf61461c56ee90383588e823c8e52"
+    },
+    {
+      "id": "book",
+      "file": "Fundamentals of Financial Management 2022.pdf",
+      "sha256": "b84d525bdc951e810ccd9a0121332f7b3df03ba39460bea88c52d198e4cf0ff9"
+    },
+    {
+      "id": "lecture9",
+      "file": "W9_Case_Study_Kelompok_7.pdf",
+      "sha256": "7998dba4fb4bc0bf58ed933c76de1746f137407f8ac7cebbbf65822f718b1706"
+    },
+    {
+      "id": "altman",
+      "file": "altman-2002.pdf",
+      "sha256": "66afadbe941d30eb20e18d7b2348827496d30cb6d855b9b0461b3d876c77fb70"
+    }
+  ],
+  "book": {
+    "edition": 16,
+    "copyright": 2022,
+    "pdfPages": 866,
+    "printedToPdfOffset": 42,
+    "reviewedRanges": [
+      [
+        478,
+        517
+      ],
+      [
+        519,
+        555
+      ],
+      [
+        559,
+        596
+      ],
+      [
+        625,
+        661
+      ],
+      [
+        741,
+        767
+      ],
+      [
+        261,
+        262
+      ]
+    ],
+    "publisherUrl": "https://www.cengage.ca/c/fundamentals-of-financial-management-16e-brigham-houston/9780357517574/"
+  },
+  "contract": {
+    "file": "Kontrak MK 2026.xlsx",
+    "sheet": "Sheet1",
+    "cells": "A26:E32",
+    "first": 9,
+    "last": 15,
+    "examWeeks": [
+      8,
+      16
+    ],
+    "requiredEdition": 15
+  },
+  "altman": {
+    "url": "https://w4.stern.nyu.edu/finance/docs/WP/2002/pdf/wpa02052.pdf",
+    "pdfPages": 31,
+    "reviewedPages": [
+      2,
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "limitation": "Article required by lecturer is not identified; this original author paper is a supplementary source, not a confirmed exam source."
+  },
+  "preUts": {
+    "MNK201_QUIZ_UTS": "0750c7d62f3d491fd6e5897973da4974b72e8d6858399cafb259164e317415ee",
+    "MNK201_BANK_UTS": "10b8d1056f21ce55530b302c7534f81b7a5ef312944fbf3d064522bbb9e3ddd8",
+    "cards1to7": "648ce718b631c87794ef33fe3e1348a60733d05632ec58ea2eebd2c6fe243c63",
+    "reviewCards8": "222d2fd95c87016865bed1e1472391ee63d5983327bcf9715c2b16cadbf7301c",
+    "reviewQuiz8": "35de333f32cb72bdfa567048a3778f4dc64c976b1f20d17f197e127826097606",
+    "reviewBank8": "49e19cd349014538d7360f93da96f5c38499364ba3ee2616acc392eb29d4eb66",
+    "readings": {
+      "src/data/mankeu/modules/tm1.ts": "b8a54da2baf2f1626a39a4623f16bb5a42c7305f46de12735ff21a6dbe1c008a",
+      "src/data/mankeu/modules/tm2.ts": "3b7f54b20990ec64b23106e208c2c5a05d7e4feacb656e23e2a62f8c30a082cb",
+      "src/data/mankeu/modules/tm3.ts": "cc7a585409de123f280d3e910b0f6a527eb26fbdd6ba1b09d9e4634befd9547e",
+      "src/data/mankeu/modules/tm4.ts": "bb74ae60747cf0a6fb2c4f3d7f5c5e2bee2e39cf1f62ec4339187a8b3dc68f19",
+      "src/data/mankeu/modules/tm5.ts": "cf9a1ab54bc3670ebbe454310bfb3cc3fe6d99677a169cf264ffd9ed4c13b90d",
+      "src/data/mankeu/modules/tm6.ts": "88a551827066d1c86931cc78852d3d977a637764f7070cad7ca560de390db615",
+      "src/data/mankeu/modules/tm7.ts": "35079c014ddcc6c0655065ccc2357ba181a42e0bd904d54a629c79702129f54d",
+      "src/data/mankeu/modules/tm8.ts": "aada3af6bfbbc77bbca35fa7912f66273c0424155f79c4687bb845ec4ea09227"
+    }
+  }
+}

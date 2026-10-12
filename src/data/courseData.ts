@@ -202,9 +202,9 @@ const MNK102_TM8_14 = materi([
   ['Distributions to Shareholders: Dividends & Repurchases', 'Brigham & Houston Ch. 15'],
   ['Working Capital Management - Part I: Cash & Receivables', 'Brigham & Houston Ch. 16'],
   ['Working Capital Management - Part II: Inventory & Financing', 'Brigham & Houston Ch. 16'],
-  ['Multinational Financial Management & Currency Risk', 'Brigham & Houston Ch. 19'],
+  ['Multinational Financial Management & Currency Risk', 'Kontrak Ch. 19 (15e); buku lokal Ch. 18 (16e)'],
   ['Mergers and Acquisitions', 'Brigham & Houston Ch. 21'],
-  ['Corporate Failure: Kebangkrutan dan Likuidasi', 'Artikel'],
+  ['Corporate Failure: Kesulitan Keuangan dan Pemulihan', 'Artikel kontrak belum tersedia; Altman (2002) sebagai pelengkap'],
 ], 9);
 const MNK102_REF = [
   'Brigham, E. F., & Houston, J. F. (2019/2022). Fundamentals of Financial Management (15th/16th ed.). Cengage Learning. (Wajib)',
@@ -639,7 +639,7 @@ export const SEMESTERS: Semester[] = [
           {
             code: 'MNK102', newCode: 'FEB25603012', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
             references: MNK102_REF,
-            materiTM1_7: MNK102_TM1_7, materiTM8_14: MNK102_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            materiTM1_7: MNK102_TM1_7, materiTM8_14: MNK102_TM8_14, flashcardCount: 90, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'AKA201', newCode: 'FEB25603017', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', prasyarat: 'AKK201 (T)',

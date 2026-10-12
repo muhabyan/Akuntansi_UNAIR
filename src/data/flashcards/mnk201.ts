@@ -1,7 +1,5 @@
-// src/data/flashcards/mnk201.ts
-// Flashcard komprehensif Manajemen Keuangan (MNK201) — 84 kartu lengkap (6 kartu per TM)
+// MNK102; keep original pre-UTS cards and classify TM08 review as UTS.
 import type { AdvancedStudyCard } from '../../types';
-
 export const MNK201_FC: AdvancedStudyCard[] = [
   {
     "id": "mnk201-tm01-01",
@@ -383,7 +381,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
   },
   {
     "id": "mnk201-tm08-01",
-    "phase": "pra-uas",
+    "phase": "pra-uts",
     "tm": 8,
     "topic": "Review Komprehensif Pra-UTS Manajemen Keuangan",
     "category": "Konsep",
@@ -392,7 +390,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
   },
   {
     "id": "mnk201-tm08-02",
-    "phase": "pra-uas",
+    "phase": "pra-uts",
     "tm": 8,
     "topic": "Review Komprehensif Pra-UTS Manajemen Keuangan",
     "category": "Prinsip",
@@ -401,7 +399,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
   },
   {
     "id": "mnk201-tm08-03",
-    "phase": "pra-uas",
+    "phase": "pra-uts",
     "tm": 8,
     "topic": "Review Komprehensif Pra-UTS Manajemen Keuangan",
     "category": "Konsep",
@@ -410,7 +408,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
   },
   {
     "id": "mnk201-tm08-04",
-    "phase": "pra-uas",
+    "phase": "pra-uts",
     "tm": 8,
     "topic": "Review Komprehensif Pra-UTS Manajemen Keuangan",
     "category": "Konsep",
@@ -419,7 +417,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
   },
   {
     "id": "mnk201-tm08-05",
-    "phase": "pra-uas",
+    "phase": "pra-uts",
     "tm": 8,
     "topic": "Review Komprehensif Pra-UTS Manajemen Keuangan",
     "category": "Konsep",
@@ -428,7 +426,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
   },
   {
     "id": "mnk201-tm08-06",
-    "phase": "pra-uas",
+    "phase": "pra-uts",
     "tm": 8,
     "topic": "Review Komprehensif Pra-UTS Manajemen Keuangan",
     "category": "Konsep",
@@ -436,327 +434,381 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "back": "Gunakan rumus TVM dengan parameter eksak; pisahkan dengan cermat arus kas operasi tahunan dari pengeluaran modal awal tahun ke-0."
   },
   {
-    "id": "mnk201-tm09-01",
+    "id": "mnk102-uas-v2-tm09-01",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Struktur Modal & Teori Modigliani-Miller (MM)",
-    "category": "Teori",
-    "front": "Teori Modigliani-Miller Proposisi I (Tanpa Pajak - 1958)",
-    "back": "Pada pasar modal sempurna tanpa pajak dan biaya transaksi, nilai perusahaan independen dari struktur modalnya (V_L = V_U)."
-  },
-  {
-    "id": "mnk201-tm09-02",
-    "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Struktur Modal & Teori Modigliani-Miller (MM)",
+    "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
     "category": "Rumus",
-    "front": "Teori MM Proposisi II (Tanpa Pajak)",
-    "back": "Biaya ekuitas perusahaan berutang meningkat sebanding dengan rasio utang/ekuitas: r_sL = r_sU + (r_sU - r_d) × (D / E)."
+    "front": "DOL: kepekaan EBIT",
+    "back": "DOL = (penjualan - biaya variabel)/EBIT. Contoh USD440.000/USD400.000 = 1,10 kali. Berlaku pada struktur harga dan biaya yang diasumsikan tetap. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
   },
   {
-    "id": "mnk201-tm09-03",
+    "id": "mnk102-uas-v2-tm09-02",
     "phase": "pra-uas",
     "tm": 9,
-    "topic": "Struktur Modal & Teori Modigliani-Miller (MM)",
+    "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "category": "Rumus",
+    "front": "ROIC dibanding ROE",
+    "back": "ROIC = EBIT(1-T)/modal operasi; ROE = laba bersih/ekuitas. Bunga memengaruhi ROE, sedangkan ROIC memisahkan operasi dari pendanaan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm09-03",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "category": "Rumus",
+    "front": "D/total modal menjadi D/E",
+    "back": "Jika bobot utang 40% dan ekuitas 60%, D/E = 0,40/0,60 = 0,6667. Bobot WACC memakai total modal; Hamada memakai ekuitas sebagai penyebut. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm09-04",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "category": "Rumus",
+    "front": "Hamada dan CAPM",
+    "back": "Beta L = beta U[1+(1-T)D/E]; rs = rRF + beta L × premi pasar. Beta 1,45, rRF 5%, premi 6% memberi rs 13,70% per tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm09-05",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "category": "Miskonsepsi",
+    "front": "EPS maksimum dan struktur optimal",
+    "back": "EPS dapat naik karena saham berkurang, bersama kenaikan risiko. Dengan arus kas tetap, pilih nilai maksimum/WACC minimum; EPS maksimum sendiri tidak cukup. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm09-06",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "category": "Asumsi",
+    "front": "MM dengan pajak",
+    "back": "VL = VU + TD mengasumsikan manfaat pajak utang permanen dapat dipakai dan biaya distress diabaikan. TD merupakan PV, sedangkan TrdD merupakan perisai pajak satu tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 478-517 (PDF 520-559)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm10-01",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "category": "Rumus",
+    "front": "Dividen residual",
+    "back": "Dividen = max(0, laba - kebutuhan ekuitas investasi). Investasi Rp200 juta × 60% ekuitas = Rp120 juta; laba Rp150 juta menyisakan Rp30 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm10-02",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "category": "Perbandingan",
+    "front": "Payout, retention, dan DPS",
+    "back": "Payout = dividen/laba; retention = 1-payout; DPS = dividen/jumlah saham. Dividen Rp30 juta, laba Rp150 juta, 10 juta saham memberi 20%, 80%, dan Rp3/lembar. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm10-03",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "category": "Asumsi",
+    "front": "Buyback dan EPS",
+    "back": "Pembelian kembali Rp300 juta pada Rp30/lembar mengurangi 10 juta lembar. EPS dapat naik jika laba tetap; kas dan biaya peluangnya juga berubah. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm10-04",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "category": "Rumus",
+    "front": "Stock split tanpa perubahan nilai",
+    "back": "Split 2-untuk-1 menggandakan jumlah lembar dan membagi harga teoritis dua. Lima juta saham Rp80 menjadi sepuluh juta saham Rp40, dengan total Rp400 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm10-05",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "category": "Teori",
+    "front": "Signaling dan clientele",
+    "back": "Signaling adalah sinyal informasi dividen; clientele adalah kelompok investor dengan preferensi distribusi tertentu. Reaksi harga bergantung ekspektasi, keberlanjutan kas, dan keadaan investor. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm10-06",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "category": "Miskonsepsi",
+    "front": "Preferensi pajak dividen",
+    "back": "Pengaruh pajak bergantung tarif, jenis investor, penangguhan, dan yurisdiksi. Model pajak pada contoh buku tidak otomatis menjadi aturan pajak Indonesia terbaru. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm11-01",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "category": "Rumus",
+    "front": "Cash conversion cycle",
+    "back": "CCC = DIO + DSO - DPO. Umur persediaan 60, piutang 45, dan utang pemasok 30 memberi CCC 75 hari. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm11-02",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "category": "Rumus",
+    "front": "DIO, DSO, dan DPO",
+    "back": "DIO = persediaan rata-rata/(COGS/365); DSO = piutang rata-rata/(penjualan kredit/365); DPO = utang pemasok rata-rata/(pembelian kredit/365). Nyatakan pendekatan jika pembelian diganti COGS. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm11-03",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "category": "Rumus",
+    "front": "Anggaran kas bulanan",
+    "back": "Kas sebelum pendanaan = awal + penerimaan - pembayaran. Jika kas -Rp5 juta dan minimum Rp10 juta, pinjaman diperlukan Rp15 juta. Pelunasan juga arus kas. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm11-04",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "category": "Perbandingan",
+    "front": "Investasi lancar dan pendanaan lancar",
+    "back": "Kebijakan aset lancar mengatur jumlah kas/piutang/persediaan. Kebijakan pendanaan mengatur tenor dan sumber dana. Keduanya terpisah meski saling memengaruhi likuiditas. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm11-05",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "category": "Mekanisme",
+    "front": "Matching, aggressive, conservative",
+    "back": "Matching menyelaraskan tenor aset dan pendanaan. Agresif memakai dana pendek lebih banyak, menambah risiko pembaruan. Konservatif memakai dana panjang untuk sebagian aset musiman dengan biaya peluang. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm11-06",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "category": "Rumus",
+    "front": "Evaluasi kebijakan kredit",
+    "back": "Manfaat tahunan = tambahan kontribusi - bad debt - biaya penagihan - biaya modal atas tambahan investasi. Jangan mengurangkan investasi piutang penuh seolah biaya satu tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm12-01",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "category": "Rumus",
+    "front": "Biaya nominal kredit dagang",
+    "back": "Untuk d diskon dan tambahan tenor n hari: nominal = d/(1-d) × 365/n. Syarat 2/10 net 30: (0,02/0,98) × 365/20 = 37,24% per tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm12-02",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "category": "Rumus",
+    "front": "Biaya efektif kredit dagang",
+    "back": "EAR = [1+d/(1-d)]^(365/n)-1. Syarat 2/10 net 30 memberi 44,59% per tahun. Bandingkan sumber dana memakai konvensi yang sama. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm12-03",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "category": "Rumus",
+    "front": "Potongan bunga awal",
+    "back": "Nominal Rp100 juta, bunga awal Rp12 juta, kas diterima Rp88 juta. Pelunasan Rp100 juta setahun kemudian memberi biaya 100/88-1 = 13,64%. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm12-04",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "category": "Rumus",
+    "front": "Saldo kompensasi tambahan",
+    "back": "Pinjaman Rp100 juta, bunga akhir Rp12 juta, saldo tertahan Rp20 juta berarti kas tersedia Rp80 juta; biaya dana 12/80 = 15%. Perlakukan arus pengembalian saldo dengan konsisten. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm12-05",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "category": "Konsep",
-    "front": "Teori MM dengan Pajak Perusahaan (1963)",
-    "back": "Nilai perusahaan berutang lebih tinggi sebesar Nilai Sekarang Penghematan Pajak Bunga: V_L = V_U + (T_c × D). Struktur modal optimal adalah 100% utang."
+    "front": "Persediaan dan biaya dana",
+    "back": "Menurunkan persediaan rata-rata Rp200 juta pada tarif biaya 20% menghemat Rp40 juta per tahun. Dana Rp200 juta yang dilepas berbeda dari penghematan tahunan; periksa biaya kekurangan stok. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
   },
   {
-    "id": "mnk201-tm09-04",
+    "id": "mnk102-uas-v2-tm12-06",
     "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Struktur Modal & Teori Modigliani-Miller (MM)",
-    "category": "Konsep",
-    "front": "Trade-off Theory (Teori Pertukaran Struktur Modal)",
-    "back": "Struktur modal optimal tercapai saat manfaat marjinal perisai pajak bunga tepat seimbang dengan nilai sekarang biaya kesulitan keuangan (financial distress)."
+    "tm": 12,
+    "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "category": "Perbandingan",
+    "front": "Line of credit dan revolving credit",
+    "back": "Line of credit adalah batas fasilitas kredit. Dalam contoh buku, revolver adalah fasilitas yang dikomitmenkan dengan biaya komitmen. Baca syarat kontrak, tenor, bunga, jaminan, dan dana yang benar-benar tersedia. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
   },
   {
-    "id": "mnk201-tm09-05",
+    "id": "mnk102-uas-v2-tm13-01",
     "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Struktur Modal & Teori Modigliani-Miller (MM)",
+    "tm": 13,
+    "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "category": "Rumus",
+    "front": "Arah kuotasi kurs",
+    "back": "IDR16.000/USD berarti Rp16.000 untuk USD1. Utang USD100.000 membutuhkan Rp1,6 miliar. Selalu tulis unit pembilang dan penyebut sebelum mengalikan atau membagi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm13-02",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "category": "Rumus",
+    "front": "Kurs silang",
+    "back": "IDR/USD dibagi JPY/USD menghasilkan IDR/JPY. 16.000/160 = Rp100 per JPY, dengan asumsi tanpa spread/biaya. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm13-03",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "category": "Rumus",
+    "front": "Covered interest parity",
+    "back": "F = S(1+rh)/(1+rf) untuk kuotasi mata uang domestik per asing. Spot 16.000, bunga 6% dan 4% setahun memberi 16.307,69 IDR/USD. Tenor bunga harus cocok. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm13-04",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "category": "Asumsi",
+    "front": "PPP relatif",
+    "back": "E(S1) = S0(1+inflasi domestik)/(1+inflasi asing). Ini proyeksi model daya beli, berbeda dari kontrak forward yang dapat dikunci; biaya transaksi dan hambatan perdagangan dapat mengubah hasil. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm13-05",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "category": "Mekanisme",
+    "front": "Arah hedge eksportir dan importir",
+    "back": "Piutang valas: jual valas forward. Utang valas: beli valas forward. Hedge mengurangi ketidakpastian kas tetapi dapat mengorbankan keuntungan bila spot kemudian bergerak menguntungkan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm13-06",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "category": "Prinsip",
+    "front": "Mata uang arus kas dan diskonto",
+    "back": "Konversikan kas USD ke proyeksi IDR sebelum memakai tingkat diskonto IDR. Alternatif penilaian USD memerlukan tingkat USD yang konsisten; jangan mencampur mata uang dan risiko. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm14-01",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "category": "Rumus",
+    "front": "Nilai sinergi",
+    "back": "Sinergi = nilai gabungan - nilai standalone A - nilai standalone B. Rp880 - Rp500 - Rp300 miliar = Rp80 miliar. Sinergi perlu berasal dari kas tambahan atau perubahan risiko yang dapat dijelaskan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm14-02",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "category": "Rumus",
+    "front": "NPV pengakuisisi",
+    "back": "NPV = PV sinergi - premium - biaya integrasi. Sinergi Rp80, premium Rp40, biaya Rp10 miliar memberi Rp30 miliar bagi pengakuisisi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm14-03",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "category": "Rumus",
+    "front": "Penawaran maksimum",
+    "back": "Harga maksimum = nilai standalone target + sinergi - biaya integrasi. Pada maksimum NPV nol. Jangan menambahkan sinergi lagi jika sudah masuk proyeksi kas target. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm14-04",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "category": "Rumus",
+    "front": "DCF operasi dan ekuitas",
+    "back": "FCF operasi didiskonto WACC; ekuitas = nilai operasi - utang + kas nonoperasi. FCFE, kas untuk ekuitas, didiskonto biaya ekuitas. Pilih arus dan diskonto yang sepadan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm14-05",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "category": "Rumus",
+    "front": "Terminal value",
+    "back": "TVt = FCF(t+1)/(WACC-g), dengan WACC>g. Jika FCF3=30, g=2%, WACC=12%, TV3=306; TV masih didiskonto ke hari ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm14-06",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "category": "Miskonsepsi",
+    "front": "EPS accretion dan nilai",
+    "back": "EPS accretion berarti EPS gabungan naik; hal itu tidak membuktikan NPV positif. Periksa premium, harga saham pembayaran, risiko, biaya integrasi, dan realisasi sinergi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm15-01",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
+    "category": "Rumus",
+    "front": "Z original manufaktur publik",
+    "back": "Z = 1,2X1+1,4X2+3,3X3+0,6X4+X5. X1 modal kerja/aset; X2 laba ditahan/aset; X3 EBIT/aset; X4 nilai pasar ekuitas/total kewajiban buku; X5 penjualan/aset. Model original tanpa konstanta. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm15-02",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
     "category": "Klasifikasi",
-    "front": "Pecking Order Theory (Myers & Majluf)",
-    "back": "Urutan pendanaan preferensi manajer: (1) Dana internal (laba ditahan), (2) Utang emisi baru (debt), dan terakhir (3) Emisi saham ekuitas baru."
+    "front": "Zona skor original",
+    "back": "Untuk klasifikasi latihan: Z<1,81 distress, 1,81 sampai 2,99 abu-abu, Z>2,99 lebih aman relatif model. Skor tepat pada batas masuk abu-abu; batas ini tidak berlaku otomatis bagi varian Z-prime/Z-double-prime. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)."
   },
   {
-    "id": "mnk201-tm09-06",
+    "id": "mnk102-uas-v2-tm15-03",
     "phase": "pra-uas",
-    "tm": 9,
-    "topic": "Struktur Modal & Teori Modigliani-Miller (MM)",
+    "tm": 15,
+    "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
+    "category": "Miskonsepsi",
+    "front": "Skor bukan probabilitas",
+    "back": "Z=2,164 adalah skor diskriminan, bukan peluang 2,164% atau 216,4%. Peluang default memerlukan pemetaan/kalibrasi lain, serta pemeriksaan populasi, horizon, dan kualitas data. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm15-04",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
+    "category": "Prinsip",
+    "front": "Varian dan populasi model",
+    "back": "Original memakai manufaktur publik dan ekuitas pasar. Model privat mengubah koefisien dan ekuitas; nonmanufaktur mengubah model lagi. Jangan menukar satu input sambil menjaga koefisien/batas original. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm15-05",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
+    "category": "Perbandingan",
+    "front": "Distress, insolvensi, dan pailit",
+    "back": "Defisit kas dapat terjadi saat ekuitas buku positif. Ketidakmampuan ekonomi membayar berbeda dari status hukum pailit. Model risiko dan keputusan hukum mempunyai proses pembuktian tersendiri. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)."
+  },
+  {
+    "id": "mnk102-uas-v2-tm15-06",
+    "phase": "pra-uas",
+    "tm": 15,
+    "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
     "category": "Konsep",
-    "front": "Biaya Kebangkrutan Langsung vs Tidak Langsung",
-    "back": "Biaya langsung: biaya legal, akuntan pengadilan pailit. Biaya tidak langsung: hilangnya pelanggan, pemasok mencabut kredit dagang, dan kepergian karyawan kunci."
-  },
-  {
-    "id": "mnk201-tm10-01",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kebijakan Dividen & Pembelian Kembali Saham",
-    "category": "Teori",
-    "front": "Teori Ketidakrelevanan Dividen (MM 1961)",
-    "back": "Pada pasar sempurna, nilai perusahaan ditentukan oleh kapasitas menghasilkan laba dari asetnya, bukan bagaimana laba dibagi antara dividen dan saldo laba."
-  },
-  {
-    "id": "mnk201-tm10-02",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kebijakan Dividen & Pembelian Kembali Saham",
-    "category": "Teori",
-    "front": "Bird-in-the-Hand Theory (Gordon & Lintner)",
-    "back": "Investor memandang dividen tunai saat ini lebih pasti dan kurang berisiko dibanding potensi capital gain masa depan; dividen tinggi menaikkan nilai saham."
-  },
-  {
-    "id": "mnk201-tm10-03",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kebijakan Dividen & Pembelian Kembali Saham",
-    "category": "Teori",
-    "front": "Tax Preference Theory",
-    "back": "Jika tarif pajak capital gain lebih rendah atau pajaknya dapat ditangguhkan hingga saham dijual, investor lebih menyukai perusahaan menahan laba daripada bagi dividen."
-  },
-  {
-    "id": "mnk201-tm10-04",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kebijakan Dividen & Pembelian Kembali Saham",
-    "category": "Konsep",
-    "front": "Signaling Hypothesis (Kandungan Informasi Dividen)",
-    "back": "Kenaikan dividen yang tidak terduga diartikan investor sebagai sinyal positif optimisme manajemen bahwa laba masa depan akan melonjak."
-  },
-  {
-    "id": "mnk201-tm10-05",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kebijakan Dividen & Pembelian Kembali Saham",
-    "category": "Mekanisme",
-    "front": "Pembelian Kembali Saham (Share Repurchase)",
-    "back": "Mendistribusikan kas kepada pemegang saham dengan membeli kembali saham beredar; menaikkan EPS dan memberi fleksibilitas pajak bagi investor."
-  },
-  {
-    "id": "mnk201-tm10-06",
-    "phase": "pra-uas",
-    "tm": 10,
-    "topic": "Kebijakan Dividen & Pembelian Kembali Saham",
-    "category": "Konsep",
-    "front": "Kebijakan Dividen Residual (Residual Dividend Policy)",
-    "back": "Dividen hanya dibayarkan dari sisa laba setelah seluruh proyek penganggaran modal yang menguntungkan (NPV positif) terpenuhi pendanaannya."
-  },
-  {
-    "id": "mnk201-tm11-01",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Manajemen Modal Kerja: Kas & Piutang",
-    "category": "Konsep",
-    "front": "Tiga Strategi Pendanaan Modal Kerja",
-    "back": "(1) Pendekatan Maturitas (Maturity Matching), (2) Pendekatan Konservatif (dana jangka panjang mendanai aset permanen & fluktuatif), (3) Pendekatan Agresif."
-  },
-  {
-    "id": "mnk201-tm11-02",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Manajemen Modal Kerja: Kas & Piutang",
-    "category": "Konsep",
-    "front": "Motif Memegang Kas (Keynes)",
-    "back": "(1) Motif Transaksi (pembayaran operasional harian), (2) Motif Berjaga-jaga (kontinjensi darurat), dan (3) Motif Spekulasi (memanfaatkan peluang diskon)."
-  },
-  {
-    "id": "mnk201-tm11-03",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Manajemen Modal Kerja: Kas & Piutang",
-    "category": "Rumus",
-    "front": "Model Manajemen Kas Baumol-Allais-Tobin (BAT)",
-    "back": "Menentukan saldo kas optimal (C*) dengan menyeimbangkan biaya transaksi penarikan dana dengan biaya peluang bunga yang hilang: C* = √[(2 × T × F) / r]."
-  },
-  {
-    "id": "mnk201-tm11-04",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Manajemen Modal Kerja: Kas & Piutang",
-    "category": "Rumus",
-    "front": "Model Miller-Orr untuk Arus Kas Berfluktuasi",
-    "back": "Menetapkan batas atas (Upper Limit) dan batas bawah (Lower Limit) saldo kas; kas hanya dikonversi ke sekuritas saat menyentuh batas batas tersebut."
-  },
-  {
-    "id": "mnk201-tm11-05",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Manajemen Modal Kerja: Kas & Piutang",
-    "category": "Konsep",
-    "front": "Kebijakan Kredit & 5C of Credit",
-    "back": "Evaluasi kelayakan kredit pelanggan berdasarkan: Character (karakter), Capacity (kapasitas bayar), Capital (modal), Collateral (jaminan), dan Conditions (kondisi ekonomi)."
-  },
-  {
-    "id": "mnk201-tm11-06",
-    "phase": "pra-uas",
-    "tm": 11,
-    "topic": "Manajemen Modal Kerja: Kas & Piutang",
-    "category": "Konsep",
-    "front": "Aging Schedule Piutang Usaha",
-    "back": "Pengelompokan akun piutang berdasarkan lamanya tunggakan jatuh tempo untuk mengestimasi risiko kredit macet dan efektivitas penagihan."
-  },
-  {
-    "id": "mnk201-tm12-01",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Manajemen Persediaan & Pendanaan Jangka Pendek",
-    "category": "Rumus",
-    "front": "Model Economic Order Quantity (EOQ)",
-    "back": "EOQ = √[(2 × D × S) / H], di mana D adalah permintaan tahunan, S adalah biaya pemesanan per order, dan H adalah biaya penyimpanan per unit per tahun."
-  },
-  {
-    "id": "mnk201-tm12-02",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Manajemen Persediaan & Pendanaan Jangka Pendek",
-    "category": "Rumus",
-    "front": "Reorder Point (ROP) & Safety Stock",
-    "back": "ROP = (Tingkat Penggunaan Harian × Lead Time Pengiriman) + Persediaan Pengaman (Safety Stock)."
-  },
-  {
-    "id": "mnk201-tm12-03",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Manajemen Persediaan & Pendanaan Jangka Pendek",
-    "category": "Rumus",
-    "front": "Biaya Kredit Dagang Terselubung (Trade Credit Cost)",
-    "back": "Biaya diskon kas yang dilepas: Nominal Cost = [Diskon % / (100% - Diskon %)] × [365 / (Jatuh Tempo - Periode Diskon)]. Misal syarat 2/10, net 30."
-  },
-  {
-    "id": "mnk201-tm12-04",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Manajemen Persediaan & Pendanaan Jangka Pendek",
-    "category": "Rumus",
-    "front": "Kredit Bank Jangka Pendek & Compensating Balance",
-    "back": "Saldo kompensasi minimum yang ditahan bank menaikkan tingkat bunga efektif pinjaman: Effective Rate = Bunga Tahunan / (Pinjaman - Saldo Kompensasi)."
-  },
-  {
-    "id": "mnk201-tm12-05",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Manajemen Persediaan & Pendanaan Jangka Pendek",
-    "category": "Mekanisme",
-    "front": "Anjak Piutang (Factoring) dengan/tanpa Regress",
-    "back": "Menjual piutang usaha kepada lembaga keuangan faktor untuk memperoleh kas seketika; factoring with recourse menanggung risiko piutang macet."
-  },
-  {
-    "id": "mnk201-tm12-06",
-    "phase": "pra-uas",
-    "tm": 12,
-    "topic": "Manajemen Persediaan & Pendanaan Jangka Pendek",
-    "category": "Konsep",
-    "front": "Surat Berharga Komersial (Commercial Paper)",
-    "back": "Surat utang jangka pendek tanpa jaminan yang diterbitkan korporasi berperingkat kredit tinggi untuk memenuhi likuiditas jangka pendek."
-  },
-  {
-    "id": "mnk201-tm13-01",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Manajemen Keuangan Multinasional & Risiko Valas",
-    "category": "Konsep",
-    "front": "Perusahaan Multinasional (MNC) vs Domestik",
-    "back": "MNC menghadapi risiko fluktuasi nilai tukar mata uang asing, perbedaan rezim hukum/pajak internasional, dan risiko politik negara tuan rumah."
-  },
-  {
-    "id": "mnk201-tm13-02",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Manajemen Keuangan Multinasional & Risiko Valas",
-    "category": "Klasifikasi",
-    "front": "Tiga Jenis Eksposur Valuta Asing",
-    "back": "(1) Transaction Exposure (transaksi perdagangan valas), (2) Translation/Accounting Exposure (konsolidasi laporan luar negeri), (3) Operating/Economic Exposure."
-  },
-  {
-    "id": "mnk201-tm13-03",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Manajemen Keuangan Multinasional & Risiko Valas",
-    "category": "Teori",
-    "front": "Purchasing Power Parity (PPP)",
-    "back": "Menyatakan bahwa nilai tukar antara dua mata uang disesuaikan untuk mencerminkan perbedaan tingkat inflasi di kedua negara."
-  },
-  {
-    "id": "mnk201-tm13-04",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Manajemen Keuangan Multinasional & Risiko Valas",
-    "category": "Teori",
-    "front": "Interest Rate Parity (IRP)",
-    "back": "Premi atau diskon forward mata uang mencerminkan perbedaan suku bunga nominal antar kedua negara, mencegah arbitrase suku bunga tanpa risiko."
-  },
-  {
-    "id": "mnk201-tm13-05",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Manajemen Keuangan Multinasional & Risiko Valas",
-    "category": "Mekanisme",
-    "front": "Lindung Nilai (Hedging) dengan Forward vs Opsi",
-    "back": "Kontrak Forward mengunci kurs tukar masa depan secara pasti (kewajiban mengikat). Kontrak Opsi memberi hak tanpa kewajiban untuk membeli/menjual valas."
-  },
-  {
-    "id": "mnk201-tm13-06",
-    "phase": "pra-uas",
-    "tm": 13,
-    "topic": "Manajemen Keuangan Multinasional & Risiko Valas",
-    "category": "Konsep",
-    "front": "Transfer Pricing & Pemulangan Laba (Repatriation)",
-    "back": "MNC merancang alur transfer dividen, royalti, dan biaya manajemen untuk memaksimalkan arus kas global setelah pajak."
-  },
-  {
-    "id": "mnk201-tm14-01",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Merger, Akuisisi & Financial Distress (Review UAS)",
-    "category": "Konsep",
-    "front": "Motivasi Merger & Sinergi Korporasi",
-    "back": "Menciptakan Sinergi Operasional (skala ekonomis) dan Sinergi Finansial (biaya modal lebih rendah, kapasitas utang meningkat): Nilai Gabungan (V_AB) > V_A + V_B."
-  },
-  {
-    "id": "mnk201-tm14-02",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Merger, Akuisisi & Financial Distress (Review UAS)",
-    "category": "Mekanisme",
-    "front": "Merger Horizontal, Vertikal & Konglomerat",
-    "back": "Horizontal (perusahaan di industri yang sama), Vertikal (dengan pemasok/distributor), Konglomerat (perusahaan di industri yang tidak saling terkait)."
-  },
-  {
-    "id": "mnk201-tm14-03",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Merger, Akuisisi & Financial Distress (Review UAS)",
-    "category": "Konsep",
-    "front": "Model Prediksi Kebangkrutan Altman Z-Score",
-    "back": "Model diskriminan keuangan yang menggabungkan 5 rasio kunci untuk memprediksi probabilitas kebangkrutan perusahaan manufaktur."
-  },
-  {
-    "id": "mnk201-tm14-04",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Merger, Akuisisi & Financial Distress (Review UAS)",
-    "category": "Prosedur",
-    "front": "Restrukturisasi Keuangan & Reorganisasi Pailit",
-    "back": "Menegosiasikan perpanjangan jatuh tempo utang (extension) atau pengurangan nilai utang pokok (composition) dengan kreditor."
-  },
-  {
-    "id": "mnk201-tm14-05",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Merger, Akuisisi & Financial Distress (Review UAS)",
-    "category": "Konsep",
-    "front": "Fokus Utama Ujian Akhir Semester (UAS) Mankeu",
-    "back": "Kuasai Teori Struktur Modal MM (dengan & tanpa pajak), Kebijakan Dividen, Manajemen Modal Kerja (BAT & EOQ), serta Perhitungan Eksposur Valas & WACC."
-  },
-  {
-    "id": "mnk201-tm14-06",
-    "phase": "pra-uas",
-    "tm": 14,
-    "topic": "Merger, Akuisisi & Financial Distress (Review UAS)",
-    "category": "Konsep",
-    "front": "Kiat Sukses Ujian Akhir Semester Manajemen Keuangan",
-    "back": "Perhatikan konsistensi satuan mata uang dan periode waktu (tahunan vs bulanan); jabarkan implikasi manajerial di samping kalkulasi matematis."
+    "front": "Reorganisasi versus likuidasi",
+    "back": "Bandingkan nilai going concern setelah biaya dengan nilai penjualan aset bersih. Nilai bersih 105 versus 87 miliar mendukung reorganisasi secara ekonomi; kelangsungan kas dan kesepakatan kreditur tetap perlu dievaluasi. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)."
   }
 ];

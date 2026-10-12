@@ -1,144 +1,187 @@
 import type { Reading } from '../../../types';
-import { CASE_DIVIDEND_POLICY_REPURCHASE } from '../mankeuPracticeCases';
-
-const SVG_DIVIDEND_POLICY = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgMk10" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="divGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
-    <linearGradient id="repGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk10)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">DISTRIBUSI KAS KEPADA PEMEGANG SAHAM: DIVIDEN TUNAI VS SHARE BUYBACK</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">DIVIDEND POLICY</text>
-
-  <!-- Left: Cash Dividend -->
-  <g transform="translate(35, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#divGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-blue" x="16" y="20" fill="#38bdf8" font-size="11" font-weight="800">1. DIVIDEN TUNAI (CASH DIVIDEND)</text>
-    
-    <rect class="svg-subcard" x="16" y="44" width="363" height="36" rx="6" fill="#1e293b" stroke="#38bdf8"/>
-    <text class="text-accent-blue" x="197" y="58" fill="#38bdf8" font-size="8.5" font-weight="800" text-anchor="middle">MEKANISME: TRANSFER KAS BERKALA</text>
-    <text class="svg-muted" x="197" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Kas Keluar Neraca →Masuk Rekening RDN Investor</text>
-
-    <text class="svg-text" x="16" y="102" fill="#cbd5e1" font-size="8">• Sinyal Komitmen: Menunjukkan kepastian arus kas stabil ("Bird in the Hand")</text>
-    <text class="svg-text" x="16" y="120" fill="#cbd5e1" font-size="8">• Efek Klientel: Sangat disukai dana pensiun &amp; yayasan yang butuh kas rutin</text>
-    <text class="svg-text" x="16" y="138" fill="#cbd5e1" font-size="8">• Kekakuan Dividen (Dividend Sticky): Pemotongan dividen dianggap sinyal krisis buruk</text>
-    <text class="svg-text" x="16" y="156" fill="#cbd5e1" font-size="8">• Harga saham otomatis terkoreksi turun sebesar dividen per lembar saat Ex-Date</text>
-    
-    <rect class="svg-badge-blue" x="16" y="185" width="363" height="24" rx="6" fill="#0284c7" fill-opacity="0.2"/>
-    <text class="text-accent-blue" x="197" y="201" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Sinyal Kesehatan Operasional &amp; Kepastian Kas Terjadwal</text>
-  </g>
-
-  <!-- Right: Share Buyback (Repurchase) -->
-  <g transform="translate(470, 75)">
-    <rect class="svg-card" x="0" y="0" width="395" height="235" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
-    <rect x="0" y="0" width="395" height="30" rx="12" fill="url(#repGrad)" fill-opacity="0.25"/>
-    <text class="text-accent-green" x="16" y="20" fill="#34d399" font-size="11" font-weight="800">2. PEMBELIAN KEMBALI SAHAM (SHARE BUYBACK)</text>
-    
-    <rect class="svg-subcard" x="16" y="44" width="363" height="36" rx="6" fill="#1e293b" stroke="#34d399"/>
-    <text class="text-accent-green" x="197" y="58" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">MEKANISME: BUYBACK VIA PASAR REGULER</text>
-    <text class="svg-muted" x="197" y="72" fill="#94a3b8" font-size="7.5" text-anchor="middle">Saham dibeli kembali menjadi Saham Treasuri (Treasury Shares)</text>
-
-    <text class="svg-text" x="16" y="102" fill="#cbd5e1" font-size="8">• Sinyal Undervaluation: Manajemen yakin harga saham di pasar terlalu murah</text>
-    <text class="svg-text" x="16" y="120" fill="#cbd5e1" font-size="8">• Mengurangi jumlah saham beredar →Secara mekanis mendongkrak EPS &amp; ROE</text>
-    <text class="svg-text" x="16" y="138" fill="#cbd5e1" font-size="8">• Fleksibilitas Tinggi: Tidak menimbulkan ekspektasi komitmen wajib di tahun depan</text>
-    <text class="svg-text" x="16" y="156" fill="#cbd5e1" font-size="8">• Efisiensi Pajak: Memberikan opsi capital gain bagi pemegang saham</text>
-    
-    <rect class="svg-badge-green" x="16" y="185" width="363" height="24" rx="6" fill="#059669" fill-opacity="0.2"/>
-    <text class="text-accent-green" x="197" y="201" fill="#34d399" font-size="8" font-weight="700" text-anchor="middle">Mendongkrak Laba Per Lembar Saham (EPS Booster)</text>
-  </g>
-</svg>`;
-
 export const TM10_READING: Reading = {
-  tm: 10,
-  title: 'Distributions to Shareholders: Dividends & Share Repurchases',
-  ref: 'Brigham & Ehrhardt Ch. 14 | Teori Kebijakan Dividen | Residual Dividend Model & Share Buybacks',
-  intro: 'TM 10 membahas strategi distribusi kekayaan kepada pemegang saham: perdebatan 3 teori dividen (Dividend Irrelevance MM, Bird-in-the-Hand Gordon-Lintner, Tax Preference Theory), Model Dividen Residual (Residual Dividend Model), Dividend Reinvestment Plans (DRIPs), pemecahan saham (Stock Splits & Stock Dividends), serta keunggulan strategis pembelian kembali saham (Share Repurchases).',
-  objectives: [
-    'Membandingkan 3 teori kebijakan dividen dan implikasinya terhadap nilai saham.',
-    'Menghitung jumlah dividen yang dibagikan dan DPR menggunakan Residual Dividend Model.',
-    'Menganalisis dampak pemecahan saham (Stock Split) vs Dividen Saham terhadap struktur ekuitas.',
-    'Mengevaluasi keuntungan dan risiko Share Repurchase bagi pemegang saham dan korporasi.'
+  "tm": 10,
+  "title": "Distribusi kepada Pemegang Saham",
+  "ref": "Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)",
+  "intro": "Menggunakan kontrak, buku lokal dan sumber yang disebutkan untuk menyelesaikan keputusan distribusi kepada pemegang saham secara bertahap.",
+  "objectives": [
+    "Menjelaskan konsep dan asumsi distribusi kepada pemegang saham.",
+    "Menghitung hasil dengan satuan, tenor dan pembulatan yang tepat.",
+    "Menilai keputusan serta batas model dan rujukannya."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 10.1: Perbandingan Karakteristik Dividen Tunai vs Share Repurchase.',
-      svg: SVG_DIVIDEND_POLICY
+      "kind": "h2",
+      "text": "Pintu masuk: cakupan dan sumber"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 10'
+      "kind": "p",
+      "text": "TM10 mengikuti Kontrak MK2026 Sheet 1 baris 27. Fokus: Distribusi kepada Pemegang Saham. Buku kontrak edisi 15 dipetakan ke buku lokal edisi 16 berdasarkan topik, dengan nomor halaman cetak dan PDF yang dapat ditelusuri. Angka latihan adalah skenario hipotetis, bukan harga pasar atau ketentuan pajak terbaru. Rujukan utama: Brigham & Houston, FFM16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
     },
     {
-      kind: 'table',
-      headers: ['Teori Kebijakan Dividen', 'Pencetus Teori', 'Pandangan terhadap DPR Tinggi', 'Rekomendasi Manajer'],
-      rows: [
-        ['1. Dividend Irrelevance', 'Modigliani & Miller (1961)', 'TIDAK MEMENGARUHI nilai perusahaan (investor dapat menciptakan *homemade dividends*).', 'Fokus pada proyek NPV positif, jangan pusingkan dividen.'],
-        ['2. Bird-in-the-Hand Theory', 'Myron Gordon & John Lintner', 'MENINGKATKAN nilai saham (investor lebih menghargai dividen pasti dibanding capital gain berisiko).', 'Bayar dividen tunai tinggi untuk menekan biaya modal ekuitas ($r_s$).'],
-        ['3. Tax Preference Theory', 'Farrar, Selwyn, Brennan', 'MENURUNKAN nilai saham (karena tarif pajak dividen sering lebih tinggi dibanding pajak capital gain yang ditunda).', 'Tahan laba dan lakukan reinvestasi atau bagikan via Share Buyback.']
+      "kind": "p",
+      "text": "Paket TM ini mempunyai 10 kuis, enam flashcard, dan dua kasus bank soal. Dugaan prioritas ujian berasal dari kontrak dan contoh pembahasan lokal; tidak ada arsip ujian untuk memastikan bentuk soal. Kerjakan dengan rumus, langkah antara, satuan, periode bunga, pembulatan akhir dan alasan keputusan."
+    },
+    {
+      "kind": "h2",
+      "text": "1. Distribusi memerlukan laba, kas, dan peluang investasi"
+    },
+    {
+      "kind": "p",
+      "text": "Distributions to shareholders adalah pembagian kas atau manfaat kepada pemegang saham melalui dividen dan pembelian kembali saham. Laba bersih bukan saldo kas: laba dapat tertahan dalam piutang atau aset lain. Keputusan distribusi perlu menilai proyek bernilai positif, kebutuhan modal, target utang/ekuitas, pembatasan kontrak dan kemampuan kas. Buku membahas model pasar ideal dan preferensi investor; contoh pajak Amerika pada buku tidak otomatis menjadi ketentuan pajak Indonesia sekarang. [hal. cetak 519-541; PDF 561-583]"
+    },
+    {
+      "kind": "h2",
+      "text": "2. Dividen residual secara bertahap"
+    },
+    {
+      "kind": "p",
+      "text": "Residual dividend model membiayai porsi ekuitas investasi yang layak dari laba terlebih dahulu, kemudian membagikan sisanya. Hitung kebutuhan ekuitas dari target porsi ekuitas dikali anggaran investasi. Jika kebutuhan melebihi laba, dividen residual nol dan terdapat kebutuhan dana tambahan. Jangan menghasilkan dividen negatif. Target investasi harus sudah dinilai layak; model ini bukan perintah menerima seluruh belanja modal. [hal. cetak 527-532; PDF 569-574]"
+    },
+    {
+      "kind": "formula",
+      "text": "Div=\\max(0,NI-w_E\\,CapEx)\\qquad Payout=\\frac{Div}{NI}\\qquad DPS=\\frac{Div}{N}",
+      "note": "NI laba bersih; N jumlah lembar saham. Payout tidak terdefinisi jika laba nol; bila laba negatif, rasio biasa dapat menyesatkan. Rujukan: hal. cetak 527-533, PDF 569-575."
+    },
+    {
+      "kind": "p",
+      "text": "Contoh: laba Rp 150 juta, investasi Rp 200 juta, ekuitas target 60%. Kebutuhan ekuitas Rp 120 juta, utang Rp 80 juta, dividen Rp 30 juta, payout 20%. Dengan 10 juta lembar, DPS Rp 3. Jika investasi naik menjadi Rp 300 juta, ekuitas Rp 180 juta; laba hanya Rp 150 juta sehingga kekurangan Rp 30 juta dan dividen nol. Kestabilan dividen dapat dipertimbangkan melalui target payout jangka panjang dan distribusi tambahan ketika kas benar-benar tersedia. [hal. cetak 527-535; PDF 569-577]"
+    },
+    {
+      "kind": "h2",
+      "text": "3. Teori dividen dan penafsiran informasi"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kerangka",
+        "Makna",
+        "Batas"
       ],
-      caption: 'Tabel 10.0: Perbandingan 3 mazhab teori kebijakan dividen.'
+      "rows": [
+        [
+          "Dividend irrelevance",
+          "Dalam pasar ideal, nilai berasal dari kas operasi dan risiko.",
+          "Asumsi tanpa friksi diperlukan."
+        ],
+        [
+          "Preferensi dividen atau keuntungan modal",
+          "Investor dapat mempunyai preferensi risiko, kebutuhan pendapatan, atau perlakuan pajak.",
+          "Tidak memberi kesimpulan universal dividen tinggi selalu menaikkan harga."
+        ],
+        [
+          "Signaling",
+          "Perubahan dividen dapat membawa informasi tentang kas masa depan.",
+          "Sinyal bukan kepastian hasil."
+        ],
+        [
+          "Clientele effect",
+          "Investor dengan kebutuhan distribusi serupa cenderung memilih kebijakan yang cocok.",
+          "Perubahan kebijakan dapat mengubah kelompok pemilik."
+        ]
+      ],
+      "caption": "Rujukan: hal. cetak 521-527, PDF 563-569."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Residual Dividend Model'
+      "kind": "h2",
+      "text": "4. Prosedur pembayaran dan mekanisme saham"
     },
     {
-      kind: 'formula',
-      text: `\\text{Dividen Dibagikan} = \\text{Net Income} - [\\text{Target Equity Ratio } (w_s) \\times \\text{Total Capital Budget}]
-\\text{Dividend Payout Ratio (DPR)} = \\frac{\\text{Dividen Dibagikan}}{\\text{Net Income}}
-\\text{Harga Saham Pasca-Buyback}: \\quad P^* = \\frac{\\text{Nilai Ekuitas Total} - \\text{Kas Digunakan untuk Buyback}}{\\text{Jumlah Saham Beredar Awal} - \\text{Jumlah Saham Dibeli Kembali}} = P_0`,
-      note: 'Dalam Model Dividen Residual, dividen hanya dibayarkan jika masih ada sisa laba bersih setelah seluruh proyek investasi ber-NPV positif terpenuhi porsi ekuitasnya.'
+      "kind": "p",
+      "text": "Declaration date adalah tanggal keputusan dividen; record date menentukan pemegang yang dicatat, ex-dividend date membedakan transaksi saham yang masih membawa hak dividen menurut pasar terkait, dan payment date adalah pembayaran. Urutan dan jeda mengikuti mekanisme pasar, sehingga contoh prosedur pasar Amerika dalam buku tidak dipakai sebagai kalender Bursa Efek Indonesia terbaru. DRIP, dividend reinvestment plan, menginvestasikan dividen kembali ke saham. [hal. cetak 536-539; PDF 578-581]"
     },
     {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
+      "kind": "p",
+      "text": "Stock split, pemecahan saham, dan stock dividend, pembagian saham tambahan, mengubah jumlah lembar. Pada nilai ekuitas tetap, harga teoritis menyesuaikan berbanding terbalik. Split 2-untuk-1: N menjadi 2 N dan P menjadi P/2. Dividen saham 20%: N menjadi 1,20 N dan P menjadi P/1,20. Perubahan jumlah lembar tidak menciptakan kas. Harga aktual dapat merespons informasi baru atau kondisi pasar. [hal. cetak 541-543; PDF 583-585]"
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Kebijakan Dividen Residual PT Sejahtera',
-      prompt: 'PT Sejahtera memproyeksikan laba bersih Rp 20 Miliar. Target rasio utang terhadap modal $w_d = 40\\%$ ($w_s = 60\\%$). Perusahaan memiliki 2 skenario Capital Budget: (a) Proyek Rp 25 Miliar, dan (b) Proyek Rp 40 Miliar. Hitung dividen yang dibagikan dan DPR untuk masing-masing skenario!',
-      blocks: [
+      "kind": "h2",
+      "text": "5. Buyback dan nilai"
+    },
+    {
+      "kind": "formula",
+      "text": "N_{baru}=N_{lama}-\\frac{Kas_{buyback}}{P_{buyback}}\\qquad EPS=\\frac{NI}{N}",
+      "note": "Jumlah saham dalam lembar, harga dalam uang per lembar. Rujukan: hal. cetak 543-548, PDF 585-590."
+    },
+    {
+      "kind": "p",
+      "text": "Pembelian kembali menggunakan kas dan mengurangi jumlah saham. Jika kas Rp 200 juta keluar dari ekuitas Rp 1 miliar dan 4 juta dari 20 juta saham dibeli pada Rp 50, tersisa ekuitas Rp 800 juta dan 16 juta saham: harga teoritis tetap Rp 50. EPS bisa naik bila laba sengaja diasumsikan tetap, tetapi biaya peluang kas, tambahan utang, pajak dan harga beli perlu diuji. Buyback terlalu mahal dapat merugikan pemilik yang tetap memegang saham. [hal. cetak 544-548; PDF 586-590]"
+    },
+    {
+      "kind": "h2",
+      "text": "Latihan kasus 1: Dividen residual, kekurangan dana, dan payout"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Laba bersih Rp 150 juta; kas tersedia untuk keputusan ini cukup.",
+        "Proyek dasar Rp 200 juta; target ekuitas 60%, utang 40%; saham 10 juta lembar.",
+        "Alternatif perluasan proyek Rp 300 juta dengan target sama."
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Hitung kebutuhan ekuitas dan utang, dividen, payout dan DPS rencana dasar. Hitung dana ekuitas tambahan serta dividen rencana perluasan. Jelaskan pengaruh kebijakan residual pada kestabilan dividen dan sinyal pasar. Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil.",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Skenario (a) Capital Budget Rp 25 Miliar**:\n- Kebutuhan Ekuitas = 60% × Rp 25 M = Rp 15 Miliar.\n- Dividen = Rp 20 M - Rp 15 M = **Rp 5 Miliar**.\n- DPR = Rp 5 M / Rp 20 M = **25,0%**.',
-            '**Skenario (b) Capital Budget Rp 40 Miliar**:\n- Kebutuhan Ekuitas = 60% × Rp 40 M = Rp 24 Miliar.\n- Dividen = Rp 20 M - Rp 24 M = **Rp 0 (Defisit Ekuitas Rp 4 Miliar)**.\n- DPR = **0,0%**. Perusahaan tidak membagikan dividen sama sekali dan menahan seluruh laba untuk investasi.'
-          ]
+          "kind": "p",
+          "text": "Dasar: ekuitas 0,60×200=Rp 120 juta; utang 0,40×200=Rp 80 juta. Residual 150-120=Rp 30 juta; payout 30/150=20%; retention 80%; DPS30 juta/10 juta=Rp 3/lembar. Perluasan: ekuitas 180, utang 120 juta; laba 150 menyisakan kekurangan 30 juta, sehingga dividen residual nol. Kekurangan memerlukan emisi ekuitas, pengurangan proyek, atau penyesuaian target yang dinilai terpisah. Laba akuntansi tidak identik dengan kas: kasus sengaja menyatakan kas mencukupi. Dividen residual dapat berfluktuasi bersama peluang investasi; manajemen perlu mengomunikasikan alasan perubahan. Payout bukan persentase investasi; kebutuhan dana ekuitas dihitung lebih dahulu. Keputusan proyek mengasumsikan semua proyek sudah layak berdasarkan NPV, sehingga laba ditahan diarahkan ke investasi yang menciptakan nilai. Sinyal kenaikan/penurunan dividen tetap harus diuji terhadap kemampuan menghasilkan kas."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 525-533 (PDF 567-575)."
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 10'
+      "kind": "h2",
+      "text": "Latihan kasus 2: Distribusi kas: membandingkan dividen, buyback, dan split"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', '3 Teori Kebijakan Dividen', 'Pembedaan MM, Bird-in-the-Hand, dan Tax Preference.', 'Mampu menganalisis pengaruh kebijakan dividen terhadap harga saham.'],
-        ['2', 'Residual Dividend Model', 'Perhitungan alokasi laba bersih ke belanja modal vs dividen.', 'Mampu menghitung dividen residual dan DPR pada berbagai skenario belanja modal.'],
-        ['3', 'Share Repurchase vs Cash Dividend', 'Analisis sinyal pasar, fleksibilitas kas, dan perubahan EPS.', 'Mampu membandingkan keunggulan buyback vs dividen tunai.']
-      ],
-      caption: 'Tabel 10.2: Peta penguasaan submateri TM 10 Manajemen Keuangan.'
-    },
-    CASE_DIVIDEND_POLICY_REPURCHASE,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "ul",
+      "items": [
+        "Ekuitas pasar Rp 1 miliar; saham 20 juta; harga Rp 50/lembar.",
+        "Kas surplus untuk distribusi Rp 200 juta; tanpa pajak, biaya transaksi, atau sinyal baru.",
+        "Untuk perhitungan EPS terpisah, laba tetap Rp 40 juta setahun; tidak ada pengaruh biaya peluang kas dalam model."
+      ]
     },
     {
-      kind: 'ul',
-      items: [
-        '**Informational Content / Signaling**: Kenaikan dividen yang tak terduga dipandang sebagai sinyal bahwa manajemen sangat optimis terhadap prospek laba masa depan.',
-        '**Clientele Effect**: Kelompok investor tertentu (seperti dana pensiun) menyukai saham dengan dividen tinggi stabil, sedangkan investor individu tarif pajak tinggi menyukai capital gain.',
-        '**Stock Split Tidak Mengubah Nilai**: Pemecahan saham (2-for-1 split) menurunkan harga saham per lembar menjadi setengahnya dan menggandakan jumlah lembar saham, namun total nilai ekuitas pemegang saham tetap sama.'
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Bandingkan dividen tunai Rp 200 juta dengan buyback Rp 200 juta pada harga wajar. Hitung saham dan harga teoritis sesudah distribusi serta kekayaan pemilik 1.000 saham yang tidak menjual pada buyback. Hitung EPS buyback dan akibat split 2-untuk-1; jelaskan batas kesimpulan nilai. Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Dividen: DPS=200 juta/20 juta=Rp 10. Ekuitas ex-distribusi 800 juta; harga=800 juta/20 juta=Rp 40. Pemilik 1.000 saham memegang saham Rp 40.000 dan dividen Rp 10.000, total Rp 50.000. Buyback: jumlah dibeli 200 juta/50=4 juta; tersisa 16 juta; nilai 800 juta; harga Rp 50. Pemilik 1.000 saham yang tetap memegang memiliki Rp 50.000. Total kekayaan sama menurut asumsi harga wajar dan pasar tanpa friksi. EPS lama 40 juta/20 juta=Rp 2; EPS setelah buyback 40 juta/16 juta=Rp 2,50, dengan laba sengaja tetap. Split 2-untuk-1 sesudah buyback menghasilkan 32 juta saham dan harga Rp 25; EPSRp 1,25. Jumlah lembar meningkat dan EPS berubah secara mekanis, tanpa penciptaan kas. Jika pajak, informasi baru atau bunga kas berubah, kesetaraan ini perlu dihitung ulang; jangan menerapkan angka teori sebagai prediksi harga sesungguhnya."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-548 (PDF 583-590)."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Cek pemahaman sebelum berpindah TM"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Dividen residual: Dividen = max(0, laba - kebutuhan ekuitas investasi). Investasi Rp 200 juta × 60% ekuitas = Rp 120 juta; laba Rp 150 juta menyisakan Rp 30 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597).",
+        "Payout, retention, dan DPS: Payout = dividen/laba; retention = 1-payout; DPS = dividen/jumlah saham. Dividen Rp 30 juta, laba Rp 150 juta, 10 juta saham memberi 20%, 80%, dan Rp 3/lembar. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597).",
+        "Buyback dan EPS: Pembelian kembali Rp 300 juta pada Rp 30/lembar mengurangi 10 juta lembar. EPS dapat naik jika laba tetap; kas dan biaya peluangnya juga berubah. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597).",
+        "Stock split tanpa perubahan nilai: Split 2-untuk-1 menggandakan jumlah lembar dan membagi harga teoritis dua. Lima juta saham Rp 80 menjadi sepuluh juta saham Rp 40, dengan total Rp 400 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597).",
+        "Signaling dan clientele: Signaling adalah sinyal informasi dividen; clientele adalah kelompok investor dengan preferensi distribusi tertentu. Reaksi harga bergantung ekspektasi, keberlanjutan kas, dan keadaan investor. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597).",
+        "Preferensi pajak dividen: Pengaruh pajak bergantung tarif, jenis investor, penangguhan, dan yurisdiksi. Model pajak pada contoh buku tidak otomatis menjadi aturan pajak Indonesia terbaru. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
       ]
     }
   ]

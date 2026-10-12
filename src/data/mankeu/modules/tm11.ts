@@ -1,166 +1,183 @@
 import type { Reading } from '../../../types';
-import { CASE_WORKING_CAPITAL_CASH_CCC } from '../mankeuPracticeCases';
-
-const SVG_WORKING_CAPITAL_CCC = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
-  <defs>
-    <linearGradient id="bgMk11" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
-    <linearGradient id="cccGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#dc2626"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
-  </defs>
-  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMk11)" stroke="#1e293b" stroke-width="1.5"/>
-  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
-  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
-  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
-  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">SIKLUS KONVERSI KAS: CCC = DIO (PERSEDIAAN) + DSO (PIUTANG) - DPO (UTANG DAGANG)</text>
-  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
-  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">WORKING CAPITAL</text>
-
-  <!-- Top Level: OPERATING CYCLE (DIO + DSO) -->
-  <g transform="translate(45, 75)">
-    <!-- Bar 1: Days Inventory Outstanding (DIO) -->
-    <rect x="0" y="0" width="460" height="36" rx="6" fill="#0284c7" fill-opacity="0.3" stroke="#38bdf8" stroke-width="1.5"/>
-    <text class="text-accent-blue" x="230" y="22" fill="#38bdf8" font-size="9" font-weight="800" text-anchor="middle">1. DIO: DAYS INVENTORY OUTSTANDING (Misal: 60 Hari)</text>
-
-    <!-- Bar 2: Days Sales Outstanding (DSO) -->
-    <rect x="468" y="0" width="342" height="36" rx="6" fill="#7c3aed" fill-opacity="0.3" stroke="#a78bfa" stroke-width="1.5"/>
-    <text class="text-accent-purple" x="639" y="22" fill="#a78bfa" font-size="9" font-weight="800" text-anchor="middle">2. DSO: DAYS SALES OUTSTANDING (Misal: 45 Hari)</text>
-
-    <text class="svg-text" x="405" y="52" fill="#cbd5e1" font-size="8" font-weight="700" text-anchor="middle">SIKLUS OPERASI TOTAL (OPERATING CYCLE) = DIO + DSO = 105 HARI</text>
-  </g>
-
-  <!-- Middle Level: PAYABLES DELAY (DPO) -->
-  <g transform="translate(45, 145)">
-    <!-- Bar 3: Days Payables Outstanding (DPO) -->
-    <rect x="0" y="0" width="280" height="36" rx="6" fill="#059669" fill-opacity="0.3" stroke="#34d399" stroke-width="1.5"/>
-    <text class="text-accent-green" x="140" y="22" fill="#34d399" font-size="9" font-weight="800" text-anchor="middle">3. DPO: UTANG USAHA (Misal: 35 Hari)</text>
-    <text class="text-accent-green" x="140" y="50" fill="#34d399" font-size="7.5" text-anchor="middle">Penundaan Kas Keluar Didanai Pemasok</text>
-
-    <!-- Bar 4: CASH CONVERSION CYCLE (GAP) -->
-    <rect x="288" y="0" width="522" height="36" rx="6" fill="#dc2626" fill-opacity="0.3" stroke="#f87171" stroke-width="2"/>
-    <text class="text-accent-red" x="549" y="22" fill="#f87171" font-size="9.5" font-weight="900" text-anchor="middle">CASH CONVERSION CYCLE (CCC) = 70 HARI</text>
-    <text class="text-accent-red" x="549" y="50" fill="#f87171" font-size="7.5" font-weight="700" text-anchor="middle">Periode Kas Perusahaan "Terkunci" &amp; Membutuhkan Pendanaan Modal Kerja Eksternal</text>
-  </g>
-
-  <!-- Milestone Dots & Event Labels on Timeline -->
-  <g transform="translate(45, 215)">
-    <line x1="0" y1="20" x2="810" y2="20" stroke="#334155" stroke-width="2"/>
-    
-    <!-- Day 0: Beli Bahan Baku -->
-    <circle cx="0" cy="20" r="5" fill="#38bdf8"/>
-    <text class="text-accent-blue" x="0" y="42" fill="#38bdf8" font-size="7.5" font-weight="700">Hari 0</text>
-    <text class="svg-text" x="0" y="55" fill="#cbd5e1" font-size="7">Beli Bahan Baku</text>
-
-    <!-- Day 35: Bayar Utang Dagang -->
-    <circle cx="280" cy="20" r="5" fill="#34d399"/>
-    <text class="text-accent-green" x="280" y="42" fill="#34d399" font-size="7.5" font-weight="700">Hari 35</text>
-    <text class="svg-text" x="280" y="55" fill="#cbd5e1" font-size="7">Bayar Pemasok (Kas Keluar)</text>
-
-    <!-- Day 60: Jual Barang Jadi -->
-    <circle cx="460" cy="20" r="5" fill="#a78bfa"/>
-    <text class="text-accent-purple" x="460" y="42" fill="#a78bfa" font-size="7.5" font-weight="700">Hari 60</text>
-    <text class="svg-text" x="460" y="55" fill="#cbd5e1" font-size="7">Barang Jadi Terjual (Kredit)</text>
-
-    <!-- Day 105: Terima Pelunasan Kas -->
-    <circle cx="810" cy="20" r="5" fill="#fbbf24"/>
-    <text class="text-accent-amber" x="810" y="42" fill="#fbbf24" font-size="7.5" font-weight="700" text-anchor="end">Hari 105</text>
-    <text class="svg-text" x="810" y="55" fill="#cbd5e1" font-size="7" text-anchor="end">Terima Kas Pelanggan</text>
-  </g>
-
-  <!-- Strategic Insight Box -->
-  <g transform="translate(45, 290)">
-    <rect class="svg-subcard" x="0" y="0" width="810" height="34" rx="6" fill="#1e293b"/>
-    <text class="text-accent-blue" x="405" y="21" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">
-      Trik Perusahaan Kelas Dunia (contoh: Dell &amp; Amazon): Memiliki CCC Negatif (DPO &gt; DIO + DSO) sehingga bisnis didanai gratis oleh vendor!
-    </text>
-  </g>
-</svg>`;
-
 export const TM11_READING: Reading = {
-  tm: 11,
-  title: 'Working Capital Management - Part I: Cash Management & Credit Policies',
-  ref: 'Brigham & Ehrhardt Ch. 15 | Siklus Konversi Kas (CCC) | Model Saldo Kas Baumol & Miller-Orr | Kebijakan Kredit',
-  intro: 'TM 11 membahas pengelolaan modal kerja bersih (Net Working Capital) dan likuiditas operasional: Siklus Konversi Kas (Cash Conversion Cycle / CCC), 3 strategi pendanaan modal kerja (Relaxed, Restricted, Moderate/Maturity Matching), model manajemen kas optimal (Model Baumol dan Model Miller-Orr), sistem Lockbox, serta penetapan kebijakan kredit (Credit Standards, Credit Terms, Collection Policy).',
-  objectives: [
-    'Menghitung dan menganalisis Siklus Konversi Kas (CCC = ICP + DSO - PDP).',
-    'Membandingkan strategi investasi dan pendanaan modal kerja (Aggressive vs Conservative vs Moderate).',
-    'Menghitung saldo kas optimal dan titik batas menggunakan Model Baumol dan Miller-Orr.',
-    'Mengevaluasi trade-off perubahan kebijakan kredit terhadap laba dan penambahan investasi piutang.'
+  "tm": 11,
+  "title": "Modal Kerja I: Siklus dan Anggaran Kas",
+  "ref": "Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)",
+  "intro": "Menggunakan kontrak, buku lokal dan sumber yang disebutkan untuk menyelesaikan keputusan modal kerja i: siklus dan anggaran kas secara bertahap.",
+  "objectives": [
+    "Menjelaskan konsep dan asumsi modal kerja i: siklus dan anggaran kas.",
+    "Menghitung hasil dengan satuan, tenor dan pembulatan yang tepat.",
+    "Menilai keputusan serta batas model dan rujukannya."
   ],
-  blocks: [
+  "blocks": [
     {
-      kind: 'figure',
-      caption: 'Gambar 11.1: Komponen Penghitungan Siklus Konversi Kas (Cash Conversion Cycle).',
-      svg: SVG_WORKING_CAPITAL_CCC
+      "kind": "h2",
+      "text": "Pintu masuk: cakupan dan sumber"
     },
     {
-      kind: 'h2',
-      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 11'
+      "kind": "p",
+      "text": "TM11 mengikuti Kontrak MK2026 Sheet 1 baris 28. Fokus: Modal Kerja I: Siklus dan Anggaran Kas. Buku kontrak edisi 15 dipetakan ke buku lokal edisi 16 berdasarkan topik, dengan nomor halaman cetak dan PDF yang dapat ditelusuri. Angka latihan adalah skenario hipotetis, bukan harga pasar atau ketentuan pajak terbaru. Rujukan utama: Brigham & Houston, FFM16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
     },
     {
-      kind: 'table',
-      headers: ['Parameter Modal Kerja', 'Formula Perhitungan', 'Tujuan Strategis', 'Dampak Jika Diperpendek'],
-      rows: [
-        ['Inventory Conversion Period (ICP)', '$ICP = \\frac{\\text{Persediaan}}{\\text{HPP / 365}}$', 'Mempercepat perputaran persediaan tanpa kehabisan stok (stockout).', 'Mengurangi biaya simpan dan memperpendek CCC.'],
-        ['Days Sales Outstanding (DSO)', '$DSO = \\frac{\\text{Piutang Usaha}}{\\text{Penjualan / 365}}$', 'Mempercepat penagihan kas dari konsumen.', 'Mempercepat penerimaan kas dan menekan piutang tak tertagih.'],
-        ['Payables Deferral Period (PDP)', '$PDP = \\frac{\\text{Utang Usaha}}{\\text{HPP / 365}}$', 'Memaksimalkan pemanfaatan kredit tanpa bunga dari pemasok.', 'Memperpanjang PDP akan memperpendek CCC (menghemat kas).'],
-        ['Cash Conversion Cycle (CCC)', '$CCC = ICP + DSO - PDP$', 'Meminimalkan jeda waktu antara pembayaran bahan baku dan penerimaan kas.', 'Semakin pendek CCC (bahkan negatif), semakin kecil kebutuhan dana bank.']
+      "kind": "p",
+      "text": "Paket TM ini mempunyai 8 kuis, enam flashcard, dan dua kasus bank soal. Dugaan prioritas ujian berasal dari kontrak dan contoh pembahasan lokal; tidak ada arsip ujian untuk memastikan bentuk soal. Kerjakan dengan rumus, langkah antara, satuan, periode bunga, pembulatan akhir dan alasan keputusan."
+    },
+    {
+      "kind": "h2",
+      "text": "1. Bedakan kebijakan investasi dengan kebijakan pendanaan"
+    },
+    {
+      "kind": "p",
+      "text": "Working capital adalah investasi pada aset lancar; net working capital adalah aset lancar dikurangi kewajiban lancar. Kebijakan investasi memilih tingkat kas, persediaan dan piutang: relaxed atau longgar mempertahankan aset lebih besar, restricted atau ketat menekan aset lancar, moderate berada di antara keduanya. Aset kecil dapat meningkatkan efisiensi tetapi mengganggu layanan atau penjualan jika terlalu rendah. Keputusan pendanaan memilih sumber dan tenor dana; istilah agresif/konservatif dalam pendanaan tidak otomatis sama dengan kebijakan aset lancar. [hal. cetak 559-565; PDF 601-607]"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pendanaan",
+        "Struktur",
+        "Risiko utama"
       ],
-      caption: 'Tabel 11.0: Matriks parameter Siklus Konversi Kas.'
+      "rows": [
+        [
+          "Maturity matching",
+          "Dana mengikuti umur manfaat aset atau siklus musiman.",
+          "Perkiraan umur aset dan sumber kas bisa meleset."
+        ],
+        [
+          "Aggressive",
+          "Dana pendek membiayai bagian lebih besar dari aset.",
+          "Bunga berubah dan kredit perlu diperbarui."
+        ],
+        [
+          "Conservative",
+          "Dana panjang membiayai aset permanen dan sebagian musiman.",
+          "Ada biaya dana atau kas menganggur."
+        ]
+      ],
+      "caption": "Rujukan: hal. cetak 562-565, PDF 604-607."
     },
     {
-      kind: 'h2',
-      text: 'Formula Sheet Fondasi: Model Saldo Kas Baumol & Miller-Orr'
+      "kind": "h2",
+      "text": "2. Siklus konversi kas dan unit harian"
     },
     {
-      kind: 'formula',
-      text: `\\text{Model Baumol (Saldo Kas Optimal)}: \\quad C^* = \\sqrt{\\frac{2 \\times T \\times F}{r}}
-\\text{Model Miller-Orr (Return Point } Z^*): \\quad Z^* = \\sqrt[3]{\\frac{3 \\times F \\times \\sigma^2}{4 \\times r}} + L
-\\text{Batas Atas Miller-Orr } (H^*): \\quad H^* = 3 Z^* - 2 L`,
-      note: 'Keterangan: $T$ = Total kebutuhan kas tahunan; $F$ = Biaya transaksi per transaksi sekuritas; $r$ = Suku bunga sekuritas pasar uang harian; $\\sigma^2$ = Varians arus kas harian; $L$ = Batas bawah saldo kas minimum.'
+      "kind": "p",
+      "text": "Cash conversion cycle adalah jeda antara pembayaran kas untuk operasi dan penerimaan kas pelanggan. Persediaan menambah waktu sampai barang terjual, piutang menambah waktu sampai kas diterima, sementara utang pemasok menyediakan pendanaan sementara. Gunakan saldo rata-rata yang sebanding dengan arus setahun; jangan mencampur penjualan dengan COGS atau pembelian tanpa menjelaskan pendekatan. [hal. cetak 565-569; PDF 607-611]"
     },
     {
-      kind: 'h2',
-      text: 'Latihan Aktif Interaktif'
+      "kind": "formula",
+      "text": "CCC=DIO+DSO-DPO",
+      "note": "Contoh DIO60, DSO45, DPO30 memberi CCC75 hari. Tahun365 atau360 hari harus disebut dan dipakai konsisten. Rujukan: hal. cetak 565-569, PDF 607-611."
     },
     {
-      kind: 'solution-reveal',
-      title: 'Latihan Mandiri: Model Saldo Kas Miller-Orr',
-      prompt: 'Biaya transaksi sekuritas pasar uang $F = Rp 50.000$ per transaksi. Varians arus kas harian $\\sigma^2 = Rp 4.000.000.000$. Suku bunga harian $r = 0,0002$ (0,02% per hari). Batas bawah kas minimum yang ditetapkan direksi $L = Rp 10.000.000$. Hitung Return Point ($Z^*$) dan Batas Atas Kas ($H^*$)!',
-      blocks: [
+      "kind": "formula",
+      "text": "DIO=\\frac{Persediaan}{COGS/365}\\qquad DSO=\\frac{Piutang}{Penjualan\\ kredit/365}\\qquad DPO=\\frac{Utang\\ pemasok}{Pembelian\\ kredit/365}",
+      "note": "Saldo rata-rata dipakai dalam contoh. Buku juga menunjukkan pendekatan memakai COGS pada DPO ketika data pembelian tidak tersedia; kasus harus menyatakan pilihan penyebut. Rujukan: hal. cetak 566-569, PDF 608-611."
+    },
+    {
+      "kind": "p",
+      "text": "Jika penjualan kredit Rp 36,5 miliar setahun, arus harian Rp 100 juta. Menurunkan DSO dari 45 menjadi 30 hari mengurangi piutang dari Rp 4,5 menjadi Rp 3 miliar. Dana Rp 1,5 miliar dilepas sekali; pada biaya dana 10% penghematan Rp 150 juta setahun. Diskon pelanggan, bad debt dan biaya penagihan dapat mengurangi manfaat ini. Menunda pemasok tanpa kesepakatan dapat merusak pasokan atau menghilangkan diskon. [hal. cetak 565-569 dan 578-584; PDF607-611 dan 620-626]"
+    },
+    {
+      "kind": "h2",
+      "text": "3. Anggaran kas menunjukkan kebutuhan dana tepat waktu"
+    },
+    {
+      "kind": "p",
+      "text": "Cash budget menempatkan penerimaan dan pembayaran pada bulan benar-benar terjadi. Penjualan kredit masuk kas saat tertagih, belanja modal dan pelunasan utang merupakan pembayaran meski bukan seluruhnya biaya laba periode itu. Hitung kas sebelum pendanaan, bandingkan saldo minimum, lalu masukkan pinjaman atau pelunasan. Periksa pola intrabulan jika arus besar terjadi sebelum pelanggan membayar. [hal. cetak 570-573; PDF 612-615]"
+    },
+    {
+      "kind": "formula",
+      "text": "Kas_{pra}=Kas_{awal}+Penerimaan-Pembayaran\\qquad Pinjaman=\\max(0,Kas_{minimum}-Kas_{pra})",
+      "note": "Kas minimum adalah saldo setelah pendanaan. Awal20+penerimaan80-pembayaran105=-5 juta; minimum10 berarti pinjaman15 juta. Rujukan: hal. cetak 570-573, PDF612-615."
+    },
+    {
+      "kind": "h2",
+      "text": "4. Kebijakan kas, sekuritas dan piutang"
+    },
+    {
+      "kind": "p",
+      "text": "Kas diperlukan untuk transaksi dan menghadapi ketidakpastian. Penempatan sementara pada marketable securities, sekuritas mudah diperdagangkan, menimbang likuiditas, keamanan, imbal hasil dan biaya transaksi. Tidak semua saldo kas dapat bebas dipakai jika ada pembatasan kontrak. Dana menganggur terlalu besar mempunyai biaya peluang, sementara saldo terlalu kecil dapat mengganggu pembayaran. [hal. cetak 573-577; PDF 615-619]"
+    },
+    {
+      "kind": "p",
+      "text": "Empat unsur kebijakan kredit adalah jangka pembayaran, diskon, standar pelanggan yang layak, dan prosedur penagihan. Standar terlalu longgar menambah piutang bermasalah; terlalu ketat dapat kehilangan pelanggan yang menguntungkan. DSO dan aging schedule, daftar umur piutang, membantu menemukan keterlambatan. Evaluasi perubahan kebijakan dengan tambahan margin kontribusi, kerugian piutang, biaya penagihan dan biaya dana atas investasi tambahan, lalu uji risiko yang tidak tertangkap rata-rata. [hal. cetak 578-581; PDF620-623]"
+    },
+    {
+      "kind": "h2",
+      "text": "Latihan kasus 1: Mengurai siklus konversi kas dan perbaikan penagihan"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Setahun 365 hari; seluruh penjualan kredit Rp 36,5 miliar; COGS dan pembelian kredit masing-masing Rp 36,5 miliar.",
+        "Persediaan rata-rata Rp 6 miliar, piutang Rp 4,5 miliar, utang pemasok Rp 3 miliar.",
+        "DSO dapat turun menjadi 30 hari tanpa biaya/penjualan hilang; DIO dan DPO tetap. Biaya dana 10% setahun."
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Hitung DIO, DSO, DPO dan CCC awal. Hitung CCC baru, dana piutang yang dilepas, dan penghematan biaya dana setahun. Jelaskan risiko jika pengurangan CCC berasal dari menunda pemasok melewati syarat pembayaran. Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil.",
+      "blocks": [
         {
-          kind: 'ul',
-          items: [
-            '**Perhitungan Return Point ($Z^*$)**:\n$Z^* = \\sqrt[3]{\\frac{3 \\times 50.000 \\times 4.000.000.000}{4 \\times 0,0002}} + 10.000.000 = \\sqrt[3]{\\frac{600.000.000.000.000}{0,0008}} + 10.000.000$\n$Z^* = \\sqrt[3]{7,5 \\times 10^{17}} + 10.000.000 = 9.085.603 + 10.000.000 = \\mathbf{Rp 19.085.603}$.',
-            '**Perhitungan Batas Atas ($H^*$)**:\n$H^* = 3(19.085.603) - 2(10.000.000) = 57.256.809 - 20.000.000 = \\mathbf{Rp 37.256.809}$.',
-            '**Aturan Keputusan**: Jika kas mencapai Rp 37,26 Juta, beli sekuritas sebesar $(H^* - Z^*) = Rp 18,17$ Juta; jika kas menyentuh batas bawah Rp 10 Juta, jual sekuritas sebesar $(Z^* - L) = Rp 9,09$ Juta untuk kembali ke $Z^*$.'
-          ]
+          "kind": "p",
+          "text": "Arus harian penjualan, COGS, dan pembelian masing-masing 36,5/365=Rp 0,1 miliar. DIO=6/0,1=60 hari; DSO=4,5/0,1=45; DPO=3/0,1=30. CCC=60+45-30=75 hari. DSO baru 30 memberi piutang 3 miliar; CCC baru 60 hari. Dana dilepas 4,5-3=Rp 1,5 miliar, penghematan biaya 1,5×10%=Rp 0,15 miliar/tahun atau Rp 150 juta. Pelepasan investasi 1,5 miliar sekali terjadi berbeda dari penghematan tahunan 150 juta. Soal menyederhanakan pembelian sama dengan COGS; jika pembelian berbeda, gunakan pembelian kredit yang relevan untuk DPO. Pengurangan DSO dapat memakai standar kredit, penagihan, atau diskon, dengan biaya dan dampak penjualan yang perlu dihitung. Menunda pemasok berisiko kehilangan diskon, pasokan, dan reputasi sehingga CCC pendek sendiri belum menjamin keputusan terbaik."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 565-569 (PDF 607-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623)."
         }
       ]
     },
     {
-      kind: 'h2',
-      text: 'Peta Submateri & Target Penguasaan Ujian TM 11'
+      "kind": "h2",
+      "text": "Latihan kasus 2: Anggaran kas dan pilihan membayar utang"
     },
     {
-      kind: 'table',
-      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
-      rows: [
-        ['1', 'Kalkulasi CCC Lengkap', 'Perhitungan ICP, DSO, PDP, dan CCC gabungan.', 'Mampu menganalisis efisiensi pengelolaan modal kerja operasional.'],
-        ['2', 'Model Baumol & Miller-Orr', 'Penentuan saldo kas optimal, target return point, dan batas atas kas.', 'Mampu merancang kebijakan manajemen kas korporasi.'],
-        ['3', 'Kebijakan Kredit & Aging Schedule', 'Evaluasi diskon kas, syarat kredit 2/10 net 30, dan analisis umur piutang.', 'Mampu memutuskan kelayakan pelonggaran standar kredit.']
-      ],
-      caption: 'Tabel 11.2: Peta penguasaan submateri TM 11 Manajemen Keuangan.'
-    },
-    CASE_WORKING_CAPITAL_CASH_CCC,
-    {
-      kind: 'h2',
-      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+      "kind": "ul",
+      "items": [
+        "Semua angka Rp juta: Januari kas awal 20, penerimaan 80, pembayaran 105. Februari penerimaan 100, pembayaran 80.",
+        "Minimum kas 10; fasilitas pinjaman dapat dipakai pada akhir Januari. Bunga Januari/Februari diabaikan khusus pada kasus ini.",
+        "Aturan model: saat surplus, lunasi pinjaman sepanjang minimum kas tetap terpenuhi."
+      ]
     },
     {
-      kind: 'ul',
-      items: [
-        '**CCC Negatif adalah Keunggulan Kompetitif**: Perusahaan seperti Amazon atau Alfamart beroperasi dengan CCC negatif karena barang terjual dan kas terkumpul sebelum tagihan pemasok jatuh tempo.',
-        '**Maturity Matching Strategy**: Membiayai aset lancar permanen dengan modal jangka panjang dan membiayai aset lancar musiman dengan utang jangka pendek meminimalkan risiko likuiditas.',
-        '**Lockbox System**: Mempercepat proses kliring penerimaan cek/bilyet giro dengan mengarahkan pembayaran konsumen langsung ke kotak pos bank lokal terdekat.'
+      "kind": "solution-reveal",
+      "title": "Langkah dan keputusan",
+      "prompt": "Susun anggaran kas Januari dan Februari dengan penerimaan, pembayaran, pinjaman dan pelunasan. Hitung saldo pinjaman serta kas akhir masing-masing bulan. Uji jika penerimaan Februari hanya 70; jelaskan mengapa laba penjualan tidak mengganti anggaran kas. Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Januari sebelum pendanaan 20+80-105=-5. Tambahan pinjaman 10-(-5)=15; kas akhir 10 dan saldo pinjaman 15. Februari dimulai dengan kas 10, sehingga kas sebelum pendanaan 10+100-80=30. Surplus di atas minimum 20 cukup melunasi 15; kas akhir 15, utang nol. Skenario penerimaanFebruari 70: kas sebelum pendanaan 10+70-80=0; perlu pinjaman tambahan 10 untuk minimum 10. Utang akhir menjadi 25, kas 10. Bunga diabaikan sesuai syarat; jika dimasukkan, bunga harus menjadi pembayaran dan kebutuhan dana meningkat. Penjualan kredit masuk penerimaan hanya saat tertagih, sehingga laba dapat positif saat kas defisit. Jadwal pembayaran utang, keterlambatan piutang, kapasitas kredit bank, dan saldo minimum perlu dicek setiap bulan. Perbedaan akhir bulan dan transaksi intrabulan dapat membuat defisit sementara lebih tinggi daripada yang terlihat pada ringkasan."
+        },
+        {
+          "kind": "p",
+          "text": "Pembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615)."
+        }
+      ]
+    },
+    {
+      "kind": "h2",
+      "text": "Cek pemahaman sebelum berpindah TM"
+    },
+    {
+      "kind": "ul",
+      "items": [
+        "Cash conversion cycle: CCC = DIO + DSO - DPO. Umur persediaan 60, piutang 45, dan utang pemasok 30 memberi CCC 75 hari. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623).",
+        "DIO, DSO, dan DPO: DIO = persediaan rata-rata/(COGS/365); DSO = piutang rata-rata/(penjualan kredit/365); DPO = utang pemasok rata-rata/(pembelian kredit/365). Nyatakan pendekatan jika pembelian diganti COGS. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623).",
+        "Anggaran kas bulanan: Kas sebelum pendanaan = awal + penerimaan - pembayaran. Jika kas -Rp 5 juta dan minimum Rp 10 juta, pinjaman diperlukan Rp 15 juta. Pelunasan juga arus kas. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623).",
+        "Investasi lancar dan pendanaan lancar: Kebijakan aset lancar mengatur jumlah kas/piutang/persediaan. Kebijakan pendanaan mengatur tenor dan sumber dana. Keduanya terpisah meski saling memengaruhi likuiditas. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623).",
+        "Matching, aggressive, conservative: Matching menyelaraskan tenor aset dan pendanaan. Agresif memakai dana pendek lebih banyak, menambah risiko pembaruan. Konservatif memakai dana panjang untuk sebagian aset musiman dengan biaya peluang. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623).",
+        "Evaluasi kebijakan kredit: Manfaat tahunan = tambahan kontribusi - bad debt - biaya penagihan - biaya modal atas tambahan investasi. Jangan mengurangkan investasi piutang penuh seolah biaya satu tahun. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
       ]
     }
   ]

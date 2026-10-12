@@ -33,7 +33,7 @@ import { AKK202_QUIZ, AKK202_QUIZ_UTS, AKK202_QUIZ_UAS } from './akk202';
 import { AKM202_QUIZ, AKM202_QUIZ_UTS, AKM202_QUIZ_UAS } from './akm202';
 import { AKS201_QUIZ, AKS201_QUIZ_UTS, AKS201_QUIZ_UAS } from './aks201';
 import { PJK301_QUIZ, PJK301_QUIZ_UTS, PJK301_QUIZ_UAS } from './pjk301';
-import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_QUIZ_UAS } from './mnk201';
+import { MNK201_QUIZ, MNK201_QUIZ_UTS, MNK201_REVIEW_UTS_QUIZ, MNK201_QUIZ_UAS } from './mnk201';
 import { AKA201_QUIZ, AKA201_QUIZ_UTS, AKA201_QUIZ_UAS } from './aka201';
 import { SII306_QUIZ, SII306_QUIZ_UTS, SII306_QUIZ_UAS } from './sii306';
 import { MNU307_QUIZ, MNU307_QUIZ_UTS } from './mnu307';
@@ -166,9 +166,9 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
   }
   if (courseCode === 'MNK102' || courseCode === 'MNK201') {
     return [
-      { id: 'uts', label: 'Kuis Praktik Pra-UTS Manajemen Keuangan (TM 1–7)', items: MNK201_QUIZ_UTS },
-      { id: 'uas', label: 'Kuis Praktik Pra-UAS Manajemen Keuangan (TM 9–14)', items: MNK201_QUIZ_UAS },
-      { id: 'all', label: 'Kompilasi Kuis Lengkap Manajemen Keuangan (14 TM)', items: MNK201_QUIZ },
+      { id: 'uts', label: 'Kuis Praktik Pra-UTS dan Ulasan UTS Manajemen Keuangan', items: [...MNK201_QUIZ_UTS, ...MNK201_REVIEW_UTS_QUIZ] },
+      { id: 'uas', label: 'Kuis Praktik Pra-UAS Manajemen Keuangan (TM 9–15)', items: MNK201_QUIZ_UAS },
+      { id: 'all', label: 'Kompilasi Kuis Manajemen Keuangan dan Ulasan UTS', items: MNK201_QUIZ },
     ];
   }
   if (courseCode === 'AKA201') {
