@@ -16,7 +16,7 @@ import { PJK301_BANK, PJK301_BANK_UTS, PJK301_BANK_UAS } from './pjk301';
 import { MNK201_BANK, MNK201_BANK_UTS, MNK201_BANK_UAS } from './mnk201';
 import { AKA201_BANK, AKA201_BANK_UTS, AKA201_BANK_UAS } from './aka201';
 import { SII306_BANK, SII306_BANK_UTS, SII306_BANK_UAS } from './sii306';
-import { MNS301_BANK, MNS301_BANK_UTS } from './mns301';
+import { MNU307_BANK, MNU307_BANK_UTS } from './mnu307';
 
 const REGISTRY: Record<string, BankSoal[]> = {
   AKK201: AKK201_BANK, AKM201: AKM201_BANK,
@@ -26,6 +26,7 @@ const REGISTRY: Record<string, BankSoal[]> = {
   MNM101: MNM101_BANK,
   MNM201: MNM101_BANK,
   AKK202: AKK202_BANK,
+  AKM301: AKM202_BANK,
   AKM202: AKM202_BANK,
   AKK203: AKS201_BANK,
   AKS201: AKS201_BANK,
@@ -34,9 +35,7 @@ const REGISTRY: Record<string, BankSoal[]> = {
   MNK201: MNK201_BANK,
   AKA201: AKA201_BANK,
   SII306: SII306_BANK,
-  AKS301: SII306_BANK,
-  MNS301: MNS301_BANK,
-  MNU307: MNS301_BANK,
+  MNU307: MNU307_BANK,
 };
 export function getBankSoal(code: string): BankSoal[] { return REGISTRY[code] ?? []; }
 export function hasBankSoal(code: string): boolean { return (REGISTRY[code]?.length ?? 0) > 0; }
@@ -75,7 +74,7 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
       { id: 'all', label: 'Kompilasi Seluruh Kasus AKM II (14 TM)', items: AKK202_BANK },
     ];
   }
-  if (code === 'AKM202') {
+  if (code === 'AKM301' || code === 'AKM202') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Akuntansi Manajemen (TM 1–7)', items: AKM202_BANK_UTS },
       { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Akuntansi Manajemen (TM 8–14)', items: AKM202_BANK_UAS },
@@ -110,16 +109,16 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
       { id: 'all', label: 'Kompilasi Seluruh Kasus Pengauditan I (14 TM)', items: AKA201_BANK },
     ];
   }
-  if (code === 'SII306' || code === 'AKS301') {
+  if (code === 'SII306') {
     return [
       { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Sistem Informasi Akuntansi (TM 1–7)', items: SII306_BANK_UTS },
       { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Sistem Informasi Akuntansi (TM 8–14)', items: SII306_BANK_UAS },
       { id: 'all', label: 'Kompilasi Seluruh Kasus SIA (14 TM)', items: SII306_BANK },
     ];
   }
-  if (code === 'MNS301' || code === 'MNU307') {
+  if (code === 'MNU307') {
     return [
-      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Manajemen Stratejik (TM 1–7)', items: MNS301_BANK_UTS },
+      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Manajemen Stratejik (TM 1–7)', items: MNU307_BANK_UTS },
     ];
   }
   const items = getBankSoal(code);

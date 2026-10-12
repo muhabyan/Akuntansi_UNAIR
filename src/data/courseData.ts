@@ -94,9 +94,9 @@ const MNU108_REF = [
   'Silabus & RPP Resmi Pengantar Manajemen, FEB Universitas Airlangga.',
 ];
 
-// --- MNS301 / MNU307 / MNM301 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
+// --- MNU307 Manajemen Strategik (Dess 11e, Blue Ocean, Strategy Maps) ---
 // Sumber: RPP Resmi Manajemen Stratejik, Departemen Akuntansi FEB UNAIR.
-const MNS301_TM1_7 = materi([
+const MNU307_TM1_7 = materi([
   ['Strategic Management', 'DMEL Ch. 1'],
   ['Membaca lingkungan dan kemampuan perusahaan', 'DMEL Ch. 2–4'],
   ['Memilih cara bersaing dan bisnis yang layak dimiliki', 'DMEL Ch. 5–6'],
@@ -105,7 +105,7 @@ const MNS301_TM1_7 = materi([
   ['Memimpin pembelajaran, menjaga etika, dan mengelola inovasi', 'DMEL Ch. 11–12'],
   ['Blue Ocean Strategy dan Strategy Maps', 'Kim & Mauborgne (2005) · Kaplan & Norton (2004)'],
 ], 1);
-const MNS301_TM8_14 = materi([
+const MNU307_TM8_14 = materi([
   ['Studi Kasus: THEORYBRIDGE.COM', 'Kasus RPP UNAIR'],
   ['Studi Kasus: H&M\'s Dilemma', 'Kasus RPP UNAIR'],
   ['Studi Kasus: Louis Vuitton', 'Kasus RPP UNAIR'],
@@ -114,7 +114,7 @@ const MNS301_TM8_14 = materi([
   ['Studi Kasus: Alibaba Group', 'Kasus RPP UNAIR'],
   ['Studi Kasus: Procter & Gamble', 'Kasus RPP UNAIR'],
 ], 9);
-const MNS301_REF = [
+const MNU307_REF = [
   'Dess, G., McNamara, G., Eisner, A., & Lee, S.H. (2024). Strategic Management: Text and Cases (11th ed.). McGraw-Hill. (DMEL)',
   'Kim, W.C. & Mauborgne, R. (2005). Blue Ocean Strategy: How to Create Uncontested Market Space and Make the Competition Irrelevant. Harvard Business School Press.',
   'Kaplan, R.S. & Norton, D.P. (2004). Strategy Maps: Converting Intangible Assets into Tangible Outcomes. Harvard Business School Press.',
@@ -655,7 +655,7 @@ export const SEMESTERS: Semester[] = [
     number: 4,
     title: 'Semester 4',
     desc: 'Akuntansi Manajemen, Akuntansi Keuangan Lanjutan, Audit, Pasar Modal & Sistem Informasi Manajemen',
-    totalSks: 21,
+    totalSks: 20,
     locked: false,
     groups: [
       {
@@ -663,12 +663,12 @@ export const SEMESTERS: Semester[] = [
         highlight: true,
         courses: [
           {
-            code: 'AKM202', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', prasyarat: 'AKM201 (L)',
+            code: 'AKM301', newCode: 'FEB25603020', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', prasyarat: 'AKM201 (T)',
             references: AKM202_REF,
             materiTM1_7: AKM202_TM1_7, materiTM8_14: AKM202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           { code: 'MNK314', newCode: 'FEB25603018', name: 'Pengantar Pasar Modal', sks: 3, iconKey: 'chart', prasyarat: 'MNK102 (T)', materiTM1_7: [], materiTM8_14: [] },
-          { code: 'AKK207', newCode: 'FEB25603019', name: 'Akuntansi Keuangan Menengah III', sks: 3, iconKey: 'calculator', prasyarat: 'AKK106 (L)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKK207', newCode: 'FEB25603019', name: 'Akuntansi Keuangan Menengah III', sks: 2, iconKey: 'calculator', prasyarat: 'AKK106 (L)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'SII203', newCode: 'FEB25603021', name: 'Sistem Informasi Manajemen', sks: 3, iconKey: 'book', prasyarat: 'SII306 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'AKA304', newCode: 'FEB25603022', name: 'Internal Audit', sks: 3, iconKey: 'file', prasyarat: 'SII306 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'AKA202', newCode: 'FEB25603023', name: 'Pengauditan Berbasis Risiko II', sks: 3, iconKey: 'award', prasyarat: 'AKA201 (T)', materiTM1_7: [], materiTM8_14: [] },
@@ -693,15 +693,13 @@ export const SEMESTERS: Semester[] = [
           { code: 'AKK305', newCode: 'FEB25603026', name: 'Akuntansi Keuangan Lanjutan II: Konsep dan Penerapan', sks: 3, iconKey: 'calculator', prasyarat: 'AKK202 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'AKK401', name: 'Teori Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'AKK201 (T)', materiTM1_7: [], materiTM8_14: [] },
           {
-            code: 'MNS301', newCode: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
-            references: MNS301_REF,
-            materiTM1_7: MNS301_TM1_7, materiTM8_14: MNS301_TM8_14,
+            code: 'MNU307', name: 'Manajemen Strategik', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
+            references: MNU307_REF,
+            materiTM1_7: MNU307_TM1_7, materiTM8_14: MNU307_TM8_14,
             flashcardCount: 176, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           { code: 'AKA306', name: 'Pengantar Praktik Pengauditan', sks: 3, iconKey: 'award', prasyarat: 'AKA202 (T)', materiTM1_7: [], materiTM8_14: [] },
-          // Kode resmi panduan: AKS301. Kode itu masih dipakai sebagai alias lama Sistem Informasi Akuntansi (lihat src/lib/legacyCourseCodes.ts),
-          // jadi sementara memakai ADA301 sampai alias lama dicabut.
-          { code: 'ADA301', name: 'Accounting Data Analytics', sks: 3, iconKey: 'chart', prasyarat: 'SII203 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKS301', name: 'Accounting Data Analytics', sks: 3, iconKey: 'chart', prasyarat: 'SII203 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'PNE402', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'MAS122 (T)', materiTM1_7: [], materiTM8_14: [] },
         ],
       },

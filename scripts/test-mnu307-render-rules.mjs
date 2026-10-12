@@ -10,6 +10,7 @@ await testCanonical(3);
 await testCanonical(4);
 await testCanonical(5);
 await testCanonical(6);
+await testCanonical(9);
 testProtected();
 
 for (const figure of flatten((await loadReading(5)).blocks).filter(b => b.svg?.includes('V-TM05-07-arrow') || b.svg?.includes('V-TM05-08-arrow'))) {

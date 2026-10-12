@@ -1,10 +1,10 @@
-// src/data/quizzes/mns301.ts
-// Kuis Manajemen Stratejik (MNS301; kode fakultas MNU307): pilihan ganda, 132 soal TM 1–7.
+// src/data/quizzes/mnu307.ts
+// Kuis Manajemen Stratejik (MNU307): pilihan ganda, 132 soal TM 1–7.
 // Sumber: Dess dkk. (2024) Strategic Management 11e Ch. 1–12; Kim & Mauborgne (2005) Blue Ocean Strategy; Kaplan & Norton (2004) Strategy Maps.
 // Setiap soal memuat rujukan halaman. Set Pra-UAS (TM 9–15, studi kasus) belum disusun.
 import type { QuizQuestion } from '../../types';
 
-export const MNS301_QUIZ_UTS: QuizQuestion[] = [
+export const MNU307_QUIZ_UTS: QuizQuestion[] = [
   {
     "id": "mns301-q-tm01-01",
     "tm": 1,
@@ -19,7 +19,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Buku mendefinisikan strategic management sebagai analisis, keputusan, dan tindakan yang dilakukan organisasi untuk menciptakan dan mempertahankan competitive advantage. Anggaran, struktur tugas, dan penekanan biaya hanyalah sebagian alat, bukan definisinya.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 5-6",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 5-6",
     "sourceAnchors": [
       "Definisi strategic management",
       "hal. 5-6"
@@ -39,7 +39,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Buku mengutip survei yang menunjukkan eksekutif rela memotong R&D, iklan, dan pemeliharaan demi laba jangka pendek. Perilaku itu mengorbankan atribut ketiga, yaitu memadukan perspektif jangka pendek dan jangka panjang.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 6-7",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 6-7",
     "sourceAnchors": [
       "Empat atribut strategic management",
       "hal. 6-7"
@@ -59,7 +59,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Effectiveness adalah \"doing the right thing\", sedangkan efficiency adalah \"doing things right\". Keduanya sering tertukar, dan atribut keempat meminta manajer menyeimbangkan keduanya.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 6-7",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 6-7",
     "sourceAnchors": [
       "Efficiency vs effectiveness",
       "hal. 6-7"
@@ -79,7 +79,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Praktik tersebut tergolong operational effectiveness. Karena semua perusahaan melakukannya, keunggulannya tidak bertahan. Keunggulan tahan lama datang dari aktivitas yang berbeda atau cara yang berbeda: \"Strategy is all about being different.\"",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 6",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 6",
     "sourceAnchors": [
       "Operational effectiveness",
       "hal. 6"
@@ -99,7 +99,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Keputusan hasil analisis membentuk intended strategy. Bagian yang tidak terwujud adalah unrealized strategy. Strategi akhir yang dijalankan adalah realized strategy, gabungan deliberate dan emergent.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 10",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 10",
     "sourceAnchors": [
       "Intended dan realized strategy",
       "hal. 10"
@@ -119,7 +119,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Exhibit 1.3 memakai panah dua arah. Mintzberg menilai pandangan lurus tidak menggambarkan praktik karena lingkungan sulit diprediksi dan keputusan dipengaruhi proses politik.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 9-10",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 9-10",
     "sourceAnchors": [
       "Proses strategic management",
       "hal. 9-10"
@@ -139,7 +139,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Exhibit 1.4 menunjukkan tiga unsur: management (dipimpin CEO), shareholders (pemilik), dan board of directors (dipilih pemegang saham untuk mewakili kepentingannya). Auditor dan bank termasuk kontrol eksternal.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 16-17",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 16-17",
     "sourceAnchors": [
       "Corporate governance",
       "hal. 16-17"
@@ -159,7 +159,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Contoh deterjen cair pekat P&G di buku menunjukkan symbiosis: konsumen, pengecer, pengangkut, dan pegiat lingkungan sama-sama untung. Zero sum berarti untung satu pihak adalah rugi pihak lain.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 18",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 18",
     "sourceAnchors": [
       "Stakeholder: zero sum atau symbiosis",
       "hal. 18"
@@ -179,7 +179,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Theater one dicirikan program yang tidak dirancang untuk menaikkan laba atau pendapatan. Theater two berjalan di model bisnis yang ada dan biasanya menaikkan pendapatan atau menurunkan biaya. Theater three mengubah model bisnis, seperti Project Shakti.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 19",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 19",
     "sourceAnchors": [
       "Tiga theater CSR",
       "hal. 19"
@@ -199,7 +199,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Triple bottom line mengukur kinerja finansial, sosial, dan lingkungan. Buku mencatat isu sosial dan lingkungan pada akhirnya bisa menjadi isu finansial lewat peraturan yang lebih ketat dan biaya energi yang lebih mahal.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 20",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 20",
     "sourceAnchors": [
       "Triple bottom line",
       "hal. 20"
@@ -219,7 +219,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Tiga alasan dalam buku: data tidak tersedia, manfaat tak berwujud, dan payback pada kerangka waktu berbeda. Buku tidak menyebut soal pajak.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 21-22",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 21-22",
     "sourceAnchors": [
       "ROI proyek keberlanjutan",
       "hal. 21-22"
@@ -239,7 +239,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Internal networker punya sedikit kuasa posisi dan otoritas formal, tetapi membangun kekuatan lewat keyakinan dan kejelasan gagasannya. Local line leader memegang tanggung jawab laba-rugi, executive leader menetapkan wilayah tempat orang bertindak.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 22-23",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 22-23",
     "sourceAnchors": [
       "Pemimpin di semua level",
       "hal. 22-23"
@@ -259,7 +259,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Perilaku manajemen yang tidak konsisten dengan visi memadamkan antusiasme karyawan. Irrelevance berarti visi tidak nyambung dengan ancaman, peluang, atau sumber daya organisasi.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 26-27",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 26-27",
     "sourceAnchors": [
       "Mengapa visi gagal",
       "hal. 26-27"
@@ -279,7 +279,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Vision cenderung awet dan paling umum. Mission mencakup tujuan perusahaan sekaligus dasar persaingannya, dan sebaiknya berubah bila kondisi berubah. Target numerik bertanggal adalah ciri strategic objectives.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 25-28",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 25-28",
     "sourceAnchors": [
       "Vision, mission, strategic objectives",
       "hal. 25-28"
@@ -299,7 +299,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Kalimat itu tidak memuat indikator ukur, tidak jelas apa yang harus dicapai, dan tidak punya kerangka waktu. Appropriate dan realistic belum bisa dinilai karena vision, mission, dan kemampuan perusahaan tidak diketahui. Buku tidak memakai akronim SMART.",
-    "sourceRef": "Reading MNS301 TM 1; Dess dkk. (2024), Ch. 1; hal. 29-30",
+    "sourceRef": "Reading MNU307 TM 1; Dess dkk. (2024), Ch. 1; hal. 29-30",
     "sourceAnchors": [
       "Kriteria strategic objectives",
       "hal. 29-30"
@@ -319,7 +319,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Scanning mendeteksi perubahan awal. Monitoring mengikuti perkembangan tren yang sudah dikenali. Forecasting membuat proyeksi dari masukan tersebut. Scenario analysis membayangkan beberapa kemungkinan masa depan.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 39-42",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 39-42",
     "sourceAnchors": [
       "Environmental scanning, monitoring, forecasting",
       "hal. 39-42"
@@ -339,7 +339,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Skenario tidak menjamin masa depan tertentu. Contoh PPG di buku memakai biaya energi dan pertumbuhan pasar berkembang untuk menyusun empat kemungkinan dengan tindakan berbeda.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 42-43",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 42-43",
     "sourceAnchors": [
       "Scenario analysis",
       "hal. 42-43"
@@ -359,7 +359,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Buku membagi lingkungan umum menjadi enam segmen tersebut. Digital economy dibahas dalam analisis perubahan lingkungan, bukan sebagai segmen ketujuh.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 43-50",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 43-50",
     "sourceAnchors": [
       "Enam segmen lingkungan umum",
       "hal. 43-50"
@@ -379,7 +379,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "O dan T adalah faktor eksternal, tetapi arah pengaruhnya berbeda antarbisnis. Strengths dan weaknesses adalah faktor internal.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 42-43",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 42-43",
     "sourceAnchors": [
       "SWOT",
       "hal. 42-43"
@@ -399,7 +399,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Lima kekuatan Porter membantu membaca tekanan terhadap laba industri. Complementors muncul pada value net, bukan five forces.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 53-58",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 53-58",
     "sourceAnchors": [
       "Porter five forces",
       "hal. 53-58"
@@ -419,7 +419,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Buyer yang bisa membuat sendiri input yang dibeli (backward integration) lebih kuat. Supplier yang bisa mendekati kegiatan pelanggan industri (forward integration) juga lebih kuat.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 55-57",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 55-57",
     "sourceAnchors": [
       "Integrasi buyer dan supplier",
       "hal. 55-57"
@@ -439,7 +439,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Entry barriers adalah tingkat analisis industri, mobility barriers tingkat strategic group. Sebutkan tingkat analisisnya sebelum memberi contoh.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 54-55, 61-63",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 54-55, 61-63",
     "sourceAnchors": [
       "Hambatan masuk dan pindah",
       "hal. 54-55, 61-63"
@@ -459,7 +459,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Value net menempatkan perusahaan di antara customers, suppliers, substitutors, dan complementors, sehingga kerja sama dan persaingan bisa muncul sekaligus.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 60-61",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 60-61",
     "sourceAnchors": [
       "Value net dan complementors",
       "hal. 60-61"
@@ -479,7 +479,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Primary activities: inbound logistics, operations, outbound logistics, marketing and sales, service. Support activities: general administration, human resource management, technology development, procurement. Procurement membeli input, inbound logistics menangani penerimaan dan penyimpanan input.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 72-77",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 72-77",
     "sourceAnchors": [
       "Value chain",
       "hal. 72-77"
@@ -499,7 +499,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Exhibit 3.7: tidak valuable berarti competitive disadvantage; valuable saja berarti competitive parity; valuable dan rare tetapi mudah ditiru berarti temporary advantage; keempat kriteria terpenuhi berarti sustainable advantage.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 83-87",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 83-87",
     "sourceAnchors": [
       "Kriteria RBV",
       "hal. 83-87"
@@ -519,7 +519,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Empat sumber kesulitan imitasi: physical uniqueness, path dependency, causal ambiguity (penyebab sukses sulit dipisahkan), dan social complexity (hubungan, kepercayaan, budaya yang rumit).",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 84-86",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 84-86",
     "sourceAnchors": [
       "Hambatan imitasi",
       "hal. 84-86"
@@ -539,7 +539,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Current ratio = current assets / current liabilities = 150 / 100 = 1,5. Buku meminta tiga pembanding: perubahan historis, norma industri, dan pesaing utama.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 89-92",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 89-92",
     "sourceAnchors": [
       "Rasio keuangan",
       "hal. 89-92"
@@ -559,7 +559,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Rasio keuangan menggambarkan hasil. Perspektif pelanggan, proses, dan pembelajaran membantu menjelaskan bagaimana hasil itu dibentuk.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 92-94",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 92-94",
     "sourceAnchors": [
       "Balanced scorecard",
       "hal. 92-94"
@@ -579,7 +579,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Buku memakai selisih itu untuk menjelaskan peran aset intelektual. Bab ini tidak memberi dasar pengakuan akuntansi atau jurnal untuk selisih tersebut.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 105-106",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 105-106",
     "sourceAnchors": [
       "Intellectual capital",
       "hal. 105-106"
@@ -599,7 +599,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Explicit knowledge dapat didokumentasikan, disebarkan, dan direplikasi. Tacit knowledge perlu keterlibatan orang yang memilikinya.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 106-107, 127",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 106-107, 127",
     "sourceAnchors": [
       "Explicit dan tacit knowledge",
       "hal. 106-107, 127"
@@ -619,7 +619,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Closure mendukung kepercayaan dan solidaritas, tetapi bisa memicu groupthink. Bridging relationships menjembatani structural holes.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 119-125",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 119-125",
     "sourceAnchors": [
       "Social network",
       "hal. 119-125"
@@ -639,7 +639,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Tim harus mengenali siapa yang memiliki pengetahuan atau sumber daya yang tepat (identification), lalu menggabungkan kontribusinya (combination). Kegagalan menimbulkan process loss.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 126-127",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 126-127",
     "sourceAnchors": [
       "Virtual teams",
       "hal. 126-127"
@@ -659,7 +659,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Dynamic capabilities adalah kemampuan berinovasi, beradaptasi, dan mendorong perubahan. Teknologi terbaru saja tidak membuktikannya.",
-    "sourceRef": "Reading MNS301 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 130-131",
+    "sourceRef": "Reading MNU307 TM 2; Dess dkk. (2024), Ch. 2–4; hal. 130-131",
     "sourceAnchors": [
       "Dynamic capabilities",
       "hal. 130-131"
@@ -679,7 +679,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Overall cost leadership dan broad differentiation melayani target luas. Focus melayani target sempit dengan varian cost focus dan differentiation focus. Jumlah strategi dasar tetap tiga.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 142",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 142",
     "sourceAnchors": [
       "Generic strategies",
       "hal. 142"
@@ -699,7 +699,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Stuck in the middle berarti perusahaan tidak berhasil membangun keunggulan yang jelas. Kombinasi biaya rendah dan diferensiasi tetap bisa berhasil jika kegiatan benar-benar saling mendukung.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 142-143, 155-157",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 142-143, 155-157",
     "sourceAnchors": [
       "Stuck in the middle",
       "hal. 142-143, 155-157"
@@ -719,7 +719,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Economies of scale berasal dari ukuran operasi. Economies of scope berasal dari pemakaian kompetensi atau kegiatan lintas bisnis. Experience curve berasal dari pengalaman kumulatif.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 143-144",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 143-144",
     "sourceAnchors": [
       "Experience curve vs economies of scale",
       "hal. 143-144"
@@ -739,7 +739,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Differentiation parity berarti mutu tetap dapat diterima pasar. Harga rendah tidak menutup kekhawatiran pembeli atas fitur dan keselamatan.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 144-145",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 144-145",
     "sourceAnchors": [
       "Pitfall cost leadership",
       "hal. 144-145"
@@ -759,7 +759,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Buku menyebut Gibson sebagai contoh keunikan teknis yang tidak cukup menjadi nilai bagi pembeli. Pitfall ini berbeda dari diferensiasi berlebihan (mutu atau fitur melampaui kebutuhan).",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 150-151",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 150-151",
     "sourceAnchors": [
       "Pitfall diferensiasi",
       "hal. 150-151"
@@ -779,7 +779,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Dimensi pembeda ada dua: sumber keunggulan (biaya rendah atau nilai unggul) dan luas pasar (luas atau sempit).",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 142, 152",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 142, 152",
     "sourceAnchors": [
       "Cost focus vs cost leadership",
       "hal. 142, 152"
@@ -799,7 +799,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Boeing dalam buku mengejar layanan pemeliharaan ketika harga pesawat ditekan. Pendapatan terbesar belum tentu menghasilkan laba terbesar.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 155-157",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 155-157",
     "sourceAnchors": [
       "Profit pool",
       "hal. 155-157"
@@ -819,7 +819,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Contoh Visa: keberhasilan satu sisi (pengguna atau merchant) membantu daya tarik sisi lainnya. Platform perlu memikirkan kedua sisi sekaligus.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 160-161",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 160-161",
     "sourceAnchors": [
       "Platform markets",
       "hal. 160-161"
@@ -839,7 +839,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Introduction: increase awareness. Growth: create consumer demand. Maturity: defend share dan extend cycle. Decline: consolidate, maintain, harvest, exit.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 162-166",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 162-166",
     "sourceAnchors": [
       "Industry life cycle",
       "hal. 162-166"
@@ -859,7 +859,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Empat pilihan pada decline: maintaining, harvesting, exiting, consolidating.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 165-166",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 165-166",
     "sourceAnchors": [
       "Pilihan pada decline",
       "hal. 165-166"
@@ -879,7 +879,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Akuisisi yang besar saja belum membuktikan nilai tercipta. Newell-Jarden dalam buku menggambarkan kesulitan mengintegrasikan bisnis dan mencapai nilai yang dijanjikan.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 177-178",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 177-178",
     "sourceAnchors": [
       "Corporate-level strategy",
       "hal. 177-178"
@@ -899,7 +899,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Sharing activities berarti memakai kegiatan atau fasilitas bersama. Leveraging core competencies berarti mentransfer kompetensi. Parenting advantage termasuk unrelated diversification.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 178-183",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 178-183",
     "sourceAnchors": [
       "Related diversification",
       "hal. 178-183"
@@ -919,7 +919,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Backward integration bergerak ke sumber input, forward integration bergerak ke pelanggan. Manfaat kontrol perlu dibandingkan dengan biaya dan hilangnya fleksibilitas.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 183-185",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 183-185",
     "sourceAnchors": [
       "Vertical integration",
       "hal. 183-185"
@@ -939,7 +939,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Stars: pangsa tinggi, pertumbuhan tinggi. Question marks: pangsa lemah di pasar tumbuh. Cash cows: pangsa kuat di pasar lambat. Dogs: pangsa lemah di pasar lambat. Ukuran lingkaran adalah pendapatan relatif, bukan laba.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 187-188",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 187-188",
     "sourceAnchors": [
       "Matriks BCG",
       "hal. 187-188"
@@ -959,7 +959,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Divestment adalah keluar dari bisnis. Tiga cara masuk adalah M&A, alliance/JV, dan internal development.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 189-198",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 189-198",
     "sourceAnchors": [
       "Cara diversifikasi",
       "hal. 189-198"
@@ -979,7 +979,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Golden parachute adalah pesangon kontraktual. Poison pill adalah hak pemegang saham yang dipicu bila ada pengambilalihan. Ketiganya taktik antitakeover yang mengutamakan posisi manajer.",
-    "sourceRef": "Reading MNS301 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 198-199",
+    "sourceRef": "Reading MNU307 TM 3; Dess dkk. (2024), Ch. 5–6; hal. 198-199",
     "sourceAnchors": [
       "Motif manajer",
       "hal. 198-199"
@@ -999,7 +999,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Keempat determinan berinteraksi sebagai sistem. Contoh buku: tenaga ahli dan infrastruktur India, pelanggan Denmark yang peduli lingkungan, pemasok dekat industri sepatu Italia.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 209-211",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 209-211",
     "sourceAnchors": [
       "Diamond of national advantage",
       "hal. 209-211"
@@ -1019,7 +1019,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Faktor dasar seperti lahan atau tenaga kerja tersedia tidak cukup. Tenaga ahli dan pengetahuan khusus perlu dibangun lewat investasi.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 209-211",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 209-211",
     "sourceAnchors": [
       "Batas diamond",
       "hal. 209-211"
@@ -1039,7 +1039,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Enam motivasi ekspansi: increase market size, arbitrage opportunities, enhance product growth potential, optimize value-chain locations, learning opportunities, explore reverse innovation.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 212-215",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 212-215",
     "sourceAnchors": [
       "Motivasi ekspansi",
       "hal. 212-215"
@@ -1059,7 +1059,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Political risk berasal dari konflik atau ketidakpastian perlakuan pemerintah. Currency risk dari perubahan kurs. Management risk dari perbedaan budaya dan cara kerja, seperti reaksi terhadap simbol budaya pada iklan Coca-Cola.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 215-217",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 215-217",
     "sourceAnchors": [
       "Risiko ekspansi",
       "hal. 215-217"
@@ -1079,7 +1079,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Outsourcing menjawab siapa yang mengerjakan (pihak luar). Offshoring menjawab di mana (luar negeri). Keduanya dimensi berbeda dan bisa terjadi bersamaan.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 217-218",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 217-218",
     "sourceAnchors": [
       "Outsourcing vs offshoring",
       "hal. 217-218"
@@ -1099,7 +1099,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Tujuh biaya tersembunyi: total wage costs, indirect costs, increased inventory, reduced market responsiveness, coordination costs, intellectual property rights, wage inflation.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 218-219",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 218-219",
     "sourceAnchors": [
       "Biaya tersembunyi offshoring",
       "hal. 218-219"
@@ -1119,7 +1119,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "International: tekanan biaya rendah dan adaptasi rendah. Global: biaya tinggi, adaptasi rendah. Multidomestic: biaya rendah, adaptasi tinggi. Transnational: biaya tinggi dan adaptasi tinggi.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 221-222",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 221-222",
     "sourceAnchors": [
       "Empat strategi internasional",
       "hal. 221-222"
@@ -1139,7 +1139,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Global strategy menekankan koordinasi dan economies of scale untuk menekan biaya. Jangan membaca sumbu \"high cost\" sebagai biaya perusahaan tinggi.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 221-223",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 221-223",
     "sourceAnchors": [
       "Sumbu tekanan biaya",
       "hal. 221-223"
@@ -1159,7 +1159,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Transnational mencoba menggabungkan efisiensi, adaptasi, dan learning. Jangan mereduksi batasnya menjadi kata \"kompleks\" tanpa menjelaskan lokasi dan transfer pengetahuan.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 225-227",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 225-227",
     "sourceAnchors": [
       "Transnational",
       "hal. 225-227"
@@ -1179,7 +1179,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Studi yang dikutip buku memakai minimal 20% penjualan pada North America, Europe, dan Asia untuk menyebut perusahaan global; hanya sembilan dari 500 perusahaan terbesar memenuhinya.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 227-228",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 227-228",
     "sourceAnchors": [
       "Regionalization",
       "hal. 227-228"
@@ -1199,7 +1199,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Kontrol lebih besar umumnya menuntut komitmen dan risiko lebih besar. Banyak perusahaan tidak mengikuti urutan itu secara berjenjang.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 228-233",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 228-233",
     "sourceAnchors": [
       "Entry modes",
       "hal. 228-233"
@@ -1219,7 +1219,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Acquisition membeli perusahaan yang sudah ada; greenfield venture membangun operasi baru. Kontrol penuh tidak menjamin risiko IP atau politik hilang.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 232-233",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 232-233",
     "sourceAnchors": [
       "Wholly owned subsidiary",
       "hal. 232-233"
@@ -1239,7 +1239,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Ketiganya saling berhubungan. Peluang tidak menentukan hasil sendirian; sumber daya dan pelaksana harus sesuai.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 242-243",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 242-243",
     "sourceAnchors": [
       "Kerangka entrepreneurship",
       "hal. 242-243"
@@ -1259,7 +1259,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Attractive: ada permintaan pasar. Achievable: praktis dikerjakan. Durable: peluang bertahan cukup lama. Value creating: manfaat melampaui biaya pengembangan dengan margin cukup.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 245-246",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 245-246",
     "sourceAnchors": [
       "Evaluasi peluang",
       "hal. 245-246"
@@ -1279,7 +1279,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Pioneering membawa produk radikal. Imitative membawa model terbukti ke segmen atau lokasi lain. Adaptive memodifikasi gagasan lama cukup berbeda untuk nilai baru.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 252-255",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 252-255",
     "sourceAnchors": [
       "Entry strategies usaha baru",
       "hal. 252-255"
@@ -1299,7 +1299,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Jangan menyamakan cara masuk pasar dengan cara memperoleh keunggulan setelah masuk.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 252-256",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 252-256",
     "sourceAnchors": [
       "Pioneering vs differentiation",
       "hal. 252-256"
@@ -1319,7 +1319,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Market commonality berarti pasar atau pelanggan yang sama; resource similarity berarti kesamaan sumber daya. Ancaman kuat belum berarti rival pasti menyerang lebih dulu.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 259-260",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 259-260",
     "sourceAnchors": [
       "Threat analysis",
       "hal. 259-260"
@@ -1339,7 +1339,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Strategic: masuk pasar, produk baru, kapasitas, mergers/alliances. Tactical: harga, peningkatan produk atau layanan, pemasaran, kanal distribusi.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 261-262",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 261-262",
     "sourceAnchors": [
       "Strategic vs tactical actions",
       "hal. 261-262"
@@ -1359,7 +1359,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Rival yang bergantung pada pasar yang diserang lebih termotivasi membalas, tetapi keterbatasan sumber daya membatasi cara merespons.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 262-263",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 262-263",
     "sourceAnchors": [
       "Likelihood of reaction",
       "hal. 262-263"
@@ -1379,7 +1379,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Co-opetition bekerja sama pada bagian tertentu sambil tetap bersaing. Forbearance adalah menahan respons atau tidak memulai serangan.",
-    "sourceRef": "Reading MNS301 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 262-264",
+    "sourceRef": "Reading MNU307 TM 4; Dess dkk. (2024), Ch. 7–8; hal. 262-264",
     "sourceAnchors": [
       "Forbearance dan co-opetition",
       "hal. 262-264"
@@ -1399,7 +1399,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Contemporary control memadukan keduanya. Double-loop learning menguji kembali asumsi, sasaran, dan strategi sambil memantau hasil.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 273-274",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 273-274",
     "sourceAnchors": [
       "Informational vs behavioral control",
       "hal. 273-274"
@@ -1419,7 +1419,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Traditional control mengikuti formulasi, pelaksanaan, lalu pengukuran terhadap sasaran sebelumnya. Contemporary control menguji kelayakan sasaran dan asumsi (double-loop).",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 273-274",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 273-274",
     "sourceAnchors": [
       "Single-loop vs double-loop",
       "hal. 273-274"
@@ -1439,7 +1439,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Informasi harus dibicarakan agar manajer dapat menguji maknanya. Menyimpan banyak data tanpa perhatian dan perdebatan belum memenuhi pendekatan ini.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 274",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 274",
     "sourceAnchors": [
       "Ciri contemporary control",
       "hal. 274"
@@ -1459,7 +1459,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Ketiganya perlu konsisten agar perilaku mendukung tujuan organisasi.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 275",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 275",
     "sourceAnchors": [
       "Tiga tuas behavioral control",
       "hal. 275"
@@ -1479,7 +1479,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Enam ciri: clear and accepted objectives, link to performance and desired behavior, visible performance measures, prompt feedback, fair and equitable compensation, flexible structure.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 278",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 278",
     "sourceAnchors": [
       "Sistem reward efektif",
       "hal. 278"
@@ -1499,7 +1499,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Culture cocok untuk organisasi profesional dengan otonomi tinggi. Rules cocok untuk output standar dan tugas rutin. Rewards cocok bila output mudah diukur, termasuk pada unrelated diversification.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 280-282",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 280-282",
     "sourceAnchors": [
       "Pendekatan kontrol",
       "hal. 280-282"
@@ -1519,7 +1519,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Pemisahan modal dan pengelolaan membuat kedua pihak punya informasi dan kepentingan berbeda. Dua masalah agency: agency problem dan risk sharing.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 284",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 284",
     "sourceAnchors": [
       "Agency theory",
       "hal. 284"
@@ -1539,7 +1539,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Shareholders, management, dan board adalah pihak utama, bukan mekanisme. Mekanisme eksternal: market for corporate control, auditors, banks and analysts, regulators, media and public activists.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 284-295",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 284-295",
     "sourceAnchors": [
       "Mekanisme tata kelola",
       "hal. 284-295"
@@ -1559,7 +1559,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Lead director dapat menjadi penyeimbang, tetapi tidak menghapus seluruh konflik kepentingan.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 291-292",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 291-292",
     "sourceAnchors": [
       "CEO duality",
       "hal. 291-292"
@@ -1579,7 +1579,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Principal-principal terjadi antara pengendali dan minoritas. Principal-agent terjadi antara pemilik dan manajer profesional. Pola kepemilikan terkonsentrasi (sering lebih dari 50%) mendukung PP conflict.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 295-297",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 295-297",
     "sourceAnchors": [
       "Principal-principal conflict",
       "hal. 295-297"
@@ -1599,7 +1599,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Pertumbuhan volume menambah tuntutan informasi sehingga fungsi dikelompokkan (functional). Diversifikasi terkait mendorong divisional; yang tidak terkait dapat cocok dengan holding company.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 306-309",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 306-309",
     "sourceAnchors": [
       "Pola pertumbuhan struktur",
       "hal. 306-309"
@@ -1619,7 +1619,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Matrix berbagi orang dan fasilitas sehingga mengurangi duplikasi, tetapi dua atasan dapat berbeda prioritas dan memperlambat keputusan.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 312-314",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 312-314",
     "sourceAnchors": [
       "Matrix structure",
       "hal. 312-314"
@@ -1639,7 +1639,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Local responsiveness perlu dibandingkan dengan efisiensi lintas lokasi. Global startup menjual dan memakai sumber daya lintas negara sejak berdiri.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 313-316",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 313-316",
     "sourceAnchors": [
       "Struktur internasional",
       "hal. 313-316"
@@ -1659,7 +1659,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Barrier-free membuka batas internal, eksternal, dan geografis. Modular memakai pemasok untuk kegiatan noncore. Virtual menggabungkan perusahaan independen.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 317-325",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 317-325",
     "sourceAnchors": [
       "Boundaryless organization",
       "hal. 317-325"
@@ -1679,7 +1679,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Istilah virtual tidak berarti semua pekerja harus remote. Contoh modular: Adidas mempertahankan design dan marketing, produksi lewat mitra.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 323-325",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 323-325",
     "sourceAnchors": [
       "Modular vs virtual",
       "hal. 323-325"
@@ -1699,7 +1699,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Kasus ini menunjukkan koordinasi komponen menjadi sulit. Tiga risiko strategis outsourcing perlu dinilai.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 305-306",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 305-306",
     "sourceAnchors": [
       "Boeing 787",
       "hal. 305-306"
@@ -1719,7 +1719,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Unit baru terlindung dari kebiasaan operasi lama, sedangkan unit lama terlindung dari gangguan proyek baru. Senior team menjaga integrasi dan tujuan korporat.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 328-329",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 328-329",
     "sourceAnchors": [
       "Ambidextrous organization",
       "hal. 328-329"
@@ -1739,7 +1739,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Jumlah 7 + 9 + 4 + 15 = 35 upaya pada 15 business units dalam sembilan industri. Temuan studi tidak menjamin semua perusahaan.",
-    "sourceRef": "Reading MNS301 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 328-329",
+    "sourceRef": "Reading MNU307 TM 5; Dess dkk. (2024), Ch. 9–10; hal. 328-329",
     "sourceAnchors": [
       "Studi ambidexterity",
       "hal. 328-329"
@@ -1759,7 +1759,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Mengabaikan satu kegiatan dapat melemahkan dua kegiatan lainnya. Leadership adalah proses mengubah organisasi dari keadaan sekarang menuju keadaan yang dikehendaki pemimpin.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 338-339",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 338-339",
     "sourceAnchors": [
       "Definisi leadership",
       "hal. 338-339"
@@ -1779,7 +1779,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Masalah desain dapat muncul dari tanggung jawab kabur, rewards yang salah, budgeting dan control tidak memadai, atau integrasi lemah. Sistem zero-sum menghambat kolaborasi meskipun visi terlihat baik.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 338-340",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 338-340",
     "sourceAnchors": [
       "Desain organisasi dan strategi",
       "hal. 338-340"
@@ -1799,7 +1799,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Lima hambatan: vested interests in the status quo, systemic barriers, behavioral barriers, political barriers, personal time constraints. Political barriers mencakup konflik kuasa, perebutan sumber daya, dan penolakan berbagi informasi.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 343-345",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 343-345",
     "sourceAnchors": [
       "Hambatan perubahan",
       "hal. 343-345"
@@ -1819,7 +1819,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Tekanan harga atau pengurangan sumber daya memperkuat masalah itu. Pemimpin perlu mempertahankan ruang refleksi sambil tetap menangani operasi.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 344-345",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 344-345",
     "sourceAnchors": [
       "Gresham's law of planning",
       "hal. 344-345"
@@ -1839,7 +1839,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Organizational: legitimate, reward, coercive, information. Personal: referent dan expert. Information power berada pada cabang organizational.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 345-346",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 345-346",
     "sourceAnchors": [
       "Enam basis kuasa",
       "hal. 345-346"
@@ -1859,7 +1859,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "EI berbeda dari technical skills dan cognitive abilities. EI tinggi sendiri tidak menjamin keputusan selalu tepat; penerapan berlebihan punya risiko.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 346-348",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 346-348",
     "sourceAnchors": [
       "Emotional intelligence",
       "hal. 346-348"
@@ -1879,7 +1879,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Risiko lain: menilai orang dengan tajam bisa menjadi menghakimi; passion bisa menutup pikiran terhadap alternatif; hubungan dekat bisa menjadi micromanagement.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 348",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 348",
     "sourceAnchors": [
       "Risiko penerapan EI",
       "hal. 348"
@@ -1899,7 +1899,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Kelima unsur learning organization perlu hadir; belajar harus berlangsung di semua tingkat, bukan instruksi dari puncak saja.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 348-353",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 348-353",
     "sourceAnchors": [
       "Learning organization",
       "hal. 348-353"
@@ -1919,7 +1919,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Competitive benchmarking membandingkan pesaing dalam industri. Functional benchmarking melintasi industri untuk fungsi generik yang bekerja serupa.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 350-351",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 350-351",
     "sourceAnchors": [
       "Benchmarking",
       "hal. 350-351"
@@ -1939,7 +1939,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Integrity-based bertujuan memungkinkan responsible conduct, dipimpin manajemen, dan berasumsi aktor sosial (self-interest, ideals, values, expectations).",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 354-356",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 354-356",
     "sourceAnchors": [
       "Ethics management",
       "hal. 354-356"
@@ -1959,7 +1959,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Empat unsur: role models, corporate credos/codes of conduct, reward/evaluation systems, policies/procedures. Code saja belum menyelesaikan masalah.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 356-358",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 356-358",
     "sourceAnchors": [
       "Organisasi etis",
       "hal. 356-358"
@@ -1979,7 +1979,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Klasifikasi dijawab sesuai pertanyaan yang sedang diajukan. Radical/incremental bersifat continuum.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 366-369",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 366-369",
     "sourceAnchors": [
       "Jenis inovasi",
       "hal. 366-369"
@@ -1999,7 +1999,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Contoh buku: smartphone adalah sustaining innovation yang memperluas peluang layanan internet, meski sangat baru.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 368-369",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 368-369",
     "sourceAnchors": [
       "Radical vs disruptive",
       "hal. 368-369"
@@ -2019,7 +2019,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Contoh: eBay (associating), Salesforce (questioning), Intuit (observing), Google (experimenting), BlackBerry (networking).",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 370-372",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 370-372",
     "sourceAnchors": [
       "Innovator's DNA",
       "hal. 370-372"
@@ -2039,7 +2039,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Dispersed ditopang entrepreneurial culture, resource allotments, dan product champions di seluruh organisasi. Fokus berisiko isolasi; dispersed berisiko perubahan demi perubahan.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 379-381",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 379-381",
     "sourceAnchors": [
       "Corporate entrepreneurship",
       "hal. 379-381"
@@ -2059,7 +2059,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Product champion membawa ide dan mencari dukungan. Exit champion mengurangi ambiguitas dengan hard data dan menegakkan kembali kriteria keputusan, meski dapat tidak populer.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 382-383",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 382-383",
     "sourceAnchors": [
       "Product champion dan exit champion",
       "hal. 382-383"
@@ -2079,7 +2079,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Pilihan setelah tollgate: grow/accelerate, delay/learn, shrink, atau abandon. Biaya awal tetap hilang bila ide berhenti.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 383-386",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 383-386",
     "sourceAnchors": [
       "Real options",
       "hal. 383-386"
@@ -2099,7 +2099,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Tiga kelompok pitfalls: back-solver dilemma, managerial conceit berupa overconfidence/illusion of control, dan managerial conceit berupa escalation of commitment.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 385-386",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 385-386",
     "sourceAnchors": [
       "Pitfalls real options",
       "hal. 385-386"
@@ -2119,7 +2119,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Proactiveness mengantisipasi kebutuhan sebelum pesaing; competitive aggressiveness berfokus mengungguli atau merespons rival. Risiko dibagi menjadi business, financial, dan personal.",
-    "sourceRef": "Reading MNS301 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 386-389",
+    "sourceRef": "Reading MNU307 TM 6; Dess dkk. (2024), Ch. 11–12; hal. 386-389",
     "sourceAnchors": [
       "Entrepreneurial orientation",
       "hal. 386-389"
@@ -2139,7 +2139,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Buku menyebut banyak blue ocean terbentuk dengan memperluas batas industri yang sudah ada, sehingga perusahaan lama pun bisa menciptakannya. Buku juga tetap mengakui pentingnya berhasil di red ocean.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 4-5",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 4-5",
     "sourceAnchors": [
       "Red ocean dan blue ocean",
       "BOS hal. 4-5"
@@ -2159,7 +2159,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Value innovation mematahkan value-cost trade-off. Teknologi baru yang sulit dipakai atau terlalu mahal belum tentu memberi lonjakan nilai bagi pembeli, dan inovasi satu proses produksi bisa memperbaiki posisi lama tanpa menciptakan pasar baru.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 12-17",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 12-17",
     "sourceAnchors": [
       "Value innovation",
       "BOS hal. 12-17"
@@ -2179,7 +2179,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Humor dan thrill hanya dikurangi, bukan dihapus. Low cost, harga jual, dan nilai pembeli adalah tiga hal berbeda yang perlu dibedakan saat menjawab kasus.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 14-16",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 14-16",
     "sourceAnchors": [
       "Low cost dan harga tiket",
       "BOS hal. 14-16"
@@ -2199,7 +2199,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Sumbu tegak memperlihatkan offering level. Price juga merupakan satu faktor di sumbu mendatar, sehingga titik tinggi pada price berarti harga tinggi dan bukan keuntungan bagi pembeli. Arti faktornya harus ikut dibaca.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 25-27",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 25-27",
     "sourceAnchors": [
       "Strategy canvas",
       "BOS hal. 25-27"
@@ -2219,7 +2219,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Cirque meng-eliminate star performers, animal shows, aisle concession sales, dan multiple show arenas. Fun and humor serta thrill and danger di-reduce, unique venue di-raise, sedangkan theme, refined environment, multiple productions, serta artistic music and dance di-create.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 29, 36",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 29, 36",
     "sourceAnchors": [
       "ERRC Cirque",
       "BOS hal. 29, 36"
@@ -2239,7 +2239,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Tiga karakteristik menilai kualitas profil strategi. Tiga tier menilai hubungan noncustomers dengan pasar, sedangkan tiga E menilai proses pengambilan keputusan. Sebut objek yang dinilai sebelum komponennya.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 37-41",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 37-41",
     "sourceAnchors": [
       "Three characteristics",
       "BOS hal. 37-41"
@@ -2259,7 +2259,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Path keempat melihat total pengalaman pembeli, termasuk kegiatan pelengkap yang menimbulkan beban setelah pembelian. Novo Nordisk termasuk chain of buyers karena menggeser perhatian dari dokter sebagai influencer ke pengguna insulin.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 65-69",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 65-69",
     "sourceAnchors": [
       "Six paths",
       "BOS hal. 65-69"
@@ -2279,7 +2279,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Second tier sudah mempertimbangkan pasar lalu menolak. First tier masih memakai sedikit dengan enggan dan siap pergi. Third tier tidak pernah menganggap pasar itu sebagai pilihan.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 103-106",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 103-106",
     "sourceAnchors": [
       "Three tiers noncustomers",
       "BOS hal. 103-106"
@@ -2299,7 +2299,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Kesamaan kebutuhan bisa melintasi beberapa tier. Jika peluang desegmentation tidak ditemukan, perusahaan bisa kembali mengeksplorasi perbedaan pelanggan yang ada, dengan konsekuensi ruang yang diraih mungkin lebih kecil.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 114-115",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 114-115",
     "sourceAnchors": [
       "Biggest catchment",
       "BOS hal. 114-115"
@@ -2319,7 +2319,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Utility memberi alasan membeli, price membuka kemampuan membayar, cost menjaga laba, dan adoption memeriksa penerimaan pihak terdampak. Tahap yang gagal perlu direthink, bukan dilewati.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 118-119",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 118-119",
     "sourceAnchors": [
       "Strategic sequence",
       "BOS hal. 118-119"
@@ -2339,7 +2339,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Harga dipilih dari sudut pembeli lebih dahulu, lalu biaya dirancang mengikuti sasaran. Tiga lever untuk memenuhinya: streamlining and cost innovations, partnering, dan pricing innovation. Harga tidak boleh mengikuti biaya yang sudah telanjur tinggi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 131-136",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 131-136",
     "sourceAnchors": [
       "Target cost",
       "BOS hal. 131-136"
@@ -2359,7 +2359,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Rental memungkinkan harga per penggunaan rendah dan penerimaan berulang dari kaset yang sama. Contoh lain dalam buku: leasing IBM, time-share NetJets, dan slice-share mutual funds.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 134-136",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 134-136",
     "sourceAnchors": [
       "Pricing innovation",
       "BOS hal. 134-136"
@@ -2379,7 +2379,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Ketiga E diperlukan bersama. Fair process tidak menjamin semua pihak menyukai hasilnya, tetapi orang dapat mendukung pelaksanaan meski usulan mereka ditolak, selama prosesnya dinilai adil.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 175-176, 184",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 175-176, 184",
     "sourceAnchors": [
       "Fair process",
       "BOS hal. 175-176, 184"
@@ -2399,7 +2399,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Cognitive: ride the electric sewer dan meet disgruntled customers. Resource: hot spots, cold spots, horse trading. Motivational: kingpins, fishbowl management, atomization. Political: angels, devils, consigliere.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 165-168",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 165-168",
     "sourceAnchors": [
       "Tipping point leadership",
       "BOS hal. 165-168"
@@ -2419,7 +2419,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Buku mengingatkan hampir semua blue ocean akhirnya ditiru. Delapan imitation barriers pada Figure 9-1 hanya memberi waktu. Tidak ada jadwal wajib tahunan.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 185-190",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); BOS hal. 185-190",
     "sourceAnchors": [
       "Sustainability dan renewal",
       "BOS hal. 185-190"
@@ -2439,7 +2439,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Lima prinsip ini membantu membaca isi peta. Jangan tertukar dengan lima prinsip Strategy-Focused Organization di bagian Preface, yang membahas pengelolaan organisasi untuk melaksanakan strategi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 24-28",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 24-28",
     "sourceAnchors": [
       "Lima prinsip peta strategi",
       "SM hal. PDF 24-28"
@@ -2459,7 +2459,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Pengguna akhir membutuhkan pilihan, akses, dan standar luas. Complementors membutuhkan basis pelanggan besar serta platform yang mudah dipakai. Hambatan berpindah saja tidak menjelaskan keseluruhan proposisi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 54-56",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 54-56",
     "sourceAnchors": [
       "Proposisi nilai",
       "SM hal. PDF 54-56"
@@ -2479,7 +2479,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "Customer management: selection, acquisition, retention, growth. Innovation: opportunity identification, R&D portfolio, design/develop, launch. Regulatory and social: environment, safety and health, employment, community. Operations: supply, production, distribution, risk management.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 57-59",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 57-59",
     "sourceAnchors": [
       "Cluster proses internal",
       "SM hal. PDF 57-59"
@@ -2499,7 +2499,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Fiduciary adalah tanggung jawab kepada penyandang dana, seperti pembayar pajak atau donor. Contoh buku: American Diabetes Association memakai mission untuk mengarahkan hasil organisasi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 22-23",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 22-23",
     "sourceAnchors": [
       "Organisasi publik dan nonprofit",
       "SM hal. PDF 22-23"
@@ -2519,7 +2519,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Panah pada peta menyatakan hubungan yang diharapkan antarobjektif, sedangkan ukuran scorecard menilai kemajuan objektif dan target. Hubungan itu tetap perlu diuji.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 64-65",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 64-65",
     "sourceAnchors": [
       "Map, scorecard, action plan",
       "SM hal. PDF 64-65"
@@ -2539,7 +2539,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Human capital: skills, knowledge, values. Information capital: systems, databases, networks. Organization capital: culture, leadership, alignment, teamwork. Ketiganya perlu selaras dengan proses dan saling terintegrasi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 202-204",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 202-204",
     "sourceAnchors": [
       "Tiga aset intangible",
       "SM hal. PDF 202-204"
@@ -2559,7 +2559,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "40 ÷ 100 × 100% = 40%, sisa kebutuhan 100 − 40 = 60. Pembagi adalah kebutuhan strategi, bukan seluruh pegawai bank. Hasil ini tidak berarti laba naik 40%.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 215",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 215",
     "sourceAnchors": [
       "Strategic readiness",
       "SM hal. PDF 215"
@@ -2579,7 +2579,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 2,
     "explanation": "Anggaran hanya menunjukkan investasi. Readiness memerlukan bukti bahwa kompetensi yang dibutuhkan sudah tersedia. Kategori ini juga tidak menetapkan pengakuan atau fair value dalam laporan keuangan.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 213-215",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 213-215",
     "sourceAnchors": [
       "Readiness dan liquidity",
       "SM hal. PDF 213-215"
@@ -2599,7 +2599,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 1,
     "explanation": "Horizon pada gambar adalah ilustrasi dan perlu disesuaikan dengan rencana nyata. Tema perlu dikelola bersama walaupun manfaatnya datang pada waktu berbeda, sehingga hasil satu tema tidak dianggap hasil seluruh strategi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 60-61",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 60-61",
     "sourceAnchors": [
       "Tema dan horizon waktu",
       "SM hal. PDF 60-61"
@@ -2619,7 +2619,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 3,
     "explanation": "Target, waktu, kesiapan aset, dan pendanaan harus tersambung dalam satu rencana. Value gap dialokasikan ke sasaran growth dan productivity, lalu ke tema yang menghasilkannya.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 355-356",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 355-356",
     "sourceAnchors": [
       "Langkah campaign",
       "SM hal. PDF 355-356"
@@ -2639,7 +2639,7 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
     ],
     "answer": 0,
     "explanation": "35 ÷ 50 × 100% = 70%, kekurangan 50 − 35 = 15. Readiness adalah syarat pendukung. Manfaatnya muncul jika proses menghasilkan nilai pelanggan dan hasil ekonomi.",
-    "sourceRef": "Reading MNS301 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 215",
+    "sourceRef": "Reading MNU307 TM 7; Kim & Mauborgne (2005) dan Kaplan & Norton (2004); SM hal. PDF 215",
     "sourceAnchors": [
       "Readiness soal terapan",
       "SM hal. PDF 215"
@@ -2647,4 +2647,4 @@ export const MNS301_QUIZ_UTS: QuizQuestion[] = [
   }
 ];
 
-export const MNS301_QUIZ: QuizQuestion[] = [...MNS301_QUIZ_UTS];
+export const MNU307_QUIZ: QuizQuestion[] = [...MNU307_QUIZ_UTS];

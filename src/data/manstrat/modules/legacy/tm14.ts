@@ -1,0 +1,167 @@
+import type { Reading } from '../../../../types';
+import { CASE_SAMSUNG_TECH_PORTFOLIO } from '../../manstratPracticeCases';
+
+const SVG_COOPETITION_PORTFOLIO = `<svg class="course-diagram-svg" viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif">
+  <defs>
+    <linearGradient id="bgMns14" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1329"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="coopGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#34d399"/></linearGradient>
+  </defs>
+  <rect class="svg-bg" x="10" y="10" width="880" height="340" rx="16" fill="url(#bgMns14)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect class="svg-header" x="10" y="10" width="880" height="46" rx="16" fill="#1e293b" fill-opacity="0.6"/>
+  <line class="svg-divider" x1="10" y1="56" x2="890" y2="56" stroke="#334155" stroke-width="1"/>
+  <circle cx="32" cy="33" r="5" fill="#38bdf8"/>
+  <text class="svg-title" x="46" y="38" fill="#f8fafc" font-size="13" font-weight="700">STRATEGI CO-OPETITION &amp; KERANGKA THE VALUE NET (BRANDENBURGER &amp; NALEBUFF)</text>
+  <rect class="svg-badge-blue" x="735" y="21" width="140" height="24" rx="12" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="1"/>
+  <text class="text-accent-blue" x="805" y="37" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">VALUE NET</text>
+
+  <!-- Left: The Value Net Diamond Rhombus (Width 450px) -->
+  <g transform="translate(35, 70)">
+    <!-- Top: Competitors / Substitutors -->
+    <rect class="svg-subcard" x="140" y="0" width="180" height="42" rx="6" fill="#1e293b" stroke="#f87171"/>
+    <text class="text-accent-red" x="230" y="18" fill="#f87171" font-size="8.5" font-weight="800" text-anchor="middle">PESAING (COMPETITORS)</text>
+    <text class="svg-text" x="230" y="32" fill="#cbd5e1" font-size="7" text-anchor="middle">Bersaing merebut kue pasar</text>
+
+    <!-- Center: Company -->
+    <rect class="svg-card" x="140" y="100" width="180" height="52" rx="8" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
+    <text class="text-accent-green" x="230" y="122" fill="#34d399" font-size="10" font-weight="800" text-anchor="middle">PERUSAHAAN KITA</text>
+    <text class="svg-text" x="230" y="138" fill="#cbd5e1" font-size="7.5" text-anchor="middle">Pencipta Nilai Bersama</text>
+
+    <!-- Left: Suppliers -->
+    <rect class="svg-subcard" x="0" y="100" width="120" height="52" rx="6" fill="#1e293b" stroke="#38bdf8"/>
+    <text class="text-accent-blue" x="60" y="122" fill="#38bdf8" font-size="8" font-weight="800" text-anchor="middle">PEMASOK</text>
+    <text class="svg-text" x="60" y="136" fill="#cbd5e1" font-size="6.5" text-anchor="middle">(Suppliers)</text>
+
+    <!-- Right: Customers -->
+    <rect class="svg-subcard" x="340" y="100" width="120" height="52" rx="6" fill="#1e293b" stroke="#fbbf24"/>
+    <text class="text-accent-amber" x="400" y="122" fill="#fbbf24" font-size="8" font-weight="800" text-anchor="middle">PELANGGAN</text>
+    <text class="svg-text" x="400" y="136" fill="#cbd5e1" font-size="6.5" text-anchor="middle">(Customers)</text>
+
+    <!-- Bottom: Complementors -->
+    <rect class="svg-subcard" x="140" y="210" width="180" height="42" rx="6" fill="#1e293b" stroke="#a78bfa"/>
+    <text class="text-accent-purple" x="230" y="228" fill="#a78bfa" font-size="8.5" font-weight="800" text-anchor="middle">KOMPLEMENTOR (COMPLEMENTORS)</text>
+    <text class="svg-text" x="230" y="242" fill="#cbd5e1" font-size="7" text-anchor="middle">Membuat produk kita makin bernilai</text>
+
+    <!-- Connective Grid Lines -->
+    <line x1="230" y1="42" x2="230" y2="100" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="120" y1="126" x2="140" y2="126" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="320" y1="126" x2="340" y2="126" stroke="#334155" stroke-dasharray="3 3"/>
+    <line x1="230" y1="152" x2="230" y2="210" stroke="#334155" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- Right: Real-World Corporate Co-opetition Case -->
+  <g transform="translate(520, 75)">
+    <rect class="svg-card" x="0" y="0" width="345" height="245" rx="12" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+    <rect x="0" y="0" width="345" height="28" rx="12" fill="url(#coopGrad)" fill-opacity="0.25"/>
+    <text class="text-accent-green" x="14" y="19" fill="#34d399" font-size="10" font-weight="800">STUDI KASUS: SAMSUNG VS APPLE</text>
+    
+    <text class="text-accent-amber" x="14" y="48" fill="#fbbf24" font-size="8.5" font-weight="700">1. KOLABORASI DI TINGKAT RANTAI PASOK:</text>
+    <text class="svg-text" x="14" y="64" fill="#cbd5e1" font-size="8">• Samsung Display adalah pemasok eksklusif layar OLED iPhone</text>
+    <text class="svg-text" x="14" y="78" fill="#cbd5e1" font-size="8">• Samsung meraup laba miliaran dolar dari setiap unit iPhone terjual</text>
+
+    <text class="text-accent-red" x="14" y="105" fill="#f87171" font-size="8.5" font-weight="700">2. KOMPETISI DI TINGKAT PRODUK AKHIR:</text>
+    <text class="svg-text" x="14" y="121" fill="#cbd5e1" font-size="8">• Galaxy S / Fold bersaing sengit dengan iPhone di pasar flagship</text>
+    <text class="svg-text" x="14" y="135" fill="#cbd5e1" font-size="8">• Saling berseteru paten desain dan perang iklan komparatif</text>
+
+    <rect class="svg-subcard" x="14" y="155" width="317" height="75" rx="6" fill="#1e293b"/>
+    <text class="text-accent-blue" x="172" y="174" fill="#38bdf8" font-size="8" font-weight="700" text-anchor="middle">Esensi Strategis Co-opetition:</text>
+    <text class="svg-text" x="172" y="190" fill="#cbd5e1" font-size="7.5" text-anchor="middle">"Bekerjasama memperbesar ukuran kue pasar (Cooperate),</text>
+    <text class="svg-text" x="172" y="204" fill="#cbd5e1" font-size="7.5" text-anchor="middle">lalu bersaing keras memperebutkan potongan kue (Compete)."</text>
+  </g>
+</svg>`;
+
+export const TM14_READING: Reading = {
+  tm: 14,
+  title: 'Studi Kasus Strategik IV: Kepemimpinan Teknologi & Portofolio Konsumer (Samsung Electronics & Procter & Gamble)',
+  ref: 'Brandenburger & Nalebuff (Co-opetition) | Gary Pisano (You Need an Innovation Strategy) | Portofolio P&G & Samsung',
+  intro: 'TM 14 adalah studi kasus penutup mata kuliah Manajemen Strategik tentang kepemimpinan teknologi tinggi dan portofolio global. Isinya hubungan kerja sama sekaligus persaingan (Co-opetition) antara Samsung Electronics dan Apple Inc., perbandingan model Integrated Device Manufacturer (IDM) dengan model tanpa pabrik (Fabless dan Outsourcing), pengelolaan portofolio multi-produk untuk meredam siklus ekonomi, serta kepemimpinan merek global di fast-moving consumer goods (P&G Brand Management).',
+  objectives: [
+    'Menerapkan konsep Co-opetition (Brandenburger & Nalebuff) dalam menganalisis persaingan teknologi tinggi.',
+    'Membandingkan keuntungan dan risiko model integrasi vertikal IDM (Samsung) vs model outsourcing fabless (Apple).',
+    'Menganalisis bagaimana diversifikasi portofolio bertindak sebagai lindung nilai (Portfolio Hedge) siklus industri memori.',
+    'Mengevaluasi strategi arsitektur merek global korporasi consumer goods (House of Brands Procter & Gamble).',
+    'Menyusun sintesis menyeluruh integrasi perumusan hingga eksekusi strategi korporasi modern.'
+  ],
+  blocks: [
+    {
+      kind: 'figure',
+      caption: 'Gambar 14.1: Model Co-opetition dan Perbandingan Integrasi Vertikal IDM Samsung vs Ekosistem Fabless Apple.',
+      svg: SVG_COOPETITION_PORTFOLIO
+    },
+    {
+      kind: 'h2',
+      text: 'Alur Belajar Cepat (Learning Flow Matrix) TM 14'
+    },
+    {
+      kind: 'table',
+      headers: ['Dimensi Strategis', 'Model Samsung Electronics (IDM Terintegrasi)', 'Model Apple Inc. (Fabless & Ekosistem Layanan)'],
+      rows: [
+        ['Penguasaan Fasilitas Pabrik', 'Memiliki dan mengoperasikan puluhan pabrik fabrikasi semikonduktor, layar, dan perakitan sendiri.', 'Fabless: Tidak memiliki pabrik manufaktur fisik; perakitan diserahkan ke Foxconn dan fabrikasi cip ke TSMC.'],
+        ['Fokus Investasi Modal', 'Belanja modal (CapEx) raksasa puluhan miliar dolar per tahun untuk mesin litografi ultraviolet (EUV).', 'Belanja litbang perangkat lunak, desain arsitektur chip Apple Silicon, dan ekosistem konten layanan.'],
+        ['Pengendalian Ekosistem', 'Menggunakan sistem operasi Android Google yang terbuka; bersaing dengan ribuan vendor ponsel lain.', 'Taman Bertembok (Walled Garden): Mengontrol 100% sistem operasi iOS, App Store, dan chip secara tertutup.'],
+        ['Mitigasi Risiko Siklus Bisnis', 'Portofolio multi-divisi (Semikonduktor, Layar, Smartphone, Peralatan Rumah Tangga) saling menyubsidi silang.', 'Margin laba perangkat keras premium tinggi dipadu pendapatan berulang dari layanan berlangganan (Services).']
+      ],
+      caption: 'Tabel 14.0: Matriks perbandingan strategi Samsung Electronics vs Apple Inc.'
+    },
+    {
+      kind: 'h2',
+      text: 'Formula Sheet Fondasi: Jaring Nilai Co-opetition (Brandenburger & Nalebuff)'
+    },
+    {
+      kind: 'table',
+      headers: ['Pilar Jaring Nilai (Value Net)', 'Peran Pemain dalam Ekosistem', 'Interaksi Strategis Nyata'],
+      rows: [
+        ['Pelanggan (Customers)', 'Pihak yang membeli produk atau jasa korporasi.', 'Pengguna akhir smartphone yang memilih antara Galaxy atau iPhone.'],
+        ['Pemasok (Suppliers)', 'Pihak yang memasok sumber daya input komponen.', 'Samsung memasok layar OLED dan cip memori NAND kepada Apple.'],
+        ['Pesaing (Competitors)', 'Pihak yang membuat produk Anda kurang bernilai bagi pembeli.', 'Samsung dan Apple saling memperebutkan pangsa pasar ponsel flagship global.'],
+        ['Komplementer (Complementors)', 'Pihak yang membuat produk Anda LEBIH bernilai bagi pembeli jika digunakan bersama.', 'Pengembang aplikasi iOS membuat iPhone berharga; Google Search membayar miliaran dolar ke Apple.']
+      ],
+      caption: 'Tabel 14.1: Konsep jaring nilai Co-opetition Brandenburger & Nalebuff.'
+    },
+    {
+      kind: 'h2',
+      text: 'Latihan Aktif Interaktif'
+    },
+    {
+      kind: 'solution-reveal',
+      title: 'Latihan Mandiri: Mengapa Apple Tidak Pernah Membangun Pabrik Cip Sendiri?',
+      prompt: 'Mengingat pentingnya pasokan cip mikroprosesor bagi iPhone, mengapa Apple memilih tetap berstatus Fabless (meng-outsource fabrikasi fisik ke TSMC Taiwan) dan tidak membangun pabrik fabrikasi silikon sendiri seperti Samsung?',
+      blocks: [
+        {
+          kind: 'ul',
+          items: [
+            '**Pengembalian Modal atas Investasi (ROIC Maksimal)**: Membangun satu pabrik fabrikasi cip semikonduktor tercanggih membutuhkan modal Rp 300 Triliun dengan risiko depresiasi aset kilat dalam 3 tahun. Dengan tidak memiliki pabrik fisik, neraca modal Apple sangat ramping (*Asset-Light Strategy*), menghasilkan Return on Invested Capital (ROIC) melampaui 50%.',
+            '**Fokus pada Kompetensi Inti (Core Competencies)**: Kompetensi sejati Apple adalah pada **desain arsitektur silikon, integrasi perangkat keras-lunak, dan pengalaman pengguna**, bukan pada penanganan kimia limbah pabrik silikon.',
+            '**Daya Tawar Monopoli Pembeli (Monopsony Power)**: Apple adalah pelanggan terbesar TSMC; Apple dapat mengunci kapasitas produksi pabrik TSMC paling awal dengan harga diskon volume tanpa harus menanggung risiko utilisasi pabrik saat ekonomi melambat.'
+          ]
+        }
+      ]
+    },
+    {
+      kind: 'h2',
+      text: 'Peta Submateri & Target Penguasaan Ujian TM 14'
+    },
+    {
+      kind: 'table',
+      headers: ['No', 'Submateri Pokok', 'Kedalaman Penguasaan yang Diuji', 'Standar Output Ujian'],
+      rows: [
+        ['1', 'Konsep Co-opetition', 'Dinamika kolaborasi dan persaingan simultan dalam ekosistem teknologi.', 'Mampu menganalisis simbiosis kompetitif antar-rival industri.'],
+        ['2', 'Integrasi Vertikal IDM vs Fabless', 'Trade-off penguasaan aset pabrik vs fleksibilitas model tanpa aset.', 'Mampu mengevaluasi keputusan strategi make-or-buy semi-konduktor.'],
+        ['3', 'Manajemen Portofolio Anti-Siklus', 'Strategi diversifikasi korporasi sebagai peredam guncangan pasar komoditas.', 'Mampu merumuskan arsitektur portofolio bisnis yang tangguh.']
+      ],
+      caption: 'Tabel 14.2: Peta penguasaan submateri TM 14 Manajemen Strategik.'
+    },
+    CASE_SAMSUNG_TECH_PORTFOLIO,
+    {
+      kind: 'h2',
+      text: 'Rangkuman & Kunci Sukses Ujian (Key Takeaways)'
+    },
+    {
+      kind: 'ul',
+      items: [
+        '**Musuh Sekaligus Mitra Terbesar**: Di era ekosistem digital, batas antara kawan dan lawan menjadi kabur; rival terbesar Anda di pasar konsumen bisa jadi merupakan pelanggan terbesar bagi divisi manufaktur Anda.',
+        '**Asset-Light vs Asset-Heavy**: Tidak ada model yang secara inheren lebih baik; model IDM Samsung memberikan kendali teknologi mutlak, sedangkan model Fabless Apple menghasilkan margin laba finansial yang spektakuler.',
+        '**Eksekusi Menentukan Kemenangan**: Strategi yang brilian di atas kertas tidak ada artinya tanpa penyelarasan budaya, sistem pengendalian, dan kepemimpinan yang berani mengambil keputusan sulit.'
+      ]
+    }
+  ]
+};

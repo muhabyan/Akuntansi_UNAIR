@@ -187,10 +187,13 @@ for (const failOn of ['get', 'set']) {
   assert.ok(storage.map.has('flashcard-srs-PJK202') && storage.map.has('exam_session_PJK202_uts_5400'));
 }
 
-// 7. Nothing to migrate: no writes at all.
+// 7. No legacy items: only the reserved AKS301 migration marker is written once.
 storage = memory({ [PROGRESS]: { 'PJK301:tm1': true } });
 assert.equal(migrateLegacyCourseStorage(storage), 0);
-assert.equal(storage.writes, 0);
+assert.equal(storage.writes, 1);
+assert.equal(storage.getItem('akuntansi-feb-unair:migration:aks301-sia:v1'), 'done');
+assert.equal(migrateLegacyCourseStorage(storage), 0);
+assert.equal(storage.writes, 1, 'repeated start adds no writes');
 assert.equal(migrateLegacyCourseStorage(memory()), 0);
 
 console.log('PJK301 rename guard passed: alias, legacy URL replacement, renamed data wiring, no stale old code in src, and 7 localStorage shim scenarios.');

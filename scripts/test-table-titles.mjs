@@ -59,7 +59,7 @@ try {
 
   const counts = {};
   // Manjik is a semester-5 course read by the semester-3 audience. Catalog groups do not define this scope.
-  for (const code of ['MNU108', 'MNK201', 'AKA201', 'AKK202', 'PJK301', 'SII306', 'AKS201', 'MNS301']) {
+  for (const code of ['MNU108', 'MNK201', 'AKA201', 'AKK202', 'PJK301', 'SII306', 'AKS201', 'MNU307']) {
     const content = await loadCourseContent(code);
     let count = 0;
     for (const reading of [...Object.values(content.readings), ...Object.values(content.reviews)]) {
@@ -115,7 +115,7 @@ try {
   stale.blocks[4].headers[0] = 'Pengganti simbol';
   assert.notEqual(withTableTitles(stale).blocks[4].title, 'Arti simbol pada rumus TVM', 'a stale override cannot name a structurally changed table');
 
-  const strategy = await loadCourseContent('MNS301');
+  const strategy = await loadCourseContent('MNU307');
   const governance = withTableTitles(strategy.readings[5]).blocks[6].blocks;
   assert.equal(governance[3].title, 'Peran shareholders, management, dan board');
   assert.equal(governance[6].title, 'Agency problem dan risk sharing');

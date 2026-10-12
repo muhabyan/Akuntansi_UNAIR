@@ -1,5 +1,5 @@
 // src/data/manstrat/manstratPracticeCases.ts
-// 14 Studi Kasus Riil Komprehensif Manajemen Strategik (MNS301)
+// 14 Studi Kasus Riil Komprehensif Manajemen Strategik (MNU307)
 // Berdasarkan Standar Gregory G. Dess, G.T. Lumpkin, Alan B. Eisner & Gerry McNamara
 import type { ContentBlock } from '../../types';
 

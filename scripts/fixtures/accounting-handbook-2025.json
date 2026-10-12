@@ -1,0 +1,246 @@
+{
+  "source": {
+    "file": "Buku-Panduan-Pendidikan-Program-Sarjana-FEB-Unair-2025-20261.pdf",
+    "sha256": "14a4345cbf8ae935e58a407ca8b6f052731639ca82bbe4457f97ad1e4518a7ff",
+    "section": "C. Program Studi S1 Akuntansi",
+    "pdfPages": [
+      102,
+      103,
+      104
+    ],
+    "printedPages": [
+      87,
+      88,
+      89
+    ]
+  },
+  "notes": [
+    "Semester IV lists AKK207 as 2 SKS but prints total 21. User approved row details, yielding 20 SKS.",
+    "Internal Audit prerequisite S11306 normalized to SII306 from the Semester III row.",
+    "Metode Penelitian prerequisite MASS122 normalized to MAS122 from the Semester II row.",
+    "Five Semester V rows have no FEB code in the table; none is invented.",
+    "Manajemen Stratejik handbook spelling differs from existing Manajemen Strategik label; merged content and label preserved."
+  ],
+  "semesters": [
+    {
+      "number": 2,
+      "totalSks": 20,
+      "courses": [
+        {
+          "code": "MNU101",
+          "newCode": "FEB25603004",
+          "name": "Pengantar Bisnis",
+          "sks": 3,
+          "prasyarat": null
+        },
+        {
+          "code": "EKT109",
+          "newCode": "FEB25603005",
+          "name": "Pengantar Teori Ekonomi",
+          "sks": 3,
+          "prasyarat": null
+        },
+        {
+          "code": "PJK201",
+          "newCode": "FEB25603006",
+          "name": "Perpajakan I",
+          "sks": 3,
+          "prasyarat": null
+        },
+        {
+          "code": "AKM201",
+          "newCode": "FEB25603007",
+          "name": "Akuntansi Biaya",
+          "sks": 3,
+          "prasyarat": "AKK106 (L)"
+        },
+        {
+          "code": "MAS122",
+          "newCode": "FEB25603008",
+          "name": "Statistik untuk Akuntan",
+          "sks": 3,
+          "prasyarat": "AKK106 (L)"
+        },
+        {
+          "code": "AKA103",
+          "newCode": "FEB25603009",
+          "name": "Etika & Keterampilan Profesional untuk Akuntan",
+          "sks": 2,
+          "prasyarat": null
+        },
+        {
+          "code": "AKK201",
+          "newCode": "FEB25603010",
+          "name": "Akuntansi Keuangan Menengah I",
+          "sks": 3,
+          "prasyarat": "AKK106 (L)"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "totalSks": 21,
+      "courses": [
+        {
+          "code": "MNU108",
+          "newCode": "FEB25603011",
+          "name": "Pengantar Manajemen",
+          "sks": 3,
+          "prasyarat": "MNU101 (L)"
+        },
+        {
+          "code": "MNK102",
+          "newCode": "FEB25603012",
+          "name": "Manajemen Keuangan",
+          "sks": 3,
+          "prasyarat": "MNU101 (L)"
+        },
+        {
+          "code": "AKK202",
+          "newCode": "FEB25603013",
+          "name": "Akuntansi Keuangan Menengah II",
+          "sks": 3,
+          "prasyarat": "AKK106 (L)"
+        },
+        {
+          "code": "AKK203",
+          "newCode": "FEB25603014",
+          "name": "Akuntansi Sektor Publik",
+          "sks": 3,
+          "prasyarat": "AKK106 (L)"
+        },
+        {
+          "code": "PJK301",
+          "newCode": "FEB25603015",
+          "name": "Perpajakan II",
+          "sks": 3,
+          "prasyarat": "PJK201 (L)"
+        },
+        {
+          "code": "SII306",
+          "newCode": "FEB25603016",
+          "name": "Sistem Informasi Akuntansi",
+          "sks": 3,
+          "prasyarat": "AKK106 (L)"
+        },
+        {
+          "code": "AKA201",
+          "newCode": "FEB25603017",
+          "name": "Pengauditan Berbasis Risiko I",
+          "sks": 3,
+          "prasyarat": "AKK201 (T)"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "totalSks": 20,
+      "courses": [
+        {
+          "code": "MNK314",
+          "newCode": "FEB25603018",
+          "name": "Pengantar Pasar Modal",
+          "sks": 3,
+          "prasyarat": "MNK102 (T)"
+        },
+        {
+          "code": "AKK207",
+          "newCode": "FEB25603019",
+          "name": "Akuntansi Keuangan Menengah III",
+          "sks": 2,
+          "prasyarat": "AKK106 (L)"
+        },
+        {
+          "code": "AKM301",
+          "newCode": "FEB25603020",
+          "name": "Akuntansi Manajemen",
+          "sks": 3,
+          "prasyarat": "AKM201 (T)"
+        },
+        {
+          "code": "SII203",
+          "newCode": "FEB25603021",
+          "name": "Sistem Informasi Manajemen",
+          "sks": 3,
+          "prasyarat": "SII306 (T)"
+        },
+        {
+          "code": "AKA304",
+          "newCode": "FEB25603022",
+          "name": "Internal Audit",
+          "sks": 3,
+          "prasyarat": "SII306 (T)"
+        },
+        {
+          "code": "AKA202",
+          "newCode": "FEB25603023",
+          "name": "Pengauditan Berbasis Risiko II",
+          "sks": 3,
+          "prasyarat": "AKA201 (T)"
+        },
+        {
+          "code": "AKK304",
+          "newCode": "FEB25603024",
+          "name": "Akuntansi Keuangan Lanjutan I: Konsep dan Penerapan",
+          "sks": 3,
+          "prasyarat": "AKK201 (T)"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "totalSks": 21,
+      "courses": [
+        {
+          "code": "PJK302",
+          "newCode": "FEB25603025",
+          "name": "Praktik Perpajakan",
+          "sks": 3,
+          "prasyarat": "PJK301 (T)"
+        },
+        {
+          "code": "AKK305",
+          "newCode": "FEB25603026",
+          "name": "Akuntansi Keuangan Lanjutan II: Konsep dan Penerapan",
+          "sks": 3,
+          "prasyarat": "AKK202 (T)"
+        },
+        {
+          "code": "AKK401",
+          "newCode": null,
+          "name": "Teori Akuntansi",
+          "sks": 3,
+          "prasyarat": "AKK201 (T)"
+        },
+        {
+          "code": "MNU307",
+          "newCode": null,
+          "name": "Manajemen Strategik",
+          "sks": 3,
+          "prasyarat": "MNU101 (L)"
+        },
+        {
+          "code": "AKA306",
+          "newCode": null,
+          "name": "Pengantar Praktik Pengauditan",
+          "sks": 3,
+          "prasyarat": "AKA202 (T)"
+        },
+        {
+          "code": "AKS301",
+          "newCode": null,
+          "name": "Accounting Data Analytics",
+          "sks": 3,
+          "prasyarat": "SII203 (T)"
+        },
+        {
+          "code": "PNE402",
+          "newCode": null,
+          "name": "Metode Penelitian Akuntansi",
+          "sks": 3,
+          "prasyarat": "MAS122 (T)"
+        }
+      ]
+    }
+  ]
+}

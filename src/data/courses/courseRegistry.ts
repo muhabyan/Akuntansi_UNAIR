@@ -537,9 +537,7 @@ function buildPjkContent(perpajakanPraUTS: PerpajakanUtsSource, perpajakanPraUAS
 
 async function resolveCourseContent(courseCode: string): Promise<LoadedCourseContent> {
   switch (courseCode) {
-    case 'MNS301':
-    case 'MNU307':
-    case 'MNM301': {
+    case 'MNU307': {
       const module = await import('../manstrat/manstratData');
       return { readings: module.MANSTRAT_READINGS, reviews: module.MANSTRAT_REVIEW_READINGS };
     }
@@ -583,6 +581,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         customReferensi: buildAkbiFormulaBank(module.AKM201_READINGS, module.AKBI_REVIEW_READINGS),
       };
     }
+    case 'AKM301':
     case 'AKM202': {
       const module = await import('../akmen/akmenData');
       return { readings: module.AKM202_READINGS, reviews: module.AKM202_REVIEW_READINGS };
@@ -684,8 +683,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       content.reviews = pjkReview.PJK201_REVIEW_READINGS;
       return content;
     }
-    case 'SII306':
-    case 'AKS301': {
+    case 'SII306': {
       const module = await import('../sia/siaReadings');
       return { readings: module.SII306_READINGS, reviews: module.SII306_REVIEW_READINGS };
     }
@@ -707,7 +705,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
 
 const UTS_REVIEW_TITLE = /(review|pemantapan).*(uts|ujian tengah)/i;
 
-// Kunci: objek `readings` asli, supaya alias kode (mis. AKS301 dan SII306) tetap berbagi objek yang sama.
+// Kunci: objek `readings` asli, supaya alias kode (mis. AKM202 dan AKM301) tetap berbagi objek yang sama.
 const normalizedByInput = new WeakMap<object, LoadedCourseContent>();
 
 /**

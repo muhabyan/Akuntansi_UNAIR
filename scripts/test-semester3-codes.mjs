@@ -96,7 +96,7 @@ for (const [code, newCode, name, prerequisite] of expected) {
   for (const fn of ['getQuizSets', 'getBankSoalSets']) assert.ok(mod[fn](code).every(s => s.items.length > 0), `${code} nonempty sets`);
 }
 assert.equal(sem3.reduce((n, c) => n + c.sks, 0), 21);
-assert.equal(courses.find(c => c.code === 'AKM202').newCode, undefined, 'unsupported alternate code released without inventing a replacement');
+assert.equal(courses.find(c => c.code === 'AKM301').newCode, 'FEB25603020', 'handbook Semester IV confirms the replacement');
 const releaseIndex = mod.RELEASES.findIndex(release => release.version === 'v1.3.5');
 assert.ok(releaseIndex >= 0, 'course-code release is retained');
 assert.equal(mod.RELEASES[releaseIndex + 1].version, 'v1.3.4', 'earlier release order is retained');

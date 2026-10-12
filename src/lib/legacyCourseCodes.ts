@@ -8,7 +8,9 @@
 
 /** Old course code -> current course code.
  * - Perpajakan II: the faculty handbook code is PJK301 (FEB25603015).
- * - Sistem Informasi Akuntansi: the faculty handbook code is SII306 (FEB25603016).
+ * - AKS301 is reserved for Accounting Data Analytics. Its former SIA storage is migrated once, separately below.
+ * - Akuntansi Manajemen: AKM301 (FEB25603020), previously catalogued as AKM202.
+ * - Accounting Data Analytics: AKS301, previously catalogued temporarily as ADA301.
  * - Pengantar Manajemen: the faculty handbook code is MNU108 (FEB25603011). It was catalogued as MNM101 with MNM201 as
  *   its alternative code, so both open the course and both carry their saved data over.
  * - Akuntansi Sektor Publik: AKK203 (FEB25603014), previously catalogued as AKS201.
@@ -16,11 +18,12 @@
  */
 export const LEGACY_COURSE_CODES: Readonly<Record<string, string>> = {
   PJK202: 'PJK301',
-  AKS301: 'SII306',
   MNM101: 'MNU108',
   MNM201: 'MNU108',
   AKS201: 'AKK203',
   MNK201: 'MNK102',
+  AKM202: 'AKM301',
+  ADA301: 'AKS301',
 };
 
 /** The current code for a possibly renamed course code (any letter case). Any other code is returned unchanged. */
@@ -67,12 +70,14 @@ function asRecord(raw: string | null): Record<string, unknown> | null {
  * something, a second run finds nothing. Data already saved under the current code is never overwritten, and a
  * storage that is blocked, full or holds corrupt JSON never makes it throw. Returns how many entries it moved.
  */
-export function migrateLegacyCourseStorage(storage: StorageLike): number {
+function migrateCourseStorageMap(storage: StorageLike, codes: Readonly<Record<string, string>>, failed: () => void): number {
   let moved = 0;
-  for (const [legacy, current] of Object.entries(LEGACY_COURSE_CODES)) {
+  for (const [legacy, current] of Object.entries(codes)) {
     // Study progress: one record with one entry per material.
     try {
-      const progress = asRecord(storage.getItem(STUDY_PROGRESS_KEY));
+      const raw = storage.getItem(STUDY_PROGRESS_KEY);
+      const progress = asRecord(raw);
+      if (raw !== null && !progress) failed();
       if (progress) {
         const next = { ...progress };
         let count = 0;
@@ -89,19 +94,26 @@ export function migrateLegacyCourseStorage(storage: StorageLike): number {
         }
       }
     } catch {
+      failed();
       /* storage blocked or full: leave it as it is */
     }
 
     // Flashcard review state and stars: one record per course, keyed by card id. Existing entries under the new code win.
     for (const prefix of FLASHCARD_KEY_PREFIXES) {
       try {
-        const old = asRecord(storage.getItem(prefix + legacy));
+        const raw = storage.getItem(prefix + legacy);
+        const old = asRecord(raw);
+        if (raw !== null && !old) failed();
         if (!old) continue;
-        const existing = asRecord(storage.getItem(prefix + current)) ?? {};
+        const targetRaw = storage.getItem(prefix + current);
+        const targetRecord = asRecord(targetRaw);
+        if (targetRaw !== null && !targetRecord) { failed(); continue; }
+        const existing = targetRecord ?? {};
         storage.setItem(prefix + current, JSON.stringify({ ...old, ...existing }));
         storage.removeItem(prefix + legacy);
         moved += 1;
       } catch {
+        failed();
         /* storage blocked or full: the old entry stays and is retried on the next start */
       }
     }
@@ -123,8 +135,27 @@ export function migrateLegacyCourseStorage(storage: StorageLike): number {
         moved += 1;
       }
     } catch {
+      failed();
       /* storage blocked or full: the old entries stay and are retried on the next start */
     }
   }
   return moved;
+}
+
+// AKS301 used to identify SIA; it now belongs to Accounting Data Analytics.
+// Run this before ADA301 -> AKS301, and mark it once so future Analytics state stays under AKS301.
+const SIA_COLLISION_MIGRATION = 'akuntansi-feb-unair:migration:aks301-sia:v1';
+export function migrateLegacyCourseStorage(storage: StorageLike): number {
+  let moved = 0;
+  try {
+    if (storage.getItem(SIA_COLLISION_MIGRATION) !== 'done') {
+      let failed = false;
+      moved += migrateCourseStorageMap(storage, { AKS301: 'SII306' }, () => { failed = true; });
+      if (failed) return moved; // Retry before moving Analytics state into the reserved code.
+      storage.setItem(SIA_COLLISION_MIGRATION, 'done');
+    }
+  } catch {
+    return moved;
+  }
+  return moved + migrateCourseStorageMap(storage, LEGACY_COURSE_CODES, () => {});
 }

@@ -30,7 +30,7 @@ const { default: EssayBank } = await load('src/components/EssayBank.tsx');
 
 const PLAIN_GUIDE_CLASS = 'rounded-2xl border border-accent/22 bg-accent/10 p-4 text-sm leading-7 text-secondary';
 const BREAKS = 'whitespace-pre-line';
-const CODES = ['AKK201', 'AKM201', 'MNU101', 'AKA103', 'MAS122', 'PJK201', 'MNU108', 'MNM101', 'MNM201', 'AKK202', 'AKM202', 'AKS201', 'PJK301', 'MNK201', 'AKA201', 'SII306', 'AKS301'];
+const CODES = ['AKK201', 'AKM201', 'MNU101', 'AKA103', 'MAS122', 'PJK201', 'MNU108', 'MNM101', 'MNM201', 'AKK202', 'AKM202', 'AKS201', 'PJK301', 'MNK201', 'AKA201', 'SII306', 'AKM301', 'AKK203', 'MNK102'];
 const NO_BREAK_COURSES = ['AKK201', 'AKM201', 'MNU101', 'AKA103', 'MAS122', 'PJK201'];
 
 const root = createRoot(dom.window.document.getElementById('root'));

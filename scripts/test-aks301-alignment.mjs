@@ -91,7 +91,7 @@ const renderedStrings = (block) => {
 // ---------------------------------------------------------------- UTS review
 const content = await loadCourseContent('SII306');
 const legacyContent = await loadCourseContent('AKS301');
-assert.equal(content.readings, legacyContent.readings, 'legacy AKS301 loads same readings as SII306');
+assert.deepEqual(legacyContent.readings, {}, 'official Analytics code AKS301 must not serve SIA');
 const review = content.reviews.uts;
 assert.ok(review, 'SII306 has a UTS review');
 assert.notEqual(review, readings[7], 'reviews.uts must not be the TM07 reading object');

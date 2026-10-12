@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { figure } from './mnu307-visuals.mjs';
 
-export const TMS = [1, 2, 3, 4, 5, 6, 7];
-export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20, 5: 19, 6: 20, 7: 37 };
+export const TMS = [1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15];
+export const minutes = { 1: 14, 2: 23, 3: 18, 4: 20, 5: 19, 6: 20, 7: 37, 9: 20, 10: 22, 11: 24, 12: 22, 13: 25, 14: 26, 15: 25 };
 export const sourcePath = tm => `scripts/fixtures/mnu307/tm${String(tm).padStart(2, '0')}.md`;
 export const sourceHash = tm => tm === 7 ? hashTM7() : createHash('sha256').update(fs.readFileSync(sourcePath(tm))).digest('hex');
 export function visualSpecs(source) {
@@ -116,6 +116,6 @@ export function buildReading(tm) {
   // Escape literal currency for the existing Markdown/math renderer, preserving visible source text.
   if(tm>=5)for(const block of flatten(blocks))if(block.kind==='p')block.text=block.text.replace(/US\$(?=\d)/g,()=> 'US\\$');
   const memory = foundation.blocks.find(b => b.kind === 'callout' && b.variant === 'gist');
-  return { tm, title: lines[0].replace(/^# MNU307 TM\d+:\s*/, '').replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), ref: 'Dess dkk., Strategic Management: Text and Cases, 11th ed.' + ({1:' · Chapter 1 [hal. 2–33]',2:' · Chapters 2–4 [hal. 36–134]',3:' · Chapters 5–6 [hal. 142–202]',4:' · Chapters 7–8 [hal. 207–267]',5:' · Chapters 9–10 [hal. 271–330]',6:' · Chapters 11–12 [hal. 337–390]'}[tm]), intro: memory.text.replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), objectives: foundation.blocks.find(b => ['ul', 'ol'].includes(b.kind)).items, layout: 'layered', coreReadingMinutes: minutes[tm], blocks };
+  return { tm, title: lines[0].replace(/^# MNU307 TM\d+:\s*/, '').replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), ref: 'Dess dkk., Strategic Management: Text and Cases, 11th ed.' + ({1:' · Chapter 1 [hal. 2–33]',2:' · Chapters 2–4 [hal. 36–134]',3:' · Chapters 5–6 [hal. 142–202]',4:' · Chapters 7–8 [hal. 207–267]',5:' · Chapters 9–10 [hal. 271–330]',6:' · Chapters 11–12 [hal. 337–390]',9:' · Case 3 [hal. C8–C12] dan Chapter 13 [hal. 396–408]',10:' · Case 4 [hal. C13–C23] dan Appendix 1 Chapter 13 [hal. 422–430]',11:' · Case 8 [hal. C57–C61], Chapters 5, 6, 9, 10 dan Appendix 1 Chapter 13 [hal. 422–430]',12:' · Case 11 [hal. C91–C97], Chapters 2, 5, 7, 9 dan Appendix 1 Chapter 13 [hal. 422–430]',13:' · Case 21 [hal. C189–C192], Chapters 1, 4, 5, 6, 9, 12 dan Appendix 1 Chapter 13 [hal. 422–430]',14:' · Case 25 [hal. C230–C242], Chapters 2, 5, 6, 7, 10, 11, 12 dan Appendix 1 Chapter 13 [hal. 422–430]',15:' · Case 28 [hal. C261–C267], Chapters 4, 5, 6, 7, 9, 10, 11, 12 dan Appendix 1 Chapter 13 [hal. 422–430]'}[tm]), intro: memory.text.replace(/^\p{L}/u, s => s.toLocaleUpperCase('id-ID')), objectives: foundation.blocks.find(b => ['ul', 'ol'].includes(b.kind)).items, layout: 'layered', coreReadingMinutes: minutes[tm], blocks };
 }
 export const flatten = blocks => blocks.flatMap(b => [b, ...flatten(b.blocks ?? []), ...flatten(b.promptBlocks ?? []), ...flatten(b.answer ?? [])]);

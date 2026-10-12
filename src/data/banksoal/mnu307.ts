@@ -1,9 +1,9 @@
-// src/data/banksoal/mns301.ts
-// Bank soal kasus Manajemen Stratejik (MNS301; kode fakultas MNU307): 14 kasus TM 1–7 (dua kasus per TM, perusahaan rekaan).
+// src/data/banksoal/mnu307.ts
+// Bank soal kasus Manajemen Stratejik (MNU307): 14 kasus TM 1–7 (dua kasus per TM, perusahaan rekaan).
 // Sumber: Dess dkk. (2024) Ch. 1–12; Kim & Mauborgne (2005); Kaplan & Norton (2004).
 import type { BankSoal } from '../../types';
 
-export const MNS301_BANK_UTS: BankSoal[] = [
+export const MNU307_BANK_UTS: BankSoal[] = [
   {
     "type": "case",
     "scope": "TM 1: Atribut strategic management dan strategi yang berubah di jalan",
@@ -429,4 +429,4 @@ export const MNS301_BANK_UTS: BankSoal[] = [
   }
 ];
 
-export const MNS301_BANK: BankSoal[] = [...MNS301_BANK_UTS];
+export const MNU307_BANK: BankSoal[] = [...MNU307_BANK_UTS];

@@ -221,7 +221,7 @@ function ReadingPanel({
 
   useEffect(() => {
     const root = readingDocumentRef.current;
-    if ((courseCode !== 'AKS301' && courseCode !== 'SII306') || !root) return;
+    if (courseCode !== 'SII306' || !root) return;
     const labelTables = () => {
       root.querySelectorAll('table').forEach((table) => {
         const headers = Array.from(table.querySelectorAll('thead th')).map((th) => th.textContent?.trim() ?? '');
@@ -408,7 +408,7 @@ function ReadingPanel({
         <CourseHeader courseName={courseName} reading={reading} onBack={onBack} showZenControl={false} postUtsLabel={postLabel} reviewKind={reviewKind} />
 
         <SharedFrameContext.Provider value={sharedFrame}>
-          <div ref={readingDocumentRef} className={`reading-document akbi-reading-flow min-w-0${courseCode === 'AKS301' || courseCode === 'SII306' ? ' sia-reading-document' : ''}`}>
+          <div ref={readingDocumentRef} className={`reading-document akbi-reading-flow min-w-0${(courseCode === 'SII306') ? ' sia-reading-document' : ''}`}>
             <div className="space-y-6 md:space-y-8">
               {reading.blocks.map((block, index) => {
                 const previousBlock = reading.blocks[index - 1];
@@ -684,7 +684,7 @@ function MaterialCard({
 
 // ----------------- CONTAINER SHELL UTAMA -----------------
 export default function CourseLayout({ course, initialTab = 'tm1-7', initialTm = null, onBack }: CourseLayoutProps) {
-  const isSiaCourse = course.code === 'AKS301' || course.code === 'SII306';
+  const isSiaCourse = course.code === 'SII306';
   const { isDone, toggle } = useStudyProgress();
   const [activeTab, setActiveTab] = useState<TabType>(() => mapInitialTab(initialTab));
   const [searchQuery, setSearchQuery] = useState('');

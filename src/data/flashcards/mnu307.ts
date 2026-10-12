@@ -1,9 +1,9 @@
-// src/data/flashcards/mns301.ts
-// Flashcard Manajemen Stratejik (MNS301; kode fakultas MNU307): 176 kartu TM 1–7, setiap kartu memuat [hal. X].
+// src/data/flashcards/mnu307.ts
+// Flashcard Manajemen Stratejik (MNU307): 176 kartu TM 1–7, setiap kartu memuat [hal. X].
 // Sumber: Dess dkk. (2024) Ch. 1–12; Kim & Mauborgne (2005); Kaplan & Norton (2004).
 import type { AdvancedStudyCard } from '../../types';
 
-export const MNS301_FC: AdvancedStudyCard[] = [
+export const MNU307_FC: AdvancedStudyCard[] = [
   {
     "id": "mns301-tm01-01",
     "phase": "pra-uts",

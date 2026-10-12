@@ -31,7 +31,7 @@ try {
   await cdp.send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
   async function open(tm,theme,width){
     await cdp.send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width===375});
-    await cdp.send('Page.navigate',{url:`http://127.0.0.1:${port}/course/MNS301`});
+    await cdp.send('Page.navigate',{url:`http://127.0.0.1:${port}/course/MNU307`});
     for(let i=0;i<100;i++){if(await cdp.eval(`Boolean(document.querySelector('button[aria-label^="Buka TM ${tm}:"]'))`))break;await sleep(100);}
     const ready=await cdp.eval(`Boolean(document.querySelector('button[aria-label^="Buka TM ${tm}:"]'))`);
     if(!ready){
