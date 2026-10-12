@@ -2,8 +2,8 @@
 
 Status konten: READY_WITH_SCOPE_LIMITATION
 
-05 SHA256: c08a525c791bb31555b63c45dfdec826ef7162113fbf08054e215b5781f1f920
-Visual: 2; self-check Inti: 4; contoh sumber: 2.
+05 SHA256: 2f7059b66735ea263c1fcd7b7f638f60542557fe52707cc2c86f833a3b736e73
+Visual: 2; self-check Inti: 5; contoh sumber: 2.
 
 Rumus contoh diperiksa dari input buku/artikel, satuan dan pembulatan dijelaskan. Tidak ada jurnal akuntansi yang perlu dibuat pada topik ini. Batas sumber: Artikel yang ditugaskan dosen tidak teridentifikasi. Altman (2002) adalah artikel primer pelengkap pilihan pengguna, bukan materi dosen terkonfirmasi. Core Failure diberi batas cakupan; prosedur Chapter 7/11 adalah Amerika Serikat. Tidak ada data perusahaan numerik pada artikel untuk contoh kanonik.
 
@@ -16,6 +16,6 @@ Sampel: paragraf pembuka konsep, pembahasan contoh pertama, catatan sumber. Rubr
 Bukti teknis terpusat di docs/mnk102-pra-uas-audit.md; status tes tidak dinyatakan lulus sampai dijalankan pada revisi akhir.
 
 
-## Verifikasi akhir
+## Verifikasi revisi
 
-Lint, TypeScript, build, 70/70 tes standar, runtime, E2E port terisolasi, dan browser MNK102 lulus. Detail dan batas baseline ada pada docs/mnk102-pra-uas-audit.md. Tidak ada kegagalan akhir.
+Status hasil revisi dicatat di docs/audit-2026-10-12/MNK102.md. Baseline 70/70 lulus. Bukti final disimpan terpisah setelah tes dijalankan.

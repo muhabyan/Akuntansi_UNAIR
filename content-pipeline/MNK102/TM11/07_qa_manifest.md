@@ -2,8 +2,8 @@
 
 Status konten: READY_WITH_SCOPE_LIMITATION
 
-05 SHA256: 517517eca2a1b72934e148b42f44d61334c699722236fcf82bfe4e300c018aa8
-Visual: 4; self-check Inti: 4; contoh sumber: 2.
+05 SHA256: fb1f52771c0f32c1ea17f864ebf4b882eee9cda7c1e7c1e609c06a90ac3c394b
+Visual: 5; self-check Inti: 5; contoh sumber: 2.
 
 Rumus contoh diperiksa dari input buku/artikel, satuan dan pembulatan dijelaskan. Tidak ada jurnal akuntansi yang perlu dibuat pada topik ini. Batas sumber: Kontrak membagi Bab 16 menjadi dua pertemuan tanpa batas subbab; paket memilih kebijakan aset, CCC, kas, dan piutang pada TM11, persediaan dan pendanaan pada TM12. Model anggaran buku dibulatkan ke juta USD.
 
@@ -16,6 +16,6 @@ Sampel: paragraf pembuka konsep, pembahasan contoh pertama, catatan sumber. Rubr
 Bukti teknis terpusat di docs/mnk102-pra-uas-audit.md; status tes tidak dinyatakan lulus sampai dijalankan pada revisi akhir.
 
 
-## Verifikasi akhir
+## Verifikasi revisi
 
-Lint, TypeScript, build, 70/70 tes standar, runtime, E2E port terisolasi, dan browser MNK102 lulus. Detail dan batas baseline ada pada docs/mnk102-pra-uas-audit.md. Tidak ada kegagalan akhir.
+Status hasil revisi dicatat di docs/audit-2026-10-12/MNK102.md. Baseline 70/70 lulus. Bukti final disimpan terpisah setelah tes dijalankan.

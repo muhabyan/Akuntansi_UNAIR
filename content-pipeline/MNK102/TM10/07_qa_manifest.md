@@ -2,8 +2,8 @@
 
 Status konten: READY_WITH_SCOPE_LIMITATION
 
-05 SHA256: f463c383406b67f844e9e92009c7c2033cd805477e879c6aa9a28ee710f66526
-Visual: 3; self-check Inti: 5; contoh sumber: 2.
+05 SHA256: bc7bc3142867f044bbc32534bb8e336337a37288e95d4f2f351134256fd4489b
+Visual: 4; self-check Inti: 6; contoh sumber: 2.
 
 Rumus contoh diperiksa dari input buku/artikel, satuan dan pembulatan dijelaskan. Tidak ada jurnal akuntansi yang perlu dibuat pada topik ini. Batas sumber: Tanggal dan pajak mengikuti konteks pasar Amerika pada buku. Tidak ada klaim tarif atau tanggal berlaku di Indonesia. Arsip ujian tidak tersedia.
 
@@ -16,6 +16,6 @@ Sampel: paragraf pembuka konsep, pembahasan contoh pertama, catatan sumber. Rubr
 Bukti teknis terpusat di docs/mnk102-pra-uas-audit.md; status tes tidak dinyatakan lulus sampai dijalankan pada revisi akhir.
 
 
-## Verifikasi akhir
+## Verifikasi revisi
 
-Lint, TypeScript, build, 70/70 tes standar, runtime, E2E port terisolasi, dan browser MNK102 lulus. Detail dan batas baseline ada pada docs/mnk102-pra-uas-audit.md. Tidak ada kegagalan akhir.
+Status hasil revisi dicatat di docs/audit-2026-10-12/MNK102.md. Baseline 70/70 lulus. Bukti final disimpan terpisah setelah tes dijalankan.

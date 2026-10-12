@@ -2,7 +2,7 @@
 
 Status: READY_WITH_SCOPE_LIMITATION
 
-SHA256 05 (CRLF): c08a525c791bb31555b63c45dfdec826ef7162113fbf08054e215b5781f1f920
+SHA256 05 (CRLF): 2f7059b66735ea263c1fcd7b7f638f60542557fe52707cc2c86f833a3b736e73
 
 Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7; Brigham & Houston, FFM 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304)
 
@@ -28,10 +28,6 @@ Artikel yang ditugaskan dosen tidak teridentifikasi. Altman (2002) adalah artike
 ## Rumus dan contoh
 
 
-```formula
-\displaystyle Z=1.2 X_1+1.4 X_2+3.3 X_3+0.6 X_4+1.0 X_5
-[Altman 2002, PDF 10, Figure 2]
-```
 
 **Kasus 1: Audit pilihan model** Artikel membahas original Z pada Figure 2 dan Z-prime untuk firma privat. Apakah cukup mengganti nilai pasar ekuitas dengan nilai buku? [Altman 2002, PDF 10-15]
 
@@ -52,6 +48,22 @@ Artikel membahas kenaikan kesalahan klasifikasi pada sampel berikutnya. Skor per
 
 ## Spesifikasi diagram
 
+
+
+## Revisi substantif 12 Oktober 2026
+
+## 4a. Hubungkan sinyal skor dengan keputusan
+
+Z-score menghasilkan klasifikasi berdasarkan gabungan rasio dan sampel model. Jangan mengubah skor menjadi persentase peluang bangkrut. Rasio yang buruk menunjukkan kebutuhan pemeriksaan kas, laba operasi, kewajiban dan aset; keputusan hukum maupun pendanaan memerlukan bukti tambahan. Kesalahan tipe I berarti perusahaan bermasalah diklasifikasi sehat; tipe II berarti perusahaan sehat diklasifikasi bermasalah pada pembahasan artikel. [Altman 2002, PDF 13-15, bagian 5-7]
+
+Pilihan reorganisasi menilai kelangsungan usaha setelah utang dan operasi ditata ulang. Likuidasi menjual aset serta membagi hasil menurut hak pihak terkait. Buku membahas Chapter 11 dan Chapter 7 Amerika Serikat. Materi ini tidak menentukan prosedur kepailitan Indonesia. Artikel Corporate Failure yang ditugaskan dosen tetap belum teridentifikasi. [FFM16e hal. 261-262; PDF 303-304; Kontrak Sheet1 B32:E32]
+
+<!-- self-check question="Apakah Z-score di zona distress otomatis berarti perusahaan pailit?" -->
+Tidak. Zona skor adalah hasil model dalam populasi tertentu. Periksa arus kas, kelayakan usaha, data rasio dan prosedur hukum yang berlaku. Artikel dosen belum tersedia, sehingga prioritas ujian TM15 masih memiliki batas sumber. [Altman 2002, PDF 13-15; FFM16e hal. 261-262, PDF 303-304]
+<!-- self-check:end -->
+
+## Spesifikasi visual revisi
+
 ```visual
 id: V-TM15-01
 jenis: map
@@ -63,7 +75,6 @@ pesan utama: Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa 
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Corporate Failure dan Analisis Kesulitan Keuangan: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.
 ```
-
 ```visual
 id: V-TM15-02
 jenis: map
@@ -74,4 +85,11 @@ hubungan: Lima kontribusi dijumlahkan; semua definisi dan koefisien harus mengik
 pesan utama: Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjadi probabilitas gagal.
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Original Z-Score: komponen rasio. Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjadi probabilitas gagal.
+```
+
+## Rumus dan catatan tersinkron dengan versi 05
+
+```formula
+\displaystyle Z=1.2 X_1+1.4 X_2+3.3 X_3+0.6 X_4+1.0 X_5
+[Altman 2002, PDF 10, Figure 2]
 ```

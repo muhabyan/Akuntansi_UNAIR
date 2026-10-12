@@ -53,7 +53,7 @@ Likuiditas berkaitan kemampuan memenuhi kas pada tanggal jatuh tempo. Solvabilit
 Status hukum pailit memerlukan prosedur yurisdiksi dan tidak ditentukan oleh satu rasio. [FFM16e hal. cetak 261-262 dan 570-573, PDF303-304 dan 612-615]
 
 <!-- self-check question="Mengapa masalah kas berbeda dari status hukum pailit?" -->
-Corporate failure pada kontrak merujuk Artikel tanpa menyebut judul atau penulis. Artikel dosen tersebut belum tersedia dalam folder sumber. [Kontrak MK2026 Sheet 1 B32:E32; Altman 2002 PDF2 dan 9-18]
+Kas dapat tidak cukup pada tanggal jatuh tempo walaupun nilai aset melebihi kewajiban. Status hukum pailit mengikuti prosedur yurisdiksi; satu kekurangan kas atau Z-score tidak menetapkannya. [FFM16e hal. 261-262; PDF 303-304]
 <!-- self-check:end -->
 
 ## 2. Altman original: variabel, unit dan populasi
@@ -131,6 +131,16 @@ pesan utama: Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjad
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Original Z-Score: komponen rasio. Jumlah kontribusi menghasilkan skor tanpa satuan; skor belum menjadi probabilitas gagal.
 ```
+
+## 4a. Hubungkan sinyal skor dengan keputusan
+
+Z-score menghasilkan klasifikasi berdasarkan gabungan rasio dan sampel model. Jangan mengubah skor menjadi persentase peluang bangkrut. Rasio yang buruk menunjukkan kebutuhan pemeriksaan kas, laba operasi, kewajiban dan aset; keputusan hukum maupun pendanaan memerlukan bukti tambahan. Kesalahan tipe I berarti perusahaan bermasalah diklasifikasi sehat; tipe II berarti perusahaan sehat diklasifikasi bermasalah pada pembahasan artikel. [Altman 2002, PDF 13-15, bagian 5-7]
+
+Pilihan reorganisasi menilai kelangsungan usaha setelah utang dan operasi ditata ulang. Likuidasi menjual aset serta membagi hasil menurut hak pihak terkait. Buku membahas Chapter 11 dan Chapter 7 Amerika Serikat. Materi ini tidak menentukan prosedur kepailitan Indonesia. Artikel Corporate Failure yang ditugaskan dosen tetap belum teridentifikasi. [FFM16e hal. 261-262; PDF 303-304; Kontrak Sheet1 B32:E32]
+
+<!-- self-check question="Apakah Z-score di zona distress otomatis berarti perusahaan pailit?" -->
+Tidak. Zona skor adalah hasil model dalam populasi tertentu. Periksa arus kas, kelayakan usaha, data rasio dan prosedur hukum yang berlaku. Artikel dosen belum tersedia, sehingga prioritas ujian TM15 masih memiliki batas sumber. [Altman 2002, PDF 13-15; FFM16e hal. 261-262, PDF 303-304]
+<!-- self-check:end -->
 
 <!-- pendalaman:start judul="Pendalaman: model dan bukti sumber" -->
 ### Pendalaman: model dan bukti sumber

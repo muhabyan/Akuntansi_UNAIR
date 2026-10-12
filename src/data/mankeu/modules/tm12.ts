@@ -23,7 +23,7 @@ export const TM12_READING: Reading = {
         {
           "kind": "figure",
           "title": "Modal Kerja II: Persediaan dan Pendanaan: peta keputusan",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 530\" role=\"img\" aria-label=\"Modal Kerja II: Persediaan dan Pendanaan: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"530\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Persediaan</text><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Diskon pemasok</text><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bunga bank</text><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Fasilitas kredit</text><rect x=\"60\" y=\"425\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"452\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Risiko pembaruan dana</text><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"55\" x2=\"60\" y2=\"55\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"155\" x2=\"60\" y2=\"155\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"255\" x2=\"60\" y2=\"255\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"355\" x2=\"60\" y2=\"355\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 530\" role=\"img\" aria-label=\"Modal Kerja II: Persediaan dan Pendanaan: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"530\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Persediaan</text><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Diskon pemasok</text><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bunga bank</text><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Fasilitas kredit</text><rect x=\"60\" y=\"425\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"452\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Risiko pembaruan dana</text><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"55\" x2=\"60\" y2=\"55\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"155\" x2=\"60\" y2=\"155\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"255\" x2=\"60\" y2=\"255\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"355\" x2=\"60\" y2=\"355\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /></svg>",
           "caption": "Disusun dari Brigham & Houston, FFM 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)",
           "altText": "Modal Kerja II: Persediaan dan Pendanaan: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.",
           "overview": {
@@ -220,14 +220,14 @@ export const TM12_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "Promissory note adalah janji pembayaran yang merinci kewajiban; line of credit menunjukkan batas fasilitas; revolving credit agreement dalam contoh buku merupakan komitmen fasilitas dengan biaya komitmen. Istilah ini perlu dibaca bersama kontrak, kemampuan bank dan syarat pencairan. [hal. cetak 584-589; PDF626-631]"
+              "text": "Saat jatuh tempo, pemberi pinjaman dapat menolak pembaruan atau menaikkan bunga. Periksa ketersediaan dana dan komitmen fasilitas, termasuk saat kondisi perusahaan melemah. [hal. 562-565 dan 585-586; PDF 604-607 dan 627-628]"
             }
           ]
         },
         {
           "kind": "figure",
           "title": "Trade Credit: diskon atau pendanaan",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 330\" role=\"img\" aria-label=\"Trade Credit: diskon atau pendanaan. Tambahan pendanaan 20 hari memiliki biaya 2/98.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"330\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hari 0: pembelian kredit</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hari 10: bayar 98% untuk mengambil diskon</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hari 30: bayar 100% bila diskon dilepas</text></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 330\" role=\"img\" aria-label=\"Trade Credit: diskon atau pendanaan. Tambahan pendanaan 20 hari memiliki biaya 2/98.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"330\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hari 0: pembelian kredit</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hari 10: bayar 98% untuk mengambil diskon</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hari 30: bayar 100% bila diskon dilepas</text></svg>",
           "caption": "[hal. 582; PDF 624]",
           "altText": "Trade Credit: diskon atau pendanaan. Tambahan pendanaan 20 hari memiliki biaya 2/98.",
           "overview": {
@@ -272,6 +272,45 @@ export const TM12_READING: Reading = {
               }
             ]
           }
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "4a. Bandingkan biaya fasilitas dan cicilan",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Line of credit informal pada contoh buku tidak mengikat bank. Revolving credit agreement memberi komitmen formal dan mengenakan commitment fee, biaya atas bagian fasilitas yang belum dipakai. Contoh fasilitas 100 juta USD dengan biaya 0,25% setahun menghasilkan 250.000 USD saat tidak dipakai. Jika 50 juta USD digunakan sejak awal tahun, biaya atas saldo yang tidak dipakai menjadi 125.000 USD, di luar bunga atas pinjaman. Semua angka ini konteks buku, bukan penawaran bank kini. [hal. 585-586; PDF 627-628]"
+        },
+        {
+          "kind": "formula",
+          "text": "Biaya_{komitmen}=Tarif\\,(Batas\\ fasilitas-Pinjaman\\ terpakai)",
+          "note": "Nilai uang dan periode tarif harus konsisten. Saldo fasilitas yang berubah perlu dihitung sesuai waktu kontrak. [hal. 586; PDF 628]"
+        },
+        {
+          "kind": "p",
+          "text": "Add-on interest pada contoh sumber: pinjaman 10.000 USD, bunga nominal 3% dan 12 cicilan bulanan. Bunga 300 USD ditambahkan ke pokok, sehingga cicilan 10.300/12 = 858,33 USD. Pokok terus berkurang, sementara bunga tetap dihitung dari pokok awal. Aproksimasi biaya tahunan 300/(10.000/2) = 6%. [hal. 587; PDF 629]"
+        },
+        {
+          "kind": "formula",
+          "text": "10{,}000=\\sum_{t=1}^{12}\\frac{10{,}300/12}{(1+r_m)^t}\\qquad APR=12r_m\\qquad EAR=(1+r_m)^{12}-1",
+          "note": "Dengan cicilan pada akhir tiap bulan dan tanpa biaya tambahan, rm sekitar 0,457646% per bulan; APR 5,49% dan EAR 5,63%. Angka 6% adalah aproksimasi, bukan hasil tingkat internal eksak. [hal. 587, catatan kaki 26; PDF 629]"
+        },
+        {
+          "kind": "p",
+          "text": "Commercial paper memberi akses pasar kepada peminjam bereputasi baik, tetapi pembaruan pasar tetap berisiko. Accruals muncul secara spontan dari operasi dan jadwal kewajiban. Jaminan dapat membantu akses kredit; itu tidak menghilangkan biaya atau hak pemberi pinjaman menurut kontrak. [hal. 588-589; PDF 630-631]"
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa bunga add-on 3% berbeda dari APR 5,49%?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Bunga 300 USD dihitung dari pokok awal 10.000 USD, padahal pokok dilunasi lewat cicilan. Tingkat bulanan diperoleh dari nilai sekarang 12 cicilan, lalu dikali 12 untuk APR. EAR menambahkan penggandaan bulanan. [hal. 587 dan catatan kaki 26; PDF 629]"
+            }
+          ]
         },
         {
           "kind": "pendalaman",

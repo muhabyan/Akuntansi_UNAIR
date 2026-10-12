@@ -1,6 +1,7 @@
 // Figures are derived from the visual specifications in each canonical 05 file.
 // Numeric series are source data, never interpolated estimates of missing book data.
 const xml = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const themeStyle = `<style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style>`;
 const palette = ['var(--svg-accent, #2563eb)', 'var(--svg-success, #16a34a)', 'var(--svg-warning, #d97706)'];
 const text = (x, y, label, size = 14, anchor = 'start') => `<text x="${x}" y="${y}" text-anchor="${anchor}" font-size="${size}" class="svg-text">${xml(label)}</text>`;
 const line = (x1, y1, x2, y2, color = 'var(--svg-muted, #64748b)', extra = '') => `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" ${extra}/>`;
@@ -12,7 +13,7 @@ const wrap = (value, length = 44) => {
   }
   return rows;
 };
-function chart(panel, top) {
+function chart(panel, top, mobile = false) {
   if (panel.schematicDistribution) {
     return text(45, top + 25, panel.title, 17) + text(80, top + 60, 'Probabilitas (skema)', 13)
       + line(80, top + 210, 580, top + 210)
@@ -22,21 +23,81 @@ function chart(panel, top) {
   }
   const xmin = panel.xmin ?? 0, xmax = panel.xmax, ymin = panel.ymin ?? 0, ymax = panel.ymax;
   if (!(xmax > xmin && ymax > ymin)) throw new Error('Invalid chart range');
-  const X = x => 90 + (x - xmin) / (xmax - xmin) * 490;
-  const Y = y => top + 205 - (y - ymin) / (ymax - ymin) * 140;
-  let svg = text(45, top + 24, panel.title, 17) + text(45, top + 48, panel.ylabel, 13);
-  svg += line(90, top + 65, 90, top + 205) + line(90, Y(Math.max(0, ymin)), 580, Y(Math.max(0, ymin)));
-  const ticks = panel.xticks ?? [xmin, xmax];
-  for (const x of ticks) svg += text(X(x), top + 227, String(x), 12, 'middle');
-  for (const y of panel.yticks ?? [ymin, ymax]) svg += text(82, Y(y) + 4, String(y), 12, 'end');
-  svg += text(340, top + 250, panel.xlabel, 13, 'middle');
+  const yTicks = panel.yticks ?? [...new Set([ymin, Math.max(0,ymin), (ymin+ymax)/2, ymax])];
+  const yLabelChars = Math.max(...yTicks.map(y=>String(Number(y.toFixed(3))).length));
+  const left = mobile ? Math.max(58,Math.ceil(yLabelChars*16*.7+16)) : 90, right = mobile ? 335 : 580;
+  const base = top + (mobile ? 290 : 245), plotTop = top + (mobile ? 110 : 90);
+  const size = mobile ? 16 : 15;
+  const X = x => left + (x - xmin) / (xmax - xmin) * (right - left);
+  const Y = y => base - (y - ymin) / (ymax - ymin) * (base - plotTop);
+  let svg = wrap(panel.title, mobile ? 32 : 65).map((s,i)=>text(mobile ? 16 : 45, top + 25 + i*23,s, mobile ? 18 : 19)).join('');
+  svg += text(mobile ? 16 : 45, plotTop - 16, panel.ylabel, size);
+  svg += line(left, plotTop, left, base) + line(left, base, right, base);
+  const zero = Math.max(0, ymin);
+  if (zero !== ymin) svg += line(left,Y(zero),right,Y(zero),'var(--svg-muted,#64748b)','stroke-dasharray="4 4"');
+  let ticks = panel.xticks ?? [xmin, (xmin+xmax)/2, xmax];
+  if (mobile && ticks.length>5) ticks = ticks.filter((_,i)=>i%2===0 || i===ticks.length-1);
+  for (const x of ticks) svg += line(X(x),base,X(x),base+5) + text(X(x),base+23,String(x),size,'middle');
+  for (const y of yTicks) svg += text(left-8,Y(y)+5,String(Number(y.toFixed(3))),size,'end');
+  svg += wrap(panel.xlabel,mobile?32:62).map((s,i)=>text((left+right)/2,base+48+i*21,s,size,'middle')).join('');
+  let legendY = base + 80;
   panel.series.forEach((series, index) => {
     if (!series.points.length || series.points.some(p => p.some(n => !Number.isFinite(n)))) throw new Error('Invalid source series');
-    svg += `<polyline points="${series.points.map(([x, y]) => `${X(x)},${Y(y)}`).join(' ')}" fill="none" stroke="${palette[index % 3]}" stroke-width="3"/>`;
+    const dash = ['','stroke-dasharray="8 5"','stroke-dasharray="2 5"'][index%3];
+    if (panel.discrete) {
+      series.points.forEach(([x,y])=>{ svg += line(X(x),Y(zero),X(x),Y(y),palette[index%3],`stroke-width="2" ${dash}`); });
+    } else svg += `<polyline points="${series.points.map(([x, y]) => `${X(x)},${Y(y)}`).join(' ')}" fill="none" stroke="${palette[index % 3]}" stroke-width="3" ${dash}/>`;
     for (const [x, y] of series.points) svg += `<circle cx="${X(x)}" cy="${Y(y)}" r="3" fill="${palette[index % 3]}"/>`;
-    svg += text(90, top + 275 + index * 21, series.label, 13);
+    svg += line(mobile?18:65,legendY-5,mobile?44:95,legendY-5,palette[index%3],`stroke-width="3" ${dash}`);
+    const rows=wrap(series.label,mobile?30:58);
+    rows.forEach((s,i)=>{ svg += text(mobile?52:105,legendY+i*21,s,size); });
+    legendY += rows.length*21+9;
   });
+  for (const [index, a] of (panel.markers ?? []).entries()) {
+    if(a.x<xmin || a.x>xmax || a.y<ymin || a.y>ymax) throw new Error('Marker outside axes');
+    svg += line(X(a.x),base,X(a.x),Y(a.y),palette[2],'stroke-dasharray="5 4"');
+    svg += `<circle cx="${X(a.x)}" cy="${Y(a.y)}" r="5" fill="var(--svg-bg,#f8fafc)" stroke="${palette[2]}" stroke-width="3"/>`;
+    wrap(a.label,mobile?38:68).forEach((s,i)=>{ svg+=text(mobile?16:65,legendY+index*48+i*21,s,size); });
+  }
   return svg;
+}
+const panelHeight = (p,mobile) => (mobile?400:355) + p.series.length*40 + (p.markers?.length??0)*48;
+function mobileSchematic(kind) {
+  const T=(x,y,s,anchor='start')=>text(x,y,s,16,anchor);
+  let body='',height=530;
+  if(kind==='tradeoff') {
+    body=T(16,25,'Nilai saham (tingkat skematis)')+line(45,270,335,270)+line(45,270,45,55)
+      +line(45,205,335,205,palette[2],'stroke-dasharray="5 4"')
+      +line(45,205,335,75,palette[0],'stroke-width="3"')
+      +`<path d="M45 205 L135 164.66 Q173 147.63 211 147.63 C247 147.63 293 182 335 235" fill="none" stroke="${palette[1]}" stroke-width="3" stroke-dasharray="8 4"/>`
+      +line(135,164.66,135,270,palette[2],'stroke-dasharray="5 4"')+line(211,147.63,211,270,palette[1],'stroke-dasharray="5 4"')
+      +T(135,293,'D1','middle')+T(211,293,'D2','middle')+T(180,323,'Utang/modal (tanpa skala angka)','middle');
+    ['Nilai dasar tanpa utang','MM + pajak: tanpa biaya distress','Trade-off: manfaat dikurangi distress'].forEach((s,i)=>{
+      body+=line(16,353+i*34,40,353+i*34,palette[[2,0,1][i]],`stroke-width="3" ${i===2?'stroke-dasharray="8 4"':''}`);
+      wrap(s,29).forEach((row,j)=>{body+=T(48,358+i*34+j*20,row);});
+    });
+    body+=T(16,477,'D1: biaya mulai material')+T(16,505,'D2: puncak, manfaat marginal = biaya');
+  } else if(kind==='investment') {
+    body=T(16,25,'Aset lancar (tingkat skematis)')+line(45,290,335,290)+line(45,290,45,65)+T(185,323,'Penjualan (tingkat relatif)','middle');
+    [90,155,220].forEach((y,i)=>{body+=line(45,270,335,y,palette[i],'stroke-width="3"');});
+    ['Relaxed: saldo lebih besar','Moderate: saldo tengah','Restricted: saldo lebih kecil'].forEach((s,i)=>{body+=line(16,355+i*35,40,355+i*35,palette[i],'stroke-width="3"')+T(48,360+i*35,s);});
+    body+=T(16,480,'Bandingkan pada penjualan sama.');height=510;
+  } else if(kind==='maturity') {
+    const titles=['Moderate: tenor sepadan','Aggressive: dana pendek bertambah','Conservative: dana panjang bertambah'];
+    height=3*450;
+    titles.forEach((title,i)=>{
+      const y=i*450;
+      wrap(title,32).forEach((s,j)=>{body+=T(16,y+28+j*22,s);});
+      body+=T(16,y+83,'Kebutuhan aset (tingkat skematis)')+line(45,y+295,45,y+105)+line(45,y+295,335,y+295);
+      body+=`<path d="M45 ${y+235} L335 ${y+215} L335 ${y+295} L45 ${y+295}Z" fill="${palette[0]}" fill-opacity=".18"/>`;
+      body+=`<path d="M45 ${y+195} L335 ${y+140} L335 ${y+215} L45 ${y+235}Z" fill="${palette[1]}" fill-opacity=".2"/>`;
+      body+=`<path d="M45 ${y+195} Q80 ${y+120} 105 ${y+183} T175 ${y+146} T245 ${y+112} T335 ${y+115}" fill="none" stroke="${palette[2]}" stroke-width="3"/>`;
+      const start=[195,228,170][i],end=[140,190,115][i];
+      body+=line(45,y+start,335,y+end,'var(--svg-text,#0f172a)','stroke-width="3" stroke-dasharray="7 5"')+T(190,y+320,'Waktu (tanpa skala angka)','middle');
+      ['Biru: aset tetap','Hijau: aset lancar permanen','Oranye: aset sementara','Putus-putus: dana panjang + spontan'].forEach((s,j)=>{body+=T(16,y+350+j*23,s);});
+    });
+  } else return undefined;
+  return `<svg class="finance-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 ${height}" role="img" aria-label="Grafik skematis ${xml(kind)}">${themeStyle}<rect width="360" height="${height}" fill="var(--svg-bg,#f8fafc)"/>${body}</svg>`;
 }
 function schematic(kind, labels) {
   let svg = '';
@@ -69,11 +130,16 @@ function schematic(kind, labels) {
     svg += text(85, 32, 'Nilai saham') + text(580, 330, 'Debt/Capital: utang/modal', 14, 'end');
     svg += line(80, 210, 580, 210, palette[2], 'stroke-dasharray="5 4"');
     svg += line(80, 210, 580, 70, palette[0]);
-    svg += `<path d="M80 210 Q240 167 350 143 Q420 130 580 260" fill="none" stroke="${palette[1]}" stroke-width="3"/>`;
-    svg += line(240, 100, 240, 300, palette[2], 'stroke-dasharray="5 4"') + line(365, 135, 365, 300, palette[1], 'stroke-dasharray="5 4"');
-    svg += text(240, 320, 'D1', 13, 'middle') + text(365, 320, 'D2', 13, 'middle');
-    ['Tanpa utang: nilai dasar', 'MM + pajak: manfaat perisai bunga', 'Aktual: manfaat dikurangi biaya distress', 'D1: biaya distress mulai berarti; D2: struktur optimal'].forEach((s, i) => svg += text(80, 368 + 25 * i, s, 14));
-    return { svg, height: 475 };
+    // Coincides with the tax-only line through D1. Horizontal tangent at D2.
+    svg += `<path d="M80 210 L240 165.2 Q302.5 147.7 365 147.7 C435 147.7 505 190 580 260" fill="none" stroke="${palette[1]}" stroke-width="3" stroke-dasharray="8 4"/>`;
+    svg += line(240, 165.2, 240, 300, palette[2], 'stroke-dasharray="5 4"') + line(365, 147.7, 365, 300, palette[1], 'stroke-dasharray="5 4"');
+    svg += text(240, 320, 'D1', 15, 'middle') + text(365, 320, 'D2', 15, 'middle');
+    ['Tanpa utang: nilai dasar', 'MM + pajak: manfaat perisai bunga', 'Trade-off: manfaat dikurangi biaya distress'].forEach((s, i) => {
+      svg += line(70,360+i*28,100,360+i*28,palette[[2,0,1][i]],`stroke-width="3" ${i===2?'stroke-dasharray="8 4"':''}`)+text(110,365+i*28,s,15);
+    });
+    svg += text(70,460,'Skematis: D1 dan D2 tidak memiliki angka rasio tertentu.',15);
+    svg += text(70,487,'D2: manfaat pajak marginal = biaya distress marginal.',15);
+    return { svg, height: 515 };
   }
   labels.forEach((label, i) => {
     const y = 25 + i * 100;
@@ -98,12 +164,19 @@ export function buildFinanceFigure(spec) {
   const panels = data?.panels;
   let body, height;
   if (panels) {
-    height = panels.length * 350 + 20;
-    body = panels.map((p, i) => chart(p, i * 350)).join('');
+    height = 20;
+    body = panels.map(p => { const result=chart(p,height); height+=p.schematicDistribution?350:panelHeight(p,false); return result; }).join('');
   } else ({ svg: body, height } = schematic(spec.jenis, labels));
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 ${height}" role="img" aria-label="${xml(spec['alt text'])}"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="var(--svg-accent,#2563eb)"/></marker></defs><rect width="670" height="${height}" class="svg-bg"/>${body}</svg>`;
+  const svg = `<svg class="finance-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 670 ${height}" role="img" aria-label="${xml(spec['alt text'])}">${themeStyle}<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6" fill="var(--svg-accent,#2563eb)"/></marker></defs><rect width="670" height="${height}" class="svg-bg"/>${body}</svg>`;
+  let mobileSvg;
+  if(panels?.some(p=>!p.schematicDistribution)) {
+    let mobileHeight=10;
+    const mobileBody=panels.filter(p=>!p.schematicDistribution).map(p=>{const result=chart(p,mobileHeight,true);mobileHeight+=panelHeight(p,true);return result;}).join('');
+    mobileSvg=`<svg class="finance-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 ${mobileHeight}" role="img" aria-label="${xml(spec['alt text'])}">${themeStyle}<rect width="360" height="${mobileHeight}" fill="var(--svg-bg,#f8fafc)"/>${mobileBody}</svg>`;
+  } else mobileSvg=mobileSchematic(spec.jenis);
   return {
     kind: 'figure', title: spec.judul, svg, caption: spec.sumber,
+    ...(mobileSvg ? { mobileSvg } : {}),
     altText: spec['alt text'],
     overview: {
       heading: spec.judul,
