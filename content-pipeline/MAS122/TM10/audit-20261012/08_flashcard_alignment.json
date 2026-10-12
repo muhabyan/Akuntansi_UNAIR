@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm10-54",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa arti R squared?",
+    "category": "Konsep",
+    "front": "Apa arti R squared?",
+    "back": "Proporsi variasi Y terhadap rata-rata yang dijelaskan model pada sampel; bukan ukuran sebab atau jaminan forecast. Rujukan: Lind 17e Ch.13-14, Regression Analysis dan Multiple Regression; RPP PDF 4"
+  },
+  {
+    "id": "mas122-tm10-55",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa adjusted R squared?",
+    "category": "Konsep",
+    "front": "Apa adjusted R squared?",
+    "back": "Ukuran yang menyesuaikan jumlah prediktor dan ukuran sampel; dapat turun ketika prediktor ditambah. Rujukan: Lind 17e Ch.13-14, Regression Analysis dan Multiple Regression; RPP PDF 4"
+  },
+  {
+    "id": "mas122-tm10-56",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa uji F regresi?",
+    "category": "Konsep",
+    "front": "Apa uji F regresi?",
+    "back": "Menguji hipotesis bersama koefisien slope yang ditentukan, dengan alpha dan df sesuai spesifikasi. Rujukan: Lind 17e Ch.13-14, Regression Analysis dan Multiple Regression; RPP PDF 4"
+  },
+  {
+    "id": "mas122-tm10-57",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa uji t koefisien?",
+    "category": "Konsep",
+    "front": "Apa uji t koefisien?",
+    "back": "Menguji satu koefisien bersyarat pada prediktor lain dalam model; jangan menyamakan dengan korelasi sederhana. Rujukan: Lind 17e Ch.13-14, Regression Analysis dan Multiple Regression; RPP PDF 4"
+  },
+  {
+    "id": "mas122-tm10-58",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa multikolinearitas?",
+    "category": "Konsep",
+    "front": "Apa multikolinearitas?",
+    "back": "Prediktor sangat berkaitan sehingga estimasi individual dapat tidak stabil atau standard error besar. Rujukan: Lind 17e Ch.13-14, Regression Analysis dan Multiple Regression; RPP PDF 4"
+  },
+  {
+    "id": "mas122-tm10-59",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa risiko ekstrapolasi?",
+    "category": "Konsep",
+    "front": "Apa risiko ekstrapolasi?",
+    "back": "Prediksi di luar rentang data dapat mengandalkan hubungan yang belum didukung; nyatakan domain dan ketidakpastian. Rujukan: Lind 17e Ch.13-14, Regression Analysis dan Multiple Regression; RPP PDF 4"
+  }
+]

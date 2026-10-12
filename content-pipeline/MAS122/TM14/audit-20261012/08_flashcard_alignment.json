@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm14-78",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa urutan presentasi proyek?",
+    "category": "Konsep",
+    "front": "Apa urutan presentasi proyek?",
+    "back": "Pertanyaan, data/desain, metode/asumsi, hasil, ketidakpastian dan implikasi keputusan. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+  },
+  {
+    "id": "mas122-tm14-79",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa isi grafik hasil?",
+    "category": "Konsep",
+    "front": "Apa isi grafik hasil?",
+    "back": "Sumbu, satuan, kelompok, periode dan sumber; pilih bentuk yang sesuai variabel. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+  },
+  {
+    "id": "mas122-tm14-80",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa beda hasil dan kesimpulan?",
+    "category": "Konsep",
+    "front": "Apa beda hasil dan kesimpulan?",
+    "back": "Hasil menyatakan keluaran analisis; kesimpulan mengaitkan hasil ke pertanyaan dengan batas bukti. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+  },
+  {
+    "id": "mas122-tm14-81",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Bagaimana menjelaskan hasil tidak signifikan?",
+    "category": "Konsep",
+    "front": "Bagaimana menjelaskan hasil tidak signifikan?",
+    "back": "Gagal menolak H0 pada model/alpha yang dipakai; tidak membuktikan efek nol atau H0 pasti benar. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+  },
+  {
+    "id": "mas122-tm14-82",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa batas generalisasi?",
+    "category": "Konsep",
+    "front": "Apa batas generalisasi?",
+    "back": "Populasi, cara sampling, periode dan desain menentukan siapa/kondisi mana yang didukung data. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+  },
+  {
+    "id": "mas122-tm14-83",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apakah prioritas materi sama dengan arsip UAS?",
+    "category": "Konsep",
+    "front": "Apakah prioritas materi sama dengan arsip UAS?",
+    "back": "Tidak. Presentasi mengikuti RPP dan bukti proyek; arsip ujian yang tidak tersedia tidak diperlakukan sebagai kepastian. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+  }
+]

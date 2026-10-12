@@ -91,7 +91,7 @@ Accruals, kewajiban biaya yang belum dibayar, juga menyediakan pendanaan spontan
 Pilihan dana perlu memeriksa tenor, bunga tetap/mengambang, biaya fasilitas, syarat jaminan, covenant atau pembatasan kontrak, dan ketersediaan saat tekanan kas meningkat. Risiko rollover berarti fasilitas tidak dapat diperbarui saat jatuh tempo. Hindari memakai angka bunga atau acuan pasar historis dari contoh buku sebagai harga pinjaman tahun berjalan; semua angka latihan diberikan secara eksplisit. [hal. 584-589; PDF626-631]
 
 <!-- self-check question="Apa risiko pinjaman yang harus diperpanjang?" -->
-Promissory note adalah janji pembayaran yang merinci kewajiban; line of credit menunjukkan batas fasilitas; revolving credit agreement dalam contoh buku merupakan komitmen fasilitas dengan biaya komitmen. Istilah ini perlu dibaca bersama kontrak, kemampuan bank dan syarat pencairan. [hal. cetak 584-589; PDF626-631]
+Saat jatuh tempo, pemberi pinjaman dapat menolak pembaruan atau menaikkan bunga. Periksa ketersediaan dana dan komitmen fasilitas, termasuk saat kondisi perusahaan melemah. [hal. 562-565 dan 585-586; PDF 604-607 dan 627-628]
 <!-- self-check:end -->
 
 
@@ -106,6 +106,28 @@ pesan utama: Tambahan pendanaan 20 hari memiliki biaya 2/98.
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Trade Credit: diskon atau pendanaan. Tambahan pendanaan 20 hari memiliki biaya 2/98.
 ```
+
+## 4a. Bandingkan biaya fasilitas dan cicilan
+
+Line of credit informal pada contoh buku tidak mengikat bank. Revolving credit agreement memberi komitmen formal dan mengenakan commitment fee, biaya atas bagian fasilitas yang belum dipakai. Contoh fasilitas 100 juta USD dengan biaya 0,25% setahun menghasilkan 250.000 USD saat tidak dipakai. Jika 50 juta USD digunakan sejak awal tahun, biaya atas saldo yang tidak dipakai menjadi 125.000 USD, di luar bunga atas pinjaman. Semua angka ini konteks buku, bukan penawaran bank kini. [hal. 585-586; PDF 627-628]
+
+```formula
+Biaya_{komitmen}=Tarif\,(Batas\ fasilitas-Pinjaman\ terpakai)
+Nilai uang dan periode tarif harus konsisten. Saldo fasilitas yang berubah perlu dihitung sesuai waktu kontrak. [hal. 586; PDF 628]
+```
+
+Add-on interest pada contoh sumber: pinjaman 10.000 USD, bunga nominal 3% dan 12 cicilan bulanan. Bunga 300 USD ditambahkan ke pokok, sehingga cicilan 10.300/12 = 858,33 USD. Pokok terus berkurang, sementara bunga tetap dihitung dari pokok awal. Aproksimasi biaya tahunan 300/(10.000/2) = 6%. [hal. 587; PDF 629]
+
+```formula
+10{,}000=\sum_{t=1}^{12}\frac{10{,}300/12}{(1+r_m)^t}\qquad APR=12r_m\qquad EAR=(1+r_m)^{12}-1
+Dengan cicilan pada akhir tiap bulan dan tanpa biaya tambahan, rm sekitar 0,457646% per bulan; APR 5,49% dan EAR 5,63%. Angka 6% adalah aproksimasi, bukan hasil tingkat internal eksak. [hal. 587, catatan kaki 26; PDF 629]
+```
+
+Commercial paper memberi akses pasar kepada peminjam bereputasi baik, tetapi pembaruan pasar tetap berisiko. Accruals muncul secara spontan dari operasi dan jadwal kewajiban. Jaminan dapat membantu akses kredit; itu tidak menghilangkan biaya atau hak pemberi pinjaman menurut kontrak. [hal. 588-589; PDF 630-631]
+
+<!-- self-check question="Mengapa bunga add-on 3% berbeda dari APR 5,49%?" -->
+Bunga 300 USD dihitung dari pokok awal 10.000 USD, padahal pokok dilunasi lewat cicilan. Tingkat bulanan diperoleh dari nilai sekarang 12 cicilan, lalu dikali 12 untuk APR. EAR menambahkan penggandaan bulanan. [hal. 587 dan catatan kaki 26; PDF 629]
+<!-- self-check:end -->
 
 <!-- pendalaman:start judul="Pendalaman: model dan bukti sumber" -->
 ### Pendalaman: model dan bukti sumber

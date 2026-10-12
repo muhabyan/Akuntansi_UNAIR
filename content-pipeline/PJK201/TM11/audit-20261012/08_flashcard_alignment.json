@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pjk201-tm11-52",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Dasar Hukum & Definisi Penagihan Aktif",
+    "category": "Definisi",
+    "front": "Penagihan Pajak Aktif (UU No. 19 Tahun 1997 jo. UU No. 19 Tahun 2000)",
+    "back": "Serangkaian tindakan agar Penanggung Pajak melunasi utang pajak dan biaya penagihan pajak dengan menegur atau memperingatkan, melaksanakan penagihan seketika dan sekaligus, memberitahukan Surat Paksa, mengusulkan pencegahan, melaksanakan penyitaan, hingga menyandera dan menjual barang yang disita (lelang). Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-53",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Jadwal Surat Teguran & Surat Paksa",
+    "category": "Prosedur",
+    "front": "Timeline Surat Teguran dan Surat Paksa",
+    "back": "1) Jatuh tempo SKPKB/STP adalah 1 bulan sejak diterbitkan; 2) Jika tidak dibayar, setelah 7 hari jatuh tempo diterbitkan Surat Teguran/Peringatan; 3) Jika dalam 21 hari sejak Surat Teguran belum dilunasi, diterbitkan Surat Paksa. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-54",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Kekuatan Hukum Surat Paksa",
+    "category": "Hukum",
+    "front": "Kekuatan Eksekutorial Surat Paksa",
+    "back": "Surat Paksa mempunyai kekuatan eksekutorial dan kedudukan hukum yang sama dengan putusan pengadilan yang telah mempunyai kekuatan hukum tetap (berketerangan 'Demi Keadilan Berdasarkan Ketuhanan Yang Maha Esa'), langsung diberitahukan oleh Jurusita Pajak. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-55",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Penyitaan (SPMP) & Lelang",
+    "category": "Prosedur",
+    "front": "Prosedur Penyitaan Aset dan Pelaksanaan Lelang",
+    "back": "Jika Surat Paksa tidak dilunasi dalam 2 x 24 jam, Jurusita menerbitkan Surat Perintah Melaksanakan Penyitaan (SPMP) atas barang bergerak/tidak bergerak. Jika dalam 14 hari sejak sita tidak dilunasi, dilakukan pengumuman lelang, dan 14 hari berikutnya dilakukan eksekusi lelang oleh Kantor Lelang Negara. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-56",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Pencegahan & Penyanderaan (Gijzeling)",
+    "category": "Sanksi",
+    "front": "Pencegahan (ke Luar Negeri) & Penyanderaan (Gijzeling)",
+    "back": "Pencegahan: larangan sementara ke luar negeri maksimal 6 bulan (+ perpanjang 6 bulan). Penyanderaan (Gijzeling): pengekangan sementara kebebasan penanggung pajak di rutan (maksimal 6 bulan + perpanjang 6 bulan), khusus utang pajak minimal Rp 100 juta dan diragukan iktikad baiknya. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-57",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Hak Mendahulu (Droit de Preference)",
+    "category": "Hukum",
+    "front": "Hak Mendahulu Negara (Droit de Preference - Pasal 21 KUP)",
+    "back": "Negara mempunyai hak mendahulu untuk tagihan pajak atas barang-barang milik Penanggung Pajak. Dalam likuidasi/keterpurukan usaha, utang pajak harus dilunasi terlebih dahulu sebelum utang kepada kreditur lain (kecuali biaya perkara pengadilan, biaya lelang, dan biaya penyelamatan barang). Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-79",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Penagihan Pajak",
+    "category": "Prosedur",
+    "front": "Tahapan Penagihan Aktif",
+    "back": "1) Surat Teguran (7 hari setelah jatuh tempo), 2) Surat Paksa (21 hari setelah teguran), 3) Sita (2×24 jam setelah Surat Paksa), 4) Lelang (14 hari setelah pengumuman). Jurusita pajak negara berwenang melakukan penyitaan. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm11-80",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Hak Mendahulu Negara",
+    "category": "Hukum",
+    "front": "Kedudukan Utang Pajak vs Utang Lainnya",
+    "back": "Negara mempunyai hak mendahulu atas barang-barang milik Penanggung Pajak untuk utang pajak. Kedudukan utang pajak lebih tinggi dari kreditor lain, termasuk dalam pailit, kecuali biaya perkara dan upah buruh. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "code": "AKK201",
+  "tm": 11,
+  "source": "Kieso, Intermediate Accounting IFRS 5e, Illustration 7.7-7.10, PDF 623-627",
+  "finding": "Periodik dan perpetual memerlukan basis rata-rata berbeda.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Call-Mart, 6.000 unit akhir",
+        "Nilai akhir",
+        "HPP"
+      ],
+      "rows": [
+        [
+          "Specific identification sumber",
+          "26.700 euro",
+          "17.200 euro"
+        ],
+        [
+          "Weighted average periodik: 43.900 / 10.000",
+          "26.340 euro",
+          "17.560 euro"
+        ],
+        [
+          "FIFO: 4.000 × 4,40 + 2.000 × 4,75",
+          "27.100 euro",
+          "16.800 euro"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Semua metode memakai barang tersedia 43.900 euro sehingga persediaan akhir + HPP = 43.900 euro. Rata-rata bergerak perpetual dihitung ulang pada pembelian; hasilnya dapat berbeda karena waktu penjualan. IFRS tidak mengizinkan LIFO sebagai formula biaya persediaan."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Illustration 7.7-7.10, PDF 623-627"
+    }
+  ]
+}

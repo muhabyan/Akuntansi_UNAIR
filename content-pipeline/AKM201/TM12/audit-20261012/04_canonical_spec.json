@@ -1,0 +1,41 @@
+{
+  "code": "AKM201",
+  "tm": 12,
+  "source": "Carter, Cost Accounting 14e, Ch.13, PDF 389-430; modul tutor lokal departementalisasi PDF 6-10",
+  "finding": "Metode alokasi jasa mempunyai batas timbal balik berbeda.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Metode",
+        "Jasa antardepartemen jasa"
+      ],
+      "rows": [
+        [
+          "Langsung",
+          "Diabaikan; alokasikan ke produksi."
+        ],
+        [
+          "Bertahap",
+          "Sebagian diakui; departemen yang sudah ditutup tidak menerima alokasi balik."
+        ],
+        [
+          "Resiprokal",
+          "Diakui melalui persamaan simultan."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Jangan menafsirkan hasil alokasi sebagai biaya marginal keputusan. Pada metode bertahap, urutan penutupan mengubah hasil sehingga dasar urutan harus dinyatakan. Tarif departemen produksi dihitung setelah menerima biaya jasa dengan denominator aktivitasnya sendiri."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Carter, Cost Accounting 14e, Ch.13, PDF 389-430; modul tutor lokal departementalisasi PDF 6-10"
+    }
+  ]
+}

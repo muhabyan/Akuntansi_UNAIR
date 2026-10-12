@@ -23,7 +23,7 @@ export const TM10_READING: Reading = {
         {
           "kind": "figure",
           "title": "Distribusi kepada Pemegang Saham: peta keputusan",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 530\" role=\"img\" aria-label=\"Distribusi kepada Pemegang Saham: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"530\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Preferensi investor</text><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Dividen residual</text><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Sinyal dan clientele</text><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Tanggal distribusi</text><rect x=\"60\" y=\"425\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"452\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Split dan buyback</text><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"55\" x2=\"60\" y2=\"55\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"155\" x2=\"60\" y2=\"155\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"255\" x2=\"60\" y2=\"255\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"355\" x2=\"60\" y2=\"355\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 530\" role=\"img\" aria-label=\"Distribusi kepada Pemegang Saham: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"530\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Preferensi investor</text><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Dividen residual</text><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Sinyal dan clientele</text><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Tanggal distribusi</text><rect x=\"60\" y=\"425\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"452\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Split dan buyback</text><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"55\" x2=\"60\" y2=\"55\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"155\" x2=\"60\" y2=\"155\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"255\" x2=\"60\" y2=\"255\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"355\" x2=\"60\" y2=\"355\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /></svg>",
           "caption": "Disusun dari Brigham & Houston, FFM 16e (2022), Bab 15, hal. cetak 521-556 (PDF 563-598)",
           "altText": "Distribusi kepada Pemegang Saham: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.",
           "overview": {
@@ -112,11 +112,11 @@ export const TM10_READING: Reading = {
         },
         {
           "kind": "p",
-          "text": "Distributions to shareholders adalah pembagian kas atau manfaat kepada pemegang saham melalui dividen dan pembelian kembali saham. Laba bersih bukan saldo kas: laba dapat tertahan dalam piutang atau aset lain. Keputusan distribusi perlu menilai proyek bernilai positif, kebutuhan modal, target utang/ekuitas, pembatasan kontrak dan kemampuan kas. [hal. 519-541; PDF 561-583]"
+          "text": "Distributions to shareholders adalah pembagian kas atau manfaat kepada pemegang saham melalui dividen dan pembelian kembali saham. Laba bersih bukan saldo kas: laba dapat tertahan dalam piutang atau aset lain. Keputusan distribusi perlu menilai proyek bernilai positif, kebutuhan modal, target utang/ekuitas, pembatasan kontrak dan kemampuan kas. [hal. 523-541; PDF 565-583]"
         },
         {
           "kind": "p",
-          "text": "Buku membahas model pasar ideal dan preferensi investor; contoh pajak Amerika pada buku tidak otomatis menjadi ketentuan pajak Indonesia sekarang. [hal. 519-541; PDF 561-583]"
+          "text": "Buku membahas model pasar ideal dan preferensi investor; contoh pajak Amerika pada buku tidak otomatis menjadi ketentuan pajak Indonesia sekarang. [hal. 523-541; PDF 565-583]"
         },
         {
           "kind": "self-check",
@@ -158,7 +158,7 @@ export const TM10_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "Residual dividend model membiayai porsi ekuitas investasi yang layak dari laba terlebih dahulu, kemudian membagikan sisanya. Hitung kebutuhan ekuitas dari target porsi ekuitas dikali anggaran investasi. [hal. cetak 527-532; PDF 569-574]"
+              "text": "Dividen residual menjadi nol dan selisih kebutuhan ekuitas perlu didanai. Contoh: laba 100 dan kebutuhan ekuitas 120 juta USD memberi kekurangan 20 juta USD, bukan dividen negatif. Angka ilustrasi buatan. [hal. 530; PDF 572]"
             }
           ]
         }
@@ -214,7 +214,7 @@ export const TM10_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "Ikuti urutan data, satuan, rumus, dan interpretasi pada sumber. [hal. 530; PDF 572] [hal. 530; PDF 572]"
+              "text": "MM dividen mengabaikan pajak dan biaya transaksi pada operasi tetap. Investor nyata memiliki kebutuhan kas, perlakuan pajak dan biaya transaksi berbeda; clientele dan signaling perlu dipertimbangkan. [hal. 523-527; PDF 565-569]"
             }
           ]
         }
@@ -247,7 +247,7 @@ export const TM10_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "Declaration date adalah tanggal keputusan dividen; record date menentukan pemegang yang dicatat, ex-dividend date membedakan transaksi saham yang masih membawa hak dividen menurut pasar terkait, dan payment date adalah pembayaran. Urutan dan jeda mengikuti mekanisme pasar, sehingga contoh prosedur pasar Amerika dalam buku tidak dipakai sebagai kalender Bursa Efek Indonesia terbaru. [hal. cetak 536-539; PDF 578-581]"
+              "text": "Split menambah jumlah lembar dan menyesuaikan harga teoritis. Pada split 2-untuk-1, N menjadi 2N dan P menjadi P/2 pada nilai ekuitas tetap. Tidak ada kas operasi baru. [hal. 541-543; PDF 583-585]"
             }
           ]
         }
@@ -265,7 +265,7 @@ export const TM10_READING: Reading = {
         {
           "kind": "formula",
           "text": "N_{baru}=N_{lama}-\\frac{Kas_{buyback}}{P_{buyback}}\\qquad EPS=\\frac{NI}{N}",
-          "note": "NI laba bersih; wE bobot ekuitas target; CapEx anggaran modal; N jumlah saham. Payout adalah rasio dividen terhadap laba; DPS dividen per saham. [hal. 530; PDF 572]"
+          "note": "N lama dan N baru adalah jumlah saham; kas buyback dibagi harga per saham memberi lembar yang dibeli. NI laba bersih dan EPS laba per saham. [hal. 544-546; PDF 586-588]"
         },
         {
           "kind": "self-check",
@@ -273,14 +273,14 @@ export const TM10_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "Ikuti urutan data, satuan, rumus, dan interpretasi pada sumber. [hal. 530; PDF 572] [hal. 530; PDF 572]"
+              "text": "Jumlah saham berkurang sehingga EPS dapat naik secara mekanis. Kas perusahaan juga berkurang dan harga pembelian perlu diuji terhadap nilai saham. [hal. 544-548; PDF 586-590]"
             }
           ]
         },
         {
           "kind": "figure",
           "title": "Residual Dividend Model: urutan keputusan",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 430\" role=\"img\" aria-label=\"Residual Dividend Model: urutan keputusan. Perhitungan dimulai dari investasi dan bauran modal.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"430\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Pilih anggaran investasi layak</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hitung porsi ekuitas sesuai target</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Gunakan laba ditahan untuk kebutuhan ekuitas</text><line x1=\"335\" y1=\"301\" x2=\"335\" y2=\"322\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bagikan sisa laba sebagai dividen</text></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 430\" role=\"img\" aria-label=\"Residual Dividend Model: urutan keputusan. Perhitungan dimulai dari investasi dan bauran modal.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"430\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Pilih anggaran investasi layak</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Hitung porsi ekuitas sesuai target</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Gunakan laba ditahan untuk kebutuhan ekuitas</text><line x1=\"335\" y1=\"301\" x2=\"335\" y2=\"322\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bagikan sisa laba sebagai dividen</text></svg>",
           "caption": "[hal. 529; PDF 571]",
           "altText": "Residual Dividend Model: urutan keputusan. Perhitungan dimulai dari investasi dan bauran modal.",
           "overview": {
@@ -339,7 +339,7 @@ export const TM10_READING: Reading = {
         {
           "kind": "figure",
           "title": "Dividend Procedure: tanggal dan hak",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 430\" role=\"img\" aria-label=\"Dividend Procedure: tanggal dan hak. Urutan mengikuti prosedur pasar buku; jeda bukan aturan BEI.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"430\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Declaration: keputusan dividen</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Ex-dividend: pemisahan hak transaksi</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Record: daftar pemegang saham</text><line x1=\"335\" y1=\"301\" x2=\"335\" y2=\"322\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Payment: pembayaran</text></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 430\" role=\"img\" aria-label=\"Dividend Procedure: tanggal dan hak. Urutan mengikuti prosedur pasar buku; jeda bukan aturan BEI.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"430\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Declaration: keputusan dividen</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Ex-dividend: pemisahan hak transaksi</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Record: daftar pemegang saham</text><line x1=\"335\" y1=\"301\" x2=\"335\" y2=\"322\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Payment: pembayaran</text></svg>",
           "caption": "[hal. 536; PDF 578] [hal. 537; PDF 579]",
           "altText": "Dividend Procedure: tanggal dan hak. Urutan mengikuti prosedur pasar buku; jeda bukan aturan BEI.",
           "overview": {
@@ -394,6 +394,111 @@ export const TM10_READING: Reading = {
               }
             ]
           }
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "5a. Uji pembagian kas terhadap kebutuhan investor",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Dalam dividend irrelevance, investor yang membutuhkan kas dapat menjual sedikit saham, sedangkan investor yang menerima dividen dapat membelinya kembali. Mekanisme homemade dividend, dividen yang dibentuk sendiri, mengandalkan ketiadaan pajak dan biaya transaksi. Dalam kenyataan, biaya transaksi, pajak, kebutuhan pendapatan dan informasi membuat kebijakan distribusi relevan bagi kelompok investor tertentu. [hal. 523-527; PDF 565-569]"
+        },
+        {
+          "kind": "p",
+          "text": "Buyback yang dibayar dengan kas mengurangi aset kas dan jumlah saham. EPS dapat naik karena pembaginya mengecil, walaupun nilai perusahaan tidak bertambah. Contoh ADC memakai laba 4,4 juta USD dan pembelian 110.000 saham pada 20 USD, sehingga saham tersisa 990.000 dan EPS menjadi sekitar 4,44 USD. Buku mempertahankan harga 20 USD dalam perhitungan P/E; kenaikan EPS sendiri belum menetapkan harga baru. Harga buyback yang terlalu tinggi dapat merugikan pemilik yang tetap memegang saham. [hal. 545-548; PDF 587-590]"
+        },
+        {
+          "kind": "p",
+          "text": "Payout ratio, rasio pembayaran terhadap laba, tidak terdefinisi saat laba nol dan sulit ditafsirkan saat laba negatif. Rasio di atas 100% menunjukkan pembayaran melebihi laba periode itu. Kas operasi dapat berbeda dari laba; periksa kebutuhan investasi sebelum menyimpulkan dividen aman. Figure 15.1 memakai EPS, CFPS dan DPS historis ExxonMobil, dengan penyesuaian stock split. Data mentah per tahun tidak disajikan, sehingga angka kurva tidak ditaksir ulang. [hal. 533-534; PDF 575-576]"
+        },
+        {
+          "kind": "figure",
+          "title": "Residual Dividend: investasi dan sisa laba",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 511\" role=\"img\" aria-label=\"Residual Dividend: investasi dan sisa laba. Investasi layak mendapat porsi ekuitas target dahulu; dividen memakai sisa laba.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"511\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Laba 100; target ekuitas 60%</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Dividen (juta USD)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"212.5\" y1=\"265\" x2=\"212.5\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"212.5\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">50</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">100</text><line x1=\"457.5\" y1=\"265\" x2=\"457.5\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"457.5\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">150</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">200</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">55</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">110</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Anggaran modal (juta USD)</text><polyline points=\"90,124.0909090909091 212.5,166.36363636363637 335,208.63636363636363 457.5,250.9090909090909 498.333333415,265 580,265\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"124.0909090909091\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"212.5\" cy=\"166.36363636363637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"208.63636363636363\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"457.5\" cy=\"250.9090909090909\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"498.333333415\" cy=\"265\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"265\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Dividen residual</text><line x1=\"212.5\" y1=\"265\" x2=\"212.5\" y2=\"166.36363636363637\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"212.5\" cy=\"166.36363636363637\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"65\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Contoh buku: 50 menghasilkan 70</text><line x1=\"498.333333415\" y1=\"265\" x2=\"498.333333415\" y2=\"265\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"498.333333415\" cy=\"265\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"65\" y=\"423\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Dividen nol: 100/0,60 = 166,67</text></svg>",
+          "caption": "Turunan Eq. 15.1 dan contoh hal. 530 (PDF 572). NI 100 juta USD dan wE 60%; kurva hasil perhitungan, bukan data historis.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 546\" role=\"img\" aria-label=\"Residual Dividend: investasi dan sisa laba. Investasi layak mendapat porsi ekuitas target dahulu; dividen memakai sisa laba.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"546\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Laba 100; target ekuitas 60%</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Dividen (juta USD)</text><line x1=\"58\" y1=\"120\" x2=\"58\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"58\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"127.25\" y1=\"300\" x2=\"127.25\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"127.25\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">50</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">100</text><line x1=\"265.75\" y1=\"300\" x2=\"265.75\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"265.75\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">150</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">200</text><text x=\"50\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">55</text><text x=\"50\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">110</text><text x=\"196.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Anggaran modal (juta USD)</text><polyline points=\"58,136.36363636363637 127.25,185.45454545454544 196.5,234.54545454545456 265.75,283.6363636363636 288.8333333795,300 335,300\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"136.36363636363637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"127.25\" cy=\"185.45454545454544\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"234.54545454545456\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"265.75\" cy=\"283.6363636363636\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"288.8333333795\" cy=\"300\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"300\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Dividen residual</text><line x1=\"127.25\" y1=\"300\" x2=\"127.25\" y2=\"185.45454545454544\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"127.25\" cy=\"185.45454545454544\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"16\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Contoh buku: 50 menghasilkan 70</text><line x1=\"288.8333333795\" y1=\"300\" x2=\"288.8333333795\" y2=\"300\" stroke=\"var(--svg-warning, #d97706)\" stroke-dasharray=\"5 4\"/><circle cx=\"288.8333333795\" cy=\"300\" r=\"5\" fill=\"var(--svg-bg,#f8fafc)\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\"/><text x=\"16\" y=\"458\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Dividen nol: 100/0,60 = 166,67</text></svg>",
+          "altText": "Residual Dividend: investasi dan sisa laba. Investasi layak mendapat porsi ekuitas target dahulu; dividen memakai sisa laba.",
+          "overview": {
+            "heading": "Residual Dividend: investasi dan sisa laba",
+            "cards": [
+              {
+                "title": "Anggaran 50: dividen 70 juta USD",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Anggaran 100: dividen 40 juta USD",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Anggaran 166,67: dividen nol",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Sumbu, satuan, legenda dan penanda dibaca bersama asumsi pada teks. Investasi layak mendapat porsi ekuitas target dahulu; dividen memakai sisa laba."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Cara membaca: kurva berhenti pada dividen nol saat anggaran modal mencapai 166,67 juta USD. Angka tersebut berasal dari 100/0,60, dengan laba dan target ekuitas tetap. Kenaikan belanja modal selanjutnya membutuhkan dana ekuitas tambahan. Grafik merupakan turunan mekanis model residual, dengan input contoh buku; titik 166,67 merupakan hasil hitungan. [hal. 530; PDF 572]"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Pilihan",
+            "Mekanisme sumber",
+            "Konsekuensi"
+          ],
+          "rows": [
+            [
+              "Dividen rutin",
+              "Komitmen kas yang relatif stabil",
+              "Pemotongan dapat ditafsirkan negatif"
+            ],
+            [
+              "Buyback",
+              "Pemilik memilih menjual atau tetap memegang",
+              "Fleksibel, tetapi harga pembelian perlu diuji"
+            ],
+            [
+              "DRIP saham beredar",
+              "Dividen dipakai membeli saham melalui pasar",
+              "Kas sudah dibagikan; tidak menambah modal baru emiten"
+            ],
+            [
+              "DRIP saham baru",
+              "Dividen ditukar dengan saham yang diterbitkan emiten",
+              "Menyediakan ekuitas baru dan mengubah lembar"
+            ],
+            [
+              "Stock split/dividend",
+              "Jumlah saham dan harga teoritis menyesuaikan",
+              "Tidak menciptakan kas operasi baru"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "[hal. 538-548; PDF 580-590]"
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa rasio pembayaran 120% perlu diperiksa bersama arus kas?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Dividen melebihi laba sebesar 20% pada periode itu. Laba dan kas berbeda, sehingga periksa kas operasi, kebutuhan investasi, dana lain dan kestabilan pembayaran. Rasio ini sendiri belum menetapkan kemampuan pembayaran berikutnya. [hal. 533-534; PDF 575-576]"
+            }
+          ]
         },
         {
           "kind": "pendalaman",

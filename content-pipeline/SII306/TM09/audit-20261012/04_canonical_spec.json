@@ -1,0 +1,250 @@
+{
+  "code": "SII306",
+  "tm": 9,
+  "reading": {
+    "tm": 9,
+    "title": "Keamanan Informasi, Ancaman Siber & Manajemen Kelangsungan Bisnis (BCP/DRP)",
+    "ref": "Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)",
+    "intro": "Menganalisis prinsip CIA Triad (Confidentiality, Integrity, Availability) dalam sistem akuntansi. Membedakan kriptografi simetris vs asimetris, teknik mitigasi serangan siber seperti ransomware dan phishing, serta perancangan Business Continuity Plan (BCP) dan Disaster Recovery Plan (DRP).",
+    "objectives": [
+      "Menjelaskan prinsip CIA Triad sebagai fondasi keamanan sistem akuntansi.",
+      "Membedakan mekanisme enkripsi simetris (AES) vs asimetris (RSA/Public-Private Key) dan fungsi tanda tangan digital (Digital Signature).",
+      "Mengidentifikasi vektor ancaman siber: Ransomware, Social Engineering (Phishing), Man-in-the-Middle, dan SQL Injection.",
+      "Merumuskan metrik pemulihan bencana: Recovery Point Objective (RPO) dan Recovery Time Objective (RTO).",
+      "Membandingkan kelebihan dan kelemahan situs pemulihan bencana (Hot Site, Warm Site, Cold Site)."
+    ],
+    "blocks": [
+      {
+        "kind": "figure",
+        "caption": "Gambar 9.1: Prinsip Keamanan Informasi CIA Triad dan Skema Tanda Tangan Digital Kriptografi Asimetris.",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-blue\" x=\"340\" y=\"34\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">KEAMANAN INFORMASI AKUNTANSI: CIA TRIAD &amp; KRIPTOGRAFI ASIMETRIS</text>\n\n  <!-- Left: CIA Triad -->\n  <rect class=\"svg-card\" x=\"30\" y=\"58\" width=\"210\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"135\" y=\"78\" fill=\"#38bdf8\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">PRINSIP CIA TRIAD</text>\n  <line class=\"svg-divider\" x1=\"40\" y1=\"88\" x2=\"230\" y2=\"88\" stroke=\"#334155\"/>\n\n  <rect class=\"svg-subcard\" x=\"40\" y=\"96\" width=\"190\" height=\"36\" rx=\"4\" fill=\"#0f172a\" stroke=\"#0284c7\"/>\n  <text class=\"text-accent-blue\" x=\"135\" y=\"112\" fill=\"#38bdf8\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">Confidentiality (Kerahasiaan)</text>\n  <text class=\"svg-muted\" x=\"135\" y=\"124\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Akses Terbatas: Enkripsi &amp; Role-Based Access</text>\n\n  <rect class=\"svg-subcard\" x=\"40\" y=\"138\" width=\"190\" height=\"36\" rx=\"4\" fill=\"#0f172a\" stroke=\"#34d399\"/>\n  <text class=\"text-accent-green\" x=\"135\" y=\"154\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">Integrity (Keutuhan Data)</text>\n  <text class=\"svg-muted\" x=\"135\" y=\"166\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Cegah Modifikasi Ilegal: Hash &amp; Checksum</text>\n\n  <rect class=\"svg-subcard\" x=\"40\" y=\"180\" width=\"190\" height=\"36\" rx=\"4\" fill=\"#0f172a\" stroke=\"#f59e0b\"/>\n  <text class=\"text-accent-amber\" x=\"135\" y=\"196\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">Availability (Ketersediaan)</text>\n  <text class=\"svg-muted\" x=\"135\" y=\"208\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Sistem Selalu Siap: Backup, DRP, Redundansi</text>\n\n  <!-- Right: Public-Key Cryptography Flow -->\n  <rect class=\"svg-card\" x=\"260\" y=\"58\" width=\"390\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-purple\" x=\"455\" y=\"78\" fill=\"#a78bfa\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">ENKRIPSI KUNCI PUBLIK &amp; TANDA TANGAN DIGITAL (DIGITAL SIGNATURE)</text>\n  <line class=\"svg-divider\" x1=\"270\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <!-- Pengirim -->\n  <rect class=\"svg-subcard\" x=\"275\" y=\"98\" width=\"105\" height=\"52\" rx=\"4\" fill=\"#0f172a\" stroke=\"#a855f7\"/>\n  <text class=\"text-accent-purple\" x=\"327\" y=\"114\" fill=\"#a78bfa\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Dokumen Jurnal</text>\n  <text class=\"svg-text\" x=\"327\" y=\"126\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">+ Private Key Pengirim</text>\n  <text class=\"text-accent-purple\" x=\"327\" y=\"140\" fill=\"#a78bfa\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">&#8594; Digital Signature</text>\n\n  <!-- Arrow -->\n  <line x1=\"385\" y1=\"124\" x2=\"415\" y2=\"124\" stroke=\"#a855f7\" stroke-width=\"2\"/>\n  <text class=\"svg-muted\" x=\"400\" y=\"118\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Kirim</text>\n\n  <!-- Penerima -->\n  <rect class=\"svg-subcard\" x=\"420\" y=\"98\" width=\"110\" height=\"52\" rx=\"4\" fill=\"#0f172a\" stroke=\"#34d399\"/>\n  <text class=\"text-accent-green\" x=\"475\" y=\"114\" fill=\"#34d399\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Verifikasi Penerima</text>\n  <text class=\"svg-text\" x=\"475\" y=\"126\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">Pakai Public Key Pengirim</text>\n  <text class=\"text-accent-green\" x=\"475\" y=\"140\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">&#10003; Sah &amp; Asli</text>\n\n  <!-- Key takeaways -->\n  <rect class=\"svg-subcard\" x=\"275\" y=\"158\" width=\"365\" height=\"58\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"457\" y=\"174\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">3 FUNGSI UTAMA DIGITAL SIGNATURE PADA SIA:</text>\n  <text class=\"svg-text\" x=\"457\" y=\"188\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">1. Autentikasi Sumber Transaksi &#8226; 2. Integritas Data (Bebas Modifikasi)</text>\n  <text class=\"text-accent-green\" x=\"457\" y=\"202\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">3. Non-Repudiation: Pengirim Tidak Bisa Menyangkal Otorisasi Transaksi</text>\n</svg>"
+      },
+      {
+        "kind": "h2",
+        "text": "Prinsip CIA Triad dalam Sistem Akuntansi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Confidentiality (Kerahasiaan): Informasi sensitif (seperti data gaji direksi, nomor rekening bank, dan daftar harga negosiasi) terlindung dari akses pihak tidak berwenang. Diimplementasikan dengan enkripsi data dan Role-Based Access Control (RBAC).",
+          "Integrity (Integritas): Data transaksi dan laporan keuangan akurat, lengkap, dan terlindung dari modifikasi tidak sah (tamper-proof). Diimplementasikan dengan hash functions (SHA-256) dan write-once logs.",
+          "Availability (Ketersediaan): Sistem akuntansi dan data keuangan dapat diakses oleh personil yang berwenang kapan pun dibutuhkan untuk operasional atau audit. Diimplementasikan dengan server redundancy, UPS, dan backup data."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Kriptografi & Tanda Tangan Digital (Digital Signatures)"
+      },
+      {
+        "kind": "table",
+        "caption": "Tabel 9.1: Perbandingan Kriptografi Simetris vs Asimetris",
+        "headers": [
+          "Karakteristik",
+          "Kriptografi Simetris (Secret Key)",
+          "Kriptografi Asimetris (Public-Private Key)"
+        ],
+        "rows": [
+          [
+            "Kunci Enkripsi & Dekripsi",
+            "Menggunakan SATU kunci rahasia yang sama untuk enkripsi dan dekripsi.",
+            "Menggunakan SEPASANG kunci: Public Key (dibagikan bebas) dan Private Key (disimpan rahasia)."
+          ],
+          [
+            "Kecepatan Komputasi",
+            "Sangat cepat, cocok untuk mengenkripsi database bervolume gigabyte/terabyte.",
+            "Lebih lambat (sekitar 1.000x lebih lambat dari simetris), hanya efisien untuk data kecil."
+          ],
+          [
+            "Masalah Utama",
+            "Distribusi kunci: bagaimana membagikan kunci rahasia secara aman kepada pihak kedua tanpa disadap?",
+            "Distribusi kunci mudah melalui Public Key, namun membutuhkan infrastruktur sertifikat digital (PKI)."
+          ],
+          [
+            "Penerapan Akuntansi",
+            "Enkripsi seluruh database ERP yang sedang tersimpan (Data at Rest) menggunakan standar AES-256.",
+            "Tanda tangan digital (Digital Signature) untuk otorisasi transfer kawat dan validasi faktur elektronik pajak."
+          ]
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Mekanisme Tanda Tangan Digital (Digital Signature): Pengirim membuat ringkasan hash dari dokumen, lalu mengenkripsi hash tersebut menggunakan Private Key miliknya. Penerima mendeskripsi tanda tangan menggunakan Public Key pengirim dan mencocokkan nilai hash. Ini menjamin dua hal kritis: Non-repudiation (pengirim tidak bisa menyangkal telah menyetujui transaksi) dan Data Integrity (dokumen terbukti tidak mengalami perubahan 1 byte pun selama transmisi)."
+      },
+      {
+        "kind": "h2",
+        "text": "Perencanaan Kelangsungan Bisnis: RPO, RTO, dan Situs Pemulihan"
+      },
+      {
+        "kind": "table",
+        "caption": "Tabel 9.2: Metrik Pemulihan Bencana dan Perbandingan Fasilitas Alternatif",
+        "headers": [
+          "Parameter",
+          "Hot Site",
+          "Warm Site",
+          "Cold Site"
+        ],
+        "rows": [
+          [
+            "Biaya Investasi",
+            "Sangat Mahal (operasi 24/7 paralel).",
+            "Moderat (perangkat keras siap, data dipulihkan terjadwal).",
+            "Paling Ekonomis (hanya sewa gedung kosong)."
+          ],
+          [
+            "Recovery Time Objective (RTO): Berapa lama sistem boleh mati?",
+            "Hitungan menit hingga detik (hampir instan).",
+            "Hitungan beberapa jam hingga 1 hari.",
+            "Hitungan hari hingga minggu."
+          ],
+          [
+            "Recovery Point Objective (RPO): Berapa jam transaksi yang boleh hilang?",
+            "Mendekati 0 detik (data direplikasi secara sinkron real-time).",
+            "Maksimal data backup hari sebelumnya (misal 24 jam).",
+            "Seluruh data sejak backup tape fisik terakhir."
+          ],
+          [
+            "Kelayakan Penggunaan",
+            "Bank, bursa efek, sistem pembayaran nasional.",
+            "Perusahaan manufaktur dan distribusi skala menengah.",
+            "Organisasi dengan operasional non-kritis."
+          ]
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "warning",
+        "title": "Protokol Backup 3-2-1",
+        "text": "Untuk mencegah kehancuran data akibat serangan ransomware, terapkan aturan 3-2-1: Simpan 3 salinan data, pada 2 media penyimpanan berbeda (misal SSD server lokal dan cloud storage), dengan 1 salinan disimpan di lokasi offsite yang terputus jaringan (air-gapped immutable backup)."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "tm": 9,
+      "topic": "Keamanan Siber & Kriptografi",
+      "difficulty": "medium",
+      "q": "Tiga pilar utama keamanan sistem informasi akuntansi yang dikenal sebagai CIA Triad adalah...",
+      "options": [
+        "Control, Inspection, Audit",
+        "Confidentiality, Integrity, Availability",
+        "Compliance, Integration, Accuracy",
+        "Cost, Investment, Accounting"
+      ],
+      "answer": 1,
+      "explanation": "CIA Triad: Confidentiality (data hanya bisa dibaca oleh pihak berwenang), Integrity (data terlindung dari manipulasi ilegal), dan Availability (sistem dan data siap diakses saat dibutuhkan operasional bisnis)."
+    },
+    {
+      "tm": 9,
+      "topic": "Keamanan Siber & Kriptografi",
+      "difficulty": "advanced",
+      "q": "Dalam sistem Kriptografi Asimetris (Public-Key Cryptography), jika Perusahaan A ingin mengirimkan dokumen keuangan rahasia ke Auditor B sehingga HANYA Auditor B yang bisa membacanya, maka dokumen tersebut harus dienkripsi menggunakan...",
+      "options": [
+        "Private Key milik Perusahaan A",
+        "Public Key milik Auditor B",
+        "Private Key milik Auditor B",
+        "Public Key milik Perusahaan A"
+      ],
+      "answer": 1,
+      "explanation": "Untuk kerahasiaan (encryption): Pengirim mengenkripsi pesan menggunakan Public Key Penerima (Auditor B). Pesan tersebut secara matematis hanya dapat didekripsi menggunakan Private Key rahasia milik Auditor B."
+    },
+    {
+      "tm": 9,
+      "topic": "Keamanan Siber & Kriptografi",
+      "difficulty": "advanced",
+      "q": "Fungsi utama dari Tanda Tangan Digital (Digital Signature) yang dibuat dengan mengenkripsi hash dokumen menggunakan Private Key pengirim adalah menjamin...",
+      "options": [
+        "Kecepatan transmisi jaringan internet 5G",
+        "Otentikasi pengirim, keutuhan data (data integrity), dan ketiadaan sangkalan (non-repudiation)",
+        "Ukuran file dokumen menjadi lebih kecil 90%",
+        "Penghapusan kewajiban pelaporan pajak SPT tahunan"
+      ],
+      "answer": 1,
+      "explanation": "Digital Signature membuktikan secara kriptografis bahwa dokumen benar-benar berasal dari pemilik private key (otentikasi), isi dokumen tidak diubah satu bit pun saat transit (integritas), dan pengirim tidak dapat menyangkal telah menandatanganinya (non-repudiation)."
+    },
+    {
+      "tm": 9,
+      "topic": "Keamanan Siber & Kriptografi",
+      "difficulty": "medium",
+      "q": "Dalam perencanaan kelangsungan usaha dan pemulihan bencana (BCP/DRP), metrik RPO (Recovery Point Objective) mengukur...",
+      "options": [
+        "Jumlah waktu maksimal sistem boleh offline sebelum perusahaan bangkrut",
+        "Batas maksimal toleransi kehilangan data transaksi (misal: data 2 jam terakhir sebelum server down)",
+        "Biaya pembelian genset cadangan listrik",
+        "Gaji konsultan keamanan siber per jam"
+      ],
+      "answer": 1,
+      "explanation": "RPO (Recovery Point Objective) mengukur toleransi kehilangan data dalam satuan waktu (misal: backup tiap jam berarti RPO = 1 jam). Sedangkan RTO (Recovery Time Objective) mengukur target kecepatan memulihkan sistem hingga online kembali."
+    },
+    {
+      "tm": 9,
+      "topic": "Keamanan Siber & Kriptografi",
+      "difficulty": "medium",
+      "q": "Serangan siber di mana pelaku menyisipkan kode berbahaya ke formulir input web sehingga sistem database mengeksekusi perintah manipulasi data secara tidak sah disebut...",
+      "options": [
+        "SQL Injection Attack",
+        "Denial of Service (DoS)",
+        "Social Engineering",
+        "Brute Force Attack"
+      ],
+      "answer": 0,
+      "explanation": "SQL Injection mengeksploitasi kelemahan validasi form input aplikasi akuntansi. Jika input tidak disanitasi, peretas dapat memasukkan sintaks SQL seperti \"' OR '1'='1\" untuk mencuri seluruh data laporan keuangan atau menghapus tabel transaksi."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "aks301-tm09-01",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Keamanan Informasi & Computer Fraud",
+      "category": "Konsep",
+      "front": "Triad Keamanan Informasi (CIA Triad)",
+      "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    },
+    {
+      "id": "aks301-tm09-02",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Keamanan Informasi & Computer Fraud",
+      "category": "Konsep",
+      "front": "Metode Phishing & Social Engineering",
+      "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    },
+    {
+      "id": "aks301-tm09-03",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Keamanan Informasi & Computer Fraud",
+      "category": "Konsep",
+      "front": "Ransomware & Malware",
+      "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    },
+    {
+      "id": "aks301-tm09-04",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Keamanan Informasi & Computer Fraud",
+      "category": "Konsep",
+      "front": "Enkripsi Simetris vs Asimetris",
+      "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    },
+    {
+      "id": "aks301-tm09-05",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Keamanan Informasi & Computer Fraud",
+      "category": "Konsep",
+      "front": "Fungsi Tanda Tangan Digital (Digital Signature)",
+      "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    },
+    {
+      "id": "aks301-tm09-06",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Keamanan Informasi & Computer Fraud",
+      "category": "Mekanisme",
+      "front": "Pusat Pemulihan Bencana: Hot Site vs Cold Site",
+      "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

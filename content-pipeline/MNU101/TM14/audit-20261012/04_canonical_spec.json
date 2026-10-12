@@ -1,0 +1,45 @@
+{
+  "code": "MNU101",
+  "tm": 14,
+  "source": "Pride, Foundations of Business 6e, Ch.16, hal.467-481, PDF 485-499; RPS 2026 minggu 14",
+  "finding": "Laba akrual, anggaran kas dan kebutuhan pendanaan perlu dipisahkan.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Laba akrual, anggaran kas dan kebutuhan pendanaan perlu dipisahkan."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kondisi",
+        "Tindakan"
+      ],
+      "rows": [
+        [
+          "Penjualan kredit meningkat",
+          "Periksa waktu penagihan, bukan menyamakan penjualan dengan kas."
+        ],
+        [
+          "Kebutuhan musiman",
+          "Bandingkan biaya, tenor dan risiko pembaruan utang."
+        ],
+        [
+          "Investasi berumur panjang",
+          "Rencanakan sumber pendanaan yang sesuai kemampuan membayar."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.16, hal.467-481, PDF 485-499; RPS 2026 minggu 14"
+    }
+  ]
+}

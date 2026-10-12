@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm11-60",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa predetermined overhead rate?",
+    "category": "Konsep",
+    "front": "Apa predetermined overhead rate?",
+    "back": "Anggaran overhead / anggaran dasar aktivitas yang sesuai, dihitung sebelum periode. Rujukan: Carter 14e Ch.12, hal.12-1 sampai 12-6 PDF 362-367; tutor FOH PDF 11-12"
+  },
+  {
+    "id": "akm201-tm11-61",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa applied overhead?",
+    "category": "Konsep",
+    "front": "Apa applied overhead?",
+    "back": "Tarif rencana dikali aktivitas aktual; tarifnya tidak dihitung ulang hanya karena overhead aktual berbeda. Rujukan: Carter 14e Ch.12, hal.12-1 sampai 12-6 PDF 362-367; tutor FOH PDF 11-12"
+  },
+  {
+    "id": "akm201-tm11-62",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa actual overhead?",
+    "category": "Konsep",
+    "front": "Apa actual overhead?",
+    "back": "Biaya overhead yang benar-benar terjadi, dicatat ke akun pengendali sesuai sistem. Rujukan: Carter 14e Ch.12, hal.12-1 sampai 12-6 PDF 362-367; tutor FOH PDF 11-12"
+  },
+  {
+    "id": "akm201-tm11-63",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Kapan underapplied?",
+    "category": "Konsep",
+    "front": "Kapan underapplied?",
+    "back": "Aktual melebihi dibebankan. Contoh tutor: 438.000 - 425.250 = Rp12.750 kurang dibebankan. Rujukan: Carter 14e Ch.12, hal.12-1 sampai 12-6 PDF 362-367; tutor FOH PDF 11-12"
+  },
+  {
+    "id": "akm201-tm11-64",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Kapan overapplied?",
+    "category": "Konsep",
+    "front": "Kapan overapplied?",
+    "back": "Dibebankan melebihi aktual; arah penyesuaian kebalikan underapplied. Rujukan: Carter 14e Ch.12, hal.12-1 sampai 12-6 PDF 362-367; tutor FOH PDF 11-12"
+  },
+  {
+    "id": "akm201-tm11-65",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Bagaimana basis rate dipilih?",
+    "category": "Konsep",
+    "front": "Bagaimana basis rate dipilih?",
+    "back": "Pilih hubungan penyebab biaya dan kapasitas sesuai kasus: jam mesin, jam tenaga kerja atau driver lain, bukan denominator yang memberi tarif terkecil. Rujukan: Carter 14e Ch.12, hal.12-1 sampai 12-6 PDF 362-367; tutor FOH PDF 11-12"
+  }
+]

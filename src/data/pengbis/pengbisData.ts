@@ -267,15 +267,15 @@ export const MNU101_TM1_7_READINGS: Record<number, Reading> = {
 
 const MNU101_REVIEW_UAS_READING: Reading = {
   tm: 15,
-  title: 'Bocoran UAS Pengantar Bisnis',
-  ref: 'UAS 2024 / Pra-UAS TM 8-14',
-  intro: 'Bocoran poin-poin utama ujian TM8-14 beserta kesalahan umum mahasiswa dan analisis real case dari ujian sebelumnya.',
+  title: 'Prioritas Belajar UAS Pengantar Bisnis',
+  ref: 'Perkiraan dari RPS 2026 minggu 8-14 dan bab Pride/Nickels; arsip UAS 2024 belum ditemukan',
+  intro: 'Prioritas belajar TM8-14 dan kerangka analisis kasus dari rencana kuliah. Ini perkiraan cakupan; bentuk dan bobot ujian akhir belum terverifikasi dari arsip ujian.',
   objectives: ['Menganalisis case Chobani, Dunkin Donuts, Dominos, FedEx, Zappos', 'Mampu menghindari jebakan job description vs job specification', 'Menerapkan bauran pemasaran (4P) dalam menjawab esai'],
   blocks: [
     { kind: 'h2', text: 'A. Jebakan Umum / Kesalahan Esai' },
     { kind: 'callout', variant: 'warning', title: 'Job Description vs Job Specification', text: 'Banyak mahasiswa tertukar. **Job Description** berisi tentang *pekerjaan* (tugas, tanggung jawab, target). Sedangkan **Job Specification** berisi tentang *orangnya* (pendidikan, keahlian, karakter).' },
     { kind: 'callout', variant: 'warning', title: 'Pricing Strategy', text: 'Harga tidak berdiri sendiri. Saat menjawab esai pricing, harus dikaitkan dengan target market, tahapan Product Life Cycle, dan positioning. Jangan menjawab "hanya ikut harga pasar".' },
-    { kind: 'h2', text: 'B. Analisis Kasus Esai (High Probability)' },
+    { kind: 'h2', text: 'B. Latihan Analisis Kasus dari Rencana Kuliah' },
     { kind: 'example', title: 'HRM - Kasus Chobani', blocks: [
       { kind: 'p', text: '**Fokus:** Menarik, mempertahankan, dan memotivasi karyawan sambil menjaga growth bisnis.' },
       { kind: 'p', text: '**Kerangka Jawaban:** Gaji saja tidak cukup (itu hygiene factor). Perusahaan perlu career path, pengakuan, empowermen, dan budaya inklusif.' }

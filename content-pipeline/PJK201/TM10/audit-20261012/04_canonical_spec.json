@@ -1,0 +1,45 @@
+{
+  "code": "PJK201",
+  "tm": 10,
+  "source": "UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 31,35,40",
+  "finding": "Objek dan forum menentukan jalur sengketa; jangan mencampur batas waktu.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Objek dan forum menentukan jalur sengketa; jangan mencampur batas waktu."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Jalur",
+        "Forum dan objek"
+      ],
+      "rows": [
+        [
+          "Keberatan",
+          "DJP, ketetapan/pemotongan yang dicakup KUP."
+        ],
+        [
+          "Banding",
+          "Pengadilan Pajak, keputusan keberatan."
+        ],
+        [
+          "Gugatan",
+          "Pengadilan Pajak, tindakan/keputusan yang dicakup undang-undang."
+        ],
+        [
+          "PK",
+          "Mahkamah Agung, alasan yang diatur undang-undang."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 31,35,40"
+    }
+  ]
+}

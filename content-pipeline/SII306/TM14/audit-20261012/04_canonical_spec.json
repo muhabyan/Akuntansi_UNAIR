@@ -1,0 +1,260 @@
+{
+  "code": "SII306",
+  "tm": 14,
+  "reading": {
+    "tm": 14,
+    "title": "Integrasi Sistem Perusahaan & Simulasi Kasus Komprehensif Pra-UAS",
+    "ref": "Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)",
+    "intro": "Tatap muka penutup yang mengintegrasikan seluruh materi SIA: siklus transaksi, arsitektur ERP terpusat, tata kelola COSO/COBIT, keamanan siber, analitika data, dan teknologi masa depan. Dilengkapi dengan metodologi diagnostik kasus komprehensif persiapan Ujian Akhir Semester (UAS).",
+    "objectives": [
+      "Mengintegrasikan aliran data dan kontrol antar seluruh siklus transaksi bisnis (O2C, P2P, Konversi, Penggajian, Pelaporan Keuangan).",
+      "Mendiagnosis kegagalan sistem terintegrasi dan kelemahan pengendalian internal material dalam studi kasus perusahaan nyata.",
+      "Menyusun matriks mitigasi risiko berbasis COSO Internal Control dan IT General Controls (GITC).",
+      "Mengevaluasi kesiapan menghadapi evaluasi kompetensi Ujian Akhir Semester (UAS).",
+      "Merumuskan strategi transformasi digital sistem akuntansi yang aman dan efisien."
+    ],
+    "blocks": [
+      {
+        "kind": "figure",
+        "caption": "Gambar 14.1: Peta Arsitektur Integrasi ERP Terpusat dan Simulasi Komprehensif Siklus Bisnis Pra-UAS.",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-blue\" x=\"340\" y=\"34\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">PETA INTEGRASI SISTEM ERP &amp; SIMULASI SIKLUS BISNIS LENGKAP (UAS)</text>\n\n  <!-- Central Hub: Centralized ERP Database -->\n  <rect class=\"svg-subcard\" x=\"255\" y=\"90\" width=\"170\" height=\"85\" rx=\"8\" fill=\"#0f172a\" stroke=\"#10b981\" stroke-width=\"2\"/>\n  <text class=\"text-accent-green\" x=\"340\" y=\"112\" fill=\"#34d399\" font-size=\"10\" font-weight=\"800\" text-anchor=\"middle\">&#9881; CENTRAL DATABASE ERP</text>\n  <line class=\"svg-divider\" x1=\"265\" y1=\"120\" x2=\"415\" y2=\"120\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"340\" y=\"135\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">Single Source of Truth</text>\n  <text class=\"svg-muted\" x=\"340\" y=\"148\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">SAP S/4HANA / Oracle Cloud</text>\n  <text class=\"text-accent-green\" x=\"340\" y=\"162\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Integrasi Real-Time Transaksi</text>\n\n  <!-- Top Left: Sales (SD) -->\n  <rect class=\"svg-card\" x=\"30\" y=\"58\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"120\" y=\"76\" fill=\"#38bdf8\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">1. SALES &amp; DISTRIBUTION (O2C)</text>\n  <text class=\"svg-muted\" x=\"120\" y=\"92\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">Pesanan &#8594; Kirim &#8594; Faktur &#8594; Kas Masuk</text>\n  <line x1=\"210\" y1=\"84\" x2=\"255\" y2=\"110\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n\n  <!-- Top Right: Purchasing (MM) -->\n  <rect class=\"svg-card\" x=\"470\" y=\"58\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-amber\" x=\"560\" y=\"76\" fill=\"#fbbf24\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">2. MATERIALS MGMT (P2P)</text>\n  <text class=\"svg-muted\" x=\"560\" y=\"92\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">PR &#8594; PO &#8594; LPB &#8594; 3-Way Match &#8594; Bayar</text>\n  <line x1=\"470\" y1=\"84\" x2=\"425\" y2=\"110\" stroke=\"#f59e0b\" stroke-width=\"1.5\"/>\n\n  <!-- Bottom Left: Production (PP) -->\n  <rect class=\"svg-card\" x=\"30\" y=\"155\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-purple\" x=\"120\" y=\"173\" fill=\"#a78bfa\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">3. PRODUCTION PLANNING (PP)</text>\n  <text class=\"svg-muted\" x=\"120\" y=\"189\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">BOM &#8594; Work Order &#8594; WIP &#8594; Barang Jadi</text>\n  <line x1=\"210\" y1=\"181\" x2=\"255\" y2=\"155\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n\n  <!-- Bottom Right: Financial & Controlling (FI/CO) -->\n  <rect class=\"svg-card\" x=\"470\" y=\"155\" width=\"180\" height=\"52\" rx=\"6\" fill=\"#1e293b\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-green\" x=\"560\" y=\"173\" fill=\"#34d399\" font-size=\"9.5\" font-weight=\"700\" text-anchor=\"middle\">4. FINANCIAL &amp; CONTROLLING (FI/CO)</text>\n  <text class=\"svg-muted\" x=\"560\" y=\"189\" fill=\"#94a3b8\" font-size=\"8\" text-anchor=\"middle\">Posting GL Otomatis &#8594; Laporan L/R &amp; Neraca</text>\n  <line x1=\"470\" y1=\"181\" x2=\"425\" y2=\"155\" stroke=\"#34d399\" stroke-width=\"1.5\"/>\n\n  <!-- Bottom Banner: Governance & Audit Trail -->\n  <rect class=\"svg-subcard\" x=\"150\" y=\"195\" width=\"380\" height=\"34\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"340\" y=\"210\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">KONTROL TERPADU: COSO &amp; COBIT 2019 COMPLIANCE</text>\n  <text class=\"svg-muted\" x=\"340\" y=\"222\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">SoD Terintegrasi &#8226; Log Jejak Audit Tak Terhapus &#8226; Proteksi Keamanan Siber</text>\n</svg>"
+      },
+      {
+        "kind": "h2",
+        "text": "Peta Integrasi Arsitektur Sistem Informasi Akuntansi Terintegrasi"
+      },
+      {
+        "kind": "p",
+        "text": "SIA terpadu menghubungkan data proses operasional dengan pencatatan dan pelaporan. Dampak tiap peristiwa bergantung pada model data, pemetaan akun, otorisasi dan kontrol yang diterapkan. Richardson Ch.10, PDF 408-409, membedakan peran event, resources dan query laporan:"
+      },
+      {
+        "kind": "table",
+        "caption": "Tabel 14.1: Integrasi Lintas Siklus Transaksi ke Buku Besar Umum (General Ledger / GL)",
+        "headers": [
+          "Siklus Asal",
+          "Pemicu Transaksi (Trigger)",
+          "Jurnal Otomatis yang Terbentuk",
+          "Modul ERP Terkait"
+        ],
+        "rows": [
+          [
+            "Siklus Pendapatan (O2C)",
+            "Konfirmasi Bill of Lading pengiriman barang dagang ke pelanggan.",
+            "Debit: Piutang Usaha / Kas; Kredit: Pendapatan Penjualan. Debit: Beban Pokok Penjualan; Kredit: Persediaan Barang Jadi.",
+            "SD (Sales & Distribution) -> FI (Financial Accounting) & MM (Materials Management)."
+          ],
+          [
+            "Siklus Pengeluaran (P2P)",
+            "Three-Way Match disetujui (PO + RR + Vendor Invoice).",
+            "Debit: Persediaan Bahan Baku / Beban Operasional; Kredit: Utang Usaha.",
+            "MM (Materials Management) -> FI (Accounts Payable)."
+          ],
+          [
+            "Siklus Konversi",
+            "Laporan penyelesaian batch produksi dari stasiun perakitan.",
+            "Debit: Persediaan Barang Jadi; Kredit: Barang Dalam Proses (WIP).",
+            "PP (Production Planning) -> CO (Controlling) & FI."
+          ],
+          [
+            "Siklus Penggajian (Payroll)",
+            "Otorisasi rekapitulasi jam kerja biometrik bulanan.",
+            "Debit: Beban Gaji & Upah; Kredit: Utang PPh 21, Utang BPJS, dan Kas/Utang Gaji.",
+            "HR/HCM (Human Capital) -> FI."
+          ]
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Simulasi Kasus UAS: Diagnosa Kegagalan Sistem PT Global Distribusi Utama"
+      },
+      {
+        "kind": "p",
+        "text": "Konteks Kasus: PT Global Distribusi Utama mengalami kerugian Rp 3.2 miliar dalam satu tahun buku. Hasil investigasi komite audit menemukan temuan-temuan berikut:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Temuan 1: Database ERP sering down selama 6 jam saat penutupan buku bulanan karena server kelebihan beban.",
+          "Temuan 2: Staf pembelian merangkap sebagai admin yang memiliki hak akses menambah vendor baru dan menyetujui Purchase Order.",
+          "Temuan 3: Perusahaan membayar Rp 850 juta ke vendor bernama 'CV Maju Lancar' yang beralamat sama dengan rumah pribadi Manajer Logistik.",
+          "Temuan 4: Terjadi kebocoran data rahasia harga pokok produksi ke kompetitor melalui USB flashdisk staf magang IT."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Solusi Matriks Rekomendasi Audit (Standar Jawaban UAS)"
+      },
+      {
+        "kind": "table",
+        "caption": "Tabel 14.2: Matriks Diagnosa & Rekomendasi Komprehensif UAS",
+        "headers": [
+          "Kasus",
+          "Kelemahan Pengendalian",
+          "Kategori COSO / GITC",
+          "Solusi & Pengendalian Perbaikan"
+        ],
+        "rows": [
+          [
+            "Temuan 1",
+            "Ketiadaan perencanaan kapasitas server dan tidak adanya High Availability / Hot Site.",
+            "GITC (Computer Operations & Availability)",
+            "Migrasikan database ke arsitektur Cloud ERP yang memiliki auto-scaling; siapkan server replikasi aktif."
+          ],
+          [
+            "Temuan 2",
+            "Pelanggaran serius pemisahan tugas (SoD) antara pendaftaran vendor dan pemesanan.",
+            "Control Activities (Segregation of Duties)",
+            "Cabut hak akses otorisasi PO dari staf pendaftaran vendor; terapkan matriks SoD di konfigurasi modul ERP."
+          ],
+          [
+            "Temuan 3",
+            "Fraud Vendor Fiktif (Shell Company) dan transaksi dengan pihak berelasi tanpa deklarasi.",
+            "Risk Assessment & Control Environment",
+            "Wajibkan verifikasi fisik dan legalitas NPWP/NIB vendor oleh Bagian Legal; terapkan audit data matching alamat vendor vs karyawan."
+          ],
+          [
+            "Temuan 4",
+            "Ketiadaan Data Loss Prevention (DLP) dan akses fisik port USB yang terbuka bebas.",
+            "Information Security (GITC - Logical Access)",
+            "Nonaktifkan seluruh port USB di komputer kantor melalui Group Policy Windows; enkripsi harddisk laptop dengan BitLocker; terapkan perjanjian kerahasiaan (NDA)."
+          ]
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Strategi Sukses Menghadapi UAS SIA",
+        "text": "Gunakan pendekatan multidisipliner: hubungkan aspek bisnis, hukum, standar akuntansi, dan teknologi informasi. Jawaban yang menggabungkan prinsip akuntansi (pengakuan jurnal) dengan pengendalian TI (GITC & Application Controls) selalu mendapatkan nilai tertinggi dari dosen penguji."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "tm": 14,
+      "topic": "Integrasi ERP & Simulasi UAS",
+      "difficulty": "medium",
+      "q": "Dalam integrated project Richardson, bagaimana model proses dan database mendukung laporan keuangan?",
+      "options": [
+        "Semua event langsung dijumlahkan sebagai kas tanpa membedakan pembayaran dan penjualan.",
+        "Event, resources dan hubungan dipetakan untuk menyiapkan query serta laporan yang sesuai.",
+        "Database menggantikan kebutuhan memodelkan kontrol dan menetapkan business requirements.",
+        "UML class diagram hanya mengatur tampilan laporan tanpa menghubungkan data antarproses."
+      ],
+      "answer": 1,
+      "explanation": "Buku menghubungkan business requirements, BPMN, integrated UML class diagram, tabel/relasi dan query laporan. Penjualan, pembelian, timecards dan pembayaran mempunyai peran berbeda; integrasi tidak berarti semua event adalah kas. Rujukan: Richardson AIS 4e, Ch.10, Exhibit 10.8 dan Summary, PDF 408-410."
+    },
+    {
+      "tm": 14,
+      "topic": "Integrasi ERP & Simulasi UAS",
+      "difficulty": "advanced",
+      "q": "Konsep 'Audit Trail' (Jejak Audit) dalam sistem ERP akuntansi modern berfungsi untuk...",
+      "options": [
+        "Mengurangi volume data dengan menghapus seluruh riwayat setelah laporan ditutup.",
+        "Menelusuri pelaku, waktu dan perubahan transaksi untuk pemeriksaan bukti serta kontrol.",
+        "Menghilangkan kebutuhan otorisasi karena setiap transaksi sudah tercatat dalam sistem.",
+        "Membuktikan isi transaksi benar hanya dari urutan waktu pencatatan dokumen dalam sistem."
+      ],
+      "answer": 1,
+      "explanation": "Jejak audit mendukung penelusuran transaksi dan perubahan. Integritas catatan perlu pengendalian akses; jejak saja tidak membuktikan keberadaan, hak atau nilai transaksi. Rujukan: Richardson AIS 4e, Ch.11-13, Internal Controls dan Auditing AIS, PDF 411-433,475-488."
+    },
+    {
+      "tm": 14,
+      "topic": "Integrasi ERP & Simulasi UAS",
+      "difficulty": "advanced",
+      "q": "Kontrol preventif apa yang sesuai untuk membatasi penyalahgunaan jurnal manual dalam AIS?",
+      "options": [
+        "Memberikan akses tanpa batas pada seluruh staf agar koreksi dapat dicatat secepatnya.",
+        "Membatasi akses, memisahkan tugas dan mensyaratkan persetujuan serta bukti pendukung.",
+        "Menghapus identitas pengguna setelah posting agar data pegawai terlindungi dari pemeriksa.",
+        "Menyimpan jurnal tak seimbang sampai akhir tahun agar tim dapat memperbaiki semuanya."
+      ],
+      "answer": 1,
+      "explanation": "Akses yang dibatasi, pemisahan tugas, otorisasi dan bukti membatasi kesempatan manipulasi. Ambang persetujuan mengikuti risiko dan kebijakan; tidak ada larangan universal semua jurnal ke Kas pada sumber ini. Rujukan: Richardson AIS 4e, Ch.11, Control Activities, PDF 411-433."
+    },
+    {
+      "tm": 14,
+      "topic": "Integrasi ERP & Simulasi UAS",
+      "difficulty": "medium",
+      "q": "Manakah pernyataan yang paling tepat mengenai peranan Chart of Accounts (Bagan Akun Standar) dalam arsitektur sistem informasi akuntansi ERP?",
+      "options": [
+        "Mengelompokkan akun secara konsisten untuk mencatat transaksi dan menyusun laporan.",
+        "Mengelompokkan vendor menurut nama untuk mengizinkan pembayaran tanpa validasi.",
+        "Mengelompokkan pengguna menurut unit kerja untuk menggantikan otorisasi transaksi.",
+        "Mengelompokkan dokumen menurut tanggal untuk membuktikan nilai seluruh saldo akun."
+      ],
+      "answer": 0,
+      "explanation": "Bagan akun mendukung klasifikasi dan pengikhtisaran transaksi. Daftar akun tidak menggantikan master data, validasi atau kontrol akses. Rujukan: Richardson AIS 4e, Ch.10, Develop Financial Statement Information, PDF 408-410."
+    },
+    {
+      "tm": 14,
+      "topic": "Integrasi ERP & Simulasi UAS",
+      "difficulty": "advanced",
+      "q": "Dalam integrated project Richardson, apa yang perlu dilakukan setelah data diimpor untuk menjaga keandalan query AIS?",
+      "options": [
+        "Menyusun query dari tabel impor dahulu dan menggunakan nama pelanggan sebagai kunci.",
+        "Menetapkan primary key, memeriksa tipe data, lalu menegakkan referential integrity.",
+        "Menggabungkan seluruh event dalam satu tabel dan menetapkan tanggal sebagai kunci.",
+        "Menyusun laporan dari tabel impor dahulu dan memeriksa hubungan setelah penutupan."
+      ],
+      "answer": 1,
+      "explanation": "PDF 409 mengharuskan koreksi data, primary key, tipe data dan struktur tabel yang efisien, kemudian relasi dengan referential integrity. Tanpa integritas referensial, keandalan query terpengaruh. Langkah ini memakai UML class diagram sebagai blueprint. Rujukan: Richardson AIS 4e, Ch.10, Import Data into Access, Create Efficient Tables, and Set Relationships, PDF 408-409, Exhibit 10.9."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "aks301-tm14-01",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "category": "Konsep",
+      "front": "Fokus Utama Soal Ujian Akhir Semester (UAS) SIA",
+      "back": "Perkiraan prioritas dari RPP dan materi: proses transaksi, kelemahan pengendalian, metode audit TI dan batas teknologi. Arsip UAS yang mendukung bentuk/bobot spesifik belum ditemukan. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    },
+    {
+      "id": "aks301-tm14-02",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "category": "Konsep",
+      "front": "Mendiagnosis Single Point of Failure (SPOF)",
+      "back": "Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    },
+    {
+      "id": "aks301-tm14-03",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "category": "Konsep",
+      "front": "Analisis Celah Pemisahan Tugas (SoD Matrix)",
+      "back": "Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    },
+    {
+      "id": "aks301-tm14-04",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "category": "Standar",
+      "front": "Perlakuan Audit atas Bukti Elektronik",
+      "back": "Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    },
+    {
+      "id": "aks301-tm14-05",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "category": "Konsep",
+      "front": "Peran Laporan SOC 1 (SSAE 18 / ISAE 3402)",
+      "back": "SOC 1 berkaitan dengan pengendalian organisasi jasa yang relevan bagi pengendalian internal pelaporan keuangan entitas pengguna. Jenis, periode, pengecualian dan kontrol pelengkap pengguna harus dibaca. Rujukan standar: ISA 402 paragraf 8 dan 16-17. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    },
+    {
+      "id": "aks301-tm14-06",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
+      "category": "Konsep",
+      "front": "Saran Sukses Ujian Akhir Semester SIA",
+      "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

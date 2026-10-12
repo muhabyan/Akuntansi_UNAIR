@@ -1,5 +1,5 @@
+// PJK301 TM10: audited formula notes, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM10_READING: Reading = {
   "tm": 10,
   "title": "Penghitungan PPh 21/26 Berbagai Penerima",
@@ -151,7 +151,7 @@ export const TM10_READING: Reading = {
     {
       "kind": "formula",
       "text": "\\mathrm{PPh}_{21,\\,terakhir}=\\mathrm{PPh}_{tahunan}-\\mathrm{Potongan}_{sebelumnya}",
-      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
+      "note": "PPh tahunan adalah hasil tarif Pasal 17 atas PKP sesuai cakupan penerima; potongan sebelumnya adalah PPh 21 pada masa sebelum masa terakhir dari pemotong yang relevan. Hasil negatif memerlukan pengembalian kelebihan potong sesuai aturan. Rujukan: PMK 168/2023 Pasal 15 dan 21. Tahun kasus 2024/2025 tetap sesuai soal."
     },
     {
       "kind": "solution-reveal",

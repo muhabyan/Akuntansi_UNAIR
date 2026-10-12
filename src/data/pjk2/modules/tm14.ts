@@ -1,5 +1,5 @@
+// PJK301 TM14: audited formula notes, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM14_READING: Reading = {
   "tm": 14,
   "title": "Pengkreditan PM, Restitusi, Pemungut, dan Fasilitas",
@@ -111,7 +111,7 @@ export const TM14_READING: Reading = {
     {
       "kind": "formula",
       "text": "P=PM\\times Z,\\quad P^{\\prime}=\\frac{PM}{T}\\times Z^{\\prime},\\quad\\Delta P=P^{\\prime}-\\frac{P}{T}",
-      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
+      "note": "PM adalah Pajak Masukan terkait aset bersama; Z proporsi perkiraan penggunaan untuk penyerahan yang memberi hak kredit; T masa manfaat menurut ketentuan; Z prima adalah proporsi realisasi; delta P adalah penyesuaian terhadap alokasi kredit awal per tahun. Rujukan: PMK 186/2022 Pasal 3-8 dan Lampiran. Kasus menyatakan tahun dan penggunaan."
     },
     {
       "kind": "solution-reveal",

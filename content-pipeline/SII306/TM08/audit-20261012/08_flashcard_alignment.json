@@ -1,0 +1,56 @@
+[
+  {
+    "id": "aks301-tm08-01",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Pengendalian Internal COSO Framework",
+    "category": "Definisi",
+    "front": "Definisi Pengendalian Internal COSO",
+    "back": "Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+  },
+  {
+    "id": "aks301-tm08-02",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Pengendalian Internal COSO Framework",
+    "category": "Konsep",
+    "front": "Tiga Kategori Tujuan Pengendalian COSO",
+    "back": "(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+  },
+  {
+    "id": "aks301-tm08-03",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Pengendalian Internal COSO Framework",
+    "category": "Konsep",
+    "front": "Lima Komponen Pengendalian Internal COSO",
+    "back": "(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+  },
+  {
+    "id": "aks301-tm08-04",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Pengendalian Internal COSO Framework",
+    "category": "Klasifikasi",
+    "front": "Tiga Tipe Pengendalian Berdasarkan Waktu",
+    "back": "Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+  },
+  {
+    "id": "aks301-tm08-05",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Pengendalian Internal COSO Framework",
+    "category": "Hukum",
+    "front": "Sarbanes-Oxley Act (SOX) Section 404",
+    "back": "Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+  },
+  {
+    "id": "aks301-tm08-06",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Pengendalian Internal COSO Framework",
+    "category": "Konsep",
+    "front": "COSO Enterprise Risk Management (ERM)",
+    "back": "Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
+  }
+]

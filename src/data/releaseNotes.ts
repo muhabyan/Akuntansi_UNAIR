@@ -12,6 +12,18 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.7',
+    date: '12 Oktober 2026',
+    headline: 'Audit sumber dan grafik materi setelah UTS',
+    notes: [
+      'Manajemen Keuangan menampilkan model MM dengan asumsi terpisah, kurva biaya modal, dividen residual, anggaran kas dan grafik ponsel dengan label terbaca.',
+      'AKM II mendapat grafik obligasi, kupon konversi dan kerugian kredit. Perpajakan II memperjelas variabel rumus serta tarif berlapis PPh orang pribadi.',
+      'Rujukan bab SIA dan klaim blockchain diperbaiki. PBR I membedakan contoh dokumentasi buku dari batas umum standar; Statistik memperjelas keputusan ANOVA dan indeks moving average.',
+      'AKM I, Akuntansi Biaya, Pengantar Bisnis, Teori Ekonomi dan Akuntansi Manajemen mendapat grafik dan contoh sumber. EKPA menambahkan mekanisme tata kelola; Perpajakan I melengkapi dasar pasal dan batas penerapan.',
+      'Laporan audit mencatat cakupan, sumber dan bagian yang masih perlu dilengkapi. Pengantar Manajemen dan ASP ditunda; Manajemen Stratejik diaudit secara baca saja.',
+    ],
+  },
+  {
     version: 'v1.3.6',
     date: '12 Oktober 2026',
     headline: 'Manajemen Keuangan berlapis menuju UAS',

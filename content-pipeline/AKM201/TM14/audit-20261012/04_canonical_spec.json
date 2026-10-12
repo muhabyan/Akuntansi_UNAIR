@@ -1,0 +1,45 @@
+{
+  "code": "AKM201",
+  "tm": 14,
+  "source": "Carter, Cost Accounting 14e, Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8",
+  "finding": "Arsip kuis memberi bentuk latihan, tidak menjamin soal UAS.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Topik",
+        "Kontrol numerik"
+      ],
+      "rows": [
+        [
+          "Joint cost",
+          "Alokasi semua produk menjumlah ke total pool; keputusan memakai selisih."
+        ],
+        [
+          "Bahan/upah",
+          "Pisahkan unit, jam, tarif, dan biaya per periode."
+        ],
+        [
+          "FOH",
+          "Tarif anggaran × aktivitas aktual; rekonsiliasi dengan aktual."
+        ],
+        [
+          "Departemen/ABC",
+          "Total biaya yang dialokasikan tidak hilang atau dihitung dua kali."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Arsip kuis pra-UAS 2026 dibaca sebagai bukti latihan, dengan tahun dan identitas dokumen tetap dicatat. Bobot ujian akhir belum dibuktikan dari arsip UAS yang dapat dibaca lengkap; soal spreadsheet UAS 2022 memerlukan pemeriksaan terpisah."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Carter, Cost Accounting 14e, Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+    }
+  ]
+}

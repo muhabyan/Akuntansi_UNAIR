@@ -660,15 +660,15 @@ export const SII306_QUIZ_UAS: QuizQuestion[] = [
     "tm": 10,
     "topic": "COBIT & Audit Sistem Informasi",
     "difficulty": "advanced",
-    "q": "Perbedaan fundamental antara pendekatan 'Audit Around the Computer' dan 'Audit Through the Computer' adalah...",
+    "q": "Apa pembeda audit around dan through the computer dalam pemeriksaan AIS?",
     "options": [
-      "Audit Around dilakukan di luar ruangan, sedangkan Through dilakukan di dalam server room",
-      "Audit Around hanya membandingkan input fisik dengan output cetak tanpa menguji program software; sedangkan Audit Through menguji langsung integritas logika pemrosesan dan kontrol internal software komputer",
-      "Audit Around menggunakan software akuntansi, sedangkan Through menggunakan mesin tik manual",
-      "Audit Around tidak memerlukan auditor manusia"
+      "Around menguji kode program, sedangkan through hanya membandingkan total laporan.",
+      "Around berfokus input dan output, sedangkan through juga menguji proses di sistem.",
+      "Around menguji seluruh proses, sedangkan through hanya membaca dokumen input.",
+      "Around membuktikan semua kontrol, sedangkan through hanya menguji saldo akun."
     ],
     "answer": 1,
-    "explanation": "Audit Around the Computer memperlakukan komputer sebagai black-box. Jika sistem sangat kompleks (seperti ERP), auditor wajib melakukan Audit Through the Computer (white-box testing) menggunakan teknik CAATs untuk menguji integritas logika program."
+    "explanation": "Perbedaan terletak pada apakah pemrosesan di dalam sistem juga diuji. Pemilihan prosedur tetap mengikuti risiko dan bukti yang diperlukan. Rujukan: Richardson AIS 4e, Ch.13, Computer-Assisted Audit Techniques, PDF 480-488."
   },
   {
     "tm": 10,
@@ -774,13 +774,13 @@ export const SII306_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Teknik Audit Data Analytics (ADA) manakah yang paling efektif untuk mengidentifikasi adanya pembayaran ganda (duplicate payments) kepada vendor dalam satu tahun buku?",
     "options": [
-      "Fuzzy Matching dan Uji Duplikasi (Duplicate Test) pada field nomor faktur, tanggal, nama vendor, dan nominal pembayaran",
-      "Regresi linier sederhana",
-      "Analisis sentimen teks dewan komisaris",
-      "Penyusutan garis lurus persediaan"
+      "Mencocokkan nomor faktur, vendor, tanggal dan nominal, lalu meninjau kandidat duplikat.",
+      "Meregresikan laba terhadap penjualan, lalu menilai perubahan tren laba tahunan.",
+      "Meringkas pembayaran per bulan, lalu menilai apakah total tahun sama dengan anggaran.",
+      "Mengurutkan vendor menurut saldo akhir, lalu menguji vendor dengan saldo terbesar."
     ],
     "answer": 0,
-    "explanation": "Fuzzy Matching dan Duplicate Testing pada software analitika (seperti ACL, IDEA, atau Python Pandas) mampu memfilter transaksi yang memiliki kecocokan identik atau hampir identik (misal nomor faktur INV-100 vs INV100) untuk mendeteksi dobel bayar."
+    "explanation": "Pencocokan tepat dan fuzzy dapat menemukan kandidat ganda. Kandidat tetap diperiksa terhadap transaksi asli; kemiripan field tidak otomatis membuktikan pembayaran ganda. Rujukan: Richardson AIS 4e, Ch.3, Exploratory Data Analysis, PDF 135-151."
   },
   {
     "tm": 12,
@@ -802,13 +802,13 @@ export const SII306_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "advanced",
     "q": "Perbedaan utama antara Attended RPA dan Unattended RPA dalam lingkungan kantor akuntansi adalah...",
     "options": [
-      "Attended RPA berjalan di komputer lokal dengan pemicu aksi manual dari staf akuntan; sedangkan Unattended RPA berjalan otomatis di server latar belakang 24/7 berdasarkan jadwal tanpa campur tangan manusia",
-      "Attended RPA menggunakan robot fisik berkaki, sedangkan Unattended berbentuk software",
-      "Attended RPA gratis, sedangkan Unattended wajib bayar pajak",
-      "Attended RPA hanya bisa menghitung depresiasi"
+      "Attended dipicu/didampingi pengguna; unattended berjalan menurut pemicu terjadwal.",
+      "Attended dijadwalkan di server; unattended selalu menunggu klik pengguna desktop.",
+      "Attended beroperasi tanpa pengguna; unattended meminta pengguna pada setiap langkah.",
+      "Attended dan unattended sama-sama harus dipicu manual dari sesi pengguna desktop."
     ],
     "answer": 0,
-    "explanation": "Attended Bot bekerja berdampingan sebagai asisten virtual staf (dipicu tombol). Unattended Bot berjalan otonom di server terpusat (dijadwalkan jam 02.00 malam untuk memproses ribuan faktur batch)."
+    "explanation": "Pembedaan berkaitan dengan interaksi pengguna dan cara pemicu dijalankan. Bot tetap memerlukan otorisasi, pemantauan, penanganan pengecualian dan pemeliharaan. Istilah ini memakai sumber vendor sebagai pelengkap buku. Rujukan: UiPath Overview, Attended vs. Unattended automation, bagian Attended Automations dan Unattended Automations, https://docs.uipath.com/overview/other/latest/overview/attended-vs-unattended-automation, dibaca 12 Oktober 2026; Richardson AIS 4e Ch.15 memberi konteks otomasi."
   },
   {
     "tm": 12,
@@ -844,97 +844,97 @@ export const SII306_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Risiko pengendalian baru yang timbul akibat penggunaan bot RPA dalam proses akuntansi adalah...",
     "options": [
-      "Bot dapat menuntut kenaikan gaji dan uang lembur",
-      "Jika terjadi perubahan format pada website bank atau aplikasi ERP tanpa memperbarui script bot, bot dapat memproses transaksi yang salah secara massal dalam hitungan detik",
-      "Biaya listrik komputer meningkat 1000%",
-      "Data di laporan laba rugi otomatis berubah menjadi mata uang kripto"
+      "Bot memastikan format input selalu sama sehingga pengujian perubahan dapat dihentikan.",
+      "Perubahan format input tanpa pembaruan bot dapat menghasilkan kesalahan berulang.",
+      "Bot mengurangi risiko input sehingga seluruh otorisasi transaksi dapat dihapuskan.",
+      "Bot membuat laporan akhir benar sehingga jejak transaksi tidak perlu disimpan."
     ],
     "answer": 1,
-    "explanation": "Bot menjalankan aturan tanpa nalar manusia. Jika format interface berubah atau ada pengecualian (exception) yang belum diprogram, bot akan terus mengeksekusi kesalahan berulang dalam volume sangat besar jika tidak dipantau."
+    "explanation": "Perubahan input atau antarmuka dapat membuat aturan bot salah diterapkan berulang. Change control, testing dan pemantauan pengecualian tetap diperlukan. Rujukan: Richardson AIS 4e, Ch.15, Automation dan RPA, PDF 539-541."
   },
   {
     "tm": 13,
     "topic": "Blockchain & Triple-Entry Accounting",
     "difficulty": "medium",
-    "q": "Dalam arsitektur teknologi blockchain, setiap blok transaksi dihubungkan secara kriptografis ke blok sebelumnya melalui elemen data...",
+    "q": "Dalam arsitektur blockchain, elemen mana yang menghubungkan blok dengan catatan blok sebelumnya? Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524).",
     "options": [
-      "Alamat IP Router",
+      "Alamat jaringan validator saat ini",
       "Hash Pointer / Previous Block Hash",
-      "Nomor Rekening Bank Sentral",
-      "Tanda Tangan Basah Notaris"
+      "Kunci privat milik penerima transaksi",
+      "Jumlah saldo agregat seluruh transaksi"
     ],
     "answer": 1,
-    "explanation": "Setiap blok menyimpan cryptographic hash dari blok sebelumnya (Previous Hash). Jika peretas mencoba memanipulasi satu transaksi pada blok masa lalu, seluruh hash blok berikutnya akan menjadi tidak valid."
+    "explanation": "Previous hash mengikat data blok sebelumnya. Perubahan data mengubah digest, sehingga validasi hubungan perlu diperiksa ulang. Alamat jaringan dan saldo bukan pengganti hubungan hash; kunci privat tidak disalin sebagai tautan antarbIok. Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524)."
   },
   {
     "tm": 13,
     "topic": "Blockchain & Triple-Entry Accounting",
     "difficulty": "advanced",
-    "q": "Konsep 'Triple-Entry Accounting' yang dirumuskan oleh Ian Grigg memperluas sistem tata buku ganda (Double-Entry) dengan menambahkan entri ketiga berupa...",
+    "q": "Apa peran tambahan pada konsep triple-entry Ian Grigg? Sumber pelengkap primer: Grigg (2005), bagian The Initial Role of a Receipt dan Triple Entry.",
     "options": [
-      "Audit tahunan oleh kantor akuntan publik",
-      "Tanda terima kriptografis yang diverifikasi dan disimpan secara permanen pada buku besar terdistribusi bersama (Shared Distributed Ledger)",
-      "Setoran modal saham ketiga oleh pendiri perusahaan",
-      "Pembayaran pajak ganda ke kas negara"
+      "Menyediakan akun debit ketiga untuk setiap transaksi",
+      "Menyediakan tanda terima bertanda tangan sebagai bukti bersama",
+      "Menghapus pencatatan lokal setelah validator menyetujui transaksi",
+      "Menggantikan pemeriksaan nilai aset dengan verifikasi tanda tangan"
     ],
     "answer": 1,
-    "explanation": "Dalam Triple-Entry Accounting: Entitas A mencatat Kredit, Entitas B mencatat Debit, dan entri ketiga adalah transaksi kriptografis yang ditandatangani secara digital oleh kedua pihak dan disimpan pada public/consortium ledger yang immutable."
+    "explanation": "Grigg menjelaskan tanda terima bersama yang mendukung catatan pihak terkait. Paper tahun 2005 itu tidak mensyaratkan public blockchain modern. Tanda terima tidak menetapkan satu jurnal universal atau menggantikan pengujian nilai aset. Sumber pelengkap primer: [Grigg (2005), The Initial Role of a Receipt dan Triple Entry](https://iang.org/papers/triple_entry.html)."
   },
   {
     "tm": 13,
     "topic": "Blockchain & Triple-Entry Accounting",
     "difficulty": "advanced",
-    "q": "Program software otonom yang berjalan di atas blockchain dan secara otomatis mengeksekusi pembayaran piutang saat syarat kontrak terpenuhi (misal barang tiba di pelabuhan) disebut...",
+    "q": "Kode yang menjalankan tindakan ketika kondisi kontrak terpenuhi disebut apa? Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532).",
     "options": [
-      "Electronic Data Interchange (EDI)",
-      "Smart Contract",
-      "Virtual Private Network",
-      "Database View"
+      "Electronic data interchange protocol",
+      "Smart contract execution code",
+      "Virtual private network tunnel",
+      "Relational database query view"
     ],
     "answer": 1,
-    "explanation": "Smart Contract adalah kode logika terdesentralisasi ('if this, then that'). Begitu sensor IoT pelabuhan mengonfirmasi kontainer tiba, smart contract otomatis mentransfer dana dari escrow pembeli ke penjual tanpa intervensi manual bank."
+    "explanation": "Smart contract mengeksekusi kode berdasarkan kondisi yang didefinisikan. Jika syarat bergantung pada sensor atau data luar, keandalan input itu tetap perlu diuji. EDI bertukar dokumen, VPN menghubungkan jaringan dan view menyajikan hasil query. Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532)."
   },
   {
     "tm": 13,
     "topic": "Blockchain & Triple-Entry Accounting",
     "difficulty": "medium",
-    "q": "Karakteristik 'Immutability' pada buku besar blockchain memberikan manfaat signifikan bagi auditor akuntansi karena...",
+    "q": "Apa manfaat utama immutability bagi pemeriksaan catatan? Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532).",
     "options": [
-      "Laporan audit tidak perlu ditandatangani oleh partner KAP",
-      "Catatan transaksi historis tidak dapat diubah, dihapus, atau dimanipulasi secara sepihak, menciptakan jejak audit (audit trail) yang transparan dan tepercaya",
-      "Auditor dapat mengakses uang kas perusahaan secara langsung",
-      "Perusahaan dibebaskan dari kewajiban membuat laporan laba rugi"
+      "Memberi bukti bahwa nilai wajar aset selalu benar",
+      "Membantu menelusuri perubahan melalui hash dan validasi jaringan",
+      "Menghilangkan kebutuhan menguji otorisasi transaksi oleh pelanggan",
+      "Menjamin seluruh transaksi dunia nyata masuk ke ledger"
     ],
     "answer": 1,
-    "explanation": "Sifat immutable (tidak dapat diubah) menghilangkan risiko pemalsuan jurnal transaksi masa lalu (tamper-proof). Auditor mendapatkan Single Source of Truth yang dapat diverifikasi secara independen."
+    "explanation": "Hash dan validasi jaringan membuat perubahan catatan lebih mudah ditelusuri. Risiko manipulasi dan kesalahan input tetap perlu diuji; validasi ledger tidak membuktikan keberadaan atau nilai transaksi dunia nyata. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
   },
   {
     "tm": 13,
     "topic": "Blockchain & Triple-Entry Accounting",
     "difficulty": "advanced",
-    "q": "Meskipun transaksi dalam blockchain bersifat immutable dan aman secara kriptografis, mengapa auditor eksternal TETAP diperlukan dalam ekosistem bisnis?",
+    "q": "Mengapa validasi ledger belum cukup sebagai bukti semua asersi laporan keuangan? Rujukan: Richardson AIS 4e, hal. 507 (PDF 532).",
     "options": [
-      "Karena komputer blockchain tidak bisa dinyalakan tanpa auditor",
-      "Karena blockchain hanya menjamin bahwa data yang dicatat tidak diubah, namun tidak menjamin apakah transaksi di dunia nyata tersebut sah secara ekonomi, legal, atau bernilai wajar (Garbage In, Garbage Out problem)",
-      "Karena standar akuntansi melarang penggunaan teknologi komputer",
-      "Karena blockchain hanya berlaku untuk mata uang kripto ilegal"
+      "Karena pemeriksaan ledger sepenuhnya menggantikan asersi keberadaan aset",
+      "Karena catatan tervalidasi belum membuktikan hak dan nilai transaksi",
+      "Karena jumlah validator langsung menentukan kewajaran laporan keuangan",
+      "Karena bentuk hash menentukan klasifikasi akun dan estimasi akuntansi"
     ],
     "answer": 1,
-    "explanation": "Masalah 'Oracle' dan 'Garbage In, Garbage Out': Blockchain memverifikasi catatan, bukan realitas fisik (misal: jika ada kesepakatan fiktif atau aset rusak dicatat sebagai aset mulus, blockchain tetap mencatatnya). Auditor tetap bertugas menguji eksistensi dan penilaian wajar ekonomi riil."
+    "explanation": "Validasi jaringan memeriksa catatan menurut aturan jaringan. Kesepakatan fiktif atau nilai aset keliru masih dapat masuk. Auditor perlu bukti keberadaan, hak, kelengkapan dan penilaian, serta memahami kontrol input. Rujukan: Richardson AIS 4e, hal. 507 (PDF 532)."
   },
   {
     "tm": 14,
     "topic": "Integrasi ERP & Simulasi UAS",
     "difficulty": "medium",
-    "q": "Dalam sistem ERP terintegrasi, ketika barang jadi dikirimkan ke pelanggan dan surat jalan (Goods Issue) diposting, modul manakah yang otomatis saling berinteraksi?",
+    "q": "Dalam integrated project Richardson, bagaimana model proses dan database mendukung laporan keuangan?",
     "options": [
-      "Modul Penggajian (HR) dan Modul Pajak Pertambahan Nilai",
-      "Modul Penjualan (SD), Modul Manajemen Persediaan (MM), dan Modul Akuntansi Keuangan (FI - mendebit COGS dan mengkredit Persediaan)",
-      "Modul Pengadaan dan Modul Pemeliharaan Pabrik",
-      "Modul Legal dan Modul Hubungan Investor"
+      "Semua event langsung dijumlahkan sebagai kas tanpa membedakan pembayaran dan penjualan.",
+      "Event, resources dan hubungan dipetakan untuk menyiapkan query serta laporan yang sesuai.",
+      "Database menggantikan kebutuhan memodelkan kontrol dan menetapkan business requirements.",
+      "UML class diagram hanya mengatur tampilan laporan tanpa menghubungkan data antarproses."
     ],
     "answer": 1,
-    "explanation": "Integrasi sejati ERP: Posting Goods Issue di modul Sales & Distribution (SD) otomatis mengurangi stok fisik di Materials Management (MM) dan memicu posting jurnal keuangan real-time di modul Financial (FI): Debit Beban Pokok Penjualan, Kredit Persediaan."
+    "explanation": "Buku menghubungkan business requirements, BPMN, integrated UML class diagram, tabel/relasi dan query laporan. Penjualan, pembelian, timecards dan pembayaran mempunyai peran berbeda; integrasi tidak berarti semua event adalah kas. Rujukan: Richardson AIS 4e, Ch.10, Exhibit 10.8 dan Summary, PDF 408-410."
   },
   {
     "tm": 14,
@@ -942,27 +942,27 @@ export const SII306_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "advanced",
     "q": "Konsep 'Audit Trail' (Jejak Audit) dalam sistem ERP akuntansi modern berfungsi untuk...",
     "options": [
-      "Menghapus riwayat perubahan data untuk menghemat ruang disk",
-      "Menyediakan rekam jejak digital kronologis lengkap yang mencatat siapa, kapan, dan perubahan apa yang dilakukan pada setiap dokumen transaksi",
-      "Mempercepat kecepatan koneksi WiFi kantor",
-      "Mengganti sistem kode akun bagan perkiraan"
+      "Mengurangi volume data dengan menghapus seluruh riwayat setelah laporan ditutup.",
+      "Menelusuri pelaku, waktu dan perubahan transaksi untuk pemeriksaan bukti serta kontrol.",
+      "Menghilangkan kebutuhan otorisasi karena setiap transaksi sudah tercatat dalam sistem.",
+      "Membuktikan isi transaksi benar hanya dari urutan waktu pencatatan dokumen dalam sistem."
     ],
     "answer": 1,
-    "explanation": "Audit Trail adalah rekaman forensik sistem yang mendokumentasikan asal-usul transaksi: dari input awal, perubahan data, waktu, terminal/IP penginput, hingga posting ke neraca, memungkinkan pelacakan maju (vouching) dan mundur (tracing)."
+    "explanation": "Jejak audit mendukung penelusuran transaksi dan perubahan. Integritas catatan perlu pengendalian akses; jejak saja tidak membuktikan keberadaan, hak atau nilai transaksi. Rujukan: Richardson AIS 4e, Ch.11-13, Internal Controls dan Auditing AIS, PDF 411-433,475-488."
   },
   {
     "tm": 14,
     "topic": "Integrasi ERP & Simulasi UAS",
     "difficulty": "advanced",
-    "q": "Dalam evaluasi master data ERP, pengendalian preventif manakah yang paling efektif untuk memastikan bahwa jurnal penyesuaian manual (Manual Journal Entries) tidak disalahgunakan untuk manipulasi laba?",
+    "q": "Kontrol preventif apa yang sesuai untuk membatasi penyalahgunaan jurnal manual dalam AIS?",
     "options": [
-      "Memberikan hak akses superuser kepada seluruh staf pembukuan",
-      "Workflow Otorisasi Bertingkat (Approval Workflow) berdasarkan batas materialitas rupiah dan larangan jurnal manual ke akun Kas tanpa lampiran bukti sah",
-      "Menonaktifkan fitur pencatatan tanggal posting",
-      "Mengizinkan pencatatan jurnal yang tidak seimbang antara debit dan kredit"
+      "Memberikan akses tanpa batas pada seluruh staf agar koreksi dapat dicatat secepatnya.",
+      "Membatasi akses, memisahkan tugas dan mensyaratkan persetujuan serta bukti pendukung.",
+      "Menghapus identitas pengguna setelah posting agar data pegawai terlindungi dari pemeriksa.",
+      "Menyimpan jurnal tak seimbang sampai akhir tahun agar tim dapat memperbaiki semuanya."
     ],
     "answer": 1,
-    "explanation": "Manual Journal Entries adalah salah satu titik kerentanan fraud manajemen paling umum (SOX / ISA 240). Kontrol ERP harus mewajibkan workflow persetujuan berjenjang (dual-approval) dan alasan tertulis untuk setiap jurnal manual."
+    "explanation": "Akses yang dibatasi, pemisahan tugas, otorisasi dan bukti membatasi kesempatan manipulasi. Ambang persetujuan mengikuti risiko dan kebijakan; tidak ada larangan universal semua jurnal ke Kas pada sumber ini. Rujukan: Richardson AIS 4e, Ch.11, Control Activities, PDF 411-433."
   },
   {
     "tm": 14,
@@ -970,27 +970,27 @@ export const SII306_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Manakah pernyataan yang paling tepat mengenai peranan Chart of Accounts (Bagan Akun Standar) dalam arsitektur sistem informasi akuntansi ERP?",
     "options": [
-      "Daftar kode dan nama akun sistematis yang berfungsi sebagai kerangka pengelompokan dan pengikhtisaran seluruh transaksi keuangan perusahaan",
-      "Daftar nama karyawan penerima tunjangan makan siang",
-      "Brosur promosi produk yang dibagikan ke calon pelanggan",
-      "Daftar sandi WiFi kantor cabang"
+      "Mengelompokkan akun secara konsisten untuk mencatat transaksi dan menyusun laporan.",
+      "Mengelompokkan vendor menurut nama untuk mengizinkan pembayaran tanpa validasi.",
+      "Mengelompokkan pengguna menurut unit kerja untuk menggantikan otorisasi transaksi.",
+      "Mengelompokkan dokumen menurut tanggal untuk membuktikan nilai seluruh saldo akun."
     ],
     "answer": 0,
-    "explanation": "Chart of Accounts (COA) adalah tulang punggung klasifikasi finansial SIA: mengalokasikan kode numerik berstruktur hierarki (Aset, Liabilitas, Ekuitas, Pendapatan, Beban) yang memungkinkan posting dan agregasi laporan keuangan konsolidasian."
+    "explanation": "Bagan akun mendukung klasifikasi dan pengikhtisaran transaksi. Daftar akun tidak menggantikan master data, validasi atau kontrol akses. Rujukan: Richardson AIS 4e, Ch.10, Develop Financial Statement Information, PDF 408-410."
   },
   {
     "tm": 14,
     "topic": "Integrasi ERP & Simulasi UAS",
     "difficulty": "advanced",
-    "q": "Dalam simulasi ujian komprehensif UAS SIA, jika sebuah perusahaan berencana memigrasikan sistem warisan (Legacy System) ke cloud ERP, metode konversi manakah yang memiliki tingkat risiko paling rendah meskipun memerlukan biaya operasional ganda?",
+    "q": "Dalam integrated project Richardson, apa yang perlu dilakukan setelah data diimpor untuk menjaga keandalan query AIS?",
     "options": [
-      "Direct Conversion (Cut-over langsung sekaligus)",
-      "Parallel Conversion (Menjalankan sistem lama dan sistem baru secara bersamaan selama periode transisi tertentu)",
-      "Pilot Conversion",
-      "Phased Conversion"
+      "Menyusun query dari tabel impor dahulu dan menggunakan nama pelanggan sebagai kunci.",
+      "Menetapkan primary key, memeriksa tipe data, lalu menegakkan referential integrity.",
+      "Menggabungkan seluruh event dalam satu tabel dan menetapkan tanggal sebagai kunci.",
+      "Menyusun laporan dari tabel impor dahulu dan memeriksa hubungan setelah penutupan."
     ],
     "answer": 1,
-    "explanation": "Parallel Conversion adalah metode konversi paling aman karena sistem lama tetap berjalan sebagai jaring pengaman (safety net) sambil membandingkan output sistem baru. Jika sistem baru mengalami error atau crash, operasi bisnis tetap dapat berjalan normal menggunakan sistem lama."
+    "explanation": "PDF 409 mengharuskan koreksi data, primary key, tipe data dan struktur tabel yang efisien, kemudian relasi dengan referential integrity. Tanpa integritas referensial, keandalan query terpengaruh. Langkah ini memakai UML class diagram sebagai blueprint. Rujukan: Richardson AIS 4e, Ch.10, Import Data into Access, Create Efficient Tables, and Set Relationships, PDF 408-409, Exhibit 10.9."
   }
 ];
 

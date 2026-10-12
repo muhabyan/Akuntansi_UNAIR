@@ -1,0 +1,45 @@
+{
+  "code": "AKA103",
+  "tm": 9,
+  "source": "RPS PDF 5; Byars dan Stanberry, Business Ethics Ch.8, bagian 8.1-8.5",
+  "finding": "DEI belum mencakup seluruh topik hak pada RPS.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "DEI belum mencakup seluruh topik hak pada RPS."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Topik RPS",
+        "Analisis kasus"
+      ],
+      "rows": [
+        [
+          "Kemampuan dan keyakinan berbeda",
+          "Hubungkan kebutuhan akomodasi dengan tugas dan keselamatan."
+        ],
+        [
+          "Identitas dan orientasi",
+          "Uji penghormatan, privasi dan kriteria kompetensi."
+        ],
+        [
+          "Ketimpangan pendapatan",
+          "Jelaskan dasar kompensasi dan peluang."
+        ],
+        [
+          "Hak hewan",
+          "Bedakan kewajiban hukum, kesejahteraan dan argumen moral."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: RPS PDF 5; Byars dan Stanberry, Business Ethics Ch.8, bagian 8.1-8.5"
+    }
+  ]
+}

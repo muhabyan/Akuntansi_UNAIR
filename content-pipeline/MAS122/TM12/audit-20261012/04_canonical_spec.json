@@ -1,0 +1,445 @@
+{
+  "code": "MAS122",
+  "tm": 12,
+  "reading": {
+    "tm": 12,
+    "title": "Metode Non-parametrik",
+    "ref": "DA 16",
+    "intro": "Saat asumsi normalitas tidak terpenuhi atau data berskala ordinal/nominal, uji non-parametrik menjadi alternatif yang valid.",
+    "objectives": [
+      "Mengetahui kapan memakai uji non-parametrik.",
+      "Mencocokkan uji non-parametrik dengan padanan parametriknya.",
+      "Menerapkan uji chi-square."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "A. Kapan Dipakai?"
+      },
+      {
+        "kind": "p",
+        "text": "Saat data tidak normal, sampel kecil, atau berskala **ordinal/nominal**. Uji ini berbasis peringkat/frekuensi, bukan nilai aktual."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Parametrik",
+          "Padanan Non-parametrik"
+        ],
+        "rows": [
+          [
+            "Uji-t satu sampel",
+            "Uji tanda / Wilcoxon signed-rank"
+          ],
+          [
+            "Uji-t independen",
+            "Mann-Whitney U"
+          ],
+          [
+            "ANOVA satu arah",
+            "Kruskal-Wallis"
+          ],
+          [
+            "Korelasi Pearson",
+            "Korelasi Spearman"
+          ]
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "B. Uji Chi-Square"
+      },
+      {
+        "kind": "formula",
+        "text": "χ² = Σ [(O − E)² ÷ E]",
+        "note": "O = frekuensi observasi, E = frekuensi harapan. Untuk uji kebaikan-suai (goodness of fit) & independensi (tabel kontingensi)."
+      },
+      {
+        "kind": "callout",
+        "variant": "info",
+        "title": "Trade-off",
+        "text": "Uji non-parametrik lebih fleksibel tetapi umumnya **kurang kuat (lower power)** dibanding parametrik bila asumsi parametrik sebenarnya terpenuhi."
+      },
+      {
+        "kind": "h2",
+        "text": "Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan"
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Catatan kurator",
+        "text": "Bagian di bawah ini menambah materi inti TM 12 dengan glossary istilah, contoh SPSS output, asumsi, dan jebakan ujian. Diadaptasi dari modul terpadu Pra-UAS."
+      },
+      {
+        "kind": "h2",
+        "text": "Metode Non-parametrik Alternatif ketika data tidak cocok untuk uji parametrik"
+      },
+      {
+        "kind": "p",
+        "text": "Tidak semua data bisnis berbentuk angka rasio yang normal. Opini audit, tingkat kepuasan, ranking risiko, atau data kecil yang sangat miring membutuhkan metode non-parametrik. Metode ini sering berbasis frekuensi atau ranking, bukan rata-rata dan varians."
+      },
+      {
+        "kind": "h3",
+        "text": "Kapan Memakai Metode Non-parametrik?"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Survei akuntansi sering memakai skala Likert yang lebih aman dibaca sebagai ordinal.",
+          "Audit dan tata kelola sering memakai kategori seperti WTP/non-WTP, tepat waktu/terlambat.",
+          "Data kecil atau tidak normal dapat membuat uji parametrik kurang tepat."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Target Kompetensi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Memilih chi-square, Mann-Whitney, Wilcoxon, Kruskal-Wallis, atau Spearman.",
+          "Membedakan data kategorik, ordinal, dan numerik tidak normal.",
+          "Membaca output non-parametrik SPSS.",
+          "Menulis interpretasi berbasis ranking atau frekuensi."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Non-parametrik"
+      },
+      {
+        "kind": "p",
+        "text": "Metode yang tidak terlalu bergantung pada asumsi distribusi normal."
+      },
+      {
+        "kind": "h3",
+        "text": "Rank"
+      },
+      {
+        "kind": "p",
+        "text": "Urutan nilai setelah data diberi peringkat."
+      },
+      {
+        "kind": "h3",
+        "text": "Chi-square"
+      },
+      {
+        "kind": "p",
+        "text": "Uji untuk hubungan atau kecocokan frekuensi data kategorik."
+      },
+      {
+        "kind": "h3",
+        "text": "Mann-Whitney U"
+      },
+      {
+        "kind": "p",
+        "text": "Uji dua kelompok independen berbasis ranking."
+      },
+      {
+        "kind": "h3",
+        "text": "Wilcoxon Signed-Rank"
+      },
+      {
+        "kind": "p",
+        "text": "Uji dua pengukuran berpasangan berbasis ranking."
+      },
+      {
+        "kind": "h3",
+        "text": "Kruskal-Wallis"
+      },
+      {
+        "kind": "p",
+        "text": "Uji tiga kelompok atau lebih berbasis ranking."
+      },
+      {
+        "kind": "h3",
+        "text": "Spearman rho"
+      },
+      {
+        "kind": "p",
+        "text": "Korelasi berbasis ranking."
+      },
+      {
+        "kind": "h3",
+        "text": "Expected count"
+      },
+      {
+        "kind": "p",
+        "text": "Frekuensi yang diharapkan dalam chi-square jika H₀ benar."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai chi-square"
+      },
+      {
+        "kind": "p",
+        "text": "Kedua variabel berbentuk kategori."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai Mann-Whitney"
+      },
+      {
+        "kind": "p",
+        "text": "Dua kelompok independen dan Y ordinal/tidak normal."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai Wilcoxon"
+      },
+      {
+        "kind": "p",
+        "text": "Dua pengukuran berpasangan dan data ordinal/tidak normal."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai Kruskal-Wallis"
+      },
+      {
+        "kind": "p",
+        "text": "Tiga kelompok atau lebih dan Y ordinal/tidak normal."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai Spearman"
+      },
+      {
+        "kind": "p",
+        "text": "Ingin mengukur hubungan dua variabel ordinal/ranking."
+      },
+      {
+        "kind": "p",
+        "text": "Contoh data kategorik: opini audit dan ketepatan waktu pelaporan."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Opini Audit",
+          "Tepat Waktu",
+          "Terlambat",
+          "Total"
+        ],
+        "rows": [
+          [
+            "WTP",
+            "42",
+            "8",
+            "50"
+          ],
+          [
+            "Non-WTP",
+            "18",
+            "22",
+            "40"
+          ],
+          [
+            "Total",
+            "60",
+            "30",
+            "90"
+          ]
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Baris = opini audit, kolom = ketepatan waktu."
+      },
+      {
+        "kind": "formula",
+        "text": "Expected Count (E) = (Total Baris × Total Kolom) / Grand Total",
+        "note": "Frekuensi yang diharapkan jika kedua variabel sama sekali tidak berhubungan. Contoh untuk WTP & Tepat Waktu: (50 × 60) / 90 = 33,33."
+      },
+      {
+        "kind": "formula",
+        "text": "χ² = Σ [ (O - E)² / E ]",
+        "note": "O = frekuensi observasi aktual, E = expected count. Menjumlahkan proporsi kuadrat selisih O dan E untuk seluruh sel."
+      },
+      {
+        "kind": "p",
+        "text": "Semakin besar selisih aktual vs harapan, nilai chi-square (χ²) cenderung membesar sehingga H₀ (tidak ada hubungan) akan ditolak."
+      },
+      {
+        "kind": "p",
+        "text": "Jika p-value < 0,05, terdapat hubungan signifikan."
+      },
+      {
+        "kind": "p",
+        "text": "Persentase membantu menjelaskan arah pola kategori."
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Ringkasan Rumus Chi-Square & Spearman",
+        "text": "**Chi-Square (χ²):** Σ((O − E)² / E)\n• **Expected Count (E):** (Total Baris × Total Kolom) / Grand Total\n• **Spearman Rank (ρ):** Mengukur korelasi untuk data ordinal berbasis peringkat (ranking).\n\n**Asumsi Data Frekuensi:** Uji Chi-Square menggunakan hitungan frekuensi (jumlah kasus), bukan nilai rata-rata (mean)."
+      },
+      {
+        "kind": "h3",
+        "text": "Independensi observasi"
+      },
+      {
+        "kind": "p",
+        "text": "Satu observasi tidak boleh dihitung berulang dalam beberapa sel."
+      },
+      {
+        "kind": "h3",
+        "text": "Expected count memadai"
+      },
+      {
+        "kind": "p",
+        "text": "Jika expected count terlalu kecil, Fisher Exact Test dapat dipertimbangkan."
+      },
+      {
+        "kind": "h3",
+        "text": "Jebakan Ujian & Kesalahan Umum"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Memakai ANOVA untuk data Y yang sebenarnya ordinal/kategorik tanpa pertimbangan.",
+          "Menafsirkan Mann-Whitney sebagai perbandingan mean murni.",
+          "Tidak memakai Weight Cases pada SPSS ketika data berupa frekuensi rekap.",
+          "Tidak memeriksa expected count pada chi-square."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di SPSS"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Untuk chi-square: buat variabel kategori dan frekuensi jika data sudah berupa rekap.",
+          "Gunakan Data → Weight Cases jika memakai data frekuensi.",
+          "Analyze → Descriptive Statistics → Crosstabs.",
+          "Row = variabel pertama, Column = variabel kedua.",
+          "Statistics → centang Chi-square.",
+          "Cells → centang Observed, Expected, Row %, dan Column %.",
+          "Untuk Mann-Whitney/Wilcoxon/Kruskal-Wallis: Analyze → Nonparametric Tests → Legacy Dialogs."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di Excel"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Susun observed table.",
+          "Hitung expected count pada tabel baru.",
+          "Gunakan =CHISQ.TEST(observed_range, expected_range).",
+          "Untuk ranking, gunakan =RANK.AVG() sebagai latihan manual."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Crosstab"
+      },
+      {
+        "kind": "p",
+        "text": "Menunjukkan frekuensi dan persentase kategori."
+      },
+      {
+        "kind": "h3",
+        "text": "Pearson Chi-Square"
+      },
+      {
+        "kind": "p",
+        "text": "Menunjukkan nilai χ² dan Sig."
+      },
+      {
+        "kind": "h3",
+        "text": "Expected count"
+      },
+      {
+        "kind": "p",
+        "text": "Mengecek kelayakan chi-square."
+      },
+      {
+        "kind": "h3",
+        "text": "Ranks table"
+      },
+      {
+        "kind": "p",
+        "text": "Pada Mann-Whitney/Kruskal-Wallis, menunjukkan mean rank tiap kelompok."
+      },
+      {
+        "kind": "h3",
+        "text": "Test Statistics"
+      },
+      {
+        "kind": "p",
+        "text": "Menunjukkan p-value uji non-parametrik."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Chi-square lebih tepat jika kedua variabel berbentuk kategorik."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: E = 50×60/90 = 33,33."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Kruskal-Wallis, karena terdapat tiga kelompok independen dan Y berupa skor ordinal."
+      }
+    ]
+  },
+  "questions": [],
+  "flashcards": [
+    {
+      "id": "mas122-tm12-66",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Apa metode nonparametrik?",
+      "category": "Konsep",
+      "front": "Apa metode nonparametrik?",
+      "back": "Metode dengan asumsi distribusi yang berbeda/lebih terbatas dari model parametrik tertentu; tetap mempunyai syarat desain dan data. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+    },
+    {
+      "id": "mas122-tm12-67",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Apa goodness-of-fit chi-square?",
+      "category": "Konsep",
+      "front": "Apa goodness-of-fit chi-square?",
+      "back": "Membandingkan frekuensi observasi dengan frekuensi ekspektasi model kategori yang ditetapkan. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+    },
+    {
+      "id": "mas122-tm12-68",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Apa uji independence chi-square?",
+      "category": "Konsep",
+      "front": "Apa uji independence chi-square?",
+      "back": "Menguji hubungan dua variabel kategori dalam tabel kontingensi, dengan observasi independen. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+    },
+    {
+      "id": "mas122-tm12-69",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Apa expected frequency pada tabel kontingensi?",
+      "category": "Konsep",
+      "front": "Apa expected frequency pada tabel kontingensi?",
+      "back": "Total baris × total kolom / total sampel, pada hipotesis independensi. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+    },
+    {
+      "id": "mas122-tm12-70",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Apa statistik chi-square?",
+      "category": "Konsep",
+      "front": "Apa statistik chi-square?",
+      "back": "Jumlah (observasi-ekspektasi)^2/ekspektasi pada sel; jangan memakai proporsi tanpa mengubahnya ke frekuensi sesuai model. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+    },
+    {
+      "id": "mas122-tm12-71",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Apa yang diuji jika sel ekspektasi kecil?",
+      "category": "Konsep",
+      "front": "Apa yang diuji jika sel ekspektasi kecil?",
+      "back": "Periksa kecukupan pendekatan chi-square; pertimbangkan penggabungan bermakna atau uji lain yang sesuai desain. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

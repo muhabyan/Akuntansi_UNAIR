@@ -74,7 +74,7 @@ DIO hari persediaan, DSO hari penagihan piutang, dan DPO hari pembayaran utang p
 
 ```formula
 DIO=\frac{Persediaan}{COGS/365}\qquad DSO=\frac{Piutang}{Penjualan\ kredit/365}\qquad DPO=\frac{Utang\ pemasok}{Pembelian\ kredit/365}
-[hal. 566; PDF 608]
+[hal. 567-568; PDF 609-610]
 ```
 
 <!-- self-check question="Mengapa DPO dikurangkan pada CCC?" -->
@@ -92,7 +92,7 @@ Periksa pola intrabulan jika arus besar terjadi sebelum pelanggan membayar. [hal
 
 ```formula
 Kas_{pra}=Kas_{awal}+Penerimaan-Pembayaran\qquad Pinjaman=\max(0,Kas_{minimum}-Kas_{pra})
-[hal. 566; PDF 608]
+Kas pada tanggal pembayaran dan penerimaan aktual. [hal. 570-573; PDF 612-615]
 ```
 
 <!-- self-check question="Mengapa penjualan kredit belum masuk kas bulan yang sama?" -->
@@ -112,7 +112,7 @@ Empat unsur kebijakan kredit adalah jangka pembayaran, diskon, standar pelanggan
 Evaluasi perubahan kebijakan dengan tambahan margin kontribusi, kerugian piutang, biaya penagihan dan biaya dana atas investasi tambahan, lalu uji risiko yang tidak tertangkap rata-rata. [hal. 578-581; PDF 620-623]
 
 <!-- self-check question="Apa empat unsur kebijakan kredit?" -->
-Kas diperlukan untuk transaksi dan menghadapi ketidakpastian. Penempatan sementara pada marketable securities, sekuritas mudah diperdagangkan, menimbang likuiditas, keamanan, imbal hasil dan biaya transaksi. [hal. cetak 573-577; PDF 615-619]
+Periode kredit, diskon tunai, standar pelanggan yang memperoleh kredit, dan kebijakan penagihan. Evaluasi penjualan, kerugian piutang serta dana yang tertahan bila unsur tersebut berubah. [hal. 579-581; PDF 621-623]
 <!-- self-check:end -->
 
 
@@ -151,6 +151,35 @@ pesan utama: DIO 60 + DSO 60 - DPO 40 = CCC 80 hari.
 versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: Cash Conversion Cycle: lini waktu GFI. DIO 60 + DSO 60 - DPO 40 = CCC 80 hari.
 ```
+
+## 4a. Hubungkan angka dengan keputusan kas
+
+Rasio harian menggunakan pembagi yang sesuai arusnya. Buku menghitung inventory conversion period dengan persediaan dibagi penjualan harian, dan payables deferral period dengan utang dagang dibagi pembelian harian. Buku juga memperbolehkan COGS harian pada kedua rasio tersebut karena persediaan dan utang dicatat pada biaya. Pendekatan biaya perlu dinyatakan, terutama saat margin membuat penjualan berbeda dari biaya. [hal. 567-568; PDF 609-610]
+
+Saldo akhir dipakai pada contoh buku sebagai pendekatan perusahaan stabil. Bila usaha musiman, saldo rata-rata yang mewakili periode lebih berguna. Jangan mengganti 365 hari dengan 360 pada satu rasio saja. CCC yang lebih pendek dapat mengurangi kebutuhan dana, tetapi menunda utang di luar kontrak dapat merusak hubungan pemasok. [hal. 567-569; PDF 609-611]
+
+
+```visual
+id: V-TM11-05
+jenis: chart
+judul: Allied Cash Budget: kebutuhan pinjaman dan surplus
+sumber: Table 16.1 baris 40, hal. 571 (PDF 613), angka bulat juta USD pada buku.
+isi: ["Juli minus 21: kebutuhan pinjaman", "September minus 100: kebutuhan terbesar", "Desember 102: surplus untuk investasi"]
+hubungan: Sumbu, satuan, legenda dan penanda dibaca bersama asumsi pada teks
+pesan utama: Dana diperlukan saat saldo kumulatif berada di bawah target; gunakan angka bulat tabel sumber.
+versi HP: grafik 360 unit dengan label 16 unit; rincian desktop dapat dibuka
+alt text: Allied Cash Budget: kebutuhan pinjaman dan surplus. Dana diperlukan saat saldo kumulatif berada di bawah target; gunakan angka bulat tabel sumber.
+data: {"panels": [{"title": "Kas setelah target saldo minimum", "xlabel": "Bulan: 7 Juli sampai 12 Desember", "ylabel": "Surplus (+)/pinjaman (-), juta USD", "series": [{"label": "Surplus atau kebutuhan pinjaman", "points": [[7, -21], [8, -58], [9, -100], [10, -56], [11, 58], [12, 102]]}], "xmin": 7, "xmax": 12, "ymin": -120, "ymax": 120, "xticks": [7, 8, 9, 10, 11, 12], "markers": [{"x": 9, "y": -100, "label": "September: pinjaman 100 juta USD"}]}]}
+```
+
+
+Cara membaca: nilai negatif pada kurva Allied adalah kebutuhan pinjaman kumulatif setelah mempertahankan kas 10 juta USD. Angka September adalah minus 100 juta USD, kebutuhan terbesar pada tabel. November dan Desember berada di atas nol dan menunjukkan surplus yang tersedia setelah utang berkurang. Grafik memakai angka pembulatan Table 16.1, bukan arus kas harian. [hal. 571-573; PDF 613-615]
+
+Aging schedule mengelompokkan piutang menurut umur. DSO yang sama dapat menyembunyikan pelanggan yang sangat terlambat bila pelanggan lain membayar lebih awal. Credit policy mencakup periode kredit, diskon, standar pelanggan dan kebijakan penagihan; perubahan salah satu unsur perlu menilai penjualan, kerugian piutang dan dana yang tertahan. [hal. 578-581; PDF 620-623]
+
+<!-- self-check question="Apakah anggaran kas akhir bulan cukup menentukan fasilitas bank?" -->
+Belum tentu. Pembayaran intrabulan dapat terjadi sebelum penerimaan pelanggan, sehingga kebutuhan puncak dapat lebih besar. Anggaran bulanan memberi dasar; jadwal arus harian perlu diperiksa untuk menetapkan fasilitas. [hal. 572-573; PDF 614-615]
+<!-- self-check:end -->
 
 <!-- pendalaman:start judul="Pendalaman: model dan bukti sumber" -->
 ### Pendalaman: model dan bukti sumber

@@ -31,9 +31,9 @@ interface CourseBlockCardProps {
 
 /**
  * Diagram canvas for phones. A wide diagram sits in a sideways-scrolling frame; when its labels would shrink below a
- * readable size (about 9px on screen), the frame is made wide enough to keep them at that size instead.
+ * readable size (12px on screen), the frame is made wide enough to keep them at that size instead.
  */
-const MIN_LABEL_PX_PHONE = 9;
+const MIN_LABEL_PX_PHONE = 12;
 /** Wider screens keep the whole diagram in view; only phones get a scrollable canvas. */
 const MAX_CANVAS_PX = 1800;
 function DiagramCanvas({ className, html }: { className: string; html: string }) {
@@ -748,8 +748,9 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
               {overview.badge && <span className="rounded-full bg-sky-100 px-3 py-1 text-sm font-bold text-sky-800 dark:bg-sky-950 dark:text-sky-200">{overview.badge}</span>}
             </div>
             {block.svg && <>
-              <div className="hidden md:block"><CourseBlockCard block={{ ...block, overview: undefined, caption: undefined }} isSimulation={isSimulation} /></div>
-              <details className="m-3 rounded-xl border border-line p-3 md:hidden"><summary className="cursor-pointer text-sm font-bold">Perbesar diagram rinci</summary><CourseBlockCard block={{ ...block, overview: undefined, caption: undefined }} isSimulation={isSimulation} /></details>
+              <div className="hidden md:block"><CourseBlockCard block={{ ...block, overview: undefined, mobileSvg: undefined, caption: undefined }} isSimulation={isSimulation} /></div>
+              {block.mobileSvg && <div className="w-full min-w-0 md:hidden" data-testid="mobile-finance-graph" dangerouslySetInnerHTML={{ __html: block.mobileSvg }} />}
+              <details className="m-3 rounded-xl border border-line p-3 md:hidden"><summary className="cursor-pointer text-sm font-bold">Perbesar diagram rinci</summary><CourseBlockCard block={{ ...block, overview: undefined, mobileSvg: undefined, caption: undefined }} isSimulation={isSimulation} /></details>
             </>}
               <div className={`grid grid-cols-1 gap-4 p-4 lg:grid-cols-2 lg:p-5 ${block.svg && !block.sourceImages ? 'md:hidden' : ''}`} role="group" aria-label={block.altText ?? overview.heading}>
               {overview.cards.map((card, index) => (
@@ -797,7 +798,12 @@ export default function CourseBlockCard({ block, isSimulation = false, enableLeg
                 const hasMobileOverview = isSmlDiagram || isAgencyDiagram || Boolean(block.mobileFlow || block.mobileSvg);
                 const processedSvg = hasDiagramClass
                   ? block.svg
-                  : block.svg.replace('<svg', '<svg class="course-diagram-svg"');
+                  : block.svg.replace(/<svg\b([^>]*)>/i, (_tag, attributes: string) => {
+                    const merged = /\bclass\s*=/.test(attributes)
+                      ? attributes.replace(/\bclass=(['"])(.*?)\1/, (_class, quote: string, value: string) => `class=${quote}course-diagram-svg ${value}${quote}`)
+                      : ` class="course-diagram-svg"${attributes}`;
+                    return `<svg${merged}>`;
+                  });
                 const diagramWidth = block.svg.includes('course-diagram-bpmn') ? 'min-w-[1200px] xl:min-w-0' : isDetailedDiagram ? 'min-w-[900px] xl:min-w-0' : 'min-w-[620px] sm:min-w-0';
                 return (
                   <>

@@ -1,0 +1,27 @@
+{
+  "code": "AKM201",
+  "tm": 10,
+  "source": "Carter, Cost Accounting 14e, hal.11-4, PDF 320",
+  "finding": "Produktivitas tenaga kerja dan biaya per unit harus dibedakan.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Insentif upah: jam dan unit dari sumber",
+      "prompt": "Mengapa upah per jam meningkat tetapi biaya per unit turun?",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Sebelum insentif: 6 USD per jam, 5 unit per jam, biaya tenaga kerja 1,20 USD/unit. Sesudah: 6,60 USD per jam dan 6 unit per jam, biaya 1,10 USD/unit. Tarif per jam naik 10%, output per jam naik 20%. Buku juga memisahkan komponen bahan dan overhead; keputusan tetap menjaga kualitas dan keselamatan. Rujukan: Carter, Cost Accounting 14e, hal.11-4 PDF 320"
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Carter, Cost Accounting 14e, hal.11-4, PDF 320"
+    }
+  ]
+}

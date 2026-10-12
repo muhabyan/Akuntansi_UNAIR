@@ -1,0 +1,24 @@
+{
+  "code": "EKT109",
+  "tm": 9,
+  "source": "Samuelson dan Nordhaus, Economics, Ch.21, fungsi konsumsi dan tabungan; slide lokal Closed Economy",
+  "finding": "Break-even rumah tangga berbeda dari keseimbangan output seluruh ekonomi.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Break-even rumah tangga berbeda dari keseimbangan output seluruh ekonomi."
+    },
+    {
+      "kind": "p",
+      "text": "Pada C = a + bY, titik C = Y berarti tabungan nol. Itu belum menunjukkan keseimbangan makro karena investasi, pemerintah atau sektor luar negeri dapat menambah pengeluaran. MPC = perubahan C / perubahan Y; MPS = 1 - MPC pada identitas disposable income yang sama. Nyatakan pajak jika pendapatan bruto dipakai."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Samuelson dan Nordhaus, Economics, Ch.21, fungsi konsumsi dan tabungan; slide lokal Closed Economy"
+    }
+  ]
+}

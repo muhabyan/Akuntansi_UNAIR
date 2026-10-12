@@ -1,5 +1,5 @@
+// PJK301 TM13: audited formula notes, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM13_READING: Reading = {
   "tm": 13,
   "title": "PPnBM, Saat Terutang, Faktur, dan Retur",
@@ -112,7 +112,7 @@ export const TM13_READING: Reading = {
     {
       "kind": "formula",
       "text": "\\mathrm{Tagihan}=\\mathrm{Harga}+\\mathrm{PPN}+\\mathrm{PPnBM}",
-      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
+      "note": "Harga di sini adalah nilai sebelum PPN dan PPnBM. PPnBM dihitung atas DPP sesuai klasifikasi; jangan menambahkan PPnBM ke DPP PPN tanpa dasar. Rujukan: UU PPN Pasal 5, 8, 8A dan 10. Tarif PPnBM dan tahun dinyatakan pada soal."
     },
     {
       "kind": "solution-reveal",

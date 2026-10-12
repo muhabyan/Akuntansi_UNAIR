@@ -97,7 +97,7 @@ Mengapa sinergi tidak ditambahkan dua kali?
 
 ```formula
 NPV_A=Synergy-Premium-Cost_{integrasi}\qquad Bid_{max}=V_B+Synergy-Cost_{integrasi}
-CF E adalah kas kepada ekuitas, rs biaya ekuitas target, g pertumbuhan jangka panjang. Terminal value, nilai kelanjutan, berada di akhir proyeksi dan masuk satu kali. [hal. 749; PDF 791] [hal. 751; PDF 793]
+Synergy adalah tambahan nilai, Premium harga tawaran dikurangi nilai target mandiri, dan Cost integrasi biaya tambahan yang belum tercakup pada sinergi. Jangan mengurangi biaya dua kali. Rumus ini turunan pembagian manfaat Figure 21.1. [hal. 752; PDF 794]
 ```
 
 Pembayaran dengan saham menukar kepemilikan pemegang saham lama. Harga tawaran menentukan pembagian manfaat sinergi antara pengakuisisi dan target. Nilai merger perlu didasarkan pada arus kas dan risiko yang konsisten, serta diperiksa melalui due diligence. [hal. 750; PDF 792] [hal. 752; PDF 794]
@@ -141,6 +141,22 @@ versi HP: overview dengan kartu teks; grafik desktop tetap dapat dibuka
 alt text: A View of Merger Analysis: rentang tawaran. Tawaran membagi total manfaat antara pemilik kedua perusahaan.
 data: {"panels":[{"title":"Manfaat pemegang saham","xlabel":"Harga target (juta USD)","ylabel":"Perubahan kekayaan (juta USD)","series":[{"label":"Hightech (acquirer)","points":[[52.5,44],[106.5,-10]]},{"label":"Apex (target)","points":[[52.5,-10],[106.5,44]]}],"xmin":52.5,"xmax":106.5,"ymin":-15,"ymax":45,"xticks":[62.5,86.5,96.5]}]}
 ```
+
+## 4a. Periksa asal sinergi dan risiko tawaran
+
+Sumber sinergi buku terdiri atas operating economies, penghematan operasi; financial economies, penghematan pendanaan dan transaksi; differential efficiency, perbaikan pengelolaan aset; serta market power, kekuatan pasar. Kekuatan pasar yang menekan persaingan dapat menghadapi pembatasan hukum pada konteks sumber. Tidak semua sumber sinergi pasti tersedia pada setiap merger. [hal. 742; PDF 784]
+
+Alasan lain pada buku adalah pajak, membeli aset di bawah biaya penggantian, diversifikasi, insentif pribadi manajer dan breakup value, nilai jika bagian perusahaan dilepas terpisah. Nilai gabungan perlu dibandingkan dengan alternatif itu. Kompensasi dan kendali dapat menjelaskan motif manajemen, tetapi motif tertentu harus dibuktikan dari kasus. [hal. 742-744; PDF 784-786]
+
+Lima fungsi bank investasi pada bab adalah menyusun merger, mengembangkan pertahanan, menilai harga wajar, mendukung pendanaan dan menjalankan merger arbitrage. Arbitrase merger mengambil posisi berdasarkan dugaan transaksi selesai; penolakan atau perubahan syarat tetap menimbulkan risiko. Fairness opinion adalah penilaian kewajaran keuangan, bukan jaminan sinergi akan tercapai. [hal. 754-758; PDF 796-800]
+
+Divestiture mencakup penjualan unit, spin-off, likuidasi unit dan leveraged buyout sesuai pembagian sumber. Spin-off membentuk perusahaan terpisah dengan saham diberikan kepada pemilik; penjualan unit menghasilkan kas bagi penjual. Pilih alternatif berdasarkan nilai bersih, kebutuhan dana dan fokus operasi. [hal. 761-763; PDF 803-805]
+
+Pada Figure 21.1, sumbu horizontal adalah harga seluruh target dalam juta USD, bukan harga per saham. Titik manfaat nol target adalah 62,5; titik manfaat nol pengakuisisi adalah 96,5. Dalam asumsi buku, tawaran 86,5 membagi sinergi 34 menjadi 24 bagi target dan 10 bagi pengakuisisi. Tidak ada biaya tambahan di luar yang sudah tercermin pada nilai 96,5. [hal. 752; PDF 794]
+
+<!-- self-check question="Mengapa fairness opinion tidak cukup membuktikan merger akan berhasil?" -->
+Penilaian kewajaran membantu memeriksa harga dan informasi transaksi. Keberhasilan masih memerlukan realisasi kas, integrasi dan asumsi risiko yang tepat. Bandingkan harga dengan nilai serta alternatif transaksi. [hal. 753-758; PDF 795-800]
+<!-- self-check:end -->
 
 <!-- pendalaman:start judul="Pendalaman: model dan bukti sumber" -->
 ### Pendalaman: model dan bukti sumber

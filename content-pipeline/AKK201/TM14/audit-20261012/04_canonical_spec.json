@@ -1,0 +1,49 @@
+{
+  "code": "AKK201",
+  "tm": 14,
+  "source": "Kieso, Intermediate Accounting IFRS 5e, Ch.6-8; modul tutor lokal UAS AKM1 TM8-14 PDF 2-13",
+  "finding": "Prioritas tutor perlu dibedakan dari bukti arsip ujian.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kontrol jawaban",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Rekonsiliasi",
+          "Saldo bank disesuaikan sama dengan buku disesuaikan."
+        ],
+        [
+          "Allowance",
+          "Saldo target berbeda dari beban perubahan akun."
+        ],
+        [
+          "Inventory cost flow",
+          "HPP + persediaan akhir = barang tersedia."
+        ],
+        [
+          "LCNRV",
+          "Nilai tiap item memakai biaya dan NRV pada basis sama."
+        ],
+        [
+          "Estimasi retail/gross profit",
+          "Persentase, markup/markdown dan basis harga dinyatakan."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Prioritas ini merupakan perkiraan dari cakupan bab dan modul tutor. Arsip lokal UTS tidak membuktikan bentuk atau bobot UAS. Latihan yang menggunakan data buatan tetap perlu menyebutkan asumsi dan satuan."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Ch.6-8; modul tutor lokal UAS AKM1 TM8-14 PDF 2-13"
+    }
+  ]
+}

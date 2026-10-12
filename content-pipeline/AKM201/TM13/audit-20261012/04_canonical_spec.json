@@ -1,0 +1,41 @@
+{
+  "code": "AKM201",
+  "tm": 13,
+  "source": "Carter, Cost Accounting 14e, Ch.14, PDF 431-435",
+  "finding": "ABC harus memisahkan pemicu aktivitas dari jumlah produk.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Tahap",
+        "Pemeriksaan"
+      ],
+      "rows": [
+        [
+          "Kumpulkan biaya per aktivitas",
+          "Pool biaya konsisten dengan definisi aktivitas."
+        ],
+        [
+          "Tentukan driver dan tarif",
+          "Biaya pool / kapasitas atau jumlah driver sesuai soal."
+        ],
+        [
+          "Bebankan produk",
+          "Tarif × konsumsi driver produk."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Dua produk dengan unit sama dapat memakai jumlah setup berbeda. Ilustrasi buatan: pool setup Rp12 juta, 30 setup, tarif Rp400.000/setup. Produk A memakai 5 setup, alokasi Rp2 juta; B 25 setup, Rp10 juta. Total Rp12 juta. Driver dipilih berdasarkan hubungan sebab biaya; banyak driver tidak otomatis membuat model lebih akurat."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Carter, Cost Accounting 14e, Ch.14, PDF 431-435"
+    }
+  ]
+}

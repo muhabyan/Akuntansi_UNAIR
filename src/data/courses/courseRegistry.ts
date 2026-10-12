@@ -17,6 +17,11 @@ export interface LoadedCourseContent {
   prep?: Array<{ key: `prep:${string}`; label: string }>;
 }
 
+async function auditLoadedCourse(code: string, content: LoadedCourseContent): Promise<LoadedCourseContent> {
+  const { applyCourseAudit } = await import('../source-audit/courseAudit');
+  return { ...content, readings: applyCourseAudit(code, content.readings) };
+}
+
 interface AkdasSource {
   meetings: Array<{
     meeting: number;
@@ -571,28 +576,28 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
     }
     case 'AKK201': {
       const module = await import('../akm1/akm1Data');
-      return { readings: module.AKK201_READINGS, reviews: module.AKM1_REVIEW_READINGS };
+      return auditLoadedCourse('AKK201', { readings: module.AKK201_READINGS, reviews: module.AKM1_REVIEW_READINGS });
     }
     case 'AKM201': {
       const module = await import('../akbi/akbiData');
-      return {
+      return auditLoadedCourse('AKM201', {
         readings: module.AKM201_READINGS,
         reviews: module.AKBI_REVIEW_READINGS,
         customReferensi: buildAkbiFormulaBank(module.AKM201_READINGS, module.AKBI_REVIEW_READINGS),
-      };
+      });
     }
     case 'AKM301':
     case 'AKM202': {
       const module = await import('../akmen/akmenData');
-      return { readings: module.AKM202_READINGS, reviews: module.AKM202_REVIEW_READINGS };
+      return auditLoadedCourse('AKM301', { readings: module.AKM202_READINGS, reviews: module.AKM202_REVIEW_READINGS });
     }
     case 'EKT109': {
       const module = await import('../pte/pteData');
-      return {
+      return auditLoadedCourse('EKT109', {
         readings: module.EKT109_READINGS,
         reviews: {},
         customReferensi: module.EKT109_PRA_UAS_TOOLKIT,
-      };
+      });
     }
     case 'MNU101': {
       const module = await import('../pengbis/pengbisData');
@@ -659,11 +664,11 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         ...parseMarkdownToBlocks(glossMd.default)
       ];
 
-      return { readings, reviews: module.MNU101_REVIEW_READINGS, customReferensi };
+      return auditLoadedCourse('MNU101', { readings, reviews: module.MNU101_REVIEW_READINGS, customReferensi });
     }
     case 'AKA103': {
       const module = await import('../ekpa/ekpaReadings');
-      return { readings: module.AKA103_READINGS, reviews: module.AKA103_REVIEW_READINGS };
+      return auditLoadedCourse('AKA103', { readings: module.AKA103_READINGS, reviews: module.AKA103_REVIEW_READINGS });
     }
     case 'MAS122': {
       const module = await import('../statistik/statistikData');
@@ -681,7 +686,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       ]);
       const content = buildPjkContent(praUts.perpajakanPraUTS as PerpajakanUtsSource, praUas.perpajakanPraUAS as PerpajakanUasSource);
       content.reviews = pjkReview.PJK201_REVIEW_READINGS;
-      return content;
+      return auditLoadedCourse('PJK201', content);
     }
     case 'SII306': {
       const module = await import('../sia/siaReadings');

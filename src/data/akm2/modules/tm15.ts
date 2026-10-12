@@ -1,6 +1,5 @@
-// AKK202 TM15: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
+// AKK202 TM15: audited source addition, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM15_READING: Reading = {
   "tm": 15,
   "title": "Investasi II: Efek Ekuitas, Metode Ekuitas, dan Konsolidasi",
@@ -16,6 +15,12 @@ export const TM15_READING: Reading = {
     {
       "kind": "h2",
       "text": "1. Orientation / Quick Map"
+    },
+    {
+      "kind": "callout",
+      "variant": "note",
+      "title": "Versi sumber dan batas standar nasional",
+      "text": "Kasus menggunakan Kieso IFRS 5e (2024). RPP AKM II PDF 3 juga meminta konteks standar Indonesia serta SAK ETAP pada bagian terkait. IAI menyatakan SAK Entitas Privat menggantikan SAK ETAP sejak 1 Januari 2025. Dokumen lokal bertanda DE adalah draf eksposur. Rincian perbedaan standar nasional belum seluruhnya diverifikasi; contoh buku tidak otomatis menjadi ketentuan Indonesia. Rujukan: RPP AKM II, halaman PDF 3; [IAI, Tentang SAK ETAP](https://web.iaiglobal.or.id/SAK-IAI/Tentang%20SAK%20ETAP)."
     },
     {
       "kind": "figure",
@@ -362,6 +367,10 @@ export const TM15_READING: Reading = {
           "text": "Mengakui dividen lagi sebagai pendapatan akan menghitung bagian laba dua kali. Pada equity method, distribusi dividen mengurangi investasi. (Kieso IFRS 5e, halaman PDF 1391-1392.)"
         }
       ]
+    },
+    {
+      "kind": "p",
+      "text": "Pada metode ekuitas, bagian laba investee menambah nilai investasi dan dividen menguranginya. Dengan investasi awal 200.000 pound, porsi 25%, laba 80.000 dan dividen 20.000 pound, nilai akhir adalah 215.000 pound dalam kasus sederhana. Dividen tersebut berbeda dari pendapatan dividen pada metode nilai wajar. Pengaruh signifikan dan pengendalian dinilai dari substansi; persentase kepemilikan memberi indikator, bukan satu-satunya bukti. [Kieso IFRS 5e, halaman PDF 1388-1392 dan 1452] Rujukan pemeriksaan: Kieso IFRS 5e, halaman PDF 1388-1392 dan 1452, E16.20."
     },
     {
       "kind": "h2",

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm10-54",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa beda periodic dan perpetual?",
+    "category": "Konsep",
+    "front": "Apa beda periodic dan perpetual?",
+    "back": "Perpetual memperbarui saldo persediaan/HPP sepanjang transaksi; periodic menghitung HPP akhir periode dari barang tersedia dan persediaan akhir. Rujukan: Kieso IFRS 5e, Ch.7, Goods Included dan Costs Included, PDF 611-622"
+  },
+  {
+    "id": "akk201-tm10-55",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apakah semua barang di gudang milik perusahaan?",
+    "category": "Konsep",
+    "front": "Apakah semua barang di gudang milik perusahaan?",
+    "back": "Tidak. Barang konsinyasi dapat tetap menjadi persediaan pengirim; periksa kepemilikan dan pengendalian. Rujukan: Kieso IFRS 5e, Ch.7, Goods Included dan Costs Included, PDF 611-622"
+  },
+  {
+    "id": "akk201-tm10-56",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Bagaimana barang dalam perjalanan dinilai?",
+    "category": "Konsep",
+    "front": "Bagaimana barang dalam perjalanan dinilai?",
+    "back": "Baca syarat penyerahan dan perpindahan hak/kendali. Lokasi kendaraan pengiriman tidak menjadi satu-satunya dasar. Rujukan: Kieso IFRS 5e, Ch.7, Goods Included dan Costs Included, PDF 611-622"
+  },
+  {
+    "id": "akk201-tm10-57",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Biaya apa masuk persediaan?",
+    "category": "Konsep",
+    "front": "Biaya apa masuk persediaan?",
+    "back": "Biaya pembelian, konversi dan biaya lain untuk membawa persediaan ke lokasi/kondisi sekarang, dengan pengecualian menurut standar. Rujukan: Kieso IFRS 5e, Ch.7, Goods Included dan Costs Included, PDF 611-622"
+  },
+  {
+    "id": "akk201-tm10-58",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Mengapa biaya jual umumnya bukan inventory cost?",
+    "category": "Konsep",
+    "front": "Mengapa biaya jual umumnya bukan inventory cost?",
+    "back": "Biaya itu terkait penjualan kepada pelanggan, bukan membawa barang ke lokasi/kondisi siap dijual. Rujukan: Kieso IFRS 5e, Ch.7, Goods Included dan Costs Included, PDF 611-622"
+  },
+  {
+    "id": "akk201-tm10-59",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa identitas HPP periodik?",
+    "category": "Konsep",
+    "front": "Apa identitas HPP periodik?",
+    "back": "Persediaan awal + pembelian neto dan biaya pembelian relevan - persediaan akhir. Semua angka memakai basis biaya yang sama. Rujukan: Kieso IFRS 5e, Ch.7, Goods Included dan Costs Included, PDF 611-622"
+  }
+]

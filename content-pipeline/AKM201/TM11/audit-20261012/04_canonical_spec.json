@@ -1,0 +1,41 @@
+{
+  "code": "AKM201",
+  "tm": 11,
+  "source": "Carter, Cost Accounting 14e, hal.12-3 PDF 364; modul tutor lokal FOH PDF 11-12",
+  "finding": "Tarif rencana, overhead aktual dan selisih memakai basis aktivitas berbeda.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Ukuran",
+        "Cara hitung"
+      ],
+      "rows": [
+        [
+          "Tarif ditentukan di awal",
+          "Anggaran overhead / anggaran dasar aktivitas"
+        ],
+        [
+          "Overhead dibebankan",
+          "Tarif rencana × aktivitas aktual"
+        ],
+        [
+          "Selisih underapplied",
+          "Overhead aktual lebih besar dari dibebankan"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Contoh modul tutor: aktual Rp438.000, dibebankan Rp425.250, selisih kurang dibebankan Rp12.750. Penutupan ke HPP atau prorata akun bergantung materialitas dan ketentuan soal. Pemilihan jam mesin, jam tenaga kerja atau driver lain harus menjelaskan penyebab overhead, bukan memilih denominator agar tarif kecil."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Carter, Cost Accounting 14e, hal.12-3 PDF 364; modul tutor lokal FOH PDF 11-12"
+    }
+  ]
+}

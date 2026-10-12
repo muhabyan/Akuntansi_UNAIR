@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm10-54",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa direct labor?",
+    "category": "Konsep",
+    "front": "Apa direct labor?",
+    "back": "Upaya tenaga kerja yang dapat ditelusuri ke produk/pesanan secara ekonomis; tenaga pendukung pabrik umumnya overhead. Rujukan: Carter 14e Ch.11, hal.11-1 sampai 11-7, PDF 317-323"
+  },
+  {
+    "id": "akm201-tm10-55",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa fungsi clock card dan time ticket?",
+    "category": "Konsep",
+    "front": "Apa fungsi clock card dan time ticket?",
+    "back": "Clock card mencatat kehadiran; time ticket mengalokasikan waktu ke pekerjaan/pesanan. Keduanya perlu direkonsiliasi. Rujukan: Carter 14e Ch.11, hal.11-1 sampai 11-7, PDF 317-323"
+  },
+  {
+    "id": "akm201-tm10-56",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Bagaimana tarif dan kos per unit berbeda?",
+    "category": "Konsep",
+    "front": "Bagaimana tarif dan kos per unit berbeda?",
+    "back": "Tarif adalah upah per jam; kos unit bergantung produktivitas. Kenaikan tarif dapat bersamaan dengan penurunan kos unit. Rujukan: Carter 14e Ch.11, hal.11-1 sampai 11-7, PDF 317-323"
+  },
+  {
+    "id": "akm201-tm10-57",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa angka insentif dari Carter?",
+    "category": "Konsep",
+    "front": "Apa angka insentif dari Carter?",
+    "back": "6 USD/jam ÷ 5 unit/jam = 1,20 USD/unit; 6,60 ÷ 6 = 1,10 USD/unit. Rujukan: Carter 14e Ch.11, hal.11-1 sampai 11-7, PDF 317-323"
+  },
+  {
+    "id": "akm201-tm10-58",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Apa batas wage incentive?",
+    "category": "Konsep",
+    "front": "Apa batas wage incentive?",
+    "back": "Standar harus masuk akal, mudah dipahami dan sesuai pekerjaan; jaga mutu, keselamatan dan koordinasi. Rujukan: Carter 14e Ch.11, hal.11-1 sampai 11-7, PDF 317-323"
+  },
+  {
+    "id": "akm201-tm10-59",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Bagaimana payroll didistribusikan?",
+    "category": "Konsep",
+    "front": "Bagaimana payroll didistribusikan?",
+    "back": "Pisahkan biaya langsung, tenaga tak langsung, idle time/premi sesuai sebab serta kebijakan kasus sebelum menjurnal. Rujukan: Carter 14e Ch.11, hal.11-1 sampai 11-7, PDF 317-323"
+  }
+]

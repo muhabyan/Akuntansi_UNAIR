@@ -1,0 +1,437 @@
+{
+  "code": "MAS122",
+  "tm": 9,
+  "reading": {
+    "tm": 9,
+    "title": "Regresi & Korelasi — Bagian 1",
+    "ref": "DA 13 · AA 15",
+    "intro": "Korelasi mengukur kekuatan hubungan dua variabel; regresi membangun model untuk **memprediksi** satu variabel dari variabel lain.",
+    "objectives": [
+      "Menafsirkan koefisien korelasi Pearson.",
+      "Menyusun persamaan regresi linear sederhana.",
+      "Memahami metode kuadrat terkecil."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "A. Korelasi (Pearson r)"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "r berkisar **−1 sampai +1**. Dekat +1 = hubungan positif kuat; dekat −1 = negatif kuat; 0 = tak ada hubungan linear.",
+          "**Scatterplot** membantu melihat pola sebelum menghitung r.",
+          "**Korelasi ≠ kausalitas** — hubungan kuat belum tentu sebab-akibat."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "B. Regresi Linear Sederhana"
+      },
+      {
+        "kind": "formula",
+        "text": "Ŷ = a + bX",
+        "note": "a = intercept (nilai Y saat X=0); b = slope (perubahan Y per unit X)."
+      },
+      {
+        "kind": "p",
+        "text": "Garis terbaik dipilih dengan **metode kuadrat terkecil (least squares)**: meminimalkan jumlah kuadrat selisih nilai aktual dan prediksi (residual)."
+      },
+      {
+        "kind": "example",
+        "title": "Contoh",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Model biaya: Ŷ = 5.000.000 + 2.000·X (X = unit produksi). Artinya biaya tetap Rp5.000.000 dan biaya variabel **Rp2.000/unit** — persis konsep cost behavior pada Akuntansi Biaya."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan"
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Catatan kurator",
+        "text": "Bagian di bawah ini menambah materi inti TM 9 dengan glossary istilah, contoh SPSS output, asumsi, dan jebakan ujian. Diadaptasi dari modul terpadu Pra-UAS."
+      },
+      {
+        "kind": "h2",
+        "text": "Regresi dan Korelasi Bagian 1 Hubungan dua variabel dan model prediksi sederhana"
+      },
+      {
+        "kind": "p",
+        "text": "Manajer ingin mengetahui apakah kenaikan biaya iklan diikuti kenaikan penjualan. Korelasi menjawab kuat-lemahnya hubungan dua variabel, sedangkan regresi menghasilkan persamaan untuk memprediksi penjualan berdasarkan biaya iklan."
+      },
+      {
+        "kind": "h3",
+        "text": "Contoh Penerapan Regresi & Korelasi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Akuntan manajemen dapat mengevaluasi hubungan biaya promosi dan pendapatan.",
+          "Analis keuangan dapat memeriksa hubungan leverage dan profitabilitas.",
+          "Auditor dapat mengevaluasi hubungan ukuran perusahaan dan audit delay."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Target Kompetensi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Membedakan korelasi dan regresi.",
+          "Menjelaskan makna Pearson r, slope, intercept, dan R².",
+          "Membuat persamaan regresi linier sederhana.",
+          "Menulis interpretasi hubungan tanpa menyimpulkan kausalitas secara berlebihan."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Korelasi"
+      },
+      {
+        "kind": "p",
+        "text": "Ukuran arah dan kekuatan hubungan dua variabel numerik."
+      },
+      {
+        "kind": "h3",
+        "text": "Pearson r"
+      },
+      {
+        "kind": "p",
+        "text": "Koefisien korelasi untuk hubungan linier antara dua variabel scale."
+      },
+      {
+        "kind": "h3",
+        "text": "Scatterplot"
+      },
+      {
+        "kind": "p",
+        "text": "Grafik titik yang menunjukkan pola hubungan X dan Y."
+      },
+      {
+        "kind": "h3",
+        "text": "Regresi"
+      },
+      {
+        "kind": "p",
+        "text": "Model statistik untuk memprediksi Y berdasarkan X."
+      },
+      {
+        "kind": "h3",
+        "text": "Intercept"
+      },
+      {
+        "kind": "p",
+        "text": "Nilai prediksi Y ketika X = 0."
+      },
+      {
+        "kind": "h3",
+        "text": "Slope"
+      },
+      {
+        "kind": "p",
+        "text": "Perubahan rata-rata Y ketika X naik satu unit."
+      },
+      {
+        "kind": "h3",
+        "text": "R²"
+      },
+      {
+        "kind": "p",
+        "text": "Proporsi variasi Y yang dijelaskan oleh X dalam model."
+      },
+      {
+        "kind": "h3",
+        "text": "Kausalitas"
+      },
+      {
+        "kind": "p",
+        "text": "Hubungan sebab-akibat; tidak otomatis dibuktikan oleh korelasi/regresi sederhana."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai korelasi"
+      },
+      {
+        "kind": "p",
+        "text": "X dan Y numerik, tujuan hanya melihat hubungan."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai regresi"
+      },
+      {
+        "kind": "p",
+        "text": "Y numerik dan tujuan analisis adalah prediksi atau estimasi perubahan Y akibat perubahan X."
+      },
+      {
+        "kind": "h3",
+        "text": "Jangan berlebihan"
+      },
+      {
+        "kind": "p",
+        "text": "Jangan menyimpulkan X menyebabkan Y jika data hanya observasional dan tidak ada kontrol variabel lain."
+      },
+      {
+        "kind": "p",
+        "text": "Data biaya iklan dan penjualan bulanan dalam juta rupiah."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Bulan",
+          "Biaya Iklan (X)",
+          "Penjualan (Y)"
+        ],
+        "rows": [
+          [
+            "1",
+            "8",
+            "110"
+          ],
+          [
+            "2",
+            "10",
+            "125"
+          ],
+          [
+            "3",
+            "12",
+            "130"
+          ],
+          [
+            "4",
+            "14",
+            "145"
+          ],
+          [
+            "5",
+            "16",
+            "160"
+          ],
+          [
+            "6",
+            "18",
+            "168"
+          ],
+          [
+            "7",
+            "20",
+            "181"
+          ],
+          [
+            "8",
+            "22",
+            "190"
+          ]
+        ]
+      },
+      {
+        "kind": "figure",
+        "title": "Scatterplot: Biaya Iklan vs Penjualan",
+        "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"40\" y1=\"260\" x2=\"380\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.5\" /><line x1=\"40\" y1=\"20\" x2=\"40\" y2=\"260\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.5\" /><text x=\"125\" y=\"275\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">10</text><text x=\"210\" y=\"275\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">15</text><text x=\"295\" y=\"275\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">20</text><text x=\"30\" y=\"215\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">120</text><text x=\"30\" y=\"167\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">140</text><text x=\"30\" y=\"119\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">160</text><text x=\"30\" y=\"71\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">180</text><line x1=\"91\" y1=\"234.15\" x2=\"329\" y2=\"40.28\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-dasharray=\"4\" /><circle cx=\"91\" cy=\"236\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"125\" cy=\"200\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"159\" cy=\"188\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"193\" cy=\"152\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"227\" cy=\"116\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"261\" cy=\"96.8\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"295\" cy=\"65.6\" r=\"5\" fill=\"#3b82f6\" /><circle cx=\"329\" cy=\"44\" r=\"5\" fill=\"#3b82f6\" /><text x=\"210\" y=\"295\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.9\">Biaya Iklan (X)</text><text x=\"12\" y=\"140\" transform=\"rotate(-90 12 140)\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.9\">Penjualan (Y)</text></svg>"
+      },
+      {
+        "kind": "p",
+        "text": "Ketika biaya iklan meningkat dari 8 menjadi 22, penjualan juga meningkat dari 110 menjadi 190."
+      },
+      {
+        "kind": "p",
+        "text": "Titik yang bergerak naik ke kanan menunjukkan hubungan positif."
+      },
+      {
+        "kind": "p",
+        "text": "Data contoh menghasilkan korelasi sangat kuat dan positif."
+      },
+      {
+        "kind": "formula",
+        "text": "Slope (b) = Σ[(X - X̄)(Y - Ȳ)] / Σ[(X - X̄)²]",
+        "note": "Mengukur seberapa besar rata-rata perubahan Y jika X naik 1 unit."
+      },
+      {
+        "kind": "formula",
+        "text": "Intercept (a) = Ȳ - bX̄",
+        "note": "Nilai prediksi Y jika X bernilai nol."
+      },
+      {
+        "kind": "p",
+        "text": "Garis regresi merangkum pola hubungan X dan Y dalam bentuk persamaan Ŷ = a + bX."
+      },
+      {
+        "kind": "p",
+        "text": "Jika biaya iklan (X) = 19 juta, penjualan (Y) diprediksi melalui persamaan regresi dengan memasukkan nilai 19 ke dalam variabel X."
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Ringkasan Rumus Regresi Linier Sederhana",
+        "text": "**Persamaan Regresi:** Ŷ = a + bX\n• **Slope (b):** Σ[(Xi − X̄)(Yi − Ȳ)] / Σ[(Xi − X̄)²]\n• **Intercept (a):** Ȳ − bX̄\n• **Hasil Contoh:** Ŷ = 64,61 + 5,77X (R² ≈ 0,994)\n\n**Asumsi Linearitas:** Hubungan antara variabel X dan Y harus membentuk pola garis lurus pada scatterplot."
+      },
+      {
+        "kind": "h3",
+        "text": "Tidak ada outlier ekstrem"
+      },
+      {
+        "kind": "p",
+        "text": "Satu titik ekstrem dapat menarik garis regresi terlalu kuat."
+      },
+      {
+        "kind": "h3",
+        "text": "Independensi"
+      },
+      {
+        "kind": "p",
+        "text": "Observasi sebaiknya tidak saling bergantung."
+      },
+      {
+        "kind": "h3",
+        "text": "Jebakan Ujian & Kesalahan Umum"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Menganggap korelasi tinggi pasti berarti sebab-akibat.",
+          "Tidak melihat scatterplot sebelum membaca angka korelasi.",
+          "Menafsirkan intercept secara mekanis meskipun X = 0 tidak masuk akal secara bisnis.",
+          "Melakukan prediksi jauh di luar rentang data."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di SPSS"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Buat variabel iklan dan penjualan sebagai Scale.",
+          "Untuk korelasi: Analyze → Correlate → Bivariate, pilih Pearson.",
+          "Untuk regresi: Analyze → Regression → Linear.",
+          "Masukkan penjualan ke Dependent dan iklan ke Independent.",
+          "Klik Statistics, centang Estimates, Model fit, dan Confidence intervals.",
+          "Baca Model Summary, ANOVA, dan Coefficients."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di Excel"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Gunakan Insert → Scatter untuk membuat scatterplot.",
+          "Klik titik grafik → Add Trendline → Display Equation dan R-squared.",
+          "Gunakan =CORREL(range_x, range_y) untuk korelasi.",
+          "Gunakan Data → Data Analysis → Regression untuk output regresi lengkap."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Correlation table"
+      },
+      {
+        "kind": "p",
+        "text": "Nilai Pearson r menunjukkan arah dan kekuatan hubungan."
+      },
+      {
+        "kind": "h3",
+        "text": "Model Summary"
+      },
+      {
+        "kind": "p",
+        "text": "R² menunjukkan persentase variasi Y yang dijelaskan X."
+      },
+      {
+        "kind": "h3",
+        "text": "ANOVA regression"
+      },
+      {
+        "kind": "p",
+        "text": "Sig. menunjukkan apakah model regresi secara keseluruhan signifikan."
+      },
+      {
+        "kind": "h3",
+        "text": "Coefficients"
+      },
+      {
+        "kind": "p",
+        "text": "Kolom B berisi intercept dan slope."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Korelasi mengukur arah dan kekuatan hubungan, sedangkan regresi membuat persamaan prediksi."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Ŷ = 40 + 2,5(30) = 115."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Contoh: X = total aset, Y = audit delay; atau X = pertumbuhan penjualan, Y = profit margin."
+      }
+    ]
+  },
+  "questions": [],
+  "flashcards": [
+    {
+      "id": "mas122-tm09-48",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Apa yang diukur korelasi r?",
+      "category": "Konsep",
+      "front": "Apa yang diukur korelasi r?",
+      "back": "Arah dan kekuatan hubungan linear dua variabel; -1 sampai 1. Hubungan nonlinier dapat kuat meski r kecil. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+    },
+    {
+      "id": "mas122-tm09-49",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Apakah korelasi membuktikan sebab?",
+      "category": "Konsep",
+      "front": "Apakah korelasi membuktikan sebab?",
+      "back": "Tidak. Confounding, arah sebab dan desain pengamatan perlu dianalisis. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+    },
+    {
+      "id": "mas122-tm09-50",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Apa slope regresi sederhana?",
+      "category": "Konsep",
+      "front": "Apa slope regresi sederhana?",
+      "back": "Perubahan nilai rata-rata Y yang diprediksi per tambahan satu unit X pada model, bukan kepastian perubahan setiap individu. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+    },
+    {
+      "id": "mas122-tm09-51",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Apa intercept?",
+      "category": "Konsep",
+      "front": "Apa intercept?",
+      "back": "Prediksi Y pada X=0; interpretasi substantif memerlukan X=0 berada dalam konteks/domain yang relevan. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+    },
+    {
+      "id": "mas122-tm09-52",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Apa residual?",
+      "category": "Konsep",
+      "front": "Apa residual?",
+      "back": "Nilai observasi Y dikurangi prediksi Y pada X yang sama. Unitnya sama dengan Y. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+    },
+    {
+      "id": "mas122-tm09-53",
+      "phase": "pra-uas",
+      "tm": 9,
+      "topic": "Apa tujuan OLS?",
+      "category": "Konsep",
+      "front": "Apa tujuan OLS?",
+      "back": "Meminimumkan jumlah kuadrat residual pada spesifikasi yang dipilih; hasil perlu pemeriksaan asumsi. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

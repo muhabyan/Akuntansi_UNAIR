@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm12-66",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa fungsi departementalisasi?",
+    "category": "Konsep",
+    "front": "Apa fungsi departementalisasi?",
+    "back": "Mengumpulkan dan membebankan overhead per pusat kegiatan agar driver dan tanggung jawab lebih sesuai. Rujukan: Carter 14e Ch.13, PDF 389-430; tutor departementalisasi PDF 6-10"
+  },
+  {
+    "id": "akm201-tm12-67",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa direct departmental cost?",
+    "category": "Konsep",
+    "front": "Apa direct departmental cost?",
+    "back": "Overhead yang dapat ditelusuri ke departemen tertentu; direct di sini tidak selalu berarti direct labor ke produk. Rujukan: Carter 14e Ch.13, PDF 389-430; tutor departementalisasi PDF 6-10"
+  },
+  {
+    "id": "akm201-tm12-68",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa batas metode langsung?",
+    "category": "Konsep",
+    "front": "Apa batas metode langsung?",
+    "back": "Jasa antara departemen jasa diabaikan; biaya jasa dialokasikan ke departemen produksi. Rujukan: Carter 14e Ch.13, PDF 389-430; tutor departementalisasi PDF 6-10"
+  },
+  {
+    "id": "akm201-tm12-69",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa batas metode bertahap?",
+    "category": "Konsep",
+    "front": "Apa batas metode bertahap?",
+    "back": "Sebagian jasa antardepartemen diakui; departemen yang sudah ditutup tidak menerima alokasi balik. Urutan memengaruhi hasil. Rujukan: Carter 14e Ch.13, PDF 389-430; tutor departementalisasi PDF 6-10"
+  },
+  {
+    "id": "akm201-tm12-70",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa metode resiprokal?",
+    "category": "Konsep",
+    "front": "Apa metode resiprokal?",
+    "back": "Mengakui hubungan timbal balik dengan persamaan simultan dan mengalokasikan biaya setelah menyelesaikan persamaan. Rujukan: Carter 14e Ch.13, PDF 389-430; tutor departementalisasi PDF 6-10"
+  },
+  {
+    "id": "akm201-tm12-71",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Kapan tarif produksi dihitung?",
+    "category": "Konsep",
+    "front": "Kapan tarif produksi dihitung?",
+    "back": "Setelah biaya jasa dialokasikan, total overhead departemen produksi dibagi dasar aktivitas departemen itu. Rujukan: Carter 14e Ch.13, PDF 389-430; tutor departementalisasi PDF 6-10"
+  }
+]

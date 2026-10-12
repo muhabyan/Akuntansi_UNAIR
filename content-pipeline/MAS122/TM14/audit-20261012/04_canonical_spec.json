@@ -1,0 +1,459 @@
+{
+  "code": "MAS122",
+  "tm": 14,
+  "reading": {
+    "tm": 14,
+    "title": "Presentasi Proyek Akhir",
+    "ref": "—",
+    "intro": "Analisis yang baik harus dikomunikasikan dengan baik. TM ini menutup mata kuliah dengan keterampilan menyajikan hasil statistik.",
+    "objectives": [
+      "Menyusun laporan analisis yang runtut.",
+      "Memvisualisasikan data secara efektif.",
+      "Menyampaikan kesimpulan berbasis bukti."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "A. Struktur Laporan/Presentasi"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Latar belakang & pertanyaan penelitian.",
+          "Data & metode (uji yang dipakai + alasannya).",
+          "Hasil (tabel/grafik yang relevan, nilai uji & p-value).",
+          "Interpretasi & keterbatasan.",
+          "Kesimpulan & rekomendasi."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "B. Prinsip Visualisasi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Pilih grafik sesuai tujuan (bar untuk kategori, garis untuk tren, scatter untuk hubungan).",
+          "Jangan menyesatkan (skala sumbu jujur, hindari grafik 3D yang membingungkan).",
+          "Sorot temuan utama, bukan membanjiri angka."
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Etika data",
+        "text": "Sajikan hasil apa adanya — termasuk yang tidak signifikan. Memanipulasi atau \"cherry-picking\" data melanggar integritas (bersinggungan dengan mata kuliah Etika)."
+      },
+      {
+        "kind": "h2",
+        "text": "Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan"
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Catatan kurator",
+        "text": "Bagian di bawah ini menambah materi inti TM 14 dengan glossary istilah, contoh SPSS output, asumsi, dan jebakan ujian. Diadaptasi dari modul terpadu Pra-UAS."
+      },
+      {
+        "kind": "h2",
+        "text": "Presentasi Proyek Akhir Mengubah analisis statistik menjadi argumen bisnis"
+      },
+      {
+        "kind": "p",
+        "text": "Proyek akhir tidak hanya menilai kemampuan menghitung, tetapi kemampuan menyusun masalah, memilih data, menentukan metode, membaca hasil, dan menyajikan implikasi bisnis atau akuntansi secara jelas."
+      },
+      {
+        "kind": "h3",
+        "text": "Tujuan Presentasi Proyek"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Dalam dunia kerja, hasil statistik harus diterjemahkan menjadi keputusan.",
+          "PPT dan laporan melatih kemampuan komunikasi analitis.",
+          "Proyek akhir menguji integrasi seluruh materi: deskriptif, inferensial, software, dan interpretasi."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Target Kompetensi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Menyusun judul, rumusan masalah, hipotesis, dan metode yang konsisten.",
+          "Menjelaskan data dan definisi operasional variabel.",
+          "Menyajikan output statistik secara ringkas dan informatif.",
+          "Menulis kesimpulan, keterbatasan, dan rekomendasi."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Rumusan masalah"
+      },
+      {
+        "kind": "p",
+        "text": "Pertanyaan utama yang ingin dijawab dengan data."
+      },
+      {
+        "kind": "h3",
+        "text": "Hipotesis"
+      },
+      {
+        "kind": "p",
+        "text": "Dugaan statistik yang diuji."
+      },
+      {
+        "kind": "h3",
+        "text": "Definisi operasional"
+      },
+      {
+        "kind": "p",
+        "text": "Penjelasan cara variabel diukur."
+      },
+      {
+        "kind": "h3",
+        "text": "Metode analisis"
+      },
+      {
+        "kind": "p",
+        "text": "Teknik statistik yang dipakai."
+      },
+      {
+        "kind": "h3",
+        "text": "Temuan"
+      },
+      {
+        "kind": "p",
+        "text": "Hasil utama dari analisis."
+      },
+      {
+        "kind": "h3",
+        "text": "Implikasi"
+      },
+      {
+        "kind": "p",
+        "text": "Makna hasil bagi keputusan bisnis/akuntansi."
+      },
+      {
+        "kind": "h3",
+        "text": "Keterbatasan"
+      },
+      {
+        "kind": "p",
+        "text": "Batas data, metode, atau interpretasi."
+      },
+      {
+        "kind": "h3",
+        "text": "Rekomendasi"
+      },
+      {
+        "kind": "p",
+        "text": "Saran tindakan berdasarkan hasil."
+      },
+      {
+        "kind": "h3",
+        "text": "Pilih ANOVA"
+      },
+      {
+        "kind": "p",
+        "text": "Jika proyek membandingkan rata-rata beberapa kelompok."
+      },
+      {
+        "kind": "h3",
+        "text": "Pilih regresi"
+      },
+      {
+        "kind": "p",
+        "text": "Jika proyek menguji hubungan/pengaruh X terhadap Y numerik."
+      },
+      {
+        "kind": "h3",
+        "text": "Pilih chi-square"
+      },
+      {
+        "kind": "p",
+        "text": "Jika proyek menguji hubungan dua variabel kategorik."
+      },
+      {
+        "kind": "h3",
+        "text": "Pilih time series"
+      },
+      {
+        "kind": "p",
+        "text": "Jika proyek memprediksi nilai berdasarkan data historis."
+      },
+      {
+        "kind": "p",
+        "text": "Contoh rancangan proyek akhir."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Elemen",
+          "Contoh"
+        ],
+        "rows": [
+          [
+            "Judul",
+            "Pengaruh Pertumbuhan Penjualan terhadap Profit Margin Perusahaan Ritel"
+          ],
+          [
+            "Y",
+            "Profit margin"
+          ],
+          [
+            "X",
+            "Pertumbuhan penjualan"
+          ],
+          [
+            "Data",
+            "Laporan keuangan perusahaan ritel periode tertentu"
+          ],
+          [
+            "Metode",
+            "Regresi linier sederhana"
+          ],
+          [
+            "Pertanyaan",
+            "Apakah pertumbuhan penjualan berhubungan dengan profit margin?"
+          ]
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Mulai dari fenomena bisnis atau akuntansi."
+      },
+      {
+        "kind": "p",
+        "text": "Pastikan variabel dapat diukur."
+      },
+      {
+        "kind": "p",
+        "text": "Metode harus sesuai dengan jenis data dan pertanyaan."
+      },
+      {
+        "kind": "p",
+        "text": "Gunakan SPSS/Excel dengan prosedur yang benar."
+      },
+      {
+        "kind": "p",
+        "text": "Jelaskan hasil, makna, keterbatasan, dan rekomendasi."
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Alur Pelaporan & Struktur Kesimpulan Audit/Bisnis",
+        "text": "**Alur Laporan:** Fenomena → Data → Metode → Hasil → Makna → Rekomendasi\n\n**Struktur Kesimpulan:** Jawaban rumusan masalah + Implikasi bisnis/kebijakan + Keterbatasan penelitian\n\n**Asumsi Konsistensi:** Judul laporan, variabel yang diuji, hipotesis, metode analisis, dan kesimpulan akhir harus sepenuhnya selaras."
+      },
+      {
+        "kind": "h3",
+        "text": "Keterlacakan data"
+      },
+      {
+        "kind": "p",
+        "text": "Sumber data harus jelas."
+      },
+      {
+        "kind": "h3",
+        "text": "Proporsionalitas"
+      },
+      {
+        "kind": "p",
+        "text": "Kesimpulan tidak boleh lebih luas daripada data."
+      },
+      {
+        "kind": "h3",
+        "text": "Jebakan Presentasi & Laporan"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Judul tidak sesuai dengan metode.",
+          "Variabel tidak dijelaskan secara operasional.",
+          "Hanya menampilkan screenshot SPSS tanpa interpretasi.",
+          "Kesimpulan terlalu luas dibanding data.",
+          "Tidak menyebut keterbatasan."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Tips Presentasi Output SPSS"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Simpan file data dan output SPSS dengan nama yang rapi.",
+          "Gunakan tabel output ringkas untuk presentasi.",
+          "Jangan menampilkan semua output mentah di slide.",
+          "Ambil angka kunci: mean, SD, F/t/χ², p-value, R², atau mean rank.",
+          "Gunakan grafik jika membantu pembaca memahami pola.",
+          "Sediakan lampiran output lengkap jika diminta."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Tips Presentasi Output Excel"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Gunakan Excel untuk cleaning data awal, tabel ringkas, dan grafik.",
+          "Gunakan PivotTable untuk ringkasan kategori.",
+          "Gunakan chart yang sederhana dan tidak berlebihan.",
+          "Pastikan angka di Excel konsisten dengan output SPSS."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 1"
+      },
+      {
+        "kind": "p",
+        "text": "Judul, anggota, kelas, dan objek."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 2"
+      },
+      {
+        "kind": "p",
+        "text": "Latar belakang dan masalah bisnis."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 3"
+      },
+      {
+        "kind": "p",
+        "text": "Rumusan masalah dan hipotesis."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 4"
+      },
+      {
+        "kind": "p",
+        "text": "Data, variabel, dan definisi operasional."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 5"
+      },
+      {
+        "kind": "p",
+        "text": "Metode dan alasan pemilihan metode."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 6"
+      },
+      {
+        "kind": "p",
+        "text": "Statistik deskriptif."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 7"
+      },
+      {
+        "kind": "p",
+        "text": "Hasil uji utama."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 8"
+      },
+      {
+        "kind": "p",
+        "text": "Interpretasi bisnis/akuntansi."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 9"
+      },
+      {
+        "kind": "p",
+        "text": "Keterbatasan."
+      },
+      {
+        "kind": "h3",
+        "text": "Slide 10"
+      },
+      {
+        "kind": "p",
+        "text": "Kesimpulan dan rekomendasi."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Karena metode statistik adalah alat untuk menjawab rumusan masalah. Jika tidak selaras, hasil analisis tidak menjawab pertanyaan."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Contoh: Hubungan Opini Audit dan Ketepatan Waktu Pelaporan Keuangan."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Tulis bahwa data tidak memberikan bukti statistik yang cukup untuk menyatakan adanya hubungan/pengaruh, lalu jelaskan keterbatasan dan kemungkinan faktor lain."
+      }
+    ]
+  },
+  "questions": [],
+  "flashcards": [
+    {
+      "id": "mas122-tm14-78",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Apa urutan presentasi proyek?",
+      "category": "Konsep",
+      "front": "Apa urutan presentasi proyek?",
+      "back": "Pertanyaan, data/desain, metode/asumsi, hasil, ketidakpastian dan implikasi keputusan. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+    },
+    {
+      "id": "mas122-tm14-79",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Apa isi grafik hasil?",
+      "category": "Konsep",
+      "front": "Apa isi grafik hasil?",
+      "back": "Sumbu, satuan, kelompok, periode dan sumber; pilih bentuk yang sesuai variabel. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+    },
+    {
+      "id": "mas122-tm14-80",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Apa beda hasil dan kesimpulan?",
+      "category": "Konsep",
+      "front": "Apa beda hasil dan kesimpulan?",
+      "back": "Hasil menyatakan keluaran analisis; kesimpulan mengaitkan hasil ke pertanyaan dengan batas bukti. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+    },
+    {
+      "id": "mas122-tm14-81",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Bagaimana menjelaskan hasil tidak signifikan?",
+      "category": "Konsep",
+      "front": "Bagaimana menjelaskan hasil tidak signifikan?",
+      "back": "Gagal menolak H0 pada model/alpha yang dipakai; tidak membuktikan efek nol atau H0 pasti benar. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+    },
+    {
+      "id": "mas122-tm14-82",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Apa batas generalisasi?",
+      "category": "Konsep",
+      "front": "Apa batas generalisasi?",
+      "back": "Populasi, cara sampling, periode dan desain menentukan siapa/kondisi mana yang didukung data. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+    },
+    {
+      "id": "mas122-tm14-83",
+      "phase": "pra-uas",
+      "tm": 14,
+      "topic": "Apakah prioritas materi sama dengan arsip UAS?",
+      "category": "Konsep",
+      "front": "Apakah prioritas materi sama dengan arsip UAS?",
+      "back": "Tidak. Presentasi mengikuti RPP dan bukti proyek; arsip ujian yang tidak tersedia tidak diperlakukan sebagai kepastian. Rujukan: RPP Statistik PDF 5, presentasi proyek akhir; integrasi metode TM8-13"
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

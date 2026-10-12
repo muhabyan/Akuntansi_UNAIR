@@ -2,8 +2,8 @@
 
 Status konten: READY_WITH_SCOPE_LIMITATION
 
-05 SHA256: 391ce96382564ce5849a5cb0aeb143c850db9aba9460fc506feecee3587d99c2
-Visual: 2; self-check Inti: 4; contoh sumber: 2.
+05 SHA256: 737dda1913a632ed12210a74fa94dc1a283fdaf3f9ce6ffa2f7f9af8b4dc435a
+Visual: 2; self-check Inti: 5; contoh sumber: 2.
 
 Rumus contoh diperiksa dari input buku/artikel, satuan dan pembulatan dijelaskan. Tidak ada jurnal akuntansi yang perlu dibuat pada topik ini. Batas sumber: Web Appendix 16A dan 16B tidak tersedia. EOQ, discount interest, dan compensating balance tidak dijadikan teori kanonik. Latihan pengembangan arus kas ditandai sebagai asumsi buatan dan bukan contoh buku.
 
@@ -16,6 +16,6 @@ Sampel: paragraf pembuka konsep, pembahasan contoh pertama, catatan sumber. Rubr
 Bukti teknis terpusat di docs/mnk102-pra-uas-audit.md; status tes tidak dinyatakan lulus sampai dijalankan pada revisi akhir.
 
 
-## Verifikasi akhir
+## Verifikasi revisi
 
-Lint, TypeScript, build, 70/70 tes standar, runtime, E2E port terisolasi, dan browser MNK102 lulus. Detail dan batas baseline ada pada docs/mnk102-pra-uas-audit.md. Tidak ada kegagalan akhir.
+Status hasil revisi dicatat di docs/audit-2026-10-12/MNK102.md. Baseline 70/70 lulus. Bukti final disimpan terpisah setelah tes dijalankan.

@@ -1,5 +1,5 @@
+// PJK301 TM11: audited formula notes, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM11_READING: Reading = {
   "tm": 11,
   "title": "PPh Orang Pribadi dan Rekonsiliasi Fiskal Badan",
@@ -114,7 +114,43 @@ export const TM11_READING: Reading = {
     {
       "kind": "formula",
       "text": "\\mathrm{PKP}_{fasilitas}=\\frac{4{,}8\\ \\mathrm{miliar}}{\\mathrm{Peredaran\\ bruto}}\\times\\mathrm{PKP}",
-      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
+      "note": "PKP fasilitas merupakan bagian PKP badan yang mendapatkan pengurangan tarif 50%; peredaran bruto dibatasi cakupan Pasal 31E. Nilai Rp4,8 miliar adalah batas bagian peredaran, bukan pengurang PKP. Rujukan: UU PPh Pasal 31E ayat (1), dibaca bersama Pasal 17."
+    },
+    {
+      "kind": "figure",
+      "title": "PPh OP: tarif berlapis dan pajak total",
+      "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 415\" role=\"img\" aria-label=\"PPh OP naik menurut lima lapisan PKP; tarif marginal berlaku pada tambahan penghasilan.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"415\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">PKP dan PPh tahunan</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">PPh (juta rupiah per tahun)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">3000</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">6000</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">1000</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">2000</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">PKP (juta rupiah per tahun)</text><polyline points=\"90,265 94.9,264.7675 98.16666666666667,264.3025 110.41666666666666,262.55875 130.83333333333331,257.715 171.66666666666666,246.09 294.1666666666667,211.215 498.33333333333337,153.09 580,125.965\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"265\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"94.9\" cy=\"264.7675\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"98.16666666666667\" cy=\"264.3025\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"110.41666666666666\" cy=\"262.55875\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"130.83333333333331\" cy=\"257.715\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"171.66666666666666\" cy=\"246.09\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"294.1666666666667\" cy=\"211.215\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"498.33333333333337\" cy=\"153.09\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"125.965\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">PPh menurut tarif Pasal 17</text></svg>",
+      "caption": "UU PPh Pasal 17 ayat (1) huruf a sebagaimana diubah UU HPP; UU HPP PDF 56-57. Kurva hasil rumus tarif, bukan data wajib pajak.",
+      "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 450\" role=\"img\" aria-label=\"PPh OP naik menurut lima lapisan PKP; tarif marginal berlaku pada tambahan penghasilan.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"450\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">PKP dan PPh tahunan</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">PPh (juta rupiah per tahun)</text><line x1=\"61\" y1=\"120\" x2=\"61\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"61\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"61\" y1=\"300\" x2=\"61\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"61\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"198\" y1=\"300\" x2=\"198\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"198\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">3000</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">6000</text><text x=\"53\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"53\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">1000</text><text x=\"53\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">2000</text><text x=\"198\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">PKP (juta rupiah per tahun)</text><polyline points=\"61,300 63.74,299.73 65.56666666666666,299.19 72.41666666666667,297.165 83.83333333333333,291.54 106.66666666666666,278.04 175.16666666666669,237.54000000000002 289.33333333333337,170.04 335,138.54\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"61\" cy=\"300\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"63.74\" cy=\"299.73\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"65.56666666666666\" cy=\"299.19\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"72.41666666666667\" cy=\"297.165\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"83.83333333333333\" cy=\"291.54\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"106.66666666666666\" cy=\"278.04\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"175.16666666666669\" cy=\"237.54000000000002\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"289.33333333333337\" cy=\"170.04\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"138.54\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">PPh menurut tarif Pasal 17</text></svg>",
+      "altText": "PPh OP naik menurut lima lapisan PKP; tarif marginal berlaku pada tambahan penghasilan.",
+      "overview": {
+        "heading": "PPh OP: tarif berlapis dan pajak total",
+        "cards": [
+          {
+            "title": "PKP 60 juta: PPh 3 juta rupiah",
+            "subtitle": "",
+            "items": [],
+            "takeaway": ""
+          },
+          {
+            "title": "PKP 250 juta: PPh 31,5 juta rupiah",
+            "subtitle": "",
+            "items": [],
+            "takeaway": ""
+          },
+          {
+            "title": "Tarif tertinggi hanya untuk bagian PKP pada lapisannya",
+            "subtitle": "",
+            "items": [],
+            "takeaway": ""
+          }
+        ],
+        "footer": "Sumbu horizontal PKP tahunan; sumbu vertikal PPh tahunan. Kenaikan PKP melewati batas tidak mengenakan tarif baru pada seluruh PKP."
+      }
+    },
+    {
+      "kind": "p",
+      "text": "Cara membaca: PKP berarti penghasilan kena pajak setelah pengurang sah, bukan bruto. Pada PKP 250 juta rupiah, pajak = 60 juta × 5% + 190 juta × 15% = 31,5 juta rupiah. Tarif 25% baru berlaku untuk bagian di atas 250 juta. Grafik ini berbeda dari TER masa bulanan. Rujukan: UU PPh Pasal 17 ayat (1) huruf a; UU HPP PDF 56-57."
     },
     {
       "kind": "solution-reveal",

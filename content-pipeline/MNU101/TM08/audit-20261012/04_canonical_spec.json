@@ -1,0 +1,45 @@
+{
+  "code": "MNU101",
+  "tm": 8,
+  "source": "Pride, Foundations of Business 6e, Ch.9-10, PDF 259-301; RPS 2026 minggu 8",
+  "finding": "Maslow dan Herzberg tidak memberi satu ukuran motivasi yang berlaku untuk semua orang.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Maslow dan Herzberg tidak memberi satu ukuran motivasi yang berlaku untuk semua orang."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pemicu",
+        "Pertanyaan HR"
+      ],
+      "rows": [
+        [
+          "Kebutuhan/hygiene",
+          "Apakah upah, kondisi kerja dan kebijakan memadai?"
+        ],
+        [
+          "Motivator",
+          "Apakah pekerjaan memberi prestasi, tanggung jawab dan pengembangan?"
+        ],
+        [
+          "Evaluasi",
+          "Apakah bukti produktivitas, retensi dan kualitas mendukung tindakan?"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.9-10, PDF 259-301; RPS 2026 minggu 8"
+    }
+  ]
+}

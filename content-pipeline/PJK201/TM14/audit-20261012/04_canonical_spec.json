@@ -1,0 +1,41 @@
+{
+  "code": "PJK201",
+  "tm": 14,
+  "source": "UU 1/2022 Pasal 40-41,46-47,62-64,73-75; PDF resmi 39,43-44 https://jdih.kemenkeu.go.id/api/download/770ecf1d-664b-48a1-88f4-8849b8ca7258/1TAHUN2022UU.pdf",
+  "finding": "Nomor pasal Reklame dan MBLB pada materi lama belum dinyatakan pasti.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Nomor pasal Reklame dan MBLB pada materi lama belum dinyatakan pasti."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pajak",
+        "Dasar resmi"
+      ],
+      "rows": [
+        [
+          "Reklame",
+          "DPP Pasal 62, tarif maksimum 25% Pasal 63; tarif daerah ditetapkan Perda."
+        ],
+        [
+          "MBLB",
+          "DPP Pasal 73, tarif maksimum 20% Pasal 74; daerah provinsi tanpa kab/kota otonom maksimum 25%."
+        ],
+        [
+          "PBB-P2/BPHTB",
+          "Periksa pengurang, persentase basis dan Perda; jangan mengalikan NJOP/NPOP bruto begitu saja."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: UU 1/2022 Pasal 40-41,46-47,62-64,73-75; PDF resmi 39,43-44 https://jdih.kemenkeu.go.id/api/download/770ecf1d-664b-48a1-88f4-8849b8ca7258/1TAHUN2022UU.pdf"
+    }
+  ]
+}

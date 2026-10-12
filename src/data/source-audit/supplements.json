@@ -1,0 +1,1778 @@
+{
+  "AKK201": {
+    "8": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Appendix 6A, Illustration 6A.1-6A.2, PDF 555-557",
+      "finding": "Belum ada visual rekonsiliasi; bedakan koreksi bank dari jurnal perusahaan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Sisi bank",
+            "Sisi buku"
+          ],
+          "rows": [
+            [
+              "Setoran dalam perjalanan: tambah",
+              "Tagihan bank belum dicatat: tambah"
+            ],
+            [
+              "Cek beredar: kurang",
+              "Biaya bank dan NSF: kurang"
+            ],
+            [
+              "Kesalahan bank: koreksi bank",
+              "Kesalahan buku: koreksi buku"
+            ]
+          ]
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Nugget: pertemuan dua saldo sumber",
+          "prompt": "Mengapa hanya sebagian pos memerlukan jurnal perusahaan?",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Bank: 22.190 + 3.680 - 150 - 4.820 - 31 + 175 = 21.044 USD. Buku: 20.502 + 600 - 18 - 220 + 180 = 21.044 USD. Koreksi cek 311 menjadi 131 menambah kas 180 USD. Pos waktu pada sisi bank tidak dijurnal ulang; transaksi yang belum dicatat dan kesalahan buku memerlukan jurnal. Rujukan: Kieso, Intermediate Accounting IFRS 5e, PDF 555-557"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Appendix 6A, Illustration 6A.1-6A.2, PDF 555-557"
+        }
+      ]
+    },
+    "9": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Illustration 6.6, PDF 532-533",
+      "finding": "Target allowance berbeda dari beban penyesuaian; umur piutang perlu dilihat bersama tarif.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "figure",
+          "title": "Wilson: kontribusi tiap umur piutang",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 415\" role=\"img\" aria-label=\"Wilson: kontribusi tiap umur piutang. Kelompok 4 adalah 91-120 hari, kelompok 5 di atas 120 hari. Tingkat kerugian meningkat, tetapi kontribusi juga bergantung pada saldo.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"415\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Kerugian estimasian per kelompok umur</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Allowance (euro)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">3</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">5</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">7500</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">15000</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Kelompok umur (nomor)</text><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"236.48\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"212.5\" y1=\"265\" x2=\"212.5\" y2=\"217.46666666666667\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"237.1\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"457.5\" y1=\"265\" x2=\"457.5\" y2=\"236.06666666666666\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"122.91666666666669\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><circle cx=\"90\" cy=\"236.48\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"212.5\" cy=\"217.46666666666667\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"237.1\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"457.5\" cy=\"236.06666666666666\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"122.91666666666669\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">1 &lt;30; 2 30-60; 3 61-90</text></svg>",
+          "caption": "Kieso, Intermediate Accounting IFRS 5e, Illustration 6.6 PDF 533. Angka euro asli; umur ditampilkan sebagai kelompok diskret.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 450\" role=\"img\" aria-label=\"Wilson: kontribusi tiap umur piutang. Kelompok 4 adalah 91-120 hari, kelompok 5 di atas 120 hari. Tingkat kerugian meningkat, tetapi kontribusi juga bergantung pada saldo.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"450\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Kerugian estimasian per kelompok</text><text x=\"16\" y=\"58\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">umur</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Allowance (euro)</text><line x1=\"72\" y1=\"120\" x2=\"72\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"72\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"72\" y1=\"300\" x2=\"72\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"72\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1</text><line x1=\"203.5\" y1=\"300\" x2=\"203.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"203.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">3</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">5</text><text x=\"64\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"64\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">7500</text><text x=\"64\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">15000</text><text x=\"203.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Kelompok umur (nomor)</text><line x1=\"72\" y1=\"300\" x2=\"72\" y2=\"266.88\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"137.75\" y1=\"300\" x2=\"137.75\" y2=\"244.8\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"203.5\" y1=\"300\" x2=\"203.5\" y2=\"267.6\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"269.25\" y1=\"300\" x2=\"269.25\" y2=\"266.4\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"135\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"2\" /><circle cx=\"72\" cy=\"266.88\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"137.75\" cy=\"244.8\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"203.5\" cy=\"267.6\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"269.25\" cy=\"266.4\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"135\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">1 &lt;30; 2 30-60; 3 61-90</text></svg>",
+          "altText": "Wilson: kontribusi tiap umur piutang. Kelompok 4 adalah 91-120 hari, kelompok 5 di atas 120 hari. Tingkat kerugian meningkat, tetapi kontribusi juga bergantung pada saldo.",
+          "overview": {
+            "heading": "Wilson: kontribusi tiap umur piutang",
+            "cards": [
+              {
+                "title": "Saldo target 26.610 euro",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Saldo kredit awal mengurangi beban",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Saldo debit awal menambah beban",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Baca satuan pada kedua sumbu. Kelompok 4 adalah 91-120 hari, kelompok 5 di atas 120 hari. Tingkat kerugian meningkat, tetapi kontribusi juga bergantung pada saldo."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Target = 345.000 × 0,8% + 115.000 × 4% + 18.000 × 15% + 14.000 × 20% + 55.000 × 25% = 26.610 euro. Dengan allowance kredit awal 800 euro, beban 25.810 euro; dengan debit awal 200 euro, beban 26.810 euro. Tarif mempertimbangkan pengalaman, keadaan kini dan prakiraan yang dapat didukung."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Illustration 6.6, PDF 532-533"
+        }
+      ]
+    },
+    "10": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Ch.7, Goods Included in Inventory dan Costs Included in Inventory, PDF 611-622",
+      "finding": "Keberadaan fisik perlu dipisahkan dari kepemilikan/pengendalian dan biaya siap jual.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Pertanyaan",
+            "Implikasi"
+          ],
+          "rows": [
+            [
+              "Barang di gudang milik pengirim konsinyasi?",
+              "Lokasi fisik tidak cukup untuk mengakui aset penerima."
+            ],
+            [
+              "Barang sedang dikirim?",
+              "Periksa syarat penyerahan dan perpindahan kendali."
+            ],
+            [
+              "Biaya membawa barang ke lokasi/kondisi sekarang?",
+              "Dapat masuk biaya persediaan jika memenuhi ketentuan."
+            ],
+            [
+              "Biaya penjualan atau administrasi umum?",
+              "Umumnya beban periode; jangan dikapitalisasi hanya karena dialokasikan."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Pada konsinyasi, pengirim tetap mengakui persediaan sampai penjualan kepada pelanggan. Penerima dapat memegang barang tanpa memiliki persediaan tersebut. Periksa kontrak jika syarat pengiriman atau hak pengembalian berbeda dari contoh buku."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Ch.7, Goods Included in Inventory dan Costs Included in Inventory, PDF 611-622"
+        }
+      ]
+    },
+    "11": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Illustration 7.7-7.10, PDF 623-627",
+      "finding": "Periodik dan perpetual memerlukan basis rata-rata berbeda.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Call-Mart, 6.000 unit akhir",
+            "Nilai akhir",
+            "HPP"
+          ],
+          "rows": [
+            [
+              "Specific identification sumber",
+              "26.700 euro",
+              "17.200 euro"
+            ],
+            [
+              "Weighted average periodik: 43.900 / 10.000",
+              "26.340 euro",
+              "17.560 euro"
+            ],
+            [
+              "FIFO: 4.000 × 4,40 + 2.000 × 4,75",
+              "27.100 euro",
+              "16.800 euro"
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Semua metode memakai barang tersedia 43.900 euro sehingga persediaan akhir + HPP = 43.900 euro. Rata-rata bergerak perpetual dihitung ulang pada pembelian; hasilnya dapat berbeda karena waktu penjualan. IFRS tidak mengizinkan LIFO sebagai formula biaya persediaan."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Illustration 7.7-7.10, PDF 623-627"
+        }
+      ]
+    },
+    "12": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Illustration 8.1-8.2, PDF 689-690",
+      "finding": "Belum ada kurva batas biaya dan NRV; kasus Mander perlu dibaca sebagai nilai bersih.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "figure",
+          "title": "Mander: batas biaya dan nilai bersih",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 495\" role=\"img\" aria-label=\"Mander: batas biaya dan nilai bersih. Pada harga jual 1.000 euro, biaya penyelesaian 50 dan biaya jual 200 memberi NRV 750; penurunan nilai 200 euro.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"495\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Nilai persediaan menurut harga jual</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Nilai per unit (euro)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">250</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">875</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1500</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">650</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">1300</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Harga jual estimasian (euro)</text><polyline points=\"90,265 286,205.3846153846154 384,175.5769230769231 462.4,151.73076923076923 580,115.96153846153845\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"265\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"286\" cy=\"205.3846153846154\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"384\" cy=\"175.5769230769231\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"462.4\" cy=\"151.73076923076923\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"115.96153846153845\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">NRV: harga jual - 250</text><polyline points=\"90,151.73076923076923 580,151.73076923076923\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"151.73076923076923\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"151.73076923076923\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya awal 950</text><polyline points=\"90,265 286,205.3846153846154 384,175.5769230769231 462.4,151.73076923076923 580,151.73076923076923\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"90\" cy=\"265\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"286\" cy=\"205.3846153846154\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"384\" cy=\"175.5769230769231\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"462.4\" cy=\"151.73076923076923\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"580\" cy=\"151.73076923076923\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"65\" y1=\"400\" x2=\"95\" y2=\"400\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"105\" y=\"405\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Nilai dilaporkan: minimum</text></svg>",
+          "caption": "Kieso, Intermediate Accounting IFRS 5e, Illustration 8.1-8.2, PDF 689-690. Kurva ilustratif dari rumus; hanya titik harga jual 1.000 euro memakai angka kasus buku.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 530\" role=\"img\" aria-label=\"Mander: batas biaya dan nilai bersih. Pada harga jual 1.000 euro, biaya penyelesaian 50 dan biaya jual 200 memberi NRV 750; penurunan nilai 200 euro.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"530\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Nilai persediaan menurut harga</text><text x=\"16\" y=\"58\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">jual</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Nilai per unit (euro)</text><line x1=\"61\" y1=\"120\" x2=\"61\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"61\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"61\" y1=\"300\" x2=\"61\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"61\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">250</text><line x1=\"198\" y1=\"300\" x2=\"198\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"198\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">875</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1500</text><text x=\"53\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"53\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">650</text><text x=\"53\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">1300</text><text x=\"198\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Harga jual estimasian (euro)</text><polyline points=\"61,300 170.60000000000002,230.76923076923077 225.4,196.15384615384616 269.24,168.46153846153848 335,126.9230769230769\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"61\" cy=\"300\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"170.60000000000002\" cy=\"230.76923076923077\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"225.4\" cy=\"196.15384615384616\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"269.24\" cy=\"168.46153846153848\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"126.9230769230769\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">NRV: harga jual - 250</text><polyline points=\"61,168.46153846153848 335,168.46153846153848\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"61\" cy=\"168.46153846153848\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"168.46153846153848\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya awal 950</text><polyline points=\"61,300 170.60000000000002,230.76923076923077 225.4,196.15384615384616 269.24,168.46153846153848 335,168.46153846153848\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"61\" cy=\"300\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"170.60000000000002\" cy=\"230.76923076923077\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"225.4\" cy=\"196.15384615384616\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"269.24\" cy=\"168.46153846153848\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"335\" cy=\"168.46153846153848\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"18\" y1=\"435\" x2=\"44\" y2=\"435\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"52\" y=\"440\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Nilai dilaporkan: minimum</text></svg>",
+          "altText": "Mander: batas biaya dan nilai bersih. Pada harga jual 1.000 euro, biaya penyelesaian 50 dan biaya jual 200 memberi NRV 750; penurunan nilai 200 euro.",
+          "overview": {
+            "heading": "Mander: batas biaya dan nilai bersih",
+            "cards": [
+              {
+                "title": "NRV = harga jual - 250 euro",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Biaya awal 950 euro",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Titik kasus: NRV 750 euro",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Baca satuan pada kedua sumbu. Pada harga jual 1.000 euro, biaya penyelesaian 50 dan biaya jual 200 memberi NRV 750; penurunan nilai 200 euro."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Pemulihan NRV pada persediaan yang sama dibatasi penurunan nilai sebelumnya. Nilai tercatat setelah reversal tetap paling rendah antara biaya awal dan NRV terbaru. Harga lain pada kurva adalah asumsi ilustrasi, dengan biaya penyelesaian dan biaya jual tetap."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Illustration 8.1-8.2, PDF 689-690"
+        }
+      ]
+    },
+    "13": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Illustration 8.13 dan 8.19, PDF 703-704 dan 710-712",
+      "finding": "Basis persentase markup sering tertukar; retail perlu membedakan perlakuan markdown.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Cetus: laba kotor dan persediaan estimasian",
+          "prompt": "Hitung persediaan jika laba kotor 30% dari penjualan.",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Barang tersedia 60.000 + 200.000 = 260.000 euro. HPP = 280.000 × 70% = 196.000 euro. Persediaan estimasian = 64.000 euro. Jika 30% adalah markup atas biaya, persentase laba atas penjualan menjadi 30/130; hasilnya berbeda. Metode ini bergantung pada pola margin yang representatif. Rujukan: Kieso, Intermediate Accounting IFRS 5e, Illustration 8.13 PDF 703"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Pada conventional retail, markdown tidak dimasukkan dalam denominator rasio cost-to-retail, tetapi tetap mengurangi barang tersedia pada harga retail untuk menghitung persediaan retail akhir. Periksa metode yang diminta; rasio average-cost retail berbeda."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Illustration 8.13 dan 8.19, PDF 703-704 dan 710-712"
+        }
+      ]
+    },
+    "14": {
+      "source": "Kieso, Intermediate Accounting IFRS 5e, Ch.6-8; modul tutor lokal UAS AKM1 TM8-14 PDF 2-13",
+      "finding": "Prioritas tutor perlu dibedakan dari bukti arsip ujian.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Kontrol jawaban",
+            "Pemeriksaan"
+          ],
+          "rows": [
+            [
+              "Rekonsiliasi",
+              "Saldo bank disesuaikan sama dengan buku disesuaikan."
+            ],
+            [
+              "Allowance",
+              "Saldo target berbeda dari beban perubahan akun."
+            ],
+            [
+              "Inventory cost flow",
+              "HPP + persediaan akhir = barang tersedia."
+            ],
+            [
+              "LCNRV",
+              "Nilai tiap item memakai biaya dan NRV pada basis sama."
+            ],
+            [
+              "Estimasi retail/gross profit",
+              "Persentase, markup/markdown dan basis harga dinyatakan."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas ini merupakan perkiraan dari cakupan bab dan modul tutor. Arsip lokal UTS tidak membuktikan bentuk atau bobot UAS. Latihan yang menggunakan data buatan tetap perlu menyebutkan asumsi dan satuan."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Ch.6-8; modul tutor lokal UAS AKM1 TM8-14 PDF 2-13"
+        }
+      ]
+    }
+  },
+  "AKM201": {
+    "8": {
+      "source": "Carter, Cost Accounting 14e, hal.8-12 sampai 8-13, PDF 242-243",
+      "finding": "Kos bersama untuk alokasi tidak menjadi dasar keputusan proses lanjut.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Produk B: keputusan proses lanjut dari sumber",
+          "prompt": "Bandingkan penjualan saat split-off dan setelah proses lanjut.",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Pendapatan saat split-off 60.000 USD, setelah proses 75.000 USD, tambahan biaya 10.000 USD. Tambahan kontribusi = 75.000 - 60.000 - 10.000 = 5.000 USD. Biaya bersama sudah terjadi pada titik keputusan sehingga tidak mengubah selisih ini. Keputusan juga memeriksa kapasitas dan apakah biaya 10.000 dapat dihindari. Rujukan: Carter, Cost Accounting 14e, hal.8-13 PDF 243"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, hal.8-12 sampai 8-13, PDF 242-243"
+        }
+      ]
+    },
+    "9": {
+      "source": "Carter, Cost Accounting 14e, hal.9-5 dan 9-11 sampai 9-12, PDF 260,266-267",
+      "finding": "EOQ perlu menyebutkan biaya relevan, unit per tahun dan asumsi permintaan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "figure",
+          "title": "EOQ: biaya pesan dan biaya simpan",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 495\" role=\"img\" aria-label=\"EOQ: biaya pesan dan biaya simpan. Q optimum kontinu = akar(2DS/H) = 447,21 unit; jumlah biaya relevan minimum sekitar Rp894.427 per tahun.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"495\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Jumlah pesan dan biaya tahunan</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya (juta Rp per tahun)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">100</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">550</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1000</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">1.25</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">2.5</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Q (unit per pesanan)</text><polyline points=\"90,141 144.44444444444446,203 198.88888888888889,223.66666666666666 253.33333333333331,234 279.0385131055326,237.27275707900262 307.77777777777777,240.2 362.22222222222223,244.33333333333334 471.11111111111114,249.5 580,252.6\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"141\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"144.44444444444446\" cy=\"203\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"198.88888888888889\" cy=\"223.66666666666666\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"253.33333333333331\" cy=\"234\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"279.0385131055326\" cy=\"237.27275707900262\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"307.77777777777777\" cy=\"240.2\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"362.22222222222223\" cy=\"244.33333333333334\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"471.11111111111114\" cy=\"249.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"252.6\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya pesan</text><polyline points=\"90,258.8 144.44444444444446,252.6 198.88888888888889,246.4 253.33333333333331,240.2 279.0385131055326,237.27275707900262 307.77777777777777,234 362.22222222222223,227.8 471.11111111111114,215.4 580,203\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"258.8\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"144.44444444444446\" cy=\"252.6\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"198.88888888888889\" cy=\"246.4\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"253.33333333333331\" cy=\"240.2\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"279.0385131055326\" cy=\"237.27275707900262\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"307.77777777777777\" cy=\"234\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"362.22222222222223\" cy=\"227.8\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"471.11111111111114\" cy=\"215.4\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"203\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Biaya simpan</text><polyline points=\"90,134.79999999999998 144.44444444444446,190.60000000000002 198.88888888888889,205.06666666666666 253.33333333333331,209.2 279.0385131055326,209.54551415800523 307.77777777777777,209.2 362.22222222222223,207.13333333333333 471.11111111111114,199.89999999999998 580,190.60000000000002\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"90\" cy=\"134.79999999999998\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"144.44444444444446\" cy=\"190.60000000000002\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"198.88888888888889\" cy=\"205.06666666666666\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"253.33333333333331\" cy=\"209.2\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"279.0385131055326\" cy=\"209.54551415800523\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"307.77777777777777\" cy=\"209.2\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"362.22222222222223\" cy=\"207.13333333333333\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"471.11111111111114\" cy=\"199.89999999999998\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"580\" cy=\"190.60000000000002\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"65\" y1=\"400\" x2=\"95\" y2=\"400\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"105\" y=\"405\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Jumlah keduanya</text></svg>",
+          "caption": "Carter, Cost Accounting 14e, hal.9-11 sampai 9-12 PDF 266-267. Angka ilustratif buatan: D 10.000 unit/tahun, S Rp20.000/pesanan, H Rp2.000/unit/tahun.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 530\" role=\"img\" aria-label=\"EOQ: biaya pesan dan biaya simpan. Q optimum kontinu = akar(2DS/H) = 447,21 unit; jumlah biaya relevan minimum sekitar Rp894.427 per tahun.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"530\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Jumlah pesan dan biaya tahunan</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya (juta Rp per tahun)</text><line x1=\"61\" y1=\"120\" x2=\"61\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"61\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"61\" y1=\"300\" x2=\"61\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"61\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">100</text><line x1=\"198\" y1=\"300\" x2=\"198\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"198\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">550</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1000</text><text x=\"53\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"53\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">1.25</text><text x=\"53\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">2.5</text><text x=\"198\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Q (unit per pesanan)</text><polyline points=\"61,156 91.44444444444444,228 121.88888888888889,252 152.33333333333331,264 166.70725018554276,267.80062112400304 182.77777777777777,271.2 213.22222222222223,276 274.1111111111111,282 335,285.6\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"61\" cy=\"156\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"91.44444444444444\" cy=\"228\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"121.88888888888889\" cy=\"252\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"152.33333333333331\" cy=\"264\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"166.70725018554276\" cy=\"267.80062112400304\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"182.77777777777777\" cy=\"271.2\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"213.22222222222223\" cy=\"276\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"274.1111111111111\" cy=\"282\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"285.6\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya pesan</text><polyline points=\"61,292.8 91.44444444444444,285.6 121.88888888888889,278.4 152.33333333333331,271.2 166.70725018554276,267.80062112400304 182.77777777777777,264 213.22222222222223,256.8 274.1111111111111,242.4 335,228\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"61\" cy=\"292.8\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"91.44444444444444\" cy=\"285.6\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"121.88888888888889\" cy=\"278.4\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"152.33333333333331\" cy=\"271.2\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"166.70725018554276\" cy=\"267.80062112400304\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"182.77777777777777\" cy=\"264\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"213.22222222222223\" cy=\"256.8\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"274.1111111111111\" cy=\"242.4\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"228\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Biaya simpan</text><polyline points=\"61,148.79999999999998 91.44444444444444,213.60000000000002 121.88888888888889,230.4 152.33333333333331,235.2 166.70725018554276,235.60124224800606 182.77777777777777,235.2 213.22222222222223,232.8 274.1111111111111,224.39999999999998 335,213.60000000000002\" fill=\"none\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><circle cx=\"61\" cy=\"148.79999999999998\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"91.44444444444444\" cy=\"213.60000000000002\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"121.88888888888889\" cy=\"230.4\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"152.33333333333331\" cy=\"235.2\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"166.70725018554276\" cy=\"235.60124224800606\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"182.77777777777777\" cy=\"235.2\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"213.22222222222223\" cy=\"232.8\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"274.1111111111111\" cy=\"224.39999999999998\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><circle cx=\"335\" cy=\"213.60000000000002\" r=\"3\" fill=\"var(--svg-warning, #d97706)\"/><line x1=\"18\" y1=\"435\" x2=\"44\" y2=\"435\" stroke=\"var(--svg-warning, #d97706)\" stroke-width=\"3\" stroke-dasharray=\"2 5\"/><text x=\"52\" y=\"440\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Jumlah keduanya</text></svg>",
+          "altText": "EOQ: biaya pesan dan biaya simpan. Q optimum kontinu = akar(2DS/H) = 447,21 unit; jumlah biaya relevan minimum sekitar Rp894.427 per tahun.",
+          "overview": {
+            "heading": "EOQ: biaya pesan dan biaya simpan",
+            "cards": [
+              {
+                "title": "Biaya pesan = DS/Q",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Biaya simpan = HQ/2",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "EOQ dibulatkan 447 unit",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Baca satuan pada kedua sumbu. Q optimum kontinu = akar(2DS/H) = 447,21 unit; jumlah biaya relevan minimum sekitar Rp894.427 per tahun."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Model memakai permintaan tetap, pengisian sekaligus, tanpa stockout atau diskon kuantitas. H dan S hanya memuat biaya yang berubah karena keputusan; sewa gudang tetap tidak otomatis relevan. Total di grafik tidak memasukkan harga pembelian yang tetap. Pembulatan jumlah pesanan mengikuti kebijakan operasional."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, hal.9-5 dan 9-11 sampai 9-12, PDF 260,266-267"
+        }
+      ]
+    },
+    "10": {
+      "source": "Carter, Cost Accounting 14e, hal.11-4, PDF 320",
+      "finding": "Produktivitas tenaga kerja dan biaya per unit harus dibedakan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "solution-reveal",
+          "title": "Insentif upah: jam dan unit dari sumber",
+          "prompt": "Mengapa upah per jam meningkat tetapi biaya per unit turun?",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Sebelum insentif: 6 USD per jam, 5 unit per jam, biaya tenaga kerja 1,20 USD/unit. Sesudah: 6,60 USD per jam dan 6 unit per jam, biaya 1,10 USD/unit. Tarif per jam naik 10%, output per jam naik 20%. Buku juga memisahkan komponen bahan dan overhead; keputusan tetap menjaga kualitas dan keselamatan. Rujukan: Carter, Cost Accounting 14e, hal.11-4 PDF 320"
+            }
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, hal.11-4, PDF 320"
+        }
+      ]
+    },
+    "11": {
+      "source": "Carter, Cost Accounting 14e, hal.12-3 PDF 364; modul tutor lokal FOH PDF 11-12",
+      "finding": "Tarif rencana, overhead aktual dan selisih memakai basis aktivitas berbeda.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Ukuran",
+            "Cara hitung"
+          ],
+          "rows": [
+            [
+              "Tarif ditentukan di awal",
+              "Anggaran overhead / anggaran dasar aktivitas"
+            ],
+            [
+              "Overhead dibebankan",
+              "Tarif rencana × aktivitas aktual"
+            ],
+            [
+              "Selisih underapplied",
+              "Overhead aktual lebih besar dari dibebankan"
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Contoh modul tutor: aktual Rp438.000, dibebankan Rp425.250, selisih kurang dibebankan Rp12.750. Penutupan ke HPP atau prorata akun bergantung materialitas dan ketentuan soal. Pemilihan jam mesin, jam tenaga kerja atau driver lain harus menjelaskan penyebab overhead, bukan memilih denominator agar tarif kecil."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, hal.12-3 PDF 364; modul tutor lokal FOH PDF 11-12"
+        }
+      ]
+    },
+    "12": {
+      "source": "Carter, Cost Accounting 14e, Ch.13, PDF 389-430; modul tutor lokal departementalisasi PDF 6-10",
+      "finding": "Metode alokasi jasa mempunyai batas timbal balik berbeda.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Metode",
+            "Jasa antardepartemen jasa"
+          ],
+          "rows": [
+            [
+              "Langsung",
+              "Diabaikan; alokasikan ke produksi."
+            ],
+            [
+              "Bertahap",
+              "Sebagian diakui; departemen yang sudah ditutup tidak menerima alokasi balik."
+            ],
+            [
+              "Resiprokal",
+              "Diakui melalui persamaan simultan."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Jangan menafsirkan hasil alokasi sebagai biaya marginal keputusan. Pada metode bertahap, urutan penutupan mengubah hasil sehingga dasar urutan harus dinyatakan. Tarif departemen produksi dihitung setelah menerima biaya jasa dengan denominator aktivitasnya sendiri."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, Ch.13, PDF 389-430; modul tutor lokal departementalisasi PDF 6-10"
+        }
+      ]
+    },
+    "13": {
+      "source": "Carter, Cost Accounting 14e, Ch.14, PDF 431-435",
+      "finding": "ABC harus memisahkan pemicu aktivitas dari jumlah produk.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Tahap",
+            "Pemeriksaan"
+          ],
+          "rows": [
+            [
+              "Kumpulkan biaya per aktivitas",
+              "Pool biaya konsisten dengan definisi aktivitas."
+            ],
+            [
+              "Tentukan driver dan tarif",
+              "Biaya pool / kapasitas atau jumlah driver sesuai soal."
+            ],
+            [
+              "Bebankan produk",
+              "Tarif × konsumsi driver produk."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Dua produk dengan unit sama dapat memakai jumlah setup berbeda. Ilustrasi buatan: pool setup Rp12 juta, 30 setup, tarif Rp400.000/setup. Produk A memakai 5 setup, alokasi Rp2 juta; B 25 setup, Rp10 juta. Total Rp12 juta. Driver dipilih berdasarkan hubungan sebab biaya; banyak driver tidak otomatis membuat model lebih akurat."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, Ch.14, PDF 431-435"
+        }
+      ]
+    },
+    "14": {
+      "source": "Carter, Cost Accounting 14e, Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8",
+      "finding": "Arsip kuis memberi bentuk latihan, tidak menjamin soal UAS.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Topik",
+            "Kontrol numerik"
+          ],
+          "rows": [
+            [
+              "Joint cost",
+              "Alokasi semua produk menjumlah ke total pool; keputusan memakai selisih."
+            ],
+            [
+              "Bahan/upah",
+              "Pisahkan unit, jam, tarif, dan biaya per periode."
+            ],
+            [
+              "FOH",
+              "Tarif anggaran × aktivitas aktual; rekonsiliasi dengan aktual."
+            ],
+            [
+              "Departemen/ABC",
+              "Total biaya yang dialokasikan tidak hilang atau dihitung dua kali."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Arsip kuis pra-UAS 2026 dibaca sebagai bukti latihan, dengan tahun dan identitas dokumen tetap dicatat. Bobot ujian akhir belum dibuktikan dari arsip UAS yang dapat dibaca lengkap; soal spreadsheet UAS 2022 memerlukan pemeriksaan terpisah."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Carter, Cost Accounting 14e, Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+        }
+      ]
+    }
+  },
+  "MNU101": {
+    "8": {
+      "source": "Pride, Foundations of Business 6e, Ch.9-10, PDF 259-301; RPS 2026 minggu 8",
+      "finding": "Maslow dan Herzberg tidak memberi satu ukuran motivasi yang berlaku untuk semua orang.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Maslow dan Herzberg tidak memberi satu ukuran motivasi yang berlaku untuk semua orang."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Pemicu",
+            "Pertanyaan HR"
+          ],
+          "rows": [
+            [
+              "Kebutuhan/hygiene",
+              "Apakah upah, kondisi kerja dan kebijakan memadai?"
+            ],
+            [
+              "Motivator",
+              "Apakah pekerjaan memberi prestasi, tanggung jawab dan pengembangan?"
+            ],
+            [
+              "Evaluasi",
+              "Apakah bukti produktivitas, retensi dan kualitas mendukung tindakan?"
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.9-10, PDF 259-301; RPS 2026 minggu 8"
+        }
+      ]
+    },
+    "9": {
+      "source": "Pride, Foundations of Business 6e, Ch.11, PDF 320-344; RPS 2026 minggu 9",
+      "finding": "STP perlu mendahului kombinasi 4P; segmentasi tidak sama dengan memilih target.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "STP perlu mendahului kombinasi 4P; segmentasi tidak sama dengan memilih target."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Langkah",
+            "Hasil"
+          ],
+          "rows": [
+            [
+              "Segmentation",
+              "Kelompok kebutuhan atau karakteristik pasar."
+            ],
+            [
+              "Targeting",
+              "Kelompok yang dipilih dengan ukuran dan kemampuan layanan."
+            ],
+            [
+              "Positioning",
+              "Nilai pembeda yang ingin dipahami pelanggan."
+            ],
+            [
+              "Marketing mix",
+              "Produk, harga, saluran dan promosi yang konsisten dengan target."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.11, PDF 320-344; RPS 2026 minggu 9"
+        }
+      ]
+    },
+    "10": {
+      "source": "Pride, Foundations of Business 6e, Ch.12, Figure 12-1, hal.331, PDF 349-351; RPS 2026 minggu 10",
+      "finding": "Diagram product life cycle belum tersedia sebagai kurva penjualan dan laba.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Diagram product life cycle belum tersedia sebagai kurva penjualan dan laba."
+        },
+        {
+          "kind": "figure",
+          "title": "Siklus hidup produk: penjualan dan laba",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 455\" role=\"img\" aria-label=\"Siklus hidup produk: penjualan dan laba. Tahap pengenalan, pertumbuhan, kedewasaan dan penurunan adalah pola analisis. Penjualan yang naik tidak selalu berarti laba ikut naik.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"455\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Penjualan dan laba sepanjang siklus</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Nilai (indeks skematis)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"239.16666666666666\" x2=\"580\" y2=\"239.16666666666666\" stroke=\"var(--svg-muted,#64748b)\" stroke-dasharray=\"4 4\"/><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">5</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">10</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">-20</text><text x=\"82\" y=\"244.16666666666666\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">40</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">100</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Waktu (indeks skematis)</text><polyline points=\"90,239.16666666666666 139,230.125 188,213.33333333333334 237,181.04166666666669 286,148.75 335,125.5 384,119.04166666666666 433,129.375 482,161.66666666666669 531,200.41666666666666 580,228.83333333333334\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"239.16666666666666\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"139\" cy=\"230.125\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"188\" cy=\"213.33333333333334\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"237\" cy=\"181.04166666666669\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"286\" cy=\"148.75\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"125.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"384\" cy=\"119.04166666666666\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"433\" cy=\"129.375\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"482\" cy=\"161.66666666666669\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"531\" cy=\"200.41666666666666\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"228.83333333333334\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Penjualan</text><polyline points=\"90,258.5416666666667 139,254.66666666666666 188,235.29166666666666 237,206.875 286,183.625 335,191.375 384,201.70833333333334 433,212.04166666666666 482,223.66666666666666 531,234 580,239.16666666666666\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"258.5416666666667\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"139\" cy=\"254.66666666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"188\" cy=\"235.29166666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"237\" cy=\"206.875\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"286\" cy=\"183.625\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"191.375\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"384\" cy=\"201.70833333333334\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"433\" cy=\"212.04166666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"482\" cy=\"223.66666666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"531\" cy=\"234\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"239.16666666666666\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Laba</text></svg>",
+          "caption": "Pride, Foundations of Business 6e, Figure 12-1, PDF 349. Skematis; waktu dan nilai memakai indeks buatan, tanpa data penjualan perusahaan.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 490\" role=\"img\" aria-label=\"Siklus hidup produk: penjualan dan laba. Tahap pengenalan, pertumbuhan, kedewasaan dan penurunan adalah pola analisis. Penjualan yang naik tidak selalu berarti laba ikut naik.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"490\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Penjualan dan laba sepanjang</text><text x=\"16\" y=\"58\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">siklus</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Nilai (indeks skematis)</text><line x1=\"58\" y1=\"120\" x2=\"58\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"270\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted,#64748b)\" stroke-dasharray=\"4 4\"/><line x1=\"58\" y1=\"300\" x2=\"58\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">5</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">10</text><text x=\"50\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">-20</text><text x=\"50\" y=\"275\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">40</text><text x=\"50\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">100</text><text x=\"196.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Waktu (indeks skematis)</text><polyline points=\"58,270 85.7,259.5 113.4,240 141.1,202.5 168.8,165 196.5,138 224.2,130.5 251.89999999999998,142.5 279.6,180 307.3,225 335,258\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"270\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"85.7\" cy=\"259.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"113.4\" cy=\"240\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"141.1\" cy=\"202.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"168.8\" cy=\"165\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"138\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"224.2\" cy=\"130.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"251.89999999999998\" cy=\"142.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"279.6\" cy=\"180\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"307.3\" cy=\"225\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"258\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Penjualan</text><polyline points=\"58,292.5 85.7,288 113.4,265.5 141.1,232.5 168.8,205.5 196.5,214.5 224.2,226.5 251.89999999999998,238.5 279.6,252 307.3,264 335,270\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"58\" cy=\"292.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"85.7\" cy=\"288\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"113.4\" cy=\"265.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"141.1\" cy=\"232.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"168.8\" cy=\"205.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"196.5\" cy=\"214.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"224.2\" cy=\"226.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"251.89999999999998\" cy=\"238.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"279.6\" cy=\"252\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"307.3\" cy=\"264\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"270\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Laba</text></svg>",
+          "altText": "Siklus hidup produk: penjualan dan laba. Tahap pengenalan, pertumbuhan, kedewasaan dan penurunan adalah pola analisis. Penjualan yang naik tidak selalu berarti laba ikut naik.",
+          "overview": {
+            "heading": "Siklus hidup produk: penjualan dan laba",
+            "cards": [
+              {
+                "title": "Laba dapat negatif saat pengenalan",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Laba memuncak sebelum penjualan",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Durasi tiap tahap tidak tetap",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Baca satuan pada kedua sumbu. Tahap pengenalan, pertumbuhan, kedewasaan dan penurunan adalah pola analisis. Penjualan yang naik tidak selalu berarti laba ikut naik."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.12, Figure 12-1, hal.331, PDF 349-351; RPS 2026 minggu 10"
+        }
+      ]
+    },
+    "11": {
+      "source": "Pride, Foundations of Business 6e, Ch.13, Figure 13-1, hal.363-364, PDF 381-382; RPS 2026 minggu 11",
+      "finding": "Saluran distribusi dan supply chain mempunyai ruang lingkup berbeda.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Saluran distribusi dan supply chain mempunyai ruang lingkup berbeda."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Bentuk saluran",
+            "Implikasi"
+          ],
+          "rows": [
+            [
+              "Produsen ke konsumen",
+              "Kendali kontak lebih langsung; produsen menanggung fungsi saluran."
+            ],
+            [
+              "Produsen ke perantara ke konsumen",
+              "Perantara dapat mengurangi biaya transaksi dan memperluas jangkauan."
+            ],
+            [
+              "Supply chain",
+              "Mengelola aliran barang, informasi dan dana antarpihak."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.13, Figure 13-1, hal.363-364, PDF 381-382; RPS 2026 minggu 11"
+        }
+      ]
+    },
+    "12": {
+      "source": "Pride, Foundations of Business 6e, Ch.14, hal.414-425, PDF 432-443; RPS 2026 minggu 12",
+      "finding": "Pencapaian media sosial memerlukan tujuan dan ukuran hasil, bukan jumlah unggahan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Pencapaian media sosial memerlukan tujuan dan ukuran hasil, bukan jumlah unggahan."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Rencana",
+            "Ukuran"
+          ],
+          "rows": [
+            [
+              "Tujuan",
+              "Nyatakan layanan, awareness, penjualan atau retensi."
+            ],
+            [
+              "Audiens dan kanal",
+              "Cocokkan kebiasaan pengguna dengan kapasitas layanan."
+            ],
+            [
+              "Pelaksanaan",
+              "Tetapkan tanggung jawab, anggaran dan keamanan akses."
+            ],
+            [
+              "Pengukuran",
+              "Bedakan impresi, tindakan dan hasil bisnis; evaluasi biaya."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.14, hal.414-425, PDF 432-443; RPS 2026 minggu 12"
+        }
+      ]
+    },
+    "13": {
+      "source": "Pride, Foundations of Business 6e, Ch.15, hal.434-440, PDF 452-458; RPS 2026 minggu 13",
+      "finding": "Informasi mengurangi ketidakpastian jika relevan dan dapat dipercaya.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Informasi mengurangi ketidakpastian jika relevan dan dapat dipercaya."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Data ke keputusan",
+            "Kontrol"
+          ],
+          "rows": [
+            [
+              "Kumpulkan dan simpan",
+              "Otorisasi akses, validasi dan ketepatan waktu."
+            ],
+            [
+              "Olah menjadi informasi",
+              "Definisi ukuran konsisten dan asal data dapat ditelusuri."
+            ],
+            [
+              "Gunakan dan evaluasi",
+              "Pengguna memahami batas data; hasil ditinjau kembali."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.15, hal.434-440, PDF 452-458; RPS 2026 minggu 13"
+        }
+      ]
+    },
+    "14": {
+      "source": "Pride, Foundations of Business 6e, Ch.16, hal.467-481, PDF 485-499; RPS 2026 minggu 14",
+      "finding": "Laba akrual, anggaran kas dan kebutuhan pendanaan perlu dipisahkan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Laba akrual, anggaran kas dan kebutuhan pendanaan perlu dipisahkan."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Kondisi",
+            "Tindakan"
+          ],
+          "rows": [
+            [
+              "Penjualan kredit meningkat",
+              "Periksa waktu penagihan, bukan menyamakan penjualan dengan kas."
+            ],
+            [
+              "Kebutuhan musiman",
+              "Bandingkan biaya, tenor dan risiko pembaruan utang."
+            ],
+            [
+              "Investasi berumur panjang",
+              "Rencanakan sumber pendanaan yang sesuai kemampuan membayar."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.16, hal.467-481, PDF 485-499; RPS 2026 minggu 14"
+        }
+      ]
+    }
+  },
+  "AKA103": {
+    "8": {
+      "source": "Sia (2008) hal.702-709, PDF 2-8; Juliyani (2016) hal.66-69, PDF 4-7",
+      "finding": "Rujukan RPS saja belum cukup untuk membedakan posisi analitis dari nilai agama.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan RPS saja belum cukup untuk membedakan posisi analitis dari nilai agama."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Aksioma Juliyani",
+            "Penerapan akuntan, ilustrasi buatan"
+          ],
+          "rows": [
+            [
+              "Kesatuan",
+              "Konsistensi antara keyakinan dan tindakan profesional."
+            ],
+            [
+              "Keseimbangan",
+              "Menilai hak pemilik, pekerja dan pihak terdampak."
+            ],
+            [
+              "Kehendak bebas",
+              "Memilih tindakan dengan batas tanggung jawab."
+            ],
+            [
+              "Tanggung jawab",
+              "Menjelaskan keputusan dan memperbaiki dampak."
+            ],
+            [
+              "Kebajikan",
+              "Mengejar manfaat dengan kejujuran, bukan hanya kepatuhan minimum."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Sia (2008) hal.702-709, PDF 2-8; Juliyani (2016) hal.66-69, PDF 4-7"
+        }
+      ]
+    },
+    "9": {
+      "source": "RPS PDF 5; Byars dan Stanberry, Business Ethics Ch.8, bagian 8.1-8.5",
+      "finding": "DEI belum mencakup seluruh topik hak pada RPS.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "DEI belum mencakup seluruh topik hak pada RPS."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Topik RPS",
+            "Analisis kasus"
+          ],
+          "rows": [
+            [
+              "Kemampuan dan keyakinan berbeda",
+              "Hubungkan kebutuhan akomodasi dengan tugas dan keselamatan."
+            ],
+            [
+              "Identitas dan orientasi",
+              "Uji penghormatan, privasi dan kriteria kompetensi."
+            ],
+            [
+              "Ketimpangan pendapatan",
+              "Jelaskan dasar kompensasi dan peluang."
+            ],
+            [
+              "Hak hewan",
+              "Bedakan kewajiban hukum, kesejahteraan dan argumen moral."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: RPS PDF 5; Byars dan Stanberry, Business Ethics Ch.8, bagian 8.1-8.5"
+        }
+      ]
+    },
+    "10": {
+      "source": "Ngoo, Tiong dan Pok (2015), hal.98-104, Table 1-2 PDF 3-6; Kavanagh dan Drennan (2008)",
+      "finding": "Hasil survei bukan ranking kemampuan yang berlaku universal.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Hasil survei bukan ranking kemampuan yang berlaku universal."
+        },
+        {
+          "kind": "p",
+          "text": "Ngoo dkk. membandingkan persepsi pemberi kerja dan lulusan di Malaysia. Selisih prioritas dan signifikansi statistik perlu dibedakan dari kemampuan aktual atau hubungan sebab. Pada survei mahasiswa, nyatakan populasi, cara memilih responden, pertanyaan dan ukuran penilaian sebelum menarik kesimpulan. Penerapan ke pasar Indonesia memerlukan bukti lokal."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Ngoo, Tiong dan Pok (2015), hal.98-104, Table 1-2 PDF 3-6; Kavanagh dan Drennan (2008)"
+        }
+      ]
+    },
+    "11": {
+      "source": "Felo (2011), hal.281-296, PDF 310-325 pada buku Brink lengkap; RPS PDF 6",
+      "finding": "TARIF belum menggantikan enam mekanisme tata kelola yang ditugaskan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "TARIF belum menggantikan enam mekanisme tata kelola yang ditugaskan."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Mekanisme RPS",
+            "Risiko yang diuji"
+          ],
+          "rows": [
+            [
+              "Keterlibatan dewan dalam kode etik",
+              "Apakah pengawasan diterapkan atau hanya simbolis?"
+            ],
+            [
+              "Independensi dan CEO duality",
+              "Konflik kepentingan serta kualitas informasi ke dewan."
+            ],
+            [
+              "Kompensasi dan pemilihan direktur",
+              "Insentif, horizon keputusan dan akuntabilitas."
+            ],
+            [
+              "Auditor eksternal",
+              "Mutu bukti dan independensi; audit tidak menjamin semua fraud ditemukan."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Felo (2011), hal.281-296, PDF 310-325 pada buku Brink lengkap; RPS PDF 6"
+        }
+      ]
+    },
+    "12": {
+      "source": "Oberer dan Erkollar (2018), hal.409-410, PDF 6-7; Othman dan Rahman (2014), Table 2-3, hal.367 PDF 8",
+      "finding": "Leadership 4.0 perlu menghubungkan perhatian manusia dan inovasi.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Leadership 4.0 perlu menghubungkan perhatian manusia dan inovasi."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Dimensi",
+            "Bukti perilaku"
+          ],
+          "rows": [
+            [
+              "Inovasi/teknologi",
+              "Mendukung eksperimen, pembelajaran dan perubahan proses."
+            ],
+            [
+              "Manusia",
+              "Memberi dukungan, kesempatan berpartisipasi dan pengembangan."
+            ],
+            [
+              "Etika",
+              "Keterbukaan konflik kepentingan, kejujuran dan akuntabilitas."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Oberer dan Erkollar (2018), hal.409-410, PDF 6-7; Othman dan Rahman (2014), Table 2-3, hal.367 PDF 8"
+        }
+      ]
+    },
+    "13": {
+      "source": "Siriwardane, Low dan Blietz (2015), hal.338-340, Table 2-5 PDF 7-9",
+      "finding": "Tugas, keterampilan dan atribut komunikasi masih tercampur.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Tugas, keterampilan dan atribut komunikasi masih tercampur."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Kategori",
+            "Contoh dari studi"
+          ],
+          "rows": [
+            [
+              "Tugas",
+              "Menyiapkan kertas kerja dan pesan elektronik."
+            ],
+            [
+              "Keterampilan",
+              "Mendengarkan, membaca, parafrasa dan membedakan fakta/inferensi."
+            ],
+            [
+              "Atribut",
+              "Kejelasan dan kesesuaian komunikasi dengan penerima."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Siriwardane, Low dan Blietz (2015), hal.338-340, Table 2-5 PDF 7-9"
+        }
+      ]
+    },
+    "14": {
+      "source": "RPS PDF 7, kuliah tamu; integrasi sumber TM8-13",
+      "finding": "TM14 sebenarnya kuliah tamu; ringkasan praktisi tidak tersedia.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "TM14 sebenarnya kuliah tamu; ringkasan praktisi tidak tersedia."
+        },
+        {
+          "kind": "p",
+          "text": "RPS menempatkan perspektif praktisi pada kuliah tamu. Integrasi berikut adalah latihan buatan sampai catatan kuliah tamu tersedia: temuan faktur tidak wajar memerlukan bukti dan prinsip etika, pemimpin memastikan jalur eskalasi, lalu komunikasi memisahkan fakta, dugaan, dampak dan tindakan. Jangan menyebut dugaan sebagai fraud yang sudah terbukti."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: RPS PDF 7, kuliah tamu; integrasi sumber TM8-13"
+        }
+      ]
+    }
+  },
+  "EKT109": {
+    "8": {
+      "source": "Mankiw, Principles of Economics, Ch.23, bagian 23-3, hal.473-476 PDF 510-513",
+      "finding": "GDP expenditure perlu membedakan barang akhir dari transaksi keuangan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "GDP expenditure perlu membedakan barang akhir dari transaksi keuangan."
+        },
+        {
+          "kind": "p",
+          "text": "Y = C + I + G + NX adalah identitas pengeluaran atas produksi domestik. Pembelian saham merupakan transaksi aset keuangan, sedangkan investasi I meliputi modal fisik, bangunan baru dan perubahan persediaan. Impor dikurangkan agar pengeluaran C/I/G yang memuat produksi asing tidak menambah GDP domestik."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Mankiw, Principles of Economics, Ch.23, bagian 23-3, hal.473-476 PDF 510-513"
+        }
+      ]
+    },
+    "9": {
+      "source": "Samuelson dan Nordhaus, Economics, Ch.21, fungsi konsumsi dan tabungan; slide lokal Closed Economy",
+      "finding": "Break-even rumah tangga berbeda dari keseimbangan output seluruh ekonomi.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Break-even rumah tangga berbeda dari keseimbangan output seluruh ekonomi."
+        },
+        {
+          "kind": "p",
+          "text": "Pada C = a + bY, titik C = Y berarti tabungan nol. Itu belum menunjukkan keseimbangan makro karena investasi, pemerintah atau sektor luar negeri dapat menambah pengeluaran. MPC = perubahan C / perubahan Y; MPS = 1 - MPC pada identitas disposable income yang sama. Nyatakan pajak jika pendapatan bruto dipakai."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Samuelson dan Nordhaus, Economics, Ch.21, fungsi konsumsi dan tabungan; slide lokal Closed Economy"
+        }
+      ]
+    },
+    "10": {
+      "source": "Samuelson dan Nordhaus, Economics, Ch.22, model multiplier; slide lokal Closed Economy",
+      "finding": "Multiplier sederhana perlu batas harga tetap dan sumber kebocoran.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Multiplier sederhana perlu batas harga tetap dan sumber kebocoran."
+        },
+        {
+          "kind": "p",
+          "text": "Pada model harga tetap tanpa pajak proporsional dan impor, multiplier = 1/(1-MPC). Ilustrasi buatan MPC 0,75 memberi multiplier 4; tambahan pengeluaran otonom 20 miliar rupiah menaikkan output keseimbangan 80 miliar rupiah. Ini hasil model, dengan kapasitas menganggur dan investasi/komponen lain tetap; pajak, impor dan respons bunga dapat mengurangi hasil."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Samuelson dan Nordhaus, Economics, Ch.22, model multiplier; slide lokal Closed Economy"
+        }
+      ]
+    },
+    "11": {
+      "source": "Mankiw, Principles of Economics, Ch.26, hal.537-542 PDF 574-579; Ch.29 bagian 29-3 PDF 634-638",
+      "finding": "Pasar dana pinjaman belum mempunyai grafik yang dapat dibaca pada ponsel.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Pasar dana pinjaman belum mempunyai grafik yang dapat dibaca pada ponsel."
+        },
+        {
+          "kind": "figure",
+          "title": "Dana pinjaman: pertemuan saving dan investment",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 455\" role=\"img\" aria-label=\"Dana pinjaman: pertemuan saving dan investment. Pada bunga di bawah 5%, permintaan melebihi penawaran pada gambar ini; tekanan penyesuaian menaikkan bunga.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"455\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Pasar dana pinjaman</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bunga riil (% per tahun)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">1200</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2400</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">5</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">10</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Dana (miliar USD)</text><polyline points=\"151.25,241.75 335,187.5 518.75,133.25\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"151.25\" cy=\"241.75\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"187.5\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"518.75\" cy=\"133.25\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Penawaran saving (skematis)</text><polyline points=\"151.25,133.25 335,187.5 518.75,241.75\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"151.25\" cy=\"133.25\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"187.5\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"518.75\" cy=\"241.75\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Permintaan investment (skematis)</text></svg>",
+          "caption": "Mankiw, Principles of Economics, Ch.26, Figure 1, hal.538 PDF 575. Titik buku r 5% dan 1.200 miliar USD dipertahankan; titik lain kurva adalah skematis, tanpa persamaan estimasi buku.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 490\" role=\"img\" aria-label=\"Dana pinjaman: pertemuan saving dan investment. Pada bunga di bawah 5%, permintaan melebihi penawaran pada gambar ini; tekanan penyesuaian menaikkan bunga.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"490\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Pasar dana pinjaman</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Bunga riil (% per tahun)</text><line x1=\"58\" y1=\"120\" x2=\"58\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"58\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">1200</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2400</text><text x=\"50\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">5</text><text x=\"50\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">10</text><text x=\"196.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Dana (miliar USD)</text><polyline points=\"92.625,273 196.5,210 300.375,147\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"92.625\" cy=\"273\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"210\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"300.375\" cy=\"147\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Penawaran saving (skematis)</text><polyline points=\"92.625,147 196.5,210 300.375,273\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"92.625\" cy=\"147\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"196.5\" cy=\"210\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"300.375\" cy=\"273\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Permintaan investment</text><text x=\"52\" y=\"431\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">(skematis)</text></svg>",
+          "altText": "Dana pinjaman: pertemuan saving dan investment. Pada bunga di bawah 5%, permintaan melebihi penawaran pada gambar ini; tekanan penyesuaian menaikkan bunga.",
+          "overview": {
+            "heading": "Dana pinjaman: pertemuan saving dan investment",
+            "cards": [
+              {
+                "title": "Bunga riil menyeimbangkan pasar",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Titik sumber 1.200 miliar USD, 5%",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Garis lain adalah skematis",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Baca satuan pada kedua sumbu. Pada bunga di bawah 5%, permintaan melebihi penawaran pada gambar ini; tekanan penyesuaian menaikkan bunga."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Saving S = Y - C - G pada ekonomi tertutup sama dengan I secara akuntansi. Suku bunga pada pasar dana pinjaman adalah tingkat riil yang menyeimbangkan penawaran saving dan permintaan investment. Identitas tidak berarti setiap rumah tangga menabung sebesar investasinya. Multiplier deposito 1/R adalah model dengan seluruh dana disimpan dan tidak ada excess reserves, bukan batas mekanis seluruh sistem keuangan nyata."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Mankiw, Principles of Economics, Ch.26, hal.537-542 PDF 574-579; Ch.29 bagian 29-3 PDF 634-638"
+        }
+      ]
+    },
+    "12": {
+      "source": "Mankiw, Principles of Economics, Ch.31-32, PPP dan pasar valas; hal.653-656 PDF 690-693",
+      "finding": "Konvensi kuotasi kurs perlu disebut sebelum menyimpulkan apresiasi.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Konvensi kuotasi kurs perlu disebut sebelum menyimpulkan apresiasi."
+        },
+        {
+          "kind": "p",
+          "text": "Jika kurs ditulis mata uang asing per unit domestik, kenaikan berarti apresiasi domestik. Jika ditulis rupiah per unit asing, kenaikan berarti depresiasi rupiah. Rumus kurs riil mengikuti konvensi yang dipilih. PPP membandingkan daya beli barang; biaya perdagangan, barang tidak diperdagangkan dan perbedaan barang membatasi penerapannya."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Mankiw, Principles of Economics, Ch.31-32, PPP dan pasar valas; hal.653-656 PDF 690-693"
+        }
+      ]
+    },
+    "13": {
+      "source": "Mankiw, Principles of Economics, Ch.35, bagian 35-2d, hal.753-754 PDF 790-791",
+      "finding": "Phillips curve perlu membedakan perubahan sepanjang kurva dari pergeseran ekspektasi.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Phillips curve perlu membedakan perubahan sepanjang kurva dari pergeseran ekspektasi."
+        },
+        {
+          "kind": "p",
+          "text": "Pada ekspektasi inflasi tetap, kejutan permintaan dapat membawa pengangguran dan inflasi bergerak sepanjang Phillips curve jangka pendek. Perubahan ekspektasi atau supply shock menggeser kurva. Dalam model natural rate, kurva jangka panjang vertikal; inflasi tinggi tidak memberi pengangguran rendah secara permanen."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Mankiw, Principles of Economics, Ch.35, bagian 35-2d, hal.753-754 PDF 790-791"
+        }
+      ]
+    },
+    "14": {
+      "source": "Mankiw, Principles of Economics, Ch.25, bagian 25-3b, hal.513-514 PDF 550-551",
+      "finding": "Diminishing returns bukan penurunan level output saat modal naik.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Diminishing returns bukan penurunan level output saat modal naik."
+        },
+        {
+          "kind": "p",
+          "text": "Dengan tenaga kerja dan teknologi tetap, tambahan modal masih meningkatkan output, tetapi tambahan output per unit modal makin kecil. Catch-up bergantung pada kondisi teknologi, institusi dan investasi, sehingga negara berpendapatan rendah tidak otomatis tumbuh cepat. Perubahan teknologi dapat menggeser fungsi produksi."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: Mankiw, Principles of Economics, Ch.25, bagian 25-3b, hal.513-514 PDF 550-551"
+        }
+      ]
+    }
+  },
+  "AKM301": {
+    "8": {
+      "source": "OpenStax, Principles of Accounting Volume 2, bagian 12-3: https://openstax.org/books/principles-managerial-accounting/pages/12-3-evaluate-an-operating-segment-or-a-project-using-return-on-investment-residual-income-and-economic-value-added",
+      "finding": "ROI memakai rasio, RI memakai nilai uang dan hurdle rate yang dinyatakan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "ROI memakai rasio, RI memakai nilai uang dan hurdle rate yang dinyatakan."
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi buatan: aset rata-rata Rp100 juta dan laba operasi Rp20 juta memberi ROI 20%. Proyek Rp20 juta memberi laba Rp3,6 juta, ROI 18%. ROI gabungan menjadi 23,6/120 = 19,67%, tetapi tambahan RI pada hurdle 15% adalah 3,6 - 3 = Rp0,6 juta. Jangan membandingkan RI dua divisi berukuran berbeda tanpa konteks aset dan risikonya."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 12-3: https://openstax.org/books/principles-managerial-accounting/pages/12-3-evaluate-an-operating-segment-or-a-project-using-return-on-investment-residual-income-and-economic-value-added"
+        }
+      ]
+    },
+    "9": {
+      "source": "OpenStax, Principles of Accounting Volume 2, bagian 9-4: https://openstax.org/books/principles-managerial-accounting/pages/9-4-describe-the-effects-of-various-decisions-on-performance-evaluation-of-responsibility-centers",
+      "finding": "Opportunity cost kapasitas penuh harus dihitung per unit transfer, dengan biaya luar yang dihindari.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Opportunity cost kapasitas penuh harus dihitung per unit transfer, dengan biaya luar yang dihindari."
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi buatan: biaya variabel Rp40 ribu/unit, harga luar Rp70 ribu, biaya jual luar Rp5 ribu yang tidak timbul pada transfer, batas pembeli Rp68 ribu. Kapasitas menganggur tanpa penggunaan alternatif: batas bawah 40 ribu. Kapasitas penuh dan satu unit transfer menggantikan satu penjualan luar: kontribusi hilang 25 ribu, batas bawah 65 ribu. Rentang kesepakatan 65-68 ribu. Batas atas bergantung penawaran luar yang sebanding."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 9-4: https://openstax.org/books/principles-managerial-accounting/pages/9-4-describe-the-effects-of-various-decisions-on-performance-evaluation-of-responsibility-centers"
+        }
+      ]
+    },
+    "10": {
+      "source": "OpenStax, Principles of Accounting Volume 2, bagian 10-1: https://openstax.org/books/principles-managerial-accounting/pages/10-1-identify-relevant-information-for-decision-making",
+      "finding": "Sunk cost berbeda dari nilai peluang aset yang sudah dibeli.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Sunk cost berbeda dari nilai peluang aset yang sudah dibeli."
+        },
+        {
+          "kind": "p",
+          "text": "Biaya pembelian historis mesin merupakan sunk cost. Namun nilai jual mesin sekarang adalah opportunity cost jika mesin tetap dipakai. Ilustrasi buatan: membuat komponen memakai biaya variabel Rp30 ribu dan biaya tetap dapat dihindari Rp5 ribu/unit; tawaran beli Rp32 ribu. Pembelian menghemat Rp3 ribu/unit jika kapasitas dan mutu setara; biaya tetap tak terhindarkan tidak dimasukkan lagi dalam selisih."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 10-1: https://openstax.org/books/principles-managerial-accounting/pages/10-1-identify-relevant-information-for-decision-making"
+        }
+      ]
+    },
+    "11": {
+      "source": "OpenStax, Principles of Accounting Volume 2, bagian 10-2: https://openstax.org/books/principles-managerial-accounting/pages/10-2-evaluate-and-determine-whether-to-accept-or-reject-a-special-order",
+      "finding": "Harga berbasis biaya perlu membedakan markup atas biaya dan margin atas harga.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Harga berbasis biaya perlu membedakan markup atas biaya dan margin atas harga."
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi buatan: harga Rp100 ribu dan margin target 20% dari harga memberi biaya target Rp80 ribu. Markup 20% atas biaya memberi harga 1,2 × biaya, sehingga biaya pada harga 100 ribu menjadi Rp83.333,33. Bedakan dasar persentase. Pesanan khusus memeriksa kapasitas, biaya tambahan dan dampak pada pasar reguler; harga di atas biaya variabel saja belum cukup pada kapasitas penuh."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 10-2: https://openstax.org/books/principles-managerial-accounting/pages/10-2-evaluate-and-determine-whether-to-accept-or-reject-a-special-order"
+        }
+      ]
+    },
+    "12": {
+      "source": "OpenStax, Principles of Accounting Volume 2, bagian 11-4: https://openstax.org/books/principles-managerial-accounting/pages/11-4-use-discounted-cash-flow-models-to-make-capital-investment-decisions",
+      "finding": "NPV perlu waktu kas, pajak, working capital dan batas IRR.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "NPV perlu waktu kas, pajak, working capital dan batas IRR."
+        },
+        {
+          "kind": "figure",
+          "title": "NPV berubah dengan tingkat diskonto",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 455\" role=\"img\" aria-label=\"NPV berubah dengan tingkat diskonto. Diskonto yang naik menurunkan NPV pada arus masuk positif ini; hubungan dapat berbeda untuk pola kas lain.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"455\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Tingkat diskonto dan nilai proyek</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">NPV (juta rupiah)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"196.11111111111111\" x2=\"580\" y2=\"196.11111111111111\" stroke=\"var(--svg-muted,#64748b)\" stroke-dasharray=\"4 4\"/><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">0</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">15</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">30</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">-20</text><text x=\"82\" y=\"201.11111111111111\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">2.5</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">25</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Diskonto (% per tahun)</text><polyline points=\"90,127.22222222222223 171.66666666666666,156.27739984882845 253.33333333333331,181.8778696051424 335,204.57571938668343 416.66666666666663,224.8148148148148 498.33333333333337,242.95555555555555 580,259.293228139382\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"127.22222222222223\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"171.66666666666666\" cy=\"156.27739984882845\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"253.33333333333331\" cy=\"181.8778696051424\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"204.57571938668343\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"416.66666666666663\" cy=\"224.8148148148148\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"498.33333333333337\" cy=\"242.95555555555555\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"259.293228139382\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">NPV ilustrasi</text><polyline points=\"90,196.11111111111111 580,196.11111111111111\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"196.11111111111111\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"196.11111111111111\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">NPV nol</text></svg>",
+          "caption": "Ilustrasi buatan pada investasi 100 juta dan kas 60 juta akhir tahun selama dua tahun. Rujukan metode: OpenStax Volume 2 bagian 11.4, https://openstax.org/books/principles-managerial-accounting/pages/11-4-use-discounted-cash-flow-models-to-make-capital-investment-decisions.",
+          "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 490\" role=\"img\" aria-label=\"NPV berubah dengan tingkat diskonto. Diskonto yang naik menurunkan NPV pada arus masuk positif ini; hubungan dapat berbeda untuk pola kas lain.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"490\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Tingkat diskonto dan nilai proyek</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">NPV (juta rupiah)</text><line x1=\"58\" y1=\"120\" x2=\"58\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"58\" y1=\"220\" x2=\"335\" y2=\"220\" stroke=\"var(--svg-muted,#64748b)\" stroke-dasharray=\"4 4\"/><line x1=\"58\" y1=\"300\" x2=\"58\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"58\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">0</text><line x1=\"196.5\" y1=\"300\" x2=\"196.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"196.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">15</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">30</text><text x=\"50\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">-20</text><text x=\"50\" y=\"225\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"50\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">2.5</text><text x=\"50\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">25</text><text x=\"196.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Diskonto (% per tahun)</text><polyline points=\"58,140 104.16666666666666,173.7414965986395 150.33333333333331,203.47107438016533 196.5,229.82986767485818 242.66666666666666,253.33333333333331 288.83333333333337,274.4 335,293.3727810650888\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"58\" cy=\"140\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"104.16666666666666\" cy=\"173.7414965986395\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"150.33333333333331\" cy=\"203.47107438016533\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"196.5\" cy=\"229.82986767485818\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"242.66666666666666\" cy=\"253.33333333333331\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"288.83333333333337\" cy=\"274.4\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"293.3727810650888\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">NPV ilustrasi</text><polyline points=\"58,220 335,220\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"58\" cy=\"220\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"220\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">NPV nol</text></svg>",
+          "altText": "NPV berubah dengan tingkat diskonto. Diskonto yang naik menurunkan NPV pada arus masuk positif ini; hubungan dapat berbeda untuk pola kas lain.",
+          "overview": {
+            "heading": "NPV berubah dengan tingkat diskonto",
+            "cards": [
+              {
+                "title": "Kas dan risiko proyek tetap",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "Diskonto memakai periode tahunan",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              },
+              {
+                "title": "NPV positif pada r 10%",
+                "subtitle": "",
+                "items": [],
+                "takeaway": ""
+              }
+            ],
+            "footer": "Baca satuan pada kedua sumbu. Diskonto yang naik menurunkan NPV pada arus masuk positif ini; hubungan dapat berbeda untuk pola kas lain."
+          }
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi buatan: investasi awal Rp100 juta, kas akhir tahun Rp60 juta selama dua tahun, diskonto 10% per tahun. NPV = -100 + 60/1,1 + 60/1,1² = Rp4,132 juta, dibulatkan tiga desimal. Sumber kas sudah setelah pajak; jangan menambah perisai depresiasi jika sudah dimasukkan. Pemulihan modal kerja dan nilai sisa ditempatkan pada waktunya. IRR dapat lebih dari satu pada kas yang berubah tanda berulang."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 11-4: https://openstax.org/books/principles-managerial-accounting/pages/11-4-use-discounted-cash-flow-models-to-make-capital-investment-decisions"
+        }
+      ]
+    },
+    "13": {
+      "source": "ASQ: https://asq.org/quality-resources/cost-of-quality",
+      "finding": "Belanja pencegahan tidak otomatis menurunkan seluruh biaya secara drastis.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Belanja pencegahan tidak otomatis menurunkan seluruh biaya secara drastis."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Kelompok biaya",
+            "Contoh"
+          ],
+          "rows": [
+            [
+              "Pencegahan",
+              "Perencanaan mutu dan pelatihan."
+            ],
+            [
+              "Penilaian",
+              "Inspeksi dan pengujian."
+            ],
+            [
+              "Kegagalan internal",
+              "Scrap/rework sebelum produk diterima pelanggan."
+            ],
+            [
+              "Kegagalan eksternal",
+              "Garansi, retur dan dampak setelah penerimaan."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: ASQ: https://asq.org/quality-resources/cost-of-quality"
+        }
+      ]
+    },
+    "14": {
+      "source": "OpenStax, Principles of Accounting Volume 2, bagian 13-1: https://openstax.org/books/principles-managerial-accounting/pages/13-1-describe-sustainability-and-the-way-it-creates-business-value",
+      "finding": "Ukuran lingkungan perlu unit fisik dan biaya, dengan batas organisasi jelas.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Ukuran lingkungan perlu unit fisik dan biaya, dengan batas organisasi jelas."
+        },
+        {
+          "kind": "p",
+          "text": "Ilustrasi buatan: energi 50.000 kWh untuk 10.000 unit memberi intensitas 5 kWh/unit. Penurunan total energi karena produksi turun tidak membuktikan efisiensi meningkat. Bandingkan intensitas, total dampak, harga energi dan batas proses. Prioritas UAS pada aplikasi adalah perkiraan cakupan, sebab RPP/arsip ujian dan buku Garrison/Hansen yang ditetapkan belum tersedia untuk diverifikasi."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 13-1: https://openstax.org/books/principles-managerial-accounting/pages/13-1-describe-sustainability-and-the-way-it-creates-business-value"
+        }
+      ]
+    }
+  },
+  "PJK201": {
+    "8": {
+      "source": "UU KUP Pasal 1 angka 25,26,30; PMK 15/2025 Pasal 1 angka 7-9; sumber DJP https://www.pajak.go.id/id/peraturan/pemeriksaan-pajak",
+      "finding": "Pemeriksaan lengkap, terfokus dan spesifik perlu dibedakan dari lokasi pemeriksaan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Pemeriksaan lengkap, terfokus dan spesifik perlu dibedakan dari lokasi pemeriksaan."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Jenis tindakan",
+            "Tujuan"
+          ],
+          "rows": [
+            [
+              "Penelitian",
+              "Uji administratif kelengkapan dan hitungan SPT."
+            ],
+            [
+              "Pemeriksaan",
+              "Uji kepatuhan atau tujuan lain; lingkup lengkap/terfokus/spesifik."
+            ],
+            [
+              "Bukti permulaan/penyidikan",
+              "Mekanisme dugaan tindak pidana dengan dasar dan prosedur tersendiri."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU KUP Pasal 1 angka 25,26,30; PMK 15/2025 Pasal 1 angka 7-9; sumber DJP https://www.pajak.go.id/id/peraturan/pemeriksaan-pajak"
+        }
+      ]
+    },
+    "9": {
+      "source": "UU KUP Pasal 13,14,15,17,17B-17D",
+      "finding": "Jenis surat tidak menentukan jumlah pajak tanpa membaca dasar dan keputusan.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Jenis surat tidak menentukan jumlah pajak tanpa membaca dasar dan keputusan."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Surat",
+            "Pertanyaan"
+          ],
+          "rows": [
+            [
+              "SKPKB/SKPKBT",
+              "Apa dasar koreksi dan periode pajaknya?"
+            ],
+            [
+              "STP",
+              "Apa tagihan dan sanksi yang dinyatakan?"
+            ],
+            [
+              "SKPLB/SKPN",
+              "Apa hasil penelitian/pemeriksaan dan status bayar?"
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU KUP Pasal 13,14,15,17,17B-17D"
+        }
+      ]
+    },
+    "10": {
+      "source": "UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 31,35,40",
+      "finding": "Objek dan forum menentukan jalur sengketa; jangan mencampur batas waktu.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Objek dan forum menentukan jalur sengketa; jangan mencampur batas waktu."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Jalur",
+            "Forum dan objek"
+          ],
+          "rows": [
+            [
+              "Keberatan",
+              "DJP, ketetapan/pemotongan yang dicakup KUP."
+            ],
+            [
+              "Banding",
+              "Pengadilan Pajak, keputusan keberatan."
+            ],
+            [
+              "Gugatan",
+              "Pengadilan Pajak, tindakan/keputusan yang dicakup undang-undang."
+            ],
+            [
+              "PK",
+              "Mahkamah Agung, alasan yang diatur undang-undang."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 31,35,40"
+        }
+      ]
+    },
+    "11": {
+      "source": "UU PPSP Pasal 1,8,12; PMK 61/2023 bagian tahapan penagihan",
+      "finding": "Alur penagihan biasa berbeda dari penagihan seketika dan sekaligus.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Alur penagihan biasa berbeda dari penagihan seketika dan sekaligus."
+        },
+        {
+          "kind": "p",
+          "text": "Tanggal latihan adalah ilustrasi urutan. Sebelum menghitung jadwal, tentukan tanggal jatuh tempo, pemberitahuan yang sah dan apakah kondisi penagihan seketika berlaku. Surat Paksa mempunyai kekuatan eksekutorial. Keberatan atas besarnya pajak dan gugatan atas tindakan penagihan memakai objek serta prosedur berbeda."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU PPSP Pasal 1,8,12; PMK 61/2023 bagian tahapan penagihan"
+        }
+      ]
+    },
+    "12": {
+      "source": "UU 10/2020 Pasal 3,5,6,7,9",
+      "finding": "Nilai uang pada dokumen adalah batas objek tertentu, bukan dasar tarif persentase.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Nilai uang pada dokumen adalah batas objek tertentu, bukan dasar tarif persentase."
+        },
+        {
+          "kind": "p",
+          "text": "Bea Meterai memakai tarif tetap Rp10.000 per dokumen yang menjadi objek, dengan waktu terutang sesuai jenis dokumen. Batas nilai Rp5 juta pada dokumen tertentu yang menyatakan jumlah uang tidak menggantikan pemeriksaan objek dan pengecualian. Pembayaran meterai tidak otomatis membuktikan kebenaran isi atau keabsahan seluruh transaksi."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU 10/2020 Pasal 3,5,6,7,9"
+        }
+      ]
+    },
+    "13": {
+      "source": "UU 1/2022 Pasal 4,23,83,191; PP 35/2023",
+      "finding": "Opsen memakai pajak terutang sebagai dasar, dengan pemerintah penerima berbeda.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Opsen memakai pajak terutang sebagai dasar, dengan pemerintah penerima berbeda."
+        },
+        {
+          "kind": "p",
+          "text": "Opsen PKB/BBNKB 66% dihitung atas pokok PKB/BBNKB yang terutang sesuai aturan, bukan 66% dari nilai kendaraan. Ilustrasi buatan pokok PKB Rp1 juta memberi opsen Rp660 ribu. Periksa tanggal berlaku dan Perda; tarif maksimum nasional tidak boleh langsung dipakai sebagai tarif nyata semua daerah."
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU 1/2022 Pasal 4,23,83,191; PP 35/2023"
+        }
+      ]
+    },
+    "14": {
+      "source": "UU 1/2022 Pasal 40-41,46-47,62-64,73-75; PDF resmi 39,43-44 https://jdih.kemenkeu.go.id/api/download/770ecf1d-664b-48a1-88f4-8849b8ca7258/1TAHUN2022UU.pdf",
+      "finding": "Nomor pasal Reklame dan MBLB pada materi lama belum dinyatakan pasti.",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Hubungan konsep, penerapan, dan batas"
+        },
+        {
+          "kind": "p",
+          "text": "Nomor pasal Reklame dan MBLB pada materi lama belum dinyatakan pasti."
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Pajak",
+            "Dasar resmi"
+          ],
+          "rows": [
+            [
+              "Reklame",
+              "DPP Pasal 62, tarif maksimum 25% Pasal 63; tarif daerah ditetapkan Perda."
+            ],
+            [
+              "MBLB",
+              "DPP Pasal 73, tarif maksimum 20% Pasal 74; daerah provinsi tanpa kab/kota otonom maksimum 25%."
+            ],
+            [
+              "PBB-P2/BPHTB",
+              "Periksa pengurang, persentase basis dan Perda; jangan mengalikan NJOP/NPOP bruto begitu saja."
+            ]
+          ]
+        },
+        {
+          "kind": "p",
+          "text": "Rujukan audit: UU 1/2022 Pasal 40-41,46-47,62-64,73-75; PDF resmi 39,43-44 https://jdih.kemenkeu.go.id/api/download/770ecf1d-664b-48a1-88f4-8849b8ca7258/1TAHUN2022UU.pdf"
+        }
+      ]
+    }
+  }
+}

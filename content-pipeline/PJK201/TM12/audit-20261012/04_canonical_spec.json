@@ -1,0 +1,24 @@
+{
+  "code": "PJK201",
+  "tm": 12,
+  "source": "UU 10/2020 Pasal 3,5,6,7,9",
+  "finding": "Nilai uang pada dokumen adalah batas objek tertentu, bukan dasar tarif persentase.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Nilai uang pada dokumen adalah batas objek tertentu, bukan dasar tarif persentase."
+    },
+    {
+      "kind": "p",
+      "text": "Bea Meterai memakai tarif tetap Rp10.000 per dokumen yang menjadi objek, dengan waktu terutang sesuai jenis dokumen. Batas nilai Rp5 juta pada dokumen tertentu yang menyatakan jumlah uang tidak menggantikan pemeriksaan objek dan pengecualian. Pembayaran meterai tidak otomatis membuktikan kebenaran isi atau keabsahan seluruh transaksi."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: UU 10/2020 Pasal 3,5,6,7,9"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pjk201-tm08-36",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Penelitian vs Pemeriksaan vs Penyidikan",
+    "category": "Definisi",
+    "front": "Perbedaan Penelitian, Pemeriksaan, dan Penyidikan",
+    "back": "Penelitian: pengujian kelengkapan formal administrasi dan kebenaran hitung angka di SPT. Pemeriksaan: serangkaian kegiatan mencari dan mengolah data/bukti untuk menguji kepatuhan materiil. Penyidikan: proses projustitia oleh PPNS DJP mencari tersangka atas bukti permulaan tindak pidana perpajakan. Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm08-37",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Tujuan Pemeriksaan Pajak",
+    "category": "Konsep",
+    "front": "2 Tujuan Utama Pemeriksaan Pajak",
+    "back": "1) Menguji kepatuhan pemenuhan kewajiban perpajakan (misal: SPT Lebih Bayar, SPT Rugi, tidak lapor SPT, atau analisis risiko); 2) Tujuan lain dalam rangka melaksanakan ketentuan UU (misal: pemberian/penghapusan NPWP, pencabutan NPPKP, penentuan lokasi BUT). Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm08-38",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Lingkup dan waktu pemeriksaan menurut PMK 15/2025",
+    "category": "Prosedur",
+    "front": "Lingkup dan waktu pemeriksaan menurut PMK 15/2025",
+    "back": "Pengujian: lengkap paling lama 5 bulan, terfokus 3 bulan, spesifik 1 bulan; pembahasan akhir/pelaporan umumnya paling lama 30 hari kerja. Ada pengecualian dan perpanjangan tertentu. Klasifikasi kantor/lapangan dari ketentuan lama tidak menentukan waktu model ini. Rujukan: PMK 15/2025 Pasal 1 angka 7-9 dan Pasal 6."
+  },
+  {
+    "id": "pjk201-tm08-39",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Produk Akhir Pemeriksaan (LHP)",
+    "category": "Dokumen",
+    "front": "Laporan Hasil Pemeriksaan (LHP)",
+    "back": "Laporan yang berisi tentang pelaksanaan dan hasil pemeriksaan yang disusun oleh pemeriksa pajak secara ringkas dan jelas, yang menjadi dasar penerbitan Surat Ketetapan Pajak (SKP) atau Surat Tagihan Pajak (STP). Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm08-40",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Kewajiban WP Saat Diperiksa",
+    "category": "Standar",
+    "front": "Kewajiban Wajib Pajak saat Dilakukan Pemeriksaan",
+    "back": "Wajib memperlihatkan dan meminjamkan buku/catatan/dokumen, memberi kesempatan pemeriksa memasuki tempat usaha/bangunan, dan memberi keterangan lisan maupun tertulis yang diperlukan. Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm08-74",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Jenis pemeriksaan pada materi tahun 2026",
+    "category": "Prosedur",
+    "front": "Jenis pemeriksaan pada materi tahun 2026",
+    "back": "PMK 15/2025 memakai lingkup lengkap, terfokus dan spesifik untuk menguji kepatuhan; pemeriksaan tujuan lain diatur tersendiri. Kasus sebelum aturan ini perlu memeriksa ketentuan peralihan. Rujukan: PMK 15/2025 Pasal 3 dan 6."
+  }
+]

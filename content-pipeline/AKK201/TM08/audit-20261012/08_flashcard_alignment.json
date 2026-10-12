@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm08-42",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa syarat cash equivalent?",
+    "category": "Konsep",
+    "front": "Apa syarat cash equivalent?",
+    "back": "Investasi jangka pendek sangat likuid, mudah dikonversi ke jumlah kas diketahui, risiko perubahan nilai tidak signifikan; umumnya jatuh tempo asli tiga bulan atau kurang. Rujukan: Kieso IFRS 5e, Ch.6 dan Appendix 6A, PDF 516-518,552-557"
+  },
+  {
+    "id": "akk201-tm08-43",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Bagaimana restricted cash dilaporkan?",
+    "category": "Konsep",
+    "front": "Bagaimana restricted cash dilaporkan?",
+    "back": "Pisahkan pembatasan yang material dan klasifikasikan lancar/tidak lancar menurut tujuan serta periode pembatasannya. Rujukan: Kieso IFRS 5e, Ch.6 dan Appendix 6A, PDF 516-518,552-557"
+  },
+  {
+    "id": "akk201-tm08-44",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa yang tetap pada sistem imprest?",
+    "category": "Konsep",
+    "front": "Apa yang tetap pada sistem imprest?",
+    "back": "Jumlah dana kas kecil yang ditetapkan. Pengisian kembali biasanya mencatat beban dan mengkredit Cash, tanpa mengubah Petty Cash kecuali ukuran dana diubah. Rujukan: Kieso IFRS 5e, Ch.6 dan Appendix 6A, PDF 516-518,552-557"
+  },
+  {
+    "id": "akk201-tm08-45",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Cek beredar masuk sisi mana?",
+    "category": "Konsep",
+    "front": "Cek beredar masuk sisi mana?",
+    "back": "Kurangi saldo menurut bank; perusahaan sudah mencatat cek sehingga tidak membuat jurnal kedua. Rujukan: Kieso IFRS 5e, Ch.6 dan Appendix 6A, PDF 516-518,552-557"
+  },
+  {
+    "id": "akk201-tm08-46",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Biaya bank yang belum dicatat masuk sisi mana?",
+    "category": "Konsep",
+    "front": "Biaya bank yang belum dicatat masuk sisi mana?",
+    "back": "Kurangi saldo buku dan buat jurnal beban/akun yang sesuai serta kredit Cash. Rujukan: Kieso IFRS 5e, Ch.6 dan Appendix 6A, PDF 516-518,552-557"
+  },
+  {
+    "id": "akk201-tm08-47",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa kontrol akhir rekonsiliasi Nugget?",
+    "category": "Konsep",
+    "front": "Apa kontrol akhir rekonsiliasi Nugget?",
+    "back": "Saldo bank dan buku disesuaikan sama, 21.044 USD. Kesamaan total belum menggantikan pemeriksaan tiap bukti dan jurnal. Rujukan: Kieso IFRS 5e, Ch.6 dan Appendix 6A, PDF 516-518,552-557"
+  }
+]

@@ -25,7 +25,7 @@ export const SII306_READINGS: Record<number, Reading> = {
   8: {
   "tm": 8,
   "title": "Kerangka Pengendalian Internal: COSO Internal Control & COSO ERM",
-  "ref": "Richardson et al. AIS 4e · Ch. 9",
+  "ref": "Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)",
   "intro": "Membahas secara mendalam kerangka kerja COSO Internal Control Integrated Framework (17 Prinsip) dan COSO Enterprise Risk Management (ERM). Memahami taksonomi pengendalian preventif, detektif, dan korektif serta kriteria defisiensi pengendalian menurut standar audit.",
   "objectives": [
     "Menguraikan 5 komponen COSO Internal Control Framework beserta 17 prinsip turunannya.",
@@ -141,7 +141,7 @@ export const SII306_READINGS: Record<number, Reading> = {
   9: {
   "tm": 9,
   "title": "Keamanan Informasi, Ancaman Siber & Manajemen Kelangsungan Bisnis (BCP/DRP)",
-  "ref": "Richardson et al. AIS 4e · Ch. 10 & 11",
+  "ref": "Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)",
   "intro": "Menganalisis prinsip CIA Triad (Confidentiality, Integrity, Availability) dalam sistem akuntansi. Membedakan kriptografi simetris vs asimetris, teknik mitigasi serangan siber seperti ransomware dan phishing, serta perancangan Business Continuity Plan (BCP) dan Disaster Recovery Plan (DRP).",
   "objectives": [
     "Menjelaskan prinsip CIA Triad sebagai fondasi keamanan sistem akuntansi.",
@@ -228,13 +228,13 @@ export const SII306_READINGS: Record<number, Reading> = {
           "Paling Ekonomis (hanya sewa gedung kosong)."
         ],
         [
-          "Recovery Time Objective (RTO) — Berapa lama sistem boleh mati?",
+          "Recovery Time Objective (RTO): Berapa lama sistem boleh mati?",
           "Hitungan menit hingga detik (hampir instan).",
           "Hitungan beberapa jam hingga 1 hari.",
           "Hitungan hari hingga minggu."
         ],
         [
-          "Recovery Point Objective (RPO) — Berapa jam transaksi yang boleh hilang?",
+          "Recovery Point Objective (RPO): Berapa jam transaksi yang boleh hilang?",
           "Mendekati 0 detik (data direplikasi secara sinkron real-time).",
           "Maksimal data backup hari sebelumnya (misal 24 jam).",
           "Seluruh data sejak backup tape fisik terakhir."
@@ -258,7 +258,7 @@ export const SII306_READINGS: Record<number, Reading> = {
   10: {
   "tm": 10,
   "title": "Tata Kelola TI, Kerangka COBIT & Audit Sistem Informasi",
-  "ref": "Richardson et al. AIS 4e · Ch. 12",
+  "ref": "Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)",
   "intro": "Mendalami kerangka tata kelola teknologi informasi COBIT 2019, pemisahan tugas dalam departemen TI, serta metodologi audit sistem informasi: Audit Around the Computer vs Audit Through the Computer dan Computer-Assisted Audit Techniques (CAATs).",
   "objectives": [
     "Memahami struktur tata kelola TI berdasarkan kerangka kerja COBIT 2019 (EDM vs APO, BAI, DSS, MEA).",
@@ -382,7 +382,7 @@ export const SII306_READINGS: Record<number, Reading> = {
   11: {
   "tm": 11,
   "title": "Analitika Data Akuntansi (Accounting Data Analytics) & Visualisasi Bisnis",
-  "ref": "Richardson et al. AIS 4e · Ch. 13",
+  "ref": "Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)",
   "intro": "Mempelajari integrasi Big Data dalam akuntansi melalui IMPACT Model. Membedakan empat tingkat analitika data (Deskriptif, Diagnostik, Prediktif, Preskriptif) dan teknik Audit Data Analytics (ADA) untuk pengujian 100% populasi buku besar.",
   "objectives": [
     "Menjelaskan karakteristik Big Data dalam konteks akuntansi (Volume, Velocity, Variety, Veracity, Value).",
@@ -483,7 +483,7 @@ export const SII306_READINGS: Record<number, Reading> = {
   12: {
   "tm": 12,
   "title": "Otomasi Proses Robotik (RPA) & Kecerdasan Buatan (AI) dalam Akuntansi",
-  "ref": "Richardson et al. AIS 4e · Ch. 14",
+  "ref": "Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)",
   "intro": "Mempelajari pemanfaatan Robotic Process Automation (RPA) dan Artificial Intelligence (Machine Learning, NLP, Generative AI) dalam mengotomatisasi pekerjaan akuntansi repetitif seperti rekonsiliasi bank, pemrosesan faktur OCR, dan deteksi anomali jurnal.",
   "objectives": [
     "Mengidentifikasi kriteria proses bisnis akuntansi yang cocok diotomatisasi dengan RPA.",
@@ -580,7 +580,7 @@ export const SII306_READINGS: Record<number, Reading> = {
   13: {
   "tm": 13,
   "title": "Teknologi Blockchain, Smart Contracts & Akuntansi Tiga Entri (Triple-Entry Accounting)",
-  "ref": "Richardson et al. AIS 4e · Ch. 15",
+  "ref": "Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)",
   "intro": "Membahas disrupsi teknologi Distributed Ledger Technology (DLT) dan Blockchain terhadap sistem akuntansi. Memahami arsitektur blok, kriptografi hash, konsensus, Smart Contracts, evolusi menuju Triple-Entry Accounting, serta audit atas aset digital.",
   "objectives": [
     "Menjelaskan karakteristik dasar Blockchain: Desentralisasi, Immutability, Transparansi, dan Kriptografi Hash.",
@@ -593,7 +593,7 @@ export const SII306_READINGS: Record<number, Reading> = {
       {
         "kind": "figure",
         "caption": "Gambar 13.1: Struktur Rantai Blok (Blockchain) dan Paradigma Akuntansi Tiga Entri (Triple-Entry Accounting).",
-        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-amber\" x=\"340\" y=\"34\" fill=\"#fbbf24\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">TEKNOLOGI BLOCKCHAIN &amp; PARADIGMA TRIPLE-ENTRY ACCOUNTING</text>\n\n  <!-- Evolution of Bookkeeping Box -->\n  <rect class=\"svg-card\" x=\"25\" y=\"58\" width=\"180\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"78\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">EVOLUSI TATA BUKU</text>\n  <line class=\"svg-divider\" x1=\"35\" y1=\"88\" x2=\"195\" y2=\"88\" stroke=\"#334155\"/>\n  \n  <rect class=\"svg-subcard\" x=\"35\" y=\"96\" width=\"160\" height=\"34\" rx=\"4\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"115\" y=\"110\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Abad Pertengahan: Single-Entry</text>\n  <text class=\"svg-text\" x=\"115\" y=\"122\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">Catatan kas masuk &amp; keluar tunggal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"136\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"150\" fill=\"#38bdf8\" font-size=\"7.5\" font-weight=\"700\" text-anchor=\"middle\">1494: Double-Entry (Pacioli)</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"162\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit = Kredit | Buku Besar Mandiri</text>\n  <text class=\"text-accent-red\" x=\"115\" y=\"172\" fill=\"#f87171\" font-size=\"6.5\" text-anchor=\"middle\">&#10007; Perlu Rekonsiliasi Eksternal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"180\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"115\" y=\"194\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"800\" text-anchor=\"middle\">Modern: Triple-Entry</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"206\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit + Kredit + Kriptografis Ledger</text>\n\n  <!-- Blockchain Chain Diagram -->\n  <rect class=\"svg-card\" x=\"220\" y=\"58\" width=\"430\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-amber\" x=\"435\" y=\"78\" fill=\"#fbbf24\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">STRUKTUR BLOK TERDISTRIBUSI &amp; KONSENSUS IMMUTABLE</text>\n  <line class=\"svg-divider\" x1=\"230\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <!-- Block N-1 -->\n  <rect class=\"svg-subcard\" x=\"235\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"112\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1042</text>\n  <line class=\"svg-divider\" x1=\"245\" y1=\"118\" x2=\"340\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"292\" y=\"132\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Prev Hash: 000ab7...</text>\n  <text class=\"text-accent-green\" x=\"292\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"292\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT A &#8594; PT B: Rp 500 jt</text>\n  <text class=\"svg-muted\" x=\"292\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Timestamp &amp; Nonce</text>\n  <rect class=\"svg-subcard\" x=\"245\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#fbbf24\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"196\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: e83f91...</text>\n\n  <!-- Hash Link Arrow -->\n  <line x1=\"350\" y1=\"156\" x2=\"375\" y2=\"156\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n  <polygon points=\"375,152 385,156 375,160\" fill=\"#fbbf24\"/>\n\n  <!-- Block N -->\n  <rect class=\"svg-subcard\" x=\"385\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"112\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1043</text>\n  <line class=\"svg-divider\" x1=\"395\" y1=\"118\" x2=\"490\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"442\" y=\"132\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"600\" text-anchor=\"middle\">Prev: e83f91...</text>\n  <text class=\"text-accent-green\" x=\"442\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"442\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT B &#8594; PT C: Rp 120 jt</text>\n  <text class=\"svg-muted\" x=\"442\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Smart Contract Auto</text>\n  <rect class=\"svg-subcard\" x=\"395\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: a194bc...</text>\n\n  <!-- Right: Audit impact -->\n  <rect class=\"svg-subcard\" x=\"515\" y=\"96\" width=\"125\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"577\" y=\"112\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">DAMPAK AUDIT:</text>\n  <text class=\"svg-text\" x=\"577\" y=\"128\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Tidak Bisa Diubah</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"138\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Immutable Ledger)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"152\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Nol Rekonsiliasi</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"162\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Single Source of Truth)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"176\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Real-Time Audit</text>\n  <text class=\"text-accent-green\" x=\"577\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Auditor Otomatis</text>\n</svg>"
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-amber\" x=\"340\" y=\"34\" fill=\"#fbbf24\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">TEKNOLOGI BLOCKCHAIN &amp; PARADIGMA TRIPLE-ENTRY ACCOUNTING</text>\n\n  <!-- Evolution of Bookkeeping Box -->\n  <rect class=\"svg-card\" x=\"25\" y=\"58\" width=\"180\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"78\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">EVOLUSI TATA BUKU</text>\n  <line class=\"svg-divider\" x1=\"35\" y1=\"88\" x2=\"195\" y2=\"88\" stroke=\"#334155\"/>\n  \n  <rect class=\"svg-subcard\" x=\"35\" y=\"96\" width=\"160\" height=\"34\" rx=\"4\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"115\" y=\"110\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Abad Pertengahan: Single-Entry</text>\n  <text class=\"svg-text\" x=\"115\" y=\"122\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">Catatan kas masuk &amp; keluar tunggal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"136\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"150\" fill=\"#38bdf8\" font-size=\"7.5\" font-weight=\"700\" text-anchor=\"middle\">1494: Double-Entry (Pacioli)</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"162\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit = Kredit | Buku Besar Mandiri</text>\n  <text class=\"text-accent-red\" x=\"115\" y=\"172\" fill=\"#f87171\" font-size=\"6.5\" text-anchor=\"middle\">&#10007; Perlu Rekonsiliasi Eksternal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"180\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"115\" y=\"194\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"800\" text-anchor=\"middle\">Modern: Triple-Entry</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"206\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit + Kredit + Kriptografis Ledger</text>\n\n  <!-- Blockchain Chain Diagram -->\n  <rect class=\"svg-card\" x=\"220\" y=\"58\" width=\"430\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-amber\" x=\"435\" y=\"78\" fill=\"#fbbf24\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">STRUKTUR BLOK TERDISTRIBUSI &amp; KONSENSUS IMMUTABLE</text>\n  <line class=\"svg-divider\" x1=\"230\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <!-- Block N-1 -->\n  <rect class=\"svg-subcard\" x=\"235\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"112\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1042</text>\n  <line class=\"svg-divider\" x1=\"245\" y1=\"118\" x2=\"340\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"292\" y=\"132\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Prev Hash: 000ab7...</text>\n  <text class=\"text-accent-green\" x=\"292\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"292\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT A &#8594; PT B: Rp 500 jt</text>\n  <text class=\"svg-muted\" x=\"292\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Timestamp &amp; Nonce</text>\n  <rect class=\"svg-subcard\" x=\"245\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#fbbf24\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"196\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: e83f91...</text>\n\n  <!-- Hash Link Arrow -->\n  <line x1=\"350\" y1=\"156\" x2=\"375\" y2=\"156\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n  <polygon points=\"375,152 385,156 375,160\" fill=\"#fbbf24\"/>\n\n  <!-- Block N -->\n  <rect class=\"svg-subcard\" x=\"385\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"112\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1043</text>\n  <line class=\"svg-divider\" x1=\"395\" y1=\"118\" x2=\"490\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"442\" y=\"132\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"600\" text-anchor=\"middle\">Prev: e83f91...</text>\n  <text class=\"text-accent-green\" x=\"442\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"442\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT B &#8594; PT C: Rp 120 jt</text>\n  <text class=\"svg-muted\" x=\"442\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Smart Contract Auto</text>\n  <rect class=\"svg-subcard\" x=\"395\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: a194bc...</text>\n\n  <!-- Right: Audit impact -->\n  <rect class=\"svg-subcard\" x=\"515\" y=\"96\" width=\"125\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"577\" y=\"112\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">DAMPAK AUDIT:</text>\n  <text class=\"svg-text\" x=\"577\" y=\"128\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Sulit Diubah Tanpa Jejak</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"138\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Immutable Ledger)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"152\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Rekonsiliasi Tetap Diuji</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"162\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Single Source of Truth)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"176\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Real-Time Audit</text>\n  <text class=\"text-accent-green\" x=\"577\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Auditor Menilai Bukti</text>\n</svg>"
 },
     {
       "kind": "h2",
@@ -613,7 +613,7 @@ export const SII306_READINGS: Record<number, Reading> = {
     },
     {
       "kind": "p",
-      "text": "Sifat Immutability (Kekekalan Data): Jika seorang peretas mencoba mengubah data transaksi pada blok masa lalu (misal mengubah nominal dari Rp 10 juta menjadi Rp 100 juta), nilai hash blok tersebut akan berubah total seketika. Akibatnya, hubungan rantai ke seluruh blok berikutnya menjadi tidak valid dan ditolak oleh konsensus mayoritas node jaringan."
+      "text": "Immutability berarti catatan sulit diubah tanpa memengaruhi hash dan mekanisme validasi jaringan. Batasnya bergantung pada rancangan konsensus, kendali jaringan dan akses kunci. Catatan yang konsisten masih dapat memuat transaksi dunia nyata yang salah. Auditor tetap memeriksa keberadaan, hak, nilai dan pengendalian. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
     },
     {
       "kind": "h2",
@@ -621,7 +621,7 @@ export const SII306_READINGS: Record<number, Reading> = {
     },
     {
       "kind": "table",
-      "caption": "Tabel 13.1: Evolusi Paradigma Sistem Pembukuan Akuntansi",
+      "caption": "Tabel 13.1: perbandingan pencatatan dan tanda terima. Sumber pelengkap: Grigg (2005), The Initial Role of a Receipt, Recovering Double Entry dan Triple Entry, https://iang.org/papers/triple_entry.html. Gagasan paper dibedakan dari standar akuntansi.",
       "headers": [
         "Era Akuntansi",
         "Mekanisme Pembukuan",
@@ -630,22 +630,22 @@ export const SII306_READINGS: Record<number, Reading> = {
       ],
       "rows": [
         [
-          "Single-Entry (Pra-1494)",
+          "Single-entry",
           "Hanya mencatat penambahan atau pengurangan kas dalam satu daftar.",
           "Tidak ada mekanisme kontrol internal keseimbangan; mudah terjadi kehilangan catatan.",
           "Pencatat itu sendiri (sangat subjektif)."
         ],
         [
-          "Double-Entry (Luca Pacioli 1494)",
-          "Setiap transaksi dicatat sebagai Debit dan Kredit pada dua buku terpisah milik masing-masing entitas.",
-          "Masing-masing pihak (penjual dan pembeli) memegang buku sendiri; rawan perbedaan saldo dan memerlukan konfirmasi audit eksternal.",
-          "Auditor eksternal independen melakukan audit sampling atas dokumen kertas."
+          "Double-entry",
+          "Pada buku masing-masing entitas, transaksi memengaruhi akun dengan total debit sama dengan total kredit.",
+          "Keseimbangan debit/kredit tidak membuktikan keberadaan, kelengkapan atau ketepatan nilai transaksi.",
+          "Pencatat dan pengendalian internal; auditor menguji bukti yang relevan."
         ],
         [
-          "Triple-Entry (Era Blockchain)",
-          "Selain debit pada pembeli dan kredit pada penjual, entri KETIGA dicatat secara kriptografis pada Shared Distributed Ledger publik.",
-          "Data diverifikasi otomatis oleh jaringan komputer; tidak ada perselisihan saldo antar pihak; biaya audit rekonsiliasi terpangkas drastis.",
-          "Konsensus kriptografi matematis jaringan (Trustless Network)."
+          "Gagasan triple-entry Grigg (2005)",
+          "Tanda terima bertanda tangan digital menjadi bukti bersama pihak terkait, di samping pencatatan mereka.",
+          "Perbedaan catatan dapat berkurang; hak, nilai dan kelengkapan transaksi tetap memerlukan pemeriksaan.",
+          "Pihak memverifikasi tanda terima; paper 2005 tidak mensyaratkan public blockchain modern."
         ]
       ]
     },
@@ -672,14 +672,14 @@ export const SII306_READINGS: Record<number, Reading> = {
       "kind": "callout",
       "variant": "key",
       "title": "Perlakuan Akuntansi Aset Kripto",
-      "text": "Berdasarkan IFRIC Interpretation (dan PSAK terkait), aset kripto umumnya TIDAK diklasifikasikan sebagai Kas atau Setara Kas (karena volatilitas ekstrem) dan bukan Aset Keuangan. Jika dimiliki untuk dijual dalam kegiatan usaha normal, diklasifikasikan sebagai Persediaan (PSAK 14). Jika dimiliki untuk investasi jangka panjang, diklasifikasikan sebagai Aset Takberwujud (PSAK 19)."
+      "text": "Agenda decision IFRIC Juni 2019 membahas cryptocurrency dengan karakteristik tertentu, bukan seluruh token digital. IAS 2 dipakai bila dipegang untuk dijual dalam kegiatan usaha normal; bila IAS 2 tidak berlaku, IAS 38 dipakai. Jangka investasi panjang tidak menjadi syarat tunggal. Periksa hak kontraktual serta pengungkapan, dan jangan memperluas keputusan ini ke semua aset kripto. Rujukan: [IFRIC, Holdings of Cryptocurrencies, Juni 2019, PDF 1-3](https://www.ifrs.org/content/dam/ifrs/supporting-implementation/agenda-decisions/2019/holdings-of-cryptocurrencies-june-2019.pdf). Penomoran Indonesia efektif 1 Januari 2024 adalah PSAK 202 Persediaan dan PSAK 238 Aset Takberwujud, menurut dokumen IAI Perubahan Penomoran PSAK/ISAK, PDF 1-2; pemetaan nomor tidak menggantikan pemeriksaan teks standar nasional."
     }
   ]
 },
   14: {
   "tm": 14,
   "title": "Integrasi Sistem Perusahaan & Simulasi Kasus Komprehensif Pra-UAS",
-  "ref": "Richardson et al. AIS 4e · Sintesis Keseluruhan",
+  "ref": "Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)",
   "intro": "Tatap muka penutup yang mengintegrasikan seluruh materi SIA: siklus transaksi, arsitektur ERP terpusat, tata kelola COSO/COBIT, keamanan siber, analitika data, dan teknologi masa depan. Dilengkapi dengan metodologi diagnostik kasus komprehensif persiapan Ujian Akhir Semester (UAS).",
   "objectives": [
     "Mengintegrasikan aliran data dan kontrol antar seluruh siklus transaksi bisnis (O2C, P2P, Konversi, Penggajian, Pelaporan Keuangan).",
@@ -700,7 +700,7 @@ export const SII306_READINGS: Record<number, Reading> = {
     },
     {
       "kind": "p",
-      "text": "Sistem informasi akuntansi modern bukan sekumpulan modul terpisah, melainkan ekosistem terpadu di mana peristiwa operasional di hulu (upstream) secara otomatis memicu pembaruan laporan keuangan di hilir (downstream):"
+      "text": "SIA terpadu menghubungkan data proses operasional dengan pencatatan dan pelaporan. Dampak tiap peristiwa bergantung pada model data, pemetaan akun, otorisasi dan kontrol yang diterapkan. Richardson Ch.10, PDF 408-409, membedakan peran event, resources dan query laporan:"
     },
     {
       "kind": "table",

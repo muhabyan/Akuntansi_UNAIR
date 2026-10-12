@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm12-66",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa metode nonparametrik?",
+    "category": "Konsep",
+    "front": "Apa metode nonparametrik?",
+    "back": "Metode dengan asumsi distribusi yang berbeda/lebih terbatas dari model parametrik tertentu; tetap mempunyai syarat desain dan data. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+  },
+  {
+    "id": "mas122-tm12-67",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa goodness-of-fit chi-square?",
+    "category": "Konsep",
+    "front": "Apa goodness-of-fit chi-square?",
+    "back": "Membandingkan frekuensi observasi dengan frekuensi ekspektasi model kategori yang ditetapkan. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+  },
+  {
+    "id": "mas122-tm12-68",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa uji independence chi-square?",
+    "category": "Konsep",
+    "front": "Apa uji independence chi-square?",
+    "back": "Menguji hubungan dua variabel kategori dalam tabel kontingensi, dengan observasi independen. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+  },
+  {
+    "id": "mas122-tm12-69",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa expected frequency pada tabel kontingensi?",
+    "category": "Konsep",
+    "front": "Apa expected frequency pada tabel kontingensi?",
+    "back": "Total baris × total kolom / total sampel, pada hipotesis independensi. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+  },
+  {
+    "id": "mas122-tm12-70",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa statistik chi-square?",
+    "category": "Konsep",
+    "front": "Apa statistik chi-square?",
+    "back": "Jumlah (observasi-ekspektasi)^2/ekspektasi pada sel; jangan memakai proporsi tanpa mengubahnya ke frekuensi sesuai model. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+  },
+  {
+    "id": "mas122-tm12-71",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa yang diuji jika sel ekspektasi kecil?",
+    "category": "Konsep",
+    "front": "Apa yang diuji jika sel ekspektasi kecil?",
+    "back": "Periksa kecukupan pendekatan chi-square; pertimbangkan penggabungan bermakna atau uji lain yang sesuai desain. Rujukan: Lind 17e Ch.15-16, Nonparametric Methods; RPP Statistik PDF 4"
+  }
+]

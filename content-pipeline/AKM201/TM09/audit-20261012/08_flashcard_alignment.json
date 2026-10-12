@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm09-48",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa kontrol pembelian bahan?",
+    "category": "Konsep",
+    "front": "Apa kontrol pembelian bahan?",
+    "back": "Cocokkan permintaan/order, bukti penerimaan dan faktur; validasi jenis, jumlah, harga serta persetujuan. Rujukan: Carter 14e Ch.9, hal.9-5 sampai 9-13, PDF 260-268"
+  },
+  {
+    "id": "akm201-tm09-49",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa beda bahan langsung dan supplies?",
+    "category": "Konsep",
+    "front": "Apa beda bahan langsung dan supplies?",
+    "back": "Bahan langsung dapat ditelusuri ke produk; supplies pabrik biasanya dibebankan melalui overhead sesuai penggunaan. Rujukan: Carter 14e Ch.9, hal.9-5 sampai 9-13, PDF 260-268"
+  },
+  {
+    "id": "akm201-tm09-50",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa rumus EOQ?",
+    "category": "Konsep",
+    "front": "Apa rumus EOQ?",
+    "back": "Akar(2DS/H): D unit/tahun, S biaya per pesanan, H biaya simpan per unit/tahun. Asumsi dasar meliputi permintaan tetap dan tanpa stockout. Rujukan: Carter 14e Ch.9, hal.9-5 sampai 9-13, PDF 260-268"
+  },
+  {
+    "id": "akm201-tm09-51",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa biaya relevan EOQ?",
+    "category": "Konsep",
+    "front": "Apa biaya relevan EOQ?",
+    "back": "Biaya yang berubah karena ukuran/frekuensi pesanan; biaya gudang tetap tidak otomatis termasuk H. Rujukan: Carter 14e Ch.9, hal.9-5 sampai 9-13, PDF 260-268"
+  },
+  {
+    "id": "akm201-tm09-52",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa reorder point?",
+    "category": "Konsep",
+    "front": "Apa reorder point?",
+    "back": "Kebutuhan selama lead time ditambah safety stock pada model yang sesuai; jangan menyamakan titik pesan dengan jumlah pesan. Rujukan: Carter 14e Ch.9, hal.9-5 sampai 9-13, PDF 260-268"
+  },
+  {
+    "id": "akm201-tm09-53",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa beda weighted dan moving average?",
+    "category": "Konsep",
+    "front": "Apa beda weighted dan moving average?",
+    "back": "Periodik memakai rata-rata barang tersedia periode; perpetual menghitung ulang rata-rata setiap pembelian. Rujukan: Carter 14e Ch.9, hal.9-5 sampai 9-13, PDF 260-268"
+  }
+]

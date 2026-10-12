@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm13-72",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa asumsi gross profit method?",
+    "category": "Konsep",
+    "front": "Apa asumsi gross profit method?",
+    "back": "Barang tersedia dan penjualan dapat ditelusuri, margin kotor representatif, dan barang tidak terjual dianggap persediaan setelah memperhitungkan kehilangan/kondisi kasus. Rujukan: Kieso IFRS 5e, Ch.8, Illustration 8.13-8.19, PDF 703-712"
+  },
+  {
+    "id": "akk201-tm13-73",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Berapa inventory estimasian Cetus?",
+    "category": "Konsep",
+    "front": "Berapa inventory estimasian Cetus?",
+    "back": "Barang tersedia 260.000 euro; penjualan 280.000 dan gross profit 30% atas penjualan memberi HPP 196.000 dan persediaan 64.000 euro. Rujukan: Kieso IFRS 5e, Ch.8, Illustration 8.13-8.19, PDF 703-712"
+  },
+  {
+    "id": "akk201-tm13-74",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Markup 40% atas biaya sama dengan margin 40%?",
+    "category": "Konsep",
+    "front": "Markup 40% atas biaya sama dengan margin 40%?",
+    "back": "Tidak. Margin atas penjualan = 40/140 = 28,57%, dibulatkan dua desimal. Rujukan: Kieso IFRS 5e, Ch.8, Illustration 8.13-8.19, PDF 703-712"
+  },
+  {
+    "id": "akk201-tm13-75",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa input retail inventory method?",
+    "category": "Konsep",
+    "front": "Apa input retail inventory method?",
+    "back": "Barang tersedia pada basis cost dan retail, penjualan retail, serta markup/markdown sesuai metode yang ditetapkan. Rujukan: Kieso IFRS 5e, Ch.8, Illustration 8.13-8.19, PDF 703-712"
+  },
+  {
+    "id": "akk201-tm13-76",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Bagaimana markdown pada conventional retail?",
+    "category": "Konsep",
+    "front": "Bagaimana markdown pada conventional retail?",
+    "back": "Tidak masuk denominator rasio cost-to-retail, tetapi mengurangi persediaan retail akhir. Rujukan: Kieso IFRS 5e, Ch.8, Illustration 8.13-8.19, PDF 703-712"
+  },
+  {
+    "id": "akk201-tm13-77",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apakah gross profit estimate menggantikan semua stock count?",
+    "category": "Konsep",
+    "front": "Apakah gross profit estimate menggantikan semua stock count?",
+    "back": "Tidak. Ini estimasi untuk keadaan yang sesuai; periksa margin, kehilangan, perubahan bauran dan kebutuhan pengukuran akhir. Rujukan: Kieso IFRS 5e, Ch.8, Illustration 8.13-8.19, PDF 703-712"
+  }
+]

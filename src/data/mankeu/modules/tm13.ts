@@ -23,7 +23,7 @@ export const TM13_READING: Reading = {
         {
           "kind": "figure",
           "title": "Manajemen Keuangan Multinasional: peta keputusan",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 530\" role=\"img\" aria-label=\"Manajemen Keuangan Multinasional: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"530\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Operasi global</text><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Sistem kurs</text><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Kuotasi dan forward</text><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Paritas bunga dan daya beli</text><rect x=\"60\" y=\"425\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"452\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Risiko proyek induk</text><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"55\" x2=\"60\" y2=\"55\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"155\" x2=\"60\" y2=\"155\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"255\" x2=\"60\" y2=\"255\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"355\" x2=\"60\" y2=\"355\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 530\" role=\"img\" aria-label=\"Manajemen Keuangan Multinasional: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"530\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Operasi global</text><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Sistem kurs</text><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Kuotasi dan forward</text><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Paritas bunga dan daya beli</text><rect x=\"60\" y=\"425\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"452\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Risiko proyek induk</text><line x1=\"35\" y1=\"55\" x2=\"35\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"55\" x2=\"60\" y2=\"55\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"155\" x2=\"60\" y2=\"155\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"255\" x2=\"60\" y2=\"255\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"355\" x2=\"60\" y2=\"355\" stroke=\"var(--svg-accent, #2563eb)\" /><line x1=\"35\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"var(--svg-accent, #2563eb)\" /></svg>",
           "caption": "Disusun dari Brigham & Houston, FFM 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)",
           "altText": "Manajemen Keuangan Multinasional: peta keputusan. Mulai dari jenis keputusan, pilih model yang sepadan, lalu periksa risiko dan batas sumber.",
           "overview": {
@@ -325,7 +325,7 @@ export const TM13_READING: Reading = {
         {
           "kind": "figure",
           "title": "Covered Investment: investasi dengan kurs terkunci",
-          "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 430\" role=\"img\" aria-label=\"Covered Investment: investasi dengan kurs terkunci. Urutan ini menjelaskan paritas suku bunga.\"><style>.svg-bg{fill:var(--svg-bg,#f8fafc)}.svg-card{fill:var(--svg-card,#fff)}.svg-text{fill:var(--svg-text,#0f172a);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"430\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Tukar mata uang pada spot</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Investasikan dana pada bunga setenor</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Jual penerimaan asing secara forward</text><line x1=\"335\" y1=\"301\" x2=\"335\" y2=\"322\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bandingkan hasil domestik pada risiko sama</text></svg>",
+          "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 430\" role=\"img\" aria-label=\"Covered Investment: investasi dengan kurs terkunci. Urutan ini menjelaskan paritas suku bunga.\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"430\" class=\"svg-bg\"/><rect x=\"60\" y=\"25\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"52\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Tukar mata uang pada spot</text><line x1=\"335\" y1=\"101\" x2=\"335\" y2=\"122\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"125\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"152\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Investasikan dana pada bunga setenor</text><line x1=\"335\" y1=\"201\" x2=\"335\" y2=\"222\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"225\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"252\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Jual penerimaan asing secara forward</text><line x1=\"335\" y1=\"301\" x2=\"335\" y2=\"322\" stroke=\"var(--svg-accent, #2563eb)\" marker-end=\"url(#arrow)\"/><rect x=\"60\" y=\"325\" width=\"550\" height=\"75\" rx=\"10\" class=\"svg-card\" stroke=\"var(--svg-muted, #64748b)\"/><text x=\"83\" y=\"352\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Bandingkan hasil domestik pada risiko sama</text></svg>",
           "caption": "[hal. 640; PDF 682]",
           "altText": "Covered Investment: investasi dengan kurs terkunci. Urutan ini menjelaskan paritas suku bunga.",
           "overview": {
@@ -380,6 +380,73 @@ export const TM13_READING: Reading = {
               }
             ]
           }
+        }
+      ]
+    },
+    {
+      "kind": "section",
+      "title": "5a. Baca pasar dana dan kas yang kembali ke induk",
+      "layer": "main",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Eurodollar berarti simpanan USD pada bank di luar Amerika Serikat, termasuk bank di luar Eropa. Eurobond diterbitkan dalam mata uang yang berbeda dari mata uang negara tempat penawaran, sedangkan foreign bond diterbitkan dalam mata uang negara pasar tujuan oleh penerbit asing. Nama instrumen tidak cukup menentukan risiko kurs; cocokkan mata uang kewajiban dengan kas pelunasan. [hal. 647-649; PDF 689-691]"
+        },
+        {
+          "kind": "p",
+          "text": "ADR, American depositary receipt, mewakili saham asing melalui mekanisme penyimpanan dan dapat diperdagangkan di pasar Amerika. Diversifikasi lintas negara dapat mengurangi sebagian risiko, tetapi korelasi berubah dan risiko negara tetap ada. Data return lintas negara pada Table 18.4 bersifat historis dan tidak meramalkan hasil investasi berikutnya. [hal. 649-652; PDF 691-694]"
+        },
+        {
+          "kind": "p",
+          "text": "International capital budgeting menilai kas yang benar-benar dapat dikirim kepada induk, setelah pajak dan hambatan pemulangan dana. Repatriation berarti pemulangan dana tersebut. Nilai proyek anak dapat berbeda dari nilai bagi induk bila kas tertahan. Periksa kurs tiap periode, risiko politik, biaya modal dan hak menerima kas. [hal. 653-654; PDF 695-696]"
+        },
+        {
+          "kind": "table",
+          "headers": [
+            "Pemeriksaan proyek",
+            "Risiko bila diabaikan"
+          ],
+          "rows": [
+            [
+              "Mata uang kas dan diskonto",
+              "NPV dapat berubah hanya karena satuan dicampur"
+            ],
+            [
+              "Dana dapat dipulangkan",
+              "Laba anak disamakan dengan kas yang diterima induk"
+            ],
+            [
+              "Pajak dan aturan negara sumber",
+              "Kas bersih terlalu tinggi"
+            ],
+            [
+              "Risiko politik dan negara",
+              "Pembatasan atau perubahan aturan mengganggu proyeksi"
+            ],
+            [
+              "Ukuran leverage lintas negara",
+              "Perbedaan akuntansi disangka perbedaan risiko pendanaan"
+            ]
+          ],
+          "stackOnMobile": true
+        },
+        {
+          "kind": "p",
+          "text": "[hal. 653-656; PDF 695-698]"
+        },
+        {
+          "kind": "p",
+          "text": "Table 18.5 membedakan total kewajiban dari utang berbunga serta nilai buku dari nilai pasar. Contoh buku: kewajiban 10 juta USD dan aset 20 juta USD memberi rasio 50%. Jika aset dan kewajiban pensiun masing-masing 10 juta USD dilaporkan bruto, rasionya menjadi 20/30 = 66,67%, walaupun pensiun didanai penuh. Perbedaan pelaporan perlu dikendalikan sebelum membandingkan negara. [hal. 655-656; PDF 697-698]"
+        },
+        {
+          "kind": "self-check",
+          "question": "Mengapa laba anak perusahaan belum sama dengan nilai kas untuk induk?",
+          "answer": [
+            {
+              "kind": "p",
+              "text": "Kas dapat tertahan oleh pajak, pembatasan transfer atau kebutuhan operasi anak. Valuasi induk memakai arus yang dapat dikirim, kurs dan diskonto yang konsisten. [hal. 653-654; PDF 695-696]"
+            }
+          ]
         },
         {
           "kind": "pendalaman",

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm11-60",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa komponen seri waktu?",
+    "category": "Konsep",
+    "front": "Apa komponen seri waktu?",
+    "back": "Trend, pola musiman, siklus dan komponen tak beraturan membantu deskripsi; pemisahan mengikuti model yang dipilih. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+  },
+  {
+    "id": "mas122-tm11-61",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa moving average untuk forecast berikutnya?",
+    "category": "Konsep",
+    "front": "Apa moving average untuk forecast berikutnya?",
+    "back": "Gunakan observasi sebelum periode ramalan. Rata-rata yang memasukkan nilai periode t adalah pemulusan pada t, bukan forecast t sebelum nilainya diketahui. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+  },
+  {
+    "id": "mas122-tm11-62",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa dampak ukuran jendela?",
+    "category": "Konsep",
+    "front": "Apa dampak ukuran jendela?",
+    "back": "Jendela panjang lebih halus tetapi lambat merespons perubahan; bandingkan akurasi pada periode uji. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+  },
+  {
+    "id": "mas122-tm11-63",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa p,d,q pada ARIMA?",
+    "category": "Konsep",
+    "front": "Apa p,d,q pada ARIMA?",
+    "back": "p lag autoregresif, d jumlah pembedaan, q lag galat moving average. MA galat berbeda dari rata-rata observasi untuk pemulusan. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+  },
+  {
+    "id": "mas122-tm11-64",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa pembedaan pertama?",
+    "category": "Konsep",
+    "front": "Apa pembedaan pertama?",
+    "back": "y_t - y_(t-1). Ilustrasi 100,110,120,130 menjadi 10,10,10; seri sangat pendek ini tidak cukup untuk memilih model. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+  },
+  {
+    "id": "mas122-tm11-65",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa yang diperiksa sebelum menerima model?",
+    "category": "Konsep",
+    "front": "Apa yang diperiksa sebelum menerima model?",
+    "back": "Pola data, kestasioneran/pembedaan, residual, akurasi periode uji dan interval prediksi; fitting yang baik saja belum cukup. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+  }
+]

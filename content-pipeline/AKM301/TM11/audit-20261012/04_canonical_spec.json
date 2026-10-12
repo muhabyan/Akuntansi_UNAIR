@@ -1,0 +1,24 @@
+{
+  "code": "AKM301",
+  "tm": 11,
+  "source": "OpenStax, Principles of Accounting Volume 2, bagian 10-2: https://openstax.org/books/principles-managerial-accounting/pages/10-2-evaluate-and-determine-whether-to-accept-or-reject-a-special-order",
+  "finding": "Harga berbasis biaya perlu membedakan markup atas biaya dan margin atas harga.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Harga berbasis biaya perlu membedakan markup atas biaya dan margin atas harga."
+    },
+    {
+      "kind": "p",
+      "text": "Ilustrasi buatan: harga Rp100 ribu dan margin target 20% dari harga memberi biaya target Rp80 ribu. Markup 20% atas biaya memberi harga 1,2 × biaya, sehingga biaya pada harga 100 ribu menjadi Rp83.333,33. Bedakan dasar persentase. Pesanan khusus memeriksa kapasitas, biaya tambahan dan dampak pada pasar reguler; harga di atas biaya variabel saja belum cukup pada kapasitas penuh."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 10-2: https://openstax.org/books/principles-managerial-accounting/pages/10-2-evaluate-and-determine-whether-to-accept-or-reject-a-special-order"
+    }
+  ]
+}

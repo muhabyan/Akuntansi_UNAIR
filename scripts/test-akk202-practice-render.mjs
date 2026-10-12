@@ -4,15 +4,31 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRoot } from 'react-dom/client';
 import { JSDOM } from 'jsdom';
-import { createServer } from 'vite';
+import { createRequire } from 'node:module';
+import { build } from 'esbuild';
 
 const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/' });
 for (const key of ['window', 'document', 'HTMLElement', 'SVGElement', 'Node', 'Event', 'MouseEvent']) globalThis[key] = dom.window[key];
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: dom.window.navigator });
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+globalThis.getComputedStyle = dom.window.getComputedStyle.bind(dom.window);
+globalThis.ResizeObserver = class { observe() {} unobserve() {} disconnect() {} };
+dom.window.ResizeObserver = globalThis.ResizeObserver;
 dom.window.scrollTo = () => {};
 dom.window.HTMLElement.prototype.scrollIntoView = () => {};
-const server = await createServer({ root: process.cwd(), appType: 'custom', logLevel: 'silent', server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true } });
+const require = createRequire(import.meta.url);
+const cache = new Map();
+const server = {
+  async ssrLoadModule(file) {
+    if (cache.has(file)) return cache.get(file);
+    const compiled = await build({ entryPoints: ['.' + file], bundle: true, write: false, platform: 'node', format: 'cjs', external: ['react', 'react/*', 'react-dom', 'react-dom/*'], jsx: 'automatic', loader: { '.css': 'empty' }, logLevel: 'silent' });
+    const module = { exports: {} };
+    Function('require', 'module', 'exports', compiled.outputFiles[0].text)(require, module, module.exports);
+    cache.set(file, module.exports);
+    return module.exports;
+  },
+  async close() {},
+};
 let mounted;
 try {
   const [{ renderText }, { AKK202_QUIZ_UAS: quizzes }, { AKK202_BANK_UAS: banks }, { default: QuizView }, { default: EssayBank }, { ALL_COURSES }] = await Promise.all([

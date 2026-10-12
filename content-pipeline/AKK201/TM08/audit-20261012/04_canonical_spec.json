@@ -1,0 +1,48 @@
+{
+  "code": "AKK201",
+  "tm": 8,
+  "source": "Kieso, Intermediate Accounting IFRS 5e, Appendix 6A, Illustration 6A.1-6A.2, PDF 555-557",
+  "finding": "Belum ada visual rekonsiliasi; bedakan koreksi bank dari jurnal perusahaan.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Sisi bank",
+        "Sisi buku"
+      ],
+      "rows": [
+        [
+          "Setoran dalam perjalanan: tambah",
+          "Tagihan bank belum dicatat: tambah"
+        ],
+        [
+          "Cek beredar: kurang",
+          "Biaya bank dan NSF: kurang"
+        ],
+        [
+          "Kesalahan bank: koreksi bank",
+          "Kesalahan buku: koreksi buku"
+        ]
+      ]
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Nugget: pertemuan dua saldo sumber",
+      "prompt": "Mengapa hanya sebagian pos memerlukan jurnal perusahaan?",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Bank: 22.190 + 3.680 - 150 - 4.820 - 31 + 175 = 21.044 USD. Buku: 20.502 + 600 - 18 - 220 + 180 = 21.044 USD. Koreksi cek 311 menjadi 131 menambah kas 180 USD. Pos waktu pada sisi bank tidak dijurnal ulang; transaksi yang belum dicatat dan kesalahan buku memerlukan jurnal. Rujukan: Kieso, Intermediate Accounting IFRS 5e, PDF 555-557"
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Appendix 6A, Illustration 6A.1-6A.2, PDF 555-557"
+    }
+  ]
+}

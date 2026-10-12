@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm13-72",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa langkah pertama analisis perangkat lunak?",
+    "category": "Konsep",
+    "front": "Apa langkah pertama analisis perangkat lunak?",
+    "back": "Tentukan pertanyaan, populasi, variabel, satuan dan desain sebelum memilih menu analisis. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+  },
+  {
+    "id": "mas122-tm13-73",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa kontrol data sebelum analisis?",
+    "category": "Konsep",
+    "front": "Apa kontrol data sebelum analisis?",
+    "back": "Periksa data hilang, duplikat, tipe variabel, kode kategori dan nilai ekstrem dengan jejak keputusan. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+  },
+  {
+    "id": "mas122-tm13-74",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Mengapa output software perlu diperiksa?",
+    "category": "Konsep",
+    "front": "Mengapa output software perlu diperiksa?",
+    "back": "Pilihan model, kelompok, alpha dan metode dapat mengubah hasil; program tidak membuktikan desain sudah benar. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+  },
+  {
+    "id": "mas122-tm13-75",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa yang membuat analisis dapat direproduksi?",
+    "category": "Konsep",
+    "front": "Apa yang membuat analisis dapat direproduksi?",
+    "back": "Simpan versi data, langkah transformasi, pengaturan/model dan output sehingga orang lain dapat mengulang. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+  },
+  {
+    "id": "mas122-tm13-76",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Bagaimana membaca p-value?",
+    "category": "Konsep",
+    "front": "Bagaimana membaca p-value?",
+    "back": "Nilai berkaitan dengan data setidaknya seekstrem observasi di bawah model H0; bukan probabilitas H0 benar. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+  },
+  {
+    "id": "mas122-tm13-77",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa yang dilaporkan selain signifikansi?",
+    "category": "Konsep",
+    "front": "Apa yang dilaporkan selain signifikansi?",
+    "back": "Besar efek, unit, ketidakpastian, asumsi, diagnostik dan relevansi keputusan. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+  }
+]

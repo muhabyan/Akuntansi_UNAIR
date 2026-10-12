@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm13-72",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa logika ABC?",
+    "category": "Konsep",
+    "front": "Apa logika ABC?",
+    "back": "Aktivitas menimbulkan biaya; produk mengonsumsi aktivitas. Pool dan driver perlu hubungan sebab yang didukung. Rujukan: Carter 14e Ch.14, hal.14-1 sampai 14-5, PDF 431-435"
+  },
+  {
+    "id": "akm201-tm13-73",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa activity cost pool?",
+    "category": "Konsep",
+    "front": "Apa activity cost pool?",
+    "back": "Kelompok biaya aktivitas homogen yang dialokasikan dengan driver sesuai, bukan gabungan biaya tanpa alasan. Rujukan: Carter 14e Ch.14, hal.14-1 sampai 14-5, PDF 431-435"
+  },
+  {
+    "id": "akm201-tm13-74",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa activity rate?",
+    "category": "Konsep",
+    "front": "Apa activity rate?",
+    "back": "Biaya pool / jumlah atau kapasitas driver menurut model kasus; unit driver dinyatakan. Rujukan: Carter 14e Ch.14, hal.14-1 sampai 14-5, PDF 431-435"
+  },
+  {
+    "id": "akm201-tm13-75",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Mengapa setup bukan driver unit?",
+    "category": "Konsep",
+    "front": "Mengapa setup bukan driver unit?",
+    "back": "Setup adalah aktivitas tingkat batch; dua produk dengan unit sama dapat memakai jumlah setup berbeda. Rujukan: Carter 14e Ch.14, hal.14-1 sampai 14-5, PDF 431-435"
+  },
+  {
+    "id": "akm201-tm13-76",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apa contoh alokasi setup buatan?",
+    "category": "Konsep",
+    "front": "Apa contoh alokasi setup buatan?",
+    "back": "Rp12 juta / 30 setup = Rp400 ribu/setup. Lima setup dialokasikan Rp2 juta dan 25 setup Rp10 juta; total Rp12 juta. Rujukan: Carter 14e Ch.14, hal.14-1 sampai 14-5, PDF 431-435"
+  },
+  {
+    "id": "akm201-tm13-77",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Apakah lebih banyak driver selalu lebih baik?",
+    "category": "Konsep",
+    "front": "Apakah lebih banyak driver selalu lebih baik?",
+    "back": "Tidak. Pertimbangkan hubungan sebab, mutu data, biaya pengukuran dan keputusan yang hendak didukung. Rujukan: Carter 14e Ch.14, hal.14-1 sampai 14-5, PDF 431-435"
+  }
+]

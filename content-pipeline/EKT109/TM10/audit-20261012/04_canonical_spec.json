@@ -1,0 +1,24 @@
+{
+  "code": "EKT109",
+  "tm": 10,
+  "source": "Samuelson dan Nordhaus, Economics, Ch.22, model multiplier; slide lokal Closed Economy",
+  "finding": "Multiplier sederhana perlu batas harga tetap dan sumber kebocoran.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Multiplier sederhana perlu batas harga tetap dan sumber kebocoran."
+    },
+    {
+      "kind": "p",
+      "text": "Pada model harga tetap tanpa pajak proporsional dan impor, multiplier = 1/(1-MPC). Ilustrasi buatan MPC 0,75 memberi multiplier 4; tambahan pengeluaran otonom 20 miliar rupiah menaikkan output keseimbangan 80 miliar rupiah. Ini hasil model, dengan kapasitas menganggur dan investasi/komponen lain tetap; pajak, impor dan respons bunga dapat mengurangi hasil."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Samuelson dan Nordhaus, Economics, Ch.22, model multiplier; slide lokal Closed Economy"
+    }
+  ]
+}
