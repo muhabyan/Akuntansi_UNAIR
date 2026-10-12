@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm09-48",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa yang diukur korelasi r?",
+    "category": "Konsep",
+    "front": "Apa yang diukur korelasi r?",
+    "back": "Arah dan kekuatan hubungan linear dua variabel; -1 sampai 1. Hubungan nonlinier dapat kuat meski r kecil. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+  },
+  {
+    "id": "mas122-tm09-49",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apakah korelasi membuktikan sebab?",
+    "category": "Konsep",
+    "front": "Apakah korelasi membuktikan sebab?",
+    "back": "Tidak. Confounding, arah sebab dan desain pengamatan perlu dianalisis. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+  },
+  {
+    "id": "mas122-tm09-50",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa slope regresi sederhana?",
+    "category": "Konsep",
+    "front": "Apa slope regresi sederhana?",
+    "back": "Perubahan nilai rata-rata Y yang diprediksi per tambahan satu unit X pada model, bukan kepastian perubahan setiap individu. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+  },
+  {
+    "id": "mas122-tm09-51",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa intercept?",
+    "category": "Konsep",
+    "front": "Apa intercept?",
+    "back": "Prediksi Y pada X=0; interpretasi substantif memerlukan X=0 berada dalam konteks/domain yang relevan. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+  },
+  {
+    "id": "mas122-tm09-52",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa residual?",
+    "category": "Konsep",
+    "front": "Apa residual?",
+    "back": "Nilai observasi Y dikurangi prediksi Y pada X yang sama. Unitnya sama dengan Y. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+  },
+  {
+    "id": "mas122-tm09-53",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa tujuan OLS?",
+    "category": "Konsep",
+    "front": "Apa tujuan OLS?",
+    "back": "Meminimumkan jumlah kuadrat residual pada spesifikasi yang dipilih; hasil perlu pemeriksaan asumsi. Rujukan: Lind 17e Ch.13, bagian Correlation Analysis dan Simple Linear Regression"
+  }
+]

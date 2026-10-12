@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm12-66",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa NRV?",
+    "category": "Konsep",
+    "front": "Apa NRV?",
+    "back": "Harga jual estimasian dalam usaha normal dikurangi estimasi biaya penyelesaian dan biaya yang diperlukan untuk menjual. Rujukan: Kieso IFRS 5e, Ch.8, LCNRV dan Methods of Applying, PDF 689-697"
+  },
+  {
+    "id": "akk201-tm12-67",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa nilai inventory pada LCNRV?",
+    "category": "Konsep",
+    "front": "Apa nilai inventory pada LCNRV?",
+    "back": "Paling rendah antara biaya dan NRV pada basis pengujian yang sesuai. Rujukan: Kieso IFRS 5e, Ch.8, LCNRV dan Methods of Applying, PDF 689-697"
+  },
+  {
+    "id": "akk201-tm12-68",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Berapa NRV Mander?",
+    "category": "Konsep",
+    "front": "Berapa NRV Mander?",
+    "back": "1.000 - 50 - 200 = 750 euro. Dengan biaya 950 euro, penurunan nilai 200 euro. Rujukan: Kieso IFRS 5e, Ch.8, LCNRV dan Methods of Applying, PDF 689-697"
+  },
+  {
+    "id": "akk201-tm12-69",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Bagaimana uji item-by-item berbeda dari total?",
+    "category": "Konsep",
+    "front": "Bagaimana uji item-by-item berbeda dari total?",
+    "back": "Tiap item memakai minimum biaya/NRV sebelum dijumlah. Kenaikan nilai satu item tidak otomatis mengimbangi penurunan item lain. Rujukan: Kieso IFRS 5e, Ch.8, LCNRV dan Methods of Applying, PDF 689-697"
+  },
+  {
+    "id": "akk201-tm12-70",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa batas reversal write-down?",
+    "category": "Konsep",
+    "front": "Apa batas reversal write-down?",
+    "back": "Terbatas pada penurunan nilai sebelumnya; nilai akhir tetap minimum biaya awal dan NRV yang diperbarui. Rujukan: Kieso IFRS 5e, Ch.8, LCNRV dan Methods of Applying, PDF 689-697"
+  },
+  {
+    "id": "akk201-tm12-71",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Apa alasan LCNRV diperlukan?",
+    "category": "Konsep",
+    "front": "Apa alasan LCNRV diperlukan?",
+    "back": "Kerusakan, keusangan, harga turun atau biaya penyelesaian/jual naik dapat mengurangi manfaat ekonomi yang diperkirakan. Rujukan: Kieso IFRS 5e, Ch.8, LCNRV dan Methods of Applying, PDF 689-697"
+  }
+]

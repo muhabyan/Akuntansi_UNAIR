@@ -1,0 +1,56 @@
+[
+  {
+    "id": "pjk201-tm13-63",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Dasar Hukum Pajak Daerah (UU HKPD)",
+    "category": "Dasar Hukum",
+    "front": "UU HKPD No. 1 Tahun 2022 tentang Hubungan Keuangan Pusat dan Daerah",
+    "back": "Undang-undang modern yang mengatur restrukturisasi pajak daerah, simplifikasi jenis pajak, penguatan local taxing power, serta harmonisasi tarif retribusi antara Pemerintah Pusat dan Pemerintah Daerah (Provinsi dan Kabupaten/Kota). Rujukan: UU 1/2022 Pasal 4,10,12,15,35-36,83,86. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm13-64",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Tujuh jenis pajak provinsi menurut HKPD",
+    "category": "Klasifikasi",
+    "front": "Tujuh jenis pajak provinsi menurut HKPD",
+    "back": "PKB, BBNKB, PAB, PBBKB, PAP, Pajak Rokok dan Opsen Pajak MBLB. Jenis, objek dan pemerintah pemungut perlu dibedakan. Rujukan: UU 1/2022 Pasal 4 ayat (1) huruf a."
+  },
+  {
+    "id": "pjk201-tm13-65",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Batas tarif PKB menurut HKPD",
+    "category": "Tarif",
+    "front": "Batas tarif PKB menurut HKPD",
+    "back": "Daerah biasa: kepemilikan pertama paling tinggi 1,2%, berikutnya progresif paling tinggi 6%. Daerah provinsi tanpa kab/kota otonom: paling tinggi 2,4% dan progresif 10%. Tarif nyata memakai Perda. Rujukan: UU 1/2022 Pasal 10 ayat (1)-(3),(5)."
+  },
+  {
+    "id": "pjk201-tm13-66",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Objek dan batas tarif BBNKB",
+    "category": "Tarif",
+    "front": "Objek dan batas tarif BBNKB",
+    "back": "Objek HKPD adalah penyerahan pertama. Maksimum umum 12%; provinsi tanpa kab/kota otonom maksimum 20%. Perda menetapkan tarif nyata; bukan seluruh penyerahan kendaraan bekas menjadi objek. Rujukan: UU 1/2022 Pasal 12 ayat (1) dan 15."
+  },
+  {
+    "id": "pjk201-tm13-67",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Pajak Rokok",
+    "category": "Mekanisme",
+    "front": "Pajak Rokok sebagai Pajak Provinsi",
+    "back": "Pungutan atas cukai rokok yang dipungut oleh Pemerintah Pusat bersamaan dengan pemungutan cukai rokok, lalu dialokasikan/dbagikan ke Provinsi sebesar 10% dari cukai rokok. Minimal 50% dari hasilnya wajib dialokasikan untuk pelayanan kesehatan masyarakat dan penegakan hukum. Rujukan: UU 1/2022 Pasal 4,10,12,15,35-36,83,86. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm13-83",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Pajak Kendaraan Bermotor",
+    "category": "Tarif",
+    "front": "Tarif PKB (Pajak Kendaraan Bermotor)",
+    "back": "Tarif progresif berdasarkan kepemilikan: kendaraan pertama 1,05%, kedua 2%, ketiga 3%, keempat dan seterusnya 3,5% (sesuai UU HKPD). Dasar pengenaan: NJKB × bobot × tarif. Rujukan: UU 1/2022 Pasal 4,10,12,15,35-36,83,86. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  }
+]

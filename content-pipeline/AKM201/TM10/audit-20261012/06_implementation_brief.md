@@ -1,0 +1,1 @@
+Tambahkan delta setelah blok lama melalui applyCourseAudit. Jangan mengubah objek pra-UTS. Gunakan 04 JSON dengan SHA256 4906b6ccb99a232499e3672e86a8fda344aba47c99c1fb4dd3315dc810f7d061. Jangan menghitung tambahan cek ini sebagai perubahan jumlah kuis, flashcard atau bank soal.

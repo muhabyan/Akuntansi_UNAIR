@@ -1,0 +1,65 @@
+[
+  {
+    "id": "pjk201-tm12-58",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Dasar Hukum & Tarif Bea Meterai",
+    "category": "Definisi",
+    "front": "Bea Meterai UU No. 10 Tahun 2020 (Tarif Tunggal)",
+    "back": "Pajak atas dokumen yang bersifat perdata dan dokumen untuk alat bukti di pengadilan. Berlaku tarif tunggal sebesar Rp 10.000,00 (menggantikan tarif lama Rp 3.000 & Rp 6.000 mulai 1 Januari 2021). Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm12-59",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Dokumen Objek Bea Meterai",
+    "category": "Objek",
+    "front": "Dokumen Utama Objek Bea Meterai Rp 10.000",
+    "back": "1) Surat perjanjian, surat keterangan, surat pernyataan; 2) Akta notaris & akta PPAT beserta salinannya; 3) Surat berharga dengan nama dan dalam bentuk apapun; 4) Dokumen transaksi uang yang menyebutkan nominal di atas Rp 5.000.000,00 yang menyatakan penerimaan uang atau pelunasan utang. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm12-60",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Bukan Objek Bea Meterai (Pengecualian)",
+    "category": "Pengecualian",
+    "front": "Dokumen yang Dikecualikan dari Bea Meterai",
+    "back": "1) Dokumen pemindahan orang/barang (karcis penumpang, konosemen, resi); 2) Ijazah, tanda lulus, surat keterangan dokter; 3) Tanda terima gaji/pensiun/tunjangan kerja; 4) Tanda bukti penerimaan uang negara dari kas negara/daerah; 5) Dokumen transaksi uang yang nominalnya <= Rp 5.000.000. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm12-61",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Jenis Meterai & e-Meterai",
+    "category": "Mekanisme",
+    "front": "3 Cara Pembayaran Bea Meterai",
+    "back": "1) Meterai Tempel (perekat fisik bermotif Garuda dan nomor seri unik); 2) Meterai Elektronik / e-Meterai (label elektronik yang mengandung unsur pengaman yang dibubuhkan pada dokumen elektronik via PERURI); 3) Meterai Dalam Bentuk Lain (mesin teraan, komputerisasi/peruri). Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm12-62",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Pemeteraian Kemudian (Nachzegelen)",
+    "category": "Prosedur",
+    "front": "Pemeteraian Kemudian (Nachzegelen)",
+    "back": "Pelunasan Bea Meterai yang dilakukan oleh pejabat pos atas dokumen yang belum/kurang dibayar bea meterainya, atau dokumen yang dibuat di luar negeri yang akan digunakan di Indonesia sebagai alat bukti di pengadilan (dikenakan sanksi denda 100% jika akibat kelalaian). Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm12-81",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Bea Meterai",
+    "category": "Tarif",
+    "front": "Tarif Bea Meterai (UU No. 10/2020)",
+    "back": "Tarif tunggal Rp10.000 berlaku untuk dokumen dengan nilai >Rp5.000.000, surat berharga, akta notaris, dan dokumen transaksi efek. Dokumen di bawah Rp5.000.000 tidak dikenakan bea meterai. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm12-82",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Pemeteraian Kemudian",
+    "category": "Prosedur",
+    "front": "Pemeteraian Kemudian",
+    "back": "Dilakukan terhadap dokumen yang bea meterainya tidak atau kurang dibayar. WP membayar bea meterai terutang ditambah sanksi administratif 100% dari bea meterai terutang. Dilaksanakan oleh pejabat pos. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  }
+]

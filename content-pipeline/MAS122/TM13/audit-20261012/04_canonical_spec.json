@@ -1,0 +1,435 @@
+{
+  "code": "MAS122",
+  "tm": 13,
+  "reading": {
+    "tm": 13,
+    "title": "Perangkat Lunak Statistik & Persiapan Proyek Akhir",
+    "ref": "AA 16",
+    "intro": "Analisis modern memakai perangkat lunak. Bagian ini menyiapkan alur kerja analisis data untuk proyek akhir.",
+    "objectives": [
+      "Mengenal perangkat lunak statistik umum.",
+      "Memahami alur kerja analisis data.",
+      "Menyiapkan proyek akhir."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "A. Perangkat Lunak"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Excel:** analisis dasar, PivotTable, Data Analysis ToolPak.",
+          "**SPSS:** populer untuk uji statistik bermenu (deskriptif, t-test, ANOVA, regresi).",
+          "**R / Python:** fleksibel & gratis untuk analisis lanjutan & otomasi."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "B. Alur Kerja Analisis"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Rumuskan pertanyaan & hipotesis penelitian.",
+          "Kumpulkan & bersihkan data (data cleaning).",
+          "Eksplorasi (statistik deskriptif & visualisasi).",
+          "Pilih & jalankan uji yang sesuai.",
+          "Tafsirkan hasil & tarik kesimpulan.",
+          "Sajikan temuan secara jujur & jelas."
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "tip",
+        "title": "Peta memilih metode",
+        "text": "Tentukan: (1) tujuan (deskripsi/hubungan/perbedaan/prediksi), (2) jumlah & skala variabel, (3) asumsi terpenuhi atau tidak → barulah pilih uji."
+      },
+      {
+        "kind": "h2",
+        "text": "Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan"
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Catatan kurator",
+        "text": "Bagian di bawah ini menambah materi inti TM 13 dengan glossary istilah, contoh SPSS output, asumsi, dan jebakan ujian. Diadaptasi dari modul terpadu Pra-UAS."
+      },
+      {
+        "kind": "h2",
+        "text": "Penggunaan Perangkat Lunak Statistik SPSS dan Excel dari data mentah sampai interpretasi"
+      },
+      {
+        "kind": "p",
+        "text": "Mahasiswa sering langsung membuka menu analisis tanpa menyiapkan struktur data. Week 13 menekankan workflow: data dictionary, input data, screening, analisis deskriptif, uji utama, output, interpretasi, dan dokumentasi."
+      },
+      {
+        "kind": "h3",
+        "text": "Pentingnya Workflow Data"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Software mempercepat perhitungan, tetapi tidak menggantikan pemahaman metode.",
+          "Kesalahan coding variabel dapat membuat output statistik salah.",
+          "Laporan yang baik membutuhkan narasi, bukan screenshot mentah."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Target Kompetensi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Membedakan Data View, Variable View, dan Output Viewer.",
+          "Menyusun data dictionary sederhana.",
+          "Menjalankan menu SPSS untuk ANOVA, regresi, chi-square, dan non-parametrik.",
+          "Menulis interpretasi berdasarkan output software."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Data View"
+      },
+      {
+        "kind": "p",
+        "text": "Tempat memasukkan data mentah di SPSS."
+      },
+      {
+        "kind": "h3",
+        "text": "Variable View"
+      },
+      {
+        "kind": "p",
+        "text": "Tempat mendefinisikan nama, label, tipe, value label, missing, dan measure."
+      },
+      {
+        "kind": "h3",
+        "text": "Value Labels"
+      },
+      {
+        "kind": "p",
+        "text": "Keterangan kode kategori, misalnya 1=WTP, 0=Non-WTP."
+      },
+      {
+        "kind": "h3",
+        "text": "Missing Values"
+      },
+      {
+        "kind": "p",
+        "text": "Kode untuk data hilang agar tidak dihitung sebagai data valid."
+      },
+      {
+        "kind": "h3",
+        "text": "Measure"
+      },
+      {
+        "kind": "p",
+        "text": "Skala pengukuran di SPSS: Nominal, Ordinal, atau Scale."
+      },
+      {
+        "kind": "h3",
+        "text": "Weight Cases"
+      },
+      {
+        "kind": "p",
+        "text": "Fitur untuk data yang sudah berupa frekuensi rekap."
+      },
+      {
+        "kind": "h3",
+        "text": "Output Viewer"
+      },
+      {
+        "kind": "p",
+        "text": "Jendela hasil analisis SPSS."
+      },
+      {
+        "kind": "h3",
+        "text": "Syntax"
+      },
+      {
+        "kind": "p",
+        "text": "Perintah tertulis SPSS yang dapat mereplikasi analisis."
+      },
+      {
+        "kind": "h3",
+        "text": "Gunakan SPSS"
+      },
+      {
+        "kind": "p",
+        "text": "Ketika analisis membutuhkan output statistik lengkap, asumsi, post hoc, atau non-parametrik."
+      },
+      {
+        "kind": "h3",
+        "text": "Gunakan Excel"
+      },
+      {
+        "kind": "p",
+        "text": "Ketika latihan hitung, visualisasi sederhana, atau analisis dasar seperti korelasi/regresi sederhana."
+      },
+      {
+        "kind": "h3",
+        "text": "Gunakan syntax"
+      },
+      {
+        "kind": "p",
+        "text": "Ketika analisis perlu direplikasi secara konsisten."
+      },
+      {
+        "kind": "p",
+        "text": "Contoh struktur data proyek akuntansi."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Name",
+          "Label",
+          "Measure",
+          "Value Labels"
+        ],
+        "rows": [
+          [
+            "company_id",
+            "Kode perusahaan",
+            "Nominal",
+            "-"
+          ],
+          [
+            "sector",
+            "Sektor industri",
+            "Nominal",
+            "1=Manufaktur; 2=Jasa; 3=Keuangan"
+          ],
+          [
+            "sales_growth",
+            "Pertumbuhan penjualan",
+            "Scale",
+            "-"
+          ],
+          [
+            "profit_margin",
+            "Margin laba",
+            "Scale",
+            "-"
+          ],
+          [
+            "audit_opinion",
+            "Opini audit",
+            "Nominal",
+            "1=WTP; 0=Non-WTP"
+          ],
+          [
+            "timely_report",
+            "Ketepatan waktu pelaporan",
+            "Nominal",
+            "1=Tepat waktu; 0=Terlambat"
+          ],
+          [
+            "audit_delay",
+            "Audit delay dalam hari",
+            "Scale",
+            "-"
+          ]
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Jangan mulai dari menu SPSS; mulai dari masalah riset."
+      },
+      {
+        "kind": "p",
+        "text": "Tentukan nama, label, skala, dan kode kategori."
+      },
+      {
+        "kind": "p",
+        "text": "Pastikan satu baris adalah satu observasi."
+      },
+      {
+        "kind": "p",
+        "text": "Cek missing, outlier, dan salah kode."
+      },
+      {
+        "kind": "p",
+        "text": "Baca output sesuai metode dan tulis narasi hasil."
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Alur Kerja Analisis & Struktur Data SPSS",
+        "text": "**Alur Analisis:** Masalah → Data → Metode → Output → Interpretasi → Keputusan\n\n**Struktur Data SPSS yang Benar:**\n• 1 Baris = 1 Observasi / Responden\n• 1 Kolom = 1 Variabel\n\n**Konsistensi Coding:** Pengkodean angka kategori (misal 1=Pria, 2=Wanita) harus konsisten di seluruh dataset."
+      },
+      {
+        "kind": "h3",
+        "text": "Skala benar"
+      },
+      {
+        "kind": "p",
+        "text": "Measure harus sesuai: nominal, ordinal, atau scale."
+      },
+      {
+        "kind": "h3",
+        "text": "Data bersih"
+      },
+      {
+        "kind": "p",
+        "text": "Salah input dan missing harus diperiksa sebelum analisis."
+      },
+      {
+        "kind": "h3",
+        "text": "Jebakan Ujian & Kesalahan Umum"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Mengisi kode kategori tetapi tidak membuat Value Labels.",
+          "Menganggap semua variabel sebagai Scale.",
+          "Tidak memeriksa missing value.",
+          "Menempel output mentah tanpa interpretasi.",
+          "Memilih metode dari menu tanpa memahami desain data."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di SPSS"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Isi Variable View terlebih dahulu.",
+          "Masukkan data pada Data View.",
+          "Untuk deskriptif: Analyze → Descriptive Statistics → Frequencies/Descriptives/Explore.",
+          "Untuk ANOVA: Analyze → Compare Means → One-Way ANOVA.",
+          "Untuk korelasi: Analyze → Correlate → Bivariate.",
+          "Untuk regresi: Analyze → Regression → Linear.",
+          "Untuk chi-square: Analyze → Descriptive Statistics → Crosstabs.",
+          "Untuk non-parametrik: Analyze → Nonparametric Tests → Legacy Dialogs."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di Excel"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Gunakan tabel data rapi dengan header variabel di baris pertama.",
+          "Aktifkan Analysis ToolPak.",
+          "Gunakan PivotTable untuk crosstab dan deskriptif cepat.",
+          "Gunakan Data Analysis untuk Regression dan ANOVA.",
+          "Gunakan grafik untuk scatterplot dan time plot."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Frequencies"
+      },
+      {
+        "kind": "p",
+        "text": "Cocok untuk nominal/ordinal."
+      },
+      {
+        "kind": "h3",
+        "text": "Descriptives"
+      },
+      {
+        "kind": "p",
+        "text": "Cocok untuk scale."
+      },
+      {
+        "kind": "h3",
+        "text": "Explore"
+      },
+      {
+        "kind": "p",
+        "text": "Cocok untuk cek normalitas dan boxplot."
+      },
+      {
+        "kind": "h3",
+        "text": "Crosstabs"
+      },
+      {
+        "kind": "p",
+        "text": "Cocok untuk hubungan kategori."
+      },
+      {
+        "kind": "h3",
+        "text": "Regression output"
+      },
+      {
+        "kind": "p",
+        "text": "Cocok untuk model prediksi."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Data View berisi data mentah, sedangkan Variable View mendefinisikan struktur variabel."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: audit_opinion = Nominal dengan label 1=WTP, 0=Non-WTP; audit_delay = Scale; firm_size = Scale."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Gunakan Weight Cases agar SPSS membaca frekuensi rekap sebagai jumlah kasus."
+      }
+    ]
+  },
+  "questions": [],
+  "flashcards": [
+    {
+      "id": "mas122-tm13-72",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Apa langkah pertama analisis perangkat lunak?",
+      "category": "Konsep",
+      "front": "Apa langkah pertama analisis perangkat lunak?",
+      "back": "Tentukan pertanyaan, populasi, variabel, satuan dan desain sebelum memilih menu analisis. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+    },
+    {
+      "id": "mas122-tm13-73",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Apa kontrol data sebelum analisis?",
+      "category": "Konsep",
+      "front": "Apa kontrol data sebelum analisis?",
+      "back": "Periksa data hilang, duplikat, tipe variabel, kode kategori dan nilai ekstrem dengan jejak keputusan. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+    },
+    {
+      "id": "mas122-tm13-74",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Mengapa output software perlu diperiksa?",
+      "category": "Konsep",
+      "front": "Mengapa output software perlu diperiksa?",
+      "back": "Pilihan model, kelompok, alpha dan metode dapat mengubah hasil; program tidak membuktikan desain sudah benar. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+    },
+    {
+      "id": "mas122-tm13-75",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Apa yang membuat analisis dapat direproduksi?",
+      "category": "Konsep",
+      "front": "Apa yang membuat analisis dapat direproduksi?",
+      "back": "Simpan versi data, langkah transformasi, pengaturan/model dan output sehingga orang lain dapat mengulang. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+    },
+    {
+      "id": "mas122-tm13-76",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Bagaimana membaca p-value?",
+      "category": "Konsep",
+      "front": "Bagaimana membaca p-value?",
+      "back": "Nilai berkaitan dengan data setidaknya seekstrem observasi di bawah model H0; bukan probabilitas H0 benar. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+    },
+    {
+      "id": "mas122-tm13-77",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Apa yang dilaporkan selain signifikansi?",
+      "category": "Konsep",
+      "front": "Apa yang dilaporkan selain signifikansi?",
+      "back": "Besar efek, unit, ketidakpastian, asumsi, diagnostik dan relevansi keputusan. Rujukan: RPP Statistik PDF 4-5, perangkat lunak dan proyek akhir; metode inferensi Lind Ch.12-16"
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

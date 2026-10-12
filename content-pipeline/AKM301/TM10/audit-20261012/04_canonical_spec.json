@@ -1,0 +1,24 @@
+{
+  "code": "AKM301",
+  "tm": 10,
+  "source": "OpenStax, Principles of Accounting Volume 2, bagian 10-1: https://openstax.org/books/principles-managerial-accounting/pages/10-1-identify-relevant-information-for-decision-making",
+  "finding": "Sunk cost berbeda dari nilai peluang aset yang sudah dibeli.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Sunk cost berbeda dari nilai peluang aset yang sudah dibeli."
+    },
+    {
+      "kind": "p",
+      "text": "Biaya pembelian historis mesin merupakan sunk cost. Namun nilai jual mesin sekarang adalah opportunity cost jika mesin tetap dipakai. Ilustrasi buatan: membuat komponen memakai biaya variabel Rp30 ribu dan biaya tetap dapat dihindari Rp5 ribu/unit; tawaran beli Rp32 ribu. Pembelian menghemat Rp3 ribu/unit jika kapasitas dan mutu setara; biaya tetap tak terhindarkan tidak dimasukkan lagi dalam selisih."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: OpenStax, Principles of Accounting Volume 2, bagian 10-1: https://openstax.org/books/principles-managerial-accounting/pages/10-1-identify-relevant-information-for-decision-making"
+    }
+  ]
+}

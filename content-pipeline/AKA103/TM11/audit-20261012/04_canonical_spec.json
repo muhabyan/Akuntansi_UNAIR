@@ -1,0 +1,45 @@
+{
+  "code": "AKA103",
+  "tm": 11,
+  "source": "Felo (2011), hal.281-296, PDF 310-325 pada buku Brink lengkap; RPS PDF 6",
+  "finding": "TARIF belum menggantikan enam mekanisme tata kelola yang ditugaskan.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "TARIF belum menggantikan enam mekanisme tata kelola yang ditugaskan."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Mekanisme RPS",
+        "Risiko yang diuji"
+      ],
+      "rows": [
+        [
+          "Keterlibatan dewan dalam kode etik",
+          "Apakah pengawasan diterapkan atau hanya simbolis?"
+        ],
+        [
+          "Independensi dan CEO duality",
+          "Konflik kepentingan serta kualitas informasi ke dewan."
+        ],
+        [
+          "Kompensasi dan pemilihan direktur",
+          "Insentif, horizon keputusan dan akuntabilitas."
+        ],
+        [
+          "Auditor eksternal",
+          "Mutu bukti dan independensi; audit tidak menjamin semua fraud ditemukan."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Felo (2011), hal.281-296, PDF 310-325 pada buku Brink lengkap; RPS PDF 6"
+    }
+  ]
+}

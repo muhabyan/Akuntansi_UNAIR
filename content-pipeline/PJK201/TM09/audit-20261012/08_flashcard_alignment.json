@@ -1,0 +1,74 @@
+[
+  {
+    "id": "pjk201-tm09-41",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
+    "category": "Dokumen",
+    "front": "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
+    "back": "Surat ketetapan yang menentukan besarnya jumlah pokok pajak, kredit pajak, kekurangan bayar pokok pajak, besarnya sanksi administrasi (bunga/kenaikan), dan jumlah pajak yang masih harus dibayar (diterbitkan dalam jangka waktu maksimal 5 tahun). Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-42",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
+    "category": "Dokumen",
+    "front": "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
+    "back": "Surat ketetapan yang menentukan tambahan atas jumlah pajak yang telah ditetapkan sebelumnya (biasanya diterbitkan jika ditemukan data baru/novum setelah pemeriksaan ulang, disertai sanksi kenaikan 100% dari jumlah kurang bayar tambahan). Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-43",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
+    "category": "Dokumen",
+    "front": "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
+    "back": "Surat ketetapan yang menentukan jumlah kelebihan pembayaran pajak karena jumlah kredit pajak lebih besar daripada pajak yang terutang atau tidak seharusnya terutang. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-44",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPN (Surat Ketetapan Pajak Nihil)",
+    "category": "Dokumen",
+    "front": "SKPN (Surat Ketetapan Pajak Nihil)",
+    "back": "Surat ketetapan yang menentukan jumlah pokok pajak sama besarnya dengan jumlah kredit pajak atau pajak tidak terutang dan tidak ada kredit pajak. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-45",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Restitusi Pajak (Pasal 17B KUP)",
+    "category": "Mekanisme",
+    "front": "Prosedur Restitusi (Pengembalian Kelebihan Pembayaran Pajak)",
+    "back": "WP mengajukan permohonan restitusi pada SPT. DJP wajib menerbitkan keputusan setelah melakukan pemeriksaan paling lambat 12 bulan sejak permohonan diterima lengkap. Jika lewat 12 bulan tidak ada keputusan, permohonan dianggap dikabulkan. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-46",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Pengembalian Pendahuluan (Pasal 17C / 17D KUP)",
+    "category": "Mekanisme",
+    "front": "Pengembalian Pendahuluan Kelebihan Pajak (WP Kriteria Tertentu / Patuh)",
+    "back": "Fasilitas pengembalian cepat tanpa pemeriksaan mendalam (hanya penelitian) bagi WP Kriteria Tertentu (Golden Taxpayer) atau WP Persyaratan Tertentu (nominal lebih bayar kecil). Surat Keputusan Pengembalian Pendahuluan (SKPPKP) diterbitkan maksimal 3 bulan untuk PPh dan 1 bulan untuk PPN. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-75",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Surat Ketetapan Pajak",
+    "category": "Klasifikasi",
+    "front": "4 Jenis Surat Ketetapan Pajak",
+    "back": "1) SKPKB (Surat Ketetapan Pajak Kurang Bayar), 2) SKPKBT (Kurang Bayar Tambahan), 3) SKPLB (Lebih Bayar), 4) SKPN (Nihil). Masing-masing diterbitkan berdasarkan hasil pemeriksaan. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm09-76",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Mekanisme restitusi dan batas 12 bulan",
+    "category": "Prosedur",
+    "front": "Mekanisme restitusi dan batas 12 bulan",
+    "back": "Pada permohonan yang dicakup Pasal 17B, periksa tanggal diterima lengkap, pemeriksaan dan pengecualiannya. Lewat batas tanpa keputusan mengikuti mekanisme permohonan dianggap dikabulkan dan penerbitan SKPLB; imbalan bunga mempunyai dasar/syarat tersendiri. Rujukan: UU KUP Pasal 17B dan 27A."
+  }
+]

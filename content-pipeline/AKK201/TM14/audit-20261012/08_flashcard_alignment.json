@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm14-78",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol rekonsiliasi bank?",
+    "category": "Konsep",
+    "front": "Apa kontrol rekonsiliasi bank?",
+    "back": "Saldo kedua sisi setelah penyesuaian sama; jurnal dibuat untuk sisi buku yang memerlukan pencatatan. Rujukan: Kieso IFRS 5e Ch.6-8; modul tutor UAS AKM1 TM8-14 PDF 2-13"
+  },
+  {
+    "id": "akk201-tm14-79",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol allowance?",
+    "category": "Konsep",
+    "front": "Apa kontrol allowance?",
+    "back": "Bedakan target saldo akhir dari beban penyesuaian serta periksa saldo awal kredit/debit. Rujukan: Kieso IFRS 5e Ch.6-8; modul tutor UAS AKM1 TM8-14 PDF 2-13"
+  },
+  {
+    "id": "akk201-tm14-80",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol cost flow?",
+    "category": "Konsep",
+    "front": "Apa kontrol cost flow?",
+    "back": "HPP + persediaan akhir sama dengan barang tersedia pada basis biaya. Rujukan: Kieso IFRS 5e Ch.6-8; modul tutor UAS AKM1 TM8-14 PDF 2-13"
+  },
+  {
+    "id": "akk201-tm14-81",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol NRV?",
+    "category": "Konsep",
+    "front": "Apa kontrol NRV?",
+    "back": "Harga jual dikurangi biaya penyelesaian dan jual; reversal tidak menaikkan nilai melampaui batas biaya. Rujukan: Kieso IFRS 5e Ch.6-8; modul tutor UAS AKM1 TM8-14 PDF 2-13"
+  },
+  {
+    "id": "akk201-tm14-82",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol persentase laba kotor?",
+    "category": "Konsep",
+    "front": "Apa kontrol persentase laba kotor?",
+    "back": "Pastikan denominatornya biaya atau penjualan sebelum menghitung estimasi persediaan. Rujukan: Kieso IFRS 5e Ch.6-8; modul tutor UAS AKM1 TM8-14 PDF 2-13"
+  },
+  {
+    "id": "akk201-tm14-83",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apakah prioritas tutor memastikan soal UAS?",
+    "category": "Konsep",
+    "front": "Apakah prioritas tutor memastikan soal UAS?",
+    "back": "Tidak. Ini perkiraan dari cakupan sumber; arsip UTS atau kuis tidak menjamin bentuk/bobot UAS. Rujukan: Kieso IFRS 5e Ch.6-8; modul tutor UAS AKM1 TM8-14 PDF 2-13"
+  }
+]

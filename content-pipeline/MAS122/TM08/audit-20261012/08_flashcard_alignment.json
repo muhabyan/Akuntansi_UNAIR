@@ -1,0 +1,56 @@
+[
+  {
+    "id": "mas122-tm08-42",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa hipotesis ANOVA satu arah?",
+    "category": "Konsep",
+    "front": "Apa hipotesis ANOVA satu arah?",
+    "back": "H0 menyatakan semua rata-rata populasi sama; H1 menyatakan setidaknya satu berbeda, dengan kelompok independen sesuai model. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+  },
+  {
+    "id": "mas122-tm08-43",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa statistik F ANOVA?",
+    "category": "Konsep",
+    "front": "Apa statistik F ANOVA?",
+    "back": "Mean square antar kelompok / mean square dalam kelompok; keduanya mengukur variabilitas pada basis yang sesuai. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+  },
+  {
+    "id": "mas122-tm08-44",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Kapan H0 ditolak?",
+    "category": "Konsep",
+    "front": "Kapan H0 ditolak?",
+    "back": "Jika F melampaui nilai kritis pada alpha dan derajat bebas yang ditetapkan, atau p-value lebih kecil dari alpha. F besar saja belum cukup. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+  },
+  {
+    "id": "mas122-tm08-45",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa df ANOVA?",
+    "category": "Konsep",
+    "front": "Apa df ANOVA?",
+    "back": "Antar kelompok k-1; dalam kelompok N-k, dengan k kelompok dan N total observasi. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+  },
+  {
+    "id": "mas122-tm08-46",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa asumsi ANOVA?",
+    "category": "Konsep",
+    "front": "Apa asumsi ANOVA?",
+    "back": "Independensi observasi, residual normal dalam kelompok dan varians kelompok homogen; periksa desain serta diagnostik. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+  },
+  {
+    "id": "mas122-tm08-47",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apakah hasil signifikan menunjukkan kelompok mana berbeda?",
+    "category": "Konsep",
+    "front": "Apakah hasil signifikan menunjukkan kelompok mana berbeda?",
+    "back": "Tidak langsung. Gunakan perbandingan lanjut yang sesuai dan kendalikan risiko pengujian berganda. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+  }
+]

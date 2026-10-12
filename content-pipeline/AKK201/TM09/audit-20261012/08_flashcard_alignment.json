@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm09-48",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa cash realizable value piutang?",
+    "category": "Konsep",
+    "front": "Apa cash realizable value piutang?",
+    "back": "Saldo piutang dikurangi allowance kerugian estimasian, dengan asumsi dan pengukuran sesuai jenis piutang. Rujukan: Kieso IFRS 5e, Ch.6, PDF 528-545; Illustration 6.6 PDF 533"
+  },
+  {
+    "id": "akk201-tm09-49",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Target allowance sama dengan beban?",
+    "category": "Konsep",
+    "front": "Target allowance sama dengan beban?",
+    "back": "Tidak selalu. Beban penyesuaian = target saldo akhir dikurangi saldo kredit awal, atau ditambah saldo debit awal. Rujukan: Kieso IFRS 5e, Ch.6, PDF 528-545; Illustration 6.6 PDF 533"
+  },
+  {
+    "id": "akk201-tm09-50",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Berapa target allowance Wilson?",
+    "category": "Konsep",
+    "front": "Berapa target allowance Wilson?",
+    "back": "26.610 euro, jumlah hasil saldo tiap kelompok umur dikali tarif estimasian. Dengan kredit awal 800 euro, beban 25.810 euro. Rujukan: Kieso IFRS 5e, Ch.6, PDF 528-545; Illustration 6.6 PDF 533"
+  },
+  {
+    "id": "akk201-tm09-51",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa dampak write-off memakai allowance?",
+    "category": "Konsep",
+    "front": "Apa dampak write-off memakai allowance?",
+    "back": "Debit allowance dan kredit accounts receivable. Pada saat write-off, piutang neto tidak berubah karena kedua akun turun dengan jumlah sama. Rujukan: Kieso IFRS 5e, Ch.6, PDF 528-545; Illustration 6.6 PDF 533"
+  },
+  {
+    "id": "akk201-tm09-52",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Bagaimana notes diukur dengan bunga efektif?",
+    "category": "Konsep",
+    "front": "Bagaimana notes diukur dengan bunga efektif?",
+    "back": "Nilai kini kas kontraktual pada tingkat pasar yang sesuai; beban/pendapatan bunga mengikuti nilai tercatat awal periode dikali tingkat efektif. Rujukan: Kieso IFRS 5e, Ch.6, PDF 528-545; Illustration 6.6 PDF 533"
+  },
+  {
+    "id": "akk201-tm09-53",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Apa yang diperiksa pada transfer piutang?",
+    "category": "Konsep",
+    "front": "Apa yang diperiksa pada transfer piutang?",
+    "back": "Hak kas, risiko, pengendalian dan syarat recourse. Istilah penjualan dalam kontrak tidak sendirian menentukan derecognition. Rujukan: Kieso IFRS 5e, Ch.6, PDF 528-545; Illustration 6.6 PDF 533"
+  }
+]

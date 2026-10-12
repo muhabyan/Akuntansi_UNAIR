@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akk201-tm11-60",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Kapan specific identification sesuai?",
+    "category": "Konsep",
+    "front": "Kapan specific identification sesuai?",
+    "back": "Unit yang dapat ditelusuri dan tidak lazim saling dipertukarkan, atau proyek khusus; biaya aktual unit mengikuti penjualan/persediaan. Rujukan: Kieso IFRS 5e, Ch.7, Illustration 7.7-7.10 dan Inventory Errors, PDF 623-630,638-640"
+  },
+  {
+    "id": "akk201-tm11-61",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa asumsi FIFO?",
+    "category": "Konsep",
+    "front": "Apa asumsi FIFO?",
+    "back": "Biaya unit yang diperoleh lebih dahulu mengalir ke HPP lebih dahulu. Ini asumsi arus biaya, bukan keharusan arus fisik. Rujukan: Kieso IFRS 5e, Ch.7, Illustration 7.7-7.10 dan Inventory Errors, PDF 623-630,638-640"
+  },
+  {
+    "id": "akk201-tm11-62",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa basis weighted average periodik?",
+    "category": "Konsep",
+    "front": "Apa basis weighted average periodik?",
+    "back": "Biaya barang tersedia / jumlah unit tersedia pada periode. Call-Mart: 43.900/10.000 = 4,39 euro per unit. Rujukan: Kieso IFRS 5e, Ch.7, Illustration 7.7-7.10 dan Inventory Errors, PDF 623-630,638-640"
+  },
+  {
+    "id": "akk201-tm11-63",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Kapan moving average dihitung ulang?",
+    "category": "Konsep",
+    "front": "Kapan moving average dihitung ulang?",
+    "back": "Pada pembelian dalam sistem perpetual. Penjualan memakai rata-rata yang berlaku saat transaksi. Rujukan: Kieso IFRS 5e, Ch.7, Illustration 7.7-7.10 dan Inventory Errors, PDF 623-630,638-640"
+  },
+  {
+    "id": "akk201-tm11-64",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa kontrol angka Call-Mart?",
+    "category": "Konsep",
+    "front": "Apa kontrol angka Call-Mart?",
+    "back": "HPP + persediaan akhir = 43.900 euro. Weighted average periodik memberi HPP 17.560 dan persediaan 26.340 euro. Rujukan: Kieso IFRS 5e, Ch.7, Illustration 7.7-7.10 dan Inventory Errors, PDF 623-630,638-640"
+  },
+  {
+    "id": "akk201-tm11-65",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Apa dampak persediaan akhir terlalu tinggi?",
+    "category": "Konsep",
+    "front": "Apa dampak persediaan akhir terlalu tinggi?",
+    "back": "HPP periode berjalan terlalu rendah dan laba terlalu tinggi. Pada periode berikutnya, saldo awal yang terlalu tinggi memberi arah sebaliknya jika tidak dikoreksi. Rujukan: Kieso IFRS 5e, Ch.7, Illustration 7.7-7.10 dan Inventory Errors, PDF 623-630,638-640"
+  }
+]

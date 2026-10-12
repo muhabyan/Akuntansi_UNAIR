@@ -3,6 +3,7 @@
 // TM1–7 (pra-UTS) & TM8–14 (pra-UAS). Sumber: Lind (DA), Anderson (AA) + RPS.
 // =============================================================
 import type { Reading } from '../../types';
+import { ARIMA_AUDIT_BLOCKS } from './arimaAudit';
 import { MAS122_TM8_14_SUPPLEMENT } from './statistikPraUasSupplement';
 
 /** Gabungkan blocks reading existing dengan suplemen Pra-UAS bila ada untuk TM tersebut. */
@@ -179,7 +180,7 @@ const tm8: Reading = {
   blocks: [
     { kind: 'h2', text: 'A. Konsep' },
     { kind: 'p', text: 'ANOVA memecah total variasi menjadi variasi **antar kelompok (between)** dan variasi **dalam kelompok (within)**. Jika variasi antar kelompok jauh lebih besar, rata-rata kelompok berbeda nyata.' },
-    { kind: 'formula', text: 'F = Variansi antar kelompok ÷ Variansi dalam kelompok', note: 'F besar → tolak H₀ (minimal satu rata-rata berbeda).' },
+    { kind: 'formula', text: 'F = Variansi antar kelompok ÷ Variansi dalam kelompok', note: 'Tolak H0 jika F melampaui nilai kritis untuk alpha dan kedua derajat bebas, atau p-value < alpha. F yang terlihat besar belum cukup tanpa aturan keputusan. Rujukan: Lind, Statistical Techniques 17e, Ch. 12, hal. cetak 394-401 (PDF 421-428).' },
     { kind: 'ul', items: [
       '**Factor** = variabel pengelompokan; **Level** = kategori dalam factor.',
       '**Post hoc** (mis. Tukey) = mengidentifikasi kelompok mana yang berbeda **setelah** F signifikan.',
@@ -325,7 +326,7 @@ export const MAS122_READINGS: Record<number, Reading> = {
   8: withSupplement(tm8),
   9: withSupplement(tm9),
   10: withSupplement(tm10),
-  11: withSupplement(tm11),
+  11: withSupplement({ ...tm11, blocks: [...tm11.blocks, ...ARIMA_AUDIT_BLOCKS] }),
   12: withSupplement(tm12),
   13: withSupplement(tm13),
   14: withSupplement(tm14),

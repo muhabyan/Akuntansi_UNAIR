@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm08-42",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa kos bersama?",
+    "category": "Konsep",
+    "front": "Apa kos bersama?",
+    "back": "Biaya proses sebelum produk dapat diidentifikasi terpisah pada split-off; dialokasikan untuk laporan biaya dan inventory. Rujukan: Carter 14e Ch.8, hal.8-1 sampai 8-13, PDF 231-243"
+  },
+  {
+    "id": "akm201-tm08-43",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa split-off point?",
+    "category": "Konsep",
+    "front": "Apa split-off point?",
+    "back": "Titik produk bersama mulai dapat diidentifikasi; pisahkan biaya sebelum titik itu dan biaya proses lanjut. Rujukan: Carter 14e Ch.8, hal.8-1 sampai 8-13, PDF 231-243"
+  },
+  {
+    "id": "akm201-tm08-44",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa dasar alokasi nilai jual?",
+    "category": "Konsep",
+    "front": "Apa dasar alokasi nilai jual?",
+    "back": "Porsi nilai jual produk pada split-off dibanding nilai jual total produk yang relevan, sesuai asumsi harga dan volume. Rujukan: Carter 14e Ch.8, hal.8-1 sampai 8-13, PDF 231-243"
+  },
+  {
+    "id": "akm201-tm08-45",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa dasar alokasi NRV?",
+    "category": "Konsep",
+    "front": "Apa dasar alokasi NRV?",
+    "back": "Nilai jual akhir dikurangi biaya terpisah dipakai sebagai pendekatan nilai pada split-off bila harga split-off tidak tersedia. Rujukan: Carter 14e Ch.8, hal.8-1 sampai 8-13, PDF 231-243"
+  },
+  {
+    "id": "akm201-tm08-46",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apakah joint cost menentukan proses lanjut?",
+    "category": "Konsep",
+    "front": "Apakah joint cost menentukan proses lanjut?",
+    "back": "Keputusan pada split-off memakai tambahan pendapatan dan biaya yang dapat dihindari; joint cost yang telah terjadi tidak mengubah selisih. Rujukan: Carter 14e Ch.8, hal.8-1 sampai 8-13, PDF 231-243"
+  },
+  {
+    "id": "akm201-tm08-47",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Apa hasil proses lanjut produk B buku?",
+    "category": "Konsep",
+    "front": "Apa hasil proses lanjut produk B buku?",
+    "back": "75.000 - 60.000 - 10.000 = tambahan kontribusi 5.000 USD, dengan asumsi biaya tambahan relevan. Rujukan: Carter 14e Ch.8, hal.8-1 sampai 8-13, PDF 231-243"
+  }
+]

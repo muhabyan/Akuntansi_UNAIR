@@ -1,0 +1,45 @@
+{
+  "code": "AKK201",
+  "tm": 10,
+  "source": "Kieso, Intermediate Accounting IFRS 5e, Ch.7, Goods Included in Inventory dan Costs Included in Inventory, PDF 611-622",
+  "finding": "Keberadaan fisik perlu dipisahkan dari kepemilikan/pengendalian dan biaya siap jual.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Pertanyaan",
+        "Implikasi"
+      ],
+      "rows": [
+        [
+          "Barang di gudang milik pengirim konsinyasi?",
+          "Lokasi fisik tidak cukup untuk mengakui aset penerima."
+        ],
+        [
+          "Barang sedang dikirim?",
+          "Periksa syarat penyerahan dan perpindahan kendali."
+        ],
+        [
+          "Biaya membawa barang ke lokasi/kondisi sekarang?",
+          "Dapat masuk biaya persediaan jika memenuhi ketentuan."
+        ],
+        [
+          "Biaya penjualan atau administrasi umum?",
+          "Umumnya beban periode; jangan dikapitalisasi hanya karena dialokasikan."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Pada konsinyasi, pengirim tetap mengakui persediaan sampai penjualan kepada pelanggan. Penerima dapat memegang barang tanpa memiliki persediaan tersebut. Periksa kontrak jika syarat pengiriman atau hak pengembalian berbeda dari contoh buku."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Ch.7, Goods Included in Inventory dan Costs Included in Inventory, PDF 611-622"
+    }
+  ]
+}

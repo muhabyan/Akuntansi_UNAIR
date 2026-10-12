@@ -1,0 +1,41 @@
+{
+  "code": "AKA103",
+  "tm": 12,
+  "source": "Oberer dan Erkollar (2018), hal.409-410, PDF 6-7; Othman dan Rahman (2014), Table 2-3, hal.367 PDF 8",
+  "finding": "Leadership 4.0 perlu menghubungkan perhatian manusia dan inovasi.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Leadership 4.0 perlu menghubungkan perhatian manusia dan inovasi."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Dimensi",
+        "Bukti perilaku"
+      ],
+      "rows": [
+        [
+          "Inovasi/teknologi",
+          "Mendukung eksperimen, pembelajaran dan perubahan proses."
+        ],
+        [
+          "Manusia",
+          "Memberi dukungan, kesempatan berpartisipasi dan pengembangan."
+        ],
+        [
+          "Etika",
+          "Keterbukaan konflik kepentingan, kejujuran dan akuntabilitas."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Oberer dan Erkollar (2018), hal.409-410, PDF 6-7; Othman dan Rahman (2014), Table 2-3, hal.367 PDF 8"
+    }
+  ]
+}

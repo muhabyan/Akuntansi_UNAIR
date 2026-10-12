@@ -1,0 +1,65 @@
+[
+  {
+    "id": "pjk201-tm10-47",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Upaya Keberatan (Pasal 25 KUP)",
+    "category": "Prosedur",
+    "front": "Prosedur Pengajuan Keberatan Pajak",
+    "back": "Diajukan tertulis dalam bahasa Indonesia kepada Dirjen Pajak atas suatu SKP (SKPKB, SKPKBT, SKPLB, SKPN) atau pemotongan pihak ketiga. Batas waktu pengajuan adalah 3 bulan sejak surat dikirim/dipotong. Wajib membayar minimal pajak yang disetujui dalam pembahasan akhir sebelum keberatan diajukan. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm10-48",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Sanksi Denda Keberatan yang Ditolak",
+    "category": "Sanksi",
+    "front": "Sanksi Denda jika Keberatan Ditolak atau Dikabulkan Sebagian (Pasal 25 ayat 9 KUP)",
+    "back": "Dikenakan sanksi denda administrasi sebesar 30% dari jumlah pajak berdasarkan keputusan keberatan dikurangi dengan pajak yang telah dibayar sebelum mengajukan keberatan (Kecuali WP melanjutkan banding ke Pengadilan Pajak). Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm10-49",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Upaya Banding (Pasal 27 KUP)",
+    "category": "Prosedur",
+    "front": "Prosedur Pengajuan Banding ke Pengadilan Pajak",
+    "back": "Diajukan tertulis dalam bahasa Indonesia kepada Pengadilan Pajak HANYA atas Surat Keputusan Keberatan. Batas waktu pengajuan maksimal 3 bulan sejak keputusan keberatan diterima. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm10-50",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Sanksi Denda Banding yang Ditolak",
+    "category": "Sanksi",
+    "front": "Sanksi Denda jika Banding Ditolak atau Dikabulkan Sebagian (Pasal 27 ayat 5d KUP)",
+    "back": "Dikenakan sanksi denda administrasi sebesar 60% dari jumlah pajak berdasarkan Putusan Banding dikurangi dengan pembayaran pajak yang telah dibayar sebelum mengajukan keberatan. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm10-51",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Gugatan & Peninjauan Kembali (PK)",
+    "category": "Prosedur",
+    "front": "Gugatan ke Pengadilan Pajak & Peninjauan Kembali (PK) ke Mahkamah Agung",
+    "back": "Gugatan: diajukan ke Pengadilan Pajak atas sengketa tata cara/prosedur penerbitan surat ketetapan atau pelaksanaan penagihan pajak (batas 14 hari untuk Surat Paksa, 30 hari untuk keputusan lain). Peninjauan Kembali: upaya hukum luar biasa terakhir ke Mahkamah Agung atas putusan Pengadilan Pajak. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm10-77",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Syarat pengajuan keberatan",
+    "category": "Prosedur",
+    "front": "Syarat pengajuan keberatan",
+    "back": "Surat berbahasa Indonesia menyatakan hitungan dan alasan. Batas umumnya 3 bulan sejak surat dikirim atau tanggal pemotongan/pemungutan, dengan pengecualian keadaan di luar kuasa. Bayar bagian yang disetujui pada pembahasan akhir sebelum pengajuan. Rujukan: UU KUP Pasal 25 ayat (2),(3),(3a)."
+  },
+  {
+    "id": "pjk201-tm10-78",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Banding dan pembayaran pajak menurut KUP",
+    "category": "Prosedur",
+    "front": "Banding dan pembayaran pajak menurut KUP",
+    "back": "Banding atas keputusan keberatan diajukan ke Pengadilan Pajak dalam 3 bulan sejak diterima, kecuali alasan di luar kuasa. Jangan menerapkan syarat bayar 50% tanpa membedakan objek/yurisdiksi; KUP mengatur penangguhan jumlah yang belum dibayar sebelum keberatan selama banding. Rujukan: UU KUP Pasal 27 ayat (3),(5a)-(5c)."
+  }
+]

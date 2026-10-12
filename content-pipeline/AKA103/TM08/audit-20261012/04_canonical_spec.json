@@ -1,0 +1,49 @@
+{
+  "code": "AKA103",
+  "tm": 8,
+  "source": "Sia (2008) hal.702-709, PDF 2-8; Juliyani (2016) hal.66-69, PDF 4-7",
+  "finding": "Rujukan RPS saja belum cukup untuk membedakan posisi analitis dari nilai agama.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan RPS saja belum cukup untuk membedakan posisi analitis dari nilai agama."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Aksioma Juliyani",
+        "Penerapan akuntan, ilustrasi buatan"
+      ],
+      "rows": [
+        [
+          "Kesatuan",
+          "Konsistensi antara keyakinan dan tindakan profesional."
+        ],
+        [
+          "Keseimbangan",
+          "Menilai hak pemilik, pekerja dan pihak terdampak."
+        ],
+        [
+          "Kehendak bebas",
+          "Memilih tindakan dengan batas tanggung jawab."
+        ],
+        [
+          "Tanggung jawab",
+          "Menjelaskan keputusan dan memperbaiki dampak."
+        ],
+        [
+          "Kebajikan",
+          "Mengejar manfaat dengan kejujuran, bukan hanya kepatuhan minimum."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Sia (2008) hal.702-709, PDF 2-8; Juliyani (2016) hal.66-69, PDF 4-7"
+    }
+  ]
+}

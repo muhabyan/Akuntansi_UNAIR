@@ -1,0 +1,45 @@
+{
+  "code": "MNU101",
+  "tm": 13,
+  "source": "Pride, Foundations of Business 6e, Ch.15, hal.434-440, PDF 452-458; RPS 2026 minggu 13",
+  "finding": "Informasi mengurangi ketidakpastian jika relevan dan dapat dipercaya.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Informasi mengurangi ketidakpastian jika relevan dan dapat dipercaya."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Data ke keputusan",
+        "Kontrol"
+      ],
+      "rows": [
+        [
+          "Kumpulkan dan simpan",
+          "Otorisasi akses, validasi dan ketepatan waktu."
+        ],
+        [
+          "Olah menjadi informasi",
+          "Definisi ukuran konsisten dan asal data dapat ditelusuri."
+        ],
+        [
+          "Gunakan dan evaluasi",
+          "Pengguna memahami batas data; hasil ditinjau kembali."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Prioritas belajar ini diperkirakan dari RPS dan bab buku. Kasus Chobani, Dunkin, Domino, FedEx dan Zappos pada rencana kuliah tidak membuktikan bahwa kasus yang sama akan menjadi soal ujian akhir."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Pride, Foundations of Business 6e, Ch.15, hal.434-440, PDF 452-458; RPS 2026 minggu 13"
+    }
+  ]
+}

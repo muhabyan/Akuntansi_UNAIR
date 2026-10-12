@@ -1,0 +1,45 @@
+{
+  "code": "AKM301",
+  "tm": 13,
+  "source": "ASQ: https://asq.org/quality-resources/cost-of-quality",
+  "finding": "Belanja pencegahan tidak otomatis menurunkan seluruh biaya secara drastis.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Belanja pencegahan tidak otomatis menurunkan seluruh biaya secara drastis."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kelompok biaya",
+        "Contoh"
+      ],
+      "rows": [
+        [
+          "Pencegahan",
+          "Perencanaan mutu dan pelatihan."
+        ],
+        [
+          "Penilaian",
+          "Inspeksi dan pengujian."
+        ],
+        [
+          "Kegagalan internal",
+          "Scrap/rework sebelum produk diterima pelanggan."
+        ],
+        [
+          "Kegagalan eksternal",
+          "Garansi, retur dan dampak setelah penerimaan."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: ASQ: https://asq.org/quality-resources/cost-of-quality"
+    }
+  ]
+}

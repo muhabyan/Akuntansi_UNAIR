@@ -1,0 +1,41 @@
+{
+  "code": "PJK201",
+  "tm": 9,
+  "source": "UU KUP Pasal 13,14,15,17,17B-17D",
+  "finding": "Jenis surat tidak menentukan jumlah pajak tanpa membaca dasar dan keputusan.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Jenis surat tidak menentukan jumlah pajak tanpa membaca dasar dan keputusan."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Surat",
+        "Pertanyaan"
+      ],
+      "rows": [
+        [
+          "SKPKB/SKPKBT",
+          "Apa dasar koreksi dan periode pajaknya?"
+        ],
+        [
+          "STP",
+          "Apa tagihan dan sanksi yang dinyatakan?"
+        ],
+        [
+          "SKPLB/SKPN",
+          "Apa hasil penelitian/pemeriksaan dan status bayar?"
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: UU KUP Pasal 13,14,15,17,17B-17D"
+    }
+  ]
+}

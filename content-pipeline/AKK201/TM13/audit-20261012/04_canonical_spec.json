@@ -1,0 +1,31 @@
+{
+  "code": "AKK201",
+  "tm": 13,
+  "source": "Kieso, Intermediate Accounting IFRS 5e, Illustration 8.13 dan 8.19, PDF 703-704 dan 710-712",
+  "finding": "Basis persentase markup sering tertukar; retail perlu membedakan perlakuan markdown.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "solution-reveal",
+      "title": "Cetus: laba kotor dan persediaan estimasian",
+      "prompt": "Hitung persediaan jika laba kotor 30% dari penjualan.",
+      "blocks": [
+        {
+          "kind": "p",
+          "text": "Barang tersedia 60.000 + 200.000 = 260.000 euro. HPP = 280.000 × 70% = 196.000 euro. Persediaan estimasian = 64.000 euro. Jika 30% adalah markup atas biaya, persentase laba atas penjualan menjadi 30/130; hasilnya berbeda. Metode ini bergantung pada pola margin yang representatif. Rujukan: Kieso, Intermediate Accounting IFRS 5e, Illustration 8.13 PDF 703"
+        }
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Pada conventional retail, markdown tidak dimasukkan dalam denominator rasio cost-to-retail, tetapi tetap mengurangi barang tersedia pada harga retail untuk menghitung persediaan retail akhir. Periksa metode yang diminta; rasio average-cost retail berbeda."
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Kieso, Intermediate Accounting IFRS 5e, Illustration 8.13 dan 8.19, PDF 703-704 dan 710-712"
+    }
+  ]
+}

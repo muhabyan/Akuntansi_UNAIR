@@ -1,0 +1,56 @@
+[
+  {
+    "id": "akm201-tm14-78",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol alokasi joint cost?",
+    "category": "Konsep",
+    "front": "Apa kontrol alokasi joint cost?",
+    "back": "Jumlah alokasi semua produk harus sama dengan kos bersama yang dialokasikan; keputusan proses lanjut memakai selisih kas. Rujukan: Carter 14e Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+  },
+  {
+    "id": "akm201-tm14-79",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol unit bahan?",
+    "category": "Konsep",
+    "front": "Apa kontrol unit bahan?",
+    "back": "Rekonsiliasi unit tersedia, pemakaian, sisa dan kehilangan pada periode yang sama. Rujukan: Carter 14e Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+  },
+  {
+    "id": "akm201-tm14-80",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol biaya tenaga kerja?",
+    "category": "Konsep",
+    "front": "Apa kontrol biaya tenaga kerja?",
+    "back": "Cocokkan jam, tarif, output dan distribusi ke pekerjaan; jangan mencampur upah per jam dan biaya per unit. Rujukan: Carter 14e Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+  },
+  {
+    "id": "akm201-tm14-81",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol overhead?",
+    "category": "Konsep",
+    "front": "Apa kontrol overhead?",
+    "back": "Rekonsiliasi anggaran, aktivitas aktual, dibebankan, aktual serta perlakuan selisih. Rujukan: Carter 14e Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+  },
+  {
+    "id": "akm201-tm14-82",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa kontrol alokasi jasa dan ABC?",
+    "category": "Konsep",
+    "front": "Apa kontrol alokasi jasa dan ABC?",
+    "back": "Tidak ada pool yang hilang atau dihitung dua kali; driver serta urutan/persamaan dinyatakan. Rujukan: Carter 14e Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+  },
+  {
+    "id": "akm201-tm14-83",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Apa dasar prioritas pra-UAS?",
+    "category": "Konsep",
+    "front": "Apa dasar prioritas pra-UAS?",
+    "back": "Cakupan silabi, buku dan arsip kuis pra-UAS; ini perkiraan, dengan arsip UAS yang belum diverifikasi tetap ditandai. Rujukan: Carter 14e Ch.8-14; Soal Kuis Pra-UAS Akuntansi Biaya 2026 PDF 1-8"
+  }
+]

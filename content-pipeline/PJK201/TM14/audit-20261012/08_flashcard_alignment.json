@@ -1,0 +1,65 @@
+[
+  {
+    "id": "pjk201-tm14-68",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Sembilan jenis pajak kabupaten/kota",
+    "category": "Klasifikasi",
+    "front": "Sembilan jenis pajak kabupaten/kota",
+    "back": "PBB-P2, BPHTB, PBJT, Reklame, Air Tanah, MBLB, Sarang Burung Walet, Opsen PKB dan Opsen BBNKB. Opsen MBLB adalah pajak provinsi. Rujukan: UU 1/2022 Pasal 4 ayat (1) huruf b."
+  },
+  {
+    "id": "pjk201-tm14-69",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Rumus PBB-P2 dan batas tarif",
+    "category": "Rumus",
+    "front": "Rumus PBB-P2 dan batas tarif",
+    "back": "PBB-P2 = tarif Perda × persentase basis (20%-100%) × (NJOP - NJOPTKP). NJOPTKP paling sedikit Rp10 juta. Maksimum tarif 0,5%; tarif lahan pangan/ternak ditetapkan lebih rendah tanpa angka nasional 0,25% pada pasal ini. Rujukan: UU 1/2022 Pasal 40 ayat (3),(5),41-42."
+  },
+  {
+    "id": "pjk201-tm14-70",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "BPHTB dan dasar NPOP",
+    "category": "Rumus",
+    "front": "BPHTB dan dasar NPOP",
+    "back": "NPOP mengikuti jenis perolehan. Pada jual beli gunakan harga transaksi, atau NJOP ketika NPOP tidak diketahui/lebih rendah dari NJOP. NPOPTKP minimal Rp80 juta untuk perolehan pertama di daerah; Rp300 juta untuk waris/hibah wasiat keluarga yang dicakup. Tarif maksimum 5%, nyata menurut Perda. Rujukan: UU 1/2022 Pasal 46-48."
+  },
+  {
+    "id": "pjk201-tm14-71",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "PBJT (Pajak Barang dan Jasa Tertentu)",
+    "category": "Definisi",
+    "front": "PBJT (Pajak Barang dan Jasa Tertentu - Integrasi Baru UU HKPD)",
+    "back": "Pajak yang dibayarkan oleh konsumen akhir atas konsumsi barang/jasa tertentu di kabupaten/kota, mencakup: 1) Makanan dan/atau minuman (restoran); 2) Tenaga listrik; 3) Jasa perhotelan; 4) Jasa parkir; 5) Jasa kesenian dan hiburan. Tarif umum PBJT maksimal 10% (khusus hiburan tertentu seperti diskotek, karaoke, spa tarifnya 40% s.d. 75%). Rujukan: UU 1/2022 Pasal 4,40-48,58,83,87-94. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm14-72",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Tiga golongan retribusi daerah",
+    "category": "Klasifikasi",
+    "front": "Tiga golongan retribusi daerah",
+    "back": "Retribusi jasa umum, jasa usaha dan perizinan tertentu. Objek serta layanan/izin yang dicakup diperiksa pada aturan daerah dan pelaksana HKPD; jangan memakai daftar izin lama sebagai daftar yang pasti masih berlaku. Rujukan: UU 1/2022 Pasal 87-94; PP 35/2023."
+  },
+  {
+    "id": "pjk201-tm14-73",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Opsen Pajak dalam UU HKPD",
+    "category": "Konsep",
+    "front": "Konsep Opsen Pajak antara Provinsi dan Kabupaten/Kota",
+    "back": "Pungutan tambahan pajak menurut persentase tertentu yang dikenakan atas pajak terutang dari tingkat pemerintahan daerah yang berbeda. Contoh: Opsen PKB dan Opsen BBNKB dipungut oleh Kabupaten/Kota (66%) bersamaan dengan pajak Provinsi, sehingga mempercepat distribusi bagi hasil dan transparansi daerah. Rujukan: UU 1/2022 Pasal 4,40-48,58,83,87-94. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
+  },
+  {
+    "id": "pjk201-tm14-84",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Cara menghitung PBB-P2",
+    "category": "Rumus",
+    "front": "Cara menghitung PBB-P2",
+    "back": "Nyatakan NJOP, NJOPTKP, persentase basis dan tarif daerah. Ilustrasi buatan NJOP Rp800 juta, pengurang Rp10 juta, basis 40%, tarif 0,1% memberi Rp316.000. Jangan menganggap basis selalu 100%. Rujukan: UU 1/2022 Pasal 40-42."
+  }
+]

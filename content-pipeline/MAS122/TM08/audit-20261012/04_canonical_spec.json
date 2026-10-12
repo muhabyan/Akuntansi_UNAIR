@@ -1,0 +1,418 @@
+{
+  "code": "MAS122",
+  "tm": 8,
+  "reading": {
+    "tm": 8,
+    "title": "Analisis Varians (ANOVA)",
+    "ref": "DA 12",
+    "intro": "ANOVA membandingkan rata-rata **tiga kelompok atau lebih** sekaligus, tanpa menambah risiko error tipe I seperti uji-t berulang.",
+    "objectives": [
+      "Menjelaskan logika ANOVA satu arah.",
+      "Menafsirkan F-statistic & post hoc.",
+      "Mengecek asumsi ANOVA."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "A. Konsep"
+      },
+      {
+        "kind": "p",
+        "text": "ANOVA memecah total variasi menjadi variasi **antar kelompok (between)** dan variasi **dalam kelompok (within)**. Jika variasi antar kelompok jauh lebih besar, rata-rata kelompok berbeda nyata."
+      },
+      {
+        "kind": "formula",
+        "text": "F = Variansi antar kelompok ÷ Variansi dalam kelompok",
+        "note": "Tolak H0 jika F melampaui nilai kritis untuk alpha dan kedua derajat bebas, atau p-value < alpha. F yang terlihat besar belum cukup tanpa aturan keputusan. Rujukan: Lind, Statistical Techniques 17e, Ch. 12, hal. cetak 394-401 (PDF 421-428)."
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Factor** = variabel pengelompokan; **Level** = kategori dalam factor.",
+          "**Post hoc** (mis. Tukey) = mengidentifikasi kelompok mana yang berbeda **setelah** F signifikan.",
+          "**Eta squared** = ukuran besar efek (proporsi variasi yang dijelaskan)."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "B. Asumsi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Independensi antar pengamatan.",
+          "Normalitas residual.",
+          "Homogenitas varians (cek **Levene’s Test**); bila dilanggar → alternatif non-parametrik (Kruskal-Wallis)."
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "warning",
+        "title": "Kenapa bukan banyak uji-t?",
+        "text": "Melakukan uji-t berkali-kali menaikkan peluang error tipe I secara akumulatif. ANOVA mengujinya sekaligus dengan α terkendali."
+      },
+      {
+        "kind": "h2",
+        "text": "Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan"
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Catatan kurator",
+        "text": "Bagian di bawah ini menambah materi inti TM 8 dengan glossary istilah, contoh SPSS output, asumsi, dan jebakan ujian. Diadaptasi dari modul terpadu Pra-UAS."
+      },
+      {
+        "kind": "h2",
+        "text": "Analisis Varians (ANOVA) Membandingkan rata-rata tiga kelompok atau lebih"
+      },
+      {
+        "kind": "p",
+        "text": "Seorang manajer pemasaran ingin membandingkan rata-rata penjualan harian dari tiga strategi promosi: diskon, bundling, dan cashback. Jika hanya dua strategi, uji-t dapat digunakan. Karena kelompoknya tiga, ANOVA lebih tepat karena mampu menguji perbedaan rata-rata beberapa kelompok sekaligus tanpa memperbesar risiko kesalahan akibat uji-t berulang."
+      },
+      {
+        "kind": "h3",
+        "text": "Contoh Penerapan ANOVA"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Akuntan manajemen dapat memakai ANOVA untuk membandingkan kinerja beberapa cabang, metode produksi, strategi biaya, atau kategori pelanggan.",
+          "Auditor dapat memakai logika ANOVA untuk melihat apakah waktu penyelesaian audit berbeda antarkelompok klien.",
+          "Analis bisnis dapat membandingkan rata-rata penjualan, biaya, margin, atau produktivitas pada beberapa kelompok."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Target Kompetensi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Menjelaskan perbedaan variasi antar kelompok dan variasi dalam kelompok.",
+          "Menulis hipotesis ANOVA dengan benar.",
+          "Membaca tabel ANOVA, Levene, dan post hoc pada SPSS.",
+          "Menulis interpretasi hasil ANOVA dalam konteks bisnis."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Factor"
+      },
+      {
+        "kind": "p",
+        "text": "Variabel kelompok yang dibandingkan, misalnya strategi promosi."
+      },
+      {
+        "kind": "h3",
+        "text": "Level"
+      },
+      {
+        "kind": "p",
+        "text": "Kategori dalam factor, misalnya diskon, bundling, dan cashback."
+      },
+      {
+        "kind": "h3",
+        "text": "Between groups"
+      },
+      {
+        "kind": "p",
+        "text": "Variasi yang muncul karena perbedaan rata-rata antar kelompok."
+      },
+      {
+        "kind": "h3",
+        "text": "Within groups"
+      },
+      {
+        "kind": "p",
+        "text": "Variasi yang muncul di dalam kelompok yang sama."
+      },
+      {
+        "kind": "h3",
+        "text": "F-statistic"
+      },
+      {
+        "kind": "p",
+        "text": "Rasio antara variasi antar kelompok dan variasi dalam kelompok."
+      },
+      {
+        "kind": "h3",
+        "text": "Post hoc"
+      },
+      {
+        "kind": "p",
+        "text": "Uji lanjutan untuk mengetahui pasangan kelompok mana yang berbeda."
+      },
+      {
+        "kind": "h3",
+        "text": "Levene’s Test"
+      },
+      {
+        "kind": "p",
+        "text": "Uji untuk melihat apakah varians antarkelompok relatif sama."
+      },
+      {
+        "kind": "h3",
+        "text": "Eta squared"
+      },
+      {
+        "kind": "p",
+        "text": "Ukuran efek ANOVA yang menunjukkan seberapa besar variasi Y dijelaskan oleh factor."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai ANOVA"
+      },
+      {
+        "kind": "p",
+        "text": "Y berbentuk angka/scale, X berbentuk kategori dengan tiga kelompok atau lebih, dan tujuan analisis adalah membandingkan rata-rata."
+      },
+      {
+        "kind": "h3",
+        "text": "Jangan pakai ANOVA"
+      },
+      {
+        "kind": "p",
+        "text": "Y berbentuk kategori, data berasal dari pasangan yang sama tanpa desain repeated measures, atau tujuan analisis adalah memprediksi Y dari X."
+      },
+      {
+        "kind": "h3",
+        "text": "Alternatif"
+      },
+      {
+        "kind": "p",
+        "text": "Jika asumsi normalitas/varians sulit dipenuhi dan datanya ordinal atau sangat tidak normal, gunakan Kruskal-Wallis."
+      },
+      {
+        "kind": "p",
+        "text": "Data contoh penjualan harian untuk tiga strategi promosi."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Strategi",
+          "Data Penjualan",
+          "Rata-rata"
+        ],
+        "rows": [
+          [
+            "Diskon",
+            "72, 75, 70, 78, 74",
+            "73,80"
+          ],
+          [
+            "Bundling",
+            "80, 83, 79, 85, 82",
+            "81,80"
+          ],
+          [
+            "Cashback",
+            "68, 70, 65, 69, 66",
+            "67,60"
+          ]
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Diskon = 73,80; bundling = 81,80; cashback = 67,60."
+      },
+      {
+        "kind": "formula",
+        "text": "Grand Mean (x̄_grand) = (Σx) / N",
+        "note": "Total seluruh data dibagi total jumlah observasi."
+      },
+      {
+        "kind": "p",
+        "text": "Grand mean adalah rata-rata dari keseluruhan 15 observasi tanpa memandang kelompok. Dalam contoh ini, total penjualan = 1116, N = 15, sehingga grand mean = 1116 / 15 = 74,40."
+      },
+      {
+        "kind": "formula",
+        "text": "SS_between = Σ [ n_i × (x̄_i - x̄_grand)² ]",
+        "note": "n_i = sampel kelompok i, x̄_i = rata-rata kelompok i, x̄_grand = grand mean. Mengukur seberapa jauh rata-rata kelompok menyimpang dari grand mean."
+      },
+      {
+        "kind": "p",
+        "text": "Jika rata-rata kelompok (misal 81,80 atau 67,60) jaraknya sangat jauh dari grand mean (74,40), maka variasi antar kelompok menjadi besar."
+      },
+      {
+        "kind": "formula",
+        "text": "SS_within = Σ (x - x̄_i)²",
+        "note": "x = tiap observasi, x̄_i = rata-rata kelompoknya sendiri. Mengukur sebaran data di dalam masing-masing kelompok."
+      },
+      {
+        "kind": "p",
+        "text": "Jika data di dalam setiap kelompok nilainya berdekatan (relatif rapat) dengan rata-rata kelompoknya sendiri, maka variasi dalam kelompok menjadi kecil."
+      },
+      {
+        "kind": "p",
+        "text": "Kesimpulan logikanya: Jika variasi antar kelompok jauh lebih besar daripada variasi dalam kelompok (sinyal > noise), maka statistik F menjadi besar dan H₀ (semua rata-rata sama) cenderung ditolak."
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Ringkasan Hipotesis & Rumus ANOVA",
+        "text": "**Hipotesis:**\n• H₀: μ₁ = μ₂ = μ₃ (Seluruh kelompok memiliki rata-rata yang sama)\n• H₁: Minimal ada satu kelompok dengan rata-rata yang berbeda\n\n**Rumus Dasar:**\n• F-statistic = MS_between / MS_within\n• Ukuran Efek (η²) = SS_between / SS_total\n\n**Asumsi Independensi:** Observasi tidak boleh saling bergantung atau diukur berulang tanpa perlakuan khusus."
+      },
+      {
+        "kind": "h3",
+        "text": "Normalitas residual"
+      },
+      {
+        "kind": "p",
+        "text": "Residual pada tiap kelompok kira-kira normal. Untuk latihan dasar, cek histogram/Q-Q plot atau Explore di SPSS."
+      },
+      {
+        "kind": "h3",
+        "text": "Homogenitas varians"
+      },
+      {
+        "kind": "p",
+        "text": "Varians antar kelompok relatif sama. Cek melalui Levene’s Test."
+      },
+      {
+        "kind": "h3",
+        "text": "Jebakan Ujian & Kesalahan Umum"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Menganggap ANOVA signifikan berarti semua kelompok pasti berbeda.",
+          "Tidak membaca Levene’s Test sebelum memilih post hoc.",
+          "Memakai banyak uji-t untuk tiga kelompok atau lebih tanpa koreksi.",
+          "Hanya menulis p-value tanpa menjelaskan makna bisnis."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di SPSS"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Buat variabel penjualan sebagai Scale dan strategi sebagai Nominal.",
+          "Masukkan kode strategi, misalnya 1 = Diskon, 2 = Bundling, 3 = Cashback.",
+          "Klik Analyze → Compare Means → One-Way ANOVA.",
+          "Pindahkan penjualan ke Dependent List dan strategi ke Factor.",
+          "Klik Options, centang Descriptive dan Homogeneity of variance test.",
+          "Klik Post Hoc. Pilih Tukey jika Levene Sig. ≥ 0,05; pilih Games-Howell jika Levene Sig. < 0,05.",
+          "Baca tabel Descriptives, Test of Homogeneity, ANOVA, dan Multiple Comparisons."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di Excel"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Aktifkan Analysis ToolPak melalui File → Options → Add-ins.",
+          "Susun data per kelompok dalam kolom berbeda.",
+          "Klik Data → Data Analysis → ANOVA: Single Factor.",
+          "Masukkan Input Range, pilih Grouped By: Columns, dan Alpha = 0,05.",
+          "Baca F, P-value, dan F crit pada output."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Descriptives"
+      },
+      {
+        "kind": "p",
+        "text": "Lihat mean tiap kelompok untuk mengetahui kelompok yang paling tinggi atau rendah."
+      },
+      {
+        "kind": "h3",
+        "text": "Levene"
+      },
+      {
+        "kind": "p",
+        "text": "Jika Sig. ≥ 0,05, asumsi homogenitas varians tidak bermasalah secara praktis."
+      },
+      {
+        "kind": "h3",
+        "text": "ANOVA"
+      },
+      {
+        "kind": "p",
+        "text": "Jika Sig. < 0,05, terdapat perbedaan rata-rata minimal pada satu kelompok."
+      },
+      {
+        "kind": "h3",
+        "text": "Post Hoc"
+      },
+      {
+        "kind": "p",
+        "text": "Jika Sig. pasangan kelompok < 0,05, dua kelompok tersebut berbeda signifikan."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: ANOVA menguji beberapa rata-rata sekaligus sehingga risiko kesalahan Type I tidak membesar seperti ketika melakukan uji-t berulang."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Rata-rata A = 13,50; B = 20,50; C = 16,50. Cabang B tertinggi. ANOVA relevan karena Y adalah laba numerik dan X adalah cabang dengan tiga kelompok."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Y = skor kepuasan pelanggan; factor = kanal layanan. H₀: rata-rata kepuasan semua kanal sama. H₁: minimal ada satu rata-rata kanal yang berbeda."
+      }
+    ]
+  },
+  "questions": [],
+  "flashcards": [
+    {
+      "id": "mas122-tm08-42",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Apa hipotesis ANOVA satu arah?",
+      "category": "Konsep",
+      "front": "Apa hipotesis ANOVA satu arah?",
+      "back": "H0 menyatakan semua rata-rata populasi sama; H1 menyatakan setidaknya satu berbeda, dengan kelompok independen sesuai model. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+    },
+    {
+      "id": "mas122-tm08-43",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Apa statistik F ANOVA?",
+      "category": "Konsep",
+      "front": "Apa statistik F ANOVA?",
+      "back": "Mean square antar kelompok / mean square dalam kelompok; keduanya mengukur variabilitas pada basis yang sesuai. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+    },
+    {
+      "id": "mas122-tm08-44",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Kapan H0 ditolak?",
+      "category": "Konsep",
+      "front": "Kapan H0 ditolak?",
+      "back": "Jika F melampaui nilai kritis pada alpha dan derajat bebas yang ditetapkan, atau p-value lebih kecil dari alpha. F besar saja belum cukup. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+    },
+    {
+      "id": "mas122-tm08-45",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Apa df ANOVA?",
+      "category": "Konsep",
+      "front": "Apa df ANOVA?",
+      "back": "Antar kelompok k-1; dalam kelompok N-k, dengan k kelompok dan N total observasi. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+    },
+    {
+      "id": "mas122-tm08-46",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Apa asumsi ANOVA?",
+      "category": "Konsep",
+      "front": "Apa asumsi ANOVA?",
+      "back": "Independensi observasi, residual normal dalam kelompok dan varians kelompok homogen; periksa desain serta diagnostik. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+    },
+    {
+      "id": "mas122-tm08-47",
+      "phase": "pra-uas",
+      "tm": 8,
+      "topic": "Apakah hasil signifikan menunjukkan kelompok mana berbeda?",
+      "category": "Konsep",
+      "front": "Apakah hasil signifikan menunjukkan kelompok mana berbeda?",
+      "back": "Tidak langsung. Gunakan perbandingan lanjut yang sesuai dan kendalikan risiko pengujian berganda. Rujukan: Lind, Statistical Techniques in Business and Economics 17e, Ch.12, hal.394-401 PDF 421-428"
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

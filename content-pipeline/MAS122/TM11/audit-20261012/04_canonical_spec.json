@@ -1,0 +1,495 @@
+{
+  "code": "MAS122",
+  "tm": 11,
+  "reading": {
+    "tm": 11,
+    "title": "Analisis Seri Waktu (Time Series)",
+    "ref": "DA 18",
+    "intro": "Data deret waktu (penjualan bulanan, harga saham) dianalisis untuk mengenali pola dan **meramalkan** masa depan.",
+    "objectives": [
+      "Mengidentifikasi komponen deret waktu.",
+      "Menerapkan rata-rata bergerak.",
+      "Mengenal model ARIMA."
+    ],
+    "blocks": [
+      {
+        "kind": "h2",
+        "text": "A. Komponen Deret Waktu"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Trend (T):** arah jangka panjang.",
+          "**Seasonal (S):** pola berulang musiman.",
+          "**Cyclical (C):** fluktuasi siklus bisnis.",
+          "**Irregular (I):** acak/tak terduga."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "B. Metode Peramalan"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "**Moving average (rata-rata bergerak):** menghaluskan fluktuasi.",
+          "**Exponential smoothing:** memberi bobot lebih pada data terbaru.",
+          "**ARIMA:** model gabungan AutoRegressive + Integrated + Moving Average untuk data yang sudah stasioner."
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "tip",
+        "title": "Stasioneritas",
+        "text": "Sebelum ARIMA, data sering perlu dibuat **stasioner** (rata-rata & varians stabil) lewat differencing."
+      },
+      {
+        "kind": "h2",
+        "text": "ARIMA: urutan model dan batas penggunaannya"
+      },
+      {
+        "kind": "callout",
+        "variant": "note",
+        "title": "Sumber pelengkap",
+        "text": "RPP Statistik PDF 4 meminta ARIMA. Penjelasan ini memakai Hyndman dan Athanasopoulos, Forecasting: Principles and Practice 3e, bagian 9.1 dan 9.5-9.8 sebagai pelengkap terbuka. [Baca bab ARIMA](https://otexts.com/fpp3/arima.html)."
+      },
+      {
+        "kind": "p",
+        "text": "ARIMA(p,d,q) memodelkan hubungan antarnilai dalam waktu. p adalah jumlah lag autoregresif, d jumlah pembedaan, dan q jumlah lag galat moving average. Komponen MA pada ARIMA berbeda dari rata-rata beberapa observasi untuk pemulusan."
+      },
+      {
+        "kind": "formula",
+        "text": "y_t^{\\prime}=y_t-y_{t-1}",
+        "note": "Pembedaan pertama mengurangi perubahan tingkat. Data hasil beda perlu diperiksa kestasionerannya; pembedaan tidak otomatis menjamin model sesuai. Rujukan: FPP3 bagian 9.1."
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Plot seri menurut waktu dan periksa pola musiman.",
+          "Tentukan pembedaan, lalu periksa ACF/PACF.",
+          "Estimasi dan bandingkan model dengan kriteria informasi.",
+          "Periksa residual dan akurasi pada periode uji.",
+          "Sajikan forecast beserta interval prediksi."
+        ]
+      },
+      {
+        "kind": "example",
+        "title": "Ilustrasi pembedaan buatan",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Seri 100, 110, 120, 130 unit menjadi 10, 10, 10 unit setelah pembedaan pertama. Empat observasi ini hanya menjelaskan mekanisme; jumlahnya tidak memadai untuk menyimpulkan model ARIMA yang sesuai. Rujukan konsep: FPP3 bagian 9.1."
+          }
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan"
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Catatan kurator",
+        "text": "Bagian di bawah ini menambah materi inti TM 11 dengan glossary istilah, contoh SPSS output, asumsi, dan jebakan ujian. Diadaptasi dari modul terpadu Pra-UAS."
+      },
+      {
+        "kind": "h2",
+        "text": "Analisis Seri Waktu dan ARIMA Membaca pola historis dan membuat peramalan"
+      },
+      {
+        "kind": "p",
+        "text": "Perusahaan memiliki data penjualan bulanan. Manajemen membutuhkan proyeksi untuk menentukan pembelian persediaan, target kas, dan rencana promosi. Karena datanya berurutan menurut waktu, analisis seri waktu lebih tepat daripada analisis cross-section biasa."
+      },
+      {
+        "kind": "h3",
+        "text": "Contoh Penerapan Analisis Seri Waktu"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Akuntan manajemen menggunakan forecast untuk anggaran penjualan dan produksi.",
+          "Manajer keuangan memakai forecast untuk proyeksi arus kas.",
+          "Auditor dapat memakai pola historis untuk menilai kewajaran tren akun tertentu."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Target Kompetensi"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Membedakan trend, seasonal, cyclical, dan irregular component.",
+          "Menghitung moving average sederhana.",
+          "Menjelaskan ARIMA(p,d,q) secara konseptual.",
+          "Membaca hasil forecast dan keterbatasannya."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Time series"
+      },
+      {
+        "kind": "p",
+        "text": "Data yang dicatat berurutan menurut waktu."
+      },
+      {
+        "kind": "h3",
+        "text": "Trend"
+      },
+      {
+        "kind": "p",
+        "text": "Arah jangka panjang data, misalnya naik atau turun."
+      },
+      {
+        "kind": "h3",
+        "text": "Seasonality"
+      },
+      {
+        "kind": "p",
+        "text": "Pola berulang pada periode tetap, misalnya bulanan atau kuartalan."
+      },
+      {
+        "kind": "h3",
+        "text": "Cyclical"
+      },
+      {
+        "kind": "p",
+        "text": "Pola naik-turun jangka panjang akibat siklus ekonomi."
+      },
+      {
+        "kind": "h3",
+        "text": "Irregular"
+      },
+      {
+        "kind": "p",
+        "text": "Gangguan acak atau kejadian tidak biasa."
+      },
+      {
+        "kind": "h3",
+        "text": "Moving average"
+      },
+      {
+        "kind": "p",
+        "text": "Rata-rata beberapa periode terakhir untuk menghaluskan fluktuasi."
+      },
+      {
+        "kind": "h3",
+        "text": "Forecast error"
+      },
+      {
+        "kind": "p",
+        "text": "Selisih antara nilai aktual dan nilai ramalan."
+      },
+      {
+        "kind": "h3",
+        "text": "ARIMA"
+      },
+      {
+        "kind": "p",
+        "text": "Model runtut waktu dengan komponen autoregressive, differencing, dan moving average."
+      },
+      {
+        "kind": "h3",
+        "text": "Pakai seri waktu"
+      },
+      {
+        "kind": "p",
+        "text": "Data memiliki urutan waktu dan tujuan analisis adalah membaca pola atau meramalkan nilai mendatang."
+      },
+      {
+        "kind": "h3",
+        "text": "Jangan acak data"
+      },
+      {
+        "kind": "p",
+        "text": "Urutan waktu tidak boleh diacak karena urutan adalah informasi."
+      },
+      {
+        "kind": "h3",
+        "text": "Hati-hati"
+      },
+      {
+        "kind": "p",
+        "text": "Data yang terlalu pendek kurang stabil untuk ARIMA."
+      },
+      {
+        "kind": "p",
+        "text": "Data penjualan bulanan selama satu tahun."
+      },
+      {
+        "kind": "table",
+        "headers": [
+          "Bulan",
+          "Penjualan",
+          "MA 3 Bulan untuk Periode Berikutnya"
+        ],
+        "rows": [
+          [
+            "Jan",
+            "120",
+            "-"
+          ],
+          [
+            "Feb",
+            "125",
+            "-"
+          ],
+          [
+            "Mar",
+            "130",
+            "-"
+          ],
+          [
+            "Apr",
+            "138",
+            "125,00"
+          ],
+          [
+            "Mei",
+            "145",
+            "131,00"
+          ],
+          [
+            "Jun",
+            "150",
+            "137,67"
+          ],
+          [
+            "Jul",
+            "158",
+            "144,33"
+          ],
+          [
+            "Agu",
+            "162",
+            "151,00"
+          ],
+          [
+            "Sep",
+            "170",
+            "156,67"
+          ],
+          [
+            "Okt",
+            "175",
+            "163,33"
+          ],
+          [
+            "Nov",
+            "188",
+            "169,00"
+          ],
+          [
+            "Des",
+            "200",
+            "177,67"
+          ]
+        ]
+      },
+      {
+        "kind": "figure",
+        "title": "Time Series Plot: Penjualan Aktual vs Moving Average",
+        "svg": "<svg viewBox=\"0 0 400 200\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"40\" y1=\"160\" x2=\"380\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.5\" /><line x1=\"40\" y1=\"20\" x2=\"40\" y2=\"160\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"0.5\" /><text x=\"40\" y=\"175\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">1</text><text x=\"194.5\" y=\"175\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">6</text><text x=\"380\" y=\"175\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">12</text><text x=\"30\" y=\"163\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">100</text><text x=\"30\" y=\"105\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">150</text><text x=\"30\" y=\"46\" text-anchor=\"end\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.7\">200</text><polyline points=\"40,136.7 70.9,130.8 101.8,125 132.7,115.7 163.6,107.5 194.5,101.7 225.4,92.3 256.3,87.7 287.2,78.3 318.1,72.5 349.0,57.3 380,43.3\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2\" /><polyline points=\"132.7,130.8 163.6,123.8 194.5,116.1 225.4,108.3 256.3,100.5 287.2,93.9 318.1,86.1 349.0,79.5 380,69.4\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-dasharray=\"4\" /><text x=\"210\" y=\"195\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.9\">Bulan</text><text x=\"12\" y=\"90\" transform=\"rotate(-90 12 90)\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"12\" fill=\"currentColor\" opacity=\"0.9\">Penjualan</text><line x1=\"60\" y1=\"30\" x2=\"80\" y2=\"30\" stroke=\"#3b82f6\" stroke-width=\"2\" /><text x=\"85\" y=\"34\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.9\">Aktual</text><line x1=\"130\" y1=\"30\" x2=\"150\" y2=\"30\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-dasharray=\"4\" /><text x=\"155\" y=\"34\" font-family=\"sans-serif\" font-size=\"10\" fill=\"currentColor\" opacity=\"0.9\">MA 3 Bulan</text></svg>"
+      },
+      {
+        "kind": "p",
+        "text": "Lihat apakah data naik, turun, atau berulang."
+      },
+      {
+        "kind": "p",
+        "text": "Dalam contoh, penjualan cenderung naik (menunjukkan adanya pola trend positif)."
+      },
+      {
+        "kind": "formula",
+        "text": "Moving Average (MA_n) = (Y_t + Y_{t-1} + ... + Y_{t-n+1}) / n",
+        "note": "Rumus ini rata-rata bergerak berakhir pada t, menggunakan observasi aktual Yt. Forecast periode t+1 memakai rata-rata tersebut sebagai model sederhana. Forecast April dengan n=3 memakai Januari-Maret; moving average aktual berakhir April memakai Februari-April. Jangan mencampurnya dengan centered moving average pada pembahasan pemulusan tren. Rujukan: Lind, Statistical Techniques 17e, Ch. 18, hal. 657-660 (PDF 684-687); pergeseran indeks untuk forecast adalah penjelasan rumus."
+      },
+      {
+        "kind": "p",
+        "text": "Perhitungan rata-rata 3 bulan ini membantu menghaluskan fluktuasi data sehingga tren utamanya lebih mudah terlihat."
+      },
+      {
+        "kind": "p",
+        "text": "Bandingkan nilai aktual dengan nilai ramalan."
+      },
+      {
+        "kind": "p",
+        "text": "Jika data panjang dan pola kompleks, model ARIMA dapat dipertimbangkan."
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Ringkasan Rumus Time Series & Peramalan",
+        "text": "**Moving Average 3 Periode:** MA₃ = (Yt + Yt−1 + Yt−2) / 3\n**Tren Linier:** Ŷt = a + bt\n**Forecast Error:** Error = Actual − Forecast\n**Model Lanjutan:** ARIMA(p, d, q)\n\n**Asumsi Urutan Waktu:** Data harus disusun secara berurutan kronologis dari periode paling awal hingga paling akhir."
+      },
+      {
+        "kind": "h3",
+        "text": "Pola historis relevan"
+      },
+      {
+        "kind": "p",
+        "text": "Forecast mengasumsikan pola masa lalu masih berguna."
+      },
+      {
+        "kind": "h3",
+        "text": "Outlier diperiksa"
+      },
+      {
+        "kind": "p",
+        "text": "Shock luar biasa dapat merusak pola forecast."
+      },
+      {
+        "kind": "h3",
+        "text": "Jebakan Ujian & Kesalahan Umum"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Mengacak data waktu sebelum analisis.",
+          "Memakai ARIMA pada data yang terlalu pendek.",
+          "Mengabaikan pola musiman.",
+          "Menganggap forecast sebagai kepastian, bukan estimasi dengan ketidakpastian."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di SPSS"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Masukkan variabel waktu dan variabel nilai, misalnya penjualan.",
+          "Pastikan data diurutkan berdasarkan waktu.",
+          "Gunakan Data → Define Dates jika periode waktu perlu didefinisikan.",
+          "Analyze → Forecasting → Create Traditional Models.",
+          "Pilih target penjualan dan gunakan Expert Modeler untuk pemula.",
+          "Baca plot actual vs fitted, forecast, confidence interval, dan residual."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Langkah Analisis di Excel"
+      },
+      {
+        "kind": "ol",
+        "items": [
+          "Gunakan =AVERAGE(B2:B4) untuk moving average 3 periode.",
+          "Gunakan =FORECAST.LINEAR(periode_target, known_y, known_x) untuk trend linear.",
+          "Gunakan Data → Forecast Sheet untuk membuat grafik forecast.",
+          "Hitung error = aktual − forecast."
+        ]
+      },
+      {
+        "kind": "h3",
+        "text": "Time plot"
+      },
+      {
+        "kind": "p",
+        "text": "Menunjukkan trend dan kemungkinan pola musiman."
+      },
+      {
+        "kind": "h3",
+        "text": "Forecast table"
+      },
+      {
+        "kind": "p",
+        "text": "Menunjukkan nilai ramalan periode mendatang."
+      },
+      {
+        "kind": "h3",
+        "text": "Confidence interval"
+      },
+      {
+        "kind": "p",
+        "text": "Rentang ketidakpastian prediksi."
+      },
+      {
+        "kind": "h3",
+        "text": "Residual/error"
+      },
+      {
+        "kind": "p",
+        "text": "Mengukur selisih aktual dan ramalan."
+      },
+      {
+        "kind": "h3",
+        "text": "Model fit"
+      },
+      {
+        "kind": "p",
+        "text": "Ukuran seperti RMSE/MAPE membantu membandingkan model."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Karena urutan waktu adalah bagian dari informasi. Mengacak data akan merusak pola trend atau seasonal."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: MA₃ = (100 + 110 + 120)/3 = 110 sebagai forecast untuk periode berikutnya setelah tiga data pertama."
+      },
+      {
+        "kind": "p",
+        "text": "Pembahasan: Penjualan bulanan, arus kas, beban operasional, piutang, persediaan, atau rasio keuangan tahunan."
+      }
+    ]
+  },
+  "questions": [],
+  "flashcards": [
+    {
+      "id": "mas122-tm11-60",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Apa komponen seri waktu?",
+      "category": "Konsep",
+      "front": "Apa komponen seri waktu?",
+      "back": "Trend, pola musiman, siklus dan komponen tak beraturan membantu deskripsi; pemisahan mengikuti model yang dipilih. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+    },
+    {
+      "id": "mas122-tm11-61",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Apa moving average untuk forecast berikutnya?",
+      "category": "Konsep",
+      "front": "Apa moving average untuk forecast berikutnya?",
+      "back": "Gunakan observasi sebelum periode ramalan. Rata-rata yang memasukkan nilai periode t adalah pemulusan pada t, bukan forecast t sebelum nilainya diketahui. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+    },
+    {
+      "id": "mas122-tm11-62",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Apa dampak ukuran jendela?",
+      "category": "Konsep",
+      "front": "Apa dampak ukuran jendela?",
+      "back": "Jendela panjang lebih halus tetapi lambat merespons perubahan; bandingkan akurasi pada periode uji. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+    },
+    {
+      "id": "mas122-tm11-63",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Apa p,d,q pada ARIMA?",
+      "category": "Konsep",
+      "front": "Apa p,d,q pada ARIMA?",
+      "back": "p lag autoregresif, d jumlah pembedaan, q lag galat moving average. MA galat berbeda dari rata-rata observasi untuk pemulusan. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+    },
+    {
+      "id": "mas122-tm11-64",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Apa pembedaan pertama?",
+      "category": "Konsep",
+      "front": "Apa pembedaan pertama?",
+      "back": "y_t - y_(t-1). Ilustrasi 100,110,120,130 menjadi 10,10,10; seri sangat pendek ini tidak cukup untuk memilih model. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+    },
+    {
+      "id": "mas122-tm11-65",
+      "phase": "pra-uas",
+      "tm": 11,
+      "topic": "Apa yang diperiksa sebelum menerima model?",
+      "category": "Konsep",
+      "front": "Apa yang diperiksa sebelum menerima model?",
+      "back": "Pola data, kestasioneran/pembedaan, residual, akurasi periode uji dan interval prediksi; fitting yang baik saja belum cukup. Rujukan: Lind 17e Ch.18 hal.657-660 PDF 684-687; FPP3 bagian 9.1,9.5-9.8 https://otexts.com/fpp3/arima.html"
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

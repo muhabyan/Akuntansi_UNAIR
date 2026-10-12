@@ -1,0 +1,41 @@
+{
+  "code": "AKA103",
+  "tm": 13,
+  "source": "Siriwardane, Low dan Blietz (2015), hal.338-340, Table 2-5 PDF 7-9",
+  "finding": "Tugas, keterampilan dan atribut komunikasi masih tercampur.",
+  "blocks": [
+    {
+      "kind": "h2",
+      "text": "Hubungan konsep, penerapan, dan batas"
+    },
+    {
+      "kind": "p",
+      "text": "Tugas, keterampilan dan atribut komunikasi masih tercampur."
+    },
+    {
+      "kind": "table",
+      "headers": [
+        "Kategori",
+        "Contoh dari studi"
+      ],
+      "rows": [
+        [
+          "Tugas",
+          "Menyiapkan kertas kerja dan pesan elektronik."
+        ],
+        [
+          "Keterampilan",
+          "Mendengarkan, membaca, parafrasa dan membedakan fakta/inferensi."
+        ],
+        [
+          "Atribut",
+          "Kejelasan dan kesesuaian komunikasi dengan penerima."
+        ]
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Rujukan audit: Siriwardane, Low dan Blietz (2015), hal.338-340, Table 2-5 PDF 7-9"
+    }
+  ]
+}

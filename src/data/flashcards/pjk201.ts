@@ -347,457 +347,457 @@ export const PJK201_FC: AdvancedStudyCard[] = [
 
   // --- TM 8: Penelitian, Pemeriksaan, dan Penyidikan Pajak ---
   {
-    id: "pjk201-tm08-36",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Penelitian vs Pemeriksaan vs Penyidikan",
-    category: "Definisi",
-    front: "Perbedaan Penelitian, Pemeriksaan, dan Penyidikan",
-    back: "Penelitian: pengujian kelengkapan formal administrasi dan kebenaran hitung angka di SPT. Pemeriksaan: serangkaian kegiatan mencari dan mengolah data/bukti untuk menguji kepatuhan materiil. Penyidikan: proses projustitia oleh PPNS DJP mencari tersangka atas bukti permulaan tindak pidana perpajakan."
+    "id": "pjk201-tm08-36",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Penelitian vs Pemeriksaan vs Penyidikan",
+    "category": "Definisi",
+    "front": "Perbedaan Penelitian, Pemeriksaan, dan Penyidikan",
+    "back": "Penelitian: pengujian kelengkapan formal administrasi dan kebenaran hitung angka di SPT. Pemeriksaan: serangkaian kegiatan mencari dan mengolah data/bukti untuk menguji kepatuhan materiil. Penyidikan: proses projustitia oleh PPNS DJP mencari tersangka atas bukti permulaan tindak pidana perpajakan. Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm08-37",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Tujuan Pemeriksaan Pajak",
-    category: "Konsep",
-    front: "2 Tujuan Utama Pemeriksaan Pajak",
-    back: "1) Menguji kepatuhan pemenuhan kewajiban perpajakan (misal: SPT Lebih Bayar, SPT Rugi, tidak lapor SPT, atau analisis risiko); 2) Tujuan lain dalam rangka melaksanakan ketentuan UU (misal: pemberian/penghapusan NPWP, pencabutan NPPKP, penentuan lokasi BUT)."
+    "id": "pjk201-tm08-37",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Tujuan Pemeriksaan Pajak",
+    "category": "Konsep",
+    "front": "2 Tujuan Utama Pemeriksaan Pajak",
+    "back": "1) Menguji kepatuhan pemenuhan kewajiban perpajakan (misal: SPT Lebih Bayar, SPT Rugi, tidak lapor SPT, atau analisis risiko); 2) Tujuan lain dalam rangka melaksanakan ketentuan UU (misal: pemberian/penghapusan NPWP, pencabutan NPPKP, penentuan lokasi BUT). Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm08-38",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Pemeriksaan Kantor vs Lapangan",
-    category: "Prosedur",
-    front: "Pemeriksaan Kantor vs Pemeriksaan Lapangan",
-    back: "Pemeriksaan Kantor: dilakukan di kantor DJP dengan memanggil WP untuk membawa dokumen pendukung (jangka waktu 4 bulan + perpanjangan 2 bulan). Pemeriksaan Lapangan: dilakukan di tempat usaha/tinggal WP dengan mendatangi langsung (jangka waktu 6 bulan + perpanjangan 2 bulan)."
+    "id": "pjk201-tm08-38",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Lingkup dan waktu pemeriksaan menurut PMK 15/2025",
+    "category": "Prosedur",
+    "front": "Lingkup dan waktu pemeriksaan menurut PMK 15/2025",
+    "back": "Pengujian: lengkap paling lama 5 bulan, terfokus 3 bulan, spesifik 1 bulan; pembahasan akhir/pelaporan umumnya paling lama 30 hari kerja. Ada pengecualian dan perpanjangan tertentu. Klasifikasi kantor/lapangan dari ketentuan lama tidak menentukan waktu model ini. Rujukan: PMK 15/2025 Pasal 1 angka 7-9 dan Pasal 6."
   },
   {
-    id: "pjk201-tm08-39",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Produk Akhir Pemeriksaan (LHP)",
-    category: "Dokumen",
-    front: "Laporan Hasil Pemeriksaan (LHP)",
-    back: "Laporan yang berisi tentang pelaksanaan dan hasil pemeriksaan yang disusun oleh pemeriksa pajak secara ringkas dan jelas, yang menjadi dasar penerbitan Surat Ketetapan Pajak (SKP) atau Surat Tagihan Pajak (STP)."
+    "id": "pjk201-tm08-39",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Produk Akhir Pemeriksaan (LHP)",
+    "category": "Dokumen",
+    "front": "Laporan Hasil Pemeriksaan (LHP)",
+    "back": "Laporan yang berisi tentang pelaksanaan dan hasil pemeriksaan yang disusun oleh pemeriksa pajak secara ringkas dan jelas, yang menjadi dasar penerbitan Surat Ketetapan Pajak (SKP) atau Surat Tagihan Pajak (STP). Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm08-40",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Kewajiban WP Saat Diperiksa",
-    category: "Standar",
-    front: "Kewajiban Wajib Pajak saat Dilakukan Pemeriksaan",
-    back: "Wajib memperlihatkan dan meminjamkan buku/catatan/dokumen, memberi kesempatan pemeriksa memasuki tempat usaha/bangunan, dan memberi keterangan lisan maupun tertulis yang diperlukan."
+    "id": "pjk201-tm08-40",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Kewajiban WP Saat Diperiksa",
+    "category": "Standar",
+    "front": "Kewajiban Wajib Pajak saat Dilakukan Pemeriksaan",
+    "back": "Wajib memperlihatkan dan meminjamkan buku/catatan/dokumen, memberi kesempatan pemeriksa memasuki tempat usaha/bangunan, dan memberi keterangan lisan maupun tertulis yang diperlukan. Rujukan: UU KUP Pasal 1,29; PMK 15/2025 Pasal 3-6. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
 
   // --- TM 9: Penetapan & Ketetapan Pajak, Restitusi ---
   {
-    id: "pjk201-tm09-41",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
-    category: "Dokumen",
-    front: "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
-    back: "Surat ketetapan yang menentukan besarnya jumlah pokok pajak, kredit pajak, kekurangan bayar pokok pajak, besarnya sanksi administrasi (bunga/kenaikan), dan jumlah pajak yang masih harus dibayar (diterbitkan dalam jangka waktu maksimal 5 tahun)."
+    "id": "pjk201-tm09-41",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
+    "category": "Dokumen",
+    "front": "SKPKB (Surat Ketetapan Pajak Kurang Bayar)",
+    "back": "Surat ketetapan yang menentukan besarnya jumlah pokok pajak, kredit pajak, kekurangan bayar pokok pajak, besarnya sanksi administrasi (bunga/kenaikan), dan jumlah pajak yang masih harus dibayar (diterbitkan dalam jangka waktu maksimal 5 tahun). Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm09-42",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
-    category: "Dokumen",
-    front: "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
-    back: "Surat ketetapan yang menentukan tambahan atas jumlah pajak yang telah ditetapkan sebelumnya (biasanya diterbitkan jika ditemukan data baru/novum setelah pemeriksaan ulang, disertai sanksi kenaikan 100% dari jumlah kurang bayar tambahan)."
+    "id": "pjk201-tm09-42",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
+    "category": "Dokumen",
+    "front": "SKPKBT (Surat Ketetapan Pajak Kurang Bayar Tambahan)",
+    "back": "Surat ketetapan yang menentukan tambahan atas jumlah pajak yang telah ditetapkan sebelumnya (biasanya diterbitkan jika ditemukan data baru/novum setelah pemeriksaan ulang, disertai sanksi kenaikan 100% dari jumlah kurang bayar tambahan). Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm09-43",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
-    category: "Dokumen",
-    front: "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
-    back: "Surat ketetapan yang menentukan jumlah kelebihan pembayaran pajak karena jumlah kredit pajak lebih besar daripada pajak yang terutang atau tidak seharusnya terutang."
+    "id": "pjk201-tm09-43",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
+    "category": "Dokumen",
+    "front": "SKPLB (Surat Ketetapan Pajak Lebih Bayar)",
+    "back": "Surat ketetapan yang menentukan jumlah kelebihan pembayaran pajak karena jumlah kredit pajak lebih besar daripada pajak yang terutang atau tidak seharusnya terutang. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm09-44",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "SKPN (Surat Ketetapan Pajak Nihil)",
-    category: "Dokumen",
-    front: "SKPN (Surat Ketetapan Pajak Nihil)",
-    back: "Surat ketetapan yang menentukan jumlah pokok pajak sama besarnya dengan jumlah kredit pajak atau pajak tidak terutang dan tidak ada kredit pajak."
+    "id": "pjk201-tm09-44",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "SKPN (Surat Ketetapan Pajak Nihil)",
+    "category": "Dokumen",
+    "front": "SKPN (Surat Ketetapan Pajak Nihil)",
+    "back": "Surat ketetapan yang menentukan jumlah pokok pajak sama besarnya dengan jumlah kredit pajak atau pajak tidak terutang dan tidak ada kredit pajak. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm09-45",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Restitusi Pajak (Pasal 17B KUP)",
-    category: "Mekanisme",
-    front: "Prosedur Restitusi (Pengembalian Kelebihan Pembayaran Pajak)",
-    back: "WP mengajukan permohonan restitusi pada SPT. DJP wajib menerbitkan keputusan setelah melakukan pemeriksaan paling lambat 12 bulan sejak permohonan diterima lengkap. Jika lewat 12 bulan tidak ada keputusan, permohonan dianggap dikabulkan."
+    "id": "pjk201-tm09-45",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Restitusi Pajak (Pasal 17B KUP)",
+    "category": "Mekanisme",
+    "front": "Prosedur Restitusi (Pengembalian Kelebihan Pembayaran Pajak)",
+    "back": "WP mengajukan permohonan restitusi pada SPT. DJP wajib menerbitkan keputusan setelah melakukan pemeriksaan paling lambat 12 bulan sejak permohonan diterima lengkap. Jika lewat 12 bulan tidak ada keputusan, permohonan dianggap dikabulkan. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm09-46",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Pengembalian Pendahuluan (Pasal 17C / 17D KUP)",
-    category: "Mekanisme",
-    front: "Pengembalian Pendahuluan Kelebihan Pajak (WP Kriteria Tertentu / Patuh)",
-    back: "Fasilitas pengembalian cepat tanpa pemeriksaan mendalam (hanya penelitian) bagi WP Kriteria Tertentu (Golden Taxpayer) atau WP Persyaratan Tertentu (nominal lebih bayar kecil). Surat Keputusan Pengembalian Pendahuluan (SKPPKP) diterbitkan maksimal 3 bulan untuk PPh dan 1 bulan untuk PPN."
+    "id": "pjk201-tm09-46",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Pengembalian Pendahuluan (Pasal 17C / 17D KUP)",
+    "category": "Mekanisme",
+    "front": "Pengembalian Pendahuluan Kelebihan Pajak (WP Kriteria Tertentu / Patuh)",
+    "back": "Fasilitas pengembalian cepat tanpa pemeriksaan mendalam (hanya penelitian) bagi WP Kriteria Tertentu (Golden Taxpayer) atau WP Persyaratan Tertentu (nominal lebih bayar kecil). Surat Keputusan Pengembalian Pendahuluan (SKPPKP) diterbitkan maksimal 3 bulan untuk PPh dan 1 bulan untuk PPN. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
 
   // --- TM 10: Penyelesaian Sengketa Pajak ---
   {
-    id: "pjk201-tm10-47",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Upaya Keberatan (Pasal 25 KUP)",
-    category: "Prosedur",
-    front: "Prosedur Pengajuan Keberatan Pajak",
-    back: "Diajukan tertulis dalam bahasa Indonesia kepada Dirjen Pajak atas suatu SKP (SKPKB, SKPKBT, SKPLB, SKPN) atau pemotongan pihak ketiga. Batas waktu pengajuan adalah 3 bulan sejak surat dikirim/dipotong. Wajib membayar minimal pajak yang disetujui dalam pembahasan akhir sebelum keberatan diajukan."
+    "id": "pjk201-tm10-47",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Upaya Keberatan (Pasal 25 KUP)",
+    "category": "Prosedur",
+    "front": "Prosedur Pengajuan Keberatan Pajak",
+    "back": "Diajukan tertulis dalam bahasa Indonesia kepada Dirjen Pajak atas suatu SKP (SKPKB, SKPKBT, SKPLB, SKPN) atau pemotongan pihak ketiga. Batas waktu pengajuan adalah 3 bulan sejak surat dikirim/dipotong. Wajib membayar minimal pajak yang disetujui dalam pembahasan akhir sebelum keberatan diajukan. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm10-48",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Sanksi Denda Keberatan yang Ditolak",
-    category: "Sanksi",
-    front: "Sanksi Denda jika Keberatan Ditolak atau Dikabulkan Sebagian (Pasal 25 ayat 9 KUP)",
-    back: "Dikenakan sanksi denda administrasi sebesar 30% dari jumlah pajak berdasarkan keputusan keberatan dikurangi dengan pajak yang telah dibayar sebelum mengajukan keberatan (Kecuali WP melanjutkan banding ke Pengadilan Pajak)."
+    "id": "pjk201-tm10-48",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Sanksi Denda Keberatan yang Ditolak",
+    "category": "Sanksi",
+    "front": "Sanksi Denda jika Keberatan Ditolak atau Dikabulkan Sebagian (Pasal 25 ayat 9 KUP)",
+    "back": "Dikenakan sanksi denda administrasi sebesar 30% dari jumlah pajak berdasarkan keputusan keberatan dikurangi dengan pajak yang telah dibayar sebelum mengajukan keberatan (Kecuali WP melanjutkan banding ke Pengadilan Pajak). Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm10-49",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Upaya Banding (Pasal 27 KUP)",
-    category: "Prosedur",
-    front: "Prosedur Pengajuan Banding ke Pengadilan Pajak",
-    back: "Diajukan tertulis dalam bahasa Indonesia kepada Pengadilan Pajak HANYA atas Surat Keputusan Keberatan. Batas waktu pengajuan maksimal 3 bulan sejak keputusan keberatan diterima."
+    "id": "pjk201-tm10-49",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Upaya Banding (Pasal 27 KUP)",
+    "category": "Prosedur",
+    "front": "Prosedur Pengajuan Banding ke Pengadilan Pajak",
+    "back": "Diajukan tertulis dalam bahasa Indonesia kepada Pengadilan Pajak HANYA atas Surat Keputusan Keberatan. Batas waktu pengajuan maksimal 3 bulan sejak keputusan keberatan diterima. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm10-50",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Sanksi Denda Banding yang Ditolak",
-    category: "Sanksi",
-    front: "Sanksi Denda jika Banding Ditolak atau Dikabulkan Sebagian (Pasal 27 ayat 5d KUP)",
-    back: "Dikenakan sanksi denda administrasi sebesar 60% dari jumlah pajak berdasarkan Putusan Banding dikurangi dengan pembayaran pajak yang telah dibayar sebelum mengajukan keberatan."
+    "id": "pjk201-tm10-50",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Sanksi Denda Banding yang Ditolak",
+    "category": "Sanksi",
+    "front": "Sanksi Denda jika Banding Ditolak atau Dikabulkan Sebagian (Pasal 27 ayat 5d KUP)",
+    "back": "Dikenakan sanksi denda administrasi sebesar 60% dari jumlah pajak berdasarkan Putusan Banding dikurangi dengan pembayaran pajak yang telah dibayar sebelum mengajukan keberatan. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm10-51",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Gugatan & Peninjauan Kembali (PK)",
-    category: "Prosedur",
-    front: "Gugatan ke Pengadilan Pajak & Peninjauan Kembali (PK) ke Mahkamah Agung",
-    back: "Gugatan: diajukan ke Pengadilan Pajak atas sengketa tata cara/prosedur penerbitan surat ketetapan atau pelaksanaan penagihan pajak (batas 14 hari untuk Surat Paksa, 30 hari untuk keputusan lain). Peninjauan Kembali: upaya hukum luar biasa terakhir ke Mahkamah Agung atas putusan Pengadilan Pajak."
+    "id": "pjk201-tm10-51",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Gugatan & Peninjauan Kembali (PK)",
+    "category": "Prosedur",
+    "front": "Gugatan ke Pengadilan Pajak & Peninjauan Kembali (PK) ke Mahkamah Agung",
+    "back": "Gugatan: diajukan ke Pengadilan Pajak atas sengketa tata cara/prosedur penerbitan surat ketetapan atau pelaksanaan penagihan pajak (batas 14 hari untuk Surat Paksa, 30 hari untuk keputusan lain). Peninjauan Kembali: upaya hukum luar biasa terakhir ke Mahkamah Agung atas putusan Pengadilan Pajak. Rujukan: UU KUP Pasal 25-27; UU Pengadilan Pajak Pasal 35,40. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
 
   // --- TM 11: Penagihan Pajak Aktif ---
   {
-    id: "pjk201-tm11-52",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Dasar Hukum & Definisi Penagihan Aktif",
-    category: "Definisi",
-    front: "Penagihan Pajak Aktif (UU No. 19 Tahun 1997 jo. UU No. 19 Tahun 2000)",
-    back: "Serangkaian tindakan agar Penanggung Pajak melunasi utang pajak dan biaya penagihan pajak dengan menegur atau memperingatkan, melaksanakan penagihan seketika dan sekaligus, memberitahukan Surat Paksa, mengusulkan pencegahan, melaksanakan penyitaan, hingga menyandera dan menjual barang yang disita (lelang)."
+    "id": "pjk201-tm11-52",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Dasar Hukum & Definisi Penagihan Aktif",
+    "category": "Definisi",
+    "front": "Penagihan Pajak Aktif (UU No. 19 Tahun 1997 jo. UU No. 19 Tahun 2000)",
+    "back": "Serangkaian tindakan agar Penanggung Pajak melunasi utang pajak dan biaya penagihan pajak dengan menegur atau memperingatkan, melaksanakan penagihan seketika dan sekaligus, memberitahukan Surat Paksa, mengusulkan pencegahan, melaksanakan penyitaan, hingga menyandera dan menjual barang yang disita (lelang). Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm11-53",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Jadwal Surat Teguran & Surat Paksa",
-    category: "Prosedur",
-    front: "Timeline Surat Teguran dan Surat Paksa",
-    back: "1) Jatuh tempo SKPKB/STP adalah 1 bulan sejak diterbitkan; 2) Jika tidak dibayar, setelah 7 hari jatuh tempo diterbitkan Surat Teguran/Peringatan; 3) Jika dalam 21 hari sejak Surat Teguran belum dilunasi, diterbitkan Surat Paksa."
+    "id": "pjk201-tm11-53",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Jadwal Surat Teguran & Surat Paksa",
+    "category": "Prosedur",
+    "front": "Timeline Surat Teguran dan Surat Paksa",
+    "back": "1) Jatuh tempo SKPKB/STP adalah 1 bulan sejak diterbitkan; 2) Jika tidak dibayar, setelah 7 hari jatuh tempo diterbitkan Surat Teguran/Peringatan; 3) Jika dalam 21 hari sejak Surat Teguran belum dilunasi, diterbitkan Surat Paksa. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm11-54",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Kekuatan Hukum Surat Paksa",
-    category: "Hukum",
-    front: "Kekuatan Eksekutorial Surat Paksa",
-    back: "Surat Paksa mempunyai kekuatan eksekutorial dan kedudukan hukum yang sama dengan putusan pengadilan yang telah mempunyai kekuatan hukum tetap (berketerangan 'Demi Keadilan Berdasarkan Ketuhanan Yang Maha Esa'), langsung diberitahukan oleh Jurusita Pajak."
+    "id": "pjk201-tm11-54",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Kekuatan Hukum Surat Paksa",
+    "category": "Hukum",
+    "front": "Kekuatan Eksekutorial Surat Paksa",
+    "back": "Surat Paksa mempunyai kekuatan eksekutorial dan kedudukan hukum yang sama dengan putusan pengadilan yang telah mempunyai kekuatan hukum tetap (berketerangan 'Demi Keadilan Berdasarkan Ketuhanan Yang Maha Esa'), langsung diberitahukan oleh Jurusita Pajak. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm11-55",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Penyitaan (SPMP) & Lelang",
-    category: "Prosedur",
-    front: "Prosedur Penyitaan Aset dan Pelaksanaan Lelang",
-    back: "Jika Surat Paksa tidak dilunasi dalam 2 x 24 jam, Jurusita menerbitkan Surat Perintah Melaksanakan Penyitaan (SPMP) atas barang bergerak/tidak bergerak. Jika dalam 14 hari sejak sita tidak dilunasi, dilakukan pengumuman lelang, dan 14 hari berikutnya dilakukan eksekusi lelang oleh Kantor Lelang Negara."
+    "id": "pjk201-tm11-55",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Penyitaan (SPMP) & Lelang",
+    "category": "Prosedur",
+    "front": "Prosedur Penyitaan Aset dan Pelaksanaan Lelang",
+    "back": "Jika Surat Paksa tidak dilunasi dalam 2 x 24 jam, Jurusita menerbitkan Surat Perintah Melaksanakan Penyitaan (SPMP) atas barang bergerak/tidak bergerak. Jika dalam 14 hari sejak sita tidak dilunasi, dilakukan pengumuman lelang, dan 14 hari berikutnya dilakukan eksekusi lelang oleh Kantor Lelang Negara. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm11-56",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Pencegahan & Penyanderaan (Gijzeling)",
-    category: "Sanksi",
-    front: "Pencegahan (ke Luar Negeri) & Penyanderaan (Gijzeling)",
-    back: "Pencegahan: larangan sementara ke luar negeri maksimal 6 bulan (+ perpanjang 6 bulan). Penyanderaan (Gijzeling): pengekangan sementara kebebasan penanggung pajak di rutan (maksimal 6 bulan + perpanjang 6 bulan), khusus utang pajak minimal Rp 100 juta dan diragukan iktikad baiknya."
+    "id": "pjk201-tm11-56",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Pencegahan & Penyanderaan (Gijzeling)",
+    "category": "Sanksi",
+    "front": "Pencegahan (ke Luar Negeri) & Penyanderaan (Gijzeling)",
+    "back": "Pencegahan: larangan sementara ke luar negeri maksimal 6 bulan (+ perpanjang 6 bulan). Penyanderaan (Gijzeling): pengekangan sementara kebebasan penanggung pajak di rutan (maksimal 6 bulan + perpanjang 6 bulan), khusus utang pajak minimal Rp 100 juta dan diragukan iktikad baiknya. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm11-57",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Hak Mendahulu (Droit de Preference)",
-    category: "Hukum",
-    front: "Hak Mendahulu Negara (Droit de Preference - Pasal 21 KUP)",
-    back: "Negara mempunyai hak mendahulu untuk tagihan pajak atas barang-barang milik Penanggung Pajak. Dalam likuidasi/keterpurukan usaha, utang pajak harus dilunasi terlebih dahulu sebelum utang kepada kreditur lain (kecuali biaya perkara pengadilan, biaya lelang, dan biaya penyelamatan barang)."
+    "id": "pjk201-tm11-57",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Hak Mendahulu (Droit de Preference)",
+    "category": "Hukum",
+    "front": "Hak Mendahulu Negara (Droit de Preference - Pasal 21 KUP)",
+    "back": "Negara mempunyai hak mendahulu untuk tagihan pajak atas barang-barang milik Penanggung Pajak. Dalam likuidasi/keterpurukan usaha, utang pajak harus dilunasi terlebih dahulu sebelum utang kepada kreditur lain (kecuali biaya perkara pengadilan, biaya lelang, dan biaya penyelamatan barang). Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
 
   // --- TM 12: Bea Meterai ---
   {
-    id: "pjk201-tm12-58",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Dasar Hukum & Tarif Bea Meterai",
-    category: "Definisi",
-    front: "Bea Meterai UU No. 10 Tahun 2020 (Tarif Tunggal)",
-    back: "Pajak atas dokumen yang bersifat perdata dan dokumen untuk alat bukti di pengadilan. Berlaku tarif tunggal sebesar Rp 10.000,00 (menggantikan tarif lama Rp 3.000 & Rp 6.000 mulai 1 Januari 2021)."
+    "id": "pjk201-tm12-58",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Dasar Hukum & Tarif Bea Meterai",
+    "category": "Definisi",
+    "front": "Bea Meterai UU No. 10 Tahun 2020 (Tarif Tunggal)",
+    "back": "Pajak atas dokumen yang bersifat perdata dan dokumen untuk alat bukti di pengadilan. Berlaku tarif tunggal sebesar Rp 10.000,00 (menggantikan tarif lama Rp 3.000 & Rp 6.000 mulai 1 Januari 2021). Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm12-59",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Dokumen Objek Bea Meterai",
-    category: "Objek",
-    front: "Dokumen Utama Objek Bea Meterai Rp 10.000",
-    back: "1) Surat perjanjian, surat keterangan, surat pernyataan; 2) Akta notaris & akta PPAT beserta salinannya; 3) Surat berharga dengan nama dan dalam bentuk apapun; 4) Dokumen transaksi uang yang menyebutkan nominal di atas Rp 5.000.000,00 yang menyatakan penerimaan uang atau pelunasan utang."
+    "id": "pjk201-tm12-59",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Dokumen Objek Bea Meterai",
+    "category": "Objek",
+    "front": "Dokumen Utama Objek Bea Meterai Rp 10.000",
+    "back": "1) Surat perjanjian, surat keterangan, surat pernyataan; 2) Akta notaris & akta PPAT beserta salinannya; 3) Surat berharga dengan nama dan dalam bentuk apapun; 4) Dokumen transaksi uang yang menyebutkan nominal di atas Rp 5.000.000,00 yang menyatakan penerimaan uang atau pelunasan utang. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm12-60",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Bukan Objek Bea Meterai (Pengecualian)",
-    category: "Pengecualian",
-    front: "Dokumen yang Dikecualikan dari Bea Meterai",
-    back: "1) Dokumen pemindahan orang/barang (karcis penumpang, konosemen, resi); 2) Ijazah, tanda lulus, surat keterangan dokter; 3) Tanda terima gaji/pensiun/tunjangan kerja; 4) Tanda bukti penerimaan uang negara dari kas negara/daerah; 5) Dokumen transaksi uang yang nominalnya <= Rp 5.000.000."
+    "id": "pjk201-tm12-60",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Bukan Objek Bea Meterai (Pengecualian)",
+    "category": "Pengecualian",
+    "front": "Dokumen yang Dikecualikan dari Bea Meterai",
+    "back": "1) Dokumen pemindahan orang/barang (karcis penumpang, konosemen, resi); 2) Ijazah, tanda lulus, surat keterangan dokter; 3) Tanda terima gaji/pensiun/tunjangan kerja; 4) Tanda bukti penerimaan uang negara dari kas negara/daerah; 5) Dokumen transaksi uang yang nominalnya <= Rp 5.000.000. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm12-61",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Jenis Meterai & e-Meterai",
-    category: "Mekanisme",
-    front: "3 Cara Pembayaran Bea Meterai",
-    back: "1) Meterai Tempel (perekat fisik bermotif Garuda dan nomor seri unik); 2) Meterai Elektronik / e-Meterai (label elektronik yang mengandung unsur pengaman yang dibubuhkan pada dokumen elektronik via PERURI); 3) Meterai Dalam Bentuk Lain (mesin teraan, komputerisasi/peruri)."
+    "id": "pjk201-tm12-61",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Jenis Meterai & e-Meterai",
+    "category": "Mekanisme",
+    "front": "3 Cara Pembayaran Bea Meterai",
+    "back": "1) Meterai Tempel (perekat fisik bermotif Garuda dan nomor seri unik); 2) Meterai Elektronik / e-Meterai (label elektronik yang mengandung unsur pengaman yang dibubuhkan pada dokumen elektronik via PERURI); 3) Meterai Dalam Bentuk Lain (mesin teraan, komputerisasi/peruri). Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm12-62",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Pemeteraian Kemudian (Nachzegelen)",
-    category: "Prosedur",
-    front: "Pemeteraian Kemudian (Nachzegelen)",
-    back: "Pelunasan Bea Meterai yang dilakukan oleh pejabat pos atas dokumen yang belum/kurang dibayar bea meterainya, atau dokumen yang dibuat di luar negeri yang akan digunakan di Indonesia sebagai alat bukti di pengadilan (dikenakan sanksi denda 100% jika akibat kelalaian)."
+    "id": "pjk201-tm12-62",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Pemeteraian Kemudian (Nachzegelen)",
+    "category": "Prosedur",
+    "front": "Pemeteraian Kemudian (Nachzegelen)",
+    "back": "Pelunasan Bea Meterai yang dilakukan oleh pejabat pos atas dokumen yang belum/kurang dibayar bea meterainya, atau dokumen yang dibuat di luar negeri yang akan digunakan di Indonesia sebagai alat bukti di pengadilan (dikenakan sanksi denda 100% jika akibat kelalaian). Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
 
   // --- TM 13: Pajak Daerah & Retribusi Daerah (1) — Pajak Provinsi ---
   {
-    id: "pjk201-tm13-63",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Dasar Hukum Pajak Daerah (UU HKPD)",
-    category: "Dasar Hukum",
-    front: "UU HKPD No. 1 Tahun 2022 tentang Hubungan Keuangan Pusat dan Daerah",
-    back: "Undang-undang modern yang mengatur restrukturisasi pajak daerah, simplifikasi jenis pajak, penguatan local taxing power, serta harmonisasi tarif retribusi antara Pemerintah Pusat dan Pemerintah Daerah (Provinsi dan Kabupaten/Kota)."
+    "id": "pjk201-tm13-63",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Dasar Hukum Pajak Daerah (UU HKPD)",
+    "category": "Dasar Hukum",
+    "front": "UU HKPD No. 1 Tahun 2022 tentang Hubungan Keuangan Pusat dan Daerah",
+    "back": "Undang-undang modern yang mengatur restrukturisasi pajak daerah, simplifikasi jenis pajak, penguatan local taxing power, serta harmonisasi tarif retribusi antara Pemerintah Pusat dan Pemerintah Daerah (Provinsi dan Kabupaten/Kota). Rujukan: UU 1/2022 Pasal 4,10,12,15,35-36,83,86. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm13-64",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "5 Jenis Pajak Daerah Provinsi",
-    category: "Klasifikasi",
-    front: "5 Jenis Pajak yang Dipungut oleh Pemerintah Daerah Provinsi (UU HKPD)",
-    back: "1) Pajak Kendaraan Bermotor (PKB); 2) Bea Balik Nama Kendaraan Bermotor (BBNKB); 3) Pajak Alat Berat (PAB - baru dalam HKPD); 4) Pajak Bahan Bakar Kendaraan Bermotor (PBBKB); 5) Pajak Air Permukaan (PAP); 6) Pajak Rokok (pungutan atas cukai rokok)."
+    "id": "pjk201-tm13-64",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Tujuh jenis pajak provinsi menurut HKPD",
+    "category": "Klasifikasi",
+    "front": "Tujuh jenis pajak provinsi menurut HKPD",
+    "back": "PKB, BBNKB, PAB, PBBKB, PAP, Pajak Rokok dan Opsen Pajak MBLB. Jenis, objek dan pemerintah pemungut perlu dibedakan. Rujukan: UU 1/2022 Pasal 4 ayat (1) huruf a."
   },
   {
-    id: "pjk201-tm13-65",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Pajak Kendaraan Bermotor (PKB)",
-    category: "Tarif",
-    front: "Objek dan Tarif Pajak Kendaraan Bermotor (PKB)",
-    back: "Objek: kepemilikan/penguasaan kendaraan bermotor. Tarif PKB pribadi kepemilikan pertama maksimal 1,2% s.d. 2,4% (ditetapkan Perda). Kepemilikan kedua dan seterusnya dikenakan tarif progresif maksimal 10% (UU HKPD menghapus tarif progresif di beberapa daerah yang menerapkan kebijakan simplifikasi)."
+    "id": "pjk201-tm13-65",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Batas tarif PKB menurut HKPD",
+    "category": "Tarif",
+    "front": "Batas tarif PKB menurut HKPD",
+    "back": "Daerah biasa: kepemilikan pertama paling tinggi 1,2%, berikutnya progresif paling tinggi 6%. Daerah provinsi tanpa kab/kota otonom: paling tinggi 2,4% dan progresif 10%. Tarif nyata memakai Perda. Rujukan: UU 1/2022 Pasal 10 ayat (1)-(3),(5)."
   },
   {
-    id: "pjk201-tm13-66",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Bea Balik Nama Kendaraan Bermotor (BBNKB)",
-    category: "Tarif",
-    front: "Ketentuan Bea Balik Nama Kendaraan Bermotor (BBNKB)",
-    back: "Pajak atas penyerahan hak milik kendaraan bermotor sebagai akibat perjanjian dua pihak atau sepihak. Menurut UU HKPD, tarif BBNKB ditetapkan maksimal 12% (banyak provinsi telah membebaskan BBNKB II atau kendaraan bekas untuk merangsang tertib administrasi)."
+    "id": "pjk201-tm13-66",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Objek dan batas tarif BBNKB",
+    "category": "Tarif",
+    "front": "Objek dan batas tarif BBNKB",
+    "back": "Objek HKPD adalah penyerahan pertama. Maksimum umum 12%; provinsi tanpa kab/kota otonom maksimum 20%. Perda menetapkan tarif nyata; bukan seluruh penyerahan kendaraan bekas menjadi objek. Rujukan: UU 1/2022 Pasal 12 ayat (1) dan 15."
   },
   {
-    id: "pjk201-tm13-67",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Pajak Rokok",
-    category: "Mekanisme",
-    front: "Pajak Rokok sebagai Pajak Provinsi",
-    back: "Pungutan atas cukai rokok yang dipungut oleh Pemerintah Pusat bersamaan dengan pemungutan cukai rokok, lalu dialokasikan/dbagikan ke Provinsi sebesar 10% dari cukai rokok. Minimal 50% dari hasilnya wajib dialokasikan untuk pelayanan kesehatan masyarakat dan penegakan hukum."
+    "id": "pjk201-tm13-67",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Pajak Rokok",
+    "category": "Mekanisme",
+    "front": "Pajak Rokok sebagai Pajak Provinsi",
+    "back": "Pungutan atas cukai rokok yang dipungut oleh Pemerintah Pusat bersamaan dengan pemungutan cukai rokok, lalu dialokasikan/dbagikan ke Provinsi sebesar 10% dari cukai rokok. Minimal 50% dari hasilnya wajib dialokasikan untuk pelayanan kesehatan masyarakat dan penegakan hukum. Rujukan: UU 1/2022 Pasal 4,10,12,15,35-36,83,86. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
 
   // --- TM 14: Pajak Daerah & Retribusi Daerah (2) — Pajak Kabupaten/Kota & Retribusi ---
   {
-    id: "pjk201-tm14-68",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Jenis Pajak Kabupaten/Kota (UU HKPD)",
-    category: "Klasifikasi",
-    front: "Pajak yang Dipungut oleh Pemerintah Kabupaten/Kota",
-    back: "1) PBB-P2 (Pajak Bumi dan Bangunan Perdesaan dan Perkotaan); 2) BPHTB; 3) PBJT (Pajak Barang dan Jasa Tertentu - peleburan pajak hotel, restoran, hiburan, parkir, listrik); 4) Pajak Reklame; 5) Pajak Air Tanah (PAT); 6) Pajak MBLB (Mineral Bukan Logam dan Batuan); 7) Pajak Sarang Burung Walet; 8) Opsen Pajak Provinsi."
+    "id": "pjk201-tm14-68",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Sembilan jenis pajak kabupaten/kota",
+    "category": "Klasifikasi",
+    "front": "Sembilan jenis pajak kabupaten/kota",
+    "back": "PBB-P2, BPHTB, PBJT, Reklame, Air Tanah, MBLB, Sarang Burung Walet, Opsen PKB dan Opsen BBNKB. Opsen MBLB adalah pajak provinsi. Rujukan: UU 1/2022 Pasal 4 ayat (1) huruf b."
   },
   {
-    id: "pjk201-tm14-69",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "PBB-P2 & NJOP/NJOPTKP",
-    category: "Rumus",
-    front: "Perhitungan PBB-P2 (Pajak Bumi dan Bangunan Perdesaan dan Perkotaan)",
-    back: "Rumus: Tarif x (NJOP Bumi + NJOP Bangunan - NJOPTKP). NJOPTKP (NJOP Tidak Kena Pajak) ditetapkan paling rendah Rp 10.000.000 untuk setiap Wajib Pajak. Tarif maksimal PBB-P2 menurut UU HKPD adalah 0,5% (khusus lahan produksi pangan/ternak maksimal 0,25%)."
+    "id": "pjk201-tm14-69",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Rumus PBB-P2 dan batas tarif",
+    "category": "Rumus",
+    "front": "Rumus PBB-P2 dan batas tarif",
+    "back": "PBB-P2 = tarif Perda × persentase basis (20%-100%) × (NJOP - NJOPTKP). NJOPTKP paling sedikit Rp10 juta. Maksimum tarif 0,5%; tarif lahan pangan/ternak ditetapkan lebih rendah tanpa angka nasional 0,25% pada pasal ini. Rujukan: UU 1/2022 Pasal 40 ayat (3),(5),41-42."
   },
   {
-    id: "pjk201-tm14-70",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "BPHTB & NPOPTKP",
-    category: "Rumus",
-    front: "Perhitungan BPHTB (Bea Perolehan Hak atas Tanah dan Bangunan)",
-    back: "Rumus: Tarif maksimal 5% x (NPOP - NPOPTKP). NPOP adalah Nilai Perolehan Objek Pajak (harga transaksi atau NJOP, mana yang lebih tinggi). NPOPTKP (Tidak Kena Pajak) ditetapkan paling rendah Rp 80.000.000 untuk transaksi umum, dan Rp 300.000.000 untuk waris/hibah wasiat dalam keluarga sedarah."
+    "id": "pjk201-tm14-70",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "BPHTB dan dasar NPOP",
+    "category": "Rumus",
+    "front": "BPHTB dan dasar NPOP",
+    "back": "NPOP mengikuti jenis perolehan. Pada jual beli gunakan harga transaksi, atau NJOP ketika NPOP tidak diketahui/lebih rendah dari NJOP. NPOPTKP minimal Rp80 juta untuk perolehan pertama di daerah; Rp300 juta untuk waris/hibah wasiat keluarga yang dicakup. Tarif maksimum 5%, nyata menurut Perda. Rujukan: UU 1/2022 Pasal 46-48."
   },
   {
-    id: "pjk201-tm14-71",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "PBJT (Pajak Barang dan Jasa Tertentu)",
-    category: "Definisi",
-    front: "PBJT (Pajak Barang dan Jasa Tertentu - Integrasi Baru UU HKPD)",
-    back: "Pajak yang dibayarkan oleh konsumen akhir atas konsumsi barang/jasa tertentu di kabupaten/kota, mencakup: 1) Makanan dan/atau minuman (restoran); 2) Tenaga listrik; 3) Jasa perhotelan; 4) Jasa parkir; 5) Jasa kesenian dan hiburan. Tarif umum PBJT maksimal 10% (khusus hiburan tertentu seperti diskotek, karaoke, spa tarifnya 40% s.d. 75%)."
+    "id": "pjk201-tm14-71",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "PBJT (Pajak Barang dan Jasa Tertentu)",
+    "category": "Definisi",
+    "front": "PBJT (Pajak Barang dan Jasa Tertentu - Integrasi Baru UU HKPD)",
+    "back": "Pajak yang dibayarkan oleh konsumen akhir atas konsumsi barang/jasa tertentu di kabupaten/kota, mencakup: 1) Makanan dan/atau minuman (restoran); 2) Tenaga listrik; 3) Jasa perhotelan; 4) Jasa parkir; 5) Jasa kesenian dan hiburan. Tarif umum PBJT maksimal 10% (khusus hiburan tertentu seperti diskotek, karaoke, spa tarifnya 40% s.d. 75%). Rujukan: UU 1/2022 Pasal 4,40-48,58,83,87-94. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm14-72",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Definisi & 3 Golongan Retribusi Daerah",
-    category: "Klasifikasi",
-    front: "Definisi Retribusi Daerah dan 3 Golongannya (UU HKPD)",
-    back: "Pungutan daerah sebagai pembayaran atas jasa atau pemberian izin tertentu yang khusus disediakan dan/atau diberikan oleh Pemda untuk kepentingan orang pribadi atau badan. Dibagi menjadi 3 golongan: 1) Retribusi Jasa Umum (kesehatan, persampahan, pasar); 2) Retribusi Jasa Usaha (sewa aset daerah, terminal); 3) Retribusi Perizinan Tertentu (PBG/IMB, izin trayek)."
+    "id": "pjk201-tm14-72",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Tiga golongan retribusi daerah",
+    "category": "Klasifikasi",
+    "front": "Tiga golongan retribusi daerah",
+    "back": "Retribusi jasa umum, jasa usaha dan perizinan tertentu. Objek serta layanan/izin yang dicakup diperiksa pada aturan daerah dan pelaksana HKPD; jangan memakai daftar izin lama sebagai daftar yang pasti masih berlaku. Rujukan: UU 1/2022 Pasal 87-94; PP 35/2023."
   },
   {
-    id: "pjk201-tm14-73",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "Opsen Pajak dalam UU HKPD",
-    category: "Konsep",
-    front: "Konsep Opsen Pajak antara Provinsi dan Kabupaten/Kota",
-    back: "Pungutan tambahan pajak menurut persentase tertentu yang dikenakan atas pajak terutang dari tingkat pemerintahan daerah yang berbeda. Contoh: Opsen PKB dan Opsen BBNKB dipungut oleh Kabupaten/Kota (66%) bersamaan dengan pajak Provinsi, sehingga mempercepat distribusi bagi hasil dan transparansi daerah."
+    "id": "pjk201-tm14-73",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Opsen Pajak dalam UU HKPD",
+    "category": "Konsep",
+    "front": "Konsep Opsen Pajak antara Provinsi dan Kabupaten/Kota",
+    "back": "Pungutan tambahan pajak menurut persentase tertentu yang dikenakan atas pajak terutang dari tingkat pemerintahan daerah yang berbeda. Contoh: Opsen PKB dan Opsen BBNKB dipungut oleh Kabupaten/Kota (66%) bersamaan dengan pajak Provinsi, sehingga mempercepat distribusi bagi hasil dan transparansi daerah. Rujukan: UU 1/2022 Pasal 4,40-48,58,83,87-94. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   // --- Tambahan 11 kartu untuk melengkapi 84 ---
   {
-    id: "pjk201-tm08-74",
-    phase: "pra-uas",
-    tm: 8,
-    topic: "Pemeriksaan Pajak",
-    category: "Prosedur",
-    front: "Jenis Pemeriksaan Pajak",
-    back: "1) Pemeriksaan Lapangan: dilakukan di tempat WP, maksimal 6 bulan (dapat diperpanjang). 2) Pemeriksaan Kantor: dilakukan di kantor DJP, maksimal 4 bulan (dapat diperpanjang). Tujuan: menguji kepatuhan dan tujuan lain."
+    "id": "pjk201-tm08-74",
+    "phase": "pra-uas",
+    "tm": 8,
+    "topic": "Jenis pemeriksaan pada materi tahun 2026",
+    "category": "Prosedur",
+    "front": "Jenis pemeriksaan pada materi tahun 2026",
+    "back": "PMK 15/2025 memakai lingkup lengkap, terfokus dan spesifik untuk menguji kepatuhan; pemeriksaan tujuan lain diatur tersendiri. Kasus sebelum aturan ini perlu memeriksa ketentuan peralihan. Rujukan: PMK 15/2025 Pasal 3 dan 6."
   },
   {
-    id: "pjk201-tm09-75",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Surat Ketetapan Pajak",
-    category: "Klasifikasi",
-    front: "4 Jenis Surat Ketetapan Pajak",
-    back: "1) SKPKB (Surat Ketetapan Pajak Kurang Bayar), 2) SKPKBT (Kurang Bayar Tambahan), 3) SKPLB (Lebih Bayar), 4) SKPN (Nihil). Masing-masing diterbitkan berdasarkan hasil pemeriksaan."
+    "id": "pjk201-tm09-75",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Surat Ketetapan Pajak",
+    "category": "Klasifikasi",
+    "front": "4 Jenis Surat Ketetapan Pajak",
+    "back": "1) SKPKB (Surat Ketetapan Pajak Kurang Bayar), 2) SKPKBT (Kurang Bayar Tambahan), 3) SKPLB (Lebih Bayar), 4) SKPN (Nihil). Masing-masing diterbitkan berdasarkan hasil pemeriksaan. Rujukan: UU KUP Pasal 13-17D. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm09-76",
-    phase: "pra-uas",
-    tm: 9,
-    topic: "Restitusi Pajak",
-    category: "Prosedur",
-    front: "Mekanisme Restitusi Pajak",
-    back: "WP mengajukan permohonan restitusi → DJP melakukan pemeriksaan → SKPLB diterbitkan paling lambat 12 bulan sejak permohonan diterima lengkap. Jika terlambat, WP mendapat imbalan bunga."
+    "id": "pjk201-tm09-76",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Mekanisme restitusi dan batas 12 bulan",
+    "category": "Prosedur",
+    "front": "Mekanisme restitusi dan batas 12 bulan",
+    "back": "Pada permohonan yang dicakup Pasal 17B, periksa tanggal diterima lengkap, pemeriksaan dan pengecualiannya. Lewat batas tanpa keputusan mengikuti mekanisme permohonan dianggap dikabulkan dan penerbitan SKPLB; imbalan bunga mempunyai dasar/syarat tersendiri. Rujukan: UU KUP Pasal 17B dan 27A."
   },
   {
-    id: "pjk201-tm10-77",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Keberatan Pajak",
-    category: "Prosedur",
-    front: "Syarat Pengajuan Keberatan",
-    back: "Diajukan tertulis dalam Bahasa Indonesia, dalam jangka waktu 3 bulan sejak tanggal SKP, menyebutkan jumlah pajak terutang menurut WP. DJP wajib memberikan keputusan dalam 12 bulan, jika tidak maka keberatan diterima."
+    "id": "pjk201-tm10-77",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Syarat pengajuan keberatan",
+    "category": "Prosedur",
+    "front": "Syarat pengajuan keberatan",
+    "back": "Surat berbahasa Indonesia menyatakan hitungan dan alasan. Batas umumnya 3 bulan sejak surat dikirim atau tanggal pemotongan/pemungutan, dengan pengecualian keadaan di luar kuasa. Bayar bagian yang disetujui pada pembahasan akhir sebelum pengajuan. Rujukan: UU KUP Pasal 25 ayat (2),(3),(3a)."
   },
   {
-    id: "pjk201-tm10-78",
-    phase: "pra-uas",
-    tm: 10,
-    topic: "Banding ke Pengadilan Pajak",
-    category: "Prosedur",
-    front: "Banding atas Keputusan Keberatan",
-    back: "Diajukan ke Pengadilan Pajak dalam 3 bulan sejak keputusan keberatan diterima. Syarat: membayar 50% pajak terutang. Putusan Pengadilan Pajak bersifat final dan mengikat (kecuali Peninjauan Kembali ke MA)."
+    "id": "pjk201-tm10-78",
+    "phase": "pra-uas",
+    "tm": 10,
+    "topic": "Banding dan pembayaran pajak menurut KUP",
+    "category": "Prosedur",
+    "front": "Banding dan pembayaran pajak menurut KUP",
+    "back": "Banding atas keputusan keberatan diajukan ke Pengadilan Pajak dalam 3 bulan sejak diterima, kecuali alasan di luar kuasa. Jangan menerapkan syarat bayar 50% tanpa membedakan objek/yurisdiksi; KUP mengatur penangguhan jumlah yang belum dibayar sebelum keberatan selama banding. Rujukan: UU KUP Pasal 27 ayat (3),(5a)-(5c)."
   },
   {
-    id: "pjk201-tm11-79",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Penagihan Pajak",
-    category: "Prosedur",
-    front: "Tahapan Penagihan Aktif",
-    back: "1) Surat Teguran (7 hari setelah jatuh tempo), 2) Surat Paksa (21 hari setelah teguran), 3) Sita (2×24 jam setelah Surat Paksa), 4) Lelang (14 hari setelah pengumuman). Jurusita pajak negara berwenang melakukan penyitaan."
+    "id": "pjk201-tm11-79",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Penagihan Pajak",
+    "category": "Prosedur",
+    "front": "Tahapan Penagihan Aktif",
+    "back": "1) Surat Teguran (7 hari setelah jatuh tempo), 2) Surat Paksa (21 hari setelah teguran), 3) Sita (2×24 jam setelah Surat Paksa), 4) Lelang (14 hari setelah pengumuman). Jurusita pajak negara berwenang melakukan penyitaan. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm11-80",
-    phase: "pra-uas",
-    tm: 11,
-    topic: "Hak Mendahulu Negara",
-    category: "Hukum",
-    front: "Kedudukan Utang Pajak vs Utang Lainnya",
-    back: "Negara mempunyai hak mendahulu atas barang-barang milik Penanggung Pajak untuk utang pajak. Kedudukan utang pajak lebih tinggi dari kreditor lain, termasuk dalam pailit, kecuali biaya perkara dan upah buruh."
+    "id": "pjk201-tm11-80",
+    "phase": "pra-uas",
+    "tm": 11,
+    "topic": "Hak Mendahulu Negara",
+    "category": "Hukum",
+    "front": "Kedudukan Utang Pajak vs Utang Lainnya",
+    "back": "Negara mempunyai hak mendahulu atas barang-barang milik Penanggung Pajak untuk utang pajak. Kedudukan utang pajak lebih tinggi dari kreditor lain, termasuk dalam pailit, kecuali biaya perkara dan upah buruh. Rujukan: UU PPSP Pasal 8-14,29-34; UU KUP Pasal 21; PMK 61/2023. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm12-81",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Bea Meterai",
-    category: "Tarif",
-    front: "Tarif Bea Meterai (UU No. 10/2020)",
-    back: "Tarif tunggal Rp10.000 berlaku untuk dokumen dengan nilai >Rp5.000.000, surat berharga, akta notaris, dan dokumen transaksi efek. Dokumen di bawah Rp5.000.000 tidak dikenakan bea meterai."
+    "id": "pjk201-tm12-81",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Bea Meterai",
+    "category": "Tarif",
+    "front": "Tarif Bea Meterai (UU No. 10/2020)",
+    "back": "Tarif tunggal Rp10.000 berlaku untuk dokumen dengan nilai >Rp5.000.000, surat berharga, akta notaris, dan dokumen transaksi efek. Dokumen di bawah Rp5.000.000 tidak dikenakan bea meterai. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm12-82",
-    phase: "pra-uas",
-    tm: 12,
-    topic: "Pemeteraian Kemudian",
-    category: "Prosedur",
-    front: "Pemeteraian Kemudian",
-    back: "Dilakukan terhadap dokumen yang bea meterainya tidak atau kurang dibayar. WP membayar bea meterai terutang ditambah sanksi administratif 100% dari bea meterai terutang. Dilaksanakan oleh pejabat pos."
+    "id": "pjk201-tm12-82",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Pemeteraian Kemudian",
+    "category": "Prosedur",
+    "front": "Pemeteraian Kemudian",
+    "back": "Dilakukan terhadap dokumen yang bea meterainya tidak atau kurang dibayar. WP membayar bea meterai terutang ditambah sanksi administratif 100% dari bea meterai terutang. Dilaksanakan oleh pejabat pos. Rujukan: UU 10/2020 Pasal 3-9. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm13-83",
-    phase: "pra-uas",
-    tm: 13,
-    topic: "Pajak Kendaraan Bermotor",
-    category: "Tarif",
-    front: "Tarif PKB (Pajak Kendaraan Bermotor)",
-    back: "Tarif progresif berdasarkan kepemilikan: kendaraan pertama 1,05%, kedua 2%, ketiga 3%, keempat dan seterusnya 3,5% (sesuai UU HKPD). Dasar pengenaan: NJKB × bobot × tarif."
+    "id": "pjk201-tm13-83",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Pajak Kendaraan Bermotor",
+    "category": "Tarif",
+    "front": "Tarif PKB (Pajak Kendaraan Bermotor)",
+    "back": "Tarif progresif berdasarkan kepemilikan: kendaraan pertama 1,05%, kedua 2%, ketiga 3%, keempat dan seterusnya 3,5% (sesuai UU HKPD). Dasar pengenaan: NJKB × bobot × tarif. Rujukan: UU 1/2022 Pasal 4,10,12,15,35-36,83,86. Tahun dan Perda mengikuti kasus; ini tidak mengubah aturan kasus tahun lain."
   },
   {
-    id: "pjk201-tm14-84",
-    phase: "pra-uas",
-    tm: 14,
-    topic: "PBB-P2",
-    category: "Rumus",
-    front: "Cara Menghitung PBB-P2",
-    back: "NJOP = NJOP Tanah + NJOP Bangunan. NJOP setelah NJOPTKP = NJOP − NJOPTKP (minimal Rp10 juta). PBB-P2 = Tarif × NJOP setelah NJOPTKP. Tarif maksimal 0,5% (ditetapkan Perda)."
+    "id": "pjk201-tm14-84",
+    "phase": "pra-uas",
+    "tm": 14,
+    "topic": "Cara menghitung PBB-P2",
+    "category": "Rumus",
+    "front": "Cara menghitung PBB-P2",
+    "back": "Nyatakan NJOP, NJOPTKP, persentase basis dan tarif daerah. Ilustrasi buatan NJOP Rp800 juta, pengurang Rp10 juta, basis 40%, tarif 0,1% memberi Rp316.000. Jangan menganggap basis selalu 100%. Rujukan: UU 1/2022 Pasal 40-42."
   }
 ];
