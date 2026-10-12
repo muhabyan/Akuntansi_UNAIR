@@ -9,3 +9,14 @@ scripts/fixtures/akk203/tm07.md -text
 
 # Preserve final MNU307 student sources byte-for-byte.
 scripts/fixtures/mnu307/*.md -text
+
+# Canonical finance packages and converter output keep CRLF bytes in every checkout.
+content-pipeline/MNK102/**/*.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm9.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm10.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm11.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm12.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm13.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm14.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/tm15.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+src/data/mankeu/modules/reviewUas.ts -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

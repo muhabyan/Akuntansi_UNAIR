@@ -494,7 +494,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "category": "Rumus",
     "front": "Dividen residual",
-    "back": "Dividen = max(0, laba - kebutuhan ekuitas investasi). Investasi Rp200 juta × 60% ekuitas = Rp120 juta; laba Rp150 juta menyisakan Rp30 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+    "back": "Dividen = max(0, laba - kebutuhan ekuitas investasi). Investasi Rp 200 juta × 60% ekuitas = Rp 120 juta; laba Rp 150 juta menyisakan Rp 30 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
   },
   {
     "id": "mnk102-uas-v2-tm10-02",
@@ -503,7 +503,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "category": "Perbandingan",
     "front": "Payout, retention, dan DPS",
-    "back": "Payout = dividen/laba; retention = 1-payout; DPS = dividen/jumlah saham. Dividen Rp30 juta, laba Rp150 juta, 10 juta saham memberi 20%, 80%, dan Rp3/lembar. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+    "back": "Payout = dividen/laba; retention = 1-payout; DPS = dividen/jumlah saham. Dividen Rp 30 juta, laba Rp 150 juta, 10 juta saham memberi 20%, 80%, dan Rp 3/lembar. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
   },
   {
     "id": "mnk102-uas-v2-tm10-03",
@@ -512,7 +512,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "category": "Asumsi",
     "front": "Buyback dan EPS",
-    "back": "Pembelian kembali Rp300 juta pada Rp30/lembar mengurangi 10 juta lembar. EPS dapat naik jika laba tetap; kas dan biaya peluangnya juga berubah. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+    "back": "Pembelian kembali Rp 300 juta pada Rp 30/lembar mengurangi 10 juta lembar. EPS dapat naik jika laba tetap; kas dan biaya peluangnya juga berubah. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
   },
   {
     "id": "mnk102-uas-v2-tm10-04",
@@ -521,7 +521,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "category": "Rumus",
     "front": "Stock split tanpa perubahan nilai",
-    "back": "Split 2-untuk-1 menggandakan jumlah lembar dan membagi harga teoritis dua. Lima juta saham Rp80 menjadi sepuluh juta saham Rp40, dengan total Rp400 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
+    "back": "Split 2-untuk-1 menggandakan jumlah lembar dan membagi harga teoritis dua. Lima juta saham Rp 80 menjadi sepuluh juta saham Rp 40, dengan total Rp 400 juta. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 519-555 (PDF 561-597)."
   },
   {
     "id": "mnk102-uas-v2-tm10-05",
@@ -566,7 +566,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
     "category": "Rumus",
     "front": "Anggaran kas bulanan",
-    "back": "Kas sebelum pendanaan = awal + penerimaan - pembayaran. Jika kas -Rp5 juta dan minimum Rp10 juta, pinjaman diperlukan Rp15 juta. Pelunasan juga arus kas. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
+    "back": "Kas sebelum pendanaan = awal + penerimaan - pembayaran. Jika kas -Rp 5 juta dan minimum Rp 10 juta, pinjaman diperlukan Rp 15 juta. Pelunasan juga arus kas. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-581 (PDF 601-623)."
   },
   {
     "id": "mnk102-uas-v2-tm11-04",
@@ -620,7 +620,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "category": "Rumus",
     "front": "Potongan bunga awal",
-    "back": "Nominal Rp100 juta, bunga awal Rp12 juta, kas diterima Rp88 juta. Pelunasan Rp100 juta setahun kemudian memberi biaya 100/88-1 = 13,64%. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+    "back": "Nominal Rp 100 juta, bunga awal Rp 12 juta, kas diterima Rp 88 juta. Pelunasan Rp 100 juta setahun kemudian memberi biaya 100/88-1 = 13,64%. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
   },
   {
     "id": "mnk102-uas-v2-tm12-04",
@@ -629,7 +629,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "category": "Rumus",
     "front": "Saldo kompensasi tambahan",
-    "back": "Pinjaman Rp100 juta, bunga akhir Rp12 juta, saldo tertahan Rp20 juta berarti kas tersedia Rp80 juta; biaya dana 12/80 = 15%. Perlakukan arus pengembalian saldo dengan konsisten. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+    "back": "Pinjaman Rp 100 juta, bunga akhir Rp 12 juta, saldo tertahan Rp 20 juta berarti kas tersedia Rp 80 juta; biaya dana 12/80 = 15%. Perlakukan arus pengembalian saldo dengan konsisten. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
   },
   {
     "id": "mnk102-uas-v2-tm12-05",
@@ -638,7 +638,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "category": "Konsep",
     "front": "Persediaan dan biaya dana",
-    "back": "Menurunkan persediaan rata-rata Rp200 juta pada tarif biaya 20% menghemat Rp40 juta per tahun. Dana Rp200 juta yang dilepas berbeda dari penghematan tahunan; periksa biaya kekurangan stok. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
+    "back": "Menurunkan persediaan rata-rata Rp 200 juta pada tarif biaya 20% menghemat Rp 40 juta per tahun. Dana Rp 200 juta yang dilepas berbeda dari penghematan tahunan; periksa biaya kekurangan stok. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-589 (PDF 619-631)."
   },
   {
     "id": "mnk102-uas-v2-tm12-06",
@@ -656,7 +656,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
     "category": "Rumus",
     "front": "Arah kuotasi kurs",
-    "back": "IDR16.000/USD berarti Rp16.000 untuk USD1. Utang USD100.000 membutuhkan Rp1,6 miliar. Selalu tulis unit pembilang dan penyebut sebelum mengalikan atau membagi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+    "back": "IDR16.000/USD berarti Rp 16.000 untuk USD1. Utang USD100.000 membutuhkan Rp 1,6 miliar. Selalu tulis unit pembilang dan penyebut sebelum mengalikan atau membagi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
   },
   {
     "id": "mnk102-uas-v2-tm13-02",
@@ -665,7 +665,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
     "category": "Rumus",
     "front": "Kurs silang",
-    "back": "IDR/USD dibagi JPY/USD menghasilkan IDR/JPY. 16.000/160 = Rp100 per JPY, dengan asumsi tanpa spread/biaya. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
+    "back": "IDR/USD dibagi JPY/USD menghasilkan IDR/JPY. 16.000/160 = Rp 100 per JPY, dengan asumsi tanpa spread/biaya. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 625-661 (PDF 667-703)."
   },
   {
     "id": "mnk102-uas-v2-tm13-03",
@@ -710,7 +710,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "category": "Rumus",
     "front": "Nilai sinergi",
-    "back": "Sinergi = nilai gabungan - nilai standalone A - nilai standalone B. Rp880 - Rp500 - Rp300 miliar = Rp80 miliar. Sinergi perlu berasal dari kas tambahan atau perubahan risiko yang dapat dijelaskan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+    "back": "Sinergi = nilai gabungan - nilai standalone A - nilai standalone B. Rp 880 - Rp 500 - Rp 300 miliar = Rp 80 miliar. Sinergi perlu berasal dari kas tambahan atau perubahan risiko yang dapat dijelaskan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
   },
   {
     "id": "mnk102-uas-v2-tm14-02",
@@ -719,7 +719,7 @@ export const MNK201_FC: AdvancedStudyCard[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "category": "Rumus",
     "front": "NPV pengakuisisi",
-    "back": "NPV = PV sinergi - premium - biaya integrasi. Sinergi Rp80, premium Rp40, biaya Rp10 miliar memberi Rp30 miliar bagi pengakuisisi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
+    "back": "NPV = PV sinergi - premium - biaya integrasi. Sinergi Rp 80, premium Rp 40, biaya Rp 10 miliar memberi Rp 30 miliar bagi pengakuisisi. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 741-767 (PDF 783-809)."
   },
   {
     "id": "mnk102-uas-v2-tm14-03",

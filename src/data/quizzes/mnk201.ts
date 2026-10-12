@@ -731,15 +731,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
     "skill": "MM dengan pajak",
     "difficulty": "advanced",
-    "q": "Dalam model MM dengan utang permanen, nilai tanpa utang Rp10 miliar, utang Rp4 miliar, pajak model 25%. Berapa nilai perusahaan berutang jika biaya distress diabaikan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
+    "q": "Dalam model MM dengan utang permanen, nilai tanpa utang Rp 10 miliar, utang Rp 4 miliar, pajak model 25%. Berapa nilai perusahaan berutang jika biaya distress diabaikan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
     "options": [
-      "Rp11,00 miliar",
-      "Rp10,00 miliar",
-      "Rp14,00 miliar",
-      "Rp10,25 miliar"
+      "Rp 11,00 miliar",
+      "Rp 10,00 miliar",
+      "Rp 14,00 miliar",
+      "Rp 10,25 miliar"
     ],
     "answer": 0,
-    "explanation": "PV perisai pajak bunga dalam model sederhana = T × D = 25% × Rp4 miliar = Rp1 miliar. VL = VU + TD = Rp11 miliar. Hasil memerlukan asumsi utang permanen dan manfaat pajak dapat dipakai; ini bukan anjuran berutang tanpa batas pada perusahaan nyata. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
+    "explanation": "PV perisai pajak bunga dalam model sederhana = T × D = 25% × Rp 4 miliar = Rp 1 miliar. VL = VU + TD = Rp 11 miliar. Hasil memerlukan asumsi utang permanen dan manfaat pajak dapat dipakai; ini bukan anjuran berutang tanpa batas pada perusahaan nyata. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
     "sourceAnchors": [
       "MM dengan pajak"
@@ -751,15 +751,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
     "skill": "Perisai pajak tahunan",
     "difficulty": "medium",
-    "q": "Utang Rp4 miliar berbunga 10% setahun. Pajak model 25% dan pengurangan bunga penuh dapat dipakai. Berapa penghematan pajak tahun ini? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
+    "q": "Utang Rp 4 miliar berbunga 10% setahun. Pajak model 25% dan pengurangan bunga penuh dapat dipakai. Berapa penghematan pajak tahun ini? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
     "options": [
-      "Rp400 juta",
-      "Rp100 juta",
-      "Rp1.000 juta",
-      "Rp300 juta"
+      "Rp 400 juta",
+      "Rp 100 juta",
+      "Rp 1.000 juta",
+      "Rp 300 juta"
     ],
     "answer": 1,
-    "explanation": "Bunga tahunan = Rp4 miliar × 10% = Rp400 juta. Penghematan pajak bunga = bunga × pajak = Rp400 juta × 25% = Rp100 juta per tahun. TD = Rp1 miliar adalah nilai sekarang dalam model utang permanen, sehingga berbeda dari penghematan satu tahun. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
+    "explanation": "Bunga tahunan = Rp 4 miliar × 10% = Rp 400 juta. Penghematan pajak bunga = bunga × pajak = Rp 400 juta × 25% = Rp 100 juta per tahun. TD = Rp 1 miliar adalah nilai sekarang dalam model utang permanen, sehingga berbeda dari penghematan satu tahun. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 500-503 (PDF 542-545).",
     "sourceAnchors": [
       "Perisai pajak tahunan"
@@ -771,7 +771,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Capital Structure and Leverage: Struktur Modal dan Pengungkit",
     "skill": "WACC dan EPS",
     "difficulty": "medium",
-    "q": "Alternatif A: WACC 12%, EPS Rp4; B: WACC 10%, EPS Rp4,50; C: WACC 11%, EPS Rp5. Arus kas operasi dan pertumbuhan sama. Pilihan yang paling mendukung nilai perusahaan adalah? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-498 (PDF 536-540).",
+    "q": "Alternatif A: WACC 12%, EPS Rp 4; B: WACC 10%, EPS Rp 4,50; C: WACC 11%, EPS Rp 5. Arus kas operasi dan pertumbuhan sama. Pilihan yang paling mendukung nilai perusahaan adalah? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-498 (PDF 536-540).",
     "options": [
       "A: WACC 12%, karena utangnya lebih kecil",
       "C: WACC 11%, karena EPS paling tinggi",
@@ -811,15 +811,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Dividen residual",
     "difficulty": "medium",
-    "q": "Laba bersih Rp150 juta, investasi layak Rp200 juta, target pendanaan ekuitas 60%. Berapa dividen residual tanpa emisi saham? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
+    "q": "Laba bersih Rp 150 juta, investasi layak Rp 200 juta, target pendanaan ekuitas 60%. Berapa dividen residual tanpa emisi saham? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
     "options": [
-      "Rp30 juta",
-      "Rp150 juta",
-      "Rp80 juta",
-      "Rp50 juta"
+      "Rp 30 juta",
+      "Rp 150 juta",
+      "Rp 80 juta",
+      "Rp 50 juta"
     ],
     "answer": 0,
-    "explanation": "Kebutuhan ekuitas = 60% × Rp200 juta = Rp120 juta. Laba dipakai memenuhi kebutuhan itu terlebih dahulu. Dividen residual = max(0, 150 - 120) = Rp30 juta. Sisa 40% investasi didanai utang Rp80 juta sesuai target; dividen bukan laba dikurangi seluruh investasi. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
+    "explanation": "Kebutuhan ekuitas = 60% × Rp 200 juta = Rp 120 juta. Laba dipakai memenuhi kebutuhan itu terlebih dahulu. Dividen residual = max(0, 150 - 120) = Rp 30 juta. Sisa 40% investasi didanai utang Rp 80 juta sesuai target; dividen bukan laba dikurangi seluruh investasi. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
     "sourceAnchors": [
       "Dividen residual"
@@ -831,7 +831,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Payout ratio",
     "difficulty": "medium",
-    "q": "Dividen Rp30 juta dari laba Rp150 juta. Berapa dividend payout ratio, proporsi laba yang dibagikan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
+    "q": "Dividen Rp 30 juta dari laba Rp 150 juta. Berapa dividend payout ratio, proporsi laba yang dibagikan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
     "options": [
       "80,00%",
       "20,00%",
@@ -851,15 +851,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "DPS",
     "difficulty": "advanced",
-    "q": "Dividen Rp30 juta dibagikan kepada 10 juta lembar saham biasa. Berapa dividend per share, dividen per lembar? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
+    "q": "Dividen Rp 30 juta dibagikan kepada 10 juta lembar saham biasa. Berapa dividend per share, dividen per lembar? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
     "options": [
-      "Rp0,30/lembar",
-      "Rp30,00/lembar",
-      "Rp3,00/lembar",
-      "Rp10,00/lembar"
+      "Rp 0,30/lembar",
+      "Rp 30,00/lembar",
+      "Rp 3,00/lembar",
+      "Rp 10,00/lembar"
     ],
     "answer": 2,
-    "explanation": "DPS = Rp30.000.000/10.000.000 lembar = Rp3,00/lembar. Faktor juta pada pembilang dan penyebut saling menghilangkan. DPS adalah jumlah uang per lembar, berbeda dari payout yang berupa persentase laba. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
+    "explanation": "DPS = Rp 30.000.000/10.000.000 lembar = Rp 3,00/lembar. Faktor juta pada pembilang dan penyebut saling menghilangkan. DPS adalah jumlah uang per lembar, berbeda dari payout yang berupa persentase laba. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-533 (PDF 569-575).",
     "sourceAnchors": [
       "DPS"
@@ -871,15 +871,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Kekurangan ekuitas",
     "difficulty": "medium",
-    "q": "Investasi Rp200 juta membutuhkan ekuitas 70%; laba tersedia Rp100 juta. Target pendanaan dipertahankan. Berapa dana ekuitas tambahan, dengan dividen residual nol? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
+    "q": "Investasi Rp 200 juta membutuhkan ekuitas 70%; laba tersedia Rp 100 juta. Target pendanaan dipertahankan. Berapa dana ekuitas tambahan, dengan dividen residual nol? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
     "options": [
-      "Rp100 juta",
-      "Rp60 juta",
-      "Rp140 juta",
-      "Rp40 juta"
+      "Rp 100 juta",
+      "Rp 60 juta",
+      "Rp 140 juta",
+      "Rp 40 juta"
     ],
     "answer": 3,
-    "explanation": "Ekuitas target = 70% × Rp200 juta = Rp140 juta. Laba ditahan hanya Rp100 juta, sehingga kekurangan = Rp40 juta. Dividen residual = max(0,100 - 140) = nol. Kekurangan harus didanai atau rencana investasi/target pendanaan dievaluasi. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
+    "explanation": "Ekuitas target = 70% × Rp 200 juta = Rp 140 juta. Laba ditahan hanya Rp 100 juta, sehingga kekurangan = Rp 40 juta. Dividen residual = max(0,100 - 140) = nol. Kekurangan harus didanai atau rencana investasi/target pendanaan dievaluasi. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 527-532 (PDF 569-574).",
     "sourceAnchors": [
       "Kekurangan ekuitas"
@@ -891,7 +891,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Saham setelah buyback",
     "difficulty": "medium",
-    "q": "Saham awal 100 juta lembar. Kas Rp300 juta dipakai membeli kembali saham seharga Rp30/lembar. Berapa saham yang tersisa? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 543-548 (PDF 585-590).",
+    "q": "Saham awal 100 juta lembar. Kas Rp 300 juta dipakai membeli kembali saham seharga Rp 30/lembar. Berapa saham yang tersisa? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 543-548 (PDF 585-590).",
     "options": [
       "90 juta lembar",
       "100 juta lembar",
@@ -899,7 +899,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "10 juta lembar"
     ],
     "answer": 0,
-    "explanation": "Saham yang dibeli kembali = Rp300 juta/(Rp30/lembar) = 10 juta lembar. Saham tersisa = 100 - 10 = 90 juta lembar. Kas yang dibayar mengurangi aset dan nilai ekuitas; pengurangan jumlah saham sendiri tidak menciptakan nilai. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 543-548 (PDF 585-590).",
+    "explanation": "Saham yang dibeli kembali = Rp 300 juta/(Rp 30/lembar) = 10 juta lembar. Saham tersisa = 100 - 10 = 90 juta lembar. Kas yang dibayar mengurangi aset dan nilai ekuitas; pengurangan jumlah saham sendiri tidak menciptakan nilai. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 543-548 (PDF 585-590).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 543-548 (PDF 585-590).",
     "sourceAnchors": [
       "Saham setelah buyback"
@@ -911,15 +911,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "EPS setelah buyback",
     "difficulty": "advanced",
-    "q": "Laba bersih tetap Rp2 miliar; saham turun dari 100 juta menjadi 90 juta lembar. Abaikan perubahan bunga dan biaya peluang kas. Berapa EPS sesudahnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-546 (PDF 586-588).",
+    "q": "Laba bersih tetap Rp 2 miliar; saham turun dari 100 juta menjadi 90 juta lembar. Abaikan perubahan bunga dan biaya peluang kas. Berapa EPS sesudahnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-546 (PDF 586-588).",
     "options": [
-      "Rp20,00/lembar",
-      "Rp22,22/lembar",
-      "Rp18,00/lembar",
-      "Rp25,00/lembar"
+      "Rp 20,00/lembar",
+      "Rp 22,22/lembar",
+      "Rp 18,00/lembar",
+      "Rp 25,00/lembar"
     ],
     "answer": 1,
-    "explanation": "EPS baru = Rp2.000.000.000/90.000.000 = Rp22,222222/lembar, dibulatkan dua desimal. EPS lama = Rp20/lembar. Perhitungan sengaja menahan laba tetap; pada kasus nyata laba dapat berubah karena hilangnya bunga kas atau tambahan biaya utang. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-546 (PDF 586-588).",
+    "explanation": "EPS baru = Rp 2.000.000.000/90.000.000 = Rp 22,222222/lembar, dibulatkan dua desimal. EPS lama = Rp 20/lembar. Perhitungan sengaja menahan laba tetap; pada kasus nyata laba dapat berubah karena hilangnya bunga kas atau tambahan biaya utang. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-546 (PDF 586-588).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-546 (PDF 586-588).",
     "sourceAnchors": [
       "EPS setelah buyback"
@@ -931,15 +931,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Nilai per lembar dan distribusi",
     "difficulty": "medium",
-    "q": "Nilai ekuitas Rp1 miliar, saham 20 juta, harga wajar Rp50. Buyback Rp200 juta pada harga wajar, tanpa pajak/biaya dan perubahan operasi. Berapa harga teoritis saham tersisa? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-548 (PDF 586-590).",
+    "q": "Nilai ekuitas Rp 1 miliar, saham 20 juta, harga wajar Rp 50. Buyback Rp 200 juta pada harga wajar, tanpa pajak/biaya dan perubahan operasi. Berapa harga teoritis saham tersisa? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-548 (PDF 586-590).",
     "options": [
-      "Rp62,50/lembar",
-      "Rp40,00/lembar",
-      "Rp50,00/lembar",
-      "Rp55,00/lembar"
+      "Rp 62,50/lembar",
+      "Rp 40,00/lembar",
+      "Rp 50,00/lembar",
+      "Rp 55,00/lembar"
     ],
     "answer": 2,
-    "explanation": "Saham dibeli = Rp200 juta/Rp50 = 4 juta; tersisa 16 juta. Ekuitas setelah kas keluar = Rp800 juta. Harga = Rp800 juta/16 juta = Rp50. Pemegang saham menerima kas atau memiliki bagian lebih besar dari perusahaan yang kasnya berkurang; total kekayaan tidak bertambah secara mekanis. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-548 (PDF 586-590).",
+    "explanation": "Saham dibeli = Rp 200 juta/Rp 50 = 4 juta; tersisa 16 juta. Ekuitas setelah kas keluar = Rp 800 juta. Harga = Rp 800 juta/16 juta = Rp 50. Pemegang saham menerima kas atau memiliki bagian lebih besar dari perusahaan yang kasnya berkurang; total kekayaan tidak bertambah secara mekanis. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-548 (PDF 586-590).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 544-548 (PDF 586-590).",
     "sourceAnchors": [
       "Nilai per lembar dan distribusi"
@@ -951,15 +951,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Stock split",
     "difficulty": "medium",
-    "q": "Harga Rp80 per lembar, saham 5 juta. Perusahaan melakukan split 2-untuk-1 tanpa perubahan nilai ekuitas. Berapa pasangan harga dan jumlah saham teoritis? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
+    "q": "Harga Rp 80 per lembar, saham 5 juta. Perusahaan melakukan split 2-untuk-1 tanpa perubahan nilai ekuitas. Berapa pasangan harga dan jumlah saham teoritis? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
     "options": [
-      "Rp80/lembar dan 10 juta lembar",
-      "Rp40/lembar dan 2,5 juta lembar",
-      "Rp160/lembar dan 2,5 juta lembar",
-      "Rp40/lembar dan 10 juta lembar"
+      "Rp 80/lembar dan 10 juta lembar",
+      "Rp 40/lembar dan 2,5 juta lembar",
+      "Rp 160/lembar dan 2,5 juta lembar",
+      "Rp 40/lembar dan 10 juta lembar"
     ],
     "answer": 3,
-    "explanation": "Split menggandakan jumlah saham menjadi 10 juta dan membagi harga teoritis menjadi Rp40. Nilai ekuitas sebelum = 5 juta × Rp80 = Rp400 juta; sesudah = 10 juta × Rp40 = Rp400 juta. Tidak ada pembayaran kas atau kenaikan nilai hanya karena split. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
+    "explanation": "Split menggandakan jumlah saham menjadi 10 juta dan membagi harga teoritis menjadi Rp 40. Nilai ekuitas sebelum = 5 juta × Rp 80 = Rp 400 juta; sesudah = 10 juta × Rp 40 = Rp 400 juta. Tidak ada pembayaran kas atau kenaikan nilai hanya karena split. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
     "sourceAnchors": [
       "Stock split"
@@ -971,15 +971,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
     "skill": "Dividen saham",
     "difficulty": "advanced",
-    "q": "Harga sebelum pembagian Rp60; stock dividend 20% menambah saham menjadi 1,20 kali. Nilai ekuitas tetap. Berapa harga teoritis sesudahnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
+    "q": "Harga sebelum pembagian Rp 60; stock dividend 20% menambah saham menjadi 1,20 kali. Nilai ekuitas tetap. Berapa harga teoritis sesudahnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
     "options": [
-      "Rp50,00/lembar",
-      "Rp48,00/lembar",
-      "Rp72,00/lembar",
-      "Rp60,00/lembar"
+      "Rp 50,00/lembar",
+      "Rp 48,00/lembar",
+      "Rp 72,00/lembar",
+      "Rp 60,00/lembar"
     ],
     "answer": 0,
-    "explanation": "Jumlah saham baru = 1,20N. Dengan ekuitas tetap, harga baru = 60/1,20 = Rp50. Pemegang saham memiliki 20% lebih banyak lembar dengan nilai per lembar lebih kecil; nilai kepemilikan keseluruhan tetap pada asumsi soal. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
+    "explanation": "Jumlah saham baru = 1,20N. Dengan ekuitas tetap, harga baru = 60/1,20 = Rp 50. Pemegang saham memiliki 20% lebih banyak lembar dengan nilai per lembar lebih kecil; nilai kepemilikan keseluruhan tetap pada asumsi soal. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-543 (PDF 583-585).",
     "sourceAnchors": [
       "Dividen saham"
@@ -1031,7 +1031,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
     "skill": "Umur persediaan",
     "difficulty": "medium",
-    "q": "Persediaan rata-rata Rp6 miliar, COGS atau harga pokok penjualan Rp36,5 miliar setahun. Gunakan 365 hari. Berapa DIO? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
+    "q": "Persediaan rata-rata Rp 6 miliar, COGS atau harga pokok penjualan Rp 36,5 miliar setahun. Gunakan 365 hari. Berapa DIO? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
     "options": [
       "36 hari",
       "45 hari",
@@ -1039,7 +1039,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "60 hari"
     ],
     "answer": 3,
-    "explanation": "COGS harian = Rp36,5 miliar/365 = Rp0,1 miliar per hari. DIO = persediaan rata-rata/COGS harian = 6/0,1 = 60 hari. Penjualan tidak menggantikan COGS sebagai penyebut umur persediaan dalam konvensi ini. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
+    "explanation": "COGS harian = Rp 36,5 miliar/365 = Rp 0,1 miliar per hari. DIO = persediaan rata-rata/COGS harian = 6/0,1 = 60 hari. Penjualan tidak menggantikan COGS sebagai penyebut umur persediaan dalam konvensi ini. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
     "sourceAnchors": [
       "Umur persediaan"
@@ -1051,7 +1051,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
     "skill": "Umur piutang",
     "difficulty": "advanced",
-    "q": "Piutang rata-rata Rp4,5 miliar, seluruh penjualan kredit Rp36,5 miliar setahun. Gunakan 365 hari. Berapa DSO? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 580-581 (PDF 622-623).",
+    "q": "Piutang rata-rata Rp 4,5 miliar, seluruh penjualan kredit Rp 36,5 miliar setahun. Gunakan 365 hari. Berapa DSO? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 580-581 (PDF 622-623).",
     "options": [
       "45 hari",
       "60 hari",
@@ -1059,7 +1059,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "73 hari"
     ],
     "answer": 0,
-    "explanation": "Penjualan kredit harian = 36,5/365 = Rp0,1 miliar. DSO = piutang rata-rata/penjualan kredit harian = 4,5/0,1 = 45 hari. Rasio memakai piutang dan penjualan kredit yang sebanding, serta periode tahunan yang konsisten. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 580-581 (PDF 622-623).",
+    "explanation": "Penjualan kredit harian = 36,5/365 = Rp 0,1 miliar. DSO = piutang rata-rata/penjualan kredit harian = 4,5/0,1 = 45 hari. Rasio memakai piutang dan penjualan kredit yang sebanding, serta periode tahunan yang konsisten. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 580-581 (PDF 622-623).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 580-581 (PDF 622-623).",
     "sourceAnchors": [
       "Umur piutang"
@@ -1071,7 +1071,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
     "skill": "Umur utang pemasok",
     "difficulty": "medium",
-    "q": "Utang pemasok rata-rata Rp3 miliar; pembelian kredit yang diberikan dalam soal Rp36,5 miliar setahun. Gunakan 365 hari. Berapa DPO? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
+    "q": "Utang pemasok rata-rata Rp 3 miliar; pembelian kredit yang diberikan dalam soal Rp 36,5 miliar setahun. Gunakan 365 hari. Berapa DPO? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
     "options": [
       "45 hari",
       "30 hari",
@@ -1079,7 +1079,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "90 hari"
     ],
     "answer": 1,
-    "explanation": "Pembelian kredit harian = 36,5/365 = Rp0,1 miliar. DPO = utang pemasok rata-rata/pembelian kredit harian = 3/0,1 = 30 hari. Soal menyediakan pembelian; jika laporan hanya menyediakan COGS, penggunaan COGS perlu dinyatakan sebagai pendekatan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
+    "explanation": "Pembelian kredit harian = 36,5/365 = Rp 0,1 miliar. DPO = utang pemasok rata-rata/pembelian kredit harian = 3/0,1 = 30 hari. Soal menyediakan pembelian; jika laporan hanya menyediakan COGS, penggunaan COGS perlu dinyatakan sebagai pendekatan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 566-569 (PDF 608-611).",
     "sourceAnchors": [
       "Umur utang pemasok"
@@ -1093,13 +1093,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Semua angka Rp juta: kas awal 20, penerimaan 80, pembayaran 105, saldo minimum 10. Berapa pinjaman baru untuk memenuhi minimum? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "options": [
-      "Rp5 juta",
-      "Rp10 juta",
-      "Rp15 juta",
-      "Rp25 juta"
+      "Rp 5 juta",
+      "Rp 10 juta",
+      "Rp 15 juta",
+      "Rp 25 juta"
     ],
     "answer": 2,
-    "explanation": "Kas sebelum pendanaan = 20 + 80 - 105 = minus Rp5 juta. Agar saldo akhir Rp10 juta, pinjaman = 10 - (-5) = Rp15 juta. Saldo minimum adalah batas setelah pendanaan, sehingga kebutuhan bukan hanya defisit kas Rp5 juta. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
+    "explanation": "Kas sebelum pendanaan = 20 + 80 - 105 = minus Rp 5 juta. Agar saldo akhir Rp 10 juta, pinjaman = 10 - (-5) = Rp 15 juta. Saldo minimum adalah batas setelah pendanaan, sehingga kebutuhan bukan hanya defisit kas Rp 5 juta. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "sourceAnchors": [
       "Anggaran kas dan pinjaman"
@@ -1113,13 +1113,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "advanced",
     "q": "Semua angka Rp juta: kas awal 10, penerimaan 100, pembayaran operasi 80. Pinjaman lama 15 dilunasi penuh; tanpa bunga pada bulan ini. Berapa kas akhir? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "options": [
-      "Rp30 juta",
-      "Rp10 juta",
-      "Rp25 juta",
-      "Rp15 juta"
+      "Rp 30 juta",
+      "Rp 10 juta",
+      "Rp 25 juta",
+      "Rp 15 juta"
     ],
     "answer": 3,
-    "explanation": "Kas tersedia sebelum pelunasan = 10 + 100 - 80 = Rp30 juta. Pelunasan utang Rp15 juta merupakan arus kas pembiayaan; kas akhir = Rp15 juta. Dengan saldo minimum Rp10 juta, pelunasan penuh masih menyisakan kelebihan Rp5 juta. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
+    "explanation": "Kas tersedia sebelum pelunasan = 10 + 100 - 80 = Rp 30 juta. Pelunasan utang Rp 15 juta merupakan arus kas pembiayaan; kas akhir = Rp 15 juta. Dengan saldo minimum Rp 10 juta, pelunasan penuh masih menyisakan kelebihan Rp 5 juta. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "sourceAnchors": [
       "Pelunasan surplus kas"
@@ -1131,15 +1131,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
     "skill": "Kebijakan kredit inkremental",
     "difficulty": "medium",
-    "q": "Tambahan penjualan Rp3 miliar/tahun, margin kontribusi 30%, bad debt 2% dari tambahan penjualan, biaya penagihan Rp50 juta/tahun. Tambahan investasi piutang yang sudah dihitung Rp300 juta, biaya modal 10%. Berapa manfaat sebelum pajak setahun? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
+    "q": "Tambahan penjualan Rp 3 miliar/tahun, margin kontribusi 30%, bad debt 2% dari tambahan penjualan, biaya penagihan Rp 50 juta/tahun. Tambahan investasi piutang yang sudah dihitung Rp 300 juta, biaya modal 10%. Berapa manfaat sebelum pajak setahun? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
     "options": [
-      "Rp760 juta",
-      "Rp790 juta",
-      "Rp850 juta",
-      "Rp660 juta"
+      "Rp 760 juta",
+      "Rp 790 juta",
+      "Rp 850 juta",
+      "Rp 660 juta"
     ],
     "answer": 0,
-    "explanation": "Tambahan kontribusi = 3 miliar × 30% = Rp900 juta. Kerugian piutang = 3 miliar × 2% = Rp60 juta. Biaya dana = investasi tambahan Rp300 juta × 10% = Rp30 juta. Manfaat bersih sebelum pajak = 900 - 60 - 50 - 30 = Rp760 juta/tahun. Jangan mengurangkan seluruh piutang sebagai biaya satu tahun. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
+    "explanation": "Tambahan kontribusi = 3 miliar × 30% = Rp 900 juta. Kerugian piutang = 3 miliar × 2% = Rp 60 juta. Biaya dana = investasi tambahan Rp 300 juta × 10% = Rp 30 juta. Manfaat bersih sebelum pajak = 900 - 60 - 50 - 30 = Rp 760 juta/tahun. Jangan mengurangkan seluruh piutang sebagai biaya satu tahun. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
     "sourceAnchors": [
       "Kebijakan kredit inkremental"
@@ -1151,15 +1151,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
     "skill": "Modal kerja bersih",
     "difficulty": "medium",
-    "q": "Aset lancar Rp2 miliar dan kewajiban lancar Rp3 miliar. Berapa net working capital, modal kerja bersih, dan implikasi awalnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-565 (PDF 601-607).",
+    "q": "Aset lancar Rp 2 miliar dan kewajiban lancar Rp 3 miliar. Berapa net working capital, modal kerja bersih, dan implikasi awalnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-565 (PDF 601-607).",
     "options": [
-      "Plus Rp1 miliar; seluruh kewajiban dapat dibayar tepat waktu",
-      "Minus Rp1 miliar; jadwal kas dan jatuh tempo perlu diperiksa",
-      "Minus Rp1 miliar; perusahaan pasti telah dinyatakan pailit",
-      "Plus Rp5 miliar; dana operasi tersedia tanpa batas tambahan"
+      "Plus Rp 1 miliar; seluruh kewajiban dapat dibayar tepat waktu",
+      "Minus Rp 1 miliar; jadwal kas dan jatuh tempo perlu diperiksa",
+      "Minus Rp 1 miliar; perusahaan pasti telah dinyatakan pailit",
+      "Plus Rp 5 miliar; dana operasi tersedia tanpa batas tambahan"
     ],
     "answer": 1,
-    "explanation": "NWC = aset lancar - kewajiban lancar = 2 - 3 = minus Rp1 miliar. Angka negatif dapat menunjukkan ketergantungan pada pendanaan jangka pendek; sifat usaha, umur persediaan/piutang, arus kas, dan jatuh tempo tetap perlu dievaluasi. NWC bukan keputusan hukum pailit. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-565 (PDF 601-607).",
+    "explanation": "NWC = aset lancar - kewajiban lancar = 2 - 3 = minus Rp 1 miliar. Angka negatif dapat menunjukkan ketergantungan pada pendanaan jangka pendek; sifat usaha, umur persediaan/piutang, arus kas, dan jatuh tempo tetap perlu dievaluasi. NWC bukan keputusan hukum pailit. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-565 (PDF 601-607).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 559-565 (PDF 601-607).",
     "sourceAnchors": [
       "Modal kerja bersih"
@@ -1179,7 +1179,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "24,83% per tahun"
     ],
     "answer": 2,
-    "explanation": "Dana yang dipinjam secara implisit Rp98 untuk setiap tagihan Rp100; biaya tambahan Rp2 selama 20 hari. Biaya periodik = 2/98 = 2,040816%. Nominal tahunan = (2/98) × (365/20) = 37,244898%, dibulatkan 37,24%. Nominal belum memasukkan penggandaan bunga. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-584 (PDF 623-626).",
+    "explanation": "Dana yang dipinjam secara implisit Rp 98 untuk setiap tagihan Rp 100; biaya tambahan Rp 2 selama 20 hari. Biaya periodik = 2/98 = 2,040816%. Nominal tahunan = (2/98) × (365/20) = 37,244898%, dibulatkan 37,24%. Nominal belum memasukkan penggandaan bunga. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-584 (PDF 623-626).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-584 (PDF 623-626).",
     "sourceAnchors": [
       "Kredit dagang nominal"
@@ -1231,7 +1231,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "skill": "Bunga sederhana",
     "difficulty": "medium",
-    "q": "Pinjaman Rp100 juta untuk satu tahun, bunga 12%, bunga dibayar bersama pokok pada akhir tahun, tanpa biaya. Berapa biaya efektif tahun itu? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "q": "Pinjaman Rp 100 juta untuk satu tahun, bunga 12%, bunga dibayar bersama pokok pada akhir tahun, tanpa biaya. Berapa biaya efektif tahun itu? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
     "options": [
       "13,64%",
       "12,00%",
@@ -1239,7 +1239,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "10,71%"
     ],
     "answer": 1,
-    "explanation": "Kas diterima saat awal Rp100 juta; bunga setahun Rp12 juta. Biaya = 12/100 = 12%. Karena hanya ada satu pembayaran bunga di akhir satu tahun dan tidak ada potongan awal, biaya efektif sama dengan tarif tahunan. Jadwal bunga bulanan akan menghasilkan EAR berbeda. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "explanation": "Kas diterima saat awal Rp 100 juta; bunga setahun Rp 12 juta. Biaya = 12/100 = 12%. Karena hanya ada satu pembayaran bunga di akhir satu tahun dan tidak ada potongan awal, biaya efektif sama dengan tarif tahunan. Jadwal bunga bulanan akan menghasilkan EAR berbeda. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
     "sourceAnchors": [
       "Bunga sederhana"
@@ -1251,7 +1251,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "skill": "Saldo kompensasi",
     "difficulty": "medium",
-    "q": "Pinjaman satu tahun Rp100 juta berbunga 12% dibayar akhir tahun. Bank menahan saldo kompensasi tambahan 20% tanpa bunga yang dikembalikan saat pelunasan. Berapa biaya atas kas yang dapat dipakai? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "q": "Pinjaman satu tahun Rp 100 juta berbunga 12% dibayar akhir tahun. Bank menahan saldo kompensasi tambahan 20% tanpa bunga yang dikembalikan saat pelunasan. Berapa biaya atas kas yang dapat dipakai? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Latihan pengembangan arus kas berdasarkan syarat buatan pada soal; discount interest dan saldo kompensasi tidak diklaim sebagai contoh Bab 16. Web Appendix 16B belum tersedia.",
     "options": [
       "12,00%",
       "13,64%",
@@ -1259,7 +1259,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "9,60%"
     ],
     "answer": 2,
-    "explanation": "Kas bebas dipakai = 100 - 20 = Rp80 juta; bunga = Rp12 juta. Pada akhir tahun saldo Rp20 juta dilepas dan pokok/bunga dibayar, sehingga pengeluaran bersih = Rp92 juta. Biaya tahunan = 12/80 = 15%. Ini pengembangan arus kas biaya pinjaman berdasarkan syarat yang diberikan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "explanation": "Kas bebas dipakai = 100 - 20 = Rp 80 juta; bunga = Rp 12 juta. Pada akhir tahun saldo Rp 20 juta dilepas dan pokok/bunga dibayar, sehingga pengeluaran bersih = Rp 92 juta. Biaya tahunan = 12/80 = 15%. Ini pengembangan arus kas biaya pinjaman berdasarkan syarat yang diberikan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Latihan pengembangan arus kas berdasarkan syarat buatan pada soal; discount interest dan saldo kompensasi tidak diklaim sebagai contoh Bab 16. Web Appendix 16B belum tersedia.",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
     "sourceAnchors": [
       "Saldo kompensasi"
@@ -1271,7 +1271,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "skill": "Bunga dipotong awal",
     "difficulty": "advanced",
-    "q": "Pinjaman satu tahun Rp100 juta, bunga 12% dari nominal dipotong langsung saat pencairan; pokok dibayar akhir tahun. Berapa biaya efektif? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "q": "Pinjaman satu tahun Rp 100 juta, bunga 12% dari nominal dipotong langsung saat pencairan; pokok dibayar akhir tahun. Berapa biaya efektif? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Latihan pengembangan arus kas berdasarkan syarat buatan pada soal; discount interest dan saldo kompensasi tidak diklaim sebagai contoh Bab 16. Web Appendix 16B belum tersedia.",
     "options": [
       "12,00%",
       "15,00%",
@@ -1279,7 +1279,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "13,64%"
     ],
     "answer": 3,
-    "explanation": "Bunga awal = Rp12 juta; kas diterima = 100 - 12 = Rp88 juta. Akhir tahun membayar Rp100 juta. Biaya efektif satu tahun = (100/88) - 1 = 13,636364%, dibulatkan 13,64%. Penyebut memakai kas diterima, bukan nominal kontrak. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "explanation": "Bunga awal = Rp 12 juta; kas diterima = 100 - 12 = Rp 88 juta. Akhir tahun membayar Rp 100 juta. Biaya efektif satu tahun = (100/88) - 1 = 13,636364%, dibulatkan 13,64%. Penyebut memakai kas diterima, bukan nominal kontrak. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Latihan pengembangan arus kas berdasarkan syarat buatan pada soal; discount interest dan saldo kompensasi tidak diklaim sebagai contoh Bab 16. Web Appendix 16B belum tersedia.",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
     "sourceAnchors": [
       "Bunga dipotong awal"
@@ -1291,7 +1291,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "skill": "Potongan dan saldo tertahan",
     "difficulty": "medium",
-    "q": "Nominal pinjaman Rp100 juta satu tahun. Bunga 12% dipotong awal dan saldo kompensasi tambahan 10% ditahan tanpa bunga sampai pelunasan. Berapa biaya efektif? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "q": "Nominal pinjaman Rp 100 juta satu tahun. Bunga 12% dipotong awal dan saldo kompensasi tambahan 10% ditahan tanpa bunga sampai pelunasan. Berapa biaya efektif? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Latihan pengembangan arus kas berdasarkan syarat buatan pada soal; discount interest dan saldo kompensasi tidak diklaim sebagai contoh Bab 16. Web Appendix 16B belum tersedia.",
     "options": [
       "15,38%",
       "12,00%",
@@ -1299,7 +1299,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "13,33%"
     ],
     "answer": 0,
-    "explanation": "Kas awal tersedia = 100 - 12 - 10 = Rp78 juta. Akhir tahun pokok 100 dibayar dan saldo tertahan 10 kembali, pengeluaran bersih = Rp90 juta. Biaya = 90/78 - 1 = 12/78 = 15,384615%, dibulatkan 15,38%. Syarat saldo tambahan dinyatakan eksplisit agar tidak dihitung ganda. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "explanation": "Kas awal tersedia = 100 - 12 - 10 = Rp 78 juta. Akhir tahun pokok 100 dibayar dan saldo tertahan 10 kembali, pengeluaran bersih = Rp 90 juta. Biaya = 90/78 - 1 = 12/78 = 15,384615%, dibulatkan 15,38%. Syarat saldo tambahan dinyatakan eksplisit agar tidak dihitung ganda. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Latihan pengembangan arus kas berdasarkan syarat buatan pada soal; discount interest dan saldo kompensasi tidak diklaim sebagai contoh Bab 16. Web Appendix 16B belum tersedia.",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
     "sourceAnchors": [
       "Potongan dan saldo tertahan"
@@ -1311,15 +1311,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
     "skill": "Biaya persediaan",
     "difficulty": "medium",
-    "q": "Rata-rata persediaan turun dari Rp800 juta menjadi Rp600 juta. Tarif biaya penyimpanan dan dana yang diberikan 20% per tahun, tanpa kehilangan penjualan. Berapa penghematan setahun? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620).",
+    "q": "Rata-rata persediaan turun dari Rp 800 juta menjadi Rp 600 juta. Tarif biaya penyimpanan dan dana yang diberikan 20% per tahun, tanpa kehilangan penjualan. Berapa penghematan setahun? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620).",
     "options": [
-      "Rp160 juta",
-      "Rp40 juta",
-      "Rp120 juta",
-      "Rp200 juta"
+      "Rp 160 juta",
+      "Rp 40 juta",
+      "Rp 120 juta",
+      "Rp 200 juta"
     ],
     "answer": 1,
-    "explanation": "Penurunan rata-rata persediaan = Rp200 juta. Penghematan biaya = Rp200 juta × 20% = Rp40 juta/tahun. Penurunan persediaan Rp200 juta adalah pelepasan investasi, berbeda dari penghematan biaya tahunan. Jika persediaan terlalu rendah, biaya kekurangan stok dan hilangnya penjualan harus ditambahkan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620).",
+    "explanation": "Penurunan rata-rata persediaan = Rp 200 juta. Penghematan biaya = Rp 200 juta × 20% = Rp 40 juta/tahun. Penurunan persediaan Rp 200 juta adalah pelepasan investasi, berbeda dari penghematan biaya tahunan. Jika persediaan terlalu rendah, biaya kekurangan stok dan hilangnya penjualan harus ditambahkan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620).",
     "sourceAnchors": [
       "Biaya persediaan"
@@ -1333,13 +1333,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Utang dagang USD100.000; kurs IDR16.000 per USD. Berapa nilai rupiah untuk melunasi pada kurs itu? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-639 (PDF 678-681).",
     "options": [
-      "Rp1.000 juta",
-      "Rp625 juta",
-      "Rp1.600 juta",
-      "Rp16 juta"
+      "Rp 1.000 juta",
+      "Rp 625 juta",
+      "Rp 1.600 juta",
+      "Rp 16 juta"
     ],
     "answer": 2,
-    "explanation": "Kuotasi IDR/USD adalah rupiah untuk satu dolar. Nilai rupiah = USD100.000 × Rp16.000/USD = Rp1.600.000.000 atau Rp1.600 juta. Mengalikan menghapus satuan USD; membagi dolar dengan kurs ini memakai arah yang salah. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-639 (PDF 678-681).",
+    "explanation": "Kuotasi IDR/USD adalah rupiah untuk satu dolar. Nilai rupiah = USD100.000 × Rp 16.000/USD = Rp 1.600.000.000 atau Rp 1.600 juta. Mengalikan menghapus satuan USD; membagi dolar dengan kurs ini memakai arah yang salah. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-639 (PDF 678-681).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-639 (PDF 678-681).",
     "sourceAnchors": [
       "Kuotasi IDR per USD"
@@ -1353,13 +1353,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Kurs IDR16.000 per USD dan JPY160 per USD. Berapa IDR per JPY? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680).",
     "options": [
-      "Rp10/JPY",
-      "Rp160/JPY",
-      "Rp1.000/JPY",
-      "Rp100/JPY"
+      "Rp 10/JPY",
+      "Rp 160/JPY",
+      "Rp 1.000/JPY",
+      "Rp 100/JPY"
     ],
     "answer": 3,
-    "explanation": "Kurs silang = (IDR/USD)/(JPY/USD) = 16.000/160 = IDR100/JPY. USD saling menghilangkan. Satu yen berharga Rp100; JPY100 setara Rp10.000 pada kuotasi tersebut, tanpa spread atau biaya. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680).",
+    "explanation": "Kurs silang = (IDR/USD)/(JPY/USD) = 16.000/160 = IDR100/JPY. USD saling menghilangkan. Satu yen berharga Rp 100; JPY100 setara Rp 10.000 pada kuotasi tersebut, tanpa spread atau biaya. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680).",
     "sourceAnchors": [
       "Cross rate"
@@ -1373,13 +1373,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "advanced",
     "q": "Spot IDR16.000/USD; bunga IDR 6% dan USD 4% untuk satu tahun. Berdasarkan covered interest parity, berapa kurs forward IDR/USD? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 640-642 (PDF 682-684).",
     "options": [
-      "Rp16.307,69/USD",
-      "Rp15.698,11/USD",
-      "Rp16.320,00/USD",
-      "Rp16.000,00/USD"
+      "Rp 16.307,69/USD",
+      "Rp 15.698,11/USD",
+      "Rp 16.320,00/USD",
+      "Rp 16.000,00/USD"
     ],
     "answer": 0,
-    "explanation": "Forward = spot × (1 + bunga domestik)/(1 + bunga asing) = 16.000 × 1,06/1,04 = 16.307,692307 IDR/USD. Dibulatkan dua desimal menjadi Rp16.307,69/USD. Arah kuotasi wajib disebut; bunga domestik lebih tinggi membuat satu USD lebih mahal pada forward paritas. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 640-642 (PDF 682-684).",
+    "explanation": "Forward = spot × (1 + bunga domestik)/(1 + bunga asing) = 16.000 × 1,06/1,04 = 16.307,692307 IDR/USD. Dibulatkan dua desimal menjadi Rp 16.307,69/USD. Arah kuotasi wajib disebut; bunga domestik lebih tinggi membuat satu USD lebih mahal pada forward paritas. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 640-642 (PDF 682-684).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 640-642 (PDF 682-684).",
     "sourceAnchors": [
       "IRP tahunan"
@@ -1393,10 +1393,10 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Spot IDR16.000/USD. Bunga tahunan sederhana IDR 6%, USD 4%. Untuk enam bulan gunakan 0,5 tahun tanpa biaya. Berapa forward paritas? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 640-642 (PDF 682-684).",
     "options": [
-      "Rp16.307,69/USD",
-      "Rp16.156,86/USD",
-      "Rp15.844,66/USD",
-      "Rp16.160,00/USD"
+      "Rp 16.307,69/USD",
+      "Rp 16.156,86/USD",
+      "Rp 15.844,66/USD",
+      "Rp 16.160,00/USD"
     ],
     "answer": 1,
     "explanation": "Konversi tenor: bunga IDR enam bulan = 6% × 0,5 = 3%; USD = 4% × 0,5 = 2%. F = 16.000 × 1,03/1,02 = 16.156,862745 IDR/USD. Bunga yang dipakai harus sesuai tenor kontrak; bunga setahun akan menghasilkan angka terlalu jauh dari spot. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 640-642 (PDF 682-684).",
@@ -1413,13 +1413,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Spot IDR16.000/USD; inflasi IDR 8% dan USD 3% untuk satu tahun. Dengan model purchasing power parity relatif, berapa kurs proyeksi? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 642-646 (PDF 684-688).",
     "options": [
-      "Rp15.259,26/USD",
-      "Rp16.800,00/USD",
-      "Rp16.776,70/USD",
-      "Rp16.307,69/USD"
+      "Rp 15.259,26/USD",
+      "Rp 16.800,00/USD",
+      "Rp 16.776,70/USD",
+      "Rp 16.307,69/USD"
     ],
     "answer": 2,
-    "explanation": "PPP relatif = 16.000 × (1 + 8%)/(1 + 3%) = 16.776,699029 IDR/USD. Pembulatan dua desimal: Rp16.776,70/USD. Selisih inflasi 5% memberi pendekatan Rp16.800, tetapi soal meminta rasio tepat. PPP adalah model proyeksi yang dapat menyimpang dari kurs aktual. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 642-646 (PDF 684-688).",
+    "explanation": "PPP relatif = 16.000 × (1 + 8%)/(1 + 3%) = 16.776,699029 IDR/USD. Pembulatan dua desimal: Rp 16.776,70/USD. Selisih inflasi 5% memberi pendekatan Rp 16.800, tetapi soal meminta rasio tepat. PPP adalah model proyeksi yang dapat menyimpang dari kurs aktual. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 642-646 (PDF 684-688). Persamaan proyeksi PPP relatif di sini adalah turunan model dengan asumsi harga sebanding dan inflasi yang dinyatakan, bukan ramalan kurs pasti.",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 642-646 (PDF 684-688).",
     "sourceAnchors": [
       "PPP relatif"
@@ -1433,13 +1433,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "advanced",
     "q": "Utang USD100.000 dikunci pada forward IDR16.300/USD. Saat jatuh tempo spot IDR17.000/USD. Tanpa biaya, berapa penghematan rupiah relatif terhadap tanpa hedge? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
     "options": [
-      "Rp700 juta",
-      "Rp30 juta",
-      "Rp100 juta",
-      "Rp70 juta"
+      "Rp 700 juta",
+      "Rp 30 juta",
+      "Rp 100 juta",
+      "Rp 70 juta"
     ],
     "answer": 3,
-    "explanation": "Dengan forward membayar 100.000 × 16.300 = Rp1.630 juta; tanpa hedge pada spot membayar Rp1.700 juta. Selisih = Rp70 juta. Hedge, lindung nilai, mengunci biaya: jika spot justru lebih rendah, kontrak dapat menghasilkan biaya peluang, sehingga hasil positif ini bukan jaminan keuntungan hedge. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
+    "explanation": "Dengan forward membayar 100.000 × 16.300 = Rp 1.630 juta; tanpa hedge pada spot membayar Rp 1.700 juta. Selisih = Rp 70 juta. Hedge, lindung nilai, mengunci biaya: jika spot justru lebih rendah, kontrak dapat menghasilkan biaya peluang, sehingga hasil positif ini bukan jaminan keuntungan hedge. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
     "sourceAnchors": [
       "Forward utang valas"
@@ -1453,13 +1453,13 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "difficulty": "medium",
     "q": "Piutang EUR50.000 dijual forward IDR18.000/EUR. Spot saat penerimaan IDR17.000/EUR. Berapa tambahan penerimaan dibanding tanpa hedge, tanpa biaya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
     "options": [
-      "Rp50 juta",
-      "Rp900 juta",
-      "Rp850 juta",
-      "Rp100 juta"
+      "Rp 50 juta",
+      "Rp 900 juta",
+      "Rp 850 juta",
+      "Rp 100 juta"
     ],
     "answer": 0,
-    "explanation": "Penerimaan terkunci = 50.000 × 18.000 = Rp900 juta; penerimaan spot = Rp850 juta. Selisih = Rp50 juta. Eksportir menjual valas forward, sedangkan importir dengan utang valas membeli valas forward; arah transaksi mengikuti apakah ada piutang atau kewajiban. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
+    "explanation": "Penerimaan terkunci = 50.000 × 18.000 = Rp 900 juta; penerimaan spot = Rp 850 juta. Selisih = Rp 50 juta. Eksportir menjual valas forward, sedangkan importir dengan utang valas membeli valas forward; arah transaksi mengikuti apakah ada piutang atau kewajiban. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 638-642 (PDF 680-684).",
     "sourceAnchors": [
       "Forward piutang valas"
@@ -1471,15 +1471,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Multinational Financial Management: Kurs dan Keuangan Multinasional",
     "skill": "NPV multinasional",
     "difficulty": "medium",
-    "q": "Investasi awal Rp150 juta. Arus kas satu tahun USD10.000; proyeksi kurs akhir IDR17.000/USD dan tingkat diskonto IDR 10% yang sesuai risiko. Tidak ada arus kas lain. Berapa NPV rupiah? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 652-655 (PDF 694-697).",
+    "q": "Investasi awal Rp 150 juta. Arus kas satu tahun USD10.000; proyeksi kurs akhir IDR17.000/USD dan tingkat diskonto IDR 10% yang sesuai risiko. Tidak ada arus kas lain. Berapa NPV rupiah? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 652-655 (PDF 694-697).",
     "options": [
-      "Rp20,00 juta",
-      "Rp4,55 juta",
-      "Rp145,45 juta",
-      "Minus Rp4,55 juta"
+      "Rp 20,00 juta",
+      "Rp 4,55 juta",
+      "Rp 145,45 juta",
+      "Minus Rp 4,55 juta"
     ],
     "answer": 1,
-    "explanation": "Kas tahun pertama dalam rupiah = 10.000 × 17.000 = Rp170 juta. PV = 170/1,10 = Rp154,545455 juta. NPV = 154,545455 - 150 = Rp4,545455 juta, dibulatkan Rp4,55 juta. Konversikan arus kas ke IDR sebelum menggunakan tingkat diskonto IDR; jangan mencampur suku bunga USD dan kas rupiah. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 652-655 (PDF 694-697).",
+    "explanation": "Kas tahun pertama dalam rupiah = 10.000 × 17.000 = Rp 170 juta. PV = 170/1,10 = Rp 154,545455 juta. NPV = 154,545455 - 150 = Rp 4,545455 juta, dibulatkan Rp 4,55 juta. Konversikan arus kas ke IDR sebelum menggunakan tingkat diskonto IDR; jangan mencampur suku bunga USD dan kas rupiah. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 652-655 (PDF 694-697).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 652-655 (PDF 694-697).",
     "sourceAnchors": [
       "NPV multinasional"
@@ -1491,15 +1491,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "Sinergi dan nilai gabungan",
     "difficulty": "medium",
-    "q": "Nilai standalone A Rp500 miliar, B Rp300 miliar; PV sinergi operasi Rp80 miliar, biaya integrasi nol. Berapa nilai gabungan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 742-744 (PDF 784-786).",
+    "q": "Nilai standalone A Rp 500 miliar, B Rp 300 miliar; PV sinergi operasi Rp 80 miliar, biaya integrasi nol. Berapa nilai gabungan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 742-744 (PDF 784-786).",
     "options": [
-      "Rp800 miliar",
-      "Rp580 miliar",
-      "Rp880 miliar",
-      "Rp920 miliar"
+      "Rp 800 miliar",
+      "Rp 580 miliar",
+      "Rp 880 miliar",
+      "Rp 920 miliar"
     ],
     "answer": 2,
-    "explanation": "Nilai gabungan = nilai A + nilai B + PV sinergi = 500 + 300 + 80 = Rp880 miliar. Sinergi adalah tambahan nilai dari penggabungan relatif terhadap operasi terpisah. Nilai ini belum membagi manfaat antara pemegang saham target dan pengakuisisi. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 742-744 (PDF 784-786).",
+    "explanation": "Nilai gabungan = nilai A + nilai B + PV sinergi = 500 + 300 + 80 = Rp 880 miliar. Sinergi adalah tambahan nilai dari penggabungan relatif terhadap operasi terpisah. Nilai ini belum membagi manfaat antara pemegang saham target dan pengakuisisi. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 742-744 (PDF 784-786).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 742-744 (PDF 784-786).",
     "sourceAnchors": [
       "Sinergi dan nilai gabungan"
@@ -1511,15 +1511,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "NPV pengakuisisi",
     "difficulty": "medium",
-    "q": "PV sinergi Rp80 miliar, premium di atas nilai standalone target Rp40 miliar, biaya integrasi saat ini Rp10 miliar. Berapa NPV bagi pengakuisisi? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "q": "PV sinergi Rp 80 miliar, premium di atas nilai standalone target Rp 40 miliar, biaya integrasi saat ini Rp 10 miliar. Berapa NPV bagi pengakuisisi? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "options": [
-      "Rp80 miliar",
-      "Rp40 miliar",
-      "Rp50 miliar",
-      "Rp30 miliar"
+      "Rp 80 miliar",
+      "Rp 40 miliar",
+      "Rp 50 miliar",
+      "Rp 30 miliar"
     ],
     "answer": 3,
-    "explanation": "NPV pengakuisisi = PV sinergi - premium - biaya integrasi = 80 - 40 - 10 = Rp30 miliar. Premium mengalihkan sebagian manfaat ke penjual target. Biaya integrasi merupakan penggunaan kas dan harus masuk evaluasi walaupun harga pembelian terlihat wajar. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "explanation": "NPV pengakuisisi = PV sinergi - premium - biaya integrasi = 80 - 40 - 10 = Rp 30 miliar. Premium mengalihkan sebagian manfaat ke penjual target. Biaya integrasi merupakan penggunaan kas dan harus masuk evaluasi walaupun harga pembelian terlihat wajar. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "sourceAnchors": [
       "NPV pengakuisisi"
@@ -1531,15 +1531,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "Harga penawaran maksimum",
     "difficulty": "advanced",
-    "q": "Target bernilai standalone Rp300 miliar. PV sinergi Rp80 miliar dan biaya integrasi Rp10 miliar. Berapa maksimum harga tunai agar NPV pengakuisisi tidak negatif? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "q": "Target bernilai standalone Rp 300 miliar. PV sinergi Rp 80 miliar dan biaya integrasi Rp 10 miliar. Berapa maksimum harga tunai agar NPV pengakuisisi tidak negatif? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "options": [
-      "Rp370 miliar",
-      "Rp380 miliar",
-      "Rp300 miliar",
-      "Rp390 miliar"
+      "Rp 370 miliar",
+      "Rp 380 miliar",
+      "Rp 300 miliar",
+      "Rp 390 miliar"
     ],
     "answer": 0,
-    "explanation": "Nilai target bagi pengakuisisi setelah biaya = 300 + 80 - 10 = Rp370 miliar. Pada harga itu NPV nol; harga lebih rendah memberi NPV positif dan lebih tinggi menghancurkan nilai menurut asumsi. Jangan menambahkan sinergi lagi jika sudah tertanam dalam proyeksi kas target. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "explanation": "Nilai target bagi pengakuisisi setelah biaya = 300 + 80 - 10 = Rp 370 miliar. Pada harga itu NPV nol; harga lebih rendah memberi NPV positif dan lebih tinggi menghancurkan nilai menurut asumsi. Jangan menambahkan sinergi lagi jika sudah tertanam dalam proyeksi kas target. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "sourceAnchors": [
       "Harga penawaran maksimum"
@@ -1551,15 +1551,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "Nilai operasi ke ekuitas",
     "difficulty": "medium",
-    "q": "FCF operasi Rp20 miliar pada akhir masing-masing tahun 1-3; terminal value tahun 3 Rp200 miliar di luar FCF tahun 3. WACC 10%, utang Rp60 miliar dan kas nonoperasi Rp10 miliar. Berapa nilai ekuitas target? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-752 (PDF 790-794).",
+    "q": "FCF operasi Rp 20 miliar pada akhir masing-masing tahun 1-3; terminal value tahun 3 Rp 200 miliar di luar FCF tahun 3. WACC 10%, utang Rp 60 miliar dan kas nonoperasi Rp 10 miliar. Berapa nilai ekuitas target? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-752 (PDF 790-794).",
     "options": [
-      "Rp200 miliar",
-      "Rp150 miliar",
-      "Rp140 miliar",
-      "Rp260 miliar"
+      "Rp 200 miliar",
+      "Rp 150 miliar",
+      "Rp 140 miliar",
+      "Rp 260 miliar"
     ],
     "answer": 1,
-    "explanation": "PV FCF = 20/1,1 + 20/1,1^2 + 20/1,1^3 = Rp49,73704 miliar. PV terminal = 200/1,1^3 = Rp150,26296 miliar. Nilai operasi Rp200 miliar; ekuitas = operasi - utang + kas nonoperasi = 200 - 60 + 10 = Rp150 miliar. FCF operasi didiskonto WACC; arus kas ekuitas memakai biaya ekuitas. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-752 (PDF 790-794).",
+    "explanation": "PV FCF = 20/1,1 + 20/1,1^2 + 20/1,1^3 = Rp 49,73704 miliar. PV terminal = 200/1,1^3 = Rp 150,26296 miliar. Nilai operasi Rp 200 miliar; ekuitas = operasi - utang + kas nonoperasi = 200 - 60 + 10 = Rp 150 miliar. FCF operasi didiskonto WACC; arus kas ekuitas memakai biaya ekuitas. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-752 (PDF 790-794).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-752 (PDF 790-794).",
     "sourceAnchors": [
       "Nilai operasi ke ekuitas"
@@ -1571,15 +1571,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "Terminal value",
     "difficulty": "medium",
-    "q": "FCF operasi tahun 3 Rp30 miliar; tumbuh tetap 2% sesudahnya. WACC 12%, pertumbuhan lebih kecil dari diskonto. Berapa terminal value pada akhir tahun 3? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 750-752 (PDF 792-794).",
+    "q": "FCF operasi tahun 3 Rp 30 miliar; tumbuh tetap 2% sesudahnya. WACC 12%, pertumbuhan lebih kecil dari diskonto. Berapa terminal value pada akhir tahun 3? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 750-752 (PDF 792-794).",
     "options": [
-      "Rp300 miliar",
-      "Rp250 miliar",
-      "Rp306 miliar",
-      "Rp255 miliar"
+      "Rp 300 miliar",
+      "Rp 250 miliar",
+      "Rp 306 miliar",
+      "Rp 255 miliar"
     ],
     "answer": 2,
-    "explanation": "FCF tahun 4 = 30 × 1,02 = Rp30,6 miliar. TV pada akhir tahun 3 = FCF4/(WACC - g) = 30,6/(0,12 - 0,02) = Rp306 miliar. Untuk nilai hari ini, TV masih harus didiskonto tiga tahun. Memakai FCF3 langsung mengabaikan satu tahun pertumbuhan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 750-752 (PDF 792-794).",
+    "explanation": "FCF tahun 4 = 30 × 1,02 = Rp 30,6 miliar. TV pada akhir tahun 3 = FCF4/(WACC - g) = 30,6/(0,12 - 0,02) = Rp 306 miliar. Untuk nilai hari ini, TV masih harus didiskonto tiga tahun. Memakai FCF3 langsung mengabaikan satu tahun pertumbuhan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 750-752 (PDF 792-794).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 750-752 (PDF 792-794).",
     "sourceAnchors": [
       "Terminal value"
@@ -1591,15 +1591,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "Pembayaran dengan saham",
     "difficulty": "advanced",
-    "q": "Target memiliki 5 juta saham dengan harga standalone Rp18/lembar. Pengakuisisi menawarkan 2 juta sahamnya yang bernilai Rp50/lembar. Berapa premium total berdasarkan harga yang diberikan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
+    "q": "Target memiliki 5 juta saham dengan harga standalone Rp 18/lembar. Pengakuisisi menawarkan 2 juta sahamnya yang bernilai Rp 50/lembar. Berapa premium total berdasarkan harga yang diberikan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
     "options": [
-      "Rp100 juta",
-      "Rp90 juta",
-      "Rp20 juta",
-      "Rp10 juta"
+      "Rp 100 juta",
+      "Rp 90 juta",
+      "Rp 20 juta",
+      "Rp 10 juta"
     ],
     "answer": 3,
-    "explanation": "Nilai penawaran = 2 juta × Rp50 = Rp100 juta. Nilai standalone target = 5 juta × Rp18 = Rp90 juta. Premium = Rp10 juta, setara Rp2 per saham target. Nilai penawaran saham bisa berubah jika harga pengakuisisi berubah; angka soal adalah asumsi tanggal penawaran. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
+    "explanation": "Nilai penawaran = 2 juta × Rp 50 = Rp 100 juta. Nilai standalone target = 5 juta × Rp 18 = Rp 90 juta. Premium = Rp 10 juta, setara Rp 2 per saham target. Nilai penawaran saham bisa berubah jika harga pengakuisisi berubah; angka soal adalah asumsi tanggal penawaran. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
     "sourceAnchors": [
       "Pembayaran dengan saham"
@@ -1611,15 +1611,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "EPS gabungan",
     "difficulty": "medium",
-    "q": "Laba bersih gabungan sesudah penyesuaian Rp30 juta; saham pengakuisisi awal 10 juta dan 2 juta saham baru untuk pembayaran akuisisi. Berapa EPS gabungan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
+    "q": "Laba bersih gabungan sesudah penyesuaian Rp 30 juta; saham pengakuisisi awal 10 juta dan 2 juta saham baru untuk pembayaran akuisisi. Berapa EPS gabungan? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
     "options": [
-      "Rp2,50/lembar",
-      "Rp3,00/lembar",
-      "Rp2,00/lembar",
-      "Rp2,25/lembar"
+      "Rp 2,50/lembar",
+      "Rp 3,00/lembar",
+      "Rp 2,00/lembar",
+      "Rp 2,25/lembar"
     ],
     "answer": 0,
-    "explanation": "Saham gabungan = 10 + 2 = 12 juta lembar. EPS = Rp30 juta/12 juta = Rp2,50/lembar. EPS adalah indikator akuntansi; akuisisi dengan EPS naik tetap dapat memiliki NPV negatif jika premium dan risiko terlalu besar. Nilai kas dan biaya modal perlu diperiksa secara terpisah. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
+    "explanation": "Saham gabungan = 10 + 2 = 12 juta lembar. EPS = Rp 30 juta/12 juta = Rp 2,50/lembar. EPS adalah indikator akuntansi; akuisisi dengan EPS naik tetap dapat memiliki NPV negatif jika premium dan risiko terlalu besar. Nilai kas dan biaya modal perlu diperiksa secara terpisah. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 751-757 (PDF 793-799).",
     "sourceAnchors": [
       "EPS gabungan"
@@ -1631,15 +1631,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
     "skill": "Akuisisi bernilai negatif",
     "difficulty": "medium",
-    "q": "Nilai standalone target Rp100 juta, harga beli Rp110 juta, PV sinergi Rp8 juta, biaya integrasi Rp3 juta. Berapa NPV pengakuisisi? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "q": "Nilai standalone target Rp 100 juta, harga beli Rp 110 juta, PV sinergi Rp 8 juta, biaya integrasi Rp 3 juta. Berapa NPV pengakuisisi? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "options": [
-      "Plus Rp5 juta",
-      "Minus Rp5 juta",
-      "Plus Rp8 juta",
-      "Minus Rp2 juta"
+      "Plus Rp 5 juta",
+      "Minus Rp 5 juta",
+      "Plus Rp 8 juta",
+      "Minus Rp 2 juta"
     ],
     "answer": 1,
-    "explanation": "NPV = nilai target + sinergi - biaya integrasi - harga = 100 + 8 - 3 - 110 = minus Rp5 juta. Secara finansial tawaran ini ditolak atau harga diturunkan. Kenaikan pendapatan konsolidasi tidak mengimbangi otomatis pembayaran di atas tambahan nilai yang diterima. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "explanation": "NPV = nilai target + sinergi - biaya integrasi - harga = 100 + 8 - 3 - 110 = minus Rp 5 juta. Secara finansial tawaran ini ditolak atau harga diturunkan. Kenaikan pendapatan konsolidasi tidak mengimbangi otomatis pembayaran di atas tambahan nilai yang diterima. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "sourceAnchors": [
       "Akuisisi bernilai negatif"
@@ -1671,7 +1671,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
     "skill": "Penyebut X4",
     "difficulty": "medium",
-    "q": "Dalam model original Z, nilai pasar seluruh ekuitas Rp150 miliar, total kewajiban buku Rp300 miliar, utang berbunga Rp100 miliar. Berapa X4? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
+    "q": "Dalam model original Z, nilai pasar seluruh ekuitas Rp 150 miliar, total kewajiban buku Rp 300 miliar, utang berbunga Rp 100 miliar. Berapa X4? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
     "options": [
       "1,50 kali",
       "2,00 kali",
@@ -1679,7 +1679,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
       "0,50 kali"
     ],
     "answer": 3,
-    "explanation": "X4 original = nilai pasar ekuitas/nilai buku total kewajiban = 150/300 = 0,50 kali. Kewajiban lancar dan jangka panjang masuk penyebut; utang berbunga saja Rp100 miliar terlalu sempit. Ekuitas buku tidak menggantikan nilai pasar dalam model original. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
+    "explanation": "X4 original = nilai pasar ekuitas/nilai buku total kewajiban = 150/300 = 0,50 kali. Kewajiban lancar dan jangka panjang masuk penyebut; utang berbunga saja Rp 100 miliar terlalu sempit. Ekuitas buku tidak menggantikan nilai pasar dalam model original. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
     "sourceRef": "Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
     "sourceAnchors": [
       "Penyebut X4"
@@ -1691,7 +1691,7 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
     "skill": "Sensitivitas skor distress",
     "difficulty": "advanced",
-    "q": "Aset berwujud Rp100 miliar; EBIT turun dari Rp8 menjadi Rp2 miliar. Semua rasio lain pada model original Z tetap. Berapa perubahan skor Z? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
+    "q": "Aset berwujud Rp 100 miliar; EBIT turun dari Rp 8 menjadi Rp 2 miliar. Semua rasio lain pada model original Z tetap. Berapa perubahan skor Z? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
     "options": [
       "Turun 0,198 poin",
       "Turun 0,060 poin",
@@ -1711,15 +1711,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
     "skill": "Pilihan pemulihan ekonomi",
     "difficulty": "medium",
-    "q": "PV usaha setelah reorganisasi Rp120 miliar, biaya proses Rp15 miliar. Nilai jual aset Rp95 miliar, biaya likuidasi Rp8 miliar. Dengan asumsi nilai dan risiko sudah sebanding, selisih nilai bersihnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
+    "q": "PV usaha setelah reorganisasi Rp 120 miliar, biaya proses Rp 15 miliar. Nilai jual aset Rp 95 miliar, biaya likuidasi Rp 8 miliar. Dengan asumsi nilai dan risiko sudah sebanding, selisih nilai bersihnya? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
     "options": [
-      "Likuidasi lebih tinggi Rp18 miliar",
-      "Reorganisasi lebih tinggi Rp18 miliar",
-      "Reorganisasi lebih tinggi Rp25 miliar",
-      "Kedua pilihan bernilai Rp105 miliar"
+      "Likuidasi lebih tinggi Rp 18 miliar",
+      "Reorganisasi lebih tinggi Rp 18 miliar",
+      "Reorganisasi lebih tinggi Rp 25 miliar",
+      "Kedua pilihan bernilai Rp 105 miliar"
     ],
     "answer": 1,
-    "explanation": "Nilai bersih reorganisasi = 120 - 15 = Rp105 miliar; likuidasi = 95 - 8 = Rp87 miliar. Selisih = Rp18 miliar mendukung keberlanjutan secara ekonomi pada asumsi soal. Kelangsungan kas, kesepakatan kreditur, dan prosedur yurisdiksi perlu dinilai; angka ini tidak menentukan putusan pengadilan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
+    "explanation": "Nilai bersih reorganisasi = 120 - 15 = Rp 105 miliar; likuidasi = 95 - 8 = Rp 87 miliar. Selisih = Rp 18 miliar mendukung keberlanjutan secara ekonomi pada asumsi soal. Kelangsungan kas, kesepakatan kreditur, dan prosedur yurisdiksi perlu dinilai; angka ini tidak menentukan putusan pengadilan. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
     "sourceAnchors": [
       "Pilihan pemulihan ekonomi"
@@ -1751,15 +1751,15 @@ export const MNK201_QUIZ_UAS: QuizQuestion[] = [
     "topic": "Corporate Failure: Kesulitan Keuangan dan Pemulihan",
     "skill": "Likuiditas dan solvabilitas",
     "difficulty": "advanced",
-    "q": "Kas awal Rp10 juta, penerimaan bulan ini Rp40 juta, pembayaran wajib Rp65 juta. Aset Rp200 juta dan kewajiban Rp175 juta. Berapa defisit kas sebelum pendanaan dan kesimpulan awal? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
+    "q": "Kas awal Rp 10 juta, penerimaan bulan ini Rp 40 juta, pembayaran wajib Rp 65 juta. Aset Rp 200 juta dan kewajiban Rp 175 juta. Berapa defisit kas sebelum pendanaan dan kesimpulan awal? Skenario latihan: semua angka, tarif pajak, bunga, dan kurs adalah asumsi soal, bukan data pasar atau tarif hukum terkini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
     "options": [
-      "Defisit Rp25 juta; ekuitas buku sudah negatif Rp15 juta",
-      "Surplus Rp15 juta; seluruh kewajiban otomatis dapat dibayar",
-      "Defisit Rp15 juta; putusan pailit otomatis sudah terjadi",
-      "Defisit Rp15 juta; ekuitas buku masih Rp25 juta"
+      "Defisit Rp 25 juta; ekuitas buku sudah negatif Rp 15 juta",
+      "Surplus Rp 15 juta; seluruh kewajiban otomatis dapat dibayar",
+      "Defisit Rp 15 juta; putusan pailit otomatis sudah terjadi",
+      "Defisit Rp 15 juta; ekuitas buku masih Rp 25 juta"
     ],
     "answer": 3,
-    "explanation": "Kas akhir sebelum pendanaan = 10 + 40 - 65 = minus Rp15 juta. Ekuitas buku = 200 - 175 = Rp25 juta. Kekurangan kas jangka pendek dapat terjadi saat ekuitas buku positif; periksa jatuh tempo, piutang tertagih, dan akses dana. Distress kas, insolvensi ekonomi, dan status hukum pailit mempunyai ukuran berbeda. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
+    "explanation": "Kas akhir sebelum pendanaan = 10 + 40 - 65 = minus Rp 15 juta. Ekuitas buku = 200 - 175 = Rp 25 juta. Kekurangan kas jangka pendek dapat terjadi saat ekuitas buku positif; periksa jatuh tempo, piutang tertagih, dan akses dana. Distress kas, insolvensi ekonomi, dan status hukum pailit mempunyai ukuran berbeda. Gunakan satuan dan periode yang tertulis; simpan presisi selama perhitungan, lalu bulatkan hasil akhir sesuai pilihan. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
     "sourceRef": "Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304).",
     "sourceAnchors": [
       "Likuiditas dan solvabilitas"

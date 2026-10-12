@@ -63,7 +63,7 @@ const z=(x)=>1.2*x[0]+1.4*x[1]+3.3*x[2]+.6*x[3]+x[4];
 assert.equal(z([.1,.2,.08,.5,1.2]).toFixed(3),'2.164');
 assert.equal(z([.1,.2,.02,.5,1.2]).toFixed(3),'1.966');
 assert.ok(banks[6].answerGuide.includes('0,61045295')&&banks[6].answerGuide.includes('1,38954705'));
-assert.ok(banks[10].answerGuide.includes('Rp185 miliar')&&banks[11].answerGuide.includes('minus Rp5 juta'));
+assert.match(banks[10].answerGuide,/Rp\s*185 miliar/);assert.match(banks[11].answerGuide,/minus Rp\s*5 juta/);
 const flatten=blocks=>blocks.flatMap(b=>[b,...('blocks' in b?flatten(b.blocks):[])]);
 for (const tm of tms) {
   const r=m.MNK201_READINGS[tm];assert.equal(r.tm,tm);assert.ok(r.ref);
@@ -73,7 +73,7 @@ for (const tm of tms) {
   assert.ok(!JSON.stringify(r).includes('—'),'no em dash in scoped reading');
   assert.ok(!/bukan[\s\S]{0,80}melainkan|tidak hanya[\s\S]{0,80}tetapi juga/i.test(JSON.stringify(r)));
 }
-assert.equal(m.MNK201_REVIEW_READINGS.uts,m.MNK201_READINGS[8]);assert.equal(m.MNK201_REVIEW_READINGS.uas,undefined);
+assert.deepEqual({...m.MNK201_REVIEW_READINGS.uts,tm:8},m.MNK201_READINGS[8]);assert.equal(m.MNK201_REVIEW_READINGS.uts.tm,0);assert.equal(m.MNK201_REVIEW_READINGS.uas.tm,16);
 const course=m.ALL_COURSES.find(x=>x.course.code==='MNK102').course;
 assert.equal(course.flashcardCount,m.MNK201_FC.length);
 assert.deepEqual(course.materiTM8_14.map(c=>c.tm),tms);

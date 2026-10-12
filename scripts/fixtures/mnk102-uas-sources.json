@@ -12,9 +12,11 @@
       "sha256": "b84d525bdc951e810ccd9a0121332f7b3df03ba39460bea88c52d198e4cf0ff9"
     },
     {
-      "id": "lecture9",
+      "id": "student-w9",
       "file": "W9_Case_Study_Kelompok_7.pdf",
-      "sha256": "7998dba4fb4bc0bf58ed933c76de1746f137407f8ac7cebbbf65822f718b1706"
+      "sha256": "7998dba4fb4bc0bf58ed933c76de1746f137407f8ac7cebbbf65822f718b1706",
+      "category": "student-supplementary-not-lecturer",
+      "usage": "Curricular case pattern only; textbook is the numeric authority."
     },
     {
       "id": "altman",
@@ -30,11 +32,11 @@
     "reviewedRanges": [
       [
         478,
-        517
+        520
       ],
       [
-        519,
-        555
+        521,
+        556
       ],
       [
         559,
@@ -45,7 +47,7 @@
         661
       ],
       [
-        741,
+        740,
         767
       ],
       [

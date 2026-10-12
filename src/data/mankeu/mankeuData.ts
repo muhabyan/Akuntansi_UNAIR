@@ -16,6 +16,7 @@ import { TM12_READING } from './modules/tm12';
 import { TM13_READING } from './modules/tm13';
 import { TM14_READING } from './modules/tm14';
 import { TM15_READING } from './modules/tm15';
+import { MNK102_UAS_READING } from './modules/reviewUas';
 
 export const MNK201_READINGS: Record<number, Reading> = {
   1: TM1_READING,
@@ -36,5 +37,6 @@ export const MNK201_READINGS: Record<number, Reading> = {
 };
 
 export const MNK201_REVIEW_READINGS: Record<string, Reading> = {
-  uts: TM8_READING,
+  uts: { ...TM8_READING, tm: 0 },
+  uas: MNK102_UAS_READING,
 };

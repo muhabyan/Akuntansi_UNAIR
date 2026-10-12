@@ -1,56 +1,69 @@
-# Manajemen Keuangan MNK102: audit pra-UAS
+# Audit Manajemen Keuangan pra-UAS
 
-Paket mengikuti tujuh pertemuan TM09-TM15, berdasarkan `Kontrak MK 2026.xlsx`, Sheet1 A26:E32. TM08 adalah UTS dan TM16 UAS. Sheet2 merupakan daftar topik tanpa pemisahan minggu ujian; penomoran paket memakai kalender Sheet1. Kode MNK102/FEB25603012 mengikuti koreksi katalog pada PR #55.
+MNK102/FEB25603012 mengikuti tujuh pertemuan TM09-TM15, berdasarkan kalender Sheet1 kontrak. UTS berada pada minggu 8 dan UAS pada minggu 16. Kunci review aplikasi adalah 0 dan 16; isi pra-UTS tetap dipertahankan. Ekspor MNK201 menjaga kompatibilitas data dan tautan lama.
 
-| TM | Cakupan | Buku lokal 16e | Kuis | Flashcard | Kasus |
-|---:|---|---|---:|---:|---:|
-| 9 | Struktur modal, risiko, leverage, Hamada, WACC | Bab14, cetak478-517 / PDF520-559 | 12 | 6 | 2 |
-| 10 | Dividen residual, distribusi, buyback, split | Bab15, cetak519-555 / PDF561-597 | 10 | 6 | 2 |
-| 11 | Kebijakan modal kerja, CCC, anggaran kas, piutang | Bab16, cetak559-581 / PDF601-623 | 8 | 6 | 2 |
-| 12 | Persediaan, diskon pemasok dan pendanaan pendek | Bab16, cetak577-589 / PDF619-631 | 8 | 6 | 2 |
-| 13 | Kurs, tenor, IRP/PPP, hedge dan proyek lintas negara | Bab18, cetak625-661 / PDF667-703 | 8 | 6 | 2 |
-| 14 | Sinergi, valuasi, penawaran dan pembayaran saham | Bab21, cetak741-767 / PDF783-809 | 8 | 6 | 2 |
-| 15 | Corporate failure, indikator distress dan pemulihan | Altman2002 PDF9-18; Bab7 cetak261-262 / PDF303-304 | 6 | 6 | 2 |
-| **Total** | **Tujuh TM** | | **60** | **42** | **14** |
+| TM | Materi | Kuis | Flashcard | Bank soal | Diagram |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 09 | Struktur modal dan leverage | 12 | 6 | 2 | 10 |
+| 10 | Distribusi kepada pemegang saham | 10 | 6 | 2 | 3 |
+| 11 | Modal kerja I: kebijakan aset, siklus dan kas | 8 | 6 | 2 | 4 |
+| 12 | Modal kerja II: persediaan dan pendanaan | 8 | 6 | 2 | 2 |
+| 13 | Keuangan multinasional | 8 | 6 | 2 | 2 |
+| 14 | Merger dan akuisisi | 8 | 6 | 2 | 3 |
+| 15 | Corporate Failure dan analisis distress | 6 | 6 | 2 | 2 |
+| Total tujuh TM | | 60 | 42 | 14 | 26 |
 
-## Sumber dan prioritas
+Review UAS 16 menambahkan satu diagram dan tujuh contoh yang dipilih kembali dari sumber tiap TM. Diagram keseluruhan berjumlah 27. Contoh dalam bacaan memakai input buku atau bukti artikel. TM15 berisi dua kasus analisis sumber, karena artikel tidak memberikan data perusahaan untuk contoh hitungan lengkap. Kasus bank dan kuis memakai asumsi buatan yang dinyatakan, disertai rujukan konsep/formula; jumlahnya tidak mencakup contoh bacaan yang diulang pada review.
 
-Kontrak menyebut Brigham & Houston, *Fundamentals of Financial Management*, edisi15 (2019). Buku lokal adalah edisi16, copyright2022, sebanyak866 halaman PDF. Selisih halaman PDF terhadap cetak adalah42 dan diperiksa pada beberapa bab. Buku tersedia di folder `Manajemen Keuangan/Materi`; tidak ada paket kanonis04/05 yang ditemukan untuk mata kuliah ini. Nomor bab dipetakan menurut topik, terutama multinasional: kontrak Bab19, buku16e Bab18. Bab19 buku lokal membahas derivatif. Perubahan susunan ini dikonfirmasi pada [penerbit Cengage](https://www.cengage.ca/c/fundamentals-of-financial-management-16e-brigham-houston/9780357517574/).
+## Pipeline dan implementasi
 
-Tugas lokal `W9_Case_Study_Kelompok_7.pdf` memperlihatkan pola kasus Campus Deli, DOL, ROIC, ROE, risiko dan struktur modal. Data serta rumus diperiksa terhadap buku dan halaman PDF7-18 tugas. Karena tidak ada arsip UAS yang teridentifikasi, porsi struktur modal lebih besar merupakan perkiraan prioritas berdasarkan contoh tersebut serta kontrak, tanpa menjanjikan soal ujian.
+Sumber dimasukkan melalui system/ingestion, dengan shared library dan cache hash. XLSX dikonversi ke CSV yang mempertahankan nama sheet dan alamat sel, karena ingestion tidak mendukung XLSX langsung. Berkas XLSX asli tetap disimpan beserta SHA256. Materi tidak disimpulkan dari nama file.
 
-Artikel corporate failure yang dimaksud dosen belum mempunyai judul atau berkas yang dapat diidentifikasi. [Artikel primer Edward Altman2002 dari NYU Stern](https://w4.stern.nyu.edu/finance/docs/WP/2002/pdf/wpa02052.pdf) menjadi pelengkap yang disebut jelas pada TM15. Artikel membedakan model original, privat, nonmanufaktur, dan pemetaan peluang default. Skor bukan probabilitas langsung, dan hasil model tidak menetapkan status hukum pailit. Keterbatasan ini muncul dalam bacaan serta latihan.
+Paket lokal dan paket di Git memuat inventaris, matriks unit, audit keputusan, 00/04/05/06/07, serta laporan fase 1 dan 2. Pengguna mendelegasikan pengerjaan mandiri setelah membaca handoff. Batas sumber yang belum dapat dipastikan tetap dinyatakan; persetujuan dosen tidak diklaim.
 
-Setiap latihan baru mencantumkan halaman cetak/PDF atau halaman artikel yang dapat ditelusuri. Kuis memiliki ID, kompetensi, sourceRef dan sourceAnchors. Konteks dan pembahasan bank memuat rujukan; bagian belakang flashcard juga memuat rujukan. Manifest `scripts/fixtures/mnk102-uas-sources.json` mencatat hash sumber, edisi, rentang yang diperiksa, serta fingerprint pra-UTS.
+Modul TM09-TM15 dan review UAS dihasilkan dari 05 melalui scripts/convert-mnk102.mjs, diadaptasi dari konverter AKA201 v2. Hasil CRLF dijaga melalui atribut Git. Setiap bacaan memiliki Kilat, Inti dengan self-check, Pendalaman tertutup, contoh dengan pembahasan tertutup, dan Persiapan Ujian. SVG menggunakan kelas tema dan overview HP. Daftar simpul terstruktur menjaga satu kebijakan atau skenario tetap satu kelompok walaupun kalimatnya memiliki titik koma.
 
-## Hasil audit isi
+Lima file final per TM09-TM16, total 40 file, memiliki SHA256 sama pada work copy Git, C:/AkuntansiHub-Content-Agent/content-pipeline/MNK102, dan C:/cek/.content-inbox/MNK102. Salinan berbeda yang sudah ada tidak ditimpa; revisi file milik tugas ini memeriksa hash lama dan menyimpan backup. Sumber utuh hanya disimpan lokal di course-sources/MNK102, bukan di GitHub.
 
-- Rujukan Brigham & Ehrhardt pada bacaan lama diganti dengan Brigham & Houston yang tersedia dan sesuai kontrak. Bab keuangan multinasional dijelaskan menurut edisinya.
-- TM15 berdiri sendiri. Merger tetap TM14; corporate failure tidak digabung menjadi salinan ulasan UAS.
-- Struktur optimal tidak ditentukan dari EPS tertinggi. WACC menggunakan bobot dan biaya utang setelah pajak; Hamada memakai D/E, bukan D/total modal.
-- Dividen residual tidak negatif; kebutuhan ekuitas, utang, payout dan DPS dibedakan. Split/buyback tidak dianggap menciptakan nilai secara mekanis.
-- CCC, saldo minimum dan pembelian/COGS diberi asumsi eksplisit. Investasi yang dilepas sekali dibedakan dari penghematan biaya tahunan.
-- Bunga nominal/efektif, tenor dan basis hari dipisahkan. Contoh potongan awal/saldo kompensasi merupakan pengembangan arus kas sesuai syarat kasus. Pendalaman persediaan/pendanaan pada Web Appendix16A/16B belum tersedia sebagai sumber lokal lengkap; klaim prioritas EOQ, Baumol atau Miller-Orr dari versi lama tidak dianggap pasti diuji tanpa sumber dosen tambahan.
-- Kurs menuliskan arah IDR/USD atau IDR/JPY. IRP memakai bunga setenor; PPP merupakan model proyeksi. Hedge memberi kepastian kas dengan kemungkinan biaya peluang.
-- Valuasi operasi/WACC dipisahkan dari ekuitas/biaya ekuitas. Terminal didiskonto pada tanggal yang benar, dan sinergi tidak dihitung dua kali. EPS accretion tidak membuktikan NPV positif.
-- Z original menggunakan nilai pasar seluruh ekuitas dan nilai buku total kewajiban, dengan konteks manufaktur publik dan aset yang sesuai. Koefisien serta batas tidak ditukar sebagian antarvarian.
+Legacy tm14 sebelum pembaruan disimpan sebagai LEGACY_UAS di modules/legacy/tm14.ts untuk audit. Pernyataan lama tentang kepastian kebangkrutan tidak dimount sebagai bacaan atau review aktif. Review 16 merupakan rangkuman bersumber dari tujuh TM.
 
-Angka, bunga, kurs dan pajak latihan merupakan asumsi. Kasus hipotetis tidak memakai nama perusahaan riil sebagai klaim data terbaru. Tarif pajak25% pada contoh Campus Deli adalah parameter sumber kasus, bukan tarif Indonesia yang berlaku kini. Chapter7/11 buku dijelaskan sebagai konteks Amerika; tidak disamakan dengan prosedur Indonesia.
+## Sumber dan batas cakupan
 
-## Pra-UTS dan kompatibilitas
+Sumber utama: Kontrak MK 2026.xlsx (Sheet1 A26:E33), Brigham dan Houston, Fundamentals of Financial Management 16e (2022), serta artikel primer [Altman (2002)](https://w4.stern.nyu.edu/finance/docs/WP/2002/pdf/wpa02052.pdf). Identitas buku dicocokkan dengan [penerbit Cengage](https://www.cengage.ca/c/fundamentals-of-financial-management-16e-brigham-houston/9780357517574/). Buku pada kontrak adalah edisi 15 (2019); edisi lokal 16 dipetakan berdasarkan topik dan halaman. Bahan W9 adalah tugas mahasiswa, sehingga tidak diklaim sebagai slide dosen atau otoritas angka.
 
-TM01-TM08 tidak diedit. Sebanyak35 kuis pra-UTS,42 flashcard TM01-TM07, dan7 kasus pra-UTS tetap identik. Ulasan TM08 yang dulu masuk kelompok pra-UAS tetap tersedia:5 kuis,6 kartu,1 bank. Kartu ulasan direklasifikasi ke pra-UTS, sementara isi dan ID dipertahankan. Jumlah seluruh deck menjadi90 kartu, termasuk42 kartu pra-UAS baru. Paket UTS aplikasi kini mengikutsertakan ulasan lama tersebut.
+Halaman cetak buku = halaman PDF - 42. Rentang utama: Bab 14 hal. 478-520, Bab 15 hal. 521-556, Bab 16 hal. 559-596, Bab 18 hal. 625-661, Bab 21 hal. 740-767, serta reorganisasi/likuidasi hal. 262. Rujukan spesifik berada pada paragraf, tabel, diagram, rumus, dan setiap latihan.
 
-Ekspor dan berkas internal MNK201 dipertahankan; MNK102 serta alias lama membuka data sama. Latihan pra-UAS baru memakai ID berversi agar status soal/kartu lama tidak salah diterapkan ke isi baru. Perubahan dataset membatalkan pemulihan sesi ujian lama melalui pemeriksaan fingerprint aplikasi yang sudah ada. Berkas flashcard dikeluarkan dari generator lama agar materi baru tidak tertimpa saat generator dijalankan.
+- Kontrak menulis Bab 19 untuk topik multinasional pada edisi 15. Buku lokal edisi 16 menempatkannya pada Bab 18. Nama topik menjadi dasar pemetaan.
+- Pembagian Bab 16 menjadi bagian I/II tidak merinci batas subbab. TM11 memusatkan kebijakan aset, CCC, anggaran kas dan piutang; TM12 persediaan dan sumber pendanaan.
+- Web Appendix 16A/16B belum tersedia. EOQ, discount interest dan compensating balance tidak diangkat menjadi teori kanonik. Latihan arus kas terkait tetap memakai syarat buatan yang jelas; contoh kanonik bunga bank memakai hal. 587.
+- Artikel Corporate Failure yang ditugaskan dosen belum teridentifikasi. Altman adalah artikel primer pelengkap, dengan batas populasi dan varian model. Status konten READY_WITH_SCOPE_LIMITATION.
+- Tarif pajak, bunga dan kurs dalam soal adalah parameter kasus, bukan ketentuan hukum atau harga pasar kini. Contoh buku berlabel tahun/konteks sumber, termasuk pajak dan hukum Amerika. Chapter 7/11 tidak disamakan dengan prosedur Indonesia.
+- Prioritas UAS merupakan perkiraan dari RPP dan contoh buku/tugas. Arsip ujian tidak ditemukan dalam sumber yang diperiksa.
+- Pembulatan kas Allied dijelaskan: tabel memakai juta USD tanpa desimal; hasil presisi menghasilkan kebutuhan 21,2, sedangkan tabel 21. Forward Swiss dihitung ulang 219.591.033,6589 USD dan dibulatkan 219.591.034 USD, sesuai kunci buku.
 
-Filter fase flashcard memakai rentang data sebenarnya dan memeriksa pertemuan yang tersedia pada fase pilihan, termasuk ulasan TM08. Materi Pengantar Manajemen, Manajemen Stratejik, PR45/worktree perapian-pr45, UpdateNotifier dan index.css tidak diubah.
+## Verifikasi
 
-## Validasi
+| Pemeriksaan | Hasil |
+| --- | --- |
+| Lint | Lulus |
+| TypeScript | Lulus |
+| Build produksi | Lulus; peringatan chunk besar sudah ada pada baseline |
+| Seluruh tes standar | 70/70 lulus, tidak ada skip |
+| Kanonik per TM | 8 hasil konverter byte identik, CRLF, SHA sumber, 27 diagram, larangan frasa, rumus KaTeX strict |
+| Hitungan | Kunci 60 kuis dihitung ulang independen, beserta contoh Barnes, Bigbee, residual, GFI, Allied, trade credit, bunga bank, kurs dan Apex |
+| Komponen aplikasi | Opsi benar/salah setelah pengacakan, penilaian 60/60 = 100%, 14 bank terbuka, rumus/pembahasan, self-check, filter dan flip flashcard TM15 |
+| Runtime smoke | Lulus: aset, route, timer, fingerprint dan penyimpanan sesi |
+| E2E standar | Lulus dengan port Chrome terisolasi 9366 dan preview 4287 |
+| Browser MNK102 | Semua tujuh bacaan dan review16 pada desktop 1440px serta 375px terang/gelap; overflow halaman 0, label SVG di dalam canvas, sumber dan rumus tampil |
+| Pra-UTS | Hash isi TM1-TM8 dan latihan asli tetap cocok |
+| Perlindungan | 121 file dan katalog ManStrat lolos guard; area terlarang tidak diubah |
 
-Baseline pada commit41d7456 telah lulus67/67 tugas standar. Paket ini lulus69/69, termasuk dua guard baru. Lint, TypeScript/build, runtime smoke dan browser E2E standar lulus. Pemeriksaan mandiri menghitung kembali kunci numerik, pembulatan, arus kas, kuotasi kurs dan skor Z; distribusi indeks jawaban15/15/15/15 serta panjang opsi diperiksa.
+Percobaan awal di sandbox gagal 12 dari 70 tugas; baseline yang dijalankan dalam lingkungan sama gagal 13 dari 69. Penyebabnya pemuatan CJS React oleh Vite, penolakan rename cache sementara, dan proses Chrome yang tidak dapat berjalan. Tidak ada kegagalan baru pada perbandingan itu. Menjalankan tes di Windows tanpa pembatasan sandbox menghasilkan 70/70 lulus. Tes keuangan memakai bundler komponen dengan satu instance React agar interaksi tidak bergantung pada pemuat CJS SSR.
 
-Komponen aplikasi diuji untuk teks dan rumus, pengacakan opsi, pilihan benar/salah, seluruh pembahasan, nilai ujian60/60 dan100%, membuka14 bank, dua pembahasan perTM, filter serta pembalikan kartuTM15. Browser nyata pada1440px dan390px menguji rute MNK102/MNK201/FEB25603012, tujuh TM, sumber Altman, formula dan pembahasan TM15, kuis, bank, serta42 kartu.
+E2E pertama bertemu endpoint Lenovo pada port debugging default 9222. Pengujian ulang memakai port terpisah dan lulus, tanpa mengubah aplikasi atau melonggarkan pemeriksaan. Peringatan DOM <p> bersarang pada runtime adalah baseline dan tetap dicatat. Tidak ada kegagalan akhir yang belum diselesaikan.
 
-Kesalahan baru yang ditemukan selama pengerjaan berupa decoding UTF-8 pada sumber pra-UTS, rumus Z yang belum memicu mode matematika renderer, dan pemilih/waktu tunggu skrip browser. Semuanya diperbaiki; fingerprint pra-UTS serta pemeriksaan renderer kini lulus. Peringatan chunk besar dan DOM paragraf bersarang pada runtime tetap ada pada baseline, tanpa kegagalan tes.
+## Git dan langkah berikutnya
 
-Entri v1.3.6 ditambahkan di atas riwayat yang tetap utuh. Cabang materi berasal dari hasil koreksi PR #55; selama #55 belum merge, PR materi menggunakan cabang koreksi sebagai dasar agar diff hanya memuat pekerjaan MNK102. Setelah koreksi masuk main, dasar PR materi dapat dialihkan ke main. Tidak ada merge otomatis.
+PR draft: https://github.com/muhabyan/Akuntansi_UNAIR/pull/58. PR ini tetap bergantung pada PR #55 untuk kode katalog, sehingga perubahan materi dan kode mata kuliah tetap pada PR terpisah. Cabang aktif belum merged; tidak memakai ulang cabang PR yang telah merged. Setelah #55 digabung, base #58 perlu diarahkan ke main untuk pemeriksaan akhir dan merge oleh pengguna.
+
+PR45, perapian-pr45, perapian-lanjutan, src/data/manstrat, UpdateNotifier.tsx dan src/index.css tidak disentuh. Hanya satu entri release notes v1.3.6 yang ditambahkan oleh PR ini, dengan entri lama tetap utuh. Pekerjaan berhenti pada Manajemen Keuangan.

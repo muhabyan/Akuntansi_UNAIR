@@ -293,7 +293,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. EBIT = 1.100.000 - 660.000 - 40.000 = USD400.000; DOL=440.000/400.000=1,10. NOPAT=300.000; ROIC=300.000/2.000.000=15%.\n2. Tanpa utang NI=300.000; EPS=300.000/80.000=USD3,75. Saham dibeli=400.000/25=16.000; tersisa64.000. Bunga=40.000; NI=(400.000-40.000)×75%=270.000; EPS=USD4,21875 atau4,22.\n3. D/E=400.000/1.600.000=0,25; beta L=1,25[1+0,75×0,25]=1,484375. rs=7,5%+1,484375×6%=16,40625%. WACC=0,20×10%×75%+0,80×16,40625%=14,625%. Bobot model menahan ekuitas pada angka asumsi, sehingga belum menyelesaikan harga pasar endogen.\n4. EBIT turun20% menjadi320.000. NI tanpa utang240.000; EPS3,00. NI berutang210.000; EPS3,28125. EPS berutang turun22,2222% dari4,21875, lebih peka daripada EPS tanpa utang yang turun20%. Manfaat pajak disertai sensitivitas laba, risiko pembiayaan ulang, serta biaya ekuitas. Penilaian alternatif perlu kas operasi dan biaya modal yang konsisten, bukan sekadar EPS tertinggi.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 484-498 (PDF 526-540). Rujukan lokal: W9_Case_Study_Kelompok_7.pdf, halaman PDF 7-18."
+    "answerGuide": "1. EBIT = 1.100.000 - 660.000 - 40.000 = USD400.000; DOL=440.000/400.000=1,10. NOPAT=300.000; ROIC=300.000/2.000.000=15%.\n2. Tanpa utang NI=300.000; EPS=300.000/80.000=USD3,75. Saham dibeli=400.000/25=16.000; tersisa 64.000. Bunga=40.000; NI=(400.000-40.000)×75%=270.000; EPS=USD4,21875 atau 4,22.\n3. D/E=400.000/1.600.000=0,25; beta L=1,25[1+0,75×0,25]=1,484375. rs=7,5%+1,484375×6%=16,40625%. WACC=0,20×10%×75%+0,80×16,40625%=14,625%. Bobot model menahan ekuitas pada angka asumsi, sehingga belum menyelesaikan harga pasar endogen.\n4. EBIT turun 20% menjadi 320.000. NI tanpa utang 240.000; EPS3,00. NI berutang 210.000; EPS3,28125. EPS berutang turun 22,2222% dari 4,21875, lebih peka daripada EPS tanpa utang yang turun 20%. Manfaat pajak disertai sensitivitas laba, risiko pembiayaan ulang, serta biaya ekuitas. Penilaian alternatif perlu kas operasi dan biaya modal yang konsisten, bukan sekadar EPS tertinggi.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 484-498 (PDF 526-540). Rujukan lokal: W9_Case_Study_Kelompok_7.pdf, halaman PDF 7-18."
   },
   {
     "type": "calculation",
@@ -303,14 +303,14 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Memilih bauran pendanaan ketika risiko dan biaya utang berubah",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-503 (PDF 536-545).",
     "data": [
-      "Model A: bobot utang0%; rd0%; rs12%; EPS Rp4.",
-      "B: utang40%; rd9%; rs14%; EPS Rp4,50. C: utang60%; rd13%; rs18%; EPS Rp5.",
-      "Pajak model25%; FCF operasi tetap Rp12 miliar/tahun tanpa pertumbuhan; nilai=FCF/WACC."
+      "Model A: bobot utang 0%; rd 0%; rs 12%; EPS Rp 4.",
+      "B: utang 40%; rd 9%; rs 14%; EPS Rp 4,50. C: utang 60%; rd 13%; rs 18%; EPS Rp 5.",
+      "Pajak model 25%; FCF operasi tetap Rp 12 miliar/tahun tanpa pertumbuhan; nilai=FCF/WACC."
     ],
     "instructions": [
       "Hitung WACC ketiga alternatif memakai biaya utang setelah pajak.",
       "Hitung nilai operasi dan pilih bauran berdasarkan nilai.",
-      "Bandingkan dengan pilihan berdasarkan EPS; jelaskan sensitivitas jika FCF C turun menjadi Rp10 miliar.",
+      "Bandingkan dengan pilihan berdasarkan EPS; jelaskan sensitivitas jika FCF C turun menjadi Rp 10 miliar.",
       "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
     ],
     "outputFormat": [
@@ -324,7 +324,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "A: WACC=12%; nilai12/0,12=Rp100 miliar. B:0,40×9%×75%+0,60×14%=11,10%; nilai12/0,111=Rp108,108108 miliar. C:0,60×13%×75%+0,40×18%=13,05%; nilai12/0,1305=Rp91,954023 miliar. B memaksimalkan nilai meski EPS C tertinggi. Asumsi kas tetap membuat perbandingan diskonto jelas; biaya ekuitas dan utang sudah mencerminkan peningkatan risiko. Jika FCF C menjadi10, nilainya10/0,1305=Rp76,628352 miliar. Model perpetuitas tidak mempunyai pertumbuhan dan memerlukan WACC positif. Bobot adalah nilai pasar target dan biaya modal harus cocok dengan risiko masing-masing. Perisai pajak hanya dikenakan pada biaya utang; mengalikan seluruh WACC dengan75% akan menurunkan nilai biaya modal secara keliru.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-503 (PDF 536-545)."
+    "answerGuide": "A: WACC=12%; nilai 12/0,12=Rp 100 miliar. B:0,40×9%×75%+0,60×14%=11,10%; nilai 12/0,111=Rp 108,108108 miliar. C:0,60×13%×75%+0,40×18%=13,05%; nilai 12/0,1305=Rp 91,954023 miliar. B memaksimalkan nilai meski EPS C tertinggi. Asumsi kas tetap membuat perbandingan diskonto jelas; biaya ekuitas dan utang sudah mencerminkan peningkatan risiko. Jika FCF C menjadi 10, nilainya 10/0,1305=Rp 76,628352 miliar. Model perpetuitas tidak mempunyai pertumbuhan dan memerlukan WACC positif. Bobot adalah nilai pasar target dan biaya modal harus cocok dengan risiko masing-masing. Perisai pajak hanya dikenakan pada biaya utang; mengalikan seluruh WACC dengan 75% akan menurunkan nilai biaya modal secara keliru.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-503 (PDF 536-545)."
   },
   {
     "type": "calculation",
@@ -334,9 +334,9 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Dividen residual, kekurangan dana, dan payout",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 525-533 (PDF 567-575).",
     "data": [
-      "Laba bersih Rp150 juta; kas tersedia untuk keputusan ini cukup.",
-      "Proyek dasar Rp200 juta; target ekuitas60%, utang40%; saham10 juta lembar.",
-      "Alternatif perluasan proyek Rp300 juta dengan target sama."
+      "Laba bersih Rp 150 juta; kas tersedia untuk keputusan ini cukup.",
+      "Proyek dasar Rp 200 juta; target ekuitas 60%, utang 40%; saham 10 juta lembar.",
+      "Alternatif perluasan proyek Rp 300 juta dengan target sama."
     ],
     "instructions": [
       "Hitung kebutuhan ekuitas dan utang, dividen, payout dan DPS rencana dasar.",
@@ -355,7 +355,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "Dasar: ekuitas0,60×200=Rp120 juta; utang0,40×200=Rp80 juta. Residual150-120=Rp30 juta; payout30/150=20%; retention80%; DPS30 juta/10 juta=Rp3/lembar. Perluasan: ekuitas180, utang120 juta; laba150 menyisakan kekurangan30 juta, sehingga dividen residual nol. Kekurangan memerlukan emisi ekuitas, pengurangan proyek, atau penyesuaian target yang dinilai terpisah. Laba akuntansi tidak identik dengan kas: kasus sengaja menyatakan kas mencukupi. Dividen residual dapat berfluktuasi bersama peluang investasi; manajemen perlu mengomunikasikan alasan perubahan. Payout bukan persentase investasi; kebutuhan dana ekuitas dihitung lebih dahulu. Keputusan proyek mengasumsikan semua proyek sudah layak berdasarkan NPV, sehingga laba ditahan diarahkan ke investasi yang menciptakan nilai. Sinyal kenaikan/penurunan dividen tetap harus diuji terhadap kemampuan menghasilkan kas.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 525-533 (PDF 567-575)."
+    "answerGuide": "Dasar: ekuitas 0,60×200=Rp 120 juta; utang 0,40×200=Rp 80 juta. Residual 150-120=Rp 30 juta; payout 30/150=20%; retention 80%; DPS30 juta/10 juta=Rp 3/lembar. Perluasan: ekuitas 180, utang 120 juta; laba 150 menyisakan kekurangan 30 juta, sehingga dividen residual nol. Kekurangan memerlukan emisi ekuitas, pengurangan proyek, atau penyesuaian target yang dinilai terpisah. Laba akuntansi tidak identik dengan kas: kasus sengaja menyatakan kas mencukupi. Dividen residual dapat berfluktuasi bersama peluang investasi; manajemen perlu mengomunikasikan alasan perubahan. Payout bukan persentase investasi; kebutuhan dana ekuitas dihitung lebih dahulu. Keputusan proyek mengasumsikan semua proyek sudah layak berdasarkan NPV, sehingga laba ditahan diarahkan ke investasi yang menciptakan nilai. Sinyal kenaikan/penurunan dividen tetap harus diuji terhadap kemampuan menghasilkan kas.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 525-533 (PDF 567-575)."
   },
   {
     "type": "calculation",
@@ -365,14 +365,14 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Distribusi kas: membandingkan dividen, buyback, dan split",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-548 (PDF 583-590).",
     "data": [
-      "Ekuitas pasar Rp1 miliar; saham20 juta; harga Rp50/lembar.",
-      "Kas surplus untuk distribusi Rp200 juta; tanpa pajak, biaya transaksi, atau sinyal baru.",
-      "Untuk perhitungan EPS terpisah, laba tetap Rp40 juta setahun; tidak ada pengaruh biaya peluang kas dalam model."
+      "Ekuitas pasar Rp 1 miliar; saham 20 juta; harga Rp 50/lembar.",
+      "Kas surplus untuk distribusi Rp 200 juta; tanpa pajak, biaya transaksi, atau sinyal baru.",
+      "Untuk perhitungan EPS terpisah, laba tetap Rp 40 juta setahun; tidak ada pengaruh biaya peluang kas dalam model."
     ],
     "instructions": [
-      "Bandingkan dividen tunai Rp200 juta dengan buyback Rp200 juta pada harga wajar.",
-      "Hitung saham dan harga teoritis sesudah distribusi serta kekayaan pemilik1.000 saham yang tidak menjual pada buyback.",
-      "Hitung EPS buyback dan akibat split2-untuk-1; jelaskan batas kesimpulan nilai.",
+      "Bandingkan dividen tunai Rp 200 juta dengan buyback Rp 200 juta pada harga wajar.",
+      "Hitung saham dan harga teoritis sesudah distribusi serta kekayaan pemilik 1.000 saham yang tidak menjual pada buyback.",
+      "Hitung EPS buyback dan akibat split 2-untuk-1; jelaskan batas kesimpulan nilai.",
       "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
     ],
     "outputFormat": [
@@ -386,7 +386,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "Dividen: DPS=200 juta/20 juta=Rp10. Ekuitas ex-distribusi800 juta; harga=800 juta/20 juta=Rp40. Pemilik1.000 saham memegang sahamRp40.000 dan dividenRp10.000, totalRp50.000. Buyback: jumlah dibeli200 juta/50=4 juta; tersisa16 juta; nilai800 juta; hargaRp50. Pemilik1.000 saham yang tetap memegang memilikiRp50.000. Total kekayaan sama menurut asumsi harga wajar dan pasar tanpa friksi. EPS lama40 juta/20 juta=Rp2; EPS setelah buyback40 juta/16 juta=Rp2,50, dengan laba sengaja tetap. Split2-untuk-1 sesudah buyback menghasilkan32 juta saham dan hargaRp25; EPSRp1,25. Jumlah lembar meningkat dan EPS berubah secara mekanis, tanpa penciptaan kas. Jika pajak, informasi baru atau bunga kas berubah, kesetaraan ini perlu dihitung ulang; jangan menerapkan angka teori sebagai prediksi harga sesungguhnya.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-548 (PDF 583-590)."
+    "answerGuide": "Dividen: DPS=200 juta/20 juta=Rp 10. Ekuitas ex-distribusi 800 juta; harga=800 juta/20 juta=Rp 40. Pemilik 1.000 saham memegang saham Rp 40.000 dan dividen Rp 10.000, total Rp 50.000. Buyback: jumlah dibeli 200 juta/50=4 juta; tersisa 16 juta; nilai 800 juta; harga Rp 50. Pemilik 1.000 saham yang tetap memegang memiliki Rp 50.000. Total kekayaan sama menurut asumsi harga wajar dan pasar tanpa friksi. EPS lama 40 juta/20 juta=Rp 2; EPS setelah buyback 40 juta/16 juta=Rp 2,50, dengan laba sengaja tetap. Split 2-untuk-1 sesudah buyback menghasilkan 32 juta saham dan harga Rp 25; EPSRp 1,25. Jumlah lembar meningkat dan EPS berubah secara mekanis, tanpa penciptaan kas. Jika pajak, informasi baru atau bunga kas berubah, kesetaraan ini perlu dihitung ulang; jangan menerapkan angka teori sebagai prediksi harga sesungguhnya.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-548 (PDF 583-590)."
   },
   {
     "type": "calculation",
@@ -396,9 +396,9 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Mengurai siklus konversi kas dan perbaikan penagihan",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 565-569 (PDF 607-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
     "data": [
-      "Setahun365 hari; seluruh penjualan kredit Rp36,5 miliar; COGS dan pembelian kredit masing-masing Rp36,5 miliar.",
-      "Persediaan rata-rata Rp6 miliar, piutang Rp4,5 miliar, utang pemasok Rp3 miliar.",
-      "DSO dapat turun menjadi30 hari tanpa biaya/penjualan hilang; DIO dan DPO tetap. Biaya dana10% setahun."
+      "Setahun 365 hari; seluruh penjualan kredit Rp 36,5 miliar; COGS dan pembelian kredit masing-masing Rp 36,5 miliar.",
+      "Persediaan rata-rata Rp 6 miliar, piutang Rp 4,5 miliar, utang pemasok Rp 3 miliar.",
+      "DSO dapat turun menjadi 30 hari tanpa biaya/penjualan hilang; DIO dan DPO tetap. Biaya dana 10% setahun."
     ],
     "instructions": [
       "Hitung DIO, DSO, DPO dan CCC awal.",
@@ -417,7 +417,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "Arus harian penjualan, COGS, dan pembelian masing-masing36,5/365=Rp0,1 miliar. DIO=6/0,1=60 hari; DSO=4,5/0,1=45; DPO=3/0,1=30. CCC=60+45-30=75 hari. DSO baru30 memberi piutang3 miliar; CCC baru60 hari. Dana dilepas4,5-3=Rp1,5 miliar, penghematan biaya1,5×10%=Rp0,15 miliar/tahun atauRp150 juta. Pelepasan investasi1,5 miliar sekali terjadi berbeda dari penghematan tahunan150 juta. Soal menyederhanakan pembelian sama dengan COGS; jika pembelian berbeda, gunakan pembelian kredit yang relevan untuk DPO. Pengurangan DSO dapat memakai standar kredit, penagihan, atau diskon, dengan biaya dan dampak penjualan yang perlu dihitung. Menunda pemasok berisiko kehilangan diskon, pasokan, dan reputasi sehingga CCC pendek sendiri belum menjamin keputusan terbaik.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 565-569 (PDF 607-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623)."
+    "answerGuide": "Arus harian penjualan, COGS, dan pembelian masing-masing 36,5/365=Rp 0,1 miliar. DIO=6/0,1=60 hari; DSO=4,5/0,1=45; DPO=3/0,1=30. CCC=60+45-30=75 hari. DSO baru 30 memberi piutang 3 miliar; CCC baru 60 hari. Dana dilepas 4,5-3=Rp 1,5 miliar, penghematan biaya 1,5×10%=Rp 0,15 miliar/tahun atau Rp 150 juta. Pelepasan investasi 1,5 miliar sekali terjadi berbeda dari penghematan tahunan 150 juta. Soal menyederhanakan pembelian sama dengan COGS; jika pembelian berbeda, gunakan pembelian kredit yang relevan untuk DPO. Pengurangan DSO dapat memakai standar kredit, penagihan, atau diskon, dengan biaya dan dampak penjualan yang perlu dihitung. Menunda pemasok berisiko kehilangan diskon, pasokan, dan reputasi sehingga CCC pendek sendiri belum menjamin keputusan terbaik.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 565-569 (PDF 607-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623)."
   },
   {
     "type": "calculation",
@@ -427,14 +427,14 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Anggaran kas dan pilihan membayar utang",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
     "data": [
-      "Semua angka Rp juta: Januari kas awal20, penerimaan80, pembayaran105. Februari penerimaan100, pembayaran80.",
-      "Minimum kas10; fasilitas pinjaman dapat dipakai pada akhir Januari. Bunga Januari/Februari diabaikan khusus pada kasus ini.",
+      "Semua angka Rp juta: Januari kas awal 20, penerimaan 80, pembayaran 105. Februari penerimaan 100, pembayaran 80.",
+      "Minimum kas 10; fasilitas pinjaman dapat dipakai pada akhir Januari. Bunga Januari/Februari diabaikan khusus pada kasus ini.",
       "Aturan model: saat surplus, lunasi pinjaman sepanjang minimum kas tetap terpenuhi."
     ],
     "instructions": [
       "Susun anggaran kas Januari dan Februari dengan penerimaan, pembayaran, pinjaman dan pelunasan.",
       "Hitung saldo pinjaman serta kas akhir masing-masing bulan.",
-      "Uji jika penerimaan Februari hanya70; jelaskan mengapa laba penjualan tidak mengganti anggaran kas.",
+      "Uji jika penerimaan Februari hanya 70; jelaskan mengapa laba penjualan tidak mengganti anggaran kas.",
       "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
     ],
     "outputFormat": [
@@ -448,7 +448,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "Januari sebelum pendanaan20+80-105=-5. Tambahan pinjaman10-(-5)=15; kas akhir10 dan saldo pinjaman15. Februari dimulai dengan kas10, sehingga kas sebelum pendanaan10+100-80=30. Surplus di atas minimum20 cukup melunasi15; kas akhir15, utang nol. Skenario penerimaanFebruari70: kas sebelumpendanaan10+70-80=0; perlu pinjaman tambahan10 untuk minimum10. Utang akhir menjadi25, kas10. Bunga diabaikan sesuai syarat; jika dimasukkan, bunga harus menjadi pembayaran dan kebutuhan dana meningkat. Penjualan kredit masuk penerimaan hanya saat tertagih, sehingga laba dapat positif saat kas defisit. Jadwal pembayaran utang, keterlambatan piutang, kapasitas kredit bank, dan saldo minimum perlu dicek setiap bulan. Perbedaan akhir bulan dan transaksi intrabulan dapat membuat defisit sementara lebih tinggi daripada yang terlihat pada ringkasan.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615)."
+    "answerGuide": "Januari sebelum pendanaan 20+80-105=-5. Tambahan pinjaman 10-(-5)=15; kas akhir 10 dan saldo pinjaman 15. Februari dimulai dengan kas 10, sehingga kas sebelum pendanaan 10+100-80=30. Surplus di atas minimum 20 cukup melunasi 15; kas akhir 15, utang nol. Skenario penerimaan Februari 70: kas sebelum pendanaan 10+70-80=0; perlu pinjaman tambahan 10 untuk minimum 10. Utang akhir menjadi 25, kas 10. Bunga diabaikan sesuai syarat; jika dimasukkan, bunga harus menjadi pembayaran dan kebutuhan dana meningkat. Penjualan kredit masuk penerimaan hanya saat tertagih, sehingga laba dapat positif saat kas defisit. Jadwal pembayaran utang, keterlambatan piutang, kapasitas kredit bank, dan saldo minimum perlu dicek setiap bulan. Perbedaan akhir bulan dan transaksi intrabulan dapat membuat defisit sementara lebih tinggi daripada yang terlihat pada ringkasan.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615)."
   },
   {
     "type": "calculation",
@@ -458,8 +458,8 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Diskon pemasok versus pinjaman bank",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-587 (PDF 623-629).",
     "data": [
-      "Faktur Rp100 juta; syarat 2/10, net 30; tahun 365 hari.",
-      "Bank menyediakan Rp98 juta dengan bunga efektif tahunan 12%; tenor 20 hari, tanpa biaya tambahan."
+      "Faktur Rp 100 juta; syarat 2/10, net 30; tahun 365 hari.",
+      "Bank menyediakan Rp 98 juta dengan bunga efektif tahunan 12%; tenor 20 hari, tanpa biaya tambahan."
     ],
     "instructions": [
       "Hitung biaya nominal dan efektif kehilangan diskon.",
@@ -478,7 +478,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. Pembayaran dengan diskon Rp98 juta pada hari 10, atau Rp100 juta pada hari 30. Biaya periodik kehilangan diskon = 2/98 = 2,040816% selama 20 hari. Nominal tahunan = (2/98)(365/20) = 37,244898%; EAR = (100/98)^(365/20)-1 = 44,585293%.\n2. Bunga bank 20 hari memakai tingkat efektif: (1,12)^(20/365)-1 = 0,0062291117. Bunga = Rp98 juta × faktor = Rp0,61045295 juta. Pelunasan Rp98,61045295 juta, sehingga penghematan dibanding Rp100 juta = Rp1,38954705 juta.\n3. Gunakan bank untuk mengambil diskon pada asumsi ini. Dana harus tersedia pada hari 10, diskon harus benar-benar diperoleh, dan tidak ada biaya tambahan. Menggunakan 12% × 20/365 akan mencampur tingkat efektif dengan bunga sederhana. Penundaan di luar hari 30 mempunyai konsekuensi kontrak dan pemasok yang belum dimasukkan.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-587 (PDF 623-629)."
+    "answerGuide": "1. Pembayaran dengan diskon Rp 98 juta pada hari 10, atau Rp 100 juta pada hari 30. Biaya periodik kehilangan diskon = 2/98 = 2,040816% selama 20 hari. Nominal tahunan = (2/98)(365/20) = 37,244898%; EAR = (100/98)^(365/20)-1 = 44,585293%.\n2. Bunga bank 20 hari memakai tingkat efektif: (1,12)^(20/365)-1 = 0,0062291117. Bunga = Rp 98 juta × faktor = Rp 0,61045295 juta. Pelunasan Rp 98,61045295 juta, sehingga penghematan dibanding Rp 100 juta = Rp 1,38954705 juta.\n3. Gunakan bank untuk mengambil diskon pada asumsi ini. Dana harus tersedia pada hari 10, diskon harus benar-benar diperoleh, dan tidak ada biaya tambahan. Menggunakan 12% × 20/365 akan mencampur tingkat efektif dengan bunga sederhana. Penundaan di luar hari 30 mempunyai konsekuensi kontrak dan pemasok yang belum dimasukkan.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-587 (PDF 623-629)."
   },
   {
     "type": "calculation",
@@ -486,11 +486,11 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "difficulty": "Komprehensif",
     "estimatedTime": "35-45 menit",
     "question": "Membaca biaya pinjaman dan investasi persediaan",
-    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629).",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Metode saldo wajib dan bunga dipotong awal merupakan latihan pengembangan arus kas dengan syarat buatan. Lampiran 16B belum tersedia; contoh kanonik TM12 memakai bunga sederhana pada hal. 587.",
     "data": [
-      "A, B, C: nominal pinjaman Rp100 juta, satu tahun, bunga 12%.",
-      "A: bunga akhir tahun; B: bunga Rp12 juta dipotong awal; C: bunga awal dan saldo tambahan Rp10 juta tanpa bunga yang kembali akhir tahun.",
-      "Persediaan rata-rata Rp800 menjadi Rp600 juta; biaya 20% setahun; tambahan biaya kekurangan stok Rp50 juta setahun."
+      "A, B, C: nominal pinjaman Rp 100 juta, satu tahun, bunga 12%.",
+      "A: bunga akhir tahun; B: bunga Rp 12 juta dipotong awal; C: bunga awal dan saldo tambahan Rp 10 juta tanpa bunga yang kembali akhir tahun.",
+      "Persediaan rata-rata Rp 800 menjadi Rp 600 juta; biaya 20% setahun; tambahan biaya kekurangan stok Rp 50 juta setahun."
     ],
     "instructions": [
       "Hitung kas bebas awal, pembayaran bersih akhir, dan biaya efektif A, B, C.",
@@ -509,7 +509,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. A menerima Rp100 juta dan membayar Rp112 juta: 112/100-1 = 12%. B menerima Rp88 juta dan membayar Rp100 juta: 100/88-1 = 13,636364%. C menerima Rp78 juta; pokok Rp100 juta dikurangi saldo yang kembali Rp10 juta membuat pembayaran bersih Rp90 juta: 90/78-1 = 15,384615%. A termurah jika fasilitas serta risiko setara.\n2. Pengurangan investasi persediaan = Rp200 juta. Penghematan biaya tahunan = 200 × 20% = Rp40 juta. Setelah biaya kekurangan stok Rp50 juta, manfaat bersih = minus Rp10 juta per tahun; kebijakan ini tidak layak pada asumsi.\n3. Pelepasan investasi Rp200 juta sekali terjadi berbeda dari penghematan Rp40 juta per tahun. Evaluasi permintaan, lead time atau waktu pasokan, layanan pelanggan, risiko rollover kredit, dan potongan kontrak sebelum memilih.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629)."
+    "answerGuide": "1. A menerima Rp 100 juta dan membayar Rp 112 juta: 112/100-1 = 12%. B menerima Rp 88 juta dan membayar Rp 100 juta: 100/88-1 = 13,636364%. C menerima Rp 78 juta; pokok Rp 100 juta dikurangi saldo yang kembali Rp 10 juta membuat pembayaran bersih Rp 90 juta: 90/78-1 = 15,384615%. A termurah jika fasilitas serta risiko setara.\n2. Pengurangan investasi persediaan = Rp 200 juta. Penghematan biaya tahunan = 200 × 20% = Rp 40 juta. Setelah biaya kekurangan stok Rp 50 juta, manfaat bersih = minus Rp 10 juta per tahun; kebijakan ini tidak layak pada asumsi.\n3. Pelepasan investasi Rp 200 juta sekali terjadi berbeda dari penghematan Rp 40 juta per tahun. Evaluasi permintaan, lead time atau waktu pasokan, layanan pelanggan, risiko rollover kredit, dan potongan kontrak sebelum memilih.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Metode saldo wajib dan bunga dipotong awal merupakan latihan pengembangan arus kas dengan syarat buatan. Lampiran 16B belum tersedia; contoh kanonik TM12 memakai bunga sederhana pada hal. 587."
   },
   {
     "type": "calculation",
@@ -540,7 +540,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. Bunga enam bulan domestik 3%, asing 2%. F paritas = 16.000 × 1,03/1,02 = 16.156,862745 IDR/USD. Penawaran bank lebih tinggi 143,137255 IDR/USD; friksi dan akses bunga perlu diperiksa sebelum menyebut peluang arbitrase.\n2. Kontrak mengunci pembayaran Rp1.630 juta. Spot 17.000 membuat pembayaran tanpa hedge Rp1.700 juta, sehingga forward menghemat Rp70 juta. Spot 15.500 membuat pembayaran tanpa hedge Rp1.550 juta; forward menimbulkan biaya peluang Rp80 juta.\n3. Importir membeli USD forward karena mempunyai kewajiban USD. Hedge mengurangi ketidakpastian kas, tanpa menjamin selalu lebih murah. Bunga wajib setenor; forward paritas adalah hubungan model tanpa friksi dan berbeda dari ramalan kurs spot yang pasti terjadi.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-646 (PDF 678-688)."
+    "answerGuide": "1. Bunga enam bulan domestik 3%, asing 2%. F paritas = 16.000 × 1,03/1,02 = 16.156,862745 IDR/USD. Penawaran bank lebih tinggi 143,137255 IDR/USD; friksi dan akses bunga perlu diperiksa sebelum menyebut peluang arbitrase.\n2. Kontrak mengunci pembayaran Rp 1.630 juta. Spot 17.000 membuat pembayaran tanpa hedge Rp 1.700 juta, sehingga forward menghemat Rp 70 juta. Spot 15.500 membuat pembayaran tanpa hedge Rp 1.550 juta; forward menimbulkan biaya peluang Rp 80 juta.\n3. Importir membeli USD forward karena mempunyai kewajiban USD. Hedge mengurangi ketidakpastian kas, tanpa menjamin selalu lebih murah. Bunga wajib setenor; forward paritas adalah hubungan model tanpa friksi dan berbeda dari ramalan kurs spot yang pasti terjadi.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-646 (PDF 678-688)."
   },
   {
     "type": "calculation",
@@ -551,7 +551,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 649-655 (PDF 691-697).",
     "data": [
       "Spot IDR16.000/USD dan JPY160/USD; tanpa spread.",
-      "Investasi sekarang Rp150 juta; arus kas akhir tahun pertama USD10.000, kemudian proyek berakhir.",
+      "Investasi sekarang Rp 150 juta; arus kas akhir tahun pertama USD10.000, kemudian proyek berakhir.",
       "Proyeksi kurs IDR17.000/USD atau skenario IDR15.000/USD; diskonto IDR10% sesuai risiko."
     ],
     "instructions": [
@@ -571,7 +571,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. Kurs silang = 16.000/160 = IDR100/JPY. JPY100.000 setara Rp10 juta; satuan USD saling menghilangkan.\n2. Kurs 17.000: kas akhir Rp170 juta; PV = 170/1,10 = Rp154,545455 juta; NPV = Rp4,545455 juta. Kurs 15.000: kas Rp150 juta; PV = Rp136,363636 juta; NPV = minus Rp13,636364 juta. Kelayakan berubah karena kurs yang diasumsikan.\n3. Kas sudah dikonversi ke rupiah sebelum memakai diskonto rupiah. Alternatif valuasi USD memerlukan tingkat USD yang sepadan dengan risiko. Periksa pembatasan pemulangan laba, pajak sesuai yurisdiksi, risiko negara, dan sensitivitas kurs. Kasus ini sengaja tidak menetapkan aturan pajak atau repatriasi tertentu; angka bukan kurs pasar tahun berjalan.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 649-655 (PDF 691-697)."
+    "answerGuide": "1. Kurs silang = 16.000/160 = IDR100/JPY. JPY100.000 setara Rp 10 juta; satuan USD saling menghilangkan.\n2. Kurs 17.000: kas akhir Rp 170 juta; PV = 170/1,10 = Rp 154,545455 juta; NPV = Rp 4,545455 juta. Kurs 15.000: kas Rp 150 juta; PV = Rp 136,363636 juta; NPV = minus Rp 13,636364 juta. Kelayakan berubah karena kurs yang diasumsikan.\n3. Kas sudah dikonversi ke rupiah sebelum memakai diskonto rupiah. Alternatif valuasi USD memerlukan tingkat USD yang sepadan dengan risiko. Periksa pembatasan pemulangan laba, pajak sesuai yurisdiksi, risiko negara, dan sensitivitas kurs. Kasus ini sengaja tidak menetapkan aturan pajak atau repatriasi tertentu; angka bukan kurs pasar tahun berjalan.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 649-655 (PDF 691-697)."
   },
   {
     "type": "calculation",
@@ -582,8 +582,8 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
     "data": [
       "Semua angka Rp miliar: FCF operasi 20 pada akhir tahun 1, 2, 3; terminal value akhir tahun 3 sebesar 200, di luar FCF3.",
-      "WACC10%; utang60; kas nonoperasi10; PV sinergi tambahan40 belum masuk proyeksi; biaya integrasi saat ini5.",
-      "Harga pembelian ekuitas170."
+      "WACC10%; utang 60; kas nonoperasi 10; PV sinergi tambahan 40 belum masuk proyeksi; biaya integrasi saat ini 5.",
+      "Harga pembelian ekuitas 170."
     ],
     "instructions": [
       "Hitung nilai operasi dan ekuitas standalone.",
@@ -602,7 +602,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. PV FCF = 20/1,1 + 20/1,1^2 + 20/1,1^3 = Rp49,737040 miliar. PV terminal = 200/1,1^3 = Rp150,262960 miliar. Nilai operasi Rp200 miliar; ekuitas = 200-60+10 = Rp150 miliar.\n2. Premium = 170-150 = Rp20 miliar. NPV pengakuisisi = sinergi40-premium20-biaya5 = Rp15 miliar. Harga maksimum = 150+40-5 = Rp185 miliar, pada NPV nol.\n3. Sinergi dinyatakan belum masuk kas, sehingga boleh ditambahkan sekali. Jika sudah masuk proyeksi, penambahan lagi menghitung ganda. Terminal berada pada akhir tahun 3 dan harus didiskonto; FCF3 tetap terpisah. FCF operasi memakai WACC; FCFE memakai biaya ekuitas. Kas nonoperasi ditambahkan hanya jika belum termasuk operasi; utang harus dinilai pada tanggal dan basis yang konsisten.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795)."
+    "answerGuide": "1. PV FCF = 20/1,1 + 20/1,1^2 + 20/1,1^3 = Rp 49,737040 miliar. PV terminal = 200/1,1^3 = Rp 150,262960 miliar. Nilai operasi Rp 200 miliar; ekuitas = 200-60+10 = Rp 150 miliar.\n2. Premium = 170-150 = Rp 20 miliar. NPV pengakuisisi = sinergi 40-premium 20-biaya 5 = Rp 15 miliar. Harga maksimum = 150+40-5 = Rp 185 miliar, pada NPV nol.\n3. Sinergi dinyatakan belum masuk kas, sehingga boleh ditambahkan sekali. Jika sudah masuk proyeksi, penambahan lagi menghitung ganda. Terminal berada pada akhir tahun 3 dan harus didiskonto; FCF3 tetap terpisah. FCF operasi memakai WACC; FCFE memakai biaya ekuitas. Kas nonoperasi ditambahkan hanya jika belum termasuk operasi; utang harus dinilai pada tanggal dan basis yang konsisten.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795)."
   },
   {
     "type": "calculation",
@@ -612,9 +612,9 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Pembayaran saham, kenaikan EPS dan NPV yang bertentangan",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-757 (PDF 790-799).",
     "data": [
-      "Target: nilai standalone Rp90 juta, saham5 juta.",
-      "Tawaran2 juta saham pengakuisisi pada Rp50/lembar; sinergiPV8 juta; biaya integrasi3 juta.",
-      "Pengakuisisi: saham10 juta, laba20 juta. Target laba10 juta. Untuk contoh EPS, laba gabungan tetap30 juta setelah semua penyesuaian berulang."
+      "Target: nilai standalone Rp 90 juta, saham 5 juta.",
+      "Tawaran 2 juta saham pengakuisisi pada Rp 50/lembar; sinergiPV8 juta; biaya integrasi 3 juta.",
+      "Pengakuisisi: saham 10 juta, laba 20 juta. Target laba 10 juta. Untuk contoh EPS, laba gabungan tetap 30 juta setelah semua penyesuaian berulang."
     ],
     "instructions": [
       "Hitung nilai tawaran, premium, dan NPV.",
@@ -633,7 +633,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. Nilai tawaran = 2 juta × Rp50 = Rp100 juta. Premium = 100-90 = Rp10 juta. NPV = 8-10-3 = minus Rp5 juta.\n2. Rasio pertukaran = 2/5 = 0,40 saham pengakuisisi per saham target. Harga ekuivalen target Rp20, dibanding nilai standalone Rp18. EPS awal pengakuisisi = 20/10 = Rp2; EPS gabungan = 30/(10+2) = Rp2,50, naik25%.\n3. EPS accretion terjadi secara akuntansi tetapi NPV negatif; tawaran ditolak atau dinegosiasi. Harga maksimum yang setara kas = 90+8-3 = Rp95 juta. Tawaran harus turun minimal Rp5 juta agar NPV tidak negatif menurut asumsi. Saham pembayaran mempunyai biaya ekonomis karena pemilik lama berbagi nilai dengan pemilik baru; harganya dapat berubah akibat informasi akuisisi.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-757 (PDF 790-799)."
+    "answerGuide": "1. Nilai tawaran = 2 juta × Rp 50 = Rp 100 juta. Premium = 100-90 = Rp 10 juta. NPV = 8-10-3 = minus Rp 5 juta.\n2. Rasio pertukaran = 2/5 = 0,40 saham pengakuisisi per saham target. Harga ekuivalen target Rp 20, dibanding nilai standalone Rp 18. EPS awal pengakuisisi = 20/10 = Rp 2; EPS gabungan = 30/(10+2) = Rp 2,50, naik 25%.\n3. EPS accretion terjadi secara akuntansi tetapi NPV negatif; tawaran ditolak atau dinegosiasi. Harga maksimum yang setara kas = 90+8-3 = Rp 95 juta. Tawaran harus turun minimal Rp 5 juta agar NPV tidak negatif menurut asumsi. Saham pembayaran mempunyai biaya ekonomis karena pemilik lama berbagi nilai dengan pemilik baru; harganya dapat berubah akibat informasi akuisisi.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-757 (PDF 790-799)."
   },
   {
     "type": "calculation",
@@ -643,9 +643,9 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Audit model Altman dan perubahan kinerja",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
     "data": [
-      "Manufaktur publik tanpa aset takberwujud; semua angka Rp miliar. Aset100; modal kerja10; laba ditahan20; EBIT8.",
-      "Nilai pasar seluruh ekuitas150; total kewajiban buku300; penjualan120.",
-      "Gunakan model original dan batas 1,81/2,99. Skenario EBIT turun ke2; faktor lain tetap."
+      "Manufaktur publik tanpa aset takberwujud; semua angka Rp miliar. Aset 100; modal kerja 10; laba ditahan 20; EBIT8.",
+      "Nilai pasar seluruh ekuitas 150; total kewajiban buku 300; penjualan 120.",
+      "Gunakan model original dan batas 1,81/2,99. Skenario EBIT turun ke 2; faktor lain tetap."
     ],
     "instructions": [
       "Hitung lima rasio dan Z awal.",
@@ -664,7 +664,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. X1=10/100=0,10; X2=20/100=0,20; X3=8/100=0,08; X4=150/300=0,50; X5=120/100=1,20. Z=0,12+0,28+0,264+0,30+1,20=2,164: zona abu-abu.\n2. EBIT2 memberi X3=0,02, kontribusi 3,3×0,02=0,066. Z baru1,966; turun0,198 dan tetap abu-abu. X4 memakai seluruh kewajiban buku dan ekuitas pasar, bukan hanya utang berbunga atau ekuitas buku.\n3. Skor tidak bersatuan dan bukan probabilitas langsung. Model original memakai manufaktur publik; varian privat dan nonmanufaktur mengubah input, koefisien serta batas. Periksa aset berwujud, kualitas data, kas, jatuh tempo, risiko industri, serta kemungkinan false positive. Skor memberi indikasi untuk pemeriksaan lanjutan dan tidak menetapkan status hukum pailit.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7."
+    "answerGuide": "1. X1=10/100=0,10; X2=20/100=0,20; X3=8/100=0,08; X4=150/300=0,50; X5=120/100=1,20. Z=0,12+0,28+0,264+0,30+1,20=2,164: zona abu-abu.\n2. EBIT2 memberi X3=0,02, kontribusi 3,3×0,02=0,066. Z baru 1,966; turun 0,198 dan tetap abu-abu. X4 memakai seluruh kewajiban buku dan ekuitas pasar, bukan hanya utang berbunga atau ekuitas buku.\n3. Skor tidak bersatuan dan bukan probabilitas langsung. Model original memakai manufaktur publik; varian privat dan nonmanufaktur mengubah input, koefisien serta batas. Periksa aset berwujud, kualitas data, kas, jatuh tempo, risiko industri, serta kemungkinan false positive. Skor memberi indikasi untuk pemeriksaan lanjutan dan tidak menetapkan status hukum pailit.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7."
   },
   {
     "type": "calculation",
@@ -674,8 +674,8 @@ export const MNK201_BANK_UAS: BankSoal[] = [
     "question": "Pemulihan usaha: membedakan kas, nilai ekonomi dan keputusan hukum",
     "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Altman (2002), halaman PDF 2 dan 9-15.",
     "data": [
-      "Semua angka Rp juta: kas awal10, penerimaan40, pembayaran wajib65. Aset200, kewajiban175.",
-      "PV usaha berlanjut120, biaya proses15; nilai jual aset95, biaya likuidasi8.",
+      "Semua angka Rp juta: kas awal 10, penerimaan 40, pembayaran wajib 65. Aset 200, kewajiban 175.",
+      "PV usaha berlanjut 120, biaya proses 15; nilai jual aset 95, biaya likuidasi 8.",
       "Nilai kedua alternatif sudah dinilai pada tanggal dan risiko sebanding; belum ada persetujuan kreditur."
     ],
     "instructions": [
@@ -695,7 +695,7 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Analisis keputusan serta sensitivitas (30%)",
       "Kejelasan rujukan dan pembulatan (10%)"
     ],
-    "answerGuide": "1. Kas sebelum pendanaan=10+40-65=minus Rp15 juta. Dibutuhkan Rp15 juta agar tidak negatif, atau Rp25 juta jika saldo minimum tambahan Rp10 juta diterapkan. Ekuitas buku=200-175=Rp25 juta, tetap positif; kas dapat defisit walaupun ekuitas positif.\n2. Usaha berlanjut bersih=120-15=Rp105 juta; likuidasi bersih=95-8=Rp87 juta. Keunggulan reorganisasi Rp18 juta mendukung kelanjutan secara ekonomi jika proyeksi serta pendanaan layak.\n3. Periksa kalender kas, piutang tertagih, kemampuan operasi, jatuh tempo, dan negosiasi kreditur. Persetujuan serta proses hukum tetap memerlukan dasar yurisdiksi; nilai ini tidak menyamakan PKPU Indonesia dengan Chapter11 Amerika. Skor Altman dapat melengkapi pemeriksaan tetapi tidak menggantikan anggaran kas, valuasi aset, atau keputusan hukum.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Altman (2002), halaman PDF 2 dan 9-15."
+    "answerGuide": "1. Kas sebelum pendanaan=10+40-65=minus Rp 15 juta. Dibutuhkan Rp 15 juta agar tidak negatif, atau Rp 25 juta jika saldo minimum tambahan Rp 10 juta diterapkan. Ekuitas buku=200-175=Rp 25 juta, tetap positif; kas dapat defisit walaupun ekuitas positif.\n2. Usaha berlanjut bersih=120-15=Rp 105 juta; likuidasi bersih=95-8=Rp 87 juta. Keunggulan reorganisasi Rp 18 juta mendukung kelanjutan secara ekonomi jika proyeksi serta pendanaan layak.\n3. Periksa kalender kas, piutang tertagih, kemampuan operasi, jatuh tempo, dan negosiasi kreditur. Persetujuan serta proses hukum tetap memerlukan dasar yurisdiksi; nilai ini tidak menyamakan PKPU Indonesia dengan Chapter 11 Amerika. Skor Altman dapat melengkapi pemeriksaan tetapi tidak menggantikan anggaran kas, valuasi aset, atau keputusan hukum.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Altman (2002), halaman PDF 2 dan 9-15."
   }
 ];
 export const MNK201_BANK: BankSoal[] = [...MNK201_BANK_UTS, ...MNK201_REVIEW_UTS_BANK, ...MNK201_BANK_UAS];

@@ -4,16 +4,34 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createRoot } from 'react-dom/client';
 import { JSDOM } from 'jsdom';
-import { createServer } from 'vite';
+import { build } from 'esbuild';
+import { createRequire } from 'node:module';
 
 const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: 'http://localhost/' });
 for (const key of ['window', 'document', 'HTMLElement', 'SVGElement', 'Node', 'Event', 'MouseEvent']) globalThis[key] = dom.window[key];
 Object.defineProperty(globalThis, 'navigator', { configurable: true, value: dom.window.navigator });
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 globalThis.localStorage = dom.window.localStorage;
+globalThis.getComputedStyle = dom.window.getComputedStyle.bind(dom.window);
+globalThis.ResizeObserver = class { observe() {} unobserve() {} disconnect() {} };
+dom.window.ResizeObserver = globalThis.ResizeObserver;
 dom.window.scrollTo = () => {};
 dom.window.HTMLElement.prototype.scrollIntoView = () => {};
-const server = await createServer({ root: process.cwd(), appType: 'custom', logLevel: 'silent', server: { middlewareMode: true, hmr: false }, optimizeDeps: { noDiscovery: true } });
+// Compile real application components with the same React instance as JSDOM.
+// This also avoids making the finance interaction test depend on Vite's CJS SSR resolution.
+const require = createRequire(import.meta.url);
+const cache = new Map();
+const server = {
+  async ssrLoadModule(file) {
+    if (cache.has(file)) return cache.get(file);
+    const compiled = await build({ entryPoints: ['.' + file], bundle: true, write: false, platform: 'node', format: 'cjs', external: ['react', 'react/*', 'react-dom', 'react-dom/*'], jsx: 'automatic', loader: { '.css': 'empty' }, logLevel: 'silent' });
+    const module = { exports: {} };
+    Function('require', 'module', 'exports', compiled.outputFiles[0].text)(require, module, module.exports);
+    cache.set(file, module.exports);
+    return module.exports;
+  },
+  async close() {},
+};
 let mounted;
 try {
   const [{ renderText }, { MNK201_QUIZ_UAS: quizzes }, { MNK201_BANK_UAS: banks }, { default: QuizView }, { default: EssayBank }, { ALL_COURSES }] = await Promise.all([
@@ -92,11 +110,18 @@ try {
     server.ssrLoadModule('/src/components/AdvancedFlashcardTab.tsx'),
     server.ssrLoadModule('/src/data/flashcards/mnk201.ts'),
   ]);
+  const flatten = blocks => blocks.flatMap(b => [b, ...flatten(b.blocks ?? []), ...flatten(b.answer ?? [])]);
+  const visible = blocks => blocks.flatMap(b => [b, ...(b.kind === 'self-check' || b.kind === 'solution-reveal' ? [] : visible(b.blocks ?? []))]);
   for (const tm of [9,10,11,12,13,14,15]) {
     await mount(React.createElement('div',null,...readings[tm].blocks.map((block,i)=>React.createElement(CourseBlockCard,{key:i,block,enableLegalStyling:true}))));
     assert.equal(container.querySelector('.katex-error'),null,'No formula rendering errors');
     assert.ok(container.querySelector('.katex'),'Actual renderer displays the TM formula');
-    for (const block of readings[tm].blocks) {
+    const depth = [...container.querySelectorAll('.layered-pendalaman > button')];
+    assert.equal(depth.length, 1, 'Optional depth starts closed');
+    assert.equal(depth[0].getAttribute('aria-expanded'), 'false');
+    await React.act(async () => depth.forEach(click));
+    assert.ok(container.querySelector('.course-figure-surface'), 'Real figure component is mounted');
+    for (const block of visible(readings[tm].blocks)) {
       if (block.kind === 'p' && !block.text.includes('[')) assert.ok(container.textContent.includes(block.text), 'Reading paragraph remains visible: TM' + tm);
       for (const text of [block.text, ...(block.items ?? [])].filter(Boolean)) {
         for (const [, label, url] of text.matchAll(/\[([^\]]+)\]\((https:[^)]+)\)/g)) {
@@ -109,12 +134,18 @@ try {
         for (const cell of [...block.headers, ...block.rows.flat()]) assert.ok(container.textContent.includes(cell), 'Reading table cell remains visible: TM' + tm);
       }
     }
-    const buttons = [...container.querySelectorAll('button[aria-expanded="false"]')];
+    const buttons = [...container.querySelectorAll('.course-solution-surface button[aria-expanded="false"]')];
     assert.equal(buttons.length,2,'Two examples initially closed');
     await React.act(async () => buttons.forEach(click));
-    for (const block of readings[tm].blocks.filter(b=>b.kind==='solution-reveal')) {
-      for (const paragraph of block.blocks) assert.ok(container.textContent.includes(paragraph.text),'Every calculation step opens intact: TM'+tm);
+    for (const block of flatten(readings[tm].blocks).filter(b=>b.kind==='solution-reveal')) {
+      assert.ok(container.textContent.includes(block.title), 'Source example opens: TM'+tm);
+      for (const formula of block.blocks.filter(b => b.kind === 'formula')) assert.ok(container.querySelector(`annotation`) && !container.querySelector('.katex-error'), 'Worked source formula renders: '+formula.text);
     }
+    const check = container.querySelector('.layered-self-check');
+    assert.ok(check && !check.querySelector('.border-t'), 'Self-check answer starts hidden');
+    await React.act(async () => click([...check.querySelectorAll('button')].find(b => b.textContent.includes('Saya sudah mencoba'))));
+    await React.act(async () => click([...check.querySelectorAll('button')].find(b => b.textContent.includes('Lihat contoh jawaban'))));
+    assert.ok(check.textContent.length > 150, 'Self-check source answer is revealed after attempting');
   }
   await mount(React.createElement(AdvancedFlashcardTab,{course,cards}));
   const change = async (select,value) => React.act(async()=>{select.value=value;select.dispatchEvent(new dom.window.Event('change',{bubbles:true}));});
