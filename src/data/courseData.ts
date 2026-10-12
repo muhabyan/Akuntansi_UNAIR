@@ -157,9 +157,9 @@ const PJK301_REF = [
   'Resmi, Siti. (2022). Perpajakan: Teori dan Kasus (Edisi 12). Salemba Empat.',
 ];
 
-// --- AKS201 Akuntansi Sektor Publik (PP 71/2010 SAP Akrual & Permendagri 77/2020) ---
+// --- AKK203 Akuntansi Sektor Publik (PP 71/2010 SAP Akrual & Permendagri 77/2020) ---
 // Sumber: Kontrak Perkuliahan & Silabus Resmi Akuntansi Sektor Publik, Departemen Akuntansi FEB UNAIR.
-const AKS201_TM1_7 = materi([
+const AKK203_TM1_7 = materi([
   ['Karakteristik Organisasi Sektor Publik & Peran Akuntansi', 'Mardiasmo Bab 1 | Deddi Nordiawan Bab 1'],
   ['Regulasi & Standar OSP Non-Pemerintahan (ISAK 35)', 'ISAK 35 | PSAK Nonlaba | UU Yayasan'],
   ['Regulasi Pengelolaan Keuangan Negara & SAP (PP 71/2010)', 'UU 17/2003, UU 1/2004, UU 15/2004 | SAP'],
@@ -168,7 +168,7 @@ const AKS201_TM1_7 = materi([
   ['Teknik & Basis Akuntansi Sektor Publik (Dana & Anggaran)', 'Mardiasmo Bab 9 | Deddi Nordiawan Bab 6'],
   ['Laporan Keuangan Pemerintah Berbasis Akrual (PP 71/2010)', 'PSAP 01 s.d 12 | PP 71/2010 Lampiran I'],
 ], 1);
-const AKS201_TM8_14 = materi([
+const AKK203_TM8_14 = materi([
   ['Sistem Akuntansi Pemerintah Pusat & Daerah', 'Permendagri 77/2020 | Permendagri 64/2013'],
   ['Pengukuran Kinerja Pemerintah & Value for Money (3E)', 'Mardiasmo Bab 8 | SAKIP PermenPAN-RB'],
   ['Audit Sektor Publik: Pengawasan APIP & Pemeriksaan BPK', 'UU 15/2004 | Standar SPKN BPK'],
@@ -177,7 +177,7 @@ const AKS201_TM8_14 = materi([
   ['Pengelolaan Keuangan BLU & BLUD (Rumah Sakit)', 'PP 23/2005 | PSAP 13 Pelaporan BLU'],
   ['Topik Riset Kontemporer Akuntansi Sektor Publik', 'Jurnal ASP | Isu Keuangan Desa & SPBE'],
 ], 8);
-const AKS201_REF = [
+const AKK203_REF = [
   'Komite Standar Akuntansi Pemerintahan (KSAP). PP No. 71 Tahun 2010 tentang Standar Akuntansi Pemerintahan (Berbasis Akrual). (Wajib)',
   'Kementerian Dalam Negeri RI. Permendagri No. 77 Tahun 2020 tentang Pedoman Teknis Pengelolaan Keuangan Daerah.',
   'Ikatan Akuntan Indonesia (IAI). ISAK 35 Penyajian Laporan Keuangan Entitas Berorientasi Nonlaba.',
@@ -186,9 +186,9 @@ const AKS201_REF = [
   'Badan Pemeriksa Keuangan (BPK RI). Peraturan BPK No. 1 Tahun 2017 tentang Standar Pemeriksaan Keuangan Negara (SPKN).',
 ];
 
-// --- MNK201 Manajemen Keuangan (Brigham & Houston Fundamentals of Financial Management 15e/16e) ---
+// --- MNK102 Manajemen Keuangan (Brigham & Houston Fundamentals of Financial Management 15e/16e) ---
 // Sumber: Kontrak Perkuliahan & Silabus Resmi Manajemen Keuangan, Departemen Akuntansi FEB UNAIR.
-const MNK201_TM1_7 = materi([
+const MNK102_TM1_7 = materi([
   ['An Overview of Financial Management & Corporate Goals', 'Brigham & Houston Ch. 1'],
   ['Analysis of Financial Statements & The DuPont System', 'Brigham & Houston Ch. 4'],
   ['Time Value of Money (Nilai Waktu dari Uang)', 'Brigham & Houston Ch. 5'],
@@ -197,7 +197,7 @@ const MNK201_TM1_7 = materi([
   ['The Basics of Capital Budgeting (NPV, IRR, MIRR, Payback)', 'Brigham & Houston Ch. 11'],
   ['Cash Flow Estimation and Project Risk Analysis', 'Brigham & Houston Ch. 12'],
 ], 1);
-const MNK201_TM8_14 = materi([
+const MNK102_TM8_14 = materi([
   ['Capital Structure, Leverage, & Modigliani-Miller', 'Brigham & Houston Ch. 14'],
   ['Distributions to Shareholders: Dividends & Repurchases', 'Brigham & Houston Ch. 15'],
   ['Working Capital Management - Part I: Cash & Receivables', 'Brigham & Houston Ch. 16'],
@@ -206,7 +206,7 @@ const MNK201_TM8_14 = materi([
   ['Mergers and Acquisitions', 'Brigham & Houston Ch. 21'],
   ['Corporate Failure: Kebangkrutan dan Likuidasi', 'Artikel'],
 ], 9);
-const MNK201_REF = [
+const MNK102_REF = [
   'Brigham, E. F., & Houston, J. F. (2019/2022). Fundamentals of Financial Management (15th/16th ed.). Cengage Learning. (Wajib)',
   'Departemen Akuntansi FEB UNAIR. Kontrak Perkuliahan & Silabus Manajemen Keuangan Gasal 2026/2027.',
 ];
@@ -610,20 +610,20 @@ export const SEMESTERS: Semester[] = [
         highlight: true,
         courses: [
           {
-            code: 'AKK202', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK201 (L)',
+            code: 'AKK202', newCode: 'FEB25603013', name: 'Akuntansi Keuangan Menengah II', sks: 3, iconKey: 'calculator', prasyarat: 'AKK106 (L)',
             references: AKK202_REF,
             materiTM1_7: AKK202_TM1_7, materiTM8_14: AKK202_TM8_14, flashcardCount: 88, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'MNU108', newCode: 'FEB25603011', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase',
+            code: 'MNU108', newCode: 'FEB25603011', name: 'Pengantar Manajemen', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
             references: MNU108_REF,
             materiTM1_7: MNU108_TM1_7, materiTM8_14: MNU108_TM8_14,
             flashcardCount: 105, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'AKS201', newCode: 'FEB25603013', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
-            references: AKS201_REF,
-            materiTM1_7: AKS201_TM1_7, materiTM8_14: AKS201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            code: 'AKK203', newCode: 'FEB25603014', name: 'Akuntansi Sektor Publik', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
+            references: AKK203_REF,
+            materiTM1_7: AKK203_TM1_7, materiTM8_14: AKK203_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
             code: 'SII306', newCode: 'FEB25603016', name: 'Sistem Informasi Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'AKK106 (L)',
@@ -637,12 +637,12 @@ export const SEMESTERS: Semester[] = [
             materiTM1_7: PJK301_TM1_7, materiTM8_14: PJK301_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'MNK201', newCode: 'FEB25603014', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', prasyarat: 'AKK106 (L)',
-            references: MNK201_REF,
-            materiTM1_7: MNK201_TM1_7, materiTM8_14: MNK201_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
+            code: 'MNK102', newCode: 'FEB25603012', name: 'Manajemen Keuangan', sks: 3, iconKey: 'briefcase', prasyarat: 'MNU101 (L)',
+            references: MNK102_REF,
+            materiTM1_7: MNK102_TM1_7, materiTM8_14: MNK102_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           {
-            code: 'AKA201', newCode: 'FEB25603017', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', prasyarat: 'AKK106 (L)',
+            code: 'AKA201', newCode: 'FEB25603017', name: 'Pengauditan Berbasis Risiko I', sks: 3, iconKey: 'award', prasyarat: 'AKK201 (T)',
             references: AKA201_REF,
             materiTM1_7: AKA201_TM1_7, materiTM8_14: AKA201_TM8_14, flashcardCount: 168, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
@@ -655,7 +655,7 @@ export const SEMESTERS: Semester[] = [
     number: 4,
     title: 'Semester 4',
     desc: 'Akuntansi Manajemen, Akuntansi Keuangan Lanjutan, Audit, Pasar Modal & Sistem Informasi Manajemen',
-    totalSks: 21,
+    totalSks: 20,
     locked: false,
     groups: [
       {
@@ -663,12 +663,12 @@ export const SEMESTERS: Semester[] = [
         highlight: true,
         courses: [
           {
-            code: 'AKM202', newCode: 'FEB25603012', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', prasyarat: 'AKM201 (L)',
+            code: 'AKM301', newCode: 'FEB25603020', name: 'Akuntansi Manajemen', sks: 3, iconKey: 'chart', prasyarat: 'AKM201 (T)',
             references: AKM202_REF,
             materiTM1_7: AKM202_TM1_7, materiTM8_14: AKM202_TM8_14, flashcardCount: 84, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           { code: 'MNK314', newCode: 'FEB25603018', name: 'Pengantar Pasar Modal', sks: 3, iconKey: 'chart', prasyarat: 'MNK102 (T)', materiTM1_7: [], materiTM8_14: [] },
-          { code: 'AKK207', newCode: 'FEB25603019', name: 'Akuntansi Keuangan Menengah III', sks: 3, iconKey: 'calculator', prasyarat: 'AKK106 (L)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKK207', newCode: 'FEB25603019', name: 'Akuntansi Keuangan Menengah III', sks: 2, iconKey: 'calculator', prasyarat: 'AKK106 (L)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'SII203', newCode: 'FEB25603021', name: 'Sistem Informasi Manajemen', sks: 3, iconKey: 'book', prasyarat: 'SII306 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'AKA304', newCode: 'FEB25603022', name: 'Internal Audit', sks: 3, iconKey: 'file', prasyarat: 'SII306 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'AKA202', newCode: 'FEB25603023', name: 'Pengauditan Berbasis Risiko II', sks: 3, iconKey: 'award', prasyarat: 'AKA201 (T)', materiTM1_7: [], materiTM8_14: [] },
@@ -699,9 +699,7 @@ export const SEMESTERS: Semester[] = [
             flashcardCount: 176, featureBadge: 'Flashcard + Bank Soal + Kuis',
           },
           { code: 'AKA306', name: 'Pengantar Praktik Pengauditan', sks: 3, iconKey: 'award', prasyarat: 'AKA202 (T)', materiTM1_7: [], materiTM8_14: [] },
-          // Kode resmi panduan: AKS301. Kode itu masih dipakai sebagai alias lama Sistem Informasi Akuntansi (lihat src/lib/legacyCourseCodes.ts),
-          // jadi sementara memakai ADA301 sampai alias lama dicabut.
-          { code: 'ADA301', name: 'Accounting Data Analytics', sks: 3, iconKey: 'chart', prasyarat: 'SII203 (T)', materiTM1_7: [], materiTM8_14: [] },
+          { code: 'AKS301', name: 'Accounting Data Analytics', sks: 3, iconKey: 'chart', prasyarat: 'SII203 (T)', materiTM1_7: [], materiTM8_14: [] },
           { code: 'PNE402', name: 'Metode Penelitian Akuntansi', sks: 3, iconKey: 'book', prasyarat: 'MAS122 (T)', materiTM1_7: [], materiTM8_14: [] },
         ],
       },

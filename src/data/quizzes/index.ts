@@ -60,13 +60,15 @@ const REGISTRY: Record<string, QuizQuestion[]> = {
   MNM101: MNM101_QUIZ,
   MNM201: MNM101_QUIZ,
   AKK202: AKK202_QUIZ,
+  AKM301: AKM202_QUIZ,
   AKM202: AKM202_QUIZ,
+  AKK203: AKS201_QUIZ,
   AKS201: AKS201_QUIZ,
   PJK301: PJK301_QUIZ,
+  MNK102: MNK201_QUIZ,
   MNK201: MNK201_QUIZ,
   AKA201: AKA201_QUIZ,
   SII306: SII306_QUIZ,
-  AKS301: SII306_QUIZ,
   MNU307: MNU307_QUIZ,
 };
 
@@ -141,14 +143,14 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'all', label: 'Kompilasi Kuis Lengkap AKM II (14 TM)', items: AKK202_QUIZ },
     ];
   }
-  if (courseCode === 'AKM202') {
+  if (courseCode === 'AKM301' || courseCode === 'AKM202') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Akuntansi Manajemen (TM 1–7)', items: AKM202_QUIZ_UTS },
       { id: 'uas', label: 'Kuis Praktik Pra-UAS Akuntansi Manajemen (TM 8–14)', items: AKM202_QUIZ_UAS },
       { id: 'all', label: 'Kompilasi Kuis Lengkap Akuntansi Manajemen (14 TM)', items: AKM202_QUIZ },
     ];
   }
-  if (courseCode === 'AKS201') {
+  if (courseCode === 'AKK203' || courseCode === 'AKS201') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Akuntansi Sektor Publik (TM 1–7)', items: AKS201_QUIZ_UTS },
       { id: 'uas', label: 'Kuis Praktik Pra-UAS Akuntansi Sektor Publik (TM 8–14)', items: AKS201_QUIZ_UAS },
@@ -162,7 +164,7 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'all', label: 'Kompilasi Kuis Lengkap Perpajakan II (TM 1-7 dan TM 9-15)', items: PJK301_QUIZ },
     ];
   }
-  if (courseCode === 'MNK201') {
+  if (courseCode === 'MNK102' || courseCode === 'MNK201') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Manajemen Keuangan (TM 1–7)', items: MNK201_QUIZ_UTS },
       { id: 'uas', label: 'Kuis Praktik Pra-UAS Manajemen Keuangan (TM 9–14)', items: MNK201_QUIZ_UAS },
@@ -176,7 +178,7 @@ export function getQuizSets(courseCode: string): { id: string; label: string; it
       { id: 'all', label: 'Kompilasi Kuis Lengkap Pengauditan I (14 TM)', items: AKA201_QUIZ },
     ];
   }
-  if (courseCode === 'SII306' || courseCode === 'AKS301') {
+  if (courseCode === 'SII306') {
     return [
       { id: 'uts', label: 'Kuis Praktik Pra-UTS Sistem Informasi Akuntansi (TM 1–7)', items: SII306_QUIZ_UTS },
       { id: 'uas', label: 'Kuis Praktik Pra-UAS Sistem Informasi Akuntansi (TM 8–14)', items: SII306_QUIZ_UAS },

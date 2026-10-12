@@ -40,7 +40,7 @@ const UNIVERSAL_COURSES = [
   // Semester 2 Supporting / PDB
   'MNU108', 'AGX101', 'NOP103', 'BAI101', 'NOP104', 'SIP107', 'PHP103', 'MNM107', 'MNM106',
   // Semester 3 & 4
-  'AKK202', 'AKM202', 'AKA201', 'MNK201', 'AKS201', 'PJK301', 'SII306',
+  'AKK202', 'AKM301', 'AKA201', 'MNK102', 'AKK203', 'PJK301', 'SII306',
   // Semester 5
   'MNU307'
 ];
@@ -502,9 +502,10 @@ export default function App() {
   };
 
   const handleOpenCourseDirectly = (courseCode: string, activityId: string) => {
-    const courseObj = ALL_COURSES.find(c => c.course.code === courseCode)?.course;
+    const currentCode = canonicalCourseCode(courseCode);
+    const courseObj = ALL_COURSES.find(c => c.course.code === currentCode || c.course.newCode === currentCode)?.course;
     if (courseObj) {
-      pushUrl(`/course/${courseCode}`);
+      pushUrl(`/course/${courseObj.code}`);
       setSelectedCourse(courseObj);
       setRouteNotFound(false);
       

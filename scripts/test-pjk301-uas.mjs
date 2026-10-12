@@ -113,7 +113,9 @@ assert.match(m.PJK301_REVIEW_READINGS.uas.title,/TM09-TM15/);
 const course = m.ALL_COURSES.find(x=>x.course.code==='PJK301').course;
 assert.deepEqual(course.materiTM8_14.map(x=>x.tm),tms);
 assert.equal(m.getQuizSets('PJK301').find(x=>x.id==='uas').items.length,60);
-assert.equal(m.RELEASES[0].version,'v1.3.4'); assert.equal(m.RELEASES[1].version,'v1.3.3');
+const pjkReleaseIndex = m.RELEASES.findIndex(release => release.version === 'v1.3.4');
+assert.ok(pjkReleaseIndex >= 0, 'PJK301 release is retained when a newer release is prepended');
+assert.equal(m.RELEASES[pjkReleaseIndex + 1].version, 'v1.3.3', 'prior release order is retained');
 
 const before = JSON.parse(readFileSync('scripts/fixtures/pjk301-uts-baseline.json','utf8'));
 const retained = {quiz:m.PJK301_QUIZ_UTS,cards:m.PJK301_FC.filter(c=>c.phase==='pra-uts'),bank:m.PJK301_BANK_UTS,readings:Object.fromEntries([1,2,3,4,5,6,7,8].map(tm=>[tm,m.PJK301_READINGS[tm]])),review:m.PJK301_REVIEW_READINGS.uts};

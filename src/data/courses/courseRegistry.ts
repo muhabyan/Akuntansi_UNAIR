@@ -551,10 +551,12 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       const module = await import('../pjk2/pjk2Data');
       return { readings: module.PJK301_READINGS, reviews: module.PJK301_REVIEW_READINGS };
     }
+    case 'AKK203':
     case 'AKS201': {
       const module = await import('../asp/aspData');
       return { readings: module.AKS201_READINGS, reviews: module.AKS201_REVIEW_READINGS };
     }
+    case 'MNK102':
     case 'MNK201': {
       const module = await import('../mankeu/mankeuData');
       return { readings: module.MNK201_READINGS, reviews: module.MNK201_REVIEW_READINGS };
@@ -579,6 +581,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
         customReferensi: buildAkbiFormulaBank(module.AKM201_READINGS, module.AKBI_REVIEW_READINGS),
       };
     }
+    case 'AKM301':
     case 'AKM202': {
       const module = await import('../akmen/akmenData');
       return { readings: module.AKM202_READINGS, reviews: module.AKM202_REVIEW_READINGS };
@@ -680,8 +683,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
       content.reviews = pjkReview.PJK201_REVIEW_READINGS;
       return content;
     }
-    case 'SII306':
-    case 'AKS301': {
+    case 'SII306': {
       const module = await import('../sia/siaReadings');
       return { readings: module.SII306_READINGS, reviews: module.SII306_REVIEW_READINGS };
     }
@@ -703,7 +705,7 @@ async function resolveCourseContent(courseCode: string): Promise<LoadedCourseCon
 
 const UTS_REVIEW_TITLE = /(review|pemantapan).*(uts|ujian tengah)/i;
 
-// Kunci: objek `readings` asli, supaya alias kode (mis. AKS301 dan SII306) tetap berbagi objek yang sama.
+// Kunci: objek `readings` asli, supaya alias kode (mis. AKM202 dan AKM301) tetap berbagi objek yang sama.
 const normalizedByInput = new WeakMap<object, LoadedCourseContent>();
 
 /**

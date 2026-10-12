@@ -12,6 +12,17 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.5',
+    date: '12 Oktober 2026',
+    headline: 'Koreksi katalog Akuntansi semester 2 sampai 5',
+    notes: [
+      'Kode Semester III mengikuti tabel panduan: MNU108, MNK102, AKK202, AKK203, PJK301, SII306, dan AKA201, beserta kode FEB25603011 sampai FEB25603017 dan prasyaratnya.',
+      'Akuntansi Manajemen memakai AKM301 (FEB25603020). Accounting Data Analytics memakai AKS301; Manajemen Stratejik tetap MNU307 di semester 5.',
+      'AKM III mengikuti rincian panduan: 2 SKS, dengan total semester 4 sebesar 20 SKS. Prasyarat Internal Audit dan Metode Penelitian dinormalisasi menjadi SII306 dan MAS122.',
+      'Tautan lama ASP, Manajemen Keuangan, dan Akuntansi Manajemen tetap membuka materi yang sama. Penyimpanan SIA dengan kode lama AKS301 dipindahkan sekali ke SII306 agar tidak bentrok dengan Analytics.',
+    ],
+  },
+  {
     version: 'v1.3.4',
     date: '11 Oktober 2026',
     headline: 'Materi dan latihan pra-UAS Perpajakan II',

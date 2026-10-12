@@ -1,7 +1,4 @@
-// AKS301 -> SII306 rename guard. Sistem Informasi Akuntansi is catalogued as SII306 (FEB25603016);
-// the old code AKS301 keeps working for old URLs and for data this browser saved before the rename.
-// Checks the renamed wiring, the /course/AKS301 alias, the localStorage shim (src/lib/legacyCourseCodes.ts),
-// and that all data files are correctly renamed.
+// SIA remains SII306. Official AKS301 belongs to Analytics; old browser SIA state migrates once.
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
@@ -35,10 +32,10 @@ const { LEGACY_COURSE_CODES, canonicalCourseCode, canonicalCoursePath, migrateLe
 const { getFlashcards, getQuiz, getQuizSets, getBankSoal, getBankSoalSets } = mod;
 const read = (file) => readFileSync(file, 'utf8');
 
-// ---- The alias: /course/AKS301 opens the same course as /course/SII306 and /course/FEB25603016.
-assert.equal(LEGACY_COURSE_CODES.AKS301, 'SII306');
-assert.equal(canonicalCourseCode('AKS301'), 'SII306');
-assert.equal(canonicalCourseCode('aks301'), 'SII306');
+// ---- Separate official routes for SIA and Analytics.
+assert.equal(LEGACY_COURSE_CODES.AKS301, undefined);
+assert.equal(canonicalCourseCode('AKS301'), 'AKS301');
+assert.equal(canonicalCourseCode('aks301'), 'aks301');
 for (const code of ['SII306', 'PJK301', 'FEB25603016', 'AKK202']) assert.equal(canonicalCourseCode(code), code, `${code} must not be remapped`);
 
 const appSource = read('src/App.tsx');
@@ -50,22 +47,22 @@ const sia = courses.filter((course) => course.name === 'Sistem Informasi Akuntan
 assert.equal(sia.length, 1, 'exactly one Sistem Informasi Akuntansi course in the catalog');
 assert.equal(sia[0].code, 'SII306');
 assert.equal(sia[0].newCode, 'FEB25603016');
-assert.ok(!courses.some((course) => course.code === 'AKS301'), 'no catalog entry keeps AKS301 for SIA');
+assert.equal(courses.find(course => course.code === 'AKS301')?.name, 'Accounting Data Analytics');
 
 const resolve = (route) => {
   const wanted = canonicalCourseCode(route).toUpperCase();
   return courses.find((course) => course.code.toUpperCase() === wanted || course.newCode?.toUpperCase() === wanted);
 };
-for (const route of ['SII306', 'AKS301', 'aks301', 'FEB25603016']) assert.equal(resolve(route)?.code, 'SII306', `/course/${route}`);
+for (const route of ['SII306', 'FEB25603016']) assert.equal(resolve(route)?.code, 'SII306', `/course/${route}`);
 
-// ---- The URL rewrite: /course/AKS301 rewrites to /course/SII306
-assert.equal(canonicalCoursePath('/course/AKS301'), '/course/SII306');
-assert.equal(canonicalCoursePath('/course/aks301/'), '/course/SII306/');
-for (const pathname of ['/course/SII306', '/course/FEB25603016', '/course/AKS3010', '/course/AKS201', '/', '/guide']) {
+// ---- AKS301 routes must retain the official Analytics identity.
+assert.equal(canonicalCoursePath('/course/AKS301'), null);
+assert.equal(canonicalCoursePath('/course/aks301/'), null);
+for (const pathname of ['/course/SII306', '/course/FEB25603016', '/course/AKS3010', '/course/AKK203', '/', '/guide']) {
   assert.equal(canonicalCoursePath(pathname), null, `${pathname} must not be rewritten`);
 }
 
-// ---- The renamed data: content is served under SII306 and legacy AKS301
+// ---- SIA material and legacy card IDs stay unchanged under SII306.
 const content = await loadCourseContent('SII306');
 assert.deepEqual(Object.keys(content.readings).map(Number).sort((a, b) => a - b), Array.from({ length: 14 }, (_, i) => i + 1));
 assert.deepEqual(Object.keys(content.reviews).sort(), ['uts']); // TM14 sudah TM biasa, tidak lagi ditiru sebagai kartu Review UAS
@@ -78,12 +75,11 @@ assert.ok(getQuizSets('SII306').every((set) => set.items.length > 0) && getQuiz(
 assert.deepEqual(getBankSoalSets('SII306').map((set) => set.id), ['uts', 'uas', 'all']);
 assert.ok(getBankSoalSets('SII306').every((set) => set.items.length > 0) && getBankSoal('SII306').length > 0);
 
-// Legacy access also works via compatibility layer
-const legacyContent = await loadCourseContent('AKS301');
-assert.equal(Object.keys(legacyContent.readings).length, 14);
-assert.equal(getFlashcards('AKS301').length, cards.length);
-assert.equal(getQuiz('AKS301').length, getQuiz('SII306').length);
-assert.equal(getBankSoal('AKS301').length, getBankSoal('SII306').length);
+// Official Analytics never opens SIA exercises or readings.
+assert.equal(resolve('AKS301')?.code, 'AKS301');
+assert.equal(resolve('ADA301')?.code, 'AKS301');
+assert.deepEqual((await loadCourseContent('AKS301')).readings, {});
+for (const fn of [getFlashcards, getQuiz, getQuizSets, getBankSoal, getBankSoalSets]) assert.deepEqual(fn('AKS301'), []);
 
 // ---- No file in src retains aks301 in its filename
 const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) => (entry.isDirectory() ? walk(path.join(dir, entry.name)) : [path.join(dir, entry.name)]));
@@ -130,4 +126,26 @@ assert.equal(migrateLegacyCourseStorage(storage), 0);
 assert.deepEqual(at(storage, 'exam_session_SII306_uts_5400'), { saved: 'new-uts' });
 assert.deepEqual(at(storage, 'exam_session_AKS301_uts_5400'), { saved: 'old-uts' });
 
-console.log('SII306 rename guard passed: alias, legacy URL replacement, renamed data wiring, storage migration, and backwards compatibility.');
+// Future Analytics state must survive repeated starts after the one-time SIA migration.
+storage = memory({ [PROGRESS]: { 'AKS301:tm1': true, 'ADA301:tm2': true } });
+assert.equal(migrateLegacyCourseStorage(storage), 2);
+assert.deepEqual(at(storage, PROGRESS), { 'SII306:tm1': true, 'AKS301:tm2': true });
+storage.setItem('flashcard-stars-AKS301', JSON.stringify({ 'analytics-1': true }));
+assert.equal(migrateLegacyCourseStorage(storage), 0);
+assert.deepEqual(at(storage, 'flashcard-stars-AKS301'), { 'analytics-1': true });
+assert.deepEqual(at(storage, PROGRESS), { 'SII306:tm1': true, 'AKS301:tm2': true });
+
+// Failure must not mark the reserved-code migration complete or move ADA301 into it prematurely.
+storage = memory({ [PROGRESS]: { 'AKS301:tm1': true, 'ADA301:tm2': true } }, 'set');
+assert.equal(migrateLegacyCourseStorage(storage), 0);
+assert.equal(storage.map.has('akuntansi-feb-unair:migration:aks301-sia:v1'), false);
+assert.deepEqual(at(storage, PROGRESS), { 'AKS301:tm1': true, 'ADA301:tm2': true });
+const retry = memory(Object.fromEntries(storage.map));
+assert.equal(migrateLegacyCourseStorage(retry), 2);
+storage = memory({ 'flashcard-srs-AKS301': '{corrupt', [PROGRESS]: { 'ADA301:tm2': true } });
+assert.equal(migrateLegacyCourseStorage(storage), 0);
+assert.equal(storage.map.has('akuntansi-feb-unair:migration:aks301-sia:v1'), false);
+assert.equal(storage.getItem('flashcard-srs-AKS301'), '{corrupt');
+assert.deepEqual(at(storage, PROGRESS), { 'ADA301:tm2': true });
+
+console.log('SII306 identity PASS: independent Analytics routes, unchanged SIA content, one-time storage migration, retry and future Analytics preservation.');

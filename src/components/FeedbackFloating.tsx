@@ -25,7 +25,7 @@ interface FeedbackFloatingProps {
 export default function FeedbackFloating({ currentCourse, currentTm }: FeedbackFloatingProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [reportType, setReportType] = useState<ReportType>('request-materi');
-  const [selectedCourseCode, setSelectedCourseCode] = useState<string>(() => currentCourse?.code || 'MNK201');
+  const [selectedCourseCode, setSelectedCourseCode] = useState<string>(() => currentCourse?.code || 'MNK102');
   const [tmInput, setTmInput] = useState<string>(() => (currentTm ? String(currentTm) : ''));
   const [urgency, setUrgency] = useState<UrgencyLevel>('biasa');
   const [description, setDescription] = useState('');

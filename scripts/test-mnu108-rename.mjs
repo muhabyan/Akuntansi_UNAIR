@@ -59,11 +59,11 @@ assert.equal(pengantarManajemen[0].code, 'MNU108');
 assert.equal(pengantarManajemen[0].newCode, 'FEB25603011');
 assert.ok(!courses.some((course) => course.code === 'MNM101' || course.code === 'MNM201'), 'no catalog entry keeps MNM101/MNM201 for Pengantar Manajemen');
 
-// FEB25603011 belonged to AKK202 before this rename; the handbook gives it to Pengantar Manajemen. No number is free
-// for AKK202, so it keeps its own code only, and no two courses may answer to the same route code.
+// The Semester III table gives FEB25603011 to Pengantar Manajemen and FEB25603013 to AKK202.
+// No two courses may answer to the same route code.
 const akk202 = courses.find((course) => course.code === 'AKK202');
 assert.ok(akk202, 'AKK202 stays in the catalog');
-assert.equal(akk202.newCode, undefined, 'AKK202 released FEB25603011 and has no alternative code');
+assert.equal(akk202.newCode, 'FEB25603013', 'AKK202 uses the alternative code from the Semester III table');
 const routeCodes = courses.flatMap((course) => [course.code, course.newCode].filter(Boolean).map((code) => String(code).toUpperCase()));
 assert.equal(new Set(routeCodes).size, routeCodes.length, `duplicate route code in the catalog: ${routeCodes.join(', ')}`);
 
