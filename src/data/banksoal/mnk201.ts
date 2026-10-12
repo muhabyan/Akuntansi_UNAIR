@@ -1,9 +1,5 @@
-// src/data/banksoal/mnk201.ts
-// Bank Soal Esai & Studi Kasus Keputusan Keuangan Komprehensif Manajemen Keuangan (MNK201)
-// Berdasarkan Brigham & Houston (Fundamentals of Financial Management 15e/16e)
-// 14 Kasus Lengkap: 7 Kasus Pra-UTS (TM 1–7) & 7 Kasus Pra-UAS (TM 8–14)
+// MNK102; keep original pre-UTS items and UTS review.
 import type { BankSoal } from '../../types';
-
 export const MNK201_BANK_UTS: BankSoal[] = [
   {
     "type": "analysis",
@@ -230,8 +226,7 @@ export const MNK201_BANK_UTS: BankSoal[] = [
     "answerGuide": "1. Pengeluaran Kas Awal Bersih (CF_0):\n• Harga Pembelian Mesin Baru + Instalasi = Rp 2.500.000.000 (Kas Keluar)\n• Penjualan Mesin Lama:\n  - Nilai Jual = Rp 500.000.000\n  - Nilai Buku = Rp 300.000.000\n  - Laba Penjualan = Rp 200.000.000\n  - Pajak atas Laba = 22% × Rp 200.000.000 = Rp 44.000.000\n  - Kas Masuk Bersih Mesin Lama = Rp 500.000.000 - Rp 44.000.000 = Rp 456.000.000\n• Penambahan Modal Kerja Bersih (NWC) = Rp 150.000.000 (Kas Keluar)\n• Total CF_0 = -2.500.000.000 + 456.000.000 - 150.000.000 = -Rp 2.194.000.000.\n\n2. Operating Cash Flow (OCF) Tahunan (Tahun 1 s.d. 4):\n• Penghematan Biaya Tunai = +Rp 900.000.000 per tahun.\n• Beban Depresiasi Inkremental = Rp 2.500.000.000 / 4 = Rp 625.000.000 per tahun.\n• OCF = (Penghematan Kas) × (1 - T) + (Depresiasi × T)\n• OCF = (Rp 900.000.000 × 0,78) + (Rp 625.000.000 × 0,22)\n• OCF = Rp 702.000.000 + Rp 137.500.000 = Rp 839.500.000 per tahun.\n\n3. Arus Kas Terminal (Akhir Tahun ke-4):\n• Pemulihan Modal Kerja Bersih (NWC Recovery) = +Rp 150.000.000\n• Nilai Jual Mesin Baru = Rp 400.000.000\n• Nilai Buku Mesin Baru Akhir Thn 4 = Rp 0\n• Pajak atas Nilai Sisa = 22% × Rp 400.000.000 = Rp 88.000.000\n• Kas Bersih Nilai Sisa = Rp 400.000.000 - Rp 88.000.000 = Rp 312.000.000\n• Total Arus Kas Terminal Non-Operasional = Rp 150.000.000 + Rp 312.000.000 = Rp 462.000.000.\n\n4. Skedul Arus Kas dan Kalkulasi NPV pada WACC 12%:\n• Thn 0: -Rp 2.194.000.000\n• Thn 1: Rp 839.500.000 | PV = 839,5 / 1,12 = Rp 749.553.571\n• Thn 2: Rp 839.500.000 | PV = 839,5 / 1,12^2 = Rp 669.244.260\n• Thn 3: Rp 839.500.000 | PV = 839,5 / 1,12^3 = Rp 597.539.518\n• Thn 4: Rp 839.500.000 (OCF) + Rp 462.000.000 (Terminal) = Rp 1.301.500.000 | PV = 1.301,5 / 1,12^4 = Rp 827.127.354\n• Total PV Kas Masuk = Rp 749.553.571 + Rp 669.244.260 + Rp 597.539.518 + Rp 827.127.354 = Rp 2.843.464.703\n• NPV = Rp 2.843.464.703 - Rp 2.194.000.000 = +Rp 649.464.703 (Rp 649,46 juta).\n\n5. Keputusan Final:\n• Karena NPV proyek bernilai positif signifikan (+Rp 649,46 juta > 0), penggantian mesin terbukti sangat menguntungkan secara finansial.\n• KEPUTUSAN: SETUJUI PENGGANTIAN MESIN LAMA DENGAN MESIN BARU SEKARANG."
   }
 ];
-
-export const MNK201_BANK_UAS: BankSoal[] = [
+export const MNK201_REVIEW_UTS_BANK: BankSoal[] = [
   {
     "type": "calculation",
     "scope": "TM 8: Pemantapan Pra-UTS, Valuasi Terpadu, & Peramalan AFN",
@@ -266,200 +261,441 @@ export const MNK201_BANK_UAS: BankSoal[] = [
       "Ketepatan valuasi saham Gordon Growth Model (25%)"
     ],
     "answerGuide": "1. Kalkulasi Additional Funds Needed (AFN):\n• Formula AFN = (A*_0 / S_0) × ΔS - (L*_0 / S_0) × ΔS - [M × S_1 × (1 - POR)]\n• Kebutuhan Aset Baru = 60% × Rp 5.000.000.000 = Rp 3.000.000.000\n• Dana Spontan Terhimpun = 15% × Rp 5.000.000.000 = Rp 750.000.000\n• Tambahan Laba Ditahan Internal = 8% × Rp 25.000.000.000 × (1 - 0,40) = Rp 2.000.000.000 × 0,60 = Rp 1.200.000.000\n• AFN = Rp 3.000.000.000 - Rp 750.000.000 - Rp 1.200.000.000 = Rp 1.050.000.000 (Rp 1,05 miliar).\n\n2. Struktur Pemenuhan AFN:\n• Utang Obligasi Baru (50%) = 50% × Rp 1.050.000.000 = Rp 525.000.000.\n• Emisi Saham Baru (50%) = Rp 525.000.000.\n• Tambahan Beban Bunga Tahunan = 10% × Rp 525.000.000 = Rp 52.500.000 per tahun.\n\n3. Pengaruh Kapasitas dan Rasio Retensi:\n• Jika perusahaan memiliki kapasitas berlebih (misal hanya beroperasi pada kapasitas 80%), maka aset tetap tidak perlu bertambah secepat penjualan, sehingga komponen (A*_0 / S_0) × ΔS mengecil secara drastis.\n• Jika rasio pembayaran dividen diturunkan (misal dari 40% menjadi 10%, retention ratio naik ke 90%), maka laba ditahan internal naik dari Rp 1,2 M menjadi Rp 1,8 M, yang memangkas kebutuhan AFN menjadi hanya Rp 450 juta.\n\n4. Valuasi Saham Model Gordon (DDM):\n• D_0 = Rp 300, g = 6%, r_s = 12%.\n• D_1 = D_0 × (1 + g) = Rp 300 × 1,06 = Rp 318 per lembar.\n• P_0 = D_1 / (r_s - g) = Rp 318 / (0,12 - 0,06) = Rp 318 / 0,06 = Rp 5.300 per lembar saham."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 9: Struktur Modal Modigliani-Miller & Persamaan Hamada",
-    "difficulty": "Sulit",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 9: Optimasi Struktur Modal: Teori Modigliani-Miller dengan Pajak, Persamaan Hamada, dan Analisis EBIT-EPS",
-    "context": "PT Bintang Abadi saat ini merupakan perusahaan tanpa utang (all-equity firm) dengan total nilai pasar ekuitas Rp 10.000.000.000 yang terdiri dari 1.000.000 lembar saham biasa (harga Rp 10.000 per lembar). Manajemen mempertimbangkan program restrukturisasi modal dengan menerbitkan obligasi senilai Rp 4.000.000.000 berkupon bunga 10% per tahun, dan menggunakan seluruh dana kas hasil emisi obligasi tersebut untuk melakukan pembelian kembali saham (share repurchase) di pasar sekunder pada harga wajar. Tarif pajak badan adalah 20%, suku bunga bebas risiko 6%, premi risiko pasar 8%, dan beta unlevered (b_U) perusahaan saat ini adalah 1,00.",
-    "data": [
-      "Kondisi Awal (Unlevered):\n• Nilai Perusahaan (V_U) = Rp 10.000.000.000\n• Total Utang (D) = Rp 0\n• Jumlah Saham Beredar = 1.000.000 lembar @ Rp 10.000\n• Beta Tanpa Utang (b_U) = 1,00\n• Proyeksi EBIT Stabil = Rp 1.800.000.000 per tahun.",
-      "Rencana Rekapitalisasi Utang:\n• Penerbitan Obligasi Baru (D) = Rp 4.000.000.000 pada kupon r_d = 10% (Beban Bunga = Rp 400.000.000/tahun).\n• Dana digunakan untuk buyback saham pada harga pasar baru setelah pengumuman restrukturisasi.",
-      "Parameter Finansial: Tarif Pajak (T) = 20%, r_RF = 6%, (r_M - r_RF) = 8%."
-    ],
-    "instructions": [
-      "Berdasarkan Teori Modigliani-Miller dengan Pajak Korporasi (1963), hitung nilai pasar baru perusahaan yang berutang (V_L) dan hitung harga pasar per lembar saham yang baru setelah pengumuman restrukturisasi modal.",
-      "Hitung berapa lembar saham yang berhasil dibeli kembali oleh perusahaan dan berapa sisa lembar saham beredar pasca-repurchase.",
-      "Gunakan Persamaan Hamada untuk menghitung Beta berutang (Levered Beta / b_L) perusahaan dan hitung biaya ekuitas baru (r_s) menggunakan model CAPM.",
-      "Hitung Laba per Lembar Saham (EPS) sebelum dan sesudah restrukturisasi pada level EBIT Rp 1.800.000.000. Tentukan apakah EPS mengalami peningkatan.",
-      "Hitung titik impas finansial (EBIT-EPS Indifference Point) antara struktur modal tanpa utang dan berutang."
-    ],
-    "outputFormat": [
-      "Kalkulasi Nilai V_L MM dan Harga Saham Baru",
-      "Kalkulasi Transaksi Share Repurchase",
-      "Kalkulasi Persamaan Hamada dan CAPM",
-      "Perbandingan EPS dan Titik Indiferen EBIT"
-    ],
-    "rubric": [
-      "Ketepatan aplikasi rumus MM dengan pajak (30%)",
-      "Kebenaran mekanisme buyback saham dan sisa saham beredar (25%)",
-      "Akurasi perhitungan formula Hamada dan CAPM (25%)",
-      "Akurasi perhitungan EPS komparatif dan titik impas EBIT (20%)"
-    ],
-    "answerGuide": "1. Nilai Perusahaan MM dengan Pajak & Harga Saham Baru:\n• V_L = V_U + (T_c × D) = Rp 10.000.000.000 + (0,20 × Rp 4.000.000.000) = Rp 10.000.000.000 + Rp 800.000.000 = Rp 10.800.000.000.\n• Tambahan nilai perusahaan akibat tax shield utang adalah Rp 800.000.000, yang seluruhnya menjadi hak pemegang saham eksisting.\n• Harga saham baru per lembar = V_L / Saham Awal = Rp 10.800.000.000 / 1.000.000 lembar = Rp 10.800 per lembar.\n\n2. Transaksi Share Repurchase:\n• Dana Kas dari Utang untuk Buyback = Rp 4.000.000.000.\n• Saham yang dibeli kembali = Rp 4.000.000.000 / Rp 10.800 = 370.370 lembar saham.\n• Sisa Saham Beredar = 1.000.000 - 370.370 = 629.630 lembar saham.\n• Nilai Ekuitas Pasar Pasca-Buyback (S) = V_L - D = Rp 10.800.000.000 - Rp 4.000.000.000 = Rp 6.800.000.000 (Cek: 629.630 lembar × Rp 10.800 = Rp 6.800.000.000).\n\n3. Persamaan Hamada & Biaya Ekuitas CAPM:\n• Rasio Utang terhadap Ekuitas Pasar (D/S) = Rp 4.000.000.000 / Rp 6.800.000.000 = 0,5882.\n• b_L = b_U × [1 + (1 - T) × (D/S)] = 1,00 × [1 + (1 - 0,20) × 0,5882] = 1,00 × [1 + 0,4706] = 1,47.\n• Biaya Ekuitas Baru (CAPM): r_s = r_RF + b_L × (r_M - r_RF) = 6,00% + 1,47 × 8,00% = 6,00% + 11,76% = 17,76% (sebelumnya: 6% + 1,0 × 8% = 14,00%).\n\n4. Komparasi EPS pada EBIT = Rp 1.800.000.000:\n• Struktur Awal (Tanpa Utang):\n  - Laba Bersih = (EBIT - 0) × (1 - 0,20) = Rp 1.800.000.000 × 0,80 = Rp 1.440.000.000.\n  - EPS Awal = Rp 1.440.000.000 / 1.000.000 lembar = Rp 1.440 per lembar.\n• Struktur Berutang (Levered):\n  - Beban Bunga = 10% × Rp 4.000.000.000 = Rp 400.000.000.\n  - Laba Bersih = (Rp 1.800.000.000 - Rp 400.000.000) × 0,80 = Rp 1.400.000.000 × 0,80 = Rp 1.120.000.000.\n  - EPS Baru = Rp 1.120.000.000 / 629.630 lembar = Rp 1.778,82 per lembar.\n• Kenaikan EPS: EPS melonjak dari Rp 1.440 menjadi Rp 1.778,82 (naik 23,5%).\n\n5. Titik Impas Finansial (EBIT Indifference Point):\n• [(EBIT* - 0) × (1 - T)] / N_U = [(EBIT* - I) × (1 - T)] / N_L\n• EBIT* / 1.000.000 = (EBIT* - 400.000.000) / 629.630\n• 629.630 × EBIT* = 1.000.000 × EBIT* - 400.000.000.000.000\n• 370.370 × EBIT* = 400.000.000.000.000 -> EBIT* = Rp 1.080.000.000.\n• Kesimpulan: Jika EBIT perusahaan di atas Rp 1,08 miliar, struktur modal berutang memberikan EPS yang lebih tinggi."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 10: Kebijakan Dividen, Residual Dividend Model, & Share Repurchase",
-    "difficulty": "Menengah",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 10: Analisis Kebijakan Distribusi Laba: Residual Dividend Model versus Share Repurchase",
-    "context": "PT Mega Pratama membukukan Laba Bersih tahun berjalan sebesar Rp 800.000.000.000. Perusahaan memiliki 100.000.000 lembar saham biasa beredar yang saat ini diperdagangkan pada harga pasar wajar Rp 16.000 per lembar. Dewan Direksi mengidentifikasi peluang investasi modal yang menguntungkan untuk tahun depan dengan total anggaran belanja modal (Capital Budget) sebesar Rp 1.000.000.000.000. Struktur modal sasaran yang optimal dipertahankan pada 60% Ekuitas dan 40% Utang.",
-    "data": [
-      "Laba Bersih Tahun Berjalan (Net Income): Rp 800.000.000.000.",
-      "Jumlah Saham Beredar Awal: 100.000.000 lembar.",
-      "Harga Saham Pasar: Rp 16.000 per lembar (Kapitalisasi Pasar = Rp 1,6 triliun).",
-      "Anggaran Belanja Modal Baru: Rp 1.000.000.000.000.",
-      "Target Struktur Modal: 60% Ekuitas Saham Biasa dan 40% Utang Jangka Panjang."
-    ],
-    "instructions": [
-      "Berdasarkan Residual Dividend Model, hitung berapa porsi laba bersih yang harus ditahan untuk mendanai anggaran belanja modal dan hitung total dividen tunai yang dapat dibagikan kepada pemegang saham.",
-      "Hitung Dividen per Lembar Saham (DPS) dan Dividend Payout Ratio (DPR) yang dihasilkan dari model dividen residual tersebut.",
-      "Jika manajemen memutuskan untuk tidak membagikan dividen tunai melainkan menggunakan seluruh dana kas distribusi tersebut untuk melakukan Pembelian Kembali Saham (Share Repurchase) di pasar terbuka pada harga Rp 16.000 per lembar, hitung berapa lembar saham yang berhasil dibeli kembali dan berapa lembar sisa saham yang beredar.",
-      "Hitung Laba per Lembar Saham (EPS) pasca-share repurchase (asumsikan laba bersih tetap Rp 800 miliar) dan bandingkan dengan EPS sebelum share repurchase.",
-      "Analisis mengapa pemegang saham di negara dengan tarif pajak dividen lebih tinggi dari pajak capital gains lebih memilih share repurchase daripada dividen kas."
-    ],
-    "outputFormat": [
-      "Kalkulasi Residual Dividend Model & DPR",
-      "Kalkulasi Mekanisme Share Repurchase",
-      "Analisis Dampak terhadap EPS dan Nilai Pemegang Saham",
-      "Evaluasi Teori Preferensi Pajak (Tax Preference Theory)"
-    ],
-    "rubric": [
-      "Ketepatan perhitungan model dividen residual (35%)",
-      "Kebenaran kalkulasi share repurchase dan sisa saham (25%)",
-      "Akurasi analisis dampak EPS (20%)",
-      "Ketajaman analisis pajak dan efek sinyal pasar (20%)"
-    ],
-    "answerGuide": "1. Residual Dividend Model:\n• Anggaran Belanja Modal = Rp 1.000.000.000.000.\n• Kebutuhan Ekuitas (60%) = 60% × Rp 1.000.000.000.000 = Rp 600.000.000.000.\n• Laba Bersih Tersedia = Rp 800.000.000.000.\n• Total Dividen Kas Residu = Laba Bersih - Kebutuhan Ekuitas = Rp 800.000.000.000 - Rp 600.000.000.000 = Rp 200.000.000.000 (Rp 200 miliar).\n\n2. DPS dan Dividend Payout Ratio:\n• DPS = Rp 200.000.000.000 / 100.000.000 lembar = Rp 2.000 per lembar saham.\n• Dividend Payout Ratio (DPR) = Rp 200 M / Rp 800 M = 25,00%.\n\n3. Mekanisme Share Repurchase:\n• Dana Distribusi = Rp 200.000.000.000.\n• Harga Pembelian Saham = Rp 16.000 per lembar.\n• Jumlah Saham Dibeli Kembali = Rp 200.000.000.000 / Rp 16.000 = 12.500.000 lembar saham.\n• Sisa Saham Beredar = 100.000.000 - 12.500.000 = 87.500.000 lembar saham.\n\n4. Dampak terhadap EPS:\n• EPS Sebelum Repurchase = Rp 800.000.000.000 / 100.000.000 lembar = Rp 8.000 per lembar.\n• EPS Sesudah Repurchase = Rp 800.000.000.000 / 87.500.000 lembar = Rp 9.142,86 per lembar.\n• EPS meningkat sebesar Rp 1.142,86 (+14,29%) karena basis penyebut saham mengecil.\n\n5. Evaluasi Teori Preferensi Pajak:\n• Dividen tunai langsung dikenakan pemotongan pajak penghasilan final pada tahun diterimanya dividen.\n• Share repurchase menghasilkan capital gains yang pajaknya dapat ditangguhkan (tax-deferred) sampai investor secara sukarela menjual sahamnya di masa depan.\n• Selain itu, share repurchase memberikan fleksibilitas bagi pemegang saham: investor yang membutuhkan likuiditas dapat menjual sahamnya, sementara yang ingin berinvestasi kembali dapat mempertahankan kepemilikannya dengan persentase proporsi yang justru meningkat."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 11: Manajemen Kas, Model Baumol, Miller-Orr, & Lockbox",
-    "difficulty": "Menengah",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 11: Penentuan Saldo Kas Optimal Model Baumol dan Miller-Orr serta Evaluasi Kelayakan Sistem Lockbox",
-    "context": "PT Logistik Sentosa memerlukan kas sebesar Rp 36.000.000.000 sepanjang tahun depan yang dikeluarkan secara konstan dan merata. Biaya tetap setiap kali menjual surat berharga menjadi kas adalah Rp 200.000 per transaksi, dan tingkat bunga tahunan atas surat berharga pasar uang adalah 10% per tahun. Di sisi lain, pada salah satu anak perusahaannya yang menghadapi arus kas harian acak berfluktuasi dengan varians Rp 25.000.000.000.000, manajemen mempertimbangkan model Miller-Orr.",
-    "data": [
-      "Bagian A (Model Baumol):\n• Total Kebutuhan Kas Tahunan (T) = Rp 36.000.000.000\n• Biaya Tetap Transaksi (F) = Rp 200.000 per transaksi\n• Suku Bunga Bebas Risiko (r) = 10% p.a. (0,10)",
-      "Bagian B (Model Miller-Orr):\n• Varians Arus Kas Bersih Harian (σ²) = Rp 25.000.000.000.000\n• Biaya Transaksi Pengalihan (F) = Rp 150.000\n• Suku Bunga Harian (r_harian) = 10% / 365 = 0,000274 per hari\n• Batas Bawah Kas Minimum (L) = Rp 100.000.000",
-      "Bagian C (Evaluasi Lockbox):\n• Penagihan Harian = 500 cek @ rata-rata Rp 4.000.000 (Total Rp 2.000.000.000/hari).\n• Sistem Lockbox mempercepat pencairan kas 3 hari kerja.\n• Biaya Lockbox Bank = Rp 2.500 per cek yang diproses. Suku bunga = 10% per tahun."
-    ],
-    "instructions": [
-      "Gunakan Model Baumol (BAT) untuk menghitung besarnya transfer kas optimal (C*), saldo kas rata-rata, frekuensi transfer kas per tahun, dan total biaya pengelolaan kas tahunan minimum.",
-      "Gunakan Model Miller-Orr untuk menghitung Titik Kembalian Kas (Return Point Z) dan Batas Atas Kas (Upper Limit H). Jelaskan tindakan manajer keuangan jika saldo kas menyentuh batas atas H.",
-      "Lakukan analisis kelayakan finansial implementasi sistem Lockbox: hitung tambahan pendapatan bunga tahunan dari percepatan kas dan bandingkan dengan total biaya administrasi bank tahunan. Apakah sistem Lockbox layak diterapkan?"
-    ],
-    "outputFormat": [
-      "Perhitungan Model Baumol Lengkap",
-      "Perhitungan Batas Pengendalian Kas Miller-Orr",
-      "Analisis Cost-Benefit Sistem Lockbox Bank",
-      "Kesimpulan Manajerial Pengelolaan Kas"
-    ],
-    "rubric": [
-      "Ketepatan perhitungan rumus model Baumol C* dan total biaya (35%)",
-      "Akurasi perhitungan Miller-Orr Z dan H (30%)",
-      "Akurasi analisis cost-benefit lockbox (25%)",
-      "Ketajaman rekomendasi manajerial (10%)"
-    ],
-    "answerGuide": "1. Model Baumol (BAT):\n• C* = √[(2 × T × F) / r] = √[(2 × Rp 36.000.000.000 × Rp 200.000) / 0,10] = √[(14.400.000.000.000.000) / 0,10] = √[144.000.000.000.000.000] = Rp 379.473.319 (dibulatkan Rp 380.000.000).\n• Saldo Kas Rata-rata = C* / 2 = Rp 379.473.319 / 2 = Rp 189.736.660.\n• Frekuensi Transfer Kas = T / C* = Rp 36.000.000.000 / Rp 379.473.319 = 94,87 kali per tahun (sekitar setiap 3,8 hari).\n• Total Biaya Kas Tahunan = Biaya Transaksi + Biaya Peluang = (T / C* × F) + (C* / 2 × r) = (94,87 × Rp 200.000) + (Rp 189.736.660 × 0,10) = Rp 18.974.000 + Rp 18.973.666 = Rp 37.947.666 per tahun.\n\n2. Model Miller-Orr:\n• Z = L + ³√[(3 × F × σ²) / (4 × r_harian)]\n• Komponen pembilang = 3 × Rp 150.000 × 25.000.000.000.000 = Rp 1,125 × 10^19.\n• Komponen penyebut = 4 × 0,000274 = 0,001096.\n• Rasio = 1,125 × 10^19 / 0,001096 = 1,02646 × 10^22.\n• Akar pangkat tiga ³√(1,02646 × 10^22) = Rp 217.324.000.\n• Return Point Z = Rp 100.000.000 + Rp 217.324.000 = Rp 317.324.000.\n• Batas Atas H = 3Z - 2L = 3(Rp 317.324.000) - 2(Rp 100.000.000) = Rp 951.972.000 - Rp 200.000.000 = Rp 751.972.000.\n• Tindakan: Jika saldo kas naik menyentuh H (Rp 751,97 juta), manajer membeli surat berharga sebesar H - Z = Rp 434.648.000 agar saldo kas kembali ke posisi Z.\n\n3. Analisis Kelayakan Sistem Lockbox:\n• Penagihan Harian = Rp 2.000.000.000 per hari.\n• Dana yang Dikeluarkan dari Float (3 hari) = 3 hari × Rp 2.000.000.000 = Rp 6.000.000.000 (tambahan saldo kas tersedia).\n• Manfaat Tahunan (Bunga 10%) = 10% × Rp 6.000.000.000 = Rp 600.000.000 per tahun.\n• Biaya Tahunan Lockbox = 500 cek/hari × 365 hari × Rp 2.500/cek = 182.500 cek × Rp 2.500 = Rp 456.250.000 per tahun.\n• Penghematan Bersih Tahunan = Manfaat - Biaya = Rp 600.000.000 - Rp 456.250.000 = +Rp 143.750.000 per tahun.\n• KEPUTUSAN: SISTEM LOCKBOX SANGAT LAYAK DIIMPLEMENTASIKAN."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 12: Manajemen Persediaan EOQ & Biaya Kredit Dagang",
-    "difficulty": "Menengah",
-    "estimatedTime": "30–35 menit",
-    "question": "Studi Kasus 12: Optimasi Economic Order Quantity (EOQ), Safety Stock, dan Biaya Pendanaan Kredit Dagang",
-    "context": "PT Surya Kencana adalah distributor suku cadang mesin. Permintaan tahunan untuk salah satu komponen utama adalah 36.000 unit yang terdistribusi merata sepanjang 360 hari kerja setahun (100 unit/hari). Biaya pemesanan adalah Rp 250.000 per pesanan, dan biaya penyimpanan persediaan adalah Rp 2.000 per unit per tahun. Pemasok membutuhkan waktu tunggu (lead time) 4 hari kerja. Manajemen juga menghadapi penawaran syarat pembayaran kredit dagang dari pemasok lain.",
-    "data": [
-      "Data Persediaan Komponen:\n• Permintaan Tahunan (S) = 36.000 unit\n• Biaya Pemesanan (O) = Rp 250.000 per pesanan\n• Biaya Penyimpanan Tahunan (C) = Rp 2.000 per unit per tahun\n• Hari Kerja Setahun = 360 hari (Penggunaan Harian d = 100 unit/hari)\n• Waktu Tunggu (Lead Time) = 4 hari kerja\n• Safety Stock yang Ditetapkan = 200 unit",
-      "Syarat Kredit Pemasok: Syarat '3/15, net 45' (diskon 3% jika dibayar dalam 15 hari, jatuh tempo penuh 45 hari)."
-    ],
-    "instructions": [
-      "Hitung Economic Order Quantity (EOQ) dan hitung total biaya persediaan tahunan (Total Carrying Cost + Total Ordering Cost) pada titik EOQ.",
-      "Hitung Reorder Point (ROP) titik pemesanan kembali dalam unit.",
-      "Hitung biaya nominal tahunan (Nominal Annual Cost) dan biaya efektif tahunan (Effective Annual Rate / EAR) jika perusahaan memilih untuk TIDAK mengambil diskon dan membayar pada hari ke-45.",
-      "Jika perusahaan dapat meminjam dari bank dengan bunga kredit modal kerja 14% per tahun, manakah keputusan finansial yang paling rasional: mengambil diskon dengan meminjam bank atau mengabaikan diskon kredit dagang?"
-    ],
-    "outputFormat": [
-      "Kalkulasi EOQ dan Total Biaya Persediaan",
-      "Kalkulasi Reorder Point (ROP) dengan Safety Stock",
-      "Kalkulasi Biaya Kredit Dagang (Nominal dan EAR)",
-      "Rekomendasi Keputusan Pendanaan Modal Kerja"
-    ],
-    "rubric": [
-      "Ketepatan perhitungan rumus EOQ dan verifikasi TIC (30%)",
-      "Akurasi perhitungan Reorder Point ROP (20%)",
-      "Akurasi perhitungan biaya kredit dagang nominal dan EAR (30%)",
-      "Kualitas rekomendasi komparasi kredit bank vs kredit dagang (20%)"
-    ],
-    "answerGuide": "1. Economic Order Quantity (EOQ) & Total Biaya:\n• EOQ = √[(2 × S × O) / C] = √[(2 × 36.000 × Rp 250.000) / Rp 2.000] = √[18.000.000.000 / 2.000] = √9.000.000 = 3.000 unit.\n• Frekuensi Pemesanan = 36.000 / 3.000 = 12 kali per tahun (setiap bulan).\n• Total Ordering Cost = 12 × Rp 250.000 = Rp 3.000.000 per tahun.\n• Total Carrying Cost (tanpa safety stock) = (EOQ / 2) × C = (3.000 / 2) × Rp 2.000 = Rp 3.000.000 per tahun.\n• Total Biaya Persediaan = Rp 3.000.000 + Rp 3.000.000 = Rp 6.000.000 per tahun.\n(Catatan: Pada titik EOQ, Total Carrying Cost persis sama dengan Total Ordering Cost).\n\n2. Reorder Point (ROP):\n• ROP = (Lead Time × Penggunaan Harian) + Safety Stock\n• ROP = (4 hari × 100 unit/hari) + 200 unit = 400 unit + 200 unit = 600 unit.\n• Pemesanan baru sebesar 3.000 unit harus segera diterbitkan saat sisa fisik persediaan di gudang menyentuh 600 unit.\n\n3. Biaya Kredit Dagang '3/15, net 45':\n• Periode Kredit = 45 hari - 15 hari = 30 hari.\n• Biaya Nominal Tahunan = [Diskon% / (100 - Diskon%)] × [365 / (Hari Net - Hari Diskon)] = (3 / 97) × (365 / 30) = 0,030928 × 12,1667 = 37,63% per tahun.\n• Biaya Efektif Tahunan (EAR) = [1 + (3 / 97)]^(365 / 30) - 1 = (1,030928)^12,1667 - 1 = 1,4486 - 1 = 44,86% per tahun.\n\n4. Rekomendasi Pendanaan:\n• Biaya mengabaikan diskon kredit dagang sangat mahal (EAR = 44,86% p.a.), jauh melampaui biaya pinjaman bank komersial (14% p.a.).\n• REKOMENDASI: AMBIL DISKON KREDIT DAGANG. Perusahaan harus meminjam dana dari bank pada hari ke-15 untuk membayar faktur dengan diskon 3%, dan melunasi pinjaman bank tersebut pada hari ke-45. Strategi ini menghemat biaya bunga lebih dari 30% per tahun."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 13: Keuangan Multinasional & Hedging Valuta Asing",
-    "difficulty": "Sulit",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 13: Manajemen Risiko Valas Multinasional: Forward Market Hedge versus Money Market Hedge atas Piutang Ekspor",
-    "context": "PT Garment Nusantara adalah eksportir tekstil Indonesia yang baru saja menandatangani kontrak penjualan dengan mitra ritel di New York sebesar USD 1.000.000 dengan syarat pembayaran 90 hari kalender mendatang. Direktur Keuangan khawatir akan depresiasi Dolar AS terhadap Rupiah selama 90 hari tersebut dan ingin mengunci nilai penerimaan kas secara pasti.",
-    "data": [
-      "Nilai Piutang Valas: USD 1.000.000 jatuh tempo dalam 90 hari (0,25 tahun).",
-      "Kurs Pasar Valas Saat Ini:\n• Kurs Spot: Rp 15.500 / USD\n• Kurs Forward 90-Hari: Rp 15.650 / USD",
-      "Struktur Suku Bunga Pasar Uang 90-Hari (Tahunan):\n• Suku Bunga Pinjaman USD = 5,00% per tahun (1,25% per 90 hari)\n• Suku Bunga Deposito USD = 3,00% per tahun (0,75% per 90 hari)\n• Suku Bunga Pinjaman IDR = 10,00% per tahun (2,50% per 90 hari)\n• Suku Bunga Deposito IDR = 8,00% per tahun (2,00% per 90 hari)"
-    ],
-    "instructions": [
-      "Hitung total penerimaan kas dalam Rupiah pada hari ke-90 jika perusahaan menggunakan Forward Market Hedge.",
-      "Susun langkah-langkah Money Market Hedge (Pinjaman USD, konversi spot ke IDR, dan investasi deposito IDR) dan hitung total penerimaan kas dalam Rupiah pada hari ke-90.",
-      "Bandingkan hasil kas akhir antara Forward Hedge dan Money Market Hedge. Manakah strategi lindung nilai yang menghasilkan penerimaan kas Rupiah paling optimal?",
-      "Jika perusahaan memilih untuk tidak melakukan lindung nilai sama sekali (unhedged), hitung kurs spot break-even pada hari ke-90 di mana hasil tanpa lindung nilai persis menyamai hasil strategi hedging terbaik."
-    ],
-    "outputFormat": [
-      "Kalkulasi Forward Market Hedge",
-      "Kalkulasi Money Market Hedge Langkah demi Langkah",
-      "Komparasi Kedua Strategi Hedging",
-      "Analisis Break-Even Kurs Spot Unhedged"
-    ],
-    "rubric": [
-      "Ketepatan kalkulasi Forward Hedge (25%)",
-      "Akurasi langkah dan perhitungan matematis Money Market Hedge (40%)",
-      "Analisis perbandingan dan pemilihan strategi optimal (20%)",
-      "Perhitungan kurs break-even unhedged (15%)"
-    ],
-    "answerGuide": "1. Forward Market Hedge:\n• Eksportir menjual forward USD 1.000.000 dengan kurs forward 90-hari Rp 15.650 / USD.\n• Penerimaan Kas Rupiah pada hari ke-90 = USD 1.000.000 × Rp 15.650 = Rp 15.650.000.000 (Rp 15,650 miliar pasti).\n\n2. Money Market Hedge (Langkah demi Langkah):\n• Langkah 1 (Pinjam USD hari ini): Pinjam sejumlah USD sehingga jumlah pinjaman pokok + bunga pada hari ke-90 persis sama dengan USD 1.000.000.\n  - Suku bunga pinjaman USD 90-hari = 5% × (90/360) = 1,25%.\n  - Nilai Pinjaman USD (PV) = USD 1.000.000 / (1 + 0,0125) = USD 1.000.000 / 1,0125 = USD 987.654,32.\n• Langkah 2 (Konversi ke IDR di Pasar Spot):\n  - Konversi USD 987.654,32 ke IDR pada kurs spot Rp 15.500.\n  - Penerimaan Kas IDR hari ini = USD 987.654,32 × Rp 15.500 = Rp 15.308.641.975.\n• Langkah 3 (Investasikan ke Deposito IDR 90-Hari):\n  - Suku bunga deposito IDR 90-hari = 8% × (90/360) = 2,00%.\n  - Nilai Masa Depan IDR hari ke-90 = Rp 15.308.641.975 × (1 + 0,02) = Rp 15.614.814.815 (Rp 15,615 miliar).\n• Langkah 4 (Pelunasan): Pada hari ke-90, piutang ekspor USD 1.000.000 yang diterima langsung digunakan untuk melunasi pokok + bunga pinjaman USD pada Langkah 1.\n\n3. Komparasi Strategi:\n• Hasil Forward Market Hedge = Rp 15.650.000.000\n• Hasil Money Market Hedge = Rp 15.614.814.815\n• Selisih = Forward Hedge menghasilkan kas lebih banyak sebesar Rp 35.185.185.\n• KEPUTUSAN: PILIH FORWARD MARKET HEDGE karena memberikan imbalan kas Rupiah tertinggi dan proses administrasi yang lebih sederhana dibanding pinjaman bank valas ganda.\n\n4. Break-Even Kurs Spot Unhedged:\n• Agar unhedged menghasilkan kas Rp 15.650.000.000:\n• Kurs Spot Break-Even = Rp 15.650.000.000 / USD 1.000.000 = Rp 15.650 / USD.\n• Jika kurs spot 90 hari mendatang turun di bawah Rp 15.650, perusahaan yang tidak hedging akan menderita kerugian kurs."
-  },
-  {
-    "type": "calculation",
-    "scope": "TM 14: Valuasi Sinergi M&A & Prediksi Kebangkrutan Altman Z-Score",
-    "difficulty": "Komprehensif",
-    "estimatedTime": "35–40 menit",
-    "question": "Studi Kasus 14: Valuasi Sinergi Akuisisi Korporasi dan Diagnosis Kesehatan Keuangan Menggunakan Altman Z-Score",
-    "context": "PT Mega Holding sedang mempertimbangkan penawaran akuisisi terhadap PT Target Manufaktur. Sebelum mengajukan harga penawaran resmi, tim merger & akuisisi (M&A) harus mengevaluasi nilai sinergi operasional yang dapat diciptakan serta mendiagnosis risiko kebangkrutan PT Target menggunakan model Altman Z-Score.",
-    "data": [
-      "Bagian A (Valuasi Sinergi M&A):\n• Nilai mandiri (stand-alone) PT Mega Holding (V_A) = Rp 20.000.000.000.000.\n• Nilai mandiri PT Target Manufaktur (V_B) = Rp 4.000.000.000.000 (800.000.000 lembar saham @ Rp 5.000).\n• Integrasi rantai pasok diproyeksikan menghemat biaya operasional kas sebesar Rp 300.000.000.000 per tahun selamanya (perpetuitas) setelah pajak.\n• Biaya modal WACC entitas gabungan adalah 12% per tahun.",
-      "Bagian B (Data Keuangan PT Target untuk Altman Z-Score):\n• Total Aset = Rp 5.000.000.000.000\n• Aset Lancar = Rp 1.500.000.000.000\n• Liabilitas Lancar = Rp 1.000.000.000.000\n• Laba Ditahan Kumulatif = Rp 800.000.000.000\n• Laba Sebelum Bunga & Pajak (EBIT) = Rp 600.000.000.000\n• Nilai Pasar Ekuitas = Rp 4.000.000.000.000\n• Total Liabilitas (Utang Lancar + Jangka Panjang) = Rp 2.500.000.000.000\n• Penjualan = Rp 6.000.000.000.000"
-    ],
-    "instructions": [
-      "Hitung nilai sekarang dari sinergi operasional yang tercipta dari merger (PV of Synergy).",
-      "Hitung nilai total maksimum entitas gabungan (V_AB) dan tentukan batas harga penawaran tunai tertinggi (Maximum Cash Offer Price) per lembar saham yang boleh dibayarkan PT Mega Holding kepada pemegang saham PT Target.",
-      "Jika PT Mega Holding menawarkan harga Rp 6.500 per lembar saham PT Target, hitung Net Present Value (NPV) akuisisi bagi pemegang saham PT Mega Holding.",
-      "Hitung skor kesehatan finansial PT Target Manufaktur menggunakan formula asli Altman Z-Score Manufaktur (Z = 1,2 X_1 + 1,4 X_2 + 3,3 X_3 + 0,6 X_4 + 0,999 X_5) dan simpulkan apakah perusahaan berada di Zona Aman, Zona Abu-Abu, atau Zona Bahaya Kebangkrutan."
-    ],
-    "outputFormat": [
-      "Kalkulasi Sinergi M&A dan Harga Penawaran Maksimum",
-      "Kalkulasi NPV Akuisisi bagi Pihak Pengakuisisi",
-      "Tabel Rincian Variabel dan Skor Altman Z-Score",
-      "Diagnosis Kesehatan Finansial dan Rekomendasi Akhir"
-    ],
-    "rubric": [
-      "Ketepatan perhitungan sinergi perpetuitas dan harga maksimum per lembar (35%)",
-      "Akurasi perhitungan NPV akuisisi (20%)",
-      "Ketepatan perhitungan kelima variabel rasio Altman Z-Score (35%)",
-      "Ketajaman diagnosis zona kebangkrutan dan risiko transaksi (10%)"
-    ],
-    "answerGuide": "1. Valuasi Sinergi & Harga Penawaran Maksimum:\n• Penghematan Tahunan Abadi = Rp 300.000.000.000 per tahun, WACC = 12%.\n• Nilai Sekarang Sinergi (ΔV) = Penghematan / WACC = Rp 300.000.000.000 / 0,12 = Rp 2.500.000.000.000 (Rp 2,5 triliun).\n• Nilai Total Entitas Gabungan (V_AB) = V_A + V_B + ΔV = Rp 20 T + Rp 4 T + Rp 2,5 T = Rp 26.500.000.000.000 (Rp 26,5 triliun).\n• Nilai Maksimum Pembelian PT Target = Nilai Mandiri (V_B) + Sinergi (ΔV) = Rp 4,0 T + Rp 2,5 T = Rp 6.500.000.000.000.\n• Harga Maksimum per Lembar = Rp 6.500.000.000.000 / 800.000.000 lembar = Rp 8.125 per lembar saham.\n\n2. NPV Akuisisi pada Harga Penawaran Rp 6.500:\n• Total Kas yang Dibayarkan = 800.000.000 lembar × Rp 6.500 = Rp 5.200.000.000.000 (Rp 5,2 triliun).\n• Premi Akuisisi yang Diberikan ke Target = Rp 5,2 T - Rp 4,0 T = Rp 1,2 triliun (Rp 1.500/lembar atau premi 30%).\n• NPV bagi PT Mega Holding = Nilai Sinergi - Premi Akuisisi = Rp 2,5 triliun - Rp 1,2 triliun = +Rp 1.300.000.000.000 (Rp 1,3 triliun).\n• Karena NPV bernilai positif besar (+Rp 1,3 T), penawaran pada harga Rp 6.500 sangat menguntungkan bagi pemegang saham pengakuisisi.\n\n3. Kalkulasi Altman Z-Score PT Target Manufaktur:\n• X_1 (Modal Kerja Bersih / Total Aset) = (1.500 M - 1.000 M) / 5.000 M = 500 / 5.000 = 0,10\n• X_2 (Laba Ditahan / Total Aset) = 800 M / 5.000 M = 0,16\n• X_3 (EBIT / Total Aset) = 600 M / 5.000 M = 0,12\n• X_4 (Nilai Pasar Ekuitas / Total Liabilitas) = 4.000 M / 2.500 M = 1,60\n• X_5 (Penjualan / Total Aset) = 6.000 M / 5.000 M = 1,20\n• Perhitungan Skor Z:\n  - 1,2 × X_1 = 1,2 × 0,10 = 0,120\n  - 1,4 × X_2 = 1,4 × 0,16 = 0,224\n  - 3,3 × X_3 = 3,3 × 0,12 = 0,396\n  - 0,6 × X_4 = 0,6 × 1,60 = 0,960\n  - 0,999 × X_5 = 0,999 × 1,20 = 1,199\n• Total Altman Z-Score = 0,120 + 0,224 + 0,396 + 0,960 + 1,199 = 2,899 (dibulatkan 2,90).\n\n4. Diagnosis Kesehatan Finansial:\n• Kriteria Altman (Perusahaan Manufaktur Publik):\n  - Z < 1,81 : Distress Zone (Zona Bahaya Kebangkrutan Tinggi)\n  - 1,81 ≤ Z ≤ 2,99 : Grey Zone (Zona Abu-Abu / Rawan)\n  - Z > 2,99 : Safe Zone (Zona Sehat dan Aman)\n• Kesimpulan: Dengan skor Z = 2,90, PT Target berada di Grey Zone bagian atas (sangat mendekati Safe Zone 2,99). Perusahaan tidak berada dalam ancaman kebangkrutan jangka pendek, namun memerlukan restrukturisasi modal kerja dan peningkatan utilisasi aset yang justru dapat diselesaikan melalui integrasi sinergi operasional dengan PT Mega Holding."
   }
 ];
-
-export const MNK201_BANK: BankSoal[] = [...MNK201_BANK_UTS, ...MNK201_BANK_UAS];
+export const MNK201_BANK_UAS: BankSoal[] = [
+  {
+    "type": "calculation",
+    "scope": "TM 9: Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Rekapitalisasi dan risiko: evaluasi angka serta keputusan",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 484-498 (PDF 526-540). Rujukan lokal: W9_Case_Study_Kelompok_7.pdf, halaman PDF 7-18.",
+    "data": [
+      "Penjualan USD1.100.000; biaya variabel 60%; biaya tetap USD40.000.",
+      "Saham 80.000; harga buyback tetap USD25; utang baru USD400.000 berbunga 10%; pajak model 25%.",
+      "Beta U=1,25; rRF=7,5%; premi pasar=6%; nilai pasar ekuitas sebelum pendanaan USD2.000.000. Setelah buyback diasumsikan USD1.600.000 untuk perhitungan bobot."
+    ],
+    "instructions": [
+      "Hitung EBIT, DOL, ROIC, laba bersih dan EPS sebelum/sesudah utang.",
+      "Hitung D/E, beta L, biaya ekuitas dan WACC menggunakan bobot yang diberikan.",
+      "Jelaskan mengapa kenaikan EPS tidak cukup membuktikan struktur optimal; uji EBIT turun 20%.",
+      "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. EBIT = 1.100.000 - 660.000 - 40.000 = USD400.000; DOL=440.000/400.000=1,10. NOPAT=300.000; ROIC=300.000/2.000.000=15%.\n2. Tanpa utang NI=300.000; EPS=300.000/80.000=USD3,75. Saham dibeli=400.000/25=16.000; tersisa 64.000. Bunga=40.000; NI=(400.000-40.000)×75%=270.000; EPS=USD4,21875 atau 4,22.\n3. D/E=400.000/1.600.000=0,25; beta L=1,25[1+0,75×0,25]=1,484375. rs=7,5%+1,484375×6%=16,40625%. WACC=0,20×10%×75%+0,80×16,40625%=14,625%. Bobot model menahan ekuitas pada angka asumsi, sehingga belum menyelesaikan harga pasar endogen.\n4. EBIT turun 20% menjadi 320.000. NI tanpa utang 240.000; EPS3,00. NI berutang 210.000; EPS3,28125. EPS berutang turun 22,2222% dari 4,21875, lebih peka daripada EPS tanpa utang yang turun 20%. Manfaat pajak disertai sensitivitas laba, risiko pembiayaan ulang, serta biaya ekuitas. Penilaian alternatif perlu kas operasi dan biaya modal yang konsisten, bukan sekadar EPS tertinggi.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 484-498 (PDF 526-540). Rujukan lokal: W9_Case_Study_Kelompok_7.pdf, halaman PDF 7-18."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 9: Capital Structure and Leverage: Struktur Modal dan Pengungkit",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Memilih bauran pendanaan ketika risiko dan biaya utang berubah",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-503 (PDF 536-545).",
+    "data": [
+      "Model A: bobot utang 0%; rd 0%; rs 12%; EPS Rp 4.",
+      "B: utang 40%; rd 9%; rs 14%; EPS Rp 4,50. C: utang 60%; rd 13%; rs 18%; EPS Rp 5.",
+      "Pajak model 25%; FCF operasi tetap Rp 12 miliar/tahun tanpa pertumbuhan; nilai=FCF/WACC."
+    ],
+    "instructions": [
+      "Hitung WACC ketiga alternatif memakai biaya utang setelah pajak.",
+      "Hitung nilai operasi dan pilih bauran berdasarkan nilai.",
+      "Bandingkan dengan pilihan berdasarkan EPS; jelaskan sensitivitas jika FCF C turun menjadi Rp 10 miliar.",
+      "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "A: WACC=12%; nilai 12/0,12=Rp 100 miliar. B:0,40×9%×75%+0,60×14%=11,10%; nilai 12/0,111=Rp 108,108108 miliar. C:0,60×13%×75%+0,40×18%=13,05%; nilai 12/0,1305=Rp 91,954023 miliar. B memaksimalkan nilai meski EPS C tertinggi. Asumsi kas tetap membuat perbandingan diskonto jelas; biaya ekuitas dan utang sudah mencerminkan peningkatan risiko. Jika FCF C menjadi 10, nilainya 10/0,1305=Rp 76,628352 miliar. Model perpetuitas tidak mempunyai pertumbuhan dan memerlukan WACC positif. Bobot adalah nilai pasar target dan biaya modal harus cocok dengan risiko masing-masing. Perisai pajak hanya dikenakan pada biaya utang; mengalikan seluruh WACC dengan 75% akan menurunkan nilai biaya modal secara keliru.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 14, hal. cetak 494-503 (PDF 536-545)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 10: Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Dividen residual, kekurangan dana, dan payout",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 525-533 (PDF 567-575).",
+    "data": [
+      "Laba bersih Rp 150 juta; kas tersedia untuk keputusan ini cukup.",
+      "Proyek dasar Rp 200 juta; target ekuitas 60%, utang 40%; saham 10 juta lembar.",
+      "Alternatif perluasan proyek Rp 300 juta dengan target sama."
+    ],
+    "instructions": [
+      "Hitung kebutuhan ekuitas dan utang, dividen, payout dan DPS rencana dasar.",
+      "Hitung dana ekuitas tambahan serta dividen rencana perluasan.",
+      "Jelaskan pengaruh kebijakan residual pada kestabilan dividen dan sinyal pasar.",
+      "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "Dasar: ekuitas 0,60×200=Rp 120 juta; utang 0,40×200=Rp 80 juta. Residual 150-120=Rp 30 juta; payout 30/150=20%; retention 80%; DPS30 juta/10 juta=Rp 3/lembar. Perluasan: ekuitas 180, utang 120 juta; laba 150 menyisakan kekurangan 30 juta, sehingga dividen residual nol. Kekurangan memerlukan emisi ekuitas, pengurangan proyek, atau penyesuaian target yang dinilai terpisah. Laba akuntansi tidak identik dengan kas: kasus sengaja menyatakan kas mencukupi. Dividen residual dapat berfluktuasi bersama peluang investasi; manajemen perlu mengomunikasikan alasan perubahan. Payout bukan persentase investasi; kebutuhan dana ekuitas dihitung lebih dahulu. Keputusan proyek mengasumsikan semua proyek sudah layak berdasarkan NPV, sehingga laba ditahan diarahkan ke investasi yang menciptakan nilai. Sinyal kenaikan/penurunan dividen tetap harus diuji terhadap kemampuan menghasilkan kas.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 525-533 (PDF 567-575)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 10: Distributions to Shareholders: Dividen dan Pembelian Kembali Saham",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Distribusi kas: membandingkan dividen, buyback, dan split",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-548 (PDF 583-590).",
+    "data": [
+      "Ekuitas pasar Rp 1 miliar; saham 20 juta; harga Rp 50/lembar.",
+      "Kas surplus untuk distribusi Rp 200 juta; tanpa pajak, biaya transaksi, atau sinyal baru.",
+      "Untuk perhitungan EPS terpisah, laba tetap Rp 40 juta setahun; tidak ada pengaruh biaya peluang kas dalam model."
+    ],
+    "instructions": [
+      "Bandingkan dividen tunai Rp 200 juta dengan buyback Rp 200 juta pada harga wajar.",
+      "Hitung saham dan harga teoritis sesudah distribusi serta kekayaan pemilik 1.000 saham yang tidak menjual pada buyback.",
+      "Hitung EPS buyback dan akibat split 2-untuk-1; jelaskan batas kesimpulan nilai.",
+      "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "Dividen: DPS=200 juta/20 juta=Rp 10. Ekuitas ex-distribusi 800 juta; harga=800 juta/20 juta=Rp 40. Pemilik 1.000 saham memegang saham Rp 40.000 dan dividen Rp 10.000, total Rp 50.000. Buyback: jumlah dibeli 200 juta/50=4 juta; tersisa 16 juta; nilai 800 juta; harga Rp 50. Pemilik 1.000 saham yang tetap memegang memiliki Rp 50.000. Total kekayaan sama menurut asumsi harga wajar dan pasar tanpa friksi. EPS lama 40 juta/20 juta=Rp 2; EPS setelah buyback 40 juta/16 juta=Rp 2,50, dengan laba sengaja tetap. Split 2-untuk-1 sesudah buyback menghasilkan 32 juta saham dan harga Rp 25; EPSRp 1,25. Jumlah lembar meningkat dan EPS berubah secara mekanis, tanpa penciptaan kas. Jika pajak, informasi baru atau bunga kas berubah, kesetaraan ini perlu dihitung ulang; jangan menerapkan angka teori sebagai prediksi harga sesungguhnya.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 15, hal. cetak 541-548 (PDF 583-590)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 11: Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Mengurai siklus konversi kas dan perbaikan penagihan",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 565-569 (PDF 607-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623).",
+    "data": [
+      "Setahun 365 hari; seluruh penjualan kredit Rp 36,5 miliar; COGS dan pembelian kredit masing-masing Rp 36,5 miliar.",
+      "Persediaan rata-rata Rp 6 miliar, piutang Rp 4,5 miliar, utang pemasok Rp 3 miliar.",
+      "DSO dapat turun menjadi 30 hari tanpa biaya/penjualan hilang; DIO dan DPO tetap. Biaya dana 10% setahun."
+    ],
+    "instructions": [
+      "Hitung DIO, DSO, DPO dan CCC awal.",
+      "Hitung CCC baru, dana piutang yang dilepas, dan penghematan biaya dana setahun.",
+      "Jelaskan risiko jika pengurangan CCC berasal dari menunda pemasok melewati syarat pembayaran.",
+      "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "Arus harian penjualan, COGS, dan pembelian masing-masing 36,5/365=Rp 0,1 miliar. DIO=6/0,1=60 hari; DSO=4,5/0,1=45; DPO=3/0,1=30. CCC=60+45-30=75 hari. DSO baru 30 memberi piutang 3 miliar; CCC baru 60 hari. Dana dilepas 4,5-3=Rp 1,5 miliar, penghematan biaya 1,5×10%=Rp 0,15 miliar/tahun atau Rp 150 juta. Pelepasan investasi 1,5 miliar sekali terjadi berbeda dari penghematan tahunan 150 juta. Soal menyederhanakan pembelian sama dengan COGS; jika pembelian berbeda, gunakan pembelian kredit yang relevan untuk DPO. Pengurangan DSO dapat memakai standar kredit, penagihan, atau diskon, dengan biaya dan dampak penjualan yang perlu dihitung. Menunda pemasok berisiko kehilangan diskon, pasokan, dan reputasi sehingga CCC pendek sendiri belum menjamin keputusan terbaik.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 565-569 (PDF 607-611). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 578-581 (PDF 620-623)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 11: Working Capital I: Siklus Kas, Anggaran Kas, dan Piutang",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Anggaran kas dan pilihan membayar utang",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615).",
+    "data": [
+      "Semua angka Rp juta: Januari kas awal 20, penerimaan 80, pembayaran 105. Februari penerimaan 100, pembayaran 80.",
+      "Minimum kas 10; fasilitas pinjaman dapat dipakai pada akhir Januari. Bunga Januari/Februari diabaikan khusus pada kasus ini.",
+      "Aturan model: saat surplus, lunasi pinjaman sepanjang minimum kas tetap terpenuhi."
+    ],
+    "instructions": [
+      "Susun anggaran kas Januari dan Februari dengan penerimaan, pembayaran, pinjaman dan pelunasan.",
+      "Hitung saldo pinjaman serta kas akhir masing-masing bulan.",
+      "Uji jika penerimaan Februari hanya 70; jelaskan mengapa laba penjualan tidak mengganti anggaran kas.",
+      "Nyatakan asumsi, konsistensi satuan/tenor, dan keterbatasan keputusan yang diambil."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "Januari sebelum pendanaan 20+80-105=-5. Tambahan pinjaman 10-(-5)=15; kas akhir 10 dan saldo pinjaman 15. Februari dimulai dengan kas 10, sehingga kas sebelum pendanaan 10+100-80=30. Surplus di atas minimum 20 cukup melunasi 15; kas akhir 15, utang nol. Skenario penerimaan Februari 70: kas sebelum pendanaan 10+70-80=0; perlu pinjaman tambahan 10 untuk minimum 10. Utang akhir menjadi 25, kas 10. Bunga diabaikan sesuai syarat; jika dimasukkan, bunga harus menjadi pembayaran dan kebutuhan dana meningkat. Penjualan kredit masuk penerimaan hanya saat tertagih, sehingga laba dapat positif saat kas defisit. Jadwal pembayaran utang, keterlambatan piutang, kapasitas kredit bank, dan saldo minimum perlu dicek setiap bulan. Perbedaan akhir bulan dan transaksi intrabulan dapat membuat defisit sementara lebih tinggi daripada yang terlihat pada ringkasan.\nPembulatan: pertahankan presisi pada langkah antara; persentase dan uang per lembar dibulatkan dua desimal, beta/skor empat atau tiga desimal sesuai kebutuhan. Unit uang mengikuti data; tidak ada konversi tersembunyi. Keputusan berlaku pada asumsi kasus, dengan risiko kas dan biaya yang masih perlu diuji.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 12: Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Diskon pemasok versus pinjaman bank",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-587 (PDF 623-629).",
+    "data": [
+      "Faktur Rp 100 juta; syarat 2/10, net 30; tahun 365 hari.",
+      "Bank menyediakan Rp 98 juta dengan bunga efektif tahunan 12%; tenor 20 hari, tanpa biaya tambahan."
+    ],
+    "instructions": [
+      "Hitung biaya nominal dan efektif kehilangan diskon.",
+      "Hitung bunga bank 20 hari dan selisih biaya dengan pembayaran penuh hari 30.",
+      "Jelaskan syarat dan risiko keputusan mengambil diskon.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. Pembayaran dengan diskon Rp 98 juta pada hari 10, atau Rp 100 juta pada hari 30. Biaya periodik kehilangan diskon = 2/98 = 2,040816% selama 20 hari. Nominal tahunan = (2/98)(365/20) = 37,244898%; EAR = (100/98)^(365/20)-1 = 44,585293%.\n2. Bunga bank 20 hari memakai tingkat efektif: (1,12)^(20/365)-1 = 0,0062291117. Bunga = Rp 98 juta × faktor = Rp 0,61045295 juta. Pelunasan Rp 98,61045295 juta, sehingga penghematan dibanding Rp 100 juta = Rp 1,38954705 juta.\n3. Gunakan bank untuk mengambil diskon pada asumsi ini. Dana harus tersedia pada hari 10, diskon harus benar-benar diperoleh, dan tidak ada biaya tambahan. Menggunakan 12% × 20/365 akan mencampur tingkat efektif dengan bunga sederhana. Penundaan di luar hari 30 mempunyai konsekuensi kontrak dan pemasok yang belum dimasukkan.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 581-587 (PDF 623-629)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 12: Working Capital II: Persediaan dan Pendanaan Jangka Pendek",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Membaca biaya pinjaman dan investasi persediaan",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Metode saldo wajib dan bunga dipotong awal merupakan latihan pengembangan arus kas dengan syarat buatan. Lampiran 16B belum tersedia; contoh kanonik TM12 memakai bunga sederhana pada hal. 587.",
+    "data": [
+      "A, B, C: nominal pinjaman Rp 100 juta, satu tahun, bunga 12%.",
+      "A: bunga akhir tahun; B: bunga Rp 12 juta dipotong awal; C: bunga awal dan saldo tambahan Rp 10 juta tanpa bunga yang kembali akhir tahun.",
+      "Persediaan rata-rata Rp 800 menjadi Rp 600 juta; biaya 20% setahun; tambahan biaya kekurangan stok Rp 50 juta setahun."
+    ],
+    "instructions": [
+      "Hitung kas bebas awal, pembayaran bersih akhir, dan biaya efektif A, B, C.",
+      "Hitung penghematan dan manfaat bersih kebijakan persediaan.",
+      "Pisahkan pilihan pendanaan dari keputusan persediaan dan jelaskan risikonya.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. A menerima Rp 100 juta dan membayar Rp 112 juta: 112/100-1 = 12%. B menerima Rp 88 juta dan membayar Rp 100 juta: 100/88-1 = 13,636364%. C menerima Rp 78 juta; pokok Rp 100 juta dikurangi saldo yang kembali Rp 10 juta membuat pembayaran bersih Rp 90 juta: 90/78-1 = 15,384615%. A termurah jika fasilitas serta risiko setara.\n2. Pengurangan investasi persediaan = Rp 200 juta. Penghematan biaya tahunan = 200 × 20% = Rp 40 juta. Setelah biaya kekurangan stok Rp 50 juta, manfaat bersih = minus Rp 10 juta per tahun; kebijakan ini tidak layak pada asumsi.\n3. Pelepasan investasi Rp 200 juta sekali terjadi berbeda dari penghematan Rp 40 juta per tahun. Evaluasi permintaan, lead time atau waktu pasokan, layanan pelanggan, risiko rollover kredit, dan potongan kontrak sebelum memilih.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 577-578 (PDF 619-620). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 586-587 (PDF 628-629). Metode saldo wajib dan bunga dipotong awal merupakan latihan pengembangan arus kas dengan syarat buatan. Lampiran 16B belum tersedia; contoh kanonik TM12 memakai bunga sederhana pada hal. 587."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 13: Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Mata uang, tenor, dan biaya lindung nilai",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-646 (PDF 678-688).",
+    "data": [
+      "Utang importir USD100.000, jatuh tempo enam bulan. Spot IDR16.000/USD.",
+      "Bunga tahunan sederhana IDR6% dan USD4%; penawaran forward enam bulan IDR16.300/USD.",
+      "Skenario spot jatuh tempo IDR17.000 atau IDR15.500 per USD; tanpa biaya dan risiko gagal bayar kontrak."
+    ],
+    "instructions": [
+      "Hitung forward paritas enam bulan dan selisih terhadap penawaran.",
+      "Hitung pembayaran dengan forward dan tanpa hedge pada dua skenario.",
+      "Jelaskan arah hedge serta perbedaan paritas, kurs kontrak, dan proyeksi spot.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. Bunga enam bulan domestik 3%, asing 2%. F paritas = 16.000 × 1,03/1,02 = 16.156,862745 IDR/USD. Penawaran bank lebih tinggi 143,137255 IDR/USD; friksi dan akses bunga perlu diperiksa sebelum menyebut peluang arbitrase.\n2. Kontrak mengunci pembayaran Rp 1.630 juta. Spot 17.000 membuat pembayaran tanpa hedge Rp 1.700 juta, sehingga forward menghemat Rp 70 juta. Spot 15.500 membuat pembayaran tanpa hedge Rp 1.550 juta; forward menimbulkan biaya peluang Rp 80 juta.\n3. Importir membeli USD forward karena mempunyai kewajiban USD. Hedge mengurangi ketidakpastian kas, tanpa menjamin selalu lebih murah. Bunga wajib setenor; forward paritas adalah hubungan model tanpa friksi dan berbeda dari ramalan kurs spot yang pasti terjadi.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-646 (PDF 678-688)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 13: Multinational Financial Management: Kurs dan Keuangan Multinasional",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Kurs silang dan penilaian proyek luar negeri",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 649-655 (PDF 691-697).",
+    "data": [
+      "Spot IDR16.000/USD dan JPY160/USD; tanpa spread.",
+      "Investasi sekarang Rp 150 juta; arus kas akhir tahun pertama USD10.000, kemudian proyek berakhir.",
+      "Proyeksi kurs IDR17.000/USD atau skenario IDR15.000/USD; diskonto IDR10% sesuai risiko."
+    ],
+    "instructions": [
+      "Hitung kurs silang IDR/JPY dan nilai JPY100.000 dalam rupiah.",
+      "Hitung NPV IDR dalam kedua skenario kurs.",
+      "Jelaskan konsistensi mata uang, diskonto, dan risiko kas lintas negara.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. Kurs silang = 16.000/160 = IDR100/JPY. JPY100.000 setara Rp 10 juta; satuan USD saling menghilangkan.\n2. Kurs 17.000: kas akhir Rp 170 juta; PV = 170/1,10 = Rp 154,545455 juta; NPV = Rp 4,545455 juta. Kurs 15.000: kas Rp 150 juta; PV = Rp 136,363636 juta; NPV = minus Rp 13,636364 juta. Kelayakan berubah karena kurs yang diasumsikan.\n3. Kas sudah dikonversi ke rupiah sebelum memakai diskonto rupiah. Alternatif valuasi USD memerlukan tingkat USD yang sepadan dengan risiko. Periksa pembatasan pemulangan laba, pajak sesuai yurisdiksi, risiko negara, dan sensitivitas kurs. Kasus ini sengaja tidak menetapkan aturan pajak atau repatriasi tertentu; angka bukan kurs pasar tahun berjalan.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 636-638 (PDF 678-680). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 18, hal. cetak 649-655 (PDF 691-697)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 14: Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "DCF target, premium dan pembagian sinergi",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795).",
+    "data": [
+      "Semua angka Rp miliar: FCF operasi 20 pada akhir tahun 1, 2, 3; terminal value akhir tahun 3 sebesar 200, di luar FCF3.",
+      "WACC10%; utang 60; kas nonoperasi 10; PV sinergi tambahan 40 belum masuk proyeksi; biaya integrasi saat ini 5.",
+      "Harga pembelian ekuitas 170."
+    ],
+    "instructions": [
+      "Hitung nilai operasi dan ekuitas standalone.",
+      "Hitung premium, NPV pengakuisisi, dan harga maksimum.",
+      "Jelaskan perlakuan terminal, kas nonoperasi, utang, dan sinergi.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. PV FCF = 20/1,1 + 20/1,1^2 + 20/1,1^3 = Rp 49,737040 miliar. PV terminal = 200/1,1^3 = Rp 150,262960 miliar. Nilai operasi Rp 200 miliar; ekuitas = 200-60+10 = Rp 150 miliar.\n2. Premium = 170-150 = Rp 20 miliar. NPV pengakuisisi = sinergi 40-premium 20-biaya 5 = Rp 15 miliar. Harga maksimum = 150+40-5 = Rp 185 miliar, pada NPV nol.\n3. Sinergi dinyatakan belum masuk kas, sehingga boleh ditambahkan sekali. Jika sudah masuk proyeksi, penambahan lagi menghitung ganda. Terminal berada pada akhir tahun 3 dan harus didiskonto; FCF3 tetap terpisah. FCF operasi memakai WACC; FCFE memakai biaya ekuitas. Kas nonoperasi ditambahkan hanya jika belum termasuk operasi; utang harus dinilai pada tanggal dan basis yang konsisten.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-753 (PDF 790-795)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 14: Mergers and Acquisitions: Valuasi dan Keputusan Akuisisi",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Pembayaran saham, kenaikan EPS dan NPV yang bertentangan",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-757 (PDF 790-799).",
+    "data": [
+      "Target: nilai standalone Rp 90 juta, saham 5 juta.",
+      "Tawaran 2 juta saham pengakuisisi pada Rp 50/lembar; sinergiPV8 juta; biaya integrasi 3 juta.",
+      "Pengakuisisi: saham 10 juta, laba 20 juta. Target laba 10 juta. Untuk contoh EPS, laba gabungan tetap 30 juta setelah semua penyesuaian berulang."
+    ],
+    "instructions": [
+      "Hitung nilai tawaran, premium, dan NPV.",
+      "Hitung rasio pertukaran, EPS sebelum/sesudah, dan pertumbuhan EPS.",
+      "Jelaskan konflik hasil EPS dengan nilai serta batas harga yang layak.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. Nilai tawaran = 2 juta × Rp 50 = Rp 100 juta. Premium = 100-90 = Rp 10 juta. NPV = 8-10-3 = minus Rp 5 juta.\n2. Rasio pertukaran = 2/5 = 0,40 saham pengakuisisi per saham target. Harga ekuivalen target Rp 20, dibanding nilai standalone Rp 18. EPS awal pengakuisisi = 20/10 = Rp 2; EPS gabungan = 30/(10+2) = Rp 2,50, naik 25%.\n3. EPS accretion terjadi secara akuntansi tetapi NPV negatif; tawaran ditolak atau dinegosiasi. Harga maksimum yang setara kas = 90+8-3 = Rp 95 juta. Tawaran harus turun minimal Rp 5 juta agar NPV tidak negatif menurut asumsi. Saham pembayaran mempunyai biaya ekonomis karena pemilik lama berbagi nilai dengan pemilik baru; harganya dapat berubah akibat informasi akuisisi.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 21, hal. cetak 748-757 (PDF 790-799)."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 15: Corporate Failure: Kesulitan Keuangan dan Pemulihan",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Audit model Altman dan perubahan kinerja",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7.",
+    "data": [
+      "Manufaktur publik tanpa aset takberwujud; semua angka Rp miliar. Aset 100; modal kerja 10; laba ditahan 20; EBIT8.",
+      "Nilai pasar seluruh ekuitas 150; total kewajiban buku 300; penjualan 120.",
+      "Gunakan model original dan batas 1,81/2,99. Skenario EBIT turun ke 2; faktor lain tetap."
+    ],
+    "instructions": [
+      "Hitung lima rasio dan Z awal.",
+      "Hitung Z setelah EBIT turun serta perubahan kontribusinya.",
+      "Jelaskan batas model, populasi, probabilitas, dan informasi kredit tambahan.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. X1=10/100=0,10; X2=20/100=0,20; X3=8/100=0,08; X4=150/300=0,50; X5=120/100=1,20. Z=0,12+0,28+0,264+0,30+1,20=2,164: zona abu-abu.\n2. EBIT2 memberi X3=0,02, kontribusi 3,3×0,02=0,066. Z baru 1,966; turun 0,198 dan tetap abu-abu. X4 memakai seluruh kewajiban buku dan ekuitas pasar, bukan hanya utang berbunga atau ekuitas buku.\n3. Skor tidak bersatuan dan bukan probabilitas langsung. Model original memakai manufaktur publik; varian privat dan nonmanufaktur mengubah input, koefisien serta batas. Periksa aset berwujud, kualitas data, kas, jatuh tempo, risiko industri, serta kemungkinan false positive. Skor memberi indikasi untuk pemeriksaan lanjutan dan tidak menetapkan status hukum pailit.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Altman (2002), Corporate Distress Prediction Models, halaman PDF 9-15, Figure 2 dan bagian 5-7."
+  },
+  {
+    "type": "calculation",
+    "scope": "TM 15: Corporate Failure: Kesulitan Keuangan dan Pemulihan",
+    "difficulty": "Komprehensif",
+    "estimatedTime": "35-45 menit",
+    "question": "Pemulihan usaha: membedakan kas, nilai ekonomi dan keputusan hukum",
+    "context": "Kasus latihan hipotetis 2026. Seluruh suku bunga, pajak, kurs dan nilai perusahaan diberikan sebagai asumsi perhitungan; tidak menunjukkan tarif hukum atau harga pasar saat ini. Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Altman (2002), halaman PDF 2 dan 9-15.",
+    "data": [
+      "Semua angka Rp juta: kas awal 10, penerimaan 40, pembayaran wajib 65. Aset 200, kewajiban 175.",
+      "PV usaha berlanjut 120, biaya proses 15; nilai jual aset 95, biaya likuidasi 8.",
+      "Nilai kedua alternatif sudah dinilai pada tanggal dan risiko sebanding; belum ada persetujuan kreditur."
+    ],
+    "instructions": [
+      "Hitung defisit kas dan ekuitas buku.",
+      "Hitung nilai bersih serta selisih reorganisasi dan likuidasi.",
+      "Susun prioritas tindakan dan bedakan analisis ekonomi dari proses hukum.",
+      "Nyatakan asumsi, satuan, tenor, pembulatan dan keterbatasan model."
+    ],
+    "outputFormat": [
+      "Tabel input dan langkah hitungan dengan satuan",
+      "Hasil akhir dan analisis keputusan",
+      "Asumsi, sensitivitas, dan batas model"
+    ],
+    "rubric": [
+      "Pemilihan model dan dasar asumsi (20%)",
+      "Langkah hitungan, satuan, dan hasil (40%)",
+      "Analisis keputusan serta sensitivitas (30%)",
+      "Kejelasan rujukan dan pembulatan (10%)"
+    ],
+    "answerGuide": "1. Kas sebelum pendanaan=10+40-65=minus Rp 15 juta. Dibutuhkan Rp 15 juta agar tidak negatif, atau Rp 25 juta jika saldo minimum tambahan Rp 10 juta diterapkan. Ekuitas buku=200-175=Rp 25 juta, tetap positif; kas dapat defisit walaupun ekuitas positif.\n2. Usaha berlanjut bersih=120-15=Rp 105 juta; likuidasi bersih=95-8=Rp 87 juta. Keunggulan reorganisasi Rp 18 juta mendukung kelanjutan secara ekonomi jika proyeksi serta pendanaan layak.\n3. Periksa kalender kas, piutang tertagih, kemampuan operasi, jatuh tempo, dan negosiasi kreditur. Persetujuan serta proses hukum tetap memerlukan dasar yurisdiksi; nilai ini tidak menyamakan PKPU Indonesia dengan Chapter 11 Amerika. Skor Altman dapat melengkapi pemeriksaan tetapi tidak menggantikan anggaran kas, valuasi aset, atau keputusan hukum.\nPembulatan: simpan presisi langkah antara, kemudian bulatkan uang dan persentase dua desimal; beta empat desimal dan skor tiga desimal. Semua nilai mengikuti unit serta tenor data soal.\nRujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 7, hal. cetak 261-262 (PDF 303-304). Rujukan: Brigham & Houston, Fundamentals of Financial Management 16e (2022), Bab 16, hal. cetak 570-573 (PDF 612-615). Rujukan: Altman (2002), halaman PDF 2 dan 9-15."
+  }
+];
+export const MNK201_BANK: BankSoal[] = [...MNK201_BANK_UTS, ...MNK201_REVIEW_UTS_BANK, ...MNK201_BANK_UAS];

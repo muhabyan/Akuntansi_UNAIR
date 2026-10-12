@@ -65,10 +65,17 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
     setPhase(nextPhase);
     if (tm !== 'all') {
       const allowed = nextPhase === 'all'
-        || (nextPhase === 'pra-uts' && tm <= 7)
-        || (nextPhase === 'pra-uas' && tm >= 8);
+        || cards.some((card) => card.phase === nextPhase && card.tm === tm);
       if (!allowed) setTm('all');
     }
+  };
+
+  const phaseLabel = (value: 'all' | FlashcardPhase, fallback: string) => {
+    if (value === 'all') return fallback;
+    const meetings = cards.filter((card) => card.phase === value).map((card) => card.tm);
+    if (!meetings.length) return fallback;
+    const label = value === 'pra-uts' ? 'Pra-UTS' : 'Pra-UAS';
+    return `${label} · TM ${Math.min(...meetings)}-${Math.max(...meetings)}`;
   };
 
   return (
@@ -112,7 +119,7 @@ export default function AdvancedFlashcardTab({ course, cards }: { course: Course
               >
                 {PHASE_OPTIONS.filter((option) => option.value === 'all' || phaseCounts[option.value] > 0).map((option) => (
                   <option key={option.value} value={option.value}>
-                    {course.code === 'PJK301' && option.value === 'pra-uas' ? 'Pra-UAS · TM 9-15' : option.label} ({phaseCounts[option.value]})
+                    {phaseLabel(option.value, option.label)} ({phaseCounts[option.value]})
                   </option>
                 ))}
               </select>

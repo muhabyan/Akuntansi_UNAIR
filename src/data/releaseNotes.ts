@@ -12,6 +12,16 @@ export interface AppRelease {
 
 export const RELEASES: AppRelease[] = [
   {
+    version: 'v1.3.6',
+    date: '12 Oktober 2026',
+    headline: 'Manajemen Keuangan berlapis menuju UAS',
+    notes: [
+      'MNK102 mengikuti TM 9 sampai TM 15 pada kontrak kuliah: struktur modal, dividen, modal kerja, multinasional, merger dan akuisisi, serta corporate failure.',
+      'Tersedia 60 kuis, 42 flashcard pra-UAS, dan 14 kasus dengan rujukan halaman dan pembahasan langkah hitungan. Bacaan membedakan bab buku edisi 15 dan 16 serta asumsi angka dari aturan atau data aktual.',
+      'Bacaan berlapis memiliki diagram, cek pemahaman, dan contoh sumber. Ulasan UTS memakai kunci 0 dan UAS kunci 16. Artikel Corporate Failure dosen belum tersedia; sumber pelengkap dan batas cakupannya dijelaskan.',
+    ],
+  },
+  {
     version: 'v1.3.5',
     date: '12 Oktober 2026',
     headline: 'Koreksi katalog Akuntansi semester 2 sampai 5',

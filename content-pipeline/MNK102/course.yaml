@@ -1,0 +1,14 @@
+course_code: MNK102
+course_name: Manajemen Keuangan
+default_archetype: quantitative-decision
+source_priority:
+  - lecturer-material
+  - assigned-textbook
+  - approved-supplementary
+source_mapping:
+  Fundamentals of Financial Management 2022.pdf: assigned-textbook
+  Kontrak MK 2026.csv: lecturer-material
+  altman-2002.pdf: approved-supplementary
+# RPP menentukan jadwal; 16e menentukan isi dan halaman, karena 15e tidak tersedia.
+# Altman merupakan sumber primer pelengkap pilihan pengguna, bukan artikel dosen terkonfirmasi.
+# Bahan mahasiswa W9 dan slide tanpa identitas dosen dicatat dalam inventaris, bukan sumber fakta utama.

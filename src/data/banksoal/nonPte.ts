@@ -13,7 +13,7 @@ import { AKK202_BANK, AKK202_BANK_UTS, AKK202_BANK_UAS } from './akk202';
 import { AKM202_BANK, AKM202_BANK_UTS, AKM202_BANK_UAS } from './akm202';
 import { AKS201_BANK, AKS201_BANK_UTS, AKS201_BANK_UAS } from './aks201';
 import { PJK301_BANK, PJK301_BANK_UTS, PJK301_BANK_UAS } from './pjk301';
-import { MNK201_BANK, MNK201_BANK_UTS, MNK201_BANK_UAS } from './mnk201';
+import { MNK201_BANK, MNK201_BANK_UTS, MNK201_REVIEW_UTS_BANK, MNK201_BANK_UAS } from './mnk201';
 import { AKA201_BANK, AKA201_BANK_UTS, AKA201_BANK_UAS } from './aka201';
 import { SII306_BANK, SII306_BANK_UTS, SII306_BANK_UAS } from './sii306';
 import { MNU307_BANK, MNU307_BANK_UTS } from './mnu307';
@@ -97,9 +97,9 @@ export function getBankSoalSets(code: string): { id: string; label: string; item
   }
   if (code === 'MNK102' || code === 'MNK201') {
     return [
-      { id: 'uts', label: 'Bank Soal Kasus Pra-UTS Manajemen Keuangan (TM 1–7)', items: MNK201_BANK_UTS },
-      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Manajemen Keuangan (TM 9–14)', items: MNK201_BANK_UAS },
-      { id: 'all', label: 'Kompilasi Seluruh Kasus Manajemen Keuangan (14 TM)', items: MNK201_BANK },
+      { id: 'uts', label: 'Bank Soal Pra-UTS dan Ulasan UTS Manajemen Keuangan', items: [...MNK201_BANK_UTS, ...MNK201_REVIEW_UTS_BANK] },
+      { id: 'uas', label: 'Bank Soal Kasus Pra-UAS Manajemen Keuangan (TM 9–15)', items: MNK201_BANK_UAS },
+      { id: 'all', label: 'Kompilasi Kasus Manajemen Keuangan dan Ulasan UTS', items: MNK201_BANK },
     ];
   }
   if (code === 'AKA201') {
