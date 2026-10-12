@@ -23,7 +23,7 @@ const SVG_ALTMAN_SCALE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" 
     <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#34d399" stroke-width="2"/>
     <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#safeGrad)" fill-opacity="0.25"/>
     <text class="text-accent-green" x="132" y="20" fill="#34d399" font-size="11" font-weight="900" text-anchor="middle">SAFE ZONE (Z &gt; 2.99)</text>
-    
+
     <rect class="svg-badge-green" x="14" y="42" width="237" height="24" rx="4" fill="#059669" fill-opacity="0.2"/>
     <text class="text-accent-green" x="132" y="58" fill="#34d399" font-size="8.5" font-weight="800" text-anchor="middle">KONDISI SEHAT &amp; SOLVEN</text>
 
@@ -39,7 +39,7 @@ const SVG_ALTMAN_SCALE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" 
     <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
     <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#greyGrad)" fill-opacity="0.25"/>
     <text class="text-accent-amber" x="132" y="20" fill="#fbbf24" font-size="11" font-weight="900" text-anchor="middle">GREY ZONE (1.81 - 2.99)</text>
-    
+
     <rect class="svg-badge-amber" x="14" y="42" width="237" height="24" rx="4" fill="#d97706" fill-opacity="0.2"/>
     <text class="text-accent-amber" x="132" y="58" fill="#fbbf24" font-size="8.5" font-weight="800" text-anchor="middle">ZONA WASPADA / ABU-ABU</text>
 
@@ -55,7 +55,7 @@ const SVG_ALTMAN_SCALE = `<svg class="course-diagram-svg" viewBox="0 0 900 360" 
     <rect class="svg-card" x="0" y="0" width="265" height="175" rx="10" fill="#0f172a" stroke="#f87171" stroke-width="2"/>
     <rect x="0" y="0" width="265" height="30" rx="10" fill="url(#distGrad)" fill-opacity="0.25"/>
     <text class="text-accent-red" x="132" y="20" fill="#f87171" font-size="11" font-weight="900" text-anchor="middle">DISTRESS ZONE (Z &lt; 1.81)</text>
-    
+
     <rect class="svg-badge-red" x="14" y="42" width="237" height="24" rx="4" fill="#dc2626" fill-opacity="0.2"/>
     <text class="text-accent-red" x="132" y="58" fill="#f87171" font-size="8.5" font-weight="800" text-anchor="middle">ZONA KRITIS KEBANGKRUTAN</text>
 

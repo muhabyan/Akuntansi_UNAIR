@@ -1,15 +1,8 @@
-// AKA201 converter v2 (post-UTS). Same as convert-aka201.mjs plus: <!-- figure id="..." --> (figure block from aka201-figures-pasca.mjs),
-// <!-- tabel judul="..." --> (explicit table title) and --types-import (relative import of src/types for the output folder).
-// AKA201 converter: turns one package markdown file (TMxx/05_student_learning_version.md or a shared/*.md page)
-// into a TypeScript Reading module with layout 'layered'. Kept OUTSIDE the repo on purpose; reuse it for TM02–TM07.
-//
-//   node convert-aka201.mjs <input.md> <output.ts> --export TM1_READING --tm 1
-//   node convert-aka201.mjs <input.md> <output.ts> --export PANDUAN_MENJAWAB_KASUS_READING --tm 91 --badge "Persiapan UTS"
-//
-// Text rule: every string written is a verbatim piece of the input. Only structure markers are removed: the H1
-// "TMxx: " prefix, "> " quote markers, list markers ("- ", "1. "), table pipes, "---" rules, the pendalaman
-// comments, the "### judul" line that repeats a pendalaman judul, the "Setelah TM ini kamu bisa:" label, and
-// whitespace at line ends. Unknown callout labels stop the run, so a new label must be mapped here on purpose.
+// MNK102 canonical converter, adapted from the AKA201 v2 Markdown parser.
+// Input: content-pipeline/MNK102/TMxx/05_student_learning_version.md.
+// Supports layered sections, source-defined SVG/overview, native finance formulas,
+// write-first self-checks, closed depth and worked examples. Output keeps CRLF bytes.
+// Regenerate readings from the canonical package rather than editing generated TypeScript.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { buildFinanceFigure } from './mnk102-visuals.mjs';
 const FIGURES = {};
@@ -17,7 +10,7 @@ const FIGURES = {};
 const [input, output, ...rest] = process.argv.slice(2);
 const opt = (name) => { const i = rest.indexOf(`--${name}`); return i >= 0 ? rest[i + 1] : undefined; };
 if (!input || !output || !opt('export') || !opt('tm')) {
-  console.error('usage: convert-aka201.mjs <input.md> <output.ts> --export NAME --tm N [--badge TEXT]');
+  console.error('usage: convert-mnk102.mjs <input.md> <output.ts> --export NAME --tm N [--badge TEXT]');
   process.exit(2);
 }
 
