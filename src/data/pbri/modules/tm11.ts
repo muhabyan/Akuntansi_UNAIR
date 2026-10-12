@@ -1015,7 +1015,7 @@ export const TM11_READING: Reading = {
           "answer": [
             {
               "kind": "p",
-              "text": "*Contoh jawaban:* 60 hari setelah tanggal laporan auditor. Setelah itu berkas dibekukan. Tambahan dipisahkan, ditempatkan di bagian depan, dinilai dampaknya terhadap kesimpulan, dan dicatat alasan serta kapan dan oleh siapa. `(ARENS pp.156–157; ISA230 paras. 14, 16, A21)`"
+              "text": "*Contoh jawaban:* buku memakai 60 hari setelah tanggal laporan auditor. ISA 230 A21 menyebut waktu yang sesuai umumnya tidak lebih dari 60 hari; periksa ketentuan yurisdiksi dan firma. Setelah perakitan akhir, integritas berkas dijaga. Tambahan dipisahkan, ditempatkan di bagian depan, dinilai dampaknya terhadap kesimpulan, dan dicatat alasan serta kapan dan oleh siapa. `(ARENS pp.156–157; ISA230 paras. 14, 16, A21)`"
             }
           ],
           "signal": "*Tanda belum paham:* menyebut berkas boleh diubah bebas karena laporan sudah terbit."

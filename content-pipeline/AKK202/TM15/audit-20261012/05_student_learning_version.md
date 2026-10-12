@@ -1,0 +1,9 @@
+# AKK202 TM15: hasil audit sumber
+
+Kasus menggunakan Kieso IFRS 5e (2024). RPP AKM II PDF 3 juga meminta konteks standar Indonesia serta SAK ETAP pada bagian terkait. IAI menyatakan SAK Entitas Privat menggantikan SAK ETAP sejak 1 Januari 2025. Dokumen lokal bertanda DE adalah draf eksposur. Rincian perbedaan standar nasional belum seluruhnya diverifikasi; contoh buku tidak otomatis menjadi ketentuan Indonesia. Rujukan: RPP AKM II, halaman PDF 3; [IAI, Tentang SAK ETAP](https://web.iaiglobal.or.id/SAK-IAI/Tentang%20SAK%20ETAP).
+
+Pada metode ekuitas, bagian laba investee menambah nilai investasi dan dividen menguranginya. Dengan investasi awal 200.000 pound, porsi 25%, laba 80.000 dan dividen 20.000 pound, nilai akhir adalah 215.000 pound dalam kasus sederhana. Dividen tersebut berbeda dari pendapatan dividen pada metode nilai wajar. Pengaruh signifikan dan pengendalian dinilai dari substansi; persentase kepemilikan memberi indikator, bukan satu-satunya bukti. [Kieso IFRS 5e, halaman PDF 1388-1392 dan 1452]
+
+Sumber: Kieso IFRS 5e, halaman PDF 1388-1392 dan 1452, E16.20.
+
+

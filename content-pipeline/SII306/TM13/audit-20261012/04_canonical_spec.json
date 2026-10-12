@@ -1,0 +1,232 @@
+{
+  "code": "SII306",
+  "tm": 13,
+  "reading": {
+    "tm": 13,
+    "title": "Teknologi Blockchain, Smart Contracts & Akuntansi Tiga Entri (Triple-Entry Accounting)",
+    "ref": "Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)",
+    "intro": "Membahas disrupsi teknologi Distributed Ledger Technology (DLT) dan Blockchain terhadap sistem akuntansi. Memahami arsitektur blok, kriptografi hash, konsensus, Smart Contracts, evolusi menuju Triple-Entry Accounting, serta audit atas aset digital.",
+    "objectives": [
+      "Menjelaskan karakteristik dasar Blockchain: Desentralisasi, Immutability, Transparansi, dan Kriptografi Hash.",
+      "Membedakan jaringan Public Blockchain (Permissionless) vs Private/Consortium Blockchain (Permissioned).",
+      "Memahami konsep Triple-Entry Accounting dan dampaknya terhadap otomatisasi verifikasi audit.",
+      "Menganalisis mekanisme kerja Smart Contracts dalam otomatisasi siklus pendapatan dan pengeluaran.",
+      "Mengevaluasi tantangan audit aset kripto dan kepatuhan standar akuntansi (PSAK/IFRS terkait aset takberwujud)."
+    ],
+    "blocks": [
+      {
+        "kind": "figure",
+        "caption": "Gambar 13.1: Struktur Rantai Blok (Blockchain) dan Paradigma Akuntansi Tiga Entri (Triple-Entry Accounting).",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-amber\" x=\"340\" y=\"34\" fill=\"#fbbf24\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">TEKNOLOGI BLOCKCHAIN &amp; PARADIGMA TRIPLE-ENTRY ACCOUNTING</text>\n\n  <!-- Evolution of Bookkeeping Box -->\n  <rect class=\"svg-card\" x=\"25\" y=\"58\" width=\"180\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"78\" fill=\"#38bdf8\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">EVOLUSI TATA BUKU</text>\n  <line class=\"svg-divider\" x1=\"35\" y1=\"88\" x2=\"195\" y2=\"88\" stroke=\"#334155\"/>\n  \n  <rect class=\"svg-subcard\" x=\"35\" y=\"96\" width=\"160\" height=\"34\" rx=\"4\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"115\" y=\"110\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Abad Pertengahan: Single-Entry</text>\n  <text class=\"svg-text\" x=\"115\" y=\"122\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">Catatan kas masuk &amp; keluar tunggal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"136\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"115\" y=\"150\" fill=\"#38bdf8\" font-size=\"7.5\" font-weight=\"700\" text-anchor=\"middle\">1494: Double-Entry (Pacioli)</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"162\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit = Kredit | Buku Besar Mandiri</text>\n  <text class=\"text-accent-red\" x=\"115\" y=\"172\" fill=\"#f87171\" font-size=\"6.5\" text-anchor=\"middle\">&#10007; Perlu Rekonsiliasi Eksternal</text>\n\n  <rect class=\"svg-subcard\" x=\"35\" y=\"180\" width=\"160\" height=\"38\" rx=\"4\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"115\" y=\"194\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"800\" text-anchor=\"middle\">Modern: Triple-Entry</text>\n  <text class=\"svg-muted\" x=\"115\" y=\"206\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Debit + Kredit + Kriptografis Ledger</text>\n\n  <!-- Blockchain Chain Diagram -->\n  <rect class=\"svg-card\" x=\"220\" y=\"58\" width=\"430\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#fbbf24\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-amber\" x=\"435\" y=\"78\" fill=\"#fbbf24\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">STRUKTUR BLOK TERDISTRIBUSI &amp; KONSENSUS IMMUTABLE</text>\n  <line class=\"svg-divider\" x1=\"230\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n\n  <!-- Block N-1 -->\n  <rect class=\"svg-subcard\" x=\"235\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"112\" fill=\"#fbbf24\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1042</text>\n  <line class=\"svg-divider\" x1=\"245\" y1=\"118\" x2=\"340\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"svg-muted\" x=\"292\" y=\"132\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Prev Hash: 000ab7...</text>\n  <text class=\"text-accent-green\" x=\"292\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"292\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT A &#8594; PT B: Rp 500 jt</text>\n  <text class=\"svg-muted\" x=\"292\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Timestamp &amp; Nonce</text>\n  <rect class=\"svg-subcard\" x=\"245\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#fbbf24\"/>\n  <text class=\"text-accent-amber\" x=\"292\" y=\"196\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: e83f91...</text>\n\n  <!-- Hash Link Arrow -->\n  <line x1=\"350\" y1=\"156\" x2=\"375\" y2=\"156\" stroke=\"#fbbf24\" stroke-width=\"2\"/>\n  <polygon points=\"375,152 385,156 375,160\" fill=\"#fbbf24\"/>\n\n  <!-- Block N -->\n  <rect class=\"svg-subcard\" x=\"385\" y=\"96\" width=\"115\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"112\" fill=\"#34d399\" font-size=\"8.5\" font-weight=\"700\" text-anchor=\"middle\">BLOK #1043</text>\n  <line class=\"svg-divider\" x1=\"395\" y1=\"118\" x2=\"490\" y2=\"118\" stroke=\"#334155\"/>\n  <text class=\"text-accent-amber\" x=\"442\" y=\"132\" fill=\"#fbbf24\" font-size=\"7\" font-weight=\"600\" text-anchor=\"middle\">Prev: e83f91...</text>\n  <text class=\"text-accent-green\" x=\"442\" y=\"146\" fill=\"#34d399\" font-size=\"7.5\" font-weight=\"600\" text-anchor=\"middle\">Merkle Root Tx:</text>\n  <text class=\"svg-text\" x=\"442\" y=\"158\" fill=\"#cbd5e1\" font-size=\"6.5\" text-anchor=\"middle\">PT B &#8594; PT C: Rp 120 jt</text>\n  <text class=\"svg-muted\" x=\"442\" y=\"170\" fill=\"#94a3b8\" font-size=\"7\" text-anchor=\"middle\">Smart Contract Auto</text>\n  <rect class=\"svg-subcard\" x=\"395\" y=\"180\" width=\"95\" height=\"28\" rx=\"2\" fill=\"#0f172a\" stroke=\"#10b981\"/>\n  <text class=\"text-accent-green\" x=\"442\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Hash: a194bc...</text>\n\n  <!-- Right: Audit impact -->\n  <rect class=\"svg-subcard\" x=\"515\" y=\"96\" width=\"125\" height=\"120\" rx=\"6\" fill=\"#0f172a\" stroke=\"#38bdf8\"/>\n  <text class=\"text-accent-blue\" x=\"577\" y=\"112\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">DAMPAK AUDIT:</text>\n  <text class=\"svg-text\" x=\"577\" y=\"128\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Sulit Diubah Tanpa Jejak</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"138\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Immutable Ledger)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"152\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Rekonsiliasi Tetap Diuji</text>\n  <text class=\"svg-muted\" x=\"577\" y=\"162\" fill=\"#94a3b8\" font-size=\"6.5\" text-anchor=\"middle\">(Single Source of Truth)</text>\n  <text class=\"svg-text\" x=\"577\" y=\"176\" fill=\"#cbd5e1\" font-size=\"7\" text-anchor=\"middle\">&#10003; Real-Time Audit</text>\n  <text class=\"text-accent-green\" x=\"577\" y=\"196\" fill=\"#34d399\" font-size=\"7\" font-weight=\"700\" text-anchor=\"middle\">Auditor Menilai Bukti</text>\n</svg>"
+      },
+      {
+        "kind": "h2",
+        "text": "Arsitektur Blockchain & Mekanisme Kriptografi"
+      },
+      {
+        "kind": "p",
+        "text": "Blockchain adalah buku besar digital terdistribusi (Distributed Ledger Technology / DLT) yang mencatat transaksi secara kronologis dalam rangkaian 'blok' yang saling terhubung menggunakan fungsi hash kriptografi (seperti SHA-256). Setiap blok memuat tiga komponen utama:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Data Transaksi: Catatan peristiwa ekonomi (misal: 'PT A mentransfer 100 token komoditas ke PT B').",
+          "Hash Blok Ini: Sidik jari digital unik yang dihasilkan dari komputasi seluruh isi blok saat ini.",
+          "Previous Hash (Hash Blok Sebelumnya): Tautan kriptografis ke blok sebelumnya yang menciptakan rantai (chain) yang tidak dapat diputus."
+        ]
+      },
+      {
+        "kind": "p",
+        "text": "Immutability berarti catatan sulit diubah tanpa memengaruhi hash dan mekanisme validasi jaringan. Batasnya bergantung pada rancangan konsensus, kendali jaringan dan akses kunci. Catatan yang konsisten masih dapat memuat transaksi dunia nyata yang salah. Auditor tetap memeriksa keberadaan, hak, nilai dan pengendalian. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
+      },
+      {
+        "kind": "h2",
+        "text": "Revolusi Triple-Entry Accounting"
+      },
+      {
+        "kind": "table",
+        "caption": "Tabel 13.1: perbandingan pencatatan dan tanda terima. Sumber pelengkap: Grigg (2005), The Initial Role of a Receipt, Recovering Double Entry dan Triple Entry, https://iang.org/papers/triple_entry.html. Gagasan paper dibedakan dari standar akuntansi.",
+        "headers": [
+          "Era Akuntansi",
+          "Mekanisme Pembukuan",
+          "Kelemahan & Kebutuhan Audit",
+          "Pihak yang Memverifikasi"
+        ],
+        "rows": [
+          [
+            "Single-entry",
+            "Hanya mencatat penambahan atau pengurangan kas dalam satu daftar.",
+            "Tidak ada mekanisme kontrol internal keseimbangan; mudah terjadi kehilangan catatan.",
+            "Pencatat itu sendiri (sangat subjektif)."
+          ],
+          [
+            "Double-entry",
+            "Pada buku masing-masing entitas, transaksi memengaruhi akun dengan total debit sama dengan total kredit.",
+            "Keseimbangan debit/kredit tidak membuktikan keberadaan, kelengkapan atau ketepatan nilai transaksi.",
+            "Pencatat dan pengendalian internal; auditor menguji bukti yang relevan."
+          ],
+          [
+            "Gagasan triple-entry Grigg (2005)",
+            "Tanda terima bertanda tangan digital menjadi bukti bersama pihak terkait, di samping pencatatan mereka.",
+            "Perbedaan catatan dapat berkurang; hak, nilai dan kelengkapan transaksi tetap memerlukan pemeriksaan.",
+            "Pihak memverifikasi tanda terima; paper 2005 tidak mensyaratkan public blockchain modern."
+          ]
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Penerapan Smart Contracts dalam Rantai Pasok (Supply Chain)"
+      },
+      {
+        "kind": "p",
+        "text": "Smart Contract adalah program komputer yang disimpan di dalam blockchain yang mengeksekusi tindakan secara otomatis jika kondisi tertentu yang telah disepakati terpenuhi ('If/Then Statement')."
+      },
+      {
+        "kind": "p",
+        "text": "Contoh Siklus Pengadaan Terotomatisasi Smart Contract:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Syarat: 'JIKA sensor IoT pada kontainer mengonfirmasi barang telah tiba di pelabuhan Tanjung Perak dengan suhu terjaga di bawah -18°C DAN bea cukai terverifikasi lolos...'",
+          "Eksekusi Otomatis: '...MAKA smart contract seketika melepaskan pembayaran dana dari rekening escrow pembeli ke rekening vendor dan menerbitkan bukti pelunasan digital tanpa menunggu persetujuan faktur kertas selama 30 hari.'"
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "key",
+        "title": "Perlakuan Akuntansi Aset Kripto",
+        "text": "Agenda decision IFRIC Juni 2019 membahas cryptocurrency dengan karakteristik tertentu, bukan seluruh token digital. IAS 2 dipakai bila dipegang untuk dijual dalam kegiatan usaha normal; bila IAS 2 tidak berlaku, IAS 38 dipakai. Jangka investasi panjang tidak menjadi syarat tunggal. Periksa hak kontraktual serta pengungkapan, dan jangan memperluas keputusan ini ke semua aset kripto. Rujukan: [IFRIC, Holdings of Cryptocurrencies, Juni 2019, PDF 1-3](https://www.ifrs.org/content/dam/ifrs/supporting-implementation/agenda-decisions/2019/holdings-of-cryptocurrencies-june-2019.pdf). Penomoran Indonesia efektif 1 Januari 2024 adalah PSAK 202 Persediaan dan PSAK 238 Aset Takberwujud, menurut dokumen IAI Perubahan Penomoran PSAK/ISAK, PDF 1-2; pemetaan nomor tidak menggantikan pemeriksaan teks standar nasional."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "tm": 13,
+      "topic": "Blockchain & Triple-Entry Accounting",
+      "difficulty": "medium",
+      "q": "Dalam arsitektur blockchain, elemen mana yang menghubungkan blok dengan catatan blok sebelumnya? Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524).",
+      "options": [
+        "Alamat jaringan validator saat ini",
+        "Hash Pointer / Previous Block Hash",
+        "Kunci privat milik penerima transaksi",
+        "Jumlah saldo agregat seluruh transaksi"
+      ],
+      "answer": 1,
+      "explanation": "Previous hash mengikat data blok sebelumnya. Perubahan data mengubah digest, sehingga validasi hubungan perlu diperiksa ulang. Alamat jaringan dan saldo bukan pengganti hubungan hash; kunci privat tidak disalin sebagai tautan antarbIok. Rujukan: Richardson AIS 4e, hal. 497-499 (PDF 522-524)."
+    },
+    {
+      "tm": 13,
+      "topic": "Blockchain & Triple-Entry Accounting",
+      "difficulty": "advanced",
+      "q": "Apa peran tambahan pada konsep triple-entry Ian Grigg? Sumber pelengkap primer: Grigg (2005), bagian The Initial Role of a Receipt dan Triple Entry.",
+      "options": [
+        "Menyediakan akun debit ketiga untuk setiap transaksi",
+        "Menyediakan tanda terima bertanda tangan sebagai bukti bersama",
+        "Menghapus pencatatan lokal setelah validator menyetujui transaksi",
+        "Menggantikan pemeriksaan nilai aset dengan verifikasi tanda tangan"
+      ],
+      "answer": 1,
+      "explanation": "Grigg menjelaskan tanda terima bersama yang mendukung catatan pihak terkait. Paper tahun 2005 itu tidak mensyaratkan public blockchain modern. Tanda terima tidak menetapkan satu jurnal universal atau menggantikan pengujian nilai aset. Sumber pelengkap primer: [Grigg (2005), The Initial Role of a Receipt dan Triple Entry](https://iang.org/papers/triple_entry.html)."
+    },
+    {
+      "tm": 13,
+      "topic": "Blockchain & Triple-Entry Accounting",
+      "difficulty": "advanced",
+      "q": "Kode yang menjalankan tindakan ketika kondisi kontrak terpenuhi disebut apa? Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532).",
+      "options": [
+        "Electronic data interchange protocol",
+        "Smart contract execution code",
+        "Virtual private network tunnel",
+        "Relational database query view"
+      ],
+      "answer": 1,
+      "explanation": "Smart contract mengeksekusi kode berdasarkan kondisi yang didefinisikan. Jika syarat bergantung pada sensor atau data luar, keandalan input itu tetap perlu diuji. EDI bertukar dokumen, VPN menghubungkan jaringan dan view menyajikan hasil query. Rujukan: Richardson AIS 4e, Ch. 15, Blockchain Applications, hal. 504-507 (PDF 529-532)."
+    },
+    {
+      "tm": 13,
+      "topic": "Blockchain & Triple-Entry Accounting",
+      "difficulty": "medium",
+      "q": "Apa manfaat utama immutability bagi pemeriksaan catatan? Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532).",
+      "options": [
+        "Memberi bukti bahwa nilai wajar aset selalu benar",
+        "Membantu menelusuri perubahan melalui hash dan validasi jaringan",
+        "Menghilangkan kebutuhan menguji otorisasi transaksi oleh pelanggan",
+        "Menjamin seluruh transaksi dunia nyata masuk ke ledger"
+      ],
+      "answer": 1,
+      "explanation": "Hash dan validasi jaringan membuat perubahan catatan lebih mudah ditelusuri. Risiko manipulasi dan kesalahan input tetap perlu diuji; validasi ledger tidak membuktikan keberadaan atau nilai transaksi dunia nyata. Rujukan: Richardson AIS 4e, hal. 497-507 (PDF 522-532)."
+    },
+    {
+      "tm": 13,
+      "topic": "Blockchain & Triple-Entry Accounting",
+      "difficulty": "advanced",
+      "q": "Mengapa validasi ledger belum cukup sebagai bukti semua asersi laporan keuangan? Rujukan: Richardson AIS 4e, hal. 507 (PDF 532).",
+      "options": [
+        "Karena pemeriksaan ledger sepenuhnya menggantikan asersi keberadaan aset",
+        "Karena catatan tervalidasi belum membuktikan hak dan nilai transaksi",
+        "Karena jumlah validator langsung menentukan kewajaran laporan keuangan",
+        "Karena bentuk hash menentukan klasifikasi akun dan estimasi akuntansi"
+      ],
+      "answer": 1,
+      "explanation": "Validasi jaringan memeriksa catatan menurut aturan jaringan. Kesepakatan fiktif atau nilai aset keliru masih dapat masuk. Auditor perlu bukti keberadaan, hak, kelengkapan dan penilaian, serta memahami kontrol input. Rujukan: Richardson AIS 4e, hal. 507 (PDF 532)."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "aks301-tm13-01",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "category": "Konsep",
+      "front": "Karakteristik Buku Besar Terdistribusi (Blockchain)",
+      "back": "Ledger memakai hash, validasi dan aturan jaringan untuk menjaga konsistensi. Algoritme, transparansi dan desentralisasi bergantung rancangan; perubahan sulit dilakukan tanpa jejak, tetapi integritas ledger tidak membuktikan transaksi dunia nyata benar. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    },
+    {
+      "id": "aks301-tm13-02",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "category": "Konsep",
+      "front": "Triple-Entry Accounting",
+      "back": "Grigg (2005) menekankan receipt bersama yang ditandatangani secara kriptografis di samping pencatatan internal. Konsep ini tidak mensyaratkan shared public blockchain. Rujukan: Grigg (2005), Triple Entry Accounting, bagian Signed Receipts, https://iang.org/papers/triple_entry.html."
+    },
+    {
+      "id": "aks301-tm13-03",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "category": "Mekanisme",
+      "front": "Smart Contracts (Kontrak Pintar)",
+      "back": "Program menjalankan ketentuan yang dikodekan ketika input/kondisi dipenuhi. Input atau oracle dapat salah; eksekusi otomatis tidak sendirian membuktikan hak, kewajiban atau nilai transaksi. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    },
+    {
+      "id": "aks301-tm13-04",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "category": "Perbandingan",
+      "front": "Public vs Private (Permissioned) Blockchain",
+      "back": "Public (siapa saja boleh bergabung, misal: Bitcoin). Private/Consortium (hanya entitas yang diizinkan dan diverifikasi yang boleh mengakses jaringan). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    },
+    {
+      "id": "aks301-tm13-05",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "category": "Konsep",
+      "front": "Manfaat Cloud Accounting (SaaS)",
+      "back": "Akses laporan keuangan kapan saja di mana saja, skalabilitas kapasitas fleksibel, pencadangan data otomatis, dan biaya modal TI lebih rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    },
+    {
+      "id": "aks301-tm13-06",
+      "phase": "pra-uas",
+      "tm": 13,
+      "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+      "category": "Konsep",
+      "front": "Risiko Pengendalian Cloud Computing",
+      "back": "Periksa ketergantungan vendor, akses, privasi, kontinuitas dan pengendalian yang harus dijalankan pelanggan. Pilih laporan assurance yang sesuai risiko/cakupan serta periode; SOC 1 dan SOC 2 mempunyai tujuan berbeda, bukan kewajiban universal untuk semua cloud. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

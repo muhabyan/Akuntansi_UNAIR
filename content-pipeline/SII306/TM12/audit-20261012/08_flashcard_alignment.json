@@ -1,0 +1,56 @@
+[
+  {
+    "id": "aks301-tm12-01",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "category": "Mekanisme",
+    "front": "Definisi Robotic Process Automation (RPA)",
+    "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+  },
+  {
+    "id": "aks301-tm12-02",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "category": "Konsep",
+    "front": "Kriteria Proses yang Ideal untuk RPA",
+    "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+  },
+  {
+    "id": "aks301-tm12-03",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "category": "Contoh",
+    "front": "Penerapan RPA pada Rekonsiliasi Bank",
+    "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+  },
+  {
+    "id": "aks301-tm12-04",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "category": "Konsep",
+    "front": "Optical Character Recognition (OCR) Cerdas",
+    "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+  },
+  {
+    "id": "aks301-tm12-05",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "category": "Konsep",
+    "front": "Machine Learning dalam Deteksi Anomali Jurnal",
+    "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+  },
+  {
+    "id": "aks301-tm12-06",
+    "phase": "pra-uas",
+    "tm": 12,
+    "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+    "category": "Konsep",
+    "front": "Tata Kelola & Pengendalian Bot (Bot Governance)",
+    "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+  }
+]

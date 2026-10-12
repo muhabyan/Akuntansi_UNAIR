@@ -1,0 +1,56 @@
+[
+  {
+    "id": "aks301-tm13-01",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "category": "Konsep",
+    "front": "Karakteristik Buku Besar Terdistribusi (Blockchain)",
+    "back": "Ledger memakai hash, validasi dan aturan jaringan untuk menjaga konsistensi. Algoritme, transparansi dan desentralisasi bergantung rancangan; perubahan sulit dilakukan tanpa jejak, tetapi integritas ledger tidak membuktikan transaksi dunia nyata benar. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+  },
+  {
+    "id": "aks301-tm13-02",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "category": "Konsep",
+    "front": "Triple-Entry Accounting",
+    "back": "Grigg (2005) menekankan receipt bersama yang ditandatangani secara kriptografis di samping pencatatan internal. Konsep ini tidak mensyaratkan shared public blockchain. Rujukan: Grigg (2005), Triple Entry Accounting, bagian Signed Receipts, https://iang.org/papers/triple_entry.html."
+  },
+  {
+    "id": "aks301-tm13-03",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "category": "Mekanisme",
+    "front": "Smart Contracts (Kontrak Pintar)",
+    "back": "Program menjalankan ketentuan yang dikodekan ketika input/kondisi dipenuhi. Input atau oracle dapat salah; eksekusi otomatis tidak sendirian membuktikan hak, kewajiban atau nilai transaksi. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+  },
+  {
+    "id": "aks301-tm13-04",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "category": "Perbandingan",
+    "front": "Public vs Private (Permissioned) Blockchain",
+    "back": "Public (siapa saja boleh bergabung, misal: Bitcoin). Private/Consortium (hanya entitas yang diizinkan dan diverifikasi yang boleh mengakses jaringan). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+  },
+  {
+    "id": "aks301-tm13-05",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "category": "Konsep",
+    "front": "Manfaat Cloud Accounting (SaaS)",
+    "back": "Akses laporan keuangan kapan saja di mana saja, skalabilitas kapasitas fleksibel, pencadangan data otomatis, dan biaya modal TI lebih rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+  },
+  {
+    "id": "aks301-tm13-06",
+    "phase": "pra-uas",
+    "tm": 13,
+    "topic": "Blockchain, Smart Contracts & Cloud Accounting",
+    "category": "Konsep",
+    "front": "Risiko Pengendalian Cloud Computing",
+    "back": "Periksa ketergantungan vendor, akses, privasi, kontinuitas dan pengendalian yang harus dijalankan pelanggan. Pilih laporan assurance yang sesuai risiko/cakupan serta periode; SOC 1 dan SOC 2 mempunyai tujuan berbeda, bukan kewajiban universal untuk semua cloud. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
+  }
+]

@@ -1,0 +1,5 @@
+# PJK301 TM10: hasil audit
+
+\mathrm{PPh}_{21,\,terakhir}=\mathrm{PPh}_{tahunan}-\mathrm{Potongan}_{sebelumnya}
+
+Sumber: RPP Perpajakan II PDF 3-5; PPh tahunan adalah hasil tarif Pasal 17 atas PKP sesuai cakupan penerima; potongan sebelumnya adalah PPh 21 pada masa sebelum masa terakhir dari pemotong yang relevan. Hasil negatif memerlukan pengembalian kelebihan potong sesuai aturan. Rujukan: PMK 168/2023 Pasal 15 dan 21. Tahun kasus 2024/2025 tetap sesuai soal.

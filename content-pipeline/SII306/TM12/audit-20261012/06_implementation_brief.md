@@ -1,0 +1,1 @@
+Snapshot 04 JSON SHA256 5721d25b2b233fe24d1de4240619c4d1b27a82d73a13bc5bb75e4c9cfde825ce. Cocokkan reading, flashcards dan kuis TM yang mempunyai metadata. SVG, opsi serta kunci lengkap berada pada JSON. Pra-UTS tidak termasuk snapshot.

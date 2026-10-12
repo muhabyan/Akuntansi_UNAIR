@@ -1,5 +1,5 @@
+// PJK301 TM15: audited formula notes, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM15_READING: Reading = {
   "tm": 15,
   "title": "Pajak Karbon dan Analisis Perdagangan Karbon",
@@ -132,7 +132,7 @@ export const TM15_READING: Reading = {
     {
       "kind": "formula",
       "text": "\\mathrm{Pajak}_{simulasi}=\\mathrm{Ton}_{sisa}\\times1.000\\ \\frac{\\mathrm{kg}}{\\mathrm{ton}}\\times\\mathrm{Tarif}\\ \\frac{\\mathrm{Rp}}{\\mathrm{kg}}",
-      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Rumus model simulasi pendidikan; perlu aturan pengakuan untuk kewajiban nyata."
+      "note": "Rumus pajak karbon pada kasus adalah simulasi berdasarkan emisi yang dinyatakan, batas/kuota dan unit yang diasumsikan diakui. Konversi ton ke kilogram memakai 1.000 kg per ton. Simulasi tidak menetapkan tanggal implementasi, kredit pajak aktual atau kelayakan unit. Rujukan: UU HPP Pasal 13 ayat (5)-(15) dan Pasal 17 ayat (3)."
     },
     {
       "kind": "solution-reveal",

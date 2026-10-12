@@ -1,0 +1,9 @@
+# AKK202 TM11: hasil audit sumber
+
+Kasus menggunakan Kieso IFRS 5e (2024). RPP AKM II PDF 3 juga meminta konteks standar Indonesia serta SAK ETAP pada bagian terkait. IAI menyatakan SAK Entitas Privat menggantikan SAK ETAP sejak 1 Januari 2025. Dokumen lokal bertanda DE adalah draf eksposur. Rincian perbedaan standar nasional belum seluruhnya diverifikasi; contoh buku tidak otomatis menjadi ketentuan Indonesia. Rujukan: RPP AKM II, halaman PDF 3; [IAI, Tentang SAK ETAP](https://web.iaiglobal.or.id/SAK-IAI/Tentang%20SAK%20ETAP).
+
+Dividen properti diukur memakai nilai wajar aset yang dibagikan. Pada Tsen, kenaikan nilai dari 1.250.000 menjadi 2.000.000 euro diakui sebelum utang dividen dicatat. Deklarasi menghasilkan kewajiban, dan distribusi melunasinya. Tanggal keputusan tidak sama dengan tanggal arus aset. [Kieso IFRS 5e, halaman PDF 1201]
+
+Sumber: Kieso IFRS 5e, halaman PDF 1201, Illustration 14.14.
+
+

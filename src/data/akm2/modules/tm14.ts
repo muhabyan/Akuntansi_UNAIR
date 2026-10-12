@@ -1,6 +1,5 @@
-// AKK202 TM14: diperiksa terhadap Kieso IFRS 5e dan RPP lokal.
+// AKK202 TM14: audited source addition, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM14_READING: Reading = {
   "tm": 14,
   "title": "Investasi I: Efek Utang, Nilai Wajar, dan Kerugian Kredit",
@@ -16,6 +15,12 @@ export const TM14_READING: Reading = {
     {
       "kind": "h2",
       "text": "1. Orientation / Quick Map"
+    },
+    {
+      "kind": "callout",
+      "variant": "note",
+      "title": "Versi sumber dan batas standar nasional",
+      "text": "Kasus menggunakan Kieso IFRS 5e (2024). RPP AKM II PDF 3 juga meminta konteks standar Indonesia serta SAK ETAP pada bagian terkait. IAI menyatakan SAK Entitas Privat menggantikan SAK ETAP sejak 1 Januari 2025. Dokumen lokal bertanda DE adalah draf eksposur. Rincian perbedaan standar nasional belum seluruhnya diverifikasi; contoh buku tidak otomatis menjadi ketentuan Indonesia. Rujukan: RPP AKM II, halaman PDF 3; [IAI, Tentang SAK ETAP](https://web.iaiglobal.or.id/SAK-IAI/Tentang%20SAK%20ETAP)."
     },
     {
       "kind": "figure",
@@ -363,6 +368,47 @@ export const TM14_READING: Reading = {
           "kind": "p",
           "text": "Bunga efektif masuk laba rugi; penurunan pasar pada contoh HFCS ini masuk OCI. Jangan memakai kas kupon £10.000 sebagai pendapatan bunga tahunan. (Kieso IFRS 5e, halaman PDF 1377-1378.)"
         }
+      ]
+    },
+    {
+      "kind": "p",
+      "text": "Cara membaca: Bao membayar kupon kontraktual 20.000, tetapi ekspektasi tinggal 16.000 per tahun selama empat tahun. Selisih kas kupon nominal 16.000 selama empat tahun berbeda dari ECL 12.680 yang didiskonto pada tingkat efektif historis 10%. Pokok 200.000 masih diharapkan kembali. Satuan sumber adalah ribuan yen; gunakan angka pembulatan sumber. [Kieso IFRS 5e, halaman PDF 1399] Rujukan pemeriksaan: Kieso IFRS 5e, halaman PDF 1399, Illustrations 16.23-16.24."
+    },
+    {
+      "kind": "figure",
+      "title": "Bao: kas kontraktual dan ekspektasian",
+      "svg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 670 455\" role=\"img\" aria-label=\"Bao: kas kontraktual dan ekspektasian. Kontraktual: 20.000 per tahun sebelum pokok. Ekspektasian: 16.000 per tahun sebelum pokok. ECL 12.680 adalah kerugian nilai kini\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"3\" orient=\"auto\"><path d=\"M0 0 L6 3 L0 6\" fill=\"var(--svg-accent,#2563eb)\"/></marker></defs><rect width=\"670\" height=\"455\" class=\"svg-bg\"/><text x=\"45\" y=\"45\" text-anchor=\"start\" font-size=\"19\" class=\"svg-text\">Kupon yang dipisahkan dari pokok</text><text x=\"45\" y=\"94\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Kupon (ribuan yen)</text><line x1=\"90\" y1=\"110\" x2=\"90\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"580\" y2=\"265\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"90\" y1=\"265\" x2=\"90\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"90\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2025</text><line x1=\"335\" y1=\"265\" x2=\"335\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2026.5</text><line x1=\"580\" y1=\"265\" x2=\"580\" y2=\"270\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"580\" y=\"288\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">2028</text><text x=\"82\" y=\"270\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">0</text><text x=\"82\" y=\"192.5\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">11000</text><text x=\"82\" y=\"115\" text-anchor=\"end\" font-size=\"15\" class=\"svg-text\">22000</text><text x=\"335\" y=\"313\" text-anchor=\"middle\" font-size=\"15\" class=\"svg-text\">Tahun: 2025 sampai 2028</text><polyline points=\"90,124.0909090909091 253.33333333333331,124.0909090909091 416.66666666666663,124.0909090909091 580,124.0909090909091\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"90\" cy=\"124.0909090909091\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"253.33333333333331\" cy=\"124.0909090909091\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"416.66666666666663\" cy=\"124.0909090909091\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"580\" cy=\"124.0909090909091\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"65\" y1=\"340\" x2=\"95\" y2=\"340\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"105\" y=\"345\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Kontraktual</text><polyline points=\"90,152.27272727272725 253.33333333333331,152.27272727272725 416.66666666666663,152.27272727272725 580,152.27272727272725\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"90\" cy=\"152.27272727272725\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"253.33333333333331\" cy=\"152.27272727272725\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"416.66666666666663\" cy=\"152.27272727272725\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"580\" cy=\"152.27272727272725\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"65\" y1=\"370\" x2=\"95\" y2=\"370\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"105\" y=\"375\" text-anchor=\"start\" font-size=\"15\" class=\"svg-text\">Ekspektasian</text></svg>",
+      "caption": "Kieso IFRS 5e, halaman PDF 1399, Illustration 16.23; dalam ribuan yen.",
+      "mobileSvg": "<svg class=\"finance-svg\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 490\" role=\"img\" aria-label=\"Bao: kas kontraktual dan ekspektasian. Kontraktual: 20.000 per tahun sebelum pokok. Ekspektasian: 16.000 per tahun sebelum pokok. ECL 12.680 adalah kerugian nilai kini\"><style>.finance-svg{--svg-bg:#f8fafc;--svg-card:#fff;--svg-text:#0f172a;--svg-muted:#64748b;--svg-accent:#2563eb;--svg-success:#15803d;--svg-warning:#b45309}.dark .finance-svg{--svg-bg:#17212b;--svg-card:#1e293b;--svg-text:#e5e7eb;--svg-muted:#94a3b8;--svg-accent:#60a5fa;--svg-success:#34d399;--svg-warning:#fbbf24}.finance-svg .svg-bg{fill:var(--svg-bg)}.finance-svg .svg-card{fill:var(--svg-card)}.finance-svg .svg-text{fill:var(--svg-text);font-family:system-ui,sans-serif}</style><rect width=\"360\" height=\"490\" fill=\"var(--svg-bg,#f8fafc)\"/><text x=\"16\" y=\"35\" text-anchor=\"start\" font-size=\"18\" class=\"svg-text\">Kupon yang dipisahkan dari pokok</text><text x=\"16\" y=\"104\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Kupon (ribuan yen)</text><line x1=\"72\" y1=\"120\" x2=\"72\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"72\" y1=\"300\" x2=\"335\" y2=\"300\" stroke=\"var(--svg-muted, #64748b)\" /><line x1=\"72\" y1=\"300\" x2=\"72\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"72\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2025</text><line x1=\"203.5\" y1=\"300\" x2=\"203.5\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"203.5\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2026.5</text><line x1=\"335\" y1=\"300\" x2=\"335\" y2=\"305\" stroke=\"var(--svg-muted, #64748b)\" /><text x=\"335\" y=\"323\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">2028</text><text x=\"64\" y=\"305\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">0</text><text x=\"64\" y=\"215\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">11000</text><text x=\"64\" y=\"125\" text-anchor=\"end\" font-size=\"16\" class=\"svg-text\">22000</text><text x=\"203.5\" y=\"348\" text-anchor=\"middle\" font-size=\"16\" class=\"svg-text\">Tahun: 2025 sampai 2028</text><polyline points=\"72,136.36363636363637 159.66666666666666,136.36363636363637 247.33333333333331,136.36363636363637 335,136.36363636363637\" fill=\"none\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><circle cx=\"72\" cy=\"136.36363636363637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"159.66666666666666\" cy=\"136.36363636363637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"247.33333333333331\" cy=\"136.36363636363637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><circle cx=\"335\" cy=\"136.36363636363637\" r=\"3\" fill=\"var(--svg-accent, #2563eb)\"/><line x1=\"18\" y1=\"375\" x2=\"44\" y2=\"375\" stroke=\"var(--svg-accent, #2563eb)\" stroke-width=\"3\" /><text x=\"52\" y=\"380\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Kontraktual</text><polyline points=\"72,169.0909090909091 159.66666666666666,169.0909090909091 247.33333333333331,169.0909090909091 335,169.0909090909091\" fill=\"none\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><circle cx=\"72\" cy=\"169.0909090909091\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"159.66666666666666\" cy=\"169.0909090909091\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"247.33333333333331\" cy=\"169.0909090909091\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><circle cx=\"335\" cy=\"169.0909090909091\" r=\"3\" fill=\"var(--svg-success, #16a34a)\"/><line x1=\"18\" y1=\"405\" x2=\"44\" y2=\"405\" stroke=\"var(--svg-success, #16a34a)\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"52\" y=\"410\" text-anchor=\"start\" font-size=\"16\" class=\"svg-text\">Ekspektasian</text></svg>",
+      "altText": "Bao: kas kontraktual dan ekspektasian. Kontraktual: 20.000 per tahun sebelum pokok. Ekspektasian: 16.000 per tahun sebelum pokok. ECL 12.680 adalah kerugian nilai kini",
+      "overview": {
+        "heading": "Bao: kas kontraktual dan ekspektasian",
+        "cards": [
+          {
+            "title": "Kontraktual: 20.000 per tahun sebelum pokok",
+            "subtitle": "",
+            "items": [],
+            "takeaway": ""
+          },
+          {
+            "title": "Ekspektasian: 16.000 per tahun sebelum pokok",
+            "subtitle": "",
+            "items": [],
+            "takeaway": ""
+          },
+          {
+            "title": "ECL 12.680 adalah kerugian nilai kini",
+            "subtitle": "",
+            "items": [],
+            "takeaway": ""
+          }
+        ],
+        "footer": "Sumbu, satuan, kurva dan asumsi dijelaskan pada teks. Kontraktual: 20.000 per tahun sebelum pokok. Ekspektasian: 16.000 per tahun sebelum pokok. ECL 12.680 adalah kerugian nilai kini"
+      },
+      "transcript": [
+        "Kontraktual: 20.000 per tahun sebelum pokok",
+        "Ekspektasian: 16.000 per tahun sebelum pokok",
+        "ECL 12.680 adalah kerugian nilai kini"
       ]
     },
     {

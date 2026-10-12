@@ -1,5 +1,5 @@
+// PJK301 TM9: audited formula notes, 12 October 2026.
 import type { Reading } from '../../../types';
-
 export const TM9_READING: Reading = {
   "tm": 9,
   "title": "Konsep PPh 21/26, TER, dan Natura",
@@ -118,7 +118,7 @@ export const TM9_READING: Reading = {
     {
       "kind": "formula",
       "text": "\\mathrm{PPh}_{21,\\,masa}=\\mathrm{Bruto}_{objek}\\times\\mathrm{TER}",
-      "note": "Gunakan dasar dan batas cakupan pada bagian sebelumnya. Tahun 2024/2025 ditentukan pada tiap kasus."
+      "note": "Bruto objek adalah penghasilan bruto yang menjadi dasar pemotongan masa; TER adalah tarif efektif sesuai kategori dan interval bruto. Rumus ini berlaku untuk masa yang menggunakan TER, dengan rekonsiliasi pada masa terakhir. Rujukan: PMK 168/2023 Pasal 8 dan 15; PP 58/2023 Lampiran A. Tahun kasus 2024/2025 tetap sesuai soal."
     },
     {
       "kind": "solution-reveal",

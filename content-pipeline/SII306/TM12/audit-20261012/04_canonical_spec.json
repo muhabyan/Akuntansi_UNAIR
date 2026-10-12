@@ -1,0 +1,230 @@
+{
+  "code": "SII306",
+  "tm": 12,
+  "reading": {
+    "tm": 12,
+    "title": "Otomasi Proses Robotik (RPA) & Kecerdasan Buatan (AI) dalam Akuntansi",
+    "ref": "Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)",
+    "intro": "Mempelajari pemanfaatan Robotic Process Automation (RPA) dan Artificial Intelligence (Machine Learning, NLP, Generative AI) dalam mengotomatisasi pekerjaan akuntansi repetitif seperti rekonsiliasi bank, pemrosesan faktur OCR, dan deteksi anomali jurnal.",
+    "objectives": [
+      "Mengidentifikasi kriteria proses bisnis akuntansi yang cocok diotomatisasi dengan RPA.",
+      "Menganalisis arsitektur bot RPA dan integrasinya dengan aplikasi ERP tanpa mengubah kode backend.",
+      "Menjelaskan pemanfaatan Optical Character Recognition (OCR) dan Natural Language Processing (NLP) pada dokumen keuangan.",
+      "Memahami tata kelola bot (Bot Governance), pemisahan tugas identitas bot, dan audit trail otomasi.",
+      "Mengevaluasi etika dan dampak kecerdasan buatan terhadap masa depan profesi akuntan."
+    ],
+    "blocks": [
+      {
+        "kind": "figure",
+        "caption": "Gambar 12.1: Transformasi Efisiensi Akuntansi melalui Robotic Process Automation (RPA) dan Artificial Intelligence.",
+        "svg": "<svg class=\"course-diagram-svg\" viewBox=\"0 0 680 250\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif\">\n  <rect class=\"svg-bg\" x=\"10\" y=\"10\" width=\"660\" height=\"230\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <rect class=\"svg-header\" x=\"10\" y=\"10\" width=\"660\" height=\"38\" rx=\"12\" fill=\"#1e293b\" fill-opacity=\"0.6\"/>\n  <line class=\"svg-divider\" x1=\"10\" y1=\"48\" x2=\"670\" y2=\"48\" stroke=\"#334155\" stroke-width=\"1\"/>\n  <text class=\"svg-title text-accent-green\" x=\"340\" y=\"34\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">OTOMASI PROSES ROBOTIK (RPA) &amp; KECERDASAN BUATAN (AI) AKUNTANSI</text>\n\n  <!-- Left: Manual Bottleneck -->\n  <rect class=\"svg-card\" x=\"30\" y=\"58\" width=\"180\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#f43f5e\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-red\" x=\"120\" y=\"78\" fill=\"#f87171\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">PROSES MANUAL LAMA</text>\n  <line class=\"svg-divider\" x1=\"40\" y1=\"88\" x2=\"200\" y2=\"88\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"120\" y=\"108\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Entri data berulang (Rekeying)</text>\n  <text class=\"svg-text\" x=\"120\" y=\"124\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Rentan salah ketik (Typo error)</text>\n  <text class=\"svg-text\" x=\"120\" y=\"140\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Waktu tutup buku bulanan lama</text>\n  <text class=\"svg-text\" x=\"120\" y=\"156\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10007; Biaya lembur staf akuntansi</text>\n  <rect class=\"svg-subcard\" x=\"40\" y=\"172\" width=\"160\" height=\"42\" rx=\"4\" fill=\"#0f172a\" stroke=\"#f43f5e\"/>\n  <text class=\"text-accent-red\" x=\"120\" y=\"190\" fill=\"#f87171\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Titik Lemah Efisiensi:</text>\n  <text class=\"svg-muted\" x=\"120\" y=\"204\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Karyawan terjebak pekerjaan klerikal</text>\n\n  <!-- Arrow -->\n  <text class=\"text-accent-green\" x=\"230\" y=\"145\" fill=\"#34d399\" font-size=\"20\" font-weight=\"800\" text-anchor=\"middle\">&#8594;</text>\n\n  <!-- Middle: RPA Engine -->\n  <rect class=\"svg-card\" x=\"250\" y=\"58\" width=\"220\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#38bdf8\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-blue\" x=\"360\" y=\"78\" fill=\"#38bdf8\" font-size=\"10.5\" font-weight=\"700\" text-anchor=\"middle\">RPA BOT (RULE-BASED)</text>\n  <line class=\"svg-divider\" x1=\"260\" y1=\"88\" x2=\"460\" y2=\"88\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"360\" y=\"108\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Baca e-statement bank via API</text>\n  <text class=\"svg-text\" x=\"360\" y=\"124\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Cocokkan mutasi vs buku besar</text>\n  <text class=\"svg-text\" x=\"360\" y=\"140\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Posting jurnal kliring otomatis</text>\n  <text class=\"svg-text\" x=\"360\" y=\"156\" fill=\"#cbd5e1\" font-size=\"8\" text-anchor=\"middle\">&#10003; Bekerja 24/7 dengan 0% human error</text>\n  <rect class=\"svg-subcard\" x=\"260\" y=\"172\" width=\"200\" height=\"42\" rx=\"4\" fill=\"#0f172a\" stroke=\"#0284c7\"/>\n  <text class=\"text-accent-blue\" x=\"360\" y=\"190\" fill=\"#38bdf8\" font-size=\"8\" font-weight=\"700\" text-anchor=\"middle\">Karakteristik RPA:</text>\n  <text class=\"svg-muted\" x=\"360\" y=\"204\" fill=\"#94a3b8\" font-size=\"7.5\" text-anchor=\"middle\">Struktur data jelas, aturan pasti (if-then)</text>\n\n  <!-- Arrow -->\n  <text class=\"text-accent-purple\" x=\"490\" y=\"145\" fill=\"#a855f7\" font-size=\"20\" font-weight=\"800\" text-anchor=\"middle\">&#8594;</text>\n\n  <!-- Right: Cognitive AI -->\n  <rect class=\"svg-card\" x=\"510\" y=\"58\" width=\"140\" height=\"170\" rx=\"8\" fill=\"#1e293b\" stroke=\"#a855f7\" stroke-width=\"1.5\"/>\n  <text class=\"text-accent-purple\" x=\"580\" y=\"78\" fill=\"#a78bfa\" font-size=\"10\" font-weight=\"700\" text-anchor=\"middle\">AI &amp; MACHINE LEARNING</text>\n  <line class=\"svg-divider\" x1=\"520\" y1=\"88\" x2=\"640\" y2=\"88\" stroke=\"#334155\"/>\n  <text class=\"svg-text\" x=\"580\" y=\"108\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">OCR Ekstrak Faktur</text>\n  <text class=\"svg-text\" x=\"580\" y=\"124\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">Prediksi Piutang Macet</text>\n  <text class=\"svg-text\" x=\"580\" y=\"140\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">Deteksi Fraud Anomali</text>\n  <text class=\"svg-text\" x=\"580\" y=\"156\" fill=\"#cbd5e1\" font-size=\"7.5\" text-anchor=\"middle\">Analisis Tren Strategis</text>\n  <rect class=\"svg-subcard\" x=\"520\" y=\"172\" width=\"120\" height=\"42\" rx=\"4\" fill=\"#0f172a\" stroke=\"#7c3aed\"/>\n  <text class=\"text-accent-purple\" x=\"580\" y=\"190\" fill=\"#a78bfa\" font-size=\"7.5\" font-weight=\"700\" text-anchor=\"middle\">Peran Baru Akuntan:</text>\n  <text class=\"text-accent-green\" x=\"580\" y=\"204\" fill=\"#34d399\" font-size=\"7\" font-weight=\"600\" text-anchor=\"middle\">Analis Bisnis &amp; Advisor</text>\n</svg>"
+      },
+      {
+        "kind": "h2",
+        "text": "Kriteria Kelayakan Otomasi Menggunakan RPA"
+      },
+      {
+        "kind": "p",
+        "text": "Robotic Process Automation (RPA) adalah perangkat lunak 'bot' yang meniru tindakan manusia dalam berinteraksi dengan antarmuka pengguna (UI) komputer untuk menyelesaikan pekerjaan bervolume tinggi. Tidak semua proses akuntansi cocok untuk RPA. Proses ideal wajib memenuhi lima syarat berikut:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "1. Rule-based (Berbasis Aturan Baku): Logika keputusan transparan dan tidak membutuhkan pertimbangan subjektif manusia (judgment). Contoh: 'Jika nomor akun cocok dan nominal sama, tandai cocok'.",
+          "2. High Volume & Repetitive: Tugas dikerjakan berulang kali dalam frekuensi tinggi (ratusan hingga ribuan kali per hari).",
+          "3. Digital & Structured Input: Data masukan berupa format digital terstruktur (seperti spreadsheet Excel, database SQL, atau file CSV/XML).",
+          "4. Low Exception Rate: Tingkat pengecualian (kejadian aneh di luar SOP) rendah (< 5%).",
+          "5. Stable Process: Prosedur operasional dan tata letak aplikasi stabil dan tidak sering berubah."
+        ]
+      },
+      {
+        "kind": "h2",
+        "text": "Studi Kasus RPA: Rekonsiliasi Bank Otomatis di PT Mitra Logistik"
+      },
+      {
+        "kind": "p",
+        "text": "Sebelum Otomasi: Tiga staf akuntansi menghabiskan 4 jam setiap pagi untuk mengunduh rekening koran dari internet banking, membuka file buku besar bank, dan mencocokkan nomor referensi secara manual satu per satu."
+      },
+      {
+        "kind": "p",
+        "text": "Alur Kerja Bot RPA Terotomatisasi:"
+      },
+      {
+        "kind": "ul",
+        "items": [
+          "Pukul 02.00: Bot login otomatis ke portal internet banking menggunakan kredensial aman (Credential Vault), mengunduh mutasi rekening dalam format CSV.",
+          "Pukul 02.15: Bot mengekstrak data jurnal penerimaan dan pengeluaran kas dari modul SAP FI.",
+          "Pukul 02.30: Bot mencocokkan transaksi berdasarkan kombinasi: Nomor Referensi + Tanggal (+/- 2 hari) + Nilai Nominal Persis.",
+          "Pukul 02.45: Untuk transaksi yang 100% cocok (match), bot langsung menjurnal clearing di SAP.",
+          "Pukul 03.00: Untuk transaksi selisih (unmatched exceptions), bot menyusun laporan pengecualian (Exception Report) dan mengirimkannya via email kepada Manajer Akuntansi untuk ditindaklanjuti manusia pada pukul 08.00 pagi."
+        ]
+      },
+      {
+        "kind": "table",
+        "caption": "Tabel 12.1: Perbandingan Peran Akuntan: Tradisional vs Era AI/RPA",
+        "headers": [
+          "Aktivitas Akuntansi",
+          "Metode Konvensional",
+          "Era AI & Otomasi"
+        ],
+        "rows": [
+          [
+            "Input Faktur Vendor",
+            "Mengetik manual nomor faktur, tanggal, dan nominal item per item.",
+            "Intelligent Document Processing (IDP/OCR) memindai PDF faktur dan mengisi field ERP otomatis."
+          ],
+          [
+            "Rekonsiliasi Bank",
+            "Pencocokan manual manual baris demi baris menggunakan pulpen stabilo.",
+            "Bot RPA mencocokkan 95% transaksi otomatis; manusia hanya menangani 5% sisa pengecualian."
+          ],
+          [
+            "Pendeteksian Fraud",
+            "Pemeriksaan acak berdasarkan sampel audit tahunan.",
+            "Machine learning memantau 100% aliran transaksi real-time dan memberikan peringatan fraud seketika."
+          ],
+          [
+            "Fokus Nilai Tambah",
+            "Pencatatan data klerikal (Data Processing).",
+            "Interpretasi wawasan strategis, penilaian risiko, dan pengambilan keputusan (Decision Support)."
+          ]
+        ]
+      },
+      {
+        "kind": "callout",
+        "variant": "warning",
+        "title": "Tata Kelola Bot (Bot Governance)",
+        "text": "Bot RPA harus memiliki Identitas Pengguna (User ID) unik yang terpisah dari akun manusia. Dilarang keras menggunakan akun karyawan untuk menjalankan bot! Setiap tindakan bot wajib tercatat di audit trail sistem untuk akuntabilitas hukum."
+      }
+    ]
+  },
+  "questions": [
+    {
+      "tm": 12,
+      "topic": "RPA & AI dalam Akuntansi",
+      "difficulty": "medium",
+      "q": "Karakteristik proses bisnis akuntansi manakah yang PALING IDEAL untuk diotomatisasi menggunakan Robotic Process Automation (RPA)?",
+      "options": [
+        "Proses yang membutuhkan pertimbangan moral dan negosiasi tatap muka",
+        "Proses bervolume tinggi, sangat repetitif, memiliki aturan logis yang pasti (rule-based), dan mengolah data digital terstruktur",
+        "Penyusunan visi strategis perusahaan 20 tahun ke depan",
+        "Penyelesaian sengketa hukum perdata di pengadilan"
+      ],
+      "answer": 1,
+      "explanation": "RPA unggul pada tugas klerikal yang berulang dan berbasis aturan pasti (misal: mengunduh rekening koran bank setiap pagi jam 06.00, mencocokkan mutasi, dan memposting jurnal kliring otomatis ke ERP)."
+    },
+    {
+      "tm": 12,
+      "topic": "RPA & AI dalam Akuntansi",
+      "difficulty": "advanced",
+      "q": "Perbedaan utama antara Attended RPA dan Unattended RPA dalam lingkungan kantor akuntansi adalah...",
+      "options": [
+        "Attended dipicu/didampingi pengguna; unattended berjalan menurut pemicu terjadwal.",
+        "Attended dijadwalkan di server; unattended selalu menunggu klik pengguna desktop.",
+        "Attended beroperasi tanpa pengguna; unattended meminta pengguna pada setiap langkah.",
+        "Attended dan unattended sama-sama harus dipicu manual dari sesi pengguna desktop."
+      ],
+      "answer": 0,
+      "explanation": "Pembedaan berkaitan dengan interaksi pengguna dan cara pemicu dijalankan. Bot tetap memerlukan otorisasi, pemantauan, penanganan pengecualian dan pemeliharaan. Istilah ini memakai sumber vendor sebagai pelengkap buku. Rujukan: UiPath Overview, Attended vs. Unattended automation, bagian Attended Automations dan Unattended Automations, https://docs.uipath.com/overview/other/latest/overview/attended-vs-unattended-automation, dibaca 12 Oktober 2026; Richardson AIS 4e Ch.15 memberi konteks otomasi."
+    },
+    {
+      "tm": 12,
+      "topic": "RPA & AI dalam Akuntansi",
+      "difficulty": "medium",
+      "q": "Teknologi AI yang mengonversi dokumen pindaian faktur kertas atau format PDF menjadi teks dan angka digital terstruktur untuk dimasukkan ke sistem ERP disebut...",
+      "options": [
+        "Optical Character Recognition (OCR)",
+        "Virtual Private Network (VPN)",
+        "Domain Name System (DNS)",
+        "File Transfer Protocol (FTP)"
+      ],
+      "answer": 0,
+      "explanation": "OCR (Optical Character Recognition) yang dipadukan dengan Machine Learning mampu mengenali tata letak faktur vendor, mengekstrak nomor PO, tanggal, dan subtotal, lalu meneruskannya ke software akuntansi otomatis."
+    },
+    {
+      "tm": 12,
+      "topic": "RPA & AI dalam Akuntansi",
+      "difficulty": "advanced",
+      "q": "Dengan semakin meluasnya implementasi bot RPA dan AI dalam sistem akuntansi, bagaimana peran profesional akuntan bertransformasi di masa depan?",
+      "options": [
+        "Profesi akuntan akan punah sepenuhnya karena komputer tidak pernah membuat kesalahan",
+        "Akuntan bertransisi dari sekadar pencatat buku klerikal (bookkeeper) menjadi analis bisnis strategis, desainer tata kelola sistem, dan auditor algoritma AI",
+        "Akuntan hanya bertugas merakit kabel perangkat keras komputer",
+        "Akuntan kembali menggunakan pembukuan kertas manual untuk menghindari hacking"
+      ],
+      "answer": 1,
+      "explanation": "RPA membebaskan akuntan dari pekerjaan manual berulang. Nilai tambah akuntan bergeser ke ranah penafsiran bisnis strategis, penilaian risiko sistem, kepatuhan etika algoritma AI, dan konsultasi manajerial."
+    },
+    {
+      "tm": 12,
+      "topic": "RPA & AI dalam Akuntansi",
+      "difficulty": "medium",
+      "q": "Risiko pengendalian baru yang timbul akibat penggunaan bot RPA dalam proses akuntansi adalah...",
+      "options": [
+        "Bot memastikan format input selalu sama sehingga pengujian perubahan dapat dihentikan.",
+        "Perubahan format input tanpa pembaruan bot dapat menghasilkan kesalahan berulang.",
+        "Bot mengurangi risiko input sehingga seluruh otorisasi transaksi dapat dihapuskan.",
+        "Bot membuat laporan akhir benar sehingga jejak transaksi tidak perlu disimpan."
+      ],
+      "answer": 1,
+      "explanation": "Perubahan input atau antarmuka dapat membuat aturan bot salah diterapkan berulang. Change control, testing dan pemantauan pengecualian tetap diperlukan. Rujukan: Richardson AIS 4e, Ch.15, Automation dan RPA, PDF 539-541."
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "aks301-tm12-01",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "category": "Mekanisme",
+      "front": "Definisi Robotic Process Automation (RPA)",
+      "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    },
+    {
+      "id": "aks301-tm12-02",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "category": "Konsep",
+      "front": "Kriteria Proses yang Ideal untuk RPA",
+      "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    },
+    {
+      "id": "aks301-tm12-03",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "category": "Contoh",
+      "front": "Penerapan RPA pada Rekonsiliasi Bank",
+      "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    },
+    {
+      "id": "aks301-tm12-04",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "category": "Konsep",
+      "front": "Optical Character Recognition (OCR) Cerdas",
+      "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    },
+    {
+      "id": "aks301-tm12-05",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "category": "Konsep",
+      "front": "Machine Learning dalam Deteksi Anomali Jurnal",
+      "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    },
+    {
+      "id": "aks301-tm12-06",
+      "phase": "pra-uas",
+      "tm": 12,
+      "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
+      "category": "Konsep",
+      "front": "Tata Kelola & Pengendalian Bot (Bot Governance)",
+      "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
+    }
+  ],
+  "scope": "Snapshot audit pasca-UTS. Kebenaran sumber dan batas diperiksa terpisah dari kesamaan implementasi."
+}

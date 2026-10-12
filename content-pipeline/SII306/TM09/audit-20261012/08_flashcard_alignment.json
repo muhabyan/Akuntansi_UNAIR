@@ -1,0 +1,56 @@
+[
+  {
+    "id": "aks301-tm09-01",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Keamanan Informasi & Computer Fraud",
+    "category": "Konsep",
+    "front": "Triad Keamanan Informasi (CIA Triad)",
+    "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+  },
+  {
+    "id": "aks301-tm09-02",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Keamanan Informasi & Computer Fraud",
+    "category": "Konsep",
+    "front": "Metode Phishing & Social Engineering",
+    "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+  },
+  {
+    "id": "aks301-tm09-03",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Keamanan Informasi & Computer Fraud",
+    "category": "Konsep",
+    "front": "Ransomware & Malware",
+    "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+  },
+  {
+    "id": "aks301-tm09-04",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Keamanan Informasi & Computer Fraud",
+    "category": "Konsep",
+    "front": "Enkripsi Simetris vs Asimetris",
+    "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+  },
+  {
+    "id": "aks301-tm09-05",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Keamanan Informasi & Computer Fraud",
+    "category": "Konsep",
+    "front": "Fungsi Tanda Tangan Digital (Digital Signature)",
+    "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+  },
+  {
+    "id": "aks301-tm09-06",
+    "phase": "pra-uas",
+    "tm": 9,
+    "topic": "Keamanan Informasi & Computer Fraud",
+    "category": "Mekanisme",
+    "front": "Pusat Pemulihan Bencana: Hot Site vs Cold Site",
+    "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
+  }
+]

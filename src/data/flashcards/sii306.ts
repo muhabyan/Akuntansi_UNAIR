@@ -515,7 +515,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Pengendalian Internal COSO Framework",
     "category": "Definisi",
     "front": "Definisi Pengendalian Internal COSO",
-    "back": "Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan."
+    "back": "Proses yang dipengaruhi oleh dewan komisaris, manajemen, dan personel untuk memberikan keyakinan memadai atas pencapaian tujuan operasi, pelaporan, dan kepatuhan. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
   },
   {
     "id": "aks301-tm08-02",
@@ -524,7 +524,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Pengendalian Internal COSO Framework",
     "category": "Konsep",
     "front": "Tiga Kategori Tujuan Pengendalian COSO",
-    "back": "(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum)."
+    "back": "(1) Operations Objectives (efektivitas operasional), (2) Reporting Objectives (keandalan laporan), dan (3) Compliance Objectives (kepatuhan hukum). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
   },
   {
     "id": "aks301-tm08-03",
@@ -533,7 +533,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Pengendalian Internal COSO Framework",
     "category": "Konsep",
     "front": "Lima Komponen Pengendalian Internal COSO",
-    "back": "(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities."
+    "back": "(1) Control Environment, (2) Risk Assessment, (3) Control Activities, (4) Information & Communication, dan (5) Monitoring Activities. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
   },
   {
     "id": "aks301-tm08-04",
@@ -542,7 +542,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Pengendalian Internal COSO Framework",
     "category": "Klasifikasi",
     "front": "Tiga Tipe Pengendalian Berdasarkan Waktu",
-    "back": "Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan)."
+    "back": "Preventif (mencegah kesalahan terjadi), Detektif (menemukan kesalahan yang lolos), dan Korektif (memperbaiki dampak kesalahan yang ditemukan). Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
   },
   {
     "id": "aks301-tm08-05",
@@ -551,7 +551,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Pengendalian Internal COSO Framework",
     "category": "Hukum",
     "front": "Sarbanes-Oxley Act (SOX) Section 404",
-    "back": "Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen."
+    "back": "Mewajibkan manajemen perusahaan publik menilai efektivitas pengendalian internal pelaporan keuangan (ICFR) dan diaudit auditor independen. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
   },
   {
     "id": "aks301-tm08-06",
@@ -560,7 +560,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Pengendalian Internal COSO Framework",
     "category": "Konsep",
     "front": "COSO Enterprise Risk Management (ERM)",
-    "back": "Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham."
+    "back": "Kerangka kerja perluasan COSO yang mengintegrasikan pengelolaan risiko ke dalam strategi korporasi dan penciptaan nilai pemegang saham. Rujukan: Richardson et al. AIS 4e · Ch. 11, hal. cetak 386-408 (PDF 411-433)."
   },
   {
     "id": "aks301-tm09-01",
@@ -569,7 +569,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Keamanan Informasi & Computer Fraud",
     "category": "Konsep",
     "front": "Triad Keamanan Informasi (CIA Triad)",
-    "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan)."
+    "back": "Confidentiality (Kerahasiaan data dari pihak tak berhak), Integrity (Akurasi & keutuhan data), dan Availability (Ketersediaan sistem saat dibutuhkan). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
   },
   {
     "id": "aks301-tm09-02",
@@ -578,7 +578,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Keamanan Informasi & Computer Fraud",
     "category": "Konsep",
     "front": "Metode Phishing & Social Engineering",
-    "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia."
+    "back": "Upaya memanipulasi psikologis korban melalui email atau situs web tiruan palsu untuk mencuri kredensial login akun dan data rahasia. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
   },
   {
     "id": "aks301-tm09-03",
@@ -587,7 +587,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Keamanan Informasi & Computer Fraud",
     "category": "Konsep",
     "front": "Ransomware & Malware",
-    "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi."
+    "back": "Perangkat lunak jahat yang mengenkripsi seluruh file dan basis data sistem perusahaan, lalu menuntut uang tebusan untuk kunci pembuka enkripsi. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
   },
   {
     "id": "aks301-tm09-04",
@@ -596,7 +596,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Keamanan Informasi & Computer Fraud",
     "category": "Konsep",
     "front": "Enkripsi Simetris vs Asimetris",
-    "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key."
+    "back": "Simetris memakai satu kunci yang sama untuk enkripsi dan dekripsi (cepat). Asimetris memakai sepasang Public Key dan Private Key. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
   },
   {
     "id": "aks301-tm09-05",
@@ -605,7 +605,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Keamanan Informasi & Computer Fraud",
     "category": "Konsep",
     "front": "Fungsi Tanda Tangan Digital (Digital Signature)",
-    "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation)."
+    "back": "Menjamin keaslian pengirim (autentikasi), keutuhan isi dokumen (integritas), dan pencegahan penyangkalan transaksi (non-repudiation). Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
   },
   {
     "id": "aks301-tm09-06",
@@ -614,7 +614,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Keamanan Informasi & Computer Fraud",
     "category": "Mekanisme",
     "front": "Pusat Pemulihan Bencana: Hot Site vs Cold Site",
-    "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap."
+    "back": "Hot Site adalah fasilitas komputasi duplikat lengkap yang siap beroperasi dalam hitungan menit. Cold Site hanya ruang gedung tanpa instalasi komputer lengkap. Rujukan: Richardson et al. AIS 4e · Ch. 12, hal. cetak 420-439 (PDF 445-464)."
   },
   {
     "id": "aks301-tm10-01",
@@ -623,7 +623,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
     "category": "Prosedur",
     "front": "Auditing AROUND the Computer",
-    "back": "Mengabaikan pemrosesan komputer internal; auditor hanya mencocokkan dokumen input sumber dengan laporan output cetak (hanya cocok untuk sistem sederhana)."
+    "back": "Mengabaikan pemrosesan komputer internal; auditor hanya mencocokkan dokumen input sumber dengan laporan output cetak (hanya cocok untuk sistem sederhana). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
   },
   {
     "id": "aks301-tm10-02",
@@ -632,7 +632,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
     "category": "Prosedur",
     "front": "Auditing THROUGH the Computer",
-    "back": "Auditor menguji langsung logika pemrograman dan kontrol internal yang tertanam di dalam perangkat lunak komputer."
+    "back": "Auditor menguji langsung logika pemrograman dan kontrol internal yang tertanam di dalam perangkat lunak komputer. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
   },
   {
     "id": "aks301-tm10-03",
@@ -641,7 +641,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
     "category": "Prosedur",
     "front": "Test Data Approach (Pendekatan Data Uji)",
-    "back": "Auditor memasukkan data transaksi buatan (valid dan tidak valid) ke dalam program klien untuk memverifikasi apakah kontrol sistem menolak data salah."
+    "back": "Auditor memasukkan data transaksi buatan (valid dan tidak valid) ke dalam program klien untuk memverifikasi apakah kontrol sistem menolak data salah. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
   },
   {
     "id": "aks301-tm10-04",
@@ -650,7 +650,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
     "category": "Prosedur",
     "front": "Parallel Simulation (Simulasi Paralel)",
-    "back": "Auditor menulis kode simulasi independen yang menjalankan data transaksi riil klien, lalu membandingkan outputnya dengan hasil produksi sistem klien."
+    "back": "Auditor menulis kode simulasi independen yang menjalankan data transaksi riil klien, lalu membandingkan outputnya dengan hasil produksi sistem klien. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
   },
   {
     "id": "aks301-tm10-05",
@@ -659,7 +659,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
     "category": "Standar",
     "front": "Kerangka Kerja Tata Kelola TI: COBIT 2019",
-    "back": "Control Objectives for Information and Related Technologies (ISACA) yang menyelaraskan tata kelola TI dengan tujuan strategis bisnis korporasi."
+    "back": "Control Objectives for Information and Related Technologies (ISACA) yang menyelaraskan tata kelola TI dengan tujuan strategis bisnis korporasi. Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
   },
   {
     "id": "aks301-tm10-06",
@@ -668,7 +668,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Audit Sistem Informasi & Tata Kelola TI (COBIT)",
     "category": "Klasifikasi",
     "front": "Pemisahan Tugas Khusus Departemen TI",
-    "back": "Analis Sistem (merancang sistem) harus terpisah dari Programmer (menulis kode) dan terpisah dari Operator Komputer (menjalankan live system)."
+    "back": "Analis Sistem (merancang sistem) harus terpisah dari Programmer (menulis kode) dan terpisah dari Operator Komputer (menjalankan live system). Rujukan: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)."
   },
   {
     "id": "aks301-tm11-01",
@@ -677,7 +677,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
     "category": "Konsep",
     "front": "Karakteristik Big Data (5V)",
-    "back": "Volume (besaran ukuran data), Velocity (kecepatan data tercipta), Variety (ragam format), Veracity (keandalan data), dan Value (nilai bisnis)."
+    "back": "Volume (besaran ukuran data), Velocity (kecepatan data tercipta), Variety (ragam format), Veracity (keandalan data), dan Value (nilai bisnis). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
   },
   {
     "id": "aks301-tm11-02",
@@ -686,7 +686,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
     "category": "Konsep",
     "front": "Model Siklus Analitika IMPACT",
-    "back": "Identify questions, Master the data, Perform test plan, Address and refine results, Communicate insights, Track outcomes."
+    "back": "Identify questions, Master the data, Perform test plan, Address and refine results, Communicate insights, Track outcomes. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
   },
   {
     "id": "aks301-tm11-03",
@@ -695,7 +695,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
     "category": "Konsep",
     "front": "Analisis Deskriptif vs Diagnostik",
-    "back": "Deskriptif menjawab: \"Apa yang telah terjadi?\" (summary rasio). Diagnostik menjawab: \"Mengapa hal itu bisa terjadi?\" (analisis varians mendalam)."
+    "back": "Deskriptif menjawab: \"Apa yang telah terjadi?\" (summary rasio). Diagnostik menjawab: \"Mengapa hal itu bisa terjadi?\" (analisis varians mendalam). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
   },
   {
     "id": "aks301-tm11-04",
@@ -704,7 +704,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
     "category": "Konsep",
     "front": "Analisis Prediktif vs Preskriptif",
-    "back": "Prediktif menjawab: \"Apa yang mungkin terjadi di masa depan?\" (regresi, tren). Preskriptif menjawab: \"Tindakan optimal apa yang harus diambil?\" (optimasi)."
+    "back": "Prediktif menjawab: \"Apa yang mungkin terjadi di masa depan?\" (regresi, tren). Preskriptif menjawab: \"Tindakan optimal apa yang harus diambil?\" (optimasi). Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
   },
   {
     "id": "aks301-tm11-05",
@@ -713,7 +713,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
     "category": "Konsep",
     "front": "Audit Data Analytics (ADA) pada Buku Besar",
-    "back": "Menguji seluruh populasi jurnal umum untuk menemukan anomali: jurnal manual di akhir pekan, user ID mencurigakan, atau pembulatan angka janggal."
+    "back": "Menguji seluruh populasi jurnal umum untuk menemukan anomali: jurnal manual di akhir pekan, user ID mencurigakan, atau pembulatan angka janggal. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
   },
   {
     "id": "aks301-tm11-06",
@@ -722,7 +722,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Analitika Data Akuntansi (Data Analytics) & Big Data",
     "category": "Konsep",
     "front": "Visualisasi Data Akuntansi",
-    "back": "Penyajian pola data interaktif melalui grafik, dashboard PowerBI/Tableau yang memudahkan identifikasi outlier bagi pengambil keputusan."
+    "back": "Penyajian pola data interaktif melalui grafik, dashboard PowerBI/Tableau yang memudahkan identifikasi outlier bagi pengambil keputusan. Rujukan: Richardson et al. AIS 4e · Ch. 2 dan 3, hal. 49-60 dan 110-126 (PDF 74-85 dan 135-151)."
   },
   {
     "id": "aks301-tm12-01",
@@ -731,7 +731,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
     "category": "Mekanisme",
     "front": "Definisi Robotic Process Automation (RPA)",
-    "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based)."
+    "back": "Aplikasi perangkat lunak bot yang meniru klik dan interaksi manusia untuk mengeksekusi tugas rutin berulang berbasis aturan (rule-based). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
   },
   {
     "id": "aks301-tm12-02",
@@ -740,7 +740,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
     "category": "Konsep",
     "front": "Kriteria Proses yang Ideal untuk RPA",
-    "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah."
+    "back": "Volume transaksi tinggi, berbasis aturan terstruktur, data input digital konsisten, dan tingkat pengecualian (exceptions) yang rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
   },
   {
     "id": "aks301-tm12-03",
@@ -749,7 +749,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
     "category": "Contoh",
     "front": "Penerapan RPA pada Rekonsiliasi Bank",
-    "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo."
+    "back": "Bot otomatis mengunduh rekening koran bank setiap pagi, mencocokkan mutasi kas dengan buku besar ERP, dan menandai selisih saldo. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
   },
   {
     "id": "aks301-tm12-04",
@@ -758,7 +758,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
     "category": "Konsep",
     "front": "Optical Character Recognition (OCR) Cerdas",
-    "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha."
+    "back": "Mengonversi gambar pindaian faktur vendor fisik atau PDF menjadi data teks terstruktur yang otomatis terinput ke akun utang usaha. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
   },
   {
     "id": "aks301-tm12-05",
@@ -767,7 +767,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
     "category": "Konsep",
     "front": "Machine Learning dalam Deteksi Anomali Jurnal",
-    "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal."
+    "back": "Algoritma pembelajaran mesin tanpa pengawasan (Unsupervised ML) yang otomatis menandai pola transaksi yang menyimpang dari perilaku historis normal. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
   },
   {
     "id": "aks301-tm12-06",
@@ -776,7 +776,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Robotic Process Automation (RPA) & AI dalam SIA",
     "category": "Konsep",
     "front": "Tata Kelola & Pengendalian Bot (Bot Governance)",
-    "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP."
+    "back": "Memerlukan manajemen kredensial akses bot, pemantauan log aktivitas, dan pengujian kontrol saat ada pembaruan versi sistem ERP. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 508-516 (PDF 533-541)."
   },
   {
     "id": "aks301-tm13-01",
@@ -785,7 +785,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Blockchain, Smart Contracts & Cloud Accounting",
     "category": "Konsep",
     "front": "Karakteristik Buku Besar Terdistribusi (Blockchain)",
-    "back": "Buku besar digital terdesentralisasi, transparan, terverifikasi kriptografi SHA-256, dan tidak dapat diubah (immutable)."
+    "back": "Ledger memakai hash, validasi dan aturan jaringan untuk menjaga konsistensi. Algoritme, transparansi dan desentralisasi bergantung rancangan; perubahan sulit dilakukan tanpa jejak, tetapi integritas ledger tidak membuktikan transaksi dunia nyata benar. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
   },
   {
     "id": "aks301-tm13-02",
@@ -794,7 +794,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Blockchain, Smart Contracts & Cloud Accounting",
     "category": "Konsep",
     "front": "Triple-Entry Accounting",
-    "back": "Setiap transaksi ekonomi diverifikasi dan dicatat pada shared public ledger terdistribusi, di samping pencatatan debit/kredit internal kedua pihak."
+    "back": "Grigg (2005) menekankan receipt bersama yang ditandatangani secara kriptografis di samping pencatatan internal. Konsep ini tidak mensyaratkan shared public blockchain. Rujukan: Grigg (2005), Triple Entry Accounting, bagian Signed Receipts, https://iang.org/papers/triple_entry.html."
   },
   {
     "id": "aks301-tm13-03",
@@ -803,7 +803,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Blockchain, Smart Contracts & Cloud Accounting",
     "category": "Mekanisme",
     "front": "Smart Contracts (Kontrak Pintar)",
-    "back": "Program komputer otomatis yang berjalan di atas blockchain yang mengeksekusi pembayaran secara otomatis saat syarat kondisi terpenuhi (If/Then logic)."
+    "back": "Program menjalankan ketentuan yang dikodekan ketika input/kondisi dipenuhi. Input atau oracle dapat salah; eksekusi otomatis tidak sendirian membuktikan hak, kewajiban atau nilai transaksi. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
   },
   {
     "id": "aks301-tm13-04",
@@ -812,7 +812,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Blockchain, Smart Contracts & Cloud Accounting",
     "category": "Perbandingan",
     "front": "Public vs Private (Permissioned) Blockchain",
-    "back": "Public (siapa saja boleh bergabung, misal: Bitcoin). Private/Consortium (hanya entitas yang diizinkan dan diverifikasi yang boleh mengakses jaringan)."
+    "back": "Public (siapa saja boleh bergabung, misal: Bitcoin). Private/Consortium (hanya entitas yang diizinkan dan diverifikasi yang boleh mengakses jaringan). Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
   },
   {
     "id": "aks301-tm13-05",
@@ -821,7 +821,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Blockchain, Smart Contracts & Cloud Accounting",
     "category": "Konsep",
     "front": "Manfaat Cloud Accounting (SaaS)",
-    "back": "Akses laporan keuangan kapan saja di mana saja, skalabilitas kapasitas fleksibel, pencadangan data otomatis, dan biaya modal TI lebih rendah."
+    "back": "Akses laporan keuangan kapan saja di mana saja, skalabilitas kapasitas fleksibel, pencadangan data otomatis, dan biaya modal TI lebih rendah. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
   },
   {
     "id": "aks301-tm13-06",
@@ -830,7 +830,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Blockchain, Smart Contracts & Cloud Accounting",
     "category": "Konsep",
     "front": "Risiko Pengendalian Cloud Computing",
-    "back": "Ketergantungan pada vendor penyedia cloud (Service Organization), risiko privasi data, dan keharusan meninjau laporan audit SOC 1 / SOC 2 Type II."
+    "back": "Periksa ketergantungan vendor, akses, privasi, kontinuitas dan pengendalian yang harus dijalankan pelanggan. Pilih laporan assurance yang sesuai risiko/cakupan serta periode; SOC 1 dan SOC 2 mempunyai tujuan berbeda, bukan kewajiban universal untuk semua cloud. Rujukan: Richardson et al. AIS 4e · Ch. 15, hal. 494-508 (PDF 519-533)."
   },
   {
     "id": "aks301-tm14-01",
@@ -839,7 +839,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
     "category": "Konsep",
     "front": "Fokus Utama Soal Ujian Akhir Semester (UAS) SIA",
-    "back": "Kuasai pengendalian internal siklus O2C & P2P (Three-way match), Analisis Kelemahan Pengendalian COSO, Metode Audit CAATs, dan Konsep Big Data/RPA."
+    "back": "Perkiraan prioritas dari RPP dan materi: proses transaksi, kelemahan pengendalian, metode audit TI dan batas teknologi. Arsip UAS yang mendukung bentuk/bobot spesifik belum ditemukan. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
   },
   {
     "id": "aks301-tm14-02",
@@ -848,7 +848,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
     "category": "Konsep",
     "front": "Mendiagnosis Single Point of Failure (SPOF)",
-    "back": "Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi."
+    "back": "Mengidentifikasi kelemahan di mana kegagalan satu komponen kontrol atau staf tunggal dapat meruntuhkan seluruh keandalan sistem akuntansi. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
   },
   {
     "id": "aks301-tm14-03",
@@ -857,7 +857,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
     "category": "Konsep",
     "front": "Analisis Celah Pemisahan Tugas (SoD Matrix)",
-    "back": "Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur."
+    "back": "Memastikan tidak ada staf yang memegang akses gabungan yang berbahaya: misalnya staf yang membuat master data vendor tidak boleh memproses pembayaran faktur. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
   },
   {
     "id": "aks301-tm14-04",
@@ -866,7 +866,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
     "category": "Standar",
     "front": "Perlakuan Audit atas Bukti Elektronik",
-    "back": "Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun."
+    "back": "Bukti digital memerlukan pemeliharaan jejak audit (audit trail) dan verifikasi bahwa pengendalian umum TI (GITC) berfungsi efektif sepanjang tahun. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
   },
   {
     "id": "aks301-tm14-05",
@@ -875,7 +875,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
     "category": "Konsep",
     "front": "Peran Laporan SOC 1 (SSAE 18 / ISAE 3402)",
-    "back": "Laporan opini auditor independen atas pengendalian internal di organisasi penyedia jasa pihak ketiga (misal: vendor payroll, cloud provider)."
+    "back": "SOC 1 berkaitan dengan pengendalian organisasi jasa yang relevan bagi pengendalian internal pelaporan keuangan entitas pengguna. Jenis, periode, pengecualian dan kontrol pelengkap pengguna harus dibaca. Rujukan standar: ISA 402 paragraf 8 dan 16-17. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
   },
   {
     "id": "aks301-tm14-06",
@@ -884,7 +884,7 @@ const cards: AdvancedStudyCard[] = [
     "topic": "Review Komprehensif UAS Sistem Informasi Akuntansi",
     "category": "Konsep",
     "front": "Saran Sukses Ujian Akhir Semester SIA",
-    "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian."
+    "back": "Gunakan diagram alur atau bagan saat menjelaskan usulan perbaikan sistem; identifikasi risiko bisnis terlebih dahulu sebelum menawarkan aktivitas pengendalian. Rujukan: Richardson et al. AIS 4e · Ch. 10, Integrated Project, hal. 376-385 (PDF 401-410)."
   }
 ];
 
