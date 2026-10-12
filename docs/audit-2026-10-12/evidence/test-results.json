@@ -1,0 +1,61 @@
+{
+  "capturedAt": "2026-10-12T15:47:12.191Z",
+  "baseline": "e773066b9167f65c41cbdba2aae4bb5c1a36b7d1",
+  "release": "v1.3.7",
+  "baselineStandard": {
+    "total": 70,
+    "passed": 70
+  },
+  "standard": {
+    "pass": true,
+    "total": 76,
+    "passed": 76,
+    "failed": 0,
+    "concurrency": 1,
+    "timeoutMs": 120000,
+    "mode": "standard",
+    "wallDurationMs": 173240,
+    "maxTaskDurationMs": 25605,
+    "failures": []
+  },
+  "lint": "PASS (380 TypeScript/TSX source files)",
+  "typescriptAndBuild": "PASS",
+  "runtime": "Runtime smoke PASS: 7 assets, SPA routes, malformed-route guard, 404 source, timed-exam behaviour, dataset fingerprint, exam-session persistence behaviour, and persistence hooks",
+  "e2e": "Browser E2E PASS: EKT109 bank and 90-minute simulator interactions, PJK201 timer restore, route, 404, exam localStorage, dan theme persistence",
+  "targetedAfterFinalSiaProse": [
+    "Source audit PASS: SIA source mapping, bounded claims, plausible options and citations; ARIMA differencing; every user-protected file unchanged.\r",
+    "SIA canonical PASS: TM1/TM2/TM3/TM4/TM5/TM6/TM7 coverage, section order, three practices each, 18 balanced journals, 20 valid formulas, tables and numerical baselines.\r",
+    "AKS301 alignment PASS: bank soal 7 TM1–TM7 cases; numbers traced to readings; flashcards 63 TM1–TM7 cards; quiz UTS 70 items; review (9 sections, 5 balanced journals).\r",
+    "Pre-UTS preservation PASS: readings, cards and quiz sets match locked main baseline in all 17 substantive courses."
+  ],
+  "browser": {
+    "combinations": 392,
+    "courses": 14,
+    "widths": [
+      375,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "targetedReruns": [
+      "AKM301: 28 combinations after canvas correction",
+      "SII306: 28 combinations after source prose correction"
+    ],
+    "overflow": 0,
+    "clippedLabels": 0,
+    "mathErrors": 0,
+    "tinyFinanceMobileLabels": 0
+  },
+  "sourceDigest": {
+    "algorithm": "sha256 of sorted path plus normalized UTF-8 source digest",
+    "files": 480,
+    "sha256": "7b17803ec575b89f9df5a4ca24fe461cf1ba3b43e8d151f6f8961491c1892735"
+  },
+  "remainingWarnings": [
+    "Production chunk size",
+    "Nested paragraph DOM warning"
+  ],
+  "scope": "Technical checks plus specific independent source checks; no claim of total content completeness"
+}

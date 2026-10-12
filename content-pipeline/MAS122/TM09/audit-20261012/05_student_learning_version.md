@@ -1,4 +1,4 @@
-# Regresi & Korelasi — Bagian 1
+# Regresi & Korelasi : Bagian 1
 
 Korelasi mengukur kekuatan hubungan dua variabel; regresi membangun model untuk **memprediksi** satu variabel dari variabel lain.
 
@@ -8,7 +8,7 @@ r berkisar **−1 sampai +1**. Dekat +1 = hubungan positif kuat; dekat −1 = ne
 
 **Scatterplot** membantu melihat pola sebelum menghitung r.
 
-**Korelasi ≠ kausalitas** — hubungan kuat belum tentu sebab-akibat.
+**Korelasi ≠ kausalitas** : hubungan kuat belum tentu sebab-akibat.
 
 B. Regresi Linear Sederhana
 
@@ -20,9 +20,9 @@ Garis terbaik dipilih dengan **metode kuadrat terkecil (least squares)**: memini
 
 Contoh
 
-Model biaya: Ŷ = 5.000.000 + 2.000·X (X = unit produksi). Artinya biaya tetap Rp5.000.000 dan biaya variabel **Rp2.000/unit** — persis konsep cost behavior pada Akuntansi Biaya.
+Model biaya: Ŷ = 5.000.000 + 2.000·X (X = unit produksi). Artinya biaya tetap Rp5.000.000 dan biaya variabel **Rp2.000/unit** : persis konsep cost behavior pada Akuntansi Biaya.
 
-Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan
+Modul Terpadu Pra-UAS : Konsep, SPSS Output, dan Jebakan
 
 Catatan kurator
 

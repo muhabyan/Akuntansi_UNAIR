@@ -36,9 +36,9 @@ Parameter | Hot Site | Warm Site | Cold Site
 
 Biaya Investasi | Sangat Mahal (operasi 24/7 paralel). | Moderat (perangkat keras siap, data dipulihkan terjadwal). | Paling Ekonomis (hanya sewa gedung kosong).
 
-Recovery Time Objective (RTO) — Berapa lama sistem boleh mati? | Hitungan menit hingga detik (hampir instan). | Hitungan beberapa jam hingga 1 hari. | Hitungan hari hingga minggu.
+Recovery Time Objective (RTO): Berapa lama sistem boleh mati? | Hitungan menit hingga detik (hampir instan). | Hitungan beberapa jam hingga 1 hari. | Hitungan hari hingga minggu.
 
-Recovery Point Objective (RPO) — Berapa jam transaksi yang boleh hilang? | Mendekati 0 detik (data direplikasi secara sinkron real-time). | Maksimal data backup hari sebelumnya (misal 24 jam). | Seluruh data sejak backup tape fisik terakhir.
+Recovery Point Objective (RPO): Berapa jam transaksi yang boleh hilang? | Mendekati 0 detik (data direplikasi secara sinkron real-time). | Maksimal data backup hari sebelumnya (misal 24 jam). | Seluruh data sejak backup tape fisik terakhir.
 
 Kelayakan Penggunaan | Bank, bursa efek, sistem pembayaran nasional. | Perusahaan manufaktur dan distribusi skala menengah. | Organisasi dengan operasional non-kritis.
 

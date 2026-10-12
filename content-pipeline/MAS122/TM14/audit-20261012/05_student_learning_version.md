@@ -24,9 +24,9 @@ Sorot temuan utama, bukan membanjiri angka.
 
 Etika data
 
-Sajikan hasil apa adanya — termasuk yang tidak signifikan. Memanipulasi atau "cherry-picking" data melanggar integritas (bersinggungan dengan mata kuliah Etika).
+Sajikan hasil apa adanya : termasuk yang tidak signifikan. Memanipulasi atau "cherry-picking" data melanggar integritas (bersinggungan dengan mata kuliah Etika).
 
-Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan
+Modul Terpadu Pra-UAS : Konsep, SPSS Output, dan Jebakan
 
 Catatan kurator
 

@@ -28,7 +28,7 @@ Kenapa bukan banyak uji-t?
 
 Melakukan uji-t berkali-kali menaikkan peluang error tipe I secara akumulatif. ANOVA mengujinya sekaligus dengan α terkendali.
 
-Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan
+Modul Terpadu Pra-UAS : Konsep, SPSS Output, dan Jebakan
 
 Catatan kurator
 

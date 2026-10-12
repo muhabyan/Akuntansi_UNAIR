@@ -50,7 +50,7 @@ Ilustrasi pembedaan buatan
 
 Seri 100, 110, 120, 130 unit menjadi 10, 10, 10 unit setelah pembedaan pertama. Empat observasi ini hanya menjelaskan mekanisme; jumlahnya tidak memadai untuk menyimpulkan model ARIMA yang sesuai. Rujukan konsep: FPP3 bagian 9.1.
 
-Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan
+Modul Terpadu Pra-UAS : Konsep, SPSS Output, dan Jebakan
 
 Catatan kurator
 

@@ -1,0 +1,257 @@
+{
+  "base": "e773066b9167f65c41cbdba2aae4bb5c1a36b7d1",
+  "courses": {
+    "AKK106": {
+      "readings": {
+        "1": "0e77399f780ecebf5fda51f8d05909b52cc9e575fa94e50d6e5be4ee055310d4",
+        "2": "ca00065487bd53bdc17be764d0c0eb1b5a6b14d9734174a3f8548bcea5cf1c9c",
+        "3": "d140f932dc252b692faeb6fad2cd0af01fcf0b68be2921737bddb59b3edf0c85",
+        "4": "d635c8fcdb096135cf6d2f9b5cfb0b26749231902b020d7ff62f75d8bce5ce54",
+        "5": "9721a1fd33cfebd334dbe91c8147f7724ee271a6c8df8db82f7c8d01fad9e377",
+        "6": "074f3de11a70c75f4001d13d24dcc21ddb7a7690af9ab8dbea96709d4f913086",
+        "7": "b8f99edcca2730984531c844ee54ff6f576554f0a9b70218280dadeeee1fe047"
+      },
+      "cards": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "quizzes": {}
+    },
+    "AKK201": {
+      "readings": {
+        "1": "d2f71ba21e9d959f14d5a528bbb5feb6a02666eabe8898b44b2bb698cac9240f",
+        "2": "ac0ae171b702de648ec7271cb6e69048cbff2611287078dc8edc60dce9a81b76",
+        "3": "7d5bd39f10d9ef05f3b1c1cda828ad35b6763ab48c3c0020d9e9caca0a697c9b",
+        "4": "7348f654e1e49047d125787f4ceb81433ec3af9a9ec3a8192134235b4d8eb3da",
+        "5": "dc70d6f4ab5a9589f3ca821027b91982d2604adcc4a843d6bdabef9fa8a35bd6",
+        "6": "a94f9f0a80c121704353d26200a4605f8cc7390451d3a648281e1756681c9568",
+        "7": "4b80937ec9fd3cf1e98ec2b1ebbd29297e25c84cf4266d2f9bde8d1945b6584d"
+      },
+      "cards": "7872649d4fde3bc35aa4b98c1cd61f8e8f20bf0c0de4e94333bec730623ca778",
+      "quizzes": {
+        "uts": "44f14f9e9030dbe8f01b947fe0cdcf736bf731c7ffabddc376ba6951348a9e1a",
+        "uts-simulator": "1c83e8e680a1d359ebb7cc125c49a04403d5fb5723fa2c9b1b48c81e61b45413"
+      }
+    },
+    "AKM201": {
+      "readings": {
+        "1": "9c3ed502d9db27dc7bc9e96d44cc1f0dc83e30faee3db6b10089198af2f35459",
+        "2": "fc7852e6eac57e2a5adf0139fadf425b0e2bdcfbc96bac9f8abf86a0b3643177",
+        "3": "9b8c7efe48aee68c3034e7b9c813eef34e2b87f55ca9ce084d2cbf353e6e91a1",
+        "4": "f88cd304315b72beb6e429b3276f232f90fe2ef92b66897990f8c3f44cb942ae",
+        "5": "47e9a334e4dba4b838e212cf3a9e7ee297ded30ba33a1ffa1f54e56e1a4c02a0",
+        "6": "b471f62482558f7e45cb50304361393d83449a65c4a56a0421d1d140d6ebc461",
+        "7": "0fb68fe1f90466dbcb09fcecd8a6de3af1720db8ef44d43330bc1a9d40297939"
+      },
+      "cards": "c44fc01926520ba5a60db4cda6d6b53482156788850dbaffdee7dbebddf8a75b",
+      "quizzes": {
+        "uts": "2de11b5d4be28ad38b60217e569dba882d220b79d2eac03c5735f8904c4b77c6"
+      }
+    },
+    "PJK201": {
+      "readings": {
+        "1": "ddeda10b41e007c112117e29d382a8bd64dd50d1bec9434dd0a03d3e30c7407a",
+        "2": "dc3b7319a561fe46b5bcabbc4b300e649973aa7e2f6864ccd0ea96c146a2dd2d",
+        "3": "db1fd8e1f781dbae7353f47fe7e69a2bf4c8160c464a124519b99a2edf10c944",
+        "4": "51072288d1467117fc202673e5db3c36660336e63b9e24a7c9db6b24c2621a49",
+        "5": "6ab640122dc6ab1009427f67493d5e30bf7dd3793436d5778666f6846ea66923",
+        "6": "2d36bc197869ebbcb19f90a7ac6eaf84af3fb10fa4ed4a9cd80d72c7ba90d41d",
+        "7": "d68255594df9b6579ef065f47fb806ae480d7e66d8a52defd063386be12ed28a"
+      },
+      "cards": "4f6c80b4370c02681d109945df9bcf0d4ca5bb17e529be73be67f3e9fc48ac0b",
+      "quizzes": {
+        "uts": "b56292eccef080d120fd8d72488b8c2c50a0c6a927a89faf87b521d793dd2f21"
+      }
+    },
+    "AKA103": {
+      "readings": {
+        "1": "5fa5c7d102047c934577d7f315af1138382d45440fee746968e5605c737043b7",
+        "2": "67fbbf5c3a673cb17f000aa8c3faab0c2c2ea90a7c9254e9579bf32b2e06c8b3",
+        "3": "9c42cff2ca152279a185e1a9410a654edbb5879bed2d7c38e6e030c1d5f3cd20",
+        "4": "2d0f303c18626a823fdf6e02f66b85660a1f177cc46b46f66a72ad9e0a445865",
+        "5": "32487c15ed1363479703621360e4302ea74f0010c4385856529aba91ec678d80",
+        "6": "a1c944d67846e20a7e7beaaf4fdc0255c2d1392ce81cb6d0b780acdcaaf34287",
+        "7": "dfd0efc1c648b3ce6242d2e58493a70677cd99590d2f5b6a780bf637c31cd7fa"
+      },
+      "cards": "5abbd87d30a44145bbcccdd1b2a6d935bb668782d7770048de451b57e0bf968d",
+      "quizzes": {
+        "uts": "522166ed4e3ffb751805f62c24e8273c83afea0aeb9e69ef0324d12fb0943b49"
+      }
+    },
+    "MNU101": {
+      "readings": {
+        "1": "970db8ad13d05bccd0faaa158e82ecdd11952e6279db3cb18c5f452d3fb2d283",
+        "2": "180e4e860a74439a894c7bf05235521775487cec41c549d4928fd3981b50ecf1",
+        "3": "06b99f81014f524cd88965ce734f160d6eb0e535cce17e59f400106068cb0dd8",
+        "4": "318acf9eb759bb4402faa4e62712b770ec34332bd2e84addcb4084ff418f0d8e",
+        "5": "327c9a947afd75c8caf4bb2b2e8c49398dc46b96eb431f37aaa718d9feef19ba",
+        "6": "a9724b50429050d73a5ac0a02314c4967e20b47ea25e1990f7908820f83eeadf",
+        "7": "7151be3b0a9e711a52af6c45797e9151673c8c6476478f2b993c6102eb3a7516"
+      },
+      "cards": "cbc3a9079636d3abddef06459e6ddbed647ebb54aa3189a2631b8116b8357d1b",
+      "quizzes": {
+        "uts-simulator": "c39819dc7f1bd05ed43b10f55c5e78cb6d9b7738de1e48a9498451eae62bfef5"
+      }
+    },
+    "EKT109": {
+      "readings": {
+        "1": "55f67d9789ed74aaa3f6199882f1f0a8f5d58282148dc78a1d5b94defb2d7e38",
+        "2": "2402676cc9e56190246e7f51ea94171e700daf771398f422dec99ad2d1dafba4",
+        "3": "96140228410d046cf9e04956f2e7ee98ab79603b456baf5183652410d44e14ef",
+        "4": "c8d38450190a99ce2ace00d89cda3524e3396751bf583e31196772b71ab6c66e",
+        "5": "59905c53dc3349fc7e85937c919bfff2e53cb0ef9a5a70e959bb51fc5511936d",
+        "6": "0557f5fcccb9dbf573358a0d1ec8f3567112086b0dd4bde41c32f0a407f07652",
+        "7": "c61106c73264e9713cad625bc8e4c2c343241083b1138dee4e56fa39b9bf77e3"
+      },
+      "cards": "d1e4b53e7b8fc93cdafafbfc68b92788cf8948f8630e9cce8521e2c8d0c8cb66",
+      "quizzes": {}
+    },
+    "MAS122": {
+      "readings": {
+        "1": "d3d744f32b59ea0074af6785f39a3ad478fb7c1ea4f6d5ed3473c5d19fba4fd4",
+        "2": "309a9090fb450ba32241dcd329118699e119314e61b4538b2d6c6af6424a4057",
+        "3": "8b08767191ff49994780b2cd42f7656a26b6dd8a1bc329bafc634988fc259007",
+        "4": "7aa5430164a616989f0e6959950a3a4168ee23a3837624071699121d35cf26d6",
+        "5": "89266ef8f38aded027818d38f14e7b1da43c47ab67e5ea7a87f073bdd2ccaa37",
+        "6": "ed51133b9feaf2d5fca8b9cff7ebe9fe65858ba72f8370256b4e504643df3daa",
+        "7": "ad411cd970a12a389e73cbeffbbf795dac61e2d35958dd679bbd85bf62d9a255"
+      },
+      "cards": "caf9d6f55645d2cd4e47a18937f020ca4cbe84b217f72c711d1ec3816ff52b96",
+      "quizzes": {
+        "uts": "630390bb2c56ef0a48906a66f9e9a4f2e4d1ec7bfaeba14e010239e65fc0fd06"
+      }
+    },
+    "AKK202": {
+      "readings": {
+        "1": "1bbe11134ec0a59036c304cf7b554a928a2bcbceaaaaa64bba2b4c7d82cded35",
+        "2": "1d9982e5522b1e92d6fca83a4ce3c3f478a690ac81eed842bf82d8f5da6606c9",
+        "3": "d34f8ea28e0ad3d49fff0dd1880325d98c2750349e6018c1bdd10f3f42e8547e",
+        "4": "74184e99b7810f0498409a1edc8708eb928f77cfcd285db3e9224223d346ae71",
+        "5": "aa27eb51510b67bdbf2b265410ba07b992e433be337ffa551086de08b93423bd",
+        "6": "b1e2117ef8da9f37698f6c78594dff022792c7edf4b76c91b2472d515240e8b1",
+        "7": "63930c095f94035093eb5d0b53ae4490e45c38196abc3da358a8cd9d58e250c2"
+      },
+      "cards": "edee6d8d791303219f6e248557282222c69467893cdbc1f4d4cd1d341a45a64e",
+      "quizzes": {
+        "uts": "0fa1f3eb76e2e17998228d4d5c89c12b5870eed49ad9839c08a79cecfebed9fd"
+      }
+    },
+    "MNU108": {
+      "readings": {
+        "1": "1124de59fc91c8a03a925fac09897324d493c554d651dc6d92a29b5f810b7eaf",
+        "2": "b11c1909dd2b2c37646c50ec60f02375b73ccf9016115213cde3eba3c5eeece4",
+        "3": "9c1bceafba881ece1c8387b698e0d55a8cf91c8ceaf75c10bcd9f804b3bd6991",
+        "4": "ab6b3b1b8a81474c36d3b28d284a26c69868378660dc0c9d613ddebc8d84af26",
+        "5": "0f299abf2d9e4da9afd6a82c438c4397d0bde57a844e24136755c48961109216",
+        "6": "3e2748b513898434deb8fecceae3712648f92ef9d3bd68adb0089f4e20bd5c50",
+        "7": "e15e32174f72c8b5d723e4bdfe7e78f12ead001781b4bcd314e250150c37472c"
+      },
+      "cards": "40ae32c0a59f68f947f3e67c4d9834f6ff69d9f872e63fdaee955e428351a0c7",
+      "quizzes": {
+        "uts": "f0681c342b59a8a73e4445d8731448cbb3293e6e24df137785cb0217d83aa9b7"
+      }
+    },
+    "AKK203": {
+      "readings": {
+        "1": "314b3678f2c4e7b9c9a55ef36d3712fd0c972f579ae923a23670fcd091e2328d",
+        "2": "1693504703dd4b331632a4269fee736ba5cb172bdd026c7c8ba0882a5cc9f159",
+        "3": "b1826ad439dd26ceb3aacf0409bcd8a5727fe8a526f87ace4805e8876cf65b99",
+        "4": "d528316b05e8a01a8933ca3a39c28da6524fa27561c4d78a33d1a2a3f53d517b",
+        "5": "d909962cd1e0e7809a70356eb4f87f0491325d6d91eb7bc1ce3b70cb025888c1",
+        "6": "200e4e42f592efc9a4b9c9471a89911486fda21a0cf97bb9a3f4d2366dedda16",
+        "7": "eba24f7dcd5324630e8ef8204e1691deef3179e43f60265573a53968cd135970"
+      },
+      "cards": "9d47cb3356efeb8c4f38adc49fb337d6544a159276096adb0b2874031d3c48dc",
+      "quizzes": {
+        "uts": "85501f2fc3cd7680512b11c16bb0f8696f330b359adadff6a6efb67b8a67bf38"
+      }
+    },
+    "SII306": {
+      "readings": {
+        "1": "6dceed3a712e3d1a9a76bfe8bbb1123029c6d8894523e291d4b7c30aef0ced6f",
+        "2": "019143ad1e7ec59008590678916a4cf69968163bcc6966342c92d25d7e507287",
+        "3": "ee554224476110f2acd9eade5fd1f6c6b8cd6036c27fd25fcfeca2f22cb4916e",
+        "4": "3f8cd2100b56273fb28647b6c010a3a31c3b7b63b23080b51749da7e49491a13",
+        "5": "86cffaf4eb2a7026baace3cd3d0477105468ca83326570c37a3b820dd4fc8a9e",
+        "6": "d1e81200f5930665e80d5b3bbdaee6a548b97403eb841a1fffe2bff31d0b15f0",
+        "7": "784032cb952f41fb6d71e2940bd112d717faa331db3ba94bc01d45c7be960cb6"
+      },
+      "cards": "ce2c7cfbe33cf327c1d2b127f91d8d211585cb204bf9001b9cedb3f336764841",
+      "quizzes": {
+        "uts": "7e485f6c0c404648f64ca3355fdf16fd91ae7b0019fd981dbd7d3509acd89c7a"
+      }
+    },
+    "PJK301": {
+      "readings": {
+        "1": "64c09fcc768fc1cd99d8580d05d65d9767662ce32680bf24801413d1fb2cdc37",
+        "2": "231146ad33e1cb50a5e36b8dc83e2cb2956c546c82f13d963e4345f847d4b24e",
+        "3": "983cb354495e4e10d596d023794db23262be997b15bac43a750365d56bceeccf",
+        "4": "4ea8334f83b05164d5a12011624ea6bf1a723b38281756bd4416c10d8a6de597",
+        "5": "2aea6896a8ced4ca32c39e862a5805a8e53a8646550bc8ba3ef7d6e524dc74ee",
+        "6": "2a6cf7b0ca0c7a0ca5139db4fa9bad56eba86ce7c02435fdc808c19cf5412d24",
+        "7": "1862fef6e4a8a091996f5254a458d02b1e55f9cc85ca2f4793017f63f004f387"
+      },
+      "cards": "134538513b0ec2bc368b0b60c9ad6f165f400596d2a44291ca4d583f75a6e3e3",
+      "quizzes": {
+        "uts": "87a809b832b23ddec882720a69e5226e4be06da0ad47bda13e90f6f493894638"
+      }
+    },
+    "MNK102": {
+      "readings": {
+        "1": "e8043b18aae6a23db226005de6116a7d38b07c36f3e43e6de4996f6a731d6bc5",
+        "2": "a304824a2865f54294ee99f595eedbc6f92d8b0ffa60ad3c5f3e51486a55bc68",
+        "3": "bc7e37f5b41b75e6448c003cb98c37261ba034653ea93995aa48f800c1477b59",
+        "4": "191c51c1fb37e9674385e77d5c21a883d6e61e8a7d6ec47ffefe1c4445b824aa",
+        "5": "cea03ddc78a3d2ab7ace5d09395aa0f8b8a3c006a4d80da2c02e1cc1fab27d65",
+        "6": "38beee7317ef70f4f8e836074384670f9061aa12c1ec66ca4579c594e7b41655",
+        "7": "b24dbd8a142e00e62a654f76e79e573cd14295ec9c394644f8479baedc49fc08"
+      },
+      "cards": "3509f3b42a7ef29532f6d4294c906548926a87b6ff00f2a2c2ccc47762ef5750",
+      "quizzes": {
+        "uts": "2c1d6933470877f71242b381f320c5558c36f9476d7f537e799c8489d2b3ad90"
+      }
+    },
+    "AKA201": {
+      "readings": {
+        "1": "ba700f223b8a3b1b63bbed7582c25fad2531fee391b36fce04a7305e3785158e",
+        "2": "62618aa64e59b8839cdcc13e342d28bce8e32f449459f3ae5e031739bed5fac4",
+        "3": "5e7ac042fed09fcc6f637bd09ae5bcd2d255c36d58bc53e611a86f71d6b9bdad",
+        "4": "51c8c0494c85463f78f74878f8bf0d0143d44ea2ef9312a6880ebfc5c1b67190",
+        "5": "44d21a42f10b77907d14203d9569fdd118f902b7d0e3a190b7d22f7e740f2d5f",
+        "6": "4e1f9544fe85fc7e1488b917c646a9a3b6bff9b67bfdc59d124ff07ca0b0a9ef",
+        "7": "36cda289c3854d051f93a99b1f38f934a9c17d62443197b7c40ae229997b46e4"
+      },
+      "cards": "f6bcc8a6bebb5a8dff2477bdc738345ca5770527587fc77bafb59213d9874c1e",
+      "quizzes": {
+        "uts": "1cc3edb837bce79b9b659bef89d18324ac8629b393656075878cebb731e9ade2"
+      }
+    },
+    "AKM301": {
+      "readings": {
+        "1": "01dac7e3698995f7cc2da81bdd0f6a3f0d548373b7c2c206b83cf6bf2a8a93a8",
+        "2": "b73113b0b70fe2bc91d59c196bf0d8c1c1de897da19f0e7cad513e5612884ef1",
+        "3": "0ad3297b094604f261b19870d888175f2ed6ab540a8784da2a641c02ecffcd2d",
+        "4": "848b18aa951818dfa315b120e12b00164bc9ecd9871f13af1a4d6349e5cb0dbd",
+        "5": "5edeb6693ea6e12501e262f7e402c5928217bdf6ce91b9b1e04792029692988b",
+        "6": "b32ef9a9413b3a56f3a8314e088864aeaf40005b4c2593052176ce9726420f7a",
+        "7": "73cd549563e5c6a97532e0e43e0890261079dc8db729b724e57a1d704b814103"
+      },
+      "cards": "e073c3f10fb86f83606ce56c425a461afef67ca917e3e5fa9b0cbf53c54cc7d0",
+      "quizzes": {
+        "uts": "3695a0cfd878d4f8103738746f98046b1b0d64e795d63d0c2ca9496de04b7f45"
+      }
+    },
+    "MNU307": {
+      "readings": {
+        "1": "657a24131008b02bebbd82bdee4595d925cd6ee845aa3dfeb9aabde81bf1d335",
+        "2": "d859d12d5b1d04ffd7e5039ca798ce0cd584adf5b0b9665aea978691b1e1d7f0",
+        "3": "5ba67f17db16ec6b7d573b71ff80a4f12a114731da7d0ad8a99f0347ba9198f4",
+        "4": "9a3a16b6b344d1f55ac4dcdb787ca99cdf8b7a56f2c91fccf46be68749dd9bd3",
+        "5": "ff74e0ed3f2c72fb616a7d235f1778ec474a24091180e55ff7982d9f6dcea7ac",
+        "6": "65eaef0ebb395de213602f7f303f0c23ad88d6958806521447493f61f4e658ed",
+        "7": "e105d26e9b454270097a0351e1800633538e7cbb4c4ce00cdd8f5656b490cf36"
+      },
+      "cards": "30ff22e7a6c161edc5d1b6fcd189c3ee0c5768e9420ad6dd1630ffa5f96ac9f3",
+      "quizzes": {
+        "uts": "cc5837c41b5ecd20fddd7aa473e60fd865a6b491f6a01f495ec91d620a4f7c7f"
+      }
+    }
+  }
+}

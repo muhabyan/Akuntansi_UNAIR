@@ -4,4 +4,4 @@
 
 Sumber terdaftar: Richardson et al. AIS 4e · Ch. 11 dan 13, hal. 403-408 dan 450-463 (PDF 428-433 dan 475-488)
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+Batas verifikasi sumber ada pada docs/audit-2026-10-12/SII306.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.

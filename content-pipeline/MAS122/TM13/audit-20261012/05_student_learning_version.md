@@ -28,7 +28,7 @@ Peta memilih metode
 
 Tentukan: (1) tujuan (deskripsi/hubungan/perbedaan/prediksi), (2) jumlah & skala variabel, (3) asumsi terpenuhi atau tidak → barulah pilih uji.
 
-Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan
+Modul Terpadu Pra-UAS : Konsep, SPSS Output, dan Jebakan
 
 Catatan kurator
 

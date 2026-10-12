@@ -4,4 +4,4 @@
 
 Sumber terdaftar: DA 13 · AA 15
 
-Batas verifikasi sumber ada pada docs/audit-2026-10-12/MAS122.md. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.
+Batas verifikasi sumber ada pada docs/audit-2026-10-12/MAS122.md. Snapshot JSON mempertahankan teks data historis; 05 menormalkan gaya penulisan untuk dibaca mahasiswa. Snapshot ini mengunci isi implementasi dan tidak menyatakan semua klaim sumber lengkap.

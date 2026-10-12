@@ -228,13 +228,13 @@ export const SII306_READINGS: Record<number, Reading> = {
           "Paling Ekonomis (hanya sewa gedung kosong)."
         ],
         [
-          "Recovery Time Objective (RTO) — Berapa lama sistem boleh mati?",
+          "Recovery Time Objective (RTO): Berapa lama sistem boleh mati?",
           "Hitungan menit hingga detik (hampir instan).",
           "Hitungan beberapa jam hingga 1 hari.",
           "Hitungan hari hingga minggu."
         ],
         [
-          "Recovery Point Objective (RPO) — Berapa jam transaksi yang boleh hilang?",
+          "Recovery Point Objective (RPO): Berapa jam transaksi yang boleh hilang?",
           "Mendekati 0 detik (data direplikasi secara sinkron real-time).",
           "Maksimal data backup hari sebelumnya (misal 24 jam).",
           "Seluruh data sejak backup tape fisik terakhir."
@@ -700,7 +700,7 @@ export const SII306_READINGS: Record<number, Reading> = {
     },
     {
       "kind": "p",
-      "text": "Sistem informasi akuntansi modern bukan sekumpulan modul terpisah, melainkan ekosistem terpadu di mana peristiwa operasional di hulu (upstream) secara otomatis memicu pembaruan laporan keuangan di hilir (downstream):"
+      "text": "SIA terpadu menghubungkan data proses operasional dengan pencatatan dan pelaporan. Dampak tiap peristiwa bergantung pada model data, pemetaan akun, otorisasi dan kontrol yang diterapkan. Richardson Ch.10, PDF 408-409, membedakan peran event, resources dan query laporan:"
     },
     {
       "kind": "table",

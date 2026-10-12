@@ -1,0 +1,23 @@
+{
+  "src/components/UpdateNotifier.tsx": "c36dcb84770e3f13911babfcf6f6e4a5e66ebad7abf2c9995c407de970c8ecf5",
+  "src/data/manstrat/legacyPasca.ts": "900d90fa609b8d516f26bce0bbfc424ebf0b2791d2021a59a1de76cab711a2d6",
+  "src/data/manstrat/manstratData.ts": "31c84693f0e94fda918b3076fd0814cc32a0009fe6be24da7b7e64ff4940bf2b",
+  "src/data/manstrat/manstratPracticeCases.ts": "c18530fbac97a3ce8e92292780f6505269ea4fbb27a8c36827a3b8b1f37d576e",
+  "src/data/manstrat/modules/legacy/tm14.ts": "8078ce0c5e369501262457628adc0032d117fab10ec809a6202c45f05ff876da",
+  "src/data/manstrat/modules/tm1.ts": "40417389340329d8744d50e165fcd0ffd522bab140b3614dd7b86bfdb65c6545",
+  "src/data/manstrat/modules/tm10.ts": "2185495ef31f8b5c7a8ec3623e87971b569ed158de2a475ae9e3dfa40ed904ed",
+  "src/data/manstrat/modules/tm11.ts": "ef7f58a86747fe4dbf236bbc543e74b74ca442dc97d987c9413888f279c851e3",
+  "src/data/manstrat/modules/tm12.ts": "763b7e0afebd9f89f5d396eb50871468ba5d992c0ab5ac8a51a0672fdf206076",
+  "src/data/manstrat/modules/tm13.ts": "c7a081806e332028cf4332f30b91dd18667df46cc2319ca5cf648acd41655567",
+  "src/data/manstrat/modules/tm14.ts": "e71b069845524b86f74e19966389d1d73a8b9bbf2068bb24ba3f39d6a713a34a",
+  "src/data/manstrat/modules/tm15.ts": "511dba92f51ff89621cb2c94b5f3ca59c99080c3f0b0c37bf83d3c26ec74fd70",
+  "src/data/manstrat/modules/tm2.ts": "78081c5ab71e018123d1a06a6215aae04444cc3c34937b3138a21cf7689eb617",
+  "src/data/manstrat/modules/tm3.ts": "c60f5dad16e1b6496fd648f153b8c7834690274c2113903004a50ad6aaedc383",
+  "src/data/manstrat/modules/tm4.ts": "3b0b20e5ebb986b43ef5b88aeab134df5f41643e661bc84b0b3561bb8dd3da44",
+  "src/data/manstrat/modules/tm5.ts": "e77db92eb46009da985d8a7897edced728ab0bb1f45828bf738bae6c162f40b8",
+  "src/data/manstrat/modules/tm6.ts": "3a8d0d7e9ffd9831a13d60f342891ace0a2a3502bb3d3e8ee3edb56b2225dc18",
+  "src/data/manstrat/modules/tm7.ts": "a0a085516b3fc3daf06e3a86e6db08b972d23913111810a7c0a8ab7dd9e91e61",
+  "src/data/manstrat/modules/tm8.ts": "598ed77214110a752c82629cea607047af21c574342761f15e9393fbb01cccc4",
+  "src/data/manstrat/modules/tm9.ts": "69d1c6d2eb6e54c0eab8a4099aff47cfa5b02db99607330853b797bec4c78e1a",
+  "src/index.css": "1a6cc1ff11f34b40ada15c8495db8fad0d3c219667ff3511e57fa72c939b750f"
+}

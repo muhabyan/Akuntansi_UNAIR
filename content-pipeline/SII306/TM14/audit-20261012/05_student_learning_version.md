@@ -6,7 +6,7 @@ Gambar 14.1: Peta Arsitektur Integrasi ERP Terpusat dan Simulasi Komprehensif Si
 
 Peta Integrasi Arsitektur Sistem Informasi Akuntansi Terintegrasi
 
-Sistem informasi akuntansi modern bukan sekumpulan modul terpisah, melainkan ekosistem terpadu di mana peristiwa operasional di hulu (upstream) secara otomatis memicu pembaruan laporan keuangan di hilir (downstream):
+SIA terpadu menghubungkan data proses operasional dengan pencatatan dan pelaporan. Dampak tiap peristiwa bergantung pada model data, pemetaan akun, otorisasi dan kontrol yang diterapkan. Richardson Ch.10, PDF 408-409, membedakan peran event, resources dan query laporan:
 
 Tabel 14.1: Integrasi Lintas Siklus Transaksi ke Buku Besar Umum (General Ledger / GL)
 

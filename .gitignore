@@ -29,3 +29,4 @@ scripts/*.py
 *.txt
 *.pdf
 .content-inbox/
+/tmp/source-audit/

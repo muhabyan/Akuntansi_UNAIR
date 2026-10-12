@@ -53,6 +53,12 @@ const standardTasks = [
   ['semester3_codes', 'scripts/test-semester3-codes.mjs'],
   ['accounting_handbook', 'scripts/test-accounting-handbook.mjs'],
   ['mnk102_canonical', 'scripts/test-mnk102-canonical.mjs'],
+  ['finance_graph_semantics', 'scripts/test-finance-graph-semantics.mjs'],
+  ['source_audit_revisions', 'scripts/test-source-audit-revisions.mjs'],
+  ['foundation_source_audit', 'scripts/test-foundation-source-audit.mjs'],
+  ['audit_pre_uts_preservation', 'scripts/test-audit-pre-uts-preservation.mjs'],
+  ['flashcard_source_alignment', 'scripts/test-flashcard-source-alignment.mjs'],
+  ['manstrat_source_audit', 'scripts/test-manstrat-source-audit.mjs'],
   ['mnk102_uas', 'scripts/test-mnk102-uas.mjs'],
   ['mnk102_practice_render', 'scripts/test-mnk102-practice-render.mjs'],
   ['mnu307_rename', 'scripts/test-mnu307-rename.mjs'],
@@ -196,8 +202,8 @@ function runTask([id, script, extraEnv = {}]) {
     signal: result.signal,
     timedOut,
     durationMs,
-    stdoutTail: '',
-    stderrTail: trimOutput(result.error ? result.error.stack ?? result.error.message : ''),
+    stdoutTail: result.status === 0 ? '' : trimOutput(result.stdout),
+    stderrTail: trimOutput(result.error ? result.error.stack ?? result.error.message : result.status === 0 ? '' : result.stderr),
   };
 }
 

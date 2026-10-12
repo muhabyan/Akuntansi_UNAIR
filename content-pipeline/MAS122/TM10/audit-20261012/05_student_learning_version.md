@@ -1,4 +1,4 @@
-# Regresi & Korelasi — Bagian 2
+# Regresi & Korelasi : Bagian 2
 
 Menilai seberapa baik model regresi dan memperkenalkan regresi berganda.
 
@@ -22,7 +22,7 @@ Multikolinearitas
 
 Jika antar-prediktor sangat berkorelasi, koefisien menjadi tidak stabil. Periksa dengan VIF.
 
-Modul Terpadu Pra-UAS — Konsep, SPSS Output, dan Jebakan
+Modul Terpadu Pra-UAS : Konsep, SPSS Output, dan Jebakan
 
 Catatan kurator
 
